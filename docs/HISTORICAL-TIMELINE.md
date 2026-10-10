@@ -2110,3 +2110,17 @@ adapters, not run. Bismarck Lua start callback compiled out. This is NOT
 historical confirmation of JSS1999 or Taiwan v1.0, original transport,
 actual BATTLE_Loop, full rounds, Finish/profit or natural time/RNG.
 See STONEAGE-PARTY-PET-ORIGINAL-INIT-ACCEPTANCE-R1.json.
+
+
+## 2026-10-10 — Later-descendant real-header original BATTLE_Loop INIT dispatch verified, constrained
+
+FACT (bounded Gavin1f90cb6/Bismarck999ffdf1): GitHub Action38033745806,
+tested c1649d27036c8f7e27b680d871989d270b48dec9, executes native
+original BATTLE_Loop in populated party/pet INIT state, returns one
+active arena and enters original BATTLE_Init/PreCommandSeq. Both
+profiles O0/O2 agree across 4 battle pool cursor rotations; C_WAIT,
+backup, original Exit/Delete and owned pet remain verified. Bismarck
+NETWATCH BATTLE_Init stage observed through narrow collector. No
+actual Command, round, finish/profit, network, natural timing, enabled
+Lua, full server or first-party JSS1999/Taiwan-v1 identity established.
+Provenance receipt STONEAGE-PARTY-PET-ORIGINAL-LOOP-ACCEPTANCE-R1.json.

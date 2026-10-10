@@ -10463,3 +10463,46 @@ reviewed discovery gate and its automated derived-report writeback is authorized
   Gavin use predicate vs Bismarck BATTLE_CHECKINDEX and feature-gated
   NETWATCH. Then bounded Command/true round/Finish, original network
   emitters, Lua variants and reward/profit; no premature promotion.
+
+
+## 2026-10-10 — Exact original BATTLE_Loop INIT dispatch REMOTE ACCEPTED
+
+- Starting remote main425cdb1b7360b238c00e7447858626ae327fccbe,
+  tree c8827cf34e2ec785a220d45da1dfae4ec4ed0300.
+  Prior complete state blob298e671daa6e1fb035d60c1cf4f3262c6aab6730
+  retained verbatim. Next validated source commit
+  c1649d27036c8f7e27b680d871989d270b48dec9/tree
+  5a3b3563469a7ff3cf9b79249f7dcc0b0da46b21.
+- Action38033745806/job114159804380 SUCCESS all10 workflow steps and
+  12 Python regressions. Both pinned Gavin1f90cb6 and Bismarck999ffdf1
+  exact original BATTLE_Loop dispatch on controlled live arena INIT,
+  GNU99 real headers, O0/O2 nonrecovering UBSan, 4 encounters each
+  profile/optimization (16 total). Original loop returns1,
+  dispatches exact original BATTLE_Init→SurpriseCheck→PreCommandSeq;
+  battle status INIT→BATTLE, leader/member/pet C_WAIT, timer+FREEDP,
+  original player backup0/1 and owner-selected pet2 retained.
+  Original ExitAll/DeleteBattle and pool reuse0,1,2,0 pass.
+- Gavin original used-arena predicate retained; Bismarck original
+  BATTLE_CHECKINDEX retained, original NETWATCH stage BATTLE_Init
+  admitted only for valid live arena in bounded prior observer.
+  All unvisited Command/Finish/Stop/Watch branches fail-closed or
+  retain predecessor originals; no actual combat command called.
+  Outbound battle packets remain bounded collectors; Lua start
+  callback inactive in pinned flags, no real transport/Lua claim.
+  Complete per-profile native output O0/O2 byte-equal, trace SHA256
+  Gavin362fcd9ee1d3c1536bc1950dd8b7121d53c089ffcd614bfc6ccc0ada5e08bcfe,
+  Bismarck4e3acec05e99f92bdff7e606b90e050ced7833b1a495693f4f6be24ce9990807.
+  Derived artifact11663298054 metadata SHA256
+  1ab9b437115567155c985c40c3ddf2dc0ae931121d6ed28537f38341f09f5be9;
+  ZIP not independently verified. Acceptance receipt
+  STONEAGE-PARTY-PET-ORIGINAL-LOOP-ACCEPTANCE-R1.json.
+- FACT only under these late descendant original header executions and
+  synthetic live battle domain. Not a real BATTLE_Command turn,
+  BATTLE_Finish or reward, natural server tick/watch/transport, first-party
+  JSS1999/Taiwan-v1 or historical runtime equivalence. Pressure unchanged
+  2486=2465 capability closed+18 OPEN+3 historical UB. Zero promotions;
+  no engine/content phase transition.
+- Highest NEXT: original BATTLE_Command one prepared C_WAIT round with
+  bounded original actor/enemy decision and packet inputs; distinguish
+  source-profile command waiting, actual action, turn Finish and profit
+  as independent gates. Earlier continuity remains intact.

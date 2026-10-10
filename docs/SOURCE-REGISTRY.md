@@ -5324,3 +5324,26 @@ Repository evidence:
   ZIP content not independently downloaded. Acceptance receipt
   STONEAGE-PARTY-PET-ORIGINAL-INIT-ACCEPTANCE-R1.json.
   Historical JSS1999/Taiwan-v1 semantics remain unproven.
+
+
+## 2026-10-10 — Actual BATTLE_Loop INIT dispatcher source evidence
+
+- Remote tested source/test/workflow SHA
+  c1649d27036c8f7e27b680d871989d270b48dec9,
+  tree5a3b3563469a7ff3cf9b79249f7dcc0b0da46b21,
+  Action38033745806/job114159804380 all10 steps SUCCESS and12 regressions.
+- Original pinned descendant Gavin1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56,
+  Bismarck999ffdf1d220ec6666eb65339180689c9caf1876,
+  exact original BATTLE_Loop and original Init chain with original headers
+  GNU99 O0/O2 nonrecovering UBSan. Four INIT-only calls per profile/opt,
+  total16, profiles' complete output agrees across O0/O2.
+- Trace SHA256 Gavin362fcd9ee1d3c1536bc1950dd8b7121d53c089ffcd614bfc6ccc0ada5e08bcfe;
+  Bismarck4e3acec05e99f92bdff7e606b90e050ced7833b1a495693f4f6be24ce9990807.
+  Original unvisited Command/Finish/Watch branches remain out of scope;
+  bounded Bismarck NETWATCH BATTLE_Init collector added without
+  replacing original dispatcher. Source/head/master bytes CI-transient.
+  Artifact11663298054 GitHub metadata SHA256
+  1ab9b437115567155c985c40c3ddf2dc0ae931121d6ed28537f38341f09f5be9
+  not independently verified as ZIP. Receipt
+  STONEAGE-PARTY-PET-ORIGINAL-LOOP-ACCEPTANCE-R1.json.
+  No 1999 Japanese or Taiwan-v1 historical equivalence.
