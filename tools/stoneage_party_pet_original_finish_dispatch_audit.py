@@ -33,7 +33,8 @@ def finish_observations(profile):
     script=lethal.LETHAL_ROUND_OBSERVATIONS
     anchor="memcpy(slots,round_baseline,sizeof round_baseline);*battle=round_arena;rng_count=round_rng;rng_mode=round_rng_mode;"
     if script.count(anchor)!=1:raise ValueError("accepted lethal round restoration anchor drift")
-    return script.replace(anchor,FINISH_OBSERVATION.replace("EXPECTED_WIN_SIDE","-1" if profile=="bismarck" else "0")+anchor,1)
+    sentinel="-1" if profile=="bismarck" else "0"
+    return script.replace(anchor,FINISH_OBSERVATION+anchor,1).replace("EXPECTED_WIN_SIDE",sentinel)
 
 def finish_native(profile,source,battle,event,root):
     native,has_lua=lethal.lethal_round_native(profile,source,battle,event,root)
@@ -54,6 +55,12 @@ def finish_native(profile,source,battle,event,root):
         else:native=native.replace(prior,"",1)
         # Add exact original signature declaration for potentially earlier use.
         native=native.replace(anchor,body[:body.index("{")].strip()+";\n"+anchor,1)
+    # Original BATTLE_Loop is defined before our source-body insert at main;
+    # preserve the original static linkage by declaring Finish before its use.
+    loop=attack.definition(native,"BATTLE_Loop")
+    if native.count(loop)!=1:raise ValueError("original Loop body declaration anchor drift")
+    signature=bodies["BATTLE_Finish"][:bodies["BATTLE_Finish"].index("{")].strip()+";"
+    native=native.replace(loop,signature+"\n"+loop,1)
     native=native.replace(anchor,"\n".join(bodies.values())+"\n"+anchor,1)
     return native,has_lua
 
