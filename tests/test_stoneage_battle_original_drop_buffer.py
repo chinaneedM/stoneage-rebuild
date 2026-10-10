@@ -10,7 +10,7 @@ class OriginalBattleDropBufferTests(unittest.TestCase):
         for profile in ("gavin","bismarck"):
             c=buffer.extended_controls(profile)
             for fragment in ('scenario<3',"scenario==0?5:0","getitem[1]=3",
-                             "expected_pool[3].use=0","expected_pool[241].use=0",
+                             "expected_pool[3].use=0","expected_pool[5].use=0",
                              "rng_mode=scenario==2?1:0",
                              "BATTLE_No2Index(battle_at,5)==2",
                              "CHAR_TYPEPET","BATTLE_AddExpItem(battle_at,lists)",
