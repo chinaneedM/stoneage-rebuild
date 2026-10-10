@@ -12,6 +12,7 @@ import subprocess
 import tempfile
 from tools.stoneage_enemy_creation_audit import definition
 from tools.stoneage_guard_break2_source_audit import PINNED, LAYOUTS
+from tools.stoneage_default_template_audit import include_args
 
 NAMES=("BATTLE_ClearGetExp","BATTLE_PetDefaultEntry","BATTLE_PartyNewEntry")
 PROFILES=("gavin","bismarck")
@@ -186,7 +187,7 @@ def selected(profile,root):
     raw=p.read_bytes();data=raw.decode("utf-8","replace")
     functions={n:definition(data,n) for n in NAMES}
     version=root/LAYOUTS[profile]/"include/version.h"
-    r=subprocess.run(["cc","-dM","-E","-x","c","-include",str(version),"-"],input="",text=True,capture_output=True,check=True)
+    r=subprocess.run(["cc","-dM","-E","-x","c",*include_args(profile,root),"-include",str(version),"-"],input="",text=True,capture_output=True,check=True)
     flags=[n for n in FEATURES if re.search(r"^#define "+re.escape(n)+r"\b",r.stdout,re.M)]
     return "\n\n".join(functions.values()),flags,sha(raw),{n:sha(v.encode()) for n,v in functions.items()}
 def run(profile,source,flags,optimization,temp):
