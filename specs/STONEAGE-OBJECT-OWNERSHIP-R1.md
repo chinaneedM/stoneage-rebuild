@@ -1,6 +1,7 @@
 # Original object registration and preserved enemy nonownership R1
 
-Status: bounded native local validation; remote acceptance pending. This is a
+Status: bounded native LOCAL PASS / REMOTE ACCEPTED at exact tested input
+adae57319685b272c73ab431d72128fe2a40af3a; Actions38022136836 success. This is a
 descendant-source research gate, not original JSS/Taiwan-v1 runtime admission.
 
 ## Question and executed evidence

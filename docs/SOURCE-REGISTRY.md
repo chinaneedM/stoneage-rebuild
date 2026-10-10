@@ -5103,3 +5103,17 @@ sources/data remain transient; earlier records preserved.
   Only five initialized Object fields observed; no all-byte/all-birth-field oracle.
   Remote acceptance PENDING. Actual battle entry/full Exit/reuse, original reclaim/
   bootstrap/Iris conversion/original ABI/JSS/Taiwan-v1 remain OPEN;zero promotions.
+
+
+### 2026-10-10 — Object registration/nonownership R1 remote acceptance
+
+- Tested adae57319685b272c73ab431d72128fe2a40af3a/tree
+  2a8fef42cffafcb6f0e4b03e1192b542fc9fb0bb accepted by Action38022136836/
+  job114125208055.152 regressions,441,216 named stages,10 safe mutations;
+  nine predecessor full reports unchanged, all ten cmp gates pass. Full ordered
+  report matches local7f426e53b44afea3026dd8eefa2d575ba5e2a2b3562caf6c668e1f335528d9bd.
+- Receipt STONEAGE-OBJECT-OWNERSHIP-ACCEPTANCE-R1.json records report blob,
+  artifact11657904198/digest and exact input. Artifact archive not independently
+  downloaded; ordered logs/report cmp gates verified. Tested code unchanged.
+  Accepted only bounded descendant/source/header/map/adapter scope; no all-byte/
+  all-birth-field/freeMemory/bootstrap/full-entry-Exit/JSS/Taiwan-v1 promotion.

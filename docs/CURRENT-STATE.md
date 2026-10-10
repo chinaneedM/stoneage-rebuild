@@ -9892,3 +9892,38 @@ reviewed discovery gate and its automated derived-report writeback is authorized
   reclamation/bootstrap/Iris encoding/special/equipped/nonempty callbacks and
   remaining actor/watcher/typed631/635/original ABI/build/JSS/Taiwan-v1 remain OPEN.
   No engine/content transition. Protocol section10 publication authorization applies.
+
+
+## 2026-10-10 — Original object registration and preserved enemy nonownership remote ACCEPTED
+
+- Exact inputadae57319685b272c73ab431d72128fe2a40af3a/tree
+  2a8fef42cffafcb6f0e4b03e1192b542fc9fb0bb passes Action38022136836/
+  job114125208055:152 regressions,49,024 registration cycles/98,048 enemy
+  births/147,072 successful world constructors/49,024 rollbacks/441,216 named
+  stage comparisons at GNU99 -fgnu89-inline O0/O2+nonrecovering UBSan. Ten
+  mutations rejected; nine predecessor reports unchanged; all ten cmp gates pass.
+  Complete ordered remote report equals local bytes, including semantic hashes.
+- Actual original world/object/map-list/empty-item-registry release functions and
+  headers execute alongside preserved loader/creator. Slot0 can be live and owned
+  by world player0/1 while enemy4 has work0 and original owner-search -1. Enemy
+  release/rebirth preserves world objects/links. Char-only world release retains
+  its object/link; explicit object release unlinks and reuse appends at tail.
+- Controlled partitions/map/pool/RNG; walk/watch/reclamation adapters explicit.
+  Original freeMemory/free-list reuse/bootstrap remain unexecuted. Five initialized
+  Object fields and named birth fields checked, not all object bytes/birth fields;
+  original unspecified Object fields/padding never observed. Original persistent
+  object cursor retained. Gavin own configured bytes, Bismarck cross-profile only;
+  Iris original Windows conversion remains OPEN with no adapter.
+- Receipt STONEAGE-OBJECT-OWNERSHIP-ACCEPTANCE-R1.json; report SHA256
+  7f426e53b44afea3026dd8eefa2d575ba5e2a2b3562caf6c668e1f335528d9bd.
+  Artifact11657904198 digest
+  sha256:753a04d346c36e749cbebcde140e04bf6b19eb958a3dd534c201b81a6f68b760.
+  Archive not independently downloaded; ordered logs/complete cmp gates verified.
+  Tested code unchanged; earlier histories preserved. Supersedes local PENDING
+  only within bounded executed source/input/storage/adapter scope.
+- Pressure2486=2465 closed capability+18 OPEN+3 historical UB;zero promotions.
+  Highest priority: execute actual battle entry and complete creation-to-Exit/
+  destruction/reuse with actual storage/header domains. Reclamation/bootstrap/
+  Iris encoding/special/equipped/nonempty callbacks/remaining actor/watcher/
+  typed631/635/original ABI/build/JSS/Taiwan-v1 remain OPEN. No engine/content
+  transition. Protocol section10 ongoing accepted integration authorization applies.

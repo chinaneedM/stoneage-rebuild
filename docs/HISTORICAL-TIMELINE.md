@@ -1994,3 +1994,14 @@ STONEAGE-ENEMY-LOADER-ACCEPTANCE-R1.json; earlier histories preserved.
   and walk/watch/reclamation adapters. Not original freeMemory, full battle entry/
   Exit composition, full bootstrap/ABI/JSS/Taiwan-v1 proof. Iris encoding OPEN.
   All nine predecessor reports unchanged; remote acceptance PENDING;zero promotions.
+
+
+### 2026-10-10 — Object registration/nonownership R1 remote ACCEPTED
+
+- Exact-input Action38022136836 success:49,024 cycles,98,048 births,441,216
+  named stages,152 regressions,10 mutations; all ten cmp gates pass, nine prior
+  reports unchanged. Full ordered remote report matches local bytes.
+- Supersedes local PENDING only in bounded actual original registration/map-list/
+  empty-registry release scope. Explicit walk/watch/reclamation adapters; full
+  actual battle entry/Exit/reuse and original freeMemory/ABI/JSS/Taiwan-v1 OPEN.
+  Pressure remains2486=2465 closed capability+18 OPEN+3 historical UB;zero promotions.

@@ -1,0 +1,67 @@
+{
+  "schema": "stoneage-object-ownership-acceptance-r1",
+  "status": "REMOTE_ACCEPTED",
+  "tested_head": "adae57319685b272c73ab431d72128fe2a40af3a",
+  "tested_tree": "2a8fef42cffafcb6f0e4b03e1192b542fc9fb0bb",
+  "run_id": 38022136836,
+  "job_id": 114125208055,
+  "run_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/38022136836",
+  "conclusion": "success",
+  "regression_checks": 152,
+  "executed_profiles": [
+    "gavin",
+    "bismarck"
+  ],
+  "registration_cycles": 49024,
+  "preserved_enemy_births": 98048,
+  "successful_world_constructors": 147072,
+  "full_object_constructor_rollbacks": 49024,
+  "named_stage_comparisons": 441216,
+  "semantic_mutations_rejected": 10,
+  "additional_mutation_cycles": 10,
+  "complete_ordered_remote_report_matches_local_bytes": true,
+  "all_ten_workflow_cmp_gates_passed": true,
+  "report_git_blob": "8ee7b31d3a113a5e1d87d0f3574896128329f7db",
+  "report_sha256": "7f426e53b44afea3026dd8eefa2d575ba5e2a2b3562caf6c668e1f335528d9bd",
+  "artifact": {
+    "id": 11657904198,
+    "name": "object-ownership-adae57319685b272c73ab431d72128fe2a40af3a",
+    "size_in_bytes": 988,
+    "url": "https://api.github.com/repos/chinaneedM/stoneage-rebuild/actions/artifacts/11657904198",
+    "archive_download_url": "https://api.github.com/repos/chinaneedM/stoneage-rebuild/actions/artifacts/11657904198/zip",
+    "expired": false,
+    "created_at": "2026-10-10T03:57:30Z",
+    "expires_at": "2027-01-08T03:53:21Z",
+    "updated_at": "2026-10-10T03:57:30Z",
+    "digest": "sha256:753a04d346c36e749cbebcde140e04bf6b19eb958a3dd534c201b81a6f68b760",
+    "workflow_run": {
+      "id": 38022136836,
+      "repository_id": 1374762421,
+      "head_repository_id": 1374762421,
+      "head_branch": "agent/object-ownership-r1-20261010",
+      "head_sha": "adae57319685b272c73ab431d72128fe2a40af3a"
+    }
+  },
+  "artifact_archive_independently_downloaded": false,
+  "object_fields_checked": [
+    "type",
+    "index",
+    "floor",
+    "x",
+    "y"
+  ],
+  "all_object_bytes_have_independent_oracle": false,
+  "all_birth_fields_have_independent_oracle": false,
+  "original_freeMemory_executed": false,
+  "object_allocator_cursor_reset_injected": false,
+  "adapters": [
+    "MAP_walkAble bounded predicate",
+    "CHAR_sendWatchEvent collector",
+    "freeMemory detached map-node collector"
+  ],
+  "preserved_specimen": "same-pin Gavin configured bytes; Bismarck cross-profile input only",
+  "iris_loader_execution": "OPEN Windows conversion; no adapter",
+  "full_battle_entry_Exit_reuse_composition_executed": false,
+  "runtime_promotions": 0,
+  "next": "Execute actual battle entry and full creation-to-Exit/destruction/reuse with actual storage/header domains."
+}
