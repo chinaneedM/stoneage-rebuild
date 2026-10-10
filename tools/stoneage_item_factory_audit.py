@@ -35,6 +35,7 @@ static void factory_controls(int mode,BATTLE *arena){
  strcpy(specimen.string[ITEM_NAME].string,"Factory");
  strcpy(specimen.string[ITEM_UNIQUECODE].string,"factory-bounded");
  FACTORY_SETUP
+ FACTORY_TABLE_SNAPSHOT
  ITEM_Item table_snapshot=specimen;
  ITEM_TYPE pool_snapshot[256];memcpy(pool_snapshot,reward_items,sizeof pool_snapshot);
  Char actor_snapshot[7];memcpy(actor_snapshot,slots,sizeof actor_snapshot);
@@ -96,15 +97,15 @@ def factory_controls(profile):
  r"""allocator_table[1].itm=specimen;
  for(int j=0;j<DATA_FIELDS;j++)allocator_table[1].randomdata[j]=(j%5==0?0:(j%5==1?1:5));
  allocator_table[1].randomdata[ITEM_ID]=allocator_table[1].randomdata[ITEM_LEAKLEVEL]=0;""")
-    oracle=(r"""ITEM_Table saved_table=factory_table[1];
- demand(!memcmp(&factory_table[1],&saved_table,sizeof saved_table)&&
-        ITEM_gIndex[1].index==1&&ITEM_gTable==factory_table,"indirect table remains selected");""" if b else
- r"""demand(!memcmp(&allocator_table[1].itm,&specimen,sizeof specimen),"direct table template unchanged");""")
+    oracle=(r"""demand(!memcmp(&factory_table[1],&expected_factory_table,sizeof expected_factory_table)&&
+        ITEM_gIndex[1].index==1&&ITEM_gTable==factory_table,"indirect source table immutable and selected");""" if b else
+ r"""demand(!memcmp(&allocator_table[1],&expected_factory_table,sizeof expected_factory_table),"complete direct source table immutable");""")
     text=allocator.item.substitutions(profile,CONTROL)
     subs={"TABLE_TYPE":"ITEM_Index" if b else "ITEM_table",
           "TABLE_PTR":"ITEM_gIndex" if b else "ITEM_tbl",
           "TABLE_SIZE":"ITEM_sIndexLen" if b else "ITEM_tblen",
           "FACTORY_SETUP":setup,
+          "FACTORY_TABLE_SNAPSHOT":("ITEM_Table expected_factory_table=factory_table[1];" if b else "ITEM_table expected_factory_table=allocator_table[1];"),
           "FACTORY_TABLE_ORACLE":oracle,
           "TABLE_KIND":"indirect" if b else "direct",
           "DATA_FIELDS":"ITEM_DATA_ENUM_MAX" if b else "ITEM_DATAINTNUM",
