@@ -32,13 +32,13 @@ class TerminalPreflightTests(unittest.TestCase):
 
     def test_source_routes_are_explicitly_not_runtime_closure(self):
         result = inspect_terminal("gavin", self.fixtures(), check_fingerprints=False)
-        self.assertEqual(result["original_profile_winsidе_in_WinFunc_condition"], "0")
+        self.assertEqual(result["original_profile_winside_in_WinFunc_condition"], "0")
         self.assertIn("BATTLE_Exit", result["body_checks"]["BATTLE_Finish"]["named_call_inventory"])
         self.assertNotIn("BATTLE_Finish", result["body_checks"]["BATTLE_Finish"]["named_call_inventory"])
 
     def test_profile_specific_winfunc_sentinel(self):
         result = inspect_terminal("bismarck", self.fixtures("bismarck"), check_fingerprints=False)
-        self.assertEqual(result["original_profile_winsidе_in_WinFunc_condition"], "-1")
+        self.assertEqual(result["original_profile_winside_in_WinFunc_condition"], "-1")
         with self.assertRaisesRegex(ValueError, "sentinel"):
             inspect_terminal("gavin", self.fixtures("bismarck"), check_fingerprints=False)
 

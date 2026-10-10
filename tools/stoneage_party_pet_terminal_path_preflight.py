@@ -77,7 +77,7 @@ def inspect_terminal(profile: str, bodies: dict[str, str], *, check_fingerprints
 
     return {
         "profile": profile,
-        "original_profile_winsidе_in_WinFunc_condition": sentinel,
+        "original_profile_winside_in_WinFunc_condition": sentinel,
         "finishset_mode_write": True,
         "reward_dispatch": ["BATTLE_GetDuelPoint", "BATTLE_GetExpGold"],
         "finish_named_routes": ["BATTLE_GetProfit", "BATTLE_Exit", "BATTLE_DeleteBattle"],
