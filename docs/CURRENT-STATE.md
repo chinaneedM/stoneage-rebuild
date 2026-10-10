@@ -10549,3 +10549,54 @@ reviewed discovery gate and its automated derived-report writeback is authorized
   full server/bootstrap/original executable ABI/JSS1999/Taiwan-v1 remain OPEN.
   Pressure2486=2465 capability closed+18 OPEN+3 historic UB, zero promotions.
   No engine/content phase transition; all earlier continuity preserved.
+
+
+## 2026-10-10 — Original real-header party/pet command INPUT and readiness REMOTE ACCEPTED
+
+- Fresh startup main8d76098c04a0733c0053e09ab5474ab8957562bc,
+  tree6e887b10270fcb4d6fd8d06ff18d63a761c89a82; remote branches, latest commit,
+  Actions, protocol and complete continuity re-read. Existing CURRENT-STATE
+  blobc56fcaa4db256295ff0fdb8ed716142669e19a0c retained verbatim1158791 bytes.
+- Accepted exact source/test/workflow/spec commit6080641f4db0ac90997691397c79b0091bab1d1a,
+  treea02114846400acd4f9cf22f4805eb199a7c61a2b,
+  branch agent/party-pet-command-input-r1-20261010.
+  Action38042176587/job114184444031 SUCCESS,10 steps,27 checks.
+  Original real-header Gavin1f90cb6/Bismarck999ffdf1, GNU99 O0/O2,
+  nonrecovering UBSan:16 complete Create/Init/input/wait/Exit/Delete encounters,
+  96 original parser calls,32 new partial-ready Loop dispatches, arena0,1,2,0.
+  Complete native trace bytes equal O0/O2 for each profile.
+- Full unchanged original BattleCommandDispach/checkErrorStatus/BATTLE_MpDown/
+  BATTLE_PetDefaultCommand bodies included. Original CHAR_CHECKCHARDATAINDEX,
+  _CHAR_getChar/CHAR_getUseName resolve actual parser display-name dependency;
+  pet_skill.h ordered before numeric pet_skillinfo macros. No original body
+  edited. Untaken AI/action/skill dependencies retain typed abort-on-call guards.
+- Inputs: invalidfd-1, pet-as-playerfd9, unknown?, leader attack H|F->target15,
+  malformed H|oops->-1, out-of-range H|14->-1, guardG, memberguardG,
+  W|FFFF on already prepared owned selected pet2. Original invalid/valid
+  PetDefaultCommand observed; valid pet becomes ATTACK/-1/C_OK. Exact complete
+  actor deltas and full arena/seven-actor partial-wait snapshots checked.
+  Unknown acknowledges status only, invalid sources emit nothing. Four status
+  acknowledgements per encounter; receive-time deltas Gavin3/Bismarck0.
+- Partial leader-ready and leader+pet-ready Loop keep turn0 until member input.
+  PartTime Gavin1120 (fixed clock1000+120), Bismarck retains armed1099.
+  Original CommandWait predicates then both TRUE, TimeOutCheck FALSE. All-ready
+  Loop NOT executed: no enemy ai_all/Battling, damage or actual round accepted.
+  Explicit descriptor adapter7/8/9 maps actors0/1/2 while inherited WORKFD7 for
+  both players remains; bounded transport collector, not real network routing.
+- Full native trace SHA256 Gavin c4686c94e3e3c351cedf3543b78c63ade07cfc8e40eef3acd25378c8e5d17f31,
+  Bismarck ec46405825ffaa8a26ab86c24fbad938d72de3590ae930addca2583ffc1763ba.
+  Independently downloaded artifact11665409109 ZIP1328 bytes SHA256
+  9a736b9a26bbc4fc1276458b7af8b3a95880679a191cd15381fe30a026981779;
+  sole derived report matches local bytes, SHA256
+  53b971a307ea50bc6d3207c8a8f0dc0f182a6b6bee1a8486ad79b5aca3540635.
+  Receipt STONEAGE-PARTY-PET-ORIGINAL-COMMAND-INPUT-ACCEPTANCE-R1.json;
+  spec STONEAGE-PARTY-PET-ORIGINAL-COMMAND-INPUT-R1.md.
+- Highest NEXT: original BATTLE_ai_all enemy/actor decision dependency closure
+  using this same real-header populated party/pet domain; then all-ready
+  original Command/Battling true action round, Finish, victory/profit as separate
+  gates. W valid skill/unprepared-pet fallback and timeout-positive/PartTime
+  expiration remain independent OPEN cases. Earlier synthetic-type full-action
+  witnesses cannot substitute for this composition. Natural transport/Lua,
+  equipment/reclaimer/full bootstrap/original executable ABI/JSS1999/Taiwan-v1
+  remain OPEN. Pressure2486=2465 capability closed+18 OPEN+3 historic UB,
+  zero promotions; no engine/content phase transition. Earlier records intact.

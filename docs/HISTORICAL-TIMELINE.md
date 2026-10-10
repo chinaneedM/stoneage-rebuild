@@ -2138,3 +2138,18 @@ retains0. All actor bytes and all arena bytes except that precisely asserted
 PartTime delta remain preserved. Fixed synthetic wall-clock1000 is explicit;
 PartTime expiration, actual actions/rewards, JSS1999/Taiwan-v1 are unproven.
 Receipt STONEAGE-PARTY-PET-ORIGINAL-COMMAND-WAIT-ACCEPTANCE-R1.json.
+
+
+## 2026-10-10 — Bounded original command admission does not establish historical combat
+
+- FACT under late descendant Gavin1f90cb6/Bismarck999ffdf1 original headers only:
+  complete original command parser accepts prepared attack/guard/default-pet
+  intents and rejects bounded invalid sources/targets; partial readiness retains
+  turn0. Original readiness predicates become TRUE without executing all-ready
+  Loop. GNU99 O0/O2 nonrecovering UBSan,16 encounters/96 parser calls,
+  Action38042176587 successful,27 checks; exact profile timer/receive deltas.
+- Synthetic descriptor mapping and original-header arena fixtures remain scoped
+  adapters. W|FFFF targets an already ready pet, not valid skill execution.
+  No original enemy AI/Battling/action round/Finish/profit or first-party
+  JSS1999/Taiwan-v1 equivalence. Full original bodies included does not imply
+  all their branches executed. No historical promotions; previous records intact.

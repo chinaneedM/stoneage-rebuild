@@ -1,0 +1,98 @@
+{
+  "gate": "STONEAGE_PARTY_PET_ORIGINAL_COMMAND_INPUT_R1",
+  "status": "REMOTE_ACCEPTED_BOUNDED_ADMISSION_READINESS",
+  "branch": "agent/party-pet-command-input-r1-20261010",
+  "tested_commit": "6080641f4db0ac90997691397c79b0091bab1d1a",
+  "tested_tree": "a02114846400acd4f9cf22f4805eb199a7c61a2b",
+  "base_main": "8d76098c04a0733c0053e09ab5474ab8957562bc",
+  "preserved_current_state_blob": "c56fcaa4db256295ff0fdb8ed716142669e19a0c",
+  "preserved_current_state_bytes": 1158791,
+  "github_actions": {
+    "run_id": 38042176587,
+    "job_id": 114184444031,
+    "conclusion": "success",
+    "steps_passed": 10,
+    "unit_tests_passed": 27,
+    "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/38042176587"
+  },
+  "native": {
+    "source_provenance": {
+      "gavin": {
+        "commit": "1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56",
+        "command_file_sha256": "dfeaaeab0f9524b5a6b4225cec206012ed9185962959827ba9335d26cbd89584"
+      },
+      "bismarck": {
+        "commit": "999ffdf1d220ec6666eb65339180689c9caf1876",
+        "command_file_sha256": "6169f18d883a0ecbc52e671677aeb263fa3139d37eea6e82134744cf1d11cf0b"
+      }
+    },
+    "original_command_body_sha256": {
+      "gavin": {
+        "BattleCommandDispach": "b657c20a6f8d45b98bc3ffa82eb55525104e25192d5afd998a3bba580e017715",
+        "checkErrorStatus": "1f319ad6c0f8a8d2ccc091c8ee81ba57be496d3c0ae54bc3ed9907c2ce5017fc",
+        "BATTLE_MpDown": "0d2fb36556e58ca070b48d621cdbfe6b4afd923f7ec97b6071f8b3e28f0165a8",
+        "BATTLE_PetDefaultCommand": "96186e4bc26a72c0ebe98001887bda08af7bcfdcae5a74308e9e1d6aeb4fa5f7"
+      },
+      "bismarck": {
+        "BattleCommandDispach": "e161f23bdf2317a3d01dcf271d31a51b8a4bba1d8a121fcf0a7a682171936802",
+        "checkErrorStatus": "e2644d8aca8fdab7e74607c296bad5762711c02ee6b9844f6f4aebebb44b446c",
+        "BATTLE_MpDown": "6df64db2564e78a2406aa45f99ce7c76a4b152a4e04cf8b547f5d0cfbbc210d7",
+        "BATTLE_PetDefaultCommand": "01b78d132e8024804071ffac4dac982c380e8ab772901e3c12f7479f7980f7b5"
+      }
+    },
+    "optimizations": [
+      "-O0",
+      "-O2"
+    ],
+    "compiler": "GNU99 original real headers; nonrecovering UBSan",
+    "encounters_per_profile_and_optimization": 4,
+    "total_encounters": 16,
+    "parser_calls_per_encounter": 6,
+    "total_parser_calls": 96,
+    "partial_waits_per_encounter": 2,
+    "total_new_partial_wait_dispatches": 32,
+    "pool_cursor": [
+      0,
+      1,
+      2,
+      0
+    ],
+    "partial_parttime": {
+      "gavin": 1120,
+      "bismarck": 1099
+    },
+    "acknowledgements_per_encounter": 4,
+    "receive_time_deltas": {
+      "gavin": 3,
+      "bismarck": 0
+    },
+    "sha256_traces": {
+      "gavin": "c4686c94e3e3c351cedf3543b78c63ade07cfc8e40eef3acd25378c8e5d17f31",
+      "bismarck": "ec46405825ffaa8a26ab86c24fbad938d72de3590ae930addca2583ffc1763ba"
+    },
+    "all_ready_loop_executed": false,
+    "round_executed": false
+  },
+  "artifact": {
+    "id": 11665409109,
+    "zip_sha256": "9a736b9a26bbc4fc1276458b7af8b3a95880679a191cd15381fe30a026981779",
+    "zip_independently_downloaded": true,
+    "zip_bytes": 1328,
+    "member": "stoneage-party-command-input.txt",
+    "report_sha256": "53b971a307ea50bc6d3207c8a8f0dc0f182a6b6bee1a8486ad79b5aca3540635",
+    "report_matches_local_bytes": true
+  },
+  "adapters": [
+    "synthetic fd7/8/9 -> actor0/1/2; inherited WORKFD7 on both players retained",
+    "fixed audit_time1000 independent of NowTime; inherited packet collectors only",
+    "unresolved original branch dependencies are typed abort-on-call closures"
+  ],
+  "limitations": [
+    "admission/readiness only: no enemy ai_all, Battling, action turn, Finish or profit",
+    "W|FFFF observes already prepared pet unchanged; no valid pet skill or unprepared-pet packet fallback",
+    "MpDown and error-status branches included with original bodies; not all branches execute",
+    "PartTime expiration and positive NowTime timeout remain OPEN",
+    "not actual network/Lua/server bootstrap/original executable ABI or JSS1999/Taiwan-v1 historical equivalence",
+    "pressure2486=2465 capability closed+18 OPEN+3 historical UB; zero promotions"
+  ]
+}

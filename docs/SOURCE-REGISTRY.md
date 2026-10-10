@@ -5369,3 +5369,24 @@ Repository evidence:
   sole source-free report equals local bytes. Original AI/actions, expired
   timeout, Finish/rewards/transport/Lua/JSS1999/Taiwan-v1 not established.
   Receipt STONEAGE-PARTY-PET-ORIGINAL-COMMAND-WAIT-ACCEPTANCE-R1.json.
+
+
+## 2026-10-10 — Original real-header party/pet command-input R1 derived witness
+
+- tools/stoneage_party_pet_command_input_audit.py preserves full original
+  battle_command.c parser/helper bodies plus original display-name accessors;
+  pinned Gavin1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56,
+  Bismarck999ffdf1d220ec6666eb65339180689c9caf1876. Sourcefile/function hashes
+  retained in derived report/acceptance receipt. No original source/assets added.
+- Tested commit6080641f4db0ac90997691397c79b0091bab1d1a, treea02114846400acd4f9cf22f4805eb199a7c61a2b,
+  Action38042176587/job114184444031 SUCCESS,27 checks, O0/O2 UBSan,
+  16 encounters/96 parser calls, byte-equal complete native traces.
+- Artifact11665409109 independently downloaded ZIP SHA256
+  9a736b9a26bbc4fc1276458b7af8b3a95880679a191cd15381fe30a026981779;
+  sole stoneage-party-command-input.txt equals local report SHA256
+  53b971a307ea50bc6d3207c8a8f0dc0f182a6b6bee1a8486ad79b5aca3540635.
+  research/recovered/STONEAGE-PARTY-PET-ORIGINAL-COMMAND-INPUT-ACCEPTANCE-R1.json
+  and specs/STONEAGE-PARTY-PET-ORIGINAL-COMMAND-INPUT-R1.md define limits.
+- Capability FACT only within bounded late-source admission/readiness fixture.
+  Original AI/action/round/Finish/profit, real network/Lua/full server ABI and
+  JSS1999/Taiwan-v1 remain OPEN. No pressure promotion or engine phase change.
