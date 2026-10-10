@@ -11219,3 +11219,54 @@ reviewed discovery gate and its automated derived-report writeback is authorized
   unique-code/time branches, positive gold, natural EXP/RNG/config, special pet
   limits/equipment, watchers/callbacks/network/Lua/ABI and early executable
   JSS1999/Taiwan-v1 equivalence remain OPEN.
+
+
+## 2026-10-11 — Original shared reward references, duplicates and multiple items REMOTE ACCEPTED (bounded)
+
+- Fresh main94ae222892d48a2aa1643d395fe1ef69eb3fa8ef,
+  tree7d93bebc4afe56c5dbdbc7f6708e2e558a00dca4. Entire predecessor CURRENT-STATE
+  blobe262857c654afb43498a819031e921fdd6de7c6e,1205791 bytes preserved verbatim, along with all earlier records.
+- Branch agent/party-pet-reward-ownership-r1-20261011; exact tested input
+  ee8601402fd4e8841157b9571fc735880e4a5d2c,
+  tree41c34ce8279ce617692bcc93f3817d9a93642f82. Action38067486588/
+  job114257981933 SUCCESS,11 steps/51 regressions.16 new actual original
+  second Loop Finish encounters plus16 independent retained R1 item encounters.
+  Pinned Gavin1f90cb6/Bismarck999ffdf1 original headers/functions/escape table,
+  O0/O2 nonrecovering UBSan, whole output bytes equal per profile.
+- Full leader with member carried250 twice: original release retains item250,
+  owner1/object-1 and both member slots; exact two carried warnings+one duplicate
+  warning. Full leader with member pool250 only: original carried-only scan frees
+  item250/owner-1, live counter decremented, while member pool reference250 remains
+  dangling. This is bounded adversarial late-source behavior, not first-release
+  or naturally reachable gameplay proof. No repair or modern ownership decision.
+- Empty leader duplicate rewards250/250: original add accepts both, actual slots
+  9/10 alias same live item/owner0/object-1, no live-count increase, success logs2,
+  grouped item-data update1. Empty leader distinct250/251: exact slots9/10 and
+  owner0/object-1; first name R plus comma/pipe/backslash/newline serializes literal
+  R\c\z\y\n|Second||. Complete reward texts preserve original EXP/player/pet
+  fields and empty member item fields. Bismarck additional sendItemDataOne calls
+  ordered9,10 twice; Gavin0. Prepared IDs731/732 are not historical master data.
+- Entire256 original item records, seven actors including carried/pool fields
+  and entire BATTLE byte oracles PASS. Only explicit item/ownership/profile
+  upgrade/Exit changes admitted. Player/pet upgrades and nonupgrade controls,
+  automatic enemy/arena release, total1->0, original cursor0,1,2,0 and owned-pet/
+  world retention preserved. Typed log/transport are synthetic presentation.
+  Strict warning varargs collector wraps unchanged original release diagnostic
+  output only; inherited diagnostic macro restored outside it; body hashes checked.
+- Artifact11675600547 independently downloaded ZIP16085 bytes SHA256
+  2f2801d80cc7836eee5258216a5f9b7f313aee075f7e421ca67dd9480f3901d7.
+  New report29043 bytes SHA2565b2c9365b5cf053c8d4c490867f7f56d268f571f4a5bad20132e59e857093992;
+  retained R1 report27953 bytes SHA256730e5ab785cb8bd116dcb977dd9025b9f70c71ddb621a47d00cc132723323082;
+  both equal local bytes. Spec/receipt STONEAGE-PARTY-PET-REWARD-OWNERSHIP-*R1.
+  No original game source/assets committed. Pressure2486=2465 bounded closed+
+  18 OPEN+3 historical UB, zero promotions, no modern-engine phase transition.
+- Highest NEXT: actual original _ITEM_initExistItemsOne with original profile
+  item table-ID validation, static Sindex cursor and whole-item initialization/
+  pool reuse oracles. Close original ITEM_constructFunctable dependencies;
+  Bismarck active ITEM_setLUAFunction fallback/complete empty Lua table must be
+  retained, not stubbed. Exact source-only hashes recorded in receipt; these
+  initializer/table/fallback functions are NOT runtime accepted by this gate.
+  Then natural reward/drop allocation from justified source/data/RNG inputs.
+  Cross-owner empty transfer, partial inventory/more rewards, unique-code/time,
+  natural configuration/EXP, gold, special pet limits/equipment, callbacks/watchers/
+  network/Lua/ABI and early JSS1999/Taiwan-v1 executable identity stay OPEN.

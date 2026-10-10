@@ -1,6 +1,8 @@
 # Original terminal reward ownership and multiple item serialization — R1
 
-Status: candidate pending exact remote acceptance. Pinned late-source Gavin
+Status: REMOTE ACCEPTED bounded, Action38067486588 at ee860140.51 regression
+checks/11 workflow steps,32 native encounters including retained R1 matrix.
+Both artifact reports independently downloaded and equal local bytes. Pinned late-source Gavin
 `1f90cb6` and Bismarck `999ffdf1`; no early JSS1999/Taiwan-v1 equivalence.
 
 The gate preserves the accepted original-header battle and item domains,

@@ -5558,3 +5558,18 @@ ec980a57ad0c813d8f1e0a888c2eed8af1ae80d2ec31041ef8d53752ade26450;
 report27953 bytes SHA256730e5ab785cb8bd116dcb977dd9025b9f70c71ddb621a47d00cc132723323082
 equals local. Explicit prepared unattached item/empty/full/member/stale inputs;
 no original source/assets committed and no historical/capability promotion.
+
+
+## 2026-10-11 — Original shared reward ownership derived witness R1
+
+Action38067486588/job114257981933 SUCCESS atee860140,51 tests/11 steps.
+Tool/spec/receipt STONEAGE-PARTY-PET-REWARD-OWNERSHIP-R1 retain exact prior
+original item-function/escape-table manifest and complete ITEM/Char/BATTLE layouts.
+Strict original warning-output adapter does not change release scan or fields.
+Artifact11675600547 ZIP16085 bytes independently verified SHA256
+2f2801d80cc7836eee5258216a5f9b7f313aee075f7e421ca67dd9480f3901d7;
+new report29043 bytes SHA2565b2c9365b5cf053c8d4c490867f7f56d268f571f4a5bad20132e59e857093992;
+retained report27953 bytes SHA256730e5ab785cb8bd116dcb977dd9025b9f70c71ddb621a47d00cc132723323082.
+Both reports equal local. Source-only next initializer/table/function/Lua-fallback
+hashes distinguished from executed terminal evidence. No original source/assets
+vendored, natural drop provenance or historical/capability promotion.

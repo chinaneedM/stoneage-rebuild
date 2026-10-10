@@ -2259,3 +2259,15 @@ player/pet levels/automatic release verified. Stale inactive carried slot is
 preserved by Gavin, reclaimed by Bismarck. Prepared item250/ID731 is not
 historical master-data/drop evidence; transport/logs synthetic. No first-release
 identity or pressure promotion; shared ownership and natural allocation OPEN.
+
+
+## 2026-10-11 — Late-source reward reference edge behaviors and escaping
+
+Bounded FACT for Gavin1f90cb6/Bismarck999ffdf1 prepared adversarial fixtures:
+Action38067486588 verifies original terminal carried-reference retention,
+pool-only dangling reference after release, duplicate award slot aliases and
+distinct multi-item comma/pipe/backslash/newline serialization.16 new plus16
+retained native O0/O2 UBSan encounters, entire item/actor/arena oracles and
+automatic release. Not natural reachability or JSS1999/Taiwan-v1 identity.
+These behaviors are recorded without repairing source or deciding modern
+ownership. No pressure/historical promotion; original allocation remains OPEN.
