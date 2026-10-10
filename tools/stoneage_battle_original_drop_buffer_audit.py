@@ -33,8 +33,10 @@ MORE=r"""
    demand(BATTLE_No2Index(battle_at,5)==2,
           "original pet attack-list battle ticket resolves the pet actor");
   }else{
+   demand(ITEM_SIZE>=7,"original eight-slot item pool can validate synthetic slots4..6");
    for(int j=0;j<3;j++){
-    int id=240+j;
+    int id=4+j;
+    demand(reward_items[id].use==0,"synthetic pending preexisting item slot previously unused");
     arena->Side[0].Entry[0].getitem[j]=id;
     reward_items[id].use=1;
     reward_items[id].ITEM_FIELD.data[ITEM_ID]=900+j;
@@ -57,15 +59,15 @@ MORE=r"""
    expected_pool[3].use=0;expected_pool[3].ITEM_FIELD.workint[ITEM_WORKCHARAINDEX]=-1;expected_draws=2;
   }else{
    expected_arena.Side[0].Entry[0].getitem[1]=3;
-   expected_pool[241].use=0;expected_draws=3;
+   expected_pool[5].use=0;expected_draws=3;
   }
   if(scenario==2){
    int bagrefs=0;
    for(int actor=0;actor<2;actor++)for(int j=0;j<CHAR_MAXITEMHAVE;j++)
-    if(CHAR_getItemIndex(actor,j)==241)bagrefs++;
-   int maydelete=BATTLE_ItemDelCheck(241);
-   printf("DROP_BUFFER_OLD_ITEM_GUARD|item=241|bag_refs=%d|deletion_allowed=%d|item_use=%d|owner=%d\\n",
-          bagrefs,maydelete,reward_items[241].use,reward_items[241].ITEM_FIELD.workint[ITEM_WORKCHARAINDEX]);
+    if(CHAR_getItemIndex(actor,j)==5)bagrefs++;
+   int maydelete=BATTLE_ItemDelCheck(5);
+   printf("DROP_BUFFER_OLD_ITEM_GUARD|item=5|bag_refs=%d|deletion_allowed=%d|item_use=%d|owner=%d\\n",
+          bagrefs,maydelete,reward_items[5].use,reward_items[5].ITEM_FIELD.workint[ITEM_WORKCHARAINDEX]);
    fflush(stdout);
   }
   rng_mode=scenario==2?1:0;rng_count=0;
@@ -133,7 +135,7 @@ def main():
         "REAL_HEADER_FINISH_DISPATCH|","FINISH_RS_OBS|",
         "REAL_HEADER_ITEM_FACTORY|","REAL_HEADER_ENEMY_POSITIVE_DROP|",
         "REAL_HEADER_DROP_TICKET|","REAL_HEADER_DROP_BUFFER|"))
-    print("BOUNDARY|real original attacker list pet redirect/3 pending slots original destroy or replace with synthetic pending 240..242; no actual Finish transfer of newly spawned item, early original historical equivalence unproven")
+    print("BOUNDARY|real original attacker list pet redirect/3 pending slots original destroy or replace with synthetic pending 4..6; no actual Finish transfer of newly spawned item, early original historical equivalence unproven")
     print("RESOLUTION|ORIGINAL_REAL_HEADER_DROP_BUFFER_BOUNDED_PASS")
 
 if __name__=="__main__":main()
