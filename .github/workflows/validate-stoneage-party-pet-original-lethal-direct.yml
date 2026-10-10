@@ -1,0 +1,48 @@
+name: Validate StoneAge original party pet direct lethal physical hit
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/validate-stoneage-party-pet-original-lethal-direct.yml"
+      - "tools/stoneage_party_pet_original_lethal_direct_audit.py"
+      - "tests/test_stoneage_party_pet_original_lethal_direct.py"
+      - "tools/stoneage_party_pet_original_attack_audit.py"
+permissions:
+  contents: read
+jobs:
+  original-direct-lethal:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - name: Lethal fixture tests and predecessors
+        run: python -m unittest -v tests.test_stoneage_party_pet_original_lethal_direct tests.test_stoneage_party_pet_original_attack tests.test_stoneage_party_pet_original_round
+      - name: Recover original pinned source profiles
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import subprocess
+          from pathlib import Path
+          from tools.stoneage_party_pet_original_attack_audit import PINNED
+          repos={"gavin":"gavinlinasd/StoneAge","iris":"iriselia/StoneAge","bismarck":"BismarckDD/stoneage"}
+          for p,sha in PINNED.items():
+              d=Path("/tmp/stoneage-original-lethal")/p
+              subprocess.run(["git","init",str(d)],check=True)
+              subprocess.run(["git","-C",str(d),"remote","add","origin","https://github.com/"+repos[p]+".git"],check=True)
+              subprocess.run(["git","-C",str(d),"fetch","--depth","1","origin",sha],check=True)
+              subprocess.run(["git","-C",str(d),"checkout","--detach","FETCH_HEAD"],check=True)
+          PY
+      - name: Run original physical direct lethal hit and existing control rounds
+        run: |
+          set -euo pipefail
+          python -m tools.stoneage_party_pet_original_lethal_direct_audit --gavin-dir /tmp/stoneage-original-lethal/gavin --iris-dir /tmp/stoneage-original-lethal/iris --bismarck-dir /tmp/stoneage-original-lethal/bismarck > /tmp/stoneage-original-lethal.txt
+          cat /tmp/stoneage-original-lethal.txt
+          grep -Fx 'RESOLUTION|ORIGINAL_REAL_HEADER_PARTY_PET_DIRECT_LETHAL_BOUNDED_PASS' /tmp/stoneage-original-lethal.txt
+          test "$(grep -c '^ACTUAL|.*REAL_HEADER_LETHAL_DIRECT|' /tmp/stoneage-original-lethal.txt)" -eq 8
+      - name: Upload derived observations only
+        uses: actions/upload-artifact@v4
+        with:
+          name: stoneage-original-lethal-direct
+          path: /tmp/stoneage-original-lethal.txt

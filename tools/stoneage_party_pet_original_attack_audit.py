@@ -109,7 +109,8 @@ def attack_native(profile,source,battle,event,root):
     native=native.replace(anchor,extra+anchor,1)
     return native.replace(ROUND_OBSERVATIONS,ROUND_OBSERVATIONS+ATTACK_OBSERVATIONS.replace("ENTRY_FIELD","char_index" if profile=="bismarck" else "charaindex"),1),has_lua
 
-def main():
+def main(native_builder=None, extra_markers=()):
+    native_builder=native_builder or attack_native
     parser=argparse.ArgumentParser()
     for p in PINNED:parser.add_argument("--"+p+"-dir",type=Path,required=True)
     args=parser.parse_args()
@@ -139,7 +140,7 @@ def main():
         loader=identity["accepted_pool_identity"]["accepted_entry_identity"]["accepted_ownership_identity"]["accepted_loader_identity"]
         templates,enemies=loaded_oracle(profile,loader,*[p.read_bytes() for p in paths],32,32)
         selected=eligible(loader,templates,enemies,rest[-1])[0]
-        native,has_lua=attack_native(profile,source,battle,event,roots[profile])
+        native,has_lua=native_builder(profile,source,battle,event,roots[profile])
         traps=None
         runs=[]
         with tempfile.TemporaryDirectory(prefix="stoneage-original-attack-round-") as tmp:
@@ -177,7 +178,7 @@ def main():
         for name,body in originals.items():
             print(f"ORIGINAL_FUNCTION|{profile}|{name}|preprocessed_body_sha256={hashlib.sha256(body.encode()).hexdigest()}",flush=True)
         for row in runs[0].splitlines():
-            if row.startswith(("REAL_HEADER_ATTACK_ROUND|","REAL_HEADER_GUARD_ROUND|")):print("ACTUAL|"+profile+"|"+row,flush=True)
+            if row.startswith(("REAL_HEADER_ATTACK_ROUND|","REAL_HEADER_GUARD_ROUND|")+tuple(extra_markers)):print("ACTUAL|"+profile+"|"+row,flush=True)
     print("BOUNDARY|full_original_Battling;controlled_single_player_attack_guarded_enemy;no_terminal_Finish",flush=True)
     print("OPEN|death_terminal_Finish_profit_natural_AI_network_Lua",flush=True)
     print("RESOLUTION|ORIGINAL_REAL_HEADER_PARTY_PET_ATTACK_ROUND_BOUNDED_PASS",flush=True)
