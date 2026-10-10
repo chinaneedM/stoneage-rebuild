@@ -59,6 +59,14 @@ def lethal_round_native(profile,source,battle,event,root):
     )
     if native.count(anchor)!=1:
         raise ValueError("accepted attack round driver drift")
+    # Lethal Loop enters original AddProfit/AddExpItem; preserve the original
+    # narrow CHAR_setMaxExp function body, not a fabricated level-up stub.
+    char_source=attack.pp_file(profile,root,attack.LAYOUTS[profile]/"char/char_base.c")
+    original_set_max_exp=attack.definition(char_source,"CHAR_setMaxExp")
+    entry="int main(int argc,char **argv){"
+    if native.count(entry)!=1:
+        raise ValueError("original native main entry drift")
+    native=native.replace(entry,original_set_max_exp+"\\n"+entry,1)
     return native.replace(anchor,anchor+LETHAL_ROUND_OBSERVATIONS.replace(
         "ENTRY_FIELD","char_index" if profile=="bismarck" else "charaindex",
     ),1),has_lua
