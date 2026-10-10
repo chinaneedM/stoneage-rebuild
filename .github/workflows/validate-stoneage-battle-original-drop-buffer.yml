@@ -43,7 +43,7 @@ jobs:
           python -m tools.stoneage_battle_original_drop_buffer_audit --gavin-dir /tmp/stoneage-battle-original-drop-buffer-r1/gavin --iris-dir /tmp/stoneage-battle-original-drop-buffer-r1/iris --bismarck-dir /tmp/stoneage-battle-original-drop-buffer-r1/bismarck > /tmp/stoneage-battle-original-drop-buffer-r1.txt
           cat /tmp/stoneage-battle-original-drop-buffer-r1.txt
           grep -Fx 'RESOLUTION|ORIGINAL_REAL_HEADER_DROP_BUFFER_BOUNDED_PASS' /tmp/stoneage-battle-original-drop-buffer-r1.txt
-          test "$(grep -c '^ACTUAL|.*REAL_HEADER_DROP_BUFFER|' /tmp/stoneage-battle-original-drop-buffer-r1.txt)" -eq 2
+          test "$(grep -c '^ACTUAL|.*REAL_HEADER_DROP_BUFFER|' /tmp/stoneage-battle-original-drop-buffer-r1.txt)" -eq 6
       - name: Preserve original item factory independently
         run: |
           set -euo pipefail
