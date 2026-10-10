@@ -23,7 +23,7 @@ class OriginalFinishDispatchTests(unittest.TestCase):
    b="static int BATTLE_Finish(int b){return BATTLE_GetProfit(b,0,0);}"
    p="int BATTLE_GetProfit(int b,int s,int n){return BATTLE_GetExpGold(b,s,n);}"
    e="int BATTLE_GetExpGold(int b,int s,int n){return 0;}"
-   with patch("tools.stoneage_party_pet_original_finish_dispatch_audit.lethal.lethal_round_native",return_value=("prefix"+old+"int main(int argc,char **argv){",False)),patch("tools.stoneage_party_pet_original_finish_dispatch_audit.attack.definition",side_effect=lambda src,name:{"BATTLE_Finish":b,"BATTLE_GetProfit":p,"BATTLE_GetExpGold":e}[name] if src=="original" else (_ for _ in ()).throw(ValueError("missing"))):
+   with patch("tools.stoneage_party_pet_original_finish_dispatch_audit.lethal.lethal_round_native",return_value=("prefix"+old+"int BATTLE_Loop(void){return 0;}\nint main(int argc,char **argv){",False)),patch("tools.stoneage_party_pet_original_finish_dispatch_audit.attack.definition",side_effect=lambda src,name:{"BATTLE_Finish":b,"BATTLE_GetProfit":p,"BATTLE_GetExpGold":e}[name] if src=="original" else ("int BATTLE_Loop(void){return 0;}" if name=="BATTLE_Loop" else (_ for _ in ()).throw(ValueError("missing")))):
     code,_=finish_native(profile,"","original","","")
    for body in (b,p,e):self.assertIn(body,code)
    self.assertIn("ORIGINAL_FINISH_NEXT_LOOP|",code)
