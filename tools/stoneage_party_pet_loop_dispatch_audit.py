@@ -51,7 +51,10 @@ def code(profile, source, battle, event):
             # function. Do not shadow it; the INIT-only mode oracle must
             # ensure it is never dispatched.
             continue
-        guards.append(f"static int {name}(int battleindex"+(",int side" if name=="BATTLE_CountAlive" else "")+")"+
+        # Actual header declares watcher / FinishSet functions with external
+        # linkage; Command/Finish/Stop are source-local static dispatch arms.
+        linkage="static int" if name in ("BATTLE_Command","BATTLE_Finish","BATTLE_Stop") else "int"
+        guards.append(f"{linkage} {name}(int battleindex"+(",int side" if name=="BATTLE_CountAlive" else "")+")"+
                       '{(void)battleindex;'+("(void)side;" if name=="BATTLE_CountAlive" else "")+
                       f'fputs("UNREACHED_ORIGINAL_LOOP|{name}\\n",stderr);abort();return -1;'+"}")
     anchor="int main(int argc,char **argv){"
