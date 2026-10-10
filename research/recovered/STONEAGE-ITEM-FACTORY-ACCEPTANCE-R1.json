@@ -1,0 +1,53 @@
+{
+  "status": "REMOTE_ACCEPTED_BOUNDED",
+  "date": "2026-10-11 Asia/Shanghai",
+  "baseline_main": "b15d12e217f329478fb554804c57b82b3e35298f",
+  "baseline_tree": "a0ae04a523c55c03a82ebda20fca6ecff1738a05",
+  "preserved_current_state_blob": "e79ba9c7b7bd4da9a42974de68a3e1872569b3a8",
+  "branch": "agent/item-factory-runtime-r1-20261011",
+  "tested_commit": "8a966e43e40a0e5d01b4b9451cebd146108c276f",
+  "tested_tree": "02b38578f551a160dede94e4c1850a8ddf690f98",
+  "action": 38069905072,
+  "job": 114265027378,
+  "conclusion": "success",
+  "unit_tests": 34,
+  "native_factory_encounters": 2,
+  "native_profiles": [
+    "gavin",
+    "bismarck"
+  ],
+  "original_functions": [
+    "ITEM_makeItem",
+    "ITEM_makeItemAndRegist"
+  ],
+  "field_draws_per_original_make": 66,
+  "invalid_id_random_draws": 0,
+  "profile_semantics": {
+    "gavin": {
+      "table": "ITEM_tbl[ID]",
+      "leaklevel": 1
+    },
+    "bismarck": {
+      "table": "ITEM_gTable[ITEM_gIndex[ID].index]",
+      "leaklevel": 0
+    }
+  },
+  "native_factory_whole_item_actor_arena_and_table_oracles": true,
+  "retained_allocator_native_rerun": true,
+  "source_hashes": "STONEAGE-ITEM-FACTORY-SOURCE-R1.json",
+  "evidence": "post-era descendant original C functions; bounded synthetic item table; not early v1 or 1999 original binary equivalent",
+  "artifact": {
+    "id": 11676965028,
+    "zip_bytes": 17437,
+    "sha256": "6bcd565a47ed87637c0fb650169a24c469ea60dfd044faa00d0c05b2fb9b75aa"
+  },
+  "pressure": {
+    "total": 2486,
+    "bounded_closed": 2465,
+    "open": 18,
+    "historical_ub": 3,
+    "promotions": 0
+  },
+  "natural_drop_allocation_executed": false,
+  "next": "ENEMY_createEnemy positive ITEMPROB -> natural make/register -> enemy carried -> BATTLE_AddExpItem -> real Finish, with justified master and RNG."
+}

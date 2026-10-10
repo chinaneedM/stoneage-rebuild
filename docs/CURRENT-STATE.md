@@ -11330,3 +11330,49 @@ reviewed discovery gate and its automated derived-report writeback is authorized
   owner transfers/partial inventory, positive gold/natural EXP/config, Lua/
   network/watchers/server ABI and JSS1999/Taiwan-v1 identity remain OPEN.
   No modern-engine phase transition or first-release historical promotion.
+
+## 2026-10-11 — Original ITEM factory + register REMOTE ACCEPTED (bounded)
+
+- Fresh baseline main b15d12e217f329478fb554804c57b82b3e35298f, tree a0ae04a523c55c03a82ebda20fca6ecff1738a05.
+  Predecessor complete docs/CURRENT-STATE.md blob e79ba9c7b7bd4da9a42974de68a3e1872569b3a8
+  (1207571 decoded characters; 1213921 bytes per remote metadata) is preserved as a byte-identical
+  prefix. All older chronology, priority history and evidence distinctions remain in place.
+- Tested branch agent/item-factory-runtime-r1-20261011, exact accepted input
+  8a966e43e40a0e5d01b4b9451cebd146108c276f, tree 02b38578f551a160dede94e4c1850a8ddf690f98.
+  GitHub Action 38069905072 / job 114265027378 SUCCESS (all steps).
+  34 Python source-mutation/retained regressions PASS. Pinned public original
+  Gavin 1f90cb6 and Bismarck 999ffdf1 sources recovered transiently;
+  unchanged original ITEM_makeItem and ITEM_makeItemAndRegist function body
+  hashes verified against STONEAGE-ITEM-FACTORY-SOURCE-R1.json.
+- Native source factory oracles run under the preceding full second Loop/Finish
+  witness with GNU99 O0/O2 nonrecovering UBSan and identical per-profile
+  captured outputs. One bounded original factory registration encounter per
+  Gavin/Bismarck profile, each with two direct generation trials, exact
+  66 per-invocation integer RAND calls including zero-width ranges and
+  deterministic zero/positive random controls; invalid ID makes no writes,
+  uses no RNG and returns failure. Bounded artificial valid ID1 source
+  table holds explicit random widths, not recovered historical master data.
+- Gavin uses direct ITEM_tbl[ID] and sets ITEM_LEAKLEVEL=1;
+  Bismarck uses ITEM_gIndex[ID].index into ITEM_gTable and sets
+  ITEM_LEAKLEVEL=0. Original factory returns full independent ITEM_Item
+  byte oracle; make-and-register passes through the previously accepted
+  original initializer and returns index2. Whole256 item-pool,
+  seven-actor/BATTLE oracles, complete source-table snapshot immutability,
+  and original static allocator cursor behavior PASS.
+- Independent preceding item-allocator Action gate retained and rerun in
+  the same green job (RESOLUTION ORIGINAL_REAL_HEADER_ITEM_ALLOCATOR_BOUNDED_PASS).
+  Original reward ownership, player/pet positive upgrade, terminal release
+  witnesses inherited; none promoted to early-v1 direct server facts.
+- Derivation-only artifact 11676965028, ZIP17437 bytes,
+  SHA256 6bcd565a47ed87637c0fb650169a24c469ea60dfd044faa00d0c05b2fb9b75aa.
+  No original proprietary source/client bytes added to the repository.
+  Pressure remains 2486=2465 bounded closed+18 OPEN+3 historical UB,
+  zero promotions; modern-engine phase does not begin.
+- Highest NEXT: actual pinned original ENEMY_createEnemy nonzero item
+  probability with justified 10 ITEM/ITEMPROB master rows/RAND inputs,
+  ITEM_makeItemAndRegist, enemy carried object and owner state. Then
+  BATTLE_AddExpItem ticket allocation/overflow, ownership/recipient
+  transfer, and original second Loop/Finish/inventory outcome with whole
+  original actor/arena/item oracles. Natural master tables, item callbacks/
+  unique-code/time, positive gold/EXP/config, network/Lua/watchers and
+  JSS 1999/Taiwan v1.0 server equivalence remain OPEN.
