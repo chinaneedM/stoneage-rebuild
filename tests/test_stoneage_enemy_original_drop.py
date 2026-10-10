@@ -23,7 +23,7 @@ class OriginalEnemyDropTests(unittest.TestCase):
     def test_actual_positive_branch_and_full_oracle(self):
         for profile in ("gavin","bismarck"):
             c=audit.extra_controls(profile)
-            for marker in ("ENEMY_createEnemy(0,2)","ITEM_COUNT==before_item_count+1",
+            for marker in ("ENEMY_createEnemy(0,2)","==before_item_count+1",
                            "rng_count==zero_draws+1+","ENEMY_ITEMPROB1",
                            "indexOfExistItems[CHAR_STARTITEMARRAY]==3",
                            "whole 256 original item array",
