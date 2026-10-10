@@ -1,0 +1,30 @@
+{
+  "status": "SOURCE_PIN_ONLY_UNTIL_ACTION_SUCCESS",
+  "source_profiles": [
+    "gavin",
+    "bismarck"
+  ],
+  "source_functions_sha256": {
+    "gavin": {
+      "ENEMY_createEnemy": "a0a9732752729e5be378faf7341c9812d9dbd2ccab05eb386070b91b113508f7"
+    },
+    "bismarck": {
+      "ENEMY_createEnemy": "fd3ad864fbf1a8bbbed7031f762904ed60a21d5220bfd97626c06d4fdbdd7502"
+    }
+  },
+  "tested_synthetic_inputs": {
+    "enemy_array": 0,
+    "level": 2,
+    "number_of_master_pairs": 10,
+    "zero_probability_case": "all ten probabilities are 0",
+    "positive_probability_case": "first item ID 1 has probability 1000; all others 0",
+    "item_master": "bound synthetic ID 1 table used by the accepted item factory",
+    "rng": "original RAND macro fed fixed zero audit_rand; original factory consumes 66 integer field draws",
+    "controls": "complete 256-item pool, all unaffected actors, battle arena, immutable source table"
+  },
+  "limitations": [
+    "Master pairs are constructed, not a historically recovered gameplay drop table.",
+    "Actual original ENEMY_createEnemy and ITEM_makeItemAndRegist are a later source descendant, not early Taiwan-v1 or JSS-1999 proof.",
+    "Natural rarity, miss thresholds, weapon equipment, inventory transfer, combat reward tickets and callbacks are independent open gates."
+  ]
+}
