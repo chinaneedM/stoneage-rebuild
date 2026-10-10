@@ -22,19 +22,19 @@ BODY=r"""
 #include <execinfo.h>
 #include <signal.h>
 #include <unistd.h>
-static void fataltrace(int sig){void *pc[32];int n=backtrace(pc,32);fprintf(stderr,"ABORT_TRACE|signal=%d|frames=%d\n",sig,n);backtrace_symbols_fd(pc,n,2);_Exit(130+sig);}
+static void fataltrace(int sig){void *pc[32];int n=backtrace(pc,32);dprintf(2,"ABORT_TRACE|signal=%d|frames=%d\n",sig,n);backtrace_symbols_fd(pc,n,2);_Exit(130+sig);}
 static void demand(int truth,const char *name){
- if(!truth){fprintf(stderr,"REAL_HEADER_FAIL|%s\n",name);abort();}
+ if(!truth){dprintf(2,"REAL_HEADER_FAIL|%s\n",name);abort();}
 }
 int main(int argc,char **argv){
  signal(SIGABRT,fataltrace);signal(SIGSEGV,fataltrace);
- fprintf(stderr,"TRACE|MAIN_ENTER\n");
+ write(2,"TRACE|MAIN_ENTER\n",sizeof("TRACE|MAIN_ENTER\n")-1);
  demand(argc==3&&sizeof(void*)==8&&sizeof(int)==4,"host");
 SETUP
- fprintf(stderr,"TRACE|MEM_INIT\n");
+ write(2,"TRACE|MEM_INIT\n",sizeof("TRACE|MEM_INIT\n")-1);
  demand(memInit(),"memory init");
  demand(ENEMYTEMP_initEnemy(argv[1])&&ENEMY_initEnemy(argv[2]),"master loaders");
- fprintf(stderr,"TRACE|ARENA\n");
+ write(2,"TRACE|ARENA\n",sizeof("TRACE|ARENA\n")-1);
  demand(BATTLE_initBattleArray(3),"battle arena");
  MAP_map=controlled_map;MAP_idtblsize=1;
  JUMP
@@ -43,7 +43,7 @@ SETUP
  initCharCounter[0]=(INITCHARCOUNTER){0,0,2};
  initCharCounter[1]=(INITCHARCOUNTER){2,2,4};
  initCharCounter[2]=(INITCHARCOUNTER){4,4,7};
- fprintf(stderr,"TRACE|WORLD_OBJECTS\n");
+ write(2,"TRACE|WORLD_OBJECTS\n",sizeof("TRACE|WORLD_OBJECTS\n")-1);
  demand(initObjectArray(2),"world objects");
  for(int i=0;i<2;i++){
   int c,o;demand(CHAR_createCharacter(CHAR_TYPEPLAYER,1,1,1,0,&c,&o,1)&&c==i&&o==i,"world players");
@@ -87,7 +87,7 @@ SETUP
  pet.workint[CHAR_WORKBATTLEINDEX]=-1;
  pet.workint[CHAR_WORKGETEXP]=777;
  for(int i=0;i<CHAR_MAXPETHAVE;i++)pet.unionTable.indexOfPet[i]=-1;
- fprintf(stderr,"TRACE|PET_ALLOC\n");
+ write(2,"TRACE|PET_ALLOC\n",sizeof("TRACE|PET_ALLOC\n")-1);
  int petIndex=CHAR_initCharOneArray(&pet);
  demand(petIndex==2,"real pet allocator index");
  slots[0].unionTable.indexOfPet[0]=petIndex;
@@ -114,10 +114,10 @@ SETUP
   for(int k=0;k<3;k++)encounter_table[k]=array;
   encounter_table[1]=-1;
   battle_at=BATTLE_searchCnt%3;
-  fprintf(stderr,"TRACE|CREATE\n");
+  write(2,"TRACE|CREATE\n",sizeof("TRACE|CREATE\n")-1);
  int result=BATTLE_CreateVsEnemy(0,0,-1);
  fprintf(stderr,"TRACE|CREATE_RETURN|%d\\n",result);
-  if(result)fprintf(stderr,"CREATE_RETURN|%d\n",result);
+  if(result)dprintf(2,"CREATE_RETURN|%d\n",result);
   demand(result==0,"real battle create");
   BATTLE *battle=&BattleArray[battle_at];
   demand(battle->Side[0].Entry[0].ENTRY_FIELD==0,"leader front entry");
@@ -204,7 +204,7 @@ def main():
                 exe=Path(d)/("probe"+opt)
                 compile_probe(profile,roots[profile],csource,exe,opt,[n for n in pins["profiles"][profile]["unreachable_traps"] if n!="BATTLE_Index2No"])
                 run=subprocess.run([str(exe),*map(str,paths)],input=f"{chosen} 0\n",capture_output=True,text=True)
-                if run.returncode or (run.stderr and "TRACE|" not in run.stderr):
+                if run.returncode or any(not line.startswith("TRACE|") for line in run.stderr.splitlines() if line.strip()):
                     raise ValueError("real-header "+profile+" "+opt+" "+run.stderr[-5000:]+" code="+str(run.returncode)+" stdout "+run.stdout[-2000:])
                 if "REAL_HEADER_ENTRY|" not in run.stdout:raise ValueError("no real admission")
                 out.append(run.stdout)
