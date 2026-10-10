@@ -61,15 +61,6 @@ MORE=r"""
    expected_arena.Side[0].Entry[0].getitem[1]=3;
    expected_pool[5].use=0;expected_draws=3;
   }
-  if(scenario==2){
-   int bagrefs=0;
-   for(int actor=0;actor<2;actor++)for(int j=0;j<CHAR_MAXITEMHAVE;j++)
-    if(CHAR_getItemIndex(actor,j)==5)bagrefs++;
-   int maydelete=BATTLE_ItemDelCheck(5);
-   printf("DROP_BUFFER_OLD_ITEM_GUARD|item=5|bag_refs=%d|deletion_allowed=%d|item_use=%d|owner=%d\\n",
-          bagrefs,maydelete,reward_items[5].use,reward_items[5].ITEM_FIELD.workint[ITEM_WORKCHARAINDEX]);
-   fflush(stdout);
-  }
   rng_mode=scenario==2?1:0;rng_count=0;
   int result=BATTLE_AddExpItem(battle_at,lists);
   demand(result==0,"real original AddExpItem overflow or pet ticket returns success");
@@ -77,21 +68,6 @@ MORE=r"""
          "original recipient RAND and overflow replacement/discard RAND cardinality");
   demand(!memcmp(&expected_arena,arena,sizeof expected_arena),
          "complete battle arena exact pending three-slot and owner redirect oracle");
-  if(memcmp(expected_pool,reward_items,sizeof expected_pool)){
-   for(int q=0;q<256;q++)if(memcmp(&expected_pool[q],&reward_items[q],sizeof(ITEM_TYPE))){
-    printf("DROP_BUFFER_ITEM_DIFF|scenario=%d|id=%d|expected_use=%d|actual_use=%d|expected_owner=%d|actual_owner=%d|expected_obj=%d|actual_obj=%d\\n",
-           scenario,q,expected_pool[q].use,reward_items[q].use,
-           expected_pool[q].ITEM_FIELD.workint[ITEM_WORKCHARAINDEX],
-           reward_items[q].ITEM_FIELD.workint[ITEM_WORKCHARAINDEX],
-           expected_pool[q].ITEM_FIELD.workint[ITEM_WORKOBJINDEX],
-           reward_items[q].ITEM_FIELD.workint[ITEM_WORKOBJINDEX]);
-    const unsigned char *a=(const unsigned char *)&expected_pool[q],*b=(const unsigned char *)&reward_items[q];
-    for(int off=0,found=0;off<sizeof(ITEM_TYPE)&&found<8;off++)if(a[off]!=b[off]){
-     printf("DROP_BUFFER_BYTE_DIFF|scenario=%d|id=%d|offset=%d|expected=%u|actual=%u\\n",scenario,q,off,a[off],b[off]);found++;
-    }
-   }
-   fflush(stdout);
-  }
   demand(!memcmp(expected_pool,reward_items,sizeof expected_pool),
          "all 256 item records exact original overflow release/retain oracle");
   demand(ITEM_COUNT==current_count-(scenario!=0),
