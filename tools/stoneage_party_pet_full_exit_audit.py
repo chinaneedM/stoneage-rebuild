@@ -117,7 +117,7 @@ def main():
                     [x for x in accepted["profiles"][profile]["unreachable_traps"] if x not in ("BATTLE_Index2No","RIDEPET_getPETindex","CHAR_sendCToArroundCharacter")])
                 run=subprocess.run([str(exe),*map(str,paths)],input=f"{selection} 0\n",capture_output=True,text=True)
                 if run.returncode or any(not line.startswith("TRACE|") for line in run.stderr.splitlines() if line.strip()):
-                    offsets=re.findall(r"probe-(?:O0|O2)\\(\\+(0x[0-9a-f]+)\\)",run.stderr)
+                    offsets=re.findall(r"probe-(?:O0|O2)\(\+(0x[0-9a-f]+)\)",run.stderr)
                     symbols=subprocess.run(["addr2line","-f","-C","-e",str(exe),*offsets],
                                            capture_output=True,text=True).stdout if offsets else "NO_OFFSETS"
                     raise ValueError("actual original party/pet Exit "+profile+" "+opt+
