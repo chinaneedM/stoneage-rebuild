@@ -1,6 +1,6 @@
 # Original party/pet entry function-body execution R1
 
-Status: PENDING remote Actions.
+Status: REMOTE ACCEPTED for the **isolated original-function C test-double domain**, Action38028052045, input0e3eb5aee2ffb7422eda405d644a64d98a7faa9d. This is NOT an integrated original battle acceptance.
 
 This isolated native C gate executes the unchanged original bodies of
 BATTLE_ClearGetExp, BATTLE_PetDefaultEntry, BATTLE_PartyNewEntry extracted

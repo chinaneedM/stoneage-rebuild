@@ -10194,3 +10194,52 @@ reviewed discovery gate and its automated derived-report writeback is authorized
   linked watchers/nonempty items/equipment/Lua callbacks and actor/watcher/
   typed631/635 remain OPEN. Pressure2486=2465+18+3, zero promotions.
   No engine/content transition. Earlier state records preserved verbatim.
+
+
+## 2026-10-10 — Isolated original party/pet entry function bodies REMOTE ACCEPTED
+
+- Started from freshly checked main6590b718c229a5df3de050109caf7dba058ca9bf,
+  tree c23c0a1e4e18dda840dfbe33d0add58551aecdb9. Source-only party/pet
+  entry preflight was accepted but full real-header populated party/pet battle
+  had not run. This new gate is native *original function body* execution with
+  explicit controlled Char and BATTLE_NewEntry test doubles, not a full
+  CreateVsEnemy/battle Exit composition.
+- Tested branch agent/party-pet-functions-native-r1-20261010,
+  exact input0e3eb5aee2ffb7422eda405d644a64d98a7faa9d/tree
+  393a4e9d7f3e6fda22b4b6fa3a0c074cc480d2d3;
+  Action38028052045/job114143010060 success:11 Python source/stub and
+  preflight guard tests,13 deterministic scenarios for each of2 exact original
+  descendant profiles, both O0/O2 GNU99 -fgnu89-inline nonrecovering UBSan
+  executions byte-identical. Each of2 profiles prints13 native CASE PASS,
+  original function/file hash-only identities and no integrated runtime claim.
+- Original unchanged BATTLE_ClearGetExp, BATTLE_PetDefaultEntry and
+  BATTLE_PartyNewEntry were extracted transiently from pinned Gavin
+  1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56 and Bismarck
+  999ffdf1d220ec6666eb65339180689c9caf1876. Original profile feature
+  macros were queried using actual header include closure. No original code,
+  headers, original game data or proprietary binaries were committed.
+- Controlled cases cover actual original-function leader+member+healthy pet
+  call order, entered-slot test doubles, selected/owned distinction,
+  unselected-but-owned pet experience reset, invalid/dead/zero-HP pet,
+  Gavin FINAL-member skip versus Bismarck admission, busy-member skip,
+  masked pet insertion error, early-return leader insertion error and isolated
+  invalid ClearGetExp. Native test-double behavior is disclosed; it does NOT
+  prove natural original Char construction, real battle arena occupancy,
+  player/pet full Exit or original profit.
+- First test input585f8765bc01ec99b53a01d4ad3079631333dbe4 failed at
+  Bismarck version-header lookup (Action38028006060), not runtime assertion.
+  Fixed source-profile include flags at0e3eb5aee2ffb7422eda405d644a64d98a7faa9d;
+  completed rerun acceptance only applies to the fixed input.
+- Artifact11660498546 metadata SHA256
+  173aa43eec1ebf47bda699aa02da90c3299698011dc8b9894f8b0359ba867df7;
+  ZIP not independently downloaded. Receipt
+  STONEAGE-PARTY-PET-ENTRY-FUNCTION-RUNTIME-ACCEPTANCE-R1.json;
+  tool/test/spec/workflow pinned on accepted branch input. No runtime pressure
+  promotion;2486=2465 closed+18 OPEN+3 historic UB,0 promotions.
+- Highest next priority unchanged: insert real party member and selected owned
+  healthy pet into the **accepted real-header original complete BATTLE_CreateVsEnemy
+  native harness**, verify slots/actor ownership/default selection/GETEXP and
+  complete player/pet Exit; then original Init/TaskLoop and broader Finish.
+  Original reclaimer/bootstrap, nonempty Lua/callback/equipment/watchers,
+  Iris conversion/ABI/build/JSS1999/Taiwan-v1 remain OPEN. No engine/design
+  stage transition; all earlier continuity text retained intact.

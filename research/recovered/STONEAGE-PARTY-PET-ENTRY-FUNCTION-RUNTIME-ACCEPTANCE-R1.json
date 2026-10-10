@@ -1,0 +1,64 @@
+{
+  "schema": "stoneage-party-pet-entry-function-runtime-acceptance-r1",
+  "status": "REMOTE_ACCEPTED_ISOLATED_ORIGINAL_FUNCTIONS_ONLY",
+  "startup_main": "6590b718c229a5df3de050109caf7dba058ca9bf",
+  "startup_tree": "c23c0a1e4e18dda840dfbe33d0add58551aecdb9",
+  "branch": "agent/party-pet-functions-native-r1-20261010",
+  "tested_head": "0e3eb5aee2ffb7422eda405d644a64d98a7faa9d",
+  "tested_tree": "393a4e9d7f3e6fda22b4b6fa3a0c074cc480d2d3",
+  "run_id": 38028052045,
+  "job_id": 114143010060,
+  "run_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/38028052045",
+  "conclusion": "success",
+  "all_job_steps_success": true,
+  "structural_and_preflight_tests": 11,
+  "original_bodies": [
+    "BATTLE_ClearGetExp",
+    "BATTLE_PetDefaultEntry",
+    "BATTLE_PartyNewEntry"
+  ],
+  "executed_profiles": [
+    "gavin",
+    "bismarck"
+  ],
+  "pinned_source_commits": {
+    "gavin": "1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56",
+    "bismarck": "999ffdf1d220ec6666eb65339180689c9caf1876"
+  },
+  "scenarios_each_profile": 13,
+  "optimizations": [
+    "O0",
+    "O2"
+  ],
+  "dialect": "GNU99 -fgnu89-inline",
+  "sanitizer": "undefined, nonrecovering",
+  "native_assertions_success": true,
+  "optimization_traces_equal": true,
+  "actual_original_selected_body_executed": true,
+  "controlled_actor_battle_admission_stubs": true,
+  "integrated_original_real_header_battle_creation": false,
+  "actual_complete_pet_player_exit_executed": false,
+  "original_network_transport_executed": false,
+  "original_source_published": false,
+  "artifact": {
+    "id": 11660498546,
+    "name": "stoneage-party-pet-functions-runtime",
+    "size_in_bytes": 789,
+    "digest": "sha256:173aa43eec1ebf47bda699aa02da90c3299698011dc8b9894f8b0359ba867df7",
+    "archive_independently_downloaded": false
+  },
+  "prior_failed_attempt": {
+    "head": "585f8765bc01ec99b53a01d4ad3079631333dbe4",
+    "run_id": 38028006060,
+    "cause": "missing configured original include path while evaluating Bismarck version header",
+    "superseded_by": "0e3eb5aee2ffb7422eda405d644a64d98a7faa9d"
+  },
+  "pressure": {
+    "total": 2486,
+    "closed_capability": 2465,
+    "open": 18,
+    "historical_ub": 3,
+    "promotions": 0
+  },
+  "next": "Actual real-header original populated party/pet BATTLE_CreateVsEnemy, actor occupied slots, full Exit; original Init/TaskLoop/profits remain open"
+}

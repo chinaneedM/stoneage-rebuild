@@ -5256,3 +5256,27 @@ sources/data remain transient; earlier records preserved.
 - Receipt STONEAGE-PARTY-PET-SOURCE-PREFLIGHT-ACCEPTANCE-R1.json.
   Successful populated party/pet admission and Exit, profit, Init/TaskLoop,
   historic ABI/1999-JSS/Taiwan-v1 remain OPEN; no runtime promotion.
+
+
+## 2026-10-10 — Native execution of three unmodified party/pet entry functions
+
+- Exact pinned Gavin/Bismarck original body trio ClearGetExp,
+  PetDefaultEntry and PartyNewEntry is extracted transiently into
+  controlled C test doubles with explicit synthetic Char roster, entry
+  admission and message flush. Original body raw/file hashes preserved
+  in GitHub Actions stdout, no original C/headers/master committed.
+- Tested0e3eb5aee2ffb7422eda405d644a64d98a7faa9d/tree
+  393a4e9d7f3e6fda22b4b6fa3a0c074cc480d2d3;
+  Action38028052045/job114143010060 succeeded with11 unit guards,
+  13 scenarios per profile on both O0/O2 nonrecovering UBSan; exact native
+  traces agree across optimizations. Artifact11660498546 metadata
+  SHA256 173aa43eec1ebf47bda699aa02da90c3299698011dc8b9894f8b0359ba867df7;
+  archive not independently downloaded. Earlier Action38028006060 first
+  attempt failed during original Bismarck header-path processing; corrected.
+- FACT **only** as isolated original-function behavior in controlled
+  synthetic actor stubs: leader/party/selected healthy pet call order,
+  profile FINAL-mode difference, default selected pet vs owned other pet
+  experience clear, invalid/dead/zero HP guards and masked pet entry error.
+- Runtime gate receipt STONEAGE-PARTY-PET-ENTRY-FUNCTION-RUNTIME-ACCEPTANCE-R1.json.
+  Full real-header integrated populated party/pet CreateVsEnemy, full Exit/
+  profit/Init/TaskLoop remain OPEN. No Taiwan-v1/JSS1999/history promotion.
