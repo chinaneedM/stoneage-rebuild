@@ -1,0 +1,47 @@
+name: Validate StoneAge terminal EXP configuration source identity
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/validate-stoneage-party-pet-finish-exp-config-preflight.yml"
+      - "tools/stoneage_party_pet_finish_exp_config_preflight.py"
+      - "tests/test_stoneage_party_pet_finish_exp_config_preflight.py"
+permissions:
+  contents: read
+jobs:
+  exp-config-source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - name: Source dependency and original predecessor regressions
+        run: python -m unittest -v tests.test_stoneage_party_pet_finish_exp_config_preflight tests.test_stoneage_party_pet_original_lethal_loop tests.test_stoneage_party_pet_terminal_path_preflight
+      - name: Recover unchanged pinned late-descendant source trees
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import subprocess
+          from pathlib import Path
+          from tools.stoneage_party_pet_finish_exp_config_preflight import PINNED,CONFIG_PATH
+          urls={"gavin":"gavinlinasd/StoneAge","bismarck":"BismarckDD/stoneage"}
+          for profile in CONFIG_PATH:
+              d=Path("/tmp/stoneage-finish-exp-config-preflight")/profile
+              subprocess.run(["git","init",str(d)],check=True)
+              subprocess.run(["git","-C",str(d),"remote","add","origin","https://github.com/"+urls[profile]+".git"],check=True)
+              subprocess.run(["git","-C",str(d),"fetch","--depth","1","origin",PINNED[profile]],check=True)
+              subprocess.run(["git","-C",str(d),"checkout","--detach","FETCH_HEAD"],check=True)
+          PY
+      - name: Verify original complete preprocessed Finish/EXP/config source contracts
+        run: |
+          set -euo pipefail
+          python -m tools.stoneage_party_pet_finish_exp_config_preflight --gavin-dir /tmp/stoneage-finish-exp-config-preflight/gavin --bismarck-dir /tmp/stoneage-finish-exp-config-preflight/bismarck > /tmp/stoneage-finish-exp-config-preflight.txt
+          cat /tmp/stoneage-finish-exp-config-preflight.txt
+          grep -Fx 'RESOLUTION|ORIGINAL_PARTY_PET_FINISH_EXP_CONFIG_SOURCE_PREFLIGHT_PASS' /tmp/stoneage-finish-exp-config-preflight.txt
+          test "$(grep -c '^ORIGINAL_EXP_PROFILE|' /tmp/stoneage-finish-exp-config-preflight.txt)" -eq 2
+      - name: Upload only derived source observations
+        uses: actions/upload-artifact@v4
+        with:
+          name: stoneage-finish-exp-config-source
+          path: /tmp/stoneage-finish-exp-config-preflight.txt
