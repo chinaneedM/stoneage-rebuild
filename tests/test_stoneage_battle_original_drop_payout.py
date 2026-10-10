@@ -12,7 +12,7 @@ class OriginalLootPayoutTests(unittest.TestCase):
                "expected_items[3].use=0","workint[ITEM_WORKCHARAINDEX]=0",
                "expected_actors[0].indexOfExistItems[empty]=3",
                "memcpy(expected_items,reward_items", "memcmp(expected_actors,slots",
-               "memcmp(expected_arena,arena", "REAL_HEADER_DROP_PAYOUT|"):
+               "memcmp(&expected_arena,arena", "REAL_HEADER_DROP_PAYOUT|"):
                 self.assertIn(term,c,term)
             self.assertNotIn("ITEM_TYPE",c)
             self.assertIn("1" if p=="bismarck" else "0",c)
