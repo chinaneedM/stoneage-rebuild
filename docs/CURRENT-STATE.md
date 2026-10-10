@@ -11491,3 +11491,59 @@ reviewed discovery gate and its automated derived-report writeback is authorized
   release/ownership with all original pool, actor, arena byte oracles.
   Natural item masters/probabilities, original server identity, unique/time,
   gold/EXP, full transport, callbacks and modern game engine remain OPEN.
+
+## 2026-10-11 — Original registered enemy item → BATTLE_GetExpGold persistent bag REMOTE ACCEPTED (bounded direct call)
+
+- Fresh baseline main 397dc30e55c54a95c826b603937bdea586a9e024,
+  tree c92be83792a3e14fcbdce5a82df1d95748164f2f.
+  Previous continuity blob e57ed1318406a3c64f5e03e99ba363da220eeb13, 1218743 decoded
+  characters / 1225103 remote metadata bytes, preserved as an exact prefix.
+  No previous history or OPEN item overwritten.
+- Developer branch agent/original-loot-payout-r1-20261011, tested commit
+  6f7356e4c40502e2aed5a97052551624de317f42, tree
+  e08270b491001f1a288a049f1e7f0ea34f6e2e78.
+  Action 38073856673/job 114276626999 SUCCESS: 44 Python regressions,
+  complete paired original Gavin/Bismarck native O0/O2 UBSan execution,
+  item-factory predecessor independently PASS.
+- Item index3 originates from actual original ENEMY_createEnemy of actor6
+  with synthetic ten-pair master and actual original ITEM_makeItemAndRegist,
+  then actual BATTLE_AddExpItem into player0 getitem[0]. It next reaches
+  the unchanged actual original BATTLE_GetExpGold and the original native
+  CHAR_addItemSpecificItemIndex. Source own snapshot headers, no artificial
+  modern inventory model. The pre-existing owner remains enemy6 until payout.
+- Success scenario: original player0 persistent bag receives item3 in
+  original first empty slot Gavin11/Bismarck9, owner becomes player0,
+  item remains live; original reward log and item transport collector count1.
+  Full-bag scenario: synthetic in-capacity filler objects occupy all player
+  bag boxes; exact original settlement destroys item3, resets owner to -1,
+  logs/send counts zero. Both cases clear pending getitem[0].
+  One original RS reward packet generated in either scenario, presentation
+  collected rather than sent through network.
+- Original Bismarck EXP code can level a character even after setting
+  CHAR_WORKGETEXP=0 under this fixture. Rather than ignore these mutations,
+  the probe invokes a separate original BATTLE_GetExpGold with no ticket,
+  then compares all seven complete actor bytes against the with-item call
+  after independently adding only the expected bag slot. This is expressly
+  a differential EXP side-effect oracle, NOT an independent XP formula.
+  Entire original 256-item record array and BATTLE arena are compared
+  against independent source-predicted snapshots; PASS in both profiles.
+- Two profiles × two payout scenarios = four native results; 44 Python
+  regressions PASS. Artifact 11677797294, ZIP17437B, GitHub-reported
+  SHA256 9fbf2155feb1e0ee528199124201641d145e1a7f8f338ed259e98f25c43d72bf.
+  Not independently downloaded/hash checked. No proprietary originals stored.
+- Classification remains BOUNDED: this particular original registered item
+  was settled by a *direct call* to BATTLE_GetExpGold in a reconstructed arena
+  after the earlier accepted original Finish witness. It has NOT traversed
+  the same-instance original second BATTLE_Loop→BATTLE_Finish→BATTLE_GetProfit
+  call path. The untouched old source/gameplay rules remain evidence from
+  later descendants, not JSS1999/Taiwan-v1 original server identity.
+  Synthetic master, full-bag fillers, fixed 2-user getFdnum,
+  time/unique code, gold, real network/transport are not early facts.
+  Pressure unchanged 2486=2465 bounded closed+18 OPEN+3 historical UB,
+  zero historical promotions.
+- Highest NEXT: require original same-item second BATTLE_Loop→BATTLE_Finish
+  dispatch into BATTLE_GetProfit/GetExpGold and persistent player bag with
+  first valid slot / full bag, distinguish native actor/arena Exit and EXP
+  deltas using original no-item control. Then independent original server
+  provenance, natural probability, callback/unique/time and historical
+  identity remain OPEN. No modern-engine phase transition.

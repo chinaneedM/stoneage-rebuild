@@ -1,0 +1,74 @@
+{
+  "status": "REMOTE_ACCEPTED_BOUNDED",
+  "date": "2026-10-11",
+  "repo": "chinaneedM/stoneage-rebuild",
+  "remote_baseline_main": "397dc30e55c54a95c826b603937bdea586a9e024",
+  "remote_baseline_tree": "c92be83792a3e14fcbdce5a82df1d95748164f2f",
+  "prior_state_sha": "e57ed1318406a3c64f5e03e99ba363da220eeb13",
+  "prior_state_decoded_length": 1218743,
+  "tested_branch": "agent/original-loot-payout-r1-20261011",
+  "tested_sha": "6f7356e4c40502e2aed5a97052551624de317f42",
+  "tested_tree": "e08270b491001f1a288a049f1e7f0ea34f6e2e78",
+  "green_action": {
+    "run": 38073856673,
+    "job": 114276626999,
+    "result": "success",
+    "python_tests": 44
+  },
+  "native": {
+    "profiles": [
+      "gavin",
+      "bismarck"
+    ],
+    "optimization": [
+      "O0",
+      "O2"
+    ],
+    "source_original_functions": [
+      "ENEMY_createEnemy",
+      "ITEM_makeItemAndRegist",
+      "BATTLE_AddExpItem",
+      "BATTLE_GetExpGold",
+      "CHAR_addItemSpecificItemIndex"
+    ],
+    "actual_registered_item_index": 3,
+    "item_master_id_synthetic": 1,
+    "spawned_enemy_actor": 6,
+    "recipient": 0,
+    "success": {
+      "gavin_bag_slot": 11,
+      "bismarck_bag_slot": 9,
+      "live": true,
+      "owner": 0,
+      "log_count": 1,
+      "itemdata_count": 1
+    },
+    "full": {
+      "live": false,
+      "owner": -1,
+      "log_count": 0,
+      "itemdata_count": 0
+    },
+    "source_exp_profile_differences_controlled_by_original_no_item_differential": true,
+    "entire_native_item_pool_byte_match": true,
+    "all_7_actors_byte_match": true,
+    "entire_battle_arena_byte_match": true,
+    "caveat": "The no-item original GetExpGold run isolates original level/EXP side effects; this is a differential oracle rather than an independent full EXP formula oracle.",
+    "not_proven": "This item did NOT transit the same-instance original second BATTLE_Loop/BATTLE_Finish. Direct GetExpGold called after accepted prior Finish witness."
+  },
+  "artifact": {
+    "id": 11677797294,
+    "zip_bytes": 17437,
+    "reported_sha256": "9fbf2155feb1e0ee528199124201641d145e1a7f8f338ed259e98f25c43d72bf",
+    "independent_download_hash_verified": false
+  },
+  "historical_classification": "later descending source exact-header bounded witness, not original JSS 1999 or Taiwan 1.0 server fact; artificial item master, item IDs and fixed config",
+  "pressure": {
+    "total": 2486,
+    "bounded_closed": 2465,
+    "open": 18,
+    "historical_ub": 3,
+    "promotions": 0
+  },
+  "next": "Same newly spawned registered item through genuine original BATTLE_Loop -> BATTLE_Finish -> BATTLE_GetProfit -> BATTLE_GetExpGold into bag; compare original no-loot terminal path for EXP and exit, plus independent item-owner transfer and destruction oracles."
+}
