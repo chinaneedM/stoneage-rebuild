@@ -1,0 +1,58 @@
+name: Validate StoneAge original enemy item probability and registration
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/validate-stoneage-enemy-original-drop.yml"
+      - "tools/stoneage_enemy_original_drop_audit.py"
+      - "tests/test_stoneage_enemy_original_drop.py"
+      - "research/recovered/STONEAGE-ENEMY-ORIGINAL-DROP-SOURCE-R1.json"
+permissions:
+  contents: read
+jobs:
+  original-drop:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - name: Original drop source and retained regression gates
+        run: |
+          python -m unittest -v tests.test_stoneage_enemy_original_drop tests.test_stoneage_item_factory tests.test_stoneage_item_allocator tests.test_stoneage_party_pet_reward_ownership tests.test_stoneage_party_pet_original_reward_item tests.test_stoneage_party_pet_original_pet_growth tests.test_stoneage_party_pet_original_player_level
+      - name: Recover pinned historical descendant sources transiently
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import subprocess
+          from pathlib import Path
+          from tools.stoneage_party_pet_original_attack_audit import PINNED
+          repos={"gavin":"gavinlinasd/StoneAge","iris":"iriselia/StoneAge","bismarck":"BismarckDD/stoneage"}
+          for profile,commit in PINNED.items():
+              folder=Path("/tmp/stoneage-enemy-original-drop-r1")/profile
+              subprocess.run(["git","init",str(folder)],check=True)
+              subprocess.run(["git","-C",str(folder),"remote","add","origin","https://github.com/"+repos[profile]+".git"],check=True)
+              subprocess.run(["git","-C",str(folder),"fetch","--depth","1","origin",commit],check=True)
+              subprocess.run(["git","-C",str(folder),"checkout","--detach","FETCH_HEAD"],check=True)
+          PY
+      - name: Run original enemy spawn and nonzero item drop through native factory
+        run: |
+          set -euo pipefail
+          python -m tools.stoneage_enemy_original_drop_audit --gavin-dir /tmp/stoneage-enemy-original-drop-r1/gavin --iris-dir /tmp/stoneage-enemy-original-drop-r1/iris --bismarck-dir /tmp/stoneage-enemy-original-drop-r1/bismarck > /tmp/stoneage-enemy-original-drop-r1.txt
+          cat /tmp/stoneage-enemy-original-drop-r1.txt
+          grep -Fx 'RESOLUTION|ORIGINAL_REAL_HEADER_ENEMY_POSITIVE_DROP_BOUNDED_PASS' /tmp/stoneage-enemy-original-drop-r1.txt
+          test "$(grep -c '^ACTUAL|.*REAL_HEADER_ENEMY_POSITIVE_DROP|' /tmp/stoneage-enemy-original-drop-r1.txt)" -eq 2
+      - name: Preserve original item factory independently
+        run: |
+          set -euo pipefail
+          python -m tools.stoneage_item_factory_audit --gavin-dir /tmp/stoneage-enemy-original-drop-r1/gavin --iris-dir /tmp/stoneage-enemy-original-drop-r1/iris --bismarck-dir /tmp/stoneage-enemy-original-drop-r1/bismarck > /tmp/stoneage-item-factory-retained-r1.txt
+          grep -Fx 'RESOLUTION|ORIGINAL_REAL_HEADER_ITEM_FACTORY_BOUNDED_PASS' /tmp/stoneage-item-factory-retained-r1.txt
+      - name: Upload only derived evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: stoneage-enemy-original-drop-r1
+          path: |
+            /tmp/stoneage-enemy-original-drop-r1.txt
+            /tmp/stoneage-item-factory-retained-r1.txt
+          if-no-files-found: ignore
