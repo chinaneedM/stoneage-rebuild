@@ -60,6 +60,7 @@ def analyse(profile: str, bodies: dict[str, str], config: str) -> dict:
         "profile":profile,
         "config_source_relative_path":CONFIG_PATH[profile],
         "original_exp_multiplier_owner":match.group(1),
+        "getter_evidence":"original raw conditional source, not verified active build configuration",
         "getter_preprocessed_sha256":hashlib.sha256(match.group(0).encode()).hexdigest(),
         "getexp_uses_getBattleexp": "getBattleexp" in by_name["BATTLE_GetExp"],
         "getexp_source_mentions_1e6": bool(re.search(r"\b1e6\b",bodies["BATTLE_GetExp"])),
@@ -87,7 +88,9 @@ def main():
         battle_path=LAYOUTS[profile]/"battle/battle.c"
         config_path=LAYOUTS[profile]/CONFIG_PATH[profile]
         battle=pp_file(profile,root,battle_path)
-        config=pp_file(profile,root,config_path)
+        # Examine the original conditional config implementation as archaeology;
+        # do not assert the branch is active in the native build.
+        config=(root/config_path).read_bytes().decode("utf-8","replace")
         bodies={name:definition(battle,name) for name in NAMES}
         record=analyse(profile,bodies,config)
         record["pinned_commit"]=sha
