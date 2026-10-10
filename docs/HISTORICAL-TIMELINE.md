@@ -2211,3 +2211,14 @@ returns1 with its equipment branch untaken.16 encounters/144 EXP cases plus16
 invalid-recipient controls, O0/O2 UBSan; remote artifact independently verified.
 Not proof of operator settings, first-release behavior, leveling or complete
 terminal Finish/automatic Exit/Delete. Historical/capability promotions0.
+
+
+## 2026-10-10 — Later-descendant second Loop Finish verified, no historical promotion
+
+Bounded Gavin1f90cb6/Bismarck999ffdf1 FACT: Action38062576189 executes original
+Finish/EXP settlement and automatic Exit/Delete in16 controlled O0/O2 UBSan
+encounters with complete actor/arena oracles. Gavin player payouts1/0, Bismarck
+1000000/1000000; owned pet0 in both. Exact reward strings verified by independent
+base62 oracle; no-level-up/empty-item fixture, synthetic descriptor/config inputs.
+No first-release historical equivalence, actual upgrade/growth/items/gold/network
+claim. All older evidence preserved, zero historical/capability promotions.

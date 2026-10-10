@@ -5502,3 +5502,17 @@ equals local bytes. Active unsigned getter, Bismarck million floor and different
 EXP caps versioned; no original code/assets vendored. Direct GetExp acceptance,
 not full Finish/leveling/items/gold/auto-exit or first-release historical fact.
 Receipt STONEAGE-PARTY-PET-ORIGINAL-EXP-ACCEPTANCE-R1.json.
+
+
+## 2026-10-10 — Original second Loop Finish derived witness R3
+
+Action38062576189/job114243661038 SUCCESS at450b6502,27 tests/10 steps,
+16 O0/O2 UBSan native second-Loop Finish dispatches and32 reward sends. Whole
+seven-actor/arena byte oracles, exact original RS texts and automatic Exit/Delete
+verified. Gavin1f90cb6/Bismarck999ffdf1 original function/config/table SHA256
+manifest and explicit LV100/no-level-up/empty-item/synthetic-transport scope in
+STONEAGE-PARTY-PET-ORIGINAL-FINISH-DISPATCH-ACCEPTANCE-R3.json. Artifact11673702550
+independently downloaded ZIP SHA256 dd94e1ea0a2be4381739ca27c1c01638f272f07eb19325bd18293006ba115e34;
+report915dc7ad3c72de5c7f6cf72680340952c7faee65ed4c93387a2352bb1a600e4c equals local.
+No original source/assets committed; not full leveling/items/gold/network or
+first-release equivalence. Pressure/promotions unchanged.

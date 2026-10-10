@@ -1,0 +1,143 @@
+{
+  "gate": "STONEAGE_PARTY_PET_ORIGINAL_SECOND_LOOP_FINISH_R3",
+  "status": "REMOTE_ACCEPTED_BOUNDED_NO_LEVEL_UP_EMPTY_ITEMS",
+  "baseline_main": "7786fa90d59307a9edbaa6aa64df93b91a3e43e6",
+  "baseline_tree": "43a940af8421dd857f1a35938a8f099204393da8",
+  "prior_state_blob": "6e7446dcba97693c5580ecf61da123178ea7f36d",
+  "prior_state_bytes": 1189714,
+  "branch": "agent/party-pet-original-finish-runtime-r3-20261010",
+  "tested_commit": "450b650238f667db45feefa8ced110dbe8b700f2",
+  "tested_tree": "3c2bcad8f25807f8b04d2e899745974c78cd2549",
+  "github_actions": {
+    "run_id": 38062576189,
+    "job_id": 114243661038,
+    "conclusion": "success",
+    "successful_steps": 10,
+    "tests_passed": 27,
+    "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/38062576189"
+  },
+  "native": {
+    "profiles": [
+      "gavin1f90cb6",
+      "bismarck999ffdf1"
+    ],
+    "original_headers": true,
+    "optimizations": [
+      "O0",
+      "O2"
+    ],
+    "nonrecovering_ubsan": true,
+    "optimization_trace_byte_identity": true,
+    "native_encounters": 16,
+    "actual_second_loop_finish_dispatches": 16,
+    "actual_reward_text_sends": 32,
+    "representative_finish_markers": 8,
+    "representative_reward_markers": 16,
+    "whole_seven_actor_oracle": true,
+    "whole_arena_oracle": true,
+    "natural_automatic_exit_delete": true,
+    "manual_exit_repetition": false,
+    "terminal_resurrection": false,
+    "trace_sha256": {
+      "gavin": "ff75b3efb45c4a90847c0c4346f142dfb07118163e74da2763138bf1a468f75e",
+      "bismarck": "5e5daf2882f689fa3fa40f2951407279db96bf66d083424ff2b628cdaab8bce1"
+    }
+  },
+  "original_function_sha256": {
+    "gavin": {
+      "BATTLE_Finish": "e440d90b269bcb0620dcd96fda4758a0720bf367f14936f035ab9bbc787006e4",
+      "BATTLE_GetProfit": "35edd4961868b6a4d50cade0c6141b1659cb28ba914e8ccd93c4a9347bcc855d",
+      "BATTLE_GetExpGold": "7e8dcab1862b6b845e529630f807d7f91e29a7b337f2ea486d9b01a88397822b",
+      "BATTLE_GetExp": "52351c2077b18737c59e0c28e308627b17a4a2ff10340c1c997e6e88ea830759",
+      "CHAR_AddMaxExp": "b5f4a8f8baac8027f17e7f008373e03f8d675108440caf57276157eaeda49496",
+      "getBattleexp": "c1e4dcb4474f4c18f667ad3347062ab6e4ba74b2f46a4726fbe9b7c17aa9b0db",
+      "CHAR_LevelUpCheck": "879135c53065745ae92c2b7a1df8634bb77abe46777f3077345e31c5ee82a718",
+      "CHAR_HandleExp": "89c5dd81594d549097c81115097f05b3cda4d5664b701fb6f0e083f17487ae93",
+      "CHAR_GetLevelExp": "e3b8700d4622e7ddbc2aed3eba75a49c4c0094d25b1a54cb04783eca80f04dfa",
+      "getBattleDebugMsg": "0c03f38f919109529331a56881a9f77b0ccec5003bca772bacd10bca0cb3f699",
+      "getMaxLevel": "563afd161c1ad374cc1a43704b78c39210b1df34bd15a25a9c1e8902307ffb2d",
+      "getYBLevel": "946df17898d8b248f388edd88bb52f93627eed0810f549f6bb552473912a8da8",
+      "getNeedLevelUpTbls": "70cac1dce90ee2cc29dc8b94e12055a971b5aee184f1d5608e32636d34075c4a",
+      "getChartrans": "db14540206e76abb5d09623feca29f8674d8dad91e3e444b33d55d950d49a6fa",
+      "getPettrans": "d2570692ca45ee0acc8a4499433e36b170ec6c21b480c5b437a4105b60c235f1",
+      "cnv10to62": "c3927f4be52d19bd26719ef16a179ed3158c69b4cac59a101198c63445f4b154"
+    },
+    "bismarck": {
+      "BATTLE_Finish": "b369c2af159f182ed7e918ec083f73ae76ade2e3e3f907ae7525306f5ec035b8",
+      "BATTLE_GetProfit": "5682714a9f08532fc7c492b854f09a8304a8f5fc0fe4c661a0a28bceb7f10e94",
+      "BATTLE_GetExpGold": "acf3c59f6475634b5d2354e10c7867676ef47a171c0e4fe60b5d67612508db36",
+      "BATTLE_GetExp": "f0c6d9ae3f32865adb0565f30749ebb3f37104d262a66e3e076acf221074d4a1",
+      "CHAR_AddMaxExp": "d19cf07f032e08ed2d2cd16e55252208abd89a3c137c0d77068b781ea1c07483",
+      "getBattleexp": "ed774e7ad7ff7fa3048ffd6005bfe5ae668c1ad660d2a10161c234eb6b172bcc",
+      "CHAR_GetLevelExp": "2278f525f8c17b25116f415c2ab2462d98fa2a3162f97d693e68148f79940954",
+      "CHAR_LevelUpCheck": "1052825a5a026101442c4be5aed71ee67f9a33e684aee481061af612b12e577c",
+      "CHAR_HandleExp": "d9800d6e26b81fd159924519a03b87e723b6cec71192d6e69e44c1a0bbb0f4f0",
+      "getBattleDebugMsg": "1ec345cc41e71e3f6291c3a3afdc5b74a0f91a86acb32caf8e99257c61b24f98",
+      "cnv10to62": "c108383561f7ed8a1f414423f2a4093ad2535a94729c2b907560546d7bc906d0"
+    }
+  },
+  "original_declarations_sha256": {
+    "gavin": "980257dd0057a2b04c4fb38052fa7c33c3b3a040e5897884b9be6ccc4b7cbbb2",
+    "bismarck": "764c1659507f877f7761a8b707c778256851bdec197d2e89176f1b19dd654719"
+  },
+  "payout_oracle": {
+    "gavin": {
+      "player0": 1,
+      "player1": 0,
+      "pet2": 0,
+      "winside": 0,
+      "rs": [
+        "-2|0|1,,,,,|||",
+        "-2|0|0,,,,,|||"
+      ]
+    },
+    "bismarck": {
+      "player0": 1000000,
+      "player1": 1000000,
+      "pet2": 0,
+      "winside": -1,
+      "rs": [
+        "-2|0|4c92,,,,,|||",
+        "-2|0|4c92,,,,,|||"
+      ]
+    }
+  },
+  "fixture": {
+    "player_pet_level": 100,
+    "initial_persistent_exp": 0,
+    "gavin_multiplier": 1,
+    "gavin_synthetic_next_level_thresholds": 10000000,
+    "bismarck_original_level_table": true,
+    "level_up_count": 0,
+    "empty_reward_items": true,
+    "synthetic_shared_descriptor": 7,
+    "presentation_collectors_not_real_network": true
+  },
+  "artifact": {
+    "id": 11673702550,
+    "zip_bytes": 4988,
+    "zip_sha256": "dd94e1ea0a2be4381739ca27c1c01638f272f07eb19325bd18293006ba115e34",
+    "derived_report_sha256": "915dc7ad3c72de5c7f6cf72680340952c7faee65ed4c93387a2352bb1a600e4c",
+    "derived_report_bytes": 18651,
+    "independently_downloaded_verified": true,
+    "identical_to_local_report": true
+  },
+  "pressure": {
+    "total": 2486,
+    "closed": 2465,
+    "open": 18,
+    "historical_ub": 3,
+    "promotions": 0
+  },
+  "not_proven": [
+    "positive_level_up_and_pet_growth",
+    "positive_item_awards",
+    "equipment_EXPUP",
+    "gold",
+    "original_network_and_routing",
+    "natural_RNG_AI",
+    "watchers_and_callbacks",
+    "JSS1999_Taiwan_v1_equivalence"
+  ],
+  "next": "bounded positive original player LevelUpCheck, pet reward/growth and item ownership controls with full state oracles, preserving profile-specific experience semantics"
+}

@@ -1,6 +1,6 @@
 # Original second Loop Finish dispatch R3
 
-Status: CANDIDATE, remote native gate required. Bounded later-source capability,
+Status: REMOTE ACCEPTED, Action38062576189 at commit450b650238f667db45feefa8ced110dbe8b700f2. Bounded later-source capability,
 not JSS1999/Taiwan-v1 historical identity or a general reward implementation.
 
 The fixture executes original all-ready lethal Loop followed by a second actual
@@ -63,3 +63,8 @@ watcher battles, natural RNG/AI, real network/Lua/server ABI or first-release
 historical equivalence. Pressure2486=2465 closed capability+18 OPEN+3 historic UB,
 zero promotions and no engine phase transition. Full original inclusion is not
 execution of every conditional branch.
+
+Acceptance:27 tests/10 successful steps;16 native encounters and16 second
+Loop Finish dispatches,32 original serialized reward sends; whole actor/arena
+oracles and O0/O2 complete trace equality. Artifact11673702550 independently
+downloaded and equal to the local report; ZIP/report SHA256 in acceptance receipt.

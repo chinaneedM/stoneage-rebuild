@@ -11001,3 +11001,53 @@ reviewed discovery gate and its automated derived-report writeback is authorized
   Highest NEXT is this status-transport dependency and actual reward
   serialization, then exact positive payout/ownership/automatic release oracles.
   No approval needed for the already-authorized project continuation.
+
+
+## 2026-10-10 — Original second Loop Finish, EXP payout and automatic release REMOTE ACCEPTED (bounded)
+
+- Fresh main7786fa90d59307a9edbaa6aa64df93b91a3e43e6,
+  tree43a940af8421dd857f1a35938a8f099204393da8. Full preceding CURRENT-STATE
+  blob6e7446dcba97693c5580ecf61da123178ea7f36d,1189714 bytes preserved verbatim.
+- Branch agent/party-pet-original-finish-runtime-r3-20261010, exact tested
+  input450b650238f667db45feefa8ced110dbe8b700f2, tree3c2bcad8f25807f8b04d2e899745974c78cd2549.
+  Action38062576189/job114243661038 SUCCESS,10 steps/27 regression tests.
+  Original pinned Gavin1f90cb6/Bismarck999ffdf1 headers/bodies, GNU99 O0/O2
+  nonrecovering UBSan:16 encounters/16 actual second Loop Finish dispatches,
+  cursor0,1,2,0. Prior guard/attack/lethal controls retained. Full original
+  function/config/table-declaration fingerprints emitted; no source/assets vendored.
+- Actual original Loop->Finish->GetProfit->GetExpGold->GetExp/LevelUpCheck->
+  Exit/DeleteBattle executes on explicit no-level-up empty-item fixture.
+  Independent entire seven-actor byte oracle and entire arena byte oracle PASS.
+  Leader/member FINAL, paired pet NONE, all indexes-1, allocated enemy use0,
+  owned pet/default selection/world objects retained, arena use0/modeNONE,
+  entries initialized and total1->0. No restored terminal actors or second
+  manual Exit/Delete; pool reuse remains actual. O0/O2 whole output bytes equal.
+- Prepared post-lethal players/pet LV100/EXP0, original status/compliance
+  normalization before snapshots. Gavin original getters use multiplier1 and
+  explicit synthetic10000000 next-level thresholds; Bismarck uses original
+  complete LevelUpTbl. Actual original LevelUpCheck returns0 in this fixture;
+  positive leveling/growth NOT proved.
+- Exact raw reward0/1/pet0 and versioned payouts preserved: Gavin players1/0,
+  Bismarck1000000/1000000, owned pet0 in BOTH profiles (zero-pet-EXP branch skips
+  GetExp rather than applying Bismarck floor). Original RS text two per encounter:
+  Gavin -2|0|1,,,,,||| and -2|0|0,,,,,|||; Bismarck twice -2|0|4c92,,,,,|||.
+  Independent base62 oracle1000000->4c92. Synthetic descriptor7/shared routing;
+  strict player0/K0 presentation collector, not actual transport or socket identity.
+  Original battle duration3 collector is scoped to Finish; predecessor duration2
+  preserved. Bismarck exact Loop Finish monitor stage admitted without gameplay edits.
+- Artifact11673702550 independently downloaded, ZIP4988 bytes SHA256
+  dd94e1ea0a2be4381739ca27c1c01638f272f07eb19325bd18293006ba115e34;
+  sole stoneage-party-finish-r3.txt18651 bytes SHA256
+  915dc7ad3c72de5c7f6cf72680340952c7faee65ed4c93387a2352bb1a600e4c
+  equals local derived report. Receipt STONEAGE-PARTY-PET-ORIGINAL-FINISH-DISPATCH-ACCEPTANCE-R3.json;
+  spec STONEAGE-PARTY-PET-ORIGINAL-FINISH-DISPATCH-R3.md.
+- Previous exploratory555a5df branch remains unaccepted history. Its transport
+  trap is superseded ONLY by this bounded actual second Loop/EXP/auto-release
+  result. No positive items/gold/equipment/upgrade/pet-growth, natural commands/
+  AI/RNG, watcher/callback/real-network/Lua/server ABI or first-release historical
+  equivalence. Pressure2486=2465 closed capability+18 OPEN+3 historical UB;
+  zero promotions, no modern-engine phase transition.
+- Highest NEXT: positive original player leveling with exact level/EXP/skillpoint/
+  charm/duel-point/stat oracles, then pet reward/growth and item ownership controls.
+  Keep late-source configured/million-floor/storage-cap differences versioned;
+  do not infer original JSS1999/Taiwan-v1 from descendant runtime acceptance.
