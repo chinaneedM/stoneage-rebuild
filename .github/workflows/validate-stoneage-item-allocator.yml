@@ -1,0 +1,55 @@
+name: Validate StoneAge original item allocator and reuse
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/validate-stoneage-item-allocator.yml"
+      - "tools/stoneage_item_allocator_audit.py"
+      - "tests/test_stoneage_item_allocator.py"
+      - "research/recovered/STONEAGE-ITEM-ALLOCATOR-SOURCE-R1.json"
+permissions:
+  contents: read
+jobs:
+  original-finish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - name: Original Finish source mutation and physical regressions
+        run: python -m unittest -v tests.test_stoneage_item_allocator tests.test_stoneage_party_pet_reward_ownership tests.test_stoneage_party_pet_original_reward_item tests.test_stoneage_party_pet_original_pet_growth tests.test_stoneage_party_pet_original_player_level tests.test_stoneage_party_pet_original_finish_dispatch tests.test_stoneage_party_pet_original_exp tests.test_stoneage_party_pet_original_lethal_loop tests.test_stoneage_party_pet_original_lethal_direct tests.test_stoneage_party_pet_original_attack
+      - name: Recover pinned sources transiently
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import subprocess
+          from pathlib import Path
+          from tools.stoneage_party_pet_original_attack_audit import PINNED
+          repos={"gavin":"gavinlinasd/StoneAge","iris":"iriselia/StoneAge","bismarck":"BismarckDD/stoneage"}
+          for p,sha in PINNED.items():
+              d=Path("/tmp/stoneage-item-allocator-r1")/p
+              subprocess.run(["git","init",str(d)],check=True)
+              subprocess.run(["git","-C",str(d),"remote","add","origin","https://github.com/"+repos[p]+".git"],check=True)
+              subprocess.run(["git","-C",str(d),"fetch","--depth","1","origin",sha],check=True)
+              subprocess.run(["git","-C",str(d),"checkout","--detach","FETCH_HEAD"],check=True)
+          PY
+      - name: Original item allocator with literal cursor and complete state oracles
+        run: |
+          set -euo pipefail
+          python -m tools.stoneage_item_allocator_audit --gavin-dir /tmp/stoneage-item-allocator-r1/gavin --iris-dir /tmp/stoneage-item-allocator-r1/iris --bismarck-dir /tmp/stoneage-item-allocator-r1/bismarck > /tmp/stoneage-item-allocator-r1.txt
+          cat /tmp/stoneage-item-allocator-r1.txt
+          grep -Fx 'RESOLUTION|ORIGINAL_REAL_HEADER_ITEM_ALLOCATOR_BOUNDED_PASS' /tmp/stoneage-item-allocator-r1.txt
+          test "$(grep -c '^ACTUAL|.*REAL_HEADER_ITEM_ALLOCATOR|' /tmp/stoneage-item-allocator-r1.txt)" -eq 8
+      - name: Retain shared references duplicate awards and serialization
+        run: |
+          set -euo pipefail
+          python -m tools.stoneage_party_pet_reward_ownership_audit --gavin-dir /tmp/stoneage-item-allocator-r1/gavin --iris-dir /tmp/stoneage-item-allocator-r1/iris --bismarck-dir /tmp/stoneage-item-allocator-r1/bismarck > /tmp/stoneage-reward-ownership-retained-r1.txt
+          grep -Fx "RESOLUTION|ORIGINAL_REAL_HEADER_REWARD_OWNERSHIP_BOUNDED_PASS" /tmp/stoneage-reward-ownership-retained-r1.txt
+      - name: Upload only derived observations
+        uses: actions/upload-artifact@v4
+        with:
+          name: stoneage-item-allocator-r1
+          path: |
+            /tmp/stoneage-item-allocator-r1.txt
+            /tmp/stoneage-reward-ownership-retained-r1.txt
