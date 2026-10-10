@@ -49,9 +49,26 @@ EXPECTED_INSERT=r"""
 MARKER=r"""  /* Exit is intentionally not asserted by this first admission gate.
      The accepted solo teardown is not equivalent to populated pet Exit. */
 """
+# The original RIDEPET_getPETindex predicate requires a nonzero intersection
+# of ride-license bits and ride-code bits to return a nonnegative index.
+# This controlled fixture has CHAR_LOWRIDEPETS==0, so the exact predicate
+# must return -1 without needing the original ride-code table. Anything
+# beyond that bounded domain remains a hard failure, not simulated game code.
+ZERO_LICENSE_RIDE=r"""
+static int zero_license_ride_queries=0;
+int RIDEPET_getPETindex(int petNo,int learnCode){
+  (void)petNo;
+  if(learnCode!=0){fputs("RIDE_LICENSE_SCOPE_VIOLATION",stderr);abort();}
+  zero_license_ride_queries++;
+  return -1;
+}
+"""
 def make_native(profile,source):
     original=admission_native(profile,source)
     if original.count(MARKER)!=1:raise ValueError("accepted admission body changed")
+    anchor="int main(int argc,char **argv){"
+    if original.count(anchor)!=1:raise ValueError("actual original main anchor drift")
+    original=original.replace(anchor,ZERO_LICENSE_RIDE+anchor,1)
     field="char_index" if profile=="bismarck" else "charaindex"
     return original.replace(MARKER,EXPECTED_INSERT.replace("ENTRY_FIELD",field),1)
 
@@ -84,7 +101,7 @@ def main():
             for opt in ("-O0","-O2"):
                 exe=Path(d)/("probe"+opt)
                 compile_probe(profile,roots[profile],native,exe,opt,
-                    [x for x in accepted["profiles"][profile]["unreachable_traps"] if x!="BATTLE_Index2No"])
+                    [x for x in accepted["profiles"][profile]["unreachable_traps"] if x not in ("BATTLE_Index2No","RIDEPET_getPETindex")])
                 run=subprocess.run([str(exe),*map(str,paths)],input=f"{selection} 0\n",capture_output=True,text=True)
                 if run.returncode or any(not line.startswith("TRACE|") for line in run.stderr.splitlines() if line.strip()):
                     raise ValueError("actual original party/pet Exit "+profile+" "+opt+
