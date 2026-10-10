@@ -5465,3 +5465,24 @@ Repository evidence:
   no terminal death/Finish/positive profit, whole AI/server/transport/Lua/original
   ABI or first-release historical equivalence inferred. Pressure2486/2465/18/3,
   zero promotions. All earlier records remain preserved.
+
+
+## 2026-10-10 — Bounded original terminal EXP/config source identity R2
+
+- Provenance: Gavin source pin 1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56
+  and Bismarck 999ffdf1d220ec6666eb65339180689c9caf1876;
+  preflight Action38059963496 SUCCESS,15 tests, code b896456fa0cf6a1559b41f9779d7f8e9bb4f0fc4.
+- Original preprocessed BATTLE_GetExp SHA256 Gavin
+  52351c2077b18737c59e0c28e308627b17a4a2ff10340c1c997e6e88ea830759,
+  Bismarck f0c6d9ae3f32865adb0565f30749ebb3f37104d262a66e3e076acf221074d4a1.
+  Frozen original Finish/GetProfit bodies and static chain through
+  GetExpGold to GetExp and CHAR_AddMaxExp verified.
+- Original raw conditional config getter references Gavin config.battleexp
+  via gmsv/src/configfile.c and Bismarck gServerConfig.battleexp via
+  server/gmsv/config_file.c. Not proof of active compiler branch or runtime
+  multiplier. Exploratory Action38059421285 entered Finish/GetProfit/
+  GetExpGold but stopped at BATTLE_GetExp trap; no positive reward claims.
+- Acceptance receipt research/recovered/STONEAGE-PARTY-PET-FINISH-EXP-CONFIG-PREFLIGHT-ACCEPTANCE-R2.json.
+  GitHub-reported derived artifact11673185532 sha256
+  a50012961bec3687a9311c0e12d68151f416eb3f287b5bef5845ea56d70abad9,
+  not independently downloaded.

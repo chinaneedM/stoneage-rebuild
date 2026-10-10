@@ -1,0 +1,59 @@
+{
+  "gate": "STONEAGE_PARTY_PET_FINISH_EXP_CONFIG_SOURCE_PREFLIGHT_R2",
+  "status": "REMOTE_ACCEPTED_SOURCE_ONLY_WITH_NEGATIVE_FINISH_RUNTIME_WITNESS",
+  "baseline_main": "a7fc63173fc9dd459c975b745eebf9a9394401b9",
+  "tested_commit": "b896456fa0cf6a1559b41f9779d7f8e9bb4f0fc4",
+  "documentation_commit": "bcffaeae7c1df910154a73a9ceff19aa1629f7c4",
+  "branch": "agent/party-pet-finish-exp-config-preflight-r2-20261010",
+  "prior_state_blob": "0365e32fa9dc11260a0c8010ccc6e6b0ad4b4ef7",
+  "github_actions": {
+    "run_id": 38059963496,
+    "job_id": 114236031050,
+    "conclusion": "success",
+    "steps_passed": 10,
+    "unit_tests_passed": 15,
+    "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/38059963496"
+  },
+  "original_profiles": {
+    "gavin": {
+      "pin": "1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56",
+      "config": "gmsv/src/configfile.c",
+      "raw_getter_owner": "config",
+      "getexp_sha256": "52351c2077b18737c59e0c28e308627b17a4a2ff10340c1c997e6e88ea830759"
+    },
+    "bismarck": {
+      "pin": "999ffdf1d220ec6666eb65339180689c9caf1876",
+      "config": "server/gmsv/config_file.c",
+      "raw_getter_owner": "gServerConfig",
+      "getexp_sha256": "f0c6d9ae3f32865adb0565f30749ebb3f37104d262a66e3e076acf221074d4a1"
+    }
+  },
+  "exploratory_native": {
+    "run_id": 38059421285,
+    "conclusion": "failure",
+    "observed_path": [
+      "BATTLE_Loop",
+      "BATTLE_Finish",
+      "BATTLE_GetProfit",
+      "BATTLE_GetExpGold"
+    ],
+    "boundary": "TRAP BATTLE_GetExp",
+    "positive_exp_proven": false,
+    "automatic_exit_delete_proven": false
+  },
+  "active_config_branch_proven": false,
+  "numeric_reward_proven": false,
+  "artifact": {
+    "id": 11673185532,
+    "github_digest": "sha256:a50012961bec3687a9311c0e12d68151f416eb3f287b5bef5845ea56d70abad9",
+    "independent_zip_verified": false
+  },
+  "pressure": {
+    "total": 2486,
+    "closed": 2465,
+    "open": 18,
+    "historical_ub": 3,
+    "promotions": 0
+  },
+  "next": "execute original next Loop Finish with source-accurate GetExp/config closure and exact payout and Exit/Delete effect oracles"
+}

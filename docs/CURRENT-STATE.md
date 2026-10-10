@@ -10901,3 +10901,44 @@ reviewed discovery gate and its automated derived-report writeback is authorized
   mere source presence or callback sentinel. Add full actor/arena effect
   oracle and condition/reward controls before any terminal/positive-profit
   promotion. No modern-engine/content phase transition.
+
+
+## 2026-10-10 — Original Finish/GetExp configuration dependency REMOTE ACCEPTED (source-only)
+
+- Fresh baseline main a7fc63173fc9dd459c975b745eebf9a9394401b9,
+  tree fc34dc9724365300642fc4b2677cf88ef3361cdf. Preserved whole
+  predecessor CURRENT-STATE blob 0365e32fa9dc11260a0c8010ccc6e6b0ad4b4ef7
+  verbatim. No historical or capability promotions.
+- Source preflight branch agent/party-pet-finish-exp-config-preflight-r2-20261010;
+  tested code commit b896456fa0cf6a1559b41f9779d7f8e9bb4f0fc4,
+  documentation clarification bcffaeae7c1df910154a73a9ceff19aa1629f7c4.
+  Actions38059963496/job114236031050 SUCCESS, 10 workflow steps and
+  15 regression tests. Clean pinned late-descendant Gavin1f90cb6 and
+  Bismarck999ffdf1 originals transiently checked, no game source vendored.
+- Complete preprocessed BATTLE_Finish -> BATTLE_GetProfit ->
+  BATTLE_GetExpGold -> BATTLE_GetExp source call edge verified and
+  original BATTLE_GetExp -> CHAR_AddMaxExp source path checked.
+  Accepted Finish/GetProfit whole-body hashes unchanged. Original GetExp
+  preprocessed SHA256 Gavin
+  52351c2077b18737c59e0c28e308627b17a4a2ff10340c1c997e6e88ea830759;
+  Bismarck f0c6d9ae3f32865adb0565f30749ebb3f37104d262a66e3e076acf221074d4a1.
+  Raw conditional original EXP getter belongs to config.battleexp in
+  Gavin gmsv/src/configfile.c; Bismarck server/gmsv/config_file.c
+  refers to gServerConfig.battleexp. This does NOT establish active build
+  branch or numeric EXP multiplier.
+- Independent exploratory native second Loop Actions38059421285 failed
+  at abort-on-call TRAP BATTLE_GetExp after original BATTLE_Finish/
+  BATTLE_GetProfit/BATTLE_GetExpGold were entered. Not a positive-payout
+  or auto Exit/Delete result. Later GetExp inclusion explored further
+  dependencies but did not produce an accepted runtime closure. That
+  experimental branch stays outside main; failed runs remain evidence.
+- Derived report artifact11673185532 with GitHub-reported ZIP digest
+  sha256:a50012961bec3687a9311c0e12d68151f416eb3f287b5bef5845ea56d70abad9;
+  ZIP/report bytes not independently verified. Status: SOURCE-ONLY PASS,
+  full positive EXP/gold/items/leveling and automatic terminal Exit/Delete
+  OPEN. Pressure2486=2465 bounded closed+18 OPEN+3 historical UB, zero
+  promotions, no claimed JSS1999/Taiwan-v1 historical equivalence.
+- Highest NEXT: build source-accurate configured GetExp and its original
+  dependencies under explicitly justified fixture inputs; finish the second
+  native Loop through GetProfit/Exit/Delete, compare actual payout recipient,
+  amounts and full actor/arena state. No modern-engine phase transition.

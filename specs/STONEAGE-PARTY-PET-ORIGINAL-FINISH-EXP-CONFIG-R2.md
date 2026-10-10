@@ -1,6 +1,6 @@
 # Original terminal EXP/config source preflight R2
 
-Status PENDING remote acceptance. Narrow original-only preflight after
+Status REMOTE ACCEPTED for source/config identity only; full positive-profit runtime OPEN. Narrow original-only preflight after
 a controlled full lethal attack successfully entered FINISH and a second
 Loop with original BATTLE_Finish/GetProfit/GetExpGold was observed to reach
 the fail-closed BATTLE_GetExp boundary (exploratory Action38059421285).
@@ -22,3 +22,9 @@ permitted as historical FACT. The final native FINISH boundary remains
 OPEN until an authentic, independently justified battle configuration and
 original helper closures permit exact actor/arena, payout, recipient and
 Exit/Delete oracles in both profiles. Do not transition to modern engine.
+
+## Acceptance evidence
+
+Actions38059963496/job114236031050 PASS, 15 regression tests. No positive
+reward or terminal automatic cleanup execution was accepted. Exploratory
+Action38059421285 reached GetExpGold but aborted at BATTLE_GetExp.
