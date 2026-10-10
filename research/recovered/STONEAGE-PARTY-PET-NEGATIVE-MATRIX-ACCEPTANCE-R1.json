@@ -1,0 +1,154 @@
+{
+  "gate": "STONEAGE_PARTY_PET_REAL_HEADER_NEGATIVE_MATRIX_R1",
+  "status": "REMOTE_ACCEPTED_BOUNDED_DESCENDANT_SOURCE",
+  "tested_commit": "f6220d9bd4262c7b07dd48c5a646b6a430e9b56c",
+  "tested_tree": "4d043ac05a23dadae4433c0a87f5c067672b6b8d",
+  "base_main": "9a2cf44c1273b4c4be047ec5296a239e1590f7a8",
+  "branch": "agent/party-pet-negative-matrix-r1-20261010",
+  "ci": {
+    "run_id": 38032368154,
+    "job_id": 114155807001,
+    "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/38032368154",
+    "conclusion": "success",
+    "steps_passed": 10,
+    "python_regressions_passed": 13
+  },
+  "source_profiles": [
+    {
+      "profile": "gavin",
+      "pin": "1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56",
+      "native_stdout_sha256": "0e9dfb76638b5492b9c562c2aeb09a5c0ee3a2625d35f9df7210d6864dc195bd",
+      "final_member_admitted": false
+    },
+    {
+      "profile": "bismarck",
+      "pin": "999ffdf1d220ec6666eb65339180689c9caf1876",
+      "native_stdout_sha256": "a0ec6c07d5c5b8f923a579aa909f6e10cc70f10284dbf678c45b7093ebb7681a",
+      "final_member_admitted": true
+    }
+  ],
+  "scope": {
+    "native_compiler": "GNU99 -fgnu89-inline -O0/-O2, nonrecovering UBSan",
+    "profiles": 2,
+    "cases_per_profile_optimization": 8,
+    "total_original_encounters": 32,
+    "total_python_regressions": 13,
+    "battle_pool_cursor": [
+      0,
+      1,
+      2,
+      0,
+      1,
+      2,
+      0,
+      1
+    ],
+    "actor_indices": {
+      "leader": 0,
+      "member": 1,
+      "pet": 2
+    },
+    "fixtures": "controlled healthy world players, original eligible enemy record4, live original allocated pet; original pinned real-header CreateVsEnemy/ExitAll/DeleteBattle with bounded external typed adapters"
+  },
+  "scenarios": [
+    {
+      "id": 0,
+      "name": "healthy",
+      "member_entered": "both",
+      "pet_entered": true,
+      "selected_after": 0,
+      "owned_after": 2,
+      "hp_after": 20,
+      "pet_getexp_after": 0
+    },
+    {
+      "id": 1,
+      "name": "member_busy",
+      "member_entered": false,
+      "pet_entered": true,
+      "selected_after": 0,
+      "owned_after": 2,
+      "hp_after": 20,
+      "pet_getexp_after": 0
+    },
+    {
+      "id": 2,
+      "name": "member_final",
+      "member_entered": {
+        "gavin": false,
+        "bismarck": true
+      },
+      "pet_entered": true,
+      "selected_after": 0,
+      "owned_after": 2,
+      "hp_after": 20,
+      "pet_getexp_after": 0
+    },
+    {
+      "id": 3,
+      "name": "no_default",
+      "member_entered": true,
+      "pet_entered": false,
+      "selected_after": -1,
+      "owned_after": 2,
+      "hp_after": 20,
+      "pet_getexp_after": 0
+    },
+    {
+      "id": 4,
+      "name": "missing_selected_slot",
+      "member_entered": true,
+      "pet_entered": false,
+      "selected_after": -1,
+      "owned_after": 2,
+      "hp_after": 20,
+      "pet_getexp_after": 0
+    },
+    {
+      "id": 5,
+      "name": "pet_zero_hp",
+      "member_entered": true,
+      "pet_entered": false,
+      "selected_after": -1,
+      "owned_after": 2,
+      "hp_before_exit": 0,
+      "hp_after": 1,
+      "death_flag_after": false,
+      "pet_getexp_after": 0
+    },
+    {
+      "id": 6,
+      "name": "pet_dead_flag",
+      "member_entered": true,
+      "pet_entered": false,
+      "selected_after": -1,
+      "owned_after": 2,
+      "hp_before_exit": 20,
+      "hp_after": 1,
+      "death_flag_after": false,
+      "pet_getexp_after": 0
+    },
+    {
+      "id": 7,
+      "name": "pet_roster_unlinked",
+      "member_entered": true,
+      "pet_entered": false,
+      "selected_after": -1,
+      "owned_after": -1,
+      "hp_after": 20,
+      "pet_getexp_after": 777
+    }
+  ],
+  "artifact": {
+    "id": 11663220824,
+    "metadata_sha256": "d449acd63285dff7ba1557c9bffbc18b96e5958a93713b66d098e7334b3deb1e",
+    "archive_independently_downloaded": false
+  },
+  "evidence_boundary": [
+    "These are constructed test invalid-status preconditions, not natural death/revival rules or full historical game behavior.",
+    "Original battle and character function bodies remain unmodified; externally bounded test double collectors for network/world/time/zero riding permission are not original live server transport.",
+    "Legacy pet HP floor/ISDIE clearing is observed only as post-Exit effect in this constructed sample. Do not equate it to shipped 1999 or 2000 revival semantics.",
+    "No full battle win/loss/turn loop/profit or original reclaimer/server/bootstrap/Iris encoding/ABI equivalence.",
+    "Source differences must not be flattened. Pressure 2486=2465 closed capability +18 OPEN +3 historical UB; zero promotions."
+  ]
+}

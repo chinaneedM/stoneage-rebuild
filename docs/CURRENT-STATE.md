@@ -10364,3 +10364,56 @@ reviewed discovery gate and its automated derived-report writeback is authorized
   selected pet, cleared default selection) with complete actor/world/ownership/
   cursor/slot deltas and bounded typed collectors; then battle Init/TaskLoop,
   Finish/victory/profit. Earlier continuity records preserved without edits.
+
+
+## 2026-10-10 — Source-profile real-header party/pet negative and selection/HP/death matrix REMOTE ACCEPTED
+
+- Fresh startup main 9a2cf44c1273b4c4be047ec5296a239e1590f7a8/tree
+  16fdfece067725b577554126649593b62c54ce8e, Actions prior repeated
+  four-battle gate38031552048 SUCCESS, continuity protocol section9/10
+  and exact whole CURRENT-STATE blob f1daf5bffb6ed0ef619967c6c7bf1b46e50b6018
+  recovered; all previous continuity text retained.
+- New independently accepted original-header negative matrix on tested
+  f6220d9bd4262c7b07dd48c5a646b6a430e9b56c/tree
+  4d043ac05a23dadae4433c0a87f5c067672b6b8d,
+  branch agent/party-pet-negative-matrix-r1-20261010.
+  GitHub Action38032368154/job114155807001 SUCCESS all steps:
+  13 Python regressions, Gavin/Bismarck pinned original bodies/headers,
+  8 named controlled variant states ×2 source profiles×2 O0/O2 =
+  32 successful CreateVsEnemy→player/teammate Exit→ExitAll→DeleteBattle
+  executions with GNU99 and nonrecovering UBSan. All 8 native matrix
+  rows per profile are byte-identical across optimizations. Three-slot
+  arena cursor0,1,2,0,1,2,0,1 across each optimization.
+- FACT bounded real-header descendant observations: healthy selected owned
+  pet2/rear5 enters; member C_WAIT skipped by both; member FINAL skipped
+  by Gavin but admitted by Bismarck. Missing DEFAULTPET (none) keeps
+  owned roster pet and no pet battle occupancy; selected empty slot or
+  selected owned dead/HP0 normalizes default to -1 without deleting owned
+  pet. Owner ClearGetExp resets owned unselected pet experience too;
+  an allocated pet unlinked from roster retains its GETEXP=777 sentinel.
+- In deliberately constructed source-domain HP0 fixture, pet HP stays0
+  through Create/Entry, then original Exit/compliance changes HP to1.
+  Artificial ISDIE true with HP20 is excluded from pet battle and after
+  Exit/compliance the observed pet HP is1 and ISDIE false, for both
+  descendant profiles. This is NOT a general natural resurrection,
+  original official JSS/Taiwan-v1 or modern game design rule.
+- Profile native trace SHA256 Gavin
+  0e9dfb76638b5492b9c562c2aeb09a5c0ee3a2625d35f9df7210d6864dc195bd;
+  Bismarck a0ec6c07d5c5b8f923a579aa909f6e10cc70f10284dbf678c45b7093ebb7681a.
+  Derived artifact11663220824 ZIP digest metadata SHA256
+  d449acd63285dff7ba1557c9bffbc18b96e5958a93713b66d098e7334b3deb1e,
+  archive not independently downloaded/verified. Receipt
+  STONEAGE-PARTY-PET-NEGATIVE-MATRIX-ACCEPTANCE-R1.json.
+- All original C/header/master data remain CI-transient; inherited
+  typed world/network/status/time/output collectors and empty-license
+  ride adapter still bounded. Real client executable ABI, full server/
+  reclaimer/transport, actual watched-party/Lua/equipment/items and
+  natural multi-pet/HP/death/selection/victory/profit remain OPEN.
+  Pressure unchanged2486=2465 closed capability+18 OPEN+3 historical UB,
+  zero promotions. No engine/content stage transition.
+- Highest NEXT: original source-profile BATTLE_Init/SurpriseCheck/
+  PreCommandSeq and TaskLoop entry dependencies followed by controlled
+  real-header execution/complete actor+arena state oracles; then actual
+  round/Finish/victory/profit. Preserve Gavin/Bismarck distinct source
+  paths, no flattening, and independent source provenance. All prior
+  continuity records preserved verbatim.
