@@ -47,6 +47,11 @@ def observed_lethal_round() -> str:
         if count != 1:
             raise ValueError("exact accepted attack observation drift "+needle+": "+str(count))
         text = text.replace(needle,replacement,1)
+    # The accepted predecessor's next_wait=1 is a static nonterminal label.
+    # No CommandWait is called after FinishSet in this terminal control.
+    if text.count("next_wait=1|packet_sends=4") != 1:
+        raise ValueError("terminal marker inheritance drift")
+    text=text.replace("next_wait=1|packet_sends=4","next_wait=not_checked|packet_sends=4",1)
     # Do not let a pending terminal gate assert a known-nonterminal packet or
     # wait state. HP/DAMAGECOUNT checks persist; complete deltas are printed.
     return text
