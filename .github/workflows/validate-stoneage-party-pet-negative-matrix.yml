@@ -1,0 +1,49 @@
+name: Validate StoneAge party pet original real-header negative matrix
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/validate-stoneage-party-pet-negative-matrix.yml"
+      - "tools/stoneage_party_pet_variant_matrix_audit.py"
+      - "tests/test_stoneage_party_pet_variant_matrix.py"
+permissions:
+  contents: read
+jobs:
+  native-matrix:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Structural matrix guards and accepted reentry regressions
+        run: python -m unittest -v tests.test_stoneage_party_pet_variant_matrix tests.test_stoneage_party_pet_full_exit tests.test_stoneage_party_pet_realheader
+      - name: Recover pinned original sources in transient checkout
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import subprocess
+          from pathlib import Path
+          from tools.stoneage_guard_break2_source_audit import PINNED
+          repos={"gavin":"gavinlinasd/StoneAge","iris":"iriselia/StoneAge","bismarck":"BismarckDD/stoneage"}
+          for profile,sha in PINNED.items():
+              path=Path("/tmp/stoneage-party-negative-matrix")/profile
+              subprocess.run(["git","init",str(path)],check=True)
+              subprocess.run(["git","-C",str(path),"remote","add","origin","https://github.com/"+repos[profile]+".git"],check=True)
+              subprocess.run(["git","-C",str(path),"fetch","--depth","1","origin",sha],check=True)
+              subprocess.run(["git","-C",str(path),"checkout","--detach","FETCH_HEAD"],check=True)
+          PY
+      - name: Execute actual original party pet negative matrix
+        run: |
+          set -euo pipefail
+          python -m tools.stoneage_party_pet_variant_matrix_audit --gavin-dir /tmp/stoneage-party-negative-matrix/gavin --iris-dir /tmp/stoneage-party-negative-matrix/iris --bismarck-dir /tmp/stoneage-party-negative-matrix/bismarck > /tmp/stoneage-party-negative-matrix.txt
+          cat /tmp/stoneage-party-negative-matrix.txt
+          grep -Fx "RESOLUTION|ORIGINAL_REAL_HEADER_PARTY_PET_NEGATIVE_MATRIX_BOUNDED_PASS_NO_HISTORICAL_PROMOTION" /tmp/stoneage-party-negative-matrix.txt
+          test "$(grep -c '^ACTUAL|.*|MATRIX|' /tmp/stoneage-party-negative-matrix.txt)" -eq 16
+          test "$(grep -c '^PROFILE|' /tmp/stoneage-party-negative-matrix.txt)" -eq 2
+      - name: Upload derived matrix only
+        uses: actions/upload-artifact@v4
+        with:
+          name: stoneage-party-pet-negative-matrix
+          path: /tmp/stoneage-party-negative-matrix.txt
