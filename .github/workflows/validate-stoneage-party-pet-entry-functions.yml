@@ -1,0 +1,54 @@
+name: Validate StoneAge original party pet entry functions
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/validate-stoneage-party-pet-entry-functions.yml"
+      - "tools/stoneage_party_pet_entry_function_runtime.py"
+      - "tests/test_stoneage_party_pet_entry_function_runtime.py"
+
+permissions:
+  contents: read
+
+jobs:
+  native-functions:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Structural and negative guards
+        run: python -m unittest -v tests.test_stoneage_party_pet_entry_function_runtime tests.test_stoneage_party_pet_source_preflight
+      - name: Recover original exact pinned source privately
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import subprocess
+          from pathlib import Path
+          from tools.stoneage_guard_break2_source_audit import PINNED
+          for profile,remote in (("gavin","gavinlinasd/StoneAge"),("bismarck","BismarckDD/stoneage")):
+              root=Path("/tmp/stoneage-party-pet-execution")/profile
+              subprocess.run(["git","init",str(root)],check=True)
+              subprocess.run(["git","-C",str(root),"remote","add","origin","https://github.com/"+remote+".git"],check=True)
+              subprocess.run(["git","-C",str(root),"fetch","--depth","1","origin",PINNED[profile]],check=True)
+              subprocess.run(["git","-C",str(root),"checkout","--detach","FETCH_HEAD"],check=True)
+          PY
+      - name: Execute original extracted bodies under native C O0 and O2
+        run: |
+          set -euo pipefail
+          python -m tools.stoneage_party_pet_entry_function_runtime \
+            --gavin-dir /tmp/stoneage-party-pet-execution/gavin \
+            --bismarck-dir /tmp/stoneage-party-pet-execution/bismarck \
+            > /tmp/native-party-pet-functions.txt
+          cat /tmp/native-party-pet-functions.txt
+          grep -F "RESOLUTION|BOUNDED_ORIGINAL_PARTY_PET_FUNCTION_EXECUTION_NO_INTEGRATED_BATTLE_PROMOTION" /tmp/native-party-pet-functions.txt
+          test "$(grep -c '^GAVIN|CASE|' /tmp/native-party-pet-functions.txt)" -eq 13
+          test "$(grep -c '^BISMARCK|CASE|' /tmp/native-party-pet-functions.txt)" -eq 13
+      - name: Upload hash-only derived result
+        uses: actions/upload-artifact@v4
+        with:
+          name: stoneage-party-pet-functions-runtime
+          path: /tmp/native-party-pet-functions.txt
