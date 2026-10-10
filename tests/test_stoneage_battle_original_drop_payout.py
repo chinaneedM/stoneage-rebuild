@@ -9,7 +9,7 @@ class OriginalLootPayoutTests(unittest.TestCase):
             for term in ("payout_scenario<2", "BATTLE_GetExpGold(battle_at,0,0)",
                "CHAR_findEmptyItemBox(0)==-1","==expected_live",
                "expected_arena.Side[0].Entry[0].getitem[0]=-1",
-               "expected_items[3].use=0","expected_items[3].ITEM_FIELD.workint[ITEM_WORKCHARAINDEX]=0",
+               "expected_items[3].use=0","workint[ITEM_WORKCHARAINDEX]=0",
                "expected_actors[0].indexOfExistItems[empty]=3",
                "memcpy(expected_items,reward_items", "memcmp(expected_actors,slots",
                "memcmp(expected_arena,arena", "REAL_HEADER_DROP_PAYOUT|"):
