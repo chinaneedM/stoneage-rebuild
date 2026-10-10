@@ -1,0 +1,126 @@
+{
+  "status": "REMOTE_ACCEPTED_BOUNDED",
+  "date": "2026-10-11 Asia/Shanghai",
+  "repo": "chinaneedM/stoneage-rebuild",
+  "main_baseline": "a40c9482ef0fdc0d801a4632345baa309c6288c5",
+  "main_baseline_tree": "91ca09303c6f4ea8241c2927ab53255b90a5718d",
+  "prior_current_state": {
+    "blob": "4f4d67055f941925ccdaf441265b5d53e55ab51c",
+    "decoded_characters": 1214528,
+    "byte_size": 1220882,
+    "prefix_retained": true
+  },
+  "tested_branch": "agent/battle-original-drop-ticket-r1-20261011",
+  "tested_commit": "7866130666b959b7cc19c41b22302e5d6f66a30d",
+  "tested_tree": "79c238bf4d501b88050d90d6836448bfd87daf9f",
+  "original_ticket_action": {
+    "id": 38072038136,
+    "job": 114271250777,
+    "result": "success",
+    "python_tests": 41
+  },
+  "original_pet_and_overflow_action": {
+    "id": 38072897012,
+    "job": 114273809757,
+    "result": "success",
+    "python_tests": 44
+  },
+  "action_outputs": {
+    "profiles": [
+      "gavin",
+      "bismarck"
+    ],
+    "original_native_flags": [
+      "O0",
+      "O2",
+      "UBSan"
+    ],
+    "actual_item_id": 1,
+    "original_item_index": 3,
+    "actual_enemy_actor": 6,
+    "direct_player_ticket": {
+      "attacker_bid": 0,
+      "recipient_player": 0,
+      "pending": [
+        3,
+        -1,
+        -1
+      ],
+      "rng_draws": 1,
+      "enemy_carried_cleared": true,
+      "item_owner_before_finish": 6
+    },
+    "pet_ticket": {
+      "attacker_bid": 5,
+      "attacker_pet": 2,
+      "loot_owner_player": 0,
+      "pending": [
+        3,
+        -1,
+        -1
+      ],
+      "rng_draws": 1,
+      "pet_kill_incremented": true
+    },
+    "full_buffer_discard": {
+      "preexisting_synthetic_indices": [
+        4,
+        5,
+        6
+      ],
+      "pending": [
+        4,
+        5,
+        6
+      ],
+      "destroyed_new_item": 3,
+      "item3_owner_after_release": -1,
+      "rng_draws": 2
+    },
+    "full_buffer_replace": {
+      "preexisting_synthetic_indices": [
+        4,
+        5,
+        6
+      ],
+      "pending": [
+        4,
+        3,
+        6
+      ],
+      "destroyed_old_item": 5,
+      "rng_draws": 3
+    },
+    "complete_item_pool_byte_oracle": true,
+    "complete_battle_arena_oracle": true,
+    "all_unrelated_actors_byte_oracle": true,
+    "in_bounds_original_pool_size": 8,
+    "source_factories_immutable": true,
+    "inherited_original_functions_sha_locked": [
+      "BATTLE_AddExpItem",
+      "BATTLE_ItemDelCheck"
+    ]
+  },
+  "artifact": {
+    "id": 11677471528,
+    "size_bytes": 17541,
+    "github_reported_sha256": "8be7bca3207a89aa924d34c347ef4ad517dc3e25bc507a3dcb4c74bd858232af",
+    "independent_download_hash_verified": false
+  },
+  "evidence_scope": "real pinned later-source descendant original C functions with controlled header layout, master, randomness, attacker/pet topology and 2-player getFdnum config adapter; not early retail server proof",
+  "scope_exclusions": [
+    "actual original second Loop/Finish inventory payout from this same item not connected",
+    "natural master drop table unavailable",
+    "historical JSS/Taiwan v1 server equivalence unproven",
+    "original online transport and live configuration not represented"
+  ],
+  "original_game_source_embedded": false,
+  "pressure": {
+    "total": 2486,
+    "bounded_closed": 2465,
+    "open": 18,
+    "historical_ub": 3,
+    "promotions": 0
+  },
+  "highest_next": "Connect this registered enemy item through original AddExpItem and genuine second Loop/Finish and original BATTLE_GetExpGold into final player bag; test player capacity, failure/destruction and exact 256-item/7-character/arena outcomes. Never treat later-source evidence as original Taiwan/JSS server fact."
+}

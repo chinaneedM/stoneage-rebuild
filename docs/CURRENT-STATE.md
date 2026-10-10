@@ -11429,3 +11429,65 @@ reviewed discovery gate and its automated derived-report writeback is authorized
   actor/item/arena oracles. Preserve source-version probabilities, initial
   item ID tables, original gold/EXP, callbacks, unique-code/time, network/Lua
   and early JSS1999/Taiwan-v1 executable/server equivalence as OPEN.
+
+## 2026-10-11 — Original enemy drop → AddExpItem player/pet ticket + 3-slot overflow REMOTE ACCEPTED (bounded)
+
+- Fresh remote baseline main a40c9482ef0fdc0d801a4632345baa309c6288c5,
+  tree 91ca09303c6f4ea8241c2927ab53255b90a5718d.
+  Historical docs/CURRENT-STATE.md blob 4f4d67055f941925ccdaf441265b5d53e55ab51c
+  (1214528 decoded chars, 1220882 repository bytes) retained intact as
+  an exact prefix. All prior historical distinctions and chronological audits
+  remain present; no old state truncated or replaced.
+- Tested branch agent/battle-original-drop-ticket-r1-20261011:
+  complete final native input 7866130666b959b7cc19c41b22302e5d6f66a30d,
+  tree 79c238bf4d501b88050d90d6836448bfd87daf9f.
+  Final Action38072897012/job114273809757 SUCCESS, 44 Python unit
+  regressions PASS, both pinned Gavin/Bismarck original-source native C
+  branches O0/O2 under nonrecovering UBSan with output equality, and
+  independent original item-factory previous witness rerun PASS.
+  Earlier direct original AddExpItem Action38072038136/job114271250777
+  SUCCESS with 41 Python tests; new gate retains this check.
+- Original ENEMY_createEnemy with synthetic guaranteed itemID1 produces actor6,
+  original registered item3, original enemy-held CHAR_STARTITEMARRAY+0 and
+  original ITEM_WORKCHARAINDEX=6. Exact original BATTLE_AddExpItem consumes
+  genuine player's bid0, original BATTLE_No2Index mapping, one RAND recipient
+  and places item3 into player0 getitem[0]. Enemy carried slot clears,
+  original ISDIE and death/kill counters change, while pending item record
+  retains enemy owner6 *until* subsequent final payout. Whole 256 original
+  item bytes, complete original arena, other actor bytes check PASS.
+- Pet attack-list bid5 resolves actual pet actor2 and the original function
+  maps the queued reward to player-owner battle entry0 while pet receives
+  its direct kill participation. The pending item becomes player0
+  getitem[0]=3 (one RNG). This is true original pet-ticket ownership mapping,
+  not arbitrary recipient choice.
+- Three pending-item slot limit exercised with artificial preexisting
+  items4,5,6 inside the original active item capacity8 (not invalid 240+
+  indices). With RAND mode0, full pending[4,5,6] discards *new* item3
+  via original ITEM_endExistItemsOne (2 RNG); item3 use clears, original
+  owner6 resets to -1; buffer remains [4,5,6]. With RAND mode1,
+  the original BATTLE_ItemDelCheck and release replace middle old item5
+  with new item3, resulting pending[4,3,6] and freed item5 (3 RNG).
+  Every scenario has a complete independently calculated 256-item-array,
+  all-unaffected-actors and exact entire BATTLE-byte oracle PASS. Original
+  allocator/character static cursors not rewound; fixtures restored only
+  after all oracles.
+- Source C bodies BATTLE_AddExpItem / BATTLE_ItemDelCheck extracted transiently
+  from pinned descendant snapshots; all four function body hashes frozen
+  in research/recovered/STONEAGE-BATTLE-ORIGINAL-DROP-TICKET-SOURCE-R1.json.
+  getFdnum original runtime reads server config; bounded gate supplies
+  exactly2 as preaccepted player partition, without implementing MMO config.
+  No proprietary client/source/assets published; all test master data is
+  explicitly synthetic. Later-source descendant ≠ JSS1999/Taiwan-v1 server.
+- Evidence artifact11677471528, ZIP17541 bytes, GitHub reported SHA256
+  8be7bca3207a89aa924d34c347ef4ad517dc3e25bc507a3dcb4c74bd858232af;
+  no independent ZIP download digest verification claimed.
+  Pressure unchanged 2486=2465 bounded-closed +18 OPEN+3 historical UB,
+  zero history promotions. This completes ONLY the attacker-ticket,
+  pet-owner redirect and 3-slot reward buffer source gates.
+- Highest NEXT: retain the same naturally created (synthetic-ID1) registered
+  item and execute original AddExpItem followed by real second Loop/Finish,
+  BATTLE_GetExpGold and original CHAR_addItemSpecificItemIndex into player's
+  *persistent* bag; test empty/partial/full/duplicate recipient slots and
+  release/ownership with all original pool, actor, arena byte oracles.
+  Natural item masters/probabilities, original server identity, unique/time,
+  gold/EXP, full transport, callbacks and modern game engine remain OPEN.
