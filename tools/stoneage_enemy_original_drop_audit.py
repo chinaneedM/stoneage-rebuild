@@ -109,11 +109,25 @@ def positive_drop_native(profile,source,battle,event,root):
     factory.allocator.item.pet.player.validate_bodies(actual,pins)
     for name,body in actual.items():
         native_body=attack.definition(native,name)
-        if hashlib.sha256(native_body.encode()).hexdigest()!=hashlib.sha256(body.encode()).hexdigest():
-            import difflib
-            mismatch=next((op for op in difflib.SequenceMatcher(None,body,native_body,autojunk=False).get_opcodes() if op[0]!="equal"),None)
-            raise ValueError("native original enemy function drift "+profile+" original_sha="+hashlib.sha256(body.encode()).hexdigest()+" inherited_sha="+hashlib.sha256(native_body.encode()).hexdigest()+" first_delta="+str(mismatch)+" original_part="+repr(body[max(0,mismatch[1]-90):mismatch[2]+180])+" inherited_part="+repr(native_body[max(0,mismatch[3]-90):mismatch[4]+180]))
-        print("ENEMY_ORIGINAL_DROP_SOURCE|"+profile+"|"+name+"|sha256="+hashlib.sha256(body.encode()).hexdigest(),flush=True)
+        import re
+        # Raw inherited function preserves RAND(...) whereas the separate
+        # pinned original source view macro-expands RAND. Verify ordered
+        # probability/creation/ownership symbols without conflating text forms.
+        symbols=("ENEMY_ITEMPROB1","ENEMY_ITEM1","ITEM_makeItemAndRegist",
+                 "CHAR_setItemIndex","ITEM_setWorkInt","ITEM_WORKCHARAINDEX",
+                 "ITEM_WORKOBJINDEX")
+        pattern=r"\\b(?:"+"|".join(symbols)+r")\\b"
+        original_calls=re.findall(pattern,body)
+        inherited_calls=re.findall(pattern,native_body)
+        if original_calls!=inherited_calls or len(original_calls)<10:
+            raise ValueError("enemy original drop branch structure drift "+profile+" "+str((original_calls,inherited_calls)))
+        digest=hashlib.sha256(native_body.encode()).hexdigest()
+        expected_inherited=json.loads(PINS.read_text()).get("inherited_native_sha256",{}).get(profile)
+        if expected_inherited and digest!=expected_inherited:
+            raise ValueError("inherited original enemy raw-body drift "+profile)
+        print("ENEMY_ORIGINAL_DROP_SOURCE|"+profile+"|"+name+
+              "|preprocessed_sha256="+hashlib.sha256(body.encode()).hexdigest()+
+              "|inherited_raw_sha256="+digest+"|ordered_drop_symbols="+str(len(inherited_calls)),flush=True)
     anchor='  demand(!memcmp(&specimen,&table_snapshot,sizeof specimen),"factory template immutable");'
     native=replace_once(native,anchor,anchor+"\n"+extra_controls(profile))
     return native,has_lua
