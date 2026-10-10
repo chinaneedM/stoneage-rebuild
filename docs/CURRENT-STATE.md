@@ -10848,3 +10848,56 @@ reviewed discovery gate and its automated derived-report writeback is authorized
   positive EXP/gold/items and Exit/Delete on bounded profiles.
   Source-profile WinFunc sentinel difference remains versioned and
   cannot substitute for runtime evidence. No modern implementation stage.
+
+
+## 2026-10-10 — Original full all-ready lethal Loop, FinishSet and winning side REMOTE ACCEPTED (bounded)
+
+- Fresh remote main32d7d8fb39cdfd600713dcd91b19daad75335e05,
+  tree057bfc1e7cb6422a19716617f20e2abc9d43830d. Complete preceding
+  CURRENT-STATE blob9a0b593544334a8869cce877ffe6a0c70f1b4094
+  retained verbatim, with all prior terminal source/direct-hit controls.
+- Native working branch agent/party-pet-original-lethal-loop-r1-20261010,
+  accepted exact input d37b989aca360492004265ebfb43ad6e3f9eb28b
+  tree c78271155fbe504346f7bbd66ee65017fc615635.
+  Action38058739741/job114232468175 SUCCESS, all10 workflow steps
+  and14 Python regression tests. Gavin1f90cb6/Bismarck999ffdf1
+  clean pinned late-descendant original headers/bodies, GNU99 O0/O2
+  nonrecovering UBSan:4 arena encounters per profile/optimization,
+  cursor0,1,2,0;16 actual all-ready lethal Loop invocations,
+  original guard and ordinary nonterminal predecessor controls retained.
+- FACT under **named constrained input**: after explicitly prepared
+  enemy HP60 (below original calibrated guarded physical damage73),
+  original BATTLE_Loop->Command->full Battling->Attack/DamageSub
+  reduces real allocator-selected enemy to HP0. Original reward-accumulation
+  dependencies CHAR_setMaxExp, Pet_Check_Die, BATTLE_NormalDeadExtra and
+  original BATTLE_FinishSet bodies are executed, not fabricated. Native
+  finish-mode assertion BATTLE_MODE_FINISH (value3) succeeds; actual original
+  BATTLE_CountAlive(battle,enemy side1)==0. Actual winning side differs:
+  Gavin winside0; Bismarck winside-1. These are profile-versioned results,
+  not a global standard or first-release historical rule. Actual Loop returns1.
+- Whole output from O0 equals O2 within each profile, including run-specific
+  actor/arena diagnostics. Gavin native SHA256
+  02f983e922f044fe1a667fa45ff459acef06a5a725330262dc94855e1c9350aa;
+  Bismarck33c61b5a9568b80d0e86eb55a9a748adef250d36310791d79f57aa57a9f07b68.
+  Exactly eight representative actual lethal markers, eight mode/winside/
+  alive markers. Four output sends/encounter observed. Nonterminal expected
+  packet does not match lethal packet, so no terminal packet proof.
+  Derived-only artifact11672216359, GitHub-reported ZIP digest
+  sha256:3bdd09c8c266700a20c4ff37d8783c97816f29ab0f37b78abd63172c74280f1b;
+  independent ZIP/report bytes NOT verified.
+- Accepted only: fully scheduled fatal ordinary attack, enemy HP floor,
+  opponent alive count, original FinishSet transition and version-specific
+  winning side in bounded single-enemy controlled fixture. No claim of
+  full seven-actor/arena exact post-death oracle: diagnostic comparison
+  against prior *nonterminal* oracle correctly shows differences.
+  No next Loop FINISH dispatch, original BATTLE_Finish, GetProfit positive
+  EXP/gold/item transfer, terminal automatic Exit/Delete, natural AI,
+  real network/Lua or JSS1999/Taiwan-v1 executable historical equivalence.
+  No pressure promotions:2486=2465 closed capability+18 OPEN+3 historical UB.
+- Highest NEXT: from actual bounded BATTLE_MODE_FINISH state, execute
+  a second original Loop dispatch into BATTLE_Finish with exact profile
+  original headers/body and bounded original GetProfit/Exit/Delete dependencies.
+  Assert actual recipient/amount/ownership effects separately; do not substitute
+  mere source presence or callback sentinel. Add full actor/arena effect
+  oracle and condition/reward controls before any terminal/positive-profit
+  promotion. No modern-engine/content phase transition.

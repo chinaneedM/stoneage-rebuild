@@ -1,0 +1,78 @@
+{
+  "gate": "STONEAGE_PARTY_PET_ORIGINAL_LETHAL_LOOP_FINISHSET_R1",
+  "status": "REMOTE_ACCEPTED_BOUNDED_REALHEADER_LETHAL_FULL_LOOP_FINISHSET_NOT_FULL_FINISH_PROFIT",
+  "repository": "chinaneedM/stoneage-rebuild",
+  "branch": "agent/party-pet-original-lethal-loop-r1-20261010",
+  "tested_commit": "d37b989aca360492004265ebfb43ad6e3f9eb28b",
+  "tested_tree": "c78271155fbe504346f7bbd66ee65017fc615635",
+  "original_main": "32d7d8fb39cdfd600713dcd91b19daad75335e05",
+  "prior_current_state_blob": "9a0b593544334a8869cce877ffe6a0c70f1b4094",
+  "github_actions": {
+    "run_id": 38058739741,
+    "job_id": 114232468175,
+    "conclusion": "success",
+    "steps_passed": 10,
+    "unit_tests_passed": 14,
+    "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/38058739741"
+  },
+  "native": {
+    "profiles": {
+      "gavin": {
+        "original_pin": "1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56",
+        "complete_o0_o2_trace_sha256": "02f983e922f044fe1a667fa45ff459acef06a5a725330262dc94855e1c9350aa",
+        "winning_side": 0
+      },
+      "bismarck": {
+        "original_pin": "999ffdf1d220ec6666eb65339180689c9caf1876",
+        "complete_o0_o2_trace_sha256": "33c61b5a9568b80d0e86eb55a9a748adef250d36310791d79f57aa57a9f07b68",
+        "winning_side": -1
+      }
+    },
+    "original_loop_command_full_battling": true,
+    "original_attack_damage": true,
+    "preserved_original_char_set_max_exp": true,
+    "preserved_original_pet_check_die": true,
+    "preserved_original_battle_normal_dead_extra": true,
+    "preserved_original_battle_finish_set": true,
+    "enemy_initial_hp": 60,
+    "enemy_final_hp": 0,
+    "enemy_alive_count": 0,
+    "terminal_mode_numeric": 3,
+    "terminal_mode_symbol": "BATTLE_MODE_FINISH",
+    "arena_cursor": [
+      0,
+      1,
+      2,
+      0
+    ],
+    "native_full_lethal_invocations": 16,
+    "compiler_optimizations": [
+      "-O0",
+      "-O2"
+    ],
+    "nonrecovering_ubsan": true,
+    "complete_trace_optimization_equality": true,
+    "presentation_sends_per_encounter": 4,
+    "terminal_original_packet_validated": false,
+    "next_command_wait_executed": false,
+    "full_seven_actor_arena_postdeath_oracle": false,
+    "second_loop_finish_executed": false,
+    "original_get_profit_executed": false,
+    "positive_exp_gold_items_proven": false,
+    "original_terminal_exit_delete_executed": false
+  },
+  "artifact": {
+    "id": 11672216359,
+    "github_reported_archive_digest": "sha256:3bdd09c8c266700a20c4ff37d8783c97816f29ab0f37b78abd63172c74280f1b",
+    "independent_zip_verified": false
+  },
+  "pressure": {
+    "total": 2486,
+    "closed_capability": 2465,
+    "open": 18,
+    "historical_ub": 3,
+    "promotions": 0
+  },
+  "superseded_experimental_runs_note": "Failed exploratory candidates remain in branch history; only final exact-input successful run is accepted.",
+  "next": "next original Loop FINISH dispatch with actual GetProfit, positive reward and original Exit/Delete full effect assertions"
+}
