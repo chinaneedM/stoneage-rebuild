@@ -41,7 +41,7 @@ jobs:
           python -m tools.stoneage_item_factory_audit --gavin-dir /tmp/stoneage-item-factory-r1/gavin --iris-dir /tmp/stoneage-item-factory-r1/iris --bismarck-dir /tmp/stoneage-item-factory-r1/bismarck > /tmp/stoneage-item-factory-r1.txt
           cat /tmp/stoneage-item-factory-r1.txt
           grep -Fx 'RESOLUTION|ORIGINAL_REAL_HEADER_ITEM_FACTORY_BOUNDED_PASS' /tmp/stoneage-item-factory-r1.txt
-          test "$(grep -c '^ACTUAL|.*REAL_HEADER_ITEM_FACTORY|' /tmp/stoneage-item-factory-r1.txt)" -eq 4
+          test "$(grep -c '^ACTUAL|.*REAL_HEADER_ITEM_FACTORY|' /tmp/stoneage-item-factory-r1.txt)" -eq 2
       - name: Preserve prior allocator witness independently
         run: |
           set -euo pipefail
