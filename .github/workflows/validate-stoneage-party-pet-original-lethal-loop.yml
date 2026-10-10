@@ -1,0 +1,47 @@
+name: Validate StoneAge original party pet complete lethal Loop
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/validate-stoneage-party-pet-original-lethal-loop.yml"
+      - "tools/stoneage_party_pet_original_lethal_loop_audit.py"
+      - "tests/test_stoneage_party_pet_original_lethal_loop.py"
+permissions:
+  contents: read
+jobs:
+  original-lethal-loop:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - name: Original lethal Loop mutation and accepted physical regressions
+        run: python -m unittest -v tests.test_stoneage_party_pet_original_lethal_loop tests.test_stoneage_party_pet_original_lethal_direct tests.test_stoneage_party_pet_original_attack
+      - name: Recover pinned sources transiently
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import subprocess
+          from pathlib import Path
+          from tools.stoneage_party_pet_original_attack_audit import PINNED
+          repos={"gavin":"gavinlinasd/StoneAge","iris":"iriselia/StoneAge","bismarck":"BismarckDD/stoneage"}
+          for p,sha in PINNED.items():
+              d=Path("/tmp/stoneage-party-lethal-loop")/p
+              subprocess.run(["git","init",str(d)],check=True)
+              subprocess.run(["git","-C",str(d),"remote","add","origin","https://github.com/"+repos[p]+".git"],check=True)
+              subprocess.run(["git","-C",str(d),"fetch","--depth","1","origin",sha],check=True)
+              subprocess.run(["git","-C",str(d),"checkout","--detach","FETCH_HEAD"],check=True)
+          PY
+      - name: Native real-header all-ready lethal loop and controls
+        run: |
+          set -euo pipefail
+          python -m tools.stoneage_party_pet_original_lethal_loop_audit --gavin-dir /tmp/stoneage-party-lethal-loop/gavin --iris-dir /tmp/stoneage-party-lethal-loop/iris --bismarck-dir /tmp/stoneage-party-lethal-loop/bismarck > /tmp/stoneage-party-lethal-loop.txt
+          cat /tmp/stoneage-party-lethal-loop.txt
+          grep -Fx 'RESOLUTION|ORIGINAL_REAL_HEADER_PARTY_PET_LETHAL_LOOP_HP_PASS' /tmp/stoneage-party-lethal-loop.txt
+          test "$(grep -c '^ACTUAL|.*REAL_HEADER_LETHAL_LOOP|' /tmp/stoneage-party-lethal-loop.txt)" -eq 8
+      - name: Upload only derived observations
+        uses: actions/upload-artifact@v4
+        with:
+          name: stoneage-party-original-lethal-loop
+          path: /tmp/stoneage-party-lethal-loop.txt
