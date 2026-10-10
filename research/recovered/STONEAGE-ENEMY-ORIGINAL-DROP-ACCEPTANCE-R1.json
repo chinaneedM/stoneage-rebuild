@@ -1,0 +1,69 @@
+{
+  "status": "REMOTE_ACCEPTED_BOUNDED",
+  "date": "2026-10-11 Asia/Shanghai",
+  "repo": "chinaneedM/stoneage-rebuild",
+  "baseline_main": "fb9a1153565f7c049352fbf5d0657950e3a8456b",
+  "baseline_tree": "d3056bdb76545d0d75317f6575b637bfd3b0821a",
+  "preserved_prior_current_state": {
+    "git_blob": "a8fbd532bfeeb9de214246a51654fa07f158c3b7",
+    "decoded_characters": 1210799,
+    "remote_bytes": 1217151
+  },
+  "branch": "agent/enemy-original-drop-r1-20261011",
+  "tested_commit": "756b760117272bd6577fb6fb98e091f401b2c0ee",
+  "tested_tree": "559f58a23cc4e4eb38e2f66bc0dd953129d5114e",
+  "action": 38071157854,
+  "job": 114268667959,
+  "action_conclusion": "success",
+  "python_tests": 38,
+  "original_enemy_creation_native": {
+    "profiles": [
+      "gavin",
+      "bismarck"
+    ],
+    "zero_probability_master_entries": 10,
+    "positive_probability_master_entries": 1,
+    "synthetic_item_id": 1,
+    "synthetic_probability": 1000,
+    "zero_probability_actor": 5,
+    "positive_probability_actor": 6,
+    "original_allocator_item_index": 3,
+    "zero_probability_rand_calls": 14,
+    "positive_probability_rand_calls": 81,
+    "original_item_factory_fields": 66,
+    "original_rand_delta": 67,
+    "leaklevel": {
+      "gavin": 1,
+      "bismarck": 0
+    },
+    "entire_256_item_array_oracle": true,
+    "other_actors_unchanged": true,
+    "battle_arena_unchanged": true,
+    "source_table_unchanged": true,
+    "original_function_pins": "STONEAGE-ENEMY-ORIGINAL-DROP-SOURCE-R1.json",
+    "original_enemy_calls_profile": 2,
+    "optimization_modes": [
+      "O0",
+      "O2"
+    ],
+    "prior_original_factory_independently_rerun": true
+  },
+  "artifact": {
+    "id": 11676987124,
+    "zip_bytes": 18095,
+    "sha256": "87802bacbd5fc31e8a0894ab818ec7b6546506367dd2353b0d0a937b79d4da24",
+    "independent_download_hash_checked": false
+  },
+  "source_status": "pinned late-descendant real function bodies; macro-expanded and inherited raw variants independently SHA-locked; original header source only",
+  "historical_limit": "not original 1999 JSS or Taiwanese 1.0 server equivalence; no recovered master item/drop percentages",
+  "natural_master_drop_data_confirmed": false,
+  "player_reward_transfer_runtime_executed": false,
+  "pressure": {
+    "total": 2486,
+    "bounded_closed": 2465,
+    "open": 18,
+    "historical_ub": 3,
+    "promotions": 0
+  },
+  "next": "Actual original BATTLE_AddExpItem with enemy-held item, attack ticket recipient, pet-to-owner mapping and 3-slot replacement plus real second Loop/Finish; requires defensible controlled master and RNG fixtures."
+}

@@ -11376,3 +11376,56 @@ reviewed discovery gate and its automated derived-report writeback is authorized
   original actor/arena/item oracles. Natural master tables, item callbacks/
   unique-code/time, positive gold/EXP/config, network/Lua/watchers and
   JSS 1999/Taiwan v1.0 server equivalence remain OPEN.
+
+## 2026-10-11 — Original ENEMY_createEnemy positive ITEM drop REMOTE ACCEPTED (bounded)
+
+- Fresh remote baseline main fb9a1153565f7c049352fbf5d0657950e3a8456b, tree d3056bdb76545d0d75317f6575b637bfd3b0821a.
+  Predecessor docs/CURRENT-STATE.md exact blob a8fbd532bfeeb9de214246a51654fa07f158c3b7,
+  1210799 decoded characters (remote metadata 1217151 bytes) is a
+  byte-identical prefix of this appended continuation. No earlier evidence,
+  unresolved classification, chronology or narrower accepted witnesses replaced.
+- Branch agent/enemy-original-drop-r1-20261011; final tested input
+  756b760117272bd6577fb6fb98e091f401b2c0ee, tree559f58a23cc4e4eb38e2f66bc0dd953129d5114e.
+  Action38071157854/job114268667959 all steps SUCCESS: 38 Python source
+  mutation/retained regressions, actual original native creation and factory
+  probe under GNU99 O0/O2 nonrecovering UBSan and complete per-profile
+  output-byte equality. Independent prior item-factory gate rerun PASS.
+- Exact pinned Gavin1f90cb6 and Bismarck999ffdf1 descendant enemy creator
+  bodies verified in both macro-expanded and inherited raw RAND presentations:
+  STONEAGE-ENEMY-ORIGINAL-DROP-SOURCE-R1.json locks both SHA forms,
+  and 16 ordered source drop/owner symbols agree in each profile. The
+  distinction is preprocessor expansion, NOT a historical-version claim.
+- At the actual post-Finish original-source runtime point, ten explicit
+  ENEMY_ITEMn/ENEMY_ITEMPROBn fixture pairs start at zero. First original
+  ENEMY_createEnemy(0,2) allocates actor5, consumes14 RNG calls, produces no
+  item; whole original256-item pool, other actors and arena byte oracles PASS.
+  A second creation gives only first pair synthetic itemID1/probability1000
+  (all other nine zero), creates actor6 and real item index3 through actual
+  original ITEM_makeItemAndRegist, original allocator cursor, enemy's
+  carried index at CHAR_STARTITEMARRAY, original owner/object setters.
+  It consumes81 RNG calls: the exact delta67=one probability RAND+66
+  integer-field factory RAND calls, including zero random ranges.
+- Complete original256 item records match independent template/owner oracle,
+  all unaffected actor records and prior arena bytes match, source factory
+  table immutable; original profile leak level remains Gavin1/Bismarck0.
+  Fixture master/item/actor domains are restored only after comparisons;
+  original allocator/character static cursors are not reset.
+- This is bounded source execution using artificial ten-pair master,
+  guaranteed probability1000, and deterministic RNG, NOT observed
+  naturally distributed ITEMPROB values, real enemy drop data, true historical
+  JSS1999/Taiwan-v1 server identity, user-level reward, or live transport.
+  It must not be promoted to early-game FACT. No original copyrighted
+  source/binary or assets committed to reconstruction.
+- Artifact11676987124 ZIP18095 bytes, GitHub Actions reported SHA256
+  87802bacbd5fc31e8a0894ab818ec7b6546506367dd2353b0d0a937b79d4da24;
+  no independent artifact ZIP download/hash comparison claimed.
+  Source/receipt STONEAGE-ENEMY-ORIGINAL-DROP-*-R1.
+  Pressure remains2486=2465 bounded closed+18 OPEN+3 historical UB;
+  zero history promotions; no modern-engine phase transition.
+- Highest NEXT: actual BATTLE_AddExpItem with originally spawned enemy-carried
+  item, source ticket/attacker list and pet-to-player mapping; cover
+  three-slot GETITEM_MAX pending capacity, overflow replace/destroy,
+  then actual second Loop/Finish to recipient bag or release with full
+  actor/item/arena oracles. Preserve source-version probabilities, initial
+  item ID tables, original gold/EXP, callbacks, unique-code/time, network/Lua
+  and early JSS1999/Taiwan-v1 executable/server equivalence as OPEN.
