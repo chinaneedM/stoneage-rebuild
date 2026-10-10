@@ -1,0 +1,60 @@
+name: Validate StoneAge pinned party pet source preflight
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/validate-stoneage-party-pet-source-preflight.yml"
+      - "tools/stoneage_party_pet_source_preflight.py"
+      - "tests/test_stoneage_party_pet_source_preflight.py"
+
+permissions:
+  contents: read
+
+jobs:
+  source-preflight:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run branch and negative guard checks
+        run: python -m unittest -v tests.test_stoneage_party_pet_source_preflight
+      - name: Recover exact pinned descendant trees transiently
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import subprocess
+          from pathlib import Path
+          from tools.stoneage_guard_break2_source_audit import PINNED
+          for profile,remote in (("gavin","gavinlinasd/StoneAge"),("bismarck","BismarckDD/stoneage")):
+              root=Path("/tmp/stoneage-party-pet")/profile
+              subprocess.run(["git","init",str(root)],check=True)
+              subprocess.run(["git","-C",str(root),"remote","add","origin","https://github.com/"+remote+".git"],check=True)
+              subprocess.run(["git","-C",str(root),"fetch","--depth","1","origin",PINNED[profile]],check=True)
+              subprocess.run(["git","-C",str(root),"checkout","--detach","FETCH_HEAD"],check=True)
+          PY
+      - name: Verify actual pinned compiled-profile branch evidence
+        run: |
+          set -euo pipefail
+          python -m tools.stoneage_party_pet_source_preflight \
+            --gavin-dir /tmp/stoneage-party-pet/gavin \
+            --bismarck-dir /tmp/stoneage-party-pet/bismarck \
+            > /tmp/party-pet-preflight-r1.json
+          python - <<'PY'
+          import json
+          with open("/tmp/party-pet-preflight-r1.json",encoding="utf-8") as f: r=json.load(f)
+          assert r["result"]=="PASS" and len(r["profiles"])==2
+          assert [p["observations"]["party_capacity_source"] for p in r["profiles"]]==["CHAR_PARTYMAX","getPartyNum"]
+          for p in r["profiles"]:
+              assert p["evidence_status"].startswith("STATIC_PINNED")
+              assert p["observations"]["runtime_party_pet_admission"]=="OPEN"
+          print("SOURCE_PREFLIGHT_PASS|profiles=2|runtime_promotions=0")
+          PY
+      - name: Upload derived hash-only preflight report
+        uses: actions/upload-artifact@v4
+        with:
+          name: stoneage-party-pet-source-preflight-${{ github.sha }}
+          path: /tmp/party-pet-preflight-r1.json
