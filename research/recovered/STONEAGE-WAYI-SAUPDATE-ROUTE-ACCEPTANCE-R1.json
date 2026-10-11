@@ -1,0 +1,383 @@
+{
+  "schema": "STONEAGE-WAYI-SAUPDATE-ROUTE-ACCEPTANCE-R1",
+  "baseline_main": "3aff9d0d2a92bdd7c5d6490acccaf576ad30a1f1",
+  "accepted_source_commit": "518a1f8de842916b2f43b9dfad574fadbf4d0c1f",
+  "accepted_source_tree": "cc3f3648a15eb94cb62e9790d956e00523cf8954",
+  "branch": "agent/wayi-saupdate-8080-route-r1-20261012",
+  "branch_runs": [
+    {
+      "id": 38158804217,
+      "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+      "jobs": [
+        {
+          "id": 114527213366,
+          "name": "boundary",
+          "status": "completed",
+          "conclusion": "success",
+          "run_id": 38158804217,
+          "logs_url": null,
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3
+            },
+            {
+              "name": "Verify historical announcement separately from code, binary and early-version claims",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 7
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 8
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 9
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 38158804276,
+      "name": "Validate Wayi updater manifest route evidence",
+      "jobs": [
+        {
+          "id": 114527213828,
+          "name": "offline-route",
+          "status": "completed",
+          "conclusion": "success",
+          "run_id": 38158804276,
+          "logs_url": null,
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3
+            },
+            {
+              "name": "Install pinned static decoder",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4
+            },
+            {
+              "name": "Validate port width, branches, operands and adjacent archive regressions",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 5
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 9
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 10
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 11
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 38158804294,
+      "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+      "jobs": [
+        {
+          "id": 114527213433,
+          "name": "provenance",
+          "status": "completed",
+          "conclusion": "success",
+          "run_id": 38158804294,
+          "logs_url": null,
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3
+            },
+            {
+              "name": "Confirm source-only version separation and safe archive signature tests",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 7
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 8
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 9
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "main_runs": [
+    {
+      "id": 38158868086,
+      "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+      "jobs": [
+        {
+          "id": 114527395531,
+          "name": "boundary",
+          "status": "completed",
+          "conclusion": "success",
+          "run_id": 38158868086,
+          "logs_url": null,
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3
+            },
+            {
+              "name": "Verify historical announcement separately from code, binary and early-version claims",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 7
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 8
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 9
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 38158868114,
+      "name": "Validate Wayi updater manifest route evidence",
+      "jobs": [
+        {
+          "id": 114527395684,
+          "name": "offline-route",
+          "status": "completed",
+          "conclusion": "success",
+          "run_id": 38158868114,
+          "logs_url": null,
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3
+            },
+            {
+              "name": "Install pinned static decoder",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4
+            },
+            {
+              "name": "Validate port width, branches, operands and adjacent archive regressions",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 5
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 9
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 10
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 11
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 38158868058,
+      "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+      "jobs": [
+        {
+          "id": 114527395622,
+          "name": "provenance",
+          "status": "completed",
+          "conclusion": "success",
+          "run_id": 38158868058,
+          "logs_url": null,
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3
+            },
+            {
+              "name": "Confirm source-only version separation and safe archive signature tests",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 7
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 8
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 9
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "offline_checks_confirmed_from_branch_and_main_logs": 57,
+  "integration": "fresh main lease checked; non-destructive fast-forward",
+  "historical_prefixes_verified": true,
+  "original_game_executed": false,
+  "original_proprietary_bytes_committed": false,
+  "admitted": "Static port8080 host/path flow, key-dependent manifest branches and conditional local path.txt override in hash-pinned 2006-captured operator-linked updater",
+  "manifest_bytes_obtained": false,
+  "full80_installer_obtained": false,
+  "publisher_original_hash_verified": false,
+  "native_pet_runtime_verified": false,
+  "pressure": "2486=2465 bounded closed+18 OPEN+3 historical UB",
+  "next": "Official package/path.txt/manifest acquisition; if archive route remains empty, use exact accepted game client hash for bounded PET protocol call-argument tracing, never equate literal127 with sender opcode."
+}
