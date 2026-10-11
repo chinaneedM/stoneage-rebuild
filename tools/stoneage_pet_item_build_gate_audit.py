@@ -59,7 +59,8 @@ def inspect(profile,checkout):
         demand("void CHAR_movePetItem(" not in baseline,"default PET equip unexpectedly compiled")
         toggled=preprocess(cfile,("-D_PET_ITEM",))
         demand("void CHAR_movePetItem(" in toggled and
-               "CHAR_setItemIndex(petindex" in toggled,"positive counterfactual cannot enable original equipment setter")
+               "CHAR_setItemIndex(petindex" in raw,
+               "counterfactual enablement and original raw PET equipment setter disagree")
         demand("CHAR_sendPetItemData(" not in preprocess(root/"char/pet.c"),
                "default protocol PET send unexpectedly compiled")
     else:
