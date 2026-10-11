@@ -20,6 +20,7 @@ PROFILES = {
             "base": "783b8803333bf3a63320b4379519a69b377e9037",
             "char": "6f1c35acb8ceb103e5501c88e49d8fe93aafcb70",
             "item": "ff3d18514367905c8dd72316908508dd60272018",
+            "version": "af6c866fd609a39e2960236275f6bf39e7f47b2c",
         },
         "pet_gate": "NOT_SIMPLIFY_ITEMSTRING",
         "item_slots": "CHAR_MAXITEMHAVE",
@@ -31,6 +32,7 @@ PROFILES = {
             "base": "5f646eba671b39f5e90f53e3a95cbcc70ff56975",
             "char": "970b7b3f975965c6c5e77352a2e0382adf943753",
             "item": "94b00b11d02cc775bab6fe72c9c2ba77d9618712",
+            "version": "b3fc0c80705973bc8d088287c98a5d66171bb6c2",
         },
         "pet_gate": "PET_ITEM",
         "item_slots": "CHAR_MAXPETITEMHAVE",
@@ -73,7 +75,8 @@ def read_pinned(profile, root):
     demand(sha == spec["commit"], "pinned source checkout mismatch: " + profile)
     dirty = subprocess.check_output(["git", "-C", str(root), "status", "--porcelain"], text=True)
     demand(not dirty, "pinned source checkout dirty: " + profile)
-    paths = {"base": "char/char_base.c", "char": "char/char_item.c", "item": "item/item.c"}
+    paths = {"base": "char/char_base.c", "char": "char/char_item.c",
+             "item": "item/item.c", "version": "include/version.h"}
     data = {}
     for category, path in paths.items():
         raw = (root / spec["root"] / path).read_bytes()
@@ -147,6 +150,11 @@ def observe(profile, texts):
     limit = PROFILES[profile]["item_slots"]
     demand(limit in pet_to_string and limit in pet_from_string,
            "pet item slot limit drift: " + profile)
+    default_header = texts["version"]
+    active = set(re.findall(r"(?m)^\s*#\s*define\s+(_SIMPLIFY_ITEMSTRING|_PET_ITEM|_UNIQUE_P_I)\b", default_header))
+    demand("_UNIQUE_P_I" in active, "default unique-code feature setting drift")
+    demand("_SIMPLIFY_ITEMSTRING" in active, "default simplified item-string setting drift")
+    demand("_PET_ITEM" not in active, "default PET_ITEM feature setting drift")
     for name, passed in conditions.items():
         demand(passed, f"source-only call-path assertion failed: {profile}/{name}")
     return parts, conditions
@@ -160,9 +168,14 @@ def source_report(profile, texts):
         "base_blob": s["files"]["base"],
         "char_blob": s["files"]["char"],
         "item_blob": s["files"]["item"],
+        "version_blob": s["files"]["version"],
         "pet_gate": s["pet_gate"],
         "pet_slot_limit": s["item_slots"],
         **{key: int(checks[key]) for key in REQUIRED},
+        "default_header_unique_macro": 1,
+        "default_header_simplify_macro": 1,
+        "default_header_pet_item_macro": 0,
+        "default_header_pet_serialization_active": 0,
         "natural_reachability_proven": 0,
         "production_macro_configuration_verified": 0,
         "first_release_membership_proven": 0,
@@ -195,7 +208,11 @@ def validate_report(report):
                 raise ValueError("duplicate or unexpected source-only profile")
             spec = PROFILES[p]
             required = {"profile", "base_blob", "char_blob", "item_blob",
-                        "pet_gate", "pet_slot_limit", *REQUIRED,
+                        "version_blob", "pet_gate", "pet_slot_limit", *REQUIRED,
+                        "default_header_unique_macro",
+                        "default_header_simplify_macro",
+                        "default_header_pet_item_macro",
+                        "default_header_pet_serialization_active",
                         "natural_reachability_proven",
                         "production_macro_configuration_verified",
                         "first_release_membership_proven"}
@@ -204,10 +221,14 @@ def validate_report(report):
             expected = {"base_blob": spec["files"]["base"],
                         "char_blob": spec["files"]["char"],
                         "item_blob": spec["files"]["item"],
+                        "version_blob": spec["files"]["version"],
                         "pet_gate": spec["pet_gate"],
                         "pet_slot_limit": spec["item_slots"]}
             expected.update({k: "1" for k in REQUIRED})
+            expected.update({k: "1" for k in (
+                "default_header_unique_macro", "default_header_simplify_macro")})
             expected.update({k: "0" for k in (
+                "default_header_pet_item_macro", "default_header_pet_serialization_active",
                 "natural_reachability_proven",
                 "production_macro_configuration_verified",
                 "first_release_membership_proven")})
@@ -243,7 +264,7 @@ def main():
         print(f"PROVENANCE|{p}|commit={PROFILES[p]['commit']}", flush=True)
         rows.extend(source_report(p, read_pinned(p, root)))
     rows.extend((
-        "BOUNDARY|Source-only late-descendant function access and conditional PET persistence, not natural gameplay calls, enabled compile flags, early object identity, or JSS/Taiwan1.0 equivalence",
+        "BOUNDARY|Source-only late-descendant function access and conditional PET persistence; pinned default version headers select disabled PET persistence paths, unique-code and simplify macros defined; actual produced-build flags, natural gameplay calls, early object identity and JSS/Taiwan1.0 remain unproved",
         "OPEN|real PET add/equip call sites; post-login owner rebinding; compile-time macros; original item unique-code regeneration and first-release membership; stale alias dereference",
         "RESOLUTION|PET_ITEM_IDENTITY_SOURCE_ONLY_ORIENTATION_PASS",
     ))
