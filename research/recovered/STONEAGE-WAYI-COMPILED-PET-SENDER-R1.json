@@ -1,0 +1,589 @@
+{
+  "schema": "STONEAGE-WAYI-COMPILED-PET-SENDER-PROBE-R1",
+  "input_bytes": 921600,
+  "decompressed_input_sha256": "4193a7e1b20b996f7902424ae05092b455c5dbbe3f133d331a4897bbc7abfe63",
+  "linear_decode_coverage_not_runtime": [
+    {
+      "section": ".text",
+      "raw_bytes": 651264,
+      "decoded_bytes": 651240,
+      "skipped_bytes": 24,
+      "gaps": [
+        {
+          "rva": 93052,
+          "size": 1
+        },
+        {
+          "rva": 128371,
+          "size": 1
+        },
+        {
+          "rva": 198068,
+          "size": 1
+        },
+        {
+          "rva": 201976,
+          "size": 1
+        },
+        {
+          "rva": 262560,
+          "size": 1
+        },
+        {
+          "rva": 382228,
+          "size": 1
+        },
+        {
+          "rva": 482808,
+          "size": 1
+        },
+        {
+          "rva": 515140,
+          "size": 1
+        },
+        {
+          "rva": 524244,
+          "size": 1
+        },
+        {
+          "rva": 575245,
+          "size": 1
+        },
+        {
+          "rva": 575249,
+          "size": 1
+        },
+        {
+          "rva": 575253,
+          "size": 1
+        },
+        {
+          "rva": 575821,
+          "size": 1
+        },
+        {
+          "rva": 580676,
+          "size": 1
+        },
+        {
+          "rva": 580677,
+          "size": 1
+        },
+        {
+          "rva": 580681,
+          "size": 1
+        },
+        {
+          "rva": 625698,
+          "size": 1
+        },
+        {
+          "rva": 640909,
+          "size": 1
+        },
+        {
+          "rva": 640913,
+          "size": 1
+        },
+        {
+          "rva": 640917,
+          "size": 1
+        },
+        {
+          "rva": 640921,
+          "size": 1
+        },
+        {
+          "rva": 640925,
+          "size": 1
+        },
+        {
+          "rva": 641354,
+          "size": 1
+        },
+        {
+          "rva": 655359,
+          "size": 1
+        }
+      ]
+    }
+  ],
+  "decoded_direct_calls": {
+    "589424": [
+      599302,
+      599486,
+      599586,
+      599698,
+      599787,
+      599890,
+      600002,
+      600098,
+      600250,
+      600374,
+      600502,
+      600630,
+      600758,
+      600866,
+      600998,
+      601166,
+      601243,
+      601323,
+      601426,
+      601515,
+      601678,
+      601838,
+      601915,
+      601995,
+      602075,
+      602198,
+      602283,
+      602363,
+      602486,
+      602634,
+      602778,
+      602859,
+      602939,
+      603042,
+      603234,
+      603366,
+      603474,
+      603809,
+      603899,
+      603979,
+      604042,
+      604123,
+      604203,
+      604283,
+      604432,
+      604523,
+      604606,
+      604683,
+      604763,
+      604875,
+      604998,
+      605083,
+      605163,
+      605243,
+      605406,
+      605745
+    ],
+    "605264": [
+      336999,
+      337435,
+      340483
+    ]
+  },
+  "raw_e8_candidates": {
+    "589424": [
+      599302,
+      599486,
+      599586,
+      599698,
+      599787,
+      599890,
+      600002,
+      600098,
+      600250,
+      600374,
+      600502,
+      600630,
+      600758,
+      600866,
+      600998,
+      601166,
+      601243,
+      601323,
+      601426,
+      601515,
+      601678,
+      601838,
+      601915,
+      601995,
+      602075,
+      602198,
+      602283,
+      602363,
+      602486,
+      602634,
+      602778,
+      602859,
+      602939,
+      603042,
+      603234,
+      603366,
+      603474,
+      603809,
+      603899,
+      603979,
+      604042,
+      604123,
+      604203,
+      604283,
+      604432,
+      604523,
+      604606,
+      604683,
+      604763,
+      604875,
+      604998,
+      605083,
+      605163,
+      605243,
+      605406,
+      605745
+    ],
+    "605264": [
+      336999,
+      337435,
+      340483
+    ]
+  },
+  "emitter_static_argument_trace": {
+    "calls": [
+      {
+        "call_rva": 605293,
+        "target_rva": 591776,
+        "arguments": [
+          {
+            "local_address": -16384
+          },
+          {
+            "original_argument": 2
+          }
+        ]
+      },
+      {
+        "call_rva": 605313,
+        "target_rva": 591776,
+        "arguments": [
+          {
+            "local_address": -16384
+          },
+          {
+            "original_argument": 3
+          }
+        ]
+      },
+      {
+        "call_rva": 605333,
+        "target_rva": 591776,
+        "arguments": [
+          {
+            "local_address": -16384
+          },
+          {
+            "original_argument": 4
+          }
+        ]
+      },
+      {
+        "call_rva": 605353,
+        "target_rva": 591776,
+        "arguments": [
+          {
+            "local_address": -16384
+          },
+          {
+            "original_argument": 5
+          }
+        ]
+      },
+      {
+        "call_rva": 605373,
+        "target_rva": 591776,
+        "arguments": [
+          {
+            "local_address": -16384
+          },
+          {
+            "original_argument": 6
+          }
+        ]
+      },
+      {
+        "call_rva": 605386,
+        "target_rva": 591776,
+        "arguments": [
+          {
+            "local_address": -16384
+          },
+          {
+            "sum": [
+              {
+                "original_argument": 2
+              },
+              {
+                "original_argument": 3
+              },
+              {
+                "original_argument": 4
+              },
+              {
+                "original_argument": 5
+              },
+              {
+                "original_argument": 6
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "call_rva": 605406,
+        "target_rva": 589424,
+        "arguments": [
+          {
+            "original_argument": 1
+          },
+          127,
+          {
+            "local_address": -16384
+          }
+        ]
+      }
+    ],
+    "final_esp_offset": -16448,
+    "interpretation": "STATIC_WITH_EXPLICIT_HELPER_CONTRACTS"
+  },
+  "caller_static_argument_traces": [
+    {
+      "start_rva": 336976,
+      "end_rva_exclusive": 337004,
+      "calls": [
+        {
+          "call_rva": 336999,
+          "target_rva": 605264,
+          "arguments": [
+            {
+              "global_rva": 69226020,
+              "width_bytes": 4
+            },
+            {
+              "global_rva": 68713508,
+              "width_bytes": 4
+            },
+            {
+              "global_rva": 68713512,
+              "width_bytes": 4
+            },
+            {
+              "unknown_register": "edx"
+            },
+            {
+              "unknown_register": "esi"
+            },
+            {
+              "unknown_register": "edi"
+            }
+          ]
+        }
+      ],
+      "final_esp_offset": -24,
+      "interpretation": "STATIC_WITH_EXPLICIT_HELPER_CONTRACTS"
+    },
+    {
+      "start_rva": 337411,
+      "end_rva_exclusive": 337440,
+      "calls": [
+        {
+          "call_rva": 337435,
+          "target_rva": 605264,
+          "arguments": [
+            {
+              "global_rva": 69226020,
+              "width_bytes": 4
+            },
+            {
+              "global_rva": 68713508,
+              "width_bytes": 4
+            },
+            {
+              "global_rva": 68713512,
+              "width_bytes": 4
+            },
+            {
+              "unknown_register": "ecx"
+            },
+            {
+              "unknown_register": "edi"
+            },
+            4294967295
+          ]
+        }
+      ],
+      "final_esp_offset": -24,
+      "interpretation": "STATIC_WITH_EXPLICIT_HELPER_CONTRACTS"
+    },
+    {
+      "start_rva": 340453,
+      "end_rva_exclusive": 340488,
+      "calls": [
+        {
+          "call_rva": 340483,
+          "target_rva": 605264,
+          "arguments": [
+            {
+              "global_rva": 69226020,
+              "width_bytes": 4
+            },
+            {
+              "global_rva": 68713508,
+              "width_bytes": 4
+            },
+            {
+              "global_rva": 68713512,
+              "width_bytes": 4
+            },
+            {
+              "global_rva": 69106200,
+              "width_bytes": 4
+            },
+            {
+              "unknown_register": "eax"
+            },
+            4294967294
+          ]
+        }
+      ],
+      "final_esp_offset": -24,
+      "interpretation": "STATIC_WITH_EXPLICIT_HELPER_CONTRACTS"
+    }
+  ],
+  "helper_windows": [
+    {
+      "label": "message-hub",
+      "start_rva": 589424,
+      "end_rva_exclusive": 589514,
+      "instruction_count": 23,
+      "direct_calls": [
+        {
+          "rva": 589429,
+          "target_rva": 615968
+        },
+        {
+          "rva": 589463,
+          "target_rva": 613383
+        },
+        {
+          "rva": 589481,
+          "target_rva": 588816
+        },
+        {
+          "rva": 589502,
+          "target_rva": 254720
+        }
+      ]
+    },
+    {
+      "label": "integer-append",
+      "start_rva": 591776,
+      "end_rva_exclusive": 591957,
+      "instruction_count": 65,
+      "direct_calls": [
+        {
+          "rva": 591781,
+          "target_rva": 615968
+        },
+        {
+          "rva": 591807,
+          "target_rva": 591248
+        },
+        {
+          "rva": 591844,
+          "target_rva": 589952
+        }
+      ]
+    },
+    {
+      "label": "stack-allocation",
+      "start_rva": 615968,
+      "end_rva_exclusive": 616015,
+      "instruction_count": 17,
+      "direct_calls": []
+    }
+  ],
+  "helper_contract_basis": "integer append preserves second original argument in EAX; stack helper reserves EAX bytes, independently inspected exact helper windows",
+  "logical_message_id": 127,
+  "hub_message_id_bias": 13,
+  "formatted_message_id": 140,
+  "formatted_message_id_is_raw_wire_observation": false,
+  "frame_format_literal": "&;%d%s;#;",
+  "riding_guard_ui_text": "騎寵不可裝裝備！",
+  "file_executed": false,
+  "native_pet_runtime_verified": false,
+  "matching_server_verified": false,
+  "publisher_original_hash_verified": false,
+  "source_id": "SRC-WAYI-COMPILED-PET-SENDER-R1",
+  "evidence_status": "STATIC_COMPILED_CLIENT_ROUTE_NOT_NATIVE_RUNTIME",
+  "archive_capture": "20060915184620",
+  "original_url": "http://www.wayi.com.tw:80/download/file/onlineGame/sa.exe",
+  "packed_response_bytes": 369152,
+  "packed_response_sha256": "4b5a059b45b589b609ca925d210d76838be1e970b805fab3df863b7d563fbb38",
+  "decoder": "Capstone 5.0.7",
+  "fresh_remote_base": "697e27f7831c8a14ff6b54dcbdd25c8ad7554a13",
+  "fresh_remote_tree": "efe04066ecd751a3dd9d6cd5d63c7d2e4e245e66",
+  "semantic_parameter_names_are_source_comparison": true,
+  "pressure": "2486=2465 bounded closed+18 OPEN+3 historical UB",
+  "original_bytes_committed": false,
+  "manual_guard_observations": [
+    {
+      "caller_rva": "0x52467",
+      "window": "0x523ea-0x52471",
+      "guards": [
+        "mouse bit 0x4",
+        "drag index != -1",
+        "source/destination unequal",
+        "mix flag zero",
+        "PET window byte at global RVA0x41f7612",
+        "pet index > -1",
+        "slot threshold 9",
+        "riding pet global RVA0x4314df8",
+        "guard text at RVA0xc5da8 via chat helper RVA0x11570 bypasses emitter"
+      ]
+    },
+    {
+      "caller_rva": "0x5261b",
+      "window": "0x525c3-0x52620",
+      "guards": [
+        "WORD global RVA0x4166190 equals zero",
+        "selected/riding pet comparison",
+        "same riding guard text before sender"
+      ],
+      "destination_32bit": "0xffffffff"
+    },
+    {
+      "caller_rva": "0x53203",
+      "window": "0x531d1-0x53208",
+      "guards": [
+        "WORD global gate",
+        "PET window byte gate"
+      ],
+      "destination_32bit": "0xfffffffe"
+    }
+  ],
+  "late_descendant_comparison": {
+    "repository": "BismarckDD/Stoneage",
+    "commit": "999ffdf1d220ec6666eb65339180689c9caf1876",
+    "protocol_cpp_blob": "17f1900d8845c15308a4b429905ec009e5fd4c0f",
+    "protocol_h_blob": "bb70087ef1b1915748da23935584eda2c8178cb0",
+    "menu_cpp_blob": "62754fdd0db1b84c358d61418d253012d149e1d4",
+    "autil_cpp_blob": "369f2b35a812535557d55496626ff6a2cac1c56b",
+    "sender": "lssproto_PetItemEquip_send(fd,iGx,iGy,iPetNo,iItemNo,iDestNO)",
+    "logical_id": 127,
+    "menu_call_lines": [
+      14824,
+      14966,
+      15333
+    ],
+    "menu_build_guard": "_PET_ITEM",
+    "source_frame_format": "(&;%d%s;#;",
+    "source_equals_exact_binary_build": false
+  },
+  "limits": [
+    "Linear decode and raw E8 candidates agree for 56 hub and 3 emitter references; no exhaustive indirect/inlined/tail-call/reachability proof.",
+    "Five integer arguments plus additive checksum compiled into this specific specimen; semantic field names inferred by pinned descendant comparison.",
+    "Hub applies +13 before format/encoding: 140 is formatted ID, not captured wire bytes.",
+    "2006 capture and mutable2005 header do not establish exact original2005 release hash.",
+    "No server pairing, owner/save/drop/unique-code execution, early-era promotion or engine transition."
+  ]
+}

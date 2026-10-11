@@ -2611,3 +2611,8 @@ FACT: actual February21 2006 Wayi Taiwan service page retains July1 2005 full8.0
 ## 2026-10-12 — Operator-linked updater static update-routing correction
 
 FACT about exact2006-captured StoneAge2 specimen: default update port8080, registry-dependent newest7x/newest6 path and conditional local data/path.txt override. These are static binary observations, not live2005 network/capture facts or commercial release number proof. Earlier default-port80 archive failures remain limited to those URLs. Corrected8080 archive query[]/404 still no manifest. Full official Stoneage80.exe bytes/checksum OPEN; no feature date/native PET promotion. Spec STONEAGE-WAYI-SAUPDATE-MANIFEST-ROUTE-R1.md records code RVAs and branch boundaries.
+
+
+## 2026-10-12 — Operator-linked2006 specimen contains compiled PET sender
+
+FACT static: exact accepted sa.exe decompressed hash4193a7e1b20b996f7902424ae05092b455c5dbbe3f133d331a4897bbc7abfe63 has six-parameter emitter0x93c50, five integer fields+sum, logical127, three guarded UI callers and -1/-2 destination constants. Hub adds13 beforeformat/encoding; not raw-wire capture. Short riding-pet equipment guard found. Compile membership is now directly observed in this specific2006-captured operator-linked binary, independent of descendant build defaults; no exact2005 release date/hash, native/server runtime or earlier-era feature promotion. Metadata/spec STONEAGE-WAYI-COMPILED-PET-SENDER-R1. Pressure unchanged.
