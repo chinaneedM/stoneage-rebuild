@@ -13,9 +13,14 @@ def fixture():
             "base_blob": spec["files"]["base"],
             "char_blob": spec["files"]["char"],
             "item_blob": spec["files"]["item"],
+            "version_blob": spec["files"]["version"],
             "pet_gate": spec["pet_gate"],
             "pet_slot_limit": spec["item_slots"],
             **{k: 1 for k in REQUIRED},
+            "default_header_unique_macro": 1,
+            "default_header_simplify_macro": 1,
+            "default_header_pet_item_macro": 0,
+            "default_header_pet_serialization_active": 0,
             "natural_reachability_proven": 0,
             "production_macro_configuration_verified": 0,
             "first_release_membership_proven": 0,
@@ -48,13 +53,20 @@ class PetItemIdentitySourceEvidence(unittest.TestCase):
                 self.expect_reject(self.lines[:i] + self.lines[i+1:])
 
     def test_no_natural_reachability_or_early_identity_promotion(self):
-        for field in ("natural_reachability_proven",
+        for field in ("default_header_pet_item_macro",
+                      "default_header_pet_serialization_active",
+                      "natural_reachability_proven",
                       "production_macro_configuration_verified",
                       "first_release_membership_proven"):
             changed = [x.replace(field + "=0", field + "=1")
                        if x.startswith("SOURCE_ONLY_PET_ITEM_IDENTITY|") else x
                        for x in self.lines]
             self.expect_reject(changed)
+
+    def test_default_header_macro_pair_is_pinned(self):
+        for old,new in (("default_header_unique_macro=1","default_header_unique_macro=0"),
+                        ("default_header_simplify_macro=1","default_header_simplify_macro=0")):
+            self.expect_reject([x.replace(old,new) for x in self.lines])
 
     def test_profile_gate_must_not_be_flattened(self):
         for old, new in (("pet_gate=NOT_SIMPLIFY_ITEMSTRING", "pet_gate=PET_ITEM"),
@@ -74,6 +86,10 @@ class PetItemIdentitySourceEvidence(unittest.TestCase):
         changed = list(self.lines)
         changed[0] = changed[0].replace("base_blob=" + PROFILES["gavin"]["files"]["base"],
                                         "base_blob=" + "0"*40)
+        self.expect_reject(changed)
+        changed = list(self.lines)
+        changed[0] = changed[0].replace("version_blob=" + PROFILES["gavin"]["files"]["version"],
+                                        "version_blob=" + "0"*40)
         self.expect_reject(changed)
         changed = list(self.lines)
         pos = next(i for i, x in enumerate(changed) if x.startswith("SOURCE_ONLY_PET_ITEM_FUNCTION|"))
