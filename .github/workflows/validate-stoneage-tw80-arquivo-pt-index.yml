@@ -1,0 +1,34 @@
+name: Validate Taiwan StoneAge 2005 Waei original URL Arquivo.pt metadata fallback
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/validate-stoneage-tw80-arquivo-pt-index.yml"
+      - "tools/stoneage_tw80_arquivo_pt_index_probe.py"
+      - "tests/test_stoneage_tw80_arquivo_pt_index_probe.py"
+permissions:
+  contents: read
+jobs:
+  index-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Test independent historical index parsing and provenance invariants
+        run: |
+          python -m unittest -v tests.test_stoneage_tw80_arquivo_pt_index_probe
+          python -m unittest -v tests.test_stoneage_tw80_may16_operator_source_gate
+          python -m unittest -v tests.test_stoneage_tw80_may16_cdx_probe
+          python -m unittest -v tests.test_stoneage_tw80_disc_mirror_identity_gate
+          python -m unittest -v tests.test_stoneage_tw80_tw85_chronology_gate
+      - name: Probe only independent Arquivo.pt historical index JSON
+        run: |
+          python -m tools.stoneage_tw80_arquivo_pt_index_probe --probe | tee tw80-2005-arquivo-pt-index.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: stoneage-tw80-2005-arquivo-pt-index
+          path: tw80-2005-arquivo-pt-index.json
+          retention-days: 30

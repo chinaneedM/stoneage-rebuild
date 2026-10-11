@@ -12264,3 +12264,16 @@ The prior `BRANCH PENDING` section has been verified and accepted. Source branch
 Receipt: `research/recovered/STONEAGE-TW80-MAY16-OPERATOR-ACCEPTANCE-R1.json`.
 
 **Highest NEXT:** acquire freely available original Taiwan Waei 2005 8.0 client, release/test installer, official update/CD tree or independent exact publisher file digest, using any independently recoverable operator archive evidence only as a lead. Do not substitute the original event-page URL or a later private-server mirror for binary identity.
+
+
+## 2026-10-12 — Taiwan 2005 8.0 official Wayi event-page independent archive index fallback; branch CI pending
+
+Restarted directly from remote `main` `69fd3155c0e9c02772633d09eee67b4f77fcff4b` / tree `57e5f4ebabdb8bf47f686a1d955b97895c37a17e`, with all latest main Actions SUCCESS/no open PR. Read exact six repository-prescribed documents via fresh Git tree blobs, including full `docs/CURRENT-STATE.md` original >1.3MB content. Highest NEXT remains original freely obtainable **2005 Taiwan Waei 8.0** test/release client, upgrade disc/patch or independently publisher-attested original binary checksum; still no such artifact retrieved.
+
+New targeted public-search check reviewed historic Taiwan June8 GNN retail update discs, June4 planned giveaway, 2006 DLER third-party `Stoneage80.exe`, already-registered six-part 2012 Wayi 8.5 community mirror, later mainland `wayi.com.cn/sa8_8016.rar`, and recent single-player/private server reassemblies; none has authenticated original 2005 Taiwan executable bytes or publisher-original digest. An archival CD image advertised as `寵物進化史` bears a different older release label and is not evidence of 2005 version 8.0. Do not overwrite prior evidence or confuse physical later/earlier discs.
+
+**New independent source research action:** archival index API for Arquivo.pt (`https://arquivo.pt/textsearch` with exact historic `http://www.wayi.com.tw/stoneage/actives/940329/page_3.html`) is documented and complements previous two `web.archive.org` CDX network timeouts. New read-only `tools/stoneage_tw80_arquivo_pt_index_probe.py` probes only 2005–2007 original-URL history with 12-row/128KiB cap and 9s timeout; never fetches historical HTML or program bytes. Seventeen synthetic positive/negative tests protect exact Wayi Taiwan URL, capture years, index host and the critical rule that an archive index digest is **not** an original executable file SHA. Dedicated workflow reruns May16, Wayback, June4/8 and 8.5 regional provenance gates, preserving index response as a 30-day Action artifact. Spec `docs/specs/STONEAGE-TW80-ARQUIVO-PT-INDEX-R1.md`; history/source registry appended non-destructively.
+
+**Status BRANCH PENDING:** inspect actual branch Action result before evidence promotion, and merge to main only after relevant suites success and full historical continuity preserved. Even a valid indexed historic page is not original 2005 executable or native PET runtime without separate content authentication. Pressure 2486=2465 bounded closed +18 OPEN +3 historical UB unchanged, zero native PET/JSS1999/Taiwan1.0 promotions, no modern engine work.
+
+**Highest NEXT:** archive-index metadata if actually returned, then original official 2005 Waei 8.0 installer/CD/update file, publisher digest and version provenance; keep later community, Taiwan 8.5 and mainland branches isolated.
