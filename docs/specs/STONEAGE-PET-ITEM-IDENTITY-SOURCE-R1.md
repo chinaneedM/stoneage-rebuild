@@ -1,6 +1,20 @@
 # PET carried-item / unique-code source-path orientation — R1
 
-Status: **SOURCE-ONLY AUDIT IN PROGRESS**, not accepted or integrated.
+Status: **SOURCE_ONLY_ACCEPTED_BOUNDARY**, not a live gameplay claim.
+Action38141501893/job114476126597 SUCCESS on tested branch
+f13599d9c9e5ff3a15929a04314b5984291ee623 with all steps green,
+10 Python negative/positive tests, 2 pinned source profiles, eight exact
+source+header blobs, 22 source function fingerprints and sixteen strict
+branch assertions per profile. Committed report
+`research/recovered/STONEAGE-PET-ITEM-IDENTITY-SOURCE-R1.txt`
+is byte-exact with the independently downloaded Actions artifact:
+ZIP2375 bytes SHA256
+`2b4ea6a6e5caff528d89495c5f8ba7f47089ad98eb6905a93c72091d5852bfac`,
+report5949 bytes SHA256
+`93ca80e4bb849215eb8a30188584eeb89ae90082b220642e539b8a22ddfb2f3f`,
+Git blob `c8251ce2863bce73ea873f994646f1e52cef2293`.
+The final workflow explicitly compares the current native report to the
+committed evidence file byte for byte.
 Scope: clean pinned Gavin `1f90cb6` and Bismarck `999ffdf1` late descendants,
 not 1999 JSS / Taiwan v1.0 and not a natural gameplay outcome.
 
@@ -71,3 +85,23 @@ reference, with what macro and object owner/unique-code state**.
 No changes to original bodies, production assets, or modern-engine design.
 Pressure2486=2465 bounded closed +18 OPEN +3 historical UB, no new historical
 promotion and no new UB classification.
+
+
+## Accepted disposition
+
+**FACT (source-only):** Generic item add and item-index accessors have no
+direct raw actor-type predicate in their own inspected bodies, and optional
+pet-item serialization/deserialization branches exist. The inspected
+`version.h` defaults disable those pet-item persistence branches in both
+pinned descendants. `_UNIQUE_P_I` is defined in both default headers,
+but native unique-code assignment timing and identity invariants are not
+validated by this static audit.
+
+**OPEN:** Whether actual deployed builds override these defaults; real
+protocol/NPC/PET equipment callers of the item operations; pet item state
+across save/load, logout, deletion and arena entry; whether PET aliases
+occur without synthetic writes; original object unique-code generation and
+validation in live paths; early Taiwan v1.0 or JSS1999 equivalence.
+
+No new historical semantic-pressure closure or modern game design promotion.
+Next gate: build-config-certified PET item handler/caller reachability.
