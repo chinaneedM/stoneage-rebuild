@@ -1,0 +1,22 @@
+name: Validate StoneAge original client installed snapshot transition R1
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/validate-stoneage-client-snapshot-transition.yml"
+      - "tools/stoneage_client_snapshot_transition_audit.py"
+      - "tests/test_stoneage_client_snapshot_transition_audit.py"
+permissions:
+  contents: read
+jobs:
+  snapshot-comparison:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - name: Negative boundary and deterministic synthetic installed-tree transition checks
+        run: |
+          python -m unittest -v tests.test_stoneage_client_snapshot_transition_audit
+          python -m unittest -v tests.test_stoneage_late_client_archive_probe tests.test_stoneage_wayi_85_archive_chain
