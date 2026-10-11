@@ -1,6 +1,8 @@
 # Original PLAYER / owned PET carried-reference partition R1
 
-Status: LOCAL VALIDATION IN PROGRESS; remote acceptance required.
+Status: REMOTE ACCEPTED bounded. Action38136543706/job114461467436 SUCCESS
+at e67e461d5abf9325a320a8b970be146b343cb027; all12 steps/156 Python checks.
+Remote artifact ZIP digest independently verified; both reports byte-exact with local.
 
 FACT is bounded to clean pinned Gavin1f90cb6/Bismarck999ffdf1 descendants,
 GNU99 O0/O2 nonrecovering UBSan and explicitly prepared synthetic inputs.
@@ -14,7 +16,9 @@ The original ItemDelCheck loops over indexes below getFdnum(), without a
 CHAR_WHICHTYPE predicate. The inherited explicit adapter returns2; actual
 PLAYER0/1 are inside this range, and PLAYER0's persistent owned PET2 is outside.
 The fixture asserts PET2's type and player roster ownership before assignment.
-This does not establish that pets are always excluded in every original server
+Pinned raw getFdnum getters read config.fdnum / gServerConfig.fdnum; getter
+source observation and fingerprints are in the receipt, not original getter
+runtime execution. This does not establish that pets are always excluded in every original server
 configuration or that actor type alone determines the outcome.
 
 Each of PLAYER0/1/PET2's second nonequipment carried slots is explicitly

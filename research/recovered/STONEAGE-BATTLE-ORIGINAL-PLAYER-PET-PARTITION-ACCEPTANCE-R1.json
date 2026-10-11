@@ -1,5 +1,5 @@
 {
-  "status": "LOCAL_PASS_REMOTE_PENDING",
+  "status": "REMOTE_ACCEPTED_BOUNDED",
   "baseline_commit": "c266837f8a9fe41adb052766ebb8e7bd19da8c2f",
   "baseline_tree": "6dabd355373695ac145fd0615962cafce7df88be",
   "assignment_rows": 48,
@@ -64,5 +64,36 @@
     "historical_ub": 3,
     "historical_promotions": 0
   },
-  "next": "Original guard index-range configuration: controlled getFdnum2 versus3 and PLAYER/PET type crossing, with complete guard no-state-mutation oracles; distinguish index inclusion from actor-type protection, then investigate released-slot reuse separately."
+  "next": "Original guard index-range configuration: controlled getFdnum2 versus3 and PLAYER/PET type crossing, with complete guard no-state-mutation oracles; distinguish index inclusion from actor-type protection, then investigate released-slot reuse separately.",
+  "remote": {
+    "tested_commit": "e67e461d5abf9325a320a8b970be146b343cb027",
+    "tested_tree": "806846d2a5944c1db0321f88d97f8add4fb102bf",
+    "branch": "agent/original-player-pet-partition-r1-20261011",
+    "run_id": 38136543706,
+    "job_id": 114461467436,
+    "conclusion": "success",
+    "all12_steps_success": true,
+    "python_checks": 156,
+    "artifact_id": 11701360799,
+    "ZIP_bytes": 33395,
+    "ZIP_sha256": "3d3230588ae1eb01d6eab301719407d4e364f1191a57a18940642d6f62f02912",
+    "artifact_digest_independently_verified": true,
+    "both_reports_byte_exact_with_local": true
+  },
+  "getFdnum_source_observation": {
+    "gavin": {
+      "source_file": "gmsv/src/configfile.c",
+      "source_sha256": "b6e43d3f857ab639184d1d9c5eabb823e1344c85ed9d3a59e1af27fa03e6010f",
+      "raw_getter_body_sha256": "873642e2855fc5e797b51b0aa3ababad5471744140b128129550fb095cbd7e72",
+      "observed_getter": "config.fdnum",
+      "execution_status": "SOURCE_OBSERVATION_ONLY; accepted runtime uses explicit getFdnum2 adapter"
+    },
+    "bismarck": {
+      "source_file": "server/gmsv/config_file.c",
+      "source_sha256": "805859fe0e8608650c01aae11c26ba53666aca503ae22b125ea210ec34f7e74b",
+      "raw_getter_body_sha256": "3a9c911839f098062b27f87838210de0e71f81d25c39b97cda178175a3861784",
+      "observed_getter": "gServerConfig.fdnum",
+      "execution_status": "SOURCE_OBSERVATION_ONLY; accepted runtime uses explicit getFdnum2 adapter"
+    }
+  }
 }
