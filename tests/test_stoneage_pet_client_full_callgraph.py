@@ -9,14 +9,17 @@ def accepted():
         "SOURCE_PET_CLIENT_GATE|pinned_commit=" + PINNED
         + "|client_tree=" + CLIENT_TREE
         + "|client_project_blob=" + BLOBS["client/stoneage.vcxproj"]
-        + "|tracked_client_source_files=237|lexical_sender_sites=2"
-        + "|lexical_caller_candidates=0|header_default_pet=0|vs_special_pet=0"
+        + "|tracked_client_source_files=237|lexical_sender_sites=5"
+        + "|lexical_caller_candidates=3|header_default_pet=0|vs_special_pet=0"
         + "|counterfactual_80_pet=1|client_sender_opcode=127|server_receiver_opcode=127"
         + "|runtime_packet_verified=0|deployed_client_binary_verified=0"
         + "|early_build_verified=0|inventory_sha256=" + "1"*64,
-        "SOURCE_PET_CLIENT_SITE|kind=declaration|path=client/stoneage/proto/protocol.h|line=462",
         "SOURCE_PET_CLIENT_SITE|kind=definition|path=client/stoneage/proto/protocol.cpp|line=2280",
-        "BOUNDARY|Full pinned tracked client source lexical scan and checked-in VS project/header preprocessor gates only; zero proven user-triggered packet; no deployed binary; no JSS1999/Taiwan1.0 inference",
+        "SOURCE_PET_CLIENT_SITE|kind=declaration|path=client/stoneage/proto/protocol.h|line=462",
+        "SOURCE_PET_CLIENT_SITE|kind=lexical_call_candidate|path=client/stoneage/system/menu.cpp|line=14824",
+        "SOURCE_PET_CLIENT_SITE|kind=lexical_call_candidate|path=client/stoneage/system/menu.cpp|line=14966",
+        "SOURCE_PET_CLIENT_SITE|kind=lexical_call_candidate|path=client/stoneage/system/menu.cpp|line=15333",
+        "BOUNDARY|Full pinned tracked client source lexical scan found three _PET_ITEM UI call sites; checked-in VS special default excludes PET; no executed packet or deployed binary; no JSS1999/Taiwan1.0 inference",
         "OPEN|external/generated runtime client dispatch, optional version8 build, matching enabled server binary, actual item-owner transitions, natural alias and unique codes",
         MARK,
     ]) + "\n"
@@ -24,7 +27,7 @@ def accepted():
 class PetClientPinnedGateTests(unittest.TestCase):
     def test_accepted_source_only_fixture(self):
         got = validate(accepted())
-        self.assertEqual(got["lexical_caller_candidates"], "0")
+        self.assertEqual(got["lexical_caller_candidates"], "3")
         self.assertEqual(got["vs_special_pet"], "0")
     def test_false_runtime_and_version_promotion_rejected(self):
         for original, alternate in [
@@ -34,7 +37,7 @@ class PetClientPinnedGateTests(unittest.TestCase):
             ("header_default_pet=0", "header_default_pet=1"),
             ("vs_special_pet=0", "vs_special_pet=1"),
             ("counterfactual_80_pet=1", "counterfactual_80_pet=0"),
-            ("lexical_caller_candidates=0", "lexical_caller_candidates=1"),
+            ("lexical_caller_candidates=3", "lexical_caller_candidates=0"),
         ]:
             with self.subTest(original=original), self.assertRaises(ValueError):
                 validate(accepted().replace(original, alternate))
@@ -54,7 +57,7 @@ class PetClientPinnedGateTests(unittest.TestCase):
         for replacement in [
             accepted().replace("tracked_client_source_files=237", "tracked_client_source_files=3"),
             accepted().replace("inventory_sha256="+"1"*64, "inventory_sha256=x"),
-            accepted().replace("lexical_sender_sites=2", "lexical_sender_sites=3"),
+            accepted().replace("lexical_sender_sites=5", "lexical_sender_sites=2"),
             accepted().replace("runtime_packet_verified=0", "runtime_packet_verified=0|runtime_packet_verified=0"),
             accepted().replace("SOURCE_PET_CLIENT_SITE|kind=definition", "SOURCE_PET_CLIENT_UNKNOWN|kind=definition"),
         ]:
