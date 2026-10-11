@@ -1,0 +1,64 @@
+{
+  "schema": "stoneage-tw80-disc-mirror-identity-gate-r1",
+  "recorded_on": "2026-10-11",
+  "records": [
+    {
+      "id": "TW80_20050603_PRESS_DISC_PLAN",
+      "date": "2005-06-03",
+      "event_date": "2005-06-04",
+      "source": "https://acg.gamer.com.tw/search.php?c1=976&c2=3&machine=1%2C0&s=2&type=1",
+      "kind": "PRESS_INDEX_PLANNED_FREE_80_UPDATE_DISC",
+      "file_name": null,
+      "carrier_url": null,
+      "reported": "Waei planned free update-disc distribution at Tamsui station the following day; actual distribution not observed",
+      "bytes_verified": false,
+      "publisher_verified": false,
+      "original_pet_runtime_verified": false,
+      "sha256": null
+    },
+    {
+      "id": "TW80_20050608_LAUNCH",
+      "date": "2005-06-08",
+      "event_date": "2005-06-08",
+      "source": "https://gnn.gamer.com.tw/detail.php?sn=20167",
+      "kind": "CONTEMPORARY_LAUNCH_RELEASE_REPORT",
+      "file_name": null,
+      "carrier_url": null,
+      "reported": "Launch news reports new PET equipment and version 8.0 retail update discs, not exact physical file identity",
+      "bytes_verified": false,
+      "publisher_verified": false,
+      "original_pet_runtime_verified": false,
+      "sha256": null
+    },
+    {
+      "id": "TW80_20060801_DLER_MIRROR",
+      "date": "2006-08-01",
+      "event_date": null,
+      "source": "https://www.nakuz.com/thread-2493728-1-1.html",
+      "kind": "FAN_POST_THIRD_PARTY_MIRROR_WITH_PRIVATE_PATCH_STEPS",
+      "file_name": "Stoneage80.exe",
+      "carrier_url": "http://tcrc.dl.dler.org/Yesterday/v/wayi/Stoneage80.exe",
+      "reported": "Nakuz private-server how-to names 7.5 launchers and respecifies BIN names; mirror publisher/actual 2005 build not verified",
+      "bytes_verified": false,
+      "publisher_verified": false,
+      "original_pet_runtime_verified": false,
+      "sha256": null
+    }
+  ],
+  "claims": {
+    "june4_disc_was_actually_handed_out": false,
+    "dler_mirror_is_authenticated_taiwan_publisher_2005": false,
+    "dler_mirror_is_bit_identical_to_june2005_disc": false,
+    "filename_80_proves_original_exe_version": false,
+    "sa_7505_7507_prove_8_0_runtime": false,
+    "read_error_proves_http404": false,
+    "original_pet_packet127_verified": false,
+    "early_taiwan10_or_jss1999_feature_promoted": false
+  },
+  "pressure": {
+    "total": 2486,
+    "bounded_closed": 2465,
+    "open": 18,
+    "historical_ub": 3
+  }
+}

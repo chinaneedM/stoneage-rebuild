@@ -1,0 +1,29 @@
+name: Validate StoneAge 2005 Taiwan 8.0 disc versus 2006 third-party mirror
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/validate-stoneage-tw80-disc-mirror-identity.yml"
+      - "tools/stoneage_tw80_disc_mirror_identity_gate.py"
+      - "tests/test_stoneage_tw80_disc_mirror_identity_gate.py"
+      - "research/recovered/STONEAGE-TW80-DISC-MIRROR-IDENTITY-R1.json"
+permissions:
+  contents: read
+jobs:
+  source-identity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - name: Check new earliest-disc and mirror claim separation
+        run: |
+          python -m unittest -v tests.test_stoneage_tw80_disc_mirror_identity_gate
+          python -m tools.stoneage_tw80_disc_mirror_identity_gate
+      - name: Retain established client archive and provenance gates
+        run: |
+          python -m unittest -v tests.test_stoneage_tw80_tw85_chronology_gate
+          python -m unittest -v tests.test_stoneage_late_client_archive_probe
+          python -m unittest -v tests.test_stoneage_tw80_late_carrier_quarantine
+          python -m unittest -v tests.test_stoneage_client_snapshot_transition_audit
