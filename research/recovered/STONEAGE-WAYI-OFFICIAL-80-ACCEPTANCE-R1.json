@@ -1,0 +1,201 @@
+{
+  "schema": "STONEAGE-WAYI-OFFICIAL-80-DOWNLOAD-CHAIN-ACCEPTANCE-R1",
+  "baseline_main": "749a1db4e215a04a57695ab85a44e55c76277ead",
+  "accepted_source_commit": "d337a2c2d7959aa63983a1bed6cdb848a586eb30",
+  "accepted_source_tree": "9411d0742a2f2d6d6ae3d1b7cbd73582a75b6acc",
+  "branch": "agent/wayi-official80-client-static-r1-20261012",
+  "branch_runs": [
+    {
+      "id": 38157904219,
+      "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+      "conclusion": "success"
+    },
+    {
+      "id": 38157904185,
+      "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+      "conclusion": "success"
+    },
+    {
+      "id": 38157904122,
+      "name": "Validate Wayi official executable static inventory",
+      "conclusion": "success"
+    }
+  ],
+  "main_runs": [
+    {
+      "id": 38157957070,
+      "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+      "jobs": [
+        {
+          "id": 114524726667,
+          "name": "boundary",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3
+            },
+            {
+              "name": "Verify historical announcement separately from code, binary and early-version claims",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 7
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 8
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 9
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 38157957284,
+      "name": "Validate Wayi official executable static inventory",
+      "jobs": [
+        {
+          "id": 114524727459,
+          "name": "offline-static-inventory",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3
+            },
+            {
+              "name": "Validate bounded PE observations and adjacent archive regressions",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 7
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 8
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 9
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 38157957068,
+      "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+      "jobs": [
+        {
+          "id": 114524726643,
+          "name": "provenance",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3
+            },
+            {
+              "name": "Confirm source-only version separation and safe archive signature tests",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 7
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 8
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 9
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "offline_checks_confirmed_from_main_log": 47,
+  "integration": "non-destructive fast-forward, fresh main lease checked",
+  "history_preserved": "three full historical Git blobs verified as exact prefixes in fetched remote source tree",
+  "original_proprietary_bytes_committed": false,
+  "game_program_executed": false,
+  "full_official_80_installer_obtained": false,
+  "publisher_original_checksum_verified": false,
+  "native_pet_runtime_verified": false,
+  "pressure": "2486=2465 bounded closed+18 OPEN+3 historical UB",
+  "next": "Obtain official Stoneage80.exe package or publisher manifest/hash; static research on recovered 2006-captured operator-linked client remains separately bounded."
+}
