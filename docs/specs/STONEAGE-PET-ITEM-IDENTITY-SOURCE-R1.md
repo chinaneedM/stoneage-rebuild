@@ -29,7 +29,9 @@ a possible path without proving a real call site or feature macro.
    slot and, under `_UNIQUE_P_I`, invokes `ITEM_setItemUniCode`.
    The latter obtains time and increments `unique_i` under its
    own predicate. The compile-time macro and first-release uniqueness
-   generation conditions require separate verification.
+   generation conditions require separate verification. The pinned default
+   `version.h` headers explicitly define `_UNIQUE_P_I`, but this alone
+   does not prove a production binary`s options or item-identity guarantee.
 3. Pet item serialization and parsing branches exist in
    `CHAR_makePetStringFromPetIndex` /
    `CHAR_makePetFromStringToArg`, but differ by descendant:
@@ -38,7 +40,12 @@ a possible path without proving a real call site or feature macro.
    `CHAR_MAXPETITEMHAVE`. The parser calls the original item
    initializer and writes the new physical index directly into the
    pet's carried-item array. **Actual build flags and save/load caller
-   reachability are not proven by raw source existence.**
+   reachability are not proven by raw source existence. **New pinned-header
+   finding:** both default `version.h` files define `_SIMPLIFY_ITEMSTRING`,
+   neither defines `_PET_ITEM`. Therefore the pet item persistence blocks
+   are excluded under these default header definitions (Gavin negative
+   simplification branch; Bismarck positive PET_ITEM branch). These are
+   default-header facts, not a complete proof of deployed compiler flags.**
 4. In both pinned descendants the original `_ITEM_initExistItemsOne`
    scans an inactive candidate's existing-owner *PLAYER* carry refs
    before reuse. `_ITEM_endExistItemsOne` scans the configured
@@ -48,7 +55,8 @@ a possible path without proving a real call site or feature macro.
 
 ## Acceptance criteria
 
-Pinned Git commit and exact Git blob IDs for six original files must match,
+Pinned Git commit and exact Git blob IDs for eight original files (three C
+source files plus `include/version.h` per profile) must match,
 the 11 named original function bodies per profile must be found and fingerprinted
 without storing source, and all source-only branch assertions must hold in
 a 2-profile / 22-function report. Negative Python tests must reject missing,
@@ -57,7 +65,7 @@ the new derived report's ZIP digest must be independently verified.
 
 SOURCE_ONLY must never be reclassified as natural execution FACT by this
 gate. Even if all source tests pass, the next runtime question remains
-**which real gameplay/persistence callers can create or clear a pet item
+**which real gameplay/persistence callers (if enabled) can create or clear a pet item
 reference, with what macro and object owner/unique-code state**.
 
 No changes to original bodies, production assets, or modern-engine design.
