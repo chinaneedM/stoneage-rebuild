@@ -2621,3 +2621,8 @@ FACT static: exact accepted sa.exe decompressed hash4193a7e1b20b996f7902424ae050
 ## 2026-10-12 — PET compiled transport/receive and riding restriction refinement
 
 Exact2006-captured operator-linked client statically connectsPETsender to initializedcallback, boundedqueue and WSOCKordinal19 sendthunk; genericreceive joinsline extraction→decode→split→ID. Clientoutgoing+13 andincoming-23 aredirection-specific, not reciprocalwire proof. Ridingrestriction ondrag/drop appliesdestination<9; source<9/destination>=9 skipscheck, -2dragout boundedroutehasnoridecheck. Doubleclick0..6 block andtransferthreshold9 serve differentroles. Nohistoricalrelease-date promotion/serverpermission/nativeowner-save-drop claim; pressureunchanged. Spec STONEAGE-WAYI-PET-TRANSPORT-JOIN-R1.
+
+
+## 2026-10-12 — Compiled S46/B PET display-state received in operator-linked2006 specimen
+
+FACTstatic: logical46 string/checksum route→callback0x60090→categoryB0x61d0b; seven14fieldslots,388byteitemrecords,2840bytepetstride,emptyrecordclear/useFlagwrites matchPETUI readaddress. Incomingdisplaystate isseparatefromclientsend127; no127reply orserverowner/save/uniquepersistence proved. Modernpinneddescendant UTF8recordlayout differs andcannotbeappliedasnative sizeofITEM. Exact2005release/nativepair/early-era questionsremainOPEN; pressureunchanged. Ledger/spec STONEAGE-WAYI-COMPILED-PET-SB-STATE-R1.

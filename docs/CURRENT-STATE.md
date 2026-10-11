@@ -12423,3 +12423,18 @@ Source commitc7eefa7ffde40bef11d6af0f3f8b322dc6c870b9/treebf098c59445ff5c07b0dfd
 Acceptedstaticresult: PETsendhub/encoder→configuredcallback→boundedqueue→WSOCKordinal19sendthunk;genericreceiveLF/CRline→mode-selecteddecode/split/ID. Clientoutgoing+13 andincoming-23 remainseparated,not reciprocalPETwire/replyproof. UIridingguarddependsdestination<9;transferfallbackthreshold9 anddoubleclickblock0..6 aredifferentroles;dragout-2 boundedroutehasnoridecomparison. Nooriginalgameexecution/packet capture/nativeowner-save-drop-unique-code closure,exact2005releasehash ormatchingserverpair. Pressure2486=2465 bounded closed+18 OPEN+3 historical UBunchanged,noearly-era/enginepromotion.
 
 HighestNEXT: actualcompiledPETinventory/update receivehandler andclientitemslot-state layout, independentofsend127andgenerictransport. Retain provenance/build gate for matchingserver andnativePETpair; officialfullpackage/manifest remainopportunistic.
+
+
+## 2026-10-12 — Compiled S46/B PET display-state receiver and seven-slot layout; branch CI pending
+
+Fresh remote main08d708e5c11559e26e8b358e5a3da8f63d8f2594/tree8020bfb75be07a450b16d8275c6943a210b4eb87; Actions38161255284/38161255176 SUCCESS. Required documents reread from fresh fetched exact clean checkout. HighestNEXT actualcompiledPETinventory/update receivehandler andslot layout.
+
+**New independent receive route:** dispatcherlogical46 compare0x912c8, decodedstringfield2/checksumfield3, checksumgate thencallback0x60090 at0x9130d. Verifiedrawtwo-stage switchtables0x620d0/0x62094 mapcategoryB to0x61d0b. B readsdata[1]-ASCII0,advances2; seveniterations(2,16,30,44,58,72,86),14fields/slot,388byteitemstride and2840bytepetstride. RecordbaseRVA0x430def4; emptynameclears97DWORD=388bytes,nonemptysetsWORDuseFlagoffset220. Compiled UIpickupcompare0x523bf shares useFlagaddresscomponent0x430dfd0 andsamepetstride, connectingreceive displaystate toPETwindow.
+
+14payloadfields names/sourcecomparison: name,name2,color,memo,graNo,field,target,level,sendFlag,damage,pile,alch,type,jigsaw. Numericwidths DWORD/WORD/BYTE remain distinct; target>=100 signed16bitnormalization/deadflag observed. Stringcopyguards<=28/16/84/16 andseparateorderedtypebyte at377 recorded; noCarraycapacities orsafeparserinferred. Bbodycontainsnodigit/petrangecheck inobservedwindow,notproofallupstreamvalidationabsent; no malformed nativeinput executed.
+
+Fresh pinnednetproc0dc677d3cd367ab89ca8d5becbb383bcbbccb3a8 andpc.h3425a4d7c9a275dc78643448a08d74b33e54cf1b explainsemanticfieldnames, butmodernUTF8buffer/jigsaw50layout differs: cannotapplydescendant sizeofITEM tooriginal388bytes. This isclientdisplaystate,notauthoritativeglobalitemindex/owner/uniquecode. No127replyorcausalresponse inferred;receiveS46/B separatelyobserved.
+
+Derivedledger/spec/hashpinnedprobe/workflow and14newcontrols+82adjacentregressions PASS locally(96); branchCIpending. Originalprograms/disassembly neverexecuted/committed. Pressure2486=2465 bounded closed+18 OPEN+3 historical UBunchanged; nativepair/owner-save-drop-unique lifecycle/exact2005hash/early-era membership OPEN,noenginepromotion.
+
+HighestNEXT: server-sideS/B state serializer andmovePetItem follow-up outputs comparedwiththisexact14fielddisplaylayout. Retain source-only/static/nativepairedruntime distinctions; originalfullpackage/manifest opportunistic.

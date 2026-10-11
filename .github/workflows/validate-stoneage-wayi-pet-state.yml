@@ -1,0 +1,27 @@
+name: Validate Wayi compiled PET S/B state layout
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/validate-stoneage-wayi-pet-state.yml"
+      - "tools/stoneage_wayi_pet_state_probe.py"
+      - "tests/test_stoneage_wayi_pet_state_probe.py"
+      - "research/recovered/STONEAGE-WAYI-COMPILED-PET-SB-STATE-R1.json"
+      - "docs/specs/STONEAGE-WAYI-COMPILED-PET-SB-STATE-R1.md"
+permissions:
+  contents: read
+jobs:
+  offline-sender:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install pinned static decoder
+        run: python -m pip install --quiet capstone==5.0.7
+      - name: Validate static call arguments and adjacent archive regressions
+        run: |
+          python -m unittest -v tests.test_stoneage_wayi_pet_state_probe tests.test_stoneage_wayi_pet_transport_probe tests.test_stoneage_wayi_pet_sender_probe tests.test_stoneage_wayi_saupdate_route_probe tests.test_stoneage_wayi_pe_static_inventory tests.test_stoneage_wayi_archived_page_inventory tests.test_stoneage_tw80_may16_cdx_probe tests.test_stoneage_tw80_arquivo_pt_index_probe
+          python -m json.tool research/recovered/STONEAGE-WAYI-COMPILED-PET-SB-STATE-R1.json > /dev/null
