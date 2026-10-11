@@ -1,0 +1,56 @@
+name: Validate StoneAge original client-server PET build profile matrix
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/validate-stoneage-pet-paired-build-matrix.yml"
+      - "tools/stoneage_pet_paired_build_matrix_audit.py"
+      - "tests/test_stoneage_pet_paired_build_matrix.py"
+      - "research/recovered/STONEAGE-PET-PAIRED-BUILD-MATRIX-R1.txt"
+permissions:
+  contents: read
+jobs:
+  profile-gates:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - name: Strict source-only paired-build and previous PET boundary regressions
+        run: |
+          python -m unittest -v tests.test_stoneage_pet_paired_build_matrix tests.test_stoneage_pet_client_full_callgraph tests.test_stoneage_pet_wire_owner_source
+      - name: Clone late source pinned by exact original commit, transient only
+        run: |
+          set -euo pipefail
+          git init /tmp/stoneage-pet-paired-build-r1
+          git -C /tmp/stoneage-pet-paired-build-r1 remote add origin https://github.com/BismarckDD/Stoneage.git
+          git -C /tmp/stoneage-pet-paired-build-r1 fetch --depth 1 origin 999ffdf1d220ec6666eb65339180689c9caf1876
+          git -C /tmp/stoneage-pet-paired-build-r1 checkout --detach FETCH_HEAD
+      - name: Verify actual selected VER25 solution configs and checked-in dual server defaults
+        run: |
+          set -euo pipefail
+          python -m tools.stoneage_pet_paired_build_matrix_audit --checkout /tmp/stoneage-pet-paired-build-r1 > /tmp/STONEAGE-PET-PAIRED-BUILD-MATRIX-R1.txt
+          cat /tmp/STONEAGE-PET-PAIRED-BUILD-MATRIX-R1.txt
+          grep -Fx 'RESOLUTION|PET_PAIR_BUILD_DEFAULT_DISABLED_SOURCE_ONLY_PASS' /tmp/STONEAGE-PET-PAIRED-BUILD-MATRIX-R1.txt
+      - name: Strict report validation and archived evidence exact match
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from tools.stoneage_pet_paired_build_matrix_audit import validate_report
+          report=Path("/tmp/STONEAGE-PET-PAIRED-BUILD-MATRIX-R1.txt")
+          data=validate_report(report.read_text())
+          assert data["actual_enabled_pair_binaries"]=="0"
+          assert data["original_early_feature_verified"]=="0"
+          saved=Path("research/recovered/STONEAGE-PET-PAIRED-BUILD-MATRIX-R1.txt")
+          if saved.exists():
+              assert saved.read_bytes()==report.read_bytes(), "pinned report is no longer byte identical"
+          print("PAIRED_BUILD_SOURCE_ONLY_PASS", "archived", saved.exists())
+          PY
+      - name: Upload derived source-only build matrix
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: stoneage-pet-paired-build-matrix-r1
+          path: /tmp/STONEAGE-PET-PAIRED-BUILD-MATRIX-R1.txt
+          if-no-files-found: ignore

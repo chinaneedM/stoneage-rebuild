@@ -1,0 +1,58 @@
+{
+  "gate": "SOURCE_ONLY_PINNED_PET_PAIR_DEFAULT_DISABLED",
+  "source_repo": "BismarckDD/Stoneage",
+  "source_commit": "999ffdf1d220ec6666eb65339180689c9caf1876",
+  "source_tree": "a49d8fb8beaf93e07e499d65723f16922ce3ee1f",
+  "source_pinned_blob_count": 10,
+  "matrix": {
+    "solution_selected": [
+      "VER25_DEBUG",
+      "VER25_RELEASE"
+    ],
+    "client_script_default": "VER25_RELEASE",
+    "client_default_pet": false,
+    "client_special_version60_pet": false,
+    "client_forced_version80_pet": true,
+    "server_default_pet": false,
+    "server_forced_pet": true,
+    "checked_in_default_pair_pet": false,
+    "actual_compiled_pair_verified": false,
+    "real_network_packet_verified": false,
+    "early_history_pet_verified": false
+  },
+  "checked_in_artifacts": {
+    "tracked_blobs": 950,
+    "tracked_exe_blobs": 0,
+    "tracked_non_game_dependency_dlls_included": true,
+    "github_public_releases_at_inspection": 0,
+    "limitation": "Only this exact repository tree and public GitHub Releases collection. Does not exclude external binaries."
+  },
+  "audit": {
+    "reproducible_tool": "tools/stoneage_pet_paired_build_matrix_audit.py",
+    "strict_tests": "tests/test_stoneage_pet_paired_build_matrix.py",
+    "report": "research/recovered/STONEAGE-PET-PAIRED-BUILD-MATRIX-R1.txt",
+    "workflow_run": 38146693748,
+    "workflow_job": 114491443906,
+    "tested_commit": "ab98378ef1e05437d7a4d5f4407fd883934849fd",
+    "conclusion": "success",
+    "python_mutation_and_retained_tests": 18,
+    "report_byte_exact": true,
+    "artifact_id": 11704813091,
+    "artifact_zip_digest_reported_by_github": "sha256:68b495f3fab2060324a7d25842fe29e15f47bdac2d474acc503c16fc8e5ac1da",
+    "artifact_download_hash_independently_verified": false
+  },
+  "correction": "Original client Visual Studio solution selects VER25_DEBUG and VER25_RELEASE. Extra project-only Debug/Release property groups should not be called selected solution profiles.",
+  "previous_failed_run": {
+    "run": 38146553529,
+    "reason": "test harness omitted dependency include paths while preprocessing server version.h; corrected by pinned gmsv/common include paths",
+    "never_claimed_success": true
+  },
+  "pressure": {
+    "total": 2486,
+    "bounded_closed": 2465,
+    "open": 18,
+    "historical_ub": 3,
+    "first_version_promotions": 0
+  },
+  "next": "Seek independent authentic enabled client/server binary pair provenance and execution before non-synthetic pet equipment owner/unique-code lifecycle claim."
+}
