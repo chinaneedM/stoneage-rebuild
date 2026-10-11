@@ -11641,3 +11641,61 @@ reviewed discovery gate and its automated derived-report writeback is authorized
   separate. Trace whether early-return pending items survive Exit/DeleteBattle;
   do not presume automatic release. Natural master/probability, early server
   provenance, unique/time/callbacks, positive gold/config and real transport OPEN.
+
+
+## 2026-10-11 — Original exceptional reward-ticket second Finish cleanup REMOTE ACCEPTED (bounded)
+
+- Fresh remote startup main8f1a7933556a77ceee56333d3495514c5224f536,
+  tree5011f83c5c96ade28543ccc1340d64ead89d568b. Previous complete state
+  blob682ea785574d4c200691f395bf0aef544464f931,1235375 bytes retained as an exact prefix;
+  all prior timeline/source registry text also preserved.
+- Branch agent/original-ticket-cleanup-r1-20261011, tested input
+  8ac04c40311ec8d71bf4eacc9f2e9d638c5f1cc8,
+  tree905430c8f6fb20ea8f7df2f9cbd974c6adc59e42.
+  Action38109922966/job114383177723 all 12 steps SUCCESS;61 Python checks,
+  Gavin/Bismarck GNU99 O0/O2 nonrecovering UBSan complete output agreement,
+  independent original item-factory native gate retained byte-identically.
+- Same original enemy6-created registered item3/ID1 from bounded synthetic
+  master, actual AddExpItem, then explicit exceptional ticket input -> actual
+  second Loop(FINISH)/Finish/GetProfit/GetExpGold/Exit/DeleteBattle.
+  Four cases per profile,32 new second-Finish calls:16 no-ticket differential
+  controls and16 with-ticket runs. All six retained capacity rows also PASS
+  (24 preceding capacity Finish calls in this probe).
+- Dead player0, actual owned pet2 recipient and invalid recipient -1 each
+  ultimately release item3/use0/owner-1/count-1, leave zero carried references
+  and produce no pickup log/item send. All tickets become -1; arena use0,
+  modeNONE/Total_BattleNum0. Invalid recipient does not imply cleanup of
+  an actor absent from the entries.
+- Duplicate pending item3 tickets produce TWO actual bag aliases to the same
+  live registered item, owner0, two pickup logs and one aggregate item send
+  with two indices; Bismarck adds two single-slot sends. This is a synthetic
+  input source witness, not natural duplicate reachability or a decision to
+  reproduce that ownership behavior in the modern game.
+- Entire256 items/seven original Char/native BATTLE agree with no-ticket
+  control plus independently predicted item/release/alias mutations. Entire
+  eight native connections also checked. Gavin executes unchanged original
+  CheckDefBTime with time1000/rand0/CreateTime900/duration0: dead BDTime1010,
+  duplicate pickup BDTime1000, one RNG call per player Exit, no NU send.
+- Bismarck also executes its unchanged original default-profile timer with
+  the recovered original translation-unit constant delayTime5 (hash in report).
+  Predicted dead BDTime1015 and duplicate pickup BDTime1005, one RNG call and
+  one typed NU_send(fd7,0) per player Exit; all other native session bytes
+  unchanged. Initial standalone extraction omitted the global declaration;
+  this harness dependency omission was fixed by recovering the actual source
+  constant. No original source defect or _FIX_CHARLOOPS profile switch claimed.
+  Both profiles require original_timer1. Typed sends do not prove real transport.
+- Artifact11690547978,ZIP17755 bytes SHA256dcfcf3b786186151975a65a124efb26687bef47f81d8e6d0e9c410fb9400d22b;
+  independently downloaded ZIP digest verified and both reports compared
+  byte-for-byte with local. Cleanup report28290 bytes SHA256
+  9d2f5204026cb66068fdac935945f0bc44b8c5c3ada52ea76894a10e76d25cf7. Derived spec/report/receipt:
+  STONEAGE-BATTLE-ORIGINAL-TICKET-CLEANUP-*R1. No original code/assets copied.
+- Pressure unchanged2486=2465 bounded closed+18 OPEN+3 historical UB,
+  zero historical promotions, no modern-engine phase transition. Empty bag,
+  actor/ticket fixtures, RNG/time/config and typed transport are explicit;
+  differential XP/Exit oracle is not an independent EXP formula proof.
+- Highest NEXT: original NPC and non-player-side second-Finish guard matrix,
+  distinguish Gavin PET/side guard from Bismarck non-PLAYER guard and inspect
+  retained-ticket cleanup. Preserve this gate and original timer profile distinctions.
+  Other invalid item indices, natural masters/probability/ticket reachability,
+  JSS1999/Taiwan1.0 ancestry, unique/time/callbacks, positive gold/config and
+  original network/client transport remain OPEN.

@@ -5604,3 +5604,25 @@ ace3536523f4220eb478a740b367ad6deeb881095691e03ffc1038aa527db4cf.
 Artifact metadata/independent verification extent in acceptance receipt. Synthetic
 master/RNG/fillers and64 MiB audit stack are explicit. Source-only negative guard
 hashes retained as next evidence leads, not runtime acceptance or early history.
+
+
+## 2026-10-11 — Original exceptional ticket cleanup source witness R1
+
+Tool/spec/derived report/receipt STONEAGE-BATTLE-ORIGINAL-TICKET-CLEANUP-R1;
+Action38109922966/job114383177723 SUCCESS at8ac04c40311ec8d71bf4eacc9f2e9d638c5f1cc8,
+61 tests, eight negative/duplicate witnesses and six retained capacity witnesses,
+GNU99 O0/O2 nonrecovering UBSan plus independent original factory gate.
+Source pins Gavin1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56 and
+Bismarck999ffdf1d220ec6666eb65339180689c9caf1876. Original BATTLE_DeleteItem/
+DeleteBattle bodies matched unchanged per profile; exact body/native connection
+hashes in source-free report and receipt. Both original CheckDefBTime bodies
+execute without source edits or feature switches. Bismarck original global
+const delayTime5 is recovered and hashed; an initial omission in the standalone
+harness dependency extraction was corrected before final acceptance.
+Complete256 items/seven Char/
+BATTLE/eight connection arrays checked;32 new second-Finish calls. Cleanup report
+28290 bytes SHA2569d2f5204026cb66068fdac935945f0bc44b8c5c3ada52ea76894a10e76d25cf7.
+Artifact11690547978 independently downloaded/digest-verified, reports byte-exact
+against local. Original server C/headers/assets remain only transient outside
+repository. Synthetic actor/ticket/empty bag/time inputs, differential XP oracle,
+late provenance and natural reachability limits preserved. Pressure unchanged.

@@ -2301,3 +2301,20 @@ oracles and automatic arena release agree. Fillers and replacement of stale
 invalid fixture references are explicit inputs, not recovered master or natural
 reachability. Late descendants remain distinct from original JSS1999/Taiwan-v1.
 No historical or pressure promotion; negative recipients and provenance OPEN.
+
+
+## 2026-10-11 — Bounded late-source exceptional ticket cleanup and duplicate aliases
+
+FACT only within pinned Gavin1f90cb6/Bismarck999ffdf1 synthetic fixtures:
+Action38109922966/job114383177723 SUCCESS at8ac04c40311ec8d71bf4eacc9f2e9d638c5f1cc8,
+61 checks and32 new O0/O2 UBSan second-Finish calls plus retained capacity gate.
+Dead player/PET/recipient-1 pending item3 is ultimately released by original
+settlement/arena deletion. Duplicate tickets give two bag references to one live
+item3 and two pickup logs. Complete item/Char/BATTLE domains agree against
+no-ticket replays plus predicted mutations. Both original timer bodies and complete native connection arrays pass.
+Bismarck requires its actual global delayTime5; standalone extraction initially
+omitted that declaration, a corrected harness dependency omission, not an
+original source defect. Typed NU arguments/counts are not real transport.
+This is not original-release history, natural bad-ticket reachability or modern
+ownership DESIGN. No historical/pressure promotion; NPC/side guards and original
+source provenance remain OPEN.

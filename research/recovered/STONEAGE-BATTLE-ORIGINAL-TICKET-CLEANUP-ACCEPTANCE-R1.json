@@ -1,0 +1,168 @@
+{
+  "status": "REMOTE_ACCEPTED_BOUNDED",
+  "date": "2026-10-11",
+  "repo": "chinaneedM/stoneage-rebuild",
+  "prior_main": "8f1a7933556a77ceee56333d3495514c5224f536",
+  "prior_main_tree": "5011f83c5c96ade28543ccc1340d64ead89d568b",
+  "branch": "agent/original-ticket-cleanup-r1-20261011",
+  "tested_commit": "8ac04c40311ec8d71bf4eacc9f2e9d638c5f1cc8",
+  "tested_tree": "905430c8f6fb20ea8f7df2f9cbd974c6adc59e42",
+  "github_action": {
+    "run": 38109922966,
+    "job": 114383177723,
+    "conclusion": "success",
+    "head_sha": "8ac04c40311ec8d71bf4eacc9f2e9d638c5f1cc8",
+    "all_steps_success": true,
+    "steps_count": 12,
+    "artifact": {
+      "id": 11690547978,
+      "zip_bytes": 17755,
+      "zip_sha256": "dcfcf3b786186151975a65a124efb26687bef47f81d8e6d0e9c410fb9400d22b",
+      "independent_zip_sha_verified": true,
+      "reports": {
+        "stoneage-battle-original-ticket-cleanup-r1.txt": {
+          "bytes": 28290,
+          "sha256": "9d2f5204026cb66068fdac935945f0bc44b8c5c3ada52ea76894a10e76d25cf7",
+          "exact_local_bytes": true
+        },
+        "stoneage-item-factory-retained-r1.txt": {
+          "bytes": 32466,
+          "sha256": "ae632bc03bf06ca1661e4ba0d151595f9ccd075d0c1eb67d5b3acb22b5e8ff59",
+          "exact_local_bytes": true
+        }
+      }
+    }
+  },
+  "python_tests": 61,
+  "source_pins": {
+    "gavin": "1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56",
+    "iris": "9e6c8ce2cd8ed532a7157773acd1c61582c178b5",
+    "bismarck": "999ffdf1d220ec6666eb65339180689c9caf1876"
+  },
+  "prior_documents_preserved_as_exact_prefix": {
+    "docs/CURRENT-STATE.md": {
+      "bytes": 1235375,
+      "sha256": "d76eb454c420f4a85a6c512f94c9171a5daf8313c0dc6a0f871d4bc36bc54ed4",
+      "git_blob": "682ea785574d4c200691f395bf0aef544464f931"
+    },
+    "docs/HISTORICAL-TIMELINE.md": {
+      "bytes": 196581,
+      "sha256": "ef815d6ecdaf2a1fb52531de1a47f9b9f0a513f8784210f93088f8ea5c84ff39",
+      "git_blob": "b9e5f5811a17de56628534618d5dfbdfb9449941"
+    },
+    "docs/SOURCE-REGISTRY.md": {
+      "bytes": 414457,
+      "sha256": "b4216ab9bdd0c59985e4245898e2f255ac0525861b03a49bcb882137c10aff2f",
+      "git_blob": "2f6ff363d19df6b5a23aafce12ec7b5b51095871"
+    }
+  },
+  "source_hash_rows": [
+    "CLEANUP_SOURCE|gavin|CheckDefBTime|sha256=ea245dc2e56a6e04ed88779247dfd2741149edc632e9c833da84118db4b18985|connection_type_sha256=ef00ad508afb71e7840db271cc674a463b9f0a4af6f19fb08e7d72d010015696",
+    "CLEANUP_SOURCE|gavin|BATTLE_DeleteItem|native_sha256=9bbfb952b8b54c31a249adc563a4868ff7c00b587deadc434b949b6758ca69c2|preprocessed_sha256=9bbfb952b8b54c31a249adc563a4868ff7c00b587deadc434b949b6758ca69c2",
+    "CLEANUP_SOURCE|gavin|BATTLE_DeleteBattle|native_sha256=9b503d98f6b22d1a5e4c4b44c11ead0487dcb05a3cc83db3c1344bb8183d299a|preprocessed_sha256=9b503d98f6b22d1a5e4c4b44c11ead0487dcb05a3cc83db3c1344bb8183d299a",
+    "CLEANUP_SOURCE|bismarck|delayTime|sha256=1afd7482610eec8e34637b326e29b525fefc8eedbbbbfaea1afad13e0bb70050|value=5",
+    "CLEANUP_SOURCE|bismarck|CheckDefBTime|sha256=64cba2829b8b8ec6395c02fdc54872155b5934a343ec6e66f07071e223f08a45|connection_type_sha256=24ffe3a458e9c854d2814b7340e4d3ec20dd7fd52f5b320bba44b21fd226ab76",
+    "CLEANUP_SOURCE|bismarck|BATTLE_DeleteItem|native_sha256=875bd921080397d7760232f95ad88a071ff413cc13a5fb815e48943d8e81bc5b|preprocessed_sha256=875bd921080397d7760232f95ad88a071ff413cc13a5fb815e48943d8e81bc5b",
+    "CLEANUP_SOURCE|bismarck|BATTLE_DeleteBattle|native_sha256=01e105e4a325a1923c8032bcab585f80201a760580a925bea8f2f7f9f30725fe|preprocessed_sha256=01e105e4a325a1923c8032bcab585f80201a760580a925bea8f2f7f9f30725fe"
+  ],
+  "native": {
+    "profiles": [
+      "gavin",
+      "bismarck"
+    ],
+    "optimizations": [
+      "O0",
+      "O2"
+    ],
+    "nonrecovering_UBSan": true,
+    "cleanup_cases_per_profile": 4,
+    "new_exceptional_second_loop_executions": 32,
+    "with_ticket_executions": 16,
+    "no_ticket_differential_controls": 16,
+    "retained_capacity_second_loop_executions": 24,
+    "item": 3,
+    "item_id": 1,
+    "original_enemy_actor": 6,
+    "rejected_cases": {
+      "dead_player": 0,
+      "selected_owned_pet": 1,
+      "invalid_recipient_minus1": 2
+    },
+    "rejected_item_effect": {
+      "use": 0,
+      "owner": -1,
+      "live_count_delta": -1,
+      "carried_references": 0,
+      "pickup_logs": 0,
+      "item_sends": 0
+    },
+    "duplicate_effect": {
+      "use": 1,
+      "owner": 0,
+      "carried_references": 2,
+      "pickup_logs": 2,
+      "aggregate_item_sends": 1,
+      "aggregate_count": 2,
+      "single_slot_sends": {
+        "gavin": 0,
+        "bismarck": 2
+      }
+    },
+    "complete_item_records": 256,
+    "complete_Char_records": 7,
+    "complete_BATTLE_oracle": true,
+    "complete_connection_records": 8,
+    "arena_released": true,
+    "all_pending_tickets_cleared": true,
+    "timer": {
+      "gavin": {
+        "original_body_executed": true,
+        "fixed_time": 1000,
+        "fixed_rand": 0,
+        "CreateTime": 900,
+        "duration": 0,
+        "death_BDTime": 1010,
+        "duplicate_BDTime": 1000,
+        "draws_per_player_exit": 1,
+        "NU_sends": 0
+      },
+      "bismarck": {
+        "original_body_executed": true,
+        "original_global_delayTime": 5,
+        "fixed_time": 1000,
+        "fixed_rand": 0,
+        "CreateTime": 900,
+        "duration": 0,
+        "death_BDTime": 1015,
+        "duplicate_BDTime": 1005,
+        "draws_per_player_exit": 1,
+        "NU_sends_per_player_exit": 1,
+        "NU_arguments": [
+          7,
+          0
+        ]
+      }
+    },
+    "experience_oracle": "no-ticket original Finish/Exit replay; independently predicted inventory/release mutation; not independent EXP formula",
+    "audit_stack_budget_bytes": 67108864
+  },
+  "local_reports": {
+    "cleanup": {
+      "bytes": 28290,
+      "sha256": "9d2f5204026cb66068fdac935945f0bc44b8c5c3ada52ea76894a10e76d25cf7"
+    },
+    "factory": {
+      "bytes": 32466,
+      "sha256": "ae632bc03bf06ca1661e4ba0d151595f9ccd075d0c1eb67d5b3acb22b5e8ff59"
+    }
+  },
+  "source_boundary": "later descendants; synthetic recipient/ticket and cleared bag fixtures; no natural duplicate or invalid ticket reachability, early server identity, real transport or modern implementation",
+  "pressure": {
+    "total": 2486,
+    "bounded_closed": 2465,
+    "open": 18,
+    "historical_ub": 3,
+    "historical_promotions": 0
+  },
+  "next": "original NPC/non-player-side second Finish guards; preserve profile differences and original timer profile differences"
+}
