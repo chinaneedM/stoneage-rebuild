@@ -2288,3 +2288,16 @@ adversarial late-source observations do not establish natural reachability,
 first-release behavior or modern design. Natural factory/drop/RNG, callbacks,
 positive gold and early executable identity remain OPEN. Receipt
 STONEAGE-ITEM-ALLOCATOR-ACCEPTANCE-R1.json; pressure/promotions unchanged.
+
+
+## 2026-10-11 — Bounded late-source same-item full/last-slot second Finish
+
+FACT only for pinned Gavin1f90cb6/Bismarck999ffdf1 synthetic ID1 item3 fixtures:
+Action38107983603/job114377447591 SUCCESS at875411b76e786ee4dd26e6abd22b6543547cd744,
+53 checks;24 original O0/O2 UBSan second-Finish calls include12 no-item controls.
+Full active bag releases item3/use0/owner-1/count-1 without pickup presentation;
+first-empty and last-active slots accept it. Entire256 item/seven Char/BATTLE
+oracles and automatic arena release agree. Fillers and replacement of stale
+invalid fixture references are explicit inputs, not recovered master or natural
+reachability. Late descendants remain distinct from original JSS1999/Taiwan-v1.
+No historical or pressure promotion; negative recipients and provenance OPEN.

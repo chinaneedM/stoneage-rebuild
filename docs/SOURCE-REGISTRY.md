@@ -5589,3 +5589,18 @@ retained report29043 bytes SHA2565b2c9365b5cf053c8d4c490867f7f56d268f571f4a5bad2
 Both equal local; retained equals prior accepted report. Original source/assets
 stay transient. Source-only factory/drop/enemy leads distinguish future positive
 creation from this direct initializer witness; no historical/capability promotion.
+
+
+## 2026-10-11 — Original same registered item second Finish capacity witness R1
+
+Tool/spec/source-free report/receipt STONEAGE-BATTLE-ORIGINAL-SAME-ITEM-CAPACITY-R1;
+Action38107983603/job114377447591 SUCCESS, input875411b76e786ee4dd26e6abd22b6543547cd744,
+53 regression/evidence completeness tests and retained original factory native gate.
+Pinned Gavin1f90cb6/Bismarck999ffdf1 own original headers and unmodified functions;
+source bytes CI/local transient, not redistributed.24 second-Finish calls under
+O0/O2 nonrecovering UBSan, complete native item/actor/arena oracles for partial,
+full and last-slot input. Local report26059 bytes SHA256
+ace3536523f4220eb478a740b367ad6deeb881095691e03ffc1038aa527db4cf.
+Artifact metadata/independent verification extent in acceptance receipt. Synthetic
+master/RNG/fillers and64 MiB audit stack are explicit. Source-only negative guard
+hashes retained as next evidence leads, not runtime acceptance or early history.

@@ -11597,3 +11597,47 @@ reviewed discovery gate and its automated derived-report writeback is authorized
   inventory and assert item release/owner cleanup plus entire actor/arena/item
   oracles; negative dead/invalid/non-player/duplicate edge gates, natural
   master/historical provenance and transport/callbacks remain OPEN.
+
+
+## 2026-10-11 — Same registered item second Finish full/last-slot capacity REMOTE ACCEPTED (bounded)
+
+- Fresh startup main85850b58ec66c3bdde36abd85f1fe30b0d58aa5e,
+  treefc19b678cd8784d09c4372f914d27d4a39f314a4. Previous complete continuity
+  blob6166b9fd79434fa01a24352e2adcd14ede2686d5,1232363 bytes preserved
+  as an exact prefix. Earlier timeline/source registry also preserved.
+- Branch agent/original-same-item-capacity-r1-20261011, tested input
+  875411b76e786ee4dd26e6abd22b6543547cd744,
+  tree74595f24c5c0bba66276a62f791e4a179d69f1a0.
+  Action38107983603/job114377447591 SUCCESS;53 Python regression/evidence-validator checks,
+  original Gavin/Bismarck O0/O2 nonrecovering UBSan complete output agreement,
+  independently retained item-factory native gate PASS.
+- Same original enemy6-created ID1 registered item3 -> actual AddExpItem ->
+  actual second Loop/Finish/GetProfit/GetExpGold -> native persistent bag or
+  original release -> Exit/DeleteBattle. Three capacity cases per profile:
+  pre-existing first empty slot Gavin11/Bismarck9, full active bag, only final
+  slot empty Gavin23/Bismarck53.24 new second-Finish executions,12 with-item
+  and12 no-item controls across both profiles/optimizations.
+- Full bag: item3.use0, owner -1, live count decreases1, no carried item3
+  reference, no pickup log/item presentation. Pickup cases: use1/owner0,
+  exactly the independently predicted slot receives3. Every arena released,
+  modeNONE/Total_BattleNum0. Entire256 items/seven Char/BATTLE bytes agree
+  with no-loot differential baseline plus independently predicted item effect.
+  Original EXP/level/pet/Exit effects retained, not an independent XP formula.
+- Synthetic fillers20+ occupy actual active capacity; stale invalid carried
+  references in saved fixture must be replaced with live fillers, not counted
+  as occupied. This fixture construction is explicit, not natural reachability.
+  Complete snapshots exceeded local8 MiB stack; audit budget64 MiB and static
+  overwritten snapshot buffers preserve all original game function bodies.
+- Source-free local report26059 bytes SHA256
+  ace3536523f4220eb478a740b367ad6deeb881095691e03ffc1038aa527db4cf;
+  durable report/spec/receipt STONEAGE-BATTLE-ORIGINAL-SAME-ITEM-CAPACITY-*R1.
+  Artifact verification extent recorded in receipt. No original code/assets
+  committed. Pressure2486=2465 bounded closed+18 OPEN+3 historical UB,
+  zero historical promotions, no modern-engine phase transition.
+- Highest NEXT: original second Loop/Finish dead/PET/NPC/non-player-side/
+  invalid/duplicate ticket boundaries with full state oracles. Source-only
+  GetExpGold early-return hashes are recorded, NOT runtime accepted negative
+  claims. Gavin PET/non-player-side guard and Bismarck non-PLAYER guard remain
+  separate. Trace whether early-return pending items survive Exit/DeleteBattle;
+  do not presume automatic release. Natural master/probability, early server
+  provenance, unique/time/callbacks, positive gold/config and real transport OPEN.

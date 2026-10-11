@@ -1,0 +1,145 @@
+{
+  "status": "REMOTE_ACCEPTED_BOUNDED",
+  "date": "2026-10-11",
+  "repo": "chinaneedM/stoneage-rebuild",
+  "prior_main": "85850b58ec66c3bdde36abd85f1fe30b0d58aa5e",
+  "prior_main_tree": "fc19b678cd8784d09c4372f914d27d4a39f314a4",
+  "branch": "agent/original-same-item-capacity-r1-20261011",
+  "tested_commit": "875411b76e786ee4dd26e6abd22b6543547cd744",
+  "tested_tree": "74595f24c5c0bba66276a62f791e4a179d69f1a0",
+  "github_action": {
+    "run": 38107983603,
+    "job": 114377447591,
+    "conclusion": "success",
+    "head_sha": "875411b76e786ee4dd26e6abd22b6543547cd744",
+    "all_12_steps_success": true,
+    "artifact": {
+      "id": 11689499852,
+      "zip_bytes": 17331,
+      "zip_sha256": "e7c33e167e301d20b738e37570622b51ed3f430ea7a1c2791c1706f4200549b6",
+      "independent_zip_sha_verified": true,
+      "reports": {
+        "stoneage-battle-original-same-item-capacity-r1.txt": {
+          "bytes": 26059,
+          "sha256": "ace3536523f4220eb478a740b367ad6deeb881095691e03ffc1038aa527db4cf",
+          "exact_local_bytes": true
+        },
+        "stoneage-item-factory-retained-r1.txt": {
+          "bytes": 32466,
+          "sha256": "ae632bc03bf06ca1661e4ba0d151595f9ccd075d0c1eb67d5b3acb22b5e8ff59",
+          "exact_local_bytes": true
+        }
+      }
+    }
+  },
+  "python_tests": 53,
+  "source_pins": {
+    "gavin": "1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56",
+    "iris": "9e6c8ce2cd8ed532a7157773acd1c61582c178b5",
+    "bismarck": "999ffdf1d220ec6666eb65339180689c9caf1876"
+  },
+  "prior_documents_preserved_as_exact_prefix": {
+    "docs/CURRENT-STATE.md": {
+      "bytes": 1232363,
+      "sha256": "43a0a5e9ec30d99676bfa21dda6145e066ceadc774491bb63745e0ed1b194293",
+      "git_blob": "6166b9fd79434fa01a24352e2adcd14ede2686d5"
+    },
+    "docs/HISTORICAL-TIMELINE.md": {
+      "bytes": 195779,
+      "sha256": "0a9031889eb16f1ee4b263ed1d54208059f9c7930a4e77c2e72ed21a01f19be2",
+      "git_blob": "26b01001788ab9053314f6236cf4417de6209599"
+    },
+    "docs/SOURCE-REGISTRY.md": {
+      "bytes": 413498,
+      "sha256": "2af528dbbd62f67ab91a59ed78511317c4a8b1d2f526f6c7d50946759085b8b5",
+      "git_blob": "c319a94d830046d12d13ae306d33c0160f14b35d"
+    }
+  },
+  "native": {
+    "profiles": [
+      "gavin",
+      "bismarck"
+    ],
+    "optimizations": [
+      "O0",
+      "O2"
+    ],
+    "nonrecovering_UBSan": true,
+    "same_registered_item": 3,
+    "item_id": 1,
+    "enemy_actor": 6,
+    "recipient_actor": 0,
+    "same_item_second_loop_executions": 24,
+    "with_item_executions": 12,
+    "no_item_differential_controls": 12,
+    "first_empty_slots": {
+      "gavin": 11,
+      "bismarck": 9
+    },
+    "last_active_slots": {
+      "gavin": 23,
+      "bismarck": 53
+    },
+    "full_bag": {
+      "item_use": 0,
+      "owner": -1,
+      "live_item_count_delta": -1,
+      "no_carried_reference": true,
+      "pickup_log_count": 0,
+      "item_data_count": 0
+    },
+    "pickup": {
+      "item_use": 1,
+      "owner": 0,
+      "log_count": 1,
+      "data_count": 1,
+      "single_slot_update": {
+        "gavin": 0,
+        "bismarck": 1
+      }
+    },
+    "complete_native_256_item_pool_oracle": true,
+    "complete_seven_Char_oracle": true,
+    "complete_BATTLE_oracle": true,
+    "no_item_control_preserves_complete_input_item_pool": true,
+    "arena_released": true,
+    "battle_mode_NONE": true,
+    "total_battles_zero": true,
+    "original_gameplay_functions_rewritten": false,
+    "audit_stack_budget_bytes": 67108864,
+    "static_fixture_snapshots": "overwritten before use; game data and original functions unchanged",
+    "capacity_input": "synthetic valid live filler records20+; preserve equipment and live carried references, replace stale invalid fixture references when constructing full/last-slot input",
+    "experience_oracle": "original no-loot replay controls native XP/level/pet/status/Exit effects; not an independent formula proof"
+  },
+  "local_reports": {
+    "capacity": {
+      "bytes": 26059,
+      "sha256": "ace3536523f4220eb478a740b367ad6deeb881095691e03ffc1038aa527db4cf"
+    },
+    "factory_independent": {
+      "bytes": 32466,
+      "sha256": "ae632bc03bf06ca1661e4ba0d151595f9ccd075d0c1eb67d5b3acb22b5e8ff59"
+    }
+  },
+  "source_only_next_not_runtime_accepted": {
+    "gavin": {
+      "BATTLE_GetExpGold_sha256": "7e8dcab1862b6b845e529630f807d7f91e29a7b337f2ea486d9b01a88397822b",
+      "early_return_scope": "dead recipient returns0; PET recipient or non-player side returns0",
+      "runtime_negative_cases_accepted": false
+    },
+    "bismarck": {
+      "BATTLE_GetExpGold_sha256": "acf3c59f6475634b5d2354e10c7867676ef47a171c0e4fe60b5d67612508db36",
+      "early_return_scope": "dead recipient returns0; non-PLAYER recipient returns0",
+      "runtime_negative_cases_accepted": false
+    }
+  },
+  "source_boundary": "late descendants, synthetic ten-pair ID1 master/drop RNG and fillers; fixed configuration and typed transport collectors; no early JSS1999/Taiwan-v1 server identity, natural item/probability, unique/time generation, callback, network or modern-engine claim",
+  "pressure": {
+    "total": 2486,
+    "bounded_closed": 2465,
+    "open": 18,
+    "historical_ub": 3,
+    "historical_promotions": 0
+  },
+  "next": "original dead/PET/NPC/non-player-side/invalid/duplicate ticket behavior through same second Loop/Finish; independently distinguish reward early return, Exit and DeleteBattle cleanup with native item/actor/arena oracles"
+}
