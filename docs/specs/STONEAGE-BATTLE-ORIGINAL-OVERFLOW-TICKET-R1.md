@@ -1,6 +1,6 @@
 # Original fourth-drop overflow and payout R1
 
-Status: local bounded execution passed; remote validation required before acceptance.
+Status: REMOTE ACCEPTED bounded; Action38127399033/job114434509491 SUCCESS at89d2a84efa2216499aaa69c7890d5c02122509b8. See acceptance receipt for independently verified artifact bytes.
 
 FACT within the pinned late-source Gavin and Bismarck fixtures only:
 

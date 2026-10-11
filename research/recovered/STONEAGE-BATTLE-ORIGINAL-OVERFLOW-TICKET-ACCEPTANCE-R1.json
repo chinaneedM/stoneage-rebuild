@@ -1,0 +1,167 @@
+{
+  "status": "REMOTE_ACCEPTED_BOUNDED",
+  "baseline": {
+    "head": "f8787e37e854af7b86b1c554b617c09f2bdb1c47",
+    "tree": "99e9f8783a89416d8bb7887c260b41cc4480da9f"
+  },
+  "branch": "agent/original-overflow-ticket-r1-20261011",
+  "tested_commit": "89d2a84efa2216499aaa69c7890d5c02122509b8",
+  "tested_tree": "a0d3c823ca18f2375fff6d3157b11bf3ac4f99c9",
+  "remote": {
+    "run_id": 38127399033,
+    "run_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/38127399033",
+    "job_id": 114434509491,
+    "conclusion": "success",
+    "all_12_steps_success": true,
+    "artifact": {
+      "id": 11696949266,
+      "bytes": 23708,
+      "sha256": "4aa0019eeba4ce3d000dfb4a00d1a6952f9c8e712ab72e032a9fcb2c6853db3d",
+      "independently_downloaded_and_digest_verified": true,
+      "files": {
+        "stoneage-battle-original-overflow-ticket-r1.txt": {
+          "bytes": 165959,
+          "sha256": "f506e65bf6884d2ecbe110b99aa8ea036c34cabbd6388dc5fe161d92c98df928",
+          "exact_local_bytes": true
+        },
+        "stoneage-item-factory-retained-r1.txt": {
+          "bytes": 32466,
+          "sha256": "ae632bc03bf06ca1661e4ba0d151595f9ccd075d0c1eb67d5b3acb22b5e8ff59",
+          "exact_local_bytes": true
+        }
+      }
+    }
+  },
+  "python_tests": 114,
+  "source_pins": {
+    "gavin": "1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56",
+    "iris": "9e6c8ce2cd8ed532a7157773acd1c61582c178b5",
+    "bismarck": "999ffdf1d220ec6666eb65339180689c9caf1876"
+  },
+  "prior_documents_preserved_as_exact_prefix": {
+    "docs/CURRENT-STATE.md": {
+      "bytes": 1261386,
+      "sha256": "1c0e9be8aab95647f0113748e350676caa8521daec64d0f452cebe97bdd4f01f",
+      "git_blob": "a489853bf8b49d2dd1f7aa1906b7168e6ee535e3"
+    },
+    "docs/HISTORICAL-TIMELINE.md": {
+      "bytes": 202876,
+      "sha256": "ee9ac646e39d77138d8ba5acddbd38ef86a6cdfd4b82a9739965271e22469f70",
+      "git_blob": "f9775c74c20ae08287ad68362b4225311acd809f"
+    },
+    "docs/SOURCE-REGISTRY.md": {
+      "bytes": 422187,
+      "sha256": "085e0b463ba44097152b7d179c1c089407142d1099e0a89cedf1aaa58154815b",
+      "git_blob": "ca3131162022b25529112e363e31706423fd018d"
+    }
+  },
+  "native": {
+    "profiles": [
+      "gavin",
+      "bismarck"
+    ],
+    "optimizations": [
+      "O0",
+      "O2"
+    ],
+    "nonrecovering_UBSan": true,
+    "fourth_original_factory_index": 7,
+    "template_ID": 2,
+    "field_draws": 66,
+    "binding": "explicit owner4 and enemy carried slot; no natural fourth master claim",
+    "branches": {
+      "reject": {
+        "raw_draws": [
+          0,
+          0
+        ],
+        "victim": 7,
+        "pending": [
+          4,
+          5,
+          6
+        ]
+      },
+      "replace0": {
+        "raw_draws": [
+          0,
+          2147483647,
+          0
+        ],
+        "victim": 4,
+        "pending": [
+          7,
+          5,
+          6
+        ]
+      },
+      "replace1": {
+        "raw_draws": [
+          0,
+          2147483647,
+          1073741824
+        ],
+        "victim": 5,
+        "pending": [
+          4,
+          7,
+          6
+        ]
+      },
+      "replace2": {
+        "raw_draws": [
+          0,
+          2147483647,
+          2147483647
+        ],
+        "victim": 6,
+        "pending": [
+          4,
+          5,
+          7
+        ]
+      }
+    },
+    "assignment_rows": 8,
+    "payout_rows": 16,
+    "new_Finish_executions": 64,
+    "new_no_ticket_controls": 32,
+    "new_ticket_replays": 32,
+    "retained_ACTUAL_rows_byte_exact": 290,
+    "complete_item_records": 256,
+    "complete_Char_records": 7,
+    "complete_BATTLE": true,
+    "complete_connections": 8,
+    "original_factory_tables_immutable": true,
+    "whole_typed_logs_and_item_sends": true,
+    "full_RS_and_original_timers": true,
+    "original_release_forwarding": true,
+    "overflow_victim_not_double_released": true,
+    "full_and_one_free_bags": true,
+    "Gavin_LEAKLEVEL1_empty_SECRETNAME_preserved": true,
+    "Bismarck_LEAKLEVEL0_template_NAME_preserved": true
+  },
+  "local_report": {
+    "bytes": 165959,
+    "sha256": "f506e65bf6884d2ecbe110b99aa8ea036c34cabbd6388dc5fe161d92c98df928"
+  },
+  "independent_factory_report": {
+    "bytes": 32466,
+    "sha256": "ae632bc03bf06ca1661e4ba0d151595f9ccd075d0c1eb67d5b3acb22b5e8ff59",
+    "byte_exact_to_prior": true
+  },
+  "source_hash_rows": [
+    "OVERFLOW_SOURCE|gavin|BATTLE_AddExpItem|sha256=8bf2e1bab742b3c468f13a8e94ea674be8b6fab4fa675fba13aa7f5f0a45080d",
+    "OVERFLOW_SOURCE|gavin|BATTLE_ItemDelCheck|sha256=9a6a8ac26641043cb26699eed0ca11edf8806e244626d3377ef8f607f2cf95ce",
+    "OVERFLOW_SOURCE|bismarck|BATTLE_AddExpItem|sha256=0e77d7ea410eb0c62aa7db17878a860a740f85d04c873b5f10b57968d66b8e12",
+    "OVERFLOW_SOURCE|bismarck|BATTLE_ItemDelCheck|sha256=95d7897afdab2163b1b13b7a87d55e83e65b49018063487fedce85b19266c3cc"
+  ],
+  "pressure": {
+    "total": 2486,
+    "bounded_closed": 2465,
+    "open": 18,
+    "historical_ub": 3,
+    "historical_promotions": 0
+  },
+  "next": "One original ENEMY_createEnemy call creates four drops from synthetic ten-pair master, then one uninterrupted AddExpItem RNG stream; full pool/arena/actor/release/presentation oracles."
+}

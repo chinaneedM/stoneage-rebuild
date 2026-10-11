@@ -2397,3 +2397,9 @@ under Bismarck, Gavin retains empty SECRETNAME display. Full state/RS/timer and
 release oracles pass. Masters/probabilities/alternate orders remain synthetic,
 not natural early history or real-client/modern DESIGN. No pressure/promotion.
 Original fourth-drop overflow/replacement from occupied pending slots remains OPEN.
+
+
+## 2026-10-11 — Original fourth factory drop overflow and payout bounded witness R1
+
+FACT only within pinned Gavin1f90cb6/Bismarck999ffdf1 synthetic fixtures:
+Action38127399033/job114434509491 SUCCESS at89d2a84efa2216499aaa69c7890d5c02122509b8,114 checks, O0/O2 UBSan full-output equality. Original fourth factory object7/ID2 is explicitly bound to original-created enemy4. Reject0/0 releases7; replace0/INT_MAX with final raw0/1073741824/INT_MAX releases4/5/6 and yields7,5,6 /4,7,6 /4,5,7. Eight assignment/16 payout witnesses and64 new Finish calls;290 predecessor ACTUAL rows byte-exact. Whole256 items/seven Char/BATTLE/eight connections, release calls, typed presentation/full RS/original timers pass. Full bag releases three survivors; one-free bag awards earliest survivor, no second overflow-victim release. Source-free tool/spec/report/receipt STONEAGE-BATTLE-ORIGINAL-OVERFLOW-TICKET-*R1; report165959 bytes SHA256f506e65bf6884d2ecbe110b99aa8ea036c34cabbd6388dc5fe161d92c98df928. Remote ZIP digest/report bytes independently verified, factory report matches prior. Explicit RNG/master/binding is bounded late-source evidence, not natural four-drop generation, early identity, real-client or modern DESIGN. Original source transient; pressure/promotions unchanged. Next: one original enemy creation generating four drops and one uninterrupted original assignment stream, without explicit fourth binding.
