@@ -1,0 +1,59 @@
+{
+  "schema": "stoneage-tw80-late-carrier-quarantine-acceptance-r1",
+  "date": "2026-10-11",
+  "source_only": true,
+  "accepted_main_commit": "cdcd43dd1062f810c4e1bd7e5cc59099a0193109",
+  "accepted_main_tree": "9e15e4bda4773e08828f1c967ccdf186f6999e2b",
+  "branch_workflows": [
+    {
+      "id": 38151551035,
+      "name": "late-carrier-negative-controls",
+      "conclusion": "success"
+    },
+    {
+      "id": 38151550836,
+      "name": "late-client-region-version-provenance",
+      "conclusion": "success"
+    },
+    {
+      "id": 38151550946,
+      "name": "PET-contemporary-evidence-boundary",
+      "conclusion": "success"
+    }
+  ],
+  "main_workflows": [
+    {
+      "id": 38151604492,
+      "name": "late-carrier-negative-controls",
+      "conclusion": "success"
+    },
+    {
+      "id": 38151604519,
+      "name": "late-client-region-version-provenance",
+      "conclusion": "success"
+    },
+    {
+      "id": 38151604512,
+      "name": "PET-contemporary-evidence-boundary",
+      "conclusion": "success"
+    }
+  ],
+  "negative_control_tests": 19,
+  "retained_gates": [
+    "late-client-region-version",
+    "installed-client-snapshot-transition",
+    "tw80-tw85-press-chronology"
+  ],
+  "original_tw80_installer_retrieved": false,
+  "original_tw80_sha256_verified": false,
+  "original_pet_enabled_pair_runtime_verified": false,
+  "source_history_prefix_preserved": true,
+  "original_jss1999_or_tw10_membership_promoted": false,
+  "pressure": {
+    "total": 2486,
+    "bounded_closed": 2465,
+    "open": 18,
+    "historical_ub": 3
+  },
+  "highest_next": "Authenticate freely retrievable original Taiwan Waei 2005 8.0 installer and official update bytes or independently verified original full-file checksum"
+}
