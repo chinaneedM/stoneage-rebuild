@@ -1,0 +1,62 @@
+name: Validate StoneAge PET item identity source paths
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/validate-stoneage-pet-item-identity-source.yml"
+      - "tools/stoneage_pet_item_identity_source_audit.py"
+      - "tests/test_stoneage_pet_item_identity_source.py"
+      - "research/recovered/STONEAGE-PET-ITEM-IDENTITY-SOURCE-R1.txt"
+permissions:
+  contents: read
+jobs:
+  source-orientation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - name: Source-only report mutation and profile gates
+        run: |
+          python -m unittest -v tests.test_stoneage_pet_item_identity_source
+      - name: Recover only pinned late-source descendants transiently
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import subprocess
+          from pathlib import Path
+          from tools.stoneage_pet_item_identity_source_audit import PROFILES
+          repos={"gavin":"gavinlinasd/StoneAge","bismarck":"BismarckDD/stoneage"}
+          for name,spec in PROFILES.items():
+              path=Path("/tmp/stoneage-pet-item-identity-source-r1")/name
+              subprocess.run(["git","init",str(path)],check=True)
+              subprocess.run(["git","-C",str(path),"remote","add","origin","https://github.com/"+repos[name]+".git"],check=True)
+              subprocess.run(["git","-C",str(path),"fetch","--depth","1","origin",spec["commit"]],check=True)
+              subprocess.run(["git","-C",str(path),"checkout","--detach","FETCH_HEAD"],check=True)
+          PY
+      - name: Audit raw source PET inventory, unique-code and factory/release functions
+        run: |
+          set -euo pipefail
+          python -m tools.stoneage_pet_item_identity_source_audit --gavin-dir /tmp/stoneage-pet-item-identity-source-r1/gavin --bismarck-dir /tmp/stoneage-pet-item-identity-source-r1/bismarck > /tmp/STONEAGE-PET-ITEM-IDENTITY-SOURCE-R1.txt
+          cat /tmp/STONEAGE-PET-ITEM-IDENTITY-SOURCE-R1.txt
+          test "$(grep -c '^SOURCE_ONLY_PET_ITEM_IDENTITY|' /tmp/STONEAGE-PET-ITEM-IDENTITY-SOURCE-R1.txt)" -eq 2
+          test "$(grep -c '^SOURCE_ONLY_PET_ITEM_FUNCTION|' /tmp/STONEAGE-PET-ITEM-IDENTITY-SOURCE-R1.txt)" -eq 22
+          grep -Fx 'RESOLUTION|PET_ITEM_IDENTITY_SOURCE_ONLY_ORIENTATION_PASS' /tmp/STONEAGE-PET-ITEM-IDENTITY-SOURCE-R1.txt
+      - name: Re-parse every source-only observation, forbid early-build promotion
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from tools.stoneage_pet_item_identity_source_audit import validate_report
+          p=Path('/tmp/STONEAGE-PET-ITEM-IDENTITY-SOURCE-R1.txt')
+          profiles, functions=validate_report(p.read_text())
+          assert len(profiles)==2 and len(functions)==22
+          print('Verified:',len(profiles),'pinned profiles,',len(functions),'source function fingerprints, early provenance OPEN')
+          PY
+      - name: Upload derived source-only evidence, no original sources
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: stoneage-pet-item-identity-source-r1
+          path: /tmp/STONEAGE-PET-ITEM-IDENTITY-SOURCE-R1.txt
+          if-no-files-found: ignore
