@@ -2461,3 +2461,9 @@ FACT limited to controlled original execution: unchanged original ENEMY_createEn
 Evidence status: REMOTE_ACCEPTED_BOUNDED for Gavin/Bismarck late descendants only; zero JSS1999 / Taiwan1.0 direct promotion; natural alias/ownership/unique-code generation, configuration getter and first-build object identity remain OPEN. This does not prescribe modern-engine behavior. Pressure2486=2465 bounded closed+18 OPEN+3 historical UB; zero historical promotions.
 
 Historical uncertainty stays explicit: natural reachability and first-build identification remain OPEN.
+
+## 2026-10-11 — Source-only PET inventory and unique item identity orientation
+
+**FACT (late pinned descendant raw source only):** Generic item addition and actor item-index setters contain no explicit PLAYER/PET exclusion in their own bodies; conditional pet item save/load code exists, including a parser that allocates and stores item indexes into pet carried fields. However the exact pinned Gavin default header defines _SIMPLIFY_ITEMSTRING (so its pet-save branch under !defined is excluded) and Bismarck default header does not define _PET_ITEM (so its conditional pet-save branch is excluded). Both headers define _UNIQUE_P_I for item unique-code support. This limits the historical interpretation to source capability, not enabled actual gameplay. Reproducible receipt: `STONEAGE-PET-ITEM-IDENTITY-SOURCE-ACCEPTANCE-R1.json`, report `STONEAGE-PET-ITEM-IDENTITY-SOURCE-R1.txt`, Action38141501893 SUCCESS.
+
+**OPEN:** Production macro flags, reachable PET item equip/load paths, default player/PET allocator ownership during real account login, stable unique-code identity across reuse, early client equivalent. No upgrade of Gavin/Bismarck findings to original JSS1999/Taiwan1.0, no natural PET alias claim.
