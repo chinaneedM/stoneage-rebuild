@@ -16,6 +16,7 @@ ORIGINAL={
  "repo":"BismarckDD/stoneage",
  "commit":"999ffdf1d220ec6666eb65339180689c9caf1876",
  "handler":"088db5e38a1bc0dd47b3c3120480af93ab24c4c7",
+ "dispatch":"84dd1b2d9fbac10fe39983e6b8984aaebf1b3075",
  "common_make":"263ef622f4c0c3ac495d783ff35b078277984d43",
  "equipment":"970b7b3f975965c6c5e77352a2e0382adf943753",
 }
@@ -39,8 +40,10 @@ def check(repo_root):
     srcroot=repo_root/"server"
     h=srcroot/"common/gmsv_server_recv.c"
     char=srcroot/"gmsv/char/char_item.c"
+    send=srcroot/"common/gmsv_server_send.c"
     rawh=c_source(srcroot,"common/gmsv_server_recv.c",ORIGINAL["handler"])
     rawc=c_source(srcroot,"gmsv/char/char_item.c",ORIGINAL["equipment"])
+    rawsend=c_source(srcroot,"common/gmsv_server_send.c",ORIGINAL["dispatch"])
     mk=c_source(srcroot,"common/makefile",ORIGINAL["common_make"])
     demand("GMSVSERVER_SRC=gmsv_server_send.c gmsv_server_recv.c" in mk and
            "GMSV_CFLAGS=$(CFLAGS) -I../gmsv/include" in mk and
@@ -53,6 +56,16 @@ def check(repo_root):
     demand("#ifdef _PET_ITEM" in rawc and "void CHAR_movePetItem(" in rawc and
            "CHAR_setItemIndex(petindex" in rawc,
            "original optional native PET equipment body changed")
+    demand("#ifdef _PET_ITEM" in rawsend and
+           "LSSPROTO_PET_ITEM_RECV" in rawsend and
+           "GmsvServer_PETITEM_recv(fd, x, y, petindex, fromindex, toindex);" in rawsend,
+           "original feature-gated opcode decoder source body changed")
+    default_send=cpp(repo_root,send)
+    enabled_send=cpp(repo_root,send,forced=True)
+    demand("LSSPROTO_PET_ITEM_RECV" not in default_send and
+           "LSSPROTO_PET_ITEM_RECV" in enabled_send and
+           "GmsvServer_PETITEM_recv(" in enabled_send,
+           "default or forced PET equipment packet decoder evidence changed")
     default_h=cpp(repo_root,h)
     enabled_h=cpp(repo_root,h,forced=True)
     default_char=cpp(repo_root,char)
@@ -80,6 +93,7 @@ def check(repo_root):
     def matched(sym):
         return [s for s in sites if s[0]==sym]
     demand(("CHAR_movePetItem","common/gmsv_server_recv.c",1010,0) in sites and
+           ("GmsvServer_PETITEM_recv","common/gmsv_server_send.c",1388,0) in sites and
            ("CHAR_movePetItem","gmsv/char/char_item.c",2655,1) in sites and
            ("GmsvServer_PETITEM_recv","common/gmsv_server_recv.c",985,1) in sites,
            "original cross-library handler->item chain callsite drift")
@@ -89,10 +103,10 @@ def check(repo_root):
     digest=hashlib.sha256()
     for s in sites:digest.update(("|".join(map(str,s))+"\n").encode())
     summary=dict(
-      profile="bismarck",handler_blob=ORIGINAL["handler"],common_make_blob=ORIGINAL["common_make"],
+      profile="bismarck",handler_blob=ORIGINAL["handler"],dispatch_blob=ORIGINAL["dispatch"],common_make_blob=ORIGINAL["common_make"],
       equipment_blob=ORIGINAL["equipment"],gmsv_subtree_direct_callers=0,
       whole_server_pet_equip_definitions=1,whole_server_pet_equip_direct_callers=1,
-      protocol_recv_definitions=1,default_protocol_compiled=0,
+      protocol_recv_definitions=1,default_dispatch_compiled=0,forced_dispatch_compiled=1,conditional_opcode_handler_present=1,default_protocol_compiled=0,
       default_equipment_compiled=0,forced_protocol_compiled=1,forced_equipment_compiled=1,
       default_MI_recv_present=1,caller_under_positive_macro=1,
       known_compiled_production_binary=0,natural_pet_item_path_proven=0,early_original_build_proven=0,
@@ -115,10 +129,11 @@ def validate_report(report):
         if s.startswith("SOURCE_PET_PROTOCOL_GATE|"):
             a=parse(s)
             if summaries:raise ValueError("duplicate protocol gate")
-            expected=dict(profile="bismarck",handler_blob=ORIGINAL["handler"],
+            expected=dict(profile="bismarck",handler_blob=ORIGINAL["handler"],dispatch_blob=ORIGINAL["dispatch"],
                  common_make_blob=ORIGINAL["common_make"],equipment_blob=ORIGINAL["equipment"],
                  gmsv_subtree_direct_callers="0",whole_server_pet_equip_definitions="1",
                  whole_server_pet_equip_direct_callers="1",protocol_recv_definitions="1",
+                 default_dispatch_compiled="0",forced_dispatch_compiled="1",conditional_opcode_handler_present="1",
                  default_protocol_compiled="0",default_equipment_compiled="0",
                  forced_protocol_compiled="1",forced_equipment_compiled="1",
                  default_MI_recv_present="1",caller_under_positive_macro="1",
@@ -143,7 +158,8 @@ def validate_report(report):
     required={
        ("CHAR_movePetItem","common/gmsv_server_recv.c",1010,0),
        ("CHAR_movePetItem","gmsv/char/char_item.c",2655,1),
-       ("GmsvServer_PETITEM_recv","common/gmsv_server_recv.c",985,1)}
+       ("GmsvServer_PETITEM_recv","common/gmsv_server_recv.c",985,1),
+       ("GmsvServer_PETITEM_recv","common/gmsv_server_send.c",1388,0)}
     if not required.issubset(sites):raise ValueError("cross-library guarded call chain missing")
     if len([x for x in sites if x[0]=="CHAR_movePetItem"])!=2:
         raise ValueError("original PET equipment calls beyond bounded witness")
@@ -159,7 +175,7 @@ def main():
     args=parser.parse_args()
     rows=check(args.bismarck_dir)
     rows += [
-      "BOUNDARY|Bismarck pinned late descendant, common/GMSV checked-in default GCC preprocess versus controlled -D_PET_ITEM, cross-module raw caller evidence; alternate builds/deployed binaries/client dispatch not verified",
+      "BOUNDARY|Bismarck pinned late descendant, common opcode decoder->receive callback->equipment conditional -D_PET_ITEM original source chain; default GCC preprocessing disables all three; deployed binaries/client packet emission not verified",
       "OPEN|PET_ITEM deployed feature config; actual packet decoder registration/client emitted opcode; live item and pet owner/unique-code lifecycle; JSS1999/Taiwan1.0",
       "RESOLUTION|PET_PROTOCOL_CROSS_MODULE_SOURCE_ONLY_PASS",
     ]
