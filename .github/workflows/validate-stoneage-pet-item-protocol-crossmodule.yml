@@ -1,0 +1,55 @@
+name: Validate StoneAge optional PET item protocol cross-module chain
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/validate-stoneage-pet-item-protocol-crossmodule.yml"
+      - "tools/stoneage_pet_item_protocol_crossmodule_audit.py"
+      - "tests/test_stoneage_pet_item_protocol_crossmodule.py"
+      - "research/recovered/STONEAGE-PET-ITEM-PROTOCOL-CROSSMODULE-R1.txt"
+permissions:
+  contents: read
+jobs:
+  original-source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - name: Retain prior and new source-only negative controls
+        run: |
+          python -m unittest -v tests.test_stoneage_pet_item_protocol_crossmodule tests.test_stoneage_pet_item_build_gate tests.test_stoneage_pet_item_identity_source
+      - name: Obtain only pinned Bismarck descendant transiently
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/stoneage-pet-item-protocol-r1
+          git init /tmp/stoneage-pet-item-protocol-r1/bismarck
+          git -C /tmp/stoneage-pet-item-protocol-r1/bismarck remote add origin https://github.com/BismarckDD/stoneage.git
+          git -C /tmp/stoneage-pet-item-protocol-r1/bismarck fetch --depth 1 origin 999ffdf1d220ec6666eb65339180689c9caf1876
+          git -C /tmp/stoneage-pet-item-protocol-r1/bismarck checkout --detach FETCH_HEAD
+      - name: Preprocess checked-in common and game module protocol callback
+        run: |
+          set -euo pipefail
+          python -m tools.stoneage_pet_item_protocol_crossmodule_audit --bismarck-dir /tmp/stoneage-pet-item-protocol-r1/bismarck > /tmp/STONEAGE-PET-ITEM-PROTOCOL-CROSSMODULE-R1.txt
+          cat /tmp/STONEAGE-PET-ITEM-PROTOCOL-CROSSMODULE-R1.txt
+          grep -Fx 'RESOLUTION|PET_PROTOCOL_CROSS_MODULE_SOURCE_ONLY_PASS' /tmp/STONEAGE-PET-ITEM-PROTOCOL-CROSSMODULE-R1.txt
+      - name: Validate bounded original source evidence and exact committed report
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from tools.stoneage_pet_item_protocol_crossmodule_audit import validate_report
+          out=Path('/tmp/STONEAGE-PET-ITEM-PROTOCOL-CROSSMODULE-R1.txt')
+          summary,sites=validate_report(out.read_text())
+          assert len(sites)>=3 and summary['whole_server_pet_equip_direct_callers']=='1'
+          committed=Path('research/recovered/STONEAGE-PET-ITEM-PROTOCOL-CROSSMODULE-R1.txt')
+          if committed.exists():assert out.read_bytes()==committed.read_bytes(), 'original source protocol report must be byte exact'
+          print("PET protocol source sites:",len(sites),"committed:",committed.exists())
+          PY
+      - name: Upload derived source-only evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: stoneage-pet-item-protocol-crossmodule-r1
+          path: /tmp/STONEAGE-PET-ITEM-PROTOCOL-CROSSMODULE-R1.txt
+          if-no-files-found: ignore
