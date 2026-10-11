@@ -41,13 +41,15 @@ def inspect(profile,checkout):
         match=re.search(r"set\s*\(\s*STONEAGE_WINDOWS_DEFINITIONS\b(.*?)\)",files["cmake"],re.S)
         demand(match and "_PET_ITEM" not in match.group(1) and
                "target_compile_definitions" in files["cmake"],"Windows checked-in definitions changed")
+    inc=[root/"include",root,root.parent/"common",root.parent/"common"/"utils",root.parent.parent/"shared"/"lua51"]
+    flags=[f"-I{x}" for x in inc if x.exists()]
     macros=set(re.findall(r"(?m)^#define\s+([A-Za-z_]\w*)",run(
-        ["gcc","-dM","-E","-x","c",f"-I{root/'include'}","-include","version.h","-"],input="")))
+        ["gcc","-dM","-E","-x","c",*flags,"-include","version.h","-"],input="")))
     demand(all(x in macros for x in MACROS[:2]) and MACROS[2] not in macros,
            "default preprocessor macros differ from pinned source-only evidence")
     cfile=root/"char/char_item.c"
     def preprocess(path,more=()):
-        return run(["gcc","-E","-P","-std=gnu99",f"-I{root/'include'}",*more,str(path)])
+        return run(["gcc","-E","-P","-std=gnu99",*flags,*more,str(path)])
     baseline=preprocess(cfile)
     demand("CHAR_addItemSpecificItemIndex(" in baseline,"generic item add unexpectedly absent")
     raw=cfile.read_text(errors="replace")
