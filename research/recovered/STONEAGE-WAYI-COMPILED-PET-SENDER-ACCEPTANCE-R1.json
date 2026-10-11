@@ -1,0 +1,275 @@
+{
+  "schema": "STONEAGE-WAYI-COMPILED-PET-SENDER-ACCEPTANCE-R1",
+  "source_commit": "f1ef968f620c0b36fea423a31f7bad05f385ce1b",
+  "source_tree": "d0af66967f128933cbe907a3aea1f3102061b506",
+  "parent_commit": "697e27f7831c8a14ff6b54dcbdd25c8ad7554a13",
+  "branch": "agent/wayi-compiled-pet-sender-r1-20261012",
+  "branch_runs": [
+    {
+      "run_id": 38160152280,
+      "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+      "jobs": [
+        {
+          "id": 114531170329,
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Verify historical announcement separately from code, binary and early-version claims",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "run_id": 38160152191,
+      "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+      "jobs": [
+        {
+          "id": 114531170249,
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Confirm source-only version separation and safe archive signature tests",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "run_id": 38160152134,
+      "name": "Validate Wayi compiled PET sender evidence",
+      "jobs": [
+        {
+          "id": 114531169777,
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Install pinned static decoder",
+              "conclusion": "success"
+            },
+            {
+              "name": "Validate static call arguments and adjacent archive regressions",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "main_runs": [
+    {
+      "run_id": 38160209760,
+      "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+      "jobs": [
+        {
+          "id": 114531342335,
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Verify historical announcement separately from code, binary and early-version claims",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "run_id": 38160209578,
+      "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+      "jobs": [
+        {
+          "id": 114531342013,
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Confirm source-only version separation and safe archive signature tests",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "run_id": 38160210002,
+      "name": "Validate Wayi compiled PET sender evidence",
+      "jobs": [
+        {
+          "id": 114531342742,
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Install pinned static decoder",
+              "conclusion": "success"
+            },
+            {
+              "name": "Validate static call arguments and adjacent archive regressions",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "test_count": 70,
+  "branch_and_main_log_confirmed": true,
+  "compare": {
+    "ahead": 1,
+    "behind": 0,
+    "changed_files": 8,
+    "removed_files": 0
+  },
+  "remote_tree_matches_local": true,
+  "entire_prior_continuity_blobs_preserved_as_prefixes": true,
+  "non_destructive_main_fast_forward": true,
+  "evidence_status": "STATIC_COMPILED_CLIENT_ROUTE_NOT_NATIVE_RUNTIME",
+  "native_pet_runtime_verified": false,
+  "publisher_original_2005_checksum_verified": false,
+  "original_bytes_or_disassembly_committed": false,
+  "pressure": "2486=2465 bounded closed+18 OPEN+3 historical UB"
+}
