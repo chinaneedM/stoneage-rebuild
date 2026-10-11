@@ -1,0 +1,17 @@
+# Original fourth-drop overflow and payout R1
+
+Status: local bounded execution passed; remote validation required before acceptance.
+
+FACT within the pinned late-source Gavin and Bismarck fixtures only:
+
+- The original item factory and unchanged allocator create distinct object7 from synthetic template ID2 after original enemy-created objects4/5/6. All66 original factory field draws execute. Complete256 item records/count, seven actors, arena and profile-specific index/factory tables are checked. Enemy4 ownership and its carried slot for object7 are explicit harness inputs, not evidence of a naturally generated fourth master drop.
+- Original AddExpItem starts with pending4/5/6 and eligible list0/-1. A no-item execution provides the original death/EXP actor differential. Reject draws0/0 release7 and preserve pending4/5/6. Replace draws0/INT_MAX/0, 0/INT_MAX/1073741824, 0/INT_MAX/INT_MAX release4/5/6 respectively and produce7/5/6, 4/7/6, 4/5/7. Draw counts are exactly2 for rejection,3 for replacement.
+- The observer forwards unchanged release arguments through the accepted observer to the complete original release body. Exactly one object is released by overflow, count decreases once, and complete pool/actor/arena states match the predicted no-item differential. All carried drop slots are clear; the released victim is unreferenced.
+- Each resulting pending order continues through actual separate Loop(FINISH), Finish, GetProfit, GetExpGold, Exit and DeleteBattle with full/one-free active bags. Earliest surviving pending object alone wins the final slot23/53; otherwise all three remaining objects are released. Overflow victim is not released a second time. Complete256 records including synthetic fillers, seven actors, arena and eight native connections, carried references, release-call counts, typed item logs/sends and full original RS text are checked. Original alive-player timer calls and profile behavior are retained.
+- Native O0/O2 nonrecovering UBSan complete-output equality: eight new assignment rows and sixteen payout rows;64 new Finish executions across both optimization levels, including32 no-ticket controls and32 ticket replays. All290 predecessor ACTUAL rows remain byte-exact.114 Python evidence/regression checks pass.
+
+Original AddExpItem and ItemDelCheck complete preprocessed body hashes are checked against pinned sources. Inherited original creation, disposal, factory, allocator, payout and release body checks remain active. Only test random values, explicit object binding, observers and oracles are added; no original game body is patched. Source and assets remain transient.
+
+Gavin original LEAKLEVEL1/empty SECRETNAME is preserved; Bismarck original LEAKLEVEL0 selects Factory or FactoryTwo. Typed logs use ordinary NAME and UNIQUECODE. Successful empty Gavin RS fields are distinguished from rejected rewards with complete item/send/log oracles. RS prefix is original no-ticket differential evidence, not independent EXP arithmetic or real-client rendering.
+
+OPEN: one original ENEMY_createEnemy call generating four guaranteed drops from the ten-pair master and then one uninterrupted AddExpItem RNG stream; natural master/probability data, multiple eligible recipients, shared old-item retention by ItemDelCheck, additional NPC paths, early-server identity, positive gold/config, callback/time/unique paths and actual client/network behavior. Pressure remains2486=2465 bounded closed+18 OPEN+3 historical UB with zero promotions. No modern-engine phase transition.
