@@ -59,7 +59,7 @@ def _zip_unsafe(name: str) -> bool:
         normalized.startswith("/")
         or bool(re.match(r"^[a-zA-Z]:", normalized))
         or ".." in normalized.split("/")
-        or "\\x00" in normalized
+        or "\x00" in normalized
     )
 
 def inspect_archive(path: Path) -> dict:
@@ -73,13 +73,13 @@ def inspect_archive(path: Path) -> dict:
         while chunk := stream.read(1024 * 1024):
             h.update(chunk)
             size += len(chunk)
-    if head.startswith(b"Rar!\\x1a\\x07\\x01\\x00"):
+    if head.startswith(b"Rar!\x1a\x07\x01\x00"):
         signature = "RAR5"
-    elif head.startswith(b"Rar!\\x1a\\x07\\x00"):
+    elif head.startswith(b"Rar!\x1a\x07\x00"):
         signature = "RAR4"
-    elif head.startswith(b"7z\\xbc\\xaf\\x27\\x1c"):
+    elif head.startswith(b"7z\xbc\xaf\x27\x1c"):
         signature = "7Z"
-    elif head.startswith(b"PK\\x03\\x04"):
+    elif head.startswith(b"PK\x03\x04"):
         signature = "ZIP"
     elif head.startswith(b"MZ"):
         signature = "PE_OR_DOS_MZ"

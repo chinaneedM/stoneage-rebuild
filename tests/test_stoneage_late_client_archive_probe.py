@@ -58,7 +58,7 @@ class SourceOnlyClientCandidateGate(unittest.TestCase):
     def test_probe_uses_actual_bytes_for_digest_without_execution(self):
         with tempfile.TemporaryDirectory() as d:
             f = Path(d) / "specimen.rar"
-            raw = b"Rar!\\x1a\\x07\\x00" + b"arbitrary synthetic test bytes"
+            raw = b"Rar!\x1a\x07\x00" + b"arbitrary synthetic test bytes"
             f.write_bytes(raw)
             result = inspect_archive(f)
             self.assertEqual(result["sha256"], hashlib.sha256(raw).hexdigest())
@@ -78,6 +78,18 @@ class SourceOnlyClientCandidateGate(unittest.TestCase):
             self.assertEqual(result["zip_unsafe_member_names"], ["../bad.txt"])
             self.assertFalse((Path(d) / "bad.txt").exists())
             self.assertFalse((Path(d) / "data/real_136.bin").exists())
+
+    def test_real_magic_headers_not_textual_backslash_escapes(self):
+        for raw, family in (
+            (bytes([0x52,0x61,0x72,0x21,0x1a,0x07,0x00]), "RAR4"),
+            (bytes([0x52,0x61,0x72,0x21,0x1a,0x07,0x01,0x00]), "RAR5"),
+            (bytes([0x50,0x4b,0x03,0x04,0x00,0x00,0x00,0x00]), "ZIP"),
+            (bytes([0x4d,0x5a,0x00,0x00]), "PE_OR_DOS_MZ"),
+        ):
+            with tempfile.TemporaryDirectory() as d:
+                f = Path(d) / "candidate"
+                f.write_bytes(raw)
+                self.assertEqual(inspect_archive(f)["magic_family"], family)
 
 if __name__ == "__main__":
     unittest.main()
