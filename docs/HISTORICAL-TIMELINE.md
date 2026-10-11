@@ -2631,3 +2631,14 @@ FACTstatic: logical46 string/checksum route→callback0x60090→categoryB0x61d0b
 ## 2026-10-12 — Later PET S/B server source has13 fields versus compiled client's14
 
 FACTsource/preprocessor: fixed999ffdf andfresh2f73680 Bismarck profiles shareitem/PETmove bodies; defaults excludePET, controlledenablement yieldsseven13-fieldrows withnojigsaw. Originaloperator-linked2006 client independentlyusesseven14-fieldrows. Similar S46/B route andoutgoing+23/incoming-23 areNOTmatchingbuild proof. SourceorderedI22→B→recalculation→K outputsandoccupied-backpack type/destinationrange conflict recordedwithout projectinginto2005/2006 operatorruntime. Nativepair/owner/save/drop/unique lifecycle/exactpublisherhash remainOPEN; pressureunchanged. Derivedledger/spec STONEAGE-PET-SB-SERVER-COMPARISON-R1.
+
+
+## 2026-10-12 — Compiled I22 / S46-I / SI24 inventory layout; branch CI pending
+
+Fresh remote main bf3cb8d3f550146fe734fff03db8ada62ce9ab78/tree af2294b264555f969fc7d2ffaa747741c9deda3d, latest receipt Actions38163558313/38163558285 SUCCESS. Branches/HEAD/tree/latest commits/Actions, protocol and required continuity files reread; clean matching checkout verified. HighestNEXT compiled ordinary I22 completed with bounded static evidence.
+
+Exact accepted921600-byte client SHA2564193a7e1b20b996f7902424ae05092b455c5dbbe3f133d331a4897bbc7abfe63: I22 dispatcher0x90c3f→0x646b0 uses explicit slot+14fields (15tokens); S46/categoryI0x61697 loops24 implicit slots of14fields; SI24 dispatcher0x90c96→0x64690→0x7c8b0 checks from+to checksum and selectively swaps fields. All ordinary paths resolve originRVA0x431296c, stride388/useFlag220, matching PETB fourteen-field projection. Ordinary empty rows clear only WORD useFlag, unlike PETB388-byte clearing. SI24 omits alch16; negative-index guards observed, no upper-slot comparison in bounded I22/SI24 bodies. No claim that all upstream validation is absent, no malformed original input.
+
+Fresh descendant HEAD2f736808ff4361f5429ee919b718c88fabb60346/four pinned client blobs show macro-dependent I22 strides, absent jigsaw copy, expanded MAX_ITEM buffers and source selective swap. Neither source build identity nor runtime correctness inferred. Previously accepted13-field server profiles yield ordinary14-token records versus compiled15; still not matching candidates. Derived ledger/spec/hash-pinned analyzer and20 controls plus114 adjacent checks (134 total); original programs/source/assets/raw disassembly excluded from Git. Pressure2486=2465 bounded closed+18 OPEN+3 historical UB unchanged.
+
+HighestNEXT: exact compiled bidirectional codec/key initialization and framing profile with independent synthetic vectors and separately pinned server comparison. Authentic fourteen-field original server provenance and native pair/owner/save/drop/unique lifecycle remain OPEN. Exact2005 publisher build/full package remains opportunistic; no early-era/engine promotion.
