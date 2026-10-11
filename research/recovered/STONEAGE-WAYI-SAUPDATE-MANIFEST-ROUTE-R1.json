@@ -1,0 +1,2787 @@
+{
+  "schema": "STONEAGE-WAYI-SAUPDATE-MANIFEST-ROUTE-R1",
+  "baseline_main": "3aff9d0d2a92bdd7c5d6490acccaf576ad30a1f1",
+  "operator_linked_packed_response_sha256": "a72a2fa646766f9c3a9a04f4340a3c7a1d76029d0c464bc7613f604a1900820f",
+  "actual_binary_archive_capture": "20060908111612",
+  "capstone_version": "5.0.7",
+  "derived_route_probe": {
+    "schema": "STONEAGE-WAYI-SAUPDATE-ROUTE-PROBE-R1",
+    "decompressed_input_bytes": 253952,
+    "decompressed_input_sha256": "d0d9c33acc7eb47c2f625b827d5e30daccd29cb9782ff6c302b730e0a5406b2f",
+    "image_base": 4194304,
+    "literal_locations": [
+      {
+        "text": "stoneage.wayi.com.tw",
+        "file_offset": 218720,
+        "rva": 218720
+      },
+      {
+        "text": "/saupdate/newest6.txt",
+        "file_offset": 218644,
+        "rva": 218644
+      },
+      {
+        "text": "/saupdate/sa70a/newest7x.txt",
+        "file_offset": 218612,
+        "rva": 218612
+      },
+      {
+        "text": "%s/data/path.txt",
+        "file_offset": 218700,
+        "rva": 218700
+      },
+      {
+        "text": "Software\\Wayi\\石器時代\\5.00.000",
+        "file_offset": 218556,
+        "rva": 218556
+      },
+      {
+        "text": "Software\\Waei\\石器時代\\5.00.000",
+        "file_offset": 218668,
+        "rva": 218668
+      },
+      {
+        "text": "saupdate",
+        "file_offset": 218596,
+        "rva": 218596
+      },
+      {
+        "text": "newest",
+        "file_offset": 218588,
+        "rva": 218588
+      },
+      {
+        "text": "GET %s\r\n",
+        "file_offset": 220860,
+        "rva": 220860
+      }
+    ],
+    "global_slot_rvas": {
+      "546496": "host-buffer",
+      "546624": "manifest-path-buffer",
+      "546880": "port-word"
+    },
+    "windows": [
+      {
+        "start_rva": 6304,
+        "end_rva_exclusive": 6560,
+        "instruction_count": 95,
+        "structural_rows": [
+          {
+            "rva": 6331,
+            "operation": "push",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "immediate",
+                "value": 4412860
+              }
+            ],
+            "labels": [
+              "literal:Software\\Wayi\\石器時代\\5.00.000"
+            ]
+          },
+          {
+            "rva": 6349,
+            "operation": "call",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "memory",
+                "base": null,
+                "index": null,
+                "scale": 1,
+                "displacement": 4370444,
+                "absolute_rva": 176140
+              }
+            ],
+            "labels": [
+              "import:ADVAPI32.dll:RegCreateKeyExA"
+            ]
+          },
+          {
+            "rva": 6357,
+            "operation": "je",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "immediate",
+                "value": 4200670
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 6365,
+            "operation": "ret",
+            "operands": [],
+            "labels": []
+          },
+          {
+            "rva": 6382,
+            "operation": "call",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "immediate",
+                "value": 4323313
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 6387,
+            "operation": "mov",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "register",
+                "name": "esi"
+              },
+              {
+                "width_bytes": 4,
+                "kind": "memory",
+                "base": null,
+                "index": null,
+                "scale": 1,
+                "displacement": 4370440,
+                "absolute_rva": 176136
+              }
+            ],
+            "labels": [
+              "import:ADVAPI32.dll:RegSetValueExA"
+            ]
+          },
+          {
+            "rva": 6408,
+            "operation": "call",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "register",
+                "name": "esi"
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 6412,
+            "operation": "je",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "immediate",
+                "value": 4200736
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 6419,
+            "operation": "call",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "memory",
+                "base": null,
+                "index": null,
+                "scale": 1,
+                "displacement": 4370432,
+                "absolute_rva": 176128
+              }
+            ],
+            "labels": [
+              "import:ADVAPI32.dll:RegCloseKey"
+            ]
+          },
+          {
+            "rva": 6431,
+            "operation": "ret",
+            "operands": [],
+            "labels": []
+          },
+          {
+            "rva": 6448,
+            "operation": "call",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "immediate",
+                "value": 4323313
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 6468,
+            "operation": "call",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "register",
+                "name": "esi"
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 6472,
+            "operation": "je",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "immediate",
+                "value": 4200796
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 6479,
+            "operation": "call",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "memory",
+                "base": null,
+                "index": null,
+                "scale": 1,
+                "displacement": 4370432,
+                "absolute_rva": 176128
+              }
+            ],
+            "labels": [
+              "import:ADVAPI32.dll:RegCloseKey"
+            ]
+          },
+          {
+            "rva": 6491,
+            "operation": "ret",
+            "operands": [],
+            "labels": []
+          },
+          {
+            "rva": 6510,
+            "operation": "call",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "register",
+                "name": "esi"
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 6514,
+            "operation": "je",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "immediate",
+                "value": 4200838
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 6521,
+            "operation": "call",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "memory",
+                "base": null,
+                "index": null,
+                "scale": 1,
+                "displacement": 4370432,
+                "absolute_rva": 176128
+              }
+            ],
+            "labels": [
+              "import:ADVAPI32.dll:RegCloseKey"
+            ]
+          },
+          {
+            "rva": 6533,
+            "operation": "ret",
+            "operands": [],
+            "labels": []
+          },
+          {
+            "rva": 6539,
+            "operation": "call",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "memory",
+                "base": null,
+                "index": null,
+                "scale": 1,
+                "displacement": 4370432,
+                "absolute_rva": 176128
+              }
+            ],
+            "labels": [
+              "import:ADVAPI32.dll:RegCloseKey"
+            ]
+          },
+          {
+            "rva": 6554,
+            "operation": "ret",
+            "operands": [],
+            "labels": []
+          }
+        ]
+      },
+      {
+        "start_rva": 6560,
+        "end_rva_exclusive": 7004,
+        "instruction_count": 148,
+        "structural_rows": [
+          {
+            "rva": 6574,
+            "operation": "mov",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "register",
+                "name": "edi"
+              },
+              {
+                "width_bytes": 4,
+                "kind": "immediate",
+                "value": 4413024
+              }
+            ],
+            "labels": [
+              "literal:stoneage.wayi.com.tw"
+            ]
+          },
+          {
+            "rva": 6594,
+            "operation": "mov",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "register",
+                "name": "edi"
+              },
+              {
+                "width_bytes": 4,
+                "kind": "immediate",
+                "value": 4740800
+              }
+            ],
+            "labels": [
+              "slot:host-buffer"
+            ]
+          },
+          {
+            "rva": 6599,
+            "operation": "push",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "immediate",
+                "value": 4413004
+              }
+            ],
+            "labels": [
+              "literal:%s/data/path.txt"
+            ]
+          },
+          {
+            "rva": 6607,
+            "operation": "rep movsd",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "memory",
+                "base": "edi",
+                "index": null,
+                "scale": 1,
+                "displacement": 0
+              },
+              {
+                "width_bytes": 4,
+                "kind": "memory",
+                "base": "esi",
+                "index": null,
+                "scale": 1,
+                "displacement": 0
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 6614,
+            "operation": "rep movsb",
+            "operands": [
+              {
+                "width_bytes": 1,
+                "kind": "memory",
+                "base": "edi",
+                "index": null,
+                "scale": 1,
+                "displacement": 0
+              },
+              {
+                "width_bytes": 1,
+                "kind": "memory",
+                "base": "esi",
+                "index": null,
+                "scale": 1,
+                "displacement": 0
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 6623,
+            "operation": "mov",
+            "operands": [
+              {
+                "width_bytes": 2,
+                "kind": "memory",
+                "base": null,
+                "index": null,
+                "scale": 1,
+                "displacement": 4741184,
+                "absolute_rva": 546880
+              },
+              {
+                "width_bytes": 2,
+                "kind": "immediate",
+                "value": 8080
+              }
+            ],
+            "labels": [
+              "slot:port-word"
+            ]
+          },
+          {
+            "rva": 6633,
+            "operation": "call",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "immediate",
+                "value": 4256338
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 6638,
+            "operation": "mov",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "register",
+                "name": "esi"
+              },
+              {
+                "width_bytes": 4,
+                "kind": "memory",
+                "base": null,
+                "index": null,
+                "scale": 1,
+                "displacement": 4370436,
+                "absolute_rva": 176132
+              }
+            ],
+            "labels": [
+              "import:ADVAPI32.dll:RegOpenKeyExA"
+            ]
+          },
+          {
+            "rva": 6659,
+            "operation": "push",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "immediate",
+                "value": 4412860
+              }
+            ],
+            "labels": [
+              "literal:Software\\Wayi\\石器時代\\5.00.000"
+            ]
+          },
+          {
+            "rva": 6669,
+            "operation": "call",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "register",
+                "name": "esi"
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 6673,
+            "operation": "je",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "immediate",
+                "value": 4201059
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 6687,
+            "operation": "push",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "immediate",
+                "value": 4412972
+              }
+            ],
+            "labels": [
+              "literal:Software\\Waei\\石器時代\\5.00.000"
+            ]
+          },
+          {
+            "rva": 6697,
+            "operation": "call",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "register",
+                "name": "esi"
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 6701,
+            "operation": "jne",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "immediate",
+                "value": 4201054
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 6703,
+            "operation": "mov",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "register",
+                "name": "edi"
+              },
+              {
+                "width_bytes": 4,
+                "kind": "immediate",
+                "value": 4412948
+              }
+            ],
+            "labels": [
+              "literal:/saupdate/newest6.txt"
+            ]
+          },
+          {
+            "rva": 6721,
+            "operation": "mov",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "register",
+                "name": "edi"
+              },
+              {
+                "width_bytes": 4,
+                "kind": "immediate",
+                "value": 4740928
+              }
+            ],
+            "labels": [
+              "slot:manifest-path-buffer"
+            ]
+          },
+          {
+            "rva": 6729,
+            "operation": "rep movsd",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "memory",
+                "base": "edi",
+                "index": null,
+                "scale": 1,
+                "displacement": 0
+              },
+              {
+                "width_bytes": 4,
+                "kind": "memory",
+                "base": "esi",
+                "index": null,
+                "scale": 1,
+                "displacement": 0
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 6736,
+            "operation": "rep movsb",
+            "operands": [
+              {
+                "width_bytes": 1,
+                "kind": "memory",
+                "base": "edi",
+                "index": null,
+                "scale": 1,
+                "displacement": 0
+              },
+              {
+                "width_bytes": 1,
+                "kind": "memory",
+                "base": "esi",
+                "index": null,
+                "scale": 1,
+                "displacement": 0
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 6747,
+            "operation": "ret",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "immediate",
+                "value": 4
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 6750,
+            "operation": "call",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "immediate",
+                "value": 4200608
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 6755,
+            "operation": "mov",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "register",
+                "name": "edi"
+              },
+              {
+                "width_bytes": 4,
+                "kind": "immediate",
+                "value": 4412916
+              }
+            ],
+            "labels": [
+              "literal:/saupdate/sa70a/newest7x.txt"
+            ]
+          },
+          {
+            "rva": 6780,
+            "operation": "mov",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "register",
+                "name": "edi"
+              },
+              {
+                "width_bytes": 4,
+                "kind": "immediate",
+                "value": 4740928
+              }
+            ],
+            "labels": [
+              "slot:manifest-path-buffer"
+            ]
+          },
+          {
+            "rva": 6788,
+            "operation": "rep movsd",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "memory",
+                "base": "edi",
+                "index": null,
+                "scale": 1,
+                "displacement": 0
+              },
+              {
+                "width_bytes": 4,
+                "kind": "memory",
+                "base": "esi",
+                "index": null,
+                "scale": 1,
+                "displacement": 0
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 6795,
+            "operation": "rep movsb",
+            "operands": [
+              {
+                "width_bytes": 1,
+                "kind": "memory",
+                "base": "edi",
+                "index": null,
+                "scale": 1,
+                "displacement": 0
+              },
+              {
+                "width_bytes": 1,
+                "kind": "memory",
+                "base": "esi",
+                "index": null,
+                "scale": 1,
+                "displacement": 0
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 6805,
+            "operation": "call",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "immediate",
+                "value": 4255976
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 6817,
+            "operation": "je",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "immediate",
+                "value": 4201296
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 6847,
+            "operation": "call",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "immediate",
+                "value": 4256240
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 6868,
+            "operation": "dec",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "register",
+                "name": "ecx"
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 6884,
+            "operation": "dec",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "register",
+                "name": "ecx"
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 6885,
+            "operation": "je",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "immediate",
+                "value": 4201273
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 6891,
+            "operation": "push",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "immediate",
+                "value": 4412900
+              }
+            ],
+            "labels": [
+              "literal:saupdate"
+            ]
+          },
+          {
+            "rva": 6897,
+            "operation": "call",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "immediate",
+                "value": 4256112
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 6907,
+            "operation": "je",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "immediate",
+                "value": 4201273
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 6913,
+            "operation": "push",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "immediate",
+                "value": 4412892
+              }
+            ],
+            "labels": [
+              "literal:newest"
+            ]
+          },
+          {
+            "rva": 6919,
+            "operation": "call",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "immediate",
+                "value": 4256112
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 6929,
+            "operation": "je",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "immediate",
+                "value": 4201273
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 6950,
+            "operation": "mov",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "register",
+                "name": "edi"
+              },
+              {
+                "width_bytes": 4,
+                "kind": "immediate",
+                "value": 4740928
+              }
+            ],
+            "labels": [
+              "slot:manifest-path-buffer"
+            ]
+          },
+          {
+            "rva": 6958,
+            "operation": "rep movsd",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "memory",
+                "base": "edi",
+                "index": null,
+                "scale": 1,
+                "displacement": 0
+              },
+              {
+                "width_bytes": 4,
+                "kind": "memory",
+                "base": "esi",
+                "index": null,
+                "scale": 1,
+                "displacement": 0
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 6965,
+            "operation": "rep movsb",
+            "operands": [
+              {
+                "width_bytes": 1,
+                "kind": "memory",
+                "base": "edi",
+                "index": null,
+                "scale": 1,
+                "displacement": 0
+              },
+              {
+                "width_bytes": 1,
+                "kind": "memory",
+                "base": "esi",
+                "index": null,
+                "scale": 1,
+                "displacement": 0
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 6967,
+            "operation": "jmp",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "immediate",
+                "value": 4201287
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 6977,
+            "operation": "call",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "memory",
+                "base": null,
+                "index": null,
+                "scale": 1,
+                "displacement": 4370936,
+                "absolute_rva": 176632
+              }
+            ],
+            "labels": [
+              "import:KERNEL32.DLL:DeleteFileA"
+            ]
+          },
+          {
+            "rva": 6984,
+            "operation": "call",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "immediate",
+                "value": 4254638
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 7001,
+            "operation": "ret",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "immediate",
+                "value": 4
+              }
+            ],
+            "labels": []
+          }
+        ]
+      },
+      {
+        "start_rva": 15694,
+        "end_rva_exclusive": 15743,
+        "instruction_count": 14,
+        "structural_rows": [
+          {
+            "rva": 15694,
+            "operation": "mov",
+            "operands": [
+              {
+                "width_bytes": 2,
+                "kind": "register",
+                "name": "cx"
+              },
+              {
+                "width_bytes": 2,
+                "kind": "memory",
+                "base": null,
+                "index": null,
+                "scale": 1,
+                "displacement": 4741184,
+                "absolute_rva": 546880
+              }
+            ],
+            "labels": [
+              "slot:port-word"
+            ]
+          },
+          {
+            "rva": 15721,
+            "operation": "push",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "immediate",
+                "value": 4740928
+              }
+            ],
+            "labels": [
+              "slot:manifest-path-buffer"
+            ]
+          },
+          {
+            "rva": 15726,
+            "operation": "call",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "immediate",
+                "value": 4322608
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 15731,
+            "operation": "push",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "immediate",
+                "value": 4740800
+              }
+            ],
+            "labels": [
+              "slot:host-buffer"
+            ]
+          },
+          {
+            "rva": 15738,
+            "operation": "call",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "immediate",
+                "value": 4210352
+              }
+            ],
+            "labels": []
+          }
+        ]
+      },
+      {
+        "start_rva": 16378,
+        "end_rva_exclusive": 16454,
+        "instruction_count": 19,
+        "structural_rows": [
+          {
+            "rva": 16393,
+            "operation": "push",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "immediate",
+                "value": 4415164
+              }
+            ],
+            "labels": [
+              "literal:GET %s\r\n"
+            ]
+          },
+          {
+            "rva": 16399,
+            "operation": "call",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "memory",
+                "base": null,
+                "index": null,
+                "scale": 1,
+                "displacement": 4371604,
+                "absolute_rva": 177300
+              }
+            ],
+            "labels": [
+              "import:USER32.dll:wsprintfA"
+            ]
+          },
+          {
+            "rva": 16430,
+            "operation": "call",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "immediate",
+                "value": 4255995
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 16449,
+            "operation": "call",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "immediate",
+                "value": 4220240
+              }
+            ],
+            "labels": []
+          }
+        ]
+      },
+      {
+        "start_rva": 25440,
+        "end_rva_exclusive": 25495,
+        "instruction_count": 18,
+        "structural_rows": [
+          {
+            "rva": 25440,
+            "operation": "mov",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "register",
+                "name": "eax"
+              },
+              {
+                "width_bytes": 4,
+                "kind": "memory",
+                "base": "esp",
+                "index": null,
+                "scale": 1,
+                "displacement": 8
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 25444,
+            "operation": "push",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "register",
+                "name": "esi"
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 25445,
+            "operation": "push",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "register",
+                "name": "edi"
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 25446,
+            "operation": "push",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "register",
+                "name": "eax"
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 25447,
+            "operation": "call",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "immediate",
+                "value": 4219456
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 25452,
+            "operation": "mov",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "register",
+                "name": "esi"
+              },
+              {
+                "width_bytes": 4,
+                "kind": "memory",
+                "base": "esp",
+                "index": null,
+                "scale": 1,
+                "displacement": 16
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 25456,
+            "operation": "mov",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "register",
+                "name": "ecx"
+              },
+              {
+                "width_bytes": 4,
+                "kind": "memory",
+                "base": "esp",
+                "index": null,
+                "scale": 1,
+                "displacement": 24
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 25460,
+            "operation": "add",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "register",
+                "name": "esp"
+              },
+              {
+                "width_bytes": 4,
+                "kind": "immediate",
+                "value": 4
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 25463,
+            "operation": "lea",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "register",
+                "name": "edi"
+              },
+              {
+                "width_bytes": 4,
+                "kind": "memory",
+                "base": "esi",
+                "index": null,
+                "scale": 1,
+                "displacement": 16
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 25466,
+            "operation": "mov",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "memory",
+                "base": "esi",
+                "index": null,
+                "scale": 1,
+                "displacement": 20
+              },
+              {
+                "width_bytes": 4,
+                "kind": "register",
+                "name": "eax"
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 25469,
+            "operation": "push",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "register",
+                "name": "ecx"
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 25470,
+            "operation": "mov",
+            "operands": [
+              {
+                "width_bytes": 2,
+                "kind": "memory",
+                "base": "edi",
+                "index": null,
+                "scale": 1,
+                "displacement": 0
+              },
+              {
+                "width_bytes": 2,
+                "kind": "immediate",
+                "value": 2
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 25475,
+            "operation": "call",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "immediate",
+                "value": 4298864
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 25480,
+            "operation": "push",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "immediate",
+                "value": 0
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 25482,
+            "operation": "push",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "immediate",
+                "value": 1
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 25484,
+            "operation": "push",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "immediate",
+                "value": 2
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 25486,
+            "operation": "mov",
+            "operands": [
+              {
+                "width_bytes": 2,
+                "kind": "memory",
+                "base": "esi",
+                "index": null,
+                "scale": 1,
+                "displacement": 18
+              },
+              {
+                "width_bytes": 2,
+                "kind": "register",
+                "name": "ax"
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 25490,
+            "operation": "call",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "immediate",
+                "value": 4298870
+              }
+            ],
+            "labels": []
+          }
+        ]
+      },
+      {
+        "start_rva": 104560,
+        "end_rva_exclusive": 104566,
+        "instruction_count": 1,
+        "structural_rows": [
+          {
+            "rva": 104560,
+            "operation": "jmp",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "memory",
+                "base": null,
+                "index": null,
+                "scale": 1,
+                "displacement": 4371756,
+                "absolute_rva": 177452
+              }
+            ],
+            "labels": [
+              "import:WSOCK32.dll:ordinal:9"
+            ]
+          }
+        ]
+      },
+      {
+        "start_rva": 61808,
+        "end_rva_exclusive": 61936,
+        "instruction_count": 66,
+        "structural_rows": [
+          {
+            "rva": 61808,
+            "operation": "mov",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "register",
+                "name": "ecx"
+              },
+              {
+                "width_bytes": 4,
+                "kind": "memory",
+                "base": "esp",
+                "index": null,
+                "scale": 1,
+                "displacement": 8
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 61812,
+            "operation": "push",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "register",
+                "name": "edi"
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 61813,
+            "operation": "push",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "register",
+                "name": "ebx"
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 61814,
+            "operation": "push",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "register",
+                "name": "esi"
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 61815,
+            "operation": "mov",
+            "operands": [
+              {
+                "width_bytes": 1,
+                "kind": "register",
+                "name": "dl"
+              },
+              {
+                "width_bytes": 1,
+                "kind": "memory",
+                "base": "ecx",
+                "index": null,
+                "scale": 1,
+                "displacement": 0
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 61817,
+            "operation": "mov",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "register",
+                "name": "edi"
+              },
+              {
+                "width_bytes": 4,
+                "kind": "memory",
+                "base": "esp",
+                "index": null,
+                "scale": 1,
+                "displacement": 16
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 61821,
+            "operation": "test",
+            "operands": [
+              {
+                "width_bytes": 1,
+                "kind": "register",
+                "name": "dl"
+              },
+              {
+                "width_bytes": 1,
+                "kind": "register",
+                "name": "dl"
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 61823,
+            "operation": "je",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "immediate",
+                "value": 4256234
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 61825,
+            "operation": "mov",
+            "operands": [
+              {
+                "width_bytes": 1,
+                "kind": "register",
+                "name": "dh"
+              },
+              {
+                "width_bytes": 1,
+                "kind": "memory",
+                "base": "ecx",
+                "index": null,
+                "scale": 1,
+                "displacement": 1
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 61828,
+            "operation": "test",
+            "operands": [
+              {
+                "width_bytes": 1,
+                "kind": "register",
+                "name": "dh"
+              },
+              {
+                "width_bytes": 1,
+                "kind": "register",
+                "name": "dh"
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 61830,
+            "operation": "je",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "immediate",
+                "value": 4256215
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 61832,
+            "operation": "mov",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "register",
+                "name": "esi"
+              },
+              {
+                "width_bytes": 4,
+                "kind": "register",
+                "name": "edi"
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 61834,
+            "operation": "mov",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "register",
+                "name": "ecx"
+              },
+              {
+                "width_bytes": 4,
+                "kind": "memory",
+                "base": "esp",
+                "index": null,
+                "scale": 1,
+                "displacement": 20
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 61838,
+            "operation": "mov",
+            "operands": [
+              {
+                "width_bytes": 1,
+                "kind": "register",
+                "name": "al"
+              },
+              {
+                "width_bytes": 1,
+                "kind": "memory",
+                "base": "edi",
+                "index": null,
+                "scale": 1,
+                "displacement": 0
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 61840,
+            "operation": "inc",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "register",
+                "name": "esi"
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 61841,
+            "operation": "cmp",
+            "operands": [
+              {
+                "width_bytes": 1,
+                "kind": "register",
+                "name": "al"
+              },
+              {
+                "width_bytes": 1,
+                "kind": "register",
+                "name": "dl"
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 61843,
+            "operation": "je",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "immediate",
+                "value": 4256170
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 61845,
+            "operation": "test",
+            "operands": [
+              {
+                "width_bytes": 1,
+                "kind": "register",
+                "name": "al"
+              },
+              {
+                "width_bytes": 1,
+                "kind": "register",
+                "name": "al"
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 61847,
+            "operation": "je",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "immediate",
+                "value": 4256164
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 61849,
+            "operation": "mov",
+            "operands": [
+              {
+                "width_bytes": 1,
+                "kind": "register",
+                "name": "al"
+              },
+              {
+                "width_bytes": 1,
+                "kind": "memory",
+                "base": "esi",
+                "index": null,
+                "scale": 1,
+                "displacement": 0
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 61851,
+            "operation": "inc",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "register",
+                "name": "esi"
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 61852,
+            "operation": "cmp",
+            "operands": [
+              {
+                "width_bytes": 1,
+                "kind": "register",
+                "name": "al"
+              },
+              {
+                "width_bytes": 1,
+                "kind": "register",
+                "name": "dl"
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 61854,
+            "operation": "je",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "immediate",
+                "value": 4256170
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 61856,
+            "operation": "test",
+            "operands": [
+              {
+                "width_bytes": 1,
+                "kind": "register",
+                "name": "al"
+              },
+              {
+                "width_bytes": 1,
+                "kind": "register",
+                "name": "al"
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 61858,
+            "operation": "jne",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "immediate",
+                "value": 4256153
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 61860,
+            "operation": "pop",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "register",
+                "name": "esi"
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 61861,
+            "operation": "pop",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "register",
+                "name": "ebx"
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 61862,
+            "operation": "pop",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "register",
+                "name": "edi"
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 61863,
+            "operation": "xor",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "register",
+                "name": "eax"
+              },
+              {
+                "width_bytes": 4,
+                "kind": "register",
+                "name": "eax"
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 61865,
+            "operation": "ret",
+            "operands": [],
+            "labels": []
+          },
+          {
+            "rva": 61866,
+            "operation": "mov",
+            "operands": [
+              {
+                "width_bytes": 1,
+                "kind": "register",
+                "name": "al"
+              },
+              {
+                "width_bytes": 1,
+                "kind": "memory",
+                "base": "esi",
+                "index": null,
+                "scale": 1,
+                "displacement": 0
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 61868,
+            "operation": "inc",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "register",
+                "name": "esi"
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 61869,
+            "operation": "cmp",
+            "operands": [
+              {
+                "width_bytes": 1,
+                "kind": "register",
+                "name": "al"
+              },
+              {
+                "width_bytes": 1,
+                "kind": "register",
+                "name": "dh"
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 61871,
+            "operation": "jne",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "immediate",
+                "value": 4256156
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 61873,
+            "operation": "lea",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "register",
+                "name": "edi"
+              },
+              {
+                "width_bytes": 4,
+                "kind": "memory",
+                "base": "esi",
+                "index": null,
+                "scale": 1,
+                "displacement": -1
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 61876,
+            "operation": "mov",
+            "operands": [
+              {
+                "width_bytes": 1,
+                "kind": "register",
+                "name": "ah"
+              },
+              {
+                "width_bytes": 1,
+                "kind": "memory",
+                "base": "ecx",
+                "index": null,
+                "scale": 1,
+                "displacement": 2
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 61879,
+            "operation": "test",
+            "operands": [
+              {
+                "width_bytes": 1,
+                "kind": "register",
+                "name": "ah"
+              },
+              {
+                "width_bytes": 1,
+                "kind": "register",
+                "name": "ah"
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 61881,
+            "operation": "je",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "immediate",
+                "value": 4256227
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 61883,
+            "operation": "mov",
+            "operands": [
+              {
+                "width_bytes": 1,
+                "kind": "register",
+                "name": "al"
+              },
+              {
+                "width_bytes": 1,
+                "kind": "memory",
+                "base": "esi",
+                "index": null,
+                "scale": 1,
+                "displacement": 0
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 61885,
+            "operation": "add",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "register",
+                "name": "esi"
+              },
+              {
+                "width_bytes": 4,
+                "kind": "immediate",
+                "value": 2
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 61888,
+            "operation": "cmp",
+            "operands": [
+              {
+                "width_bytes": 1,
+                "kind": "register",
+                "name": "al"
+              },
+              {
+                "width_bytes": 1,
+                "kind": "register",
+                "name": "ah"
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 61890,
+            "operation": "jne",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "immediate",
+                "value": 4256136
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 61892,
+            "operation": "mov",
+            "operands": [
+              {
+                "width_bytes": 1,
+                "kind": "register",
+                "name": "al"
+              },
+              {
+                "width_bytes": 1,
+                "kind": "memory",
+                "base": "ecx",
+                "index": null,
+                "scale": 1,
+                "displacement": 3
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 61895,
+            "operation": "test",
+            "operands": [
+              {
+                "width_bytes": 1,
+                "kind": "register",
+                "name": "al"
+              },
+              {
+                "width_bytes": 1,
+                "kind": "register",
+                "name": "al"
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 61897,
+            "operation": "je",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "immediate",
+                "value": 4256227
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 61899,
+            "operation": "mov",
+            "operands": [
+              {
+                "width_bytes": 1,
+                "kind": "register",
+                "name": "ah"
+              },
+              {
+                "width_bytes": 1,
+                "kind": "memory",
+                "base": "esi",
+                "index": null,
+                "scale": 1,
+                "displacement": -1
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 61902,
+            "operation": "add",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "register",
+                "name": "ecx"
+              },
+              {
+                "width_bytes": 4,
+                "kind": "immediate",
+                "value": 2
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 61905,
+            "operation": "cmp",
+            "operands": [
+              {
+                "width_bytes": 1,
+                "kind": "register",
+                "name": "al"
+              },
+              {
+                "width_bytes": 1,
+                "kind": "register",
+                "name": "ah"
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 61907,
+            "operation": "je",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "immediate",
+                "value": 4256180
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 61909,
+            "operation": "jmp",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "immediate",
+                "value": 4256136
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 61911,
+            "operation": "xor",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "register",
+                "name": "eax"
+              },
+              {
+                "width_bytes": 4,
+                "kind": "register",
+                "name": "eax"
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 61913,
+            "operation": "pop",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "register",
+                "name": "esi"
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 61914,
+            "operation": "pop",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "register",
+                "name": "ebx"
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 61915,
+            "operation": "pop",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "register",
+                "name": "edi"
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 61916,
+            "operation": "mov",
+            "operands": [
+              {
+                "width_bytes": 1,
+                "kind": "register",
+                "name": "al"
+              },
+              {
+                "width_bytes": 1,
+                "kind": "register",
+                "name": "dl"
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 61918,
+            "operation": "jmp",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "immediate",
+                "value": 4274726
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 61923,
+            "operation": "lea",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "register",
+                "name": "eax"
+              },
+              {
+                "width_bytes": 4,
+                "kind": "memory",
+                "base": "edi",
+                "index": null,
+                "scale": 1,
+                "displacement": -1
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 61926,
+            "operation": "pop",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "register",
+                "name": "esi"
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 61927,
+            "operation": "pop",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "register",
+                "name": "ebx"
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 61928,
+            "operation": "pop",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "register",
+                "name": "edi"
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 61929,
+            "operation": "ret",
+            "operands": [],
+            "labels": []
+          },
+          {
+            "rva": 61930,
+            "operation": "mov",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "register",
+                "name": "eax"
+              },
+              {
+                "width_bytes": 4,
+                "kind": "register",
+                "name": "edi"
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 61932,
+            "operation": "pop",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "register",
+                "name": "esi"
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 61933,
+            "operation": "pop",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "register",
+                "name": "ebx"
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 61934,
+            "operation": "pop",
+            "operands": [
+              {
+                "width_bytes": 4,
+                "kind": "register",
+                "name": "edi"
+              }
+            ],
+            "labels": []
+          },
+          {
+            "rva": 61935,
+            "operation": "ret",
+            "operands": [],
+            "labels": []
+          }
+        ]
+      }
+    ],
+    "file_executed": false,
+    "live_server_contacted": false,
+    "manifest_bytes_obtained": false,
+    "publisher_original_hash_verified": false,
+    "native_pet_runtime_verified": false
+  },
+  "archive_queries": [
+    {
+      "query_id": "official80_ftp_exact",
+      "requested_url": "https://web.archive.org/cdx/search/cdx?url=ftp%3A%2F%2Fdownload.wayi.com.tw%2FStoneage80.exe&output=json&fl=timestamp,original,statuscode,mimetype,digest,length&limit=20",
+      "observed_at_utc": "2026-10-11T17:05:57.281881+00:00",
+      "cap": 131072,
+      "http_status": 200,
+      "final_url": "https://web.archive.org/cdx/search/cdx?url=ftp%3A%2F%2Fdownload.wayi.com.tw%2FStoneage80.exe&output=json&fl=timestamp,original,statuscode,mimetype,digest,length&limit=20",
+      "content_type": "application/json",
+      "content_length": null,
+      "memento_datetime": null,
+      "location": null,
+      "response_bytes": 3,
+      "response_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "magic_hex": "5b5d0a",
+      "complete_within_bound": true
+    },
+    {
+      "query_id": "wayi_update_prefix",
+      "requested_url": "https://web.archive.org/cdx/search/cdx?url=stoneage.wayi.com.tw%2Fsaupdate%2F&matchType=prefix&from=2004&to=2007&output=json&collapse=urlkey&fl=timestamp,original,statuscode,mimetype,digest,length&limit=64",
+      "observed_at_utc": "2026-10-11T17:05:57.282653+00:00",
+      "cap": 131072,
+      "http_status": 200,
+      "final_url": "https://web.archive.org/cdx/search/cdx?url=stoneage.wayi.com.tw%2Fsaupdate%2F&matchType=prefix&from=2004&to=2007&output=json&collapse=urlkey&fl=timestamp,original,statuscode,mimetype,digest,length&limit=64",
+      "content_type": "application/json",
+      "content_length": null,
+      "memento_datetime": null,
+      "location": null,
+      "response_bytes": 3,
+      "response_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "magic_hex": "5b5d0a",
+      "complete_within_bound": true
+    },
+    {
+      "query_id": "wayi_download_prefix",
+      "requested_url": "https://web.archive.org/cdx/search/cdx?url=download.wayi.com.tw%2F&matchType=prefix&from=2004&to=2007&output=json&collapse=urlkey&fl=timestamp,original,statuscode,mimetype,digest,length&limit=64",
+      "observed_at_utc": "2026-10-11T17:05:57.283126+00:00",
+      "cap": 131072,
+      "http_status": 200,
+      "final_url": "https://web.archive.org/cdx/search/cdx?url=download.wayi.com.tw%2F&matchType=prefix&from=2004&to=2007&output=json&collapse=urlkey&fl=timestamp,original,statuscode,mimetype,digest,length&limit=64",
+      "content_type": "application/json",
+      "content_length": null,
+      "memento_datetime": null,
+      "location": null,
+      "response_bytes": 3273,
+      "response_sha256": "10b7a8b1f81e68b7267372e7c4242ad1676a23d9e9f699acb80e39d5df092e7b",
+      "magic_hex": "5b5b2274696d6573",
+      "complete_within_bound": true,
+      "parsed_cdx_rows": [
+        [
+          "timestamp",
+          "original",
+          "statuscode",
+          "mimetype",
+          "digest",
+          "length"
+        ],
+        [
+          "20050610001541",
+          "http://download.wayi.com.tw:80/",
+          "200",
+          "text/html",
+          "4TUIALTFNM2DJOG3IIWSX7TKZTTEL36I",
+          "354"
+        ],
+        [
+          "20060517234304",
+          "http://download.wayi.com.tw:80/download/3P/3p_manual_patch0430.zip",
+          "200",
+          "application/zip",
+          "H34ATIOWU73XMFBEOMVVD7PDJZWHPGEI",
+          "12604426"
+        ],
+        [
+          "20070121175831",
+          "http://download.wayi.com.tw:80/download/3P/3P_ManualPatch_V0.17",
+          "404",
+          "text/html",
+          "OELR43FFZSS62DWL27LWSLFFXBZXO4G2",
+          "372"
+        ],
+        [
+          "20060905050234",
+          "http://download.wayi.com.tw:80/download/3P/3P_ManualPatch_V0.17.zip",
+          "404",
+          "text/html",
+          "522WQVHJZC5KIOCMX3JWPWJATKFN3F6S",
+          "435"
+        ],
+        [
+          "20060517234146",
+          "http://download.wayi.com.tw:80/download/3P/3p_patch0425.zip",
+          "200",
+          "application/zip",
+          "VHK4YTLZMWZZWBYSZV6FUY2OJRLAX3OD",
+          "12603918"
+        ],
+        [
+          "20060408132532",
+          "http://download.wayi.com.tw:80/download/3P/3PCB-update_V0.04.rar",
+          "200",
+          "text/plain",
+          "WVLHR5LTL55EPEQAHF5PL5347CHTETNQ",
+          "9690213"
+        ],
+        [
+          "20071210021235",
+          "http://download.wayi.com.tw/download/3P/OB_Client_V0.63.exe",
+          "200",
+          "application/octet-stream",
+          "M7IZ2FKKXWLC3MYGIUVYS7H2HDKD7Z7V",
+          "18996567"
+        ],
+        [
+          "20060903000824",
+          "http://download.wayi.com.tw:80/download/3P/OB_ManualPatch_V0.34.rar",
+          "200",
+          "text/plain",
+          "FVLNICR4JFZEKW53VLR22CFFTV5JS24D",
+          "11920392"
+        ],
+        [
+          "20061110025137",
+          "http://download.wayi.com.tw:80/download/3P/OB_ManualPatch_V0.38.rar",
+          "404",
+          "text/html",
+          "EKNCUV22TGY2JGFFZZD5UWDMNR3HIJ4S",
+          "2119"
+        ],
+        [
+          "20061211081314",
+          "http://download.wayi.com.tw:80/download/3P/OB_ManualPatch_V0.40.rar",
+          "200",
+          "text/plain",
+          "6SURB7O754YCRKACCI5O7H4PDGSQ7PDS",
+          "12252610"
+        ],
+        [
+          "20060905175357",
+          "http://download.wayi.com.tw:80/download/3P/setup.exe",
+          "404",
+          "text/html",
+          "ZWB27HSLWVXKNH2NJOLTDBLAJSXLUTK7",
+          "422"
+        ],
+        [
+          "20061106003551",
+          "http://download.wayi.com.tw:80/download/3P20060327.exe",
+          "404",
+          "text/html",
+          "EKNCUV22TGY2JGFFZZD5UWDMNR3HIJ4S",
+          "2106"
+        ],
+        [
+          "20060517234405",
+          "http://download.wayi.com.tw:80/download/3p_ManualPatch_20060510.zip",
+          "200",
+          "application/zip",
+          "OHDQGQYCIUSSQLMFSC47BB4XZB3746SL",
+          "13349787"
+        ],
+        [
+          "20061102081627",
+          "http://download.wayi.com.tw:80/download/A3Chapter4.exe",
+          "404",
+          "text/html",
+          "EKNCUV22TGY2JGFFZZD5UWDMNR3HIJ4S",
+          "2107"
+        ],
+        [
+          "20051213014720",
+          "http://download.wayi.com.tw:80/download/patch11.exe",
+          "404",
+          "text/html",
+          "WSRBYH6E5VRZWLW735RUV32W5KS46LUD",
+          "418"
+        ],
+        [
+          "20050924224530",
+          "http://download.wayi.com.tw:80/download/setupwsm.exe",
+          "200",
+          "application/x-msdos-program",
+          "S7XLFWPQJQO252ZXSJIC4PB72LNFER2Y",
+          "9457737"
+        ],
+        [
+          "20061110025956",
+          "http://download.wayi.com.tw:80/download/STONEAGE20060616.exe",
+          "404",
+          "text/html",
+          "EKNCUV22TGY2JGFFZZD5UWDMNR3HIJ4S",
+          "2114"
+        ],
+        [
+          "20071109153336",
+          "http://download.wayi.com.tw/download/tk_mahjong_20070706.exe",
+          "200",
+          "application/octet-stream",
+          "RTVGZY6IOKTMTHKHUCQHLEPUNMG2TGMQ",
+          "71830826"
+        ],
+        [
+          "20051126083017",
+          "http://download.wayi.com.tw:80/download/YB20050805.exe",
+          "200",
+          "application/x-msdos-program",
+          "EZF2AKXFWN255A2CRMGR2RWIYQSFUUAC",
+          "16969794"
+        ],
+        [
+          "20061115061401",
+          "http://download.wayi.com.tw:80/download/YBTEST20060517.exe",
+          "404",
+          "text/html",
+          "EKNCUV22TGY2JGFFZZD5UWDMNR3HIJ4S",
+          "2109"
+        ],
+        [
+          "20050801010835",
+          "http://download.wayi.com.tw:80/error/403err.htm",
+          "200",
+          "text/html",
+          "Z3M4MVCODE7AF4DLTIPOJOJ5TABTRWBL",
+          "540"
+        ],
+        [
+          "20050610001541",
+          "http://download.wayi.com.tw:80/robots.txt",
+          "404",
+          "text/html",
+          "3CVOMTWOV3DYPDFA2SUOMVB7TVUKOY6W",
+          "804"
+        ]
+      ]
+    },
+    {
+      "query_id": "wayi_update_oldhost",
+      "requested_url": "https://web.archive.org/cdx/search/cdx?url=stoneage.waei.net%2Fsaupdate%2Fsa70a%2F&matchType=prefix&from=2004&to=2007&output=json&collapse=urlkey&fl=timestamp,original,statuscode,mimetype,digest,length&limit=64",
+      "observed_at_utc": "2026-10-11T17:05:57.284165+00:00",
+      "cap": 131072,
+      "http_status": 200,
+      "final_url": "https://web.archive.org/cdx/search/cdx?url=stoneage.waei.net%2Fsaupdate%2Fsa70a%2F&matchType=prefix&from=2004&to=2007&output=json&collapse=urlkey&fl=timestamp,original,statuscode,mimetype,digest,length&limit=64",
+      "content_type": "application/json",
+      "content_length": null,
+      "memento_datetime": null,
+      "location": null,
+      "response_bytes": 3,
+      "response_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "magic_hex": "5b5d0a",
+      "complete_within_bound": true
+    },
+    {
+      "query_id": "wayi8080_index",
+      "requested_url": "https://web.archive.org/cdx/search/cdx?url=stoneage.wayi.com.tw%3A8080%2Fsaupdate%2F&matchType=prefix&from=2004&to=2007&output=json&collapse=urlkey&fl=timestamp,original,statuscode,mimetype,digest,length&limit=64",
+      "observed_at_utc": "2026-10-11T17:07:38.191054+00:00",
+      "cap": 131072,
+      "http_status": 200,
+      "final_url": "https://web.archive.org/cdx/search/cdx?url=stoneage.wayi.com.tw%3A8080%2Fsaupdate%2F&matchType=prefix&from=2004&to=2007&output=json&collapse=urlkey&fl=timestamp,original,statuscode,mimetype,digest,length&limit=64",
+      "content_type": "application/json",
+      "content_length": null,
+      "memento_datetime": null,
+      "location": null,
+      "response_bytes": 3,
+      "response_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "magic_hex": "5b5d0a",
+      "complete_within_bound": true,
+      "response": []
+    },
+    {
+      "query_id": "newest7x_8080",
+      "requested_url": "https://web.archive.org/web/20050701000000id_/http://stoneage.wayi.com.tw:8080/saupdate/sa70a/newest7x.txt",
+      "observed_at_utc": "2026-10-11T17:07:38.191508+00:00",
+      "cap": 131072,
+      "error_class": "HTTPError",
+      "error_detail": "HTTP Error 404: NOT FOUND"
+    },
+    {
+      "query_id": "newest6_8080",
+      "requested_url": "https://web.archive.org/web/20050701000000id_/http://stoneage.wayi.com.tw:8080/saupdate/newest6.txt",
+      "observed_at_utc": "2026-10-11T17:07:38.192557+00:00",
+      "cap": 131072,
+      "error_class": "HTTPError",
+      "error_detail": "HTTP Error 404: NOT FOUND"
+    }
+  ],
+  "analytical_interpretation": {
+    "default_host": "stoneage.wayi.com.tw",
+    "default_port_word": 8080,
+    "primary_Wayi_registry_open_success": "newest7x default; local path-file override examined",
+    "primary_failed_secondary_Waei_success": "newest6, immediate return before override",
+    "both_registry_open_failed": "attempt primary registry creation/setup; then newest7x and path-file branch",
+    "override": "first line read; last character removed; only nonempty line containing both saupdate and newest is copied, else local path.txt deleted; empty-read/underflow excluded from normal model",
+    "get_request_format_literal": "GET %s\r\n",
+    "hypothesis_correct_archive_targets": [
+      "http://stoneage.wayi.com.tw:8080/saupdate/sa70a/newest7x.txt",
+      "http://stoneage.wayi.com.tw:8080/saupdate/newest6.txt"
+    ]
+  },
+  "evidence_limits": {
+    "static_route_is_live_network_observation": false,
+    "actual_selected_registry_state_known": false,
+    "local_path_txt_obtained": false,
+    "manifest_bytes_obtained": false,
+    "full80_installer_obtained": false,
+    "publisher_original_hash_verified": false,
+    "native_pet_runtime_verified": false,
+    "pressure": "2486=2465 bounded closed+18 OPEN+3 historical UB"
+  }
+}

@@ -2606,3 +2606,8 @@ Followed the archived November15 2005 fileid329 **302** without reading its body
 ## 2026-10-12 correction/addition — retained official July2005 8.0 downloads, capture2006
 
 FACT: actual February21 2006 Wayi Taiwan service page retains July1 2005 full8.0 Stoneage80.exe FTP link, July6 8.0 sa.exe and May17 8.0 StoneAge2.exe replacements. These displayed entry dates are not archive capture dates or authenticated original build dates. November27 2005 original redirect335 points to sa.exe; recovered executable bytes are September2006 archive response, mutable header July6 2005. Static resource Waei SaDeb1.0.0.1 is not commercial release version. May18 index repair explicitly targets7.5; not automatically8.0 content. Full package remains OPEN. Derived metadata and hashes in STONEAGE-WAYI-OFFICIAL-80-DOWNLOAD-CHAIN-R1.json; no native feature execution/date promotion.
+
+
+## 2026-10-12 — Operator-linked updater static update-routing correction
+
+FACT about exact2006-captured StoneAge2 specimen: default update port8080, registry-dependent newest7x/newest6 path and conditional local data/path.txt override. These are static binary observations, not live2005 network/capture facts or commercial release number proof. Earlier default-port80 archive failures remain limited to those URLs. Corrected8080 archive query[]/404 still no manifest. Full official Stoneage80.exe bytes/checksum OPEN; no feature date/native PET promotion. Spec STONEAGE-WAYI-SAUPDATE-MANIFEST-ROUTE-R1.md records code RVAs and branch boundaries.
