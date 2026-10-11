@@ -17,6 +17,7 @@ BLOBS = {
     "client/stoneage/proto/protocol.h": "bb70087ef1b1915748da23935584eda2c8178cb0",
     "client/stoneage/proto/protocol.cpp": "17f1900d8845c15308a4b429905ec009e5fd4c0f",
     "client/stoneage.vcxproj": "373c0699a5df017f53e4ab7a7d64c3d6280a8578",
+    "client/stoneage/system/menu.cpp": "62754fdd0db1b84c358d61418d253012d149e1d4",
     "server/common/gmsv_server.h": "708fe1b9f73be4952677fda474f10e86d9a56306",
     "server/gmsv/include/version.h": "b3fc0c80705973bc8d088287c98a5d66171bb6c2",
 }
@@ -110,15 +111,27 @@ def check(root):
            "pinned sender implementation location changed")
     # A complete source scan can prove only absent *syntactic* callers here;
     # indirect/dynamic/generated/external invocation and deployed binary remain OPEN.
-    demand(len(sites) == 2 and not any(s[0] == "lexical_call_candidate" for s in sites),
-           "unexpected PET emitter lexical caller found: " + repr(sites))
+    expected_calls = [14824, 14966, 15333]
+    demand(sorted((n for kind,path,n in sites
+                   if kind == "lexical_call_candidate" and
+                   path == "client/stoneage/system/menu.cpp")) == expected_calls and
+           len(sites) == 5,
+           "pinned PET UI source caller inventory changed: " + repr(sites))
+    menu_lines = (root / "client/stoneage/system/menu.cpp").read_text(
+        encoding="utf-8-sig", errors="replace").splitlines()
+    # Each source call is gated by a local _PET_ITEM block. This is source
+    # placement evidence, NOT proof the menu was compiled or used at runtime.
+    for line_no,lookback in ((14824,12),(14966,14),(15333,8)):
+        demand(any("#ifdef _PET_ITEM" in line for line in
+                   menu_lines[line_no-lookback-1:line_no]),
+               "expected optional PET UI site guard changed")
     summary = (
         "SOURCE_PET_CLIENT_GATE|pinned_commit=" + PINNED
         + "|client_tree=" + CLIENT_TREE
         + "|client_project_blob=" + BLOBS["client/stoneage.vcxproj"]
         + "|tracked_client_source_files=" + str(len(source_paths))
         + "|lexical_sender_sites=" + str(len(sites))
-        + "|lexical_caller_candidates=0"
+        + "|lexical_caller_candidates=3"
         + "|header_default_pet=0|vs_special_pet=0|counterfactual_80_pet=1"
         + "|client_sender_opcode=127|server_receiver_opcode=127"
         + "|runtime_packet_verified=0|deployed_client_binary_verified=0"
@@ -126,7 +139,7 @@ def check(root):
     return [summary, *[
         f"SOURCE_PET_CLIENT_SITE|kind={kind}|path={path}|line={n}"
         for kind, path, n in sites],
-        "BOUNDARY|Full pinned tracked client source lexical scan and checked-in VS project/header preprocessor gates only; zero proven user-triggered packet; no deployed binary; no JSS1999/Taiwan1.0 inference",
+        "BOUNDARY|Full pinned tracked client source lexical scan found three _PET_ITEM UI call sites; checked-in VS special default excludes PET; no executed packet or deployed binary; no JSS1999/Taiwan1.0 inference",
         "OPEN|external/generated runtime client dispatch, optional version8 build, matching enabled server binary, actual item-owner transitions, natural alias and unique codes",
         MARK]
 
@@ -138,14 +151,14 @@ def parse_line(line):
 
 def validate(report):
     lines = report.splitlines()
-    if len(lines) != 6 or lines[-1] != MARK:
+    if len(lines) != 9 or lines[-1] != MARK:
         raise ValueError("missing ordered full-tree PET acceptance and boundary")
     demand(lines[0].startswith("SOURCE_PET_CLIENT_GATE|"), "missing client gate")
     main = parse_line(lines[0])
     expected = {
         "pinned_commit": PINNED, "client_tree": CLIENT_TREE,
         "client_project_blob": BLOBS["client/stoneage.vcxproj"],
-        "lexical_sender_sites": "2", "lexical_caller_candidates": "0",
+        "lexical_sender_sites": "5", "lexical_caller_candidates": "3",
         "header_default_pet": "0", "vs_special_pet": "0",
         "counterfactual_80_pet": "1",
         "client_sender_opcode": "127", "server_receiver_opcode": "127",
@@ -160,15 +173,17 @@ def validate(report):
            bool(re.fullmatch(r"[a-f0-9]{64}", main["inventory_sha256"])),
            "invalid whole-client inventory")
     expected_sites = [
-        {"kind": "declaration", "path": "client/stoneage/proto/protocol.h", "line": "462"},
         {"kind": "definition", "path": "client/stoneage/proto/protocol.cpp", "line": "2280"},
+        {"kind": "declaration", "path": "client/stoneage/proto/protocol.h", "line": "462"},
+        *[{"kind":"lexical_call_candidate", "path":"client/stoneage/system/menu.cpp",
+           "line":str(n)} for n in (14824, 14966, 15333)],
     ]
-    demand([parse_line(line) for line in lines[1:3]] == expected_sites
-           and all(line.startswith("SOURCE_PET_CLIENT_SITE|") for line in lines[1:3]),
+    demand([parse_line(line) for line in lines[1:6]] == expected_sites
+           and all(line.startswith("SOURCE_PET_CLIENT_SITE|") for line in lines[1:6]),
            "pinned PET sender source sites missing or changed")
-    demand(lines[3].startswith("BOUNDARY|") and
-           "no JSS1999/Taiwan1.0 inference" in lines[3] and
-           lines[4].startswith("OPEN|"), "missing non-promotion boundary")
+    demand(lines[6].startswith("BOUNDARY|") and
+           "no JSS1999/Taiwan1.0 inference" in lines[6] and
+           lines[7].startswith("OPEN|"), "missing non-promotion boundary")
     return main
 
 def main():
