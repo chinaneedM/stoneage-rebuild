@@ -1,0 +1,70 @@
+{
+  "schema": "stoneage-tw80-vip-june6-source-acceptance-r1",
+  "recorded_on": "2026-10-12",
+  "baseline": {
+    "main_before": "8edafd8704603ed09f5bb7de5933e948215f8e8c",
+    "tree_before": "58af2de7ad49890017e8fffb13d0989c260e8cd5"
+  },
+  "accepted": {
+    "branch": "agent/tw80-vip-june6-disc-provenance-r1-20261012",
+    "commit": "c7570a92b3ea66d97aba04efd805a298754442c2",
+    "tree": "443236ad2daa2e4def5cc06060943281c90da44c",
+    "behind_by": 0,
+    "ahead_by": 1,
+    "main_fast_forwarded": true,
+    "changed_files": 8,
+    "deletions": 0
+  },
+  "branch_actions": [
+    {
+      "run_id": 38155668325,
+      "result": "success"
+    },
+    {
+      "run_id": 38155668261,
+      "result": "success"
+    },
+    {
+      "run_id": 38155668391,
+      "result": "success"
+    }
+  ],
+  "main_actions": [
+    {
+      "run_id": 38155725510,
+      "result": "success"
+    },
+    {
+      "run_id": 38155725630,
+      "result": "success"
+    },
+    {
+      "run_id": 38155725693,
+      "result": "success"
+    }
+  ],
+  "regression": {
+    "vip_lineage_mutation_tests": 19,
+    "branch_and_main_step_status": "success",
+    "continuity_prefixes_preserved": [
+      "docs/CURRENT-STATE.md",
+      "docs/HISTORICAL-TIMELINE.md",
+      "docs/SOURCE-REGISTRY.md"
+    ]
+  },
+  "claim_boundary": {
+    "original_2005_notice_received": false,
+    "original_2005_disc_received": false,
+    "original_executable_sha_verified": false,
+    "pet_native_packet127_verified": false,
+    "earlier_v1_membership_promoted": false,
+    "original_runtime_pressure_change": false
+  },
+  "pressure": {
+    "total": 2486,
+    "bounded_closed": 2465,
+    "open": 18,
+    "historical_ub": 3
+  },
+  "highest_next": "Publisher-authenticated original Taiwan Waei 2005 8.0 installer, upgrade disc or official incremental patch with exact reproducible original-file hash; June6 VIP notice remains a lead."
+}
