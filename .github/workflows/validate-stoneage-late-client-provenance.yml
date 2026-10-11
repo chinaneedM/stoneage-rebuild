@@ -1,0 +1,27 @@
+name: Validate StoneAge late client region/version provenance and non-executing archive probe
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/validate-stoneage-late-client-provenance.yml"
+      - "tools/stoneage_late_client_archive_probe.py"
+      - "tests/test_stoneage_late_client_archive_probe.py"
+      - "research/recovered/STONEAGE-LATE-CLIENT-CANDIDATE-LEDGER-R1.json"
+      - "docs/specs/STONEAGE-LATE-CLIENT-REGION-VERSION-PROVENANCE-R1.md"
+      - "docs/HISTORICAL-TIMELINE.md"
+      - "docs/SOURCE-REGISTRY.md"
+      - "docs/CURRENT-STATE.md"
+permissions:
+  contents: read
+jobs:
+  provenance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - name: Confirm source-only version separation and safe archive signature tests
+        run: |
+          python -m unittest -v tests.test_stoneage_late_client_archive_probe
+          python -m tools.stoneage_late_client_archive_probe --check

@@ -1,0 +1,81 @@
+{
+  "schema": "stoneage-late-client-candidate-ledger-r1",
+  "captured_on": "2026-10-11",
+  "scope": "Provenance-only. No original client/server downloaded or accepted.",
+  "candidates": [
+    {
+      "id": "CN-WAYI-SA8-8016",
+      "first_attested": "2008-12-30",
+      "source": "https://www.iopq.net/forum.php?mod=viewthread&tid=16508364",
+      "historical_carriers": [
+        "http://cdl.wayi.com.cn/sa8_8016.rar"
+      ],
+      "operator_region_context": "BEIJING_WAYI_MAINLAND_DOMAIN",
+      "region_context_source": "https://games.sina.com.cn/zhuanqu/sa/jiazu_9_gzwt6.shtml",
+      "version_attribution": "8.0_FROM_COMMUNITY_TITLE_AND_FILENAME",
+      "status": "LINK_ONLY",
+      "clean_operator_sample": false,
+      "bytes_verified": false,
+      "sha256": null,
+      "manifest_verified": false,
+      "version_embedded_verified": false,
+      "pet_runtime_verified": false,
+      "risk": "Community instructions require separate client/map/PET patches. Mainland operator domain is not Taiwan 2005 provenance."
+    },
+    {
+      "id": "TW-YANG-2012-SIXPART",
+      "first_attested": "2012-04-14",
+      "source": "https://www.lab.welovesa.com/viewthread.php?action=printable&tid=1654",
+      "historical_carriers": [
+        "http://www.mediafire.com/?l5i274801ov19w7",
+        "http://www.mediafire.com/?g9b3g3hjmwwttg3",
+        "http://www.mediafire.com/?e859n1nm1tk12j8",
+        "http://www.mediafire.com/?69vrzm3nox8f0v9",
+        "http://www.mediafire.com/?clbwjkcqqhxq6k9",
+        "http://www.mediafire.com/?42uy5b9abbcu4qr"
+      ],
+      "operator_region_context": "CLAIMED_WAYI_TAIWAN_INSTALLER_COMMUNITY_REPOST",
+      "version_attribution": "8.5_REPORTED_BY_COMMENTERS_2013_2014_2024_NOT_BYTE_VERIFIED",
+      "status": "LINK_ONLY",
+      "clean_operator_sample": false,
+      "bytes_verified": false,
+      "sha256": null,
+      "manifest_verified": false,
+      "version_embedded_verified": false,
+      "pet_runtime_verified": false,
+      "risk": "2024 commenter states installer displays version 8.5; six-volume repost has no verified bytes or chain of custody. Not a Taiwan 8.0 specimen."
+    },
+    {
+      "id": "COMMUNITY-CLIENT-8018-RESOURCE-TOOL",
+      "first_attested": "2010-01-30",
+      "source": "https://lab.welovesa.com/viewthread.php?action=printable&tid=545",
+      "historical_carriers": [],
+      "operator_region_context": "UNKNOWN_COMMUNITY_PATCH_CONTEXT",
+      "version_attribution": "SA_8018_EXE_NAMED_IN_COMMUNITY_PATCH_TUTORIAL",
+      "status": "REFERENCE_ONLY",
+      "clean_operator_sample": false,
+      "bytes_verified": false,
+      "sha256": null,
+      "manifest_verified": false,
+      "version_embedded_verified": false,
+      "pet_runtime_verified": false,
+      "risk": "Resource-number example real_136/spr_115 and sa_8018.exe in patch tooling context; neither proves unpatched 2005 operator release nor PET feature."
+    },
+    {
+      "id": "COMMUNITY-CLIENT-8002A",
+      "first_attested": "2010-01-06",
+      "source": "https://lab.welovesa.com/viewthread.php?extra=page%3D1&tid=506",
+      "historical_carriers": [],
+      "operator_region_context": "UNKNOWN_COMMUNITY_PRIVATE_SERVER_CONTEXT",
+      "version_attribution": "SA_8002A_EXE_8_0_LOGIN_CONTEXT_ONLY",
+      "status": "REFERENCE_ONLY",
+      "clean_operator_sample": false,
+      "bytes_verified": false,
+      "sha256": null,
+      "manifest_verified": false,
+      "version_embedded_verified": false,
+      "pet_runtime_verified": false,
+      "risk": "Private-server login target; executable branding does not authenticate clean official Taiwan 8.0 client."
+    }
+  ]
+}
