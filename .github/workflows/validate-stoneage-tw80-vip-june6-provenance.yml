@@ -1,0 +1,28 @@
+name: Validate Taiwan 8.0 June 6 VIP disc repost boundary
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/validate-stoneage-tw80-vip-june6-provenance.yml"
+      - "tools/stoneage_tw80_vip_june6_source_gate.py"
+      - "tests/test_stoneage_tw80_vip_june6_source_gate.py"
+      - "research/recovered/STONEAGE-TW80-VIP-JUNE6-DISC-SOURCE-R1.json"
+permissions:
+  contents: read
+jobs:
+  vip-disc-source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - name: Test June 6 source lineage and provenance separation
+        run: |
+          python -m unittest -v tests.test_stoneage_tw80_vip_june6_source_gate
+          python -m tools.stoneage_tw80_vip_june6_source_gate
+      - name: Retain adjacent original 8.0 evidence gates
+        run: |
+          python -m unittest -v tests.test_stoneage_tw80_disc_mirror_identity_gate
+          python -m unittest -v tests.test_stoneage_tw80_tw85_chronology_gate
+          python -m unittest -v tests.test_stoneage_tw80_late_carrier_quarantine

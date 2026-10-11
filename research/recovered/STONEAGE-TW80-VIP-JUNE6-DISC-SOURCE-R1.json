@@ -1,0 +1,86 @@
+{
+  "schema": "stoneage-tw80-vip-june6-source-gate-r1",
+  "recorded_on": "2026-10-12",
+  "lead": {
+    "claimed_event_date": "2005-06-06",
+    "headline": "親愛的石器時代VIP玩家 8.0光碟寄出",
+    "status": "REPOST_ONLY_NOT_OFFICIAL_2005_NOTICE",
+    "original_2005_operator_notice_retrieved": false,
+    "original_disc_image_retrieved": false,
+    "original_installer_sha256": null,
+    "publisher_file_manifest_retrieved": false,
+    "original_pet_runtime_verified": false
+  },
+  "lineage": [
+    {
+      "id": "EARLIEST_ATTRIBUTED_REPOST",
+      "posted_at": "2008-09-04",
+      "url": "http://bbs.wayi.com.tw/viewthread.php?tid=40940",
+      "type": "USER_FORUM_POST_REFERENCED_BY_LATER_COPY",
+      "retrieved_original": false
+    },
+    {
+      "id": "BAHAMUT_REPOST",
+      "posted_at": null,
+      "url": "https://forum.gamer.com.tw/G2.php?bsn=1571&sn=1958",
+      "type": "REPOST_CITES_2008_FORUM",
+      "contains_claim": true,
+      "independently_verified": false
+    },
+    {
+      "id": "WELOVESA_REPOST",
+      "posted_at": null,
+      "url": "https://www.lab.welovesa.com/viewthread.php?tid=38",
+      "type": "REPOST_CHRONICLE",
+      "contains_claim": true,
+      "independently_verified": false
+    },
+    {
+      "id": "SHIQI_TV_REPOST",
+      "posted_at": "2016-01-27",
+      "url": "https://shiqi.tv/shiqi130.htm",
+      "type": "LATER_REPOST_CHRONICLE",
+      "contains_claim": true,
+      "independently_verified": false
+    }
+  ],
+  "channels": [
+    {
+      "id": "EVENT_JUNE4",
+      "date": "2005-06-04",
+      "status": "CONTEMPORARY_PRESS_REPORTED_PLANNED_DISC_GIVEAWAY",
+      "source": "https://acg.gamer.com.tw/search.php?c1=976&c2=3&machine=1%2C0&s=2&type=1",
+      "physical_disc_authenticated": false
+    },
+    {
+      "id": "VIP_JUNE6",
+      "date": "2005-06-06",
+      "status": "LATER_REPOST_CLAIMS_DISC_MAILED",
+      "source": "https://forum.gamer.com.tw/G2.php?bsn=1571&sn=1958",
+      "physical_disc_authenticated": false
+    },
+    {
+      "id": "RELEASE_JUNE8",
+      "date": "2005-06-08",
+      "status": "CONTEMPORARY_RELEASE_PRESS_REPORTS_PACKAGED_UPDATE_DISC",
+      "source": "https://gnn.gamer.com.tw/detail.php?sn=20167",
+      "physical_disc_authenticated": false
+    }
+  ],
+  "claims": {
+    "multiple_reposts_count_as_independent_sources": false,
+    "wayi_forum_host_proves_official_2005_notice": false,
+    "claimed_posting_proves_mailing": false,
+    "vip_disc_identical_to_event_or_retail_disc": false,
+    "disc_identity_or_original_sha_verified": false,
+    "original_pet_packet127_verified": false,
+    "taiwan10_or_jss1999_promoted": false,
+    "engine_transition": false
+  },
+  "pressure": {
+    "total": 2486,
+    "bounded_closed": 2465,
+    "open": 18,
+    "historical_ub": 3
+  }
+}
