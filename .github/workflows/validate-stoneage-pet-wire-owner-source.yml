@@ -1,0 +1,57 @@
+name: Validate StoneAge PET optional packet and item-index source chain
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/validate-stoneage-pet-wire-owner-source.yml"
+      - "tools/stoneage_pet_wire_owner_source_audit.py"
+      - "tests/test_stoneage_pet_wire_owner_source.py"
+      - "research/recovered/STONEAGE-PET-WIRE-OWNER-SOURCE-R1.txt"
+permissions:
+  contents: read
+jobs:
+  source-wire-owner:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - name: Preserve original full client and server source gate mutation checks
+        run: |
+          python -m unittest -v tests.test_stoneage_pet_wire_owner_source tests.test_stoneage_pet_client_full_callgraph tests.test_stoneage_pet_item_protocol_crossmodule
+      - name: Obtain only exact pinned descendant source transiently
+        run: |
+          set -euo pipefail
+          git init /tmp/stoneage-pet-wire-owner
+          git -C /tmp/stoneage-pet-wire-owner remote add origin https://github.com/BismarckDD/Stoneage.git
+          git -C /tmp/stoneage-pet-wire-owner fetch --depth 1 origin 999ffdf1d220ec6666eb65339180689c9caf1876
+          git -C /tmp/stoneage-pet-wire-owner checkout --detach FETCH_HEAD
+      - name: Verify exact five-field PET wire and native actor slot setter/unique hooks
+        run: |
+          set -euo pipefail
+          python -m tools.stoneage_pet_wire_owner_source_audit --checkout /tmp/stoneage-pet-wire-owner > /tmp/STONEAGE-PET-WIRE-OWNER-SOURCE-R1.txt
+          cat /tmp/STONEAGE-PET-WIRE-OWNER-SOURCE-R1.txt
+          grep -Fx 'RESOLUTION|PET_WIRE_OWNER_SOURCE_BOUNDARY_PASS' /tmp/STONEAGE-PET-WIRE-OWNER-SOURCE-R1.txt
+      - name: Require strict source-only claims and byte-exact archived report if present
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from tools.stoneage_pet_wire_owner_source_audit import validate_report
+          report=Path("/tmp/STONEAGE-PET-WIRE-OWNER-SOURCE-R1.txt")
+          result=validate_report(report.read_text())
+          assert result["emitted_live_packet_verified"]=="0"
+          assert result["native_owner_lifecycle_executed"]=="0"
+          assert result["early_version_verified"]=="0"
+          stored=Path("research/recovered/STONEAGE-PET-WIRE-OWNER-SOURCE-R1.txt")
+          if stored.exists():
+              assert report.read_bytes()==stored.read_bytes(), "source report drift"
+          print("PET_WIRE_OWNER_BOUNDED_SOURCE_ONLY", "archived",stored.exists())
+          PY
+      - name: Upload source-free bounded PET wire and slot evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: stoneage-pet-wire-owner-source-r1
+          path: /tmp/STONEAGE-PET-WIRE-OWNER-SOURCE-R1.txt
+          if-no-files-found: ignore
