@@ -1,0 +1,29 @@
+name: Validate StoneAge Taiwan 8.0 false-carrier provenance quarantine
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/validate-stoneage-tw80-late-carrier-quarantine.yml"
+      - "tools/stoneage_tw80_late_carrier_quarantine.py"
+      - "tests/test_stoneage_tw80_late_carrier_quarantine.py"
+      - "research/recovered/STONEAGE-TW80-LATE-CARRIER-NEGATIVE-CONTROLS-R1.json"
+      - "docs/specs/STONEAGE-TW80-LATE-CARRIER-QUARANTINE-R1.md"
+permissions:
+  contents: read
+jobs:
+  negative-controls:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - name: Test 2007/2013/2016 carrier false-attribution controls
+        run: |
+          python -m unittest -v tests.test_stoneage_tw80_late_carrier_quarantine
+          python -m tools.stoneage_tw80_late_carrier_quarantine
+      - name: Retain independent region/version, install/update and press chronology gates
+        run: |
+          python -m unittest -v tests.test_stoneage_late_client_archive_probe
+          python -m unittest -v tests.test_stoneage_client_snapshot_transition_audit
+          python -m unittest -v tests.test_stoneage_tw80_tw85_chronology_gate

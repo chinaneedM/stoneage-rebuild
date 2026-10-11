@@ -2548,3 +2548,12 @@ Historical uncertainty stays explicit: natural reachability and first-build iden
 
 **FACT bounded to 2006-06-21 operator schedule reporting:** contemporaneous GNN (https://gnn.gamer.com.tw/detail.php?sn=23856) states Taiwan 8.5 external test announced June21-July5; 蒼龍 first server planned July5; other servers planned from July12. Independent same-period https://www.games.idv.tw/news.php?mode=view&nid=615 concurs. Planned vs actual deployed/executed are separate. The `STONEAGE20060616.exe` *filename* date token predates the 8.5 test announcement; it neither certifies an official 8.5 production build on June16 nor disproves later 8.5 community installer testimony. Source bytes, exact region/file provenance and original patched client/server runtime remain OPEN. Cross-version matrix `research/recovered/STONEAGE-TW80-TW85-PRESS-CHRONOLOGY-R1.json`, spec `docs/specs/STONEAGE-TW80-TW85-RELEASE-TIMELINE-GATE-R1.md`. JSS1999/Taiwan1.0 unaffected; pressure2486=2465+18+3, zero promotions.
 
+
+
+## 2026-10-11 — 2007/2013/2016 8.0-named carrier false-identification controls
+
+**PERIOD COMMUNITY SOURCE (not publisher):** 2007-08-17 Sina blog https://blog.sina.com.cn/s/blog_491de9d601000abm.html cites `StoneAge8.0setup.exe` at third-party numeric IP `http://220.162.242.159/StoneAge8.0setup.exe`, in an explicitly mainland/private-server compatible tutorial. This is evidence of a named historical download lead ONLY, not original Taiwan 2005 8.0 distributor provenance, file availability, original bytes or SHA.
+
+**LATER COMMUNITY REUSE:** 2013-02-17 https://www.iopq.net/thread-16840739-1-1.html again names `StoneAge8.0setup.exe` but expressly allows mainland 8.x and instructs resource BIN renaming, replacement login executable and private-server configuration. Matching names do not establish same bytes, and private-patched installed trees are not clean official version witnesses.
+
+**LATER COMMUNITY PROJECT:** 2016-12-10 https://sourceforge.net/projects/sa80/files/ describes SA80 server/data reconstruction, with GMSV/SAAC files, not an independently verified original 2005 Taiwan Waei client or original paired PET runtime. Source-only negative-control ledger, 19 mutation controls and Actions gate are added as `STONEAGE-TW80-LATE-CARRIER-NEGATIVE-CONTROLS-R1.json` and `docs/specs/STONEAGE-TW80-LATE-CARRIER-QUARANTINE-R1.md`. The original Taiwan 2005 8.0 authenticated free installer/update chain remains OPEN; 2486=2465+18+3, zero historical promotions.

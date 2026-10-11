@@ -1,0 +1,68 @@
+{
+  "schema": "stoneage-tw80-late-carrier-negative-controls-r1",
+  "captured_on": "2026-10-11",
+  "scope": "2007/2013/2016 sources are NOT verified official Taiwan 2005 8.0 clean original installers or authenticated original PET executable pairs",
+  "leads": [
+    {
+      "id": "CN-2007-NUMERIC-IP-SETUP",
+      "source": "https://blog.sina.com.cn/s/blog_491de9d601000abm.html",
+      "source_date": "2007-08-17",
+      "filename": "StoneAge8.0setup.exe",
+      "historical_url": "http://220.162.242.159/StoneAge8.0setup.exe",
+      "region_evidence": "MAINLAND_CLIENT_DESCRIBED_IN_2007_PLAYER_PRIVATE_SERVER_GUIDE",
+      "custody_class": "CONTEMPORARY_COMMUNITY_TUTORIAL_THIRD_PARTY_IP",
+      "source_statement": "Guide permits mainland official or private-server client and supplies numeric-IP hosted file; uploader/publisher of IP not authenticated",
+      "original_tw_2005_8_0_admitted": false,
+      "original_publisher_binary_verified": false,
+      "payload_retrieved": false,
+      "sha256": null,
+      "original_pet_runtime_verified": false
+    },
+    {
+      "id": "CN-2013-REUSED-SETUP-NAME",
+      "source": "https://www.iopq.net/thread-16840739-1-1.html",
+      "source_date": "2013-02-17",
+      "filename": "StoneAge8.0setup.exe",
+      "historical_url": null,
+      "region_evidence": "MAINLAND_8_X_CLIENT_ALLOWED_IN_2013_PRIVATE_SERVER_GUIDE",
+      "custody_class": "LATER_COMMUNITY_REUSE_AND_PATCHING_INSTRUCTIONS",
+      "source_statement": "Guide says mainland official latest or higher-than-8.0 client works, then orders BIN file renaming, replacement login executable, IP config and companion tools; file identity cannot be inferred",
+      "original_tw_2005_8_0_admitted": false,
+      "original_publisher_binary_verified": false,
+      "payload_retrieved": false,
+      "sha256": null,
+      "original_pet_runtime_verified": false
+    },
+    {
+      "id": "SA80-2016-SOURCEFORGE-REWORK",
+      "source": "https://sourceforge.net/projects/sa80/files/",
+      "source_date": "2016-12-10",
+      "filename": "SA80 project directory / Updated-Linux-SA80",
+      "historical_url": "https://sourceforge.net/projects/sa80/files/",
+      "region_evidence": "LATER_COMMUNITY_REWORK_SERVER_AND_DATA_NOT_TW_2005_RELEASE",
+      "custody_class": "PUBLIC_2016_COMMUNITY_SOFTWARE_PROJECT",
+      "source_statement": "Project calls itself 石器时代8.0数据规整; 2016 timestamp is file-host metadata, not original publisher release date; no original 2005 Taiwan installer authenticated",
+      "original_tw_2005_8_0_admitted": false,
+      "original_publisher_binary_verified": false,
+      "payload_retrieved": false,
+      "sha256": null,
+      "original_pet_runtime_verified": false
+    }
+  ],
+  "assertions": {
+    "matching_filename_proves_same_binary": false,
+    "third_party_numeric_ip_is_official_taiwan_distribution": false,
+    "sourceforge_2016_source_is_2005_taiwan_client": false,
+    "post_install_community_patching_preserves_clean_snapshot": false,
+    "unseen_payload_sha256_can_be_claimed": false,
+    "official_taiwan_2005_8_0_binary_admitted": false,
+    "genuine_paired_pet_opcode127_runtime_admitted": false,
+    "early_jss1999_or_tw10_pet_membership_admitted": false
+  },
+  "pressure": {
+    "total": 2486,
+    "bounded_closed": 2465,
+    "open": 18,
+    "historical_ub": 3
+  }
+}

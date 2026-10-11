@@ -1,0 +1,19 @@
+# 2005 Taiwan 8.0 original installer search: lookalike late-carrier quarantine R1
+
+**Date:** 2026-10-11. **Status:** SOURCE_ONLY / NEGATIVE_CONTROL. **Highest primary target unchanged:** a free, provenance-preserved, bitwise authentic original **Taiwan Waei 2005 8.0** installer/update chain. This round has not recovered it.
+
+## Individually evidenced nonqualifying leads
+
+1. **2007-08-17 mainland/private-server tutorial** — https://blog.sina.com.cn/s/blog_491de9d601000abm.html . It names `StoneAge8.0setup.exe` at `http://220.162.242.159/StoneAge8.0setup.exe`, calls for a mainland latest client *or* another private-server client, and separately recommends private-server configuration. The file's first-party operator source, bytes, historical availability and SHA256 **have not been independently verified**. A numeric-IP hyperlink in a mainland-era community tutorial is not a Taiwan publisher original-download chain. Do not assume it is an original mainland binary either.
+2. **2013-02-17 mainland/private-server setup repost** — https://www.iopq.net/thread-16840739-1-1.html . It independently reproduces the same **filename** `StoneAge8.0setup.exe` but explicitly allows latest mainland client newer than 8.0, requires `real_137 -> real_136` and `adrn_137 -> adrn_136` resource renames, a replacement `sa_8001.exe` login program and IP configuration. This demonstrates that matching filename labels across two accounts **cannot establish byte identity** and a post-modification tree cannot stand in for a clean snapshot. Reposts do not prove survival or publisher provenance of the 2007 IP archive.
+3. **2016-12-10 community SourceForge SA80 files** — https://sourceforge.net/projects/sa80/files/ . The project describes itself as `石器时代8.0数据规整`; the public host shows `Updated-Linux-SA80`, server directories and 2016 modification dates. This is later community work, not independently authenticated original Taiwan 2005 8.0 client bytes or original 2005 PET client-server pair.
+
+## Reproducible checks
+
+Machine-readable source ledger: `research/recovered/STONEAGE-TW80-LATE-CARRIER-NEGATIVE-CONTROLS-R1.json`. Gate: `python -m tools.stoneage_tw80_late_carrier_quarantine`. Unit suite: `python -m unittest -v tests.test_stoneage_tw80_late_carrier_quarantine`. The gate pins source URLs, observed dates, filenames, source class and the region/era evidence boundary. Mutation checks reject promotion of a numeric-IP link to Taiwan official hosting, retro-dating the 2016 rework to 2005, inventing source bytes/hashes, treating patched directory as original, and assigning PET packet 127 or JSS1999/Taiwan1.0 historical membership.
+
+The gate is **metadata-only**, not a network availability probe or an authenticity test. No original client/server binaries were committed, downloaded, executed, patched, or certified. This does not supersede the four-candidate `STONEAGE-LATE-CLIENT-CANDIDATE-LEDGER-R1.json`; it provides independent false-positive controls for newly encountered carriers. Previously accepted history, snapshot intake and late 8.5 candidate metadata remain untouched. `2486 = 2465 bounded closed + 18 OPEN + 3 historical UB`; zero historic/runtime promotions.
+
+## Highest NEXT
+
+Continue seeking independently verified publisher source and actual original **Taiwan 2005 8.0** clean package/patch bytes, SHA256, artifact version and update chain. If any historical filename surfaces, preserve **region + distribution actor + publication time + modified/unmodified state** separately from the filename; run the existing nonexecuting archive/hash and snapshot-diff tools only when bytes can be legally acquired outside the repository. No runtime PET handshake/owner-unique-code claim before an authentic original feature-enabled compiled client/server pair. No engine-stage transition.
