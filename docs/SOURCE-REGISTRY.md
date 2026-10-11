@@ -5847,3 +5847,12 @@ Highest NEXT: Original allocator slot reuse after the accepted owned PET2 alias 
 - **Later game overview:** https://acg.gamer.com.tw/acgDetail.php?s=5326 ; PET equipment description with seven categories; supporting context, not binary provenance.
 - **Retrieval leads, no bytes accepted:** 2008 forum https://www.iopq.net/forum.php?mod=viewthread&tid=16508364 lists Wayi-hosted `sa8_8016.rar` but requires unrelated private patches; 2009 forum https://www.lab.welovesa.com/viewthread.php?tid=2 bundles `sa_8002a` and Assa8.0; 2010 custom Yang server https://www.lab.welovesa.com/viewthread.php?tid=575 advertises a community-built pair target; later 2012 recollection https://www.lab.welovesa.com/viewthread.php?tid=1978 . None is here authenticated/downloaded/hashed.
 - **Boundary:** Contemporary announcement is stronger historical feature evidence, but neither proves `_PET_ITEM` enabled in checked-in Bismarck default source nor deployed paired binary/opcode127 or original early versions. Spec: `docs/specs/STONEAGE-PET-80-CONTEMPORARY-RELEASE-EVIDENCE-R1.md`. No proprietary assets committed.
+
+
+## SRC-WAYI-85-SIXPART-CHAIN-20261011
+
+- 2006-08-13 historical player link: https://bbs.comefromchina.com/threads/449920/ labels `http://download.wayi.com.tw/download/STONEAGE20060616.exe` as Taiwan 8.5. Secondary quotation of official domain, not operator binary bytes.
+- 2008-02-16 independent player link: https://www.nakuz.com/thread-3245861-1-1.html repeats identical URL/8.5 identification. The guides instruct private-server patches, which must remain excluded.
+- 2012-04-14 community mirror: https://www.lab.welovesa.com/viewthread.php?action=printable&tid=1654 posts six MediaFire split pieces matching filename. Each host landing page currently exposes rounded size, filename and upload-date label; no exact bytes or checksums. The sixth piece displays an earlier upload time than parts .001–.005.
+- 2024-02-20 later player report in same forum says installation shows 8.5; neither a project-performed executable version check nor proof of clean source.
+- Source-derived six ID manifest: `research/recovered/STONEAGE-WAYI-85-SIXPART-METADATA-R1.json`; spec `docs/specs/STONEAGE-WAYI-85-ARCHIVE-CHAIN-R1.md`. Offline chunk-wise hash tool (no downloading/execution) `tools/stoneage_wayi_85_archive_chain.py`, mutation tests and CI. Confidence limited to archival metadata/cited URL; official byte identity OPEN. Separate from Mainland `sa8_8016.rar` and Taiwan 2005 8.0 PET.
