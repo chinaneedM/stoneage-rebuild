@@ -91,9 +91,8 @@ CONTROL = r'''
   demand(!memcmp(reuse_before_factory_connections,cleanup_connections,sizeof reuse_before_factory_connections)&&lookup_count>=lookup_before&&Total_BattleNum==before_total,"native connection/total battle state preserved");
   demand(!memcmp(reuse_saved_tables,allocator_table,sizeof reuse_saved_tables),"entire original item ID table preserved");
   INDIRECT_ORACLE
-  printf("REUSE_FACTORY_COUNTERS|alias=%d|warning_before=%d|warning_after=%d|diagnostics_before=%d|diagnostics_after=%d|release_before=%d|release_after=%d\n",alias_index,warnings_before,shared_guard_warnings,diagnostics_before,diagnostics,release_before,split_release_calls);fflush(stdout);
-  demand(shared_guard_warnings==warnings_before&&diagnostics==diagnostics_before&&split_release_calls==release_before,"factory adds no original drop-guard warning or drop release");
-  printf("REAL_HEADER_RELEASED_SLOT_REUSE|alias=%d|victim=8|old_id=1|created=%d|new_id=%d|old_owner=%d|new_owner=%d|released=%d|guard_warnings=%d|release_calls=%d|assignment_draws=6|factory_draws=%d|blockers=%d|count_delta=%d|pet_ref=%d|player_ref=%d|others_unchanged=1|whole_actors=1|whole_arena=1|whole_connections=1|tables_immutable=1|no_cursor_rewind=1|original_creation=1|original_assignment=1|original_factory=1|synthetic_alias=1|synthetic_blockers=1\n",alias_index,created,reward_items[8].ITEM_FIELD.data[ITEM_ID],protected?6:-1,reward_items[8].ITEM_FIELD.workint[ITEM_WORKCHARAINDEX],!protected,protected,!protected,rng_count,synthetic_blockers,ITEM_COUNT-before_factory,slots[2].indexOfExistItems[CHAR_STARTITEMARRAY+1],slots[0].indexOfExistItems[CHAR_STARTITEMARRAY+1]);
+  demand(shared_guard_warnings==warnings_before&&diagnostics==diagnostics_before+protected&&split_release_calls==release_before,"factory yields exact full-pool diagnostic only on protected retained object, with no new guard warning or release");
+  printf("REAL_HEADER_RELEASED_SLOT_REUSE|alias=%d|victim=8|old_id=1|created=%d|new_id=%d|old_owner=%d|new_owner=%d|released=%d|guard_warnings=%d|factory_diagnostics=%d|release_calls=%d|assignment_draws=6|factory_draws=%d|blockers=%d|count_delta=%d|pet_ref=%d|player_ref=%d|others_unchanged=1|whole_actors=1|whole_arena=1|whole_connections=1|tables_immutable=1|no_cursor_rewind=1|original_creation=1|original_assignment=1|original_factory=1|synthetic_alias=1|synthetic_blockers=1\n",alias_index,created,reward_items[8].ITEM_FIELD.data[ITEM_ID],protected?6:-1,reward_items[8].ITEM_FIELD.workint[ITEM_WORKCHARAINDEX],!protected,protected,diagnostics-diagnostics_before,!protected,rng_count,synthetic_blockers,ITEM_COUNT-before_factory,slots[2].indexOfExistItems[CHAR_STARTITEMARRAY+1],slots[0].indexOfExistItems[CHAR_STARTITEMARRAY+1]);
  }
  memcpy(reward_items,reuse_saved_items,sizeof reuse_saved_items);
  memcpy(slots,reuse_saved_actors,sizeof reuse_saved_actors);*arena=reuse_saved_arena;
@@ -164,7 +163,7 @@ def validate_reuse_rows(lines):
             expected = dict(victim=8, old_id=1, created=-1 if protected else 8,
                             new_id=1 if protected else 2, old_owner=6 if protected else -1,
                             new_owner=6 if protected else -1, released=0 if protected else 1,
-                            guard_warnings=int(protected), release_calls=int(not protected),
+                            guard_warnings=int(protected), factory_diagnostics=int(protected), release_calls=int(not protected),
                             assignment_draws=6, factory_draws=66,
                             count_delta=int(not protected), pet_ref=8 if a == 2 else -1,
                             player_ref=8 if protected else -1)
