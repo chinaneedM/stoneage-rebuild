@@ -1,0 +1,28 @@
+name: Validate StoneAge Taiwan 8.0 and 8.5 press-rollout chronology
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/validate-stoneage-tw80-tw85-press-chronology.yml"
+      - "tools/stoneage_tw80_tw85_chronology_gate.py"
+      - "tests/test_stoneage_tw80_tw85_chronology_gate.py"
+      - "research/recovered/STONEAGE-TW80-TW85-PRESS-CHRONOLOGY-R1.json"
+permissions:
+  contents: read
+jobs:
+  evidence-boundary:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - name: Validate chronology and refusal of unsupported original-binary promotion
+        run: |
+          python -m unittest -v tests.test_stoneage_tw80_tw85_chronology_gate
+          python -m tools.stoneage_tw80_tw85_chronology_gate
+      - name: Retain original 8.0 press and source-provenance gates
+        run: |
+          python -m unittest -v tests.test_stoneage_pet_80_release_evidence_gate
+          python -m unittest -v tests.test_stoneage_late_client_archive_probe
+          python -m unittest -v tests.test_stoneage_wayi_85_archive_chain

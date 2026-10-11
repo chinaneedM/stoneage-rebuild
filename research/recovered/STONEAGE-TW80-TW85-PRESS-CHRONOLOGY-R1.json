@@ -1,0 +1,100 @@
+{
+  "schema": "stoneage_tw80_tw85_press_chronology_r1",
+  "date_recorded": "2026-10-11",
+  "scope": "Press statements, announced schedules and linked community metadata only; no authentic executable files read.",
+  "events": [
+    {
+      "id": "TW80_LAUNCH",
+      "date": "2005-06-08",
+      "family": "TW_8_0",
+      "stage": "PRESS_RELEASE_REPORT",
+      "source": "https://gnn.gamer.com.tw/detail.php?sn=20167",
+      "note": "Launch-time feature announcement; no executable hash",
+      "original_executable_bytes_verified": false
+    },
+    {
+      "id": "TW80_PLAYER_PET",
+      "date": "2005-07-07",
+      "family": "TW_8_0",
+      "stage": "PERIOD_PLAYER_REPORTED_MECHANICS",
+      "source": "https://www.gamez.com.tw/t/8-0/170704",
+      "note": "Player article PET gear types/recipes; not executable-replayed",
+      "original_executable_bytes_verified": false
+    },
+    {
+      "id": "TW80_SEPT_MARKETING",
+      "date": "2005-09-08",
+      "family": "TW_8_0",
+      "stage": "PRESS_INDEX_ADDITIONAL_PET_GEAR_PROMO",
+      "source": "https://acg.gamer.com.tw/search.php?c1=976&c2=3&machine=1%2C0&s=2&type=1",
+      "note": "Contemporary index excerpt: mini-pig promotion and at least 20 additional pet/profession items planned; not system first enablement",
+      "original_executable_bytes_verified": false
+    },
+    {
+      "id": "TW85_INSTALLER_NAME_TOKEN",
+      "date": "2006-06-16",
+      "family": "TW_8_5",
+      "stage": "FILENAME_DATE_STRING_ONLY",
+      "source": "https://bbs.comefromchina.com/threads/449920/",
+      "note": "20060616 appears in quoted STONEAGE20060616.exe name; unverified as actual build/release date",
+      "original_executable_bytes_verified": false
+    },
+    {
+      "id": "TW85_OPEN_TEST_ANNOUNCEMENT",
+      "date": "2006-06-21",
+      "family": "TW_8_5",
+      "stage": "OPERATOR_SCHEDULE_PUBLIC_TEST",
+      "source": "https://gnn.gamer.com.tw/detail.php?sn=23856",
+      "note": "Published June 21 test opens through July 5; announcement not independently observed event",
+      "original_executable_bytes_verified": false
+    },
+    {
+      "id": "TW85_CANG_LONG_ANNOUNCED",
+      "date": "2006-07-05",
+      "family": "TW_8_5",
+      "stage": "OPERATOR_SCHEDULE_FIRST_SERVER",
+      "source": "https://gnn.gamer.com.tw/detail.php?sn=23856",
+      "note": "Official schedule first server Canglong July 5; not verified actual rollout",
+      "original_executable_bytes_verified": false
+    },
+    {
+      "id": "TW85_ALL_SERVER_ANNOUNCED",
+      "date": "2006-07-12",
+      "family": "TW_8_5",
+      "stage": "OPERATOR_SCHEDULE_ALL_SERVER",
+      "source": "https://gnn.gamer.com.tw/detail.php?sn=23856",
+      "note": "Official planned all-server phase July 12; not verified completion",
+      "original_executable_bytes_verified": false
+    },
+    {
+      "id": "TW85_SIX_PART_MIRROR",
+      "date": "2012-04-14",
+      "family": "TW_8_5",
+      "stage": "COMMUNITY_ARCHIVE_METADATA",
+      "source": "https://www.lab.welovesa.com/viewthread.php?action=printable&tid=1654",
+      "note": "Six split community-hosted files not independently byte verified",
+      "original_executable_bytes_verified": false
+    }
+  ],
+  "assertions": {
+    "tw80_pet_reported_as_release_feature": true,
+    "pet_system_first_introduced_september_2005": false,
+    "september_new_gear_items_press_index_reported": true,
+    "filename_20060616_is_verified_release_date": false,
+    "june21_2006_is_all_server_formal_85_launch": false,
+    "july05_85_server_rollout_observed_verified": false,
+    "july12_85_server_rollout_observed_verified": false,
+    "wayi85_community_mirror_operator_binary_verified": false
+  },
+  "original_tw80_client_sha256": null,
+  "original_tw85_installer_sha256": null,
+  "original_enabled_pair_runtime_proven": false,
+  "original_packet127_observed": false,
+  "early_1999_or_tw10_pet_proven": false,
+  "pressure": {
+    "total": 2486,
+    "bounded_closed": 2465,
+    "open": 18,
+    "historical_ub": 3
+  }
+}
