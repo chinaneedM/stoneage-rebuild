@@ -1,0 +1,79 @@
+{
+  "status": "SOURCE_ONLY_ACCEPTED_BOUNDARY",
+  "baseline_main": "7816df9daa1182f5109ce6c6ea772279b57353e0",
+  "profiles": {
+    "gavin": {
+      "commit": "1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56",
+      "files": {
+        "base": "783b8803333bf3a63320b4379519a69b377e9037",
+        "char": "6f1c35acb8ceb103e5501c88e49d8fe93aafcb70",
+        "item": "ff3d18514367905c8dd72316908508dd60272018",
+        "version": "af6c866fd609a39e2960236275f6bf39e7f47b2c"
+      },
+      "pet_persistence_raw_gate": "ifndef _SIMPLIFY_ITEMSTRING",
+      "default_header_simplify_defined": true,
+      "default_header_pet_item_defined": false,
+      "default_header_unique_defined": true,
+      "pet_persistence_in_default_header": false
+    },
+    "bismarck": {
+      "commit": "999ffdf1d220ec6666eb65339180689c9caf1876",
+      "files": {
+        "base": "5f646eba671b39f5e90f53e3a95cbcc70ff56975",
+        "char": "970b7b3f975965c6c5e77352a2e0382adf943753",
+        "item": "94b00b11d02cc775bab6fe72c9c2ba77d9618712",
+        "version": "b3fc0c80705973bc8d088287c98a5d66171bb6c2"
+      },
+      "pet_persistence_raw_gate": "ifdef _PET_ITEM",
+      "default_header_simplify_defined": true,
+      "default_header_pet_item_defined": false,
+      "default_header_unique_defined": true,
+      "pet_persistence_in_default_header": false
+    }
+  },
+  "source_only_observations": [
+    "CHAR_addItem / CHAR_addItemSpecificItemIndex bodies have no raw PLAYER/PET type exclusion while referencing generic actor item array",
+    "_CHAR_setItemIndex writes physical item index and has compile-conditional unique-code hook",
+    "PET serialization/parser branches exist but are disabled under both pinned default header macro sets",
+    "PET parser writes raw item array index after original item initializer, where compiled",
+    "ITEM_setItemUniCode uses time and rotating unique_i counter under predicate",
+    "ITEM_initExistItemsOne checks inactive old-slot owner PLAYER item references",
+    "ITEM_endExistItemsOne scans CHAR_getPlayerMaxNum range before deactivating unused object"
+  ],
+  "proof": {
+    "profiles": 2,
+    "raw_pinned_files": 8,
+    "original_source_function_fingerprints": 22,
+    "source_only_assertions_per_profile": 16,
+    "python_tests": 10,
+    "live_runtime_executions": 0,
+    "production_macro_configuration_verified": false,
+    "natural_gameplay_pet_item_path_verified": false,
+    "earliest_original_build_membership": false
+  },
+  "workflow": {
+    "run_id": 38141501893,
+    "job_id": 114476126597,
+    "head_sha": "f13599d9c9e5ff3a15929a04314b5984291ee623",
+    "result": "success",
+    "all_steps_success": true,
+    "artifact_id": 11702398957,
+    "zip_bytes": 2375,
+    "zip_sha256": "2b4ea6a6e5caff528d89495c5f8ba7f47089ad98eb6905a93c72091d5852bfac",
+    "zip_digest_independently_verified": true,
+    "report_bytes": 5949,
+    "report_sha256": "93ca80e4bb849215eb8a30188584eeb89ae90082b220642e539b8a22ddfb2f3f",
+    "report_git_blob_sha": "c8251ce2863bce73ea873f994646f1e52cef2293",
+    "report_matches_committed_bytes": true,
+    "repeat_success_after_byte_exact_report_requirement": true
+  },
+  "boundary": "Late pinned descendant raw source and version.h default macro evidence only. Macro definition in default header is not a complete production build certificate. No real PET gameplay caller traced, no natural stale alias, no original 1999 / Taiwan1.0 proof, no modern single-player engine decision.",
+  "pressure": {
+    "total": 2486,
+    "bounded_closed": 2465,
+    "open": 18,
+    "historical_ub": 3,
+    "new_historical_promotions": 0
+  },
+  "next": "Trace PET equip/item handlers and protocol callbacks under explicit macro configuration; prove reachable PET item acquisition/storage/release in a build, then distinguish unique-code/generation identity from physical index. Keep early original-build attribution OPEN."
+}
