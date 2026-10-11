@@ -1,0 +1,90 @@
+{
+  "status": "SOURCE_ONLY_DEFAULT_BUILD_GATE_ACCEPTED",
+  "baseline_main": "881c9a16185251a2a59e7acf27b71bdd805a5805",
+  "provenance": {
+    "gavin": {
+      "repo": "gavinlinasd/StoneAge",
+      "commit": "1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56",
+      "make_blob": "d2be7a699c909c8e9515971b906dbc79586beb73",
+      "char_make_blob": "e1843e9684078d23cc36a93c63f1c1adec90d4e4"
+    },
+    "bismarck": {
+      "repo": "BismarckDD/stoneage",
+      "commit": "999ffdf1d220ec6666eb65339180689c9caf1876",
+      "make_blob": "8afd1f288a1d07a5cf0075af04e51e64741dcc81",
+      "char_make_blob": "2c624e29639dc43169dfa5378d28e4086413c663",
+      "windows_cmake_blob": "1523d12c3543e3d2a8c3a1401f92d79d11d85413"
+    }
+  },
+  "evidence_scope": "Pinned late descendant checked-in GNU make/include and default version.h GCC preprocessing, Bismarck checked-in Windows CMake macro-definition block, bounded raw recursive .c callsite scan; no original source or proprietary data retained.",
+  "effective_default_macros": {
+    "gavin": {
+      "_UNIQUE_P_I": 1,
+      "_SIMPLIFY_ITEMSTRING": 1,
+      "_PET_ITEM": 0
+    },
+    "bismarck": {
+      "_UNIQUE_P_I": 1,
+      "_SIMPLIFY_ITEMSTRING": 1,
+      "_PET_ITEM": 0
+    }
+  },
+  "observations": {
+    "gavin": {
+      "raw_CHAR_movePetItem_definitions": 0,
+      "raw_CHAR_movePetItem_callers": 0,
+      "default_compiled_PET_equipment": 0,
+      "default_pet_item_persistence": 0
+    },
+    "bismarck": {
+      "raw_CHAR_movePetItem_definitions": 1,
+      "raw_CHAR_movePetItem_callers": 0,
+      "default_compiled_PET_equipment": 0,
+      "default_compiled_PET_send": 0,
+      "forced_D_PET_ITEM_preprocessed_definition": 1,
+      "source_file": "char/char_item.c",
+      "definition_line": 2655
+    }
+  },
+  "checks": {
+    "pinned_current_build_scripts_hashes": true,
+    "preprocessed_default_function_path_checked": true,
+    "pinned_8_prior_source_header_files_rechecked": true,
+    "all_C_source_direct_calls_scanned": true,
+    "python_unit_checks": 17,
+    "independent_download_digest_verified": true,
+    "report_byte_exact_with_committed_blob": true,
+    "source_code_or_assets_uploaded": false
+  },
+  "remote": {
+    "tested_branch": "agent/pet-item-compiled-gate-r1-20261011",
+    "tested_commit": "a6d3415e7d09ecf30002e37f2c62cef64f0436e4",
+    "actions_run_id": 38142524756,
+    "job_id": 114479121485,
+    "conclusion": "success",
+    "all_steps_success": true,
+    "artifact_id": 11703790355,
+    "zip_bytes": 901,
+    "zip_sha256": "5db979c903f34f11f1a3c99aab8b24269e858364d4aec962e2ea385d61cf3a67",
+    "report_bytes": 1418,
+    "report_sha256": "59f2c994d6d5169553d0c8bd38ca47c2b4fe4ba9e603a49fa05bc86441a8925b",
+    "report_git_blob_sha": "2d5d55984972975fe769efd6adb5466731499e17"
+  },
+  "boundaries": {
+    "checked_in_default_config_not_deployed_binary": true,
+    "raw_C_no_direct_CALL_does_not_exclude_indirect_generated_or_external_entry": true,
+    "forced_macro_is_counterfactual_only": true,
+    "natural_PET_alias_proven": false,
+    "original_1999_JSS_proven": false,
+    "Taiwan_1_0_equivalence_proven": false,
+    "modern_design_decision": false
+  },
+  "pressure": {
+    "total": 2486,
+    "bounded_closed": 2465,
+    "open": 18,
+    "historical_ub": 3,
+    "new_historical_promotions": 0
+  },
+  "next": "Trace actual protocol callback generation and alternate feature-enabled build roots for the PET equipment path; only then try genuine item-owning PET lifecycle with raw original setter and item factory. Keep compiled-but-unreachable versus runtime reachability separate."
+}
