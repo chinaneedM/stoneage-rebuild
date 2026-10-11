@@ -2616,3 +2616,8 @@ FACT about exact2006-captured StoneAge2 specimen: default update port8080, regis
 ## 2026-10-12 — Operator-linked2006 specimen contains compiled PET sender
 
 FACT static: exact accepted sa.exe decompressed hash4193a7e1b20b996f7902424ae05092b455c5dbbe3f133d331a4897bbc7abfe63 has six-parameter emitter0x93c50, five integer fields+sum, logical127, three guarded UI callers and -1/-2 destination constants. Hub adds13 beforeformat/encoding; not raw-wire capture. Short riding-pet equipment guard found. Compile membership is now directly observed in this specific2006-captured operator-linked binary, independent of descendant build defaults; no exact2005 release date/hash, native/server runtime or earlier-era feature promotion. Metadata/spec STONEAGE-WAYI-COMPILED-PET-SENDER-R1. Pressure unchanged.
+
+
+## 2026-10-12 — PET compiled transport/receive and riding restriction refinement
+
+Exact2006-captured operator-linked client statically connectsPETsender to initializedcallback, boundedqueue and WSOCKordinal19 sendthunk; genericreceive joinsline extraction→decode→split→ID. Clientoutgoing+13 andincoming-23 aredirection-specific, not reciprocalwire proof. Ridingrestriction ondrag/drop appliesdestination<9; source<9/destination>=9 skipscheck, -2dragout boundedroutehasnoridecheck. Doubleclick0..6 block andtransferthreshold9 serve differentroles. Nohistoricalrelease-date promotion/serverpermission/nativeowner-save-drop claim; pressureunchanged. Spec STONEAGE-WAYI-PET-TRANSPORT-JOIN-R1.

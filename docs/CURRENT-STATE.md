@@ -12399,3 +12399,18 @@ Source commit f1ef968f620c0b36fea423a31f7bad05f385ce1b/treed0af66967f128933cbe90
 Accepted outcome: compiled logical127 five-integer-plus-checksum sender and three guarded client call sites in the exact operator-linked2006 specimen, including destination -1/-2 and riding-pet equipment guard. Formatted140 is not raw wire capture. Descendant source comparison does not authenticate exact binary source/build or exact2005 release. Matching native server, owner/drop/save/unique-code runtime and original full installer/manifest/hash remain OPEN; pressure2486=2465 bounded closed+18 OPEN+3 historical UB unchanged. No original programs executed or bytes/disassembly committed; no early-era/engine promotion.
 
 Highest NEXT: statically recover upstream PET UI parameter/guard definitions and downstream encoder/network/receive joins on this exact hash, then identify an admissible matching server pair. Official full package/manifest acquisition remains opportunistic. Do not repeat exhausted archive queries or infer native runtime from compiled client membership.
+
+
+## 2026-10-12 — PET transport queue/receive join and conditional UI guards; branch CI pending
+
+Fresh remote main6b6643b04866ac26c3dbae71cb657a5c5f561286/treeabde37ff048097ed4f306202a559b3de698bcf51, latestActions38160301062/38160301064 SUCCESS. Required documents reread from exact clean matching checkout; transientgitfetch502 did not alter remotely verifiedHEAD/tree. Highest NEXT static upstream UI/downstream transport joins on accepted2006 operator-linked sa.exe.
+
+**New compiled transport join:** emitter→hub→encoder→handoff0x3e300→callbackglobal0xbe1e8. Setter0x3d9a0 defaultno-op thennonzeroarg1; initializercall0x5ec43 supplies0x5ed20,0x4000,fd. Callback0x5ed20 appends toqueuebuffer0x4204e30 andlength0x4204e20 withcapacity0x4000; VirtualProtect import ismemorypermission,notnetworksend. Networkloop0x5eabb flushes via0x94e7c/IAT0xa02b8 WSOCK32ordinal19 (pinned pefilemaps19send). Staticpath only,nopackets/nativeclient execution.
+
+Receive linehelper0x5ee80 LF/CR→modeselection0x5eb44: nonzeroflag0x4205070 callsdispatch0x90990,zerocallsold0x3c190. Dispatcher0x909ab decoder→0x909bd semicolonsplit→0x909cc messageextractor. Criticaldirectional distinction: clientsend+13 versusclientreceive-23, notinverse directions orPET acknowledgement. Seed2413/3142,modulus99,custom64alphabet andcomplement/rotationhelpers staticallyobserved; nofullgoldenwire replay.
+
+**Guard refinement:** dragtransferbothslots>=9 fallsbackMI; selectedridingpet restriction appliesdestination<9, source<9/destination>=9 bypassesridecheck. Doubleclickindex0..6 suppressed; ridecheckandwarpWORDgate beforedest-1. Drag-outdest-2 hasposition/warp/PETwindow gates butnoridingcomparison inboundedroute. Compare7/9 roles separately. These are compiledUI conditions,notserverpermission ororiginalsave/owner proof. Freshpinned descendantmenu/protocol/autil/lssproto_util reads support semanticcomparisononly.
+
+Derivedtool/ledger/spec/workflow and12 newcontrols+70adjacentchecks PASS locally(82). BranchCI pending. Originalbytes/disassembly neverexecuted/committed. Exact2005 releasehash/fullpackage andnativePETpair OPEN; pressure2486=2465 bounded closed+18 OPEN+3 historical UB unchanged,noearly-era/enginepromotion.
+
+HighestNEXT: actual compiledPETinventory/update receivehandler andclientitemslot-state layout, separatelyfromclientsend127; noPETreply inferredbyconstant. Matchingserverneedsindependentbuild/provenance gate. Officialpackage/manifest acquisition remainsopportunistic.
