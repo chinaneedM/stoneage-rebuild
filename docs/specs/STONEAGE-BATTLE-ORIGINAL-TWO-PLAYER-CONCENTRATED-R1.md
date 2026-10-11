@@ -1,6 +1,6 @@
 # Original two-PLAYER all-to-one four-drop overflow and payout R1
 
-Status: local bounded execution passed; remote acceptance pending.
+Status: REMOTE ACCEPTED bounded; Action38133345052/job114452046348 SUCCESS at440f911e4a79ef1c7ce9dbc04b9b9fee1b2119ae. Receipt records independently verified artifact bytes.
 
 FACT is bounded to clean pinned Gavin1f90cb6/Bismarck999ffdf1 descendants,
 GNU99 O0/O2 nonrecovering UBSan and synthetic inputs. Iris pin is retained for

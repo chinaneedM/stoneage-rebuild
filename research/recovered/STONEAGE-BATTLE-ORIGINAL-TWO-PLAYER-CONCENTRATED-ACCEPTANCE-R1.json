@@ -1,0 +1,294 @@
+{
+  "status": "REMOTE_ACCEPTED_BOUNDED",
+  "baseline": {
+    "head": "09047f9193451de3e3efef7cc3784173ffe49792",
+    "tree": "abc7aeca739e656177ccafe98d7226edb6066696"
+  },
+  "branch": "agent/original-two-player-concentrated-r1-20261011",
+  "tested_commit": "440f911e4a79ef1c7ce9dbc04b9b9fee1b2119ae",
+  "tested_tree": "be583c7864e23b8e90427e63fb973585dedff020",
+  "remote": {
+    "run_id": 38133345052,
+    "run_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/38133345052",
+    "head_sha": "440f911e4a79ef1c7ce9dbc04b9b9fee1b2119ae",
+    "conclusion": "success",
+    "job_id": 114452046348,
+    "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/38133345052/job/114452046348",
+    "all_12_steps_success": true,
+    "steps": [
+      {
+        "number": 1,
+        "name": "Set up job",
+        "conclusion": "success"
+      },
+      {
+        "number": 2,
+        "name": "Run actions/checkout@v4",
+        "conclusion": "success"
+      },
+      {
+        "number": 3,
+        "name": "Run actions/setup-python@v5",
+        "conclusion": "success"
+      },
+      {
+        "number": 4,
+        "name": "Original drop source and retained regression gates",
+        "conclusion": "success"
+      },
+      {
+        "number": 5,
+        "name": "Recover pinned historical descendant sources transiently",
+        "conclusion": "success"
+      },
+      {
+        "number": 6,
+        "name": "Run original concentrated recipient overflow and payout",
+        "conclusion": "success"
+      },
+      {
+        "number": 7,
+        "name": "Validate two-player-concentrated matrix and all predecessor witnesses",
+        "conclusion": "success"
+      },
+      {
+        "number": 8,
+        "name": "Preserve original item factory independently",
+        "conclusion": "success"
+      },
+      {
+        "number": 9,
+        "name": "Upload only derived evidence",
+        "conclusion": "success"
+      },
+      {
+        "number": 17,
+        "name": "Post Run actions/setup-python@v5",
+        "conclusion": "success"
+      },
+      {
+        "number": 18,
+        "name": "Post Run actions/checkout@v4",
+        "conclusion": "success"
+      },
+      {
+        "number": 19,
+        "name": "Complete job",
+        "conclusion": "success"
+      }
+    ],
+    "artifact": {
+      "id": 11699892200,
+      "name": "stoneage-battle-original-two-player-concentrated-r1",
+      "digest": "sha256:92fdefcca9f415b92b756044b99ab817c7a8063a7a100b8e8a72879b2602116c",
+      "bytes": 28407
+    },
+    "ZIP_sha256_independently_verified": true,
+    "reports": {
+      "stoneage-battle-original-two-player-concentrated-r1.txt": {
+        "bytes": 308661,
+        "sha256": "2e7e876fe9bb6306eb107f43ca3d7bdfacc712b79086daf5ca6994cba1685a67",
+        "byte_exact_to_local": true
+      },
+      "stoneage-item-factory-retained-r1.txt": {
+        "bytes": 32466,
+        "sha256": "ae632bc03bf06ca1661e4ba0d151595f9ccd075d0c1eb67d5b3acb22b5e8ff59",
+        "byte_exact_to_local": true
+      }
+    }
+  },
+  "python_tests": 138,
+  "source_pins": {
+    "gavin": "1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56",
+    "iris": "9e6c8ce2cd8ed532a7157773acd1c61582c178b5",
+    "bismarck": "999ffdf1d220ec6666eb65339180689c9caf1876"
+  },
+  "prior_documents_preserved_as_exact_prefix": {
+    "docs/CURRENT-STATE.md": {
+      "bytes": 1272603,
+      "sha256": "f53626b92f74d1aa0c67541c9ec6f1d731c85273e5a9e7c6c511eac3ade22b3b"
+    },
+    "docs/HISTORICAL-TIMELINE.md": {
+      "bytes": 207589,
+      "sha256": "e43d568fe336b696a5a7ff2f30455d2566167fe91642a83cf0b4dd106debdc31"
+    },
+    "docs/SOURCE-REGISTRY.md": {
+      "bytes": 426900,
+      "sha256": "5006a0e63e3c887213c58d83922d7a421232e6154c35f4ca94d7e7ea88430662"
+    }
+  },
+  "native": {
+    "profiles": [
+      "gavin",
+      "bismarck"
+    ],
+    "optimizations": [
+      "O0",
+      "O2"
+    ],
+    "nonrecovering_UBSan": true,
+    "assignment_rows": 16,
+    "payout_rows": 64,
+    "new_Finish_executions": 256,
+    "new_no_ticket_controls": 128,
+    "new_ticket_replays": 128,
+    "retained_ACTUAL_rows_byte_exact": 480,
+    "creation": {
+      "one_enemy_call": true,
+      "actor": 6,
+      "objects": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "IDs": [
+        1,
+        2,
+        1,
+        2
+      ],
+      "original_owner_carry": true,
+      "spawn_draws": 282,
+      "no_new_item_rebinding": true,
+      "no_allocator_cursor_rewind": true
+    },
+    "assignment": {
+      "eligible": [
+        0,
+        1,
+        -1
+      ],
+      "recipients": [
+        0,
+        1
+      ],
+      "initial_pending": "all empty",
+      "one_original_call_per_replay": true,
+      "recipient_raw_endpoints": [
+        0,
+        2147483647
+      ],
+      "reject": {
+        "rng": 5,
+        "victim": 11,
+        "pending": [
+          8,
+          9,
+          10
+        ]
+      },
+      "replace0": {
+        "rng": 6,
+        "victim": 8,
+        "pending": [
+          11,
+          9,
+          10
+        ]
+      },
+      "replace1": {
+        "rng": 6,
+        "victim": 9,
+        "pending": [
+          8,
+          11,
+          10
+        ]
+      },
+      "replace2": {
+        "rng": 6,
+        "victim": 10,
+        "pending": [
+          8,
+          9,
+          11
+        ]
+      },
+      "release_calls": 1,
+      "count_delta": -1,
+      "other_pending_empty": true,
+      "complete256_items_seven_Char_BATTLE": true,
+      "no_item_death_EXP_differential": true,
+      "all_ten_enemy_carried_slots_clear": true,
+      "no_new_item_rebinding": true,
+      "no_cursor_rewind": true
+    },
+    "payout": {
+      "each_recipient_each_overflow_branch_four_independent_capacities": true,
+      "awards_depend_only_on_selected_player_capacity": true,
+      "earliest_survivor_wins_selected_last_slot": true,
+      "unselected_free_capacity_unconsumed": true,
+      "unselected_item_log_inventory_counts_zero": true,
+      "overflow_victim_never_released_again": true,
+      "other_three_survivors_each_awarded_or_released_once": true,
+      "whole256_items_two_filler_bags_seven_Char_BATTLE_eight_connections": true,
+      "per_object_live_owner_reference_release": true,
+      "per_player_typed_complete_log_inventory_RS": true,
+      "descriptor_collector_map": {
+        "0": 7,
+        "1": 6
+      },
+      "actual_ascending_RS_order": [
+        7,
+        6
+      ],
+      "original_timer_calls": 2,
+      "original_timer_draws": 2,
+      "BDTime": {
+        "gavin": 1000,
+        "bismarck": 1005
+      },
+      "NU_count": {
+        "gavin": 0,
+        "bismarck": 2
+      },
+      "Gavin_LEAKLEVEL1_empty_SECRETNAME": true,
+      "Bismarck_LEAKLEVEL0_NAME_Factory_or_FactoryTwo": true
+    },
+    "explicit_inputs": {
+      "retained_synthetic_guaranteed_ten_pair_master": true,
+      "retained_logical256_occupancy_and_inactive_reference_preparation": true,
+      "payout_players_LV": 100,
+      "payout_players_EXP": 0,
+      "payout_players_and_owned_pet_WORKGETEXP": 0,
+      "live_players_timing_battle_fields": true,
+      "full_or_last_slot_bags": true,
+      "descriptor_collectors_are_adapters_not_recovered_network_logic": true
+    },
+    "all_16_controlled_endpoint_recipient_orders_in_combined_gates": true,
+    "natural_RNG_weight_or_master_claim": false
+  },
+  "local_report": {
+    "bytes": 308661,
+    "sha256": "2e7e876fe9bb6306eb107f43ca3d7bdfacc712b79086daf5ca6994cba1685a67"
+  },
+  "independent_factory_report": {
+    "bytes": 32466,
+    "sha256": "ae632bc03bf06ca1661e4ba0d151595f9ccd075d0c1eb67d5b3acb22b5e8ff59",
+    "same_bytes_hash_as_accepted_predecessor": true
+  },
+  "source_hash_rows": [
+    "CONCENTRATED_SOURCE|gavin|BATTLE_AddExpItem|sha256=8bf2e1bab742b3c468f13a8e94ea674be8b6fab4fa675fba13aa7f5f0a45080d",
+    "CONCENTRATED_SOURCE|gavin|BATTLE_ItemDelCheck|sha256=9a6a8ac26641043cb26699eed0ca11edf8806e244626d3377ef8f607f2cf95ce",
+    "CONCENTRATED_SOURCE|gavin|BATTLE_GetProfit|sha256=35edd4961868b6a4d50cade0c6141b1659cb28ba914e8ccd93c4a9347bcc855d",
+    "CONCENTRATED_SOURCE|gavin|BATTLE_GetExpGold|sha256=7e8dcab1862b6b845e529630f807d7f91e29a7b337f2ea486d9b01a88397822b",
+    "CONCENTRATED_SOURCE|gavin|BATTLE_Finish|sha256=e440d90b269bcb0620dcd96fda4758a0720bf367f14936f035ab9bbc787006e4",
+    "CONCENTRATED_SOURCE|gavin|BATTLE_DeleteBattle|sha256=9b503d98f6b22d1a5e4c4b44c11ead0487dcb05a3cc83db3c1344bb8183d299a",
+    "CONCENTRATED_SOURCE|bismarck|BATTLE_AddExpItem|sha256=0e77d7ea410eb0c62aa7db17878a860a740f85d04c873b5f10b57968d66b8e12",
+    "CONCENTRATED_SOURCE|bismarck|BATTLE_ItemDelCheck|sha256=95d7897afdab2163b1b13b7a87d55e83e65b49018063487fedce85b19266c3cc",
+    "CONCENTRATED_SOURCE|bismarck|BATTLE_GetProfit|sha256=5682714a9f08532fc7c492b854f09a8304a8f5fc0fe4c661a0a28bceb7f10e94",
+    "CONCENTRATED_SOURCE|bismarck|BATTLE_GetExpGold|sha256=acf3c59f6475634b5d2354e10c7867676ef47a171c0e4fe60b5d67612508db36",
+    "CONCENTRATED_SOURCE|bismarck|BATTLE_Finish|sha256=b369c2af159f182ed7e918ec083f73ae76ade2e3e3f907ae7525306f5ec035b8",
+    "CONCENTRATED_SOURCE|bismarck|BATTLE_DeleteBattle|sha256=01e105e4a325a1923c8032bcab585f80201a760580a925bea8f2f7f9f30725fe"
+  ],
+  "source_boundary": "Pinned late descendants with synthetic guaranteed master, controlled recipient/overflow raw RNG, explicit logical256 occupancy and prepared inactive references, normalized payout LV100/EXP0/WORKGETEXP0 and bags, descriptor/time collectors. No historical natural probabilities/weights, early identity, real client/network or modern DESIGN promotion. Original source/headers/assets transient only.",
+  "pressure": {
+    "total": 2486,
+    "bounded_closed": 2465,
+    "open": 18,
+    "historical_ub": 3,
+    "historical_promotions": 0
+  },
+  "next": "Original BATTLE_ItemDelCheck shared old-item retention during concentrated replacement: explicit preexisting carried alias in player0 or1, compare no-alias control, exact release/count/pending/owner/reference outcomes and subsequent payout without double release; preserve synthetic alias/normalized EXP boundaries and complete predecessor witnesses."
+}
