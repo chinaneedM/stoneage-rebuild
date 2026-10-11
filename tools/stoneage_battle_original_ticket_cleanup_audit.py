@@ -127,9 +127,9 @@ def negative_controls(profile):
         'WIN_SIDE', '-1' if profile == 'bismarck' else '0').replace(
         'ONE_EXPECTED', '(negative_case==3?2:0)' if profile == 'bismarck' else '0').replace(
         'CONNECTION_TYPE', 'GmsvSession' if profile == 'bismarck' else 'CONNECT').replace(
-        'TIMER_EXPECTED', '0' if profile == 'bismarck' else '(negative_case==0?1010:1000)').replace(
-        'TIMER_DRAWS', '0' if profile == 'bismarck' else '(negative_case==0||negative_case==3)').replace(
-        'TIMER_SENDS', '0').replace('ORIGINAL_TIMER', '0' if profile == 'bismarck' else '1')
+        'TIMER_EXPECTED', '(negative_case==0?1015:1005)' if profile == 'bismarck' else '(negative_case==0?1010:1000)').replace(
+        'TIMER_DRAWS', '(negative_case==0||negative_case==3)').replace(
+        'TIMER_SENDS', '(negative_case==0||negative_case==3)' if profile == 'bismarck' else '0').replace('ORIGINAL_TIMER', '1')
 
 
 def cleanup_native(profile, source, battle, event, root):
@@ -151,14 +151,16 @@ def cleanup_native(profile, source, battle, event, root):
     extra += 'static int cleanup_fixed_rand(void){cleanup_timer_draws++;return 0;}\n'
     if profile != 'bismarck':
         extra += 'void lssproto_NU_send(int fd,int value){if(fd!=7||value!=-12)abort();cleanup_nu_sends++;}\n'
-        extra += '#pragma push_macro("time")\n#pragma push_macro("rand")\n#undef time\n#undef rand\n#define time cleanup_fixed_time\n#define rand cleanup_fixed_rand\n' + timer + '\n#undef rand\n#undef time\n#pragma pop_macro("rand")\n#pragma pop_macro("time")\n'
     else:
-        # The pinned default-preprocessed body references undeclared delayTime.
-        # Do not invent a value or enable another feature profile to hide it.
-        if 'delayTime' not in timer or re.search(r'\b(?:int|unsigned)\s+delayTime\b', timer):
-            raise ValueError('recorded Bismarck original timer compile boundary drift')
-        extra += 'BOOL CheckDefBTime(int actor,int fd,unsigned int low,unsigned int duration,unsigned int add){if(actor!=0||fd!=7||low!=900||duration!=0||add!=(CHAR_getFlg(actor,CHAR_ISDIE)?10:0))abort();return TRUE;}\n'
-        print('OPEN|bismarck|original_default_CheckDefBTime_undeclared_delayTime|typed_timer_fixture_only=1', flush=True)
+        # Complete original translation-unit dependency, not an invented delay
+        # or a feature-profile switch. Its declaration precedes the function.
+        delay = re.search(r'(?m)^const\s+int\s+delayTime\s*=\s*5\s*;', net_source)
+        if not delay:
+            raise ValueError('original Bismarck global delay declaration drift')
+        extra += delay[0] + '\nint ConnectLen=8;\n'
+        extra += 'void GmsvServer_NU_send(int fd,int value){if(fd!=7||value!=0)abort();cleanup_nu_sends++;}\n'
+        print(f'CLEANUP_SOURCE|bismarck|delayTime|sha256={hashlib.sha256(delay[0].encode()).hexdigest()}|value=5', flush=True)
+    extra += '#pragma push_macro("time")\n#pragma push_macro("rand")\n#undef time\n#undef rand\n#define time cleanup_fixed_time\n#define rand cleanup_fixed_rand\n' + timer + '\n#undef rand\n#undef time\n#pragma pop_macro("rand")\n#pragma pop_macro("time")\n'
     print(f'CLEANUP_SOURCE|{profile}|CheckDefBTime|sha256={hashlib.sha256(timer.encode()).hexdigest()}|connection_type_sha256={hashlib.sha256(match[0].encode()).hexdigest()}', flush=True)
     for helper in ('getCharloops', 'GmsvServer_NU_send', 'lssproto_NU_send'):
         try:
@@ -192,6 +194,8 @@ def cleanup_native(profile, source, battle, event, root):
         old_body = attack.definition(native, name)
         new_body = old_body.replace('{', '{\n' + injected, 1)
         native = capacity.prior.replace_once(native, old_body, new_body)
+    if attack.definition(native, 'CheckDefBTime') != timer:
+        raise ValueError('original timer body drift')
     for name in ('BATTLE_DeleteItem', 'BATTLE_DeleteBattle'):
         body = attack.definition(native, name)
         original = attack.definition(battle, name)
@@ -222,7 +226,7 @@ def validate_report(report):
                             item=3, live=int(duplicate), owner=0 if duplicate else -1,
                             references=2 if duplicate else 0, logs=2 if duplicate else 0,
                             data=int(duplicate), one=2 if duplicate and profile == 'bismarck' else 0,
-                            original_timer=int(profile == 'gavin'))
+                            original_timer=1)
             for name in ('second_loop', 'arena_released', 'tickets_cleared',
                          'whole_items', 'whole_actors', 'whole_arena', 'whole_connections'):
                 expected[name] = 1
@@ -245,7 +249,7 @@ def main():
     attack.main(native_builder=cleanup_native, extra_markers=(
         'REAL_HEADER_FINISH_DISPATCH|', 'REAL_HEADER_SAME_ITEM_CAPACITY|',
         'REAL_HEADER_TICKET_CLEANUP|'))
-    print('BOUNDARY|synthetic recipient/ticket and empty bag fixtures; Bismarck typed timer fixture default source compile fault; late descendants; no natural duplicate/invalid ticket reachability or early server identity')
+    print('BOUNDARY|synthetic recipient/ticket and empty bag fixtures; fixed time and rand with original timer bodies; typed transport; late descendants; no natural duplicate/invalid ticket reachability or early server identity')
     print('RESOLUTION|ORIGINAL_REAL_HEADER_SAME_ITEM_CAPACITY_BOUNDED_PASS')
     print('RESOLUTION|ORIGINAL_REAL_HEADER_TICKET_CLEANUP_BOUNDED_PASS')
 

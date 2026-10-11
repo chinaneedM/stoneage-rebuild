@@ -14,7 +14,7 @@ def sample_report():
                           references=2 if duplicate else 0, logs=2 if duplicate else 0,
                           data=int(duplicate), one=2 if duplicate and profile == 'bismarck' else 0,
                           second_loop=1, arena_released=1, tickets_cleared=1,
-                          whole_items=1, whole_actors=1, whole_arena=1, whole_connections=1, original_timer=int(profile == 'gavin'))
+                          whole_items=1, whole_actors=1, whole_arena=1, whole_connections=1, original_timer=1)
             lines.append(f'ACTUAL|{profile}|REAL_HEADER_TICKET_CLEANUP|' +
                          '|'.join(f'{k}={v}' for k,v in fields.items()))
     lines.append('RESOLUTION|ORIGINAL_REAL_HEADER_TICKET_CLEANUP_BOUNDED_PASS')
@@ -61,7 +61,7 @@ class CleanupEvidenceValidation(unittest.TestCase):
 
     def test_timer_execution_scope_cannot_be_promoted(self):
         report = sample_report()
-        for profile, before, after in [('bismarck', 'original_timer=0', 'original_timer=1'),
+        for profile, before, after in [('bismarck', 'original_timer=1', 'original_timer=0'),
                                        ('gavin', 'original_timer=1', 'original_timer=0')]:
             row = next(x for x in report.splitlines() if x.startswith('ACTUAL|'+profile+'|REAL_HEADER_TICKET_CLEANUP|'))
             with self.subTest(profile=profile), self.assertRaises(ValueError):

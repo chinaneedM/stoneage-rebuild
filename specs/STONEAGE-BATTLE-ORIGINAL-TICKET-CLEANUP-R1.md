@@ -40,16 +40,17 @@ PET and invalid actor invoke no timer. The complete eight-record connection
 array is checked. Previous inherited scenarios keep their accepted typed timer
 collector through audit-only dispatch; all game function bodies remain intact.
 
-Bismarck's default-preprocessed original CheckDefBTime instead references
-undeclared delayTime (_FIX_CHARLOOPS is disabled in this pinned profile). It
-cannot compile in this source domain. This gate does not invent delayTime or
-silently enable another feature profile. A clearly labelled typed timer fixture
-checks actor0/fd7/CreateTime900/duration0 and death add10 versus alive add0, leaves
-all eight original GmsvSession records unchanged and returns TRUE. Its exact
-invocation count is checked. Thus Bismarck item/actor/arena cleanup is accepted
-only with that dependency boundary; original_timer=0 is mandatory in its rows.
-Original Bismarck timer execution, network effects and any alternate enabled
-feature configuration remain OPEN. Gavin rows require original_timer=1.
+The original Bismarck default-preprocessed CheckDefBTime body also executes
+unchanged, together with its actual translation-unit global const delayTime=5
+and full native GmsvSession layout. With the same fixed time/rand and timing
+inputs, expected fd7 BDTime is1015 for death and1005 for duplicate pickup. Each
+valid player Exit makes exactly one rand call and one typed NU_send(fd7,0).
+All other bytes in the complete eight-record session array remain unchanged.
+The _FIX_CHARLOOPS feature profile is not enabled. Timer function extraction
+initially omitted the original global constant and failed standalone compilation;
+that harness omission was corrected by recovering the declaration, not by
+patching game logic. Both profiles require original_timer=1. Network collectors
+validate function arguments and counts, not real transport or client behavior.
 
 The validator requires eight distinct cleanup rows, all six retained capacity
 rows, paired O0/O2 profile witnesses and both resolution markers. Full native
@@ -65,4 +66,4 @@ phase transition or decision to reproduce duplicate ownership is implied.
 
 Highest NEXT: original NPC and non-player-side second-Finish guard matrix,
 including Gavin PET/side guard versus Bismarck non-PLAYER guard; preserve this
-negative cleanup gate and record the default Bismarck timer compile boundary.
+negative cleanup gate and original source-profile timer differences.
