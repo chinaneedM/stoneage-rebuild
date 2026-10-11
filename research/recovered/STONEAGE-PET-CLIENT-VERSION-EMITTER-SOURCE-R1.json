@@ -1,0 +1,48 @@
+{
+  "status": "SOURCE_ONLY_PINNED_HEADER_EMITTER_ORIENTATION",
+  "baseline_main": "25ee90d2bde22b71b7eb80f6248ea36d765a3daa",
+  "source": {
+    "repository": "BismarckDD/Stoneage",
+    "pinned_commit": "999ffdf1d220ec6666eb65339180689c9caf1876",
+    "blobs": {
+      "client/resources/version.h": "35bd4446a740a189c1ad9439e30e61fe169d5f46",
+      "client/stoneage/proto/protocol.h": "bb70087ef1b1915748da23935584eda2c8178cb0",
+      "client/stoneage/proto/protocol.cpp": "17f1900d8845c15308a4b429905ec009e5fd4c0f",
+      "server/common/gmsv_server.h": "708fe1b9f73be4952677fda474f10e86d9a56306",
+      "server/gmsv/include/version.h": "b3fc0c80705973bc8d088287c98a5d66171bb6c2"
+    }
+  },
+  "bounded_read_only_assertions": {
+    "client_header_selects_version_25": true,
+    "pet_define_under_version_80": true,
+    "client_opcode_127_conditional": true,
+    "server_opcode_127_conditional": true,
+    "client_sender_function_exists_under_pet_guard": true,
+    "client_sender_uses_optional_opcode": true,
+    "server_version_header_no_unconditional_pet_define": true
+  },
+  "evidence": {
+    "assertions_passed": 7,
+    "assertions_failed": 0,
+    "verification": "GitHub connector fetched exact pinned commit files and checked current blob SHA equality and bounded structural predicates",
+    "scope": "source only, not a full build, not a native execution, not an Actions acceptance",
+    "indexed_master_search": "Client sender symbol surfaced in declaration and implementation files; not an exhaustive pinned commit caller search"
+  },
+  "runtime_claims": {
+    "effective_client_default_macro_matrix_verified": false,
+    "alternate_build_enablement_verified": false,
+    "client_callsite_exhaustively_scanned": false,
+    "real_client_packet_sent": false,
+    "paired_server_enabled_runtime_verified": false,
+    "natural_item_ownership_transition_verified": false,
+    "early_JSS_TW10_membership_verified": false
+  },
+  "pressure": {
+    "total": 2486,
+    "bounded_closed": 2465,
+    "open": 18,
+    "historical_ub": 3,
+    "early_promotions": 0
+  },
+  "next": "Pin full client C/C++ tree and build configuration; source-scan actual sender callers and test default/forced preprocessing separately; prove real action-to-packet-to-server entry only when justified."
+}
