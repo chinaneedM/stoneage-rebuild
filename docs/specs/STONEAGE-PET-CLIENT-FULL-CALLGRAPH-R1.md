@@ -27,3 +27,8 @@ Status: **FULL_PINNED_CLIENT_SOURCE_ONLY_GATE**. This is a bounded late-descenda
 The source-only report supersedes **only** the previous inference from GitHub indexed search that declaration/definition were the only client references. It preserves earlier verified server-source findings and negative compile gates. Proprietary source/files/assets are not copied to the project repository.
 
 Historical pressure unchanged: 2486 total = 2465 bounded closed + 18 OPEN + 3 historical UB; zero early historical promotions. Current highest NEXT is compile-approved, client-authenticated packet/handler reachability in a late descendant followed by a *non-synthetic* owner/unique-code lifecycle witness, only where provenance supports it.
+
+
+## Accepted remote execution
+
+On tested commit `95109a740852ed4bfa3a587fccdcf2702e5dcbe1`, GitHub Actions run `38145213269` / job `114487010565` concluded **SUCCESS**, every listed step green, 20 strict mutation and retained regression tests passed; the 237-source report reproduced byte-for-byte against committed `research/recovered/STONEAGE-PET-CLIENT-FULL-CALLGRAPH-R1.txt`. GitHub artifact `11704168980` ZIP digest reported as `sha256:263a178c4e8f6b5a615a7dc5805aff5946fea39c3070017ccae27797e93af8e9` (digest supplied by GitHub; no independent downloaded ZIP hash claim). Accepted source-only receipt: `research/recovered/STONEAGE-PET-CLIENT-FULL-CALLGRAPH-ACCEPTANCE-R1.json`. Earlier failing runs served as negative gates exposing the three true guarded UI calls; no passing validation was claimed until the acceptance workflow and committed report matched.
