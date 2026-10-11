@@ -1,0 +1,126 @@
+{
+  "status": "REMOTE_ACCEPTED_BOUNDED",
+  "baseline_main_head": "cd81d908ef0faa70389dc9eaf3233116a02fe5bf",
+  "source_profiles": {
+    "gavin": "1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56",
+    "bismarck": "999ffdf1d220ec6666eb65339180689c9caf1876"
+  },
+  "tested_original_functions": [
+    "BATTLE_AddExpItem",
+    "BATTLE_ItemDelCheck",
+    "ITEM_makeItem",
+    "ITEM_makeItemAndRegist",
+    "_ITEM_initExistItemsOne",
+    "_ITEM_endExistItemsOne"
+  ],
+  "matrix": {
+    "profiles": [
+      "gavin",
+      "bismarck"
+    ],
+    "alias_cases": [
+      -1,
+      2,
+      0
+    ],
+    "cases": 6,
+    "compiler_modes": [
+      "O0",
+      "O2"
+    ],
+    "new_native_executions": 12,
+    "preexisting_ACTUAL_rows_exactly_preserved": 1076,
+    "new_ACTUAL_rows": 6
+  },
+  "fixture": {
+    "enemy": 6,
+    "pet": 2,
+    "player": 0,
+    "victim_index": 8,
+    "old_item_id": 1,
+    "new_item_id": 2,
+    "configured_fdnum": 2,
+    "original_eligible_player_indexes": [
+      0,
+      1
+    ],
+    "pending_ticket_order": [
+      11,
+      9,
+      10
+    ],
+    "original_assignment_draws": 6,
+    "original_factory_draws": 66,
+    "synthetic_occupied_blockers": 244,
+    "original_allocator_cursor_reset": false
+  },
+  "outcome": {
+    "no_alias": {
+      "released": true,
+      "reused_index": 8,
+      "new_item_id": 2,
+      "old_item_owner": -1,
+      "new_item_owner": -1,
+      "factory_diagnostics": 0
+    },
+    "pet2_stale_alias": {
+      "released": true,
+      "reused_index": 8,
+      "pet_stale_reference": 8,
+      "new_item_id": 2,
+      "new_item_owner": -1,
+      "factory_diagnostics": 0
+    },
+    "player0_carried_alias": {
+      "released": false,
+      "blocked_by_original_guard": true,
+      "returned_factory_index": -1,
+      "old_item_id": 1,
+      "old_owner": 6,
+      "carried_reference": 8,
+      "full_pool_diagnostics": {
+        "gavin": 1,
+        "bismarck": 2
+      }
+    }
+  },
+  "complete_state_oracles": [
+    "256 original item records with 255 noncandidate records identical",
+    "seven complete actor records identical during factory",
+    "full battle arena identical during factory",
+    "eight connection records identical",
+    "full original direct and Bismarck indirect item factory table records identical",
+    "native RNG and live-count exact",
+    "original factory returns and owner values exact",
+    "no duplicate drop release or guard warning by factory"
+  ],
+  "artifact": {
+    "run_id": 38140069870,
+    "job_id": 114471937741,
+    "workflow_conclusion": "success",
+    "all_steps_success": true,
+    "python_unit_checks": 171,
+    "artifact_id": 11702686283,
+    "zip_bytes": 34844,
+    "zip_sha256": "b6e188a84a274a8278eaadfaa5a5f586a1c7a20e40438b08254fd8a7ec3539e9",
+    "zip_digest_independently_verified": true,
+    "report_bytes": 643637,
+    "report_sha256": "bb0d3d01f1c02373293b649786532a1e54c20a6b6231f444bbeb9252a069c66a",
+    "report_git_blob_sha": "b7c69c7af9a299bc0b55ece69026fcb5be073e65",
+    "remote_report_blob_matches_local_git_hash": true,
+    "independent_factory_bytes": 32466,
+    "independent_factory_sha256": "ae632bc03bf06ca1661e4ba0d151595f9ccd075d0c1eb67d5b3acb22b5e8ff59",
+    "factory_report_matches_previously_accepted_hash": true,
+    "tested_work_branch": "agent/original-released-slot-reuse-r1-20261011",
+    "tested_commit": "87f5af8df2873afb1c52589febf5a5a5d2abd431"
+  },
+  "boundary": "Only pinned late descendant source builds under controlled native fixture. Synthetic aliases, forced pool occupancy, deterministic RNG and synthetic fdnum adapter. Index reuse is not naturally reachable historical provenance, no original JSS1999/Taiwan-v1 equivalence, no real client/network/session callback, early object identity or modern design conclusion.",
+  "pressure": {
+    "total": 2486,
+    "bounded_closed": 2465,
+    "open": 18,
+    "historical_ub": 3,
+    "promotions": 0
+  },
+  "next": "Investigate natural reachability and lifecycle of stale PET references and early unique object identity (not proven by synthetic alias reuse); do not design modern engine from historical alias result."
+}
