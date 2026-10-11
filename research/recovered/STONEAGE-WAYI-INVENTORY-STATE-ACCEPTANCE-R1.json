@@ -1,0 +1,484 @@
+{
+  "schema": "STONEAGE-WAYI-INVENTORY-STATE-ACCEPTANCE-R1",
+  "date": "2026-10-12",
+  "source_commit": "6bb0324bc379ecc7ba04eb8758349a01e9e546a9",
+  "source_tree": "ead76cc8a22437a78fe55249d769fd598e95ceef",
+  "branch": "agent/wayi-inventory-state-layout-r1-20261012",
+  "fresh_base": "bf3cb8d3f550146fe734fff03db8ada62ce9ab78",
+  "fresh_base_tree": "af2294b264555f969fc7d2ffaa747741c9deda3d",
+  "branch_runs": [
+    {
+      "id": 38164529028,
+      "name": "Validate Wayi compiled ordinary inventory state",
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "6bb0324bc379ecc7ba04eb8758349a01e9e546a9",
+      "head_branch": "agent/wayi-inventory-state-layout-r1-20261012",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/38164529028",
+      "jobs": [
+        {
+          "id": 114544208443,
+          "name": "offline-inventory",
+          "status": "completed",
+          "conclusion": "success",
+          "run_id": 38164529028,
+          "logs_url": null,
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3
+            },
+            {
+              "name": "Install pinned static decoder",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4
+            },
+            {
+              "name": "Validate inventory layout and adjacent evidence regressions",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 5
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 9
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 10
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 11
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 38164528996,
+      "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "6bb0324bc379ecc7ba04eb8758349a01e9e546a9",
+      "head_branch": "agent/wayi-inventory-state-layout-r1-20261012",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/38164528996",
+      "jobs": [
+        {
+          "id": 114544208549,
+          "name": "provenance",
+          "status": "completed",
+          "conclusion": "success",
+          "run_id": 38164528996,
+          "logs_url": null,
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3
+            },
+            {
+              "name": "Confirm source-only version separation and safe archive signature tests",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 7
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 8
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 9
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 38164529017,
+      "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "6bb0324bc379ecc7ba04eb8758349a01e9e546a9",
+      "head_branch": "agent/wayi-inventory-state-layout-r1-20261012",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/38164529017",
+      "jobs": [
+        {
+          "id": 114544208480,
+          "name": "boundary",
+          "status": "completed",
+          "conclusion": "success",
+          "run_id": 38164529017,
+          "logs_url": null,
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3
+            },
+            {
+              "name": "Verify historical announcement separately from code, binary and early-version claims",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 7
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 8
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 9
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "main_runs": [
+    {
+      "id": 38164578349,
+      "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "6bb0324bc379ecc7ba04eb8758349a01e9e546a9",
+      "head_branch": "main",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/38164578349",
+      "jobs": [
+        {
+          "id": 114544362191,
+          "name": "provenance",
+          "status": "completed",
+          "conclusion": "success",
+          "run_id": 38164578349,
+          "logs_url": null,
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3
+            },
+            {
+              "name": "Confirm source-only version separation and safe archive signature tests",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 7
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 8
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 9
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 38164578756,
+      "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "6bb0324bc379ecc7ba04eb8758349a01e9e546a9",
+      "head_branch": "main",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/38164578756",
+      "jobs": [
+        {
+          "id": 114544363081,
+          "name": "boundary",
+          "status": "completed",
+          "conclusion": "success",
+          "run_id": 38164578756,
+          "logs_url": null,
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3
+            },
+            {
+              "name": "Verify historical announcement separately from code, binary and early-version claims",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 7
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 8
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 9
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 38164578364,
+      "name": "Validate Wayi compiled ordinary inventory state",
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "6bb0324bc379ecc7ba04eb8758349a01e9e546a9",
+      "head_branch": "main",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/38164578364",
+      "jobs": [
+        {
+          "id": 114544362109,
+          "name": "offline-inventory",
+          "status": "completed",
+          "conclusion": "success",
+          "run_id": 38164578364,
+          "logs_url": null,
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3
+            },
+            {
+              "name": "Install pinned static decoder",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4
+            },
+            {
+              "name": "Validate inventory layout and adjacent evidence regressions",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 5
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 9
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 10
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 11
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "branch_log": {
+    "job_id": 114544208443,
+    "ran134": true,
+    "ok": true
+  },
+  "main_log": {
+    "job_id": 114544362109,
+    "ran134": true,
+    "ok": true
+  },
+  "integration": {
+    "expected_main": "bf3cb8d3f550146fe734fff03db8ada62ce9ab78",
+    "compare": {
+      "ahead_by": 1,
+      "behind_by": 0,
+      "files": [
+        {
+          "filename": ".github/workflows/validate-stoneage-wayi-inventory-state.yml",
+          "status": "added"
+        },
+        {
+          "filename": "docs/CURRENT-STATE.md",
+          "status": "modified"
+        },
+        {
+          "filename": "docs/HISTORICAL-TIMELINE.md",
+          "status": "modified"
+        },
+        {
+          "filename": "docs/SOURCE-REGISTRY.md",
+          "status": "modified"
+        },
+        {
+          "filename": "docs/specs/STONEAGE-WAYI-INVENTORY-STATE-R1.md",
+          "status": "added"
+        },
+        {
+          "filename": "research/recovered/STONEAGE-WAYI-INVENTORY-STATE-R1.json",
+          "status": "added"
+        },
+        {
+          "filename": "tests/test_stoneage_wayi_inventory_state_probe.py",
+          "status": "added"
+        },
+        {
+          "filename": "tools/stoneage_wayi_inventory_state_probe.py",
+          "status": "added"
+        }
+      ]
+    },
+    "force": false,
+    "remote_local_tree_equal": true,
+    "entire_prior_continuity_blobs_preserved_as_exact_byte_prefixes": true
+  },
+  "tests": 134,
+  "new_controls": 20,
+  "adjacent_checks": 114,
+  "accepted": "STATIC_COMPILED_CLIENT_DISPLAY_LAYOUT_ONLY",
+  "routes": [
+    "I22 incremental slot+14 fields",
+    "S46/I full24 slots",
+    "SI24 selective swap"
+  ],
+  "record_stride": 388,
+  "ordinary_empty_clear_bytes": 2,
+  "pet_empty_clear_bytes": 388,
+  "swap_exchanges_alch": false,
+  "server_ordinary_record_tokens": 14,
+  "client_ordinary_record_tokens": 15,
+  "matching_server_verified": false,
+  "original_program_executed": false,
+  "wire_packet_captured": false,
+  "native_owner_lifecycle_verified": false,
+  "early_version_promoted": false,
+  "pressure": {
+    "total": 2486,
+    "bounded_closed": 2465,
+    "open": 18,
+    "historical_ub": 3
+  },
+  "next": "Exact compiled bidirectional codec/key initialization and framing profile; independent synthetic vectors and separately pinned server comparison; original server provenance/native pair gates remain OPEN."
+}
