@@ -10,7 +10,7 @@ def row(profile, alias):
         "created": -1 if blocked else 8, "new_id": 1 if blocked else 2,
         "old_owner": 6 if blocked else -1, "new_owner": 6 if blocked else -1,
         "released": 0 if blocked else 1, "guard_warnings": int(blocked),
-        "factory_diagnostics": int(blocked),
+        "factory_diagnostics": int(blocked) * (2 if profile == "bismarck" else 1),
         "release_calls": int(not blocked), "assignment_draws": 6,
         "factory_draws": 66, "blockers": 244, "count_delta": int(not blocked),
         "pet_ref": 8 if alias == 2 else -1, "player_ref": 8 if blocked else -1,
@@ -46,6 +46,7 @@ class ReleasedSlotReuseEvidence(unittest.TestCase):
                          ("player_ref=8", "player_ref=-1"),
                          ("guard_warnings=1", "guard_warnings=0"),
                          ("factory_diagnostics=1", "factory_diagnostics=0"),
+                         ("factory_diagnostics=2", "factory_diagnostics=1"),
                          ("released=1", "released=0")):
             target = next(x for x in lines if old in x)
             with self.subTest(old=old), self.assertRaises(ValueError):
