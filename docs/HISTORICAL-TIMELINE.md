@@ -2479,3 +2479,10 @@ Historical uncertainty stays explicit: natural reachability and first-build iden
 ## 2026-10-11 — Three-stage conditional PET packet path recovered in later descendant (correction)
 
 **FACT, late Bismarck999ffdf1 source only:** server/common/gmsv_server_send.c optional LSSPROTO_PET_ITEM_RECV decoder → server/common/gmsv_server_recv.c GmsvServer_PETITEM_recv → server/gmsv/char/char_item.c CHAR_movePetItem. Thus the previous "0 direct caller" applies only to server/gmsv, not whole server source. Each stage has _PET_ITEM compile guard, and pinned default GNU GCC preprocessing omits all three. Explicit -D_PET_ITEM enables all three source bodies but is not evidence of a shipped binary. Receipt STONEAGE-PET-ITEM-PROTOCOL-CROSSMODULE-ACCEPTANCE-R1.json and Action38143205543 SUCCESS. Natural client invocation, owner identity and early version membership OPEN.
+
+
+## 2026-10-11 — Pinned late-descendant client-side PET emitter conditionality (not early history)
+
+**FACT (bounded raw-source observation, Bismarck999ffdf1 only):** In the pinned client/resources/version.h, checked-in _SA_VERSION_25 is selected, while the _PET_ITEM definition sits inside the _SA_VERSION_80 conditional. Conditional client/stoneage/proto/protocol.h and protocol.cpp implement lssproto_PetItemEquip_send with packet number 127, numerically matching the conditional server/common/gmsv_server.h PET receive identifier. Five exact original Git blobs and seven read-only checks verified; documented in STONEAGE-PET-CLIENT-VERSION-EMITTER-SOURCE-R1.json. Presence of a sender function does **not** prove a compiled or invoked sender. No exhaustive pinned source caller scan, real build configuration, original client packet, or actual PET owner transition is established.
+
+**OPEN:** Alternate actual client 8.0 build flags, pinned-client emitter callers/generated dispatch, matching enabled server, deployed binaries, JSS1999/Taiwan1.0 provenance. No retrospective promotion to early StoneAge. Historical pressure unchanged.
