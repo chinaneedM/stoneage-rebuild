@@ -1,5 +1,5 @@
 {
-  "status": "LOCAL_PASS_REMOTE_PENDING",
+  "status": "REMOTE_ACCEPTED_BOUNDED",
   "baseline_commit": "e4c447f34aa7037be5b548c81d0d4b0a734b354f",
   "baseline_tree": "324c5ca67ee781d28c6bd3bc11934fbf4c0150a5",
   "direct_guard_rows": 96,
@@ -84,5 +84,40 @@
     "historical_ub": 3,
     "historical_promotions": 0
   },
-  "next": "Original allocator slot reuse after the accepted owned PET2 alias release: preserve actual original assignment and release, allocate original factory objects without cursor rewind, verify full pool/count/owners/references and distinguish stale index references from new object identity; keep natural reachability and subsequent callbacks OPEN."
+  "next": "Original allocator slot reuse after the accepted owned PET2 alias release: preserve actual original assignment and release, allocate original factory objects without cursor rewind, verify full pool/count/owners/references and distinguish stale index references from new object identity; keep natural reachability and subsequent callbacks OPEN.",
+  "remote": {
+    "tested_commit": "091d4520318ef4c92ee04c6971e20487e7fe5393",
+    "tested_tree": "d7d4260ecba7075f03c5077c78f3f5fbf0d73e6b",
+    "branch": "agent/original-guard-index-range-r1-20261011",
+    "run_id": 38138139517,
+    "job_id": 114466176374,
+    "conclusion": "success",
+    "all12_steps_success": true,
+    "python_checks": 164,
+    "artifact_id": 11701372754,
+    "ZIP_bytes": 34438,
+    "ZIP_sha256": "ecaf3462842e8bcb16a5bc5a4ef3e800f8610ab473fd80b570e5578ccc889970",
+    "artifact_digest_independently_verified": true,
+    "both_reports_byte_exact_with_local": true
+  },
+  "next_gate_source_only_orientation": {
+    "gavin": {
+      "body_sha256": "debe8ffbcb2b1ee58eba4ec3870210861bb62e8c3f11620e2c5799163c1cf558",
+      "status": "SOURCE_ONLY_NEXT_GATE_ORIENTATION",
+      "static_cursor": true,
+      "wraps_to_index1": true,
+      "inactive_slot_carry_check_uses_record_owner_and_PLAYER_type": true,
+      "new_object_record_copied_into_reused_index": true,
+      "natural_reuse_with_synthetic_pet_alias_not_tested": true
+    },
+    "bismarck": {
+      "body_sha256": "0cee50b39499960ce599b92d6364ea192d149b5d20fe5d5b400eb8afac711f56",
+      "status": "SOURCE_ONLY_NEXT_GATE_ORIENTATION",
+      "static_cursor": true,
+      "wraps_to_index1": true,
+      "inactive_slot_carry_check_uses_record_owner_and_PLAYER_type": true,
+      "new_object_record_copied_into_reused_index": true,
+      "natural_reuse_with_synthetic_pet_alias_not_tested": true
+    }
+  }
 }

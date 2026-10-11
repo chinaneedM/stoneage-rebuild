@@ -1,6 +1,8 @@
 # Original ItemDelCheck configuration/index/type/validity crossing R1
 
-Status: LOCAL PASS; remote acceptance pending.
+Status: REMOTE ACCEPTED bounded. Action38138139517/job114466176374 SUCCESS
+at091d4520318ef4c92ee04c6971e20487e7fe5393; all12 steps/164 Python checks.
+Remote ZIP digest independently verified; both reports byte-exact with local.
 
 FACT bounded to clean pinned Gavin1f90cb6/Bismarck999ffdf1 descendants,
 GNU99 O0/O2 nonrecovering UBSan and explicitly controlled native fixtures.
