@@ -1,0 +1,31 @@
+{
+  "schema": "stoneage-late-client-region-version-acceptance-r1",
+  "date": "2026-10-11",
+  "repository": "chinaneedM/stoneage-rebuild",
+  "accepted_tested_commit": "87806eeba36737e34a3e861091e626df5541e33d",
+  "workflow_run_id": 38148581578,
+  "workflow_job_id": 114497032422,
+  "workflow_conclusion": "success",
+  "tests_passed": 10,
+  "cli_marker": "LATE_CLIENT_REGION_VERSION_PROVENANCE_BOUNDARY_PASS",
+  "failed_predecessor": {
+    "run_id": 38148489571,
+    "job_id": 114496761773,
+    "root_cause": "Doubled Python magic-header escape literals",
+    "fixed_with": "Literal-byte magic regression checks"
+  },
+  "scope": "source-only regional/version provenance and synthetic offline archive metadata tool",
+  "candidate_count": 4,
+  "real_original_client_bytes_inspected": false,
+  "real_original_server_bytes_inspected": false,
+  "real_original_binary_hash": null,
+  "original_pet_packet_executed": false,
+  "early_version_promotion": false,
+  "historical_pressure": {
+    "total": 2486,
+    "closed_bounded": 2465,
+    "open": 18,
+    "ub": 3
+  },
+  "engine_transition": false
+}
