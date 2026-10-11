@@ -1,0 +1,68 @@
+{
+  "status": "LOCAL_PASS_REMOTE_PENDING",
+  "baseline_commit": "c266837f8a9fe41adb052766ebb8e7bd19da8c2f",
+  "baseline_tree": "6dabd355373695ac145fd0615962cafce7df88be",
+  "assignment_rows": 48,
+  "payout_rows": 192,
+  "new_original_finish_executions": 768,
+  "prior_ACTUAL_rows_byte_exact": 740,
+  "original_battle_function_hashes": [
+    "PARTITION_SOURCE|gavin|BATTLE_AddExpItem|sha256=8bf2e1bab742b3c468f13a8e94ea674be8b6fab4fa675fba13aa7f5f0a45080d",
+    "PARTITION_SOURCE|gavin|BATTLE_ItemDelCheck|sha256=9a6a8ac26641043cb26699eed0ca11edf8806e244626d3377ef8f607f2cf95ce",
+    "PARTITION_SOURCE|gavin|BATTLE_GetProfit|sha256=35edd4961868b6a4d50cade0c6141b1659cb28ba914e8ccd93c4a9347bcc855d",
+    "PARTITION_SOURCE|gavin|BATTLE_GetExpGold|sha256=7e8dcab1862b6b845e529630f807d7f91e29a7b337f2ea486d9b01a88397822b",
+    "PARTITION_SOURCE|gavin|BATTLE_Finish|sha256=e440d90b269bcb0620dcd96fda4758a0720bf367f14936f035ab9bbc787006e4",
+    "PARTITION_SOURCE|gavin|BATTLE_DeleteBattle|sha256=9b503d98f6b22d1a5e4c4b44c11ead0487dcb05a3cc83db3c1344bb8183d299a",
+    "PARTITION_SOURCE|bismarck|BATTLE_AddExpItem|sha256=0e77d7ea410eb0c62aa7db17878a860a740f85d04c873b5f10b57968d66b8e12",
+    "PARTITION_SOURCE|bismarck|BATTLE_ItemDelCheck|sha256=95d7897afdab2163b1b13b7a87d55e83e65b49018063487fedce85b19266c3cc",
+    "PARTITION_SOURCE|bismarck|BATTLE_GetProfit|sha256=5682714a9f08532fc7c492b854f09a8304a8f5fc0fe4c661a0a28bceb7f10e94",
+    "PARTITION_SOURCE|bismarck|BATTLE_GetExpGold|sha256=acf3c59f6475634b5d2354e10c7867676ef47a171c0e4fe60b5d67612508db36",
+    "PARTITION_SOURCE|bismarck|BATTLE_Finish|sha256=b369c2af159f182ed7e918ec083f73ae76ade2e3e3f907ae7525306f5ec035b8",
+    "PARTITION_SOURCE|bismarck|BATTLE_DeleteBattle|sha256=01e105e4a325a1923c8032bcab585f80201a760580a925bea8f2f7f9f30725fe"
+  ],
+  "local_report": {
+    "bytes": 595428,
+    "sha256": "349ef280647212da4cca9649492977d82a25ab855842b9cac7af0c4f5164f9b6"
+  },
+  "independent_factory_report": {
+    "bytes": 32466,
+    "sha256": "ae632bc03bf06ca1661e4ba0d151595f9ccd075d0c1eb67d5b3acb22b5e8ff59",
+    "same_as_accepted_predecessor": true
+  },
+  "index_guard": {
+    "getFdnum": 2,
+    "included_PLAYER_indexes": [
+      0,
+      1
+    ],
+    "excluded_owned_PET_index": 2,
+    "type_predicate_in_original_guard": false
+  },
+  "player_alias": {
+    "guard_warnings": 1,
+    "assignment_release": 0,
+    "count_delta": 0,
+    "victim_use": 1,
+    "victim_owner": 6,
+    "carried_refs": 1
+  },
+  "pet_alias": {
+    "guard_warnings": 0,
+    "assignment_release": 1,
+    "count_delta": -1,
+    "victim_use": 0,
+    "victim_owner": -1,
+    "carried_refs": 1,
+    "reference_survives_payout": true,
+    "payout_second_release": 0
+  },
+  "source_boundary": "Pinned late descendants, synthetic prepared aliases/master/RNG/bags/descriptor collectors and normalized player EXP. No natural reachability, early identity, safe modern ownership DESIGN or actual client/network. Original sources transient only.",
+  "pressure": {
+    "total": 2486,
+    "bounded_closed": 2465,
+    "open": 18,
+    "historical_ub": 3,
+    "historical_promotions": 0
+  },
+  "next": "Original guard index-range configuration: controlled getFdnum2 versus3 and PLAYER/PET type crossing, with complete guard no-state-mutation oracles; distinguish index inclusion from actor-type protection, then investigate released-slot reuse separately."
+}
