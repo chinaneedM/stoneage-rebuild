@@ -50,6 +50,7 @@ jobs:
           from tools.stoneage_pet_item_identity_source_audit import validate_report
           p=Path('/tmp/STONEAGE-PET-ITEM-IDENTITY-SOURCE-R1.txt')
           profiles, functions=validate_report(p.read_text())
+          assert p.read_bytes()==Path('research/recovered/STONEAGE-PET-ITEM-IDENTITY-SOURCE-R1.txt').read_bytes(), 'remote derived report must be byte-exact with committed proof'
           assert len(profiles)==2 and len(functions)==22
           print('Verified:',len(profiles),'pinned profiles,',len(functions),'source function fingerprints, early provenance OPEN')
           PY
