@@ -11858,3 +11858,65 @@ reviewed discovery gate and its automated derived-report writeback is authorized
   active bag slot; verify award/cleanup shared-item retention using complete
   state/presentation oracles. Distinct-item competition requires actual original
   creation evidence; retain original profile name/identification distinctions.
+
+
+## 2026-10-11 — Original last-slot ticket competition REMOTE ACCEPTED (bounded)
+
+- Fresh baseline main3117e6ad9fb6fb523472de18e3ec8223150e7b21,tree96609bc1fe7da67361f596bc7b7ce2f4f3d7b5c1.
+  Prior complete state blobd5c6d58b004d2f0165cccd88c488d74e221ab748,1251336 bytes and complete
+  previous timeline/source registry preserved as exact prefixes.
+- Branch agent/original-last-slot-ticket-r1-20261011,tested inputee85e142a4d7fb60e2b63e77871ee194f45b7523,tree620d9b8f105dae1db20f8647894ff1c78818ceba.
+  Action38112978727/job114392200741,all 12 steps SUCCESS;97 Python checks,
+  Gavin/Bismarck GNU99 O0/O2 nonrecovering UBSan complete-output equality,
+  independent item factory report byte-exact against local and prior gate.
+- Original enemy6/item3/ID1 factory and AddExpItem chain retained. Actual separate
+  Loop(FINISH)/Finish/GetProfit/GetExpGold/Exit/DeleteBattle executes each replay.
+  Explicit logical256 pool restored to inherited8 after the matrix. Synthetic
+  inactive-pool fillers occupy active bag9..23 Gavin /9..53 Bismarck; original
+  active limits24/54 asserted, final slot23/53 optionally left empty. Full256
+  item records including every filler are compared; fillers are explicit inputs,
+  not extra natural drop creation or a new factory claim.
+- Both GETITEM_MAX3. Each capacity/profile has18 single-valid patterns (valid3
+  at each position among two249/256/INT_MAX/-2/INT_MIN/-1) and15 duplicate-valid
+  patterns (two3 aliases with one249/256/INT_MAX/-2/INT_MIN at each position).
+  Full/one-free capacities yield132 new rows,528 NEW Finish calls including
+  264 no-ticket controls/264 replays;108 predecessor rows/432 calls retained
+  byte-exact (capacity6/cleanup8/side16/invalid12/mixed66 rows).
+- Exactly one free slot: earliest valid ticket alone awards3 into23/53; later
+  same-item alias declines but its actual original release call preserves the
+  carried item live1/owner0/object-1, one reference, unchanged count. One pickup
+  log/aggregate send, Bismarck single-slot send1. Full bag: zero awards/logs/item
+  sends/references, item3 inactive/owner-1, count decreases exactly once even
+  with two alias release attempts. Invalid positions do not reserve the slot.
+- Forwarding observer calls unchanged original _ITEM_endExistItemsOne with
+  unchanged arguments; release/search/add-item body fingerprints match pinned
+  originals. Count item3 calls=pending_valid-awards, explicit nonnegative invalid
+  calls=number of249/256/INT_MAX tickets. Original empty -1 teardown baseline
+  is54 Gavin/84 Bismarck and is identical in each no-ticket/ticket pair; total
+  calls=baseline+item3+invalid. Initial zero-call control assumption corrected
+  after tracing original empty-slot teardown; no source body patched/suppressed.
+- Entire256 item/seven Char/full BATTLE match no-ticket differential plus
+  predicted award/release. Arena use0/modeNONE/Total_BattleNum0, all tickets -1,
+  complete carried scans and presentation counts pass. Full original RS: one fd7
+  packet, no-ticket EXP/Exit prefix plus three ordered name fields/separators,
+  only earliest accepted slot populated. Original Gavin LEAKLEVEL1/empty
+  SECRETNAME versus Bismarck LEAKLEVEL0/NAME Factory retained; logs use ordinary
+  Factory in both. Empty Gavin names alone do not prove no pickup.
+- All eight native connections/original timers retained: time1000/rand0/
+  CreateTime900/duration0, call/draw1, Gavin BDTime1000/Bismarck1005, original
+  delayTime5 and typed NU(fd7,0) once. RS prefix remains differential evidence,
+  typed transports do not establish real-client rendering or EXP math.
+- Artifact11692551246,ZIP21606 bytes SHA256272f5d8b8af032903350ba93170517b8eca25b1ecd27acf48857643c92a57345;
+  independently downloaded/digest-verified, both reports byte-exact with local.
+  Derived report137748 bytes SHA256c0cd23bafd5f19a393506e0e6750b40ccab4d1a4fc17ceb32025bbacb53b2821.
+  Tool/spec/report/receipt STONEAGE-BATTLE-ORIGINAL-LAST-SLOT-TICKET-*R1;
+  original C/headers/assets transient only, no source redistribution.
+- Pressure unchanged2486=2465 bounded closed+18 OPEN+3 historical UB, zero
+  promotions; no modern-engine phase transition. Natural invalid/duplicate
+  tickets, distinct-item generation, masters/probability/actor entry, special NPC
+  variants, early server identity, positive gold/config, callbacks/unique/time
+  and actual client/network remain OPEN.
+- Highest NEXT: obtain original creation evidence for multiple distinct live
+  drop items, then test their ordered competition for exactly one remaining
+  active slot with complete state/presentation/release oracles. Preserve the
+  original profile identification/name distinctions and accepted same-item gate.

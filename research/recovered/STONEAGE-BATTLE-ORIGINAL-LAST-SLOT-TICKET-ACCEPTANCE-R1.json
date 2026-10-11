@@ -1,0 +1,282 @@
+{
+  "status": "REMOTE_ACCEPTED_BOUNDED",
+  "date": "2026-10-11",
+  "repo": "chinaneedM/stoneage-rebuild",
+  "prior_main": "3117e6ad9fb6fb523472de18e3ec8223150e7b21",
+  "prior_main_tree": "96609bc1fe7da67361f596bc7b7ce2f4f3d7b5c1",
+  "branch": "agent/original-last-slot-ticket-r1-20261011",
+  "tested_commit": "ee85e142a4d7fb60e2b63e77871ee194f45b7523",
+  "tested_tree": "620d9b8f105dae1db20f8647894ff1c78818ceba",
+  "github_action": {
+    "run": 38112978727,
+    "job": 114392200741,
+    "conclusion": "success",
+    "head_sha": "ee85e142a4d7fb60e2b63e77871ee194f45b7523",
+    "all_steps_success": true,
+    "steps_count": 12,
+    "artifact": {
+      "id": 11692551246,
+      "zip_bytes": 21606,
+      "zip_sha256": "272f5d8b8af032903350ba93170517b8eca25b1ecd27acf48857643c92a57345",
+      "independent_zip_sha_verified": true,
+      "reports": {
+        "stoneage-battle-original-last-slot-ticket-r1.txt": {
+          "bytes": 137748,
+          "sha256": "c0cd23bafd5f19a393506e0e6750b40ccab4d1a4fc17ceb32025bbacb53b2821",
+          "exact_local_bytes": true
+        },
+        "stoneage-item-factory-retained-r1.txt": {
+          "bytes": 32466,
+          "sha256": "ae632bc03bf06ca1661e4ba0d151595f9ccd075d0c1eb67d5b3acb22b5e8ff59",
+          "exact_local_bytes": true
+        }
+      }
+    }
+  },
+  "python_tests": 97,
+  "source_pins": {
+    "gavin": "1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56",
+    "iris": "9e6c8ce2cd8ed532a7157773acd1c61582c178b5",
+    "bismarck": "999ffdf1d220ec6666eb65339180689c9caf1876"
+  },
+  "prior_documents_preserved_as_exact_prefix": {
+    "docs/CURRENT-STATE.md": {
+      "bytes": 1251336,
+      "sha256": "5dc482e8c32c781fd31c1f3f5de1c5e79b32609d80e5b1e66c641aacbee5c48e",
+      "git_blob": "d5c6d58b004d2f0165cccd88c488d74e221ab748"
+    },
+    "docs/HISTORICAL-TIMELINE.md": {
+      "bytes": 200534,
+      "sha256": "0d57af8d647c8e1814bb21bdebd5ad8fb13e2789b8aedcf1d48507563abab504",
+      "git_blob": "83c9b6069e965f1e425a815ab3be9c595bf99701"
+    },
+    "docs/SOURCE-REGISTRY.md": {
+      "bytes": 419471,
+      "sha256": "295786902d9c6946398e6b09888000f382272c0c64acd0b81bce4b968c8ffe57",
+      "git_blob": "717a4ae564c6da114900c287318644a61733d512"
+    }
+  },
+  "original_source_hash_rows": [
+    "CLEANUP_SOURCE|gavin|CheckDefBTime|sha256=ea245dc2e56a6e04ed88779247dfd2741149edc632e9c833da84118db4b18985|connection_type_sha256=ef00ad508afb71e7840db271cc674a463b9f0a4af6f19fb08e7d72d010015696",
+    "CLEANUP_SOURCE|gavin|BATTLE_DeleteItem|native_sha256=9bbfb952b8b54c31a249adc563a4868ff7c00b587deadc434b949b6758ca69c2|preprocessed_sha256=9bbfb952b8b54c31a249adc563a4868ff7c00b587deadc434b949b6758ca69c2",
+    "CLEANUP_SOURCE|gavin|BATTLE_DeleteBattle|native_sha256=9b503d98f6b22d1a5e4c4b44c11ead0487dcb05a3cc83db3c1344bb8183d299a|preprocessed_sha256=9b503d98f6b22d1a5e4c4b44c11ead0487dcb05a3cc83db3c1344bb8183d299a",
+    "RECIPIENT_SIDE_SOURCE|gavin|BATTLE_Finish|sha256=e440d90b269bcb0620dcd96fda4758a0720bf367f14936f035ab9bbc787006e4",
+    "RECIPIENT_SIDE_SOURCE|gavin|BATTLE_GetProfit|sha256=35edd4961868b6a4d50cade0c6141b1659cb28ba914e8ccd93c4a9347bcc855d",
+    "RECIPIENT_SIDE_SOURCE|gavin|BATTLE_GetExpGold|sha256=7e8dcab1862b6b845e529630f807d7f91e29a7b337f2ea486d9b01a88397822b",
+    "INVALID_TICKET_SOURCE|gavin|_ITEM_CHECKINDEX|sha256=57a3d2ece39b22cd2c55ca5a045f52e4f66da0364c0058aaae09e0265d0861fb",
+    "INVALID_TICKET_SOURCE|gavin|_ITEM_endExistItemsOne|sha256=439716095c6a6a541575603e17c9328bf85cb555100e9ca5b48149c332c833a5",
+    "INVALID_TICKET_SOURCE|gavin|BATTLE_DeleteItem|sha256=9bbfb952b8b54c31a249adc563a4868ff7c00b587deadc434b949b6758ca69c2",
+    "MIXED_TICKET_SOURCE|gavin|BATTLE_GetExpGold|sha256=7e8dcab1862b6b845e529630f807d7f91e29a7b337f2ea486d9b01a88397822b",
+    "MIXED_TICKET_SOURCE|gavin|BATTLE_DeleteItem|sha256=9bbfb952b8b54c31a249adc563a4868ff7c00b587deadc434b949b6758ca69c2",
+    "MIXED_TICKET_SOURCE|gavin|BATTLE_DeleteBattle|sha256=9b503d98f6b22d1a5e4c4b44c11ead0487dcb05a3cc83db3c1344bb8183d299a",
+    "MIXED_TICKET_SOURCE|gavin|ITEM_getAppropriateName|sha256=10867f214edc1106125810e7fd81e4dc1f2b93bcb4c5b6f4cd2f0f26e7accb77",
+    "LAST_SLOT_SOURCE|gavin|_ITEM_endExistItemsOne|sha256=439716095c6a6a541575603e17c9328bf85cb555100e9ca5b48149c332c833a5",
+    "LAST_SLOT_SOURCE|gavin|CHAR_findEmptyItemBox|sha256=d2aed30d7ba0090c6762f6dd60e2d22788f2572f0e9cefacb3cdd355be1cfdb6",
+    "LAST_SLOT_SOURCE|gavin|CHAR_addItemSpecificItemIndex|sha256=204b159e10974691629e47594fc489db792981dd5eede894f1ce40f1228ed7a8",
+    "CLEANUP_SOURCE|bismarck|delayTime|sha256=1afd7482610eec8e34637b326e29b525fefc8eedbbbbfaea1afad13e0bb70050|value=5",
+    "CLEANUP_SOURCE|bismarck|CheckDefBTime|sha256=64cba2829b8b8ec6395c02fdc54872155b5934a343ec6e66f07071e223f08a45|connection_type_sha256=24ffe3a458e9c854d2814b7340e4d3ec20dd7fd52f5b320bba44b21fd226ab76",
+    "CLEANUP_SOURCE|bismarck|BATTLE_DeleteItem|native_sha256=875bd921080397d7760232f95ad88a071ff413cc13a5fb815e48943d8e81bc5b|preprocessed_sha256=875bd921080397d7760232f95ad88a071ff413cc13a5fb815e48943d8e81bc5b",
+    "CLEANUP_SOURCE|bismarck|BATTLE_DeleteBattle|native_sha256=01e105e4a325a1923c8032bcab585f80201a760580a925bea8f2f7f9f30725fe|preprocessed_sha256=01e105e4a325a1923c8032bcab585f80201a760580a925bea8f2f7f9f30725fe",
+    "RECIPIENT_SIDE_SOURCE|bismarck|BATTLE_Finish|sha256=b369c2af159f182ed7e918ec083f73ae76ade2e3e3f907ae7525306f5ec035b8",
+    "RECIPIENT_SIDE_SOURCE|bismarck|BATTLE_GetProfit|sha256=5682714a9f08532fc7c492b854f09a8304a8f5fc0fe4c661a0a28bceb7f10e94",
+    "RECIPIENT_SIDE_SOURCE|bismarck|BATTLE_GetExpGold|sha256=acf3c59f6475634b5d2354e10c7867676ef47a171c0e4fe60b5d67612508db36",
+    "INVALID_TICKET_SOURCE|bismarck|_ITEM_CHECKINDEX|sha256=424e3cadefd91f1daac38f491423b015964a83e982ec8010d977c470e40f59d5",
+    "INVALID_TICKET_SOURCE|bismarck|_ITEM_endExistItemsOne|sha256=d10e9c90ea93f31fce8df4602649008ff864792764dfa488e5f70905928a450e",
+    "INVALID_TICKET_SOURCE|bismarck|BATTLE_DeleteItem|sha256=875bd921080397d7760232f95ad88a071ff413cc13a5fb815e48943d8e81bc5b",
+    "MIXED_TICKET_SOURCE|bismarck|BATTLE_GetExpGold|sha256=acf3c59f6475634b5d2354e10c7867676ef47a171c0e4fe60b5d67612508db36",
+    "MIXED_TICKET_SOURCE|bismarck|BATTLE_DeleteItem|sha256=875bd921080397d7760232f95ad88a071ff413cc13a5fb815e48943d8e81bc5b",
+    "MIXED_TICKET_SOURCE|bismarck|BATTLE_DeleteBattle|sha256=01e105e4a325a1923c8032bcab585f80201a760580a925bea8f2f7f9f30725fe",
+    "MIXED_TICKET_SOURCE|bismarck|ITEM_getAppropriateName|sha256=c8f74fda358518983e7b80a84648a34fb09a2924285e250fab092e26e511a04f",
+    "LAST_SLOT_SOURCE|bismarck|_ITEM_endExistItemsOne|sha256=d10e9c90ea93f31fce8df4602649008ff864792764dfa488e5f70905928a450e",
+    "LAST_SLOT_SOURCE|bismarck|CHAR_findEmptyItemBox|sha256=132aca659ed9890e6336cc0bac12c0b2ff0789feb4ed5beeb41b6c708bde64d8",
+    "LAST_SLOT_SOURCE|bismarck|CHAR_addItemSpecificItemIndex|sha256=c84e41993806cccde703d44c5b91d0a9126488c4a79b9f449674ebd237ffe168"
+  ],
+  "native": {
+    "profiles": [
+      "gavin",
+      "bismarck"
+    ],
+    "optimizations": [
+      "O0",
+      "O2"
+    ],
+    "nonrecovering_UBSan": true,
+    "GETITEM_MAX": 3,
+    "logical_pool_size": 256,
+    "complete_backing_item_records": 256,
+    "available_slots": [
+      0,
+      1
+    ],
+    "single_valid_matrix": {
+      "invalids": [
+        249,
+        256,
+        2147483647,
+        -2,
+        -2147483648,
+        -1
+      ],
+      "valid_positions": [
+        0,
+        1,
+        2
+      ],
+      "cases_per_capacity_per_profile": 18
+    },
+    "duplicate_valid_matrix": {
+      "invalids": [
+        249,
+        256,
+        2147483647,
+        -2,
+        -2147483648
+      ],
+      "invalid_positions": [
+        0,
+        1,
+        2
+      ],
+      "cases_per_capacity_per_profile": 15
+    },
+    "same_original_item": 3,
+    "item_id": 1,
+    "original_enemy_actor": 6,
+    "bag_start": 9,
+    "active_limits": {
+      "gavin": 24,
+      "bismarck": 54
+    },
+    "final_active_slot": {
+      "gavin": 23,
+      "bismarck": 53
+    },
+    "synthetic_fillers": {
+      "index": "80+bag_slot",
+      "id": "1800+index",
+      "owner": 0,
+      "object": -1,
+      "all_records_preserved": true
+    },
+    "new_second_Finish_executions": 528,
+    "no_ticket_controls": 264,
+    "with_ticket_replays": 264,
+    "retained_Finish_executions": {
+      "capacity": 24,
+      "cleanup": 32,
+      "recipient_side": 64,
+      "invalid_ticket": 48,
+      "mixed_ticket": 264
+    },
+    "one_free": {
+      "accepted": "earliest valid ticket only",
+      "later_alias_release_preserves_carried_item": true,
+      "live": 1,
+      "owner": 0,
+      "object": -1,
+      "references": 1,
+      "count_delta": 0,
+      "logs": 1,
+      "aggregate_send": 1,
+      "single_slot_send": {
+        "gavin": 0,
+        "bismarck": 1
+      }
+    },
+    "full": {
+      "awards": 0,
+      "live": 0,
+      "owner": -1,
+      "references": 0,
+      "count_delta": -1,
+      "logs": 0,
+      "aggregate_send": 0,
+      "single_slot_send": 0,
+      "duplicate_release_attempts_do_not_double_decrement": true
+    },
+    "release_observer": {
+      "forwards_unchanged_arguments_to_original_body": true,
+      "item3_calls": "pending_valid minus awards",
+      "nonnegative_invalid_calls": "number of explicit 249/256/INT_MAX tickets",
+      "baseline_empty_minus1_calls": {
+        "gavin": 54,
+        "bismarck": 84
+      },
+      "empty_calls_equal_no_ticket_control": true,
+      "total_calls": "baseline + item3 + explicit nonnegative invalid",
+      "initial_oracle_correction": "no-ticket original teardown calls empty slots; corrected zero-call assumption, no original body suppression or mutation"
+    },
+    "complete_Char_records": 7,
+    "complete_BATTLE_oracle": true,
+    "complete_connection_records": 8,
+    "RS": {
+      "count": 1,
+      "fd": 7,
+      "complete_text_checked": true,
+      "prefix": "original no-ticket EXP/Exit differential control; not independent EXP math",
+      "suffix": "three ordered fields and separators; only earliest valid slot named when available",
+      "gavin": {
+        "LEAKLEVEL": 1,
+        "NAME": "Factory",
+        "SECRETNAME": "",
+        "appropriate_name": "",
+        "named_items": 0
+      },
+      "bismarck": {
+        "LEAKLEVEL": 0,
+        "NAME": "Factory",
+        "SECRETNAME": "",
+        "appropriate_name": "Factory",
+        "named_items": "available"
+      }
+    },
+    "arena_released": true,
+    "mode_NONE": true,
+    "Total_BattleNum_zero": true,
+    "all_tickets_cleared": true,
+    "timers": {
+      "original_bodies_executed": true,
+      "time": 1000,
+      "rand": 0,
+      "CreateTime": 900,
+      "duration": 0,
+      "calls": 1,
+      "draws": 1,
+      "Gavin_BDTime": 1000,
+      "Bismarck_BDTime": 1005,
+      "Bismarck_original_delayTime": 5,
+      "Bismarck_typed_NU_args": [
+        7,
+        0
+      ]
+    },
+    "audit_stack_budget_bytes": 67108864
+  },
+  "retained_matrix_rows_byte_exact": {
+    "SAME_ITEM_CAPACITY": 6,
+    "TICKET_CLEANUP": 8,
+    "RECIPIENT_SIDE": 16,
+    "INVALID_ITEM_TICKET": 12,
+    "MIXED_ITEM_TICKET": 66
+  },
+  "factory_report_byte_exact_to_prior": true,
+  "local_reports": {
+    "lastslot": {
+      "bytes": 137748,
+      "sha256": "c0cd23bafd5f19a393506e0e6750b40ccab4d1a4fc17ceb32025bbacb53b2821"
+    },
+    "factory": {
+      "bytes": 32466,
+      "sha256": "ae632bc03bf06ca1661e4ba0d151595f9ccd075d0c1eb67d5b3acb22b5e8ff59"
+    }
+  },
+  "source_boundary": "explicit adversarial late-descendant tickets, synthetic bag fillers and logical256 pool; no natural invalid/duplicate/distinct generation, early server identity, real transport/client rendering or modern ownership DESIGN",
+  "pressure": {
+    "total": 2486,
+    "bounded_closed": 2465,
+    "open": 18,
+    "historical_ub": 3,
+    "historical_promotions": 0
+  },
+  "next": "obtain original creation evidence for multiple distinct live drop items, then ordered competition for one free active slot with complete state, presentation and release oracles"
+}

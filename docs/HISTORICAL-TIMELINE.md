@@ -2362,3 +2362,19 @@ fields while still producing logs/item sends. An initial shared-name oracle was
 corrected without source/item edits. This is synthetic late-source evidence,
 not natural duplicate generation, original-release history or real-client DESIGN.
 No historical/pressure promotion; one-remaining-slot competition remains OPEN.
+
+
+## 2026-10-11 — Bounded original same-item competition for final active bag slot
+
+FACT within pinned Gavin1f90cb6/Bismarck999ffdf1 synthetic full/one-free bag
+fixtures: Action38112978727/job114392200741 SUCCESS atee85e142a4d7fb60e2b63e77871ee194f45b7523,97 checks,132 new
+witnesses/528 O0/O2 UBSan Finish executions;108 predecessor rows retained.
+Only earliest valid pending3 takes final slot23/53; a later alias's actual
+original release attempt retains the carried item. A full bag declines all
+aliases, releases3 and decrements live count exactly once. Complete state,
+original full RS/timer and forwarding release-call oracles pass. Original
+empty-slot teardown produces54/84 -1 release calls even without tickets;
+a zero-call assumption was corrected in the observer's expectation only.
+Synthetic inputs establish bounded late-source behavior, not natural alias or
+distinct-item creation, early release history, real-client or modern DESIGN.
+Pressure/promotions unchanged. Original distinct-item creation/competition OPEN.

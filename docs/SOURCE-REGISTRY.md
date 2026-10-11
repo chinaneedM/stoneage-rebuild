@@ -5680,3 +5680,22 @@ against local, factory report equals preceding accepted gate. Explicit logical
 pool256/three-slot ticket inputs and original identification/name profiles do not
 prove natural bad-ticket creation, early history or actual client rendering.
 Original C/headers/assets transient only; pressure/promotions unchanged.
+
+
+## 2026-10-11 — Original last-slot competition bounded source witness R1
+
+Tool/spec/source-free report/receipt STONEAGE-BATTLE-ORIGINAL-LAST-SLOT-TICKET-R1;
+Action38112978727/job114392200741 SUCCESS atee85e142a4d7fb60e2b63e77871ee194f45b7523,97 checks,132 new witnesses/
+528 Finish executions plus108 byte-exact predecessor witnesses. Gavin source
+pin1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56 and Bismarck
+999ffdf1d220ec6666eb65339180689c9caf1876 retained. Original release/search/add-item
+whole body hashes checked; observer forwards unchanged arguments, records54/84
+empty teardown baseline and incremental item3/invalid calls. Full256 items,
+seven Char/BATTLE/eight connections and exact full RS/original timers checked,
+GNU99 O0/O2 nonrecovering UBSan complete-output equality.
+Report137748 bytes SHA256c0cd23bafd5f19a393506e0e6750b40ccab4d1a4fc17ceb32025bbacb53b2821.
+Artifact11692551246 ZIP independently digest-verified; both reports byte-exact
+against local, factory equals preceding accepted gate. Explicit logical256 pool,
+synthetic fillers and ordered pending inputs do not prove natural generation,
+early server identity or actual client rendering. Original C/headers/assets
+transient only; no historical/pressure promotion. Distinct original creation OPEN.
