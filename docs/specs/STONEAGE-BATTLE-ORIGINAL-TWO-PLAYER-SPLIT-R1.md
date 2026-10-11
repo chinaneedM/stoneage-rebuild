@@ -1,6 +1,6 @@
 # Original two-PLAYER random four-drop split and independent payout R1
 
-Status: local bounded execution passed; remote acceptance pending.
+Status: REMOTE ACCEPTED bounded; Action38129697138/job114441275068 SUCCESS ate5e563420b7579e16950aec29065162bbe0d8eee. Receipt records independently verified artifact bytes.
 
 FACT is bounded to clean pinned Gavin1f90cb6 and Bismarck999ffdf1 sources,
 GNU99 O0/O2 nonrecovering UBSan and synthetic fixtures. Iris pin is retained

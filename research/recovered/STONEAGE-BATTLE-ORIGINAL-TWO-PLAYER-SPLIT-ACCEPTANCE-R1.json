@@ -1,0 +1,277 @@
+{
+  "status": "REMOTE_ACCEPTED_BOUNDED",
+  "baseline": {
+    "head": "ae82a075360458a42141ab0246b03b0120b56380",
+    "tree": "0b772c5453446ebf1b72f64c67e5cc71562d31b0"
+  },
+  "branch": "agent/original-two-player-split-r1-20261011",
+  "tested_commit": "e5e563420b7579e16950aec29065162bbe0d8eee",
+  "tested_tree": "0a5e2a23bc21745430b64dec1ef9a229c336cd71",
+  "remote": {
+    "run_id": 38129697138,
+    "run_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/38129697138",
+    "head_sha": "e5e563420b7579e16950aec29065162bbe0d8eee",
+    "conclusion": "success",
+    "job_id": 114441275068,
+    "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/38129697138/job/114441275068",
+    "all_12_steps_success": true,
+    "steps": [
+      {
+        "number": 1,
+        "name": "Set up job",
+        "conclusion": "success"
+      },
+      {
+        "number": 2,
+        "name": "Run actions/checkout@v4",
+        "conclusion": "success"
+      },
+      {
+        "number": 3,
+        "name": "Run actions/setup-python@v5",
+        "conclusion": "success"
+      },
+      {
+        "number": 4,
+        "name": "Original drop source and retained regression gates",
+        "conclusion": "success"
+      },
+      {
+        "number": 5,
+        "name": "Recover pinned historical descendant sources transiently",
+        "conclusion": "success"
+      },
+      {
+        "number": 6,
+        "name": "Run original two-PLAYER random split and independent payout",
+        "conclusion": "success"
+      },
+      {
+        "number": 7,
+        "name": "Validate two-player-split matrix and all predecessor witnesses",
+        "conclusion": "success"
+      },
+      {
+        "number": 8,
+        "name": "Preserve original item factory independently",
+        "conclusion": "success"
+      },
+      {
+        "number": 9,
+        "name": "Upload only derived evidence",
+        "conclusion": "success"
+      },
+      {
+        "number": 17,
+        "name": "Post Run actions/setup-python@v5",
+        "conclusion": "success"
+      },
+      {
+        "number": 18,
+        "name": "Post Run actions/checkout@v4",
+        "conclusion": "success"
+      },
+      {
+        "number": 19,
+        "name": "Complete job",
+        "conclusion": "success"
+      }
+    ],
+    "artifact": {
+      "id": 11698403405,
+      "name": "stoneage-battle-original-two-player-split-r1",
+      "digest": "sha256:c2bdf3ffe68e5a2987495d4724372a362a119f940b82a4eb16792d05be5fa8aa",
+      "bytes": 27117
+    },
+    "ZIP_sha256_independently_verified": true,
+    "reports": {
+      "stoneage-battle-original-two-player-split-r1.txt": {
+        "bytes": 258455,
+        "sha256": "97784a5943e669063d7ab73e093285c28bb0f45a0edfb832b860767372e963a5",
+        "byte_exact_to_local": true
+      },
+      "stoneage-item-factory-retained-r1.txt": {
+        "bytes": 32466,
+        "sha256": "ae632bc03bf06ca1661e4ba0d151595f9ccd075d0c1eb67d5b3acb22b5e8ff59",
+        "byte_exact_to_local": true
+      }
+    }
+  },
+  "python_tests": 130,
+  "source_pins": {
+    "gavin": "1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56",
+    "iris": "9e6c8ce2cd8ed532a7157773acd1c61582c178b5",
+    "bismarck": "999ffdf1d220ec6666eb65339180689c9caf1876"
+  },
+  "prior_documents_preserved_as_exact_prefix": {
+    "docs/CURRENT-STATE.md": {
+      "bytes": 1268803,
+      "sha256": "895ac1a49a59261d80a8e8dacc2d73d4be9f61a47d11df61f64cdca377f931b9"
+    },
+    "docs/HISTORICAL-TIMELINE.md": {
+      "bytes": 205956,
+      "sha256": "2e176b382ec33a13bba6a06265f83d6b60598e9adffd3d3368adcaff0fcb57ec"
+    },
+    "docs/SOURCE-REGISTRY.md": {
+      "bytes": 425267,
+      "sha256": "45d6b2babcd925be60dbce9c9cae1a317ef19b272ace926d9d54557f6f033e31"
+    }
+  },
+  "native": {
+    "profiles": [
+      "gavin",
+      "bismarck"
+    ],
+    "optimizations": [
+      "O0",
+      "O2"
+    ],
+    "nonrecovering_UBSan": true,
+    "assignment_rows": 28,
+    "payout_rows": 112,
+    "new_Finish_executions": 448,
+    "new_no_ticket_controls": 224,
+    "new_ticket_replays": 224,
+    "retained_ACTUAL_rows_byte_exact": 340,
+    "retained_original_creation": {
+      "one_enemy_call": true,
+      "actor": 6,
+      "objects": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "IDs": [
+        1,
+        2,
+        1,
+        2
+      ],
+      "original_owner_carry": true,
+      "spawn_draws": 282,
+      "no_new_item_rebinding": true,
+      "no_allocator_cursor_rewind": true
+    },
+    "assignment": {
+      "eligible": [
+        0,
+        1,
+        -1
+      ],
+      "initial_pending": "all empty",
+      "orders": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "mask_bit_k_recipient_of_item_8_plus_k": true,
+      "raw_endpoints": [
+        0,
+        2147483647
+      ],
+      "recipient_draws": 4,
+      "original_calls_per_replay": 1,
+      "each_recipient_objects": [
+        1,
+        2,
+        3
+      ],
+      "release_calls": 0,
+      "count_delta": 0,
+      "whole_256_pool_immutable": true,
+      "seven_Char_and_whole_BATTLE_no_item_death_EXP_differential": true,
+      "ten_enemy_carried_slots_clear": true
+    },
+    "payout": {
+      "four_independent_capacity_combinations": true,
+      "last_slots": {
+        "gavin": 23,
+        "bismarck": 53
+      },
+      "earliest_assigned_object_per_player_wins": true,
+      "each_other_object_released_once": true,
+      "seven_Char_full_BATTLE_256_items_both_filler_bags_eight_connections": true,
+      "per_item_live_owner_reference_release": true,
+      "per_player_typed_complete_log_inventory_RS": true,
+      "descriptor_collector_map": {
+        "0": 7,
+        "1": 6
+      },
+      "actual_active_profile_ascending_entry_RS_order": [
+        7,
+        6
+      ],
+      "original_timer_calls": 2,
+      "original_timer_draws": 2,
+      "BDTime": {
+        "gavin": 1000,
+        "bismarck": 1005
+      },
+      "NU_count": {
+        "gavin": 0,
+        "bismarck": 2
+      },
+      "Gavin_LEAKLEVEL1_empty_SECRETNAME": true,
+      "Bismarck_LEAKLEVEL0_Factory_or_FactoryTwo": true
+    },
+    "explicit_inputs": {
+      "retained_synthetic_guaranteed_ten_pair_master": true,
+      "retained_logical256_occupancy_and_inactive_reference_preparation": true,
+      "payout_players_LV": 100,
+      "payout_players_EXP": 0,
+      "payout_players_and_owned_pet_WORKGETEXP": 0,
+      "live_players_timing_battle_fields": true,
+      "full_or_last_slot_bags": true,
+      "descriptor_collectors_are_adapters_not_recovered_network_logic": true
+    },
+    "audit_corrections": [
+      "Current original macro profiles use ascending entry payout order; oracle corrected without gameplay edits.",
+      "Low-level second player reached original Bismarck minimum-EXP upgrade path; payout fixture normalized both players LV100/EXP0 while strict upgrade collector retained.",
+      "Inherited generic ONE_COUNT substitution collided with new total send count; use a separate placeholder and verify all capacity combinations."
+    ]
+  },
+  "local_report": {
+    "bytes": 258455,
+    "sha256": "97784a5943e669063d7ab73e093285c28bb0f45a0edfb832b860767372e963a5"
+  },
+  "independent_factory_report": {
+    "bytes": 32466,
+    "sha256": "ae632bc03bf06ca1661e4ba0d151595f9ccd075d0c1eb67d5b3acb22b5e8ff59",
+    "byte_exact_to_prior": true
+  },
+  "source_hash_rows": [
+    "TWO_PLAYER_SOURCE|gavin|BATTLE_AddExpItem|sha256=8bf2e1bab742b3c468f13a8e94ea674be8b6fab4fa675fba13aa7f5f0a45080d",
+    "TWO_PLAYER_SOURCE|gavin|BATTLE_ItemDelCheck|sha256=9a6a8ac26641043cb26699eed0ca11edf8806e244626d3377ef8f607f2cf95ce",
+    "TWO_PLAYER_SOURCE|gavin|BATTLE_GetProfit|sha256=35edd4961868b6a4d50cade0c6141b1659cb28ba914e8ccd93c4a9347bcc855d",
+    "TWO_PLAYER_SOURCE|gavin|BATTLE_GetExpGold|sha256=7e8dcab1862b6b845e529630f807d7f91e29a7b337f2ea486d9b01a88397822b",
+    "TWO_PLAYER_SOURCE|gavin|BATTLE_Finish|sha256=e440d90b269bcb0620dcd96fda4758a0720bf367f14936f035ab9bbc787006e4",
+    "TWO_PLAYER_SOURCE|gavin|BATTLE_DeleteBattle|sha256=9b503d98f6b22d1a5e4c4b44c11ead0487dcb05a3cc83db3c1344bb8183d299a",
+    "TWO_PLAYER_SOURCE|bismarck|BATTLE_AddExpItem|sha256=0e77d7ea410eb0c62aa7db17878a860a740f85d04c873b5f10b57968d66b8e12",
+    "TWO_PLAYER_SOURCE|bismarck|BATTLE_ItemDelCheck|sha256=95d7897afdab2163b1b13b7a87d55e83e65b49018063487fedce85b19266c3cc",
+    "TWO_PLAYER_SOURCE|bismarck|BATTLE_GetProfit|sha256=5682714a9f08532fc7c492b854f09a8304a8f5fc0fe4c661a0a28bceb7f10e94",
+    "TWO_PLAYER_SOURCE|bismarck|BATTLE_GetExpGold|sha256=acf3c59f6475634b5d2354e10c7867676ef47a171c0e4fe60b5d67612508db36",
+    "TWO_PLAYER_SOURCE|bismarck|BATTLE_Finish|sha256=b369c2af159f182ed7e918ec083f73ae76ade2e3e3f907ae7525306f5ec035b8",
+    "TWO_PLAYER_SOURCE|bismarck|BATTLE_DeleteBattle|sha256=01e105e4a325a1923c8032bcab585f80201a760580a925bea8f2f7f9f30725fe"
+  ],
+  "source_boundary": "Pinned late descendants with explicit synthetic master, controlled endpoint RNG orders, normalized payout LV/EXP/bags, descriptor collectors and original fixed-time timer. No natural probabilities/distribution, early-release identity, actual client/network or modern DESIGN claim. All original source/headers/assets transient only.",
+  "pressure": {
+    "total": 2486,
+    "bounded_closed": 2465,
+    "open": 18,
+    "historical_ub": 3,
+    "historical_promotions": 0
+  },
+  "next": "Two eligible PLAYER list0,1,-1 with all four original-created drops assigned to recipient0 or1; original rejection/each replacement overflow branch, complete per-player slot/bag/release/presentation oracles and unchanged other-player capacity. Keep synthetic distributions and normalized payout levels/EXP explicit."
+}
