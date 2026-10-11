@@ -1,0 +1,337 @@
+{
+  "schema": "STONEAGE-PET-SB-SERVER-COMPARISON-ACCEPTANCE-R1",
+  "source_commit": "c38a4b974455640e252ac51018921b829cc8d906",
+  "source_tree": "17c58bce905acf73868824b7cdff9acb8f6e76df",
+  "parent_commit": "152d71913b0c5b5b7d910a61b86c89972f574da5",
+  "branch": "agent/pet-sb-server-comparison-r1-20261012",
+  "branch_runs": [
+    {
+      "run_id": 38163335431,
+      "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/38163335431",
+      "jobs": [
+        {
+          "id": 114540662894,
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Verify historical announcement separately from code, binary and early-version claims",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "run_id": 38163335358,
+      "name": "Validate PET S B server output versus compiled client",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/38163335358",
+      "jobs": [
+        {
+          "id": 114540662664,
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Install pinned static decoder for adjacent regressions",
+              "conclusion": "success"
+            },
+            {
+              "name": "Validate field alignment and evidence boundaries",
+              "conclusion": "success"
+            },
+            {
+              "name": "Obtain two exact source profiles transiently",
+              "conclusion": "success"
+            },
+            {
+              "name": "Reproduce source-only preprocessing comparison without native execution",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "run_id": 38163335282,
+      "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/38163335282",
+      "jobs": [
+        {
+          "id": 114540662388,
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Confirm source-only version separation and safe archive signature tests",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "main_runs": [
+    {
+      "run_id": 38163410865,
+      "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/38163410865",
+      "jobs": [
+        {
+          "id": 114540883173,
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Confirm source-only version separation and safe archive signature tests",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "run_id": 38163410716,
+      "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/38163410716",
+      "jobs": [
+        {
+          "id": 114540882511,
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Verify historical announcement separately from code, binary and early-version claims",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "run_id": 38163410611,
+      "name": "Validate PET S B server output versus compiled client",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/38163410611",
+      "jobs": [
+        {
+          "id": 114540882444,
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Install pinned static decoder for adjacent regressions",
+              "conclusion": "success"
+            },
+            {
+              "name": "Validate field alignment and evidence boundaries",
+              "conclusion": "success"
+            },
+            {
+              "name": "Obtain two exact source profiles transiently",
+              "conclusion": "success"
+            },
+            {
+              "name": "Reproduce source-only preprocessing comparison without native execution",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "test_count": 114,
+  "new_tests": 18,
+  "branch_and_main_log_confirmed": true,
+  "two_pinned_source_profiles_reproduced_in_branch_and_main": true,
+  "test_job_logs": [
+    {
+      "job_id": 114540662664,
+      "tests": 114,
+      "ok": true,
+      "source_preprocessing": true
+    },
+    {
+      "job_id": 114540882444,
+      "tests": 114,
+      "ok": true,
+      "source_preprocessing": true
+    }
+  ],
+  "compare": {
+    "ahead": 1,
+    "behind": 0,
+    "changed_files": 8,
+    "removed_files": 0
+  },
+  "remote_tree_matches_local": true,
+  "full_previous_continuity_blobs_preserved_as_byte_prefixes": true,
+  "non_destructive_lease_checked_fast_forward": true,
+  "evidence_status": "SOURCE_PREPROCESSING_COMPARED_TO_COMPILED_CLIENT_NOT_PAIRED_RUNTIME",
+  "server_fields": 13,
+  "compiled_client_fields": 14,
+  "default_pet_enabled": false,
+  "forced_pet_item_alone_does_not_resolve_payload_mismatch": true,
+  "descendant_occupied_backpack_remove_guard_conflict": true,
+  "original_program_executed": false,
+  "original_source_program_assets_or_disassembly_committed": false,
+  "wire_packet_captured": false,
+  "matching_server_verified": false,
+  "native_owner_lifecycle_verified": false,
+  "exact_2005_release_verified": false,
+  "early_version_promoted": false,
+  "pressure": "2486=2465 bounded closed+18 OPEN+3 historical UB",
+  "preliminary_next_message_candidate": {
+    "evidence_status": "PRELIMINARY_STATIC_DISPATCH_LEAD_NOT_COMPLETED_LAYOUT",
+    "logical_id": 22,
+    "compare_rva": "0x90c3f",
+    "aligned_dispatch_window": [
+      "0x90c3f",
+      "0x90c82"
+    ],
+    "instruction_count": 21,
+    "callback_call_rva": "0x90c7a",
+    "callback_target_rva": "0x646b0",
+    "callback_layout_validated": false,
+    "client_decompressed_sha256": "4193a7e1b20b996f7902424ae05092b455c5dbbe3f133d331a4897bbc7abfe63"
+  },
+  "highest_next": "Recover compiled I22 ordinary inventory receiver layout and slot-index/field stride; compare against the thirteen-field descendant source profile without claiming original server compatibility."
+}
