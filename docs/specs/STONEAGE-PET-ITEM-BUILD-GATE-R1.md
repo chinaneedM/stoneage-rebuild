@@ -1,8 +1,15 @@
 # Default PET item build gates and equipment caller inventory — R1
 
-Status: **REMOTE VALIDATION PENDING**. This is the next bounded historical
-technical-evidence gate after the source-only PET item identity report and
-native released-slot reuse report. It is **not** a production configuration or
+Status: **SOURCE_ONLY_DEFAULT_BUILD_GATE_ACCEPTED**. Actions
+38142524756/job114479121485 SUCCESS at tested commit
+a6d3415e7d09ecf30002e37f2c62cef64f0436e4; all validation steps
+green, 17 Python tests. Independently downloaded ZIP901 bytes SHA256
+`5db979c903f34f11f1a3c99aab8b24269e858364d4aec962e2ea385d61cf3a67`.
+Derived report1418 bytes SHA256
+`59f2c994d6d5169553d0c8bd38ca47c2b4fe4ba9e603a49fa05bc86441a8925b`,
+Git blob `2d5d55984972975fe769efd6adb5466731499e17`; byte-exact with
+the committed report. This is the next bounded historical technical-evidence
+gate after the source-only PET item identity report and native reuse report. It is **not** a production configuration or
 1999 JSS / Taiwan-v1.0 identity claim.
 
 ## Question and provenance
@@ -78,3 +85,39 @@ identity.
 
 Execution: `python -m tools.stoneage_pet_item_build_gate_audit` with
 `--gavin-dir` and `--bismarck-dir` pointing to exact pinned checkouts.
+
+## Accepted result
+
+GCC preprocessing using pinned default include paths reports
+`_UNIQUE_P_I=defined`, `_SIMPLIFY_ITEMSTRING=defined`, and
+`_PET_ITEM=absent` in both source profiles. Both checked-in Linux GNU
+make recipes have no explicit `-D_PET_ITEM` default; Bismarck's Windows
+CMake target definition list also has no `_PET_ITEM`. Under these
+defaults, the actual preprocessed Bismarck `char_item.c` has no
+`CHAR_movePetItem` body or `CHAR_sendPetItemData` body, and
+`char/pet.c` emits no `CHAR_sendPetItemData` calls. Counterfactual
+`-D_PET_ITEM` enables the original raw equipment body, whose source
+contains physical-index swaps via `CHAR_setItemIndex`.
+
+The recursive scan of the configured source C directory finds exactly
+one Bismarck `CHAR_movePetItem` occurrence: its **definition at
+`char/char_item.c:2655`**; it finds **zero syntactic direct C call
+sites**. Gavin has no such definition or call site in its scanned C
+directory. This is stronger than only observing a `#ifdef`, but does
+not exclude a generated entry, dynamic call, alternate source tree,
+other languages, or deployment flags.
+
+The Gavin preprocessor proof inspects the precise
+`CHAR_makePetStringFromPetIndex` body and finds no gated item
+serialization call in its default form; it does not rely on the raw
+macro name surviving preprocessing.
+
+**FACT:** Default checked-in build recipe PET equipment excluded in
+tested late source profiles. **OPEN:** Production binaries; enabled
+other-version protocol dispatch; naturally reachable PET-held item;
+whether actual object unique-code survives or regenerates after
+release/reuse. Do not promote this to evidence about Taiwan1.0/JSS1999
+or treat the original broken-index synthetic experiment as normal play.
+
+Receipt:
+`research/recovered/STONEAGE-PET-ITEM-BUILD-GATE-ACCEPTANCE-R1.json`.
