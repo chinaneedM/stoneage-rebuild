@@ -5,16 +5,17 @@ from tools.stoneage_pet_item_protocol_crossmodule_audit import ORIGINAL,validate
 SITES=[
  ("GmsvServer_PETITEM_recv","common/gmsv_server_recv.c",985,1),
  ("CHAR_movePetItem","common/gmsv_server_recv.c",1010,0),
+ ("GmsvServer_PETITEM_recv","common/gmsv_server_send.c",1388,0),
  ("CHAR_movePetItem","gmsv/char/char_item.c",2655,1),
 ]
 
 def rows():
     h=hashlib.sha256()
     for s in SITES:h.update(("|".join(map(str,s))+"\n").encode())
-    d=dict(profile="bismarck",handler_blob=ORIGINAL["handler"],common_make_blob=ORIGINAL["common_make"],
+    d=dict(profile="bismarck",handler_blob=ORIGINAL["handler"],dispatch_blob=ORIGINAL["dispatch"],common_make_blob=ORIGINAL["common_make"],
            equipment_blob=ORIGINAL["equipment"],gmsv_subtree_direct_callers=0,
            whole_server_pet_equip_definitions=1,whole_server_pet_equip_direct_callers=1,
-           protocol_recv_definitions=1,default_protocol_compiled=0,default_equipment_compiled=0,
+           protocol_recv_definitions=1,default_dispatch_compiled=0,forced_dispatch_compiled=1,conditional_opcode_handler_present=1,default_protocol_compiled=0,default_equipment_compiled=0,
            forced_protocol_compiled=1,forced_equipment_compiled=1,default_MI_recv_present=1,
            caller_under_positive_macro=1,known_compiled_production_binary=0,
            natural_pet_item_path_proven=0,early_original_build_proven=0,site_sha256=h.hexdigest())
@@ -25,7 +26,7 @@ def rows():
 class CrossModuleEvidence(unittest.TestCase):
     def test_full_chain(self):
         summary,sites=validate_report("\n".join(rows()))
-        self.assertEqual(len(sites),3)
+        self.assertEqual(len(sites),4)
         self.assertEqual(summary["whole_server_pet_equip_direct_callers"],"1")
     def test_no_missing_or_duplicate_lines(self):
         raw=rows()
@@ -34,7 +35,7 @@ class CrossModuleEvidence(unittest.TestCase):
                 validate_report("\n".join(raw[:i]+raw[i+1:]))
         with self.assertRaises(ValueError):validate_report("\n".join(raw+[raw[1]]))
     def test_checked_in_default_must_remain_disabled(self):
-        fields=["default_protocol_compiled","default_equipment_compiled",
+        fields=["default_dispatch_compiled","default_protocol_compiled","default_equipment_compiled",
                 "known_compiled_production_binary","natural_pet_item_path_proven",
                 "early_original_build_proven","gmsv_subtree_direct_callers"]
         for k in fields:
@@ -42,7 +43,7 @@ class CrossModuleEvidence(unittest.TestCase):
             with self.subTest(k=k),self.assertRaises(ValueError):
                 validate_report("\n".join(x.replace(k+"=0",k+"=1") for x in raw))
     def test_nondefault_feature_requires_explicit_forced_macro(self):
-        for k in ("forced_protocol_compiled","forced_equipment_compiled",
+        for k in ("forced_dispatch_compiled","conditional_opcode_handler_present","forced_protocol_compiled","forced_equipment_compiled",
                   "caller_under_positive_macro","default_MI_recv_present"):
             raw=rows()
             with self.subTest(k=k),self.assertRaises(ValueError):
