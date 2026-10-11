@@ -34,6 +34,10 @@ def pinned(root):
 
 def macros(root,header,compiler,*args):
     command=[compiler,"-dM","-E","-x","c++" if compiler=="g++" else "c",
+             "-I",str(root/"server/gmsv/include"),
+             "-I",str(root/"server/common"),
+             "-I",str(root/"server/common/utils"),
+             "-I",str(root/"shared/lua51"),
              *args,"-include",str(root/header),"-"]
     out=subprocess.run(command,input="",text=True,capture_output=True,check=True,timeout=40).stdout
     return set(re.findall(r"(?m)^#define\s+([A-Za-z_]\w*)\b",out))
