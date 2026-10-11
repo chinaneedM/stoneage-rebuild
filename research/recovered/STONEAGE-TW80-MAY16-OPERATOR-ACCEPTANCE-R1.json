@@ -1,0 +1,60 @@
+{
+  "schema": "stoneage-tw80-may16-operator-acceptance-r1",
+  "date": "2026-10-11",
+  "source_only": true,
+  "verified_head": "8df7e8cb2fb481b35c7f4fa013595d0bf9c540c5",
+  "verified_tree": "0ec75559e248696bb06dc909e289888577256508",
+  "branch_actions": [
+    {
+      "id": 38153610539,
+      "conclusion": "success"
+    },
+    {
+      "id": 38153610618,
+      "conclusion": "success"
+    },
+    {
+      "id": 38153610626,
+      "conclusion": "success"
+    }
+  ],
+  "main_actions": [
+    {
+      "id": 38153729015,
+      "conclusion": "success"
+    },
+    {
+      "id": 38153729051,
+      "conclusion": "success"
+    },
+    {
+      "id": 38153729010,
+      "conclusion": "success"
+    }
+  ],
+  "source_mutation_tests": 20,
+  "archive_index_parser_tests": 11,
+  "retained_regression_suites": [
+    "disc_mirror_identity_19",
+    "press_chronology_15",
+    "late_client_archive_10"
+  ],
+  "historical_operator_url": "http://www.wayi.com.tw/stoneage/actives/940329/page_3.html",
+  "branch_cdx_status": "NETWORK_INDETERMINATE",
+  "main_cdx_status": "NETWORK_INDETERMINATE",
+  "network_error": "TimeoutError",
+  "authenticated_archive_capture_count": null,
+  "historical_operator_page_recovered": false,
+  "original_tw80_client_binary_verified": false,
+  "original_publisher_sha256_verified": false,
+  "original_pet127_runtime_verified": false,
+  "jss1999_or_taiwan10_membership_promoted": false,
+  "previous_current_state_preserved_as_exact_prefix": true,
+  "pressure": {
+    "total": 2486,
+    "bounded_closed": 2465,
+    "open": 18,
+    "historical_ub": 3
+  },
+  "highest_next": "Obtain authenticated original 2005 Taiwan Waei 8.0 release/test client or official patch bytes and publisher hash; keep separate from 2006 DLER mirror and later Taiwan 8.5"
+}
