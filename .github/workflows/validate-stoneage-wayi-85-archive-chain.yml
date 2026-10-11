@@ -1,0 +1,23 @@
+name: Validate StoneAge WAYI 8.5 candidate archive chain
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/validate-stoneage-wayi-85-archive-chain.yml"
+      - "tools/stoneage_wayi_85_archive_chain.py"
+      - "tests/test_stoneage_wayi_85_archive_chain.py"
+      - "research/recovered/STONEAGE-WAYI-85-SIXPART-METADATA-R1.json"
+permissions:
+  contents: read
+jobs:
+  archival-boundary:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - name: Offline negative mutation and synthetic hash tests
+        run: |
+          python -m unittest -v tests.test_stoneage_wayi_85_archive_chain
+          python -m tools.stoneage_wayi_85_archive_chain
