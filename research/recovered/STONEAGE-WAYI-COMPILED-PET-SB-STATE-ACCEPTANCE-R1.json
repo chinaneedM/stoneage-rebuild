@@ -1,0 +1,306 @@
+{
+  "schema": "STONEAGE-WAYI-COMPILED-PET-SB-STATE-ACCEPTANCE-R1",
+  "source_commit": "adbf192d11b3ffc10c3c1c703c36c3c936344259",
+  "source_tree": "1db26667ed5373f08fd954510ea3b5d164730da5",
+  "parent_commit": "08d708e5c11559e26e8b358e5a3da8f63d8f2594",
+  "branch": "agent/wayi-pet-sb-state-layout-r1-20261012",
+  "branch_runs": [
+    {
+      "run_id": 38162043583,
+      "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/38162043583",
+      "jobs": [
+        {
+          "id": 114536804543,
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Verify historical announcement separately from code, binary and early-version claims",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "run_id": 38162043622,
+      "name": "Validate Wayi compiled PET S/B state layout",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/38162043622",
+      "jobs": [
+        {
+          "id": 114536804360,
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Install pinned static decoder",
+              "conclusion": "success"
+            },
+            {
+              "name": "Validate static call arguments and adjacent archive regressions",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "run_id": 38162043575,
+      "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/38162043575",
+      "jobs": [
+        {
+          "id": 114536804304,
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Confirm source-only version separation and safe archive signature tests",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "main_runs": [
+    {
+      "run_id": 38162236904,
+      "name": "Validate Wayi compiled PET S/B state layout",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/38162236904",
+      "jobs": [
+        {
+          "id": 114537392221,
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Install pinned static decoder",
+              "conclusion": "success"
+            },
+            {
+              "name": "Validate static call arguments and adjacent archive regressions",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "run_id": 38162236927,
+      "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/38162236927",
+      "jobs": [
+        {
+          "id": 114537391241,
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Verify historical announcement separately from code, binary and early-version claims",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "run_id": 38162236862,
+      "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/38162236862",
+      "jobs": [
+        {
+          "id": 114537391122,
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Confirm source-only version separation and safe archive signature tests",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "test_count": 96,
+  "new_tests": 14,
+  "branch_and_main_log_confirmed": true,
+  "test_job_logs": [
+    {
+      "job_id": 114536804360,
+      "tests": 96,
+      "ok": true
+    },
+    {
+      "job_id": 114537392221,
+      "tests": 96,
+      "ok": true
+    }
+  ],
+  "compare": {
+    "ahead": 1,
+    "behind": 0,
+    "changed_files": 8,
+    "removed_files": 0
+  },
+  "remote_tree_matches_local": true,
+  "full_previous_continuity_blobs_preserved_as_byte_prefixes": true,
+  "non_destructive_lease_checked_fast_forward": true,
+  "evidence_status": "STATIC_COMPILED_S46_B_CLIENT_DISPLAY_STATE_NOT_NATIVE_PAIRED_RUNTIME",
+  "logical_receive_id": 46,
+  "category": "B",
+  "slot_count": 7,
+  "payload_fields_per_slot": 14,
+  "record_stride_bytes": 388,
+  "pet_stride_bytes": 2840,
+  "use_flag_offset_bytes": 220,
+  "original_executable_run": false,
+  "original_bytes_or_disassembly_committed": false,
+  "packets_captured": false,
+  "pet127_reply_proven": false,
+  "matching_native_pet_pair_verified": false,
+  "server_item_owner_save_drop_unique_lifecycle_verified": false,
+  "exact_original_2005_checksum_verified": false,
+  "pressure": "2486=2465 bounded closed+18 OPEN+3 historical UB",
+  "highest_next": "Compare server S/B state serializer and movePetItem follow-up outputs against this compiled fourteen-field client display layout; require independent provenance/build and native paired-runtime admission."
+}
