@@ -1,0 +1,40 @@
+{
+  "schema": "stoneage-tw80-disc-mirror-acceptance-r1",
+  "date": "2026-10-11",
+  "source_only": true,
+  "accepted_commit": "a807499234e5347ee9f8ea23b56481c2e749abb7",
+  "accepted_tree": "5fa56d2488b0f27f6fdded86913ae2d5c4fbebb7",
+  "branch_runs": [
+    38152670349,
+    38152670132,
+    38152670201
+  ],
+  "main_runs": [
+    38152722186,
+    38152722154,
+    38152722220
+  ],
+  "all_six_actions_conclusion": "success",
+  "negative_and_control_tests": 19,
+  "retained_suite_names": [
+    "stoneage_tw80_tw85_chronology_gate",
+    "stoneage_late_client_archive_probe",
+    "stoneage_tw80_late_carrier_quarantine",
+    "stoneage_client_snapshot_transition_audit"
+  ],
+  "old_current_state_full_prefix_preserved": true,
+  "old_historical_timeline_full_prefix_preserved": true,
+  "old_source_registry_full_prefix_preserved": true,
+  "original_tw80_2005_disc_or_installer_bytes_verified": false,
+  "original_tw80_sha256_verified": false,
+  "original_dler_mirror_2006_bytes_verified": false,
+  "original_pet_127_runtime_verified": false,
+  "jss1999_or_taiwan10_feature_promoted": false,
+  "pressure": {
+    "total": 2486,
+    "bounded_closed": 2465,
+    "open": 18,
+    "historical_ub": 3
+  },
+  "highest_next": "Acquire independently authenticated Taiwan Waei 2005 original 8.0 installer/disc/update and hash; separately evaluate quoted 2006 DLER mirror as unverified later candidate"
+}
