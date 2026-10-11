@@ -1,0 +1,74 @@
+{
+  "schema": "stoneage-tw80-arquivo-pt-index-acceptance-r1",
+  "date_local": "2026-10-12",
+  "source_only": true,
+  "accepted_branch_commit": "cd31af40ff4eb276dae984508fa3af3a4e28abec",
+  "accepted_branch_tree": "66273f667dddf27b2da15f69a8fda4275c1e2618",
+  "branch_ci": [
+    {
+      "id": 38154730940,
+      "conclusion": "success",
+      "purpose": "new Arquivo.pt fallback plus source regression"
+    },
+    {
+      "id": 38154730875,
+      "conclusion": "success",
+      "purpose": "PET contemporary evidence"
+    },
+    {
+      "id": 38154730960,
+      "conclusion": "success",
+      "purpose": "late-client region/version"
+    }
+  ],
+  "main_ci": [
+    {
+      "id": 38154831247,
+      "conclusion": "success",
+      "purpose": "new Arquivo.pt fallback plus source regression"
+    },
+    {
+      "id": 38154831279,
+      "conclusion": "success",
+      "purpose": "PET contemporary evidence"
+    },
+    {
+      "id": 38154831397,
+      "conclusion": "success",
+      "purpose": "late-client region/version"
+    }
+  ],
+  "new_synthetic_index_tests": 17,
+  "existing_regression_test_suites": [
+    "stoneage_tw80_may16_operator_source_gate",
+    "stoneage_tw80_may16_cdx_probe",
+    "stoneage_tw80_disc_mirror_identity_gate",
+    "stoneage_tw80_tw85_chronology_gate"
+  ],
+  "provider": "https://arquivo.pt/textsearch",
+  "requested_original": "http://www.wayi.com.tw/stoneage/actives/940329/page_3.html",
+  "query_from_year": 2005,
+  "query_to_year": 2007,
+  "max_items": 12,
+  "branch_actual_probe_status": "EMPTY_INDEX_NOT_PROOF_OF_ABSENCE",
+  "main_actual_probe_status": "EMPTY_INDEX_NOT_PROOF_OF_ABSENCE",
+  "branch_returned_index_records": 0,
+  "main_returned_index_records": 0,
+  "evidence_semantics": "No indexed matches at this archival service for this bounded query, not global absence, not original page and not a client.",
+  "wayback_previous_probe_status": "NETWORK_INDETERMINATE",
+  "page_body_retrieved": false,
+  "original_2005_taiwan_installer_retrieved": false,
+  "original_executable_sha_verified": false,
+  "native_original_pet_127_runtime_verified": false,
+  "jss1999_or_taiwan10_membership_promoted": false,
+  "full_existing_source_registry_preserved": true,
+  "full_existing_historical_timeline_preserved": true,
+  "full_existing_current_state_preserved": true,
+  "pressure": {
+    "total": 2486,
+    "bounded_closed": 2465,
+    "open": 18,
+    "historical_ub": 3
+  },
+  "highest_next": "Seek original publisher-confirmed Taiwan Waei 2005 8.0 installer, official update or upgrade CD image and independent exact file hashes; alternate archive sources only for leads."
+}
