@@ -5644,3 +5644,21 @@ Original C/headers/assets stay transient. Explicit actor0 OTHERNPC retag and
 side-type fixtures do not establish natural creation/entry or early history.
 Source-only next ITEM check/release/DeleteItem fingerprints are future invalid
 item-ticket leads, not runtime acceptance. Pressure/promotions unchanged.
+
+
+## 2026-10-11 — Original invalid item ticket bounded source witness R1
+
+Tool/spec/source-free report/receipt STONEAGE-BATTLE-ORIGINAL-INVALID-ITEM-TICKET-R1;
+Action38111449268/job114387697755 SUCCESS atc47212ab443601bf7dd37aec564c5219b218eba5,77 evidence/regression checks,
+12 new witnesses/48 Finish calls plus30 predecessor witnesses. Pinned Gavin
+1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56 and Bismarck
+999ffdf1d220ec6666eb65339180689c9caf1876, unchanged native item-check/release/
+DeleteItem source body fingerprints now executed in the named bounded matrix.
+All256 backing item/seven Char/full BATTLE/eight native connection domains,
+O0/O2 nonrecovering UBSan complete-output equality and original timer gate.
+Report38064 bytes SHA2566cd63a295651a15330c78cb14b02a50596a05a5e1579b81ea1c24b1b5df6d1f1.
+Artifact11692295718 ZIP independently digest-verified, both reports byte-exact
+against local; independent factory evidence equals preceding accepted gate.
+Explicit logical pool256 and prepared inactive inputs do not prove natural
+bad-ticket creation or early history. Original C/headers/assets transient only,
+pressure/promotions unchanged, ordered mixed pending slots remain OPEN.

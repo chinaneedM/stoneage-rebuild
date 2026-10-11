@@ -11757,3 +11757,50 @@ reviewed discovery gate and its automated derived-report writeback is authorized
   and negative below -1; check complete item/actor/arena state and presentation.
   Relevant original item-check/release/DeleteItem hashes recorded as source-only
   leads, NOT runtime acceptance of those future invalid-ticket cases.
+
+
+## 2026-10-11 — Original inactive/out-of-range pending item tickets REMOTE ACCEPTED (bounded)
+
+- Fresh baseline mainb84497d0c944031023ae139085291bed65c145bd,tree4e5439e3a7c2c103ac4f8d84da5a80b1c1159361.
+  Prior complete state blobe0f92b2ff900aab3db332b6cc929d5660ce8cf1d,1243581 bytes and
+  previous timeline/source registry preserved as exact prefixes.
+- Branch agent/original-invalid-item-ticket-r1-20261011, tested inputc47212ab443601bf7dd37aec564c5219b218eba5,tree353f7f498ddd14eff9ca6c8e8b5eff608efd9b76.
+  Action38111449268/job114387697755,all 12 steps SUCCESS;77 Python checks,
+  Gavin/Bismarck GNU99 O0/O2 nonrecovering UBSan complete output agreement,
+  retained independent item factory report byte-identical to local/prior gate.
+- Actual original factory enemy6/item3 and AddExpItem chain retained, then
+  explicit ticket inputs through actual separate Loop(FINISH)/Finish/GetProfit/
+  GetExpGold/Exit/DeleteBattle. Original _ITEM_CHECKINDEX/_ITEM_endExistItemsOne/
+  BATTLE_DeleteItem complete bodies match pinned preprocessed source unchanged.
+- Six cases per profile: inactive unused249, actual original release of item3
+  before queuing stale3, first out-of-range256, INT_MAX2147483647, -2,
+  INT_MIN-2147483648.12 new witnesses,48 new Finish calls including24 no-ticket
+  controls and24 ticket replays; retained capacity24/cleanup32/side64 calls.
+- Fixture backing storage256 records, inherited factory logical size8. New
+  cases explicitly set logical size256 in both replays and restore8 afterwards.
+  Initial audit assertion caught the mistaken size assumption before publication;
+  no original defect claimed.249 is in-range/inactive;256 is exact boundary.
+  Item3 original input release independently verifies use0/owner-1/count-1;
+  settlement is compared against prepared snapshots, not against pre-release state.
+- All invalid cases leave entire256 items and live count unchanged during
+  settlement, seven complete Char/full BATTLE match no-ticket differential
+  controls, zero carried references to invalid ticket index and zero pickup
+  logs/aggregate/single-slot item sends. Arena releases, modeNONE/Total_BattleNum0,
+  all pending slots clear -1, including negative tickets excluded by DeleteItem.
+- All eight native connection records match original alive PLAYER Exit timer:
+  one call/draw, fixed time1000/rand0/CreateTime900/duration0, Gavin BDTime1000,
+  Bismarck1005 with original delayTime5 and typed NU(fd7,0) once. Original source
+  bodies unchanged; typed sends do not establish real transport. Differential
+  XP/Exit control is not an independent XP formula or natural bad-state proof.
+- Artifact11692295718,ZIP18196 bytes SHA2562b38df5932ae10812c049483a3ddc24f65b4be97cb69d890bcaf6e647ac23b86;
+  independent ZIP digest verified, both reports byte-exact against local.
+  Derived report38064 bytes SHA2566cd63a295651a15330c78cb14b02a50596a05a5e1579b81ea1c24b1b5df6d1f1.
+  Tool/spec/report/receipt STONEAGE-BATTLE-ORIGINAL-INVALID-ITEM-TICKET-*R1;
+  original C/headers/assets stay transient, no source redistribution.
+- Pressure unchanged2486=2465 bounded closed+18 OPEN+3 historical UB, zero
+  promotions, no modern-engine phase transition. Natural master/probability/
+  invalid-ticket generation, special NPC variants, early server ancestry,
+  positive gold/config, unique/time callbacks and real transport remain OPEN.
+- Highest NEXT: ordered mixed valid/invalid ticket sequences and pending-slot
+  positions through actual second Finish; verify invalid slots do not block later
+  valid pickups, retain duplicate/alias outcomes and full native domain oracles.

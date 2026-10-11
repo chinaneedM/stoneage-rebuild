@@ -2332,3 +2332,17 @@ item/Char/BATTLE/connection domains and original timers pass. Retagging existing
 player-shaped Char is not recovered NPC creation, natural mismatched-side entry,
 original-release identity or modern ownership DESIGN. Earlier evidence preserved;
 no pressure/historical promotion. Other NPC variants and invalid item tickets OPEN.
+
+
+## 2026-10-11 — Bounded late-source inactive and invalid item ticket rejection
+
+FACT within pinned Gavin1f90cb6/Bismarck999ffdf1 explicit logical256 pool:
+Action38111449268/job114387697755 SUCCESS atc47212ab443601bf7dd37aec564c5219b218eba5,77 checks,48 new O0/O2 UBSan
+Finish calls. Inactive249/original-released3/out-of-range256/INT_MAX/-2/INT_MIN
+all leave prepared item pool/count unchanged and clear pending slots at arena
+release without pickup logs or item sends. Full item/Char/BATTLE/connection
+oracles pass. Logical size256 is explicit new input replacing inherited size8
+for this matrix only; initial assertion exposed audit assumption, not original
+source defect. Late-source adversarial observations do not prove naturally
+reachable invalid tickets, original-release history or modern ownership DESIGN.
+No historical/pressure promotion; ordered mixed tickets remain OPEN.
