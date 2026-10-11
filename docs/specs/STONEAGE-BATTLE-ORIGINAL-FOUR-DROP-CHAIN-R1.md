@@ -1,6 +1,6 @@
 # Original single-creation four-drop chain R1
 
-Status: local bounded execution passed; remote acceptance pending.
+Status: REMOTE ACCEPTED bounded; Action38128398848/job114437463525 SUCCESS at43902e9a1807cd29118f8973149c1e754c803d69. Acceptance receipt records independently verified artifact bytes.
 
 FACT only within pinned late-source Gavin and Bismarck profiles, with synthetic master and controlled raw RNG inputs:
 

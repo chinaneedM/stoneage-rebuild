@@ -1,0 +1,255 @@
+{
+  "status": "REMOTE_ACCEPTED_BOUNDED",
+  "baseline": {
+    "head": "409e9626320ee8de6b5e6089ff5ef26cd2812b5a",
+    "tree": "31f7b29259cb1a7dc1a701372c108f57c59d59d4"
+  },
+  "branch": "agent/original-four-drop-chain-r1-20261011",
+  "tested_commit": "43902e9a1807cd29118f8973149c1e754c803d69",
+  "tested_tree": "3d59d220599608c98dcbe20470ceed9b99904711",
+  "remote": {
+    "run_id": 38128398848,
+    "run_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/38128398848",
+    "job_id": 114437463525,
+    "conclusion": "success",
+    "all_12_steps_success": true,
+    "artifact": {
+      "id": 11698240562,
+      "bytes": 24718,
+      "sha256": "8a3efb48c16e7d0d3fe43f463213cdd2ce17777b181dedeead1a74033c8239cd",
+      "independently_downloaded_and_digest_verified": true,
+      "files": {
+        "stoneage-battle-original-four-drop-chain-r1.txt": {
+          "bytes": 179625,
+          "sha256": "451f01db3f2537bf1aa0e4af58bb0a8d6f7b73aea2f8e47cb3515d80776af0fb",
+          "exact_local_bytes": true
+        },
+        "stoneage-item-factory-retained-r1.txt": {
+          "bytes": 32466,
+          "sha256": "ae632bc03bf06ca1661e4ba0d151595f9ccd075d0c1eb67d5b3acb22b5e8ff59",
+          "exact_local_bytes": true
+        }
+      }
+    }
+  },
+  "python_tests": 122,
+  "source_pins": {
+    "gavin": "1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56",
+    "iris": "9e6c8ce2cd8ed532a7157773acd1c61582c178b5",
+    "bismarck": "999ffdf1d220ec6666eb65339180689c9caf1876"
+  },
+  "prior_documents_preserved_as_exact_prefix": {
+    "docs/CURRENT-STATE.md": {
+      "bytes": 1264742,
+      "sha256": "f7a42e3bd3890694fd6e1d4951b71489a2718c34597356a644dadce71a7945ef",
+      "git_blob": "f8be384cc9b52d6e1ecae206f956c74919e306c6"
+    },
+    "docs/HISTORICAL-TIMELINE.md": {
+      "bytes": 204294,
+      "sha256": "05ffd61d7f3c986b2588cd4919b32916832ee9b4d540a9be93d321ca079af3e0",
+      "git_blob": "3487bb53a93def1aa9d6a22886d6d0ef02f3a8e5"
+    },
+    "docs/SOURCE-REGISTRY.md": {
+      "bytes": 423605,
+      "sha256": "40246559858cea0f164e13a0c09e69393fa9c901b1aca4107d3312e84e91a050",
+      "git_blob": "f10a19032a0c585bc67bda1bd0f7665653cecfc1"
+    }
+  },
+  "native": {
+    "profiles": [
+      "gavin",
+      "bismarck"
+    ],
+    "optimizations": [
+      "O0",
+      "O2"
+    ],
+    "nonrecovering_UBSan": true,
+    "original_creation": {
+      "calls": 1,
+      "actor": 6,
+      "objects": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "template_IDs": [
+        1,
+        2,
+        1,
+        2
+      ],
+      "master_pairs": 10,
+      "guaranteed_pairs": 4,
+      "probability": 1000,
+      "zero_pairs": 6,
+      "field_draws_per_factory": 66,
+      "spawn_draws": 282,
+      "count_delta": 4,
+      "owners": [
+        6,
+        6,
+        6,
+        6
+      ],
+      "object_indices": [
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "no_rebinding": true,
+      "no_original_cursor_rewind": true,
+      "whole_other_actors": 6,
+      "whole_pool_records": 256,
+      "whole_arena": true,
+      "direct_indirect_tables_immutable": true
+    },
+    "explicit_fixture_inputs": {
+      "logical_pool": 256,
+      "previously_inactive_zeroed_allocator_blockers": 3,
+      "live_records_not_overwritten": true,
+      "cleared_preexisting_inactive_carried_refs": {
+        "gavin": 24,
+        "bismarck": 54
+      },
+      "whole_other_actor_oracle_compares_prepared_input": true,
+      "entire_predecessor_state_restored": true,
+      "audit_input_correction": "Initial occupancy activated a synthetic pet arm reference to a previously inactive record and original ITEM_equipEffect emitted status S; clear only preexisting inactive references, retain strict transport collector and all original bodies."
+    },
+    "original_assignment": {
+      "calls": 1,
+      "eligible_list": [
+        0,
+        -1
+      ],
+      "initial_pending": "all empty",
+      "recipient_draws": 4,
+      "reject": {
+        "raw_draws": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "victim": 11,
+        "pending": [
+          8,
+          9,
+          10
+        ]
+      },
+      "replace0": {
+        "raw_draws": [
+          0,
+          0,
+          0,
+          0,
+          2147483647,
+          0
+        ],
+        "victim": 8,
+        "pending": [
+          11,
+          9,
+          10
+        ]
+      },
+      "replace1": {
+        "raw_draws": [
+          0,
+          0,
+          0,
+          0,
+          2147483647,
+          1073741824
+        ],
+        "victim": 9,
+        "pending": [
+          8,
+          11,
+          10
+        ]
+      },
+      "replace2": {
+        "raw_draws": [
+          0,
+          0,
+          0,
+          0,
+          2147483647,
+          2147483647
+        ],
+        "victim": 10,
+        "pending": [
+          8,
+          9,
+          11
+        ]
+      },
+      "whole_256_pool_count": true,
+      "seven_actors_and_full_arena": true,
+      "no_item_original_death_EXP_differential": true,
+      "carried_all_10_slots_clear": true,
+      "count_delta": -1,
+      "exact_release_calls": 1
+    },
+    "creation_rows": 2,
+    "assignment_rows": 8,
+    "payout_rows": 16,
+    "new_Finish_executions": 64,
+    "new_no_ticket_controls": 32,
+    "new_ticket_replays": 32,
+    "retained_ACTUAL_rows_byte_exact": 314,
+    "payout": {
+      "full_and_one_free_bags": true,
+      "final_slots": {
+        "gavin": 23,
+        "bismarck": 53
+      },
+      "earliest_survivor_wins": true,
+      "overflow_victim_not_released_again": true,
+      "full_bag_releases_three_survivors": true,
+      "complete_256_items_blockers_fillers": true,
+      "complete_seven_actors_arena_eight_connections": true,
+      "per_object_live_owner_reference_release": true,
+      "typed_logs_item_sends_full_RS_original_timers": true,
+      "Gavin_LEAKLEVEL1_empty_SECRETNAME_preserved": true,
+      "Bismarck_LEAKLEVEL0_template_NAME_preserved": true
+    }
+  },
+  "local_report": {
+    "bytes": 179625,
+    "sha256": "451f01db3f2537bf1aa0e4af58bb0a8d6f7b73aea2f8e47cb3515d80776af0fb"
+  },
+  "independent_factory_report": {
+    "bytes": 32466,
+    "sha256": "ae632bc03bf06ca1661e4ba0d151595f9ccd075d0c1eb67d5b3acb22b5e8ff59",
+    "byte_exact_to_prior": true
+  },
+  "source_hash_rows": [
+    "FOUR_DROP_SOURCE|gavin|ENEMY_createEnemy|inherited_sha256=ec6956c81c157ee227c15208c26e03767f8c21ef15af2696760d690ad889d57a|preprocessed_sha256=a0a9732752729e5be378faf7341c9812d9dbd2ccab05eb386070b91b113508f7",
+    "FOUR_DROP_SOURCE|gavin|ITEM_makeItem|inherited_sha256=c82d3be6fd40ce6978e7a6a5790b4e15df739b9130dcefb4f1d9954a70372cca|preprocessed_sha256=c82d3be6fd40ce6978e7a6a5790b4e15df739b9130dcefb4f1d9954a70372cca",
+    "FOUR_DROP_SOURCE|gavin|ITEM_makeItemAndRegist|inherited_sha256=9c0ebb9005c7e644fb196d2cd78ffe6cda08c90d83d3d7ba166b9c09a1487e2b|preprocessed_sha256=9c0ebb9005c7e644fb196d2cd78ffe6cda08c90d83d3d7ba166b9c09a1487e2b",
+    "FOUR_DROP_SOURCE|gavin|_ITEM_initExistItemsOne|inherited_sha256=debe8ffbcb2b1ee58eba4ec3870210861bb62e8c3f11620e2c5799163c1cf558|preprocessed_sha256=debe8ffbcb2b1ee58eba4ec3870210861bb62e8c3f11620e2c5799163c1cf558",
+    "FOUR_DROP_SOURCE|gavin|BATTLE_AddExpItem|inherited_sha256=8bf2e1bab742b3c468f13a8e94ea674be8b6fab4fa675fba13aa7f5f0a45080d|preprocessed_sha256=8bf2e1bab742b3c468f13a8e94ea674be8b6fab4fa675fba13aa7f5f0a45080d",
+    "FOUR_DROP_SOURCE|gavin|BATTLE_ItemDelCheck|inherited_sha256=9a6a8ac26641043cb26699eed0ca11edf8806e244626d3377ef8f607f2cf95ce|preprocessed_sha256=9a6a8ac26641043cb26699eed0ca11edf8806e244626d3377ef8f607f2cf95ce",
+    "FOUR_DROP_SOURCE|bismarck|ENEMY_createEnemy|inherited_sha256=fd3ad864fbf1a8bbbed7031f762904ed60a21d5220bfd97626c06d4fdbdd7502|preprocessed_sha256=fd3ad864fbf1a8bbbed7031f762904ed60a21d5220bfd97626c06d4fdbdd7502",
+    "FOUR_DROP_SOURCE|bismarck|ITEM_makeItem|inherited_sha256=6094372f1339f67bb14b95be012746c6d1579c09b8251b240bc8872bb540effa|preprocessed_sha256=6094372f1339f67bb14b95be012746c6d1579c09b8251b240bc8872bb540effa",
+    "FOUR_DROP_SOURCE|bismarck|ITEM_makeItemAndRegist|inherited_sha256=ce89d79fc61d9a9b872e7b41a0483aabeb21ff529c782fd05b2d3fa61a8327d7|preprocessed_sha256=ce89d79fc61d9a9b872e7b41a0483aabeb21ff529c782fd05b2d3fa61a8327d7",
+    "FOUR_DROP_SOURCE|bismarck|_ITEM_initExistItemsOne|inherited_sha256=0cee50b39499960ce599b92d6364ea192d149b5d20fe5d5b400eb8afac711f56|preprocessed_sha256=0cee50b39499960ce599b92d6364ea192d149b5d20fe5d5b400eb8afac711f56",
+    "FOUR_DROP_SOURCE|bismarck|BATTLE_AddExpItem|inherited_sha256=0e77d7ea410eb0c62aa7db17878a860a740f85d04c873b5f10b57968d66b8e12|preprocessed_sha256=0e77d7ea410eb0c62aa7db17878a860a740f85d04c873b5f10b57968d66b8e12",
+    "FOUR_DROP_SOURCE|bismarck|BATTLE_ItemDelCheck|inherited_sha256=95d7897afdab2163b1b13b7a87d55e83e65b49018063487fedce85b19266c3cc|preprocessed_sha256=95d7897afdab2163b1b13b7a87d55e83e65b49018063487fedce85b19266c3cc"
+  ],
+  "source_boundary": "Synthetic guaranteed master, raw assignment draws, explicit logical256 occupancy and prepared inactive references/bags; actual original enemy creation owns/carries all four new objects, no manual new-item binding; no natural early master/probability data or early-release identity, actual-client or modern DESIGN claim.",
+  "pressure": {
+    "total": 2486,
+    "bounded_closed": 2465,
+    "open": 18,
+    "historical_ub": 3,
+    "historical_promotions": 0
+  },
+  "next": "Original four-drop assignment with two eligible PLAYER recipients0/1 and actual controlled random split; validate initial empty slots, complete pool/actors/arena, exact draw/release counts and profile-specific payout without promoting synthetic master/probability data."
+}
