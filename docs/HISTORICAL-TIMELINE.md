@@ -2318,3 +2318,17 @@ original source defect. Typed NU arguments/counts are not real transport.
 This is not original-release history, natural bad-ticket reachability or modern
 ownership DESIGN. No historical/pressure promotion; NPC/side guards and original
 source provenance remain OPEN.
+
+
+## 2026-10-11 — Bounded late-source ordinary-NPC versus side-type reward divergence
+
+FACT only within pinned Gavin1f90cb6/Bismarck999ffdf1 explicit actor0 retag/type
+fixtures: Action38110690423/job114385444015 SUCCESS atdbc1755f4c2d9c53ba736e1ac6c30c16e21255b4,
+69 checks,64 new O0/O2 UBSan Finish calls across both side indices. Gavin's
+ordinary OTHERNPC on PLAYER-type side acquires item3 while its PLAYER on ENEMY
+side releases; Bismarck does the reverse for these two cross cases. Ordinary
+PLAYER/PLAYER acquires in both, OTHERNPC/ENEMY releases in both. Full native
+item/Char/BATTLE/connection domains and original timers pass. Retagging existing
+player-shaped Char is not recovered NPC creation, natural mismatched-side entry,
+original-release identity or modern ownership DESIGN. Earlier evidence preserved;
+no pressure/historical promotion. Other NPC variants and invalid item tickets OPEN.

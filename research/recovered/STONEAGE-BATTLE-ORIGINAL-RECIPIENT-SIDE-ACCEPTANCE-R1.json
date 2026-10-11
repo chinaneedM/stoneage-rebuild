@@ -1,0 +1,201 @@
+{
+  "status": "REMOTE_ACCEPTED_BOUNDED",
+  "date": "2026-10-11",
+  "repo": "chinaneedM/stoneage-rebuild",
+  "prior_main": "50ba1631474983cb2b36372934dfe5b6d7840a3a",
+  "prior_main_tree": "002a6a07400ce99ccd68008019ca0fc1c66e8ead",
+  "branch": "agent/original-recipient-side-r1-20261011",
+  "tested_commit": "dbc1755f4c2d9c53ba736e1ac6c30c16e21255b4",
+  "tested_tree": "20b5b0ca5db0c77551f4fada7c574e3ba34e130f",
+  "github_action": {
+    "run": 38110690423,
+    "job": 114385444015,
+    "conclusion": "success",
+    "head_sha": "dbc1755f4c2d9c53ba736e1ac6c30c16e21255b4",
+    "all_steps_success": true,
+    "steps_count": 12,
+    "artifact": {
+      "id": 11691409478,
+      "zip_bytes": 17986,
+      "zip_sha256": "926d145a91cc8213ddbdadd6caa86f2a8391731aebc0fb8d7c06add73a5c1f54",
+      "independent_zip_sha_verified": true,
+      "reports": {
+        "stoneage-battle-original-recipient-side-r1.txt": {
+          "bytes": 33800,
+          "sha256": "1bf9a54cce0b6895a5fa6b75ff299d0a62b9d4813c0cf3c53a059df9536f4474",
+          "exact_local_bytes": true
+        },
+        "stoneage-item-factory-retained-r1.txt": {
+          "bytes": 32466,
+          "sha256": "ae632bc03bf06ca1661e4ba0d151595f9ccd075d0c1eb67d5b3acb22b5e8ff59",
+          "exact_local_bytes": true
+        }
+      }
+    }
+  },
+  "python_tests": 69,
+  "source_pins": {
+    "gavin": "1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56",
+    "iris": "9e6c8ce2cd8ed532a7157773acd1c61582c178b5",
+    "bismarck": "999ffdf1d220ec6666eb65339180689c9caf1876"
+  },
+  "prior_documents_preserved_as_exact_prefix": {
+    "docs/CURRENT-STATE.md": {
+      "bytes": 1239435,
+      "sha256": "31b3a446cf8f4310bd70c70d8f022a3a2b5ad1f890f577442e6a9610be6581dd",
+      "git_blob": "b9f2cf597a60782f2b21430c9d556abd66810e63"
+    },
+    "docs/HISTORICAL-TIMELINE.md": {
+      "bytes": 197680,
+      "sha256": "f6ffe22817eaad0df99584d0b8a47b8eb0a3aebd88e1a9369bbab5c0faa3da62",
+      "git_blob": "082c2d247454d94775ba700cba559b76692b4059"
+    },
+    "docs/SOURCE-REGISTRY.md": {
+      "bytes": 415886,
+      "sha256": "f1a09ac52c7ee1060f546c21d91180da439115e184db5464e5639fe87f604333",
+      "git_blob": "492ca8be6679c8cf50cffcc1848a4db86bad6635"
+    }
+  },
+  "original_source_hash_rows": [
+    "CLEANUP_SOURCE|gavin|CheckDefBTime|sha256=ea245dc2e56a6e04ed88779247dfd2741149edc632e9c833da84118db4b18985|connection_type_sha256=ef00ad508afb71e7840db271cc674a463b9f0a4af6f19fb08e7d72d010015696",
+    "CLEANUP_SOURCE|gavin|BATTLE_DeleteItem|native_sha256=9bbfb952b8b54c31a249adc563a4868ff7c00b587deadc434b949b6758ca69c2|preprocessed_sha256=9bbfb952b8b54c31a249adc563a4868ff7c00b587deadc434b949b6758ca69c2",
+    "CLEANUP_SOURCE|gavin|BATTLE_DeleteBattle|native_sha256=9b503d98f6b22d1a5e4c4b44c11ead0487dcb05a3cc83db3c1344bb8183d299a|preprocessed_sha256=9b503d98f6b22d1a5e4c4b44c11ead0487dcb05a3cc83db3c1344bb8183d299a",
+    "RECIPIENT_SIDE_SOURCE|gavin|BATTLE_Finish|sha256=e440d90b269bcb0620dcd96fda4758a0720bf367f14936f035ab9bbc787006e4",
+    "RECIPIENT_SIDE_SOURCE|gavin|BATTLE_GetProfit|sha256=35edd4961868b6a4d50cade0c6141b1659cb28ba914e8ccd93c4a9347bcc855d",
+    "RECIPIENT_SIDE_SOURCE|gavin|BATTLE_GetExpGold|sha256=7e8dcab1862b6b845e529630f807d7f91e29a7b337f2ea486d9b01a88397822b",
+    "CLEANUP_SOURCE|bismarck|delayTime|sha256=1afd7482610eec8e34637b326e29b525fefc8eedbbbbfaea1afad13e0bb70050|value=5",
+    "CLEANUP_SOURCE|bismarck|CheckDefBTime|sha256=64cba2829b8b8ec6395c02fdc54872155b5934a343ec6e66f07071e223f08a45|connection_type_sha256=24ffe3a458e9c854d2814b7340e4d3ec20dd7fd52f5b320bba44b21fd226ab76",
+    "CLEANUP_SOURCE|bismarck|BATTLE_DeleteItem|native_sha256=875bd921080397d7760232f95ad88a071ff413cc13a5fb815e48943d8e81bc5b|preprocessed_sha256=875bd921080397d7760232f95ad88a071ff413cc13a5fb815e48943d8e81bc5b",
+    "CLEANUP_SOURCE|bismarck|BATTLE_DeleteBattle|native_sha256=01e105e4a325a1923c8032bcab585f80201a760580a925bea8f2f7f9f30725fe|preprocessed_sha256=01e105e4a325a1923c8032bcab585f80201a760580a925bea8f2f7f9f30725fe",
+    "RECIPIENT_SIDE_SOURCE|bismarck|BATTLE_Finish|sha256=b369c2af159f182ed7e918ec083f73ae76ade2e3e3f907ae7525306f5ec035b8",
+    "RECIPIENT_SIDE_SOURCE|bismarck|BATTLE_GetProfit|sha256=5682714a9f08532fc7c492b854f09a8304a8f5fc0fe4c661a0a28bceb7f10e94",
+    "RECIPIENT_SIDE_SOURCE|bismarck|BATTLE_GetExpGold|sha256=acf3c59f6475634b5d2354e10c7867676ef47a171c0e4fe60b5d67612508db36"
+  ],
+  "native": {
+    "profiles": [
+      "gavin",
+      "bismarck"
+    ],
+    "optimizations": [
+      "O0",
+      "O2"
+    ],
+    "nonrecovering_UBSan": true,
+    "side_indices": [
+      0,
+      1
+    ],
+    "actor": 0,
+    "ordinary_NPC_enum": "CHAR_TYPEOTHERNPC",
+    "fixture": "retag retained complete actor0 Char; retain explicit player-shaped data/pet union; empty bag carried slots; no natural NPC factory or mismatch reachability claim",
+    "new_second_Finish_executions": 64,
+    "no_ticket_controls": 32,
+    "with_ticket_replays": 32,
+    "retained_capacity_executions": 24,
+    "retained_exceptional_ticket_executions": 32,
+    "cross_matrix": {
+      "gavin": {
+        "PLAYER_on_PLAYER": "acquire",
+        "OTHERNPC_on_PLAYER": "acquire",
+        "PLAYER_on_ENEMY": "release",
+        "OTHERNPC_on_ENEMY": "release"
+      },
+      "bismarck": {
+        "PLAYER_on_PLAYER": "acquire",
+        "OTHERNPC_on_PLAYER": "release",
+        "PLAYER_on_ENEMY": "acquire",
+        "OTHERNPC_on_ENEMY": "release"
+      }
+    },
+    "same_original_item": 3,
+    "item_id": 1,
+    "original_enemy_actor": 6,
+    "bag_slot": 9,
+    "acquire": {
+      "item_live": 1,
+      "owner": 0,
+      "object": -1,
+      "references": 1,
+      "pickup_logs": 1,
+      "aggregate_sends": 1,
+      "single_slot_sends": {
+        "gavin": 0,
+        "bismarck": 1
+      }
+    },
+    "release": {
+      "item_live": 0,
+      "owner": -1,
+      "live_count_delta": -1,
+      "references": 0,
+      "pickup_logs": 0,
+      "item_sends": 0
+    },
+    "complete_item_records": 256,
+    "complete_Char_records": 7,
+    "complete_BATTLE_oracle": true,
+    "complete_connection_records": 8,
+    "arena_released": true,
+    "mode_NONE": true,
+    "Total_BattleNum_zero": true,
+    "all_tickets_cleared": true,
+    "timers": {
+      "both_original_bodies_executed": true,
+      "fixed_time": 1000,
+      "fixed_rand": 0,
+      "CreateTime": 900,
+      "duration": 0,
+      "PLAYER_Exit_calls": 1,
+      "NPC_Exit_calls": 0,
+      "Gavin_PLAYER_BDTime": 1000,
+      "Bismarck_PLAYER_BDTime": 1005,
+      "draws_per_PLAYER_Exit": 1,
+      "Bismarck_original_global_delayTime": 5,
+      "Bismarck_typed_NU_args": [
+        7,
+        0
+      ]
+    },
+    "experience_oracle": "original no-ticket Finish/Exit differential control; not an independent EXP formula",
+    "audit_stack_budget_bytes": 67108864
+  },
+  "local_reports": {
+    "side": {
+      "bytes": 33800,
+      "sha256": "1bf9a54cce0b6895a5fa6b75ff299d0a62b9d4813c0cf3c53a059df9536f4474"
+    },
+    "factory": {
+      "bytes": 32466,
+      "sha256": "ae632bc03bf06ca1661e4ba0d151595f9ccd075d0c1eb67d5b3acb22b5e8ff59"
+    }
+  },
+  "source_only_next_not_runtime_accepted": {
+    "gavin": {
+      "runtime_invalid_ticket_cases_accepted": false,
+      "functions": {
+        "_ITEM_CHECKINDEX": "57a3d2ece39b22cd2c55ca5a045f52e4f66da0364c0058aaae09e0265d0861fb",
+        "_ITEM_endExistItemsOne": "439716095c6a6a541575603e17c9328bf85cb555100e9ca5b48149c332c833a5",
+        "BATTLE_DeleteItem": "9bbfb952b8b54c31a249adc563a4868ff7c00b587deadc434b949b6758ca69c2"
+      },
+      "next_cases": "inactive registered-pool record; first out-of-range index256; INT_MAX; negative below -1; prove exact whole state before any natural reachability claim"
+    },
+    "bismarck": {
+      "runtime_invalid_ticket_cases_accepted": false,
+      "functions": {
+        "_ITEM_CHECKINDEX": "424e3cadefd91f1daac38f491423b015964a83e982ec8010d977c470e40f59d5",
+        "_ITEM_endExistItemsOne": "d10e9c90ea93f31fce8df4602649008ff864792764dfa488e5f70905928a450e",
+        "BATTLE_DeleteItem": "875bd921080397d7760232f95ad88a071ff413cc13a5fb815e48943d8e81bc5b"
+      },
+      "next_cases": "inactive registered-pool record; first out-of-range index256; INT_MAX; negative below -1; prove exact whole state before any natural reachability claim"
+    }
+  },
+  "source_boundary": "later descendant fixture, no naturally created NPC, no naturally mismatched side entry, no early JSS1999/Taiwan1.0 server identity, actual clients/transport or modern ownership DESIGN",
+  "pressure": {
+    "total": 2486,
+    "bounded_closed": 2465,
+    "open": 18,
+    "historical_ub": 3,
+    "historical_promotions": 0
+  },
+  "next": "inactive and out-of-range pending item indices through original second Finish/DeleteBattle; exact complete pool/actor/arena/presentation oracles; special NPC subclasses remain separate OPEN"
+}

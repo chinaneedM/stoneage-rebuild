@@ -5626,3 +5626,21 @@ Artifact11690547978 independently downloaded/digest-verified, reports byte-exact
 against local. Original server C/headers/assets remain only transient outside
 repository. Synthetic actor/ticket/empty bag/time inputs, differential XP oracle,
 late provenance and natural reachability limits preserved. Pressure unchanged.
+
+
+## 2026-10-11 — Original recipient type and side-type cross-index witness R1
+
+Tool/spec/source-free report/receipt STONEAGE-BATTLE-ORIGINAL-RECIPIENT-SIDE-R1,
+Action38110690423/job114385444015 SUCCESS atdbc1755f4c2d9c53ba736e1ac6c30c16e21255b4,
+69 tests;16 cross-index witnesses plus14 retained capacity/cleanup witnesses.
+64 new original Finish calls, GNU99 O0/O2 nonrecovering UBSan, complete native
+256-item/seven Char/BATTLE/eight-connection oracles. Original Finish/GetProfit/
+GetExpGold and inherited timer/delete body hashes retained unchanged per pin.
+Source pins Gavin1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56 and
+Bismarck999ffdf1d220ec6666eb65339180689c9caf1876. Report33800 bytes SHA256
+1bf9a54cce0b6895a5fa6b75ff299d0a62b9d4813c0cf3c53a059df9536f4474. Artifact11691409478 ZIP digest independently
+verified, both reports byte-exact against local, original factory gate retained.
+Original C/headers/assets stay transient. Explicit actor0 OTHERNPC retag and
+side-type fixtures do not establish natural creation/entry or early history.
+Source-only next ITEM check/release/DeleteItem fingerprints are future invalid
+item-ticket leads, not runtime acceptance. Pressure/promotions unchanged.

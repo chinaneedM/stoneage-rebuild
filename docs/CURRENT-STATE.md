@@ -11699,3 +11699,61 @@ reviewed discovery gate and its automated derived-report writeback is authorized
   Other invalid item indices, natural masters/probability/ticket reachability,
   JSS1999/Taiwan1.0 ancestry, unique/time/callbacks, positive gold/config and
   original network/client transport remain OPEN.
+
+
+## 2026-10-11 — Original ordinary-NPC/player and battle-side cross matrix REMOTE ACCEPTED (bounded)
+
+- Fresh remote baseline main50ba1631474983cb2b36372934dfe5b6d7840a3a,
+  tree002a6a07400ce99ccd68008019ca0fc1c66e8ead. Complete prior state
+  blobb9f2cf597a60782f2b21430c9d556abd66810e63,1239435 bytes retained as exact prefix;
+  previous timeline/source registry also preserved without rewriting.
+- Branch agent/original-recipient-side-r1-20261011, tested input
+  dbc1755f4c2d9c53ba736e1ac6c30c16e21255b4,
+  tree20b5b0ca5db0c77551f4fada7c574e3ba34e130f.
+  Action38110690423/job114385444015,all 12 steps SUCCESS;69 Python checks,
+  Gavin/Bismarck GNU99 O0/O2 nonrecovering UBSan complete output agreement,
+  independent original item-factory native evidence byte-identical to local.
+- Same original enemy6-created registered item3/ID1, actual AddExpItem then
+  explicit recipient/type inputs -> actual separate Loop(FINISH)/Finish/
+  GetProfit/GetExpGold/inventory-or-release/Exit/DeleteBattle. Original Finish,
+  GetProfit and GetExpGold bodies match each profile's preprocessed source.
+- PLAYER versus ordinary CHAR_TYPEOTHERNPC crossed with side type PLAYER
+  versus ENEMY, on BOTH numerical side indices0/1:16 new witnesses,
+  64 new Finish executions including32 no-ticket controls and32 with-ticket
+  replays. Retained six capacity/eight cleanup witnesses also PASS, with
+  their preceding24/32 Finish executions in the same probe.
+- Gavin acquires for PLAYER or OTHERNPC on PLAYER-type side and releases
+  for either on ENEMY-type side. Bismarck acquires for PLAYER on either side
+  type and releases for OTHERNPC on either. Outcomes repeat identically on
+  both numerical side indices; never infer side0==PLAYER. This source-profile
+  disagreement is retained, not projected onto Taiwan1.0 or modern DESIGN.
+- Acquire: live item3/owner0/object-1, exactly bag slot9/reference1, one pickup
+  log/aggregate send (Bismarck also one single-slot send). Release: use0/
+  owner-1/count-1, zero carried references and presentation. Both profiles'
+  cleared-bag first slot is9; previous Gavin partial-bag slot11 is a distinct
+  input. Every arena releases, modeNONE/Total_BattleNum0, all tickets -1.
+- Entire256 items/seven Char/full BATTLE match original no-ticket differential
+  control plus predicted item/release change; all carried references scanned.
+  All eight native connection records match original timer predictions:
+  alive PLAYER Exit once, time1000/rand0/CreateTime900/duration0, Gavin
+  BDTime1000/Bismarck1005, one draw, Bismarck typed NU(fd7,0) once. OTHERNPC
+  invokes no timer. Both original bodies and Bismarck global delayTime5 intact.
+- The NPC fixture RETAGS existing actor0 and retains explicit player-shaped
+  data/pet union; it is not an original NPC birth/factory or natural entry
+  reachability witness. Enemy6 placed in opposite side; winner sentinel and
+  null callbacks retained. No win callback/XP formula/real transport proof.
+  Other NPC subclasses and enabled PLAYER_NPC variants remain OPEN.
+- Artifact11691409478,ZIP17986 bytes SHA256926d145a91cc8213ddbdadd6caa86f2a8391731aebc0fb8d7c06add73a5c1f54;
+  independent ZIP digest verified and both reports byte-exact against local.
+  Derived report33800 bytes SHA2561bf9a54cce0b6895a5fa6b75ff299d0a62b9d4813c0cf3c53a059df9536f4474.
+  Tool/spec/report/receipt STONEAGE-BATTLE-ORIGINAL-RECIPIENT-SIDE-*R1.
+  No original code/assets committed; complete continuity prefix preserved.
+- Pressure unchanged2486=2465 bounded closed+18 OPEN+3 historical UB,
+  zero promotions, no modern-engine phase transition. Historical provenance,
+  natural master/probability/actor/side reachability, callbacks/unique/time
+  generation, positive gold/config and real client/network remain OPEN.
+- Highest NEXT: inactive and out-of-range pending item indices through actual
+  second Finish/DeleteBattle. Include inactive pool record, index256, INT_MAX
+  and negative below -1; check complete item/actor/arena state and presentation.
+  Relevant original item-check/release/DeleteItem hashes recorded as source-only
+  leads, NOT runtime acceptance of those future invalid-ticket cases.
