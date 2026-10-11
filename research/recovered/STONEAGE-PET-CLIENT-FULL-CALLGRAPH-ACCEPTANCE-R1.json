@@ -1,0 +1,51 @@
+{
+  "status": "SOURCE_ONLY_FULL_PINNED_CLIENT_CALLGRAPH_REMOTE_ACCEPTED",
+  "source": {
+    "repo": "BismarckDD/Stoneage",
+    "commit": "999ffdf1d220ec6666eb65339180689c9caf1876",
+    "client_tree": "511d9b24376c6858b70ab3015e36f5007bfd565a",
+    "menu_blob": "62754fdd0db1b84c358d61418d253012d149e1d4",
+    "project_blob": "373c0699a5df017f53e4ab7a7d64c3d6280a8578"
+  },
+  "facts": {
+    "tracked_client_source_files": 237,
+    "full_client_inventory_sha256": "919703b218e8a4a417c5500bf77592bfc763286ca79b0fb47ffca92731ab4175",
+    "emitter_declaration": "client/stoneage/proto/protocol.h:462",
+    "emitter_definition": "client/stoneage/proto/protocol.cpp:2280",
+    "guarded_lexical_menu_callers": [
+      "client/stoneage/system/menu.cpp:14824",
+      "client/stoneage/system/menu.cpp:14966",
+      "client/stoneage/system/menu.cpp:15333"
+    ],
+    "opcode_client_send": 127,
+    "opcode_server_receive": 127,
+    "header_version_25": true,
+    "vs_project_special_60": true,
+    "default_enabled_pet": false,
+    "counterfactual_forced_80_enables_pet": true,
+    "compiled_real_client_evidence": false,
+    "authentic_runtime_packet_evidence": false,
+    "first_release_pet_feature_evidence": false
+  },
+  "gate": {
+    "workflow_run_id": 38145213269,
+    "workflow_job_id": 114487010565,
+    "tested_commit": "95109a740852ed4bfa3a587fccdcf2702e5dcbe1",
+    "conclusion": "success",
+    "all_steps_success": true,
+    "python_mutation_and_prior_regression_tests": 20,
+    "report_byte_exact_committed": true,
+    "artifact_id": 11704168980,
+    "zip_digest": "sha256:263a178c4e8f6b5a615a7dc5805aff5946fea39c3070017ccae27797e93af8e9",
+    "artifact_digest_from_github_not_independent_download": true
+  },
+  "correction": "First failing workflow exposed three real conditional client menu sender calls; earlier default-branch indexed search was insufficient. Adjusted source gates and negative controls; accepted exact report in subsequent Actions without erasing prior work.",
+  "pressure": {
+    "total": 2486,
+    "bounded_closed": 2465,
+    "open": 18,
+    "historical_ub": 3,
+    "early_historical_promotions": 0
+  },
+  "next": "Investigate source-certified optional 8.0 client-and-server compile-pair and tested native dispatch, then genuine PET item owner and unique-code lifecycle. Do not claim production binaries or JSS1999/Taiwan-v1 membership."
+}

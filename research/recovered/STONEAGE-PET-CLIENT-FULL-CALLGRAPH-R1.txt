@@ -1,0 +1,9 @@
+SOURCE_PET_CLIENT_GATE|pinned_commit=999ffdf1d220ec6666eb65339180689c9caf1876|client_tree=511d9b24376c6858b70ab3015e36f5007bfd565a|client_project_blob=373c0699a5df017f53e4ab7a7d64c3d6280a8578|tracked_client_source_files=237|lexical_sender_sites=5|lexical_caller_candidates=3|header_default_pet=0|vs_special_pet=0|counterfactual_80_pet=1|client_sender_opcode=127|server_receiver_opcode=127|runtime_packet_verified=0|deployed_client_binary_verified=0|early_build_verified=0|inventory_sha256=919703b218e8a4a417c5500bf77592bfc763286ca79b0fb47ffca92731ab4175
+SOURCE_PET_CLIENT_SITE|kind=definition|path=client/stoneage/proto/protocol.cpp|line=2280
+SOURCE_PET_CLIENT_SITE|kind=declaration|path=client/stoneage/proto/protocol.h|line=462
+SOURCE_PET_CLIENT_SITE|kind=lexical_call_candidate|path=client/stoneage/system/menu.cpp|line=14824
+SOURCE_PET_CLIENT_SITE|kind=lexical_call_candidate|path=client/stoneage/system/menu.cpp|line=14966
+SOURCE_PET_CLIENT_SITE|kind=lexical_call_candidate|path=client/stoneage/system/menu.cpp|line=15333
+BOUNDARY|Full pinned tracked client source lexical scan found three _PET_ITEM UI call sites; checked-in VS special default excludes PET; no executed packet or deployed binary; no JSS1999/Taiwan1.0 inference
+OPEN|external/generated runtime client dispatch, optional version8 build, matching enabled server binary, actual item-owner transitions, natural alias and unique codes
+RESOLUTION|PET_CLIENT_FULL_PINNED_SOURCE_ONLY_PASS

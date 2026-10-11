@@ -1,0 +1,58 @@
+name: Validate StoneAge pinned client PET sender source gates
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/validate-stoneage-pet-client-full-callgraph.yml"
+      - "tools/stoneage_pet_client_full_callgraph_audit.py"
+      - "tests/test_stoneage_pet_client_full_callgraph.py"
+      - "research/recovered/STONEAGE-PET-CLIENT-FULL-CALLGRAPH-R1.txt"
+permissions:
+  contents: read
+jobs:
+  pinned-client-source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - name: Strict mutation and prior protocol regression suite
+        run: |
+          python -m unittest -v tests.test_stoneage_pet_client_full_callgraph tests.test_stoneage_pet_item_protocol_crossmodule tests.test_stoneage_pet_item_build_gate
+      - name: Fetch exact pinned late-descendant source transiently
+        run: |
+          set -euo pipefail
+          git init /tmp/stoneage-pet-client-full-callgraph
+          git -C /tmp/stoneage-pet-client-full-callgraph remote add origin https://github.com/BismarckDD/Stoneage.git
+          git -C /tmp/stoneage-pet-client-full-callgraph fetch --depth 1 origin 999ffdf1d220ec6666eb65339180689c9caf1876
+          git -C /tmp/stoneage-pet-client-full-callgraph checkout --detach FETCH_HEAD
+      - name: Check full pinned tracked client C/C++ sender callers and three version macro profiles
+        run: |
+          set -euo pipefail
+          python -m tools.stoneage_pet_client_full_callgraph_audit --checkout /tmp/stoneage-pet-client-full-callgraph > /tmp/STONEAGE-PET-CLIENT-FULL-CALLGRAPH-R1.txt
+          cat /tmp/STONEAGE-PET-CLIENT-FULL-CALLGRAPH-R1.txt
+          grep -Fx 'RESOLUTION|PET_CLIENT_FULL_PINNED_SOURCE_ONLY_PASS' /tmp/STONEAGE-PET-CLIENT-FULL-CALLGRAPH-R1.txt
+      - name: Require strict bounded source report and retained full bytes if archived
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from tools.stoneage_pet_client_full_callgraph_audit import validate
+          actual=Path('/tmp/STONEAGE-PET-CLIENT-FULL-CALLGRAPH-R1.txt')
+          report=actual.read_text()
+          gate=validate(report)
+          assert int(gate['tracked_client_source_files']) >= 200
+          assert gate['lexical_caller_candidates']=='3'
+          assert gate['runtime_packet_verified']=='0'
+          retained=Path('research/recovered/STONEAGE-PET-CLIENT-FULL-CALLGRAPH-R1.txt')
+          if retained.exists():
+              assert actual.read_bytes()==retained.read_bytes(), 'pinned source report changed'
+          print('PINNED_CLIENT_PET_SOURCE_ONLY_ACCEPTED', gate['tracked_client_source_files'], 'archived',retained.exists())
+          PY
+      - name: Upload derived source-only report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: stoneage-pet-client-full-callgraph-r1
+          path: /tmp/STONEAGE-PET-CLIENT-FULL-CALLGRAPH-R1.txt
+          if-no-files-found: ignore
