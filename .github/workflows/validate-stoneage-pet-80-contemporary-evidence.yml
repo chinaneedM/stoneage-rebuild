@@ -1,0 +1,26 @@
+name: Validate StoneAge 8.0 PET contemporary evidence boundaries
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/validate-stoneage-pet-80-contemporary-evidence.yml"
+      - "tools/stoneage_pet_80_release_evidence_gate.py"
+      - "tests/test_stoneage_pet_80_release_evidence_gate.py"
+      - "docs/specs/STONEAGE-PET-80-CONTEMPORARY-RELEASE-EVIDENCE-R1.md"
+      - "docs/HISTORICAL-TIMELINE.md"
+      - "docs/SOURCE-REGISTRY.md"
+      - "docs/CURRENT-STATE.md"
+permissions:
+  contents: read
+jobs:
+  boundary:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - name: Verify historical announcement separately from code, binary and early-version claims
+        run: |
+          python -m unittest -v tests.test_stoneage_pet_80_release_evidence_gate
+          python -m tools.stoneage_pet_80_release_evidence_gate
