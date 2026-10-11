@@ -1,6 +1,6 @@
 # Original shared old-item retention and subsequent payout R1
 
-Status: local bounded execution passed; remote acceptance pending.
+Status: REMOTE ACCEPTED bounded; Action38135637453/job114458809455 SUCCESS at7469cc03b8f46a7fdb77e085b58d910d882afd51. Receipt records independently verified artifact bytes.
 
 FACT is bounded to clean pinned Gavin1f90cb6/Bismarck999ffdf1 descendants,
 GNU99 O0/O2 nonrecovering UBSan and explicit synthetic inputs. Iris pin remains

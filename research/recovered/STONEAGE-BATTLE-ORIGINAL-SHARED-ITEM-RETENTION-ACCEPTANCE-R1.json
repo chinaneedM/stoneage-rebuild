@@ -1,0 +1,280 @@
+{
+  "status": "REMOTE_ACCEPTED_BOUNDED",
+  "baseline": {
+    "head": "041c3a0a5d65ebd8b833ab449036b8bb4509cbed",
+    "tree": "e16f1000580e73ab0e3ec0fbcb3d52fb7b0628de"
+  },
+  "branch": "agent/original-shared-item-retention-r1-20261011",
+  "tested_commit": "7469cc03b8f46a7fdb77e085b58d910d882afd51",
+  "tested_tree": "97ba5d956a2024dd9f682d6e40488fbaca6386e2",
+  "remote": {
+    "run_id": 38135637453,
+    "run_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/38135637453",
+    "head_sha": "7469cc03b8f46a7fdb77e085b58d910d882afd51",
+    "conclusion": "success",
+    "job_id": 114458809455,
+    "job_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/38135637453/job/114458809455",
+    "all_12_steps_success": true,
+    "steps": [
+      {
+        "number": 1,
+        "name": "Set up job",
+        "conclusion": "success"
+      },
+      {
+        "number": 2,
+        "name": "Run actions/checkout@v4",
+        "conclusion": "success"
+      },
+      {
+        "number": 3,
+        "name": "Run actions/setup-python@v5",
+        "conclusion": "success"
+      },
+      {
+        "number": 4,
+        "name": "Original drop source and retained regression gates",
+        "conclusion": "success"
+      },
+      {
+        "number": 5,
+        "name": "Recover pinned historical descendant sources transiently",
+        "conclusion": "success"
+      },
+      {
+        "number": 6,
+        "name": "Run original shared old-item retention and payout",
+        "conclusion": "success"
+      },
+      {
+        "number": 7,
+        "name": "Validate shared-item-retention matrix and all predecessor witnesses",
+        "conclusion": "success"
+      },
+      {
+        "number": 8,
+        "name": "Preserve original item factory independently",
+        "conclusion": "success"
+      },
+      {
+        "number": 9,
+        "name": "Upload only derived evidence",
+        "conclusion": "success"
+      },
+      {
+        "number": 17,
+        "name": "Post Run actions/setup-python@v5",
+        "conclusion": "success"
+      },
+      {
+        "number": 18,
+        "name": "Post Run actions/checkout@v4",
+        "conclusion": "success"
+      },
+      {
+        "number": 19,
+        "name": "Complete job",
+        "conclusion": "success"
+      }
+    ],
+    "artifact": {
+      "id": 11699999835,
+      "name": "stoneage-battle-original-shared-item-retention-r1",
+      "digest": "sha256:15e150b0fd3d28a5a5bcb7c568a2d3dc82f21c4693cc56dbb96f44849250aefb",
+      "bytes": 30630
+    },
+    "ZIP_sha256_independently_verified": true,
+    "reports": {
+      "stoneage-battle-original-shared-item-retention-r1.txt": {
+        "bytes": 430761,
+        "sha256": "1f56d65e1efab15e586f167e253be2da6c1a86b52a9936da0b6cf212ca1b63f0",
+        "byte_exact_to_local": true
+      },
+      "stoneage-item-factory-retained-r1.txt": {
+        "bytes": 32466,
+        "sha256": "ae632bc03bf06ca1661e4ba0d151595f9ccd075d0c1eb67d5b3acb22b5e8ff59",
+        "byte_exact_to_local": true
+      }
+    }
+  },
+  "python_tests": 146,
+  "source_pins": {
+    "gavin": "1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56",
+    "iris": "9e6c8ce2cd8ed532a7157773acd1c61582c178b5",
+    "bismarck": "999ffdf1d220ec6666eb65339180689c9caf1876"
+  },
+  "prior_documents_preserved_as_exact_prefix": {
+    "docs/CURRENT-STATE.md": {
+      "bytes": 1276643,
+      "sha256": "2046970739c90cc61277230fd5d3230072c662e26591bf5f2be42f05a08933d2"
+    },
+    "docs/HISTORICAL-TIMELINE.md": {
+      "bytes": 209387,
+      "sha256": "6bca5022391ab21b4d2c33394dde4ffba463569fac26a2dd59ce9a9dfb15b12a"
+    },
+    "docs/SOURCE-REGISTRY.md": {
+      "bytes": 428698,
+      "sha256": "ee1692191dacf948e59bb3039057e5146028fc3af9e493f44a53046ea6b35a3e"
+    }
+  },
+  "native": {
+    "profiles": [
+      "gavin",
+      "bismarck"
+    ],
+    "optimizations": [
+      "O0",
+      "O2"
+    ],
+    "nonrecovering_UBSan": true,
+    "assignment_rows": 36,
+    "payout_rows": 144,
+    "new_Finish_executions": 576,
+    "new_no_ticket_controls": 288,
+    "new_ticket_replays": 288,
+    "retained_ACTUAL_rows_byte_exact": 560,
+    "retained_original_creation": {
+      "one_enemy_call": true,
+      "actor": 6,
+      "objects": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "IDs": [
+        1,
+        2,
+        1,
+        2
+      ],
+      "original_owner_carry": true,
+      "spawn_draws": 282,
+      "no_new_item_rebinding": true,
+      "no_allocator_cursor_rewind": true
+    },
+    "assignment": {
+      "recipients": [
+        0,
+        1
+      ],
+      "replacement_branches": [
+        1,
+        2,
+        3
+      ],
+      "alias_holders": [
+        -1,
+        0,
+        1
+      ],
+      "eligible": [
+        0,
+        1,
+        -1
+      ],
+      "rng_draws": 6,
+      "no_alias_release_calls": 1,
+      "no_alias_count_delta": -1,
+      "player_alias_release_calls": 0,
+      "player_alias_count_delta": 0,
+      "retained_victim_use": 1,
+      "retained_victim_original_owner": 6,
+      "retained_carried_references": 1,
+      "separate_original_guard_diagnostic_count": {
+        "no_alias": 0,
+        "player_alias": 1,
+        "no_item_control": 0
+      },
+      "warning_argument_rendering_validated": false,
+      "no_item_EXP_death_differential": true,
+      "no_alias_full_state_differential": true,
+      "whole256_items_seven_Char_BATTLE": true,
+      "allten_enemy_carried_slots_clear": true,
+      "initial_owner_no_manual_rebinding": true
+    },
+    "payout": {
+      "capacity_masks": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "explicit_alias_reference_preserved": true,
+      "overflow_victim_no_second_release": true,
+      "retained_victim_owner6_even_after_original_enemy_disposal": true,
+      "other_three_pending_each_awarded_or_released_once": true,
+      "earliest_survivor_wins_selected_last_slot": true,
+      "other_player_free_capacity_unconsumed": true,
+      "whole256_items_fillers_seven_Char_BATTLE_eight_connections": true,
+      "complete_per_object_per_player_oracles": true,
+      "descriptor_map": {
+        "0": 7,
+        "1": 6
+      },
+      "packet_order": [
+        7,
+        6
+      ],
+      "timer_calls": 2,
+      "timer_draws": 2,
+      "BDTime": {
+        "gavin": 1000,
+        "bismarck": 1005
+      },
+      "NU_count": {
+        "gavin": 0,
+        "bismarck": 2
+      }
+    },
+    "explicit_inputs": {
+      "retained_inputs": {
+        "retained_synthetic_guaranteed_ten_pair_master": true,
+        "retained_logical256_occupancy_and_inactive_reference_preparation": true,
+        "payout_players_LV": 100,
+        "payout_players_EXP": 0,
+        "payout_players_and_owned_pet_WORKGETEXP": 0,
+        "live_players_timing_battle_fields": true,
+        "full_or_last_slot_bags": true,
+        "descriptor_collectors_are_adapters_not_recovered_network_logic": true
+      },
+      "both_players_second_nonequipment_carried_slot_precleared": true,
+      "alias_inserted_before_assignment_in_same_prepared_slot": true,
+      "original_created_item_owner6_not_rebound": true,
+      "no_natural_alias_reachability_claim": true,
+      "count_only_original_guard_diagnostic_adapter": true
+    }
+  },
+  "local_report": {
+    "bytes": 430761,
+    "sha256": "1f56d65e1efab15e586f167e253be2da6c1a86b52a9936da0b6cf212ca1b63f0"
+  },
+  "independent_factory_report": {
+    "bytes": 32466,
+    "sha256": "ae632bc03bf06ca1661e4ba0d151595f9ccd075d0c1eb67d5b3acb22b5e8ff59",
+    "same_bytes_hash_as_accepted_predecessor": true
+  },
+  "source_hash_rows": [
+    "SHARED_SOURCE|gavin|BATTLE_AddExpItem|sha256=8bf2e1bab742b3c468f13a8e94ea674be8b6fab4fa675fba13aa7f5f0a45080d",
+    "SHARED_SOURCE|gavin|BATTLE_ItemDelCheck|sha256=9a6a8ac26641043cb26699eed0ca11edf8806e244626d3377ef8f607f2cf95ce",
+    "SHARED_SOURCE|gavin|BATTLE_GetProfit|sha256=35edd4961868b6a4d50cade0c6141b1659cb28ba914e8ccd93c4a9347bcc855d",
+    "SHARED_SOURCE|gavin|BATTLE_GetExpGold|sha256=7e8dcab1862b6b845e529630f807d7f91e29a7b337f2ea486d9b01a88397822b",
+    "SHARED_SOURCE|gavin|BATTLE_Finish|sha256=e440d90b269bcb0620dcd96fda4758a0720bf367f14936f035ab9bbc787006e4",
+    "SHARED_SOURCE|gavin|BATTLE_DeleteBattle|sha256=9b503d98f6b22d1a5e4c4b44c11ead0487dcb05a3cc83db3c1344bb8183d299a",
+    "SHARED_SOURCE|bismarck|BATTLE_AddExpItem|sha256=0e77d7ea410eb0c62aa7db17878a860a740f85d04c873b5f10b57968d66b8e12",
+    "SHARED_SOURCE|bismarck|BATTLE_ItemDelCheck|sha256=95d7897afdab2163b1b13b7a87d55e83e65b49018063487fedce85b19266c3cc",
+    "SHARED_SOURCE|bismarck|BATTLE_GetProfit|sha256=5682714a9f08532fc7c492b854f09a8304a8f5fc0fe4c661a0a28bceb7f10e94",
+    "SHARED_SOURCE|bismarck|BATTLE_GetExpGold|sha256=acf3c59f6475634b5d2354e10c7867676ef47a171c0e4fe60b5d67612508db36",
+    "SHARED_SOURCE|bismarck|BATTLE_Finish|sha256=b369c2af159f182ed7e918ec083f73ae76ade2e3e3f907ae7525306f5ec035b8",
+    "SHARED_SOURCE|bismarck|BATTLE_DeleteBattle|sha256=01e105e4a325a1923c8032bcab585f80201a760580a925bea8f2f7f9f30725fe"
+  ],
+  "source_boundary": "Pinned late descendants; explicitly prepared synthetic PLAYER carried alias, original owner6, controlled guaranteed master/RNG/occupancy and normalized LV100/EXP0/player-pet WORKGETEXP0/bags. Diagnostic count-only adapter does not validate warning arguments/rendering. No natural alias reachability, early identity, real client/network or modern ownership DESIGN. Original source/headers/assets transient only.",
+  "pressure": {
+    "total": 2486,
+    "bounded_closed": 2465,
+    "open": 18,
+    "historical_ub": 3,
+    "historical_promotions": 0
+  },
+  "next": "Original BATTLE_ItemDelCheck PLAYER versus owned PET carried-reference partition: compare no alias, actual PLAYER0/1 and owned PET2 aliases to replaced old items, exact guard/release/count/live/owner/reference outcomes and subsequent original payout; preserve explicit synthetic alias preparation, normalized EXP and all predecessor witnesses."
+}
