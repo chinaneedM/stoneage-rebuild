@@ -2378,3 +2378,22 @@ a zero-call assumption was corrected in the observer's expectation only.
 Synthetic inputs establish bounded late-source behavior, not natural alias or
 distinct-item creation, early release history, real-client or modern DESIGN.
 Pressure/promotions unchanged. Original distinct-item creation/competition OPEN.
+
+
+## 2026-10-11 — Bounded original distinct objects and types competing for final slot
+
+FACT within pinned Gavin1f90cb6/Bismarck999ffdf1 explicit synthetic masters:
+Action38113984094/job114395096379 SUCCESS ateb18d164d7ef24d1d91815f37b66c2f023d7fefc,107 checks. Original empty
+NPC disposal and ENEMY_createEnemy/factory/allocator create enemy4 with distinct
+objects4/5/6, template IDs1/2/1; actual AddExpItem assigns pending4/5/6. Original
+character cursor wrapped to4 rather than the initially assumed newly disposed6;
+expectation corrected with no cursor rewind/body mutation.215 spawn draws and
+three assignment draws, complete creation pool/tables/other actors/arena pass.
+Six explicit permutations with full/one-free inventories give24 payout rows/
+96 O0/O2 UBSan Finish executions, plus two creation rows;240 predecessor rows
+retained. Earliest actual object alone fills final23/53, other objects each
+release once; full bag releases all three. Winning ID2 has FactoryTwo display
+under Bismarck, Gavin retains empty SECRETNAME display. Full state/RS/timer and
+release oracles pass. Masters/probabilities/alternate orders remain synthetic,
+not natural early history or real-client/modern DESIGN. No pressure/promotion.
+Original fourth-drop overflow/replacement from occupied pending slots remains OPEN.

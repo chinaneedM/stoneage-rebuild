@@ -5699,3 +5699,24 @@ against local, factory equals preceding accepted gate. Explicit logical256 pool,
 synthetic fillers and ordered pending inputs do not prove natural generation,
 early server identity or actual client rendering. Original C/headers/assets
 transient only; no historical/pressure promotion. Distinct original creation OPEN.
+
+
+## 2026-10-11 — Original distinct-drop creation and competition source witness R1
+
+Tool/spec/source-free report/receipt STONEAGE-BATTLE-ORIGINAL-DISTINCT-ITEM-TICKET-R1;
+Action38113984094/job114395096379 SUCCESS ateb18d164d7ef24d1d91815f37b66c2f023d7fefc,107 checks. Two original-creation
+rows plus24 payout rows/96 new Finish executions,240 predecessor rows byte-exact.
+Pinned Gavin1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56 and Bismarck
+999ffdf1d220ec6666eb65339180689c9caf1876. Complete original creation allocator,
+disposal, factory and AddExpItem fingerprints; raw/preprocessed macro forms
+separate. Actual enemy4/objects4,5,6/IDs1,2,1 from explicit guaranteed master,
+then original assignment. Full256 items/seven Char/BATTLE/eight connections,
+per-object releases/typed winner logs/inventory/full RS/original timers checked,
+GNU99 O0/O2 nonrecovering UBSan complete-output equality.
+Report155342 bytes SHA256611319f6d1a8c76724192ee391a4095721d444195a026ff54260df976ddd2d89.
+Artifact11692284898 ZIP independently digest-verified; both reports byte-exact
+against local, factory equals preceding accepted gate. Transient Bismarck table
+backing3/logical size restored2, synthetic template2/fillers/permutations do not
+establish natural recovered master data or early history/client rendering.
+Original C/headers/assets transient only, no historical/pressure promotion.
+Fourth-drop original pending-slot overflow/replacement remains OPEN.

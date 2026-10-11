@@ -1,0 +1,355 @@
+{
+  "status": "REMOTE_ACCEPTED_BOUNDED",
+  "date": "2026-10-11 Asia/Shanghai",
+  "repo": "chinaneedM/stoneage-rebuild",
+  "prior_main": "3eb7025c232b360cff929a1cfc108f5c6478d94f",
+  "prior_main_tree": "d81c8c4d962c6327306e1bc975c3f103b4a53c26",
+  "branch": "agent/original-distinct-item-ticket-r1-20261011",
+  "tested_commit": "eb18d164d7ef24d1d91815f37b66c2f023d7fefc",
+  "tested_tree": "61f68518b3cc692435c9f8feaff7b25234d2673c",
+  "github_action": {
+    "run": 38113984094,
+    "job": 114395096379,
+    "conclusion": "success",
+    "head_sha": "eb18d164d7ef24d1d91815f37b66c2f023d7fefc",
+    "all_steps_success": true,
+    "steps_count": 12,
+    "artifact": {
+      "id": 11692284898,
+      "zip_bytes": 22973,
+      "zip_sha256": "905478eadae9e783b30e6cfd27ad811ed9d990732a7d85ee0d4aac4d28de7e2f",
+      "independent_zip_sha_verified": true,
+      "reports": {
+        "stoneage-battle-original-distinct-item-ticket-r1.txt": {
+          "bytes": 155342,
+          "sha256": "611319f6d1a8c76724192ee391a4095721d444195a026ff54260df976ddd2d89",
+          "exact_local_bytes": true
+        },
+        "stoneage-item-factory-retained-r1.txt": {
+          "bytes": 32466,
+          "sha256": "ae632bc03bf06ca1661e4ba0d151595f9ccd075d0c1eb67d5b3acb22b5e8ff59",
+          "exact_local_bytes": true
+        }
+      }
+    }
+  },
+  "python_tests": 107,
+  "source_pins": {
+    "gavin": "1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56",
+    "iris": "9e6c8ce2cd8ed532a7157773acd1c61582c178b5",
+    "bismarck": "999ffdf1d220ec6666eb65339180689c9caf1876"
+  },
+  "prior_documents_preserved_as_exact_prefix": {
+    "docs/CURRENT-STATE.md": {
+      "bytes": 1256026,
+      "sha256": "5549b97534cb64f54b1350b4bf5fdc3ed960ec1bd3411aa0351ed5f544bc7fb9",
+      "git_blob": "b08774d8a26330b675d15f8bcc3b58e1f8ebd2b2"
+    },
+    "docs/HISTORICAL-TIMELINE.md": {
+      "bytes": 201566,
+      "sha256": "53123f2866c17cd44f02f3b145cc7ac767a5d611343c519035aff31c49ad4240",
+      "git_blob": "942a8f5ff915a61bf2d136a5ee8b327747e58294"
+    },
+    "docs/SOURCE-REGISTRY.md": {
+      "bytes": 420744,
+      "sha256": "73c67788a0b80dfc7cd64c1af0ceed5eb3198e772074ef840cba462560aee7e1",
+      "git_blob": "ec2f19e24d4525454fd8d60fd11d5837ace097b6"
+    }
+  },
+  "original_source_hash_rows": [
+    "ENEMY_ORIGINAL_DROP_SOURCE|gavin|ENEMY_createEnemy|preprocessed_sha256=a0a9732752729e5be378faf7341c9812d9dbd2ccab05eb386070b91b113508f7|inherited_raw_sha256=ec6956c81c157ee227c15208c26e03767f8c21ef15af2696760d690ad889d57a|ordered_drop_symbols=16",
+    "CLEANUP_SOURCE|gavin|CheckDefBTime|sha256=ea245dc2e56a6e04ed88779247dfd2741149edc632e9c833da84118db4b18985|connection_type_sha256=ef00ad508afb71e7840db271cc674a463b9f0a4af6f19fb08e7d72d010015696",
+    "CLEANUP_SOURCE|gavin|BATTLE_DeleteItem|native_sha256=9bbfb952b8b54c31a249adc563a4868ff7c00b587deadc434b949b6758ca69c2|preprocessed_sha256=9bbfb952b8b54c31a249adc563a4868ff7c00b587deadc434b949b6758ca69c2",
+    "CLEANUP_SOURCE|gavin|BATTLE_DeleteBattle|native_sha256=9b503d98f6b22d1a5e4c4b44c11ead0487dcb05a3cc83db3c1344bb8183d299a|preprocessed_sha256=9b503d98f6b22d1a5e4c4b44c11ead0487dcb05a3cc83db3c1344bb8183d299a",
+    "MIXED_TICKET_SOURCE|gavin|BATTLE_GetExpGold|sha256=7e8dcab1862b6b845e529630f807d7f91e29a7b337f2ea486d9b01a88397822b",
+    "MIXED_TICKET_SOURCE|gavin|BATTLE_DeleteItem|sha256=9bbfb952b8b54c31a249adc563a4868ff7c00b587deadc434b949b6758ca69c2",
+    "MIXED_TICKET_SOURCE|gavin|BATTLE_DeleteBattle|sha256=9b503d98f6b22d1a5e4c4b44c11ead0487dcb05a3cc83db3c1344bb8183d299a",
+    "MIXED_TICKET_SOURCE|gavin|ITEM_getAppropriateName|sha256=10867f214edc1106125810e7fd81e4dc1f2b93bcb4c5b6f4cd2f0f26e7accb77",
+    "LAST_SLOT_SOURCE|gavin|_ITEM_endExistItemsOne|sha256=439716095c6a6a541575603e17c9328bf85cb555100e9ca5b48149c332c833a5",
+    "LAST_SLOT_SOURCE|gavin|CHAR_findEmptyItemBox|sha256=d2aed30d7ba0090c6762f6dd60e2d22788f2572f0e9cefacb3cdd355be1cfdb6",
+    "LAST_SLOT_SOURCE|gavin|CHAR_addItemSpecificItemIndex|sha256=204b159e10974691629e47594fc489db792981dd5eede894f1ce40f1228ed7a8",
+    "DISTINCT_ITEM_SOURCE|gavin|CHAR_initCharOneArray|inherited_sha256=3a591c5c04efafb8d93124f775cb859ab73fe395b04eb790e6486752ae54698c|preprocessed_sha256=a4c275fa00983ecd950082b13549fccf0d2efb68e072aa9cb8c6573014c25fe9",
+    "DISTINCT_ITEM_SOURCE|gavin|CHAR_endCharOneArray|inherited_sha256=1a237c8a77a675830070eda30aa8e8518c821535e78f95780f8564720f0cf980|preprocessed_sha256=1a237c8a77a675830070eda30aa8e8518c821535e78f95780f8564720f0cf980",
+    "DISTINCT_ITEM_SOURCE|gavin|ITEM_makeItem|inherited_sha256=c82d3be6fd40ce6978e7a6a5790b4e15df739b9130dcefb4f1d9954a70372cca|preprocessed_sha256=c82d3be6fd40ce6978e7a6a5790b4e15df739b9130dcefb4f1d9954a70372cca",
+    "DISTINCT_ITEM_SOURCE|gavin|ITEM_makeItemAndRegist|inherited_sha256=9c0ebb9005c7e644fb196d2cd78ffe6cda08c90d83d3d7ba166b9c09a1487e2b|preprocessed_sha256=9c0ebb9005c7e644fb196d2cd78ffe6cda08c90d83d3d7ba166b9c09a1487e2b",
+    "DISTINCT_ITEM_SOURCE|gavin|_ITEM_initExistItemsOne|inherited_sha256=debe8ffbcb2b1ee58eba4ec3870210861bb62e8c3f11620e2c5799163c1cf558|preprocessed_sha256=debe8ffbcb2b1ee58eba4ec3870210861bb62e8c3f11620e2c5799163c1cf558",
+    "DISTINCT_ITEM_SOURCE|gavin|BATTLE_AddExpItem|inherited_sha256=8bf2e1bab742b3c468f13a8e94ea674be8b6fab4fa675fba13aa7f5f0a45080d|preprocessed_sha256=8bf2e1bab742b3c468f13a8e94ea674be8b6fab4fa675fba13aa7f5f0a45080d",
+    "ENEMY_ORIGINAL_DROP_SOURCE|bismarck|ENEMY_createEnemy|preprocessed_sha256=fd3ad864fbf1a8bbbed7031f762904ed60a21d5220bfd97626c06d4fdbdd7502|inherited_raw_sha256=fd3ad864fbf1a8bbbed7031f762904ed60a21d5220bfd97626c06d4fdbdd7502|ordered_drop_symbols=16",
+    "CLEANUP_SOURCE|bismarck|delayTime|sha256=1afd7482610eec8e34637b326e29b525fefc8eedbbbbfaea1afad13e0bb70050|value=5",
+    "CLEANUP_SOURCE|bismarck|CheckDefBTime|sha256=64cba2829b8b8ec6395c02fdc54872155b5934a343ec6e66f07071e223f08a45|connection_type_sha256=24ffe3a458e9c854d2814b7340e4d3ec20dd7fd52f5b320bba44b21fd226ab76",
+    "CLEANUP_SOURCE|bismarck|BATTLE_DeleteItem|native_sha256=875bd921080397d7760232f95ad88a071ff413cc13a5fb815e48943d8e81bc5b|preprocessed_sha256=875bd921080397d7760232f95ad88a071ff413cc13a5fb815e48943d8e81bc5b",
+    "CLEANUP_SOURCE|bismarck|BATTLE_DeleteBattle|native_sha256=01e105e4a325a1923c8032bcab585f80201a760580a925bea8f2f7f9f30725fe|preprocessed_sha256=01e105e4a325a1923c8032bcab585f80201a760580a925bea8f2f7f9f30725fe",
+    "MIXED_TICKET_SOURCE|bismarck|BATTLE_GetExpGold|sha256=acf3c59f6475634b5d2354e10c7867676ef47a171c0e4fe60b5d67612508db36",
+    "MIXED_TICKET_SOURCE|bismarck|BATTLE_DeleteItem|sha256=875bd921080397d7760232f95ad88a071ff413cc13a5fb815e48943d8e81bc5b",
+    "MIXED_TICKET_SOURCE|bismarck|BATTLE_DeleteBattle|sha256=01e105e4a325a1923c8032bcab585f80201a760580a925bea8f2f7f9f30725fe",
+    "MIXED_TICKET_SOURCE|bismarck|ITEM_getAppropriateName|sha256=c8f74fda358518983e7b80a84648a34fb09a2924285e250fab092e26e511a04f",
+    "LAST_SLOT_SOURCE|bismarck|_ITEM_endExistItemsOne|sha256=d10e9c90ea93f31fce8df4602649008ff864792764dfa488e5f70905928a450e",
+    "LAST_SLOT_SOURCE|bismarck|CHAR_findEmptyItemBox|sha256=132aca659ed9890e6336cc0bac12c0b2ff0789feb4ed5beeb41b6c708bde64d8",
+    "LAST_SLOT_SOURCE|bismarck|CHAR_addItemSpecificItemIndex|sha256=c84e41993806cccde703d44c5b91d0a9126488c4a79b9f449674ebd237ffe168",
+    "DISTINCT_ITEM_SOURCE|bismarck|CHAR_initCharOneArray|inherited_sha256=3393b306f9718d3fd6fbeccb7ba9082c6d307d39d6402e07534d8c7aa404898a|preprocessed_sha256=1c514722a87b68a57aeb6933ae470b7cce614242ffd44505666f21de79a03270",
+    "DISTINCT_ITEM_SOURCE|bismarck|_CHAR_endCharOneArray|inherited_sha256=f63afb8f2afb8ba0a2eba5c125ce3d2d937c5a1a88fbc8236099865748e2c5f7|preprocessed_sha256=f63afb8f2afb8ba0a2eba5c125ce3d2d937c5a1a88fbc8236099865748e2c5f7",
+    "DISTINCT_ITEM_SOURCE|bismarck|ITEM_makeItem|inherited_sha256=6094372f1339f67bb14b95be012746c6d1579c09b8251b240bc8872bb540effa|preprocessed_sha256=6094372f1339f67bb14b95be012746c6d1579c09b8251b240bc8872bb540effa",
+    "DISTINCT_ITEM_SOURCE|bismarck|ITEM_makeItemAndRegist|inherited_sha256=ce89d79fc61d9a9b872e7b41a0483aabeb21ff529c782fd05b2d3fa61a8327d7|preprocessed_sha256=ce89d79fc61d9a9b872e7b41a0483aabeb21ff529c782fd05b2d3fa61a8327d7",
+    "DISTINCT_ITEM_SOURCE|bismarck|_ITEM_initExistItemsOne|inherited_sha256=0cee50b39499960ce599b92d6364ea192d149b5d20fe5d5b400eb8afac711f56|preprocessed_sha256=0cee50b39499960ce599b92d6364ea192d149b5d20fe5d5b400eb8afac711f56",
+    "DISTINCT_ITEM_SOURCE|bismarck|BATTLE_AddExpItem|inherited_sha256=0e77d7ea410eb0c62aa7db17878a860a740f85d04c873b5f10b57968d66b8e12|preprocessed_sha256=0e77d7ea410eb0c62aa7db17878a860a740f85d04c873b5f10b57968d66b8e12"
+  ],
+  "native": {
+    "profiles": [
+      "gavin",
+      "bismarck"
+    ],
+    "optimizations": [
+      "O0",
+      "O2"
+    ],
+    "nonrecovering_UBSan": true,
+    "original_creation": {
+      "old_empty_enemy_disposed": 6,
+      "actual_new_enemy": 4,
+      "original_char_cursor_not_rewound": true,
+      "original_item_cursor_not_rewound": true,
+      "objects": [
+        4,
+        5,
+        6
+      ],
+      "template_IDs": [
+        1,
+        2,
+        1
+      ],
+      "source_shaped_master_entries": 10,
+      "guaranteed_entries": 3,
+      "synthetic_probability": 1000,
+      "template2_changes": [
+        "ID=2",
+        "NAME=FactoryTwo",
+        "UNIQUECODE=factory-two"
+      ],
+      "Bismarck_transient_table_backing_records": 3,
+      "Bismarck_logical_table_size_restored": 2,
+      "owners_after_creation_and_assignment": [
+        4,
+        4,
+        4
+      ],
+      "object_indices": [
+        -1,
+        -1,
+        -1
+      ],
+      "count_delta": 3,
+      "prior_zero_spawn_draws": 14,
+      "field_draws_per_factory": 66,
+      "three_drop_spawn_draws": 215,
+      "whole_256_item_pool": true,
+      "six_other_complete_Char_records": true,
+      "whole_BATTLE": true,
+      "whole_index_and_factory_tables_immutable": true,
+      "initial_oracle_correction": "expected newly disposed actor6; actual original cursor wraps to free actor4; oracle corrected, no cursor/body reset"
+    },
+    "original_assignment": {
+      "function": "BATTLE_AddExpItem",
+      "eligible_attackers": [
+        0,
+        -1
+      ],
+      "recipient": 0,
+      "pending": [
+        4,
+        5,
+        6
+      ],
+      "draws": 3,
+      "pool_and_owners_unchanged": true,
+      "all_three_carried_slots_clear": true,
+      "whole_arena": true,
+      "five_nonrecipient_complete_Char_records": true,
+      "death_and_kill_counts_increment_once": true
+    },
+    "competition": {
+      "GETITEM_MAX": 3,
+      "permutations": [
+        [
+          4,
+          5,
+          6
+        ],
+        [
+          4,
+          6,
+          5
+        ],
+        [
+          5,
+          4,
+          6
+        ],
+        [
+          5,
+          6,
+          4
+        ],
+        [
+          6,
+          4,
+          5
+        ],
+        [
+          6,
+          5,
+          4
+        ]
+      ],
+      "available_slots": [
+        0,
+        1
+      ],
+      "new_payout_rows": 24,
+      "new_creation_rows": 2,
+      "new_second_Finish_executions": 96,
+      "no_ticket_controls": 48,
+      "ticket_replays": 48,
+      "retained_Finish_executions": 960,
+      "active_limits": {
+        "gavin": 24,
+        "bismarck": 54
+      },
+      "final_slots": {
+        "gavin": 23,
+        "bismarck": 53
+      },
+      "logical_pool": 256,
+      "all_fillers_preserved": true,
+      "one_free": {
+        "winner": "ticket0 actual object",
+        "count_delta": -2,
+        "unawarded_objects_released_once_each": true,
+        "winner_live": 1,
+        "winner_owner": 0,
+        "winner_object": -1,
+        "references": 1,
+        "pickup_logs": 1,
+        "aggregate_send": 1,
+        "single_slot_send": {
+          "gavin": 0,
+          "bismarck": 1
+        }
+      },
+      "full": {
+        "winner": -1,
+        "count_delta": -3,
+        "all_three_released_once_each": true,
+        "live": [
+          0,
+          0,
+          0
+        ],
+        "owners": [
+          -1,
+          -1,
+          -1
+        ],
+        "references": [
+          0,
+          0,
+          0
+        ],
+        "logs_and_item_sends": 0
+      }
+    },
+    "release_observer": {
+      "forwards_unchanged_arguments_through_preceding_observer_to_original_body": true,
+      "each_created_object_checked": true,
+      "baseline_empty_minus1_calls": {
+        "gavin": 54,
+        "bismarck": 84
+      },
+      "baseline_equal_no_ticket_control": true,
+      "total_calls": "baseline + 3 - awards"
+    },
+    "complete_state_oracles": {
+      "item_records": 256,
+      "Char_records": 7,
+      "BATTLE": true,
+      "connections": 8,
+      "arena_released": true,
+      "mode_NONE": true,
+      "Total_BattleNum_zero": true,
+      "all_tickets_minus1": true
+    },
+    "presentation": {
+      "typed_logs_check": [
+        "object index",
+        "template ID",
+        "ordinary NAME",
+        "UNIQUECODE",
+        "actor position",
+        "cause"
+      ],
+      "typed_item_sends_check_actual_winner": true,
+      "RS_count": 1,
+      "RS_fd": 7,
+      "complete_text_checked": true,
+      "prefix": "original no-ticket EXP/Exit differential; not independent EXP math",
+      "suffix": "three ordered fields/separators; only ticket0 named when accepted",
+      "gavin": {
+        "LEAKLEVEL": 1,
+        "SECRETNAME": "",
+        "appropriate_name": "",
+        "named_items": 0
+      },
+      "bismarck": {
+        "LEAKLEVEL": 0,
+        "NAME": "Factory or FactoryTwo by winner",
+        "named_items": "awards"
+      }
+    },
+    "timers": {
+      "original_bodies_executed": true,
+      "time": 1000,
+      "rand": 0,
+      "CreateTime": 900,
+      "duration": 0,
+      "calls": 1,
+      "draws": 1,
+      "Gavin_BDTime": 1000,
+      "Bismarck_BDTime": 1005,
+      "original_delayTime": 5,
+      "Bismarck_typed_NU_args": [
+        7,
+        0
+      ]
+    },
+    "source_macro_boundary": "inherited raw CHAR_initCharOneArray matches pinned extracted source; separately record preprocessed hash rather than conflate BOOL/TRUE/FALSE/fprint expansion",
+    "audit_stack_budget_bytes": 67108864
+  },
+  "retained_matrix_rows_byte_exact": {
+    "SAME_ITEM_CAPACITY": 6,
+    "TICKET_CLEANUP": 8,
+    "RECIPIENT_SIDE": 16,
+    "INVALID_ITEM_TICKET": 12,
+    "MIXED_ITEM_TICKET": 66,
+    "LAST_SLOT_TICKET": 132
+  },
+  "factory_report_byte_exact_to_prior": true,
+  "local_reports": {
+    "distinct": {
+      "bytes": 155342,
+      "sha256": "611319f6d1a8c76724192ee391a4095721d444195a026ff54260df976ddd2d89"
+    },
+    "factory": {
+      "bytes": 32466,
+      "sha256": "ae632bc03bf06ca1661e4ba0d151595f9ccd075d0c1eb67d5b3acb22b5e8ff59"
+    }
+  },
+  "source_boundary": "synthetic two-template three-drop master and guaranteed draws, explicit permutations after real original assignment; no natural data/permutation reachability, early server identity, actual transport/client or modern DESIGN",
+  "pressure": {
+    "total": 2486,
+    "bounded_closed": 2465,
+    "open": 18,
+    "historical_ub": 3,
+    "historical_promotions": 0
+  },
+  "next": "original fourth-drop overflow/replacement from three occupied pending slots, actual factory-created objects and controlled original RNG branches; full state/release/presentation oracles"
+}

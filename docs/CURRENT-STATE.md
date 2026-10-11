@@ -11920,3 +11920,73 @@ reviewed discovery gate and its automated derived-report writeback is authorized
   drop items, then test their ordered competition for exactly one remaining
   active slot with complete state/presentation/release oracles. Preserve the
   original profile identification/name distinctions and accepted same-item gate.
+
+
+## 2026-10-11 — Original distinct-drop creation and last-slot competition REMOTE ACCEPTED (bounded)
+
+- Fresh baseline main3eb7025c232b360cff929a1cfc108f5c6478d94f,treed81c8c4d962c6327306e1bc975c3f103b4a53c26.
+  Prior complete state blobb08774d8a26330b675d15f8bcc3b58e1f8ebd2b2,1256026 bytes and complete
+  timeline/source registry preserved as exact prefixes.
+- Branch agent/original-distinct-item-ticket-r1-20261011,tested inputeb18d164d7ef24d1d91815f37b66c2f023d7fefc,tree61f68518b3cc692435c9f8feaff7b25234d2673c.
+  Action38113984094/job114395096379,all 12 steps SUCCESS;107 Python checks,
+  Gavin/Bismarck GNU99 O0/O2 nonrecovering UBSan complete-output equality,
+  independent item factory report byte-exact against local and prior gate.
+- Original CHAR_endCharOneArray disposes preceding empty enemy6 without pool/
+  count change. Actual ENEMY_createEnemy invokes original factory/initializer
+  on a source-shaped synthetic10-pair master with three guaranteed1000 entries
+  IDs1/2/1. Original character cursor wraps to free actor4, original item cursor
+  creates distinct4/5/6; neither cursor rewound. An initial actor6-reuse
+  assumption was corrected to actual4 without original body/reset changes.
+- Explicit template2 copies template1's profile-shaped master, changing ID2,
+  NAME FactoryTwo and UNIQUECODE factory-two only. Direct/indirect layouts
+  retained; Bismarck transient factory backing expanded2->3 and logical size
+  temporarily3, restored2 afterwards. This is two synthetic template IDs and
+  three real original-created objects, not natural recovered master/drop data.
+- Full256 item creation oracle requires owner4/object-1 and count+3, exact
+  complete template bytes/profile LEAKLEVEL; all six other Char/full BATTLE and
+  complete index/factory tables unchanged.215 spawn draws=zero baseline14 plus
+  three probability draws and three original factories of66 fields.
+- Actual original BATTLE_AddExpItem with explicit eligible list0/-1 generates
+  pending4/5/6 in master order, three recipient draws; full arena/pool unchanged
+  except exact pending entries, carried slots cleared, owners remain4; death/
+  direct-player kill counts increment once, all five nonrecipient Char preserved.
+- Full and one-free active bags across all six permutations yield24 new payout
+  witnesses/96 NEW Finish executions (48 no-ticket controls/48 replays), plus
+  two original-creation witnesses.240 predecessor rows/960 Finish calls retained
+  byte-exact. Alternate permutations are explicit input after original assignment,
+  not asserted naturally emitted orders. Active limits24/54, final slots23/53.
+- One free: ticket0's actual object alone wins, even when ID2/FactoryTwo is
+  first. Winner live1/owner0/object-1/reference1, other two objects released
+  exactly once, count-2. Full bag releases all three once, count-3, zero
+  references/logs/item sends. Forwarding observer preserves prior observer and
+  original release arguments/body; per-object4/5/6 counts checked, unchanged
+  no-ticket empty teardown54 Gavin/84 Bismarck; total=baseline+3-awards.
+- All256 item records including fillers/seven Char/full BATTLE match complete
+  no-ticket differential plus prediction. Arena use0/modeNONE/Total_BattleNum0,
+  all tickets -1, eight native connections/original alive-player timers retained.
+  Typed logs check winning index/ID/NAME/unique code/cause/position; inventory
+  sends check actual carried winner. One log/aggregate send for one-free,
+  Bismarck one single-slot send. One fd7 RS checked in full: original no-ticket
+  EXP/Exit prefix plus three fields/separators; accepted ticket0 only named.
+  Gavin original LEAKLEVEL1/empty SECRETNAME retained; Bismarck LEAKLEVEL0
+  selects Factory or FactoryTwo by winner. Prefix/transport stay differential/
+  typed evidence, not independent EXP math or real-client rendering.
+- Complete creation/allocator/disposal/factory/AddExpItem bodies unchanged.
+  Raw inherited CHAR_initCharOneArray fingerprint is checked against pinned
+  extracted original, separate preprocessed hash records macro expansion;
+  BOOL/TRUE/FALSE/fprint text variants are not conflated. Bismarck disposal's
+  _CHAR_endCharOneArray macro mapping retained. New release observer chains into
+  the preceding observer so earlier call evidence remains intact.
+- Artifact11692284898,ZIP22973 bytes SHA256905478eadae9e783b30e6cfd27ad811ed9d990732a7d85ee0d4aac4d28de7e2f;
+  independently downloaded/digest-verified, both reports byte-exact with local.
+  Derived report155342 bytes SHA256611319f6d1a8c76724192ee391a4095721d444195a026ff54260df976ddd2d89.
+  Tool/spec/report/receipt STONEAGE-BATTLE-ORIGINAL-DISTINCT-ITEM-TICKET-*R1;
+  original C/headers/assets transient only, no source redistribution.
+- Pressure unchanged2486=2465 bounded closed+18 OPEN+3 historical UB, zero
+  promotions. Natural master/drop probabilities, random permutation reachability,
+  early server identity, other NPC/actor entry, positive gold/config, unique/time/
+  callbacks and actual client/network remain OPEN; no modern-engine transition.
+- Highest NEXT: original fourth-drop overflow/replacement from three occupied
+  pending slots, using actual factory-created objects and controlled original
+  RNG branches. Require full pool/arena/actor/release/presentation oracles;
+  preserve synthetic probability boundaries and profile name distinctions.
