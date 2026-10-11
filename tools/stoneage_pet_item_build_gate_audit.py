@@ -10,6 +10,7 @@ import re
 import subprocess
 from pathlib import Path
 from tools.stoneage_pet_item_identity_source_audit import PROFILES,read_pinned,git_blob_id,demand
+from tools.stoneage_enemy_creation_audit import definition
 
 EXTRA={
  "gavin":{"make":("Makefile","d2be7a699c909c8e9515971b906dbc79586beb73"),
@@ -65,10 +66,9 @@ def inspect(profile,checkout):
                "default protocol PET send unexpectedly compiled")
     else:
         demand("void CHAR_movePetItem(" not in raw,"Gavin unexpected raw PET equipment handler")
-        pet=preprocess(root/"char/char_base.c")
-        demand("CHAR_getItemIndex( petindex, i)" not in pet and
-               "CHAR_getItemIndex(petindex, i)" not in pet,
-               "Gavin default preprocessing contains PET save branch")
+        pet=definition(preprocess(root/"char/char_base.c"),"CHAR_makePetStringFromPetIndex")
+        demand("ITEM_makeStringFromItemIndex(" not in pet,
+               "Gavin default preprocessed pet serializer still emits gated item record")
     # No source code is emitted. This is a full recursive search over the
     # pinned C tree for the named equipment function.
     sites=[]
