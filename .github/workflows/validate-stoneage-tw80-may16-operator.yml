@@ -1,0 +1,39 @@
+name: Validate StoneAge Taiwan 8.0 May 16 operator source and archive index
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/validate-stoneage-tw80-may16-operator.yml"
+      - "tools/stoneage_tw80_may16_operator_source_gate.py"
+      - "tests/test_stoneage_tw80_may16_operator_source_gate.py"
+      - "research/recovered/STONEAGE-TW80-MAY16-OPERATOR-URL-SOURCE-R1.json"
+      - "tools/stoneage_tw80_may16_cdx_probe.py"
+      - "tests/test_stoneage_tw80_may16_cdx_probe.py"
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - name: Validate 2005 source separation and CDX parser without network
+        run: |
+          python -m unittest -v tests.test_stoneage_tw80_may16_operator_source_gate
+          python -m unittest -v tests.test_stoneage_tw80_may16_cdx_probe
+          python -m tools.stoneage_tw80_may16_operator_source_gate
+      - name: Retain previous original-client historic gates
+        run: |
+          python -m unittest -v tests.test_stoneage_tw80_disc_mirror_identity_gate
+          python -m unittest -v tests.test_stoneage_tw80_tw85_chronology_gate
+          python -m unittest -v tests.test_stoneage_late_client_archive_probe
+      - name: Metadata-only archive index probe, no binary downloads
+        run: |
+          python -m tools.stoneage_tw80_may16_cdx_probe --probe | tee tw80-may16-cdx-report.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: stoneage-tw80-may16-cdx-index-metadata
+          path: tw80-may16-cdx-report.json
+          retention-days: 30

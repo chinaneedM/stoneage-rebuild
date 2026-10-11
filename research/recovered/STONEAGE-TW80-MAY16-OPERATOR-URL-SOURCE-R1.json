@@ -1,0 +1,65 @@
+{
+  "schema": "stoneage-tw80-may16-operator-source-ledger-r1",
+  "recorded_on": "2026-10-11",
+  "target": "2005 Taiwan Waei StoneAge 8.0 original test client and publisher carrier provenance (not recovered)",
+  "sources": [
+    {
+      "id": "TW80_TEST_20050516_FORUM_PERIOD_REPORT",
+      "observed_date": "2005-05-16",
+      "source_date": "2005-05-16",
+      "source": "https://bbs.8591.com.tw/index.php?action=detail&articleId=33&module=article",
+      "evidence_kind": "PERIOD_FORUM_CUSTODY_OF_DATED_PRESS_REPORT",
+      "content_scope": "Dated account of announced opened May16 Taiwan 8.0 test server and seven PET equipment families; no authenticated server traffic or executable file"
+    },
+    {
+      "id": "TW80_TEST_20050518_GAMES_IDV",
+      "observed_date": "2005-05-16",
+      "source_date": "2005-05-18",
+      "source": "https://www.games.idv.tw/news.php?mode=view&nid=326",
+      "evidence_kind": "CONTEMPORANEOUS_PRESS_WITH_EXPLICIT_OPERATOR_REFERENCE_URL",
+      "content_scope": "Reports May16 test server, May16-18 GM reward activity, optional rewards and test remaining until end of May; link to a dated Wayi event page"
+    },
+    {
+      "id": "TW80_TEST_20050518_17173",
+      "observed_date": "2005-05-16",
+      "source_date": "2005-05-18",
+      "source": "https://news.17173.com/content/2005-5-18/n358_274376.html",
+      "evidence_kind": "CONTEMPORANEOUS_MAINLAND_PRESS_ABOUT_TAIWAN_TEST_CAMPAIGN",
+      "content_scope": "Distinct mainland press carrier recounts Taiwan operator preview and PET equipment; no independent compiled version attestation"
+    },
+    {
+      "id": "TW80_OPERATOR_ORIGINAL_URL_REFERENCE",
+      "observed_date": "2005-05-18",
+      "source_date": "2005-05-18",
+      "source": "https://www.games.idv.tw/news.php?mode=view&nid=326",
+      "evidence_kind": "HISTORICAL_OPERATOR_URL_QUOTED_BY_PRESS",
+      "content_scope": "Contemporary media links exact http://www.wayi.com.tw/stoneage/actives/940329/page_3.html; current same URL resolves modern corporate site not historical 2005 page"
+    }
+  ],
+  "historical_operator_link": "http://www.wayi.com.tw/stoneage/actives/940329/page_3.html",
+  "archive_probe_window": {
+    "from": 2005,
+    "to": 2007,
+    "kind": "WAYBACK_CDX_METADATA_ONLY_NO_ARCHIVE_BODY_OR_BINARIES"
+  },
+  "claims": {
+    "test_server_announced_as_open_on_may16": true,
+    "period_may16_to_may18_gm_activity_reported": true,
+    "original_may16_test_client_bytes_verified": false,
+    "authenticated_test_server_native_pet_execution_verified": false,
+    "web_current_operator_page_is_2005_original": false,
+    "quoted_wayi_url_is_downloadable_2005_installer": false,
+    "may16_reward_announced_proves_paid_out_to_users": false,
+    "may16_publisher_link_proves_8_0_packet127": false,
+    "prelaunch_taiwan_feature_can_be_promoted_to_jss1999_or_tw10": false,
+    "original_publisher_installer_sha256_verified": false,
+    "wayback_capture_already_authenticated": false
+  },
+  "sha256": null,
+  "pressure": {
+    "total": 2486,
+    "bounded_closed": 2465,
+    "open": 18,
+    "historical_ub": 3
+  }
+}
