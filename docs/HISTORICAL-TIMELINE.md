@@ -2346,3 +2346,19 @@ for this matrix only; initial assertion exposed audit assumption, not original
 source defect. Late-source adversarial observations do not prove naturally
 reachable invalid tickets, original-release history or modern ownership DESIGN.
 No historical/pressure promotion; ordered mixed tickets remain OPEN.
+
+
+## 2026-10-11 — Bounded late-source mixed ticket traversal and ordered reward names
+
+FACT within pinned Gavin1f90cb6/Bismarck999ffdf1 explicit logical256 pool:
+Action38112051947/job114389462026 SUCCESS at3a65495cb4e79842604bb27da77e57dfc98fffa1,87 checks,66 new witnesses/
+264 O0/O2 UBSan Finish executions. Invalid249/256/INT_MAX/-2/INT_MIN/sentinel
+slots do not block later valid item3 pickup in the named33-case/profile matrix.
+Two aliases retain two bag references, including across a middle invalid slot;
+whole item/Char/BATTLE/connection domains and exact original RS text pass.
+The original factory leaves Gavin LEAKLEVEL1 with empty SECRETNAME versus
+Bismarck LEAKLEVEL0/NAME Factory: successful Gavin pickups can have empty RS name
+fields while still producing logs/item sends. An initial shared-name oracle was
+corrected without source/item edits. This is synthetic late-source evidence,
+not natural duplicate generation, original-release history or real-client DESIGN.
+No historical/pressure promotion; one-remaining-slot competition remains OPEN.

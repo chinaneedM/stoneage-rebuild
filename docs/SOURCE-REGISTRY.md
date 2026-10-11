@@ -5662,3 +5662,21 @@ against local; independent factory evidence equals preceding accepted gate.
 Explicit logical pool256 and prepared inactive inputs do not prove natural
 bad-ticket creation or early history. Original C/headers/assets transient only,
 pressure/promotions unchanged, ordered mixed pending slots remain OPEN.
+
+
+## 2026-10-11 — Original ordered mixed ticket bounded source witness R1
+
+Tool/spec/source-free report/receipt STONEAGE-BATTLE-ORIGINAL-MIXED-ITEM-TICKET-R1;
+Action38112051947/job114389462026 SUCCESS at3a65495cb4e79842604bb27da77e57dfc98fffa1,87 regression/evidence checks,
+66 new witnesses/264 Finish executions plus42 predecessor witnesses. Source
+pins Gavin1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56 and
+Bismarck999ffdf1d220ec6666eb65339180689c9caf1876. Whole unchanged GetExpGold/
+DeleteItem/DeleteBattle/ITEM_getAppropriateName fingerprints retained; complete
+256 item/seven Char/BATTLE/eight connection domains, ordered full RS text and
+original timers, O0/O2 nonrecovering UBSan complete-output equality.
+Report64054 bytes SHA25625a509b13a471e58f50a27dfb0673ad7865c34e2ec6d2ca607c0eba54a1584ac.
+Artifact11692306690 ZIP independently digest-verified and both reports byte-exact
+against local, factory report equals preceding accepted gate. Explicit logical
+pool256/three-slot ticket inputs and original identification/name profiles do not
+prove natural bad-ticket creation, early history or actual client rendering.
+Original C/headers/assets transient only; pressure/promotions unchanged.

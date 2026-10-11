@@ -11804,3 +11804,57 @@ reviewed discovery gate and its automated derived-report writeback is authorized
 - Highest NEXT: ordered mixed valid/invalid ticket sequences and pending-slot
   positions through actual second Finish; verify invalid slots do not block later
   valid pickups, retain duplicate/alias outcomes and full native domain oracles.
+
+
+## 2026-10-11 — Original ordered mixed pending tickets REMOTE ACCEPTED (bounded)
+
+- Fresh baseline main9c43e57c7b99caff8ebc5187f22cd56225e2facc,tree5842edeb409b5740d3484f1ab4b636259f2ffb74.
+  Prior complete state blob4efc7f84ed501139ca8e5f0c0a3fd69c80ea74fd,1247185 bytes and
+  previous timeline/source registry retained as exact prefixes.
+- Branch agent/original-mixed-item-ticket-r1-20261011,tested input3a65495cb4e79842604bb27da77e57dfc98fffa1,tree82b2c5c2b3facfc9d9a0e55ab44d6adacda77373.
+  Action38112051947/job114389462026,all 12 steps SUCCESS;87 Python checks,
+  Gavin/Bismarck GNU99 O0/O2 nonrecovering UBSan complete output equality,
+  independent original item factory report byte-exact against local/prior gate.
+- Original enemy6/item3/ID1 factory and AddExpItem chain retained, explicit
+  mixed tickets through actual separate Loop(FINISH)/Finish/GetProfit/GetExpGold/
+  Exit/DeleteBattle. Original GetExpGold/DeleteItem/DeleteBattle and appropriate
+  name getter complete bodies match each profile's pinned source unchanged.
+- Both GETITEM_MAX3 asserted. Explicit logical pool256 restored to inherited
+  size8 afterwards; active3 and inactive249 checked. Single valid3 among two
+  copies of249/256/INT_MAX/-2/INT_MIN/-1, valid position0/1/2:18 cases/profile.
+  Two same-item valid3 aliases with one249/256/INT_MAX/-2/INT_MIN, invalid
+  position0/1/2:15 cases/profile.66 new witnesses,264 NEW Finish calls including
+  132 no-ticket controls/132 replays; preceding capacity24/cleanup32/side64/
+  invalid48 calls and42 witness rows remain byte-exact.
+- Invalid slots do not block later valid pickup within these fixtures. Single
+  valid3 occupies bag9; duplicate aliases occupy9/10 even across invalid slot1.
+  Live count unchanged; entire256 item records match predicted owner0/object-1
+  change, all seven Char/full BATTLE match no-ticket differential plus bag slots.
+  Complete carried scans require1/2 references to3, none to invalid index
+  (sentinel -1 remains valid empty slots). Arena releases, modeNONE/Total_BattleNum0,
+  all pending slots -1. Logs1/2, aggregate send1, Bismarck single-slot sends1/2.
+- Original RS is checked in full: exactly one fd7 packet, original no-ticket
+  EXP/Exit prefix plus all three ordered name fields/separators. Original factory
+  identification/name profiles retained: Gavin LEAKLEVEL1 chooses empty SECRETNAME
+  so awarded items have empty RS name fields; Bismarck LEAKLEVEL0 chooses NAME
+  Factory. Both ordinary NAME Factory and empty SECRETNAME retained. Pickup logs
+  still use ordinary NAME Factory in both. Initial oracle assumed NAME for both;
+  corrected expectation only, no game/item-data edits. Gavin empty suffix alone
+  cannot establish no pickup; complete native/log/item-send oracles distinguish it.
+- All eight original connection records match alive PLAYER timer: time1000/
+  rand0/CreateTime900/duration0, one call/draw, Gavin BDTime1000/Bismarck1005,
+  unchanged original delayTime5, Bismarck typed NU(fd7,0) once. Typed transport
+  checks counts/payloads only; differential prefix is not independent EXP math.
+- Artifact11692306690,ZIP18915 bytes SHA2566182afddb1f4db6467a5cf0cddf17ed8e2fb6535b779caee360850f6da7bc813;
+  independently downloaded/digest-verified, both reports byte-exact with local.
+  Derived report64054 bytes SHA25625a509b13a471e58f50a27dfb0673ad7865c34e2ec6d2ca607c0eba54a1584ac.
+  Tool/spec/report/receipt STONEAGE-BATTLE-ORIGINAL-MIXED-ITEM-TICKET-*R1;
+  original C/headers/assets transient only, no source redistribution.
+- Pressure unchanged2486=2465 bounded closed+18 OPEN+3 historical UB, zero
+  promotions, no modern-engine phase transition. Natural bad/duplicate tickets,
+  masters/probability/actor entry, special NPC variants, early server identity,
+  positive gold/config, callbacks/unique/time and real client/network remain OPEN.
+- Highest NEXT: ordered duplicate/mixed tickets with exactly one remaining
+  active bag slot; verify award/cleanup shared-item retention using complete
+  state/presentation oracles. Distinct-item competition requires actual original
+  creation evidence; retain original profile name/identification distinctions.
