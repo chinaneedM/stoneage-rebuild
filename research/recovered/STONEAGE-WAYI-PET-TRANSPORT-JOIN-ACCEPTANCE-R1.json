@@ -1,0 +1,277 @@
+{
+  "schema": "STONEAGE-WAYI-PET-TRANSPORT-JOIN-ACCEPTANCE-R1",
+  "source_commit": "c7eefa7ffde40bef11d6af0f3f8b322dc6c870b9",
+  "source_tree": "bf098c59445ff5c07b0dfd239c654ecba16c0f42",
+  "parent_commit": "6b6643b04866ac26c3dbae71cb657a5c5f561286",
+  "branch": "agent/wayi-pet-transport-join-r1-20261012",
+  "branch_runs": [
+    {
+      "run_id": 38161090480,
+      "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+      "jobs": [
+        {
+          "id": 114533969678,
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Confirm source-only version separation and safe archive signature tests",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "run_id": 38161090759,
+      "name": "Validate Wayi PET transport and guard join evidence",
+      "jobs": [
+        {
+          "id": 114533970262,
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Install pinned static decoder",
+              "conclusion": "success"
+            },
+            {
+              "name": "Validate static call arguments and adjacent archive regressions",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "run_id": 38161090562,
+      "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+      "jobs": [
+        {
+          "id": 114533970273,
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Verify historical announcement separately from code, binary and early-version claims",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "main_runs": [
+    {
+      "run_id": 38161153803,
+      "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+      "jobs": [
+        {
+          "id": 114534163115,
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Verify historical announcement separately from code, binary and early-version claims",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "run_id": 38161154005,
+      "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+      "jobs": [
+        {
+          "id": 114534163930,
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Confirm source-only version separation and safe archive signature tests",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "run_id": 38161153870,
+      "name": "Validate Wayi PET transport and guard join evidence",
+      "jobs": [
+        {
+          "id": 114534163391,
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Install pinned static decoder",
+              "conclusion": "success"
+            },
+            {
+              "name": "Validate static call arguments and adjacent archive regressions",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "test_count": 82,
+  "branch_and_main_log_confirmed": true,
+  "compare": {
+    "ahead": 1,
+    "behind": 0,
+    "changed_files": 8,
+    "removed_files": 0
+  },
+  "remote_tree_matches_local": true,
+  "full_previous_continuity_blobs_preserved_as_byte_prefixes": true,
+  "non_destructive_lease_checked_fast_forward": true,
+  "evidence_status": "STATIC_COMPILED_TRANSPORT_AND_UI_GUARD_JOIN_NOT_NATIVE_RUNTIME",
+  "original_executable_run": false,
+  "original_bytes_or_disassembly_committed": false,
+  "packets_captured": false,
+  "matching_native_pet_pair_verified": false,
+  "exact_original_2005_checksum_verified": false,
+  "pressure": "2486=2465 bounded closed+18 OPEN+3 historical UB"
+}

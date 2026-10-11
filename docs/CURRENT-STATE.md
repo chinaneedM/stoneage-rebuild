@@ -12414,3 +12414,12 @@ Receive linehelper0x5ee80 LF/CR→modeselection0x5eb44: nonzeroflag0x4205070 cal
 Derivedtool/ledger/spec/workflow and12 newcontrols+70adjacentchecks PASS locally(82). BranchCI pending. Originalbytes/disassembly neverexecuted/committed. Exact2005 releasehash/fullpackage andnativePETpair OPEN; pressure2486=2465 bounded closed+18 OPEN+3 historical UB unchanged,noearly-era/enginepromotion.
 
 HighestNEXT: actual compiledPETinventory/update receivehandler andclientitemslot-state layout, separatelyfromclientsend127; noPETreply inferredbyconstant. Matchingserverneedsindependentbuild/provenance gate. Officialpackage/manifest acquisition remainsopportunistic.
+
+
+## 2026-10-12 — PET compiled transport/receive/UI-guard join REMOTE ACCEPTED
+
+Source commitc7eefa7ffde40bef11d6af0f3f8b322dc6c870b9/treebf098c59445ff5c07b0dfd239c654ecba16c0f42 on agent/wayi-pet-transport-join-r1-20261012. Branch Actions38161090759 (82 transport/PET/updater/PE/archive tests),38161090480 (region/version provenance),38161090562 (PET contemporary boundaries) all SUCCESS; exact job logs confirm82tests/OK. Freshmain matched6b6643b04866ac26c3dbae71cb657a5c5f561286; compareahead1/behind0,8files,nodeletions. EntirepriorCURRENT-STATE/HISTORICAL-TIMELINE/SOURCE-REGISTRY Gitblobs preservedasbyteprefixes. Remotetree matches locallyverifiedtree; non-destructiveleasecheckedfast-forward integratedsource. Main Actions38161153870/38161154005/38161153803 independentlySUCCESS;mainjoblogconfirms82tests. Receipt research/recovered/STONEAGE-WAYI-PET-TRANSPORT-JOIN-ACCEPTANCE-R1.json.
+
+Acceptedstaticresult: PETsendhub/encoder→configuredcallback→boundedqueue→WSOCKordinal19sendthunk;genericreceiveLF/CRline→mode-selecteddecode/split/ID. Clientoutgoing+13 andincoming-23 remainseparated,not reciprocalPETwire/replyproof. UIridingguarddependsdestination<9;transferfallbackthreshold9 anddoubleclickblock0..6 aredifferentroles;dragout-2 boundedroutehasnoridecomparison. Nooriginalgameexecution/packet capture/nativeowner-save-drop-unique-code closure,exact2005releasehash ormatchingserverpair. Pressure2486=2465 bounded closed+18 OPEN+3 historical UBunchanged,noearly-era/enginepromotion.
+
+HighestNEXT: actualcompiledPETinventory/update receivehandler andclientitemslot-state layout, independentofsend127andgenerictransport. Retain provenance/build gate for matchingserver andnativePETpair; officialfullpackage/manifest remainopportunistic.
