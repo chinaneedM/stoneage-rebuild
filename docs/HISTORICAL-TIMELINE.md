@@ -2626,3 +2626,8 @@ Exact2006-captured operator-linked client statically connectsPETsender to initia
 ## 2026-10-12 — Compiled S46/B PET display-state received in operator-linked2006 specimen
 
 FACTstatic: logical46 string/checksum route→callback0x60090→categoryB0x61d0b; seven14fieldslots,388byteitemrecords,2840bytepetstride,emptyrecordclear/useFlagwrites matchPETUI readaddress. Incomingdisplaystate isseparatefromclientsend127; no127reply orserverowner/save/uniquepersistence proved. Modernpinneddescendant UTF8recordlayout differs andcannotbeappliedasnative sizeofITEM. Exact2005release/nativepair/early-era questionsremainOPEN; pressureunchanged. Ledger/spec STONEAGE-WAYI-COMPILED-PET-SB-STATE-R1.
+
+
+## 2026-10-12 — Later PET S/B server source has13 fields versus compiled client's14
+
+FACTsource/preprocessor: fixed999ffdf andfresh2f73680 Bismarck profiles shareitem/PETmove bodies; defaults excludePET, controlledenablement yieldsseven13-fieldrows withnojigsaw. Originaloperator-linked2006 client independentlyusesseven14-fieldrows. Similar S46/B route andoutgoing+23/incoming-23 areNOTmatchingbuild proof. SourceorderedI22→B→recalculation→K outputsandoccupied-backpack type/destinationrange conflict recordedwithout projectinginto2005/2006 operatorruntime. Nativepair/owner/save/drop/unique lifecycle/exactpublisherhash remainOPEN; pressureunchanged. Derivedledger/spec STONEAGE-PET-SB-SERVER-COMPARISON-R1.

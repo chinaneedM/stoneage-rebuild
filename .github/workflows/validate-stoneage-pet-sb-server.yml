@@ -1,0 +1,52 @@
+name: Validate PET S B server output versus compiled client
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/validate-stoneage-pet-sb-server.yml"
+      - "tools/stoneage_pet_sb_server_audit.py"
+      - "tests/test_stoneage_pet_sb_server_audit.py"
+      - "research/recovered/STONEAGE-PET-SB-SERVER-COMPARISON-R1.json"
+      - "docs/specs/STONEAGE-PET-SB-SERVER-COMPARISON-R1.md"
+permissions:
+  contents: read
+jobs:
+  source-preprocessor:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - name: Install pinned static decoder for adjacent regressions
+        run: python -m pip install --quiet capstone==5.0.7
+      - name: Validate field alignment and evidence boundaries
+        run: |
+          python -m unittest -v tests.test_stoneage_pet_sb_server_audit tests.test_stoneage_wayi_pet_state_probe tests.test_stoneage_wayi_pet_transport_probe tests.test_stoneage_wayi_pet_sender_probe tests.test_stoneage_wayi_saupdate_route_probe tests.test_stoneage_wayi_pe_static_inventory tests.test_stoneage_wayi_archived_page_inventory tests.test_stoneage_tw80_may16_cdx_probe tests.test_stoneage_tw80_arquivo_pt_index_probe
+      - name: Obtain two exact source profiles transiently
+        shell: bash
+        run: |
+          set -euo pipefail
+          for pair in previous:999ffdf1d220ec6666eb65339180689c9caf1876 current:2f736808ff4361f5429ee919b718c88fabb60346; do
+            profile=${pair%%:*}
+            revision=${pair#*:}
+            checkout=/tmp/pet-sb-$profile
+            git init "$checkout"
+            git -C "$checkout" remote add origin https://github.com/BismarckDD/Stoneage.git
+            git -C "$checkout" sparse-checkout init --cone
+            git -C "$checkout" sparse-checkout set server/gmsv/include server/gmsv/char server/gmsv/item server/common shared/lua51
+            git -C "$checkout" fetch --depth 1 --filter=blob:none origin "$revision"
+            git -C "$checkout" checkout --detach FETCH_HEAD
+          done
+      - name: Reproduce source-only preprocessing comparison without native execution
+        run: |
+          python -m tools.stoneage_pet_sb_server_audit --previous /tmp/pet-sb-previous --current /tmp/pet-sb-current > /tmp/pet-sb-derived.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from tools.stoneage_pet_sb_server_audit import validate
+          actual=validate(json.loads(Path('/tmp/pet-sb-derived.json').read_text()))
+          stored=validate(json.loads(Path('research/recovered/STONEAGE-PET-SB-SERVER-COMPARISON-R1.json').read_text()))
+          assert all(stored[k] == v for k,v in actual.items()), 'derived source comparison drift'
+          print('PET_SB_SOURCE_PREPROCESSING_PASS; 13-versus-14 mismatch retained; native pair OPEN')
+          PY
