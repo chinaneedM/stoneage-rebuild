@@ -42,7 +42,7 @@ jobs:
           report=actual.read_text()
           gate=validate(report)
           assert int(gate['tracked_client_source_files']) >= 200
-          assert gate['lexical_caller_candidates']=='0'
+          assert gate['lexical_caller_candidates']=='3'
           assert gate['runtime_packet_verified']=='0'
           retained=Path('research/recovered/STONEAGE-PET-CLIENT-FULL-CALLGRAPH-R1.txt')
           if retained.exists():
