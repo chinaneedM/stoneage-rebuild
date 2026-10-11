@@ -1,0 +1,98 @@
+{
+  "schema": "stoneage-wayi-archived-pages-updater-acceptance-r1",
+  "recorded_on": "2026-10-12",
+  "baseline": {
+    "head": "bb2674d14400497ce34c30b769e661937e433174",
+    "tree": "c4941b1f8f16350d492a34990303ace5694624b1"
+  },
+  "accepted": {
+    "first_branch_commit": "8e866a8ec3fa894266b702b4eeddd4561411fc30",
+    "commit": "2779f528c86b6eecb8c7c41d25d0f9fa128467f9",
+    "tree": "a5caeb321254a2c6c8e962d946d54b81746328df",
+    "ahead_by": 2,
+    "behind_by": 0,
+    "main_fast_forwarded": true,
+    "changed_files": 8
+  },
+  "branch_actions": [
+    {
+      "id": 38156902617,
+      "head": "8e866a8ec3fa894266b702b4eeddd4561411fc30",
+      "conclusion": "success"
+    },
+    {
+      "id": 38156902823,
+      "head": "8e866a8ec3fa894266b702b4eeddd4561411fc30",
+      "conclusion": "success"
+    },
+    {
+      "id": 38156903026,
+      "head": "8e866a8ec3fa894266b702b4eeddd4561411fc30",
+      "conclusion": "success"
+    },
+    {
+      "id": 38156945652,
+      "head": "2779f528c86b6eecb8c7c41d25d0f9fa128467f9",
+      "conclusion": "success"
+    }
+  ],
+  "main_actions": [
+    {
+      "id": 38156990856,
+      "head": "2779f528c86b6eecb8c7c41d25d0f9fa128467f9",
+      "conclusion": "success"
+    },
+    {
+      "id": 38156990886,
+      "head": "2779f528c86b6eecb8c7c41d25d0f9fa128467f9",
+      "conclusion": "success"
+    },
+    {
+      "id": 38156990906,
+      "head": "2779f528c86b6eecb8c7c41d25d0f9fa128467f9",
+      "conclusion": "success"
+    }
+  ],
+  "regression": {
+    "unittest_checks": 37,
+    "continuity_prefixes_preserved": [
+      "docs/CURRENT-STATE.md",
+      "docs/HISTORICAL-TIMELINE.md",
+      "docs/SOURCE-REGISTRY.md"
+    ],
+    "removed_historical_lines": 0,
+    "local_and_remote_tree_equal": true
+  },
+  "acquisition": {
+    "actual_2005_wayi_page_bodies": 5,
+    "out_of_period_2010_body_quarantined": 1,
+    "operator_linked_updater_bytes": 113664,
+    "updater_sha256": "a72a2fa646766f9c3a9a04f4340a3c7a1d76029d0c464bc7613f604a1900820f",
+    "actual_binary_capture": "2006-09-08T11:16:12Z",
+    "static_product": "SaUpdate",
+    "static_version": "1, 0, 0, 5",
+    "executed": false,
+    "binaries_committed": false
+  },
+  "claim_boundary": {
+    "original_2005_80_full_client_verified": false,
+    "publisher_original_binary_digest_verified": false,
+    "native_pet_pair_packet127_verified": false,
+    "early_era_promoted": false,
+    "pressure_changed": false
+  },
+  "pressure": {
+    "total": 2486,
+    "bounded_closed": 2465,
+    "open": 18,
+    "historical_ub": 3
+  },
+  "additional_triage": {
+    "url": "http://www.wayi.com.tw/service/download_list1.asp?id=2",
+    "actual_capture": "20051114191323",
+    "page_display_game": "時空戰場",
+    "not_stoneage_update_tab": true,
+    "page_response_sha256": "5135b2b879db7c3e8b2ab340d4734390fe70812028546e6a069f52d5cf23b639"
+  },
+  "highest_next": "Recover original authenticated Taiwan 2005 8.0 installer/official update bytes; follow discovered first-party file pointers with actual capture/version and byte identity preserved. Official 7.5 installer's FTP chain and updater are separate bridge candidates."
+}
