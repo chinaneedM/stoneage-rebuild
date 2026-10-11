@@ -1,0 +1,94 @@
+{
+  "status": "SOURCE_ONLY_OPTIONAL_PET_PROTOCOL_CHAIN_ACCEPTED",
+  "supersedes_scope_not_raw_facts": "STONEAGE-PET-ITEM-BUILD-GATE-ACCEPTANCE-R1.json correctly saw zero calls inside server/gmsv; broader server/common plus gmsv reveals protocol callback and one direct equipment call. Preserve earlier bounded evidence, do not silently replace.",
+  "baseline_main": "6d060c32a4dad3b9de10e8d35098cc7129ae8113",
+  "source": {
+    "profile": "bismarck",
+    "pinned_commit": "999ffdf1d220ec6666eb65339180689c9caf1876",
+    "checked_in_common_makefile_blob": "263ef622f4c0c3ac495d783ff35b078277984d43",
+    "opcode_decoder": "server/common/gmsv_server_send.c",
+    "decoder_blob": "84dd1b2d9fbac10fe39983e6b8984aaebf1b3075",
+    "receive_callback": "server/common/gmsv_server_recv.c",
+    "callback_blob": "088db5e38a1bc0dd47b3c3120480af93ab24c4c7",
+    "equipment": "server/gmsv/char/char_item.c",
+    "equipment_blob": "970b7b3f975965c6c5e77352a2e0382adf943753"
+  },
+  "raw_guarded_chain": [
+    {
+      "file": "common/gmsv_server_send.c",
+      "line": 1388,
+      "function": "LSSPROTO_PET_ITEM_RECV branch calls GmsvServer_PETITEM_recv",
+      "conditional": "_PET_ITEM"
+    },
+    {
+      "file": "common/gmsv_server_recv.c",
+      "line": 985,
+      "function": "GmsvServer_PETITEM_recv",
+      "conditional": "_PET_ITEM"
+    },
+    {
+      "file": "common/gmsv_server_recv.c",
+      "line": 1010,
+      "function": "CHAR_movePetItem",
+      "conditional": "_PET_ITEM"
+    },
+    {
+      "file": "gmsv/char/char_item.c",
+      "line": 2655,
+      "function": "CHAR_movePetItem",
+      "conditional": "_PET_ITEM"
+    }
+  ],
+  "default_preprocessor": {
+    "decoder_emitted": false,
+    "receive_handler_emitted": false,
+    "equipment_emitted": false,
+    "regular_MI_recv_and_CHAR_moveEquipItem_emitted": true
+  },
+  "forced_compilation_orientation": {
+    "macro": "-D_PET_ITEM",
+    "decoder_emitted": true,
+    "handler_emitted": true,
+    "equipment_emitted": true,
+    "not_deployed": true
+  },
+  "runtime_claims": {
+    "deployed_macro_verified": false,
+    "client_emits_packet_verified": false,
+    "real_protocol_dispatch_executed": false,
+    "pet_item_actor_reachability_verified": false,
+    "unique_code_identity_verified": false,
+    "first_release_equivalence_verified": false
+  },
+  "proof": {
+    "scanned_tree": "whole pinned server/ recursively, not just server/gmsv",
+    "direct_call_from_common_to_equipment": 1,
+    "whole_server_equipment_definition": 1,
+    "protocol_recv_definition": 1,
+    "syntax_lines": 4,
+    "tests": 24,
+    "source_only": true,
+    "original_sources_committed": false
+  },
+  "workflow": {
+    "run": 38143205543,
+    "job": 114481110061,
+    "conclusion": "success",
+    "tested_commit": "1a0f066504c49fef40556cb6054ebb97b84d5e0b",
+    "artifact_id": 11703751530,
+    "zip_bytes": 1053,
+    "zip_sha256": "de7cc961a2d5164d0d2c9b0dfce18349bbf60ea2b9886ebbd74aff8837776c73",
+    "report_bytes": 1710,
+    "report_sha256": "24c2723a3b268f3c0dd9b401edf03d5ead128ec61464b03afabd38a9fea1327e",
+    "report_git_blob": "2a9316528c30460f8a314862dcf22f57d198190e",
+    "independent_hash_verified": true
+  },
+  "pressure": {
+    "total": 2486,
+    "bounded_closed": 2465,
+    "open": 18,
+    "historical_ub": 3,
+    "promotions": 0
+  },
+  "next": "Check feature macro enablement in actual alternate deployment/build provenance and whether real client encodes LSSPROTO_PET_ITEM_RECV; only then native PET equipment/unique-code lifecycle; keep original JSS/TW1.0 OPEN."
+}
