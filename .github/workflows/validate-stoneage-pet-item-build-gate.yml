@@ -1,0 +1,64 @@
+name: Validate StoneAge original PET item build gates and callers
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/validate-stoneage-pet-item-build-gate.yml"
+      - "tools/stoneage_pet_item_build_gate_audit.py"
+      - "tests/test_stoneage_pet_item_build_gate.py"
+      - "research/recovered/STONEAGE-PET-ITEM-BUILD-GATE-R1.txt"
+permissions:
+  contents: read
+jobs:
+  pet-build-source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - name: Preserve prior and new mutation evidence
+        run: |
+          python -m unittest -v tests.test_stoneage_pet_item_build_gate tests.test_stoneage_pet_item_identity_source
+      - name: Recreate pinned late descendants (transient, not published)
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import subprocess
+          from pathlib import Path
+          from tools.stoneage_pet_item_identity_source_audit import PROFILES
+          repos={"gavin":"gavinlinasd/StoneAge","bismarck":"BismarckDD/stoneage"}
+          for name,spec in PROFILES.items():
+              path=Path("/tmp/stoneage-pet-item-build-gate-r1")/name
+              subprocess.run(["git","init",str(path)],check=True)
+              subprocess.run(["git","-C",str(path),"remote","add","origin","https://github.com/"+repos[name]+".git"],check=True)
+              subprocess.run(["git","-C",str(path),"fetch","--depth","1","origin",spec["commit"]],check=True)
+              subprocess.run(["git","-C",str(path),"checkout","--detach","FETCH_HEAD"],check=True)
+          PY
+      - name: Preprocess actual default PET equip gates, scan all checked-in C callers
+        run: |
+          set -euo pipefail
+          python -m tools.stoneage_pet_item_build_gate_audit --gavin-dir /tmp/stoneage-pet-item-build-gate-r1/gavin --bismarck-dir /tmp/stoneage-pet-item-build-gate-r1/bismarck > /tmp/STONEAGE-PET-ITEM-BUILD-GATE-R1.txt
+          cat /tmp/STONEAGE-PET-ITEM-BUILD-GATE-R1.txt
+          grep -Fx 'RESOLUTION|PET_BUILD_DEFAULT_SOURCE_ONLY_PASS' /tmp/STONEAGE-PET-ITEM-BUILD-GATE-R1.txt
+          test "$(grep -c '^SOURCE_PET_BUILD_GATE|' /tmp/STONEAGE-PET-ITEM-BUILD-GATE-R1.txt)" -eq 2
+      - name: Strict parse and reproduce archived evidence when present
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from tools.stoneage_pet_item_build_gate_audit import validate
+          p=Path("/tmp/STONEAGE-PET-ITEM-BUILD-GATE-R1.txt")
+          data=p.read_text()
+          a,b=validate(data)
+          assert len(a)==2
+          pinned=Path("research/recovered/STONEAGE-PET-ITEM-BUILD-GATE-R1.txt")
+          if pinned.exists():assert p.read_bytes()==pinned.read_bytes(), "committed source-only report must reproduce byte exact"
+          print("Pinned original build macro gate summary:",[(k,a[k]["raw_equip_callers"]) for k in a], "report_archived",pinned.exists())
+          PY
+      - name: Upload derived observations, never proprietary source
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: stoneage-pet-item-build-gate-r1
+          path: /tmp/STONEAGE-PET-ITEM-BUILD-GATE-R1.txt
+          if-no-files-found: ignore
