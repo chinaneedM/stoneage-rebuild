@@ -1,0 +1,88 @@
+{
+  "status": "LOCAL_PASS_REMOTE_PENDING",
+  "baseline_commit": "e4c447f34aa7037be5b548c81d0d4b0a734b354f",
+  "baseline_tree": "324c5ca67ee781d28c6bd3bc11934fbf4c0150a5",
+  "direct_guard_rows": 96,
+  "new_guard_calls_across_O0_O2": 192,
+  "new_payout_claims": 0,
+  "prior_ACTUAL_rows_byte_exact": 980,
+  "local_new_mutation_checks": 8,
+  "source_hash_rows": [
+    "RANGE_SOURCE|gavin|BATTLE_AddExpItem|sha256=8bf2e1bab742b3c468f13a8e94ea674be8b6fab4fa675fba13aa7f5f0a45080d",
+    "RANGE_SOURCE|gavin|BATTLE_ItemDelCheck|sha256=9a6a8ac26641043cb26699eed0ca11edf8806e244626d3377ef8f607f2cf95ce",
+    "RANGE_SOURCE|gavin|BATTLE_GetProfit|sha256=35edd4961868b6a4d50cade0c6141b1659cb28ba914e8ccd93c4a9347bcc855d",
+    "RANGE_SOURCE|gavin|BATTLE_GetExpGold|sha256=7e8dcab1862b6b845e529630f807d7f91e29a7b337f2ea486d9b01a88397822b",
+    "RANGE_SOURCE|gavin|BATTLE_Finish|sha256=e440d90b269bcb0620dcd96fda4758a0720bf367f14936f035ab9bbc787006e4",
+    "RANGE_SOURCE|gavin|BATTLE_DeleteBattle|sha256=9b503d98f6b22d1a5e4c4b44c11ead0487dcb05a3cc83db3c1344bb8183d299a",
+    "RANGE_HELPER|gavin|_CHAR_CHECKINDEX|inherited_sha256=aa912a499d21907c46a6b011cdaf7f574d28dfe88537de41f5820092532d7a3b",
+    "RANGE_HELPER|gavin|_CHAR_CHECKITEMINDEX|inherited_sha256=b5d46286dde651ea560f34ac5549a0a0e011d0ca2c6729b052931219b3cf8b4e",
+    "RANGE_HELPER|gavin|_CHAR_getItemIndex|inherited_sha256=9fded40a4ea9298d42b8a527f33874c74f62570f605c4c73c4d33f7179b39fab",
+    "RANGE_SOURCE|bismarck|BATTLE_AddExpItem|sha256=0e77d7ea410eb0c62aa7db17878a860a740f85d04c873b5f10b57968d66b8e12",
+    "RANGE_SOURCE|bismarck|BATTLE_ItemDelCheck|sha256=95d7897afdab2163b1b13b7a87d55e83e65b49018063487fedce85b19266c3cc",
+    "RANGE_SOURCE|bismarck|BATTLE_GetProfit|sha256=5682714a9f08532fc7c492b854f09a8304a8f5fc0fe4c661a0a28bceb7f10e94",
+    "RANGE_SOURCE|bismarck|BATTLE_GetExpGold|sha256=acf3c59f6475634b5d2354e10c7867676ef47a171c0e4fe60b5d67612508db36",
+    "RANGE_SOURCE|bismarck|BATTLE_Finish|sha256=b369c2af159f182ed7e918ec083f73ae76ade2e3e3f907ae7525306f5ec035b8",
+    "RANGE_SOURCE|bismarck|BATTLE_DeleteBattle|sha256=01e105e4a325a1923c8032bcab585f80201a760580a925bea8f2f7f9f30725fe",
+    "RANGE_HELPER|bismarck|_CHAR_CHECKINDEX|inherited_sha256=1837f440277924044a3eb12da6515575f5dfae8aedf10320de78b971f7c837bf",
+    "RANGE_HELPER|bismarck|_CHAR_CHECKITEMINDEX|inherited_sha256=12bac10000400927c277940d9f382f824608696d75f8b3c29c2d918c943cced8",
+    "RANGE_HELPER|bismarck|_CHAR_getItemIndex|inherited_sha256=5647bb776365da37a3f6938705fac72b06f144faec310b149cc8c5321dcb36c7",
+    "RANGE_HELPER|bismarck|CheckCharMaxItem|inherited_sha256=5e8a7d00c573ab00a4b4b95b71be78b9f1f3184175310b98be15193633985eef"
+  ],
+  "matrix": {
+    "configuration_adapter": [
+      2,
+      3
+    ],
+    "index": [
+      0,
+      1,
+      2
+    ],
+    "raw_type": [
+      "PLAYER",
+      "PET"
+    ],
+    "raw_use": [
+      0,
+      1
+    ],
+    "alias": [
+      0,
+      1
+    ],
+    "query_original_item": 8,
+    "alias_box": 10,
+    "CHAR_playernum_unchanged": 2
+  },
+  "result_predicate": "return0 iff alias_present and actor_use and actor_index < configured_fdnum; raw PLAYER/PET type has no effect in tested profiles",
+  "guard_side_effects": {
+    "whole256_items_seven_Char_BATTLE_eight_connections_unchanged": true,
+    "all_three_direct_index_and_indirect_factory_records_unchanged": true,
+    "RNG_lookup_total_battle_count_unchanged": true,
+    "release_calls": 0,
+    "item_use_count_delta": 0,
+    "query_item_live": 1,
+    "query_item_owner": 6,
+    "warning_and_diagnostic_delta": "1 iff return0, else0",
+    "original_configuration_getter_executed": false,
+    "configuration_adapter_restored_to2": true
+  },
+  "local_report": {
+    "bytes": 639358,
+    "sha256": "fc592fdb511c60df7aa5ddeea5b6ffadd62223f10f6c5bd256fe32012a727df7"
+  },
+  "independent_factory_report": {
+    "bytes": 32466,
+    "sha256": "ae632bc03bf06ca1661e4ba0d151595f9ccd075d0c1eb67d5b3acb22b5e8ff59",
+    "same_as_accepted_predecessor": true
+  },
+  "source_boundary": "Clean pinned late descendants, synthetic configuration/type/use/alias input crossing with count-only diagnostics. Unchanged original battle/helper bodies. No natural alias/partition/configuration reachability, original config getter execution, released-slot reuse, early identity, client/network or modern DESIGN. Sources/headers/assets transient only.",
+  "pressure": {
+    "total": 2486,
+    "bounded_closed": 2465,
+    "open": 18,
+    "historical_ub": 3,
+    "historical_promotions": 0
+  },
+  "next": "Original allocator slot reuse after the accepted owned PET2 alias release: preserve actual original assignment and release, allocate original factory objects without cursor rewind, verify full pool/count/owners/references and distinguish stale index references from new object identity; keep natural reachability and subsequent callbacks OPEN."
+}
