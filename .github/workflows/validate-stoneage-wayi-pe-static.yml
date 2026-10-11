@@ -1,0 +1,25 @@
+name: Validate Wayi official executable static inventory
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/validate-stoneage-wayi-pe-static.yml"
+      - "tools/stoneage_wayi_pe_static_inventory.py"
+      - "tests/test_stoneage_wayi_pe_static_inventory.py"
+      - "research/recovered/STONEAGE-WAYI-OFFICIAL-80-DOWNLOAD-CHAIN-R1.json"
+      - "docs/specs/STONEAGE-WAYI-OFFICIAL-80-DOWNLOAD-CHAIN-R1.md"
+permissions:
+  contents: read
+jobs:
+  offline-static-inventory:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate bounded PE observations and adjacent archive regressions
+        run: |
+          python -m unittest -v tests.test_stoneage_wayi_pe_static_inventory tests.test_stoneage_wayi_archived_page_inventory tests.test_stoneage_tw80_may16_cdx_probe tests.test_stoneage_tw80_arquivo_pt_index_probe
+          python -m json.tool research/recovered/STONEAGE-WAYI-OFFICIAL-80-DOWNLOAD-CHAIN-R1.json > /dev/null

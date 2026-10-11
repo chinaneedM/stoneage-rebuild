@@ -1,0 +1,727 @@
+{
+  "schema": "STONEAGE-WAYI-OFFICIAL-80-DOWNLOAD-CHAIN-R1",
+  "baseline_main": "749a1db4e215a04a57695ab85a44e55c76277ead",
+  "observed_at_utc": "2026-10-11T16:52:15.597309+00:00",
+  "page": {
+    "requested_replay_timestamp": "20060501000000",
+    "actual_replay_timestamp": "20060221053354",
+    "replay_timestamp_changed": true,
+    "original_url": "http://www.wayi.com.tw/service/download_list1.asp?id=1",
+    "final_replay_url": "https://web.archive.org/web/20060221053354id_/http://www.wayi.com.tw/service/download_list1.asp?id=1",
+    "response_bytes": 37478,
+    "page_response_sha256": "41cce148365b2c7bee1b4c1b2bb2c3efa83a36870108d994b046f120aae2758f",
+    "title": "華義娛樂網★客戶服務★",
+    "links_not_fetched": [
+      "http://my.wayi.com.tw/member_update",
+      "http://my.wayi.com.tw/wgs_manage/",
+      "http://www.wayi.com.tw/wgs/atm.asp",
+      "http://gamemall.wayi.com.tw/shopping/webgame.asp?mid=2012",
+      "http://www.wayi.com.tw/service/",
+      "http://www.wayi.com.tw/net-counter/active.asp",
+      "http://my.wayi.com.tw/member_update/",
+      "http://www.wayi.com.tw/service/safety.asp",
+      "http://www.wayi.com.tw/service/normal.asp",
+      "http://www.wayi.com.tw/service/sos.asp",
+      "http://www.wayi.com.tw/service/gameform.asp",
+      "http://www.wayi.com.tw/service/statu.asp",
+      "http://www.wayi.com.tw/service/userguide.asp",
+      "http://www.wayi.com.tw/service/default.asp",
+      "http://www.wayi.com.tw/service/service.asp",
+      "http://www.wayi.com.tw/service/blacklist.asp",
+      "http://www.wayi.com.tw/service/accuse.asp",
+      "http://www.wayi.com.tw/service/download.asp",
+      "http://www.wayi.com.tw/service/#1",
+      "http://www.wayi.com.tw/download/download.asp?fileid=335",
+      "ftp://download.wayi.com.tw/Stoneage80.exe",
+      "http://www.wayi.com.tw/download/download.asp?fileid=333",
+      "http://www.wayi.com.tw/download/download.asp?fileid=329"
+    ],
+    "period_status": "OUTSIDE_2005_CAPTURE",
+    "game_binary_obtained": false,
+    "publisher_binary_hash_verified": false,
+    "native_pet_runtime_verified": false
+  },
+  "retained_official_download_entries": [
+    {
+      "displayed_date": "2005-07-06",
+      "title": "石器時代8.0版sa.exe執行檔",
+      "link": "http://www.wayi.com.tw/download/download.asp?fileid=335",
+      "advertised_size": "360kb",
+      "role": "standalone game executable replacement"
+    },
+    {
+      "displayed_date": "2005-07-01",
+      "title": "石器時代8.0完整主程式",
+      "link": "ftp://download.wayi.com.tw/Stoneage80.exe",
+      "role": "full-client package pointer only"
+    },
+    {
+      "displayed_date": "2005-05-18",
+      "title": "石器時代adrn_129.bin圖片索引檔",
+      "link": "http://www.wayi.com.tw/download/download.asp?fileid=333",
+      "advertised_size": "3,891kb",
+      "role": "7.5 black-screen repair; not automatically 8.0-only"
+    },
+    {
+      "displayed_date": "2005-05-17",
+      "title": "石器時代8.0版StoneAge2.exe執行檔",
+      "link": "http://www.wayi.com.tw/download/download.asp?fileid=329",
+      "advertised_size": "111kb",
+      "role": "launcher/updater replacement"
+    }
+  ],
+  "redirect_observations": [
+    {
+      "query_id": "fileid335",
+      "requested_url": "https://web.archive.org/web/20050706000000id_/http://www.wayi.com.tw/download/download.asp?fileid=335",
+      "observed_at_utc": "2026-10-11T16:55:19.487399+00:00",
+      "cap": 0,
+      "http_status": 302,
+      "final_url": "https://web.archive.org/web/20050706000000id_/http://www.wayi.com.tw/download/download.asp?fileid=335",
+      "content_type": "text/plain; charset=utf-8",
+      "content_length": "0",
+      "memento_datetime": null,
+      "location": "https://web.archive.org/web/20051127031853id_/http://www.wayi.com.tw/download/download.asp?fileid=335"
+    },
+    {
+      "query_id": "fileid335_origin",
+      "requested_url": "https://web.archive.org/web/20051127031853id_/http://www.wayi.com.tw/download/download.asp?fileid=335",
+      "observed_at_utc": "2026-10-11T16:55:53.920886+00:00",
+      "cap": 0,
+      "http_status": 302,
+      "final_url": "https://web.archive.org/web/20051127031853id_/http://www.wayi.com.tw/download/download.asp?fileid=335",
+      "content_type": "text/html",
+      "content_length": "186",
+      "memento_datetime": "Sun, 27 Nov 2005 03:18:53 GMT",
+      "location": "https://web.archive.org/web/20051127031853id_/http://www.wayi.com.tw/download/file/onlineGame/sa.exe"
+    },
+    {
+      "query_id": "fileid333",
+      "requested_url": "https://web.archive.org/web/20050518000000id_/http://www.wayi.com.tw/download/download.asp?fileid=333",
+      "observed_at_utc": "2026-10-11T16:55:19.488028+00:00",
+      "cap": 0,
+      "http_status": 302,
+      "final_url": "https://web.archive.org/web/20050518000000id_/http://www.wayi.com.tw/download/download.asp?fileid=333",
+      "content_type": "text/plain; charset=utf-8",
+      "content_length": "0",
+      "memento_datetime": null,
+      "location": "https://web.archive.org/web/20050524233131id_/http://www.wayi.com.tw/download/download.asp?fileid=333"
+    },
+    {
+      "query_id": "fileid333_origin",
+      "requested_url": "https://web.archive.org/web/20050524233131id_/http://www.wayi.com.tw/download/download.asp?fileid=333",
+      "observed_at_utc": "2026-10-11T16:55:53.921414+00:00",
+      "cap": 0,
+      "http_status": 302,
+      "final_url": "https://web.archive.org/web/20050524233131id_/http://www.wayi.com.tw/download/download.asp?fileid=333",
+      "content_type": "text/html",
+      "content_length": "132",
+      "memento_datetime": "Tue, 24 May 2005 23:31:31 GMT",
+      "location": "https://web.archive.org/web/20050524233131id_/http://www.wayi.com.tw/download/file/onlineGame/adrn_129.rar"
+    }
+  ],
+  "binary_response_observations": [
+    {
+      "query_id": "sa_exe",
+      "requested_url": "https://web.archive.org/web/20060915184620id_/http://www.wayi.com.tw:80/download/file/onlineGame/sa.exe",
+      "observed_at_utc": "2026-10-11T16:55:19.486989+00:00",
+      "cap": 1048576,
+      "http_status": 200,
+      "final_url": "https://web.archive.org/web/20060915184620id_/http://www.wayi.com.tw:80/download/file/onlineGame/sa.exe",
+      "content_type": "application/octet-stream",
+      "content_length": "369152",
+      "memento_datetime": "Fri, 15 Sep 2006 18:46:20 GMT",
+      "location": null,
+      "response_bytes": 369152,
+      "response_sha256": "4b5a059b45b589b609ca925d210d76838be1e970b805fab3df863b7d563fbb38",
+      "magic_hex": "4d5a900003000000",
+      "complete_within_bound": true
+    },
+    {
+      "query_id": "adrn_rar",
+      "requested_url": "https://web.archive.org/web/20060911180132id_/http://www.wayi.com.tw:80/download/file/onlineGame/adrn_129.rar",
+      "observed_at_utc": "2026-10-11T16:55:53.922661+00:00",
+      "cap": 8388608,
+      "http_status": 200,
+      "final_url": "https://web.archive.org/web/20060911180132id_/http://www.wayi.com.tw:80/download/file/onlineGame/adrn_129.rar",
+      "content_type": "application/octet-stream",
+      "content_length": "3983427",
+      "memento_datetime": "Mon, 11 Sep 2006 18:01:32 GMT",
+      "location": null,
+      "response_bytes": 3983427,
+      "response_sha256": "b077dcc7f1e944c33c6df4fe629d5e37abce9cb4d40f5b8d800cc69d59416e25",
+      "magic_hex": "526172211a0700cf",
+      "complete_within_bound": true
+    }
+  ],
+  "offline_static_inventories": {
+    "sa_exe": {
+      "archive_response": {
+        "response_bytes": 369152,
+        "response_sha256": "4b5a059b45b589b609ca925d210d76838be1e970b805fab3df863b7d563fbb38",
+        "machine": "i386",
+        "format": "PE32",
+        "coff_timestamp": 1120619111,
+        "coff_timestamp_utc_untrusted": "2005-07-06T03:05:11+00:00",
+        "sections": [
+          {
+            "name": "UPX0",
+            "rva": 4096,
+            "virtual_size": 79036416,
+            "raw_offset": 1024,
+            "raw_size": 0
+          },
+          {
+            "name": "UPX1",
+            "rva": 79040512,
+            "virtual_size": 368640,
+            "raw_offset": 1024,
+            "raw_size": 365056
+          },
+          {
+            "name": ".rsrc",
+            "rva": 79409152,
+            "virtual_size": 4096,
+            "raw_offset": 366080,
+            "raw_size": 3072
+          }
+        ],
+        "upx_section_names_present": true,
+        "version_string_candidates_untrusted": [
+          {
+            "key": "FileVersion",
+            "value": "1, 0, 0, 1",
+            "block_file_offset": 367672
+          },
+          {
+            "key": "ProductVersion",
+            "value": "1, 0, 0, 1",
+            "block_file_offset": 368032
+          },
+          {
+            "key": "ProductName",
+            "value": "Waei SaDeb",
+            "block_file_offset": 367976
+          },
+          {
+            "key": "FileDescription",
+            "value": "SaDeb",
+            "block_file_offset": 367620
+          },
+          {
+            "key": "OriginalFilename",
+            "value": "SaDeb.exe",
+            "block_file_offset": 367884
+          },
+          {
+            "key": "InternalName",
+            "value": "SaDeb",
+            "block_file_offset": 367728
+          },
+          {
+            "key": "CompanyName",
+            "value": "Waei",
+            "block_file_offset": 367576
+          }
+        ],
+        "static_markers": [],
+        "file_executed": false,
+        "publisher_original_hash_verified": false,
+        "release_version_proven": false,
+        "native_pet_runtime_verified": false
+      },
+      "decompressed": {
+        "response_bytes": 921600,
+        "response_sha256": "4193a7e1b20b996f7902424ae05092b455c5dbbe3f133d331a4897bbc7abfe63",
+        "machine": "i386",
+        "format": "PE32",
+        "coff_timestamp": 1120619111,
+        "coff_timestamp_utc_untrusted": "2005-07-06T03:05:11+00:00",
+        "sections": [
+          {
+            "name": ".text",
+            "rva": 4096,
+            "virtual_size": 648455,
+            "raw_offset": 4096,
+            "raw_size": 651264
+          },
+          {
+            "name": ".rdata",
+            "rva": 655360,
+            "virtual_size": 6820,
+            "raw_offset": 655360,
+            "raw_size": 8192
+          },
+          {
+            "name": ".data",
+            "rva": 663552,
+            "virtual_size": 78724564,
+            "raw_offset": 663552,
+            "raw_size": 249856
+          },
+          {
+            "name": ".rsrc",
+            "rva": 79388672,
+            "virtual_size": 5352,
+            "raw_offset": 913408,
+            "raw_size": 8192
+          }
+        ],
+        "upx_section_names_present": false,
+        "version_string_candidates_untrusted": [
+          {
+            "key": "FileVersion",
+            "value": "1, 0, 0, 1",
+            "block_file_offset": 916096
+          },
+          {
+            "key": "ProductVersion",
+            "value": "1, 0, 0, 1",
+            "block_file_offset": 916456
+          },
+          {
+            "key": "ProductName",
+            "value": "Waei SaDeb",
+            "block_file_offset": 916400
+          },
+          {
+            "key": "FileDescription",
+            "value": "SaDeb",
+            "block_file_offset": 916044
+          },
+          {
+            "key": "OriginalFilename",
+            "value": "SaDeb.exe",
+            "block_file_offset": 916308
+          },
+          {
+            "key": "InternalName",
+            "value": "SaDeb",
+            "block_file_offset": 916152
+          },
+          {
+            "key": "CompanyName",
+            "value": "Waei",
+            "block_file_offset": 916000
+          }
+        ],
+        "static_markers": [
+          {
+            "text": "ClientLogin",
+            "encoding": "ascii",
+            "file_offsets": [
+              778552
+            ]
+          },
+          {
+            "text": "CharLogin",
+            "encoding": "ascii",
+            "file_offsets": [
+              778592
+            ]
+          },
+          {
+            "text": "data\\adrn_%d.bin",
+            "encoding": "ascii",
+            "file_offsets": [
+              780252
+            ]
+          },
+          {
+            "text": "data\\savedata.dat",
+            "encoding": "ascii",
+            "file_offsets": [
+              876632
+            ]
+          }
+        ],
+        "file_executed": false,
+        "publisher_original_hash_verified": false,
+        "release_version_proven": false,
+        "native_pet_runtime_verified": false
+      },
+      "derived_summary": {
+        "data_path_string_count": 511,
+        "import_pair_count": 164,
+        "manifest_path_strings": [],
+        "login_strings": [
+          "ClientLogin",
+          "CharLogin"
+        ],
+        "observed_update_host_string": null
+      }
+    },
+    "StoneAge2": {
+      "archive_response": {
+        "response_bytes": 113664,
+        "response_sha256": "a72a2fa646766f9c3a9a04f4340a3c7a1d76029d0c464bc7613f604a1900820f",
+        "machine": "i386",
+        "format": "PE32",
+        "coff_timestamp": 1116383216,
+        "coff_timestamp_utc_untrusted": "2005-05-18T02:26:56+00:00",
+        "sections": [
+          {
+            "name": "UPX0",
+            "rva": 4096,
+            "virtual_size": 483328,
+            "raw_offset": 1024,
+            "raw_size": 0
+          },
+          {
+            "name": "UPX1",
+            "rva": 487424,
+            "virtual_size": 110592,
+            "raw_offset": 1024,
+            "raw_size": 108544
+          },
+          {
+            "name": ".rsrc",
+            "rva": 598016,
+            "virtual_size": 4096,
+            "raw_offset": 109568,
+            "raw_size": 4096
+          }
+        ],
+        "upx_section_names_present": true,
+        "version_string_candidates_untrusted": [
+          {
+            "key": "FileVersion",
+            "value": "1, 0, 0, 5",
+            "block_file_offset": 112064
+          },
+          {
+            "key": "ProductVersion",
+            "value": "1, 0, 0, 5",
+            "block_file_offset": 112440
+          },
+          {
+            "key": "ProductName",
+            "value": "SaUpdate",
+            "block_file_offset": 112388
+          },
+          {
+            "key": "FileDescription",
+            "value": "SaUpdate",
+            "block_file_offset": 112004
+          },
+          {
+            "key": "OriginalFilename",
+            "value": "SaUpdate.EXE",
+            "block_file_offset": 112288
+          },
+          {
+            "key": "InternalName",
+            "value": "SaUpdate",
+            "block_file_offset": 112120
+          },
+          {
+            "key": "CompanyName",
+            "value": "華義國際有限公司",
+            "block_file_offset": 111952
+          }
+        ],
+        "static_markers": [
+          {
+            "text": "SaUpdate",
+            "encoding": "utf-16le",
+            "file_offsets": [
+              112044,
+              112152,
+              112328,
+              112420
+            ]
+          }
+        ],
+        "file_executed": false,
+        "publisher_original_hash_verified": false,
+        "release_version_proven": false,
+        "native_pet_runtime_verified": false
+      },
+      "decompressed": {
+        "response_bytes": 253952,
+        "response_sha256": "d0d9c33acc7eb47c2f625b827d5e30daccd29cb9782ff6c302b730e0a5406b2f",
+        "machine": "i386",
+        "format": "PE32",
+        "coff_timestamp": 1116383216,
+        "coff_timestamp_utc_untrusted": "2005-05-18T02:26:56+00:00",
+        "sections": [
+          {
+            "name": ".text",
+            "rva": 4096,
+            "virtual_size": 168115,
+            "raw_offset": 4096,
+            "raw_size": 172032
+          },
+          {
+            "name": ".rdata",
+            "rva": 176128,
+            "virtual_size": 38522,
+            "raw_offset": 176128,
+            "raw_size": 40960
+          },
+          {
+            "name": ".data",
+            "rva": 217088,
+            "virtual_size": 355848,
+            "raw_offset": 217088,
+            "raw_size": 24576
+          },
+          {
+            "name": ".rsrc",
+            "rva": 573440,
+            "virtual_size": 9768,
+            "raw_offset": 241664,
+            "raw_size": 12288
+          }
+        ],
+        "upx_section_names_present": false,
+        "version_string_candidates_untrusted": [
+          {
+            "key": "FileVersion",
+            "value": "1, 0, 0, 5",
+            "block_file_offset": 244448
+          },
+          {
+            "key": "ProductVersion",
+            "value": "1, 0, 0, 5",
+            "block_file_offset": 244824
+          },
+          {
+            "key": "ProductName",
+            "value": "SaUpdate",
+            "block_file_offset": 244772
+          },
+          {
+            "key": "FileDescription",
+            "value": "SaUpdate",
+            "block_file_offset": 244388
+          },
+          {
+            "key": "OriginalFilename",
+            "value": "SaUpdate.EXE",
+            "block_file_offset": 244672
+          },
+          {
+            "key": "InternalName",
+            "value": "SaUpdate",
+            "block_file_offset": 244504
+          },
+          {
+            "key": "CompanyName",
+            "value": "華義國際有限公司",
+            "block_file_offset": 244336
+          }
+        ],
+        "static_markers": [
+          {
+            "text": "SaUpdate",
+            "encoding": "ascii",
+            "file_offsets": [
+              218948
+            ]
+          },
+          {
+            "text": "SaUpdate",
+            "encoding": "utf-16le",
+            "file_offsets": [
+              244428,
+              244536,
+              244712,
+              244804
+            ]
+          },
+          {
+            "text": "StoneAge2.exe",
+            "encoding": "ascii",
+            "file_offsets": [
+              219552,
+              221165
+            ]
+          },
+          {
+            "text": "stoneage.wayi.com.tw",
+            "encoding": "ascii",
+            "file_offsets": [
+              218720
+            ]
+          },
+          {
+            "text": "/saupdate/sa70a/newest7x.txt",
+            "encoding": "ascii",
+            "file_offsets": [
+              218612
+            ]
+          },
+          {
+            "text": "/saupdate/newest6.txt",
+            "encoding": "ascii",
+            "file_offsets": [
+              218644
+            ]
+          },
+          {
+            "text": "data\\adrn_%d.bin",
+            "encoding": "ascii",
+            "file_offsets": [
+              221530
+            ]
+          }
+        ],
+        "file_executed": false,
+        "publisher_original_hash_verified": false,
+        "release_version_proven": false,
+        "native_pet_runtime_verified": false
+      },
+      "derived_summary": {
+        "data_path_string_count": 23,
+        "import_pair_count": 316,
+        "manifest_path_strings": [
+          "/saupdate/sa70a/newest7x.txt",
+          "/saupdate/newest6.txt",
+          "/saupdate/%s%s"
+        ],
+        "login_strings": [],
+        "observed_update_host_string": "stoneage.wayi.com.tw"
+      }
+    }
+  },
+  "decompression_tool": {
+    "tool": "UPX 4.2.4 amd64 Linux",
+    "source_url": "https://github.com/upx/upx/releases/download/v4.2.4/upx-4.2.4-amd64_linux.tar.xz",
+    "archive_bytes": 590272,
+    "archive_sha256": "75cab4e57ab72fb4585ee45ff36388d280c7afd72aa03e8d4b9c3cbddb474193",
+    "tool_sha256": "746af4b1b8c230641d772d6a1ba645f606ac1e7a43951247477f239f29346fad"
+  },
+  "bounded_negative_observations": [
+    {
+      "query_id": "full80_cdx",
+      "requested_url": "https://web.archive.org/cdx/search/cdx?url=download.wayi.com.tw%2FStoneage80.exe&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength&limit=20",
+      "observed_at_utc": "2026-10-11T16:55:19.488493+00:00",
+      "cap": 131072,
+      "http_status": 200,
+      "final_url": "https://web.archive.org/cdx/search/cdx?url=download.wayi.com.tw%2FStoneage80.exe&output=json&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength&limit=20",
+      "content_type": "application/json",
+      "content_length": null,
+      "memento_datetime": null,
+      "location": null,
+      "response_bytes": 3,
+      "response_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "magic_hex": "5b5d0a",
+      "complete_within_bound": true,
+      "response": []
+    },
+    {
+      "query_id": "full80_http",
+      "requested_url": "https://web.archive.org/web/20050701000000id_/http://download.wayi.com.tw/Stoneage80.exe",
+      "observed_at_utc": "2026-10-11T16:55:19.491391+00:00",
+      "cap": 1048576,
+      "error_class": "HTTPError",
+      "error_detail": "HTTP Error 404: NOT FOUND"
+    },
+    {
+      "query_id": "full80_ftp",
+      "requested_url": "https://web.archive.org/web/20050701000000id_/ftp://download.wayi.com.tw/Stoneage80.exe",
+      "observed_at_utc": "2026-10-11T16:55:19.491777+00:00",
+      "cap": 1048576,
+      "error_class": "HTTPError",
+      "error_detail": "HTTP Error 404: NOT FOUND"
+    },
+    {
+      "query_id": "official80_ftp_cdx",
+      "requested_url": "https://web.archive.org/cdx/search/cdx?url=ftp%3A%2F%2Fdownload.wayi.com.tw%2FStoneage80.exe&output=json&fl=timestamp,original,statuscode,mimetype,digest,length&limit=20",
+      "observed_at_utc": "2026-10-11T16:57:01.176058+00:00",
+      "cap": 131072,
+      "error_class": "HTTPError",
+      "error_detail": "HTTP Error 503: Service Unavailable"
+    },
+    {
+      "query_id": "newest7x",
+      "requested_url": "https://web.archive.org/web/20050701000000id_/http://stoneage.wayi.com.tw/saupdate/sa70a/newest7x.txt",
+      "observed_at_utc": "2026-10-11T16:57:01.174520+00:00",
+      "cap": 131072,
+      "error_class": "HTTPError",
+      "error_detail": "HTTP Error 404: NOT FOUND"
+    },
+    {
+      "query_id": "newest6",
+      "requested_url": "https://web.archive.org/web/20050701000000id_/http://stoneage.wayi.com.tw/saupdate/newest6.txt",
+      "observed_at_utc": "2026-10-11T16:57:01.175030+00:00",
+      "cap": 131072,
+      "error_class": "HTTPError",
+      "error_detail": "HTTP Error 404: NOT FOUND"
+    }
+  ],
+  "directory_index_observation": {
+    "query_id": "official_exe_prefix_cdx",
+    "requested_url": "https://web.archive.org/cdx/search/cdx?url=www.wayi.com.tw%2Fdownload%2Ffile%2FonlineGame%2F&matchType=prefix&from=2004&to=2006&output=json&collapse=urlkey&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength&limit=100",
+    "observed_at_utc": "2026-10-11T16:52:15.595854+00:00",
+    "http_status": 200,
+    "final_url": "https://web.archive.org/cdx/search/cdx?url=www.wayi.com.tw%2Fdownload%2Ffile%2FonlineGame%2F&matchType=prefix&from=2004&to=2006&output=json&collapse=urlkey&fl=timestamp%2Coriginal%2Cstatuscode%2Cmimetype%2Cdigest%2Clength&limit=100",
+    "content_type": "application/json",
+    "content_length": null,
+    "memento_datetime": null,
+    "response_bytes": 882,
+    "response_sha256": "6b7dd2e57ccc3b91f58922bcacdabe26f977dd889585101256e183f4132a73dd",
+    "magic_hex": "5b5b2274696d6573",
+    "response": [
+      [
+        "timestamp",
+        "original",
+        "statuscode",
+        "mimetype",
+        "digest",
+        "length"
+      ],
+      [
+        "20060911180132",
+        "http://www.wayi.com.tw:80/download/file/onlineGame/adrn_129.rar",
+        "200",
+        "application/octet-stream",
+        "2FALST2M4RA2QBKWM4YUJAKALSZRMWYA",
+        "3980103"
+      ],
+      [
+        "20060919233005",
+        "http://www.wayi.com.tw:80/download/file/onlineGame/EnumDriver.exe",
+        "200",
+        "application/octet-stream",
+        "BI2XWKBNXZG65WXVTOWAUG6ZFKY4IOUS",
+        "27078"
+      ],
+      [
+        "20051001052140",
+        "http://www.wayi.com.tw:80/download/file/onlineGame/patch007.exe",
+        "200",
+        "application/octet-stream",
+        "BDPOAM4DFHJDELSVHAQXNA5ECRSOV7LY",
+        "2285354"
+      ],
+      [
+        "20060915184620",
+        "http://www.wayi.com.tw:80/download/file/onlineGame/sa.exe",
+        "200",
+        "application/octet-stream",
+        "O3KIPGHO4D24ON6YQ7VD3RKCV2QKOY7D",
+        "331738"
+      ],
+      [
+        "20060908111612",
+        "http://www.wayi.com.tw:80/download/file/onlineGame/StoneAge2.exe",
+        "200",
+        "application/octet-stream",
+        "4ABXA2TLTR73SFJ5NWCOMZDABC5ITLOQ",
+        "109801"
+      ]
+    ]
+  },
+  "evidence_limits": {
+    "page_capture_is_2005": false,
+    "retained_entry_dates_are_capture_dates": false,
+    "full_80_installer_obtained": false,
+    "publisher_original_hash_verified": false,
+    "actual_2005_response_bytes_obtained": false,
+    "native_pet_runtime_verified": false,
+    "jss1999_or_tw1_membership_promoted": false,
+    "pressure": "2486=2465 bounded closed+18 OPEN+3 historical UB"
+  }
+}
