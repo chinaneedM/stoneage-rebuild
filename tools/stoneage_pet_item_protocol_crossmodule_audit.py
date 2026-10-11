@@ -62,10 +62,9 @@ def check(repo_root):
            "original feature-gated opcode decoder source body changed")
     default_send=cpp(repo_root,send)
     enabled_send=cpp(repo_root,send,forced=True)
-    demand("LSSPROTO_PET_ITEM_RECV" not in default_send and
-           "LSSPROTO_PET_ITEM_RECV" in enabled_send and
+    demand("GmsvServer_PETITEM_recv(" not in default_send and
            "GmsvServer_PETITEM_recv(" in enabled_send,
-           "default or forced PET equipment packet decoder evidence changed")
+           "default or forced PET equipment packet callback emission changed")
     default_h=cpp(repo_root,h)
     enabled_h=cpp(repo_root,h,forced=True)
     default_char=cpp(repo_root,char)
