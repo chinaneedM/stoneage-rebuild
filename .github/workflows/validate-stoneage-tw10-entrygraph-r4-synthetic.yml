@@ -4,6 +4,7 @@ on:
   workflow_dispatch:
   push:
     branches:
+      - main
       - agent/tw10-savedata-controlflow-r4-20261012
     paths:
       - tools/stoneage_tw10_savedata_entrygraph_r4.py
