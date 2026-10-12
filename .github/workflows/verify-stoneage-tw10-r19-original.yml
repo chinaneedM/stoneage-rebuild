@@ -1,0 +1,62 @@
+name: Independently verify TW1.0 R19 original write and HeapAlloc frontiers
+on:
+  workflow_dispatch:
+  push:
+    branches: [main, agent/tw10-savedata-r19-write-heap-20261012]
+    paths:
+      - .github/workflows/verify-stoneage-tw10-r19-original.yml
+      - tools/stoneage_tw10_savedata_upstream_r19_guard.py
+      - tests/test_stoneage_tw10_savedata_upstream_r19_guard.py
+      - research/recovered/STONEAGE-TW10-SAVEDATA-UPSTREAM-R19-ORIGINAL.json
+permissions:
+  contents: read
+  actions: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Pin successful immutable original source and artifact identity
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          identity="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/38259495149" --jq '[.status,.conclusion,.head_sha,.head_branch] | join("|")')"
+          test "$identity" = 'completed|success|114d0800c0fda16618f2c292f10713c6bf24e4e2|agent/tw10-savedata-r19-write-heap-20261012'
+          artifact="$(gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/11752187262" --jq '[.workflow_run.id,.name,.digest,.expired] | join("|")')"
+          test "$artifact" = '38259495149|tw10-r19-original-write-heap-derived|sha256:ba53ffe7bb14225e7dd3210864ef4d6bbddb2174c039e703b9ade7f86a6bf205|false'
+      - name: Download derived-only immutable original report
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/r19-verify
+          gh run download 38259495149 --repo "$GITHUB_REPOSITORY" --name tw10-r19-original-write-heap-derived --dir /tmp/r19-verify
+          test "$(find /tmp/r19-verify -type f | wc -l)" -eq 1
+          test -f /tmp/r19-verify/stoneage-r19-derived.json
+          test ! -L /tmp/r19-verify/stoneage-r19-derived.json
+          test "$(stat -c %s /tmp/r19-verify/stoneage-r19-derived.json)" -le 70000
+          sha256sum /tmp/r19-verify/stoneage-r19-derived.json
+          wc -c /tmp/r19-verify/stoneage-r19-derived.json
+      - name: Independent tamper guard and static original report
+        run: |
+          set -euo pipefail
+          pip install --quiet capstone pefile
+          python -m unittest -v tests.test_stoneage_tw10_savedata_upstream_r19_guard
+          python -m tools.stoneage_tw10_savedata_upstream_r19_guard --report /tmp/r19-verify/stoneage-r19-derived.json
+      - name: Emit only strict derived JSON for separately pinned acceptance
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from tools.stoneage_tw10_savedata_upstream_r19_guard import validate
+          d=json.loads(Path('/tmp/r19-verify/stoneage-r19-derived.json').read_text())
+          validate(d)
+          print('TW10_R19_DERIVED_JSON_BEGIN')
+          print(json.dumps(d,sort_keys=True,separators=(',',':')))
+          print('TW10_R19_DERIVED_JSON_END')
+          PY
+      - name: Always purge downloaded derived evidence
+        if: always()
+        run: rm -rf /tmp/r19-verify
