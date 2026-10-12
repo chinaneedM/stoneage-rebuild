@@ -2772,3 +2772,8 @@ FACT/BOUNDED STATIC (not proof of historical execution): complete hash-verified 
 ## 2026-10-12 — Taiwan v1.0 savedata common-wrapper static linkage (R6)
 
 FACT, bounded static original bytes: four verified savedata filename pushes immediately CALL same0x487ba, filename at physical stack top. Direct cross-function depth4 surface from that callee observes CreateFileA and ReadFile at seven unique file-API sites (967 instruction/depth states,23 depth-limit stops). This extends R5's local zero API observation across functions; it does not prove runtime execution or that those APIs consume the savedata filename/handle/buffer.128-byte layout/checksum/native IO remain OPEN. Original Actions38224760455 SUCCESS; independent branch38225088763/main38225168390 SUCCESS. Exact derived report and acceptance receipt under research/recovered/STONEAGE-TW10-SAVEDATA-DATAFLOW-R6-*.json. All older records preserved; no later-client semantics back-projected.
+
+
+## 2026-10-12 — Taiwan v1.0 hardened filename wrapper-prefix observation (R7)
+
+FACT bounded original static analysis: full hash-verified original source run38228357360, independent branch38229857127/main38229979051 SUCCESS. Filename at physical stack top forwards from common wrapper via CALL0x487c4→0x4879a; next stopped helper target0x4b8a4. Corrected analysis136 states/eight CALL rows/no API candidates with explicit unknown memory/call/alias/depth stops. No real execution or complete savedata file IO/format admitted; higher stack slots are not historical ABI parameters. Earlier149-state report superseded, not deleted. Derived report and receipt STONEAGE-TW10-SAVEDATA-ARGTRACE-R7-HARDENED-*.json.
