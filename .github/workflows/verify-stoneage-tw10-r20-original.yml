@@ -1,0 +1,63 @@
+name: Independently verify TW1.0 R20 original indirect CALL/global/alias witness
+on:
+  workflow_dispatch:
+  push:
+    branches: [main, agent/tw10-savedata-r20-call-global-alias-20261012]
+    paths:
+      - .github/workflows/verify-stoneage-tw10-r20-original.yml
+      - tools/stoneage_tw10_savedata_upstream_r20_guard.py
+      - tests/test_stoneage_tw10_savedata_upstream_r20_guard.py
+      - research/recovered/STONEAGE-TW10-SAVEDATA-UPSTREAM-R20-ORIGINAL.json
+permissions:
+  contents: read
+  actions: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Pin immutable original successful source and artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          identity="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/38262025327" --jq '[.status,.conclusion,.head_sha,.head_branch] | join("|")')"
+          test "$identity" = 'completed|success|fc95c33f3877d7182359334885ce8ed47f8bcb12|agent/tw10-savedata-r20-call-global-alias-20261012'
+          artifact="$(gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/11752812909" --jq '[.workflow_run.id,.name,.digest,.expired] | join("|")')"
+          test "$artifact" = '38262025327|tw10-r20-original-call-global-alias-derived|sha256:729d80b700b83cf5e5e9cca8b01a36867fee02aa021a499fa5db0fa2c71babbe|false'
+      - name: Download only original-derived bounded JSON
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/r20-independent
+          gh run download 38262025327 --repo "$GITHUB_REPOSITORY" --name tw10-r20-original-call-global-alias-derived --dir /tmp/r20-independent
+          test "$(find /tmp/r20-independent -type f | wc -l)" -eq 1
+          test -f /tmp/r20-independent/stoneage-r20-derived.json
+          test ! -L /tmp/r20-independent/stoneage-r20-derived.json
+          test "$(stat -c %s /tmp/r20-independent/stoneage-r20-derived.json)" -le 70000
+          sha256sum /tmp/r20-independent/stoneage-r20-derived.json
+          wc -c /tmp/r20-independent/stoneage-r20-derived.json
+      - name: Independent strict semantic boundary and 13 tamper tests
+        run: |
+          set -euo pipefail
+          pip install --quiet capstone pefile
+          python -m unittest -v tests.test_stoneage_tw10_savedata_upstream_r20_guard
+          python -m tools.stoneage_tw10_savedata_upstream_r20_guard --report /tmp/r20-independent/stoneage-r20-derived.json
+      - name: Emit canonical derived witness to review log
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from tools.stoneage_tw10_savedata_upstream_r20_guard import validate
+          d=json.loads(Path('/tmp/r20-independent/stoneage-r20-derived.json').read_text())
+          validate(d)
+          print('TW10_R20_DERIVED_JSON_BEGIN')
+          print(json.dumps(d,sort_keys=True,separators=(',',':')))
+          print('TW10_R20_DERIVED_JSON_END')
+          PY
+      - name: Always remove downloaded metadata
+        if: always()
+        run: rm -rf /tmp/r20-independent
