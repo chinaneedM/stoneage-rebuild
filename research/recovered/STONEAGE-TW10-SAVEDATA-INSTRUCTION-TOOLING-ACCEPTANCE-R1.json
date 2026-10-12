@@ -1,0 +1,38 @@
+{
+  "schema": "stoneage-tw10-savedata-instruction-tooling-r1",
+  "status": "ACCEPTED_TOOLCHAIN_ONLY",
+  "repo": "chinaneedM/stoneage-rebuild",
+  "tooling_commit": "518a571abb8f4f1d5f53056401dba6be2f3071cc",
+  "tooling_tree": "c70a71299e863175d0aff377a6e5f1fa963530c6",
+  "initial_r3_run": {
+    "id": 38209109437,
+    "conclusion": "cancelled",
+    "passed_tests": 8,
+    "download_step": "cancelled_after_job_timeout",
+    "original_code_analyzed": false
+  },
+  "branch_ci": {
+    "id": 38212658702,
+    "conclusion": "success",
+    "tests": 10
+  },
+  "main_ci": {
+    "id": 38212722657,
+    "conclusion": "success",
+    "tests": 10
+  },
+  "original_binary_probe": "NOT_RUN_IN_PUSH_CI",
+  "original_disc_sha_verification": "NOT_REVERIFIED_BY_R3",
+  "stable_report_sources": [
+    "research/recovered/STONEAGE-TW10-SAVEDATA-R1.txt",
+    "research/recovered/STONEAGE-TW10-SAVEDATA-POINTERS-R2.txt"
+  ],
+  "not_admitted": [
+    "four real x86 instruction boundaries",
+    "runtime savedata IO reachability",
+    "128-byte file semantic layout",
+    "v1.0 equivalence to late Wayi settings",
+    "original operator server/native pair"
+  ],
+  "original_payloads_committed": false
+}
