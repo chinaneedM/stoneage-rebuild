@@ -2,7 +2,7 @@ name: Validate TW1.0 R7 conditional filename argument propagation
 on:
   workflow_dispatch:
   push:
-    branches: [main, agent/tw10-savedata-argtrace-r7-20261012]
+    branches: [main, agent/tw10-savedata-argtrace-r7-20261012, agent/tw10-savedata-argtrace-r7-hardened-20261012]
     paths:
       - tools/stoneage_tw10_savedata_argtrace_r7.py
       - tools/stoneage_tw10_savedata_argtrace_r7_guard.py

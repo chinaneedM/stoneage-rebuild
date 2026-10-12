@@ -1,10 +1,10 @@
-name: Probe TW1.0 original R7 savedata conditional filename argument surfaces by pinned archive
+name: Probe TW1.0 original R7 savedata hardened conditional filename argument surfaces by pinned archive
 
 on:
   workflow_dispatch:
   push:
     branches:
-      - agent/tw10-savedata-argtrace-r7-20261012
+      - agent/tw10-savedata-argtrace-r7-hardened-20261012
     paths:
       - .github/workflows/probe-stoneage-tw10-argtrace-r7-original.yml
 
@@ -21,7 +21,7 @@ jobs:
         run: |
           set -euo pipefail
           pip install --quiet capstone pefile
-          python3 -m unittest tests.test_stoneage_tw10_savedata_argtrace_r7 -v
+          python3 -m unittest discover -s tests -p 'test_stoneage_tw10_savedata_argtrace_r7*.py' -v
       - name: Retrieve strictly catalog-pinned original archive in bounded ranges
         run: |
           set -euo pipefail
@@ -40,6 +40,7 @@ jobs:
           set -euo pipefail
           python3 -m tools.stoneage_tw10_savedata_argtrace_r7 \
             --bin /tmp/stoneage-r7/STONEAGE.bin | tee /tmp/stoneage-r7-report.json
+          python3 -m tools.stoneage_tw10_savedata_argtrace_r7_guard --report /tmp/stoneage-r7-report.json
           python3 - <<'PY'
           import json
           from pathlib import Path
