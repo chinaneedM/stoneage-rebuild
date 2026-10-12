@@ -1,0 +1,24 @@
+name: Validate TW1.0 R12 indirect/import and reference frontier synthetic-only
+on:
+  workflow_dispatch:
+  push:
+    branches: [main, agent/tw10-savedata-frontier-r12-20261012]
+    paths:
+      - tools/stoneage_tw10_savedata_frontier_r12*.py
+      - tests/test_stoneage_tw10_savedata_frontier_r12*.py
+      - .github/workflows/validate-stoneage-tw10-frontier-r12.yml
+permissions:
+  contents: read
+jobs:
+  synthetic:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install --quiet capstone pefile
+      - run: |
+          python3 -m unittest discover -s tests -p 'test_stoneage_tw10_savedata_frontier_r12*.py' -v
+          python3 -m unittest discover -s tests -p 'test_stoneage_tw10_savedata_inputs_r11*.py' -v
+          python3 -m unittest tests.test_stoneage_tw10_savedata_helper_effects_r8 tests.test_stoneage_tw10_savedata_helper_original_r8_guard -v
+          echo 'TW10_R12_SYNTHETIC_ONLY=PASS'
+          echo 'TW10_R12_RUNTIME_STORE_OWNERSHIP_AND_LOOP_CONDITIONS=OPEN'

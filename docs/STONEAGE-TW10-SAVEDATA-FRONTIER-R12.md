@@ -1,0 +1,7 @@
+# TW1.0 savedata R12 indirect/global frontier
+
+R12 requires all prior original R11 gates before inspecting the exact stopped indirect CALL and the next direct helper. An import-slot association is admitted only for a four-byte near CALL through an absolute unsegmented memory operand exactly present in the original PE import map. Immediate calls, base/index calculations, register calls, segments and unmatched slots do not inherit an IAT identity. The association is static and does not prove actual execution, arguments or effects.
+
+Four parent-input queries retain the R11 fixed-point/opaque CALL/alias rules. Global reference discovery is explicitly a linear .text decode candidate scan, with byte-by-byte progress on decode gaps. It cannot establish reachability, indirect alias coverage or runtime initialization. Per-global counts are retained while samples cap at32; memory access classification is confined to named integer operations and otherwise unknown, including x87 stores with misleading decoder access bits. Immediate address candidates are not writes. No raw opcode/operand listing is emitted.
+
+The direct delegate uses unchanged R8 conservative effects. All caller continuation, object/global-value completeness, loop bound, import effects, native IO and128-byte-format admission flags remain false. Acceptance requires pinned archive/executable/save identity and independent exact source-run/derived-only artifact comparison plus a strict guard.

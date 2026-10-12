@@ -1,0 +1,65 @@
+name: Probe TW1.0 original R12 savedata indirect import identity and global references by pinned archive
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - agent/tw10-savedata-frontier-r12-20261012
+    paths:
+      - .github/workflows/probe-stoneage-tw10-frontier-r12-original.yml
+
+permissions:
+  contents: read
+
+jobs:
+  original-static:
+    runs-on: ubuntu-latest
+    timeout-minutes: 33
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify static path and import-count semantics on synthetic x86
+        run: |
+          set -euo pipefail
+          pip install --quiet capstone pefile
+          python3 -m unittest tests.test_stoneage_tw10_savedata_frontier_r12 -v
+      - name: Retrieve strictly catalog-pinned original archive in bounded ranges
+        run: |
+          set -euo pipefail
+          python3 -m tools.stoneage_tw10_archive_parallel_download \
+            --deadline 1500 --workers 16 --chunk 8388608 --output /tmp/CD_DIC.rar
+      - name: Extract accepted disc image for static analysis only
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq 7zip
+          mkdir -p /tmp/stoneage-r12
+          7z x -y -o/tmp/stoneage-r12 /tmp/CD_DIC.rar STONEAGE.bin >/dev/null
+          test "$(stat -c %s /tmp/stoneage-r12/STONEAGE.bin)" = 523449360
+      - name: Verify original embedded hashes and emit bounded R12 metadata only
+        run: |
+          set -euo pipefail
+          python3 -m tools.stoneage_tw10_savedata_frontier_r12 \
+            --bin /tmp/stoneage-r12/STONEAGE.bin | tee /tmp/stoneage-r12-report.json
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          from tools.stoneage_tw10_savedata_frontier_r12 import SCHEMA, STATUS, FLAGS
+          report=json.loads(Path('/tmp/stoneage-r12-report.json').read_text())
+          assert report['schema']==SCHEMA and report['status']==STATUS
+          assert report['delegate_helper']['root_rva']==0x49d93
+          assert report['parent_nodes']==50 and report['parent_edges']==55
+          for key in FLAGS:
+              assert report[key] is False
+          print('TW10_R12_ORIGINAL_STATIC_HELPER=PASS')
+          print('TW10_R12_NATIVE_SAVE_IO=OPEN')
+          PY
+      - name: Remove copyrighted original media even on error
+        if: always()
+        run: rm -rf /tmp/CD_DIC.rar /tmp/stoneage-r12
+      - name: Upload derived-only JSON when every provenance gate succeeded
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: tw10-original-helper-r12-derived
+          path: /tmp/stoneage-r12-report.json
+          retention-days: 21
