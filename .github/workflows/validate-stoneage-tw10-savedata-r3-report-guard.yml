@@ -1,0 +1,28 @@
+name: Validate Taiwan v1.0 savedata derived R3 report guard
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_tw10_savedata_r3_report_guard.py
+      - tests/test_stoneage_tw10_savedata_r3_report_guard.py
+      - .github/workflows/validate-stoneage-tw10-savedata-r3-report-guard.yml
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install static analysis dependencies for pinned schema imports
+        run: pip install --quiet capstone pefile
+      - name: Validate strict derived-only R3 report grammar and counterexamples
+        run: python3 -m unittest tests.test_stoneage_tw10_savedata_r3_report_guard -v
+      - name: Explicitly hold native evidence admission
+        run: |
+          echo 'R3_DERIVED_REPORT_GRAMMAR=VERIFIED'
+          echo 'R3_ORIGINAL_ARCHIVE_HASH=NOT_CHECKED_BY_THIS_WORKFLOW'
+          echo 'R3_NATIVE_IO_SEMANTICS=OPEN'
