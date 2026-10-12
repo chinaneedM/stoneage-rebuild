@@ -1,4 +1,4 @@
-name: Validate TW1.0 R20 CALL/global/alias synthetic
+name: Validate TW1.0 R20 CALL/global/alias synthetic and strict guard
 on:
   workflow_dispatch:
   push:
@@ -6,7 +6,9 @@ on:
     paths:
       - .github/workflows/validate-stoneage-tw10-r20-synthetic.yml
       - tools/stoneage_tw10_savedata_upstream_r20.py
+      - tools/stoneage_tw10_savedata_upstream_r20_guard.py
       - tests/test_stoneage_tw10_savedata_upstream_r20.py
+      - tests/test_stoneage_tw10_savedata_upstream_r20_guard.py
 permissions:
   contents: read
 jobs:
@@ -16,10 +18,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: pip install --quiet capstone pefile
-      - name: R20 + adjacent R19 static regressions
+      - name: R20 and R19 no-promotion regression tests
         run: |
           set -euo pipefail
-          python -m unittest -v tests.test_stoneage_tw10_savedata_upstream_r20 tests.test_stoneage_tw10_savedata_upstream_r19
-          python -m compileall -q tools/stoneage_tw10_savedata_upstream_r20.py
-          echo TW10_R20_SYNTHETIC=PASS
-          echo TW10_R20_ORIGINAL=OPEN
+          python -m unittest -v tests.test_stoneage_tw10_savedata_upstream_r20 tests.test_stoneage_tw10_savedata_upstream_r20_guard tests.test_stoneage_tw10_savedata_upstream_r19 tests.test_stoneage_tw10_savedata_upstream_r19_guard
+          python -m compileall -q tools/stoneage_tw10_savedata_upstream_r20.py tools/stoneage_tw10_savedata_upstream_r20_guard.py
+          echo TW10_R20_SYNTHETIC_AND_GUARD=PASS
+          echo TW10_R20_ORIGINAL_EVIDENCE=OPEN
