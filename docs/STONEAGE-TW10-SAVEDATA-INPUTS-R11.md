@@ -1,0 +1,7 @@
+# TW1.0 savedata R11 parent inputs
+
+R11 follows the accepted R10 frontier using original hashes and the same bounded structural parent graph. Eight exact site/register queries expose reaching definitions of EBX/EAX at the ESI memory-load site, EDI at the ESI copy site, ECX/EBP for the first comparison, ECX for the masked test, and EAX/EDX for the signed loop comparison. Definitions use a fixed point and retain joins and cyclic recurrence. Partial-register writes become unmodeled full values; every opaque CALL replaces all tracked registers with an unknown-call barrier, without an ABI preservation assumption.
+
+Only limited transformed semantic descriptors are emitted: copy, constant assignment (including full-register XOR/SUB self), memory load/address geometry, signed offset adjustment (including INC/DEC), or explicit unknown. Reaching a definition does not establish the value of its inputs, memory contents, path feasibility or runtime bound. No numeric register evaluation, original executable execution, raw bytes or disassembly listing is published. No fixed object, CRT/FILE identity or 128-byte schema is inferred.
+
+Delegate RVA 0x491cd receives the existing conservative R8 effect analysis; conditional balanced returns cannot hide unknown calls, memory mutations or cycles. All caller/runtime/ownership admission flags remain false. Acceptance requires the original hash/derived artifact and separate strict immutable source-run/exact JSON custody gate.
