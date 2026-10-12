@@ -6,6 +6,8 @@ on:
     branches:
       - agent/tw10-savedata-original-gate-20261012
     paths:
+      - tools/stoneage_tw10_archive_parallel_download.py
+      - tests/test_stoneage_tw10_archive_parallel_download.py
       - tools/stoneage_tw10_archive_chunk_download.py
       - tests/test_stoneage_tw10_archive_chunk_download.py
       - .github/workflows/validate-stoneage-tw10-original-archive-gate.yml
@@ -20,13 +22,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Validate guarded byte-range downloader with synthetic bytes
-        run: python3 -m unittest tests.test_stoneage_tw10_archive_chunk_download -v
+        run: python3 -m unittest tests.test_stoneage_tw10_archive_chunk_download tests.test_stoneage_tw10_archive_parallel_download -v
       - name: Install original static probe dependencies
         run: pip install --quiet pefile capstone
       - name: Recover and hash-pin accepted 842 MB original archive in transient disk
         run: |
-          python3 -m tools.stoneage_tw10_archive_chunk_download \
-            --deadline 540 --output /tmp/CD_DIC.rar
+          python3 -m tools.stoneage_tw10_archive_parallel_download \
+            --deadline 540 --workers 12 --chunk 8388608 --output /tmp/CD_DIC.rar
       - name: Unpack accepted CD image for static evidence only
         run: |
           set -euo pipefail
