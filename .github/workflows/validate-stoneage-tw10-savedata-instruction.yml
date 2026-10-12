@@ -1,0 +1,76 @@
+name: Validate Taiwan v1.0 savedata instruction windows
+
+on:
+  workflow_dispatch:
+    inputs:
+      full_original_probe:
+        description: "Opt in to downloading the original archived disc and validating executable instructions"
+        type: boolean
+        required: true
+        default: true
+  push:
+    paths:
+      - tools/stoneage_tw10_savedata_instruction_probe.py
+      - tests/test_stoneage_tw10_savedata_instruction_probe.py
+      - research/recovered/STONEAGE-TW10-SAVEDATA-POINTERS-R2.txt
+      - research/recovered/STONEAGE-TW10-SAVEDATA-R1.txt
+      - .github/workflows/validate-stoneage-tw10-savedata-instruction.yml
+
+permissions:
+  contents: read
+
+jobs:
+  synthetic-and-metadata:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install bounded static analysis dependencies
+        run: pip install --quiet pefile capstone
+      - name: Validate synthetic decoder and pinned R1/R2 metadata
+        run: python3 -m unittest tests.test_stoneage_tw10_savedata_instruction_probe -v
+      - name: State the original-binary evidence boundary
+        run: |
+          echo 'R3_SYNTHETIC_AND_METADATA_CHECKS=PASS'
+          echo 'R3_ORIGINAL_EXECUTABLE_VALIDATION=NOT_RUN_IN_PUSH_CI'
+          echo 'Full original artifact verification is a separate opt-in workflow_dispatch gate.'
+
+  original-disc-static:
+    if: github.event_name == 'workflow_dispatch' && inputs.full_original_probe
+    needs: synthetic-and-metadata
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install bounded static analysis dependencies
+        run: pip install --quiet pefile capstone
+      - name: Download original archive with hard transfer bounds
+        run: |
+          set -euo pipefail
+          curl --location --fail --show-error \
+            --connect-timeout 15 --max-time 600 --speed-limit 8192 --speed-time 60 \
+            --retry 1 --retry-delay 3 \
+            --output /tmp/CD_DIC.rar \
+            'https://archive.org/download/stoneage_tw_2000_win/CD_DIC.rar'
+          echo 'b37a4a47f4eb608cac67e4ddf7a1621a  /tmp/CD_DIC.rar' | md5sum -c -
+          echo 'b8cf92720b6ec8b3f46ea2e9bfcda986d21e7ded  /tmp/CD_DIC.rar' | sha1sum -c -
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq 7zip
+          mkdir -p /tmp/tw10
+          7z x -y -o/tmp/tw10 /tmp/CD_DIC.rar STONEAGE.bin >/dev/null
+          test "$(stat -c %s /tmp/tw10/STONEAGE.bin)" = 523449360
+      - name: Analyze exact pinned TW1.0 sa_3.exe and savedata only
+        run: |
+          set -euo pipefail
+          python3 -m tools.stoneage_tw10_savedata_instruction_probe \
+            --bin /tmp/tw10/STONEAGE.bin | tee /tmp/tw10-savedata-instruction-r3.txt
+      - name: Delete transient proprietary original payloads
+        if: always()
+        run: rm -rf /tmp/tw10 /tmp/CD_DIC.rar
+      - name: Upload derived metadata only after original gate passes
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: tw10-savedata-four-words-r3-original-verified
+          path: /tmp/tw10-savedata-instruction-r3.txt
+          retention-days: 30
