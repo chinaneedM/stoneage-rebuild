@@ -1,0 +1,25 @@
+name: Validate TW1.0 R20 CALL/global/alias synthetic
+on:
+  workflow_dispatch:
+  push:
+    branches: [main, agent/tw10-savedata-r20-call-global-alias-20261012]
+    paths:
+      - .github/workflows/validate-stoneage-tw10-r20-synthetic.yml
+      - tools/stoneage_tw10_savedata_upstream_r20.py
+      - tests/test_stoneage_tw10_savedata_upstream_r20.py
+permissions:
+  contents: read
+jobs:
+  synthetic:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install --quiet capstone pefile
+      - name: R20 + adjacent R19 static regressions
+        run: |
+          set -euo pipefail
+          python -m unittest -v tests.test_stoneage_tw10_savedata_upstream_r20 tests.test_stoneage_tw10_savedata_upstream_r19
+          python -m compileall -q tools/stoneage_tw10_savedata_upstream_r20.py
+          echo TW10_R20_SYNTHETIC=PASS
+          echo TW10_R20_ORIGINAL=OPEN
