@@ -1,0 +1,88 @@
+{
+  "caller_resumption_admitted": false,
+  "filename_api_link_proven": false,
+  "fixed_128_byte_schema_proven": false,
+  "handle_buffer_size_link_proven": false,
+  "native_io_executed": false,
+  "nested_helper": {
+    "common_preserved_registers": [],
+    "control_flow_cycle": false,
+    "gap_sites": [
+      {
+        "direct_target_rva": 299425,
+        "occurrences": 1,
+        "reason": "unsummarized_call",
+        "rva": 299417
+      }
+    ],
+    "gaps": {
+      "unsummarized_call": 1
+    },
+    "native_io_executed": false,
+    "original_helper_accepted": false,
+    "qualifies_modeled_return_effect_summary": false,
+    "return_paths": [],
+    "root_rva": 299407,
+    "schema": "tw10-r8-bounded-helper-return-effects",
+    "state_limit_hit": false,
+    "uniform_ret_cleanup_bytes": null,
+    "visited_states": 3
+  },
+  "nested_helper_effects_admitted": false,
+  "original_bytes_published": false,
+  "r8_verified_helper_states": 44,
+  "runtime_sha256": "cdab9ea049a98bbc96ce93eeaa8b63c688f0c0f0ad8b3183e79d75e47621441a",
+  "savedata_sha256": "5b26f54a9723cd2c5275f964457094fdf1fc33ca086cdaf55bb5350dfb04f3f9",
+  "schema": "tw10-r9-original-helper-frontier",
+  "status": "PINNED_ORIGINAL_NESTED_HELPER_STORE_AND_LOOP_SURFACE_ONLY",
+  "store": {
+    "absolute_effective_rva": null,
+    "base_register": "esi",
+    "displacement_region": null,
+    "effective_address_fully_known": false,
+    "index_register": null,
+    "index_scale": 1,
+    "store_rva": 309507,
+    "table_or_object_ownership_proven": false,
+    "write_width_bytes": 4
+  },
+  "structural_parent": {
+    "call_return_assumptions": 1,
+    "caller_resumption_admitted": false,
+    "edges": 55,
+    "indirect_jump_count": 0,
+    "limit_hit": false,
+    "loops": [
+      {
+        "call_return_assumptions": 0,
+        "conditional_branches": [
+          {
+            "condition": "je",
+            "fallthrough_rva": 309446,
+            "rva": 309444,
+            "target_rva": 309467
+          },
+          {
+            "condition": "je",
+            "fallthrough_rva": 309452,
+            "rva": 309450,
+            "target_rva": 309462
+          },
+          {
+            "condition": "jl",
+            "fallthrough_rva": 309460,
+            "rva": 309458,
+            "target_rva": 309440
+          }
+        ],
+        "max_rva": 309458,
+        "min_rva": 309440,
+        "node_count": 9
+      }
+    ],
+    "nodes": 50,
+    "outside_or_decode_gap_count": 0,
+    "root_rva": 309412,
+    "runtime_loop_conditions_proven": false
+  }
+}
