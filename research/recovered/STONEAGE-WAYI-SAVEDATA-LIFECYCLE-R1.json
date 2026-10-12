@@ -1,0 +1,1998 @@
+{
+  "probe": {
+    "schema": "STONEAGE-WAYI-SAVEDATA-LIFECYCLE-R1",
+    "input_bytes": 921600,
+    "decompressed_input_sha256": "4193a7e1b20b996f7902424ae05092b455c5dbbe3f133d331a4897bbc7abfe63",
+    "initial_region": {
+      "backing_rva": 70360360,
+      "bytes": 127,
+      "section": {
+        "name": ".data",
+        "vsize": 78724564,
+        "vaddr": 663552,
+        "raw_size": 249856,
+        "raw_ptr": 663552,
+        "chars": 3221225536
+      },
+      "entirely_beyond_raw": true,
+      "declared_zero_filled": true,
+      "sha256": "15dae5979058bfbf4f9166029b6e340ea3ca374fef578a11dc9e6e923860d7ae",
+      "spec": "https://learn.microsoft.com/en-us/windows/win32/debug/pe-format#section-table-section-headers"
+    },
+    "windows": [
+      {
+        "label": "save-full",
+        "start_rva": 525824,
+        "end_rva_exclusive": 526162,
+        "code_sha256": "be72b4931e67df5fbb156acf94e1b3a244ae252e0bd4d1a5f04a21bb34810de5",
+        "instruction_count": 100,
+        "calls": [
+          {
+            "call_rva": 525829,
+            "target": {
+              "width_bytes": 4,
+              "kind": "immediate",
+              "value": 4810272
+            },
+            "direct_target_rva": 615968
+          },
+          {
+            "call_rva": 525868,
+            "target": {
+              "width_bytes": 4,
+              "kind": "immediate",
+              "value": 4800086
+            },
+            "direct_target_rva": 605782
+          },
+          {
+            "call_rva": 525904,
+            "target": {
+              "width_bytes": 4,
+              "kind": "immediate",
+              "value": 4800080
+            },
+            "direct_target_rva": 605776
+          },
+          {
+            "call_rva": 525938,
+            "target": {
+              "width_bytes": 4,
+              "kind": "immediate",
+              "value": 4806784
+            },
+            "direct_target_rva": 612480
+          },
+          {
+            "call_rva": 525963,
+            "target": {
+              "width_bytes": 4,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 4850104,
+              "absolute_rva": 655800
+            },
+            "import": [
+              "KERNEL32.DLL",
+              "OpenProcess"
+            ]
+          },
+          {
+            "call_rva": 525981,
+            "target": {
+              "width_bytes": 4,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 4850108,
+              "absolute_rva": 655804
+            },
+            "import": [
+              "KERNEL32.DLL",
+              "TerminateProcess"
+            ]
+          },
+          {
+            "call_rva": 525994,
+            "target": {
+              "width_bytes": 4,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 4850036,
+              "absolute_rva": 655732
+            },
+            "import": [
+              "KERNEL32.DLL",
+              "CloseHandle"
+            ]
+          },
+          {
+            "call_rva": 526058,
+            "target": {
+              "width_bytes": 4,
+              "kind": "immediate",
+              "value": 4776016
+            },
+            "direct_target_rva": 581712
+          },
+          {
+            "call_rva": 526073,
+            "target": {
+              "width_bytes": 4,
+              "kind": "immediate",
+              "value": 4807668
+            },
+            "direct_target_rva": 613364
+          },
+          {
+            "call_rva": 526112,
+            "target": {
+              "width_bytes": 4,
+              "kind": "immediate",
+              "value": 4807370
+            },
+            "direct_target_rva": 613066
+          },
+          {
+            "call_rva": 526140,
+            "target": {
+              "width_bytes": 4,
+              "kind": "immediate",
+              "value": 4807284
+            },
+            "direct_target_rva": 612980
+          }
+        ],
+        "branches": [
+          {
+            "branch_rva": 525841,
+            "condition": "je",
+            "target_rva": 526010,
+            "fallthrough_rva": 525847,
+            "adjacent_comparison_rva": 525839
+          },
+          {
+            "branch_rva": 525875,
+            "condition": "je",
+            "target_rva": 526000,
+            "fallthrough_rva": 525877,
+            "adjacent_comparison_rva": 525873
+          },
+          {
+            "branch_rva": 525890,
+            "condition": "je",
+            "target_rva": 525928,
+            "fallthrough_rva": 525892,
+            "adjacent_comparison_rva": 525888
+          },
+          {
+            "branch_rva": 525911,
+            "condition": "je",
+            "target_rva": 526000,
+            "fallthrough_rva": 525913,
+            "adjacent_comparison_rva": 525909
+          },
+          {
+            "branch_rva": 525926,
+            "condition": "jne",
+            "target_rva": 525892,
+            "fallthrough_rva": 525928,
+            "adjacent_comparison_rva": 525924
+          },
+          {
+            "branch_rva": 525948,
+            "condition": "jne",
+            "target_rva": 526000,
+            "fallthrough_rva": 525950,
+            "adjacent_comparison_rva": 525946
+          },
+          {
+            "branch_rva": 525976,
+            "condition": "je",
+            "target_rva": 526000,
+            "fallthrough_rva": 525978
+          },
+          {
+            "branch_rva": 526085,
+            "condition": "jne",
+            "target_rva": 526096,
+            "fallthrough_rva": 526087,
+            "adjacent_comparison_rva": 526083
+          },
+          {
+            "branch_rva": 526126,
+            "condition": "jae",
+            "target_rva": 526139,
+            "fallthrough_rva": 526128,
+            "adjacent_comparison_rva": 526124
+          }
+        ],
+        "absolute_writes": [
+          {
+            "rva": 525858,
+            "destination": {
+              "width_bytes": 4,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 72768000,
+              "absolute_rva": 68573696
+            },
+            "source": {
+              "width_bytes": 4,
+              "kind": "immediate",
+              "value": 296
+            }
+          },
+          {
+            "rva": 525971,
+            "destination": {
+              "width_bytes": 4,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 72769804,
+              "absolute_rva": 68575500
+            },
+            "source": {
+              "width_bytes": 4,
+              "kind": "register",
+              "name": "eax"
+            }
+          },
+          {
+            "rva": 526000,
+            "destination": {
+              "width_bytes": 4,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 72767712,
+              "absolute_rva": 68573408
+            },
+            "source": {
+              "width_bytes": 4,
+              "kind": "immediate",
+              "value": 0
+            }
+          }
+        ]
+      },
+      {
+        "label": "create-full",
+        "start_rva": 526528,
+        "end_rva_exclusive": 526779,
+        "code_sha256": "648156dcc3cdde252992b4a6f15b12d50b5ca3e6bf4a07c479b8b9d215b481a7",
+        "instruction_count": 70,
+        "calls": [
+          {
+            "call_rva": 526678,
+            "target": {
+              "width_bytes": 4,
+              "kind": "immediate",
+              "value": 4776016
+            },
+            "direct_target_rva": 581712
+          },
+          {
+            "call_rva": 526693,
+            "target": {
+              "width_bytes": 4,
+              "kind": "immediate",
+              "value": 4807668
+            },
+            "direct_target_rva": 613364
+          },
+          {
+            "call_rva": 526729,
+            "target": {
+              "width_bytes": 4,
+              "kind": "immediate",
+              "value": 4807370
+            },
+            "direct_target_rva": 613066
+          },
+          {
+            "call_rva": 526757,
+            "target": {
+              "width_bytes": 4,
+              "kind": "immediate",
+              "value": 4807284
+            },
+            "direct_target_rva": 612980
+          }
+        ],
+        "branches": [
+          {
+            "branch_rva": 526705,
+            "condition": "jne",
+            "target_rva": 526716,
+            "fallthrough_rva": 526707,
+            "adjacent_comparison_rva": 526703
+          },
+          {
+            "branch_rva": 526743,
+            "condition": "jae",
+            "target_rva": 526756,
+            "fallthrough_rva": 526745,
+            "adjacent_comparison_rva": 526741
+          }
+        ],
+        "absolute_writes": [
+          {
+            "rva": 526575,
+            "destination": {
+              "width_bytes": 1,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 74554701,
+              "absolute_rva": 70360397
+            },
+            "source": {
+              "width_bytes": 1,
+              "kind": "register",
+              "name": "cl"
+            }
+          },
+          {
+            "rva": 526587,
+            "destination": {
+              "width_bytes": 1,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 74554702,
+              "absolute_rva": 70360398
+            },
+            "source": {
+              "width_bytes": 1,
+              "kind": "register",
+              "name": "dl"
+            }
+          },
+          {
+            "rva": 526599,
+            "destination": {
+              "width_bytes": 4,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 74554707,
+              "absolute_rva": 70360403
+            },
+            "source": {
+              "width_bytes": 4,
+              "kind": "register",
+              "name": "ecx"
+            }
+          },
+          {
+            "rva": 526605,
+            "destination": {
+              "width_bytes": 4,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 74554711,
+              "absolute_rva": 70360407
+            },
+            "source": {
+              "width_bytes": 4,
+              "kind": "register",
+              "name": "edx"
+            }
+          },
+          {
+            "rva": 526615,
+            "destination": {
+              "width_bytes": 1,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 74554700,
+              "absolute_rva": 70360396
+            },
+            "source": {
+              "width_bytes": 1,
+              "kind": "register",
+              "name": "al"
+            }
+          },
+          {
+            "rva": 526631,
+            "destination": {
+              "width_bytes": 4,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 74554703,
+              "absolute_rva": 70360399
+            },
+            "source": {
+              "width_bytes": 4,
+              "kind": "register",
+              "name": "eax"
+            }
+          },
+          {
+            "rva": 526650,
+            "destination": {
+              "width_bytes": 2,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 74554664,
+              "absolute_rva": 70360360
+            },
+            "source": {
+              "width_bytes": 2,
+              "kind": "immediate",
+              "value": 6
+            }
+          },
+          {
+            "rva": 526659,
+            "destination": {
+              "width_bytes": 4,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 74554715,
+              "absolute_rva": 70360411
+            },
+            "source": {
+              "width_bytes": 4,
+              "kind": "register",
+              "name": "eax"
+            }
+          },
+          {
+            "rva": 526664,
+            "destination": {
+              "width_bytes": 1,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 74554720,
+              "absolute_rva": 70360416
+            },
+            "source": {
+              "width_bytes": 1,
+              "kind": "immediate",
+              "value": 10
+            }
+          },
+          {
+            "rva": 526671,
+            "destination": {
+              "width_bytes": 1,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 74554721,
+              "absolute_rva": 70360417
+            },
+            "source": {
+              "width_bytes": 1,
+              "kind": "immediate",
+              "value": 3
+            }
+          }
+        ]
+      },
+      {
+        "label": "load-full",
+        "start_rva": 526176,
+        "end_rva_exclusive": 526516,
+        "code_sha256": "8352bc363d3fce4cc99335c9c924478465c25d18f9abeae086d96a326ce07ec5",
+        "instruction_count": 103,
+        "calls": [
+          {
+            "call_rva": 526201,
+            "target": {
+              "width_bytes": 4,
+              "kind": "immediate",
+              "value": 4807668
+            },
+            "direct_target_rva": 613364
+          },
+          {
+            "call_rva": 526215,
+            "target": {
+              "width_bytes": 4,
+              "kind": "immediate",
+              "value": 4720832
+            },
+            "direct_target_rva": 526528
+          },
+          {
+            "call_rva": 526250,
+            "target": {
+              "width_bytes": 4,
+              "kind": "immediate",
+              "value": 4807668
+            },
+            "direct_target_rva": 613364
+          },
+          {
+            "call_rva": 526293,
+            "target": {
+              "width_bytes": 4,
+              "kind": "immediate",
+              "value": 4807052
+            },
+            "direct_target_rva": 612748
+          },
+          {
+            "call_rva": 526318,
+            "target": {
+              "width_bytes": 4,
+              "kind": "immediate",
+              "value": 4807284
+            },
+            "direct_target_rva": 612980
+          },
+          {
+            "call_rva": 526338,
+            "target": {
+              "width_bytes": 4,
+              "kind": "immediate",
+              "value": 4807284
+            },
+            "direct_target_rva": 612980
+          },
+          {
+            "call_rva": 526361,
+            "target": {
+              "width_bytes": 4,
+              "kind": "immediate",
+              "value": 4776352
+            },
+            "direct_target_rva": 582048
+          },
+          {
+            "call_rva": 526406,
+            "target": {
+              "width_bytes": 4,
+              "kind": "immediate",
+              "value": 4720128
+            },
+            "direct_target_rva": 525824
+          },
+          {
+            "call_rva": 526456,
+            "target": {
+              "width_bytes": 4,
+              "kind": "immediate",
+              "value": 4720128
+            },
+            "direct_target_rva": 525824
+          }
+        ],
+        "branches": [
+          {
+            "branch_rva": 526213,
+            "condition": "jne",
+            "target_rva": 526280,
+            "fallthrough_rva": 526215,
+            "adjacent_comparison_rva": 526211
+          },
+          {
+            "branch_rva": 526222,
+            "condition": "jne",
+            "target_rva": 526240,
+            "fallthrough_rva": 526224,
+            "adjacent_comparison_rva": 526220
+          },
+          {
+            "branch_rva": 526262,
+            "condition": "jne",
+            "target_rva": 526280,
+            "fallthrough_rva": 526264,
+            "adjacent_comparison_rva": 526260
+          },
+          {
+            "branch_rva": 526308,
+            "condition": "je",
+            "target_rva": 526337,
+            "fallthrough_rva": 526310,
+            "adjacent_comparison_rva": 526306
+          },
+          {
+            "branch_rva": 526381,
+            "condition": "jne",
+            "target_rva": 526425,
+            "fallthrough_rva": 526383
+          },
+          {
+            "branch_rva": 526390,
+            "condition": "jne",
+            "target_rva": 526475,
+            "fallthrough_rva": 526392,
+            "adjacent_comparison_rva": 526383
+          },
+          {
+            "branch_rva": 526428,
+            "condition": "jne",
+            "target_rva": 526475,
+            "fallthrough_rva": 526430,
+            "adjacent_comparison_rva": 526425
+          },
+          {
+            "branch_rva": 526440,
+            "condition": "jne",
+            "target_rva": 526492,
+            "fallthrough_rva": 526442,
+            "adjacent_comparison_rva": 526436
+          },
+          {
+            "branch_rva": 526496,
+            "condition": "je",
+            "target_rva": 526411,
+            "fallthrough_rva": 526498,
+            "adjacent_comparison_rva": 526492
+          }
+        ],
+        "absolute_writes": [
+          {
+            "rva": 526182,
+            "destination": {
+              "width_bytes": 1,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 74554796,
+              "absolute_rva": 70360492
+            },
+            "source": {
+              "width_bytes": 1,
+              "kind": "immediate",
+              "value": 0
+            }
+          },
+          {
+            "rva": 526225,
+            "destination": {
+              "width_bytes": 1,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 74554796,
+              "absolute_rva": 70360492
+            },
+            "source": {
+              "width_bytes": 1,
+              "kind": "immediate",
+              "value": 1
+            }
+          },
+          {
+            "rva": 526265,
+            "destination": {
+              "width_bytes": 1,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 74554796,
+              "absolute_rva": 70360492
+            },
+            "source": {
+              "width_bytes": 1,
+              "kind": "immediate",
+              "value": 2
+            }
+          },
+          {
+            "rva": 526311,
+            "destination": {
+              "width_bytes": 1,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 74554796,
+              "absolute_rva": 70360492
+            },
+            "source": {
+              "width_bytes": 1,
+              "kind": "immediate",
+              "value": 3
+            }
+          },
+          {
+            "rva": 526392,
+            "destination": {
+              "width_bytes": 1,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 74554664,
+              "absolute_rva": 70360360
+            },
+            "source": {
+              "width_bytes": 1,
+              "kind": "immediate",
+              "value": 6
+            }
+          },
+          {
+            "rva": 526399,
+            "destination": {
+              "width_bytes": 1,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 74554721,
+              "absolute_rva": 70360417
+            },
+            "source": {
+              "width_bytes": 1,
+              "kind": "immediate",
+              "value": 3
+            }
+          },
+          {
+            "rva": 526442,
+            "destination": {
+              "width_bytes": 1,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 74554664,
+              "absolute_rva": 70360360
+            },
+            "source": {
+              "width_bytes": 1,
+              "kind": "immediate",
+              "value": 6
+            }
+          },
+          {
+            "rva": 526449,
+            "destination": {
+              "width_bytes": 1,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 74554722,
+              "absolute_rva": 70360418
+            },
+            "source": {
+              "width_bytes": 1,
+              "kind": "immediate",
+              "value": 0
+            }
+          },
+          {
+            "rva": 526476,
+            "destination": {
+              "width_bytes": 1,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 74554796,
+              "absolute_rva": 70360492
+            },
+            "source": {
+              "width_bytes": 1,
+              "kind": "register",
+              "name": "cl"
+            }
+          },
+          {
+            "rva": 526499,
+            "destination": {
+              "width_bytes": 1,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 74554796,
+              "absolute_rva": 70360492
+            },
+            "source": {
+              "width_bytes": 1,
+              "kind": "immediate",
+              "value": 5
+            }
+          }
+        ]
+      },
+      {
+        "label": "startup-load-result",
+        "start_rva": 124383,
+        "end_rva_exclusive": 124457,
+        "code_sha256": "5081d3437f993c89ac7a5650b2c2fa0cd35d2621ce4d4c0f81cc2d5fea9211e7",
+        "instruction_count": 24,
+        "calls": [
+          {
+            "call_rva": 124383,
+            "target": {
+              "width_bytes": 4,
+              "kind": "immediate",
+              "value": 4577536
+            },
+            "direct_target_rva": 383232
+          },
+          {
+            "call_rva": 124388,
+            "target": {
+              "width_bytes": 4,
+              "kind": "immediate",
+              "value": 4720080
+            },
+            "direct_target_rva": 525776
+          },
+          {
+            "call_rva": 124415,
+            "target": {
+              "width_bytes": 4,
+              "kind": "immediate",
+              "value": 4807687
+            },
+            "direct_target_rva": 613383
+          },
+          {
+            "call_rva": 124443,
+            "target": {
+              "width_bytes": 4,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 4850280,
+              "absolute_rva": 655976
+            },
+            "import": [
+              "USER32.dll",
+              "MessageBoxA"
+            ]
+          }
+        ],
+        "branches": [
+          {
+            "branch_rva": 124395,
+            "condition": "jne",
+            "target_rva": 124457,
+            "fallthrough_rva": 124397,
+            "adjacent_comparison_rva": 124393
+          }
+        ],
+        "absolute_writes": []
+      },
+      {
+        "label": "startup-current-parent-process",
+        "start_rva": 259159,
+        "end_rva_exclusive": 259279,
+        "code_sha256": "4c7faddf9e199edabbbad09d48cc05a21571b46acfbfbf4c8c52857e12566945",
+        "instruction_count": 30,
+        "calls": [
+          {
+            "call_rva": 259159,
+            "target": {
+              "width_bytes": 4,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 4849832,
+              "absolute_rva": 655528
+            },
+            "import": [
+              "KERNEL32.DLL",
+              "GetCurrentProcessId"
+            ]
+          },
+          {
+            "call_rva": 259173,
+            "target": {
+              "width_bytes": 4,
+              "kind": "immediate",
+              "value": 4800092
+            },
+            "direct_target_rva": 605788
+          },
+          {
+            "call_rva": 259208,
+            "target": {
+              "width_bytes": 4,
+              "kind": "immediate",
+              "value": 4800086
+            },
+            "direct_target_rva": 605782
+          },
+          {
+            "call_rva": 259243,
+            "target": {
+              "width_bytes": 4,
+              "kind": "immediate",
+              "value": 4800080
+            },
+            "direct_target_rva": 605776
+          }
+        ],
+        "branches": [
+          {
+            "branch_rva": 259186,
+            "condition": "je",
+            "target_rva": 259766,
+            "fallthrough_rva": 259192
+          },
+          {
+            "branch_rva": 259215,
+            "condition": "je",
+            "target_rva": 259279,
+            "fallthrough_rva": 259217,
+            "adjacent_comparison_rva": 259213
+          },
+          {
+            "branch_rva": 259230,
+            "condition": "je",
+            "target_rva": 259267,
+            "fallthrough_rva": 259232,
+            "adjacent_comparison_rva": 259228
+          },
+          {
+            "branch_rva": 259250,
+            "condition": "je",
+            "target_rva": 259279,
+            "fallthrough_rva": 259252,
+            "adjacent_comparison_rva": 259248
+          },
+          {
+            "branch_rva": 259265,
+            "condition": "jne",
+            "target_rva": 259232,
+            "fallthrough_rva": 259267,
+            "adjacent_comparison_rva": 259263
+          }
+        ],
+        "absolute_writes": [
+          {
+            "rva": 259168,
+            "destination": {
+              "width_bytes": 4,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 72767712,
+              "absolute_rva": 68573408
+            },
+            "source": {
+              "width_bytes": 4,
+              "kind": "register",
+              "name": "eax"
+            }
+          },
+          {
+            "rva": 259181,
+            "destination": {
+              "width_bytes": 4,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 72769800,
+              "absolute_rva": 68575496
+            },
+            "source": {
+              "width_bytes": 4,
+              "kind": "register",
+              "name": "eax"
+            }
+          },
+          {
+            "rva": 259198,
+            "destination": {
+              "width_bytes": 4,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 72768000,
+              "absolute_rva": 68573696
+            },
+            "source": {
+              "width_bytes": 4,
+              "kind": "immediate",
+              "value": 296
+            }
+          },
+          {
+            "rva": 259273,
+            "destination": {
+              "width_bytes": 4,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 72767712,
+              "absolute_rva": 68573408
+            },
+            "source": {
+              "width_bytes": 4,
+              "kind": "register",
+              "name": "edx"
+            }
+          }
+        ]
+      },
+      {
+        "label": "snapshot-import-thunks",
+        "start_rva": 605776,
+        "end_rva_exclusive": 605794,
+        "code_sha256": "54f9f25ef8b9b9d75f5a3c943176b34e733553aca9a0c4b5917b284df3b07bcd",
+        "instruction_count": 3,
+        "calls": [],
+        "branches": [
+          {
+            "branch_rva": 605776,
+            "condition": "jmp",
+            "indirect_target": {
+              "width_bytes": 4,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 4850068,
+              "absolute_rva": 655764
+            },
+            "import": [
+              "KERNEL32.DLL",
+              "Process32Next"
+            ]
+          },
+          {
+            "branch_rva": 605782,
+            "condition": "jmp",
+            "indirect_target": {
+              "width_bytes": 4,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 4850064,
+              "absolute_rva": 655760
+            },
+            "import": [
+              "KERNEL32.DLL",
+              "Process32First"
+            ]
+          },
+          {
+            "branch_rva": 605788,
+            "condition": "jmp",
+            "indirect_target": {
+              "width_bytes": 4,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 4849848,
+              "absolute_rva": 655544
+            },
+            "import": [
+              "KERNEL32.DLL",
+              "CreateToolhelp32Snapshot"
+            ]
+          }
+        ],
+        "absolute_writes": []
+      },
+      {
+        "label": "snapshot-close",
+        "start_rva": 259741,
+        "end_rva_exclusive": 259754,
+        "code_sha256": "12c6030b65d836153c0a097ed922bfab8852cfa81ebeedbb506ceb5f9b37feaf",
+        "instruction_count": 3,
+        "calls": [
+          {
+            "call_rva": 259748,
+            "target": {
+              "width_bytes": 4,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 4850036,
+              "absolute_rva": 655732
+            },
+            "import": [
+              "KERNEL32.DLL",
+              "CloseHandle"
+            ]
+          }
+        ],
+        "branches": [],
+        "absolute_writes": []
+      },
+      {
+        "label": "save-wrapper",
+        "start_rva": 525728,
+        "end_rva_exclusive": 525764,
+        "code_sha256": "9035aec8c111d1a454ecbb9245f46cd7e18b13c4e3fa66f1054a2d0f7bde870e",
+        "instruction_count": 8,
+        "calls": [
+          {
+            "call_rva": 525736,
+            "target": {
+              "width_bytes": 4,
+              "kind": "immediate",
+              "value": 4721088
+            },
+            "direct_target_rva": 526784
+          },
+          {
+            "call_rva": 525744,
+            "target": {
+              "width_bytes": 4,
+              "kind": "immediate",
+              "value": 4721408
+            },
+            "direct_target_rva": 527104
+          },
+          {
+            "call_rva": 525749,
+            "target": {
+              "width_bytes": 4,
+              "kind": "immediate",
+              "value": 4721584
+            },
+            "direct_target_rva": 527280
+          },
+          {
+            "call_rva": 525754,
+            "target": {
+              "width_bytes": 4,
+              "kind": "immediate",
+              "value": 4721680
+            },
+            "direct_target_rva": 527376
+          }
+        ],
+        "branches": [
+          {
+            "branch_rva": 525759,
+            "condition": "jmp",
+            "target_rva": 525824,
+            "fallthrough_rva": 525764
+          }
+        ],
+        "absolute_writes": []
+      },
+      {
+        "label": "load-wrapper",
+        "start_rva": 525776,
+        "end_rva_exclusive": 525809,
+        "code_sha256": "3300b74ed5cea3cbe2c9017263b73658686a693359c900e4801648a0612417b8",
+        "instruction_count": 10,
+        "calls": [
+          {
+            "call_rva": 525776,
+            "target": {
+              "width_bytes": 4,
+              "kind": "immediate",
+              "value": 4720480
+            },
+            "direct_target_rva": 526176
+          },
+          {
+            "call_rva": 525785,
+            "target": {
+              "width_bytes": 4,
+              "kind": "immediate",
+              "value": 4721488
+            },
+            "direct_target_rva": 527184
+          },
+          {
+            "call_rva": 525790,
+            "target": {
+              "width_bytes": 4,
+              "kind": "immediate",
+              "value": 4721632
+            },
+            "direct_target_rva": 527328
+          },
+          {
+            "call_rva": 525795,
+            "target": {
+              "width_bytes": 4,
+              "kind": "immediate",
+              "value": 4721696
+            },
+            "direct_target_rva": 527392
+          }
+        ],
+        "branches": [
+          {
+            "branch_rva": 525783,
+            "condition": "je",
+            "target_rva": 525806,
+            "fallthrough_rva": 525785,
+            "adjacent_comparison_rva": 525781
+          }
+        ],
+        "absolute_writes": []
+      }
+    ],
+    "anchors": {
+      "0x80611": {
+        "operation": "je",
+        "operands": [
+          {
+            "width_bytes": 4,
+            "kind": "immediate",
+            "value": 4720314
+          }
+        ]
+      },
+      "0x80622": {
+        "operation": "mov",
+        "operands": [
+          {
+            "width_bytes": 4,
+            "kind": "memory",
+            "base": null,
+            "index": null,
+            "scale": 1,
+            "displacement": 72768000,
+            "absolute_rva": 68573696
+          },
+          {
+            "width_bytes": 4,
+            "kind": "immediate",
+            "value": 296
+          }
+        ]
+      },
+      "0x80642": {
+        "operation": "je",
+        "operands": [
+          {
+            "width_bytes": 4,
+            "kind": "immediate",
+            "value": 4720232
+          }
+        ]
+      },
+      "0x80668": {
+        "operation": "push",
+        "operands": [
+          {
+            "width_bytes": 4,
+            "kind": "immediate",
+            "value": 4857984
+          }
+        ]
+      },
+      "0x80686": {
+        "operation": "push",
+        "operands": [
+          {
+            "width_bytes": 4,
+            "kind": "immediate",
+            "value": 2035711
+          }
+        ]
+      },
+      "0x8068b": {
+        "operation": "call",
+        "operands": [
+          {
+            "width_bytes": 4,
+            "kind": "memory",
+            "base": null,
+            "index": null,
+            "scale": 1,
+            "displacement": 4850104,
+            "absolute_rva": 655800
+          }
+        ]
+      },
+      "0x8069d": {
+        "operation": "call",
+        "operands": [
+          {
+            "width_bytes": 4,
+            "kind": "memory",
+            "base": null,
+            "index": null,
+            "scale": 1,
+            "displacement": 4850108,
+            "absolute_rva": 655804
+          }
+        ]
+      },
+      "0x806aa": {
+        "operation": "call",
+        "operands": [
+          {
+            "width_bytes": 4,
+            "kind": "memory",
+            "base": null,
+            "index": null,
+            "scale": 1,
+            "displacement": 4850036,
+            "absolute_rva": 655732
+          }
+        ]
+      },
+      "0x806b0": {
+        "operation": "mov",
+        "operands": [
+          {
+            "width_bytes": 4,
+            "kind": "memory",
+            "base": null,
+            "index": null,
+            "scale": 1,
+            "displacement": 72767712,
+            "absolute_rva": 68573408
+          },
+          {
+            "width_bytes": 4,
+            "kind": "immediate",
+            "value": 0
+          }
+        ]
+      },
+      "0x806c1": {
+        "operation": "mov",
+        "operands": [
+          {
+            "width_bytes": 4,
+            "kind": "register",
+            "name": "esi"
+          },
+          {
+            "width_bytes": 4,
+            "kind": "immediate",
+            "value": 74554664
+          }
+        ]
+      },
+      "0x806e6": {
+        "operation": "push",
+        "operands": [
+          {
+            "width_bytes": 4,
+            "kind": "immediate",
+            "value": 127
+          }
+        ]
+      },
+      "0x80707": {
+        "operation": "pop",
+        "operands": [
+          {
+            "width_bytes": 4,
+            "kind": "register",
+            "name": "edi"
+          }
+        ]
+      },
+      "0x8072e": {
+        "operation": "jae",
+        "operands": [
+          {
+            "width_bytes": 4,
+            "kind": "immediate",
+            "value": 4720443
+          }
+        ]
+      },
+      "0x8073c": {
+        "operation": "call",
+        "operands": [
+          {
+            "width_bytes": 4,
+            "kind": "immediate",
+            "value": 4807284
+          }
+        ]
+      },
+      "0x80744": {
+        "operation": "mov",
+        "operands": [
+          {
+            "width_bytes": 4,
+            "kind": "register",
+            "name": "eax"
+          },
+          {
+            "width_bytes": 4,
+            "kind": "immediate",
+            "value": 1
+          }
+        ]
+      },
+      "0x80935": {
+        "operation": "push",
+        "operands": [
+          {
+            "width_bytes": 4,
+            "kind": "immediate",
+            "value": 74554664
+          }
+        ]
+      },
+      "0x80956": {
+        "operation": "call",
+        "operands": [
+          {
+            "width_bytes": 4,
+            "kind": "immediate",
+            "value": 4776016
+          }
+        ]
+      },
+      "0x80973": {
+        "operation": "pop",
+        "operands": [
+          {
+            "width_bytes": 4,
+            "kind": "register",
+            "name": "edi"
+          }
+        ]
+      },
+      "0x80997": {
+        "operation": "jae",
+        "operands": [
+          {
+            "width_bytes": 4,
+            "kind": "immediate",
+            "value": 4721060
+          }
+        ]
+      },
+      "0x809a5": {
+        "operation": "call",
+        "operands": [
+          {
+            "width_bytes": 4,
+            "kind": "immediate",
+            "value": 4807284
+          }
+        ]
+      },
+      "0x809ad": {
+        "operation": "mov",
+        "operands": [
+          {
+            "width_bytes": 4,
+            "kind": "register",
+            "name": "eax"
+          },
+          {
+            "width_bytes": 4,
+            "kind": "immediate",
+            "value": 1
+          }
+        ]
+      },
+      "0x80846": {
+        "operation": "call",
+        "operands": [
+          {
+            "width_bytes": 4,
+            "kind": "immediate",
+            "value": 4720128
+          }
+        ]
+      },
+      "0x8084c": {
+        "operation": "mov",
+        "operands": [
+          {
+            "width_bytes": 4,
+            "kind": "register",
+            "name": "eax"
+          },
+          {
+            "width_bytes": 4,
+            "kind": "immediate",
+            "value": 1
+          }
+        ]
+      },
+      "0x80878": {
+        "operation": "call",
+        "operands": [
+          {
+            "width_bytes": 4,
+            "kind": "immediate",
+            "value": 4720128
+          }
+        ]
+      },
+      "0x8087e": {
+        "operation": "mov",
+        "operands": [
+          {
+            "width_bytes": 4,
+            "kind": "register",
+            "name": "eax"
+          },
+          {
+            "width_bytes": 4,
+            "kind": "immediate",
+            "value": 1
+          }
+        ]
+      },
+      "0x1e5e4": {
+        "operation": "call",
+        "operands": [
+          {
+            "width_bytes": 4,
+            "kind": "immediate",
+            "value": 4720080
+          }
+        ]
+      },
+      "0x1e5eb": {
+        "operation": "jne",
+        "operands": [
+          {
+            "width_bytes": 4,
+            "kind": "immediate",
+            "value": 4318761
+          }
+        ]
+      },
+      "0x1e621": {
+        "operation": "xor",
+        "operands": [
+          {
+            "width_bytes": 4,
+            "kind": "register",
+            "name": "eax"
+          },
+          {
+            "width_bytes": 4,
+            "kind": "register",
+            "name": "eax"
+          }
+        ]
+      },
+      "0x3f457": {
+        "operation": "call",
+        "operands": [
+          {
+            "width_bytes": 4,
+            "kind": "memory",
+            "base": null,
+            "index": null,
+            "scale": 1,
+            "displacement": 4849832,
+            "absolute_rva": 655528
+          }
+        ]
+      },
+      "0x3f45e": {
+        "operation": "push",
+        "operands": [
+          {
+            "width_bytes": 4,
+            "kind": "immediate",
+            "value": 2
+          }
+        ]
+      },
+      "0x3f460": {
+        "operation": "mov",
+        "operands": [
+          {
+            "width_bytes": 4,
+            "kind": "memory",
+            "base": null,
+            "index": null,
+            "scale": 1,
+            "displacement": 72767712,
+            "absolute_rva": 68573408
+          },
+          {
+            "width_bytes": 4,
+            "kind": "register",
+            "name": "eax"
+          }
+        ]
+      },
+      "0x3f465": {
+        "operation": "call",
+        "operands": [
+          {
+            "width_bytes": 4,
+            "kind": "immediate",
+            "value": 4800092
+          }
+        ]
+      },
+      "0x3f46d": {
+        "operation": "mov",
+        "operands": [
+          {
+            "width_bytes": 4,
+            "kind": "memory",
+            "base": null,
+            "index": null,
+            "scale": 1,
+            "displacement": 72769800,
+            "absolute_rva": 68575496
+          },
+          {
+            "width_bytes": 4,
+            "kind": "register",
+            "name": "eax"
+          }
+        ]
+      },
+      "0x3f4c3": {
+        "operation": "mov",
+        "operands": [
+          {
+            "width_bytes": 4,
+            "kind": "register",
+            "name": "edx"
+          },
+          {
+            "width_bytes": 4,
+            "kind": "memory",
+            "base": null,
+            "index": null,
+            "scale": 1,
+            "displacement": 72768024,
+            "absolute_rva": 68573720
+          }
+        ]
+      },
+      "0x3f4c9": {
+        "operation": "mov",
+        "operands": [
+          {
+            "width_bytes": 4,
+            "kind": "memory",
+            "base": null,
+            "index": null,
+            "scale": 1,
+            "displacement": 72767712,
+            "absolute_rva": 68573408
+          },
+          {
+            "width_bytes": 4,
+            "kind": "register",
+            "name": "edx"
+          }
+        ]
+      },
+      "0x3f6a4": {
+        "operation": "call",
+        "operands": [
+          {
+            "width_bytes": 4,
+            "kind": "memory",
+            "base": null,
+            "index": null,
+            "scale": 1,
+            "displacement": 4850036,
+            "absolute_rva": 655732
+          }
+        ]
+      }
+    },
+    "literal_name_gate": "explorer.exe",
+    "process_imports": {
+      "0xa00a8": [
+        "KERNEL32.DLL",
+        "GetCurrentProcessId"
+      ],
+      "0xa00b8": [
+        "KERNEL32.DLL",
+        "CreateToolhelp32Snapshot"
+      ],
+      "0xa0190": [
+        "KERNEL32.DLL",
+        "Process32First"
+      ],
+      "0xa0194": [
+        "KERNEL32.DLL",
+        "Process32Next"
+      ],
+      "0xa01b8": [
+        "KERNEL32.DLL",
+        "OpenProcess"
+      ],
+      "0xa01bc": [
+        "KERNEL32.DLL",
+        "TerminateProcess"
+      ],
+      "0xa0174": [
+        "KERNEL32.DLL",
+        "CloseHandle"
+      ]
+    },
+    "direct_control_edges": [
+      {
+        "instruction_rva": 42311,
+        "operation": "call",
+        "target_rva": 525728
+      },
+      {
+        "instruction_rva": 124388,
+        "operation": "call",
+        "target_rva": 525776
+      },
+      {
+        "instruction_rva": 124886,
+        "operation": "call",
+        "target_rva": 525728
+      },
+      {
+        "instruction_rva": 139932,
+        "operation": "call",
+        "target_rva": 525824
+      },
+      {
+        "instruction_rva": 307914,
+        "operation": "call",
+        "target_rva": 525728
+      },
+      {
+        "instruction_rva": 308059,
+        "operation": "call",
+        "target_rva": 525728
+      },
+      {
+        "instruction_rva": 308303,
+        "operation": "call",
+        "target_rva": 525728
+      },
+      {
+        "instruction_rva": 308509,
+        "operation": "call",
+        "target_rva": 525728
+      },
+      {
+        "instruction_rva": 308723,
+        "operation": "call",
+        "target_rva": 525728
+      },
+      {
+        "instruction_rva": 309080,
+        "operation": "call",
+        "target_rva": 525728
+      },
+      {
+        "instruction_rva": 309655,
+        "operation": "call",
+        "target_rva": 525728
+      },
+      {
+        "instruction_rva": 309873,
+        "operation": "call",
+        "target_rva": 525728
+      },
+      {
+        "instruction_rva": 313782,
+        "operation": "call",
+        "target_rva": 525728
+      },
+      {
+        "instruction_rva": 314273,
+        "operation": "call",
+        "target_rva": 525728
+      },
+      {
+        "instruction_rva": 322934,
+        "operation": "call",
+        "target_rva": 525728
+      },
+      {
+        "instruction_rva": 330326,
+        "operation": "call",
+        "target_rva": 525728
+      },
+      {
+        "instruction_rva": 334614,
+        "operation": "call",
+        "target_rva": 525728
+      },
+      {
+        "instruction_rva": 337572,
+        "operation": "call",
+        "target_rva": 525728
+      },
+      {
+        "instruction_rva": 337901,
+        "operation": "call",
+        "target_rva": 525728
+      },
+      {
+        "instruction_rva": 339470,
+        "operation": "call",
+        "target_rva": 525728
+      },
+      {
+        "instruction_rva": 344665,
+        "operation": "call",
+        "target_rva": 525728
+      },
+      {
+        "instruction_rva": 348171,
+        "operation": "call",
+        "target_rva": 525728
+      },
+      {
+        "instruction_rva": 395651,
+        "operation": "call",
+        "target_rva": 525728
+      },
+      {
+        "instruction_rva": 525759,
+        "operation": "jmp",
+        "target_rva": 525824
+      },
+      {
+        "instruction_rva": 525776,
+        "operation": "call",
+        "target_rva": 526176
+      },
+      {
+        "instruction_rva": 526058,
+        "operation": "call",
+        "target_rva": 581712
+      },
+      {
+        "instruction_rva": 526215,
+        "operation": "call",
+        "target_rva": 526528
+      },
+      {
+        "instruction_rva": 526361,
+        "operation": "call",
+        "target_rva": 582048
+      },
+      {
+        "instruction_rva": 526406,
+        "operation": "call",
+        "target_rva": 525824
+      },
+      {
+        "instruction_rva": 526456,
+        "operation": "call",
+        "target_rva": 525824
+      },
+      {
+        "instruction_rva": 526678,
+        "operation": "call",
+        "target_rva": 581712
+      }
+    ],
+    "non_executable_pointer_words": [],
+    "linear_sweep_skipped_bytes": 24,
+    "pending_process_id_writes": [
+      {
+        "instruction_rva": 4758,
+        "source": {
+          "width_bytes": 4,
+          "kind": "immediate",
+          "value": 0
+        }
+      },
+      {
+        "instruction_rva": 69639,
+        "source": {
+          "width_bytes": 4,
+          "kind": "register",
+          "name": "ebx"
+        }
+      },
+      {
+        "instruction_rva": 123525,
+        "source": {
+          "width_bytes": 4,
+          "kind": "register",
+          "name": "ebx"
+        }
+      },
+      {
+        "instruction_rva": 259168,
+        "source": {
+          "width_bytes": 4,
+          "kind": "register",
+          "name": "eax"
+        }
+      },
+      {
+        "instruction_rva": 259273,
+        "source": {
+          "width_bytes": 4,
+          "kind": "register",
+          "name": "edx"
+        }
+      },
+      {
+        "instruction_rva": 526000,
+        "source": {
+          "width_bytes": 4,
+          "kind": "immediate",
+          "value": 0
+        }
+      }
+    ],
+    "file_executed": false,
+    "process_api_called": false,
+    "real_savedata_opened": false,
+    "all_indirect_writers_closed": false,
+    "authentic_publisher_hash_verified": false
+  },
+  "source_profile": {
+    "source_ref": "2f736808ff4361f5429ee919b718c88fabb60346",
+    "source_blobs": {
+      "client/stoneage/game/main.cpp": "65b5d8501f6770aefe35d38c5d4c1c4c902259bd",
+      "client/stoneage/system/savedata.cpp": "6809dd415e89e87ad00f7813cb35209db034aa53",
+      "client/stoneage/system/tool.cpp": "824c1d008322405c9c120f431a62886027032df1"
+    },
+    "prior_settings_profile": {
+      "source_ref": "2f736808ff4361f5429ee919b718c88fabb60346",
+      "source_blobs": {
+        "client/stoneage/system/savedata.cpp": "6809dd415e89e87ad00f7813cb35209db034aa53",
+        "client/stoneage/system/tool.cpp": "824c1d008322405c9c120f431a62886027032df1"
+      },
+      "load_remove_calls": 2,
+      "load_recursive_calls": 2,
+      "v4_length": 57,
+      "v5_length": 127,
+      "current_version": 6,
+      "encoder_mutates_source": true,
+      "encoder_plain_sum_precedes_complement": true,
+      "encoder_squared_moduli": [
+        3,
+        7
+      ],
+      "decoder_has_no_sum_recompute": true,
+      "source_bgm_has_mute_bit": true,
+      "reserved_names_only_enum_tokens": true,
+      "source_program_executed": false,
+      "binary_build_identity_verified": false
+    },
+    "main_parent_setup_conditional_macro": "__NEW_CLIENT",
+    "main_parent_snapshot_size_uses_sizeof": true,
+    "main_and_savedata_terminate_tokens": {
+      "client/stoneage/game/main.cpp": 0,
+      "client/stoneage/system/savedata.cpp": 0
+    },
+    "source_program_executed": false,
+    "whole_source_build_identity_verified": false
+  }
+}
