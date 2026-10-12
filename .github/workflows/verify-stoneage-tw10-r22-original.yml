@@ -22,9 +22,9 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
-          identity="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/38267287871" --jq '[.status,.conclusion,.head_sha,.head_branch] | join("|")"
+          identity="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/38267287871" --jq '[.status,.conclusion,.head_sha,.head_branch] | join("|")')"
           test "$identity" = 'completed|success|82c186fcf2cd74c876b016fb1aa74872793ced0f|agent/tw10-savedata-r22-call-stack-cycle-20261012'
-          artifact="$(gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/11756110734" --jq '[.workflow_run.id,.name,.digest,.expired] | join("|")"
+          artifact="$(gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/11756110734" --jq '[.workflow_run.id,.name,.digest,.expired] | join("|")')"
           test "$artifact" = '38267287871|tw10-r22-original-call-stack-cycle-derived|sha256:31d06d772e7525128d7288f38ed48664c0ba05d3a0c0296e1ea0f1f45c680b70|false'
       - name: Retrieve only bounded derived metadata
         env:
