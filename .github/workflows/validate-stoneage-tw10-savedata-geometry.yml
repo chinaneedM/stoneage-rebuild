@@ -1,0 +1,31 @@
+name: Validate Taiwan v1.0 savedata zero-run geometry
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_tw10_savedata_geometry.py
+      - tests/test_stoneage_tw10_savedata_geometry.py
+      - research/recovered/STONEAGE-TW10-SAVEDATA-R1.txt
+      - .github/workflows/validate-stoneage-tw10-savedata-geometry.yml
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate identity, arithmetic and negative cases
+        run: python3 -m unittest tests.test_stoneage_tw10_savedata_geometry -v
+      - name: Emit pinned derived geometry only
+        run: |
+          python3 -m tools.stoneage_tw10_savedata_geometry | tee /tmp/tw10-savedata-geometry.txt
+      - name: Upload non-proprietary derived metadata
+        uses: actions/upload-artifact@v4
+        with:
+          name: tw10-savedata-derived-geometry
+          path: /tmp/tw10-savedata-geometry.txt
+          retention-days: 30
