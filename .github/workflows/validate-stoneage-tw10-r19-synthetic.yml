@@ -1,4 +1,4 @@
-name: Validate TW1.0 R19 bounded second global and HeapAlloc synthetic
+name: Validate TW1.0 R19 bounded synthetic and no-promotion guard
 on:
   workflow_dispatch:
   push:
@@ -6,7 +6,9 @@ on:
     paths:
       - .github/workflows/validate-stoneage-tw10-r19-synthetic.yml
       - tools/stoneage_tw10_savedata_upstream_r19.py
+      - tools/stoneage_tw10_savedata_upstream_r19_guard.py
       - tests/test_stoneage_tw10_savedata_upstream_r19.py
+      - tests/test_stoneage_tw10_savedata_upstream_r19_guard.py
 permissions:
   contents: read
 jobs:
@@ -16,9 +18,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: pip install --quiet capstone pefile
-      - name: R19 and adjacent R18 synthetic tests
+      - name: R19 guards and adjacent R18 tests
         run: |
           set -euo pipefail
-          python -m unittest -v tests.test_stoneage_tw10_savedata_upstream_r19 tests.test_stoneage_tw10_savedata_upstream_r18
-          python -m compileall -q tools/stoneage_tw10_savedata_upstream_r19.py
-          echo TW10_R19_SYNTHETIC_PASS
+          python -m unittest -v tests.test_stoneage_tw10_savedata_upstream_r19 tests.test_stoneage_tw10_savedata_upstream_r19_guard tests.test_stoneage_tw10_savedata_upstream_r18
+          python -m compileall -q tools/stoneage_tw10_savedata_upstream_r19.py tools/stoneage_tw10_savedata_upstream_r19_guard.py
+          echo TW10_R19_SYNTHETIC_GUARDS_PASS
