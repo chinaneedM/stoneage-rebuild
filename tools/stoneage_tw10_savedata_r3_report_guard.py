@@ -15,10 +15,16 @@ import re
 from tools.stoneage_tw10_savedata_instruction_probe import (
     RUNTIME_SHA256, SAVEDATA_SHA256, WORD_RVAS, EXPECTED_STRING_RVA
 )
+from tools.stoneage_tw10_savedata_probe import FILE_APIS
 
 TITLE = "StoneAge Taiwan v1.0 savedata instruction alignment probe — R3"
 SCOPE = "SCOPE|accepted-clean-disc|four-address-words|static-alignment-only|derived-metadata"
 RESOLUTION = "RESOLUTION|TW10_SAVEDATA_FOUR_WORD_ALIGNMENT_SURFACE_ONLY"
+BOUNDARY = (
+    "BOUNDARY|Four matching address words and alternate decodings are static facts;"
+    " actual instruction alignment, indirect callsites, savedata IO reachability,"
+    " early client framing/checksum and runtime persistence remain OPEN."
+)
 PREFIXES = ("IDENTITY","PATH","WORD","CANDIDATE","FORWARD_API","COUNT")
 EXPECTED_FIELDS = {
     "IDENTITY": {"runtime_sha256","savedata_sha256"},
@@ -33,7 +39,9 @@ EXPECTED_FIELDS = {
 }
 SAFE_VALUE = re.compile(r"^[A-Za-z0-9_.-]+$")
 MAX_REPORT_BYTES = 25000
-MAX_CANDIDATES = 100
+MAX_CANDIDATES = 60
+MAX_CANDIDATES_PER_WORD = 15
+MAX_FORWARD_APIS = 64
 
 
 def fields(line: str) -> tuple[str, dict[str, str]]:
@@ -69,11 +77,31 @@ def validate(text: str):
     rows = text.strip().splitlines()
     if len(rows) < 10 or rows[0] != TITLE or rows[1] != SCOPE:
         raise ValueError("report header/coverage mismatch")
-    if (rows[-1] != RESOLUTION or
-            not rows[-2].startswith("BOUNDARY|Four matching address words")):
-        raise ValueError("missing explicit non-runtime resolution and caveat")
+    if rows[-1] != RESOLUTION or rows[-2] != BOUNDARY:
+        raise ValueError("missing exact explicit non-runtime resolution and caveat")
     parsed = [fields(row) for row in rows[2:-2]]
     counts = Counter(k for k, _ in parsed)
+    # Keep the exact emitter grammar, rather than accepting reordered rows that
+    # cannot be emitted by the pinned static analyzer.
+    if [tag for tag, _ in parsed[:2]] != ["IDENTITY", "PATH"] or parsed[-1][0] != "COUNT":
+        raise ValueError("invalid report row order")
+    active_site = 0
+    active_candidate = None
+    for tag, data in parsed[2:-1]:
+        if tag == "WORD":
+            active_site += 1
+            if number(data["n"]) != active_site:
+                raise ValueError("invalid report word order")
+            active_candidate = None
+        elif tag == "CANDIDATE":
+            if number(data["word"]) != active_site:
+                raise ValueError("candidate before its WORD row")
+            active_candidate = (number(data["word"]), number(data["n"]))
+        elif tag == "FORWARD_API":
+            if (number(data["word"]), number(data["candidate"])) != active_candidate:
+                raise ValueError("API out of candidate row order")
+        else:
+            raise ValueError("invalid report row order")
     for tag in ("IDENTITY","PATH","COUNT"):
         if counts[tag] != 1:
             raise ValueError(f"{tag} row cardinality")
@@ -96,9 +124,9 @@ def validate(text: str):
             raise ValueError("missing/reordered four original address words")
         overlap = number(row["linear_overlap"])
         whole = number(row["linear_whole"])
-        if whole > overlap or number(row["linear_start_at_word"]) > 1:
-            raise ValueError("invalid linear alignment summary")
-        candidate_counts[n] = number(row["alternate_ref_candidates"], MAX_CANDIDATES)
+        if overlap > 4 or whole > 1 or whole > overlap or number(row["linear_start_at_word"]) > 1:
+            raise ValueError("linear overlap bounds exceeded")
+        candidate_counts[n] = number(row["alternate_ref_candidates"], MAX_CANDIDATES_PER_WORD)
         site_by_num[n] = expected_rva
     candidates = {}
     for row in rowmap["CANDIDATE"]:
@@ -116,13 +144,14 @@ def validate(text: str):
         if not re.fullmatch(r"[a-z][a-z0-9]*",row["mnemonic"]):
             raise ValueError("unexpected mnemonic")
         number(row["linear_incoming_direct_edges"], 100000)
-        number(row["forward_64_file_api_count"], 100000)
+        number(row["forward_64_file_api_count"], MAX_FORWARD_APIS)
         candidates[(word,n)] = row
     for word, expected_count in candidate_counts.items():
         indices = {n for (w,n) in candidates if w==word}
         if indices != set(range(1,expected_count+1)):
             raise ValueError("candidate index/gap mismatch")
     file_api_count = Counter()
+    unique_api_rows = set()
     for row in rowmap["FORWARD_API"]:
         word,n = number(row["word"]),number(row["candidate"])
         if (word,n) not in candidates:
@@ -130,7 +159,16 @@ def validate(text: str):
         if (not row["dll"].lower().endswith(".dll") or
                 not re.fullmatch(r"[A-Za-z][A-Za-z0-9_]*", row["name"])):
             raise ValueError("unknown API metadata shape")
-        file_api_count[(word,n)] += number(row["count"])
+        if row["name"] not in FILE_APIS:
+            raise ValueError("not a recognized file API")
+        api_key = (word, n, row["dll"].lower(), row["name"])
+        if api_key in unique_api_rows:
+            raise ValueError("duplicate API summary")
+        unique_api_rows.add(api_key)
+        mentions = number(row["count"], MAX_FORWARD_APIS)
+        if mentions == 0:
+            raise ValueError("zero API mention count")
+        file_api_count[(word,n)] += mentions
     for key,row in candidates.items():
         if file_api_count[key] != number(row["forward_64_file_api_count"]):
             raise ValueError("forward API count mismatch")
