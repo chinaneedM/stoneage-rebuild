@@ -1,0 +1,61 @@
+name: Independently verify TW1.0 R4 original entrygraph artifact
+
+on:
+  push:
+    branches:
+      - main
+      - agent/tw10-r4-derived-custody-accept-20261012
+    paths:
+      - .github/workflows/verify-stoneage-tw10-entrygraph-r4-artifact.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  verify-pinned-artifact:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify original source-run immutable head and successful completion
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          identity="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/38220734211" --jq '[.status,.conclusion,.head_sha,.head_branch] | join("|")')"
+          test "$identity" = 'completed|success|079f028564ca248b76c450138538d39c84aa7cb4|agent/tw10-savedata-controlflow-r4-20261012'
+          echo 'TW10_R4_PINNED_SOURCE_RUN=PASS'
+      - name: Download only the hash-verified source run's derived JSON artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/tw10-r4-custody
+          gh run download 38220734211 --repo "$GITHUB_REPOSITORY" --name tw10-original-entrygraph-r4-derived --dir /tmp/tw10-r4-custody
+          test "$(find /tmp/tw10-r4-custody -type f | wc -l)" -eq 1
+          test -f /tmp/tw10-r4-custody/tw10-r4-derived.json
+          test ! -L /tmp/tw10-r4-custody/tw10-r4-derived.json
+          test "$(stat -c %s /tmp/tw10-r4-custody/tw10-r4-derived.json)" -le 9000
+      - name: Strictly validate derived entrypoint graph without original payload
+        run: |
+          set -euo pipefail
+          python3 -m tools.stoneage_tw10_savedata_entrygraph_r4_guard --report /tmp/tw10-r4-custody/tw10-r4-derived.json | tee /tmp/tw10-r4-summary.json
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          v=json.loads(Path('/tmp/tw10-r4-summary.json').read_text(encoding='utf-8'))
+          assert v['status']=='DERIVED_STATIC_GRAPH_ONLY'
+          assert v['word_sites']==4 and v['observed_candidate_starts']==4
+          assert v['graph_nodes']==31665 and v['graph_edges']==35092
+          assert v['graph_limit_hit'] is False and v['entry_in_text'] is True
+          assert v['native_runtime_proven'] is False
+          assert v['actual_data_ownership_proven'] is False
+          assert v['contains_original_payload'] is False
+          print('TW10_R4_ORIGINAL_DERIVED_GRAPH_CUSTODY=PASS')
+          print('TW10_R4_ACTUAL_NATIVE_SAVE_IO=OPEN')
+          PY
+      - name: Delete derived custody files
+        if: always()
+        run: rm -rf /tmp/tw10-r4-custody /tmp/tw10-r4-summary.json
