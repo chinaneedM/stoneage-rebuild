@@ -1,0 +1,57 @@
+{
+  "schema": "STONEAGE-WAYI-LOGIN-INPUT-ACCEPTANCE-R1",
+  "source_commit": "384fd158d58f5589b818955b14247bbe6da354cd",
+  "source_tree": "226494ae6fd65f426ffa16776af369a77912ad97",
+  "bootstrap_main": "d8dfff75e5b3d3c24d3818a01ee32242f1d5ca02",
+  "branch_actions": [
+    {
+      "id": 38202234740,
+      "name": "Validate Wayi compiled login input DES and storage profile",
+      "conclusion": "success"
+    },
+    {
+      "id": 38202234673,
+      "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+      "conclusion": "success"
+    },
+    {
+      "id": 38202234671,
+      "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+      "conclusion": "success"
+    }
+  ],
+  "main_actions": [
+    {
+      "id": 38202301926,
+      "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+      "conclusion": "success"
+    },
+    {
+      "id": 38202301977,
+      "name": "Validate Wayi compiled login input DES and storage profile",
+      "conclusion": "success"
+    },
+    {
+      "id": 38202301795,
+      "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+      "conclusion": "success"
+    }
+  ],
+  "branch_job": 114657928490,
+  "main_job": 114658130339,
+  "project_tests_in_both_logs": 202,
+  "des_forward_inverse_vectors_passed": 121,
+  "numeric_tables_matched": 9,
+  "compiled_ui_storage_bytes": 32,
+  "compiled_connect_projection_bytes": 16,
+  "compiled_input_descriptor_parameter": 12,
+  "descendant_input_parameter": 18,
+  "original_continuity_prefix_preserved": true,
+  "remote_tree_matches_local": true,
+  "original_program_executed": false,
+  "native_login_verified": false,
+  "packets_captured": false,
+  "matching_original_operator_server": false,
+  "pressure": "2486=2465+18+3",
+  "next": "keyboard/IME lengths, terminators, persistence/initial writers and full framing/checksum profiles"
+}
