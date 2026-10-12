@@ -1,0 +1,47 @@
+{
+  "schema": "tw10-r14-original-bounded-reachdefs-acceptance-r1",
+  "status": "ACCEPTED_CONDITIONAL_STATIC_ONLY",
+  "source_run_id": 38247625998,
+  "source_commit_sha": "1b4c039f5a9b82b7bf58d59b1ef187ac0f97c678",
+  "source_original_job_id": 114805401709,
+  "original_derived_artifact_id": 11745719771,
+  "original_derived_artifact_zip_sha256": "8d7a3e0f332f09103c79965519e42475d344b241863bdd461dc9dce2185976c4",
+  "original_derived_json_sha256": "c2111943e99c1ba0b44792434cfa8060fd4c8d4726fc22b778cf6db808434af9",
+  "original_derived_json_size": 3026,
+  "synthetic_run_id": 38247625962,
+  "synthetic_test_count": 8,
+  "independent_custody_run_id": 38248477250,
+  "independent_guard_test_count": 11,
+  "independent_custody_success": true,
+  "original_source_run_success": true,
+  "regions": [
+    {
+      "anchor": "0x49d93",
+      "nodes": 139,
+      "edges": 158,
+      "branches": 27,
+      "call_barriers": 2,
+      "external_frontier_edges": 3
+    },
+    {
+      "anchor": "0x4943c",
+      "nodes": 48,
+      "edges": 53,
+      "branches": 6,
+      "call_barriers": 3,
+      "external_frontier_edges": 0
+    }
+  ],
+  "known_register_sources_only": [
+    "EBX@0x49dec copies EAX at 0x49de8",
+    "EAX@0x4944a unknown after CALL 0x49444",
+    "ESI@0x49457 unknown after CALL 0x49444",
+    "EAX@0x49463 unknown after CALL 0x4945d"
+  ],
+  "native_persistence_proven": false,
+  "caller_object_ownership_proven": false,
+  "function_entry_proven": false,
+  "global_runtime_initialization_proven": false,
+  "original_bytes_published": false,
+  "next": "R15 exact enclosing entry/prologue/EAX upstream and two CALL effects"
+}
