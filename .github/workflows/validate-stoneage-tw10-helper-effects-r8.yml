@@ -1,0 +1,23 @@
+name: Validate TW1.0 R8 bounded helper return effects synthetic-only
+on:
+  workflow_dispatch:
+  push:
+    branches: [main, agent/tw10-savedata-argtrace-r7-hardened-20261012]
+    paths:
+      - tools/stoneage_tw10_savedata_helper_effects_r8.py
+      - tools/stoneage_tw10_savedata_argtrace_r7.py
+      - tests/test_stoneage_tw10_savedata_helper_effects_r8.py
+      - .github/workflows/validate-stoneage-tw10-helper-effects-r8.yml
+permissions:
+  contents: read
+jobs:
+  synthetic:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install --quiet capstone pefile
+      - run: |
+          python3 -m unittest tests.test_stoneage_tw10_savedata_helper_effects_r8 tests.test_stoneage_tw10_savedata_argtrace_r7 tests.test_stoneage_tw10_savedata_argtrace_r7_guard -v
+          echo 'TW10_R8_HELPER_EFFECTS_SYNTHETIC_ONLY=PASS'
+          echo 'TW10_R8_ORIGINAL_HELPER_AND_NATIVE_IO=OPEN'
