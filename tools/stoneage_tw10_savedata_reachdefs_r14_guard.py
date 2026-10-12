@@ -11,7 +11,7 @@ EXPECTED_INPUTS = [
     (0x4943c, "eax", "entry", 0x4943c),
     (0x4944a, "eax", "unknown_call", 0x49444),
     (0x49457, "esi", "unknown_call", 0x49444),
-    (0x49463, "eax", "unknown_call", 0x4947d),
+    (0x49463, "eax", "unknown_call", 0x4945d),
 ]
 EXPECTED_ANCHORS = (0x49d93, 0x4943c)
 EXPECTED_CALLS = ((0x49e5f, 0x49e6e), (0x49444, 0x4945d, 0x4946f))

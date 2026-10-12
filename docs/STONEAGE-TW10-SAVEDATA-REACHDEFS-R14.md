@@ -30,7 +30,7 @@ At globals in the 48-node/53-edge graph anchored at 0x4943c:
 | 0x4943c | EAX | Entry-origin UNKNOWN at 0x4943c |
 | 0x4944a | EAX | Opaque CALL barrier at 0x49444 |
 | 0x49457 | ESI | Opaque CALL barrier at 0x49444 |
-| 0x49463 | EAX | Opaque CALL barrier at 0x4947d |
+| 0x49463 | EAX | Opaque CALL barrier at 0x4945d |
 
 The graph has six branch sites and three opaque CALL sites. Its empty
 **out-of-window frontier** does not prove the graph starts at the actual
@@ -41,7 +41,7 @@ registers, call summaries or branch outcomes were guessed.
 **Next original R15 frontier:** bound the EAX register provenance upstream of
 0x49de8; identify exact EBP/ESP establishment, enclosing function entries and
 external incoming edges; independently summarize the intervening 0x49444 and
-0x4947d CALLs before any global-value/path promotion. Then pursue actual
+0x4945d CALLs before any global-value/path promotion. Then pursue actual
 filename/handle/ReadFile/WriteFile buffering and native-save framing only when
 supported by original evidence. All original native IO, 128-byte schema,
 checksum, runtime global initialization, object ownership and named effect
