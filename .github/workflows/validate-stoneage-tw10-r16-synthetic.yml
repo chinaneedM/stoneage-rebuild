@@ -1,0 +1,18 @@
+name: Validate TW1.0 R16 bounded callee/global evidence synthetic
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/validate-stoneage-tw10-r16-synthetic.yml
+      - tools/stoneage_tw10_savedata_callee_global_r16.py
+      - tests/test_stoneage_tw10_savedata_callee_global_r16.py
+permissions:
+  contents: read
+jobs:
+  synthetic:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install --quiet capstone pefile
+      - run: python -m unittest -v tests.test_stoneage_tw10_savedata_callee_global_r16
