@@ -1,0 +1,76 @@
+{
+  "schema": "stoneage-tw10-original-r3-four-site-static-acceptance-r1",
+  "status": "ACCEPTED_PINNED_ORIGINAL_BYTES_AND_STATIC_CANDIDATES_ONLY",
+  "baseline": "Taiwan Waei/JSS v1.0 accepted clean retail",
+  "archive": {
+    "item": "stoneage_tw_2000_win",
+    "filename": "CD_DIC.rar",
+    "size": 842125501,
+    "md5": "b37a4a47f4eb608cac67e4ddf7a1621a",
+    "sha1": "b8cf92720b6ec8b3f46ea2e9bfcda986d21e7ded",
+    "full_hash_verified": true
+  },
+  "original_executable": {
+    "name": "sa_3.exe",
+    "sha256": "cdab9ea049a98bbc96ce93eeaa8b63c688f0c0f0ad8b3183e79d75e47621441a",
+    "verified": true
+  },
+  "original_savedata": {
+    "name": "savedata.dat",
+    "sha256": "5b26f54a9723cd2c5275f964457094fdf1fc33ca086cdaf55bb5350dfb04f3f9",
+    "verified": true
+  },
+  "archive_run": {
+    "id": 38217343564,
+    "head": "7c944447fb35bbd0a4c2bf086cd50b2d3e825f28",
+    "conclusion": "success",
+    "synthetic_tests": 20,
+    "derived_artifact_id": 11732992333
+  },
+  "derived_guard_run": {
+    "id": 38218913015,
+    "head": "f937288a1a6d559cecb61481f0a735fee313decc",
+    "conclusion": "success"
+  },
+  "static_candidates": [
+    {
+      "word_rva": "0x40065",
+      "candidate_start_rva": "0x40064",
+      "instruction": "push",
+      "linear_start_match": false,
+      "incoming_direct_edges": 0,
+      "forward_file_api_count": 0
+    },
+    {
+      "word_rva": "0x400e5",
+      "candidate_start_rva": "0x400e4",
+      "instruction": "push",
+      "linear_start_match": false,
+      "incoming_direct_edges": 0,
+      "forward_file_api_count": 0
+    },
+    {
+      "word_rva": "0x40116",
+      "candidate_start_rva": "0x40115",
+      "instruction": "push",
+      "linear_start_match": false,
+      "incoming_direct_edges": 0,
+      "forward_file_api_count": 0
+    },
+    {
+      "word_rva": "0x402a1",
+      "candidate_start_rva": "0x402a0",
+      "instruction": "push",
+      "linear_start_match": false,
+      "incoming_direct_edges": 0,
+      "forward_file_api_count": 0
+    }
+  ],
+  "candidate_count": 4,
+  "forward_file_api_mentions": 0,
+  "actual_instruction_reachability_admitted": false,
+  "native_savedata_io_admitted": false,
+  "early_128_byte_layout_admitted": false,
+  "original_payload_published": false,
+  "notes": "Static alternative decoder alignment is not execution reachability; private files deleted by the runner after analysis."
+}

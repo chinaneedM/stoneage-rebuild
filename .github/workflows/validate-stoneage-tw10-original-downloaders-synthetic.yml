@@ -1,0 +1,28 @@
+name: Validate Taiwan 1.0 original archive downloaders synthetic-only
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_tw10_archive_chunk_download.py
+      - tools/stoneage_tw10_archive_parallel_download.py
+      - tests/test_stoneage_tw10_archive_chunk_download.py
+      - tests/test_stoneage_tw10_archive_parallel_download.py
+      - .github/workflows/validate-stoneage-tw10-original-downloaders-synthetic.yml
+
+permissions:
+  contents: read
+
+jobs:
+  synthetic-hash-and-transport:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check bounded downloader tests without retrieving original bytes
+        run: python3 -m unittest tests.test_stoneage_tw10_archive_chunk_download tests.test_stoneage_tw10_archive_parallel_download -v
+      - name: Assert original archive verification is NOT performed by this workflow
+        run: |
+          echo 'TW10_ORIGINAL_ARCHIVE_SYNTHETIC_TESTS=PASS'
+          echo 'TW10_ORIGINAL_BYTES_RETRIEVED_BY_THIS_WORKFLOW=NO'
+          echo 'TW10_NATIVE_IO_SEMANTICS=OPEN'
