@@ -1,0 +1,51 @@
+{
+  "schema": "tw10-r15-original-upstream-frame-call-acceptance-r1",
+  "status": "ACCEPTED_CONDITIONAL_STATIC_ONLY",
+  "branch": "agent/tw10-savedata-entrycalls-r15-20261012",
+  "source_commit_sha": "cf8e4b7afc5d7eecece7562f1da495b0b316a2c6",
+  "original_probe_run_id": 38249248524,
+  "original_probe_job_id": 114810960223,
+  "original_run_success": true,
+  "derived_artifact_id": 11747531788,
+  "derived_archive_zip_sha256": "faff383d7b8e321e69c122e3ce88163b36971cb18d1fe3e9a867a6991c9d435b",
+  "derived_json_size": 5821,
+  "derived_json_sha256": "cb246c688e6ef3b348456229f4bb458d7cd316b543d459a72a9981a2cb856bc2",
+  "independent_validation_run_id": 38250050309,
+  "independent_validation_job_id": 114813689115,
+  "independent_validation_success": true,
+  "synthetic_test_count": 7,
+  "independent_guard_test_count": 12,
+  "eax_source_at_rva": "0x49de8",
+  "eax_reaches_load_rva": "0x49de3",
+  "eax_load_virtual_global_rva": "0x172186c",
+  "ebp_copy_from_esp_rva": "0x49d94",
+  "esp_definition_at_rva": "0x49da9",
+  "call_target_pairs": [
+    [
+      "0x49444",
+      "0x484c0"
+    ],
+    [
+      "0x4945d",
+      "0x484c0"
+    ],
+    [
+      "0x4946f",
+      "0x49900"
+    ],
+    [
+      "0x49e5f",
+      "0x4a09c"
+    ],
+    [
+      "0x49e6e",
+      "0x4a14d"
+    ]
+  ],
+  "actual_function_entry_proven": false,
+  "callee_effects_resolved": false,
+  "original_native_io_proven": false,
+  "fixed_128_byte_schema_proven": false,
+  "original_bytes_published": false,
+  "next_priority": "R16 original 0x484c0 bounded effects and 0x172186c sources; all ownership native persistence OPEN"
+}
