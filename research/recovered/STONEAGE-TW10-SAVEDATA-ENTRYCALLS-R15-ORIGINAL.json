@@ -1,0 +1,325 @@
+{
+  "actual_function_entry_proven": false,
+  "bounded_graph_entry_not_proven": true,
+  "branch_feasibility_proven": false,
+  "call_fallthrough_structural_only": true,
+  "call_surfaces": [
+    {
+      "call_rva": 300100,
+      "callee_effect_summary_admitted": false,
+      "calling_convention_proven": false,
+      "direct_target_rva": 296128,
+      "import_identity": null,
+      "import_slot_association_proven": false,
+      "kind": "direct",
+      "memory_target": null,
+      "register_target": null,
+      "returned_value_proven": false,
+      "runtime_target_or_effects_proven": false,
+      "runtime_transfer_proven": false
+    },
+    {
+      "call_rva": 300125,
+      "callee_effect_summary_admitted": false,
+      "calling_convention_proven": false,
+      "direct_target_rva": 296128,
+      "import_identity": null,
+      "import_slot_association_proven": false,
+      "kind": "direct",
+      "memory_target": null,
+      "register_target": null,
+      "returned_value_proven": false,
+      "runtime_target_or_effects_proven": false,
+      "runtime_transfer_proven": false
+    },
+    {
+      "call_rva": 300143,
+      "callee_effect_summary_admitted": false,
+      "calling_convention_proven": false,
+      "direct_target_rva": 301312,
+      "import_identity": null,
+      "import_slot_association_proven": false,
+      "kind": "direct",
+      "memory_target": null,
+      "register_target": null,
+      "returned_value_proven": false,
+      "runtime_target_or_effects_proven": false,
+      "runtime_transfer_proven": false
+    },
+    {
+      "call_rva": 302687,
+      "callee_effect_summary_admitted": false,
+      "calling_convention_proven": false,
+      "direct_target_rva": 303260,
+      "import_identity": null,
+      "import_slot_association_proven": false,
+      "kind": "direct",
+      "memory_target": null,
+      "register_target": null,
+      "returned_value_proven": false,
+      "runtime_target_or_effects_proven": false,
+      "runtime_transfer_proven": false
+    },
+    {
+      "call_rva": 302702,
+      "callee_effect_summary_admitted": false,
+      "calling_convention_proven": false,
+      "direct_target_rva": 303437,
+      "import_identity": null,
+      "import_slot_association_proven": false,
+      "kind": "direct",
+      "memory_target": null,
+      "register_target": null,
+      "returned_value_proven": false,
+      "runtime_target_or_effects_proven": false,
+      "runtime_transfer_proven": false
+    }
+  ],
+  "caller_effects_admitted": false,
+  "exact_local_register_definitions_not_effective_values": true,
+  "filename_api_link_proven": false,
+  "fixed_128_byte_schema_proven": false,
+  "frame_setup_ownership_proven": false,
+  "global_frame_write_candidates": [
+    {
+      "rva": 300097,
+      "writes_ebp": false,
+      "writes_esp": true
+    },
+    {
+      "rva": 300099,
+      "writes_ebp": false,
+      "writes_esp": true
+    },
+    {
+      "rva": 300100,
+      "writes_ebp": false,
+      "writes_esp": true
+    },
+    {
+      "rva": 300105,
+      "writes_ebp": false,
+      "writes_esp": true
+    },
+    {
+      "rva": 300113,
+      "writes_ebp": false,
+      "writes_esp": true
+    },
+    {
+      "rva": 300116,
+      "writes_ebp": false,
+      "writes_esp": true
+    },
+    {
+      "rva": 300118,
+      "writes_ebp": false,
+      "writes_esp": true
+    },
+    {
+      "rva": 300125,
+      "writes_ebp": false,
+      "writes_esp": true
+    },
+    {
+      "rva": 300130,
+      "writes_ebp": false,
+      "writes_esp": true
+    },
+    {
+      "rva": 300138,
+      "writes_ebp": false,
+      "writes_esp": true
+    },
+    {
+      "rva": 300141,
+      "writes_ebp": false,
+      "writes_esp": true
+    },
+    {
+      "rva": 300143,
+      "writes_ebp": false,
+      "writes_esp": true
+    },
+    {
+      "rva": 300148,
+      "writes_ebp": false,
+      "writes_esp": true
+    },
+    {
+      "rva": 300229,
+      "writes_ebp": false,
+      "writes_esp": true
+    },
+    {
+      "rva": 300230,
+      "writes_ebp": false,
+      "writes_esp": true
+    }
+  ],
+  "global_initialization_proven": false,
+  "global_outside_edges": 0,
+  "handle_buffer_size_link_proven": false,
+  "helper_frame_write_candidates": [
+    {
+      "rva": 302483,
+      "writes_ebp": false,
+      "writes_esp": true
+    },
+    {
+      "rva": 302484,
+      "writes_ebp": true,
+      "writes_esp": false
+    },
+    {
+      "rva": 302486,
+      "writes_ebp": false,
+      "writes_esp": true
+    },
+    {
+      "rva": 302500,
+      "writes_ebp": false,
+      "writes_esp": true
+    },
+    {
+      "rva": 302501,
+      "writes_ebp": false,
+      "writes_esp": true
+    },
+    {
+      "rva": 302505,
+      "writes_ebp": false,
+      "writes_esp": true
+    },
+    {
+      "rva": 302687,
+      "writes_ebp": false,
+      "writes_esp": true
+    },
+    {
+      "rva": 302701,
+      "writes_ebp": false,
+      "writes_esp": true
+    },
+    {
+      "rva": 302702,
+      "writes_ebp": false,
+      "writes_esp": true
+    },
+    {
+      "rva": 302707,
+      "writes_ebp": false,
+      "writes_esp": true
+    },
+    {
+      "rva": 302857,
+      "writes_ebp": false,
+      "writes_esp": true
+    },
+    {
+      "rva": 302862,
+      "writes_ebp": false,
+      "writes_esp": true
+    }
+  ],
+  "helper_outside_edges": 3,
+  "native_io_executed": false,
+  "opaque_call_effects_resolved": false,
+  "original_bytes_published": false,
+  "r14_global_nodes": 48,
+  "r14_helper_nodes": 139,
+  "register_values_fully_known": false,
+  "runtime_sha256": "cdab9ea049a98bbc96ce93eeaa8b63c688f0c0f0ad8b3183e79d75e47621441a",
+  "savedata_sha256": "5b26f54a9723cd2c5275f964457094fdf1fc33ca086cdaf55bb5350dfb04f3f9",
+  "schema": "tw10-r15-original-upstream-frame-and-opaque-call-frontier",
+  "status": "PINNED_ORIGINAL_STATIC_PROVENANCE_NO_NAMED_EFFECTS",
+  "upstream_inputs": [
+    {
+      "fully_known_value": false,
+      "origins": [
+        {
+          "kind": "definition",
+          "rva": 302563,
+          "semantic": {
+            "constant": null,
+            "kind": "memory_load",
+            "memory_input": {
+              "base_register": null,
+              "displacement_region": {
+                "displacement_rva": 24254572,
+                "raw_backed": false,
+                "section": ".data",
+                "writable": true
+              },
+              "index_register": null,
+              "index_scale": 1,
+              "relative_field_offset": null,
+              "segment_register": null,
+              "width_bytes": 4
+            },
+            "register_inputs": [],
+            "width_bits": 32
+          }
+        }
+      ],
+      "query_site_rva": 302568,
+      "register": "eax",
+      "verified_entry_to_query_path": false
+    },
+    {
+      "fully_known_value": false,
+      "origins": [
+        {
+          "kind": "definition",
+          "rva": 302484,
+          "semantic": {
+            "constant": null,
+            "kind": "register_copy",
+            "memory_input": null,
+            "register_inputs": [
+              "esp"
+            ],
+            "width_bits": 32
+          }
+        }
+      ],
+      "query_site_rva": 302538,
+      "register": "ebp",
+      "verified_entry_to_query_path": false
+    },
+    {
+      "fully_known_value": false,
+      "origins": [
+        {
+          "kind": "definition",
+          "rva": 302484,
+          "semantic": {
+            "constant": null,
+            "kind": "register_copy",
+            "memory_input": null,
+            "register_inputs": [
+              "esp"
+            ],
+            "width_bits": 32
+          }
+        }
+      ],
+      "query_site_rva": 302572,
+      "register": "ebp",
+      "verified_entry_to_query_path": false
+    },
+    {
+      "fully_known_value": false,
+      "origins": [
+        {
+          "kind": "definition",
+          "rva": 302505,
+          "semantic": null
+        }
+      ],
+      "query_site_rva": 302572,
+      "register": "esp",
+      "verified_entry_to_query_path": false
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+name: Independently verify TW1.0 R15 original-derived entry/call frontier
+on:
+  workflow_dispatch:
+  push:
+    branches: [main, agent/tw10-savedata-entrycalls-r15-20261012]
+    paths:
+      - .github/workflows/verify-stoneage-tw10-r15-original.yml
+      - tools/stoneage_tw10_savedata_entrycalls_r15_guard.py
+      - tests/test_stoneage_tw10_savedata_entrycalls_r15_guard.py
+      - research/recovered/STONEAGE-TW10-SAVEDATA-ENTRYCALLS-R15-ORIGINAL.json
+permissions:
+  contents: read
+  actions: read
+jobs:
+  original-derived:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Bind source run to exact original probe head
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          identity="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/38249248524" --jq '[.status,.conclusion,.head_sha,.head_branch] | join("|")')"
+          test "$identity" = 'completed|success|cf8e4b7afc5d7eecece7562f1da495b0b316a2c6|agent/tw10-savedata-entrycalls-r15-20261012'
+      - name: Retrieve derived-only original report and independently pin bytes
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/stoneage-r15-independent
+          gh run download 38249248524 --repo "$GITHUB_REPOSITORY" --name tw10-r15-original-upstream-frame-calls-derived --dir /tmp/stoneage-r15-independent
+          test "$(find /tmp/stoneage-r15-independent -type f | wc -l)" -eq 1
+          test -f /tmp/stoneage-r15-independent/stoneage-r15-derived.json
+          test ! -L /tmp/stoneage-r15-independent/stoneage-r15-derived.json
+          test "$(stat -c %s /tmp/stoneage-r15-independent/stoneage-r15-derived.json)" -eq 5821
+          echo 'cb246c688e6ef3b348456229f4bb458d7cd316b543d459a72a9981a2cb856bc2  /tmp/stoneage-r15-independent/stoneage-r15-derived.json' | sha256sum -c -
+      - name: Enforce all historical limits and committed full report equality
+        run: |
+          set -euo pipefail
+          python -m unittest tests.test_stoneage_tw10_savedata_entrycalls_r15_guard -v
+          python -m tools.stoneage_tw10_savedata_entrycalls_r15_guard --report /tmp/stoneage-r15-independent/stoneage-r15-derived.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          a=json.loads(Path('/tmp/stoneage-r15-independent/stoneage-r15-derived.json').read_text())
+          b=json.loads(Path('research/recovered/STONEAGE-TW10-SAVEDATA-ENTRYCALLS-R15-ORIGINAL.json').read_text())
+          assert a==b
+          assert not b['native_io_executed']
+          assert not b['actual_function_entry_proven']
+          print('TW10_R15_STATIC_ORIGINAL_SOURCE_AND_CUSTODY=PASS')
+          print('TW10_R15_CALL_EFFECTS_AND_NATIVE_SAVE=OPEN')
+          PY
+      - name: Always purge independent derived files
+        if: always()
+        run: rm -rf /tmp/stoneage-r15-independent
