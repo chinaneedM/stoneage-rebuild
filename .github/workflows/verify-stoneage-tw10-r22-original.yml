@@ -1,0 +1,69 @@
+name: Independently verify TW1.0 R22 original call/stack/cycle evidence
+on:
+  workflow_dispatch:
+  push:
+    branches: [main, agent/tw10-savedata-r22-call-stack-cycle-20261012]
+    paths:
+      - .github/workflows/verify-stoneage-tw10-r22-original.yml
+      - tools/stoneage_tw10_savedata_upstream_r22_guard.py
+      - tests/test_stoneage_tw10_savedata_upstream_r22_guard.py
+      - research/recovered/STONEAGE-TW10-SAVEDATA-UPSTREAM-R22-ORIGINAL.json
+permissions:
+  contents: read
+  actions: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify immutable R22 original source and artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          identity="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/38267287871" --jq '[.status,.conclusion,.head_sha,.head_branch] | join("|')"
+          test "$identity" = 'completed|success|82c186fcf2cd74c876b016fb1aa74872793ced0f|agent/tw10-savedata-r22-call-stack-cycle-20261012'
+          artifact="$(gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/11756110734" --jq '[.workflow_run.id,.name,.digest,.expired] | join("|')"
+          test "$artifact" = '38267287871|tw10-r22-original-call-stack-cycle-derived|sha256:31d06d772e7525128d7288f38ed48664c0ba05d3a0c0296e1ea0f1f45c680b70|false'
+      - name: Retrieve only bounded derived metadata
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/r22-independent
+          gh run download 38267287871 --repo "$GITHUB_REPOSITORY" --name tw10-r22-original-call-stack-cycle-derived --dir /tmp/r22-independent
+          test "$(find /tmp/r22-independent -type f | wc -l)" -eq 1
+          test -f /tmp/r22-independent/stoneage-r22-derived.json
+          test ! -L /tmp/r22-independent/stoneage-r22-derived.json
+          test "$(stat -c %s /tmp/r22-independent/stoneage-r22-derived.json)" -le 70000
+          sha256sum /tmp/r22-independent/stoneage-r22-derived.json
+          wc -c /tmp/r22-independent/stoneage-r22-derived.json
+      - name: Strict semantic constraints and independent tamper tests
+        run: |
+          set -euo pipefail
+          pip install --quiet capstone pefile
+          python -m unittest -v tests.test_stoneage_tw10_savedata_upstream_r22_guard
+          python -m tools.stoneage_tw10_savedata_upstream_r22_guard --report /tmp/r22-independent/stoneage-r22-derived.json
+      - name: Compare accepted witness and disclose canonical bounded JSON
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from tools.stoneage_tw10_savedata_upstream_r22_guard import validate
+          d=json.loads(Path('/tmp/r22-independent/stoneage-r22-derived.json').read_text())
+          validate(d)
+          canonical=Path('research/recovered/STONEAGE-TW10-SAVEDATA-UPSTREAM-R22-ORIGINAL.json')
+          if canonical.exists():
+              assert json.loads(canonical.read_text())==d, 'R22 exact original-derived JSON differs from committed witness'
+              print('TW10_R22_EXACT_DERIVED_JSON_EQUALITY=PASS')
+          else:
+              print('TW10_R22_REVIEW_ONLY_NOT_YET_COMMITTED=PASS')
+          print('TW10_R22_DERIVED_JSON_BEGIN')
+          print(json.dumps(d,sort_keys=True,separators=(',',':')))
+          print('TW10_R22_DERIVED_JSON_END')
+          PY
+      - name: Always remove temporary derived metadata
+        if: always()
+        run: rm -rf /tmp/r22-independent
