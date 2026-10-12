@@ -16,7 +16,8 @@ def specimen():
         "r21_original_identity_revalidated":True,"static_only":True,
         "writer_opaque_call":{
             "site_rva":WRITER_CALL,"writer_rva":WRITER_SITE,"anchor_rva":WRITER_ROOT,
-            "call_identity":{"call_rva":WRITER_CALL,"kind":"direct"},
+            "call_identity":{"call_rva":WRITER_CALL,"kind":"memory_indirect",
+              "import_identity":{"dll":"KERNEL32.dll","name":"HeapCreate","iat_rva":0x520e8}},
             "candidate_nodes":4,"candidate_edges":3,
             "call_fallthrough_assumes_return_structurally":True,
             "call_to_writer_structural_path_exists":True,
@@ -60,6 +61,7 @@ class R22Guard(unittest.TestCase):
     def test_valid(self):self.assertTrue(validate(specimen()))
     def test_hash(self):self.bad(lambda d:d.update(runtime_sha256="0"*64))
     def test_import_call_site(self):self.bad(lambda d:d["writer_opaque_call"].update(site_rva=0))
+    def test_wrong_heapcreate_identity(self):self.bad(lambda d:d["writer_opaque_call"]["call_identity"]["import_identity"].update(name="CreateFileA"))
     def test_call_return_admission(self):self.bad(lambda d:d["writer_opaque_call"].update(actual_callee_return_or_register_effect_known=True))
     def test_call_graph_fake(self):self.bad(lambda d:d["writer_opaque_call"].update(call_to_writer_structural_path_exists=False))
     def test_call_entry_fake(self):self.bad(lambda d:d["writer_opaque_call"]["pre_call_register_sources"]["eax"].update(anchor_is_verified_entry=True))
