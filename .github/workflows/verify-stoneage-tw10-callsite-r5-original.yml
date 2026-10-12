@@ -1,0 +1,65 @@
+name: Independently verify TW1.0 R5 original-derived callsite evidence
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - agent/tw10-savedata-callsite-r5-20261012
+    paths:
+      - .github/workflows/verify-stoneage-tw10-callsite-r5-original.yml
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  verify-pinned-derived:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify immutable original source run and branch commit
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          identity="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/38223087375" --jq '[.status,.conclusion,.head_sha,.head_branch] | join("|")')"
+          test "$identity" = 'completed|success|9312a2f543fc8cb97b1c89d177050fcb6bebb893|agent/tw10-savedata-callsite-r5-20261012'
+          echo 'TW10_R5_ORIGINAL_SOURCE_CUSTODY=PASS'
+      - name: Retrieve only the original run's tiny derived JSON artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/tw10-r5-review
+          gh run download 38223087375 --repo "$GITHUB_REPOSITORY" --name tw10-original-callsite-r5-derived --dir /tmp/tw10-r5-review
+          test "$(find /tmp/tw10-r5-review -type f | wc -l)" -eq 1
+          test -f /tmp/tw10-r5-review/stoneage-r5-report.json
+          test ! -L /tmp/tw10-r5-review/stoneage-r5-report.json
+          test "$(stat -c %s /tmp/tw10-r5-review/stoneage-r5-report.json)" -le 18000
+      - name: Strict original R5 report validation and bounded expected metrics
+        run: |
+          set -euo pipefail
+          pip install --quiet capstone pefile
+          python3 -m tools.stoneage_tw10_savedata_callsite_r5_guard --report /tmp/tw10-r5-review/stoneage-r5-report.json | tee /tmp/tw10-r5-summary.json
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          v=json.loads(Path('/tmp/tw10-r5-summary.json').read_text())
+          assert v['status']=='ACCEPTED_FORMAT_AND_STATIC_COUNTS_ONLY'
+          assert v['verified_original_identity'] is True and v['site_count']==4
+          assert v['api_events']==0
+          assert [s['min_graph_hops'] for s in v['sites']]==[226,216,226,259]
+          assert [s['incoming_total'] for s in v['sites']]==[1,1,1,1]
+          assert [s['local_file_api_events'] for s in v['sites']]==[0,0,0,0]
+          assert all(s['lexical_createfilea'] is False for s in v['sites'])
+          assert v['native_io_semantics_admitted'] is False
+          assert v['dataflow_argument_proven'] is False
+          assert v['contains_original_payload'] is False
+          print('TW10_R5_DERIVED_CUSTODY_AND_STATIC_COUNTS=PASS')
+          print('TW10_R5_FILENAME_ARGUMENT_AND_NATIVE_SAVE_IO=OPEN')
+          PY
+      - name: Purge downloaded derived JSON
+        if: always()
+        run: rm -rf /tmp/tw10-r5-review /tmp/tw10-r5-summary.json
