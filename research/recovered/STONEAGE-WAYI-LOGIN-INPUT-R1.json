@@ -1,0 +1,898 @@
+{
+  "probe": {
+    "schema": "STONEAGE-WAYI-LOGIN-INPUT-R1",
+    "input_bytes": 921600,
+    "decompressed_input_sha256": "4193a7e1b20b996f7902424ae05092b455c5dbbe3f133d331a4897bbc7abfe63",
+    "windows": [
+      {
+        "label": "key-schedule",
+        "start_rva": 584672,
+        "end_rva_exclusive": 585088,
+        "instruction_count": 139,
+        "calls": [],
+        "branches": [
+          {
+            "branch_rva": 584714,
+            "condition": "je",
+            "target_rva": 584746,
+            "fallthrough_rva": 584716,
+            "adjacent_comparison_rva": 584712
+          },
+          {
+            "branch_rva": 584721,
+            "condition": "jb",
+            "target_rva": 584737,
+            "fallthrough_rva": 584723,
+            "adjacent_comparison_rva": 584718
+          },
+          {
+            "branch_rva": 584735,
+            "condition": "jmp",
+            "target_rva": 584746,
+            "fallthrough_rva": 584737
+          },
+          {
+            "branch_rva": 584750,
+            "condition": "jne",
+            "target_rva": 584712,
+            "fallthrough_rva": 584752
+          },
+          {
+            "branch_rva": 584761,
+            "condition": "jne",
+            "target_rva": 584696,
+            "fallthrough_rva": 584763
+          },
+          {
+            "branch_rva": 584871,
+            "condition": "je",
+            "target_rva": 584875,
+            "fallthrough_rva": 584873,
+            "adjacent_comparison_rva": 584869
+          },
+          {
+            "branch_rva": 584877,
+            "condition": "jne",
+            "target_rva": 584859,
+            "fallthrough_rva": 584879
+          },
+          {
+            "branch_rva": 584889,
+            "condition": "jne",
+            "target_rva": 584854,
+            "fallthrough_rva": 584891
+          },
+          {
+            "branch_rva": 584921,
+            "condition": "je",
+            "target_rva": 584925,
+            "fallthrough_rva": 584923,
+            "adjacent_comparison_rva": 584919
+          },
+          {
+            "branch_rva": 584927,
+            "condition": "jne",
+            "target_rva": 584909,
+            "fallthrough_rva": 584929
+          },
+          {
+            "branch_rva": 584939,
+            "condition": "jne",
+            "target_rva": 584904,
+            "fallthrough_rva": 584941
+          },
+          {
+            "branch_rva": 585074,
+            "condition": "jl",
+            "target_rva": 584779,
+            "fallthrough_rva": 585080
+          }
+        ],
+        "absolute_writes": []
+      },
+      {
+        "label": "block-rounds",
+        "start_rva": 585088,
+        "end_rva_exclusive": 586058,
+        "instruction_count": 296,
+        "calls": [],
+        "branches": [
+          {
+            "branch_rva": 585356,
+            "condition": "jne",
+            "target_rva": 585550,
+            "fallthrough_rva": 585362,
+            "adjacent_comparison_rva": 585354
+          },
+          {
+            "branch_rva": 585539,
+            "condition": "jl",
+            "target_rva": 585371,
+            "fallthrough_rva": 585545
+          },
+          {
+            "branch_rva": 585545,
+            "condition": "jmp",
+            "target_rva": 585733,
+            "fallthrough_rva": 585550
+          },
+          {
+            "branch_rva": 585727,
+            "condition": "jge",
+            "target_rva": 585559,
+            "fallthrough_rva": 585733
+          }
+        ],
+        "absolute_writes": []
+      },
+      {
+        "label": "ecb-wrapper",
+        "start_rva": 586064,
+        "end_rva_exclusive": 586142,
+        "instruction_count": 33,
+        "calls": [
+          {
+            "call_rva": 586071,
+            "target": {
+              "width_bytes": 4,
+              "kind": "immediate",
+              "value": 4778976
+            },
+            "direct_target_rva": 584672
+          },
+          {
+            "call_rva": 586108,
+            "target": {
+              "width_bytes": 4,
+              "kind": "immediate",
+              "value": 4779392
+            },
+            "direct_target_rva": 585088
+          }
+        ],
+        "branches": [
+          {
+            "branch_rva": 586093,
+            "condition": "je",
+            "target_rva": 586126,
+            "fallthrough_rva": 586095
+          },
+          {
+            "branch_rva": 586122,
+            "condition": "jne",
+            "target_rva": 586106,
+            "fallthrough_rva": 586124
+          }
+        ],
+        "absolute_writes": []
+      },
+      {
+        "label": "ui-prologue",
+        "start_rva": 132784,
+        "end_rva_exclusive": 132799,
+        "instruction_count": 8,
+        "calls": [],
+        "branches": [],
+        "absolute_writes": []
+      },
+      {
+        "label": "restore-two-32-byte-inputs",
+        "start_rva": 132940,
+        "end_rva_exclusive": 133012,
+        "instruction_count": 18,
+        "calls": [
+          {
+            "call_rva": 132971,
+            "target": {
+              "width_bytes": 4,
+              "kind": "immediate",
+              "value": 4780368
+            },
+            "direct_target_rva": 586064
+          },
+          {
+            "call_rva": 133007,
+            "target": {
+              "width_bytes": 4,
+              "kind": "immediate",
+              "value": 4780368
+            },
+            "direct_target_rva": 586064
+          }
+        ],
+        "branches": [],
+        "absolute_writes": []
+      },
+      {
+        "label": "save-two-32-byte-inputs",
+        "start_rva": 133501,
+        "end_rva_exclusive": 133571,
+        "instruction_count": 18,
+        "calls": [
+          {
+            "call_rva": 133531,
+            "target": {
+              "width_bytes": 4,
+              "kind": "immediate",
+              "value": 4780368
+            },
+            "direct_target_rva": 586064
+          },
+          {
+            "call_rva": 133566,
+            "target": {
+              "width_bytes": 4,
+              "kind": "immediate",
+              "value": 4780368
+            },
+            "direct_target_rva": 586064
+          }
+        ],
+        "branches": [],
+        "absolute_writes": []
+      },
+      {
+        "label": "clear-two-input-descriptors",
+        "start_rva": 133571,
+        "end_rva_exclusive": 133623,
+        "instruction_count": 12,
+        "calls": [],
+        "branches": [],
+        "absolute_writes": [
+          {
+            "rva": 133583,
+            "destination": {
+              "width_bytes": 1,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 72702951,
+              "absolute_rva": 68508647
+            },
+            "source": {
+              "width_bytes": 1,
+              "kind": "register",
+              "name": "bl"
+            }
+          },
+          {
+            "rva": 133589,
+            "destination": {
+              "width_bytes": 1,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 72702953,
+              "absolute_rva": 68508649
+            },
+            "source": {
+              "width_bytes": 1,
+              "kind": "register",
+              "name": "bl"
+            }
+          },
+          {
+            "rva": 133595,
+            "destination": {
+              "width_bytes": 1,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 72747855,
+              "absolute_rva": 68553551
+            },
+            "source": {
+              "width_bytes": 1,
+              "kind": "register",
+              "name": "bl"
+            }
+          },
+          {
+            "rva": 133613,
+            "destination": {
+              "width_bytes": 1,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 72747857,
+              "absolute_rva": 68553553
+            },
+            "source": {
+              "width_bytes": 1,
+              "kind": "register",
+              "name": "bl"
+            }
+          }
+        ]
+      },
+      {
+        "label": "initial-input-descriptors",
+        "start_rva": 134048,
+        "end_rva_exclusive": 134199,
+        "instruction_count": 32,
+        "calls": [
+          {
+            "call_rva": 134100,
+            "target": {
+              "width_bytes": 4,
+              "kind": "immediate",
+              "value": 4329920
+            },
+            "direct_target_rva": 135616
+          },
+          {
+            "call_rva": 134154,
+            "target": {
+              "width_bytes": 4,
+              "kind": "immediate",
+              "value": 4329920
+            },
+            "direct_target_rva": 135616
+          },
+          {
+            "call_rva": 134194,
+            "target": {
+              "width_bytes": 4,
+              "kind": "immediate",
+              "value": 4266304
+            },
+            "direct_target_rva": 72000
+          }
+        ],
+        "branches": [],
+        "absolute_writes": [
+          {
+            "rva": 134062,
+            "destination": {
+              "width_bytes": 4,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 4964436,
+              "absolute_rva": 770132
+            },
+            "source": {
+              "width_bytes": 4,
+              "kind": "register",
+              "name": "eax"
+            }
+          },
+          {
+            "rva": 134077,
+            "destination": {
+              "width_bytes": 4,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 4964440,
+              "absolute_rva": 770136
+            },
+            "source": {
+              "width_bytes": 4,
+              "kind": "register",
+              "name": "eax"
+            }
+          },
+          {
+            "rva": 134082,
+            "destination": {
+              "width_bytes": 2,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 72739916,
+              "absolute_rva": 68545612
+            },
+            "source": {
+              "width_bytes": 2,
+              "kind": "immediate",
+              "value": 376
+            }
+          },
+          {
+            "rva": 134091,
+            "destination": {
+              "width_bytes": 2,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 72739936,
+              "absolute_rva": 68545632
+            },
+            "source": {
+              "width_bytes": 2,
+              "kind": "immediate",
+              "value": 94
+            }
+          },
+          {
+            "rva": 134124,
+            "destination": {
+              "width_bytes": 1,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 72702951,
+              "absolute_rva": 68508647
+            },
+            "source": {
+              "width_bytes": 1,
+              "kind": "register",
+              "name": "bl"
+            }
+          },
+          {
+            "rva": 134130,
+            "destination": {
+              "width_bytes": 1,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 72702953,
+              "absolute_rva": 68508649
+            },
+            "source": {
+              "width_bytes": 1,
+              "kind": "register",
+              "name": "bl"
+            }
+          },
+          {
+            "rva": 134136,
+            "destination": {
+              "width_bytes": 2,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 72688564,
+              "absolute_rva": 68494260
+            },
+            "source": {
+              "width_bytes": 2,
+              "kind": "immediate",
+              "value": 376
+            }
+          },
+          {
+            "rva": 134145,
+            "destination": {
+              "width_bytes": 2,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 72688560,
+              "absolute_rva": 68494256
+            },
+            "source": {
+              "width_bytes": 2,
+              "kind": "immediate",
+              "value": 132
+            }
+          },
+          {
+            "rva": 134165,
+            "destination": {
+              "width_bytes": 1,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 72747855,
+              "absolute_rva": 68553551
+            },
+            "source": {
+              "width_bytes": 1,
+              "kind": "register",
+              "name": "bl"
+            }
+          },
+          {
+            "rva": 134172,
+            "destination": {
+              "width_bytes": 1,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 72747857,
+              "absolute_rva": 68553553
+            },
+            "source": {
+              "width_bytes": 1,
+              "kind": "register",
+              "name": "bl"
+            }
+          },
+          {
+            "rva": 134178,
+            "destination": {
+              "width_bytes": 4,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 72747880,
+              "absolute_rva": 68553576
+            },
+            "source": {
+              "width_bytes": 4,
+              "kind": "immediate",
+              "value": 1
+            }
+          },
+          {
+            "rva": 134188,
+            "destination": {
+              "width_bytes": 4,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 72765224,
+              "absolute_rva": 68570920
+            },
+            "source": {
+              "width_bytes": 4,
+              "kind": "register",
+              "name": "ebx"
+            }
+          }
+        ]
+      },
+      {
+        "label": "descriptor-setter",
+        "start_rva": 135616,
+        "end_rva_exclusive": 135671,
+        "instruction_count": 12,
+        "calls": [],
+        "branches": [],
+        "absolute_writes": []
+      },
+      {
+        "label": "login-two-16-byte-decode",
+        "start_rva": 391384,
+        "end_rva_exclusive": 391504,
+        "instruction_count": 29,
+        "calls": [
+          {
+            "call_rva": 391443,
+            "target": {
+              "width_bytes": 4,
+              "kind": "immediate",
+              "value": 4780368
+            },
+            "direct_target_rva": 586064
+          },
+          {
+            "call_rva": 391499,
+            "target": {
+              "width_bytes": 4,
+              "kind": "immediate",
+              "value": 4780368
+            },
+            "direct_target_rva": 586064
+          }
+        ],
+        "branches": [],
+        "absolute_writes": [
+          {
+            "rva": 391428,
+            "destination": {
+              "width_bytes": 2,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 73423372,
+              "absolute_rva": 69229068
+            },
+            "source": {
+              "width_bytes": 2,
+              "kind": "register",
+              "name": "bx"
+            }
+          }
+        ]
+      }
+    ],
+    "anchors": {
+      "0x8f16a": {
+        "operation": "and",
+        "operands": [
+          {
+            "width_bytes": 4,
+            "kind": "register",
+            "name": "edi"
+          },
+          {
+            "width_bytes": 4,
+            "kind": "immediate",
+            "value": 4294967288
+          }
+        ]
+      },
+      "0x8f177": {
+        "operation": "and",
+        "operands": [
+          {
+            "width_bytes": 4,
+            "kind": "register",
+            "name": "ebx"
+          },
+          {
+            "width_bytes": 4,
+            "kind": "immediate",
+            "value": 1
+          }
+        ]
+      },
+      "0x8f192": {
+        "operation": "and",
+        "operands": [
+          {
+            "width_bytes": 4,
+            "kind": "register",
+            "name": "edx"
+          },
+          {
+            "width_bytes": 4,
+            "kind": "immediate",
+            "value": 2
+          }
+        ]
+      },
+      "0x206b7": {
+        "operation": "xor",
+        "operands": [
+          {
+            "width_bytes": 4,
+            "kind": "register",
+            "name": "ebx"
+          },
+          {
+            "width_bytes": 4,
+            "kind": "register",
+            "name": "ebx"
+          }
+        ]
+      },
+      "0x2074c": {
+        "operation": "push",
+        "operands": [
+          {
+            "width_bytes": 4,
+            "kind": "immediate",
+            "value": 1
+          }
+        ]
+      },
+      "0x2074e": {
+        "operation": "mov",
+        "operands": [
+          {
+            "width_bytes": 4,
+            "kind": "register",
+            "name": "ecx"
+          },
+          {
+            "width_bytes": 4,
+            "kind": "immediate",
+            "value": 8
+          }
+        ]
+      },
+      "0x2075d": {
+        "operation": "push",
+        "operands": [
+          {
+            "width_bytes": 4,
+            "kind": "immediate",
+            "value": 32
+          }
+        ]
+      },
+      "0x2097d": {
+        "operation": "push",
+        "operands": [
+          {
+            "width_bytes": 4,
+            "kind": "register",
+            "name": "ebx"
+          }
+        ]
+      },
+      "0x2097e": {
+        "operation": "mov",
+        "operands": [
+          {
+            "width_bytes": 4,
+            "kind": "register",
+            "name": "ecx"
+          },
+          {
+            "width_bytes": 4,
+            "kind": "immediate",
+            "value": 8
+          }
+        ]
+      },
+      "0x2098d": {
+        "operation": "push",
+        "operands": [
+          {
+            "width_bytes": 4,
+            "kind": "immediate",
+            "value": 32
+          }
+        ]
+      },
+      "0x20baa": {
+        "operation": "push",
+        "operands": [
+          {
+            "width_bytes": 4,
+            "kind": "immediate",
+            "value": 12
+          }
+        ]
+      },
+      "0x20bdb": {
+        "operation": "push",
+        "operands": [
+          {
+            "width_bytes": 4,
+            "kind": "immediate",
+            "value": 12
+          }
+        ]
+      },
+      "0x211e0": {
+        "operation": "mov",
+        "operands": [
+          {
+            "width_bytes": 1,
+            "kind": "memory",
+            "base": "eax",
+            "index": null,
+            "scale": 1,
+            "displacement": 260
+          },
+          {
+            "width_bytes": 1,
+            "kind": "register",
+            "name": "cl"
+          }
+        ]
+      }
+    },
+    "tables": [
+      {
+        "name": "nshifts",
+        "rva": 893076,
+        "entries": 16,
+        "width_bytes": 1,
+        "sha256": "844b8205d28c096e00fefc11c0b874e040a0a14ffa6c3e395c39e457483f1707"
+      },
+      {
+        "name": "pc1",
+        "rva": 893092,
+        "entries": 56,
+        "width_bytes": 1,
+        "sha256": "4b2b89f8dd2b405f225218a592fa4d248afb7aa3bc19c1c681c648d2c7c8dc76"
+      },
+      {
+        "name": "pc2_c",
+        "rva": 893148,
+        "entries": 24,
+        "width_bytes": 1,
+        "sha256": "c045ed4b230ede4635da41b945f1285d8d0fdd965291c8bd0c21405a3bf48777"
+      },
+      {
+        "name": "pc2_d",
+        "rva": 893172,
+        "entries": 24,
+        "width_bytes": 1,
+        "sha256": "f20de024fb4b106efd85a6a22f807d8e10acfc4d43c9580cc08e9ce60fd0a776"
+      },
+      {
+        "name": "Psboxes",
+        "rva": 893196,
+        "entries": 512,
+        "width_bytes": 4,
+        "sha256": "668bb69e184e0c32dc3bc488001c506c87ee5a95c7e7b6b87d24c3a6dc779956"
+      },
+      {
+        "name": "Ip_l",
+        "rva": 895244,
+        "entries": 256,
+        "width_bytes": 4,
+        "sha256": "1ad702a1ced972e43d5d389b7e39bcf7b37f4ecaf1f0f49666b00d03a700c3cc"
+      },
+      {
+        "name": "Ip_r",
+        "rva": 896268,
+        "entries": 256,
+        "width_bytes": 4,
+        "sha256": "d286736c26b793d619b589ca8406bdc6609df1c32c55bf849d076c9004bf855f"
+      },
+      {
+        "name": "Ip_inv_l",
+        "rva": 897292,
+        "entries": 256,
+        "width_bytes": 4,
+        "sha256": "f2da95fedc5363ea65ff8f39d33d9660c44b9d8855d15f12913348edc73a39ce"
+      },
+      {
+        "name": "Ip_inv_r",
+        "rva": 898316,
+        "entries": 256,
+        "width_bytes": 4,
+        "sha256": "d001670c647ee992a03016a6e342750ab7f1e39de912b1e1c2c28062328067dd"
+      }
+    ],
+    "key_literal": "f;encor1c",
+    "file_executed": false,
+    "packets_captured": false,
+    "native_login_verified": false
+  },
+  "crosscheck": {
+    "source_ref": "2f736808ff4361f5429ee919b718c88fabb60346",
+    "source_blobs": {
+      "client/stoneage/wgs/descrypt.cpp": "ad1e9a3508ecc5fbce1436ddfd5dd009372d4dbf",
+      "client/stoneage/wgs/descrypt.h": "e9c5f9d13a69d90c3939dd08106b5f176eae429b",
+      "server/gmsv/descrypt.c": "2d7290371bc1907f2217242ec4745d0c49125c86",
+      "server/gmsv/include/descrypt.h": "5b9ca1326037cfd4748d2bd3fd11ff0692b678ef",
+      "client/stoneage/system/login.cpp": "987e60c4ef581cd2336ff0956400a1da47aeff20",
+      "client/stoneage/system/netproc.cpp": "0dc677d3cd367ab89ca8d5becbb383bcbbccb3a8"
+    },
+    "table_hashes": {
+      "nshifts": "844b8205d28c096e00fefc11c0b874e040a0a14ffa6c3e395c39e457483f1707",
+      "pc1": "4b2b89f8dd2b405f225218a592fa4d248afb7aa3bc19c1c681c648d2c7c8dc76",
+      "pc2_c": "c045ed4b230ede4635da41b945f1285d8d0fdd965291c8bd0c21405a3bf48777",
+      "pc2_d": "f20de024fb4b106efd85a6a22f807d8e10acfc4d43c9580cc08e9ce60fd0a776",
+      "Psboxes": "668bb69e184e0c32dc3bc488001c506c87ee5a95c7e7b6b87d24c3a6dc779956",
+      "Ip_l": "1ad702a1ced972e43d5d389b7e39bcf7b37f4ecaf1f0f49666b00d03a700c3cc",
+      "Ip_r": "d286736c26b793d619b589ca8406bdc6609df1c32c55bf849d076c9004bf855f",
+      "Ip_inv_l": "f2da95fedc5363ea65ff8f39d33d9660c44b9d8855d15f12913348edc73a39ce",
+      "Ip_inv_r": "d001670c647ee992a03016a6e342750ab7f1e39de912b1e1c2c28062328067dd"
+    },
+    "independent_oracle": "pycryptodome3.23.0",
+    "published_fixture_sha256": "e09cf65cd157cd83f3a2a551eb1cc8cbefc3c4e4bc4514033c01738611677439",
+    "published_forward_inverse_vectors_passed": 121,
+    "synthetic_32byte_storage_16byte_projection": {
+      "key_hex": "52312d6b65792121",
+      "plain_hex": "52312d66697273742d696e707574000052312d7365636f6e642d68616c662121",
+      "stored_hex": "b56f88eb6268aa0e5ef91e20b6e416da88db6392925b28632bab7d5bb3fb74a1",
+      "login_plain_hex": "52312d66697273742d696e7075740000"
+    },
+    "word_width_bits": 32,
+    "original_program_executed": false,
+    "native_login_verified": false
+  },
+  "bootstrap": {
+    "main": "d8dfff75e5b3d3c24d3818a01ee32242f1d5ca02",
+    "tree": "15990e53c16e733fcf5f49df56968f07e04aedf6"
+  },
+  "pressure": "2486=2465+18+3",
+  "limits": [
+    "Tables and bounded compiled control flow agree with independently pinned DES numeric profile; synthetic model never executes original code",
+    "No account/password/credential input, memory dump, login or server connection",
+    "32-byte UI storage versus16-byte login decode is a bounded path; no unsupported truncation rule or missing terminator behavior tested natively",
+    "Compiled descriptor receives12 and descendant source18; keyboard byte/character limit not yet recovered",
+    "Source unsigned long platform-dependent; derived model explicitly32bit, not Linux build correctness",
+    "Round-up wrapper transforms existing backing bytes; it does not define zero or PKCS padding",
+    "Publisher2005build/authenticserverpair/owner-save-drop-unique lifecycle/earlyera membership remainOPEN"
+  ]
+}
