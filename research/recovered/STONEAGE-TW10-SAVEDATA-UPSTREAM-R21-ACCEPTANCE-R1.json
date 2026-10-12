@@ -1,0 +1,50 @@
+{
+  "schema": "stoneage-tw10-savedata-upstream-r21-acceptance-r1",
+  "status": "ORIGINAL_CONDITIONAL_STATIC_INDEPENDENTLY_ACCEPTED",
+  "original_source": {
+    "branch": "agent/tw10-savedata-r21-writer-realloc-alias-20261012",
+    "head_sha": "0601a246c123eb6c390a141c7b377f3af71aaa03",
+    "run_id": 38265173589,
+    "job_id": 114865410591,
+    "conclusion": "success",
+    "archive_hash_and_runtime_savedata_identity_pinned": true,
+    "original_executed": false,
+    "original_bytes_committed": false
+  },
+  "derived_artifact": {
+    "id": 11753958380,
+    "name": "tw10-r21-original-writer-realloc-alias-derived",
+    "run_id": 38265173589,
+    "zip_digest": "sha256:eb6c03f9f832c4b35967212162c9613b8fd5806e34a7a2b365a4fb909c3190ea",
+    "json_size_bytes": 8095,
+    "json_sha256": "397569c44575dc752e5b857c1ea358528dbbbdc4089c065be91b54ca9bab1a2e"
+  },
+  "synthetic": {
+    "run_id": 38265620986,
+    "head_sha": "5c843a5af914d882a95da11ef5caf8e434a8ad15",
+    "conclusion": "success",
+    "r21_synthetic": 8,
+    "r21_guard": 15,
+    "adjacent_r20_tests": 24
+  },
+  "independent": {
+    "run_id": 38265936276,
+    "job_id": 114867976555,
+    "conclusion": "success",
+    "pinned_original_run_and_artifact": true,
+    "anti_promotion_guard": true,
+    "exact_derived_json_equality": true
+  },
+  "conditional_static_findings": [
+    "RVA0x499dc is 4-byte MOV from EAX to absolute writable virtual .data RVA0x172187c; bounded input includes unknown CALL0x499d4.",
+    "RVA0x4a0c4 resolves to imported HeapReAlloc; candidate local graph 51 nodes/54 edges; four pre-CALL PUSH candidate operands, no stack ABI position or return value.",
+    "RVA0x4a17d MOV [EAX+8], EAX retains candidate source geometry with cyclic graph; actual object owner and return effects unknown."
+  ],
+  "evidence_limits": [
+    "No actual original execution path or successful allocation observed",
+    "No heap/ABI argument slots, effective object, pointer lifetime or callee return effect admitted",
+    "Original native save format, runtime file I/O, filename/handle/buffer/length128, framing/checksum/migration remain OPEN",
+    "JSS1999 and later-version equivalence not assumed"
+  ],
+  "next": "R22: exact CALL0x499d4 identity and bounded source effects; pre-ReAlloc push/register provenance and [EAX+8] cycle-aware EAX alias/owner barriers; keep native save OPEN."
+}
