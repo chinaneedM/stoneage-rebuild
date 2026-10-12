@@ -1,0 +1,63 @@
+{
+  "schema": "STONEAGE-WAYI-SAVEDATA-LIFECYCLE-ACCEPTANCE-R1",
+  "source_commit": "bf238a74c9eaec4c7c692d821d02da40ef69ae7f",
+  "source_tree": "4aa4baaa3227aae1295b685421af235824f2b270",
+  "bootstrap_main": "49e050a1fb68d2c2553770df713cc85cd168f46e",
+  "branch_actions": [
+    {
+      "id": 38206633765,
+      "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+      "conclusion": "success"
+    },
+    {
+      "id": 38206633758,
+      "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+      "conclusion": "success"
+    },
+    {
+      "id": 38206633857,
+      "name": "Validate Wayi compiled settings lifecycle and migration IO joins",
+      "conclusion": "success"
+    }
+  ],
+  "main_actions": [
+    {
+      "id": 38206700376,
+      "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+      "conclusion": "success"
+    },
+    {
+      "id": 38206700475,
+      "name": "Validate Wayi compiled settings lifecycle and migration IO joins",
+      "conclusion": "success"
+    },
+    {
+      "id": 38206700496,
+      "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+      "conclusion": "success"
+    }
+  ],
+  "branch_job": 114671447328,
+  "main_job": 114671657787,
+  "project_tests_in_both_logs": 296,
+  "source_profile_pass_in_both_logs": true,
+  "static_windows": 9,
+  "direct_control_edges": 31,
+  "linear_sweep_skipped_bytes": 24,
+  "declared_unpacked_pe_initial_settings_zero": true,
+  "constructor_mutation_precedes_all_io": true,
+  "constructor_post_encoding_version_word": 249,
+  "save_stack_copy_preserves_global": true,
+  "short_write_close_not_attempted": true,
+  "migration_write_result_ignored": true,
+  "preamble_static_conditional_attempts_only": true,
+  "original_continuity_prefix_preserved": true,
+  "remote_tree_matches_local": true,
+  "original_program_executed": false,
+  "real_savedata_opened": false,
+  "process_api_called": false,
+  "all_indirect_writers_closed": false,
+  "authentic_publisher_hash_verified": false,
+  "pressure": "2486=2465+18+3",
+  "next": "baseline Taiwan v1.0 savedata four text address-word windows; retain indirect lifetime/framing/native pair gates"
+}
