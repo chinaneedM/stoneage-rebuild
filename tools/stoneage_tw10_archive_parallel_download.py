@@ -25,10 +25,10 @@ from tools.stoneage_tw10_archive_chunk_download import (
     USER_AGENT, ALLOWED_HOST, _verify_response, approved_source,
 )
 
-DEFAULT_WORKERS = 12
+DEFAULT_WORKERS = 16
 DEFAULT_CHUNK = 8 * 1024 * 1024
 MAX_CHUNK = 16 * 1024 * 1024
-DEFAULT_DEADLINE = 540
+DEFAULT_DEADLINE = 1500
 
 
 def ranges(size: int, chunk_size: int):
@@ -92,7 +92,7 @@ def download_parallel(url: str, output: Path, *,
                       opener=urlopen) -> dict:
     if (not (1 <= size <= ARCHIVE_SIZE)
             or not (1 <= chunk_size <= MAX_CHUNK)
-            or not (1 <= max_seconds <= 900)
+            or not (1 <= max_seconds <= 1800)
             or not (1 <= workers <= 16)):
         raise ValueError("download configuration bounds")
     _allowed_source(url)

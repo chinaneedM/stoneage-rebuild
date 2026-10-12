@@ -135,7 +135,7 @@ class ParallelArchiveTests(unittest.TestCase):
             out=Path(td)/"original.rar"
             for kwargs in (
                 {"size":ARCHIVE_SIZE+1},{"workers":17},{"workers":0},
-                {"chunk_size":17*1024*1024},{"max_seconds":901}):
+                {"chunk_size":17*1024*1024},{"max_seconds":1801}):
                 with self.subTest(kwargs=kwargs):
                     with self.assertRaisesRegex(ValueError,"bounds"):
                         download_parallel(SRC,out,**kwargs)

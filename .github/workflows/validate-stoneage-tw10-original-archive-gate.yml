@@ -18,7 +18,7 @@ permissions:
 jobs:
   original-archive-static:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 33
     steps:
       - uses: actions/checkout@v4
       - name: Validate guarded byte-range downloader with synthetic bytes
@@ -28,7 +28,7 @@ jobs:
       - name: Recover and hash-pin accepted 842 MB original archive in transient disk
         run: |
           python3 -m tools.stoneage_tw10_archive_parallel_download \
-            --deadline 540 --workers 12 --chunk 8388608 --output /tmp/CD_DIC.rar
+            --deadline 1500 --workers 16 --chunk 8388608 --output /tmp/CD_DIC.rar
       - name: Unpack accepted CD image for static evidence only
         run: |
           set -euo pipefail

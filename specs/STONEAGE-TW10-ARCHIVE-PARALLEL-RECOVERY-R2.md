@@ -34,3 +34,24 @@ Potential fallback if parallel transport remains inadequate: independently
 verify a clean directly hosted sa_3.exe/save pair or obtain byte-addressable
 publisher-preserved client media. Never weaken hash pins or conflate later
 Wayi settings with Taiwan 1.0 to make a gate pass.
+
+
+## R2 serial/parallel bounded throughput postmortem — 2026-10-12
+
+Branch run 38216336611 (SHA d34e631b75bbb9ad77d44dc0ad00ac165a43f95b)
+completed FAILURE at its 540-second original-archive deadline, after
+twenty synthetic/unit tests PASS and non-overlapping ranged fetches completed
+469762048 bytes (448 MiB) of the 842125501-byte archive. There was no
+full-file MD5/SHA1, original-client SHA256, extracted disc or R3 instruction
+report; temporary partial bytes were purged. This is a **throughput/deadline**
+failure, not an observed original client or historical rules mismatch.
+
+Estimated job throughput (completed segments / ~540s) is ~0.83 MiB/s,
+suggesting 800+MiB requires ~17 minutes at that rate, not nine minutes.
+The follow-up is deliberately bounded at 25 minutes for complete acquisition
+and 33 minutes for the entire job, with 16 independent 8MiB range workers,
+limited per-range retries, HTTPS Archive-only source/redirect constraints,
+MD5+SHA1 full-archive verification, exact embedded file SHA256 checks, no
+binary publication, and mandatory deletion. A bounded retry is now supported
+by measured transport progress; repeating short single-threaded attempts is
+not. Successful transfer still does not prove actual native runtime paths.
