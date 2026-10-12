@@ -85,3 +85,19 @@ post-CALL opaque return, and cycle-aware EAX alias at 0x4a17d.
 The original native-save persistence gate and all other system-family
 PARTIAL/OPEN states remain unchanged. Engine/content production is
 still deferred until joint review of Stage A.
+
+
+## 2026-10-12 queue supersession (R22 accepted)
+
+R22 original bounded static CALL/global/PUSH/cycle evidence is independently
+accepted with hash-pinned original-source run, derivative artifact, guard,
+negative controls and exact JSON custody. KERNEL32.dll!HeapCreate association
+does **not** close original runtime heap ownership, native persistence,
+file/handle/buffer linkage or effective write values. The original system
+family gate status remains **OPEN/PARTIAL**, unchanged.
+
+The latest CURRENT-STATE entry supersedes the earlier R21 queue. Highest
+NEXT R23: correlate HeapCreate→HeapAlloc→HeapReAlloc *candidate* global/heap
+sources with explicit CALL effects and path/stack boundaries, not an assumed
+single heap or original SaveData model. Restoration before future-game
+architecture remains binding.
