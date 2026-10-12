@@ -7,6 +7,8 @@ on:
       - .github/workflows/validate-stoneage-tw10-r21-synthetic.yml
       - tools/stoneage_tw10_savedata_upstream_r21.py
       - tests/test_stoneage_tw10_savedata_upstream_r21.py
+      - tools/stoneage_tw10_savedata_upstream_r21_guard.py
+      - tests/test_stoneage_tw10_savedata_upstream_r21_guard.py
 permissions:
   contents: read
 jobs:
@@ -19,7 +21,7 @@ jobs:
       - name: R21 synthetic boundaries and R20 regressions
         run: |
           set -euo pipefail
-          python -m unittest -v tests.test_stoneage_tw10_savedata_upstream_r21 tests.test_stoneage_tw10_savedata_upstream_r20 tests.test_stoneage_tw10_savedata_upstream_r20_guard
-          python -m compileall -q tools/stoneage_tw10_savedata_upstream_r21.py
+          python -m unittest -v tests.test_stoneage_tw10_savedata_upstream_r21 tests.test_stoneage_tw10_savedata_upstream_r21_guard tests.test_stoneage_tw10_savedata_upstream_r20 tests.test_stoneage_tw10_savedata_upstream_r20_guard
+          python -m compileall -q tools/stoneage_tw10_savedata_upstream_r21.py tools/stoneage_tw10_savedata_upstream_r21_guard.py
           echo TW10_R21_SYNTHETIC=PASS
           echo TW10_R21_ORIGINAL=OPEN
