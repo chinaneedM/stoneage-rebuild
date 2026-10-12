@@ -1,0 +1,30 @@
+name: Validate TW1.0 R5 callsite surface synthetic-only
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - agent/tw10-savedata-callsite-r5-20261012
+    paths:
+      - tools/stoneage_tw10_savedata_callsite_r5.py
+      - tests/test_stoneage_tw10_savedata_callsite_r5.py
+      - .github/workflows/validate-stoneage-tw10-callsite-r5-synthetic.yml
+
+permissions:
+  contents: read
+
+jobs:
+  synthetic:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install static parser dependencies
+        run: pip install --quiet capstone pefile
+      - name: Exercise bounded graph and file API neighborhood tests
+        run: python3 -m unittest tests.test_stoneage_tw10_savedata_callsite_r5 -v
+      - name: Explicit original-runtime boundary
+        run: |
+          echo 'TW10_R5_SYNTHETIC_CALLSITE=PASS'
+          echo 'TW10_R5_ORIGINAL_EXECUTABLE_NOT_READ=TRUE'
+          echo 'TW10_R5_NATIVE_SAVEDATA_IO=OPEN'
