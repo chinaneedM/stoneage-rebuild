@@ -6,14 +6,14 @@ and no state cap. This tool alone admits no historical helper or native IO.
 """
 from collections import deque,Counter
 from capstone import CS_GRP_CALL,CS_GRP_JUMP,CS_GRP_RET
-from capstone.x86 import X86_REG_EAX,X86_REG_EBX,X86_REG_ECX,X86_REG_EDX,X86_REG_ESI,X86_REG_EDI,X86_REG_EBP,X86_REG_ESP,X86_OP_IMM
-from tools.stoneage_tw10_savedata_argtrace_r7 import State,step,stack,MAX_STATES
+from capstone.x86 import X86_REG_EAX,X86_REG_EBX,X86_REG_ECX,X86_REG_EDX,X86_REG_ESI,X86_REG_EDI,X86_REG_EBP,X86_REG_ESP,X86_OP_IMM,X86_OP_MEM
+from tools.stoneage_tw10_savedata_argtrace_r7 import State,step,stack,address,MAX_STATES
 from tools.stoneage_tw10_savedata_dataflow_r6 import direct_target
 REGISTERS=(X86_REG_EAX,X86_REG_EBX,X86_REG_ECX,X86_REG_EDX,X86_REG_ESI,X86_REG_EDI,X86_REG_EBP)
 RETURN_WORD=('return_word',0)
 MAX_RETURNS=32
 GAPS={'outside_text','decode_gap','unsummarized_call','indirect_jump','terminal',
-      'unsupported_return','unsupported_stack','unsupported_memory','alias_write'}
+      'unsupported_return','unsupported_stack','unsupported_memory','alias_write','caller_memory_write'}
 
 def summarize(dec,root,max_states=MAX_STATES):
     if type(max_states) is not int or not 1<=max_states<=MAX_STATES: raise ValueError('state bound')
@@ -47,6 +47,17 @@ def summarize(dec,root,max_states=MAX_STATES):
             enqueue(key,target,branch.clone())
             if ins.mnemonic not in ('jmp','ljmp'):enqueue(key,rva+ins.size,branch.clone())
             continue
+        # Relative addresses >=4 belong to the caller argument/frame region.
+        # A register/return-only summary cannot silently omit mutations there.
+        caller_write=False
+        for op in ins.operands:
+            if op.type==X86_OP_MEM and op.access & 2:
+                pos=address(op,s)
+                if pos is not None and pos+op.size>4: caller_write=True
+        if ins.mnemonic=='push' and stack(s) is not None and stack(s)>4:
+            caller_write=True
+        if caller_write:
+            gaps['caller_memory_write']+=1;continue
         n,gap=step(ins,s,None)
         if gap:gaps[gap]+=1
         else:enqueue(key,rva+ins.size,n)

@@ -18,7 +18,8 @@ no state/return cap, no reachable state-graph cycle, zero pre-RET stack delta,
 preserved return word on every return path and identical RET cleanup bytes.
 All branch outcomes are conditional; common preserved registers are the
 intersection over return paths. Unknown CALLs, indirect tail jumps, alias
-stores, unmodeled memory, far returns, traps and system/port transfers prevent
+stores, writes overlapping the caller region at entry ESP+4 or above,
+unmodeled memory, far returns, traps and system/port transfers prevent
 qualification. A possible terminating branch does not close a looping branch.
 
 At most2048 states/32 unique return summaries. Qualification describes the

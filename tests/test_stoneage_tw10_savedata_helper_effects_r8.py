@@ -19,6 +19,12 @@ class TestHelperEffects(unittest.TestCase):
         r=run(b'\xc7\x04\x24\x00\x00\x00\x00\xc3');self.assertFalse(r['qualifies_modeled_return_effect_summary']);self.assertFalse(r['return_paths'][0]['return_word_preserved'])
     def test_displaced_return_stack_rejects(self):
         r=run(b'\x50\xc3');self.assertFalse(r['qualifies_modeled_return_effect_summary']);self.assertEqual(r['return_paths'][0]['pre_ret_stack_delta'],-4)
+    def test_caller_argument_write_blocks_summary(self):
+        r=run(b'\x89\x44\x24\x04\xc3');self.assertEqual(r['gaps'],{'caller_memory_write':1});self.assertFalse(r['qualifies_modeled_return_effect_summary'])
+    def test_push_into_caller_region_blocks_summary(self):
+        r=run(b'\x83\xc4\x0c\x50\x83\xec\x08\xc3');self.assertEqual(r['gaps'],{'caller_memory_write':1})
+    def test_caller_argument_read_is_unknown_register_value(self):
+        r=run(b'\x8b\x44\x24\x04\xc3');self.assertTrue(r['qualifies_modeled_return_effect_summary']);self.assertNotIn('eax',r['common_preserved_registers'])
     def test_stdcall_cleanup_reported(self):
         r=run(b'\xc2\x08\x00');self.assertTrue(r['qualifies_modeled_return_effect_summary']);self.assertEqual(r['uniform_ret_cleanup_bytes'],8)
     def test_nonuniform_cleanup_rejects(self):

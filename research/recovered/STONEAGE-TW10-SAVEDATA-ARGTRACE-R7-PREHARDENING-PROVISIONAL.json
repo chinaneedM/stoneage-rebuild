@@ -1,0 +1,101 @@
+{
+  "schema": "tw10-r7-prehardening-original-run-provisional",
+  "source_commit": "cf4d3cc07f333b57c4e4f96174d2b8c360f9e165",
+  "source_run": 38226775676,
+  "source_job": 114736106881,
+  "artifact_id": 11736099507,
+  "status": "SUPERSEDED_ANALYZER_OUTPUT_NOT_ACCEPTED_R7_ARGUMENT_EVIDENCE",
+  "latest_analyzer_original_validation_required": true,
+  "report": {
+    "actual_path_feasibility_proven": false,
+    "complete_filename_api_link_proven": false,
+    "fixed_128_byte_schema_proven": false,
+    "handle_buffer_size_link_proven": false,
+    "native_io_executed": false,
+    "original_bytes_published": false,
+    "runtime_sha256": "cdab9ea049a98bbc96ce93eeaa8b63c688f0c0f0ad8b3183e79d75e47621441a",
+    "savedata_sha256": "5b26f54a9723cd2c5275f964457094fdf1fc33ca086cdaf55bb5350dfb04f3f9",
+    "schema": "tw10-savedata-r7-conditional-filename-prefix",
+    "seed": "FOUR_R6_PHYSICAL_STACK_SLOT0_DIRECT_CALLS_ENTER_WITH_FILENAME_AT_ESP_PLUS4",
+    "seed_callee_rva": 296890,
+    "status": "STATIC_PREFIX_ARGUMENT_CANDIDATES_NATIVE_IO_OPEN",
+    "trace": {
+      "CreateFileA_filename_slot0_candidate": false,
+      "api_candidates": [],
+      "calls": [
+        {
+          "depth": 1,
+          "filename_stack_slots": [
+            1,
+            5
+          ],
+          "rva": 296858,
+          "target_rva": 309412
+        },
+        {
+          "depth": 0,
+          "filename_stack_slots": [
+            0,
+            4
+          ],
+          "rva": 296900,
+          "target_rva": 296858
+        },
+        {
+          "depth": 3,
+          "filename_stack_slots": [
+            10,
+            14
+          ],
+          "rva": 299417,
+          "target_rva": 299425
+        },
+        {
+          "depth": 4,
+          "filename_stack_slots": [
+            12
+          ],
+          "rva": 299436,
+          "target_rva": 299469
+        },
+        {
+          "depth": 5,
+          "filename_stack_slots": [
+            15
+          ],
+          "rva": 299483,
+          "target_rva": 302483
+        },
+        {
+          "depth": 6,
+          "filename_stack_slots": [],
+          "rva": 302687,
+          "target_rva": 303260
+        },
+        {
+          "depth": 6,
+          "filename_stack_slots": [],
+          "rva": 302702,
+          "target_rva": 303437
+        },
+        {
+          "depth": 2,
+          "filename_stack_slots": [
+            7,
+            11
+          ],
+          "rva": 309474,
+          "target_rva": 299407
+        }
+      ],
+      "gaps": {
+        "alias_write": 3,
+        "call_return_summary_missing": 9,
+        "depth_limit": 2,
+        "return": 2
+      },
+      "state_limit_hit": false,
+      "visited_states": 149
+    }
+  }
+}
