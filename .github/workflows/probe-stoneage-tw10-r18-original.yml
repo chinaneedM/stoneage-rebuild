@@ -1,0 +1,65 @@
+name: Probe TW1.0 original R18 pinned call, global and CFG frontiers
+on:
+  workflow_dispatch:
+  push:
+    branches: [agent/tw10-savedata-r18-upstream-frontier-20261012]
+    paths:
+      - .github/workflows/probe-stoneage-tw10-r18-original.yml
+      - tools/stoneage_tw10_savedata_upstream_r18.py
+      - tests/test_stoneage_tw10_savedata_upstream_r18.py
+permissions:
+  contents: read
+jobs:
+  original:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - name: R18 and adjacent source synthetic controls
+        run: |
+          set -euo pipefail
+          pip install --quiet capstone pefile
+          python -m unittest -v tests.test_stoneage_tw10_savedata_upstream_r18 tests.test_stoneage_tw10_savedata_write_shapes_r17
+      - name: Recover pinned original archive transiently
+        run: |
+          set -euo pipefail
+          python -m tools.stoneage_tw10_archive_parallel_download --deadline 1500 --workers 16 --chunk 8388608 --output /tmp/CD_DIC.rar
+      - name: Extract original BIN into temporary analysis-only directory
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq 7zip
+          mkdir -p /tmp/stoneage-r18
+          7z x -y -o/tmp/stoneage-r18 /tmp/CD_DIC.rar STONEAGE.bin >/dev/null
+          test "$(stat -c %s /tmp/stoneage-r18/STONEAGE.bin)" -eq 523449360
+      - name: Produce original-derived bounded metadata without executing original
+        run: |
+          set -euo pipefail
+          python -m tools.stoneage_tw10_savedata_upstream_r18 --bin /tmp/stoneage-r18/STONEAGE.bin > /tmp/stoneage-r18-derived.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from tools.stoneage_tw10_savedata_upstream_r18 import SCHEMA,STATUS,FLAGS,SECOND_GLOBAL,EAX_CALL,EBX_WRITE
+          p=Path('/tmp/stoneage-r18-derived.json')
+          d=json.loads(p.read_text())
+          assert p.stat().st_size <= 70000
+          assert d['schema']==SCHEMA and d['status']==STATUS
+          assert d['original_static_only'] and d['r17_original_identity_revalidated']
+          assert d['eax_call_barrier']['call_site_rva']==EAX_CALL
+          assert d['secondary_global']['global_reference_candidates']['globals'][0]['global_rva']==SECOND_GLOBAL
+          assert d['ebx_graph']['write_site_rva']==EBX_WRITE
+          assert all(d[x] is False for x in FLAGS)
+          assert not d['eax_call_barrier']['callee_summary_admitted']
+          print('TW10_R18_ORIGINAL_STATIC_FRONTIER_ONLY=PASS')
+          print('TW10_R18_NATIVE_SAVE_RUNTIME=OPEN')
+          PY
+      - name: Always purge original historical bytes
+        if: always()
+        run: rm -rf /tmp/CD_DIC.rar /tmp/stoneage-r18
+      - name: Publish derived-only R18 evidence
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: tw10-r18-original-upstream-derived
+          path: /tmp/stoneage-r18-derived.json
+          retention-days: 21

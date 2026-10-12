@@ -1,0 +1,25 @@
+name: Validate TW1.0 R18 bounded upstream synthetic
+on:
+  workflow_dispatch:
+  push:
+    branches: [main, agent/tw10-savedata-r18-upstream-frontier-20261012]
+    paths:
+      - .github/workflows/validate-stoneage-tw10-r18-synthetic.yml
+      - tools/stoneage_tw10_savedata_upstream_r18.py
+      - tests/test_stoneage_tw10_savedata_upstream_r18.py
+permissions:
+  contents: read
+jobs:
+  synthetic:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Test scoped R18 and adjacent R17 with immutable syntax-only models
+        run: |
+          set -euo pipefail
+          pip install --quiet capstone pefile
+          python -m unittest -v tests.test_stoneage_tw10_savedata_upstream_r18 tests.test_stoneage_tw10_savedata_write_shapes_r17 tests.test_stoneage_tw10_savedata_write_shapes_r17_guard
+          python -m compileall -q tools/stoneage_tw10_savedata_upstream_r18.py
+          echo TW10_R18_SYNTHETIC=PASS
+          echo TW10_R18_ORIGINAL_ADMISSION=OPEN
