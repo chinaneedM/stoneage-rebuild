@@ -1,0 +1,64 @@
+name: Probe TW1.0 original R19 HeapAlloc and second global write frontiers
+on:
+  workflow_dispatch:
+  push:
+    branches: [agent/tw10-savedata-r19-write-heap-20261012]
+    paths:
+      - .github/workflows/probe-stoneage-tw10-r19-original.yml
+      - tools/stoneage_tw10_savedata_upstream_r19.py
+      - tests/test_stoneage_tw10_savedata_upstream_r19.py
+permissions:
+  contents: read
+jobs:
+  original:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate R19 synthetic and adjacent R18 controls
+        run: |
+          set -euo pipefail
+          pip install --quiet capstone pefile
+          python -m unittest -v tests.test_stoneage_tw10_savedata_upstream_r19 tests.test_stoneage_tw10_savedata_upstream_r18
+      - name: Recover pinned historical archive transiently
+        run: |
+          set -euo pipefail
+          python -m tools.stoneage_tw10_archive_parallel_download --deadline 1500 --workers 16 --chunk 8388608 --output /tmp/CD_DIC.rar
+      - name: Extract temporary original disc image
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq 7zip
+          mkdir -p /tmp/stoneage-r19
+          7z x -y -o/tmp/stoneage-r19 /tmp/CD_DIC.rar STONEAGE.bin >/dev/null
+          test "$(stat -c %s /tmp/stoneage-r19/STONEAGE.bin)" -eq 523449360
+      - name: Emit strictly static original-derived R19 metadata
+        run: |
+          set -euo pipefail
+          python -m tools.stoneage_tw10_savedata_upstream_r19 --bin /tmp/stoneage-r19/STONEAGE.bin > /tmp/stoneage-r19-derived.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from tools.stoneage_tw10_savedata_upstream_r19 import SCHEMA,STATUS,WRITES,FLAGS
+          p=Path('/tmp/stoneage-r19-derived.json')
+          d=json.loads(p.read_text())
+          assert p.stat().st_size<=70000
+          assert d['schema']==SCHEMA and d['status']==STATUS
+          assert d['r18_original_identity_revalidated'] and d['conditional_static_only']
+          assert [x['site_rva'] for x in d['second_global_writes']]==list(WRITES)
+          assert all(d[f] is False for f in FLAGS)
+          assert not d['heapalloc']['return_pointer_proven']
+          assert not d['ebx_call']['caller_resume_admitted']
+          print('TW10_R19_ORIGINAL_STATIC_FRONTIERS_ONLY=PASS')
+          print('TW10_R19_NATIVE_SAVE_OPEN')
+          PY
+      - name: Always remove historical originals
+        if: always()
+        run: rm -rf /tmp/CD_DIC.rar /tmp/stoneage-r19
+      - name: Publish derived-only R19 metadata
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: tw10-r19-original-write-heap-derived
+          path: /tmp/stoneage-r19-derived.json
+          retention-days: 21
