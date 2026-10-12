@@ -1,0 +1,77 @@
+{
+  "caller_resumption_admitted": false,
+  "filename_api_link_proven": false,
+  "fixed_128_byte_schema_proven": false,
+  "handle_buffer_size_link_proven": false,
+  "helper": {
+    "common_preserved_registers": [
+      "ebp",
+      "ebx",
+      "edi",
+      "esi"
+    ],
+    "control_flow_cycle": true,
+    "gap_sites": [
+      {
+        "direct_target_rva": 299407,
+        "occurrences": 1,
+        "reason": "unsummarized_call",
+        "rva": 309474
+      },
+      {
+        "direct_target_rva": null,
+        "occurrences": 1,
+        "reason": "alias_write",
+        "rva": 309507
+      }
+    ],
+    "gaps": {
+      "alias_write": 1,
+      "unsummarized_call": 1
+    },
+    "native_io_executed": false,
+    "original_helper_accepted": false,
+    "qualifies_modeled_return_effect_summary": false,
+    "return_paths": [
+      {
+        "pre_ret_stack_delta": 0,
+        "preserved_registers": [
+          "ebx",
+          "ecx",
+          "esi",
+          "edi",
+          "ebp"
+        ],
+        "ret_cleanup_bytes": 0,
+        "return_word_preserved": true,
+        "rva": 309531
+      },
+      {
+        "pre_ret_stack_delta": 0,
+        "preserved_registers": [
+          "ebx",
+          "esi",
+          "edi",
+          "ebp"
+        ],
+        "ret_cleanup_bytes": 0,
+        "return_word_preserved": true,
+        "rva": 309531
+      }
+    ],
+    "root_rva": 309412,
+    "schema": "tw10-r8-bounded-helper-return-effects",
+    "state_limit_hit": false,
+    "uniform_ret_cleanup_bytes": 0,
+    "visited_states": 44
+  },
+  "historical_helper_effect_summary_accepted": false,
+  "native_io_executed": false,
+  "original_bytes_published": false,
+  "r7_caller_rva": 296858,
+  "r7_verified_trace_states": 136,
+  "runtime_sha256": "cdab9ea049a98bbc96ce93eeaa8b63c688f0c0f0ad8b3183e79d75e47621441a",
+  "savedata_sha256": "5b26f54a9723cd2c5275f964457094fdf1fc33ca086cdaf55bb5350dfb04f3f9",
+  "schema": "tw10-r8-original-bounded-helper-effects",
+  "status": "PINNED_ORIGINAL_STATIC_HELPER_EFFECTS_NOT_NATIVE_IO"
+}

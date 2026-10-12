@@ -1,0 +1,66 @@
+name: Independently verify TW1.0 R8 original-derived helper evidence
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - agent/tw10-savedata-helper-original-r8-20261012
+    paths:
+      - .github/workflows/verify-stoneage-tw10-helper-r8-original.yml
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  verify-pinned-derived:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify immutable original source run and branch commit
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          identity="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/38231508976" --jq '[.status,.conclusion,.head_sha,.head_branch] | join("|")')"
+          test "$identity" = 'completed|success|575023511998fc4dcba61924504993be0e91fbbe|agent/tw10-savedata-helper-original-r8-20261012'
+          echo 'TW10_R8_ORIGINAL_SOURCE_CUSTODY=PASS'
+      - name: Retrieve only the original run's tiny derived JSON artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/tw10-r8-review
+          gh run download 38231508976 --repo "$GITHUB_REPOSITORY" --name tw10-original-helper-r8-derived --dir /tmp/tw10-r8-review
+          test "$(find /tmp/tw10-r8-review -type f | wc -l)" -eq 1
+          test -f /tmp/tw10-r8-review/stoneage-r8-report.json
+          test ! -L /tmp/tw10-r8-review/stoneage-r8-report.json
+          test "$(stat -c %s /tmp/tw10-r8-review/stoneage-r8-report.json)" -le 24000
+      - name: Strict original R8 report validation and bounded expected metrics
+        run: |
+          set -euo pipefail
+          pip install --quiet capstone pefile
+          python3 -m tools.stoneage_tw10_savedata_helper_original_r8_guard --report /tmp/tw10-r8-review/stoneage-r8-report.json | tee /tmp/tw10-r8-summary.json
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          v=json.loads(Path('/tmp/tw10-r8-summary.json').read_text())
+          assert v['states']==44 and v['gap_sites']==2 and v['return_paths']==2
+          assert v['qualifies_modeled_summary'] is False
+          assert v['original_helper_resumption_admitted'] is False and v['native_io_executed'] is False
+          actual=json.loads(Path('/tmp/tw10-r8-review/stoneage-r8-report.json').read_text())
+          pinned=json.loads(Path('research/recovered/STONEAGE-TW10-SAVEDATA-HELPER-R8-ORIGINAL.json').read_text())
+          assert actual==pinned
+          h=actual['helper']
+          assert h['state_limit_hit'] is False and h['control_flow_cycle'] is True
+          assert h['gaps']=={'alias_write':1,'unsummarized_call':1}
+          assert h['common_preserved_registers']==['ebp','ebx','edi','esi']
+          assert h['uniform_ret_cleanup_bytes']==0
+          print('TW10_R8_DERIVED_CUSTODY_AND_PRECISE_HELPER_STOPS=PASS')
+          print('TW10_R8_CALLER_RESUMPTION_AND_NATIVE_SAVE_IO=OPEN')
+          PY
+      - name: Purge downloaded derived JSON
+        if: always()
+        run: rm -rf /tmp/tw10-r8-review /tmp/tw10-r8-summary.json
