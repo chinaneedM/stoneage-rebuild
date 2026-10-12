@@ -1,0 +1,33 @@
+{
+  "schema": "stoneage-tw10-savedata-r3-guard-canonical-r2-acceptance-r1",
+  "status": "ACCEPTED_DERIVED_GRAMMAR_ONLY",
+  "branch": "agent/tw10-r3-guard-canonical-r2-20261012",
+  "source_commit": "abf70446e0dd8f2141babe5de1f030a9770e2dd2",
+  "source_tree": "f07a4faf61f901aa767ff1ffefcd950e28a8d6c6",
+  "branch_ci": {
+    "id": 38218339270,
+    "conclusion": "success",
+    "tests": 18
+  },
+  "main_ci": {
+    "id": 38218419412,
+    "conclusion": "success",
+    "job": 114708530426,
+    "tests": 18
+  },
+  "accepted": [
+    "exact non-runtime boundary and row ordering",
+    "pinned file API allowlist and duplicate row rejection",
+    "bounded linear overlap, x86 candidate and forward API counts",
+    "synthetic negative and positive guards"
+  ],
+  "original_archive_hash_verified": false,
+  "original_executable_instruction_contexts_verified": false,
+  "native_io_semantics_admitted": false,
+  "original_gate": {
+    "id": 38217343564,
+    "status_at_receipt": "in_progress",
+    "accepted": false
+  },
+  "original_payload_published": false
+}

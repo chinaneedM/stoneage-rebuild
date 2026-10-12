@@ -2742,3 +2742,8 @@ CI Actions38214519509 (13 tests) and38214719068 SUCCESS. Archive.org metadata fi
 ## 2026-10-12 — TW1.0 original archive acquisition deadline experiments (not 2000-era gameplay evidence)
 
 Previously verified archive catalog and correctly routed range transport were tested for full original retrieval. Serial CI38215067915 completed 128 MiB/803 MiB and parallel CI38216336611 completed 448 MiB/803 MiB by separate 540-second limits; both ended FAILURE/timeout, without full original MD5/SHA1 or extracted sa_3.exe and savedata.dat SHA256. All transient proprietary partials deleted. This only describes 2026 network availability and transfer speed; no implication for original Waei/JSS runtime semantics. Twenty-test parallel R2 revised gated attempt CI38217343564 pending at this checkpoint; original four savedata .text word instruction contexts and native read/write behavior remain OPEN.
+
+
+## 2026-10-12 — TW1.0 savedata R3 derived-report emitter grammar R2 validation
+
+FACT/PROCESS, not original-game history: exact-pinned four-address-word static-analysis report parser tightened to require full non-runtime caveat, original row order, valid file-API names, bounded x86 candidate windows and duplicate-free API summaries. Branch CI38218339270 and independently main CI38218419412 both SUCCESS; main job114708530426 confirms 18 tests/OK. No original archive/executable run in this workflow; native TW1.0 instruction reachability, savedata.dat storage semantics and data framing remain OPEN. Source and technical scope: specs/STONEAGE-TW10-SAVEDATA-R3-REPORT-GUARD-R1.md and research/recovered/STONEAGE-TW10-SAVEDATA-R3-GUARD-CANONICAL-R2-ACCEPTANCE-R1.json.
