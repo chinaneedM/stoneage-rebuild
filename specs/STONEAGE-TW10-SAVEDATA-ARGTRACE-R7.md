@@ -8,7 +8,9 @@ R7 tracks exact four-byte copies among full registers, ESP/EBP-relative cells,
 LEA stack addresses, PUSH/POP and simple frame arithmetic. Partial register
 writes remove the full-register label; overlapping stores remove affected
 cells. Unknown aliases/stack effects stop the path. Unsupported/global reads
-produce unknown values rather than guessed filename provenance. Imported
+produce unknown values rather than guessed filename provenance. Unmodeled
+memory instructions stop, except read-only CMP/TEST; Capstone x87 store access
+bits can be incorrect and are never alone treated as a non-write proof. Imported
 transfers require an absolute, unsegmented, four-byte IAT memory operand.
 
 Direct calls enter their callee with a fresh return word and the current

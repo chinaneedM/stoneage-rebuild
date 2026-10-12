@@ -40,6 +40,11 @@ class TestR7(unittest.TestCase):
         d=Decoder(PROLOG+b'\xc9',RVA,BASE); s=State()
         for pos in (RVA,RVA+1,RVA+3): s,gap=step(d.at(pos),s,NAME); self.assertIsNone(gap)
         self.assertEqual(s.regs[__import__('capstone.x86',fromlist=['X86_REG_ESP']).X86_REG_ESP],('stack',0))
+    def test_x87_store_access_metadata_does_not_preserve_filename(self):
+        r=run(b'\xd9\x5c\x24\x04'+b'\xff\x74\x24\x04'+API)
+        self.assertEqual(r['gaps'],{'unsupported_memory':1});self.assertEqual(r['api_candidates'],[])
+    def test_string_store_stops(self):
+        r=run(b'\xab'+API);self.assertEqual(r['gaps'],{'alias_write':1})
     def test_unknown_indirect_call(self):
         r=run(b'\xff\xd0\xc3'); self.assertEqual(r['gaps']['unresolved_transfer'],1)
     def test_tail_import_jump_skips_return_address(self):

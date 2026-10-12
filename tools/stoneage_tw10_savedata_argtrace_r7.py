@@ -138,6 +138,10 @@ def step(ins,state,target_va):
                     'esi':{'esi','si'},'edi':{'edi','di'},'ebp':{'ebp','bp'},'esp':{'esp','sp'}}
             if rn==kn or rn in family.get(kn,set()): s.regs.pop(known,None)
     if any(o.type==X86_OP_MEM and o.access & 2 for o in ops): return None,'alias_write'
+    # Some x87 stores are labeled READ by Capstone; access bits alone are not
+    # a reliable non-write proof. Only CMP/TEST are allowed unmodeled memory.
+    if any(o.type==X86_OP_MEM for o in ops) and name not in ('cmp','test'):
+        return None,'unsupported_memory'
     if stack(s) is None: return None,'unsupported_stack'
     return s,None
 
