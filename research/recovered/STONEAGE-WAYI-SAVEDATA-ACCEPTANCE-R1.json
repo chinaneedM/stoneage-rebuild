@@ -1,0 +1,59 @@
+{
+  "schema": "STONEAGE-WAYI-SAVEDATA-ACCEPTANCE-R1",
+  "source_commit": "8a81c398b094c187f514be7aa1099c3ec2008ee9",
+  "source_tree": "233e7dcbdf195dc7f9e14cf4a6d2a13ac1d30186",
+  "bootstrap_main": "99882d72b066de424f3705af77f57ea34f6355f5",
+  "branch_actions": [
+    {
+      "id": 38205460052,
+      "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+      "conclusion": "success"
+    },
+    {
+      "id": 38205460094,
+      "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+      "conclusion": "success"
+    },
+    {
+      "id": 38205460165,
+      "name": "Validate Wayi compiled settings load, codec and migrations",
+      "conclusion": "success"
+    }
+  ],
+  "main_actions": [
+    {
+      "id": 38205540227,
+      "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+      "conclusion": "success"
+    },
+    {
+      "id": 38205540214,
+      "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+      "conclusion": "success"
+    },
+    {
+      "id": 38205540220,
+      "name": "Validate Wayi compiled settings load, codec and migrations",
+      "conclusion": "success"
+    }
+  ],
+  "branch_job": 114667845663,
+  "main_job": 114668092376,
+  "project_tests_in_both_logs": 262,
+  "source_profile_pass_in_both_logs": true,
+  "static_windows": 16,
+  "direct_backing_references": 44,
+  "synthetic_vectors": 6,
+  "original_load_no_remove_or_recursion": true,
+  "migration_write_return_ignored": true,
+  "v4_untouched_tail_uses_prior_backing": true,
+  "constructor_global_mutation_after_factory_defaults": true,
+  "original_bgm_full_byte": true,
+  "original_continuity_prefix_preserved": true,
+  "remote_tree_matches_local": true,
+  "original_program_executed": false,
+  "real_savedata_opened": false,
+  "matching_original_operator_server": false,
+  "pressure": "2486=2465+18+3",
+  "next": "initial/indirect settings backing lifecycle, save preamble/migration IO effects, baseline TW1.0 savedata indirection, full framing/checksum profiles"
+}
