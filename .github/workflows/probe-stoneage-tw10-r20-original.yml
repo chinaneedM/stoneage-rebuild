@@ -23,7 +23,21 @@ jobs:
       - name: Transient historical pinned-archive retrieval
         run: |
           set -euo pipefail
-          python -m tools.stoneage_tw10_archive_parallel_download --deadline 1500 --workers 16 --chunk 8388608 --output /tmp/CD_DIC.rar
+          # The preservation catalog may be temporarily unreachable.
+          # Every attempt still performs the original metadata, range and
+          # whole-file MD5/SHA1 checks. No hash/identity bypass is permitted.
+          for attempt in 1 2 3; do
+            if python -m tools.stoneage_tw10_archive_parallel_download --deadline 1500 --workers 16 --chunk 8388608 --output /tmp/CD_DIC.rar; then
+              echo "TW10_R20_ARCHIVE_PINNED_VERIFIED=PASS"
+              break
+            fi
+            rm -f /tmp/CD_DIC.rar
+            if [ "$attempt" -eq 3 ]; then
+              echo "TW10_R20_ARCHIVE_SOURCE_UNAVAILABLE=OPEN"
+              exit 1
+            fi
+            sleep 10
+          done
       - name: Extract temporary verified original BIN only
         run: |
           set -euo pipefail
