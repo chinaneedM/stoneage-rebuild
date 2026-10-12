@@ -1,0 +1,295 @@
+{
+  "call_identity": {
+    "call_rva": 299515,
+    "direct_target_rva": null,
+    "import_identity": {
+      "dll": "KERNEL32.dll",
+      "iat_rva": 336120,
+      "name": "HeapAlloc"
+    },
+    "import_slot_association_proven": true,
+    "kind": "memory_indirect",
+    "memory_target": {
+      "base_register": null,
+      "displacement_region": {
+        "displacement_rva": 336120,
+        "raw_backed": true,
+        "section": ".rdata",
+        "writable": false
+      },
+      "index_register": null,
+      "index_scale": 1,
+      "relative_field_offset": null,
+      "segment_register": null,
+      "width_bytes": 4
+    },
+    "register_target": null,
+    "runtime_target_or_effects_proven": false
+  },
+  "caller_resumption_admitted": false,
+  "delegate_effects_admitted": false,
+  "delegate_helper": {
+    "common_preserved_registers": [],
+    "control_flow_cycle": false,
+    "gap_sites": [
+      {
+        "direct_target_rva": null,
+        "occurrences": 1,
+        "reason": "alias_write",
+        "rva": 302538
+      },
+      {
+        "direct_target_rva": null,
+        "occurrences": 1,
+        "reason": "caller_memory_write",
+        "rva": 302572
+      }
+    ],
+    "gaps": {
+      "alias_write": 1,
+      "caller_memory_write": 1
+    },
+    "native_io_executed": false,
+    "original_helper_accepted": false,
+    "qualifies_modeled_return_effect_summary": false,
+    "return_paths": [],
+    "root_rva": 302483,
+    "schema": "tw10-r8-bounded-helper-return-effects",
+    "state_limit_hit": false,
+    "uniform_ret_cleanup_bytes": null,
+    "visited_states": 32
+  },
+  "effective_object_proven": false,
+  "filename_api_link_proven": false,
+  "fixed_128_byte_schema_proven": false,
+  "global_initialization_proven": false,
+  "global_references": {
+    "all_indirect_references_covered": false,
+    "decode_gap_bytes": 8,
+    "decoded_instructions": 104229,
+    "globals": [
+      {
+        "counts": {
+          "address_candidate": 0,
+          "read_candidate": 8,
+          "unknown_candidate": 0,
+          "write_candidate": 2
+        },
+        "global_rva": 24254596,
+        "runtime_initialization_proven": false,
+        "samples": [
+          {
+            "kind": "write_candidate",
+            "rva": 300106
+          },
+          {
+            "kind": "write_candidate",
+            "rva": 300131
+          },
+          {
+            "kind": "read_candidate",
+            "rva": 300156
+          },
+          {
+            "kind": "read_candidate",
+            "rva": 304845
+          },
+          {
+            "kind": "read_candidate",
+            "rva": 309432
+          },
+          {
+            "kind": "read_candidate",
+            "rva": 309480
+          },
+          {
+            "kind": "read_candidate",
+            "rva": 309489
+          },
+          {
+            "kind": "read_candidate",
+            "rva": 317419
+          },
+          {
+            "kind": "read_candidate",
+            "rva": 317455
+          },
+          {
+            "kind": "read_candidate",
+            "rva": 317468
+          }
+        ],
+        "samples_truncated": false
+      },
+      {
+        "counts": {
+          "address_candidate": 0,
+          "read_candidate": 6,
+          "unknown_candidate": 0,
+          "write_candidate": 2
+        },
+        "global_rva": 24258720,
+        "runtime_initialization_proven": false,
+        "samples": [
+          {
+            "kind": "read_candidate",
+            "rva": 300066
+          },
+          {
+            "kind": "write_candidate",
+            "rva": 300092
+          },
+          {
+            "kind": "write_candidate",
+            "rva": 300119
+          },
+          {
+            "kind": "read_candidate",
+            "rva": 304837
+          },
+          {
+            "kind": "read_candidate",
+            "rva": 304914
+          },
+          {
+            "kind": "read_candidate",
+            "rva": 309412
+          },
+          {
+            "kind": "read_candidate",
+            "rva": 317411
+          },
+          {
+            "kind": "read_candidate",
+            "rva": 317479
+          }
+        ],
+        "samples_truncated": false
+      }
+    ],
+    "scope": "linear_text_decode_candidates_not_reachable_execution",
+    "text_bytes": 331776
+  },
+  "handle_buffer_size_link_proven": false,
+  "indirect_call_effects_admitted": false,
+  "input_queries": [
+    {
+      "reaching_sources": [
+        {
+          "origin": "unknown_call",
+          "rva": 309474,
+          "semantic": null
+        }
+      ],
+      "register": "edi",
+      "site_rva": 309494,
+      "value_fully_known": false
+    },
+    {
+      "reaching_sources": [
+        {
+          "origin": "definition",
+          "rva": 309489,
+          "semantic": {
+            "constant": null,
+            "kind": "memory_load",
+            "memory_input": {
+              "base_register": null,
+              "displacement_region": {
+                "displacement_rva": 24254596,
+                "raw_backed": false,
+                "section": ".data",
+                "writable": true
+              },
+              "index_register": null,
+              "index_scale": 1,
+              "relative_field_offset": null,
+              "segment_register": null,
+              "width_bytes": 4
+            },
+            "register_inputs": [],
+            "width_bits": 32
+          }
+        }
+      ],
+      "register": "eax",
+      "site_rva": 309494,
+      "value_fully_known": false
+    },
+    {
+      "reaching_sources": [
+        {
+          "origin": "definition",
+          "rva": 309438,
+          "semantic": {
+            "constant": null,
+            "kind": "register_copy",
+            "memory_input": null,
+            "register_inputs": [
+              "ebx"
+            ],
+            "width_bits": 32
+          }
+        },
+        {
+          "origin": "definition",
+          "rva": 309453,
+          "semantic": {
+            "constant": 4,
+            "kind": "register_offset_adjustment",
+            "memory_input": null,
+            "register_inputs": [
+              "edi"
+            ],
+            "width_bits": 32
+          }
+        }
+      ],
+      "register": "edi",
+      "site_rva": 309440,
+      "value_fully_known": false
+    },
+    {
+      "reaching_sources": [
+        {
+          "origin": "definition",
+          "rva": 309425,
+          "semantic": {
+            "constant": 0,
+            "kind": "constant_assignment",
+            "memory_input": null,
+            "register_inputs": [],
+            "width_bits": 32
+          }
+        },
+        {
+          "origin": "definition",
+          "rva": 309452,
+          "semantic": {
+            "constant": 1,
+            "kind": "register_offset_adjustment",
+            "memory_input": null,
+            "register_inputs": [
+              "eax"
+            ],
+            "width_bits": 32
+          }
+        }
+      ],
+      "register": "eax",
+      "site_rva": 309452,
+      "value_fully_known": false
+    }
+  ],
+  "loop_runtime_bound_proven": false,
+  "native_io_executed": false,
+  "original_bytes_published": false,
+  "parent_edges": 55,
+  "parent_inputs_fully_known": false,
+  "parent_nodes": 50,
+  "runtime_sha256": "cdab9ea049a98bbc96ce93eeaa8b63c688f0c0f0ad8b3183e79d75e47621441a",
+  "savedata_sha256": "5b26f54a9723cd2c5275f964457094fdf1fc33ca086cdaf55bb5350dfb04f3f9",
+  "schema": "tw10-r12-original-indirect-and-global-reference-frontier",
+  "status": "PINNED_ORIGINAL_STATIC_IMPORT_AND_REFERENCE_CANDIDATES_NOT_RUNTIME",
+  "structural_call_return_assumptions": 1
+}
