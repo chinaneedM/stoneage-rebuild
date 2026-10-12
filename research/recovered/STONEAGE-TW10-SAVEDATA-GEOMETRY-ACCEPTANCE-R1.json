@@ -1,0 +1,43 @@
+{
+  "schema": "stoneage-tw10-savedata-geometry-acceptance-r1",
+  "status": "ACCEPTED_DERIVED_METADATA_ONLY",
+  "repository": "chinaneedM/stoneage-rebuild",
+  "branch": "agent/tw10-savedata-geometry-r1-20261012",
+  "source_commit": "06441ffd430bc3b7319efedd5c07b7a71e629a2f",
+  "source_tree": "25cb72192e15560b7384e43a40bd257682a94b5d",
+  "branch_action": {
+    "id": 38211434475,
+    "conclusion": "success"
+  },
+  "main_action": {
+    "id": 38211521969,
+    "conclusion": "success"
+  },
+  "test_count": 7,
+  "savedata_file_sha256": "5b26f54a9723cd2c5275f964457094fdf1fc33ca086cdaf55bb5350dfb04f3f9",
+  "size": 128,
+  "zero_run_starts": [
+    14,
+    28,
+    42,
+    70,
+    84,
+    98,
+    112
+  ],
+  "positive_start_gcd": 14,
+  "consecutive_gap_gcd": 14,
+  "not_zero_run_starts_at_positive_multiples": [
+    56,
+    126
+  ],
+  "admitted": "arithmetic over preserved report metadata only",
+  "not_admitted": [
+    "14-byte field or record semantics",
+    "codec and checksum",
+    "native save/load behavior",
+    "TW v1.0 equals late Wayi settings format",
+    "native matched operator-server lifecycle"
+  ],
+  "original_payloads_committed": false
+}
