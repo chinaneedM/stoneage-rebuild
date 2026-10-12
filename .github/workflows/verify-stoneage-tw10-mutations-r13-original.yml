@@ -1,0 +1,59 @@
+name: Independently verify TW1.0 R13 original-derived mutation geometry
+on:
+  workflow_dispatch:
+  push:
+    branches: [main, agent/tw10-savedata-mutations-r13-20261012]
+    paths:
+      - tools/stoneage_tw10_savedata_mutations_r13_guard.py
+      - tests/test_stoneage_tw10_savedata_mutations_r13_guard.py
+      - research/recovered/STONEAGE-TW10-SAVEDATA-MUTATIONS-R13-ORIGINAL.json
+      - .github/workflows/verify-stoneage-tw10-mutations-r13-original.yml
+permissions:
+  contents: read
+  actions: read
+jobs:
+  verify-original-derived:
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    steps:
+      - uses: actions/checkout@v4
+      - name: Pin immutable source run and original probe commit identity
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          identity="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/38244549768" --jq '[.status,.conclusion,.head_sha,.head_branch] | join("|)')"
+          test "$identity" = 'completed|success|2cd6da6b5b10c33eb4812d401ad4726670f8a8f0|agent/tw10-savedata-mutations-r13-20261012'
+          echo 'TW10_R13_ORIGINAL_SOURCE_IDENTITY=PASS'
+      - name: Retrieve source run derived-only JSON (not original files)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/stoneage-r13-verify
+          gh run download 38244549768 --repo "$GITHUB_REPOSITORY" --name tw10-r13-original-static-mutation-derived --dir /tmp/stoneage-r13-verify
+          test "$(find /tmp/stoneage-r13-verify -type f | wc -l)" -eq 1
+          test -f /tmp/stoneage-r13-verify/stoneage-r13-derived.json
+          test ! -L /tmp/stoneage-r13-verify/stoneage-r13-derived.json
+          test "$(stat -c %s /tmp/stoneage-r13-verify/stoneage-r13-derived.json)" -le 16000
+          echo 'f67990caa6da3728acee93e8dca3dbcd9c3b98bb7ab5aec4cef19b6be62287c2  /tmp/stoneage-r13-verify/stoneage-r13-derived.json' | sha256sum -c -
+      - name: Validate report boundaries and exact pinned JSON equivalence
+        run: |
+          set -euo pipefail
+          pip install --quiet capstone pefile
+          python3 -m unittest tests.test_stoneage_tw10_savedata_mutations_r13_guard -v
+          python3 -m tools.stoneage_tw10_savedata_mutations_r13_guard --report /tmp/stoneage-r13-verify/stoneage-r13-derived.json
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          source=json.loads(Path('/tmp/stoneage-r13-verify/stoneage-r13-derived.json').read_text())
+          accepted=json.loads(Path('research/recovered/STONEAGE-TW10-SAVEDATA-MUTATIONS-R13-ORIGINAL.json').read_text())
+          assert source == accepted
+          assert all(item['executed_write_proven'] is False for item in accepted['store_candidates'])
+          assert accepted['native_io_executed'] is False
+          print('TW10_R13_INDEPENDENT_ORIGINAL_DERIVED_CUSTODY_AND_STATIC_GEOMETRY=PASS')
+          print('TW10_R13_EFFECTIVE_OBJECT_PATH_AND_NATIVE_SAVE=OPEN')
+          PY
+      - name: Purge derived artifact
+        if: always()
+        run: rm -rf /tmp/stoneage-r13-verify

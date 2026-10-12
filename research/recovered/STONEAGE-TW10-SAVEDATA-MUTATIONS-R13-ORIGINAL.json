@@ -1,0 +1,304 @@
+{
+  "caller_resumption_admitted": false,
+  "delegate_effects_admitted": false,
+  "effective_object_proven": false,
+  "filename_api_link_proven": false,
+  "fixed_128_byte_schema_proven": false,
+  "frame_mutation_ownership_proven": false,
+  "global_initialization_proven": false,
+  "global_write_paths_proven": false,
+  "handle_buffer_size_link_proven": false,
+  "heapalloc_size_or_ownership_proven": false,
+  "helper_named_effects_admitted": false,
+  "indirect_call_effects_admitted": false,
+  "linear_windows": [
+    {
+      "control_flow_conditions_proven": false,
+      "first_rva": 302538,
+      "function_boundary_proven": false,
+      "instruction_boundaries": [
+        302538,
+        302542,
+        302545,
+        302547,
+        302550,
+        302553,
+        302555,
+        302557,
+        302560,
+        302563,
+        302568,
+        302570,
+        302572
+      ],
+      "jump_sites": [
+        302545
+      ],
+      "last_site_rva": 302572,
+      "same_executed_path_proven": false
+    },
+    {
+      "control_flow_conditions_proven": false,
+      "first_rva": 300092,
+      "function_boundary_proven": false,
+      "instruction_boundaries": [
+        300092,
+        300097,
+        300099,
+        300100,
+        300105,
+        300106,
+        300111,
+        300113,
+        300114,
+        300116,
+        300118,
+        300119,
+        300125,
+        300130,
+        300131
+      ],
+      "jump_sites": [
+        300114
+      ],
+      "last_site_rva": 300131,
+      "same_executed_path_proven": false
+    }
+  ],
+  "loop_runtime_bound_proven": false,
+  "native_io_executed": false,
+  "original_bytes_published": false,
+  "parent_inputs_fully_known": false,
+  "r12_helper_states": 32,
+  "r12_import_slot_rva": 336120,
+  "runtime_sha256": "cdab9ea049a98bbc96ce93eeaa8b63c688f0c0f0ad8b3183e79d75e47621441a",
+  "savedata_sha256": "5b26f54a9723cd2c5275f964457094fdf1fc33ca086cdaf55bb5350dfb04f3f9",
+  "schema": "tw10-r13-original-bounded-store-and-global-write-inputs",
+  "static_candidate_scope": "named-sites-only-no-reachability",
+  "status": "PINNED_ORIGINAL_STATIC_MUTATION_CANDIDATES_NO_NAMED_EFFECTS",
+  "store_candidates": [
+    {
+      "address_inputs": [
+        "ebp"
+      ],
+      "destination": {
+        "absolute_effective_rva": null,
+        "base_register": "ebp",
+        "displacement_region": null,
+        "effective_address_fully_known": false,
+        "index_register": null,
+        "index_scale": 1,
+        "store_rva": 302538,
+        "table_or_object_ownership_proven": false,
+        "write_width_bytes": 4
+      },
+      "destination_relative_field_offset": -8,
+      "effective_object_proven": false,
+      "executed_write_proven": false,
+      "expected_global_rva": null,
+      "mnemonic_class": "or",
+      "named_caller_effect_admitted": false,
+      "previous_destination_value_required": true,
+      "register_inputs_resolved": false,
+      "site_rva": 302538,
+      "source_operand": {
+        "immediate": 4294967295,
+        "kind": "immediate_input",
+        "memory_input": null,
+        "register": null,
+        "width_bytes": 4
+      },
+      "value_input_registers": [
+        "destination_memory"
+      ]
+    },
+    {
+      "address_inputs": [
+        "ebp"
+      ],
+      "destination": {
+        "absolute_effective_rva": null,
+        "base_register": "ebp",
+        "displacement_region": null,
+        "effective_address_fully_known": false,
+        "index_register": null,
+        "index_scale": 1,
+        "store_rva": 302572,
+        "table_or_object_ownership_proven": false,
+        "write_width_bytes": 4
+      },
+      "destination_relative_field_offset": 8,
+      "effective_object_proven": false,
+      "executed_write_proven": false,
+      "expected_global_rva": null,
+      "mnemonic_class": "mov",
+      "named_caller_effect_admitted": false,
+      "previous_destination_value_required": false,
+      "register_inputs_resolved": false,
+      "site_rva": 302572,
+      "source_operand": {
+        "immediate": null,
+        "kind": "register_input",
+        "memory_input": null,
+        "register": "ebx",
+        "width_bytes": 4
+      },
+      "value_input_registers": [
+        "ebx"
+      ]
+    },
+    {
+      "address_inputs": [],
+      "destination": {
+        "absolute_effective_rva": 24258720,
+        "base_register": null,
+        "displacement_region": {
+          "displacement_rva": 24258720,
+          "raw_backed": false,
+          "section": ".data",
+          "writable": true
+        },
+        "effective_address_fully_known": true,
+        "index_register": null,
+        "index_scale": 1,
+        "store_rva": 300092,
+        "table_or_object_ownership_proven": false,
+        "write_width_bytes": 4
+      },
+      "destination_relative_field_offset": null,
+      "effective_object_proven": false,
+      "executed_write_proven": false,
+      "expected_global_rva": 24258720,
+      "mnemonic_class": "mov",
+      "named_caller_effect_admitted": false,
+      "previous_destination_value_required": false,
+      "register_inputs_resolved": false,
+      "site_rva": 300092,
+      "source_operand": {
+        "immediate": null,
+        "kind": "register_input",
+        "memory_input": null,
+        "register": "eax",
+        "width_bytes": 4
+      },
+      "value_input_registers": [
+        "eax"
+      ]
+    },
+    {
+      "address_inputs": [],
+      "destination": {
+        "absolute_effective_rva": 24254596,
+        "base_register": null,
+        "displacement_region": {
+          "displacement_rva": 24254596,
+          "raw_backed": false,
+          "section": ".data",
+          "writable": true
+        },
+        "effective_address_fully_known": true,
+        "index_register": null,
+        "index_scale": 1,
+        "store_rva": 300106,
+        "table_or_object_ownership_proven": false,
+        "write_width_bytes": 4
+      },
+      "destination_relative_field_offset": null,
+      "effective_object_proven": false,
+      "executed_write_proven": false,
+      "expected_global_rva": 24254596,
+      "mnemonic_class": "mov",
+      "named_caller_effect_admitted": false,
+      "previous_destination_value_required": false,
+      "register_inputs_resolved": false,
+      "site_rva": 300106,
+      "source_operand": {
+        "immediate": null,
+        "kind": "register_input",
+        "memory_input": null,
+        "register": "eax",
+        "width_bytes": 4
+      },
+      "value_input_registers": [
+        "eax"
+      ]
+    },
+    {
+      "address_inputs": [],
+      "destination": {
+        "absolute_effective_rva": 24258720,
+        "base_register": null,
+        "displacement_region": {
+          "displacement_rva": 24258720,
+          "raw_backed": false,
+          "section": ".data",
+          "writable": true
+        },
+        "effective_address_fully_known": true,
+        "index_register": null,
+        "index_scale": 1,
+        "store_rva": 300119,
+        "table_or_object_ownership_proven": false,
+        "write_width_bytes": 4
+      },
+      "destination_relative_field_offset": null,
+      "effective_object_proven": false,
+      "executed_write_proven": false,
+      "expected_global_rva": 24258720,
+      "mnemonic_class": "mov",
+      "named_caller_effect_admitted": false,
+      "previous_destination_value_required": false,
+      "register_inputs_resolved": false,
+      "site_rva": 300119,
+      "source_operand": {
+        "immediate": null,
+        "kind": "register_input",
+        "memory_input": null,
+        "register": "esi",
+        "width_bytes": 4
+      },
+      "value_input_registers": [
+        "esi"
+      ]
+    },
+    {
+      "address_inputs": [],
+      "destination": {
+        "absolute_effective_rva": 24254596,
+        "base_register": null,
+        "displacement_region": {
+          "displacement_rva": 24254596,
+          "raw_backed": false,
+          "section": ".data",
+          "writable": true
+        },
+        "effective_address_fully_known": true,
+        "index_register": null,
+        "index_scale": 1,
+        "store_rva": 300131,
+        "table_or_object_ownership_proven": false,
+        "write_width_bytes": 4
+      },
+      "destination_relative_field_offset": null,
+      "effective_object_proven": false,
+      "executed_write_proven": false,
+      "expected_global_rva": 24254596,
+      "mnemonic_class": "mov",
+      "named_caller_effect_admitted": false,
+      "previous_destination_value_required": false,
+      "register_inputs_resolved": false,
+      "site_rva": 300131,
+      "source_operand": {
+        "immediate": null,
+        "kind": "register_input",
+        "memory_input": null,
+        "register": "eax",
+        "width_bytes": 4
+      },
+      "value_input_registers": [
+        "eax"
+      ]
+    }
+  ],
+  "store_value_inputs_resolved": false
+}
