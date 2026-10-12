@@ -1,0 +1,51 @@
+{
+  "schema": "STONEAGE-WAYI-CODEC-PROFILE-ACCEPTANCE-R1",
+  "source_commit": "f72af4ef69253a2af21459d909c3681a0f2dae54",
+  "source_tree": "95f2944bdd5df9030c343aab201156ed9f851eeb",
+  "bootstrap_main": "6bb576030274e4623b8f4a48fbb31511a6fe67cf",
+  "branch_actions": [
+    {
+      "id": 38199644509,
+      "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+      "conclusion": "success"
+    },
+    {
+      "id": 38199644558,
+      "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+      "conclusion": "success"
+    },
+    {
+      "id": 38199644616,
+      "name": "Validate Wayi compiled outer codec and key profile",
+      "conclusion": "success"
+    }
+  ],
+  "main_actions": [
+    {
+      "id": 38199706049,
+      "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+      "conclusion": "success"
+    },
+    {
+      "id": 38199706088,
+      "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+      "conclusion": "success"
+    },
+    {
+      "id": 38199706031,
+      "name": "Validate Wayi compiled outer codec and key profile",
+      "conclusion": "success"
+    }
+  ],
+  "branch_job": 114649973353,
+  "main_job": 114650164055,
+  "tests_confirmed_in_both_logs": 153,
+  "original_continuity_preserved_as_exact_byte_prefix": true,
+  "remote_tree_matches_local": true,
+  "integration": "non-destructive fast-forward with fresh expected main",
+  "native_pair_verified": false,
+  "original_program_executed": false,
+  "packets_captured": false,
+  "pressure": "2486=2465+18+3",
+  "next": "keyed fields, upstream key/mode definitions, source inbound wrapper/preprocessing"
+}
