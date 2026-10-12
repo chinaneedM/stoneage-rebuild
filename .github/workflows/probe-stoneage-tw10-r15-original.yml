@@ -1,0 +1,64 @@
+name: Probe TW1.0 original R15 upstream registers, frame and CALL identities
+on:
+  workflow_dispatch:
+  push:
+    branches: [agent/tw10-savedata-entrycalls-r15-20261012]
+    paths:
+      - .github/workflows/probe-stoneage-tw10-r15-original.yml
+      - tools/stoneage_tw10_savedata_entrycalls_r15.py
+      - tests/test_stoneage_tw10_savedata_entrycalls_r15.py
+permissions:
+  contents: read
+jobs:
+  source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify synthetic provenance/opaque CALL conservatism
+        run: |
+          set -euo pipefail
+          pip install --quiet capstone pefile
+          python -m unittest tests.test_stoneage_tw10_savedata_entrycalls_r15 -v
+      - name: Retrieve pinned historical archive
+        run: |
+          set -euo pipefail
+          python -m tools.stoneage_tw10_archive_parallel_download --deadline 1500 --workers 16 --chunk 8388608 --output /tmp/CD_DIC.rar
+      - name: Extract original only for static evidence
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq 7zip
+          mkdir -p /tmp/stoneage-r15
+          7z x -y -o/tmp/stoneage-r15 /tmp/CD_DIC.rar STONEAGE.bin >/dev/null
+          test "$(stat -c %s /tmp/stoneage-r15/STONEAGE.bin)" = 523449360
+      - name: Emit verified original-derived R15 report
+        run: |
+          set -euo pipefail
+          python -m tools.stoneage_tw10_savedata_entrycalls_r15 --bin /tmp/stoneage-r15/STONEAGE.bin > /tmp/stoneage-r15-derived.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from tools.stoneage_tw10_savedata_entrycalls_r15 import SCHEMA,STATUS,FLAGS,QUERIES,CALL_SITES
+          p=Path("/tmp/stoneage-r15-derived.json")
+          doc=json.loads(p.read_text())
+          assert p.stat().st_size<=40000
+          assert doc["schema"]==SCHEMA and doc["status"]==STATUS
+          assert [(x["query_site_rva"],x["register"]) for x in doc["upstream_inputs"]]==list(QUERIES)
+          assert [x["call_rva"] for x in doc["call_surfaces"]]==list(CALL_SITES)
+          assert all(doc[flag] is False for flag in FLAGS)
+          assert all(x["fully_known_value"] is False for x in doc["upstream_inputs"])
+          assert all(x["callee_effect_summary_admitted"] is False for x in doc["call_surfaces"])
+          print("TW10_R15_BOUND_ORIGINAL_STATIC_FRONTIER=PASS")
+          print("TW10_R15_RUNTIME_NATIVE_IO=OPEN")
+          PY
+      - name: Always purge originals
+        if: always()
+        run: rm -rf /tmp/CD_DIC.rar /tmp/stoneage-r15
+      - name: Publish only derived JSON
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: tw10-r15-original-upstream-frame-calls-derived
+          path: /tmp/stoneage-r15-derived.json
+          retention-days: 21

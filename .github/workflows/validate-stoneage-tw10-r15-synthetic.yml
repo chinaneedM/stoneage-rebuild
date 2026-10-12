@@ -1,0 +1,18 @@
+name: Validate TW1.0 R15 upstream provenance synthetic only
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/validate-stoneage-tw10-r15-synthetic.yml
+      - tools/stoneage_tw10_savedata_entrycalls_r15.py
+      - tests/test_stoneage_tw10_savedata_entrycalls_r15.py
+permissions:
+  contents: read
+jobs:
+  synthetic:
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install --quiet capstone pefile
+      - run: python -m unittest tests.test_stoneage_tw10_savedata_entrycalls_r15 -v
