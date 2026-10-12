@@ -22,7 +22,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
-          identity="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/38244549768" --jq '[.status,.conclusion,.head_sha,.head_branch] | join("|)')"
+          identity="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/38244549768" --jq '[.status,.conclusion,.head_sha,.head_branch] | join("|")')"
           test "$identity" = 'completed|success|2cd6da6b5b10c33eb4812d401ad4726670f8a8f0|agent/tw10-savedata-mutations-r13-20261012'
           echo 'TW10_R13_ORIGINAL_SOURCE_IDENTITY=PASS'
       - name: Retrieve source run derived-only JSON (not original files)
