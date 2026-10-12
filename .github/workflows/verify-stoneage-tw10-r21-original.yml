@@ -1,0 +1,70 @@
+name: Independently inspect TW1.0 R21 original-derived bounded evidence
+on:
+  workflow_dispatch:
+  push:
+    branches: [agent/tw10-savedata-r21-writer-realloc-alias-20261012, main]
+    paths:
+      - .github/workflows/verify-stoneage-tw10-r21-original.yml
+      - tools/stoneage_tw10_savedata_upstream_r21_guard.py
+      - tests/test_stoneage_tw10_savedata_upstream_r21_guard.py
+      - research/recovered/STONEAGE-TW10-SAVEDATA-UPSTREAM-R21-ORIGINAL.json
+permissions:
+  contents: read
+  actions: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Pin immutable original success and evidence artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          identity="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/38265173589" --jq '[.status,.conclusion,.head_sha,.head_branch] | join("|")')"
+          test "$identity" = 'completed|success|0601a246c123eb6c390a141c7b377f3af71aaa03|agent/tw10-savedata-r21-writer-realloc-alias-20261012'
+          artifact="$(gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/11753958380" --jq '[.workflow_run.id,.name,.digest,.expired] | join("|")')"
+          test "$artifact" = '38265173589|tw10-r21-original-writer-realloc-alias-derived|sha256:eb6c03f9f832c4b35967212162c9613b8fd5806e34a7a2b365a4fb909c3190ea|false'
+      - name: Download only derived R21 metadata
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/r21-independent
+          gh run download 38265173589 --repo "$GITHUB_REPOSITORY" --name tw10-r21-original-writer-realloc-alias-derived --dir /tmp/r21-independent
+          test "$(find /tmp/r21-independent -type f | wc -l)" -eq 1
+          test -f /tmp/r21-independent/stoneage-r21-derived.json
+          test ! -L /tmp/r21-independent/stoneage-r21-derived.json
+          test "$(stat -c %s /tmp/r21-independent/stoneage-r21-derived.json)" -le 70000
+          sha256sum /tmp/r21-independent/stoneage-r21-derived.json
+          wc -c /tmp/r21-independent/stoneage-r21-derived.json
+      - name: Independent anti-promotion guard and tamper controls
+        run: |
+          set -euo pipefail
+          pip install --quiet capstone pefile
+          python -m unittest -v tests.test_stoneage_tw10_savedata_upstream_r21_guard
+          python -m tools.stoneage_tw10_savedata_upstream_r21_guard --report /tmp/r21-independent/stoneage-r21-derived.json
+      - name: Emit canonical derived JSON; compare checked-in witness if present
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from tools.stoneage_tw10_savedata_upstream_r21_guard import validate
+          path=Path('/tmp/r21-independent/stoneage-r21-derived.json')
+          d=json.loads(path.read_text())
+          validate(d)
+          canonical=Path('research/recovered/STONEAGE-TW10-SAVEDATA-UPSTREAM-R21-ORIGINAL.json')
+          if canonical.exists():
+              assert json.loads(canonical.read_text())==d, 'R21 original derived equality mismatch'
+              print('TW10_R21_EXACT_JSON_EQUIVALENCE=PASS')
+          else:
+              print('TW10_R21_ORIGINAL_DERIVED_REVIEW_ONLY=PASS')
+          print('TW10_R21_DERIVED_JSON_BEGIN')
+          print(json.dumps(d,sort_keys=True,separators=(',',':')))
+          print('TW10_R21_DERIVED_JSON_END')
+          PY
+      - name: Always remove downloaded derived metadata
+        if: always()
+        run: rm -rf /tmp/r21-independent
