@@ -1,0 +1,78 @@
+{
+  "schema": "stoneage-tw10-savedata-entrygraph-r4-original-acceptance-r1",
+  "status": "ACCEPTED_BOUNDED_STATIC_ENTRYGRAPH_OBSERVATION_ONLY",
+  "original_archive": {
+    "item": "stoneage_tw_2000_win",
+    "file": "CD_DIC.rar",
+    "size": 842125501,
+    "md5": "b37a4a47f4eb608cac67e4ddf7a1621a",
+    "sha1": "b8cf92720b6ec8b3f46ea2e9bfcda986d21e7ded",
+    "fully_verified": true
+  },
+  "embedded_original": {
+    "bin_size": 523449360,
+    "sa_3_sha256": "cdab9ea049a98bbc96ce93eeaa8b63c688f0c0f0ad8b3183e79d75e47621441a",
+    "savedata_sha256": "5b26f54a9723cd2c5275f964457094fdf1fc33ca086cdaf55bb5350dfb04f3f9",
+    "verified": true
+  },
+  "original_probe": {
+    "branch": "agent/tw10-savedata-controlflow-r4-20261012",
+    "commit": "079f028564ca248b76c450138538d39c84aa7cb4",
+    "run_id": 38220734211,
+    "job_id": 114716090868,
+    "conclusion": "success",
+    "synthetic_tests": 9,
+    "artifact_id": 11734033864,
+    "derived_artifact": "tw10-original-entrygraph-r4-derived"
+  },
+  "independent_guard": {
+    "branch_run_id": 38221992415,
+    "main_run_id": 38222071494,
+    "both_conclusions": "success",
+    "verified_source_run_head": true,
+    "verified_derived_only_json": true
+  },
+  "graph": {
+    "entrypoint_rva": "0x4980a",
+    "text_rva": "0x1000",
+    "text_raw_size": 331776,
+    "visited_nodes": 31665,
+    "edges": 35092,
+    "indirect_transfers_unresolved": 409,
+    "terminals": 664,
+    "limit_hit": false,
+    "sites": [
+      {
+        "word_rva": "0x40065",
+        "candidate_start_rva": "0x40064",
+        "graph_candidate_seen": true,
+        "graph_incoming_edges": 1
+      },
+      {
+        "word_rva": "0x400e5",
+        "candidate_start_rva": "0x400e4",
+        "graph_candidate_seen": true,
+        "graph_incoming_edges": 1
+      },
+      {
+        "word_rva": "0x40116",
+        "candidate_start_rva": "0x40115",
+        "graph_candidate_seen": true,
+        "graph_incoming_edges": 1
+      },
+      {
+        "word_rva": "0x402a1",
+        "candidate_start_rva": "0x402a0",
+        "graph_candidate_seen": true,
+        "graph_incoming_edges": 1
+      }
+    ]
+  },
+  "asserted_runtime_instruction_executed": false,
+  "native_savedata_file_io_proven": false,
+  "early_savedata_128byte_layout_proven": false,
+  "embedded_data_ownership_proven": false,
+  "late_wayi_equivalence_proven": false,
+  "original_payload_published": false,
+  "next": "Trace exact upstream callers, conditional fallthrough and downstream CreateFileA/ReadFile/WriteFile arguments, including indirect paths, without assuming observed static graph edges are executed."
+}

@@ -39,3 +39,24 @@ size and the precise original embedded SHA256 before R4 output is considered
 a candidate for acceptance. Stop without a positive verification signal if
 the archive is unavailable. Store only a small derived JSON artifact after
 transient copyrighted originals have been purged.
+
+
+## Verified R4 source result — 2026-10-12
+
+Full original-byte Actions38220734211 SUCCESS, with accepted MD5/SHA1 catalog archive
+and embedded original sa_3.exe plus savedata.dat SHA256 independently checked.
+PE entry RVA0x4980a, .text raw RVA0x1000/331776 bytes. R4 graph explores
+31665 decoded nodes, 35092 direct/fallthrough edges and 409 unresolved
+indirect transfers; did not hit graph bounds. All four R3-pinned push candidates
+0x40064/0x400e4/0x40115/0x402a0 are seen as instruction starts on the
+entrypoint-rooted graph, each with one observed incoming static edge.
+Derived-only artifact11734033864 was independently validated via exact
+original run provenance and strict R4 report parser: branch CI38221992415
+and independent main CI38222071494 SUCCESS.
+
+Classification: **ACCEPTED_BOUNDED_STATIC_ENTRYGRAPH_OBSERVATION**,
+not true execution reachability, embedded-data ownership, file IO or actual
+128-byte persisted schema. A simulated return-edge and statically explored
+conditional path can be technically present without being taken at runtime.
+Next work must identify exact upstream and downstream native save-file callsite
+connections, not promote the four candidate push words on graph membership.
