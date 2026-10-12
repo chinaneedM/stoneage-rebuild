@@ -1,0 +1,29 @@
+name: Validate TW1.0 R5 strict derived report guard
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - agent/tw10-savedata-callsite-r5-20261012
+    paths:
+      - tools/stoneage_tw10_savedata_callsite_r5_guard.py
+      - tests/test_stoneage_tw10_savedata_callsite_r5_guard.py
+      - .github/workflows/validate-stoneage-tw10-callsite-r5-guard.yml
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install pinned schema imports
+        run: pip install --quiet capstone pefile
+      - name: Enforce exact original identity and no native semantics in derived report
+        run: python3 -m unittest tests.test_stoneage_tw10_savedata_callsite_r5_guard -v
+      - name: Explicitly preserve historical runtime uncertainty
+        run: |
+          echo 'TW10_R5_DERIVED_REPORT_GUARD=PASS'
+          echo 'TW10_R5_REAL_FILE_IO=OPEN'
