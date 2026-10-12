@@ -54,7 +54,7 @@ def fields(line: str) -> tuple[str, dict[str, str]]:
     return label, info
 
 
-def number(item: str, maximum: int=1_000_000):
+def number(item: str, maximum: int=0xffffffff):
     if not re.fullmatch(r"(?:0x[0-9a-f]+|[0-9]+)", item):
         raise ValueError("invalid numeric report field")
     value = int(item, 16) if item.startswith("0x") else int(item)
@@ -115,8 +115,8 @@ def validate(text: str):
             raise ValueError("invalid boolean field")
         if not re.fullmatch(r"[a-z][a-z0-9]*",row["mnemonic"]):
             raise ValueError("unexpected mnemonic")
-        number(row["linear_incoming_direct_edges"])
-        number(row["forward_64_file_api_count"])
+        number(row["linear_incoming_direct_edges"], 100000)
+        number(row["forward_64_file_api_count"], 100000)
         candidates[(word,n)] = row
     for word, expected_count in candidate_counts.items():
         indices = {n for (w,n) in candidates if w==word}
@@ -136,7 +136,7 @@ def validate(text: str):
             raise ValueError("forward API count mismatch")
     count = rowmap["COUNT"][0]
     if number(count["word_sites"]) != 4 or number(count["alignment_candidates"]) != len(candidates):
-        raise ValueError("final report count mismatch")
+        raise ValueError("final candidate count mismatch")
     return {
         "schema":"tw10-savedata-r3-derived-report-guard-r1",
         "status":"DERIVED_FORMAT_AND_CUSTODY_ONLY",

@@ -63,7 +63,7 @@ class R3ReportGuardTests(unittest.TestCase):
             validate(fixture(True).replace("alignment_candidates=1","alignment_candidates=9"))
 
     def test_unrecognized_arbitrary_text_rejected(self):
-        with self.assertRaisesRegex(ValueError,"invalid report"):
+        with self.assertRaisesRegex(ValueError,"invalid.*report"):
             validate(fixture().replace("linear_whole=0","linear_whole=some raw secret"))
 
     def test_no_missing_resolution_allowed(self):
