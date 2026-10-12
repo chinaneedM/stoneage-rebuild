@@ -1,0 +1,30 @@
+name: Validate TW1.0 R4 bounded entrypoint graph synthetic
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - agent/tw10-savedata-controlflow-r4-20261012
+    paths:
+      - tools/stoneage_tw10_savedata_entrygraph_r4.py
+      - tests/test_stoneage_tw10_savedata_entrygraph_r4.py
+      - .github/workflows/validate-stoneage-tw10-entrygraph-r4-synthetic.yml
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install bounded static-disassembly dependencies
+        run: pip install --quiet capstone pefile
+      - name: Exercise bounded CFG positive and rejection cases with synthetic bytes
+        run: python3 -m unittest tests.test_stoneage_tw10_savedata_entrygraph_r4 -v
+      - name: Explicit original-runtime nonadmission
+        run: |
+          echo 'TW10_R4_SYNTHETIC_GRAPH=PASS'
+          echo 'TW10_R4_ORIGINAL_BYTES=NOT_CHECKED_BY_THIS_WORKFLOW'
+          echo 'TW10_R4_NATIVE_SAVE_IO=OPEN'
