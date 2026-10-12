@@ -8,6 +8,7 @@ on:
       - tools/stoneage_tw10_savedata_upstream_r19_guard.py
       - tests/test_stoneage_tw10_savedata_upstream_r19_guard.py
       - research/recovered/STONEAGE-TW10-SAVEDATA-UPSTREAM-R19-ORIGINAL.json
+      - research/recovered/STONEAGE-TW10-SAVEDATA-UPSTREAM-R19-ORIGINAL.json
 permissions:
   contents: read
   actions: read
@@ -37,7 +38,8 @@ jobs:
           test -f /tmp/r19-verify/stoneage-r19-derived.json
           test ! -L /tmp/r19-verify/stoneage-r19-derived.json
           test "$(stat -c %s /tmp/r19-verify/stoneage-r19-derived.json)" -le 70000
-          sha256sum /tmp/r19-verify/stoneage-r19-derived.json
+          test "$(stat -c %s /tmp/r19-verify/stoneage-r19-derived.json)" -eq 7321
+          echo 'fc442e38aeafcd926810fd6d1ffbc0d50ff305564b248c068eccc45ea132169d  /tmp/r19-verify/stoneage-r19-derived.json' | sha256sum -c -
           wc -c /tmp/r19-verify/stoneage-r19-derived.json
       - name: Independent tamper guard and static original report
         run: |
@@ -53,6 +55,9 @@ jobs:
           from tools.stoneage_tw10_savedata_upstream_r19_guard import validate
           d=json.loads(Path('/tmp/r19-verify/stoneage-r19-derived.json').read_text())
           validate(d)
+          pinned=json.loads(Path('research/recovered/STONEAGE-TW10-SAVEDATA-UPSTREAM-R19-ORIGINAL.json').read_text())
+          assert pinned==d, 'source-derived original metadata differs from committed witness'
+          print('TW10_R19_EXACT_JSON_EQUIVALENCE=PASS')
           print('TW10_R19_DERIVED_JSON_BEGIN')
           print(json.dumps(d,sort_keys=True,separators=(',',':')))
           print('TW10_R19_DERIVED_JSON_END')

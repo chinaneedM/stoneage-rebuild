@@ -1,0 +1,44 @@
+{
+  "schema": "tw10-r19-original-second-global-and-heap-callee-acceptance-r1",
+  "status": "ACCEPTED_ORIGINAL_DERIVED_CONDITIONAL_STATIC_ONLY",
+  "original_run": 38259495149,
+  "original_job": 114846067239,
+  "original_source_sha": "114d0800c0fda16618f2c292f10713c6bf24e4e2",
+  "original_probe_success": true,
+  "synthetic_action": 38259494420,
+  "strict_synthetic_action": 38259717065,
+  "independent_action": 38260313600,
+  "independent_job": 114848826375,
+  "independent_success": true,
+  "derived_artifact_id": 11752187262,
+  "derived_zip_sha256": "ba53ffe7bb14225e7dd3210864ef4d6bbddb2174c039e703b9ade7f86a6bf205",
+  "derived_json_bytes": 7321,
+  "derived_json_sha256": "fc442e38aeafcd926810fd6d1ffbc0d50ff305564b248c068eccc45ea132169d",
+  "second_global_rva": 24254584,
+  "second_global_store_sites": [
+    {
+      "rva": 301588,
+      "source": "eax",
+      "width_bytes": 4
+    },
+    {
+      "rva": 303317,
+      "source": "eax",
+      "width_bytes": 4
+    }
+  ],
+  "heapalloc_iat_rva": 336120,
+  "heapalloc_push_candidates": [
+    {
+      "site": 301574,
+      "source_rva": 24254588
+    }
+  ],
+  "ebx_call_target_rva": 303437,
+  "ebx_summary_qualified": false,
+  "original_native_io_executed": false,
+  "heap_allocation_proven": false,
+  "global_ownership_proven": false,
+  "original_bytes_published": false,
+  "next": "R20 resolve 0x4a0c4 indirect callee and 0x172187c HeapAlloc pre-call source, with alias/cycle gaps"
+}
