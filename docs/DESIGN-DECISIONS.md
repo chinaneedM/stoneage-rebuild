@@ -396,3 +396,37 @@ Bismarck uses work-state accessors. Until executable evidence resolves which
 profile matches the recovered binary, ordered/runtime work must model this as an
 explicit versioned boundary. Exact recovered25 ID625/placements alone are not a
 runtime-pressure promotion.
+
+## DD-021 — Finish evidence-bounded original reconstruction before jointly designing the new StoneAge
+
+**Status:** Accepted — explicitly reaffirmed by the user on 2026-10-12.
+
+The two stages are sequential rather than parallel production efforts.
+
+**Stage A: Historical restoration and independent acceptance.** Recover all
+reasonably retrievable early StoneAge clients, datasets and mechanics that
+materially bear on original authenticity and the future game's core design.
+Treat the Taiwan Waei/JSS v1.0 clean disc as the working foundation; trace
+the JSS origin, Mainland 1.82 and other version branches without imputing a
+later mechanic to v1.0. Audit maps/world/server-only content, NPCs, quests,
+players, pets, battle, growth, items, skills, economy, UI, graphics, audio,
+network protocol, runtime, state and native persistence. Preserve every
+important unresolved or historically inaccessible element explicitly as OPEN
+rather than fabricating full restoration. Tests and engine-neutral executable
+golden models used to verify recovered specifications remain within Stage A.
+
+**Stage B: Collaborative new-game architecture and content design.** Only
+after Stage A's auditable restoration gate is reviewed do the user and assistant
+jointly decide the new game's engine, systems, narrative progression, assets,
+UI and production roadmap. No historical discovery automatically authorizes
+copying a later version's gameplay into the new game. The eventual result
+remains a locally operated, modern single-player game.
+
+No ungrounded completion percentage constitutes Stage A acceptance. Technical
+closure must be measured by subsystem coverage, source provenance, cross-system
+verification, explicitly bounded unknowns and a version-separated acceptance
+matrix. Unrecoverable server-only content may close as a documented
+evidence-limited historical gap, not as a fictional FACT.
+
+Gate record: `docs/RESTORATION-PHASE-GATE-R1.md`. The immediate work order
+remains TW1.0 R14 original static provenance; this decision does not replace it.
