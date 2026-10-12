@@ -1,0 +1,52 @@
+{
+  "schema": "STONEAGE-WAYI-KEYED-FIELDS-ACCEPTANCE-R1",
+  "source_commit": "465d917012a073e9c4a97bb9f0a438b8552e600d",
+  "source_tree": "7d050d1a799a9563c113a0a123428ae23979d627",
+  "bootstrap_main": "9f5830d24685ec2e1ba03585fe84948ca6bcce66",
+  "branch_actions": [
+    {
+      "id": 38200944883,
+      "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+      "conclusion": "success"
+    },
+    {
+      "id": 38200944774,
+      "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+      "conclusion": "success"
+    },
+    {
+      "id": 38200944873,
+      "name": "Validate Wayi compiled keyed fields and login profile",
+      "conclusion": "success"
+    }
+  ],
+  "main_actions": [
+    {
+      "id": 38201022356,
+      "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+      "conclusion": "success"
+    },
+    {
+      "id": 38201022355,
+      "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+      "conclusion": "success"
+    },
+    {
+      "id": 38201022501,
+      "name": "Validate Wayi compiled keyed fields and login profile",
+      "conclusion": "success"
+    }
+  ],
+  "branch_job": 114654007842,
+  "main_job": 114654241879,
+  "tests_in_both_logs": 179,
+  "source_selector_pass_in_both_logs": true,
+  "synthetic_pet_shaped_outer_field_checksum_roundtrip_seeds": 99,
+  "original_continuity_prefix_preserved": true,
+  "remote_tree_matches_local": true,
+  "original_program_executed": false,
+  "packets_captured": false,
+  "matching_operator_pair_verified": false,
+  "pressure": "2486=2465+18+3",
+  "next": "input transform primitive, initial input writers, mode/key transition and full checksum/framing profiles"
+}
