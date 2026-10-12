@@ -1,0 +1,237 @@
+{
+  "filename_api_argument_proven": false,
+  "fixed_128_byte_schema_proven": false,
+  "handle_buffer_size_link_proven": false,
+  "native_io_executed": false,
+  "original_bytes_published": false,
+  "runtime_sha256": "cdab9ea049a98bbc96ce93eeaa8b63c688f0c0f0ad8b3183e79d75e47621441a",
+  "savedata_sha256": "5b26f54a9723cd2c5275f964457094fdf1fc33ca086cdaf55bb5350dfb04f3f9",
+  "schema": "tw10-savedata-r6-first-transfer-cross-callee",
+  "sites": [
+    {
+      "cross_callee": {
+        "api_events": [
+          {
+            "api": "CloseHandle",
+            "min_call_depth": 4,
+            "rva": 304547
+          },
+          {
+            "api": "ReadFile",
+            "min_call_depth": 4,
+            "rva": 305504
+          },
+          {
+            "api": "ReadFile",
+            "min_call_depth": 4,
+            "rva": 305713
+          },
+          {
+            "api": "SetFilePointer",
+            "min_call_depth": 4,
+            "rva": 313264
+          },
+          {
+            "api": "CreateFileA",
+            "min_call_depth": 3,
+            "rva": 322817
+          },
+          {
+            "api": "CloseHandle",
+            "min_call_depth": 3,
+            "rva": 322841
+          },
+          {
+            "api": "SetEndOfFile",
+            "min_call_depth": 4,
+            "rva": 328763
+          }
+        ],
+        "depth_limit_stops": 23,
+        "node_limit_hit": false,
+        "unresolved_indirect_transfers": 0,
+        "visited_states": 967
+      },
+      "first_transfer": {
+        "direct_target_rva": 296890,
+        "filename_stack_slot": 0,
+        "import_api": null,
+        "prefix_nodes": 2,
+        "stack_tracking_precise": true,
+        "stop": "call",
+        "transfer_rva": 262249
+      },
+      "push_rva": 262244,
+      "word_rva": 262245
+    },
+    {
+      "cross_callee": {
+        "api_events": [
+          {
+            "api": "CloseHandle",
+            "min_call_depth": 4,
+            "rva": 304547
+          },
+          {
+            "api": "ReadFile",
+            "min_call_depth": 4,
+            "rva": 305504
+          },
+          {
+            "api": "ReadFile",
+            "min_call_depth": 4,
+            "rva": 305713
+          },
+          {
+            "api": "SetFilePointer",
+            "min_call_depth": 4,
+            "rva": 313264
+          },
+          {
+            "api": "CreateFileA",
+            "min_call_depth": 3,
+            "rva": 322817
+          },
+          {
+            "api": "CloseHandle",
+            "min_call_depth": 3,
+            "rva": 322841
+          },
+          {
+            "api": "SetEndOfFile",
+            "min_call_depth": 4,
+            "rva": 328763
+          }
+        ],
+        "depth_limit_stops": 23,
+        "node_limit_hit": false,
+        "unresolved_indirect_transfers": 0,
+        "visited_states": 967
+      },
+      "first_transfer": {
+        "direct_target_rva": 296890,
+        "filename_stack_slot": 0,
+        "import_api": null,
+        "prefix_nodes": 2,
+        "stack_tracking_precise": true,
+        "stop": "call",
+        "transfer_rva": 262377
+      },
+      "push_rva": 262372,
+      "word_rva": 262373
+    },
+    {
+      "cross_callee": {
+        "api_events": [
+          {
+            "api": "CloseHandle",
+            "min_call_depth": 4,
+            "rva": 304547
+          },
+          {
+            "api": "ReadFile",
+            "min_call_depth": 4,
+            "rva": 305504
+          },
+          {
+            "api": "ReadFile",
+            "min_call_depth": 4,
+            "rva": 305713
+          },
+          {
+            "api": "SetFilePointer",
+            "min_call_depth": 4,
+            "rva": 313264
+          },
+          {
+            "api": "CreateFileA",
+            "min_call_depth": 3,
+            "rva": 322817
+          },
+          {
+            "api": "CloseHandle",
+            "min_call_depth": 3,
+            "rva": 322841
+          },
+          {
+            "api": "SetEndOfFile",
+            "min_call_depth": 4,
+            "rva": 328763
+          }
+        ],
+        "depth_limit_stops": 23,
+        "node_limit_hit": false,
+        "unresolved_indirect_transfers": 0,
+        "visited_states": 967
+      },
+      "first_transfer": {
+        "direct_target_rva": 296890,
+        "filename_stack_slot": 0,
+        "import_api": null,
+        "prefix_nodes": 2,
+        "stack_tracking_precise": true,
+        "stop": "call",
+        "transfer_rva": 262426
+      },
+      "push_rva": 262421,
+      "word_rva": 262422
+    },
+    {
+      "cross_callee": {
+        "api_events": [
+          {
+            "api": "CloseHandle",
+            "min_call_depth": 4,
+            "rva": 304547
+          },
+          {
+            "api": "ReadFile",
+            "min_call_depth": 4,
+            "rva": 305504
+          },
+          {
+            "api": "ReadFile",
+            "min_call_depth": 4,
+            "rva": 305713
+          },
+          {
+            "api": "SetFilePointer",
+            "min_call_depth": 4,
+            "rva": 313264
+          },
+          {
+            "api": "CreateFileA",
+            "min_call_depth": 3,
+            "rva": 322817
+          },
+          {
+            "api": "CloseHandle",
+            "min_call_depth": 3,
+            "rva": 322841
+          },
+          {
+            "api": "SetEndOfFile",
+            "min_call_depth": 4,
+            "rva": 328763
+          }
+        ],
+        "depth_limit_stops": 23,
+        "node_limit_hit": false,
+        "unresolved_indirect_transfers": 0,
+        "visited_states": 967
+      },
+      "first_transfer": {
+        "direct_target_rva": 296890,
+        "filename_stack_slot": 0,
+        "import_api": null,
+        "prefix_nodes": 2,
+        "stack_tracking_precise": true,
+        "stop": "call",
+        "transfer_rva": 262821
+      },
+      "push_rva": 262816,
+      "word_rva": 262817
+    }
+  ],
+  "status": "BOUNDED_STATIC_ARGUMENT_CANDIDATES_NOT_NATIVE_IO"
+}

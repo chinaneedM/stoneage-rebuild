@@ -1,0 +1,69 @@
+name: Independently verify TW1.0 R6 original-derived dataflow evidence
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - agent/tw10-savedata-dataflow-r6-20261012
+    paths:
+      - .github/workflows/verify-stoneage-tw10-dataflow-r6-original.yml
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  verify-pinned-derived:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify immutable original source run and branch commit
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          identity="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/38224760455" --jq '[.status,.conclusion,.head_sha,.head_branch] | join("|")')"
+          test "$identity" = 'completed|success|08d270a68974ada4186184a77310815493d21635|agent/tw10-savedata-dataflow-r6-20261012'
+          echo 'TW10_R6_ORIGINAL_SOURCE_CUSTODY=PASS'
+      - name: Retrieve only the original run's tiny derived JSON artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/tw10-r6-review
+          gh run download 38224760455 --repo "$GITHUB_REPOSITORY" --name tw10-original-dataflow-r6-derived --dir /tmp/tw10-r6-review
+          test "$(find /tmp/tw10-r6-review -type f | wc -l)" -eq 1
+          test -f /tmp/tw10-r6-review/stoneage-r6-report.json
+          test ! -L /tmp/tw10-r6-review/stoneage-r6-report.json
+          test "$(stat -c %s /tmp/tw10-r6-review/stoneage-r6-report.json)" -le 24000
+      - name: Strict original R6 report validation and bounded expected metrics
+        run: |
+          set -euo pipefail
+          pip install --quiet capstone pefile
+          python3 -m tools.stoneage_tw10_savedata_dataflow_r6_guard --report /tmp/tw10-r6-review/stoneage-r6-report.json | tee /tmp/tw10-r6-summary.json
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          v=json.loads(Path('/tmp/tw10-r6-summary.json').read_text())
+          assert v['sites']==4 and v['api_events']==28
+          assert v['native_io_semantics_admitted'] is False
+          assert v['original_payload_present'] is False
+          actual=json.loads(Path('/tmp/tw10-r6-review/stoneage-r6-report.json').read_text())
+          pinned=json.loads(Path('research/recovered/STONEAGE-TW10-SAVEDATA-DATAFLOW-R6-ORIGINAL.json').read_text())
+          assert actual==pinned
+          for site in actual['sites']:
+              assert site['first_transfer']['direct_target_rva']==0x487ba
+              assert site['first_transfer']['filename_stack_slot']==0
+              assert site['first_transfer']['prefix_nodes']==2
+              assert site['cross_callee']['visited_states']==967
+              assert site['cross_callee']['depth_limit_stops']==23
+              assert site['cross_callee']['node_limit_hit'] is False
+              assert len(site['cross_callee']['api_events'])==7
+          print('TW10_R6_DERIVED_CUSTODY_AND_STATIC_COUNTS=PASS')
+          print('TW10_R6_FILENAME_TO_API_HANDLE_BUFFER_SIZE_LINK=OPEN')
+          PY
+      - name: Purge downloaded derived JSON
+        if: always()
+        run: rm -rf /tmp/tw10-r6-review /tmp/tw10-r6-summary.json
