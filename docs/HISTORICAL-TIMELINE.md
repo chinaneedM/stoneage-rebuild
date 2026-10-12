@@ -2777,3 +2777,8 @@ FACT, bounded static original bytes: four verified savedata filename pushes imme
 ## 2026-10-12 — Taiwan v1.0 hardened filename wrapper-prefix observation (R7)
 
 FACT bounded original static analysis: full hash-verified original source run38228357360, independent branch38229857127/main38229979051 SUCCESS. Filename at physical stack top forwards from common wrapper via CALL0x487c4→0x4879a; next stopped helper target0x4b8a4. Corrected analysis136 states/eight CALL rows/no API candidates with explicit unknown memory/call/alias/depth stops. No real execution or complete savedata file IO/format admitted; higher stack slots are not historical ABI parameters. Earlier149-state report superseded, not deleted. Derived report and receipt STONEAGE-TW10-SAVEDATA-ARGTRACE-R7-HARDENED-*.json.
+
+
+## 2026-10-12 — Taiwan v1.0 helper return-effects diagnostic R8
+
+Bounded static/model FACT: original full-hash source Actions38231508976, independent branch38232149568/main38232296065 all SUCCESS. Helper0x4b8a4 has two modeled balanced return states at same RET0x4b91b, but a potential abstract cycle, unsummarized CALL0x4b8e2→0x4918f and unknown alias write0x4b903 prevent qualified whole-helper effects and caller resumption. No real executable execution, runtime loop behavior, file IO or savedata schema established. Exact derived report and receipt STONEAGE-TW10-SAVEDATA-HELPER-R8-ORIGINAL*.json; unresolved edges preserved.
