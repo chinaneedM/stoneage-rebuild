@@ -30,7 +30,7 @@ def specimen():
         },
         "heaprealloc_inputs":{
             "call_identity":{"call_rva":SECOND_CALL,"kind":"memory_indirect",
-                             "import_identity":HEAPREALLOC_IMPORT},
+                             "import_identity":dict(HEAPREALLOC_IMPORT)},
             "call_is_opaque_register_barrier":True,
             "post_call_eax_value_unknown":True,
             "candidate_nodes":1,"candidate_edges":0,"pre_call_push_candidates":[],
