@@ -1,0 +1,23 @@
+name: Validate TW1.0 R13 static mutation boundaries synthetic-only
+on:
+  workflow_dispatch:
+  push:
+    branches: [main, agent/tw10-savedata-mutations-r13-20261012]
+    paths:
+      - tools/stoneage_tw10_savedata_mutations_r13.py
+      - tests/test_stoneage_tw10_savedata_mutations_r13.py
+      - .github/workflows/validate-stoneage-tw10-mutations-r13.yml
+permissions:
+  contents: read
+jobs:
+  synthetic:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install --quiet capstone pefile
+      - run: |
+          python3 -m unittest tests.test_stoneage_tw10_savedata_mutations_r13 -v
+          python3 -m unittest discover -s tests -p 'test_stoneage_tw10_savedata_frontier_r12*.py' -v
+          echo 'TW10_R13_SYNTHETIC_STATIC_STORE_GATES=PASS'
+          echo 'TW10_R13_RUNTIME_MUTATIONS_AND_NATIVE_SAVE=OPEN'

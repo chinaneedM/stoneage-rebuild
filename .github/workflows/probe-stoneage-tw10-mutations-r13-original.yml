@@ -1,0 +1,61 @@
+name: Probe TW1.0 original R13 savedata static store candidate geometry by pinned archive
+on:
+  workflow_dispatch:
+  push:
+    branches: [agent/tw10-savedata-mutations-r13-20261012]
+    paths:
+      - .github/workflows/probe-stoneage-tw10-mutations-r13-original.yml
+permissions:
+  contents: read
+jobs:
+  original-static:
+    runs-on: ubuntu-latest
+    timeout-minutes: 33
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify bounded synthetic store geometry
+        run: |
+          set -euo pipefail
+          pip install --quiet capstone pefile
+          python3 -m unittest tests.test_stoneage_tw10_savedata_mutations_r13 -v
+      - name: Retrieve strictly pinned historical archive in bounded ranges
+        run: |
+          set -euo pipefail
+          python3 -m tools.stoneage_tw10_archive_parallel_download --deadline 1500 --workers 16 --chunk 8388608 --output /tmp/CD_DIC.rar
+      - name: Extract original image for static analysis only
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq 7zip
+          mkdir -p /tmp/stoneage-r13
+          7z x -y -o/tmp/stoneage-r13 /tmp/CD_DIC.rar STONEAGE.bin >/dev/null
+          test "$(stat -c %s /tmp/stoneage-r13/STONEAGE.bin)" = 523449360
+      - name: Emit bounded derived-only R13 JSON after full R12 hash provenance
+        run: |
+          set -euo pipefail
+          python3 -m tools.stoneage_tw10_savedata_mutations_r13 --bin /tmp/stoneage-r13/STONEAGE.bin > /tmp/stoneage-r13-derived.json
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          from tools.stoneage_tw10_savedata_mutations_r13 import SCHEMA,STATUS,FLAGS,HELPER,GLOBAL_WRITES
+          p=Path('/tmp/stoneage-r13-derived.json')
+          r=json.loads(p.read_text())
+          assert p.stat().st_size <= 16000
+          assert r['schema']==SCHEMA and r['status']==STATUS
+          assert [x['site_rva'] for x in r['store_candidates']]==list(HELPER)+sorted(GLOBAL_WRITES)
+          assert all(r[k] is False for k in FLAGS)
+          assert all(x['executed_write_proven'] is False and x['named_caller_effect_admitted'] is False for x in r['store_candidates'])
+          assert all(x['same_executed_path_proven'] is False for x in r['linear_windows'])
+          print('TW10_R13_ORIGINAL_STATIC_CANDIDATE_REPORT=PASS')
+          print('TW10_R13_PATH_VALUE_AND_RUNTIME_EFFECTS=OPEN')
+          PY
+      - name: Always purge original archive and extracted historical files
+        if: always()
+        run: rm -rf /tmp/CD_DIC.rar /tmp/stoneage-r13
+      - name: Upload only bounded derived JSON
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: tw10-r13-original-static-mutation-derived
+          path: /tmp/stoneage-r13-derived.json
+          retention-days: 21
