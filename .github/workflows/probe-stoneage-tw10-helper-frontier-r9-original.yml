@@ -1,0 +1,67 @@
+name: Probe TW1.0 original R9 savedata nested helper, store and loop frontier by pinned archive
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - agent/tw10-savedata-helper-frontier-r9-20261012
+    paths:
+      - .github/workflows/probe-stoneage-tw10-helper-frontier-r9-original.yml
+
+permissions:
+  contents: read
+
+jobs:
+  original-static:
+    runs-on: ubuntu-latest
+    timeout-minutes: 33
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify static path and import-count semantics on synthetic x86
+        run: |
+          set -euo pipefail
+          pip install --quiet capstone pefile
+          python3 -m unittest tests.test_stoneage_tw10_savedata_helper_frontier_r9 -v
+      - name: Retrieve strictly catalog-pinned original archive in bounded ranges
+        run: |
+          set -euo pipefail
+          python3 -m tools.stoneage_tw10_archive_parallel_download \
+            --deadline 1500 --workers 16 --chunk 8388608 --output /tmp/CD_DIC.rar
+      - name: Extract accepted disc image for static analysis only
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq 7zip
+          mkdir -p /tmp/stoneage-r9
+          7z x -y -o/tmp/stoneage-r9 /tmp/CD_DIC.rar STONEAGE.bin >/dev/null
+          test "$(stat -c %s /tmp/stoneage-r9/STONEAGE.bin)" = 523449360
+      - name: Verify original embedded hashes and emit bounded R9 metadata only
+        run: |
+          set -euo pipefail
+          python3 -m tools.stoneage_tw10_savedata_helper_frontier_r9 \
+            --bin /tmp/stoneage-r9/STONEAGE.bin | tee /tmp/stoneage-r9-report.json
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          from tools.stoneage_tw10_savedata_helper_frontier_r9 import SCHEMA, STATUS
+          report=json.loads(Path('/tmp/stoneage-r9-report.json').read_text())
+          assert report['schema']==SCHEMA and report['status']==STATUS
+          assert report['nested_helper']['root_rva']==0x4918f
+          assert report['store']['store_rva']==0x4b903
+          for key in ('nested_helper_effects_admitted','caller_resumption_admitted',
+                      'filename_api_link_proven','handle_buffer_size_link_proven','native_io_executed',
+                      'fixed_128_byte_schema_proven','original_bytes_published'):
+              assert report[key] is False
+          print('TW10_R9_ORIGINAL_STATIC_HELPER=PASS')
+          print('TW10_R9_NATIVE_SAVE_IO=OPEN')
+          PY
+      - name: Remove copyrighted original media even on error
+        if: always()
+        run: rm -rf /tmp/CD_DIC.rar /tmp/stoneage-r9
+      - name: Upload derived-only JSON when every provenance gate succeeded
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: tw10-original-helper-r9-derived
+          path: /tmp/stoneage-r9-report.json
+          retention-days: 21
