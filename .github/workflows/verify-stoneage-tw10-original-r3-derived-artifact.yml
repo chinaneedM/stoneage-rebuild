@@ -1,0 +1,58 @@
+name: Validate pinned TW1.0 original R3 derived artifact and strict custody
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/verify-stoneage-tw10-original-r3-derived-artifact.yml
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  validate-pinned-original-report:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify exact provenance of successful bounded original run
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          identity="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/38217343564" --jq '[.status,.conclusion,.head_sha,.head_branch] | join("|")')"
+          test "$identity" = 'completed|success|7c944447fb35bbd0a4c2bf086cd50b2d3e825f28|agent/tw10-savedata-original-gate-20261012'
+          echo 'PINNED_ORIGINAL_RUN_CUSTODY=PASS'
+      - name: Retrieve only derived metadata artifact from exact original run
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/tw10-r3-derived
+          gh run download 38217343564 --repo "$GITHUB_REPOSITORY" --name tw10-savedata-original-r3-derived --dir /tmp/tw10-r3-derived
+          test "$(find /tmp/tw10-r3-derived -type f | wc -l)" -eq 1
+          test -f /tmp/tw10-r3-derived/tw10-savedata-instruction-r3.txt
+          test ! -L /tmp/tw10-r3-derived/tw10-savedata-instruction-r3.txt
+          test "$(stat -c %s /tmp/tw10-r3-derived/tw10-savedata-instruction-r3.txt)" -le 25000
+      - name: Validate exact producer format and explicit original-runtime OPEN boundary
+        run: |
+          set -euo pipefail
+          pip install --quiet capstone pefile
+          python3 -m tools.stoneage_tw10_savedata_r3_report_guard --report /tmp/tw10-r3-derived/tw10-savedata-instruction-r3.txt | tee /tmp/tw10-r3-guard-result.json
+          python3 - <<'PY'
+          import json
+          with open('/tmp/tw10-r3-guard-result.json', encoding='utf-8') as f:
+              result=json.load(f)
+          assert result['status']=='DERIVED_FORMAT_AND_CUSTODY_ONLY'
+          assert result['word_sites']==4 and result['candidates']==4
+          assert result['forward_file_api_mentions']==0
+          assert result['actual_instruction_reachability_admitted'] is False
+          assert result['original_128_byte_format_admitted'] is False
+          assert result['contains_original_payload'] is False
+          print('TW10_PINNED_ORIGINAL_R3_DERIVED_REPORT_GUARD=PASS')
+          print('TW10_NATIVE_IO_REACHABILITY=OPEN')
+          PY
+      - name: Purge derived temporary files
+        if: always()
+        run: rm -rf /tmp/tw10-r3-derived /tmp/tw10-r3-guard-result.json
