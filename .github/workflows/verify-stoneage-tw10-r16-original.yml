@@ -1,0 +1,56 @@
+name: Independently verify TW1.0 R16 original-derived callee and global witness
+on:
+  workflow_dispatch:
+  push:
+    branches: [main, agent/tw10-savedata-callee-global-r16-20261012]
+    paths:
+      - .github/workflows/verify-stoneage-tw10-r16-original.yml
+      - tools/stoneage_tw10_savedata_callee_global_r16_guard.py
+      - tests/test_stoneage_tw10_savedata_callee_global_r16_guard.py
+      - research/recovered/STONEAGE-TW10-SAVEDATA-CALLEE-GLOBAL-R16-ORIGINAL.json
+permissions:
+  contents: read
+  actions: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Pin successful original R16 run and immutable source head
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          identity="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/38251469650" --jq '[.status,.conclusion,.head_sha,.head_branch] | join("|")')"
+          test "$identity" = 'completed|success|309ac5bcc268b5b5d3efeabc257f32ea8f8e1208|agent/tw10-savedata-callee-global-r16-20261012'
+      - name: Retrieve derived-only source artifact and pin exact byte digest
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/r16-verify
+          gh run download 38251469650 --repo "$GITHUB_REPOSITORY" --name tw10-r16-original-callee-global-derived --dir /tmp/r16-verify
+          test "$(find /tmp/r16-verify -type f | wc -l)" -eq 1
+          test -f /tmp/r16-verify/stoneage-r16-derived.json
+          test ! -L /tmp/r16-verify/stoneage-r16-derived.json
+          test "$(stat -c %s /tmp/r16-verify/stoneage-r16-derived.json)" -eq 4710
+          echo 'a17655952b1d9310283c97ab53e689bd0b2c8a07935b0655dac04a65b7f132ca  /tmp/r16-verify/stoneage-r16-derived.json' | sha256sum -c -
+      - name: Validate exact static boundary and derived report equivalence
+        run: |
+          set -euo pipefail
+          python -m unittest -v tests.test_stoneage_tw10_savedata_callee_global_r16_guard
+          python -m tools.stoneage_tw10_savedata_callee_global_r16_guard --report /tmp/r16-verify/stoneage-r16-derived.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          a=json.loads(Path('/tmp/r16-verify/stoneage-r16-derived.json').read_text())
+          b=json.loads(Path('research/recovered/STONEAGE-TW10-SAVEDATA-CALLEE-GLOBAL-R16-ORIGINAL.json').read_text())
+          assert a == b
+          assert not b['callee_effects_admitted'] and not b['original_native_io_proven']
+          print('TW10_R16_ORIGINAL_CUSTODY_AND_STATIC_EFFECT_BOUNDARIES=PASS')
+          print('TW10_R16_ACTUAL_CALLEE_AND_GLOBAL_EFFECTS=OPEN')
+          PY
+      - name: Always purge downloaded derived-only file
+        if: always()
+        run: rm -rf /tmp/r16-verify

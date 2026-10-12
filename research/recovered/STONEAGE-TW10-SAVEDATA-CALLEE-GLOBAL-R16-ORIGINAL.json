@@ -1,0 +1,226 @@
+{
+  "actual_function_entries_proven": false,
+  "call_arguments_resolved": false,
+  "call_results_resolved": false,
+  "callee_effects_admitted": false,
+  "callee_frontiers": [
+    {
+      "caller_specific_values_proven": false,
+      "calling_convention_proven": false,
+      "function_entry_proven": false,
+      "original_callee_effects_admitted": false,
+      "original_runtime_path_proven": false,
+      "root_rva": 296128,
+      "state_cap": 144,
+      "summary": {
+        "common_preserved_registers": [],
+        "control_flow_cycle": false,
+        "gap_sites": [
+          {
+            "direct_target_rva": null,
+            "occurrences": 1,
+            "reason": "unsupported_memory",
+            "rva": 296135
+          }
+        ],
+        "gaps": {
+          "unsupported_memory": 1
+        },
+        "native_io_executed": false,
+        "original_helper_accepted": false,
+        "qualifies_modeled_return_effect_summary": false,
+        "return_paths": [],
+        "root_rva": 296128,
+        "schema": "tw10-r8-bounded-helper-return-effects",
+        "state_limit_hit": false,
+        "uniform_ret_cleanup_bytes": null,
+        "visited_states": 5
+      }
+    },
+    {
+      "caller_specific_values_proven": false,
+      "calling_convention_proven": false,
+      "function_entry_proven": false,
+      "original_callee_effects_admitted": false,
+      "original_runtime_path_proven": false,
+      "root_rva": 301312,
+      "state_cap": 80,
+      "summary": {
+        "common_preserved_registers": [],
+        "control_flow_cycle": false,
+        "gap_sites": [
+          {
+            "direct_target_rva": 320168,
+            "occurrences": 1,
+            "reason": "unsummarized_call",
+            "rva": 301321
+          },
+          {
+            "direct_target_rva": 320225,
+            "occurrences": 1,
+            "reason": "unsummarized_call",
+            "rva": 301330
+          }
+        ],
+        "gaps": {
+          "unsummarized_call": 2
+        },
+        "native_io_executed": false,
+        "original_helper_accepted": false,
+        "qualifies_modeled_return_effect_summary": false,
+        "return_paths": [],
+        "root_rva": 301312,
+        "schema": "tw10-r8-bounded-helper-return-effects",
+        "state_limit_hit": false,
+        "uniform_ret_cleanup_bytes": null,
+        "visited_states": 5
+      }
+    },
+    {
+      "caller_specific_values_proven": false,
+      "calling_convention_proven": false,
+      "function_entry_proven": false,
+      "original_callee_effects_admitted": false,
+      "original_runtime_path_proven": false,
+      "root_rva": 303260,
+      "state_cap": 80,
+      "summary": {
+        "common_preserved_registers": [],
+        "control_flow_cycle": false,
+        "gap_sites": [
+          {
+            "direct_target_rva": null,
+            "occurrences": 1,
+            "reason": "unsummarized_call",
+            "rva": 303300
+          },
+          {
+            "direct_target_rva": null,
+            "occurrences": 1,
+            "reason": "unsummarized_call",
+            "rva": 303352
+          }
+        ],
+        "gaps": {
+          "unsummarized_call": 2
+        },
+        "native_io_executed": false,
+        "original_helper_accepted": false,
+        "qualifies_modeled_return_effect_summary": false,
+        "return_paths": [],
+        "root_rva": 303260,
+        "schema": "tw10-r8-bounded-helper-return-effects",
+        "state_limit_hit": false,
+        "uniform_ret_cleanup_bytes": null,
+        "visited_states": 21
+      }
+    },
+    {
+      "caller_specific_values_proven": false,
+      "calling_convention_proven": false,
+      "function_entry_proven": false,
+      "original_callee_effects_admitted": false,
+      "original_runtime_path_proven": false,
+      "root_rva": 303437,
+      "state_cap": 80,
+      "summary": {
+        "common_preserved_registers": [],
+        "control_flow_cycle": true,
+        "gap_sites": [
+          {
+            "direct_target_rva": null,
+            "occurrences": 1,
+            "reason": "alias_write",
+            "rva": 303485
+          }
+        ],
+        "gaps": {
+          "alias_write": 1
+        },
+        "native_io_executed": false,
+        "original_helper_accepted": false,
+        "qualifies_modeled_return_effect_summary": false,
+        "return_paths": [],
+        "root_rva": 303437,
+        "schema": "tw10-r8-bounded-helper-return-effects",
+        "state_limit_hit": false,
+        "uniform_ret_cleanup_bytes": null,
+        "visited_states": 22
+      }
+    }
+  ],
+  "callee_summaries_not_context_qualified": true,
+  "caller_context_equivalence_proven": false,
+  "global_actual_value_proven": false,
+  "global_runtime_initialization_proven": false,
+  "heapalloc_ownership_proven": false,
+  "original_bytes_published": false,
+  "original_native_io_proven": false,
+  "original_save_format_proven": false,
+  "r15_source_call_sites": [
+    [
+      300100,
+      296128
+    ],
+    [
+      300125,
+      296128
+    ],
+    [
+      300143,
+      301312
+    ],
+    [
+      302687,
+      303260
+    ],
+    [
+      302702,
+      303437
+    ]
+  ],
+  "r15_upstream_global_rva": 24254572,
+  "runtime_sha256": "cdab9ea049a98bbc96ce93eeaa8b63c688f0c0f0ad8b3183e79d75e47621441a",
+  "savedata_sha256": "5b26f54a9723cd2c5275f964457094fdf1fc33ca086cdaf55bb5350dfb04f3f9",
+  "schema": "tw10-r16-original-bounded-callee-and-third-global",
+  "static_only": true,
+  "status": "PINNED_ORIGINAL_CONDITIONAL_HELPER_AND_GLOBAL_REFERENCES_EFFECTS_OPEN",
+  "third_global_references": {
+    "all_indirect_references_covered": false,
+    "decode_gap_bytes": 8,
+    "decoded_instructions": 104229,
+    "globals": [
+      {
+        "counts": {
+          "address_candidate": 0,
+          "read_candidate": 1,
+          "unknown_candidate": 0,
+          "write_candidate": 3
+        },
+        "global_rva": 24254572,
+        "runtime_initialization_proven": false,
+        "samples": [
+          {
+            "kind": "write_candidate",
+            "rva": 301612
+          },
+          {
+            "kind": "write_candidate",
+            "rva": 302456
+          },
+          {
+            "kind": "read_candidate",
+            "rva": 302563
+          },
+          {
+            "kind": "write_candidate",
+            "rva": 302728
+          }
+        ],
+        "samples_truncated": false
+      }
+    ],
+    "scope": "linear_text_decode_candidates_not_reachable_execution",
+    "text_bytes": 331776
+  }
+}
