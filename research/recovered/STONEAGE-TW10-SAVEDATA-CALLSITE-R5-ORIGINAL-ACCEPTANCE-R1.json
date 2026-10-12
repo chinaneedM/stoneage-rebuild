@@ -1,0 +1,84 @@
+{
+  "schema": "stoneage-tw10-savedata-r5-original-static-api-neighborhood-acceptance-r1",
+  "status": "ACCEPTED_BOUNDED_ORIGINAL_CALLSITE_GRAPH_AND_LOCAL_API_ABSENCE_ONLY",
+  "original_source": {
+    "run_id": 38223087375,
+    "commit": "9312a2f543fc8cb97b1c89d177050fcb6bebb893",
+    "conclusion": "success",
+    "artifact_id": 11735491592,
+    "archive_size": 842125501,
+    "archive_md5": "b37a4a47f4eb608cac67e4ddf7a1621a",
+    "archive_sha1": "b8cf92720b6ec8b3f46ea2e9bfcda986d21e7ded",
+    "embedded_sa_3_sha256": "cdab9ea049a98bbc96ce93eeaa8b63c688f0c0f0ad8b3183e79d75e47621441a",
+    "embedded_savedata_sha256": "5b26f54a9723cd2c5275f964457094fdf1fc33ca086cdaf55bb5350dfb04f3f9"
+  },
+  "independent_review": {
+    "branch_run_id": 38223391602,
+    "main_run_id": 38223493392,
+    "conclusion": "success"
+  },
+  "synthetic": {
+    "branch_run_id": 38223000995,
+    "main_run_id": 38223493302,
+    "tests": 9
+  },
+  "guard": {
+    "branch_run_id": 38223265258,
+    "main_run_id": 38223493631,
+    "tests": 13
+  },
+  "source_main_commit": "bc1de098a80328fccb7997e6cceaca95b84794e0",
+  "static_graph": {
+    "entry_rva": "0x4980a",
+    "nodes": 31665,
+    "edges": 35092,
+    "limit_hit": false,
+    "neighborhood_max_rva_span": 2048,
+    "neighborhood_max_nodes": 256,
+    "sites": [
+      {
+        "word_rva": "0x40065",
+        "push_start": "0x40064",
+        "shortest_entrygraph_hops": 226,
+        "previous_edge": "sequential",
+        "observed_local_nodes": 34,
+        "visible_file_api_events": 0
+      },
+      {
+        "word_rva": "0x400e5",
+        "push_start": "0x400e4",
+        "shortest_entrygraph_hops": 216,
+        "previous_edge": "sequential",
+        "observed_local_nodes": 158,
+        "visible_file_api_events": 0
+      },
+      {
+        "word_rva": "0x40116",
+        "push_start": "0x40115",
+        "shortest_entrygraph_hops": 226,
+        "previous_edge": "sequential",
+        "observed_local_nodes": 73,
+        "visible_file_api_events": 0
+      },
+      {
+        "word_rva": "0x402a1",
+        "push_start": "0x402a0",
+        "shortest_entrygraph_hops": 259,
+        "previous_edge": "sequential",
+        "observed_local_nodes": 34,
+        "visible_file_api_events": 0
+      }
+    ]
+  },
+  "boundary": {
+    "false_negative_possible": true,
+    "unresolved_indirect_calls": true,
+    "possible_far_or_wrapper_file_api": true,
+    "actual_filename_argument_proven": false,
+    "actual_ReadFile_WriteFile_proven": false,
+    "original_128byte_schema_proven": false,
+    "actual_runtime_execution_proven": false,
+    "proprietary_payload_published": false
+  },
+  "next": "R6 independently audit wrapper/indirect call connectivity, filename stack argument and handle/buffer flow beyond 2048-RVA local neighborhoods, with versioned evidence and explicit nonadmission."
+}

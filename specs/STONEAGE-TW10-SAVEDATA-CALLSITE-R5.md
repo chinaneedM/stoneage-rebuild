@@ -37,3 +37,25 @@ NEXT after a verified original R5 report: classify candidate-specific
 CreateFileA proximity and branch edges, then design a *separate* x86 stack/
 handle/buffer dataflow test only for actual positive signals. No automatic
 retrojection of later Wayi settings behavior or engine implementation.
+
+
+## 2026-10-12 — R5 full-original static report accepted
+
+The exact catalog-pinned archive, STONEAGE.bin and embedded original
+sa_3.exe/savedata.dat pass identity gates in Actions38223087375. Immutable
+original-run derived-only report ID11735491592 was independently fetched and
+strictly validated in branch Actions38223391602 and main38223493392.
+
+Four existing push start RVAs 0x40064,0x400e4,0x40115,0x402a0 have
+PE-entrypoint-graph minimum path lengths 226,216,226,259. Each has one
+sequential incoming edge and zero incoming explicit branch edges. Bounded
+forward neighborhoods visited 34,158,73,34 graph nodes (limit <=256,
+RVA span <=2048); observed zero direct recognized file-API import calls.
+R4 graph count 31665 nodes/35092 edges unchanged.
+
+This proves **only the bounded negative local API search**, not absence of
+file IO, not filename-to-CreateFileA argument flow, not actual runtime code
+execution and not any read/write size or storage schema. R6 must examine
+cross-function/indirect wrappers and dataflow without silently promoting
+inference to original fact. Acceptance receipt:
+research/recovered/STONEAGE-TW10-SAVEDATA-CALLSITE-R5-ORIGINAL-ACCEPTANCE-R1.json.
