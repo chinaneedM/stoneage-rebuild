@@ -1,0 +1,260 @@
+{
+  "caller_resumption_admitted": false,
+  "delegate_effects_admitted": false,
+  "delegate_helper": {
+    "common_preserved_registers": [],
+    "control_flow_cycle": false,
+    "gap_sites": [
+      {
+        "direct_target_rva": 302483,
+        "occurrences": 1,
+        "reason": "unsummarized_call",
+        "rva": 299483
+      },
+      {
+        "direct_target_rva": null,
+        "occurrences": 1,
+        "reason": "unsummarized_call",
+        "rva": 299515
+      }
+    ],
+    "gaps": {
+      "unsummarized_call": 2
+    },
+    "native_io_executed": false,
+    "original_helper_accepted": false,
+    "qualifies_modeled_return_effect_summary": false,
+    "return_paths": [],
+    "root_rva": 299469,
+    "schema": "tw10-r8-bounded-helper-return-effects",
+    "state_limit_hit": false,
+    "uniform_ret_cleanup_bytes": null,
+    "visited_states": 16
+  },
+  "effective_object_proven": false,
+  "filename_api_link_proven": false,
+  "fixed_128_byte_schema_proven": false,
+  "handle_buffer_size_link_proven": false,
+  "input_queries": [
+    {
+      "reaching_sources": [
+        {
+          "origin": "definition",
+          "rva": 309432,
+          "semantic": {
+            "constant": null,
+            "kind": "memory_load",
+            "memory_input": {
+              "base_register": null,
+              "displacement_region": {
+                "displacement_rva": 24254596,
+                "raw_backed": false,
+                "section": ".data",
+                "writable": true
+              },
+              "index_register": null,
+              "index_scale": 1,
+              "relative_field_offset": null,
+              "segment_register": null,
+              "width_bytes": 4
+            },
+            "register_inputs": [],
+            "width_bits": 32
+          }
+        }
+      ],
+      "register": "ebx",
+      "site_rva": 309462,
+      "value_fully_known": false
+    },
+    {
+      "reaching_sources": [
+        {
+          "origin": "definition",
+          "rva": 309425,
+          "semantic": {
+            "constant": 0,
+            "kind": "constant_assignment",
+            "memory_input": null,
+            "register_inputs": [],
+            "width_bits": 32
+          }
+        },
+        {
+          "origin": "definition",
+          "rva": 309452,
+          "semantic": {
+            "constant": 1,
+            "kind": "register_offset_adjustment",
+            "memory_input": null,
+            "register_inputs": [
+              "eax"
+            ],
+            "width_bits": 32
+          }
+        }
+      ],
+      "register": "eax",
+      "site_rva": 309462,
+      "value_fully_known": false
+    },
+    {
+      "reaching_sources": [
+        {
+          "origin": "definition",
+          "rva": 309494,
+          "semantic": {
+            "constant": null,
+            "kind": "memory_load",
+            "memory_input": {
+              "base_register": "edi",
+              "displacement_region": null,
+              "index_register": "eax",
+              "index_scale": 1,
+              "relative_field_offset": 0,
+              "segment_register": null,
+              "width_bytes": 4
+            },
+            "register_inputs": [],
+            "width_bits": 32
+          }
+        }
+      ],
+      "register": "edi",
+      "site_rva": 309501,
+      "value_fully_known": false
+    },
+    {
+      "reaching_sources": [
+        {
+          "origin": "definition",
+          "rva": 309440,
+          "semantic": {
+            "constant": null,
+            "kind": "memory_load",
+            "memory_input": {
+              "base_register": "edi",
+              "displacement_region": null,
+              "index_register": null,
+              "index_scale": 1,
+              "relative_field_offset": 0,
+              "segment_register": null,
+              "width_bytes": 4
+            },
+            "register_inputs": [],
+            "width_bits": 32
+          }
+        }
+      ],
+      "register": "ecx",
+      "site_rva": 309442,
+      "value_fully_known": false
+    },
+    {
+      "reaching_sources": [
+        {
+          "origin": "definition",
+          "rva": 309421,
+          "semantic": {
+            "constant": 0,
+            "kind": "constant_assignment",
+            "memory_input": null,
+            "register_inputs": [],
+            "width_bits": 32
+          }
+        }
+      ],
+      "register": "ebp",
+      "site_rva": 309442,
+      "value_fully_known": false
+    },
+    {
+      "reaching_sources": [
+        {
+          "origin": "definition",
+          "rva": 309440,
+          "semantic": {
+            "constant": null,
+            "kind": "memory_load",
+            "memory_input": {
+              "base_register": "edi",
+              "displacement_region": null,
+              "index_register": null,
+              "index_scale": 1,
+              "relative_field_offset": 0,
+              "segment_register": null,
+              "width_bytes": 4
+            },
+            "register_inputs": [],
+            "width_bits": 32
+          }
+        }
+      ],
+      "register": "ecx",
+      "site_rva": 309446,
+      "value_fully_known": false
+    },
+    {
+      "reaching_sources": [
+        {
+          "origin": "definition",
+          "rva": 309452,
+          "semantic": {
+            "constant": 1,
+            "kind": "register_offset_adjustment",
+            "memory_input": null,
+            "register_inputs": [
+              "eax"
+            ],
+            "width_bits": 32
+          }
+        }
+      ],
+      "register": "eax",
+      "site_rva": 309456,
+      "value_fully_known": false
+    },
+    {
+      "reaching_sources": [
+        {
+          "origin": "definition",
+          "rva": 309412,
+          "semantic": {
+            "constant": null,
+            "kind": "memory_load",
+            "memory_input": {
+              "base_register": null,
+              "displacement_region": {
+                "displacement_rva": 24258720,
+                "raw_backed": false,
+                "section": ".data",
+                "writable": true
+              },
+              "index_register": null,
+              "index_scale": 1,
+              "relative_field_offset": null,
+              "segment_register": null,
+              "width_bytes": 4
+            },
+            "register_inputs": [],
+            "width_bits": 32
+          }
+        }
+      ],
+      "register": "edx",
+      "site_rva": 309456,
+      "value_fully_known": false
+    }
+  ],
+  "loop_runtime_bound_proven": false,
+  "native_io_executed": false,
+  "original_bytes_published": false,
+  "parent_edges": 55,
+  "parent_inputs_fully_known": false,
+  "parent_nodes": 50,
+  "runtime_sha256": "cdab9ea049a98bbc96ce93eeaa8b63c688f0c0f0ad8b3183e79d75e47621441a",
+  "savedata_sha256": "5b26f54a9723cd2c5275f964457094fdf1fc33ca086cdaf55bb5350dfb04f3f9",
+  "schema": "tw10-r11-original-parent-input-definitions",
+  "status": "PINNED_ORIGINAL_CONDITIONAL_INPUTS_NOT_EFFECTIVE_OBJECT_OR_RUNTIME",
+  "structural_call_return_assumptions": 1
+}
