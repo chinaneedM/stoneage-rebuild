@@ -27,7 +27,7 @@ class TestR20Synthetic(unittest.TestCase):
 
     def test_unreachable_indirect_call_rejected(self):
         with self.assertRaisesRegex(ValueError,"not reached"):
-            indirect_call_frontier(dec(bytes.fromhex("c39090")),[],{},ROOT+1,ROOT)
+            indirect_call_frontier(dec(bytes.fromhex("c3ffd0")),[],{},ROOT+1,ROOT)
 
     def test_push_memory_global_reference_static_only(self):
         raw=b"\xff\x35"+struct.pack("<I",BASE+THIRD_GLOBAL)+b"\xc3"
