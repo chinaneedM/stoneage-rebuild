@@ -1,0 +1,65 @@
+name: Probe TW1.0 original R6 savedata first-transfer stack/cross-callee surfaces by pinned archive
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - agent/tw10-savedata-dataflow-r6-20261012
+    paths:
+      - .github/workflows/probe-stoneage-tw10-dataflow-r6-original.yml
+
+permissions:
+  contents: read
+
+jobs:
+  original-static:
+    runs-on: ubuntu-latest
+    timeout-minutes: 33
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify static path and import-count semantics on synthetic x86
+        run: |
+          set -euo pipefail
+          pip install --quiet capstone pefile
+          python3 -m unittest tests.test_stoneage_tw10_savedata_dataflow_r6 -v
+      - name: Retrieve strictly catalog-pinned original archive in bounded ranges
+        run: |
+          set -euo pipefail
+          python3 -m tools.stoneage_tw10_archive_parallel_download \
+            --deadline 1500 --workers 16 --chunk 8388608 --output /tmp/CD_DIC.rar
+      - name: Extract accepted disc image for static analysis only
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq 7zip
+          mkdir -p /tmp/stoneage-r6
+          7z x -y -o/tmp/stoneage-r6 /tmp/CD_DIC.rar STONEAGE.bin >/dev/null
+          test "$(stat -c %s /tmp/stoneage-r6/STONEAGE.bin)" = 523449360
+      - name: Verify original embedded hashes and emit bounded R6 metadata only
+        run: |
+          set -euo pipefail
+          python3 -m tools.stoneage_tw10_savedata_dataflow_r6 \
+            --bin /tmp/stoneage-r6/STONEAGE.bin | tee /tmp/stoneage-r6-report.json
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          from tools.stoneage_tw10_savedata_dataflow_r6 import SCHEMA, STATUS
+          report=json.loads(Path('/tmp/stoneage-r6-report.json').read_text())
+          assert report['schema']==SCHEMA and report['status']==STATUS
+          assert len(report['sites'])==4
+          for key in ('filename_api_argument_proven','handle_buffer_size_link_proven',
+                      'native_io_executed','fixed_128_byte_schema_proven','original_bytes_published'):
+              assert report[key] is False
+          print('TW10_R6_ORIGINAL_STATIC_SURFACE=PASS')
+          print('TW10_R6_NATIVE_SAVE_IO=OPEN')
+          PY
+      - name: Remove copyrighted original media even on error
+        if: always()
+        run: rm -rf /tmp/CD_DIC.rar /tmp/stoneage-r6
+      - name: Upload derived-only JSON when every provenance gate succeeded
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: tw10-original-dataflow-r6-derived
+          path: /tmp/stoneage-r6-report.json
+          retention-days: 21

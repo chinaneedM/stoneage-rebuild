@@ -1,0 +1,26 @@
+name: Validate TW1.0 R6 static stack and cross-callee surfaces
+on:
+  workflow_dispatch:
+  push:
+    branches: [main, agent/tw10-savedata-dataflow-r6-20261012]
+    paths:
+      - tools/stoneage_tw10_savedata_dataflow_r6.py
+      - tools/stoneage_tw10_savedata_dataflow_r6_guard.py
+      - tests/test_stoneage_tw10_savedata_dataflow_r6*.py
+      - .github/workflows/validate-stoneage-tw10-dataflow-r6-synthetic.yml
+permissions:
+  contents: read
+jobs:
+  synthetic:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install --quiet capstone pefile
+      - name: Test R6 and adjacent R4/R5 semantics
+        run: |
+          python3 -m unittest discover -s tests -p 'test_stoneage_tw10_savedata_dataflow_r6*.py' -v
+          python3 -m unittest tests.test_stoneage_tw10_savedata_entrygraph_r4 tests.test_stoneage_tw10_savedata_callsite_r5 tests.test_stoneage_tw10_savedata_callsite_r5_guard -v
+      - run: |
+          echo 'TW10_R6_SYNTHETIC_ONLY=PASS'
+          echo 'TW10_R6_NATIVE_SAVE_IO=OPEN'
