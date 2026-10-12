@@ -1,0 +1,27 @@
+name: Validate TW1.0 R22 call/stack/cycle synthetic and strict guard
+on:
+  workflow_dispatch:
+  push:
+    branches: [main, agent/tw10-savedata-r22-call-stack-cycle-20261012]
+    paths:
+      - .github/workflows/validate-stoneage-tw10-r22-synthetic.yml
+      - tools/stoneage_tw10_savedata_upstream_r22.py
+      - tools/stoneage_tw10_savedata_upstream_r22_guard.py
+      - tests/test_stoneage_tw10_savedata_upstream_r22.py
+      - tests/test_stoneage_tw10_savedata_upstream_r22_guard.py
+permissions:
+  contents: read
+jobs:
+  synthetic:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install --quiet capstone pefile
+      - name: R22 and R21 synthetic and strict negative controls
+        run: |
+          set -euo pipefail
+          python -m unittest -v tests.test_stoneage_tw10_savedata_upstream_r22 tests.test_stoneage_tw10_savedata_upstream_r22_guard tests.test_stoneage_tw10_savedata_upstream_r21 tests.test_stoneage_tw10_savedata_upstream_r21_guard
+          python -m compileall -q tools/stoneage_tw10_savedata_upstream_r22.py tools/stoneage_tw10_savedata_upstream_r22_guard.py
+          echo TW10_R22_SYNTHETIC_STRICT=PASS
+          echo TW10_R22_ORIGINAL_EVIDENCE=OPEN
