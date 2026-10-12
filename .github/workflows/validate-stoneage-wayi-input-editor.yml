@@ -1,0 +1,46 @@
+name: Validate Wayi compiled input editor and settings profile
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/validate-stoneage-wayi-input-editor.yml"
+      - "tools/stoneage_wayi_input_editor.py"
+      - "tests/test_stoneage_wayi_input_editor.py"
+      - "research/recovered/STONEAGE-WAYI-INPUT-EDITOR-R1.json"
+      - "docs/specs/STONEAGE-WAYI-INPUT-EDITOR-R1.md"
+permissions:
+  contents: read
+jobs:
+  offline-codec:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install pinned static decoder
+        run: python -m pip install --quiet capstone==5.0.7 pycryptodome==3.23.0
+      - name: Validate synthetic codec vectors and adjacent evidence regressions
+        run: |
+          python -m unittest -v tests.test_stoneage_wayi_input_editor tests.test_stoneage_wayi_login_input tests.test_stoneage_wayi_keyed_fields tests.test_stoneage_wayi_codec_profile tests.test_stoneage_wayi_inventory_state_probe tests.test_stoneage_pet_sb_server_audit tests.test_stoneage_wayi_pet_state_probe tests.test_stoneage_wayi_pet_transport_probe tests.test_stoneage_wayi_pet_sender_probe tests.test_stoneage_wayi_saupdate_route_probe tests.test_stoneage_wayi_pe_static_inventory tests.test_stoneage_wayi_archived_page_inventory tests.test_stoneage_tw80_may16_cdx_probe tests.test_stoneage_tw80_arquivo_pt_index_probe
+          python -c 'import json; from tools.stoneage_wayi_input_editor import validate; validate(json.load(open("research/recovered/STONEAGE-WAYI-INPUT-EDITOR-R1.json")))'
+      - name: Rederive pinned editor and persistence source distinctions
+        run: |
+          python - <<'PYCODE'
+          import json, tempfile, urllib.request
+          from pathlib import Path
+          from tools.stoneage_wayi_input_editor import PINS, source_profile
+          with tempfile.TemporaryDirectory() as tmp:
+              root=Path(tmp)
+              for path in PINS:
+                  url="https://raw.githubusercontent.com/BismarckDD/Stoneage/2f736808ff4361f5429ee919b718c88fabb60346/"+path
+                  with urllib.request.urlopen(url, timeout=25) as response:
+                      data=response.read(700001)
+                  if len(data)>700000: raise ValueError("Unbounded source response")
+                  out=root/path; out.parent.mkdir(parents=True,exist_ok=True); out.write_bytes(data)
+              actual=source_profile(root)
+              expected=json.load(open("research/recovered/STONEAGE-WAYI-INPUT-EDITOR-R1.json"))["source_profile"]
+              if actual!=expected: raise ValueError("Editor source profile evidence drift")
+              print("INPUT_EDITOR_SOURCE_PROFILE_PASS")
+          PYCODE

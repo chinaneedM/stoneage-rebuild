@@ -1,0 +1,2175 @@
+{
+  "probe": {
+    "schema": "STONEAGE-WAYI-INPUT-EDITOR-R1",
+    "input_bytes": 921600,
+    "decompressed_input_sha256": "4193a7e1b20b996f7902424ae05092b455c5dbbe3f133d331a4897bbc7abfe63",
+    "windows": [
+      {
+        "label": "single-byte-editor",
+        "start_rva": 70608,
+        "end_rva_exclusive": 70877,
+        "instruction_count": 81,
+        "calls": [
+          {
+            "call_rva": 70869,
+            "target": {
+              "width_bytes": 4,
+              "kind": "immediate",
+              "value": 4772080
+            },
+            "direct_target_rva": 577776
+          }
+        ],
+        "branches": [
+          {
+            "branch_rva": 70617,
+            "condition": "jbe",
+            "target_rva": 70874,
+            "fallthrough_rva": 70623
+          },
+          {
+            "branch_rva": 70631,
+            "condition": "je",
+            "target_rva": 70874,
+            "fallthrough_rva": 70637,
+            "adjacent_comparison_rva": 70629
+          },
+          {
+            "branch_rva": 70655,
+            "condition": "jge",
+            "target_rva": 70874,
+            "fallthrough_rva": 70661,
+            "adjacent_comparison_rva": 70653
+          },
+          {
+            "branch_rva": 70667,
+            "condition": "je",
+            "target_rva": 70756,
+            "fallthrough_rva": 70669,
+            "adjacent_comparison_rva": 70661
+          },
+          {
+            "branch_rva": 70675,
+            "condition": "je",
+            "target_rva": 70756,
+            "fallthrough_rva": 70677,
+            "adjacent_comparison_rva": 70669
+          },
+          {
+            "branch_rva": 70683,
+            "condition": "jne",
+            "target_rva": 70735,
+            "fallthrough_rva": 70685,
+            "adjacent_comparison_rva": 70677
+          },
+          {
+            "branch_rva": 70688,
+            "condition": "je",
+            "target_rva": 70874,
+            "fallthrough_rva": 70694,
+            "adjacent_comparison_rva": 70685
+          },
+          {
+            "branch_rva": 70703,
+            "condition": "je",
+            "target_rva": 70874,
+            "fallthrough_rva": 70709,
+            "adjacent_comparison_rva": 70697
+          },
+          {
+            "branch_rva": 70712,
+            "condition": "je",
+            "target_rva": 70874,
+            "fallthrough_rva": 70718,
+            "adjacent_comparison_rva": 70709
+          },
+          {
+            "branch_rva": 70721,
+            "condition": "je",
+            "target_rva": 70874,
+            "fallthrough_rva": 70727,
+            "adjacent_comparison_rva": 70718
+          },
+          {
+            "branch_rva": 70730,
+            "condition": "jne",
+            "target_rva": 70786,
+            "fallthrough_rva": 70732,
+            "adjacent_comparison_rva": 70727
+          },
+          {
+            "branch_rva": 70741,
+            "condition": "jne",
+            "target_rva": 70786,
+            "fallthrough_rva": 70743,
+            "adjacent_comparison_rva": 70735
+          },
+          {
+            "branch_rva": 70746,
+            "condition": "je",
+            "target_rva": 70874,
+            "fallthrough_rva": 70748,
+            "adjacent_comparison_rva": 70743
+          },
+          {
+            "branch_rva": 70751,
+            "condition": "jne",
+            "target_rva": 70786,
+            "fallthrough_rva": 70753,
+            "adjacent_comparison_rva": 70748
+          },
+          {
+            "branch_rva": 70759,
+            "condition": "jl",
+            "target_rva": 70766,
+            "fallthrough_rva": 70761,
+            "adjacent_comparison_rva": 70756
+          },
+          {
+            "branch_rva": 70764,
+            "condition": "jle",
+            "target_rva": 70786,
+            "fallthrough_rva": 70766,
+            "adjacent_comparison_rva": 70761
+          },
+          {
+            "branch_rva": 70769,
+            "condition": "jl",
+            "target_rva": 70776,
+            "fallthrough_rva": 70771,
+            "adjacent_comparison_rva": 70766
+          },
+          {
+            "branch_rva": 70774,
+            "condition": "jle",
+            "target_rva": 70786,
+            "fallthrough_rva": 70776,
+            "adjacent_comparison_rva": 70771
+          },
+          {
+            "branch_rva": 70779,
+            "condition": "jl",
+            "target_rva": 70874,
+            "fallthrough_rva": 70781,
+            "adjacent_comparison_rva": 70776
+          },
+          {
+            "branch_rva": 70784,
+            "condition": "jg",
+            "target_rva": 70874,
+            "fallthrough_rva": 70786,
+            "adjacent_comparison_rva": 70781
+          },
+          {
+            "branch_rva": 70809,
+            "condition": "jg",
+            "target_rva": 70823,
+            "fallthrough_rva": 70811
+          },
+          {
+            "branch_rva": 70821,
+            "condition": "jge",
+            "target_rva": 70811,
+            "fallthrough_rva": 70823,
+            "adjacent_comparison_rva": 70819
+          },
+          {
+            "branch_rva": 70862,
+            "condition": "je",
+            "target_rva": 70874,
+            "fallthrough_rva": 70864
+          }
+        ],
+        "absolute_writes": [
+          {
+            "rva": 70852,
+            "destination": {
+              "width_bytes": 4,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 5573996,
+              "absolute_rva": 1379692
+            },
+            "source": {
+              "width_bytes": 4,
+              "kind": "immediate",
+              "value": 20
+            }
+          }
+        ]
+      },
+      {
+        "label": "two-byte-editor",
+        "start_rva": 70880,
+        "end_rva_exclusive": 71020,
+        "instruction_count": 41,
+        "calls": [],
+        "branches": [
+          {
+            "branch_rva": 70889,
+            "condition": "je",
+            "target_rva": 71018,
+            "fallthrough_rva": 70891,
+            "adjacent_comparison_rva": 70887
+          },
+          {
+            "branch_rva": 70910,
+            "condition": "jge",
+            "target_rva": 71018,
+            "fallthrough_rva": 70912,
+            "adjacent_comparison_rva": 70908
+          },
+          {
+            "branch_rva": 70918,
+            "condition": "je",
+            "target_rva": 71018,
+            "fallthrough_rva": 70920,
+            "adjacent_comparison_rva": 70912
+          },
+          {
+            "branch_rva": 70926,
+            "condition": "je",
+            "target_rva": 71018,
+            "fallthrough_rva": 70928,
+            "adjacent_comparison_rva": 70920
+          },
+          {
+            "branch_rva": 70938,
+            "condition": "jg",
+            "target_rva": 70952,
+            "fallthrough_rva": 70940,
+            "adjacent_comparison_rva": 70936
+          },
+          {
+            "branch_rva": 70950,
+            "condition": "jge",
+            "target_rva": 70940,
+            "fallthrough_rva": 70952,
+            "adjacent_comparison_rva": 70948
+          }
+        ],
+        "absolute_writes": [
+          {
+            "rva": 71008,
+            "destination": {
+              "width_bytes": 4,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 5573996,
+              "absolute_rva": 1379692
+            },
+            "source": {
+              "width_bytes": 4,
+              "kind": "immediate",
+              "value": 20
+            }
+          }
+        ]
+      },
+      {
+        "label": "string-callback",
+        "start_rva": 67104,
+        "end_rva_exclusive": 67192,
+        "instruction_count": 43,
+        "calls": [
+          {
+            "call_rva": 67151,
+            "target": {
+              "width_bytes": 4,
+              "kind": "register",
+              "name": "ebp"
+            }
+          },
+          {
+            "call_rva": 67158,
+            "target": {
+              "width_bytes": 4,
+              "kind": "immediate",
+              "value": 4265184
+            },
+            "direct_target_rva": 70880
+          },
+          {
+            "call_rva": 67173,
+            "target": {
+              "width_bytes": 4,
+              "kind": "immediate",
+              "value": 4264912
+            },
+            "direct_target_rva": 70608
+          }
+        ],
+        "branches": [
+          {
+            "branch_rva": 67128,
+            "condition": "jle",
+            "target_rva": 67135,
+            "fallthrough_rva": 67130,
+            "adjacent_comparison_rva": 67125
+          },
+          {
+            "branch_rva": 67139,
+            "condition": "jle",
+            "target_rva": 67188,
+            "fallthrough_rva": 67141,
+            "adjacent_comparison_rva": 67137
+          },
+          {
+            "branch_rva": 67155,
+            "condition": "je",
+            "target_rva": 67170,
+            "fallthrough_rva": 67157,
+            "adjacent_comparison_rva": 67153
+          },
+          {
+            "branch_rva": 67168,
+            "condition": "jmp",
+            "target_rva": 67181,
+            "fallthrough_rva": 67170
+          },
+          {
+            "branch_rva": 67185,
+            "condition": "jl",
+            "target_rva": 67148,
+            "fallthrough_rva": 67187,
+            "adjacent_comparison_rva": 67183
+          }
+        ],
+        "absolute_writes": []
+      },
+      {
+        "label": "focus-pointer",
+        "start_rva": 72000,
+        "end_rva_exclusive": 72010,
+        "instruction_count": 3,
+        "calls": [],
+        "branches": [],
+        "absolute_writes": [
+          {
+            "rva": 72004,
+            "destination": {
+              "width_bytes": 4,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 5573988,
+              "absolute_rva": 1379684
+            },
+            "source": {
+              "width_bytes": 4,
+              "kind": "register",
+              "name": "eax"
+            }
+          }
+        ]
+      },
+      {
+        "label": "main-character-call",
+        "start_rva": 261968,
+        "end_rva_exclusive": 261989,
+        "instruction_count": 9,
+        "calls": [
+          {
+            "call_rva": 261973,
+            "target": {
+              "width_bytes": 4,
+              "kind": "immediate",
+              "value": 4264912
+            },
+            "direct_target_rva": 70608
+          }
+        ],
+        "branches": [],
+        "absolute_writes": []
+      },
+      {
+        "label": "alternate-wm-char-gate",
+        "start_rva": 580299,
+        "end_rva_exclusive": 580333,
+        "instruction_count": 11,
+        "calls": [
+          {
+            "call_rva": 580315,
+            "target": {
+              "width_bytes": 4,
+              "kind": "immediate",
+              "value": 4264912
+            },
+            "direct_target_rva": 70608
+          }
+        ],
+        "branches": [
+          {
+            "branch_rva": 580304,
+            "condition": "jne",
+            "target_rva": 580645,
+            "fallthrough_rva": 580310,
+            "adjacent_comparison_rva": 580299
+          }
+        ],
+        "absolute_writes": []
+      },
+      {
+        "label": "startup-callback-binding",
+        "start_rva": 124326,
+        "end_rva_exclusive": 124350,
+        "instruction_count": 7,
+        "calls": [
+          {
+            "call_rva": 124338,
+            "target": {
+              "width_bytes": 4,
+              "kind": "immediate",
+              "value": 4804336
+            },
+            "direct_target_rva": 610032
+          }
+        ],
+        "branches": [
+          {
+            "branch_rva": 124348,
+            "condition": "jne",
+            "target_rva": 124383,
+            "fallthrough_rva": 124350,
+            "adjacent_comparison_rva": 124346
+          }
+        ],
+        "absolute_writes": []
+      },
+      {
+        "label": "callback-initializer",
+        "start_rva": 610032,
+        "end_rva_exclusive": 610493,
+        "instruction_count": 136,
+        "calls": [
+          {
+            "call_rva": 610038,
+            "target": {
+              "width_bytes": 4,
+              "kind": "immediate",
+              "value": 4804800
+            },
+            "direct_target_rva": 610496
+          },
+          {
+            "call_rva": 610043,
+            "target": {
+              "width_bytes": 4,
+              "kind": "immediate",
+              "value": 4846658
+            },
+            "direct_target_rva": 652354
+          },
+          {
+            "call_rva": 610068,
+            "target": {
+              "width_bytes": 4,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 4849992,
+              "absolute_rva": 655688
+            },
+            "import": [
+              "KERNEL32.DLL",
+              "GetSystemInfo"
+            ]
+          },
+          {
+            "call_rva": 610086,
+            "target": {
+              "width_bytes": 4,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 4849996,
+              "absolute_rva": 655692
+            },
+            "import": [
+              "KERNEL32.DLL",
+              "HeapCreate"
+            ]
+          },
+          {
+            "call_rva": 610119,
+            "target": {
+              "width_bytes": 4,
+              "kind": "register",
+              "name": "esi"
+            }
+          },
+          {
+            "call_rva": 610148,
+            "target": {
+              "width_bytes": 4,
+              "kind": "register",
+              "name": "esi"
+            }
+          },
+          {
+            "call_rva": 610182,
+            "target": {
+              "width_bytes": 4,
+              "kind": "register",
+              "name": "esi"
+            }
+          },
+          {
+            "call_rva": 610211,
+            "target": {
+              "width_bytes": 4,
+              "kind": "register",
+              "name": "esi"
+            }
+          },
+          {
+            "call_rva": 610237,
+            "target": {
+              "width_bytes": 4,
+              "kind": "register",
+              "name": "esi"
+            }
+          },
+          {
+            "call_rva": 610261,
+            "target": {
+              "width_bytes": 4,
+              "kind": "register",
+              "name": "esi"
+            }
+          },
+          {
+            "call_rva": 610309,
+            "target": {
+              "width_bytes": 4,
+              "kind": "immediate",
+              "value": 4846652
+            },
+            "direct_target_rva": 652348
+          },
+          {
+            "call_rva": 610319,
+            "target": {
+              "width_bytes": 4,
+              "kind": "immediate",
+              "value": 4805552
+            },
+            "direct_target_rva": 611248
+          },
+          {
+            "call_rva": 610350,
+            "target": {
+              "width_bytes": 4,
+              "kind": "register",
+              "name": "ebx"
+            }
+          },
+          {
+            "call_rva": 610372,
+            "target": {
+              "width_bytes": 4,
+              "kind": "register",
+              "name": "ebx"
+            }
+          },
+          {
+            "call_rva": 610395,
+            "target": {
+              "width_bytes": 4,
+              "kind": "register",
+              "name": "ebx"
+            }
+          },
+          {
+            "call_rva": 610417,
+            "target": {
+              "width_bytes": 4,
+              "kind": "register",
+              "name": "ebx"
+            }
+          },
+          {
+            "call_rva": 610439,
+            "target": {
+              "width_bytes": 4,
+              "kind": "register",
+              "name": "ebx"
+            }
+          },
+          {
+            "call_rva": 610454,
+            "target": {
+              "width_bytes": 4,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 4850012,
+              "absolute_rva": 655708
+            },
+            "import": [
+              "KERNEL32.DLL",
+              "HeapDestroy"
+            ]
+          },
+          {
+            "call_rva": 610473,
+            "target": {
+              "width_bytes": 4,
+              "kind": "immediate",
+              "value": 4846646
+            },
+            "direct_target_rva": 652342
+          }
+        ],
+        "branches": [
+          {
+            "branch_rva": 610057,
+            "condition": "je",
+            "target_rva": 610484,
+            "fallthrough_rva": 610063,
+            "adjacent_comparison_rva": 610055
+          },
+          {
+            "branch_rva": 610099,
+            "condition": "je",
+            "target_rva": 610466,
+            "fallthrough_rva": 610105
+          },
+          {
+            "branch_rva": 610128,
+            "condition": "je",
+            "target_rva": 610447,
+            "fallthrough_rva": 610134
+          },
+          {
+            "branch_rva": 610163,
+            "condition": "je",
+            "target_rva": 610425,
+            "fallthrough_rva": 610169
+          },
+          {
+            "branch_rva": 610191,
+            "condition": "je",
+            "target_rva": 610403,
+            "fallthrough_rva": 610197
+          },
+          {
+            "branch_rva": 610220,
+            "condition": "je",
+            "target_rva": 610380,
+            "fallthrough_rva": 610226
+          },
+          {
+            "branch_rva": 610246,
+            "condition": "je",
+            "target_rva": 610358,
+            "fallthrough_rva": 610248
+          },
+          {
+            "branch_rva": 610270,
+            "condition": "je",
+            "target_rva": 610336,
+            "fallthrough_rva": 610272
+          }
+        ],
+        "absolute_writes": [
+          {
+            "rva": 610050,
+            "destination": {
+              "width_bytes": 4,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 83576544,
+              "absolute_rva": 79382240
+            },
+            "source": {
+              "width_bytes": 4,
+              "kind": "register",
+              "name": "eax"
+            }
+          },
+          {
+            "rva": 610094,
+            "destination": {
+              "width_bytes": 4,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 83576548,
+              "absolute_rva": 79382244
+            },
+            "source": {
+              "width_bytes": 4,
+              "kind": "register",
+              "name": "eax"
+            }
+          },
+          {
+            "rva": 610123,
+            "destination": {
+              "width_bytes": 4,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 83576552,
+              "absolute_rva": 79382248
+            },
+            "source": {
+              "width_bytes": 4,
+              "kind": "register",
+              "name": "eax"
+            }
+          },
+          {
+            "rva": 610158,
+            "destination": {
+              "width_bytes": 4,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 83576524,
+              "absolute_rva": 79382220
+            },
+            "source": {
+              "width_bytes": 4,
+              "kind": "register",
+              "name": "eax"
+            }
+          },
+          {
+            "rva": 610186,
+            "destination": {
+              "width_bytes": 4,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 83576520,
+              "absolute_rva": 79382216
+            },
+            "source": {
+              "width_bytes": 4,
+              "kind": "register",
+              "name": "eax"
+            }
+          },
+          {
+            "rva": 610215,
+            "destination": {
+              "width_bytes": 4,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 83576516,
+              "absolute_rva": 79382212
+            },
+            "source": {
+              "width_bytes": 4,
+              "kind": "register",
+              "name": "eax"
+            }
+          },
+          {
+            "rva": 610241,
+            "destination": {
+              "width_bytes": 4,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 83576512,
+              "absolute_rva": 79382208
+            },
+            "source": {
+              "width_bytes": 4,
+              "kind": "register",
+              "name": "eax"
+            }
+          },
+          {
+            "rva": 610265,
+            "destination": {
+              "width_bytes": 4,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 83576508,
+              "absolute_rva": 79382204
+            },
+            "source": {
+              "width_bytes": 4,
+              "kind": "register",
+              "name": "eax"
+            }
+          },
+          {
+            "rva": 610288,
+            "destination": {
+              "width_bytes": 4,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 83576540,
+              "absolute_rva": 79382236
+            },
+            "source": {
+              "width_bytes": 4,
+              "kind": "register",
+              "name": "eax"
+            }
+          },
+          {
+            "rva": 610293,
+            "destination": {
+              "width_bytes": 4,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 83576528,
+              "absolute_rva": 79382224
+            },
+            "source": {
+              "width_bytes": 4,
+              "kind": "register",
+              "name": "ecx"
+            }
+          },
+          {
+            "rva": 610299,
+            "destination": {
+              "width_bytes": 4,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 83576572,
+              "absolute_rva": 79382268
+            },
+            "source": {
+              "width_bytes": 4,
+              "kind": "immediate",
+              "value": 1
+            }
+          },
+          {
+            "rva": 610314,
+            "destination": {
+              "width_bytes": 4,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 83576536,
+              "absolute_rva": 79382232
+            },
+            "source": {
+              "width_bytes": 4,
+              "kind": "register",
+              "name": "eax"
+            }
+          },
+          {
+            "rva": 610352,
+            "destination": {
+              "width_bytes": 4,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 83576512,
+              "absolute_rva": 79382208
+            },
+            "source": {
+              "width_bytes": 4,
+              "kind": "register",
+              "name": "edi"
+            }
+          },
+          {
+            "rva": 610374,
+            "destination": {
+              "width_bytes": 4,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 83576516,
+              "absolute_rva": 79382212
+            },
+            "source": {
+              "width_bytes": 4,
+              "kind": "register",
+              "name": "edi"
+            }
+          },
+          {
+            "rva": 610397,
+            "destination": {
+              "width_bytes": 4,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 83576520,
+              "absolute_rva": 79382216
+            },
+            "source": {
+              "width_bytes": 4,
+              "kind": "register",
+              "name": "edi"
+            }
+          },
+          {
+            "rva": 610419,
+            "destination": {
+              "width_bytes": 4,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 83576524,
+              "absolute_rva": 79382220
+            },
+            "source": {
+              "width_bytes": 4,
+              "kind": "register",
+              "name": "edi"
+            }
+          },
+          {
+            "rva": 610441,
+            "destination": {
+              "width_bytes": 4,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 83576552,
+              "absolute_rva": 79382248
+            },
+            "source": {
+              "width_bytes": 4,
+              "kind": "register",
+              "name": "edi"
+            }
+          },
+          {
+            "rva": 610460,
+            "destination": {
+              "width_bytes": 4,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 83576548,
+              "absolute_rva": 79382244
+            },
+            "source": {
+              "width_bytes": 4,
+              "kind": "register",
+              "name": "edi"
+            }
+          },
+          {
+            "rva": 610478,
+            "destination": {
+              "width_bytes": 4,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 83576544,
+              "absolute_rva": 79382240
+            },
+            "source": {
+              "width_bytes": 4,
+              "kind": "register",
+              "name": "edi"
+            }
+          }
+        ]
+      },
+      {
+        "label": "callback-two-byte-result",
+        "start_rva": 610890,
+        "end_rva_exclusive": 610949,
+        "instruction_count": 15,
+        "calls": [
+          {
+            "call_rva": 610931,
+            "target": {
+              "width_bytes": 4,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 83576528,
+              "absolute_rva": 79382224
+            }
+          }
+        ],
+        "branches": [],
+        "absolute_writes": []
+      },
+      {
+        "label": "callback-string-result",
+        "start_rva": 611624,
+        "end_rva_exclusive": 611681,
+        "instruction_count": 14,
+        "calls": [
+          {
+            "call_rva": 611642,
+            "target": {
+              "width_bytes": 4,
+              "kind": "immediate",
+              "value": 4846700
+            },
+            "direct_target_rva": 652396
+          },
+          {
+            "call_rva": 611663,
+            "target": {
+              "width_bytes": 4,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 83576528,
+              "absolute_rva": 79382224
+            }
+          }
+        ],
+        "branches": [],
+        "absolute_writes": []
+      },
+      {
+        "label": "login-submit-body",
+        "start_rva": 134272,
+        "end_rva_exclusive": 134847,
+        "instruction_count": 171,
+        "calls": [
+          {
+            "call_rva": 134289,
+            "target": {
+              "width_bytes": 4,
+              "kind": "immediate",
+              "value": 4329984
+            },
+            "direct_target_rva": 135680
+          },
+          {
+            "call_rva": 134395,
+            "target": {
+              "width_bytes": 4,
+              "kind": "immediate",
+              "value": 4315360
+            },
+            "direct_target_rva": 121056
+          },
+          {
+            "call_rva": 134405,
+            "target": {
+              "width_bytes": 4,
+              "kind": "immediate",
+              "value": 4315360
+            },
+            "direct_target_rva": 121056
+          },
+          {
+            "call_rva": 134452,
+            "target": {
+              "width_bytes": 4,
+              "kind": "immediate",
+              "value": 4500560
+            },
+            "direct_target_rva": 306256
+          },
+          {
+            "call_rva": 134498,
+            "target": {
+              "width_bytes": 4,
+              "kind": "immediate",
+              "value": 4500560
+            },
+            "direct_target_rva": 306256
+          },
+          {
+            "call_rva": 134577,
+            "target": {
+              "width_bytes": 4,
+              "kind": "immediate",
+              "value": 4266304
+            },
+            "direct_target_rva": 72000
+          },
+          {
+            "call_rva": 134634,
+            "target": {
+              "width_bytes": 4,
+              "kind": "immediate",
+              "value": 4266304
+            },
+            "direct_target_rva": 72000
+          },
+          {
+            "call_rva": 134676,
+            "target": {
+              "width_bytes": 4,
+              "kind": "immediate",
+              "value": 4500560
+            },
+            "direct_target_rva": 306256
+          },
+          {
+            "call_rva": 134715,
+            "target": {
+              "width_bytes": 4,
+              "kind": "immediate",
+              "value": 4727472
+            },
+            "direct_target_rva": 533168
+          },
+          {
+            "call_rva": 134758,
+            "target": {
+              "width_bytes": 4,
+              "kind": "immediate",
+              "value": 4500560
+            },
+            "direct_target_rva": 306256
+          },
+          {
+            "call_rva": 134792,
+            "target": {
+              "width_bytes": 4,
+              "kind": "immediate",
+              "value": 4727472
+            },
+            "direct_target_rva": 533168
+          },
+          {
+            "call_rva": 134830,
+            "target": {
+              "width_bytes": 4,
+              "kind": "immediate",
+              "value": 4727472
+            },
+            "direct_target_rva": 533168
+          }
+        ],
+        "branches": [
+          {
+            "branch_rva": 134299,
+            "condition": "jne",
+            "target_rva": 134363,
+            "fallthrough_rva": 134301,
+            "adjacent_comparison_rva": 134297
+          },
+          {
+            "branch_rva": 134316,
+            "condition": "je",
+            "target_rva": 134353,
+            "fallthrough_rva": 134318
+          },
+          {
+            "branch_rva": 134351,
+            "condition": "jmp",
+            "target_rva": 134376,
+            "fallthrough_rva": 134353
+          },
+          {
+            "branch_rva": 134361,
+            "condition": "jmp",
+            "target_rva": 134376,
+            "fallthrough_rva": 134363
+          },
+          {
+            "branch_rva": 134366,
+            "condition": "jne",
+            "target_rva": 134376,
+            "fallthrough_rva": 134368,
+            "adjacent_comparison_rva": 134363
+          },
+          {
+            "branch_rva": 134418,
+            "condition": "je",
+            "target_rva": 134515,
+            "fallthrough_rva": 134420,
+            "adjacent_comparison_rva": 134416
+          },
+          {
+            "branch_rva": 134462,
+            "condition": "je",
+            "target_rva": 134466,
+            "fallthrough_rva": 134464,
+            "adjacent_comparison_rva": 134460
+          },
+          {
+            "branch_rva": 134508,
+            "condition": "je",
+            "target_rva": 134515,
+            "fallthrough_rva": 134510,
+            "adjacent_comparison_rva": 134506
+          },
+          {
+            "branch_rva": 134522,
+            "condition": "je",
+            "target_rva": 134536,
+            "fallthrough_rva": 134524,
+            "adjacent_comparison_rva": 134515
+          },
+          {
+            "branch_rva": 134551,
+            "condition": "je",
+            "target_rva": 134571,
+            "fallthrough_rva": 134553
+          },
+          {
+            "branch_rva": 134555,
+            "condition": "jne",
+            "target_rva": 134564,
+            "fallthrough_rva": 134557,
+            "adjacent_comparison_rva": 134553
+          },
+          {
+            "branch_rva": 134562,
+            "condition": "jmp",
+            "target_rva": 134571,
+            "fallthrough_rva": 134564
+          },
+          {
+            "branch_rva": 134567,
+            "condition": "jne",
+            "target_rva": 134571,
+            "fallthrough_rva": 134569,
+            "adjacent_comparison_rva": 134564
+          },
+          {
+            "branch_rva": 134574,
+            "condition": "jne",
+            "target_rva": 134597,
+            "fallthrough_rva": 134576
+          },
+          {
+            "branch_rva": 134595,
+            "condition": "jmp",
+            "target_rva": 134654,
+            "fallthrough_rva": 134597
+          },
+          {
+            "branch_rva": 134599,
+            "condition": "jl",
+            "target_rva": 134606,
+            "fallthrough_rva": 134601,
+            "adjacent_comparison_rva": 134597
+          },
+          {
+            "branch_rva": 134604,
+            "condition": "jle",
+            "target_rva": 134616,
+            "fallthrough_rva": 134606,
+            "adjacent_comparison_rva": 134601
+          },
+          {
+            "branch_rva": 134612,
+            "condition": "je",
+            "target_rva": 134654,
+            "fallthrough_rva": 134614,
+            "adjacent_comparison_rva": 134606
+          },
+          {
+            "branch_rva": 134614,
+            "condition": "jmp",
+            "target_rva": 134624,
+            "fallthrough_rva": 134616
+          },
+          {
+            "branch_rva": 134622,
+            "condition": "je",
+            "target_rva": 134626,
+            "fallthrough_rva": 134624,
+            "adjacent_comparison_rva": 134616
+          },
+          {
+            "branch_rva": 134691,
+            "condition": "je",
+            "target_rva": 134730,
+            "fallthrough_rva": 134693,
+            "adjacent_comparison_rva": 134689
+          },
+          {
+            "branch_rva": 134695,
+            "condition": "je",
+            "target_rva": 134730,
+            "fallthrough_rva": 134697,
+            "adjacent_comparison_rva": 134693
+          },
+          {
+            "branch_rva": 134728,
+            "condition": "jmp",
+            "target_rva": 134736,
+            "fallthrough_rva": 134730
+          },
+          {
+            "branch_rva": 134768,
+            "condition": "je",
+            "target_rva": 134807,
+            "fallthrough_rva": 134770,
+            "adjacent_comparison_rva": 134766
+          },
+          {
+            "branch_rva": 134772,
+            "condition": "je",
+            "target_rva": 134807,
+            "fallthrough_rva": 134774,
+            "adjacent_comparison_rva": 134770
+          },
+          {
+            "branch_rva": 134805,
+            "condition": "jmp",
+            "target_rva": 134813,
+            "fallthrough_rva": 134807
+          }
+        ],
+        "absolute_writes": [
+          {
+            "rva": 134529,
+            "destination": {
+              "width_bytes": 2,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 72765220,
+              "absolute_rva": 68570916
+            },
+            "source": {
+              "width_bytes": 2,
+              "kind": "register",
+              "name": "bx"
+            }
+          },
+          {
+            "rva": 134585,
+            "destination": {
+              "width_bytes": 4,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 72765236,
+              "absolute_rva": 68570932
+            },
+            "source": {
+              "width_bytes": 4,
+              "kind": "immediate",
+              "value": 1
+            }
+          },
+          {
+            "rva": 134642,
+            "destination": {
+              "width_bytes": 4,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 72765236,
+              "absolute_rva": 68570932
+            },
+            "source": {
+              "width_bytes": 4,
+              "kind": "register",
+              "name": "ebx"
+            }
+          },
+          {
+            "rva": 134648,
+            "destination": {
+              "width_bytes": 4,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 72765240,
+              "absolute_rva": 68570936
+            },
+            "source": {
+              "width_bytes": 4,
+              "kind": "register",
+              "name": "edi"
+            }
+          },
+          {
+            "rva": 134723,
+            "destination": {
+              "width_bytes": 4,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 4964436,
+              "absolute_rva": 770132
+            },
+            "source": {
+              "width_bytes": 4,
+              "kind": "register",
+              "name": "eax"
+            }
+          },
+          {
+            "rva": 134730,
+            "destination": {
+              "width_bytes": 4,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 4964436,
+              "absolute_rva": 770132
+            },
+            "source": {
+              "width_bytes": 4,
+              "kind": "register",
+              "name": "edi"
+            }
+          },
+          {
+            "rva": 134800,
+            "destination": {
+              "width_bytes": 4,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 4964440,
+              "absolute_rva": 770136
+            },
+            "source": {
+              "width_bytes": 4,
+              "kind": "register",
+              "name": "eax"
+            }
+          },
+          {
+            "rva": 134807,
+            "destination": {
+              "width_bytes": 4,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 4964440,
+              "absolute_rva": 770136
+            },
+            "source": {
+              "width_bytes": 4,
+              "kind": "register",
+              "name": "edi"
+            }
+          }
+        ]
+      },
+      {
+        "label": "settings-write-body",
+        "start_rva": 526010,
+        "end_rva_exclusive": 526162,
+        "instruction_count": 53,
+        "calls": [
+          {
+            "call_rva": 526058,
+            "target": {
+              "width_bytes": 4,
+              "kind": "immediate",
+              "value": 4776016
+            },
+            "direct_target_rva": 581712
+          },
+          {
+            "call_rva": 526073,
+            "target": {
+              "width_bytes": 4,
+              "kind": "immediate",
+              "value": 4807668
+            },
+            "direct_target_rva": 613364
+          },
+          {
+            "call_rva": 526112,
+            "target": {
+              "width_bytes": 4,
+              "kind": "immediate",
+              "value": 4807370
+            },
+            "direct_target_rva": 613066
+          },
+          {
+            "call_rva": 526140,
+            "target": {
+              "width_bytes": 4,
+              "kind": "immediate",
+              "value": 4807284
+            },
+            "direct_target_rva": 612980
+          }
+        ],
+        "branches": [
+          {
+            "branch_rva": 526085,
+            "condition": "jne",
+            "target_rva": 526096,
+            "fallthrough_rva": 526087,
+            "adjacent_comparison_rva": 526083
+          },
+          {
+            "branch_rva": 526126,
+            "condition": "jae",
+            "target_rva": 526139,
+            "fallthrough_rva": 526128,
+            "adjacent_comparison_rva": 526124
+          }
+        ],
+        "absolute_writes": []
+      },
+      {
+        "label": "settings-create-body",
+        "start_rva": 526528,
+        "end_rva_exclusive": 526779,
+        "instruction_count": 70,
+        "calls": [
+          {
+            "call_rva": 526678,
+            "target": {
+              "width_bytes": 4,
+              "kind": "immediate",
+              "value": 4776016
+            },
+            "direct_target_rva": 581712
+          },
+          {
+            "call_rva": 526693,
+            "target": {
+              "width_bytes": 4,
+              "kind": "immediate",
+              "value": 4807668
+            },
+            "direct_target_rva": 613364
+          },
+          {
+            "call_rva": 526729,
+            "target": {
+              "width_bytes": 4,
+              "kind": "immediate",
+              "value": 4807370
+            },
+            "direct_target_rva": 613066
+          },
+          {
+            "call_rva": 526757,
+            "target": {
+              "width_bytes": 4,
+              "kind": "immediate",
+              "value": 4807284
+            },
+            "direct_target_rva": 612980
+          }
+        ],
+        "branches": [
+          {
+            "branch_rva": 526705,
+            "condition": "jne",
+            "target_rva": 526716,
+            "fallthrough_rva": 526707,
+            "adjacent_comparison_rva": 526703
+          },
+          {
+            "branch_rva": 526743,
+            "condition": "jae",
+            "target_rva": 526756,
+            "fallthrough_rva": 526745,
+            "adjacent_comparison_rva": 526741
+          }
+        ],
+        "absolute_writes": [
+          {
+            "rva": 526575,
+            "destination": {
+              "width_bytes": 1,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 74554701,
+              "absolute_rva": 70360397
+            },
+            "source": {
+              "width_bytes": 1,
+              "kind": "register",
+              "name": "cl"
+            }
+          },
+          {
+            "rva": 526587,
+            "destination": {
+              "width_bytes": 1,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 74554702,
+              "absolute_rva": 70360398
+            },
+            "source": {
+              "width_bytes": 1,
+              "kind": "register",
+              "name": "dl"
+            }
+          },
+          {
+            "rva": 526599,
+            "destination": {
+              "width_bytes": 4,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 74554707,
+              "absolute_rva": 70360403
+            },
+            "source": {
+              "width_bytes": 4,
+              "kind": "register",
+              "name": "ecx"
+            }
+          },
+          {
+            "rva": 526605,
+            "destination": {
+              "width_bytes": 4,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 74554711,
+              "absolute_rva": 70360407
+            },
+            "source": {
+              "width_bytes": 4,
+              "kind": "register",
+              "name": "edx"
+            }
+          },
+          {
+            "rva": 526615,
+            "destination": {
+              "width_bytes": 1,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 74554700,
+              "absolute_rva": 70360396
+            },
+            "source": {
+              "width_bytes": 1,
+              "kind": "register",
+              "name": "al"
+            }
+          },
+          {
+            "rva": 526631,
+            "destination": {
+              "width_bytes": 4,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 74554703,
+              "absolute_rva": 70360399
+            },
+            "source": {
+              "width_bytes": 4,
+              "kind": "register",
+              "name": "eax"
+            }
+          },
+          {
+            "rva": 526650,
+            "destination": {
+              "width_bytes": 2,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 74554664,
+              "absolute_rva": 70360360
+            },
+            "source": {
+              "width_bytes": 2,
+              "kind": "immediate",
+              "value": 6
+            }
+          },
+          {
+            "rva": 526659,
+            "destination": {
+              "width_bytes": 4,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 74554715,
+              "absolute_rva": 70360411
+            },
+            "source": {
+              "width_bytes": 4,
+              "kind": "register",
+              "name": "eax"
+            }
+          },
+          {
+            "rva": 526664,
+            "destination": {
+              "width_bytes": 1,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 74554720,
+              "absolute_rva": 70360416
+            },
+            "source": {
+              "width_bytes": 1,
+              "kind": "immediate",
+              "value": 10
+            }
+          },
+          {
+            "rva": 526671,
+            "destination": {
+              "width_bytes": 1,
+              "kind": "memory",
+              "base": null,
+              "index": null,
+              "scale": 1,
+              "displacement": 74554721,
+              "absolute_rva": 70360417
+            },
+            "source": {
+              "width_bytes": 1,
+              "kind": "immediate",
+              "value": 3
+            }
+          }
+        ]
+      }
+    ],
+    "anchors": {
+      "0x113d5": {
+        "operation": "cmp",
+        "operands": [
+          {
+            "width_bytes": 1,
+            "kind": "register",
+            "name": "bl"
+          },
+          {
+            "width_bytes": 1,
+            "kind": "immediate",
+            "value": 31
+          }
+        ]
+      },
+      "0x113fd": {
+        "operation": "cmp",
+        "operands": [
+          {
+            "width_bytes": 4,
+            "kind": "register",
+            "name": "ecx"
+          },
+          {
+            "width_bytes": 4,
+            "kind": "register",
+            "name": "eax"
+          }
+        ]
+      },
+      "0x11464": {
+        "operation": "cmp",
+        "operands": [
+          {
+            "width_bytes": 1,
+            "kind": "register",
+            "name": "bl"
+          },
+          {
+            "width_bytes": 1,
+            "kind": "immediate",
+            "value": 48
+          }
+        ]
+      },
+      "0x11469": {
+        "operation": "cmp",
+        "operands": [
+          {
+            "width_bytes": 1,
+            "kind": "register",
+            "name": "bl"
+          },
+          {
+            "width_bytes": 1,
+            "kind": "immediate",
+            "value": 57
+          }
+        ]
+      },
+      "0x1146e": {
+        "operation": "cmp",
+        "operands": [
+          {
+            "width_bytes": 1,
+            "kind": "register",
+            "name": "bl"
+          },
+          {
+            "width_bytes": 1,
+            "kind": "immediate",
+            "value": 65
+          }
+        ]
+      },
+      "0x11473": {
+        "operation": "cmp",
+        "operands": [
+          {
+            "width_bytes": 1,
+            "kind": "register",
+            "name": "bl"
+          },
+          {
+            "width_bytes": 1,
+            "kind": "immediate",
+            "value": 90
+          }
+        ]
+      },
+      "0x11478": {
+        "operation": "cmp",
+        "operands": [
+          {
+            "width_bytes": 1,
+            "kind": "register",
+            "name": "bl"
+          },
+          {
+            "width_bytes": 1,
+            "kind": "immediate",
+            "value": 97
+          }
+        ]
+      },
+      "0x1147d": {
+        "operation": "cmp",
+        "operands": [
+          {
+            "width_bytes": 1,
+            "kind": "register",
+            "name": "bl"
+          },
+          {
+            "width_bytes": 1,
+            "kind": "immediate",
+            "value": 122
+          }
+        ]
+      },
+      "0x114fb": {
+        "operation": "dec",
+        "operands": [
+          {
+            "width_bytes": 4,
+            "kind": "register",
+            "name": "ecx"
+          }
+        ]
+      },
+      "0x1153d": {
+        "operation": "mov",
+        "operands": [
+          {
+            "width_bytes": 1,
+            "kind": "register",
+            "name": "cl"
+          },
+          {
+            "width_bytes": 1,
+            "kind": "immediate",
+            "value": 2
+          }
+        ]
+      },
+      "0x10635": {
+        "operation": "cmp",
+        "operands": [
+          {
+            "width_bytes": 4,
+            "kind": "register",
+            "name": "ebx"
+          },
+          {
+            "width_bytes": 4,
+            "kind": "immediate",
+            "value": 86
+          }
+        ]
+      },
+      "0x1064f": {
+        "operation": "call",
+        "operands": [
+          {
+            "width_bytes": 4,
+            "kind": "register",
+            "name": "ebp"
+          }
+        ]
+      },
+      "0x8dacb": {
+        "operation": "cmp",
+        "operands": [
+          {
+            "width_bytes": 4,
+            "kind": "register",
+            "name": "eax"
+          },
+          {
+            "width_bytes": 4,
+            "kind": "immediate",
+            "value": 258
+          }
+        ]
+      },
+      "0x94ff5": {
+        "operation": "mov",
+        "operands": [
+          {
+            "width_bytes": 4,
+            "kind": "memory",
+            "base": null,
+            "index": null,
+            "scale": 1,
+            "displacement": 83576528,
+            "absolute_rva": 79382224
+          },
+          {
+            "width_bytes": 4,
+            "kind": "register",
+            "name": "ecx"
+          }
+        ]
+      },
+      "0x95273": {
+        "operation": "call",
+        "operands": [
+          {
+            "width_bytes": 4,
+            "kind": "memory",
+            "base": null,
+            "index": null,
+            "scale": 1,
+            "displacement": 83576528,
+            "absolute_rva": 79382224
+          }
+        ]
+      },
+      "0x9554f": {
+        "operation": "call",
+        "operands": [
+          {
+            "width_bytes": 4,
+            "kind": "memory",
+            "base": null,
+            "index": null,
+            "scale": 1,
+            "displacement": 83576528,
+            "absolute_rva": 79382224
+          }
+        ]
+      },
+      "0x20cc3": {
+        "operation": "mov",
+        "operands": [
+          {
+            "width_bytes": 1,
+            "kind": "memory",
+            "base": "eax",
+            "index": null,
+            "scale": 1,
+            "displacement": 72702688
+          },
+          {
+            "width_bytes": 1,
+            "kind": "register",
+            "name": "bl"
+          }
+        ]
+      },
+      "0x20cc9": {
+        "operation": "mov",
+        "operands": [
+          {
+            "width_bytes": 1,
+            "kind": "memory",
+            "base": "ecx",
+            "index": null,
+            "scale": 1,
+            "displacement": 72747592
+          },
+          {
+            "width_bytes": 1,
+            "kind": "register",
+            "name": "bl"
+          }
+        ]
+      },
+      "0x806e6": {
+        "operation": "push",
+        "operands": [
+          {
+            "width_bytes": 4,
+            "kind": "immediate",
+            "value": 127
+          }
+        ]
+      },
+      "0x80933": {
+        "operation": "push",
+        "operands": [
+          {
+            "width_bytes": 4,
+            "kind": "immediate",
+            "value": 127
+          }
+        ]
+      },
+      "0x8093a": {
+        "operation": "mov",
+        "operands": [
+          {
+            "width_bytes": 2,
+            "kind": "memory",
+            "base": null,
+            "index": null,
+            "scale": 1,
+            "displacement": 74554664,
+            "absolute_rva": 70360360
+          },
+          {
+            "width_bytes": 2,
+            "kind": "immediate",
+            "value": 6
+          }
+        ]
+      }
+    },
+    "focus_pointer_rva": 1379684,
+    "callback_pointer_rva": 79382224,
+    "dbcs_classifier_import": [
+      "KERNEL32.DLL",
+      "IsDBCSLeadByte"
+    ],
+    "settings_path_literal": "data\\savedata.dat",
+    "settings_backing_rva": 70360360,
+    "file_executed": false,
+    "real_savedata_opened": false,
+    "native_login_verified": false
+  },
+  "source_profile": {
+    "source_ref": "2f736808ff4361f5429ee919b718c88fabb60346",
+    "source_blobs": {
+      "client/stoneage/system/chat.cpp": "9930f252869ccab2bf432f71f2adbba38277aa0a",
+      "client/stoneage/systeminc/chat.h": "d961e1b896d46bbb2d09ecc4d3ddc3a8782a0c73",
+      "client/stoneage/game/main.cpp": "65b5d8501f6770aefe35d38c5d4c1c4c902259bd",
+      "client/sdk/caryime.h": "414ade24d4407b8464f7d362833669ab2b9372d2",
+      "client/stoneage/system/login.cpp": "987e60c4ef581cd2336ff0956400a1da47aeff20",
+      "client/stoneage/system/savedata.cpp": "6809dd415e89e87ad00f7813cb35209db034aa53",
+      "client/stoneage/systeminc/savedata.h": "59bcd35bc9cf95cf28e6a1c2fe6681d30513acf9"
+    },
+    "current_single_byte_login_filter_commented_out": true,
+    "current_double_byte_login_fields_rejected": true,
+    "current_window_wm_char_uses_utf8_bridge": true,
+    "current_submit_checks_both_nonempty": true,
+    "current_login_initializer_parameter": 18,
+    "settings_cdkey_and_password_named_tokens_only_in_enums": true,
+    "settings_no_szuser_szpassword_access": true,
+    "source_program_executed": false,
+    "matching_original_operator_server": false
+  },
+  "synthetic_insertions": [
+    {
+      "before_hex": "4142430000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "count": 3,
+      "cursor": 1,
+      "byte": 55,
+      "limit": 12,
+      "after_hex": "4137424300000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "after_count": 4,
+      "after_cursor": 2,
+      "accepted": true
+    },
+    {
+      "before_hex": "4142434445464748494a4b4c0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "count": 12,
+      "cursor": 12,
+      "byte": 77,
+      "limit": 12,
+      "after_hex": "4142434445464748494a4b4c0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "after_count": 12,
+      "after_cursor": 12,
+      "accepted": false
+    },
+    {
+      "before_hex": "4142430000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "count": 3,
+      "cursor": 3,
+      "byte": 95,
+      "limit": 12,
+      "after_hex": "4142430000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "after_count": 3,
+      "after_cursor": 3,
+      "accepted": false
+    }
+  ],
+  "bootstrap": {
+    "main": "ca8abe00d2f1669d9ab34e953773e55cadae0e7a",
+    "tree": "52bfbbf72fb3e328d6ed5c1b0b5e7ba648ecd3ee"
+  },
+  "pressure": "2486=2465+18+3",
+  "limits": [
+    "Generated well-formed editor state only; model cursor/NUL guards do not establish historical upstream guards",
+    "IsDBCSLeadByte follows active Windows code page; do not hardcode native CP936 or Big5 runtime",
+    "Registered callback joins are static; no native IME event or input replay",
+    "Original click-submit branch only checks first field; not a claim about server authentication or every login path",
+    "127-byte settings backing is distinct from encrypted32-byte input globals; no actual saved file read or rewritten",
+    "Reserved source enum names are not evidence of credential persistence",
+    "Native settings decode/migration semantics, full per-byte writer closure and owner/save/drop lifecycle remainOPEN"
+  ]
+}
