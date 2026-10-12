@@ -1,0 +1,56 @@
+name: Independently verify TW1.0 R14 original bounded reaching definitions
+on:
+  workflow_dispatch:
+  push:
+    branches: [main, agent/tw10-r14-conservative-reachdefs-20261012]
+    paths:
+      - .github/workflows/verify-stoneage-tw10-r14-reachdefs-original.yml
+      - tools/stoneage_tw10_savedata_reachdefs_r14_guard.py
+      - tests/test_stoneage_tw10_savedata_reachdefs_r14_guard.py
+      - research/recovered/STONEAGE-TW10-SAVEDATA-REACHDEFS-R14-ORIGINAL.json
+permissions:
+  contents: read
+  actions: read
+jobs:
+  verify-original-derived:
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify immutable successful original run and source commit
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          identity="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/38247625998" --jq '[.status,.conclusion,.head_sha,.head_branch] | join("|")')"
+          test "$identity" = 'completed|success|1b4c039f5a9b82b7bf58d59b1ef187ac0f97c678|agent/tw10-r14-conservative-reachdefs-20261012'
+      - name: Download only the original-run derived JSON and verify digest
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/stoneage-r14-independent
+          gh run download 38247625998 --repo "$GITHUB_REPOSITORY" --name tw10-r14-original-bounded-reachdefs-derived --dir /tmp/stoneage-r14-independent
+          test "$(find /tmp/stoneage-r14-independent -type f | wc -l)" -eq 1
+          test -f /tmp/stoneage-r14-independent/stoneage-r14-derived.json
+          test ! -L /tmp/stoneage-r14-independent/stoneage-r14-derived.json
+          test "$(stat -c %s /tmp/stoneage-r14-independent/stoneage-r14-derived.json)" -le 12000
+          echo 'c2111943e99c1ba0b44792434cfa8060fd4c8d4726fc22b778cf6db808434af9  /tmp/stoneage-r14-independent/stoneage-r14-derived.json' | sha256sum -c -
+      - name: Validate bounded original sites and pinned exact JSON equivalence
+        run: |
+          set -euo pipefail
+          python -m unittest -v tests.test_stoneage_tw10_savedata_reachdefs_r14_guard
+          python -m tools.stoneage_tw10_savedata_reachdefs_r14_guard --report /tmp/stoneage-r14-independent/stoneage-r14-derived.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          src=json.loads(Path('/tmp/stoneage-r14-independent/stoneage-r14-derived.json').read_text())
+          pinned=json.loads(Path('research/recovered/STONEAGE-TW10-SAVEDATA-REACHDEFS-R14-ORIGINAL.json').read_text())
+          assert src == pinned
+          assert not pinned['native_io_executed'] and not pinned['actual_function_entry_proven']
+          print('TW10_R14_ORIGINAL_DERIVED_STATIC_REACHDEF_CUSTODY=PASS')
+          print('TW10_R14_NATIVE_IO_AND_FUNCTION_OWNERSHIP=OPEN')
+          PY
+      - name: Always purge derived source report
+        if: always()
+        run: rm -rf /tmp/stoneage-r14-independent

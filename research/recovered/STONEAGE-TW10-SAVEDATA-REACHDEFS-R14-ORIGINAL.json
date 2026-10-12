@@ -1,0 +1,179 @@
+{
+  "actual_function_entry_proven": false,
+  "branch_feasibility_proven": false,
+  "caller_effects_admitted": false,
+  "complete_register_values_proven": false,
+  "filename_api_link_proven": false,
+  "fixed_128_byte_schema_proven": false,
+  "frame_or_stack_ownership_proven": false,
+  "global_effects_admitted": false,
+  "global_initialization_proven": false,
+  "handle_buffer_size_link_proven": false,
+  "heapalloc_size_or_ownership_proven": false,
+  "native_io_executed": false,
+  "original_bytes_published": false,
+  "prior_r13_status": "PINNED_ORIGINAL_STATIC_MUTATION_CANDIDATES_NO_NAMED_EFFECTS",
+  "regions": [
+    {
+      "all_incoming_edges_proven": false,
+      "anchor_is_verified_function_entry": false,
+      "anchor_rva": 302483,
+      "branch_sites": [
+        302531,
+        302545,
+        302575,
+        302589,
+        302600,
+        302605,
+        302614,
+        302628,
+        302633,
+        302637,
+        302642,
+        302648,
+        302656,
+        302661,
+        302670,
+        302676,
+        302681,
+        302685,
+        302699,
+        302719,
+        302723,
+        302745,
+        302765,
+        302794,
+        302817,
+        302848,
+        302865
+      ],
+      "call_barrier_sites": [
+        302687,
+        302702
+      ],
+      "call_fallthrough_is_structural_only": true,
+      "edge_count": 158,
+      "frontier": [
+        {
+          "reason": "out_of_window",
+          "rva": 302867
+        },
+        {
+          "reason": "out_of_window",
+          "rva": 302872
+        },
+        {
+          "reason": "out_of_window",
+          "rva": 303255
+        }
+      ],
+      "inputs": [
+        {
+          "reachable_in_bounded_graph": true,
+          "reaching_sources": [
+            {
+              "origin": "definition",
+              "rva": 302568,
+              "semantic": {
+                "constant": null,
+                "kind": "register_copy",
+                "memory_input": null,
+                "register_inputs": [
+                  "eax"
+                ],
+                "width_bits": 32
+              }
+            }
+          ],
+          "register": "ebx",
+          "register_value_known": false,
+          "site_rva": 302572
+        }
+      ],
+      "node_count": 139,
+      "node_limit_hit": false
+    },
+    {
+      "all_incoming_edges_proven": false,
+      "anchor_is_verified_function_entry": false,
+      "anchor_rva": 300092,
+      "branch_sites": [
+        300114,
+        300139,
+        300176,
+        300208,
+        300212,
+        300227
+      ],
+      "call_barrier_sites": [
+        300100,
+        300125,
+        300143
+      ],
+      "call_fallthrough_is_structural_only": true,
+      "edge_count": 53,
+      "frontier": [],
+      "inputs": [
+        {
+          "reachable_in_bounded_graph": true,
+          "reaching_sources": [
+            {
+              "origin": "entry",
+              "rva": 300092,
+              "semantic": null
+            }
+          ],
+          "register": "eax",
+          "register_value_known": false,
+          "site_rva": 300092
+        },
+        {
+          "reachable_in_bounded_graph": true,
+          "reaching_sources": [
+            {
+              "origin": "unknown_call",
+              "rva": 300100,
+              "semantic": null
+            }
+          ],
+          "register": "eax",
+          "register_value_known": false,
+          "site_rva": 300106
+        },
+        {
+          "reachable_in_bounded_graph": true,
+          "reaching_sources": [
+            {
+              "origin": "unknown_call",
+              "rva": 300100,
+              "semantic": null
+            }
+          ],
+          "register": "esi",
+          "register_value_known": false,
+          "site_rva": 300119
+        },
+        {
+          "reachable_in_bounded_graph": true,
+          "reaching_sources": [
+            {
+              "origin": "unknown_call",
+              "rva": 300125,
+              "semantic": null
+            }
+          ],
+          "register": "eax",
+          "register_value_known": false,
+          "site_rva": 300131
+        }
+      ],
+      "node_count": 48,
+      "node_limit_hit": false
+    }
+  ],
+  "runtime_sha256": "cdab9ea049a98bbc96ce93eeaa8b63c688f0c0f0ad8b3183e79d75e47621441a",
+  "savedata_sha256": "5b26f54a9723cd2c5275f964457094fdf1fc33ca086cdaf55bb5350dfb04f3f9",
+  "schema": "tw10-r14-bounded-conditional-reaching-definitions",
+  "static_scope": "two-instruction-anchors-bounded-cfg-not-complete-functions",
+  "status": "ORIGINAL_STATIC_BOUNDED_INPUTS_FUNCTION_OWNERSHIP_RUNTIME_OPEN"
+}
