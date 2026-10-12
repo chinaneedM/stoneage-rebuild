@@ -1,0 +1,44 @@
+{
+  "schema": "stoneage-tw10-savedata-r3-report-guard-acceptance-r1",
+  "status": "ACCEPTED_DERIVED_FORMAT_GUARD_ONLY",
+  "branch": "agent/tw10-savedata-r3-report-guard-r1-20261012",
+  "commit": "61009048e6d14fe06ab64a81cbc643310e67afed",
+  "tree": "1424f3d95cafbfd5d8b86d029aae9e00c4ae5057",
+  "branch_ci": {
+    "id": 38216975235,
+    "conclusion": "success",
+    "tests": 10
+  },
+  "main_ci": {
+    "id": 38217039742,
+    "conclusion": "success",
+    "tests": 10
+  },
+  "accepted": [
+    "strict four site R3 derived report grammar and hash identifiers",
+    "candidate arithmetic consistency and exact counterexample rejections",
+    "explicit no-original-payload and non-runtime-admission boundary"
+  ],
+  "original_disc_hash_verified": false,
+  "original_executable_r3_performed": false,
+  "native_io_semantics_admitted": false,
+  "reference_failures": [
+    {
+      "id": 38215067915,
+      "conclusion": "failure",
+      "reason": "serial transfer deadline",
+      "completed_bytes": 134217728
+    },
+    {
+      "id": 38216336611,
+      "conclusion": "failure",
+      "reason": "parallel transfer deadline",
+      "completed_bytes": 469762048
+    }
+  ],
+  "new_full_gate": {
+    "id": 38217343564,
+    "state": "in_progress_at_receipt",
+    "accepted": false
+  }
+}
