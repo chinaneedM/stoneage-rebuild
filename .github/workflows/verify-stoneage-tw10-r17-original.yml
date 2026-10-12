@@ -1,0 +1,62 @@
+name: Independently verify TW1.0 R17 source identity and derived-only frontier
+on:
+  workflow_dispatch:
+  push:
+    branches: [agent/tw10-savedata-r17-write-shapes-20261012, main]
+    paths:
+      - .github/workflows/verify-stoneage-tw10-r17-original.yml
+      - tools/stoneage_tw10_savedata_write_shapes_r17_guard.py
+      - tests/test_stoneage_tw10_savedata_write_shapes_r17_guard.py
+permissions:
+  contents: read
+  actions: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Pin immutable original R17 source run and commit
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          identity="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/38255685702" --jq '[.status,.conclusion,.head_sha,.head_branch] | join("|")')"
+          test "$identity" = 'completed|success|5a28f10d4c91adc4a9da45492204396a7223654f|agent/tw10-savedata-r17-write-shapes-20261012'
+          artifact="$(gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/11750721082" --jq '[.workflow_run.id,.name,.digest,.expired] | join("|")')"
+          test "$artifact" = '38255685702|tw10-r17-original-write-shapes-derived|sha256:a509ce3e9d29818acb8305d441687b5d0ead83dba8435cf44bfcbd90d130a72e|false'
+      - name: Download only R17 derived JSON from immutable successful source
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/r17-verify
+          gh run download 38255685702 --repo "$GITHUB_REPOSITORY" --name tw10-r17-original-write-shapes-derived --dir /tmp/r17-verify
+          test "$(find /tmp/r17-verify -type f | wc -l)" -eq 1
+          test -f /tmp/r17-verify/stoneage-r17-derived.json
+          test ! -L /tmp/r17-verify/stoneage-r17-derived.json
+          test "$(stat -c %s /tmp/r17-verify/stoneage-r17-derived.json)" -le 70000
+          sha256sum /tmp/r17-verify/stoneage-r17-derived.json
+          wc -c /tmp/r17-verify/stoneage-r17-derived.json
+      - name: Strict independent semantics and tamper regressions
+        run: |
+          set -euo pipefail
+          pip install --quiet capstone pefile
+          python -m unittest -v tests.test_stoneage_tw10_savedata_write_shapes_r17_guard
+          python -m tools.stoneage_tw10_savedata_write_shapes_r17_guard --report /tmp/r17-verify/stoneage-r17-derived.json
+      - name: Emit exact derived-only JSON to independently pinned review log
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from tools.stoneage_tw10_savedata_write_shapes_r17_guard import validate
+          d=json.loads(Path('/tmp/r17-verify/stoneage-r17-derived.json').read_text())
+          validate(d)
+          print('TW10_R17_DERIVED_JSON_BEGIN')
+          print(json.dumps(d,sort_keys=True,separators=(',',':')))
+          print('TW10_R17_DERIVED_JSON_END')
+          PY
+      - name: Always purge derived review artifact
+        if: always()
+        run: rm -rf /tmp/r17-verify
