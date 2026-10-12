@@ -1,0 +1,57 @@
+{
+  "schema": "STONEAGE-WAYI-INPUT-EDITOR-ACCEPTANCE-R1",
+  "source_commit": "8e00340c19abafda48006af029b54fe5b9b4967f",
+  "source_tree": "e9823ad1f76fe39fd504c307df587aa52a42b60e",
+  "bootstrap_main": "ca8abe00d2f1669d9ab34e953773e55cadae0e7a",
+  "branch_actions": [
+    {
+      "id": 38204227778,
+      "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+      "conclusion": "success"
+    },
+    {
+      "id": 38204227865,
+      "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+      "conclusion": "success"
+    },
+    {
+      "id": 38204227901,
+      "name": "Validate Wayi compiled input editor and settings profile",
+      "conclusion": "success"
+    }
+  ],
+  "main_actions": [
+    {
+      "id": 38204316369,
+      "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+      "conclusion": "success"
+    },
+    {
+      "id": 38204316293,
+      "name": "Validate Wayi compiled input editor and settings profile",
+      "conclusion": "success"
+    },
+    {
+      "id": 38204316017,
+      "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+      "conclusion": "success"
+    }
+  ],
+  "branch_job": 114664037189,
+  "main_job": 114664310343,
+  "project_tests_in_both_logs": 228,
+  "source_profile_pass_in_both_logs": true,
+  "synthetic_editor_storage_login_projection_preserves_nul": true,
+  "compiled_login_input_limit": 12,
+  "compiled_login_single_byte_filter": "ASCII alphanumeric",
+  "compiled_login_two_byte_editor_rejects": true,
+  "settings_backing_bytes": 127,
+  "original_continuity_prefix_preserved": true,
+  "remote_tree_matches_local": true,
+  "original_program_executed": false,
+  "real_savedata_opened": false,
+  "native_login_verified": false,
+  "matching_original_operator_server": false,
+  "pressure": "2486=2465+18+3",
+  "next": "settings decode/load/migrations/per-byte writers and reserved fields"
+}
