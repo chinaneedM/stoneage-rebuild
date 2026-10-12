@@ -36,21 +36,21 @@ class TestBoundedR14(unittest.TestCase):
         self.assertFalse(row["anchor_is_verified_function_entry"])
 
     def test_out_of_window_kept_as_gap(self):
-        code=bytes.fromhex("eb7f") + b"\\x90"*4
+        code=bytes.fromhex("e9ff010000")
         row=probe_region(decoder(code),ROOT,[(ROOT,"eax")],[])
-        self.assertIn({"reason":"out_of_window","rva":ROOT+129},row["frontier"])
+        self.assertIn({"reason":"out_of_window","rva":ROOT+516},row["frontier"])
         self.assertFalse(row["all_incoming_edges_proven"])
 
     def test_site_missing_not_misreported_as_known(self):
-        row=probe_region(decoder(b"\\xc3"),ROOT,[(ROOT+1,"ebx")],[])
+        row=probe_region(decoder(bytes.fromhex("c3")),ROOT,[(ROOT+1,"ebx")],[])
         self.assertFalse(row["inputs"][0]["reachable_in_bounded_graph"])
         self.assertEqual(row["inputs"][0]["reaching_sources"],[])
 
     def test_bounded_parameter_checks(self):
         with self.assertRaises(ValueError):
-            bounded_graph(decoder(b"\\x90"),ROOT,max_nodes=193)
+            bounded_graph(decoder(bytes.fromhex("90")),ROOT,max_nodes=193)
         with self.assertRaises(ValueError):
-            bounded_graph(decoder(b"\\x90"),ROOT,max_span=385)
+            bounded_graph(decoder(bytes.fromhex("90")),ROOT,max_span=385)
 
     def test_output_scope_flags(self):
         self.assertIn("global_initialization_proven",FLAGS)
