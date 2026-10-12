@@ -20,6 +20,7 @@ class TestR13StoreCandidates(unittest.TestCase):
         self.assertEqual(item["destination"]["write_width_bytes"], 4)
         self.assertEqual(item["source_operand"]["register"], "eax")
         self.assertEqual(item["address_inputs"], [])
+        self.assertIsNone(item["destination_relative_field_offset"])
         self.assertFalse(item["executed_write_proven"])
         self.assertFalse(item["register_inputs_resolved"])
 
@@ -28,6 +29,7 @@ class TestR13StoreCandidates(unittest.TestCase):
         self.assertEqual(item["destination"]["base_register"], "ebp")
         self.assertEqual(item["destination"]["write_width_bytes"], 4)
         self.assertEqual(item["address_inputs"], ["ebp"])
+        self.assertEqual(item["destination_relative_field_offset"], 8)
         self.assertIsNone(item["destination"]["absolute_effective_rva"])
         self.assertFalse(item["named_caller_effect_admitted"])
 

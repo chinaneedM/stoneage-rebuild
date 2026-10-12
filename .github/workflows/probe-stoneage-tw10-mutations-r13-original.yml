@@ -5,6 +5,8 @@ on:
     branches: [agent/tw10-savedata-mutations-r13-20261012]
     paths:
       - .github/workflows/probe-stoneage-tw10-mutations-r13-original.yml
+      - tools/stoneage_tw10_savedata_mutations_r13.py
+      - tests/test_stoneage_tw10_savedata_mutations_r13.py
 permissions:
   contents: read
 jobs:

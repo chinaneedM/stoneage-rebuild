@@ -63,6 +63,7 @@ def write_candidate(dec, site, sections, expected_global=None):
     if m.segment != X86_REG_INVALID:
         raise ValueError("segmented write requires separate model")
     geometry = store_geometry(dec, site, sections)
+    relative = memory_geometry(ins, dst, sections, dec.base)["relative_field_offset"]
     if expected_global is not None:
         if (m.base != X86_REG_INVALID or m.index != X86_REG_INVALID
                 or ((int(m.disp) & 0xffffffff) - dec.base) != expected_global
@@ -73,7 +74,8 @@ def write_candidate(dec, site, sections, expected_global=None):
     # An arithmetic write is a read-modify-write, never an independent assignment.
     previous_required = ins.mnemonic != "mov"
     return {"site_rva": site, "mnemonic_class": ins.mnemonic,
-            "destination": geometry, "expected_global_rva": expected_global,
+            "destination": geometry, "destination_relative_field_offset": relative,
+            "expected_global_rva": expected_global,
             "source_operand": rhs, "previous_destination_value_required": previous_required,
             "address_inputs": sorted({
                 r for r in (geometry["base_register"], geometry["index_register"]) if r
