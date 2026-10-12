@@ -2782,3 +2782,8 @@ FACT bounded original static analysis: full hash-verified original source run382
 ## 2026-10-12 — Taiwan v1.0 helper return-effects diagnostic R8
 
 Bounded static/model FACT: original full-hash source Actions38231508976, independent branch38232149568/main38232296065 all SUCCESS. Helper0x4b8a4 has two modeled balanced return states at same RET0x4b91b, but a potential abstract cycle, unsummarized CALL0x4b8e2→0x4918f and unknown alias write0x4b903 prevent qualified whole-helper effects and caller resumption. No real executable execution, runtime loop behavior, file IO or savedata schema established. Exact derived report and receipt STONEAGE-TW10-SAVEDATA-HELPER-R8-ORIGINAL*.json; unresolved edges preserved.
+
+
+## 2026-10-12 — Taiwan1.0 ESI-indirect write and structural helper loop R9
+
+Bounded original static FACT: hash-verified source38234280963 and independent branch38235091041/main38235207142 SUCCESS. Selected write0x4b903 is4 bytes via ESI with unknown effective destination; parent structural loop has9 nodes and JE/JE/JL branches, but source predicates/bound/actual looping remain OPEN. Nested helper0x4918f delegates to0x491a1 before a modeled return. No CRT/FILE/object identity, real execution, file IO or savedata128-byte schema inferred from resemblance. Derived R9 frontier report and acceptance receipt preserved under research/recovered.
