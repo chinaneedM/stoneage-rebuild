@@ -72,3 +72,16 @@ require concrete, version-scoped evidence before advancement.
   TW1.0 `CURRENT-STATE.md` continuity updates.
 
 See `docs/CURRENT-STATE.md` and `DD-021` for authoritative next tasks.
+
+## 2026-10-12 queue supersession (R21 accepted)
+
+The original immediate-work bullet retained above describes the historic
+R14 entry point; the current authoritative latest CURRENT-STATE entry
+supersedes it. R14–R21 bounded static evidence and independent custody
+receipts are available; **R21 is conditional static acceptance only**.
+Current highest NEXT is **TW1.0 R22**: CALL 0x499d4 effects/input
+barriers, HeapReAlloc 0x4a0c4 pre-CALL source feasibility and
+post-CALL opaque return, and cycle-aware EAX alias at 0x4a17d.
+The original native-save persistence gate and all other system-family
+PARTIAL/OPEN states remain unchanged. Engine/content production is
+still deferred until joint review of Stage A.
