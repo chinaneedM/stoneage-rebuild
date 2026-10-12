@@ -1,0 +1,31 @@
+name: Probe accepted TW v1.0 archive transport safely
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_tw10_archive_transport_preflight.py
+      - tests/test_stoneage_tw10_archive_transport_preflight.py
+      - .github/workflows/validate-stoneage-tw10-archive-preflight.yml
+
+permissions:
+  contents: read
+
+jobs:
+  archive-transport:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify capped HTTP/metadata signals and identity guard
+        run: python3 -m unittest tests.test_stoneage_tw10_archive_transport_preflight -v
+      - name: Probe source metadata and at most 4097 bytes per file probe
+        run: |
+          python3 -m tools.stoneage_tw10_archive_transport_preflight \
+            --output /tmp/tw10-archive-preflight-r1.json
+      - name: Publish derived transport status only
+        uses: actions/upload-artifact@v4
+        with:
+          name: tw10-archive-preflight-r1
+          path: /tmp/tw10-archive-preflight-r1.json
+          retention-days: 14
