@@ -1,0 +1,70 @@
+name: Validate TW1.0 R4 entrypoint graph from original pinned disc
+
+on:
+  push:
+    branches:
+      - agent/tw10-savedata-controlflow-r4-20261012
+    paths:
+      - .github/workflows/validate-stoneage-tw10-entrygraph-r4-original.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  original-bounded-entrygraph:
+    runs-on: ubuntu-latest
+    timeout-minutes: 33
+    steps:
+      - uses: actions/checkout@v4
+      - name: Test original-byte analysis on synthetic graph cases first
+        run: |
+          pip install --quiet capstone pefile
+          python3 -m unittest tests.test_stoneage_tw10_savedata_entrygraph_r4 -v
+      - name: Recover hash-pinned original only within fixed transport limits
+        run: |
+          set -euo pipefail
+          python3 -m tools.stoneage_tw10_archive_parallel_download \
+            --deadline 1500 --workers 16 --chunk 8388608 --output /tmp/CD_DIC.rar
+      - name: Verify and extract accepted original CD image
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq 7zip
+          mkdir -p /tmp/tw10-original
+          7z x -y -o/tmp/tw10-original /tmp/CD_DIC.rar STONEAGE.bin >/dev/null
+          test "$(stat -c %s /tmp/tw10-original/STONEAGE.bin)" = 523449360
+      - name: Compute bounded derived-only entrypoint graph
+        run: |
+          set -euo pipefail
+          python3 -m tools.stoneage_tw10_savedata_entrygraph_r4 \
+            --bin /tmp/tw10-original/STONEAGE.bin | tee /tmp/tw10-r4-derived.json
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          v=json.loads(Path('/tmp/tw10-r4-derived.json').read_text())
+          assert v['schema']=='tw10-savedata-four-word-entrygraph-r4'
+          assert v['scope']=='verified-original-bytes-bounded-entrypoint-direct-graph'
+          assert tuple(x['word_rva'] for x in v['sites']) == (
+              '0x40065','0x400e5','0x40116','0x402a1')
+          assert tuple(x['push_candidate_start_rva'] for x in v['sites']) == (
+              '0x40064','0x400e4','0x40115','0x402a0')
+          assert all(x['independently_proven_executed_code'] is False
+                     and x['data_ownership_proven'] is False for x in v['sites'])
+          assert v['original_runtime_reachability_admitted'] is False
+          assert v['savedata_io_semantics_admitted'] is False
+          assert v['fixed_128_byte_schema_admitted'] is False
+          assert v['original_bytes_published'] is False
+          print('TW10_ORIGINAL_R4_DERIVED_STATIC_GRAPH=PASS')
+          print('TW10_NATIVE_SAVE_IO=OPEN')
+          PY
+      - name: Delete transient copyrighted original archive and extracted media
+        if: always()
+        run: rm -rf /tmp/CD_DIC.rar /tmp/tw10-original
+      - name: Publish derived JSON only if all original-byte verification gates passed
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: tw10-original-entrygraph-r4-derived
+          path: /tmp/tw10-r4-derived.json
+          retention-days: 21
