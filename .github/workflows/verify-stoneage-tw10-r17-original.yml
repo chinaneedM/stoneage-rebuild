@@ -7,6 +7,7 @@ on:
       - .github/workflows/verify-stoneage-tw10-r17-original.yml
       - tools/stoneage_tw10_savedata_write_shapes_r17_guard.py
       - tests/test_stoneage_tw10_savedata_write_shapes_r17_guard.py
+      - research/recovered/STONEAGE-TW10-SAVEDATA-WRITE-SHAPES-R17-ORIGINAL.json
 permissions:
   contents: read
   actions: read
@@ -36,7 +37,8 @@ jobs:
           test -f /tmp/r17-verify/stoneage-r17-derived.json
           test ! -L /tmp/r17-verify/stoneage-r17-derived.json
           test "$(stat -c %s /tmp/r17-verify/stoneage-r17-derived.json)" -le 70000
-          sha256sum /tmp/r17-verify/stoneage-r17-derived.json
+          test "$(stat -c %s /tmp/r17-verify/stoneage-r17-derived.json)" -eq 7738
+          echo 'b9d04302615e2a591262270cd7ee88705740a6c6080b20594a90786ae99d0c80  /tmp/r17-verify/stoneage-r17-derived.json' | sha256sum -c -
           wc -c /tmp/r17-verify/stoneage-r17-derived.json
       - name: Strict independent semantics and tamper regressions
         run: |
@@ -53,6 +55,9 @@ jobs:
           from tools.stoneage_tw10_savedata_write_shapes_r17_guard import validate
           d=json.loads(Path('/tmp/r17-verify/stoneage-r17-derived.json').read_text())
           validate(d)
+          committed=json.loads(Path('research/recovered/STONEAGE-TW10-SAVEDATA-WRITE-SHAPES-R17-ORIGINAL.json').read_text())
+          assert d == committed, 'pinned original derived report mismatch'
+          print('TW10_R17_INDEPENDENT_EXACT_JSON_EQUIVALENCE=PASS')
           print('TW10_R17_DERIVED_JSON_BEGIN')
           print(json.dumps(d,sort_keys=True,separators=(',',':')))
           print('TW10_R17_DERIVED_JSON_END')

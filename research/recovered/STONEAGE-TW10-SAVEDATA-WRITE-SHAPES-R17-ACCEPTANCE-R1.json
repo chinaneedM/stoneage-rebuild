@@ -1,0 +1,56 @@
+{
+  "schema": "tw10-r17-original-static-write-frontier-acceptance-r1",
+  "status": "ACCEPTED_ORIGINAL_STATIC_BOUNDARIES_ONLY",
+  "original_probe_source_sha": "5a28f10d4c91adc4a9da45492204396a7223654f",
+  "original_probe_run_id": 38255685702,
+  "original_probe_job_id": 114833029425,
+  "original_probe_success": true,
+  "synthetic_validation_run_id": 38255686249,
+  "independent_guard_synthetic_run_id": 38255925395,
+  "independent_source_custody_run_id": 38256121610,
+  "independent_source_custody_job_id": 114834537103,
+  "independent_source_custody_success": true,
+  "derived_artifact_id": 11750721082,
+  "derived_zip_sha256": "a509ce3e9d29818acb8305d441687b5d0ead83dba8435cf44bfcbd90d130a72e",
+  "derived_json_bytes": 7738,
+  "derived_json_sha256": "b9d04302615e2a591262270cd7ee88705740a6c6080b20594a90786ae99d0c80",
+  "global_write_sources": [
+    {
+      "site_rva": 301612,
+      "source_register": "eax",
+      "static_only": true,
+      "anchor_reaches_site": true
+    },
+    {
+      "site_rva": 302456,
+      "source_register": "ecx",
+      "static_only": true,
+      "anchor_reaches_site": true
+    },
+    {
+      "site_rva": 302728,
+      "source_register": "ebx",
+      "static_only": true,
+      "anchor_reaches_site": false
+    }
+  ],
+  "callee_memory_gap_rva": 296135,
+  "callee_gap_mnemonic": "imul",
+  "nested_targets": [
+    {
+      "rva": 320168,
+      "states": 10,
+      "qualified": false
+    },
+    {
+      "rva": 320225,
+      "states": 40,
+      "qualified": false
+    }
+  ],
+  "actual_values_proven": false,
+  "callee_effects_admitted": false,
+  "native_io_executed": false,
+  "original_bytes_committed": false,
+  "next": "R18 path/alias/callee-call frontier; original save and runtime ownership remain OPEN"
+}
