@@ -1,0 +1,20 @@
+name: Validate TW1.0 R14 bounded register provenance synthetic only
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/validate-stoneage-tw10-r14-reachdefs.yml
+      - tools/stoneage_tw10_savedata_reachdefs_r14.py
+      - tests/test_stoneage_tw10_savedata_reachdefs_r14.py
+permissions:
+  contents: read
+jobs:
+  synthetic:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install static PE decoding dependencies
+        run: pip install --quiet capstone pefile
+      - name: Verify join/call-barrier/frontier conservatism
+        run: python -m unittest tests.test_stoneage_tw10_savedata_reachdefs_r14 -v

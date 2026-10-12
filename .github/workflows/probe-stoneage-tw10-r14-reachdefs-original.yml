@@ -1,0 +1,63 @@
+name: Probe TW1.0 original R14 bounded register provenance
+on:
+  workflow_dispatch:
+  push:
+    branches: [agent/tw10-r14-conservative-reachdefs-20261012]
+    paths:
+      - .github/workflows/probe-stoneage-tw10-r14-reachdefs-original.yml
+      - tools/stoneage_tw10_savedata_reachdefs_r14.py
+      - tests/test_stoneage_tw10_savedata_reachdefs_r14.py
+permissions:
+  contents: read
+jobs:
+  original:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify synthetic bounded graph
+        run: |
+          set -euo pipefail
+          pip install --quiet capstone pefile
+          python -m unittest tests.test_stoneage_tw10_savedata_reachdefs_r14 -v
+      - name: Retrieve provenanced historic archive via bounded ranges
+        run: |
+          set -euo pipefail
+          python -m tools.stoneage_tw10_archive_parallel_download --deadline 1500 --workers 16 --chunk 8388608 --output /tmp/CD_DIC.rar
+      - name: Extract original image for non-executing static analysis
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq 7zip
+          mkdir -p /tmp/stoneage-r14
+          7z x -y -o/tmp/stoneage-r14 /tmp/CD_DIC.rar STONEAGE.bin >/dev/null
+          test "$(stat -c %s /tmp/stoneage-r14/STONEAGE.bin)" = 523449360
+      - name: Derive original-only R14 bounded report after full R13 hash gates
+        run: |
+          set -euo pipefail
+          python -m tools.stoneage_tw10_savedata_reachdefs_r14 --bin /tmp/stoneage-r14/STONEAGE.bin > /tmp/stoneage-r14-derived.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from tools.stoneage_tw10_savedata_reachdefs_r14 import SCHEMA, STATUS, FLAGS, SITES
+          p=Path('/tmp/stoneage-r14-derived.json')
+          obj=json.loads(p.read_text())
+          assert p.stat().st_size <= 32768
+          assert obj['schema']==SCHEMA and obj['status']==STATUS
+          assert [x['site_rva'] for rg in obj['regions'] for x in rg['inputs']]==[s for s,_ in SITES]
+          assert all(obj[key] is False for key in FLAGS)
+          assert all(rg['anchor_is_verified_function_entry'] is False and rg['call_fallthrough_is_structural_only'] for rg in obj['regions'])
+          assert all(not inp['register_value_known'] for rg in obj['regions'] for inp in rg['inputs'])
+          print('TW10_R14_BOUNDED_STATIC_REACHDEFS=PASS')
+          print('TW10_R14_FUNCTION_OWNERSHIP_NATIVE_IO=OPEN')
+          PY
+      - name: Always purge original media
+        if: always()
+        run: rm -rf /tmp/CD_DIC.rar /tmp/stoneage-r14
+      - name: Upload derived-only report
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: tw10-r14-original-bounded-reachdefs-derived
+          path: /tmp/stoneage-r14-derived.json
+          retention-days: 21
