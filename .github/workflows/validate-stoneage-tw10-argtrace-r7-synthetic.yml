@@ -1,0 +1,26 @@
+name: Validate TW1.0 R7 conditional filename argument propagation
+on:
+  workflow_dispatch:
+  push:
+    branches: [main, agent/tw10-savedata-argtrace-r7-20261012]
+    paths:
+      - tools/stoneage_tw10_savedata_argtrace_r7.py
+      - tools/stoneage_tw10_savedata_argtrace_r7_guard.py
+      - tests/test_stoneage_tw10_savedata_argtrace_r7*.py
+      - .github/workflows/validate-stoneage-tw10-argtrace-r7-synthetic.yml
+permissions:
+  contents: read
+jobs:
+  synthetic:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install --quiet capstone pefile
+      - name: Test R7 and adjacent R4/R5 semantics
+        run: |
+          python3 -m unittest discover -s tests -p 'test_stoneage_tw10_savedata_argtrace_r7*.py' -v
+          python3 -m unittest tests.test_stoneage_tw10_savedata_entrygraph_r4 tests.test_stoneage_tw10_savedata_callsite_r5 tests.test_stoneage_tw10_savedata_callsite_r5_guard -v
+      - run: |
+          echo 'TW10_R7_SYNTHETIC_ONLY=PASS'
+          echo 'TW10_R7_NATIVE_SAVE_IO=OPEN'
