@@ -1,0 +1,61 @@
+{
+  "schema": "tw10-r16-original-bounded-callee-global-acceptance-r1",
+  "status": "ACCEPTED_ORIGINAL_STATIC_BOUNDARIES_ONLY",
+  "original_probe_run_id": 38251469650,
+  "original_probe_job_id": 114818598926,
+  "original_probe_source_sha": "309ac5bcc268b5b5d3efeabc257f32ea8f8e1208",
+  "original_probe_success": true,
+  "synthetic_test_count": 8,
+  "independent_custody_run_id": 38252566663,
+  "independent_custody_job_id": 114822343721,
+  "independent_custody_success": true,
+  "independent_guard_test_count": 16,
+  "combined_branch_validator_run_id": 38252645722,
+  "derived_artifact_id": 11748211374,
+  "derived_zip_sha256": "6327e33046dc3cb7b578bd711a6be93cff3e5e322f7aa885d9a980fe10575461",
+  "derived_json_bytes": 4710,
+  "derived_json_sha256": "a17655952b1d9310283c97ab53e689bd0b2c8a07935b0655dac04a65b7f132ca",
+  "callee_results": [
+    {
+      "root_rva": "0x484c0",
+      "visited_states": 5,
+      "gap": "unsupported_memory@0x484c7",
+      "qualified": false
+    },
+    {
+      "root_rva": "0x49900",
+      "visited_states": 5,
+      "gap": "unsummarized_calls@0x49909,0x49912",
+      "qualified": false
+    },
+    {
+      "root_rva": "0x4a09c",
+      "visited_states": 21,
+      "gap": "unsummarized_indirect_calls@0x4a0c4,0x4a0f8",
+      "qualified": false
+    },
+    {
+      "root_rva": "0x4a14d",
+      "visited_states": 22,
+      "gap": "alias_write@0x4a17d;cycle",
+      "qualified": false
+    }
+  ],
+  "third_global_rva": "0x172186c",
+  "third_global_candidates": {
+    "write": [
+      "0x49a2c",
+      "0x49d78",
+      "0x49e88"
+    ],
+    "read": [
+      "0x49de3"
+    ],
+    "complete_alias_coverage": false
+  },
+  "callee_effects_admitted": false,
+  "native_save_format_proven": false,
+  "native_io_executed": false,
+  "original_proprietary_bytes_committed": false,
+  "next": "R17 exact global write geometry/value/source and callee unsupported-memory effects; no native-save promotion"
+}
