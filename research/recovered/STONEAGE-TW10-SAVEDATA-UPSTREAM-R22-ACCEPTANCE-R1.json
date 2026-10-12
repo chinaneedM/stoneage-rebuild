@@ -1,0 +1,53 @@
+{
+  "schema": "stoneage-tw10-savedata-upstream-r22-acceptance-r1",
+  "status": "ORIGINAL_CONDITIONAL_STATIC_INDEPENDENTLY_ACCEPTED",
+  "historical_scope": "Taiwan Waei/JSS v1.0 clean retail client; original binary statically decoded only",
+  "original_source": {
+    "branch": "agent/tw10-savedata-r22-call-stack-cycle-20261012",
+    "head_sha": "82c186fcf2cd74c876b016fb1aa74872793ced0f",
+    "run_id": 38267287871,
+    "job_id": 114872523381,
+    "conclusion": "success",
+    "inherited_verified_archive_runtime_savedata_hashes": true,
+    "originals_deleted_after_inspection": true,
+    "original_executable_executed": false,
+    "proprietary_payload_committed": false
+  },
+  "derived_artifact": {
+    "id": 11756110734,
+    "source_run": 38267287871,
+    "name": "tw10-r22-original-call-stack-cycle-derived",
+    "zip_digest": "sha256:31d06d772e7525128d7288f38ed48664c0ba05d3a0c0296e1ea0f1f45c680b70",
+    "derived_json_bytes": 7221,
+    "derived_json_sha256": "a0e05f372b52fc49c7bfda0d08603fb82e5e8f8e6821dc852921f86f04da14e5",
+    "path": "research/recovered/STONEAGE-TW10-SAVEDATA-UPSTREAM-R22-ORIGINAL.json"
+  },
+  "synthetic": {
+    "run_id": 38268754905,
+    "job_id": 114877485681,
+    "conclusion": "success",
+    "includes_r22_synthetic_and_eighteen_guard_negative_controls": true,
+    "r21_adjacent_regression": true
+  },
+  "independent": {
+    "run_id": 38268755166,
+    "job_id": 114877486168,
+    "conclusion": "success",
+    "immutable_original_run_head_branch_and_artifact_digest": true,
+    "strict_no_promotion_and_wrong_import_guard": true,
+    "checked_in_json_equivalent_to_derived_artifact": true
+  },
+  "accepted_conditional_original_static": [
+    "Exact indirect CALL at RVA0x499d4 uses the imported KERNEL32.dll!HeapCreate IAT slot RVA0x520e8; no execution or heap creation success admitted",
+    "RVA0x499dc writable .data global write follows opaque HeapCreate CALL only through structural return-to-fallthrough candidate; EAX runtime return and effective value UNKNOWN",
+    "HeapReAlloc RVA0x4a0c4 has four earlier PUSH candidate operands with candidate graph-only paths; no ABI positions, parameter values or runtime result",
+    "Alias MOV [EAX+8], EAX at0x4a17d has bounded 62-node/65-edge graph and three back edges; later RVA reaching definitions are cycle candidates, not executed flow"
+  ],
+  "remaining_open": [
+    "Actual original control flow, heap handle/flags/size and memory allocation effects",
+    "Original file name→CreateFileA→ReadFile/WriteFile handle/buffer/length128",
+    "Native persistence schema/framing/checksum/migrations and runtime IO",
+    "Object lifetime/alias owner, caller return effects, server-only semantics, cross-version equivalence"
+  ],
+  "next": "R23: link HeapCreate input/return candidates with HeapAlloc/HeapReAlloc global handle references using strict static provenance; investigate caller stack/alias control without claiming native persistence."
+}
