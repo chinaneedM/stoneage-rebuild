@@ -1,0 +1,81 @@
+name: Probe TW1.0 original R21 writer and HeapReAlloc aliases
+on:
+  workflow_dispatch:
+  push:
+    branches: [agent/tw10-savedata-r21-writer-realloc-alias-20261012]
+    paths:
+      - .github/workflows/probe-stoneage-tw10-r21-original.yml
+      - tools/stoneage_tw10_savedata_upstream_r21.py
+      - tests/test_stoneage_tw10_savedata_upstream_r21.py
+permissions:
+  contents: read
+jobs:
+  original:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - name: Regression gates before touching original
+        run: |
+          set -euo pipefail
+          pip install --quiet capstone pefile
+          python -m unittest -v tests.test_stoneage_tw10_savedata_upstream_r21 tests.test_stoneage_tw10_savedata_upstream_r20
+      - name: Pinned transient original acquisition
+        run: |
+          set -euo pipefail
+          for attempt in 1 2 3; do
+            if python -m tools.stoneage_tw10_archive_parallel_download --deadline 1500 --workers 16 --chunk 8388608 --output /tmp/CD_DIC.rar; then
+              echo R21_PINNED_ARCHIVE=PASS
+              break
+            fi
+            rm -f /tmp/CD_DIC.rar
+            if [ "$attempt" -eq 3 ]; then
+              echo R21_EXTERNAL_SOURCE_UNAVAILABLE=OPEN
+              exit 1
+            fi
+            sleep 10
+          done
+      - name: Extract verified BIN into temporary working directory
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq 7zip
+          mkdir -p /tmp/stoneage-r21
+          7z x -y -o/tmp/stoneage-r21 /tmp/CD_DIC.rar STONEAGE.bin >/dev/null
+          test "$(stat -c %s /tmp/stoneage-r21/STONEAGE.bin)" -eq 523449360
+      - name: Derive static-only report
+        run: |
+          set -euo pipefail
+          python -m tools.stoneage_tw10_savedata_upstream_r21 --bin /tmp/stoneage-r21/STONEAGE.bin > /tmp/stoneage-r21-derived.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from tools.stoneage_tw10_savedata_upstream_r21 import (
+              SCHEMA,STATUS,WRITER_SITE,THIRD_GLOBAL,SECOND_CALL,ALIAS_SITE,
+              HEAPREALLOC_IMPORT,FLAGS,
+          )
+          p=Path('/tmp/stoneage-r21-derived.json')
+          d=json.loads(p.read_text())
+          assert p.stat().st_size<=70000
+          assert d['schema']==SCHEMA and d['status']==STATUS and d['static_only']
+          assert d['r20_original_identity_revalidated'] is True
+          assert d['third_writer']['site_rva']==WRITER_SITE
+          assert d['third_writer']['target_rva']==THIRD_GLOBAL
+          assert d['heaprealloc_inputs']['call_identity']['call_rva']==SECOND_CALL
+          assert d['heaprealloc_inputs']['call_identity']['import_identity']==HEAPREALLOC_IMPORT
+          assert d['eax_alias']['site_rva']==ALIAS_SITE
+          assert all(d[k] is False for k in FLAGS)
+          assert d['heaprealloc_inputs']['post_call_eax_value_unknown'] is True
+          print('TW10_R21_ORIGINAL_CONDITIONAL_STATIC=PASS')
+          print('TW10_R21_NATIVE_SAVE_AND_OWNERSHIP=OPEN')
+          PY
+      - name: Always remove original archive and executable
+        if: always()
+        run: rm -rf /tmp/CD_DIC.rar /tmp/stoneage-r21
+      - name: Upload DERIVED JSON only
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: tw10-r21-original-writer-realloc-alias-derived
+          path: /tmp/stoneage-r21-derived.json
+          retention-days: 21
