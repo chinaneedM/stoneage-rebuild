@@ -23,6 +23,7 @@ ORIGIN = "https://archive.org"
 META_LIMIT = 262144
 RANGE_LIMIT = 4096
 ALLOWED_HOST = re.compile(r"^ia[0-9]{3,9}\.us\.archive\.org$")
+ALLOWED_STORAGE_DIR = re.compile(r"^/[0-9]{1,3}/items/stoneage_tw_2000_win$")
 USER_AGENT = "stoneage-reconstruction-static-source-preflight/1.0"
 
 
@@ -88,6 +89,7 @@ def metadata_summary(data: bytes, *, capped: bool = False) -> dict:
         "parse_ok": False, "file_found": False, "file_size": "",
         "md5_matches_pinned": False, "sha1_matches_pinned": False,
         "candidate_server_count": 0, "server": "",
+        "valid_storage_directory": False, "storage_directory": "",
     }
     if capped:
         return result
@@ -110,6 +112,10 @@ def metadata_summary(data: bytes, *, capped: bool = False) -> dict:
         if isinstance(obj.get("workable_servers", []), list) else [obj.get("server")]
     safe_hosts = list(dict.fromkeys(x for x in hosts if isinstance(x, str)
                                     and ALLOWED_HOST.fullmatch(x)))
+    directory = obj.get("dir", "")
+    if isinstance(directory, str) and ALLOWED_STORAGE_DIR.fullmatch(directory):
+        result["valid_storage_directory"] = True
+        result["storage_directory"] = directory
     result["candidate_server_count"] = len(safe_hosts)
     if safe_hosts:
         result["server"] = safe_hosts[0]
@@ -134,15 +140,16 @@ def run(opener=urlopen) -> dict:
     head, _ = probe("canonical_head", canonical, "HEAD", opener=opener)
     sliced, _ = probe("canonical_range", canonical, "GET", opener=opener)
     records = [asdict(m), asdict(head), asdict(sliced)]
-    if meta["server"]:
-        dynamic = f"https://{meta['server']}/download/{ITEM}/{FILE}"
-        sub, _ = probe("catalog_server_range", dynamic, "GET", opener=opener)
+    if meta["server"] and meta["valid_storage_directory"]:
+        dynamic = f"https://{meta['server']}{meta['storage_directory']}/{FILE}"
+        sub, _ = probe("storage_server_range", dynamic, "GET", opener=opener)
         records.append(asdict(sub))
     return {
         "schema": "tw10-savedata-archive-transport-preflight-r1",
         "artifact_identity": {"item": ITEM, "filename": FILE,
                               "pinned_md5": ARCHIVE_MD5, "pinned_sha1": ARCHIVE_SHA1},
-        "metadata": {k: v for k, v in meta.items() if k != "server"},
+        "metadata": {k: v for k, v in meta.items()
+                     if k not in ("server", "storage_directory")},
         "probes": records,
         "canonical_range_capability": range_class(sliced),
         "admission": "TRANSPORT_SIGNALS_ONLY",

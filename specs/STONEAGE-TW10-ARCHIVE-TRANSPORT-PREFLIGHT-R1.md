@@ -26,3 +26,15 @@ catalog signal, not independent hash verification of acquired original bytes.
 Successful preflight Actions must not be mislabeled as successful R3 original
 executable analysis. A future full original gate must read a complete original
 artifact and verify exact hashes before reporting instruction candidates.
+
+## 2026-10-12 verified first preflight (transport-only)
+
+Branch Action 38214333386 passed 10 tests. Its original metadata GET returned
+HTTP 200 with an 842125501-byte file entry and catalog MD5/SHA1 matching the
+accepted original reference. Canonical HEAD and range GET both returned HTTP
+500; the first per-storage test returned HTTP 404 because it incorrectly used
+the canonical `/download/ITEM/FILE` route on an `iaNNNN...us.archive.org`
+storage host. R1 revision now validates the catalog-provided `dir` path
+(`/N/items/stoneage_tw_2000_win`) and uses the proper storage-file route;
+only a fresh result can determine whether that succeeds. Neither observation
+confirms a complete original artifact or recovered instruction semantics.

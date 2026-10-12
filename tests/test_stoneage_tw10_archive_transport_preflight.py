@@ -32,6 +32,7 @@ class FakeResponse:
 def meta(**override):
     d = {"files": [{"name": FILE, "size": "54321",
                      "md5": ARCHIVE_MD5, "sha1": ARCHIVE_SHA1}],
+         "dir": "/0/items/stoneage_tw_2000_win",
          "server": "ia804111.us.archive.org",
          "workable_servers": ["ia804111.us.archive.org",
                               "evil.example.net", "ia800999.us.archive.org"]}
@@ -48,6 +49,35 @@ class TestArchiveTransportPreflight(unittest.TestCase):
         self.assertTrue(m["sha1_matches_pinned"])
         self.assertEqual(m["candidate_server_count"], 2)
         self.assertEqual(m["server"], "ia804111.us.archive.org")
+        self.assertTrue(m["valid_storage_directory"])
+        self.assertEqual(m["storage_directory"], "/0/items/stoneage_tw_2000_win")
+
+    def test_untrusted_storage_directory_is_rejected(self):
+        d = json.loads(meta())
+        d["dir"] = "/0/items/stoneage_tw_2000_win/../../other"
+        m = metadata_summary(json.dumps(d).encode())
+        self.assertFalse(m["valid_storage_directory"])
+        self.assertEqual(m["storage_directory"], "")
+
+    def test_wrong_item_storage_directory_is_rejected(self):
+        d = json.loads(meta())
+        d["dir"] = "/4/items/other"
+        self.assertFalse(metadata_summary(json.dumps(d).encode())
+                         ["valid_storage_directory"])
+
+    def test_bad_directory_skips_storage_probe(self):
+        d = json.loads(meta())
+        d["dir"] = "/private/data"
+        calls = []
+        def opener(request, timeout):
+            calls.append(request.full_url)
+            if "/metadata/" in request.full_url:
+                return FakeResponse(json.dumps(d).encode(), status=200)
+            return FakeResponse(b"\x00", status=206)
+        result = run(opener=opener)
+        self.assertEqual(len(calls), 3)
+        self.assertNotIn("storage_server_range",
+                         [probe["name"] for probe in result["probes"]])
 
     def test_metadata_mismatch_does_not_pass(self):
         d = json.loads(meta())
@@ -125,6 +155,7 @@ class TestArchiveTransportPreflight(unittest.TestCase):
         result = run(opener=opener)
         raw = json.dumps(result)
         self.assertEqual(len(calls), 4)
+        self.assertIn("/0/items/stoneage_tw_2000_win/CD_DIC.rar", calls[-1])
         self.assertNotIn("PROPRIETARY", raw)
         self.assertEqual(result["canonical_range_capability"], "PARTIAL_CONFIRMED")
         self.assertFalse(result["original_client_hash_verified"])
