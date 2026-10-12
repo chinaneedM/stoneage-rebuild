@@ -71,5 +71,57 @@ class R3ReportGuardTests(unittest.TestCase):
             validate(fixture().replace(RESOLUTION,"RESOLUTION|RUNTIME_NATIVE_IO_ACCEPTED"))
 
 
+    def test_boundary_cannot_be_weakened_by_preserving_only_prefix(self):
+        changed=fixture().replace(
+            "actual instruction alignment, indirect callsites, savedata IO reachability,",
+            "original native file IO is ACCEPTED,")
+        with self.assertRaisesRegex(ValueError,"exact explicit non-runtime"):
+            validate(changed)
+
+    def test_file_api_must_be_from_pinned_emitter_allowlist(self):
+        with self.assertRaisesRegex(ValueError,"recognized file API"):
+            validate(fixture(True,True).replace("name=CreateFileA","name=UnknownFileApi"))
+
+    def test_duplicate_file_api_summary_rejected_even_if_counts_balance(self):
+        lines=fixture(True,True).splitlines()
+        line=next(x for x in lines if x.startswith("FORWARD_API|"))
+        lines.insert(lines.index(line)+1,line)
+        changed="\n".join(lines).replace(
+            "forward_64_file_api_count=1","forward_64_file_api_count=2")+"\n"
+        with self.assertRaisesRegex(ValueError,"duplicate API summary"):
+            validate(changed)
+
+    def test_candidate_cannot_precede_word_header(self):
+        lines=fixture(True).splitlines()
+        candidate=next(x for x in lines if x.startswith("CANDIDATE|"))
+        lines.remove(candidate)
+        lines.insert(4,candidate)
+        with self.assertRaisesRegex(ValueError,"candidate before"):
+            validate("\n".join(lines)+"\n")
+
+    def test_forward_api_cannot_precede_candidate(self):
+        lines=fixture(True,True).splitlines()
+        api=next(x for x in lines if x.startswith("FORWARD_API|"))
+        lines.remove(api)
+        candidate_idx=next(i for i,x in enumerate(lines) if x.startswith("CANDIDATE|"))
+        lines.insert(candidate_idx,api)
+        with self.assertRaisesRegex(ValueError,"API out of candidate"):
+            validate("\n".join(lines)+"\n")
+
+    def test_overlap_must_fit_four_byte_window(self):
+        with self.assertRaisesRegex(ValueError,"linear overlap bounds"):
+            validate(fixture().replace("linear_overlap=1","linear_overlap=5"))
+
+    def test_candidate_count_per_site_cannot_exceed_x86_start_window(self):
+        with self.assertRaisesRegex(ValueError,"unbounded report integer"):
+            validate(fixture().replace(
+                "alternate_ref_candidates=0","alternate_ref_candidates=16",1))
+
+    def test_zero_api_mentions_rejected(self):
+        with self.assertRaisesRegex(ValueError,"zero API mention count"):
+            validate(fixture(True,True).replace("name=CreateFileA|count=1",
+                                                  "name=CreateFileA|count=0").replace(
+                "forward_64_file_api_count=1","forward_64_file_api_count=0"))
+
 if __name__=="__main__":
     unittest.main()
