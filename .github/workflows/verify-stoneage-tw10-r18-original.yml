@@ -1,0 +1,62 @@
+name: Independently verify TW1.0 R18 source custody and bounded static result
+on:
+  workflow_dispatch:
+  push:
+    branches: [main, agent/tw10-savedata-r18-upstream-frontier-20261012]
+    paths:
+      - .github/workflows/verify-stoneage-tw10-r18-original.yml
+      - tools/stoneage_tw10_savedata_upstream_r18_guard.py
+      - tests/test_stoneage_tw10_savedata_upstream_r18_guard.py
+      - research/recovered/STONEAGE-TW10-SAVEDATA-UPSTREAM-R18-ORIGINAL.json
+permissions:
+  contents: read
+  actions: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Pin original R18 run, source head and derived-only artifact identity
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          identity="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/38257682689" --jq '[.status,.conclusion,.head_sha,.head_branch] | join("|")')"
+          test "$identity" = 'completed|success|f02afc054b8263a471617db3f7a43f0bf299765e|agent/tw10-savedata-r18-upstream-frontier-20261012'
+          artifact="$(gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/11750734113" --jq '[.workflow_run.id,.name,.digest,.expired] | join("|")')"
+          test "$artifact" = '38257682689|tw10-r18-original-upstream-derived|sha256:42ac88466914bfb7cac3a9a312acf742791f69b2bb5ced99a4176db365233fae|false'
+      - name: Download only immutable derived JSON
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/r18-verify
+          gh run download 38257682689 --repo "$GITHUB_REPOSITORY" --name tw10-r18-original-upstream-derived --dir /tmp/r18-verify
+          test "$(find /tmp/r18-verify -type f | wc -l)" -eq 1
+          test -f /tmp/r18-verify/stoneage-r18-derived.json
+          test ! -L /tmp/r18-verify/stoneage-r18-derived.json
+          test "$(stat -c %s /tmp/r18-verify/stoneage-r18-derived.json)" -le 70000
+          sha256sum /tmp/r18-verify/stoneage-r18-derived.json
+          wc -c /tmp/r18-verify/stoneage-r18-derived.json
+      - name: Independent static guard and twelve tamper tests
+        run: |
+          set -euo pipefail
+          pip install --quiet capstone pefile
+          python -m unittest -v tests.test_stoneage_tw10_savedata_upstream_r18_guard
+          python -m tools.stoneage_tw10_savedata_upstream_r18_guard --report /tmp/r18-verify/stoneage-r18-derived.json
+      - name: Emit bounded JSON for independent exact comparison
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from tools.stoneage_tw10_savedata_upstream_r18_guard import validate
+          original=json.loads(Path('/tmp/r18-verify/stoneage-r18-derived.json').read_text())
+          validate(original)
+          print('TW10_R18_DERIVED_JSON_BEGIN')
+          print(json.dumps(original, sort_keys=True, separators=(',',':')))
+          print('TW10_R18_DERIVED_JSON_END')
+          PY
+      - name: Purge downloaded derived-only metadata
+        if: always()
+        run: rm -rf /tmp/r18-verify
