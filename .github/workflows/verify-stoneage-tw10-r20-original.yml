@@ -8,6 +8,7 @@ on:
       - tools/stoneage_tw10_savedata_upstream_r20_guard.py
       - tests/test_stoneage_tw10_savedata_upstream_r20_guard.py
       - research/recovered/STONEAGE-TW10-SAVEDATA-UPSTREAM-R20-ORIGINAL.json
+      - research/recovered/STONEAGE-TW10-SAVEDATA-UPSTREAM-R20-ORIGINAL.json
 permissions:
   contents: read
   actions: read
@@ -37,7 +38,8 @@ jobs:
           test -f /tmp/r20-independent/stoneage-r20-derived.json
           test ! -L /tmp/r20-independent/stoneage-r20-derived.json
           test "$(stat -c %s /tmp/r20-independent/stoneage-r20-derived.json)" -le 70000
-          sha256sum /tmp/r20-independent/stoneage-r20-derived.json
+          test "$(stat -c %s /tmp/r20-independent/stoneage-r20-derived.json)" -eq 5071
+          echo 'f669ca334d6d5bfa120496fde1990afa03f2394fd7366ea0a465b996a90a034a  /tmp/r20-independent/stoneage-r20-derived.json' | sha256sum -c -
           wc -c /tmp/r20-independent/stoneage-r20-derived.json
       - name: Independent strict semantic boundary and 13 tamper tests
         run: |
@@ -54,6 +56,9 @@ jobs:
           from tools.stoneage_tw10_savedata_upstream_r20_guard import validate
           d=json.loads(Path('/tmp/r20-independent/stoneage-r20-derived.json').read_text())
           validate(d)
+          committed=json.loads(Path('research/recovered/STONEAGE-TW10-SAVEDATA-UPSTREAM-R20-ORIGINAL.json').read_text())
+          assert committed==d, 'original-derived JSON and accepted repository evidence disagree'
+          print('TW10_R20_EXACT_JSON_EQUIVALENCE=PASS')
           print('TW10_R20_DERIVED_JSON_BEGIN')
           print(json.dumps(d,sort_keys=True,separators=(',',':')))
           print('TW10_R20_DERIVED_JSON_END')

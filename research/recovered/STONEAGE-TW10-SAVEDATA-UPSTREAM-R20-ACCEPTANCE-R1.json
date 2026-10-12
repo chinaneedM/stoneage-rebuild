@@ -1,0 +1,63 @@
+{
+  "schema": "tw10-r20-original-indirect-call-third-global-alias-acceptance-r1",
+  "status": "ACCEPTED_ORIGINAL_CONDITIONAL_STATIC_ONLY",
+  "source_commit": "fc95c33f3877d7182359334885ce8ed47f8bcb12",
+  "original_probe_run": 38262025327,
+  "original_probe_job": 114854677906,
+  "original_probe_success": true,
+  "synthetic_and_guard_run": 38261782701,
+  "independent_run": 38262869071,
+  "independent_job": 114857568530,
+  "independent_success": true,
+  "artifact_id": 11752812909,
+  "zip_sha256": "729d80b700b83cf5e5e9cca8b01a36867fee02aa021a499fa5db0fa2c71babbe",
+  "derived_bytes": 5071,
+  "derived_sha256": "f669ca334d6d5bfa120496fde1990afa03f2394fd7366ea0a465b996a90a034a",
+  "second_call_site": 303300,
+  "second_call_import": {
+    "dll": "KERNEL32.dll",
+    "iat_rva": 336092,
+    "name": "HeapReAlloc"
+  },
+  "third_global_rva": 24254588,
+  "third_global_counts": {
+    "address_candidate": 0,
+    "read_candidate": 11,
+    "unknown_candidate": 0,
+    "write_candidate": 1
+  },
+  "third_global_write_sites": [
+    301532
+  ],
+  "heap_push_site": 301574,
+  "ebx_alias_site": 303485,
+  "alias_operand_shapes": [
+    {
+      "decoder_read": false,
+      "decoder_write": true,
+      "geometry": {
+        "base_register": "eax",
+        "displacement_region": null,
+        "index_register": null,
+        "index_scale": 1,
+        "relative_field_offset": 8,
+        "segment_register": null,
+        "width_bytes": 4
+      },
+      "kind": "memory",
+      "width_bytes": 4
+    },
+    {
+      "decoder_read": true,
+      "decoder_write": false,
+      "kind": "register",
+      "register": "eax",
+      "width_bytes": 4
+    }
+  ],
+  "original_executable_executed": false,
+  "original_bytes_published": false,
+  "runtime_ownership_proven": false,
+  "native_save_io_proven": false,
+  "next": "R21 global 0x172187c single-writer and HeapReAlloc/alias ownership"
+}
