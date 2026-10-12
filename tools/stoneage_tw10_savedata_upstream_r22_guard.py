@@ -34,6 +34,12 @@ def validate(d):
         or c.get("call_identity",{}).get("kind") not in
            ("direct","memory_indirect","register_indirect","other")):
         raise ValueError("R22 writer CALL identity")
+    identity=c.get("call_identity",{})
+    # Accepted original call slot: syntactic PE import association only.
+    if identity.get("import_identity") != {
+        "dll":"KERNEL32.dll","name":"HeapCreate","iat_rva":0x520e8
+    } or identity.get("kind") != "memory_indirect":
+        raise ValueError("R22 pinned original HeapCreate import association")
     if (c.get("candidate_nodes",0)>128 or c.get("candidate_edges",0)>350
         or c.get("call_fallthrough_assumes_return_structurally") is not True
         or c.get("call_to_writer_structural_path_exists") is not True):
