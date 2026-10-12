@@ -1,0 +1,66 @@
+name: Probe TW1.0 original R17 exact global write and callee memory geometry
+on:
+  workflow_dispatch:
+  push:
+    branches: [agent/tw10-savedata-r17-write-shapes-20261012]
+    paths:
+      - .github/workflows/probe-stoneage-tw10-r17-original.yml
+      - tools/stoneage_tw10_savedata_write_shapes_r17.py
+      - tests/test_stoneage_tw10_savedata_write_shapes_r17.py
+permissions:
+  contents: read
+jobs:
+  original:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate R17 and inherited R16 synthetic controls
+        run: |
+          set -euo pipefail
+          pip install --quiet capstone pefile
+          python -m unittest -v tests.test_stoneage_tw10_savedata_write_shapes_r17 tests.test_stoneage_tw10_savedata_callee_global_r16
+      - name: Recover historical archive transiently using existing pinned acquisition
+        run: |
+          set -euo pipefail
+          python -m tools.stoneage_tw10_archive_parallel_download --deadline 1500 --workers 16 --chunk 8388608 --output /tmp/CD_DIC.rar
+      - name: Extract only the transient historical disc image
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq 7zip
+          mkdir -p /tmp/stoneage-r17
+          7z x -y -o/tmp/stoneage-r17 /tmp/CD_DIC.rar STONEAGE.bin >/dev/null
+          test "$(stat -c %s /tmp/stoneage-r17/STONEAGE.bin)" = 523449360
+      - name: Produce bounded original-derived non-binary metadata
+        run: |
+          set -euo pipefail
+          python -m tools.stoneage_tw10_savedata_write_shapes_r17 --bin /tmp/stoneage-r17/STONEAGE.bin > /tmp/stoneage-r17-derived.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from tools.stoneage_tw10_savedata_write_shapes_r17 import SCHEMA, STATUS, WRITES, FLAGS
+          p=Path('/tmp/stoneage-r17-derived.json')
+          d=json.loads(p.read_text())
+          assert p.stat().st_size <= 70000
+          assert d['schema']==SCHEMA and d['status']==STATUS
+          assert [row['site_rva'] for row in d['writes']]==list(WRITES)
+          assert d['conditional_static_only'] and d['r16_original_identity_revalidated']
+          assert all(d[flag] is False for flag in FLAGS)
+          assert all(not row['actual_value_proven'] and not row['executed_write_proven'] for row in d['writes'])
+          assert d['callee_memory_gap']['r8_unsupported_memory_gap_retained']
+          assert not d['callee_memory_gap']['callee_effect_summary_admitted']
+          assert all(not row['effective_effects_admitted'] for row in d['nested_callees'])
+          print('TW10_R17_ORIGINAL_STATIC_FRONTIER_ONLY=PASS')
+          print('TW10_R17_RUNTIME_SAVE_OWNERSHIP_AND_NATIVE_IO=OPEN')
+          PY
+      - name: Always purge transient originals
+        if: always()
+        run: rm -rf /tmp/CD_DIC.rar /tmp/stoneage-r17
+      - name: Publish derived-only R17 report for independent review
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: tw10-r17-original-write-shapes-derived
+          path: /tmp/stoneage-r17-derived.json
+          retention-days: 21

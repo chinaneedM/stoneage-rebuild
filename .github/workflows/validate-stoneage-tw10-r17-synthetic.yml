@@ -1,0 +1,26 @@
+name: Validate TW1.0 R17 static write and callee frontier synthetic
+on:
+  workflow_dispatch:
+  push:
+    branches: [main, agent/tw10-savedata-r17-write-shapes-20261012]
+    paths:
+      - .github/workflows/validate-stoneage-tw10-r17-synthetic.yml
+      - tools/stoneage_tw10_savedata_write_shapes_r17.py
+      - tests/test_stoneage_tw10_savedata_write_shapes_r17.py
+permissions:
+  contents: read
+jobs:
+  synthetic:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install static parser dependencies
+        run: pip install --quiet capstone pefile
+      - name: Synthetic R17 static regression and adjacent R16 protection
+        run: |
+          set -euo pipefail
+          python -m unittest -v tests.test_stoneage_tw10_savedata_write_shapes_r17 tests.test_stoneage_tw10_savedata_callee_global_r16
+          python -m compileall -q tools/stoneage_tw10_savedata_write_shapes_r17.py
+          echo TW10_R17_SYNTHETIC_ONLY=PASS
+          echo TW10_R17_ORIGINAL_EVIDENCE=OPEN
