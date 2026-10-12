@@ -76,7 +76,7 @@ class Tests(unittest.TestCase):
                    opener=opener)
             self.assertTrue(result["verified"])
             self.assertEqual(p.read_bytes(),data)
-            self.assertEqual(reqs,[(0,12),(13,25),(26,38),(39,51),(52,64),(65,77)])
+            self.assertEqual(reqs,[(0,12),(13,25),(26,38),(39,51),(52,64),(65,74)])
 
     def test_hash_mismatch_unlinks_transient_file(self):
         with tempfile.TemporaryDirectory() as td:
