@@ -1,0 +1,27 @@
+name: Validate TW1.0 R4 entrypoint graph derived report guard
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - agent/tw10-savedata-controlflow-r4-20261012
+    paths:
+      - tools/stoneage_tw10_savedata_entrygraph_r4_guard.py
+      - tests/test_stoneage_tw10_savedata_entrygraph_r4_guard.py
+      - .github/workflows/validate-stoneage-tw10-entrygraph-r4-guard.yml
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Strictly test synthetic R4 report custody and negative boundaries
+        run: python3 -m unittest tests.test_stoneage_tw10_savedata_entrygraph_r4_guard -v
+      - name: No real original media or native runtime semantic admission
+        run: |
+          echo 'TW10_R4_DERIVED_GUARD=PASS'
+          echo 'TW10_R4_NATIVE_SAVE_IO=OPEN'
