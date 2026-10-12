@@ -2,9 +2,12 @@ name: Validate TW1.0 R8 bounded helper return effects synthetic-only
 on:
   workflow_dispatch:
   push:
-    branches: [main, agent/tw10-savedata-argtrace-r7-hardened-20261012]
+    branches: [main, agent/tw10-savedata-argtrace-r7-hardened-20261012, agent/tw10-savedata-helper-original-r8-20261012]
     paths:
       - tools/stoneage_tw10_savedata_helper_effects_r8.py
+      - tools/stoneage_tw10_savedata_helper_original_r8.py
+      - tools/stoneage_tw10_savedata_helper_original_r8_guard.py
+      - tests/test_stoneage_tw10_savedata_helper_original_r8_guard.py
       - tools/stoneage_tw10_savedata_argtrace_r7.py
       - tests/test_stoneage_tw10_savedata_helper_effects_r8.py
       - .github/workflows/validate-stoneage-tw10-helper-effects-r8.yml

@@ -33,6 +33,14 @@ class TestHelperEffects(unittest.TestCase):
         r=run(b'\x74\x02\x31\xc0\xc3');self.assertTrue(r['qualifies_modeled_return_effect_summary']);self.assertNotIn('eax',r['common_preserved_registers'])
     def test_unsummarized_call_stops(self):
         r=run(b'\xe8\x00\x00\x00\x00\xc3');self.assertFalse(r['qualifies_modeled_return_effect_summary']);self.assertEqual(r['gaps'],{'unsummarized_call':1})
+    def test_gap_site_has_exact_call_target_and_count(self):
+        r=run(b'\xe8\x00\x00\x00\x00\xc3');self.assertEqual(r['gap_sites'],[{'rva':RVA,'reason':'unsummarized_call','direct_target_rva':RVA+5,'occurrences':1}])
+    def test_gap_sites_reconcile_with_counts(self):
+        r=run(b'\x74\x02\xff\xe0\xff\xe0')
+        self.assertEqual(sum(e['occurrences'] for e in r['gap_sites']),sum(r['gaps'].values()))
+    def test_original_probe_rejects_wrong_source_before_parsing(self):
+        from tools.stoneage_tw10_savedata_helper_original_r8 import inspect_verified
+        with self.assertRaisesRegex(ValueError,'SHA256 mismatch'):inspect_verified(b'not original',b'')
     def test_indirect_tail_jump_stops(self):
         r=run(b'\xff\xe0');self.assertEqual(r['gaps'],{'indirect_jump':1});self.assertFalse(r['qualifies_modeled_return_effect_summary'])
     def test_global_alias_store_stops(self):

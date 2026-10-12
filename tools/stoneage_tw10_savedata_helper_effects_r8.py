@@ -18,30 +18,33 @@ GAPS={'outside_text','decode_gap','unsummarized_call','indirect_jump','terminal'
 def summarize(dec,root,max_states=MAX_STATES):
     if type(max_states) is not int or not 1<=max_states<=MAX_STATES: raise ValueError('state bound')
     initial={r:('initial_register',r) for r in REGISTERS};initial[X86_REG_ESP]=('stack',0)
-    q=deque([(root,State(initial,{0:RETURN_WORD}))]);seen=set();returns=set();gaps=Counter();edges=set()
+    q=deque([(root,State(initial,{0:RETURN_WORD}))]);seen=set();returns=set();gaps=Counter();edges=set();gap_sites=Counter()
+    def record_gap(rva,reason,target=None):
+        gaps[reason]+=1;gap_sites[(rva,reason,target)]+=1
+        if len(gap_sites)>64:raise ValueError('gap-site cap')
     def enqueue(source,rva,s):
         edges.add((source,(rva,s.signature())));q.append((rva,s))
     while q and len(seen)<max_states:
         rva,s=q.popleft();key=(rva,s.signature())
         if key in seen:continue
-        if not dec.lo<=rva<dec.hi:gaps['outside_text']+=1;continue
+        if not dec.lo<=rva<dec.hi:record_gap(rva,'outside_text');continue
         ins=dec.at(rva)
-        if ins is None:gaps['decode_gap']+=1;continue
+        if ins is None:record_gap(rva,'decode_gap');continue
         seen.add(key)
         if ins.group(CS_GRP_RET):
             if ins.mnemonic!='ret' or len(ins.operands)>1 or (ins.operands and ins.operands[0].type!=X86_OP_IMM):
-                gaps['unsupported_return']+=1;continue
+                record_gap(rva,'unsupported_return');continue
             sp=stack(s);cleanup=int(ins.operands[0].imm) if ins.operands else 0
             kept=tuple(dec.md.reg_name(r) for r in REGISTERS if s.regs.get(r)==initial[r])
             returns.add((rva,sp,cleanup,sp is not None and s.cells.get(sp)==RETURN_WORD,kept))
             if len(returns)>MAX_RETURNS:raise ValueError('return cap')
             continue
-        if ins.group(CS_GRP_CALL):gaps['unsummarized_call']+=1;continue
+        if ins.group(CS_GRP_CALL):record_gap(rva,'unsummarized_call',direct_target(ins,dec.base));continue
         if ins.mnemonic in ('int','int3','into','ud2','hlt','iret','iretd','sysenter','sysexit','syscall','sysret','in','out'):
-            gaps['terminal']+=1;continue
+            record_gap(rva,'terminal');continue
         if ins.group(CS_GRP_JUMP):
             target=direct_target(ins,dec.base)
-            if target is None:gaps['indirect_jump']+=1;continue
+            if target is None:record_gap(rva,'indirect_jump');continue
             branch=s.clone()
             for r in ins.regs_access()[1]:branch.regs.pop(r,None)
             enqueue(key,target,branch.clone())
@@ -57,9 +60,9 @@ def summarize(dec,root,max_states=MAX_STATES):
         if ins.mnemonic=='push' and stack(s) is not None and stack(s)>4:
             caller_write=True
         if caller_write:
-            gaps['caller_memory_write']+=1;continue
+            record_gap(rva,'caller_memory_write');continue
         n,gap=step(ins,s,None)
-        if gap:gaps[gap]+=1
+        if gap:record_gap(rva,gap)
         else:enqueue(key,rva+ins.size,n)
     # Drain-only duplicate states do not count as truncation. Outstanding unseen
     # states still prevent any complete return-effect summary.
@@ -85,6 +88,8 @@ def summarize(dec,root,max_states=MAX_STATES):
     common=sorted(set.intersection(*(set(p['preserved_registers']) for p in paths))) if paths else []
     return {'schema':'tw10-r8-bounded-helper-return-effects','root_rva':root,
             'visited_states':len(seen),'state_limit_hit':cap,'control_flow_cycle':cycle,'gaps':dict(sorted(gaps.items())),
+            'gap_sites':[{'rva':rva,'reason':reason,'direct_target_rva':target,'occurrences':count}
+                         for (rva,reason,target),count in sorted(gap_sites.items(),key=lambda x:(x[0][0],x[0][1],x[0][2] or -1))],
             'return_paths':paths,'common_preserved_registers':common,
             'uniform_ret_cleanup_bytes':cleanup_values[0] if len(cleanup_values)==1 else None,
             'qualifies_modeled_return_effect_summary':qualified,

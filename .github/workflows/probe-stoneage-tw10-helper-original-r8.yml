@@ -1,0 +1,66 @@
+name: Probe TW1.0 original R8 savedata bounded helper return effects by pinned archive
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - agent/tw10-savedata-helper-original-r8-20261012
+    paths:
+      - .github/workflows/probe-stoneage-tw10-helper-original-r8.yml
+
+permissions:
+  contents: read
+
+jobs:
+  original-static:
+    runs-on: ubuntu-latest
+    timeout-minutes: 33
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify static path and import-count semantics on synthetic x86
+        run: |
+          set -euo pipefail
+          pip install --quiet capstone pefile
+          python3 -m unittest tests.test_stoneage_tw10_savedata_helper_effects_r8 -v
+      - name: Retrieve strictly catalog-pinned original archive in bounded ranges
+        run: |
+          set -euo pipefail
+          python3 -m tools.stoneage_tw10_archive_parallel_download \
+            --deadline 1500 --workers 16 --chunk 8388608 --output /tmp/CD_DIC.rar
+      - name: Extract accepted disc image for static analysis only
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq 7zip
+          mkdir -p /tmp/stoneage-r8
+          7z x -y -o/tmp/stoneage-r8 /tmp/CD_DIC.rar STONEAGE.bin >/dev/null
+          test "$(stat -c %s /tmp/stoneage-r8/STONEAGE.bin)" = 523449360
+      - name: Verify original embedded hashes and emit bounded R8 metadata only
+        run: |
+          set -euo pipefail
+          python3 -m tools.stoneage_tw10_savedata_helper_original_r8 \
+            --bin /tmp/stoneage-r8/STONEAGE.bin | tee /tmp/stoneage-r8-report.json
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          from tools.stoneage_tw10_savedata_helper_original_r8 import SCHEMA, STATUS
+          report=json.loads(Path('/tmp/stoneage-r8-report.json').read_text())
+          assert report['schema']==SCHEMA and report['status']==STATUS
+          assert report['helper']['root_rva']==0x4b8a4
+          for key in ('historical_helper_effect_summary_accepted','caller_resumption_admitted',
+                      'filename_api_link_proven','handle_buffer_size_link_proven','native_io_executed',
+                      'fixed_128_byte_schema_proven','original_bytes_published'):
+              assert report[key] is False
+          print('TW10_R8_ORIGINAL_STATIC_HELPER=PASS')
+          print('TW10_R8_NATIVE_SAVE_IO=OPEN')
+          PY
+      - name: Remove copyrighted original media even on error
+        if: always()
+        run: rm -rf /tmp/CD_DIC.rar /tmp/stoneage-r8
+      - name: Upload derived-only JSON when every provenance gate succeeded
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: tw10-original-helper-r8-derived
+          path: /tmp/stoneage-r8-report.json
+          retention-days: 21
