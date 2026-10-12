@@ -8,6 +8,7 @@ on:
       - tools/stoneage_tw10_savedata_upstream_r18_guard.py
       - tests/test_stoneage_tw10_savedata_upstream_r18_guard.py
       - research/recovered/STONEAGE-TW10-SAVEDATA-UPSTREAM-R18-ORIGINAL.json
+      - research/recovered/STONEAGE-TW10-SAVEDATA-UPSTREAM-R18-ORIGINAL.json
 permissions:
   contents: read
   actions: read
@@ -37,7 +38,8 @@ jobs:
           test -f /tmp/r18-verify/stoneage-r18-derived.json
           test ! -L /tmp/r18-verify/stoneage-r18-derived.json
           test "$(stat -c %s /tmp/r18-verify/stoneage-r18-derived.json)" -le 70000
-          sha256sum /tmp/r18-verify/stoneage-r18-derived.json
+          test "$(stat -c %s /tmp/r18-verify/stoneage-r18-derived.json)" -eq 5051
+          echo '2710fe1b2367c863b06706ee445db7f0decf96509da29b635c896d2bd810e6b8  /tmp/r18-verify/stoneage-r18-derived.json' | sha256sum -c -
           wc -c /tmp/r18-verify/stoneage-r18-derived.json
       - name: Independent static guard and twelve tamper tests
         run: |
@@ -53,6 +55,9 @@ jobs:
           from tools.stoneage_tw10_savedata_upstream_r18_guard import validate
           original=json.loads(Path('/tmp/r18-verify/stoneage-r18-derived.json').read_text())
           validate(original)
+          committed=json.loads(Path('research/recovered/STONEAGE-TW10-SAVEDATA-UPSTREAM-R18-ORIGINAL.json').read_text())
+          assert original==committed, 'immutable original R18 evidence JSON differs'
+          print('TW10_R18_EXACT_DERIVED_JSON_EQUIVALENCE=PASS')
           print('TW10_R18_DERIVED_JSON_BEGIN')
           print(json.dumps(original, sort_keys=True, separators=(',',':')))
           print('TW10_R18_DERIVED_JSON_END')

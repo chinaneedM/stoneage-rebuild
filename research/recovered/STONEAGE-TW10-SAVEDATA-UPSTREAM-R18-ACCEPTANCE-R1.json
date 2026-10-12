@@ -1,0 +1,33 @@
+{
+  "schema": "tw10-r18-original-upstream-call-alias-cfg-acceptance-r1",
+  "status": "ACCEPTED_ORIGINAL_DERIVED_CONDITIONAL_STATIC_ONLY",
+  "source_sha": "f02afc054b8263a471617db3f7a43f0bf299765e",
+  "source_action": 38257682689,
+  "source_job": 114839871876,
+  "source_success": true,
+  "synthetic_action": 38257682619,
+  "guard_synthetic_action": 38257911357,
+  "independent_custody_action": 38258094341,
+  "independent_custody_job": 114841274904,
+  "independent_custody_success": true,
+  "artifact_id": 11750734113,
+  "derived_zip_sha256": "42ac88466914bfb7cac3a9a312acf742791f69b2bb5ced99a4176db365233fae",
+  "derived_json_bytes": 5051,
+  "derived_json_sha256": "2710fe1b2367c863b06706ee445db7f0decf96509da29b635c896d2bd810e6b8",
+  "heapalloc_call_rva": 301580,
+  "heapalloc_iat_rva": 336120,
+  "secondary_global_rva": 24254584,
+  "secondary_global_counts": {
+    "address_candidate": 0,
+    "read_candidate": 6,
+    "unknown_candidate": 0,
+    "write_candidate": 2
+  },
+  "ebx_bounded_graph_reaches": true,
+  "imul_synthetic_entry_esp_offset": 8,
+  "global_runtime_initialization_proven": false,
+  "callee_effects_admitted": false,
+  "original_native_io_proven": false,
+  "original_bytes_committed": false,
+  "next": "R19 HeapAlloc argument/result and 0x1721878 writes, EBX CALL/frontier, IMUL ownership."
+}
