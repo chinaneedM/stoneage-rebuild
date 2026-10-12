@@ -1,0 +1,25 @@
+name: Validate TW1.0 R21 writer/realloc/alias synthetic guard
+on:
+  workflow_dispatch:
+  push:
+    branches: [main, agent/tw10-savedata-r21-writer-realloc-alias-20261012]
+    paths:
+      - .github/workflows/validate-stoneage-tw10-r21-synthetic.yml
+      - tools/stoneage_tw10_savedata_upstream_r21.py
+      - tests/test_stoneage_tw10_savedata_upstream_r21.py
+permissions:
+  contents: read
+jobs:
+  synthetic:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install --quiet capstone pefile
+      - name: R21 synthetic boundaries and R20 regressions
+        run: |
+          set -euo pipefail
+          python -m unittest -v tests.test_stoneage_tw10_savedata_upstream_r21 tests.test_stoneage_tw10_savedata_upstream_r20 tests.test_stoneage_tw10_savedata_upstream_r20_guard
+          python -m compileall -q tools/stoneage_tw10_savedata_upstream_r21.py
+          echo TW10_R21_SYNTHETIC=PASS
+          echo TW10_R21_ORIGINAL=OPEN
