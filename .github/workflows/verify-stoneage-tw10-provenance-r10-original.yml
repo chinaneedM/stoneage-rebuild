@@ -1,0 +1,64 @@
+name: Independently verify TW1.0 R10 original-derived helper evidence
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - agent/tw10-savedata-provenance-r10-20261012
+    paths:
+      - .github/workflows/verify-stoneage-tw10-provenance-r10-original.yml
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  verify-pinned-derived:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify immutable original source run and branch commit
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          identity="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/38237299847" --jq '[.status,.conclusion,.head_sha,.head_branch] | join("|")')"
+          test "$identity" = 'completed|success|2e66362d2fdfad466942efbe2335b06fb591c8ea|agent/tw10-savedata-provenance-r10-20261012'
+          echo 'TW10_R10_ORIGINAL_SOURCE_CUSTODY=PASS'
+      - name: Retrieve only the original run's tiny derived JSON artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/tw10-r10-review
+          gh run download 38237299847 --repo "$GITHUB_REPOSITORY" --name tw10-original-helper-r10-derived --dir /tmp/tw10-r10-review
+          test "$(find /tmp/tw10-r10-review -type f | wc -l)" -eq 1
+          test -f /tmp/tw10-r10-review/stoneage-r10-report.json
+          test ! -L /tmp/tw10-r10-review/stoneage-r10-report.json
+          test "$(stat -c %s /tmp/tw10-r10-review/stoneage-r10-report.json)" -le 24000
+      - name: Strict original R10 report validation and bounded expected metrics
+        run: |
+          set -euo pipefail
+          pip install --quiet capstone pefile
+          python3 -m tools.stoneage_tw10_savedata_provenance_r10_guard --report /tmp/tw10-r10-review/stoneage-r10-report.json | tee /tmp/tw10-r10-summary.json
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          v=json.loads(Path('/tmp/tw10-r10-summary.json').read_text())
+          assert v['delegate_states']==6 and v['delegate_qualifies_modeled_summary'] is False
+          assert v['loop_predicates']==3
+          assert v['effective_target_proven'] is False and v['native_io_executed'] is False
+          actual=json.loads(Path('/tmp/tw10-r10-review/stoneage-r10-report.json').read_text())
+          pinned=json.loads(Path('research/recovered/STONEAGE-TW10-SAVEDATA-PROVENANCE-R10-ORIGINAL.json').read_text())
+          assert actual==pinned
+          assert actual['delegate_helper']['root_rva']==0x491a1
+          assert actual['parent_nodes']==50 and actual['parent_edges']==55
+          assert actual['provenance']['structural_call_return_assumptions']==1
+          print('TW10_R10_DERIVED_CUSTODY_STORE_GEOMETRY_AND_STRUCTURAL_LOOP=PASS')
+          print('TW10_R10_RUNTIME_OWNERSHIP_LOOP_CONDITIONS_AND_SAVE_IO=OPEN')
+          PY
+      - name: Purge downloaded derived JSON
+        if: always()
+        run: rm -rf /tmp/tw10-r10-review /tmp/tw10-r10-summary.json

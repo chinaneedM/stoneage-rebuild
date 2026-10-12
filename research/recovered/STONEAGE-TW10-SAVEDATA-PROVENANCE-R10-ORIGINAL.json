@@ -1,0 +1,210 @@
+{
+  "caller_resumption_admitted": false,
+  "delegate_effects_admitted": false,
+  "delegate_helper": {
+    "common_preserved_registers": [
+      "ebp",
+      "ebx",
+      "ecx",
+      "edi",
+      "edx",
+      "esi"
+    ],
+    "control_flow_cycle": false,
+    "gap_sites": [
+      {
+        "direct_target_rva": 299469,
+        "occurrences": 1,
+        "reason": "unsummarized_call",
+        "rva": 299436
+      }
+    ],
+    "gaps": {
+      "unsummarized_call": 1
+    },
+    "native_io_executed": false,
+    "original_helper_accepted": false,
+    "qualifies_modeled_return_effect_summary": false,
+    "return_paths": [
+      {
+        "pre_ret_stack_delta": 0,
+        "preserved_registers": [
+          "ebx",
+          "ecx",
+          "edx",
+          "esi",
+          "edi",
+          "ebp"
+        ],
+        "ret_cleanup_bytes": 0,
+        "return_word_preserved": true,
+        "rva": 299468
+      }
+    ],
+    "root_rva": 299425,
+    "schema": "tw10-r8-bounded-helper-return-effects",
+    "state_limit_hit": false,
+    "uniform_ret_cleanup_bytes": 0,
+    "visited_states": 6
+  },
+  "filename_api_link_proven": false,
+  "fixed_128_byte_schema_proven": false,
+  "handle_buffer_size_link_proven": false,
+  "loop_runtime_bound_proven": false,
+  "native_io_executed": false,
+  "original_bytes_published": false,
+  "parent_edges": 55,
+  "parent_nodes": 50,
+  "provenance": {
+    "esi_at_store": {
+      "conservative_sources": [
+        {
+          "origin": "definition",
+          "rva": 309462,
+          "semantic": {
+            "constant": null,
+            "kind": "memory_load",
+            "memory_input": {
+              "base_register": "ebx",
+              "displacement_region": null,
+              "index_register": "eax",
+              "index_scale": 4,
+              "relative_field_offset": 0,
+              "segment_register": null,
+              "width_bytes": 4
+            },
+            "register_inputs": [],
+            "width_bits": 32
+          }
+        },
+        {
+          "origin": "definition",
+          "rva": 309501,
+          "semantic": {
+            "constant": null,
+            "kind": "register_copy",
+            "memory_input": null,
+            "register_inputs": [
+              "edi"
+            ],
+            "width_bits": 32
+          }
+        }
+      ],
+      "effective_target_proven": false,
+      "store_rva": 309507,
+      "syntax_candidates_ignoring_call_clobbers": [
+        {
+          "origin": "definition",
+          "rva": 309462,
+          "semantic": {
+            "constant": null,
+            "kind": "memory_load",
+            "memory_input": {
+              "base_register": "ebx",
+              "displacement_region": null,
+              "index_register": "eax",
+              "index_scale": 4,
+              "relative_field_offset": 0,
+              "segment_register": null,
+              "width_bytes": 4
+            },
+            "register_inputs": [],
+            "width_bits": 32
+          }
+        },
+        {
+          "origin": "definition",
+          "rva": 309501,
+          "semantic": {
+            "constant": null,
+            "kind": "register_copy",
+            "memory_input": null,
+            "register_inputs": [
+              "edi"
+            ],
+            "width_bits": 32
+          }
+        }
+      ]
+    },
+    "loop_predicates": [
+      {
+        "branch_rva": 309444,
+        "condition": "je",
+        "flag_sources": [
+          {
+            "origin": "definition",
+            "rva": 309442,
+            "semantic": {
+              "constant": null,
+              "kind": "comparison",
+              "memory_input": null,
+              "register_inputs": [
+                "ecx",
+                "ebp"
+              ],
+              "width_bits": 32
+            }
+          }
+        ],
+        "runtime_branch_outcome_proven": false,
+        "unique_conditional_flag_definition": true
+      },
+      {
+        "branch_rva": 309450,
+        "condition": "je",
+        "flag_sources": [
+          {
+            "origin": "definition",
+            "rva": 309446,
+            "semantic": {
+              "constant": 131,
+              "kind": "masked_test",
+              "memory_input": {
+                "base_register": "ecx",
+                "displacement_region": null,
+                "index_register": null,
+                "index_scale": 1,
+                "relative_field_offset": 12,
+                "segment_register": null,
+                "width_bytes": 1
+              },
+              "register_inputs": [],
+              "width_bits": 8
+            }
+          }
+        ],
+        "runtime_branch_outcome_proven": false,
+        "unique_conditional_flag_definition": true
+      },
+      {
+        "branch_rva": 309458,
+        "condition": "jl",
+        "flag_sources": [
+          {
+            "origin": "definition",
+            "rva": 309456,
+            "semantic": {
+              "constant": null,
+              "kind": "comparison",
+              "memory_input": null,
+              "register_inputs": [
+                "eax",
+                "edx"
+              ],
+              "width_bits": 32
+            }
+          }
+        ],
+        "runtime_branch_outcome_proven": false,
+        "unique_conditional_flag_definition": true
+      }
+    ],
+    "structural_call_return_assumptions": 1
+  },
+  "runtime_sha256": "cdab9ea049a98bbc96ce93eeaa8b63c688f0c0f0ad8b3183e79d75e47621441a",
+  "savedata_sha256": "5b26f54a9723cd2c5275f964457094fdf1fc33ca086cdaf55bb5350dfb04f3f9",
+  "schema": "tw10-r10-original-esi-predicate-provenance",
+  "status": "PINNED_ORIGINAL_CONDITIONAL_DEFINITIONS_NOT_RUNTIME_OWNERSHIP"
+}
