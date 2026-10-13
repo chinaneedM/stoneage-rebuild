@@ -52,14 +52,14 @@ def reaches(edges, start, goal, cap=256):
             todo.extend(sorted(adjacency.get(at, ())))
     return False
 
-def branch_surface(nodes, edges):
+def branch_surface(nodes, edges, base):
     rows = []
     for at, ins in sorted(nodes.items()):
         if not POST <= at < CALL or not ins.group(CS_GRP_JUMP):
             continue
         if ins.mnemonic in ("jmp", "ljmp"):
             continue
-        target = direct_target(ins, 0x400000)
+        target = direct_target(ins, base)
         if target is None:
             continue
         fall = at + ins.size
@@ -132,7 +132,7 @@ def derive(dec, sections, imports, prior):
         "static_only": True,
         "parent_graph": graph_meta(nodes, edges, front, hit),
         "intervening_call_identity": call,
-        "branch_candidates": branch_surface(nodes, edges),
+        "branch_candidates": branch_surface(nodes, edges, dec.base),
         "conditional_slot": bridge_surface(prior),
         "parent_esi_eax_sources": inputs,
         "actual_entry_paths_frames_aliases_or_api_returns_proven": False,
