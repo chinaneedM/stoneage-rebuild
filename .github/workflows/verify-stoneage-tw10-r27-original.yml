@@ -1,0 +1,68 @@
+name: Independently verify TW1.0 R27 original native file API conditional evidence
+on:
+  workflow_dispatch:
+  push:
+    branches: [main, agent/tw10-savedata-r27-native-io-sites-20261013]
+    paths:
+      - .github/workflows/verify-stoneage-tw10-r27-original.yml
+      - tools/stoneage_tw10_savedata_native_io_r27_guard.py
+      - research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R27-ORIGINAL.json
+permissions:
+  contents: read
+  actions: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify immutable R27 original source and artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          identity="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/38398995246" --jq '[.status,.conclusion,.head_sha,.head_branch] | join("|")')"
+          test "$identity" = 'completed|success|51cbe0b354e5865203c48512348dec74ff4521a1|agent/tw10-savedata-r27-native-io-sites-20261013'
+          artifact="$(gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/11813083292" --jq '[.workflow_run.id,.name,.digest,.expired] | join("|")')"
+          test "$artifact" = '38398995246|tw10-r27-original-native-io-sites-derived|sha256:f6d0664760b93e1df84c7509839e2e8a0915cf51525e266005f753f3292871c7|false'
+      - name: Retrieve only bounded derived metadata
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/r27-independent
+          gh run download 38398995246 --repo "$GITHUB_REPOSITORY" --name tw10-r27-original-native-io-sites-derived --dir /tmp/r27-independent
+          test "$(find /tmp/r27-independent -type f | wc -l)" -eq 1
+          test -f /tmp/r27-independent/stoneage-r27-derived.json
+          test ! -L /tmp/r27-independent/stoneage-r27-derived.json
+          test "$(stat -c %s /tmp/r27-independent/stoneage-r27-derived.json)" -le 70000
+          sha256sum /tmp/r27-independent/stoneage-r27-derived.json
+          wc -c /tmp/r27-independent/stoneage-r27-derived.json
+      - name: Strict semantic constraints and independent tamper tests
+        run: |
+          set -euo pipefail
+          pip install --quiet capstone pefile
+          python -m unittest -v tests.test_stoneage_tw10_savedata_native_io_r27
+          python -m tools.stoneage_tw10_savedata_native_io_r27_guard --report /tmp/r27-independent/stoneage-r27-derived.json
+      - name: Compare accepted witness and disclose canonical bounded JSON
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from tools.stoneage_tw10_savedata_native_io_r27_guard import validate
+          d=json.loads(Path('/tmp/r27-independent/stoneage-r27-derived.json').read_text())
+          validate(d)
+          canonical=Path('research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R27-ORIGINAL.json')
+          if canonical.exists():
+              assert json.loads(canonical.read_text())==d, 'R27 exact original-derived JSON differs from committed witness'
+              print('TW10_R27_EXACT_DERIVED_JSON_EQUALITY=PASS')
+          else:
+              print('TW10_R27_REVIEW_ONLY_NOT_YET_COMMITTED=PASS')
+          print('TW10_R27_DERIVED_JSON_BEGIN')
+          print(json.dumps(d,sort_keys=True,separators=(',',':')))
+          print('TW10_R27_DERIVED_JSON_END')
+          PY
+      - name: Always remove temporary derived metadata
+        if: always()
+        run: rm -rf /tmp/r27-independent
