@@ -1,0 +1,69 @@
+name: Independently verify TW1.0 R23 original heap/global/PUSH geometry evidence
+on:
+  workflow_dispatch:
+  push:
+    branches: [main, agent/tw10-savedata-r23-heap-links-20261013]
+    paths:
+      - .github/workflows/verify-stoneage-tw10-r23-original.yml
+      - tools/stoneage_tw10_savedata_upstream_r23_guard.py
+      - tests/test_stoneage_tw10_savedata_upstream_r23_guard.py
+      - research/recovered/STONEAGE-TW10-SAVEDATA-UPSTREAM-R23-ORIGINAL.json
+permissions:
+  contents: read
+  actions: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify immutable R23 original source and artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          identity="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/38387323403" --jq '[.status,.conclusion,.head_sha,.head_branch] | join("|")')"
+          test "$identity" = 'completed|success|b53071fd45fab017704562d17d75bc59563ef01a|agent/tw10-savedata-r23-heap-links-20261013'
+          artifact="$(gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/11807077162" --jq '[.workflow_run.id,.name,.digest,.expired] | join("|")')"
+          test "$artifact" = '38387323403|tw10-r23-original-heap-links-derived|sha256:107a3f684e37caf3f544771163bed1ec0ff58484cca939ceac3f60bf240287bd|false'
+      - name: Retrieve only bounded derived metadata
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/r23-independent
+          gh run download 38387323403 --repo "$GITHUB_REPOSITORY" --name tw10-r23-original-heap-links-derived --dir /tmp/r23-independent
+          test "$(find /tmp/r23-independent -type f | wc -l)" -eq 1
+          test -f /tmp/r23-independent/stoneage-r23-derived.json
+          test ! -L /tmp/r23-independent/stoneage-r23-derived.json
+          test "$(stat -c %s /tmp/r23-independent/stoneage-r23-derived.json)" -le 70000
+          sha256sum /tmp/r23-independent/stoneage-r23-derived.json
+          wc -c /tmp/r23-independent/stoneage-r23-derived.json
+      - name: Strict semantic constraints and independent tamper tests
+        run: |
+          set -euo pipefail
+          pip install --quiet capstone pefile
+          python -m unittest -v tests.test_stoneage_tw10_savedata_upstream_r23 tests.test_stoneage_tw10_savedata_upstream_r23_guard
+          python -m tools.stoneage_tw10_savedata_upstream_r23_guard --report /tmp/r23-independent/stoneage-r23-derived.json
+      - name: Compare accepted witness and disclose canonical bounded JSON
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from tools.stoneage_tw10_savedata_upstream_r23_guard import validate
+          d=json.loads(Path('/tmp/r23-independent/stoneage-r23-derived.json').read_text())
+          validate(d)
+          canonical=Path('research/recovered/STONEAGE-TW10-SAVEDATA-UPSTREAM-R23-ORIGINAL.json')
+          if canonical.exists():
+              assert json.loads(canonical.read_text())==d, 'R23 exact original-derived JSON differs from committed witness'
+              print('TW10_R23_EXACT_DERIVED_JSON_EQUALITY=PASS')
+          else:
+              print('TW10_R23_REVIEW_ONLY_NOT_YET_COMMITTED=PASS')
+          print('TW10_R23_DERIVED_JSON_BEGIN')
+          print(json.dumps(d,sort_keys=True,separators=(',',':')))
+          print('TW10_R23_DERIVED_JSON_END')
+          PY
+      - name: Always remove temporary derived metadata
+        if: always()
+        run: rm -rf /tmp/r23-independent

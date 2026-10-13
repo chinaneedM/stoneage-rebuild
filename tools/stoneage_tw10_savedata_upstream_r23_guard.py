@@ -38,6 +38,9 @@ def validate(d):
         dst = w.get("destination", {})
         require(dst.get("write_width_bytes") == 4
                 and dst.get("displacement_region", {}).get("displacement_rva") == target
+                and dst.get("absolute_effective_rva") == target
+                and dst.get("table_or_object_ownership_proven") is False
+                and all(dst.get(k) is None for k in ("base_register", "index_register"))
                 and all(w.get(k) is False for k in ("register_inputs_resolved", "executed_write_proven",
                     "effective_object_proven", "named_caller_effect_admitted", "previous_destination_value_required")), "store effect")
         require(type(row.get("nodes")) is int and 1 <= row["nodes"] <= 128
@@ -48,6 +51,8 @@ def validate(d):
                 and row.get("runtime_return_or_write_known") is False
                 and row.get("heap_owner_or_success_known") is False, "heap promotion")
         source_guard(row.get("store_eax_sources", {}))
+        require(row["store_eax_sources"].get("reaching_candidates") ==
+                [{"origin": "unknown_call", "rva": call, "semantic": None}], "opaque EAX source")
         s = row.get("local_push_suffix", {})
         require(s.get("conditional_pre_call_esp_only") is True
                 and s.get("abi_roles_applied") is False and s.get("actual_stack_values_known") is False

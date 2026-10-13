@@ -1,4 +1,4 @@
-name: Validate TW1.0 R23 call/stack/cycle synthetic and strict guard
+name: Validate TW1.0 R23 heap/global/PUSH geometry synthetic and strict guard
 on:
   workflow_dispatch:
   push:
@@ -7,6 +7,7 @@ on:
       - .github/workflows/validate-stoneage-tw10-r23-synthetic.yml
       - tools/stoneage_tw10_savedata_upstream_r23.py
       - tools/stoneage_tw10_savedata_upstream_r23_guard.py
+      - tests/test_stoneage_tw10_savedata_upstream_r23_guard.py
       - tests/test_stoneage_tw10_savedata_upstream_r23.py
 permissions:
   contents: read
@@ -20,7 +21,7 @@ jobs:
       - name: R23 and R22 synthetic and strict negative controls
         run: |
           set -euo pipefail
-          python -m unittest -v tests.test_stoneage_tw10_savedata_upstream_r23 tests.test_stoneage_tw10_savedata_upstream_r22 tests.test_stoneage_tw10_savedata_upstream_r22_guard
+          python -m unittest -v tests.test_stoneage_tw10_savedata_upstream_r23 tests.test_stoneage_tw10_savedata_upstream_r23_guard tests.test_stoneage_tw10_savedata_upstream_r22 tests.test_stoneage_tw10_savedata_upstream_r22_guard
           python -m compileall -q tools/stoneage_tw10_savedata_upstream_r23.py tools/stoneage_tw10_savedata_upstream_r23_guard.py
           echo TW10_R23_SYNTHETIC_STRICT=PASS
           echo TW10_R23_ORIGINAL_EVIDENCE=OPEN
