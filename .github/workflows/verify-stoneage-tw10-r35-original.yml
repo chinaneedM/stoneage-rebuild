@@ -1,0 +1,68 @@
+name: Independently verify TW1.0 R35 original opaque CALL and input geometry
+on:
+  workflow_dispatch:
+  push:
+    branches: [agent/tw10-savedata-r35-opaque-call-20261013, main]
+    paths:
+      - .github/workflows/verify-stoneage-tw10-r35-original.yml
+      - tools/stoneage_tw10_savedata_native_io_r35_guard.py
+      - research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R35-ORIGINAL.json
+permissions:
+  contents: read
+  actions: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Authenticate independent immutable original run and artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          identity="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/38418400068" --jq '[.status,.conclusion,.head_sha,.head_branch] | join("|')"
+          test "$identity" = 'completed|success|a02fd2464424a1974bcdf954aad0894589052614|agent/tw10-savedata-r35-opaque-call-20261013'
+          artifact="$(gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/11824229823" --jq '[.workflow_run.id,.name,.digest,.expired] | join("|')"
+          test "$artifact" = '38418400068|tw10-r35-original-opaque-call-derived|sha256:4c5cdd8677641d5588d738aa3286a0931e4c06590405f61fcffbd7901f483f33|false'
+      - name: Download bounded R35 original-derived metadata only
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/r35-independent
+          gh run download 38418400068 --repo "$GITHUB_REPOSITORY" --name tw10-r35-original-opaque-call-derived --dir /tmp/r35-independent
+          test "$(find /tmp/r35-independent -type f | wc -l)" -eq 1
+          test -f /tmp/r35-independent/stoneage-r35-derived.json
+          test ! -L /tmp/r35-independent/stoneage-r35-derived.json
+          test "$(stat -c %s /tmp/r35-independent/stoneage-r35-derived.json)" -le 75000
+          sha256sum /tmp/r35-independent/stoneage-r35-derived.json
+          wc -c /tmp/r35-independent/stoneage-r35-derived.json
+      - name: Replay strict R35 R34 tamper and negative controls
+        run: |
+          set -euo pipefail
+          pip install --quiet capstone pefile
+          python -m unittest -v tests.test_stoneage_tw10_savedata_native_io_r35 tests.test_stoneage_tw10_savedata_native_io_r34
+          python -m tools.stoneage_tw10_savedata_native_io_r35_guard --report /tmp/r35-independent/stoneage-r35-derived.json
+      - name: Review original bounded report and canonical exact equality when admitted
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from tools.stoneage_tw10_savedata_native_io_r35_guard import validate
+          report=json.loads(Path('/tmp/r35-independent/stoneage-r35-derived.json').read_text())
+          validate(report)
+          p=Path('research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R35-ORIGINAL.json')
+          if p.exists():
+              assert json.loads(p.read_text()) == report, 'original R35 canonical JSON differs'
+              print('TW10_R35_EXACT_DERIVED_JSON_EQUALITY=PASS')
+          else:
+              print('TW10_R35_INDEPENDENT_REVIEW_ONLY=PASS')
+          print('TW10_R35_ORIGINAL_DERIVED_JSON_BEGIN')
+          print(json.dumps(report,sort_keys=True,separators=(',',':')))
+          print('TW10_R35_ORIGINAL_DERIVED_JSON_END')
+          PY
+      - name: Purge independent temporary derivative
+        if: always()
+        run: rm -rf /tmp/r35-independent
