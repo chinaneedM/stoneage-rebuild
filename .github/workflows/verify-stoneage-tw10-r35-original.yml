@@ -21,9 +21,9 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
-          identity="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/38418400068" --jq '[.status,.conclusion,.head_sha,.head_branch] | join("|')"
+          identity="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/38418400068" --jq '[.status,.conclusion,.head_sha,.head_branch] | join("|")'"
           test "$identity" = 'completed|success|a02fd2464424a1974bcdf954aad0894589052614|agent/tw10-savedata-r35-opaque-call-20261013'
-          artifact="$(gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/11824229823" --jq '[.workflow_run.id,.name,.digest,.expired] | join("|')"
+          artifact="$(gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/11824229823" --jq '[.workflow_run.id,.name,.digest,.expired] | join("|")'"
           test "$artifact" = '38418400068|tw10-r35-original-opaque-call-derived|sha256:4c5cdd8677641d5588d738aa3286a0931e4c06590405f61fcffbd7901f483f33|false'
       - name: Download bounded R35 original-derived metadata only
         env:
