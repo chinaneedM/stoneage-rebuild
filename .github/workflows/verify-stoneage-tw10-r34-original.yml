@@ -1,0 +1,68 @@
+name: Independently verify TW1.0 R34 original CMP TEST and CloseHandle inputs
+on:
+  workflow_dispatch:
+  push:
+    branches: [agent/tw10-savedata-r34-cmp-close-inputs-20261013, main]
+    paths:
+      - .github/workflows/verify-stoneage-tw10-r34-original.yml
+      - tools/stoneage_tw10_savedata_native_io_r34_guard.py
+      - research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R34-ORIGINAL.json
+permissions:
+  contents: read
+  actions: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify immutable original R34 source run and artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          identity="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/38413940213" --jq '[.status,.conclusion,.head_sha,.head_branch] | join("|")')"
+          test "$identity" = 'completed|success|44c96a0a3195fb847b7d443ca4fadb22e8d7e65a|agent/tw10-savedata-r34-cmp-close-inputs-20261013'
+          artifact="$(gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/11822613944" --jq '[.workflow_run.id,.name,.digest,.expired] | join("|")')"
+          test "$artifact" = '38413940213|tw10-r34-original-cmp-close-inputs-derived|sha256:29057dd97c3275122b009c6f205c0585000b49dc0d630460e8ed78a3163d6f4e|false'
+      - name: Download bounded R34 original-derived metadata only
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/r34-independent
+          gh run download 38413940213 --repo "$GITHUB_REPOSITORY" --name tw10-r34-original-cmp-close-inputs-derived --dir /tmp/r34-independent
+          test "$(find /tmp/r34-independent -type f | wc -l)" -eq 1
+          test -f /tmp/r34-independent/stoneage-r34-derived.json
+          test ! -L /tmp/r34-independent/stoneage-r34-derived.json
+          test "$(stat -c %s /tmp/r34-independent/stoneage-r34-derived.json)" -le 75000
+          sha256sum /tmp/r34-independent/stoneage-r34-derived.json
+          wc -c /tmp/r34-independent/stoneage-r34-derived.json
+      - name: Strict R34 and inherited R33 negative controls
+        run: |
+          set -euo pipefail
+          pip install --quiet capstone pefile
+          python -m unittest -v tests.test_stoneage_tw10_savedata_native_io_r34 tests.test_stoneage_tw10_savedata_native_io_r33
+          python -m tools.stoneage_tw10_savedata_native_io_r34_guard --report /tmp/r34-independent/stoneage-r34-derived.json
+      - name: Compare canonical and independently disclose derived original JSON
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from tools.stoneage_tw10_savedata_native_io_r34_guard import validate
+          report=json.loads(Path('/tmp/r34-independent/stoneage-r34-derived.json').read_text())
+          validate(report)
+          p=Path('research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R34-ORIGINAL.json')
+          if p.exists():
+              assert json.loads(p.read_text()) == report,'original R34 canonical JSON differs from source'
+              print('TW10_R34_EXACT_DERIVED_JSON_EQUALITY=PASS')
+          else:
+              print('TW10_R34_REVIEW_ONLY_NOT_YET_COMMITTED=PASS')
+          print('TW10_R34_DERIVED_JSON_BEGIN')
+          print(json.dumps(report,sort_keys=True,separators=(',',':')))
+          print('TW10_R34_DERIVED_JSON_END')
+          PY
+      - name: Purge transient derived metadata
+        if: always()
+        run: rm -rf /tmp/r34-independent
