@@ -1,0 +1,64 @@
+name: Probe TW1.0 original R34 CMP TEST and CloseHandle inputs
+on:
+  workflow_dispatch:
+  push:
+    branches: [agent/tw10-savedata-r34-cmp-close-inputs-20261013]
+    paths:
+      - .github/workflows/probe-stoneage-tw10-r34-original.yml
+      - tools/stoneage_tw10_savedata_native_io_r34.py
+      - tools/stoneage_tw10_savedata_native_io_r34_guard.py
+      - tests/test_stoneage_tw10_savedata_native_io_r34.py
+permissions:
+  contents: read
+jobs:
+  original:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - name: Strict R34 R33 synthetic prerequisites
+        run: |
+          set -euo pipefail
+          pip install --quiet capstone pefile
+          python -m unittest -v tests.test_stoneage_tw10_savedata_native_io_r34 tests.test_stoneage_tw10_savedata_native_io_r33
+      - name: Retrieve transient exact pinned historical archive
+        run: |
+          set -euo pipefail
+          for attempt in 1 2 3; do
+            if python -m tools.stoneage_tw10_archive_parallel_download --deadline 1500 --workers 16 --chunk 8388608 --output /tmp/CD_DIC.rar; then
+              echo TW10_R34_ORIGINAL_ARCHIVE_PINNED=PASS
+              break
+            fi
+            rm -f /tmp/CD_DIC.rar
+            if [ "$attempt" -eq 3 ]; then
+              echo TW10_R34_ORIGINAL_SOURCE_UNAVAILABLE=OPEN
+              exit 1
+            fi
+            sleep 10
+          done
+      - name: Extract pinned BIN transient only
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq 7zip
+          mkdir -p /tmp/stoneage-r34
+          7z x -y -o/tmp/stoneage-r34 /tmp/CD_DIC.rar STONEAGE.bin >/dev/null
+          test "$(stat -c %s /tmp/stoneage-r34/STONEAGE.bin)" -eq 523449360
+      - name: Generate R34 original static-only derived witness
+        run: |
+          set -euo pipefail
+          python -m tools.stoneage_tw10_savedata_native_io_r34 --bin /tmp/stoneage-r34/STONEAGE.bin > /tmp/stoneage-r34-derived.json
+          python -m tools.stoneage_tw10_savedata_native_io_r34_guard --report /tmp/stoneage-r34-derived.json
+          test "$(stat -c %s /tmp/stoneage-r34-derived.json)" -le 75000
+          echo TW10_R34_ORIGINAL_STATIC_ONLY=PASS
+          echo TW10_R34_NATIVE_SAVE=OPEN
+      - name: Always purge proprietary historical source
+        if: always()
+        run: rm -rf /tmp/CD_DIC.rar /tmp/stoneage-r34
+      - name: Upload DERIVED JSON only
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: tw10-r34-original-cmp-close-inputs-derived
+          path: /tmp/stoneage-r34-derived.json
+          retention-days: 21
