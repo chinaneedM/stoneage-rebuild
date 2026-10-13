@@ -1,0 +1,53 @@
+{
+  "schema": "stoneage-tw10-savedata-upstream-r23-acceptance-r1",
+  "status": "ORIGINAL_CONDITIONAL_STATIC_INDEPENDENTLY_ACCEPTED",
+  "historical_scope": "Taiwan Waei/JSS v1.0 clean retail specimen; nonexecuting original static derivation",
+  "original_source": {
+    "branch": "agent/tw10-savedata-r23-heap-links-20261013",
+    "head_sha": "b53071fd45fab017704562d17d75bc59563ef01a",
+    "run_id": 38387323403,
+    "job_id": 115262191245,
+    "conclusion": "success",
+    "r22_original_gates_rederived": true,
+    "originals_purged": true,
+    "original_executable_executed": false,
+    "proprietary_payload_committed": false
+  },
+  "derived_artifact": {
+    "id": 11807077162,
+    "source_run": 38387323403,
+    "name": "tw10-r23-original-heap-links-derived",
+    "zip_digest": "sha256:107a3f684e37caf3f544771163bed1ec0ff58484cca939ceac3f60bf240287bd",
+    "derived_json_bytes": 11257,
+    "derived_json_sha256": "8d77cdd314def89e534c725d5db3ffa1e004f3fb64141fe73b66f4ebc19751bc",
+    "path": "research/recovered/STONEAGE-TW10-SAVEDATA-UPSTREAM-R23-ORIGINAL.json"
+  },
+  "synthetic": {
+    "tests": 58,
+    "run_id": 38387607546,
+    "job_id": 115263139348,
+    "conclusion": "success",
+    "r22_adjacent_regressions": true
+  },
+  "independent": {
+    "run_id": 38387607870,
+    "job_id": 115263140615,
+    "head_sha": "b5fb4ed4c52716db8820d0f1b302269425a5d43e",
+    "conclusion": "success",
+    "immutable_source_run_head_branch_digest": true,
+    "strict_no_promotion_tamper_tests": true,
+    "exact_original_derived_json_equality": true
+  },
+  "accepted_conditional_static": [
+    "Three exact imported HeapCreate/HeapAlloc/HeapReAlloc sites structurally reach separate EAX global stores; EAX remains unknown at opaque calls",
+    "HeapAlloc/HeapReAlloc absolute global PUSH operands identify candidate dependencies, not a common runtime heap",
+    "HeapReAlloc final four full-width PUSH inputs have conditional pre-CALL ESP offsets 0/4/8/12; no ABI roles or real stack values"
+  ],
+  "remaining_open": [
+    "Function entries, actual paths, CALL returns and global contents",
+    "Allocation success/common heap/object lifetime/alias cycles",
+    "Native filename/handle/buffer/length linkage; save serialization/framing/checksum/migrations/persistence",
+    "Server-only content and cross-version equivalence"
+  ],
+  "next": "R24: original HeapCreate/HeapAlloc suffix stopping prefixes and caller entry/stack boundaries; HeapReAlloc EAX0x4a0b3 source and branch predicates without ABI promotion."
+}

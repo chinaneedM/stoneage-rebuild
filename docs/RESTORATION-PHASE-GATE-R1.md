@@ -101,3 +101,16 @@ NEXT R23: correlate HeapCreate→HeapAlloc→HeapReAlloc *candidate* global/heap
 sources with explicit CALL effects and path/stack boundaries, not an assumed
 single heap or original SaveData model. Restoration before future-game
 architecture remains binding.
+
+
+## 2026-10-13 queue supersession (R23 accepted)
+
+R23 original heap-call/global/PUSH geometry is independently accepted as
+conditional static evidence only. All three EAX global stores retain opaque
+CALL sources. Local pre-CALL stack offsets are not ABI/runtime argument proof.
+Same-address dependencies do not establish common heap ownership or native save.
+
+Highest NEXT R24: exact stopping prefixes before HeapCreate/HeapAlloc final
+PUSH, caller-entry/stack boundaries, and HeapReAlloc EAX0x4a0b3 computation
+and branch predicates. System-family PARTIAL/OPEN states remain unchanged;
+Stage A restoration before joint future-game review remains binding.
