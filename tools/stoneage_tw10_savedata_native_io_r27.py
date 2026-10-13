@@ -40,7 +40,7 @@ def scan_apis(dec,sections,imports):
         ins=dec.at(pos)
         if ins is None:gaps+=1;history.clear();pos+=1;continue
         decoded+=1
-        if ins.group(CS_GRP_CALL):
+        if ins.group(CS_GRP_CALL) and ins.mnemonic=='call' and len(ins.operands)==1:
             identity=call_identity(dec,pos,imports,sections)
             imported=identity['import_identity']
             if (imported and imported['dll'].lower()=='kernel32.dll' and imported['name'] in APIS):

@@ -25,6 +25,9 @@ class R27Synthetic(unittest.TestCase):
     def test_exact_iat_required(self):
         inv,calls,_=scan_apis(Decoder(bytes.fromhex('ff1500204500'),0x1000,BASE),[],{})
         self.assertFalse(calls);self.assertEqual(sum(r['count'] for r in inv['apis']),0)
+    def test_far_call_not_near_import(self):
+        inv,calls,_=scan_apis(Decoder(bytes.fromhex('9a000040000800'),0x1000,BASE),[],{})
+        self.assertFalse(calls);self.assertEqual(inv['decoded_instructions'],1)
     def test_register_call_not_import(self):
         self.assertFalse(scan_apis(Decoder(bytes.fromhex('ffd0'),0x1000,BASE),[],{BASE:('KERNEL32.dll','ReadFile')})[1])
     def test_wrong_dll_rejected(self):

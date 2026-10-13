@@ -15,7 +15,7 @@ jobs:
     timeout-minutes: 40
     steps:
       - uses: actions/checkout@v4
-      - name: R27 and R25 synthetic prerequisite
+      - name: R27 and R26 synthetic prerequisite
         run: |
           set -euo pipefail
           pip install --quiet capstone pefile
