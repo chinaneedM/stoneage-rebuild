@@ -1,0 +1,68 @@
+name: Independently verify TW1.0 R32 original call branch and strict provenance
+on:
+  workflow_dispatch:
+  push:
+    branches: [agent/tw10-savedata-r32-call-branch-20261013, main]
+    paths:
+      - .github/workflows/verify-stoneage-tw10-r32-original.yml
+      - tools/stoneage_tw10_savedata_native_io_r32_guard.py
+      - research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R32-ORIGINAL.json
+permissions:
+  contents: read
+  actions: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify pinned source run and derived artifact identity
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          identity="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/38409002824" --jq '[.status,.conclusion,.head_sha,.head_branch] | join("|")')"
+          test "$identity" = 'completed|success|55bb9c76b4d13215332cffc0a649e869c72d0188|agent/tw10-savedata-r32-call-branch-20261013'
+          artifact="$(gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/11820641198" --jq '[.workflow_run.id,.name,.digest,.expired] | join("|")')"
+          test "$artifact" = '38409002824|tw10-r32-original-call-branch-derived|sha256:efa5c1a68f44893654d77c3596afe1bf0f9a4644208c8238013b4bf8ebcfdb46|false'
+      - name: Retrieve bounded original-derived metadata only
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/r32-independent
+          gh run download 38409002824 --repo "$GITHUB_REPOSITORY" --name tw10-r32-original-call-branch-derived --dir /tmp/r32-independent
+          test "$(find /tmp/r32-independent -type f | wc -l)" -eq 1
+          test -f /tmp/r32-independent/stoneage-r32-derived.json
+          test ! -L /tmp/r32-independent/stoneage-r32-derived.json
+          test "$(stat -c %s /tmp/r32-independent/stoneage-r32-derived.json)" -le 75000
+          sha256sum /tmp/r32-independent/stoneage-r32-derived.json
+          wc -c /tmp/r32-independent/stoneage-r32-derived.json
+      - name: Strict synthetic and tamper tests and original-derived guard
+        run: |
+          set -euo pipefail
+          pip install --quiet capstone pefile
+          python -m unittest -v tests.test_stoneage_tw10_savedata_native_io_r32 tests.test_stoneage_tw10_savedata_native_io_r31
+          python -m tools.stoneage_tw10_savedata_native_io_r32_guard --report /tmp/r32-independent/stoneage-r32-derived.json
+      - name: Canonical equality check and bounded JSON disclosure
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from tools.stoneage_tw10_savedata_native_io_r32_guard import validate
+          d=json.loads(Path('/tmp/r32-independent/stoneage-r32-derived.json').read_text())
+          validate(d)
+          canonical=Path('research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R32-ORIGINAL.json')
+          if canonical.exists():
+              assert json.loads(canonical.read_text())==d, 'R32 exact original-derived JSON differs from committed witness'
+              print('TW10_R32_EXACT_DERIVED_JSON_EQUALITY=PASS')
+          else:
+              print('TW10_R32_REVIEW_ONLY_NOT_YET_COMMITTED=PASS')
+          print('TW10_R32_DERIVED_JSON_BEGIN')
+          print(json.dumps(d,sort_keys=True,separators=(',',':')))
+          print('TW10_R32_DERIVED_JSON_END')
+          PY
+      - name: Purge transient derived metadata
+        if: always()
+        run: rm -rf /tmp/r32-independent
