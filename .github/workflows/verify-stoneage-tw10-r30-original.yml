@@ -1,0 +1,68 @@
+name: Independently verify TW1.0 R30 original mask composition and shared-writer candidates
+on:
+  workflow_dispatch:
+  push:
+    branches: [main, agent/tw10-savedata-r30-mask-writer-20261013]
+    paths:
+      - .github/workflows/verify-stoneage-tw10-r30-original.yml
+      - tools/stoneage_tw10_savedata_native_io_r30_guard.py
+      - research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R30-ORIGINAL.json
+permissions:
+  contents: read
+  actions: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify immutable R30 original source and artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          identity="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/38404299461" --jq '[.status,.conclusion,.head_sha,.head_branch] | join("|")')"
+          test "$identity" = 'completed|success|724838fa88ebbfc381a0deec73edce4e467a8090|agent/tw10-savedata-r30-mask-writer-20261013'
+          artifact="$(gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/11818650369" --jq '[.workflow_run.id,.name,.digest,.expired] | join("|")')"
+          test "$artifact" = '38404299461|tw10-r30-original-mask-writer-derived|sha256:f49a3be1be1014e8cb9d966540c0dbdd5fcc0654f772b1319293013f3cfccf21|false'
+      - name: Retrieve only bounded derived metadata
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/r30-independent
+          gh run download 38404299461 --repo "$GITHUB_REPOSITORY" --name tw10-r30-original-mask-writer-derived --dir /tmp/r30-independent
+          test "$(find /tmp/r30-independent -type f | wc -l)" -eq 1
+          test -f /tmp/r30-independent/stoneage-r30-derived.json
+          test ! -L /tmp/r30-independent/stoneage-r30-derived.json
+          test "$(stat -c %s /tmp/r30-independent/stoneage-r30-derived.json)" -le 70000
+          sha256sum /tmp/r30-independent/stoneage-r30-derived.json
+          wc -c /tmp/r30-independent/stoneage-r30-derived.json
+      - name: Strict semantic constraints and independent tamper tests
+        run: |
+          set -euo pipefail
+          pip install --quiet capstone pefile
+          python -m unittest -v tests.test_stoneage_tw10_savedata_native_io_r30
+          python -m tools.stoneage_tw10_savedata_native_io_r30_guard --report /tmp/r30-independent/stoneage-r30-derived.json
+      - name: Compare accepted witness and disclose canonical bounded JSON
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from tools.stoneage_tw10_savedata_native_io_r30_guard import validate
+          d=json.loads(Path('/tmp/r30-independent/stoneage-r30-derived.json').read_text())
+          validate(d)
+          canonical=Path('research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R30-ORIGINAL.json')
+          if canonical.exists():
+              assert json.loads(canonical.read_text())==d, 'R30 exact original-derived JSON differs from committed witness'
+              print('TW10_R30_EXACT_DERIVED_JSON_EQUALITY=PASS')
+          else:
+              print('TW10_R30_REVIEW_ONLY_NOT_YET_COMMITTED=PASS')
+          print('TW10_R30_DERIVED_JSON_BEGIN')
+          print(json.dumps(d,sort_keys=True,separators=(',',':')))
+          print('TW10_R30_DERIVED_JSON_END')
+          PY
+      - name: Always remove temporary derived metadata
+        if: always()
+        run: rm -rf /tmp/r30-independent
