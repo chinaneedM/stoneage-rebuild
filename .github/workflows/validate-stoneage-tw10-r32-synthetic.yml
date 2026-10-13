@@ -1,0 +1,26 @@
+name: Validate TW1.0 R32 conditional call branch and strict synthetic controls
+on:
+  workflow_dispatch:
+  push:
+    branches: [agent/tw10-savedata-r32-call-branch-20261013]
+    paths:
+      - tools/stoneage_tw10_savedata_native_io_r32.py
+      - tools/stoneage_tw10_savedata_native_io_r32_guard.py
+      - tests/test_stoneage_tw10_savedata_native_io_r32.py
+      - .github/workflows/validate-stoneage-tw10-r32-synthetic.yml
+permissions:
+  contents: read
+jobs:
+  synthetic:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: R32 and R31 synthetic strict negative controls
+        run: |
+          set -euo pipefail
+          pip install --quiet capstone pefile
+          python -m unittest -v tests.test_stoneage_tw10_savedata_native_io_r32 tests.test_stoneage_tw10_savedata_native_io_r31
+          python -m compileall -q tools/stoneage_tw10_savedata_native_io_r32.py tools/stoneage_tw10_savedata_native_io_r32_guard.py
+          echo TW10_R32_SYNTHETIC_STRICT=PASS
+          echo TW10_R32_ORIGINAL_EVIDENCE=OPEN
