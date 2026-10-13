@@ -1,0 +1,224 @@
+{
+  "actual_branch_predicates_or_taken_paths_proven": false,
+  "actual_error_code_or_file_api_result_proven": false,
+  "actual_stack_argument_alias_owner_or_callee_return_proven": false,
+  "actual_successful_handle_or_native_persistence_proven": false,
+  "all_flag_source_paths_or_effects_proven": false,
+  "branch_flag_contexts": [
+    {
+      "actual_predicate_value_or_feasible_path_proven": false,
+      "branch_disconnected_in_graph": false,
+      "branch_mnemonic": "je",
+      "branch_site_rva": 322827,
+      "candidates_truncated": false,
+      "direct_target_rva": 322847,
+      "fallthrough_rva": 322829,
+      "flag_source_model": "bounded_backward_ZF_may_def_CALL_opaque",
+      "predecessor_cap_hit": false,
+      "predecessor_nodes_examined": 2,
+      "source_candidates": [
+        {
+          "branch_predicate_or_taken_path_proven": false,
+          "candidate_actual_flag_value_known": false,
+          "input_registers": [
+            "edi",
+            "esi"
+          ],
+          "kind": "zf_write",
+          "mnemonic": "cmp",
+          "operands": [
+            {
+              "decoder_read": true,
+              "decoder_write": false,
+              "kind": "register",
+              "register": "esi",
+              "width_bytes": 4
+            },
+            {
+              "decoder_read": true,
+              "decoder_write": false,
+              "kind": "register",
+              "register": "edi",
+              "width_bytes": 4
+            }
+          ],
+          "site_rva": 322825
+        }
+      ],
+      "source_count": 1
+    },
+    {
+      "actual_predicate_value_or_feasible_path_proven": false,
+      "branch_disconnected_in_graph": false,
+      "branch_mnemonic": "jne",
+      "branch_site_rva": 322838,
+      "candidates_truncated": false,
+      "direct_target_rva": 322867,
+      "fallthrough_rva": 322840,
+      "flag_source_model": "bounded_backward_ZF_may_def_CALL_opaque",
+      "predecessor_cap_hit": false,
+      "predecessor_nodes_examined": 2,
+      "source_candidates": [
+        {
+          "branch_predicate_or_taken_path_proven": false,
+          "candidate_actual_flag_value_known": false,
+          "input_registers": [
+            "eax"
+          ],
+          "kind": "zf_write",
+          "mnemonic": "test",
+          "operands": [
+            {
+              "decoder_read": true,
+              "decoder_write": false,
+              "kind": "register",
+              "register": "eax",
+              "width_bytes": 4
+            },
+            {
+              "decoder_read": true,
+              "decoder_write": false,
+              "kind": "register",
+              "register": "eax",
+              "width_bytes": 4
+            }
+          ],
+          "site_rva": 322836
+        }
+      ],
+      "source_count": 1
+    }
+  ],
+  "complete_original_eflags_paths_or_indirect_edges_proven": false,
+  "flag_operand_input_surface": {
+    "dependency_closure_or_memory_values_proven": false,
+    "dependency_depth_limit": 2,
+    "pending_query_count": 0,
+    "queries": [
+      {
+        "actual_register_value_known": false,
+        "candidates_truncated": false,
+        "dependency_depth": 1,
+        "dependency_queries": [],
+        "reaching_candidates": [
+          {
+            "origin": "unknown_call",
+            "rva": 322817,
+            "semantic": null
+          }
+        ],
+        "register": "eax",
+        "site_in_candidate_graph": true,
+        "site_rva": 322823
+      },
+      {
+        "actual_register_value_known": false,
+        "candidates_truncated": false,
+        "dependency_depth": 0,
+        "dependency_queries": [],
+        "reaching_candidates": [
+          {
+            "origin": "unknown_call",
+            "rva": 322817,
+            "semantic": null
+          }
+        ],
+        "register": "edi",
+        "site_in_candidate_graph": true,
+        "site_rva": 322825
+      },
+      {
+        "actual_register_value_known": false,
+        "candidates_truncated": false,
+        "dependency_depth": 0,
+        "dependency_queries": [
+          {
+            "register": "eax",
+            "site_rva": 322823
+          }
+        ],
+        "reaching_candidates": [
+          {
+            "origin": "definition",
+            "rva": 322823,
+            "semantic": {
+              "constant": null,
+              "kind": "register_copy",
+              "memory_input": null,
+              "register_inputs": [
+                "eax"
+              ],
+              "width_bits": 32
+            }
+          }
+        ],
+        "register": "esi",
+        "site_in_candidate_graph": true,
+        "site_rva": 322825
+      },
+      {
+        "actual_register_value_known": false,
+        "candidates_truncated": false,
+        "dependency_depth": 0,
+        "dependency_queries": [],
+        "reaching_candidates": [
+          {
+            "origin": "unknown_call",
+            "rva": 322830,
+            "semantic": null
+          }
+        ],
+        "register": "eax",
+        "site_in_candidate_graph": true,
+        "site_rva": 322836
+      }
+    ],
+    "query_limit_hit": false
+  },
+  "original_proprietary_bytes_published": false,
+  "original_runtime_executed": false,
+  "parent_graph": {
+    "actual_entry_path_proven": false,
+    "edges": 271,
+    "frontier": [],
+    "node_cap": 256,
+    "node_limit_hit": false,
+    "nodes": 230,
+    "returning_call_assumption_only": true,
+    "span_bytes": 768
+  },
+  "r32_exact_original_revalidated": true,
+  "r32_exact_report_sha256": "24849b161be51b4fbf50fa7fe2c2bb48b6e79a6a83fb012f33ddd961f6336c9c",
+  "runtime_sha256": "cdab9ea049a98bbc96ce93eeaa8b63c688f0c0f0ad8b3183e79d75e47621441a",
+  "savedata_sha256": "5b26f54a9723cd2c5275f964457094fdf1fc33ca086cdaf55bb5350dfb04f3f9",
+  "schema": "tw10-r33-original-second-call-branch-zf-provenance",
+  "secondary_call_identity": {
+    "call_rva": 322841,
+    "direct_target_rva": null,
+    "import_identity": {
+      "dll": "KERNEL32.dll",
+      "iat_rva": 336040,
+      "name": "CloseHandle"
+    },
+    "import_slot_association_proven": true,
+    "kind": "memory_indirect",
+    "memory_target": {
+      "base_register": null,
+      "displacement_region": {
+        "displacement_rva": 336040,
+        "raw_backed": true,
+        "section": ".rdata",
+        "writable": false
+      },
+      "index_register": null,
+      "index_scale": 1,
+      "relative_field_offset": null,
+      "segment_register": null,
+      "width_bytes": 4
+    },
+    "register_target": null,
+    "runtime_target_or_effects_proven": false
+  },
+  "static_only": true,
+  "status": "PINNED_ORIGINAL_CONDITIONAL_ZF_CALL_PROVENANCE_NATIVE_SAVE_OPEN"
+}
