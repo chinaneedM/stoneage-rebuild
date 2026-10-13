@@ -1,0 +1,63 @@
+name: Probe TW1.0 original R27 native file API inventory and conditional PUSH/caller candidates
+on:
+  workflow_dispatch:
+  push:
+    branches: [agent/tw10-savedata-r27-native-io-sites-20261013]
+    paths:
+      - .github/workflows/probe-stoneage-tw10-r27-original.yml
+      - tools/stoneage_tw10_savedata_native_io_r27.py
+      - tests/test_stoneage_tw10_savedata_native_io_r27.py
+permissions:
+  contents: read
+jobs:
+  original:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - name: R27 and R25 synthetic prerequisite
+        run: |
+          set -euo pipefail
+          pip install --quiet capstone pefile
+          python -m unittest -v tests.test_stoneage_tw10_savedata_native_io_r27 tests.test_stoneage_tw10_savedata_upstream_r26
+      - name: Transient historic pinned archive
+        run: |
+          set -euo pipefail
+          for attempt in 1 2 3; do
+            if python -m tools.stoneage_tw10_archive_parallel_download --deadline 1500 --workers 16 --chunk 8388608 --output /tmp/CD_DIC.rar; then
+              echo TW10_R27_ARCHIVE_PINNED=PASS
+              break
+            fi
+            rm -f /tmp/CD_DIC.rar
+            if [ "$attempt" -eq 3 ]; then
+              echo TW10_R27_ARCHIVE_SOURCE_UNAVAILABLE=OPEN
+              exit 1
+            fi
+            sleep 10
+          done
+      - name: Extract pinned original BIN TEMP only
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq 7zip
+          mkdir -p /tmp/stoneage-r27
+          7z x -y -o/tmp/stoneage-r27 /tmp/CD_DIC.rar STONEAGE.bin >/dev/null
+          test "$(stat -c %s /tmp/stoneage-r27/STONEAGE.bin)" -eq 523449360
+      - name: Static original R27 derived-only report
+        run: |
+          set -euo pipefail
+          python -m tools.stoneage_tw10_savedata_native_io_r27 --bin /tmp/stoneage-r27/STONEAGE.bin > /tmp/stoneage-r27-derived.json
+          python -m tools.stoneage_tw10_savedata_native_io_r27_guard --report /tmp/stoneage-r27-derived.json
+          test "$(stat -c %s /tmp/stoneage-r27-derived.json)" -le 70000
+          echo TW10_R27_ORIGINAL_STATIC_ONLY=PASS
+          echo TW10_R27_NATIVE_SAVE=OPEN
+      - name: Always purge historical proprietary content
+        if: always()
+        run: rm -rf /tmp/CD_DIC.rar /tmp/stoneage-r27
+      - name: Upload DERIVED JSON only
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: tw10-r27-original-native-io-sites-derived
+          path: /tmp/stoneage-r27-derived.json
+          retention-days: 21
