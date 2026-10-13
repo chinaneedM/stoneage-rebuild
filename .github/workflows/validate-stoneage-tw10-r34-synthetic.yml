@@ -1,0 +1,26 @@
+name: Validate TW1.0 R34 CMP/TEST and CloseHandle original input guard
+on:
+  workflow_dispatch:
+  push:
+    branches: [agent/tw10-savedata-r34-cmp-close-inputs-20261013]
+    paths:
+      - tools/stoneage_tw10_savedata_native_io_r34.py
+      - tools/stoneage_tw10_savedata_native_io_r34_guard.py
+      - tests/test_stoneage_tw10_savedata_native_io_r34.py
+      - .github/workflows/validate-stoneage-tw10-r34-synthetic.yml
+permissions:
+  contents: read
+jobs:
+  synthetic:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: R34 R33 synthetic and strict negative controls
+        run: |
+          set -euo pipefail
+          pip install --quiet capstone pefile
+          python -m unittest -v tests.test_stoneage_tw10_savedata_native_io_r34 tests.test_stoneage_tw10_savedata_native_io_r33
+          python -m compileall -q tools/stoneage_tw10_savedata_native_io_r34.py tools/stoneage_tw10_savedata_native_io_r34_guard.py
+          echo TW10_R34_SYNTHETIC_STRICT=PASS
+          echo TW10_R34_ORIGINAL_EVIDENCE=OPEN
