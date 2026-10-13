@@ -1,0 +1,275 @@
+{
+  "actual_branch_predicates_or_taken_paths_proven": false,
+  "actual_closehandle_argument_or_api_result_proven": false,
+  "actual_edi_sentinel_or_valid_handle_proven": false,
+  "actual_error_code_or_file_api_result_proven": false,
+  "actual_stack_argument_alias_owner_or_callee_return_proven": false,
+  "actual_stack_frames_paths_values_or_returns_proven": false,
+  "actual_successful_handle_or_native_persistence_proven": false,
+  "closehandle_identity": {
+    "call_rva": 322841,
+    "direct_target_rva": null,
+    "import_identity": {
+      "dll": "KERNEL32.dll",
+      "iat_rva": 336040,
+      "name": "CloseHandle"
+    },
+    "import_slot_association_proven": true,
+    "kind": "memory_indirect",
+    "memory_target": {
+      "base_register": null,
+      "displacement_region": {
+        "displacement_rva": 336040,
+        "raw_backed": true,
+        "section": ".rdata",
+        "writable": false
+      },
+      "index_register": null,
+      "index_scale": 1,
+      "relative_field_offset": null,
+      "segment_register": null,
+      "width_bytes": 4
+    },
+    "register_target": null,
+    "runtime_target_or_effects_proven": false
+  },
+  "closehandle_pre_call_suffix": {
+    "abi_roles_applied": false,
+    "actual_stack_values_known": false,
+    "conditional_pre_call_esp_only": true,
+    "linear_call_boundary_reached": true,
+    "pushes": [
+      {
+        "conditional_pre_call_esp_offset": 0,
+        "input": {
+          "decoder_read": true,
+          "decoder_write": false,
+          "kind": "register",
+          "register": "esi",
+          "width_bytes": 4
+        },
+        "site_rva": 322840
+      }
+    ],
+    "stop_reason": "control_transfer"
+  },
+  "closehandle_push_candidates": [
+    {
+      "actual_argument_role_or_value_proven": false,
+      "conditional_pre_call_esp_offset": 0,
+      "input": {
+        "decoder_read": true,
+        "decoder_write": false,
+        "kind": "register",
+        "register": "esi",
+        "width_bytes": 4
+      },
+      "site_rva": 322840,
+      "source_queries": [
+        {
+          "register": "esi",
+          "site_rva": 322840
+        }
+      ]
+    }
+  ],
+  "complete_original_eflags_paths_or_indirect_edges_proven": false,
+  "native_filename_to_handle_to_io_schema_proven": false,
+  "original_error_branch_taken_or_owner_known": false,
+  "original_proprietary_bytes_published": false,
+  "original_runtime_executed": false,
+  "parent_graph": {
+    "actual_entry_path_proven": false,
+    "edges": 271,
+    "frontier": [],
+    "node_cap": 256,
+    "node_limit_hit": false,
+    "nodes": 230,
+    "returning_call_assumption_only": true,
+    "span_bytes": 768
+  },
+  "predicate_operands": [
+    {
+      "actual_inputs_or_predicate_value_proven": false,
+      "mnemonic": "cmp",
+      "operands": [
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "kind": "register",
+          "register": "esi",
+          "width_bytes": 4
+        },
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "kind": "register",
+          "register": "edi",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 322825
+    },
+    {
+      "actual_inputs_or_predicate_value_proven": false,
+      "mnemonic": "test",
+      "operands": [
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "kind": "register",
+          "register": "eax",
+          "width_bytes": 4
+        },
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "kind": "register",
+          "register": "eax",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 322836
+    }
+  ],
+  "r33_exact_original_revalidated": true,
+  "r33_exact_report_sha256": "1be7d372b0650b9944a12264b612531d46a5326af3628e12363df365ddab98b5",
+  "register_sources": {
+    "dependency_closure_or_memory_values_proven": false,
+    "dependency_depth_limit": 2,
+    "pending_query_count": 0,
+    "queries": [
+      {
+        "actual_register_value_known": false,
+        "candidates_truncated": false,
+        "dependency_depth": 1,
+        "dependency_queries": [],
+        "reaching_candidates": [
+          {
+            "origin": "unknown_call",
+            "rva": 322817,
+            "semantic": null
+          }
+        ],
+        "register": "eax",
+        "site_in_candidate_graph": true,
+        "site_rva": 322823
+      },
+      {
+        "actual_register_value_known": false,
+        "candidates_truncated": false,
+        "dependency_depth": 0,
+        "dependency_queries": [],
+        "reaching_candidates": [
+          {
+            "origin": "unknown_call",
+            "rva": 322817,
+            "semantic": null
+          }
+        ],
+        "register": "edi",
+        "site_in_candidate_graph": true,
+        "site_rva": 322825
+      },
+      {
+        "actual_register_value_known": false,
+        "candidates_truncated": false,
+        "dependency_depth": 0,
+        "dependency_queries": [
+          {
+            "register": "eax",
+            "site_rva": 322823
+          }
+        ],
+        "reaching_candidates": [
+          {
+            "origin": "definition",
+            "rva": 322823,
+            "semantic": {
+              "constant": null,
+              "kind": "register_copy",
+              "memory_input": null,
+              "register_inputs": [
+                "eax"
+              ],
+              "width_bits": 32
+            }
+          }
+        ],
+        "register": "esi",
+        "site_in_candidate_graph": true,
+        "site_rva": 322825
+      },
+      {
+        "actual_register_value_known": false,
+        "candidates_truncated": false,
+        "dependency_depth": 0,
+        "dependency_queries": [],
+        "reaching_candidates": [
+          {
+            "origin": "unknown_call",
+            "rva": 322830,
+            "semantic": null
+          }
+        ],
+        "register": "eax",
+        "site_in_candidate_graph": true,
+        "site_rva": 322836
+      },
+      {
+        "actual_register_value_known": false,
+        "candidates_truncated": false,
+        "dependency_depth": 0,
+        "dependency_queries": [],
+        "reaching_candidates": [
+          {
+            "origin": "unknown_call",
+            "rva": 322830,
+            "semantic": null
+          }
+        ],
+        "register": "esi",
+        "site_in_candidate_graph": true,
+        "site_rva": 322840
+      },
+      {
+        "actual_register_value_known": false,
+        "candidates_truncated": false,
+        "dependency_depth": 0,
+        "dependency_queries": [],
+        "reaching_candidates": [
+          {
+            "origin": "unknown_call",
+            "rva": 322830,
+            "semantic": null
+          }
+        ],
+        "register": "eax",
+        "site_in_candidate_graph": true,
+        "site_rva": 322841
+      },
+      {
+        "actual_register_value_known": false,
+        "candidates_truncated": false,
+        "dependency_depth": 0,
+        "dependency_queries": [],
+        "reaching_candidates": [
+          {
+            "origin": "unknown_call",
+            "rva": 322830,
+            "semantic": null
+          }
+        ],
+        "register": "esi",
+        "site_in_candidate_graph": true,
+        "site_rva": 322841
+      }
+    ],
+    "query_limit_hit": false
+  },
+  "runtime_sha256": "cdab9ea049a98bbc96ce93eeaa8b63c688f0c0f0ad8b3183e79d75e47621441a",
+  "savedata_sha256": "5b26f54a9723cd2c5275f964457094fdf1fc33ca086cdaf55bb5350dfb04f3f9",
+  "schema": "tw10-r34-original-cmp-test-closehandle-input-provenance",
+  "static_only": true,
+  "status": "PINNED_ORIGINAL_CONDITIONAL_PRE_CLOSEHANDLE_INPUTS_NATIVE_SAVE_OPEN"
+}
