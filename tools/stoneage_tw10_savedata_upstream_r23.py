@@ -29,6 +29,9 @@ CALLS = (("HeapCreate", 0x499d0, 0x499d4, 0x499dc, 0x172187c, 0x520e8),
          ("HeapAlloc", 0x49a00, 0x49a0c, 0x49a14, 0x1721878, 0x520f8),
          ("HeapReAlloc", 0x4a0a0, 0x4a0c4, 0x4a0d5, 0x1721878, 0x520dc))
 GLOBALS = (0x1721878, 0x172187c)
+STACK_NEUTRAL_CLASSES = {"mov", "lea", "xor", "add", "sub", "and", "or",
+                         "inc", "dec", "cmp", "test", "nop", "imul",
+                         "shl", "shr", "sar", "sal", "cdq"}
 FLAGS = ("actual_entries_proven", "all_incoming_paths_proven",
          "runtime_path_feasible_proven", "call_return_value_admitted",
          "effective_global_values_proven", "stack_abi_slots_proven",
@@ -75,6 +78,7 @@ def local_push_suffix(dec, sections, anchor, call):
                 break
         elif (writes & {"esp", "sp", "spl"}
               or ins.mnemonic in ("enter", "leave", "pusha", "pushal", "pushf", "pushfd")
+              or ins.mnemonic not in STACK_NEUTRAL_CLASSES
               or any(o.type == X86_OP_MEM and o.access & 2 for o in ins.operands)):
             stop = "stack_or_memory_barrier"
             break

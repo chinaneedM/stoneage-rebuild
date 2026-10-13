@@ -52,6 +52,10 @@ class R23Synthetic(unittest.TestCase):
         self.assertEqual(len(self.suffix(bytes.fromhex('50eb0057'))['pushes']),1)
     def test_partial_push_is_not_four_byte_geometry(self):
         self.assertEqual(len(self.suffix(bytes.fromhex('506657'))['pushes']),0)
+    def test_implicit_memory_write_and_interrupt_are_barriers(self):
+        for middle in ('ab','cc'):
+            with self.subTest(middle=middle):
+                self.assertEqual(len(self.suffix(bytes.fromhex('50'+middle+'57'))['pushes']),1)
     def test_unaligned_call_boundary_has_no_stack_claim(self):
         s=local_push_suffix(Decoder(bytes.fromhex('b801000000'),ROOT,BASE),[],ROOT,ROOT+2)
         self.assertFalse(s['linear_call_boundary_reached']);self.assertEqual(s['pushes'],[])
