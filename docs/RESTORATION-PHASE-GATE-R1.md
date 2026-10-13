@@ -114,3 +114,18 @@ Highest NEXT R24: exact stopping prefixes before HeapCreate/HeapAlloc final
 PUSH, caller-entry/stack boundaries, and HeapReAlloc EAX0x4a0b3 computation
 and branch predicates. System-family PARTIAL/OPEN states remain unchanged;
 Stage A restoration before joint future-game review remains binding.
+
+
+## 2026-10-13 queue supersession (R24 accepted)
+
+R24 competing candidate instruction spans, prefix barriers, EAX scalar and
+pre-call comparison provenance are independently accepted as conditional
+original static evidence only. Candidate anchors inside alternate decoded
+instruction spans are not original function entries; no runtime size/ABI/heap
+or native-save promotion is admitted. Prior conditional diagrams/counts remain
+diagnostics, with explicit conflicting-prefix caveats.
+
+Highest NEXT R25: coherent boundary/direct caller candidates near HeapAlloc
+0x499ff and HeapReAlloc0x4a0a1, with SETE AL/upper-EAX and shifted ECX inputs
+still OPEN; then use qualified context for native filename/IO tracing.
+All system-family PARTIAL/OPEN statuses and restoration-first review remain.

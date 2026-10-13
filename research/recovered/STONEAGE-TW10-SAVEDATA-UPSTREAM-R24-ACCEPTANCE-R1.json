@@ -1,0 +1,56 @@
+{
+  "schema": "stoneage-tw10-savedata-upstream-r24-acceptance-r1",
+  "status": "ORIGINAL_CONDITIONAL_STATIC_INDEPENDENTLY_ACCEPTED",
+  "historical_scope": "Taiwan Waei/JSS v1.0 exact accepted runtime/savedata; static only",
+  "original_source": {
+    "branch": "agent/tw10-savedata-r24-prefix-scalar-flags-20261013",
+    "head_sha": "1348831660debb1e86b4dec6cd270f2dcba3e126",
+    "run_id": 38389572994,
+    "job_id": 115269723886,
+    "conclusion": "success",
+    "exact_r23_original_derivative_rederived": true,
+    "originals_purged": true,
+    "original_executable_executed": false,
+    "proprietary_payload_committed": false
+  },
+  "derived_artifact": {
+    "id": 11807971334,
+    "source_run": 38389572994,
+    "name": "tw10-r24-original-prefix-scalar-flags-derived",
+    "zip_digest": "sha256:27b0d78b1a80f7d2c8d60f8e4f2081e0311f4dc32b60dc85ca33781196b16e04",
+    "derived_json_bytes": 14547,
+    "derived_json_sha256": "71a781bd740845d388284ea68fa3e271ef5c5b6eac556f4e487d4eaaa0047af1",
+    "path": "research/recovered/STONEAGE-TW10-SAVEDATA-UPSTREAM-R24-ORIGINAL.json"
+  },
+  "synthetic": {
+    "tests": 62,
+    "run_id": 38389574287,
+    "job_id": 115269729696,
+    "conclusion": "success",
+    "r23_adjacent_regression": true
+  },
+  "independent": {
+    "run_id": 38389832057,
+    "job_id": 115270597813,
+    "head_sha": "32090532643221e31e4a3ffbf8e316844b63c77b",
+    "conclusion": "success",
+    "immutable_source_head_branch_artifact_digest": true,
+    "strict_no_promotion_and_tamper_tests": true,
+    "exact_committed_original_derived_json_equality": true
+  },
+  "accepted_conditional_static": [
+    "HeapCreate suffix stops at SETE AL0x499d0; partial EAX and flag inputs are unresolved",
+    "Wider HeapAlloc straight decodes expose three PUSH candidates: global0x172187c, immediate0 and immediate320, offsets0/4/8 before CALL; no ABI role or executed path",
+    "Competing HeapAlloc anchors0x499f0/0x49a00 and ReAlloc anchor0x4a0a0 occur inside instruction spans in earlier candidate decodes; no candidate is a proven entry",
+    "EAX definition0x4a0b3 is full-width SHL2; bounded input candidate LEA0x4a0af has ECX+4*ECX+80 geometry, runtime input/result and allocation role unknown",
+    "JNE0x4a0ad uses bounded comparison definition0x4a0ab (32-bit EAX vs ECX), targets0x4a0df; branch outcome unknown"
+  ],
+  "remaining_open": [
+    "Credible original instruction/function boundaries, callers and paths",
+    "HeapCreate SETE flag/upper-EAX provenance and actual heap ownership",
+    "HeapReAlloc ECX/global input values and actual result",
+    "Native filename/handle/buffer linkage, save schema/framing/checksum/migration/persistence",
+    "Original server-only and cross-version semantics"
+  ],
+  "next": "R25: audit boundary and direct caller candidates near HeapAlloc0x499ff/ReAlloc0x4a0a1, retain SETE AL/upper-EAX and shifted ECX gaps, then use only qualified context for native filename/IO tracing."
+}

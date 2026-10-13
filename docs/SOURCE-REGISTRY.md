@@ -6207,3 +6207,14 @@ Highest NEXT R13: recover exact address/value/frame-relative mutation geometry a
 - Proves: bounded original syntax connecting three heap import sites with global EAX-store candidates and absolute global PUSH dependencies; conditional final PUSH offsets relative to ESP BEFORE HeapReAlloc.
 - Does not prove: ABI argument roles, real entries/paths/values, import runtime execution, allocation success/common heap owner, original alias/caller effects, native save schema/IO or cross-version equivalence.
 - Canonical derivative and receipt: research/recovered/STONEAGE-TW10-SAVEDATA-UPSTREAM-R23-ORIGINAL.json and STONEAGE-TW10-SAVEDATA-UPSTREAM-R23-ACCEPTANCE-R1.json.
+
+
+## SRC-TW10-SAVEDATA-UPSTREAM-R24 — 2026-10-13
+
+- Confidence S for pinned original static identity; all entry/path/value interpretations conditional.
+- Original source Action38389572994/job115269723886, branch agent/tw10-savedata-r24-prefix-scalar-flags-20261013 HEAD1348831660debb1e86b4dec6cd270f2dcba3e126; inherited whole-archive/runtime/savedata and exact R23 derivative gates, nonexecution and original purge PASS.
+- Derived-only artifact11807971334 ZIP digest sha256:27b0d78b1a80f7d2c8d60f8e4f2081e0311f4dc32b60dc85ca33781196b16e04; JSON14547 bytes SHA25671a781bd740845d388284ea68fa3e271ef5c5b6eac556f4e487d4eaaa0047af1.
+- Independent original/head/branch/artifact custody, strict guards and exact JSON equality Action38389832057/job115270597813 SUCCESS; synthetic/adjacent R23 regressions62 tests38389574287 SUCCESS.
+- Proves bounded original SETE AL barrier, three HeapAlloc PUSH operands under wider candidate prefixes, conflicting instruction spans between candidate starts, SHL2/LEA EAX input geometry and a comparison-defined JNE candidate.
+- Does NOT prove original verified instruction/function entries, feasible paths, EAX upper bits, ABI roles, actual heap size/success/owner, native file/handle/buffer linkage/save IO or cross-version semantics. Earlier alternate-anchor memory-add candidate is not accepted as an original executed store.
+- Canonical report/receipt: research/recovered/STONEAGE-TW10-SAVEDATA-UPSTREAM-R24-ORIGINAL.json and STONEAGE-TW10-SAVEDATA-UPSTREAM-R24-ACCEPTANCE-R1.json. Next R25 coherent boundary/caller candidates before any allocator-context or native-IO promotion.
