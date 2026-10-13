@@ -48,7 +48,7 @@ def barrier_kind(ins):
     if ins.mnemonic not in STACK_NEUTRAL_CLASSES:return 'unmodeled_instruction'
     return None
 
-def prefix_audit(dec,sections,anchor,call):
+def prefix_audit(dec,sections,anchor,call,alternatives=()):
     if not 0 <= call-anchor <= 192:raise ValueError('R24 prefix bound')
     cur=anchor;sequence=[];error=None
     while cur<call and len(sequence)<64:
@@ -66,7 +66,16 @@ def prefix_audit(dec,sections,anchor,call):
                          'operand_shapes':[operand_shape(ins,o,sections,dec.base) for o in ins.operands],
                          'written_registers':sorted({ins.reg_name(r) for r in ins.regs_access()[1]})}
                 break
+    overlaps=[]
+    for ins in sequence:
+        start=ins.address-dec.base
+        for other in alternatives:
+            if start<other<start+ins.size:
+                overlaps.append({'alternative_anchor_rva':other,'containing_instruction_rva':start,
+                                 'containing_instruction_end_rva':start+ins.size})
+    if len(overlaps)>8:raise ValueError('R24 overlap cap')
     return {'anchor_rva':anchor,'call_rva':call,'linear_boundary_reached':boundary,
+            'competing_anchor_overlaps':overlaps,
             'decoded_instruction_count':len(sequence),'decode_stop':error or ('call_boundary' if boundary else 'instruction_cap'),
             'last_suffix_barrier':barrier,'r23_suffix':local_push_suffix(dec,sections,anchor,call),
             'verified_entry_or_alignment':False,'actual_stack_values_known':False,
@@ -119,7 +128,7 @@ def inspect_verified(runtime,savedata):
     dec=Decoder(data[t['raw']:t['raw']+t['raw_size']],t['rva'],base)
     audits=[]
     for old,anchors in zip(prior['heap_links'],PREFIXES):
-        candidates=[prefix_audit(dec,sections,a,old['call_rva']) for a in anchors]
+        candidates=[prefix_audit(dec,sections,a,old['call_rva'],alternatives=anchors) for a in anchors]
         original=next(c for c in candidates if c['anchor_rva']==old['anchor_rva'])
         if original['r23_suffix']!=old['local_push_suffix']:raise ValueError('R23 exact suffix changed')
         audits.append({'name':old['name'],'call_rva':old['call_rva'],'candidate_prefixes':candidates,

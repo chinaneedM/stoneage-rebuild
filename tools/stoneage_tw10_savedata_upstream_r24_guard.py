@@ -43,6 +43,12 @@ def validate(d):
                       and push.get('conditional_pre_call_esp_offset')==n*4
                       and push.get('input',{}).get('width_bytes')==4,'PUSH order/width')
                 prev=push['site_rva']
+            overlaps=p.get('competing_anchor_overlaps')
+            check(isinstance(overlaps,list) and len(overlaps)<=8,'overlap cap')
+            for overlap in overlaps:
+                check(overlap.get('alternative_anchor_rva') in anchors
+                      and anchor<=overlap.get('containing_instruction_rva',-1)<overlap['alternative_anchor_rva']
+                      <overlap.get('containing_instruction_end_rva',-1)<=callrow[2],'competing alignment')
             b=p.get('last_suffix_barrier')
             if b is not None:
                 check(p['linear_boundary_reached'] and anchor<=b.get('site_rva',-1)<callrow[2]

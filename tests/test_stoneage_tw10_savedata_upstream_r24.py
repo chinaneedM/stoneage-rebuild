@@ -52,6 +52,11 @@ class R24Synthetic(unittest.TestCase):
         d=branch_frontier(Decoder(bytes.fromhex('ffd0740090ffd0c3'),ROOT,BASE),[],root=ROOT,call=ROOT+5)
         self.assertEqual(d['branches'][0]['flag_sources'],[{'origin':'unknown_call','rva':ROOT,'semantic':None}])
         self.assertFalse(d['branches'][0]['branch_outcome_known'])
+    def test_candidate_anchor_inside_push_immediate(self):
+        raw=bytes.fromhex('6840010000ffd0')
+        d=prefix_audit(Decoder(raw,ROOT,BASE),[],ROOT,ROOT+5,alternatives=(ROOT+1,))
+        self.assertEqual(d['competing_anchor_overlaps'],[dict(alternative_anchor_rva=ROOT+1,containing_instruction_rva=ROOT,containing_instruction_end_rva=ROOT+5)])
+        self.assertFalse(d['verified_entry_or_alignment'])
     def test_original_hash_gate(self):
         with self.assertRaisesRegex(ValueError,'SHA256 mismatch'):inspect_verified(b'wrong',b'wrong')
     def test_valid_invented_envelope(self):self.assertTrue(validate(fixture()))
