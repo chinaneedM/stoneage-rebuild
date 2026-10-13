@@ -77,7 +77,7 @@ completed SUCCESS after original archive identity, inherited R31 static guard,
 R32 strict guard, transient-original purge and derived-only upload.
 Artifact `11820641198` `tw10-r32-original-call-branch-derived`,
 ZIP digest `sha256:efa5c1a68f44893654d77c3596afe1bf0f9a4644208c8238013b4bf8ebcfdb46`.
-The JSON report is 4,000-5,000 bytes with SHA256
+The original-derived JSON report is exactly 5,153 bytes with SHA256
 `24849b161be51b4fbf50fa7fe2c2bb48b6e79a6a83fb012f33ddd961f6336c9c`.
 Independent custody run `38409252712`/job `115336922463` SUCCESS;
 committed canonical JSON and EXACT original-derived equality separately verified by
