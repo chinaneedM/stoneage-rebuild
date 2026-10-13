@@ -1,0 +1,68 @@
+name: Independently verify TW1.0 R31 original CreateFileA opaque capture and helper stores
+on:
+  workflow_dispatch:
+  push:
+    branches: [main, agent/tw10-savedata-r31-create-capture-20261013]
+    paths:
+      - .github/workflows/verify-stoneage-tw10-r31-original.yml
+      - tools/stoneage_tw10_savedata_native_io_r31_guard.py
+      - research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R31-ORIGINAL.json
+permissions:
+  contents: read
+  actions: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify immutable R31 original source and artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          identity="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/38406412226" --jq '[.status,.conclusion,.head_sha,.head_branch] | join("|")')"
+          test "$identity" = 'completed|success|e3b2d5b75668b0823573f499b11f9ee46883f6f0|agent/tw10-savedata-r31-create-capture-20261013'
+          artifact="$(gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/11816674613" --jq '[.workflow_run.id,.name,.digest,.expired] | join("|")')"
+          test "$artifact" = '38406412226|tw10-r31-original-create-capture-derived|sha256:296aa126d7f52c4bc8c8ca54183eaaf7868ed0d309bca6bd4531c2173c23a075|false'
+      - name: Retrieve only bounded derived metadata
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/r31-independent
+          gh run download 38406412226 --repo "$GITHUB_REPOSITORY" --name tw10-r31-original-create-capture-derived --dir /tmp/r31-independent
+          test "$(find /tmp/r31-independent -type f | wc -l)" -eq 1
+          test -f /tmp/r31-independent/stoneage-r31-derived.json
+          test ! -L /tmp/r31-independent/stoneage-r31-derived.json
+          test "$(stat -c %s /tmp/r31-independent/stoneage-r31-derived.json)" -le 70000
+          sha256sum /tmp/r31-independent/stoneage-r31-derived.json
+          wc -c /tmp/r31-independent/stoneage-r31-derived.json
+      - name: Strict semantic constraints and independent tamper tests
+        run: |
+          set -euo pipefail
+          pip install --quiet capstone pefile
+          python -m unittest -v tests.test_stoneage_tw10_savedata_native_io_r31
+          python -m tools.stoneage_tw10_savedata_native_io_r31_guard --report /tmp/r31-independent/stoneage-r31-derived.json
+      - name: Compare accepted witness and disclose canonical bounded JSON
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from tools.stoneage_tw10_savedata_native_io_r31_guard import validate
+          d=json.loads(Path('/tmp/r31-independent/stoneage-r31-derived.json').read_text())
+          validate(d)
+          canonical=Path('research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R31-ORIGINAL.json')
+          if canonical.exists():
+              assert json.loads(canonical.read_text())==d, 'R31 exact original-derived JSON differs from committed witness'
+              print('TW10_R31_EXACT_DERIVED_JSON_EQUALITY=PASS')
+          else:
+              print('TW10_R31_REVIEW_ONLY_NOT_YET_COMMITTED=PASS')
+          print('TW10_R31_DERIVED_JSON_BEGIN')
+          print(json.dumps(d,sort_keys=True,separators=(',',':')))
+          print('TW10_R31_DERIVED_JSON_END')
+          PY
+      - name: Always remove temporary derived metadata
+        if: always()
+        run: rm -rf /tmp/r31-independent
