@@ -26,7 +26,7 @@ def validate(d):
               and 0<=g['edges']<=2*MAX_NODES and type(g.get('node_limit_hit')) is bool
               and isinstance(frontier,list) and len(frontier)<=2*MAX_NODES
               and g.get('call_fallthrough_structural_only') is True and g.get('all_incoming_paths_proven') is False,'graph limits')
-        for f in frontier:check(f.get('reason') in ('out_of_window','decode_gap','indirect_jump','node_cap') and type(f.get('rva')) is int,'frontier')
+        for f in frontier:check(f.get('reason') in ('out_of_window','decode_gap','instruction_span_limit','indirect_jump','node_cap') and type(f.get('rva')) is int,'frontier')
         inp=c.get('inputs',{});queries=inp.get('queries')
         check(isinstance(queries,list) and len(queries)<=MAX_QUERIES and type(inp.get('query_limit_hit')) is bool
               and type(inp.get('pending_query_count')) is int and inp['pending_query_count']>=0

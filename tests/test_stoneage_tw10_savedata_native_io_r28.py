@@ -47,6 +47,10 @@ class R28Synthetic(unittest.TestCase):
     def test_backward_external_edge(self):
         dec=Decoder(bytes.fromhex('ebfc'),0x1000,BASE);_,_,f,_=candidate_graph(dec,0x1000)
         self.assertIn(('out_of_window',0xffe),f)
+    def test_instruction_must_fit_byte_window(self):
+        dec=Decoder(bytes.fromhex('90b880000000c3'),0x1000,BASE)
+        nodes,_,f,_=candidate_graph(dec,0x1000,span=3)
+        self.assertEqual(list(nodes),[0x1000]);self.assertIn(('instruction_span_limit',0x1001),f)
     def test_node_cap(self):
         nodes,_,f,hit=candidate_graph(Decoder(b'\x90'*20,0x1000,BASE),0x1000,cap=3)
         self.assertEqual(len(nodes),3);self.assertTrue(hit);self.assertIn(('node_cap',3),f)

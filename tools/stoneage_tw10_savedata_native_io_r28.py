@@ -33,6 +33,7 @@ def candidate_graph(dec,root,span=MAX_SPAN,cap=MAX_NODES):
         if not root<=at<root+span:frontier.add(('out_of_window',at));continue
         ins=dec.at(at)
         if ins is None:frontier.add(('decode_gap',at));continue
+        if at+ins.size>root+span:frontier.add(('instruction_span_limit',at));continue
         nodes[at]=ins
         if ins.group(CS_GRP_RET) or ins.mnemonic in ('int','int3','into','ud2','hlt','iret','iretd','sysenter','sysexit','syscall','sysret'):continue
         if ins.group(CS_GRP_JUMP):
