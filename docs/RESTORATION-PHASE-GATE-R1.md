@@ -164,3 +164,10 @@ system-family PARTIAL/OPEN states and Stage A restoration-first review bind.
 R27 original file-API inventory, five conditional pre-CALL PUSH suffixes and14 nearby direct caller candidates independently accepted. None establishes actual filename/handle/buffer/128-byte linkage, ABI role, true entry/frame/path, external-return or file/CRT/heap/alias ownership. Current heuristic graph at WriteFile0x4c6f1 does not reach that site; empty sources are not absence facts.
 
 Highest NEXT R28: audit direct CALL-supported original contexts0x4eb55 (CreateFileA),0x4a8dc (ReadFile) and0x4c5b4 (WriteFile), with explicit span/path/entry bounds; trace EBP-frame inputs and [EBX]/[EAX+ESI] handle-like syntax as candidates, never actual handle ownership. Correct WriteFile0x4c6f1 unreachable heuristic root before using its sources; extend bounded analysis to third WriteFile0x4e42b if useful. Native savedata filename->returned handle->buffer/length128 remains OPEN. All system-family PARTIAL/OPEN states and Stage A restoration-first review remain binding.
+
+
+## 2026-10-13 queue supersession (R28 accepted)
+
+R28 CALL-supported file API graphs/inputs independently accepted as original conditional static syntax. All five target sites reached, including corrected WriteFile0x4c6f1 context; shared virtual .data0x1721760+4*EAX addressing candidates do not establish original index/table/handle/owner/initialization values. No returning-call/frame/ABI/native persistence promotion.
+
+Highest NEXT R29: inspect exact original operand shapes and conditional scalar input provenance at ReadFile index definition0x4a8f9/ESI0x4a8fc and WriteFile index0x4c5d3/ESI0x4c5e0 plus EAX0x4c617. Qualify the shared0x1721760+4*EAX addressing candidates without evaluating original values or asserting a handle-table owner; audit bounded writes/references if useful. Continue filename/CreateFileA-return/handle/buffer/length128 linkage with explicit opaque-call, cycle, stack-frame and memory-alias gaps. Native schema/persistence remain OPEN. All system-family PARTIAL/OPEN states and Stage A restoration-first review remain binding.
