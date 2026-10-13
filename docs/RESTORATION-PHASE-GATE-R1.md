@@ -157,3 +157,10 @@ physical argument chain at CreateFileA0x4ed01 and ReadFile/WriteFile candidates.
 Retain allocator gaps while auditing filename/returned handle/buffer/length128;
 no native schema/persistence promotion until independently qualified. All
 system-family PARTIAL/OPEN states and Stage A restoration-first review bind.
+
+
+## 2026-10-13 queue supersession (R27 accepted)
+
+R27 original file-API inventory, five conditional pre-CALL PUSH suffixes and14 nearby direct caller candidates independently accepted. None establishes actual filename/handle/buffer/128-byte linkage, ABI role, true entry/frame/path, external-return or file/CRT/heap/alias ownership. Current heuristic graph at WriteFile0x4c6f1 does not reach that site; empty sources are not absence facts.
+
+Highest NEXT R28: audit direct CALL-supported original contexts0x4eb55 (CreateFileA),0x4a8dc (ReadFile) and0x4c5b4 (WriteFile), with explicit span/path/entry bounds; trace EBP-frame inputs and [EBX]/[EAX+ESI] handle-like syntax as candidates, never actual handle ownership. Correct WriteFile0x4c6f1 unreachable heuristic root before using its sources; extend bounded analysis to third WriteFile0x4e42b if useful. Native savedata filename->returned handle->buffer/length128 remains OPEN. All system-family PARTIAL/OPEN states and Stage A restoration-first review remain binding.
