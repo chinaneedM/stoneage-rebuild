@@ -1,0 +1,68 @@
+name: Independently verify TW1.0 R33 original second CALL and ZF witnesses
+on:
+  workflow_dispatch:
+  push:
+    branches: [agent/tw10-savedata-r33-flag-call-20261013, main]
+    paths:
+      - .github/workflows/verify-stoneage-tw10-r33-original.yml
+      - tools/stoneage_tw10_savedata_native_io_r33_guard.py
+      - research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R33-ORIGINAL.json
+permissions:
+  contents: read
+  actions: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify immutable R33 source and derived-only artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          identity="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/38411584532" --jq '[.status,.conclusion,.head_sha,.head_branch] | join("|")')"
+          test "$identity" = 'completed|success|f0fe4a5491ac031f2bc941de6c335b85a1273ea4|agent/tw10-savedata-r33-flag-call-20261013'
+          artifact="$(gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/11822641076" --jq '[.workflow_run.id,.name,.digest,.expired] | join("|")')"
+          test "$artifact" = '38411584532|tw10-r33-original-secondary-call-zf-derived|sha256:01286152611e96bc6e9dac874422227336b5b8f84397fcb20b9b4560d54894bc|false'
+      - name: Download exact original-derived JSON artifact only
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/r33-independent
+          gh run download 38411584532 --repo "$GITHUB_REPOSITORY" --name tw10-r33-original-secondary-call-zf-derived --dir /tmp/r33-independent
+          test "$(find /tmp/r33-independent -type f | wc -l)" -eq 1
+          test -f /tmp/r33-independent/stoneage-r33-derived.json
+          test ! -L /tmp/r33-independent/stoneage-r33-derived.json
+          test "$(stat -c %s /tmp/r33-independent/stoneage-r33-derived.json)" -le 80000
+          sha256sum /tmp/r33-independent/stoneage-r33-derived.json
+          wc -c /tmp/r33-independent/stoneage-r33-derived.json
+      - name: Independent strict guard and tamper controls
+        run: |
+          set -euo pipefail
+          pip install --quiet capstone pefile
+          python -m unittest -v tests.test_stoneage_tw10_savedata_native_io_r33 tests.test_stoneage_tw10_savedata_native_io_r32
+          python -m tools.stoneage_tw10_savedata_native_io_r33_guard --report /tmp/r33-independent/stoneage-r33-derived.json
+      - name: Compare canonical witness and disclose bounded JSON
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from tools.stoneage_tw10_savedata_native_io_r33_guard import validate
+          d=json.loads(Path('/tmp/r33-independent/stoneage-r33-derived.json').read_text())
+          validate(d)
+          canonical=Path('research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R33-ORIGINAL.json')
+          if canonical.exists():
+              assert json.loads(canonical.read_text())==d, 'R33 canonical JSON differs from original-derived witness'
+              print('TW10_R33_EXACT_DERIVED_JSON_EQUALITY=PASS')
+          else:
+              print('TW10_R33_REVIEW_ONLY_NOT_YET_COMMITTED=PASS')
+          print('TW10_R33_DERIVED_JSON_BEGIN')
+          print(json.dumps(d,sort_keys=True,separators=(',',':')))
+          print('TW10_R33_DERIVED_JSON_END')
+          PY
+      - name: Purge all temporary derived data
+        if: always()
+        run: rm -rf /tmp/r33-independent
