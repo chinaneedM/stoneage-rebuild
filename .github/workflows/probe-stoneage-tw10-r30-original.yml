@@ -1,0 +1,63 @@
+name: Probe TW1.0 original R30 mask-shift composition and shared-writer input candidates
+on:
+  workflow_dispatch:
+  push:
+    branches: [agent/tw10-savedata-r30-mask-writer-20261013]
+    paths:
+      - .github/workflows/probe-stoneage-tw10-r30-original.yml
+      - tools/stoneage_tw10_savedata_native_io_r30.py
+      - tests/test_stoneage_tw10_savedata_native_io_r30.py
+permissions:
+  contents: read
+jobs:
+  original:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - name: R30 and R29 synthetic prerequisite
+        run: |
+          set -euo pipefail
+          pip install --quiet capstone pefile
+          python -m unittest -v tests.test_stoneage_tw10_savedata_native_io_r30 tests.test_stoneage_tw10_savedata_native_io_r29
+      - name: Transient historic pinned archive
+        run: |
+          set -euo pipefail
+          for attempt in 1 2 3; do
+            if python -m tools.stoneage_tw10_archive_parallel_download --deadline 1500 --workers 16 --chunk 8388608 --output /tmp/CD_DIC.rar; then
+              echo TW10_R30_ARCHIVE_PINNED=PASS
+              break
+            fi
+            rm -f /tmp/CD_DIC.rar
+            if [ "$attempt" -eq 3 ]; then
+              echo TW10_R30_ARCHIVE_SOURCE_UNAVAILABLE=OPEN
+              exit 1
+            fi
+            sleep 10
+          done
+      - name: Extract pinned original BIN TEMP only
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq 7zip
+          mkdir -p /tmp/stoneage-r30
+          7z x -y -o/tmp/stoneage-r30 /tmp/CD_DIC.rar STONEAGE.bin >/dev/null
+          test "$(stat -c %s /tmp/stoneage-r30/STONEAGE.bin)" -eq 523449360
+      - name: Static original R30 derived-only report
+        run: |
+          set -euo pipefail
+          python -m tools.stoneage_tw10_savedata_native_io_r30 --bin /tmp/stoneage-r30/STONEAGE.bin > /tmp/stoneage-r30-derived.json
+          python -m tools.stoneage_tw10_savedata_native_io_r30_guard --report /tmp/stoneage-r30-derived.json
+          test "$(stat -c %s /tmp/stoneage-r30-derived.json)" -le 70000
+          echo TW10_R30_ORIGINAL_STATIC_ONLY=PASS
+          echo TW10_R30_NATIVE_SAVE=OPEN
+      - name: Always purge historical proprietary content
+        if: always()
+        run: rm -rf /tmp/CD_DIC.rar /tmp/stoneage-r30
+      - name: Upload DERIVED JSON only
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: tw10-r30-original-mask-writer-derived
+          path: /tmp/stoneage-r30-derived.json
+          retention-days: 21
