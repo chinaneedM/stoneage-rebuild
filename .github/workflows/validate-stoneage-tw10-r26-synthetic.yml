@@ -1,0 +1,26 @@
+name: Validate TW1.0 R26 CALL-root/conditional-expression synthetic and strict guard
+on:
+  workflow_dispatch:
+  push:
+    branches: [main, agent/tw10-savedata-r26-call-root-inputs-20261013]
+    paths:
+      - .github/workflows/validate-stoneage-tw10-r26-synthetic.yml
+      - tools/stoneage_tw10_savedata_upstream_r26.py
+      - tools/stoneage_tw10_savedata_upstream_r26_guard.py
+      - tests/test_stoneage_tw10_savedata_upstream_r26.py
+permissions:
+  contents: read
+jobs:
+  synthetic:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install --quiet capstone pefile
+      - name: R26 and R25 synthetic and strict negative controls
+        run: |
+          set -euo pipefail
+          python -m unittest -v tests.test_stoneage_tw10_savedata_upstream_r26 tests.test_stoneage_tw10_savedata_upstream_r25
+          python -m compileall -q tools/stoneage_tw10_savedata_upstream_r26.py tools/stoneage_tw10_savedata_upstream_r26_guard.py
+          echo TW10_R26_SYNTHETIC_STRICT=PASS
+          echo TW10_R26_ORIGINAL_EVIDENCE=OPEN
