@@ -1,0 +1,64 @@
+name: Probe TW1.0 original R33 secondary CALL and ZF reaching sources
+on:
+  workflow_dispatch:
+  push:
+    branches: [agent/tw10-savedata-r33-flag-call-20261013]
+    paths:
+      - .github/workflows/probe-stoneage-tw10-r33-original.yml
+      - tools/stoneage_tw10_savedata_native_io_r33.py
+      - tools/stoneage_tw10_savedata_native_io_r33_guard.py
+      - tests/test_stoneage_tw10_savedata_native_io_r33.py
+permissions:
+  contents: read
+jobs:
+  original:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - name: R33 and R32 bounded synthetic prerequisite
+        run: |
+          set -euo pipefail
+          pip install --quiet capstone pefile
+          python -m unittest -v tests.test_stoneage_tw10_savedata_native_io_r33 tests.test_stoneage_tw10_savedata_native_io_r32
+      - name: Download transient pinned historic archive
+        run: |
+          set -euo pipefail
+          for attempt in 1 2 3; do
+            if python -m tools.stoneage_tw10_archive_parallel_download --deadline 1500 --workers 16 --chunk 8388608 --output /tmp/CD_DIC.rar; then
+              echo TW10_R33_ORIGINAL_ARCHIVE_PINNED=PASS
+              break
+            fi
+            rm -f /tmp/CD_DIC.rar
+            if [ "$attempt" -eq 3 ]; then
+              echo TW10_R33_ORIGINAL_SOURCE_UNAVAILABLE=OPEN
+              exit 1
+            fi
+            sleep 10
+          done
+      - name: Extract original BIN to transient location only
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq 7zip
+          mkdir -p /tmp/stoneage-r33
+          7z x -y -o/tmp/stoneage-r33 /tmp/CD_DIC.rar STONEAGE.bin >/dev/null
+          test "$(stat -c %s /tmp/stoneage-r33/STONEAGE.bin)" -eq 523449360
+      - name: Emit bounded R33 original static derivative only
+        run: |
+          set -euo pipefail
+          python -m tools.stoneage_tw10_savedata_native_io_r33 --bin /tmp/stoneage-r33/STONEAGE.bin > /tmp/stoneage-r33-derived.json
+          python -m tools.stoneage_tw10_savedata_native_io_r33_guard --report /tmp/stoneage-r33-derived.json
+          test "$(stat -c %s /tmp/stoneage-r33-derived.json)" -le 80000
+          echo TW10_R33_ORIGINAL_STATIC_ONLY=PASS
+          echo TW10_R33_NATIVE_SAVE=OPEN
+      - name: Always purge original client and archive
+        if: always()
+        run: rm -rf /tmp/CD_DIC.rar /tmp/stoneage-r33
+      - name: Upload only bounded derived metadata
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: tw10-r33-original-secondary-call-zf-derived
+          path: /tmp/stoneage-r33-derived.json
+          retention-days: 21
