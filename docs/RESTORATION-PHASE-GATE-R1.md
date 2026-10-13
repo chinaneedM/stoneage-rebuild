@@ -143,3 +143,17 @@ Highest NEXT R26: use direct CALL-supported0x499c3/0x4a09c contexts for SETE
 flags/full-EAX and ReAlloc EAX/ECX inputs, with bounded opaque-call/path gaps,
 then resume qualified native filename/IO analysis. All system-family
 PARTIAL/OPEN statuses and Stage A restoration-first review remain binding.
+
+
+## 2026-10-13 queue supersession (R26 accepted)
+
+R26 direct CALL-supported candidate contexts, SETE/zero/flag provenance,
+separate global inputs and conditional32-bit affine expression are independently
+accepted as original static evidence only. Actual functions/paths/stack frames,
+ZF/globals/results, ABI roles, heap/CRT/alias ownership and native IO stay OPEN.
+
+Highest NEXT R27 returns to the original native file-API boundary/direct-caller/
+physical argument chain at CreateFileA0x4ed01 and ReadFile/WriteFile candidates.
+Retain allocator gaps while auditing filename/returned handle/buffer/length128;
+no native schema/persistence promotion until independently qualified. All
+system-family PARTIAL/OPEN states and Stage A restoration-first review bind.

@@ -2855,3 +2855,8 @@ Bounded static FACT only: original HeapCreate suffix barrier SETE AL0x499d0; wid
 ## 2026-10-13 — R25 TW1.0 conditional boundary/caller/input evidence accepted
 
 Full original raw .text linear candidate scan agrees with R24 competing-span warning:0x499ff/0x4a0a1 are scan boundaries while0x49a00/0x4a0a0 are interior offsets. Two windows yield19 direct transfer candidates, including6 CALLs to4 targets0x499a8/0x499c3/0x499ff/0x4a09c. No execution/entry/all-caller claim. New-anchor ECX source is four-byte virtual .data0x1721864 load at0x4a0a1; EAX comparison input remains entry unknown. Prior SETE contexts do not reach the site in their bounded CFGs; sources/full values remain OPEN. Source38392504284 and independent38392864515 exact derived JSON custody SUCCESS. Report/receipt STONEAGE-TW10-SAVEDATA-UPSTREAM-R25. Native save/heap ownership OPEN; next R26 direct CALL-supported contexts. This dates reconstruction evidence, not a historical release event.
+
+
+## 2026-10-13 — R26 TW1.0 CALL-supported conditional expression evidence accepted
+
+Original direct CALL-backed contexts recover HeapCreate EAX zero-before-SETE and CMP0x499c7 ([ESP+8] versus EAX) flag provenance; named low-byte composition permits conditional EAX0/1, not an actual value or ABI role. ReAlloc comparison reads separate virtual .data0x1721874/0x1721864 globals; unique LEA/SHL linkage gives conditional20*ECX+320 modulo2^32. Actual globals/frames/paths/allocation/ownership/native persistence remain OPEN. Original source38394940020 and independent38395234686 exact original-derived custody SUCCESS; report/receipt STONEAGE-TW10-SAVEDATA-UPSTREAM-R26. Next R27 original CreateFileA/ReadFile/WriteFile boundary/caller/argument evidence. This dates reconstruction evidence only.

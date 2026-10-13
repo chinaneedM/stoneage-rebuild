@@ -6229,3 +6229,14 @@ Highest NEXT R13: recover exact address/value/frame-relative mutation geometry a
 - Proves full raw .text candidate spans supporting boundary corrections;19 direct transfer candidates in two bounded windows,6 CALL sites/4 CALL-target candidates; new-start ECX source .data0x1721864; old SETE contexts fail to reach the target under bounded graph rules.
 - Does NOT prove executed/complete alignment, true entries/complete callers (677 indirect transfers unresolved), feasible paths, whole EAX/flags/global values, ABI/heap/CRT owner or native save format/IO.
 - Canonical report/receipt: research/recovered/STONEAGE-TW10-SAVEDATA-UPSTREAM-R25-ORIGINAL.json and STONEAGE-TW10-SAVEDATA-UPSTREAM-R25-ACCEPTANCE-R1.json. Next R26 use0x499c3/0x4a09c direct CALL-supported candidates before native IO context promotion.
+
+
+## SRC-TW10-SAVEDATA-UPSTREAM-R26 — 2026-10-13
+
+- S-grade pinned original static identity, all runtime/entry/ABI/ownership interpretations conditional.
+- Original source Action38394940020/job115287645291, branch agent/tw10-savedata-r26-call-root-inputs-20261013 HEADe16213cb60a1a560fa31a9d15fad39626e9052e6; complete archive/runtime/savedata and exact R25 JSON gates rederived, nonexecution/static-only and original purge PASS.
+- Derived-only artifact11811375871 ZIP digest sha256:6f3c6e8919ec3d7ee2922db1c59bbbf7f6fade1554c6aeef1e9023b26bd69e14; JSON9053 bytes SHA256ff829f3aa6b1ebfaf2f2d251581293ca734ef4837f7276f54000f364085b2122.
+- Independent original/head/branch/artifact custody, strict model/tamper limits and exact JSON equality38395234686 SUCCESS;56 synthetic/adjacent R25 tests38394939510 SUCCESS.
+- Proves bounded CALL-supported EAX/flag input candidates, conditional partial-register composition, two separate global memory-load sources and unique LEA/SHL conditional u32 arithmetic relation.
+- Does NOT prove actual EAX/ZF/ECX/global contents, frame/argument or ABI roles, heap creation/reallocation size/success, CRT/FILE/object/alias ownership, caller effects or native persistence/schema/IO.
+- Canonical report/receipt: research/recovered/STONEAGE-TW10-SAVEDATA-UPSTREAM-R26-ORIGINAL.json and STONEAGE-TW10-SAVEDATA-UPSTREAM-R26-ACCEPTANCE-R1.json. Next R27 return to exact original native file-API boundary/caller/argument chain while retaining allocator gaps.

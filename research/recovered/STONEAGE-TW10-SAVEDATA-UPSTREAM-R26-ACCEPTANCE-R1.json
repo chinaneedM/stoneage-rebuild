@@ -1,0 +1,54 @@
+{
+  "schema": "stoneage-tw10-savedata-upstream-r26-acceptance-r1",
+  "status": "ORIGINAL_CONDITIONAL_STATIC_INDEPENDENTLY_ACCEPTED",
+  "historical_scope": "Taiwan Waei/JSS v1.0 exact original runtime/savedata; nonexecuting conditional static expressions",
+  "original_source": {
+    "branch": "agent/tw10-savedata-r26-call-root-inputs-20261013",
+    "head_sha": "e16213cb60a1a560fa31a9d15fad39626e9052e6",
+    "run_id": 38394940020,
+    "job_id": 115287645291,
+    "conclusion": "success",
+    "exact_r25_original_derivative_rederived": true,
+    "originals_purged": true,
+    "original_executable_executed": false,
+    "proprietary_payload_committed": false
+  },
+  "derived_artifact": {
+    "id": 11811375871,
+    "name": "tw10-r26-original-call-root-inputs-derived",
+    "source_run": 38394940020,
+    "zip_digest": "sha256:6f3c6e8919ec3d7ee2922db1c59bbbf7f6fade1554c6aeef1e9023b26bd69e14",
+    "derived_json_bytes": 9053,
+    "derived_json_sha256": "ff829f3aa6b1ebfaf2f2d251581293ca734ef4837f7276f54000f364085b2122",
+    "path": "research/recovered/STONEAGE-TW10-SAVEDATA-UPSTREAM-R26-ORIGINAL.json"
+  },
+  "synthetic": {
+    "tests": 56,
+    "run_id": 38394939510,
+    "job_id": 115287644131,
+    "conclusion": "success",
+    "r25_adjacent_regressions": true
+  },
+  "independent": {
+    "run_id": 38395234686,
+    "job_id": 115288640356,
+    "head_sha": "2212ad357d69449a62f4db0887d84aa89d50dec9",
+    "conclusion": "success",
+    "immutable_source_run_head_branch_artifact_digest": true,
+    "strict_no_promotion_tamper_tests": true,
+    "exact_original_derived_json_equality": true
+  },
+  "accepted_conditional_static": [
+    "Direct CALL syntax0x49864->0x499c3 and0x49e5f->0x4a09c revalidated independently against R25",
+    "Create root0x499c3 graph20/20 reaches SETE/PUSH; EAX unique zero definition0x499c3, flag source CMP0x499c7 of four-byte [ESP+8] vs EAX; conditional possible full EAX0/1, actual frame/ZF/result/ABI role unknown",
+    "ReAlloc root0x4a09c graph53/56: comparison EAX loads .data0x1721874 and ECX loads .data0x1721864, original contents/branch unknown",
+    "Unique LEA0x4a0af to SHL0x4a0b3 candidate link supports conditional u32 expression20*ECX+320 modulo2^32, not an actual heap size/result"
+  ],
+  "remaining_open": [
+    "Actual functions/paths/caller frames/branch/global values",
+    "HeapCreate parameter role/success and heap/CRT/object/alias ownership",
+    "Native filename/CreateFileA/ReadFile/WriteFile handle/buffer/length linkage",
+    "Native schema/framing/checksum/migration/persistence and cross-version/server-only equivalence"
+  ],
+  "next": "R27: return to pinned original native file-API boundary/direct-caller/argument provenance at CreateFileA0x4ed01 and ReadFile/WriteFile; retain allocator/runtime gaps rather than infer a CRT/FILE owner."
+}
