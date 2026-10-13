@@ -1,0 +1,26 @@
+name: Validate TW1.0 R25 boundary/caller/partial-input synthetic and strict guard
+on:
+  workflow_dispatch:
+  push:
+    branches: [main, agent/tw10-savedata-r25-boundary-callers-20261013]
+    paths:
+      - .github/workflows/validate-stoneage-tw10-r25-synthetic.yml
+      - tools/stoneage_tw10_savedata_upstream_r25.py
+      - tools/stoneage_tw10_savedata_upstream_r25_guard.py
+      - tests/test_stoneage_tw10_savedata_upstream_r25.py
+permissions:
+  contents: read
+jobs:
+  synthetic:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install --quiet capstone pefile
+      - name: R25 and R24 synthetic and strict negative controls
+        run: |
+          set -euo pipefail
+          python -m unittest -v tests.test_stoneage_tw10_savedata_upstream_r25 tests.test_stoneage_tw10_savedata_upstream_r24 tests.test_stoneage_tw10_savedata_upstream_r24_guard
+          python -m compileall -q tools/stoneage_tw10_savedata_upstream_r25.py tools/stoneage_tw10_savedata_upstream_r25_guard.py
+          echo TW10_R25_SYNTHETIC_STRICT=PASS
+          echo TW10_R25_ORIGINAL_EVIDENCE=OPEN
