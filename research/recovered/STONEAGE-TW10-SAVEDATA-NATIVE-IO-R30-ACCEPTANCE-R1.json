@@ -1,0 +1,56 @@
+{
+  "schema": "stoneage-tw10-savedata-native-io-r30-acceptance-r1",
+  "status": "ORIGINAL_CONDITIONAL_STATIC_INDEPENDENTLY_ACCEPTED",
+  "historical_scope": "Taiwan Waei/JSS1.0 pinned original runtime/savedata; nonexecuting mask/writer candidates",
+  "original_source": {
+    "branch": "agent/tw10-savedata-r30-mask-writer-20261013",
+    "head_sha": "724838fa88ebbfc381a0deec73edce4e467a8090",
+    "run_id": 38404299461,
+    "job_id": 115319726044,
+    "conclusion": "success",
+    "exact_r29_original_derivative_rederived": true,
+    "originals_purged": true,
+    "original_executable_executed": false,
+    "proprietary_payload_committed": false
+  },
+  "derived_artifact": {
+    "id": 11818650369,
+    "name": "tw10-r30-original-mask-writer-derived",
+    "source_run": 38404299461,
+    "zip_digest": "sha256:f49a3be1be1014e8cb9d966540c0dbdd5fcc0654f772b1319293013f3cfccf21",
+    "derived_json_bytes": 12559,
+    "derived_json_sha256": "760730dc57c823a7279b22a0944ffaac588e77d4fb6b0d5f5024265345f0b45a",
+    "path": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R30-ORIGINAL.json"
+  },
+  "synthetic": {
+    "tests": 61,
+    "run_id": 38404299604,
+    "job_id": 115319727392,
+    "conclusion": "success",
+    "r29_adjacent_regressions": true
+  },
+  "independent": {
+    "run_id": 38404780799,
+    "job_id": 115321429623,
+    "head_sha": "7822838f659f76fc140b991b3524bba2280a913d",
+    "conclusion": "success",
+    "immutable_source_run_head_branch_artifact_digest": true,
+    "strict_no_promotion_tamper_tests": true,
+    "exact_original_derived_json_equality": true
+  },
+  "accepted_conditional_static": [
+    "Original full32-bit AND ESI,31 at0x4a8f6/0x4c5d6 followed by SHL ESI,3 at0x4a8fc/0x4c5e0 has unique untruncated graph-local mask-to-shift definition links. Separate conditional u32 expression((pre-mask ESI &31)<<3) mod2^32 qualifies in both contexts, not an evaluated original offset/index range, descriptor or handle role.",
+    "ReadFile mask ESI input comes from memory-load0x4a8e4 [EBP+8], with EBP candidate MOV EBP,ESP0x4a8dd. WriteFile mask ESI input is MOV ESI,ECX0x4c5d1, depending on ECX memory-load0x4c5bd [EBP+8] and EBP copy0x4c5b5. These remain frame-relative candidate syntax, not real caller-frame/parameter ownership or equal original argument values.",
+    "ReadFile/WriteFile graphs174/200 and139/156 nodes/edges, compact inputs3/4 queries, no frontier/node/query/candidate cap. General reaching semantics still mark AND as unmodeled; symbolic composition is separate and retains original input/result/flag/API uncertainty.",
+    "Full331776-byte raw .text linear scan104229 instructions/eight gaps finds eight direct CALL target candidates in[0x4c85a,0x4c9ea), all within32-sample cap. Writer0x4c9da and two selected targets0x4c9ba/0x4c953 are linear scan boundaries only. Root0x4c9ba supported by CALL0x49879; root0x4c953 supported by CALL0x48e73. No complete indirect caller/entry/runtime proof.",
+    "Original MOV0x4c9da stores full-width ESI to absolute virtual .data displacement0x1721760. Candidate root0x4c9ba graph143/164 reaches this writer; ESI sources are MOV ESI,EAX0x4c9cb and UNKNOWN_CALL0x4c9d4, with EAX before copy UNKNOWN_CALL0x4c9c6. Source values, callee returns/preservation, allocation and actual global initialization/owner remain unknown.",
+    "Selected root0x4c953 graph26/29 does NOT reach0x4c9da; empty writer sources do not prove original absence. Its seven direct caller candidates include0x4ed26 in CreateFileA's numeric continuation region, supporting a concrete next native-handle-capture audit without treating0x4c953 as global writer or verified file/CRT helper."
+  ],
+  "remaining_open": [
+    "Actual descriptor/index/offset/ESP/frame/path/argument values and API/callee effects",
+    "Shared writer actual source/global initialization/alias completeness/lifetimes/owner",
+    "CreateFileA-return capture and original filename/handle/buffer/length128 linkage",
+    "Native schema/framing/checksum/migration/persistence and cross-version/server-only equivalence"
+  ],
+  "next": "R31: return to original CreateFileA0x4ed01 conditional continuation from0x4ed07 and audit direct CALL0x4ed26->0x4c953 (exact R30 scan candidate). Recover physical PUSH/register sources and bounded callee memory-store candidates, with explicit entry/path/return/stack/alias uncertainty; no actual API EAX/handle success or CRT/FILE owner admission. Retain global writer0x4c9ba's opaque calls0x4c9c6/0x4c9d4 as independent initialization gaps, audit their identities only if useful, and do not block the whole native save chain on generic allocator exhaustion. Filename->returned handle->ReadFile/WriteFile buffer/length128/schema/persistence remain OPEN."
+}
