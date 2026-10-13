@@ -129,3 +129,17 @@ Highest NEXT R25: coherent boundary/direct caller candidates near HeapAlloc
 0x499ff and HeapReAlloc0x4a0a1, with SETE AL/upper-EAX and shifted ECX inputs
 still OPEN; then use qualified context for native filename/IO tracing.
 All system-family PARTIAL/OPEN statuses and restoration-first review remain.
+
+
+## 2026-10-13 queue supersession (R25 accepted)
+
+R25 full raw-text boundary/direct-transfer candidates and new-anchor input
+sources are independently accepted as conditional original static evidence.
+Direct CALL targets supply entry candidates, not complete/actual function or
+caller proofs. Old SETE graph roots fail to reach the site; those empty sources
+cannot support value/absence claims. Native persistence/heap/ABI remain OPEN.
+
+Highest NEXT R26: use direct CALL-supported0x499c3/0x4a09c contexts for SETE
+flags/full-EAX and ReAlloc EAX/ECX inputs, with bounded opaque-call/path gaps,
+then resume qualified native filename/IO analysis. All system-family
+PARTIAL/OPEN statuses and Stage A restoration-first review remain binding.

@@ -1,0 +1,56 @@
+{
+  "schema": "stoneage-tw10-savedata-upstream-r25-acceptance-r1",
+  "status": "ORIGINAL_CONDITIONAL_STATIC_INDEPENDENTLY_ACCEPTED",
+  "historical_scope": "Taiwan Waei/JSS v1.0 pinned runtime/savedata; original static nonexecution only",
+  "original_source": {
+    "branch": "agent/tw10-savedata-r25-boundary-callers-20261013",
+    "head_sha": "2437eac2c14bf8e8f983f0891effd055f8cd2940",
+    "run_id": 38392504284,
+    "job_id": 115279484570,
+    "conclusion": "success",
+    "exact_r24_original_derivative_rederived": true,
+    "originals_purged": true,
+    "original_executable_executed": false,
+    "proprietary_payload_committed": false
+  },
+  "derived_artifact": {
+    "id": 11809322312,
+    "source_run": 38392504284,
+    "name": "tw10-r25-original-boundary-callers-derived",
+    "zip_digest": "sha256:656285d461cd9306d979678ca53fa3dfbdeac886743041d836465648d553dc8a",
+    "derived_json_bytes": 12484,
+    "derived_json_sha256": "3f345e590290eb3f30962e4640f3eec23458fc8fa67c22118b7ef832a5595282",
+    "path": "research/recovered/STONEAGE-TW10-SAVEDATA-UPSTREAM-R25-ORIGINAL.json"
+  },
+  "synthetic": {
+    "tests": 59,
+    "run_id": 38392504100,
+    "job_id": 115279483498,
+    "conclusion": "success",
+    "r24_adjacent_regressions": true
+  },
+  "independent": {
+    "run_id": 38392864515,
+    "job_id": 115280700338,
+    "head_sha": "2b4f292c612ece4e43e75c76959da4fd16f6f782",
+    "conclusion": "success",
+    "immutable_source_run_head_branch_artifact_digest": true,
+    "strict_no_promotion_tamper_tests": true,
+    "exact_original_derived_json_equality": true
+  },
+  "accepted_conditional_static": [
+    "Full331776-byte raw .text linear candidate scan104229 instructions/eight gaps agrees that0x499ff/0x4a0a1/SETE/LEA/SHL are scan boundaries;0x49a00 and0x4a0a0 are inside preceding instruction spans",
+    "Two target windows contain19 direct transfer candidates:6 CALLs,2 unconditional and11 conditional jumps, no sample truncation; full raw-text scan leaves677 indirect transfers unresolved",
+    "CALL target candidates0x499a8/0x499c3/0x499ff/0x4a09c; in particular0x49864->0x499c3,0x499e3->0x499ff,0x49e5f->0x4a09c",
+    "New0x499ff/0x4a0a1 candidate graphs15/14 and52/55 nodes/edges reach HeapAlloc/ReAlloc calls without actual entry/path/ABI promotion",
+    "New-anchor ECX comparison/LEA source is four-byte .data0x1721864 load at0x4a0a1; EAX comparison input remains entry unknown",
+    "Old SETE contexts0x499b0/0x499c0 do not reach SETE/PUSH in their bounded CFGs; flags/upper-EAX/full EAX value unresolved"
+  ],
+  "remaining_open": [
+    "Actual function entries/complete callers/feasible paths and decoded-versus-executed alignment",
+    "HeapCreate SETE flags and full EAX values; shifted ECX and global contents",
+    "Native filename/handle/buffer/schema/framing/checksum/migration/persistence",
+    "Heap/object lifetime/alias, CRT component ownership and server/cross-version equivalence"
+  ],
+  "next": "R26: use direct CALL-supported0x499c3/0x4a09c candidates to recover SETE flag/full-EAX and ReAlloc EAX/ECX sources, preserve gaps, then resume qualified native filename/IO context."
+}

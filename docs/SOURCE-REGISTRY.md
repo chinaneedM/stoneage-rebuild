@@ -6218,3 +6218,14 @@ Highest NEXT R13: recover exact address/value/frame-relative mutation geometry a
 - Proves bounded original SETE AL barrier, three HeapAlloc PUSH operands under wider candidate prefixes, conflicting instruction spans between candidate starts, SHL2/LEA EAX input geometry and a comparison-defined JNE candidate.
 - Does NOT prove original verified instruction/function entries, feasible paths, EAX upper bits, ABI roles, actual heap size/success/owner, native file/handle/buffer linkage/save IO or cross-version semantics. Earlier alternate-anchor memory-add candidate is not accepted as an original executed store.
 - Canonical report/receipt: research/recovered/STONEAGE-TW10-SAVEDATA-UPSTREAM-R24-ORIGINAL.json and STONEAGE-TW10-SAVEDATA-UPSTREAM-R24-ACCEPTANCE-R1.json. Next R25 coherent boundary/caller candidates before any allocator-context or native-IO promotion.
+
+
+## SRC-TW10-SAVEDATA-UPSTREAM-R25 — 2026-10-13
+
+- S-grade identity for hash-pinned original static derivative; all entry/path/value interpretations conditional.
+- Original source Action38392504284/job115279484570, branch agent/tw10-savedata-r25-boundary-callers-20261013 HEAD2437eac2c14bf8e8f983f0891effd055f8cd2940, whole-archive/runtime/savedata and exact R24 report gates rederived, nonexecution and originals purge PASS.
+- Derived-only artifact11809322312 ZIP digest sha256:656285d461cd9306d979678ca53fa3dfbdeac886743041d836465648d553dc8a; JSON12484 bytes SHA2563f345e590290eb3f30962e4640f3eec23458fc8fa67c22118b7ef832a5595282.
+- Independent source/head/branch/artifact custody, strict tamper limits and exact original-derived JSON equality Action38392864515/job115280700338 SUCCESS;59 synthetic/adjacent R24 tests38392504100 SUCCESS.
+- Proves full raw .text candidate spans supporting boundary corrections;19 direct transfer candidates in two bounded windows,6 CALL sites/4 CALL-target candidates; new-start ECX source .data0x1721864; old SETE contexts fail to reach the target under bounded graph rules.
+- Does NOT prove executed/complete alignment, true entries/complete callers (677 indirect transfers unresolved), feasible paths, whole EAX/flags/global values, ABI/heap/CRT owner or native save format/IO.
+- Canonical report/receipt: research/recovered/STONEAGE-TW10-SAVEDATA-UPSTREAM-R25-ORIGINAL.json and STONEAGE-TW10-SAVEDATA-UPSTREAM-R25-ACCEPTANCE-R1.json. Next R26 use0x499c3/0x4a09c direct CALL-supported candidates before native IO context promotion.
