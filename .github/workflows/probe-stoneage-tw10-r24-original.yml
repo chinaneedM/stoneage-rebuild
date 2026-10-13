@@ -1,0 +1,63 @@
+name: Probe TW1.0 original R24 prefix barriers, scalar source and branch flags
+on:
+  workflow_dispatch:
+  push:
+    branches: [agent/tw10-savedata-r24-prefix-scalar-flags-20261013]
+    paths:
+      - .github/workflows/probe-stoneage-tw10-r24-original.yml
+      - tools/stoneage_tw10_savedata_upstream_r24.py
+      - tests/test_stoneage_tw10_savedata_upstream_r24.py
+permissions:
+  contents: read
+jobs:
+  original:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - name: R24 and R23 synthetic prerequisite
+        run: |
+          set -euo pipefail
+          pip install --quiet capstone pefile
+          python -m unittest -v tests.test_stoneage_tw10_savedata_upstream_r24 tests.test_stoneage_tw10_savedata_upstream_r23
+      - name: Transient historic pinned archive
+        run: |
+          set -euo pipefail
+          for attempt in 1 2 3; do
+            if python -m tools.stoneage_tw10_archive_parallel_download --deadline 1500 --workers 16 --chunk 8388608 --output /tmp/CD_DIC.rar; then
+              echo TW10_R24_ARCHIVE_PINNED=PASS
+              break
+            fi
+            rm -f /tmp/CD_DIC.rar
+            if [ "$attempt" -eq 3 ]; then
+              echo TW10_R24_ARCHIVE_SOURCE_UNAVAILABLE=OPEN
+              exit 1
+            fi
+            sleep 10
+          done
+      - name: Extract pinned original BIN TEMP only
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq 7zip
+          mkdir -p /tmp/stoneage-r24
+          7z x -y -o/tmp/stoneage-r24 /tmp/CD_DIC.rar STONEAGE.bin >/dev/null
+          test "$(stat -c %s /tmp/stoneage-r24/STONEAGE.bin)" -eq 523449360
+      - name: Static original R24 derived-only report
+        run: |
+          set -euo pipefail
+          python -m tools.stoneage_tw10_savedata_upstream_r24 --bin /tmp/stoneage-r24/STONEAGE.bin > /tmp/stoneage-r24-derived.json
+          python -m tools.stoneage_tw10_savedata_upstream_r24_guard --report /tmp/stoneage-r24-derived.json
+          test "$(stat -c %s /tmp/stoneage-r24-derived.json)" -le 70000
+          echo TW10_R24_ORIGINAL_STATIC_ONLY=PASS
+          echo TW10_R24_NATIVE_SAVE=OPEN
+      - name: Always purge historical proprietary content
+        if: always()
+        run: rm -rf /tmp/CD_DIC.rar /tmp/stoneage-r24
+      - name: Upload DERIVED JSON only
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: tw10-r24-original-prefix-scalar-flags-derived
+          path: /tmp/stoneage-r24-derived.json
+          retention-days: 21
