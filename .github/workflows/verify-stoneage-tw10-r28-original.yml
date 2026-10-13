@@ -1,0 +1,68 @@
+name: Independently verify TW1.0 R28 original CALL-supported native file API inputs
+on:
+  workflow_dispatch:
+  push:
+    branches: [main, agent/tw10-savedata-r28-call-supported-io-20261013]
+    paths:
+      - .github/workflows/verify-stoneage-tw10-r28-original.yml
+      - tools/stoneage_tw10_savedata_native_io_r28_guard.py
+      - research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R28-ORIGINAL.json
+permissions:
+  contents: read
+  actions: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify immutable R28 original source and artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          identity="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/38400713383" --jq '[.status,.conclusion,.head_sha,.head_branch] | join("|")')"
+          test "$identity" = 'completed|success|d33cacc472793a38422d9e9cf60107c585e3edf8|agent/tw10-savedata-r28-call-supported-io-20261013'
+          artifact="$(gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/11814279564" --jq '[.workflow_run.id,.name,.digest,.expired] | join("|")')"
+          test "$artifact" = '38400713383|tw10-r28-original-call-supported-io-derived|sha256:348ae91b6727a24a2b3db2685d007aace1c814e98eb5c564f7b91e27ef15d967|false'
+      - name: Retrieve only bounded derived metadata
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/r28-independent
+          gh run download 38400713383 --repo "$GITHUB_REPOSITORY" --name tw10-r28-original-call-supported-io-derived --dir /tmp/r28-independent
+          test "$(find /tmp/r28-independent -type f | wc -l)" -eq 1
+          test -f /tmp/r28-independent/stoneage-r28-derived.json
+          test ! -L /tmp/r28-independent/stoneage-r28-derived.json
+          test "$(stat -c %s /tmp/r28-independent/stoneage-r28-derived.json)" -le 70000
+          sha256sum /tmp/r28-independent/stoneage-r28-derived.json
+          wc -c /tmp/r28-independent/stoneage-r28-derived.json
+      - name: Strict semantic constraints and independent tamper tests
+        run: |
+          set -euo pipefail
+          pip install --quiet capstone pefile
+          python -m unittest -v tests.test_stoneage_tw10_savedata_native_io_r28
+          python -m tools.stoneage_tw10_savedata_native_io_r28_guard --report /tmp/r28-independent/stoneage-r28-derived.json
+      - name: Compare accepted witness and disclose canonical bounded JSON
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from tools.stoneage_tw10_savedata_native_io_r28_guard import validate
+          d=json.loads(Path('/tmp/r28-independent/stoneage-r28-derived.json').read_text())
+          validate(d)
+          canonical=Path('research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R28-ORIGINAL.json')
+          if canonical.exists():
+              assert json.loads(canonical.read_text())==d, 'R28 exact original-derived JSON differs from committed witness'
+              print('TW10_R28_EXACT_DERIVED_JSON_EQUALITY=PASS')
+          else:
+              print('TW10_R28_REVIEW_ONLY_NOT_YET_COMMITTED=PASS')
+          print('TW10_R28_DERIVED_JSON_BEGIN')
+          print(json.dumps(d,sort_keys=True,separators=(',',':')))
+          print('TW10_R28_DERIVED_JSON_END')
+          PY
+      - name: Always remove temporary derived metadata
+        if: always()
+        run: rm -rf /tmp/r28-independent
