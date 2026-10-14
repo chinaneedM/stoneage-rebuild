@@ -220,3 +220,10 @@ Highest NEXT R39: exact mask and bounded symbolic stack-token correspondence if 
 R39 independently accepts mask/shift, conditional slot/register-symbol and native read-caller syntax with explicit bounded-prefix/stack assumptions. Actual values, ABI/frame/owner/alias effects and native save payload/persistence stay OPEN. The immediate1/local byte address/0x1A compare supports an end-check hypothesis only; no text/EOF/CRT or128-byte schema FACT admitted. All system-family PARTIAL/OPEN gates unchanged.
 
 Highest NEXT R40: native read-context entry stack/frame/parameter and post-call branch/address provenance, distinguish the candidate probe branch, then return to savedata-specific filename/buffer/length recovery. Avoid generic ownership exhaustion. Stage A restoration before joint future-engine/game review remains binding.
+
+
+## 2026-10-14 queue supersession (R40 accepted)
+
+R40 independently accepts bounded read-prolog/frame-slot geometry, API/PUSH syntax, equal address spellings and local flag-source candidates. Original contents, ABI/alias/owner/preservation, actual end-check/text/EOF role and native savedata payload/schema/persistence remain OPEN. All system-family PARTIAL/OPEN gates unchanged.
+
+Highest NEXT R41: return to savedata-specific original filename PUSH/CALL sites0x40064->0x40069,0x400e4->0x400e9,0x40115->0x4011a,0x402a0->0x402a5, all direct targets0x487ba from accepted R4–R7 evidence. Revalidate their exact immediate address0x63634 and physical pre-CALL suffix, then recover bounded caller continuation buffer/count/size operands and downstream direct CALL identities with coherent original boundary/entry support. These are independent conditional caller contexts; do not assume the0x487ba return or register/frame preservation. Seek savedata-specific payload read/write candidates, keeping generic open/end-check paths separate. No global/table/allocator ownership exhaustion; no literal128 schema promotion. All system-family PARTIAL/OPEN states and Stage A restoration before joint future-engine/game review remain binding.
