@@ -9,3 +9,12 @@ Highest next: qualify the first helper0x4e80a physical caller PUSH ESI0x4ed47/PU
 Second helper0x4c761 shares LEA0x4c77a and has SetFilePointer0x4c7b0/GetLastError0x4c7bd imports plus byte RMW0x4c7d6. If relevant, inspect its ESP-relative PUSH geometry and scalar/address inputs without admitting original seek outcome, descriptor owner, CRT identity or caller-return effects. Keep parent original ReadFile-context CALL0x4edb0->0x4a8dc as independent discovery until linked by qualifying evidence.
 
 Authenticated original source remains transient and unexecuted; publish only bounded derivative metadata with strict synthetic/tamper tests, immutable artifact custody and exact canonical equality. Actual filename → successful CreateFileA handle → ReadFile/WriteFile buffers/length128/schema/persistence, frame/alias/heap/CRT ownership and cross-version/server equivalence stay OPEN. Stage A restoration first.
+
+
+## 2026-10-14 — bounded ESP model and exact source audit implemented
+
+Exact accepted R37 derivative SHA256a16c858a46d502dec5c99fe43528601f0bc89449c671a717198725c95aa496d0 is rederived/guarded before original inspection. First helper has a separate bounded graph and replayable abstract ESP effects/edges. PUSH/POP widths are explicit; CALLs and other ESP writes are unknown, not guessed ABI cleanup. Branch offset joins, cycles, state/barrier/delta/update bounds, and unreachable query cases stay explicit. Geometry requires a 32-bit stack-address attribute and 32-bit near-CALL return slot; actual original stack attributes/contents are not established. Explicit memory writes remain alias/content gaps, independent of syntactic ESP arithmetic.
+
+Two helper stack-read shapes are compared with prior physical PUSH suffixes using separately recomputed entry-relative/caller-relative offsets. No hardware slot candidate establishes real parameter/value/ownership binding. Exact store operands and scalar/LEA/source queries are emitted; no original state is evaluated.
+
+Analyzer/guard: tools/stoneage_tw10_savedata_native_io_r38.py and corresponding strict gate. Synthetic/tamper/cycle tests: tests/test_stoneage_tw10_savedata_native_io_r38.py. Original probe: .github/workflows/probe-stoneage-tw10-r38-original.yml. Original STATIC acceptance awaits source SUCCESS, independent immutable custody, strict negative controls and exact canonical JSON equality. Native handle/schema/persistence remains OPEN; Stage A only.
