@@ -1,4 +1,17 @@
-# TW1.0 R41 — savedata-specific caller continuations
+# TW1.0 R41 — savedata-specific callers and payload continuation
+
+Status: READY after independently accepted R40 static evidence. No R41 original FACT admitted.
+
+R40 bounds the generic parent CALL0x4edb0->0x4a8dc/end-check hypothesis: conditional frame/slot geometry, mutated count slot, equal address spellings and unknown CALL effects do not establish native savedata payload or persistence. Do not continue generic CRT/table/allocator ownership exhaustion.
+
+Highest NEXT R41: return to savedata-specific original filename PUSH/CALL sites0x40064->0x40069,0x400e4->0x400e9,0x40115->0x4011a,0x402a0->0x402a5, all direct targets0x487ba from accepted R4–R7 evidence. Revalidate their exact immediate address0x63634 and physical pre-CALL suffix, then recover bounded caller continuation buffer/count/size operands and downstream direct CALL identities with coherent original boundary/entry support. These are independent conditional caller contexts; do not assume the0x487ba return or register/frame preservation. Seek savedata-specific payload read/write candidates, keeping generic open/end-check paths separate. No global/table/allocator ownership exhaustion; no literal128 schema promotion. All system-family PARTIAL/OPEN states and Stage A restoration before joint future-engine/game review remain binding.
+
+Start with exact four authenticated original immediate-address uses and their direct CALL identities from R4/R5/R6/R7; do not use obsolete provisional R7 argument labels. Candidate pre/post-call windows must have exact decoder boundaries and explicit graph/frontier/cap declarations. Inspect physical PUSH suffixes and buffer/count/scalar/address definitions plus conditional downstream CALL/JMP syntax. Treat CALL0x487ba and subsequent callees as opaque unless separately justified; static returning-call continuation remains conditional. A filename-labelled token or literal128 never proves concrete file IO/schema. Retain actual original malformed/native framing/checksum/migration/persistence and alias/owner/ABI/server/cross-version gaps.
+
+Original source always authenticated, transient, unexecuted and unpublished. Derived-only metadata with meaningful invented negative controls, immutable source/artifact custody, pinned digest/size and independent canonical JSON equality required.
+
+
+## 2026-10-14 — independent original acceptance supersedes READY
 
 Status: INDEPENDENTLY ACCEPTED CONDITIONAL ORIGINAL STATIC ONLY.
 
