@@ -59,8 +59,8 @@ def validate(d):
         reads,count=c.get('early_frame_read_shapes'),c.get('early_frame_read_count')
         require(type(count) is int and 0<=count<=256 and isinstance(reads,list) and len(reads)==min(count,MAX_READS)
                 and c.get('early_frame_reads_truncated') is (count>MAX_READS)
-                and c.get('early_frame_read_scope')=='instruction_starts_first96bytes_whole_instructions_in_parent768','early read cap')
-        rows_guard(reads,MAX_READS,root,root+96,keys,cap,ats)
+                and c.get('early_frame_read_scope')=='instruction_starts_first160bytes_whole_instructions_in_parent768','early read cap')
+        rows_guard(reads,MAX_READS,root,root+EARLY_SPAN,keys,cap,ats)
         require(all(r['mnemonic']!='lea' and any(o.get('kind')=='memory' and o.get('decoder_read') and o.get('geometry',{}).get('base_register')=='ebp'
                 for o in r['operands']) for r in reads),'frame read syntax')
         defs=e.get('frame_definition_shapes');rows_guard(defs,MAX_DEFS,root,root+768,keys,cap,ats)

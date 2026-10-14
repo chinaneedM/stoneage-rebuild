@@ -31,6 +31,7 @@ STATUS='PINNED_ORIGINAL_CONDITIONAL_NATIVE_SLOTS_MUTABLE_SOURCES_SAVE_OPEN'
 PRIOR_SHA256='f5eeaac700c649f92e3fca5e7cbefa465879048f54d84b3896dcdb72115d7b42'
 MUTABLE=((0x48bbc,0x48bd2,0x48bca,'eax'),(0x48660,0x48678,0x4866e,'ecx'))
 MAX_READS=16
+EARLY_SPAN=160
 MAX_DEFS=16
 MAX_SOURCE_ROUNDS=3
 FLAGS=('actual_native_parameter_values_or_abi_roles_proven','actual_esp_stack_contents_or_frame_preservation_proven',
@@ -118,7 +119,7 @@ def native_context(dec,sections,imports,prior,spec):
     bysite={r['site_rva']:r for r in adjustments}
     effects=[literal_effect(bysite[e['site_rva']],e) if e['site_rva'] in bysite else e for e in inherited]
     states,updates,limit=stack_states(effects,edges,root)
-    early=[at for at,ins in sorted(nodes.items()) if at<root+96 and ins.mnemonic!='lea'
+    early=[at for at,ins in sorted(nodes.items()) if at<root+EARLY_SPAN and ins.mnemonic!='lea'
            and any(o.type==X86_OP_MEM and o.access&1 and ins.reg_name(o.mem.base)=='ebp' for o in ins.operands)]
     reads=[instruction_row(dec,sections,nodes,at) for at in early[:MAX_READS]]
     prolog=[instruction_row(dec,sections,nodes,at) for at,ins in sorted(nodes.items()) if at<root+24
@@ -144,7 +145,7 @@ def native_context(dec,sections,imports,prior,spec):
             'qualified_prefix_evidence':evidence,'stack_model_updates':updates,'stack_model_update_limit_hit':limit,
             'entry_prolog_shapes':prolog,'early_frame_read_count':len(early),'early_frame_read_shapes':reads,
             'early_frame_reads_truncated':len(early)>MAX_READS,
-            'early_frame_read_scope':'instruction_starts_first96bytes_whole_instructions_in_parent768',
+            'early_frame_read_scope':'instruction_starts_first160bytes_whole_instructions_in_parent768',
             'frame_input_sources':inputs,'frame_definition_count':len(sites),'frame_definitions_truncated':len(sites)>MAX_DEFS,
             'conditional_native_slot_bridges':bridges,
             'native_prefix_token_audits':[prefix_audit(root,evidence,r,b,inputs) for r,b in zip(reads,bridges)],
