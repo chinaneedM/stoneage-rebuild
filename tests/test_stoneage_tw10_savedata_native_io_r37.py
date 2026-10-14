@@ -71,6 +71,26 @@ class R37Synthetic(unittest.TestCase):
         row = fixture()["partial_definition_shapes"][0]
         row["mnemonic"] = "shld"
         self.assertFalse(partial_model(row)["qualified_partial_write_syntax"])
+    def test_full_width_shift_distinct_from_partial(self):
+        row = fixture()["partial_definition_shapes"][0]
+        row["mnemonic"] = "sar"
+        row["operands"][0].update(register="ecx", width_bytes=4)
+        row["operands"][1].update(constant=5)
+        model = full_width_model(row)
+        self.assertFalse(partial_model(row)["qualified_partial_write_syntax"])
+        self.assertEqual(model["operation"], "sar")
+        self.assertTrue(model["sar_uses_signed_reinterpretation"])
+        self.assertEqual(model["rhs"], {"kind":"shift_count", "constant":5})
+        self.assertIsNone(model["evaluated_original_result"])
+    def test_full_width_left_shift(self):
+        row = fixture()["partial_definition_shapes"][0]
+        row["mnemonic"] = "shl"
+        row["operands"][0].update(register="esi", width_bytes=4)
+        row["operands"][1].update(constant=3)
+        self.assertEqual(full_width_model(row)["operation"], "shl")
+    def test_byte_is_not_full_width_scalar(self):
+        row = fixture()["partial_definition_shapes"][0]
+        self.assertEqual(full_width_model(row)["kind"], "unqualified_scalar")
     def test_direct_call_supported_helpers(self):
         hs = fixture()["helper_candidates"]
         self.assertEqual([h["caller_call_identity"]["direct_target_rva"] for h in hs], [r for _, r in HELPERS])
@@ -109,6 +129,8 @@ class R37Tamper(unittest.TestCase):
         self.reject(lambda d:d["partial_definition_shapes"][0]["conditional_partial_model"].update(preserved_parent_bits_mask=0))
     def test_partial_value(self):
         self.reject(lambda d:d["partial_definition_shapes"][0]["conditional_partial_model"].update(evaluated_original_value_or_result=1))
+    def test_scalar_value(self):
+        self.reject(lambda d:d["partial_definition_shapes"][0]["conditional_full_width_model"].update(evaluated_original_result=1))
     def test_missing_definition_source(self):
         self.reject(lambda d:d["partial_definition_shapes"][0].update(input_query_registers=[]))
     def test_wrong_helper_target(self):

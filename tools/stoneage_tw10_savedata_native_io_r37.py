@@ -16,6 +16,7 @@ from tools.stoneage_tw10_savedata_native_io_r36 import (
 from tools.stoneage_tw10_savedata_native_io_r36_guard import validate as validate_r36
 from tools.stoneage_tw10_savedata_native_io_r28 import candidate_graph, input_surface, ALIASES
 from tools.stoneage_tw10_savedata_native_io_r30 import graph_meta
+from tools.stoneage_tw10_savedata_native_io_r29 import scalar_model
 from tools.stoneage_tw10_savedata_write_shapes_r17 import operand_shape
 from tools.stoneage_tw10_savedata_upstream_r23 import local_push_suffix
 from tools.stoneage_tw10_savedata_frontier_r12 import call_identity
@@ -91,6 +92,11 @@ def instruction_row(dec, sections, nodes, site):
             "input_query_registers": sorted(queries),
             "actual_instruction_effect_or_value_known": False}
 
+def full_width_model(row):
+    ops = row["operands"]
+    reg = ops[0].get("register") if ops and ops[0].get("kind") == "register" else None
+    return scalar_model({"class": row["mnemonic"], "operands": ops}, reg)
+
 def memory_surface(dec, sections, imports, root):
     nodes, edges, front, hit = candidate_graph(dec, root)
     refs, calls, queries = [], [], set()
@@ -151,6 +157,7 @@ def derive(dec, sections, imports, prior):
     partial = [instruction_row(dec, sections, nodes, at) for at in PARTIAL_SITES]
     for row in partial:
         row["conditional_partial_model"] = partial_model(row)
+        row["conditional_full_width_model"] = full_width_model(row)
     stores = [instruction_row(dec, sections, nodes, at) for at in STORE_SITES]
     queries = {(r["site_rva"], reg) for r in partial + stores for reg in r["input_query_registers"]}
     helpers = []

@@ -47,6 +47,7 @@ def validate(d):
     for row, site in zip(parts, PARTIAL_SITES):
         row_guard(row, site, keys, capped)
         require(row.get("conditional_partial_model") == partial_model(row), "partial-register model")
+        require(row.get("conditional_full_width_model") == full_width_model(row), "full-width scalar model")
     for row, site in zip(stores, STORE_SITES):
         row_guard(row, site, keys, capped)
         require(row.get("mnemonic") == "mov" and len(row["operands"]) == 2
