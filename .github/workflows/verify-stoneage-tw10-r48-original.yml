@@ -22,17 +22,17 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
-          identity="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/38651895475" --jq '[.status,.conclusion,.head_sha,.head_branch] | join("|")')"
-          test "$identity" = 'completed|success|ed98875e3c9806d2dbf9f288e6a568863f1ef5bc|agent/tw10-savedata-r48-count-return-loop-20261015'
-          artifact="$(gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/11934579327" --jq '[.workflow_run.id,.name,.digest,.expired] | join("|")')"
-          test "$artifact" = '38651895475|tw10-r48-original-count-return-loop-derived|sha256:2bf989d3fa0a0267aaafe45f8d41ae97de75e2ed87cdd2b6c239ec110c5c8eb8|false'
+          identity="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/38652256320" --jq '[.status,.conclusion,.head_sha,.head_branch] | join("|")')"
+          test "$identity" = 'completed|success|f8f052f85b9e61469d946195a779897b7cc47b92|agent/tw10-savedata-r48-count-return-loop-20261015'
+          artifact="$(gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/11935740518" --jq '[.workflow_run.id,.name,.digest,.expired] | join("|")')"
+          test "$artifact" = '38652256320|tw10-r48-original-count-return-loop-derived|sha256:79b570f938e04745c452990d434af54492a45e706c0630a7f3b184732f9695ac|false'
       - name: Download bounded R48 original-derived metadata only
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
           mkdir -p /tmp/r48-independent
-          gh run download 38651895475 --repo "$GITHUB_REPOSITORY" --name tw10-r48-original-count-return-loop-derived --dir /tmp/r48-independent
+          gh run download 38652256320 --repo "$GITHUB_REPOSITORY" --name tw10-r48-original-count-return-loop-derived --dir /tmp/r48-independent
           test "$(find /tmp/r48-independent -type f | wc -l)" -eq 1
           test -f /tmp/r48-independent/stoneage-r48-derived.json
           test ! -L /tmp/r48-independent/stoneage-r48-derived.json
@@ -53,8 +53,8 @@ jobs:
           from pathlib import Path
           from tools.stoneage_tw10_savedata_native_io_r48_guard import validate
           source=Path('/tmp/r48-independent/stoneage-r48-derived.json').read_bytes()
-          assert len(source)==78594
-          assert hashlib.sha256(source).hexdigest()=='c6c92887ec57b8c9b6b16e73fdb1434fa7f0dc70b72e5891e2ff392909a4424e'
+          assert len(source)==87512
+          assert hashlib.sha256(source).hexdigest()=='f92a652b446a5433fa1afaa5708112c91bd39c1ef2c4fff27e69a419f013ccfa'
           report=json.loads(source)
           validate(report)
           p=Path('research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R48-ORIGINAL.json')
