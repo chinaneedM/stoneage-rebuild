@@ -1,0 +1,72 @@
+name: Independently verify TW1.0 R41 original savedata-specific caller continuations
+on:
+  workflow_dispatch:
+  push:
+    branches: [agent/tw10-savedata-r41-savedata-callers-20261014, main]
+    paths:
+      - .github/workflows/verify-stoneage-tw10-r41-original.yml
+      - tools/stoneage_tw10_savedata_native_io_r41_guard.py
+      - research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R41-ORIGINAL.json
+permissions:
+  contents: read
+  actions: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Authenticate independent immutable original run and artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          identity="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/38572368408" --jq '[.status,.conclusion,.head_sha,.head_branch] | join("|")')"
+          test "$identity" = 'completed|success|60e22410c5f6f84f6d0ad9f6169ea6b2aa2f5c0b|agent/tw10-savedata-r41-savedata-callers-20261014'
+          artifact="$(gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/11898143745" --jq '[.workflow_run.id,.name,.digest,.expired] | join("|")')"
+          test "$artifact" = '38572368408|tw10-r41-original-savedata-callers-derived|sha256:e7ed8e2afc1f25a6250bafa4622be27613b6e0a6c63f90771c296f3a93e2dbe9|false'
+      - name: Download bounded R41 original-derived metadata only
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/r41-independent
+          gh run download 38572368408 --repo "$GITHUB_REPOSITORY" --name tw10-r41-original-savedata-callers-derived --dir /tmp/r41-independent
+          test "$(find /tmp/r41-independent -type f | wc -l)" -eq 1
+          test -f /tmp/r41-independent/stoneage-r41-derived.json
+          test ! -L /tmp/r41-independent/stoneage-r41-derived.json
+          test "$(stat -c %s /tmp/r41-independent/stoneage-r41-derived.json)" -le 300000
+          sha256sum /tmp/r41-independent/stoneage-r41-derived.json
+          wc -c /tmp/r41-independent/stoneage-r41-derived.json
+      - name: Replay strict R41 through R32 tamper and negative controls
+        run: |
+          set -euo pipefail
+          pip install --quiet capstone pefile
+          python -m unittest -v tests.test_stoneage_tw10_savedata_native_io_r41 tests.test_stoneage_tw10_savedata_native_io_r40 tests.test_stoneage_tw10_savedata_native_io_r39 tests.test_stoneage_tw10_savedata_native_io_r38 tests.test_stoneage_tw10_savedata_native_io_r37 tests.test_stoneage_tw10_savedata_native_io_r36 tests.test_stoneage_tw10_savedata_native_io_r35 tests.test_stoneage_tw10_savedata_native_io_r34 tests.test_stoneage_tw10_savedata_native_io_r33 tests.test_stoneage_tw10_savedata_native_io_r32 tests.test_stoneage_tw10_savedata_argtrace_r7 tests.test_stoneage_tw10_savedata_argtrace_r7_guard
+          python -m tools.stoneage_tw10_savedata_native_io_r41_guard --report /tmp/r41-independent/stoneage-r41-derived.json
+      - name: Review original bounded report and canonical exact equality when admitted
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json, hashlib
+          from pathlib import Path
+          from tools.stoneage_tw10_savedata_native_io_r41_guard import validate
+          source=Path('/tmp/r41-independent/stoneage-r41-derived.json').read_bytes()
+          assert len(source)==120631
+          assert hashlib.sha256(source).hexdigest()=='8c8474f75eb6adec5aa3939054f0fce26997152fb8e1f1424e74f18485c2471c'
+          report=json.loads(source)
+          validate(report)
+          p=Path('research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R41-ORIGINAL.json')
+          assert p.exists(), 'R41 canonical derivative missing'
+          if p.exists():
+              assert json.loads(p.read_text()) == report, 'original R41 canonical JSON differs'
+              print('TW10_R41_EXACT_DERIVED_JSON_EQUALITY=PASS')
+          else:
+              print('TW10_R41_INDEPENDENT_REVIEW_ONLY=PASS')
+          print('TW10_R41_ORIGINAL_DERIVED_JSON_BEGIN')
+          print(json.dumps(report,sort_keys=True,separators=(',',':')))
+          print('TW10_R41_ORIGINAL_DERIVED_JSON_END')
+          PY
+      - name: Purge independent temporary derivative
+        if: always()
+        run: rm -rf /tmp/r41-independent
