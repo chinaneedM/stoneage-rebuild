@@ -6408,3 +6408,16 @@ Source Action38576786023/job115895874751 SUCCESS at agent/tw10-savedata-r43-pref
 FACT (original bounded static): the two IMUL instructions have unique early EDI-load sources; bounded prefix/slot audits preserve conditional operand symbols and explicitly record two mutable+8 frame slots. The missing write shape is DEC EBX0x48c93;13/10 native definition shapes are now fully sampled. Loop-region and opaque-CALL alternatives remain distinct from actual input values/effects. Native object/count/buffer/schema/persistence remain OPEN.
 
 Canonical original research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R43-ORIGINAL.json; scope docs/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R43.md. Stage A only.
+
+
+## SRC-TW10-SAVEDATA-NATIVE-IO-R44 — 2026-10-14
+
+S-grade authenticated Taiwan Waei/JSS1.0 retail nonexecuting static PE/operand/CFG evidence; stack/ABI/alias/owner interpretations conditional.
+
+Final original source Action38579065734/job115903789605 SUCCESS at agent/tw10-savedata-r44-native-slots-mutable-20261014 HEAD8e6df983241cba248ed14e85fd03beb6f4b43171. Authenticated transient archive/disc/runtime/save identities and exact R43 original SHA256f5eeaac700c649f92e3fca5e7cbefa465879048f54d84b3896dcdb72115d7b42 rederived/strict-gated. Derived-only artifact11900549300 tw10-r44-original-native-slots-mutable-derived ZIP SHA25698d01e4a6d28c58dd241241fc9851aa3ddee0fe4e0d14d835714704e086afd14; raw JSON225095 bytes SHA25652c158d5f28f3ea287432e4b8214d306c491f158820808d7c4dd212c0646f5e8. Independent immutable source run/head/branch/artifact identity, raw digest/size, negative controls and exact canonical JSON equality Action38579428156 SUCCESS at HEAD662bb212594d61804db5279c01cffaa97b7d90d4.331 local/independent R44-R32 plus hardened R7 tests PASS. Original executable/media transient, unexecuted/unpublished and unconditionally purged; local canonical JSON equals pinned final derivative.
+
+Preliminary96-byte source Action38578665667 at HEAD315d9866ef95a160abfff9b1ced8a5953bd35a1f, artifact11900693754, JSON155250 bytes SHA256dc9cb1c200416a27ae6976eaeda19963c16fcb927e785b78762053dfa0b00632, is superseded by the final160-byte source above. It omitted the delayed write+12 read from its early scope and is not the final R44 acceptance specimen. No prior historical record deleted.
+
+FACT (bounded original static): native input slot geometry, literal ESP adjustment operands, delayed write buffer-shaped read with opaque CALL barrier, read count-slot DEC-before-PUSH overlap and two different wrapper slot-rewrite source chains independently recovered. Read wrapper EBX->native EDI has only a conditional prefix register-symbol candidate. Third write slot/frame preservation and actual count/descriptor/buffer values remain OPEN; no original IO/schema/persistence accepted.
+
+Canonical original research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R44-ORIGINAL.json; scope docs/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R44.md. Stage A only.
