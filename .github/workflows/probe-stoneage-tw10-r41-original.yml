@@ -1,0 +1,64 @@
+name: Probe TW1.0 original R41 savedata-specific caller continuation candidates
+on:
+  workflow_dispatch:
+  push:
+    branches: [agent/tw10-savedata-r41-savedata-callers-20261014]
+    paths:
+      - .github/workflows/probe-stoneage-tw10-r41-original.yml
+      - tools/stoneage_tw10_savedata_native_io_r41.py
+      - tools/stoneage_tw10_savedata_native_io_r41_guard.py
+      - tests/test_stoneage_tw10_savedata_native_io_r41.py
+permissions:
+  contents: read
+jobs:
+  original:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - name: R41 and inherited synthetic strict gates
+        run: |
+          set -euo pipefail
+          pip install --quiet capstone pefile
+          python -m unittest -v tests.test_stoneage_tw10_savedata_native_io_r41 tests.test_stoneage_tw10_savedata_argtrace_r7 tests.test_stoneage_tw10_savedata_argtrace_r7_guard
+      - name: Retrieve authenticated transient TW1.0 retail archive
+        run: |
+          set -euo pipefail
+          for attempt in 1 2 3; do
+            if python -m tools.stoneage_tw10_archive_parallel_download --deadline 1500 --workers 16 --chunk 8388608 --output /tmp/CD_DIC.rar; then
+              echo TW10_R41_PINNED_ARCHIVE=PASS
+              break
+            fi
+            rm -f /tmp/CD_DIC.rar
+            if [ "$attempt" -eq 3 ]; then
+              echo TW10_R41_SOURCE_UNAVAILABLE=OPEN
+              exit 1
+            fi
+            sleep 10
+          done
+      - name: Extract original BIN transient only
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq 7zip
+          mkdir -p /tmp/stoneage-r41
+          7z x -y -o/tmp/stoneage-r41 /tmp/CD_DIC.rar STONEAGE.bin >/dev/null
+          test "$(stat -c %s /tmp/stoneage-r41/STONEAGE.bin)" -eq 523449360
+      - name: Derive bounded R41 static-only original metadata
+        run: |
+          set -euo pipefail
+          python -m tools.stoneage_tw10_savedata_native_io_r41 --bin /tmp/stoneage-r41/STONEAGE.bin > /tmp/stoneage-r41-derived.json
+          python -m tools.stoneage_tw10_savedata_native_io_r41_guard --report /tmp/stoneage-r41-derived.json
+          test "$(stat -c %s /tmp/stoneage-r41-derived.json)" -le 300000
+          echo TW10_R41_ORIGINAL_STATIC_ONLY=PASS
+          echo TW10_R41_NATIVE_SAVE=OPEN
+      - name: Always purge proprietary source
+        if: always()
+        run: rm -rf /tmp/CD_DIC.rar /tmp/stoneage-r41
+      - name: Upload derived metadata only
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: tw10-r41-original-savedata-callers-derived
+          path: /tmp/stoneage-r41-derived.json
+          retention-days: 21
