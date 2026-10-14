@@ -4,6 +4,7 @@ import json
 from pathlib import Path
 from tools.stoneage_tw10_savedata_native_io_r46 import *
 from tools.stoneage_tw10_savedata_native_io_r45_guard import graph_nodes, branches_guard
+from tools.stoneage_tw10_savedata_native_io_r45 import count_relationship
 from tools.stoneage_tw10_savedata_native_io_r42_guard import inputs_guard
 from tools.stoneage_tw10_savedata_native_io_r41_guard import identity_guard
 from tools.stoneage_tw10_savedata_native_io_r40_guard import rows_guard, suffix_guard
@@ -62,6 +63,8 @@ def validate(d):
     require(c['first_read_api_identity'].get('import_identity')=={'dll':'KERNEL32.dll','name':'ReadFile','iat_rva':0x520d8},'read import')
     # R45 count relationship is retained as evidence, never reinterpreted as runtime truth.
     old=c.get('prior_count_relationship',{})
+    by={r['site_rva']:r for r in rows}
+    require(old==count_relationship(READ_ROOT,c['bounded_edges'],by[DEC],by[COUNT_PUSH],c['input_sources']),'count/frame replay')
     require(old.get('actual_same_address_contents_modified_count_or_taken_path_proven') is False
             and old.get('original_count_or_decrement_result_evaluated') is False,'prior count non-promotion')
     w=d.get('write_helper_context',{});require(w.get('root_candidate_rva')==HELPER

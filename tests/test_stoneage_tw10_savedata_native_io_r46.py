@@ -91,6 +91,8 @@ class R46Tamper(unittest.TestCase):
             with self.subTest(flag=f):self.reject(lambda d,f=f:d.update({f:True}))
     def test_prior_hash(self):self.reject(lambda d:d.update(r45_exact_report_sha256='bad'))
     def test_r37_hash(self):self.reject(lambda d:d.update(r37_exact_report_sha256='bad'))
+    def test_count_promotion(self):self.reject(lambda d:d['read_adjustment_context']['prior_count_relationship'].update(decrement_on_all_bounded_root_to_push_paths_candidate=True))
+    def test_count_partial_width(self):self.reject(lambda d:next(r for r in d['read_adjustment_context']['window_shapes'] if r['site_rva']==DEC)['operands'][0].update(width_bytes=1))
     def test_fake_path_mask(self):self.reject(lambda d:d['read_adjustment_context']['root_first_api_paths'].update(reachable_seen_marker_masks=[7]))
     def test_false_bundle_claim(self):self.reject(lambda d:d['read_adjustment_context']['conditional_adjustment_relation'].update(actual_same_buffer_byte_count_text_role_or_execution_proven=True))
     def test_arm_swap(self):self.reject(lambda d:d['read_adjustment_context']['bypass_branch_arms'][1].update(target_arm_paths=d['read_adjustment_context']['bypass_branch_arms'][1]['fallthrough_arm_paths']))
