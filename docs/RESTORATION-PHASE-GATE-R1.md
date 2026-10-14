@@ -192,3 +192,10 @@ Highest NEXT R31: return to original CreateFileA0x4ed01 conditional continuation
 R31 opaque CreateFileA EAX->ESI copy and distinct intervening CALL0x4ed1f->PUSH EAX->0x4c953 source evidence independently accepted. Five helper-global writes to0x172120c/0x1721208 are separate static candidates; helper's mapping-like role remains HYPOTHESIS until call/branch evidence. No actual native handle capture, caller parameter/ABI, global owner/aliases or schema/persistence promotion.
 
 Highest NEXT R32: identify original intervening CALL0x4ed1f and the predicate/branch reaching0x4ed26 to qualify the helper's mapping-like role. If justified, audit conditional physical PUSH EAX offset0 -> helper entry [ESP+4] hardware geometry separately from any API return/owner claim. Resume captured ESI0x4ed07 along other candidate parent paths and inspect parent memory-store/call inputs; do not mistake0x4c953's globals for the shared0x1721760 address candidates. Actual filename->CreateFileA result->ReadFile/WriteFile buffer/length128/schema/persistence, alias/frame/return effects and CRT/heap ownership remain OPEN. All system-family PARTIAL/OPEN states and Stage A restoration-first review remain binding.
+
+
+## 2026-10-14 queue supersession (R36 accepted)
+
+R32–R36 original conditional static CALL/flag/operand topology evidence and independent derivative custody are accepted. R36 structural branch routes, PUSH spelling, low-byte projections and address candidates do not establish actual handles, API/ABI effects, owner/alias identity or native schema/persistence. All system-family PARTIAL/OPEN states remain unchanged.
+
+Highest NEXT R37: original continuation helpers0x4ed49->0x4e80a and0x4ed87->0x4c761, conditional PUSH/register/helper-memory geometry, partial-register definitions and three store address candidates. Native filename->CreateFileA-result->ReadFile/WriteFile buffer/length128/schema/persistence stays OPEN. Stage A restoration before joint future-engine/game review remains binding.

@@ -2965,3 +2965,10 @@ FACT (pinned authenticated Taiwan Waei/JSS 1.0 original executable, never execut
 Original derived-only source run38418400068 (head a02fd2464424a1974bcdf954aad0894589052614) SUCCESS, independent immutable-artifact/negative validation38418921425 SUCCESS, exact committed JSON equality38419262860 SUCCESS. Artifact11824229823 ZIP SHA256 4c5cdd8677641d5588d738aa3286a0931e4c06590405f61fcffbd7901f483f33; 5348-byte JSON SHA256 5052a3d57b89f1d257846df6cef7c513fe544cadeb420e11f0a18468d3908f23. Original binaries never executed or uploaded and transient files purged.
 
 HYPOTHESIS: a file-type validation path is compatible with the static GetFileType/TEST/JNE arrangement, but actual validation and error handling remain unproven. OPEN native filename, CreateFileA success/return, true API handle, ReadFile/WriteFile buffer/length128/schema/persistence, alias/owner and cross-version/server-only equivalence. NEXT R36 conditional branch and handle-candidate joins with strict static boundaries. Scope docs/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R35.md.
+
+
+## 2026-10-14 — TW1.0 R36 original branch topology and continuation stores accepted
+
+FACT (bounded original static): TEST EAX,EAX0x4ed14 feeds JNE0x4ed16; direct target0x4ed33 and fallthrough0x4ed18 have separately reproduced structural routes. PUSH ESI spelling matches at0x4ed0d/0x4ed18 but opaque GetFileType CALL separates their conservative provenance. Three continuation stores carry AL/AL/EAX with separate low-byte and address queries; none establishes a real saved handle. Source38488978148, artifact11860393895 and independent exact canonical custody38489210950 all SUCCESS;81 tests PASS. No historical program executed or proprietary payload published.
+
+HYPOTHESIS: file-status/error handling and descriptor helper role. OPEN: actual branch values, callee preservation, filename/handle/buffer/length128/native schema/persistence, ownership, original server authority and cross-version equivalence. NEXT R37 continuation CALL helpers0x4e80a/0x4c761 and unresolved partial-register/address inputs. All historical system-family PARTIAL/OPEN gates remain unchanged.
