@@ -56,6 +56,9 @@ class R48Synthetic(unittest.TestCase):
         r=fixture()['wrapper_loop_division_context']['conditional_consumer_relation'];self.assertTrue(r['subtract_to_native_call_structural_loop_candidate']);self.assertTrue(r['buffer_advance_to_native_call_structural_loop_candidate'])
     def test_division_syntax(self):
         ds=fixture()['wrapper_loop_division_context']['division_shapes'];self.assertEqual(len(ds),1);self.assertEqual(ds[0]['mnemonic'],'div')
+    def test_dividend_high_half_zeroing_syntax(self):
+        r=fixture()['wrapper_loop_division_context']['conditional_division_input_links'][0]
+        self.assertTrue(r['qualified_32bit_divisor_64bit_edx_eax_dividend_syntax_candidate']);self.assertTrue(r['edx_input_is_four_byte_self_xor_syntax_candidate']);self.assertFalse(r['actual_dividend_divisor_quotient_remainder_or_element_count_proven'])
     def audit_with(self,kind):
         c=fixture()['native_count_return_context'];rows=copy.deepcopy(c['return_memory_predecessor_shapes']);r=next(r for r in rows if r['site_rva']==ACCUM)
         if kind=='call':r.update(mnemonic='call',operands=[],decoder_written_registers=[])
@@ -92,6 +95,7 @@ class R48Tamper(unittest.TestCase):
     def test_missing_audit_shape(self):self.reject(lambda d:d['native_count_return_context']['return_memory_predecessor_shapes'].pop())
     def test_return_definition_count(self):self.reject(lambda d:d['native_count_return_context']['return_surface'].update(direct_return_definition_count=999))
     def test_loop_claim(self):self.reject(lambda d:d['wrapper_loop_division_context']['conditional_consumer_relation'].update(actual_native_return_bytes_element_count_or_iteration_proven=True))
+    def test_division_input_count(self):self.reject(lambda d:d['wrapper_loop_division_context'].update(division_direct_input_definition_count=999))
     def test_division_count(self):self.reject(lambda d:d['wrapper_loop_division_context'].update(division_count=0))
     def test_branch_value(self):self.reject(lambda d:d['wrapper_loop_division_context']['native_result_test_branches'][0].update(actual_flag_value_feasibility_or_taken_path_proven=True))
     def test_call_target(self):self.reject(lambda d:d['wrapper_loop_division_context']['native_call_identity'].update(direct_target_rva=1))

@@ -62,8 +62,14 @@ def validate(d):
     rows_guard(divs,MAX_DIVISIONS,WRAPPER,WRAPPER+768,dkeys,dcap,ats)
     require(type(n) is int and 0<=n<=256 and len(divs)==min(n,MAX_DIVISIONS) and w.get('divisions_truncated') is (n>MAX_DIVISIONS)
             and all(r['mnemonic'] in ('div','idiv') and len(r['operands'])==1 for r in divs),'division syntax/sample')
+    initial=queries_for(divs)
+    expected=sorted({t['rva'] for q in w['division_input_sources']['queries'] if (q['site_rva'],q['register']) in initial for t in q['reaching_candidates'] if t['origin']=='definition'})
+    definition_rows=w.get('division_direct_input_definition_shapes');rows_guard(definition_rows,MAX_DEFS,WRAPPER,WRAPPER+768,dkeys,dcap,ats)
+    require(w.get('division_direct_input_definition_count')==len(expected) and [r['site_rva'] for r in definition_rows]==expected[:MAX_DEFS]
+            and w.get('division_input_definitions_truncated') is (len(expected)>MAX_DEFS),'division source definitions')
+    require(w.get('conditional_division_input_links')==division_links(divs,definition_rows,w['division_input_sources']),'division input links')
     by={r['site_rva']:r for r in rows}
-    for r in divs:
+    for r in divs+definition_rows:
         if r['site_rva'] in by:require(r==by[r['site_rva']],'division/postcall agreement')
     returns_guard(w.get('return_surface',{}),WRAPPER,ats)
     def ban(o):

@@ -143,6 +143,24 @@ def consumer_relation(rows,inputs,edges):
             'actual_native_return_bytes_element_count_or_iteration_proven':False}
 
 
+
+def division_links(rows,definitions,inputs):
+    by={r['site_rva']:r for r in definitions};result=[]
+    for r in rows:
+        op=r['operands'][0] if len(r['operands'])==1 else {};g=op.get('geometry') or {}
+        eax=unique_definition(inputs,r['site_rva'],'eax');edx=unique_definition(inputs,r['site_rva'],'edx')
+        z=by.get(edx,{});zo=z.get('operands',[])
+        zero=bool(z.get('mnemonic')=='xor' and len(zo)==2 and all(o.get('kind')=='register' and o.get('register')=='edx' and o.get('width_bytes')==4 for o in zo))
+        qualified=bool(r['mnemonic'] in ('div','idiv') and op.get('width_bytes')==4)
+        frame=bool(op.get('kind')=='memory' and g.get('base_register')=='ebp' and g.get('index_register') is None and g.get('segment_register') is None)
+        result.append({'site_rva':r['site_rva'],'qualified_32bit_divisor_64bit_edx_eax_dividend_syntax_candidate':qualified,
+                       'signed_division_syntax':r['mnemonic']=='idiv','divisor_frame_offset_spelling':g.get('relative_field_offset') if frame else None,
+                       'unique_eax_input_definition_rva':eax,'unique_edx_input_definition_rva':edx,
+                       'edx_input_is_four_byte_self_xor_syntax_candidate':zero,
+                       'actual_dividend_divisor_quotient_remainder_or_element_count_proven':False})
+    return result
+
+
 def wrapper_context(dec,sections,imports,prior):
     nodes,edges,front,cap=candidate_graph(dec,WRAPPER);old=prior['savedata_wrapper_return_context'];ident=call_identity(dec,NATIVE_CALL,imports,sections)
     if ident!=old['native_call_identity'] or sorted(nodes)!=old['bounded_node_rvas'] or [list(e) for e in sorted(edges)]!=old['bounded_edges']:raise ValueError('R48 exact savedata wrapper graph/caller')
@@ -150,12 +168,18 @@ def wrapper_context(dec,sections,imports,prior):
     inputs=input_surface(dec,sections,nodes,edges,WRAPPER,queries_for(rows))
     divisions=[a for a,ins in sorted(nodes.items()) if ins.mnemonic in ('div','idiv')]
     divrows=[instruction_row(dec,sections,nodes,a) for a in divisions[:MAX_DIVISIONS]]
-    division_inputs=input_surface(dec,sections,nodes,edges,WRAPPER,queries_for(divrows))
+    division_queries=queries_for(divrows)
+    division_inputs=input_surface(dec,sections,nodes,edges,WRAPPER,division_queries)
+    division_defs=sorted({t['rva'] for q in division_inputs['queries'] if (q['site_rva'],q['register']) in division_queries for t in q['reaching_candidates'] if t['origin']=='definition'})
+    definition_rows=[instruction_row(dec,sections,nodes,a) for a in division_defs[:MAX_DEFS]]
+    division_inputs=input_surface(dec,sections,nodes,edges,WRAPPER,division_queries|queries_for(definition_rows))
     return {'root_candidate_rva':WRAPPER,'graph':graph_meta(nodes,edges,front,cap),'bounded_node_rvas':sorted(nodes),'bounded_edges':[list(e) for e in sorted(edges)],
             'native_call_identity':ident,'post_native_shape_count':len(sites),'post_native_shapes':rows,'post_native_shapes_truncated':len(sites)>MAX_WRAPPER_ROWS,
             'input_sources':inputs,'conditional_consumer_relation':consumer_relation(rows,inputs,edges),
             'native_result_test_branches':[branch_context(dec,sections,nodes,edges,WRAPPER,a) for a in BRANCHES],
             'division_count':len(divisions),'division_shapes':divrows,'divisions_truncated':len(divisions)>MAX_DIVISIONS,'division_input_sources':division_inputs,
+            'division_direct_input_definition_count':len(division_defs),'division_direct_input_definition_shapes':definition_rows,
+            'division_input_definitions_truncated':len(division_defs)>MAX_DEFS,'conditional_division_input_links':division_links(divrows,definition_rows,division_inputs),
             'return_surface':return_surface(dec,sections,nodes,edges,WRAPPER),
             'actual_wrapper_count_or_division_result_native_binding_proven':False}
 
