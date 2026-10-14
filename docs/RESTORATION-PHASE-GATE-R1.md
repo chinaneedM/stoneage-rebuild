@@ -206,3 +206,10 @@ Highest NEXT R37: original continuation helpers0x4ed49->0x4e80a and0x4ed87->0x4c
 R37 independently accepts two original CALL-supported helper contexts, shared-displacement/static import candidates and separately classified byte/full-width scalar operands. This does not demonstrate actual handle/descriptor/table ownership, caller/helper parameter binding, API/ABI results, file seek or native schema/persistence. All system-family PARTIAL/OPEN statuses remain unchanged.
 
 Highest NEXT R38: first helper stack-prefix and caller PUSH geometry, exact shared-store source/width and scalar/address inputs, retaining opaque SetStdHandle/SetFilePointer effects and all alias/frame/return gaps. Stage A comprehensive restoration remains prior to joint future-engine/game review.
+
+
+## 2026-10-14 queue supersession (R38 accepted)
+
+R38 independently accepts conditional ESP slot geometry and exact shared-store source/width syntax with explicit32-bit stack/near-CALL requirements, opaque CALL barriers and memory-alias/content gaps. No actual parameter/handle binding, effective owner, original file IO/schema/persistence or system-family closure is admitted. All PARTIAL/OPEN gates remain unchanged.
+
+Highest NEXT R39: exact mask and bounded symbolic stack-token correspondence if justified, then native parent ReadFile-context buffer/length candidates. Keep unknown API/return/frame/alias effects separate and avoid generic ownership exhaustion. Stage A restoration before joint future-engine/game review remains binding.
