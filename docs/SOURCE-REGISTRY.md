@@ -6397,3 +6397,14 @@ Source Action38574385118/job115887532644 SUCCESS at agent/tw10-savedata-r42-payl
 FACT (bounded original static): savedata-specific wrappers0x48bbc/0x48660 have coherent direct CFG support and conditional paths to native IO contexts via0x48c5e->0x4c5b4 /0x486f0->0x4a8dc. Four whole stack slots, two IMUL operands and three-slot native-call suffix syntax independently requalified. Opaque CALLs/loop joins block actual frame/owner/value binding; one write-definition shape0x48c93 remains outside the12-row sampler. HYPOTHESIS only: fwrite/fread roles and descriptor-like field. No actual IO/schema/persistence or historical system-family closure.
 
 Canonical original research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R42-ORIGINAL.json; scope docs/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R42.md. Stage A only.
+
+
+## SRC-TW10-SAVEDATA-NATIVE-IO-R43 — 2026-10-14
+
+S-grade authenticated Taiwan Waei/JSS1.0 retail nonexecuting static operand/CFG evidence; runtime/ABI/alias/owner interpretations conditional.
+
+Source Action38576786023/job115895874751 SUCCESS at agent/tw10-savedata-r43-prefix-product-sources-20261014 HEAD31ee18e7d81077b3b9075c8900c99b8b676b9005. Authenticated transient archive/disc/runtime/save identities and exact R42 derivative SHA256545901acc97a027fb38a3937e00549b15f45b379c7c059e98ece6133c9541732 rederived/strict-gated. Derived-only artifact11899434410 tw10-r43-original-prefix-product-sources-derived ZIP SHA2569f95bae3ada8f5aa74c7e8f9c739be2afd723dd17f20b160f6e8812d77713f86; raw JSON162163 bytes SHA256f5eeaac700c649f92e3fca5e7cbefa465879048f54d84b3896dcdb72115d7b42. Independent immutable source run/head/branch/artifact identity, raw digest/size, negative controls and exact canonical JSON equality Action38577142281 SUCCESS at HEADc63ea157452eecb8eee3b42a5f5a461863d517ee.304 local/independent R43-R32 plus hardened R7 tests PASS. Originals transient, unexecuted/unpublished and unconditionally purged; local canonical JSON equals pinned original derivative.
+
+FACT (original bounded static): the two IMUL instructions have unique early EDI-load sources; bounded prefix/slot audits preserve conditional operand symbols and explicitly record two mutable+8 frame slots. The missing write shape is DEC EBX0x48c93;13/10 native definition shapes are now fully sampled. Loop-region and opaque-CALL alternatives remain distinct from actual input values/effects. Native object/count/buffer/schema/persistence remain OPEN.
+
+Canonical original research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R43-ORIGINAL.json; scope docs/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R43.md. Stage A only.
