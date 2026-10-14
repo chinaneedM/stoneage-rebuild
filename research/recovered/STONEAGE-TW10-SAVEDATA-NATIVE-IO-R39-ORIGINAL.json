@@ -1,0 +1,1598 @@
+{
+  "actual_branch_predicates_or_taken_paths_proven": false,
+  "actual_closehandle_argument_or_api_result_proven": false,
+  "actual_edi_sentinel_or_valid_handle_proven": false,
+  "actual_error_code_or_file_api_result_proven": false,
+  "actual_getfiletype_result_or_jne_outcome_proven": false,
+  "actual_stack_argument_alias_owner_or_callee_return_proven": false,
+  "actual_successful_handle_or_native_persistence_proven": false,
+  "call_input_value_or_abi_binding_proven": false,
+  "callee_esp_abi_cleanup_or_preservation_admitted": false,
+  "caller_value_to_helper_parameter_binding_proven": false,
+  "complete_original_eflags_paths_or_indirect_edges_proven": false,
+  "continuation_store_executes_or_contains_api_handle": false,
+  "filename_handle_buffer_length128_or_persistence_proven": false,
+  "helper_caller_push_sources": {
+    "dependency_closure_or_memory_values_proven": false,
+    "dependency_depth_limit": 2,
+    "pending_query_count": 0,
+    "queries": [
+      {
+        "actual_register_value_known": false,
+        "candidates_truncated": false,
+        "dependency_depth": 0,
+        "dependency_queries": [],
+        "reaching_candidates": [
+          {
+            "origin": "unknown_call",
+            "rva": 322830,
+            "semantic": null
+          }
+        ],
+        "register": "esi",
+        "site_in_candidate_graph": true,
+        "site_rva": 322887
+      },
+      {
+        "actual_register_value_known": false,
+        "candidates_truncated": false,
+        "dependency_depth": 0,
+        "dependency_queries": [],
+        "reaching_candidates": [
+          {
+            "origin": "unknown_call",
+            "rva": 322830,
+            "semantic": null
+          }
+        ],
+        "register": "ebx",
+        "site_in_candidate_graph": true,
+        "site_rva": 322888
+      }
+    ],
+    "query_limit_hit": false
+  },
+  "helper_mask_and_tokens": {
+    "actual_helper_value_index_table_or_handle_owner_proven": false,
+    "conditional_composition": {
+      "actual_index_range_or_handle_role_proven": false,
+      "evaluated_original_result": null,
+      "kind": "conditional_esi_mask_then_left_shift_u32",
+      "left_shift_count": 3,
+      "mask": 31,
+      "modulus": 4294967296,
+      "original_input_or_result_known": false,
+      "unique_mask_to_shift_candidate": true
+    },
+    "explicit_write_shapes": [
+      {
+        "operand": {
+          "decoder_read": false,
+          "decoder_write": true,
+          "geometry": {
+            "base_register": "eax",
+            "displacement_region": null,
+            "index_register": "esi",
+            "index_scale": 1,
+            "relative_field_offset": 0,
+            "segment_register": null,
+            "width_bytes": 4
+          },
+          "kind": "memory",
+          "width_bytes": 4
+        },
+        "operand_index": 0,
+        "site_rva": 321634
+      },
+      {
+        "operand": {
+          "decoder_read": true,
+          "decoder_write": true,
+          "geometry": {
+            "base_register": null,
+            "displacement_region": {
+              "displacement_rva": 24252940,
+              "raw_backed": false,
+              "section": ".data",
+              "writable": true
+            },
+            "index_register": null,
+            "index_scale": 1,
+            "relative_field_offset": null,
+            "segment_register": null,
+            "width_bytes": 4
+          },
+          "kind": "memory",
+          "width_bytes": 4
+        },
+        "operand_index": 0,
+        "site_rva": 321642
+      },
+      {
+        "operand": {
+          "decoder_read": false,
+          "decoder_write": true,
+          "geometry": {
+            "base_register": null,
+            "displacement_region": {
+              "displacement_rva": 24252936,
+              "raw_backed": false,
+              "section": ".data",
+              "writable": true
+            },
+            "index_register": null,
+            "index_scale": 1,
+            "relative_field_offset": null,
+            "segment_register": null,
+            "width_bytes": 4
+          },
+          "kind": "memory",
+          "width_bytes": 4
+        },
+        "operand_index": 0,
+        "site_rva": 321649
+      }
+    ],
+    "graph": {
+      "actual_entry_path_proven": false,
+      "edges": 49,
+      "frontier": [],
+      "node_cap": 256,
+      "node_limit_hit": false,
+      "nodes": 44,
+      "returning_call_assumption_only": true,
+      "span_bytes": 768
+    },
+    "input_sources": {
+      "dependency_closure_or_memory_values_proven": false,
+      "dependency_depth_limit": 2,
+      "pending_query_count": 0,
+      "queries": [
+        {
+          "actual_register_value_known": false,
+          "candidates_truncated": false,
+          "dependency_depth": 1,
+          "dependency_queries": [],
+          "reaching_candidates": [
+            {
+              "origin": "definition",
+              "rva": 321546,
+              "semantic": {
+                "constant": null,
+                "kind": "memory_load",
+                "memory_input": {
+                  "base_register": "esp",
+                  "displacement_region": null,
+                  "index_register": null,
+                  "index_scale": 1,
+                  "relative_field_offset": 4,
+                  "segment_register": null,
+                  "width_bytes": 4
+                },
+                "register_inputs": [],
+                "width_bits": 32
+              }
+            }
+          ],
+          "register": "eax",
+          "site_in_candidate_graph": true,
+          "site_rva": 321562
+        },
+        {
+          "actual_register_value_known": false,
+          "candidates_truncated": false,
+          "dependency_depth": 0,
+          "dependency_queries": [
+            {
+              "register": "eax",
+              "site_rva": 321562
+            }
+          ],
+          "reaching_candidates": [
+            {
+              "origin": "definition",
+              "rva": 321562,
+              "semantic": {
+                "constant": null,
+                "kind": "register_copy",
+                "memory_input": null,
+                "register_inputs": [
+                  "eax"
+                ],
+                "width_bits": 32
+              }
+            }
+          ],
+          "register": "esi",
+          "site_in_candidate_graph": true,
+          "site_rva": 321567
+        },
+        {
+          "actual_register_value_known": false,
+          "candidates_truncated": false,
+          "dependency_depth": 0,
+          "dependency_queries": [],
+          "reaching_candidates": [
+            {
+              "origin": "definition",
+              "rva": 321567,
+              "semantic": {
+                "constant": null,
+                "kind": "unmodeled_write",
+                "memory_input": null,
+                "register_inputs": [],
+                "width_bits": null
+              }
+            }
+          ],
+          "register": "esi",
+          "site_in_candidate_graph": true,
+          "site_rva": 321577
+        }
+      ],
+      "query_limit_hit": false
+    },
+    "mask_shape": {
+      "actual_instruction_effect_or_value_known": false,
+      "conditional_full_width_model": {
+        "evaluated_original_result": null,
+        "flags_or_branch_effects_modeled": false,
+        "index_or_api_role_proven": false,
+        "kind": "conditional_u32_scalar",
+        "lhs_register": "esi",
+        "modulus": 4294967296,
+        "operation": "and",
+        "original_input_values_known": false,
+        "rhs": {
+          "constant": 31,
+          "kind": "constant"
+        },
+        "sar_uses_signed_reinterpretation": false,
+        "width_bits": 32
+      },
+      "decoder_read_registers": [
+        "esi"
+      ],
+      "decoder_written_registers": [
+        "eflags",
+        "esi"
+      ],
+      "input_query_registers": [
+        "esi"
+      ],
+      "mnemonic": "and",
+      "operands": [
+        {
+          "decoder_read": true,
+          "decoder_write": true,
+          "kind": "register",
+          "register": "esi",
+          "width_bytes": 4
+        },
+        {
+          "constant": 31,
+          "decoder_read": false,
+          "decoder_write": false,
+          "kind": "immediate",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 321567
+    },
+    "prefix_token_audits": [
+      {
+        "actual_original_contents_argument_value_alias_owner_proven": false,
+        "bounded_candidate_prefix_only": true,
+        "conditional_symbolic_register_token_candidate": true,
+        "destination_callee_register_symbol": "eax",
+        "modeled_prefix_write_candidates": [],
+        "no_bounded_prefix_overwrite_candidate": true,
+        "overlapping_write_sites": [],
+        "prefix_node_rvas": [],
+        "read_site_rva": 321546,
+        "requires_prior_32bit_stack_and_near_call_conditions": true,
+        "source_caller_register_symbol": "ebx",
+        "source_push_rva": 322888,
+        "target_entry_relative_start": 4,
+        "target_width_bytes": 4,
+        "unknown_prefix_effect_candidates": []
+      },
+      {
+        "actual_original_contents_argument_value_alias_owner_proven": false,
+        "bounded_candidate_prefix_only": true,
+        "conditional_symbolic_register_token_candidate": true,
+        "destination_callee_register_symbol": "ebx",
+        "modeled_prefix_write_candidates": [
+          {
+            "entry_relative_start": -4,
+            "kind": "implicit_push_write",
+            "possible_alias_or_unknown_offset": false,
+            "site_rva": 321550,
+            "width_bytes": 4
+          },
+          {
+            "entry_relative_start": -8,
+            "kind": "implicit_push_write",
+            "possible_alias_or_unknown_offset": false,
+            "site_rva": 321557,
+            "width_bytes": 4
+          },
+          {
+            "entry_relative_start": -12,
+            "kind": "implicit_push_write",
+            "possible_alias_or_unknown_offset": false,
+            "site_rva": 321595,
+            "width_bytes": 4
+          }
+        ],
+        "no_bounded_prefix_overwrite_candidate": true,
+        "overlapping_write_sites": [],
+        "prefix_node_rvas": [
+          321546,
+          321550,
+          321551,
+          321557,
+          321558,
+          321560,
+          321562,
+          321564,
+          321567,
+          321570,
+          321577,
+          321580,
+          321582,
+          321586,
+          321588,
+          321595
+        ],
+        "read_site_rva": 321596,
+        "requires_prior_32bit_stack_and_near_call_conditions": true,
+        "source_caller_register_symbol": "esi",
+        "source_push_rva": 322887,
+        "target_entry_relative_start": 8,
+        "target_width_bytes": 4,
+        "unknown_prefix_effect_candidates": []
+      }
+    ],
+    "prior_slot_bridges": [
+      {
+        "actual_argument_value_abi_owner_or_stack_alias_binding_proven": false,
+        "callee_entry_esp_relative_offset": 4,
+        "callee_read_site_rva": 321546,
+        "caller_pre_call_esp_relative_offset": 0,
+        "conditional_32bit_near_call_return_address_required": true,
+        "conditional_32bit_stack_address_required": true,
+        "conditional_hardware_slot_candidate": true,
+        "matching_push_operand_shape": {
+          "decoder_read": true,
+          "decoder_write": false,
+          "kind": "register",
+          "register": "ebx",
+          "width_bytes": 4
+        },
+        "matching_suffix_push_rva": 322888,
+        "unique_local_esp_geometry_qualified": true
+      },
+      {
+        "actual_argument_value_abi_owner_or_stack_alias_binding_proven": false,
+        "callee_entry_esp_relative_offset": 8,
+        "callee_read_site_rva": 321596,
+        "caller_pre_call_esp_relative_offset": 4,
+        "conditional_32bit_near_call_return_address_required": true,
+        "conditional_32bit_stack_address_required": true,
+        "conditional_hardware_slot_candidate": true,
+        "matching_push_operand_shape": {
+          "decoder_read": true,
+          "decoder_write": false,
+          "kind": "register",
+          "register": "esi",
+          "width_bytes": 4
+        },
+        "matching_suffix_push_rva": 322887,
+        "unique_local_esp_geometry_qualified": true
+      }
+    ],
+    "prior_stack_evidence": {
+      "edges": [
+        [
+          321546,
+          321550
+        ],
+        [
+          321550,
+          321551
+        ],
+        [
+          321551,
+          321557
+        ],
+        [
+          321557,
+          321558
+        ],
+        [
+          321558,
+          321560
+        ],
+        [
+          321558,
+          321642
+        ],
+        [
+          321560,
+          321562
+        ],
+        [
+          321562,
+          321564
+        ],
+        [
+          321564,
+          321567
+        ],
+        [
+          321567,
+          321570
+        ],
+        [
+          321570,
+          321577
+        ],
+        [
+          321577,
+          321580
+        ],
+        [
+          321580,
+          321582
+        ],
+        [
+          321582,
+          321586
+        ],
+        [
+          321586,
+          321588
+        ],
+        [
+          321586,
+          321642
+        ],
+        [
+          321588,
+          321595
+        ],
+        [
+          321595,
+          321596
+        ],
+        [
+          321596,
+          321600
+        ],
+        [
+          321600,
+          321602
+        ],
+        [
+          321600,
+          321632
+        ],
+        [
+          321602,
+          321605
+        ],
+        [
+          321605,
+          321607
+        ],
+        [
+          321605,
+          321623
+        ],
+        [
+          321607,
+          321608
+        ],
+        [
+          321608,
+          321610
+        ],
+        [
+          321608,
+          321618
+        ],
+        [
+          321610,
+          321611
+        ],
+        [
+          321611,
+          321613
+        ],
+        [
+          321611,
+          321632
+        ],
+        [
+          321613,
+          321614
+        ],
+        [
+          321614,
+          321616
+        ],
+        [
+          321616,
+          321626
+        ],
+        [
+          321618,
+          321619
+        ],
+        [
+          321619,
+          321621
+        ],
+        [
+          321621,
+          321626
+        ],
+        [
+          321623,
+          321624
+        ],
+        [
+          321624,
+          321626
+        ],
+        [
+          321626,
+          321632
+        ],
+        [
+          321632,
+          321634
+        ],
+        [
+          321634,
+          321637
+        ],
+        [
+          321637,
+          321639
+        ],
+        [
+          321639,
+          321640
+        ],
+        [
+          321640,
+          321662
+        ],
+        [
+          321642,
+          321649
+        ],
+        [
+          321649,
+          321659
+        ],
+        [
+          321659,
+          321662
+        ],
+        [
+          321662,
+          321663
+        ],
+        [
+          321663,
+          321664
+        ]
+      ],
+      "effects": [
+        {
+          "conditional_32bit_stack_address_only": true,
+          "esp_delta": 0,
+          "operand_width_bytes": null,
+          "site_rva": 321546,
+          "syntax_class": "neutral"
+        },
+        {
+          "conditional_32bit_stack_address_only": true,
+          "esp_delta": -4,
+          "operand_width_bytes": 4,
+          "site_rva": 321550,
+          "syntax_class": "push"
+        },
+        {
+          "conditional_32bit_stack_address_only": true,
+          "esp_delta": 0,
+          "operand_width_bytes": null,
+          "site_rva": 321551,
+          "syntax_class": "neutral"
+        },
+        {
+          "conditional_32bit_stack_address_only": true,
+          "esp_delta": -4,
+          "operand_width_bytes": 4,
+          "site_rva": 321557,
+          "syntax_class": "push"
+        },
+        {
+          "conditional_32bit_stack_address_only": true,
+          "esp_delta": 0,
+          "operand_width_bytes": null,
+          "site_rva": 321558,
+          "syntax_class": "neutral"
+        },
+        {
+          "conditional_32bit_stack_address_only": true,
+          "esp_delta": 0,
+          "operand_width_bytes": null,
+          "site_rva": 321560,
+          "syntax_class": "neutral"
+        },
+        {
+          "conditional_32bit_stack_address_only": true,
+          "esp_delta": 0,
+          "operand_width_bytes": null,
+          "site_rva": 321562,
+          "syntax_class": "neutral"
+        },
+        {
+          "conditional_32bit_stack_address_only": true,
+          "esp_delta": 0,
+          "operand_width_bytes": null,
+          "site_rva": 321564,
+          "syntax_class": "neutral"
+        },
+        {
+          "conditional_32bit_stack_address_only": true,
+          "esp_delta": 0,
+          "operand_width_bytes": null,
+          "site_rva": 321567,
+          "syntax_class": "neutral"
+        },
+        {
+          "conditional_32bit_stack_address_only": true,
+          "esp_delta": 0,
+          "operand_width_bytes": null,
+          "site_rva": 321570,
+          "syntax_class": "neutral"
+        },
+        {
+          "conditional_32bit_stack_address_only": true,
+          "esp_delta": 0,
+          "operand_width_bytes": null,
+          "site_rva": 321577,
+          "syntax_class": "neutral"
+        },
+        {
+          "conditional_32bit_stack_address_only": true,
+          "esp_delta": 0,
+          "operand_width_bytes": null,
+          "site_rva": 321580,
+          "syntax_class": "neutral"
+        },
+        {
+          "conditional_32bit_stack_address_only": true,
+          "esp_delta": 0,
+          "operand_width_bytes": null,
+          "site_rva": 321582,
+          "syntax_class": "neutral"
+        },
+        {
+          "conditional_32bit_stack_address_only": true,
+          "esp_delta": 0,
+          "operand_width_bytes": null,
+          "site_rva": 321586,
+          "syntax_class": "neutral"
+        },
+        {
+          "conditional_32bit_stack_address_only": true,
+          "esp_delta": 0,
+          "operand_width_bytes": null,
+          "site_rva": 321588,
+          "syntax_class": "neutral"
+        },
+        {
+          "conditional_32bit_stack_address_only": true,
+          "esp_delta": -4,
+          "operand_width_bytes": 4,
+          "site_rva": 321595,
+          "syntax_class": "push"
+        },
+        {
+          "conditional_32bit_stack_address_only": true,
+          "esp_delta": 0,
+          "operand_width_bytes": null,
+          "site_rva": 321596,
+          "syntax_class": "neutral"
+        },
+        {
+          "conditional_32bit_stack_address_only": true,
+          "esp_delta": 0,
+          "operand_width_bytes": null,
+          "site_rva": 321600,
+          "syntax_class": "neutral"
+        },
+        {
+          "conditional_32bit_stack_address_only": true,
+          "esp_delta": 0,
+          "operand_width_bytes": null,
+          "site_rva": 321602,
+          "syntax_class": "neutral"
+        },
+        {
+          "conditional_32bit_stack_address_only": true,
+          "esp_delta": 0,
+          "operand_width_bytes": null,
+          "site_rva": 321605,
+          "syntax_class": "neutral"
+        },
+        {
+          "conditional_32bit_stack_address_only": true,
+          "esp_delta": 0,
+          "operand_width_bytes": null,
+          "site_rva": 321607,
+          "syntax_class": "neutral"
+        },
+        {
+          "conditional_32bit_stack_address_only": true,
+          "esp_delta": 0,
+          "operand_width_bytes": null,
+          "site_rva": 321608,
+          "syntax_class": "neutral"
+        },
+        {
+          "conditional_32bit_stack_address_only": true,
+          "esp_delta": 0,
+          "operand_width_bytes": null,
+          "site_rva": 321610,
+          "syntax_class": "neutral"
+        },
+        {
+          "conditional_32bit_stack_address_only": true,
+          "esp_delta": 0,
+          "operand_width_bytes": null,
+          "site_rva": 321611,
+          "syntax_class": "neutral"
+        },
+        {
+          "conditional_32bit_stack_address_only": true,
+          "esp_delta": -4,
+          "operand_width_bytes": 4,
+          "site_rva": 321613,
+          "syntax_class": "push"
+        },
+        {
+          "conditional_32bit_stack_address_only": true,
+          "esp_delta": -4,
+          "operand_width_bytes": 4,
+          "site_rva": 321614,
+          "syntax_class": "push"
+        },
+        {
+          "conditional_32bit_stack_address_only": true,
+          "esp_delta": 0,
+          "operand_width_bytes": null,
+          "site_rva": 321616,
+          "syntax_class": "neutral"
+        },
+        {
+          "conditional_32bit_stack_address_only": true,
+          "esp_delta": -4,
+          "operand_width_bytes": 4,
+          "site_rva": 321618,
+          "syntax_class": "push"
+        },
+        {
+          "conditional_32bit_stack_address_only": true,
+          "esp_delta": -4,
+          "operand_width_bytes": 4,
+          "site_rva": 321619,
+          "syntax_class": "push"
+        },
+        {
+          "conditional_32bit_stack_address_only": true,
+          "esp_delta": 0,
+          "operand_width_bytes": null,
+          "site_rva": 321621,
+          "syntax_class": "neutral"
+        },
+        {
+          "conditional_32bit_stack_address_only": true,
+          "esp_delta": -4,
+          "operand_width_bytes": 4,
+          "site_rva": 321623,
+          "syntax_class": "push"
+        },
+        {
+          "conditional_32bit_stack_address_only": true,
+          "esp_delta": -4,
+          "operand_width_bytes": 4,
+          "site_rva": 321624,
+          "syntax_class": "push"
+        },
+        {
+          "conditional_32bit_stack_address_only": true,
+          "esp_delta": null,
+          "operand_width_bytes": null,
+          "site_rva": 321626,
+          "syntax_class": "opaque_call"
+        },
+        {
+          "conditional_32bit_stack_address_only": true,
+          "esp_delta": 0,
+          "operand_width_bytes": null,
+          "site_rva": 321632,
+          "syntax_class": "neutral"
+        },
+        {
+          "conditional_32bit_stack_address_only": true,
+          "esp_delta": 0,
+          "operand_width_bytes": null,
+          "site_rva": 321634,
+          "syntax_class": "neutral"
+        },
+        {
+          "conditional_32bit_stack_address_only": true,
+          "esp_delta": 0,
+          "operand_width_bytes": null,
+          "site_rva": 321637,
+          "syntax_class": "neutral"
+        },
+        {
+          "conditional_32bit_stack_address_only": true,
+          "esp_delta": 4,
+          "operand_width_bytes": 4,
+          "site_rva": 321639,
+          "syntax_class": "pop"
+        },
+        {
+          "conditional_32bit_stack_address_only": true,
+          "esp_delta": 0,
+          "operand_width_bytes": null,
+          "site_rva": 321640,
+          "syntax_class": "neutral"
+        },
+        {
+          "conditional_32bit_stack_address_only": true,
+          "esp_delta": 0,
+          "operand_width_bytes": null,
+          "site_rva": 321642,
+          "syntax_class": "neutral"
+        },
+        {
+          "conditional_32bit_stack_address_only": true,
+          "esp_delta": 0,
+          "operand_width_bytes": null,
+          "site_rva": 321649,
+          "syntax_class": "neutral"
+        },
+        {
+          "conditional_32bit_stack_address_only": true,
+          "esp_delta": 0,
+          "operand_width_bytes": null,
+          "site_rva": 321659,
+          "syntax_class": "neutral"
+        },
+        {
+          "conditional_32bit_stack_address_only": true,
+          "esp_delta": 4,
+          "operand_width_bytes": 4,
+          "site_rva": 321662,
+          "syntax_class": "pop"
+        },
+        {
+          "conditional_32bit_stack_address_only": true,
+          "esp_delta": 4,
+          "operand_width_bytes": 4,
+          "site_rva": 321663,
+          "syntax_class": "pop"
+        },
+        {
+          "conditional_32bit_stack_address_only": true,
+          "esp_delta": null,
+          "operand_width_bytes": null,
+          "site_rva": 321664,
+          "syntax_class": "unknown_esp_write"
+        }
+      ]
+    },
+    "prior_stack_read_shapes": [
+      {
+        "actual_instruction_effect_or_value_known": false,
+        "decoder_read_registers": [
+          "esp"
+        ],
+        "decoder_written_registers": [
+          "eax"
+        ],
+        "input_query_registers": [
+          "eax"
+        ],
+        "mnemonic": "mov",
+        "operands": [
+          {
+            "decoder_read": false,
+            "decoder_write": true,
+            "kind": "register",
+            "register": "eax",
+            "width_bytes": 4
+          },
+          {
+            "decoder_read": true,
+            "decoder_write": false,
+            "geometry": {
+              "base_register": "esp",
+              "displacement_region": null,
+              "index_register": null,
+              "index_scale": 1,
+              "relative_field_offset": 4,
+              "segment_register": null,
+              "width_bytes": 4
+            },
+            "kind": "memory",
+            "width_bytes": 4
+          }
+        ],
+        "site_rva": 321546
+      },
+      {
+        "actual_instruction_effect_or_value_known": false,
+        "decoder_read_registers": [
+          "esp"
+        ],
+        "decoder_written_registers": [
+          "ebx"
+        ],
+        "input_query_registers": [
+          "ebx"
+        ],
+        "mnemonic": "mov",
+        "operands": [
+          {
+            "decoder_read": false,
+            "decoder_write": true,
+            "kind": "register",
+            "register": "ebx",
+            "width_bytes": 4
+          },
+          {
+            "decoder_read": true,
+            "decoder_write": false,
+            "geometry": {
+              "base_register": "esp",
+              "displacement_region": null,
+              "index_register": null,
+              "index_scale": 1,
+              "relative_field_offset": 20,
+              "segment_register": null,
+              "width_bytes": 4
+            },
+            "kind": "memory",
+            "width_bytes": 4
+          }
+        ],
+        "site_rva": 321596
+      }
+    ],
+    "root_candidate_rva": 321546,
+    "shift_shape": {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "esi"
+      ],
+      "decoder_written_registers": [
+        "eflags",
+        "esi"
+      ],
+      "input_query_registers": [
+        "esi"
+      ],
+      "mnemonic": "shl",
+      "operands": [
+        {
+          "decoder_read": true,
+          "decoder_write": true,
+          "kind": "register",
+          "register": "esi",
+          "width_bytes": 4
+        },
+        {
+          "constant": 3,
+          "decoder_read": false,
+          "decoder_write": false,
+          "kind": "immediate",
+          "width_bytes": 1
+        }
+      ],
+      "site_rva": 321577
+    }
+  },
+  "helper_return_memory_or_native_save_effects_proven": false,
+  "native_filename_to_handle_to_io_schema_proven": false,
+  "native_read_buffer_payload_or_savedata_length128_proven": false,
+  "native_read_callee_result_or_executed_io_proven": false,
+  "native_read_caller": {
+    "actual_callee_abi_buffer_payload_length_or_return_proven": false,
+    "graph": {
+      "actual_entry_path_proven": false,
+      "edges": 271,
+      "frontier": [],
+      "node_cap": 256,
+      "node_limit_hit": false,
+      "nodes": 230,
+      "returning_call_assumption_only": true,
+      "span_bytes": 768
+    },
+    "input_sources": {
+      "dependency_closure_or_memory_values_proven": false,
+      "dependency_depth_limit": 2,
+      "pending_query_count": 0,
+      "queries": [
+        {
+          "actual_register_value_known": false,
+          "candidates_truncated": false,
+          "dependency_depth": 0,
+          "dependency_queries": [],
+          "reaching_candidates": [
+            {
+              "origin": "unknown_call",
+              "rva": 322951,
+              "semantic": null
+            }
+          ],
+          "register": "eax",
+          "site_in_candidate_graph": true,
+          "site_rva": 322985
+        },
+        {
+          "actual_register_value_known": false,
+          "candidates_truncated": false,
+          "dependency_depth": 0,
+          "dependency_queries": [],
+          "reaching_candidates": [
+            {
+              "origin": "unknown_call",
+              "rva": 322951,
+              "semantic": null
+            }
+          ],
+          "register": "ebp",
+          "site_in_candidate_graph": true,
+          "site_rva": 322985
+        },
+        {
+          "actual_register_value_known": false,
+          "candidates_truncated": false,
+          "dependency_depth": 0,
+          "dependency_queries": [
+            {
+              "register": "ebp",
+              "site_rva": 322985
+            }
+          ],
+          "reaching_candidates": [
+            {
+              "origin": "definition",
+              "rva": 322985,
+              "semantic": {
+                "constant": null,
+                "kind": "address_calculation",
+                "memory_input": {
+                  "base_register": "ebp",
+                  "displacement_region": null,
+                  "index_register": null,
+                  "index_scale": 1,
+                  "relative_field_offset": 19,
+                  "segment_register": null,
+                  "width_bytes": 4
+                },
+                "register_inputs": [],
+                "width_bits": 32
+              }
+            }
+          ],
+          "register": "eax",
+          "site_in_candidate_graph": true,
+          "site_rva": 322990
+        },
+        {
+          "actual_register_value_known": false,
+          "candidates_truncated": false,
+          "dependency_depth": 0,
+          "dependency_queries": [],
+          "reaching_candidates": [
+            {
+              "origin": "unknown_call",
+              "rva": 322951,
+              "semantic": null
+            }
+          ],
+          "register": "ebx",
+          "site_in_candidate_graph": true,
+          "site_rva": 322991
+        },
+        {
+          "actual_register_value_known": false,
+          "candidates_truncated": false,
+          "dependency_depth": 0,
+          "dependency_queries": [
+            {
+              "register": "ebp",
+              "site_rva": 322985
+            }
+          ],
+          "reaching_candidates": [
+            {
+              "origin": "definition",
+              "rva": 322985,
+              "semantic": {
+                "constant": null,
+                "kind": "address_calculation",
+                "memory_input": {
+                  "base_register": "ebp",
+                  "displacement_region": null,
+                  "index_register": null,
+                  "index_scale": 1,
+                  "relative_field_offset": 19,
+                  "segment_register": null,
+                  "width_bytes": 4
+                },
+                "register_inputs": [],
+                "width_bits": 32
+              }
+            }
+          ],
+          "register": "eax",
+          "site_in_candidate_graph": true,
+          "site_rva": 322992
+        },
+        {
+          "actual_register_value_known": false,
+          "candidates_truncated": false,
+          "dependency_depth": 0,
+          "dependency_queries": [],
+          "reaching_candidates": [
+            {
+              "origin": "unknown_call",
+              "rva": 322951,
+              "semantic": null
+            }
+          ],
+          "register": "ebp",
+          "site_in_candidate_graph": true,
+          "site_rva": 322992
+        },
+        {
+          "actual_register_value_known": false,
+          "candidates_truncated": false,
+          "dependency_depth": 0,
+          "dependency_queries": [],
+          "reaching_candidates": [
+            {
+              "origin": "unknown_call",
+              "rva": 322951,
+              "semantic": null
+            }
+          ],
+          "register": "ebx",
+          "site_in_candidate_graph": true,
+          "site_rva": 322992
+        },
+        {
+          "actual_register_value_known": false,
+          "candidates_truncated": false,
+          "dependency_depth": 0,
+          "dependency_queries": [],
+          "reaching_candidates": [
+            {
+              "origin": "unknown_call",
+              "rva": 322951,
+              "semantic": null
+            }
+          ],
+          "register": "ecx",
+          "site_in_candidate_graph": true,
+          "site_rva": 322992
+        },
+        {
+          "actual_register_value_known": false,
+          "candidates_truncated": false,
+          "dependency_depth": 0,
+          "dependency_queries": [],
+          "reaching_candidates": [
+            {
+              "origin": "unknown_call",
+              "rva": 322951,
+              "semantic": null
+            }
+          ],
+          "register": "edi",
+          "site_in_candidate_graph": true,
+          "site_rva": 322992
+        },
+        {
+          "actual_register_value_known": false,
+          "candidates_truncated": false,
+          "dependency_depth": 0,
+          "dependency_queries": [],
+          "reaching_candidates": [
+            {
+              "origin": "unknown_call",
+              "rva": 322951,
+              "semantic": null
+            }
+          ],
+          "register": "esi",
+          "site_in_candidate_graph": true,
+          "site_rva": 322992
+        },
+        {
+          "actual_register_value_known": false,
+          "candidates_truncated": false,
+          "dependency_depth": 0,
+          "dependency_queries": [],
+          "reaching_candidates": [
+            {
+              "origin": "unknown_call",
+              "rva": 322992,
+              "semantic": null
+            }
+          ],
+          "register": "eax",
+          "site_in_candidate_graph": true,
+          "site_rva": 323000
+        },
+        {
+          "actual_register_value_known": false,
+          "candidates_truncated": false,
+          "dependency_depth": 0,
+          "dependency_queries": [],
+          "reaching_candidates": [
+            {
+              "origin": "unknown_call",
+              "rva": 322992,
+              "semantic": null
+            }
+          ],
+          "register": "ebp",
+          "site_in_candidate_graph": true,
+          "site_rva": 323004
+        },
+        {
+          "actual_register_value_known": false,
+          "candidates_truncated": false,
+          "dependency_depth": 0,
+          "dependency_queries": [],
+          "reaching_candidates": [
+            {
+              "origin": "unknown_call",
+              "rva": 323014,
+              "semantic": null
+            }
+          ],
+          "register": "eax",
+          "site_in_candidate_graph": true,
+          "site_rva": 323020
+        },
+        {
+          "actual_register_value_known": false,
+          "candidates_truncated": false,
+          "dependency_depth": 0,
+          "dependency_queries": [],
+          "reaching_candidates": [
+            {
+              "origin": "unknown_call",
+              "rva": 323031,
+              "semantic": null
+            }
+          ],
+          "register": "eax",
+          "site_in_candidate_graph": true,
+          "site_rva": 323039
+        }
+      ],
+      "query_limit_hit": false
+    },
+    "postcall_compare_count": 4,
+    "postcall_compare_shapes": [
+      {
+        "actual_instruction_effect_or_value_known": false,
+        "decoder_read_registers": [
+          "eax"
+        ],
+        "decoder_written_registers": [
+          "eflags"
+        ],
+        "input_query_registers": [
+          "eax"
+        ],
+        "mnemonic": "test",
+        "operands": [
+          {
+            "decoder_read": true,
+            "decoder_write": false,
+            "kind": "register",
+            "register": "eax",
+            "width_bytes": 4
+          },
+          {
+            "decoder_read": true,
+            "decoder_write": false,
+            "kind": "register",
+            "register": "eax",
+            "width_bytes": 4
+          }
+        ],
+        "site_rva": 323000
+      },
+      {
+        "actual_instruction_effect_or_value_known": false,
+        "decoder_read_registers": [
+          "ebp"
+        ],
+        "decoder_written_registers": [
+          "eflags"
+        ],
+        "input_query_registers": [
+          "ebp"
+        ],
+        "mnemonic": "cmp",
+        "operands": [
+          {
+            "decoder_read": true,
+            "decoder_write": false,
+            "geometry": {
+              "base_register": "ebp",
+              "displacement_region": null,
+              "index_register": null,
+              "index_scale": 1,
+              "relative_field_offset": 19,
+              "segment_register": null,
+              "width_bytes": 1
+            },
+            "kind": "memory",
+            "width_bytes": 1
+          },
+          {
+            "constant": 26,
+            "decoder_read": false,
+            "decoder_write": false,
+            "kind": "immediate",
+            "width_bytes": 1
+          }
+        ],
+        "site_rva": 323004
+      },
+      {
+        "actual_instruction_effect_or_value_known": false,
+        "decoder_read_registers": [
+          "eax"
+        ],
+        "decoder_written_registers": [
+          "eflags"
+        ],
+        "input_query_registers": [
+          "eax"
+        ],
+        "mnemonic": "cmp",
+        "operands": [
+          {
+            "decoder_read": true,
+            "decoder_write": false,
+            "kind": "register",
+            "register": "eax",
+            "width_bytes": 4
+          },
+          {
+            "constant": -1,
+            "decoder_read": false,
+            "decoder_write": false,
+            "kind": "immediate",
+            "width_bytes": 4
+          }
+        ],
+        "site_rva": 323020
+      },
+      {
+        "actual_instruction_effect_or_value_known": false,
+        "decoder_read_registers": [
+          "eax"
+        ],
+        "decoder_written_registers": [
+          "eflags"
+        ],
+        "input_query_registers": [
+          "eax"
+        ],
+        "mnemonic": "cmp",
+        "operands": [
+          {
+            "decoder_read": true,
+            "decoder_write": false,
+            "kind": "register",
+            "register": "eax",
+            "width_bytes": 4
+          },
+          {
+            "constant": -1,
+            "decoder_read": false,
+            "decoder_write": false,
+            "kind": "immediate",
+            "width_bytes": 4
+          }
+        ],
+        "site_rva": 323039
+      }
+    ],
+    "postcall_compares_truncated": false,
+    "pre_call_suffix": {
+      "abi_roles_applied": false,
+      "actual_stack_values_known": false,
+      "conditional_pre_call_esp_only": true,
+      "linear_call_boundary_reached": true,
+      "pushes": [
+        {
+          "conditional_pre_call_esp_offset": 0,
+          "input": {
+            "decoder_read": true,
+            "decoder_write": false,
+            "kind": "register",
+            "register": "ebx",
+            "width_bytes": 4
+          },
+          "site_rva": 322991
+        },
+        {
+          "conditional_pre_call_esp_offset": 4,
+          "input": {
+            "decoder_read": true,
+            "decoder_write": false,
+            "kind": "register",
+            "register": "eax",
+            "width_bytes": 4
+          },
+          "site_rva": 322990
+        },
+        {
+          "conditional_pre_call_esp_offset": 8,
+          "input": {
+            "constant": 1,
+            "decoder_read": false,
+            "decoder_write": false,
+            "kind": "immediate",
+            "width_bytes": 4
+          },
+          "site_rva": 322988
+        }
+      ],
+      "stop_reason": "stack_or_memory_barrier"
+    },
+    "push_candidates": [
+      {
+        "actual_abi_role_value_or_buffer_length_proven": false,
+        "conditional_pre_call_esp_offset": 0,
+        "input": {
+          "decoder_read": true,
+          "decoder_write": false,
+          "kind": "register",
+          "register": "ebx",
+          "width_bytes": 4
+        },
+        "input_query_registers": [
+          "ebx"
+        ],
+        "site_rva": 322991
+      },
+      {
+        "actual_abi_role_value_or_buffer_length_proven": false,
+        "conditional_pre_call_esp_offset": 4,
+        "input": {
+          "decoder_read": true,
+          "decoder_write": false,
+          "kind": "register",
+          "register": "eax",
+          "width_bytes": 4
+        },
+        "input_query_registers": [
+          "eax"
+        ],
+        "site_rva": 322990
+      },
+      {
+        "actual_abi_role_value_or_buffer_length_proven": false,
+        "conditional_pre_call_esp_offset": 8,
+        "input": {
+          "constant": 1,
+          "decoder_read": false,
+          "decoder_write": false,
+          "kind": "immediate",
+          "width_bytes": 4
+        },
+        "input_query_registers": [],
+        "site_rva": 322988
+      }
+    ],
+    "push_definition_count": 1,
+    "push_definition_shapes": [
+      {
+        "actual_instruction_effect_or_value_known": false,
+        "decoder_read_registers": [
+          "ebp"
+        ],
+        "decoder_written_registers": [
+          "eax"
+        ],
+        "input_query_registers": [
+          "eax",
+          "ebp"
+        ],
+        "mnemonic": "lea",
+        "operands": [
+          {
+            "decoder_read": false,
+            "decoder_write": true,
+            "kind": "register",
+            "register": "eax",
+            "width_bytes": 4
+          },
+          {
+            "decoder_read": true,
+            "decoder_write": false,
+            "geometry": {
+              "base_register": "ebp",
+              "displacement_region": null,
+              "index_register": null,
+              "index_scale": 1,
+              "relative_field_offset": 19,
+              "segment_register": null,
+              "width_bytes": 4
+            },
+            "kind": "memory",
+            "width_bytes": 4
+          }
+        ],
+        "site_rva": 322985
+      }
+    ],
+    "push_definitions_truncated": false,
+    "read_context_call_identity": {
+      "call_rva": 322992,
+      "direct_target_rva": 305372,
+      "import_identity": null,
+      "import_slot_association_proven": false,
+      "kind": "direct",
+      "memory_target": null,
+      "register_target": null,
+      "runtime_target_or_effects_proven": false
+    },
+    "read_context_candidate_rva": 305372,
+    "root_candidate_rva": 322389
+  },
+  "native_read_caller_stack_signature_establishes_abi_roles": false,
+  "opaque_call_runtime_invoked_or_return_known": false,
+  "original_error_branch_taken_or_owner_known": false,
+  "original_proprietary_bytes_published": false,
+  "original_runtime_executed": false,
+  "original_stack_address_attribute_or_contents_proven": false,
+  "partial_syntax_establishes_original_whole_register_value": false,
+  "postcall_esi_eax_callee_preservation_proven": false,
+  "r38_exact_original_revalidated": true,
+  "r38_exact_report_sha256": "eeecbfcf18b59c9b1198ea8e17a0428ab73a6d604ba36253dee661a65da53099",
+  "route_reachability_establishes_runtime_feasibility": false,
+  "runtime_sha256": "cdab9ea049a98bbc96ce93eeaa8b63c688f0c0f0ad8b3183e79d75e47621441a",
+  "same_push_register_establishes_same_handle_value": false,
+  "savedata_sha256": "5b26f54a9723cd2c5275f964457094fdf1fc33ca086cdaf55bb5350dfb04f3f9",
+  "schema": "tw10-r39-original-mask-symbolic-slots-native-read-caller",
+  "shared_displacement_establishes_handle_table_or_owner": false,
+  "shared_store_contains_actual_createfile_handle": false,
+  "slot_geometry_establishes_actual_argument_value": false,
+  "static_only": true,
+  "status": "PINNED_ORIGINAL_CONDITIONAL_TOKENS_NATIVE_READ_PAYLOAD_SAVE_OPEN",
+  "symbolic_token_establishes_actual_caller_helper_value_binding": false
+}

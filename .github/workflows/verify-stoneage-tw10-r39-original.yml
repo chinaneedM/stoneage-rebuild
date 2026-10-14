@@ -1,0 +1,71 @@
+name: Independently verify TW1.0 R39 original mask, symbolic slots and native read caller
+on:
+  workflow_dispatch:
+  push:
+    branches: [agent/tw10-savedata-r39-mask-tokens-read-20261014, main]
+    paths:
+      - .github/workflows/verify-stoneage-tw10-r39-original.yml
+      - tools/stoneage_tw10_savedata_native_io_r39_guard.py
+      - research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R39-ORIGINAL.json
+permissions:
+  contents: read
+  actions: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Authenticate independent immutable original run and artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          identity="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/38494750030" --jq '[.status,.conclusion,.head_sha,.head_branch] | join("|")')"
+          test "$identity" = 'completed|success|ccea7d85ccaaf41a5297fab3273be20fcb246947|agent/tw10-savedata-r39-mask-tokens-read-20261014'
+          artifact="$(gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/11862418406" --jq '[.workflow_run.id,.name,.digest,.expired] | join("|")')"
+          test "$artifact" = '38494750030|tw10-r39-original-mask-tokens-read-derived|sha256:ffabace982b4e15bf71fb43094fd44db8f3dd567e0625813464408eb5aba89e8|false'
+      - name: Download bounded R39 original-derived metadata only
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/r39-independent
+          gh run download 38494750030 --repo "$GITHUB_REPOSITORY" --name tw10-r39-original-mask-tokens-read-derived --dir /tmp/r39-independent
+          test "$(find /tmp/r39-independent -type f | wc -l)" -eq 1
+          test -f /tmp/r39-independent/stoneage-r39-derived.json
+          test ! -L /tmp/r39-independent/stoneage-r39-derived.json
+          test "$(stat -c %s /tmp/r39-independent/stoneage-r39-derived.json)" -le 100000
+          sha256sum /tmp/r39-independent/stoneage-r39-derived.json
+          wc -c /tmp/r39-independent/stoneage-r39-derived.json
+      - name: Replay strict R39 through R32 tamper and negative controls
+        run: |
+          set -euo pipefail
+          pip install --quiet capstone pefile
+          python -m unittest -v tests.test_stoneage_tw10_savedata_native_io_r39 tests.test_stoneage_tw10_savedata_native_io_r38 tests.test_stoneage_tw10_savedata_native_io_r37 tests.test_stoneage_tw10_savedata_native_io_r36 tests.test_stoneage_tw10_savedata_native_io_r35 tests.test_stoneage_tw10_savedata_native_io_r34 tests.test_stoneage_tw10_savedata_native_io_r33 tests.test_stoneage_tw10_savedata_native_io_r32
+          python -m tools.stoneage_tw10_savedata_native_io_r39_guard --report /tmp/r39-independent/stoneage-r39-derived.json
+      - name: Review original bounded report and canonical exact equality when admitted
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json, hashlib
+          from pathlib import Path
+          from tools.stoneage_tw10_savedata_native_io_r39_guard import validate
+          source=Path('/tmp/r39-independent/stoneage-r39-derived.json').read_bytes()
+          assert len(source)==28232
+          assert hashlib.sha256(source).hexdigest()=='9e7648bd716b65a3695c1a1b04461d5863474210f083e5a11df6595e8cdbbd44'
+          report=json.loads(source)
+          validate(report)
+          p=Path('research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R39-ORIGINAL.json')
+          if p.exists():
+              assert json.loads(p.read_text()) == report, 'original R39 canonical JSON differs'
+              print('TW10_R39_EXACT_DERIVED_JSON_EQUALITY=PASS')
+          else:
+              print('TW10_R39_INDEPENDENT_REVIEW_ONLY=PASS')
+          print('TW10_R39_ORIGINAL_DERIVED_JSON_BEGIN')
+          print(json.dumps(report,sort_keys=True,separators=(',',':')))
+          print('TW10_R39_ORIGINAL_DERIVED_JSON_END')
+          PY
+      - name: Purge independent temporary derivative
+        if: always()
+        run: rm -rf /tmp/r39-independent
