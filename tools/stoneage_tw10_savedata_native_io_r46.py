@@ -162,7 +162,7 @@ def inspect_verified(runtime,savedata):
     result=derive(Decoder(data[t['raw']:t['raw']+t['raw_size']],t['rva'],base),sections,imports,prior)
     r37=Path(__file__).resolve().parents[1]/'research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R37-ORIGINAL.json'
     raw=r37.read_bytes()
-    if hashlib.sha256(raw).hexdigest()!=R37_SHA256:raise ValueError('R46 R37 canonical custody')
+    if hashlib.sha256((json.dumps(json.loads(raw),sort_keys=True)+'\n').encode()).hexdigest()!=R37_SHA256:raise ValueError('R46 R37 canonical custody')
     old=next(c['callee_context'] for c in json.loads(raw)['helper_candidates'] if c['callee_context']['root_candidate_rva']==HELPER)
     if result['write_helper_context']['r37_helper_surface_rederived']!=old:raise ValueError('R46 exact R37 helper surface changed')
     return result
