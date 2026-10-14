@@ -6386,3 +6386,14 @@ Source Action38572368408/job115880592995 SUCCESS at agent/tw10-savedata-r41-save
 FACT (original bounded static): four exact savedata filename PUSH/CALL prefixes and their PE-entrypoint CFG boundary support reverified. Separate continuation graphs discover repeated target0x48bbc with four physical PUSH candidates and target0x48660 with literal4000/local address candidates. Open CALLs remain opaque; branch joins retain alternate source candidates. No parameter/handle/buffer/length/schema/persistence or actual runtime execution admitted. HYPOTHESIS: savedata-specific payload write/read wrappers; target bodies and native API links remain for R42.
 
 Canonical original research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R41-ORIGINAL.json; scope docs/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R41.md. Stage A only.
+
+
+## SRC-TW10-SAVEDATA-NATIVE-IO-R42 — 2026-10-14
+
+S-grade authenticated Taiwan Waei/JSS1.0 retail nonexecuting static PE/CFG/operand evidence; runtime/ABI/owner interpretations conditional.
+
+Source Action38574385118/job115887532644 SUCCESS at agent/tw10-savedata-r42-payload-wrappers-20261014 HEADebd97285d26daaaac51e96115302ea400eee915b. Authenticated transient archive/disc/runtime/save identities and exact R41 original derivative SHA2568c8474f75eb6adec5aa3939054f0fce26997152fb8e1f1424e74f18485c2471c rederived/strict-gated. Derived-only artifact11898767027 tw10-r42-original-payload-wrappers-derived ZIP SHA25610c695b16eb5a1be5d1f3fa8b4852c3c4b3593d6f410317ad0dfccd83da6b501; raw JSON147608 bytes SHA256545901acc97a027fb38a3937e00549b15f45b379c7c059e98ece6133c9541732. Independent immutable source run/head/branch/artifact identity, raw size/digest, negative controls and exact canonical JSON equality Action38574676282 SUCCESS at HEADe0c2dff028af3234fb028b7fa7642b1e92ca9b58.278 local/independent R42-R32 plus hardened R7 tests PASS. Originals transient, unexecuted/unpublished and unconditionally purged; local canonical JSON equals pinned derivative.
+
+FACT (bounded original static): savedata-specific wrappers0x48bbc/0x48660 have coherent direct CFG support and conditional paths to native IO contexts via0x48c5e->0x4c5b4 /0x486f0->0x4a8dc. Four whole stack slots, two IMUL operands and three-slot native-call suffix syntax independently requalified. Opaque CALLs/loop joins block actual frame/owner/value binding; one write-definition shape0x48c93 remains outside the12-row sampler. HYPOTHESIS only: fwrite/fread roles and descriptor-like field. No actual IO/schema/persistence or historical system-family closure.
+
+Canonical original research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R42-ORIGINAL.json; scope docs/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R42.md. Stage A only.
