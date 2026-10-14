@@ -28,7 +28,15 @@ def base_fixture():
         # Full-width source before AL write. Remaining prolog/frame syntax stays invented.
         put(0x4a90d,bytes.fromhex('8d0431'))
         put(READ_API+6,bytes.fromhex('85c0750a8b45f40345f8c39090908b45f8c3'))
+        put(NATIVE_CALL+5,bytes.fromhex('85c0740389c3c3c3'))
         dec=Decoder(bytes(raw),dec.lo,dec.base)
+        # The late fixture adds instruction boundaries after R45 was derived.
+        # Regenerate its synthetic graph/branch prerequisite for the new bytes.
+        previous=copy.deepcopy(previous)
+        nodes,edges,front,cap=candidate_graph(dec,READ_ROOT)
+        c=previous['read_count_context']
+        c.update(bounded_node_rvas=sorted(nodes),bounded_edges=[list(e) for e in sorted(edges)],graph=graph_meta(nodes,edges,front,cap))
+        c['zf_branch_contexts']=[branch_context(dec,sections,nodes,edges,READ_ROOT,b['branch_site_rva']) for b in c['zf_branch_contexts']]
         prior=derive_r46(dec,sections,imports,previous)
         captured['report']=derive(dec,sections,imports,prior)
         return prior
