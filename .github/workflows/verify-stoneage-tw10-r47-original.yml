@@ -1,0 +1,73 @@
+name: Independently verify TW1.0 R47 original byte sources local result syntax and wrapper return boundary
+on:
+  workflow_dispatch:
+  push:
+    branches: [agent/tw10-savedata-r47-byte-result-return-20261015, main]
+    paths:
+      - .github/workflows/verify-stoneage-tw10-r47-original.yml
+      - tools/stoneage_tw10_savedata_native_io_r47_guard.py
+      - docs/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R47.md
+      - research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R47-ORIGINAL.json
+permissions:
+  contents: read
+  actions: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Authenticate independent immutable original run and artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          identity="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/38650978505" --jq '[.status,.conclusion,.head_sha,.head_branch] | join("|")')"
+          test "$identity" = 'completed|success|672dd89ac2cbf6b28941ac9156ff51330eaa6833|agent/tw10-savedata-r47-byte-result-return-20261015'
+          artifact="$(gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/11934900787" --jq '[.workflow_run.id,.name,.digest,.expired] | join("|")')"
+          test "$artifact" = '38650978505|tw10-r47-original-byte-result-return-derived|sha256:487e2f9ce520abe0eab1887ca84d1c3b89ec9ea86371e871e4e22c027e9d4418|false'
+      - name: Download bounded R47 original-derived metadata only
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/r47-independent
+          gh run download 38650978505 --repo "$GITHUB_REPOSITORY" --name tw10-r47-original-byte-result-return-derived --dir /tmp/r47-independent
+          test "$(find /tmp/r47-independent -type f | wc -l)" -eq 1
+          test -f /tmp/r47-independent/stoneage-r47-derived.json
+          test ! -L /tmp/r47-independent/stoneage-r47-derived.json
+          test "$(stat -c %s /tmp/r47-independent/stoneage-r47-derived.json)" -le 300000
+          sha256sum /tmp/r47-independent/stoneage-r47-derived.json
+          wc -c /tmp/r47-independent/stoneage-r47-derived.json
+      - name: Replay strict R47 through R32 tamper and negative controls
+        run: |
+          set -euo pipefail
+          pip install --quiet capstone pefile
+          python -m unittest -v tests.test_stoneage_tw10_savedata_native_io_r47 tests.test_stoneage_tw10_savedata_native_io_r46 tests.test_stoneage_tw10_savedata_native_io_r45 tests.test_stoneage_tw10_savedata_native_io_r44 tests.test_stoneage_tw10_savedata_native_io_r43 tests.test_stoneage_tw10_savedata_native_io_r42 tests.test_stoneage_tw10_savedata_native_io_r41 tests.test_stoneage_tw10_savedata_native_io_r40 tests.test_stoneage_tw10_savedata_native_io_r39 tests.test_stoneage_tw10_savedata_native_io_r38 tests.test_stoneage_tw10_savedata_native_io_r37 tests.test_stoneage_tw10_savedata_native_io_r36 tests.test_stoneage_tw10_savedata_native_io_r35 tests.test_stoneage_tw10_savedata_native_io_r34 tests.test_stoneage_tw10_savedata_native_io_r33 tests.test_stoneage_tw10_savedata_native_io_r32 tests.test_stoneage_tw10_savedata_argtrace_r7 tests.test_stoneage_tw10_savedata_argtrace_r7_guard
+          python -m tools.stoneage_tw10_savedata_native_io_r47_guard --report /tmp/r47-independent/stoneage-r47-derived.json
+      - name: Review original bounded report and canonical exact equality when admitted
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json, hashlib
+          from pathlib import Path
+          from tools.stoneage_tw10_savedata_native_io_r47_guard import validate
+          source=Path('/tmp/r47-independent/stoneage-r47-derived.json').read_bytes()
+          assert len(source)==109781
+          assert hashlib.sha256(source).hexdigest()=='939d7080b61c2e8b3dc873cf0adec45ffc6b2c6154877aee787af6ab03dcf781'
+          report=json.loads(source)
+          validate(report)
+          p=Path('research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R47-ORIGINAL.json')
+          assert p.exists(), 'R47 canonical derivative missing'
+          if p.exists():
+              assert json.loads(p.read_text()) == report, 'original R47 canonical JSON differs'
+              print('TW10_R47_EXACT_DERIVED_JSON_EQUALITY=PASS')
+          else:
+              print('TW10_R47_INDEPENDENT_REVIEW_ONLY=PASS')
+          print('TW10_R47_ORIGINAL_DERIVED_JSON_BEGIN')
+          print(json.dumps({'byte_relation':report['read_byte_result_context']['conditional_byte_relation'],'frame_refs':report['read_byte_result_context']['frame_reference_candidates'],'wrapper_shapes':report['savedata_wrapper_return_context']['post_call_shapes']},sort_keys=True))
+          print('TW10_R47_ORIGINAL_DERIVED_JSON_END')
+          PY
+      - name: Purge independent temporary derivative
+        if: always()
+        run: rm -rf /tmp/r47-independent
