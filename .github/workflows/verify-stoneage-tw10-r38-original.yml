@@ -1,0 +1,71 @@
+name: Independently verify TW1.0 R38 original conditional ESP slots and shared-store source shapes
+on:
+  workflow_dispatch:
+  push:
+    branches: [agent/tw10-savedata-r38-stack-shared-store-20261014, main]
+    paths:
+      - .github/workflows/verify-stoneage-tw10-r38-original.yml
+      - tools/stoneage_tw10_savedata_native_io_r38_guard.py
+      - research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R38-ORIGINAL.json
+permissions:
+  contents: read
+  actions: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Authenticate independent immutable original run and artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          identity="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/38492935617" --jq '[.status,.conclusion,.head_sha,.head_branch] | join("|")')"
+          test "$identity" = 'completed|success|6b9991cba4b11ebfe7d3abb536b3ddf79e61852b|agent/tw10-savedata-r38-stack-shared-store-20261014'
+          artifact="$(gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/11862821367" --jq '[.workflow_run.id,.name,.digest,.expired] | join("|")')"
+          test "$artifact" = '38492935617|tw10-r38-original-stack-shared-store-derived|sha256:f57cbd2ab80a50b83cdd60d508c671ec2036476dc83654ecf528b7d342f64a71|false'
+      - name: Download bounded R38 original-derived metadata only
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/r38-independent
+          gh run download 38492935617 --repo "$GITHUB_REPOSITORY" --name tw10-r38-original-stack-shared-store-derived --dir /tmp/r38-independent
+          test "$(find /tmp/r38-independent -type f | wc -l)" -eq 1
+          test -f /tmp/r38-independent/stoneage-r38-derived.json
+          test ! -L /tmp/r38-independent/stoneage-r38-derived.json
+          test "$(stat -c %s /tmp/r38-independent/stoneage-r38-derived.json)" -le 100000
+          sha256sum /tmp/r38-independent/stoneage-r38-derived.json
+          wc -c /tmp/r38-independent/stoneage-r38-derived.json
+      - name: Replay strict R38 through R32 tamper and negative controls
+        run: |
+          set -euo pipefail
+          pip install --quiet capstone pefile
+          python -m unittest -v tests.test_stoneage_tw10_savedata_native_io_r38 tests.test_stoneage_tw10_savedata_native_io_r37 tests.test_stoneage_tw10_savedata_native_io_r36 tests.test_stoneage_tw10_savedata_native_io_r35 tests.test_stoneage_tw10_savedata_native_io_r34 tests.test_stoneage_tw10_savedata_native_io_r33 tests.test_stoneage_tw10_savedata_native_io_r32
+          python -m tools.stoneage_tw10_savedata_native_io_r38_guard --report /tmp/r38-independent/stoneage-r38-derived.json
+      - name: Review original bounded report and canonical exact equality when admitted
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json, hashlib
+          from pathlib import Path
+          from tools.stoneage_tw10_savedata_native_io_r38_guard import validate
+          source=Path('/tmp/r38-independent/stoneage-r38-derived.json').read_bytes()
+          assert len(source)==22386
+          assert hashlib.sha256(source).hexdigest()=='eeecbfcf18b59c9b1198ea8e17a0428ab73a6d604ba36253dee661a65da53099'
+          report=json.loads(source)
+          validate(report)
+          p=Path('research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R38-ORIGINAL.json')
+          if p.exists():
+              assert json.loads(p.read_text()) == report, 'original R38 canonical JSON differs'
+              print('TW10_R38_EXACT_DERIVED_JSON_EQUALITY=PASS')
+          else:
+              print('TW10_R38_INDEPENDENT_REVIEW_ONLY=PASS')
+          print('TW10_R38_ORIGINAL_DERIVED_JSON_BEGIN')
+          print(json.dumps(report,sort_keys=True,separators=(',',':')))
+          print('TW10_R38_ORIGINAL_DERIVED_JSON_END')
+          PY
+      - name: Purge independent temporary derivative
+        if: always()
+        run: rm -rf /tmp/r38-independent
