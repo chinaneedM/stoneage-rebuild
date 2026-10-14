@@ -49,6 +49,13 @@ class R36Synthetic(unittest.TestCase):
         self.assertEqual(route(t, [2,4], 1, 4)["opaque_call_barrier_rvas"], [2])
         self.assertFalse(route(t, [2], 4, 1)["structurally_reachable_in_bounded_graph"])
         self.assertFalse(route(t, [], 9, 9)["structurally_reachable_in_bounded_graph"])
+    def test_low_byte_projection_and_address_inputs(self):
+        ops = [{"geometry": {"base_register": "ecx", "index_register": "esi"}},
+               {"kind": "register", "register": "al", "width_bytes": 1}]
+        projections, addresses = store_register_queries(ops)
+        self.assertEqual(addresses, ["ecx", "esi"])
+        self.assertEqual(projections, [{"operand_register": "al", "query_register": "eax",
+                                       "operand_width_bytes": 1, "actual_projected_value_known": False}])
     def test_wrong_hash(self):
         with self.assertRaisesRegex(ValueError, "SHA256 mismatch"):
             inspect_verified(b"bad", b"bad")
@@ -87,6 +94,10 @@ class R36Tamper(unittest.TestCase):
         self.reject(lambda d:d["continuation_memory_stores"].update(count=2))
     def test_source_ref(self):
         self.reject(lambda d:d["continuation_memory_stores"]["samples"][0].update(source_registers=[]))
+    def test_projection_value(self):
+        self.reject(lambda d:d["continuation_memory_stores"]["samples"][0]["source_register_projections"][0].update(actual_projected_value_known=True))
+    def test_address_ref(self):
+        self.reject(lambda d:d["continuation_memory_stores"]["samples"][0].update(address_registers=[]))
     def test_flag_link(self):
         self.reject(lambda d:d["branch_flag_sources"]["candidates"][0].update(site_rva=OPAQUE))
     def test_opaque_effect(self):

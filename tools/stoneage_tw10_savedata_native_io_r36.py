@@ -40,6 +40,21 @@ FLAGS = tuple(R35_FLAGS) + (
     "route_reachability_establishes_runtime_feasibility",
 )
 
+def store_register_queries(ops):
+    """Expose partial-register projection separately from whole-register value.
+
+    AL is a query for EAX provenance plus a low-byte projection, never evidence
+    that the entire EAX value is stored. Address inputs remain separate.
+    """
+    source = ops[1].get("register") if ops[1].get("kind") == "register" else None
+    projections = [{"operand_register": source, "query_register": reg,
+                    "operand_width_bytes": ops[1]["width_bytes"],
+                    "actual_projected_value_known": False}
+                   for reg, aliases in sorted(ALIASES.items()) if source in aliases]
+    geometry = ops[0].get("geometry") or {}
+    addresses = sorted({geometry.get("base_register"), geometry.get("index_register")} & set(ALIASES))
+    return projections, addresses
+
 def closure(edges, start, reverse=False):
     adjacency = {}
     for a, b in edges:
@@ -115,12 +130,14 @@ def derive(dec, sections, imports, prior):
         ops = [operand_shape(ins, op, sections, dec.base) for op in ins.operands]
         if ops[0].get("kind") != "memory" or not ops[0].get("decoder_write"):
             continue
-        regs = ([ops[1]["register"]] if ops[1].get("kind") == "register" else [])
-        regs = sorted(set(regs) & set(ALIASES))
+        projections, addresses = store_register_queries(ops)
+        regs = sorted({p["query_register"] for p in projections})
         if len(stores) < MAX_STORES:
-            queries.update((at, r) for r in regs)
+            queries.update((at, r) for r in set(regs) | set(addresses))
         stores.append({"site_rva": at, "mnemonic": "mov", "operands": ops,
-                       "source_registers": regs, "actual_store_value_or_handle_owner_proven": False})
+                       "source_registers": regs, "source_register_projections": projections,
+                       "address_registers": addresses,
+                       "actual_store_value_or_handle_owner_proven": False})
     return {
         "schema": SCHEMA, "status": STATUS,
         "runtime_sha256": RUNTIME_SHA256, "savedata_sha256": SAVEDATA_SHA256,

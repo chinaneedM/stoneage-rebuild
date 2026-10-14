@@ -92,8 +92,11 @@ def validate(d):
         require(type(at) is int and at > last and at in ns and at in forward and r.get("mnemonic") == "mov"
                 and len(ops) == 2 and ops[0].get("kind") == "memory" and ops[0].get("decoder_write") is True
                 and r.get("actual_store_value_or_handle_owner_proven") is False, "store primitive")
-        regs = sorted({ops[1]["register"]} & set(ALIASES)) if ops[1].get("kind") == "register" else []
-        require(r.get("source_registers") == regs and (all((at, reg) in keys for reg in regs)
+        projections, addresses = store_register_queries(ops)
+        regs = sorted({p["query_register"] for p in projections})
+        require(r.get("source_registers") == regs and r.get("source_register_projections") == projections
+                and r.get("address_registers") == addresses
+                and (all((at, reg) in keys for reg in set(regs) | set(addresses))
                 or d["input_sources"]["query_limit_hit"]), "store source refs")
         last = at
     def ban(o):
