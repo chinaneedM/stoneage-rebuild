@@ -213,3 +213,10 @@ Highest NEXT R38: first helper stack-prefix and caller PUSH geometry, exact shar
 R38 independently accepts conditional ESP slot geometry and exact shared-store source/width syntax with explicit32-bit stack/near-CALL requirements, opaque CALL barriers and memory-alias/content gaps. No actual parameter/handle binding, effective owner, original file IO/schema/persistence or system-family closure is admitted. All PARTIAL/OPEN gates remain unchanged.
 
 Highest NEXT R39: exact mask and bounded symbolic stack-token correspondence if justified, then native parent ReadFile-context buffer/length candidates. Keep unknown API/return/frame/alias effects separate and avoid generic ownership exhaustion. Stage A restoration before joint future-engine/game review remains binding.
+
+
+## 2026-10-14 queue supersession (R39 accepted)
+
+R39 independently accepts mask/shift, conditional slot/register-symbol and native read-caller syntax with explicit bounded-prefix/stack assumptions. Actual values, ABI/frame/owner/alias effects and native save payload/persistence stay OPEN. The immediate1/local byte address/0x1A compare supports an end-check hypothesis only; no text/EOF/CRT or128-byte schema FACT admitted. All system-family PARTIAL/OPEN gates unchanged.
+
+Highest NEXT R40: native read-context entry stack/frame/parameter and post-call branch/address provenance, distinguish the candidate probe branch, then return to savedata-specific filename/buffer/length recovery. Avoid generic ownership exhaustion. Stage A restoration before joint future-engine/game review remains binding.
