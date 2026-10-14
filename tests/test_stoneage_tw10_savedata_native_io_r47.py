@@ -22,6 +22,7 @@ def base_fixture():
         put(0x4a90d,bytes.fromhex('8d0431'));pad(0x4a910,INIT)
         put(INIT,bytes.fromhex('8365f800'))
         put(LOAD,bytes.fromhex('8a4005'))
+        put(0x4a937,bytes.fromhex('3c0a'))
         put(RELOAD,bytes.fromhex('8b03'))
         put(MARKER,bytes.fromhex('c745f801000000'))
         put(RESET,bytes.fromhex('c64430050a'))
