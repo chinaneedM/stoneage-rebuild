@@ -26,8 +26,8 @@ def base_fixture():
     put(0x48732,bytes.fromhex('89f831d2f7750cc3'))
     put(0x48740,bytes.fromhex('83c8ffc3'))
     dec=Decoder(bytes(raw),lo,base)
-    sections=[{'name':'.text','rva':lo,'virtual_size':hi-lo,'raw':0,'raw_size':hi-lo,'characteristics':0x60000020},
-              {'name':'.rdata','rva':0x52000,'virtual_size':0x1000,'raw':hi-lo,'raw_size':0x1000,'characteristics':0x40000040}]
+    sections=[{'name':'.text','rva':lo,'vsize':hi-lo,'raw':0,'raw_size':hi-lo,'characteristics':0x60000020},
+              {'name':'.rdata','rva':0x52000,'vsize':0x1000,'raw':hi-lo,'raw_size':0x1000,'characteristics':0x40000040}]
     imports={base+0x520d8:('KERNEL32.dll','ReadFile')}
     n,e,f,c=candidate_graph(dec,READ_ROOT);wn,we,wf,wc=candidate_graph(dec,WRAPPER)
     # Minimal synthetic prerequisite fields checked by derive; original custody is tested remotely.
