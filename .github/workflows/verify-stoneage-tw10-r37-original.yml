@@ -1,0 +1,71 @@
+name: Independently verify TW1.0 R37 original continuation helpers and register slice/full-width shapes
+on:
+  workflow_dispatch:
+  push:
+    branches: [agent/tw10-savedata-r37-continuation-helpers-20261014, main]
+    paths:
+      - .github/workflows/verify-stoneage-tw10-r37-original.yml
+      - tools/stoneage_tw10_savedata_native_io_r37_guard.py
+      - research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R37-ORIGINAL.json
+permissions:
+  contents: read
+  actions: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Authenticate independent immutable original run and artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          identity="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/38491613508" --jq '[.status,.conclusion,.head_sha,.head_branch] | join("|")')"
+          test "$identity" = 'completed|success|dbc96073e032b2508e00ea23ba684902d8c68aeb|agent/tw10-savedata-r37-continuation-helpers-20261014'
+          artifact="$(gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/11861673941" --jq '[.workflow_run.id,.name,.digest,.expired] | join("|")')"
+          test "$artifact" = '38491613508|tw10-r37-original-continuation-helpers-derived|sha256:80a8bb5ff3233cd13f2a2a86558a228af782cfee9d0192bca18d3135a002cd58|false'
+      - name: Download bounded R37 original-derived metadata only
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/r37-independent
+          gh run download 38491613508 --repo "$GITHUB_REPOSITORY" --name tw10-r37-original-continuation-helpers-derived --dir /tmp/r37-independent
+          test "$(find /tmp/r37-independent -type f | wc -l)" -eq 1
+          test -f /tmp/r37-independent/stoneage-r37-derived.json
+          test ! -L /tmp/r37-independent/stoneage-r37-derived.json
+          test "$(stat -c %s /tmp/r37-independent/stoneage-r37-derived.json)" -le 250000
+          sha256sum /tmp/r37-independent/stoneage-r37-derived.json
+          wc -c /tmp/r37-independent/stoneage-r37-derived.json
+      - name: Replay strict R37 through R32 tamper and negative controls
+        run: |
+          set -euo pipefail
+          pip install --quiet capstone pefile
+          python -m unittest -v tests.test_stoneage_tw10_savedata_native_io_r37 tests.test_stoneage_tw10_savedata_native_io_r36 tests.test_stoneage_tw10_savedata_native_io_r35 tests.test_stoneage_tw10_savedata_native_io_r34 tests.test_stoneage_tw10_savedata_native_io_r33 tests.test_stoneage_tw10_savedata_native_io_r32
+          python -m tools.stoneage_tw10_savedata_native_io_r37_guard --report /tmp/r37-independent/stoneage-r37-derived.json
+      - name: Review original bounded report and canonical exact equality when admitted
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json, hashlib
+          from pathlib import Path
+          from tools.stoneage_tw10_savedata_native_io_r37_guard import validate
+          source=Path('/tmp/r37-independent/stoneage-r37-derived.json').read_bytes()
+          assert len(source)==53751
+          assert hashlib.sha256(source).hexdigest()=='a16c858a46d502dec5c99fe43528601f0bc89449c671a717198725c95aa496d0'
+          report=json.loads(source)
+          validate(report)
+          p=Path('research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R37-ORIGINAL.json')
+          if p.exists():
+              assert json.loads(p.read_text()) == report, 'original R37 canonical JSON differs'
+              print('TW10_R37_EXACT_DERIVED_JSON_EQUALITY=PASS')
+          else:
+              print('TW10_R37_INDEPENDENT_REVIEW_ONLY=PASS')
+          print('TW10_R37_ORIGINAL_DERIVED_JSON_BEGIN')
+          print(json.dumps(report,sort_keys=True,separators=(',',':')))
+          print('TW10_R37_ORIGINAL_DERIVED_JSON_END')
+          PY
+      - name: Purge independent temporary derivative
+        if: always()
+        run: rm -rf /tmp/r37-independent
