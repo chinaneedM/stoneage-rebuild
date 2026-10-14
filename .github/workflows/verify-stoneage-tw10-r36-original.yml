@@ -1,0 +1,71 @@
+name: Independently verify TW1.0 R36 original TEST/JNE routes and continuation source projections
+on:
+  workflow_dispatch:
+  push:
+    branches: [agent/tw10-savedata-r36-branch-routes-20261014, main]
+    paths:
+      - .github/workflows/verify-stoneage-tw10-r36-original.yml
+      - tools/stoneage_tw10_savedata_native_io_r36_guard.py
+      - research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R36-ORIGINAL.json
+permissions:
+  contents: read
+  actions: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Authenticate independent immutable original run and artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          identity="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/38488978148" --jq '[.status,.conclusion,.head_sha,.head_branch] | join("|")')"
+          test "$identity" = 'completed|success|9a0552bf360223eee6bf050da1872ca4e73d81fe|agent/tw10-savedata-r36-branch-routes-20261014'
+          artifact="$(gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/11860393895" --jq '[.workflow_run.id,.name,.digest,.expired] | join("|")')"
+          test "$artifact" = '38488978148|tw10-r36-original-branch-routes-derived|sha256:f86407b7a9489ce783888022d3be9ca3f2eb519203a732cfb97b3febc2e39629|false'
+      - name: Download bounded R36 original-derived metadata only
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/r36-independent
+          gh run download 38488978148 --repo "$GITHUB_REPOSITORY" --name tw10-r36-original-branch-routes-derived --dir /tmp/r36-independent
+          test "$(find /tmp/r36-independent -type f | wc -l)" -eq 1
+          test -f /tmp/r36-independent/stoneage-r36-derived.json
+          test ! -L /tmp/r36-independent/stoneage-r36-derived.json
+          test "$(stat -c %s /tmp/r36-independent/stoneage-r36-derived.json)" -le 100000
+          sha256sum /tmp/r36-independent/stoneage-r36-derived.json
+          wc -c /tmp/r36-independent/stoneage-r36-derived.json
+      - name: Replay strict R36 R34 tamper and negative controls
+        run: |
+          set -euo pipefail
+          pip install --quiet capstone pefile
+          python -m unittest -v tests.test_stoneage_tw10_savedata_native_io_r36 tests.test_stoneage_tw10_savedata_native_io_r35 tests.test_stoneage_tw10_savedata_native_io_r34 tests.test_stoneage_tw10_savedata_native_io_r33 tests.test_stoneage_tw10_savedata_native_io_r32
+          python -m tools.stoneage_tw10_savedata_native_io_r36_guard --report /tmp/r36-independent/stoneage-r36-derived.json
+      - name: Review original bounded report and canonical exact equality when admitted
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json, hashlib
+          from pathlib import Path
+          from tools.stoneage_tw10_savedata_native_io_r36_guard import validate
+          source=Path('/tmp/r36-independent/stoneage-r36-derived.json').read_bytes()
+          assert len(source)==24033
+          assert hashlib.sha256(source).hexdigest()=='872dbbf431891c19c27ddb0f6f5e87c466e89231e87e1a615a808aac0288a91c'
+          report=json.loads(source)
+          validate(report)
+          p=Path('research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R36-ORIGINAL.json')
+          if p.exists():
+              assert json.loads(p.read_text()) == report, 'original R36 canonical JSON differs'
+              print('TW10_R36_EXACT_DERIVED_JSON_EQUALITY=PASS')
+          else:
+              print('TW10_R36_INDEPENDENT_REVIEW_ONLY=PASS')
+          print('TW10_R36_ORIGINAL_DERIVED_JSON_BEGIN')
+          print(json.dumps(report,sort_keys=True,separators=(',',':')))
+          print('TW10_R36_ORIGINAL_DERIVED_JSON_END')
+          PY
+      - name: Purge independent temporary derivative
+        if: always()
+        run: rm -rf /tmp/r36-independent

@@ -1,0 +1,2187 @@
+{
+  "actual_branch_predicates_or_taken_paths_proven": false,
+  "actual_closehandle_argument_or_api_result_proven": false,
+  "actual_edi_sentinel_or_valid_handle_proven": false,
+  "actual_error_code_or_file_api_result_proven": false,
+  "actual_getfiletype_result_or_jne_outcome_proven": false,
+  "actual_stack_argument_alias_owner_or_callee_return_proven": false,
+  "actual_successful_handle_or_native_persistence_proven": false,
+  "bounded_topology": {
+    "complete_runtime_cfg_proven": false,
+    "edges": [
+      [
+        322389,
+        322390
+      ],
+      [
+        322390,
+        322392
+      ],
+      [
+        322392,
+        322395
+      ],
+      [
+        322395,
+        322398
+      ],
+      [
+        322398,
+        322399
+      ],
+      [
+        322399,
+        322401
+      ],
+      [
+        322401,
+        322402
+      ],
+      [
+        322402,
+        322405
+      ],
+      [
+        322405,
+        322406
+      ],
+      [
+        322406,
+        322413
+      ],
+      [
+        322413,
+        322416
+      ],
+      [
+        322416,
+        322418
+      ],
+      [
+        322416,
+        322427
+      ],
+      [
+        322418,
+        322421
+      ],
+      [
+        322421,
+        322425
+      ],
+      [
+        322425,
+        322438
+      ],
+      [
+        322427,
+        322431
+      ],
+      [
+        322431,
+        322438
+      ],
+      [
+        322438,
+        322443
+      ],
+      [
+        322443,
+        322445
+      ],
+      [
+        322445,
+        322447
+      ],
+      [
+        322445,
+        322464
+      ],
+      [
+        322447,
+        322450
+      ],
+      [
+        322450,
+        322452
+      ],
+      [
+        322450,
+        322460
+      ],
+      [
+        322452,
+        322458
+      ],
+      [
+        322458,
+        322460
+      ],
+      [
+        322458,
+        322464
+      ],
+      [
+        322460,
+        322464
+      ],
+      [
+        322464,
+        322466
+      ],
+      [
+        322466,
+        322468
+      ],
+      [
+        322468,
+        322469
+      ],
+      [
+        322469,
+        322471
+      ],
+      [
+        322471,
+        322473
+      ],
+      [
+        322473,
+        322475
+      ],
+      [
+        322473,
+        322520
+      ],
+      [
+        322475,
+        322476
+      ],
+      [
+        322476,
+        322478
+      ],
+      [
+        322476,
+        322511
+      ],
+      [
+        322478,
+        322479
+      ],
+      [
+        322479,
+        322481
+      ],
+      [
+        322479,
+        322502
+      ],
+      [
+        322481,
+        322491
+      ],
+      [
+        322491,
+        322497
+      ],
+      [
+        322497,
+        323051
+      ],
+      [
+        322502,
+        322509
+      ],
+      [
+        322509,
+        322527
+      ],
+      [
+        322511,
+        322518
+      ],
+      [
+        322518,
+        322527
+      ],
+      [
+        322520,
+        322527
+      ],
+      [
+        322527,
+        322530
+      ],
+      [
+        322530,
+        322533
+      ],
+      [
+        322533,
+        322535
+      ],
+      [
+        322533,
+        322573
+      ],
+      [
+        322535,
+        322538
+      ],
+      [
+        322538,
+        322540
+      ],
+      [
+        322538,
+        322564
+      ],
+      [
+        322540,
+        322543
+      ],
+      [
+        322543,
+        322545
+      ],
+      [
+        322543,
+        322555
+      ],
+      [
+        322545,
+        322548
+      ],
+      [
+        322548,
+        322481
+      ],
+      [
+        322548,
+        322550
+      ],
+      [
+        322550,
+        322553
+      ],
+      [
+        322553,
+        322576
+      ],
+      [
+        322555,
+        322562
+      ],
+      [
+        322562,
+        322576
+      ],
+      [
+        322564,
+        322571
+      ],
+      [
+        322571,
+        322576
+      ],
+      [
+        322573,
+        322576
+      ],
+      [
+        322576,
+        322581
+      ],
+      [
+        322581,
+        322586
+      ],
+      [
+        322586,
+        322588
+      ],
+      [
+        322588,
+        322593
+      ],
+      [
+        322593,
+        322595
+      ],
+      [
+        322595,
+        322597
+      ],
+      [
+        322595,
+        322650
+      ],
+      [
+        322597,
+        322599
+      ],
+      [
+        322597,
+        322645
+      ],
+      [
+        322599,
+        322601
+      ],
+      [
+        322601,
+        322603
+      ],
+      [
+        322601,
+        322645
+      ],
+      [
+        322603,
+        322605
+      ],
+      [
+        322605,
+        322607
+      ],
+      [
+        322605,
+        322636
+      ],
+      [
+        322607,
+        322613
+      ],
+      [
+        322613,
+        322615
+      ],
+      [
+        322613,
+        322675
+      ],
+      [
+        322615,
+        322621
+      ],
+      [
+        322621,
+        322481
+      ],
+      [
+        322621,
+        322627
+      ],
+      [
+        322627,
+        322634
+      ],
+      [
+        322634,
+        322691
+      ],
+      [
+        322636,
+        322643
+      ],
+      [
+        322643,
+        322691
+      ],
+      [
+        322645,
+        322648
+      ],
+      [
+        322648,
+        322691
+      ],
+      [
+        322650,
+        322656
+      ],
+      [
+        322656,
+        322658
+      ],
+      [
+        322656,
+        322684
+      ],
+      [
+        322658,
+        322664
+      ],
+      [
+        322664,
+        322666
+      ],
+      [
+        322664,
+        322675
+      ],
+      [
+        322666,
+        322668
+      ],
+      [
+        322668,
+        322670
+      ],
+      [
+        322668,
+        322684
+      ],
+      [
+        322670,
+        322481
+      ],
+      [
+        322675,
+        322682
+      ],
+      [
+        322682,
+        322691
+      ],
+      [
+        322684,
+        322691
+      ],
+      [
+        322691,
+        322694
+      ],
+      [
+        322694,
+        322699
+      ],
+      [
+        322699,
+        322701
+      ],
+      [
+        322701,
+        322703
+      ],
+      [
+        322701,
+        322722
+      ],
+      [
+        322703,
+        322709
+      ],
+      [
+        322709,
+        322711
+      ],
+      [
+        322711,
+        322714
+      ],
+      [
+        322714,
+        322717
+      ],
+      [
+        322717,
+        322719
+      ],
+      [
+        322717,
+        322722
+      ],
+      [
+        322719,
+        322721
+      ],
+      [
+        322721,
+        322722
+      ],
+      [
+        322722,
+        322724
+      ],
+      [
+        322724,
+        322726
+      ],
+      [
+        322724,
+        322736
+      ],
+      [
+        322726,
+        322732
+      ],
+      [
+        322732,
+        322736
+      ],
+      [
+        322736,
+        322739
+      ],
+      [
+        322739,
+        322741
+      ],
+      [
+        322739,
+        322743
+      ],
+      [
+        322741,
+        322743
+      ],
+      [
+        322743,
+        322745
+      ],
+      [
+        322745,
+        322747
+      ],
+      [
+        322745,
+        322755
+      ],
+      [
+        322747,
+        322753
+      ],
+      [
+        322753,
+        322765
+      ],
+      [
+        322755,
+        322757
+      ],
+      [
+        322757,
+        322759
+      ],
+      [
+        322757,
+        322765
+      ],
+      [
+        322759,
+        322765
+      ],
+      [
+        322765,
+        322770
+      ],
+      [
+        322770,
+        322772
+      ],
+      [
+        322772,
+        322775
+      ],
+      [
+        322775,
+        322777
+      ],
+      [
+        322777,
+        322779
+      ],
+      [
+        322777,
+        322798
+      ],
+      [
+        322779,
+        322786
+      ],
+      [
+        322786,
+        322796
+      ],
+      [
+        322796,
+        322860
+      ],
+      [
+        322798,
+        322800
+      ],
+      [
+        322800,
+        322801
+      ],
+      [
+        322801,
+        322804
+      ],
+      [
+        322804,
+        322807
+      ],
+      [
+        322807,
+        322808
+      ],
+      [
+        322808,
+        322811
+      ],
+      [
+        322811,
+        322814
+      ],
+      [
+        322814,
+        322817
+      ],
+      [
+        322817,
+        322823
+      ],
+      [
+        322823,
+        322825
+      ],
+      [
+        322825,
+        322827
+      ],
+      [
+        322827,
+        322829
+      ],
+      [
+        322827,
+        322847
+      ],
+      [
+        322829,
+        322830
+      ],
+      [
+        322830,
+        322836
+      ],
+      [
+        322836,
+        322838
+      ],
+      [
+        322838,
+        322840
+      ],
+      [
+        322838,
+        322867
+      ],
+      [
+        322840,
+        322841
+      ],
+      [
+        322841,
+        322847
+      ],
+      [
+        322847,
+        322853
+      ],
+      [
+        322853,
+        322854
+      ],
+      [
+        322854,
+        322859
+      ],
+      [
+        322859,
+        322860
+      ],
+      [
+        322860,
+        322862
+      ],
+      [
+        322862,
+        323081
+      ],
+      [
+        322867,
+        322870
+      ],
+      [
+        322870,
+        322872
+      ],
+      [
+        322870,
+        322878
+      ],
+      [
+        322872,
+        322876
+      ],
+      [
+        322876,
+        322887
+      ],
+      [
+        322878,
+        322881
+      ],
+      [
+        322881,
+        322883
+      ],
+      [
+        322881,
+        322887
+      ],
+      [
+        322883,
+        322887
+      ],
+      [
+        322887,
+        322888
+      ],
+      [
+        322888,
+        322889
+      ],
+      [
+        322889,
+        322894
+      ],
+      [
+        322894,
+        322895
+      ],
+      [
+        322895,
+        322898
+      ],
+      [
+        322898,
+        322899
+      ],
+      [
+        322899,
+        322901
+      ],
+      [
+        322901,
+        322903
+      ],
+      [
+        322903,
+        322905
+      ],
+      [
+        322905,
+        322908
+      ],
+      [
+        322908,
+        322911
+      ],
+      [
+        322911,
+        322914
+      ],
+      [
+        322914,
+        322921
+      ],
+      [
+        322921,
+        322924
+      ],
+      [
+        322924,
+        322926
+      ],
+      [
+        322926,
+        322930
+      ],
+      [
+        322930,
+        322934
+      ],
+      [
+        322934,
+        322936
+      ],
+      [
+        322934,
+        323056
+      ],
+      [
+        322936,
+        322938
+      ],
+      [
+        322938,
+        322940
+      ],
+      [
+        322938,
+        323056
+      ],
+      [
+        322940,
+        322944
+      ],
+      [
+        322944,
+        322946
+      ],
+      [
+        322944,
+        323056
+      ],
+      [
+        322946,
+        322948
+      ],
+      [
+        322948,
+        322950
+      ],
+      [
+        322950,
+        322951
+      ],
+      [
+        322951,
+        322956
+      ],
+      [
+        322956,
+        322959
+      ],
+      [
+        322959,
+        322962
+      ],
+      [
+        322962,
+        322965
+      ],
+      [
+        322965,
+        322967
+      ],
+      [
+        322965,
+        322981
+      ],
+      [
+        322967,
+        322977
+      ],
+      [
+        322977,
+        322979
+      ],
+      [
+        322977,
+        323056
+      ],
+      [
+        322979,
+        323044
+      ],
+      [
+        322981,
+        322985
+      ],
+      [
+        322985,
+        322988
+      ],
+      [
+        322988,
+        322990
+      ],
+      [
+        322990,
+        322991
+      ],
+      [
+        322991,
+        322992
+      ],
+      [
+        322992,
+        322997
+      ],
+      [
+        322997,
+        323000
+      ],
+      [
+        323000,
+        323002
+      ],
+      [
+        323002,
+        323004
+      ],
+      [
+        323002,
+        323026
+      ],
+      [
+        323004,
+        323008
+      ],
+      [
+        323008,
+        323010
+      ],
+      [
+        323008,
+        323026
+      ],
+      [
+        323010,
+        323013
+      ],
+      [
+        323013,
+        323014
+      ],
+      [
+        323014,
+        323019
+      ],
+      [
+        323019,
+        323020
+      ],
+      [
+        323020,
+        323023
+      ],
+      [
+        323023,
+        323024
+      ],
+      [
+        323024,
+        323026
+      ],
+      [
+        323024,
+        323044
+      ],
+      [
+        323026,
+        323028
+      ],
+      [
+        323028,
+        323030
+      ],
+      [
+        323030,
+        323031
+      ],
+      [
+        323031,
+        323036
+      ],
+      [
+        323036,
+        323039
+      ],
+      [
+        323039,
+        323042
+      ],
+      [
+        323042,
+        323044
+      ],
+      [
+        323042,
+        323056
+      ],
+      [
+        323044,
+        323045
+      ],
+      [
+        323045,
+        323050
+      ],
+      [
+        323050,
+        323051
+      ],
+      [
+        323051,
+        323054
+      ],
+      [
+        323054,
+        323081
+      ],
+      [
+        323056,
+        323060
+      ],
+      [
+        323060,
+        323062
+      ],
+      [
+        323060,
+        323079
+      ],
+      [
+        323062,
+        323066
+      ],
+      [
+        323066,
+        323068
+      ],
+      [
+        323066,
+        323079
+      ],
+      [
+        323068,
+        323070
+      ],
+      [
+        323070,
+        323075
+      ],
+      [
+        323075,
+        323079
+      ],
+      [
+        323079,
+        323081
+      ],
+      [
+        323081,
+        323082
+      ],
+      [
+        323082,
+        323083
+      ],
+      [
+        323083,
+        323084
+      ],
+      [
+        323084,
+        323085
+      ]
+    ],
+    "node_rvas": [
+      322389,
+      322390,
+      322392,
+      322395,
+      322398,
+      322399,
+      322401,
+      322402,
+      322405,
+      322406,
+      322413,
+      322416,
+      322418,
+      322421,
+      322425,
+      322427,
+      322431,
+      322438,
+      322443,
+      322445,
+      322447,
+      322450,
+      322452,
+      322458,
+      322460,
+      322464,
+      322466,
+      322468,
+      322469,
+      322471,
+      322473,
+      322475,
+      322476,
+      322478,
+      322479,
+      322481,
+      322491,
+      322497,
+      322502,
+      322509,
+      322511,
+      322518,
+      322520,
+      322527,
+      322530,
+      322533,
+      322535,
+      322538,
+      322540,
+      322543,
+      322545,
+      322548,
+      322550,
+      322553,
+      322555,
+      322562,
+      322564,
+      322571,
+      322573,
+      322576,
+      322581,
+      322586,
+      322588,
+      322593,
+      322595,
+      322597,
+      322599,
+      322601,
+      322603,
+      322605,
+      322607,
+      322613,
+      322615,
+      322621,
+      322627,
+      322634,
+      322636,
+      322643,
+      322645,
+      322648,
+      322650,
+      322656,
+      322658,
+      322664,
+      322666,
+      322668,
+      322670,
+      322675,
+      322682,
+      322684,
+      322691,
+      322694,
+      322699,
+      322701,
+      322703,
+      322709,
+      322711,
+      322714,
+      322717,
+      322719,
+      322721,
+      322722,
+      322724,
+      322726,
+      322732,
+      322736,
+      322739,
+      322741,
+      322743,
+      322745,
+      322747,
+      322753,
+      322755,
+      322757,
+      322759,
+      322765,
+      322770,
+      322772,
+      322775,
+      322777,
+      322779,
+      322786,
+      322796,
+      322798,
+      322800,
+      322801,
+      322804,
+      322807,
+      322808,
+      322811,
+      322814,
+      322817,
+      322823,
+      322825,
+      322827,
+      322829,
+      322830,
+      322836,
+      322838,
+      322840,
+      322841,
+      322847,
+      322853,
+      322854,
+      322859,
+      322860,
+      322862,
+      322867,
+      322870,
+      322872,
+      322876,
+      322878,
+      322881,
+      322883,
+      322887,
+      322888,
+      322889,
+      322894,
+      322895,
+      322898,
+      322899,
+      322901,
+      322903,
+      322905,
+      322908,
+      322911,
+      322914,
+      322921,
+      322924,
+      322926,
+      322930,
+      322934,
+      322936,
+      322938,
+      322940,
+      322944,
+      322946,
+      322948,
+      322950,
+      322951,
+      322956,
+      322959,
+      322962,
+      322965,
+      322967,
+      322977,
+      322979,
+      322981,
+      322985,
+      322988,
+      322990,
+      322991,
+      322992,
+      322997,
+      323000,
+      323002,
+      323004,
+      323008,
+      323010,
+      323013,
+      323014,
+      323019,
+      323020,
+      323023,
+      323024,
+      323026,
+      323028,
+      323030,
+      323031,
+      323036,
+      323039,
+      323042,
+      323044,
+      323045,
+      323050,
+      323051,
+      323054,
+      323056,
+      323060,
+      323062,
+      323066,
+      323068,
+      323070,
+      323075,
+      323079,
+      323081,
+      323082,
+      323083,
+      323084,
+      323085
+    ]
+  },
+  "branch": {
+    "direct_target_rva": 322867,
+    "fallthrough_rva": 322840,
+    "mnemonic": "jne",
+    "site_rva": 322838
+  },
+  "branch_flag_sources": {
+    "actual_flag_value_known": false,
+    "branch_disconnected_in_graph": false,
+    "candidates": [
+      {
+        "kind": "zf_write",
+        "site_rva": 322836
+      }
+    ],
+    "predecessor_cap_hit": false,
+    "predecessor_nodes_examined": 2
+  },
+  "call_input_value_or_abi_binding_proven": false,
+  "complete_original_eflags_paths_or_indirect_edges_proven": false,
+  "conditional_predicate": {
+    "actual_return_type_success_or_branch_outcome_proven": false,
+    "original_eax_or_zf_evaluated": false,
+    "qualified_test_eax_eax_jne_syntax": true,
+    "symbolic_direct_edge_condition": "u32(EAX_at_TEST) != 0",
+    "symbolic_fallthrough_condition": "u32(EAX_at_TEST) == 0"
+  },
+  "continuation_memory_stores": {
+    "complete_alias_writers_or_initialization_proven": false,
+    "count": 3,
+    "samples": [
+      {
+        "actual_store_value_or_handle_owner_proven": false,
+        "address_registers": [
+          "ebp"
+        ],
+        "mnemonic": "mov",
+        "operands": [
+          {
+            "decoder_read": false,
+            "decoder_write": true,
+            "geometry": {
+              "base_register": "ebp",
+              "displacement_region": null,
+              "index_register": null,
+              "index_scale": 1,
+              "relative_field_offset": 11,
+              "segment_register": null,
+              "width_bytes": 1
+            },
+            "kind": "memory",
+            "width_bytes": 1
+          },
+          {
+            "decoder_read": true,
+            "decoder_write": false,
+            "kind": "register",
+            "register": "al",
+            "width_bytes": 1
+          }
+        ],
+        "site_rva": 322911,
+        "source_register_projections": [
+          {
+            "actual_projected_value_known": false,
+            "operand_register": "al",
+            "operand_width_bytes": 1,
+            "query_register": "eax"
+          }
+        ],
+        "source_registers": [
+          "eax"
+        ]
+      },
+      {
+        "actual_store_value_or_handle_owner_proven": false,
+        "address_registers": [
+          "ecx",
+          "esi"
+        ],
+        "mnemonic": "mov",
+        "operands": [
+          {
+            "decoder_read": false,
+            "decoder_write": true,
+            "geometry": {
+              "base_register": "ecx",
+              "displacement_region": null,
+              "index_register": "esi",
+              "index_scale": 1,
+              "relative_field_offset": 4,
+              "segment_register": null,
+              "width_bytes": 1
+            },
+            "kind": "memory",
+            "width_bytes": 1
+          },
+          {
+            "decoder_read": true,
+            "decoder_write": false,
+            "kind": "register",
+            "register": "al",
+            "width_bytes": 1
+          }
+        ],
+        "site_rva": 322930,
+        "source_register_projections": [
+          {
+            "actual_projected_value_known": false,
+            "operand_register": "al",
+            "operand_width_bytes": 1,
+            "query_register": "eax"
+          }
+        ],
+        "source_registers": [
+          "eax"
+        ]
+      },
+      {
+        "actual_store_value_or_handle_owner_proven": false,
+        "address_registers": [
+          "ebp"
+        ],
+        "mnemonic": "mov",
+        "operands": [
+          {
+            "decoder_read": false,
+            "decoder_write": true,
+            "geometry": {
+              "base_register": "ebp",
+              "displacement_region": null,
+              "index_register": null,
+              "index_scale": 1,
+              "relative_field_offset": -16,
+              "segment_register": null,
+              "width_bytes": 4
+            },
+            "kind": "memory",
+            "width_bytes": 4
+          },
+          {
+            "decoder_read": true,
+            "decoder_write": false,
+            "kind": "register",
+            "register": "eax",
+            "width_bytes": 4
+          }
+        ],
+        "site_rva": 322962,
+        "source_register_projections": [
+          {
+            "actual_projected_value_known": false,
+            "operand_register": "eax",
+            "operand_width_bytes": 4,
+            "query_register": "eax"
+          }
+        ],
+        "source_registers": [
+          "eax"
+        ]
+      }
+    ],
+    "samples_truncated": false
+  },
+  "continuation_store_executes_or_contains_api_handle": false,
+  "filename_handle_buffer_length128_or_persistence_proven": false,
+  "input_sources": {
+    "dependency_closure_or_memory_values_proven": false,
+    "dependency_depth_limit": 2,
+    "pending_query_count": 0,
+    "queries": [
+      {
+        "actual_register_value_known": false,
+        "candidates_truncated": false,
+        "dependency_depth": 1,
+        "dependency_queries": [],
+        "reaching_candidates": [
+          {
+            "origin": "unknown_call",
+            "rva": 322817,
+            "semantic": null
+          }
+        ],
+        "register": "eax",
+        "site_in_candidate_graph": true,
+        "site_rva": 322823
+      },
+      {
+        "actual_register_value_known": false,
+        "candidates_truncated": false,
+        "dependency_depth": 0,
+        "dependency_queries": [
+          {
+            "register": "eax",
+            "site_rva": 322823
+          }
+        ],
+        "reaching_candidates": [
+          {
+            "origin": "definition",
+            "rva": 322823,
+            "semantic": {
+              "constant": null,
+              "kind": "register_copy",
+              "memory_input": null,
+              "register_inputs": [
+                "eax"
+              ],
+              "width_bits": 32
+            }
+          }
+        ],
+        "register": "esi",
+        "site_in_candidate_graph": true,
+        "site_rva": 322829
+      },
+      {
+        "actual_register_value_known": false,
+        "candidates_truncated": false,
+        "dependency_depth": 0,
+        "dependency_queries": [],
+        "reaching_candidates": [
+          {
+            "origin": "unknown_call",
+            "rva": 322830,
+            "semantic": null
+          }
+        ],
+        "register": "eax",
+        "site_in_candidate_graph": true,
+        "site_rva": 322836
+      },
+      {
+        "actual_register_value_known": false,
+        "candidates_truncated": false,
+        "dependency_depth": 0,
+        "dependency_queries": [],
+        "reaching_candidates": [
+          {
+            "origin": "unknown_call",
+            "rva": 322830,
+            "semantic": null
+          }
+        ],
+        "register": "eax",
+        "site_in_candidate_graph": true,
+        "site_rva": 322838
+      },
+      {
+        "actual_register_value_known": false,
+        "candidates_truncated": false,
+        "dependency_depth": 0,
+        "dependency_queries": [],
+        "reaching_candidates": [
+          {
+            "origin": "unknown_call",
+            "rva": 322830,
+            "semantic": null
+          }
+        ],
+        "register": "esi",
+        "site_in_candidate_graph": true,
+        "site_rva": 322840
+      },
+      {
+        "actual_register_value_known": false,
+        "candidates_truncated": false,
+        "dependency_depth": 0,
+        "dependency_queries": [],
+        "reaching_candidates": [
+          {
+            "origin": "unknown_call",
+            "rva": 322830,
+            "semantic": null
+          }
+        ],
+        "register": "eax",
+        "site_in_candidate_graph": true,
+        "site_rva": 322867
+      },
+      {
+        "actual_register_value_known": false,
+        "candidates_truncated": false,
+        "dependency_depth": 0,
+        "dependency_queries": [],
+        "reaching_candidates": [
+          {
+            "origin": "unknown_call",
+            "rva": 322830,
+            "semantic": null
+          }
+        ],
+        "register": "esi",
+        "site_in_candidate_graph": true,
+        "site_rva": 322867
+      },
+      {
+        "actual_register_value_known": false,
+        "candidates_truncated": false,
+        "dependency_depth": 0,
+        "dependency_queries": [],
+        "reaching_candidates": [
+          {
+            "origin": "definition",
+            "rva": 322903,
+            "semantic": {
+              "constant": null,
+              "kind": "unmodeled_write",
+              "memory_input": null,
+              "register_inputs": [],
+              "width_bits": null
+            }
+          }
+        ],
+        "register": "eax",
+        "site_in_candidate_graph": true,
+        "site_rva": 322911
+      },
+      {
+        "actual_register_value_known": false,
+        "candidates_truncated": false,
+        "dependency_depth": 0,
+        "dependency_queries": [],
+        "reaching_candidates": [
+          {
+            "origin": "unknown_call",
+            "rva": 322889,
+            "semantic": null
+          }
+        ],
+        "register": "ebp",
+        "site_in_candidate_graph": true,
+        "site_rva": 322911
+      },
+      {
+        "actual_register_value_known": false,
+        "candidates_truncated": false,
+        "dependency_depth": 2,
+        "dependency_queries": [],
+        "reaching_candidates": [
+          {
+            "origin": "definition",
+            "rva": 322905,
+            "semantic": {
+              "constant": null,
+              "kind": "unmodeled_write",
+              "memory_input": null,
+              "register_inputs": [],
+              "width_bits": null
+            }
+          }
+        ],
+        "register": "ecx",
+        "site_in_candidate_graph": true,
+        "site_rva": 322914
+      },
+      {
+        "actual_register_value_known": false,
+        "candidates_truncated": false,
+        "dependency_depth": 1,
+        "dependency_queries": [
+          {
+            "register": "ecx",
+            "site_rva": 322914
+          }
+        ],
+        "reaching_candidates": [
+          {
+            "origin": "definition",
+            "rva": 322914,
+            "semantic": {
+              "constant": null,
+              "kind": "address_calculation",
+              "memory_input": {
+                "base_register": null,
+                "displacement_region": {
+                  "displacement_rva": 24254304,
+                  "raw_backed": false,
+                  "section": ".data",
+                  "writable": true
+                },
+                "index_register": "ecx",
+                "index_scale": 4,
+                "relative_field_offset": null,
+                "segment_register": null,
+                "width_bytes": 4
+              },
+              "register_inputs": [],
+              "width_bits": 32
+            }
+          }
+        ],
+        "register": "edi",
+        "site_in_candidate_graph": true,
+        "site_rva": 322924
+      },
+      {
+        "actual_register_value_known": false,
+        "candidates_truncated": false,
+        "dependency_depth": 0,
+        "dependency_queries": [],
+        "reaching_candidates": [
+          {
+            "origin": "definition",
+            "rva": 322903,
+            "semantic": {
+              "constant": null,
+              "kind": "unmodeled_write",
+              "memory_input": null,
+              "register_inputs": [],
+              "width_bits": null
+            }
+          }
+        ],
+        "register": "eax",
+        "site_in_candidate_graph": true,
+        "site_rva": 322930
+      },
+      {
+        "actual_register_value_known": false,
+        "candidates_truncated": false,
+        "dependency_depth": 0,
+        "dependency_queries": [
+          {
+            "register": "edi",
+            "site_rva": 322924
+          }
+        ],
+        "reaching_candidates": [
+          {
+            "origin": "definition",
+            "rva": 322924,
+            "semantic": {
+              "constant": null,
+              "kind": "memory_load",
+              "memory_input": {
+                "base_register": "edi",
+                "displacement_region": null,
+                "index_register": null,
+                "index_scale": 1,
+                "relative_field_offset": 0,
+                "segment_register": null,
+                "width_bytes": 4
+              },
+              "register_inputs": [],
+              "width_bits": 32
+            }
+          }
+        ],
+        "register": "ecx",
+        "site_in_candidate_graph": true,
+        "site_rva": 322930
+      },
+      {
+        "actual_register_value_known": false,
+        "candidates_truncated": false,
+        "dependency_depth": 0,
+        "dependency_queries": [],
+        "reaching_candidates": [
+          {
+            "origin": "definition",
+            "rva": 322921,
+            "semantic": {
+              "constant": null,
+              "kind": "unmodeled_write",
+              "memory_input": null,
+              "register_inputs": [],
+              "width_bits": null
+            }
+          }
+        ],
+        "register": "esi",
+        "site_in_candidate_graph": true,
+        "site_rva": 322930
+      },
+      {
+        "actual_register_value_known": false,
+        "candidates_truncated": false,
+        "dependency_depth": 0,
+        "dependency_queries": [],
+        "reaching_candidates": [
+          {
+            "origin": "unknown_call",
+            "rva": 322951,
+            "semantic": null
+          }
+        ],
+        "register": "eax",
+        "site_in_candidate_graph": true,
+        "site_rva": 322962
+      },
+      {
+        "actual_register_value_known": false,
+        "candidates_truncated": false,
+        "dependency_depth": 0,
+        "dependency_queries": [],
+        "reaching_candidates": [
+          {
+            "origin": "unknown_call",
+            "rva": 322951,
+            "semantic": null
+          }
+        ],
+        "register": "ebp",
+        "site_in_candidate_graph": true,
+        "site_rva": 322962
+      }
+    ],
+    "query_limit_hit": false
+  },
+  "native_filename_to_handle_to_io_schema_proven": false,
+  "opaque_call_runtime_invoked_or_return_known": false,
+  "opaque_calls": [
+    {
+      "call_rva": 322765,
+      "direct_target_rva": 321397,
+      "import_identity": null,
+      "import_slot_association_proven": false,
+      "kind": "direct",
+      "memory_target": null,
+      "register_target": null,
+      "runtime_target_or_effects_proven": false
+    },
+    {
+      "call_rva": 322817,
+      "direct_target_rva": null,
+      "import_identity": {
+        "dll": "KERNEL32.dll",
+        "iat_rva": 336032,
+        "name": "CreateFileA"
+      },
+      "import_slot_association_proven": true,
+      "kind": "memory_indirect",
+      "memory_target": {
+        "base_register": null,
+        "displacement_region": {
+          "displacement_rva": 336032,
+          "raw_backed": true,
+          "section": ".rdata",
+          "writable": false
+        },
+        "index_register": null,
+        "index_scale": 1,
+        "relative_field_offset": null,
+        "segment_register": null,
+        "width_bytes": 4
+      },
+      "register_target": null,
+      "runtime_target_or_effects_proven": false
+    },
+    {
+      "call_rva": 322830,
+      "direct_target_rva": null,
+      "import_identity": {
+        "dll": "KERNEL32.dll",
+        "iat_rva": 336224,
+        "name": "GetFileType"
+      },
+      "import_slot_association_proven": true,
+      "kind": "memory_indirect",
+      "memory_target": {
+        "base_register": null,
+        "displacement_region": {
+          "displacement_rva": 336224,
+          "raw_backed": true,
+          "section": ".rdata",
+          "writable": false
+        },
+        "index_register": null,
+        "index_scale": 1,
+        "relative_field_offset": null,
+        "segment_register": null,
+        "width_bytes": 4
+      },
+      "register_target": null,
+      "runtime_target_or_effects_proven": false
+    },
+    {
+      "call_rva": 322841,
+      "direct_target_rva": null,
+      "import_identity": {
+        "dll": "KERNEL32.dll",
+        "iat_rva": 336040,
+        "name": "CloseHandle"
+      },
+      "import_slot_association_proven": true,
+      "kind": "memory_indirect",
+      "memory_target": {
+        "base_register": null,
+        "displacement_region": {
+          "displacement_rva": 336040,
+          "raw_backed": true,
+          "section": ".rdata",
+          "writable": false
+        },
+        "index_register": null,
+        "index_scale": 1,
+        "relative_field_offset": null,
+        "segment_register": null,
+        "width_bytes": 4
+      },
+      "register_target": null,
+      "runtime_target_or_effects_proven": false
+    },
+    {
+      "call_rva": 322847,
+      "direct_target_rva": null,
+      "import_identity": {
+        "dll": "KERNEL32.dll",
+        "iat_rva": 336012,
+        "name": "GetLastError"
+      },
+      "import_slot_association_proven": true,
+      "kind": "memory_indirect",
+      "memory_target": {
+        "base_register": null,
+        "displacement_region": {
+          "displacement_rva": 336012,
+          "raw_backed": true,
+          "section": ".rdata",
+          "writable": false
+        },
+        "index_register": null,
+        "index_scale": 1,
+        "relative_field_offset": null,
+        "segment_register": null,
+        "width_bytes": 4
+      },
+      "register_target": null,
+      "runtime_target_or_effects_proven": false
+    },
+    {
+      "call_rva": 322854,
+      "direct_target_rva": 313683,
+      "import_identity": null,
+      "import_slot_association_proven": false,
+      "kind": "direct",
+      "memory_target": null,
+      "register_target": null,
+      "runtime_target_or_effects_proven": false
+    },
+    {
+      "call_rva": 322889,
+      "direct_target_rva": 321546,
+      "import_identity": null,
+      "import_slot_association_proven": false,
+      "kind": "direct",
+      "memory_target": null,
+      "register_target": null,
+      "runtime_target_or_effects_proven": false
+    },
+    {
+      "call_rva": 322951,
+      "direct_target_rva": 313185,
+      "import_identity": null,
+      "import_slot_association_proven": false,
+      "kind": "direct",
+      "memory_target": null,
+      "register_target": null,
+      "runtime_target_or_effects_proven": false
+    },
+    {
+      "call_rva": 322992,
+      "direct_target_rva": 305372,
+      "import_identity": null,
+      "import_slot_association_proven": false,
+      "kind": "direct",
+      "memory_target": null,
+      "register_target": null,
+      "runtime_target_or_effects_proven": false
+    },
+    {
+      "call_rva": 323014,
+      "direct_target_rva": 328514,
+      "import_identity": null,
+      "import_slot_association_proven": false,
+      "kind": "direct",
+      "memory_target": null,
+      "register_target": null,
+      "runtime_target_or_effects_proven": false
+    },
+    {
+      "call_rva": 323031,
+      "direct_target_rva": 313185,
+      "import_identity": null,
+      "import_slot_association_proven": false,
+      "kind": "direct",
+      "memory_target": null,
+      "register_target": null,
+      "runtime_target_or_effects_proven": false
+    },
+    {
+      "call_rva": 323045,
+      "direct_target_rva": 304446,
+      "import_identity": null,
+      "import_slot_association_proven": false,
+      "kind": "direct",
+      "memory_target": null,
+      "register_target": null,
+      "runtime_target_or_effects_proven": false
+    }
+  ],
+  "original_error_branch_taken_or_owner_known": false,
+  "original_proprietary_bytes_published": false,
+  "original_runtime_executed": false,
+  "parent_graph": {
+    "actual_entry_path_proven": false,
+    "edges": 271,
+    "frontier": [],
+    "node_cap": 256,
+    "node_limit_hit": false,
+    "nodes": 230,
+    "returning_call_assumption_only": true,
+    "span_bytes": 768
+  },
+  "postcall_esi_eax_callee_preservation_proven": false,
+  "push_spelling_comparison": {
+    "actual_value_binding_or_callee_preservation_proven": false,
+    "closehandle_suffix": {
+      "abi_roles_applied": false,
+      "actual_stack_values_known": false,
+      "conditional_pre_call_esp_only": true,
+      "linear_call_boundary_reached": true,
+      "pushes": [
+        {
+          "conditional_pre_call_esp_offset": 0,
+          "input": {
+            "decoder_read": true,
+            "decoder_write": false,
+            "kind": "register",
+            "register": "esi",
+            "width_bytes": 4
+          },
+          "site_rva": 322840
+        }
+      ],
+      "stop_reason": "control_transfer"
+    },
+    "getfiletype_suffix": {
+      "abi_roles_applied": false,
+      "actual_stack_values_known": false,
+      "conditional_pre_call_esp_only": true,
+      "linear_call_boundary_reached": true,
+      "pushes": [
+        {
+          "conditional_pre_call_esp_offset": 0,
+          "input": {
+            "decoder_read": true,
+            "decoder_write": false,
+            "kind": "register",
+            "register": "esi",
+            "width_bytes": 4
+          },
+          "site_rva": 322829
+        }
+      ],
+      "stop_reason": "control_transfer"
+    },
+    "same_single_register_operand_shape": true
+  },
+  "r35_exact_original_revalidated": true,
+  "r35_exact_report_sha256": "5052a3d57b89f1d257846df6cef7c513fe544cadeb420e11f0a18468d3908f23",
+  "route_reachability_establishes_runtime_feasibility": false,
+  "routes": [
+    {
+      "actual_feasible_path_or_register_preservation_proven": false,
+      "corridor_node_rvas": [],
+      "goal_rva": 322841,
+      "opaque_call_barrier_rvas": [],
+      "returning_calls_assumed": true,
+      "start_rva": 322867,
+      "structurally_reachable_in_bounded_graph": false
+    },
+    {
+      "actual_feasible_path_or_register_preservation_proven": false,
+      "corridor_node_rvas": [],
+      "goal_rva": 322847,
+      "opaque_call_barrier_rvas": [],
+      "returning_calls_assumed": true,
+      "start_rva": 322867,
+      "structurally_reachable_in_bounded_graph": false
+    },
+    {
+      "actual_feasible_path_or_register_preservation_proven": false,
+      "corridor_node_rvas": [
+        322867
+      ],
+      "goal_rva": 322867,
+      "opaque_call_barrier_rvas": [],
+      "returning_calls_assumed": true,
+      "start_rva": 322867,
+      "structurally_reachable_in_bounded_graph": true
+    },
+    {
+      "actual_feasible_path_or_register_preservation_proven": false,
+      "corridor_node_rvas": [
+        322840,
+        322841
+      ],
+      "goal_rva": 322841,
+      "opaque_call_barrier_rvas": [],
+      "returning_calls_assumed": true,
+      "start_rva": 322840,
+      "structurally_reachable_in_bounded_graph": true
+    },
+    {
+      "actual_feasible_path_or_register_preservation_proven": false,
+      "corridor_node_rvas": [
+        322840,
+        322841,
+        322847
+      ],
+      "goal_rva": 322847,
+      "opaque_call_barrier_rvas": [
+        322841
+      ],
+      "returning_calls_assumed": true,
+      "start_rva": 322840,
+      "structurally_reachable_in_bounded_graph": true
+    },
+    {
+      "actual_feasible_path_or_register_preservation_proven": false,
+      "corridor_node_rvas": [],
+      "goal_rva": 322867,
+      "opaque_call_barrier_rvas": [],
+      "returning_calls_assumed": true,
+      "start_rva": 322840,
+      "structurally_reachable_in_bounded_graph": false
+    }
+  ],
+  "runtime_sha256": "cdab9ea049a98bbc96ce93eeaa8b63c688f0c0f0ad8b3183e79d75e47621441a",
+  "same_push_register_establishes_same_handle_value": false,
+  "savedata_sha256": "5b26f54a9723cd2c5275f964457094fdf1fc33ca086cdaf55bb5350dfb04f3f9",
+  "schema": "tw10-r36-original-test-jne-routes-barriers-continuation-stores",
+  "static_only": true,
+  "status": "PINNED_ORIGINAL_CONDITIONAL_BRANCH_TOPOLOGY_NATIVE_HANDLE_SAVE_OPEN",
+  "test_shape": {
+    "actual_inputs_or_predicate_value_proven": false,
+    "mnemonic": "test",
+    "operands": [
+      {
+        "decoder_read": true,
+        "decoder_write": false,
+        "kind": "register",
+        "register": "eax",
+        "width_bytes": 4
+      },
+      {
+        "decoder_read": true,
+        "decoder_write": false,
+        "kind": "register",
+        "register": "eax",
+        "width_bytes": 4
+      }
+    ],
+    "site_rva": 322836
+  }
+}
