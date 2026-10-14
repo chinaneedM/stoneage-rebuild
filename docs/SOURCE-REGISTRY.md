@@ -6421,3 +6421,14 @@ Preliminary96-byte source Action38578665667 at HEAD315d9866ef95a160abfff9b1ced8a
 FACT (bounded original static): native input slot geometry, literal ESP adjustment operands, delayed write buffer-shaped read with opaque CALL barrier, read count-slot DEC-before-PUSH overlap and two different wrapper slot-rewrite source chains independently recovered. Read wrapper EBX->native EDI has only a conditional prefix register-symbol candidate. Third write slot/frame preservation and actual count/descriptor/buffer values remain OPEN; no original IO/schema/persistence accepted.
 
 Canonical original research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R44-ORIGINAL.json; scope docs/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R44.md. Stage A only.
+
+
+## SRC-TW10-SAVEDATA-NATIVE-IO-R45 — 2026-10-14
+
+S-grade authenticated Taiwan Waei/JSS1.0 retail nonexecuting PE/import/operand/CFG evidence; all runtime/ABI/alias/owner interpretations conditional.
+
+Original source Action38581331803/job115911685844 SUCCESS at agent/tw10-savedata-r45-count-api-inputs-20261014 HEADedf452d6fa218961250f400eb294bf4ab7b43fc5. Authenticated transient archive/disc/runtime/save identities and exact final R44 original SHA25652c158d5f28f3ea287432e4b8214d306c491f158820808d7c4dd212c0646f5e8 rederived/strict-gated. Derived-only artifact11904385284 tw10-r45-original-count-api-inputs-derived ZIP SHA2569d8f3eb3b087dc56008fa0ab4df4535f2131ad6f5b86a6b3cbcf2a77954eb015; raw JSON73217 bytes SHA25677919ef7e23f6a25afc66c2bc54b7b0f7da02df1b618e4a50743cda7ad26c21e. Independent immutable source run/head/branch/artifact identity, raw digest/size, negative controls and exact canonical JSON equality Action38581850803 SUCCESS at HEAD0cb7733529bfc76c368751769d36f96a06d2e3f2.353 local/independent R45-R32 plus hardened R7 tests PASS. Original executable/media transient, unexecuted/unpublished and unconditionally purged; local canonical JSON equals pinned original derivative.
+
+FACT (original bounded static): the DEC has a bounded root-to-PUSH bypass; five ZF-source candidates and both first native API imports/five-slot suffixes independently recovered. Read buffer sources include copy and+1 address forms; write uses a local-frame address candidate. Delayed write CALL targets previously accepted helper0x4c761, but its actual effects and post-CALL frame preservation remain unknown. No actual requested/transferred count, file/handle/buffer/schema/persistence proof.
+
+Canonical original research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R45-ORIGINAL.json; scope docs/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R45.md. R37 helper correlation uses the same pinned runtime, does not re-admit effects. Stage A only.
