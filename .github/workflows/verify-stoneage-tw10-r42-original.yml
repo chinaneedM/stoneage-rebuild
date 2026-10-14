@@ -1,0 +1,73 @@
+name: Independently verify TW1.0 R42 original savedata-wrapper native IO correspondence
+on:
+  workflow_dispatch:
+  push:
+    branches: [agent/tw10-savedata-r42-payload-wrappers-20261014, main]
+    paths:
+      - .github/workflows/verify-stoneage-tw10-r42-original.yml
+      - tools/stoneage_tw10_savedata_native_io_r42_guard.py
+      - docs/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R42.md
+      - research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R42-ORIGINAL.json
+permissions:
+  contents: read
+  actions: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Authenticate independent immutable original run and artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          identity="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/38574385118" --jq '[.status,.conclusion,.head_sha,.head_branch] | join("|")')"
+          test "$identity" = 'completed|success|ebd97285d26daaaac51e96115302ea400eee915b|agent/tw10-savedata-r42-payload-wrappers-20261014'
+          artifact="$(gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/11898767027" --jq '[.workflow_run.id,.name,.digest,.expired] | join("|")')"
+          test "$artifact" = '38574385118|tw10-r42-original-payload-wrappers-derived|sha256:10c695b16eb5a1be5d1f3fa8b4852c3c4b3593d6f410317ad0dfccd83da6b501|false'
+      - name: Download bounded R42 original-derived metadata only
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/r42-independent
+          gh run download 38574385118 --repo "$GITHUB_REPOSITORY" --name tw10-r42-original-payload-wrappers-derived --dir /tmp/r42-independent
+          test "$(find /tmp/r42-independent -type f | wc -l)" -eq 1
+          test -f /tmp/r42-independent/stoneage-r42-derived.json
+          test ! -L /tmp/r42-independent/stoneage-r42-derived.json
+          test "$(stat -c %s /tmp/r42-independent/stoneage-r42-derived.json)" -le 300000
+          sha256sum /tmp/r42-independent/stoneage-r42-derived.json
+          wc -c /tmp/r42-independent/stoneage-r42-derived.json
+      - name: Replay strict R42 through R32 tamper and negative controls
+        run: |
+          set -euo pipefail
+          pip install --quiet capstone pefile
+          python -m unittest -v tests.test_stoneage_tw10_savedata_native_io_r42 tests.test_stoneage_tw10_savedata_native_io_r41 tests.test_stoneage_tw10_savedata_native_io_r40 tests.test_stoneage_tw10_savedata_native_io_r39 tests.test_stoneage_tw10_savedata_native_io_r38 tests.test_stoneage_tw10_savedata_native_io_r37 tests.test_stoneage_tw10_savedata_native_io_r36 tests.test_stoneage_tw10_savedata_native_io_r35 tests.test_stoneage_tw10_savedata_native_io_r34 tests.test_stoneage_tw10_savedata_native_io_r33 tests.test_stoneage_tw10_savedata_native_io_r32 tests.test_stoneage_tw10_savedata_argtrace_r7 tests.test_stoneage_tw10_savedata_argtrace_r7_guard
+          python -m tools.stoneage_tw10_savedata_native_io_r42_guard --report /tmp/r42-independent/stoneage-r42-derived.json
+      - name: Review original bounded report and canonical exact equality when admitted
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json, hashlib
+          from pathlib import Path
+          from tools.stoneage_tw10_savedata_native_io_r42_guard import validate
+          source=Path('/tmp/r42-independent/stoneage-r42-derived.json').read_bytes()
+          assert len(source)==147608
+          assert hashlib.sha256(source).hexdigest()=='545901acc97a027fb38a3937e00549b15f45b379c7c059e98ece6133c9541732'
+          report=json.loads(source)
+          validate(report)
+          p=Path('research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R42-ORIGINAL.json')
+          assert p.exists(), 'R42 canonical derivative missing'
+          if p.exists():
+              assert json.loads(p.read_text()) == report, 'original R42 canonical JSON differs'
+              print('TW10_R42_EXACT_DERIVED_JSON_EQUALITY=PASS')
+          else:
+              print('TW10_R42_INDEPENDENT_REVIEW_ONLY=PASS')
+          print('TW10_R42_ORIGINAL_DERIVED_JSON_BEGIN')
+          print(json.dumps(report,sort_keys=True,separators=(',',':')))
+          print('TW10_R42_ORIGINAL_DERIVED_JSON_END')
+          PY
+      - name: Purge independent temporary derivative
+        if: always()
+        run: rm -rf /tmp/r42-independent
