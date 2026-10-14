@@ -1,0 +1,73 @@
+name: Independently verify TW1.0 R43 original wrapper prefix/product and complete cycle sources
+on:
+  workflow_dispatch:
+  push:
+    branches: [agent/tw10-savedata-r43-prefix-product-sources-20261014, main]
+    paths:
+      - .github/workflows/verify-stoneage-tw10-r43-original.yml
+      - tools/stoneage_tw10_savedata_native_io_r43_guard.py
+      - docs/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R43.md
+      - research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R43-ORIGINAL.json
+permissions:
+  contents: read
+  actions: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Authenticate independent immutable original run and artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          identity="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/38576786023" --jq '[.status,.conclusion,.head_sha,.head_branch] | join("|")')"
+          test "$identity" = 'completed|success|31ee18e7d81077b3b9075c8900c99b8b676b9005|agent/tw10-savedata-r43-prefix-product-sources-20261014'
+          artifact="$(gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/11899434410" --jq '[.workflow_run.id,.name,.digest,.expired] | join("|")')"
+          test "$artifact" = '38576786023|tw10-r43-original-prefix-product-sources-derived|sha256:9f95bae3ada8f5aa74c7e8f9c739be2afd723dd17f20b160f6e8812d77713f86|false'
+      - name: Download bounded R43 original-derived metadata only
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/r43-independent
+          gh run download 38576786023 --repo "$GITHUB_REPOSITORY" --name tw10-r43-original-prefix-product-sources-derived --dir /tmp/r43-independent
+          test "$(find /tmp/r43-independent -type f | wc -l)" -eq 1
+          test -f /tmp/r43-independent/stoneage-r43-derived.json
+          test ! -L /tmp/r43-independent/stoneage-r43-derived.json
+          test "$(stat -c %s /tmp/r43-independent/stoneage-r43-derived.json)" -le 300000
+          sha256sum /tmp/r43-independent/stoneage-r43-derived.json
+          wc -c /tmp/r43-independent/stoneage-r43-derived.json
+      - name: Replay strict R43 through R32 tamper and negative controls
+        run: |
+          set -euo pipefail
+          pip install --quiet capstone pefile
+          python -m unittest -v tests.test_stoneage_tw10_savedata_native_io_r43 tests.test_stoneage_tw10_savedata_native_io_r42 tests.test_stoneage_tw10_savedata_native_io_r41 tests.test_stoneage_tw10_savedata_native_io_r40 tests.test_stoneage_tw10_savedata_native_io_r39 tests.test_stoneage_tw10_savedata_native_io_r38 tests.test_stoneage_tw10_savedata_native_io_r37 tests.test_stoneage_tw10_savedata_native_io_r36 tests.test_stoneage_tw10_savedata_native_io_r35 tests.test_stoneage_tw10_savedata_native_io_r34 tests.test_stoneage_tw10_savedata_native_io_r33 tests.test_stoneage_tw10_savedata_native_io_r32 tests.test_stoneage_tw10_savedata_argtrace_r7 tests.test_stoneage_tw10_savedata_argtrace_r7_guard
+          python -m tools.stoneage_tw10_savedata_native_io_r43_guard --report /tmp/r43-independent/stoneage-r43-derived.json
+      - name: Review original bounded report and canonical exact equality when admitted
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json, hashlib
+          from pathlib import Path
+          from tools.stoneage_tw10_savedata_native_io_r43_guard import validate
+          source=Path('/tmp/r43-independent/stoneage-r43-derived.json').read_bytes()
+          assert len(source)==162163
+          assert hashlib.sha256(source).hexdigest()=='f5eeaac700c649f92e3fca5e7cbefa465879048f54d84b3896dcdb72115d7b42'
+          report=json.loads(source)
+          validate(report)
+          p=Path('research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R43-ORIGINAL.json')
+          assert p.exists(), 'R43 canonical derivative missing'
+          if p.exists():
+              assert json.loads(p.read_text()) == report, 'original R43 canonical JSON differs'
+              print('TW10_R43_EXACT_DERIVED_JSON_EQUALITY=PASS')
+          else:
+              print('TW10_R43_INDEPENDENT_REVIEW_ONLY=PASS')
+          print('TW10_R43_ORIGINAL_DERIVED_JSON_BEGIN')
+          print(json.dumps(report,sort_keys=True,separators=(',',':')))
+          print('TW10_R43_ORIGINAL_DERIVED_JSON_END')
+          PY
+      - name: Purge independent temporary derivative
+        if: always()
+        run: rm -rf /tmp/r43-independent
