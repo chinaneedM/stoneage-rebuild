@@ -1,0 +1,7 @@
+# TW1.0 R49 — native EDI overwrite and temporal wrapper division sources
+
+Status: READY; authenticated original derivation and independent acceptance pending.
+
+Highest NEXT R49: qualify the native local overwrite MOV[EBP-8],EDI0x4aab1 using exact EDI definitions and bounded predecessor/branch/memory barriers; distinguish it from ADD[EBP-8],EDX0x4a9a9 and other native return-source alternatives without evaluating byte conversion/counts. For the savedata wrapper, recover temporal DIV0x486e4 versus DIV0x48743 numerator/divisor provenance, especially mutable[EBP+20] and store0x4871d, initial product versus remaining-slot[EBP+8], and visible MOV EAX,EDI0x4873c->SUB0x48740. Do not infer permanent ABI roles from frame offsets, merge the two division operations or promote original quotient/return/transferred byte values. Keep unknown CALL/frame/alias effects explicit; native savedata schema/framing/checksum/migration/persistence, server authority and cross-version equivalence remain OPEN. No generic allocator/CRT ownership exhaustion. Stage A restoration before joint future-engine/game review; all system-family PARTIAL/OPEN gates unchanged.
+
+Require nonexecuting authenticated originals, explicit graph/query/row/path/alias limits, synthetic/adversarial gates, immutable source/artifact identity and exact canonical JSON. No original byte/count/division evaluation or runtime/frame/ABI/owner/schema promotion.
