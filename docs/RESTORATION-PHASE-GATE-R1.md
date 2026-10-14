@@ -199,3 +199,10 @@ Highest NEXT R32: identify original intervening CALL0x4ed1f and the predicate/br
 R32–R36 original conditional static CALL/flag/operand topology evidence and independent derivative custody are accepted. R36 structural branch routes, PUSH spelling, low-byte projections and address candidates do not establish actual handles, API/ABI effects, owner/alias identity or native schema/persistence. All system-family PARTIAL/OPEN states remain unchanged.
 
 Highest NEXT R37: original continuation helpers0x4ed49->0x4e80a and0x4ed87->0x4c761, conditional PUSH/register/helper-memory geometry, partial-register definitions and three store address candidates. Native filename->CreateFileA-result->ReadFile/WriteFile buffer/length128/schema/persistence stays OPEN. Stage A restoration before joint future-engine/game review remains binding.
+
+
+## 2026-10-14 queue supersession (R37 accepted)
+
+R37 independently accepts two original CALL-supported helper contexts, shared-displacement/static import candidates and separately classified byte/full-width scalar operands. This does not demonstrate actual handle/descriptor/table ownership, caller/helper parameter binding, API/ABI results, file seek or native schema/persistence. All system-family PARTIAL/OPEN statuses remain unchanged.
+
+Highest NEXT R38: first helper stack-prefix and caller PUSH geometry, exact shared-store source/width and scalar/address inputs, retaining opaque SetStdHandle/SetFilePointer effects and all alias/frame/return gaps. Stage A comprehensive restoration remains prior to joint future-engine/game review.
