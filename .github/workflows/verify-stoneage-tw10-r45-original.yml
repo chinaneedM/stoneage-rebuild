@@ -1,0 +1,73 @@
+name: Independently verify TW1.0 R45 original optional count paths and native API input sources
+on:
+  workflow_dispatch:
+  push:
+    branches: [agent/tw10-savedata-r45-count-api-inputs-20261014, main]
+    paths:
+      - .github/workflows/verify-stoneage-tw10-r45-original.yml
+      - tools/stoneage_tw10_savedata_native_io_r45_guard.py
+      - docs/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R45.md
+      - research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R45-ORIGINAL.json
+permissions:
+  contents: read
+  actions: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Authenticate independent immutable original run and artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          identity="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/38581331803" --jq '[.status,.conclusion,.head_sha,.head_branch] | join("|")')"
+          test "$identity" = 'completed|success|edf452d6fa218961250f400eb294bf4ab7b43fc5|agent/tw10-savedata-r45-count-api-inputs-20261014'
+          artifact="$(gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/11904385284" --jq '[.workflow_run.id,.name,.digest,.expired] | join("|")')"
+          test "$artifact" = '38581331803|tw10-r45-original-count-api-inputs-derived|sha256:9d8f3eb3b087dc56008fa0ab4df4535f2131ad6f5b86a6b3cbcf2a77954eb015|false'
+      - name: Download bounded R45 original-derived metadata only
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/r45-independent
+          gh run download 38581331803 --repo "$GITHUB_REPOSITORY" --name tw10-r45-original-count-api-inputs-derived --dir /tmp/r45-independent
+          test "$(find /tmp/r45-independent -type f | wc -l)" -eq 1
+          test -f /tmp/r45-independent/stoneage-r45-derived.json
+          test ! -L /tmp/r45-independent/stoneage-r45-derived.json
+          test "$(stat -c %s /tmp/r45-independent/stoneage-r45-derived.json)" -le 300000
+          sha256sum /tmp/r45-independent/stoneage-r45-derived.json
+          wc -c /tmp/r45-independent/stoneage-r45-derived.json
+      - name: Replay strict R45 through R32 tamper and negative controls
+        run: |
+          set -euo pipefail
+          pip install --quiet capstone pefile
+          python -m unittest -v tests.test_stoneage_tw10_savedata_native_io_r45 tests.test_stoneage_tw10_savedata_native_io_r44 tests.test_stoneage_tw10_savedata_native_io_r43 tests.test_stoneage_tw10_savedata_native_io_r42 tests.test_stoneage_tw10_savedata_native_io_r41 tests.test_stoneage_tw10_savedata_native_io_r40 tests.test_stoneage_tw10_savedata_native_io_r39 tests.test_stoneage_tw10_savedata_native_io_r38 tests.test_stoneage_tw10_savedata_native_io_r37 tests.test_stoneage_tw10_savedata_native_io_r36 tests.test_stoneage_tw10_savedata_native_io_r35 tests.test_stoneage_tw10_savedata_native_io_r34 tests.test_stoneage_tw10_savedata_native_io_r33 tests.test_stoneage_tw10_savedata_native_io_r32 tests.test_stoneage_tw10_savedata_argtrace_r7 tests.test_stoneage_tw10_savedata_argtrace_r7_guard
+          python -m tools.stoneage_tw10_savedata_native_io_r45_guard --report /tmp/r45-independent/stoneage-r45-derived.json
+      - name: Review original bounded report and canonical exact equality when admitted
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json, hashlib
+          from pathlib import Path
+          from tools.stoneage_tw10_savedata_native_io_r45_guard import validate
+          source=Path('/tmp/r45-independent/stoneage-r45-derived.json').read_bytes()
+          assert len(source)==73217
+          assert hashlib.sha256(source).hexdigest()=='77919ef7e23f6a25afc66c2bc54b7b0f7da02df1b618e4a50743cda7ad26c21e'
+          report=json.loads(source)
+          validate(report)
+          p=Path('research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R45-ORIGINAL.json')
+          assert p.exists(), 'R45 canonical derivative missing'
+          if p.exists():
+              assert json.loads(p.read_text()) == report, 'original R45 canonical JSON differs'
+              print('TW10_R45_EXACT_DERIVED_JSON_EQUALITY=PASS')
+          else:
+              print('TW10_R45_INDEPENDENT_REVIEW_ONLY=PASS')
+          print('TW10_R45_ORIGINAL_DERIVED_JSON_BEGIN')
+          print(json.dumps(report,sort_keys=True,separators=(',',':')))
+          print('TW10_R45_ORIGINAL_DERIVED_JSON_END')
+          PY
+      - name: Purge independent temporary derivative
+        if: always()
+        run: rm -rf /tmp/r45-independent
