@@ -1,0 +1,89 @@
+name: Cross-check TW1.0 R58 independent return algebra and bit patterns
+on:
+  workflow_dispatch:
+  push:
+    branches: [agent/tw10-r58-secondary-gates-20261015, main]
+    paths:
+      - .github/workflows/verify-stoneage-tw10-r58-secondary.yml
+      - research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R58-ORIGINAL.json
+      - docs/specs/STONEAGE-TW10-SHARED-CLOSE-HELPERS-R58.md
+      - tools/stoneage_tw10_savedata_return_r58_audit.py
+      - tests/test_stoneage_tw10_savedata_return_r58_audit.py
+      - tools/stoneage_tw10_savedata_r58_syntax_contract.py
+      - tests/test_stoneage_tw10_savedata_r58_syntax_contract.py
+      - tools/stoneage_tw10_savedata_native_io_r58.py
+      - tools/stoneage_tw10_savedata_native_io_r58_guard.py
+permissions:
+  contents: read
+  actions: read
+jobs:
+  independent:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Authenticate original R58 producer run and derived-only ZIP
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          identity="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/38743841197" --jq '[.status,.conclusion,.head_sha,.head_branch] | join("|")')"
+          test "$identity" = 'completed|success|c19e32987bd1bdb847e2a4306983dfe4ffb347d5|agent/tw10-savedata-r58-shared-close-helpers-20261015'
+          artifact="$(gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/11976911506" --jq '[.workflow_run.id,.name,.digest,.expired] | join("|")')"
+          test "$artifact" = '38743841197|tw10-r58-original-shared-close-helpers-derived|sha256:37ff56646a708744f9585eb7719fa313a6a053bcea9a9f6c38ac4bf2044601d2|false'
+          mkdir -p /tmp/r58-immutable
+          gh run download 38743841197 --repo "$GITHUB_REPOSITORY" --name tw10-r58-original-shared-close-helpers-derived --dir /tmp/r58-immutable
+          test "$(find /tmp/r58-immutable -type f | wc -l)" -eq 1
+          test ! -L /tmp/r58-immutable/stoneage-r58-derived.json
+          test "$(stat -c %s /tmp/r58-immutable/stoneage-r58-derived.json)" -le 2000000
+          echo '04fb0b586f1fcf87f647b1bc1276bde2505822e195646c4c9058c03c7f558fe8  /tmp/r58-immutable/stoneage-r58-derived.json' | sha256sum -c -
+          cmp /tmp/r58-immutable/stoneage-r58-derived.json research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R58-ORIGINAL.json
+          echo TW10_R58_IMMUTABLE_ORIGINAL_ARTIFACT_CUSTODY=PASS
+      - name: Independent synthesized regression and strict R58 root replay
+        run: |
+          set -euo pipefail
+          pip install --quiet capstone pefile
+          python -m unittest -v tests.test_stoneage_tw10_savedata_return_r58_audit tests.test_stoneage_tw10_savedata_native_io_r58 tests.test_stoneage_tw10_savedata_return_r57 tests.test_stoneage_tw10_savedata_return_r57_guard tests.test_stoneage_tw10_savedata_return_r57_contract tests.test_stoneage_tw10_savedata_native_io_r57 tests.test_stoneage_tw10_savedata_native_io_r56
+          python -m tools.stoneage_tw10_savedata_native_io_r58_guard --report /tmp/r58-immutable/stoneage-r58-derived.json
+          echo TW10_R58_ADVERSARIAL_REGRESSION_AND_ORIGINAL_REPLAY=PASS
+      - name: Independently reconstruct bounded helper return contract
+        run: |
+          set -euo pipefail
+          python -m tools.stoneage_tw10_savedata_return_r58_audit --report /tmp/r58-immutable/stoneage-r58-derived.json > /tmp/r58-return-contract.json
+          python -m tools.stoneage_tw10_savedata_return_r58_audit --report /tmp/r58-immutable/stoneage-r58-derived.json --verify /tmp/r58-return-contract.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          report=json.loads(Path('/tmp/r58-return-contract.json').read_text())
+          assert report['schema']=='tw10-r58-independent-derived-return-source-contract'
+          assert len(report['contexts'])==2
+          assert [x['root_candidate_rva'] for x in report['contexts']]==[0x4a657,0x4a53e]
+          assert [len(x['r57_wrapper_bridge_sites']) for x in report['contexts']]==[2,1]
+          assert report['actual_runtime_path_memory_values_error_semantics_or_native_persistence_proven'] is False
+          for ctx in report['contexts']:
+              assert ctx['actual_file_descriptor_ownership_flush_close_written_bytes_or_persistence_proven'] is False
+              print('R58_ROOT_SUMMARY', json.dumps(ctx,sort_keys=True))
+          print('R58_TOTAL_REVERSE_QUERIES', report['independent_reverse_queries'])
+          print('R58_RAW_SOURCE_SHA256', report['source_sha256'])
+          PY
+      - name: Verify exact conditional return spellings and unknown native effects
+        run: |
+          set -euo pipefail
+          python -m unittest -v tests.test_stoneage_tw10_savedata_r58_syntax_contract
+          python -m tools.stoneage_tw10_savedata_r58_syntax_contract --source /tmp/r58-immutable/stoneage-r58-derived.json > /tmp/r58-syntax-contract.json
+          python -m tools.stoneage_tw10_savedata_r58_syntax_contract --source /tmp/r58-immutable/stoneage-r58-derived.json --verify /tmp/r58-syntax-contract.json
+          cat /tmp/r58-syntax-contract.json
+          echo TW10_R58_STATIC_RETURN_BITPATTERNS=PASS
+          echo TW10_R58_ACTUAL_NATIVE_SUCCESS_AND_PERSISTENCE=OPEN
+      - name: Purge downloaded derived-only artifact
+        if: always()
+        run: rm -rf /tmp/r58-immutable
+      - name: Upload bounded independent contract only
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: tw10-r58-independent-return-contract
+          path: |
+            /tmp/r58-return-contract.json
+            /tmp/r58-syntax-contract.json
+          retention-days: 21

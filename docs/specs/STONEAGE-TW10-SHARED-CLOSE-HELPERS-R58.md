@@ -1,6 +1,6 @@
 # TW1.0 R58 — rooted shared-write/close and close-path helpers
 
-Status: IN PROGRESS; R57 accepted; real helper effects and native persistence OPEN.
+Status: R58 ORIGINAL STATIC EVIDENCE ACCEPTED on main (R58 branch + main Actions SUCCESS); actual helper effects and native persistence remain OPEN.
 
 This bounded source experiment requalifies the **exact original R57 report**
 (SHA256 `3e562ab02a80e0f6516f8a91c93b897eef05f606be62f1df5cb48686d64114e6`)
@@ -23,7 +23,7 @@ record version, schema, checksum, server state or cross-version equivalence.
 Acceptance requires (1) source Action success and derived metadata,
 (2) independent immutable source/artifact verification and strict graph/return
 replay, (3) canonical receipts and continuity, (4) passing main Actions.
-Until then Stage A remains PARTIAL/OPEN and R58 is not accepted.
+All four gates for bounded original static evidence are now met. Stage A remains PARTIAL/OPEN: native behavior and persistence are not accepted.
 
 
 ## R58 authenticated original and independent findings
@@ -33,3 +33,17 @@ Source Action38743841197 (68 tests) and independent Action38744746218 (83 tests)
 FACT: shared 0x4a657:40 nodes/44 edges,5 predicates,4 explicit memory-write shapes, bounded RET0x4a6b2, direct CALL0x4a683->0x4c5b4; CMP EAX,EDI at0x4a68b and MOV EAX,EBX at0x4a6ae. Close-path 0x4a53e:66 nodes/73 edges,8 predicates,3 memory-write shapes,8 call shapes of which2 are memory-indirect, RET0x4a5f0. Both complete in the bounded original static CFG, without limits/frontiers. They do not establish actual native transfer, success/error values, close/flush/persistence or frame alias preservation.
 
 Highest NEXT R59: resolve only native-context/close-result chains needed for original savedata semantics; preserve opaque native/indirect calls and all Stage A PARTIAL/OPEN gates.
+
+## Secondary independent return-algebra checks
+
+The separate R58 audit branch `agent/tw10-r58-independent-return-audit-20261015`
+passed independent Action `38745294891` at `6238a083f5e38a4221dbae03fcc3306c99c8b935`.
+Its reverse-predecessor return-source replay and separately pinned literal operand
+contract are complementary to the canonical R58 original-source/forward analysis.
+The secondary suite pins exact immutable 124989-byte SHA256
+`04fb0b586f1fcf87f647b1bc1276bde2505822e195646c4c9058c03c7f558fe8`,
+rechecks parent bridges and independently reconstructs source candidates.
+The static register bit patterns (zero and all-ones) do not establish native
+success/error conventions, callee preservation, buffer flush, close success or
+persisted bytes. Reuse the accepted canonical report, not a second original-media
+acquisition, for subsequent R59 numeric gap analysis.
