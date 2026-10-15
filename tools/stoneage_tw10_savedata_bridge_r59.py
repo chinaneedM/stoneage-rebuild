@@ -111,7 +111,7 @@ def derive(r28, r58):
         "original_return_success_error_abi_alias_or_file_ownership_proven": False,
         "actual_savedata_written_bytes_flush_close_or_persistence_proven": False,
         "original_payload_schema_version_migration_or_server_authority_proven": False,
-        "next": "R60 specific native-context result/count paths and close/error predicate barriers",
+        "next": "R59 follow-on: native-context result/count paths and close/error predicate barriers",
     }
 
 

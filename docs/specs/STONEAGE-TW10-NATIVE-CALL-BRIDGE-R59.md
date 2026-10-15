@@ -27,7 +27,7 @@ and every essential non-promotion flag. Its synthetic adversarial tests reject
 incorrect target/slot identities, unresolved graph frontiers and native-success
 promotions. All output is derived JSON, no original client/download/execution.
 
-**Highest NEXT R60** after independent CI acceptance: trace specific
+**Highest NEXT (R59 follow-on)** after independent CI acceptance: trace specific
 `0x4c5b4` native-context post-call return/count paths and close helper
 `0x4a53e` branch/indirect-callee result barriers using existing pinned
 evidence first; recover authenticated originals only for a precise missing
