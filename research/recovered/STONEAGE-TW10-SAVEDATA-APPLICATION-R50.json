@@ -1,0 +1,564 @@
+{
+  "actual_schema_length_tag_migration_or_buffer_alias_proven": false,
+  "caller_address_stack_unknowns": [
+    {
+      "actual_original_esp_or_stack_contents_known": false,
+      "known_conditional_esp_deltas": [],
+      "site_reached_in_stack_model": true,
+      "site_rva": 262462,
+      "state_limit_hit": false,
+      "unique_conditional_esp_delta": null,
+      "unknown_barrier_candidates": [
+        {
+          "kind": "opaque_call",
+          "site_rva": 262426
+        }
+      ],
+      "update_limit_hit": false
+    },
+    {
+      "actual_original_esp_or_stack_contents_known": false,
+      "known_conditional_esp_deltas": [],
+      "site_reached_in_stack_model": true,
+      "site_rva": 262519,
+      "state_limit_hit": false,
+      "unique_conditional_esp_delta": null,
+      "unknown_barrier_candidates": [
+        {
+          "kind": "opaque_call",
+          "site_rva": 262426
+        },
+        {
+          "kind": "opaque_call",
+          "site_rva": 262469
+        },
+        {
+          "kind": "opaque_call",
+          "site_rva": 262514
+        }
+      ],
+      "update_limit_hit": false
+    },
+    {
+      "actual_original_esp_or_stack_contents_known": false,
+      "known_conditional_esp_deltas": [],
+      "site_reached_in_stack_model": true,
+      "site_rva": 262523,
+      "state_limit_hit": false,
+      "unique_conditional_esp_delta": null,
+      "unknown_barrier_candidates": [
+        {
+          "kind": "opaque_call",
+          "site_rva": 262426
+        },
+        {
+          "kind": "opaque_call",
+          "site_rva": 262469
+        },
+        {
+          "kind": "opaque_call",
+          "site_rva": 262514
+        }
+      ],
+      "update_limit_hit": false
+    }
+  ],
+  "caller_graph": {
+    "actual_entry_path_proven": false,
+    "edges": 74,
+    "frontier": [],
+    "node_cap": 256,
+    "node_limit_hit": false,
+    "nodes": 73,
+    "returning_call_assumption_only": true,
+    "span_bytes": 768
+  },
+  "post_processing_comparisons": [
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "eax"
+      ],
+      "decoder_written_registers": [
+        "eflags"
+      ],
+      "input_query_registers": [
+        "eax"
+      ],
+      "mnemonic": "cmp",
+      "operands": [
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "kind": "register",
+          "register": "eax",
+          "width_bytes": 4
+        },
+        {
+          "constant": 57,
+          "decoder_read": false,
+          "decoder_write": false,
+          "kind": "immediate",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 262549
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "cx"
+      ],
+      "decoder_written_registers": [
+        "eflags"
+      ],
+      "input_query_registers": [
+        "ecx"
+      ],
+      "mnemonic": "cmp",
+      "operands": [
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "geometry": {
+            "base_register": null,
+            "displacement_region": {
+              "displacement_rva": 20954540,
+              "raw_backed": false,
+              "section": ".data",
+              "writable": true
+            },
+            "index_register": null,
+            "index_scale": 1,
+            "relative_field_offset": null,
+            "segment_register": null,
+            "width_bytes": 2
+          },
+          "kind": "memory",
+          "width_bytes": 2
+        },
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "kind": "register",
+          "register": "cx",
+          "width_bytes": 2
+        }
+      ],
+      "site_rva": 262559
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "eax"
+      ],
+      "decoder_written_registers": [
+        "eflags"
+      ],
+      "input_query_registers": [
+        "eax"
+      ],
+      "mnemonic": "cmp",
+      "operands": [
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "kind": "register",
+          "register": "eax",
+          "width_bytes": 4
+        },
+        {
+          "constant": 127,
+          "decoder_read": false,
+          "decoder_write": false,
+          "kind": "immediate",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 262601
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "ax"
+      ],
+      "decoder_written_registers": [
+        "eflags"
+      ],
+      "input_query_registers": [
+        "eax"
+      ],
+      "mnemonic": "cmp",
+      "operands": [
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "geometry": {
+            "base_register": null,
+            "displacement_region": {
+              "displacement_rva": 20954540,
+              "raw_backed": false,
+              "section": ".data",
+              "writable": true
+            },
+            "index_register": null,
+            "index_scale": 1,
+            "relative_field_offset": null,
+            "segment_register": null,
+            "width_bytes": 2
+          },
+          "kind": "memory",
+          "width_bytes": 2
+        },
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "kind": "register",
+          "register": "ax",
+          "width_bytes": 2
+        }
+      ],
+      "site_rva": 262628
+    }
+  ],
+  "post_processing_memory_operands": [
+    {
+      "mnemonic": "mov",
+      "operand": {
+        "decoder_read": true,
+        "decoder_write": false,
+        "geometry": {
+          "base_register": "esp",
+          "displacement_region": null,
+          "index_register": null,
+          "index_scale": 1,
+          "relative_field_offset": 32,
+          "segment_register": null,
+          "width_bytes": 4
+        },
+        "kind": "memory",
+        "width_bytes": 4
+      },
+      "operand_index": 1,
+      "site_rva": 262542
+    },
+    {
+      "mnemonic": "cmp",
+      "operand": {
+        "decoder_read": true,
+        "decoder_write": false,
+        "geometry": {
+          "base_register": null,
+          "displacement_region": {
+            "displacement_rva": 20954540,
+            "raw_backed": false,
+            "section": ".data",
+            "writable": true
+          },
+          "index_register": null,
+          "index_scale": 1,
+          "relative_field_offset": null,
+          "segment_register": null,
+          "width_bytes": 2
+        },
+        "kind": "memory",
+        "width_bytes": 2
+      },
+      "operand_index": 0,
+      "site_rva": 262559
+    },
+    {
+      "mnemonic": "mov",
+      "operand": {
+        "decoder_read": false,
+        "decoder_write": true,
+        "geometry": {
+          "base_register": null,
+          "displacement_region": {
+            "displacement_rva": 20954540,
+            "raw_backed": false,
+            "section": ".data",
+            "writable": true
+          },
+          "index_register": null,
+          "index_scale": 1,
+          "relative_field_offset": null,
+          "segment_register": null,
+          "width_bytes": 1
+        },
+        "kind": "memory",
+        "width_bytes": 1
+      },
+      "operand_index": 0,
+      "site_rva": 262568
+    },
+    {
+      "mnemonic": "mov",
+      "operand": {
+        "decoder_read": false,
+        "decoder_write": true,
+        "geometry": {
+          "base_register": null,
+          "displacement_region": {
+            "displacement_rva": 20954597,
+            "raw_backed": false,
+            "section": ".data",
+            "writable": true
+          },
+          "index_register": null,
+          "index_scale": 1,
+          "relative_field_offset": null,
+          "segment_register": null,
+          "width_bytes": 1
+        },
+        "kind": "memory",
+        "width_bytes": 1
+      },
+      "operand_index": 0,
+      "site_rva": 262575
+    },
+    {
+      "mnemonic": "mov",
+      "operand": {
+        "decoder_read": false,
+        "decoder_write": true,
+        "geometry": {
+          "base_register": null,
+          "displacement_region": {
+            "displacement_rva": 20954667,
+            "raw_backed": false,
+            "section": ".data",
+            "writable": true
+          },
+          "index_register": null,
+          "index_scale": 1,
+          "relative_field_offset": null,
+          "segment_register": null,
+          "width_bytes": 1
+        },
+        "kind": "memory",
+        "width_bytes": 1
+      },
+      "operand_index": 0,
+      "site_rva": 262607
+    },
+    {
+      "mnemonic": "cmp",
+      "operand": {
+        "decoder_read": true,
+        "decoder_write": false,
+        "geometry": {
+          "base_register": null,
+          "displacement_region": {
+            "displacement_rva": 20954540,
+            "raw_backed": false,
+            "section": ".data",
+            "writable": true
+          },
+          "index_register": null,
+          "index_scale": 1,
+          "relative_field_offset": null,
+          "segment_register": null,
+          "width_bytes": 2
+        },
+        "kind": "memory",
+        "width_bytes": 2
+      },
+      "operand_index": 0,
+      "site_rva": 262628
+    },
+    {
+      "mnemonic": "mov",
+      "operand": {
+        "decoder_read": false,
+        "decoder_write": true,
+        "geometry": {
+          "base_register": null,
+          "displacement_region": {
+            "displacement_rva": 20954667,
+            "raw_backed": false,
+            "section": ".data",
+            "writable": true
+          },
+          "index_register": null,
+          "index_scale": 1,
+          "relative_field_offset": null,
+          "segment_register": null,
+          "width_bytes": 1
+        },
+        "kind": "memory",
+        "width_bytes": 1
+      },
+      "operand_index": 0,
+      "site_rva": 262637
+    }
+  ],
+  "post_processing_register_literal_definitions": [
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [],
+      "decoder_written_registers": [
+        "ecx"
+      ],
+      "input_query_registers": [
+        "ecx"
+      ],
+      "mnemonic": "mov",
+      "operands": [
+        {
+          "decoder_read": false,
+          "decoder_write": true,
+          "kind": "register",
+          "register": "ecx",
+          "width_bytes": 4
+        },
+        {
+          "constant": 4,
+          "decoder_read": false,
+          "decoder_write": false,
+          "kind": "immediate",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 262552
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [],
+      "decoder_written_registers": [
+        "eax"
+      ],
+      "input_query_registers": [
+        "eax"
+      ],
+      "mnemonic": "mov",
+      "operands": [
+        {
+          "decoder_read": false,
+          "decoder_write": true,
+          "kind": "register",
+          "register": "eax",
+          "width_bytes": 4
+        },
+        {
+          "constant": 1,
+          "decoder_read": false,
+          "decoder_write": false,
+          "kind": "immediate",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 262588
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [],
+      "decoder_written_registers": [
+        "eax"
+      ],
+      "input_query_registers": [
+        "eax"
+      ],
+      "mnemonic": "mov",
+      "operands": [
+        {
+          "decoder_read": false,
+          "decoder_write": true,
+          "kind": "register",
+          "register": "eax",
+          "width_bytes": 4
+        },
+        {
+          "constant": 5,
+          "decoder_read": false,
+          "decoder_write": false,
+          "kind": "immediate",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 262623
+    }
+  ],
+  "processing_graph": {
+    "actual_entry_path_proven": false,
+    "edges": 124,
+    "frontier": [],
+    "node_cap": 256,
+    "node_limit_hit": false,
+    "nodes": 115,
+    "returning_call_assumption_only": true,
+    "span_bytes": 768
+  },
+  "processing_physical_suffix": {
+    "abi_roles_applied": false,
+    "actual_stack_values_known": false,
+    "conditional_pre_call_esp_only": true,
+    "linear_call_boundary_reached": true,
+    "pushes": [
+      {
+        "conditional_pre_call_esp_offset": 0,
+        "input": {
+          "decoder_read": true,
+          "decoder_write": false,
+          "kind": "register",
+          "register": "edx",
+          "width_bytes": 4
+        },
+        "site_rva": 262536
+      },
+      {
+        "conditional_pre_call_esp_offset": 4,
+        "input": {
+          "decoder_read": true,
+          "decoder_write": false,
+          "kind": "register",
+          "register": "edi",
+          "width_bytes": 4
+        },
+        "site_rva": 262535
+      },
+      {
+        "conditional_pre_call_esp_offset": 8,
+        "input": {
+          "constant": 0,
+          "decoder_read": false,
+          "decoder_write": false,
+          "kind": "immediate",
+          "width_bytes": 4
+        },
+        "site_rva": 262533
+      },
+      {
+        "conditional_pre_call_esp_offset": 12,
+        "input": {
+          "constant": 25148844,
+          "decoder_read": false,
+          "decoder_write": false,
+          "kind": "immediate",
+          "width_bytes": 4
+        },
+        "site_rva": 262528
+      },
+      {
+        "conditional_pre_call_esp_offset": 16,
+        "input": {
+          "decoder_read": true,
+          "decoder_write": false,
+          "kind": "register",
+          "register": "ecx",
+          "width_bytes": 4
+        },
+        "site_rva": 262527
+      }
+    ],
+    "stop_reason": "control_transfer"
+  },
+  "processor_memory_control_sample": {
+    "retained": 32,
+    "total": 36,
+    "truncated": true
+  },
+  "schema": "tw10-r50-pinned-application-consumer-inventory",
+  "source_sha256": "0badd1423f403a9e8a246a40518a68ee5a1bd67d380ea7ab3460fc3c607c3e94",
+  "static_only": true
+}
