@@ -15,3 +15,5 @@ Reconstruct both `0x4c68c -> TEST 0x4c692` and `0x4c6f1 -> TEST 0x4c6f7` windows
 The native `WriteFile` BOOL-shaped EAX return remains an opaque external-call value independent of the possibly written number-of-bytes-through-memory. `TEST EAX,EAX`, if identified, is still only original instruction syntax, not a realized return or taken branch. Conditional PUSH offsets are not proof of argument binding, stack-frame identity or preservation through other calls.
 
 Acceptance requires independent source-authenticated branch CI, adversarial mutations, exact derived replay and explicit non-promotion on both sites. The entire original filename/handle/buffer/byte length, native return, flush/close and persisted record/migration/checksum chain stays OPEN; Stage B remains gated.
+
+A local R63 bounded-window edge list does not include an outside-window branch target. R64 records one observed local branch successor as **partial**, not as a proven single-target Jcc or impossible branch. An exact fully scoped CFG would require separate evidence.

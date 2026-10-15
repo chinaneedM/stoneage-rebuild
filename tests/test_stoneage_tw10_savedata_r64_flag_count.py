@@ -79,8 +79,18 @@ class R64Tests(unittest.TestCase):
         self.reject(lambda r:r.__setitem__("actual_native_writefile_return_count_or_success_proven",True))
     def test_missing_flags_write(self):
         self.reject(lambda r:r["sites"][0]["postcall_instruction"].__setitem__("decoder_written_registers",[]))
-    def test_invalid_branch_degree(self):
-        self.reject(lambda r:r["sites"][0]["bounded_local_edges"].remove([r["sites"][0]["postcall_rva"]+2,r["sites"][0]["postcall_rva"]+10]))
+    def test_one_branch_target_outside_window_stays_conditional_partial(self):
+        r=self.fabricated()
+        x=r["sites"][0]
+        x["bounded_local_edges"].remove([x["postcall_rva"]+2,x["postcall_rva"]+10])
+        d=trace(r,self.r28)
+        self.assertFalse(d["postcall_contexts"][0]["both_branch_successors_inside_r63_window"])
+        self.assertEqual(len(d["postcall_contexts"][0]["immediate_branch_successors"]),1)
+    def test_missing_all_branch_edges_fails(self):
+        def tamper(r):
+            x=r["sites"][0]
+            x["bounded_local_edges"]=[e for e in x["bounded_local_edges"] if e[0]!=x["postcall_rva"]+2]
+        self.reject(tamper)
 
 if __name__=="__main__":
     unittest.main()

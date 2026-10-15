@@ -65,7 +65,9 @@ def trace(r63,r28):
         immediate=by[nxt]
         is_conditional=immediate["mnemonic"].startswith("j") and immediate["mnemonic"] not in ("jmp","ljmp")
         if is_conditional:
-            need(len(out(nxt))==2,"conditional branch exactly two successors")
+            # R63 stores only edges whose *both* endpoints lie within the narrow
+            # bounded operand window. A second target may be outside that window.
+            need(1<=len(out(nxt))<=2,"conditional branch local successors")
         # Unknown native EAX can be a TEST operand; even then its runtime value is not proven.
         exact_eax_operand=any(x.get("kind")=="register" and x.get("register")=="eax"
                              for x in postrow["operands"])
@@ -110,6 +112,7 @@ def trace(r63,r28):
             "immediate_successor_mnemonic":immediate["mnemonic"],
             "immediate_successor_is_conditional_jump":is_conditional,
             "immediate_branch_successors":out(nxt) if is_conditional else [],
+            "both_branch_successors_inside_r63_window":is_conditional and len(out(nxt))==2,
             "postcall_test_has_explicit_eax_operand":exact_eax_operand,
             "native_eax_from_opaque_unknown_call":True,
             "structural_flag_source_candidate":is_conditional,
