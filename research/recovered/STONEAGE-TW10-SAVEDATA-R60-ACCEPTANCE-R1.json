@@ -1,0 +1,30 @@
+{
+  "schema": "tw10-r60-static-close-predicate-acceptance-r1",
+  "scope": "Stage A original TW1.0 static restoration; runtime savedata persistence not established",
+  "source_r28_git_blob": "3671661219120d45bd922e05b6df371523b42432",
+  "source_r58_git_blob": "223b65683d37332546ada0fe034a81550b5e8ed8",
+  "source_r58_sha256": "04fb0b586f1fcf87f647b1bc1276bde2505822e195646c4c9058c03c7f558fe8",
+  "verified_code_head": "e06a418b7ca9dba9432a1c2e368415d13583ddeb",
+  "verified_code_tree": "1858580583c95f8c41e36384627ec8dcaa480790",
+  "branch": "agent/tw10-r60-close-predicates-20261015",
+  "branch_action_id": 38750283698,
+  "branch_job_id": 116474582551,
+  "branch_conclusion": "success",
+  "main_action_id": 38750509857,
+  "main_job_id": 116475364009,
+  "main_conclusion": "success",
+  "independent_and_inherited_tests_pass": 30,
+  "strict_r28_r58_original_derived_guard": "PASS",
+  "derived_contract_replay": "PASS",
+  "writefile_postcall_eax_sources": [
+    "unknown_call",
+    "unknown_call"
+  ],
+  "close_structural_route_families": 4,
+  "branch_conditions_and_callee_effects_proven": false,
+  "native_result_bytecount_or_persistence_proven": false,
+  "original_code_save_payload_or_native_api_executed": false,
+  "stage_a_system_families": "PARTIAL_OPEN",
+  "stage_b_new_game_design_started": false,
+  "highest_next": "R61 precise R28 native-context postcall operand/branch gap and cross-function ABI/alias evidence audit"
+}
