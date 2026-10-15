@@ -1,0 +1,7 @@
+# TW1.0 R50 — savedata-specific read caller and first buffer consumers
+
+Status: READY; authenticated original derivation and independent acceptance pending.
+
+Highest NEXT R50: return to original savedata-specific CALL0x40145->0x48660. Requalify its exact caller/decoder/entrygraph support and physical buffer/product inputs against accepted R41/R42 evidence, then inspect a bounded post-wrapper continuation, returned-value predicates and first buffer consumers for application-level field/record/framing checks. Keep opaque wrapper/open results and caller register/frame/alias barriers explicit; do not convert literal4000, a multiplication, a return candidate or historical128-byte observation into a proven read size/schema. Keep the separate write callers0x40090/0x402c9 as distinct contexts if needed for a later read/write correspondence. Native conversion/ABI/owner gaps from R49 remain documented OPEN and off the critical path unless needed for a specific savedata consumer. No generic allocator/CRT ownership exhaustion. Savedata payload/framing/checksum/migration/persistence, original server authority and cross-version equivalence remain OPEN. Stage A restoration before joint future-engine/game review; all system-family PARTIAL/OPEN gates unchanged.
+
+Require nonexecuting authenticated originals, explicit graph/query/row/path limits, meaningful synthetic/adversarial controls, immutable source/artifact custody and exact canonical JSON. No actual read count, original byte evaluation, caller preservation, payload schema or persistence promotion.

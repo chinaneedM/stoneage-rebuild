@@ -6471,3 +6471,14 @@ Earlier440-test original source Action38651895475/job116152419472 at HEADed98875
 FACT (bounded original static): local count-load/add syntax reaches the local return-load region, whose nearest write candidates also include a distinct EDI overwrite. Native and wrapper RET EAX alternatives are enumerated; wrapper remaining-slot/buffer-advance paths loop structurally to the native CALL. Both distinct DIV input sources and EDX:EAX operand geometry are qualified. Actual byte/count/alias/frame/ABI/quotient/return/schema/persistence remain OPEN.
 
 Canonical derivative/receipt research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R48-ORIGINAL.json and STONEAGE-TW10-SAVEDATA-NATIVE-IO-R48-ACCEPTANCE-R1.json; scope docs/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R48.md. Stage A only.
+
+
+## SRC-TW10-SAVEDATA-NATIVE-IO-R49 — 2026-10-15
+
+S-grade authenticated Taiwan Waei/JSS1.0 retail nonexecuting PE/operand/CFG metadata; actual runtime/frame/ABI/alias/owner meanings conditional.
+
+Original source Action38683095588/job116251797902 SUCCESS at agent/tw10-savedata-r49-overwrite-temporal-slots-20261015 HEAD4d1828be1c0af1ce003f0fefd4a3330e162f5e88. Authenticated transient archive/disc/runtime/save identities and exact final R48 original derivative SHA256f92a652b446a5433fa1afaa5708112c91bd39c1ef2c4fff27e69a419f013ccfa rederived/strict-gated. Derived-only artifact11949650069 tw10-r49-original-overwrite-temporal-slots-derived ZIP SHA256824c4a5faff0947e55d79a777cdac0ab8912fbe51f15e1fe272fc9e2b614c942; raw JSON140909 bytes SHA256fbb25583fa019e496fd0f4d06ef1b441731547e559dcb818d5244321cc3f0ab6. Independent immutable source/run/branch/artifact identity, raw size/digest, strict negative controls and exact canonical JSON equality Action38683345301/job116252568395 SUCCESS at HEAD1e1b172418179dd11bd5f367529cc3c7858dd26d.468 R49-R32 plus hardened R7 tests PASS in both source and independent Actions. Local syntax, raw ZIP/JSON custody and canonical byte equality checked; local runtime tests unavailable because capstone/pefile are absent, and are not claimed. Original executable/media transient, unexecuted/unpublished and always purged.
+
+FACT (bounded original static): native EDI overwrite is sourced by a final SUB whose inputs retain INC and opaque-CALL alternatives. A TEST/JE branch can bypass that overwrite. The same wrapper[EBP+20] slot is read then overwritten from two field-load sites or literal4096 before comparison/division candidates; final numerator cannot be bound to the initial product across opaque calls. Actual byte/count/ABI/alias/division/schema/persistence remain OPEN. Helper scope is bounded; next work returns to savedata-specific caller consumers.
+
+Canonical derivative/receipt research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R49-ORIGINAL.json and STONEAGE-TW10-SAVEDATA-NATIVE-IO-R49-ACCEPTANCE-R1.json; scope docs/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R49.md. Stage A only.
