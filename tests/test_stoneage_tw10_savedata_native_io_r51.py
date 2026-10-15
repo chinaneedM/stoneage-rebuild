@@ -35,7 +35,7 @@ class R51Tamper(unittest.TestCase):
     def test_duplicate_instruction(self):self.reject(lambda d:d['processor_instruction_shapes'].append(d['processor_instruction_shapes'][-1]))
     def test_instruction_cap(self):self.reject(lambda d:d.update(processor_instruction_shapes_truncated=True))
     def test_instruction_count(self):self.reject(lambda d:d.update(processor_instruction_count=999))
-    def test_prior_shape(self):self.reject(lambda d:d['processor_instruction_shapes'][0].update(mnemonic='nop'))
+    def test_prior_shape(self):self.reject(lambda d:next(r for r in d['processor_instruction_shapes'] if r['site_rva']==d['r50_snapshot']['processing_entry_context']['early_frame_shapes'][0]['site_rva']).update(mnemonic='nop'))
     def test_output_alias(self):self.reject(lambda d:d['conditional_consumer_analysis'].update(post_call_esp_change_assumed_zero_or_output_binding_proven=True))
     def test_lea_coordinate(self):self.reject(lambda d:d['conditional_consumer_analysis']['caller_local_lea_coordinates'][0].update(conditional_address_relative_pre_call_esp=0))
     def test_boolean_type(self):self.reject(lambda d:d['conditional_consumer_analysis'].update(caller_local_stack_limit_hit=0))

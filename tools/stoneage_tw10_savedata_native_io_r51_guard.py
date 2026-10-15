@@ -21,7 +21,7 @@ def validate(d):
     selected=[r for r in rows if r['mnemonic'] in ('cmp','test') or any(o['kind']=='memory' for o in r['operands'])]
     require(len(selected)==p['memory_control_shape_count'] and same(selected[:32],p['memory_control_shapes']),'prior sample/total agreement')
     s=d.get('processor_division_source_surface',{});keys,cap=inputs_guard(s.get('input_sources',{}),ROOT,ats)
-    divs=[r for r in rows if r['mnemonic'] in ('div','idiv')];require(len(divs)<=8 and (queries_for(divs)<=keys or cap),'division source queries')
+    divs=[r for r in rows if r['mnemonic'] in ('div','idiv')];require(len(divs)<=8 and (queries_for(divs)<=set(keys) or cap),'division source queries')
     sites=sorted({t['rva'] for q in s['input_sources']['queries'] for t in q['reaching_candidates'] if t['origin']=='definition'})
     shapes=s.get('source_definition_shapes');rows_guard(shapes,24,ROOT,ROOT+768,keys,cap,ats)
     require(s.get('source_definition_count')==len(sites) and s.get('source_definitions_truncated') is (len(sites)>24) and s.get('source_expansion_rounds')==2,'source bounds')
