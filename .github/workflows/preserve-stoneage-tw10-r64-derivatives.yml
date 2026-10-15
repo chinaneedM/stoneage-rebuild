@@ -1,0 +1,70 @@
+name: Preserve TW1.0 R63/R64 authenticated derived-only static evidence permanently
+on:
+  workflow_dispatch:
+  push:
+    branches: [agent/tw10-r64-canonical-derived-evidence-20261015]
+    paths:
+      - .github/workflows/preserve-stoneage-tw10-r64-derivatives.yml
+permissions:
+  contents: write
+  actions: read
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify archived original-derived CI identities and download two exact outputs
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          r63="$(gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/11983560690" --jq '[.workflow_run.id,.digest,.expired] | join("|")')"
+          test "$r63" = '38754938642|sha256:c6fef52e95757cae6682e3518a279a2ae572f4b86efd0e42c1a39aecd8f7931e|false'
+          r64="$(gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/11985136047" --jq '[.workflow_run.id,.digest,.expired] | join("|")')"
+          test "$r64" = '38758669705|sha256:f6a56e36160fe6f723ea23efa5fdeee29e66dd92634c51c1fb4419507098f0ab|false'
+          mkdir -p /tmp/tw10-r64-archive/r63 /tmp/tw10-r64-archive/r64
+          gh run download 38754938642 --repo "$GITHUB_REPOSITORY" --name tw10-r63-original-static-postcall-derived-only --dir /tmp/tw10-r64-archive/r63
+          gh run download 38758669705 --repo "$GITHUB_REPOSITORY" --name tw10-r64-postcall-test-flag-count-derived-only --dir /tmp/tw10-r64-archive/r64
+          test "$(find /tmp/tw10-r64-archive -type f | wc -l)" -eq 2
+          test ! -L /tmp/tw10-r64-archive/r63/tw10-r63-static.json
+          test ! -L /tmp/tw10-r64-archive/r64/derived.json
+          test "$(stat -c %s /tmp/tw10-r64-archive/r63/tw10-r63-static.json)" -eq 31136
+          test "$(stat -c %s /tmp/tw10-r64-archive/r64/derived.json)" -eq 7013
+          echo '91b650db700cf892a7d8c8b2d36a9d49dbeca139be315856d31d59533056c1bd  /tmp/tw10-r64-archive/r63/tw10-r63-static.json' | sha256sum -c -
+          echo '5253b2ebec4a9bfbdda24764ce8af5e0e67fabf9ba8daf7ad0ce22c7b172e43f  /tmp/tw10-r64-archive/r64/derived.json' | sha256sum -c -
+      - name: Independently validate both original-static schemas and exact cross-version replay
+        run: |
+          set -euo pipefail
+          python -m tools.stoneage_tw10_savedata_r63_derived_guard --report /tmp/tw10-r64-archive/r63/tw10-r63-static.json
+          python -m tools.stoneage_tw10_savedata_r64_independent_guard --report /tmp/tw10-r64-archive/r64/derived.json
+          python -m tools.stoneage_tw10_savedata_r64_flag_count --r63 /tmp/tw10-r64-archive/r63/tw10-r63-static.json --verify /tmp/tw10-r64-archive/r64/derived.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          x=json.loads(Path('/tmp/tw10-r64-archive/r63/tw10-r63-static.json').read_bytes())
+          y=json.loads(Path('/tmp/tw10-r64-archive/r64/derived.json').read_bytes())
+          assert not x['original_executable_executed']
+          assert not x['original_savedata_payload_read_or_published']
+          assert not y['actual_flush_close_or_disk_persistence_proven']
+          assert len(x['sites'])==len(y['postcall_contexts'])==2
+          print('R63_R64_DERIVED_ONLY_CANONICAL_SOURCE_CUSTODY=PASS')
+          PY
+      - name: Preserve only two small nonproprietary derived JSON reports in branch
+        run: |
+          set -euo pipefail
+          cp /tmp/tw10-r64-archive/r63/tw10-r63-static.json research/recovered/STONEAGE-TW10-SAVEDATA-POSTCALL-R63-DERIVED.json
+          cp /tmp/tw10-r64-archive/r64/derived.json research/recovered/STONEAGE-TW10-SAVEDATA-FLAGS-R64-DERIVED.json
+          echo '91b650db700cf892a7d8c8b2d36a9d49dbeca139be315856d31d59533056c1bd  research/recovered/STONEAGE-TW10-SAVEDATA-POSTCALL-R63-DERIVED.json' | sha256sum -c -
+          echo '5253b2ebec4a9bfbdda24764ce8af5e0e67fabf9ba8daf7ad0ce22c7b172e43f  research/recovered/STONEAGE-TW10-SAVEDATA-FLAGS-R64-DERIVED.json' | sha256sum -c -
+          git config user.name 'StoneAge Evidence Bot'
+          git config user.email 'stoneage-evidence-bot@users.noreply.github.com'
+          git add research/recovered/STONEAGE-TW10-SAVEDATA-POSTCALL-R63-DERIVED.json research/recovered/STONEAGE-TW10-SAVEDATA-FLAGS-R64-DERIVED.json
+          test "$(git diff --cached --name-only | wc -l)" -eq 2
+          git diff --cached --stat
+          git commit -m 'Preserve source-authenticated R63 and R64 derived-only static reports'
+          git push origin HEAD:refs/heads/agent/tw10-r64-canonical-derived-evidence-20261015
+          echo R63_R64_CANONICAL_DERIVED_GIT_PUBLICATION=PASS
+      - name: Purge downloaded temporary derivative copies
+        if: always()
+        run: rm -rf /tmp/tw10-r64-archive
