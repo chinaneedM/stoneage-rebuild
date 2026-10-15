@@ -5,6 +5,10 @@ on:
     branches: [agent/tw10-savedata-r57-write-close-returns-20261015, main]
     paths:
       - .github/workflows/verify-stoneage-tw10-r57-derived.yml
+      - tools/stoneage_tw10_savedata_native_io_r57.py
+      - tools/stoneage_tw10_savedata_native_io_r57_guard.py
+      - tools/stoneage_tw10_savedata_return_r57.py
+      - tests/test_stoneage_tw10_savedata_return_r57.py
       - tools/stoneage_tw10_savedata_return_r57_guard.py
       - tools/stoneage_tw10_savedata_return_r57_contract.py
       - tests/test_stoneage_tw10_savedata_return_r57_guard.py
