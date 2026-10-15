@@ -9,6 +9,9 @@ on:
       - tests/test_stoneage_tw10_savedata_bridge_r59.py
       - research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R28-ORIGINAL.json
       - research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R58-ORIGINAL.json
+      - tools/stoneage_tw10_savedata_native_io_r28_guard.py
+      - tools/stoneage_tw10_savedata_native_io_r58_guard.py
+      - docs/specs/STONEAGE-TW10-NATIVE-CALL-BRIDGE-R59.md
 permissions:
   contents: read
 jobs:
@@ -20,6 +23,9 @@ jobs:
       - name: Invented adversarial witness and immutable original-derived metadata
         run: |
           set -euo pipefail
+          pip install --quiet capstone pefile
+          python -m tools.stoneage_tw10_savedata_native_io_r28_guard --report research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R28-ORIGINAL.json
+          python -m tools.stoneage_tw10_savedata_native_io_r58_guard --report research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R58-ORIGINAL.json
           python -m unittest -v tests.test_stoneage_tw10_savedata_bridge_r59
           python -m tools.stoneage_tw10_savedata_bridge_r59 > /tmp/tw10-r59-bridge.json
           python -m tools.stoneage_tw10_savedata_bridge_r59 --verify /tmp/tw10-r59-bridge.json
