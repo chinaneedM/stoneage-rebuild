@@ -1,0 +1,56 @@
+name: Independently verify TW1.0 R54 original writer custody and conditional correspondence
+on:
+  workflow_dispatch:
+  push:
+    branches: [agent/tw10-savedata-r54-writer-prefix-20261015, main]
+    paths:
+      - .github/workflows/verify-stoneage-tw10-r54-derived.yml
+      - docs/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R54.md
+      - tools/stoneage_tw10_savedata_writer_r54_audit.py
+      - tools/stoneage_tw10_savedata_writer_r54_contract.py
+      - tests/test_stoneage_tw10_savedata_writer_r54_audit.py
+      - tests/test_stoneage_tw10_savedata_writer_r54_contract.py
+      - research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R54-ORIGINAL.json
+      - research/recovered/STONEAGE-TW10-SAVEDATA-WRITER-R54-CONTRACT.json
+permissions:
+  contents: read
+  actions: read
+jobs:
+  metadata:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Authenticate immutable successful original source and numeric artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          identity="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/38724589059" --jq '[.status,.conclusion,.head_sha,.head_branch] | join("|")')"
+          test "$identity" = 'completed|success|660a051f9b58ef596fb2fdf8f27bfc9fd321a7a0|agent/tw10-savedata-r54-writer-prefix-20261015'
+          artifact="$(gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/11967805220" --jq '[.workflow_run.id,.name,.digest,.expired] | join("|")')"
+          test "$artifact" = '38724589059|tw10-r54-original-writer-prefix-derived|sha256:a857094d202033ea378406fc3c5dae5580c984416181a80f497a6540466ffa5c|false'
+          mkdir -p /tmp/r54-immutable
+          gh run download 38724589059 --repo "$GITHUB_REPOSITORY" --name tw10-r54-original-writer-prefix-derived --dir /tmp/r54-immutable
+          test "$(find /tmp/r54-immutable -type f | wc -l)" -eq 1
+          test ! -L /tmp/r54-immutable/stoneage-r54-derived.json
+          test "$(stat -c %s /tmp/r54-immutable/stoneage-r54-derived.json)" -eq 132329
+          echo '635e80079eb594218c849facd2ea1ba8b0c9160142fc017182d17ba8f1c62387  /tmp/r54-immutable/stoneage-r54-derived.json' | sha256sum -c -
+          echo '15f54e5de8d1d20128fb7d948b54f13a0e3f6cf372eca203cbc7bb8adc473052  research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R51-ORIGINAL.json' | sha256sum -c -
+          cmp /tmp/r54-immutable/stoneage-r54-derived.json research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R54-ORIGINAL.json
+      - name: Inherited and adversarial synthetic controls
+        run: |
+          set -euo pipefail
+          pip install --quiet capstone pefile
+          python -m unittest -v tests.test_stoneage_tw10_savedata_writer_r54_audit tests.test_stoneage_tw10_savedata_writer_r54_contract tests.test_stoneage_tw10_savedata_writer_r54 tests.test_stoneage_tw10_savedata_native_io_r53 tests.test_stoneage_tw10_savedata_native_io_r52 tests.test_stoneage_tw10_savedata_postcall_r51 tests.test_stoneage_tw10_savedata_application_r51 tests.test_stoneage_tw10_savedata_application_r50 tests.test_stoneage_tw10_savedata_native_io_r51 tests.test_stoneage_tw10_savedata_native_io_r50 tests.test_stoneage_tw10_savedata_native_io_r49 tests.test_stoneage_tw10_savedata_native_io_r48 tests.test_stoneage_tw10_savedata_native_io_r47 tests.test_stoneage_tw10_savedata_native_io_r46 tests.test_stoneage_tw10_savedata_native_io_r45 tests.test_stoneage_tw10_savedata_native_io_r44 tests.test_stoneage_tw10_savedata_native_io_r43 tests.test_stoneage_tw10_savedata_native_io_r42 tests.test_stoneage_tw10_savedata_native_io_r41 tests.test_stoneage_tw10_savedata_native_io_r40 tests.test_stoneage_tw10_savedata_native_io_r39 tests.test_stoneage_tw10_savedata_native_io_r38 tests.test_stoneage_tw10_savedata_native_io_r37 tests.test_stoneage_tw10_savedata_native_io_r36 tests.test_stoneage_tw10_savedata_native_io_r35 tests.test_stoneage_tw10_savedata_native_io_r34 tests.test_stoneage_tw10_savedata_native_io_r33 tests.test_stoneage_tw10_savedata_native_io_r32 tests.test_stoneage_tw10_savedata_argtrace_r7 tests.test_stoneage_tw10_savedata_argtrace_r7_guard
+      - name: Strict inventory, independent stack model and pure contract regeneration
+        run: |
+          set -euo pipefail
+          python -m tools.stoneage_tw10_savedata_native_io_r54_guard --report /tmp/r54-immutable/stoneage-r54-derived.json
+          python -m tools.stoneage_tw10_savedata_writer_r54_audit --report /tmp/r54-immutable/stoneage-r54-derived.json
+          python -m tools.stoneage_tw10_savedata_writer_r54_contract --source /tmp/r54-immutable/stoneage-r54-derived.json > /tmp/r54-contract.json
+          cmp /tmp/r54-contract.json research/recovered/STONEAGE-TW10-SAVEDATA-WRITER-R54-CONTRACT.json
+          python -m tools.stoneage_tw10_savedata_writer_r54_contract --source /tmp/r54-immutable/stoneage-r54-derived.json --verify /tmp/r54-contract.json
+      - name: Purge temporary numeric metadata
+        if: always()
+        run: rm -rf /tmp/r54-immutable /tmp/r54-contract.json
