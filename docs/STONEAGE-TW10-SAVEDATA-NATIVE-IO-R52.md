@@ -1,0 +1,7 @@
+# TW1.0 R52 — signed division and conditional output-length source binding
+
+Status: READY; authenticated original derivation and independent acceptance pending.
+
+Highest NEXT R52: qualify the seven processor IDIV sites0x47170/0x4719f/0x471b7/0x471d6/0x471ee/0x4721e/0x4722a with exact CDQ EAX-preservation/EDX-sign-extension syntax and bounded register-source expansion, keeping signed dividend, divisor, quotient and remainder distinct. Resolve the11 source-expansion pending definitions and19-of39 source-definition sample limitation using focused groups rather than suppressing caps. Bind only conditional caller ECX/pre-CALL+32 -> processor entry+20 -> ESI store0x4717c and post-CALL load0x4018e, with stack-slot mutation and memory-alias barriers explicit; qualify LEA EAX-1 -> ECX/store syntax and application57/127 checks without evaluating original bytes. Recover subtractive/NOT byte operations and loop predicates as syntax before assigning a historical algorithm/version/schema meaning. Native schema/framing/checksum/migration/persistence, original server authority and cross-version equivalence remain OPEN; Stage A restoration precedes joint future-engine/game design. System-family PARTIAL/OPEN gates unchanged.
+
+Require explicit graph/query/definition/row bounds, complete reported alternatives, meaningful invented bytecode and adversarial controls, immutable source/artifact custody and exact canonical JSON. No original byte evaluation or schema/algorithm promotion. Preserve source surface truncation until focused closure is independently qualified.
