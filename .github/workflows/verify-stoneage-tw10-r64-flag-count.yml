@@ -47,7 +47,7 @@ jobs:
           import json
           d=json.load(open('/tmp/tw10-r64/derived.json'))
           assert len(d['postcall_contexts'])==2
-          assert not d['actual_native_writefile_executed']
+          assert not d['original_native_writefile_executed']
           assert not d['actual_bytes_written_memory_contents_known']
           assert not d['actual_flush_close_or_disk_persistence_proven']
           for c in d['postcall_contexts']:
