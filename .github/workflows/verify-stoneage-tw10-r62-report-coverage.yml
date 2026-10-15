@@ -7,7 +7,8 @@ on:
       - .github/workflows/verify-stoneage-tw10-r62-report-coverage.yml
       - tools/stoneage_tw10_savedata_r62_source_coverage.py
       - tests/test_stoneage_tw10_savedata_r62_source_coverage.py
-      - research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R*.json
+      - 'research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R*.json'
+      - docs/specs/STONEAGE-TW10-R62-RETAINED-POSTCALL-COVERAGE.md
 permissions:
   contents: read
 jobs:
