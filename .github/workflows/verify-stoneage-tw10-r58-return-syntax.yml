@@ -1,0 +1,45 @@
+name: Verify TW1.0 R58 pinned conditional return spellings
+on:
+  workflow_dispatch:
+  push:
+    branches: [agent/tw10-r58-pinned-return-syntax-20261015, main]
+    paths:
+      - .github/workflows/verify-stoneage-tw10-r58-return-syntax.yml
+      - tools/stoneage_tw10_savedata_r58_syntax_contract.py
+      - tests/test_stoneage_tw10_savedata_r58_syntax_contract.py
+      - research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R58-ORIGINAL.json
+permissions:
+  contents: read
+jobs:
+  syntax:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Adversarial synthetic operand contract
+        run: |
+          set -euo pipefail
+          python -m unittest -v tests.test_stoneage_tw10_savedata_r58_syntax_contract
+      - name: Reproduce authenticated R58 conditional bitpattern contract
+        run: |
+          set -euo pipefail
+          SOURCE=research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R58-ORIGINAL.json
+          echo '04fb0b586f1fcf87f647b1bc1276bde2505822e195646c4c9058c03c7f558fe8  research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R58-ORIGINAL.json' | sha256sum -c -
+          python -m tools.stoneage_tw10_savedata_r58_syntax_contract --source "$SOURCE" > /tmp/r58-syntax.json
+          python -m tools.stoneage_tw10_savedata_r58_syntax_contract --source "$SOURCE" --verify /tmp/r58-syntax.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          x=json.loads(Path('/tmp/r58-syntax.json').read_text())
+          assert x['actual_native_write_flush_close_descriptor_ownership_or_persistence_proven'] is False
+          assert x['shared_helper']['original_ebx_value_or_proven_call_preservation'] is False
+          assert x['close_path_helper']['native_error_or_success_conventions_proven'] is False
+          print('TW10_R58_PINNED_RETURN_SPEC=PASS; ACTUAL_NATIVE_PERSISTENCE=OPEN')
+          PY
+      - name: Upload derived-only return expression contract
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: tw10-r58-pinned-return-expression
+          path: /tmp/r58-syntax.json
+          retention-days: 21
