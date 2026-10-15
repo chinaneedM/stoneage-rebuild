@@ -1,0 +1,7 @@
+# TW1.0 R53 — conditional savedata transform specification
+
+Status: READY; source/architecture qualification and independent acceptance pending.
+
+Highest NEXT R53: reconstruct a conditional savedata-specific transform specification from the complete pinned R51/R52 numeric metadata. Follow the caller literal0 seed/mode physical slot only under explicit entry/frame/non-alias/normal-return conditions. Qualify the source-byte selection, possible omitted-byte/output-index shift, signed remainder and low-byte IMUL/subtraction paths, final NOT predicates and output-length-shaped LEA/count-minus-one store; connect only conditional results to the application57/127 and word4/5 checks. Prefer bounded symbolic relations and invented-input counterexamples before any algorithm label or engine-neutral reference model is admitted. Keep generic nonzero-seed branches separate, retain divide-error/invalid-count/overflow and memory-alias preconditions, and do not evaluate original save bytes or claim a proven payload schema/version/migration/persistence. Original server authority/cross-version equivalence remain OPEN. Stage A restoration precedes joint future-engine/game design; system-family PARTIAL/OPEN gates unchanged.
+
+Use the already authenticated complete numeric instruction/operand/graph records where sufficient. Additional original retrieval needs an identified missing evidence item; do not repeat the archive transfer for available metadata. Preserve generic-seed alternatives, exact widths/signedness and original-data/alias/runtime boundaries.
