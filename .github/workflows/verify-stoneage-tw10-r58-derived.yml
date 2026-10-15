@@ -7,6 +7,8 @@ on:
       - .github/workflows/verify-stoneage-tw10-r58-derived.yml
       - tools/stoneage_tw10_savedata_return_r58_audit.py
       - tests/test_stoneage_tw10_savedata_return_r58_audit.py
+      - tools/stoneage_tw10_savedata_r58_syntax_contract.py
+      - tests/test_stoneage_tw10_savedata_r58_syntax_contract.py
       - tools/stoneage_tw10_savedata_native_io_r58.py
       - tools/stoneage_tw10_savedata_native_io_r58_guard.py
 permissions:
@@ -61,6 +63,15 @@ jobs:
           print('R58_TOTAL_REVERSE_QUERIES', report['independent_reverse_queries'])
           print('R58_RAW_SOURCE_SHA256', report['source_sha256'])
           PY
+      - name: Verify exact conditional return spellings and unknown native effects
+        run: |
+          set -euo pipefail
+          python -m unittest -v tests.test_stoneage_tw10_savedata_r58_syntax_contract
+          python -m tools.stoneage_tw10_savedata_r58_syntax_contract --source /tmp/r58-immutable/stoneage-r58-derived.json > /tmp/r58-syntax-contract.json
+          python -m tools.stoneage_tw10_savedata_r58_syntax_contract --source /tmp/r58-immutable/stoneage-r58-derived.json --verify /tmp/r58-syntax-contract.json
+          cat /tmp/r58-syntax-contract.json
+          echo TW10_R58_STATIC_RETURN_BITPATTERNS=PASS
+          echo TW10_R58_ACTUAL_NATIVE_SUCCESS_AND_PERSISTENCE=OPEN
       - name: Purge downloaded derived-only artifact
         if: always()
         run: rm -rf /tmp/r58-immutable
@@ -69,5 +80,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: tw10-r58-independent-return-contract
-          path: /tmp/r58-return-contract.json
+          path: |
+            /tmp/r58-return-contract.json
+            /tmp/r58-syntax-contract.json
           retention-days: 21
