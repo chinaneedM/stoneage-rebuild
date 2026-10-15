@@ -24,3 +24,12 @@ Acceptance requires (1) source Action success and derived metadata,
 (2) independent immutable source/artifact verification and strict graph/return
 replay, (3) canonical receipts and continuity, (4) passing main Actions.
 Until then Stage A remains PARTIAL/OPEN and R58 is not accepted.
+
+
+## R58 authenticated original and independent findings
+
+Source Action38743841197 (68 tests) and independent Action38744746218 (83 tests) are SUCCESS. Source artifact11976911506 is pinned to ZIP SHA256 37ff56646a708744f9585eb7719fa313a6a053bcea9a9f6c38ac4bf2044601d2, canonical static report124989 bytes SHA256 04fb0b586f1fcf87f647b1bc1276bde2505822e195646c4c9058c03c7f558fe8. Independent reverse-predecessor algorithm agrees on12 R58 register-source queries. Recovered original assets were never published.
+
+FACT: shared 0x4a657:40 nodes/44 edges,5 predicates,4 explicit memory-write shapes, bounded RET0x4a6b2, direct CALL0x4a683->0x4c5b4; CMP EAX,EDI at0x4a68b and MOV EAX,EBX at0x4a6ae. Close-path 0x4a53e:66 nodes/73 edges,8 predicates,3 memory-write shapes,8 call shapes of which2 are memory-indirect, RET0x4a5f0. Both complete in the bounded original static CFG, without limits/frontiers. They do not establish actual native transfer, success/error values, close/flush/persistence or frame alias preservation.
+
+Highest NEXT R59: resolve only native-context/close-result chains needed for original savedata semantics; preserve opaque native/indirect calls and all Stage A PARTIAL/OPEN gates.

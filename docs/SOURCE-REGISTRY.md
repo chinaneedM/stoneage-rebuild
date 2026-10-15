@@ -6592,3 +6592,12 @@ FACT (authenticated nonexecuting original syntax and conditional return/control 
 - R56 outer unsigned count test and close-result overwrite with literal1 remain separate caller observations. A buffering-shaped return and an ignored close-return-shaped value jointly explain why actual persistence cannot yet be accepted. No actual resource-leak or historical bug claim is admitted.
 
 OPEN: actual nested helper effects/return conventions, frame/register/alias preservation, deferred/native write and close/flush success, original payload/fields/tags/version/schema/checksum/migration/persistence, original server authority and cross-version equivalence. All Stage A system-family PARTIAL/OPEN gates unchanged.
+
+
+## SRC-TW10-SAVEDATA-NATIVE-IO-R58 — 2026-10-15
+
+Type: authenticated original Taiwan Waei/JSS v1.0 retail client static helper instruction/CFG evidence; conditional source-return analysis, not original runtime/native I/O observation. Confidence: S for executable identity and bounded static syntax, not for actual behavioral semantics.
+
+Source Action38743841197/job116452160761 SUCCESS at HEADc19e32987bd1bdb847e2a4306983dfe4ffb347d5; prior exact R57 report203899-byte SHA256 3e562ab02a80e0f6516f8a91c93b897eef05f606be62f1df5cb48686d64114e6 revalidated. Derived artifact11976911506 tw10-r58-original-shared-close-helpers-derived ZIP SHA256 37ff56646a708744f9585eb7719fa313a6a053bcea9a9f6c38ac4bf2044601d2, raw124989-byte SHA256 04fb0b586f1fcf87f647b1bc1276bde2505822e195646c4c9058c03c7f558fe8. Independent Action38744746218/job116455318961 SUCCESS,83 tests and12 independently replayed return-source queries. Original proprietary data not published, source purged; only numeric instruction/operand metadata retained.
+
+FACT static: 0x4a657 shared helper has40 nodes/44 edges/5 predicates/4 memory-write shapes and RET0x4a6b2; CALL0x4a683->0x4c5b4, CMP EAX,EDI0x4a68b and MOV EAX,EBX0x4a6ae. 0x4a53e close-path helper has66 nodes/73 edges/8 predicates/3 memory-write shapes and RET0x4a5f0, eight call shapes including two memory-indirect unknown targets. Both bounded graphs have no frontier or node cap. Exact parent caller edges from R57 verified. OPEN actual helper result values, callee/alias preservation, native bytes/write/flush/close/persistence, schema/migration/ownership, server authority/cross-version equivalence. Stage A systems remain PARTIAL/OPEN. Source report research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R58-ORIGINAL.json; reference docs/specs/STONEAGE-TW10-SHARED-CLOSE-HELPERS-R58.md.
