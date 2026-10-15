@@ -1,0 +1,44 @@
+name: Verify TW1.0 R59 existing-metadata WriteFile and close-import bridges
+on:
+  workflow_dispatch:
+  push:
+    branches: [agent/tw10-r59-existing-metadata-bridge-20261015, agent/tw10-r59-crosscheck-consolidated-20261015, main]
+    paths:
+      - .github/workflows/verify-stoneage-tw10-r59-metadata.yml
+      - tools/stoneage_tw10_savedata_bridge_r59.py
+      - tests/test_stoneage_tw10_savedata_bridge_r59.py
+      - research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R28-ORIGINAL.json
+      - research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R58-ORIGINAL.json
+      - tools/stoneage_tw10_savedata_native_io_r28_guard.py
+      - tools/stoneage_tw10_savedata_native_io_r58_guard.py
+      - tools/stoneage_tw10_savedata_r59_prior_bridge.py
+      - tests/test_stoneage_tw10_savedata_r59_prior_bridge.py
+      - docs/specs/STONEAGE-TW10-NATIVE-CALL-BRIDGE-R59.md
+permissions:
+  contents: read
+jobs:
+  metadata:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Invented adversarial witness and immutable original-derived metadata
+        run: |
+          set -euo pipefail
+          pip install --quiet capstone pefile
+          python -m tools.stoneage_tw10_savedata_native_io_r28_guard --report research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R28-ORIGINAL.json
+          python -m tools.stoneage_tw10_savedata_native_io_r58_guard --report research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R58-ORIGINAL.json
+          python -m unittest -v tests.test_stoneage_tw10_savedata_bridge_r59 tests.test_stoneage_tw10_savedata_r59_prior_bridge
+          python -m tools.stoneage_tw10_savedata_bridge_r59 > /tmp/tw10-r59-bridge.json
+          python -m tools.stoneage_tw10_savedata_bridge_r59 --verify /tmp/tw10-r59-bridge.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path('/tmp/tw10-r59-bridge.json').read_text())
+          assert len(d['static_direct_edges']) == 5
+          assert [r['import_name'] for r in d['close_path_import_sites']] == ['CloseHandle', 'GetLastError']
+          assert d['native_api_execution_or_effects_proven'] is False
+          assert d['actual_savedata_written_bytes_flush_close_or_persistence_proven'] is False
+          print('R59_EXISTING_METADATA_LINKAGE=PASS')
+          print('R59_ACTUAL_NATIVE_PERSISTENCE=OPEN')
+          PY
