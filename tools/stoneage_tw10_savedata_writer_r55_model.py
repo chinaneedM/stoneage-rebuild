@@ -18,7 +18,8 @@ class WriterModel(NumericModel):
         self.saved={r:self.regs[r] for r in ('ebx','ebp','esi','edi')}
         self.regions=[('inout',INPUT,bytearray(invented)),('output',OUTPUT,bytearray([0xa5]*capacity)),('outlen',OUTLEN,bytearray(4)),('stack',ENTRY_ESP-128,bytearray(256))]
         self.flags=None;self.writes=[];self.visits=Counter();self.branches=Counter()
-        for offset,value in [(0,0x55555555),(4,INPUT),(8,self.n),(12,seed),(16,OUTPUT),(20,OUTLEN),(24,capacity)]:self.memory(ENTRY_ESP+offset,4,value,record=False)
+        self.argument_values={0:0x55555555,4:INPUT,8:self.n,12:seed&0xffffffff,16:OUTPUT,20:OUTLEN,24:capacity}
+        for offset,value in self.argument_values.items():self.memory(ENTRY_ESP+offset,4,value,record=False)
     def condition(self,m):
         if m=='jg':
             if self.flags is None:raise ModelError('undefined model flags')
@@ -27,6 +28,7 @@ class WriterModel(NumericModel):
 
     def run(self,rows,edges,max_steps=1000000):
         if type(max_steps) is not int or not 1<=max_steps<=1000000:raise ModelError('step bound')
+        if self.register('esp')!=ENTRY_ESP or any(self.memory(ENTRY_ESP+k,4)!=v for k,v in self.argument_values.items()):raise ModelError('invented argument alias or count mutation')
         by={r['site_rva']:r for r in rows};succ={a:[] for a in by}
         if len(by)!=len(rows) or ROOT not in by or len(rows)>256:raise ModelError('model inventory')
         for a,b in edges:

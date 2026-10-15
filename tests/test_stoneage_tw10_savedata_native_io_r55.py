@@ -54,6 +54,12 @@ class NumericWriterTests(unittest.TestCase):
         rows=copy.deepcopy(W['instruction_shapes']);rows[0]['mnemonic']='call';self.assertRaises(ModelError,WriterModel(b'abc').run,rows,W['bounded_edges'])
     def test_missing_root(self):self.assertRaises(ModelError,WriterModel(b'abc').run,W['instruction_shapes'][1:],W['bounded_edges'])
     def test_range(self):self.assertRaises(ModelError,WriterModel(b'abc').memory,INPUT+4,1)
+    def test_output_input_alias_rejected(self):
+        m=WriterModel(b'abc');m.memory(ENTRY_ESP+16,4,INPUT);self.assertRaises(ModelError,m.run,W['instruction_shapes'],W['bounded_edges'])
+    def test_length_input_alias_rejected(self):
+        m=WriterModel(b'abcdef');m.memory(ENTRY_ESP+20,4,INPUT);self.assertRaises(ModelError,m.run,W['instruction_shapes'],W['bounded_edges'])
+    def test_count_mismatch_rejected(self):
+        m=WriterModel(b'abc');m.memory(ENTRY_ESP+8,4,4);self.assertRaises(ModelError,m.run,W['instruction_shapes'],W['bounded_edges'])
     def test_reference_reject_bool(self):self.assertRaises(ValueError,reference,b'abc',True)
     def test_missing_not_shape_counterexample(self):
         rows=copy.deepcopy(W['instruction_shapes']);r=next(r for r in rows if r['site_rva']==0x470c2);r['mnemonic']='mov';r['operands']=[r['operands'][0],copy.deepcopy(r['operands'][0])]
