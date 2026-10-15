@@ -51,6 +51,17 @@ class ConsumerInventory(unittest.TestCase):
     def test_cap_tamper(self):
         c=copy.deepcopy(self.contract);c['processor_memory_control_sample']['truncated']=False
         with self.assertRaises(ValueError):validate(c,self.raw)
+    def test_boolean_integer_confusion(self):
+        c=copy.deepcopy(self.contract);c['static_only']=1
+        with self.assertRaises(ValueError):validate(c,self.raw)
+    def test_compare_constant_tamper(self):
+        c=copy.deepcopy(self.contract);c['post_processing_comparisons'][0]['operands'][1]['constant']=128
+        with self.assertRaises(ValueError):validate(c,self.raw)
+    def test_store_offset_tamper(self):
+        c=copy.deepcopy(self.contract)
+        row=next(m for m in c['post_processing_memory_operands'] if (m['operand']['geometry']['displacement_region'] or {}).get('displacement_rva')==20954597)
+        row['operand']['geometry']['displacement_region']['displacement_rva']=20954540
+        with self.assertRaises(ValueError):validate(c,self.raw)
     def test_extra_inferred_meaning(self):
         c=copy.deepcopy(self.contract);c['version']=5
         with self.assertRaises(ValueError):validate(c,self.raw)

@@ -45,7 +45,7 @@ def derive(raw,expected_sha=PINNED_SHA256):
                 'truncated':p['memory_control_shapes_truncated']}}
 
 def validate(contract,raw,expected_sha=PINNED_SHA256):
-    if contract!=derive(raw,expected_sha):raise ValueError('consumer contract differs from pinned source')
+    if json.dumps(contract,sort_keys=True,separators=(',',':'))!=json.dumps(derive(raw,expected_sha),sort_keys=True,separators=(',',':')):raise ValueError('consumer contract differs from pinned source')
     return True
 
 def main():
