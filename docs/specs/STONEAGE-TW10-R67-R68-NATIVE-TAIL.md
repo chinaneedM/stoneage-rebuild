@@ -41,6 +41,13 @@ Canonical source Git blob `04162081d346b8c53424295de9fdc6b8f385b011` is byte-equ
 to the independently downloaded artifact. The full source-custody receipt is
 `STONEAGE-TW10-SAVEDATA-R67-SOURCE-CUSTODY.json`.
 
+Future artifact expiry does not discard the source-authenticated permanent
+metadata. The independent gate always requires the exact source run/head/job,
+fixed raw SHA256/Git blob and custody receipt. When the temporary ZIP remains
+available, it additionally compares its exact raw content; an expired or
+unavailable artifact is explicitly reported without claiming a fresh artifact
+download. Runtime/native behavior remains unproven in either mode.
+
 ## R68 independent EAX return-source audit
 
 Two separately authored algorithms are applied to the exact pinned R67 bytes:
@@ -72,6 +79,10 @@ return inventory. Then qualify conditional subtraction/count and all-ones
 routes without flattening opaque caller/callee, frame/alias or native effects.
 The R67 source already proves the tail; do not reacquire it merely to repeat
 that discovery. Preserve full source custody and permanent derived metadata.
+The R69 preflight now retains and independently rehashes all 130 savedata JSON
+reports at canonical R67 commit87adb881234b9461d55b99fda3c2cafbd90c2e14.
+None contains the0x4c5fe same-site mnemonic/operand dictionary; this remains a
+bounded representation census, not a claim about all possible encodings.
 
 Actual paths/return values, ABI/register/frame/memory preservation, OS BOOL and
 transferred count, flush/close/disk persistence, savedata schema/checksum/

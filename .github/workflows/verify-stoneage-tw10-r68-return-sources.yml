@@ -42,3 +42,22 @@ jobs:
           assert d['actual_branch_path_frame_alias_or_preservation_proven'] is False
           assert d['actual_flush_close_or_disk_persistence_proven'] is False and d['stage_b_started'] is False
           PY
+      - name: Rehash all 130 retained reports in the early-return gap preflight
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          from tools.stoneage_tw10_savedata_r66_count_consumers import collect
+          d=json.load(open('research/recovered/STONEAGE-TW10-SAVEDATA-R67-REVIEW-PREFLIGHT.json'))
+          assert d['source_commit']=='87adb881234b9461d55b99fda3c2cafbd90c2e14' and d['r69_target_rva']==312830
+          assert d['registered_report_count']==len(d['registered_reports'])==130
+          paths=[r['path'] for r in d['registered_reports']];assert paths==sorted(set(paths))
+          for r in d['registered_reports']:
+              p=Path(r['path']);assert p.parent==Path('research/recovered') and p.name.startswith('STONEAGE-TW10-SAVEDATA-') and p.suffix=='.json'
+              raw=p.read_bytes();assert len(raw)==r['bytes']
+              assert hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest()==r['git_blob']
+              assert not any(h['decoded_mnemonic_and_operands'] for h in collect(json.loads(raw),(312830,))['312830'])
+          assert d['same_site_decoded_mnemonic_operand_hits']==[] and d['actual_native_persistence_proven'] is False
+          print('R69_RETAINED_130_REPORT_PREACQUISITION_GAP=PASS')
+          PY
