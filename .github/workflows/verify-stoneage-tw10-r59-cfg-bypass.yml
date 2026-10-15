@@ -1,0 +1,45 @@
+name: Verify TW1.0 R59 savedata structural call and bypass witnesses
+on:
+  workflow_dispatch:
+  push:
+    branches: [agent/tw10-r59-cfg-bypass-witness-20261015, main]
+    paths:
+      - .github/workflows/verify-stoneage-tw10-r59-cfg-bypass.yml
+      - tools/stoneage_tw10_savedata_r59_cfg_witness.py
+      - tests/test_stoneage_tw10_savedata_r59_cfg_witness.py
+      - research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R58-ORIGINAL.json
+permissions:
+  contents: read
+jobs:
+  derived:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify R58 immutable derived-only source and invented mutation guards
+        run: |
+          set -euo pipefail
+          test "$(git hash-object research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R58-ORIGINAL.json)" = '223b65683d37332546ada0fe034a81550b5e8ed8'
+          python -m unittest -v tests.test_stoneage_tw10_savedata_r59_cfg_witness
+      - name: Compute conditional call and bypass path witnesses
+        run: |
+          set -euo pipefail
+          p=research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R58-ORIGINAL.json
+          python -m tools.stoneage_tw10_savedata_r59_cfg_witness --r58 "$p" > /tmp/tw10-r59-cfg-witness.json
+          python -m tools.stoneage_tw10_savedata_r59_cfg_witness --r58 "$p" --verify /tmp/tw10-r59-cfg-witness.json
+          python - <<'PY'
+          import json
+          d=json.load(open('/tmp/tw10-r59-cfg-witness.json'))
+          assert 0x4a683 in d['shared_path_through_native_call']
+          assert 0x4a683 not in d['shared_path_bypassing_native_call']
+          assert d['indirect_opaque_sites']==[0x4a5a3,0x4a5ad]
+          assert not d['native_WriteFile_called_result_flush_close_persistence_proven']
+          print('TW10_R59_STRUCTURAL_ALTERNATIVES=PASS; NATIVE_PERSISTENCE=OPEN')
+          PY
+      - name: Upload derived-only path witness
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: tw10-r59-static-call-bypass-witness
+          path: /tmp/tw10-r59-cfg-witness.json
+          retention-days: 21
