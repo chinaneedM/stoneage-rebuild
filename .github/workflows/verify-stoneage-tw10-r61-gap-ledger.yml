@@ -1,0 +1,51 @@
+name: Verify TW1.0 R61 native postcall evidence gap ledger
+on:
+  workflow_dispatch:
+  push:
+    branches: [agent/tw10-r61-native-postcall-gap-ledger-20261015, main]
+    paths:
+      - .github/workflows/verify-stoneage-tw10-r61-gap-ledger.yml
+      - tools/stoneage_tw10_savedata_r61_gap_ledger.py
+      - tests/test_stoneage_tw10_savedata_r61_gap_ledger.py
+      - research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R28-ORIGINAL.json
+      - research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R44-ORIGINAL.json
+      - research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R45-ORIGINAL.json
+permissions:
+  contents: read
+jobs:
+  pinned-static-gap:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Requalify the three immutable original-derived sources
+        run: |
+          set -euo pipefail
+          pip install --quiet capstone pefile
+          python -m tools.stoneage_tw10_savedata_native_io_r28_guard --report research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R28-ORIGINAL.json
+          python -m tools.stoneage_tw10_savedata_native_io_r44_guard --report research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R44-ORIGINAL.json
+          python -m tools.stoneage_tw10_savedata_native_io_r45_guard --report research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R45-ORIGINAL.json
+      - name: R61 independent negative controls and R60 inheritance
+        run: |
+          set -euo pipefail
+          python -m unittest -v tests.test_stoneage_tw10_savedata_r61_gap_ledger tests.test_stoneage_tw10_savedata_r60_close_predicates
+      - name: Derive and replay exact constrained ledger
+        run: |
+          set -euo pipefail
+          python -m tools.stoneage_tw10_savedata_r61_gap_ledger > /tmp/tw10-r61-postcall-gap.json
+          python -m tools.stoneage_tw10_savedata_r61_gap_ledger --verify /tmp/tw10-r61-postcall-gap.json
+          python - <<'PY'
+          import json
+          d=json.load(open('/tmp/tw10-r61-postcall-gap.json'))
+          assert len(d['postcall_sites']) == 2
+          assert all(x['postcall_eax_source'] == 'unknown_call' for x in d['postcall_sites'])
+          assert d['r44_structural_stack_candidates'] == 139
+          assert not d['actual_savedata_written_bytes_flush_close_or_persistence_proven']
+          print('TW10_R61_PINNED_GAPS_ONLY=PASS; NATIVE_PERSISTENCE=OPEN')
+          PY
+      - name: Preserve derived-only analysis artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: tw10-r61-original-derived-postcall-gaps
+          path: /tmp/tw10-r61-postcall-gap.json
+          retention-days: 21
