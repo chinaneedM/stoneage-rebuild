@@ -125,6 +125,7 @@ def analyze(d):
             'r51_legacy_definition_shapes_complete':[by[a] for a in legacy],
             'r51_legacy_definition_count':len(legacy),'r51_legacy_definitions_truncated':False,
             'r51_pending_definition_shapes':[by[a] for a in old['source_expansion_pending_definition_rvas']],
+            'r51_pending_definition_source_contexts':[{'site_rva':a,'source_graph':focus(rows,maps,[(a,r) for r in reads(by[a])])} for a in old['source_expansion_pending_definition_rvas']],
             'conditional_output_store_context':{'syntax_shapes':[by[a] for a in outputsites],'source_graph':output,
               'entry_coordinate_candidates':[r for r in refs if r['site_rva'] in (0x47160,0x47173)],
               'explicit_memory_write_alias_barrier_shapes':memwrites,'implicit_stack_write_barrier_rvas':[r['site_rva'] for r in rows if r['mnemonic']=='push'],

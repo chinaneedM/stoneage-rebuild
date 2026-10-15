@@ -29,7 +29,7 @@ def reverse_sources(rows,edges,root,site,reg,architecture=True):
 
 def validate(report,raw):
     exact_validate(report,raw);d=json.loads(raw);rows=d['processor_instruction_shapes'];edges=d['r50_snapshot']['processing_entry_context']['bounded_edges']
-    contexts=report['analysis']['signed_division_contexts'];surfaces=[c['source_graph'] for c in contexts]+[report['analysis']['conditional_output_store_context']['source_graph']]
+    contexts=report['analysis']['signed_division_contexts'];surfaces=[c['source_graph'] for c in contexts]+[c['source_graph'] for c in report['analysis']['r51_pending_definition_source_contexts']]+[report['analysis']['conditional_output_store_context']['source_graph']]
     checked=set()
     for s in surfaces:
         for q in s['queries']:

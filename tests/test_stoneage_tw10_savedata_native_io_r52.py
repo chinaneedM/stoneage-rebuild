@@ -70,7 +70,7 @@ class PinnedReport(unittest.TestCase):
     def reject(self,fn):
         d=copy.deepcopy(self.report);fn(d)
         with self.assertRaises(ValueError):strict_validate(d,self.raw)
-    def test_valid_independent_reverse(self):self.assertEqual(strict_validate(self.report,self.raw),46)
+    def test_valid_independent_reverse(self):self.assertEqual(strict_validate(self.report,self.raw),60)
     def test_wrong_digest(self):
         with self.assertRaises(ValueError):derive(self.raw+b' ')
     def test_source_schema(self):
@@ -83,6 +83,8 @@ class PinnedReport(unittest.TestCase):
     def test_focused_groups_closed(self):self.assertTrue(all(not c['source_graph']['query_limit_hit'] and c['source_graph']['graph_local_dependency_queries_closed'] for c in self.report['analysis']['signed_division_contexts']))
     def test_legacy_sample_complete(self):self.assertEqual(len(self.report['analysis']['r51_legacy_definition_shapes_complete']),39)
     def test_pending_shapes_complete(self):self.assertEqual(len(self.report['analysis']['r51_pending_definition_shapes']),11)
+    def test_legacy_pending_groups_closed(self):self.assertTrue(all(c['source_graph']['graph_local_dependency_queries_closed'] for c in self.report['analysis']['r51_pending_definition_source_contexts']))
+    def test_pending_source_group_missing(self):self.reject(lambda d:d['analysis']['r51_pending_definition_source_contexts'].pop())
     def test_promotion(self):
         for k in FLAGS:self.reject(lambda d,k=k:d.update({k:True}))
     def test_cdq_decoder_observation(self):self.reject(lambda d:d['analysis']['cdq_architecture_overlays'][0]['decoder_observation'].update(decoder_written_registers=['edx']))

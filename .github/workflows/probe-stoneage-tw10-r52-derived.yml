@@ -45,8 +45,8 @@ jobs:
           set -euo pipefail
           python -m tools.stoneage_tw10_savedata_native_io_r52 --source /tmp/r52-origin/stoneage-r51-derived.json > /tmp/stoneage-r52-derived.json
           python -m tools.stoneage_tw10_savedata_native_io_r52_guard --source /tmp/r52-origin/stoneage-r51-derived.json --report /tmp/stoneage-r52-derived.json
-          test "$(stat -c %s /tmp/stoneage-r52-derived.json)" -eq 171642
-          echo 'ef31b28b7d8d27790feb56e29ea1a80ae0e2baaa51761c0f8621c8576d95cfcc  /tmp/stoneage-r52-derived.json' | sha256sum -c -
+          test "$(stat -c %s /tmp/stoneage-r52-derived.json)" -eq 252332
+          echo '99c9252bf3a982db565ab29f43d27e67b2c34978a44990564d74d75949a15179  /tmp/stoneage-r52-derived.json' | sha256sum -c -
           cmp /tmp/stoneage-r52-derived.json research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R52-DERIVED.json
           echo TW10_R52_CANONICAL_BYTES_EQUAL=PASS
           echo TW10_R52_NO_ORIGINAL_ARCHIVE_OR_EXECUTION=PASS
