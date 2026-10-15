@@ -1,0 +1,44 @@
+name: Independently replay TW1.0 R68 forward and reverse native-return sources
+on:
+  workflow_dispatch:
+  push:
+    branches: [agent/tw10-r68-return-sources-20261016, main]
+    paths:
+      - .github/workflows/verify-stoneage-tw10-r68-return-sources.yml
+      - tools/stoneage_tw10_savedata_r68_return_sources.py
+      - tests/test_stoneage_tw10_savedata_r68_return_sources.py
+      - tools/stoneage_tw10_savedata_r67_guard.py
+      - research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-TAIL-R67-ORIGINAL.json
+      - research/recovered/STONEAGE-TW10-SAVEDATA-R68-*.json
+      - docs/specs/STONEAGE-TW10-R67-R68-NATIVE-TAIL.md
+permissions:
+  contents: read
+jobs:
+  acceptance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify conservative source propagation and original metadata boundaries
+        run: |
+          set -euo pipefail
+          python -m unittest -v tests.test_stoneage_tw10_savedata_r68_return_sources tests.test_stoneage_tw10_savedata_r67_tail_static tests.test_stoneage_tw10_savedata_r66_count_consumers tests.test_stoneage_tw10_savedata_r65_cross_window
+          python -m tools.stoneage_tw10_savedata_r67_guard --report research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-TAIL-R67-ORIGINAL.json
+          python -m tools.stoneage_tw10_savedata_r68_return_sources --verify research/recovered/STONEAGE-TW10-SAVEDATA-R68-RETURN-SOURCES-DERIVED.json
+      - name: Independently assert exact return candidates without filling the missing instruction
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          p='research/recovered/STONEAGE-TW10-SAVEDATA-R68-RETURN-SOURCES-DERIVED.json'
+          d=json.load(open(p))
+          assert d['source_r67_sha256']=='8bb5923de9a630a953de6c62cf9c10463aed9a4066db9a0aa97c7aaff338ab50'
+          assert d['source_r67_git_blob']=='04162081d346b8c53424295de9fdc6b8f385b011'
+          assert d['available_decoded_rows_in_root']==77 and d['bounded_graph_nodes']==139 and d['bounded_graph_edges']==156
+          assert [(x['origin'],x['site_rva']) for x in d['return_eax_source_candidates']]==[('full_eax_definition',313155),('full_eax_definition',313177),('unknown_instruction',312830)]
+          assert d['return_eax_source_candidates'][2]['decoded_definition'] is None
+          assert d['missing_decoded_rows_are_opaque_barriers'] is True and d['all_call_register_effects_are_opaque_barriers'] is True
+          assert d['original_actual_eax_or_native_bool_count_known'] is False
+          assert d['actual_branch_path_frame_alias_or_preservation_proven'] is False
+          assert d['actual_flush_close_or_disk_persistence_proven'] is False and d['stage_b_started'] is False
+          PY

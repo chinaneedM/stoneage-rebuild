@@ -1,0 +1,109 @@
+{
+  "actual_branch_path_frame_alias_or_preservation_proven": false,
+  "actual_flush_close_or_disk_persistence_proven": false,
+  "all_call_register_effects_are_opaque_barriers": true,
+  "available_decoded_rows_in_root": 77,
+  "bounded_graph_edges": 156,
+  "bounded_graph_nodes": 139,
+  "forward_and_reverse_source_sets_agree": true,
+  "missing_decoded_rows_are_opaque_barriers": true,
+  "original_actual_eax_or_native_bool_count_known": false,
+  "original_program_or_payload_executed": false,
+  "ret_rva": 313184,
+  "return_eax_source_candidates": [
+    {
+      "actual_eax_value_known": false,
+      "decoded_definition": {
+        "actual_instruction_effect_or_value_known": false,
+        "decoder_read_registers": [
+          "eax",
+          "ebp"
+        ],
+        "decoder_written_registers": [
+          "eax",
+          "eflags"
+        ],
+        "input_query_registers": [
+          "eax",
+          "ebp"
+        ],
+        "mnemonic": "sub",
+        "operands": [
+          {
+            "decoder_read": true,
+            "decoder_write": true,
+            "kind": "register",
+            "register": "eax",
+            "width_bytes": 4
+          },
+          {
+            "decoder_read": true,
+            "decoder_write": false,
+            "geometry": {
+              "base_register": "ebp",
+              "displacement_region": null,
+              "index_register": null,
+              "index_scale": 1,
+              "relative_field_offset": -16,
+              "segment_register": null,
+              "width_bytes": 4
+            },
+            "kind": "memory",
+            "width_bytes": 4
+          }
+        ],
+        "site_rva": 313155
+      },
+      "origin": "full_eax_definition",
+      "site_rva": 313155
+    },
+    {
+      "actual_eax_value_known": false,
+      "decoded_definition": {
+        "actual_instruction_effect_or_value_known": false,
+        "decoder_read_registers": [
+          "eax"
+        ],
+        "decoder_written_registers": [
+          "eax",
+          "eflags"
+        ],
+        "input_query_registers": [
+          "eax"
+        ],
+        "mnemonic": "or",
+        "operands": [
+          {
+            "decoder_read": true,
+            "decoder_write": true,
+            "kind": "register",
+            "register": "eax",
+            "width_bytes": 4
+          },
+          {
+            "constant": 4294967295,
+            "decoder_read": false,
+            "decoder_write": false,
+            "kind": "immediate",
+            "width_bytes": 4
+          }
+        ],
+        "site_rva": 313177
+      },
+      "origin": "full_eax_definition",
+      "site_rva": 313177
+    },
+    {
+      "actual_eax_value_known": false,
+      "decoded_definition": null,
+      "origin": "unknown_instruction",
+      "site_rva": 312830
+    }
+  ],
+  "root_rva": 312756,
+  "savedata_schema_or_server_authority_proven": false,
+  "schema": "tw10-r68-native-ret-conservative-eax-source-candidates",
+  "source_r67_git_blob": "04162081d346b8c53424295de9fdc6b8f385b011",
+  "source_r67_sha256": "8bb5923de9a630a953de6c62cf9c10463aed9a4066db9a0aa97c7aaff338ab50",
+  "stage_b_started": false
+}
