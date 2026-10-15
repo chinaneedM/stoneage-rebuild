@@ -1,0 +1,150 @@
+name: Independently verify TW1.0 R56 frame/write-request custody and all-path algebra
+on:
+  workflow_dispatch:
+  push:
+    branches: [agent/tw10-savedata-r56-application-frame-20261015, main]
+    paths:
+      - .github/workflows/verify-stoneage-tw10-r56-derived.yml
+      - tools/stoneage_tw10_savedata_frame_r56_model.py
+      - tools/stoneage_tw10_savedata_native_io_r56.py
+      - tests/test_stoneage_tw10_savedata_native_io_r56.py
+      - tools/stoneage_tw10_savedata_frame_r56_guard.py
+      - tests/test_stoneage_tw10_savedata_frame_r56_guard.py
+      - docs/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R56.md
+      - docs/specs/STONEAGE-TW10-CONDITIONAL-APPLICATION-WRITE-R56.md
+      - research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R56-SPEC.json
+permissions:
+  contents: read
+  actions: read
+jobs:
+  metadata:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Authenticate immutable R51 original-derived custody
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          identity="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/38719176573" --jq '[.status,.conclusion,.head_sha,.head_branch] | join("|")')"
+          test "$identity" = 'completed|success|ee32f6d16f3dbfeabbb9d73020b64f83f47924dd|agent/tw10-savedata-r51-processor-stack-consumers-20261015'
+          artifact="$(gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/11963713395" --jq '[.workflow_run.id,.name,.digest,.expired] | join("|")')"
+          test "$artifact" = '38719176573|tw10-r51-original-processor-stack-consumers-derived|sha256:3e02a0c79114b8a3e2817a63ef4c6d280944435f4ad1106a213781484c2b4a8b|false'
+          mkdir -p /tmp/r53-origin
+          gh run download 38719176573 --repo "$GITHUB_REPOSITORY" --name tw10-r51-original-processor-stack-consumers-derived --dir /tmp/r53-origin
+          test "$(find /tmp/r53-origin -type f | wc -l)" -eq 1
+          test ! -L /tmp/r53-origin/stoneage-r51-derived.json
+          test "$(stat -c %s /tmp/r53-origin/stoneage-r51-derived.json)" -eq 284533
+          echo '15f54e5de8d1d20128fb7d948b54f13a0e3f6cf372eca203cbc7bb8adc473052  /tmp/r53-origin/stoneage-r51-derived.json' | sha256sum -c -
+          cmp /tmp/r53-origin/stoneage-r51-derived.json research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R51-ORIGINAL.json
+      - name: Authenticate and retrieve immutable R52 architectural metadata
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          identity="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/38721170772" --jq '[.status,.conclusion,.head_sha,.head_branch] | join("|")')"
+          test "$identity" = 'completed|success|5bdf801831f2a8198ce49c5f91c04d583f03a5ec|agent/tw10-savedata-r52-cdq-sources-20261015'
+          artifact="$(gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/11964589288" --jq '[.workflow_run.id,.name,.digest,.expired] | join("|")')"
+          test "$artifact" = '38721170772|tw10-r52-metadata-cdq-source-derived|sha256:0c4346b23854cde9452a0f803bfcb5f5d36335563df0276101c08e8422d35d54|false'
+          mkdir -p /tmp/r53-prior
+          gh run download 38721170772 --repo "$GITHUB_REPOSITORY" --name tw10-r52-metadata-cdq-source-derived --dir /tmp/r53-prior
+          test "$(find /tmp/r53-prior -type f | wc -l)" -eq 1
+          test ! -L /tmp/r53-prior/stoneage-r52-derived.json
+          test "$(stat -c %s /tmp/r53-prior/stoneage-r52-derived.json)" -eq 252332
+          echo '99c9252bf3a982db565ab29f43d27e67b2c34978a44990564d74d75949a15179  /tmp/r53-prior/stoneage-r52-derived.json' | sha256sum -c -
+          cmp /tmp/r53-prior/stoneage-r52-derived.json research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R52-DERIVED.json
+      - name: Authenticate independent R53 source run and specification artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          identity="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/38723269655" --jq '[.status,.conclusion,.head_sha,.head_branch] | join("|")')"
+          test "$identity" = 'completed|success|3b65aaff0d41e8d209c7212eabc1146d97631b96|agent/tw10-savedata-r53-conditional-transform-20261015'
+          artifact="$(gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/11966653083" --jq '[.workflow_run.id,.name,.digest,.expired] | join("|")')"
+          test "$artifact" = '38723269655|tw10-r53-conditional-transform-spec|sha256:1b6355be01eba8ba96af8c178ee32001770cf9607675482a3e2cc8f18cafd957|false'
+          mkdir -p /tmp/r53-immutable
+          gh run download 38723269655 --repo "$GITHUB_REPOSITORY" --name tw10-r53-conditional-transform-spec --dir /tmp/r53-immutable
+          test "$(find /tmp/r53-immutable -type f | wc -l)" -eq 1
+          test ! -L /tmp/r53-immutable/stoneage-r53-spec.json
+          test "$(stat -c %s /tmp/r53-immutable/stoneage-r53-spec.json)" -eq 104275
+          echo '26bbdff472638081cd7e26945350598bf89a75a690c5c4205c2d491ad62e8dd5  /tmp/r53-immutable/stoneage-r53-spec.json' | sha256sum -c -
+      - name: Authenticate immutable successful original source and numeric artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          identity="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/38724589059" --jq '[.status,.conclusion,.head_sha,.head_branch] | join("|")')"
+          test "$identity" = 'completed|success|660a051f9b58ef596fb2fdf8f27bfc9fd321a7a0|agent/tw10-savedata-r54-writer-prefix-20261015'
+          artifact="$(gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/11967805220" --jq '[.workflow_run.id,.name,.digest,.expired] | join("|")')"
+          test "$artifact" = '38724589059|tw10-r54-original-writer-prefix-derived|sha256:a857094d202033ea378406fc3c5dae5580c984416181a80f497a6540466ffa5c|false'
+          mkdir -p /tmp/r54-immutable
+          gh run download 38724589059 --repo "$GITHUB_REPOSITORY" --name tw10-r54-original-writer-prefix-derived --dir /tmp/r54-immutable
+          test "$(find /tmp/r54-immutable -type f | wc -l)" -eq 1
+          test ! -L /tmp/r54-immutable/stoneage-r54-derived.json
+          test "$(stat -c %s /tmp/r54-immutable/stoneage-r54-derived.json)" -eq 132329
+          echo '635e80079eb594218c849facd2ea1ba8b0c9160142fc017182d17ba8f1c62387  /tmp/r54-immutable/stoneage-r54-derived.json' | sha256sum -c -
+          echo '15f54e5de8d1d20128fb7d948b54f13a0e3f6cf372eca203cbc7bb8adc473052  research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R51-ORIGINAL.json' | sha256sum -c -
+          cmp /tmp/r54-immutable/stoneage-r54-derived.json research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R54-ORIGINAL.json
+      - name: Authenticate successful immutable R55 source and derived specification
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          identity="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/38728999042" --jq '[.status,.conclusion,.head_sha,.head_branch] | join("|")')"
+          test "$identity" = 'completed|success|230726474ed0ed9dae228f97da389401b7554b4f|agent/tw10-savedata-r55-writer-inverse-20261015'
+          artifact="$(gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/11969477120" --jq '[.workflow_run.id,.name,.digest,.expired] | join("|")')"
+          test "$artifact" = '38728999042|tw10-r55-conditional-writer-read-spec|sha256:569d762983ff27fb19078b825f31d444ec6cee5152efc0fccd78613aa1b3933a|false'
+          mkdir -p /tmp/r55-immutable
+          gh run download 38728999042 --repo "$GITHUB_REPOSITORY" --name tw10-r55-conditional-writer-read-spec --dir /tmp/r55-immutable
+          test "$(find /tmp/r55-immutable -type f | wc -l)" -eq 1
+          test ! -L /tmp/r55-immutable/stoneage-r55-spec.json
+          test "$(stat -c %s /tmp/r55-immutable/stoneage-r55-spec.json)" -eq 103165
+          echo '9f98d60d00600ffea0838aee7962a1811323eedcc97d02715f3dd846b00fc863  /tmp/r55-immutable/stoneage-r55-spec.json' | sha256sum -c -
+          cmp /tmp/r55-immutable/stoneage-r55-spec.json research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R55-SPEC.json
+      - name: Authenticate immutable successful R56 source and bounded specification
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          identity="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/38730761697" --jq '[.status,.conclusion,.head_sha,.head_branch] | join("|")')"
+          test "$identity" = 'completed|success|453ff20ca9f30ca9f05b1b42551508c7053f9cb5|agent/tw10-savedata-r56-application-frame-20261015'
+          artifact="$(gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/11969389801" --jq '[.workflow_run.id,.name,.digest,.expired] | join("|")')"
+          test "$artifact" = '38730761697|tw10-r56-conditional-application-frame-spec|sha256:95938cabdcd015aa3e273cc541bd38e1fbd7f8cdf91716b895c7b132abf2e028|false'
+          mkdir -p /tmp/r56-immutable
+          gh run download 38730761697 --repo "$GITHUB_REPOSITORY" --name tw10-r56-conditional-application-frame-spec --dir /tmp/r56-immutable
+          test "$(find /tmp/r56-immutable -type f | wc -l)" -eq 1
+          test ! -L /tmp/r56-immutable/stoneage-r56-spec.json
+          test "$(stat -c %s /tmp/r56-immutable/stoneage-r56-spec.json)" -eq 67492
+          echo 'db5628403b366e706e212bd7627f40861097d78bfb3f3acb0d95598bce70981c  /tmp/r56-immutable/stoneage-r56-spec.json' | sha256sum -c -
+          cmp /tmp/r56-immutable/stoneage-r56-spec.json research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R56-SPEC.json
+      - name: Inherited and new arithmetic/adversarial gates
+        run: |
+          set -euo pipefail
+          pip install --quiet capstone pefile
+          python -m unittest -v tests.test_stoneage_tw10_savedata_frame_r56_guard tests.test_stoneage_tw10_savedata_native_io_r56 tests.test_stoneage_tw10_savedata_native_io_r55 tests.test_stoneage_tw10_savedata_writer_r54_audit tests.test_stoneage_tw10_savedata_writer_r54_contract tests.test_stoneage_tw10_savedata_writer_r54 tests.test_stoneage_tw10_savedata_native_io_r53 tests.test_stoneage_tw10_savedata_native_io_r52 tests.test_stoneage_tw10_savedata_postcall_r51 tests.test_stoneage_tw10_savedata_application_r51 tests.test_stoneage_tw10_savedata_application_r50 tests.test_stoneage_tw10_savedata_native_io_r51 tests.test_stoneage_tw10_savedata_native_io_r50 tests.test_stoneage_tw10_savedata_native_io_r49 tests.test_stoneage_tw10_savedata_native_io_r48 tests.test_stoneage_tw10_savedata_native_io_r47 tests.test_stoneage_tw10_savedata_native_io_r46 tests.test_stoneage_tw10_savedata_native_io_r45 tests.test_stoneage_tw10_savedata_native_io_r44 tests.test_stoneage_tw10_savedata_native_io_r43 tests.test_stoneage_tw10_savedata_native_io_r42 tests.test_stoneage_tw10_savedata_native_io_r41 tests.test_stoneage_tw10_savedata_native_io_r40 tests.test_stoneage_tw10_savedata_native_io_r39 tests.test_stoneage_tw10_savedata_native_io_r38 tests.test_stoneage_tw10_savedata_native_io_r37 tests.test_stoneage_tw10_savedata_native_io_r36 tests.test_stoneage_tw10_savedata_native_io_r35 tests.test_stoneage_tw10_savedata_native_io_r34 tests.test_stoneage_tw10_savedata_native_io_r33 tests.test_stoneage_tw10_savedata_native_io_r32 tests.test_stoneage_tw10_savedata_argtrace_r7 tests.test_stoneage_tw10_savedata_argtrace_r7_guard
+          python -m tools.stoneage_tw10_savedata_native_io_r54_guard --report /tmp/r54-immutable/stoneage-r54-derived.json
+          python -m tools.stoneage_tw10_savedata_writer_r54_audit --report /tmp/r54-immutable/stoneage-r54-derived.json
+      - name: Regenerate conditional R55 specification with independent invented models
+        run: |
+          set -euo pipefail
+          python -m tools.stoneage_tw10_savedata_native_io_r55 --r54 /tmp/r54-immutable/stoneage-r54-derived.json --r51 /tmp/r53-origin/stoneage-r51-derived.json --r52 /tmp/r53-prior/stoneage-r52-derived.json --r53 /tmp/r53-immutable/stoneage-r53-spec.json > /tmp/stoneage-r55-spec.json
+          python -m tools.stoneage_tw10_savedata_native_io_r55 --r54 /tmp/r54-immutable/stoneage-r54-derived.json --r51 /tmp/r53-origin/stoneage-r51-derived.json --r52 /tmp/r53-prior/stoneage-r52-derived.json --r53 /tmp/r53-immutable/stoneage-r53-spec.json --verify /tmp/stoneage-r55-spec.json
+          test "$(stat -c %s /tmp/stoneage-r55-spec.json)" -eq 103165
+          echo '9f98d60d00600ffea0838aee7962a1811323eedcc97d02715f3dd846b00fc863  /tmp/stoneage-r55-spec.json' | sha256sum -c -
+          cmp /tmp/stoneage-r55-spec.json research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R55-SPEC.json
+          cmp /tmp/stoneage-r55-spec.json /tmp/r55-immutable/stoneage-r55-spec.json
+          echo TW10_R55_IMMUTABLE_SPEC_REPRODUCED=PASS
+      - name: Derive conditional helper/caller/write-request specification
+        run: |
+          set -euo pipefail
+          python -m tools.stoneage_tw10_savedata_native_io_r56 --r54 /tmp/r54-immutable/stoneage-r54-derived.json --r55 /tmp/r55-immutable/stoneage-r55-spec.json > /tmp/stoneage-r56-spec.json
+          python -m tools.stoneage_tw10_savedata_native_io_r56 --r54 /tmp/r54-immutable/stoneage-r54-derived.json --r55 /tmp/r55-immutable/stoneage-r55-spec.json --verify /tmp/stoneage-r56-spec.json
+          test "$(stat -c %s /tmp/stoneage-r56-spec.json)" -eq 67492
+          echo 'db5628403b366e706e212bd7627f40861097d78bfb3f3acb0d95598bce70981c  /tmp/stoneage-r56-spec.json' | sha256sum -c -
+          cmp /tmp/stoneage-r56-spec.json research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R56-SPEC.json
+          cmp /tmp/stoneage-r56-spec.json /tmp/r56-immutable/stoneage-r56-spec.json
+          python -m tools.stoneage_tw10_savedata_frame_r56_guard --r54 /tmp/r54-immutable/stoneage-r54-derived.json --r55 /tmp/r55-immutable/stoneage-r55-spec.json --report /tmp/r56-immutable/stoneage-r56-spec.json
+      - name: Purge transient metadata
+        if: always()
+        run: rm -rf /tmp/r56-immutable /tmp/stoneage-r56-spec.json /tmp/r53-origin /tmp/r53-prior /tmp/r53-immutable /tmp/r54-immutable /tmp/stoneage-r55-spec.json /tmp/r55-immutable
