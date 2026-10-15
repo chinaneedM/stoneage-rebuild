@@ -9,6 +9,7 @@ on:
       - tests/test_stoneage_tw10_savedata_r63_derived_guard.py
 permissions:
   contents: read
+  actions: read
 jobs:
   standalone:
     runs-on: ubuntu-latest
@@ -20,5 +21,52 @@ jobs:
           set -euo pipefail
           pip install --quiet capstone pefile
           python -m unittest -v tests.test_stoneage_tw10_savedata_r63_derived_guard tests.test_stoneage_tw10_savedata_r63_postcall_static
-          echo R63_DERIVED_GUARD_PREPARED=PASS
-          echo ORIGINAL_SOURCE_ARTIFACT_NOT_YET_ACCEPTED=OPEN
+          echo R63_SYNTHETIC_NONPROMOTION=PASS
+  original-custody:
+    needs: [standalone]
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Pin original source-run SHA and independently requalify artifact ZIP digest
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          actual="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/38754938642" --jq '[.status,.conclusion,.head_sha,.head_branch] | join("|")')"
+          test "$actual" = 'completed|success|13468c61b52613c728f8e713548b6e3c0cfd71b4|agent/tw10-r63-targeted-postcall-static-20261015'
+          artifact="$(gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/11983560690" --jq '[.workflow_run.id,.name,.digest,.expired] | join("|")')"
+          test "$artifact" = '38754938642|tw10-r63-original-static-postcall-derived-only|sha256:c6fef52e95757cae6682e3518a279a2ae572f4b86efd0e42c1a39aecd8f7931e|false'
+          mkdir -p /tmp/r63-independent
+          gh run download 38754938642 --repo "$GITHUB_REPOSITORY" --name tw10-r63-original-static-postcall-derived-only --dir /tmp/r63-independent
+          test "$(find /tmp/r63-independent -type f | wc -l)" -eq 1
+          test -f /tmp/r63-independent/tw10-r63-static.json
+          test ! -L /tmp/r63-independent/tw10-r63-static.json
+          test "$(stat -c %s /tmp/r63-independent/tw10-r63-static.json)" -le 140000
+          sha256sum /tmp/r63-independent/tw10-r63-static.json
+          echo R63_AUTHENTICATED_SOURCE_ARTIFACT_CUSTODY=PASS
+      - name: Independently validate exact decoded metadata and preserve unknown native returns
+        run: |
+          set -euo pipefail
+          python -m tools.stoneage_tw10_savedata_r63_derived_guard --report /tmp/r63-independent/tw10-r63-static.json
+          python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          p=Path('/tmp/r63-independent/tw10-r63-static.json')
+          d=json.loads(p.read_bytes())
+          assert d['candidate_graph_nodes']==139 and d['candidate_graph_edges']==156
+          assert [s['postcall_rva'] for s in d['sites']]==[0x4c692,0x4c6f7]
+          for s in d['sites']:
+              row=s['postcall_instruction']
+              print('R63_PINNED_POSTCALL_SYNTAX',hex(s['postcall_rva']),row['mnemonic'],
+                    'operand_count',len(row['operands']),
+                    'window_rows',len(s['decoded_instruction_rows']),
+                    'local_edges',len(s['bounded_local_edges']))
+          print('R63_VERIFIED_JSON_SHA256',hashlib.sha256(p.read_bytes()).hexdigest())
+          assert not d['actual_native_writefile_return_count_or_success_proven']
+          assert not d['actual_buffer_flush_close_or_disk_persistence_proven']
+          print('R63_ORIGINAL_STATIC_SYNTAX=PASS; NATIVE_RESULT_AND_PERSISTENCE=OPEN')
+          PY
+      - name: Purge derived artifact temporary files
+        if: always()
+        run: rm -rf /tmp/r63-independent
