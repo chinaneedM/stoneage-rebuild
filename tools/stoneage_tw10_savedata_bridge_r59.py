@@ -28,7 +28,7 @@ def unique(rows, predicate, reason):
 
 
 def blob_sha(raw):
-    return hashlib.sha1(b"blob " + str(len(raw)).encode("ascii") + b"\\0" + raw).hexdigest()
+    return hashlib.sha1(b"blob " + str(len(raw)).encode("ascii") + b"\x00" + raw).hexdigest()
 
 
 def derive(r28, r58):
