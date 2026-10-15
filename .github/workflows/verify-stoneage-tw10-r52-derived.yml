@@ -1,0 +1,73 @@
+name: Independently verify TW1.0 R52 architectural source graph custody
+on:
+  workflow_dispatch:
+  push:
+    branches: [agent/tw10-savedata-r52-cdq-sources-20261015, main]
+    paths:
+      - .github/workflows/verify-stoneage-tw10-r52-derived.yml
+      - docs/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R52.md
+      - tools/stoneage_tw10_savedata_native_io_r52.py
+      - tools/stoneage_tw10_savedata_native_io_r52_guard.py
+      - tests/test_stoneage_tw10_savedata_native_io_r52.py
+      - research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R52-DERIVED.json
+permissions:
+  contents: read
+  actions: read
+jobs:
+  metadata:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Authenticate immutable R51 original-derived custody
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          identity="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/38719176573" --jq '[.status,.conclusion,.head_sha,.head_branch] | join("|")')"
+          test "$identity" = 'completed|success|ee32f6d16f3dbfeabbb9d73020b64f83f47924dd|agent/tw10-savedata-r51-processor-stack-consumers-20261015'
+          artifact="$(gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/11963713395" --jq '[.workflow_run.id,.name,.digest,.expired] | join("|")')"
+          test "$artifact" = '38719176573|tw10-r51-original-processor-stack-consumers-derived|sha256:3e02a0c79114b8a3e2817a63ef4c6d280944435f4ad1106a213781484c2b4a8b|false'
+          mkdir -p /tmp/r52-origin
+          gh run download 38719176573 --repo "$GITHUB_REPOSITORY" --name tw10-r51-original-processor-stack-consumers-derived --dir /tmp/r52-origin
+          test "$(find /tmp/r52-origin -type f | wc -l)" -eq 1
+          test ! -L /tmp/r52-origin/stoneage-r51-derived.json
+          test "$(stat -c %s /tmp/r52-origin/stoneage-r51-derived.json)" -eq 284533
+          echo '15f54e5de8d1d20128fb7d948b54f13a0e3f6cf372eca203cbc7bb8adc473052  /tmp/r52-origin/stoneage-r51-derived.json' | sha256sum -c -
+          cmp /tmp/r52-origin/stoneage-r51-derived.json research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R51-ORIGINAL.json
+      - name: Authenticate independent immutable R52 source run and derivative
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          identity="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/38721170772" --jq '[.status,.conclusion,.head_sha,.head_branch] | join("|")')"
+          test "$identity" = 'completed|success|5bdf801831f2a8198ce49c5f91c04d583f03a5ec|agent/tw10-savedata-r52-cdq-sources-20261015'
+          artifact="$(gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/11964589288" --jq '[.workflow_run.id,.name,.digest,.expired] | join("|")')"
+          test "$artifact" = '38721170772|tw10-r52-metadata-cdq-source-derived|sha256:0c4346b23854cde9452a0f803bfcb5f5d36335563df0276101c08e8422d35d54|false'
+          mkdir -p /tmp/r52-immutable
+          gh run download 38721170772 --repo "$GITHUB_REPOSITORY" --name tw10-r52-metadata-cdq-source-derived --dir /tmp/r52-immutable
+          test "$(find /tmp/r52-immutable -type f | wc -l)" -eq 1
+          test ! -L /tmp/r52-immutable/stoneage-r52-derived.json
+          test "$(stat -c %s /tmp/r52-immutable/stoneage-r52-derived.json)" -eq 252332
+          echo '99c9252bf3a982db565ab29f43d27e67b2c34978a44990564d74d75949a15179  /tmp/r52-immutable/stoneage-r52-derived.json' | sha256sum -c -
+      - name: Run R52 controls and inherited R51 through R32 and hardened R7 gates
+        run: |
+          set -euo pipefail
+          pip install --quiet capstone pefile
+          python -m unittest -v tests.test_stoneage_tw10_savedata_native_io_r52 tests.test_stoneage_tw10_savedata_postcall_r51 tests.test_stoneage_tw10_savedata_application_r51 tests.test_stoneage_tw10_savedata_application_r50 tests.test_stoneage_tw10_savedata_native_io_r51 tests.test_stoneage_tw10_savedata_native_io_r50 tests.test_stoneage_tw10_savedata_native_io_r49 tests.test_stoneage_tw10_savedata_native_io_r48 tests.test_stoneage_tw10_savedata_native_io_r47 tests.test_stoneage_tw10_savedata_native_io_r46 tests.test_stoneage_tw10_savedata_native_io_r45 tests.test_stoneage_tw10_savedata_native_io_r44 tests.test_stoneage_tw10_savedata_native_io_r43 tests.test_stoneage_tw10_savedata_native_io_r42 tests.test_stoneage_tw10_savedata_native_io_r41 tests.test_stoneage_tw10_savedata_native_io_r40 tests.test_stoneage_tw10_savedata_native_io_r39 tests.test_stoneage_tw10_savedata_native_io_r38 tests.test_stoneage_tw10_savedata_native_io_r37 tests.test_stoneage_tw10_savedata_native_io_r36 tests.test_stoneage_tw10_savedata_native_io_r35 tests.test_stoneage_tw10_savedata_native_io_r34 tests.test_stoneage_tw10_savedata_native_io_r33 tests.test_stoneage_tw10_savedata_native_io_r32 tests.test_stoneage_tw10_savedata_argtrace_r7 tests.test_stoneage_tw10_savedata_argtrace_r7_guard
+          python -m tools.stoneage_tw10_savedata_native_io_r51_guard --report /tmp/r52-origin/stoneage-r51-derived.json
+      - name: Recompute bounded R52 metadata and independently reverse-audit sources
+        run: |
+          set -euo pipefail
+          python -m tools.stoneage_tw10_savedata_native_io_r52 --source /tmp/r52-origin/stoneage-r51-derived.json > /tmp/stoneage-r52-derived.json
+          python -m tools.stoneage_tw10_savedata_native_io_r52_guard --source /tmp/r52-origin/stoneage-r51-derived.json --report /tmp/stoneage-r52-derived.json
+          test "$(stat -c %s /tmp/stoneage-r52-derived.json)" -eq 252332
+          echo '99c9252bf3a982db565ab29f43d27e67b2c34978a44990564d74d75949a15179  /tmp/stoneage-r52-derived.json' | sha256sum -c -
+          cmp /tmp/stoneage-r52-derived.json research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R52-DERIVED.json
+          cmp /tmp/r52-immutable/stoneage-r52-derived.json /tmp/stoneage-r52-derived.json
+          echo TW10_R52_IMMUTABLE_REPORT_BYTES_EQUAL=PASS
+          echo TW10_R52_CANONICAL_BYTES_EQUAL=PASS
+          echo TW10_R52_NO_ORIGINAL_ARCHIVE_OR_EXECUTION=PASS
+      - name: Purge temporary metadata
+        if: always()
+        run: rm -rf /tmp/r52-origin /tmp/r52-immutable /tmp/stoneage-r52-derived.json
