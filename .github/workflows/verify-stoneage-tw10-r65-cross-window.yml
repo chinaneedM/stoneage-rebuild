@@ -1,0 +1,41 @@
+name: Independently accept TW1.0 R65 retained-window branch and count-pointer geometry
+on:
+  workflow_dispatch:
+  push:
+    branches: [agent/tw10-r65-cross-window-20261016, main]
+    paths:
+      - .github/workflows/verify-stoneage-tw10-r65-cross-window.yml
+      - tools/stoneage_tw10_savedata_r65_*.py
+      - tests/test_stoneage_tw10_savedata_r65_*.py
+      - research/recovered/STONEAGE-TW10-SAVEDATA-R65-*.json
+      - research/recovered/STONEAGE-TW10-SAVEDATA-POSTCALL-R63-DERIVED.json
+      - research/recovered/STONEAGE-TW10-SAVEDATA-FLAGS-R64-DERIVED.json
+      - research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R28-ORIGINAL.json
+      - research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R41-ORIGINAL.json
+      - docs/specs/STONEAGE-TW10-R65-CROSS-WINDOW.md
+permissions:
+  contents: read
+jobs:
+  acceptance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Requalify permanent source custody and adversarial evidence boundaries
+        run: |
+          set -euo pipefail
+          python -m unittest -v tests.test_stoneage_tw10_savedata_r65_cross_window tests.test_stoneage_tw10_savedata_r64_flag_count tests.test_stoneage_tw10_savedata_r63_derived_guard tests.test_stoneage_tw10_savedata_r64_independent_guard
+      - name: Replay permanent R65 derivation against immutable original-derived sources
+        run: |
+          set -euo pipefail
+          python -m tools.stoneage_tw10_savedata_r65_cross_window --verify research/recovered/STONEAGE-TW10-SAVEDATA-R65-CROSS-WINDOW-DERIVED.json
+      - name: Independently verify VA conversion, cross-window targets and nonpromotion
+        run: |
+          set -euo pipefail
+          python -m tools.stoneage_tw10_savedata_r65_independent_guard --report research/recovered/STONEAGE-TW10-SAVEDATA-R65-CROSS-WINDOW-DERIVED.json
+      - name: Retain reproducible derived metadata only
+        uses: actions/upload-artifact@v4
+        with:
+          name: tw10-r65-retained-cross-window-static-derived-only
+          path: research/recovered/STONEAGE-TW10-SAVEDATA-R65-CROSS-WINDOW-DERIVED.json
+          retention-days: 21

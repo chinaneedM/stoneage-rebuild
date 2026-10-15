@@ -1,0 +1,145 @@
+{
+  "actual_count_pointer_address_or_memory_contents_proven": false,
+  "actual_flags_or_branch_feasibility_proven": false,
+  "actual_flush_close_or_persistence_proven": false,
+  "actual_frame_abi_or_register_preservation_proven": false,
+  "actual_native_bool_or_transferred_count_proven": false,
+  "branches": [
+    {
+      "actual_branch_taken": null,
+      "branch_window_indices": [
+        0
+      ],
+      "call_rva": 312972,
+      "condition": "ZF=1 if TEST EAX,EAX evaluates zero; incoming native EAX remains opaque",
+      "decoded_taken_target_va": 4507353,
+      "fallthrough_rva": 312982,
+      "je_rva": 312980,
+      "normalized_taken_target_rva": 313049,
+      "retained_local_predecessors": [
+        312978
+      ],
+      "taken_edge_reconstructed_from_operand": true,
+      "taken_edge_retained_in_one_r63_window": false,
+      "taken_target_indirect_slot_rva": 336012,
+      "target_window_indices": [
+        1
+      ],
+      "test_is_sole_flag_source_on_retained_direct_edge": true,
+      "test_rva": 312978
+    },
+    {
+      "actual_branch_taken": null,
+      "branch_window_indices": [
+        1
+      ],
+      "call_rva": 313073,
+      "condition": "ZF=1 if TEST EAX,EAX evaluates zero; incoming native EAX remains opaque",
+      "decoded_taken_target_va": 4507398,
+      "fallthrough_rva": 313083,
+      "je_rva": 313081,
+      "normalized_taken_target_rva": 313094,
+      "retained_local_predecessors": [
+        313079
+      ],
+      "taken_edge_reconstructed_from_operand": true,
+      "taken_edge_retained_in_one_r63_window": true,
+      "taken_target_indirect_slot_rva": 336012,
+      "target_window_indices": [
+        1
+      ],
+      "test_is_sole_flag_source_on_retained_direct_edge": true,
+      "test_rva": 313079
+    }
+  ],
+  "complete_original_cfg_predecessors_proven": false,
+  "conditional_count_pointer_prefixes": [
+    {
+      "barriers": [
+        "unproven stdcall argument binding",
+        "opaque native return and memory effects",
+        "EBP/frame preservation and valid writable allocation unproven",
+        "same offset does not establish temporal address or memory identity"
+      ],
+      "conditional_pre_call_esp_offset": 12,
+      "lea_rva": 312953,
+      "lea_to_push_retained_path": [
+        312953,
+        312956,
+        312958
+      ],
+      "memory_output_count_or_pointer_contents_known": false,
+      "native_call_rva": 312972,
+      "postcall_load_rva": 312982,
+      "postcall_load_spelling": "EAX <- [EBP_after_native_call - 12]",
+      "push_rva": 312958,
+      "same_displacement_spelling": true,
+      "same_runtime_memory_address_proven": false,
+      "source_register": "eax",
+      "symbolic_address_spelling": "EBP_before_native_call - 12"
+    },
+    {
+      "barriers": [
+        "unproven stdcall argument binding",
+        "opaque native return and memory effects",
+        "EBP/frame preservation and valid writable allocation unproven",
+        "same offset does not establish temporal address or memory identity"
+      ],
+      "conditional_pre_call_esp_offset": 12,
+      "lea_rva": 313060,
+      "lea_to_push_retained_path": [
+        313060,
+        313063,
+        313064
+      ],
+      "memory_output_count_or_pointer_contents_known": false,
+      "native_call_rva": 313073,
+      "postcall_load_rva": 313083,
+      "postcall_load_spelling": "EAX <- [EBP_after_native_call - 12]",
+      "push_rva": 313064,
+      "same_displacement_spelling": true,
+      "same_runtime_memory_address_proven": false,
+      "source_register": "ecx",
+      "symbolic_address_spelling": "EBP_before_native_call - 12"
+    }
+  ],
+  "image_base": 4194304,
+  "next": "R66: audit retained native-context return/count consumers and predicates; separate conditional frame-local memory flow from actual IO and persistence; only reacquire missing exact rows.",
+  "operand_derived_rejoins": [
+    {
+      "edge_retained_in_one_window": false,
+      "operand_derived_edge_only": true,
+      "source_rva": 313058,
+      "target_rva": 313003
+    },
+    {
+      "edge_retained_in_one_window": false,
+      "operand_derived_edge_only": true,
+      "source_rva": 313092,
+      "target_rva": 313005
+    },
+    {
+      "edge_retained_in_one_window": false,
+      "operand_derived_edge_only": true,
+      "source_rva": 313103,
+      "target_rva": 313005
+    }
+  ],
+  "original_full_cfg_or_runtime_coverage_claimed": false,
+  "original_media_reacquisition_required_for_this_scope": false,
+  "original_program_or_native_api_executed": false,
+  "original_savedata_payload_or_schema_evaluated": false,
+  "original_server_authority_proven": false,
+  "runtime_sha256": "cdab9ea049a98bbc96ce93eeaa8b63c688f0c0f0ad8b3183e79d75e47621441a",
+  "schema": "tw10-r65-retained-cross-window-je-flags-count-pointer-static",
+  "source_git_blobs": {
+    "r28": "3671661219120d45bd922e05b6df371523b42432",
+    "r41": "7250a7c5b45a054d5ee8c3e92f14cd32612f3ac8",
+    "r63": "3b7c9cea63ed4e2a360ddb6934e7dcd44b9833e7",
+    "r64": "57cc0ea45bba16d994bb9fda47af257b6ddbb9df"
+  },
+  "source_mode": "permanent derived metadata only; no original acquisition",
+  "stage_b_started": false,
+  "union_instruction_rows": 60,
+  "union_retained_edges": 55
+}
