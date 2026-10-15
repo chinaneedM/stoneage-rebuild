@@ -1,0 +1,44 @@
+{
+  "schema": "tw10-r63-original-postcall-static-acceptance-r1",
+  "phase": "Stage A TW1.0 historical restoration, nonexecuting static evidence",
+  "original_runtime_sha256": "cdab9ea049a98bbc96ce93eeaa8b63c688f0c0f0ad8b3183e79d75e47621441a",
+  "source_action": 38754938642,
+  "source_code_head": "13468c61b52613c728f8e713548b6e3c0cfd71b4",
+  "source_synthetic_job": 116490756724,
+  "source_original_job": 116490883154,
+  "source_artifact_id": 11983560690,
+  "artifact_zip_sha256": "c6fef52e95757cae6682e3518a279a2ae572f4b86efd0e42c1a39aecd8f7931e",
+  "derived_json_sha256": "91b650db700cf892a7d8c8b2d36a9d49dbeca139be315856d31d59533056c1bd",
+  "branch_independent_action": 38755602897,
+  "branch_independent_original_custody_job": 116493158697,
+  "main_accepted_code_head": "3c1a511d0cb3b1ee29b9ebad0ce634533820f7f7",
+  "main_accepted_code_tree": "2ce0f2daf3c432e031639166243c6018e8171b73",
+  "main_independent_action": 38755871657,
+  "main_independent_synthetic_job": 116494004159,
+  "main_independent_original_custody_job": 116494106489,
+  "native_root_rva": 312756,
+  "graph_nodes": 139,
+  "graph_edges": 156,
+  "postcall_rows": [
+    {
+      "site_rva": 312978,
+      "mnemonic": "test",
+      "operand_count": 2,
+      "window_nodes": 32,
+      "local_edges": 32
+    },
+    {
+      "site_rva": 313079,
+      "mnemonic": "test",
+      "operand_count": 2,
+      "window_nodes": 28,
+      "local_edges": 23
+    }
+  ],
+  "original_executable_or_savedata_executed": false,
+  "actual_api_return_count_or_result_proven": false,
+  "actual_call_frame_abi_alias_proven": false,
+  "original_savedata_flush_close_persistence_proven": false,
+  "stage_a_families": "PARTIAL_OPEN",
+  "highest_next": "R64 exact TEST operand/flag/branch and bytes-written-pointer versus BOOL EAX with cross-function ABI barriers"
+}

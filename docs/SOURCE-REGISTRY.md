@@ -6619,3 +6619,13 @@ OPEN original dynamic path feasibility, actual handle/buffer/byte/count values, 
 Evidence class: previously authenticated original-client-derived static numeric metadata, reconciled across exact Git blobs, and separately verified synthetic cross-report controls. No original executable/media was downloaded or executed for this milestone. R28 source Git blob3671661219120d45bd922e05b6df371523b42432 and R58 source blob223b65683d37332546ada0fe034a81550b5e8ed8 (R58 SHA256 04fb0b586f1fcf87f647b1bc1276bde2505822e195646c4c9058c03c7f558fe8) are pinned. Original-root source/independent custody from R58 remains separately documented.
 
 Independent R59 cross-bridge Action38747379693 and main Action38747479217/job116464832718 SUCCESS (15 combined synthetic tests plus original-derived R28/R58 strict guards). The 0x4a657/0x4c5b4 bridge corresponds to two indirect WriteFile import-slot associations, and the 0x4a53e close-path contains CloseHandle/GetLastError import-slot associations. This supports static direct-target/import identity and bounded graph evidence only. It does NOT support executed call paths, actual count/bytes written, flush/close success, return/error convention, resource ownership or persistence, payload structure, original server authority or cross-version equivalence. The unmatched native-return/control semantics remain OPEN for R59 follow-on.
+
+
+### SRC-TW10-R63-WRITEFILE-POSTCALL — 2026-10-15
+
+- Evidence class: **S-derived original-client static syntax**, not observed runtime behavior.
+- Source: authenticated clean TW1.0 client source path used in accepted original-static source Action 38754938642 (HEAD 13468c61b52613c728f8e713548b6e3c0cfd71b4). Runtime SHA256 `cdab9ea049a98bbc96ce93eeaa8b63c688f0c0f0ad8b3183e79d75e47621441a`; original client/server/save payload not committed or executed.
+- Derived-only artifact: 11983560690, ZIP SHA256 `c6fef52e95757cae6682e3518a279a2ae572f4b86efd0e42c1a39aecd8f7931e`. Exact decoded JSON SHA256 `91b650db700cf892a7d8c8b2d36a9d49dbeca139be315856d31d59533056c1bd`.
+- Independent cross-check: branch Action 38755602897/job 116493158697 and main Action 38755871657/job 116494106489 SUCCESS, including strict source run identity, archive artifact digest and decoded data structural/non-promotion checks.
+- Proves: static `TEST` mnemonics (two operands each) at post-`WriteFile` RVAs `0x4c692`/`0x4c6f7`, local bounded instruction/edge coverage, import-slot syntax.
+- Does NOT prove: executable original call paths, native results and bytes written, API or close success, file ownership, ABI/register/stack/memory aliases, flag outcomes, persistent disk records, schema/checksum/migration, server authority or cross-version identity.
