@@ -361,3 +361,10 @@ Highest NEXT R58: qualify the shared write/close helper0x4a657 (write CALL0x48c3
 R63 and R64 original-derived metadata have both been permanently archived in Git with source-run, ZIP and raw JSON digests. Two original-static WriteFile postcall continuations are confirmed as TEST EAX,EAX followed by JE, with conditional physical fourth argument/output-count position candidates but **without native execution evidence**. R64's bounded window contains only one of the first JE's candidate successors; preserve the other as OPEN. Stage A file-IO/persistence family remains OPEN; all other recovery-family PARTIAL/OPEN gates remain unchanged.
 
 Highest NEXT R65: resolve precise local/out-of-window control predecessors and TEST/EFLAGS/JE scope, then qualify memory output-pointer and cross-function frame/ABI barriers separately. Actual native BOOL, transferred bytes, flush/close, persisted records, schema/version/checksum/migration and original server authority cannot be promoted from these static spellings. Do not initiate new engine or game-redesign Stage B.
+
+
+## 2026-10-16 — R65/R66 retained control/count scope accepted; R67 tail operands next
+
+Original-static cross-window branch/flag/count-pointer geometry and conditional count-consumer syntax are accepted within their explicit metadata scope. R65 branch/main38819955397/38820017473 and R66 branch/main38820370818/38820484845 SUCCESS. Permanent reports and exact34-source census remain in Git, with original binaries and save payload absent. Eleven native-tail operands remain missing; LEAVE/RET already retained.
+
+Highest NEXT R67: narrowly obtain11 missing0x4c731..0x4c75e operands and required CFG edges after fresh source requalification; preserve all ABI/frame/memory/count/persistence boundaries. All Stage A families PARTIAL/OPEN; Stage B remains gated.

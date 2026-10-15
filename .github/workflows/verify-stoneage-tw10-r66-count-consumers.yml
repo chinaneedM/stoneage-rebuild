@@ -6,8 +6,12 @@ on:
     paths:
       - .github/workflows/verify-stoneage-tw10-r66-count-consumers.yml
       - tools/stoneage_tw10_savedata_r66_count_consumers.py
+      - tools/stoneage_tw10_savedata_r62_source_coverage.py
+      - tools/stoneage_tw10_savedata_r64_flag_count.py
+      - tools/stoneage_tw10_savedata_r63_derived_guard.py
       - tests/test_stoneage_tw10_savedata_r66_count_consumers.py
       - research/recovered/STONEAGE-TW10-SAVEDATA-R66-*.json
+      - research/recovered/STONEAGE-TW10-SAVEDATA-R65-R66-ACCEPTANCE-R1.json
       - research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R*.json
       - research/recovered/STONEAGE-TW10-SAVEDATA-POSTCALL-R63-DERIVED.json
       - research/recovered/STONEAGE-TW10-SAVEDATA-FLAGS-R64-DERIVED.json

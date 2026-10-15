@@ -1,0 +1,52 @@
+{
+  "schema": "tw10-r65-r66-retained-static-acceptance-r1",
+  "date": "2026-10-16",
+  "phase": "Stage A bounded static evidence and source-gap census",
+  "startup_main_head": "58ae836c51d8c508acd9f2e2370f3f2931a462f5",
+  "startup_main_tree": "b1b0dcb93e2bf4ae4ea8a3382b9b9d812ea2df74",
+  "startup_continuity_blob": "61a8de0bec204ee8a11885427f74ca062b37eb7d",
+  "startup_continuity_bytes": 1745597,
+  "startup_continuity_sha256": "204f04f7d0725f1171ab3654067ab3ff335f78a2b6c6829a13f3c6195c7d3d85",
+  "r65": {
+    "head": "209b4a9717d83a4fc2773b9022a9a1cf53bc4bdc",
+    "tree": "98a5d83ab35d0d2b6c890ec98c7696da7d4e0932",
+    "branch_action": 38819955397,
+    "branch_job": 116713843586,
+    "main_action": 38820017473,
+    "tests": 45,
+    "artifact": 12011633995,
+    "artifact_zip_sha256": "a6182ce67f34098cec6d8946cff6973220cc7f3af98265b0c5d83a9582892e49"
+  },
+  "r66": {
+    "head": "24f957537f9f7665e26e7b420657606a5c7f63ad",
+    "tree": "e2c0bea56004eb98d3a3909cd70aa1161aa10202",
+    "branch_action": 38820370818,
+    "branch_job": 116715214955,
+    "main_action": 38820484845,
+    "tests": 68,
+    "artifact": 12012608193,
+    "artifact_zip_sha256": "d885bd9e1bda66513c4e6f8fd95a0907c37ffe4cf9114e515b1c49b950bd0ad0"
+  },
+  "canonical_derived_reports": [
+    {
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-R65-CROSS-WINDOW-DERIVED.json",
+      "bytes": 5173,
+      "sha256": "05bd87eb333184badc4b97b072a2548ff2c00b1a5493709950f866f46ad35c37",
+      "git_blob": "aaddc7276796fa034bb565e9710e063eedc25c40"
+    },
+    {
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-R66-COUNT-CONSUMERS-DERIVED.json",
+      "bytes": 33147,
+      "sha256": "399c5543731aa51136090cd3a58048f947e2431fac05c8861c07d57d15236113",
+      "git_blob": "5bb6e37294c7ce4bf8af26afd2d2bb3af1842c53"
+    }
+  ],
+  "all_named_actions": "completed_success",
+  "original_media_acquired_this_round": false,
+  "original_code_or_native_io_executed": false,
+  "original_save_payload_evaluated_or_published": false,
+  "actual_native_result_count_frame_alias_or_persistence_proven": false,
+  "stage_a_families": "PARTIAL_OPEN",
+  "stage_b_started": false,
+  "highest_next": "R67: refresh custody/corpus, then narrowly recover 11 missing native-tail decoded operand rows 0x4c731..0x4c75e plus needed CFG edges; reuse existing LEAVE/RET and count/error metadata."
+}

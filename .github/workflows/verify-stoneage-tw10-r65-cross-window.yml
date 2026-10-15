@@ -6,6 +6,8 @@ on:
     paths:
       - .github/workflows/verify-stoneage-tw10-r65-cross-window.yml
       - tools/stoneage_tw10_savedata_r65_*.py
+      - tools/stoneage_tw10_savedata_r64_flag_count.py
+      - tools/stoneage_tw10_savedata_r63_derived_guard.py
       - tests/test_stoneage_tw10_savedata_r65_*.py
       - research/recovered/STONEAGE-TW10-SAVEDATA-R65-*.json
       - research/recovered/STONEAGE-TW10-SAVEDATA-POSTCALL-R63-DERIVED.json

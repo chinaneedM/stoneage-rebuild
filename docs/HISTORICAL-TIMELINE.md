@@ -3216,3 +3216,10 @@ OPEN: path predicate feasibility, call-return/alias/register/ABI premises, actua
 **Custody:** R63 immutable original-derived report 31,136 bytes/SHA256 91b650db700cf892a7d8c8b2d36a9d49dbeca139be315856d31d59533056c1bd and R64 derived result 7,013 bytes/SHA256 5253b2ebec4a9bfbdda24764ce8af5e0e67fabf9ba8daf7ad0ce22c7b172e43f are permanently preserved in separate provenance-bearing Git blobs. Original source Action38754938642, R64 Action38758669705, independent branch Action38759123587, main Actions38759247737/38759247758 and permanent-derived publication Action38759808251 all SUCCESS.
 
 **OPEN:** Native BOOL return, actual byte-count pointer/contents, actual original caller frame/register preservation, Win32 dispatch, branch feasibility, close/flush, disk persistence, savedata record schema/version/migration/checksum and original server authority. This is Stage A recovery; no Stage B design conclusion.
+
+
+## 2026-10-16 — TW1.0 R65/R66 original-static count/control evidence
+
+FACT (bounded original-static metadata): R65 joins original JE0x4c694 target VA0x44c6d9 to RVA0x4c6d9 already preserved in the second R63 window; second JE target0x4c706 and three operand-derived cross-window rejoins agree with the retained instructions. TEST EAX,EAX supplies the sole retained local direct flag predecessor. Count-pointer candidate LEAs and postcall reads share EBP-12 spelling but do not establish temporal runtime address or memory identity. R66 traces conditional frame-local count accumulation/assignment and a signed comparison; the second rejoin bypasses nearby zero-EDI syntax. No actual count, OS result or save-field meaning follows.
+
+R66's exact34-report census shows11 tail positions without same-object decoded mnemonic/operand metadata, while LEAVE0x4c75f and RET0x4c760 are already retained in R44. Permanent derived reports, source hashes and accepted branch/main Actions are recorded in STONEAGE-TW10-SAVEDATA-R65-R66-ACCEPTANCE-R1.json. OPEN: native execution, actual BOOL/count/address, preservation, realized paths, persistence, schema/checksum/migration and server authority. Stage A remains PARTIAL/OPEN; no Stage B design change.

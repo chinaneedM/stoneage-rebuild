@@ -1,0 +1,706 @@
+{
+  "schema": "stoneage-continuity-nonancestor-branch-path-inventory-r1",
+  "date": "2026-10-16",
+  "compared_main": "24f957537f9f7665e26e7b420657606a5c7f63ad",
+  "remote_branch_inventory_count": 258,
+  "ancestor_count": 241,
+  "nonancestor_count": 17,
+  "scope": "Commit ancestry and branch-side path/blob comparison; not a proof of semantic equivalence of changed files. No branch is deleted or merged by this inventory.",
+  "branches": [
+    {
+      "branch": "agent/barrier-reference-r1-20261002",
+      "head": "73b18a76936cabd0ae5fc116e20640fa2a2b8864",
+      "latest": "docs: record Barrier pressure rerank PASS",
+      "branch_side_files": [
+        {
+          "path": ".github/workflows/probe-stoneage-25-barrier.yml",
+          "exists_in_main": true,
+          "exact_blob_match": true
+        },
+        {
+          "path": ".github/workflows/validate-stoneage-barrier-runtime.yml",
+          "exists_in_main": true,
+          "exact_blob_match": false
+        },
+        {
+          "path": "docs/CURRENT-STATE.md",
+          "exists_in_main": true,
+          "exact_blob_match": false
+        },
+        {
+          "path": "research/recovered/STONEAGE-25-BARRIER-PROBE-R1.txt",
+          "exists_in_main": true,
+          "exact_blob_match": true
+        },
+        {
+          "path": "research/recovered/STONEAGE-25-PETSKILL-PRESSURE-R1.txt",
+          "exists_in_main": true,
+          "exact_blob_match": false
+        },
+        {
+          "path": "research/recovered/STONEAGE-BARRIER-SOURCE-AUDIT-R1.txt",
+          "exists_in_main": true,
+          "exact_blob_match": true
+        },
+        {
+          "path": "tests/test_stoneage_barrier_model.py",
+          "exists_in_main": true,
+          "exact_blob_match": true
+        },
+        {
+          "path": "tests/test_stoneage_barrier_runtime.py",
+          "exists_in_main": true,
+          "exact_blob_match": true
+        },
+        {
+          "path": "tests/test_stoneage_battle_status_model.py",
+          "exists_in_main": true,
+          "exact_blob_match": true
+        },
+        {
+          "path": "tests/test_stoneage_local_runtime_session_coordinator.py",
+          "exists_in_main": true,
+          "exact_blob_match": false
+        },
+        {
+          "path": "tests/test_stoneage_recovered25_barrier_probe.py",
+          "exists_in_main": true,
+          "exact_blob_match": true
+        },
+        {
+          "path": "tests/test_stoneage_recovered25_petskill_pressure_probe.py",
+          "exists_in_main": true,
+          "exact_blob_match": false
+        },
+        {
+          "path": "tools/stoneage_barrier_model.py",
+          "exists_in_main": true,
+          "exact_blob_match": true
+        },
+        {
+          "path": "tools/stoneage_barrier_runtime_state.py",
+          "exists_in_main": true,
+          "exact_blob_match": true
+        },
+        {
+          "path": "tools/stoneage_barrier_source_audit.py",
+          "exists_in_main": true,
+          "exact_blob_match": true
+        },
+        {
+          "path": "tools/stoneage_battle_round_model.py",
+          "exists_in_main": true,
+          "exact_blob_match": false
+        },
+        {
+          "path": "tools/stoneage_battle_state_model.py",
+          "exists_in_main": true,
+          "exact_blob_match": false
+        },
+        {
+          "path": "tools/stoneage_battle_status_model.py",
+          "exists_in_main": true,
+          "exact_blob_match": true
+        },
+        {
+          "path": "tools/stoneage_enemy_ai_barrier_bridge.py",
+          "exists_in_main": true,
+          "exact_blob_match": true
+        },
+        {
+          "path": "tools/stoneage_local_runtime_session_coordinator.py",
+          "exists_in_main": true,
+          "exact_blob_match": false
+        },
+        {
+          "path": "tools/stoneage_nocast_runtime_state.py",
+          "exists_in_main": true,
+          "exact_blob_match": false
+        },
+        {
+          "path": "tools/stoneage_recovered25_barrier_probe.py",
+          "exists_in_main": true,
+          "exact_blob_match": true
+        },
+        {
+          "path": "tools/stoneage_recovered25_petskill_pressure_probe.py",
+          "exists_in_main": true,
+          "exact_blob_match": false
+        }
+      ]
+    },
+    {
+      "branch": "agent/becomefox-preaudit-r1-20261006",
+      "head": "93637f8336a7a0ce317a40eb13c1f75e518971df",
+      "latest": "research: prepare independent BecomeFox source audit [skip ci]",
+      "branch_side_files": [
+        {
+          "path": "docs/CURRENT-STATE.md",
+          "exists_in_main": true,
+          "exact_blob_match": false
+        },
+        {
+          "path": "docs/HISTORICAL-TIMELINE.md",
+          "exists_in_main": true,
+          "exact_blob_match": false
+        },
+        {
+          "path": "docs/SOURCE-REGISTRY.md",
+          "exists_in_main": true,
+          "exact_blob_match": false
+        },
+        {
+          "path": "research/recovered/STONEAGE-BECOMEFOX-PREAUDIT-R1.txt",
+          "exists_in_main": true,
+          "exact_blob_match": true
+        },
+        {
+          "path": "specs/STONEAGE-BECOMEFOX-PREAUDIT-R1.md",
+          "exists_in_main": false,
+          "exact_blob_match": false
+        },
+        {
+          "path": "tools/stoneage_becomefox_preaudit.py",
+          "exists_in_main": true,
+          "exact_blob_match": true
+        }
+      ]
+    },
+    {
+      "branch": "agent/guardbreak2-reference-r1-20261002",
+      "head": "9a6ef2e14a3730042b11b8d1cfe381ef5ee4b2bc",
+      "latest": "research: rank recovered pet-skill callback pressure",
+      "branch_side_files": [
+        {
+          "path": ".github/workflows/probe-stoneage-25-guardbreak2.yml",
+          "exists_in_main": true,
+          "exact_blob_match": true
+        },
+        {
+          "path": ".github/workflows/probe-stoneage-25-petskill-pressure.yml",
+          "exists_in_main": true,
+          "exact_blob_match": false
+        },
+        {
+          "path": ".github/workflows/validate-stoneage-guardbreak2-runtime.yml",
+          "exists_in_main": true,
+          "exact_blob_match": false
+        },
+        {
+          "path": "docs/CURRENT-STATE.md",
+          "exists_in_main": true,
+          "exact_blob_match": false
+        },
+        {
+          "path": "research/recovered/STONEAGE-25-GUARDBREAK2-PROBE-R1.txt",
+          "exists_in_main": true,
+          "exact_blob_match": true
+        },
+        {
+          "path": "research/recovered/STONEAGE-25-PETSKILL-PRESSURE-R1.txt",
+          "exists_in_main": true,
+          "exact_blob_match": false
+        },
+        {
+          "path": "research/recovered/STONEAGE-GUARDBREAK2-SOURCE-AUDIT-R1.txt",
+          "exists_in_main": true,
+          "exact_blob_match": true
+        },
+        {
+          "path": "tests/test_stoneage_guard_break2_model.py",
+          "exists_in_main": true,
+          "exact_blob_match": true
+        },
+        {
+          "path": "tests/test_stoneage_guard_break2_runtime.py",
+          "exists_in_main": true,
+          "exact_blob_match": true
+        },
+        {
+          "path": "tests/test_stoneage_local_runtime_session_coordinator.py",
+          "exists_in_main": true,
+          "exact_blob_match": false
+        },
+        {
+          "path": "tests/test_stoneage_recovered25_guard_break2_probe.py",
+          "exists_in_main": true,
+          "exact_blob_match": true
+        },
+        {
+          "path": "tests/test_stoneage_recovered25_petskill_pressure_probe.py",
+          "exists_in_main": true,
+          "exact_blob_match": false
+        },
+        {
+          "path": "tools/stoneage_battle_round_model.py",
+          "exists_in_main": true,
+          "exact_blob_match": false
+        },
+        {
+          "path": "tools/stoneage_battle_state_model.py",
+          "exists_in_main": true,
+          "exact_blob_match": false
+        },
+        {
+          "path": "tools/stoneage_enemy_ai_guard_break2_bridge.py",
+          "exists_in_main": true,
+          "exact_blob_match": true
+        },
+        {
+          "path": "tools/stoneage_guard_break2_model.py",
+          "exists_in_main": true,
+          "exact_blob_match": true
+        },
+        {
+          "path": "tools/stoneage_guard_break2_source_audit.py",
+          "exists_in_main": true,
+          "exact_blob_match": true
+        },
+        {
+          "path": "tools/stoneage_local_runtime_session_coordinator.py",
+          "exists_in_main": true,
+          "exact_blob_match": false
+        },
+        {
+          "path": "tools/stoneage_recovered25_guard_break2_probe.py",
+          "exists_in_main": true,
+          "exact_blob_match": true
+        },
+        {
+          "path": "tools/stoneage_recovered25_petskill_pressure_probe.py",
+          "exists_in_main": true,
+          "exact_blob_match": false
+        }
+      ]
+    },
+    {
+      "branch": "agent/lighttakeed-acceptance-r1-20261005",
+      "head": "a510c862dc13cd2fb869408efbf58fe88f4d7608",
+      "latest": "test: verify Lighttakeed transferred charges across rounds",
+      "branch_side_files": [
+        {
+          "path": ".github/workflows/validate-stoneage-lighttakeed-runtime.yml",
+          "exists_in_main": true,
+          "exact_blob_match": false
+        },
+        {
+          "path": "tests/test_stoneage_lighttakeed_persistent_runtime.py",
+          "exists_in_main": true,
+          "exact_blob_match": true
+        }
+      ]
+    },
+    {
+      "branch": "agent/party-pet-original-finish-closure-r2-20261010",
+      "head": "555a5dfbb8d9676905a89bcdd9b3c737817f5f73",
+      "latest": "research: checkpoint unaccepted original Finish status-transport dependency [skip ci]",
+      "branch_side_files": [
+        {
+          "path": "research/recovered/STONEAGE-PARTY-PET-ORIGINAL-FINISH-EXPLORATORY-R2.json",
+          "exists_in_main": false,
+          "exact_blob_match": false
+        },
+        {
+          "path": "tools/stoneage_party_pet_original_finish_dispatch_audit.py",
+          "exists_in_main": true,
+          "exact_blob_match": false
+        }
+      ]
+    },
+    {
+      "branch": "agent/party-pet-original-finish-dispatch-r1-20261010",
+      "head": "4db261a558251163370e9df15ad2304057d1da8a",
+      "latest": "test: include original BATTLE_GetExp body fixture in Finish injection regression",
+      "branch_side_files": [
+        {
+          "path": ".github/workflows/validate-stoneage-party-pet-original-finish-dispatch.yml",
+          "exists_in_main": true,
+          "exact_blob_match": false
+        },
+        {
+          "path": "specs/STONEAGE-PARTY-PET-ORIGINAL-FINISH-DISPATCH-R1.md",
+          "exists_in_main": false,
+          "exact_blob_match": false
+        },
+        {
+          "path": "tests/test_stoneage_party_pet_original_finish_dispatch.py",
+          "exists_in_main": true,
+          "exact_blob_match": false
+        },
+        {
+          "path": "tools/stoneage_party_pet_original_finish_dispatch_audit.py",
+          "exists_in_main": true,
+          "exact_blob_match": false
+        }
+      ]
+    },
+    {
+      "branch": "agent/tw10-r58-independent-return-audit-20261015",
+      "head": "6238a083f5e38a4221dbae03fcc3306c99c8b935",
+      "latest": "Extend R58 independent CI with pinned conditional return spelling and negative controls",
+      "branch_side_files": [
+        {
+          "path": ".github/workflows/verify-stoneage-tw10-r58-derived.yml",
+          "exists_in_main": true,
+          "exact_blob_match": false
+        },
+        {
+          "path": "tests/test_stoneage_tw10_savedata_r58_syntax_contract.py",
+          "exists_in_main": true,
+          "exact_blob_match": true
+        },
+        {
+          "path": "tests/test_stoneage_tw10_savedata_return_r58_audit.py",
+          "exists_in_main": true,
+          "exact_blob_match": true
+        },
+        {
+          "path": "tools/stoneage_tw10_savedata_r58_syntax_contract.py",
+          "exists_in_main": true,
+          "exact_blob_match": true
+        },
+        {
+          "path": "tools/stoneage_tw10_savedata_return_r58_audit.py",
+          "exists_in_main": true,
+          "exact_blob_match": true
+        }
+      ]
+    },
+    {
+      "branch": "agent/tw10-r58-pinned-return-syntax-20261015",
+      "head": "0a577aa79ea3a281a7015db37f4aa0d9335baceb",
+      "latest": "Pin R58 conditional return bitpatterns and add verified native-effect boundaries",
+      "branch_side_files": [
+        {
+          "path": ".github/workflows/verify-stoneage-tw10-r58-return-syntax.yml",
+          "exists_in_main": false,
+          "exact_blob_match": false
+        },
+        {
+          "path": "docs/specs/STONEAGE-TW10-R58-CONDITIONAL-RETURN-ADDENDUM.md",
+          "exists_in_main": false,
+          "exact_blob_match": false
+        },
+        {
+          "path": "tests/test_stoneage_tw10_savedata_r58_syntax_contract.py",
+          "exists_in_main": true,
+          "exact_blob_match": true
+        },
+        {
+          "path": "tools/stoneage_tw10_savedata_r58_syntax_contract.py",
+          "exists_in_main": true,
+          "exact_blob_match": true
+        }
+      ]
+    },
+    {
+      "branch": "agent/tw10-r58-secondary-gates-20261015",
+      "head": "13e78211e7349d77d95bc1cc826837a908411b22",
+      "latest": "Integrate independent R58 return-algebra and pinned bitpattern adversarial gates",
+      "branch_side_files": [
+        {
+          "path": ".github/workflows/verify-stoneage-tw10-r58-secondary.yml",
+          "exists_in_main": false,
+          "exact_blob_match": false
+        },
+        {
+          "path": "docs/specs/STONEAGE-TW10-R58-INDEPENDENT-GATES-R1.md",
+          "exists_in_main": false,
+          "exact_blob_match": false
+        },
+        {
+          "path": "docs/specs/STONEAGE-TW10-SHARED-CLOSE-HELPERS-R58.md",
+          "exists_in_main": true,
+          "exact_blob_match": false
+        },
+        {
+          "path": "tests/test_stoneage_tw10_savedata_r58_syntax_contract.py",
+          "exists_in_main": true,
+          "exact_blob_match": true
+        },
+        {
+          "path": "tests/test_stoneage_tw10_savedata_return_r58_audit.py",
+          "exists_in_main": true,
+          "exact_blob_match": true
+        },
+        {
+          "path": "tools/stoneage_tw10_savedata_r58_syntax_contract.py",
+          "exists_in_main": true,
+          "exact_blob_match": true
+        },
+        {
+          "path": "tools/stoneage_tw10_savedata_return_r58_audit.py",
+          "exists_in_main": true,
+          "exact_blob_match": true
+        }
+      ]
+    },
+    {
+      "branch": "agent/tw10-r59-acceptance-continuity-20261015",
+      "head": "9e366ed736f3d759780fa992d3b8b61e88023e59",
+      "latest": "Merge R59 cross-report acceptance with independent native and close-path witness suites",
+      "branch_side_files": [
+        {
+          "path": ".github/workflows/verify-stoneage-tw10-r59-metadata.yml",
+          "exists_in_main": true,
+          "exact_blob_match": false
+        },
+        {
+          "path": "docs/CURRENT-STATE.md",
+          "exists_in_main": true,
+          "exact_blob_match": false
+        },
+        {
+          "path": "docs/SOURCE-REGISTRY.md",
+          "exists_in_main": true,
+          "exact_blob_match": false
+        },
+        {
+          "path": "docs/specs/STONEAGE-TW10-NATIVE-CALL-BRIDGE-R59.md",
+          "exists_in_main": true,
+          "exact_blob_match": false
+        },
+        {
+          "path": "research/recovered/STONEAGE-TW10-SAVEDATA-BRIDGE-R59-ACCEPTANCE-R1.json",
+          "exists_in_main": true,
+          "exact_blob_match": true
+        },
+        {
+          "path": "tools/stoneage_tw10_savedata_bridge_r59.py",
+          "exists_in_main": true,
+          "exact_blob_match": false
+        }
+      ]
+    },
+    {
+      "branch": "agent/tw10-r59-cfg-bypass-witness-20261015",
+      "head": "158f9a0cdcc014790989c51e53021473d693d7c8",
+      "latest": "Add original-static R59 write/close call-bypass witnesses and adversarial graph gates",
+      "branch_side_files": [
+        {
+          "path": ".github/workflows/verify-stoneage-tw10-r59-cfg-bypass.yml",
+          "exists_in_main": true,
+          "exact_blob_match": true
+        },
+        {
+          "path": "docs/specs/STONEAGE-TW10-R59-CFG-BYPASS-WITNESS.md",
+          "exists_in_main": true,
+          "exact_blob_match": true
+        },
+        {
+          "path": "tests/test_stoneage_tw10_savedata_r59_cfg_witness.py",
+          "exists_in_main": true,
+          "exact_blob_match": true
+        },
+        {
+          "path": "tools/stoneage_tw10_savedata_r59_cfg_witness.py",
+          "exists_in_main": true,
+          "exact_blob_match": true
+        }
+      ]
+    },
+    {
+      "branch": "agent/tw10-r59-existing-metadata-bridge-20261015",
+      "head": "3419ccb2860d7100fd479bf6354ccc58a4753c65",
+      "latest": "Add inherited strict original R28/R58 source guards to R59 linkage acceptance",
+      "branch_side_files": [
+        {
+          "path": ".github/workflows/verify-stoneage-tw10-r59-metadata.yml",
+          "exists_in_main": true,
+          "exact_blob_match": false
+        },
+        {
+          "path": "docs/specs/STONEAGE-TW10-NATIVE-CALL-BRIDGE-R59.md",
+          "exists_in_main": true,
+          "exact_blob_match": true
+        },
+        {
+          "path": "tests/test_stoneage_tw10_savedata_bridge_r59.py",
+          "exists_in_main": true,
+          "exact_blob_match": true
+        },
+        {
+          "path": "tools/stoneage_tw10_savedata_bridge_r59.py",
+          "exists_in_main": true,
+          "exact_blob_match": true
+        }
+      ]
+    },
+    {
+      "branch": "agent/tw10-r59-reused-writefile-root-preflight-20261015",
+      "head": "a74b2e860cd60222f2922d8130bb069b57ed487e",
+      "latest": "Run R59 immutable existing-source bridge controls in Actions",
+      "branch_side_files": [
+        {
+          "path": ".github/workflows/verify-stoneage-tw10-r59-prior-bridge.yml",
+          "exists_in_main": true,
+          "exact_blob_match": true
+        },
+        {
+          "path": "tests/test_stoneage_tw10_savedata_r59_prior_bridge.py",
+          "exists_in_main": true,
+          "exact_blob_match": true
+        },
+        {
+          "path": "tools/stoneage_tw10_savedata_r59_prior_bridge.py",
+          "exists_in_main": true,
+          "exact_blob_match": true
+        }
+      ]
+    },
+    {
+      "branch": "agent/tw10-r59-shared-paths-20261015",
+      "head": "7553f5f861c5dbd29c511d2371f32f3f00700ac4",
+      "latest": "Fix R59 test harness edge-list canonical comparison",
+      "branch_side_files": [
+        {
+          "path": ".github/workflows/verify-stoneage-tw10-r59-shared-paths.yml",
+          "exists_in_main": true,
+          "exact_blob_match": true
+        },
+        {
+          "path": "docs/specs/STONEAGE-TW10-R59-SHARED-HELPER-ROUTES-R1.md",
+          "exists_in_main": true,
+          "exact_blob_match": true
+        },
+        {
+          "path": "tests/test_stoneage_tw10_savedata_r59_shared_paths.py",
+          "exists_in_main": true,
+          "exact_blob_match": true
+        },
+        {
+          "path": "tools/stoneage_tw10_savedata_r59_shared_paths.py",
+          "exists_in_main": true,
+          "exact_blob_match": true
+        }
+      ]
+    },
+    {
+      "branch": "agent/tw10-savedata-four-words-r3-20261012",
+      "head": "03bf436cdf403b92e1ea911f5cc82f207ed2274d",
+      "latest": "Probe Taiwan v1.0 savedata four address-word instruction alignments (bounded static R3)",
+      "branch_side_files": [
+        {
+          "path": ".github/workflows/validate-stoneage-tw10-savedata-instruction.yml",
+          "exists_in_main": true,
+          "exact_blob_match": false
+        },
+        {
+          "path": "specs/STONEAGE-TW10-SAVEDATA-FOUR-WORDS-R3.md",
+          "exists_in_main": true,
+          "exact_blob_match": false
+        },
+        {
+          "path": "tests/test_stoneage_tw10_savedata_instruction_probe.py",
+          "exists_in_main": true,
+          "exact_blob_match": false
+        },
+        {
+          "path": "tools/stoneage_tw10_savedata_instruction_probe.py",
+          "exists_in_main": true,
+          "exact_blob_match": true
+        }
+      ]
+    },
+    {
+      "branch": "agent/tw10-savedata-original-gate-20261012",
+      "head": "7c944447fb35bbd0a4c2bf086cd50b2d3e825f28",
+      "latest": "Set realistic bounded TW1.0 original archive transfer gate from measured parallel throughput",
+      "branch_side_files": [
+        {
+          "path": ".github/workflows/validate-stoneage-tw10-original-archive-gate.yml",
+          "exists_in_main": true,
+          "exact_blob_match": true
+        },
+        {
+          "path": "specs/STONEAGE-TW10-ARCHIVE-PARALLEL-RECOVERY-R2.md",
+          "exists_in_main": true,
+          "exact_blob_match": true
+        },
+        {
+          "path": "specs/STONEAGE-TW10-ORIGINAL-ARCHIVE-GATE-R1.md",
+          "exists_in_main": true,
+          "exact_blob_match": true
+        },
+        {
+          "path": "tests/test_stoneage_tw10_archive_chunk_download.py",
+          "exists_in_main": true,
+          "exact_blob_match": true
+        },
+        {
+          "path": "tests/test_stoneage_tw10_archive_parallel_download.py",
+          "exists_in_main": true,
+          "exact_blob_match": true
+        },
+        {
+          "path": "tools/stoneage_tw10_archive_chunk_download.py",
+          "exists_in_main": true,
+          "exact_blob_match": true
+        },
+        {
+          "path": "tools/stoneage_tw10_archive_parallel_download.py",
+          "exists_in_main": true,
+          "exact_blob_match": true
+        }
+      ]
+    },
+    {
+      "branch": "agent/wayi-85-official-url-six-part-metadata-r1-20261011",
+      "head": "c727823085c5adafc7a6a62ee0326b2fda225188",
+      "latest": "Trace WAYI Taiwanese 8.5 original URL to six hosted archive parts with no-promotion hash gate",
+      "branch_side_files": [
+        {
+          "path": ".github/workflows/validate-stoneage-wayi-85-archive-chain.yml",
+          "exists_in_main": true,
+          "exact_blob_match": true
+        },
+        {
+          "path": "docs/CURRENT-STATE.md",
+          "exists_in_main": true,
+          "exact_blob_match": false
+        },
+        {
+          "path": "docs/HISTORICAL-TIMELINE.md",
+          "exists_in_main": true,
+          "exact_blob_match": false
+        },
+        {
+          "path": "docs/SOURCE-REGISTRY.md",
+          "exists_in_main": true,
+          "exact_blob_match": false
+        },
+        {
+          "path": "docs/specs/STONEAGE-WAYI-85-ARCHIVE-CHAIN-R1.md",
+          "exists_in_main": true,
+          "exact_blob_match": true
+        },
+        {
+          "path": "research/recovered/STONEAGE-WAYI-85-SIXPART-METADATA-R1.json",
+          "exists_in_main": true,
+          "exact_blob_match": true
+        },
+        {
+          "path": "tests/test_stoneage_wayi_85_archive_chain.py",
+          "exists_in_main": true,
+          "exact_blob_match": true
+        },
+        {
+          "path": "tools/stoneage_wayi_85_archive_chain.py",
+          "exists_in_main": true,
+          "exact_blob_match": true
+        }
+      ]
+    }
+  ],
+  "known_dispositions": {
+    "555a5dfbb8d9676905a89bcdd9b3c737817f5f73": "Explicitly UNACCEPTED exploratory history in existing CURRENT-STATE; bounded transport trap superseded by accepted Finish R3 only. Do not promote or merge raw exploratory evidence.",
+    "4db261a558251163370e9df15ad2304057d1da8a": "Original Finish R1 branch; accepted main specs/STONEAGE-PARTY-PET-ORIGINAL-FINISH-DISPATCH-R3.md and R3 acceptance receipt supersede the early dispatch milestone.",
+    "6238a083f5e38a4221dbae03fcc3306c99c8b935": "All four R58 pure audit/contract tools and tests are byte-identical in main; consolidated main derived workflow explicitly runs both suites.",
+    "0a577aa79ea3a281a7015db37f4aa0d9335baceb": "R58 syntax tool/tests byte-identical in main; old standalone workflow/addendum remain retrievable in this immutable branch commit; canonical main consolidated workflow includes these gates.",
+    "13e78211e7349d77d95bc1cc826837a908411b22": "All four R58 tool/test files byte-identical in main; old standalone workflow/docs remain in branch history; existing main R58 integration receipt records consolidation at e33230490444e6363d7ae97f7dc42eada4b62a16.",
+    "93637f8336a7a0ce317a40eb13c1f75e518971df": "Source preaudit tool/report byte-identical in main; old preparatory spec retained by branch commit. Subsequent BecomeFox acceptance remains separately versioned."
+  },
+  "ancestry_difference_implies_lost_work": false,
+  "all_changed_files_semantically_equivalent_proven": false,
+  "remaining_policy": "Use immutable branch references if a later research question needs the early record. Never bulk-merge old branches or replace newer continuity to make ancestry appear complete."
+}
