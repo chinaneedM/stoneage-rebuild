@@ -1,0 +1,39 @@
+name: Verify TW1.0 R62 retained postcall report coverage
+on:
+  workflow_dispatch:
+  push:
+    branches: [agent/tw10-r62-postcall-report-coverage-20261015, main]
+    paths:
+      - .github/workflows/verify-stoneage-tw10-r62-report-coverage.yml
+      - tools/stoneage_tw10_savedata_r62_source_coverage.py
+      - tests/test_stoneage_tw10_savedata_r62_source_coverage.py
+      - research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R*.json
+permissions:
+  contents: read
+jobs:
+  report-coverage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Original-derived report source census and adversarial coverage classifier
+        run: |
+          set -euo pipefail
+          python -m unittest -v tests.test_stoneage_tw10_savedata_r62_source_coverage
+          python -m tools.stoneage_tw10_savedata_r62_source_coverage > /tmp/tw10-r62-postcall-coverage.json
+          python -m tools.stoneage_tw10_savedata_r62_source_coverage --verify /tmp/tw10-r62-postcall-coverage.json
+          python - <<'PY'
+          import json
+          d=json.load(open('/tmp/tw10-r62-postcall-coverage.json'))
+          assert d['report_count']==32
+          assert len(d['postcall_sites_rva'])==2
+          assert not d['actual_native_return_count_or_callee_abi_proven']
+          assert not d['actual_savedata_write_flush_close_or_persistence_proven']
+          print('R62_REPORT_COVERAGE=PASS; ORIGINAL_NATIVE_PERSISTENCE=OPEN')
+          PY
+      - name: Publish only derived coverage JSON
+        uses: actions/upload-artifact@v4
+        with:
+          name: tw10-r62-original-derived-source-coverage
+          path: /tmp/tw10-r62-postcall-coverage.json
+          retention-days: 21
