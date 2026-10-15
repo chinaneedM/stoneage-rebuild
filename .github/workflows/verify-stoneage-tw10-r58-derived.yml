@@ -1,0 +1,61 @@
+name: Independently verify TW1.0 R58 rooted helper returns and source custody
+on:
+  workflow_dispatch:
+  push:
+    branches: [agent/tw10-savedata-r58-shared-close-helpers-20261015, main]
+    paths:
+      - .github/workflows/verify-stoneage-tw10-r58-derived.yml
+      - tools/stoneage_tw10_savedata_return_r58_guard.py
+      - tests/test_stoneage_tw10_savedata_return_r58_guard.py
+      - research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R58-ORIGINAL.json
+      - docs/specs/STONEAGE-TW10-SHARED-CLOSE-HELPERS-R58.md
+permissions:
+  contents: read
+  actions: read
+jobs:
+  independent:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Authenticate exact original R58 source run and immutable derived-only artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          identity="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/38743841197" --jq '[.status,.conclusion,.head_sha,.head_branch] | join("|")')"
+          test "$identity" = 'completed|success|c19e32987bd1bdb847e2a4306983dfe4ffb347d5|agent/tw10-savedata-r58-shared-close-helpers-20261015'
+          artifact="$(gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/11976911506" --jq '[.workflow_run.id,.name,.digest,.expired] | join("|")')"
+          test "$artifact" = '38743841197|tw10-r58-original-shared-close-helpers-derived|sha256:37ff56646a708744f9585eb7719fa313a6a053bcea9a9f6c38ac4bf2044601d2|false'
+          mkdir -p /tmp/tw10-r58
+          gh run download 38743841197 --repo "$GITHUB_REPOSITORY" --name tw10-r58-original-shared-close-helpers-derived --dir /tmp/tw10-r58
+          test "$(find /tmp/tw10-r58 -type f | wc -l)" -eq 1
+          test ! -L /tmp/tw10-r58/stoneage-r58-derived.json
+          test "$(stat -c %s /tmp/tw10-r58/stoneage-r58-derived.json)" -eq 124989
+          echo '04fb0b586f1fcf87f647b1bc1276bde2505822e195646c4c9058c03c7f558fe8  /tmp/tw10-r58/stoneage-r58-derived.json' | sha256sum -c -
+          if test -e research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R58-ORIGINAL.json; then
+            cmp /tmp/tw10-r58/stoneage-r58-derived.json research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R58-ORIGINAL.json
+          fi
+      - name: Independently replay all rooted helper returns
+        run: |
+          set -euo pipefail
+          pip install --quiet capstone pefile
+          python -m unittest -v tests.test_stoneage_tw10_savedata_native_io_r58 tests.test_stoneage_tw10_savedata_return_r58_guard tests.test_stoneage_tw10_savedata_return_r57_contract tests.test_stoneage_tw10_savedata_return_r57_guard tests.test_stoneage_tw10_savedata_native_io_r57 tests.test_stoneage_tw10_savedata_native_io_r56
+          python -m tools.stoneage_tw10_savedata_native_io_r58_guard --report /tmp/tw10-r58/stoneage-r58-derived.json
+          python -m tools.stoneage_tw10_savedata_return_r58_guard --report /tmp/tw10-r58/stoneage-r58-derived.json
+      - name: Print bounded, verified derived-only metadata for canonical GitHub publication
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib
+          from pathlib import Path
+          raw=Path('/tmp/tw10-r58/stoneage-r58-derived.json').read_bytes()
+          assert len(raw)==124989
+          assert hashlib.sha256(raw).hexdigest()=='04fb0b586f1fcf87f647b1bc1276bde2505822e195646c4c9058c03c7f558fe8'
+          text=raw.decode('utf-8')
+          assert text.endswith('\n') and '\n' not in text[:-1]
+          for pos in range(0,len(text),2000):
+              print('R58_CANONICAL_CHUNK:' + str(pos//2000) + ':' + text[pos:pos+2000])
+          print('R58_CANONICAL_TOTAL_CHUNKS:' + str((len(text)+1999)//2000))
+          print('R58_CANONICAL_SOURCE_SHA256:' + hashlib.sha256(raw).hexdigest())
+          PY
