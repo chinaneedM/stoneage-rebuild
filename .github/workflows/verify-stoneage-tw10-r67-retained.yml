@@ -1,0 +1,56 @@
+name: Independently accept TW1.0 R67 original-tail artifact and permanent static report
+on:
+  workflow_dispatch:
+  push:
+    branches: [agent/tw10-r67-independent-20261016, main]
+    paths:
+      - .github/workflows/verify-stoneage-tw10-r67-retained.yml
+      - tools/stoneage_tw10_savedata_r67_*.py
+      - tests/test_stoneage_tw10_savedata_r67_*.py
+      - research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-TAIL-R67-ORIGINAL.json
+      - research/recovered/STONEAGE-TW10-SAVEDATA-R67-*.json
+permissions:
+  contents: read
+  actions: read
+jobs:
+  acceptance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Requalify immutable source run/job and artifact metadata
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/r67-custody
+          python - <<'PY' > /tmp/r67-custody/ids
+          import json
+          r=json.load(open('research/recovered/STONEAGE-TW10-SAVEDATA-R67-SOURCE-CUSTODY.json'))
+          assert type(r['source_run_id']) is int and type(r['artifact_id']) is int
+          print(r['source_run_id'],r['artifact_id'])
+          PY
+          read -r run_id artifact_id < /tmp/r67-custody/ids
+          gh api "repos/$GITHUB_REPOSITORY/actions/runs/$run_id" > /tmp/r67-custody/run.json
+          gh api "repos/$GITHUB_REPOSITORY/actions/runs/$run_id/jobs" > /tmp/r67-custody/jobs.json
+          gh api "repos/$GITHUB_REPOSITORY/actions/artifacts/$artifact_id" > /tmp/r67-custody/artifact.json
+          gh run download "$run_id" --repo "$GITHUB_REPOSITORY" --name tw10-r67-original-static-tail-derived-only --dir /tmp/r67-custody/raw
+          python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          p=Path('/tmp/r67-custody');r=json.load(open('research/recovered/STONEAGE-TW10-SAVEDATA-R67-SOURCE-CUSTODY.json'))
+          run=json.loads((p/'run.json').read_text());assert (run['status'],run['conclusion'],run['head_sha'],run['head_branch'])==('completed','success',r['source_head'],r['source_branch'])
+          jobs=json.loads((p/'jobs.json').read_text())['jobs'];job=[j for j in jobs if j['id']==r['source_job_id']];assert len(job)==1 and job[0]['name']=='original-static' and job[0]['conclusion']=='success'
+          artifact=json.loads((p/'artifact.json').read_text());assert artifact['workflow_run']['id']==r['source_run_id'] and artifact['digest']=='sha256:'+r['artifact_zip_sha256'] and not artifact['expired']
+          raw=(p/'raw/tw10-r67-static.json').read_bytes();assert len(list((p/'raw').iterdir()))==1
+          assert len(raw)==r['raw_bytes'] and hashlib.sha256(raw).hexdigest()==r['raw_sha256']
+          assert hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest()==r['canonical_git_blob']
+          assert raw==Path('research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-TAIL-R67-ORIGINAL.json').read_bytes()
+          assert r['original_proprietary_bytes_archived'] is False and r['actual_native_persistence_proven'] is False
+          print('R67_IMMUTABLE_SOURCE_ARTIFACT_AND_CANONICAL_BYTES=PASS')
+          PY
+      - name: Independently verify exact fixed-tail neighborhood and adverse mutations
+        run: |
+          set -euo pipefail
+          python -m unittest -v tests.test_stoneage_tw10_savedata_r67_tail_static tests.test_stoneage_tw10_savedata_r66_count_consumers tests.test_stoneage_tw10_savedata_r65_cross_window
+          python -m tools.stoneage_tw10_savedata_r67_guard --report research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-TAIL-R67-ORIGINAL.json
