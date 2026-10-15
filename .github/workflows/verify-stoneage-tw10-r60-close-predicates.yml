@@ -20,6 +20,7 @@ jobs:
       - name: Independent source guards and adversarial R60 controls
         run: |
           set -euo pipefail
+          pip install --quiet capstone pefile
           python -m tools.stoneage_tw10_savedata_native_io_r28_guard --report research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R28-ORIGINAL.json
           python -m tools.stoneage_tw10_savedata_native_io_r58_guard --report research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R58-ORIGINAL.json
           python -m unittest -v tests.test_stoneage_tw10_savedata_r60_close_predicates tests.test_stoneage_tw10_savedata_r59_shared_paths tests.test_stoneage_tw10_savedata_r59_prior_bridge
