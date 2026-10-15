@@ -35,7 +35,7 @@ The application's physical count127, seed0 and capacity4000 would satisfy the no
 
 For `0 <= C < N+1`, the modeled function copies `A[:C]` directly, stores count `C` and leaves the input unchanged. It does not perform the normal transform, so the normal inverse statement does not apply. At `N=0,C=0`, this branch returns empty. At `N=0,C>=1`, the normal path reaches division by zero. The reference reports that error rather than calling it a successful empty encoding.
 
-The local accumulator byte is at conditional entry ESP-1, overlapping the high byte of the first saved ECX word. The model therefore does not require initial ECX preservation. EBX/EBP/ESI/EDI and net near-return ESP are checked. The entry+16 output-pointer slot is overwritten at0x470f5; later memory reads use its current modeled value, not a cached initial pointer.
+The local accumulator byte is at conditional entry ESP-1, overlapping the high byte of the first saved four-byte ECX value. The model therefore does not require initial ECX preservation. EBX/EBP/ESI/EDI and net near-return ESP are checked. The entry+16 output-pointer slot is overwritten at0x470f5; later memory reads use its current modeled value, not a cached initial pointer.
 
 ## Architecture and verification
 
