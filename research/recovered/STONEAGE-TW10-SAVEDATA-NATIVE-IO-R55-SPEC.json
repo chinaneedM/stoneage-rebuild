@@ -1,0 +1,4834 @@
+{
+  "actual_abi_frame_rep_or_alias_validity_proven": false,
+  "actual_native_write_count_or_persistence_proven": false,
+  "actual_original_bytes_or_execution_proven": false,
+  "actual_schema_checksum_migration_or_cross_version_proven": false,
+  "application_candidate": {
+    "actual_128_byte_native_write_proven": false,
+    "caller_capacity_literal": 4000,
+    "caller_count_literal": 127,
+    "caller_seed_literal": 0,
+    "conditional_output_length": 128
+  },
+  "complete_writer_instruction_shapes": [
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "ecx",
+        "esp"
+      ],
+      "decoder_written_registers": [
+        "esp"
+      ],
+      "input_query_registers": [
+        "ecx"
+      ],
+      "mnemonic": "push",
+      "operands": [
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "kind": "register",
+          "register": "ecx",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 290832
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "esp"
+      ],
+      "decoder_written_registers": [
+        "eax"
+      ],
+      "input_query_registers": [
+        "eax"
+      ],
+      "mnemonic": "mov",
+      "operands": [
+        {
+          "decoder_read": false,
+          "decoder_write": true,
+          "kind": "register",
+          "register": "eax",
+          "width_bytes": 4
+        },
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "geometry": {
+            "base_register": "esp",
+            "displacement_region": null,
+            "index_register": null,
+            "index_scale": 1,
+            "relative_field_offset": 12,
+            "segment_register": null,
+            "width_bytes": 4
+          },
+          "kind": "memory",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 290833
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "ebx",
+        "esp"
+      ],
+      "decoder_written_registers": [
+        "esp"
+      ],
+      "input_query_registers": [
+        "ebx"
+      ],
+      "mnemonic": "push",
+      "operands": [
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "kind": "register",
+          "register": "ebx",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 290837
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "ebp",
+        "esp"
+      ],
+      "decoder_written_registers": [
+        "esp"
+      ],
+      "input_query_registers": [
+        "ebp"
+      ],
+      "mnemonic": "push",
+      "operands": [
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "kind": "register",
+          "register": "ebp",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 290838
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "esp"
+      ],
+      "decoder_written_registers": [
+        "ebp"
+      ],
+      "input_query_registers": [
+        "ebp"
+      ],
+      "mnemonic": "mov",
+      "operands": [
+        {
+          "decoder_read": false,
+          "decoder_write": true,
+          "kind": "register",
+          "register": "ebp",
+          "width_bytes": 4
+        },
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "geometry": {
+            "base_register": "esp",
+            "displacement_region": null,
+            "index_register": null,
+            "index_scale": 1,
+            "relative_field_offset": 36,
+            "segment_register": null,
+            "width_bytes": 4
+          },
+          "kind": "memory",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 290839
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "esi",
+        "esp"
+      ],
+      "decoder_written_registers": [
+        "esp"
+      ],
+      "input_query_registers": [
+        "esi"
+      ],
+      "mnemonic": "push",
+      "operands": [
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "kind": "register",
+          "register": "esi",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 290843
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "eax"
+      ],
+      "decoder_written_registers": [
+        "esi"
+      ],
+      "input_query_registers": [
+        "eax",
+        "esi"
+      ],
+      "mnemonic": "lea",
+      "operands": [
+        {
+          "decoder_read": false,
+          "decoder_write": true,
+          "kind": "register",
+          "register": "esi",
+          "width_bytes": 4
+        },
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "geometry": {
+            "base_register": "eax",
+            "displacement_region": null,
+            "index_register": null,
+            "index_scale": 1,
+            "relative_field_offset": 1,
+            "segment_register": null,
+            "width_bytes": 4
+          },
+          "kind": "memory",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 290844
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "ebp",
+        "esi"
+      ],
+      "decoder_written_registers": [
+        "eflags"
+      ],
+      "input_query_registers": [
+        "ebp",
+        "esi"
+      ],
+      "mnemonic": "cmp",
+      "operands": [
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "kind": "register",
+          "register": "esi",
+          "width_bytes": 4
+        },
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "kind": "register",
+          "register": "ebp",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 290847
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "edi",
+        "esp"
+      ],
+      "decoder_written_registers": [
+        "esp"
+      ],
+      "input_query_registers": [
+        "edi"
+      ],
+      "mnemonic": "push",
+      "operands": [
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "kind": "register",
+          "register": "edi",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 290849
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "esp"
+      ],
+      "decoder_written_registers": [],
+      "input_query_registers": [],
+      "mnemonic": "mov",
+      "operands": [
+        {
+          "decoder_read": false,
+          "decoder_write": true,
+          "geometry": {
+            "base_register": "esp",
+            "displacement_region": null,
+            "index_register": null,
+            "index_scale": 1,
+            "relative_field_offset": 19,
+            "segment_register": null,
+            "width_bytes": 1
+          },
+          "kind": "memory",
+          "width_bytes": 1
+        },
+        {
+          "constant": 0,
+          "decoder_read": false,
+          "decoder_write": false,
+          "kind": "immediate",
+          "width_bytes": 1
+        }
+      ],
+      "site_rva": 290850
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "eflags"
+      ],
+      "decoder_written_registers": [],
+      "input_query_registers": [],
+      "mnemonic": "jle",
+      "operands": [
+        {
+          "constant": 4485202,
+          "decoder_read": false,
+          "decoder_write": false,
+          "kind": "immediate",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 290855
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "esp"
+      ],
+      "decoder_written_registers": [
+        "ecx"
+      ],
+      "input_query_registers": [
+        "ecx"
+      ],
+      "mnemonic": "mov",
+      "operands": [
+        {
+          "decoder_read": false,
+          "decoder_write": true,
+          "kind": "register",
+          "register": "ecx",
+          "width_bytes": 4
+        },
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "geometry": {
+            "base_register": "esp",
+            "displacement_region": null,
+            "index_register": null,
+            "index_scale": 1,
+            "relative_field_offset": 40,
+            "segment_register": null,
+            "width_bytes": 4
+          },
+          "kind": "memory",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 290857
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "esp"
+      ],
+      "decoder_written_registers": [
+        "ebx"
+      ],
+      "input_query_registers": [
+        "ebx"
+      ],
+      "mnemonic": "mov",
+      "operands": [
+        {
+          "decoder_read": false,
+          "decoder_write": true,
+          "kind": "register",
+          "register": "ebx",
+          "width_bytes": 4
+        },
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "geometry": {
+            "base_register": "esp",
+            "displacement_region": null,
+            "index_register": null,
+            "index_scale": 1,
+            "relative_field_offset": 36,
+            "segment_register": null,
+            "width_bytes": 4
+          },
+          "kind": "memory",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 290861
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "ebp",
+        "ecx"
+      ],
+      "decoder_written_registers": [],
+      "input_query_registers": [
+        "ebp",
+        "ecx"
+      ],
+      "mnemonic": "mov",
+      "operands": [
+        {
+          "decoder_read": false,
+          "decoder_write": true,
+          "geometry": {
+            "base_register": "ecx",
+            "displacement_region": null,
+            "index_register": null,
+            "index_scale": 1,
+            "relative_field_offset": 0,
+            "segment_register": null,
+            "width_bytes": 4
+          },
+          "kind": "memory",
+          "width_bytes": 4
+        },
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "kind": "register",
+          "register": "ebp",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 290865
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "ecx"
+      ],
+      "decoder_written_registers": [
+        "ecx",
+        "eflags"
+      ],
+      "input_query_registers": [
+        "ecx"
+      ],
+      "mnemonic": "xor",
+      "operands": [
+        {
+          "decoder_read": true,
+          "decoder_write": true,
+          "kind": "register",
+          "register": "ecx",
+          "width_bytes": 4
+        },
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "kind": "register",
+          "register": "ecx",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 290867
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "ebp"
+      ],
+      "decoder_written_registers": [
+        "eflags"
+      ],
+      "input_query_registers": [
+        "ebp"
+      ],
+      "mnemonic": "test",
+      "operands": [
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "kind": "register",
+          "register": "ebp",
+          "width_bytes": 4
+        },
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "kind": "register",
+          "register": "ebp",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 290869
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "eflags"
+      ],
+      "decoder_written_registers": [],
+      "input_query_registers": [],
+      "mnemonic": "jle",
+      "operands": [
+        {
+          "constant": 4485206,
+          "decoder_read": false,
+          "decoder_write": false,
+          "kind": "immediate",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 290871
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "esp"
+      ],
+      "decoder_written_registers": [
+        "edi"
+      ],
+      "input_query_registers": [
+        "edi"
+      ],
+      "mnemonic": "mov",
+      "operands": [
+        {
+          "decoder_read": false,
+          "decoder_write": true,
+          "kind": "register",
+          "register": "edi",
+          "width_bytes": 4
+        },
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "geometry": {
+            "base_register": "esp",
+            "displacement_region": null,
+            "index_register": null,
+            "index_scale": 1,
+            "relative_field_offset": 24,
+            "segment_register": null,
+            "width_bytes": 4
+          },
+          "kind": "memory",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 290873
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "ebx"
+      ],
+      "decoder_written_registers": [
+        "eax"
+      ],
+      "input_query_registers": [
+        "eax",
+        "ebx"
+      ],
+      "mnemonic": "mov",
+      "operands": [
+        {
+          "decoder_read": false,
+          "decoder_write": true,
+          "kind": "register",
+          "register": "eax",
+          "width_bytes": 4
+        },
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "kind": "register",
+          "register": "ebx",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 290877
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "ebx",
+        "edi"
+      ],
+      "decoder_written_registers": [
+        "edi",
+        "eflags"
+      ],
+      "input_query_registers": [
+        "ebx",
+        "edi"
+      ],
+      "mnemonic": "sub",
+      "operands": [
+        {
+          "decoder_read": true,
+          "decoder_write": true,
+          "kind": "register",
+          "register": "edi",
+          "width_bytes": 4
+        },
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "kind": "register",
+          "register": "ebx",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 290879
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "eax",
+        "edi"
+      ],
+      "decoder_written_registers": [
+        "dl"
+      ],
+      "input_query_registers": [
+        "eax",
+        "edi",
+        "edx"
+      ],
+      "mnemonic": "mov",
+      "operands": [
+        {
+          "decoder_read": false,
+          "decoder_write": true,
+          "kind": "register",
+          "register": "dl",
+          "width_bytes": 1
+        },
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "geometry": {
+            "base_register": "edi",
+            "displacement_region": null,
+            "index_register": "eax",
+            "index_scale": 1,
+            "relative_field_offset": 0,
+            "segment_register": null,
+            "width_bytes": 1
+          },
+          "kind": "memory",
+          "width_bytes": 1
+        }
+      ],
+      "site_rva": 290881
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "ecx"
+      ],
+      "decoder_written_registers": [
+        "ecx",
+        "eflags"
+      ],
+      "input_query_registers": [
+        "ecx"
+      ],
+      "mnemonic": "inc",
+      "operands": [
+        {
+          "decoder_read": true,
+          "decoder_write": true,
+          "kind": "register",
+          "register": "ecx",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 290884
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "dl",
+        "eax"
+      ],
+      "decoder_written_registers": [],
+      "input_query_registers": [
+        "eax",
+        "edx"
+      ],
+      "mnemonic": "mov",
+      "operands": [
+        {
+          "decoder_read": false,
+          "decoder_write": true,
+          "geometry": {
+            "base_register": "eax",
+            "displacement_region": null,
+            "index_register": null,
+            "index_scale": 1,
+            "relative_field_offset": 0,
+            "segment_register": null,
+            "width_bytes": 1
+          },
+          "kind": "memory",
+          "width_bytes": 1
+        },
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "kind": "register",
+          "register": "dl",
+          "width_bytes": 1
+        }
+      ],
+      "site_rva": 290885
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "esp"
+      ],
+      "decoder_written_registers": [
+        "edx"
+      ],
+      "input_query_registers": [
+        "edx"
+      ],
+      "mnemonic": "mov",
+      "operands": [
+        {
+          "decoder_read": false,
+          "decoder_write": true,
+          "kind": "register",
+          "register": "edx",
+          "width_bytes": 4
+        },
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "geometry": {
+            "base_register": "esp",
+            "displacement_region": null,
+            "index_register": null,
+            "index_scale": 1,
+            "relative_field_offset": 40,
+            "segment_register": null,
+            "width_bytes": 4
+          },
+          "kind": "memory",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 290887
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "eax"
+      ],
+      "decoder_written_registers": [
+        "eax",
+        "eflags"
+      ],
+      "input_query_registers": [
+        "eax"
+      ],
+      "mnemonic": "inc",
+      "operands": [
+        {
+          "decoder_read": true,
+          "decoder_write": true,
+          "kind": "register",
+          "register": "eax",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 290891
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "ecx",
+        "edx"
+      ],
+      "decoder_written_registers": [
+        "eflags"
+      ],
+      "input_query_registers": [
+        "ecx",
+        "edx"
+      ],
+      "mnemonic": "cmp",
+      "operands": [
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "kind": "register",
+          "register": "ecx",
+          "width_bytes": 4
+        },
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "geometry": {
+            "base_register": "edx",
+            "displacement_region": null,
+            "index_register": null,
+            "index_scale": 1,
+            "relative_field_offset": 0,
+            "segment_register": null,
+            "width_bytes": 4
+          },
+          "kind": "memory",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 290892
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "eflags"
+      ],
+      "decoder_written_registers": [],
+      "input_query_registers": [],
+      "mnemonic": "jl",
+      "operands": [
+        {
+          "constant": 4485185,
+          "decoder_read": false,
+          "decoder_write": false,
+          "kind": "immediate",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 290894
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [],
+      "decoder_written_registers": [],
+      "input_query_registers": [],
+      "mnemonic": "jmp",
+      "operands": [
+        {
+          "constant": 4485206,
+          "decoder_read": false,
+          "decoder_write": false,
+          "kind": "immediate",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 290896
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "esp"
+      ],
+      "decoder_written_registers": [
+        "ebx"
+      ],
+      "input_query_registers": [
+        "ebx"
+      ],
+      "mnemonic": "mov",
+      "operands": [
+        {
+          "decoder_read": false,
+          "decoder_write": true,
+          "kind": "register",
+          "register": "ebx",
+          "width_bytes": 4
+        },
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "geometry": {
+            "base_register": "esp",
+            "displacement_region": null,
+            "index_register": null,
+            "index_scale": 1,
+            "relative_field_offset": 36,
+            "segment_register": null,
+            "width_bytes": 4
+          },
+          "kind": "memory",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 290898
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "ebp",
+        "esi"
+      ],
+      "decoder_written_registers": [
+        "eflags"
+      ],
+      "input_query_registers": [
+        "ebp",
+        "esi"
+      ],
+      "mnemonic": "cmp",
+      "operands": [
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "kind": "register",
+          "register": "esi",
+          "width_bytes": 4
+        },
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "kind": "register",
+          "register": "ebp",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 290902
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "eflags"
+      ],
+      "decoder_written_registers": [],
+      "input_query_registers": [],
+      "mnemonic": "jg",
+      "operands": [
+        {
+          "constant": 4485456,
+          "decoder_read": false,
+          "decoder_write": false,
+          "kind": "immediate",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 290904
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "esp"
+      ],
+      "decoder_written_registers": [
+        "eax"
+      ],
+      "input_query_registers": [
+        "eax"
+      ],
+      "mnemonic": "mov",
+      "operands": [
+        {
+          "decoder_read": false,
+          "decoder_write": true,
+          "kind": "register",
+          "register": "eax",
+          "width_bytes": 4
+        },
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "geometry": {
+            "base_register": "esp",
+            "displacement_region": null,
+            "index_register": null,
+            "index_scale": 1,
+            "relative_field_offset": 40,
+            "segment_register": null,
+            "width_bytes": 4
+          },
+          "kind": "memory",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 290910
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "esp"
+      ],
+      "decoder_written_registers": [
+        "edi"
+      ],
+      "input_query_registers": [
+        "edi"
+      ],
+      "mnemonic": "mov",
+      "operands": [
+        {
+          "decoder_read": false,
+          "decoder_write": true,
+          "kind": "register",
+          "register": "edi",
+          "width_bytes": 4
+        },
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "geometry": {
+            "base_register": "esp",
+            "displacement_region": null,
+            "index_register": null,
+            "index_scale": 1,
+            "relative_field_offset": 32,
+            "segment_register": null,
+            "width_bytes": 4
+          },
+          "kind": "memory",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 290914
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "ecx"
+      ],
+      "decoder_written_registers": [
+        "ecx",
+        "eflags"
+      ],
+      "input_query_registers": [
+        "ecx"
+      ],
+      "mnemonic": "xor",
+      "operands": [
+        {
+          "decoder_read": true,
+          "decoder_write": true,
+          "kind": "register",
+          "register": "ecx",
+          "width_bytes": 4
+        },
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "kind": "register",
+          "register": "ecx",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 290918
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "eax",
+        "esi"
+      ],
+      "decoder_written_registers": [],
+      "input_query_registers": [
+        "eax",
+        "esi"
+      ],
+      "mnemonic": "mov",
+      "operands": [
+        {
+          "decoder_read": false,
+          "decoder_write": true,
+          "geometry": {
+            "base_register": "eax",
+            "displacement_region": null,
+            "index_register": null,
+            "index_scale": 1,
+            "relative_field_offset": 0,
+            "segment_register": null,
+            "width_bytes": 4
+          },
+          "kind": "memory",
+          "width_bytes": 4
+        },
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "kind": "register",
+          "register": "esi",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 290920
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "esp"
+      ],
+      "decoder_written_registers": [
+        "eax"
+      ],
+      "input_query_registers": [
+        "eax"
+      ],
+      "mnemonic": "mov",
+      "operands": [
+        {
+          "decoder_read": false,
+          "decoder_write": true,
+          "kind": "register",
+          "register": "eax",
+          "width_bytes": 4
+        },
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "geometry": {
+            "base_register": "esp",
+            "displacement_region": null,
+            "index_register": null,
+            "index_scale": 1,
+            "relative_field_offset": 28,
+            "segment_register": null,
+            "width_bytes": 4
+          },
+          "kind": "memory",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 290922
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "eax"
+      ],
+      "decoder_written_registers": [
+        "eflags"
+      ],
+      "input_query_registers": [
+        "eax"
+      ],
+      "mnemonic": "test",
+      "operands": [
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "kind": "register",
+          "register": "eax",
+          "width_bytes": 4
+        },
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "kind": "register",
+          "register": "eax",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 290926
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "eflags"
+      ],
+      "decoder_written_registers": [],
+      "input_query_registers": [],
+      "mnemonic": "jle",
+      "operands": [
+        {
+          "constant": 4485332,
+          "decoder_read": false,
+          "decoder_write": false,
+          "kind": "immediate",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 290928
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "edi"
+      ],
+      "decoder_written_registers": [
+        "eax"
+      ],
+      "input_query_registers": [
+        "eax",
+        "edi"
+      ],
+      "mnemonic": "mov",
+      "operands": [
+        {
+          "decoder_read": false,
+          "decoder_write": true,
+          "kind": "register",
+          "register": "eax",
+          "width_bytes": 4
+        },
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "kind": "register",
+          "register": "edi",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 290930
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [],
+      "decoder_written_registers": [
+        "esi"
+      ],
+      "input_query_registers": [
+        "esi"
+      ],
+      "mnemonic": "mov",
+      "operands": [
+        {
+          "decoder_read": false,
+          "decoder_write": true,
+          "kind": "register",
+          "register": "esi",
+          "width_bytes": 4
+        },
+        {
+          "constant": 7,
+          "decoder_read": false,
+          "decoder_write": false,
+          "kind": "immediate",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 290932
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "eax"
+      ],
+      "decoder_written_registers": [
+        "eax",
+        "edx"
+      ],
+      "input_query_registers": [
+        "eax"
+      ],
+      "mnemonic": "cdq",
+      "operands": [],
+      "site_rva": 290937
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "eax",
+        "edx",
+        "esi"
+      ],
+      "decoder_written_registers": [
+        "eax",
+        "edx",
+        "eflags"
+      ],
+      "input_query_registers": [
+        "eax",
+        "edx",
+        "esi"
+      ],
+      "mnemonic": "idiv",
+      "operands": [
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "kind": "register",
+          "register": "esi",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 290938
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "edx"
+      ],
+      "decoder_written_registers": [
+        "esi"
+      ],
+      "input_query_registers": [
+        "edx",
+        "esi"
+      ],
+      "mnemonic": "mov",
+      "operands": [
+        {
+          "decoder_read": false,
+          "decoder_write": true,
+          "kind": "register",
+          "register": "esi",
+          "width_bytes": 4
+        },
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "kind": "register",
+          "register": "edx",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 290940
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "esp"
+      ],
+      "decoder_written_registers": [
+        "edx"
+      ],
+      "input_query_registers": [
+        "edx"
+      ],
+      "mnemonic": "mov",
+      "operands": [
+        {
+          "decoder_read": false,
+          "decoder_write": true,
+          "kind": "register",
+          "register": "edx",
+          "width_bytes": 4
+        },
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "geometry": {
+            "base_register": "esp",
+            "displacement_region": null,
+            "index_register": null,
+            "index_scale": 1,
+            "relative_field_offset": 24,
+            "segment_register": null,
+            "width_bytes": 4
+          },
+          "kind": "memory",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 290942
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "ecx"
+      ],
+      "decoder_written_registers": [
+        "eax"
+      ],
+      "input_query_registers": [
+        "eax",
+        "ecx"
+      ],
+      "mnemonic": "mov",
+      "operands": [
+        {
+          "decoder_read": false,
+          "decoder_write": true,
+          "kind": "register",
+          "register": "eax",
+          "width_bytes": 4
+        },
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "kind": "register",
+          "register": "ecx",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 290946
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [],
+      "decoder_written_registers": [
+        "ebp"
+      ],
+      "input_query_registers": [
+        "ebp"
+      ],
+      "mnemonic": "mov",
+      "operands": [
+        {
+          "decoder_read": false,
+          "decoder_write": true,
+          "kind": "register",
+          "register": "ebp",
+          "width_bytes": 4
+        },
+        {
+          "constant": 5,
+          "decoder_read": false,
+          "decoder_write": false,
+          "kind": "immediate",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 290948
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "ecx",
+        "edx"
+      ],
+      "decoder_written_registers": [
+        "bl"
+      ],
+      "input_query_registers": [
+        "ebx",
+        "ecx",
+        "edx"
+      ],
+      "mnemonic": "mov",
+      "operands": [
+        {
+          "decoder_read": false,
+          "decoder_write": true,
+          "kind": "register",
+          "register": "bl",
+          "width_bytes": 1
+        },
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "geometry": {
+            "base_register": "ecx",
+            "displacement_region": null,
+            "index_register": "edx",
+            "index_scale": 1,
+            "relative_field_offset": 0,
+            "segment_register": null,
+            "width_bytes": 1
+          },
+          "kind": "memory",
+          "width_bytes": 1
+        }
+      ],
+      "site_rva": 290953
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "esp"
+      ],
+      "decoder_written_registers": [
+        "dl"
+      ],
+      "input_query_registers": [
+        "edx"
+      ],
+      "mnemonic": "mov",
+      "operands": [
+        {
+          "decoder_read": false,
+          "decoder_write": true,
+          "kind": "register",
+          "register": "dl",
+          "width_bytes": 1
+        },
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "geometry": {
+            "base_register": "esp",
+            "displacement_region": null,
+            "index_register": null,
+            "index_scale": 1,
+            "relative_field_offset": 19,
+            "segment_register": null,
+            "width_bytes": 1
+          },
+          "kind": "memory",
+          "width_bytes": 1
+        }
+      ],
+      "site_rva": 290956
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "bl",
+        "dl"
+      ],
+      "decoder_written_registers": [
+        "dl",
+        "eflags"
+      ],
+      "input_query_registers": [
+        "ebx",
+        "edx"
+      ],
+      "mnemonic": "add",
+      "operands": [
+        {
+          "decoder_read": true,
+          "decoder_write": true,
+          "kind": "register",
+          "register": "dl",
+          "width_bytes": 1
+        },
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "kind": "register",
+          "register": "bl",
+          "width_bytes": 1
+        }
+      ],
+      "site_rva": 290960
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "dl",
+        "esp"
+      ],
+      "decoder_written_registers": [],
+      "input_query_registers": [
+        "edx"
+      ],
+      "mnemonic": "mov",
+      "operands": [
+        {
+          "decoder_read": false,
+          "decoder_write": true,
+          "geometry": {
+            "base_register": "esp",
+            "displacement_region": null,
+            "index_register": null,
+            "index_scale": 1,
+            "relative_field_offset": 19,
+            "segment_register": null,
+            "width_bytes": 1
+          },
+          "kind": "memory",
+          "width_bytes": 1
+        },
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "kind": "register",
+          "register": "dl",
+          "width_bytes": 1
+        }
+      ],
+      "site_rva": 290962
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "eax"
+      ],
+      "decoder_written_registers": [
+        "eax",
+        "edx"
+      ],
+      "input_query_registers": [
+        "eax"
+      ],
+      "mnemonic": "cdq",
+      "operands": [],
+      "site_rva": 290966
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "eax",
+        "ebp",
+        "edx"
+      ],
+      "decoder_written_registers": [
+        "eax",
+        "edx",
+        "eflags"
+      ],
+      "input_query_registers": [
+        "eax",
+        "ebp",
+        "edx"
+      ],
+      "mnemonic": "idiv",
+      "operands": [
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "kind": "register",
+          "register": "ebp",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 290967
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "edx",
+        "esi"
+      ],
+      "decoder_written_registers": [
+        "eflags"
+      ],
+      "input_query_registers": [
+        "edx",
+        "esi"
+      ],
+      "mnemonic": "cmp",
+      "operands": [
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "kind": "register",
+          "register": "esi",
+          "width_bytes": 4
+        },
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "kind": "register",
+          "register": "edx",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 290969
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "eflags"
+      ],
+      "decoder_written_registers": [],
+      "input_query_registers": [],
+      "mnemonic": "je",
+      "operands": [
+        {
+          "constant": 4485310,
+          "decoder_read": false,
+          "decoder_write": false,
+          "kind": "immediate",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 290971
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "ecx"
+      ],
+      "decoder_written_registers": [
+        "eax"
+      ],
+      "input_query_registers": [
+        "eax",
+        "ecx"
+      ],
+      "mnemonic": "mov",
+      "operands": [
+        {
+          "decoder_read": false,
+          "decoder_write": true,
+          "kind": "register",
+          "register": "eax",
+          "width_bytes": 4
+        },
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "kind": "register",
+          "register": "ecx",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 290973
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "eax"
+      ],
+      "decoder_written_registers": [
+        "eax",
+        "eflags"
+      ],
+      "input_query_registers": [
+        "eax"
+      ],
+      "mnemonic": "and",
+      "operands": [
+        {
+          "decoder_read": true,
+          "decoder_write": true,
+          "kind": "register",
+          "register": "eax",
+          "width_bytes": 4
+        },
+        {
+          "constant": 2147483649,
+          "decoder_read": false,
+          "decoder_write": false,
+          "kind": "immediate",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 290975
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "eflags"
+      ],
+      "decoder_written_registers": [],
+      "input_query_registers": [],
+      "mnemonic": "jns",
+      "operands": [
+        {
+          "constant": 4485291,
+          "decoder_read": false,
+          "decoder_write": false,
+          "kind": "immediate",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 290980
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "eax"
+      ],
+      "decoder_written_registers": [
+        "eax",
+        "eflags"
+      ],
+      "input_query_registers": [
+        "eax"
+      ],
+      "mnemonic": "dec",
+      "operands": [
+        {
+          "decoder_read": true,
+          "decoder_write": true,
+          "kind": "register",
+          "register": "eax",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 290982
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "eax"
+      ],
+      "decoder_written_registers": [
+        "eax",
+        "eflags"
+      ],
+      "input_query_registers": [
+        "eax"
+      ],
+      "mnemonic": "or",
+      "operands": [
+        {
+          "decoder_read": true,
+          "decoder_write": true,
+          "kind": "register",
+          "register": "eax",
+          "width_bytes": 4
+        },
+        {
+          "constant": 4294967294,
+          "decoder_read": false,
+          "decoder_write": false,
+          "kind": "immediate",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 290983
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "eax"
+      ],
+      "decoder_written_registers": [
+        "eax",
+        "eflags"
+      ],
+      "input_query_registers": [
+        "eax"
+      ],
+      "mnemonic": "inc",
+      "operands": [
+        {
+          "decoder_read": true,
+          "decoder_write": true,
+          "kind": "register",
+          "register": "eax",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 290986
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "edi"
+      ],
+      "decoder_written_registers": [
+        "edx"
+      ],
+      "input_query_registers": [
+        "edi",
+        "edx"
+      ],
+      "mnemonic": "mov",
+      "operands": [
+        {
+          "decoder_read": false,
+          "decoder_write": true,
+          "kind": "register",
+          "register": "edx",
+          "width_bytes": 4
+        },
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "kind": "register",
+          "register": "edi",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 290987
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "edx"
+      ],
+      "decoder_written_registers": [
+        "edx",
+        "eflags"
+      ],
+      "input_query_registers": [
+        "edx"
+      ],
+      "mnemonic": "and",
+      "operands": [
+        {
+          "decoder_read": true,
+          "decoder_write": true,
+          "kind": "register",
+          "register": "edx",
+          "width_bytes": 4
+        },
+        {
+          "constant": 2147483649,
+          "decoder_read": false,
+          "decoder_write": false,
+          "kind": "immediate",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 290989
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "eflags"
+      ],
+      "decoder_written_registers": [],
+      "input_query_registers": [],
+      "mnemonic": "jns",
+      "operands": [
+        {
+          "constant": 4485306,
+          "decoder_read": false,
+          "decoder_write": false,
+          "kind": "immediate",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 290995
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "edx"
+      ],
+      "decoder_written_registers": [
+        "edx",
+        "eflags"
+      ],
+      "input_query_registers": [
+        "edx"
+      ],
+      "mnemonic": "dec",
+      "operands": [
+        {
+          "decoder_read": true,
+          "decoder_write": true,
+          "kind": "register",
+          "register": "edx",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 290997
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "edx"
+      ],
+      "decoder_written_registers": [
+        "edx",
+        "eflags"
+      ],
+      "input_query_registers": [
+        "edx"
+      ],
+      "mnemonic": "or",
+      "operands": [
+        {
+          "decoder_read": true,
+          "decoder_write": true,
+          "kind": "register",
+          "register": "edx",
+          "width_bytes": 4
+        },
+        {
+          "constant": 4294967294,
+          "decoder_read": false,
+          "decoder_write": false,
+          "kind": "immediate",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 290998
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "edx"
+      ],
+      "decoder_written_registers": [
+        "edx",
+        "eflags"
+      ],
+      "input_query_registers": [
+        "edx"
+      ],
+      "mnemonic": "inc",
+      "operands": [
+        {
+          "decoder_read": true,
+          "decoder_write": true,
+          "kind": "register",
+          "register": "edx",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 291001
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "eax",
+        "edx"
+      ],
+      "decoder_written_registers": [
+        "eflags"
+      ],
+      "input_query_registers": [
+        "eax",
+        "edx"
+      ],
+      "mnemonic": "cmp",
+      "operands": [
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "kind": "register",
+          "register": "edx",
+          "width_bytes": 4
+        },
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "kind": "register",
+          "register": "eax",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 291002
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "eflags"
+      ],
+      "decoder_written_registers": [],
+      "input_query_registers": [],
+      "mnemonic": "jne",
+      "operands": [
+        {
+          "constant": 4485319,
+          "decoder_read": false,
+          "decoder_write": false,
+          "kind": "immediate",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 291004
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "esp"
+      ],
+      "decoder_written_registers": [
+        "eax"
+      ],
+      "input_query_registers": [
+        "eax"
+      ],
+      "mnemonic": "mov",
+      "operands": [
+        {
+          "decoder_read": false,
+          "decoder_write": true,
+          "kind": "register",
+          "register": "eax",
+          "width_bytes": 4
+        },
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "geometry": {
+            "base_register": "esp",
+            "displacement_region": null,
+            "index_register": null,
+            "index_scale": 1,
+            "relative_field_offset": 24,
+            "segment_register": null,
+            "width_bytes": 4
+          },
+          "kind": "memory",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 291006
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "bl"
+      ],
+      "decoder_written_registers": [
+        "bl"
+      ],
+      "input_query_registers": [
+        "ebx"
+      ],
+      "mnemonic": "not",
+      "operands": [
+        {
+          "decoder_read": true,
+          "decoder_write": true,
+          "kind": "register",
+          "register": "bl",
+          "width_bytes": 1
+        }
+      ],
+      "site_rva": 291010
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "bl",
+        "eax",
+        "ecx"
+      ],
+      "decoder_written_registers": [],
+      "input_query_registers": [
+        "eax",
+        "ebx",
+        "ecx"
+      ],
+      "mnemonic": "mov",
+      "operands": [
+        {
+          "decoder_read": false,
+          "decoder_write": true,
+          "geometry": {
+            "base_register": "ecx",
+            "displacement_region": null,
+            "index_register": "eax",
+            "index_scale": 1,
+            "relative_field_offset": 0,
+            "segment_register": null,
+            "width_bytes": 1
+          },
+          "kind": "memory",
+          "width_bytes": 1
+        },
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "kind": "register",
+          "register": "bl",
+          "width_bytes": 1
+        }
+      ],
+      "site_rva": 291012
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "esp"
+      ],
+      "decoder_written_registers": [
+        "eax"
+      ],
+      "input_query_registers": [
+        "eax"
+      ],
+      "mnemonic": "mov",
+      "operands": [
+        {
+          "decoder_read": false,
+          "decoder_write": true,
+          "kind": "register",
+          "register": "eax",
+          "width_bytes": 4
+        },
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "geometry": {
+            "base_register": "esp",
+            "displacement_region": null,
+            "index_register": null,
+            "index_scale": 1,
+            "relative_field_offset": 28,
+            "segment_register": null,
+            "width_bytes": 4
+          },
+          "kind": "memory",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 291015
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "ecx"
+      ],
+      "decoder_written_registers": [
+        "ecx",
+        "eflags"
+      ],
+      "input_query_registers": [
+        "ecx"
+      ],
+      "mnemonic": "inc",
+      "operands": [
+        {
+          "decoder_read": true,
+          "decoder_write": true,
+          "kind": "register",
+          "register": "ecx",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 291019
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "eax",
+        "ecx"
+      ],
+      "decoder_written_registers": [
+        "eflags"
+      ],
+      "input_query_registers": [
+        "eax",
+        "ecx"
+      ],
+      "mnemonic": "cmp",
+      "operands": [
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "kind": "register",
+          "register": "ecx",
+          "width_bytes": 4
+        },
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "kind": "register",
+          "register": "eax",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 291020
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "eflags"
+      ],
+      "decoder_written_registers": [],
+      "input_query_registers": [],
+      "mnemonic": "jl",
+      "operands": [
+        {
+          "constant": 4485246,
+          "decoder_read": false,
+          "decoder_write": false,
+          "kind": "immediate",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 291022
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "esp"
+      ],
+      "decoder_written_registers": [
+        "ebx"
+      ],
+      "input_query_registers": [
+        "ebx"
+      ],
+      "mnemonic": "mov",
+      "operands": [
+        {
+          "decoder_read": false,
+          "decoder_write": true,
+          "kind": "register",
+          "register": "ebx",
+          "width_bytes": 4
+        },
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "geometry": {
+            "base_register": "esp",
+            "displacement_region": null,
+            "index_register": null,
+            "index_scale": 1,
+            "relative_field_offset": 36,
+            "segment_register": null,
+            "width_bytes": 4
+          },
+          "kind": "memory",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 291024
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "esp"
+      ],
+      "decoder_written_registers": [
+        "edx"
+      ],
+      "input_query_registers": [
+        "edx"
+      ],
+      "mnemonic": "mov",
+      "operands": [
+        {
+          "decoder_read": false,
+          "decoder_write": true,
+          "kind": "register",
+          "register": "edx",
+          "width_bytes": 4
+        },
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "geometry": {
+            "base_register": "esp",
+            "displacement_region": null,
+            "index_register": null,
+            "index_scale": 1,
+            "relative_field_offset": 40,
+            "segment_register": null,
+            "width_bytes": 4
+          },
+          "kind": "memory",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 291028
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "ecx"
+      ],
+      "decoder_written_registers": [
+        "ecx",
+        "eflags"
+      ],
+      "input_query_registers": [
+        "ecx"
+      ],
+      "mnemonic": "xor",
+      "operands": [
+        {
+          "decoder_read": true,
+          "decoder_write": true,
+          "kind": "register",
+          "register": "ecx",
+          "width_bytes": 4
+        },
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "kind": "register",
+          "register": "ecx",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 291032
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "edx"
+      ],
+      "decoder_written_registers": [
+        "eflags"
+      ],
+      "input_query_registers": [
+        "edx"
+      ],
+      "mnemonic": "cmp",
+      "operands": [
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "geometry": {
+            "base_register": "edx",
+            "displacement_region": null,
+            "index_register": null,
+            "index_scale": 1,
+            "relative_field_offset": 0,
+            "segment_register": null,
+            "width_bytes": 4
+          },
+          "kind": "memory",
+          "width_bytes": 4
+        },
+        {
+          "constant": 0,
+          "decoder_read": false,
+          "decoder_write": false,
+          "kind": "immediate",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 291034
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "eflags"
+      ],
+      "decoder_written_registers": [],
+      "input_query_registers": [],
+      "mnemonic": "jle",
+      "operands": [
+        {
+          "constant": 4485456,
+          "decoder_read": false,
+          "decoder_write": false,
+          "kind": "immediate",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 291037
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "edi"
+      ],
+      "decoder_written_registers": [
+        "eax"
+      ],
+      "input_query_registers": [
+        "eax",
+        "edi"
+      ],
+      "mnemonic": "mov",
+      "operands": [
+        {
+          "decoder_read": false,
+          "decoder_write": true,
+          "kind": "register",
+          "register": "eax",
+          "width_bytes": 4
+        },
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "kind": "register",
+          "register": "edi",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 291039
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "eax"
+      ],
+      "decoder_written_registers": [
+        "eax",
+        "edx"
+      ],
+      "input_query_registers": [
+        "eax"
+      ],
+      "mnemonic": "cdq",
+      "operands": [],
+      "site_rva": 291041
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "eax",
+        "edx",
+        "esp"
+      ],
+      "decoder_written_registers": [
+        "eax",
+        "edx",
+        "eflags"
+      ],
+      "input_query_registers": [
+        "eax",
+        "edx"
+      ],
+      "mnemonic": "idiv",
+      "operands": [
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "geometry": {
+            "base_register": "esp",
+            "displacement_region": null,
+            "index_register": null,
+            "index_scale": 1,
+            "relative_field_offset": 28,
+            "segment_register": null,
+            "width_bytes": 4
+          },
+          "kind": "memory",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 291042
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "edx"
+      ],
+      "decoder_written_registers": [
+        "eax"
+      ],
+      "input_query_registers": [
+        "eax",
+        "edx"
+      ],
+      "mnemonic": "mov",
+      "operands": [
+        {
+          "decoder_read": false,
+          "decoder_write": true,
+          "kind": "register",
+          "register": "eax",
+          "width_bytes": 4
+        },
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "kind": "register",
+          "register": "edx",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 291046
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "eax"
+      ],
+      "decoder_written_registers": [
+        "eax",
+        "edx"
+      ],
+      "input_query_registers": [
+        "eax"
+      ],
+      "mnemonic": "cdq",
+      "operands": [],
+      "site_rva": 291048
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "eax"
+      ],
+      "decoder_written_registers": [
+        "edi"
+      ],
+      "input_query_registers": [
+        "eax",
+        "edi"
+      ],
+      "mnemonic": "mov",
+      "operands": [
+        {
+          "decoder_read": false,
+          "decoder_write": true,
+          "kind": "register",
+          "register": "edi",
+          "width_bytes": 4
+        },
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "kind": "register",
+          "register": "eax",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 291049
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "esp"
+      ],
+      "decoder_written_registers": [
+        "eax"
+      ],
+      "input_query_registers": [
+        "eax"
+      ],
+      "mnemonic": "mov",
+      "operands": [
+        {
+          "decoder_read": false,
+          "decoder_write": true,
+          "kind": "register",
+          "register": "eax",
+          "width_bytes": 4
+        },
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "geometry": {
+            "base_register": "esp",
+            "displacement_region": null,
+            "index_register": null,
+            "index_scale": 1,
+            "relative_field_offset": 24,
+            "segment_register": null,
+            "width_bytes": 4
+          },
+          "kind": "memory",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 291051
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "edi",
+        "edx"
+      ],
+      "decoder_written_registers": [
+        "edi",
+        "eflags"
+      ],
+      "input_query_registers": [
+        "edi",
+        "edx"
+      ],
+      "mnemonic": "xor",
+      "operands": [
+        {
+          "decoder_read": true,
+          "decoder_write": true,
+          "kind": "register",
+          "register": "edi",
+          "width_bytes": 4
+        },
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "kind": "register",
+          "register": "edx",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 291055
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "edi",
+        "edx"
+      ],
+      "decoder_written_registers": [
+        "edi",
+        "eflags"
+      ],
+      "input_query_registers": [
+        "edi",
+        "edx"
+      ],
+      "mnemonic": "sub",
+      "operands": [
+        {
+          "decoder_read": true,
+          "decoder_write": true,
+          "kind": "register",
+          "register": "edi",
+          "width_bytes": 4
+        },
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "kind": "register",
+          "register": "edx",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 291057
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "eax",
+        "ebx"
+      ],
+      "decoder_written_registers": [
+        "eax",
+        "eflags"
+      ],
+      "input_query_registers": [
+        "eax",
+        "ebx"
+      ],
+      "mnemonic": "sub",
+      "operands": [
+        {
+          "decoder_read": true,
+          "decoder_write": true,
+          "kind": "register",
+          "register": "eax",
+          "width_bytes": 4
+        },
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "kind": "register",
+          "register": "ebx",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 291059
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "eax",
+        "esp"
+      ],
+      "decoder_written_registers": [],
+      "input_query_registers": [
+        "eax"
+      ],
+      "mnemonic": "mov",
+      "operands": [
+        {
+          "decoder_read": false,
+          "decoder_write": true,
+          "geometry": {
+            "base_register": "esp",
+            "displacement_region": null,
+            "index_register": null,
+            "index_scale": 1,
+            "relative_field_offset": 36,
+            "segment_register": null,
+            "width_bytes": 4
+          },
+          "kind": "memory",
+          "width_bytes": 4
+        },
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "kind": "register",
+          "register": "eax",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 291061
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "ecx",
+        "edi"
+      ],
+      "decoder_written_registers": [
+        "eflags"
+      ],
+      "input_query_registers": [
+        "ecx",
+        "edi"
+      ],
+      "mnemonic": "cmp",
+      "operands": [
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "kind": "register",
+          "register": "edi",
+          "width_bytes": 4
+        },
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "kind": "register",
+          "register": "ecx",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 291065
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "eflags"
+      ],
+      "decoder_written_registers": [],
+      "input_query_registers": [],
+      "mnemonic": "jle",
+      "operands": [
+        {
+          "constant": 4485406,
+          "decoder_read": false,
+          "decoder_write": false,
+          "kind": "immediate",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 291067
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "ecx"
+      ],
+      "decoder_written_registers": [
+        "eax"
+      ],
+      "input_query_registers": [
+        "eax",
+        "ecx"
+      ],
+      "mnemonic": "mov",
+      "operands": [
+        {
+          "decoder_read": false,
+          "decoder_write": true,
+          "kind": "register",
+          "register": "eax",
+          "width_bytes": 4
+        },
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "kind": "register",
+          "register": "ecx",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 291069
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [],
+      "decoder_written_registers": [
+        "ebp"
+      ],
+      "input_query_registers": [
+        "ebp"
+      ],
+      "mnemonic": "mov",
+      "operands": [
+        {
+          "decoder_read": false,
+          "decoder_write": true,
+          "kind": "register",
+          "register": "ebp",
+          "width_bytes": 4
+        },
+        {
+          "constant": 3,
+          "decoder_read": false,
+          "decoder_write": false,
+          "kind": "immediate",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 291071
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "eax",
+        "ecx"
+      ],
+      "decoder_written_registers": [
+        "eax",
+        "eflags"
+      ],
+      "input_query_registers": [
+        "eax",
+        "ecx"
+      ],
+      "mnemonic": "imul",
+      "operands": [
+        {
+          "decoder_read": true,
+          "decoder_write": true,
+          "kind": "register",
+          "register": "eax",
+          "width_bytes": 4
+        },
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "kind": "register",
+          "register": "ecx",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 291076
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "eax"
+      ],
+      "decoder_written_registers": [
+        "eax",
+        "edx"
+      ],
+      "input_query_registers": [
+        "eax"
+      ],
+      "mnemonic": "cdq",
+      "operands": [],
+      "site_rva": 291079
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "eax",
+        "ebp",
+        "edx"
+      ],
+      "decoder_written_registers": [
+        "eax",
+        "edx",
+        "eflags"
+      ],
+      "input_query_registers": [
+        "eax",
+        "ebp",
+        "edx"
+      ],
+      "mnemonic": "idiv",
+      "operands": [
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "kind": "register",
+          "register": "ebp",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 291080
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "ebx",
+        "ecx"
+      ],
+      "decoder_written_registers": [
+        "esi"
+      ],
+      "input_query_registers": [
+        "ebx",
+        "ecx",
+        "esi"
+      ],
+      "mnemonic": "lea",
+      "operands": [
+        {
+          "decoder_read": false,
+          "decoder_write": true,
+          "kind": "register",
+          "register": "esi",
+          "width_bytes": 4
+        },
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "geometry": {
+            "base_register": "ecx",
+            "displacement_region": null,
+            "index_register": "ebx",
+            "index_scale": 1,
+            "relative_field_offset": 0,
+            "segment_register": null,
+            "width_bytes": 4
+          },
+          "kind": "memory",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 291082
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "dl"
+      ],
+      "decoder_written_registers": [
+        "al"
+      ],
+      "input_query_registers": [
+        "eax",
+        "edx"
+      ],
+      "mnemonic": "mov",
+      "operands": [
+        {
+          "decoder_read": false,
+          "decoder_write": true,
+          "kind": "register",
+          "register": "al",
+          "width_bytes": 1
+        },
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "kind": "register",
+          "register": "dl",
+          "width_bytes": 1
+        }
+      ],
+      "site_rva": 291085
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "esp"
+      ],
+      "decoder_written_registers": [
+        "edx"
+      ],
+      "input_query_registers": [
+        "edx"
+      ],
+      "mnemonic": "mov",
+      "operands": [
+        {
+          "decoder_read": false,
+          "decoder_write": true,
+          "kind": "register",
+          "register": "edx",
+          "width_bytes": 4
+        },
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "geometry": {
+            "base_register": "esp",
+            "displacement_region": null,
+            "index_register": null,
+            "index_scale": 1,
+            "relative_field_offset": 36,
+            "segment_register": null,
+            "width_bytes": 4
+          },
+          "kind": "memory",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 291087
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "al",
+        "esp"
+      ],
+      "decoder_written_registers": [
+        "al",
+        "ax",
+        "eflags"
+      ],
+      "input_query_registers": [
+        "eax"
+      ],
+      "mnemonic": "imul",
+      "operands": [
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "geometry": {
+            "base_register": "esp",
+            "displacement_region": null,
+            "index_register": null,
+            "index_scale": 1,
+            "relative_field_offset": 19,
+            "segment_register": null,
+            "width_bytes": 1
+          },
+          "kind": "memory",
+          "width_bytes": 1
+        }
+      ],
+      "site_rva": 291091
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "al",
+        "edx",
+        "esi"
+      ],
+      "decoder_written_registers": [
+        "al",
+        "eflags"
+      ],
+      "input_query_registers": [
+        "eax",
+        "edx",
+        "esi"
+      ],
+      "mnemonic": "add",
+      "operands": [
+        {
+          "decoder_read": true,
+          "decoder_write": true,
+          "kind": "register",
+          "register": "al",
+          "width_bytes": 1
+        },
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "geometry": {
+            "base_register": "edx",
+            "displacement_region": null,
+            "index_register": "esi",
+            "index_scale": 1,
+            "relative_field_offset": 0,
+            "segment_register": null,
+            "width_bytes": 1
+          },
+          "kind": "memory",
+          "width_bytes": 1
+        }
+      ],
+      "site_rva": 291095
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "ecx",
+        "edi"
+      ],
+      "decoder_written_registers": [
+        "eflags"
+      ],
+      "input_query_registers": [
+        "ecx",
+        "edi"
+      ],
+      "mnemonic": "cmp",
+      "operands": [
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "kind": "register",
+          "register": "edi",
+          "width_bytes": 4
+        },
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "kind": "register",
+          "register": "ecx",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 291098
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "al",
+        "esi"
+      ],
+      "decoder_written_registers": [],
+      "input_query_registers": [
+        "eax",
+        "esi"
+      ],
+      "mnemonic": "mov",
+      "operands": [
+        {
+          "decoder_read": false,
+          "decoder_write": true,
+          "geometry": {
+            "base_register": "esi",
+            "displacement_region": null,
+            "index_register": null,
+            "index_scale": 1,
+            "relative_field_offset": 0,
+            "segment_register": null,
+            "width_bytes": 1
+          },
+          "kind": "memory",
+          "width_bytes": 1
+        },
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "kind": "register",
+          "register": "al",
+          "width_bytes": 1
+        }
+      ],
+      "site_rva": 291100
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "eflags"
+      ],
+      "decoder_written_registers": [],
+      "input_query_registers": [],
+      "mnemonic": "jne",
+      "operands": [
+        {
+          "constant": 4485415,
+          "decoder_read": false,
+          "decoder_write": false,
+          "kind": "immediate",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 291102
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "esp"
+      ],
+      "decoder_written_registers": [
+        "al"
+      ],
+      "input_query_registers": [
+        "eax"
+      ],
+      "mnemonic": "mov",
+      "operands": [
+        {
+          "decoder_read": false,
+          "decoder_write": true,
+          "kind": "register",
+          "register": "al",
+          "width_bytes": 1
+        },
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "geometry": {
+            "base_register": "esp",
+            "displacement_region": null,
+            "index_register": null,
+            "index_scale": 1,
+            "relative_field_offset": 19,
+            "segment_register": null,
+            "width_bytes": 1
+          },
+          "kind": "memory",
+          "width_bytes": 1
+        }
+      ],
+      "site_rva": 291104
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "al",
+        "ebx",
+        "ecx"
+      ],
+      "decoder_written_registers": [],
+      "input_query_registers": [
+        "eax",
+        "ebx",
+        "ecx"
+      ],
+      "mnemonic": "mov",
+      "operands": [
+        {
+          "decoder_read": false,
+          "decoder_write": true,
+          "geometry": {
+            "base_register": "ecx",
+            "displacement_region": null,
+            "index_register": "ebx",
+            "index_scale": 1,
+            "relative_field_offset": 0,
+            "segment_register": null,
+            "width_bytes": 1
+          },
+          "kind": "memory",
+          "width_bytes": 1
+        },
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "kind": "register",
+          "register": "al",
+          "width_bytes": 1
+        }
+      ],
+      "site_rva": 291108
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "eflags"
+      ],
+      "decoder_written_registers": [],
+      "input_query_registers": [],
+      "mnemonic": "jge",
+      "operands": [
+        {
+          "constant": 4485447,
+          "decoder_read": false,
+          "decoder_write": false,
+          "kind": "immediate",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 291111
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "ecx"
+      ],
+      "decoder_written_registers": [
+        "eax"
+      ],
+      "input_query_registers": [
+        "eax",
+        "ecx"
+      ],
+      "mnemonic": "mov",
+      "operands": [
+        {
+          "decoder_read": false,
+          "decoder_write": true,
+          "kind": "register",
+          "register": "eax",
+          "width_bytes": 4
+        },
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "kind": "register",
+          "register": "ecx",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 291113
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [],
+      "decoder_written_registers": [
+        "esi"
+      ],
+      "input_query_registers": [
+        "esi"
+      ],
+      "mnemonic": "mov",
+      "operands": [
+        {
+          "decoder_read": false,
+          "decoder_write": true,
+          "kind": "register",
+          "register": "esi",
+          "width_bytes": 4
+        },
+        {
+          "constant": 7,
+          "decoder_read": false,
+          "decoder_write": false,
+          "kind": "immediate",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 291115
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "eax",
+        "ecx"
+      ],
+      "decoder_written_registers": [
+        "eax",
+        "eflags"
+      ],
+      "input_query_registers": [
+        "eax",
+        "ecx"
+      ],
+      "mnemonic": "imul",
+      "operands": [
+        {
+          "decoder_read": true,
+          "decoder_write": true,
+          "kind": "register",
+          "register": "eax",
+          "width_bytes": 4
+        },
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "kind": "register",
+          "register": "ecx",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 291120
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "eax"
+      ],
+      "decoder_written_registers": [
+        "eax",
+        "edx"
+      ],
+      "input_query_registers": [
+        "eax"
+      ],
+      "mnemonic": "cdq",
+      "operands": [],
+      "site_rva": 291123
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "eax",
+        "edx",
+        "esi"
+      ],
+      "decoder_written_registers": [
+        "eax",
+        "edx",
+        "eflags"
+      ],
+      "input_query_registers": [
+        "eax",
+        "edx",
+        "esi"
+      ],
+      "mnemonic": "idiv",
+      "operands": [
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "kind": "register",
+          "register": "esi",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 291124
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "dl"
+      ],
+      "decoder_written_registers": [
+        "al"
+      ],
+      "input_query_registers": [
+        "eax",
+        "edx"
+      ],
+      "mnemonic": "mov",
+      "operands": [
+        {
+          "decoder_read": false,
+          "decoder_write": true,
+          "kind": "register",
+          "register": "al",
+          "width_bytes": 1
+        },
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "kind": "register",
+          "register": "dl",
+          "width_bytes": 1
+        }
+      ],
+      "site_rva": 291126
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "esp"
+      ],
+      "decoder_written_registers": [
+        "edx"
+      ],
+      "input_query_registers": [
+        "edx"
+      ],
+      "mnemonic": "mov",
+      "operands": [
+        {
+          "decoder_read": false,
+          "decoder_write": true,
+          "kind": "register",
+          "register": "edx",
+          "width_bytes": 4
+        },
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "geometry": {
+            "base_register": "esp",
+            "displacement_region": null,
+            "index_register": null,
+            "index_scale": 1,
+            "relative_field_offset": 24,
+            "segment_register": null,
+            "width_bytes": 4
+          },
+          "kind": "memory",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 291128
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "al",
+        "esp"
+      ],
+      "decoder_written_registers": [
+        "al",
+        "ax",
+        "eflags"
+      ],
+      "input_query_registers": [
+        "eax"
+      ],
+      "mnemonic": "imul",
+      "operands": [
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "geometry": {
+            "base_register": "esp",
+            "displacement_region": null,
+            "index_register": null,
+            "index_scale": 1,
+            "relative_field_offset": 19,
+            "segment_register": null,
+            "width_bytes": 1
+          },
+          "kind": "memory",
+          "width_bytes": 1
+        }
+      ],
+      "site_rva": 291132
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "al",
+        "ecx",
+        "edx"
+      ],
+      "decoder_written_registers": [
+        "al",
+        "eflags"
+      ],
+      "input_query_registers": [
+        "eax",
+        "ecx",
+        "edx"
+      ],
+      "mnemonic": "add",
+      "operands": [
+        {
+          "decoder_read": true,
+          "decoder_write": true,
+          "kind": "register",
+          "register": "al",
+          "width_bytes": 1
+        },
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "geometry": {
+            "base_register": "ecx",
+            "displacement_region": null,
+            "index_register": "edx",
+            "index_scale": 1,
+            "relative_field_offset": -1,
+            "segment_register": null,
+            "width_bytes": 1
+          },
+          "kind": "memory",
+          "width_bytes": 1
+        }
+      ],
+      "site_rva": 291136
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "al",
+        "ebx",
+        "ecx"
+      ],
+      "decoder_written_registers": [],
+      "input_query_registers": [
+        "eax",
+        "ebx",
+        "ecx"
+      ],
+      "mnemonic": "mov",
+      "operands": [
+        {
+          "decoder_read": false,
+          "decoder_write": true,
+          "geometry": {
+            "base_register": "ecx",
+            "displacement_region": null,
+            "index_register": "ebx",
+            "index_scale": 1,
+            "relative_field_offset": 0,
+            "segment_register": null,
+            "width_bytes": 1
+          },
+          "kind": "memory",
+          "width_bytes": 1
+        },
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "kind": "register",
+          "register": "al",
+          "width_bytes": 1
+        }
+      ],
+      "site_rva": 291140
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "esp"
+      ],
+      "decoder_written_registers": [
+        "eax"
+      ],
+      "input_query_registers": [
+        "eax"
+      ],
+      "mnemonic": "mov",
+      "operands": [
+        {
+          "decoder_read": false,
+          "decoder_write": true,
+          "kind": "register",
+          "register": "eax",
+          "width_bytes": 4
+        },
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "geometry": {
+            "base_register": "esp",
+            "displacement_region": null,
+            "index_register": null,
+            "index_scale": 1,
+            "relative_field_offset": 40,
+            "segment_register": null,
+            "width_bytes": 4
+          },
+          "kind": "memory",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 291143
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "ecx"
+      ],
+      "decoder_written_registers": [
+        "ecx",
+        "eflags"
+      ],
+      "input_query_registers": [
+        "ecx"
+      ],
+      "mnemonic": "inc",
+      "operands": [
+        {
+          "decoder_read": true,
+          "decoder_write": true,
+          "kind": "register",
+          "register": "ecx",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 291147
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "eax",
+        "ecx"
+      ],
+      "decoder_written_registers": [
+        "eflags"
+      ],
+      "input_query_registers": [
+        "eax",
+        "ecx"
+      ],
+      "mnemonic": "cmp",
+      "operands": [
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "kind": "register",
+          "register": "ecx",
+          "width_bytes": 4
+        },
+        {
+          "decoder_read": true,
+          "decoder_write": false,
+          "geometry": {
+            "base_register": "eax",
+            "displacement_region": null,
+            "index_register": null,
+            "index_scale": 1,
+            "relative_field_offset": 0,
+            "segment_register": null,
+            "width_bytes": 4
+          },
+          "kind": "memory",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 291148
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "eflags"
+      ],
+      "decoder_written_registers": [],
+      "input_query_registers": [],
+      "mnemonic": "jl",
+      "operands": [
+        {
+          "constant": 4485369,
+          "decoder_read": false,
+          "decoder_write": false,
+          "kind": "immediate",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 291150
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "esp"
+      ],
+      "decoder_written_registers": [
+        "edi",
+        "esp"
+      ],
+      "input_query_registers": [
+        "edi"
+      ],
+      "mnemonic": "pop",
+      "operands": [
+        {
+          "decoder_read": false,
+          "decoder_write": true,
+          "kind": "register",
+          "register": "edi",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 291152
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "esp"
+      ],
+      "decoder_written_registers": [
+        "esi",
+        "esp"
+      ],
+      "input_query_registers": [
+        "esi"
+      ],
+      "mnemonic": "pop",
+      "operands": [
+        {
+          "decoder_read": false,
+          "decoder_write": true,
+          "kind": "register",
+          "register": "esi",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 291153
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "esp"
+      ],
+      "decoder_written_registers": [
+        "ebp",
+        "esp"
+      ],
+      "input_query_registers": [
+        "ebp"
+      ],
+      "mnemonic": "pop",
+      "operands": [
+        {
+          "decoder_read": false,
+          "decoder_write": true,
+          "kind": "register",
+          "register": "ebp",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 291154
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "esp"
+      ],
+      "decoder_written_registers": [
+        "ebx",
+        "esp"
+      ],
+      "input_query_registers": [
+        "ebx"
+      ],
+      "mnemonic": "pop",
+      "operands": [
+        {
+          "decoder_read": false,
+          "decoder_write": true,
+          "kind": "register",
+          "register": "ebx",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 291155
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "esp"
+      ],
+      "decoder_written_registers": [
+        "ecx",
+        "esp"
+      ],
+      "input_query_registers": [
+        "ecx"
+      ],
+      "mnemonic": "pop",
+      "operands": [
+        {
+          "decoder_read": false,
+          "decoder_write": true,
+          "kind": "register",
+          "register": "ecx",
+          "width_bytes": 4
+        }
+      ],
+      "site_rva": 291156
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "esp"
+      ],
+      "decoder_written_registers": [
+        "esp"
+      ],
+      "input_query_registers": [],
+      "mnemonic": "ret",
+      "operands": [],
+      "site_rva": 291157
+    }
+  ],
+  "conditional_physical_inputs": [
+    {
+      "conditional_pre_call_esp_offset": 0,
+      "input": {
+        "decoder_read": true,
+        "decoder_write": false,
+        "kind": "register",
+        "register": "edx",
+        "width_bytes": 4
+      },
+      "site_rva": 262232
+    },
+    {
+      "conditional_pre_call_esp_offset": 4,
+      "input": {
+        "constant": 127,
+        "decoder_read": false,
+        "decoder_write": false,
+        "kind": "immediate",
+        "width_bytes": 4
+      },
+      "site_rva": 262230
+    },
+    {
+      "conditional_pre_call_esp_offset": 8,
+      "input": {
+        "constant": 0,
+        "decoder_read": false,
+        "decoder_write": false,
+        "kind": "immediate",
+        "width_bytes": 4
+      },
+      "site_rva": 262224
+    },
+    {
+      "conditional_pre_call_esp_offset": 12,
+      "input": {
+        "decoder_read": true,
+        "decoder_write": false,
+        "kind": "register",
+        "register": "ecx",
+        "width_bytes": 4
+      },
+      "site_rva": 262223
+    },
+    {
+      "conditional_pre_call_esp_offset": 16,
+      "input": {
+        "decoder_read": true,
+        "decoder_write": false,
+        "kind": "register",
+        "register": "eax",
+        "width_bytes": 4
+      },
+      "site_rva": 262222
+    },
+    {
+      "conditional_pre_call_esp_offset": 20,
+      "input": {
+        "constant": 4000,
+        "decoder_read": false,
+        "decoder_write": false,
+        "kind": "immediate",
+        "width_bytes": 4
+      },
+      "site_rva": 262208
+    }
+  ],
+  "invented_fixture_verification": {
+    "additional_lengths": [
+      57,
+      255,
+      3999
+    ],
+    "all_256_derived_key_values_covered": true,
+    "all_key_values_lengths": [
+      1,
+      2,
+      3,
+      7,
+      127
+    ],
+    "capacity_fallback_fixture_count": 7,
+    "domain_excluded_rvas": [
+      290982,
+      290983,
+      290986
+    ],
+    "domain_exclusion_reason": "nonnegative input-loop index below3999 makes JNS0x470a4 skip negative-index repair",
+    "generic_seed_fixture_count": 10,
+    "generic_seed_reference_formula_admitted": false,
+    "generic_seed_writer_covered_rvas": [
+      290832,
+      290833,
+      290837,
+      290838,
+      290839,
+      290843,
+      290844,
+      290847,
+      290849,
+      290850,
+      290855,
+      290898,
+      290902,
+      290904,
+      290910,
+      290914,
+      290918,
+      290920,
+      290922,
+      290926,
+      290928,
+      290930,
+      290932,
+      290937,
+      290938,
+      290940,
+      290942,
+      290946,
+      290948,
+      290953,
+      290956,
+      290960,
+      290962,
+      290966,
+      290967,
+      290969,
+      290971,
+      290973,
+      290975,
+      290980,
+      290987,
+      290989,
+      290995,
+      290997,
+      290998,
+      291001,
+      291002,
+      291004,
+      291006,
+      291010,
+      291012,
+      291015,
+      291019,
+      291020,
+      291022,
+      291024,
+      291028,
+      291032,
+      291034,
+      291037,
+      291039,
+      291041,
+      291042,
+      291046,
+      291048,
+      291049,
+      291051,
+      291055,
+      291057,
+      291059,
+      291061,
+      291065,
+      291067,
+      291069,
+      291071,
+      291076,
+      291079,
+      291080,
+      291082,
+      291085,
+      291087,
+      291091,
+      291095,
+      291098,
+      291100,
+      291102,
+      291104,
+      291108,
+      291111,
+      291113,
+      291115,
+      291120,
+      291123,
+      291124,
+      291126,
+      291128,
+      291132,
+      291136,
+      291140,
+      291143,
+      291147,
+      291148,
+      291150,
+      291152,
+      291153,
+      291154,
+      291155,
+      291156,
+      291157
+    ],
+    "invented_result_digest": "f3dda472702c000afe16b741a0dd44d6170ac5f44cd04a48e62e34ff0bace2d4",
+    "maximum_zero_seed_writer_steps": 164817,
+    "original_payload_or_binary_used": false,
+    "union_writer_covered_instruction_count": 126,
+    "writer_plus_read_steps_zero_seed": 3933134,
+    "zero_seed_fixture_count": 1292,
+    "zero_seed_writer_covered_rvas": [
+      290832,
+      290833,
+      290837,
+      290838,
+      290839,
+      290843,
+      290844,
+      290847,
+      290849,
+      290850,
+      290855,
+      290857,
+      290861,
+      290865,
+      290867,
+      290869,
+      290871,
+      290873,
+      290877,
+      290879,
+      290881,
+      290884,
+      290885,
+      290887,
+      290891,
+      290892,
+      290894,
+      290896,
+      290898,
+      290902,
+      290904,
+      290910,
+      290914,
+      290918,
+      290920,
+      290922,
+      290926,
+      290928,
+      290930,
+      290932,
+      290937,
+      290938,
+      290940,
+      290942,
+      290946,
+      290948,
+      290953,
+      290956,
+      290960,
+      290962,
+      290966,
+      290967,
+      290969,
+      290971,
+      290973,
+      290975,
+      290980,
+      290987,
+      290989,
+      290995,
+      291002,
+      291004,
+      291006,
+      291010,
+      291012,
+      291015,
+      291019,
+      291020,
+      291022,
+      291024,
+      291028,
+      291032,
+      291034,
+      291037,
+      291039,
+      291041,
+      291042,
+      291046,
+      291048,
+      291049,
+      291051,
+      291055,
+      291057,
+      291059,
+      291061,
+      291065,
+      291067,
+      291102,
+      291104,
+      291108,
+      291111,
+      291113,
+      291115,
+      291120,
+      291123,
+      291124,
+      291126,
+      291128,
+      291132,
+      291136,
+      291140,
+      291143,
+      291147,
+      291148,
+      291150,
+      291152,
+      291153,
+      291154,
+      291155,
+      291156,
+      291157
+    ],
+    "zero_seed_writer_formula_mutation_and_read_roundtrip_agree": true
+  },
+  "metadata_and_invented_fixtures_only": true,
+  "mutable_storage_notes": {
+    "ecx_preservation_not_required": true,
+    "key_local_entry_esp_offset": -1,
+    "key_overlaps_high_byte_of_initial_ecx_push": true,
+    "output_pointer_stack_slot_overwrite_rva": 291061
+  },
+  "no_original_archive_redownload": true,
+  "original_binary_executed": false,
+  "original_bytes_published": false,
+  "original_save_payload_evaluated": false,
+  "preconditions": {
+    "capacity_domain": [
+      0,
+      4000
+    ],
+    "disjoint_input_output_length_and_stack": true,
+    "input_count_equals_available_invented_bytes": true,
+    "input_is_mutable": true,
+    "model_limits_are_not_actual_read_write_size_proof": true,
+    "negative_count_capacity_and_alias_outside_reference_domain": true,
+    "normal_domain_n": [
+      1,
+      3999
+    ],
+    "normal_transform_requires_capacity_at_least_n_plus_one": true,
+    "valid_conditional_entry_slots_and_near_return": true,
+    "zero_seed_for_reference_formula": true
+  },
+  "r51_sha256": "15f54e5de8d1d20128fb7d948b54f13a0e3f6cf372eca203cbc7bb8adc473052",
+  "r52_sha256": "99c9252bf3a982db565ab29f43d27e67b2c34978a44990564d74d75949a15179",
+  "r53_sha256": "26bbdff472638081cd7e26945350598bf89a75a690c5c4205c2d491ad62e8dd5",
+  "r54_sha256": "635e80079eb594218c849facd2ea1ba8b0c9160142fc017182d17ba8f1c62387",
+  "schema": "tw10-r55-pinned-conditional-historical-writer-read-model",
+  "status": "CONDITIONAL_INVENTED_MODELS_ONLY_ACTUAL_NATIVE_PERSISTENCE_OPEN",
+  "writer_bounded_edges": [
+    [
+      290832,
+      290833
+    ],
+    [
+      290833,
+      290837
+    ],
+    [
+      290837,
+      290838
+    ],
+    [
+      290838,
+      290839
+    ],
+    [
+      290839,
+      290843
+    ],
+    [
+      290843,
+      290844
+    ],
+    [
+      290844,
+      290847
+    ],
+    [
+      290847,
+      290849
+    ],
+    [
+      290849,
+      290850
+    ],
+    [
+      290850,
+      290855
+    ],
+    [
+      290855,
+      290857
+    ],
+    [
+      290855,
+      290898
+    ],
+    [
+      290857,
+      290861
+    ],
+    [
+      290861,
+      290865
+    ],
+    [
+      290865,
+      290867
+    ],
+    [
+      290867,
+      290869
+    ],
+    [
+      290869,
+      290871
+    ],
+    [
+      290871,
+      290873
+    ],
+    [
+      290871,
+      290902
+    ],
+    [
+      290873,
+      290877
+    ],
+    [
+      290877,
+      290879
+    ],
+    [
+      290879,
+      290881
+    ],
+    [
+      290881,
+      290884
+    ],
+    [
+      290884,
+      290885
+    ],
+    [
+      290885,
+      290887
+    ],
+    [
+      290887,
+      290891
+    ],
+    [
+      290891,
+      290892
+    ],
+    [
+      290892,
+      290894
+    ],
+    [
+      290894,
+      290881
+    ],
+    [
+      290894,
+      290896
+    ],
+    [
+      290896,
+      290902
+    ],
+    [
+      290898,
+      290902
+    ],
+    [
+      290902,
+      290904
+    ],
+    [
+      290904,
+      290910
+    ],
+    [
+      290904,
+      291152
+    ],
+    [
+      290910,
+      290914
+    ],
+    [
+      290914,
+      290918
+    ],
+    [
+      290918,
+      290920
+    ],
+    [
+      290920,
+      290922
+    ],
+    [
+      290922,
+      290926
+    ],
+    [
+      290926,
+      290928
+    ],
+    [
+      290928,
+      290930
+    ],
+    [
+      290928,
+      291028
+    ],
+    [
+      290930,
+      290932
+    ],
+    [
+      290932,
+      290937
+    ],
+    [
+      290937,
+      290938
+    ],
+    [
+      290938,
+      290940
+    ],
+    [
+      290940,
+      290942
+    ],
+    [
+      290942,
+      290946
+    ],
+    [
+      290946,
+      290948
+    ],
+    [
+      290948,
+      290953
+    ],
+    [
+      290953,
+      290956
+    ],
+    [
+      290956,
+      290960
+    ],
+    [
+      290960,
+      290962
+    ],
+    [
+      290962,
+      290966
+    ],
+    [
+      290966,
+      290967
+    ],
+    [
+      290967,
+      290969
+    ],
+    [
+      290969,
+      290971
+    ],
+    [
+      290971,
+      290973
+    ],
+    [
+      290971,
+      291006
+    ],
+    [
+      290973,
+      290975
+    ],
+    [
+      290975,
+      290980
+    ],
+    [
+      290980,
+      290982
+    ],
+    [
+      290980,
+      290987
+    ],
+    [
+      290982,
+      290983
+    ],
+    [
+      290983,
+      290986
+    ],
+    [
+      290986,
+      290987
+    ],
+    [
+      290987,
+      290989
+    ],
+    [
+      290989,
+      290995
+    ],
+    [
+      290995,
+      290997
+    ],
+    [
+      290995,
+      291002
+    ],
+    [
+      290997,
+      290998
+    ],
+    [
+      290998,
+      291001
+    ],
+    [
+      291001,
+      291002
+    ],
+    [
+      291002,
+      291004
+    ],
+    [
+      291004,
+      291006
+    ],
+    [
+      291004,
+      291015
+    ],
+    [
+      291006,
+      291010
+    ],
+    [
+      291010,
+      291012
+    ],
+    [
+      291012,
+      291015
+    ],
+    [
+      291015,
+      291019
+    ],
+    [
+      291019,
+      291020
+    ],
+    [
+      291020,
+      291022
+    ],
+    [
+      291022,
+      290942
+    ],
+    [
+      291022,
+      291024
+    ],
+    [
+      291024,
+      291028
+    ],
+    [
+      291028,
+      291032
+    ],
+    [
+      291032,
+      291034
+    ],
+    [
+      291034,
+      291037
+    ],
+    [
+      291037,
+      291039
+    ],
+    [
+      291037,
+      291152
+    ],
+    [
+      291039,
+      291041
+    ],
+    [
+      291041,
+      291042
+    ],
+    [
+      291042,
+      291046
+    ],
+    [
+      291046,
+      291048
+    ],
+    [
+      291048,
+      291049
+    ],
+    [
+      291049,
+      291051
+    ],
+    [
+      291051,
+      291055
+    ],
+    [
+      291055,
+      291057
+    ],
+    [
+      291057,
+      291059
+    ],
+    [
+      291059,
+      291061
+    ],
+    [
+      291061,
+      291065
+    ],
+    [
+      291065,
+      291067
+    ],
+    [
+      291067,
+      291069
+    ],
+    [
+      291067,
+      291102
+    ],
+    [
+      291069,
+      291071
+    ],
+    [
+      291071,
+      291076
+    ],
+    [
+      291076,
+      291079
+    ],
+    [
+      291079,
+      291080
+    ],
+    [
+      291080,
+      291082
+    ],
+    [
+      291082,
+      291085
+    ],
+    [
+      291085,
+      291087
+    ],
+    [
+      291087,
+      291091
+    ],
+    [
+      291091,
+      291095
+    ],
+    [
+      291095,
+      291098
+    ],
+    [
+      291098,
+      291100
+    ],
+    [
+      291100,
+      291102
+    ],
+    [
+      291102,
+      291104
+    ],
+    [
+      291102,
+      291111
+    ],
+    [
+      291104,
+      291108
+    ],
+    [
+      291108,
+      291111
+    ],
+    [
+      291111,
+      291113
+    ],
+    [
+      291111,
+      291143
+    ],
+    [
+      291113,
+      291115
+    ],
+    [
+      291115,
+      291120
+    ],
+    [
+      291120,
+      291123
+    ],
+    [
+      291123,
+      291124
+    ],
+    [
+      291124,
+      291126
+    ],
+    [
+      291126,
+      291128
+    ],
+    [
+      291128,
+      291132
+    ],
+    [
+      291132,
+      291136
+    ],
+    [
+      291136,
+      291140
+    ],
+    [
+      291140,
+      291143
+    ],
+    [
+      291143,
+      291147
+    ],
+    [
+      291147,
+      291148
+    ],
+    [
+      291148,
+      291150
+    ],
+    [
+      291150,
+      291065
+    ],
+    [
+      291150,
+      291152
+    ],
+    [
+      291152,
+      291153
+    ],
+    [
+      291153,
+      291154
+    ],
+    [
+      291154,
+      291155
+    ],
+    [
+      291155,
+      291156
+    ],
+    [
+      291156,
+      291157
+    ]
+  ],
+  "zero_seed_relations": {
+    "capacity_fallback": "when 0<=capacity<N+1, copy input[:capacity], set length=capacity, leave input unchanged; no transform",
+    "input_mutation": "T[j]=input[j] XOR (255 if j mod5==0 OR j mod2==0 else0)",
+    "key": "K=sum(original invented input bytes) mod256, accumulated before each optional NOT",
+    "not_arbitrary_inverse_key": "R53 invented inverse key must equal sum(input) mod256 to match this historical writer relation",
+    "output": "output[0]=K; output[j+1]=(T[j]+(((j+1)^2) mod7)*K) mod256",
+    "output_length": "N+1 when capacity>=N+1 and N>=1",
+    "r53_roundtrip": "R53 zero-seed read(W55(input))=input under valid disjoint modeled storage",
+    "zero_count": "N=0/capacity0 returns empty fallback; N=0/capacity>=1 reaches division by zero in model"
+  }
+}
