@@ -1,0 +1,42 @@
+name: Verify TW1.0 R59 shared-helper native/buffer route distinction
+on:
+  workflow_dispatch:
+  push:
+    branches: [agent/tw10-r59-shared-paths-20261015, main]
+    paths:
+      - .github/workflows/verify-stoneage-tw10-r59-shared-paths.yml
+      - tools/stoneage_tw10_savedata_r59_shared_paths.py
+      - tests/test_stoneage_tw10_savedata_r59_shared_paths.py
+      - research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R58-ORIGINAL.json
+permissions:
+  contents: read
+jobs:
+  metadata:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Pure original-derived source mutation tests (no client execution)
+        run: |
+          set -euo pipefail
+          python -m unittest -v tests.test_stoneage_tw10_savedata_r59_shared_paths tests.test_stoneage_tw10_savedata_r59_prior_bridge
+      - name: Independent deterministic path witness replay
+        run: |
+          set -euo pipefail
+          python -m tools.stoneage_tw10_savedata_r59_shared_paths --source research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R58-ORIGINAL.json > /tmp/r59-static-three-paths.json
+          python -m tools.stoneage_tw10_savedata_r59_shared_paths --source research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R58-ORIGINAL.json --verify /tmp/r59-static-three-paths.json
+          python - <<'PY'
+          import json
+          d=json.load(open('/tmp/r59-static-three-paths.json'))
+          assert len(d['structural_call_free_candidate_zero_return'])>=2
+          assert d['actual_original_file_write_flush_close_or_persistence_proven'] is False
+          assert d['opaque_nested_call_preserves_edi_esi_ebx_or_memory_proven'] is False
+          print('TW10_R59_CONDITIONAL_ROUTE_SCOPE=PASS; NATIVE_STORAGE=OPEN')
+          PY
+      - name: Upload derived-only route contract
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: tw10-r59-shared-helper-three-routes
+          path: /tmp/r59-static-three-paths.json
+          retention-days: 21
