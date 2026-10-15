@@ -120,3 +120,8 @@ and all unresolved historical/runtime distinctions. Use non-destructive ref
 updates; inspect a freshly changed main before integration. This records the
 user's project-specific instruction and does not grant authority over unrelated
 repositories or unrelated external publication.
+
+
+## 11. Autonomous work-unit duration — 2026-10-15
+
+The user reaffirmed: “我们还是按照当初定好的 单次任务量最少15分钟为节点 你自己规划 要不然效率太慢”. Each continuation should therefore comprise at least15 minutes of effective sustained project work, planned autonomously. A small passing check is not a stopping point: combine adjacent authorized research, implementation, adversarial verification, independent acceptance and continuity/publication work into a useful unit. Brief progress updates do not end that unit. Do not inflate elapsed time through artificial waiting or unrelated work. Record the completed outcome and remaining highest-priority task; do not require repeated “继续” for each small subtask. Existing publication authorization and evidence boundaries remain in force.

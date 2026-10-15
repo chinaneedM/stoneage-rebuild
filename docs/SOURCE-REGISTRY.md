@@ -6482,3 +6482,12 @@ Original source Action38683095588/job116251797902 SUCCESS at agent/tw10-savedata
 FACT (bounded original static): native EDI overwrite is sourced by a final SUB whose inputs retain INC and opaque-CALL alternatives. A TEST/JE branch can bypass that overwrite. The same wrapper[EBP+20] slot is read then overwritten from two field-load sites or literal4096 before comparison/division candidates; final numerator cannot be bound to the initial product across opaque calls. Actual byte/count/ABI/alias/division/schema/persistence remain OPEN. Helper scope is bounded; next work returns to savedata-specific caller consumers.
 
 Canonical derivative/receipt research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R49-ORIGINAL.json and STONEAGE-TW10-SAVEDATA-NATIVE-IO-R49-ACCEPTANCE-R1.json; scope docs/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R49.md. Stage A only.
+
+
+## SRC-TW10-SAVEDATA-NATIVE-IO-R50 — 2026-10-15
+
+S-grade authenticated retail nonexecuting PE/operand/CFG metadata; execution and semantic roles remain conditional.
+
+Original source Action38684319450/job116255602386 SUCCESS at HEAD49d1f536710facf1142b5218e05304616f11791a, branch agent/tw10-savedata-r50-caller-consumers-20261015. Artifact11948569898 tw10-r50-original-caller-consumers-derived ZIP SHA25687d1833da95abc1a7977db7c395c132ecd89d09b13b5b61ec8bcbc5ba146eec7; raw JSON163325 bytes SHA2560badd1423f403a9e8a246a40518a68ee5a1bd67d380ea7ab3460fc3c607c3e94. Exact R49 and R41 original-derived reports revalidated before extension. Independent Action38684734727 at HEAD498820d86998f2d7b4dcaa2e7a6a85f38e33bee6 authenticates immutable source/run/branch/artifact identity, exact raw size/digest, strict report, canonical byte equality and separately regenerated application-consumer contract. Source494 tests and independent513 tests (494 plus19 metadata-consumer controls) PASS. Local19 metadata tests/syntax/custody PASS; full local runtime tests unavailable because capstone/pefile are absent. No original program executed/published; transient original media purged.
+
+FACT (bounded original static): savedata-specific read caller and processing entry requalified. Postprocessor comparisons57/127, register literals4/5, word checks and byte stores at global base/base+57 are recorded with exact widths. Actual length/tag/migration/alias remain unknown. Processor36 memory/control shapes are sampled to32; the omitted4 are explicit next work. Stage A gates unchanged.
