@@ -1,0 +1,45 @@
+name: Verify TW1.0 R60 WriteFile unknown returns and close-path static predicates
+on:
+  workflow_dispatch:
+  push:
+    branches: [agent/tw10-r60-close-predicates-20261015, main]
+    paths:
+      - .github/workflows/verify-stoneage-tw10-r60-close-predicates.yml
+      - tools/stoneage_tw10_savedata_r60_close_predicates.py
+      - tests/test_stoneage_tw10_savedata_r60_close_predicates.py
+      - research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R28-ORIGINAL.json
+      - research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R58-ORIGINAL.json
+permissions:
+  contents: read
+jobs:
+  static-custody:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Independent source guards and adversarial R60 controls
+        run: |
+          set -euo pipefail
+          python -m tools.stoneage_tw10_savedata_native_io_r28_guard --report research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R28-ORIGINAL.json
+          python -m tools.stoneage_tw10_savedata_native_io_r58_guard --report research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R58-ORIGINAL.json
+          python -m unittest -v tests.test_stoneage_tw10_savedata_r60_close_predicates tests.test_stoneage_tw10_savedata_r59_shared_paths tests.test_stoneage_tw10_savedata_r59_prior_bridge
+      - name: Derive and exactly replay closed static route contract
+        run: |
+          set -euo pipefail
+          python -m tools.stoneage_tw10_savedata_r60_close_predicates > /tmp/tw10-r60-close-static.json
+          python -m tools.stoneage_tw10_savedata_r60_close_predicates --verify /tmp/tw10-r60-close-static.json
+          python - <<'PY'
+          import json
+          d = json.load(open('/tmp/tw10-r60-close-static.json'))
+          assert len(d['close_structural_candidate_routes']) == 4
+          assert len(d['writefile_postcall_eax_provenance']) == 2
+          assert not d['original_writefile_bytecount_or_success_proven']
+          assert not d['original_close_flush_disk_persistence_proven']
+          print('R60_STATIC_ONLY=PASS; NATIVE_PERSISTENCE=OPEN')
+          PY
+      - name: Upload derived-only R60 analysis
+        uses: actions/upload-artifact@v4
+        with:
+          name: tw10-r60-native-return-close-static-only
+          path: /tmp/tw10-r60-close-static.json
+          retention-days: 21
