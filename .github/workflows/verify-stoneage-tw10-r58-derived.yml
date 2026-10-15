@@ -15,6 +15,9 @@ on:
       - tests/test_stoneage_tw10_savedata_native_io_r58.py
       - tests/test_stoneage_tw10_savedata_return_r58_guard.py
       - research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R58-ORIGINAL.json
+      - research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R58-ACCEPTANCE-R1.json
+      - docs/CURRENT-STATE.md
+      - docs/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R58.md
       - docs/specs/STONEAGE-TW10-SHARED-CLOSE-HELPERS-R58.md
 permissions:
   contents: read
@@ -43,6 +46,30 @@ jobs:
           if test -e research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R58-ORIGINAL.json; then
             cmp /tmp/tw10-r58/stoneage-r58-derived.json research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R58-ORIGINAL.json
           fi
+      - name: Verify accepted R58 main-source and gate receipt
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path('research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R58-ACCEPTANCE-R1.json').read_text())
+          assert r['schema']=='tw10-r58-original-shared-close-helper-acceptance-r1'
+          assert r['raw_size']==124989
+          assert r['raw_sha256']=='04fb0b586f1fcf87f647b1bc1276bde2505822e195646c4c9058c03c7f558fe8'
+          assert r['source_run']==38743841197 and r['artifact_id']==11976911506
+          assert r['independent_tests']==83 and r['independent_reverse_source_queries']==12
+          assert r['main_first_integration_head']=='a25479c47239778579426c7e16ccc2456c925f50'
+          assert r['main_integration_gates_success'] is True
+          assert r['actual_native_write_close_flush_persistence_proven'] is False
+          assert r['original_runtime_executed'] is False and r['original_payload_published'] is False
+          PY
+          for id in 38745402145 38745402074 38745401911 38745980276; do
+            identity="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/$id" --jq '[.status,.conclusion] | join("|")')"
+            test "$identity" = 'completed|success'
+          done
+          echo TW10_R58_PINNED_MAIN_ACCEPTANCE=PASS
       - name: Independently replay all rooted helper returns
         run: |
           set -euo pipefail

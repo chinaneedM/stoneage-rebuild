@@ -21,3 +21,8 @@ Original source Action38743841197/job116452160761 SUCCESS (68 tests) with immuta
 The shared helper root0x4a657 now has a40-node/44-edge complete CFG,5 predicates,4 memory writes, CALL0x4a683->0x4c5b4 and RET0x4a6b2 with direct EAX source MOV EAX,EBX0x4a6ae. The close helper root0x4a53e has66nodes/73edges,8 predicates,3 memory writes,8 calls (including2 memory-indirect) and RET0x4a5f0. Original direct wrapper/entrygraph bridges are confirmed. Both graphs have no frontier/cap and remain static-only.
 
 NEXT R59: pursue 0x4a657->0x4c5b4 specific result/flush obligations and 0x4a53e close-path indirect-callee/return barriers using retained metadata first. Actual WriteFile/flush/close, saved bytes, schema/checksum/migration/server authority remain OPEN. The modern game phase does not begin from this evidence.
+
+
+### R58 remote main acceptance receipt — 2026-10-15
+
+The nonforce fast-forward to a25479c47239778579426c7e16ccc2456c925f50/tree ea53364b19ef1a9a110041ac83a6f296bbdcfd4f was verified by main R58 Action38745402145/job116457601963, PET38745402074/job116457601735 and late provenance38745401911/job116457601714, all SUCCESS. Concurrent additive contract integration e33230490444e6363d7ae97f7dc42eada4b62a16 subsequently passed main R58 Action38745980276. Raw R58 report SHA256 04fb0b586f1fcf87f647b1bc1276bde2505822e195646c4c9058c03c7f558fe8 unchanged. Actual native save persistence remains OPEN; highest NEXT R59.
