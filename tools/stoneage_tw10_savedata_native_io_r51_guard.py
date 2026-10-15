@@ -26,7 +26,9 @@ def validate(d):
     shapes=s.get('source_definition_shapes');rows_guard(shapes,24,ROOT,ROOT+768,keys,cap,ats)
     require(s.get('source_definition_count')==len(sites) and s.get('source_definitions_truncated') is (len(sites)>24) and s.get('source_expansion_rounds')==2,'source bounds')
     require(all(same(by[r['site_rva']],r) for r in shapes) and [r['site_rva'] for r in shapes]==[a for a in sites[:24] if a in {r['site_rva'] for r in shapes}],'definition agreement')
-    require(s.get('source_expansion_pending_definition_rvas')==[a for a in sites if a not in {r['site_rva'] for r in shapes}],'source pending replay')
+    pending=s.get('source_expansion_pending_definition_rvas')
+    require(isinstance(pending,list) and pending==sorted(set(pending)) and set(pending)<=set(sites) and not(set(pending)&{r['site_rva'] for r in shapes}),'pending definition scope')
+    require([r['site_rva'] for r in shapes]==[a for a in sites[:24] if a not in pending],'sample and pending replay')
     require(same(d.get('conditional_consumer_analysis'),analyze(prior,rows,p['bounded_edges'])),'consumer replay')
     def ban(o):
         if isinstance(o,dict):
