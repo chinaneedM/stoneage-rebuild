@@ -1,0 +1,29 @@
+{
+  "actual_stack_alias_processor_output_length_schema_or_execution_proven": false,
+  "all_bounded_graph_exits_qualified_normal_ret_syntax": true,
+  "caller_post_call_load_pre_call_offset_candidates": [
+    32
+  ],
+  "candidate_matching_caller_lea_coordinates": [
+    {
+      "actual_address_or_post_call_alias_proven": false,
+      "conditional_address_relative_pre_call_esp": 32,
+      "destination_register": "ecx",
+      "site_rva": 262519
+    }
+  ],
+  "conditional_normal_return_net_esp_delta_candidates": [
+    0
+  ],
+  "near_call_return_address_geometry_only": true,
+  "normal_return_exit_candidates": [
+    {
+      "actual_return_or_calling_convention_proven": false,
+      "conditional_net_near_call_esp_delta": 0,
+      "exit_rva": 291432,
+      "mnemonic": "ret"
+    }
+  ],
+  "schema": "tw10-r51-conditional-normal-return-caller-coordinate-contract",
+  "source_sha256": "15f54e5de8d1d20128fb7d948b54f13a0e3f6cf372eca203cbc7bb8adc473052"
+}
