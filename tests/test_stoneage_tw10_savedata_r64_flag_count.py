@@ -32,7 +32,7 @@ class R64Tests(unittest.TestCase):
                               "actual_instruction_effect_or_value_known":False}])
             for p in source["push_candidates"]:
                 rows.append({"site_rva":p["site_rva"],"mnemonic":"push",
-                             "operands":[p["input"]],"actual_instruction_effect_or_value_known":False})
+                             "operands":[copy.deepcopy(p["input"])],"actual_instruction_effect_or_value_known":False})
             rows.sort(key=lambda z:z["site_rva"])
             item["bounded_local_edges"]=[
                 [call,post],[post,branch],[branch,fall],[branch,target]]
@@ -49,8 +49,16 @@ class R64Tests(unittest.TestCase):
         self.assertTrue(all(x["postcall_test_has_explicit_eax_operand"] for x in d["postcall_contexts"]))
         self.assertTrue(all(len(x["physical_push_candidates"])==5 for x in d["postcall_contexts"]))
         self.assertTrue(all(x["immediate_successor_is_conditional_jump"] for x in d["postcall_contexts"]))
-        self.assertFalse(d["actual_native_writefile_executed"])
+        self.assertFalse(d["original_native_writefile_executed"])
         self.assertFalse(d["actual_flush_close_or_disk_persistence_proven"])
+    def test_synthetic_inputs_do_not_alias_pinned_r28_reference(self):
+        d=self.fabricated()
+        w=next(x for x in self.r28["contexts"] if x["api"]=="WriteFile")
+        row=next(x for x in d["sites"][1]["decoded_instruction_rows"] if x["site_rva"]==313064)
+        before=copy.deepcopy(w["api_sites"][1]["push_candidates"][3]["input"])
+        row["operands"][0]["register"]="ebx"
+        self.assertEqual(w["api_sites"][1]["push_candidates"][3]["input"],before)
+
     def test_r63_exact_hash_bitflip_fails(self):
         with self.assertRaises(ValueError):
             inspect_raw(b"{}",(BASE/"STONEAGE-TW10-SAVEDATA-NATIVE-IO-R28-ORIGINAL.json").read_bytes())
