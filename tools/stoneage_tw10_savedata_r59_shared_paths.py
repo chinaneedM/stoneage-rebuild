@@ -62,7 +62,7 @@ def derive(report):
     rows = c["instruction_shapes"]
     require(ns == sorted(set(ns)) and len(ns) == 40 and
             [x["site_rva"] for x in rows] == ns, "complete operand rows")
-    require(edges == sorted({tuple(x) for x in edges}) and len(edges) == 44 and
+    require(edges == [list(x) for x in sorted({tuple(y) for y in edges})] and len(edges) == 44 and
             all(a in ns and b in ns for a,b in edges), "exact edge topology")
     by = {r["site_rva"]:r for r in rows}
     for at, successors in BRANCHES.items():
