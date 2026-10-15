@@ -1,0 +1,38 @@
+{
+  "schema": "tw10-r61-native-postcall-gap-audit-acceptance-r1",
+  "scope": "Stage A original TW1.0 source-pinned static postcall gap preflight; native persistence still OPEN",
+  "sources": {
+    "R28": "3671661219120d45bd922e05b6df371523b42432",
+    "R44": "39c1c0f673747fb560cc285d627490e5cd38047a",
+    "R45": "1e7fb71cec336c1b4fc531d4f4a6933c9f66d415"
+  },
+  "code_commit": "bb422d0ed9051097d78d6a27bf72857498da80e4",
+  "code_tree": "b6d60dabee27709b783581ed2a00da7610e61a07",
+  "branch": "agent/tw10-r61-native-postcall-gap-ledger-20261015",
+  "branch_run": 38752194545,
+  "branch_job": 116481172660,
+  "branch_result": "success",
+  "main_run": 38752378255,
+  "main_job": 116481809255,
+  "main_result": "success",
+  "original_source_guards": "PASS",
+  "r61_negative_mutations": "PASS",
+  "inherited_r60_regression": "PASS",
+  "derived_contract_replay": "PASS",
+  "r28_bounded_native_graph": {
+    "nodes": 139,
+    "edges": 156
+  },
+  "r44_structural_stack_candidates": 139,
+  "r45_pre_first_write_definition_shapes": 9,
+  "two_writefile_postcall_eax_sources": [
+    "unknown_call",
+    "unknown_call"
+  ],
+  "postcall_full_operand_branch_inventory_accepted": false,
+  "original_executable_save_payload_or_native_api_executed": false,
+  "original_write_count_frame_abi_alias_flush_close_persistence_proven": false,
+  "stage_a_families": "PARTIAL_OPEN",
+  "stage_b_joint_new_game_started": false,
+  "highest_next": "R62 exact postcall/branch and call-preservation evidence from remaining retained reports or minimally scoped authenticated static probe"
+}
