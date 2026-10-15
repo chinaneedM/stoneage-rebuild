@@ -61,3 +61,15 @@ Actual returning-CALL behavior, ABI/frame/register/memory identity, realized
 branches, BOOL return, transferred bytes, flush/close/disk persistence, original
 savedata schema/version/checksum/migration and server authority remain OPEN.
 All Stage A families remain PARTIAL/OPEN, and Stage B remains gated.
+
+## Expanded pre-acquisition preflight
+
+Before any R67 original acquisition, the same-object classifier was also run
+over **all 127 retained savedata JSON reports** at exact commit
+`0694d23f021d547b6271c3ab5517440a5d2ddbc4`. None supplies decoded operand rows at
+the 11 target positions in this representation. The permanent
+`STONEAGE-TW10-SAVEDATA-R66-EXPANDED-TAIL-PREFLIGHT.json` records every source path,
+raw byte count and Git blob. CI independently rehashes all 127 and repeats the
+census. The original 34-report canonical R66 result remains unchanged. Other
+encodings remain outside the absence claim; no original IO/format assertion is
+promoted by the expanded search.

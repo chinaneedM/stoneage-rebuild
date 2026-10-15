@@ -38,6 +38,35 @@ jobs:
         run: |
           set -euo pipefail
           python -m tools.stoneage_tw10_savedata_r66_count_consumers --verify research/recovered/STONEAGE-TW10-SAVEDATA-R66-COUNT-CONSUMERS-DERIVED.json
+      - name: Independently recheck expanded 127-report native-tail preflight
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib, json
+          from pathlib import Path
+          from tools.stoneage_tw10_savedata_r66_count_consumers import collect
+          p=Path('research/recovered/STONEAGE-TW10-SAVEDATA-R66-EXPANDED-TAIL-PREFLIGHT.json')
+          d=json.loads(p.read_bytes())
+          assert d['source_commit']=='0694d23f021d547b6271c3ab5517440a5d2ddbc4'
+          assert d['registered_source_count']==len(d['registered_source_files'])==127
+          targets=tuple(d['target_tail_sites_rva'])
+          assert targets==(313137,313147,313153,313155,313158,313160,313167,313177,313180,313181,313182)
+          names=[s['file'] for s in d['registered_source_files']]
+          assert len(set(names))==127 and names==sorted(names)
+          for s in d['registered_source_files']:
+              path=Path(s['file'])
+              assert path.parent==Path('research/recovered') and path.name.startswith('STONEAGE-TW10-SAVEDATA-') and path.suffix=='.json'
+              raw=path.read_bytes()
+              assert len(raw)==s['bytes']
+              assert hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest()==s['git_blob']
+              hits=collect(json.loads(raw),targets)
+              assert not any(h['decoded_mnemonic_and_operands'] for rows in hits.values() for h in rows)
+          assert d['decoded_same_object_hits']==[] and d['same_object_tail_rows_missing_in_registered_reports'] is True
+          assert d['absence_in_other_encodings_or_original_bytes_proven'] is False
+          assert d['actual_native_io_frame_alias_count_or_persistence_proven'] is False
+          assert d['stage_b_started'] is False
+          print('TW10_R66_EXPANDED_127_REPORT_TAIL_PREFLIGHT=PASS; ACTUAL_NATIVE_IO=OPEN')
+          PY
       - uses: actions/upload-artifact@v4
         with:
           name: tw10-r66-retained-count-consumers-derived-only
