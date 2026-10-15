@@ -1,0 +1,46 @@
+name: Verify TW1.0 R59 existing R28 R57 R58 WriteFile root bridge preflight
+on:
+  workflow_dispatch:
+  push:
+    branches: [agent/tw10-r59-reused-writefile-root-preflight-20261015, main]
+    paths:
+      - .github/workflows/verify-stoneage-tw10-r59-prior-bridge.yml
+      - tools/stoneage_tw10_savedata_r59_prior_bridge.py
+      - tests/test_stoneage_tw10_savedata_r59_prior_bridge.py
+      - research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R28-ORIGINAL.json
+      - research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R57-ORIGINAL.json
+      - research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R58-ORIGINAL.json
+permissions:
+  contents: read
+jobs:
+  prior:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Immutable source and adversarial native-claim barriers
+        run: |
+          set -euo pipefail
+          python -m unittest -v tests.test_stoneage_tw10_savedata_r59_prior_bridge
+      - name: Derive only existing root/caller/import identity worksheet
+        run: |
+          set -euo pipefail
+          args='--r28 research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R28-ORIGINAL.json --r57 research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R57-ORIGINAL.json --r58 research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R58-ORIGINAL.json'
+          python -m tools.stoneage_tw10_savedata_r59_prior_bridge $args > /tmp/r59-prior-bridge.json
+          python -m tools.stoneage_tw10_savedata_r59_prior_bridge $args --verify /tmp/r59-prior-bridge.json
+          python - <<'PY'
+          import json
+          x=json.load(open('/tmp/r59-prior-bridge.json'))
+          assert x['reused_function_root_candidate_rva']==0x4c5b4
+          assert x['shared_root_call_rva']==0x4a683
+          assert x['actual_shared_call_path_reaches_writefile_proven'] is False
+          print('R59_ROOTED_PRIOR_SITES',x['writefile_import_syntax_sites'])
+          print('R59_NO_NEW_ORIGINAL_RETRIEVAL=PASS; NATIVE_STORAGE=OPEN')
+          PY
+      - name: Upload derived bridge metadata only
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: tw10-r59-prior-writefile-bridge
+          path: /tmp/r59-prior-bridge.json
+          retention-days: 21
