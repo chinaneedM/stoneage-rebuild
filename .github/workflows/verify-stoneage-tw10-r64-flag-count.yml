@@ -1,0 +1,71 @@
+name: Independently verify TW1.0 R64 postcall TEST and physical output-count candidate
+on:
+  workflow_dispatch:
+  push:
+    branches: [agent/tw10-r64-test-flag-writecount-20261015, main]
+    paths:
+      - .github/workflows/verify-stoneage-tw10-r64-flag-count.yml
+      - tools/stoneage_tw10_savedata_r64_flag_count.py
+      - tests/test_stoneage_tw10_savedata_r64_flag_count.py
+      - research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R28-ORIGINAL.json
+permissions:
+  contents: read
+  actions: read
+jobs:
+  evidence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Exact R63 original source run and derived artifact custody
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          result="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/38754938642" --jq '[.status,.conclusion,.head_sha,.head_branch] | join("|")')"
+          test "$result" = 'completed|success|13468c61b52613c728f8e713548b6e3c0cfd71b4|agent/tw10-r63-targeted-postcall-static-20261015'
+          identity="$(gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/11983560690" --jq '[.workflow_run.id,.digest,.expired] | join("|")')"
+          test "$identity" = '38754938642|sha256:c6fef52e95757cae6682e3518a279a2ae572f4b86efd0e42c1a39aecd8f7931e|false'
+          mkdir -p /tmp/tw10-r64
+          gh run download 38754938642 --repo "$GITHUB_REPOSITORY" --name tw10-r63-original-static-postcall-derived-only --dir /tmp/tw10-r64
+          test "$(find /tmp/tw10-r64 -type f | wc -l)" -eq 1
+          test ! -L /tmp/tw10-r64/tw10-r63-static.json
+          echo '91b650db700cf892a7d8c8b2d36a9d49dbeca139be315856d31d59533056c1bd  /tmp/tw10-r64/tw10-r63-static.json' | sha256sum -c -
+      - name: Requalify source, synthetic mutations and inherited strict guards
+        run: |
+          set -euo pipefail
+          pip install --quiet capstone pefile
+          python -m tools.stoneage_tw10_savedata_native_io_r28_guard --report research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R28-ORIGINAL.json
+          python -m tools.stoneage_tw10_savedata_r63_derived_guard --report /tmp/tw10-r64/tw10-r63-static.json
+          python -m unittest -v tests.test_stoneage_tw10_savedata_r64_flag_count tests.test_stoneage_tw10_savedata_r63_derived_guard tests.test_stoneage_tw10_savedata_r61_gap_ledger
+      - name: Derive and independently replay exact pinned R64 static contract
+        run: |
+          set -euo pipefail
+          python -m tools.stoneage_tw10_savedata_r64_flag_count --r63 /tmp/tw10-r64/tw10-r63-static.json > /tmp/tw10-r64/derived.json
+          python -m tools.stoneage_tw10_savedata_r64_flag_count --r63 /tmp/tw10-r64/tw10-r63-static.json --verify /tmp/tw10-r64/derived.json
+          python - <<'PY'
+          import json
+          d=json.load(open('/tmp/tw10-r64/derived.json'))
+          assert len(d['postcall_contexts'])==2
+          assert not d['actual_native_writefile_executed']
+          assert not d['actual_bytes_written_memory_contents_known']
+          assert not d['actual_flush_close_or_disk_persistence_proven']
+          for c in d['postcall_contexts']:
+              print('R64_TEST_STATIC',hex(c['postcall_test_rva']),
+                    c['test_operand_signatures'],
+                    'next',hex(c['test_direct_successor_rva']),
+                    c['immediate_successor_mnemonic'],
+                    'Jcc',c['immediate_branch_successors'],
+                    'conditional_ptr_at',hex(c['win32_x86_stdcall_bytes_written_pointer_position_candidate']['original_rva']))
+          print('R64_ACTUAL_NATIVE_PERSISTENCE=OPEN')
+          PY
+      - name: Upload original-derived metadata only
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: tw10-r64-postcall-test-flag-count-derived-only
+          path: /tmp/tw10-r64/derived.json
+          retention-days: 21
+      - name: Purge ephemeral derived artifacts
+        if: always()
+        run: rm -rf /tmp/tw10-r64
