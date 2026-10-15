@@ -1,0 +1,49 @@
+name: Independently accept TW1.0 R64 pinned TEST and count-pointer boundary
+on:
+  workflow_dispatch:
+  push:
+    branches: [agent/tw10-r64-independent-acceptance-20261015, main]
+    paths:
+      - .github/workflows/verify-stoneage-tw10-r64-independent.yml
+      - tools/stoneage_tw10_savedata_r64_independent_guard.py
+      - tests/test_stoneage_tw10_savedata_r64_independent_guard.py
+      - tools/stoneage_tw10_savedata_r64_flag_count.py
+      - tests/test_stoneage_tw10_savedata_r64_flag_count.py
+permissions:
+  contents: read
+  actions: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check immutable R64 and R63 original-derived CI identities
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          source="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/38758669705" --jq '[.status,.conclusion,.head_sha] | join("|")')"
+          test "$source" = 'completed|success|589c56fb0d1fd700cfe3c7843caaaed987b36225'
+          artifact="$(gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/11985136047" --jq '[.workflow_run.id,.digest,.expired] | join("|")')"
+          test "$artifact" = '38758669705|sha256:f6a56e36160fe6f723ea23efa5fdeee29e66dd92634c51c1fb4419507098f0ab|false'
+          mkdir -p /tmp/tw10-r64-review/r63 /tmp/tw10-r64-review/r64
+          gh run download 38754938642 --repo "$GITHUB_REPOSITORY" --name tw10-r63-original-static-postcall-derived-only --dir /tmp/tw10-r64-review/r63
+          gh run download 38758669705 --repo "$GITHUB_REPOSITORY" --name tw10-r64-postcall-test-flag-count-derived-only --dir /tmp/tw10-r64-review/r64
+          test "$(find /tmp/tw10-r64-review -type f | wc -l)" -eq 2
+          echo '91b650db700cf892a7d8c8b2d36a9d49dbeca139be315856d31d59533056c1bd  /tmp/tw10-r64-review/r63/tw10-r63-static.json' | sha256sum -c -
+          test ! -L /tmp/tw10-r64-review/r64/derived.json
+      - name: Run independent mutations, full source replay, and R28 guard
+        run: |
+          set -euo pipefail
+          pip install --quiet capstone pefile
+          python -m tools.stoneage_tw10_savedata_native_io_r28_guard --report research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R28-ORIGINAL.json
+          python -m unittest -v tests.test_stoneage_tw10_savedata_r64_independent_guard tests.test_stoneage_tw10_savedata_r64_flag_count tests.test_stoneage_tw10_savedata_r63_derived_guard
+          python -m tools.stoneage_tw10_savedata_r64_independent_guard --report /tmp/tw10-r64-review/r64/derived.json
+          python -m tools.stoneage_tw10_savedata_r64_flag_count --r63 /tmp/tw10-r64-review/r63/tw10-r63-static.json --verify /tmp/tw10-r64-review/r64/derived.json
+          sha256sum /tmp/tw10-r64-review/r64/derived.json
+          echo R64_INDEPENDENT_ORIGINAL_STATIC_TEST=PASS
+          echo R64_NATIVE_WRITE_OR_PERSISTENCE=OPEN
+      - name: Purge ephemeral original-derived metadata
+        if: always()
+        run: rm -rf /tmp/tw10-r64-review
