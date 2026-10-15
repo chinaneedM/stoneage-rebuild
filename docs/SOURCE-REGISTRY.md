@@ -6629,3 +6629,13 @@ Independent R59 cross-bridge Action38747379693 and main Action38747479217/job116
 - Independent cross-check: branch Action 38755602897/job 116493158697 and main Action 38755871657/job 116494106489 SUCCESS, including strict source run identity, archive artifact digest and decoded data structural/non-promotion checks.
 - Proves: static `TEST` mnemonics (two operands each) at post-`WriteFile` RVAs `0x4c692`/`0x4c6f7`, local bounded instruction/edge coverage, import-slot syntax.
 - Does NOT prove: executable original call paths, native results and bytes written, API or close success, file ownership, ABI/register/stack/memory aliases, flag outcomes, persistent disk records, schema/checksum/migration, server authority or cross-version identity.
+
+
+### SRC-TW10-R64-ORIGINAL-STATIC-WRITEFILE-TEST-JE — 2026-10-15
+
+- Type: accepted historical Taiwanese 1.0 original-runtime-derived *static* instruction metadata, with independently replayed source custody and synthetic negative controls.
+- Primary source runtime SHA256: `cdab9ea049a98bbc96ce93eeaa8b63c688f0c0f0ad8b3183e79d75e47621441a`.
+- R28 immutable parent blob: `3671661219120d45bd922e05b6df371523b42432`. R63 exact derived JSON SHA256 `91b650db700cf892a7d8c8b2d36a9d49dbeca139be315856d31d59533056c1bd`, Git blob `3b7c9cea63ed4e2a360ddb6934e7dcd44b9833e7`. R64 exact derived JSON SHA256 `5253b2ebec4a9bfbdda24764ce8af5e0e67fabf9ba8daf7ad0ce22c7b172e43f`, Git blob `57cc0ea45bba16d994bb9fda47af257b6ddbb9df`.
+- Reproducibility: R63 source run38754938642; R64 primary run38758669705, independent branch38759123587, main independent38759247758/primary38759247737 and canonical publication38759808251 all SUCCESS. Earlier failed R64 CI attempts remain visible, with corrected synthetic fixture/test assertion failures.
+- Proves: Original static TEST EAX,EAX then JE at 0x4c692/0x4c694 and 0x4c6f7/0x4c6f9; five R28/R63 aligned physical PUSH shapes per call; conditional ESP+12 candidate at PUSH0x4c67e(EAX) and PUSH0x4c6e8(ECX); first JE's additional target outside local R63 window remains unqualified.
+- Does NOT prove: actual Windows API execution, successful BOOL return, runtime EAX/eflags/branch values, real memory-address/pointer alias, observed byte-count output, caller frame/register preservation, successful flush/close/disk persistence, original savedata format/migration/checksum or server authority. Evidence class S for pinned artifact syntax only; gameplay/execution claims remain OPEN.

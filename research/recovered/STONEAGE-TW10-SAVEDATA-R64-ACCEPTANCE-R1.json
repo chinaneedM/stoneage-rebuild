@@ -1,0 +1,86 @@
+{
+  "schema": "tw10-r64-static-writefile-result-and-physical-output-slot-acceptance-r1",
+  "date": "2026-10-15",
+  "phase": "Stage A TW1.0 historical original-static evidence",
+  "original_runtime_sha256": "cdab9ea049a98bbc96ce93eeaa8b63c688f0c0f0ad8b3183e79d75e47621441a",
+  "r28_git_blob": "3671661219120d45bd922e05b6df371523b42432",
+  "r63_source_action": 38754938642,
+  "r63_source_artifact_id": 11983560690,
+  "r63_zip_sha256": "c6fef52e95757cae6682e3518a279a2ae572f4b86efd0e42c1a39aecd8f7931e",
+  "r63_raw_json_sha256": "91b650db700cf892a7d8c8b2d36a9d49dbeca139be315856d31d59533056c1bd",
+  "r63_canonical_path": "research/recovered/STONEAGE-TW10-SAVEDATA-POSTCALL-R63-DERIVED.json",
+  "r63_canonical_git_blob": "3b7c9cea63ed4e2a360ddb6934e7dcd44b9833e7",
+  "r64_primary_source_action": 38758669705,
+  "r64_primary_source_head": "589c56fb0d1fd700cfe3c7843caaaed987b36225",
+  "r64_primary_source_job": 116503797685,
+  "r64_primary_synthetic_tests": 41,
+  "r64_artifact_id": 11985136047,
+  "r64_zip_sha256": "f6a56e36160fe6f723ea23efa5fdeee29e66dd92634c51c1fb4419507098f0ab",
+  "r64_raw_json_sha256": "5253b2ebec4a9bfbdda24764ce8af5e0e67fabf9ba8daf7ad0ce22c7b172e43f",
+  "r64_canonical_path": "research/recovered/STONEAGE-TW10-SAVEDATA-FLAGS-R64-DERIVED.json",
+  "r64_canonical_git_blob": "57cc0ea45bba16d994bb9fda47af257b6ddbb9df",
+  "r64_independent_branch_action": 38759123587,
+  "r64_independent_branch_job": 116505377832,
+  "r64_independent_branch_tests": 39,
+  "main_accepted_code_head": "c9b22341f058a243e2ad58f7e26a605f4ec36742",
+  "main_accepted_code_tree": "e47ab4643ca64a5e9eeffe5fdb2c4a6902c534ed",
+  "main_primary_action": 38759247737,
+  "main_independent_action": 38759247758,
+  "canonical_derivative_action": 38759808251,
+  "canonical_derivative_job": 116507773918,
+  "main_canonical_derivative_head": "30b83daf48c18846514c2419b10dd4713aa52d7c",
+  "main_canonical_derivative_tree": "1a8e64bdd328450d90be2abd4136a8036ebb6988",
+  "initial_nonaccepted_test_actions": [
+    38758165994,
+    38758428701,
+    38758566630
+  ],
+  "nonaccepted_runs_resolution": "Corrected branch-window completeness assumption, mutable shared synthetic fixture, and mismatched nonpromotion assertion names; all independent/main gates subsequently succeeded.",
+  "postcall_static_instruction_sites": [
+    {
+      "native_call_rva": 312972,
+      "test_rva": 312978,
+      "test_mnemonic": "test",
+      "test_operands": [
+        "eax",
+        "eax"
+      ],
+      "branch_rva": 312980,
+      "branch_mnemonic": "je",
+      "bounded_local_branch_successors": [
+        312982
+      ],
+      "other_branch_target_outside_r63_window": true,
+      "conditional_esp_plus_12_push_rva": 312958,
+      "conditional_push_operand_register": "eax"
+    },
+    {
+      "native_call_rva": 313073,
+      "test_rva": 313079,
+      "test_mnemonic": "test",
+      "test_operands": [
+        "eax",
+        "eax"
+      ],
+      "branch_rva": 313081,
+      "branch_mnemonic": "je",
+      "bounded_local_branch_successors": [
+        313083,
+        313094
+      ],
+      "other_branch_target_outside_r63_window": false,
+      "conditional_esp_plus_12_push_rva": 313064,
+      "conditional_push_operand_register": "ecx"
+    }
+  ],
+  "actual_native_WriteFile_execution_proven": false,
+  "actual_bool_return_count_or_savedata_bytes_proven": false,
+  "actual_stack_abi_frame_register_memory_alias_proven": false,
+  "actual_flag_values_or_branch_feasibility_proven": false,
+  "actual_flush_close_disk_persistence_proven": false,
+  "original_savedata_format_checksum_migration_server_authority_proven": false,
+  "original_proprietary_executable_or_save_payload_committed": false,
+  "stage_a_families": "PARTIAL_OPEN",
+  "stage_b_new_game_design_started": false,
+  "highest_next": "R65: independently close exact JE out-of-window branch target and TEST/EFLAGS predecessor geometry; retain API BOOL/output-pointer, memory alias and caller/callee ABI barriers without runtime/persistence promotion."
+}
