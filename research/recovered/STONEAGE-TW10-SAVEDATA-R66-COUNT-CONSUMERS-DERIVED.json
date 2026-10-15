@@ -1,0 +1,1035 @@
+{
+  "absence_is_bounded_to_registered_representation": true,
+  "actual_native_bool_count_frame_alias_or_persistence_proven": false,
+  "consumer_contract": {
+    "actual_output_count_or_return_value_known": false,
+    "common_accumulator_read_compare_path": [
+      313005,
+      313008,
+      313010
+    ],
+    "common_read_shape": "EAX <- frame[-8]; CMP EAX,EDI; JNE 0x4c743",
+    "edi_zero_on_all_rejoins_proven": false,
+    "first_accumulator_update_shape": "frame[-8] <- frame[-8] + EAX (32-bit ADD syntax)",
+    "first_compare_shape": "signed JL after CMP EAX,EDI; actual operands and feasibility unknown",
+    "first_count_read_accumulate_compare_path": [
+      312982,
+      312985,
+      312988,
+      312990
+    ],
+    "first_count_read_symbol": "frame_after_first_native[-12]",
+    "first_signed_target_rva": 313003,
+    "frame_offsets_are_savedata_fields": false,
+    "opaque_call_result_store_paths": [
+      [
+        313049,
+        313055,
+        313058
+      ],
+      [
+        313094,
+        313100,
+        313103
+      ]
+    ],
+    "opaque_result_store_shape": "frame[+8] <- EAX after opaque slot call; not a validated OS error code",
+    "second_assignment_shapes": [
+      "frame[+8] <- EDI",
+      "frame[-8] <- EAX"
+    ],
+    "second_count_read_assign_path": [
+      313083,
+      313086,
+      313089,
+      313092
+    ],
+    "second_rejoin_bypasses_zero_edi_instruction": true,
+    "zero_edi_shape_rva": 313003
+  },
+  "decoded_rows_at_target_sites": {
+    "312982": [
+      {
+        "decoded_mnemonic_and_operands": true,
+        "file": "STONEAGE-TW10-SAVEDATA-POSTCALL-R63-DERIVED.json",
+        "mnemonic": "mov",
+        "path": "$.sites[0].decoded_instruction_rows[15]"
+      }
+    ],
+    "312985": [
+      {
+        "decoded_mnemonic_and_operands": true,
+        "file": "STONEAGE-TW10-SAVEDATA-NATIVE-IO-R44-ORIGINAL.json",
+        "mnemonic": "add",
+        "path": "$.native_contexts[0].qualified_prefix_evidence.prefix_explicit_write_shapes[8]"
+      },
+      {
+        "decoded_mnemonic_and_operands": true,
+        "file": "STONEAGE-TW10-SAVEDATA-POSTCALL-R63-DERIVED.json",
+        "mnemonic": "add",
+        "path": "$.sites[0].decoded_instruction_rows[16]"
+      }
+    ],
+    "312988": [
+      {
+        "decoded_mnemonic_and_operands": true,
+        "file": "STONEAGE-TW10-SAVEDATA-POSTCALL-R63-DERIVED.json",
+        "mnemonic": "cmp",
+        "path": "$.sites[0].decoded_instruction_rows[17]"
+      }
+    ],
+    "312990": [
+      {
+        "decoded_mnemonic_and_operands": true,
+        "file": "STONEAGE-TW10-SAVEDATA-POSTCALL-R63-DERIVED.json",
+        "mnemonic": "jl",
+        "path": "$.sites[0].decoded_instruction_rows[18]"
+      }
+    ],
+    "313003": [
+      {
+        "decoded_mnemonic_and_operands": true,
+        "file": "STONEAGE-TW10-SAVEDATA-POSTCALL-R63-DERIVED.json",
+        "mnemonic": "xor",
+        "path": "$.sites[0].decoded_instruction_rows[23]"
+      }
+    ],
+    "313005": [
+      {
+        "decoded_mnemonic_and_operands": true,
+        "file": "STONEAGE-TW10-SAVEDATA-POSTCALL-R63-DERIVED.json",
+        "mnemonic": "mov",
+        "path": "$.sites[0].decoded_instruction_rows[24]"
+      }
+    ],
+    "313008": [
+      {
+        "decoded_mnemonic_and_operands": true,
+        "file": "STONEAGE-TW10-SAVEDATA-POSTCALL-R63-DERIVED.json",
+        "mnemonic": "cmp",
+        "path": "$.sites[0].decoded_instruction_rows[25]"
+      }
+    ],
+    "313010": [
+      {
+        "decoded_mnemonic_and_operands": true,
+        "file": "STONEAGE-TW10-SAVEDATA-POSTCALL-R63-DERIVED.json",
+        "mnemonic": "jne",
+        "path": "$.sites[0].decoded_instruction_rows[26]"
+      }
+    ],
+    "313055": [
+      {
+        "decoded_mnemonic_and_operands": true,
+        "file": "STONEAGE-TW10-SAVEDATA-POSTCALL-R63-DERIVED.json",
+        "mnemonic": "mov",
+        "path": "$.sites[1].decoded_instruction_rows[2]"
+      }
+    ],
+    "313083": [
+      {
+        "decoded_mnemonic_and_operands": true,
+        "file": "STONEAGE-TW10-SAVEDATA-POSTCALL-R63-DERIVED.json",
+        "mnemonic": "mov",
+        "path": "$.sites[1].decoded_instruction_rows[13]"
+      }
+    ],
+    "313086": [
+      {
+        "decoded_mnemonic_and_operands": true,
+        "file": "STONEAGE-TW10-SAVEDATA-POSTCALL-R63-DERIVED.json",
+        "mnemonic": "mov",
+        "path": "$.sites[1].decoded_instruction_rows[14]"
+      }
+    ],
+    "313089": [
+      {
+        "decoded_mnemonic_and_operands": true,
+        "file": "STONEAGE-TW10-SAVEDATA-POSTCALL-R63-DERIVED.json",
+        "mnemonic": "mov",
+        "path": "$.sites[1].decoded_instruction_rows[15]"
+      }
+    ],
+    "313100": [
+      {
+        "decoded_mnemonic_and_operands": true,
+        "file": "STONEAGE-TW10-SAVEDATA-POSTCALL-R63-DERIVED.json",
+        "mnemonic": "mov",
+        "path": "$.sites[1].decoded_instruction_rows[18]"
+      }
+    ],
+    "313137": [],
+    "313147": [],
+    "313153": [],
+    "313155": [],
+    "313158": [],
+    "313160": [],
+    "313167": [],
+    "313177": [],
+    "313180": [],
+    "313181": [],
+    "313182": [],
+    "313183": [
+      {
+        "decoded_mnemonic_and_operands": true,
+        "file": "STONEAGE-TW10-SAVEDATA-NATIVE-IO-R44-ORIGINAL.json",
+        "mnemonic": "leave",
+        "path": "$.native_contexts[0].literal_esp_adjustment_or_unknown_shapes[2]"
+      }
+    ],
+    "313184": [
+      {
+        "decoded_mnemonic_and_operands": true,
+        "file": "STONEAGE-TW10-SAVEDATA-NATIVE-IO-R44-ORIGINAL.json",
+        "mnemonic": "ret",
+        "path": "$.native_contexts[0].literal_esp_adjustment_or_unknown_shapes[3]"
+      }
+    ]
+  },
+  "missing_same_object_decoded_sites": [
+    313137,
+    313147,
+    313153,
+    313155,
+    313158,
+    313160,
+    313167,
+    313177,
+    313180,
+    313181,
+    313182
+  ],
+  "missing_tail_decoded_sites": [
+    313137,
+    313147,
+    313153,
+    313155,
+    313158,
+    313160,
+    313167,
+    313177,
+    313180,
+    313181,
+    313182
+  ],
+  "next": "R67: only after fresh custody, obtain nonexecuting original-static operands at the 11 missing R44 tail sites 0x4c731..0x4c75e, with required direct CFG edges; requalify retained LEAVE 0x4c75f / RET 0x4c760 instead of treating them as absent. Reconcile count/error return syntax, preserving call/frame/alias and execution barriers.",
+  "original_program_or_save_payload_executed": false,
+  "r62_prior_scope_report_count": 32,
+  "r65_source_git_blobs": {
+    "r28": "3671661219120d45bd922e05b6df371523b42432",
+    "r41": "7250a7c5b45a054d5ee8c3e92f14cd32612f3ac8",
+    "r63": "3b7c9cea63ed4e2a360ddb6934e7dcd44b9833e7",
+    "r64": "57cc0ea45bba16d994bb9fda47af257b6ddbb9df"
+  },
+  "registered_scope": "R27-R58 plus R63/R64; same-site dictionary mnemonic+operand representation only",
+  "report_count": 34,
+  "reports": [
+    {
+      "bytes": 7013,
+      "file": "STONEAGE-TW10-SAVEDATA-FLAGS-R64-DERIVED.json",
+      "git_blob": "57cc0ea45bba16d994bb9fda47af257b6ddbb9df",
+      "site_bearing_objects": {}
+    },
+    {
+      "bytes": 42859,
+      "file": "STONEAGE-TW10-SAVEDATA-NATIVE-IO-R27-ORIGINAL.json",
+      "git_blob": "91dc6ad70427f2b00429380e0d9ba93ca21c25bf",
+      "site_bearing_objects": {}
+    },
+    {
+      "bytes": 56581,
+      "file": "STONEAGE-TW10-SAVEDATA-NATIVE-IO-R28-ORIGINAL.json",
+      "git_blob": "3671661219120d45bd922e05b6df371523b42432",
+      "site_bearing_objects": {}
+    },
+    {
+      "bytes": 25275,
+      "file": "STONEAGE-TW10-SAVEDATA-NATIVE-IO-R29-ORIGINAL.json",
+      "git_blob": "618cc892664bfb6dd64780efb78d33eaab72e1b4",
+      "site_bearing_objects": {}
+    },
+    {
+      "bytes": 12559,
+      "file": "STONEAGE-TW10-SAVEDATA-NATIVE-IO-R30-ORIGINAL.json",
+      "git_blob": "5651fac5115b7242720ff0ef880f6132dbc53b3d",
+      "site_bearing_objects": {}
+    },
+    {
+      "bytes": 13684,
+      "file": "STONEAGE-TW10-SAVEDATA-NATIVE-IO-R31-ORIGINAL.json",
+      "git_blob": "b756c5cdf9d22114dc0adb60191bbf37d76d11d6",
+      "site_bearing_objects": {}
+    },
+    {
+      "bytes": 6793,
+      "file": "STONEAGE-TW10-SAVEDATA-NATIVE-IO-R32-ORIGINAL.json",
+      "git_blob": "272d06f44157db3a3316d883931ad07e3102f3ed",
+      "site_bearing_objects": {}
+    },
+    {
+      "bytes": 6610,
+      "file": "STONEAGE-TW10-SAVEDATA-NATIVE-IO-R33-ORIGINAL.json",
+      "git_blob": "50e552f189f67ca464922aa1375816de58e1468b",
+      "site_bearing_objects": {}
+    },
+    {
+      "bytes": 7632,
+      "file": "STONEAGE-TW10-SAVEDATA-NATIVE-IO-R34-ORIGINAL.json",
+      "git_blob": "b9dbd7523e376fdba40cdad22be1747f2f616f29",
+      "site_bearing_objects": {}
+    },
+    {
+      "bytes": 7260,
+      "file": "STONEAGE-TW10-SAVEDATA-NATIVE-IO-R35-ORIGINAL.json",
+      "git_blob": "9ecd6ae3c147b9675a9e4d824e7a67c4354c959d",
+      "site_bearing_objects": {}
+    },
+    {
+      "bytes": 40933,
+      "file": "STONEAGE-TW10-SAVEDATA-NATIVE-IO-R36-ORIGINAL.json",
+      "git_blob": "2c04a85d48e6f9c0425c0de26aa85211845eb30d",
+      "site_bearing_objects": {}
+    },
+    {
+      "bytes": 91061,
+      "file": "STONEAGE-TW10-SAVEDATA-NATIVE-IO-R37-ORIGINAL.json",
+      "git_blob": "1ed7b1593286b401c866ccd31118bbd235f4269a",
+      "site_bearing_objects": {}
+    },
+    {
+      "bytes": 31734,
+      "file": "STONEAGE-TW10-SAVEDATA-NATIVE-IO-R38-ORIGINAL.json",
+      "git_blob": "e270c60fe47c1caa708668816b5a7b27eee8ecdf",
+      "site_bearing_objects": {}
+    },
+    {
+      "bytes": 43886,
+      "file": "STONEAGE-TW10-SAVEDATA-NATIVE-IO-R39-ORIGINAL.json",
+      "git_blob": "109ac7fd058c5446b0dd9b7d4b0387463ee36f11",
+      "site_bearing_objects": {}
+    },
+    {
+      "bytes": 138310,
+      "file": "STONEAGE-TW10-SAVEDATA-NATIVE-IO-R40-ORIGINAL.json",
+      "git_blob": "3b4941bd1bbd29e30c726bf07e283b9c3c9131ea",
+      "site_bearing_objects": {}
+    },
+    {
+      "bytes": 120631,
+      "file": "STONEAGE-TW10-SAVEDATA-NATIVE-IO-R41-ORIGINAL.json",
+      "git_blob": "7250a7c5b45a054d5ee8c3e92f14cd32612f3ac8",
+      "site_bearing_objects": {}
+    },
+    {
+      "bytes": 147608,
+      "file": "STONEAGE-TW10-SAVEDATA-NATIVE-IO-R42-ORIGINAL.json",
+      "git_blob": "d74902200e552d94c3b47fead5fe06731c15a363",
+      "site_bearing_objects": {}
+    },
+    {
+      "bytes": 162163,
+      "file": "STONEAGE-TW10-SAVEDATA-NATIVE-IO-R43-ORIGINAL.json",
+      "git_blob": "3e705f23912521fc3e8f1648ad5a736395a7c2ad",
+      "site_bearing_objects": {}
+    },
+    {
+      "bytes": 225095,
+      "file": "STONEAGE-TW10-SAVEDATA-NATIVE-IO-R44-ORIGINAL.json",
+      "git_blob": "39c1c0f673747fb560cc285d627490e5cd38047a",
+      "site_bearing_objects": {
+        "312982": [
+          {
+            "decoded_mnemonic_and_operands": false,
+            "mnemonic": null,
+            "path": "$.native_contexts[0].frame_input_sources.queries[37]"
+          },
+          {
+            "decoded_mnemonic_and_operands": false,
+            "mnemonic": null,
+            "path": "$.native_contexts[0].frame_input_sources.queries[38].dependency_queries[0]"
+          },
+          {
+            "decoded_mnemonic_and_operands": false,
+            "mnemonic": null,
+            "path": "$.native_contexts[0].inherited_stack_effect_candidates[76]"
+          },
+          {
+            "decoded_mnemonic_and_operands": false,
+            "mnemonic": null,
+            "path": "$.native_contexts[0].qualified_prefix_evidence.stack_effect_candidates[76]"
+          }
+        ],
+        "312985": [
+          {
+            "decoded_mnemonic_and_operands": false,
+            "mnemonic": null,
+            "path": "$.native_contexts[0].frame_input_sources.queries[38]"
+          },
+          {
+            "decoded_mnemonic_and_operands": false,
+            "mnemonic": null,
+            "path": "$.native_contexts[0].frame_input_sources.queries[39]"
+          },
+          {
+            "decoded_mnemonic_and_operands": false,
+            "mnemonic": null,
+            "path": "$.native_contexts[0].inherited_stack_effect_candidates[77]"
+          },
+          {
+            "decoded_mnemonic_and_operands": false,
+            "mnemonic": null,
+            "path": "$.native_contexts[0].native_prefix_token_audits[4].modeled_prefix_write_candidates[20]"
+          },
+          {
+            "decoded_mnemonic_and_operands": false,
+            "mnemonic": null,
+            "path": "$.native_contexts[0].native_prefix_token_audits[5].modeled_prefix_write_candidates[20]"
+          },
+          {
+            "decoded_mnemonic_and_operands": false,
+            "mnemonic": null,
+            "path": "$.native_contexts[0].native_prefix_token_audits[6].modeled_prefix_write_candidates[20]"
+          },
+          {
+            "decoded_mnemonic_and_operands": false,
+            "mnemonic": null,
+            "path": "$.native_contexts[0].native_prefix_token_audits[7].modeled_prefix_write_candidates[20]"
+          },
+          {
+            "decoded_mnemonic_and_operands": false,
+            "mnemonic": null,
+            "path": "$.native_contexts[0].native_prefix_token_audits[8].modeled_prefix_write_candidates[19]"
+          },
+          {
+            "decoded_mnemonic_and_operands": false,
+            "mnemonic": null,
+            "path": "$.native_contexts[0].native_prefix_token_audits[9].modeled_prefix_write_candidates[19]"
+          },
+          {
+            "decoded_mnemonic_and_operands": true,
+            "mnemonic": "add",
+            "path": "$.native_contexts[0].qualified_prefix_evidence.prefix_explicit_write_shapes[8]"
+          },
+          {
+            "decoded_mnemonic_and_operands": false,
+            "mnemonic": null,
+            "path": "$.native_contexts[0].qualified_prefix_evidence.stack_effect_candidates[77]"
+          }
+        ],
+        "312988": [
+          {
+            "decoded_mnemonic_and_operands": false,
+            "mnemonic": null,
+            "path": "$.native_contexts[0].inherited_stack_effect_candidates[78]"
+          },
+          {
+            "decoded_mnemonic_and_operands": false,
+            "mnemonic": null,
+            "path": "$.native_contexts[0].qualified_prefix_evidence.stack_effect_candidates[78]"
+          }
+        ],
+        "312990": [
+          {
+            "decoded_mnemonic_and_operands": false,
+            "mnemonic": null,
+            "path": "$.native_contexts[0].inherited_stack_effect_candidates[79]"
+          },
+          {
+            "decoded_mnemonic_and_operands": false,
+            "mnemonic": null,
+            "path": "$.native_contexts[0].qualified_prefix_evidence.stack_effect_candidates[79]"
+          }
+        ],
+        "313003": [
+          {
+            "decoded_mnemonic_and_operands": false,
+            "mnemonic": null,
+            "path": "$.native_contexts[0].inherited_stack_effect_candidates[84]"
+          },
+          {
+            "decoded_mnemonic_and_operands": false,
+            "mnemonic": null,
+            "path": "$.native_contexts[0].qualified_prefix_evidence.stack_effect_candidates[84]"
+          }
+        ],
+        "313005": [
+          {
+            "decoded_mnemonic_and_operands": false,
+            "mnemonic": null,
+            "path": "$.native_contexts[0].inherited_stack_effect_candidates[85]"
+          },
+          {
+            "decoded_mnemonic_and_operands": false,
+            "mnemonic": null,
+            "path": "$.native_contexts[0].qualified_prefix_evidence.stack_effect_candidates[85]"
+          }
+        ],
+        "313008": [
+          {
+            "decoded_mnemonic_and_operands": false,
+            "mnemonic": null,
+            "path": "$.native_contexts[0].inherited_stack_effect_candidates[86]"
+          },
+          {
+            "decoded_mnemonic_and_operands": false,
+            "mnemonic": null,
+            "path": "$.native_contexts[0].qualified_prefix_evidence.stack_effect_candidates[86]"
+          }
+        ],
+        "313010": [
+          {
+            "decoded_mnemonic_and_operands": false,
+            "mnemonic": null,
+            "path": "$.native_contexts[0].inherited_stack_effect_candidates[87]"
+          },
+          {
+            "decoded_mnemonic_and_operands": false,
+            "mnemonic": null,
+            "path": "$.native_contexts[0].qualified_prefix_evidence.stack_effect_candidates[87]"
+          }
+        ],
+        "313055": [
+          {
+            "decoded_mnemonic_and_operands": false,
+            "mnemonic": null,
+            "path": "$.native_contexts[0].inherited_stack_effect_candidates[98]"
+          },
+          {
+            "decoded_mnemonic_and_operands": false,
+            "mnemonic": null,
+            "path": "$.native_contexts[0].qualified_prefix_evidence.stack_effect_candidates[98]"
+          }
+        ],
+        "313083": [
+          {
+            "decoded_mnemonic_and_operands": false,
+            "mnemonic": null,
+            "path": "$.native_contexts[0].inherited_stack_effect_candidates[109]"
+          },
+          {
+            "decoded_mnemonic_and_operands": false,
+            "mnemonic": null,
+            "path": "$.native_contexts[0].qualified_prefix_evidence.stack_effect_candidates[109]"
+          }
+        ],
+        "313086": [
+          {
+            "decoded_mnemonic_and_operands": false,
+            "mnemonic": null,
+            "path": "$.native_contexts[0].inherited_stack_effect_candidates[110]"
+          },
+          {
+            "decoded_mnemonic_and_operands": false,
+            "mnemonic": null,
+            "path": "$.native_contexts[0].qualified_prefix_evidence.stack_effect_candidates[110]"
+          }
+        ],
+        "313089": [
+          {
+            "decoded_mnemonic_and_operands": false,
+            "mnemonic": null,
+            "path": "$.native_contexts[0].inherited_stack_effect_candidates[111]"
+          },
+          {
+            "decoded_mnemonic_and_operands": false,
+            "mnemonic": null,
+            "path": "$.native_contexts[0].qualified_prefix_evidence.stack_effect_candidates[111]"
+          }
+        ],
+        "313100": [
+          {
+            "decoded_mnemonic_and_operands": false,
+            "mnemonic": null,
+            "path": "$.native_contexts[0].inherited_stack_effect_candidates[114]"
+          },
+          {
+            "decoded_mnemonic_and_operands": false,
+            "mnemonic": null,
+            "path": "$.native_contexts[0].qualified_prefix_evidence.stack_effect_candidates[114]"
+          }
+        ],
+        "313137": [
+          {
+            "decoded_mnemonic_and_operands": false,
+            "mnemonic": null,
+            "path": "$.native_contexts[0].inherited_stack_effect_candidates[126]"
+          },
+          {
+            "decoded_mnemonic_and_operands": false,
+            "mnemonic": null,
+            "path": "$.native_contexts[0].qualified_prefix_evidence.stack_effect_candidates[126]"
+          }
+        ],
+        "313147": [
+          {
+            "decoded_mnemonic_and_operands": false,
+            "mnemonic": null,
+            "path": "$.native_contexts[0].inherited_stack_effect_candidates[127]"
+          },
+          {
+            "decoded_mnemonic_and_operands": false,
+            "mnemonic": null,
+            "path": "$.native_contexts[0].qualified_prefix_evidence.stack_effect_candidates[127]"
+          }
+        ],
+        "313153": [
+          {
+            "decoded_mnemonic_and_operands": false,
+            "mnemonic": null,
+            "path": "$.native_contexts[0].inherited_stack_effect_candidates[128]"
+          },
+          {
+            "decoded_mnemonic_and_operands": false,
+            "mnemonic": null,
+            "path": "$.native_contexts[0].qualified_prefix_evidence.stack_effect_candidates[128]"
+          }
+        ],
+        "313155": [
+          {
+            "decoded_mnemonic_and_operands": false,
+            "mnemonic": null,
+            "path": "$.native_contexts[0].inherited_stack_effect_candidates[129]"
+          },
+          {
+            "decoded_mnemonic_and_operands": false,
+            "mnemonic": null,
+            "path": "$.native_contexts[0].qualified_prefix_evidence.stack_effect_candidates[129]"
+          }
+        ],
+        "313158": [
+          {
+            "decoded_mnemonic_and_operands": false,
+            "mnemonic": null,
+            "path": "$.native_contexts[0].inherited_stack_effect_candidates[130]"
+          },
+          {
+            "decoded_mnemonic_and_operands": false,
+            "mnemonic": null,
+            "path": "$.native_contexts[0].qualified_prefix_evidence.stack_effect_candidates[130]"
+          }
+        ],
+        "313160": [
+          {
+            "decoded_mnemonic_and_operands": false,
+            "mnemonic": null,
+            "path": "$.native_contexts[0].inherited_stack_effect_candidates[131]"
+          },
+          {
+            "decoded_mnemonic_and_operands": false,
+            "mnemonic": null,
+            "path": "$.native_contexts[0].qualified_prefix_evidence.stack_effect_candidates[131]"
+          }
+        ],
+        "313167": [
+          {
+            "decoded_mnemonic_and_operands": false,
+            "mnemonic": null,
+            "path": "$.native_contexts[0].inherited_stack_effect_candidates[132]"
+          },
+          {
+            "decoded_mnemonic_and_operands": false,
+            "mnemonic": null,
+            "path": "$.native_contexts[0].qualified_prefix_evidence.stack_effect_candidates[132]"
+          }
+        ],
+        "313177": [
+          {
+            "decoded_mnemonic_and_operands": false,
+            "mnemonic": null,
+            "path": "$.native_contexts[0].inherited_stack_effect_candidates[133]"
+          },
+          {
+            "decoded_mnemonic_and_operands": false,
+            "mnemonic": null,
+            "path": "$.native_contexts[0].qualified_prefix_evidence.stack_effect_candidates[133]"
+          }
+        ],
+        "313180": [
+          {
+            "decoded_mnemonic_and_operands": false,
+            "mnemonic": null,
+            "path": "$.native_contexts[0].inherited_stack_effect_candidates[134]"
+          },
+          {
+            "decoded_mnemonic_and_operands": false,
+            "mnemonic": null,
+            "path": "$.native_contexts[0].qualified_prefix_evidence.stack_effect_candidates[134]"
+          }
+        ],
+        "313181": [
+          {
+            "decoded_mnemonic_and_operands": false,
+            "mnemonic": null,
+            "path": "$.native_contexts[0].inherited_stack_effect_candidates[135]"
+          },
+          {
+            "decoded_mnemonic_and_operands": false,
+            "mnemonic": null,
+            "path": "$.native_contexts[0].qualified_prefix_evidence.stack_effect_candidates[135]"
+          }
+        ],
+        "313182": [
+          {
+            "decoded_mnemonic_and_operands": false,
+            "mnemonic": null,
+            "path": "$.native_contexts[0].inherited_stack_effect_candidates[136]"
+          },
+          {
+            "decoded_mnemonic_and_operands": false,
+            "mnemonic": null,
+            "path": "$.native_contexts[0].qualified_prefix_evidence.stack_effect_candidates[136]"
+          }
+        ],
+        "313183": [
+          {
+            "decoded_mnemonic_and_operands": false,
+            "mnemonic": null,
+            "path": "$.native_contexts[0].frame_input_sources.queries[40]"
+          },
+          {
+            "decoded_mnemonic_and_operands": false,
+            "mnemonic": null,
+            "path": "$.native_contexts[0].inherited_stack_effect_candidates[137]"
+          },
+          {
+            "decoded_mnemonic_and_operands": true,
+            "mnemonic": "leave",
+            "path": "$.native_contexts[0].literal_esp_adjustment_or_unknown_shapes[2]"
+          },
+          {
+            "decoded_mnemonic_and_operands": false,
+            "mnemonic": null,
+            "path": "$.native_contexts[0].qualified_prefix_evidence.stack_effect_candidates[137]"
+          }
+        ],
+        "313184": [
+          {
+            "decoded_mnemonic_and_operands": false,
+            "mnemonic": null,
+            "path": "$.native_contexts[0].inherited_stack_effect_candidates[138]"
+          },
+          {
+            "decoded_mnemonic_and_operands": true,
+            "mnemonic": "ret",
+            "path": "$.native_contexts[0].literal_esp_adjustment_or_unknown_shapes[3]"
+          },
+          {
+            "decoded_mnemonic_and_operands": false,
+            "mnemonic": null,
+            "path": "$.native_contexts[0].qualified_prefix_evidence.stack_effect_candidates[138]"
+          }
+        ]
+      }
+    },
+    {
+      "bytes": 73217,
+      "file": "STONEAGE-TW10-SAVEDATA-NATIVE-IO-R45-ORIGINAL.json",
+      "git_blob": "1e7fb71cec336c1b4fc531d4f4a6933c9f66d415",
+      "site_bearing_objects": {}
+    },
+    {
+      "bytes": 70648,
+      "file": "STONEAGE-TW10-SAVEDATA-NATIVE-IO-R46-ORIGINAL.json",
+      "git_blob": "19d730daf617313508ccf81e940c0a51f3be8395",
+      "site_bearing_objects": {}
+    },
+    {
+      "bytes": 109781,
+      "file": "STONEAGE-TW10-SAVEDATA-NATIVE-IO-R47-ORIGINAL.json",
+      "git_blob": "7f3f5e1917183fcffe65da9f529d3c5f969cf279",
+      "site_bearing_objects": {}
+    },
+    {
+      "bytes": 87512,
+      "file": "STONEAGE-TW10-SAVEDATA-NATIVE-IO-R48-ORIGINAL.json",
+      "git_blob": "384c462250c263d7df07529a0d41f11a5014c7cb",
+      "site_bearing_objects": {}
+    },
+    {
+      "bytes": 140909,
+      "file": "STONEAGE-TW10-SAVEDATA-NATIVE-IO-R49-ORIGINAL.json",
+      "git_blob": "e2d7de1615a6603f777e5a06f3efaea4403f0381",
+      "site_bearing_objects": {}
+    },
+    {
+      "bytes": 163325,
+      "file": "STONEAGE-TW10-SAVEDATA-NATIVE-IO-R50-ORIGINAL.json",
+      "git_blob": "24cc46a635056d121c385e8853b8c1dc45143298",
+      "site_bearing_objects": {}
+    },
+    {
+      "bytes": 284533,
+      "file": "STONEAGE-TW10-SAVEDATA-NATIVE-IO-R51-ORIGINAL.json",
+      "git_blob": "de092acfb9ef16d01a9ebd9fe646384af0508fa7",
+      "site_bearing_objects": {}
+    },
+    {
+      "bytes": 252332,
+      "file": "STONEAGE-TW10-SAVEDATA-NATIVE-IO-R52-DERIVED.json",
+      "git_blob": "8c3e2ac4431a7293f0dd8d6b6793aa1e94f021ac",
+      "site_bearing_objects": {}
+    },
+    {
+      "bytes": 104275,
+      "file": "STONEAGE-TW10-SAVEDATA-NATIVE-IO-R53-SPEC.json",
+      "git_blob": "e93de0f29d2768390b134323b73c0d14f3442d74",
+      "site_bearing_objects": {}
+    },
+    {
+      "bytes": 132329,
+      "file": "STONEAGE-TW10-SAVEDATA-NATIVE-IO-R54-ORIGINAL.json",
+      "git_blob": "f73d2af313b1a1dab13019b04ec0d255a339ac80",
+      "site_bearing_objects": {}
+    },
+    {
+      "bytes": 103165,
+      "file": "STONEAGE-TW10-SAVEDATA-NATIVE-IO-R55-SPEC.json",
+      "git_blob": "70cde74439276448aa7a54e631333839ac0c61a7",
+      "site_bearing_objects": {}
+    },
+    {
+      "bytes": 67492,
+      "file": "STONEAGE-TW10-SAVEDATA-NATIVE-IO-R56-SPEC.json",
+      "git_blob": "9ae0b329aed98e0bbd76915b1cafd90cc4ccdb2b",
+      "site_bearing_objects": {}
+    },
+    {
+      "bytes": 203899,
+      "file": "STONEAGE-TW10-SAVEDATA-NATIVE-IO-R57-ORIGINAL.json",
+      "git_blob": "82470bcfa11ed600c648a48543e2bb50e4863f00",
+      "site_bearing_objects": {}
+    },
+    {
+      "bytes": 124989,
+      "file": "STONEAGE-TW10-SAVEDATA-NATIVE-IO-R58-ORIGINAL.json",
+      "git_blob": "223b65683d37332546ada0fe034a81550b5e8ed8",
+      "site_bearing_objects": {}
+    },
+    {
+      "bytes": 31136,
+      "file": "STONEAGE-TW10-SAVEDATA-POSTCALL-R63-DERIVED.json",
+      "git_blob": "3b7c9cea63ed4e2a360ddb6934e7dcd44b9833e7",
+      "site_bearing_objects": {
+        "312982": [
+          {
+            "decoded_mnemonic_and_operands": true,
+            "mnemonic": "mov",
+            "path": "$.sites[0].decoded_instruction_rows[15]"
+          }
+        ],
+        "312985": [
+          {
+            "decoded_mnemonic_and_operands": true,
+            "mnemonic": "add",
+            "path": "$.sites[0].decoded_instruction_rows[16]"
+          }
+        ],
+        "312988": [
+          {
+            "decoded_mnemonic_and_operands": true,
+            "mnemonic": "cmp",
+            "path": "$.sites[0].decoded_instruction_rows[17]"
+          }
+        ],
+        "312990": [
+          {
+            "decoded_mnemonic_and_operands": true,
+            "mnemonic": "jl",
+            "path": "$.sites[0].decoded_instruction_rows[18]"
+          }
+        ],
+        "313003": [
+          {
+            "decoded_mnemonic_and_operands": true,
+            "mnemonic": "xor",
+            "path": "$.sites[0].decoded_instruction_rows[23]"
+          }
+        ],
+        "313005": [
+          {
+            "decoded_mnemonic_and_operands": true,
+            "mnemonic": "mov",
+            "path": "$.sites[0].decoded_instruction_rows[24]"
+          }
+        ],
+        "313008": [
+          {
+            "decoded_mnemonic_and_operands": true,
+            "mnemonic": "cmp",
+            "path": "$.sites[0].decoded_instruction_rows[25]"
+          }
+        ],
+        "313010": [
+          {
+            "decoded_mnemonic_and_operands": true,
+            "mnemonic": "jne",
+            "path": "$.sites[0].decoded_instruction_rows[26]"
+          }
+        ],
+        "313055": [
+          {
+            "decoded_mnemonic_and_operands": true,
+            "mnemonic": "mov",
+            "path": "$.sites[1].decoded_instruction_rows[2]"
+          }
+        ],
+        "313083": [
+          {
+            "decoded_mnemonic_and_operands": true,
+            "mnemonic": "mov",
+            "path": "$.sites[1].decoded_instruction_rows[13]"
+          }
+        ],
+        "313086": [
+          {
+            "decoded_mnemonic_and_operands": true,
+            "mnemonic": "mov",
+            "path": "$.sites[1].decoded_instruction_rows[14]"
+          }
+        ],
+        "313089": [
+          {
+            "decoded_mnemonic_and_operands": true,
+            "mnemonic": "mov",
+            "path": "$.sites[1].decoded_instruction_rows[15]"
+          }
+        ],
+        "313100": [
+          {
+            "decoded_mnemonic_and_operands": true,
+            "mnemonic": "mov",
+            "path": "$.sites[1].decoded_instruction_rows[18]"
+          }
+        ]
+      }
+    }
+  ],
+  "retained_epilogue_decoded_rows": [
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "ebp",
+        "esp"
+      ],
+      "decoder_written_registers": [
+        "ebp",
+        "esp"
+      ],
+      "input_query_registers": [
+        "ebp"
+      ],
+      "mnemonic": "leave",
+      "operands": [],
+      "site_rva": 313183
+    },
+    {
+      "actual_instruction_effect_or_value_known": false,
+      "decoder_read_registers": [
+        "esp"
+      ],
+      "decoder_written_registers": [
+        "esp"
+      ],
+      "input_query_registers": [],
+      "mnemonic": "ret",
+      "operands": [],
+      "site_rva": 313184
+    }
+  ],
+  "schema": "tw10-r66-retained-native-count-consumers-and-tail-operand-gap",
+  "stage_a_family_status": "PARTIAL_OPEN",
+  "stage_b_started": false,
+  "tail_stack_effect_rows_not_decoded_instructions": [
+    {
+      "conditional_32bit_stack_address_only": true,
+      "esp_delta": 0,
+      "operand_width_bytes": null,
+      "site_rva": 313137,
+      "syntax_class": "neutral"
+    },
+    {
+      "conditional_32bit_stack_address_only": true,
+      "esp_delta": 0,
+      "operand_width_bytes": null,
+      "site_rva": 313147,
+      "syntax_class": "neutral"
+    },
+    {
+      "conditional_32bit_stack_address_only": true,
+      "esp_delta": 0,
+      "operand_width_bytes": null,
+      "site_rva": 313153,
+      "syntax_class": "neutral"
+    },
+    {
+      "conditional_32bit_stack_address_only": true,
+      "esp_delta": 0,
+      "operand_width_bytes": null,
+      "site_rva": 313155,
+      "syntax_class": "neutral"
+    },
+    {
+      "conditional_32bit_stack_address_only": true,
+      "esp_delta": 0,
+      "operand_width_bytes": null,
+      "site_rva": 313158,
+      "syntax_class": "neutral"
+    },
+    {
+      "conditional_32bit_stack_address_only": true,
+      "esp_delta": 0,
+      "operand_width_bytes": null,
+      "site_rva": 313160,
+      "syntax_class": "neutral"
+    },
+    {
+      "conditional_32bit_stack_address_only": true,
+      "esp_delta": 0,
+      "operand_width_bytes": null,
+      "site_rva": 313167,
+      "syntax_class": "neutral"
+    },
+    {
+      "conditional_32bit_stack_address_only": true,
+      "esp_delta": 0,
+      "operand_width_bytes": null,
+      "site_rva": 313177,
+      "syntax_class": "neutral"
+    },
+    {
+      "conditional_32bit_stack_address_only": true,
+      "esp_delta": 4,
+      "operand_width_bytes": 4,
+      "site_rva": 313180,
+      "syntax_class": "pop"
+    },
+    {
+      "conditional_32bit_stack_address_only": true,
+      "esp_delta": 4,
+      "operand_width_bytes": 4,
+      "site_rva": 313181,
+      "syntax_class": "pop"
+    },
+    {
+      "conditional_32bit_stack_address_only": true,
+      "esp_delta": 4,
+      "operand_width_bytes": 4,
+      "site_rva": 313182,
+      "syntax_class": "pop"
+    },
+    {
+      "conditional_32bit_stack_address_only": true,
+      "esp_delta": null,
+      "operand_width_bytes": null,
+      "site_rva": 313183,
+      "syntax_class": "unknown_esp_write"
+    },
+    {
+      "conditional_32bit_stack_address_only": true,
+      "esp_delta": null,
+      "operand_width_bytes": null,
+      "site_rva": 313184,
+      "syntax_class": "unknown_esp_write"
+    }
+  ]
+}

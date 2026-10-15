@@ -1,0 +1,41 @@
+name: Verify TW1.0 R66 retained count consumers and exact native-tail gaps
+on:
+  workflow_dispatch:
+  push:
+    branches: [agent/tw10-r66-count-consumers-20261016, main]
+    paths:
+      - .github/workflows/verify-stoneage-tw10-r66-count-consumers.yml
+      - tools/stoneage_tw10_savedata_r66_count_consumers.py
+      - tests/test_stoneage_tw10_savedata_r66_count_consumers.py
+      - research/recovered/STONEAGE-TW10-SAVEDATA-R66-*.json
+      - research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R*.json
+      - research/recovered/STONEAGE-TW10-SAVEDATA-POSTCALL-R63-DERIVED.json
+      - research/recovered/STONEAGE-TW10-SAVEDATA-FLAGS-R64-DERIVED.json
+      - tools/stoneage_tw10_savedata_r65_*.py
+      - docs/specs/STONEAGE-TW10-R66-COUNT-CONSUMERS.md
+permissions:
+  contents: read
+jobs:
+  acceptance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Independent numeric controls and inherited source/representation boundaries
+        run: |
+          set -euo pipefail
+          python -m unittest -v tests.test_stoneage_tw10_savedata_r66_count_consumers tests.test_stoneage_tw10_savedata_r65_cross_window tests.test_stoneage_tw10_savedata_r62_source_coverage tests.test_stoneage_tw10_savedata_r64_flag_count tests.test_stoneage_tw10_savedata_r63_derived_guard tests.test_stoneage_tw10_savedata_r64_independent_guard
+      - name: Requalify exact permanent R65 evidence
+        run: |
+          set -euo pipefail
+          python -m tools.stoneage_tw10_savedata_r65_cross_window --verify research/recovered/STONEAGE-TW10-SAVEDATA-R65-CROSS-WINDOW-DERIVED.json
+          python -m tools.stoneage_tw10_savedata_r65_independent_guard --report research/recovered/STONEAGE-TW10-SAVEDATA-R65-CROSS-WINDOW-DERIVED.json
+      - name: Independently replay 34-report source census and count-consumer contract
+        run: |
+          set -euo pipefail
+          python -m tools.stoneage_tw10_savedata_r66_count_consumers --verify research/recovered/STONEAGE-TW10-SAVEDATA-R66-COUNT-CONSUMERS-DERIVED.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: tw10-r66-retained-count-consumers-derived-only
+          path: research/recovered/STONEAGE-TW10-SAVEDATA-R66-COUNT-CONSUMERS-DERIVED.json
+          retention-days: 21
