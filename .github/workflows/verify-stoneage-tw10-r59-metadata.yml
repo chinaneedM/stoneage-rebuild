@@ -2,7 +2,7 @@ name: Verify TW1.0 R59 existing-metadata WriteFile and close-import bridges
 on:
   workflow_dispatch:
   push:
-    branches: [agent/tw10-r59-existing-metadata-bridge-20261015, agent/tw10-r59-crosscheck-consolidated-20261015, main]
+    branches: [agent/tw10-r59-existing-metadata-bridge-20261015, agent/tw10-r59-crosscheck-consolidated-20261015, agent/tw10-r59-acceptance-continuity-20261015, main]
     paths:
       - .github/workflows/verify-stoneage-tw10-r59-metadata.yml
       - tools/stoneage_tw10_savedata_bridge_r59.py
@@ -14,6 +14,9 @@ on:
       - tools/stoneage_tw10_savedata_r59_prior_bridge.py
       - tests/test_stoneage_tw10_savedata_r59_prior_bridge.py
       - docs/specs/STONEAGE-TW10-NATIVE-CALL-BRIDGE-R59.md
+      - docs/CURRENT-STATE.md
+      - docs/SOURCE-REGISTRY.md
+      - research/recovered/STONEAGE-TW10-SAVEDATA-BRIDGE-R59-ACCEPTANCE-R1.json
 permissions:
   contents: read
 jobs:
