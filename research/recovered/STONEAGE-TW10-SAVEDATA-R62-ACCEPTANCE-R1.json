@@ -1,0 +1,37 @@
+{
+  "schema": "tw10-r62-retained-source-postcall-coverage-acceptance-r1",
+  "phase": "Stage A TW1.0 original-derived metadata coverage only; no Win32/native execution",
+  "prior_main_head": "8aa1fcd95e424213243cf9f7a7c6997c04913389",
+  "code_commit": "d338506c97d5d1d7af5ac5789700d944210829b8",
+  "code_tree": "f5e1655b6264e2b01312e7659e8f60ecc967b711",
+  "branch": "agent/tw10-r62-postcall-report-coverage-20261015",
+  "branch_run": 38753724403,
+  "branch_job": 116486524133,
+  "branch_conclusion": "success",
+  "main_run": 38754107693,
+  "main_job": 116487840407,
+  "main_conclusion": "success",
+  "source_range": "R27-R58",
+  "source_report_count": 32,
+  "pinned_custody_sources": {
+    "R28": "3671661219120d45bd922e05b6df371523b42432",
+    "R44": "39c1c0f673747fb560cc285d627490e5cd38047a",
+    "R45": "1e7fb71cec336c1b4fc531d4f4a6933c9f66d415"
+  },
+  "postcall_probe_rvas": [
+    312978,
+    313079
+  ],
+  "same_site_metadata_objects_per_probe": 3,
+  "same_site_full_mnemonic_and_operands_rows_per_probe": 0,
+  "r28_query_source": "unknown_call",
+  "r44_stack_candidate_not_abi_proof": true,
+  "r45_pre_call_definition_shapes": 9,
+  "synthetic_positive_and_negative_classifier_tests": "PASS",
+  "coverage_derived_report_replay": "PASS",
+  "runtime_native_result_written_count_or_original_save_persistence_proven": false,
+  "original_binary_or_save_payload_executed": false,
+  "stage_a_status": "PARTIAL_OPEN",
+  "stage_b_joint_new_game_started": false,
+  "highest_next": "R63 narrowly scoped reauthenticated nonexecuting TW1.0 0x4c692/0x4c6f7 postcall operand/branch/flag and caller-ABI evidence"
+}
