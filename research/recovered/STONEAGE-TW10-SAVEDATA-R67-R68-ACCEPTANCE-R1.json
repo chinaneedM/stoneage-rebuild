@@ -1,0 +1,91 @@
+{
+  "schema": "tw10-r67-r68-original-tail-and-conservative-return-acceptance-r1",
+  "date": "2026-10-16",
+  "startup_head": "a5f4dbfc16b801803ca98e0845b3fa8f3e651d5a",
+  "startup_tree": "74513003ba22533d0cad831a1962d4864f78d46a",
+  "original_source_action": 38824599576,
+  "original_source_head": "dc60f242a95bb34606e52037adc1efdaaa03b96f",
+  "original_source_job": 116729034463,
+  "independent_archive_job": 116729256354,
+  "artifact_id": 12014357270,
+  "artifact_zip_sha256": "f4a627c9a1700bd8613e75e0d51465d537c9a3973668eca21cb53f8c8f0a3728",
+  "raw_bytes": 14911,
+  "raw_sha256": "8bb5923de9a630a953de6c62cf9c10463aed9a4066db9a0aa97c7aaff338ab50",
+  "canonical_git_blob": "04162081d346b8c53424295de9fdc6b8f385b011",
+  "permanent_archive_head": "87adb881234b9461d55b99fda3c2cafbd90c2e14",
+  "permanent_archive_tree": "60dea52ba80ac3286a42fb10f07cf8b3db90abac",
+  "accepted_code_head": "453f47ff2ec2a16898ce9f09c0639b4d02ad9b60",
+  "accepted_code_tree": "2fb029b94c85fd225fa659de5633092391fb37d3",
+  "branch_main_acceptance_jobs": [
+    {
+      "run": 38825427569,
+      "jobs": [
+        {
+          "id": 116731665916,
+          "name": "acceptance",
+          "result": "success"
+        }
+      ]
+    },
+    {
+      "run": 38825429821,
+      "jobs": [
+        {
+          "id": 116731672623,
+          "name": "acceptance",
+          "result": "success"
+        }
+      ]
+    },
+    {
+      "run": 38825595815,
+      "jobs": [
+        {
+          "id": 116732200173,
+          "name": "acceptance",
+          "result": "success"
+        }
+      ]
+    },
+    {
+      "run": 38825595909,
+      "jobs": [
+        {
+          "id": 116732200907,
+          "name": "acceptance",
+          "result": "success"
+        }
+      ]
+    }
+  ],
+  "all_named_gates": "completed_success",
+  "local_combined_test_methods": 95,
+  "remote_source_synthetic_test_methods": 39,
+  "remote_r67_acceptance_test_methods": 39,
+  "remote_r68_acceptance_test_methods": 49,
+  "offline_invented_custody_fixture_modes_pass": [
+    "live",
+    "expired",
+    "unavailable"
+  ],
+  "r68_report": {
+    "path": "research/recovered/STONEAGE-TW10-SAVEDATA-R68-RETURN-SOURCES-DERIVED.json",
+    "bytes": 3121,
+    "sha256": "dc304db7eba4bd95d5c0ad2945e40b1cdde0ea21e1f261978b493acaa05dfd71",
+    "git_blob": "bbf60f7d20b463eafe241e93d1f343cfa2590104"
+  },
+  "original_fixed_tail_new_operand_rows": 11,
+  "total_original_operand_rows": 21,
+  "original_bounded_nodes": 139,
+  "original_bounded_edges": 156,
+  "r68_available_operand_rows": 77,
+  "r69_exact_commit_report_census": 130,
+  "r69_undecoded_site_rva": 312830,
+  "original_program_or_native_api_executed": false,
+  "original_savedata_payload_evaluated_or_published": false,
+  "original_proprietary_bytes_published": false,
+  "actual_native_count_result_frame_alias_or_persistence_proven": false,
+  "stage_a_families": "PARTIAL_OPEN",
+  "stage_b_started": false,
+  "highest_next": "R69: refresh corpus/custody, narrowly recover 0x4c5fe and only its required incoming control/value context; preserve the existing three-source distinction without native success promotion."
+}

@@ -368,3 +368,10 @@ Highest NEXT R65: resolve precise local/out-of-window control predecessors and T
 Original-static cross-window branch/flag/count-pointer geometry and conditional count-consumer syntax are accepted within their explicit metadata scope. R65 branch/main38819955397/38820017473 and R66 branch/main38820370818/38820484845 SUCCESS. Permanent reports and exact34-source census remain in Git, with original binaries and save payload absent. Eleven native-tail operands remain missing; LEAVE/RET already retained.
 
 Highest NEXT R67: narrowly obtain11 missing0x4c731..0x4c75e operands and required CFG edges after fresh source requalification; preserve all ABI/frame/memory/count/persistence boundaries. All Stage A families PARTIAL/OPEN; Stage B remains gated.
+
+
+## 2026-10-16 — R67 native-tail operand closure / R68 explicit early-return gap
+
+Eleven missing native-tail operand rows are recovered under authenticated original-static custody, with known LEAVE/RET requalified. Independent forward/reverse EAX-source algorithms preserve both decoded subtraction/all-ones candidates and the unqualified early0x4c5fe barrier. Canonical derived reports and source-custody receipt survive artifact expiry; no original program/API or savedata payload executed.
+
+Highest NEXT R69: after refreshed corpus/custody, recover only the missing early-return instruction and necessary incoming context. Actual native returns/counts, call/frame/register/memory aliases, feasible paths, flush/close/disk persistence and original format/schema/checksum/migration/server authority remain OPEN. Stage A subsystem family statuses PARTIAL/OPEN; Stage B gated.
