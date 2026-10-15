@@ -1,0 +1,73 @@
+name: Independently verify TW1.0 R49 original native EDI overwrite and temporal division slot sources
+on:
+  workflow_dispatch:
+  push:
+    branches: [agent/tw10-savedata-r49-overwrite-temporal-slots-20261015, main]
+    paths:
+      - .github/workflows/verify-stoneage-tw10-r49-original.yml
+      - tools/stoneage_tw10_savedata_native_io_r49_guard.py
+      - docs/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R49.md
+      - research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R49-ORIGINAL.json
+permissions:
+  contents: read
+  actions: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Authenticate independent immutable original run and artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          identity="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/38683095588" --jq '[.status,.conclusion,.head_sha,.head_branch] | join("|")')"
+          test "$identity" = 'completed|success|4d1828be1c0af1ce003f0fefd4a3330e162f5e88|agent/tw10-savedata-r49-overwrite-temporal-slots-20261015'
+          artifact="$(gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/11949650069" --jq '[.workflow_run.id,.name,.digest,.expired] | join("|")')"
+          test "$artifact" = '38683095588|tw10-r49-original-overwrite-temporal-slots-derived|sha256:824c4a5faff0947e55d79a777cdac0ab8912fbe51f15e1fe272fc9e2b614c942|false'
+      - name: Download bounded R49 original-derived metadata only
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/r49-independent
+          gh run download 38683095588 --repo "$GITHUB_REPOSITORY" --name tw10-r49-original-overwrite-temporal-slots-derived --dir /tmp/r49-independent
+          test "$(find /tmp/r49-independent -type f | wc -l)" -eq 1
+          test -f /tmp/r49-independent/stoneage-r49-derived.json
+          test ! -L /tmp/r49-independent/stoneage-r49-derived.json
+          test "$(stat -c %s /tmp/r49-independent/stoneage-r49-derived.json)" -le 300000
+          sha256sum /tmp/r49-independent/stoneage-r49-derived.json
+          wc -c /tmp/r49-independent/stoneage-r49-derived.json
+      - name: Replay strict R49 through R32 tamper and negative controls
+        run: |
+          set -euo pipefail
+          pip install --quiet capstone pefile
+          python -m unittest -v tests.test_stoneage_tw10_savedata_native_io_r49 tests.test_stoneage_tw10_savedata_native_io_r48 tests.test_stoneage_tw10_savedata_native_io_r47 tests.test_stoneage_tw10_savedata_native_io_r46 tests.test_stoneage_tw10_savedata_native_io_r45 tests.test_stoneage_tw10_savedata_native_io_r44 tests.test_stoneage_tw10_savedata_native_io_r43 tests.test_stoneage_tw10_savedata_native_io_r42 tests.test_stoneage_tw10_savedata_native_io_r41 tests.test_stoneage_tw10_savedata_native_io_r40 tests.test_stoneage_tw10_savedata_native_io_r39 tests.test_stoneage_tw10_savedata_native_io_r38 tests.test_stoneage_tw10_savedata_native_io_r37 tests.test_stoneage_tw10_savedata_native_io_r36 tests.test_stoneage_tw10_savedata_native_io_r35 tests.test_stoneage_tw10_savedata_native_io_r34 tests.test_stoneage_tw10_savedata_native_io_r33 tests.test_stoneage_tw10_savedata_native_io_r32 tests.test_stoneage_tw10_savedata_argtrace_r7 tests.test_stoneage_tw10_savedata_argtrace_r7_guard
+          python -m tools.stoneage_tw10_savedata_native_io_r49_guard --report /tmp/r49-independent/stoneage-r49-derived.json
+      - name: Review original bounded report and canonical exact equality when admitted
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json, hashlib
+          from pathlib import Path
+          from tools.stoneage_tw10_savedata_native_io_r49_guard import validate
+          source=Path('/tmp/r49-independent/stoneage-r49-derived.json').read_bytes()
+          assert len(source)==140909
+          assert hashlib.sha256(source).hexdigest()=='fbb25583fa019e496fd0f4d06ef1b441731547e559dcb818d5244321cc3f0ab6'
+          report=json.loads(source)
+          validate(report)
+          p=Path('research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R49-ORIGINAL.json')
+          assert p.exists(), 'R49 canonical derivative missing'
+          if p.exists():
+              assert json.loads(p.read_text()) == report, 'original R49 canonical JSON differs'
+              print('TW10_R49_EXACT_DERIVED_JSON_EQUALITY=PASS')
+          else:
+              print('TW10_R49_INDEPENDENT_REVIEW_ONLY=PASS')
+          print('TW10_R49_ORIGINAL_DERIVED_JSON_BEGIN')
+          print(json.dumps({'native_overwrite':report['native_overwrite_context']['conditional_overwrite_link'],'temporal_slot_refs':report['wrapper_temporal_slot_context']['frame_plus20_reference_candidates'],'slot_write_sources':report['wrapper_temporal_slot_context']['frame_plus20_write_source_links']},sort_keys=True))
+          print('TW10_R49_ORIGINAL_DERIVED_JSON_END')
+          PY
+      - name: Purge independent temporary derivative
+        if: always()
+        run: rm -rf /tmp/r49-independent
