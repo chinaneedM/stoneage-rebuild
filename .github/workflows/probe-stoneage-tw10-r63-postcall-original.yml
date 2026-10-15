@@ -1,0 +1,81 @@
+name: Probe TW1.0 R63 original post-WriteFile narrow static operand windows
+on:
+  workflow_dispatch:
+  push:
+    branches: [agent/tw10-r63-targeted-postcall-static-20261015]
+    paths:
+      - .github/workflows/probe-stoneage-tw10-r63-postcall-original.yml
+      - tools/stoneage_tw10_savedata_r63_postcall_static.py
+      - tests/test_stoneage_tw10_savedata_r63_postcall_static.py
+permissions:
+  contents: read
+jobs:
+  synthetic:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run bounded synthetic and source pin regression checks
+        run: |
+          set -euo pipefail
+          pip install --quiet capstone pefile
+          python -m unittest -v tests.test_stoneage_tw10_savedata_r63_postcall_static tests.test_stoneage_tw10_savedata_r62_source_coverage tests.test_stoneage_tw10_savedata_r61_gap_ledger
+  original-static:
+    needs: [synthetic]
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install static-only dependencies
+        run: |
+          set -euo pipefail
+          pip install --quiet capstone pefile
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq 7zip
+      - name: Acquire accepted TW1.0 original medium transiently
+        run: |
+          set -euo pipefail
+          for attempt in 1 2 3; do
+            if python -m tools.stoneage_tw10_archive_parallel_download --deadline 1500 --workers 16 --chunk 8388608 --output /tmp/CD_DIC.rar; then
+              echo R63_AUTHENTICATED_INPUT=PASS
+              break
+            fi
+            rm -f /tmp/CD_DIC.rar
+            if [ "$attempt" -eq 3 ]; then
+              echo R63_ORIGINAL_SOURCE_UNAVAILABLE=OPEN
+              exit 1
+            fi
+            sleep 10
+          done
+      - name: Extract original disc container and derive narrowly scoped static metadata
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/stoneage-r63
+          7z x -y -o/tmp/stoneage-r63 /tmp/CD_DIC.rar STONEAGE.bin >/dev/null
+          test "$(stat -c %s /tmp/stoneage-r63/STONEAGE.bin)" -eq 523449360
+          python -m tools.stoneage_tw10_savedata_r63_postcall_static --bin /tmp/stoneage-r63/STONEAGE.bin > /tmp/tw10-r63-static.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('/tmp/tw10-r63-static.json')
+          assert p.stat().st_size < 140000
+          d=json.loads(p.read_text())
+          assert d['schema']=='tw10-r63-original-postwritefile-static-operand-window'
+          assert d['candidate_graph_nodes']==139 and d['candidate_graph_edges']==156
+          assert len(d['sites'])==2
+          assert [s['postcall_rva'] for s in d['sites']]==[0x4c692,0x4c6f7]
+          assert not d['actual_native_writefile_return_count_or_success_proven']
+          assert not d['actual_buffer_flush_close_or_disk_persistence_proven']
+          assert not d['original_savedata_payload_read_or_published']
+          print('R63_ORIGINAL_STATIC_POSTCALL_OPERANDS=DERIVED; NATIVE_PERSISTENCE=OPEN')
+          PY
+      - name: Always purge proprietary original archive and disc container
+        if: always()
+        run: rm -rf /tmp/CD_DIC.rar /tmp/stoneage-r63
+      - name: Upload original-derived operand geometry only
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: tw10-r63-original-static-postcall-derived-only
+          path: /tmp/tw10-r63-static.json
+          retention-days: 21
