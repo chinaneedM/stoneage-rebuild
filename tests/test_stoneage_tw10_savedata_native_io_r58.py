@@ -21,7 +21,7 @@ class TestR58Bridges(unittest.TestCase):
                          [2, 1])
     def test_modified_target_rejected(self):
         d = fake_prior()
-        d['contexts'][0]['call_contexts'][1]['identity']['direct_target_rva'] ^= 1
+        d['contexts'][0]['call_contexts'][0]['identity']['direct_target_rva'] ^= 1
         with self.assertRaises(ValueError):
             find_bridges(d)
     def test_missing_call_rejected(self):
