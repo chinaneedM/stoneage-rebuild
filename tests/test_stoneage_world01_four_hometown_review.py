@@ -3,6 +3,7 @@
 All inputs are committed derived metadata; no proprietary source bundle required.
 """
 import json
+import hashlib
 from pathlib import Path
 import unittest
 
@@ -93,6 +94,15 @@ class World01FiniteAudit(unittest.TestCase):
                 self.assertIn("absent", c["unresolved_gap"])
             if c["checkpoint"] == "settlement":
                 self.assertEqual("MODEL_NOT_ORIGINAL_END_TO_END", c["status"])
+
+
+    def test_exact_source_blob_custody(self):
+        for name, entry in self.audit["source_pins"].items():
+            self.assertEqual(self.audit["source_index"][name], entry["path"])
+            content = (ROOT / entry["path"]).read_bytes()
+            self.assertEqual(entry["size_bytes"], len(content))
+            source_object = b"blob " + str(len(content)).encode("ascii") + b"\\0" + content
+            self.assertEqual(entry["git_blob"], hashlib.sha1(source_object).hexdigest())
 
 
 if __name__ == "__main__":
