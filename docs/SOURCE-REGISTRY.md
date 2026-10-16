@@ -6750,3 +6750,31 @@ fixture's missing GET/assert11 failure is reproduced and corrected as fixture
 input only; absence still yieldsNone. Exact remote gates and historical prefix
 custody are in the acceptance receipt. Full automatic construction remains
 OPEN_EVIDENCE_LIMITED_EXPLICIT_STATE_REQUIRED. Highest nextWORLD-01; R79 paused.
+
+
+### SRC-WORLD01-FOUR-HOMETOWN-FINITE-AUDIT-R1 — 2026-10-16
+
+Derived finite Stage A source-membership and representative gameplay review,
+not newly acquired JSS1999/TW1.0 content. Exact branch code head
+fcd404554ad9a70c553f9917518d6cc6ef8fdb21,
+successful independent Action38907653875 (five tests), failed predecessor
+Action38907621482 retained for Git blob NUL test code defect.
+Canonical evidence record:
+research/recovered/STONEAGE-WORLD01-FOUR-HOMETOWN-ACCEPTANCE-R1.json,
+with24 provenance/status/input/gap cells and14 path/blob/byte-size source pins;
+spec docs/specs/STONEAGE-WORLD01-FOUR-HOMETOWN-REVIEW-R1.md.
+
+Source classification: LATER_RECOVERED for four normal recovered25 hometowns;
+Taiwan1.0/JSS1999 membership OPEN. Recovered route order is
+1=COMBAT,2=COMBAT,3=COMBAT>SHOP>WARPMAN,
+4=SHOP>COMBAT>WARPMAN. Routes3/4 require item-gated affordable
+normal purchase and conditional WarpMan; classic-only routes fail there.
+All reward and destination results are existential/legal witnesses, not
+universal outcomes. 826 map floors split into761 client DAT three-plane and
+65 server LS2MAP two-plane with no server event plane. No raw source maps,
+NPC arguments, original dialogue, enemy/item rows, original server binaries
+or proprietary contents are committed. The audit does not prove
+first-generation map/quest/monster membership, commercial-server reward,
+full original save persistence, or a 100% restoration rate.
+WORLD-01 finite review closed; Stage A family states remain PARTIAL/OPEN.
+Next RULES-01; old TW1.0 client-local savedata R79 remains PAUSED_NON_BLOCKING.

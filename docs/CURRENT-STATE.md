@@ -14107,3 +14107,65 @@ README/protocol/current Roadmap R2/decisions/history/registry were reread from
 that exact checkout. All historical prefixes remain byte-identical. No old-chat
 SHA or older R79 NEXT selected work. See the acceptance receipt for remote
 code-head/job/Actions identities rather than inferring them from test counts.
+
+
+## 2026-10-16 — WORLD-01 four-hometown finite provenance / gameplay-route acceptance
+
+This package is a bounded Stage A attribution audit, not original world-family
+restoration. Four ordinal recovered25 normal-hometown routes x six checkpoints
+(spawn, region payload, movement/warp, encounter, NPC/progression, terminal
+battle settlement) produce24 evidence/source/input/gap/impact cells.
+All concrete route content is LATER_RECOVERED. JSS1999/TW1.0 exact world,
+NPC, enemy and quest memberships stay OPEN. Taiwan1.0 proves map cache/M/MC
+mechanism; later map resource-ID compatibility does not prove membership.
+
+Route 1 and2 have classic-only coordinate reachability and COMBAT-first
+progression witnesses. Routes3 and4 fail classic-only source-component
+reachability; each requires a real affordable normal ItemShop purchase,
+an item-gated ordinary WarpMan FREE predicate, and an existential legal
+destination result. Ordered milestones differ materially: route3 is
+COMBAT>SHOP>WARPMAN, route4 is SHOP>COMBAT>WARPMAN.
+The known route witnesses have16/16/28/28 existential combat variants and
+zero unresolved route map floors. These are not guaranteed RNG/victory,
+efficient EXP pacing, original quest dialogues or a universal original
+server reward guarantee. No raw source map planes, original entity identities,
+dialogues, coordinates or proprietary payloads are committed. The materialized
+later world contains761 DAT three-plane floors plus65 LS2MAP two-plane
+floors; LS2MAP event plane stays absent/separate, not synthesized zero.
+
+The settlement reference model and current persistence are not the original
+server save. Original launch-era quest/reward/skill/population and actual
+server-authoritative persistence remain OPEN. Broader descendant encounter
+missing-group and NPC duplicate/load-order/function-token skew limitations
+are preserved rather than repaired by invented rows.
+
+Deliverables:
+- docs/specs/STONEAGE-WORLD01-FOUR-HOMETOWN-REVIEW-R1.md
+- research/recovered/STONEAGE-WORLD01-FOUR-HOMETOWN-ACCEPTANCE-R1.json
+- tests/test_stoneage_world01_four_hometown_review.py
+- .github/workflows/validate-stoneage-world01.yml
+
+The receipt includes14 exact existing source-path Git blob/byte-count pins;
+five standard-library independent evidence/route/boundary tests pass at
+branch fcd404554ad9a70c553f9917518d6cc6ef8fdb21, Action38907653875.
+Prior Action38907621482 failed because the *new regression code* misencoded
+a Git-blob NUL separator; it was fixed and the failure history retained.
+Earlier separate run38907485327 also passed. No original client/server
+runtime was executed in this WORLD-01 audit.
+
+WORLD-01 status: BOUNDED_REVIEW_CLOSED_SOURCE_CONDITIONAL.
+Stage A world family remains PARTIAL/OPEN; Stage B remains gated.
+**Highest NEXT RULES-01:** finite versioned chain audit of battle victory /
+EXP, player and pet growth, item/shop/Stone, NPC award prerequisites, and
+state ownership/persistence. Select concrete conflicting joins from already
+qualified models; avoid repeating closed census/route probes. WORLD-01 may
+reopen only on early-version source data, material contract contradiction,
+or a specific core gameplay integration blocker. TW1.0 savedata R79 stays
+PAUSED_NON_BLOCKING. This is not a project-percent advance by test count.
+
+Fresh startup requalified main 9f563bdbbf241c078f79a5f5fbee3240650df812 and tree
+6cc5d33f9d5df1a4bca8c58406e75499ef256f57, canonical protocol,
+complete original CURRENT-STATE Git blob
+1c59a7f1b2b65212137433740fa76a282e2d600b, README, roadmap,
+decisions, timeline, source registry and the latest Actions. This entry
+appends without rewriting prior continuity bytes.
