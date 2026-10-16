@@ -132,3 +132,29 @@ The user reaffirmed: “我们还是按照当初定好的 单次任务量最少1
 For each material source-derived historical milestone, inspect whether the verified artifact is only retained temporarily by GitHub Actions. Where lawful and copyright-safe, permanently commit the **derived metadata/report only** after independent source SHA, artifact ZIP digest, raw JSON hash, negative evidence-boundary guards, and exact semantic replay. Keep original proprietary client binaries, save payloads, music, sprites and other assets out of Git by default. Preserve the original run ID, HEAD, job, artifact ID, ZIP digest, raw-content digest and derived Git blob SHA in a versioned acceptance receipt. If a derived report cannot legally be retained, record its provenance, unavailable status and precise missing evidence; never silently claim full coverage.
 
 Treat the archived derived report and source-custody receipt as complementary. An expired CI artifact cannot automatically invalidate previously verified research when a matching immutable derived Git blob and full chain of custody survive, but source runtime execution, actual IO success or original server-only values remain unproven until separately demonstrated. Every continuation must verify the current remote HEAD/tree, any incomplete branches/Actions, and the full current-state historical prefix before resuming. Prior failed Actions and corrections remain historically visible and must never be rewritten as successful attempts.
+
+
+## 13. Outcome-driven restoration planning — 2026-10-16
+
+The user reaffirmed that the assistant owns overall restoration planning and
+necessary-work judgments. After CURRENT-STATE, read
+`docs/RESTORATION-ROADMAP-R2.md` and its current portfolio index. A previous
+local NEXT does not outrank a newer portfolio-level supersession.
+
+Before starting a work package, name the game behavior/content being restored,
+its material evidence gap, expected deliverable, version/source scope and stop
+condition. Expand a low-level dependency only when it changes that deliverable.
+After at most two consecutive work units without a new domain specification,
+content attribution or material integration result, stop expanding the branch
+and reassess the whole-system queue. A family remaining OPEN is not a mandate
+to exhaust every helper before another family can advance.
+
+Preserve bounded unknowns and define precise reopening triggers. Never replace
+missing original server content with invented facts. Tests, R numbers, decoded
+nodes and elapsed time are verification/work measures, not overall restoration
+completion. Existing15-minute effective-work and publication rules continue;
+do not use repetition, irrelevant checks or artificial waiting to fill time.
+
+Current supersession: PET-STATE-01 is highest. TW1.0 client-local savedata R79 is
+PAUSED_NON_BLOCKING pending a named material game-rule/state dependency.
+Historical R1–R78 and R79 preflight are retained, not revoked or called complete.

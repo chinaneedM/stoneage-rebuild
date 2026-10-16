@@ -3287,3 +3287,16 @@ R78 qualifies exact widths/base/index/scale/offset/literals/topology, and indepe
 R78 report3854 bytes/SHA2568bdb54c09d3ad038cb9149b1ec6d6c7a240778182fa8c69e545e78823c081c14/blob0d2f061dac847871d05c3d38c4b494d583060117. Full local1935 savedata tests PASS after installing missing capstone/pefile; initial broad discovery's75 dependency-import errors are recorded as a resolved environment failure, not called a passing attempt. R78 branch38892142998/job116943943727 SUCCESS has212 tests; R77's66 and source50 are separate counts. Accepted codede9bb83b585f81e106ce3c45b6afaa8ba7ba1b34/tree058b599be98f54961e58680cc8f5542f4aea91fb followed fresh ahead3/behind0/14-path comparison and expected-head nonforced fast-forward. All ten relevant code main gates SUCCESS. Receipt STONEAGE-TW10-SAVEDATA-R77-R78-ACCEPTANCE-R1.json and spec docs/specs/STONEAGE-TW10-R77-R78-HANDLE-CONTRACTS.md preserve full custody and conditional limits.
 
 Highest NEXT R79: exact160-report census at acceptedde9bb83b585f81e106ce3c45b6afaa8ba7ba1b34 preserves0x4c953's three root objects/29 numeric references and zero registered decoded entries. Preflight36634 bytes/SHA256ccb54ea43a16783e7185bc9150751cf369676d8431f51b4a5bd4be3fd085b2f6/blob725b4ebc9671ce3230c59b646e21a9167ccd606f is independently replayed against the complete source Git tree. First reuse retained boundary/caller evidence, then qualify only material error-helper effects on nonzero-error/literal-five-inequality allones routes. No generic helper exhaustion. Actual handle/count/seek results, realized paths, ABI/cleanup/nonaliasing/global-table stability, flush/close/disk persistence, original schema/version/checksum/migration/server authority remain OPEN. All Stage A families PARTIAL/OPEN; Stage B gated.
+
+
+## 2026-10-16 — Research work-order correction, no historical promotion
+
+The user's request for coherent overall restoration planning triggers the
+nine-family source-qualified Roadmap R2. TW1.0 client-local savedata remains
+a distinct, non-blocking historical gap; no server-save equivalence inferred.
+Deep R79 helper expansion is paused with all prior evidence preserved.
+Highest NEXT PET-STATE-01 qualifies capture-to-owned-pet runtime field sources.
+The later WORLD-01 review reuses four existing hometown routes; no topology
+reproof or new map/NPC/quest membership is asserted.
+See docs/RESTORATION-ROADMAP-R2.md and the permanent portfolio index.
+Stage A remains PARTIAL/OPEN; joint Stage B review remains required.

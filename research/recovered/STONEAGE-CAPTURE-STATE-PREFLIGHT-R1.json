@@ -1,0 +1,175 @@
+{
+  "actual_captured_pet_autoconstruction_closed": false,
+  "battle_participant_fields": [
+    "participant_id",
+    "side",
+    "kind",
+    "level",
+    "hp",
+    "max_hp",
+    "attack",
+    "defense",
+    "quick",
+    "name",
+    "fixed_vital",
+    "fixed_ai",
+    "source_variant_id",
+    "source_template_id",
+    "source_pet_slot",
+    "reward_exp",
+    "reward_items",
+    "capturable",
+    "capture_default"
+  ],
+  "bridge_required_keyword_inputs": [
+    "pet_slot",
+    "level_roll",
+    "birth_offsets",
+    "spawn_allocation_rolls",
+    "mp",
+    "max_mp",
+    "exp",
+    "max_exp",
+    "rename_flag",
+    "free_name"
+  ],
+  "bridge_state_keys": [
+    "update_mask",
+    "graphic_id",
+    "hp",
+    "max_hp",
+    "mp",
+    "max_mp",
+    "exp",
+    "max_exp",
+    "level",
+    "attack",
+    "defense",
+    "quick",
+    "ai",
+    "earth",
+    "water",
+    "fire",
+    "wind",
+    "max_skill_slots",
+    "rename_flag",
+    "name",
+    "free_name"
+  ],
+  "comparison_scope": "AST signatures/dataclass members/current validator spellings only. Exact-name differences are not proof of semantic absence in other carriers or source lineages. Caller-supplied state remains an accepted explicit boundary, not declared a bug.",
+  "coordinator_requires_complete_caller_supplied_mapping": true,
+  "copied_target_state_keys_checked_by_current_validator": [
+    "level",
+    "hp",
+    "max_hp"
+  ],
+  "existing_descendant_capture_model": {
+    "copy_fields": [
+      "base_image",
+      "hp",
+      "mp",
+      "max_mp",
+      "vital",
+      "strength",
+      "toughness",
+      "dexterity",
+      "luck",
+      "fire",
+      "water",
+      "earth",
+      "wind",
+      "skill_slots",
+      "mod_ai",
+      "level",
+      "poison",
+      "paralysis",
+      "sleep",
+      "stone",
+      "drunk",
+      "confusion",
+      "rare",
+      "pet_rank",
+      "pet_id",
+      "critical",
+      "counter",
+      "pet_skills",
+      "alloc_point",
+      "name"
+    ],
+    "exp_copied_from_enemy": false,
+    "max_exp_recomputed_from_level": true,
+    "must_not_substitute_battle_reward_exp_for_captured_pet_exp": true,
+    "scope": "existing convergent-descendant reference model; not newly established TW1.0 retail-server semantics",
+    "variable_ai_after_capture": 0
+  },
+  "highest_next": "PET-STATE-01",
+  "historical_rule_promoted": false,
+  "max_work_units_before_reassessment": 2,
+  "must_not_invent_defaults": true,
+  "must_not_rebirth_captured_target": true,
+  "next_actions": [
+    "trace each field through current spawn/battle/runtime/persistence carriers and the existing pinned capture semantics",
+    "separate copied current values from computed base values, template facts and unavailable original state",
+    "implement only a positively evidenced minimal join, otherwise preserve explicit required inputs and record practical limits"
+  ],
+  "original_program_or_source_executed": false,
+  "pet_actor_fields": [
+    "slot",
+    "variant_id",
+    "template_id",
+    "runtime_object_id",
+    "state",
+    "skills",
+    "growth"
+  ],
+  "required_runtime_inputs_needing_material_source_review": [
+    "mp",
+    "max_mp",
+    "exp",
+    "max_exp",
+    "rename_flag",
+    "free_name"
+  ],
+  "schema": "stoneage-capture-state-business-gap-preflight-r1",
+  "source_acquisition_performed": false,
+  "source_head": "434e11d6bee5546330d9a6a8e5e96ebf9caf8d78",
+  "sources": [
+    {
+      "bytes": 23303,
+      "git_blob": "4b08dba0d6f6959aa27e14537643a3f5ac1957c0",
+      "path": "tools/stoneage_tw10_25_bridge_model.py",
+      "sha256": "2704f26bf4846c2f157d9a8afa8903f225a4666791aa92879b455b5c86d0fef4"
+    },
+    {
+      "bytes": 16335,
+      "git_blob": "7a3e29824d5b397e5b20aac428922485c681b298",
+      "path": "tools/stoneage_singleplayer_battle.py",
+      "sha256": "434bdf245c7328c05214c46b11b70c38319e9d845b36f882cd7085d294eef440"
+    },
+    {
+      "bytes": 17804,
+      "git_blob": "bf80b9fca0120f1015ea1c71d00bf0d9eb71e9bd",
+      "path": "tools/stoneage_singleplayer_domain.py",
+      "sha256": "d2440a8e00a459563dec12883c77741da984fe3066348e91559a131ade75b9dc"
+    },
+    {
+      "bytes": 59628,
+      "git_blob": "3bda20b2694961b0fab95e37269b4f64c6215e1e",
+      "path": "tools/stoneage_singleplayer_runtime.py",
+      "sha256": "377a36d376f33cd9a73d7ad0fdd6e37af5ffb5dfdec26f9ee959bd8044498802"
+    },
+    {
+      "bytes": 227982,
+      "git_blob": "cffb3cb86c84c8f2a19801b02a1b0647d6c0a4e0",
+      "path": "tools/stoneage_local_runtime_session_coordinator.py",
+      "sha256": "a98adce607e634d7e03d7a2fb5d22f79d859f4ac49384965df7a6e435fecf908"
+    },
+    {
+      "bytes": 6818,
+      "git_blob": "e0b0c32b364ec4ae13f582f9e245224b21b1302a",
+      "path": "tools/stoneage_pet_capture_model.py",
+      "sha256": "8c1b8889c26937049f714640192d4ea8737ec1cf8f1851680d5f2638adf2aecd"
+    }
+  ],
+  "stage_b_started": false
+}

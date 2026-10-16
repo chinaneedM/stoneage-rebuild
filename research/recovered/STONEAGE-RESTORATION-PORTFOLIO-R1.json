@@ -1,0 +1,428 @@
+{
+  "aggregate_completion_percentage": null,
+  "anchor_inventory_is_non_exhaustive": true,
+  "as_of": "2026-10-16",
+  "capture_business_gap_preflight": "research/recovered/STONEAGE-CAPTURE-STATE-PREFLIGHT-R1.json",
+  "completed_work_package": "PORTFOLIO-01",
+  "evidence_anchors": [
+    {
+      "bytes": 9493,
+      "git_blob": "07267e55aabd181c574be7b5d3bd88402d766f11",
+      "path": "research/clients/STONEAGE-TW10-FOUNDATION-BASELINE-ACCEPTANCE-R1.md",
+      "sha256": "eada01b2293b40ff7221ed8673c12ea945d224a1212af5f94d829243352c2e5e"
+    },
+    {
+      "bytes": 6780,
+      "git_blob": "11e2b77bce2febfef37c3a0c87dec878a6f289ee",
+      "path": "research/clients/STONEAGE-TW10-CLIENT-DATA-BOUNDARY-R1.md",
+      "sha256": "b57e409bcf431ed47105b084742e655a74f5e04504dfee9a18a934d1e57ef80e"
+    },
+    {
+      "bytes": 30851,
+      "git_blob": "ddbef0ebd37d1a86554f7ac64f63f3ca4776e75e",
+      "path": "research/clients/STONEAGE-TW10-GAMEPLAY-DATA-MATRIX-R1.md",
+      "sha256": "32bc6173653ec953fdeb5d3f06ea09359222b1b6a5bb24ef15a5019b59915ac9"
+    },
+    {
+      "bytes": 36469,
+      "git_blob": "e39a3a6020b578da017ab0bfa9369dc083e0b700",
+      "path": "research/clients/STONEAGE-TW10-GAMEPLAY-SCHEMA-R1.json",
+      "sha256": "6e6f1bf51c8252259901b9fdf7b752a2d9a1b9b633829a737636c56bb6ef3a40"
+    },
+    {
+      "bytes": 11077,
+      "git_blob": "d9b6505da119b5d426176875c84201a6d84470fc",
+      "path": "research/clients/STONEAGE-WORLD-MAP-RECONSTRUCTION-POLICY-R1.md",
+      "sha256": "7009c4e800b466e2e3fd9eb3b1c5b5575dad16f1d4d91101a4f29e5bc590e0cc"
+    },
+    {
+      "bytes": 14841,
+      "git_blob": "20b53fe82ec40396c6489daf9a30a36f0ba4e8e3",
+      "path": "docs/PHASE0-MILESTONE-GAP-AUDIT-R1.md",
+      "sha256": "ecff48bc55ec059bbbb15018270c3f788c1642348deda465d46a15074bb0ca25"
+    },
+    {
+      "bytes": 7927,
+      "git_blob": "2adec44176fcaecd1535c0435d961cf04066704c",
+      "path": "docs/RUNTIME-BOOTSTRAP-CONTRACT-R1.md",
+      "sha256": "138e97924afe23e4075c060bbe09949521c2dbd58b21e48e7e80149eb0d9018e"
+    },
+    {
+      "bytes": 6507,
+      "git_blob": "a4ef45fb9a38741dd635282831bc0e2051418ac3",
+      "path": "game/RUNTIME-BOOTSTRAP-RECOVERED25-R1.json",
+      "sha256": "58dc45dd96b640d005999432778c8abe1c433ddfbba6f62b9e505132661e17c9"
+    },
+    {
+      "bytes": 5003,
+      "git_blob": "32c576b2576bf0e473a59b818f661bff953e7df6",
+      "path": "docs/RECOVERED25-WORLD-PROFILE-ADAPTER-R1.md",
+      "sha256": "8b3bd1e4df514584eaf183b923f93519f24af4daf2bad689163eee0ca4b3d3bf"
+    },
+    {
+      "bytes": 2014,
+      "git_blob": "2a9d2381710d6d8fe306a065bb26c0794d040605",
+      "path": "docs/RECOVERED25-REGION-PAYLOAD-SOURCE-R1.md",
+      "sha256": "b2b89a1359670131dee53699e43395d1ea3e572aff5e6a6ba34606ad0311ebe9"
+    },
+    {
+      "bytes": 3806,
+      "git_blob": "30a8fcddeddfe72f62fb6efc2628a9c63843fe71",
+      "path": "docs/RECOVERED25-ENCOUNTER-RUNTIME-R1.md",
+      "sha256": "ec7715f520e6aa27696a0c8d472252c1775ae82dd2268612fff9f8c03e30183c"
+    },
+    {
+      "bytes": 20857,
+      "git_blob": "6341da10aab2b5062f557c13b45b457ddf69649f",
+      "path": "docs/LOCAL-RUNTIME-SESSION-COORDINATOR-R1.md",
+      "sha256": "384d823f9fdddb39509f21da2295b4a2a73e9f612d38ea334df419b9c0348ab4"
+    },
+    {
+      "bytes": 2863,
+      "git_blob": "6effa4a598a17ecf0922928274dc0d089b42edf7",
+      "path": "docs/RUNTIME-GOLDEN-CONTRACT-R1.md",
+      "sha256": "31d7cf5b630cb805a3d9915d591428bda0e27987a592df9861130d0e03aa26c1"
+    },
+    {
+      "bytes": 12172,
+      "git_blob": "bb03862dd7dd253effd57c506d0a56b490685974",
+      "path": "research/mechanics/STONEAGE-NPC-WORLD-CONTENT-GRAPH-R1.md",
+      "sha256": "74d5002e37d929df40b62a3ee892127d572dee406c730767a24ee0c5571511ef"
+    },
+    {
+      "bytes": 6740,
+      "git_blob": "967dcd8fa8432c6b78e4030a12031a251f982e2f",
+      "path": "research/mechanics/STONEAGE-RESIDUAL-NPC-SWEEP-CLOSURE-R1.md",
+      "sha256": "dd2f01520241b23d10339855802c7bc3dd017dc48e9df85d98bee58a6dec1603"
+    },
+    {
+      "bytes": 9206,
+      "git_blob": "a08a8b29ac8c1f466e70d4b1b9a9e471c855bfa7",
+      "path": "research/mechanics/STONEAGE-PLAYER-GROWTH-CORE-R1.md",
+      "sha256": "2657fc43ff45494756a5c9eba835512b94c8b7693988d2daba5ba604ac55c2ce"
+    },
+    {
+      "bytes": 8969,
+      "git_blob": "87cdd063f05f6d6f334007cf3db7a31a8d1654a8",
+      "path": "research/mechanics/STONEAGE-PET-GROWTH-CORE-R1.md",
+      "sha256": "891c0ef3775f88a6df0ff17d494a0074690d96a0d7087fea35ccff7dd7d3e8eb"
+    },
+    {
+      "bytes": 11243,
+      "git_blob": "c44ba2ce47c66f9036f4cbdec9faf20c2bf20e3c",
+      "path": "research/mechanics/STONEAGE-PET-CAPTURE-CORE-R1.md",
+      "sha256": "a37bf7dd9c59390df83086fa52c53e632d097825a95c1ee58795402650416d9c"
+    },
+    {
+      "bytes": 13614,
+      "git_blob": "f1ff84f3bbf99a0a5a973981f4ec86f777dc6eb0",
+      "path": "research/mechanics/STONEAGE-ORDINARY-BATTLE-ROUND-R1.md",
+      "sha256": "04f12fe0e7d6172a8292ab9f83dc4ab5598e9068d8838ffd21a5d238c3fea8e1"
+    },
+    {
+      "bytes": 4173,
+      "git_blob": "007837d60ba86bb83d83c797bf700e5a21dd5491",
+      "path": "research/mechanics/STONEAGE-BATTLE-SETTLEMENT-R1.md",
+      "sha256": "0f2e33eb51ed00522b41f8a9aee103fcf4b935c9646fa0357b7674b196ccf80e"
+    },
+    {
+      "bytes": 13349,
+      "git_blob": "324d951341d7e0ac1b1996659857614a08b72f12",
+      "path": "research/mechanics/STONEAGE-SAVE-LOGOUT-PERSISTENCE-CORE-R1.md",
+      "sha256": "b64b52d9e157985a19dbaa5e4e27c7b858b8f55190733c99e2a6d3a959052e35"
+    },
+    {
+      "bytes": 4032,
+      "git_blob": "f571b0fde3113514584a96ff4548a8dadcdb35d0",
+      "path": "docs/specs/STONEAGE-TW10-R77-R78-HANDLE-CONTRACTS.md",
+      "sha256": "2d2690cd9904933c8c91f18c0ecc7945db349784bff952699406ce44ffc1ef14"
+    },
+    {
+      "bytes": 23303,
+      "git_blob": "4b08dba0d6f6959aa27e14537643a3f5ac1957c0",
+      "path": "tools/stoneage_tw10_25_bridge_model.py",
+      "sha256": "2704f26bf4846c2f157d9a8afa8903f225a4666791aa92879b455b5c86d0fef4"
+    },
+    {
+      "bytes": 227982,
+      "git_blob": "cffb3cb86c84c8f2a19801b02a1b0647d6c0a4e0",
+      "path": "tools/stoneage_local_runtime_session_coordinator.py",
+      "sha256": "a98adce607e634d7e03d7a2fb5d22f79d859f4ac49384965df7a6e435fecf908"
+    },
+    {
+      "bytes": 59628,
+      "git_blob": "3bda20b2694961b0fab95e37269b4f64c6215e1e",
+      "path": "tools/stoneage_singleplayer_runtime.py",
+      "sha256": "377a36d376f33cd9a73d7ad0fdd6e37af5ffb5dfdec26f9ee959bd8044498802"
+    },
+    {
+      "bytes": 16335,
+      "git_blob": "7a3e29824d5b397e5b20aac428922485c681b298",
+      "path": "tools/stoneage_singleplayer_battle.py",
+      "sha256": "434bdf245c7328c05214c46b11b70c38319e9d845b36f882cd7085d294eef440"
+    },
+    {
+      "bytes": 17804,
+      "git_blob": "bf80b9fca0120f1015ea1c71d00bf0d9eb71e9bd",
+      "path": "tools/stoneage_singleplayer_domain.py",
+      "sha256": "d2440a8e00a459563dec12883c77741da984fe3066348e91559a131ade75b9dc"
+    },
+    {
+      "bytes": 1633,
+      "git_blob": "77d52577853d1724fadc8975fecd6b941e157784",
+      "path": "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-ALL-HOMETOWN-PROGRESSION-R1.txt",
+      "sha256": "06fade97cddb358ae6b24cce7a5dfb4b95fb6478ee5dfc516bc53cc77a1c1078"
+    },
+    {
+      "bytes": 6818,
+      "git_blob": "e0b0c32b364ec4ae13f582f9e245224b21b1302a",
+      "path": "tools/stoneage_pet_capture_model.py",
+      "sha256": "8c1b8889c26937049f714640192d4ea8737ec1cf8f1851680d5f2638adf2aecd"
+    }
+  ],
+  "families": [
+    {
+      "evidence_paths": [
+        "research/clients/STONEAGE-TW10-FOUNDATION-BASELINE-ACCEPTANCE-R1.md",
+        "research/clients/STONEAGE-TW10-CLIENT-DATA-BOUNDARY-R1.md"
+      ],
+      "family_closed_by_this_audit": false,
+      "gate": "PARTIAL",
+      "id": "lineage"
+    },
+    {
+      "evidence_paths": [
+        "research/clients/STONEAGE-WORLD-MAP-RECONSTRUCTION-POLICY-R1.md",
+        "docs/RUNTIME-BOOTSTRAP-CONTRACT-R1.md",
+        "game/RUNTIME-BOOTSTRAP-RECOVERED25-R1.json",
+        "docs/RECOVERED25-WORLD-PROFILE-ADAPTER-R1.md",
+        "docs/RECOVERED25-REGION-PAYLOAD-SOURCE-R1.md",
+        "docs/RECOVERED25-ENCOUNTER-RUNTIME-R1.md",
+        "research/mechanics/STONEAGE-NPC-WORLD-CONTENT-GRAPH-R1.md"
+      ],
+      "family_closed_by_this_audit": false,
+      "gate": "PARTIAL",
+      "id": "world"
+    },
+    {
+      "evidence_paths": [
+        "research/clients/STONEAGE-TW10-GAMEPLAY-SCHEMA-R1.json",
+        "research/mechanics/STONEAGE-PLAYER-GROWTH-CORE-R1.md",
+        "research/mechanics/STONEAGE-PET-GROWTH-CORE-R1.md",
+        "research/mechanics/STONEAGE-PET-CAPTURE-CORE-R1.md",
+        "tools/stoneage_tw10_25_bridge_model.py",
+        "tools/stoneage_singleplayer_runtime.py"
+      ],
+      "family_closed_by_this_audit": false,
+      "gate": "PARTIAL",
+      "id": "characters_pets"
+    },
+    {
+      "evidence_paths": [
+        "research/mechanics/STONEAGE-ORDINARY-BATTLE-ROUND-R1.md",
+        "research/mechanics/STONEAGE-BATTLE-SETTLEMENT-R1.md"
+      ],
+      "family_closed_by_this_audit": false,
+      "gate": "PARTIAL",
+      "id": "battle"
+    },
+    {
+      "evidence_paths": [
+        "research/clients/STONEAGE-TW10-GAMEPLAY-DATA-MATRIX-R1.md",
+        "research/clients/STONEAGE-TW10-GAMEPLAY-SCHEMA-R1.json",
+        "docs/LOCAL-RUNTIME-SESSION-COORDINATOR-R1.md",
+        "tools/stoneage_singleplayer_runtime.py"
+      ],
+      "family_closed_by_this_audit": false,
+      "gate": "PARTIAL",
+      "id": "inventory_economy"
+    },
+    {
+      "evidence_paths": [
+        "research/mechanics/STONEAGE-NPC-WORLD-CONTENT-GRAPH-R1.md",
+        "research/mechanics/STONEAGE-RESIDUAL-NPC-SWEEP-CLOSURE-R1.md"
+      ],
+      "family_closed_by_this_audit": false,
+      "gate": "OPEN",
+      "id": "npc_quests"
+    },
+    {
+      "evidence_paths": [
+        "research/clients/STONEAGE-TW10-FOUNDATION-BASELINE-ACCEPTANCE-R1.md",
+        "research/clients/STONEAGE-TW10-CLIENT-DATA-BOUNDARY-R1.md",
+        "research/clients/STONEAGE-TW10-GAMEPLAY-DATA-MATRIX-R1.md"
+      ],
+      "family_closed_by_this_audit": false,
+      "gate": "PARTIAL",
+      "id": "graphics_audio_ui"
+    },
+    {
+      "evidence_paths": [
+        "research/clients/STONEAGE-TW10-FOUNDATION-BASELINE-ACCEPTANCE-R1.md",
+        "research/mechanics/STONEAGE-SAVE-LOGOUT-PERSISTENCE-CORE-R1.md",
+        "docs/specs/STONEAGE-TW10-R77-R78-HANDLE-CONTRACTS.md"
+      ],
+      "family_closed_by_this_audit": false,
+      "gate": "OPEN",
+      "id": "runtime_persistence"
+    },
+    {
+      "evidence_paths": [
+        "docs/RUNTIME-BOOTSTRAP-CONTRACT-R1.md",
+        "docs/RECOVERED25-WORLD-PROFILE-ADAPTER-R1.md",
+        "docs/RECOVERED25-REGION-PAYLOAD-SOURCE-R1.md",
+        "docs/RECOVERED25-ENCOUNTER-RUNTIME-R1.md",
+        "docs/LOCAL-RUNTIME-SESSION-COORDINATOR-R1.md",
+        "docs/RUNTIME-GOLDEN-CONTRACT-R1.md",
+        "tools/stoneage_local_runtime_session_coordinator.py"
+      ],
+      "family_closed_by_this_audit": false,
+      "gate": "PARTIAL",
+      "id": "integration"
+    }
+  ],
+  "fresh_main_successful_actions": 13,
+  "fresh_remote_branches": 282,
+  "highest_next": "PET-STATE-01",
+  "historical_gate_change": false,
+  "historical_queued_run": 37642417333,
+  "in_progress_actions": 0,
+  "new_game_design_started": false,
+  "new_original_source_acquired": false,
+  "paused_tracks": [
+    {
+      "existing_evidence_preserved": true,
+      "id": "TW10-SAVEDATA-R79",
+      "reopen_if": [
+        "new recoverable business-field evidence",
+        "concrete core-rule contradiction",
+        "smallest necessary dependency blocking a named cross-system specification"
+      ],
+      "status": "PAUSED_NON_BLOCKING",
+      "supersedes_previous_highest_next": true
+    }
+  ],
+  "preserved_historical_prefixes": [
+    {
+      "bytes": 3975,
+      "git_blob": "21a950db0cd91ee1eb4696bfeaf4d3e85c4fa76c",
+      "path": "README.md",
+      "sha256": "d2a359973a3d8d643539ce3ba937b5b2eb98a9fdc316834f063467a1a98f121e"
+    },
+    {
+      "bytes": 8266,
+      "git_blob": "f33daf63fe71ec04b20701790508af604461721e",
+      "path": "docs/PROJECT-CONTINUITY-PROTOCOL-R1.md",
+      "sha256": "e4685c2cffbf651c31e7becebecc4da62aa5470a236ec1a88b8dcf5375a520b3"
+    },
+    {
+      "bytes": 1789121,
+      "git_blob": "1af5aea59a497f03023adc1288c604ac547a05ba",
+      "path": "docs/CURRENT-STATE.md",
+      "sha256": "db5b2010063252874c722822ebbb567cd96b61743d117cebcc6cd318ee26d659"
+    },
+    {
+      "bytes": 30418,
+      "git_blob": "727ce9177ca34578dea1a90ba3e49fa356445a11",
+      "path": "docs/DESIGN-DECISIONS.md",
+      "sha256": "e63f04df5b033023dbb94bfa184108eba7febb6bc9aa24485545bbb36debdc97"
+    },
+    {
+      "bytes": 417217,
+      "git_blob": "e427e5a98f654bfb7527f078254ff446c38262ee",
+      "path": "docs/HISTORICAL-TIMELINE.md",
+      "sha256": "5b566762815899d8851df265e99136ea8899f7e8bf8ee862e5ce1830151b50c9"
+    },
+    {
+      "bytes": 645708,
+      "git_blob": "f1a0ead4f41a408f40576c2fa53b068d56c906ed",
+      "path": "docs/SOURCE-REGISTRY.md",
+      "sha256": "f88f18c7cd9284c42bb2044d1ca1a3f409eb1ff3cb7813564bd26e32259e941d"
+    },
+    {
+      "bytes": 68311,
+      "git_blob": "597a27ce436367fcd9ba5c0a73bc87c4d2fab0a2",
+      "path": "docs/RESTORATION-PHASE-GATE-R1.md",
+      "sha256": "d3a2190ae245633837f52c2119a3b1bbb5657f37e1884fd569e902d9dfa4ab73"
+    }
+  ],
+  "roadmap": "docs/RESTORATION-ROADMAP-R2.md",
+  "schema": "stoneage-restoration-portfolio-r1",
+  "source_head": "434e11d6bee5546330d9a6a8e5e96ebf9caf8d78",
+  "source_layers": [
+    "original_client_local_savedata",
+    "descendant_server_character_serialization",
+    "modern_reference_local_save"
+  ],
+  "source_tree": "71566b9c89bc77bc96977dda2849cc278f1e446f",
+  "stage_a": "PARTIAL/OPEN",
+  "stage_b_started": false,
+  "user_directive": "助手负责整体复原规划、必要性判断和取舍，避免局部辅助函数分析无限延伸。",
+  "validation": {
+    "additional_capture_policy_module": "tests.test_stoneage_pet_capture_model",
+    "additional_capture_policy_regressions": 9,
+    "additional_capture_policy_result": "PASS",
+    "claims_full_original_or_all_map_payload_reexecution": false,
+    "existing_semantic_regressions": 49,
+    "modules": [
+      "tests.test_stoneage_tw10_gameplay_schema",
+      "tests.test_stoneage_player_growth_model",
+      "tests.test_stoneage_pet_growth_model",
+      "tests.test_stoneage_map_delivery_model",
+      "tests.test_stoneage_versioned_encounter_runtime",
+      "tests.test_stoneage_recovered25_world_profile_adapter",
+      "tests.test_stoneage_runtime_golden_contract"
+    ],
+    "new_tests_added": 0,
+    "result": "PASS"
+  },
+  "work_queue": [
+    {
+      "current_code_gap": {
+        "bridge_function": "build_reconstructed_pet_state",
+        "coordinator_function": "resolve_persistent_capture_round",
+        "required_runtime_inputs": [
+          "mp",
+          "max_mp",
+          "exp",
+          "max_exp",
+          "rename_flag",
+          "free_name"
+        ],
+        "requires_complete_caller_supplied_pet_actor": true
+      },
+      "deliverable": "current-code capture-to-owned-pet field source/missing-input disposition; no invented defaults",
+      "id": "PET-STATE-01",
+      "max_consecutive_work_units_without_portfolio_review": 2,
+      "preflight_status": "CURRENT_CODE_SIGNATURE_AND_EXISTING_MODEL_COPY_POLICY_QUALIFIED_FIELD_TRACE_NEXT"
+    },
+    {
+      "checkpoints": [
+        "birth_position",
+        "map_payload",
+        "movement_transition_conditions",
+        "encounter_enemy_data",
+        "npc_progression",
+        "battle_settlement"
+      ],
+      "deliverable": "four existing hometown routes x six finite checkpoints,24 provenance/availability cells",
+      "id": "WORLD-01",
+      "inputs": [
+        "existing recovered25 bootstrap/topology/payload/encounter/NPC/coordinator indices"
+      ],
+      "max_consecutive_work_units_without_portfolio_review": 2,
+      "must_not_promote_later_membership_to_tw10": true,
+      "must_not_reenumerate_all_maps_or_npcs": true,
+      "status": "FINITE_STAGE_A_ACCEPTANCE_PACKAGE_REUSE_EXISTING_CLOSURES"
+    },
+    {
+      "deliverable": "version-qualified core combat/growth/item/economy/quest rules with actual unresolved seams",
+      "id": "RULES-01"
+    },
+    {
+      "deliverable": "joint historical restoration acceptance before new-game design",
+      "id": "STAGE-A-REVIEW",
+      "requires_user_review": true
+    }
+  ]
+}

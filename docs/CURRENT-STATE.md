@@ -13993,3 +13993,49 @@ R78 qualifies exact widths/base/index/scale/offset/literals/topology, and indepe
 R78 report3854 bytes/SHA2568bdb54c09d3ad038cb9149b1ec6d6c7a240778182fa8c69e545e78823c081c14/blob0d2f061dac847871d05c3d38c4b494d583060117. Full local1935 savedata tests PASS after installing missing capstone/pefile; initial broad discovery's75 dependency-import errors are recorded as a resolved environment failure, not called a passing attempt. R78 branch38892142998/job116943943727 SUCCESS has212 tests; R77's66 and source50 are separate counts. Accepted codede9bb83b585f81e106ce3c45b6afaa8ba7ba1b34/tree058b599be98f54961e58680cc8f5542f4aea91fb followed fresh ahead3/behind0/14-path comparison and expected-head nonforced fast-forward. All ten relevant code main gates SUCCESS. Receipt STONEAGE-TW10-SAVEDATA-R77-R78-ACCEPTANCE-R1.json and spec docs/specs/STONEAGE-TW10-R77-R78-HANDLE-CONTRACTS.md preserve full custody and conditional limits.
 
 Highest NEXT R79: exact160-report census at acceptedde9bb83b585f81e106ce3c45b6afaa8ba7ba1b34 preserves0x4c953's three root objects/29 numeric references and zero registered decoded entries. Preflight36634 bytes/SHA256ccb54ea43a16783e7185bc9150751cf369676d8431f51b4a5bd4be3fd085b2f6/blob725b4ebc9671ce3230c59b646e21a9167ccd606f is independently replayed against the complete source Git tree. First reuse retained boundary/caller evidence, then qualify only material error-helper effects on nonzero-error/literal-five-inequality allones routes. No generic helper exhaustion. Actual handle/count/seek results, realized paths, ABI/cleanup/nonaliasing/global-table stability, flush/close/disk persistence, original schema/version/checksum/migration/server authority remain OPEN. All Stage A families PARTIAL/OPEN; Stage B gated.
+
+
+## 2026-10-16 — Restoration portfolio reset; PET-STATE-01 replaces savedata R79
+
+Research/work-order correction, no new historical rule or family closure.
+The user's explicit request makes overall planning and necessity judgments the
+assistant's responsibility. The fresh nine-family review reuses accepted
+TW1.0 foundation and existing version-qualified maps/gameplay/model evidence.
+The foundation acceptance already records client-local savedata as a
+NON-BLOCKING OPEN DETAIL; it is distinct from server character serialization
+and the modern reference model's local save. R1–R78 evidence remains useful
+within its bounds but no longer automatically governs project priority.
+
+**Highest NEXT PET-STATE-01:** current capture-to-owned-pet field-source gap.
+The bridge still requires MP/maxMP/EXP/maxEXP/renameFlag/freeName inputs and the
+coordinator requires complete caller-supplied PetActor state. Reuse existing
+sources, classify copied/computed/template/unavailable fields, and repair only
+an evidence-supported join. At most two units before portfolio review; missing
+state is not permission to invent defaults or descend into generic helpers.
+WORLD-01 later reuses the four already closed hometown contracts for a finite
+24-cell provenance/gap acceptance review; do not reenumerate maps/NPCs or
+repeat topology closure. RULES-01 remains subject to actual domain value.
+
+**Old highest NEXT R79 is PAUSED_NON_BLOCKING**, with every report/preflight
+and OPEN limit preserved. Reopen only for recoverable business fields, a
+concrete core-rule contradiction or a named integration blocker. No generic
+CRT/ABI/helper exhaustion. All Stage A families PARTIAL/OPEN; Stage B gated
+for a later joint review, not automatically unblocked by this plan.
+
+Canonical route: docs/RESTORATION-ROADMAP-R2.md; immutable source-head/tree,
+29 anchor identities, nine-family statuses, stop/reopen rules and complete
+historical prefix hashes: research/recovered/STONEAGE-RESTORATION-PORTFOLIO-R1.json.
+Forty-nine selected existing semantic regressions PASS; no new tests, original
+client acquisition/execution, all-map payload replay or historical promotions.
+
+Fresh remote startup main434e11d6bee5546330d9a6a8e5e96ebf9caf8d78/
+tree71566b9c89bc77bc96977dda2849cc278f1e446f,282 branch tips,13 successful
+final main Actions,zero in-progress runs and the retained historical queued
+37642417333 disposition were inspected. README/protocol, complete1789121-byte
+CURRENT-STATE/blob1af5aea59a497f03023adc1288c604ac547a05ba/
+SHA256db5b2010063252874c722822ebbb567cd96b61743d117cebcc6cd318ee26d659,
+decisions, timeline and registry were requalified from that exact checkout.
+The complete prior bytes remain the prefix. No chat SHA selected scope.
+This unit is the PORTFOLIO-01 planning/audit deliverable; PET-STATE-01 is the
+current-code-qualified next business seam. WORLD-01's24 cells are a later
+finite review, not claimed filled or historically accepted by this plan.

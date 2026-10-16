@@ -430,3 +430,27 @@ evidence-limited historical gap, not as a fictional FACT.
 
 Gate record: `docs/RESTORATION-PHASE-GATE-R1.md`. The immediate work order
 remains TW1.0 R14 original static provenance; this decision does not replace it.
+
+
+## DD-022 — Plan restoration by gameplay outcomes and bounded evidence value
+
+**Status:** Adopted research work order — 2026-10-16, following the user's
+explicit request that the assistant plan and judge the necessity of recovery.
+This is not a new-game engine/content design decision. DD-021 still binds.
+
+A restoration work package must identify a game behavior/content deliverable,
+material evidence gap, source/version scope and stopping condition. Technical
+helpers are dependencies only where they affect that deliverable. Consecutive
+work without a domain result triggers portfolio reassessment after two units;
+R/test counts do not measure whole-game recovery.
+
+Use `docs/RESTORATION-ROADMAP-R2.md` and the latest CURRENT-STATE. Begin PET-STATE-01
+using the current capture/bridge/coordinator field-source gap. WORLD-01 reuses
+the four closed hometown routes only for a later finite24-cell review.
+Pause further deep client-local savedata helper expansion (old NEXT R79) as
+non-blocking. Preserve all existing evidence and explicit unknowns. Reopen only
+for new business-field evidence, a concrete core-rule contradiction or the
+smallest necessary dependency blocking a named integration specification.
+Original client-local state, descendant server character saves and modern
+reference local persistence are separate evidence layers. No subsystem family
+is closed by this reordering. Stage A remains before joint Stage B review.

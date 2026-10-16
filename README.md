@@ -55,3 +55,14 @@ Recommended restart message:
 ## Copyright boundary
 
 Do not commit copyrighted original game binaries, ripped art, music, sound effects, manuals, or other proprietary assets unless their legal status and repository policy explicitly allow it. Prefer storing metadata, hashes, filenames, observations, and research notes. The rebuilt game should use independently implemented code and newly created/recreated assets.
+
+
+## Current restoration roadmap — 2026-10-16
+
+Use [Restoration Roadmap R2](docs/RESTORATION-ROADMAP-R2.md) and the latest
+CURRENT-STATE entry for the current work order. Priority is PET-STATE-01: qualify current capture-to-owned-pet state sources
+and repair only evidence-supported missing joins. Reuse the closed four
+hometown routes for later finite overall acceptance; do not repeat them.
+The deep client-local savedata helper branch is paused as non-blocking; its
+R1–R78 evidence and R79 preflight remain preserved. Restoration still precedes
+joint new-game design.
