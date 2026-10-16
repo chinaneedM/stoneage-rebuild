@@ -1,0 +1,111 @@
+{
+  "schema": "stoneage.tw10.ui-resource-bind.01",
+  "date": "2026-10-16",
+  "verified_base_commit": "285c5626302a7c45bc52f42780fc19ab950a07e5",
+  "evidence_grade": "V1_RESOURCE_BYTES_PLUS_DESCENDANT_INTERPRETATION_NO_UI_SELECTION",
+  "result": "ORIGINAL_RESOURCE_ADDRESS_AND_LINEAGE_SAB_GRID_DECODE_READY_SELECTION_CALLS_OPEN",
+  "stage_a_accepted": false,
+  "stage_b_gate": "GATED",
+  "historical_completion_percentage": null,
+  "source_pins": {
+    "research/clients/STONEAGE-TW10-BATTLE-RESOURCE-FORMAT-R1.md": {
+      "git_blob": "0568d870432a6251c40cb85b1eadfbf20fecc101",
+      "bytes": 5791
+    },
+    "research/recovered/STONEAGE-TW10-BATTLE-DATASET-R1.txt": {
+      "git_blob": "9d46528ad82b85e4aeefb604e66e87ed3b9213da",
+      "bytes": 58086
+    },
+    "research/recovered/tw10-resource-metadata/MANIFEST-R1.txt": {
+      "git_blob": "6154dcf806163b82cb96af344e6a644143d15f56",
+      "bytes": 1928
+    },
+    "research/clients/STONEAGE-TW10-GAMEPLAY-SCHEMA-R1.json": {
+      "git_blob": "e39a3a6020b578da017ab0bfa9369dc083e0b700",
+      "bytes": 36469
+    },
+    "research/clients/STONEAGE-TW10-CLIENT-DATA-BOUNDARY-R1.md": {
+      "git_blob": "11e2b77bce2febfef37c3a0c87dec878a6f289ee",
+      "bytes": 6780
+    },
+    "research/recovered/STONEAGE-25-RUNTIME-GRAPHIC-MAPPING-R1.txt": {
+      "git_blob": "9ff1133a5bb62d4b3e07e2d6e955c54c0e30dd33",
+      "bytes": 1518
+    },
+    "research/recovered/STONEAGE-TW10-UI-SEMANTICS-R1.json": {
+      "git_blob": "ee3d230317c47b13e3513f25c3feba2ff9305e1c",
+      "bytes": 53638
+    }
+  },
+  "investigations": [
+    {
+      "item": "A_SAB_GRID_TO_BITMAP_IDENTITY",
+      "source_version": "TW1.0_DISC_DIRECT_PLUS_DESCENDANT_SOURCE",
+      "original_direct": [
+        "218 indexed battle SAB records each 804 bytes with SAB[space] signature",
+        "Each has exactly 400 two-byte units",
+        "125996 distinct original ADRN bitmap IDs and exact REAL file prefix"
+      ],
+      "lineage_supported": [
+        "20 by 20 big-endian uint16 graphic tile IDs from descendant ReadBattleMap older branch",
+        "Renderer submits the decoded IDs as graphics"
+      ],
+      "not_proven": [
+        "original v1 executable bytes implementing big-endian shifting/20x20 read",
+        "runtime B command or field state selecting any of the 218 SAB files",
+        "SAB tile numeric value to particular draw-call, palette, layering and display geometry"
+      ],
+      "deliverable": "Strict synthetic SAB envelope decoder + original address-order census only",
+      "status": "STRUCTURAL_V1_DIRECT_INTERPRETATION_LINEAGE_SELECTION_OPEN",
+      "reopen_if": "V1 sa_3.exe resource read/call graph or original trace associates field/battle state with SAB filename and 20x20 decode/ADRN draw call"
+    },
+    {
+      "item": "B_PET_GRAPHIC_TO_REAL_SPR_SELECTION",
+      "source_version": "TW1.0_PROTOCOL_DIRECT_LINEAGE_FIELDS_WITH_LATER_RECOVERED_CONTROL",
+      "original_direct": [
+        "S:K full record 21 tokens with graphic identity position",
+        "SPRADRN 464 entries, SPR 39065 animations/242085 frames",
+        "ADRN 125996 unique bitmap IDs"
+      ],
+      "lineage_supported": [
+        "graphic_id semantic field name from early generated LSSPROTO"
+      ],
+      "not_proven": [
+        "S:K graphic_id namespace equals v1 SPR group ID or ADRN bitmap number",
+        "specific graphic_id -> animation group/action/frame mapping",
+        "historical pet UI picture position or original display trigger",
+        "recovered25 ls2data mapping: four anonymous runtime symbols unresolved; no mapping files available"
+      ],
+      "deliverable": "Source-qualified visual binding gap and precise reopening requirements, no numeric mapping manufactured",
+      "status": "IDENTITY_KNOWN_ACTUAL_V1_RENDER_BINDING_OPEN",
+      "reopen_if": "Original v1 rendering symbol/call-site proof matching S:K parsed graphic token to SPR/ADRN lookup, or version-authenticated runtime trace"
+    }
+  ],
+  "battle_container": {
+    "address_records": 233,
+    "battle_map_records": 218,
+    "indexed_palettes": 15,
+    "unindexed_palette": "Palet_0.sap",
+    "sab_record_bytes": 804,
+    "header": "SAB ",
+    "tile_count": 400,
+    "grid_rows": 20,
+    "grid_columns": 20,
+    "tile_encoding": "big-endian-u16",
+    "encoding_evidence": "DESCENDANT_SOURCE_PLUS_V1_RESOURCE_SHAPE_NOT_ORIGINAL_DECODE_CALL",
+    "indexed_palette_record_bytes": 708,
+    "palette_bytes_interpreted_by_lineage": 672,
+    "palette_suffix_bytes_semantics": "OPEN"
+  },
+  "prohibited_promotions": [
+    "B receive command second byte selects SAB file",
+    "S:K graphic_id directly maps to SPR group",
+    "SAB big-endian interpretation is byte-order-proven by ADRN membership",
+    "indexed palette contains Palet_0.sap",
+    "recovered25 graphic symbol identities prove original v1 visual resource selection",
+    "synthetic SAB grid tests are original client runtime execution"
+  ],
+  "next_highest": "STAGE-A-NPC-CONTENT-BOUNDARY-01",
+  "next_scope": "Finite comparison of original v1 protocol/window capabilities with version-qualified recovered NPC script/dialogue/quest coverage and missing real early server contents; no invention or engine production",
+  "historical_ui_binding_complete": false
+}

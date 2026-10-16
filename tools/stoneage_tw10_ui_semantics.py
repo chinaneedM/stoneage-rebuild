@@ -52,8 +52,8 @@ def project_decoded_full_record(surface_id, record_key, values):
 
 def classify_v1_received_battle_envelope(command):
     """V1 compiled B receive callback's second-byte routing only, not battle UI."""
-    if not isinstance(command, str) or len(command) < 2:
-        raise ValueError("nonempty B command needs second discriminator character")
+    if not isinstance(command, str) or len(command) < 2 or command[0] != "B":
+        raise ValueError("original B callback requires a B-prefixed command with discriminator")
     proof = crosswalk()["battle_receive"]
     branch = command[proof["second_byte_offset"]]
     key = branch if branch in ("C", "P", "A", "U") else "default"

@@ -135,7 +135,7 @@ class TW10UISemantics(unittest.TestCase):
             self.assertFalse(result["original_display_verified"])
             self.assertIsNone(result["animation_id"])
             self.assertIsNone(result["scene_map_id"])
-        for bad in ("", "B", None):
+        for bad in ("", "B", None, "CC", "XPpayload", "Za", 123):
             with self.assertRaises(ValueError):
                 classify_v1_received_battle_envelope(bad)
 
