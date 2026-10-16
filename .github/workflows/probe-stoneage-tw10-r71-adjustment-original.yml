@@ -1,0 +1,133 @@
+name: Reauthenticate TW1.0 original and recover R71 adjustment-loop predicates
+on:
+  workflow_dispatch:
+  push:
+    branches: [agent/tw10-r71-adjustment-original-20261016]
+    paths:
+      - .github/workflows/probe-stoneage-tw10-r71-adjustment-original.yml
+      - tools/stoneage_tw10_savedata_r71_adjustment_static.py
+      - tools/stoneage_tw10_savedata_r71_guard.py
+      - tests/test_stoneage_tw10_savedata_r71_adjustment_static.py
+permissions:
+  contents: read
+jobs:
+  synthetic:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - run: python -m unittest -v tests.test_stoneage_tw10_savedata_r71_adjustment_static tests.test_stoneage_tw10_savedata_r70_conditional_returns tests.test_stoneage_tw10_savedata_r69_early_static
+  original-static:
+    needs: synthetic
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    outputs:
+      artifact_id: ${{ steps.upload.outputs.artifact-id }}
+      artifact_digest: ${{ steps.upload.outputs.artifact-digest }}
+      raw_sha: ${{ steps.meta.outputs.raw_sha }}
+      raw_bytes: ${{ steps.meta.outputs.raw_bytes }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install nonexecuting static decoder dependencies
+        run: |
+          set -euo pipefail
+          pip install --quiet capstone pefile
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq 7zip
+      - name: Acquire and authenticate the accepted original medium transiently
+        run: |
+          set -euo pipefail
+          for attempt in 1 2 3; do
+            if python -m tools.stoneage_tw10_archive_parallel_download --deadline 1500 --workers 16 --chunk 8388608 --output /tmp/CD_DIC.rar; then
+              break
+            fi
+            rm -f /tmp/CD_DIC.rar
+            test "$attempt" -lt 3 || exit 1
+          done
+      - name: Reproduce exact R69 and inherited R67/R63 then derive the R71 adjustment-loop neighborhood
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/stoneage-r71
+          7z x -y -o/tmp/stoneage-r71 /tmp/CD_DIC.rar STONEAGE.bin >/dev/null
+          test "$(stat -c %s /tmp/stoneage-r71/STONEAGE.bin)" -eq 523449360
+          python -m tools.stoneage_tw10_savedata_r71_adjustment_static --bin /tmp/stoneage-r71/STONEAGE.bin > /tmp/tw10-r71-static.json
+          python -m tools.stoneage_tw10_savedata_r71_guard --report /tmp/tw10-r71-static.json
+      - name: Permanently purge transient original proprietary bytes
+        if: always()
+        run: rm -rf /tmp/CD_DIC.rar /tmp/stoneage-r71
+      - id: meta
+        name: Hash bounded derived metadata only
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib,os
+          from pathlib import Path
+          raw=Path('/tmp/tw10-r71-static.json').read_bytes()
+          assert len(raw)<100000
+          with open(os.environ['GITHUB_OUTPUT'],'a') as f:
+              print('raw_sha='+hashlib.sha256(raw).hexdigest(),file=f)
+              print('raw_bytes='+str(len(raw)),file=f)
+          PY
+      - id: upload
+        uses: actions/upload-artifact@v4
+        with:
+          name: tw10-r71-original-static-adjustment-derived-only
+          path: /tmp/tw10-r71-static.json
+          retention-days: 21
+  independent-archive:
+    needs: original-static
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+      actions: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+      - name: Verify source job, artifact ZIP digest and exact raw content then archive derived metadata only
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ARTIFACT_ID: ${{ needs.original-static.outputs.artifact_id }}
+          ARTIFACT_DIGEST: ${{ needs.original-static.outputs.artifact_digest }}
+          RAW_SHA: ${{ needs.original-static.outputs.raw_sha }}
+          RAW_BYTES: ${{ needs.original-static.outputs.raw_bytes }}
+        run: |
+          set -euo pipefail
+          test "$GITHUB_REF_NAME" = 'agent/tw10-r71-adjustment-original-20261016'
+          test "$(git rev-parse HEAD)" = "$GITHUB_SHA"
+          mkdir -p /tmp/r71-independent
+          gh api "repos/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID/jobs" > /tmp/r71-independent/jobs.json
+          gh api "repos/$GITHUB_REPOSITORY/actions/artifacts/$ARTIFACT_ID" > /tmp/r71-independent/artifact.json
+          gh run download "$GITHUB_RUN_ID" --repo "$GITHUB_REPOSITORY" --name tw10-r71-original-static-adjustment-derived-only --dir /tmp/r71-independent/raw
+          python - <<'PY'
+          import hashlib,json,os
+          from pathlib import Path
+          from tools.stoneage_tw10_savedata_r71_guard import validate
+          p=Path('/tmp/r71-independent');e=os.environ
+          jobs=json.loads((p/'jobs.json').read_text())['jobs']
+          source=[j for j in jobs if j['name']=='original-static']
+          assert len(source)==1 and source[0]['conclusion']=='success' and source[0]['head_sha']==e['GITHUB_SHA']
+          artifact=json.loads((p/'artifact.json').read_text())
+          assert artifact['workflow_run']['id']==int(e['GITHUB_RUN_ID']) and not artifact['expired']
+          assert artifact['digest']=='sha256:'+e['ARTIFACT_DIGEST']
+          files=list((p/'raw').iterdir());assert len(files)==1 and files[0].name=='tw10-r71-static.json' and not files[0].is_symlink()
+          raw=files[0].read_bytes();assert len(raw)==int(e['RAW_BYTES']) and hashlib.sha256(raw).hexdigest()==e['RAW_SHA']
+          result=validate(json.loads(raw));assert result['status']=='STRUCTURAL_DERIVED_METADATA_ONLY'
+          dst=Path('research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-ADJUSTMENT-R71-ORIGINAL.json');dst.write_bytes(raw)
+          receipt={'schema':'tw10-r71-original-static-source-custody-r1','source_run_id':int(e['GITHUB_RUN_ID']),
+                   'source_head':e['GITHUB_SHA'],'source_branch':e['GITHUB_REF_NAME'],'source_job_id':source[0]['id'],
+                   'artifact_id':int(e['ARTIFACT_ID']),'artifact_zip_sha256':e['ARTIFACT_DIGEST'],
+                   'raw_bytes':len(raw),'raw_sha256':e['RAW_SHA'],
+                   'canonical_path':str(dst),'canonical_git_blob':hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest(),
+                   'guard_result':result,'original_proprietary_bytes_archived':False,'actual_native_persistence_proven':False}
+          Path('research/recovered/STONEAGE-TW10-SAVEDATA-R71-SOURCE-CUSTODY.json').write_text(json.dumps(receipt,sort_keys=True,indent=2)+'\n')
+          print('R71_INDEPENDENT_SOURCE_AND_DURABLE_DERIVED_ONLY_ARCHIVE=PASS')
+          PY
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-ADJUSTMENT-R71-ORIGINAL.json research/recovered/STONEAGE-TW10-SAVEDATA-R71-SOURCE-CUSTODY.json
+          git diff --cached --name-only
+          test "$(git diff --cached --name-only | wc -l)" -eq 2
+          git commit -m 'Preserve independently guarded R71 original-static adjustment-loop metadata and artifact custody'
+          git push origin "HEAD:refs/heads/$GITHUB_REF_NAME"
