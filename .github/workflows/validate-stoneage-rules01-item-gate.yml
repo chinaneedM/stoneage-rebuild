@@ -1,0 +1,23 @@
+name: Validate StoneAge RULES-01 owned-item gate and save reference
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_rules01_shop_gate_reference.py
+      - tests/test_stoneage_rules01_shop_gate_save_reference.py
+      - docs/specs/STONEAGE-RULES01-OWNED-ITEM-GATE-REFERENCE-R1.md
+      - .github/workflows/validate-stoneage-rules01-item-gate.yml
+permissions:
+  contents: read
+jobs:
+  bounded-shop-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate versioned purchase through owned item, gate and modern disk reentry
+        run: python -m unittest discover -s tests -p test_stoneage_rules01_shop_gate_save_reference.py -v
+      - name: Recheck existing source-bounded shop and rule attribution
+        run: python -m unittest tests.test_stoneage_item_shop_model tests.test_stoneage_rules01_crosssystem_preflight -v
