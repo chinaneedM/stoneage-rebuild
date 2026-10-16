@@ -1,0 +1,74 @@
+name: Independently accept TW1.0 R75 original bounded seek-helper effects artifact and permanent static report
+on:
+  workflow_dispatch:
+  push:
+    branches: [agent/tw10-r75-independent-20261016, main]
+    paths:
+      - .github/workflows/verify-stoneage-tw10-r75-retained.yml
+      - tools/stoneage_tw10_savedata_*.py
+      - tests/test_stoneage_tw10_savedata_*.py
+      - research/recovered/STONEAGE-TW10-SAVEDATA-*.json
+      - docs/specs/STONEAGE-TW10-R75-R76-SEEK-CONTRACTS.md
+permissions:
+  contents: read
+  actions: read
+jobs:
+  acceptance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Requalify immutable source run/job and artifact metadata
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/r75-custody
+          python - <<'PY' > /tmp/r75-custody/ids
+          import json
+          r=json.load(open('research/recovered/STONEAGE-TW10-SAVEDATA-R75-SOURCE-CUSTODY.json'))
+          assert type(r['source_run_id']) is int and type(r['artifact_id']) is int
+          print(r['source_run_id'],r['artifact_id'])
+          PY
+          read -r run_id artifact_id < /tmp/r75-custody/ids
+          gh api "repos/$GITHUB_REPOSITORY/actions/runs/$run_id" > /tmp/r75-custody/run.json
+          gh api "repos/$GITHUB_REPOSITORY/actions/runs/$run_id/jobs" > /tmp/r75-custody/jobs.json
+          if gh api "repos/$GITHUB_REPOSITORY/actions/artifacts/$artifact_id" > /tmp/r75-custody/artifact.json; then
+            expired="$(python -c 'import json; print(json.load(open("/tmp/r75-custody/artifact.json"))["expired"])')"
+            if [ "$expired" = 'False' ]; then
+              gh run download "$run_id" --repo "$GITHUB_REPOSITORY" --name tw10-r75-original-static-seek-helper-derived-only --dir /tmp/r75-custody/raw
+            fi
+          else
+            rm -f /tmp/r75-custody/artifact.json
+          fi
+          python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          p=Path('/tmp/r75-custody');r=json.load(open('research/recovered/STONEAGE-TW10-SAVEDATA-R75-SOURCE-CUSTODY.json'))
+          run=json.loads((p/'run.json').read_text());assert (run['status'],run['conclusion'],run['head_sha'],run['head_branch'])==('completed','success',r['source_head'],r['source_branch'])
+          jobs=json.loads((p/'jobs.json').read_text())['jobs'];job=[j for j in jobs if j['id']==r['source_job_id']];assert len(job)==1 and job[0]['name']=='original-static' and job[0]['conclusion']=='success'
+          assert (r['source_run_id'],r['source_head'],r['source_job_id'],r['artifact_id'])==(38888448211,'b3d92a453bcb0a093ed36417db3588bd691c0811',116931879732,12040258731)
+          assert r['artifact_zip_sha256']=='4cd9097e869802b8bd107f737ac68183c78f42f7a4b9b75a6a639adc3d6e069f'
+          raw=Path('research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-SEEK-HELPER-R75-ORIGINAL.json').read_bytes()
+          assert hashlib.sha256(raw).hexdigest()=='bcec13f8eb8d0b6182a38aa8b0ba67a7f20ca1d9b33ca1c9a76a1448f62b7d85'
+          assert hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest()=='757c22945d7e18263b154e88f52376d0ab58d42c'
+          if (p/'artifact.json').exists():
+              artifact=json.loads((p/'artifact.json').read_text())
+              assert artifact['workflow_run']['id']==r['source_run_id'] and artifact['digest']=='sha256:'+r['artifact_zip_sha256']
+              if not artifact['expired']:
+                  assert len(list((p/'raw').iterdir()))==1 and raw==(p/'raw/tw10-r75-static.json').read_bytes()
+                  print('R75_LIVE_ARTIFACT_EQUALS_PERMANENT_REPORT=PASS')
+              else:
+                  print('R75_ARTIFACT_EXPIRED_PERMANENT_PINNED_METADATA_CUSTODY=PASS')
+          else:
+              print('R75_ARTIFACT_UNAVAILABLE_PERMANENT_PINNED_METADATA_CUSTODY=PASS')
+          assert len(raw)==r['raw_bytes'] and hashlib.sha256(raw).hexdigest()==r['raw_sha256']
+          assert hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest()==r['canonical_git_blob']
+          assert r['original_proprietary_bytes_archived'] is False and r['actual_native_persistence_proven'] is False
+          print('R75_IMMUTABLE_SOURCE_ARTIFACT_AND_CANONICAL_BYTES=PASS')
+          PY
+      - name: Independently verify exact bounded seek-helper effects neighborhood and adverse mutations
+        run: |
+          set -euo pipefail
+          python -m unittest -v tests.test_stoneage_tw10_savedata_r75_seek_helper_static tests.test_stoneage_tw10_savedata_r74_modes_barriers tests.test_stoneage_tw10_savedata_r73_modes_static
+          python -m tools.stoneage_tw10_savedata_r75_guard --report research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-SEEK-HELPER-R75-ORIGINAL.json

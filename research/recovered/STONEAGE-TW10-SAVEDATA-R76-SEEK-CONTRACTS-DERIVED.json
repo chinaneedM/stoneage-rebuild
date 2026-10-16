@@ -1,0 +1,278 @@
+{
+  "actual_abi_stack_cleanup_or_nonaliasing_proven": false,
+  "actual_callee_frame_register_memory_preservation_proven": false,
+  "actual_flush_close_disk_persistence_proven": false,
+  "actual_native_seek_position_return_or_success_proven": false,
+  "actual_original_program_or_payload_executed": false,
+  "additional_stack_premises": [
+    "32-bit near-call/ret and dword stack geometry",
+    "all calls return normally with the declared cleanup",
+    "entry arguments and saved register slots are valid and not overwritten by aliases or callees",
+    "all explicit nonstack stores are disjoint from saved stack slots",
+    "caller reaches optional call after zero EDI definition; no historical path asserted"
+  ],
+  "call_cleanup_assumptions_bytes": {
+    "313230": 0,
+    "313264": 16,
+    "313277": 0,
+    "313292": 0
+  },
+  "conditional_local_ebx_esi_edi_restoration": true,
+  "conditional_seek_request": {
+    "dwMoveMethod": 2,
+    "hFile": "opaque EAX result from direct helper0x4e8fb",
+    "import": "KERNEL32.dll!SetFilePointer",
+    "interpretation": "Under the documented API/ABI and stack premises this requests positioning at the current end of a valid seekable file; actual call/position/success and original flag names remain unproven.",
+    "lDistanceToMove": 0,
+    "lpDistanceToMoveHigh": 0
+  },
+  "conditional_stack_ledgers": [
+    {
+      "ebp_entry_token_preserved": false,
+      "esp_before_ret": 0,
+      "restored_registers": [
+        "ebx",
+        "esi",
+        "edi"
+      ],
+      "ret_rva": 313338,
+      "return_address_token": "caller_return_address",
+      "seek_argument_tokens_if_reached": null
+    },
+    {
+      "ebp_entry_token_preserved": false,
+      "esp_before_ret": 0,
+      "restored_registers": [
+        "ebx",
+        "esi",
+        "edi"
+      ],
+      "ret_rva": 313338,
+      "return_address_token": "caller_return_address",
+      "seek_argument_tokens_if_reached": [
+        "opaque_eax_after_313230",
+        0,
+        0,
+        2
+      ]
+    },
+    {
+      "ebp_entry_token_preserved": false,
+      "esp_before_ret": 0,
+      "restored_registers": [
+        "ebx",
+        "esi",
+        "edi"
+      ],
+      "ret_rva": 313338,
+      "return_address_token": "caller_return_address",
+      "seek_argument_tokens_if_reached": [
+        "opaque_eax_after_313230",
+        0,
+        0,
+        2
+      ]
+    },
+    {
+      "ebp_entry_token_preserved": false,
+      "esp_before_ret": 0,
+      "restored_registers": [
+        "ebx",
+        "esi",
+        "edi"
+      ],
+      "ret_rva": 313338,
+      "return_address_token": "caller_return_address",
+      "seek_argument_tokens_if_reached": [
+        "opaque_eax_after_313230",
+        0,
+        0,
+        2
+      ]
+    },
+    {
+      "ebp_entry_token_preserved": false,
+      "esp_before_ret": 0,
+      "restored_registers": [
+        "ebx",
+        "esi",
+        "edi"
+      ],
+      "ret_rva": 313338,
+      "return_address_token": "caller_return_address",
+      "seek_argument_tokens_if_reached": [
+        "opaque_eax_after_313230",
+        0,
+        0,
+        2
+      ]
+    },
+    {
+      "ebp_entry_token_preserved": true,
+      "esp_before_ret": 0,
+      "restored_registers": [
+        "ebx",
+        "esi",
+        "edi"
+      ],
+      "ret_rva": 313338,
+      "return_address_token": "caller_return_address",
+      "seek_argument_tokens_if_reached": null
+    },
+    {
+      "ebp_entry_token_preserved": true,
+      "esp_before_ret": 0,
+      "restored_registers": [
+        "ebx",
+        "esi",
+        "edi"
+      ],
+      "ret_rva": 313338,
+      "return_address_token": "caller_return_address",
+      "seek_argument_tokens_if_reached": null
+    }
+  ],
+  "decoded_rows": 51,
+  "does_not_establish_global_snapshot_identity": true,
+  "graph_edges": 55,
+  "graph_nodes": 51,
+  "historical_mask2_flag_name_proven": false,
+  "invented_byte_mask_comparisons": 256,
+  "local_clear_bit_value": 2,
+  "local_explicit_ebp_write_sites": [],
+  "local_operation_preserves_mask32_and128": true,
+  "local_table_byte_and_mask": 253,
+  "next": "R77 retained-first direct helper0x4e8fb handle-source/caller-visible effects and0x4c953 error/helper impacts only where material; preserve import ABI, saved-slot nonaliasing, table pointer and actual native IO boundaries.",
+  "official_conditional_contract_references": {
+    "set_file_pointer": {
+      "accessed": "2026-10-16",
+      "scope": "Modern Microsoft API contract used only as an explicit conditional interpretation: arguments handle/low-distance/high-pointer/method; FILE_END=2, zero distance requests current EOF; no original execution claim.",
+      "url": "https://learn.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-setfilepointer"
+    },
+    "x86_stdcall": {
+      "accessed": "2026-10-16",
+      "scope": "Modern Microsoft x86 convention reference: right-to-left stack arguments and callee argument cleanup. Original ABI compatibility remains an assumption.",
+      "url": "https://learn.microsoft.com/en-us/cpp/cpp/stdcall?view=msvc-170"
+    }
+  },
+  "original_savedata_schema_or_server_authority_proven": false,
+  "path_overapproximation_is_not_actual_feasibility": true,
+  "qualified_witness_paths": [
+    [
+      313253,
+      313257,
+      313259,
+      313263,
+      313264
+    ],
+    [
+      313264,
+      313270,
+      313272,
+      313275,
+      313277,
+      313283,
+      313287
+    ],
+    [
+      313275,
+      313285,
+      313287,
+      313289,
+      313300,
+      313302,
+      313307,
+      313311,
+      313313,
+      313335,
+      313336,
+      313337,
+      313338
+    ]
+  ],
+  "same_caller_helper_table_address_or_byte_proven": false,
+  "schema": "tw10-r76-conditional-seek-helper-stack-register-and-table-contracts",
+  "source_git_blobs": {
+    "r46": "19d730daf617313508ccf81e940c0a51f3be8395",
+    "r69": "d5d4924803dc28de8be00f712eecd11cf9003c66",
+    "r73": "2a90bf654a723da53f7d6a26008ca660cb89b290",
+    "r75": "757c22945d7e18263b154e88f52376d0ab58d42c"
+  },
+  "stage_a_families": "PARTIAL/OPEN",
+  "stage_b_started": false,
+  "strict_opaque_call_queries": [
+    {
+      "actual_value_or_preservation_proven": false,
+      "before_rva": 313338,
+      "register": "ebp",
+      "syntax_sources": [
+        {
+          "origin": "opaque_call",
+          "site_rva": 313230
+        },
+        {
+          "origin": "opaque_call",
+          "site_rva": 313264
+        },
+        {
+          "origin": "opaque_call",
+          "site_rva": 313277
+        },
+        {
+          "origin": "opaque_call",
+          "site_rva": 313292
+        },
+        {
+          "origin": "unknown_entry",
+          "site_rva": 313185
+        }
+      ]
+    },
+    {
+      "actual_value_or_preservation_proven": false,
+      "before_rva": 313300,
+      "register": "edi",
+      "syntax_sources": [
+        {
+          "origin": "opaque_call",
+          "site_rva": 313264
+        },
+        {
+          "origin": "opaque_call",
+          "site_rva": 313277
+        }
+      ]
+    },
+    {
+      "actual_value_or_preservation_proven": false,
+      "before_rva": 313302,
+      "register": "esi",
+      "syntax_sources": [
+        {
+          "origin": "opaque_call",
+          "site_rva": 313264
+        },
+        {
+          "origin": "opaque_call",
+          "site_rva": 313277
+        }
+      ]
+    },
+    {
+      "actual_value_or_preservation_proven": false,
+      "before_rva": 313311,
+      "register": "ebx",
+      "syntax_sources": [
+        {
+          "origin": "full_register_definition",
+          "site_rva": 313270
+        },
+        {
+          "origin": "opaque_call",
+          "site_rva": 313277
+        }
+      ]
+    }
+  ],
+  "structural_root_to_ret_paths": 7
+}

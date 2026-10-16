@@ -1,0 +1,90 @@
+name: Independently verify TW1.0 R76 conditional seek stack and local table contracts
+on:
+  workflow_dispatch:
+  push:
+    branches: [agent/tw10-r76-seek-contracts-20261016, main]
+    paths:
+      - .github/workflows/verify-stoneage-tw10-r76-seek-contracts.yml
+      - tools/stoneage_tw10_savedata_*.py
+      - tests/test_stoneage_tw10_savedata_*.py
+      - research/recovered/STONEAGE-TW10-SAVEDATA-*.json
+      - docs/specs/STONEAGE-TW10-R75-R76-SEEK-CONTRACTS.md
+permissions:
+  contents: read
+jobs:
+  acceptance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Source, stack, nonaliasing and inherited call-barrier adversarial checks
+        run: |
+          set -euo pipefail
+          python -m unittest -v tests.test_stoneage_tw10_savedata_r76_seek_contracts tests.test_stoneage_tw10_savedata_r75_seek_helper_static tests.test_stoneage_tw10_savedata_r74_modes_barriers tests.test_stoneage_tw10_savedata_r73_modes_static tests.test_stoneage_tw10_savedata_r72_adjustment_counts tests.test_stoneage_tw10_savedata_r71_adjustment_static tests.test_stoneage_tw10_savedata_r70_conditional_returns tests.test_stoneage_tw10_savedata_r69_early_static tests.test_stoneage_tw10_savedata_r68_return_sources tests.test_stoneage_tw10_savedata_r67_tail_static tests.test_stoneage_tw10_savedata_r66_count_consumers tests.test_stoneage_tw10_savedata_r65_cross_window
+          python -m tools.stoneage_tw10_savedata_r75_guard --report research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-SEEK-HELPER-R75-ORIGINAL.json
+          python -m tools.stoneage_tw10_savedata_r76_seek_contracts --verify research/recovered/STONEAGE-TW10-SAVEDATA-R76-SEEK-CONTRACTS-DERIVED.json
+      - name: Independent scalar stack accounting, argument geometry and strict scope assertions
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          d=json.load(open('research/recovered/STONEAGE-TW10-SAVEDATA-R76-SEEK-CONTRACTS-DERIVED.json'))
+          assert (d['graph_nodes'],d['graph_edges'],d['decoded_rows'],d['structural_root_to_ret_paths'])==(51,55,51,7)
+          assert d['call_cleanup_assumptions_bytes']=={'313230':0,'313264':16,'313277':0,'313292':0}
+          assert len(d['conditional_stack_ledgers'])==7
+          for x in d['conditional_stack_ledgers']:
+              assert x['esp_before_ret']==0 and x['return_address_token']=='caller_return_address'
+              assert x['restored_registers']==['ebx','esi','edi']
+              if x['seek_argument_tokens_if_reached']is not None:assert x['seek_argument_tokens_if_reached']==['opaque_eax_after_313230',0,0,2]
+          assert sum(x['seek_argument_tokens_if_reached']is not None for x in d['conditional_stack_ledgers'])==4
+          assert d['local_explicit_ebp_write_sites']==[] and d['local_table_byte_and_mask']==253 and d['local_clear_bit_value']==2
+          assert d['invented_byte_mask_comparisons']==256 and d['local_operation_preserves_mask32_and128']is True
+          assert d['does_not_establish_global_snapshot_identity']is True
+          assert any(s['origin']=='opaque_call'for s in d['strict_opaque_call_queries'][0]['syntax_sources'])
+          assert all(d[k]is False for k in ['actual_original_program_or_payload_executed','actual_native_seek_position_return_or_success_proven','actual_abi_stack_cleanup_or_nonaliasing_proven','actual_callee_frame_register_memory_preservation_proven','same_caller_helper_table_address_or_byte_proven','historical_mask2_flag_name_proven','actual_flush_close_disk_persistence_proven','original_savedata_schema_or_server_authority_proven','stage_b_started'])
+          # Separate scalar accounting from symbolic label/register propagation.
+          g=json.load(open('research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-SEEK-HELPER-R75-ORIGINAL.json'));rows={r['site_rva']:r for r in g['decoded_instruction_rows']};adj={n:[]for n in g['bounded_graph_node_rvas']}
+          for a,b in g['bounded_graph_edges']:adj[a].append(b)
+          todo=[(313185,0,[])];done=[]
+          while todo:
+              n,balance,path=todo.pop();assert n not in path;path=path+[n];m=rows[n]['mnemonic']
+              balance+=-4 if m=='push'else 4 if m=='pop'else d['call_cleanup_assumptions_bytes'][str(n)]if m=='call'else 0
+              if m=='ret':assert balance==0;done.append(path)
+              else:
+                  assert adj[n]
+                  for b in adj[n]:todo.append((b,balance,path))
+          assert len(done)==7
+          print('R76_INDEPENDENT_CONDITIONAL_STACK_LEDGER_AND_NONPROMOTION=PASS')
+          PY
+      - name: Independently rehash and rescan refreshed 150-report helper gap census
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json,hashlib
+          from pathlib import Path
+          raw=Path('research/recovered/STONEAGE-TW10-SAVEDATA-R75-REFRESH-PREFLIGHT.json').read_bytes();assert hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest()=='2ea2b2ecae600cdff94eaf414526f486f0fa6fa9'
+          d=json.loads(raw);assert d['source_head']=='15923c8bccb0c9d89c62300591f97d1ab5f2fd17'and d['report_count']==len(d['registered_reports'])==150
+          nodes=set(d['bounded_node_rvas']);found=set();assert len(nodes)==51 and len(d['bounded_edges'])==55
+          paths=[r['path']for r in d['registered_reports']];assert paths==sorted(set(paths))
+          for r in d['registered_reports']:
+              p=Path(r['path']);assert p.parent==Path('research/recovered')and p.name.startswith('STONEAGE-TW10-SAVEDATA-')and p.suffix=='.json'
+              raw=p.read_bytes();assert len(raw)==r['bytes']and hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest()==r['git_blob'];todo=[json.loads(raw)]
+              while todo:
+                  x=todo.pop()
+                  if isinstance(x,list):todo.extend(x)
+                  elif isinstance(x,dict):
+                      if isinstance(x.get('mnemonic'),str)and x['mnemonic']and any(isinstance(x.get(k),list)for k in d['operand_array_keys']):
+                          for k in d['address_keys']:
+                              n=x.get(k)
+                              if type(n)is not int:
+                                  try:n=int(n,0)if isinstance(n,str)else None
+                                  except ValueError:n=None
+                              if n is not None:
+                                  if n in nodes:found.add(n)
+                                  elif n-4194304 in nodes:found.add(n-4194304)
+                      todo.extend(x.values())
+          assert sorted(found)==d['decoded_node_rvas']and len(found)==3
+          assert sorted(nodes-found)==d['missing_decoded_node_rvas']and len(nodes-found)==48
+          assert d['actual_helper_preservation_seek_or_persistence_proven']is False
+          print('R75_REFRESHED_150_REPORT_HELPER_CENSUS=PASS')
+          PY
