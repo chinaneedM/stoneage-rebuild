@@ -1,0 +1,239 @@
+{
+  "schema": "stoneage.stage_a.npc_content_boundary.01",
+  "date": "2026-10-16",
+  "base_main_head": "b3f4eb5f5be78fced920c3b378d908f144404f57",
+  "base_main_tree": "a859bce501892b22572f97e83fb173c74a3a8800",
+  "scope": "Seven-player-visible-NPC-content-evidence-surfaces; existing derived sources only; no invented original text, NPC IDs or commercial server effects.",
+  "status": "FINITE_NPC_CONTENT_BOUNDARY_AUDITED_ORIGINAL_QUESTS_OPEN",
+  "stage_a_accepted": false,
+  "stage_b_gate": "GATED",
+  "historical_restoration_percentage": null,
+  "original_server_content_recovered": false,
+  "source_pins": {
+    "v1_client": {
+      "path": "research/clients/STONEAGE-TW10-CLIENT-DATA-BOUNDARY-R1.md",
+      "git_blob": "11e2b77bce2febfef37c3a0c87dec878a6f289ee",
+      "bytes": 6780
+    },
+    "v1_matrix": {
+      "path": "research/clients/STONEAGE-TW10-GAMEPLAY-DATA-MATRIX-R1.md",
+      "git_blob": "ddbef0ebd37d1a86554f7ac64f63f3ca4776e75e",
+      "bytes": 30851
+    },
+    "npc_secondary": {
+      "path": "research/recovered/STONEAGE-25-NPC-SECONDARY-ARG-QUEUE-R1.txt",
+      "git_blob": "28a8b6dcb7a100413dd82040beaca0d5b869b220",
+      "bytes": 3763
+    },
+    "npc_graph": {
+      "path": "research/recovered/STONEAGE-25-NPC-WORLD-GRAPH-R1.txt",
+      "git_blob": "c138e9b3ccf63953672878af5257131564d68afb",
+      "bytes": 3146
+    },
+    "v1_ui": {
+      "path": "docs/specs/STONEAGE-TW10-UI-SEMANTICS-R1.md",
+      "git_blob": "f4bb76429cd221bd38f284b911e6e51ec18fd0c8",
+      "bytes": 4821
+    },
+    "npc_presentation": {
+      "path": "research/recovered/STONEAGE-25-PRESENTATION-NPC-USAGE-R1.txt",
+      "git_blob": "e3559bc2b2dde6232f8205a5c57d274f35338a27",
+      "bytes": 1189
+    },
+    "window_semantics": {
+      "path": "research/mechanics/STONEAGE-WINDOWMAN-CORE-R1.md",
+      "git_blob": "92a318d3e37c0dfa48789391192e4198b3dd379c",
+      "bytes": 5513
+    },
+    "npc_window": {
+      "path": "research/recovered/STONEAGE-25-WINDOWMAN-USAGE-R1.txt",
+      "git_blob": "89dfd4247c21fb24e93ae61c4d4158f6ee9bcf6b",
+      "bytes": 2833
+    },
+    "npc_enemy": {
+      "path": "research/recovered/STONEAGE-25-NPCENEMY-USAGE-R1.txt",
+      "git_blob": "34c1d1c9e035dc5e05558ae4cfdc7f9b218275a7",
+      "bytes": 2391
+    },
+    "keyitem_award": {
+      "path": "research/recovered/STONEAGE-RULES01-KEYITEM-AWARD-BOUNDARY-R1.json",
+      "git_blob": "dc5923920bfc728be3cbe51802ed48c1c78fb34d",
+      "bytes": 5426
+    },
+    "npc_key_refs": {
+      "path": "research/recovered/STONEAGE-25-SHADOWED-BRANCH-KEY-ITEM-NPC-REFERENCES-R1.txt",
+      "git_blob": "a198f5d1c5155dc0c0c8b80ba7127460f48b4654",
+      "bytes": 922
+    },
+    "dialogue_warp": {
+      "path": "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-DIALOGUE-WARP-BRIDGE-R1.txt",
+      "git_blob": "c34242e3f8682321082261e656a19da791f45103",
+      "bytes": 3425
+    },
+    "stage_a": {
+      "path": "docs/STAGE-A-NINE-FAMILY-PREFLIGHT-R1.md",
+      "git_blob": "aac7cf1cdeff54dab2d2fff11a2305443562b64c",
+      "bytes": 9002
+    }
+  },
+  "derived_counts": {
+    "create_refs": 4985,
+    "unambiguous_refs": 4955,
+    "ambiguous_refs": 30,
+    "secondary_file_args": 1773,
+    "secondary_inline_args": 3022,
+    "secondary_no_args": 160,
+    "missing_secondary_files": 15,
+    "townpeople_refs": 445,
+    "townpeople_resolved_files": 389,
+    "townpeople_inline": 34,
+    "townpeople_noargs": 7,
+    "townpeople_missing_files": 15,
+    "signboard_refs": 181,
+    "windowman_refs": 17,
+    "windowman_resolved_configs": 13,
+    "windowman_missing_configs": 4,
+    "npcenemy_refs": 279,
+    "npcenemy_resolved_args": 279,
+    "npcenemy_prompts": 78,
+    "warpman_refs": 202,
+    "warpman_spatial_candidates": 160,
+    "keyitem_matching_create_rows": 3
+  },
+  "content_surfaces": [
+    {
+      "id": "NPC_CLIENT_WINDOW_ENVELOPE",
+      "evidence_role": "V1_DIRECT_CLIENT_PROTOCOL",
+      "source_keys": [
+        "v1_matrix",
+        "v1_ui"
+      ],
+      "supported": "Taiwan v1 compiled client sends WN with five integer fields and one string; receives WN with four integer fields and one string; client-side window I/O surface is evidenced.",
+      "missing": "Original server dialogue text, NPC inventory/population, actual selection results and historical window layout.",
+      "status": "INTERFACE_ONLY_NO_ORIGINAL_QUEST_CONTENT",
+      "reopen": "Authenticated v1 WN session trace paired to a named NPC, or first-generation server NPC/window script."
+    },
+    {
+      "id": "EARLY_NPC_MASTER_INVENTORY",
+      "evidence_role": "V1_DIRECT_FILENAME_BOUNDARY_PLUS_OPEN_SERVER",
+      "source_keys": [
+        "v1_client",
+        "stage_a"
+      ],
+      "supported": "Bounded v1 disc filename scan reports no obvious standalone pet/item/skill/NPC/quest/shop master tables.",
+      "missing": "A filename scan cannot exclude embedded or transmitted records; complete v1 NPC/template/create/dialogue/script dataset and launch server bytes are unavailable.",
+      "status": "ORIGINAL_CONTENT_OPEN",
+      "reopen": "Official-era original downloadable NPC/create/template/script archive or independently verifiable launch-era server content."
+    },
+    {
+      "id": "LATER_NPC_SPAWN_AND_ARGUMENTS",
+      "evidence_role": "LATER_RECOVERED",
+      "source_keys": [
+        "npc_graph",
+        "npc_secondary"
+      ],
+      "supported": "Recovered25 create/template reference graph and arg-transport census are available as aggregated, non-textual evidence.",
+      "missing": "Thirty ambiguous template-name create references and fifteen missing secondary argument files. No original v1 membership, real-name dialogue, coordinates or raw create rows in the public derived report.",
+      "status": "LATER_STRUCTURE_PARTIAL",
+      "reopen": "Resolve recovered25 missing secondary files or obtain matching earlier create/template corpus; version-label any newly recovered row."
+    },
+    {
+      "id": "LATER_TOWN_DIALOGUE_AND_WINDOWS",
+      "evidence_role": "LATER_RECOVERED",
+      "source_keys": [
+        "npc_presentation",
+        "npc_window",
+        "window_semantics"
+      ],
+      "supported": "TownPeople/SignBoard/Windowman dialogue presentation and fixed-descendant Windowman routing are supported within their separate source scopes.",
+      "missing": "TownPeople has missing files; Windowman has four missing conff files; Windowman parser placeholders for takeitem/giveitem and warp/battle are not executable award or warp behavior in fixed callback.",
+      "status": "LATER_DIALOGUE_ONLY_PARTIAL",
+      "reopen": "Recover source-matched missing 2.5 conff and TownPeople arguments; demonstrate executing callback rather than interpreting a struct placeholder."
+    },
+    {
+      "id": "LATER_NPC_COMBAT_DIALOGUE",
+      "evidence_role": "LATER_RECOVERED",
+      "source_keys": [
+        "npc_enemy"
+      ],
+      "supported": "Recovered25 NPCEnemy secondary arguments contain battle prompt and event/dieact structures, not original v1 enemy dialogue.",
+      "missing": "Specific first-generation NPCEnemy placements, creature lists, battle dialogue and quest consequences remain unverified.",
+      "status": "LATER_COMBAT_CAPABILITY_ONLY",
+      "reopen": "Find a first-generation NPCEnemy script or signed launch-version NPC battle transcript with matching server rule state."
+    },
+    {
+      "id": "LATER_CONDITIONAL_TRAVEL",
+      "evidence_role": "LATER_RECOVERED",
+      "source_keys": [
+        "dialogue_warp",
+        "npc_secondary"
+      ],
+      "supported": "Recovered25 WarpMan argument sites and spatial candidate edges exist.",
+      "missing": "A candidate edge does not establish valid FREE/ITEM/fee/action branch, executed server-side movement or v1 hometown/world membership.",
+      "status": "LATER_CONDITIONAL_CANDIDATE_ONLY",
+      "reopen": "Recover same-version fully evaluated WarpMan conditions, chosen input and resulting dispatch/destination trace."
+    },
+    {
+      "id": "LATER_ITEM_AWARD_VERSUS_GATE",
+      "evidence_role": "LATER_RECOVERED",
+      "source_keys": [
+        "keyitem_award",
+        "npc_key_refs"
+      ],
+      "supported": "Two recovered25 ExChangeMan event GetItem records are independently distinguished from ordinary ItemShop purchase and from WarpMan DelItem/FREE references.",
+      "missing": "V1 quest chain, actual awarded item persistence, source item flags, event state durability and action-consumption semantics are not proven.",
+      "status": "AWARD_PROVENANCE_BOUNDED_ORIGINAL_QUEST_OPEN",
+      "reopen": "Recover matching first-generation event/quest config and verified original save/relogin or uniquely attributable item award trace."
+    }
+  ],
+  "critical_playflow": [
+    {
+      "step": "NPC discovery/placement",
+      "v1": "OPEN original NPC population",
+      "later": "recovered25 create/template graph",
+      "blocking": "Original coordinates/identity/script unavailable"
+    },
+    {
+      "step": "NPC dialogue/window",
+      "v1": "WN envelope only",
+      "later": "TownPeople and Windowman aggregate, incomplete configs",
+      "blocking": "Original dialogue payload and choice effects unavailable"
+    },
+    {
+      "step": "NPC conditional interaction",
+      "v1": "WN response transport only",
+      "later": "WarpMan/ExChangeMan/Windowman roles differ",
+      "blocking": "Original condition, item gate and executed branch unavailable"
+    },
+    {
+      "step": "Battle and quest trigger",
+      "v1": "original general battle protocol only",
+      "later": "NPCEnemy argument/askbattle structure",
+      "blocking": "Original quest-specific battle parameters unknown"
+    },
+    {
+      "step": "Reward and movement",
+      "v1": "OPEN original server award/warp values",
+      "later": "two later ExChangeMan event awards and conditional WarpMan candidates",
+      "blocking": "Item identity, consumption, fee, destination/version are not co-proven"
+    },
+    {
+      "step": "Persistent quest outcome",
+      "v1": "OPEN original SAAC persistence/quest state",
+      "later": "modern local model not original commercial server",
+      "blocking": "Event flags, item logout/drop behavior and original re-login proof absent"
+    }
+  ],
+  "explicit_prohibitions": [
+    "Never claim recovered25 NPC rows, four hometown routes or Windowman configs belong to TW1.0 or JSS1999.",
+    "Never treat WN original protocol shape as proof of NPC dialogue, quest branching or original window layout.",
+    "Never count missing argument/config files as resolved, or ambiguous templates as unambiguous references.",
+    "Never treat Windowman takeitem/giveitem/warp/battle struct placeholders as executed callbacks.",
+    "Never equate spatial WarpMan candidate edges to server-authorized travel.",
+    "Never equate ExChangeMan GetItem event grant, ordinary ItemShop purchase, WarpMan DelItem or historical durable entitlement.",
+    "Never invent server-only quest lines, item values, coordinates, rewards, dialogues or completion percentage.",
+    "Do not reopen savedata R79 absent a named material dependency."
+  ],
+  "next_priority": "STAGE-A-REVIEW-BLOCKER-TRIAGE-01",
+  "next_scope": "Joint nine-family representative-playflow review; distinguish playable later-source references, client-interface-only first-generation mechanisms, missing first-generation commercial content, and explicit reopen triggers. No Stage B design."
+}

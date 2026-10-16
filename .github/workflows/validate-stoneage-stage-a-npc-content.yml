@@ -1,0 +1,21 @@
+name: Validate StoneAge Stage A NPC content boundary
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-STAGE-A-NPC-CONTENT-BOUNDARY-R1.json'
+      - 'docs/specs/STONEAGE-STAGE-A-NPC-CONTENT-BOUNDARY-R1.md'
+      - 'tests/test_stoneage_stage_a_npc_content_boundary.py'
+      - '.github/workflows/validate-stoneage-stage-a-npc-content.yml'
+      - 'research/recovered/STONEAGE-25-*'
+      - 'research/clients/STONEAGE-TW10-*'
+  workflow_dispatch:
+jobs:
+  npc-content-custody:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate NPC content provenance and negative boundaries
+        run: python -m unittest discover -s tests -p test_stoneage_stage_a_npc_content_boundary.py -v
