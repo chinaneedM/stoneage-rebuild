@@ -1,0 +1,83 @@
+name: Independently verify TW1.0 R72 conditional byte expansion and count units
+on:
+  workflow_dispatch:
+  push:
+    branches: [agent/tw10-r72-adjustment-counts-20261016, main]
+    paths:
+      - .github/workflows/verify-stoneage-tw10-r72-adjustment-counts.yml
+      - tools/stoneage_tw10_savedata_*.py
+      - tests/test_stoneage_tw10_savedata_*.py
+      - research/recovered/STONEAGE-TW10-SAVEDATA-*.json
+      - docs/specs/STONEAGE-TW10-R71-R72-ADJUSTMENT-COUNTS.md
+permissions:
+  contents: read
+jobs:
+  acceptance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Adversarial count, threshold, source and inherited boundary tests
+        run: |
+          set -euo pipefail
+          python -m unittest -v tests.test_stoneage_tw10_savedata_r72_adjustment_counts tests.test_stoneage_tw10_savedata_r71_adjustment_static tests.test_stoneage_tw10_savedata_r70_conditional_returns tests.test_stoneage_tw10_savedata_r69_early_static tests.test_stoneage_tw10_savedata_r68_return_sources tests.test_stoneage_tw10_savedata_r67_tail_static tests.test_stoneage_tw10_savedata_r66_count_consumers tests.test_stoneage_tw10_savedata_r65_cross_window
+          python -m tools.stoneage_tw10_savedata_r71_guard --report research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-ADJUSTMENT-R71-ORIGINAL.json
+          python -m tools.stoneage_tw10_savedata_r72_adjustment_counts --verify research/recovered/STONEAGE-TW10-SAVEDATA-R72-ADJUSTMENT-COUNTS-DERIVED.json
+      - name: Independent numeric and nonpromotion assertions
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          d=json.load(open('research/recovered/STONEAGE-TW10-SAVEDATA-R72-ADJUSTMENT-COUNTS-DERIVED.json'))
+          assert (d['available_decoded_graph_nodes'],d['graph_nodes'],d['graph_edges'])==(128,139,156)
+          assert (d['conditional_compared_octet'],d['conditional_inserted_octet'])==(10,13)
+          assert d['post_store_threshold']==1024 and d['post_store_conditional_max_chunk_units']==1025
+          assert d['invented_boundary_cases'][0]['chunk_lengths']==[1025]
+          assert d['invented_boundary_cases'][1]['chunk_lengths']==[1024,2]
+          assert d['invented_trace_threshold_comparisons']==3124
+          c=d['invented_partial_write_counterexample']
+          assert c['uint32_subtraction']==0 and c['completed_input_tokens_in_output_prefix']==1
+          assert d['invented_partial_write_prefixes'][0]['uint32_subtraction']==4294967295
+          assert d['all_numerical_tokens_and_counts_are_invented'] is True
+          for k in ['actual_original_execution_or_payload_evaluated','actual_native_bool_count_or_success_proven','actual_path_predicates_or_return_values_proven','actual_temporal_frame_memory_alias_or_abi_proven','partial_write_return_is_general_logical_prefix_count','actual_flush_close_disk_persistence_proven','original_savedata_schema_checksum_migration_server_authority_proven','stage_b_started']:
+              assert d[k] is False
+          print('R72_CONDITIONAL_COUNT_UNITS_AND_PARTIAL_WRITE_COUNTEREXAMPLE=PASS')
+          PY
+      - name: Independently rehash and rescan complete retained-first 138-report census
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          p=Path('research/recovered/STONEAGE-TW10-SAVEDATA-R71-PREFLIGHT.json');raw=p.read_bytes()
+          assert hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest()=='d016b5e3356d3064b1b30a79a2899ec96352e097'
+          d=json.loads(raw);assert d['source_head']=='7a4598f6a2c0019a2e2fca55231d1e78071b828c'
+          assert d['report_count']==len(d['registered_reports'])==138
+          g=json.load(open('research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-EARLY-R69-ORIGINAL.json'));nodes=set(g['bounded_graph_node_rvas']);found=set()
+          assert d['address_keys']==['site_rva','rva','instruction_rva','address','va','instruction_address']
+          assert d['operand_array_keys']==['operands','ops','operand_shapes']
+          paths=[r['path']for r in d['registered_reports']];assert paths==sorted(set(paths))
+          for r in d['registered_reports']:
+              f=Path(r['path']);assert f.parent==Path('research/recovered') and f.name.startswith('STONEAGE-TW10-SAVEDATA-') and f.suffix=='.json'
+              raw=f.read_bytes();assert len(raw)==r['bytes'] and hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest()==r['git_blob']
+              pending=[json.loads(raw)]
+              while pending:
+                  x=pending.pop()
+                  if isinstance(x,list):pending.extend(x);continue
+                  if not isinstance(x,dict):continue
+                  if isinstance(x.get('mnemonic'),str) and x['mnemonic'] and any(isinstance(x.get(k),list)for k in d['operand_array_keys']):
+                      for k in d['address_keys']:
+                          n=x.get(k)
+                          if type(n)is not int:
+                              try:n=int(n,0)if isinstance(n,str)else None
+                              except ValueError:n=None
+                          if n is not None:
+                              if n in nodes:found.add(n)
+                              elif n-4194304 in nodes:found.add(n-4194304)
+                  pending.extend(x.values())
+          assert sorted(found)==d['decoded_sites_in_full_graph'] and len(found)==117
+          assert sorted(nodes-found)==d['missing_sites_in_full_graph'] and len(nodes-found)==22
+          selected=set(d['selected_node_rvas']);assert len(selected)==29
+          assert sorted(selected-found)==d['selected_missing_decoded_sites'] and len(selected-found)==11
+          print('R71_RETAINED_FIRST_138_REPORT_CENSUS=PASS')
+          PY

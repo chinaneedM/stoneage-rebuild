@@ -1,0 +1,74 @@
+name: Independently accept TW1.0 R71 original adjustment-loop artifact and permanent static report
+on:
+  workflow_dispatch:
+  push:
+    branches: [agent/tw10-r71-independent-20261016, main]
+    paths:
+      - .github/workflows/verify-stoneage-tw10-r71-retained.yml
+      - tools/stoneage_tw10_savedata_*.py
+      - tests/test_stoneage_tw10_savedata_*.py
+      - research/recovered/STONEAGE-TW10-SAVEDATA-*.json
+      - docs/specs/STONEAGE-TW10-R71-R72-ADJUSTMENT-COUNTS.md
+permissions:
+  contents: read
+  actions: read
+jobs:
+  acceptance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Requalify immutable source run/job and artifact metadata
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/r71-custody
+          python - <<'PY' > /tmp/r71-custody/ids
+          import json
+          r=json.load(open('research/recovered/STONEAGE-TW10-SAVEDATA-R71-SOURCE-CUSTODY.json'))
+          assert type(r['source_run_id']) is int and type(r['artifact_id']) is int
+          print(r['source_run_id'],r['artifact_id'])
+          PY
+          read -r run_id artifact_id < /tmp/r71-custody/ids
+          gh api "repos/$GITHUB_REPOSITORY/actions/runs/$run_id" > /tmp/r71-custody/run.json
+          gh api "repos/$GITHUB_REPOSITORY/actions/runs/$run_id/jobs" > /tmp/r71-custody/jobs.json
+          if gh api "repos/$GITHUB_REPOSITORY/actions/artifacts/$artifact_id" > /tmp/r71-custody/artifact.json; then
+            expired="$(python -c 'import json; print(json.load(open("/tmp/r71-custody/artifact.json"))["expired"])')"
+            if [ "$expired" = 'False' ]; then
+              gh run download "$run_id" --repo "$GITHUB_REPOSITORY" --name tw10-r71-original-static-adjustment-derived-only --dir /tmp/r71-custody/raw
+            fi
+          else
+            rm -f /tmp/r71-custody/artifact.json
+          fi
+          python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          p=Path('/tmp/r71-custody');r=json.load(open('research/recovered/STONEAGE-TW10-SAVEDATA-R71-SOURCE-CUSTODY.json'))
+          run=json.loads((p/'run.json').read_text());assert (run['status'],run['conclusion'],run['head_sha'],run['head_branch'])==('completed','success',r['source_head'],r['source_branch'])
+          jobs=json.loads((p/'jobs.json').read_text())['jobs'];job=[j for j in jobs if j['id']==r['source_job_id']];assert len(job)==1 and job[0]['name']=='original-static' and job[0]['conclusion']=='success'
+          assert (r['source_run_id'],r['source_head'],r['source_job_id'],r['artifact_id'])==(38853018146,'270cfd3205929bae1b2953c1a1763266439fd1cc',116818258696,12026131224)
+          assert r['artifact_zip_sha256']=='036e7aa7778d4f8fa778847671ae3dbec57807c26abfa12cecd25c9e7d03d89b'
+          raw=Path('research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-ADJUSTMENT-R71-ORIGINAL.json').read_bytes()
+          assert hashlib.sha256(raw).hexdigest()=='746c7e64a973b52ca5cf3412342eb68725fcf15dcb5ad4a1e71a8e638ae90af5'
+          assert hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest()=='f2a946ffc93c6a32210f2ebaa9dc9191833aac37'
+          if (p/'artifact.json').exists():
+              artifact=json.loads((p/'artifact.json').read_text())
+              assert artifact['workflow_run']['id']==r['source_run_id'] and artifact['digest']=='sha256:'+r['artifact_zip_sha256']
+              if not artifact['expired']:
+                  assert len(list((p/'raw').iterdir()))==1 and raw==(p/'raw/tw10-r71-static.json').read_bytes()
+                  print('R71_LIVE_ARTIFACT_EQUALS_PERMANENT_REPORT=PASS')
+              else:
+                  print('R71_ARTIFACT_EXPIRED_PERMANENT_PINNED_METADATA_CUSTODY=PASS')
+          else:
+              print('R71_ARTIFACT_UNAVAILABLE_PERMANENT_PINNED_METADATA_CUSTODY=PASS')
+          assert len(raw)==r['raw_bytes'] and hashlib.sha256(raw).hexdigest()==r['raw_sha256']
+          assert hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest()==r['canonical_git_blob']
+          assert r['original_proprietary_bytes_archived'] is False and r['actual_native_persistence_proven'] is False
+          print('R71_IMMUTABLE_SOURCE_ARTIFACT_AND_CANONICAL_BYTES=PASS')
+          PY
+      - name: Independently verify exact adjustment-loop neighborhood and adverse mutations
+        run: |
+          set -euo pipefail
+          python -m unittest -v tests.test_stoneage_tw10_savedata_r71_adjustment_static tests.test_stoneage_tw10_savedata_r70_conditional_returns tests.test_stoneage_tw10_savedata_r69_early_static
+          python -m tools.stoneage_tw10_savedata_r71_guard --report research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-ADJUSTMENT-R71-ORIGINAL.json
