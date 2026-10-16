@@ -1,0 +1,26 @@
+name: Validate StoneAge TW1.0 UI resource binding boundaries
+
+on:
+  push:
+    paths:
+      - "research/recovered/STONEAGE-TW10-UI-RESOURCE-BIND-SCOPE-R1.json"
+      - "tools/stoneage_tw10_battle_scene_spec.py"
+      - "tests/test_stoneage_tw10_ui_resource_bind.py"
+      - "docs/specs/STONEAGE-TW10-UI-RESOURCE-BIND-R1.md"
+      - ".github/workflows/validate-stoneage-tw10-ui-resource-bind.yml"
+  workflow_dispatch:
+
+jobs:
+  verify-v1-original-data-boundaries:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Battle identity/palette source and synthetic unselected grid regression
+        run: python -m unittest discover -s tests -p 'test_stoneage_tw10_ui_resource_bind.py' -v
+      - name: Independent five-surface original protocol regression
+        run: python -m unittest discover -s tests -p 'test_stoneage_tw10_ui_semantics.py' -v
+      - name: Existing TW1.0 resource metadata contract
+        run: python -m unittest discover -s tests -p 'test_stoneage_tw10_resource_metadata.py' -v
