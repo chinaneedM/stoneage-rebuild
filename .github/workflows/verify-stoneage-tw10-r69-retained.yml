@@ -67,7 +67,7 @@ jobs:
           assert r['original_proprietary_bytes_archived'] is False and r['actual_native_persistence_proven'] is False
           print('R69_IMMUTABLE_SOURCE_ARTIFACT_AND_CANONICAL_BYTES=PASS')
           PY
-      - name: Independently verify exact fixed-tail neighborhood and adverse mutations
+      - name: Independently verify exact early-return neighborhood and adverse mutations
         run: |
           set -euo pipefail
           python -m unittest -v tests.test_stoneage_tw10_savedata_r69_early_static tests.test_stoneage_tw10_savedata_r66_count_consumers tests.test_stoneage_tw10_savedata_r65_cross_window
