@@ -14169,3 +14169,51 @@ complete original CURRENT-STATE Git blob
 1c59a7f1b2b65212137433740fa76a282e2d600b, README, roadmap,
 decisions, timeline, source registry and the latest Actions. This entry
 appends without rewriting prior continuity bytes.
+
+
+## 2026-10-16 — RULES-01 finite cross-system source-qualified preflight
+
+This is a **preflight only**, not RULES-01 closure or a restored commercial
+server. Eight anchored ordinary gameplay joins have been classified:
+(1) world position/encounter; (2) defeated-enemy to battle-local EXP;
+(3) persistent player EXP/level; (4) capture to owned pet;
+(5) pet EXP/rank/growth; (6) Stone/shop/owned item;
+(7) owned item to gated WarpMan/NPC award; (8) persistent DATA fields
+versus transient WORK fields, saved/logout and login state.
+
+A specific material seam is the owned-item → guarded NPC/WarpMan condition →
+award/progression → persistent-state boundary, with original early content
+unavailable. The qualified recovered25 four-hometown bridge needs normal
+purchase and correct ITEM FREE predicate; it does not establish JSS1999/TW1.0
+NPC scripts or reward. Descendant ordinary shop inserts created items before
+deducting Stone upon successful completion; it does not give a transactional
+historical guarantee on abnormal failure. Descendant character persistence
+serializes DATA/slots/pets rather than all transient WORK fields. The
+SAAC/logout unlock and save acknowledgement order is historically unsafe
+and not overwritten with a fabricated safe original protocol.
+
+Player EXP regimes differ: legacy cumulative and later current-level subtracting
+profiles cannot be silently mixed or assigned to JSS1999. Pet capture still
+requires explicit current MP/EXP/maxEXP/skill/AI source; randomized growth
+requires explicit PETRANK/ALLOCPOINT and rolls. Original early membership
+and values remain OPEN. Modern local save tests are not original server saves.
+
+Artifacts:
+- research/recovered/STONEAGE-RULES01-CROSSSYSTEM-PREFLIGHT-R1.json
+- docs/specs/STONEAGE-RULES01-PLAYFLOW-ATTRIBUTION-R1.md
+- tests/test_stoneage_rules01_crosssystem_preflight.py
+- .github/workflows/validate-stoneage-rules01-preflight.yml
+
+Eleven existing source blobs are pinned in a structured eight-join metadata
+ledger. Standalone source-boundary/custody tests (4) succeeded on branch
+ab6e8280d6ec9114e7cc7568c6cf6df2f3ee938d, Action 38908646966.
+They do not execute original commercial clients, server game logic or
+proprietary maps. No overall percent is inferred from eight inspected joins.
+
+**Highest NEXT remains RULES-01**, specifically bounded review of
+source-qualified owned item → conditional WarpMan/NPC reward → durable
+character state, stopping at explicit missing old server inputs rather than
+inventing quest scripts or item/default values. Only close an actual domain
+join after comparing current modeled function signatures, provenance,
+normal-transaction conditions and state ownership. Old R79 stays PAUSED_NON_BLOCKING;
+Stage A family states PARTIAL/OPEN; Stage B still awaits joint review.

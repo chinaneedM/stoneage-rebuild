@@ -6778,3 +6778,18 @@ first-generation map/quest/monster membership, commercial-server reward,
 full original save persistence, or a 100% restoration rate.
 WORLD-01 finite review closed; Stage A family states remain PARTIAL/OPEN.
 Next RULES-01; old TW1.0 client-local savedata R79 remains PAUSED_NON_BLOCKING.
+
+
+### SRC-RULES01-CROSSSYSTEM-PREFLIGHT-R1 — 2026-10-16
+
+Eight finite ordinary-playflow source/evidence joins with eleven exact
+committed report/source path Git blobs and byte-count pins:
+`research/recovered/STONEAGE-RULES01-CROSSSYSTEM-PREFLIGHT-R1.json`;
+human-readable `docs/specs/STONEAGE-RULES01-PLAYFLOW-ATTRIBUTION-R1.md`.
+Independent source-custody/version guard Action38908646966 SUCCESS at
+branch ab6e8280d6ec9114e7cc7568c6cf6df2f3ee938d.
+This is an audit of prior recorded source material, not recovery of new
+JSS1999/TW1.0 commercial server NPC/EXP/quest records, nor a complete
+executable gameplay scenario. Item ownership, gated NPC reward, historical
+server persistence and original threshold selection remain explicitly OPEN.
+It does not change RULES-01/Stage A family status PARTIAL/OPEN.
