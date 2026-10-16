@@ -3300,3 +3300,16 @@ The later WORLD-01 review reuses four existing hometown routes; no topology
 reproof or new map/NPC/quest membership is asserted.
 See docs/RESTORATION-ROADMAP-R2.md and the permanent portfolio index.
 Stage A remains PARTIAL/OPEN; joint Stage B review remains required.
+
+
+## 2026-10-16 — Captured-pet source/copy and modern lifecycle boundary
+
+Existing convergent-descendant capture semantics justify copied known name
+and reset hidden VARIABLEAI; both reference-runtime capture entrances now
+validate them before installing a supplied pet. This is not new TW1.0 server
+execution proof. Six invented-state scenarios include temporary-disk reload,
+explicit reentry and controlled growth while retaining MP/skill/growth identity.
+Wild-enemy EXP is not copied, and kill reward_exp is not pet EXP. Complete
+state construction remains OPEN with explicit inputs. Source/carrier table:
+docs/specs/STONEAGE-CAPTURE-STATE-SOURCES-R1.md. NextWORLD-01; R79 paused;
+no Stage A family closure or Stage B promotion.

@@ -6734,3 +6734,19 @@ layers.49 existing semantic regressions PASS locally; no original program or
 proprietary payload acquisition, new tests or historical promotions.
 Highest NEXT PET-STATE-01; deep savedata R79 PAUSED_NON_BLOCKING with exact reopen
 conditions. All existing custody receipts remain authoritative in their scope.
+
+
+### SRC-CAPTURE-STATE-SOURCE-AUDIT-R1 — 2026-10-16
+
+Derived existing-code/model audit at maine88ea2392578fd0fe8b77ac6c437a7060c611184.
+research/recovered/STONEAGE-CAPTURE-STATE-SOURCE-AUDIT-R1.json pins ten source
+artifacts and records copied/recomputed/unavailable field distinctions.
+SpawnedEnemy.birth remains in context; no all-carrier absence claim. Known
+name and supplied VARIABLEAI0 get shared direct/round validation. Six invented
+lifecycle regressions include modern temporary-disk reload and controlled
+growth, not original client/server/save execution. Coordinator280 and separate
+domain80 PASS locally, with overlap explicitly retained. The baseline bridge
+fixture's missing GET/assert11 failure is reproduced and corrected as fixture
+input only; absence still yieldsNone. Exact remote gates and historical prefix
+custody are in the acceptance receipt. Full automatic construction remains
+OPEN_EVIDENCE_LIMITED_EXPLICIT_STATE_REQUIRED. Highest nextWORLD-01; R79 paused.

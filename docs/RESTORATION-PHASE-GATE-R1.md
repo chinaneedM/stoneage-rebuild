@@ -466,3 +466,60 @@ Canonical route: docs/RESTORATION-ROADMAP-R2.md; immutable source-head/tree,
 historical prefix hashes: research/recovered/STONEAGE-RESTORATION-PORTFOLIO-R1.json.
 Forty-nine selected existing semantic regressions PASS; no new tests, original
 client acquisition/execution, all-map payload replay or historical promotions.
+
+
+## 2026-10-16 — PET-STATE-01 capture state sources and bounded roster/save/growth lifecycle
+
+Gameplay outcome: direct and round capture now share one validator. Where the
+current target name is known, a different supplied pet name is rejected. Where
+hidden growth state is supplied, capture VARIABLEAI must be0. Existing slot,
+variant/template, level/HP/maxHP guards remain; rejection occurs before roster
+installation. Unknown name/growth remains explicitly unknown. No implicit MP,
+EXP, UI, skill, visible-AI or original-version default has been introduced.
+
+The source audit separates current copied values, recomputed values, static
+metadata and unavailable initialization/current-state inputs. Importantly,
+LocalRuntimeBattleContext retains SpawnedEnemy.birth: absence of growth fields
+in minimal BattleParticipant is NOT absence from all carriers. A birth snapshot
+cannot automatically stand for raw stats after arbitrary battle transformations.
+Existing descendant policy copies current name/MP/growth identity, excludes
+wild-enemy EXP and recomputes maxEXP by level; reward_exp is a kill reward,
+not captured-pet EXP. Initial EXP, threshold profile, current MP/full skills/
+status and visible-AI/compliance still require explicit evidence-bearing input.
+
+Six new invented-state regressions cover both capture entrances, atomic wrong
+name/nonzero-VARIABLEAI rejection, unknown-state limits and a complete positive
+lifecycle. The latter executes capture with no kill EXP, roster settlement,
+real temporary-disk save, reload in a fresh coordinator/store, explicit pet
+selection for another battle, controlled terminal EXP/growth and another save/
+reload. MP/skill views/current fields and PETRANK/ALLOCPOINT survive; variable
+AI0 becomes500 under one explicit growth bundle; HP is not automatically healed.
+The500/900 EXP fixture and all test values are invented, not original gameplay
+observations. Natural kill allocation, original server/save formats and actual
+TW1.0 capture execution are not claimed.
+
+Local coordinator suite280 PASS; separate domain/bridge/capture/persistence/
+golden suite80 PASS (overlapping suites, not an invented360-unique total).
+The unchanged baseline bridge test first fails because it asserts GET11 without
+providing GET; this is independently reproduced from exact-startup test bytes
+(12 tests,one failure). Its fixture now explicitly supplies11, while a separate
+assertion keeps absent GET=None. No production probability default added.
+
+Source audit: research/recovered/STONEAGE-CAPTURE-STATE-SOURCE-AUDIT-R1.json.
+Specification: docs/specs/STONEAGE-CAPTURE-STATE-SOURCES-R1.md. Original source
+pins, old preflight, failed baseline evidence and bounded acceptance are retained.
+No proprietary original payload enters Git. Existing bundle-based CI is separate
+from the new invented-state lifecycle; it is not a new original-client run.
+
+PET-STATE-01 disposition: BOUNDED_LIFECYCLE_VERIFIED; full automatic pet
+construction OPEN_EVIDENCE_LIMITED_EXPLICIT_STATE_REQUIRED. Do not expand this
+into arbitrary source/ABI/helper exhaustion. Reopen on matching current-state/
+initialization evidence or a concrete rule contradiction.
+
+**Highest NEXT WORLD-01:** the finite four-hometown/six-checkpoint provenance
+and availability review already defined in Roadmap R2. Reuse the four closed
+routes and existing826-floor/payload/encounter/NPC/coordinator artifacts; fill
+at most24 cells with source version, available input, explicit external input
+and material gap. Do not reenumerate maps/NPCs or redo graph closure. Expand
+only a concrete gap affecting core gameplay. R79 remains PAUSED_NON_BLOCKING.
+All Stage A system-family states remain PARTIAL/OPEN; Stage B stays gated.

@@ -66,3 +66,11 @@ hometown routes for later finite overall acceptance; do not repeat them.
 The deep client-local savedata helper branch is paused as non-blocking; its
 R1–R78 evidence and R79 preflight remain preserved. Restoration still precedes
 joint new-game design.
+
+
+### Current package update — 2026-10-16
+
+PET-STATE-01 has bounded capture/roster/save/reentry/growth acceptance; full
+pet autoconstruction remains evidence-limited and requires explicit state.
+Highest next is WORLD-01's finite existing-route provenance/gap review, as
+recorded in the latest CURRENT-STATE and Roadmap R2 append. R79 stays paused.
