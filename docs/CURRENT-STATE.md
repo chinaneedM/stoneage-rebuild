@@ -14554,3 +14554,22 @@ FAIL：5项清单检查及原版结构/路线来源组通过，随后Python3.11�
 保持一致；修正工作流及审阅文档版本，并给--replay增加明确最低版本检查。
 本地实际Python3.12.14的314项通过记录保留，不能将首次远端失败写成成功。
 没有为环境问题改动历史规则、原运行时代码或任何被固定的来源规格。
+
+
+### 联合审阅包远端独立验收 — 2026-10-16
+
+修正代码9031f44fbe1b31b69a11849f784cdf21d0305186 / tree
+b40d8e54f9aee7177634bade666d4aee9d35789c；Actions38925481982、
+job117055806701 SUCCESS。完整日志逐组确认5项新边界检查及314项选择性
+现存检查全部通过（11组）；Python3.12与原运行时工作流一致。首次
+38925261401失败保留，不改写成成功。初轮伴随资料边界Actions
+38925260892和38925260926成功。所有54来源与8历史前缀仍完整。
+
+永久receipt：research/recovered/STONEAGE-STAGE-A-CONSOLIDATED-REVIEW-ACCEPTANCE-R1.json，
+记录源HEAD/tree、文档/JSON/工具/测试/工作流的精确指纹、成功/失败job
+及验证范围。shell无交互凭证推送未改变远端；改用已授权GitHub连接器，
+先比对远端新tree与本地验证tree完全相等，再非强制更新审查分支。
+
+正式成果是可供用户审阅的联合包，不是原版可玩游戏或Stage A终验。
+Highest NEXT仍STAGE-A-JOINT-REVIEW-01；用户普通继续按Stage A处理，
+候选EARLY-CONTENT-RECOVERY-01保持有限补证，Stage B GATED、R79暂停。

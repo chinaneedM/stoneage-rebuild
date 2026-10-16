@@ -1,0 +1,95 @@
+{
+  "schema": "stoneage.stage_a.consolidated_review.acceptance.r1",
+  "date": "2026-10-16",
+  "branch": "agent/stage-a-consolidated-review-r1-20261016",
+  "base_main_head": "0d1311e19a090b59d6938b034a2b7f987635f148",
+  "base_main_tree": "3ef6275e741a5703176acd7d71888e4474346c0e",
+  "verified_commit": "9031f44fbe1b31b69a11849f784cdf21d0305186",
+  "verified_tree": "b40d8e54f9aee7177634bade666d4aee9d35789c",
+  "review_artifact_pins": {
+    "docs/STAGE-A-CONSOLIDATED-REVIEW-R1.md": {
+      "bytes": 13326,
+      "sha256": "9b15ccffc94321e7aa6fcd7657f88da72fa60cf621d274d6f54aefaa3f8fe98a",
+      "git_blob": "06caa1d09453570ed367d8af870887411441b139"
+    },
+    "research/recovered/STONEAGE-STAGE-A-CONSOLIDATED-REVIEW-R1.json": {
+      "bytes": 36786,
+      "sha256": "62f6acfae61e96a0802f603d81321ac8f0e37711c176d188ab474befe7ee399c",
+      "git_blob": "1a31c094bdd1c4b64b2f6510270c111be2c9415c"
+    },
+    "tools/stoneage_stage_a_review_packet.py": {
+      "bytes": 7251,
+      "sha256": "5ca2efb7efbff415433aa0cef5531a1d40898b116e16d7cd80c0ac79f1d27efd",
+      "git_blob": "ed72e1e02ba1c3ce612c70ce61fbb3b2fb41ba48"
+    },
+    "tests/test_stoneage_stage_a_review_packet.py": {
+      "bytes": 2732,
+      "sha256": "7fd65d7f35422b8e23b5bd1606b05d9be8900e9c9c90140b8000d90971cb35e5",
+      "git_blob": "e34b82fc7f742ab7cd099e97b7118ae381d26b37"
+    },
+    ".github/workflows/validate-stoneage-stage-a-review-packet.yml": {
+      "bytes": 887,
+      "sha256": "e3fcb2825ba5a9f7d19b018810dc8cc488e16a357d74ae9beb32299f3ade2ee6",
+      "git_blob": "591656c2787da13d0419801602600356e9561c3b"
+    }
+  },
+  "successful_actions": {
+    "run_id": 38925481982,
+    "job_id": 117055806701,
+    "conclusion": "success",
+    "python": "3.12",
+    "new_boundary_checks": 5,
+    "selected_existing_checks": 314,
+    "selected_replay_groups": 11,
+    "log_test_group_counts": [
+      5,
+      8,
+      5,
+      37,
+      101,
+      11,
+      16,
+      6,
+      13,
+      2,
+      5,
+      110
+    ]
+  },
+  "failed_actions": [
+    {
+      "run_id": 38925261401,
+      "job_id": 117055050448,
+      "commit": "20637de9a2f267223d343df485726ab191b64114",
+      "conclusion": "failure",
+      "reason": "New aggregate workflow incorrectly selected Python3.11; existing runtime uses Python3.12. Import rejected mappingproxy dataclass default before capture group execution.",
+      "source_custody_and_new_checks_passed": true,
+      "corrected_by": "9031f44fbe1b31b69a11849f784cdf21d0305186"
+    }
+  ],
+  "previous_successful_companion_runs": [
+    38925260892,
+    38925260926
+  ],
+  "source_pin_count": 54,
+  "preserved_complete_history_prefixes": 8,
+  "remote_tree_equals_local_verified_tree": true,
+  "stage_a_accepted": false,
+  "joint_user_review_completed": false,
+  "stage_b_gate": "GATED",
+  "family_gates": "7_PARTIAL_2_OPEN",
+  "original_game_execution": false,
+  "new_original_server_content": false,
+  "original_restoration_percentage": null,
+  "savedata_r79": "PAUSED_NON_BLOCKING",
+  "review_status": "READY_FOR_JOINT_REVIEW_NOT_STAGE_A_ACCEPTANCE",
+  "next_priority": "STAGE-A-JOINT-REVIEW-01",
+  "continue_without_design_decision": "STAGE_A_ONLY",
+  "ordinary_continuation_candidate": "EARLY-CONTENT-RECOVERY-01",
+  "failed_shell_publish": {
+    "kind": "missing_interactive_https_credentials",
+    "result": "no_remote_ref_changed",
+    "resolved_using": "authorized_GitHub_connector_with_exact_tree_equality"
+  },
+  "main_integration": "REQUIRE_FRESH_EXPECTED_HEAD_NONFORCED_FAST_FORWARD_AFTER_RECEIPT_CI"
+}
