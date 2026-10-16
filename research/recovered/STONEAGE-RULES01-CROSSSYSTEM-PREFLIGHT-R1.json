@@ -1,0 +1,221 @@
+{
+  "schema": "stoneage.rules01.cross_system_preflight.r1",
+  "date": "2026-10-16",
+  "baseline_main": "381132466dbb43d26f866321ad77519187864b70",
+  "baseline_tree": "381132466dbb43d26f866321ad77519187864b70",
+  "package_status": "RULES01_SOURCE_QUALIFIED_PREFLIGHT_NOT_CLOSED",
+  "source_pins": {
+    "world": {
+      "path": "research/recovered/STONEAGE-WORLD01-FOUR-HOMETOWN-ACCEPTANCE-R1.json",
+      "blob": "5b7abe7e05bd6c9074c556cb4cf105d371bfa26e",
+      "bytes": 36216
+    },
+    "encounter": {
+      "path": "docs/RECOVERED25-ENCOUNTER-RUNTIME-R1.md",
+      "blob": "30a8fcddeddfe72f62fb6efc2628a9c63843fe71",
+      "bytes": 3806
+    },
+    "exp": {
+      "path": "research/mechanics/STONEAGE-BATTLE-EXP-SETTLEMENT-R1.md",
+      "blob": "ca29eec6a72dbb30b5668c216dcacc2684bfddcb",
+      "bytes": 11999
+    },
+    "player": {
+      "path": "research/mechanics/STONEAGE-PLAYER-GROWTH-CORE-R1.md",
+      "blob": "a08a8b29ac8c1f466e70d4b1b9a9e471c855bfa7",
+      "bytes": 9206
+    },
+    "capture": {
+      "path": "research/mechanics/STONEAGE-PET-CAPTURE-CORE-R1.md",
+      "blob": "c44ba2ce47c66f9036f4cbdec9faf20c2bf20e3c",
+      "bytes": 11243
+    },
+    "capture_source": {
+      "path": "docs/specs/STONEAGE-CAPTURE-STATE-SOURCES-R1.md",
+      "blob": "854b863ffe31babc64cb64e72c7eba1a967e2a43",
+      "bytes": 5190
+    },
+    "pet": {
+      "path": "research/mechanics/STONEAGE-PET-GROWTH-CORE-R1.md",
+      "blob": "87cdd063f05f6d6f334007cf3db7a31a8d1654a8",
+      "bytes": 8969
+    },
+    "shop": {
+      "path": "research/mechanics/STONEAGE-ITEM-SHOP-CORE-R1.md",
+      "blob": "e355506d98b401f59e5c008fd375505bfb139163",
+      "bytes": 11288
+    },
+    "npc": {
+      "path": "research/mechanics/STONEAGE-NPC-WORLD-CONTENT-GRAPH-R1.md",
+      "blob": "bb03862dd7dd253effd57c506d0a56b490685974",
+      "bytes": 12172
+    },
+    "persistence": {
+      "path": "research/mechanics/STONEAGE-SAVE-LOGOUT-PERSISTENCE-CORE-R1.md",
+      "blob": "324d951341d7e0ac1b1996659857614a08b72f12",
+      "bytes": 13349
+    },
+    "coordinator": {
+      "path": "docs/LOCAL-RUNTIME-SESSION-COORDINATOR-R1.md",
+      "blob": "6341da10aab2b5062f557c13b45b457ddf69649f",
+      "bytes": 20857
+    }
+  },
+  "seams": [
+    {
+      "id": "RULES01-01",
+      "seam": "WORLD_POSITION_TO_ENCOUNTER",
+      "class": "LATER_RECOVERED_PLUS_DESCENDANT_MODEL",
+      "refs": [
+        "world",
+        "encounter",
+        "coordinator"
+      ],
+      "known": "Recovered25 selected routes and strict encounter-area/group/enemy model support explicit deterministic encounter rolls.",
+      "inputs": [
+        "version-matched collision/walk/CEP state",
+        "source-matched encount/group/enemy rows and legal rolls"
+      ],
+      "open": "Original TW1.0/JSS1999 enemy population and rate, failed group IDs outside chosen witnesses; do not repair missing rows.",
+      "impact": "Representative ordinary world encounter, not a universal first-generation encounter table.",
+      "priority": "REFERENCE_ONLY"
+    },
+    {
+      "id": "RULES01-02",
+      "seam": "DEFEAT_TO_BATTLE_LOCAL_EXP",
+      "class": "CONVERGENT_DESCENDANT",
+      "refs": [
+        "exp"
+      ],
+      "known": "Ordinary source profit path attributes defeated enemy reward to eligible attack-list participants through WORKGETEXP before finish; non-killing parties do not receive universal free EXP.",
+      "inputs": [
+        "matched enemy EXP, legal kill attribution, living recipient state",
+        "version-specific attribution and party/pet participation"
+      ],
+      "open": "Original launch-era EXP award roster and all later gated profit branches not independently dated.",
+      "impact": "EXP belongs to its actual reward attribution stage, not to any combat winner by default.",
+      "priority": "REFERENCE_ONLY"
+    },
+    {
+      "id": "RULES01-03",
+      "seam": "PLAYER_EXP_TO_LEVEL",
+      "class": "TW10_VISIBLE_FIELDS_PLUS_DIVERGENT_DESCENDANT",
+      "refs": [
+        "exp",
+        "player"
+      ],
+      "known": "Legacy cumulative EXP profile and later per-level subtracting profile are explicitly incompatible; below crossing the shared EXP-add subset is reusable.",
+      "inputs": [
+        "explicit chosen versioned threshold profile",
+        "correct persistent EXP representation and subsequent threshold data"
+      ],
+      "open": "JSS1999 threshold representation/table, exact TW1.0 operating-server regime, level caps/creation defaults.",
+      "impact": "Do not substitute recovered 2.5 exp.txt or apply both growth regimes in one save.",
+      "priority": "MATERIAL_SOURCE_GAP"
+    },
+    {
+      "id": "RULES01-04",
+      "seam": "CAPTURE_TO_OWNED_PET",
+      "class": "CONVERGENT_DESCENDANT_PLUS_BOUNDED_LOCAL_MODEL",
+      "refs": [
+        "capture",
+        "capture_source"
+      ],
+      "known": "Capture probability/gates and growth identity transfer are source-shaped; new roster/reentry lifecycle is verified only when full explicit PetActor state exists.",
+      "inputs": [
+        "captured source actor current HP/MP, skills/status and identity",
+        "explicit initial EXP/maxEXP profile and current visible AI/template data"
+      ],
+      "open": "Automatic construction has insufficient source for current MP, initial EXP/thresholds, full skills/status and visible AI; no guessed defaults.",
+      "impact": "Capture can be replayed with complete supplied state; fully automatic original-pet creation remains blocked.",
+      "priority": "MATERIAL_SOURCE_GAP"
+    },
+    {
+      "id": "RULES01-05",
+      "seam": "PET_EXP_TO_GROWTH",
+      "class": "CONVERGENT_DESCENDANT_PLUS_EXPLICIT_RNG_MODEL",
+      "refs": [
+        "pet",
+        "exp",
+        "capture_source"
+      ],
+      "known": "Each level gain requires PETRANK, individualized ALLOCPOINT and ten stat allocations plus rank-band roll; hidden VARIABLEAI changes, visible compliance not inferred.",
+      "inputs": [
+        "version-specific pet EXP threshold and runtime growth identity",
+        "exact per-level random roll bundles"
+      ],
+      "open": "Early JSS growth coefficients, visible loyalty projection and complete source-aligned captured pet initial state.",
+      "impact": "No free level-up, full heal or fabricated pet loyalty; missing growth context must fail explicitly.",
+      "priority": "MATERIAL_SOURCE_GAP"
+    },
+    {
+      "id": "RULES01-06",
+      "seam": "SHOP_STONE_TO_ITEM",
+      "class": "CONVERGENT_DESCENDANT_WITH_LATER_SHOP_INSTANCE",
+      "refs": [
+        "shop",
+        "world"
+      ],
+      "known": "Ordinary shop computes int(base cost*buy rate), clamps to free carried slots, inserts instances first and deducts total Stone only after success; partial failure is not rollback-atomic in old source.",
+      "inputs": [
+        "source-qualified item ID, price, quantity and shop buy-rate",
+        "inventory free slots, starting Stone and actual completed purchase"
+      ],
+      "open": "Historic commercial NPC inventories/rates and early chronology; exact shop route currently recovered25 only.",
+      "impact": "Keep successful purchase/slot/Stone effects separate from an invented universal shop economy.",
+      "priority": "REFERENCE_ONLY"
+    },
+    {
+      "id": "RULES01-07",
+      "seam": "ITEM_OWNERSHIP_TO_WARPMAN_AND_AWARD",
+      "class": "LATER_RECOVERED_CONDITIONAL",
+      "refs": [
+        "world",
+        "npc",
+        "shop"
+      ],
+      "known": "Hometown routes 3/4 have ordinal-specific COMBAT/SHOP ordering, a real normal item purchase, guarded WarpMan FREE predicate and downstream award-side witness.",
+      "inputs": [
+        "current owned item after source-qualified purchase",
+        "correct NPC argument/gate, level/fee/Stone state and legal WarpMan destination"
+      ],
+      "open": "Exact early quest award/content membership and original commercial NPC scripts/conditions remain unknown; a route witness is not full original quest completion.",
+      "impact": "A concrete cross-system gate; cannot replace item ownership with generic warp permission.",
+      "priority": "MATERIAL_SOURCE_GAP"
+    },
+    {
+      "id": "RULES01-08",
+      "seam": "PERSISTENT_FIELDS_TO_SAVE_AND_LOGIN",
+      "class": "CONVERGENT_DESCENDANT_PLUS_SEPARATE_LOCAL_MODEL",
+      "refs": [
+        "persistence",
+        "capture_source",
+        "coordinator"
+      ],
+      "known": "Descendant character serialization covers data fields, carried items/pets and ordinary pool, not arbitrary WORK runtime values; logout-only items are deleted pre-save, SAAC unlock precedes known durable write.",
+      "inputs": [
+        "source-version data/WORK ownership map and save prerequisites",
+        "original target commercial server schema/ack or explicitly scoped modern-local save"
+      ],
+      "open": "Original first-generation server format and successful write/relogin behavior; original client-local savedata and modern reference save are separate layers.",
+      "impact": "Avoid claiming that a modern local disk reload establishes historical commercial save safety or ITEM gate persistence.",
+      "priority": "MATERIAL_SOURCE_GAP"
+    }
+  ],
+  "source_rule": "FACT only within observed source-version boundary; models, early attribution and original service behavior separately labeled.",
+  "current_highest": "RULES01-07 / RULES01-08 source-aligned item ownership and quest/return/save continuity, after checking existing models for sufficient joins; stop without inventing original server NPC content.",
+  "material_gaps": [
+    "Early JSS/TW1.0 concrete EXP threshold and world/NPC/encounter membership",
+    "Full captured-pet initial runtime state with MP/EXP/skills/visible-AI source",
+    "Exact NPC item-gate reward/quest output and original server state ownership through logout/login"
+  ],
+  "reopen_only_on": [
+    "Verified version-specific historical original server/script/map/EXP payload",
+    "Concretely observed contradiction in an already-pinned ordinary playflow",
+    "A demonstrated core-state join absent from existing coordinator/models"
+  ],
+  "decision": "No new original mechanics or content asserted; no server-source mixture converted to TW1.0 facts; no percentage assigned.",
+  "stage_a": "PARTIAL_OPEN",
+  "stage_b": "GATED",
+  "blocked_savedata_track": "R79_PAUSED_NON_BLOCKING"
+}
