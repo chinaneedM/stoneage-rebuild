@@ -76,7 +76,7 @@ class NPCContentBoundaryTests(unittest.TestCase):
         self.assertEqual(c["npcenemy_prompts"],count_line(self.sources["npc_enemy"],"askbattle_prompt_blocks"))
         self.assertEqual(c["npcenemy_refs"],c["npcenemy_resolved_args"])
         self.assertEqual(c["warpman_spatial_candidates"],count_line(self.sources["dialogue_warp"],"WarpMan:candidate_edges"))
-        m = re.search(r"^FUNCTIONSET_USAGE\|WarpMan\|refs=(\\d+)\|",self.sources["npc_secondary"],re.M)
+        m = re.search(r"^FUNCTIONSET_USAGE\|WarpMan\|refs=(\d+)\|",self.sources["npc_secondary"],re.M)
         self.assertIsNotNone(m)
         self.assertEqual(c["warpman_refs"],int(m.group(1)))
         self.assertEqual(c["keyitem_matching_create_rows"],count_line(self.sources["npc_key_refs"],"matching_create_rows"))
