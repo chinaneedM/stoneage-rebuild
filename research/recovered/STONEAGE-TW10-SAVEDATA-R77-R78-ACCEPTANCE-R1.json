@@ -1,0 +1,180 @@
+{
+  "accepted_code": {
+    "ahead": 3,
+    "behind": 0,
+    "head": "de9bb83b585f81e106ce3c45b6afaa8ba7ba1b34",
+    "main_actions": [
+      {
+        "conclusion": "success",
+        "id": 38892227526,
+        "name": "Independently verify TW1.0 R78 conditional handle-table return contracts",
+        "status": "completed"
+      },
+      {
+        "conclusion": "success",
+        "id": 38892227299,
+        "name": "Independently verify TW1.0 R72 conditional byte expansion and count units",
+        "status": "completed"
+      },
+      {
+        "conclusion": "success",
+        "id": 38892227415,
+        "name": "Independently verify TW1.0 R76 conditional seek stack and local table contracts",
+        "status": "completed"
+      },
+      {
+        "conclusion": "success",
+        "id": 38892227467,
+        "name": "Independently accept TW1.0 R73 original mode/direct-count artifact and permanent static report",
+        "status": "completed"
+      },
+      {
+        "conclusion": "success",
+        "id": 38892227325,
+        "name": "Independently accept TW1.0 R71 original adjustment-loop artifact and permanent static report",
+        "status": "completed"
+      },
+      {
+        "conclusion": "success",
+        "id": 38892227454,
+        "name": "Independently accept TW1.0 R69 original early-return artifact and permanent static report",
+        "status": "completed"
+      },
+      {
+        "conclusion": "success",
+        "id": 38892227381,
+        "name": "Independently accept TW1.0 R75 original bounded seek-helper effects artifact and permanent static report",
+        "status": "completed"
+      },
+      {
+        "conclusion": "success",
+        "id": 38892227140,
+        "name": "Verify TW1.0 R70 three conditional return shapes and invented arithmetic",
+        "status": "completed"
+      },
+      {
+        "conclusion": "success",
+        "id": 38892227633,
+        "name": "Independently verify TW1.0 R74 complete bounded operands and opaque-call barriers",
+        "status": "completed"
+      },
+      {
+        "conclusion": "success",
+        "id": 38892227417,
+        "name": "Independently accept TW1.0 R77 original bounded handle-source effects artifact and permanent static report",
+        "status": "completed"
+      }
+    ],
+    "nonforced_fast_forward": true,
+    "tree": "058b599be98f54961e58680cc8f5542f4aea91fb"
+  },
+  "actual_abi_nonaliasing_or_table_stability_proven": false,
+  "actual_native_handle_or_io_or_persistence_proven": false,
+  "branch_acceptance": [
+    {
+      "job": 116943923623,
+      "live_artifact_equals_permanent": true,
+      "run": 38892137407,
+      "tests": 66
+    },
+    {
+      "independent_literal_return_replay": true,
+      "job": 116943943727,
+      "run": 38892142998,
+      "tests": 212
+    }
+  ],
+  "historical_prefixes": [
+    {
+      "bytes": 1783610,
+      "git_blob": "36da6a09726a12899e3f6c22c91a7db5d40153dc",
+      "path": "docs/CURRENT-STATE.md",
+      "sha256": "be646a0e9697282e709cfd229c479dc130d2c17d39326f4264b5a3d02c17172f"
+    },
+    {
+      "bytes": 412398,
+      "git_blob": "37143c3ee1c694de697d3145b08be2939a6b4b7b",
+      "path": "docs/HISTORICAL-TIMELINE.md",
+      "sha256": "faf857d80a1027564bbeb90322594732df79eed2d124c4adbebb909635393f06"
+    },
+    {
+      "bytes": 640889,
+      "git_blob": "35e8fc4108c0be3ff855986f2c6ed05a89a7eb5e",
+      "path": "docs/SOURCE-REGISTRY.md",
+      "sha256": "d319086b7e83792a036f9f5fd26a5fbdc534489890ecda015e6e9e970eccd6e4"
+    },
+    {
+      "bytes": 63492,
+      "git_blob": "13258f3d15f3b87572745233c5b2db40a4deba4c",
+      "path": "docs/RESTORATION-PHASE-GATE-R1.md",
+      "sha256": "99ad5ad77a2dfc484f79de3b30a4bb661145532b6015f8de3148200306c4a006"
+    }
+  ],
+  "next": {
+    "decoded_entries": 0,
+    "git_blob": "725b4ebc9671ce3230c59b646e21a9167ccd606f",
+    "numeric_references": 29,
+    "preflight": "research/recovered/STONEAGE-TW10-SAVEDATA-R79-PREFLIGHT.json",
+    "reports": 160,
+    "root_objects": 3,
+    "round": "R79",
+    "scope": "Retained-first material error-helper effects only; no generic helper exhaustion.",
+    "source_head": "de9bb83b585f81e106ce3c45b6afaa8ba7ba1b34",
+    "target_rva": 313683
+  },
+  "original_program_or_api_executed": false,
+  "original_proprietary_bytes_archived": false,
+  "original_schema_or_server_authority_proven": false,
+  "r78_derived": {
+    "bytes": 3854,
+    "git_blob": "0d2f061dac847871d05c3d38c4b494d583060117",
+    "sha256": "8bdb54c09d3ad038cb9149b1ec6d6c7a240778182fa8c69e545e78823c081c14"
+  },
+  "schema": "tw10-r77-r78-bounded-handle-contracts-acceptance-r1",
+  "source": {
+    "archive_commit": "3c3b3226192ffe8deb7c55a92f94475da0c1bc16",
+    "archive_job": 116942430371,
+    "artifact": 12041483206,
+    "canonical_git_blob": "870b84cb7968d325b37463ca68de1540960e1f5e",
+    "exact_r75_rederived": true,
+    "head": "ba49bb5ca0dc27d481dcca9ef0a46bb046586dd8",
+    "original_job": 116942132806,
+    "raw_bytes": 9830,
+    "raw_sha256": "4944a5037e02c5b88b9424b953bcf93254e67560a217663c73b11e42d2827f48",
+    "run": 38891577123,
+    "runtime_sha256": "cdab9ea049a98bbc96ce93eeaa8b63c688f0c0f0ad8b3183e79d75e47621441a",
+    "synthetic_job": 116942077884,
+    "zip_bytes": 1751,
+    "zip_sha256": "3e860fbfca18edb7b3016ec5fedc5c92b26fc341769ee88cd87a718341ade674"
+  },
+  "stage_a": "PARTIAL/OPEN",
+  "stage_b_started": false,
+  "startup": {
+    "actions_success": 11,
+    "branches": 279,
+    "current_state": {
+      "bytes": 1783610,
+      "git_blob": "36da6a09726a12899e3f6c22c91a7db5d40153dc",
+      "sha256": "be646a0e9697282e709cfd229c479dc130d2c17d39326f4264b5a3d02c17172f"
+    },
+    "head": "b49c0d81ad17dc8c5f691e505a9ca817df2a625d",
+    "historical_queued_run": 37642417333,
+    "in_progress": 0,
+    "tree": "98dc0f42f74328be0c9f7c2963280635fb7fe61a"
+  },
+  "verification": {
+    "custody_modes": [
+      "live",
+      "expired",
+      "unavailable"
+    ],
+    "custody_modes_are_invented_api_fixtures": true,
+    "full_local_savedata_tests": 1935,
+    "initial_environment_dependency_failure_resolved_by_installing_capstone_and_pefile": true,
+    "initial_full_discovery_missing_capstone_errors": 75,
+    "new_census_tests": 9,
+    "new_r77_tests": 16,
+    "new_r78_tests": 16,
+    "source_job_tests": 50
+  }
+}

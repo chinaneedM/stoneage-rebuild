@@ -22,7 +22,7 @@ jobs:
       - name: Bounded source and adversarial conditional contracts
         run: |
           set -euo pipefail
-          python -m unittest -v tests.test_stoneage_tw10_savedata_r78_handle_contracts tests.test_stoneage_tw10_savedata_r77_handle_static tests.test_stoneage_tw10_savedata_r76_seek_contracts tests.test_stoneage_tw10_savedata_r75_seek_helper_static tests.test_stoneage_tw10_savedata_r74_modes_barriers tests.test_stoneage_tw10_savedata_r73_modes_static tests.test_stoneage_tw10_savedata_r72_adjustment_counts tests.test_stoneage_tw10_savedata_r71_adjustment_static tests.test_stoneage_tw10_savedata_r70_conditional_returns tests.test_stoneage_tw10_savedata_r69_early_static tests.test_stoneage_tw10_savedata_r68_return_sources tests.test_stoneage_tw10_savedata_r67_tail_static tests.test_stoneage_tw10_savedata_r66_count_consumers tests.test_stoneage_tw10_savedata_r65_cross_window
+          python -m unittest -v tests.test_stoneage_tw10_savedata_r77_preflight_guard tests.test_stoneage_tw10_savedata_r78_handle_contracts tests.test_stoneage_tw10_savedata_r77_handle_static tests.test_stoneage_tw10_savedata_r76_seek_contracts tests.test_stoneage_tw10_savedata_r75_seek_helper_static tests.test_stoneage_tw10_savedata_r74_modes_barriers tests.test_stoneage_tw10_savedata_r73_modes_static tests.test_stoneage_tw10_savedata_r72_adjustment_counts tests.test_stoneage_tw10_savedata_r71_adjustment_static tests.test_stoneage_tw10_savedata_r70_conditional_returns tests.test_stoneage_tw10_savedata_r69_early_static tests.test_stoneage_tw10_savedata_r68_return_sources tests.test_stoneage_tw10_savedata_r67_tail_static tests.test_stoneage_tw10_savedata_r66_count_consumers tests.test_stoneage_tw10_savedata_r65_cross_window
           python -m tools.stoneage_tw10_savedata_r77_preflight_guard
           python -m tools.stoneage_tw10_savedata_r78_handle_contracts --output /tmp/r78-replayed.json
           cmp /tmp/r78-replayed.json research/recovered/STONEAGE-TW10-SAVEDATA-R78-HANDLE-CONTRACTS-DERIVED.json
@@ -54,4 +54,12 @@ jobs:
           assert all(d[k]is False for k in d if k.startswith(('actual_','original_','historical_')))
           assert d['stage_b_started']is False
           print('R78_INDEPENDENT_LITERAL_RETURN_SOURCES_AND_NONPROMOTION=PASS')
+          PY
+      - name: Requalify retained160-report next error-helper inventory
+        run: |
+          python - <<'PY'
+          from tools.stoneage_tw10_savedata_r77_preflight_guard import validate
+          d=validate('research/recovered/STONEAGE-TW10-SAVEDATA-R79-PREFLIGHT.json','de9bb83b585f81e106ce3c45b6afaa8ba7ba1b34',160,[313683])
+          assert d['target_decoded_entries']==[0]and d['root_objects']==[3]and d['numeric_references']==[29]
+          print('R79_RETAINED160_REPORT_ERROR_HELPER_ENTRY_CENSUS=PASS')
           PY

@@ -27,11 +27,11 @@ def scan(value,addresses,roots,operands,targets):
     if number(x)in(n,n+4194304):out[n]['references'].append(path)
  return out
 
-def validate(path):
+def validate(path,source_head='b49c0d81ad17dc8c5f691e505a9ca817df2a625d',report_count=156,expected_targets=None):
  d=json.loads(Path(path).read_bytes());targets=[t['rva']for t in d['targets']]
- assert d['report_count']==len(d['registered_reports'])==156
- assert d['source_head']=='b49c0d81ad17dc8c5f691e505a9ca817df2a625d'
- assert targets==[321787,313683]
+ assert d['report_count']==len(d['registered_reports'])==report_count
+ assert d['source_head']==source_head
+ assert targets==([321787,313683]if expected_targets is None else expected_targets)
  assert d['entry_address_keys']==['site_rva','rva','instruction_rva','address','va','instruction_address']
  assert d['operand_array_keys']==['operands','ops','operand_shapes']
  manifest=d['registered_reports'];names=[r['path']for r in manifest]
@@ -50,6 +50,6 @@ def validate(path):
   assert sorted(result['references'])==sorted((h['file'],h['value_path'])for h in t['numeric_reference_hits'])
   assert not result['decoded']
  assert d['absence_bounded_to_registered_representations']is True and d['numeric_reference_is_not_decoded_callee_graph']is True and d['actual_handle_value_or_callee_preservation_or_persistence_proven']is False
- return {'registered_reports':156,'target_decoded_entries':[0,0],'root_objects':[len(results[n]['roots'])for n in targets],'numeric_references':[len(results[n]['references'])for n in targets]}
+ return {'registered_reports':report_count,'target_decoded_entries':[len(results[n]['decoded'])for n in targets],'root_objects':[len(results[n]['roots'])for n in targets],'numeric_references':[len(results[n]['references'])for n in targets]}
 
 if __name__=='__main__':print(json.dumps(validate('research/recovered/STONEAGE-TW10-SAVEDATA-R77-REFRESH-PREFLIGHT.json'),sort_keys=True))
