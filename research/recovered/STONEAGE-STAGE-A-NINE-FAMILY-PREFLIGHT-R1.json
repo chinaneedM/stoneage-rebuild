@@ -1,0 +1,296 @@
+{
+  "schema": "stoneage.stage_a.nine_family_preflight.r1",
+  "date": "2026-10-16",
+  "source_main_head": "86edc343d98cc526ed76a48308e1a4cacab128fb",
+  "source_main_tree": "d46978281fcd7267ec36b39320e9dccc0b442cd6",
+  "status": "PREFLIGHT_CLOSED_STAGE_A_NOT_ACCEPTED",
+  "stage_a_accepted": false,
+  "stage_b_gate": "GATED",
+  "restoration_percentage": null,
+  "source_pins": {
+    "portfolio": {
+      "path": "research/recovered/STONEAGE-RESTORATION-PORTFOLIO-R1.json",
+      "git_blob": "696be2bdc360e066abe92f95255b912eae3e90de",
+      "bytes": 16371
+    },
+    "foundation": {
+      "path": "research/clients/STONEAGE-TW10-FOUNDATION-BASELINE-ACCEPTANCE-R1.md",
+      "git_blob": "07267e55aabd181c574be7b5d3bd88402d766f11",
+      "bytes": 9493
+    },
+    "client_boundary": {
+      "path": "research/clients/STONEAGE-TW10-CLIENT-DATA-BOUNDARY-R1.md",
+      "git_blob": "11e2b77bce2febfef37c3a0c87dec878a6f289ee",
+      "bytes": 6780
+    },
+    "gameplay_matrix": {
+      "path": "research/clients/STONEAGE-TW10-GAMEPLAY-DATA-MATRIX-R1.md",
+      "git_blob": "ddbef0ebd37d1a86554f7ac64f63f3ca4776e75e",
+      "bytes": 30851
+    },
+    "audio": {
+      "path": "research/clients/STONEAGE-TW10-AUDIO-PROVENANCE-R1.md",
+      "git_blob": "b4e7746b4a6b1b2db2fd7a5633c01fdbdc6e4c55",
+      "bytes": 5340
+    },
+    "windowman": {
+      "path": "research/mechanics/STONEAGE-WINDOWMAN-CORE-R1.md",
+      "git_blob": "92a318d3e37c0dfa48789391192e4198b3dd379c",
+      "bytes": 5513
+    },
+    "battle": {
+      "path": "research/mechanics/STONEAGE-ORDINARY-BATTLE-ROUND-R1.md",
+      "git_blob": "f1ff84f3bbf99a0a5a973981f4ec86f777dc6eb0",
+      "bytes": 13614
+    },
+    "capture": {
+      "path": "research/mechanics/STONEAGE-PET-CAPTURE-CORE-R1.md",
+      "git_blob": "c44ba2ce47c66f9036f4cbdec9faf20c2bf20e3c",
+      "bytes": 11243
+    },
+    "historical_save": {
+      "path": "research/mechanics/STONEAGE-SAVE-LOGOUT-PERSISTENCE-CORE-R1.md",
+      "git_blob": "324d951341d7e0ac1b1996659857614a08b72f12",
+      "bytes": 13349
+    },
+    "world": {
+      "path": "research/recovered/STONEAGE-WORLD01-FOUR-HOMETOWN-ACCEPTANCE-R1.json",
+      "git_blob": "5b7abe7e05bd6c9074c556cb4cf105d371bfa26e",
+      "bytes": 36216
+    },
+    "rules_preflight": {
+      "path": "research/recovered/STONEAGE-RULES01-CROSSSYSTEM-PREFLIGHT-R1.json",
+      "git_blob": "d5990b2b617f586403e8c881ed900b5c58fbf5be",
+      "bytes": 10295
+    },
+    "award": {
+      "path": "research/recovered/STONEAGE-RULES01-KEYITEM-AWARD-BOUNDARY-R1.json",
+      "git_blob": "dc5923920bfc728be3cbe51802ed48c1c78fb34d",
+      "bytes": 5426
+    },
+    "coordinator_reentry": {
+      "path": "research/recovered/STONEAGE-RULES01-COORDINATOR-GATE-RELOAD-ACCEPTANCE-R1.json",
+      "git_blob": "027df051030a7deaea93a516e7f6821938a321f7",
+      "bytes": 3916
+    }
+  },
+  "families": [
+    {
+      "id": "lineage",
+      "portfolio_gate": "PARTIAL",
+      "stage_a_accepted": false,
+      "existing_evidence_paths": [
+        "research/clients/STONEAGE-TW10-FOUNDATION-BASELINE-ACCEPTANCE-R1.md",
+        "research/clients/STONEAGE-TW10-CLIENT-DATA-BOUNDARY-R1.md"
+      ],
+      "representative": "Taiwan Waei/JSS v1.0 retail-client foundation file/resource/runtime boundaries are authenticated.",
+      "source_status": "V1_DIRECT_CLIENT_FOUNDATION",
+      "material_gap": "JSS1999 exact original bytes and first-generation commercial server content are unavailable; recovered25 data are not early-version facts.",
+      "replay_scope": "Provenance and client format only, not a commercial service.",
+      "reopen": "New digitally retrievable official-era client/server bytes or independently authenticated matching launch content.",
+      "decision": "Keep accepted client baseline; no open-ended oldest-client hunting."
+    },
+    {
+      "id": "world",
+      "portfolio_gate": "PARTIAL",
+      "stage_a_accepted": false,
+      "existing_evidence_paths": [
+        "research/clients/STONEAGE-WORLD-MAP-RECONSTRUCTION-POLICY-R1.md",
+        "docs/RUNTIME-BOOTSTRAP-CONTRACT-R1.md",
+        "game/RUNTIME-BOOTSTRAP-RECOVERED25-R1.json",
+        "docs/RECOVERED25-WORLD-PROFILE-ADAPTER-R1.md",
+        "docs/RECOVERED25-REGION-PAYLOAD-SOURCE-R1.md",
+        "docs/RECOVERED25-ENCOUNTER-RUNTIME-R1.md",
+        "research/mechanics/STONEAGE-NPC-WORLD-CONTENT-GRAPH-R1.md"
+      ],
+      "representative": "Four bounded recovered25 hometown routes, 826 later recoverable floors, versioned movement/encounter source; v1 directly proves map M/MC/cache mechanism.",
+      "source_status": "V1_DIRECT_FORMAT_PLUS_LATER_RECOVERED_CONTENT",
+      "material_gap": "Early map/NPC/encounter membership; exact original field/event payload and conditional destination inputs.",
+      "replay_scope": "Selected existential later route witness, not original world completion.",
+      "reopen": "Early matching field-map/event population or a material source-route contradiction.",
+      "decision": "Retain WORLD-01 closed audit scope; preserve all later content labels."
+    },
+    {
+      "id": "characters_pets",
+      "portfolio_gate": "PARTIAL",
+      "stage_a_accepted": false,
+      "existing_evidence_paths": [
+        "research/clients/STONEAGE-TW10-GAMEPLAY-SCHEMA-R1.json",
+        "research/mechanics/STONEAGE-PLAYER-GROWTH-CORE-R1.md",
+        "research/mechanics/STONEAGE-PET-GROWTH-CORE-R1.md",
+        "research/mechanics/STONEAGE-PET-CAPTURE-CORE-R1.md",
+        "tools/stoneage_tw10_25_bridge_model.py",
+        "tools/stoneage_singleplayer_runtime.py"
+      ],
+      "representative": "V1 character/pet status layouts plus descendant-based pet capture, growth identities and a bounded captured-pet roster/save/reentry scenario.",
+      "source_status": "V1_DIRECT_STATUS_PLUS_DESCENDANT_RULE",
+      "material_gap": "Original captured pet current MP, initial EXP/thresholds, skills, visible AI, and 1999 growth input coefficients.",
+      "replay_scope": "Explicit-input model only; fully automatic original pet construction not proved.",
+      "reopen": "Matched original/current enemy-birth runtime carrier and early threshold/AI evidence.",
+      "decision": "Do not make up pet default fields or project later growth thresholds."
+    },
+    {
+      "id": "battle",
+      "portfolio_gate": "PARTIAL",
+      "stage_a_accepted": false,
+      "existing_evidence_paths": [
+        "research/mechanics/STONEAGE-ORDINARY-BATTLE-ROUND-R1.md",
+        "research/mechanics/STONEAGE-BATTLE-SETTLEMENT-R1.md"
+      ],
+      "representative": "Source-derived ordinary round/attack/capture model and limited battle-local EXP attribution / terminal HP return.",
+      "source_status": "DESCENDANT_RULE_PLUS_V1_PROTOCOL",
+      "material_gap": "Source-verified original command/rule mix, level threshold regime, natural complete encounter/settlement and original rewards.",
+      "replay_scope": "Deterministic selected inputs, not universal success/progression pace.",
+      "reopen": "Concrete first-generation battle actor/action/rule configuration or contradiction.",
+      "decision": "Use bounded existing tests, not blanket deeper helper reconstruction."
+    },
+    {
+      "id": "inventory_economy",
+      "portfolio_gate": "PARTIAL",
+      "stage_a_accepted": false,
+      "existing_evidence_paths": [
+        "research/clients/STONEAGE-TW10-GAMEPLAY-DATA-MATRIX-R1.md",
+        "research/clients/STONEAGE-TW10-GAMEPLAY-SCHEMA-R1.json",
+        "docs/LOCAL-RUNTIME-SESSION-COORDINATOR-R1.md",
+        "tools/stoneage_singleplayer_runtime.py"
+      ],
+      "representative": "Descendant normal shop/equipment/trade semantics; recovered25 conditional item gate; synthetic local purchase-to-dispatch/two-reload integration.",
+      "source_status": "LATER_RECOVERED_CONTENT_PLUS_DESCENDANT_MODEL",
+      "material_gap": "Original NPC inventory/prices, source item DROPATLOGOUT, award/consumption and original economic progression.",
+      "replay_scope": "Local reference lifecycle, not original server/shop durability.",
+      "reopen": "Version-qualified source item/NPC arguments and logout item persistence evidence.",
+      "decision": "RULES-01 narrow reference chain verified; no second shop implementation."
+    },
+    {
+      "id": "npc_quests",
+      "portfolio_gate": "OPEN",
+      "stage_a_accepted": false,
+      "existing_evidence_paths": [
+        "research/mechanics/STONEAGE-NPC-WORLD-CONTENT-GRAPH-R1.md",
+        "research/mechanics/STONEAGE-RESIDUAL-NPC-SWEEP-CLOSURE-R1.md"
+      ],
+      "representative": "Descendant create→template→NPC-function graph; later shop route distinguished from ExChangeMan two-record award surface.",
+      "source_status": "LATER_RECOVERED_PARTIAL_CONTENT",
+      "material_gap": "1999/JSS/TW1.0 quest scripts, NPC/event population and original story rewards; incomplete Windowman arguments.",
+      "replay_scope": "Source-bounded later examples; no historically complete quest chain.",
+      "reopen": "Matching original event/dialogue/quest tables or branch-specific contradiction.",
+      "decision": "No new whole-NPC enumeration; keep ExChangeMan and ItemShop origins distinct."
+    },
+    {
+      "id": "graphics_audio_ui",
+      "portfolio_gate": "PARTIAL",
+      "stage_a_accepted": false,
+      "existing_evidence_paths": [
+        "research/clients/STONEAGE-TW10-FOUNDATION-BASELINE-ACCEPTANCE-R1.md",
+        "research/clients/STONEAGE-TW10-CLIENT-DATA-BOUNDARY-R1.md",
+        "research/clients/STONEAGE-TW10-GAMEPLAY-DATA-MATRIX-R1.md"
+      ],
+      "representative": "TW1.0 disc directly supplies indexed graphics/animations, 218 battle SAB scenes, 15 indexed battle palettes, 114 indexed SFX, 116 loose SFX and 11 BGM; v1 protocol field/status/UI envelope anchors.",
+      "source_status": "V1_DIRECT_ASSET_AND_PROTOCOL",
+      "material_gap": "Direct asset/state/action→visible scene controls, animation selection and original UI layout interaction semantics not yet joined in one finite crosswalk.",
+      "replay_scope": "Resource and client-message evidence, not a reconstructed playable launch-era interface.",
+      "reopen": "Original-client resource/UI mapping or required display handlers that alter a core interaction.",
+      "decision": "HIGH_NEXT_UI_SEMANTICS_01, five non-rendering v1 evidence/crosswalk checkpoints."
+    },
+    {
+      "id": "runtime_persistence",
+      "portfolio_gate": "OPEN",
+      "stage_a_accepted": false,
+      "existing_evidence_paths": [
+        "research/clients/STONEAGE-TW10-FOUNDATION-BASELINE-ACCEPTANCE-R1.md",
+        "research/mechanics/STONEAGE-SAVE-LOGOUT-PERSISTENCE-CORE-R1.md",
+        "docs/specs/STONEAGE-TW10-R77-R78-HANDLE-CONTRACTS.md"
+      ],
+      "representative": "V1 client-local savedata is separate from descendant server DATA/WORK/save/logout and modern independent local persistence; reference disk roundtrips pass.",
+      "source_status": "V1_STATIC_LOCAL_PLUS_DESCENDANT_SERVER_PLUS_MODERN_DESIGN",
+      "material_gap": "Original commercial SAAC save format/ack/durability and matching save-state fields; client-local savedata R79 nonblocking.",
+      "replay_scope": "Modern local disk only; not an original server write guarantee.",
+      "reopen": "Original business field/schema directly implicated by a material gameplay join.",
+      "decision": "Do not reopen CRT/helper R79 without concrete business blocker."
+    },
+    {
+      "id": "integration",
+      "portfolio_gate": "PARTIAL",
+      "stage_a_accepted": false,
+      "existing_evidence_paths": [
+        "docs/RUNTIME-BOOTSTRAP-CONTRACT-R1.md",
+        "docs/RECOVERED25-WORLD-PROFILE-ADAPTER-R1.md",
+        "docs/RECOVERED25-REGION-PAYLOAD-SOURCE-R1.md",
+        "docs/RECOVERED25-ENCOUNTER-RUNTIME-R1.md",
+        "docs/LOCAL-RUNTIME-SESSION-COORDINATOR-R1.md",
+        "docs/RUNTIME-GOLDEN-CONTRACT-R1.md",
+        "tools/stoneage_local_runtime_session_coordinator.py"
+      ],
+      "representative": "Engine-neutral runtime coordinator with versioned maps, encounter, representative battle/owned item/WarpMan/save paths.",
+      "source_status": "VERSIONED_LATER_REFERENCE_MODEL",
+      "material_gap": "Historical canonical end-to-end original server execution, early map/quest population and source-full character defaults.",
+      "replay_scope": "Synthetic/reference plus selected recovered25 data, not complete original client-server play.",
+      "reopen": "Source-aligned missing field in a named representative path or concrete contradiction.",
+      "decision": "Keep Stage B gated, review nine families rather than equating tests with completion."
+    }
+  ],
+  "representative_path_policy": "Only versioned, source-bounded partial examples are considered; never assert original full playable game from a tested local model.",
+  "priority_choice": {
+    "id": "UI-SEMANTICS-01",
+    "family": "graphics_audio_ui",
+    "reason": "The authenticated v1 client already supplies protocol-visible UI/state and complete indexed resource provenance, while unresolved 1999 commercial server-only task/reward schema cannot be safely invented. A five-surface finite crosswalk can improve original-facing game specifications without selecting an engine.",
+    "work_scope": "five v1 protocol/status/widget/asset semantic crosswalk cells; existing evidence first; targeted exact source where required, not full binary helper exhaustion.",
+    "stop": "Produce source-role/visible state/input-action/asset reference/unknown table for exactly five surfaces; if original renderer mapping remains unavailable, record OPEN with material impact rather than invent a screen.",
+    "not_engine_selection": true
+  },
+  "ui_surfaces": [
+    {
+      "id": "FIELD_AND_POSITION_STATUS",
+      "version_source": "V1_DIRECT_PROTOCOL",
+      "direct_anchor": "S:C floor/position and related S:D/E status branches; M/MC map delivery; v1 graphics-address namespace",
+      "need": "Locate exact field view state-to-render/interaction mapping and which resource/animation IDs are invoked.",
+      "forbidden": "Treat recovered25 concrete maps as proven TW1.0 content."
+    },
+    {
+      "id": "CHARACTER_STATUS_AND_HUD",
+      "version_source": "V1_DIRECT_PROTOCOL",
+      "direct_anchor": "S:P full player status and S:M compact HP/MP/EXP; v1 REAL/ADRN resource address namespace",
+      "need": "Join original incoming state positions to the displayed field/status screens and controls.",
+      "forbidden": "Infer later player fields in the original S:P schema."
+    },
+    {
+      "id": "INVENTORY_AND_ITEMS",
+      "version_source": "V1_DIRECT_PROTOCOL",
+      "direct_anchor": "S:I full item records / incremental I + item operation results; original sprite/graphics containers",
+      "need": "Item slot, item view and UI action/response ownership, not a new economy rule.",
+      "forbidden": "Read invented store stock or later item templates as original client UI facts."
+    },
+    {
+      "id": "PET_STATUS_SKILLS",
+      "version_source": "V1_DIRECT_PROTOCOL",
+      "direct_anchor": "S:K owned pet status and S:W skill view, KS/PS requests/results; SPR/SPRADRN animations",
+      "need": "Original pet view/select/skill command presentation semantics with explicit unknown art/animation crosswalk.",
+      "forbidden": "Promote later ride/transmigration/fusion fields into v1 S:K layout."
+    },
+    {
+      "id": "BATTLE_AND_NPC_WINDOWS",
+      "version_source": "V1_DIRECT_PROTOCOL_PLUS_LATER_WINDOWMAN_BOUNDARY",
+      "direct_anchor": "B battle messages, 218 SAB battle-map entries, 15 indexed palettes + Palet_0 separate; WN window envelope",
+      "need": "Battle scene/command/NPC window visible state and response mapping; Windowman later configs are not launch-era screens.",
+      "forbidden": "Use later Windowman routes/placeholder giveitem/takeitem as proven original award UI."
+    }
+  ],
+  "explicit_no_promotions": [
+    "A contemporary original client does not contain original commercial server maps/quests/values by itself.",
+    "Recovered25 four-hometown routes do not become JSS1999/TW1.0 content.",
+    "Local shop/pet/battle/save deterministic tests do not establish original server behavior.",
+    "A parser/widget naming placeholder does not establish a functioning original UI action.",
+    "Resource presence and ID-space are not themselves a proven onscreen resource selection.",
+    "No material percentage can be inferred from test count, file count or historical R index."
+  ],
+  "deferred_named_gaps": [
+    "TW1.0/JSS1999 world/master/quest/NPCCreate original server bytes missing",
+    "pet current MP/EXP/skills/visible AI and growth threshold source inputs missing",
+    "two incompatible descendant player EXP regimes not disambiguated for first-generation commercial server",
+    "ExChangeMan vs ItemShop item lineage and target logout/event persistence original values missing",
+    "original SAAC write/relogin proof missing",
+    "R79 savedata low-level static branch remains PAUSED_NON_BLOCKING"
+  ],
+  "next_priority": "UI-SEMANTICS-01",
+  "stage_a_review_after": "Reassess other eight families after the bounded five-surface original-UI specification; do not unconditionally start Stage B."
+}

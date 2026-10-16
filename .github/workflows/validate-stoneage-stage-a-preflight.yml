@@ -1,0 +1,21 @@
+name: Validate StoneAge Stage A nine-family preflight
+
+on:
+  push:
+    paths:
+      - "research/recovered/STONEAGE-STAGE-A-NINE-FAMILY-PREFLIGHT-R1.json"
+      - "docs/STAGE-A-NINE-FAMILY-PREFLIGHT-R1.md"
+      - "tests/test_stoneage_stage_a_preflight.py"
+      - ".github/workflows/validate-stoneage-stage-a-preflight.yml"
+  workflow_dispatch:
+
+jobs:
+  source-guarded-family-review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate nine-family status, source custody and scoped next work
+        run: python -m unittest discover -s tests -p 'test_stoneage_stage_a_preflight.py' -v
