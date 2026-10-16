@@ -6804,3 +6804,14 @@ It does not change RULES-01/Stage A family status PARTIAL/OPEN.
 - Verification: branch 230c0067470c87b33a1100cca6c981ed6d56aafe, corrected independent Action38920853733, job117040079436 SUCCESS (6 tests). Earlier failure38920780534 is preserved; it was a new Python regex test defect, not a source contradiction.
 - Does NOT prove: original JSS1999/TW1.0 NPC population, quest texts, server choice/action/award state, commercial save durability, early item/economy values or version membership of recovered25 routes.
 - Reopen only upon original-version downloadable/server-verified NPC/script provenance, matching original WN trace, source-resolving later missing configuration, or concrete representative gameplay contradiction. Stage A remains open; savedata R79 paused nonblocking.
+
+
+### SRC-STAGE-A-BLOCKER-TRIAGE-R1 — 2026-10-16
+
+- Type: cross-family, version-qualified **derived review/priority artifact**, not recovered primary first-generation game content.
+- Baseline source main: 05196c8bf2708d6841439835ea97180c6bb9337b. Research report: `research/recovered/STONEAGE-STAGE-A-BLOCKER-TRIAGE-R1.json`; narrative `docs/STAGE-A-REVIEW-BLOCKER-TRIAGE-R1.md`; acceptance `research/recovered/STONEAGE-STAGE-A-BLOCKER-TRIAGE-ACCEPTANCE-R1.json`.
+- Input:11 immutable existing Git blob/byte-size pins, Stage A nine-family gates, WORLD-01 four later hometown routes/24 attribution cells, RULES-01 eight seams, capture-state explicit-input gaps, seven NPC evidence surfaces, original TW1.0 input/graphics source boundaries.
+- Scoped outcome:7 player-visible flow profiles and5 material blockers with matching re-open requirements; remains9 families PARTIAL/OPEN, Stage A unaccepted, Stage B GATED. No original JSS1999/TW1.0 commercial server NPC/quest/item award/session bytes acquired or rendered playable.
+- Independent CI Action38922063102, job117044218968 SUCCESS: five adversarial tests including source pin exact Git object identity, denial of stage promotion, four version-qualified hometown path consistency, blockers and R79 non-blocking status.
+- Does not prove: original server save/durability, commercial original quest text/rew ards, exact original EXP/capture state, original UI render selectors, universal model outcomes or overall completion percentage.
+- Reopen: authenticated same-era content/trace or concrete representative-playflow contradiction. Historical savedata R79 stays PAUSED_NON_BLOCKING.

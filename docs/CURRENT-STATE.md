@@ -14492,3 +14492,18 @@ start new-engine/visual art production before Stage A review.
 结论：**FINITE_NPC_CONTENT_BOUNDARY_AUDITED_ORIGINAL_QUESTS_OPEN**。仅关闭有范围的证据归属审查，npc_quests族仍 OPEN，其他九系统族保持PARTIAL/OPEN，Stage A 未最终验收，Stage B GATED，没有可靠的全项目百分比。旧R79仍 PAUSED_NON_BLOCKING。
 
 **Highest NEXT STAGE-A-REVIEW-BLOCKER-TRIAGE-01**：进入九族联合可玩性与历史原始内容阻塞分级；每条代表玩法链区分原版客户端可证接口、后期机制有条件可复现、缺失原商服数据和明确重开条件。禁用「以新R编号代替游戏复原」和「把后期剧情当初代事实」。不要启动新游戏生产。
+
+
+## 2026-10-16 — STAGE-A-REVIEW-BLOCKER-TRIAGE-01 九系统历史复原阻塞优先级与7条玩家玩法链
+
+按最新 main `05196c8bf2708d6841439835ea97180c6bb9337b`、完整连续性历史、Roadmap R2和Stage A九族预检重新读取来源。本轮只做有范围的高价值联合审查：把「原始 TW1.0 客户端可见接口」、「后期 recovered25 有版本约束的实例」、「需要输入的现代参考模型」、「未取得的JSS1999/TW1.0原始商业服务器内容」严格分层。
+
+**保留九族整体门禁**：lineage/world/characters_pets/battle/inventory_economy/graphics_audio_ui/integration共7族PARTIAL；npc_quests/runtime_persistence共2族OPEN。Stage A尚未正式验收、Stage B GATED；没有计算虚假的整体复原百分比。
+
+有界联合玩家链7条：原版TW1.0客户端登录/字段/NPC-WN接口；后期四出生点24格存在性路线（1、2仅COMBAT；3=COMBAT→SHOP→WARPMAN；4=SHOP→COMBAT→WARPMAN）；后期捕获宠物→持有/成长/现代磁盘重登（初始状态仍显式输入）；战斗EXP结算有条件模型；后期商店道具持有→NPC ITEM/FREE→本地双读档（ExChangeMan赠物分开）；原版五UI面消息与SAB/调色板结构（真实可视选择未知）；原初任务与商业服务器读档仍缺证据。没有一条被认证为原始初代商业服务器实际完整游玩。
+
+整理5个有触发条件的核心阻塞：P0原初世界/NPC/任务/商品/奖励服端资料；P1宠物当前态与EXP阈值；P1原始奖励/事件字段/SAAC持久化；P2原始 UI 视觉资源选择；单列旧R79为PAUSED_NON_BLOCKING而非最优先。无原始服务器资料时有界OPEN且指出适格证据，不填任务脚本/宠物数据/初代配置默认值。
+
+独立审查分支代码HEAD `785524806ee3ddc37826614f7916123f37d9b3d3`, tree `a85d2633ade6791690594d376a5251301fe4d0c0`；GitHub Actions38922063102/job117044218968 SUCCESS，5条新测试核验11份Git blob/字节身份、九族不冒进、4条旧路线/24格、7条玩家链及否证/重开条件。结果表 `research/recovered/STONEAGE-STAGE-A-BLOCKER-TRIAGE-R1.json`，说明 `docs/STAGE-A-REVIEW-BLOCKER-TRIAGE-R1.md`，验收 `research/recovered/STONEAGE-STAGE-A-BLOCKER-TRIAGE-ACCEPTANCE-R1.json`。
+
+**Highest NEXT STAGE-A-CONSOLIDATED-REVIEW-PACKET-01**：在同一份报告中完成九族「已经复原的规格、可用参考情景、缺原始商服内容、封闭范围/重开条件、历史版权/设计限制」联合审阅包，随后向用户单独发起正式复原审阅。不选择新引擎或开始新游戏制作。R79按协议继续暂停。

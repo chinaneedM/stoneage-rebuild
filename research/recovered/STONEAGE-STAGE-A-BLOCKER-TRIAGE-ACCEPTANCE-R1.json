@@ -1,0 +1,32 @@
+{
+  "schema": "stoneage.stage_a.review_blocker_triage.acceptance.01",
+  "date": "2026-10-16",
+  "base_main_head": "05196c8bf2708d6841439835ea97180c6bb9337b",
+  "base_main_tree": "b503608086893f84dc449d80e48855891acac597",
+  "branch": "agent/stage-a-review-blocker-triage-r1-20261016",
+  "verified_source_commit": "785524806ee3ddc37826614f7916123f37d9b3d3",
+  "verified_source_tree": "a85d2633ade6791690594d376a5251301fe4d0c0",
+  "independent_actions": {
+    "run_id": 38922063102,
+    "job_id": 117044218968,
+    "conclusion": "success",
+    "tests_passed": 5
+  },
+  "review_scope": {
+    "system_families": 9,
+    "representative_playflows": 7,
+    "blockers": 5,
+    "original_world_routes": 0,
+    "later_recovered_hometown_routes": 4,
+    "source_pins": 11
+  },
+  "source_report_git_blob": "1df181361a8d06c5733042c2dcbfbdcdb690ed45",
+  "test_git_blob": "9c84fb5d6fd5dd28c9fd0e0c22c3431ff6bad4a1",
+  "original_server_or_quest_bytes_recovered": false,
+  "stage_a_accepted": false,
+  "stage_b_gate": "GATED",
+  "joint_user_acceptance": false,
+  "original_game_reconstruction_percent": null,
+  "failed_before_action": null,
+  "next_priority": "STAGE-A-CONSOLIDATED-REVIEW-PACKET-01"
+}
