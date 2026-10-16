@@ -34,7 +34,7 @@ class TW10UISemantics(unittest.TestCase):
             content = (ROOT / info["path"]).read_bytes()
             if info["bytes"] is not None:
                 self.assertEqual(info["bytes"], len(content), key)
-            gitsha = hashlib.sha1(b"blob " + str(len(content)).encode() + b"\\0" + content).hexdigest()
+            gitsha = hashlib.sha1(b"blob " + str(len(content)).encode() + bytes([0]) + content).hexdigest()
             self.assertEqual(info["git_blob"], gitsha, key)
 
     def test_exact_five_surfaces_and_all_sixteen_source_records(self):
