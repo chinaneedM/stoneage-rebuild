@@ -15,7 +15,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: '3.12'
       - name: Reject evidence loss and historical scope promotion
         run: python -m unittest tests.test_stoneage_stage_a_review_packet -v
       - name: Check source custody and replay the named existing suites

@@ -122,6 +122,7 @@ def main() -> int:
         result = validate(packet)
         print(json.dumps(result, ensure_ascii=False, sort_keys=True), flush=True)
         if args.replay:
+            require(sys.version_info >= (3, 12), "reference replay requires Python 3.12 or newer")
             for row in packet["replays"]:
                 print(f"REPLAY {row['id']} | {row['scope']} | {row['does_not_prove']}", flush=True)
                 subprocess.run([sys.executable, "-m", "unittest", *row["modules"], "-v"],

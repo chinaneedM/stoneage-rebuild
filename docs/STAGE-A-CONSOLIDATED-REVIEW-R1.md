@@ -68,7 +68,7 @@
 
 ### 复跑入口与边界
 
-在仓库根目录运行（Python 3.11，标准库）：
+在仓库根目录运行（Python 3.12，标准库；与现有协调器工作流一致）：
 
 ```bash
 python tools/stoneage_stage_a_review_packet.py
