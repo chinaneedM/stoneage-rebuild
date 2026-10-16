@@ -1,0 +1,24 @@
+name: Validate StoneAge RULES-01 shop-item-gate-save chain
+
+on:
+  push:
+    paths:
+      - "tools/stoneage_rules01_shop_item_ownership.py"
+      - "tests/test_stoneage_rules01_shop_item_warp_save.py"
+      - "docs/specs/STONEAGE-RULES01-SHOP-ITEM-GATE-SAVE-R1.md"
+      - ".github/workflows/validate-stoneage-rules01-shop-gate-save.yml"
+  workflow_dispatch:
+
+jobs:
+  bounded-shop-gate-save:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Independently validate selected direct integration and shop guards
+        run: |
+          python -m unittest discover -s tests -p 'test_stoneage_rules01_shop_item_warp_save.py' -v
+          python -m unittest discover -s tests -p 'test_stoneage_item_shop_model.py' -v
+          python -m unittest discover -s tests -p 'test_stoneage_rules01_crosssystem_preflight.py' -v
