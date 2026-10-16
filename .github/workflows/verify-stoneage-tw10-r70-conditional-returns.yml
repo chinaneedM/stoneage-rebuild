@@ -1,0 +1,44 @@
+name: Verify TW1.0 R70 three conditional return shapes and invented arithmetic
+on:
+  workflow_dispatch:
+  push:
+    branches: [agent/tw10-r70-conditional-returns-20261016, main]
+    paths:
+      - .github/workflows/verify-stoneage-tw10-r70-conditional-returns.yml
+      - tools/stoneage_tw10_savedata_r70_conditional_returns.py
+      - tests/test_stoneage_tw10_savedata_r70_conditional_returns.py
+      - tools/stoneage_tw10_savedata_r69_guard.py
+      - tools/stoneage_tw10_savedata_r68_return_sources.py
+      - research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-EARLY-R69-ORIGINAL.json
+      - research/recovered/STONEAGE-TW10-SAVEDATA-R70-*.json
+      - docs/specs/STONEAGE-TW10-R69-R70-EARLY-RETURNS.md
+permissions:
+  contents: read
+jobs:
+  acceptance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Adversarial source, predicate and uint32 invented-model verification
+        run: |
+          set -euo pipefail
+          python -m unittest -v tests.test_stoneage_tw10_savedata_r70_conditional_returns tests.test_stoneage_tw10_savedata_r69_early_static tests.test_stoneage_tw10_savedata_r68_return_sources tests.test_stoneage_tw10_savedata_r67_tail_static
+          python -m tools.stoneage_tw10_savedata_r69_guard --report research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-EARLY-R69-ORIGINAL.json
+          python -m tools.stoneage_tw10_savedata_r70_conditional_returns --verify research/recovered/STONEAGE-TW10-SAVEDATA-R70-CONDITIONAL-RETURNS-DERIVED.json
+      - name: Independently assert bounded classification without native-success promotion
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          d=json.load(open('research/recovered/STONEAGE-TW10-SAVEDATA-R70-CONDITIONAL-RETURNS-DERIVED.json'))
+          assert d['available_decoded_rows']==103 and d['bounded_graph_nodes']==139 and d['bounded_graph_edges']==156
+          assert d['forward_reverse_direct_return_sources']==[{'origin':'full_eax_definition','site_rva':n} for n in [312830,313155,313177]]
+          assert d['direct_return_source_unknown_barriers_remaining']==[]
+          assert d['complete_full_function_operands_or_inputs_proven'] is False
+          assert d['invented_pairs_per_return_shape']==337 and d['invented_arithmetic_comparisons']==1011
+          assert d['no_original_values_used_in_numerical_model'] is True
+          for k in ['actual_original_path_predicates_or_return_values_proven','actual_native_bool_count_or_success_proven','actual_abi_frame_register_memory_alias_proven','actual_flush_close_or_disk_persistence_proven','original_savedata_schema_or_server_authority_proven','original_program_or_payload_executed','stage_b_started']:
+              assert d[k] is False
+          print('TW10_R70_BOUNDED_DIRECT_RETURN_CLASSIFICATION=PASS; ORIGINAL_NATIVE_PERSISTENCE=OPEN')
+          PY

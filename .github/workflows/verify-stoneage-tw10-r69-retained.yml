@@ -1,0 +1,74 @@
+name: Independently accept TW1.0 R69 original early-return artifact and permanent static report
+on:
+  workflow_dispatch:
+  push:
+    branches: [agent/tw10-r69-independent-20261016, main]
+    paths:
+      - .github/workflows/verify-stoneage-tw10-r69-retained.yml
+      - tools/stoneage_tw10_savedata_r69_*.py
+      - tests/test_stoneage_tw10_savedata_r69_*.py
+      - research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-EARLY-R69-ORIGINAL.json
+      - research/recovered/STONEAGE-TW10-SAVEDATA-R69-*.json
+permissions:
+  contents: read
+  actions: read
+jobs:
+  acceptance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Requalify immutable source run/job and artifact metadata
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/r69-custody
+          python - <<'PY' > /tmp/r69-custody/ids
+          import json
+          r=json.load(open('research/recovered/STONEAGE-TW10-SAVEDATA-R69-SOURCE-CUSTODY.json'))
+          assert type(r['source_run_id']) is int and type(r['artifact_id']) is int
+          print(r['source_run_id'],r['artifact_id'])
+          PY
+          read -r run_id artifact_id < /tmp/r69-custody/ids
+          gh api "repos/$GITHUB_REPOSITORY/actions/runs/$run_id" > /tmp/r69-custody/run.json
+          gh api "repos/$GITHUB_REPOSITORY/actions/runs/$run_id/jobs" > /tmp/r69-custody/jobs.json
+          if gh api "repos/$GITHUB_REPOSITORY/actions/artifacts/$artifact_id" > /tmp/r69-custody/artifact.json; then
+            expired="$(python -c 'import json; print(json.load(open("/tmp/r69-custody/artifact.json"))["expired"])')"
+            if [ "$expired" = 'False' ]; then
+              gh run download "$run_id" --repo "$GITHUB_REPOSITORY" --name tw10-r69-original-static-early-derived-only --dir /tmp/r69-custody/raw
+            fi
+          else
+            rm -f /tmp/r69-custody/artifact.json
+          fi
+          python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          p=Path('/tmp/r69-custody');r=json.load(open('research/recovered/STONEAGE-TW10-SAVEDATA-R69-SOURCE-CUSTODY.json'))
+          run=json.loads((p/'run.json').read_text());assert (run['status'],run['conclusion'],run['head_sha'],run['head_branch'])==('completed','success',r['source_head'],r['source_branch'])
+          jobs=json.loads((p/'jobs.json').read_text())['jobs'];job=[j for j in jobs if j['id']==r['source_job_id']];assert len(job)==1 and job[0]['name']=='original-static' and job[0]['conclusion']=='success'
+          assert (r['source_run_id'],r['source_head'],r['source_job_id'],r['artifact_id'])==(38851405164,'e33b38747ab0ca324e4a07a844b68c371a03c7c9',116813227130,12025561162)
+          assert r['artifact_zip_sha256']=='fc32c491277adb1bedeb8cbbf49fe8c72f86f68e42f00764b6e321896e205b1c'
+          raw=Path('research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-EARLY-R69-ORIGINAL.json').read_bytes()
+          assert hashlib.sha256(raw).hexdigest()=='26ff9f92d14a4ef385a279501e456b4bf58156209ad4471aef84109f6e16bfbe'
+          assert hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest()=='d5d4924803dc28de8be00f712eecd11cf9003c66'
+          if (p/'artifact.json').exists():
+              artifact=json.loads((p/'artifact.json').read_text())
+              assert artifact['workflow_run']['id']==r['source_run_id'] and artifact['digest']=='sha256:'+r['artifact_zip_sha256']
+              if not artifact['expired']:
+                  assert len(list((p/'raw').iterdir()))==1 and raw==(p/'raw/tw10-r69-static.json').read_bytes()
+                  print('R69_LIVE_ARTIFACT_EQUALS_PERMANENT_REPORT=PASS')
+              else:
+                  print('R69_ARTIFACT_EXPIRED_PERMANENT_PINNED_METADATA_CUSTODY=PASS')
+          else:
+              print('R69_ARTIFACT_UNAVAILABLE_PERMANENT_PINNED_METADATA_CUSTODY=PASS')
+          assert len(raw)==r['raw_bytes'] and hashlib.sha256(raw).hexdigest()==r['raw_sha256']
+          assert hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest()==r['canonical_git_blob']
+          assert r['original_proprietary_bytes_archived'] is False and r['actual_native_persistence_proven'] is False
+          print('R69_IMMUTABLE_SOURCE_ARTIFACT_AND_CANONICAL_BYTES=PASS')
+          PY
+      - name: Independently verify exact fixed-tail neighborhood and adverse mutations
+        run: |
+          set -euo pipefail
+          python -m unittest -v tests.test_stoneage_tw10_savedata_r69_early_static tests.test_stoneage_tw10_savedata_r66_count_consumers tests.test_stoneage_tw10_savedata_r65_cross_window
+          python -m tools.stoneage_tw10_savedata_r69_guard --report research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-EARLY-R69-ORIGINAL.json
