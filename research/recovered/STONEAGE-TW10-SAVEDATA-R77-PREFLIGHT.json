@@ -1,0 +1,981 @@
+{
+  "absence_bounded_to_registered_representations": true,
+  "actual_handle_value_or_callee_preservation_or_persistence_proven": false,
+  "entry_address_keys": [
+    "site_rva",
+    "rva",
+    "instruction_rva",
+    "address",
+    "va",
+    "instruction_address"
+  ],
+  "numeric_reference_is_not_decoded_callee_graph": true,
+  "operand_array_keys": [
+    "operands",
+    "ops",
+    "operand_shapes"
+  ],
+  "priority": "First qualify only0x4e8fb handle-source and caller-visible effects material to SetFilePointer/native hFile;0x4c953 only where necessary for error handling. Reuse any retained entry/control evidence before original acquisition. No generic helper exhaustion.",
+  "registered_reports": [
+    {
+      "bytes": 14026,
+      "git_blob": "02d2b4148f404ed9b21533736bae35a93b821595",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-APPLICATION-R50.json"
+    },
+    {
+      "bytes": 1971,
+      "git_blob": "f90773888d53c0bb3e09f425cb65036687668b8a",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-ARGTRACE-R7-HARDENED-ACCEPTANCE-R1.json"
+    },
+    {
+      "bytes": 2175,
+      "git_blob": "0665b1e62b2abb3a38a1ffbfaa098d209829a31a",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-ARGTRACE-R7-HARDENED-ORIGINAL.json"
+    },
+    {
+      "bytes": 2687,
+      "git_blob": "690b92a5a037eaaab8db64eb5f4ee8d33e31fb8a",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-ARGTRACE-R7-PREHARDENING-PROVISIONAL.json"
+    },
+    {
+      "bytes": 1362,
+      "git_blob": "0389d39786d39f032243ce19bff7deb1415a84f4",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-ARGTRACE-R7-TOOLING-ACCEPTANCE-R1.json"
+    },
+    {
+      "bytes": 999,
+      "git_blob": "a4f8a430c6921c67662362aac2ae29ee3cf5dcc4",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-BRIDGE-R59-ACCEPTANCE-R1.json"
+    },
+    {
+      "bytes": 1912,
+      "git_blob": "7d0d6ddd9d730b3a0d2fa5381f67d8925f5f14e5",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-CALLEE-GLOBAL-R16-ACCEPTANCE-R1.json"
+    },
+    {
+      "bytes": 6424,
+      "git_blob": "340868fcbed1f825c4c34b57b4a0f706b12f447b",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-CALLEE-GLOBAL-R16-ORIGINAL.json"
+    },
+    {
+      "bytes": 2814,
+      "git_blob": "df0a29c9458cfa682896e4b972068a7111a65340",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-CALLSITE-R5-ORIGINAL-ACCEPTANCE-R1.json"
+    },
+    {
+      "bytes": 2009,
+      "git_blob": "96dbd8604ac3cdb31137ffdb51a3042af3436282",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-DATAFLOW-R6-ACCEPTANCE-R1.json"
+    },
+    {
+      "bytes": 5918,
+      "git_blob": "0e9716d1fd4e874f0fe167a50a0c6c0be0a21d4a",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-DATAFLOW-R6-ORIGINAL.json"
+    },
+    {
+      "bytes": 1588,
+      "git_blob": "a0b71d044be844af5a9f4a78deccd9ff07aad520",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-ENTRYCALLS-R15-ACCEPTANCE-R1.json"
+    },
+    {
+      "bytes": 7907,
+      "git_blob": "fd67e79efa09234f0c38a7f3bfa36d80c58300e8",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-ENTRYCALLS-R15-ORIGINAL.json"
+    },
+    {
+      "bytes": 2587,
+      "git_blob": "cedff2e59b6328d18a17d56f236fb600ec052e45",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-ENTRYGRAPH-R4-ORIGINAL-ACCEPTANCE-R1.json"
+    },
+    {
+      "bytes": 980,
+      "git_blob": "32b52583f2e023c48a036e426ce0f39d7e2da2ca",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-ENTRYGRAPH-R4-TOOLING-ACCEPTANCE-R1.json"
+    },
+    {
+      "bytes": 7013,
+      "git_blob": "57cc0ea45bba16d994bb9fda47af257b6ddbb9df",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-FLAGS-R64-DERIVED.json"
+    },
+    {
+      "bytes": 1274,
+      "git_blob": "0047ab10c43b221e97e27b5d5bb9652a5770454c",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-FRONTIER-R12-ACCEPTANCE-R1.json"
+    },
+    {
+      "bytes": 7531,
+      "git_blob": "8134c6aac6d1e899a12d43b55e98b95996a6ca36",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-FRONTIER-R12-ORIGINAL.json"
+    },
+    {
+      "bytes": 1152,
+      "git_blob": "38fded39a254b35dd8c14709ac13ea5cf010da86",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-GEOMETRY-ACCEPTANCE-R1.json"
+    },
+    {
+      "bytes": 1620,
+      "git_blob": "a3e611cbbbf2204f3ac5a929f6f7eec3b9022b74",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-HELPER-EFFECTS-R8-TOOLING-ACCEPTANCE-R1.json"
+    },
+    {
+      "bytes": 2536,
+      "git_blob": "4a363e8d8a431cc33b10a9473edbb413808acec1",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-HELPER-FRONTIER-R9-ACCEPTANCE-R1.json"
+    },
+    {
+      "bytes": 2512,
+      "git_blob": "d0030683ce8b39b0207ff403074d3bdc329fe464",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-HELPER-FRONTIER-R9-ORIGINAL.json"
+    },
+    {
+      "bytes": 2409,
+      "git_blob": "b654379b0cf929b3a9357cfa8766ad15a5384dee",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-HELPER-R8-ORIGINAL-ACCEPTANCE-R1.json"
+    },
+    {
+      "bytes": 2015,
+      "git_blob": "b37a0e6663eb88d94413388245b5cc5967bb79b7",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-HELPER-R8-ORIGINAL.json"
+    },
+    {
+      "bytes": 1186,
+      "git_blob": "ccdf43518f795b2294773db8e0864f4e7db4110b",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-INPUTS-R11-ACCEPTANCE-R1.json"
+    },
+    {
+      "bytes": 6972,
+      "git_blob": "1b9aaee952c41534a457add5602e033fe0fb6fac",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-INPUTS-R11-ORIGINAL.json"
+    },
+    {
+      "bytes": 1178,
+      "git_blob": "90720ac5878dfbcf8bb48fc27f5038f5ef74644b",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-INSTRUCTION-TOOLING-ACCEPTANCE-R1.json"
+    },
+    {
+      "bytes": 8755,
+      "git_blob": "6b5e9d0a0b3cc3f29a7e0aad95fd7e31c56223c0",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-MUTATIONS-R13-ORIGINAL.json"
+    },
+    {
+      "bytes": 21525,
+      "git_blob": "f2a946ffc93c6a32210f2ebaa9dc9191833aac37",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-ADJUSTMENT-R71-ORIGINAL.json"
+    },
+    {
+      "bytes": 25466,
+      "git_blob": "d5d4924803dc28de8be00f712eecd11cf9003c66",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-EARLY-R69-ORIGINAL.json"
+    },
+    {
+      "bytes": 4095,
+      "git_blob": "d931e6964664ad9a7b59c7f16039fa54a484f782",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R27-ACCEPTANCE-R1.json"
+    },
+    {
+      "bytes": 42859,
+      "git_blob": "91dc6ad70427f2b00429380e0d9ba93ca21c25bf",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R27-ORIGINAL.json"
+    },
+    {
+      "bytes": 4636,
+      "git_blob": "0d960ad22646ebe20a6a4930d38c19184dc5065c",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R28-ACCEPTANCE-R1.json"
+    },
+    {
+      "bytes": 56581,
+      "git_blob": "3671661219120d45bd922e05b6df371523b42432",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R28-ORIGINAL.json"
+    },
+    {
+      "bytes": 5018,
+      "git_blob": "5d97a39c8bd25158c80d3129823e4015088349f7",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R29-ACCEPTANCE-R1.json"
+    },
+    {
+      "bytes": 25275,
+      "git_blob": "618cc892664bfb6dd64780efb78d33eaab72e1b4",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R29-ORIGINAL.json"
+    },
+    {
+      "bytes": 4710,
+      "git_blob": "1dceb20ed650c83040950dcb7fac6f2ecc98193a",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R30-ACCEPTANCE-R1.json"
+    },
+    {
+      "bytes": 12559,
+      "git_blob": "5651fac5115b7242720ff0ef880f6132dbc53b3d",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R30-ORIGINAL.json"
+    },
+    {
+      "bytes": 4674,
+      "git_blob": "84052818207f55ea79300c578d563597e9a2d6ab",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R31-ACCEPTANCE-R1.json"
+    },
+    {
+      "bytes": 13684,
+      "git_blob": "b756c5cdf9d22114dc0adb60191bbf37d76d11d6",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R31-ORIGINAL.json"
+    },
+    {
+      "bytes": 6793,
+      "git_blob": "272d06f44157db3a3316d883931ad07e3102f3ed",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R32-ORIGINAL.json"
+    },
+    {
+      "bytes": 6610,
+      "git_blob": "50e552f189f67ca464922aa1375816de58e1468b",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R33-ORIGINAL.json"
+    },
+    {
+      "bytes": 7632,
+      "git_blob": "b9dbd7523e376fdba40cdad22be1747f2f616f29",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R34-ORIGINAL.json"
+    },
+    {
+      "bytes": 7260,
+      "git_blob": "9ecd6ae3c147b9675a9e4d824e7a67c4354c959d",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R35-ORIGINAL.json"
+    },
+    {
+      "bytes": 1257,
+      "git_blob": "9996335ef5a73c588eda64db034a0a96f2d20535",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R36-ACCEPTANCE-R1.json"
+    },
+    {
+      "bytes": 40933,
+      "git_blob": "2c04a85d48e6f9c0425c0de26aa85211845eb30d",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R36-ORIGINAL.json"
+    },
+    {
+      "bytes": 1260,
+      "git_blob": "66d3256a4827ea35699e2ac1b2afe5f5ebe60c63",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R37-ACCEPTANCE-R1.json"
+    },
+    {
+      "bytes": 91061,
+      "git_blob": "1ed7b1593286b401c866ccd31118bbd235f4269a",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R37-ORIGINAL.json"
+    },
+    {
+      "bytes": 1244,
+      "git_blob": "4769b756a62915b87f82f96f5b32e090bfb0c6b8",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R38-ACCEPTANCE-R1.json"
+    },
+    {
+      "bytes": 31734,
+      "git_blob": "e270c60fe47c1caa708668816b5a7b27eee8ecdf",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R38-ORIGINAL.json"
+    },
+    {
+      "bytes": 1286,
+      "git_blob": "d72da4305f39b0bb581b45f7ceb22ad866f56d7b",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R39-ACCEPTANCE-R1.json"
+    },
+    {
+      "bytes": 43886,
+      "git_blob": "109ac7fd058c5446b0dd9b7d4b0387463ee36f11",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R39-ORIGINAL.json"
+    },
+    {
+      "bytes": 1395,
+      "git_blob": "d46e6ad90aa46215650dfb18f373e07e691d6c56",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R40-ACCEPTANCE-R1.json"
+    },
+    {
+      "bytes": 138310,
+      "git_blob": "3b4941bd1bbd29e30c726bf07e283b9c3c9131ea",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R40-ORIGINAL.json"
+    },
+    {
+      "bytes": 924,
+      "git_blob": "7d0eec15df342683b0f8ad72d3deed536a650c43",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R41-ACCEPTANCE-R1.json"
+    },
+    {
+      "bytes": 120631,
+      "git_blob": "7250a7c5b45a054d5ee8c3e92f14cd32612f3ac8",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R41-ORIGINAL.json"
+    },
+    {
+      "bytes": 1075,
+      "git_blob": "7aefc2cb0d2253cb6bde7d4ac45b79361e4d0f8f",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R42-ACCEPTANCE-R1.json"
+    },
+    {
+      "bytes": 147608,
+      "git_blob": "d74902200e552d94c3b47fead5fe06731c15a363",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R42-ORIGINAL.json"
+    },
+    {
+      "bytes": 1042,
+      "git_blob": "c2a938497cd9eb6ae8021decc675d605e40b4b03",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R43-ACCEPTANCE-R1.json"
+    },
+    {
+      "bytes": 162163,
+      "git_blob": "3e705f23912521fc3e8f1648ad5a736395a7c2ad",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R43-ORIGINAL.json"
+    },
+    {
+      "bytes": 1048,
+      "git_blob": "814451ac4c5f26f8feea2fd28c29553bf3d31efc",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R44-ACCEPTANCE-R1.json"
+    },
+    {
+      "bytes": 225095,
+      "git_blob": "39c1c0f673747fb560cc285d627490e5cd38047a",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R44-ORIGINAL.json"
+    },
+    {
+      "bytes": 1059,
+      "git_blob": "ee5f0c7ef1fe249ce12da8e1dccc12e7a1971faa",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R45-ACCEPTANCE-R1.json"
+    },
+    {
+      "bytes": 73217,
+      "git_blob": "1e7fb71cec336c1b4fc531d4f4a6933c9f66d415",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R45-ORIGINAL.json"
+    },
+    {
+      "bytes": 1108,
+      "git_blob": "d16bb2dc783e61df44370fab4a0d785f35f82511",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R46-ACCEPTANCE-R1.json"
+    },
+    {
+      "bytes": 70648,
+      "git_blob": "19d730daf617313508ccf81e940c0a51f3be8395",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R46-ORIGINAL.json"
+    },
+    {
+      "bytes": 1191,
+      "git_blob": "8383a2cfae7fb247b97f41396fd54fd03d75c0e2",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R47-ACCEPTANCE-R1.json"
+    },
+    {
+      "bytes": 109781,
+      "git_blob": "7f3f5e1917183fcffe65da9f529d3c5f969cf279",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R47-ORIGINAL.json"
+    },
+    {
+      "bytes": 1256,
+      "git_blob": "d2293b7fcb8877a143f0990c20ea8c1f9519d749",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R48-ACCEPTANCE-R1.json"
+    },
+    {
+      "bytes": 87512,
+      "git_blob": "384c462250c263d7df07529a0d41f11a5014c7cb",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R48-ORIGINAL.json"
+    },
+    {
+      "bytes": 1292,
+      "git_blob": "871d8bebe5edaadc8b0e9accef8bec71b658d39e",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R49-ACCEPTANCE-R1.json"
+    },
+    {
+      "bytes": 140909,
+      "git_blob": "e2d7de1615a6603f777e5a06f3efaea4403f0381",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R49-ORIGINAL.json"
+    },
+    {
+      "bytes": 2031,
+      "git_blob": "3063d40c81278d2c43745cfbb387911455392632",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R50-ACCEPTANCE-R1.json"
+    },
+    {
+      "bytes": 163325,
+      "git_blob": "24cc46a635056d121c385e8853b8c1dc45143298",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R50-ORIGINAL.json"
+    },
+    {
+      "bytes": 2364,
+      "git_blob": "f47386db768b756e6b7a7032aec5b353d022c7bc",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R51-ACCEPTANCE-R1.json"
+    },
+    {
+      "bytes": 284533,
+      "git_blob": "de092acfb9ef16d01a9ebd9fe646384af0508fa7",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R51-ORIGINAL.json"
+    },
+    {
+      "bytes": 2423,
+      "git_blob": "efa2cadc383b3e1199f569fbd11e3e23ef818cfa",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R52-ACCEPTANCE-R1.json"
+    },
+    {
+      "bytes": 252332,
+      "git_blob": "8c3e2ac4431a7293f0dd8d6b6793aa1e94f021ac",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R52-DERIVED.json"
+    },
+    {
+      "bytes": 2491,
+      "git_blob": "4c170c82c2bb26655d0b9d15a9077fdbdc382032",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R53-ACCEPTANCE-R1.json"
+    },
+    {
+      "bytes": 104275,
+      "git_blob": "e93de0f29d2768390b134323b73c0d14f3442d74",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R53-SPEC.json"
+    },
+    {
+      "bytes": 840,
+      "git_blob": "c72a231d63d034e1a86b39b26345cec7bac3317b",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R54-ACCEPTANCE-R1.json"
+    },
+    {
+      "bytes": 132329,
+      "git_blob": "f73d2af313b1a1dab13019b04ec0d255a339ac80",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R54-ORIGINAL.json"
+    },
+    {
+      "bytes": 839,
+      "git_blob": "a90777c870ccde9fe043c1f2b4316562c4a36571",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R55-ACCEPTANCE-R1.json"
+    },
+    {
+      "bytes": 103165,
+      "git_blob": "70cde74439276448aa7a54e631333839ac0c61a7",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R55-SPEC.json"
+    },
+    {
+      "bytes": 883,
+      "git_blob": "20fbe3b9edc6ec119d9d3246ec32185fc75d75a5",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R56-ACCEPTANCE-R1.json"
+    },
+    {
+      "bytes": 67492,
+      "git_blob": "9ae0b329aed98e0bbd76915b1cafd90cc4ccdb2b",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R56-SPEC.json"
+    },
+    {
+      "bytes": 977,
+      "git_blob": "39b9046be2289811ca4d78f9200b5a9edacd1f66",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R57-ACCEPTANCE-R1.json"
+    },
+    {
+      "bytes": 203899,
+      "git_blob": "82470bcfa11ed600c648a48543e2bb50e4863f00",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R57-ORIGINAL.json"
+    },
+    {
+      "bytes": 1693,
+      "git_blob": "d974037499e6cf9ddd56f1da57d64e93c7eaae29",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R58-ACCEPTANCE-R1.json"
+    },
+    {
+      "bytes": 124989,
+      "git_blob": "223b65683d37332546ada0fe034a81550b5e8ed8",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R58-ORIGINAL.json"
+    },
+    {
+      "bytes": 14043,
+      "git_blob": "2a90bf654a723da53f7d6a26008ca660cb89b290",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-MODES-R73-ORIGINAL.json"
+    },
+    {
+      "bytes": 25435,
+      "git_blob": "757c22945d7e18263b154e88f52376d0ab58d42c",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-SEEK-HELPER-R75-ORIGINAL.json"
+    },
+    {
+      "bytes": 14911,
+      "git_blob": "04162081d346b8c53424295de9fdc6b8f385b011",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-TAIL-R67-ORIGINAL.json"
+    },
+    {
+      "bytes": 2773,
+      "git_blob": "cb38f62248a0bd9e40cc9c0ff0bf247006be274f",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-ORIGINAL-R3-STATIC-ACCEPTANCE-R1.json"
+    },
+    {
+      "bytes": 950,
+      "git_blob": "4faf18dadf02b7ebe9a447afe394b0d786da558f",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-POSTCALL-R51.json"
+    },
+    {
+      "bytes": 31136,
+      "git_blob": "3b7c9cea63ed4e2a360ddb6934e7dcd44b9833e7",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-POSTCALL-R63-DERIVED.json"
+    },
+    {
+      "bytes": 1195,
+      "git_blob": "431ae6b58282084840604b18d6980eb1f13db2af",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-PROVENANCE-R10-ACCEPTANCE-R1.json"
+    },
+    {
+      "bytes": 5641,
+      "git_blob": "0b48b39decc4b5f0740093b529ea97d277576d80",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-PROVENANCE-R10-ORIGINAL.json"
+    },
+    {
+      "bytes": 1048,
+      "git_blob": "ba1b9538cdb8977be387322c4ff9401f941bec50",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-R3-GUARD-CANONICAL-R2-ACCEPTANCE-R1.json"
+    },
+    {
+      "bytes": 1274,
+      "git_blob": "4584cef6e3744c94df3be131e7e332a4810667b1",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-R3-REPORT-GUARD-ACCEPTANCE-R1.json"
+    },
+    {
+      "bytes": 1430,
+      "git_blob": "8727a29c36329abfae08f2f200ad6dd66700ee35",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-R60-ACCEPTANCE-R1.json"
+    },
+    {
+      "bytes": 1560,
+      "git_blob": "1ae48863bf22308f51d852c7560de18f7619b1d7",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-R61-ACCEPTANCE-R1.json"
+    },
+    {
+      "bytes": 1605,
+      "git_blob": "1a425e00dc3311edf035b5260412f7b659f52246",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-R62-ACCEPTANCE-R1.json"
+    },
+    {
+      "bytes": 1805,
+      "git_blob": "73948be9e653164823cd39bb2b5bc37825d70399",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-R63-ACCEPTANCE-R1.json"
+    },
+    {
+      "bytes": 3969,
+      "git_blob": "74810acc1f3e11f7249176eecf17f8a2ab56dfc8",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-R64-ACCEPTANCE-R1.json"
+    },
+    {
+      "bytes": 5173,
+      "git_blob": "aaddc7276796fa034bb565e9710e063eedc25c40",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-R65-CROSS-WINDOW-DERIVED.json"
+    },
+    {
+      "bytes": 2349,
+      "git_blob": "11008f909ae1f52f0033e68041895b9d9fb5acf2",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-R65-R66-ACCEPTANCE-R1.json"
+    },
+    {
+      "bytes": 33147,
+      "git_blob": "5bb6e37294c7ce4bf8af26afd2d2bb3af1842c53",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-R66-COUNT-CONSUMERS-DERIVED.json"
+    },
+    {
+      "bytes": 24608,
+      "git_blob": "4544b2a428bca8571286530f3ea94e1991c6ad85",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-R66-EXPANDED-TAIL-PREFLIGHT.json"
+    },
+    {
+      "bytes": 3099,
+      "git_blob": "d98681c5843717de4b4a68ccf289b6bb22ae6dfc",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-R67-R68-ACCEPTANCE-R1.json"
+    },
+    {
+      "bytes": 24766,
+      "git_blob": "966da802993ed8bf9fc3a08c6bd70ee56f8ab7c8",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-R67-REVIEW-PREFLIGHT.json"
+    },
+    {
+      "bytes": 864,
+      "git_blob": "b141b861969a6e9d178997317a93377324a194cb",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-R67-SOURCE-CUSTODY.json"
+    },
+    {
+      "bytes": 3121,
+      "git_blob": "bbf60f7d20b463eafe241e93d1f343cfa2590104",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-R68-RETURN-SOURCES-DERIVED.json"
+    },
+    {
+      "bytes": 25380,
+      "git_blob": "f46c50e58885276c85773321f0f35c9f0d635412",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-R69-PREFLIGHT.json"
+    },
+    {
+      "bytes": 5235,
+      "git_blob": "9ffe459f55f31ef942b36e23b1dd95bdda52ea95",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-R69-R70-ACCEPTANCE-R1.json"
+    },
+    {
+      "bytes": 866,
+      "git_blob": "7c23967a21249c4e5b1aaacdd0dc67eda5e7c5a5",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-R69-SOURCE-CUSTODY.json"
+    },
+    {
+      "bytes": 2406,
+      "git_blob": "cd2782a57c7c131bd938ca5fe29406a486cc6823",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-R70-CONDITIONAL-RETURNS-DERIVED.json"
+    },
+    {
+      "bytes": 33892,
+      "git_blob": "d016b5e3356d3064b1b30a79a2899ec96352e097",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-R71-PREFLIGHT.json"
+    },
+    {
+      "bytes": 6308,
+      "git_blob": "5db702e0edbacace84c43156eb685d5a9802da1d",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-R71-R72-ACCEPTANCE-R1.json"
+    },
+    {
+      "bytes": 876,
+      "git_blob": "2e780815379435046dbed3628c354f9a00b3190b",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-R71-SOURCE-CUSTODY.json"
+    },
+    {
+      "bytes": 5600,
+      "git_blob": "94656b8f6c2f830743a6257c1a8abf7aedb00c22",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-R72-ADJUSTMENT-COUNTS-DERIVED.json"
+    },
+    {
+      "bytes": 30583,
+      "git_blob": "650be58df8050bbf7495273ca5f60fa322238dcd",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-R73-PREFLIGHT.json"
+    },
+    {
+      "bytes": 7577,
+      "git_blob": "3c44d37560076cf2a1e481fbc9c3ea6321d3af76",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-R73-R74-ACCEPTANCE-R1.json"
+    },
+    {
+      "bytes": 31012,
+      "git_blob": "2e93328203526d465cfa0af22a0defcc0f3b9b21",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-R73-REFRESH-PREFLIGHT.json"
+    },
+    {
+      "bytes": 866,
+      "git_blob": "de3b65bc8e3ef26007baf6f2cc494cb377cf0770",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-R73-SOURCE-CUSTODY.json"
+    },
+    {
+      "bytes": 7076,
+      "git_blob": "a29a6a9b38a86d2f33d9e327d73c9d08cc3fb5ad",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-R74-MODES-BARRIERS-DERIVED.json"
+    },
+    {
+      "bytes": 45429,
+      "git_blob": "73d192eec12cd31e67b5b0fc298ab4c3bdb53189",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-R75-PREFLIGHT.json"
+    },
+    {
+      "bytes": 32677,
+      "git_blob": "2ea2b2ecae600cdff94eaf414526f486f0fa6fa9",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-R75-REFRESH-PREFLIGHT.json"
+    },
+    {
+      "bytes": 878,
+      "git_blob": "1931eb59823242725b2aa6a043fb38b6d1a2c680",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-R75-SOURCE-CUSTODY.json"
+    },
+    {
+      "bytes": 7662,
+      "git_blob": "2cdbcb8b95649a0ce610ab93fde5edcd7ef0997b",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-R76-SEEK-CONTRACTS-DERIVED.json"
+    },
+    {
+      "bytes": 1622,
+      "git_blob": "d22d89841f0af5421aea7f361f0753740408ba04",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-REACHDEFS-R14-ACCEPTANCE-R1.json"
+    },
+    {
+      "bytes": 4570,
+      "git_blob": "9c704a051c6a1d6f4b316243e663f36bcb828b27",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-REACHDEFS-R14-ORIGINAL.json"
+    },
+    {
+      "bytes": 3654,
+      "git_blob": "5e7ffb17b70ee92a3b57d7b847a2e53b07383b78",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-RETURN-R57-CONTRACT.json"
+    },
+    {
+      "bytes": 1313,
+      "git_blob": "289589766ab2df08628198440946249318ac821a",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-UPSTREAM-R18-ACCEPTANCE-R1.json"
+    },
+    {
+      "bytes": 5051,
+      "git_blob": "8d835facb1a8a29967be260a453b86681c8737d0",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-UPSTREAM-R18-ORIGINAL.json"
+    },
+    {
+      "bytes": 1433,
+      "git_blob": "3f8b9b01b2b0c22fb902e9ed801fdd3a482f09e0",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-UPSTREAM-R19-ACCEPTANCE-R1.json"
+    },
+    {
+      "bytes": 7321,
+      "git_blob": "c74cd7a5ce260723779970912e3e450085d1697a",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-UPSTREAM-R19-ORIGINAL.json"
+    },
+    {
+      "bytes": 1868,
+      "git_blob": "765b74f01233a7968461425924b95d95a434e080",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-UPSTREAM-R20-ACCEPTANCE-R1.json"
+    },
+    {
+      "bytes": 5071,
+      "git_blob": "3b7cf4dade2f82c6a2b63b8d7bb016a5ef583087",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-UPSTREAM-R20-ORIGINAL.json"
+    },
+    {
+      "bytes": 2351,
+      "git_blob": "9a33240c2cfe9d29921e378ba00898f1285b2525",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-UPSTREAM-R21-ACCEPTANCE-R1.json"
+    },
+    {
+      "bytes": 11301,
+      "git_blob": "8f67edc979a8f14c8c35833e6f22c8cbfbdcfb9a",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-UPSTREAM-R21-ORIGINAL.json"
+    },
+    {
+      "bytes": 2935,
+      "git_blob": "b693cf71905df3b5b9e78440eb0d6bcf5ad00c94",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-UPSTREAM-R22-ACCEPTANCE-R1.json"
+    },
+    {
+      "bytes": 10005,
+      "git_blob": "b681f50be21b7c0678118a3d89d25ca94efacff8",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-UPSTREAM-R22-ORIGINAL.json"
+    },
+    {
+      "bytes": 2508,
+      "git_blob": "38b4c68e0af2a029b65f8db120930020b0622cfd",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-UPSTREAM-R23-ACCEPTANCE-R1.json"
+    },
+    {
+      "bytes": 11257,
+      "git_blob": "5b2d8e4040cd4ac26c4d59e35641109945a7a281",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-UPSTREAM-R23-ORIGINAL.json"
+    },
+    {
+      "bytes": 2931,
+      "git_blob": "42c19223a40e280d0fa2f21d942b883b1a1a31cb",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-UPSTREAM-R24-ACCEPTANCE-R1.json"
+    },
+    {
+      "bytes": 14547,
+      "git_blob": "97d9c612c6f4a31aff0e08b177cb9c0d3ae99a08",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-UPSTREAM-R24-ORIGINAL.json"
+    },
+    {
+      "bytes": 3118,
+      "git_blob": "fa91c2d29716e78dfa9f429314fdf15810ee4d94",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-UPSTREAM-R25-ACCEPTANCE-R1.json"
+    },
+    {
+      "bytes": 12484,
+      "git_blob": "3dccc8e0a84a2465d3d23712c664465c8e2ec0d4",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-UPSTREAM-R25-ORIGINAL.json"
+    },
+    {
+      "bytes": 2799,
+      "git_blob": "d3f8d035c77f351a0031a805ff29c2c4c3360c67",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-UPSTREAM-R26-ACCEPTANCE-R1.json"
+    },
+    {
+      "bytes": 9053,
+      "git_blob": "1655f4c5fe988d3fd02093cfc4f102c40580ba77",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-UPSTREAM-R26-ORIGINAL.json"
+    },
+    {
+      "bytes": 1737,
+      "git_blob": "eb29071c7fa77fa35cbc6126ff62e2de64e5d454",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-WRITE-SHAPES-R17-ACCEPTANCE-R1.json"
+    },
+    {
+      "bytes": 7738,
+      "git_blob": "38989dabccca88302ad59c916dc2db6f2b496a42",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-WRITE-SHAPES-R17-ORIGINAL.json"
+    },
+    {
+      "bytes": 14064,
+      "git_blob": "fb62dedb8f78d14b1d4790ecd95fefa029bddce2",
+      "path": "research/recovered/STONEAGE-TW10-SAVEDATA-WRITER-R54-CONTRACT.json"
+    }
+  ],
+  "report_count": 154,
+  "root_address_keys": [
+    "root_rva",
+    "root_candidate_rva",
+    "native_root_candidate_rva",
+    "entry_rva",
+    "function_rva",
+    "graph_root_rva",
+    "callee_root_candidate_rva",
+    "wrapper_root_candidate_rva"
+  ],
+  "schema": "tw10-r77-retained-handle-source-and-error-helper-entry-preflight",
+  "source_head": "cdbb41c9f9b2a25ab7aeb32fbf3eaa666c53f8e4",
+  "targets": [
+    {
+      "decoded_entry_hits": [],
+      "numeric_reference_hits": [
+        {
+          "file": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R37-ORIGINAL.json",
+          "value_path": "$.helper_candidates[1].callee_context.call_candidates[0].direct_target_rva"
+        },
+        {
+          "file": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R46-ORIGINAL.json",
+          "value_path": "$.write_helper_context.r37_helper_surface_rederived.call_candidates[0].direct_target_rva"
+        },
+        {
+          "file": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R58-ORIGINAL.json",
+          "value_path": "$.contexts[1].call_contexts[0].identity.direct_target_rva"
+        },
+        {
+          "file": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R58-ORIGINAL.json",
+          "value_path": "$.contexts[1].call_contexts[1].identity.direct_target_rva"
+        },
+        {
+          "file": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R58-ORIGINAL.json",
+          "value_path": "$.contexts[1].call_contexts[2].identity.direct_target_rva"
+        },
+        {
+          "file": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R58-ORIGINAL.json",
+          "value_path": "$.contexts[1].call_contexts[3].identity.direct_target_rva"
+        },
+        {
+          "file": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R58-ORIGINAL.json",
+          "value_path": "$.contexts[1].instruction_shapes[17].operands[0].constant"
+        },
+        {
+          "file": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R58-ORIGINAL.json",
+          "value_path": "$.contexts[1].instruction_shapes[26].operands[0].constant"
+        },
+        {
+          "file": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R58-ORIGINAL.json",
+          "value_path": "$.contexts[1].instruction_shapes[29].operands[0].constant"
+        },
+        {
+          "file": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R58-ORIGINAL.json",
+          "value_path": "$.contexts[1].instruction_shapes[35].operands[0].constant"
+        },
+        {
+          "file": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-SEEK-HELPER-R75-ORIGINAL.json",
+          "value_path": "$.decoded_instruction_rows[16].operands[0].constant"
+        }
+      ],
+      "root_bearing_objects": [],
+      "rva": 321787
+    },
+    {
+      "decoded_entry_hits": [],
+      "numeric_reference_hits": [
+        {
+          "file": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R30-ORIGINAL.json",
+          "value_path": "$.writer_discovery.caller_samples[0].target_rva"
+        },
+        {
+          "file": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R30-ORIGINAL.json",
+          "value_path": "$.writer_discovery.caller_samples[1].target_rva"
+        },
+        {
+          "file": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R30-ORIGINAL.json",
+          "value_path": "$.writer_discovery.caller_samples[3].target_rva"
+        },
+        {
+          "file": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R30-ORIGINAL.json",
+          "value_path": "$.writer_discovery.caller_samples[4].target_rva"
+        },
+        {
+          "file": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R30-ORIGINAL.json",
+          "value_path": "$.writer_discovery.caller_samples[5].target_rva"
+        },
+        {
+          "file": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R30-ORIGINAL.json",
+          "value_path": "$.writer_discovery.caller_samples[6].target_rva"
+        },
+        {
+          "file": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R30-ORIGINAL.json",
+          "value_path": "$.writer_discovery.caller_samples[7].target_rva"
+        },
+        {
+          "file": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R30-ORIGINAL.json",
+          "value_path": "$.writer_discovery.selected_root_candidates[1].root_rva"
+        },
+        {
+          "file": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R30-ORIGINAL.json",
+          "value_path": "$.writer_inputs.contexts[1].caller_identity.direct_target_rva"
+        },
+        {
+          "file": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R30-ORIGINAL.json",
+          "value_path": "$.writer_inputs.contexts[1].root_candidate_rva"
+        },
+        {
+          "file": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R31-ORIGINAL.json",
+          "value_path": "$.caller_capture.helper_call_identity.direct_target_rva"
+        },
+        {
+          "file": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R31-ORIGINAL.json",
+          "value_path": "$.helper_memory.inputs.queries[0].reaching_candidates[0].rva"
+        },
+        {
+          "file": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R31-ORIGINAL.json",
+          "value_path": "$.helper_memory.root_candidate_rva"
+        },
+        {
+          "file": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R31-ORIGINAL.json",
+          "value_path": "$.helper_memory.stack_reference_candidates[0].site_rva"
+        },
+        {
+          "file": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R32-ORIGINAL.json",
+          "value_path": "$.conditional_slot.callee_entry_stack_read_rva"
+        },
+        {
+          "file": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R36-ORIGINAL.json",
+          "value_path": "$.opaque_calls[5].direct_target_rva"
+        },
+        {
+          "file": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R37-ORIGINAL.json",
+          "value_path": "$.helper_candidates[1].callee_context.call_candidates[3].direct_target_rva"
+        },
+        {
+          "file": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R46-ORIGINAL.json",
+          "value_path": "$.write_helper_context.r37_helper_surface_rederived.call_candidates[3].direct_target_rva"
+        },
+        {
+          "file": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R47-ORIGINAL.json",
+          "value_path": "$.read_byte_result_context.post_api_shapes[15].operands[0].constant"
+        },
+        {
+          "file": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R58-ORIGINAL.json",
+          "value_path": "$.contexts[1].call_contexts[7].identity.direct_target_rva"
+        },
+        {
+          "file": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R58-ORIGINAL.json",
+          "value_path": "$.contexts[1].instruction_shapes[53].operands[0].constant"
+        },
+        {
+          "file": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-SEEK-HELPER-R75-ORIGINAL.json",
+          "value_path": "$.decoded_instruction_rows[36].operands[0].constant"
+        },
+        {
+          "file": "research/recovered/STONEAGE-TW10-SAVEDATA-POSTCALL-R63-DERIVED.json",
+          "value_path": "$.sites[1].decoded_instruction_rows[21].operands[0].constant"
+        },
+        {
+          "file": "research/recovered/STONEAGE-TW10-SAVEDATA-R73-R74-ACCEPTANCE-R1.json",
+          "value_path": "$.next_preflight.second_helper_root"
+        },
+        {
+          "file": "research/recovered/STONEAGE-TW10-SAVEDATA-R74-MODES-BARRIERS-DERIVED.json",
+          "value_path": "$.opaque_calls[5].target_rva"
+        },
+        {
+          "file": "research/recovered/STONEAGE-TW10-SAVEDATA-R75-PREFLIGHT.json",
+          "value_path": "$.targets[1].rva"
+        }
+      ],
+      "root_bearing_objects": [
+        {
+          "file": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R30-ORIGINAL.json",
+          "object_path": "$.writer_discovery.selected_root_candidates[1]"
+        },
+        {
+          "file": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R30-ORIGINAL.json",
+          "object_path": "$.writer_inputs.contexts[1]"
+        },
+        {
+          "file": "research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R31-ORIGINAL.json",
+          "object_path": "$.helper_memory"
+        }
+      ],
+      "rva": 313683
+    }
+  ]
+}

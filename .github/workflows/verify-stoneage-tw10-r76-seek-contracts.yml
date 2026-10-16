@@ -88,3 +88,34 @@ jobs:
           assert d['actual_helper_preservation_seek_or_persistence_proven']is False
           print('R75_REFRESHED_150_REPORT_HELPER_CENSUS=PASS')
           PY
+      - name: Independently replay next handle/error entry gap census across154 retained reports
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json,hashlib
+          from pathlib import Path
+          raw=Path('research/recovered/STONEAGE-TW10-SAVEDATA-R77-PREFLIGHT.json').read_bytes();assert hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest()=='38cc620394f21e04ec96c14a883b0510082fca43'
+          d=json.loads(raw);assert d['source_head']=='cdbb41c9f9b2a25ab7aeb32fbf3eaa666c53f8e4'and d['report_count']==len(d['registered_reports'])==154
+          assert [t['rva']for t in d['targets']]==[321787,313683]
+          found={321787:[],313683:[]};paths=[r['path']for r in d['registered_reports']];assert paths==sorted(set(paths))
+          for r in d['registered_reports']:
+              p=Path(r['path']);assert p.parent==Path('research/recovered')and p.name.startswith('STONEAGE-TW10-SAVEDATA-')and p.suffix=='.json'
+              raw=p.read_bytes();assert len(raw)==r['bytes']and hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest()==r['git_blob'];todo=[json.loads(raw)]
+              while todo:
+                  x=todo.pop()
+                  if isinstance(x,list):todo.extend(x)
+                  elif isinstance(x,dict):
+                      if isinstance(x.get('mnemonic'),str)and x['mnemonic']and any(isinstance(x.get(k),list)for k in d['operand_array_keys']):
+                          for k in d['entry_address_keys']:
+                              n=x.get(k)
+                              if type(n)is not int:
+                                  try:n=int(n,0)if isinstance(n,str)else None
+                                  except ValueError:n=None
+                              if n is not None:
+                                  n=n-4194304 if n>=4194304 else n
+                                  if n in found:found[n].append(r['path'])
+                      todo.extend(x.values())
+          assert found=={321787:[],313683:[]}and all(t['decoded_entry_hits']==[]for t in d['targets'])
+          assert d['absence_bounded_to_registered_representations']is True and d['actual_handle_value_or_callee_preservation_or_persistence_proven']is False
+          print('R77_RETAINED_154_REPORT_HANDLE_AND_ERROR_ENTRY_CENSUS=PASS')
+          PY

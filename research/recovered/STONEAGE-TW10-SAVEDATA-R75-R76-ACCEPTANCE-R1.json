@@ -1,0 +1,241 @@
+{
+  "boundaries": {
+    "actual_abi_cleanup_saved_slot_nonaliasing_proven": false,
+    "actual_callee_frame_register_memory_preservation_proven": false,
+    "actual_close_flush_disk_persistence_proven": false,
+    "actual_seek_position_count_return_or_success_proven": false,
+    "historical_flag_name_proven": false,
+    "original_savedata_schema_checksum_migration_server_authority_proven": false,
+    "same_caller_helper_table_identity_proven": false,
+    "stage_a_families": "PARTIAL/OPEN",
+    "stage_b_started": false
+  },
+  "date": "2026-10-16",
+  "historical_prefixes": {
+    "docs/CURRENT-STATE.md": {
+      "prefix_bytes": 1776759,
+      "prefix_git_blob": "5a637634a2200fc8937cf6a2e39a7ef887bf3b75",
+      "prefix_sha256": "22798a485b74e611a3358225deda928f4e8b526e128a6a392f41cd8d32c1157b"
+    },
+    "docs/HISTORICAL-TIMELINE.md": {
+      "prefix_bytes": 409915,
+      "prefix_git_blob": "8138d9d6837d19f9fbfc19f335c952dac0bafcba",
+      "prefix_sha256": "408a7eefc046aa35ad24fe46108fb1c483381650fc745996739fab78a3346c85"
+    },
+    "docs/RESTORATION-PHASE-GATE-R1.md": {
+      "prefix_bytes": 61009,
+      "prefix_git_blob": "05cd5656dc29c3fd0acb385d9e8d426cd9d4cc8c",
+      "prefix_sha256": "53e2a3418946caa4011afe8b5b5920c83d6b5dbdd6a1f559c04171a006a5861b"
+    },
+    "docs/SOURCE-REGISTRY.md": {
+      "prefix_bytes": 638105,
+      "prefix_git_blob": "e9b99368bfb8311002840cb5358e02f99e848a98",
+      "prefix_sha256": "f393162c2695f24a88a79fb8a0964f8a97826fce3b29642e8ce5950c0984660e"
+    }
+  },
+  "next": "R77 prioritize0x4e8fb handle-source and caller-visible effects material to native hFile;0x4c953 only as required for error/helper paths.",
+  "next_preflight": {
+    "absence_bounded_to_registered_representations": true,
+    "git_blob": "38cc620394f21e04ec96c14a883b0510082fca43",
+    "path": "research/recovered/STONEAGE-TW10-SAVEDATA-R77-PREFLIGHT.json",
+    "raw_bytes": 37437,
+    "raw_sha256": "442e10a2539e2748c7e82f32a757f29fce2ef089accf3e23708b5188f494f329",
+    "registered_decoded_entries_present": [
+      false,
+      false
+    ],
+    "report_count": 154,
+    "source_head": "cdbb41c9f9b2a25ab7aeb32fbf3eaa666c53f8e4",
+    "targets": [
+      321787,
+      313683
+    ]
+  },
+  "r75": {
+    "bounded_helper_edges": 55,
+    "bounded_helper_nodes": 51,
+    "descendant_callees_expanded": 0,
+    "independent_conclusion": "success",
+    "independent_head": "cdbb41c9f9b2a25ab7aeb32fbf3eaa666c53f8e4",
+    "independent_job": 116934265298,
+    "independent_run": 38889189883,
+    "known_rows": 3,
+    "live_artifact_equals_permanent_report": true,
+    "live_expired_unavailable_custody_fixtures": "PASS; invented API-shaped metadata only",
+    "preflight_git_blob": "2ea2b2ecae600cdff94eaf414526f486f0fa6fa9",
+    "preflight_reports": 150,
+    "recovered_rows": 48
+  },
+  "r76": {
+    "actual_path_feasibility_claimed": false,
+    "canonical_path": "research/recovered/STONEAGE-TW10-SAVEDATA-R76-SEEK-CONTRACTS-DERIVED.json",
+    "conditional_native_argument_tokens": [
+      "opaque_eax_after_313230",
+      0,
+      0,
+      2
+    ],
+    "conditional_saved_registers": [
+      "ebx",
+      "esi",
+      "edi"
+    ],
+    "git_blob": "2cdbcb8b95649a0ce610ab93fde5edcd7ef0997b",
+    "independent_conclusion": "success",
+    "independent_head": "cdbb41c9f9b2a25ab7aeb32fbf3eaa666c53f8e4",
+    "independent_job": 116934280138,
+    "independent_run": 38889194294,
+    "invented_local_byte_mask_cases": 256,
+    "modern_contract_reference_urls": [
+      "https://learn.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-setfilepointer",
+      "https://learn.microsoft.com/en-us/cpp/cpp/stdcall?view=msvc-170"
+    ],
+    "modern_references_are_not_original_version_execution_evidence": true,
+    "raw_bytes": 7662,
+    "raw_sha256": "2a57125d32c3889def89c90d2e99192d94a25bd30b9677d5bfd7b0fd10fa3ead",
+    "stack_cleanup_assumptions_bytes": {
+      "313230": 0,
+      "313264": 16,
+      "313277": 0,
+      "313292": 0
+    },
+    "strict_callee_and_table_barriers_preserved": true,
+    "structural_paths": 7
+  },
+  "schema": "tw10-r75-r76-bounded-acceptance-r1",
+  "source": {
+    "archive_commit": "97d2e781959c2d86a3840020292e2146cebb286b",
+    "archive_tree": "d8d9f7f66bb8174df2b07563d58af49cc641bacb",
+    "artifact_id": 12040258731,
+    "artifact_zip_bytes": 2743,
+    "artifact_zip_sha256": "4cd9097e869802b8bd107f737ac68183c78f42f7a4b9b75a6a639adc3d6e069f",
+    "canonical_git_blob": "757c22945d7e18263b154e88f52376d0ab58d42c",
+    "conclusion": "success",
+    "head": "b3d92a453bcb0a093ed36417db3588bd691c0811",
+    "independent_archive_job": 116932146715,
+    "independent_local_zip_raw_permanent_equality": true,
+    "original_program_api_or_savedata_payload_executed": false,
+    "original_proprietary_bytes_archived": false,
+    "original_savedata_payload_opened_for_this_acquisition": false,
+    "original_static_job": 116931879732,
+    "raw_bytes": 25435,
+    "raw_sha256": "bcec13f8eb8d0b6182a38aa8b0ba67a7f20ca1d9b33ca1c9a76a1448f62b7d85",
+    "run": 38888448211,
+    "synthetic_job": 116931835622
+  },
+  "startup": {
+    "head": "15923c8bccb0c9d89c62300591f97d1ab5f2fd17",
+    "in_progress_actions": 0,
+    "legacy_queued_actions": [
+      37642417333
+    ],
+    "remote_branches": 275,
+    "tree": "24edaa9f53cb5cbade487ea3fc279cf1c1d48a49"
+  },
+  "validation": {
+    "local_savedata_tests": 226,
+    "main_code_head": "cdbb41c9f9b2a25ab7aeb32fbf3eaa666c53f8e4",
+    "main_code_runs": [
+      {
+        "conclusion": "success",
+        "head": "cdbb41c9f9b2a25ab7aeb32fbf3eaa666c53f8e4",
+        "jobs": [
+          {
+            "conclusion": "success",
+            "id": 116934565286
+          }
+        ],
+        "name": "Independently verify TW1.0 R74 complete bounded operands and opaque-call barriers",
+        "run": 38889280680
+      },
+      {
+        "conclusion": "success",
+        "head": "cdbb41c9f9b2a25ab7aeb32fbf3eaa666c53f8e4",
+        "jobs": [
+          {
+            "conclusion": "success",
+            "id": 116934564474
+          }
+        ],
+        "name": "Verify TW1.0 R70 three conditional return shapes and invented arithmetic",
+        "run": 38889280468
+      },
+      {
+        "conclusion": "success",
+        "head": "cdbb41c9f9b2a25ab7aeb32fbf3eaa666c53f8e4",
+        "jobs": [
+          {
+            "conclusion": "success",
+            "id": 116934564360
+          }
+        ],
+        "name": "Independently accept TW1.0 R69 original early-return artifact and permanent static report",
+        "run": 38889280390
+      },
+      {
+        "conclusion": "success",
+        "head": "cdbb41c9f9b2a25ab7aeb32fbf3eaa666c53f8e4",
+        "jobs": [
+          {
+            "conclusion": "success",
+            "id": 116934563875
+          }
+        ],
+        "name": "Independently verify TW1.0 R76 conditional seek stack and local table contracts",
+        "run": 38889280192
+      },
+      {
+        "conclusion": "success",
+        "head": "cdbb41c9f9b2a25ab7aeb32fbf3eaa666c53f8e4",
+        "jobs": [
+          {
+            "conclusion": "success",
+            "id": 116934565534
+          }
+        ],
+        "name": "Independently verify TW1.0 R72 conditional byte expansion and count units",
+        "run": 38889280840
+      },
+      {
+        "conclusion": "success",
+        "head": "cdbb41c9f9b2a25ab7aeb32fbf3eaa666c53f8e4",
+        "jobs": [
+          {
+            "conclusion": "success",
+            "id": 116934565260
+          }
+        ],
+        "name": "Independently accept TW1.0 R73 original mode/direct-count artifact and permanent static report",
+        "run": 38889280686
+      },
+      {
+        "conclusion": "success",
+        "head": "cdbb41c9f9b2a25ab7aeb32fbf3eaa666c53f8e4",
+        "jobs": [
+          {
+            "conclusion": "success",
+            "id": 116934564995
+          }
+        ],
+        "name": "Independently accept TW1.0 R71 original adjustment-loop artifact and permanent static report",
+        "run": 38889280578
+      },
+      {
+        "conclusion": "success",
+        "head": "cdbb41c9f9b2a25ab7aeb32fbf3eaa666c53f8e4",
+        "jobs": [
+          {
+            "conclusion": "success",
+            "id": 116934564081
+          }
+        ],
+        "name": "Independently accept TW1.0 R75 original bounded seek-helper effects artifact and permanent static report",
+        "run": 38889280316
+      }
+    ],
+    "main_code_tree": "c62a1dc9747283eabad3270cc8eabfb4edc51b8c",
+    "nonforced_expected_head_fastforward": true,
+    "r75_remote_suite_tests": 48,
+    "r76_remote_suite_tests": 180
+  }
+}
