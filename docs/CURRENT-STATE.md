@@ -14315,3 +14315,46 @@ CURRENT-STATE: review all nine system families for source-qualified
 representative gameplay and material original-content gaps. Do not infer a
 project percentage from tests or treat this as Stage A completion.
 RULES-01/Stage A remain PARTIAL/OPEN; Stage B gated; R79 paused non-blocking.
+
+
+## 2026-10-16 — STAGE-A-REVIEW-PREFLIGHT nine-family evidence and next-work audit
+
+Stage A combined evidence review only; NOT the Stage A final acceptance or a
+claim of fully restored early commercial gameplay. Reuses the immutable nine
+family IDs/gates from the existing PORTFOLIO-01 index with13 exact present Git
+blob/byte-source anchors. The nine family statuses are unchanged:
+lineage/world/characters_pets/battle/inventory_economy/graphics_audio_ui/
+integration remain PARTIAL; npc_quests/runtime_persistence remain OPEN.
+All9 have representative behavior, historical/source version boundary, material
+original evidence gap, replay scope and specific reopen trigger.
+
+The original TW1.0 disc and v1 status/protocol evidence contain useful direct
+screen-facing inventory/pet/character/map/NPC/battle message and resource
+format anchors. Server-only earliest maps/NPC scripts/reward/save bytes remain
+absent and cannot be supplied by R79 ABI/helper exhaustion. The next finite
+highest-value work is **UI-SEMANTICS-01**: qualify exactly5 original-client
+field/position, player status/HUD, inventory, pet/skill and battle/NPC-window
+interaction/resource crosswalks. Determine on-screen resource/command links only
+when source directly bears them; unknown placement/animation/action stays OPEN.
+It is not renderer implementation, new asset design or an engine choice.
+
+Accepted branch b2d35de2f12a2911a164bc2bb75f0863f5c745c8 / tree
+2dd5936533631c30ef9c0debf7b0f4a15a4f208e; independent Action38913920159,
+job117016397005 SUCCESS verifying nine gates, 13 existing Git blob custody
+identities and five original-resource/UI evidence gates. No commercial game
+client/server was executed; no raw proprietary assets or source payload were
+committed, and no overall completion percentage was fabricated.
+
+Artifacts:
+- docs/STAGE-A-NINE-FAMILY-PREFLIGHT-R1.md
+- research/recovered/STONEAGE-STAGE-A-NINE-FAMILY-PREFLIGHT-R1.json
+- tests/test_stoneage_stage_a_preflight.py
+- .github/workflows/validate-stoneage-stage-a-preflight.yml
+- research/recovered/STONEAGE-STAGE-A-NINE-FAMILY-ACCEPTANCE-R1.json
+
+**Highest NEXT UI-SEMANTICS-01** five bounded original-client interaction
+crosswalks from already accepted v1 protocol/resources. Reassess nine family
+priority after the package or on new primary source. Stage A family statuses
+PARTIAL/OPEN, Stage B remains GATED, client-local savedata R79 remains
+PAUSED_NON_BLOCKING. The latest main after integration, not old chat SHA,
+must again govern the next turn.

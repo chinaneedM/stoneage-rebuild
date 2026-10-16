@@ -199,3 +199,20 @@ stay OPEN. Evidence receipt: research/recovered/STONEAGE-RULES01-COORDINATOR-GAT
 playflow and material-gap inventory selected by the previous current-state
 entry. Finite audit, no arbitrary deepening of savedata R79, no engine/new-game
 design before Stage A joint acceptance.
+
+
+## 2026-10-16 — Stage A 九系统来源预审及下一项
+
+九系统状态逐项重查并与初始 Portfolio R1 一致，全部仍属 PARTIAL/OPEN，
+Stage A 未终验，Stage B 未启用。记录来源与可复现限定：
+`research/recovered/STONEAGE-STAGE-A-NINE-FAMILY-PREFLIGHT-R1.json`。
+独立 Actions38913920159 成功验证九族、13份已有源 Git blob 字节身份，
+以及5个下一阶段界面语义证据槽。没有在本轮下载原始游戏资产、运行商业
+服务器或补造历史任务脚本，因此不计算无分母的总体进度百分比。
+
+**最高下一项 UI-SEMANTICS-01**：优先复原台湾1.0原始客户端五类界面
+与玩法事件的证据对应（地图/位置、角色状态、背包道具、宠物/技能、
+战斗与NPC窗口），通过既有 V1 状态消息/资源身份和真实来源限制建立
+可审核的语义规格。不能将晚期 Windowman 配置或后世教程界面冒充
+最早版本；不能仅凭资源ID存在推导原版显示位置/动画。遇缺失必须标 OPEN。
+只做历史语义规格，不选新引擎、不进行新游戏UI制作，不重开R79。

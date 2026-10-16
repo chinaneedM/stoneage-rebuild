@@ -74,3 +74,15 @@ PET-STATE-01 has bounded capture/roster/save/reentry/growth acceptance; full
 pet autoconstruction remains evidence-limited and requires explicit state.
 Highest next is WORLD-01's finite existing-route provenance/gap review, as
 recorded in the latest CURRENT-STATE and Roadmap R2 append. R79 stays paused.
+
+
+### Current work order override — 2026-10-16 Stage A source review
+
+Earlier dated roadmap notes above remain historical context. The authoritative
+current work order is the **latest** entry in `docs/CURRENT-STATE.md`.
+After the WORLD-01 and bounded RULES-01 representative integration checks,
+`STAGE-A-REVIEW-PREFLIGHT` has audited all nine system families without
+claiming Stage A completion. The next finite target is `UI-SEMANTICS-01`:
+five original Taiwan-v1 client protocol-to-interaction/resource specifications.
+Stage A remains PARTIAL/OPEN, Stage B gated and client-local savedata R79 paused.
+No original server-only game content is inferred from modern model tests.
