@@ -81,3 +81,41 @@ jobs:
           assert sorted(selected-found)==d['selected_missing_decoded_sites'] and len(selected-found)==11
           print('R71_RETAINED_FIRST_138_REPORT_CENSUS=PASS')
           PY
+      - name: Independently rehash and rescan complete retained-first 142-report next-gap census
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          p=Path('research/recovered/STONEAGE-TW10-SAVEDATA-R73-PREFLIGHT.json');raw=p.read_bytes()
+          assert hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest()=='650be58df8050bbf7495273ca5f60fa322238dcd'
+          d=json.loads(raw);assert d['source_head']=='f8138e759c4665427f9680ab83d1acf567e19fd8'
+          assert d['report_count']==len(d['registered_reports'])==142
+          g=json.load(open('research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-EARLY-R69-ORIGINAL.json'));nodes=set(g['bounded_graph_node_rvas']);found=set()
+          assert d['address_keys']==['site_rva','rva','instruction_rva','address','va','instruction_address']
+          assert d['operand_array_keys']==['operands','ops','operand_shapes']
+          paths=[r['path']for r in d['registered_reports']];assert paths==sorted(set(paths))
+          for r in d['registered_reports']:
+              f=Path(r['path']);assert f.parent==Path('research/recovered') and f.name.startswith('STONEAGE-TW10-SAVEDATA-') and f.suffix=='.json'
+              raw=f.read_bytes();assert len(raw)==r['bytes'] and hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest()==r['git_blob']
+              pending=[json.loads(raw)]
+              while pending:
+                  x=pending.pop()
+                  if isinstance(x,list):pending.extend(x);continue
+                  if not isinstance(x,dict):continue
+                  if isinstance(x.get('mnemonic'),str) and x['mnemonic'] and any(isinstance(x.get(k),list)for k in d['operand_array_keys']):
+                      for k in d['address_keys']:
+                          n=x.get(k)
+                          if type(n)is not int:
+                              try:n=int(n,0)if isinstance(n,str)else None
+                              except ValueError:n=None
+                          if n is not None:
+                              if n in nodes:found.add(n)
+                              elif n-4194304 in nodes:found.add(n-4194304)
+                  pending.extend(x.values())
+          assert sorted(found)==d['decoded_sites_in_full_graph'] and len(found)==128
+          assert sorted(nodes-found)==d['missing_sites_in_full_graph'] and len(nodes-found)==11
+          selected=set(d['selected_node_rvas']);assert len(selected)==17
+          assert sorted(selected-found)==d['selected_missing_decoded_sites'] and len(selected-found)==11
+          print('R73_RETAINED_NEXT_GAP_142_REPORT_CENSUS=PASS')
+          PY

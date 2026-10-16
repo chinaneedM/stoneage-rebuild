@@ -1,0 +1,165 @@
+{
+  "boundaries": {
+    "actual_flush_close_disk_persistence_proven": false,
+    "actual_native_bool_count_success_proven": false,
+    "actual_path_predicates_or_return_values_proven": false,
+    "actual_temporal_frame_memory_alias_abi_proven": false,
+    "original_schema_checksum_migration_server_authority_proven": false,
+    "partial_write_return_is_general_logical_prefix_count": false,
+    "stage_a_families": "PARTIAL/OPEN",
+    "stage_b_started": false
+  },
+  "date": "2026-10-16",
+  "historical_prefixes": {
+    "docs/CURRENT-STATE.md": {
+      "prefix_bytes": 1762804,
+      "prefix_git_blob": "35fab2edc84edf330e2bd131cdbd295b998d9d3d",
+      "prefix_sha256": "59311e937996d2d1f97781313d4c3e058b38f1e9fa1160cd5468e2bf8d17acdf"
+    },
+    "docs/HISTORICAL-TIMELINE.md": {
+      "prefix_bytes": 404834,
+      "prefix_git_blob": "16670ff87b197950b4047536882ab67cf4f4550c",
+      "prefix_sha256": "5ca31d3f3dd228aad42d95aa256c2925b3bd608f699062b23b62353e938ec935"
+    },
+    "docs/RESTORATION-PHASE-GATE-R1.md": {
+      "prefix_bytes": 55928,
+      "prefix_git_blob": "497627e33b44cfeec4502e304225250fa619810d",
+      "prefix_sha256": "cf27c74548c1e29f07a53840df6762d5afd724c8c10ec54db3c13ab867987f7b"
+    },
+    "docs/SOURCE-REGISTRY.md": {
+      "prefix_bytes": 633052,
+      "prefix_git_blob": "7f1a68c28a25740cf5a62320b2e7125d59ebb6f3",
+      "prefix_sha256": "de5c7f03cfd9059b9b3c445950441879fdf899c92ce6caec8ce5ae4eb2980e3c"
+    }
+  },
+  "next": "R73 retained-first mode/direct-count predicate gaps and the exact remaining11 node operand inventory.",
+  "next_preflight": {
+    "absence_bounded_to_registered_representations": true,
+    "git_blob": "650be58df8050bbf7495273ca5f60fa322238dcd",
+    "one_hop_nodes": 17,
+    "path": "research/recovered/STONEAGE-TW10-SAVEDATA-R73-PREFLIGHT.json",
+    "raw_bytes": 30583,
+    "registered_reports": 142,
+    "remaining_nodes": 11,
+    "source_head": "f8138e759c4665427f9680ab83d1acf567e19fd8"
+  },
+  "r71": {
+    "focus_nodes": 25,
+    "independent_conclusion": "success",
+    "independent_head": "f8138e759c4665427f9680ab83d1acf567e19fd8",
+    "independent_job": 116819548956,
+    "independent_run": 38853444099,
+    "live_artifact_equals_permanent_report": true,
+    "live_expired_unavailable_script_modes": "PASS with invented API-shaped fixtures only",
+    "one_hop_rows": 29,
+    "preflight_decoded_graph_nodes": 117,
+    "preflight_report_count": 138,
+    "previously_missing_rows": 11
+  },
+  "r72": {
+    "canonical_path": "research/recovered/STONEAGE-TW10-SAVEDATA-R72-ADJUSTMENT-COUNTS-DERIVED.json",
+    "conditional_post_store_max_chunk_units": 1025,
+    "decoded_graph_nodes": 128,
+    "git_blob": "94656b8f6c2f830743a6257c1a8abf7aedb00c22",
+    "graph_edges": 156,
+    "graph_nodes": 139,
+    "independent_conclusion": "success",
+    "independent_head": "f8138e759c4665427f9680ab83d1acf567e19fd8",
+    "independent_job": 116819560164,
+    "independent_run": 38853447606,
+    "invented_long_boundary_cases": 4,
+    "invented_trace_threshold_comparisons": 3124,
+    "partial_write_prefix_count_counterexample_preserved": true,
+    "post_store_threshold": 1024,
+    "raw_bytes": 5600,
+    "raw_sha256": "aa21627e0018f2a7d9c01aaa36b6f70f38456f938de31713fee893402070265a"
+  },
+  "schema": "tw10-r71-r72-bounded-acceptance-r1",
+  "source": {
+    "archive_commit": "9257709118ae962c3c06d04dc0f4b99152290ea0",
+    "archive_tree": "8556b3fde08ed6d59e076a30deb3706b53a6a861",
+    "artifact_id": 12026131224,
+    "artifact_zip_bytes": 3148,
+    "artifact_zip_sha256": "036e7aa7778d4f8fa778847671ae3dbec57807c26abfa12cecd25c9e7d03d89b",
+    "canonical_git_blob": "f2a946ffc93c6a32210f2ebaa9dc9191833aac37",
+    "conclusion": "success",
+    "independent_archive_job_id": 116818394875,
+    "independent_local_zip_raw_and_canonical_equality": true,
+    "original_program_or_payload_executed": false,
+    "original_proprietary_bytes_archived": false,
+    "original_static_job_id": 116818258696,
+    "raw_bytes": 21525,
+    "raw_sha256": "746c7e64a973b52ca5cf3412342eb68725fcf15dcb5ad4a1e71a8e638ae90af5",
+    "source_head": "270cfd3205929bae1b2953c1a1763266439fd1cc",
+    "source_run_id": 38853018146,
+    "synthetic_job_id": 116818213695
+  },
+  "startup": {
+    "active_actions_at_start": 0,
+    "head": "7a4598f6a2c0019a2e2fca55231d1e78071b828c",
+    "remote_branch_count": 267,
+    "tree": "f1ebd015d6fa4adbc596a164788ff784462d8f32"
+  },
+  "validation": {
+    "expected_head_nonforced_fastforward": true,
+    "local_tests": 156,
+    "main_code_head": "f8138e759c4665427f9680ab83d1acf567e19fd8",
+    "main_code_runs": [
+      {
+        "conclusion": "success",
+        "head": "f8138e759c4665427f9680ab83d1acf567e19fd8",
+        "jobs": [
+          {
+            "conclusion": "success",
+            "id": 116819787873,
+            "name": "acceptance"
+          }
+        ],
+        "name": "Independently accept TW1.0 R71 original adjustment-loop artifact and permanent static report",
+        "run_id": 38853523533
+      },
+      {
+        "conclusion": "success",
+        "head": "f8138e759c4665427f9680ab83d1acf567e19fd8",
+        "jobs": [
+          {
+            "conclusion": "success",
+            "id": 116819787304,
+            "name": "acceptance"
+          }
+        ],
+        "name": "Independently accept TW1.0 R69 original early-return artifact and permanent static report",
+        "run_id": 38853523575
+      },
+      {
+        "conclusion": "success",
+        "head": "f8138e759c4665427f9680ab83d1acf567e19fd8",
+        "jobs": [
+          {
+            "conclusion": "success",
+            "id": 116819787969,
+            "name": "acceptance"
+          }
+        ],
+        "name": "Verify TW1.0 R70 three conditional return shapes and invented arithmetic",
+        "run_id": 38853523723
+      },
+      {
+        "conclusion": "success",
+        "head": "f8138e759c4665427f9680ab83d1acf567e19fd8",
+        "jobs": [
+          {
+            "conclusion": "success",
+            "id": 116819787796,
+            "name": "acceptance"
+          }
+        ],
+        "name": "Independently verify TW1.0 R72 conditional byte expansion and count units",
+        "run_id": 38853523689
+      }
+    ],
+    "main_code_tree": "dda16db1d7f1abbd9d835844099270ce76201942",
+    "r71_remote_suite_tests": 41,
+    "r72_remote_suite_tests": 110
+  }
+}
