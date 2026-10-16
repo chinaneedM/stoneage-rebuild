@@ -1,0 +1,23 @@
+name: Validate StoneAge RULES-01 coordinator gate after purchase
+
+on:
+  push:
+    paths:
+      - "tests/test_stoneage_rules01_coordinator_gate_reload.py"
+      - "docs/specs/STONEAGE-RULES01-COORDINATOR-GATE-RELOAD-R1.md"
+      - ".github/workflows/validate-stoneage-rules01-coordinator-gate.yml"
+  workflow_dispatch:
+
+jobs:
+  gate-reload:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Actual coordinator after local normal shop purchase and reentry
+        run: |
+          python -m unittest discover -s tests -p 'test_stoneage_rules01_coordinator_gate_reload.py' -v
+          python -m unittest discover -s tests -p 'test_stoneage_rules01_shop_gate_save_reference.py' -v
+          python -m unittest discover -s tests -p 'test_stoneage_rules01_keyitem_award_boundary.py' -v
