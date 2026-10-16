@@ -1,0 +1,1559 @@
+{
+  "schema": "stoneage.tw10.ui-semantics.01",
+  "date": "2026-10-16",
+  "base_remote_head": "6e39cf22e04088531e00d6c83c98e356b1a8445b",
+  "base_remote_tree": "56b3290d716a93afe8c21b2f70c294be027d63ac",
+  "baseline": "TAIWAN_V1_ORIGINAL_COMPILED_SHAPES_WITH_EARLY_LINEAGE_FIELD_NAMES",
+  "result": "FIVE_SURFACE_SOURCE_CROSSWALK_COMPLETE_HISTORICAL_VISUAL_BINDINGS_OPEN",
+  "stage_a_accepted": false,
+  "stage_b_gate": "GATED",
+  "historical_completion_percentage": null,
+  "evidence_policy": {
+    "direct": "Compiled original protocol message shape, parser branch, resource address entries or battle receiver geometry",
+    "semantic": "Field/name/command meanings from early generated descendant lineage unless explicitly direct",
+    "not_established": "Live commercial server payloads, display position, resource selector, storyboard, exact original UI interactions/quests/animations",
+    "no_original_asset_payloads": true
+  },
+  "source_pins": {
+    "schema": {
+      "path": "research/clients/STONEAGE-TW10-GAMEPLAY-SCHEMA-R1.json",
+      "git_blob": "e39a3a6020b578da017ab0bfa9369dc083e0b700",
+      "bytes": 36469
+    },
+    "matrix": {
+      "path": "research/clients/STONEAGE-TW10-GAMEPLAY-DATA-MATRIX-R1.md",
+      "git_blob": "ddbef0ebd37d1a86554f7ac64f63f3ca4776e75e",
+      "bytes": 30851
+    },
+    "protocol": {
+      "path": "research/recovered/STONEAGE-TW10-GAMEPLAY-PROTOCOL-R1.txt",
+      "git_blob": "182f9df06c76996ca6983f523cbecfa4fe154852",
+      "bytes": 37798
+    },
+    "battle_receive": {
+      "path": "research/clients/STONEAGE-TW10-BATTLE-RECEIVE-STATE-R1.md",
+      "git_blob": "d31582d6e4f965695392cbdc7a2d6afb823d76e8",
+      "bytes": 7656
+    },
+    "battle_dataset": {
+      "path": "research/recovered/STONEAGE-TW10-BATTLE-DATASET-R1.txt",
+      "git_blob": "9d46528ad82b85e4aeefb604e66e87ed3b9213da",
+      "bytes": 58086
+    },
+    "client_boundary": {
+      "path": "research/clients/STONEAGE-TW10-CLIENT-DATA-BOUNDARY-R1.md",
+      "git_blob": "11e2b77bce2febfef37c3a0c87dec878a6f289ee",
+      "bytes": 6780
+    },
+    "audio_boundary": {
+      "path": "research/clients/STONEAGE-TW10-AUDIO-PROVENANCE-R1.md",
+      "git_blob": "b4e7746b4a6b1b2db2fd7a5633c01fdbdc6e4c55",
+      "bytes": 5340
+    },
+    "preflight": {
+      "path": "research/recovered/STONEAGE-STAGE-A-NINE-FAMILY-PREFLIGHT-R1.json",
+      "git_blob": "063d696a425e36e9b738d6e82881a47f9998d8d5",
+      "bytes": null
+    }
+  },
+  "surfaces": [
+    {
+      "id": "FIELD_AND_POSITION_STATUS",
+      "transport_group": "field",
+      "historical_scope": "Taiwan Waei/JSS v1.0 accepted client",
+      "record_contracts": [
+        {
+          "schema_record": "status_location",
+          "transport": {
+            "protocol": "S",
+            "category": "C",
+            "callback_rva": "0x2f6ae"
+          },
+          "field_count": 5,
+          "full_record_only": true,
+          "fields": [
+            {
+              "position": 1,
+              "name": "floor",
+              "wire_type": "decimal_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 2,
+              "name": "max_x",
+              "wire_type": "decimal_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 3,
+              "name": "max_y",
+              "wire_type": "decimal_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 4,
+              "name": "x",
+              "wire_type": "decimal_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 5,
+              "name": "y",
+              "wire_type": "decimal_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            }
+          ],
+          "visual_field_binding": null,
+          "visual_binding_evidence": "OPEN"
+        },
+        {
+          "schema_record": "status_identity_time",
+          "transport": {
+            "protocol": "S",
+            "category": "D",
+            "callback_rva": "0x2f797"
+          },
+          "field_count": 2,
+          "full_record_only": true,
+          "fields": [
+            {
+              "position": 1,
+              "name": "runtime_character_id",
+              "wire_type": "decimal_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 2,
+              "name": "server_time",
+              "wire_type": "decimal_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            }
+          ],
+          "visual_field_binding": null,
+          "visual_binding_evidence": "OPEN"
+        },
+        {
+          "schema_record": "status_encounter_range",
+          "transport": {
+            "protocol": "S",
+            "category": "E",
+            "callback_rva": "0x30408"
+          },
+          "field_count": 2,
+          "full_record_only": true,
+          "fields": [
+            {
+              "position": 1,
+              "name": "minimum_encounter_percent",
+              "wire_type": "decimal_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 2,
+              "name": "maximum_encounter_percent",
+              "wire_type": "decimal_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            }
+          ],
+          "visual_field_binding": null,
+          "visual_binding_evidence": "OPEN"
+        },
+        {
+          "schema_record": "world_character_record",
+          "transport": {
+            "protocol": "C",
+            "callback_rva": "0x31260",
+            "envelope_separator": ","
+          },
+          "field_count": 12,
+          "full_record_only": true,
+          "fields": [
+            {
+              "position": 1,
+              "name": "object_type",
+              "wire_type": "decimal_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 2,
+              "name": "runtime_object_id",
+              "wire_type": "base62_string_to_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 3,
+              "name": "x",
+              "wire_type": "decimal_string_to_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 4,
+              "name": "y",
+              "wire_type": "decimal_string_to_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 5,
+              "name": "direction",
+              "wire_type": "decimal_string_to_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 6,
+              "name": "base_graphic_id",
+              "wire_type": "decimal_string_to_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 7,
+              "name": "level",
+              "wire_type": "decimal_string_to_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 8,
+              "name": "name_color",
+              "wire_type": "decimal_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 9,
+              "name": "name",
+              "wire_type": "escaped_string",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 10,
+              "name": "self_or_free_title",
+              "wire_type": "escaped_string",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 11,
+              "name": "walkable",
+              "wire_type": "decimal_string_to_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 12,
+              "name": "height",
+              "wire_type": "decimal_string_to_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            }
+          ],
+          "visual_field_binding": null,
+          "visual_binding_evidence": "OPEN"
+        },
+        {
+          "schema_record": "world_ground_item_record",
+          "transport": {
+            "protocol": "C",
+            "callback_rva": "0x31260"
+          },
+          "field_count": 6,
+          "full_record_only": true,
+          "fields": [
+            {
+              "position": 1,
+              "name": "runtime_object_id",
+              "wire_type": "base62_string_to_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 2,
+              "name": "x",
+              "wire_type": "decimal_string_to_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 3,
+              "name": "y",
+              "wire_type": "decimal_string_to_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 4,
+              "name": "graphic_id",
+              "wire_type": "decimal_string_to_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 5,
+              "name": "class_or_type",
+              "wire_type": "decimal_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 6,
+              "name": "information",
+              "wire_type": "escaped_string",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            }
+          ],
+          "visual_field_binding": null,
+          "visual_binding_evidence": "OPEN"
+        },
+        {
+          "schema_record": "world_ground_money_record",
+          "transport": {
+            "protocol": "C",
+            "callback_rva": "0x31260"
+          },
+          "field_count": 4,
+          "full_record_only": true,
+          "fields": [
+            {
+              "position": 1,
+              "name": "runtime_object_id",
+              "wire_type": "base62_string_to_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 2,
+              "name": "x",
+              "wire_type": "decimal_string_to_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 3,
+              "name": "y",
+              "wire_type": "decimal_string_to_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 4,
+              "name": "money_amount",
+              "wire_type": "decimal_string_to_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            }
+          ],
+          "visual_field_binding": null,
+          "visual_binding_evidence": "OPEN"
+        }
+      ],
+      "envelopes": [
+        {
+          "group": "field",
+          "direction": "send",
+          "message": "M",
+          "int_fields": 5,
+          "string_fields": 0,
+          "compiled_region_rva": "0x18c95",
+          "proof": "V1_DIRECT_ENVELOPE_ONLY",
+          "render_command_proven": false
+        },
+        {
+          "group": "field",
+          "direction": "recv",
+          "message": "M",
+          "int_fields": 5,
+          "string_fields": 1,
+          "compiled_region_rva": "0x19f54",
+          "proof": "V1_DIRECT_ENVELOPE_ONLY",
+          "render_command_proven": false
+        },
+        {
+          "group": "field",
+          "direction": "recv",
+          "message": "MC",
+          "int_fields": 8,
+          "string_fields": 1,
+          "compiled_region_rva": "0x19e2e",
+          "proof": "V1_DIRECT_ENVELOPE_ONLY",
+          "render_command_proven": false
+        },
+        {
+          "group": "field",
+          "direction": "recv",
+          "message": "D",
+          "int_fields": 3,
+          "string_fields": 1,
+          "compiled_region_rva": "0x1a29f",
+          "proof": "V1_DIRECT_ENVELOPE_ONLY",
+          "render_command_proven": false
+        }
+      ],
+      "qualified_resources": [
+        "runtime M/MC map cache; no ordinary disc-resident field-map payload",
+        "REAL/ADRN graphic-address resource namespace (125996 IDs; not a verified screen-selection join)"
+      ],
+      "source_verified_semantics": "S:C/D/E branch RVAs and word widths; C character, ground-item and ground-money layouts; M/MC delivery",
+      "material_unresolved": "original scene draw order, tile render geometry, map-specific graphics/animation selection and server-provided actual map values",
+      "forbidden_inferences": "Never label recovered25 floor IDs or character/NPC census as Taiwan v1.0.",
+      "render_geometry": null,
+      "button_coordinates": null,
+      "verified_graphic_selection_map": null,
+      "status": "SOURCE_SHAPE_CROSSWALK_ONLY_VISUAL_BINDING_OPEN"
+    },
+    {
+      "id": "CHARACTER_STATUS_AND_HUD",
+      "transport_group": "character",
+      "historical_scope": "Taiwan Waei/JSS v1.0 accepted client",
+      "record_contracts": [
+        {
+          "schema_record": "status_player_full",
+          "transport": {
+            "protocol": "S",
+            "category": "P",
+            "callback_rva": "0x2f7f0"
+          },
+          "field_count": 26,
+          "full_record_only": true,
+          "fields": [
+            {
+              "position": 1,
+              "name": "update_mask",
+              "wire_type": "base62_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 2,
+              "name": "hp",
+              "wire_type": "decimal_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 3,
+              "name": "max_hp",
+              "wire_type": "decimal_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 4,
+              "name": "mp",
+              "wire_type": "decimal_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 5,
+              "name": "max_mp",
+              "wire_type": "decimal_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 6,
+              "name": "vital",
+              "wire_type": "decimal_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 7,
+              "name": "strength",
+              "wire_type": "decimal_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 8,
+              "name": "toughness",
+              "wire_type": "decimal_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 9,
+              "name": "dexterity",
+              "wire_type": "decimal_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 10,
+              "name": "exp",
+              "wire_type": "decimal_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 11,
+              "name": "max_exp",
+              "wire_type": "decimal_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 12,
+              "name": "level",
+              "wire_type": "decimal_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 13,
+              "name": "attack",
+              "wire_type": "decimal_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 14,
+              "name": "defense",
+              "wire_type": "decimal_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 15,
+              "name": "quick",
+              "wire_type": "decimal_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 16,
+              "name": "charm",
+              "wire_type": "decimal_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 17,
+              "name": "luck",
+              "wire_type": "decimal_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 18,
+              "name": "earth",
+              "wire_type": "decimal_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 19,
+              "name": "water",
+              "wire_type": "decimal_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 20,
+              "name": "fire",
+              "wire_type": "decimal_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 21,
+              "name": "wind",
+              "wire_type": "decimal_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 22,
+              "name": "gold",
+              "wire_type": "decimal_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 23,
+              "name": "title_or_index_state",
+              "wire_type": "decimal_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 24,
+              "name": "duel_point_like_state",
+              "wire_type": "decimal_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 25,
+              "name": "name",
+              "wire_type": "escaped_string",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 26,
+              "name": "free_name_or_title",
+              "wire_type": "escaped_string",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            }
+          ],
+          "visual_field_binding": null,
+          "visual_binding_evidence": "OPEN"
+        },
+        {
+          "schema_record": "status_compact_progress",
+          "transport": {
+            "protocol": "S",
+            "category": "M",
+            "callback_rva": "0x2fe2e"
+          },
+          "field_count": 3,
+          "full_record_only": true,
+          "fields": [
+            {
+              "position": 1,
+              "name": "hp",
+              "wire_type": "decimal_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 2,
+              "name": "mp",
+              "wire_type": "decimal_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 3,
+              "name": "exp",
+              "wire_type": "decimal_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            }
+          ],
+          "visual_field_binding": null,
+          "visual_binding_evidence": "OPEN"
+        },
+        {
+          "schema_record": "status_party_member",
+          "transport": {
+            "protocol": "S",
+            "category": "N",
+            "callback_rva": "0x305a4",
+            "slot_prefix": "N<digit>"
+          },
+          "field_count": 7,
+          "full_record_only": true,
+          "fields": [
+            {
+              "position": 1,
+              "name": "update_mask",
+              "wire_type": "base62_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 2,
+              "name": "runtime_character_id",
+              "wire_type": "decimal_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 3,
+              "name": "level",
+              "wire_type": "decimal_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 4,
+              "name": "max_hp",
+              "wire_type": "decimal_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 5,
+              "name": "hp",
+              "wire_type": "decimal_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 6,
+              "name": "mp",
+              "wire_type": "decimal_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 7,
+              "name": "name",
+              "wire_type": "escaped_string",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            }
+          ],
+          "visual_field_binding": null,
+          "visual_binding_evidence": "OPEN"
+        },
+        {
+          "schema_record": "status_magic_slot",
+          "transport": {
+            "protocol": "S",
+            "category": "J",
+            "callback_rva": "0x30445",
+            "slot_prefix": "J<digit>"
+          },
+          "field_count": 6,
+          "full_record_only": true,
+          "fields": [
+            {
+              "position": 1,
+              "name": "use_or_kind",
+              "wire_type": "decimal_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 2,
+              "name": "mp_cost",
+              "wire_type": "decimal_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 3,
+              "name": "field_context",
+              "wire_type": "decimal_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 4,
+              "name": "target_class",
+              "wire_type": "decimal_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 5,
+              "name": "name",
+              "wire_type": "escaped_string",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 6,
+              "name": "comment",
+              "wire_type": "escaped_string",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            }
+          ],
+          "visual_field_binding": null,
+          "visual_binding_evidence": "OPEN"
+        },
+        {
+          "schema_record": "character_creation",
+          "transport": {
+            "protocol": "CreateNewChar"
+          },
+          "field_count": 13,
+          "full_record_only": true,
+          "fields": [
+            {
+              "position": 1,
+              "name": "data_place_number",
+              "wire_type": "decoded_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 2,
+              "name": "name",
+              "wire_type": "decoded_string",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 3,
+              "name": "body_image_id",
+              "wire_type": "decoded_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 4,
+              "name": "face_image_id",
+              "wire_type": "decoded_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 5,
+              "name": "vital",
+              "wire_type": "decoded_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 6,
+              "name": "strength",
+              "wire_type": "decoded_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 7,
+              "name": "toughness",
+              "wire_type": "decoded_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 8,
+              "name": "dexterity",
+              "wire_type": "decoded_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 9,
+              "name": "earth",
+              "wire_type": "decoded_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 10,
+              "name": "water",
+              "wire_type": "decoded_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 11,
+              "name": "fire",
+              "wire_type": "decoded_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 12,
+              "name": "wind",
+              "wire_type": "decoded_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 13,
+              "name": "hometown",
+              "wire_type": "decoded_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            }
+          ],
+          "visual_field_binding": null,
+          "visual_binding_evidence": "OPEN"
+        }
+      ],
+      "envelopes": [],
+      "qualified_resources": [
+        "REAL/ADRN graphic-address namespace only; no demonstrated original HUD sprite binding"
+      ],
+      "source_verified_semantics": "S:P old full 26 tokens vs S:M compact 3 and S:N party; original CreateNewChar transport builder",
+      "material_unresolved": "precise control layout, visible indicators, field update-mask behavior, icon and font binding",
+      "forbidden_inferences": "No post-token-26 player ride/transmigration/base-graphic fields or modern experience-bar semantics.",
+      "render_geometry": null,
+      "button_coordinates": null,
+      "verified_graphic_selection_map": null,
+      "status": "SOURCE_SHAPE_CROSSWALK_ONLY_VISUAL_BINDING_OPEN"
+    },
+    {
+      "id": "INVENTORY_AND_ITEMS",
+      "transport_group": "inventory",
+      "historical_scope": "Taiwan Waei/JSS v1.0 accepted client",
+      "record_contracts": [
+        {
+          "schema_record": "inventory_full_slot",
+          "transport": {
+            "protocol": "S",
+            "category": "I",
+            "callback_rva": "0x30922"
+          },
+          "field_count": 9,
+          "full_record_only": true,
+          "fields": [
+            {
+              "position": 1,
+              "name": "name",
+              "wire_type": "escaped_string",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 2,
+              "name": "secondary_display_text",
+              "wire_type": "escaped_string",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 3,
+              "name": "color",
+              "wire_type": "decimal_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 4,
+              "name": "memo_or_effect_text",
+              "wire_type": "escaped_string",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 5,
+              "name": "graphic_id",
+              "wire_type": "decimal_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 6,
+              "name": "field_context",
+              "wire_type": "decimal_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 7,
+              "name": "target_class",
+              "wire_type": "decimal_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 8,
+              "name": "level",
+              "wire_type": "decimal_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 9,
+              "name": "send_or_use_flags",
+              "wire_type": "decimal_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            }
+          ],
+          "visual_field_binding": null,
+          "visual_binding_evidence": "OPEN"
+        },
+        {
+          "schema_record": "inventory_incremental_record",
+          "transport": {
+            "protocol": "I",
+            "callback_rva": "0x325f0"
+          },
+          "field_count": 10,
+          "full_record_only": true,
+          "fields": [
+            {
+              "position": 1,
+              "name": "inventory_slot",
+              "wire_type": "decimal_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 2,
+              "name": "name",
+              "wire_type": "escaped_string",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 3,
+              "name": "secondary_display_text",
+              "wire_type": "escaped_string",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 4,
+              "name": "color",
+              "wire_type": "decimal_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 5,
+              "name": "memo_or_effect_text",
+              "wire_type": "escaped_string",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 6,
+              "name": "graphic_id",
+              "wire_type": "decimal_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 7,
+              "name": "field_context",
+              "wire_type": "decimal_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 8,
+              "name": "target_class",
+              "wire_type": "decimal_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 9,
+              "name": "level",
+              "wire_type": "decimal_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 10,
+              "name": "send_or_use_flags",
+              "wire_type": "decimal_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            }
+          ],
+          "visual_field_binding": null,
+          "visual_binding_evidence": "OPEN"
+        }
+      ],
+      "envelopes": [
+        {
+          "group": "inventory",
+          "direction": "recv",
+          "message": "I",
+          "int_fields": 0,
+          "string_fields": 1,
+          "compiled_region_rva": "0x199de",
+          "proof": "V1_DIRECT_ENVELOPE_ONLY",
+          "render_command_proven": false
+        },
+        {
+          "group": "inventory",
+          "direction": "recv",
+          "message": "SI",
+          "int_fields": 2,
+          "string_fields": 0,
+          "compiled_region_rva": "0x19a5a",
+          "proof": "V1_DIRECT_ENVELOPE_ONLY",
+          "render_command_proven": false
+        }
+      ],
+      "qualified_resources": [
+        "S:I slot graphic_id appears in early semantic map; REAL/ADRN physical contents present but direct screen asset link OPEN"
+      ],
+      "source_verified_semantics": "S:I and I item shape; SI 2-int client receive envelope; original item graphic_id field positions",
+      "material_unresolved": "original item icon/draw selector, actual use/swap UI control or inventory slot coordinates, source NPC item content",
+      "forbidden_inferences": "No later durability/damage/pet-item fields, inferred shop stock or server economy from render layout.",
+      "render_geometry": null,
+      "button_coordinates": null,
+      "verified_graphic_selection_map": null,
+      "status": "SOURCE_SHAPE_CROSSWALK_ONLY_VISUAL_BINDING_OPEN"
+    },
+    {
+      "id": "PET_STATUS_SKILLS",
+      "transport_group": "pet",
+      "historical_scope": "Taiwan Waei/JSS v1.0 accepted client",
+      "record_contracts": [
+        {
+          "schema_record": "status_pet_full",
+          "transport": {
+            "protocol": "S",
+            "category": "K",
+            "callback_rva": "0x2fe94",
+            "slot_prefix": "K<digit>"
+          },
+          "field_count": 21,
+          "full_record_only": true,
+          "fields": [
+            {
+              "position": 1,
+              "name": "update_mask",
+              "wire_type": "base62_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 2,
+              "name": "graphic_id",
+              "wire_type": "decimal_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 3,
+              "name": "hp",
+              "wire_type": "decimal_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 4,
+              "name": "max_hp",
+              "wire_type": "decimal_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 5,
+              "name": "mp",
+              "wire_type": "decimal_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 6,
+              "name": "max_mp",
+              "wire_type": "decimal_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 7,
+              "name": "exp",
+              "wire_type": "decimal_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 8,
+              "name": "max_exp",
+              "wire_type": "decimal_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 9,
+              "name": "level",
+              "wire_type": "decimal_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 10,
+              "name": "attack",
+              "wire_type": "decimal_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 11,
+              "name": "defense",
+              "wire_type": "decimal_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 12,
+              "name": "quick",
+              "wire_type": "decimal_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 13,
+              "name": "ai",
+              "wire_type": "decimal_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 14,
+              "name": "earth",
+              "wire_type": "decimal_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 15,
+              "name": "water",
+              "wire_type": "decimal_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 16,
+              "name": "fire",
+              "wire_type": "decimal_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 17,
+              "name": "wind",
+              "wire_type": "decimal_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 18,
+              "name": "max_skill_slots",
+              "wire_type": "decimal_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 19,
+              "name": "rename_flag",
+              "wire_type": "decimal_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 20,
+              "name": "name",
+              "wire_type": "escaped_string",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 21,
+              "name": "free_name",
+              "wire_type": "escaped_string",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            }
+          ],
+          "visual_field_binding": null,
+          "visual_binding_evidence": "OPEN"
+        },
+        {
+          "schema_record": "pet_skill_view_slot",
+          "transport": {
+            "protocol": "S",
+            "category": "W",
+            "callback_rva": "0x30b4f",
+            "pet_slot_prefix": "W<digit>"
+          },
+          "field_count": 5,
+          "full_record_only": true,
+          "fields": [
+            {
+              "position": 1,
+              "name": "skill_id",
+              "wire_type": "decimal_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 2,
+              "name": "field_context",
+              "wire_type": "decimal_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 3,
+              "name": "target_class",
+              "wire_type": "decimal_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 4,
+              "name": "name",
+              "wire_type": "escaped_string",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 5,
+              "name": "comment",
+              "wire_type": "escaped_string",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            }
+          ],
+          "visual_field_binding": null,
+          "visual_binding_evidence": "OPEN"
+        }
+      ],
+      "envelopes": [
+        {
+          "group": "pet",
+          "direction": "send",
+          "message": "KS",
+          "int_fields": 1,
+          "string_fields": 0,
+          "compiled_region_rva": "0x18ef5",
+          "proof": "V1_DIRECT_ENVELOPE_ONLY",
+          "render_command_proven": false
+        },
+        {
+          "group": "pet",
+          "direction": "recv",
+          "message": "KS",
+          "int_fields": 2,
+          "string_fields": 0,
+          "compiled_region_rva": "0x1a494",
+          "proof": "V1_DIRECT_ENVELOPE_ONLY",
+          "render_command_proven": false
+        },
+        {
+          "group": "pet",
+          "direction": "send",
+          "message": "PS",
+          "int_fields": 3,
+          "string_fields": 1,
+          "compiled_region_rva": "0x19095",
+          "proof": "V1_DIRECT_ENVELOPE_ONLY",
+          "render_command_proven": false
+        },
+        {
+          "group": "pet",
+          "direction": "recv",
+          "message": "PS",
+          "int_fields": 4,
+          "string_fields": 0,
+          "compiled_region_rva": "0x1a50c",
+          "proof": "V1_DIRECT_ENVELOPE_ONLY",
+          "render_command_proven": false
+        }
+      ],
+      "qualified_resources": [
+        "SPR/SPRADRN 464-address-record animation surface and 39065 animations; no established pet-slot -> animation mapping",
+        "REAL/ADRN graphics namespace separate from animation"
+      ],
+      "source_verified_semantics": "S:K 21-field older pet record, S:W exactly seven slots/stride five; KS/PS request and result envelopes",
+      "material_unresolved": "actual pet window layout, selected-slot control callback, graphic_id to sprite/animation selection, full server skill-set provenance",
+      "forbidden_inferences": "No later pet ride/fusion/transmigration fields or automatic mapping of a recovered25 template to v1 pet ID.",
+      "render_geometry": null,
+      "button_coordinates": null,
+      "verified_graphic_selection_map": null,
+      "status": "SOURCE_SHAPE_CROSSWALK_ONLY_VISUAL_BINDING_OPEN"
+    },
+    {
+      "id": "BATTLE_AND_NPC_WINDOWS",
+      "transport_group": "battle",
+      "historical_scope": "Taiwan Waei/JSS v1.0 accepted client",
+      "record_contracts": [
+        {
+          "schema_record": "npc_window_session",
+          "transport": {
+            "protocol": "WN",
+            "callback_rva": "0x328c0",
+            "forward_target_rva": "0x12930"
+          },
+          "field_count": 5,
+          "full_record_only": true,
+          "fields": [
+            {
+              "position": 1,
+              "name": "window_type",
+              "wire_type": "decoded_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 2,
+              "name": "button_mask_or_type",
+              "wire_type": "decoded_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 3,
+              "name": "sequence_number",
+              "wire_type": "decoded_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 4,
+              "name": "source_object_index",
+              "wire_type": "decoded_int",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            },
+            {
+              "position": 5,
+              "name": "data",
+              "wire_type": "decoded_string",
+              "position_evidence": "V1_DIRECT",
+              "semantic_evidence": "EARLY_LINEAGE"
+            }
+          ],
+          "visual_field_binding": null,
+          "visual_binding_evidence": "OPEN"
+        }
+      ],
+      "envelopes": [
+        {
+          "group": "battle",
+          "direction": "recv",
+          "message": "B",
+          "int_fields": 0,
+          "string_fields": 1,
+          "compiled_region_rva": "0x19962",
+          "proof": "V1_DIRECT_ENVELOPE_ONLY",
+          "render_command_proven": false
+        },
+        {
+          "group": "battle",
+          "direction": "send",
+          "message": "WN",
+          "int_fields": 5,
+          "string_fields": 1,
+          "compiled_region_rva": "0x19265",
+          "proof": "V1_DIRECT_ENVELOPE_ONLY",
+          "render_command_proven": false
+        },
+        {
+          "group": "battle",
+          "direction": "recv",
+          "message": "WN",
+          "int_fields": 4,
+          "string_fields": 1,
+          "compiled_region_rva": "0x1a60d",
+          "proof": "V1_DIRECT_ENVELOPE_ONLY",
+          "render_command_proven": false
+        },
+        {
+          "group": "battle",
+          "direction": "recv",
+          "message": "PME",
+          "int_fields": 7,
+          "string_fields": 1,
+          "compiled_region_rva": "0x19b73",
+          "proof": "V1_DIRECT_ENVELOPE_ONLY",
+          "render_command_proven": false
+        }
+      ],
+      "qualified_resources": [
+        "218 indexed battle SAB layouts",
+        "15 indexed battle palettes (plus separate unindexed Palet_0.sap)",
+        "114 indexed sound records, 116 loose SFX and 11 BGM are separate namespaces; no command-to-audio binding verified"
+      ],
+      "source_verified_semantics": "Original B second-byte C/P/A/U/default branch and 4x4096-byte distinct status/command rings; WN request/response arities and five-field presentation data",
+      "material_unresolved": "battle-map selector/actual scene frame draw logic; original battle command-to-animation mapping; NPC window button, message, script and original quest response semantics",
+      "forbidden_inferences": "Do not equate 233 indexed battle records with 233 maps, or treat descendant Windowman takeitem/giveitem/warp as original UI.",
+      "render_geometry": null,
+      "button_coordinates": null,
+      "verified_graphic_selection_map": null,
+      "status": "SOURCE_SHAPE_CROSSWALK_ONLY_VISUAL_BINDING_OPEN"
+    }
+  ],
+  "battle_receive": {
+    "protocol": "B",
+    "callback_rva": "0x32c70",
+    "second_byte_offset": 1,
+    "branches": {
+      "C": {
+        "direct_behavior": "copy_full_command_to_status_ring",
+        "behavior_evidence": "V1_DIRECT",
+        "parser_format": null,
+        "parsed_outputs": null,
+        "queue_slots": 4,
+        "queue_slot_bytes": 4096,
+        "semantic_name": "battle_status_queue",
+        "semantic_evidence": "EARLY_LINEAGE"
+      },
+      "P": {
+        "direct_behavior": "parse_three_outputs_from_command_plus_3",
+        "behavior_evidence": "V1_DIRECT",
+        "parser_format": "%X|%X|%X",
+        "parsed_outputs": 3,
+        "queue_slots": null,
+        "queue_slot_bytes": null,
+        "semantic_name": null,
+        "semantic_evidence": "EARLY_LINEAGE"
+      },
+      "A": {
+        "direct_behavior": "parse_two_outputs_from_command_plus_3_then_conditionally_sync_second_output_and_clear_receive_flag",
+        "behavior_evidence": "V1_DIRECT",
+        "parser_format": "%X|%X",
+        "parsed_outputs": 2,
+        "queue_slots": null,
+        "queue_slot_bytes": null,
+        "semantic_name": null,
+        "semantic_evidence": null
+      },
+      "U": {
+        "direct_behavior": "set_global_flag_to_1",
+        "behavior_evidence": "V1_DIRECT",
+        "parser_format": null,
+        "parsed_outputs": null,
+        "queue_slots": null,
+        "queue_slot_bytes": null,
+        "semantic_name": "battle_escape_flag",
+        "semantic_evidence": "EARLY_LINEAGE"
+      },
+      "default": {
+        "direct_behavior": "copy_full_command_to_battle_command_ring",
+        "behavior_evidence": "V1_DIRECT",
+        "parser_format": null,
+        "parsed_outputs": null,
+        "queue_slots": 4,
+        "queue_slot_bytes": 4096,
+        "semantic_name": "battle_command_queue",
+        "semantic_evidence": "EARLY_LINEAGE"
+      }
+    },
+    "visual_sequence_binding": null
+  },
+  "qualified_resource_counts": {
+    "battle_scene_address_entries": 218,
+    "battle_indexed_palettes": 15,
+    "battle_unindexed_palettes": 1,
+    "bitmap_address_records": 125996,
+    "animation_address_records": 464,
+    "animation_count": 39065,
+    "animation_frame_count": 242085,
+    "indexed_sfx": 114,
+    "loose_sfx": 116,
+    "bgm_files": 11
+  },
+  "unknowns": [
+    "No proven per-packet -> visible UI control, button coordinates or resource selection in compiled v1",
+    "S:P/Pet S:K full-update mask semantics not automatically implemented by this crosswalk",
+    "S:W is seven records but not proof which original screen opens each record",
+    "Exact server-driven map/field content is not on the accepted retail disc",
+    "The early generated lineage supplies field-name semantics; semantics are not independently compiled source symbol labels",
+    "Original 1999 Japanese game screens, v1 retail NPC quests and original commercial server state remain version OPEN"
+  ],
+  "reopen_if": [
+    "Obtain original v1 client callback/asset selector xrefs that tie a named numeric state field to a REAL/ADRN or SPR/SPRADRN resource ID",
+    "Obtain dated version-attested v1 screenshot/manual showing matching wire-state-driven controls plus corroborated resource mapping",
+    "Obtain original map/NPC/window server payload and an independent v1 client consume/render trace"
+  ],
+  "next_highest": "UI-RESOURCE-BIND-01",
+  "next_scope": "Finite original-v1 pet graphic_id and battle SAB selection proof search (two binding families max); stop at a named byte/trace evidence gap, do not expand arbitrary R79 helpers."
+}
