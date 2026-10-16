@@ -102,3 +102,43 @@ jobs:
           assert sorted(selected-found)==d['selected_missing_decoded_sites'] and len(selected-found)==11
           print('R73_REFRESHED_144_REPORT_CENSUS=PASS')
           PY
+      - name: Independently replay retained-first helper preflight without declaring known entry absent
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json,hashlib
+          from pathlib import Path
+          p=Path('research/recovered/STONEAGE-TW10-SAVEDATA-R75-PREFLIGHT.json');raw=p.read_bytes()
+          assert hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest()=='73d192eec12cd31e67b5b0fc298ab4c3bdb53189'
+          d=json.loads(raw);assert d['source_head']=='fb7cb654c1c702cb2400bcf224f60fdcff52e18a' and d['report_count']==len(d['registered_reports'])==148
+          g=d['retained_r46_helper_graph'];nodes=set(g['bounded_node_rvas']);covered=set();entry={313185:[],313683:[]}
+          assert len(nodes)==51 and len(g['bounded_edges'])==55 and g['root_rva']==313185
+          paths=[r['path']for r in d['registered_reports']];assert paths==sorted(set(paths))
+          for r in d['registered_reports']:
+              f=Path(r['path']);assert f.parent==Path('research/recovered') and f.name.startswith('STONEAGE-TW10-SAVEDATA-') and f.suffix=='.json'
+              raw=f.read_bytes();assert len(raw)==r['bytes'] and hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest()==r['git_blob']
+              pending=[json.loads(raw)]
+              while pending:
+                  x=pending.pop()
+                  if isinstance(x,list):pending.extend(x)
+                  elif isinstance(x,dict):
+                      if isinstance(x.get('mnemonic'),str)and x['mnemonic']and any(isinstance(x.get(k),list)for k in d['operand_array_keys']):
+                          for k in d['entry_address_keys']:
+                              n=x.get(k)
+                              if type(n)is not int:
+                                  try:n=int(n,0)if isinstance(n,str)else None
+                                  except ValueError:n=None
+                              if n is not None:
+                                  n=n-4194304 if n>=4194304 else n
+                                  if n in nodes:covered.add(n)
+                                  if n in entry:entry[n].append(r['path'])
+                      pending.extend(x.values())
+          assert sorted(covered)==g['decoded_nodes'] and len(covered)==3
+          assert sorted(nodes-covered)==g['missing_decoded_nodes'] and len(nodes-covered)==48
+          assert entry[313185]==['research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-IO-R46-ORIGINAL.json'] and entry[313683]==[]
+          r46=json.load(open(g['source_path']))['write_helper_context']
+          assert r46['bounded_node_rvas']==g['bounded_node_rvas'] and r46['bounded_edges']==g['bounded_edges']
+          assert g['entry_mov_eax_esp_plus4_already_retained']is True and g['true_executed_entry_or_frame_preservation_proven']is False
+          assert d['absence_bounded_to_registered_representations']is True and d['actual_callee_preservation_or_persistence_proven']is False
+          print('R75_RETAINED_HELPER_ENTRY_R46_GRAPH_AND_148_REPORT_CENSUS=PASS')
+          PY

@@ -1,0 +1,199 @@
+{
+  "boundaries": {
+    "actual_abi_frame_register_memory_preservation_proven": false,
+    "actual_close_flush_disk_persistence_proven": false,
+    "actual_native_bool_count_position_or_success_proven": false,
+    "actual_path_predicates_or_return_values_proven": false,
+    "complete_original_execution_or_callee_graph_claimed": false,
+    "historical_mode_flag_or_os_error_names_proven": false,
+    "original_savedata_schema_checksum_migration_server_authority_proven": false,
+    "same_table_snapshot_across_optional_call_proven": false,
+    "stage_a_families": "PARTIAL/OPEN",
+    "stage_b_started": false
+  },
+  "date": "2026-10-16",
+  "historical_prefixes": {
+    "docs/CURRENT-STATE.md": {
+      "prefix_bytes": 1769267,
+      "prefix_git_blob": "f7d71aa2c95e8ad08f6940b0db01f530a6118e91",
+      "prefix_sha256": "f10c4ea36294fa6309d8cd2c94417cb42c9db1b66e5473d0ba59b61636d49074"
+    },
+    "docs/HISTORICAL-TIMELINE.md": {
+      "prefix_bytes": 407175,
+      "prefix_git_blob": "06e82987b9bafb1a90f11833817fb665062cafdd",
+      "prefix_sha256": "4f1addb6f1603e3dbcffc45cd018b70fd9e5efc46e414203c3963f106703be8b"
+    },
+    "docs/RESTORATION-PHASE-GATE-R1.md": {
+      "prefix_bytes": 58269,
+      "prefix_git_blob": "2f9caa7dfc43437fa0bcdb564a20d2ca6580889f",
+      "prefix_sha256": "14c4a440a48971827505c707ad92c46e2e5641c6c2d202bc9983e32f10937e57"
+    },
+    "docs/SOURCE-REGISTRY.md": {
+      "prefix_bytes": 635379,
+      "prefix_git_blob": "21be72ab920202585b10797c3f6882618e14a888",
+      "prefix_sha256": "ff1c42d97f3dfdcc0c0d3b425acacc4dd4b4f223949c4f7aad659e9d9ff9d8a6"
+    }
+  },
+  "legacy_queued_run_disposition": "docs/continuity/STONEAGE-STALE-QUEUED-RUN-AUDIT-20261016.json",
+  "next": "R75 first reuse R46/R37 helper0x4c761 entry/51-node55-edge graph/native seek context and target only material missing caller-visible effects;0x4c953 only as needed for error-route effects.",
+  "next_preflight": {
+    "absence_bounded_to_registered_representations": true,
+    "git_blob": "73d192eec12cd31e67b5b0fc298ab4c3bdb53189",
+    "path": "research/recovered/STONEAGE-TW10-SAVEDATA-R75-PREFLIGHT.json",
+    "r46_entry_already_retained": true,
+    "r46_graph_edges": 55,
+    "r46_graph_nodes": 51,
+    "r46_helper_root": 313185,
+    "r46_missing_registered_nodes": 48,
+    "r46_registered_decoded_nodes": 3,
+    "raw_bytes": 45429,
+    "raw_sha256": "5714dd8d57d811b0979e4faf881aec27c1676b42a9c096ea7ee14bc9090945dd",
+    "reports": 148,
+    "second_helper_boundary_already_retained": true,
+    "second_helper_decoded_entry_present": false,
+    "second_helper_root": 313683,
+    "source_head": "fb7cb654c1c702cb2400bcf224f60fdcff52e18a"
+  },
+  "r73": {
+    "conclusion": "success",
+    "focus_nodes": 11,
+    "independent_head": "fb7cb654c1c702cb2400bcf224f60fdcff52e18a",
+    "independent_job": 116924313812,
+    "independent_run": 38886167422,
+    "live_expired_unavailable_custody_script_modes": "PASS; invented API-shaped fixtures only",
+    "one_hop_rows": 17,
+    "preflight_git_blob": "2e93328203526d465cfa0af22a0defcc0f3b9b21",
+    "preflight_reports": 144,
+    "previously_missing_rows": 11
+  },
+  "r74": {
+    "bounded_graph_edges": 156,
+    "bounded_graph_nodes": 139,
+    "canonical_path": "research/recovered/STONEAGE-TW10-SAVEDATA-R74-MODES-BARRIERS-DERIVED.json",
+    "conclusion": "success",
+    "decoded_graph_nodes": 139,
+    "each_of_four_invented_combinations": 16384,
+    "git_blob": "a29a6a9b38a86d2f33d9e327d73c9d08cc3fb5ad",
+    "independent_head": "fb7cb654c1c702cb2400bcf224f60fdcff52e18a",
+    "independent_job": 116924333046,
+    "independent_register_source_queries": 8,
+    "independent_run": 38886173283,
+    "invented_snapshot_comparisons": 65536,
+    "missing_operand_nodes": [],
+    "opaque_calls": 6,
+    "raw_bytes": 7076,
+    "raw_sha256": "cc7b48b139f64a502eb26bc45fbd5754b1bba202484447b625e5f34a28c32c25"
+  },
+  "schema": "tw10-r73-r74-bounded-acceptance-r1",
+  "source": {
+    "archive_commit": "66aecba275ba79000ea507a56829ac925689336b",
+    "archive_job": 116921595146,
+    "archive_tree": "960533250e259855e2a232980bbe0c3b8378fbc4",
+    "artifact_id": 12039068385,
+    "artifact_zip_bytes": 2915,
+    "artifact_zip_sha256": "7005037bf04b1ff034b12996dd4fae4dd1c4d37750c7d0bfe808ed01a93b974e",
+    "canonical_git_blob": "2a90bf654a723da53f7d6a26008ca660cb89b290",
+    "conclusion": "success",
+    "head": "63d604b52c9c8c8c945ace6f74e391fdda7f158e",
+    "independent_local_zip_raw_permanent_equality": true,
+    "original_program_or_payload_executed": false,
+    "original_proprietary_bytes_archived": false,
+    "original_static_job": 116921375490,
+    "raw_bytes": 14043,
+    "raw_sha256": "5cf096089f60f8a6afd80fe2923f214f609ac57a92ab3d9d02aeefb04248013d",
+    "run": 38885251848,
+    "synthetic_job": 116921312445
+  },
+  "startup": {
+    "head": "39fff10d75ace74908889eed38d4bd4495fdc3f5",
+    "in_progress_actions": 0,
+    "queued_historical_actions": [
+      37642417333
+    ],
+    "remote_branches": 271,
+    "tree": "be65250cfca3a3260b28fa504803e29108e28aac"
+  },
+  "validation": {
+    "accepted_code_head": "fb7cb654c1c702cb2400bcf224f60fdcff52e18a",
+    "accepted_code_tree": "973843e1a865e949614b49033c92a87d6127e735",
+    "local_savedata_tests": 192,
+    "main_code_runs": [
+      {
+        "conclusion": "success",
+        "head": "fb7cb654c1c702cb2400bcf224f60fdcff52e18a",
+        "jobs": [
+          {
+            "conclusion": "success",
+            "id": 116924587908
+          }
+        ],
+        "name": "Independently verify TW1.0 R72 conditional byte expansion and count units",
+        "run": 38886250160
+      },
+      {
+        "conclusion": "success",
+        "head": "fb7cb654c1c702cb2400bcf224f60fdcff52e18a",
+        "jobs": [
+          {
+            "conclusion": "success",
+            "id": 116924587698
+          }
+        ],
+        "name": "Independently verify TW1.0 R74 complete bounded operands and opaque-call barriers",
+        "run": 38886250149
+      },
+      {
+        "conclusion": "success",
+        "head": "fb7cb654c1c702cb2400bcf224f60fdcff52e18a",
+        "jobs": [
+          {
+            "conclusion": "success",
+            "id": 116924586517
+          }
+        ],
+        "name": "Independently accept TW1.0 R69 original early-return artifact and permanent static report",
+        "run": 38886249630
+      },
+      {
+        "conclusion": "success",
+        "head": "fb7cb654c1c702cb2400bcf224f60fdcff52e18a",
+        "jobs": [
+          {
+            "conclusion": "success",
+            "id": 116924586391
+          }
+        ],
+        "name": "Independently accept TW1.0 R73 original mode/direct-count artifact and permanent static report",
+        "run": 38886249532
+      },
+      {
+        "conclusion": "success",
+        "head": "fb7cb654c1c702cb2400bcf224f60fdcff52e18a",
+        "jobs": [
+          {
+            "conclusion": "success",
+            "id": 116924588449
+          }
+        ],
+        "name": "Independently accept TW1.0 R71 original adjustment-loop artifact and permanent static report",
+        "run": 38886250164
+      },
+      {
+        "conclusion": "success",
+        "head": "fb7cb654c1c702cb2400bcf224f60fdcff52e18a",
+        "jobs": [
+          {
+            "conclusion": "success",
+            "id": 116924585266
+          }
+        ],
+        "name": "Verify TW1.0 R70 three conditional return shapes and invented arithmetic",
+        "run": 38886249326
+      }
+    ],
+    "nonforced_expected_head_fastforward": true,
+    "r73_remote_suite_tests": 44,
+    "r74_remote_suite_tests": 146,
+    "separate_legacy_oracle_tests": 1
+  }
+}
