@@ -6815,3 +6815,15 @@ It does not change RULES-01/Stage A family status PARTIAL/OPEN.
 - Independent CI Action38922063102, job117044218968 SUCCESS: five adversarial tests including source pin exact Git object identity, denial of stage promotion, four version-qualified hometown path consistency, blockers and R79 non-blocking status.
 - Does not prove: original server save/durability, commercial original quest text/rew ards, exact original EXP/capture state, original UI render selectors, universal model outcomes or overall completion percentage.
 - Reopen: authenticated same-era content/trace or concrete representative-playflow contradiction. Historical savedata R79 stays PAUSED_NON_BLOCKING.
+
+
+### SRC-STAGE-A-CONSOLIDATED-REVIEW-R1 — 2026-10-16
+
+- Type: user-facing derived portfolio review, not a new original historical artifact.
+- Baseline: main0d1311e19a090b59d6938b034a2b7f987635f148, tree3ef6275e741a5703176acd7d71888e4474346c0e.
+- Narrative: docs/STAGE-A-CONSOLIDATED-REVIEW-R1.md; permanent manifest: research/recovered/STONEAGE-STAGE-A-CONSOLIDATED-REVIEW-R1.json.
+- Custody:54 pre-existing source/report/spec/test Git blob, byte-count and SHA256 anchors;8 complete continuity-prefix hashes. Source entry points include player/pet growth, skills, use/equip/shop/trade/storage, riding, audio and current coordinator.
+- Scope: nine unchanged family gates, seven representative flows, five original-evidence blockers/reopen conditions.11 replay groups distinguish retained source audits from modern synthetic reference execution and source-shape projection.
+- Local acceptance:314 selected pre-existing checks and5 new scope/custody/omission-rejection checks PASS. Remote acceptance is separately recorded after actual success.
+- Does not prove: any new early map/quest/master/server payload, original commercial service gameplay, exact early riding/trade chronology, original rendering or original SAAC durability. No original assets or source payloads committed.
+- Joint review remains pending; Stage A not accepted, Stage B GATED; ordinary continuation stays within Stage A and only materially useful bounded evidence recovery.

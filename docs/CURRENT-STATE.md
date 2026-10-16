@@ -14507,3 +14507,40 @@ start new-engine/visual art production before Stage A review.
 独立审查分支代码HEAD `785524806ee3ddc37826614f7916123f37d9b3d3`, tree `a85d2633ade6791690594d376a5251301fe4d0c0`；GitHub Actions38922063102/job117044218968 SUCCESS，5条新测试核验10份不可变源Git blob/字节身份、九族不冒进、4条旧路线/24格、7条玩家链及否证/重开条件。结果表 `research/recovered/STONEAGE-STAGE-A-BLOCKER-TRIAGE-R1.json`，说明 `docs/STAGE-A-REVIEW-BLOCKER-TRIAGE-R1.md`，验收 `research/recovered/STONEAGE-STAGE-A-BLOCKER-TRIAGE-ACCEPTANCE-R1.json`。
 
 **Highest NEXT STAGE-A-CONSOLIDATED-REVIEW-PACKET-01**：在同一份报告中完成九族「已经复原的规格、可用参考情景、缺原始商服内容、封闭范围/重开条件、历史版权/设计限制」联合审阅包，随后向用户单独发起正式复原审阅。不选择新引擎或开始新游戏制作。R79按协议继续暂停。
+
+
+## 2026-10-16 — STAGE-A-CONSOLIDATED-REVIEW-PACKET-01 用户联合复原审阅包
+
+Startup freshly verified main0d1311e19a090b59d6938b034a2b7f987635f148 / tree
+3ef6275e741a5703176acd7d71888e4474346c0e, all295 remote branches, four latest
+main Actions SUCCESS, no in-progress Actions. Historical queued37642417333 at
+73c45041b9ef2519ba4575471e9d374dff169fd4 remains separate, neither cancelled
+nor treated as current acceptance. Complete1824235-byte CURRENT-STATE prefix
+SHA256ac21f7e2e0ad7c3c0527853ab5a6cad787e188dd4276ac36fa60599bff313307
+and seven other continuity-file prefixes are preserved. No old-chat SHA used.
+
+交付 docs/STAGE-A-CONSOLIDATED-REVIEW-R1.md 和
+research/recovered/STONEAGE-STAGE-A-CONSOLIDATED-REVIEW-R1.json：九族逐项
+列出已有规格、来源版本、可用参考场景、初代原始内容缺失与重开条件；
+七条代表体验、五个阻塞沿用已接受triage的精确范围。补充原有成长、
+宠物技能、装备、商店、交易、存放、骑宠、音频入口，不将后代功能认作
+初代。技能15回调共同子集不是全部技能或原版拥有证明；骑宠年代/显示
+仍有边界，交易注释2001不能上推1999。旧结算规格的历史限制不能覆盖
+后续显式输入成长验证。没有新增原始NPC/任务/地图/商业存档或原美术。
+
+工具 tools/stoneage_stage_a_review_packet.py 校验54个不可变来源fingerprint、
+9族/7链/5阻塞和8个连续性历史前缀；--replay以11组运行选定的现存测试，
+明确分开DERIVED_EVIDENCE_AUDIT、SYNTHETIC_REFERENCE_MODEL、
+SOURCE_SHAPE_AND_SYNTHETIC_PROJECTION。本地314项既有检查+5项新边界
+检查通过；计数不代表全量测试、全图重跑、原版商业服务器执行或进度比例。
+工作流 .github/workflows/validate-stoneage-stage-a-review-packet.yml
+正在提交独立远端验收；结果及精确HEAD/tree/job随后追加永久receipt。
+
+**Highest NEXT STAGE-A-JOINT-REVIEW-01**：正式向用户呈交上述审阅包。
+用户尚未审阅，stage_a_accepted=false，joint_user_review_completed=false；
+九族仍7 PARTIAL+2 OPEN，Stage B GATED，R79 PAUSED_NON_BLOCKING。
+普通“继续”不代表同意启动新作；仍按Stage A处理，可选有限
+EARLY-CONTENT-RECOVERY-01：同代地图缓存、NPC/任务和商品/奖赏数字线索
+的版本/可获取性/可补字段审查。先复用来源账本，没有新实质证据则停止，
+不虚构内容、不重做全量地图/NPC、不重开任意helper。共同决定阶段收束
+之前不启动新引擎、美术、剧情和生产架构。

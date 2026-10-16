@@ -1,0 +1,22 @@
+name: Validate StoneAge consolidated Stage A review packet
+on:
+  push:
+    paths:
+      - 'docs/STAGE-A-CONSOLIDATED-REVIEW-R1.md'
+      - 'research/recovered/STONEAGE-STAGE-A-CONSOLIDATED-REVIEW*.json'
+      - 'tools/stoneage_stage_a_review_packet.py'
+      - 'tests/test_stoneage_stage_a_review_packet.py'
+      - '.github/workflows/validate-stoneage-stage-a-review-packet.yml'
+  workflow_dispatch:
+jobs:
+  bounded-review-and-reference-replay:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Reject evidence loss and historical scope promotion
+        run: python -m unittest tests.test_stoneage_stage_a_review_packet -v
+      - name: Check source custody and replay the named existing suites
+        run: python tools/stoneage_stage_a_review_packet.py --replay

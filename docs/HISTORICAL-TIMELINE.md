@@ -3313,3 +3313,16 @@ Wild-enemy EXP is not copied, and kill reward_exp is not pet EXP. Complete
 state construction remains OPEN with explicit inputs. Source/carrier table:
 docs/specs/STONEAGE-CAPTURE-STATE-SOURCES-R1.md. NextWORLD-01; R79 paused;
 no Stage A family closure or Stage B promotion.
+
+
+## 2026-10-16 — Consolidated restoration review, no new historical content claim
+
+The Stage A review packet joins existing nine-family specifications, seven
+source-qualified playflows and five evidence blockers. Explicitly includes
+later skill/equipment/trade/storage/riding and original audio entry points
+without transferring their version membership.54 source pins and8 complete
+continuity prefixes are preserved. Selective replay checks modern/reference
+behavior and retained source custody, not original commercial server execution.
+No new early NPC/quest/map/master/save payload acquired; all family gates
+remain PARTIAL/OPEN and Stage B GATED pending joint user review.
+See docs/STAGE-A-CONSOLIDATED-REVIEW-R1.md.

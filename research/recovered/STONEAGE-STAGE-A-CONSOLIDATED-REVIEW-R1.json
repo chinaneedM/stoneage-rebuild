@@ -1,0 +1,902 @@
+{
+  "schema": "stoneage.stage_a.consolidated_review.r1",
+  "date": "2026-10-16",
+  "base_main_head": "0d1311e19a090b59d6938b034a2b7f987635f148",
+  "base_main_tree": "3ef6275e741a5703176acd7d71888e4474346c0e",
+  "status": "READY_FOR_JOINT_REVIEW_NOT_STAGE_A_ACCEPTANCE",
+  "review_document": "docs/STAGE-A-CONSOLIDATED-REVIEW-R1.md",
+  "stage_a_accepted": false,
+  "joint_user_review_completed": false,
+  "stage_b_started": false,
+  "stage_b_gate": "GATED",
+  "new_original_server_content": false,
+  "original_playthrough_certified": false,
+  "historical_restoration_percentage": null,
+  "savedata_r79": "PAUSED_NON_BLOCKING",
+  "source_pins": {
+    "triage": {
+      "path": "research/recovered/STONEAGE-STAGE-A-BLOCKER-TRIAGE-R1.json",
+      "bytes": 13107,
+      "sha256": "b28e3359d633bf5d9285eea6ddb5d1f70e1c972c34eec6a1d9c17aa0adcd27f3",
+      "git_blob": "84811f2e49c2cf48477439b504bb529b7e4318aa"
+    },
+    "triage_receipt": {
+      "path": "research/recovered/STONEAGE-STAGE-A-BLOCKER-TRIAGE-ACCEPTANCE-R1.json",
+      "bytes": 1706,
+      "sha256": "0fcc74324afb750a3eb123aa1c95258d9501205566e3a028c0f45c6a2649a2fb",
+      "git_blob": "22391ac0bd4e6005b306aad1693bbf310c814a5d"
+    },
+    "portfolio": {
+      "path": "research/recovered/STONEAGE-RESTORATION-PORTFOLIO-R1.json",
+      "bytes": 16371,
+      "sha256": "7081086081892195f9f63954ae8866db57accbd5b93024255e9a9d993e7f7696",
+      "git_blob": "696be2bdc360e066abe92f95255b912eae3e90de"
+    },
+    "foundation": {
+      "path": "research/clients/STONEAGE-TW10-FOUNDATION-BASELINE-ACCEPTANCE-R1.md",
+      "bytes": 9493,
+      "sha256": "eada01b2293b40ff7221ed8673c12ea945d224a1212af5f94d829243352c2e5e",
+      "git_blob": "07267e55aabd181c574be7b5d3bd88402d766f11"
+    },
+    "client_boundary": {
+      "path": "research/clients/STONEAGE-TW10-CLIENT-DATA-BOUNDARY-R1.md",
+      "bytes": 6780,
+      "sha256": "b57e409bcf431ed47105b084742e655a74f5e04504dfee9a18a934d1e57ef80e",
+      "git_blob": "11e2b77bce2febfef37c3a0c87dec878a6f289ee"
+    },
+    "schema": {
+      "path": "research/clients/STONEAGE-TW10-GAMEPLAY-SCHEMA-R1.json",
+      "bytes": 36469,
+      "sha256": "6e6f1bf51c8252259901b9fdf7b752a2d9a1b9b633829a737636c56bb6ef3a40",
+      "git_blob": "e39a3a6020b578da017ab0bfa9369dc083e0b700"
+    },
+    "world": {
+      "path": "research/recovered/STONEAGE-WORLD01-FOUR-HOMETOWN-ACCEPTANCE-R1.json",
+      "bytes": 36216,
+      "sha256": "f1ade0f0b6b0a8b45907210501f4c4ad8e2cbd33f8624744795862043e77d713",
+      "git_blob": "5b7abe7e05bd6c9074c556cb4cf105d371bfa26e"
+    },
+    "world_spec": {
+      "path": "docs/specs/STONEAGE-WORLD01-FOUR-HOMETOWN-REVIEW-R1.md",
+      "bytes": 6344,
+      "sha256": "60959ff6ca119cf3cba5892ec17368da38fc235797a5f17580171b8a613a00a0",
+      "git_blob": "ed02eab8cc280bca25c3c2dfc0a706bb35a5be7b"
+    },
+    "capture": {
+      "path": "research/recovered/STONEAGE-CAPTURE-STATE-SOURCE-AUDIT-R1.json",
+      "bytes": 4418,
+      "sha256": "0372e169ce21eff18a46af6d5c899a696480cc56f3eb6e89e4e06155f0dc09b3",
+      "git_blob": "728bd8b00b9737285b1940e29da3b168cff18e56"
+    },
+    "capture_spec": {
+      "path": "docs/specs/STONEAGE-CAPTURE-STATE-SOURCES-R1.md",
+      "bytes": 5190,
+      "sha256": "189403b4c9db644d5927b2c45117c9349c7bba15299486e2381012fc2d12d099",
+      "git_blob": "854b863ffe31babc64cb64e72c7eba1a967e2a43"
+    },
+    "battle": {
+      "path": "research/mechanics/STONEAGE-ORDINARY-BATTLE-ROUND-R1.md",
+      "bytes": 13614,
+      "sha256": "04f12fe0e7d6172a8292ab9f83dc4ab5598e9068d8838ffd21a5d238c3fea8e1",
+      "git_blob": "f1ff84f3bbf99a0a5a973981f4ec86f777dc6eb0"
+    },
+    "settlement": {
+      "path": "research/mechanics/STONEAGE-BATTLE-SETTLEMENT-R1.md",
+      "bytes": 4173,
+      "sha256": "0f2e33eb51ed00522b41f8a9aee103fcf4b935c9646fa0357b7674b196ccf80e",
+      "git_blob": "007837d60ba86bb83d83c797bf700e5a21dd5491"
+    },
+    "rules": {
+      "path": "research/recovered/STONEAGE-RULES01-CROSSSYSTEM-PREFLIGHT-R1.json",
+      "bytes": 10295,
+      "sha256": "0b2486424171bedce0843d2814eaedf642941ffe387b6c2f2046e36c3f38c0a6",
+      "git_blob": "d5990b2b617f586403e8c881ed900b5c58fbf5be"
+    },
+    "item_gate": {
+      "path": "docs/specs/STONEAGE-RULES01-OWNED-ITEM-GATE-REFERENCE-R1.md",
+      "bytes": 6764,
+      "sha256": "e4ad75e1cc02a57ff5b7bcff1622283df52fa81debc607ef594d13c7da4d4c2c",
+      "git_blob": "4fbe5cb5613321165132a2e38ce034c6697d1b7e"
+    },
+    "coordinator_receipt": {
+      "path": "research/recovered/STONEAGE-RULES01-COORDINATOR-GATE-RELOAD-ACCEPTANCE-R1.json",
+      "bytes": 3916,
+      "sha256": "f861f56fea7c04dd8e151a732effc90e54dfb4bfa9386f839428f0543ead5cb0",
+      "git_blob": "027df051030a7deaea93a516e7f6821938a321f7"
+    },
+    "award": {
+      "path": "research/recovered/STONEAGE-RULES01-KEYITEM-AWARD-BOUNDARY-R1.json",
+      "bytes": 5426,
+      "sha256": "9c0d8e9bd4458a29f91145927aaa419742d6c03e3501bd53c3b0787779a5dc47",
+      "git_blob": "dc5923920bfc728be3cbe51802ed48c1c78fb34d"
+    },
+    "npc": {
+      "path": "research/recovered/STONEAGE-STAGE-A-NPC-CONTENT-BOUNDARY-R1.json",
+      "bytes": 11349,
+      "sha256": "f4c5d319c2def4a001c9020cef08faf4736488bc03b78a011b832a3f33928a53",
+      "git_blob": "822d169801416e1bcfeb5396ad0bd440c4ae1162"
+    },
+    "npc_spec": {
+      "path": "docs/specs/STONEAGE-STAGE-A-NPC-CONTENT-BOUNDARY-R1.md",
+      "bytes": 5149,
+      "sha256": "bb39f245af2be953671df322f033c62e584d82ad0a01b165a47aa63e4619863f",
+      "git_blob": "118401ee8b0ffaf48e7e7b3d244f9f39c772c7ce"
+    },
+    "ui": {
+      "path": "research/recovered/STONEAGE-TW10-UI-SEMANTICS-R1.json",
+      "bytes": 53638,
+      "sha256": "5fe0dc2471aa20081b790c435dbf00b4b3979dedda12386f87441319776e81f7",
+      "git_blob": "ee3d230317c47b13e3513f25c3feba2ff9305e1c"
+    },
+    "ui_spec": {
+      "path": "docs/specs/STONEAGE-TW10-UI-SEMANTICS-R1.md",
+      "bytes": 4821,
+      "sha256": "5857020e76932af300919ad9145bb4a5862cb0cd77772ae2fae510359959e280",
+      "git_blob": "f4bb76429cd221bd38f284b911e6e51ec18fd0c8"
+    },
+    "ui_resource": {
+      "path": "research/recovered/STONEAGE-TW10-UI-RESOURCE-BIND-ACCEPTANCE-R1.json",
+      "bytes": 3636,
+      "sha256": "ec41c82b9ec9236b07fdb92bbd1ae041e6dc0b76268df12de016e3d3357c9f48",
+      "git_blob": "3163de1dc2565334d3a225ea1a5d3e5a28074213"
+    },
+    "ui_resource_spec": {
+      "path": "docs/specs/STONEAGE-TW10-UI-RESOURCE-BIND-R1.md",
+      "bytes": 2482,
+      "sha256": "5573045aeb7dc5ef9af57f2c43517c05c3e2b570f8fbd8d477827789e1954744",
+      "git_blob": "600ea59798153f2ab85887b5207f3323b1a19959"
+    },
+    "save": {
+      "path": "research/mechanics/STONEAGE-SAVE-LOGOUT-PERSISTENCE-CORE-R1.md",
+      "bytes": 13349,
+      "sha256": "b64b52d9e157985a19dbaa5e4e27c7b858b8f55190733c99e2a6d3a959052e35",
+      "git_blob": "324d951341d7e0ac1b1996659857614a08b72f12"
+    },
+    "golden": {
+      "path": "docs/RUNTIME-GOLDEN-CONTRACT-R1.md",
+      "bytes": 2863,
+      "sha256": "31d7cf5b630cb805a3d9915d591428bda0e27987a592df9861130d0e03aa26c1",
+      "git_blob": "6effa4a598a17ecf0922928274dc0d089b42edf7"
+    },
+    "tests.test_stoneage_tw10_gameplay_schema": {
+      "path": "tests/test_stoneage_tw10_gameplay_schema.py",
+      "bytes": 6627,
+      "sha256": "d8e438e33478fc28ec054527b4da06327dac0c34c802df9df285b815c6c9d4a5",
+      "git_blob": "6a44702ac7508b79c79eef4c552058f0c64b1d5c"
+    },
+    "tests.test_stoneage_world01_four_hometown_review": {
+      "path": "tests/test_stoneage_world01_four_hometown_review.py",
+      "bytes": 5351,
+      "sha256": "5a99a3f6a7eab29c5852fb600ad5beff644c65abd3e76f650ea3707c94a2e1f2",
+      "git_blob": "50fd50b038f6c16356eb90fbf865524e849da6ea"
+    },
+    "tests.test_stoneage_capture_state_lifecycle": {
+      "path": "tests/test_stoneage_capture_state_lifecycle.py",
+      "bytes": 11192,
+      "sha256": "2e14852e1ff43acd4da0017bf9d29d5ce9c4e2bb4864caa20a21394c56a7dabc",
+      "git_blob": "70db0e2fb2a0710735c5e014ad0b3dd49ef92456"
+    },
+    "tests.test_stoneage_pet_capture_model": {
+      "path": "tests/test_stoneage_pet_capture_model.py",
+      "bytes": 6616,
+      "sha256": "0594ae814b5098098f5d9198f271d5d986c370b9ebcf829e946b78454864f47d",
+      "git_blob": "263f3ad38a12ca29baa80e1cf105db7baf4b8c86"
+    },
+    "tests.test_stoneage_player_growth_model": {
+      "path": "tests/test_stoneage_player_growth_model.py",
+      "bytes": 5226,
+      "sha256": "d8db234d572463120fe8f0fa0a48193974b23b8562b4bfe5aa9d0333ef686442",
+      "git_blob": "ae609bdd584a85cf751f1f28881ab43dbb77950f"
+    },
+    "tests.test_stoneage_pet_growth_model": {
+      "path": "tests/test_stoneage_pet_growth_model.py",
+      "bytes": 6314,
+      "sha256": "66e294b4142ab578a88780ff7f73c0a9b5fc99eb674f8ffa94b3ed242706937d",
+      "git_blob": "c658e1c2ec9fbbba89d586fe42ba14ce1ce267d8"
+    },
+    "tests.test_stoneage_battle_round_model": {
+      "path": "tests/test_stoneage_battle_round_model.py",
+      "bytes": 181317,
+      "sha256": "c8635fd66db55464f8e2d9ac5689612c3b38f6b5b150f29944ac091eb871bfa4",
+      "git_blob": "2706e34310bb08c79e5d08c9babf4d871437d4af"
+    },
+    "tests.test_stoneage_rules01_shop_gate_save_reference": {
+      "path": "tests/test_stoneage_rules01_shop_gate_save_reference.py",
+      "bytes": 8430,
+      "sha256": "ee0eb2a1baa38e07c0d0fa6fa67a585b7d423dfb029fc4b60b55ae56f1dee0b5",
+      "git_blob": "4dfff8ac20369d78274e2f9ceea348a7e5e81abe"
+    },
+    "tests.test_stoneage_rules01_coordinator_gate_reload": {
+      "path": "tests/test_stoneage_rules01_coordinator_gate_reload.py",
+      "bytes": 9184,
+      "sha256": "da521dcc6fd10fd68c49021eafabd2d38400e980b5e009481ec0ef4cb3d1025f",
+      "git_blob": "2175a954e3a5cc7eb2e7af51ede7e2d718dcea61"
+    },
+    "tests.test_stoneage_rules01_keyitem_award_boundary": {
+      "path": "tests/test_stoneage_rules01_keyitem_award_boundary.py",
+      "bytes": 3414,
+      "sha256": "19adb5e0fede3ec6f7c18de881c9cf41e721831fa889ef1b9bf20885815b7c45",
+      "git_blob": "2feda0276de1fc8d0cd59a5bd08198242a64b0da"
+    },
+    "tests.test_stoneage_tw10_ui_semantics": {
+      "path": "tests/test_stoneage_tw10_ui_semantics.py",
+      "bytes": 8659,
+      "sha256": "7c1d98611405518be26412aab3ae0903017372f8fc87402647a929261f5b774b",
+      "git_blob": "6481baa9cda7a035edab3d95fbb50a5c46306ccc"
+    },
+    "tests.test_stoneage_tw10_ui_resource_bind": {
+      "path": "tests/test_stoneage_tw10_ui_resource_bind.py",
+      "bytes": 4073,
+      "sha256": "43425b757ebbe356b6a4f97aa8019dc2ce07029e517c9062b8c23de2ae23ac65",
+      "git_blob": "540404a94f84e34a12b61056d94c6d41fb46b058"
+    },
+    "tests.test_stoneage_stage_a_npc_content_boundary": {
+      "path": "tests/test_stoneage_stage_a_npc_content_boundary.py",
+      "bytes": 6019,
+      "sha256": "27def9904e18822acb3a1d31048919e59bd4ae93e309127fc3b2e922ed2aa7c1",
+      "git_blob": "3728d69c797431e55e96a2834bdee269ba3ef2f7"
+    },
+    "tests.test_stoneage_save_logout_model": {
+      "path": "tests/test_stoneage_save_logout_model.py",
+      "bytes": 5128,
+      "sha256": "27fefa3f7aa5f0760e95724df671d01700933e255fa79739452cd0754013de20",
+      "git_blob": "0081eb8fb7d824bcc766aad2652a7494a68e563f"
+    },
+    "tests.test_stoneage_runtime_golden_contract": {
+      "path": "tests/test_stoneage_runtime_golden_contract.py",
+      "bytes": 1711,
+      "sha256": "f29e2355da6aa1f239f4bd433a6b015cb613f6f44dd8864ae4f0fe389e693b4a",
+      "git_blob": "7c6c50ead08cee40bd16f8c270dc015ddc028a4d"
+    },
+    "tests.test_stoneage_stage_a_blocker_triage": {
+      "path": "tests/test_stoneage_stage_a_blocker_triage.py",
+      "bytes": 4724,
+      "sha256": "e8ba2e425056707af5d7fabe910419946fb046dfada103b19e44a0005f14f12b",
+      "git_blob": "645fc96b84d94bdf8d1d3ae222cda5204bcfc337"
+    },
+    "player_growth": {
+      "path": "research/mechanics/STONEAGE-PLAYER-GROWTH-CORE-R1.md",
+      "bytes": 9206,
+      "sha256": "2657fc43ff45494756a5c9eba835512b94c8b7693988d2daba5ba604ac55c2ce",
+      "git_blob": "a08a8b29ac8c1f466e70d4b1b9a9e471c855bfa7"
+    },
+    "pet_growth": {
+      "path": "research/mechanics/STONEAGE-PET-GROWTH-CORE-R1.md",
+      "bytes": 8969,
+      "sha256": "891c0ef3775f88a6df0ff17d494a0074690d96a0d7087fea35ccff7dd7d3e8eb",
+      "git_blob": "87cdd063f05f6d6f334007cf3db7a31a8d1654a8"
+    },
+    "petskill": {
+      "path": "research/mechanics/STONEAGE-PETSKILL-CORE-R1.md",
+      "bytes": 31641,
+      "sha256": "9547a807f420af7c4cb189ad6d74b37438be891dc29b4f237cde74a6462f250c",
+      "git_blob": "4032d10a85ae4b8093f224d286a37405bd3db9db"
+    },
+    "use_equip": {
+      "path": "research/mechanics/STONEAGE-ITEM-USE-EQUIP-CORE-R1.md",
+      "bytes": 10381,
+      "sha256": "e2f8f4ad3995696ad2d98776a11f567f550562d7b944f022a9ab62191da5be4f",
+      "git_blob": "f08a645c9d1a854c1e280526b1dfa1ba4041b8b3"
+    },
+    "shop": {
+      "path": "research/mechanics/STONEAGE-ITEM-SHOP-CORE-R1.md",
+      "bytes": 11288,
+      "sha256": "cc37e87158754df856aacb8b6adc7793f9cd91661d295e3e0ef8c183942edb24",
+      "git_blob": "e355506d98b401f59e5c008fd375505bfb139163"
+    },
+    "trade": {
+      "path": "research/mechanics/STONEAGE-TRADE-ECONOMY-CORE-R1.md",
+      "bytes": 12790,
+      "sha256": "f8b83d5472aa7275bfe047c6367d2a64b558ebd8b6441d1df4020426f5bd9bd1",
+      "git_blob": "66c8ba7f736deb8478b55544eb1bc1a2140e0bef"
+    },
+    "pool": {
+      "path": "research/mechanics/STONEAGE-ITEM-PET-POOL-STORAGE-R1.md",
+      "bytes": 10548,
+      "sha256": "df452853a05fd8770c4ea9ea2f4927dd287f429bfb8113716961be37a00f8dce",
+      "git_blob": "4e59301e561ab73bf0628b21abf388543625c4ec"
+    },
+    "riding": {
+      "path": "research/mechanics/STONEAGE-RIDERMAN-CORE-R1.md",
+      "bytes": 7836,
+      "sha256": "85afe31067960cf087368a271fe3b266978b30defca9f9c40f240a3e5fb740fe",
+      "git_blob": "1a0265dcfda1b6f1f03c4e8b10c553a8136f1df4"
+    },
+    "audio": {
+      "path": "research/clients/STONEAGE-TW10-AUDIO-PROVENANCE-R1.md",
+      "bytes": 5340,
+      "sha256": "fdbcb76d93d6ad663411ee741c900e05eb8860bf9f8f55d4f42c12cb5fcdab52",
+      "git_blob": "b4e7746b4a6b1b2db2fd7a5633c01fdbdc6e4c55"
+    },
+    "current_coordinator": {
+      "path": "tools/stoneage_local_runtime_session_coordinator.py",
+      "bytes": 227982,
+      "sha256": "a98adce607e634d7e03d7a2fb5d22f79d859f4ac49384965df7a6e435fecf908",
+      "git_blob": "cffb3cb86c84c8f2a19801b02a1b0647d6c0a4e0"
+    },
+    "tests.test_stoneage_petskill_core_model": {
+      "path": "tests/test_stoneage_petskill_core_model.py",
+      "bytes": 25082,
+      "sha256": "481bb4c04c6eac84f4b61cb402f56905544b274913293b3fd1310e992b8b2285",
+      "git_blob": "48c58e8782fa2595878c23de65562a42c34643fd"
+    },
+    "tests.test_stoneage_riderman_core_model": {
+      "path": "tests/test_stoneage_riderman_core_model.py",
+      "bytes": 5647,
+      "sha256": "b9edee656c3187a363c06c70c41ec1be09667704a9422151f32389fb27ebaa54",
+      "git_blob": "57f939bdc0b1c2ee0d4bb1f6f1e6dd78ddf36c0a"
+    },
+    "tests.test_stoneage_item_use_equip_model": {
+      "path": "tests/test_stoneage_item_use_equip_model.py",
+      "bytes": 6030,
+      "sha256": "53b6f9134571e075e258a08a4ab395ed4501b1c36858085bb1e1dab06f16218e",
+      "git_blob": "b2e026b60435c56dfdc3e1c977a21fdd9e63e862"
+    },
+    "tests.test_stoneage_trade_economy_model": {
+      "path": "tests/test_stoneage_trade_economy_model.py",
+      "bytes": 7447,
+      "sha256": "e08bae30485a25f79d1183c48b4be464519b462d8009112e3287754ab1b10c47",
+      "git_blob": "b7c0fac81dd74dccf4c5dfad4bd9a0bf1bbbfb66"
+    }
+  },
+  "preserved_historical_prefixes": [
+    {
+      "path": "README.md",
+      "bytes": 6625,
+      "sha256": "cb6920dc1d21c4e62478d5880f4c1f43559fee362686bb1f80cb0a2c25fae91d",
+      "git_blob": "123d7670b345d97225c4b3cd28c1d32325f904d7"
+    },
+    {
+      "path": "docs/PROJECT-CONTINUITY-PROTOCOL-R1.md",
+      "bytes": 9762,
+      "sha256": "c44834eeec87f7a43e9cb4905f08377349e36d58b1fff2c5a75a6975db695e3b",
+      "git_blob": "ba9bbe19384589400abc61af37a360a40bf91452"
+    },
+    {
+      "path": "docs/CURRENT-STATE.md",
+      "bytes": 1824235,
+      "sha256": "ac21f7e2e0ad7c3c0527853ab5a6cad787e188dd4276ac36fa60599bff313307",
+      "git_blob": "5962e6ea7a9b0d064349e2dabbc5ef315a383bb3"
+    },
+    {
+      "path": "docs/DESIGN-DECISIONS.md",
+      "bytes": 31862,
+      "sha256": "4b940540657a0141339bf0ab84e04e59e63756c3e5647ab379b2ad60bc577771",
+      "git_blob": "133d5c60cbbd668dbe1221098408f5f11e24b441"
+    },
+    {
+      "path": "docs/HISTORICAL-TIMELINE.md",
+      "bytes": 418676,
+      "sha256": "5aef1a2ac67aae2dae9fca17a88de385641c4635464672741bd2c8ec964ea6c9",
+      "git_blob": "5df6bbe09113cba431c794322e3cff1acbf53e11"
+    },
+    {
+      "path": "docs/SOURCE-REGISTRY.md",
+      "bytes": 653322,
+      "sha256": "96b80e83696bc38cd471b85921df432987e29d50de40ae607c8ec203b5065630",
+      "git_blob": "934f2d46910dd9f6fdeaa4d3e7d70448a46ddb1c"
+    },
+    {
+      "path": "docs/RESTORATION-ROADMAP-R2.md",
+      "bytes": 23515,
+      "sha256": "be42678c463f740d1c9a9a00f7ad710589144470b28a9837183ae207c51df173",
+      "git_blob": "c461162a746f593cfb41d8fedae26bd01eee5ae7"
+    },
+    {
+      "path": "docs/RESTORATION-PHASE-GATE-R1.md",
+      "bytes": 74172,
+      "sha256": "3962f5ab2a841db58416a6943c4fa9c59aa6e7c4d93dc57d84b6e47fdc2d59e1",
+      "git_blob": "9e51c1d33abbaa27cee3a5a070f59639fd16b7f5"
+    }
+  ],
+  "families": [
+    {
+      "id": "lineage",
+      "label": "版本与来源",
+      "gate": "PARTIAL",
+      "usable_spec": "原版台湾1.0基础清单和来源隔离",
+      "original_gap": "JSS1999原始完整资料及地区桥接尚不全",
+      "source_refs": [
+        "foundation",
+        "client_boundary"
+      ],
+      "replay_refs": [
+        "original_state"
+      ],
+      "reopen": "可数字取得且身份可核验的更早/同代样本"
+    },
+    {
+      "id": "world",
+      "label": "世界与地图",
+      "gate": "PARTIAL",
+      "usable_spec": "原版地图交付机制；后期四条路线和24格来源审查",
+      "original_gap": "初代地图/NPC/野怪/事件及目的地数据",
+      "source_refs": [
+        "world",
+        "world_spec"
+      ],
+      "replay_refs": [
+        "later_world_custody"
+      ],
+      "reopen": "匹配版本原始地图缓存/服务端事件资料或路线实质冲突"
+    },
+    {
+      "id": "characters_pets",
+      "label": "人物与宠物",
+      "gate": "PARTIAL",
+      "usable_spec": "版本化捕获成长；完整输入下持有/读档/再入战",
+      "original_gap": "初代当前MP、初始化EXP/阈值、技能/状态及可见AI",
+      "source_refs": [
+        "capture",
+        "capture_spec",
+        "schema",
+        "player_growth",
+        "pet_growth",
+        "riding"
+      ],
+      "replay_refs": [
+        "capture_lifecycle",
+        "versioned_rules_library"
+      ],
+      "reopen": "匹配运行时当前状态、初始化及EXP配置"
+    },
+    {
+      "id": "battle",
+      "label": "战斗与技能",
+      "gate": "PARTIAL",
+      "usable_spec": "有界回合、技能/状态、HP返回与版本化EXP接缝",
+      "original_gap": "初代实际指令/技能配置、自然收益与同源全链",
+      "source_refs": [
+        "battle",
+        "settlement",
+        "rules",
+        "petskill"
+      ],
+      "replay_refs": [
+        "battle_rules",
+        "capture_lifecycle",
+        "versioned_rules_library"
+      ],
+      "reopen": "原初配置与可归属的遭遇到奖赏记录"
+    },
+    {
+      "id": "inventory_economy",
+      "label": "道具与经济",
+      "gate": "PARTIAL",
+      "usable_spec": "购买持有与条件门槛的本地衔接；独立赠物来源",
+      "original_gap": "初代道具/价格/消费/奖励和下线标记",
+      "source_refs": [
+        "item_gate",
+        "award",
+        "coordinator_receipt",
+        "use_equip",
+        "shop",
+        "trade",
+        "pool"
+      ],
+      "replay_refs": [
+        "shop_gate_reentry",
+        "versioned_rules_library"
+      ],
+      "reopen": "同版商品/物品/事件数据及实际结果"
+    },
+    {
+      "id": "npc_quests",
+      "label": "NPC与任务",
+      "gate": "OPEN",
+      "usable_spec": "原版窗口形状及后期NPC能力/缺失统计",
+      "original_gap": "原初NPC人口、对白、任务脚本/条件/奖赏",
+      "source_refs": [
+        "npc",
+        "npc_spec",
+        "ui"
+      ],
+      "replay_refs": [
+        "npc_custody",
+        "descendant_save_model"
+      ],
+      "reopen": "同代原始脚本/服务端资料或认证窗口往返轨迹"
+    },
+    {
+      "id": "graphics_audio_ui",
+      "label": "画面声音与交互",
+      "gate": "PARTIAL",
+      "usable_spec": "原版资源身份/格式、五类界面输入及候选SAB结构",
+      "original_gap": "原版实际图形/帧/调色板/音效选择与UI布局",
+      "source_refs": [
+        "foundation",
+        "ui",
+        "ui_spec",
+        "ui_resource",
+        "ui_resource_spec",
+        "audio"
+      ],
+      "replay_refs": [
+        "original_ui_resource"
+      ],
+      "reopen": "原版渲染选择调用链或认证运行轨迹"
+    },
+    {
+      "id": "runtime_persistence",
+      "label": "运行与持久化",
+      "gate": "OPEN",
+      "usable_spec": "后代保存退出规则和现代参考读写",
+      "original_gap": "原初角色格式、真实ACK/持久写入/重登；本地savedata独立",
+      "source_refs": [
+        "save",
+        "coordinator_receipt",
+        "capture_spec"
+      ],
+      "replay_refs": [
+        "shop_gate_reentry",
+        "capture_lifecycle",
+        "npc_custody",
+        "descendant_save_model"
+      ],
+      "reopen": "匹配的原版事件/物品存档及ACK/重登证据"
+    },
+    {
+      "id": "integration",
+      "label": "系统衔接",
+      "gate": "PARTIAL",
+      "usable_spec": "协调器、golden和捕获/商店/条件门槛有限整合",
+      "original_gap": "完整同版商业服从出生到任务奖励/重登尚未实证",
+      "source_refs": [
+        "golden",
+        "coordinator_receipt",
+        "world",
+        "triage",
+        "current_coordinator"
+      ],
+      "replay_refs": [
+        "integration_boundary",
+        "shop_gate_reentry",
+        "capture_lifecycle",
+        "portfolio_boundary"
+      ],
+      "reopen": "出现具体代表链冲突或可匹配完整原始输入/轨迹"
+    }
+  ],
+  "playflows": [
+    {
+      "id": "ORIGINAL_TW10_CLIENT_ENTRY",
+      "source_role": "V1_DIRECT_CLIENT_INTERFACE",
+      "support": "Original retail client has version-pinned field/status/owned-item/pet protocol shapes, NPC WN and resource address records; these expose an input/output contract only.",
+      "material_absence": "First-generation commercial server map, NPC population/quest dialogue, items, rewards and authoritative running state; original live end-to-end play not demonstrated.",
+      "replay": "SOURCE_STRUCTURE_ONLY",
+      "original_playthrough_certified": false,
+      "dependencies": [
+        "lineage",
+        "world",
+        "npc_quests",
+        "graphics_audio_ui",
+        "integration"
+      ],
+      "next_evidence": "Version-authenticated original early map/quest/master and client-server trace."
+    },
+    {
+      "id": "RECOVERED25_HOMETOWN_FOUR",
+      "source_role": "LATER_RECOVERED",
+      "support": "Four source-qualified later hometown route existential/conditional witnesses from WORLD-01; routes 1/2 COMBAT, route 3 COMBAT>SHOP>WARPMAN, route 4 SHOP>COMBAT>WARPMAN.",
+      "material_absence": "Historical TW1.0 route ownership, actual original destination/event/NPC data, server settlement and global outcomes.",
+      "replay": "VERSION_CONDITIONAL_EXISTENTIAL",
+      "original_playthrough_certified": false,
+      "dependencies": [
+        "world",
+        "battle",
+        "inventory_economy",
+        "npc_quests"
+      ],
+      "next_evidence": "A version-matched original client/server dataset or direct contradictory same-version route replay."
+    },
+    {
+      "id": "CAPTURE_OWNED_PET_REENTRY_GROWTH",
+      "source_role": "LATER_SOURCE_DERIVED_PLUS_MODERN_SYNTHETIC",
+      "support": "A finite captured-pet/roster/disk reentry/growth reference lifecycle accepts explicitly supplied current pet state; source-bound known fields are not silently invented.",
+      "material_absence": "Original current MP, initial EXP/maxEXP and version threshold, owned skills, status, rename/free-name and AI binding, first-generation server save.",
+      "replay": "EXPLICIT_INPUT_REFERENCE",
+      "original_playthrough_certified": false,
+      "dependencies": [
+        "characters_pets",
+        "battle",
+        "runtime_persistence"
+      ],
+      "next_evidence": "Version-matched live captured-pet current-state and initialization/threshold/wire record."
+    },
+    {
+      "id": "BATTLE_EXP_SETTLEMENT",
+      "source_role": "DESCENDANT_RULES_AND_SOURCE_BOUNDED_MODELS",
+      "support": "Ordinary battle/capture/EXP and settlement source contracts and regression evidence exist for scoped profiles.",
+      "material_absence": "First-generation complete battle command, level threshold regime and realized commercial reward/EXP outcomes are unverified.",
+      "replay": "SOURCE_CONDITIONAL_NOT_ORIGINAL_E2E",
+      "original_playthrough_certified": false,
+      "dependencies": [
+        "battle",
+        "characters_pets",
+        "inventory_economy"
+      ],
+      "next_evidence": "Original first-generation configuration and a traceable end-to-end encounter-to-award execution."
+    },
+    {
+      "id": "SHOP_OWNED_ITEM_WARPMAN_LOCAL_RELOAD",
+      "source_role": "RECOVERED25_GATE_PLUS_MODERN_FIXTURE",
+      "support": "Later ordinary ItemShop purchase/owned item/ITEM-FREE WarpMan predicate/local coordinator two reloads compose under explicit inputs; separate ExChangeMan GetItem source witnesses must not be conflated.",
+      "material_absence": "Original item identity/price/award/consumption, original quest event and authoritative logout/relogin durability.",
+      "replay": "VERSION_CONDITIONAL_SYNTHETIC_LOCAL",
+      "original_playthrough_certified": false,
+      "dependencies": [
+        "inventory_economy",
+        "npc_quests",
+        "runtime_persistence",
+        "integration"
+      ],
+      "next_evidence": "Same-version NPC original source with item flag/event state and original server save/relogin."
+    },
+    {
+      "id": "V1_UI_GRAPHICS_RESOURCE_SELECTION",
+      "source_role": "V1_DIRECT_RESOURCE_STRUCTURE_PLUS_EARLY_LINEAGE",
+      "support": "Five original-client message crosswalks, 218 battle SAB scene identities and 15 indexed palettes are source-specified; candidate grid decoder is not actual original render proof.",
+      "material_absence": "Original pet animation selection, battle palette/scene selection and visible interaction/layout runtime trace.",
+      "replay": "REFERENCE_RESOURCE_SHAPE_ONLY",
+      "original_playthrough_certified": false,
+      "dependencies": [
+        "graphics_audio_ui",
+        "integration"
+      ],
+      "next_evidence": "Original v1 sa_3.exe draw/select call chain or independently authenticated matching runtime trace."
+    },
+    {
+      "id": "ORIGINAL_QUEST_AND_RELOGIN",
+      "source_role": "UNRECOVERED_ORIGINAL_SERVER_CONTENT",
+      "support": "WN original client envelope plus independent later NPC dialogue, NPCEnemy, WarpMan and ExChangeMan structures show relevant possible functions.",
+      "material_absence": "First-generation story dialogue, NPC/quest script, rewards, event flags, item persistence, SAAC ACK and matching original re-login result.",
+      "replay": "OPEN_ORIGINAL_SERVER",
+      "original_playthrough_certified": false,
+      "dependencies": [
+        "npc_quests",
+        "runtime_persistence",
+        "world",
+        "inventory_economy",
+        "integration"
+      ],
+      "next_evidence": "Digitally verifiable original-era server NPC/event data and transactional trace, or precise same-era testimony with artifact corroboration."
+    }
+  ],
+  "blockers": [
+    {
+      "id": "B0_ORIGINAL_SERVER_CONTENT",
+      "priority": "P0_EVIDENCE",
+      "affected": [
+        "world",
+        "npc_quests",
+        "inventory_economy",
+        "integration"
+      ],
+      "gap": "TW1.0/JSS1999 original NPC, quest scripts, master items and original map/events unavailable; client interfaces do not determine server world content.",
+      "policy": "RECORD_UNAVAILABLE_WITH_REOPEN_TRIGGER",
+      "reopen": "Authenticated matching first-generation server release, data files or client/server capture."
+    },
+    {
+      "id": "B1_ORIGINAL_PLAYER_PET_AND_EXP",
+      "priority": "P1_GAME_RULE",
+      "affected": [
+        "characters_pets",
+        "battle"
+      ],
+      "gap": "Captured pet current MP/EXP/status and mutually incompatible descendant EXP threshold regimes cannot be selected for original first generation.",
+      "policy": "EXPLICIT_INPUT_VERSIONED",
+      "reopen": "Source-version-selected original runtime capture/EXP threshold data."
+    },
+    {
+      "id": "B2_ORIGINAL_QUEST_ITEM_DURABILITY",
+      "priority": "P1_GAME_RULE",
+      "affected": [
+        "inventory_economy",
+        "npc_quests",
+        "runtime_persistence"
+      ],
+      "gap": "No source-aligned ITEM_DROPATLOGOUT/quest EventNo/SAAC durable write and original re-login result.",
+      "policy": "SEPARATE_MODERN_DISK_FROM_HISTORICAL_SAVE",
+      "reopen": "Matching source item/event persistence and original save ACK/relogin trace."
+    },
+    {
+      "id": "B3_ORIGINAL_UI_VISUAL_BINDING",
+      "priority": "P2_PRESENTATION",
+      "affected": [
+        "graphics_audio_ui"
+      ],
+      "gap": "v1 asset/message identities known, actual graphic/SAB/palette selectors and on-screen placement not observed.",
+      "policy": "KEEP_OPEN_NOT_PREPRODUCTION",
+      "reopen": "Original v1 renderer callsites or authenticated visual/runtime trace."
+    },
+    {
+      "id": "B4_ORIGINAL_LOCAL_SAVEDATA_R79",
+      "priority": "PAUSED_NON_BLOCKING",
+      "affected": [
+        "runtime_persistence"
+      ],
+      "gap": "Client-local savedata helper ABI and realized IO effects not fully reconstructed; not a cause to defer content review absent material state dependency.",
+      "policy": "DO_NOT_REOPEN_FOR_GENERIC_STATIC_GAPS",
+      "reopen": "Named game-rule/state dependency or new primary evidence demanding that helper's semantics."
+    }
+  ],
+  "replays": [
+    {
+      "id": "original_state",
+      "scope": "SOURCE_SHAPE_AND_SYNTHETIC_PROJECTION",
+      "modules": [
+        "tests.test_stoneage_tw10_gameplay_schema"
+      ],
+      "playflow_refs": [
+        "ORIGINAL_TW10_CLIENT_ENTRY"
+      ],
+      "original_game_execution": false,
+      "does_not_prove": "Original live login, commercial state and screen behavior are not executed."
+    },
+    {
+      "id": "later_world_custody",
+      "scope": "DERIVED_EVIDENCE_AUDIT",
+      "modules": [
+        "tests.test_stoneage_world01_four_hometown_review"
+      ],
+      "playflow_refs": [
+        "RECOVERED25_HOMETOWN_FOUR"
+      ],
+      "original_game_execution": false,
+      "does_not_prove": "Checks retained route evidence, not fresh proprietary map traversal or early map membership."
+    },
+    {
+      "id": "capture_lifecycle",
+      "scope": "SYNTHETIC_REFERENCE_MODEL",
+      "modules": [
+        "tests.test_stoneage_capture_state_lifecycle",
+        "tests.test_stoneage_pet_capture_model",
+        "tests.test_stoneage_player_growth_model",
+        "tests.test_stoneage_pet_growth_model"
+      ],
+      "playflow_refs": [
+        "CAPTURE_OWNED_PET_REENTRY_GROWTH"
+      ],
+      "original_game_execution": false,
+      "does_not_prove": "Explicit invented pet state and growth/reward inputs; not original automatic construction or natural kill awards."
+    },
+    {
+      "id": "battle_rules",
+      "scope": "SYNTHETIC_REFERENCE_MODEL",
+      "modules": [
+        "tests.test_stoneage_battle_round_model"
+      ],
+      "playflow_refs": [
+        "BATTLE_EXP_SETTLEMENT"
+      ],
+      "original_game_execution": false,
+      "does_not_prove": "Versioned model rules including later extensions; no first-generation command-set or server-play certification."
+    },
+    {
+      "id": "shop_gate_reentry",
+      "scope": "SYNTHETIC_REFERENCE_MODEL",
+      "modules": [
+        "tests.test_stoneage_rules01_shop_gate_save_reference",
+        "tests.test_stoneage_rules01_coordinator_gate_reload",
+        "tests.test_stoneage_rules01_keyitem_award_boundary"
+      ],
+      "playflow_refs": [
+        "SHOP_OWNED_ITEM_WARPMAN_LOCAL_RELOAD"
+      ],
+      "original_game_execution": false,
+      "does_not_prove": "Synthetic purchase/gate/disk scenarios and separate later award evidence, not original quest or SAAC persistence."
+    },
+    {
+      "id": "original_ui_resource",
+      "scope": "SOURCE_SHAPE_AND_SYNTHETIC_PROJECTION",
+      "modules": [
+        "tests.test_stoneage_tw10_ui_semantics",
+        "tests.test_stoneage_tw10_ui_resource_bind"
+      ],
+      "playflow_refs": [
+        "V1_UI_GRAPHICS_RESOURCE_SELECTION"
+      ],
+      "original_game_execution": false,
+      "does_not_prove": "Original input/resource structure and synthetic candidate projection, not original rendering or UI execution."
+    },
+    {
+      "id": "npc_custody",
+      "scope": "DERIVED_EVIDENCE_AUDIT",
+      "modules": [
+        "tests.test_stoneage_stage_a_npc_content_boundary"
+      ],
+      "playflow_refs": [
+        "ORIGINAL_QUEST_AND_RELOGIN"
+      ],
+      "original_game_execution": false,
+      "does_not_prove": "Checks retained later NPC evidence and missing early content, not original dialogue/quest execution."
+    },
+    {
+      "id": "descendant_save_model",
+      "scope": "SYNTHETIC_REFERENCE_MODEL",
+      "modules": [
+        "tests.test_stoneage_save_logout_model"
+      ],
+      "playflow_refs": [
+        "ORIGINAL_QUEST_AND_RELOGIN"
+      ],
+      "original_game_execution": false,
+      "does_not_prove": "Synthetic descendant serializer/logout model, not original SAAC durable write or original re-login."
+    },
+    {
+      "id": "integration_boundary",
+      "scope": "SYNTHETIC_REFERENCE_MODEL",
+      "modules": [
+        "tests.test_stoneage_runtime_golden_contract"
+      ],
+      "playflow_refs": [
+        "ORIGINAL_TW10_CLIENT_ENTRY",
+        "RECOVERED25_HOMETOWN_FOUR",
+        "CAPTURE_OWNED_PET_REENTRY_GROWTH",
+        "BATTLE_EXP_SETTLEMENT",
+        "SHOP_OWNED_ITEM_WARPMAN_LOCAL_RELOAD",
+        "V1_UI_GRAPHICS_RESOURCE_SELECTION",
+        "ORIGINAL_QUEST_AND_RELOGIN"
+      ],
+      "original_game_execution": false,
+      "does_not_prove": "Synthetic golden integration contract, not a complete original game."
+    },
+    {
+      "id": "portfolio_boundary",
+      "scope": "DERIVED_EVIDENCE_AUDIT",
+      "modules": [
+        "tests.test_stoneage_stage_a_blocker_triage"
+      ],
+      "playflow_refs": [
+        "ORIGINAL_TW10_CLIENT_ENTRY",
+        "RECOVERED25_HOMETOWN_FOUR",
+        "CAPTURE_OWNED_PET_REENTRY_GROWTH",
+        "BATTLE_EXP_SETTLEMENT",
+        "SHOP_OWNED_ITEM_WARPMAN_LOCAL_RELOAD",
+        "V1_UI_GRAPHICS_RESOURCE_SELECTION",
+        "ORIGINAL_QUEST_AND_RELOGIN"
+      ],
+      "original_game_execution": false,
+      "does_not_prove": "Checks retained seven-flow and nine-family source boundaries, not original execution."
+    },
+    {
+      "id": "versioned_rules_library",
+      "scope": "SYNTHETIC_REFERENCE_MODEL",
+      "modules": [
+        "tests.test_stoneage_petskill_core_model",
+        "tests.test_stoneage_riderman_core_model",
+        "tests.test_stoneage_item_use_equip_model",
+        "tests.test_stoneage_trade_economy_model"
+      ],
+      "playflow_refs": [
+        "CAPTURE_OWNED_PET_REENTRY_GROWTH",
+        "BATTLE_EXP_SETTLEMENT",
+        "SHOP_OWNED_ITEM_WARPMAN_LOCAL_RELOAD"
+      ],
+      "original_game_execution": false,
+      "does_not_prove": "Selected later-source skill/riding/equipment/trade models; not their earliest commercial presence, all branch coverage or original art rendering."
+    }
+  ],
+  "next_priority": "STAGE-A-JOINT-REVIEW-01",
+  "continue_without_explicit_design_decision": "STAGE_A_ONLY",
+  "stage_a_fallback_work_package": "EARLY-CONTENT-RECOVERY-01",
+  "stage_a_fallback_scope": [
+    "same-era map cache",
+    "NPC/quest scripts and data",
+    "shop/item/award original content"
+  ],
+  "historical_queued_action": {
+    "id": 37642417333,
+    "status": "queued",
+    "head": "73c45041b9ef2519ba4575471e9d374dff169fd4",
+    "not_current_acceptance": true
+  },
+  "startup_remote_branch_count": 295,
+  "startup_main_successful_run_ids": [
+    38922821581,
+    38922821455,
+    38922821424,
+    38922821260
+  ],
+  "coverage_note": "Selective replay of representative suites and pinned specification entry points; not all tests, all skills, all maps or original commercial execution."
+}

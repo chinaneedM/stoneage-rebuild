@@ -107,3 +107,16 @@ v1 battle palette/background selection and pet drawing-to-animation
 bindings remain OPEN. Next priority:
 **STAGE-A-NPC-CONTENT-BOUNDARY-01**, source-qualified NPC/quest/dialogue
 coverage and missing original-server content. See CURRENT-STATE.
+
+
+### Current user-review deliverable — 2026-10-16
+
+The [Stage A consolidated review packet](docs/STAGE-A-CONSOLIDATED-REVIEW-R1.md)
+is the current user-facing restoration overview, including nine system families,
+seven representative player flows, five bounded blockers and source-qualified
+skill/equipment/trade/riding specification entry points. The adjacent JSON
+manifest pins sources and selective replay commands. Its publication is not
+Stage A acceptance: seven families remain PARTIAL, two OPEN, Stage B GATED.
+Highest next: STAGE-A-JOINT-REVIEW-01; an ordinary continuation stays in Stage A
+and may pursue EARLY-CONTENT-RECOVERY-01 only as bounded, material source work.
+R79 remains paused nonblocking; latest CURRENT-STATE governs.
