@@ -261,6 +261,6 @@ attribution, rather than indefinite image-ID/GUI internals or R79.
 
 ## 2026-10-16 — STAGE-A-REVIEW-BLOCKER-TRIAGE-01 九族联合阻塞分级
 
-已完成原始客户端→玩家位置/人物宠物→遭遇战斗→任务NPC/条件商店→物品奖励→退出重登→UI资源等七条有边界的代表体验审查。十一份既存源Git blob/尺寸固定；九系统族仍7 PARTIAL+2 OPEN，Stage A 未最终验收，Stage B GATED。四出生点与24格均只属于 recovered25 历史参考；初代商业服务端内容、EXP/宠物完整初始态、原始NPC/奖励/存档不可通过后期测试填补。
+已完成原始客户端→玩家位置/人物宠物→遭遇战斗→任务NPC/条件商店→物品奖励→退出重登→UI资源等七条有边界的代表体验审查。十份不可变源Git blob/尺寸固定；九系统族仍7 PARTIAL+2 OPEN，Stage A 未最终验收，Stage B GATED。四出生点与24格均只属于 recovered25 历史参考；初代商业服务端内容、EXP/宠物完整初始态、原始NPC/奖励/存档不可通过后期测试填补。
 具体表 docs/STAGE-A-REVIEW-BLOCKER-TRIAGE-R1.md 与 research/recovered/STONEAGE-STAGE-A-BLOCKER-TRIAGE-ACCEPTANCE-R1.json，独立CI38922063102 SUCCESS。
 **下一项 STAGE-A-CONSOLIDATED-REVIEW-PACKET-01**：组织一份可供用户独立联合审阅的九族规格与无法取得的初代内容清单；未完成正式审阅前不生产新引擎/美术/新剧情。R79仍暂停，禁止无根据百分比。

@@ -18,7 +18,7 @@
     "blockers": 5,
     "original_world_routes": 0,
     "later_recovered_hometown_routes": 4,
-    "source_pins": 11
+    "source_pins": 10
   },
   "source_report_git_blob": "1df181361a8d06c5733042c2dcbfbdcdb690ed45",
   "test_git_blob": "9c84fb5d6fd5dd28c9fd0e0c22c3431ff6bad4a1",
@@ -27,6 +27,11 @@
   "stage_b_gate": "GATED",
   "joint_user_acceptance": false,
   "original_game_reconstruction_percent": null,
-  "failed_before_action": null,
-  "next_priority": "STAGE-A-CONSOLIDATED-REVIEW-PACKET-01"
+  "failed_before_action": {
+    "run_id": 38922312310,
+    "conclusion": "failure",
+    "kind": "source pin included concurrently edited Roadmap R2, which is versioned output not immutable audit input"
+  },
+  "next_priority": "STAGE-A-CONSOLIDATED-REVIEW-PACKET-01",
+  "acceptance_requires_clean_post_archive_run": true
 }

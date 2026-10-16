@@ -19,7 +19,7 @@ class StageABlockerTriageTests(unittest.TestCase):
                      ("stage_a", "portfolio", "world", "rules", "capture", "npc", "ui", "ui_resource")}
 
     def test_source_bytes_and_git_blob_exact(self):
-        self.assertEqual(len(self.audit["source_pins"]), 11)
+        self.assertEqual(len(self.audit["source_pins"]), 10)
         for key, pin in self.audit["source_pins"].items():
             with self.subTest(key=key):
                 body = self.sources[key]

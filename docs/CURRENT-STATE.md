@@ -14504,6 +14504,6 @@ start new-engine/visual art production before Stage A review.
 
 整理5个有触发条件的核心阻塞：P0原初世界/NPC/任务/商品/奖励服端资料；P1宠物当前态与EXP阈值；P1原始奖励/事件字段/SAAC持久化；P2原始 UI 视觉资源选择；单列旧R79为PAUSED_NON_BLOCKING而非最优先。无原始服务器资料时有界OPEN且指出适格证据，不填任务脚本/宠物数据/初代配置默认值。
 
-独立审查分支代码HEAD `785524806ee3ddc37826614f7916123f37d9b3d3`, tree `a85d2633ade6791690594d376a5251301fe4d0c0`；GitHub Actions38922063102/job117044218968 SUCCESS，5条新测试核验11份Git blob/字节身份、九族不冒进、4条旧路线/24格、7条玩家链及否证/重开条件。结果表 `research/recovered/STONEAGE-STAGE-A-BLOCKER-TRIAGE-R1.json`，说明 `docs/STAGE-A-REVIEW-BLOCKER-TRIAGE-R1.md`，验收 `research/recovered/STONEAGE-STAGE-A-BLOCKER-TRIAGE-ACCEPTANCE-R1.json`。
+独立审查分支代码HEAD `785524806ee3ddc37826614f7916123f37d9b3d3`, tree `a85d2633ade6791690594d376a5251301fe4d0c0`；GitHub Actions38922063102/job117044218968 SUCCESS，5条新测试核验10份不可变源Git blob/字节身份、九族不冒进、4条旧路线/24格、7条玩家链及否证/重开条件。结果表 `research/recovered/STONEAGE-STAGE-A-BLOCKER-TRIAGE-R1.json`，说明 `docs/STAGE-A-REVIEW-BLOCKER-TRIAGE-R1.md`，验收 `research/recovered/STONEAGE-STAGE-A-BLOCKER-TRIAGE-ACCEPTANCE-R1.json`。
 
 **Highest NEXT STAGE-A-CONSOLIDATED-REVIEW-PACKET-01**：在同一份报告中完成九族「已经复原的规格、可用参考情景、缺原始商服内容、封闭范围/重开条件、历史版权/设计限制」联合审阅包，随后向用户单独发起正式复原审阅。不选择新引擎或开始新游戏制作。R79按协议继续暂停。
