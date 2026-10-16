@@ -41,8 +41,8 @@ class OriginalV1ResourceBindingBoundary(unittest.TestCase):
         self.assertEqual(185892, sum(r["size"] for r in records))
         self.assertEqual("battle00.sab", maps[0]["name"])
         self.assertEqual("battle217.sab", maps[-1]["name"])
-        self.assertEqual("Palet_1.sap", palettes[0]["name"])
-        self.assertEqual("Palet_15.sap", palettes[-1]["name"])
+        self.assertEqual("palet_1.sap", palettes[0]["name"])
+        self.assertEqual("palet_15.sap", palettes[-1]["name"])
         self.assertFalse(any(r["name"] == "Palet_0.sap" for r in records))
         self.assertLess(records.index(palettes[0]), records.index(maps[-1]))
 
