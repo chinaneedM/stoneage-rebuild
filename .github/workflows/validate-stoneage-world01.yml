@@ -1,0 +1,19 @@
+name: Accept bounded WORLD-01 four hometown review
+on:
+  push:
+    paths:
+      - "research/recovered/STONEAGE-WORLD01-FOUR-HOMETOWN-ACCEPTANCE-R1.json"
+      - "docs/specs/STONEAGE-WORLD01-FOUR-HOMETOWN-REVIEW-R1.md"
+      - "tests/test_stoneage_world01_four_hometown_review.py"
+      - ".github/workflows/validate-stoneage-world01.yml"
+  workflow_dispatch:
+jobs:
+  finite-world01-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate 24 cells and bounded source evidence
+        run: python -m unittest discover -s tests -p test_stoneage_world01_four_hometown_review.py -v
