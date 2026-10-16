@@ -97,3 +97,13 @@ runtime and original commercial server content remain unproven. Next finite
 priority: **UI-RESOURCE-BIND-01**, only original pet graphic selector and
 battle SAB/palette selector evidence, not a new engine or post-1.0 UI.
 Authoritative detailed order remains the final entry of CURRENT-STATE.
+
+
+### Latest restoration scope — UI-RESOURCE-BIND-01 (2026-10-16)
+
+Original v1 battle resource identity, address order and lineage-supported
+20×20 SAB interpretation now have bounded reference validation; actual
+v1 battle palette/background selection and pet drawing-to-animation
+bindings remain OPEN. Next priority:
+**STAGE-A-NPC-CONTENT-BOUNDARY-01**, source-qualified NPC/quest/dialogue
+coverage and missing original-server content. See CURRENT-STATE.

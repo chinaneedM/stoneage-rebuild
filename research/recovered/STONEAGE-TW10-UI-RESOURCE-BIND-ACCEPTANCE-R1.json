@@ -1,0 +1,102 @@
+{
+  "schema": "stoneage.tw10.ui-resource-bind.acceptance.r1",
+  "date": "2026-10-16",
+  "base_main_commit": "285c5626302a7c45bc52f42780fc19ab950a07e5",
+  "accepted_branch": "agent/ui-resource-bind01-mainline-r1-20261016",
+  "verified_code_commit": "106183ff6c868c25c911ecc58b35723c77b91a5d",
+  "verified_code_tree": "555dfbe7b5f03123ecb1e4b83eab05e2574f9370",
+  "previous_attempts": [
+    {
+      "branch": "agent/ui-semantics01-five-surface-r1-20261016",
+      "commit": "3f901a151cb3e25071d7a3f07110f153db2c0781",
+      "status": "ALREADY_INTEGRATED_IN_MAIN_285C5626_DO_NOT_REMERGE"
+    },
+    {
+      "commit": "16a83c46f1709e496d3505749664d2d524550087",
+      "run": 38918763684,
+      "conclusion": "failure",
+      "cause": "test expected title-case Palet_*.sap rather than original address table lowercase palet_*.sap; actual on-disk filename remains title-case"
+    },
+    {
+      "commit": "4dea6ecccedd1a1a854bff312f513c4e9acecb5c",
+      "run": 38918902382,
+      "conclusion": "success",
+      "role": "corrected preliminary research branch; rebased source tree onto already-advanced main"
+    }
+  ],
+  "runs": [
+    {
+      "id": 38919143056,
+      "job": 117034232994,
+      "head": "106183ff6c868c25c911ecc58b35723c77b91a5d",
+      "conclusion": "success",
+      "steps": [
+        "Original protocol/resource custody and synthetic read-only projection",
+        "Existing original protocol schema regression"
+      ]
+    },
+    {
+      "id": 38919143153,
+      "job": 117034233610,
+      "head": "106183ff6c868c25c911ecc58b35723c77b91a5d",
+      "conclusion": "success",
+      "steps": [
+        "Battle identity/palette source and synthetic unselected grid regression",
+        "Independent five-surface original protocol regression",
+        "Existing TW1.0 resource metadata contract"
+      ]
+    }
+  ],
+  "new_contracts": [
+    "source version-qualified exact battle index with 218 SAB maps + 15 palettes; unindexed Palet_0 separate",
+    "804-byte envelope / 400 16-bit cells original disc structure",
+    "20x20 big-endian decoder is only original-shape+later-lineage-supported interpretation",
+    "v1 pet graphic_id identity remains no runtime SPR/ADRN selection",
+    "original B callback accepts B-prefix only, rejects unrelated commands"
+  ],
+  "code_blobs": {
+    "battle_model": {
+      "sha": "34633a856d4f6794c3708f27d2714b6660224975",
+      "size": 3274
+    },
+    "source_report": {
+      "sha": "8db0381f876aea901fbdaf55aaa031157d035800",
+      "size": 5231
+    },
+    "battle_regressions": {
+      "sha": "540404a94f84e34a12b61056d94c6d41fb46b058",
+      "size": 4073
+    },
+    "original_ui_semantics_guard": {
+      "sha": "f2cb9a3c2242be889ea7f35820b3bc3eab68043d",
+      "size": 3288
+    },
+    "ui_semantics_regressions": {
+      "sha": "6481baa9cda7a035edab3d95fbb50a5c46306ccc",
+      "size": 8659
+    },
+    "workflow": {
+      "sha": "e777dc01a611dd6109787883ee2881ac11010d26",
+      "size": 1116
+    },
+    "spec": {
+      "sha": "600ea59798153f2ab85887b5207f3323b1a19959",
+      "size": 2482
+    }
+  },
+  "preserved_state": {
+    "original_blob": "c8e826ccaef66a1cfb4c5bf1b19e0141c97a8367",
+    "original_size_bytes": 1814622,
+    "original_characters": 1807599,
+    "prefix_preserved": true
+  },
+  "non_promotions": [
+    "not proven original sa_3.exe SAB select/draw call or endian decode",
+    "not proven actual pet graphic_id to animation/frame mapping",
+    "no original retail NPC scripts or commercial server content",
+    "no original UI screenshot/built renderer",
+    "not Stage A or Stage B completion",
+    "R79 still paused"
+  ],
+  "next": "STAGE-A-NPC-CONTENT-BOUNDARY-01"
+}

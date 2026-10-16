@@ -232,3 +232,21 @@ two-family original-v1 pet sprite and battle SAB/palette selection trace,
 stopping if required source is absent; R79 paused. See
 `docs/specs/STONEAGE-TW10-UI-SEMANTICS-R1.md` and the new
 `STONEAGE-TW10-UI-SEMANTICS-ACCEPTANCE-R1.json` receipt.
+
+
+## 2026-10-16 — UI-RESOURCE-BIND-01 bounded source stop
+
+Accepted v1 disk evidence cleanly indexes 218 SAB battle scene records
+(804 bytes each) and 15 indexed SAP palettes, with Palet_0.sap unindexed.
+A strict synthetic 20×20 big-endian candidate decoder illustrates the
+historical descendant interpretation, but the actual v1 runtime select,
+decode/draw call, chosen SAB/background/palette and pet graphic-to-SPR
+animation mapping are **OPEN**, pending original callsites/traces.
+Original B callback source scope is now enforced by a B-prefix guard.
+Source-pinned audit and separate successful Actions suites documented in
+`research/recovered/STONEAGE-TW10-UI-RESOURCE-BIND-ACCEPTANCE-R1.json`.
+Stage A remains PARTIAL/OPEN and Stage B gated.
+
+**Next STAGE-A-NPC-CONTENT-BOUNDARY-01**: return to the critical
+player-visible missing original NPC/quest/dialogue content and version
+attribution, rather than indefinite image-ID/GUI internals or R79.

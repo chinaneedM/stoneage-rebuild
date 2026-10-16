@@ -14411,3 +14411,64 @@ schema regression suites. Failed first action remains visible.
 selector, stopping at explicitly named missing v1 binary/render call chains.
 Reopen only on material source; no arbitrary original savedata R79 work,
 no speculative original UI layout, no production engine or new-game design.
+
+
+## 2026-10-16 — UI-RESOURCE-BIND-01 original battle container and pet graphic selection gap
+
+Restoration output, not modern UI production: the accepted v1 retail battle
+address table contains **218 SAB scene records** and **15 indexed palette
+records**, separately from disc-resident unindexed Palet_0.sap. The historical
+address entries preserve contiguous original order; index name `palet_1.sap`
+is lowercase in the address table, while resolved disc path is `Palet_1.sap`.
+The 804-byte SAB original envelope is 4 bytes `SAB ` plus 400 16-bit units.
+The 20×20 big-endian graphic-ID interpretation is supported by descendant
+ReadBattleMap and original v1 byte size but remains NOT proven as the actual
+original `sa_3.exe` decode/draw call. An independent small source-index
+reader and synthetic full-SAB candidate decoder now enforce that separation.
+
+Pet `S:K.graphic_id` has an original v1 field-position witness, and the
+retail file contains real ADRN/REAL and SPR/SPRADRN identity spaces. Neither
+proves which SPR group, animation/frame or REAL bitmap the live original
+client chose. An unresolved recovered25 anonymous symbol mapping cannot
+be transferred into early-v1 runtime fact. The qualified reference retains
+no chosen scene index, palette, sprite, animation, or GUI geometry.
+The independent B classifier now refuses commands not prefixed `B`,
+matching the original B callback scope without manufacturing later Z/F/O
+extensions. Real original retail client/server execution was NOT performed.
+
+Evidence/code:
+- research/recovered/STONEAGE-TW10-UI-RESOURCE-BIND-SCOPE-R1.json
+- docs/specs/STONEAGE-TW10-UI-RESOURCE-BIND-R1.md
+- tools/stoneage_tw10_battle_scene_spec.py
+- tests/test_stoneage_tw10_ui_resource_bind.py
+- tools/stoneage_tw10_ui_semantics.py (B-prefix guard only)
+- research/recovered/STONEAGE-TW10-UI-RESOURCE-BIND-ACCEPTANCE-R1.json
+
+Non-destructive integration handling: UI-SEMANTICS-01 had already
+fast-forwarded to main 285c5626302a7c45bc52f42780fc19ab950a07e5;
+the separate experimental branch was NOT merged over it. A lowercased
+source-index filename test failure Action38918763684 was corrected in the
+experiment branch (Action38918902382 SUCCESS), then only the new bounded
+work plus guard was branched FROM refreshed main. Independent code
+commit 106183ff6c868c25c911ecc58b35723c77b91a5d,
+tree 555dfbe7b5f03123ecb1e4b83eab05e2574f9370:
+Actions 38919143056 (job117034232994) SUCCESS and 38919143153
+(job117034233610) SUCCESS. All original source pins, synthetic grid
+negative bounds, five-surface protocol and v1 resource metadata regressions
+green. Prior failed workflows remain explicitly recorded.
+
+Package conclusion: **RESOURCE_STRUCTURE_AND_CANDIDATE_DECODER_QUALIFIED,
+ACTUAL_VISUAL_SELECTION_OPEN**. Neither original early pet graphics runtime
+selector nor battle SAB/palette runtime-selector is closed. Reopen only
+with a v1 `sa_3.exe` read/draw call graph or version-authenticated runtime
+trace; do not spend arbitrary units decoding unrequested helper code.
+Nine Stage A families still PARTIAL/OPEN; Stage B GATED; JSS1999,
+commercial-server quests/contents and savedata R79 remain unresolved.
+No honest overall reconstruction percentage is established.
+
+**Highest NEXT STAGE-A-NPC-CONTENT-BOUNDARY-01**: finite source-qualified
+original NPC/quest/dialogue capability and recovery gap review against
+version-tagged later Windowman/recovered25 scripts, identifying actual
+gameplay bottlenecks and re-openable original content leads. Do not invent
+original NPC dialogue, quest chain, reward or economic numbers, and do not
+start new-engine/visual art production before Stage A review.
