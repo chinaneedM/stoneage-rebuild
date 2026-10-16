@@ -1,0 +1,573 @@
+{
+  "schema": "stoneage.world01.four_hometown.finite_acceptance.r1",
+  "date": "2026-10-16",
+  "startup_main_head": "9f563bdbbf241c078f79a5f5fbee3240650df812",
+  "startup_main_tree": "6cc5d33f9d5df1a4bca8c58406e75499ef256f57",
+  "package_status": "BOUNDED_REVIEW_CLOSED_SOURCE_CONDITIONAL",
+  "stage_a_world_family": "PARTIAL_OPEN",
+  "historical_content": "OPEN_TW10_JSS1999",
+  "historical_route_source": "recovered25",
+  "source_role": "LATER_RECOVERED",
+  "proprietary_content_retained": false,
+  "does_not_prove": "Four original Taiwan1.0/JSS1999 spawn/route/content memberships, guaranteed RNG, original server reward/persistence or 24 playable routes from Git alone",
+  "source_index": {
+    "route": "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-ALL-HOMETOWN-PROGRESSION-R1.txt",
+    "spawn": "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-SPATIAL-R1.txt",
+    "coordinate": "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-COORDINATE-R1.txt",
+    "gap": "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-COORDINATE-GAP-R1.txt",
+    "bridge": "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-DIALOGUE-WARP-BRIDGE-R1.txt",
+    "gate": "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-WARPMAN-BRIDGE-GATE-R1.txt",
+    "shop": "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-WARPMAN-BRIDGE-SHOP-ROUTE-R1.txt",
+    "combat": "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-COMBAT-R1.txt",
+    "level": "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-LEVELING-CLOSURE-R1.txt",
+    "region": "research/recovered/STONEAGE-25-REGION-PAYLOAD-SOURCE-R1.txt",
+    "encounter": "research/recovered/STONEAGE-25-ENCOUNTER-CHAIN-PROBE-R1.txt",
+    "npc": "research/recovered/STONEAGE-25-NPC-WORLD-GRAPH-R1.txt",
+    "policy": "research/clients/STONEAGE-WORLD-MAP-RECONSTRUCTION-POLICY-R1.md",
+    "settlement": "research/mechanics/STONEAGE-BATTLE-SETTLEMENT-R1.md"
+  },
+  "routes": [
+    {
+      "ordinal": 1,
+      "milestones": "COMBAT",
+      "combat_witnesses": 16,
+      "classic_coordinate_reachable": true,
+      "requires_shop": false,
+      "requires_warpman": false,
+      "visited_states": 107,
+      "classic_floor_hops": 4
+    },
+    {
+      "ordinal": 2,
+      "milestones": "COMBAT",
+      "combat_witnesses": 16,
+      "classic_coordinate_reachable": true,
+      "requires_shop": false,
+      "requires_warpman": false,
+      "visited_states": 107,
+      "classic_floor_hops": 2
+    },
+    {
+      "ordinal": 3,
+      "milestones": "COMBAT>SHOP>WARPMAN",
+      "combat_witnesses": 28,
+      "classic_coordinate_reachable": false,
+      "requires_shop": true,
+      "requires_warpman": true,
+      "visited_states": 446,
+      "classic_floor_hops": null
+    },
+    {
+      "ordinal": 4,
+      "milestones": "SHOP>COMBAT>WARPMAN",
+      "combat_witnesses": 28,
+      "classic_coordinate_reachable": false,
+      "requires_shop": true,
+      "requires_warpman": true,
+      "visited_states": 442,
+      "classic_floor_hops": null
+    }
+  ],
+  "cells": [
+    {
+      "route_ordinal": 1,
+      "checkpoint": "spawn",
+      "version_role": "LATER_RECOVERED",
+      "early_membership": "OPEN_TW10_JSS1999",
+      "status": "LATER_SPAWN_WITNESS",
+      "evidence_paths": [
+        "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-SPATIAL-R1.txt",
+        "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-ALL-HOMETOWN-PROGRESSION-R1.txt"
+      ],
+      "existing_model": "Source-selected normal hometown has a finite born-floor route; the two optional later compile-time spawn variants are not activated.",
+      "required_external_inputs": [
+        "recovered25 setup.cf birthplace and exact initialized spawn coordinate"
+      ],
+      "unresolved_gap": "Spawn coordinates are withheld from the report; launch-era birth memberships unverified.",
+      "gameplay_impact": "Original early birthplace cannot be imported as a historical fact."
+    },
+    {
+      "route_ordinal": 1,
+      "checkpoint": "region",
+      "version_role": "LATER_RECOVERED",
+      "early_membership": "OPEN_TW10_JSS1999",
+      "status": "LATER_PAYLOAD_REFERENCE",
+      "evidence_paths": [
+        "research/recovered/STONEAGE-25-REGION-PAYLOAD-SOURCE-R1.txt",
+        "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-ALL-HOMETOWN-PROGRESSION-R1.txt",
+        "research/clients/STONEAGE-WORLD-MAP-RECONSTRUCTION-POLICY-R1.md"
+      ],
+      "existing_model": "Source route has zero unresolved map floors in a recovered25 826-floor materializable set (761 DAT three-plane + 65 LS2MAP two-plane).",
+      "required_external_inputs": [
+        "pinned source DAT/LS2MAP planes by route floor",
+        "separate event semantics for LS2MAP floors"
+      ],
+      "unresolved_gap": "Map bytes/floor IDs not committed; LS2MAP event plane is absent, not all-zero; v1 map membership unknown.",
+      "gameplay_impact": "Rendering requires transient lawful source payload; no need to repeat full world scan."
+    },
+    {
+      "route_ordinal": 1,
+      "checkpoint": "movement",
+      "version_role": "LATER_RECOVERED",
+      "early_membership": "OPEN_TW10_JSS1999",
+      "status": "LATER_CONDITIONAL_ROUTE",
+      "evidence_paths": [
+        "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-COORDINATE-R1.txt",
+        "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-COORDINATE-GAP-R1.txt",
+        "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-DIALOGUE-WARP-BRIDGE-R1.txt",
+        "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-WARPMAN-BRIDGE-GATE-R1.txt",
+        "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-WARPMAN-BRIDGE-SHOP-ROUTE-R1.txt",
+        "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-ALL-HOMETOWN-PROGRESSION-R1.txt"
+      ],
+      "existing_model": "Classic-Warp coordinate chain reaches downstream award interaction without additional WarpMan item/shop dependency.",
+      "required_external_inputs": [
+        "map collision + live NPC occupancy",
+        "classic Warp endpoints + original coordinate path"
+      ],
+      "unresolved_gap": "Coordinate and classic Warp details are withheld; early membership unproven.",
+      "gameplay_impact": "Must preserve source-specific path gates and existential destination RNG; cannot call all four classic Warp routes."
+    },
+    {
+      "route_ordinal": 1,
+      "checkpoint": "encounter",
+      "version_role": "LATER_RECOVERED",
+      "early_membership": "OPEN_TW10_JSS1999",
+      "status": "LATER_EXISTENTIAL_BATTLE",
+      "evidence_paths": [
+        "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-COMBAT-R1.txt",
+        "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-ALL-HOMETOWN-PROGRESSION-R1.txt",
+        "research/recovered/STONEAGE-25-ENCOUNTER-CHAIN-PROBE-R1.txt",
+        "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-LEVELING-CLOSURE-R1.txt"
+      ],
+      "existing_model": "Route contains 16 legal combat witnesses with explicit favorable but possible inputs; not universal.",
+      "required_external_inputs": [
+        "source-aligned encount/group/enemy files",
+        "birth/AI/stat allocation and explicit legal RNG rolls"
+      ],
+      "unresolved_gap": "Witness is existential, not guaranteed victory or historical pace. Corpus-wide unresolved positive group refs remain fail-closed.",
+      "gameplay_impact": "Representative later battle is evidence-bounded; early exact enemy roster/levels remain OPEN."
+    },
+    {
+      "route_ordinal": 1,
+      "checkpoint": "npc",
+      "version_role": "LATER_RECOVERED",
+      "early_membership": "OPEN_TW10_JSS1999",
+      "status": "LATER_ORDERED_NPC_PROGRESS",
+      "evidence_paths": [
+        "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-ALL-HOMETOWN-PROGRESSION-R1.txt",
+        "research/recovered/STONEAGE-25-NPC-WORLD-GRAPH-R1.txt",
+        "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-WARPMAN-BRIDGE-GATE-R1.txt",
+        "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-WARPMAN-BRIDGE-SHOP-ROUTE-R1.txt",
+        "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-LEVELING-CLOSURE-R1.txt"
+      ],
+      "existing_model": "Combat precedes downstream award interaction without compulsory WarpMan/shop bridge.",
+      "required_external_inputs": [
+        "source-qualified award NPC and level/fee source inputs"
+      ],
+      "unresolved_gap": "Original NPC identities, dialogue, coordinates and specific argument rows withheld; duplicate template/load order and source-data mismatch remain.",
+      "gameplay_impact": "The source-defined later storyline/interaction is bounded, not a proven JSS1999/TW1.0 quest."
+    },
+    {
+      "route_ordinal": 1,
+      "checkpoint": "settlement",
+      "version_role": "LATER_RECOVERED",
+      "early_membership": "OPEN_TW10_JSS1999",
+      "status": "MODEL_NOT_ORIGINAL_END_TO_END",
+      "evidence_paths": [
+        "research/mechanics/STONEAGE-BATTLE-SETTLEMENT-R1.md",
+        "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-COMBAT-R1.txt",
+        "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-LEVELING-CLOSURE-R1.txt",
+        "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-ALL-HOMETOWN-PROGRESSION-R1.txt"
+      ],
+      "existing_model": "Reference model returns terminal HP/result/world position. EXP/level threshold and reward handling require separate selected versioned conditions.",
+      "required_external_inputs": [
+        "finished battle with actor identities",
+        "version-selected player/pet EXP thresholds and reward fields",
+        "authoritative historical server outcome if claiming original behavior"
+      ],
+      "unresolved_gap": "Natural kill reward, quest fulfillment, original server save/relogin and pacing are not established by the finite route witness.",
+      "gameplay_impact": "Do not promote local-model return or positive-EXP source to complete original-server battle settlement."
+    },
+    {
+      "route_ordinal": 2,
+      "checkpoint": "spawn",
+      "version_role": "LATER_RECOVERED",
+      "early_membership": "OPEN_TW10_JSS1999",
+      "status": "LATER_SPAWN_WITNESS",
+      "evidence_paths": [
+        "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-SPATIAL-R1.txt",
+        "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-ALL-HOMETOWN-PROGRESSION-R1.txt"
+      ],
+      "existing_model": "Source-selected normal hometown has a finite born-floor route; the two optional later compile-time spawn variants are not activated.",
+      "required_external_inputs": [
+        "recovered25 setup.cf birthplace and exact initialized spawn coordinate"
+      ],
+      "unresolved_gap": "Spawn coordinates are withheld from the report; launch-era birth memberships unverified.",
+      "gameplay_impact": "Original early birthplace cannot be imported as a historical fact."
+    },
+    {
+      "route_ordinal": 2,
+      "checkpoint": "region",
+      "version_role": "LATER_RECOVERED",
+      "early_membership": "OPEN_TW10_JSS1999",
+      "status": "LATER_PAYLOAD_REFERENCE",
+      "evidence_paths": [
+        "research/recovered/STONEAGE-25-REGION-PAYLOAD-SOURCE-R1.txt",
+        "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-ALL-HOMETOWN-PROGRESSION-R1.txt",
+        "research/clients/STONEAGE-WORLD-MAP-RECONSTRUCTION-POLICY-R1.md"
+      ],
+      "existing_model": "Source route has zero unresolved map floors in a recovered25 826-floor materializable set (761 DAT three-plane + 65 LS2MAP two-plane).",
+      "required_external_inputs": [
+        "pinned source DAT/LS2MAP planes by route floor",
+        "separate event semantics for LS2MAP floors"
+      ],
+      "unresolved_gap": "Map bytes/floor IDs not committed; LS2MAP event plane is absent, not all-zero; v1 map membership unknown.",
+      "gameplay_impact": "Rendering requires transient lawful source payload; no need to repeat full world scan."
+    },
+    {
+      "route_ordinal": 2,
+      "checkpoint": "movement",
+      "version_role": "LATER_RECOVERED",
+      "early_membership": "OPEN_TW10_JSS1999",
+      "status": "LATER_CONDITIONAL_ROUTE",
+      "evidence_paths": [
+        "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-COORDINATE-R1.txt",
+        "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-COORDINATE-GAP-R1.txt",
+        "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-DIALOGUE-WARP-BRIDGE-R1.txt",
+        "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-WARPMAN-BRIDGE-GATE-R1.txt",
+        "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-WARPMAN-BRIDGE-SHOP-ROUTE-R1.txt",
+        "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-ALL-HOMETOWN-PROGRESSION-R1.txt"
+      ],
+      "existing_model": "Classic-Warp coordinate chain reaches downstream award interaction without additional WarpMan item/shop dependency.",
+      "required_external_inputs": [
+        "map collision + live NPC occupancy",
+        "classic Warp endpoints + original coordinate path"
+      ],
+      "unresolved_gap": "Coordinate and classic Warp details are withheld; early membership unproven.",
+      "gameplay_impact": "Must preserve source-specific path gates and existential destination RNG; cannot call all four classic Warp routes."
+    },
+    {
+      "route_ordinal": 2,
+      "checkpoint": "encounter",
+      "version_role": "LATER_RECOVERED",
+      "early_membership": "OPEN_TW10_JSS1999",
+      "status": "LATER_EXISTENTIAL_BATTLE",
+      "evidence_paths": [
+        "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-COMBAT-R1.txt",
+        "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-ALL-HOMETOWN-PROGRESSION-R1.txt",
+        "research/recovered/STONEAGE-25-ENCOUNTER-CHAIN-PROBE-R1.txt",
+        "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-LEVELING-CLOSURE-R1.txt"
+      ],
+      "existing_model": "Route contains 16 legal combat witnesses with explicit favorable but possible inputs; not universal.",
+      "required_external_inputs": [
+        "source-aligned encount/group/enemy files",
+        "birth/AI/stat allocation and explicit legal RNG rolls"
+      ],
+      "unresolved_gap": "Witness is existential, not guaranteed victory or historical pace. Corpus-wide unresolved positive group refs remain fail-closed.",
+      "gameplay_impact": "Representative later battle is evidence-bounded; early exact enemy roster/levels remain OPEN."
+    },
+    {
+      "route_ordinal": 2,
+      "checkpoint": "npc",
+      "version_role": "LATER_RECOVERED",
+      "early_membership": "OPEN_TW10_JSS1999",
+      "status": "LATER_ORDERED_NPC_PROGRESS",
+      "evidence_paths": [
+        "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-ALL-HOMETOWN-PROGRESSION-R1.txt",
+        "research/recovered/STONEAGE-25-NPC-WORLD-GRAPH-R1.txt",
+        "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-WARPMAN-BRIDGE-GATE-R1.txt",
+        "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-WARPMAN-BRIDGE-SHOP-ROUTE-R1.txt",
+        "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-LEVELING-CLOSURE-R1.txt"
+      ],
+      "existing_model": "Combat precedes downstream award interaction without compulsory WarpMan/shop bridge.",
+      "required_external_inputs": [
+        "source-qualified award NPC and level/fee source inputs"
+      ],
+      "unresolved_gap": "Original NPC identities, dialogue, coordinates and specific argument rows withheld; duplicate template/load order and source-data mismatch remain.",
+      "gameplay_impact": "The source-defined later storyline/interaction is bounded, not a proven JSS1999/TW1.0 quest."
+    },
+    {
+      "route_ordinal": 2,
+      "checkpoint": "settlement",
+      "version_role": "LATER_RECOVERED",
+      "early_membership": "OPEN_TW10_JSS1999",
+      "status": "MODEL_NOT_ORIGINAL_END_TO_END",
+      "evidence_paths": [
+        "research/mechanics/STONEAGE-BATTLE-SETTLEMENT-R1.md",
+        "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-COMBAT-R1.txt",
+        "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-LEVELING-CLOSURE-R1.txt",
+        "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-ALL-HOMETOWN-PROGRESSION-R1.txt"
+      ],
+      "existing_model": "Reference model returns terminal HP/result/world position. EXP/level threshold and reward handling require separate selected versioned conditions.",
+      "required_external_inputs": [
+        "finished battle with actor identities",
+        "version-selected player/pet EXP thresholds and reward fields",
+        "authoritative historical server outcome if claiming original behavior"
+      ],
+      "unresolved_gap": "Natural kill reward, quest fulfillment, original server save/relogin and pacing are not established by the finite route witness.",
+      "gameplay_impact": "Do not promote local-model return or positive-EXP source to complete original-server battle settlement."
+    },
+    {
+      "route_ordinal": 3,
+      "checkpoint": "spawn",
+      "version_role": "LATER_RECOVERED",
+      "early_membership": "OPEN_TW10_JSS1999",
+      "status": "LATER_SPAWN_WITNESS",
+      "evidence_paths": [
+        "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-SPATIAL-R1.txt",
+        "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-ALL-HOMETOWN-PROGRESSION-R1.txt"
+      ],
+      "existing_model": "Source-selected normal hometown has a finite born-floor route; the two optional later compile-time spawn variants are not activated.",
+      "required_external_inputs": [
+        "recovered25 setup.cf birthplace and exact initialized spawn coordinate"
+      ],
+      "unresolved_gap": "Spawn coordinates are withheld from the report; launch-era birth memberships unverified.",
+      "gameplay_impact": "Original early birthplace cannot be imported as a historical fact."
+    },
+    {
+      "route_ordinal": 3,
+      "checkpoint": "region",
+      "version_role": "LATER_RECOVERED",
+      "early_membership": "OPEN_TW10_JSS1999",
+      "status": "LATER_PAYLOAD_REFERENCE",
+      "evidence_paths": [
+        "research/recovered/STONEAGE-25-REGION-PAYLOAD-SOURCE-R1.txt",
+        "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-ALL-HOMETOWN-PROGRESSION-R1.txt",
+        "research/clients/STONEAGE-WORLD-MAP-RECONSTRUCTION-POLICY-R1.md"
+      ],
+      "existing_model": "Source route has zero unresolved map floors in a recovered25 826-floor materializable set (761 DAT three-plane + 65 LS2MAP two-plane).",
+      "required_external_inputs": [
+        "pinned source DAT/LS2MAP planes by route floor",
+        "separate event semantics for LS2MAP floors"
+      ],
+      "unresolved_gap": "Map bytes/floor IDs not committed; LS2MAP event plane is absent, not all-zero; v1 map membership unknown.",
+      "gameplay_impact": "Rendering requires transient lawful source payload; no need to repeat full world scan."
+    },
+    {
+      "route_ordinal": 3,
+      "checkpoint": "movement",
+      "version_role": "LATER_RECOVERED",
+      "early_membership": "OPEN_TW10_JSS1999",
+      "status": "LATER_CONDITIONAL_ROUTE",
+      "evidence_paths": [
+        "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-COORDINATE-R1.txt",
+        "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-COORDINATE-GAP-R1.txt",
+        "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-DIALOGUE-WARP-BRIDGE-R1.txt",
+        "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-WARPMAN-BRIDGE-GATE-R1.txt",
+        "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-WARPMAN-BRIDGE-SHOP-ROUTE-R1.txt",
+        "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-ALL-HOMETOWN-PROGRESSION-R1.txt"
+      ],
+      "existing_model": "Classic-only coordinate chain is disconnected; a one-edge ordinary WarpMan needs item FREE predicate, normal affordable shop purchase, valid interaction and legal destination outcome.",
+      "required_external_inputs": [
+        "map collision + live NPC occupancy",
+        "item obtained by normal affordable purchase",
+        "current Stone/award fee and WarpMan FREE/FreeMsg predicate",
+        "source-specific legal destination/RNG roll"
+      ],
+      "unresolved_gap": "Classic-only path fails: direct travel must not be faked. Purchase, conditional warp and chosen outcome are existential; early membership unproven.",
+      "gameplay_impact": "Must preserve source-specific path gates and existential destination RNG; cannot call all four classic Warp routes."
+    },
+    {
+      "route_ordinal": 3,
+      "checkpoint": "encounter",
+      "version_role": "LATER_RECOVERED",
+      "early_membership": "OPEN_TW10_JSS1999",
+      "status": "LATER_EXISTENTIAL_BATTLE",
+      "evidence_paths": [
+        "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-COMBAT-R1.txt",
+        "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-ALL-HOMETOWN-PROGRESSION-R1.txt",
+        "research/recovered/STONEAGE-25-ENCOUNTER-CHAIN-PROBE-R1.txt",
+        "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-LEVELING-CLOSURE-R1.txt"
+      ],
+      "existing_model": "Route contains 28 legal combat witnesses with explicit favorable but possible inputs; not universal.",
+      "required_external_inputs": [
+        "source-aligned encount/group/enemy files",
+        "birth/AI/stat allocation and explicit legal RNG rolls"
+      ],
+      "unresolved_gap": "Witness is existential, not guaranteed victory or historical pace. Corpus-wide unresolved positive group refs remain fail-closed.",
+      "gameplay_impact": "Representative later battle is evidence-bounded; early exact enemy roster/levels remain OPEN."
+    },
+    {
+      "route_ordinal": 3,
+      "checkpoint": "npc",
+      "version_role": "LATER_RECOVERED",
+      "early_membership": "OPEN_TW10_JSS1999",
+      "status": "LATER_ORDERED_NPC_PROGRESS",
+      "evidence_paths": [
+        "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-ALL-HOMETOWN-PROGRESSION-R1.txt",
+        "research/recovered/STONEAGE-25-NPC-WORLD-GRAPH-R1.txt",
+        "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-WARPMAN-BRIDGE-GATE-R1.txt",
+        "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-WARPMAN-BRIDGE-SHOP-ROUTE-R1.txt",
+        "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-LEVELING-CLOSURE-R1.txt"
+      ],
+      "existing_model": "Route requires ordered COMBAT → SHOP → WARPMAN, item-gated WarpMan and downstream award conditions.",
+      "required_external_inputs": [
+        "source-qualified NPC create/template and dialogue/argument",
+        "required item and normal shop selection",
+        "valid level/fee/FREE status and legal WarpMan choice"
+      ],
+      "unresolved_gap": "Original NPC identities, dialogue, coordinates and specific argument rows withheld; duplicate template/load order and source-data mismatch remain.",
+      "gameplay_impact": "The source-defined later storyline/interaction is bounded, not a proven JSS1999/TW1.0 quest."
+    },
+    {
+      "route_ordinal": 3,
+      "checkpoint": "settlement",
+      "version_role": "LATER_RECOVERED",
+      "early_membership": "OPEN_TW10_JSS1999",
+      "status": "MODEL_NOT_ORIGINAL_END_TO_END",
+      "evidence_paths": [
+        "research/mechanics/STONEAGE-BATTLE-SETTLEMENT-R1.md",
+        "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-COMBAT-R1.txt",
+        "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-LEVELING-CLOSURE-R1.txt",
+        "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-ALL-HOMETOWN-PROGRESSION-R1.txt"
+      ],
+      "existing_model": "Reference model returns terminal HP/result/world position. EXP/level threshold and reward handling require separate selected versioned conditions.",
+      "required_external_inputs": [
+        "finished battle with actor identities",
+        "version-selected player/pet EXP thresholds and reward fields",
+        "authoritative historical server outcome if claiming original behavior"
+      ],
+      "unresolved_gap": "Natural kill reward, quest fulfillment, original server save/relogin and pacing are not established by the finite route witness.",
+      "gameplay_impact": "Do not promote local-model return or positive-EXP source to complete original-server battle settlement."
+    },
+    {
+      "route_ordinal": 4,
+      "checkpoint": "spawn",
+      "version_role": "LATER_RECOVERED",
+      "early_membership": "OPEN_TW10_JSS1999",
+      "status": "LATER_SPAWN_WITNESS",
+      "evidence_paths": [
+        "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-SPATIAL-R1.txt",
+        "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-ALL-HOMETOWN-PROGRESSION-R1.txt"
+      ],
+      "existing_model": "Source-selected normal hometown has a finite born-floor route; the two optional later compile-time spawn variants are not activated.",
+      "required_external_inputs": [
+        "recovered25 setup.cf birthplace and exact initialized spawn coordinate"
+      ],
+      "unresolved_gap": "Spawn coordinates are withheld from the report; launch-era birth memberships unverified.",
+      "gameplay_impact": "Original early birthplace cannot be imported as a historical fact."
+    },
+    {
+      "route_ordinal": 4,
+      "checkpoint": "region",
+      "version_role": "LATER_RECOVERED",
+      "early_membership": "OPEN_TW10_JSS1999",
+      "status": "LATER_PAYLOAD_REFERENCE",
+      "evidence_paths": [
+        "research/recovered/STONEAGE-25-REGION-PAYLOAD-SOURCE-R1.txt",
+        "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-ALL-HOMETOWN-PROGRESSION-R1.txt",
+        "research/clients/STONEAGE-WORLD-MAP-RECONSTRUCTION-POLICY-R1.md"
+      ],
+      "existing_model": "Source route has zero unresolved map floors in a recovered25 826-floor materializable set (761 DAT three-plane + 65 LS2MAP two-plane).",
+      "required_external_inputs": [
+        "pinned source DAT/LS2MAP planes by route floor",
+        "separate event semantics for LS2MAP floors"
+      ],
+      "unresolved_gap": "Map bytes/floor IDs not committed; LS2MAP event plane is absent, not all-zero; v1 map membership unknown.",
+      "gameplay_impact": "Rendering requires transient lawful source payload; no need to repeat full world scan."
+    },
+    {
+      "route_ordinal": 4,
+      "checkpoint": "movement",
+      "version_role": "LATER_RECOVERED",
+      "early_membership": "OPEN_TW10_JSS1999",
+      "status": "LATER_CONDITIONAL_ROUTE",
+      "evidence_paths": [
+        "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-COORDINATE-R1.txt",
+        "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-COORDINATE-GAP-R1.txt",
+        "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-DIALOGUE-WARP-BRIDGE-R1.txt",
+        "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-WARPMAN-BRIDGE-GATE-R1.txt",
+        "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-WARPMAN-BRIDGE-SHOP-ROUTE-R1.txt",
+        "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-ALL-HOMETOWN-PROGRESSION-R1.txt"
+      ],
+      "existing_model": "Classic-only coordinate chain is disconnected; a one-edge ordinary WarpMan needs item FREE predicate, normal affordable shop purchase, valid interaction and legal destination outcome.",
+      "required_external_inputs": [
+        "map collision + live NPC occupancy",
+        "item obtained by normal affordable purchase",
+        "current Stone/award fee and WarpMan FREE/FreeMsg predicate",
+        "source-specific legal destination/RNG roll"
+      ],
+      "unresolved_gap": "Classic-only path fails: direct travel must not be faked. Purchase, conditional warp and chosen outcome are existential; early membership unproven.",
+      "gameplay_impact": "Must preserve source-specific path gates and existential destination RNG; cannot call all four classic Warp routes."
+    },
+    {
+      "route_ordinal": 4,
+      "checkpoint": "encounter",
+      "version_role": "LATER_RECOVERED",
+      "early_membership": "OPEN_TW10_JSS1999",
+      "status": "LATER_EXISTENTIAL_BATTLE",
+      "evidence_paths": [
+        "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-COMBAT-R1.txt",
+        "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-ALL-HOMETOWN-PROGRESSION-R1.txt",
+        "research/recovered/STONEAGE-25-ENCOUNTER-CHAIN-PROBE-R1.txt",
+        "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-LEVELING-CLOSURE-R1.txt"
+      ],
+      "existing_model": "Route contains 28 legal combat witnesses with explicit favorable but possible inputs; not universal.",
+      "required_external_inputs": [
+        "source-aligned encount/group/enemy files",
+        "birth/AI/stat allocation and explicit legal RNG rolls"
+      ],
+      "unresolved_gap": "Witness is existential, not guaranteed victory or historical pace. Corpus-wide unresolved positive group refs remain fail-closed.",
+      "gameplay_impact": "Representative later battle is evidence-bounded; early exact enemy roster/levels remain OPEN."
+    },
+    {
+      "route_ordinal": 4,
+      "checkpoint": "npc",
+      "version_role": "LATER_RECOVERED",
+      "early_membership": "OPEN_TW10_JSS1999",
+      "status": "LATER_ORDERED_NPC_PROGRESS",
+      "evidence_paths": [
+        "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-ALL-HOMETOWN-PROGRESSION-R1.txt",
+        "research/recovered/STONEAGE-25-NPC-WORLD-GRAPH-R1.txt",
+        "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-WARPMAN-BRIDGE-GATE-R1.txt",
+        "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-WARPMAN-BRIDGE-SHOP-ROUTE-R1.txt",
+        "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-LEVELING-CLOSURE-R1.txt"
+      ],
+      "existing_model": "Route requires ordered SHOP → COMBAT → WARPMAN, item-gated WarpMan and downstream award conditions.",
+      "required_external_inputs": [
+        "source-qualified NPC create/template and dialogue/argument",
+        "required item and normal shop selection",
+        "valid level/fee/FREE status and legal WarpMan choice"
+      ],
+      "unresolved_gap": "Original NPC identities, dialogue, coordinates and specific argument rows withheld; duplicate template/load order and source-data mismatch remain.",
+      "gameplay_impact": "The source-defined later storyline/interaction is bounded, not a proven JSS1999/TW1.0 quest."
+    },
+    {
+      "route_ordinal": 4,
+      "checkpoint": "settlement",
+      "version_role": "LATER_RECOVERED",
+      "early_membership": "OPEN_TW10_JSS1999",
+      "status": "MODEL_NOT_ORIGINAL_END_TO_END",
+      "evidence_paths": [
+        "research/mechanics/STONEAGE-BATTLE-SETTLEMENT-R1.md",
+        "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-COMBAT-R1.txt",
+        "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-LEVELING-CLOSURE-R1.txt",
+        "research/recovered/STONEAGE-25-SHADOWED-BRANCH-FRESH-START-ALL-HOMETOWN-PROGRESSION-R1.txt"
+      ],
+      "existing_model": "Reference model returns terminal HP/result/world position. EXP/level threshold and reward handling require separate selected versioned conditions.",
+      "required_external_inputs": [
+        "finished battle with actor identities",
+        "version-selected player/pet EXP thresholds and reward fields",
+        "authoritative historical server outcome if claiming original behavior"
+      ],
+      "unresolved_gap": "Natural kill reward, quest fulfillment, original server save/relogin and pacing are not established by the finite route witness.",
+      "gameplay_impact": "Do not promote local-model return or positive-EXP source to complete original-server battle settlement."
+    }
+  ],
+  "observations": [
+    "All four recovered25 normal hometown ordinals have a finite ordered route and zero unresolved map floors in the selected witness.",
+    "Classic coordinate routes for ordinals 1,2 succeed; classic-only ordinals 3,4 fail with a disconnected source component.",
+    "Ordinal 3 order is COMBAT>SHOP>WARPMAN; ordinal 4 is SHOP>COMBAT>WARPMAN; both rely on a normal affordable purchase and an ITEM FREE predicate.",
+    "One-hit/EXP and WarpMan outcomes are existential legal source witnesses; no universal win, guaranteed destination or efficient pace follows.",
+    "The 826 recovered25 floor set uses 761 DAT three-plane and 65 LS2MAP two-plane payloads. LS2MAP's missing event plane is not zero-filled.",
+    "The minimal battle settlement return is not proof of original server reward, quest award, login persistence or historical v1 content."
+  ],
+  "reopen_triggers": [
+    "New independently version-attributable original JSS1999/TW1.0 maps, quests, encounters or server payload for named cell",
+    "A concrete contradiction in reported route order, purchase, warp gate, NPC binding or EXP/reward rule",
+    "A specific unsatisfied necessary input blocking a Stage A representative route"
+  ],
+  "next_priority": "RULES-01 — finite versioned combat/growth/items/economy/quest cross-system attribution",
+  "paused_nonblocking": "TW1.0 client-local savedata R79",
+  "aggregate_completion_percentage": null
+}
