@@ -44,7 +44,7 @@ jobs:
             rm -f /tmp/CD_DIC.rar
             test "$attempt" -lt 3 || exit 1
           done
-      - name: Reproduce exact R63 then derive only the R69 early-return neighborhood
+      - name: Reproduce exact R67 and inherited R63 then derive the R69 early-return neighborhood
         run: |
           set -euo pipefail
           mkdir -p /tmp/stoneage-r69
@@ -129,5 +129,5 @@ jobs:
           git add research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-EARLY-R69-ORIGINAL.json research/recovered/STONEAGE-TW10-SAVEDATA-R69-SOURCE-CUSTODY.json
           git diff --cached --name-only
           test "$(git diff --cached --name-only | wc -l)" -eq 2
-          git commit -m 'Preserve independently guarded R69 original-static tail metadata and artifact custody'
+          git commit -m 'Preserve independently guarded R69 original-static early-return metadata and artifact custody'
           git push origin "HEAD:refs/heads/$GITHUB_REF_NAME"

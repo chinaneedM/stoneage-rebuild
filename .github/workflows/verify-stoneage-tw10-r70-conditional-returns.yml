@@ -42,3 +42,35 @@ jobs:
               assert d[k] is False
           print('TW10_R70_BOUNDED_DIRECT_RETURN_CLASSIFICATION=PASS; ORIGINAL_NATIVE_PERSISTENCE=OPEN')
           PY
+      - name: Independently replay the 133-report preacquisition representation census
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          d=json.load(open('research/recovered/STONEAGE-TW10-SAVEDATA-R69-PREFLIGHT.json'))
+          assert d['source_head']=='93ce004cceb5b46eec557b7fde091e2fe78e088a'
+          assert d['report_count']==len(d['registered_reports'])==133 and d['decoded_hits']==[]
+          assert d['target_rva']==312830 and d['target_va']==4507134
+          keys=['site_rva','rva','instruction_rva','address','va','instruction_address']
+          operands=['operands','ops','operand_shapes']
+          assert d['address_keys']==keys and d['operand_array_keys']==operands
+          def visit(x):
+              if isinstance(x,dict):
+                  same=any(x.get(k) in (312830,4507134,'0x4c5fe','0x44c5fe') for k in keys)
+                  full=isinstance(x.get('mnemonic'),str) and bool(x['mnemonic']) and any(isinstance(x.get(k),list) for k in operands)
+                  assert not (same and full)
+                  for value in x.values():
+                      if isinstance(value,(dict,list)): visit(value)
+              elif isinstance(x,list):
+                  for value in x:
+                      if isinstance(value,(dict,list)): visit(value)
+          paths=[r['path'] for r in d['registered_reports']];assert paths==sorted(set(paths))
+          for r in d['registered_reports']:
+              p=Path(r['path']);assert p.parent==Path('research/recovered') and p.name.startswith('STONEAGE-TW10-SAVEDATA-') and p.suffix=='.json'
+              raw=p.read_bytes();assert len(raw)==r['bytes']
+              assert hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest()==r['git_blob']
+              visit(json.loads(raw))
+          assert d['actual_native_result_or_persistence_proven'] is False
+          print('R69_PREACQUISITION_133_REPORT_CENSUS=PASS')
+          PY
