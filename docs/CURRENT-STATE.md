@@ -14217,3 +14217,63 @@ inventing quest scripts or item/default values. Only close an actual domain
 join after comparing current modeled function signatures, provenance,
 normal-transaction conditions and state ownership. Old R79 stays PAUSED_NON_BLOCKING;
 Stage A family states PARTIAL/OPEN; Stage B still awaits joint review.
+
+
+## 2026-10-16 — RULES-01 source-bounded normal purchase → owned item → gate → modern disk reentry
+
+Game-behavior result: new `tools/stoneage_rules01_shop_gate_reference.py` supplies
+a narrowly scoped, explicitly version-tagged normal one-item purchase bridge.
+Source profile and evidence role are fixed to recovered25/LATER_RECOVERED; the
+shop-offered vs selected item ID, prices/rates, source/fixture receipt, usable
+inventory capacity, character Stone/gold and item-view state must all be
+provided. Missing or inconsistent conditions reject before persistent mutation.
+Successful purchase uses the already verified buy-price/truncation and slot
+logic, copies player state, inserts a real owned InventoryItem, and updates
+persistent Stone; it does not invent a quest award/warp/fee/save.
+
+An invented-only integration regression proves absent item denies the existing
+recovered25 ITEM/FREE gate, an actual normal purchase admits it, an unrelated
+world flag cannot bypass ownership, and the item/Stone survive a **real local
+temporary-disk save and fresh-store decode**. Deleting the owned item revokes
+the predicate. Funds/capacity/source mismatch rejections are guarded.
+These invented item identities/prices/NPC bindings DO NOT date historical
+content, run the original commercial client/server, prove original durable
+save, or prove an actual commercial quest completed. Normal successful purchase
+and predictable pre-mutation decline are covered; the descendant buy routine's
+abnormal partial allocation/insertion non-atomicity is explicitly NOT declared
+rolled back or historically repaired.
+
+Separate source-attribution result:2 recovered25 ExChangeMan ACCEPT/EventEnd
+GETITEM records with LV threshold and level-scaled DELSTONE are documented.
+Their separate progression witness is NOT the WORLD-01 hometown3/4 ItemShop
+route. The later NPC reference census includes WarpMan DelItem/FREE references,
+not execution proof that the selected gate consumes the item. A bounded
+drop/AddItem zero-match audit does not disprove separate ExChangeMan GetItem.
+The source-pinned report keeps7 Git blob/byte-count anchors and negative
+claims: research/recovered/STONEAGE-RULES01-KEYITEM-AWARD-BOUNDARY-R1.json.
+
+Acceptance:
+- tools/stoneage_rules01_shop_gate_reference.py
+- tests/test_stoneage_rules01_shop_gate_save_reference.py
+- tests/test_stoneage_rules01_keyitem_award_boundary.py
+- docs/specs/STONEAGE-RULES01-OWNED-ITEM-GATE-REFERENCE-R1.md
+- .github/workflows/validate-stoneage-rules01-item-gate.yml
+- research/recovered/STONEAGE-RULES01-KEYITEM-AWARD-BOUNDARY-R1.json
+- GitHub Actions38911053816, job117006703107: all three separate test
+  steps SUCCESS (new purchase/gate/disk regression, source-pin/negative-evidence
+  regression, existing item-shop and RULES01 preflight checks).
+
+Material OPEN: original JSS1999/TW1.0 specific item IDs/NPC/quest scripts and
+version attribution; exact target ITEM_DROPATLOGOUT flag, EventNo/award persistent
+fields, original SAAC successful write/relogin and source-time item consumption.
+Modern local filesystem save is not original server persistence.
+The client-local savedata R79 branch remains PAUSED_NON_BLOCKING. This package
+closes only BOUNDED_REFERENCE_INTEGRATION_AND_LATER_CONTENT_ATTRIBUTION;
+RULES-01 and all Stage A families remain PARTIAL/OPEN; Stage B gated.
+
+**Highest NEXT STAGE-A-REVIEW-PREFLIGHT**: inspect the nine-family matrix and
+highest-impact unresolved original content/behavior, distinguish currently
+playable version-qualified representative scenarios from source unavailable
+ones, and select the next material research/implementation package. This is NOT
+final Stage A acceptance or a transition to new-game design; it also does not
+justify a made-up overall restoration completion percentage.
