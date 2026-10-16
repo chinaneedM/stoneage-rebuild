@@ -1,0 +1,66 @@
+{
+  "authoritative_main": "39fff10d75ace74908889eed38d4bd4495fdc3f5",
+  "branch_tip_equals_queued_head": true,
+  "current_oracle_tests": 1,
+  "current_oracle_tests_result": "PASS; no fresh native composition claimed",
+  "disposition": "Historical queued attempt remains queued. A separately requalified later successful bounded acceptance and identical permanent report survive. Preserve both records; do not claim the queued attempt ran or evolved files are semantically equivalent.",
+  "later_recorded_accepted_scope": {
+    "accepted_receipt": "research/recovered/STONEAGE-BECOMEPIG-ITEM-NPC-MAP-ACCEPTANCE-R1.json",
+    "branch": "agent/becomepig-item-npc-map-r1-fix4-20261007",
+    "conclusion": "success",
+    "current_permanent_report_hash_matches": true,
+    "head": "d1f7554336738a518f370ebe69eda0fefe5fa369",
+    "native_comparisons": 30,
+    "permanent_report": "research/recovered/STONEAGE-BECOMEPIG-ITEM-NPC-MAP-NATIVE-R1.txt",
+    "permanent_report_sha256": "9b2150a91e2e5e3a144275d201e0c48c1a86d3dedd9d25a53ee13e10458cd171",
+    "profiles": 3,
+    "run_id": 37643425686,
+    "scenarios": 5,
+    "scope": "Bounded extracted conditionals only; BecomePig runtime promotions0; original TW1/JSS build/ABI/full scheduling OPEN.",
+    "status": "completed"
+  },
+  "observed_at": "2026-10-16T10:05:56Z",
+  "path_dispositions": [
+    {
+      "byte_identical": true,
+      "current_blob": "cfa892ac3821946a065d1bfd646221874924ebf4",
+      "path": ".github/workflows/validate-stoneage-becomepig-item-npc-map.yml",
+      "queued_blob": "cfa892ac3821946a065d1bfd646221874924ebf4",
+      "semantic_equivalence_of_evolved_files_claimed": false
+    },
+    {
+      "byte_identical": false,
+      "current_blob": "74aa4019480b64417d4708339e559deb3dfb1127",
+      "path": "specs/STONEAGE-BECOMEPIG-ITEM-NPC-MAP-R1.md",
+      "queued_blob": "4ef012987cf08237f8b5ad5b6d3d7995b86b3761",
+      "semantic_equivalence_of_evolved_files_claimed": false
+    },
+    {
+      "byte_identical": true,
+      "current_blob": "095102ce63d96363b29b353f5b73a0376e608c83",
+      "path": "tests/test_stoneage_becomepig_item_npc_map.py",
+      "queued_blob": "095102ce63d96363b29b353f5b73a0376e608c83",
+      "semantic_equivalence_of_evolved_files_claimed": false
+    },
+    {
+      "byte_identical": false,
+      "current_blob": "daf7e1432a12c828a059adac9b547c1a668de088",
+      "path": "tools/stoneage_becomepig_item_npc_map_native_audit.py",
+      "queued_blob": "00915a8d3df275da9a955a12332272330e8e4b27",
+      "semantic_equivalence_of_evolved_files_claimed": false
+    }
+  ],
+  "queued_head_is_ancestor_of_current_main": true,
+  "queued_run": {
+    "branch": "agent/becomepig-item-npc-map-r1-20261007",
+    "conclusion": null,
+    "created_at": "2026-10-07T15:15:11Z",
+    "head": "73c45041b9ef2519ba4575471e9d374dff169fd4",
+    "id": 37642417333,
+    "status": "queued",
+    "workflow": ".github/workflows/validate-stoneage-becomepig-item-npc-map.yml"
+  },
+  "queued_run_claimed_success": false,
+  "run_cancelled_or_branch_mutated": false,
+  "schema": "stoneage-stale-queued-run-disposition-r1"
+}

@@ -1,0 +1,104 @@
+name: Independently verify TW1.0 R74 complete bounded operands and opaque-call barriers
+on:
+  workflow_dispatch:
+  push:
+    branches: [agent/tw10-r74-modes-barriers-20261016, main]
+    paths:
+      - .github/workflows/verify-stoneage-tw10-r74-modes-barriers.yml
+      - tools/stoneage_tw10_savedata_*.py
+      - tests/test_stoneage_tw10_savedata_*.py
+      - research/recovered/STONEAGE-TW10-SAVEDATA-*.json
+      - docs/specs/STONEAGE-TW10-R73-R74-MODES-BARRIERS.md
+permissions:
+  contents: read
+jobs:
+  acceptance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Source, mode, partial-register, loop and inherited boundary tests
+        run: |
+          set -euo pipefail
+          python -m unittest -v tests.test_stoneage_tw10_savedata_r74_modes_barriers tests.test_stoneage_tw10_savedata_r73_modes_static tests.test_stoneage_tw10_savedata_r72_adjustment_counts tests.test_stoneage_tw10_savedata_r71_adjustment_static tests.test_stoneage_tw10_savedata_r70_conditional_returns tests.test_stoneage_tw10_savedata_r69_early_static tests.test_stoneage_tw10_savedata_r68_return_sources tests.test_stoneage_tw10_savedata_r67_tail_static tests.test_stoneage_tw10_savedata_r66_count_consumers tests.test_stoneage_tw10_savedata_r65_cross_window
+          python -m tools.stoneage_tw10_savedata_r73_guard --report research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-MODES-R73-ORIGINAL.json
+          python -m tools.stoneage_tw10_savedata_r74_modes_barriers --verify research/recovered/STONEAGE-TW10-SAVEDATA-R74-MODES-BARRIERS-DERIVED.json
+      - name: Independently qualify full bounded inventory and exact barrier counts
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json,hashlib
+          from pathlib import Path
+          d=json.load(open('research/recovered/STONEAGE-TW10-SAVEDATA-R74-MODES-BARRIERS-DERIVED.json'))
+          assert (d['decoded_graph_nodes'],d['bounded_graph_nodes'],d['bounded_graph_edges'])==(139,139,156)
+          assert d['missing_bounded_operand_nodes']==[] and d['mode_snapshot_masks']==[32,128]
+          assert d['invented_two_snapshot_predicate_comparisons']==65536
+          assert len(d['invented_combination_counts'])==4 and {x['count']for x in d['invented_combination_counts']}=={16384}
+          assert [x['site_rva']for x in d['opaque_calls']]==[312845,312972,313049,313073,313094,313108]
+          assert all(x['all_register_and_memory_effects_opaque']is True for x in d['opaque_calls'])
+          assert d['opaque_calls'][0]['target_rva']==313185 and d['opaque_calls'][-1]['target_rva']==313683
+          for q in d['register_queries'][:3]:
+              assert {'origin':'opaque_call','site_rva':312845}in q['syntax_sources']
+              assert q['actual_value_or_preservation_proven']is False
+          assert [s['site_rva']for s in d['register_queries'][-1]['syntax_sources']]==[312830,313155,313177]
+          assert all(x['origin']=='full_register_definition'for x in d['register_queries'][-1]['syntax_sources'])
+          assert all(d[k]is False for k in ['complete_original_execution_or_callee_graph_claimed','actual_original_program_or_payload_executed','actual_native_bool_count_or_success_proven','actual_path_predicates_or_return_values_proven','actual_abi_frame_register_memory_preservation_proven','same_table_byte_or_address_across_optional_call_proven','historical_flag_or_error_names_proven','actual_flush_close_disk_persistence_proven','original_savedata_schema_or_server_authority_proven','stage_b_started'])
+          rows={};core=('site_rva','mnemonic','operands','decoder_read_registers','decoder_written_registers');graph=None
+          for name,pin in d['source_git_blobs'].items():
+              # Manifest identity is pinned by analyzer; this loop independently
+              # walks every source representation and checks complete inventory.
+              files={'r73':'NATIVE-MODES-R73-ORIGINAL','r71':'NATIVE-ADJUSTMENT-R71-ORIGINAL','r69':'NATIVE-EARLY-R69-ORIGINAL','r67':'NATIVE-TAIL-R67-ORIGINAL','r63':'POSTCALL-R63-DERIVED','r44':'NATIVE-IO-R44-ORIGINAL','r45':'NATIVE-IO-R45-ORIGINAL'}
+              raw=Path('research/recovered/STONEAGE-TW10-SAVEDATA-'+files[name]+'.json').read_bytes()
+              assert hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest()==pin
+              original=json.loads(raw)
+              if name=='r73':graph=original
+              pending=[original]
+              while pending:
+                  x=pending.pop()
+                  if isinstance(x,list):pending.extend(x)
+                  elif isinstance(x,dict):
+                      at=x.get('site_rva')
+                      if type(at)is int and x.get('mnemonic') and isinstance(x.get('operands'),list):
+                          r={k:x[k]for k in core};assert at not in rows or rows[at]==r;rows[at]=r
+                      pending.extend(x.values())
+          assert len(set(graph['bounded_graph_node_rvas'])&rows.keys())==139
+          print('R74_FULL_BOUNDED_INVENTORY_AND_OPAQUE_CALL_NONPROMOTION=PASS')
+          PY
+      - name: Independently rehash and rescan complete retained-first 144-report census
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          p=Path('research/recovered/STONEAGE-TW10-SAVEDATA-R73-REFRESH-PREFLIGHT.json');raw=p.read_bytes()
+          assert hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest()=='2e93328203526d465cfa0af22a0defcc0f3b9b21'
+          d=json.loads(raw);assert d['source_head']=='39fff10d75ace74908889eed38d4bd4495fdc3f5'
+          assert d['report_count']==len(d['registered_reports'])==144
+          g=json.load(open('research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-EARLY-R69-ORIGINAL.json'));nodes=set(g['bounded_graph_node_rvas']);found=set()
+          assert d['address_keys']==['site_rva','rva','instruction_rva','address','va','instruction_address']
+          assert d['operand_array_keys']==['operands','ops','operand_shapes']
+          paths=[r['path']for r in d['registered_reports']];assert paths==sorted(set(paths))
+          for r in d['registered_reports']:
+              f=Path(r['path']);assert f.parent==Path('research/recovered') and f.name.startswith('STONEAGE-TW10-SAVEDATA-') and f.suffix=='.json'
+              raw=f.read_bytes();assert len(raw)==r['bytes'] and hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest()==r['git_blob']
+              pending=[json.loads(raw)]
+              while pending:
+                  x=pending.pop()
+                  if isinstance(x,list):pending.extend(x);continue
+                  if not isinstance(x,dict):continue
+                  if isinstance(x.get('mnemonic'),str) and x['mnemonic'] and any(isinstance(x.get(k),list)for k in d['operand_array_keys']):
+                      for k in d['address_keys']:
+                          n=x.get(k)
+                          if type(n)is not int:
+                              try:n=int(n,0)if isinstance(n,str)else None
+                              except ValueError:n=None
+                          if n is not None:
+                              if n in nodes:found.add(n)
+                              elif n-4194304 in nodes:found.add(n-4194304)
+                  pending.extend(x.values())
+          assert sorted(found)==d['decoded_sites_in_full_graph'] and len(found)==128
+          assert sorted(nodes-found)==d['missing_sites_in_full_graph'] and len(nodes-found)==11
+          selected=set(d['selected_node_rvas']);assert len(selected)==17
+          assert sorted(selected-found)==d['selected_missing_decoded_sites'] and len(selected-found)==11
+          print('R73_REFRESHED_144_REPORT_CENSUS=PASS')
+          PY

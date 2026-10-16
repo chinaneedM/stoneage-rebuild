@@ -1,0 +1,74 @@
+name: Independently accept TW1.0 R73 original mode/direct-count artifact and permanent static report
+on:
+  workflow_dispatch:
+  push:
+    branches: [agent/tw10-r73-independent-20261016, main]
+    paths:
+      - .github/workflows/verify-stoneage-tw10-r73-retained.yml
+      - tools/stoneage_tw10_savedata_*.py
+      - tests/test_stoneage_tw10_savedata_*.py
+      - research/recovered/STONEAGE-TW10-SAVEDATA-*.json
+      - docs/specs/STONEAGE-TW10-R73-R74-MODES-BARRIERS.md
+permissions:
+  contents: read
+  actions: read
+jobs:
+  acceptance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Requalify immutable source run/job and artifact metadata
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/r73-custody
+          python - <<'PY' > /tmp/r73-custody/ids
+          import json
+          r=json.load(open('research/recovered/STONEAGE-TW10-SAVEDATA-R73-SOURCE-CUSTODY.json'))
+          assert type(r['source_run_id']) is int and type(r['artifact_id']) is int
+          print(r['source_run_id'],r['artifact_id'])
+          PY
+          read -r run_id artifact_id < /tmp/r73-custody/ids
+          gh api "repos/$GITHUB_REPOSITORY/actions/runs/$run_id" > /tmp/r73-custody/run.json
+          gh api "repos/$GITHUB_REPOSITORY/actions/runs/$run_id/jobs" > /tmp/r73-custody/jobs.json
+          if gh api "repos/$GITHUB_REPOSITORY/actions/artifacts/$artifact_id" > /tmp/r73-custody/artifact.json; then
+            expired="$(python -c 'import json; print(json.load(open("/tmp/r73-custody/artifact.json"))["expired"])')"
+            if [ "$expired" = 'False' ]; then
+              gh run download "$run_id" --repo "$GITHUB_REPOSITORY" --name tw10-r73-original-static-modes-derived-only --dir /tmp/r73-custody/raw
+            fi
+          else
+            rm -f /tmp/r73-custody/artifact.json
+          fi
+          python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          p=Path('/tmp/r73-custody');r=json.load(open('research/recovered/STONEAGE-TW10-SAVEDATA-R73-SOURCE-CUSTODY.json'))
+          run=json.loads((p/'run.json').read_text());assert (run['status'],run['conclusion'],run['head_sha'],run['head_branch'])==('completed','success',r['source_head'],r['source_branch'])
+          jobs=json.loads((p/'jobs.json').read_text())['jobs'];job=[j for j in jobs if j['id']==r['source_job_id']];assert len(job)==1 and job[0]['name']=='original-static' and job[0]['conclusion']=='success'
+          assert (r['source_run_id'],r['source_head'],r['source_job_id'],r['artifact_id'])==(38885251848,'63d604b52c9c8c8c945ace6f74e391fdda7f158e',116921375490,12039068385)
+          assert r['artifact_zip_sha256']=='7005037bf04b1ff034b12996dd4fae4dd1c4d37750c7d0bfe808ed01a93b974e'
+          raw=Path('research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-MODES-R73-ORIGINAL.json').read_bytes()
+          assert hashlib.sha256(raw).hexdigest()=='5cf096089f60f8a6afd80fe2923f214f609ac57a92ab3d9d02aeefb04248013d'
+          assert hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest()=='2a90bf654a723da53f7d6a26008ca660cb89b290'
+          if (p/'artifact.json').exists():
+              artifact=json.loads((p/'artifact.json').read_text())
+              assert artifact['workflow_run']['id']==r['source_run_id'] and artifact['digest']=='sha256:'+r['artifact_zip_sha256']
+              if not artifact['expired']:
+                  assert len(list((p/'raw').iterdir()))==1 and raw==(p/'raw/tw10-r73-static.json').read_bytes()
+                  print('R73_LIVE_ARTIFACT_EQUALS_PERMANENT_REPORT=PASS')
+              else:
+                  print('R73_ARTIFACT_EXPIRED_PERMANENT_PINNED_METADATA_CUSTODY=PASS')
+          else:
+              print('R73_ARTIFACT_UNAVAILABLE_PERMANENT_PINNED_METADATA_CUSTODY=PASS')
+          assert len(raw)==r['raw_bytes'] and hashlib.sha256(raw).hexdigest()==r['raw_sha256']
+          assert hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest()==r['canonical_git_blob']
+          assert r['original_proprietary_bytes_archived'] is False and r['actual_native_persistence_proven'] is False
+          print('R73_IMMUTABLE_SOURCE_ARTIFACT_AND_CANONICAL_BYTES=PASS')
+          PY
+      - name: Independently verify exact mode/direct-count neighborhood and adverse mutations
+        run: |
+          set -euo pipefail
+          python -m unittest -v tests.test_stoneage_tw10_savedata_r73_modes_static tests.test_stoneage_tw10_savedata_r72_adjustment_counts tests.test_stoneage_tw10_savedata_r71_adjustment_static
+          python -m tools.stoneage_tw10_savedata_r73_guard --report research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-MODES-R73-ORIGINAL.json

@@ -1,0 +1,279 @@
+{
+  "actual_abi_frame_register_memory_preservation_proven": false,
+  "actual_flush_close_disk_persistence_proven": false,
+  "actual_native_bool_count_or_success_proven": false,
+  "actual_original_program_or_payload_executed": false,
+  "actual_path_predicates_or_return_values_proven": false,
+  "all_model_snapshots_are_invented": true,
+  "bounded_graph_edges": 156,
+  "bounded_graph_nodes": 139,
+  "complete_original_execution_or_callee_graph_claimed": false,
+  "decoded_graph_nodes": 139,
+  "every_call_still_kills_register_and_memory_knowledge": true,
+  "first_nonzero_mask_route": "three PUSH shapes then opaque direct call0x4c761; first-mask zero bypasses call",
+  "historical_flag_or_error_names_proven": false,
+  "invented_combination_counts": [
+    {
+      "count": 16384,
+      "expansion_route": false,
+      "optional_call": false
+    },
+    {
+      "count": 16384,
+      "expansion_route": true,
+      "optional_call": false
+    },
+    {
+      "count": 16384,
+      "expansion_route": false,
+      "optional_call": true
+    },
+    {
+      "count": 16384,
+      "expansion_route": true,
+      "optional_call": true
+    }
+  ],
+  "invented_two_snapshot_predicate_comparisons": 65536,
+  "literal_five_inequality_route": "PUSH frame[+8]; opaque direct call0x4c953; POP ECX; JMP all-ones definition",
+  "literal_five_route": "PUSH5/POP EAX; CMP frame[+8],EAX/JNE; equality writes literals9 and5-shaped EAX to two globals before all-ones return; historical meaning unproven",
+  "missing_bounded_operand_nodes": [],
+  "mode_bytes_are_separate_temporal_snapshots": true,
+  "mode_snapshot_masks": [
+    32,
+    128
+  ],
+  "next": "R75 retained-first original helper0x4c761/0x4c953 entry/call effects and ABI/frame/table preservation gap inventory; prioritize effects material to native count/position/persistence; no indiscriminate helper exhaustion.",
+  "opaque_calls": [
+    {
+      "all_register_and_memory_effects_opaque": true,
+      "indirect_slot_rva": null,
+      "site_rva": 312845,
+      "target_rva": 313185
+    },
+    {
+      "all_register_and_memory_effects_opaque": true,
+      "indirect_slot_rva": 336036,
+      "site_rva": 312972,
+      "target_rva": null
+    },
+    {
+      "all_register_and_memory_effects_opaque": true,
+      "indirect_slot_rva": 336012,
+      "site_rva": 313049,
+      "target_rva": null
+    },
+    {
+      "all_register_and_memory_effects_opaque": true,
+      "indirect_slot_rva": 336036,
+      "site_rva": 313073,
+      "target_rva": null
+    },
+    {
+      "all_register_and_memory_effects_opaque": true,
+      "indirect_slot_rva": 336012,
+      "site_rva": 313094,
+      "target_rva": null
+    },
+    {
+      "all_register_and_memory_effects_opaque": true,
+      "indirect_slot_rva": null,
+      "site_rva": 313108,
+      "target_rva": 313683
+    }
+  ],
+  "original_savedata_schema_or_server_authority_proven": false,
+  "qualified_structural_paths": [
+    [
+      312837,
+      312839,
+      312853
+    ],
+    [
+      312837,
+      312839,
+      312841,
+      312843,
+      312844,
+      312845,
+      312850,
+      312853
+    ],
+    [
+      312853,
+      312855,
+      312857,
+      312861,
+      312867
+    ],
+    [
+      312857,
+      312861,
+      313060
+    ],
+    [
+      313021,
+      313023,
+      313024,
+      313027,
+      313029,
+      313039,
+      313044,
+      313177
+    ],
+    [
+      313024,
+      313027,
+      313105,
+      313108,
+      313113,
+      313114,
+      313177
+    ]
+  ],
+  "register_queries": [
+    {
+      "actual_value_or_preservation_proven": false,
+      "before_rva": 312853,
+      "register": "ebp",
+      "syntax_sources": [
+        {
+          "origin": "full_register_definition",
+          "site_rva": 312757
+        },
+        {
+          "origin": "opaque_call",
+          "site_rva": 312845
+        }
+      ]
+    },
+    {
+      "actual_value_or_preservation_proven": false,
+      "before_rva": 312853,
+      "register": "ebx",
+      "syntax_sources": [
+        {
+          "origin": "full_register_definition",
+          "site_rva": 312793
+        },
+        {
+          "origin": "opaque_call",
+          "site_rva": 312845
+        }
+      ]
+    },
+    {
+      "actual_value_or_preservation_proven": false,
+      "before_rva": 312853,
+      "register": "esi",
+      "syntax_sources": [
+        {
+          "origin": "full_register_definition",
+          "site_rva": 312800
+        },
+        {
+          "origin": "opaque_call",
+          "site_rva": 312845
+        }
+      ]
+    },
+    {
+      "actual_value_or_preservation_proven": false,
+      "before_rva": 312982,
+      "register": "ebp",
+      "syntax_sources": [
+        {
+          "origin": "opaque_call",
+          "site_rva": 312972
+        }
+      ]
+    },
+    {
+      "actual_value_or_preservation_proven": false,
+      "before_rva": 313083,
+      "register": "ebp",
+      "syntax_sources": [
+        {
+          "origin": "opaque_call",
+          "site_rva": 313073
+        }
+      ]
+    },
+    {
+      "actual_value_or_preservation_proven": false,
+      "before_rva": 313155,
+      "register": "ebp",
+      "syntax_sources": [
+        {
+          "origin": "opaque_call",
+          "site_rva": 312972
+        },
+        {
+          "origin": "opaque_call",
+          "site_rva": 313049
+        },
+        {
+          "origin": "opaque_call",
+          "site_rva": 313073
+        },
+        {
+          "origin": "opaque_call",
+          "site_rva": 313094
+        }
+      ]
+    },
+    {
+      "actual_value_or_preservation_proven": false,
+      "before_rva": 313008,
+      "register": "edi",
+      "syntax_sources": [
+        {
+          "origin": "full_register_definition",
+          "site_rva": 313003
+        },
+        {
+          "origin": "opaque_call",
+          "site_rva": 313073
+        },
+        {
+          "origin": "opaque_call",
+          "site_rva": 313094
+        }
+      ]
+    },
+    {
+      "actual_value_or_preservation_proven": false,
+      "before_rva": 313184,
+      "register": "eax",
+      "syntax_sources": [
+        {
+          "origin": "full_register_definition",
+          "site_rva": 312830
+        },
+        {
+          "origin": "full_register_definition",
+          "site_rva": 313155
+        },
+        {
+          "origin": "full_register_definition",
+          "site_rva": 313177
+        }
+      ]
+    }
+  ],
+  "root_rva": 312756,
+  "same_table_byte_or_address_across_optional_call_proven": false,
+  "schema": "tw10-r74-full-bounded-mode-predicates-and-call-barriers",
+  "second_nonzero_mask_route": "fallthrough0x4c623 to qualified byte-expansion loop; zero jumps0x4c6e4 direct native-prefix shapes",
+  "source_git_blobs": {
+    "r44": "39c1c0f673747fb560cc285d627490e5cd38047a",
+    "r45": "1e7fb71cec336c1b4fc531d4f4a6933c9f66d415",
+    "r63": "3b7c9cea63ed4e2a360ddb6934e7dcd44b9833e7",
+    "r67": "04162081d346b8c53424295de9fdc6b8f385b011",
+    "r69": "d5d4924803dc28de8be00f712eecd11cf9003c66",
+    "r71": "f2a946ffc93c6a32210f2ebaa9dc9191833aac37",
+    "r73": "2a90bf654a723da53f7d6a26008ca660cb89b290"
+  },
+  "stage_a_families": "PARTIAL/OPEN",
+  "stage_b_started": false
+}
