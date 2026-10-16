@@ -6,6 +6,8 @@ on:
       - tools/stoneage_rules01_shop_gate_reference.py
       - tests/test_stoneage_rules01_shop_gate_save_reference.py
       - docs/specs/STONEAGE-RULES01-OWNED-ITEM-GATE-REFERENCE-R1.md
+      - research/recovered/STONEAGE-RULES01-KEYITEM-AWARD-BOUNDARY-R1.json
+      - tests/test_stoneage_rules01_keyitem_award_boundary.py
       - .github/workflows/validate-stoneage-rules01-item-gate.yml
 permissions:
   contents: read
@@ -19,5 +21,7 @@ jobs:
           python-version: "3.12"
       - name: Validate versioned purchase through owned item, gate and modern disk reentry
         run: python -m unittest discover -s tests -p test_stoneage_rules01_shop_gate_save_reference.py -v
+      - name: Verify ExChangeMan award source/negative boundaries and custody
+        run: python -m unittest tests.test_stoneage_rules01_keyitem_award_boundary -v
       - name: Recheck existing source-bounded shop and rule attribution
         run: python -m unittest tests.test_stoneage_item_shop_model tests.test_stoneage_rules01_crosssystem_preflight -v
