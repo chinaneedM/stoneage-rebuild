@@ -40,3 +40,32 @@ The regression exercises:
 This subpackage is useful only if its independent CI succeeds. On acceptance it closes a **bounded reference integration seam**, not the complete RULES-01, quest content, world family or Stage A. Record exact CI run and SHA in the current state; do not claim the source-level original commercial server executed.
 
 Then perform one finite RULES-01 review: determine whether a *real source-qualified NPC award/write input* exists that can extend this narrow item gate into actual historical quest/reward state. If absent, record `OPEN_EVIDENCE_LIMITED` and move to the highest-impact unreviewed Stage A family instead of making up scripts, repeatedly cloning the same bridge test or reopening arbitrary savedata helpers.
+
+## Separate later source: exchange award is not the same shop gate
+
+A bounded source-derived comparison additionally found **two recovered25
+ExChangeMan ACCEPT/EventEnd award records** with level threshold and
+level-scaled DELSTONE, followed by GETITEM for the withheld key item. The
+target is not the event's ITEM prerequisite and is not removed by those
+records. The separate later shadowed-branch progression witness traces
+award → classic Warp → guarded WarpMan ingress. It is **not** the WORLD-01
+hometown-3/4 shop-purchase path and must never be merged into one invented
+launch-era quest.
+
+An NPC reference census also finds one WarpMan DelItem reference alongside a
+WarpMan FREE reference. Reference presence alone does **not** prove the same
+selected instance/branch consumed the gate item. Conversely, the limited
+non-shop drop/AddItem probe's zero matches do **not** disprove the separate
+ExChangeMan GetItem awards.
+
+Persistence remains the concrete unresolved source seam: whether the exact
+awarded/purchased target has ITEM_DROPATLOGOUT, which EventNo/quest state is
+serializable, and whether the historical server's asynchronous write
+actually survives reconnect cannot be answered by the retained source reports
+or by our modern local disk test. No universal historical reward/ownership
+durability is promoted.
+
+Source-pinned boundary matrix:
+`research/recovered/STONEAGE-RULES01-KEYITEM-AWARD-BOUNDARY-R1.json`;
+independent custody and negative-evidence guard:
+`tests/test_stoneage_rules01_keyitem_award_boundary.py`.
