@@ -1,0 +1,37 @@
+{
+  "schema": "stoneage.stage_a.npc_content_boundary.acceptance.r1",
+  "date": "2026-10-16",
+  "base_main_head": "b3f4eb5f5be78fced920c3b378d908f144404f57",
+  "base_main_tree": "a859bce501892b22572f97e83fb173c74a3a8800",
+  "validated_branch": "agent/stage-a-npc-content-boundary-r1-20261016",
+  "validated_branch_head": "230c0067470c87b33a1100cca6c981ed6d56aafe",
+  "validated_branch_tree": "fece82987db734802680c3be304ac5336d5342b2",
+  "first_run_failure": {
+    "run_id": 38920780534,
+    "conclusion": "failure",
+    "kind": "test-only raw regular expression digit class"
+  },
+  "corrected_run": {
+    "run_id": 38920853733,
+    "job_id": 117040079436,
+    "conclusion": "success",
+    "tests_passed": 6,
+    "source_file_pins": 13
+  },
+  "report": {
+    "path": "research/recovered/STONEAGE-STAGE-A-NPC-CONTENT-BOUNDARY-R1.json",
+    "git_blob": "822d169801416e1bcfeb5396ad0bd440c4ae1162"
+  },
+  "regression": {
+    "path": "tests/test_stoneage_stage_a_npc_content_boundary.py",
+    "git_blob": "3728d69c797431e55e96a2834bdee269ba3ef2f7"
+  },
+  "original_content_recovered": false,
+  "stage_a_accepted": false,
+  "stage_b_gate": "GATED",
+  "historical_percentage": null,
+  "main_publication": "PENDING_REF_VALIDATION",
+  "next_priority": "STAGE-A-REVIEW-BLOCKER-TRIAGE-01",
+  "source_scope": "Taiwan v1 original WN and filename boundary only; all recovered25 NPC/template/Windowman/quests remain later-source; no original commercial server trace",
+  "failure_retention": "Earlier failed Action remains visible and is not reclassified."
+}

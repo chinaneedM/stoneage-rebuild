@@ -14472,3 +14472,23 @@ version-tagged later Windowman/recovered25 scripts, identifying actual
 gameplay bottlenecks and re-openable original content leads. Do not invent
 original NPC dialogue, quest chain, reward or economic numbers, and do not
 start new-engine/visual art production before Stage A review.
+
+
+## 2026-10-16 — STAGE-A-NPC-CONTENT-BOUNDARY-01 初代 NPC/任务/对白内容归属有限审查
+
+本轮从主线 b3f4eb5f5be78fced920c3b378d908f144404f57 / tree a859bce501892b22572f97e83fb173c74a3a8800 重新读取完整状态与路线、九族预检、原版台湾1.0客户端界面/母数据证据及现有 recovered25 NPC 统计。处理对象是**玩家可见NPC/任务内容的原始来源缺口**，不是另起新引擎、复写任意NPC系统或下钻本地savedata R79。
+
+七个有限证据面（见 docs/specs/STONEAGE-STAGE-A-NPC-CONTENT-BOUNDARY-R1.md 与机器记录）：
+- **V1_DIRECT 原始客户端**：C→S WN 5个整数+1个字符串，S→C WN 4个整数+1个字符串；是NPC窗口I/O协议存在证明，不是原服对白、NPC种群、任务/奖励/窗口坐标的证明。原盘文件名对 pet/item/skill/npc/quest/shop 独立master表的零命中仅有文件名范围约束，不排除嵌入/网络传输。
+- **LATER_RECOVERED NPC目录**：recovered25 4985 create references=4955无歧义+30歧义；4955=1773文件二级参数+3022内联参数+160无参数；15个二级参数文件缺失。任何无歧义后期关系也不自动属于JSS1999/TW1.0。
+- **LATER_RECOVERED NPC对白与窗口**：TownPeople445=389文件解析+34内联+7无参数+15缺失；SignBoard181；Windowman17=13已恢复配置+4缺失。Windowman字段takeitem/giveitem/warp/battle占位不是原版或后代已运行发奖/传送。
+- **LATER_RECOVERED NPC战斗/传送**：NPCEnemy279参数引用、78提示区块；WarpMan202引用、160空间候选边，条件与动作效果仍需同源验证。
+- **LATER_RECOVERED 道具奖赏**：两条ExChangeMan GetItem事件奖励与普通商店购买、WarpMan DelItem引用保持不同来源；原始事件存档、道具标记、下线掉落及商业服读写均未核实。
+- 六段玩家链按位置/窗口/条件/战斗/移动奖励/存档给出有版本前提及 OPEN 重开条件，没有创造任何首发NPC、坐标、对白、任务或经济值。
+- 原文件版权界限持续生效：仅提交派生汇总，不提交原版客户端/服务器原始字节、美术和脚本。
+
+独立审查分支 230c0067470c87b33a1100cca6c981ed6d56aafe 源 Git tree fece82987db734802680c3be304ac5336d5342b2；第一次Actions38920780534因本包Python正则写法错误FAIL，已保留；修复后独立Actions38920853733、job117040079436 SUCCESS，6条测试全部通过（13份Git blob/字节来源、统计分拆、原版WN消息否证、Windowman缺失等）。修复后的脚本没有依赖原版商业服务器实际执行。验收receipt research/recovered/STONEAGE-STAGE-A-NPC-CONTENT-BOUNDARY-ACCEPTANCE-R1.json。
+
+结论：**FINITE_NPC_CONTENT_BOUNDARY_AUDITED_ORIGINAL_QUESTS_OPEN**。仅关闭有范围的证据归属审查，npc_quests族仍 OPEN，其他九系统族保持PARTIAL/OPEN，Stage A 未最终验收，Stage B GATED，没有可靠的全项目百分比。旧R79仍 PAUSED_NON_BLOCKING。
+
+**Highest NEXT STAGE-A-REVIEW-BLOCKER-TRIAGE-01**：进入九族联合可玩性与历史原始内容阻塞分级；每条代表玩法链区分原版客户端可证接口、后期机制有条件可复现、缺失原商服数据和明确重开条件。禁用「以新R编号代替游戏复原」和「把后期剧情当初代事实」。不要启动新游戏生产。

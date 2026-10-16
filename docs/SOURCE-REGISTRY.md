@@ -6793,3 +6793,14 @@ JSS1999/TW1.0 commercial server NPC/EXP/quest records, nor a complete
 executable gameplay scenario. Item ownership, gated NPC reward, historical
 server persistence and original threshold selection remain explicitly OPEN.
 It does not change RULES-01/Stage A family status PARTIAL/OPEN.
+
+
+### SRC-STAGE-A-NPC-CONTENT-BOUNDARY-R1 — 2026-10-16
+
+- Type: derived finite original-client-versus-later-NPC evidence boundary / reusable Stage A review input, **not** a newly recovered historical NPC payload.
+- Source baseline: accepted TW1.0 client WN compiled-protocol and retail filename boundary (V1_DIRECT only for those properties); fixed descendant Windowman semantics and recovered25 NPC/create/template/Windowman/dialogue/quest-derived statistics remain LATER_RECOVERED.
+- Canonical record: `research/recovered/STONEAGE-STAGE-A-NPC-CONTENT-BOUNDARY-R1.json`; narrative `docs/specs/STONEAGE-STAGE-A-NPC-CONTENT-BOUNDARY-R1.md`. Thirteen pre-existing Git blob and file-size source pins with exact canonical counts, seven content evidence surfaces and six ordinary gameplay checkpoints.
+- Source-level derived counts: create refs4985, unambiguous4955/ambiguous30, secondary argument missing files15; TownPeople445/15 missing, SignBoard181; Windowman17/13 resolved/4 missing; NPCEnemy279; WarpMan202 with160 candidate spatial edges.
+- Verification: branch 230c0067470c87b33a1100cca6c981ed6d56aafe, corrected independent Action38920853733, job117040079436 SUCCESS (6 tests). Earlier failure38920780534 is preserved; it was a new Python regex test defect, not a source contradiction.
+- Does NOT prove: original JSS1999/TW1.0 NPC population, quest texts, server choice/action/award state, commercial save durability, early item/economy values or version membership of recovered25 routes.
+- Reopen only upon original-version downloadable/server-verified NPC/script provenance, matching original WN trace, source-resolving later missing configuration, or concrete representative gameplay contradiction. Stage A remains open; savedata R79 paused nonblocking.

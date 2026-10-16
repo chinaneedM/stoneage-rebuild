@@ -250,3 +250,10 @@ Stage A remains PARTIAL/OPEN and Stage B gated.
 **Next STAGE-A-NPC-CONTENT-BOUNDARY-01**: return to the critical
 player-visible missing original NPC/quest/dialogue content and version
 attribution, rather than indefinite image-ID/GUI internals or R79.
+
+
+## 2026-10-16 — STAGE-A-NPC-CONTENT-BOUNDARY-01 完成有限证据归属，不宣称初代任务复原
+
+原始 v1 客户端 WN 通信接口与缺失的初代商业服务器任务/对白必须分开。核对后期 recovered25 create 4985条、Windowman17条（4缺配置）、TownPeople445条（15缺参数）、NPCEnemy279条和WarpMan202条（160空间候选）；这些是后期证据库目录，不是台湾1.0原生NPC表。ExChangeMan后期奖励与普通购买/条件WarpMan始终分开，缺早期奖赏存档及事件完成证据。源证据矩阵七项/玩家链六段，13个Git blob来源由独立CI38920853733验证。无原始商业服任务/对白字节恢复。
+对应 docs/specs/STONEAGE-STAGE-A-NPC-CONTENT-BOUNDARY-R1.md 和research/recovered/STONEAGE-STAGE-A-NPC-CONTENT-BOUNDARY-ACCEPTANCE-R1.json。
+**最高下一项 STAGE-A-REVIEW-BLOCKER-TRIAGE-01**：九族联合代表玩法链和原始内容阻塞分级；Stage A仍未最终验收，Stage B GATED，R79继续暂停；不以R编号/测试数作为进度分母。

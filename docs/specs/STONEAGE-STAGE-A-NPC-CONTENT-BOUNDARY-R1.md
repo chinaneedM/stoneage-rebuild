@@ -36,3 +36,7 @@
 仅在找到带校验和可下载的同版服务端 NPC/任务数据、真实初代 NPC 网络对话回放，或既有代表玩法链发生具体可证明冲突时重开对应单元；缺失 Windowman 四份 conff / TownPeople 参数可按 recovered25 的独立清理，不阻断全局 Stage A 审阅。停止继续追逐不改变玩家可见内容的普通辅助函数，原客户端 savedata R79 仍非阻塞。
 
 **下一优先级：`STAGE-A-REVIEW-BLOCKER-TRIAGE-01`。** 以九族原有预检、四出生点、人物宠物、普通战斗与该 NPC 证据边界审查所有跨系统代表链，区分「有版本约束可运行」「有原客户端接口」「需原商业服务器内容」「永久开放并有重开条件」。九族仍 PARTIAL/OPEN，Stage A 未终验、Stage B GATED；不选择新引擎和美术，不报告无分母的复原百分比。
+
+## 2026-10-16 独立CI与归档验收
+
+首次新测例 Action38920780534 因正则 digit class 写法错误 FAIL；仅修复测试字符串，不变更结论。修复提交 `230c0067470c87b33a1100cca6c981ed6d56aafe`，Action38920853733/job117040079436 SUCCESS，六项测试校验13份既有来源的Git blob、字节数量、统计分解与严禁上推初代任务事实的边界。主线验收整链见 `research/recovered/STONEAGE-STAGE-A-NPC-CONTENT-BOUNDARY-ACCEPTANCE-R1.json`。初代剧情/商服脚本仍 OPEN。
