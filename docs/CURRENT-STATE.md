@@ -14573,3 +14573,19 @@ job117055806701 SUCCESS。完整日志逐组确认5项新边界检查及314项�
 正式成果是可供用户审阅的联合包，不是原版可玩游戏或Stage A终验。
 Highest NEXT仍STAGE-A-JOINT-REVIEW-01；用户普通继续按Stage A处理，
 候选EARLY-CONTENT-RECOVERY-01保持有限补证，Stage B GATED、R79暂停。
+
+
+### 主线整合与审阅交接 — 2026-10-16
+
+归档后独立Action38925748054/job117056714487 SUCCESS，head
+bec49497aa31e13fe6c087aa09126131bd301414 / tree
+c48cddedffdd7f08e9364b52718bc33de4552593。整合前再次读取main仍为
+0d1311e19a090b59d6938b034a2b7f987635f148，精确比较ahead3/behind0、
+11路径无删除；以expected-head非强制快进已写回main。此次后续同步只
+记录已发生的CI与主线整合，不扩张历史证据或改变规则。
+
+正式审阅入口 docs/STAGE-A-CONSOLIDATED-REVIEW-R1.md 已可交给用户；
+九族7 PARTIAL+2 OPEN、原始商业任务/世界/奖赏/存档缺口继续保留。
+Highest NEXT STAGE-A-JOINT-REVIEW-01；用户普通继续时仍为Stage A有限
+补证，可从EARLY-CONTENT-RECOVERY-01的三类同代内容线索开始；不表示
+同意新作设计，Stage B GATED，R79继续PAUSED_NON_BLOCKING。
