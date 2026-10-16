@@ -1,0 +1,302 @@
+{
+  "schema": "stoneage.stage_a.review_blocker_triage.01",
+  "date": "2026-10-16",
+  "base_main_head": "05196c8bf2708d6841439835ea97180c6bb9337b",
+  "base_main_tree": "b503608086893f84dc449d80e48855891acac597",
+  "status": "FINITE_STAGE_A_BLOCKER_TRIAGE_COMPLETE_NOT_STAGE_A_ACCEPTANCE",
+  "source_pins": {
+    "portfolio": {
+      "path": "research/recovered/STONEAGE-RESTORATION-PORTFOLIO-R1.json",
+      "git_blob": "696be2bdc360e066abe92f95255b912eae3e90de",
+      "bytes": 16371
+    },
+    "rules": {
+      "path": "research/recovered/STONEAGE-RULES01-CROSSSYSTEM-PREFLIGHT-R1.json",
+      "git_blob": "d5990b2b617f586403e8c881ed900b5c58fbf5be",
+      "bytes": 10295
+    },
+    "stage_a": {
+      "path": "research/recovered/STONEAGE-STAGE-A-NINE-FAMILY-PREFLIGHT-R1.json",
+      "git_blob": "063d696a425e36e9b738d6e82881a47f9998d8d5",
+      "bytes": 17107
+    },
+    "world": {
+      "path": "research/recovered/STONEAGE-WORLD01-FOUR-HOMETOWN-ACCEPTANCE-R1.json",
+      "git_blob": "5b7abe7e05bd6c9074c556cb4cf105d371bfa26e",
+      "bytes": 36216
+    },
+    "capture": {
+      "path": "research/recovered/STONEAGE-CAPTURE-STATE-SOURCE-AUDIT-R1.json",
+      "git_blob": "728bd8b00b9737285b1940e29da3b168cff18e56",
+      "bytes": 4418
+    },
+    "npc": {
+      "path": "research/recovered/STONEAGE-STAGE-A-NPC-CONTENT-BOUNDARY-R1.json",
+      "git_blob": "822d169801416e1bcfeb5396ad0bd440c4ae1162",
+      "bytes": 11349
+    },
+    "ui": {
+      "path": "research/recovered/STONEAGE-TW10-UI-SEMANTICS-R1.json",
+      "git_blob": "ee3d230317c47b13e3513f25c3feba2ff9305e1c",
+      "bytes": 53638
+    },
+    "item_gate": {
+      "path": "docs/specs/STONEAGE-RULES01-OWNED-ITEM-GATE-REFERENCE-R1.md",
+      "git_blob": "4fbe5cb5613321165132a2e38ce034c6697d1b7e",
+      "bytes": 6764
+    },
+    "phase_gate": {
+      "path": "docs/RESTORATION-PHASE-GATE-R1.md",
+      "git_blob": "9e51c1d33abbaa27cee3a5a070f59639fd16b7f5",
+      "bytes": 74172
+    },
+    "ui_resource": {
+      "path": "research/recovered/STONEAGE-TW10-UI-RESOURCE-BIND-ACCEPTANCE-R1.json",
+      "git_blob": "3163de1dc2565334d3a225ea1a5d3e5a28074213",
+      "bytes": 3636
+    },
+    "roadmap": {
+      "path": "docs/RESTORATION-ROADMAP-R2.md",
+      "git_blob": "71be17003902eaa0564334b028b3f60cd1f24c67",
+      "bytes": 22555
+    }
+  },
+  "stage_a_accepted": false,
+  "stage_b_gate": "GATED",
+  "joint_review_completed": false,
+  "new_original_server_payload_obtained": false,
+  "original_quest_restored": false,
+  "historical_restoration_percentage": null,
+  "system_gates": {
+    "lineage": "PARTIAL",
+    "world": "PARTIAL",
+    "characters_pets": "PARTIAL",
+    "battle": "PARTIAL",
+    "inventory_economy": "PARTIAL",
+    "npc_quests": "OPEN",
+    "graphics_audio_ui": "PARTIAL",
+    "runtime_persistence": "OPEN",
+    "integration": "PARTIAL"
+  },
+  "system_family_count": 9,
+  "source_scopes": {
+    "earliest_client": "TW1.0 Waei/JSS retail",
+    "original_server": "UNRECOVERED",
+    "later": "recovered25 and pinned descendants",
+    "modern": "synthetic reference and local saves"
+  },
+  "world_route_evidence": [
+    {
+      "ordinal": 1,
+      "milestones": "COMBAT",
+      "requires_shop": false,
+      "requires_warpman": false,
+      "classic_coordinate_reachable": true,
+      "version_role": "LATER_RECOVERED",
+      "original_route_proven": false
+    },
+    {
+      "ordinal": 2,
+      "milestones": "COMBAT",
+      "requires_shop": false,
+      "requires_warpman": false,
+      "classic_coordinate_reachable": true,
+      "version_role": "LATER_RECOVERED",
+      "original_route_proven": false
+    },
+    {
+      "ordinal": 3,
+      "milestones": "COMBAT>SHOP>WARPMAN",
+      "requires_shop": true,
+      "requires_warpman": true,
+      "classic_coordinate_reachable": false,
+      "version_role": "LATER_RECOVERED",
+      "original_route_proven": false
+    },
+    {
+      "ordinal": 4,
+      "milestones": "SHOP>COMBAT>WARPMAN",
+      "requires_shop": true,
+      "requires_warpman": true,
+      "classic_coordinate_reachable": false,
+      "version_role": "LATER_RECOVERED",
+      "original_route_proven": false
+    }
+  ],
+  "world_checkpoint_count": 24,
+  "integrated_playflow_profiles": [
+    {
+      "id": "ORIGINAL_TW10_CLIENT_ENTRY",
+      "source_role": "V1_DIRECT_CLIENT_INTERFACE",
+      "support": "Original retail client has version-pinned field/status/owned-item/pet protocol shapes, NPC WN and resource address records; these expose an input/output contract only.",
+      "material_absence": "First-generation commercial server map, NPC population/quest dialogue, items, rewards and authoritative running state; original live end-to-end play not demonstrated.",
+      "replay": "SOURCE_STRUCTURE_ONLY",
+      "original_playthrough_certified": false,
+      "dependencies": [
+        "lineage",
+        "world",
+        "npc_quests",
+        "graphics_audio_ui",
+        "integration"
+      ],
+      "next_evidence": "Version-authenticated original early map/quest/master and client-server trace."
+    },
+    {
+      "id": "RECOVERED25_HOMETOWN_FOUR",
+      "source_role": "LATER_RECOVERED",
+      "support": "Four source-qualified later hometown route existential/conditional witnesses from WORLD-01; routes 1/2 COMBAT, route 3 COMBAT>SHOP>WARPMAN, route 4 SHOP>COMBAT>WARPMAN.",
+      "material_absence": "Historical TW1.0 route ownership, actual original destination/event/NPC data, server settlement and global outcomes.",
+      "replay": "VERSION_CONDITIONAL_EXISTENTIAL",
+      "original_playthrough_certified": false,
+      "dependencies": [
+        "world",
+        "battle",
+        "inventory_economy",
+        "npc_quests"
+      ],
+      "next_evidence": "A version-matched original client/server dataset or direct contradictory same-version route replay."
+    },
+    {
+      "id": "CAPTURE_OWNED_PET_REENTRY_GROWTH",
+      "source_role": "LATER_SOURCE_DERIVED_PLUS_MODERN_SYNTHETIC",
+      "support": "A finite captured-pet/roster/disk reentry/growth reference lifecycle accepts explicitly supplied current pet state; source-bound known fields are not silently invented.",
+      "material_absence": "Original current MP, initial EXP/maxEXP and version threshold, owned skills, status, rename/free-name and AI binding, first-generation server save.",
+      "replay": "EXPLICIT_INPUT_REFERENCE",
+      "original_playthrough_certified": false,
+      "dependencies": [
+        "characters_pets",
+        "battle",
+        "runtime_persistence"
+      ],
+      "next_evidence": "Version-matched live captured-pet current-state and initialization/threshold/wire record."
+    },
+    {
+      "id": "BATTLE_EXP_SETTLEMENT",
+      "source_role": "DESCENDANT_RULES_AND_SOURCE_BOUNDED_MODELS",
+      "support": "Ordinary battle/capture/EXP and settlement source contracts and regression evidence exist for scoped profiles.",
+      "material_absence": "First-generation complete battle command, level threshold regime and realized commercial reward/EXP outcomes are unverified.",
+      "replay": "SOURCE_CONDITIONAL_NOT_ORIGINAL_E2E",
+      "original_playthrough_certified": false,
+      "dependencies": [
+        "battle",
+        "characters_pets",
+        "inventory_economy"
+      ],
+      "next_evidence": "Original first-generation configuration and a traceable end-to-end encounter-to-award execution."
+    },
+    {
+      "id": "SHOP_OWNED_ITEM_WARPMAN_LOCAL_RELOAD",
+      "source_role": "RECOVERED25_GATE_PLUS_MODERN_FIXTURE",
+      "support": "Later ordinary ItemShop purchase/owned item/ITEM-FREE WarpMan predicate/local coordinator two reloads compose under explicit inputs; separate ExChangeMan GetItem source witnesses must not be conflated.",
+      "material_absence": "Original item identity/price/award/consumption, original quest event and authoritative logout/relogin durability.",
+      "replay": "VERSION_CONDITIONAL_SYNTHETIC_LOCAL",
+      "original_playthrough_certified": false,
+      "dependencies": [
+        "inventory_economy",
+        "npc_quests",
+        "runtime_persistence",
+        "integration"
+      ],
+      "next_evidence": "Same-version NPC original source with item flag/event state and original server save/relogin."
+    },
+    {
+      "id": "V1_UI_GRAPHICS_RESOURCE_SELECTION",
+      "source_role": "V1_DIRECT_RESOURCE_STRUCTURE_PLUS_EARLY_LINEAGE",
+      "support": "Five original-client message crosswalks, 218 battle SAB scene identities and 15 indexed palettes are source-specified; candidate grid decoder is not actual original render proof.",
+      "material_absence": "Original pet animation selection, battle palette/scene selection and visible interaction/layout runtime trace.",
+      "replay": "REFERENCE_RESOURCE_SHAPE_ONLY",
+      "original_playthrough_certified": false,
+      "dependencies": [
+        "graphics_audio_ui",
+        "integration"
+      ],
+      "next_evidence": "Original v1 sa_3.exe draw/select call chain or independently authenticated matching runtime trace."
+    },
+    {
+      "id": "ORIGINAL_QUEST_AND_RELOGIN",
+      "source_role": "UNRECOVERED_ORIGINAL_SERVER_CONTENT",
+      "support": "WN original client envelope plus independent later NPC dialogue, NPCEnemy, WarpMan and ExChangeMan structures show relevant possible functions.",
+      "material_absence": "First-generation story dialogue, NPC/quest script, rewards, event flags, item persistence, SAAC ACK and matching original re-login result.",
+      "replay": "OPEN_ORIGINAL_SERVER",
+      "original_playthrough_certified": false,
+      "dependencies": [
+        "npc_quests",
+        "runtime_persistence",
+        "world",
+        "inventory_economy",
+        "integration"
+      ],
+      "next_evidence": "Digitally verifiable original-era server NPC/event data and transactional trace, or precise same-era testimony with artifact corroboration."
+    }
+  ],
+  "blockers": [
+    {
+      "id": "B0_ORIGINAL_SERVER_CONTENT",
+      "priority": "P0_EVIDENCE",
+      "affected": [
+        "world",
+        "npc_quests",
+        "inventory_economy",
+        "integration"
+      ],
+      "gap": "TW1.0/JSS1999 original NPC, quest scripts, master items and original map/events unavailable; client interfaces do not determine server world content.",
+      "policy": "RECORD_UNAVAILABLE_WITH_REOPEN_TRIGGER",
+      "reopen": "Authenticated matching first-generation server release, data files or client/server capture."
+    },
+    {
+      "id": "B1_ORIGINAL_PLAYER_PET_AND_EXP",
+      "priority": "P1_GAME_RULE",
+      "affected": [
+        "characters_pets",
+        "battle"
+      ],
+      "gap": "Captured pet current MP/EXP/status and mutually incompatible descendant EXP threshold regimes cannot be selected for original first generation.",
+      "policy": "EXPLICIT_INPUT_VERSIONED",
+      "reopen": "Source-version-selected original runtime capture/EXP threshold data."
+    },
+    {
+      "id": "B2_ORIGINAL_QUEST_ITEM_DURABILITY",
+      "priority": "P1_GAME_RULE",
+      "affected": [
+        "inventory_economy",
+        "npc_quests",
+        "runtime_persistence"
+      ],
+      "gap": "No source-aligned ITEM_DROPATLOGOUT/quest EventNo/SAAC durable write and original re-login result.",
+      "policy": "SEPARATE_MODERN_DISK_FROM_HISTORICAL_SAVE",
+      "reopen": "Matching source item/event persistence and original save ACK/relogin trace."
+    },
+    {
+      "id": "B3_ORIGINAL_UI_VISUAL_BINDING",
+      "priority": "P2_PRESENTATION",
+      "affected": [
+        "graphics_audio_ui"
+      ],
+      "gap": "v1 asset/message identities known, actual graphic/SAB/palette selectors and on-screen placement not observed.",
+      "policy": "KEEP_OPEN_NOT_PREPRODUCTION",
+      "reopen": "Original v1 renderer callsites or authenticated visual/runtime trace."
+    },
+    {
+      "id": "B4_ORIGINAL_LOCAL_SAVEDATA_R79",
+      "priority": "PAUSED_NON_BLOCKING",
+      "affected": [
+        "runtime_persistence"
+      ],
+      "gap": "Client-local savedata helper ABI and realized IO effects not fully reconstructed; not a cause to defer content review absent material state dependency.",
+      "policy": "DO_NOT_REOPEN_FOR_GENERIC_STATIC_GAPS",
+      "reopen": "Named game-rule/state dependency or new primary evidence demanding that helper's semantics."
+    }
+  ],
+  "triage_decision": "Review as evidence-qualified nine-family portfolio; preserve bounded OPEN original server domains, prepare a single user-review-ready Stage A acceptance matrix without pretending historical percentage or beginning Stage B.",
+  "next_priority": "STAGE-A-CONSOLIDATED-REVIEW-PACKET-01",
+  "no_promotion": [
+    "An original v1 WN/network message is not an original NPC dialogue, choice, quest or reward.",
+    "Four recovered25 world routes are not original JSS1999/TW1.0 routes.",
+    "Modern disk save/reentry is not original SAAC server save success.",
+    "Source derived battle model or later NPCEnemy config is not a complete commercial original encounter.",
+    "Resource and image IDs do not prove original draw selection or window position.",
+    "Any complete modern reference fixture still requires external source, and does not establish original content.",
+    "R79 remains PAUSED_NON_BLOCKING, not a new highest priority.",
+    "No engine selection, production art, new story or Stage B before the separate joint review."
+  ]
+}

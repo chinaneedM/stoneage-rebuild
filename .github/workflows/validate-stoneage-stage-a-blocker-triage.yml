@@ -1,0 +1,19 @@
+name: Validate StoneAge Stage A blocker triage
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-STAGE-A-BLOCKER-TRIAGE-R1.json'
+      - 'docs/STAGE-A-REVIEW-BLOCKER-TRIAGE-R1.md'
+      - 'tests/test_stoneage_stage_a_blocker_triage.py'
+      - '.github/workflows/validate-stoneage-stage-a-blocker-triage.yml'
+  workflow_dispatch:
+jobs:
+  triage-source-custody:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Check nine-family and representative-flow boundaries
+        run: python -m unittest discover -s tests -p test_stoneage_stage_a_blocker_triage.py -v
