@@ -6,7 +6,6 @@ from tools.stoneage_tw10_savedata_r77_guard import validate,NEGATIVE
 def fixture():
  old=priors();root=321787
  row={'site_rva':root,'mnemonic':'ret','operands':[],'decoder_read_registers':[],'decoder_written_registers':[],'input_query_registers':[],'actual_instruction_effect_or_value_known':False}
- caller=copy.deepcopy(old['r75']['decoded_instruction_rows'][0])
  # Invented API-shaped structural fixture; no original callee evidence.
  caller={'call_rva':313230,'kind':'direct','direct_target_rva':root,'runtime_target_or_effects_proven':False}
  return {'schema':'tw10-r77-original-static-bounded-handle-source','runtime_sha256':old['r75']['runtime_sha256'],'image_base':4194304,'root_rva':root,'source_git_blobs':{'r75':'757c22945d7e18263b154e88f52376d0ab58d42c','preflight':'79d6afabc9477f945de449b2265a62a76ff1733b'},'r75_exact_original_rederived_sha256':'bcec13f8eb8d0b6182a38aa8b0ba67a7f20ca1d9b33ca1c9a76a1448f62b7d85','caller_identity':caller,'call_candidates':[],**inventory([root],[],[],False,lambda n:row),**{k:False for k in NEGATIVE}}

@@ -1,0 +1,57 @@
+name: Independently verify TW1.0 R78 conditional handle-table return contracts
+on:
+  workflow_dispatch:
+  push:
+    branches: [agent/tw10-r78-handle-contracts-20261016, main]
+    paths:
+      - .github/workflows/verify-stoneage-tw10-r78-handle-contracts.yml
+      - tools/stoneage_tw10_savedata_*.py
+      - tests/test_stoneage_tw10_savedata_*.py
+      - research/recovered/STONEAGE-TW10-SAVEDATA-*.json
+      - docs/specs/STONEAGE-TW10-R77-R78-HANDLE-CONTRACTS.md
+permissions:
+  contents: read
+jobs:
+  acceptance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Bounded source and adversarial conditional contracts
+        run: |
+          set -euo pipefail
+          python -m unittest -v tests.test_stoneage_tw10_savedata_r78_handle_contracts tests.test_stoneage_tw10_savedata_r77_handle_static tests.test_stoneage_tw10_savedata_r76_seek_contracts tests.test_stoneage_tw10_savedata_r75_seek_helper_static tests.test_stoneage_tw10_savedata_r74_modes_barriers tests.test_stoneage_tw10_savedata_r73_modes_static tests.test_stoneage_tw10_savedata_r72_adjustment_counts tests.test_stoneage_tw10_savedata_r71_adjustment_static tests.test_stoneage_tw10_savedata_r70_conditional_returns tests.test_stoneage_tw10_savedata_r69_early_static tests.test_stoneage_tw10_savedata_r68_return_sources tests.test_stoneage_tw10_savedata_r67_tail_static tests.test_stoneage_tw10_savedata_r66_count_consumers tests.test_stoneage_tw10_savedata_r65_cross_window
+          python -m tools.stoneage_tw10_savedata_r77_preflight_guard
+          python -m tools.stoneage_tw10_savedata_r78_handle_contracts --output /tmp/r78-replayed.json
+          cmp /tmp/r78-replayed.json research/recovered/STONEAGE-TW10-SAVEDATA-R78-HANDLE-CONTRACTS-DERIVED.json
+      - name: Independent literal topology and return-source replay
+        run: |
+          python - <<'PY'
+          import json,hashlib
+          from pathlib import Path
+          p=Path('research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-HANDLE-R77-ORIGINAL.json');raw=p.read_bytes()
+          assert hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest()=='870b84cb7968d325b37463ca68de1540960e1f5e'
+          g=json.loads(raw);rows={r['site_rva']:r for r in g['decoded_instruction_rows']};edges=set(map(tuple,g['bounded_graph_edges']))
+          assert len(rows)==len(edges)==16 and not g['call_candidates']
+          assert not any(r['mnemonic']=='call'for r in rows.values())
+          for n in (0x4e922,0x4e937):assert rows[n]['mnemonic']=='ret'and rows[n]['operands']==[]
+          assert rows[0x4e905]['mnemonic']=='jae'and rows[0x4e90c]['mnemonic']=='sar'
+          # Separate reverse traversal finds the two EAX definitions before RET.
+          for stop,definition in[(0x4e922,0x4e920),(0x4e937,0x4e934)]:
+              todo=[a for a,b in edges if b==stop];seen=set();found=set()
+              while todo:
+                  n=todo.pop()
+                  if n in seen:continue
+                  seen.add(n);r=rows[n]
+                  if 'eax'in r['decoder_written_registers']:found.add(n)
+                  else:todo.extend(a for a,b in edges if b==n)
+              assert found=={definition}
+          assert rows[0x4e920]['operands'][1]['geometry']['relative_field_offset']==0
+          assert rows[0x4e934]['operands'][1]['constant']==0xffffffff
+          d=json.load(open('research/recovered/STONEAGE-TW10-SAVEDATA-R78-HANDLE-CONTRACTS-DERIVED.json'))
+          assert all(d[k]is False for k in d if k.startswith(('actual_','original_','historical_')))
+          assert d['stage_b_started']is False
+          print('R78_INDEPENDENT_LITERAL_RETURN_SOURCES_AND_NONPROMOTION=PASS')
+          PY

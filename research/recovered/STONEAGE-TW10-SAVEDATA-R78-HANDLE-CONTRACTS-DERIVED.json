@@ -1,0 +1,154 @@
+{
+  "actual_abi_stack_nonaliasing_or_memory_validity_proven": false,
+  "actual_flush_close_or_disk_persistence_proven": false,
+  "actual_handle_or_table_values_proven": false,
+  "actual_native_seek_success_or_position_proven": false,
+  "bucket_index_is_arithmetic_signed_shift": true,
+  "call_count": 0,
+  "caller_relation": "Under normal dword near-call/ret, valid nonaliasing stack and stable valid table memory, PUSH EAX supplies helper[ESP+4]; non-allones result reaches SetFilePointer hFile PUSH. This does not prove a valid OS handle or actual I/O.",
+  "conditional_return_sources": {
+    "guard_failure": "0xffffffff after global AND0 and MOV9 spellings",
+    "guard_pass": "dword read at table_pointer[(signed32(input)>>5)] +8*(input&31)"
+  },
+  "explicit_store_rvas": [
+    321827,
+    321834
+  ],
+  "graph_edges": 16,
+  "graph_nodes": 16,
+  "guard_shape": "unsigned input<global24254560, then byte[slot+4]&1 nonzero; memory validity/stability required",
+  "historical_crt_function_or_error_names_proven": false,
+  "invented_flag_byte_comparisons": 256,
+  "invented_geometry_comparisons": 4104,
+  "local_untouched_registers": [
+    "ebp",
+    "ebx",
+    "esi",
+    "edi",
+    "edx"
+  ],
+  "next": "R79: qualify retained caller/table relation and error-helper0x4c953 only where material to nonzero-error return; keep original IO/persistence/schema and ABI/alias boundaries OPEN.",
+  "original_program_or_payload_executed": false,
+  "original_schema_or_server_authority_proven": false,
+  "plain_ret_rvas": [
+    321826,
+    321847
+  ],
+  "premises": [
+    "normal32-bit near-call/ret",
+    "valid nonaliasing stack and global/table reads/writes",
+    "stable corresponding input/table snapshots where equated",
+    "actual path reaches caller/API only conditionally"
+  ],
+  "register_source_queries": [
+    {
+      "before_rva": 321826,
+      "register": "ebp",
+      "syntax_sources": [
+        [
+          "unknown_entry",
+          321787
+        ]
+      ]
+    },
+    {
+      "before_rva": 321826,
+      "register": "ebx",
+      "syntax_sources": [
+        [
+          "unknown_entry",
+          321787
+        ]
+      ]
+    },
+    {
+      "before_rva": 321826,
+      "register": "esi",
+      "syntax_sources": [
+        [
+          "unknown_entry",
+          321787
+        ]
+      ]
+    },
+    {
+      "before_rva": 321826,
+      "register": "edi",
+      "syntax_sources": [
+        [
+          "unknown_entry",
+          321787
+        ]
+      ]
+    },
+    {
+      "before_rva": 321826,
+      "register": "eax",
+      "syntax_sources": [
+        [
+          "full_register_definition",
+          321824
+        ]
+      ]
+    },
+    {
+      "before_rva": 321847,
+      "register": "ebp",
+      "syntax_sources": [
+        [
+          "unknown_entry",
+          321787
+        ]
+      ]
+    },
+    {
+      "before_rva": 321847,
+      "register": "ebx",
+      "syntax_sources": [
+        [
+          "unknown_entry",
+          321787
+        ]
+      ]
+    },
+    {
+      "before_rva": 321847,
+      "register": "esi",
+      "syntax_sources": [
+        [
+          "unknown_entry",
+          321787
+        ]
+      ]
+    },
+    {
+      "before_rva": 321847,
+      "register": "edi",
+      "syntax_sources": [
+        [
+          "unknown_entry",
+          321787
+        ]
+      ]
+    },
+    {
+      "before_rva": 321847,
+      "register": "eax",
+      "syntax_sources": [
+        [
+          "full_register_definition",
+          321844
+        ]
+      ]
+    }
+  ],
+  "schema": "tw10-r78-conditional-handle-table-return-contracts",
+  "source_git_blobs": {
+    "r75": "757c22945d7e18263b154e88f52376d0ab58d42c",
+    "r77": "870b84cb7968d325b37463ca68de1540960e1f5e"
+  },
+  "stable_table_snapshots_or_no_external_writes_proven": false,
+  "stage_a_families": "PARTIAL/OPEN",
+  "stage_b_started": false,
+  "table_base_displacement_rva": 24254304
+}
