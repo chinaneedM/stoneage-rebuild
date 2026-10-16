@@ -86,3 +86,14 @@ claiming Stage A completion. The next finite target is `UI-SEMANTICS-01`:
 five original Taiwan-v1 client protocol-to-interaction/resource specifications.
 Stage A remains PARTIAL/OPEN, Stage B gated and client-local savedata R79 paused.
 No original server-only game content is inferred from modern model tests.
+
+
+### Latest restoration package — UI-SEMANTICS-01 (2026-10-16)
+
+Accepted on a separate branch and source/CI qualified: five original Taiwan
+v1 client protocol/UI **input** crosswalks, 16 decoded-record source contracts
+and 14 compiled message envelopes. Visual screen placement, art-selection
+runtime and original commercial server content remain unproven. Next finite
+priority: **UI-RESOURCE-BIND-01**, only original pet graphic selector and
+battle SAB/palette selector evidence, not a new engine or post-1.0 UI.
+Authoritative detailed order remains the final entry of CURRENT-STATE.

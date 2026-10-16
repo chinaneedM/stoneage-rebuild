@@ -1,0 +1,54 @@
+{
+  "schema": "stoneage.tw10.ui-semantics.acceptance.r1",
+  "date": "2026-10-16",
+  "source_main_head": "6e39cf22e04088531e00d6c83c98e356b1a8445b",
+  "source_main_tree": "56b3290d716a93afe8c21b2f70c294be027d63ac",
+  "independent_branch": "agent/ui-semantics01-five-surface-r1-20261016",
+  "accepted_code_commit": "3f901a151cb3e25071d7a3f07110f153db2c0781",
+  "accepted_code_tree": "c75627234cd51ea3302487c26dc22d70f2dba409",
+  "first_failed_run": {
+    "id": 38917290783,
+    "head": "618f3ddbddd14ca9afa7a069eb8684502896ff79",
+    "status": "failure",
+    "cause": "test-only blob NUL separator escaped as literal slash-zero; fixed in next commit"
+  },
+  "acceptance_run": {
+    "id": 38917649492,
+    "job": 117029149573,
+    "head": "3f901a151cb3e25071d7a3f07110f153db2c0781",
+    "status": "success",
+    "steps": [
+      "Original protocol/resource custody and synthetic read-only projection",
+      "Existing original protocol schema regression"
+    ]
+  },
+  "deliverable_scope": "5 UI source-input contracts, 16 source records, 14 message envelopes, 10 focused independent regressions",
+  "code_files": [
+    "research/recovered/STONEAGE-TW10-UI-SEMANTICS-R1.json",
+    "tools/stoneage_tw10_ui_semantics.py",
+    "tests/test_stoneage_tw10_ui_semantics.py",
+    ".github/workflows/validate-stoneage-tw10-ui-semantics.yml",
+    "docs/specs/STONEAGE-TW10-UI-SEMANTICS-R1.md"
+  ],
+  "code_blob_pins": {
+    "crosswalk": "ee3d230317c47b13e3513f25c3feba2ff9305e1c",
+    "projector": "d4cbbad8a05fc155bcc775469c02c28acaac5858",
+    "test_corrected": "2a266822bf497c3c785739ee74c6eb412efcd777",
+    "workflow": "d0a1dbb07734e4ffcbc8d2288a179a56645cd42a",
+    "spec": "f4bb76429cd221bd38f284b911e6e51ec18fd0c8"
+  },
+  "non_promotions": [
+    "No historical display geometry or GUI controller action is proven",
+    "Client protocol does not prove original server assets, quests or battle settlement",
+    "C/P/A/U B branch labels are separate from pixel-level UI and later extension meanings",
+    "No proprietary original art/audio or runtime binary committed",
+    "Stage A not accepted; Stage B gated",
+    "R79 paused_non_blocking"
+  ],
+  "preserved_current_state": {
+    "original_git_blob": "979920ea3f7eaf667838af43e0a8db8226cf106d",
+    "original_characters": 1804547,
+    "append_only": true
+  },
+  "next_priority": "UI-RESOURCE-BIND-01"
+}

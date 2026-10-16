@@ -14358,3 +14358,56 @@ priority after the package or on new primary source. Stage A family statuses
 PARTIAL/OPEN, Stage B remains GATED, client-local savedata R79 remains
 PAUSED_NON_BLOCKING. The latest main after integration, not old chat SHA,
 must again govern the next turn.
+
+
+## 2026-10-16 — UI-SEMANTICS-01 five Taiwan-v1 protocol→screen evidence contracts
+
+Game-restoration deliverable: source-verified wire/state inputs for five original
+client-facing surfaces (field/position; character/HUD; inventory/items;
+owned pet/skills; battle/NPC windows), not a speculative screenshot UI.
+A single machine-readable crosswalk normalizes **16 complete compiled-client
+record shapes (136 schema fields), 14 exact direction/arity message envelopes**
+and original B callback's C/P/A/U/default branch, including two separate
+4-slot × 4096-byte received message rings. Every token retains
+V1_DIRECT position vs EARLY_LINEAGE field-meaning status. Source evidence
+is pinned to eight pre-existing exact Git blob identities; original
+v1 battlefield dataset retains 218 SAB battle scenes, 15 indexed palettes,
+an independent unindexed Palet_0; REAL/ADRN, SPR/SPRADRN and audio identity
+spaces are preserved separately.
+
+The small `tools/stoneage_tw10_ui_semantics.py` reference projector accepts
+only an explicitly already-decoded FULL record, refuses partial/mismatched/
+extended layouts or cross-surface input, and deliberately returns no visual
+coordinates or sprite selector. Its synthetic battle B classifier routes
+the second byte as originally compiled without promoting later descendant
+Z/F/O command meanings. No client binary/runtime was executed by this
+model; no game artwork or server payload added to Git.
+
+Evidence-qualified close: FIVE_SURFACE_SOURCE_CROSSWALK_COMPLETE;
+**historical visual resource bindings and UI input actions remain OPEN**.
+Synthetic read-only projection proves model guards, not original render
+placement, historic inventory UI, a pet animation or script. Original 1.0
+shop/quest data, JSS1999, SAAC, client-local savedata R79 remain unresolved.
+Stage A stays nine-family PARTIAL/OPEN; Stage B remains GATED. No valid
+denominator for project percentage.
+
+Source and acceptance artifacts:
+- research/recovered/STONEAGE-TW10-UI-SEMANTICS-R1.json
+- docs/specs/STONEAGE-TW10-UI-SEMANTICS-R1.md
+- tools/stoneage_tw10_ui_semantics.py
+- tests/test_stoneage_tw10_ui_semantics.py
+- .github/workflows/validate-stoneage-tw10-ui-semantics.yml
+- research/recovered/STONEAGE-TW10-UI-SEMANTICS-ACCEPTANCE-R1.json
+
+Independent branch CI: first Action38917290783 FAILED due a Python
+test-only blob NUL separator escaping typo (not an archaeology contradiction);
+corrected non-destructively. Commit3f901a151cb3e25071d7a3f07110f153db2c0781,
+tree c75627234cd51ea3302487c26dc22d70f2dba409, Action38917649492,
+job117029149573 SUCCESS, including both new crosswalk and original gameplay
+schema regression suites. Failed first action remains visible.
+
+**Highest NEXT UI-RESOURCE-BIND-01**: a finite proof search for original-v1
+`S:K.graphic_id`→REAL/SPR selector and battle-scene SAB→palette/resource
+selector, stopping at explicitly named missing v1 binary/render call chains.
+Reopen only on material source; no arbitrary original savedata R79 work,
+no speculative original UI layout, no production engine or new-game design.

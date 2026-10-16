@@ -216,3 +216,19 @@ Stage A 未终验，Stage B 未启用。记录来源与可复现限定：
 可审核的语义规格。不能将晚期 Windowman 配置或后世教程界面冒充
 最早版本；不能仅凭资源ID存在推导原版显示位置/动画。遇缺失必须标 OPEN。
 只做历史语义规格，不选新引擎、不进行新游戏UI制作，不重开R79。
+
+
+## 2026-10-16 — UI-SEMANTICS-01 original-client five-surface acceptance
+
+Source-crosswalk only, not a screen reconstruction: 16 original-v1 decoded
+record families and 14 compiled send/receive message envelopes now have
+source-pinned field/interaction contracts and 10 adversarial custody/scope
+tests with independent Actions acceptance. The compiled B receive
+C/P/A/U/default path and status/command queues are separated from later
+server battle simulation. Asset presence (REAL/ADRN, SPR/SPRADRN, indexed
+SAB/palettes, sound) does not by itself prove an on-screen selector.
+Stage A remains PARTIAL/OPEN. Next **UI-RESOURCE-BIND-01**: bounded
+two-family original-v1 pet sprite and battle SAB/palette selection trace,
+stopping if required source is absent; R79 paused. See
+`docs/specs/STONEAGE-TW10-UI-SEMANTICS-R1.md` and the new
+`STONEAGE-TW10-UI-SEMANTICS-ACCEPTANCE-R1.json` receipt.
