@@ -101,7 +101,7 @@ class World01FiniteAudit(unittest.TestCase):
             self.assertEqual(self.audit["source_index"][name], entry["path"])
             content = (ROOT / entry["path"]).read_bytes()
             self.assertEqual(entry["size_bytes"], len(content))
-            source_object = b"blob " + str(len(content)).encode("ascii") + b"\\0" + content
+            source_object = b"blob " + str(len(content)).encode("ascii") + bytes([0]) + content
             self.assertEqual(entry["git_blob"], hashlib.sha1(source_object).hexdigest())
 
 
