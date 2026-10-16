@@ -62,6 +62,7 @@ class Taiwan25BridgeModelTests(unittest.TestCase):
             (1, 0, 41, 2, 0, 0, 0),
         )
         self.assertEqual(pet.rare, 2)
+        self.assertIsNone(pet.capture_default)
         self.assertEqual(pet.template_ref.namespace, "enemybase.TEMPNO")
         self.assertNotIn("hp", pet.directly_bridgeable_pet_state())
         self.assertEqual(pet.growth_inputs()["BASEVITAL"], 20)
@@ -144,6 +145,7 @@ class Taiwan25BridgeModelTests(unittest.TestCase):
                 "TEMPNO": 88,
                 "INITNUM": 100,
                 "LVUPPOINT": "5.00",
+                "GET": 11,
                 "BASEVITAL": 20,
                 "BASESTR": 20,
                 "BASETGH": 20,

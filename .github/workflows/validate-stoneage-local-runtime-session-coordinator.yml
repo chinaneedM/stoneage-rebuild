@@ -21,6 +21,7 @@ on:
       - tools/stoneage_enemy_ai_2battletimid_bridge.py
       - tools/stoneage_recovered25_petskill_runtime.py
       - tests/test_stoneage_local_runtime_session_coordinator.py
+      - tests/test_stoneage_capture_state_lifecycle.py
       - tests/test_stoneage_enemy_ai_petskill_bridge.py
       - tests/test_stoneage_recovered25_petskill_runtime.py
       - tools/stoneage_local_application_facade.py
@@ -89,6 +90,7 @@ jobs:
             tests.test_stoneage_battlemodel_command_entry_audit \
             tests.test_stoneage_recovered25_battlemodel_runtime_probe \
             tests.test_stoneage_local_runtime_session_coordinator \
+            tests.test_stoneage_capture_state_lifecycle \
             tests.test_stoneage_enemy_ai_petskill_bridge \
             tests.test_stoneage_recovered25_petskill_runtime \
             tests.test_stoneage_local_application_facade \

@@ -1526,7 +1526,7 @@ class LocalRuntimeSessionCoordinatorTests(unittest.TestCase):
                     "attack": enemy.attack,
                     "defense": enemy.defense,
                     "quick": enemy.quick,
-                    "name": "captured-test",
+                    "name": enemy.name,
                 }
             ),
             skills=(),

@@ -495,28 +495,13 @@ class SinglePlayerHistoricalRuntime:
             raise ValueError("successful capture requires a complete captured PetActor")
         if result.captured_target is None:
             raise ValueError("successful capture lacks captured target snapshot")
-        slot=PetSlot(int(result.resolution.assigned_pet_slot))
-        if captured_pet.slot != slot:
-            raise ValueError("captured pet slot does not match source first-empty slot")
-        if slot in self.domain.persistent.pets:
-            raise ValueError("captured pet slot became occupied before persistence")
-        target=result.captured_target
-        if target.source_variant_id is None or target.source_template_id is None:
-            raise ValueError("captured target lacks source identity")
-        if captured_pet.variant_id.value != int(target.source_variant_id):
-            raise ValueError("captured pet variant identity drift")
-        if captured_pet.template_id.value != int(target.source_template_id):
-            raise ValueError("captured pet template identity drift")
-        for key,expected in (
-            ("level",target.level),
-            ("hp",target.hp),
-            ("max_hp",target.max_hp),
-        ):
-            if key not in captured_pet.state:
-                raise ValueError(f"captured pet state lacks copied {key}")
-            if int(captured_pet.state[key]) != int(expected):
-                raise ValueError(f"captured pet copied {key} drift")
-        self.domain.persistent.pets[slot]=captured_pet
+        slot,pet=self._validated_captured_pet(
+            target=result.captured_target,
+            assigned_slot=int(result.resolution.assigned_pet_slot),
+            captured_pet=captured_pet,
+            staged_pets=self.domain.persistent.pets,
+        )
+        self.domain.persistent.pets[slot]=pet
         return result
 
     def _validated_captured_pet(
@@ -547,6 +532,15 @@ class SinglePlayerHistoricalRuntime:
                 raise ValueError(f"captured pet state lacks copied {key}")
             if int(captured_pet.state[key]) != int(expected):
                 raise ValueError(f"captured pet copied {key} drift")
+        # The convergent capture model copies the current display name and
+        # resets hidden VARIABLEAI. Do not silently accept a renamed/reborn
+        # payload or normalize the hidden value without recomputing visible AI.
+        # Other fields remain caller/source supplied until their carriers close.
+        if target.name is not None:
+            if captured_pet.state.get("name") != target.name:
+                raise ValueError("captured pet copied name drift")
+        if captured_pet.growth is not None and captured_pet.growth.variable_ai != 0:
+            raise ValueError("captured pet variable_ai must be zero at capture")
         return slot,captured_pet
 
     def resolve_persistent_battle_round(
