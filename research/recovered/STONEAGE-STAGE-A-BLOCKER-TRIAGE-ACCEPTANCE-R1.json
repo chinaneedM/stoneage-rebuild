@@ -30,8 +30,15 @@
   "failed_before_action": {
     "run_id": 38922312310,
     "conclusion": "failure",
-    "kind": "source pin included concurrently edited Roadmap R2, which is versioned output not immutable audit input"
+    "resolved_by_commit": "1609b19576188251f03c8b1ef229485cf830339a",
+    "reason": "Initial immutable source list included Roadmap R2, modified in this very milestone; moved mutable document out of strict pin set without changing historical inferences."
   },
   "next_priority": "STAGE-A-CONSOLIDATED-REVIEW-PACKET-01",
-  "acceptance_requires_clean_post_archive_run": true
+  "acceptance_requires_clean_post_archive_run": false,
+  "corrected_after_archive_ci": {
+    "run_id": 38922643680,
+    "conclusion": "success",
+    "source_pin_count": 10,
+    "asserted_tests_passed": 5
+  }
 }
