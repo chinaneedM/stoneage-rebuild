@@ -5,10 +5,10 @@ on:
     branches: [agent/tw10-r69-independent-20261016, main]
     paths:
       - .github/workflows/verify-stoneage-tw10-r69-retained.yml
-      - tools/stoneage_tw10_savedata_r69_*.py
-      - tests/test_stoneage_tw10_savedata_r69_*.py
-      - research/recovered/STONEAGE-TW10-SAVEDATA-NATIVE-EARLY-R69-ORIGINAL.json
-      - research/recovered/STONEAGE-TW10-SAVEDATA-R69-*.json
+      - tools/stoneage_tw10_savedata_*.py
+      - tests/test_stoneage_tw10_savedata_*.py
+      - research/recovered/STONEAGE-TW10-SAVEDATA-*.json
+      - docs/specs/STONEAGE-TW10-R69-R70-EARLY-RETURNS.md
 permissions:
   contents: read
   actions: read
