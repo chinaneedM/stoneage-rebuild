@@ -67,6 +67,25 @@ class _SyntheticSourceStack:
                 "evidence_role": "SYNTHETIC_RULES01_FIXTURE",
             },
         )
+        # Discovery enumerates all declared transitions. Unselected entries
+        # have valid but offscreen synthetic bindings, not missing contracts.
+        self.bindings = {self.transition_id: self.binding}
+        for tid in PROFILE.transitions:
+            if tid == self.transition_id:
+                continue
+            self.bindings[tid] = ResolvedTransitionBinding(
+                transition_id=tid,
+                source=MapPosition(2, 2, 2),
+                destination=MapPosition(2, 1, 1),
+                predicate_payload={
+                    "interaction_kind": "DIALOGUE_WARPMAN",
+                    "source_rect": (2, 2, 2, 2),
+                    "gate_kind": "FREE_CLAUSES",
+                    "free_clauses": (({"key": "ITEM", "operator": "=", "operand": TEST_ITEM},),),
+                },
+                provenance={"source_profile": "recovered25",
+                            "evidence_role": "SYNTHETIC_RULES01_FIXTURE"},
+            )
         self.evaluator = Recovered25TransitionGateEvaluator(PROFILE)
 
     def create_fresh_start(self, ordinal):
@@ -86,14 +105,11 @@ class _SyntheticSourceStack:
         )
 
     def resolve_transition(self, transition_id):
-        if transition_id != self.transition_id:
-            raise KeyError(transition_id)
-        return self.binding
+        return self.bindings[transition_id]
 
     def evaluate_transition(self, transition_id, session):
-        self.resolve_transition(transition_id)
         return self.evaluator.evaluate_transition(
-            self.contract, self.binding, session
+            PROFILE.transitions[transition_id], self.resolve_transition(transition_id), session
         )
 
 
