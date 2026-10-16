@@ -1,0 +1,90 @@
+{
+  "schema": "stoneage.rules01.coordinator-purchase-gate-reentry.acceptance.r1",
+  "date": "2026-10-16",
+  "startup_main_head": "4274f56795faf63fc65cffaafbb7d2d724583c81",
+  "startup_main_tree": "e236074e261b8b036aa2b27a9559d8d86c57256f",
+  "original_current_state_blob": "00c65bb3ec4a1856ef1139e64ecfbd346af48704",
+  "test_branch_commit": "0b59cce27e375f69f5782eb83d06560558ebbdc1",
+  "test_branch_tree": "c344fb2efb3cce3b1b4b749ebec9f82d53d47bab",
+  "source_scope": "SYNTHETIC_FIXTURE_DESIGN_PLUS_RECOVERED25_LATER_GATE_DESCENDANT_SHOP_MODEL",
+  "new_shop_implementation": false,
+  "original_client_server_executed": false,
+  "stage_a_status": "PARTIAL_OPEN",
+  "stage_b_status": "GATED",
+  "local_reference_chain": "COORDINATOR_DISPATCH_AND_TWO_INDEPENDENT_FILESYSTEM_REENTRIES_VERIFIED",
+  "original_quest_item_reward_persistence": "OPEN",
+  "overall_completion_percentage": null,
+  "action": {
+    "run_id": 38912629479,
+    "job_id": 117012003034,
+    "conclusion": "success",
+    "head_sha": "0b59cce27e375f69f5782eb83d06560558ebbdc1"
+  },
+  "files": {
+    "test": "tests/test_stoneage_rules01_coordinator_gate_reload.py",
+    "spec": "docs/specs/STONEAGE-RULES01-COORDINATOR-GATE-RELOAD-R1.md",
+    "workflow": ".github/workflows/validate-stoneage-rules01-coordinator-gate.yml"
+  },
+  "source_pins": {
+    "shop_accepted_adapter": {
+      "path": "tools/stoneage_rules01_shop_gate_reference.py",
+      "git_blob": "66a0ca3b499a4cf286baa528147a0912bceb70d1",
+      "bytes": 5931
+    },
+    "shop_model": {
+      "path": "tools/stoneage_item_shop_model.py",
+      "git_blob": "c0750882a193c7189d83f75ed50e8db7b04f2dc6",
+      "bytes": 7795
+    },
+    "gate_evaluator": {
+      "path": "tools/stoneage_recovered25_world_profile_adapter.py",
+      "git_blob": "df48700e077c1f0a5415afe2ac78fa145800d2df",
+      "bytes": 19908
+    },
+    "coordinator": {
+      "path": "tools/stoneage_local_runtime_session_coordinator.py",
+      "git_blob": "cffb3cb86c84c8f2a19801b02a1b0647d6c0a4e0",
+      "bytes": 227982
+    },
+    "local_save": {
+      "path": "tools/stoneage_local_runtime_save.py",
+      "git_blob": "78b55a66b30cd4cb3f16d603a86e19dc5f5da2e3",
+      "bytes": 11919
+    },
+    "local_persistence": {
+      "path": "tools/stoneage_singleplayer_persistence.py",
+      "git_blob": "f8644935ae526064b8dff5ab956175df37c4d394",
+      "bytes": 10846
+    },
+    "world01": {
+      "path": "research/recovered/STONEAGE-WORLD01-FOUR-HOMETOWN-ACCEPTANCE-R1.json",
+      "git_blob": "5b7abe7e05bd6c9074c556cb4cf105d371bfa26e",
+      "bytes": 36216
+    },
+    "keyitem_award": {
+      "path": "research/recovered/STONEAGE-RULES01-KEYITEM-AWARD-BOUNDARY-R1.json",
+      "git_blob": "dc5923920bfc728be3cbe51802ed48c1c78fb34d",
+      "bytes": 5426
+    },
+    "original_save_scope": {
+      "path": "research/mechanics/STONEAGE-SAVE-LOGOUT-PERSISTENCE-CORE-R1.md",
+      "git_blob": "324d951341d7e0ac1b1996659857614a08b72f12",
+      "bytes": 13349
+    }
+  },
+  "new_regressions": [
+    "purchase enables ITEM/FREE only after real owned item exists",
+    "coordinator interaction discovery and dispatch after save/reload",
+    "one first postpurchase disk save and one postwarp disk save, each read through fresh coordinator/store",
+    "no fabricated quest award/EXP/world flag or item consumption",
+    "wrong purchased item and forged world flag fail closed after disk roundtrip"
+  ],
+  "historical_limits": [
+    "JSS1999/TW1.0 item/shop/NPC/award membership unknown",
+    "recovered25 ordinary shop route not ExChangeMan award route",
+    "WarpMan FREE condition is not evidence of original item consumption or quest grant",
+    "original server SAAC save durability, logout ITEM_DROPATLOGOUT and quest field ownership unknown"
+  ],
+  "next_priority": "STAGE-A-REVIEW-PREFLIGHT nine-family evidence/representative-playflow gap matrix",
+  "excluded": "duplicate production shop adapter from unmerged experiment branch"
+}

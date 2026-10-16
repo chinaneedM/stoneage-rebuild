@@ -14277,3 +14277,41 @@ playable version-qualified representative scenarios from source unavailable
 ones, and select the next material research/implementation package. This is NOT
 final Stage A acceptance or a transition to new-game design; it also does not
 justify a made-up overall restoration completion percentage.
+
+
+## 2026-10-16 — RULES-01 coordinator dispatch and two local filesystem reentry checks
+
+The fresh remote main had already accepted a later-source shop/ITEM/FREE/local-disk
+reference bridge and a separate ExChangeMan key-item award-source distinction.
+The initially drafted redundant shop implementation was NOT merged; this unit
+instead reuses tools/stoneage_rules01_shop_gate_reference.py unchanged.
+
+A new independent regression executes purchase -> owned item -> actual
+LocalRuntimeSessionCoordinator interaction discovery -> save -> fresh
+coordinator/file store reload -> canonical guarded WarpMan dispatch -> second
+save -> another fresh coordinator/store reload. Invented fixture only: item
+99901, Stone300, 80*1.25 unit pricing, two 3x3 map rooms and source-shaped
+ITEM/FREE gate. A forged permission world flag and wrong purchased item stay
+denied after reload. Stone200, item/view, unchanged EXP and destination remain
+consistent; the original input session is not mutated. FREE does not consume
+an item in this guarded model; no quest award, historical NPC action or original
+commercial-server persistence is simulated or claimed.
+
+Exact accepted test commit 0b59cce27e375f69f5782eb83d06560558ebbdc1; independent GitHub Actions38912629479,
+job117012003034 SUCCESS. Three new coordinator-specific tests plus existing
+shop-gate and ExChangeMan attribution suites run as independent commands.
+Original source-item identity, server NPC script/award, drop-at-logout flag,
+source-matched destination and durable SAAC write remain OPEN; historical
+Taiwan-v1/JSS1999 ownership and version assignment are unproven. No proprietary
+payload or recovered commercial map/NPC bytes are committed.
+
+Artifacts: tests/test_stoneage_rules01_coordinator_gate_reload.py;
+docs/specs/STONEAGE-RULES01-COORDINATOR-GATE-RELOAD-R1.md;
+research/recovered/STONEAGE-RULES01-COORDINATOR-GATE-RELOAD-ACCEPTANCE-R1.json.
+This unit adds a bounded local state-join check, NOT another shop mechanic.
+
+**Highest NEXT STAGE-A-REVIEW-PREFLIGHT** as already selected in prior latest
+CURRENT-STATE: review all nine system families for source-qualified
+representative gameplay and material original-content gaps. Do not infer a
+project percentage from tests or treat this as Stage A completion.
+RULES-01/Stage A remain PARTIAL/OPEN; Stage B gated; R79 paused non-blocking.

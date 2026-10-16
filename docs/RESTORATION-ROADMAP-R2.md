@@ -179,3 +179,23 @@ R编号或泛用CRT函数，不把后代资料冒充最初发行版本。
 这只是整体复原缺口评审，不等于正式Stage A终验、原版全部恢复，
 更不允许提前进入新作引擎/内容共同设计。不得继续任意穷举泛用helper，
 也不得依据工作编号、通过测试数或经过时间计算无分母总进度。
+
+
+## 2026-10-16 — RULES-01 coordinated ITEM-gate/save strengthening, Stage A review is next
+
+Existing later-version shop→owned-item→FREE gate→local disk evidence was already
+accepted on main, with distinct later ExChangeMan award provenance. The limited
+additional unit does **not** add a duplicate shop subsystem: it drives the
+existing model through the actual local coordinator's interaction discovery,
+guarded WarpMan dispatch, one post-purchase save/reentry and a second postwarp
+save/reentry. Negative wrong-item and forged-world-flag cases remain denied.
+All event/item/Stone/NPC values are synthetic test fixtures; no first-generation
+item, quest, original server save or reward identity is established. Successful
+Action38912629479 is a reference integration check, not an original-source
+execution. The historical item-drop-at-logout and SAAC durable-ACK restrictions
+stay OPEN. Evidence receipt: research/recovered/STONEAGE-RULES01-COORDINATOR-GATE-RELOAD-ACCEPTANCE-R1.json.
+
+**Next: STAGE-A-REVIEW-PREFLIGHT**, the nine-system-family representative
+playflow and material-gap inventory selected by the previous current-state
+entry. Finite audit, no arbitrary deepening of savedata R79, no engine/new-game
+design before Stage A joint acceptance.
