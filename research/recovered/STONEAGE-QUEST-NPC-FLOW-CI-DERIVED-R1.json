@@ -1,0 +1,528 @@
+{
+  "schema": "stoneage.quest_npc_flow_link.r1",
+  "source_role": "LATER_RECOVERED25",
+  "source_bundle_sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+  "previous_derived_git_blob": "7d771b2aa4f39646879659303f4926045ae730cc",
+  "target_ids": [
+    2465,
+    2478,
+    2481,
+    2484,
+    20197
+  ],
+  "counts": {
+    "create_enemy_references": 4985,
+    "ambiguous_template_references": 30,
+    "missing_secondary_argument_files": 15,
+    "typed_field_occurrences": 49,
+    "anonymous_typed_records": 27,
+    "typed_record_placement_instances": 27,
+    "same_record_multi_item_patterns": 3,
+    "same_record_multi_role_patterns": 19
+  },
+  "same_eventend_records": [
+    {
+      "anonymous_record_sha256": "00cc97f536a6690fa1a953f173839ce00fad483a5774a442e0aac71454e9b849",
+      "item_role_pairs": [
+        {
+          "item_id": 2465,
+          "role": "EXCHANGE_DEL_CANDIDATE"
+        },
+        {
+          "item_id": 2465,
+          "role": "EXCHANGE_ITEM_PREDICATE"
+        },
+        {
+          "item_id": 2484,
+          "role": "EXCHANGE_GET_CANDIDATE"
+        }
+      ],
+      "placement_instances": 1,
+      "distinct_item_ids": 2,
+      "distinct_roles": 3,
+      "multi_item_same_record": true,
+      "multi_role_same_record": true,
+      "execution_witness": false
+    },
+    {
+      "anonymous_record_sha256": "07bc75fbdfbd6d1c88e059b75e01919fe066d08bcb8713a7c4f5e58dd55743db",
+      "item_role_pairs": [
+        {
+          "item_id": 2478,
+          "role": "EXCHANGE_DEL_CANDIDATE"
+        },
+        {
+          "item_id": 2478,
+          "role": "EXCHANGE_ITEM_PREDICATE"
+        }
+      ],
+      "placement_instances": 1,
+      "distinct_item_ids": 1,
+      "distinct_roles": 2,
+      "multi_item_same_record": false,
+      "multi_role_same_record": true,
+      "execution_witness": false
+    },
+    {
+      "anonymous_record_sha256": "0c448bd1ed1f84715dda07fdf2f7cf78dd1eb2a9aba281fd194dc727fa69d661",
+      "item_role_pairs": [
+        {
+          "item_id": 2478,
+          "role": "EXCHANGE_DEL_CANDIDATE"
+        },
+        {
+          "item_id": 2478,
+          "role": "EXCHANGE_ITEM_PREDICATE"
+        }
+      ],
+      "placement_instances": 1,
+      "distinct_item_ids": 1,
+      "distinct_roles": 2,
+      "multi_item_same_record": false,
+      "multi_role_same_record": true,
+      "execution_witness": false
+    },
+    {
+      "anonymous_record_sha256": "131683f8121295da7ba9a209a01df8c938845e7d8b227278d791d0b50697b4b8",
+      "item_role_pairs": [
+        {
+          "item_id": 2478,
+          "role": "EXCHANGE_DEL_CANDIDATE"
+        },
+        {
+          "item_id": 2478,
+          "role": "EXCHANGE_ITEM_PREDICATE"
+        }
+      ],
+      "placement_instances": 1,
+      "distinct_item_ids": 1,
+      "distinct_roles": 2,
+      "multi_item_same_record": false,
+      "multi_role_same_record": true,
+      "execution_witness": false
+    },
+    {
+      "anonymous_record_sha256": "193e937b2053ffd24f83c9d3338d3bed574f44097d0638ab3e081bff51612efa",
+      "item_role_pairs": [
+        {
+          "item_id": 2478,
+          "role": "EXCHANGE_DEL_CANDIDATE"
+        },
+        {
+          "item_id": 2478,
+          "role": "EXCHANGE_ITEM_PREDICATE"
+        }
+      ],
+      "placement_instances": 1,
+      "distinct_item_ids": 1,
+      "distinct_roles": 2,
+      "multi_item_same_record": false,
+      "multi_role_same_record": true,
+      "execution_witness": false
+    },
+    {
+      "anonymous_record_sha256": "25c6b5756a8e443dbd98991b3a9abd7bceb54125caff8fb42b769ac9954319ef",
+      "item_role_pairs": [
+        {
+          "item_id": 2478,
+          "role": "EXCHANGE_DEL_CANDIDATE"
+        },
+        {
+          "item_id": 2478,
+          "role": "EXCHANGE_ITEM_PREDICATE"
+        }
+      ],
+      "placement_instances": 1,
+      "distinct_item_ids": 1,
+      "distinct_roles": 2,
+      "multi_item_same_record": false,
+      "multi_role_same_record": true,
+      "execution_witness": false
+    },
+    {
+      "anonymous_record_sha256": "29bf5ba5bb0ff62148fb3fcc2958331eb57d9bf26a91081cafc60faa96a54331",
+      "item_role_pairs": [
+        {
+          "item_id": 2478,
+          "role": "EXCHANGE_GET_CANDIDATE"
+        }
+      ],
+      "placement_instances": 1,
+      "distinct_item_ids": 1,
+      "distinct_roles": 1,
+      "multi_item_same_record": false,
+      "multi_role_same_record": false,
+      "execution_witness": false
+    },
+    {
+      "anonymous_record_sha256": "2ba1327e2ec77bf5f42bf5a181bf2caa9ab92893a9cb4c5fa289c91b7913dd0b",
+      "item_role_pairs": [
+        {
+          "item_id": 2484,
+          "role": "EXCHANGE_DEL_CANDIDATE"
+        },
+        {
+          "item_id": 2484,
+          "role": "EXCHANGE_ITEM_PREDICATE"
+        }
+      ],
+      "placement_instances": 1,
+      "distinct_item_ids": 1,
+      "distinct_roles": 2,
+      "multi_item_same_record": false,
+      "multi_role_same_record": true,
+      "execution_witness": false
+    },
+    {
+      "anonymous_record_sha256": "39507539abc091ef1920ce48b4a67a339ed0902055f39216e566ee470d1678e2",
+      "item_role_pairs": [
+        {
+          "item_id": 2478,
+          "role": "EXCHANGE_DEL_CANDIDATE"
+        },
+        {
+          "item_id": 2478,
+          "role": "EXCHANGE_ITEM_PREDICATE"
+        }
+      ],
+      "placement_instances": 1,
+      "distinct_item_ids": 1,
+      "distinct_roles": 2,
+      "multi_item_same_record": false,
+      "multi_role_same_record": true,
+      "execution_witness": false
+    },
+    {
+      "anonymous_record_sha256": "496304166c13881ea45a5b66a5b3c950f380e69e3fa46ea9fd02aee4d43e04a6",
+      "item_role_pairs": [
+        {
+          "item_id": 2465,
+          "role": "EXCHANGE_GET_CANDIDATE"
+        }
+      ],
+      "placement_instances": 1,
+      "distinct_item_ids": 1,
+      "distinct_roles": 1,
+      "multi_item_same_record": false,
+      "multi_role_same_record": false,
+      "execution_witness": false
+    },
+    {
+      "anonymous_record_sha256": "4e41cdde31601b58b1914e0a380ef3782791545f1cb3f0c53a4c0c6a63c0e020",
+      "item_role_pairs": [
+        {
+          "item_id": 2478,
+          "role": "EXCHANGE_ITEM_PREDICATE"
+        }
+      ],
+      "placement_instances": 1,
+      "distinct_item_ids": 1,
+      "distinct_roles": 1,
+      "multi_item_same_record": false,
+      "multi_role_same_record": false,
+      "execution_witness": false
+    },
+    {
+      "anonymous_record_sha256": "51537f72fa6abfecda0627edff73fd1de457d2dedd089728cce6b12131b374ad",
+      "item_role_pairs": [
+        {
+          "item_id": 2478,
+          "role": "EXCHANGE_DEL_CANDIDATE"
+        },
+        {
+          "item_id": 2478,
+          "role": "EXCHANGE_ITEM_PREDICATE"
+        }
+      ],
+      "placement_instances": 1,
+      "distinct_item_ids": 1,
+      "distinct_roles": 2,
+      "multi_item_same_record": false,
+      "multi_role_same_record": true,
+      "execution_witness": false
+    },
+    {
+      "anonymous_record_sha256": "57bb8acd451d6e21380d6cdc445c853ee37dce6f1101c4ce76bcd85cf615d500",
+      "item_role_pairs": [
+        {
+          "item_id": 2478,
+          "role": "EXCHANGE_DEL_CANDIDATE"
+        },
+        {
+          "item_id": 2478,
+          "role": "EXCHANGE_ITEM_PREDICATE"
+        }
+      ],
+      "placement_instances": 1,
+      "distinct_item_ids": 1,
+      "distinct_roles": 2,
+      "multi_item_same_record": false,
+      "multi_role_same_record": true,
+      "execution_witness": false
+    },
+    {
+      "anonymous_record_sha256": "7c155169d885cf737d4295a1d604c365bb9eddd26135c2fb79968f27ddbb77d7",
+      "item_role_pairs": [
+        {
+          "item_id": 2478,
+          "role": "EXCHANGE_ITEM_PREDICATE"
+        }
+      ],
+      "placement_instances": 1,
+      "distinct_item_ids": 1,
+      "distinct_roles": 1,
+      "multi_item_same_record": false,
+      "multi_role_same_record": false,
+      "execution_witness": false
+    },
+    {
+      "anonymous_record_sha256": "852a8781b340e5d168de61494e4b8b31ea75fafd27aaf9a728523ae5a27fa858",
+      "item_role_pairs": [
+        {
+          "item_id": 2478,
+          "role": "EXCHANGE_DEL_CANDIDATE"
+        },
+        {
+          "item_id": 2478,
+          "role": "EXCHANGE_ITEM_PREDICATE"
+        },
+        {
+          "item_id": 2481,
+          "role": "EXCHANGE_GET_CANDIDATE"
+        }
+      ],
+      "placement_instances": 1,
+      "distinct_item_ids": 2,
+      "distinct_roles": 3,
+      "multi_item_same_record": true,
+      "multi_role_same_record": true,
+      "execution_witness": false
+    },
+    {
+      "anonymous_record_sha256": "90ef3786f6d357312cfe7795532d2d6237885f3867120c9f41c893751a35ada5",
+      "item_role_pairs": [
+        {
+          "item_id": 2478,
+          "role": "EXCHANGE_DEL_CANDIDATE"
+        },
+        {
+          "item_id": 2478,
+          "role": "EXCHANGE_ITEM_PREDICATE"
+        }
+      ],
+      "placement_instances": 1,
+      "distinct_item_ids": 1,
+      "distinct_roles": 2,
+      "multi_item_same_record": false,
+      "multi_role_same_record": true,
+      "execution_witness": false
+    },
+    {
+      "anonymous_record_sha256": "96cce5891be3749e2dd4c9a68e5f309e334899d6d130e04017df89fe9d9dc10b",
+      "item_role_pairs": [
+        {
+          "item_id": 2478,
+          "role": "EXCHANGE_DEL_CANDIDATE"
+        },
+        {
+          "item_id": 2478,
+          "role": "EXCHANGE_ITEM_PREDICATE"
+        }
+      ],
+      "placement_instances": 1,
+      "distinct_item_ids": 1,
+      "distinct_roles": 2,
+      "multi_item_same_record": false,
+      "multi_role_same_record": true,
+      "execution_witness": false
+    },
+    {
+      "anonymous_record_sha256": "97867bbffc99a3740c77b268796c7fd9656e433ae70693ee6f1e9dfd5349ba67",
+      "item_role_pairs": [
+        {
+          "item_id": 2478,
+          "role": "EXCHANGE_DEL_CANDIDATE"
+        },
+        {
+          "item_id": 2478,
+          "role": "EXCHANGE_ITEM_PREDICATE"
+        }
+      ],
+      "placement_instances": 1,
+      "distinct_item_ids": 1,
+      "distinct_roles": 2,
+      "multi_item_same_record": false,
+      "multi_role_same_record": true,
+      "execution_witness": false
+    },
+    {
+      "anonymous_record_sha256": "97b3c1ecff293fcd771201c7d67bf8091f951e380c9393aedf1dbac4e5cd24f2",
+      "item_role_pairs": [
+        {
+          "item_id": 2465,
+          "role": "EXCHANGE_DEL_CANDIDATE"
+        },
+        {
+          "item_id": 2465,
+          "role": "EXCHANGE_ITEM_PREDICATE"
+        },
+        {
+          "item_id": 2484,
+          "role": "EXCHANGE_GET_CANDIDATE"
+        }
+      ],
+      "placement_instances": 1,
+      "distinct_item_ids": 2,
+      "distinct_roles": 3,
+      "multi_item_same_record": true,
+      "multi_role_same_record": true,
+      "execution_witness": false
+    },
+    {
+      "anonymous_record_sha256": "97d5c223af8349e5b5ad55998c9567c2393a05e296af55b574d3c3359407e7fb",
+      "item_role_pairs": [
+        {
+          "item_id": 2478,
+          "role": "EXCHANGE_DEL_CANDIDATE"
+        },
+        {
+          "item_id": 2478,
+          "role": "EXCHANGE_ITEM_PREDICATE"
+        }
+      ],
+      "placement_instances": 1,
+      "distinct_item_ids": 1,
+      "distinct_roles": 2,
+      "multi_item_same_record": false,
+      "multi_role_same_record": true,
+      "execution_witness": false
+    },
+    {
+      "anonymous_record_sha256": "9b7ea4c7111a550f337cb20cd197782cfa8a9ec0b21aa0812cb46723cf78f5a9",
+      "item_role_pairs": [
+        {
+          "item_id": 2478,
+          "role": "EXCHANGE_ITEM_PREDICATE"
+        }
+      ],
+      "placement_instances": 1,
+      "distinct_item_ids": 1,
+      "distinct_roles": 1,
+      "multi_item_same_record": false,
+      "multi_role_same_record": false,
+      "execution_witness": false
+    },
+    {
+      "anonymous_record_sha256": "9f80b2dc1f821fbeb0b63071ddcd46599149256e7d8aae3636fcfaa27a875e96",
+      "item_role_pairs": [
+        {
+          "item_id": 2478,
+          "role": "EXCHANGE_DEL_CANDIDATE"
+        },
+        {
+          "item_id": 2478,
+          "role": "EXCHANGE_ITEM_PREDICATE"
+        }
+      ],
+      "placement_instances": 1,
+      "distinct_item_ids": 1,
+      "distinct_roles": 2,
+      "multi_item_same_record": false,
+      "multi_role_same_record": true,
+      "execution_witness": false
+    },
+    {
+      "anonymous_record_sha256": "c4a24e3ecc4f9a4e24f3d73637c73dc5323df3b038094d07e65a612b3a0754c0",
+      "item_role_pairs": [
+        {
+          "item_id": 2465,
+          "role": "EXCHANGE_ITEM_PREDICATE"
+        }
+      ],
+      "placement_instances": 1,
+      "distinct_item_ids": 1,
+      "distinct_roles": 1,
+      "multi_item_same_record": false,
+      "multi_role_same_record": false,
+      "execution_witness": false
+    },
+    {
+      "anonymous_record_sha256": "c6033b7b779d4c5d5331baf1bb05ac57fcc4535f8bc7fb991d1ee7ebc05e3e35",
+      "item_role_pairs": [
+        {
+          "item_id": 2465,
+          "role": "EXCHANGE_ITEM_PREDICATE"
+        }
+      ],
+      "placement_instances": 1,
+      "distinct_item_ids": 1,
+      "distinct_roles": 1,
+      "multi_item_same_record": false,
+      "multi_role_same_record": false,
+      "execution_witness": false
+    },
+    {
+      "anonymous_record_sha256": "c956e9af67968069a0bdc49784ed24a713870df1f35af503ed56178cf171fa8e",
+      "item_role_pairs": [
+        {
+          "item_id": 2478,
+          "role": "EXCHANGE_DEL_CANDIDATE"
+        },
+        {
+          "item_id": 2478,
+          "role": "EXCHANGE_ITEM_PREDICATE"
+        }
+      ],
+      "placement_instances": 1,
+      "distinct_item_ids": 1,
+      "distinct_roles": 2,
+      "multi_item_same_record": false,
+      "multi_role_same_record": true,
+      "execution_witness": false
+    },
+    {
+      "anonymous_record_sha256": "ced9b5bebe95c9327af0cbfee10df44dcd738f9bca6bb3948774619ea5f466a4",
+      "item_role_pairs": [
+        {
+          "item_id": 2478,
+          "role": "EXCHANGE_ITEM_PREDICATE"
+        }
+      ],
+      "placement_instances": 1,
+      "distinct_item_ids": 1,
+      "distinct_roles": 1,
+      "multi_item_same_record": false,
+      "multi_role_same_record": false,
+      "execution_witness": false
+    },
+    {
+      "anonymous_record_sha256": "f5399972f1ae57791b93509a2930a69590cc16856e76d4719d4af9444e802124",
+      "item_role_pairs": [
+        {
+          "item_id": 2478,
+          "role": "EXCHANGE_DEL_CANDIDATE"
+        },
+        {
+          "item_id": 2478,
+          "role": "EXCHANGE_ITEM_PREDICATE"
+        }
+      ],
+      "placement_instances": 1,
+      "distinct_item_ids": 1,
+      "distinct_roles": 2,
+      "multi_item_same_record": false,
+      "multi_role_same_record": true,
+      "execution_witness": false
+    }
+  ],
+  "eventend_delimiter_respected": true,
+  "different_records_are_not_one_transaction": true,
+  "event_predicate_presence_is_not_satisfiability": true,
+  "same_record_is_not_same_npc_quest_proof": true,
+  "original_taiwan_v1_binding_proven": false,
+  "original_server_executed": false,
+  "full_npc_or_dialogue_recovered": false,
+  "runtime_code_changed": false,
+  "stage_a_accepted": false,
+  "stage_b_gate": "GATED"
+}

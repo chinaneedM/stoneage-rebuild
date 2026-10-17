@@ -1,0 +1,58 @@
+{
+  "schema": "stoneage.quest_npc_flow_link.acceptance.r1",
+  "status": "SOURCE_BOUNDED_ONLY",
+  "source_head": "9a3c543274b49f6e05792c30a67af1e518f54013",
+  "source_tree": "9f9dff4450139262d70e101bc7f822209a709a88",
+  "extractor_git_blob": "fde3977bb8622968b04ef1a68e9ceb808ab2cce8",
+  "previous_derived_git_blob": "7d771b2aa4f39646879659303f4926045ae730cc",
+  "run_id": 38997164871,
+  "job_id": 117292136171,
+  "conclusion": "success",
+  "synthetic_tests": 9,
+  "source_bundle_sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+  "source_part_sha256": [
+    "7cb7acdecd56617132e6f284c468158917c91d542cad5b2e7b3c7774fb5630d5",
+    "567e1ec0aeff9ea6a9ada791a339aa8f8bb8ffba83cf762e4b445fc0f1cb16bb"
+  ],
+  "artifact_id": 12087945346,
+  "artifact_zip_bytes": 2196,
+  "artifact_zip_sha256": "a824365bfae4f4763192779dac853d431014bdfdc8af3c1785c1da6f71b0b3e3",
+  "zip_sha256_verified_independently": true,
+  "raw_member": "quest-npc-flow-derived.json",
+  "raw_json_bytes": 15004,
+  "raw_json_sha256": "719b6dc071ea9d5946d707ced51798786d7b227d642bb80f009290ca834ad05a",
+  "raw_json_byte_equal_to_artifact_member": true,
+  "permanent_derived_path": "research/recovered/STONEAGE-QUEST-NPC-FLOW-CI-DERIVED-R1.json",
+  "permanent_git_blob": "b9f04bd7956a25a249e182fad4db2f0459719327",
+  "source_evidence_version": "LATER_RECOVERED25",
+  "original_client_server_data_not_committed": true,
+  "historical_transaction_replayed": false,
+  "taiwan_v1_original_id_recovered": false,
+  "old_49_ledger_exact_match": true,
+  "source_role_counts": {
+    "create_refs": 4985,
+    "ambiguous_templates": 30,
+    "missing_arg_files": 15,
+    "typed_occurrences": 49,
+    "anonymous_records": 27,
+    "same_record_multi_item": 3,
+    "same_record_multi_role": 19
+  },
+  "source_only_same_record_edges": [
+    {
+      "consume_candidate": 2465,
+      "award_candidate": 2484,
+      "record_instances": 2,
+      "includes_item_predicate": true
+    },
+    {
+      "consume_candidate": 2478,
+      "award_candidate": 2481,
+      "record_instances": 1,
+      "includes_item_predicate": true
+    }
+  ],
+  "stage_a_accepted": false,
+  "stage_b_gate": "GATED",
+  "original_quest_or_runtime_reachability_proven": false
+}

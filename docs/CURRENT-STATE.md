@@ -14808,3 +14808,16 @@ QUEST-ITEM-IDENTITY-04本轮有界交付完成：两个固定表各五后代候�
 合并前GitHub实时比较main704ce4e07a4c991bb726208b40ca30eb9f0be3fb与分支ahead3/behind0、9路径无删除，按expected-head非强制fast-forward写回main至51e1e3f3d1461b10bb66e7cd073aaac551b9e9c7。再次确认主线tree0223e2afd27ee609175604be047c17f4e09e00ca和CURRENT-STATE完整Git blob7ea7ea7c9e120d38b259851ba31dbbaad4615213。该main的NPC角色重放Action38996626400 SUCCESS、旧TW10 R58来源custody Action38996626529 SUCCESS；不改写其它历史CI失败。
 
 后续永久保管链追加至STONEAGE-QUEST-NPC-ITEM-ACCEPTANCE-R1.json，不改变首次9项源验收。**最高下一项仍QUEST-NPC-FLOW-LINK-06**，只在同一个后代ExChangeMan EventEnd记录内核对实际共现；不恢复早期NPC身份、不推广为原服运行，不重开R79。九族7 PARTIAL+2 OPEN，Stage A待正式联合审阅、Stage B GATED。本段记录更新的CI尚须新独立验收，不可预称成功。
+
+
+## 2026-10-17 QUEST-NPC-FLOW-LINK-06 后代同事件物品关联有界复原
+
+本轮全新启动以GitHub远端main 87cef0c95dc5c3057073ee408611b1ef81ff975c/tree f39cb8634c6aa9a5980109bffff79d95711e75c4为唯一事实源，重读最新提交、Actions、协议、README、设计/编年/来源/路线/portfolio及完整CURRENT-STATE Git blob67baecf0ac914426e29fd8f1f4ec36c06685b0a9（1833308字符历史）。两个最新main Actions38996715593/38996715535均SUCCESS，无本轮待处理的旧失败；保留历史旧工作流首次失败及后续修正，不依据旧聊天SHA推断。
+
+工作目标：仅核对上包已证五个后代模板ID2465/2478/2481/2484/20197是否在**同一个ExChangeMan EventEnd记录**中有合格的条件、收回和发放字段，消除简单49次字段引用无法证明一条交易的盲区。复用固定hash两分卷、合包及旧派生blob，不泛扫NPC或恢复R79，不引入原始商业服务器、对话或专有文件入Git。前置9项合成/反例验证及固定hash的真正来源重取在分支9a3c543274b49f6e05792c30a67af1e518f54013/tree9f9dff4450139262d70e101bc7f822209a709a88的Action38997164871/job117292136171全部SUCCESS；不是单纯归档重放。
+
+实际SOURCE事实（限recovered25后代配置）：4,985 NPC创建引用、30模板歧义、15参数文件缺失，旧49字段角色逐类、总量和来源计数完全一致。独立的27条匿名有界EventEnd记录，19条包含多种字段角色，其中3条包含不同目标物品：2条ITEM条件2465+DelItem2465+GetItem2484，一条ITEM条件2478+DelItem2478+GetItem2481；另外16条是单ID多角色、8条单ID单角色。20197零合格命中，2465与2478未在同一事件记录共现，两许可证同图不能合并。条件引用可能受OR/NOT分支限制，单条记录不等于NPC可达、真正完成、库存交易/存档或者台湾1.0原生脚本。不能将三条记录无端拼为一条完整伐木任务。
+
+独立归档ZIP artifact12087945346为2196字节/SHA256 a824365bfae4f4763192779dac853d431014bdfdc8af3c1785c1da6f71b0b3e3，唯一原JSON15004字节/SHA256 719b6dc071ea9d5946d707ced51798786d7b227d642bb80f009290ca834ad05a，永久Git blob b9f04bd7956a25a249e182fad4db2f0459719327；原JSON与创建的Git blob字节一致。完整来源/否证/永久链在research/recovered/STONEAGE-QUEST-NPC-FLOW-ACCEPTANCE-R1.json及specs/STONEAGE-QUEST-NPC-FLOW-LINK-R1.md。后续归档 CI / 主线合并的结果将在独立成功后补录，此处不预称成功。
+
+**最高NEXT STAGE-A-PORTFOLIO-CHECKPOINT-02**：连续两包后代NPC物品考据已有实际成果，但原始最早版NPC/任务仍OPEN。停止无名延伸NPC辅助函数，复查九系统真实玩法阻塞、早期定年来源和现有联合审阅入口，以更高历史复原价值确定下一有限实质包；无同年代新材料不自动深化后代链。Stage A 7 PARTIAL+2 OPEN、尚未正式联合审阅，Stage B GATED、R79 PAUSED_NON_BLOCKING。

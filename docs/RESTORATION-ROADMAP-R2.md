@@ -314,3 +314,10 @@ EARLY-QUEST-CONTENT-02选择单条任务寻找独立早期证据；不再只增�
 来源ZIP960字节SHA256 3c4774d955c155af0d426f419ce672dba0d2321caa81a27232d4ab2353225cd2、原JSON4546字节SHA256 901e835c921557da9dae7380b70aac0522fe4ff251c888de4289c91fb0da34f6、永久Git blob 7d771b2aa4f39646879659303f4926045ae730cc，完整链与负例重放见STONEAGE-QUEST-NPC-ITEM-ACCEPTANCE-R1。原始包、NPC原文件和商业服务端未加入Git或执行。
 
 最高下一项QUEST-NPC-FLOW-LINK-06：只针对本轮已命中的后代ExChangeMan EventEnd记录核对同一条事件中的发/收/条件组合，不声称真实流程；无明确共现即UNKNOWN、停止。Stage A 7 PARTIAL+2 OPEN，Stage B GATED、R79暂停；原始早期任务、服务器执行和阶段终验均未恢复。
+
+
+## 2026-10-17 — QUEST-NPC-FLOW-LINK-06 有限同EventEnd配置关联
+
+原固定保存包上重做独立来源取得，9项测试及源SHA验证在Action38997164871/job117292136171 SUCCESS。后代4,985 NPC引用、30模板歧义、15次缺参；旧49角色完全匹配。分隔到27匿名EventEnd记录，其中3条不同ID共现：2条条件与收回2465/发放2484，一条条件与收回2478/发放2481；其余16同ID多角色、8单角色。不能拼成全部伐木流程，原始台湾1.0商业服ID/交易/存档未证明；旧20197零命中只限定语法与来源。派生报告Git blob b9f04bd7956a25a249e182fad4db2f0459719327，原始源未入库，验收链见STONEAGE-QUEST-NPC-FLOW-ACCEPTANCE-R1。
+
+NEXT STAGE-A-PORTFOLIO-CHECKPOINT-02：停止后代NPC无限加深，重新按九系统真实未恢复游戏内容、初代来源可达性和用户审阅关口排序。若无新官方/定年独立早期资料，不再沿同事件向原服任务事实扩写。Stage A未终验、Stage B GATED、R79暂停。
