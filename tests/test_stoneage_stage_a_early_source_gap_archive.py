@@ -38,7 +38,21 @@ class EarlySourceGapArchiveTests(unittest.TestCase):
         for flag in ("claims_new_original_server_evidence","claims_original_client_execution",
                      "claims_stage_a_completed","claims_stage_b_started"):
             self.assertIs(receipt[flag],False)
-        self.assertEqual(receipt["later_main_ci"],"PENDING_NOT_ASSERTED")
+        main=receipt["later_main_ci"]
+        self.assertEqual(main["accepted_head"],"f5180ba51dffcab71499cb1820233f2446521cca")
+        self.assertEqual(main["accepted_tree"],"1a377252feb59a100274521ed72ecf8e315fccbd")
+        self.assertEqual(main["changed_paths"],10)
+        self.assertEqual(main["removed_paths"],0)
+        self.assertEqual({r["id"] for r in main["runs"]},
+                         {39002193724,39002193698,39002193602,39002193600})
+        for action in main["runs"]:
+            self.assertEqual(action["head_sha"],main["accepted_head"])
+            self.assertEqual(action["conclusion"],"success")
+        self.assertEqual(main["previous_archival_failure"]["id"],39002101203)
+        self.assertTrue(main["previous_archival_failure"]["preserved"])
+        self.assertEqual(main["corrected_archive_ci"]["id"],39002156100)
+        for field in ("original_content_newly_recovered","stage_a_user_accepted","stage_b_started"):
+            self.assertIs(main[field],False)
         self.assertTrue(receipt["continuity_append_only"] and receipt["source_registry_append_only"])
 if __name__=="__main__":
     unittest.main()

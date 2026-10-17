@@ -25,5 +25,56 @@
   "continuity_append_only": true,
   "source_registry_append_only": true,
   "next": "STAGE-A-JOINT-REVIEW-DECISION-01",
-  "later_main_ci": "PENDING_NOT_ASSERTED"
+  "later_main_ci": {
+    "accepted_head": "f5180ba51dffcab71499cb1820233f2446521cca",
+    "accepted_tree": "1a377252feb59a100274521ed72ecf8e315fccbd",
+    "integration": "FAST_FORWARD_NON_FORCE_EXPECTED_MAIN",
+    "old_main": "7093e5fb33ff7b90abce7932e17b137bffa8dec9",
+    "changed_paths": 10,
+    "removed_paths": 0,
+    "runs": [
+      {
+        "id": 39002193724,
+        "name": "Validate Stage A early source gap triage",
+        "head_sha": "f5180ba51dffcab71499cb1820233f2446521cca",
+        "conclusion": "success",
+        "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39002193724"
+      },
+      {
+        "id": 39002193698,
+        "name": "Independently verify TW1.0 R58 rooted helper returns and source custody",
+        "head_sha": "f5180ba51dffcab71499cb1820233f2446521cca",
+        "conclusion": "success",
+        "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39002193698"
+      },
+      {
+        "id": 39002193602,
+        "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+        "head_sha": "f5180ba51dffcab71499cb1820233f2446521cca",
+        "conclusion": "success",
+        "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39002193602"
+      },
+      {
+        "id": 39002193600,
+        "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+        "head_sha": "f5180ba51dffcab71499cb1820233f2446521cca",
+        "conclusion": "success",
+        "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39002193600"
+      }
+    ],
+    "previous_archival_failure": {
+      "id": 39002101203,
+      "source_commit": "7c438328f7304a84261fd75cad0aa758d0ec697c",
+      "reason": "New continuity test expected a nonmatching registry label; original prefix was actually intact",
+      "preserved": true
+    },
+    "corrected_archive_ci": {
+      "id": 39002156100,
+      "head_sha": "f5180ba51dffcab71499cb1820233f2446521cca",
+      "conclusion": "success"
+    },
+    "original_content_newly_recovered": false,
+    "stage_a_user_accepted": false,
+    "stage_b_started": false
+  }
 }

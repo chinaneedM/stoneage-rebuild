@@ -14884,3 +14884,8 @@ QUEST-NPC-FLOW-LINK-06有界完成：两条2465→2484候选、1条2478→2481�
 本轮核验记录点供品ID/数量与原服ACK/重登、公车相邻站点/费用/调度、村服务NPC与价格/技能菜单、送货/矿石任务物品及奖励、普通地面物品计时/清除源这五类真实业务缺口。既有2001网页实际存档为早期说明，不是1999或台湾1.0商服同版数据；TW1.0客户端字段不是服务绑定；后代recovered25及现代参考不能填入初代空白。当前搜索没有获得经认证的新原版字段：公开阅读器对既有Archive URL报错只限本接口，不能否定此前已固定Git原始派生报告或推断全网缺席。研究记录/中文文档/源校验器/7项反例单测/独立Actions全部提交到agent/stage-a-early-source-gap-triage-r1-20261017，源提交52ded1bc7a8923202daf0a2394bc8047fc0a2781/tree2c26a38856d9b1c60f7c72c7ac89f0e86d86d937。Actions39001916143/job117306453768 SUCCESS，新的有限缺口/否证测试与上一工作包及已有Stage A审阅校验全部通过。它验证的是证据约束，而非原版商业服运行。
 
 **最高NEXT STAGE-A-JOINT-REVIEW-DECISION-01**：依据 docs/STAGE-A-CONSOLIDATED-REVIEW-R1.md 的九系统7 PARTIAL/2 OPEN、七玩家流程与五类阻塞，加上本轮逐字段重开条件，提交正式用户联合审阅。若用户未明确接受Stage A的证据受限收束，则仍为Stage A；即使同意收束也不得改写历史未知成已恢复。无新认证原服来源时不继续扩张村庄服务或后代NPC链，TW1.0深层savedata R79 PAUSED_NON_BLOCKING。Stage B GATED，新引擎/新石器设计未开始，不报无分母复原百分比。后续归档CI和主线验证必须另据实时结果更新，不提前声称成功。
+
+
+### STAGE-A-EARLY-SOURCE-GAP-TRIAGE-01 主线来源验收归档（2026-10-17）
+
+独立原始来源缺口合同Action39001916143/job117306453768 SUCCESS，历史完整前缀强化Action39002101203因新增测试使用错误SOURCE-REGISTRY标题失败，旧记录保留；修正仅测试标题标记，分支Action39002156100/job117307179926 SUCCESS，三个历史长文原Git blob前缀逐字节校核不丢失。主线实时compare确认agent分支ahead4/behind0、10路径0删除，用expected-head且force=false从7093e5fb33ff7b90abce7932e17b137bffa8dec9快进到f5180ba51dffcab71499cb1820233f2446521cca/tree1a377252feb59a100274521ed72ecf8e315fccbd。随后main相同HEAD上的早期缺源审计Action39002193724、原TW1.0 R58来源保管39002193698、后代地域来源39002193602、8.0 PET当代证据边界39002193600四项全部实际SUCCESS。永久凭据research/recovered/STONEAGE-STAGE-A-EARLY-SOURCE-GAP-ACCEPTANCE-R1.json追加相同SHA主线CI、失败修复及完整否证门；以上成果不是新原始服务端内容/游戏执行，仍Stage A 7 PARTIAL+2 OPEN、Stage B GATED、R79 PAUSED_NON_BLOCKING。下一步STAGE-A-JOINT-REVIEW-DECISION-01等待用户明确联合审阅，未自动接受Stage A收束或进入新游戏。
