@@ -290,3 +290,9 @@ attribution, rather than indefinite image-ID/GUI internals or R79.
 见docs/specs/STONEAGE-EARLY-CONTENT-GUIDE-MANUAL-R1.md。下一项
 EARLY-QUEST-CONTENT-02选择单条任务寻找独立早期证据；不再只增加
 组合审查表，不进入Stage B或恢复R79。
+
+
+## 2026-10-17 — EARLY-QUEST-CONTENT-02 成人仪式获得实际早期文本定年
+
+新浪任务段由真实2001-11-20快照确认，与当前两站同文；不是1月定年、独立多见证或TW1.0原始脚本。形成来源分层的成人流程与空包领15玉规格，保留头盔敏-2/-3差异及后期物品生命周期/协作边界。原始ID与版本归属OPEN，九族仍7 PARTIAL+2 OPEN。规格STONEAGE-ADULT-CEREMONY-SOURCE-CONTRACT-R1。
+下一项EARLY-LOGGING-CONTENT-03：已有伐木指南实际快照与尾刀/许可/收益/手环来源对照；一次有限检索，无证即停。正式联合审阅仍待用户，Stage B GATED，R79暂停。

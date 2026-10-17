@@ -3338,3 +3338,8 @@ to a2001 capture. Four guide quest profiles remain publication-level evidence,
 not recovered original server scripts or TW1.0/JSS1999 exact release facts.
 A2003 two-direction delivery comparison preserves distinct operations.
 Stage A remains PARTIAL/OPEN; no commercial runtime/persistence or Stage B claim.
+
+
+## 2026-10-17 — 成人仪式任务段获得实际2001-11-20快照
+
+FACT（限定文本存在）：新浪成人章节实际Wayback捕获20011120063019，14617字节，完整任务段移除空白411字符，与当前新浪/17173任务页同hash d2657655b96da2840fd19e9b663696a140bdb65d7f26653f36cad7e0938b828c。不得将1月下载目录当正文同月证明；也不等于最早快照已穷尽。2001段头盔敏-2与2003页敏-3为未解决来源差异，保留两profile。后期玉销毁/组队细节不倒填早期；原始道具ID、地区/版本、完成事件与服务器实际执行OPEN。详见成人仪式SOURCE-CONTRACT-R1规格及派生报告；网页全文不存Git。
