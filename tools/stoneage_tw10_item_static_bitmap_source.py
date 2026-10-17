@@ -107,6 +107,26 @@ def observe():
         pairs=Counter((int(x["width"]),int(x["height"])) for x in entries)
         hashes=[x.get("rd_block_sha256","") for x in entries]
         nohash=sum(not s for s in hashes)
+        # Duplicated original compressed-block payloads are data aliases,
+        # never evidence of duplicate original item IDs or names.
+        by_digest={}
+        for entry in entries:
+            digest=entry.get("rd_block_sha256","")
+            if digest:
+                by_digest.setdefault(digest,[]).append(entry)
+        duplicate_clusters=[]
+        for digest,group in sorted(by_digest.items()):
+            if len(group)<2:
+                continue
+            ids=sorted(int(rec["bitmapno"]) for rec in group)
+            duplicate_clusters.append({
+                "original_block_sha256":digest,
+                "original_bitmapnos":ids,
+                "records":len(ids),
+                "same_width_height":len({(rec["width"],rec["height"]) for rec in group})==1,
+                "same_encoded_size":len({rec["size"] for rec in group})==1,
+                "original_item_identity_same":False
+            })
         size_vals=[int(x["size"]) for x in entries]
         first=sorted(entries,key=lambda r:int(r["bitmapno"]))[:5]
         return {
@@ -127,6 +147,7 @@ def observe():
           "rd_flag_value_counts":[{"raw_value":s,"count":n} for s,n in sorted(flags.items())],
           "missing_rd_block_sha256_records":nohash,
           "distinct_nonempty_rd_block_sha256":len(set(x for x in hashes if x)),
+          "duplicate_original_block_groups":duplicate_clusters,
           "example_original_records":[{
             "bitmapno":int(x["bitmapno"]),
             "width":int(x["width"]), "height":int(x["height"]),
