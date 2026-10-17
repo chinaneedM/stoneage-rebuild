@@ -120,3 +120,20 @@ Stage A acceptance: seven families remain PARTIAL, two OPEN, Stage B GATED.
 Highest next: STAGE-A-JOINT-REVIEW-01; an ordinary continuation stays in Stage A
 and may pursue EARLY-CONTENT-RECOVERY-01 only as bounded, material source work.
 R79 remains paused nonblocking; latest CURRENT-STATE governs.
+
+
+### Latest Stage A decision and new StoneAge design handoff — 2026-10-17
+
+The project owner delegated the previous A/B/C choice, and the assistant selected **B**:
+accept the **evidence-limited Stage A historical research review checkpoint**, with
+all seven PARTIAL and two OPEN system-family historical statuses preserved.
+This does **not** certify a fully restored original game, early commercial
+server world, complete original quest/persistence, or a percentage of
+historical completion. A future authenticated new early source can reopen
+the specific evidence contract without erasing earlier results.
+
+Current controlling decision: [bounded Stage A acceptance](docs/STAGE-A-EVIDENCE-LIMITED-ACCEPTANCE-R1.md).
+Next collaborative input: [Stage B design discussion brief](docs/STAGE-B-COLLABORATIVE-DESIGN-BRIEF-R1.md).
+**Design discussion is ready; production, final engine lock-in and new content
+implementation have not started.** Latest CURRENT-STATE and independent CI
+have authority over older README/NEXT markers.

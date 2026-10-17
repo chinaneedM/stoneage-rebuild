@@ -356,3 +356,12 @@ EARLY-VILLAGE-SERVICE-JOURNEY-01的五类行为来源合同已独立成功后，
 首次独立源Action39002948717/job117309506410 SUCCESS（证据和否证门），后续归档与main提交必须再查。
 
 **最高NEXT AWAIT_EXPLICIT_USER_STAGE_A_REVIEW_DECISION**：呈交独立的 A继续具名一手补证、B认可证据受限历史研究检查点、C暂停待源 三种选项；不替用户决定，单纯「继续」保持Stage A。即使用户选B也只是记录Stage A有限审阅结论，Stage B的引擎、内容及生产需要单独讨论/授权。未收到明确决定前九系统7 PARTIAL+2 OPEN、Stage A未用户验收，Stage B GATED，R79暂停；不无限重复低价值审计或猜100%进度。
+
+## 2026-10-17 — STAGE-A-EVIDENCE-LIMITED-REVIEW-ACCEPTANCE-01 授权后的正式路线切换
+
+用户针对前一轮A/B/C决定明确委托助手“按照你认为的最优解选择就行 哪怕后续出现错误需要补充改正我们还可以改 我相信你的选择”。本轮按最新远端 main
+`abf584d7858c4089aef0b103c41270665f2c8219`核对完整连续性与最近三项SUCCESS主线CI后，采纳**B：证据受限的Stage A研究检查点接受**。
+
+“研究检查点接受”与“初代原游戏恢复完成”独立：九族原有7 PARTIAL+2 OPEN及七代表体验/五阻塞/五早期服务缺源均保留，未经认证的商业服务端世界、NPC/任务、奖励、保存与画面真实运行不算完成；没有全局复原百分比。源资料若有可归属新证，只针对具体业务/版本重开Stage A，旧谱系与反例不删改，R79仍暂停。
+
+**最新NEXT STAGE-B-JOINT-DESIGN-DIRECTION-01**：讨论现代单机新石器的时代/村落出发、人物与宠物关系、回合制、第一次骑宠情感目标、逐步扩展地图/文明、版本化数据和版权合规独立美术；使用`docs/STAGE-B-COLLABORATIVE-DESIGN-BRIEF-R1.md`为预备议程。该阶段为**讨论预备，不是已完成共同设计**。目前未最终决定引擎、未开启新引擎工程、新剧情/地图制作或商业营运。旧Roadmap内所有早期“Highest NEXT”均为当时历史状态，并被本条取代；对应机器决议见`research/recovered/STONEAGE-STAGE-A-EVIDENCE-LIMITED-ACCEPTANCE-R1.json`。

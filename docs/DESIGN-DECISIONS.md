@@ -459,3 +459,44 @@ is closed by this reordering. Stage A remains before joint Stage B review.
 ## DD-023 — Early first-party player-service scope before further late NPC scanning
 
 **Adopted for Stage A research on 2026-10-17**. On current evidence, the 2001-04-18 first-party JSS manual offers five source-bounded early player service classes, while the accepted TW1.0 client offers separately sourced generic state/window/position message carriers. They are not one authenticated version-matched service transaction. Prioritize `EARLY-VILLAGE-SERVICE-JOURNEY-01`, a finite action/precondition/observable-state/missing-original-server-input contract, over further recovered25 NPC parameter scans. Carry late NPC EventEnd joins only as descendant evidence; preserve missing original NPC/world/ACK and runtime client visuals as OPEN. Park R79. If two consecutive work units yield no new game behavior, source attribution or material integration evidence, return to portfolio review. No new game design or Stage B.
+
+
+## DD-024 — Accept an evidence-limited Stage A research checkpoint and prepare collaborative Stage B design
+
+**Status:** Accepted as a user-delegated *research-stage disposition* on
+2026-10-17; **not** a claim that the authentic original StoneAge game is
+fully recovered and **not** approval to start Stage B production.
+
+The user authorized the assistant to choose the best of the proposed Stage A
+decisions, explicitly allowing later correction: “按照你认为的最优解选择就行 哪怕后续出现错误需要补充改正我们还可以改 我相信你的选择”.
+The selected option is **B** from the existing nine-system
+`STAGE-A-JOINT-REVIEW-DECISION-01`:
+preserve the auditable, version-bounded historical research and label the
+currently unobtainable server-only fields OPEN_EVIDENCE_LIMITED instead of
+endlessly broadening late-source helper research.
+
+This supersedes earlier Stage A acceptance *pending* status at the current
+decision time, **without rewriting the pre-decision review documents**.
+The verified historical system statuses remain **7 PARTIAL + 2 OPEN**, not
+CLOSED or 100%. TW1.0 and JSS1999 original commercial world/NPC/event/save
+execution cannot be inferred from descendant assets, later C code, or modern
+synthetic replay. Savedata R79 remains PAUSED_NON_BLOCKING.
+
+The project may now **prepare a joint Stage B new-game design discussion**,
+consistent with DD-016/017/018/021: original feeling first, then selectively
+absorb later elements via separate, explicitly versioned DESIGN decisions.
+Godot remains a presentation spike *candidate*, standalone C# deterministic
+core an architecture *preference*, and Python an archaeology/oracle system;
+none is a locked shipping configuration. No productive engine work, new
+copyrighted assets or plot/quest production is authorized by this limited
+stage decision. First substantial next milestone is
+`STAGE-B-JOINT-DESIGN-DIRECTION-01`: agree on gameplay pillars, early
+world narrative and scope, pet/battle progression, first ride milestone,
+asset policy, and staged technical prototype criteria.
+
+New authenticated source or a material rule contradiction reopens the
+smallest named Stage A area through recorded revision rather than
+discarding the Stage A archive. The acceptance document, source-gate manifest,
+machine-verifiable continuity and CI acceptance are controlling. Any older
+“highest NEXT” referring to deeper recovered NPC or R79 work is historical,
+not currently operative.

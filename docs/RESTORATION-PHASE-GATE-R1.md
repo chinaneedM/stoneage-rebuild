@@ -523,3 +523,12 @@ at most24 cells with source version, available input, explicit external input
 and material gap. Do not reenumerate maps/NPCs or redo graph closure. Expand
 only a concrete gap affecting core gameplay. R79 remains PAUSED_NON_BLOCKING.
 All Stage A system-family states remain PARTIAL/OPEN; Stage B stays gated.
+
+
+## 2026-10-17 — Stage A 有界历史研究审阅关口决议（DD-024）
+
+用户针对前次Stage A“三选一”明确授权助手根据最优路线做决定，允许后续纠正。正式选择 B：**Stage A 证据受限的研究检查点接受**；只结束当前没有新史料的重复考据工作队列，**不宣称台湾1.0或JSS1999全游戏复原成功**。本文件此前的“Stage B gated”记录对应以前时间点：现已具备共同设计讨论准备条件，但生产性Stage B仍不得自动启动。
+
+保留九系统7 PARTIAL/2 OPEN、五初代服务来源缺口和五高影响阻塞。原始商服完整NPC/任务/奖励、世界资产、人物/宠物同版数值、实际UI绑定、持久化ACK/重登未知仍OPEN；原版客户端与后期数据绝不跨版本自动合并。阶段决定不改变旧来源文档、测试结果或源事实。新一手史料/实质规则矛盾只重开对应的Stage A子项；R79继续非阻塞暂停。
+
+Stage B下一动作仅为`STAGE-B-JOINT-DESIGN-DIRECTION-01`的世界观/核心玩法/架构/美术版权共同讨论。DD-016 Godot展示试验候选及DD-017 Python考古+C#确定性生产核心方向仍属于候选，不批准最终引擎、资产复制、内容定稿或可玩的生产样机。仓库`docs/STAGE-A-EVIDENCE-LIMITED-ACCEPTANCE-R1.md`及同名JSON是本次委托接受证据，`docs/STAGE-B-COLLABORATIVE-DESIGN-BRIEF-R1.md`是下个阶段共同评审提纲。

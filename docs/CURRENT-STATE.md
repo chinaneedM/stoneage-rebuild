@@ -14904,3 +14904,14 @@ QUEST-NPC-FLOW-LINK-06有界完成：两条2465→2484候选、1条2478→2481�
 首个联合审阅源Action39002948717/job117309506410 SUCCESS，后续增强完整历史归档时Action39003088383在“路线R2整体哈希”断言上失败，原因是该路线按协议追加了本轮状态；旧33851字节Git blob b7f035623b450ed2b4eb516841978f2f1e7490d8的完整前缀未改变。纠正为旧前缀内容严格哈希+新追加存在核验，Action39003136125 SUCCESS；相邻早期缺源边界Action39003088515 SUCCESS。旧CI失败与修正一并保留。合并前远端 main仍5939b90bfff514501d0cb17caefa9a8886d7d319，分支ahead3/behind0，9路径0删除，expected-head、force=false快进写回main443e8fe2c4289482a35437bc11d23199f40e52ea/tree ae456d5acfe9a73ff8af036110035a6a46e82daf。主线同HEAD上的联合审阅Action39003173961、旧早期来源缺口39003173696、TW1.0 R58永久来源保管39003173697均实际SUCCESS。永久验收凭据 research/recovered/STONEAGE-STAGE-A-JOINT-REVIEW-ACCEPTANCE-R1.json 追加上述独立验收/修订/主线三项成功，不改写首次报告归档或任何历史原始资料。
 
 最终供用户决议文件 docs/STAGE-A-JOINT-REVIEW-DECISION-R1.md 仍为九系统7 PARTIAL/2 OPEN、七玩家经历/五阻塞/五村庄服务的来源限定审阅材料。没有取得原始同代服务器任务、确证台湾1.0全流程或新游戏工程成果。用户「继续」不视为完成联合审阅；**Highest NEXT AWAIT_EXPLICIT_USER_STAGE_A_REVIEW_DECISION**，接受证据受限阶段审阅、仅继续具名新证或暂停待源三选一；Stage A没有自动验收，Stage B GATED，R79暂停。该主线验收尾注提交后CI另需实际核验，不能提前声称成功。
+
+
+## 2026-10-17 — STAGE-A-EVIDENCE-LIMITED-REVIEW-ACCEPTANCE-01 用户委托决议与Stage B讨论交接
+
+**当前全局状态覆盖以前的“Stage A审阅待决”记录，原记录仍保留。** 用户已看到A继续具名新证、B接受有限研究检查点、C暂停待源三选一后，明确授予助手择优权：“按照你认为的最优解选择就行 哪怕后续出现错误需要补充改正我们还可以改 我相信你的选择”。本轮决定**选B**，作为Stage A有界历史研究审阅检查点接受，不将项目实际历史系统状态提升到CLOSED。
+
+本轮启动根据GitHub远端main abf584d7858c4089aef0b103c41270665f2c8219/tree b030c04102f35608c538721e92d687528ea515b8，最近三项main Actions39003331521/39003331699/39003331763全部SUCCESS；重新读取README、协议、DESIGN-DECISIONS、HISTORICAL-TIMELINE、SOURCE-REGISTRY、RESTORATION-ROADMAP-R2及CURRENT-STATE完整Git blob1451d4882e4e9eb6986c8a036f32ffa2fb9b2f53。此前合并与CI只根据本轮远端实核，不依据旧聊天SHA。Stage A审阅源54个不可变指纹、九系统7 PARTIAL+2 OPEN、七代表体验、五阻塞、五早期服务缺失的来源级边界全部继续有效；TW1.0纯净客户端与JSS2001手册不是同构建服务器事件，后代recovered25与现代合成模型不是1999原版历史结论。没新增原商服资料、原始NPC/任务脚本、原版全游戏运行或百分比。
+
+正式决议`docs/STAGE-A-EVIDENCE-LIMITED-ACCEPTANCE-R1.md`、机器记录`research/recovered/STONEAGE-STAGE-A-EVIDENCE-LIMITED-ACCEPTANCE-R1.json`；现代单机设计讨论预备`docs/STAGE-B-COLLABORATIVE-DESIGN-BRIEF-R1.md`。旧`STAGE-A-JOINT-REVIEW-DECISION-R1.json`里的`stage_a_accepted=false`是之前的**时间点快照**，不修改；新的同意标记只存在新决议文件，且是“研究检查点”而非历史复原全完成。未来出现可信同版原始资料或具体机制矛盾，重开最小命名Stage A区域、追加版本化校正和反例，不能静默填补未知值。
+
+**最高NEXT STAGE-B-JOINT-DESIGN-DIRECTION-01**：准备并与用户共同讨论新单机石器的世界结构/剧情尺度、战斗和宠物养成、文明成长与首次骑宠里程碑、引擎候选与独立确定性核心、版权合规资产策略和首个体验切片验收。仅讨论准备，**未批准最终引擎/生产代码/新剧情美术制作**。本地savedata R79保持PAUSED_NON_BLOCKING。源分支初始提交后CI、完整历史追加/档案验收和主线快进必须以之后真实独立验收为准，不能预称通过。此条作为当前状态高优先级交接，旧历史的NEXT已被取代。
