@@ -5,7 +5,6 @@ or call a table value a character identity merely because it looks plausible.
 """
 from __future__ import annotations
 import argparse
-import collections
 import hashlib
 import json
 from pathlib import Path
@@ -27,6 +26,35 @@ def need(ok, message):
 def select_calls(rows, header_rva, max_back=32):
     """Candidate entry addresses only: no prologue inference from mere proximity."""
     return [r for r in rows if header_rva-max_back <= r['target_rva'] <= header_rva]
+
+def push_source(window, index, base):
+    """Syntactic last-register-write source, never an actual memory value.
+
+    Refuse arithmetic, control transfers, calls and non-absolute addressing;
+    do not guess through a clobbered register or combine separate paths.
+    """
+    from capstone.x86 import X86_OP_IMM, X86_OP_MEM, X86_OP_REG
+    ins=window[index]; op=ins.operands[0]
+    if op.type==X86_OP_IMM:
+        return {'kind':'immediate_operand','value':op.imm,'runtime_value_verified':False}
+    if op.type!=X86_OP_REG:return {'kind':'unresolved','runtime_value_verified':False}
+    reg=op.reg
+    for prev in reversed(window[:index]):
+        if not prev.id or prev.mnemonic=='call' or prev.mnemonic.startswith('j'):
+            break
+        _,written=prev.regs_access()
+        if reg not in written:continue
+        if (prev.mnemonic=='mov' and len(prev.operands)==2 and
+            prev.operands[0].type==X86_OP_REG and prev.operands[0].reg==reg):
+            src=prev.operands[1]
+            if src.type==X86_OP_MEM and not src.mem.base and not src.mem.index and src.mem.disp>=base:
+                return {'kind':'absolute_memory_load','load_site_rva':prev.address-base,
+                    'address_rva':src.mem.disp-base,'width_bytes':src.size,'runtime_value_verified':False}
+            if src.type==X86_OP_IMM:
+                return {'kind':'immediate_assignment','load_site_rva':prev.address-base,
+                    'value':src.imm,'runtime_value_verified':False}
+        break
+    return {'kind':'unresolved','runtime_value_verified':False}
 
 def inspect_runtime(runtime):
     need(hashlib.sha256(runtime).hexdigest() == RUNTIME_SHA256, 'unaccepted sa_3.exe SHA256')
@@ -52,17 +80,18 @@ def inspect_runtime(runtime):
         need(bool(candidates), 'no bounded direct sender-call candidates '+name)
         rows=[]
         for c in candidates:
-            i=c['linear_index']; window=insns[max(0,i-36):i+1]
+            i=c['linear_index']; window=insns[max(0,i-80):i+1]
             # Restrict to the nearest control-flow boundary; this is an observed
             # instruction window, never an assertion that all pushes are args.
             boundary=max((j for j,x in enumerate(window[:-1]) if x.mnemonic=='ret' or x.mnemonic.startswith('j')),default=-1)
             window=window[boundary+1:]
             pushes=[];reads=[]
-            for x in window[:-1]:
+            for wi,x in enumerate(window[:-1]):
                 if not x.id: continue
                 if x.mnemonic=='push':
                     pushes.append({'site_rva':x.address-base,'operand':x.op_str,
-                        'immediate':x.operands[0].imm if x.operands[0].type==X86_OP_IMM else None})
+                        'immediate':x.operands[0].imm if x.operands[0].type==X86_OP_IMM else None,
+                        'static_source':push_source(window,wi,base)})
                 for op in x.operands:
                     if op.type==X86_OP_MEM and not op.mem.base and not op.mem.index and op.mem.disp>=base:
                         rva=op.mem.disp-base; off=rva_to_offset(sections,rva)
