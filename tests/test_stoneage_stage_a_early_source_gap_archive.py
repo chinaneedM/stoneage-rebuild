@@ -19,7 +19,7 @@ class EarlySourceGapArchiveTests(unittest.TestCase):
             with self.subTest(name=name):
                 self.assertGreater(len(data),n)
                 self.assertEqual(blob_sha(data[:n]),expected)
-                self.assertIn(b"STAGE-A-EARLY-SOURCE-GAP-TRIAGE-01",data[n:])
+                self.assertIn((b"SRC-STAGE-A-EARLY-SOURCE-GAP-TRIAGE-R1" if name == "docs/SOURCE-REGISTRY.md" else b"STAGE-A-EARLY-SOURCE-GAP-TRIAGE-01"),data[n:])
 
     def test_source_report_exact_git_identity(self):
         self.assertEqual(blob_sha(REPORT.read_bytes()),
