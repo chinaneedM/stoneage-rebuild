@@ -14924,3 +14924,15 @@ QUEST-NPC-FLOW-LINK-06有界完成：两条2465→2484候选、1条2478→2481�
 在上述main同HEAD上，Stage A有界审核Action39004429651、原联合审阅39004429680、村庄缺源39004429733、台湾1.0原客户端R58来源保管39004429663、现有runtime bootstrap39004431702**五项全部实查SUCCESS**。完整失败保留/分支/主线Action及上述源码/历史版本界限写回`research/recovered/STONEAGE-STAGE-A-EVIDENCE-LIMITED-ACCEPTANCE-RECEIPT-R1.json`；本条追加后的独立归档CI仍待实查，不预报结果。
 
 **最新状态**：Stage A证据受限的**研究审阅检查点**经用户委托授权后已接受；九系统史料完成状态仍7 PARTIAL+2 OPEN，尚无认证初代完整游戏与原始商业服全流程，整体百分比无定义。Stage B仅设计讨论预备，无生产代码/正式引擎/新内容定案；`R79`暂停。**最高NEXT STAGE-B-JOINT-DESIGN-DIRECTION-01**：以已交付设计讨论包商定完整世界观/游戏核心设计与技术生产门槛；未来有匹配年代证据可只重开Stage A具体业务而不抹历史。
+
+
+## 2026-10-17 — LEGACY-ASSISTANT-HISTORY-AND-PET-COVERAGE-01 外挂演变与全部宠物/任务覆盖度重新核实
+
+**用户提出新高优先级：经典外挂长期演化是新石器内挂设计的重要原型；同时必须弄清先前复原没有覆盖的“所有任务、全部宠物数据、图片、动画、基础属性和成长”。** 本轮实际先核对远端main d393b135b4fb2e62d5b5162eb3878981cb3e02a8/tree5f55795d1b0ad3e63e99abb3be374c8cd4a8ace7、最近四项main源验收SUCCESS、全量CURRENT-STATE git blob f0aef25549db903ce0ea2f952c8d48a31230d97e、README/协议/旧系统审阅/路标/设计/来源与2001—2002同时期玩家原文。
+
+新用户需求不是将旧Stage A有界历史验收倒退或隐性宣称“完全复原”。命名的新内容来源任务是**宠物全物种/外观/动画/成长/技能/地图归属/任务覆盖度矩阵**，以及**外挂历史谱系+可吸收的离线内挂行为分类**。两篇成品研究文档：
+- docs/STONEAGE-LEGACY-ASSISTANT-TOOLS-CATALOG-R1.md：14条带年代/URL/局限的历史引用，16个外挂家族或候选，12种提议内挂功能分优先级与作弊边界。
+- docs/STONEAGE-PET-QUEST-CONTENT-COVERAGE-RECHECK-R1.md：明确台湾1.0资源含125,996个ADRN图像号、464个SPR组、39,065动画/242,085帧**不等于**125,996宠物；宠物graphic_id→SPR组→动作/帧/画面使用的原版链未闭合。后代recovered25活动enemybase988行与非活动640行不是最初版物种数量；后代成长公式不保证1999同系数；初代NPC/任务对白/交易奖励和存档商服状态缺席。
+机器源证与负面边界在 research/recovered/STONEAGE-LEGACY-ASSISTANT-AND-CONTENT-GAP-R1.json；脚本 tools/stoneage_legacy_assistant_pet_coverage.py 和反例 tests/test_stoneage_legacy_assistant_pet_coverage.py，加专属workflow。外挂纯历史整理，未下载/运行或分发来历不明旧外挂程序、版权资产或原服载荷；“原始所有外挂”和“宠物全部图片、成长”均不声称完成。
+
+**下一个最高优先级 PET-ASSET-GROWTH-CATALOG-MATRIX-02**：从版本化宠物模板/名称与原资源graphic_id/SPR映射入手，以可访问证据为分母逐条输出已匹配、缺失、其他版本三类。次优先 LEGACY-ASSISTANT-PROVENANCE-EXPANSION-02：为SADE/SAC/SACH/STA等先做2001—2004同代版号、图片和功能首见验证，再分离后期ASSA/STW/NG/SaSH，不直接把现代私服功能塞入1999版。Stage A证据受限检查点与九族7 PARTIAL+2 OPEN既有状态保持；此任务为**有名有物重开覆盖度校勘**，不取消先前接受/不启动Stage B生产；尚未选择引擎和内挂生产配置。分支source CI和远端main必须以实际下一次成功验收为准。

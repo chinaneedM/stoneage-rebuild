@@ -2,6 +2,13 @@ name: Validate legacy StoneAge assistant history and pet content gaps
 on:
   push:
     paths:
+      - 'docs/CURRENT-STATE.md'
+      - 'docs/SOURCE-REGISTRY.md'
+      - 'docs/HISTORICAL-TIMELINE.md'
+      - 'docs/DESIGN-DECISIONS.md'
+      - 'docs/RESTORATION-ROADMAP-R2.md'
+      - 'research/recovered/STONEAGE-LEGACY-ASSISTANT-PET-COVERAGE-ARCHIVE-R1.json'
+      - 'tests/test_stoneage_legacy_assistant_pet_coverage_archive.py'
       - 'docs/STONEAGE-LEGACY-ASSISTANT-TOOLS-CATALOG-R1.md'
       - 'docs/STONEAGE-PET-QUEST-CONTENT-COVERAGE-RECHECK-R1.md'
       - 'research/recovered/STONEAGE-LEGACY-ASSISTANT-AND-CONTENT-GAP-R1.json'
@@ -22,5 +29,5 @@ jobs:
           python-version: '3.12'
       - name: Check real tool evidence, pet counts, source pins and unsafe promotion
         run: |
-          python -m unittest tests.test_stoneage_legacy_assistant_pet_coverage -v
+          python -m unittest tests.test_stoneage_legacy_assistant_pet_coverage tests.test_stoneage_legacy_assistant_pet_coverage_archive -v
           python -m tools.stoneage_legacy_assistant_pet_coverage

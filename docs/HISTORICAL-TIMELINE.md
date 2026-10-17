@@ -3358,3 +3358,12 @@ FACT（限定后代表）：固定hash的itemset.txt/itemset0710.txt各有同五
 ## 2026-10-17 — 后代伐木候选在ExChangeMan同一事件中的两类关联
 
 FACT（严格限定recovered25后代保存包与确切EventEnd语法）：49次合格物品参数引用分属27匿名事件记录；其中2条同记录含2465条件+收回及2484发放，一条含2478条件+收回及2481发放。其余16条单ID多角色、8条单ID单角色。初代台湾1.0的NPC和奖励脚本、玩家是否能执行该条件、每个分支条件真值、任务阶段与持久交易仍OPEN。不能把后代2.5同记录存在当最早版历史事实；许可20197本次未命中不意味不存在。证据见STONEAGE-QUEST-NPC-FLOW-CI-DERIVED-R1.json，Action38997164871和ACCEPTANCE保管凭据；原始脚本不入Git。Stage A仍PARTIAL/OPEN、Stage B GATED。
+
+
+## 2026-10-17 — Classic StoneAge外挂/辅助工具有年代的首次谱系收录（追加证据，不改旧节点）
+
+FACT（仅限相应2001—2002年**文章当时存在**及作者所言，不保证最早发行日）：2001年6月已有SADE用户意见、8月同期玩家回忆CSS/SADE/SAC与加速及复制冲击、11月出现SaCh1.23使用叙述。2002年1月出现SADE H++/SACH/STA/齿轮对比、3月STA2.52当时功能评测与STA—SACHXP战斗、料理和脚本比较；8月一篇当事者回忆提出LiLiCoCo与SADE 0.1a—0.2h的变化，但自述回忆性质，不能作为未经交叉取证的原始发行年份。2003年6月同时期新浪确认SachXP++ help是电子攻略帮助文档，非自动战斗程序。来源S01—S09永久登记于SOURCE-REGISTRY与新机器包。
+
+后世层（来源年月与历史客户端版本不能混同）：2016以后的石器圣手、2020起ASSA辅助面板、2023起SaSH及不具可靠首发年的STW/NG/StoneBoy/SaxTop等晚期记录只证明各自时代与相关实现/名称可见；无法从这些资料推出1999JSS最早工具完整谱系。相关来源S10—S14及具体否证在`docs/STONEAGE-LEGACY-ASSISTANT-TOOLS-CATALOG-R1.md`。
+
+初版宠物图片/动画和成长区分仍生效：台湾1.0原资源125,996图像号/464动画组/39,065动画和242,085帧是资源规模而非宠物种数或全部宠物画面；后代2.5活动enemybase 988行/备表640行和多后代成长rank不确定全部1999/JSS或TW1.0宠物名单/系数。见`docs/STONEAGE-PET-QUEST-CONTENT-COVERAGE-RECHECK-R1.md`。Stage A已有用户授权的有界检查点继续保留，新需求开启材料字段的有名追踪，不宣称已完成原游戏。

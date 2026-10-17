@@ -500,3 +500,43 @@ discarding the Stage A archive. The acceptance document, source-gate manifest,
 machine-verifiable continuity and CI acceptance are controlling. Any older
 “highest NEXT” referring to deeper recovered NPC or R79 work is historical,
 not currently operative.
+
+
+## DD-025 — Treat legacy automation and full pet-content crosswalk as required new-game design inputs
+
+**Status:** Research/input priority accepted on 2026-10-17 in response to
+the user's explicit clarification that classic StoneAge external helpers were
+crucial to its historical experience, should be studied across generations
+and selectively adapted into a *built-in* new-game assistant. This is
+**not** authorization to start Stage B production or to clone any old cheat.
+
+Record the classic versus late-assistant genealogy separately, with earliest
+documented date, regional/client compatibility, release version, behavior,
+history/quality-of-life versus exploit category, and first-party versus
+reprint confidence. Positive native candidates: pet growth/IV history,
+auto-heal with real consumables, legal navigation, repeat-crafting convenience,
+battle preferences, statistics, and contextual encyclopedia. Historically
+document duplication, packet tampering, illegitimate teleports and
+server privilege bypass only for cultural/technical context. Unbounded
+auto-play or scripted behavior remains gated by later explicit joint design
+decision and must never bypass authoritative game-state rules.
+
+The user's explicit question about all old pets, art, animated models,
+growth and quests reopens a *named finite content coverage review* before
+ratifying an all-pet new-game database. Original v1 direct sprite/bitmap
+containers, server-delivered original world, later recovered25 enemybase,
+modern rule fixtures, and new-game content must remain separate source
+layers. The classic visuals are primarily **2D sprites**, not an established
+inventory of per-pet 3D models. A decoded picture-count is not a pet species
+count. A later enemybase row is not an original TW1.0 pet identity.
+Even a descendant pet growth algorithm cannot assert every original
+same-build growth value or 1999 coefficient.
+
+The prior Stage A *evidence-limited review decision* remains valid as a
+historical milestone, but does not foreclose new named archival/content
+crosswalk work when the user identifies material missing design inputs.
+**Highest NEXT PET-ASSET-GROWTH-CATALOG-MATRIX-02** with auxiliary
+`LEGACY-ASSISTANT-PROVENANCE-EXPANSION-02`. These are research/coverage
+deliverables, NOT production-game asset imports. Before a comprehensive
+pet roster or in-game automation is implemented, the applicable source
+matrices and new-game design gates must be reviewed.

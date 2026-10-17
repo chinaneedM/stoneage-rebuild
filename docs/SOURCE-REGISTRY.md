@@ -6880,3 +6880,30 @@ INTAKE保留精确Availability/CDX请求及空集/503；本地17173练功、问�
 本轮发现检索包括日本石器时代1999–2001、长毛象巴士/记录点与titan.co.jp手册地址、2000年中文公车费用关键词；未发现可归属同版并补齐五类具体服务字段的新材料。网页阅读器访问 `https://web.archive.org/web/20010418083149id_/http://www.titan.co.jp/stoneage/manual02.html` 出错，仅为当前访问失败，**不是不存在**。详细搜索词、缺失供品/保存ACK/车费/路线/医疗价格/工作奖励/物品消失时长、重开要求与否证记录见 `research/recovered/STONEAGE-STAGE-A-EARLY-SOURCE-GAP-TRIAGE-R1.json`、`docs/STAGE-A-EARLY-SOURCE-GAP-TRIAGE-R1.md`。不存版权源HTML、商服载荷及游戏资产，未运行原版客户端或原商服；不证明同版服务已经存在或完全消失。来源包独立Action39001916143/job117306453768 SUCCESS仅证明本次证据合同可审计。
 
 五服务因缺失早期原始业务量值仍OPEN_EVIDENCE_LIMITED；不填0价/地图相邻边/掉落秒数/奖励ID。九系统7 PARTIAL+2 OPEN，Stage A终验待用户联合审阅、Stage B GATED、R79 PAUSED_NON_BLOCKING。
+
+
+## 2026-10-17 — StoneAge经典外挂与后期内挂来源谱系初录（LEGACY-ASSISTANT-HISTORY-AND-PET-COVERAGE-01）
+
+本次新增**以网页正文与可确认发表日期为依据的出处登记**，不是旧外挂二进制/代码验收，也不是所有外挂穷尽名录。规范化每条来源的题名、发文日、关联软件名、支持的具体行为、版本边界与替代解释，详见 `research/recovered/STONEAGE-LEGACY-ASSISTANT-AND-CONTENT-GAP-R1.json` 的S01—S14。
+
+同年代玩家文章（内容为C等级的同期回忆/评论，非开发者发行单）：
+- S01 2001-06-15《有感于石器时代的辅助软件》：https://news.17173.com/z/stoneage/content/2001-6-15/n438_354378.html — SADE受到玩家讨论，不证明首发版号。
+- S02 2001-08-05《石器时代回忆录》：https://news.17173.com/z/stoneage/content/2001-8-5/n813_729424.html — 变速齿轮、CSS、SADE、SAC和kittygift的当事者回忆；并不逐条认证先后次序、日版来源或具体代码。
+- S03 2001-11-11《闭上眼睛说真话》：https://news.17173.com/z/stoneage/content/2001-11-11/n691_607613.html — SaCh1.23使用与复制争议。
+- S04 2002-01-19《关于游戏外挂问题之我见》：https://news.17173.com/z/stoneage/content/2002-1-19/n347_263863.html — sade H++ / sach / sta / 变速齿轮的用户对照。
+- S05 2002-03-10《Sta2.52新增功能全面解析》：https://news.17173.com/z/stoneage/content/2002-3-10/n974_891060.html — STA2.52缩屏料理、练功、动作条件等用户评测。
+- S06 2002-03-21《STA与SACHXP的比较》：https://news.17173.com/z/stoneage/content/2002-3-21/n936_852654.html — 两系的逃跑、自动战斗、脚本与料理差异为当年用户观察。
+- S07 2002-08-19《回首往事，我们从外挂中走来》：https://news.17173.com/z/stoneage/content/2002-8-19/n337_253594.html — SADE分版本功能、LiLiCoCo和早期程序员逸事；**文内自称个人杂谈/记忆，不等于JSS一手史料**。
+- S08 2002-09-27《轻松搞定石器时代》：https://news.17173.com/z/stoneage/content/2002-9-27/n286_202934.html — 玩家对人宠HP/MP阈值、战斗设定及自动复活的操作偏好，不能反推初代正式设计数值。
+- S09 2003-06-18新浪《SachXP++ help》：https://games.sina.com.cn/z/sta/2003-06-18/13369.shtml — 电子攻略帮助文件，须与真正外挂程序区分。
+
+晚期/社区资料（D级年代外推受限，个别为开发者自身发表的对应时代一手用法）：
+- S10 2016起发布、后经2026编辑的石器圣手论坛：https://www.play56.net/forum.php?mod=viewthread&tid=1649
+- S11 2020起发布、后更新的ASSA辅助面板：https://www.lab.welovesa.com/viewthread.php?tid=3671
+- S12 无同年原始署名日期的STW/强者/小明四软件比较转载：https://www.shiqisifu.cc/Article/1/News_89.html
+- S13 2023年SaSH项目作者帖：https://www.lovesa.cc/forum.php?mod=viewthread&tid=700
+- S14 2026年ASSA脚本命令材料：https://www.zshiqi.com/xindejingyan/5.html
+
+这些晚期网页**不能**证明2001原初1.0、2002大陆1.82已拥有所有脚本、宠物自动筛选或某具体辅助版本。没有取得早期发行包与hash，工具自身可运行性未测试；来源不含需要执行或再分发旧外挂程序的授权。新设计候选由DD-025独立作DESIGN评级。
+
+宠物原版覆盖缺口固定依据原有 `docs/specs/STONEAGE-TW10-UI-RESOURCE-BIND-R1.md`、`research/recovered/STONEAGE-TW10-UI-RESOURCE-BIND-SCOPE-R1.json`、`research/recovered/STONEAGE-25-PET-GROWTH-R1.txt`，其Git blob已在本轮机器清单钉住；没有用上述外挂网页来填补原始宠物实体/成长值。

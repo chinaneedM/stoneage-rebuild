@@ -1,0 +1,55 @@
+{
+  "schema": "stoneage.legacy_assistant_and_pet_coverage.archive.r1",
+  "date": "2026-10-17",
+  "remote_baseline": "d393b135b4fb2e62d5b5162eb3878981cb3e02a8",
+  "source_commit": "a53818af41dcecc95db908379e3d2b8caf3a8281",
+  "source_tree": "568555b40410b85b6cd061bae4c475716c5dc31c",
+  "source_manifest_blob": "103122ec0358d45fe149b0389b8ac3ecac3b315a",
+  "source_tool_workflow_run": {
+    "id": 39006252877,
+    "conclusion": "SUCCESS",
+    "evidence_only": true
+  },
+  "historical_prefixes": [
+    {
+      "path": "docs/CURRENT-STATE.md",
+      "bytes": 1883470,
+      "blob": "f0aef25549db903ce0ea2f952c8d48a31230d97e"
+    },
+    {
+      "path": "docs/DESIGN-DECISIONS.md",
+      "bytes": 35267,
+      "blob": "39399b10e9802cffcb403ee58c7df7a24a3853b1"
+    },
+    {
+      "path": "docs/RESTORATION-ROADMAP-R2.md",
+      "bytes": 36515,
+      "blob": "66a285f036611952d7f6ee55bdbc1a85c2b6994d"
+    },
+    {
+      "path": "docs/SOURCE-REGISTRY.md",
+      "bytes": 663542,
+      "blob": "6b31b04df729741694b5c3d912e695c5ee1539a3"
+    },
+    {
+      "path": "docs/HISTORICAL-TIMELINE.md",
+      "bytes": 422697,
+      "blob": "574bb1c298b639a8ec874631ae0556f81ab3b9f4"
+    }
+  ],
+  "source_last_main_runs": [
+    39004552126,
+    39004552168,
+    39004552248,
+    39004552122
+  ],
+  "user_requirement": "CLASSIC_ASSISTANT_HISTORY_ALL_GENERATIONS_AND_ORIGINAL_PET_QUEST_COMPLETENESS",
+  "complete_original_pet_catalog": false,
+  "complete_original_quests": false,
+  "all_legacy_cheats_catalogued": false,
+  "original_stage_a_acceptance_revoked": false,
+  "stage_b_production_started": false,
+  "archive_workflow": "PENDING_NOT_CLAIMED",
+  "main_integration": "PENDING_NOT_CLAIMED",
+  "next": "PET-ASSET-GROWTH-CATALOG-MATRIX-02"
+}

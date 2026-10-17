@@ -365,3 +365,12 @@ EARLY-VILLAGE-SERVICE-JOURNEY-01的五类行为来源合同已独立成功后，
 “研究检查点接受”与“初代原游戏恢复完成”独立：九族原有7 PARTIAL+2 OPEN及七代表体验/五阻塞/五早期服务缺源均保留，未经认证的商业服务端世界、NPC/任务、奖励、保存与画面真实运行不算完成；没有全局复原百分比。源资料若有可归属新证，只针对具体业务/版本重开Stage A，旧谱系与反例不删改，R79仍暂停。
 
 **最新NEXT STAGE-B-JOINT-DESIGN-DIRECTION-01**：讨论现代单机新石器的时代/村落出发、人物与宠物关系、回合制、第一次骑宠情感目标、逐步扩展地图/文明、版本化数据和版权合规独立美术；使用`docs/STAGE-B-COLLABORATIVE-DESIGN-BRIEF-R1.md`为预备议程。该阶段为**讨论预备，不是已完成共同设计**。目前未最终决定引擎、未开启新引擎工程、新剧情/地图制作或商业营运。旧Roadmap内所有早期“Highest NEXT”均为当时历史状态，并被本条取代；对应机器决议见`research/recovered/STONEAGE-STAGE-A-EVIDENCE-LIMITED-ACCEPTANCE-R1.json`。
+
+
+## 2026-10-17 — 新增外挂历史与宠物/任务完整性双证据清单（DD-025）
+
+在Stage A证据受限审阅已获授权接受之后，用户明确强调外挂对各年代石器体验至关重要、未来值得改为合规单机“内挂”，并追问原版所有任务、全部宠物数据、二维图片、精灵动画、成长等是否真正齐备。经本轮查验结论**并未全部复原**：TW1.0原资源125,996图像号/464动画组不是宠物数量；原版graphic_id至实际SPR/帧/UI/地图绑定未闭合；recovered25 active enemybase988行/备表640行是后代记录不是1999物种全集；初代任务/NPC/事件标记/奖赏与服务器保存依然OPEN。
+
+新增史料谱系初录`docs/STONEAGE-LEGACY-ASSISTANT-TOOLS-CATALOG-R1.md`及宠物覆盖度清单`docs/STONEAGE-PET-QUEST-CONTENT-COVERAGE-RECHECK-R1.md`，由JSON记录14来源/16家族/12项候选原生功能，按2001—2002同期玩家证据与2016+、2020+、2023+晚期软件生态区分。早期资料作为外设功能存在证据，不认证最早发行时间；旧外挂可取便利性，不移植作弊协议、复制/特权漏洞。
+
+**新最优NEXT PET-ASSET-GROWTH-CATALOG-MATRIX-02**：为一组可核验的TW1.0身份与2.5后代宠物模板建立来源/版本/名称/图形号/动画/属性/成长/技能/遇敌位置/任务联动矩阵；真实缺数据即OPEN，不误报已全部复原。**并行后续 LEGACY-ASSISTANT-PROVENANCE-EXPANSION-02**：先找早年开发者发布日志、同代截图及具体函数出现年份，不编造后期产品2001首发史。四季度Stage B共同设计不应在这些资源缺口未识别前锁定宠物全集和高级内挂生产范围；仅可讨论玩法方向与体验价值。Stage A旧技术成果继续有效，R79 PAUSED_NON_BLOCKING。
