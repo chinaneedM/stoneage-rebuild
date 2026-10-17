@@ -3,9 +3,14 @@ on:
   push:
     paths:
       - 'research/recovered/STONEAGE-STAGE-A-EARLY-SOURCE-GAP-TRIAGE-R1.json'
+      - 'research/recovered/STONEAGE-STAGE-A-EARLY-SOURCE-GAP-ACCEPTANCE-R1.json'
       - 'docs/STAGE-A-EARLY-SOURCE-GAP-TRIAGE-R1.md'
+      - 'docs/CURRENT-STATE.md'
+      - 'docs/SOURCE-REGISTRY.md'
+      - 'docs/RESTORATION-ROADMAP-R2.md'
       - 'tools/stoneage_stage_a_early_source_gap_triage.py'
       - 'tests/test_stoneage_stage_a_early_source_gap_triage.py'
+      - 'tests/test_stoneage_stage_a_early_source_gap_archive.py'
       - '.github/workflows/validate-stoneage-stage-a-early-source-gap-triage.yml'
   workflow_dispatch:
 permissions:
@@ -19,10 +24,10 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Validate new source-gap packet and evidence negative tests
+      - name: Validate source gap claims, historical custody and prior five-service contracts
         run: |
-          python -m unittest tests.test_stoneage_stage_a_early_source_gap_triage tests.test_stoneage_early_village_service_journey -v
+          python -m unittest tests.test_stoneage_stage_a_early_source_gap_triage tests.test_stoneage_stage_a_early_source_gap_archive tests.test_stoneage_early_village_service_journey -v
           python -m tools.stoneage_stage_a_early_source_gap_triage
-      - name: Recheck previously accepted Stage A review evidence
+      - name: Recheck accepted Stage A review gates
         run: |
           python tools/stoneage_stage_a_review_packet.py
