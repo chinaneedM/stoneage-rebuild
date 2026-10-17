@@ -1,0 +1,344 @@
+{
+  "schema": "stoneage.preproduction_22_domain_evidence_coverage_checkpoint.r1",
+  "date": "2026-10-17",
+  "source_main": "7b94fbbc01a72e934aa8ca379dfaae96c9f5aa02",
+  "source_research_head": "abb2939936a46bef95508f2800188da5c4d455c7",
+  "baseline_manifest": {
+    "path": "research/recovered/STONEAGE-PREPRODUCTION-CONTENT-ARCHIVE-R1.json",
+    "git_blob": "2d5b3f081d5618287f431fbded943722a820c593"
+  },
+  "early_media_bridge": {
+    "path": "research/recovered/STONEAGE-EARLY-MEDIA-ARTICLE-PET-SOURCE-R1.json",
+    "git_blob": "f4d110b7053893898338a5b71a94ad15230caf30",
+    "article_records": 5,
+    "player_pet_name_candidates": 20
+  },
+  "jss_navigation": {
+    "path": "research/recovered/STONEAGE-HISTORICAL-SITE-NAVIGATION-CATALOG-R1.json",
+    "git_blob": "c66fae4ad41cc410199075fbb3ce5777f79d56fa",
+    "qualified_pages": 6,
+    "link_records": 85
+  },
+  "archive_boundary": {
+    "path": "research/recovered/STONEAGE-EARLY-MEDIA-ARCHIVE-SNAPSHOT-BOUNDARY-R1.json",
+    "git_blob": "0d5ff5dcb8532626ff40891ff76e92cff378ec26",
+    "qualified_1999_2002_media_pages": 0,
+    "three_target_replay_snapshots": [
+      "20060115044722",
+      "20060115044722",
+      "20040204024948"
+    ]
+  },
+  "reviewed_domains": [
+    {
+      "domain_id": "version_lineage",
+      "original_order": 1,
+      "name": "版本谱系",
+      "baseline_evidence_status": "PARTIAL_SOURCE",
+      "original_source_completeness_asserted": false,
+      "bounded_source_connections": [
+        "JSS2001_OFFICIAL_ARCHIVE",
+        "TW10_RETAIL_SOURCE_METADATA",
+        "RECOVERED25_DESCENDANT"
+      ],
+      "remaining_material_gap": "same-build original Japanese 1999 launch sample and TW1/CN1.82 lineages",
+      "source_verification_target": "source/date/region/build/hash/variant",
+      "historical_fact_auto_promoted_from_2001_article_or_2004_2006_replay": false
+    },
+    {
+      "domain_id": "login_splash",
+      "original_order": 2,
+      "name": "登录、选服、角色列表",
+      "baseline_evidence_status": "OPEN_VISUAL",
+      "original_source_completeness_asserted": false,
+      "bounded_source_connections": [
+        "TW10_CLIENT_LOGIN_PROTOCOL_ONLY",
+        "JSS2001_CHARACTER_INSTRUCTIONS_NOT_SCREEN"
+      ],
+      "remaining_material_gap": "same-build login states, background, buttons, fonts, interaction/audio, original screenshot or trace",
+      "source_verification_target": "ui flow screenshot/callsite and copyright-safe reference",
+      "historical_fact_auto_promoted_from_2001_article_or_2004_2006_replay": false
+    },
+    {
+      "domain_id": "character_creation",
+      "original_order": 3,
+      "name": "人物创建和选角",
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "original_source_completeness_asserted": false,
+      "bounded_source_connections": [
+        "TW10_CREATE_NEW_CHAR_13_FIELDS",
+        "JSS2001_MANUAL_CREATION_OPTIONS"
+      ],
+      "remaining_material_gap": "13-field CreateNewChar transport known, actual layout and list of original selectable characters missing",
+      "source_verification_target": "original character portraits/selectable roster/creation controls",
+      "historical_fact_auto_promoted_from_2001_article_or_2004_2006_replay": false
+    },
+    {
+      "domain_id": "character_sprite_model",
+      "original_order": 4,
+      "name": "人物二维模型/动作/外观",
+      "baseline_evidence_status": "PARTIAL_RESOURCE",
+      "original_source_completeness_asserted": false,
+      "bounded_source_connections": [
+        "TW10_SPR_FRAME_ADRN_INDEX_ONLY",
+        "UNVERIFIED_BODY_FACE_SELECTOR"
+      ],
+      "remaining_material_gap": "per-avatar image IDs, animation grouping, direction, portrait, equipment/riding variants",
+      "source_verification_target": "graphics-to-animation-to-character identity crosswalk",
+      "historical_fact_auto_promoted_from_2001_article_or_2004_2006_replay": false
+    },
+    {
+      "domain_id": "world_map",
+      "original_order": 5,
+      "name": "原野地图、村落、坐标、道路",
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "original_source_completeness_asserted": false,
+      "bounded_source_connections": [
+        "MEDIA17173_2001_LABELED_PLAYER_PLACE_REFERENCES_ONLY",
+        "TW10_MAP_TRANSPORT",
+        "RECOVERED25_DIFFERENT_BUILD"
+      ],
+      "remaining_material_gap": "TW1 client M/MC/cache present, actual original server field maps missing",
+      "source_verification_target": "same-build map payload/edges/coords/encounter zones",
+      "historical_fact_auto_promoted_from_2001_article_or_2004_2006_replay": false
+    },
+    {
+      "domain_id": "npc_identity",
+      "original_order": 6,
+      "name": "NPC及商店服务人员",
+      "baseline_evidence_status": "OPEN_CONTENT",
+      "original_source_completeness_asserted": false,
+      "bounded_source_connections": [
+        "RECOVERED25_YAYOI_HIMIKO_2_ACTOR_SOURCE_JOIN_NOT_TW10"
+      ],
+      "remaining_material_gap": "original spawn position, name, look, script/service and shop stock unknown",
+      "source_verification_target": "NPC-to-map-to-dialog-to-service joins",
+      "historical_fact_auto_promoted_from_2001_article_or_2004_2006_replay": false
+    },
+    {
+      "domain_id": "npc_dialog_ui",
+      "original_order": 7,
+      "name": "NPC对话窗口与选项",
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "original_source_completeness_asserted": false,
+      "bounded_source_connections": [
+        "TW10_WN_5_FIELD_MESSAGE_SHAPE_ONLY"
+      ],
+      "remaining_material_gap": "WN 5-field session transport known, actual button layout and original dialog runtime unknown",
+      "source_verification_target": "NPC dialog steps/window screenshots/font/button states",
+      "historical_fact_auto_promoted_from_2001_article_or_2004_2006_replay": false
+    },
+    {
+      "domain_id": "quest_content",
+      "original_order": 8,
+      "name": "任务与奖励",
+      "baseline_evidence_status": "OPEN_CONTENT",
+      "original_source_completeness_asserted": false,
+      "bounded_source_connections": [
+        "RECOVERED25_SHELL_FLOW_TWO_ACTORS_THREE_EVENTS_EACH",
+        "2001_DATE_LABELED_PLAYER_JOB_GUIDE_NOT_SERVER"
+      ],
+      "remaining_material_gap": "first-generation full quest IDs/branches/rewards/events/save flags absent",
+      "source_verification_target": "quest prerequisites→NPC→items→flags→rewards→relogin",
+      "historical_fact_auto_promoted_from_2001_article_or_2004_2006_replay": false
+    },
+    {
+      "domain_id": "pet_species",
+      "original_order": 9,
+      "name": "宠物物种/变体/名称",
+      "baseline_evidence_status": "OPEN_SAME_BUILD_ROSTER",
+      "original_source_completeness_asserted": false,
+      "bounded_source_connections": [
+        "MEDIA17173_20_PLAYER_ALIASES_NOT_SPECIES",
+        "NO_TW10_VERIFIED_SPECIES_JOIN"
+      ],
+      "remaining_material_gap": "no verified complete TW1 roster or cross-era species denominator",
+      "source_verification_target": "versioned pet identity and alias canonicalization",
+      "historical_fact_auto_promoted_from_2001_article_or_2004_2006_replay": false
+    },
+    {
+      "domain_id": "pet_visual",
+      "original_order": 10,
+      "name": "宠物图像、动画、动作",
+      "baseline_evidence_status": "PARTIAL_RESOURCE",
+      "original_source_completeness_asserted": false,
+      "bounded_source_connections": [
+        "TW10_ADRN_125996_SPR_GROUP_464_FRAMES_242085",
+        "NON_SENTINEL_238593_LINKED_SPR_TO_ADRN_NOT_PET_ID"
+      ],
+      "remaining_material_gap": "125996 bitmap IDs and 464 sprite groups are not pet count; graphic_id→sprite/frame lacks original binding",
+      "source_verification_target": "pet→graphic→sprite→animation/action/direction",
+      "historical_fact_auto_promoted_from_2001_article_or_2004_2006_replay": false
+    },
+    {
+      "domain_id": "pet_stats",
+      "original_order": 11,
+      "name": "宠物等级/属性与个体差异",
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "original_source_completeness_asserted": false,
+      "bounded_source_connections": [
+        "TW10_SK_21_FIELD_RECORD_SHAPE_NOT_ORIGINAL_SPECIES_TEMPLATE"
+      ],
+      "remaining_material_gap": "S:K 21-field state exists; same-build original all-species initial values/MP/AI missing",
+      "source_verification_target": "template→instance→stats/element/level",
+      "historical_fact_auto_promoted_from_2001_article_or_2004_2006_replay": false
+    },
+    {
+      "domain_id": "pet_growth",
+      "original_order": 12,
+      "name": "宠物成长、经验与升级",
+      "baseline_evidence_status": "PARTIAL_DESCENDANT",
+      "original_source_completeness_asserted": false,
+      "bounded_source_connections": [
+        "MEDIA17173_EXPLICIT_PLAYER_GROWTH_OPINION",
+        "DESCENDANT_FORMULA_NOT_TW10"
+      ],
+      "remaining_material_gap": "descendant rank/level formula known; original 1999 coefficients and all species configs unproven",
+      "source_verification_target": "version-specific template→growth→rounding/EXP",
+      "historical_fact_auto_promoted_from_2001_article_or_2004_2006_replay": false
+    },
+    {
+      "domain_id": "pet_skills",
+      "original_order": 13,
+      "name": "宠物技能/学习/条件",
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "original_source_completeness_asserted": false,
+      "bounded_source_connections": [
+        "TW10_SKILL_RECORD_SHAPE_WITHOUT_ORIGINAL_FULL_LEARN_TABLE"
+      ],
+      "remaining_material_gap": "S:W view shape and descendant callbacks exist, full same-build learnable skills absent",
+      "source_verification_target": "pet→skill→NPC/cost/level/era",
+      "historical_fact_auto_promoted_from_2001_article_or_2004_2006_replay": false
+    },
+    {
+      "domain_id": "pet_encounter",
+      "original_order": 14,
+      "name": "宠物出现地点/捕获",
+      "baseline_evidence_status": "PARTIAL_DESCENDANT",
+      "original_source_completeness_asserted": false,
+      "bounded_source_connections": [
+        "MEDIA17173_20_PLAYER_PET_LOCATION_CANDIDATES_NOT_TW10_SPAWNS"
+      ],
+      "remaining_material_gap": "same-build encounter spawns/habitat/level/capture chances not comprehensive",
+      "source_verification_target": "pet→map→area→encounter condition",
+      "historical_fact_auto_promoted_from_2001_article_or_2004_2006_replay": false
+    },
+    {
+      "domain_id": "ride_mount",
+      "original_order": 15,
+      "name": "骑宠界面、资格与动作",
+      "baseline_evidence_status": "PARTIAL_DESCENDANT",
+      "original_source_completeness_asserted": false,
+      "bounded_source_connections": [
+        "LATER_RULES_NOT_PROOF_OF_TW10_MOUNT"
+      ],
+      "remaining_material_gap": "later rules exist, earliest era membership and all rideable sprite/character joins unproven",
+      "source_verification_target": "pet→riding state→character mount frames",
+      "historical_fact_auto_promoted_from_2001_article_or_2004_2006_replay": false
+    },
+    {
+      "domain_id": "battle_ui_rules",
+      "original_order": 16,
+      "name": "战斗界面/指令/表现",
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "original_source_completeness_asserted": false,
+      "bounded_source_connections": [
+        "TW10_B_COMMAND_AND_SAB_IDENTITY_NOT_FULL_ORIGINAL_DRAW"
+      ],
+      "remaining_material_gap": "B envelope, SAB indices; actual original render/skill animation and complete command flows unverified",
+      "source_verification_target": "turn intent→battle scene→action animation/status",
+      "historical_fact_auto_promoted_from_2001_article_or_2004_2006_replay": false
+    },
+    {
+      "domain_id": "item_equipment_economy",
+      "original_order": 17,
+      "name": "物品/装备/商店/料理",
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "original_source_completeness_asserted": false,
+      "bounded_source_connections": [
+        "TW10_ITEM_RECORD",
+        "RECOVERED25_SHELL_ITEM_ID_2414_2415_NOT_TW10"
+      ],
+      "remaining_material_gap": "S:I data envelope and descendant item content; original same-build item+price+source incompletely recovered",
+      "source_verification_target": "items→NPC shops/recipes/quests",
+      "historical_fact_auto_promoted_from_2001_article_or_2004_2006_replay": false
+    },
+    {
+      "domain_id": "audio_fx",
+      "original_order": 18,
+      "name": "音效/配乐与事件触发",
+      "baseline_evidence_status": "PARTIAL_RESOURCE",
+      "original_source_completeness_asserted": false,
+      "bounded_source_connections": [
+        "TW10_AUDIO_CONTAINER_INDEX_NOT_EVENT_TRIGGER"
+      ],
+      "remaining_material_gap": "raw audio containers indexed, same-build event-to-audio binding missing",
+      "source_verification_target": "scene/action/event→audio provenance",
+      "historical_fact_auto_promoted_from_2001_article_or_2004_2006_replay": false
+    },
+    {
+      "domain_id": "helper_versions",
+      "original_order": 19,
+      "name": "历代外挂产品与版本",
+      "baseline_evidence_status": "PARTIAL_CATALOG",
+      "original_source_completeness_asserted": false,
+      "bounded_source_connections": [
+        "SADE_PARTIAL_9_VERSION_CLAIMS",
+        "STA252_PLAYER_REVIEW_NOT_FULL_RELEASES"
+      ],
+      "remaining_material_gap": "initial 16 tool families with source dates, complete version genealogy undocumented",
+      "source_verification_target": "program→edition→release document→capabilities",
+      "historical_fact_auto_promoted_from_2001_article_or_2004_2006_replay": false
+    },
+    {
+      "domain_id": "helper_capabilities",
+      "original_order": 20,
+      "name": "全部外挂功能/变动",
+      "baseline_evidence_status": "PARTIAL_CATALOG",
+      "original_source_completeness_asserted": false,
+      "bounded_source_connections": [
+        "SADE_STA_SACHXP_OBSERVATIONS_NOT_ALL_FEATURES"
+      ],
+      "remaining_material_gap": "12 initial families, incomplete versioned per-command/function coverage; no executable recovery claimed",
+      "source_verification_target": "tool-version→feature-first-seen→input/logic/output/limits",
+      "historical_fact_auto_promoted_from_2001_article_or_2004_2006_replay": false
+    },
+    {
+      "domain_id": "reference_web",
+      "original_order": 21,
+      "name": "原官方/社区资料网站内容",
+      "baseline_evidence_status": "PARTIAL_DISCOVERY",
+      "original_source_completeness_asserted": false,
+      "bounded_source_connections": [
+        "JSS2001_6_PAGES_85_LINKS",
+        "17173_5_LATE_MIGRATED_ARTICLE_LINKS",
+        "EARLY_17173_SNAPSHOT_0_OF_3_TARGETS"
+      ],
+      "remaining_material_gap": "contemporaneous website archives, official guide IA, images and changed links incomplete",
+      "source_verification_target": "site/page/date→entity/era/source",
+      "historical_fact_auto_promoted_from_2001_article_or_2004_2006_replay": false
+    },
+    {
+      "domain_id": "future_player_wiki",
+      "original_order": 22,
+      "name": "未来游戏玩家资料站",
+      "baseline_evidence_status": "DESIGN_PREP_ONLY",
+      "original_source_completeness_asserted": false,
+      "bounded_source_connections": [
+        "DESIGN_SCHEMA_ONLY_NO_PUBLISHED_SITE"
+      ],
+      "remaining_material_gap": "schema prepared, no hosted website/domain/UI/official copy or production assets",
+      "source_verification_target": "published filtered safe original content with provenance",
+      "historical_fact_auto_promoted_from_2001_article_or_2004_2006_replay": false
+    }
+  ],
+  "reviewed_domains_count": 22,
+  "all_origins_fully_recovered": false,
+  "remaining_historical_server_content_unproven": true,
+  "stage_a_evidence_limited_acceptance_unchanged": true,
+  "stage_b_implementation_started": false,
+  "public_wiki_deployment_started": false,
+  "no_global_percentage_claim": true,
+  "next_priority": "PET-IDENTITY-SAME-BUILD-SOURCE-TRIAGE-01",
+  "next_stop_condition": "Only accept named same-build original pet master or original graphics selector/verified historic snapshot. If none: keep species and locations OPEN and move to NPC/quest source attribution, not more generalized helper archaeology."
+}

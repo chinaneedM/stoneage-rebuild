@@ -1,0 +1,19 @@
+name: Validate bounded media archive custody and 22-domain evidence portfolio
+on:
+  push:
+    paths:
+      - research/recovered/STONEAGE-EARLY-MEDIA-ARCHIVE-SNAPSHOT-BOUNDARY-R1.json
+      - research/recovered/STONEAGE-EARLY-MEDIA-ARCHIVE-SNAPSHOT-ACCEPTANCE-R1.json
+      - research/recovered/STONEAGE-22-DOMAIN-EVIDENCE-COVERAGE-CHECKPOINT-R1.json
+      - tests/test_stoneage_early_media_boundary_portfolio.py
+      - .github/workflows/validate-stoneage-early-media-boundary-portfolio.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  finite-archive-and-coverage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - run: python -m unittest tests.test_stoneage_early_media_archive_boundary_probe tests.test_stoneage_early_media_boundary_portfolio tests.test_stoneage_early_media_article_source -v

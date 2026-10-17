@@ -6990,3 +6990,11 @@ STONEAGE-HISTORICAL-WIKI-QUERY-CONTRACT-DRAFT-R1.json引用四个既有派生Git
 - MEDIA17173_20010911_PET_RECS | https://news.17173.com/z/stoneage/content/2001-9-11/n907_823387.html | 仅查询摘要确认日期栏、作者when1314和宠物推荐主题，本轮直接阅读超时，不冒充全文采集。
 
 所有页面均为当前网页观察、非取得2001原始存档；旧目录自身当前含后期版本内容，不能证明其2001版栏目结构。证据包 docs/STONEAGE-EARLY-MEDIA-CONTENT-BRIDGE-R1.md；机器索引 research/recovered/STONEAGE-EARLY-MEDIA-ARTICLE-PET-SOURCE-R1.json。署名玩家说法只作候选内容，不认证1999/TW1.0原服规则或全宠物名录。
+
+
+
+## 2026-10-17 — 17173旧栏目三次Wayback回放／严格晚期来源边界
+
+- 原路径`http://stoneage.17173.com/jingyan/jingyan.shtml`，请求20010614000000/20021231000000，真实返回均为`https://web.archive.org/web/20060115044722id_/http://stoneage.17173.com/jingyan/jingyan.shtml`，11376B，原HTML SHA256 `b6ad1696042cdc3cdfaac671506040505be2b129c0ae9aeb9e3d3dec74753850`；不得归为同期2001原媒体目录。
+- 原路径`http://stoneage.17173.com/chongwu/pet.htm`，请求20011231000000，实际返回`https://web.archive.org/web/20040204024948id_/http://stoneage.17173.com/chongwu/pet.htm`，6546B，原HTML SHA256 `54da75bcbd7b703a336f99f00b160701c8ef8cb6c89358f3b6a08a51df052b26`；属于晚期导航线索，并非2001原目录。
+- GitHub Action `39038286655`/job`117412434137` SUCCESS，artifact`12102473238`（1094B ZIP SHA256 `ff695f20c4e38d974040ffc73f668ef7f82410193ffdd15af29b68c1819e79fd`）。无版权原HTML入库，只有raw派生3520B SHA256 `e50cf9406ba4f057915adf84536dbb6d268d8bdd3303779a7da7b783cb9d6c57`，Git blob `0d5ff5dcb8532626ff40891ff76e92cff378ec26`，待再查精确旧栏目才可重开。三次Availability HTTP503为接口结果不证全网缺失。

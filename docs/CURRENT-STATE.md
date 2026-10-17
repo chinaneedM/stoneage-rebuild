@@ -15067,3 +15067,15 @@ WORLD源分支ec2aa8fac09f13a61c73c9542b2dd9c08c9fc1b9/tree0976772698b7470b72145
 新增 docs/STONEAGE-EARLY-MEDIA-CONTENT-BRIDGE-R1.md 与 research/recovered/STONEAGE-EARLY-MEDIA-ARTICLE-PET-SOURCE-R1.json：五来源、20条逐行玩家宠物别称和出没地候选、四个跨域来源指针、精确URL和缺口字段。来源发表日仅为网页当前日期栏，不能证明原始2001 DOM/栏目树；TW1.0 graphic_id→原宠物物种/SPR、所有初代地图NPC与报酬、原增长仍UNKNOWN。独立数据边界测试在tests/test_stoneage_early_media_article_source.py，新工作流只在相关变更时触发。无原媒体HTML/图片、客户端字节或原外挂执行程序入Git。
 
 **当前最高NEXT：EARLY-MEDIA-ARCHIVE-SNAPSHOT-BOUNDARY-01**。仅具名查询上述旧经验栏目原年代快照、保留实际回放日期及原URL/主机迁移证据；无新的1999—2002有效快照则标记原媒体栏目结构OPEN_EVIDENCE_LIMITED，并转22域历史内容覆盖矩阵评审，不继续无限猜原站导航。原Stage A 7 PARTIAL+2 OPEN、有界验收、R79暂停，Stage B正式游戏/网站生产未启动；主线与CI实际成功只在后续验收后记录。
+
+
+
+## 2026-10-17 — EARLY-MEDIA-ARCHIVE-SNAPSHOT-BOUNDARY-01 真实回放及22域组合复审
+
+本轮按远端main 7b94fbbc01a72e934aa8ca379dfaae96c9f5aa02/tree66b16ea35ee5c72fd9d0ed8b25f9cff1b2e8645e启动，重读协议、README、完整CURRENT-STATE原blob1a2b711969eb7350fe93f0c13a9890a83f48b1bf、Roadmap/Design/Timeline/Source、源检索及全部最近主线Actions SUCCESS。上一轮五篇17173日期栏文章和20条玩家宠物名称已在main CI验证，未重做。
+
+新的有界独立Action39038286655/job117412434137（源HEAD abb2939936a46bef95508f2800188da5c4d455c7/tree 5df29ed63c4177926af173ba54f0cc78dced2106）真实SUCCESS：三个具名旧路径／时间的Wayback Availability都返回503，直接id_回放成功，但精确实际日期为20060115044722、20060115044722、20040204024948，全部超出1999—2002目标窗口。两次经验目录的原始响应SHA256同为b6ad1696042cdc3cdfaac671506040505be2b129c0ae9aeb9e3d3dec74753850，属同一2006快照，不计为两份同期原站导航；宠物目录响应SHA256 54da75bcbd7b703a336f99f00b160701c8ef8cb6c89358f3b6a08a51df052b26。测试5项SUCCESS；archive artifact12102473238/ZIP1094B SHA256ff695f20c4e38d974040ffc73f668ef7f82410193ffdd15af29b68c1819e79fd；raw JSON3520B SHA256e50cf9406ba4f057915adf84536dbb6d268d8bdd3303779a7da7b783cb9d6c57 /Git blob0d5ff5dcb8532626ff40891ff76e92cff378ec26，均实取校验并永久归档。原站1999—2002**未获取合格页只限此三次查询**；不是全网不存在的事实。原HTML/图片未入Git。
+
+同时据原22域总表逐项保留状态并明确当前真正跨版输入：JSS原站6节点/85静态链接；17173五篇日期栏文章/20玩家别称地点；原TW10 SPR→ADRN资源索引；后代2.5具名NPC任务来源，全部保持版本边界及UNKNOWN。详见 docs/STONEAGE-EARLY-MEDIA-ARCHIVE-BOUNDARY-AND-22-DOMAIN-REVIEW-R1.md 与两份派生JSON及ACCEPTANCE；此矩阵是材料覆盖与缺口优先级，不是新游戏/官网实现或全部历史数据复原。Stage A 7 PARTIAL+2 OPEN与证据受限用户验收不变，Stage B GATED，R79仍PAUSED_NON_BLOCKING；不报整体复原百分比。
+
+**最高NEXT PET-IDENTITY-SAME-BUILD-SOURCE-TRIAGE-01**：从20条2001栏玩家别称出发，只接纳具名同版原服务器pet master、原客户端graphic_id实际图形选择链或可认证同期图像索引以尝试物种→图号→SPR与场景关系。无这类证据即保留宠物/出没地UNKNOWN，并切换具名NPC/任务原服资料来源；不无限延伸低层helper或站点导航。旧媒体栏目若有1999—2002真实快照再按精确来源重开。新归档及最终main Actions需据实际完成后标记，不提前称通过。

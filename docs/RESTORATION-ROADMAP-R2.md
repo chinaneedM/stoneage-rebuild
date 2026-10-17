@@ -460,3 +460,11 @@ SADE8条部分更新回顾+0.2g独立变体、同期比较7观察面、配置7�
 JSS原域2001快照实取：手册索引47出链，两首页框架引用menu/top，两手册正文和top.html合成6合格页/85有序链接/67 distinct目标；64片段在已取目标快照存在，但不同快照不证明同刻站点或点击成功。三源Action39035106551、39035257822、39035407893成功，全部ATTEMPT与最终派生/代码/ZIP链保留。menu.html原域响应因正文品牌门不足保持未合格；17173四候选实际2004/2006排除早期图。只认证有限导航与资料域候选路由，不认证完整原站或游戏数据，见STONEAGE-HISTORICAL-SITE-NAVIGATION-R1。
 
 **最高NEXT仍HISTORICAL-SITE-IA-AND-WIKI-EXPORT-CONTRACT-01：同期媒体索引子项**。以具名旧文原URL/主机迁移或精确档案索引查1999—2002媒体栏目，至多一个有限来源包；无新具名源则登记边界后转22域前期准备组合评审，不遍历官网所有出链。已有逐主张查询合同与实际JSS来源连接可供后续共同设计参考；不选网页框架、不生产新作、不重开R79。
+
+
+
+## 2026-10-17 — 17173同期媒体有限档案回放后内容域源缺口定序
+
+从原五篇17173迁移文章中的旧经验目录原URL出发，GitHub Actions 39038286655已完整执行三条有限Wayback直接回放；实际只返回2006年两次同一快照及2004年一次宠物目录候选，无1999—2002合格目录节点，不能证明它当年不存在。保留报告SHA/ZIP/原始Git blob与逐URL实际时间；EARLY-MEDIA-ARCHIVE-SNAPSHOT-BOUNDARY-01转OPEN_EVIDENCE_LIMITED，不再追逐猜测索引。
+
+按原22域完成来源连接及UNKNOWN矩阵。**新highest NEXT PET-IDENTITY-SAME-BUILD-SOURCE-TRIAGE-01**：围绕现有20玩家别称、TW10 graphic_id与原SPR资源寻找直接同版物种映射的具名原始资料；无法获得时就停止并转任务/NPC原服源补证。九系统7 PARTIAL+2 OPEN、Stage A有界验收、Stage B GATED、R79暂停均不变；不计算全游戏复原百分比。
