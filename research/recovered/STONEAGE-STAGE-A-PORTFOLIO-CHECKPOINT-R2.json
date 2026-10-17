@@ -1,0 +1,225 @@
+{
+  "schema": "stoneage.stage_a.portfolio_checkpoint.r2",
+  "date": "2026-10-17",
+  "scope": "HISTORICAL_RESTORATION_ONLY",
+  "source_main_head": "80cb09c527e7db4cc83d9f2d557a36b4b7d24a3a",
+  "source_main_tree": "ff4ba5ceed89940ad7a66113b65150a9861e55b1",
+  "source_pins": {
+    "consolidated": {
+      "path": "research/recovered/STONEAGE-STAGE-A-CONSOLIDATED-REVIEW-R1.json",
+      "bytes": 36786,
+      "git_blob": "1a31c094bdd1c4b64b2f6510270c111be2c9415c"
+    },
+    "triage": {
+      "path": "research/recovered/STONEAGE-STAGE-A-BLOCKER-TRIAGE-R1.json",
+      "bytes": 13107,
+      "git_blob": "84811f2e49c2cf48477439b504bb529b7e4318aa"
+    },
+    "portfolio": {
+      "path": "research/recovered/STONEAGE-RESTORATION-PORTFOLIO-R1.json",
+      "bytes": 16371,
+      "git_blob": "696be2bdc360e066abe92f95255b912eae3e90de"
+    },
+    "early_manual": {
+      "path": "research/recovered/STONEAGE-EARLY-CONTENT-GUIDE-MANUAL-R1.json",
+      "bytes": 6911,
+      "git_blob": "54404a8118f125a9a53eabbb8bad8c4a0d07b190"
+    },
+    "early_crosswalk": {
+      "path": "research/recovered/STONEAGE-EARLY-CONTENT-MODEL-CROSSWALK-R1.json",
+      "bytes": 3480,
+      "git_blob": "f2fa2e6dc90131f4a37040700b4a6bb0371db4d1"
+    },
+    "tw10_ui": {
+      "path": "research/recovered/STONEAGE-TW10-UI-SEMANTICS-R1.json",
+      "bytes": 53638,
+      "git_blob": "ee3d230317c47b13e3513f25c3feba2ff9305e1c"
+    },
+    "npc_flow": {
+      "path": "research/recovered/STONEAGE-QUEST-NPC-FLOW-CI-DERIVED-R1.json",
+      "bytes": 15004,
+      "git_blob": "b9f04bd7956a25a249e182fad4db2f0459719327"
+    },
+    "npc_flow_receipt": {
+      "path": "research/recovered/STONEAGE-QUEST-NPC-FLOW-ACCEPTANCE-R1.json",
+      "bytes": 3670,
+      "git_blob": "c1ec0cd05768b221be07d0e753dc77b5178ee7e6"
+    }
+  },
+  "system_gates": {
+    "lineage": "PARTIAL",
+    "world": "PARTIAL",
+    "characters_pets": "PARTIAL",
+    "battle": "PARTIAL",
+    "inventory_economy": "PARTIAL",
+    "npc_quests": "OPEN",
+    "graphics_audio_ui": "PARTIAL",
+    "runtime_persistence": "OPEN",
+    "integration": "PARTIAL"
+  },
+  "existing_review_player_flows": 7,
+  "existing_review_blockers": 5,
+  "current_material_findings": [
+    "后代ExChangeMan共27匿名EventEnd记录3条跨物品关联，仅说明后代字段配置；TW1.0原始脚本仍OPEN",
+    "JSS第一方手册2001-04-18可为服务规则提供更早、可定年来源，但非1999原始发行构建",
+    "TW1.0纯净客户端的字段宽度、WN通信和位置/物品/宠物输入提供分立的客户端观测面，不等于任何服务端行为得到绑定"
+  ],
+  "early_service_journey_slices": [
+    {
+      "id": "SAVE_POINT",
+      "manual_section": "8010",
+      "manual_source_layer": "JSS_FIRST_PARTY_2001_04_18",
+      "business_behavior": "记录点初次使用须交供品；再次登录按已记录地点出现（手册声明）",
+      "tw10_client_visibility_surfaces": [
+        "FIELD_AND_POSITION_STATUS",
+        "BATTLE_AND_NPC_WINDOWS"
+      ],
+      "original_tw10_service_binding": "UNPROVEN",
+      "original_1999_membership": "OPEN",
+      "runtime_or_server_trace": "UNAVAILABLE",
+      "missing_original_inputs": [
+        "original ACK / durable SAAC save result",
+        "offering item ID and quantity",
+        "original service NPC / event source",
+        "same-build relogin capture"
+      ],
+      "stop_condition": "没有同代原始SP事件或服务端重登载荷，不编写原服存盘协议也不运行伪史实流程",
+      "source_version_interpretation": "第一方手册行为与TW1.0通用位置消息可并置，不可证明原SP经WN交互或实际写盘"
+    },
+    {
+      "id": "MAMMOTH_BUS",
+      "manual_section": "8100",
+      "manual_source_layer": "JSS_FIRST_PARTY_2001_04_18",
+      "business_behavior": "两组各三村公车；停站3分钟；乘客上限4；车上不遇敌；按面向与组队控件上下车",
+      "tw10_client_visibility_surfaces": [
+        "FIELD_AND_POSITION_STATUS",
+        "CHARACTER_STATUS_AND_HUD"
+      ],
+      "original_tw10_service_binding": "UNPROVEN",
+      "original_1999_membership": "OPEN",
+      "runtime_or_server_trace": "UNAVAILABLE",
+      "missing_original_inputs": [
+        "fare and passenger-count implementation",
+        "same-source actual route edge/map IDs",
+        "original encounter-suppression runtime",
+        "board/unboard UI action binding"
+      ],
+      "stop_condition": "只有三村分组而无路线边数据时，不生成站点拓扑或原始服务端NPC"
+    },
+    {
+      "id": "VILLAGE_CARE_TRAINING",
+      "manual_section": "8025/8050/8070",
+      "manual_source_layer": "JSS_FIRST_PARTY_2001_04_18",
+      "business_behavior": "村落存在医疗、收费宠物学技能与宠物回购类服务；不是每一村都有所有设施",
+      "tw10_client_visibility_surfaces": [
+        "CHARACTER_STATUS_AND_HUD",
+        "PET_STATUS_SKILLS",
+        "BATTLE_AND_NPC_WINDOWS"
+      ],
+      "original_tw10_service_binding": "UNPROVEN",
+      "original_1999_membership": "OPEN",
+      "runtime_or_server_trace": "UNAVAILABLE",
+      "missing_original_inputs": [
+        "per-village NPC / service roster",
+        "fees/skill catalogue",
+        "action-specific v1 NPC window payload",
+        "server actor deltas"
+      ],
+      "stop_condition": "只标已有手册类别和客户端可见字段，不把后期healer/skill shop配置视为同版事实"
+    },
+    {
+      "id": "VILLAGE_WORK",
+      "manual_section": "8025/8050/8070",
+      "manual_source_layer": "JSS_FIRST_PARTY_2001_04_18",
+      "business_behavior": "早期手册列村落送货与矿场矿石劳动示例，不认证任意原版完整职业任务链",
+      "tw10_client_visibility_surfaces": [
+        "INVENTORY_AND_ITEMS",
+        "BATTLE_AND_NPC_WINDOWS"
+      ],
+      "original_tw10_service_binding": "UNPROVEN",
+      "original_1999_membership": "OPEN",
+      "runtime_or_server_trace": "UNAVAILABLE",
+      "missing_original_inputs": [
+        "job-specific original item identity",
+        "payment amount",
+        "original task flags and NPC dialogue",
+        "same-build completed transaction"
+      ],
+      "stop_condition": "没有同时代原任务/商业服资料，只做工作种类事实，不扩成完整任务列表"
+    },
+    {
+      "id": "GROUND_ITEM_EXPIRY",
+      "manual_section": "7030",
+      "manual_source_layer": "JSS_FIRST_PARTY_2001_04_18",
+      "business_behavior": "手册表示普通地面掉落物经过未指定时长会消失，不认证任务物品丢弃/下线销毁",
+      "tw10_client_visibility_surfaces": [
+        "FIELD_AND_POSITION_STATUS",
+        "INVENTORY_AND_ITEMS"
+      ],
+      "original_tw10_service_binding": "UNPROVEN",
+      "original_1999_membership": "OPEN",
+      "runtime_or_server_trace": "UNAVAILABLE",
+      "missing_original_inputs": [
+        "original despawn duration and triggering clock",
+        "item identity / ownership / loot rule",
+        "same-version server removal event",
+        "original client ground-item visibility trace"
+      ],
+      "stop_condition": "未取得原生消失计时前不得填默认秒数，也不得混同任务物品即丢销毁或下线标记"
+    }
+  ],
+  "package_order": [
+    {
+      "id": "EARLY-VILLAGE-SERVICE-JOURNEY-01",
+      "decision": "START",
+      "source_scope": "仅当前认证JSS2001第一方手册5类行为+TW1.0已认证客户端消息位置/窗口形状+已存在版本化后代对照",
+      "deliverable": "产生5条玩家可见服务动作→前置/结果→原版客户端可观察面→原商业服缺失字段的有限契约与可独立否证验收；不执行新作/原服仿真",
+      "material_gap": "早期真实生活世界的第一方服务叙述尚未与原1.0客户端能观察到的反馈边界逐项分离，无法构建可靠第一小时的规则清单",
+      "stop_condition": "5类行为各有明确源/边界或UNKNOWN即停；严禁推断原始NPC、线路边、费用、持久ACK或真实画面",
+      "historical_value": "FIRST_PARTY_PLAYER_VISIBLE_CROSSSYSTEM_RULES",
+      "feasibility": "EXISTING_IMMUTABLE_SOURCES",
+      "development_stage": "A_ONLY"
+    },
+    {
+      "id": "TW10-ORIGINAL-VISUAL-CALLSITE-02",
+      "decision": "PARK_EVIDENCE_GATED",
+      "source_scope": "原版1.0渲染调用点/合法可取得运行轨迹，不引入后代贴图ID",
+      "deliverable": "有条件再核原宠物动画/战斗场景选择的1:1调用链",
+      "material_gap": "资源身份已知但某资源实际何时显示未知",
+      "stop_condition": "无直接渲染调用新材料或命名原始视觉场景即停止；不进行泛化逆向",
+      "historical_value": "ORIGINAL_GAME_PRESENTATION",
+      "feasibility": "CONDITIONAL_PRIMARY_BINARY_CALLSITE",
+      "development_stage": "A_ONLY"
+    },
+    {
+      "id": "ORIGINAL-SERVER-CONTENT-REOPEN",
+      "decision": "PARK_EVIDENCE_GATED",
+      "source_scope": "仅有认证JSS1999/TW1.0原商服文件、精确版本服务端/客户端采集或全新独立同时代一手资料时重新审核",
+      "deliverable": "对应原始世界NPC任务奖励与存盘的版本化事实合同，而非后代猜测",
+      "material_gap": "无法从零售盘单向还原商业服世界/NPC/奖赏/ACK",
+      "stop_condition": "来源缺失时保留OPEN，不延伸后代伐木其他NPC和R79辅助函数",
+      "historical_value": "HIGHEST_BLOCKER_BUT_NOT_CURRENTLY_SOURCE_FEASIBLE",
+      "feasibility": "GATED_MISSING_EVIDENCE",
+      "development_stage": "A_ONLY"
+    }
+  ],
+  "portfolio_reassessment_trigger": {
+    "max_consecutive_low_yield_units": 2,
+    "stop_if_no_material_outcome": true,
+    "trigger": "如两包连续未形成新一手行为规格、明确版本归属或实际玩法可验证链，重新评估九族排序"
+  },
+  "next_priority": "EARLY-VILLAGE-SERVICE-JOURNEY-01",
+  "original_1999_service_build_proven": false,
+  "same_version_tw10_service_binding_proven": false,
+  "original_server_transaction_or_ack_observed": false,
+  "actual_visual_screen_or_route_replayed": false,
+  "original_npc_quest_script_recovered": false,
+  "historical_quest_server_files_added": false,
+  "production_engine_changes": false,
+  "stage_a_accepted": false,
+  "joint_user_review_completed": false,
+  "stage_b_started": false,
+  "stage_b_gate": "GATED",
+  "savedata_r79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null
+}

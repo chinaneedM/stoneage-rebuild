@@ -321,3 +321,12 @@ EARLY-QUEST-CONTENT-02选择单条任务寻找独立早期证据；不再只增�
 原固定保存包上重做独立来源取得，9项测试及源SHA验证在Action38997164871/job117292136171 SUCCESS。后代4,985 NPC引用、30模板歧义、15次缺参；旧49角色完全匹配。分隔到27匿名EventEnd记录，其中3条不同ID共现：2条条件与收回2465/发放2484，一条条件与收回2478/发放2481；其余16同ID多角色、8单角色。不能拼成全部伐木流程，原始台湾1.0商业服ID/交易/存档未证明；旧20197零命中只限定语法与来源。派生报告Git blob b9f04bd7956a25a249e182fad4db2f0459719327，原始源未入库，验收链见STONEAGE-QUEST-NPC-FLOW-ACCEPTANCE-R1。
 
 NEXT STAGE-A-PORTFOLIO-CHECKPOINT-02：停止后代NPC无限加深，重新按九系统真实未恢复游戏内容、初代来源可达性和用户审阅关口排序。若无新官方/定年独立早期资料，不再沿同事件向原服任务事实扩写。Stage A未终验、Stage B GATED、R79暂停。
+
+
+## 2026-10-17 — STAGE-A-PORTFOLIO-CHECKPOINT-02 重新按游戏行为与早期可信度排序
+
+本次对照当前九族联合审阅、阻塞分级、第一方2001-04-18 JSS手册、TW1.0客户端五类交互记录、后代伐木同EventEnd永久档案。九族依旧7 PARTIAL+2 OPEN，7条体验仍是原版客户端结构/后代或现代条件参考、不是初代商业服完整可玩体验。27条后代ExChangeMan同记录与3条跨物品关联在其来源层级内有效，但不能继续据此铺成原始1.0任务图。
+
+组合检查点 docs/STAGE-A-PORTFOLIO-CHECKPOINT-R2.md、research/recovered/STONEAGE-STAGE-A-PORTFOLIO-CHECKPOINT-R2.json 为五类第一方行为设证据合同和停止条件：记录点首次供品/重登、三村组公车3分钟/最多4人/免遇敌、医疗/付费宠技/收宠、送货/矿石劳动、普通落地物品未知时长消失。TW1.0的S:C位置、WN泛用窗口、人宠/物品状态仅是可观察字段**形状**，目前无同版服务事件的绑定，不能冒充2001手册对应台湾1.0服务器执行；真实ACK、车站地图边/费用、工作道具和奖励均保持OPEN。
+
+重新排序：**Highest NEXT EARLY-VILLAGE-SERVICE-JOURNEY-01**，限既有认证JSS2001手册和TW1.0客户端输入/观测面，以5条玩家行为的前置、反馈、缺失的服务端字段形成可否证的规则合同，收束于5行完成或UNKNOWN；之后若无新证停。TW10-ORIGINAL-VISUAL-CALLSITE-02及ORIGINAL-SERVER-CONTENT-REOPEN均仅在新的原始运行/同年代真实材料出现时重开。连续两包无新的规则事实/版本归属/实质衔接则停止分支重评。旧recovered25 NPC、R79暂停、7+2族门禁与Stage B GATED保留。这个组合检查点本身只是工作排序与已存证据验证，**没有新增初代内容载荷、商业服务端回放或复原百分比**。远端CI及main验收只以实际后续运行结果为准。

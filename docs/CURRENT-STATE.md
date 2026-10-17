@@ -14830,3 +14830,14 @@ QUEST-ITEM-IDENTITY-04本轮有界交付完成：两个固定表各五后代候�
 合并前最新main仍87cef0c95dc5c3057073ee408611b1ef81ff975c，GitHub远端比较ahead2/behind0、11路径无删除，按expected-main非强制快进合并至0334f938dcb3ee628b34c5ac0cd6984833f803d5。新main独立运行NPC同事件38997627845、最早TW1.0来源custody38997627871、后代版来源38997627882、后期PET边界38997627820均SUCCESS；没有把客户端/商业服务端仿真当史实。MAIN tree92bd80e840738cb7e8e3a58d23e3b281591730e8，完整历史CURRENT-STATE Git blob b0058b2dae6e2a6569e9aef7742c74c94c012071（1835027字符）保留先前完整前缀。永久原JSON Git blob b9f04bd7956a25a249e182fad4db2f0459719327与最初真实CI源报告一致。ACCEPTANCE追加后续验证和主线凭据，不抹去以前失败或来源取得记录。本段交接自身提交的CI尚未验证，不能预报结果。
 
 QUEST-NPC-FLOW-LINK-06有界完成：两条2465→2484候选、1条2478→2481候选；没有证据把两段串成一个完整伐木任务或同一原版1.0商业服务端事务。**最高NEXT STAGE-A-PORTFOLIO-CHECKPOINT-02**：停止重复深化后代NPC分析，检查九族实际史料缺口、用户验收包和可靠原始时代证据优先级，再选择下一项实体恢复。正式Stage A未终验（7 PARTIAL+2 OPEN），Stage B GATED，R79 PAUSED_NON_BLOCKING。
+
+
+## 2026-10-17 — STAGE-A-PORTFOLIO-CHECKPOINT-02 九族对照、早期服务可达性及任务排序
+
+本轮重新从GitHub核对远端main HEAD80cb09c527e7db4cc83d9f2d557a36b4b7d24a3a/tree ff4ba5ceed89940ad7a66113b65150a9861e55b1，最新两项主线Actions38997724471/38997724350均SUCCESS。严格读取README、连续性协议、设计/编年/来源账、路线R2、portfolio R1及CURRENT-STATE全量Git blob2784b58fae4e453b64f263aef2c26e0e9a18edf3（1836210字符）。本次只在末尾追加历史，不删改先前原始来源取证、失败修复与项目节点。
+
+重要判断：已验收九系统7 PARTIAL/2 OPEN、七条代表玩家经历、五项阻塞，而真实台湾1.0商业服务器的原始NPC/任务/世界/奖赏/SAAC持久化仍OPEN。后代recovered25的27匿名ExChangeMan EventEnd和3条跨物品关联是**后代事实**，不能生长成初代完整伐木任务；原版TW1.0 WN及S:C等客户端消息是结构证据，也不能把日本官方手册说的服务端事件假称TW1.0原服已经实行。项目原始规则/玩家体验优先于无限增加R编号和低层辅助函数。
+
+新交付 docs/STAGE-A-PORTFOLIO-CHECKPOINT-R2.md、research/recovered/STONEAGE-STAGE-A-PORTFOLIO-CHECKPOINT-R2.json 和独立否证工具/测试，固定8份不可变审阅、手册、客户端UI、后代NPC源证据Git blob。五类可重用第一方2001-04-18日本官方手册行为：首次供品/记录点重登，三村组长毛象公交3分钟/最多4人/不遇敌，村庄医疗/付费宠物技能及收购，村庄送货/矿石工作，以及普通地面物品的未定时限消失。逐项标出TW1.0客户端通用观测面与服务端输入缺口；不填路线连通边、金钱、奖励、消失时长、供品ID/数量、原始脚本和存储ACK，不声称1999同构建。
+
+**Highest NEXT EARLY-VILLAGE-SERVICE-JOURNEY-01**：在5项固定范围内把有来源的玩家动作、前置状态、可以观察的原客户端字段形状和缺失/未获授权推断的服务端事务写成规则可消费、可反例检验的有限早期村庄体验规格；没有新资料或构建级关联时明确UNKNOWN后立即停，不启动新引擎。TW10视觉调用点及原服内容继续证据门禁，旧savedata R79 PAUSED_NON_BLOCKING、Stage A未联合终验、Stage B GATED。当前checkpoint没有取得新原始数据字节，也没有提高全局复原百分比。源/CI/主线验收应以后续实际执行结果另行记载。

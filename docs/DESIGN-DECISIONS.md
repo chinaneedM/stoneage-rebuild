@@ -454,3 +454,8 @@ smallest necessary dependency blocking a named integration specification.
 Original client-local state, descendant server character saves and modern
 reference local persistence are separate evidence layers. No subsystem family
 is closed by this reordering. Stage A remains before joint Stage B review.
+
+
+## DD-023 — Early first-party player-service scope before further late NPC scanning
+
+**Adopted for Stage A research on 2026-10-17**. On current evidence, the 2001-04-18 first-party JSS manual offers five source-bounded early player service classes, while the accepted TW1.0 client offers separately sourced generic state/window/position message carriers. They are not one authenticated version-matched service transaction. Prioritize `EARLY-VILLAGE-SERVICE-JOURNEY-01`, a finite action/precondition/observable-state/missing-original-server-input contract, over further recovered25 NPC parameter scans. Carry late NPC EventEnd joins only as descendant evidence; preserve missing original NPC/world/ACK and runtime client visuals as OPEN. Park R79. If two consecutive work units yield no new game behavior, source attribution or material integration evidence, return to portfolio review. No new game design or Stage B.

@@ -1,0 +1,29 @@
+name: Validate Stage A portfolio checkpoint and early service evidence boundaries
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-STAGE-A-PORTFOLIO-CHECKPOINT-R2.json'
+      - 'docs/STAGE-A-PORTFOLIO-CHECKPOINT-R2.md'
+      - 'tools/stoneage_stage_a_portfolio_checkpoint.py'
+      - 'tests/test_stoneage_stage_a_portfolio_checkpoint.py'
+      - '.github/workflows/validate-stoneage-stage-a-portfolio-checkpoint.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  portfolio:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Reject forged original gameplay and validate eight pinned source files
+        run: python -m unittest tests.test_stoneage_stage_a_portfolio_checkpoint tests.test_stoneage_stage_a_review_packet -v
+      - name: Reuse original Taiwan UI and early manual negative controls
+        run: python -m unittest tests.test_stoneage_tw10_ui_semantics tests.test_stoneage_early_content_probe -v
+      - name: Verify machine-read source checkpoint and existing nine-family review
+        run: |
+          python -m tools.stoneage_stage_a_portfolio_checkpoint
+          python tools/stoneage_stage_a_review_packet.py
