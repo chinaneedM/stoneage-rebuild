@@ -53,3 +53,5 @@ python tools/stoneage_adult_ceremony_probe.py --output /tmp/adult-derived.json
 ## 独立归档验收
 
 [来源Action38991633626](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/38991633626)及job117275086568成功；六源实际读取和19项回归通过。下载ZIP hash与API一致，原始派生JSON6978字节与本地报告逐字节相同，永久Git blob `058225a89962dbcfb49e464f7de999f0f5f81121`。完整链见 [验收记录](../../research/recovered/STONEAGE-ADULT-CEREMONY-ACCEPTANCE-R1.json)。后续header／页脚隔离与永久归档回归使本地检查共21项，语义不变，另六项临时真实源变异被拒；补强后远端CI仍须独立通过。
+
+归档后Action38991782878/job117275548182已通过21项检查与六源重取，所有步骤成功。main经过ahead2/behind0、无删除和expected-head检查，非强制整合至258647d74106809a822d86423a9bbc3e19437d43；完整后续凭据已追加ACCEPTANCE的subsequent_validation。

@@ -23,5 +23,24 @@
   "original_server_executed": false,
   "original_quest_script_recovered": false,
   "stage_a_accepted": false,
-  "stage_b_gate": "GATED"
+  "stage_b_gate": "GATED",
+  "subsequent_validation": {
+    "head": "258647d74106809a822d86423a9bbc3e19437d43",
+    "tree": "c0ff2fbacee2d95f38eb7a3d350863a35eff4d5d",
+    "run_id": 38991782878,
+    "job_id": 117275548182,
+    "conclusion": "success",
+    "tests": 21,
+    "all_steps_success": true,
+    "source_acquisitions": 6,
+    "header_guard_followup_complete": true,
+    "permanent_archive_hash_and_git_blob_checked": true,
+    "main_fast_forward_completed": true,
+    "main_before": "57211646145014e581977939e522a9a3e2d8e2df",
+    "main_after": "258647d74106809a822d86423a9bbc3e19437d43",
+    "compare_ahead": 2,
+    "compare_behind": 0,
+    "no_deleted_paths": true,
+    "note": "The earlier pending flag records receipt creation time; this subsequent record closes it."
+  }
 }
