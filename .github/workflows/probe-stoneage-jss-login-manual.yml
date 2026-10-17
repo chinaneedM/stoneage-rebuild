@@ -1,0 +1,26 @@
+name: Inventory first-party JSS login manual references
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_jss_login_manual_probe.py
+      - tests/test_stoneage_jss_login_manual_probe.py
+      - .github/workflows/probe-stoneage-jss-login-manual.yml
+permissions:
+  contents: read
+jobs:
+  first-party-provenance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - run: python -m unittest tests.test_stoneage_jss_login_manual_probe -v
+      - run: |
+          mkdir -p /tmp/derived-jss-manual
+          python -m tools.stoneage_jss_login_manual_probe > /tmp/derived-jss-manual/JSS-LOGIN-MANUAL-REFERENCES-R1.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: jss-login-manual-references-r1
+          path: /tmp/derived-jss-manual/*.json
+          retention-days: 7
+          if-no-files-found: error

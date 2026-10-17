@@ -14975,3 +14975,16 @@ QUEST-NPC-FLOW-LINK-06有界完成：两条2465→2484候选、1条2478→2481�
 提交docs/STONEAGE-EARLY-UI-AVATAR-VISUAL-RANGE-R1.md、research/recovered/STONEAGE-EARLY-VISUAL-ID-RANGES-VERIFIED-R1.json、对应2001原文URL来源与反例程序。首次工作流Action39025014067仅因job标识不合法导致validation失败，未实际执行；修复后源Action39025092843/job117374413945实际SUCCESS，源实证全部通过。失败和成功都保留。SOURCE-REGISTRY与TIMELINE仅追加有证据的同时期史料并说明台湾1.0的间接关联，旧档历史完整前缀不删。
 
 **最高NEXT WORLD-NPC-QUEST-SOURCE-JOIN-01**：核对可归属2001年前后的村落NPC/任务/奖励文字与TW1.0 M/MC/WN字段及版本化后代2.5服务脚本，必须标明不属于同版的差异；不能用现代资料造首发任务。外挂全功能历史档案与未来玩家资料网站仍在前期准备序列。Stage A史实7 PARTIAL+2 OPEN，原版完整任务/宠物/画面未恢复，Stage B未生产，R79暂停。本轮后续归档及主线CI须实时核对。
+
+
+## 2026-10-17 — ORIGINAL-UI-LOGIN-AVATAR-REVIEW-01 原版调用与官方建角规则
+
+从实时main a041af528eec13a4e832efca09b6c165a146ff8e/tree43265d6f1c317dfc4c396eba91c7934341ba8b41启动，核对最新分支、四条提交、同HEAD全部已返回主线Actions SUCCESS、无待合并PR；完整CURRENT-STATE 1892518字节与Git源逐字节一致，README/协议/Design/Timeline/Source/Roadmap和22域准备顺序已核。最高NEXT原版登录/选角/人物核查，本轮只推进该具名游戏界面内容。
+
+实际重新取得原TW1.0零售盘，校验保存包MD5/SHA1、523449360字节镜像与sa_3.exe SHA256，五种消息ClientLogin/CharList/CreateNewChar/CharDelete/CharLogin各找到一个静态直接发送调用候选与已固定接收回调。建角14压栈、原序列化器13字段转换及字段来源建立有界关联；EARLY_LINEAGE对应的body/face分别加载RVA0x13f709c、0x13f78ac，运行时实际图号、SPR/bitmap身份、完整人物数及屏幕布局均未证明，不把内存地址当图号。
+
+通过JSS官方manual02真实链接取得manual01，实际快照20010418082314（请求20010418083149发生跳转），10924字节，无Shift-JIS替换。第一方明确姓名8个全角字符、能力20点、属性10点且最多分配两类、方向预览/换色/脸部选件/出生村与删除确认；这仅属JSS2001官方说明，不认证1999或台湾1.0同数值同执行。原网页/图片/旧exe未入Git，派生来源及验收链单独永久归档。两页无img引用不代表原游戏无画面。
+
+规格 docs/specs/STONEAGE-TW10-LOGIN-AVATAR-R1.md；机器目录及来源凭据见STONEAGE-TW10-LOGIN-AVATAR-CATALOG-R1.json和STONEAGE-TW10-LOGIN-AVATAR-ACCEPTANCE-R1.json。初次manual01链接片段处理、数字地址转录修正及一次合成测试失败均保留，不据错误零结果下历史结论；独立源/归档/main CI仅按随后真实结果登记。
+
+**最高NEXT WORLD-NPC-QUEST-SOURCE-JOIN-01**：按版本连接现有地图/NPC/对话/任务/物品/条件/奖励与登出标记，选择具名实质记录；无初代同源证据则UNKNOWN，不展开无界后代脚本链。人物实际图号/完整画面需要原版选择表值/边界、运行轨迹或可认证同期截图再重开。其后继续外挂全功能及历史资料站结构。Stage A既有有界研究验收保持、九族7 PARTIAL+2 OPEN；新作/网站生产与R79不启动，无全游戏百分比。
