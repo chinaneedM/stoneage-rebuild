@@ -330,3 +330,10 @@ NEXT STAGE-A-PORTFOLIO-CHECKPOINT-02：停止后代NPC无限加深，重新按�
 组合检查点 docs/STAGE-A-PORTFOLIO-CHECKPOINT-R2.md、research/recovered/STONEAGE-STAGE-A-PORTFOLIO-CHECKPOINT-R2.json 为五类第一方行为设证据合同和停止条件：记录点首次供品/重登、三村组公车3分钟/最多4人/免遇敌、医疗/付费宠技/收宠、送货/矿石劳动、普通落地物品未知时长消失。TW1.0的S:C位置、WN泛用窗口、人宠/物品状态仅是可观察字段**形状**，目前无同版服务事件的绑定，不能冒充2001手册对应台湾1.0服务器执行；真实ACK、车站地图边/费用、工作道具和奖励均保持OPEN。
 
 重新排序：**Highest NEXT EARLY-VILLAGE-SERVICE-JOURNEY-01**，限既有认证JSS2001手册和TW1.0客户端输入/观测面，以5条玩家行为的前置、反馈、缺失的服务端字段形成可否证的规则合同，收束于5行完成或UNKNOWN；之后若无新证停。TW10-ORIGINAL-VISUAL-CALLSITE-02及ORIGINAL-SERVER-CONTENT-REOPEN均仅在新的原始运行/同年代真实材料出现时重开。连续两包无新的规则事实/版本归属/实质衔接则停止分支重评。旧recovered25 NPC、R79暂停、7+2族门禁与Stage B GATED保留。这个组合检查点本身只是工作排序与已存证据验证，**没有新增初代内容载荷、商业服务端回放或复原百分比**。远端CI及main验收只以实际后续运行结果为准。
+
+
+## 2026-10-17 — EARLY-VILLAGE-SERVICE-JOURNEY-01 五类村庄生活行为来源分层规格
+
+在2026-10-17最新main 70e700243d4ecf363029601f60de7e01a51d4d49上启动，先读取HEAD/tree、最近提交、Actions、连续性协议与全量CURRENT-STATE，再对照官方2001-04-18 JSS手册及原版台湾1.0客户端UI消息形状。五类行为仅限记录点、长毛象公车、医疗/宠技/收宠、送货/矿石工作、普通落地物品消失；13项早期文字断言与12个原客户端通用观察槽仅作为不同来源的并排契约，不宣称同版NPC/服务器事件绑定、原始写盘ACK或实际操作画面。详见 docs/specs/STONEAGE-EARLY-VILLAGE-SERVICE-JOURNEY-R1.md 与 research/recovered/STONEAGE-EARLY-VILLAGE-SERVICE-JOURNEY-R1.json。实际证据仍未新增原始商业服内容、1999样本或真实游戏回放。
+
+**NEXT STAGE-A-EARLY-SOURCE-GAP-TRIAGE-01**：逐个核对村庄服务关键未知是否有新的、可认证的早期一手资料可补。无新证据即标记UNKNOWN并转九族联合审阅，不靠后代NPC继续扩写、不开R79。Stage A 7 PARTIAL+2 OPEN，Stage B GATED。新来源合同独立CI与主线结果必须实际验证后才能宣称通过。

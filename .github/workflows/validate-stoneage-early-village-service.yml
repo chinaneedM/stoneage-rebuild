@@ -1,0 +1,34 @@
+name: Validate early village-service source contracts
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-EARLY-VILLAGE-SERVICE-JOURNEY-R1.json'
+      - 'research/recovered/STONEAGE-EARLY-VILLAGE-SERVICE-ACCEPTANCE-R1.json'
+      - 'docs/specs/STONEAGE-EARLY-VILLAGE-SERVICE-JOURNEY-R1.md'
+      - 'tools/stoneage_early_village_service_journey.py'
+      - 'tests/test_stoneage_early_village_service_journey.py'
+      - 'tests/test_stoneage_early_village_service_archive.py'
+      - '.github/workflows/validate-stoneage-early-village-service.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run five-service source guards and original UI/manual regressions
+        run: |
+          python -m unittest tests.test_stoneage_early_village_service_journey tests.test_stoneage_early_content_probe tests.test_stoneage_tw10_ui_semantics tests.test_stoneage_stage_a_portfolio_checkpoint -v
+      - name: Replay archived acceptance when available
+        if: ${{ hashFiles('research/recovered/STONEAGE-EARLY-VILLAGE-SERVICE-ACCEPTANCE-R1.json') != '' }}
+        run: python -m unittest tests.test_stoneage_early_village_service_archive -v
+      - name: Check direct source reading, nine-family Stage A review and evidence limits
+        run: |
+          python -m tools.stoneage_early_village_service_journey
+          python -m tools.stoneage_stage_a_portfolio_checkpoint
+          python tools/stoneage_stage_a_review_packet.py

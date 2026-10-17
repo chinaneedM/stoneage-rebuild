@@ -1,0 +1,325 @@
+{
+  "schema": "stoneage.early_village_service_journey.r1",
+  "date": "2026-10-17",
+  "root_commit": "70e700243d4ecf363029601f60de7e01a51d4d49",
+  "root_tree": "686798ad81940bd0c66c241b07ee6d02fcb10c80",
+  "scope": "FIRST_PARTY_BEHAVIOR_DESCRIPTIONS_PLUS_SEPARATELY_VERIFIED_ORIGINAL_CLIENT_CARRIERS",
+  "source_pins": {
+    "checkpoint": {
+      "path": "research/recovered/STONEAGE-STAGE-A-PORTFOLIO-CHECKPOINT-R2.json",
+      "blob": "1666ab6597ed9a35de38a16ba6ee84761f8132c5"
+    },
+    "manual": {
+      "path": "research/recovered/STONEAGE-EARLY-CONTENT-GUIDE-MANUAL-R1.json",
+      "blob": "54404a8118f125a9a53eabbb8bad8c4a0d07b190"
+    },
+    "original_ui": {
+      "path": "research/recovered/STONEAGE-TW10-UI-SEMANTICS-R1.json",
+      "blob": "ee3d230317c47b13e3513f25c3feba2ff9305e1c"
+    },
+    "historical_crosswalk": {
+      "path": "research/recovered/STONEAGE-EARLY-CONTENT-MODEL-CROSSWALK-R1.json",
+      "blob": "f2fa2e6dc90131f4a37040700b4a6bb0371db4d1"
+    },
+    "checkpoint_spec": {
+      "path": "docs/STAGE-A-PORTFOLIO-CHECKPOINT-R2.md",
+      "blob": "c5db7c1416121d2337baacd6132eae4daf23fd20"
+    }
+  },
+  "manual_snapshot": "20010418083149",
+  "services": [
+    {
+      "service_id": "SAVE_POINT",
+      "manual_section": "8010",
+      "manual_date": "2001-04-18",
+      "version_identity": "JSS_2001_MANUAL_NOT_PROVEN_TW10_OR_1999",
+      "player_action": "与记录点互动／首次供品，再次进入游戏",
+      "manual_claims": [
+        {
+          "key": "FIRST_USE_OFFERING_REQUIRED",
+          "manual_path": "save_point.first_use_offering_required",
+          "claim_kind": "MANUAL_BEHAVIOR"
+        },
+        {
+          "key": "NEXT_LOGIN_USES_RECORDED_POINT",
+          "manual_path": "save_point.next_login_uses_recorded_point",
+          "claim_kind": "MANUAL_BEHAVIOR"
+        }
+      ],
+      "tw10_generic_observables": [
+        {
+          "record": "status_location",
+          "fields": [
+            "floor",
+            "x",
+            "y"
+          ],
+          "source": "ORIGINAL_TW10_COMPILED_SHAPE_WITH_EARLY_LINEAGE_FIELD_NAMES",
+          "service_event_binding": "UNPROVEN"
+        },
+        {
+          "record": "npc_window_session",
+          "fields": [
+            "window_type",
+            "data"
+          ],
+          "source": "ORIGINAL_TW10_COMPILED_SHAPE_WITH_EARLY_LINEAGE_FIELD_NAMES",
+          "service_event_binding": "UNPROVEN"
+        }
+      ],
+      "preconditions_not_resolved": [
+        "original ACK / durable SAAC save result",
+        "offering item ID and quantity",
+        "original service NPC / event source",
+        "same-build relogin capture"
+      ],
+      "server_or_runtime_result": "NOT_OBSERVED",
+      "source_aligned_journey_executable": false,
+      "stop_condition": "没有同代原始SP事件或服务端重登载荷，不编写原服存盘协议也不运行伪史实流程"
+    },
+    {
+      "service_id": "MAMMOTH_BUS",
+      "manual_section": "8100",
+      "manual_date": "2001-04-18",
+      "version_identity": "JSS_2001_MANUAL_NOT_PROVEN_TW10_OR_1999",
+      "player_action": "面向长毛象公车使用组队相关操作并乘坐/下车",
+      "manual_claims": [
+        {
+          "key": "STOP_MINUTES",
+          "manual_path": "bus.stop_minutes",
+          "claim_kind": "MANUAL_BEHAVIOR"
+        },
+        {
+          "key": "PASSENGER_LIMIT",
+          "manual_path": "bus.passenger_limit",
+          "claim_kind": "MANUAL_BEHAVIOR"
+        },
+        {
+          "key": "ENCOUNTER_DURING_RIDE",
+          "manual_path": "bus.encounters_while_riding",
+          "claim_kind": "MANUAL_BEHAVIOR"
+        },
+        {
+          "key": "ROUTE_VILLAGE_GROUPS",
+          "manual_path": "bus.route_village_sets",
+          "claim_kind": "MANUAL_BEHAVIOR"
+        },
+        {
+          "key": "BOARD_EXIT_CONTROL",
+          "manual_path": "bus.boarding_and_exit_control",
+          "claim_kind": "MANUAL_BEHAVIOR"
+        }
+      ],
+      "tw10_generic_observables": [
+        {
+          "record": "status_location",
+          "fields": [
+            "floor",
+            "x",
+            "y"
+          ],
+          "source": "ORIGINAL_TW10_COMPILED_SHAPE_WITH_EARLY_LINEAGE_FIELD_NAMES",
+          "service_event_binding": "UNPROVEN"
+        },
+        {
+          "record": "status_party_member",
+          "fields": [
+            "name",
+            "runtime_character_id"
+          ],
+          "source": "ORIGINAL_TW10_COMPILED_SHAPE_WITH_EARLY_LINEAGE_FIELD_NAMES",
+          "service_event_binding": "UNPROVEN"
+        }
+      ],
+      "preconditions_not_resolved": [
+        "fare and passenger-count implementation",
+        "same-source actual route edge/map IDs",
+        "original encounter-suppression runtime",
+        "board/unboard UI action binding"
+      ],
+      "server_or_runtime_result": "NOT_OBSERVED",
+      "source_aligned_journey_executable": false,
+      "stop_condition": "只有三村分组而无路线边数据时，不生成站点拓扑或原始服务端NPC"
+    },
+    {
+      "service_id": "VILLAGE_CARE_TRAINING",
+      "manual_section": "8025/8050/8070",
+      "manual_date": "2001-04-18",
+      "version_identity": "JSS_2001_MANUAL_NOT_PROVEN_TW10_OR_1999",
+      "player_action": "在提供相应设施的村落接受恢复、付费宠技训练或宠物回购",
+      "manual_claims": [
+        {
+          "key": "PAID_PET_SKILL_TRAINING",
+          "manual_path": "services.paid_pet_skill_training",
+          "claim_kind": "MANUAL_BEHAVIOR"
+        },
+        {
+          "key": "PET_BUYBACK",
+          "manual_path": "services.pet_buyback",
+          "claim_kind": "MANUAL_BEHAVIOR"
+        },
+        {
+          "key": "EVERY_VILLAGE_HAS_EVERY_FACILITY",
+          "manual_path": "services.every_village_has_every_facility",
+          "claim_kind": "MANUAL_BEHAVIOR"
+        }
+      ],
+      "tw10_generic_observables": [
+        {
+          "record": "status_compact_progress",
+          "fields": [
+            "hp",
+            "mp"
+          ],
+          "source": "ORIGINAL_TW10_COMPILED_SHAPE_WITH_EARLY_LINEAGE_FIELD_NAMES",
+          "service_event_binding": "UNPROVEN"
+        },
+        {
+          "record": "status_pet_full",
+          "fields": [
+            "hp",
+            "mp",
+            "exp"
+          ],
+          "source": "ORIGINAL_TW10_COMPILED_SHAPE_WITH_EARLY_LINEAGE_FIELD_NAMES",
+          "service_event_binding": "UNPROVEN"
+        },
+        {
+          "record": "pet_skill_view_slot",
+          "fields": [
+            "skill_id",
+            "name"
+          ],
+          "source": "ORIGINAL_TW10_COMPILED_SHAPE_WITH_EARLY_LINEAGE_FIELD_NAMES",
+          "service_event_binding": "UNPROVEN"
+        },
+        {
+          "record": "npc_window_session",
+          "fields": [
+            "data"
+          ],
+          "source": "ORIGINAL_TW10_COMPILED_SHAPE_WITH_EARLY_LINEAGE_FIELD_NAMES",
+          "service_event_binding": "UNPROVEN"
+        }
+      ],
+      "preconditions_not_resolved": [
+        "per-village NPC / service roster",
+        "fees/skill catalogue",
+        "action-specific v1 NPC window payload",
+        "server actor deltas"
+      ],
+      "server_or_runtime_result": "NOT_OBSERVED",
+      "source_aligned_journey_executable": false,
+      "stop_condition": "只标已有手册类别和客户端可见字段，不把后期healer/skill shop配置视为同版事实"
+    },
+    {
+      "service_id": "VILLAGE_WORK",
+      "manual_section": "8025/8050/8070",
+      "manual_date": "2001-04-18",
+      "version_identity": "JSS_2001_MANUAL_NOT_PROVEN_TW10_OR_1999",
+      "player_action": "进行村庄送货或矿场矿石劳动的任务种类",
+      "manual_claims": [
+        {
+          "key": "WORK_EXAMPLES",
+          "manual_path": "services.work_examples",
+          "claim_kind": "MANUAL_BEHAVIOR"
+        }
+      ],
+      "tw10_generic_observables": [
+        {
+          "record": "inventory_full_slot",
+          "fields": [
+            "name",
+            "graphic_id"
+          ],
+          "source": "ORIGINAL_TW10_COMPILED_SHAPE_WITH_EARLY_LINEAGE_FIELD_NAMES",
+          "service_event_binding": "UNPROVEN"
+        },
+        {
+          "record": "npc_window_session",
+          "fields": [
+            "data"
+          ],
+          "source": "ORIGINAL_TW10_COMPILED_SHAPE_WITH_EARLY_LINEAGE_FIELD_NAMES",
+          "service_event_binding": "UNPROVEN"
+        }
+      ],
+      "preconditions_not_resolved": [
+        "job-specific original item identity",
+        "payment amount",
+        "original task flags and NPC dialogue",
+        "same-build completed transaction"
+      ],
+      "server_or_runtime_result": "NOT_OBSERVED",
+      "source_aligned_journey_executable": false,
+      "stop_condition": "没有同时代原任务/商业服资料，只做工作种类事实，不扩成完整任务列表"
+    },
+    {
+      "service_id": "GROUND_ITEM_EXPIRY",
+      "manual_section": "7030",
+      "manual_date": "2001-04-18",
+      "version_identity": "JSS_2001_MANUAL_NOT_PROVEN_TW10_OR_1999",
+      "player_action": "在场景中放下普通物品，等待未指定时长的清理",
+      "manual_claims": [
+        {
+          "key": "ORDINARY_GROUND_ITEM_EXPIRES",
+          "manual_path": "ground_item.ordinary_ground_item_expires_after_unspecified_time",
+          "claim_kind": "MANUAL_BEHAVIOR"
+        },
+        {
+          "key": "QUEST_DROP_LOGOUT_FLAG_PROVEN",
+          "manual_path": "ground_item.quest_specific_immediate_drop_or_logout_flag_proven",
+          "claim_kind": "EVIDENCE_BOUNDARY"
+        }
+      ],
+      "tw10_generic_observables": [
+        {
+          "record": "world_ground_item_record",
+          "fields": [
+            "runtime_object_id",
+            "x",
+            "y"
+          ],
+          "source": "ORIGINAL_TW10_COMPILED_SHAPE_WITH_EARLY_LINEAGE_FIELD_NAMES",
+          "service_event_binding": "UNPROVEN"
+        },
+        {
+          "record": "inventory_full_slot",
+          "fields": [
+            "name",
+            "graphic_id"
+          ],
+          "source": "ORIGINAL_TW10_COMPILED_SHAPE_WITH_EARLY_LINEAGE_FIELD_NAMES",
+          "service_event_binding": "UNPROVEN"
+        }
+      ],
+      "preconditions_not_resolved": [
+        "original despawn duration and triggering clock",
+        "item identity / ownership / loot rule",
+        "same-version server removal event",
+        "original client ground-item visibility trace"
+      ],
+      "server_or_runtime_result": "NOT_OBSERVED",
+      "source_aligned_journey_executable": false,
+      "stop_condition": "未取得原生消失计时前不得填默认秒数，也不得混同任务物品即丢销毁或下线标记"
+    }
+  ],
+  "action_truth_contract": "Manual-assertion classifier only; no simulated transaction, NPC, client execution, payment, movement or save",
+  "unknown_handling": {
+    "null_values": "UNKNOWN_NOT_FALSE",
+    "wrong_version": "OUTSIDE_SOURCE_SCOPE",
+    "other_claim": "NO_SOURCE_ASSERTION",
+    "manual_different_value": "DIFFERS_FROM_ARCHIVED_MANUAL_NOT_GAMEPLAY_DISPROOF"
+  },
+  "stage_a_gates": "7_PARTIAL_2_OPEN",
+  "stage_a_accepted": false,
+  "stage_b_gate": "GATED",
+  "stage_b_started": false,
+  "r79": "PAUSED_NON_BLOCKING",
+  "original_1999_or_tw10_service_identity_proven": false,
+  "original_server_actions_observed": false,
+  "original_client_executed": false,
+  "original_world_quest_data_recovered": false,
+  "production_gameplay_changed": false,
+  "next": "STAGE-A-EARLY-SOURCE-GAP-TRIAGE-01"
+}

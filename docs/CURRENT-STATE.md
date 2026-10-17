@@ -14851,3 +14851,10 @@ QUEST-NPC-FLOW-LINK-06有界完成：两条2465→2484候选、1条2478→2481�
 ### STAGE-A-PORTFOLIO-CHECKPOINT-02 主线验收完结与下一轮交接
 
 本包归档后分支c13104d44228d028153bd27c00526ebe97a8eb6e/tree a4e1a08d67729b2c3cf89eb246efa299a75b86a8，独立Action39000224366/job117301394153 SUCCESS：17项组合+归档接力/九族测试，以及TW1.0原版UI/第一方手册17项，合计34项通过；原始商业服/客户端程序未执行，也未再次下载新源。主线合入前实时对比80cb09c527e7db4cc83d9f2d557a36b4b7d24a3a，分支ahead2/behind0、10路径0文件删除，按expected-head非强制fast-forward整合main到c13104d44228d028153bd27c00526ebe97a8eb6e。新main检查点Actions39000271345、运行基础合同39000271273及TW1.0 R58旧来源custody39000271779全部SUCCESS。来源报告blob1666ab6597ed9a35de38a16ba6ee84761f8132c5没有改动；后续验收完整信息已追加至STONEAGE-STAGE-A-PORTFOLIO-CHECKPOINT-ACCEPTANCE-R2.json。对初代NPC/脚本、完整世界、服务器存档和视觉运行依然只作证据限定，Stage A 7 PARTIAL+2 OPEN、Stage B GATED、R79 PAUSED_NON_BLOCKING；Highest NEXT EARLY-VILLAGE-SERVICE-JOURNEY-01。主线交接记录提交后的任何CI还须独立核验，不预称其成功。
+
+
+## 2026-10-17 — EARLY-VILLAGE-SERVICE-JOURNEY-01 五类村庄生活行为来源分层规格
+
+在2026-10-17最新main 70e700243d4ecf363029601f60de7e01a51d4d49上启动，先读取HEAD/tree、最近提交、Actions、连续性协议与全量CURRENT-STATE，再对照官方2001-04-18 JSS手册及原版台湾1.0客户端UI消息形状。五类行为仅限记录点、长毛象公车、医疗/宠技/收宠、送货/矿石工作、普通落地物品消失；13项早期文字断言与12个原客户端通用观察槽仅作为不同来源的并排契约，不宣称同版NPC/服务器事件绑定、原始写盘ACK或实际操作画面。详见 docs/specs/STONEAGE-EARLY-VILLAGE-SERVICE-JOURNEY-R1.md 与 research/recovered/STONEAGE-EARLY-VILLAGE-SERVICE-JOURNEY-R1.json。实际证据仍未新增原始商业服内容、1999样本或真实游戏回放。
+
+**NEXT STAGE-A-EARLY-SOURCE-GAP-TRIAGE-01**：逐个核对村庄服务关键未知是否有新的、可认证的早期一手资料可补。无新证据即标记UNKNOWN并转九族联合审阅，不靠后代NPC继续扩写、不开R79。Stage A 7 PARTIAL+2 OPEN，Stage B GATED。新来源合同独立CI与主线结果必须实际验证后才能宣称通过。
