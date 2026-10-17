@@ -1,0 +1,454 @@
+{
+  "any_pet_sound_species_identity_certified": false,
+  "audio_assets": {
+    "different_pcm_pairs": 6,
+    "identical_full_wave_pairs": 107,
+    "indexed_sfx": 114,
+    "loose_bgm": 11,
+    "loose_sfx": 116,
+    "metadata_variants": [
+      {
+        "comparison": "variant_pcm_diff",
+        "index": 37,
+        "name": "sak_01.wav"
+      },
+      {
+        "comparison": "variant_pcm_diff",
+        "index": 38,
+        "name": "sak_02.wav"
+      },
+      {
+        "comparison": "variant_pcm_diff",
+        "index": 40,
+        "name": "sak_04.wav"
+      },
+      {
+        "comparison": "variant_pcm_diff",
+        "index": 41,
+        "name": "sak_05.wav"
+      },
+      {
+        "comparison": "variant_same_pcm",
+        "index": 45,
+        "name": "sak_09a.wav"
+      },
+      {
+        "comparison": "variant_pcm_diff",
+        "index": 47,
+        "name": "sak_10.wav"
+      },
+      {
+        "comparison": "variant_pcm_diff",
+        "index": 48,
+        "name": "sak_11.wav"
+      }
+    ],
+    "old_preexisting_audio_imports": [
+      {
+        "dll": "DSOUND.dll",
+        "name": "#1"
+      },
+      {
+        "dll": "WINMM.dll",
+        "name": "mciSendCommandA"
+      },
+      {
+        "dll": "WINMM.dll",
+        "name": "mmioAscend"
+      },
+      {
+        "dll": "WINMM.dll",
+        "name": "mmioClose"
+      },
+      {
+        "dll": "WINMM.dll",
+        "name": "mmioDescend"
+      },
+      {
+        "dll": "WINMM.dll",
+        "name": "mmioOpenA"
+      },
+      {
+        "dll": "WINMM.dll",
+        "name": "mmioRead"
+      }
+    ],
+    "original_container_bytes": 3695418,
+    "same_pcm_different_wrapper": 1,
+    "unindexed_sfx": 2
+  },
+  "compiled_audio_api_callsite_audit": {
+    "audio_filename_literals": [
+      {
+        "key": "container",
+        "literal_present": false,
+        "occurrences": [],
+        "truncated": false
+      },
+      {
+        "key": "container_table",
+        "literal_present": false,
+        "occurrences": [],
+        "truncated": false
+      },
+      {
+        "key": "sfx_directory",
+        "literal_present": true,
+        "occurrences": [
+          {
+            "file_offset": 408504,
+            "rva": 408504,
+            "section": ".data"
+          },
+          {
+            "file_offset": 408524,
+            "rva": 408524,
+            "section": ".data"
+          },
+          {
+            "file_offset": 408544,
+            "rva": 408544,
+            "section": ".data"
+          },
+          {
+            "file_offset": 408564,
+            "rva": 408564,
+            "section": ".data"
+          },
+          {
+            "file_offset": 408584,
+            "rva": 408584,
+            "section": ".data"
+          },
+          {
+            "file_offset": 408604,
+            "rva": 408604,
+            "section": ".data"
+          },
+          {
+            "file_offset": 408624,
+            "rva": 408624,
+            "section": ".data"
+          },
+          {
+            "file_offset": 408644,
+            "rva": 408644,
+            "section": ".data"
+          },
+          {
+            "file_offset": 408664,
+            "rva": 408664,
+            "section": ".data"
+          },
+          {
+            "file_offset": 408684,
+            "rva": 408684,
+            "section": ".data"
+          },
+          {
+            "file_offset": 408704,
+            "rva": 408704,
+            "section": ".data"
+          },
+          {
+            "file_offset": 408724,
+            "rva": 408724,
+            "section": ".data"
+          }
+        ],
+        "truncated": true
+      },
+      {
+        "key": "bgm_directory",
+        "literal_present": true,
+        "occurrences": [
+          {
+            "file_offset": 407824,
+            "rva": 407824,
+            "section": ".data"
+          },
+          {
+            "file_offset": 407848,
+            "rva": 407848,
+            "section": ".data"
+          },
+          {
+            "file_offset": 407872,
+            "rva": 407872,
+            "section": ".data"
+          },
+          {
+            "file_offset": 407896,
+            "rva": 407896,
+            "section": ".data"
+          },
+          {
+            "file_offset": 407920,
+            "rva": 407920,
+            "section": ".data"
+          },
+          {
+            "file_offset": 407944,
+            "rva": 407944,
+            "section": ".data"
+          },
+          {
+            "file_offset": 407968,
+            "rva": 407968,
+            "section": ".data"
+          },
+          {
+            "file_offset": 407992,
+            "rva": 407992,
+            "section": ".data"
+          },
+          {
+            "file_offset": 408016,
+            "rva": 408016,
+            "section": ".data"
+          },
+          {
+            "file_offset": 408040,
+            "rva": 408040,
+            "section": ".data"
+          },
+          {
+            "file_offset": 408064,
+            "rva": 408064,
+            "section": ".data"
+          }
+        ],
+        "truncated": false
+      },
+      {
+        "key": "bgm_prefix",
+        "literal_present": true,
+        "occurrences": [
+          {
+            "file_offset": 407833,
+            "rva": 407833,
+            "section": ".data"
+          },
+          {
+            "file_offset": 407857,
+            "rva": 407857,
+            "section": ".data"
+          },
+          {
+            "file_offset": 407881,
+            "rva": 407881,
+            "section": ".data"
+          },
+          {
+            "file_offset": 407905,
+            "rva": 407905,
+            "section": ".data"
+          },
+          {
+            "file_offset": 407929,
+            "rva": 407929,
+            "section": ".data"
+          },
+          {
+            "file_offset": 407953,
+            "rva": 407953,
+            "section": ".data"
+          },
+          {
+            "file_offset": 407977,
+            "rva": 407977,
+            "section": ".data"
+          },
+          {
+            "file_offset": 408001,
+            "rva": 408001,
+            "section": ".data"
+          },
+          {
+            "file_offset": 408025,
+            "rva": 408025,
+            "section": ".data"
+          },
+          {
+            "file_offset": 408049,
+            "rva": 408049,
+            "section": ".data"
+          },
+          {
+            "file_offset": 408073,
+            "rva": 408073,
+            "section": ".data"
+          }
+        ],
+        "truncated": false
+      }
+    ],
+    "compiled_import_is_verified_scene_or_event_selector": false,
+    "compiled_imported_audio_apis": [
+      {
+        "dll": "DSOUND.dll",
+        "iat_rva": 335888,
+        "name": "#1"
+      },
+      {
+        "dll": "WINMM.dll",
+        "iat_rva": 336384,
+        "name": "mmioDescend"
+      },
+      {
+        "dll": "WINMM.dll",
+        "iat_rva": 336388,
+        "name": "mmioRead"
+      },
+      {
+        "dll": "WINMM.dll",
+        "iat_rva": 336392,
+        "name": "mmioAscend"
+      },
+      {
+        "dll": "WINMM.dll",
+        "iat_rva": 336396,
+        "name": "mmioOpenA"
+      },
+      {
+        "dll": "WINMM.dll",
+        "iat_rva": 336400,
+        "name": "mciSendCommandA"
+      },
+      {
+        "dll": "WINMM.dll",
+        "iat_rva": 336404,
+        "name": "mmioClose"
+      }
+    ],
+    "direct_caller_records_truncated": false,
+    "direct_callers_of_audio_import_thunks": [
+      {
+        "caller_rva": 268429,
+        "import_dll": "DSOUND.dll",
+        "import_function": "#1",
+        "thunk_rva": 291862
+      }
+    ],
+    "direct_callers_of_audio_import_thunks_total": 1,
+    "exact_playback_call_argument_values_observed": false,
+    "image_base": 4194304,
+    "import_uses_truncated": false,
+    "native_import_group_counts": [
+      {
+        "count": 1,
+        "dll": "DSOUND.dll",
+        "mnemonic": "jmp",
+        "name": "#1"
+      },
+      {
+        "count": 1,
+        "dll": "WINMM.dll",
+        "mnemonic": "call",
+        "name": "mmioAscend"
+      },
+      {
+        "count": 3,
+        "dll": "WINMM.dll",
+        "mnemonic": "call",
+        "name": "mmioClose"
+      },
+      {
+        "count": 2,
+        "dll": "WINMM.dll",
+        "mnemonic": "call",
+        "name": "mmioOpenA"
+      },
+      {
+        "count": 2,
+        "dll": "WINMM.dll",
+        "mnemonic": "call",
+        "name": "mmioRead"
+      }
+    ],
+    "native_import_use_site_count": 9,
+    "native_import_use_sites": [
+      {
+        "iat_rva": 336396,
+        "import_dll": "WINMM.dll",
+        "import_function": "mmioOpenA",
+        "mnemonic": "call",
+        "rva": 283226
+      },
+      {
+        "iat_rva": 336404,
+        "import_dll": "WINMM.dll",
+        "import_function": "mmioClose",
+        "mnemonic": "call",
+        "rva": 283350
+      },
+      {
+        "iat_rva": 336404,
+        "import_dll": "WINMM.dll",
+        "import_function": "mmioClose",
+        "mnemonic": "call",
+        "rva": 283714
+      },
+      {
+        "iat_rva": 336388,
+        "import_dll": "WINMM.dll",
+        "import_function": "mmioRead",
+        "mnemonic": "call",
+        "rva": 283956
+      },
+      {
+        "iat_rva": 336392,
+        "import_dll": "WINMM.dll",
+        "import_function": "mmioAscend",
+        "mnemonic": "call",
+        "rva": 284000
+      },
+      {
+        "iat_rva": 336388,
+        "import_dll": "WINMM.dll",
+        "import_function": "mmioRead",
+        "mnemonic": "call",
+        "rva": 284136
+      },
+      {
+        "iat_rva": 336396,
+        "import_dll": "WINMM.dll",
+        "import_function": "mmioOpenA",
+        "mnemonic": "call",
+        "rva": 286188
+      },
+      {
+        "iat_rva": 336404,
+        "import_dll": "WINMM.dll",
+        "import_function": "mmioClose",
+        "mnemonic": "call",
+        "rva": 286527
+      },
+      {
+        "iat_rva": 335888,
+        "import_dll": "DSOUND.dll",
+        "import_function": "#1",
+        "mnemonic": "jmp",
+        "rva": 291862
+      }
+    ],
+    "original_game_player_audio_event_trace_recorded": false,
+    "original_runtime_sha256": "cdab9ea049a98bbc96ce93eeaa8b63c688f0c0f0ad8b3183e79d75e47621441a",
+    "original_sfx_name_equals_trigger_identity_certified": false,
+    "runtime_size": 425984,
+    "text_rva": 4096
+  },
+  "gameplay_trigger_to_sound_file_or_bgm_selector_certified": false,
+  "next": "PREPRODUCTION-CROSS-DOMAIN-MATERIAL-EVIDENCE-REVIEW-03",
+  "original_audio_bytes_added_to_repo": false,
+  "original_audio_catalog_blob": "094becbc92397ee8abf72a014deffffabc97a316",
+  "original_audio_event_to_track_binding_certified": false,
+  "original_game_restoration_complete": false,
+  "original_runtime_import_report_blob": "0054c8c0c2a34652caec4ab89feac5bf821d75f7",
+  "original_witness": "ACCEPTED_TAIWAN_V1_0_RETAIL_RUNTIME_AND_AUDIO_CATALOG",
+  "schema": "stoneage.tw10_audio_event_original_callsite_gate.r1",
+  "source_evidence": "V1_DIRECT_CALLS_AND_ORIGINAL_WAVE_METADATA",
+  "source_limited_nonproduction": true,
+  "specific_original_village_music_attributed": false,
+  "task": "TW10-AUDIO-EVENT-SOURCE-GATE-01"
+}

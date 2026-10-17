@@ -7021,3 +7021,10 @@ STONEAGE-HISTORICAL-WIKI-QUERY-CONTRACT-DRAFT-R1.json引用四个既有派生Git
 原盘`COLLISION-ATTR-R1.tsv.gz`的SHA256 `d26b318ea73833bd7cc68abc8b5798a81b76ef9309cc91b137f7a55c6c8275dc`及原客户端地图缓存图谱Git blob`f8792fb6c7ad22001d8400b293c775304caeb6a0`均为早期S级源。2001玩家图像分类仅C候选区间，原blob`11bb14ef00c2ed354c5f00f510da8783376f1f28`。
 
 新完整交叉表源Action39078746682/job117531202789 SUCCESS，9,286原独立map_number资源属性分别在玩家小地形/大物件/NPC号段关联4571/1271/101，其他3343。hit0/1/2=5929/3295/62为**资源属性而非地图可通行格子计数**。实际成功归档Action39079097177，JSON原blob `7d4d5d2cae224c093b3e85e8ef1bfc49b54c5981`、raw8494B SHA256 `5efa5972fe68d38d0e85aad3c7e13d6c4cd588c0f1b81a5900ba79e8a6711dd9`、ZIP1795B SHA256`8d48e37f0eae58b7659e7315ef83ccffe95c36d8728b6fe76d68d7d0d1dab5a4`。这些不是9286张原版field map、101名NPC或早期服务器内容来源。
+
+ 
+### 2026-10-18 — SRC-TW10-ORIGINAL-AUDIO-DIRECT-API-CALLSITE-01
+
+原盘声音WAV与容器物理数据由旧来源`STONEAGE-TW10-AUDIO-DATASET-R1.txt` blob`094becbc92397ee8abf72a014deffffabc97a316`固定：114索引SFX、116散音效、11散BGM，107条同名字节相同、1条封装变体、6条PCM不同；这些不是本轮新内容。原编译exe先前IAT报告blob`0054c8c0c2a34652caec4ab89feac5bf821d75f7`已有WINMM/DSOUND导入。
+
+**本轮新增同版原始指令事实**：研究Action`39080460322`/job`117536170852`实际SUCCESS，原exe SHA256 `cdab9ea049a98bbc96ce93eeaa8b63c688f0c0f0ad8b3183e79d75e47621441a`，WinMM调用地址8个、DSOUND跳板1个及指向该跳板CALL1处，可查原报告`STONEAGE-TW10-AUDIO-EVENT-GATE-R1.json`。完整独立ZIP原字节1999B SHA256`b5a36f3fa0c42c01dc60fd6cff9f2d3dd21443606e546f6f4da38dbb5a180d4c`、内部JSON11013B SHA256`ce1cd5738dac1a571999eea9ea6ee5ead86341f30bff4f0c4e4610a80f917047`、Git blob`67cc3707d45b6f079432b1db29b043851571b518`独立核对。这个调用源不证明“原游戏第几关播放什么BGM、宠物战斗声音”，仍缺原事件选择参数。无版权声音/程序输入入库。

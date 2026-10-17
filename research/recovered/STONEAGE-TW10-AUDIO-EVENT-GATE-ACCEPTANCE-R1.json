@@ -1,0 +1,57 @@
+{
+  "schema": "stoneage.tw10_original_audio_playback_callsite_source_acceptance.r1",
+  "date": "2026-10-18",
+  "task": "TW10-AUDIO-EVENT-SOURCE-GATE-01",
+  "original_baseline": {
+    "main_head": "1e5b2470da55e99e662b7c15cef3e2db45e3be72",
+    "main_tree": "c6445725d41d6737aae039ecb904c4dafa3fc9ae"
+  },
+  "source_identity": {
+    "accepted_original_client_exe_sha256": "cdab9ea049a98bbc96ce93eeaa8b63c688f0c0f0ad8b3183e79d75e47621441a",
+    "preexisting_audio_catalog_git_blob": "094becbc92397ee8abf72a014deffffabc97a316",
+    "preexisting_original_executable_import_report_git_blob": "0054c8c0c2a34652caec4ab89feac5bf821d75f7",
+    "preexisting_source_audio_facts_not_new": true
+  },
+  "original_source_run": {
+    "id": 39080460322,
+    "job_id": 117536170852,
+    "status": "success",
+    "scope": "SAME_BUILD_SOURCE_API_CALLSITE_UNDER_ACCEPTED_RETAIL_BINARY"
+  },
+  "artifact": {
+    "id": 12118757137,
+    "filename": "original-tw10-audio-event-gate.zip",
+    "zip_bytes": 1999,
+    "zip_sha256": "b5a36f3fa0c42c01dc60fd6cff9f2d3dd21443606e546f6f4da38dbb5a180d4c",
+    "raw_json_filename": "tw10-original-audio-event-gate.json",
+    "raw_json_bytes": 11013,
+    "raw_json_sha256": "ce1cd5738dac1a571999eea9ea6ee5ead86341f30bff4f0c4e4610a80f917047",
+    "raw_report_git_blob": "67cc3707d45b6f079432b1db29b043851571b518",
+    "independently_downloaded_zip_and_raw_verified": true
+  },
+  "observed": {
+    "original_winmm_call_sites": 8,
+    "original_dsound_iat_jump_sites": 1,
+    "direct_callers_to_dsound_import_thunk": 1,
+    "original_sfx_dir_literal_occurrences": 12,
+    "original_bgm_dir_literal_occurrences": 11,
+    "original_bgm_prefix_literal_occurrences": 11,
+    "original_audio_indexed_records": 114,
+    "original_loose_sfx_files": 116,
+    "original_loose_bgm_files": 11,
+    "no_same_build_runtime_event_to_filename_or_index_binding_proven": true
+  },
+  "bound_unknowns": [
+    "real_gameplay_trigger_to_sound_instance",
+    "music_selected_by_specific_village_or_floor",
+    "combat_sound_trigger_or_pet_species",
+    "actual_in_game_playback_result",
+    "mciSendCommandA_import_usage_not_found_in_direct_subset"
+  ],
+  "original_game_audio_payload_committed": false,
+  "source_branch_ci": "PENDING_REAL_RUN",
+  "main_ci": "PENDING_REAL_RUN",
+  "next": "PREPRODUCTION-CROSS-DOMAIN-MATERIAL-EVIDENCE-REVIEW-03",
+  "historical_restore_percentage": null,
+  "stage_b_gated": true
+}

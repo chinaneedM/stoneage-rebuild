@@ -180,3 +180,16 @@ field-map DAT content, NPC/quest/spawn data remain unavailable.
 See `docs/STONEAGE-TW10-MAP-CONTENT-COLLISION-R1.md` and the permanent
 derived report. Next bounded source work is
 `TW10-AUDIO-EVENT-SOURCE-GATE-01`; Stage B remains gated.
+
+ 
+### Original TW1 runtime audio API callsite checkpoint — 2026-10-18
+
+A bounded static callsite audit of the authenticated original `sa_3.exe`
+adds 8 direct WinMM audio file API calls, a DirectSound import trampoline
+and its single direct caller. The historical 114 indexed SFX, 116 loose SFX
+and 11 BGM WAV entries were already recovered; this task does **not**
+claim any original village BGM, pet/attack sound or actual gameplay trigger.
+Original callsite evidence and checksums:
+`docs/STONEAGE-TW10-AUDIO-EVENT-GATE-R1.md`.
+NEXT: `PREPRODUCTION-CROSS-DOMAIN-MATERIAL-EVIDENCE-REVIEW-03`,
+to prioritize meaningful original content restoration over endless API probes.

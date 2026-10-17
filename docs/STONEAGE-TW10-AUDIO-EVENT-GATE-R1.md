@@ -17,3 +17,12 @@
 **缺失的同版证据**：音效文件索引→音源编号→播放函数传入值→事件触发条件（场景、宠物、战斗、登录）及游戏实际运行时的显示/声音行为。本次审查不生成完整音频重现、不拷贝音频文件、不开始单机新作，也不改变Stage A九族7 PARTIAL+2 OPEN／Stage B GATED／R79 PAUSED。
 
 **下一有界任务** `PREPRODUCTION-CROSS-DOMAIN-MATERIAL-EVIDENCE-REVIEW-03`：在T01～T04原资源项目完成后，核对真正可用的地图/人物/宠物/NPC/剧情/外挂/资料站等域的实体来源缺口，优先只做能改变历史内容恢复结果的工作，不再无限拉长源代码API树。
+
+ 
+## 2026-10-18 真实源运行后的本轮新增实证
+
+原源任务 GitHub Action [39080460322](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39080460322)、job`117536170852` **SUCCESS**。经已认证原`sa_3.exe`二进制摘要实际验证，音频接口编译导入仍为DSOUND.dll ordinal#1与WINMM六函数。新增**直接调用/导入跳板**位置计数：`mmioOpenA` 2处、`mmioClose` 3处、`mmioRead` 2处、`mmioAscend` 1处，合计8处WinMM静态CALL；1处DirectSound ordinal#1导入JMP跳板，另有1处能以直接CALL到该跳板。原程序中有12个`data\\se\\`文字片段、11个`data\\bgm\\`片段及11个`sabgm_`文件名前缀片段。这些只是此具体二进制里静态字节/指令证据，并非全部播放选择路径证明。尤其`mciSendCommandA`虽在IAT导入，但本扫描没有找到直接匹配的CALL/JMP，**不得反推运行时从不使用**。
+
+独立拉取Actions产物ZIP1999B SHA256 `b5a36f3fa0c42c01dc60fd6cff9f2d3dd21443606e546f6f4da38dbb5a180d4c`，内部派生JSON11013B SHA256`ce1cd5738dac1a571999eea9ea6ee5ead86341f30bff4f0c4e4610a80f917047`，与永久Git blob`67cc3707d45b6f079432b1db29b043851571b518`核对一致。归档只含有限位置、次数与路径字符串，原游戏原音频与exe字节一概不提交。
+
+**结论**：`ORIGINAL_TW10_AUDIO_API_DIRECT_CALLSITE_METADATA_BOUNDED` 可验收；`specific_village_BGM/pet_attack_SFX/battle_event_trigger` 仍OPEN，不做假事件-音轨绑定。今轮有新原始**原exe调用位置**而不是重数114+116+11。后续跨22域组合复核必须以实际同版身份/NPC任务/原图与可用内容为导向，不开始新单机游戏或网站实现。

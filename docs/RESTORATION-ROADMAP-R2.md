@@ -487,3 +487,10 @@ JSS原域2001快照实取：手册索引47出链，两首页框架引用menu/top
 ### 2026-10-18 — T03原地图资源map_number关联检查
 
 TW1原资源9286条去重map_number→bitmap碰撞属性，按仅供候选的2001玩家地形/大物件/NPC位图分类分为4571/1271/101，其他3343。新的交集由源Action39078746682实际SUCCESS，归档Action39079097177实际SUCCESS，但源属性**不等于野外地图floor id**；零售盘仍无field-map DAT，后代资源兼容仅用作跨版对照。详见`docs/STONEAGE-TW10-MAP-CONTENT-COLLISION-R1.md`与源JSON验收凭据。下一T04 `TW10-AUDIO-EVENT-SOURCE-GATE-01`：原盘声音文件/播放器调用与原世界事件的最小直接源连接；无同版运行选择事实则有限停止。
+
+ 
+### 2026-10-18 — T04原音频选择边界核对与跨域下一批
+
+真正台湾1.0原盘`sa_3.exe`来源独立Action`39080460322` SUCCESS、声音固定源不变。新识别编译体8处WinMM直接文件调用、1处DSOUND ordinal#1导入跳板及1处直接调用跳板；原`data\\se\\`与`data\\bgm\\`字样有原版字符串见证。原声音档案114内嵌索引、116外置音效及11 BGM**已经存在**，不重复算新发现；原游戏事件到具体音轨、实际播放参数和村庄/宠物语义依旧缺证。源码派生详见`STONEAGE-TW10-AUDIO-EVENT-GATE-R1.md`及原二进制逐字节验收回执。
+
+**NEXT `PREPRODUCTION-CROSS-DOMAIN-MATERIAL-EVIDENCE-REVIEW-03`**：重新用T01～T04已实证资料检查22域实际内容闭环与缺源，优先解决能恢复原生故事、人物、宠物、NPC、真实场景的材料，而非继续无限扩展无同版事件值的底层工具链。7 PARTIAL+2 OPEN，Stage B GATED，R79 PAUSED。

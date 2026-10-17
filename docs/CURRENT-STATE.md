@@ -15167,3 +15167,14 @@ WORLD源分支ec2aa8fac09f13a61c73c9542b2dd9c08c9fc1b9/tree0976772698b7470b72145
 `TW10-MAP-CONTENT-ORIGINAL-RESOURCE-BOUNDARY-01`研究与永久档案经分支10项SUCCESS后，主线以新核查 `b0e232f2b7d40a340db395c33fc08e3faeaf2204` ahead3/behind0、11文件0删除非强制快进到 `088f0b1af133a29d3c1d6bdefef27d9b308cc1fc` / tree `e85fa8d3277db8e4073a29d95fa9d3b6615bf7a2`。**同HEAD 11项main Actions全部SUCCESS**，包括新地图source复算 `39079303376`、旧原SPR/ADRN源验证 `39079303283`、原图号与玩家标签验证 `39079303103`、Stage A联合审查 `39079303555`；全部运行编号/名称已写入 `STONEAGE-TW10-MAP-CONTENT-COLLISION-ACCEPTANCE-R1.json` 的`main_acceptance.runs`。本项成功只认证原ADRN map_number→bitmap碰撞属性与玩家候选号段的数值交叉及源保管，不认证原版世界地图DAT、原NPC或后代地图年代。上轮T02原物品静态资源报告与10/11项分支/主线PASS仍独立有效。
 
 **最高NEXT `TW10-AUDIO-EVENT-SOURCE-GATE-01`**：检查同版原盘声音/音乐索引、声音资源标识与原客户端播放器选择调用的最小实际证据；无原版事件实参时保留UNKNOWN并转下一可复原内容域。九系统7 PARTIAL+2 OPEN、Stage B和网站生产GATED、R79 PAUSED不变。整体百分比不可计算。
+
+ 
+## 2026-10-18 — TW10-AUDIO-EVENT-SOURCE-GATE-01 原客户端真实音频API调用核查
+
+本轮从重新读取远端main `1e5b2470da55e99e662b7c15cef3e2db45e3be72` / tree `c6445725d41d6737aae039ecb904c4dafa3fc9ae`、最新9个同HEAD主线Actions全SUCCESS、完整CURRENT-STATE blob`4abed66de8169b643b9a941440af38691ab9fffb`、协议及README/Design/Timeline/Source后重开最高NEXT音频来源。有界审阅以前TW1.0原盘声音114索引/116独立SFX/11独立BGM与7组容器变体**先前已验证**，所以本轮不重复计算历史音效证据。
+
+实际独立Action`39080460322`/job`117536170852` **SUCCESS**。原保存盘MD5/SHA1与`sa_3.exe`原定SHA256逐关验证；从原编译可执行文件的真实`.text`/PE导入表得到**8处WinMM音频文件API直接CALL（mmioOpenA2、mmioClose3、mmioRead2、mmioAscend1）+1处DSOUND.dll ordinal#1导入JMP跳板 +1处可直接追溯的跳板CALL**。原BGM/SFX目录和文件前缀存在于exe原盘字节中，但没证实事件→声音的实参数值链。WinMM`mciSendCommandA`虽已确证导入，有限CALL/JMP扫描没有找到直接调用，不能断言运行时不可用。
+
+源音频事件派生ZIP1999B SHA256`b5a36f3fa0c42c01dc60fd6cff9f2d3dd21443606e546f6f4da38dbb5a180d4c`；原内部JSON11013B SHA256`ce1cd5738dac1a571999eea9ea6ee5ead86341f30bff4f0c4e4610a80f917047`、Git blob`67cc3707d45b6f079432b1db29b043851571b518`核对一致。保留来源派生与原盘输入的明确身份分离，原版权音乐、exe及DAT全部不进Git。新工具、来源规范、精确报告、验收回执与单测随Git分支提交，分支及main后续CI结果只能以实际Actions为准，暂不写成功猜测。
+
+结论仅为原始**音频接口静态调用元数据可复核**，人物/宠物/登陆/村庄/战斗音效归属仍UNKNOWN。四个前期物理资源包T01～T04均给出有界来源事实与无法填补的同版业务内容门。**NEXT `PREPRODUCTION-CROSS-DOMAIN-MATERIAL-EVIDENCE-REVIEW-03`**：下一轮必须优先实物内容图谱、初代实际人物/宠物/NPC/任务/地图界面资料和缺源优先级，避免只因代码可搜就继续R编号/API调用树。系统7 PARTIAL+2 OPEN；Stage B游戏与官网/百科生产GATED，R79 PAUSED，不报告无可证分母的复原百分比。

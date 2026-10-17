@@ -4,6 +4,7 @@ on:
     paths:
       - tools/stoneage_tw10_audio_event_gate.py
       - tests/test_stoneage_tw10_audio_event_gate.py
+      - tests/test_stoneage_tw10_audio_event_archive.py
       - .github/workflows/verify-stoneage-tw10-audio-event-gate.yml
       - research/recovered/STONEAGE-TW10-AUDIO-EVENT-GATE-R1.json
       - research/recovered/STONEAGE-TW10-AUDIO-EVENT-GATE-ACCEPTANCE-R1.json
@@ -20,7 +21,7 @@ jobs:
         with:
           python-version: '3.12'
       - run: python -m pip install --quiet capstone pefile
-      - run: python -m unittest tests.test_stoneage_tw10_audio_event_gate tests.test_stoneage_tw10_runtime_sound_probe -v
+      - run: python -m unittest tests.test_stoneage_tw10_audio_event_gate tests.test_stoneage_tw10_audio_event_archive tests.test_stoneage_tw10_runtime_sound_probe -v
       - name: Recover authenticated original carrier ephemerally
         run: |
           set -euo pipefail
@@ -33,6 +34,8 @@ jobs:
           test "$(stat -c %s /tmp/tw10-audio-input/STONEAGE.bin)" = '523449360'
       - name: Verify original runtime imported sound API uses
         run: python -m tools.stoneage_tw10_audio_event_gate --disc /tmp/tw10-audio-input/STONEAGE.bin --write "${{ runner.temp }}/tw10-original-audio-event-gate.json"
+      - name: Ensure original binary recomputes exact archived report
+        run: cmp -s "${{ runner.temp }}/tw10-original-audio-event-gate.json" research/recovered/STONEAGE-TW10-AUDIO-EVENT-GATE-R1.json
       - name: Erase original proprietary inputs
         if: always()
         run: rm -rf /tmp/CD_DIC.rar /tmp/tw10-audio-input
