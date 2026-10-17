@@ -1,0 +1,86 @@
+{
+  "schema": "stoneage.tw10_item_static_bitmap_source_custody.r1",
+  "date": "2026-10-18",
+  "source_repository": "chinaneedM/stoneage-rebuild",
+  "remote_start_main": {
+    "head": "c8a9cb702e7aae3bd8e756008d4f88d31deed7c1",
+    "tree": "24331cdb040740856a3db7f2c5ba09c2b87cc816"
+  },
+  "source_workflow": [
+    {
+      "run_id": 39077916706,
+      "run_result": "success",
+      "role": "FIRST_5_BAND_SOURCE_FACT_CHECK"
+    },
+    {
+      "run_id": 39078043125,
+      "job_id": 117529172357,
+      "run_result": "success",
+      "role": "CANDIDATE_DUPLICATE_BLOCK_PROVENANCE_AND_FULL_DATASET"
+    }
+  ],
+  "permanent_source": {
+    "raw_report_path": "research/recovered/STONEAGE-TW10-ITEM-STATIC-BITMAP-SOURCE-R1.json",
+    "original_actions_artifact_id": 12117477340,
+    "original_actions_member": "tw10-item-static-source.json",
+    "downloaded_original_zip_size_bytes": 4474,
+    "downloaded_original_zip_sha256": "04900b9b905610a5ae0c7b148ef8c9a12898059683fb0c35efc92fadd0b3f2c9",
+    "downloaded_raw_member_size_bytes": 21307,
+    "downloaded_raw_member_sha256": "9916bab4e8b94188e8b4dc9c0e5f6cd2537464311f3c3409a6a04d72fffec2b8",
+    "archived_git_blob_sha": "1210b0f910c353d58a3d6a4c458dda38f48aba86",
+    "independent_zip_and_raw_checks": true,
+    "exact_archived_byte_identity_checked": true,
+    "raw_game_bitmap_pixels_retained": false
+  },
+  "pinned_origins": {
+    "tw10_schema_git_blob": "e39a3a6020b578da017ab0bfa9369dc083e0b700",
+    "tw10_callback_git_blob": "bdcd7b7ed5295db78b5d8cbdad58d5ce94802f31",
+    "original_adrn_manifest_git_blob": "6154dcf806163b82cb96af344e6a644143d15f56",
+    "early_player_category_input_git_blob": "11bb14ef00c2ed354c5f00f510da8783376f1f28",
+    "prior_spr_frame_source_git_blob": "20a82e4d35661785c4e50b44855cf8e8a4e98f3e"
+  },
+  "observed": {
+    "item_candidate_bitmap_ids": 1031,
+    "original_distinct_rd_block_sha256": 1030,
+    "same_rd_block_sha256_bitmap_pairs": [
+      [
+        6042,
+        6077
+      ]
+    ],
+    "item_width_min_max": [
+      16,
+      64
+    ],
+    "item_height_min_max": [
+      14,
+      79
+    ],
+    "pet_portrait_candidate_dimensions": [
+      96,
+      104
+    ],
+    "original_compiled_graphic_positions": {
+      "S:I": 5,
+      "I": 6,
+      "C": 4
+    },
+    "item_range_spr_frame_references": 0,
+    "original_item_name_verified": 0,
+    "graphic_field_value_to_bitmap_runtime_selector_verified": false
+  },
+  "negative_evidence": {
+    "player_label_is_original_tw10_semantics": false,
+    "same_source_bitmap_id_equals_server_item_template_id": false,
+    "original_server_itemset_acquired": false,
+    "original_merchant_price_or_recipe_restored": false,
+    "client_draw_selector_runtime_verified": false,
+    "two_identical_bitmap_bytes_mean_same_item_identity": false,
+    "unreferenced_in_spr_means_unrendered": false,
+    "stage_b_production_started": false,
+    "full_game_restoration_certified": false
+  },
+  "post_archival_branch_actions": "PENDING_REAL_RUN",
+  "post_archival_main_actions": "PENDING_REAL_RUN",
+  "next": "TW10-MAP-CONTENT-ORIGINAL-RESOURCE-BOUNDARY-01"
+}

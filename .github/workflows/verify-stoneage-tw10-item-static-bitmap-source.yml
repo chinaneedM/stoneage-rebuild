@@ -7,6 +7,7 @@ on:
       - .github/workflows/verify-stoneage-tw10-item-static-bitmap-source.yml
       - research/recovered/STONEAGE-TW10-ITEM-STATIC-BITMAP-SOURCE-R1.json
       - research/recovered/STONEAGE-TW10-ITEM-STATIC-BITMAP-SOURCE-ACCEPTANCE-R1.json
+      - tests/test_stoneage_tw10_item_static_source_archive.py
   workflow_dispatch:
 permissions:
   contents: read
@@ -19,7 +20,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: python -m unittest tests.test_stoneage_tw10_item_static_bitmap_source tests.test_stoneage_tw10_gameplay_schema -v
+      - run: python -m unittest tests.test_stoneage_tw10_item_static_bitmap_source tests.test_stoneage_tw10_item_static_source_archive tests.test_stoneage_tw10_gameplay_schema -v
       - run: python -m tools.stoneage_tw10_item_static_bitmap_source --write "${{ runner.temp }}/tw10-item-static-source.json"
       - uses: actions/upload-artifact@v4
         with:

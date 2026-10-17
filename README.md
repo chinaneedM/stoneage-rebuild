@@ -152,3 +152,18 @@ server/pet identity work remains evidence-limited. Next finite source task:
 `TW10-ITEM-STATIC-BITMAP-SOURCE-SELECTOR-01`. Stage B production and public
 wiki implementation have not begun; R79 is paused and the full history in
 CURRENT-STATE remains authoritative.
+
+ 
+### Source-driven original item static resource checkpoint — 2026-10-18
+
+The original Taiwan v1.0 `S:I` full item, `I` incremental item,
+and `C` ground-item messages have pinned `graphic_id` field
+positions. The player-labeled item bitmap range 5973–7003 contains
+1,031 actual original ADRN records and 1,030 distinct source
+block hashes (bitmap IDs 6042/6077 share a block hash). This is **not**
+a historically verified original 1,031-item table or proven
+`graphic_id -> bitmapno` draw path. Provenance and executable
+checks are in
+`docs/STONEAGE-TW10-ITEM-STATIC-BITMAP-SOURCE-R1.md`.
+Next bounded T03 is `TW10-MAP-CONTENT-ORIGINAL-RESOURCE-BOUNDARY-01`.
+Stage B production and wiki remain gated.

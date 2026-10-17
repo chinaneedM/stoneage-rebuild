@@ -15134,3 +15134,16 @@ WORLD源分支ec2aa8fac09f13a61c73c9542b2dd9c08c9fc1b9/tree0976772698b7470b72145
 在原main `114fb854394d99be4702f5b07c4c0bb2f04a0a10` 由前一 `87280e0b` 非强制快进、全量历史状态无删除后，主线同HEAD 11个实际Actions全部 **SUCCESS**。其中本次原始资源七类交叉测试为Action`39076990573`、SPR→ADRN原来源复核`39076990665`、玩家类别对照`39076990512`、Stage A联合审核`39076990521`；其余7项完整名称/运行ID保存在 `STONEAGE-TW10-VISUAL-CATEGORY-SPR-JOIN-ACCEPTANCE-R1.json` 的`main_acceptance.runs`中。最初测试转义失败39076718170保留；真实源归档ZIP/raw/代码blob与首次/修复成功CI不变。此回执不是全游戏历史验收，也不把原版静态图使用、具体宠物/人物身份认证或原服脚本复原。
 
 最高NEXT仍`TW10-ITEM-STATIC-BITMAP-SOURCE-SELECTOR-01`，先沿物品/S:I原客户端同版本资源使用路径找实际静态位图关联，不凭玩家分类硬绑定1031个原物品。其他22域原状态、九系统7 PARTIAL+2 OPEN、Stage B GATED与R79 PAUSED保持不变。
+
+ 
+## 2026-10-18 — TW10-ITEM-STATIC-BITMAP-SOURCE-SELECTOR-01：物品静态图与原客户端S:I字段
+
+自重新核实远端main `c8a9cb702e7aae3bd8e756008d4f88d31deed7c1` / tree `24331cdb040740856a3db7f2c5ba09c2b87cc816` 起步，原最新9项main Actions全SUCCESS，无开放PR，README/连续性协议/完整CURRENT-STATE原blob `820cb4eb2845bddf89e93914649e245933f39734`/Design/Timeline/Source/Roadmap均已实取。最高NEXT是原物品静态图索引与同版接收消息；没有重开缺源的初代宠物/任务服端脚本。
+
+**原台湾1.0同版通信结构事实**：原客户端`S:I` 20槽×9字段，第5位置对应早期谱系命名的graphic_id，原分派RVA0x30922；增量I记录第6字段，同版callback 0x325f0；地面C记录第4字段，同版callback0x31260。位置与回调出自已钉死的原游戏协议/回调报告（源码派生），字段命名语义来自EARLY_LINEAGE，不等于已经观测到真实下发值及“graphic_id直接就是bitmapno”。已验证独立原资源：ADRN四源SHA匹配，玩家早期stonepic候选号段只是外部标签。**原版静态图选择函数、实际实参、游戏屏幕、原运营服itemset主表仍为UNKNOWN**。
+
+**本轮真正新实算**：原ADRN玩家物品候选号5973—7003全部1031条，原宽16—64、高14—79，RD非空指纹1030种；图号6042与6077有完全相同RD原始块SHA256及相同编码尺寸，是重复资源块记录，**不是同一原版物品实体认证**。原NPC静态段101号、魔法242号、宠物相片121号、UI196号均完成尺寸/flag/RD指纹边界；121个宠物相片候选均96×104是原盘**资源尺寸事实**，而不是121种宠物物种。前一T01验原SPR帧表对静态物品号段0引用不表示原客户端不渲染静态物品。
+
+源实跑Action39077916706、Action39078043125/job117529172357均SUCCESS；后者artifact12117477340，ZIP4474字节SHA256 `04900b9b905610a5ae0c7b148ef8c9a12898059683fb0c35efc92fadd0b3f2c9`，抽取JSON21307字节SHA256`9916bab4e8b94188e8b4dc9c0e5f6cd2537464311f3c3409a6a04d72fffec2b8`，永久报告git blob`1210b0f910c353d58a3d6a4c458dda38f48aba86`，独立下载与原始字节核对一致。派生表、来源回执、逐字节语义重放测试和专用CI均纳入仓库；本条发布后分支和main Actions以实际运行结果为准，不提前声称通过。
+
+当前业务停止：`BOUNDED_ORIGINAL_RESOURCE_METADATA_AND_PROTOCOL_FIELD_JOIN_OPEN_DRAW_SELECTOR`。物品/料理配方、装备名、商店真实价格、初代任务奖品绑定均不可从1031图号推导，留OPEN。**最高NEXT `TW10-MAP-CONTENT-ORIGINAL-RESOURCE-BOUNDARY-01`**：有限验证原盘地图块/局部结构和原服地图与NPC/遭遇缺口，不延伸无关R79或新作；按22域准备阶段推进。九系统7 PARTIAL+2 OPEN，Stage B生产及百科网站GATED，R79 PAUSED，整体复原无合法百分比分母。

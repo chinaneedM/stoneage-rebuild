@@ -7006,3 +7006,11 @@ STONEAGE-HISTORICAL-WIKI-QUERY-CONTRACT-DRAFT-R1.json引用四个既有派生Git
 - **类别候选层 C（玩家当前迁移网页，非JSS/TW1.0官方分类）**：2001发表栏17173`stonepic的图片编号`，先前已在`STONEAGE-EARLY-VISUAL-ID-RANGES-INPUT/VERIFIED-R1.json`实录及独立原图号存在性验收；本轮不重复算作新原来源。
 - **本轮衍生交叉层（仅可复核数值）**：GitHub source HEAD `8aa789eeedc18bef8ba6ce078dbd5ebd92105d5c`/tree `9924c96951e3a5b7d80157fc8d9de2f0ed989495`，run`39076262089`/job`117523936561` SUCCESS；ZIP artifact`12116114738`，ZIP1784B SHA256`fa5ad6bf8f926feb8f8fc54e02c206760dfcaac4dbc28ef814145de7961479ee`；原派生JSON8369B SHA256`e33bdae8c202dcf5a1374746afc505f517d8e1afc557fd07057d2d1811a54fcd`，Git blob`20a82e4d35661785c4e50b44855cf8e8a4e98f3e`。下载与digest独立核验；详见永久机器报告与ACCEPTANCE-R1。
 - **只认证**：人物动作区间137508帧引用/240SPR组；宠物动作区间70236帧引用/124SPR组；NPC、两种头像、物品、UI五个静态区间没有被本SPR帧表引用。不会自动认证同版语义、原游戏显示、人物/宠物数量与原服务器任务；静态画像可能走其它资源选择路径，0命中不能解释为“客户端不用”。
+
+ 
+### 2026-10-18 — SRC-TW10-STATIC-ITEM-BITMAP-MESSAGE-R1
+
+- 原始客户端来源 S：台湾1.0编译接收消息中完整背包 `S:I` callback 0x30922 的第5个整数图号槽位、增量 `I` callback 0x325f0 第6槽位、地面物品 `C` callback 0x31260 第4槽位；结构来自原盘固定schema Git blob `e39a3a6020b578da017ab0bfa9369dc083e0b700` 与原客户端callgraph报告 blob`bdcd7b7ed5295db78b5d8cbdad58d5ce94802f31`。字段名graphic_id来自早期生成通信谱系，位置V1_DIRECT。**没有从原客户端观察到任何真实graphics值/绘制函数与ADRN的1:1同版运行映射**。
+- 来源候选 C：2001显示日期的stonepic玩家图号5973—7003标签为装备料理素材，此文章及编号来源已在旧表入册，不算新史料。
+- 原始台湾1.0图片物理层 S：ADRN全源meta SHA由`MANIFEST-R1.txt`锁定，本轮源Action39078043125/job117529172357实际SUCCESS。1031项位图候选号物理数据全在原盘，尺寸宽16—64高14—79，1030个不同压缩RD原块SHA256。**6042、6077共享原块哈希**；不解释为相同游戏物品。另四静态对照范围的尺寸、offset、flag与摘要在归档报告中。
+- 完整产物：artifact 12117477340 ZIP4474B SHA256 `04900b9b905610a5ae0c7b148ef8c9a12898059683fb0c35efc92fadd0b3f2c9`；raw JSON21307B SHA256`9916bab4e8b94188e8b4dc9c0e5f6cd2537464311f3c3409a6a04d72fffec2b8`、Git blob`1210b0f910c353d58a3d6a4c458dda38f48aba86`。原版权像素、同版原服务器master没有提交。研究规格、永久JSON/验收回执和回归测试相互引用，来源成功不等于早期物品图鉴/商店定价恢复。

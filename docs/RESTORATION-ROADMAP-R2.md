@@ -475,3 +475,10 @@ JSS原域2001快照实取：手册索引47出链，两首页框架引用menu/top
 依据新的`PREPRODUCTION-22-DOMAIN-SOURCE-READY-PORTFOLIO-REVIEW-02`有界22域机读盘点，宠物/原始任务同版服端原材料缺失不是继续空转helper的理由。TW1.0原始ADRN/SPR索引可真实核查，新的TW10-RESOURCE-CATEGORY-SPR-JOIN-01已得原帧与玩家静态/动作区间的物理交集：人物动作区间137508帧/240SPR组，宠物动作区间70236帧/124SPR组；玩家命名的NPC/宠物头像/人物相片/物品/UI静态段0SPR帧（**不是未使用**，静态渲染路径尚未查）。源Action39076262089成功、ZIP原字节及JSON SHA256独立校验已保存；原版具体宠物/角色名、图像显示及原服任务继续OPEN。
 
 **当前最高NEXT TW10-ITEM-STATIC-BITMAP-SOURCE-SELECTOR-01**：仅研究TW1.0物品静态位图（玩家称5973—7003）与已具原客户端S:I协议字段、静态图选择/渲染调用的真实连接，限定可复核的内容载荷和缺口；不自造原物品名称、商店售价/料理或以0个SPR引用否认客户端静态图存在。之后依来源可执行性表移向地图和音频。22域所有旧历史状态不变，7 PARTIAL+2 OPEN与Stage B GATED、R79暂停。历史研究不是用新增R编号或测试数计算完成百分比。
+
+ 
+## 2026-10-18 — T02物品静态原盘实证验收候选
+
+此前T01原SPR帧与外部2001图号类别交集有完整数据，当前T02新增同构建S:I/I/C的graphic_id位置与原台湾1.0ADRN物品静态区间的物理元数据：1031个bitmap号、1030份不同RD块SHA256，原图号6042/6077有相同块指纹；宠物相片121号均96×104。所有“物品”、“宠物相片”类别仍为**玩家标签**，字段值→bitmap号选择链、同版server itemset及游戏实际渲染未知。规格和可复算机读源 `docs/STONEAGE-TW10-ITEM-STATIC-BITMAP-SOURCE-R1.md` 与 `STONEAGE-TW10-ITEM-STATIC-BITMAP-SOURCE-R1.json`，并非真正原物品类型表。
+
+**最新NEXT T03 `TW10-MAP-CONTENT-ORIGINAL-RESOURCE-BOUNDARY-01`**：从原零售盘/mapcache直接可认证的地图块来源出发做有界地理结构与原服资料差异，无法取得同版NPC/掉落/遇敌绝不填充。九系统、Stage B与R79全部旧限制保持。
