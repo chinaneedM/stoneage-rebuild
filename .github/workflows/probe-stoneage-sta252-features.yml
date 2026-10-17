@@ -1,0 +1,26 @@
+name: Verify STA2.52 versioned feature witness
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_sta252_feature_witness.py
+      - tests/test_stoneage_sta252_feature_witness.py
+      - .github/workflows/probe-stoneage-sta252-features.yml
+permissions:
+  contents: read
+jobs:
+  versioned-review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - run: python -m unittest tests.test_stoneage_sta252_feature_witness -v
+      - run: |
+          mkdir -p /tmp/sta252-derived
+          python -m tools.stoneage_sta252_feature_witness --output /tmp/sta252-derived/sta252-features.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: sta252-features-derived-r1
+          path: /tmp/sta252-derived/*.json
+          retention-days: 7
+          if-no-files-found: error
