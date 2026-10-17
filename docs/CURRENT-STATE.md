@@ -15079,3 +15079,8 @@ WORLD源分支ec2aa8fac09f13a61c73c9542b2dd9c08c9fc1b9/tree0976772698b7470b72145
 同时据原22域总表逐项保留状态并明确当前真正跨版输入：JSS原站6节点/85静态链接；17173五篇日期栏文章/20玩家别称地点；原TW10 SPR→ADRN资源索引；后代2.5具名NPC任务来源，全部保持版本边界及UNKNOWN。详见 docs/STONEAGE-EARLY-MEDIA-ARCHIVE-BOUNDARY-AND-22-DOMAIN-REVIEW-R1.md 与两份派生JSON及ACCEPTANCE；此矩阵是材料覆盖与缺口优先级，不是新游戏/官网实现或全部历史数据复原。Stage A 7 PARTIAL+2 OPEN与证据受限用户验收不变，Stage B GATED，R79仍PAUSED_NON_BLOCKING；不报整体复原百分比。
 
 **最高NEXT PET-IDENTITY-SAME-BUILD-SOURCE-TRIAGE-01**：从20条2001栏玩家别称出发，只接纳具名同版原服务器pet master、原客户端graphic_id实际图形选择链或可认证同期图像索引以尝试物种→图号→SPR与场景关系。无这类证据即保留宠物/出没地UNKNOWN，并切换具名NPC/任务原服资料来源；不无限延伸低层helper或站点导航。旧媒体栏目若有1999—2002真实快照再按精确来源重开。新归档及最终main Actions需据实际完成后标记，不提前称通过。
+
+
+### 17173媒体快照与22域矩阵：主线12项完整验收
+
+研究两提交已非强制快进并入main 74c2d769694f64cc0bc1359da83e522094463281/tree76b0075304ddca0aea5238051da4a6e39b2fcc23（原main7b94fbbc，ahead2/behind0，13文件变更且无删除）。主线同HEAD 12项Actions最终均SUCCESS，独立来源与22域保管验收Action39038914482、原始网页再次探测Action39038914849/job117414233009均SUCCESS；再次实返2006/2006/2004及0合格早期节点。全部12运行名称/ID保留在STONEAGE-EARLY-MEDIA-ARCHIVE-SNAPSHOT-ACCEPTANCE-R1.json。历史前缀原样保留，本验收只是来源与覆盖工作，不声称原始游戏全部复原；NEXT仍PET-IDENTITY-SAME-BUILD-SOURCE-TRIAGE-01，Stage B与R79继续暂停。
