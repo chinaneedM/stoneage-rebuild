@@ -231,14 +231,146 @@
   },
   "archive_ci": [
     {
-      "head": "d784fc416e63a086844b5797a96d8c0784da1a33",
-      "run": 39025830221,
-      "conclusion": "success",
-      "tests": 32,
-      "skipped": 0
+      "head": "e93a671211d7eb063894a59675ebb94b0fe063d1",
+      "run": 39025939325,
+      "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+      "conclusion": "success"
+    },
+    {
+      "head": "e93a671211d7eb063894a59675ebb94b0fe063d1",
+      "run": 39025939378,
+      "name": "Validate legacy StoneAge assistant history and pet content gaps",
+      "conclusion": "success"
+    },
+    {
+      "head": "e93a671211d7eb063894a59675ebb94b0fe063d1",
+      "run": 39025939396,
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "conclusion": "success"
+    },
+    {
+      "head": "e93a671211d7eb063894a59675ebb94b0fe063d1",
+      "run": 39025939218,
+      "name": "Validate StoneAge preproduction content archive and wiki boundary",
+      "conclusion": "success"
+    },
+    {
+      "head": "e93a671211d7eb063894a59675ebb94b0fe063d1",
+      "run": 39025939011,
+      "name": "Validate original TW1.0 login avatar source archive",
+      "conclusion": "success"
+    },
+    {
+      "head": "e93a671211d7eb063894a59675ebb94b0fe063d1",
+      "run": 39025939341,
+      "name": "Validate Stage A early source gap triage",
+      "conclusion": "success"
+    },
+    {
+      "head": "e93a671211d7eb063894a59675ebb94b0fe063d1",
+      "run": 39025939375,
+      "name": "Validate StoneAge Stage A joint review decision",
+      "conclusion": "success"
+    },
+    {
+      "head": "e93a671211d7eb063894a59675ebb94b0fe063d1",
+      "run": 39025939291,
+      "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+      "conclusion": "success"
+    },
+    {
+      "head": "e93a671211d7eb063894a59675ebb94b0fe063d1",
+      "run": 39025939327,
+      "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+      "conclusion": "success"
+    },
+    {
+      "head": "e93a671211d7eb063894a59675ebb94b0fe063d1",
+      "run": 39025939321,
+      "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+      "conclusion": "success"
     }
   ],
-  "main_ci": [],
+  "main_ci": [
+    {
+      "head": "e93a671211d7eb063894a59675ebb94b0fe063d1",
+      "run": 39025973239,
+      "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+      "conclusion": "success"
+    },
+    {
+      "head": "e93a671211d7eb063894a59675ebb94b0fe063d1",
+      "run": 39025973415,
+      "name": "Validate Stage A early source gap triage",
+      "conclusion": "success"
+    },
+    {
+      "head": "e93a671211d7eb063894a59675ebb94b0fe063d1",
+      "run": 39025973301,
+      "name": "Validate legacy StoneAge assistant history and pet content gaps",
+      "conclusion": "success"
+    },
+    {
+      "head": "e93a671211d7eb063894a59675ebb94b0fe063d1",
+      "run": 39025973452,
+      "name": "Inventory first-party JSS login manual references",
+      "conclusion": "success"
+    },
+    {
+      "head": "e93a671211d7eb063894a59675ebb94b0fe063d1",
+      "run": 39025973416,
+      "name": "Validate StoneAge Stage A joint review decision",
+      "conclusion": "success"
+    },
+    {
+      "head": "e93a671211d7eb063894a59675ebb94b0fe063d1",
+      "run": 39025973380,
+      "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+      "conclusion": "success"
+    },
+    {
+      "head": "e93a671211d7eb063894a59675ebb94b0fe063d1",
+      "run": 39025973460,
+      "name": "Validate StoneAge preproduction content archive and wiki boundary",
+      "conclusion": "success"
+    },
+    {
+      "head": "e93a671211d7eb063894a59675ebb94b0fe063d1",
+      "run": 39025973430,
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "conclusion": "success"
+    },
+    {
+      "head": "e93a671211d7eb063894a59675ebb94b0fe063d1",
+      "run": 39025973372,
+      "name": "Independently verify TW1.0 R58 rooted helper returns and source custody",
+      "conclusion": "success"
+    },
+    {
+      "head": "e93a671211d7eb063894a59675ebb94b0fe063d1",
+      "run": 39025973475,
+      "name": "Validate original TW1.0 login avatar source archive",
+      "conclusion": "success"
+    },
+    {
+      "head": "e93a671211d7eb063894a59675ebb94b0fe063d1",
+      "run": 39025973283,
+      "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+      "conclusion": "success"
+    },
+    {
+      "head": "e93a671211d7eb063894a59675ebb94b0fe063d1",
+      "run": 39025973448,
+      "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+      "conclusion": "success"
+    },
+    {
+      "head": "e93a671211d7eb063894a59675ebb94b0fe063d1",
+      "run": 39025973429,
+      "name": "Probe original TW1.0 login and avatar callsites",
+      "conclusion": "success"
+    }
+  ],
   "corrections": [
     {
       "kind": "manual_fragment",
@@ -309,5 +441,12 @@
       }
     },
     "explanation": "Concurrent bitmap-category research is complementary; keep both complete historical appends and latest WORLD-NPC-QUEST work order."
+  },
+  "main_original_exact_replay": {
+    "run": 39025973429,
+    "job": 117376908551,
+    "artifact_id": 12098521515,
+    "artifact_zip_digest": "sha256:552b172a7f056fd61e98f503a0d3d5f42bb6d1f1ec076c410b51c75c27deed99",
+    "derived_content_exactly_matches": "research/recovered/TW10-LOGIN-AVATAR-SELECTOR-WRITERS-CORRECTED-R1.json"
   }
 }
