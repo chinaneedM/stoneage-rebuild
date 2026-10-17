@@ -21,10 +21,12 @@ class WitnessTests(unittest.TestCase):
 
     def test_feature_marker_in_other_version_cannot_pass(self):
         d = fixture()
-        d['sade'] = d['sade'].replace('自动登入', '').replace('0.2c', '自动登入 0.2c', 1)
-        # This remains in the 0.2b block: first ensure a genuine cross-version move.
-        d['sade'] = d['sade'].replace('自动登入 0.2c', '0.2c 自动登入', 1)
+        d['sade'] = d['sade'].replace('自动登入', '').replace('0.2c', '0.2c 自动登入', 1)
         with self.assertRaises(ValueError): derive(d)
+
+    def test_same_paragraph_version_reference_not_an_extra_release(self):
+        d = fixture(); d['sade'] = d['sade'].replace('不限等级进入', '不限等级进入 从0.2a开始')
+        self.assertEqual(len(derive(d)['sade_version_claims']), 9)
 
     def test_footer_cannot_supply_missing_feature(self):
         d = fixture(); d['comparison'] = d['comparison'].replace('自动逃跑功能', '') + ' 自动逃跑功能'

@@ -73,7 +73,11 @@ def derive(documents):
     a = s.index('部分更新过程')
     end = s.index('截至到这个版本为止', a)
     seq = s[a:end]
-    matches = list(re.finditer(r'0\.[12][a-h]', seq))
+    matches = []
+    for match in re.finditer(r'0\.[12][a-h]', seq):
+        # The 0.2a paragraph refers to its own version a second time.
+        if not matches or match[0] != matches[-1][0]:
+            matches.append(match)
     require([m[0] for m in matches] == [v for v, _ in SADE], 'reported list order changed')
     rows = []
     for i, (version, features) in enumerate(SADE):
