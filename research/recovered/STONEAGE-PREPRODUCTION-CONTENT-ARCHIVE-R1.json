@@ -1,0 +1,660 @@
+{
+  "schema": "stoneage.preproduction_content_archive_r1",
+  "date": "2026-10-17",
+  "baseline_main": "ba4e12c265c1db7caf5d5afdd4b3e068b3df1d1f",
+  "baseline_tree": "081c6952f3ae9ee37ec4e99b25f75edd6c0d3b84",
+  "task": "PREPRODUCTION-HISTORICAL-CONTENT-AND-WIKI-READINESS-01",
+  "scope": "RESEARCH_AND_DESIGN_PREPARATION_NOT_GAME_OR_WEB_PRODUCTION",
+  "user_directive": "Archive all retrievable quests/NPCs/pets/maps/avatars/login/UI and ALL legacy helper features; retain positive and negative choices for later joint design; future player-readable reference site derived from audited archive.",
+  "version_profiles": [
+    {
+      "id": "JSS1999_ORIGIN",
+      "label": "Japan original 1999",
+      "grade": "EARLY_TARGET_NO_COMPLETE_BUILD",
+      "can_backfill": false
+    },
+    {
+      "id": "TW10",
+      "label": "Taiwan Waei/JSS v1.0 accepted disc",
+      "grade": "CLIENT_DIRECT_ONLY_ORIGINAL_SERVER_NOT_RECOVERED",
+      "can_backfill": false
+    },
+    {
+      "id": "CN182",
+      "label": "Mainland 1.82 early classic",
+      "grade": "VERSIONED_EARLY_GUIDES_NOT_TW10_SERVER",
+      "can_backfill": false
+    },
+    {
+      "id": "RECOVERED25",
+      "label": "later preserved v2.5 branch",
+      "grade": "DESCENDANT_SERVER_CONTENT_NO_AUTOMATIC_TW10",
+      "can_backfill": false
+    },
+    {
+      "id": "LATER_OFFICIAL",
+      "label": "2.0–8.5 official/later material by exact edition",
+      "grade": "MUST_TAG_VERSION_AND_PUBLICATION_DATE",
+      "can_backfill": false
+    },
+    {
+      "id": "PRIVATE_SERVER",
+      "label": "modern server and community adaptations",
+      "grade": "DISCOVERY_OR_OWN_SERVER_ONLY",
+      "can_backfill": false
+    },
+    {
+      "id": "NEW_GAME",
+      "label": "future original single-player design",
+      "grade": "DESIGN_NOT_HISTORICAL_SOURCE",
+      "can_backfill": false
+    }
+  ],
+  "source_pins": {
+    "research/clients/STONEAGE-TW10-GAMEPLAY-SCHEMA-R1.json": "e39a3a6020b578da017ab0bfa9369dc083e0b700",
+    "research/recovered/STONEAGE-TW10-UI-SEMANTICS-R1.json": "ee3d230317c47b13e3513f25c3feba2ff9305e1c",
+    "docs/STAGE-A-CONSOLIDATED-REVIEW-R1.md": "07c9950a40d110d4dabb80b11412db8b4ea64ba9",
+    "research/recovered/STONEAGE-LEGACY-ASSISTANT-AND-CONTENT-GAP-R1.json": "103122ec0358d45fe149b0389b8ac3ecac3b315a",
+    "research/recovered/STONEAGE-TW10-VS-25-RESOURCE-DIFF-R1.txt": "b86de21a9c1dc28af1b533f20ebd4b37428517a6",
+    "research/mechanics/STONEAGE-PET-GROWTH-CORE-R1.md": "87cdd063f05f6d6f334007cf3db7a31a8d1654a8",
+    "research/clients/STONEAGE-TW10-CLIENT-DATA-BOUNDARY-R1.md": "11e2b77bce2febfef37c3a0c87dec878a6f289ee",
+    "docs/STAGE-B-COLLABORATIVE-DESIGN-BRIEF-R1.md": "3a791ba28cad340a7603c9ac3ade32d3e63955ee",
+    "docs/STONEAGE-PET-QUEST-CONTENT-COVERAGE-RECHECK-R1.md": "9c5f41a9db9bce91528a0d370b25c4083fd760ba"
+  },
+  "public_discovery_sources": [
+    {
+      "id": "WEB_QUEST_INDEX",
+      "url": "https://data.sa25.com.cn/tasks/index.html",
+      "type": "CONTEMPORARY_FAN_SITE",
+      "description": "Fan task archive currently lists 131 entries across versions 1.82–8.5 and explicitly marks all pending verification; not original official server dump.",
+      "scope": "DISCOVERY_ONLY",
+      "cannot_certify": [
+        "JSS1999",
+        "TW10"
+      ]
+    },
+    {
+      "id": "WEB_PET_INDEX",
+      "url": "https://www.shiqi.club/renwu/chongsheng/pets",
+      "type": "CONTEMPORARY_PRIVATE_SERVER",
+      "description": "Server-specific level-1 pet listings, map coordinates and task-linked NPCs; cannot be imported as historic official pet encounters.",
+      "scope": "PRIVATE_SERVER_DISCOVERY_ONLY",
+      "cannot_certify": [
+        "JSS1999",
+        "TW10",
+        "CN182"
+      ]
+    },
+    {
+      "id": "WEB_EARLY_COMMUNITY_LAYOUT",
+      "url": "https://news.17173.com/z/stoneage/newsa/new.shtml",
+      "type": "LATE_ERA_GAME_PORTAL",
+      "description": "Later 8.0-era portal lists task changes, item references, maps, guide sections and change summaries; not original 1999 game site.",
+      "scope": "LATER_PORTAL_STRUCTURE_ONLY",
+      "cannot_certify": [
+        "JSS1999",
+        "TW10"
+      ]
+    }
+  ],
+  "domains": [
+    {
+      "id": "version_lineage",
+      "order": 1,
+      "label": "版本谱系",
+      "status": "PARTIAL_SOURCE",
+      "website_collection": "version",
+      "missing": "same-build original Japanese 1999 launch sample and TW1/CN1.82 lineages",
+      "verification_target": "source/date/region/build/hash/variant",
+      "complete": false,
+      "original_full_payload_recovered": false
+    },
+    {
+      "id": "login_splash",
+      "order": 2,
+      "label": "登录、选服、角色列表",
+      "status": "OPEN_VISUAL",
+      "website_collection": "ui_screen",
+      "missing": "same-build login states, background, buttons, fonts, interaction/audio, original screenshot or trace",
+      "verification_target": "ui flow screenshot/callsite and copyright-safe reference",
+      "complete": false,
+      "original_full_payload_recovered": false
+    },
+    {
+      "id": "character_creation",
+      "order": 3,
+      "label": "人物创建和选角",
+      "status": "PARTIAL_STRUCTURE",
+      "website_collection": "ui_screen",
+      "missing": "13-field CreateNewChar transport known, actual layout and list of original selectable characters missing",
+      "verification_target": "original character portraits/selectable roster/creation controls",
+      "complete": false,
+      "original_full_payload_recovered": false
+    },
+    {
+      "id": "character_sprite_model",
+      "order": 4,
+      "label": "人物二维模型/动作/外观",
+      "status": "PARTIAL_RESOURCE",
+      "website_collection": "character",
+      "missing": "per-avatar image IDs, animation grouping, direction, portrait, equipment/riding variants",
+      "verification_target": "graphics-to-animation-to-character identity crosswalk",
+      "complete": false,
+      "original_full_payload_recovered": false
+    },
+    {
+      "id": "world_map",
+      "order": 5,
+      "label": "原野地图、村落、坐标、道路",
+      "status": "PARTIAL_STRUCTURE",
+      "website_collection": "map",
+      "missing": "TW1 client M/MC/cache present, actual original server field maps missing",
+      "verification_target": "same-build map payload/edges/coords/encounter zones",
+      "complete": false,
+      "original_full_payload_recovered": false
+    },
+    {
+      "id": "npc_identity",
+      "order": 6,
+      "label": "NPC及商店服务人员",
+      "status": "OPEN_CONTENT",
+      "website_collection": "npc",
+      "missing": "original spawn position, name, look, script/service and shop stock unknown",
+      "verification_target": "NPC-to-map-to-dialog-to-service joins",
+      "complete": false,
+      "original_full_payload_recovered": false
+    },
+    {
+      "id": "npc_dialog_ui",
+      "order": 7,
+      "label": "NPC对话窗口与选项",
+      "status": "PARTIAL_STRUCTURE",
+      "website_collection": "ui_screen",
+      "missing": "WN 5-field session transport known, actual button layout and original dialog runtime unknown",
+      "verification_target": "NPC dialog steps/window screenshots/font/button states",
+      "complete": false,
+      "original_full_payload_recovered": false
+    },
+    {
+      "id": "quest_content",
+      "order": 8,
+      "label": "任务与奖励",
+      "status": "OPEN_CONTENT",
+      "website_collection": "quest",
+      "missing": "first-generation full quest IDs/branches/rewards/events/save flags absent",
+      "verification_target": "quest prerequisites→NPC→items→flags→rewards→relogin",
+      "complete": false,
+      "original_full_payload_recovered": false
+    },
+    {
+      "id": "pet_species",
+      "order": 9,
+      "label": "宠物物种/变体/名称",
+      "status": "OPEN_SAME_BUILD_ROSTER",
+      "website_collection": "pet",
+      "missing": "no verified complete TW1 roster or cross-era species denominator",
+      "verification_target": "versioned pet identity and alias canonicalization",
+      "complete": false,
+      "original_full_payload_recovered": false
+    },
+    {
+      "id": "pet_visual",
+      "order": 10,
+      "label": "宠物图像、动画、动作",
+      "status": "PARTIAL_RESOURCE",
+      "website_collection": "pet_visual",
+      "missing": "125996 bitmap IDs and 464 sprite groups are not pet count; graphic_id→sprite/frame lacks original binding",
+      "verification_target": "pet→graphic→sprite→animation/action/direction",
+      "complete": false,
+      "original_full_payload_recovered": false
+    },
+    {
+      "id": "pet_stats",
+      "order": 11,
+      "label": "宠物等级/属性与个体差异",
+      "status": "PARTIAL_STRUCTURE",
+      "website_collection": "pet_stat",
+      "missing": "S:K 21-field state exists; same-build original all-species initial values/MP/AI missing",
+      "verification_target": "template→instance→stats/element/level",
+      "complete": false,
+      "original_full_payload_recovered": false
+    },
+    {
+      "id": "pet_growth",
+      "order": 12,
+      "label": "宠物成长、经验与升级",
+      "status": "PARTIAL_DESCENDANT",
+      "website_collection": "pet_growth",
+      "missing": "descendant rank/level formula known; original 1999 coefficients and all species configs unproven",
+      "verification_target": "version-specific template→growth→rounding/EXP",
+      "complete": false,
+      "original_full_payload_recovered": false
+    },
+    {
+      "id": "pet_skills",
+      "order": 13,
+      "label": "宠物技能/学习/条件",
+      "status": "PARTIAL_STRUCTURE",
+      "website_collection": "pet_skill",
+      "missing": "S:W view shape and descendant callbacks exist, full same-build learnable skills absent",
+      "verification_target": "pet→skill→NPC/cost/level/era",
+      "complete": false,
+      "original_full_payload_recovered": false
+    },
+    {
+      "id": "pet_encounter",
+      "order": 14,
+      "label": "宠物出现地点/捕获",
+      "status": "PARTIAL_DESCENDANT",
+      "website_collection": "pet_encounter",
+      "missing": "same-build encounter spawns/habitat/level/capture chances not comprehensive",
+      "verification_target": "pet→map→area→encounter condition",
+      "complete": false,
+      "original_full_payload_recovered": false
+    },
+    {
+      "id": "ride_mount",
+      "order": 15,
+      "label": "骑宠界面、资格与动作",
+      "status": "PARTIAL_DESCENDANT",
+      "website_collection": "pet_ride",
+      "missing": "later rules exist, earliest era membership and all rideable sprite/character joins unproven",
+      "verification_target": "pet→riding state→character mount frames",
+      "complete": false,
+      "original_full_payload_recovered": false
+    },
+    {
+      "id": "battle_ui_rules",
+      "order": 16,
+      "label": "战斗界面/指令/表现",
+      "status": "PARTIAL_STRUCTURE",
+      "website_collection": "ui_screen",
+      "missing": "B envelope, SAB indices; actual original render/skill animation and complete command flows unverified",
+      "verification_target": "turn intent→battle scene→action animation/status",
+      "complete": false,
+      "original_full_payload_recovered": false
+    },
+    {
+      "id": "item_equipment_economy",
+      "order": 17,
+      "label": "物品/装备/商店/料理",
+      "status": "PARTIAL_STRUCTURE",
+      "website_collection": "item",
+      "missing": "S:I data envelope and descendant item content; original same-build item+price+source incompletely recovered",
+      "verification_target": "items→NPC shops/recipes/quests",
+      "complete": false,
+      "original_full_payload_recovered": false
+    },
+    {
+      "id": "audio_fx",
+      "order": 18,
+      "label": "音效/配乐与事件触发",
+      "status": "PARTIAL_RESOURCE",
+      "website_collection": "audio",
+      "missing": "raw audio containers indexed, same-build event-to-audio binding missing",
+      "verification_target": "scene/action/event→audio provenance",
+      "complete": false,
+      "original_full_payload_recovered": false
+    },
+    {
+      "id": "helper_versions",
+      "order": 19,
+      "label": "历代外挂产品与版本",
+      "status": "PARTIAL_CATALOG",
+      "website_collection": "helper_product",
+      "missing": "initial 16 tool families with source dates, complete version genealogy undocumented",
+      "verification_target": "program→edition→release document→capabilities",
+      "complete": false,
+      "original_full_payload_recovered": false
+    },
+    {
+      "id": "helper_capabilities",
+      "order": 20,
+      "label": "全部外挂功能/变动",
+      "status": "PARTIAL_CATALOG",
+      "website_collection": "helper_capability",
+      "missing": "12 initial families, incomplete versioned per-command/function coverage; no executable recovery claimed",
+      "verification_target": "tool-version→feature-first-seen→input/logic/output/limits",
+      "complete": false,
+      "original_full_payload_recovered": false
+    },
+    {
+      "id": "reference_web",
+      "order": 21,
+      "label": "原官方/社区资料网站内容",
+      "status": "PARTIAL_DISCOVERY",
+      "website_collection": "historical_site",
+      "missing": "contemporaneous website archives, official guide IA, images and changed links incomplete",
+      "verification_target": "site/page/date→entity/era/source",
+      "complete": false,
+      "original_full_payload_recovered": false
+    },
+    {
+      "id": "future_player_wiki",
+      "order": 22,
+      "label": "未来游戏玩家资料站",
+      "status": "DESIGN_PREP_ONLY",
+      "website_collection": "website_collection",
+      "missing": "schema prepared, no hosted website/domain/UI/official copy or production assets",
+      "verification_target": "published filtered safe original content with provenance",
+      "complete": false,
+      "original_full_payload_recovered": false
+    }
+  ],
+  "relationship_requirements": [
+    {
+      "id": "char_creation_body",
+      "from": "character_creation",
+      "to": "character_sprite_model",
+      "criterion": "body_image_id -> character visual ID",
+      "same_build_runtime_verified": false,
+      "status": "OPEN_OR_VERSION_SEPARATED",
+      "source_specific_known_edges_may_exist": true
+    },
+    {
+      "id": "char_creation_face",
+      "from": "character_creation",
+      "to": "character_sprite_model",
+      "criterion": "face_image_id -> portrait sprite",
+      "same_build_runtime_verified": false,
+      "status": "OPEN_OR_VERSION_SEPARATED",
+      "source_specific_known_edges_may_exist": true
+    },
+    {
+      "id": "npc_world_record",
+      "from": "world_map",
+      "to": "npc_identity",
+      "criterion": "C world_character_record -> original NPC spawn",
+      "same_build_runtime_verified": false,
+      "status": "OPEN_OR_VERSION_SEPARATED",
+      "source_specific_known_edges_may_exist": true
+    },
+    {
+      "id": "npc_dialog_event",
+      "from": "npc_identity",
+      "to": "npc_dialog_ui",
+      "criterion": "NPC runtime object + WN sequence -> dialog choices",
+      "same_build_runtime_verified": false,
+      "status": "OPEN_OR_VERSION_SEPARATED",
+      "source_specific_known_edges_may_exist": true
+    },
+    {
+      "id": "quest_dialog",
+      "from": "npc_dialog_ui",
+      "to": "quest_content",
+      "criterion": "dialog choice -> quest flag/reward",
+      "same_build_runtime_verified": false,
+      "status": "OPEN_OR_VERSION_SEPARATED",
+      "source_specific_known_edges_may_exist": true
+    },
+    {
+      "id": "pet_graphic",
+      "from": "pet_species",
+      "to": "pet_visual",
+      "criterion": "S:K graphic_id -> matched original sprite group",
+      "same_build_runtime_verified": false,
+      "status": "OPEN_OR_VERSION_SEPARATED",
+      "source_specific_known_edges_may_exist": true
+    },
+    {
+      "id": "pet_stats",
+      "from": "pet_species",
+      "to": "pet_stats",
+      "criterion": "original pet template -> species stats",
+      "same_build_runtime_verified": false,
+      "status": "OPEN_OR_VERSION_SEPARATED",
+      "source_specific_known_edges_may_exist": true
+    },
+    {
+      "id": "pet_growth",
+      "from": "pet_species",
+      "to": "pet_growth",
+      "criterion": "same-build template -> growth/EXP",
+      "same_build_runtime_verified": false,
+      "status": "OPEN_OR_VERSION_SEPARATED",
+      "source_specific_known_edges_may_exist": true
+    },
+    {
+      "id": "pet_skill",
+      "from": "pet_species",
+      "to": "pet_skills",
+      "criterion": "pet template -> learnable skill list",
+      "same_build_runtime_verified": false,
+      "status": "OPEN_OR_VERSION_SEPARATED",
+      "source_specific_known_edges_may_exist": true
+    },
+    {
+      "id": "pet_habitat",
+      "from": "pet_species",
+      "to": "pet_encounter",
+      "criterion": "same-build map -> encounter -> species",
+      "same_build_runtime_verified": false,
+      "status": "OPEN_OR_VERSION_SEPARATED",
+      "source_specific_known_edges_may_exist": true
+    },
+    {
+      "id": "pet_ride",
+      "from": "pet_species",
+      "to": "ride_mount",
+      "criterion": "species -> riding eligibility/character frames",
+      "same_build_runtime_verified": false,
+      "status": "OPEN_OR_VERSION_SEPARATED",
+      "source_specific_known_edges_may_exist": true
+    },
+    {
+      "id": "quest_item",
+      "from": "quest_content",
+      "to": "item_equipment_economy",
+      "criterion": "quest -> item/reward/equipment",
+      "same_build_runtime_verified": false,
+      "status": "OPEN_OR_VERSION_SEPARATED",
+      "source_specific_known_edges_may_exist": true
+    },
+    {
+      "id": "battle_graphics",
+      "from": "battle_ui_rules",
+      "to": "pet_visual",
+      "criterion": "command/status -> scene and pet frames",
+      "same_build_runtime_verified": false,
+      "status": "OPEN_OR_VERSION_SEPARATED",
+      "source_specific_known_edges_may_exist": true
+    },
+    {
+      "id": "helpers_history",
+      "from": "helper_versions",
+      "to": "helper_capabilities",
+      "criterion": "program edition -> feature with first-dated evidence",
+      "same_build_runtime_verified": false,
+      "status": "OPEN_OR_VERSION_SEPARATED",
+      "source_specific_known_edges_may_exist": true
+    },
+    {
+      "id": "wiki_exports",
+      "from": "reference_web",
+      "to": "future_player_wiki",
+      "criterion": "verified game data -> rights-cleared source-linked searchable record",
+      "same_build_runtime_verified": false,
+      "status": "OPEN_OR_VERSION_SEPARATED",
+      "source_specific_known_edges_may_exist": true
+    }
+  ],
+  "tw10_ui_structural_sources": [
+    {
+      "id": "FIELD_AND_POSITION_STATUS",
+      "transport": "S:C/S:D/S:E/C/M/MC",
+      "shape": "FIELD_POSITION_AND_OBJECT_METADATA",
+      "renderVerified": false
+    },
+    {
+      "id": "CHARACTER_STATUS_AND_HUD",
+      "transport": "S:P + CreateNewChar",
+      "shape": "CHARACTER_CREATION_13_FIELDS_PLAYER_FULL_26_FIELDS",
+      "renderVerified": false
+    },
+    {
+      "id": "INVENTORY_AND_ITEMS",
+      "transport": "S:I/I",
+      "shape": "ITEM_METADATA",
+      "renderVerified": false
+    },
+    {
+      "id": "PET_STATUS_SKILLS",
+      "transport": "S:K/S:W",
+      "shape": "PET_FULL_21_FIELDS_AND_SKILL_VIEW",
+      "renderVerified": false
+    },
+    {
+      "id": "BATTLE_AND_NPC_WINDOWS",
+      "transport": "B/WN",
+      "shape": "BATTLE_ENVELOPE_NPC_WINDOW_5_FIELDS",
+      "renderVerified": false
+    }
+  ],
+  "tw10_verified_record_shapes": 16,
+  "tw10_verified_surface_count": 5,
+  "tw10_asset_census": {
+    "bitmap_address_records": 125996,
+    "sprite_groups": 464,
+    "animation_records": 39065,
+    "frame_records": 242085,
+    "species_count": null,
+    "original_species_to_sprite_map_complete": false
+  },
+  "descendant_pet_probe": {
+    "source": "RECOVERED25",
+    "active_enemybase_rows": 988,
+    "inactive_enemybase_rows": 640,
+    "original_v1_species_count": null
+  },
+  "legacy_helper_corpus": {
+    "source_manifest": "research/recovered/STONEAGE-LEGACY-ASSISTANT-AND-CONTENT-GAP-R1.json",
+    "initial_source_count": 14,
+    "initial_tool_families": 16,
+    "initial_feature_families": 12,
+    "all_programs_archived": false,
+    "all_versions_collected": false,
+    "all_features_semantically_reconstructed": false,
+    "all_programs_executed": false,
+    "feature_reconstruction_levels": [
+      "MENTION_ONLY",
+      "SOURCE_ATTESTED",
+      "VERSION_SPECIFIC_SEMANTIC_SPEC",
+      "SAFE_REFERENCE_BEHAVIOR_VERIFIED",
+      "NEW_GAME_ADOPTION_DECIDED"
+    ],
+    "prohibited_transition": "MENTION_ONLY_TO_HISTORICALLY_VERIFIED_WITHOUT_SOURCE"
+  },
+  "future_website": {
+    "required_collections": [
+      "versions",
+      "sources",
+      "characters",
+      "screens",
+      "maps",
+      "npcs",
+      "quests",
+      "pets",
+      "pet_animations",
+      "growth_profiles",
+      "skills",
+      "items",
+      "recipes",
+      "encounters",
+      "riding",
+      "historical_sites",
+      "helper_programs",
+      "helper_capabilities",
+      "tutorials"
+    ],
+    "record_contract": {
+      "required": [
+        "record_id",
+        "entity_type",
+        "version_profile",
+        "source_refs",
+        "verification_status",
+        "rights_status",
+        "record_revision"
+      ],
+      "optional": [
+        "names_and_aliases",
+        "game_ids",
+        "relationships",
+        "asset_refs",
+        "display_text",
+        "stats",
+        "availability_rules",
+        "page_history",
+        "screenshots",
+        "notes"
+      ],
+      "must_not_default": [
+        "unknown numeric stats",
+        "original quest reward",
+        "asset reproduction rights",
+        "original rendering layout"
+      ],
+      "export_rules": [
+        "Never erase unknowns: include explicit UNVERIFIED status",
+        "Never merge version-specific entity IDs without source-supported alias join",
+        "Public release only when rights_status=RELEASE_APPROVED",
+        "No copied proprietary asset bytes in Git by default",
+        "Design lore does not masquerade as historical evidence"
+      ],
+      "website_not_built": true,
+      "production_not_started": true
+    },
+    "website_development_started": false,
+    "site_go_live": false,
+    "original_company_site_cloned": false,
+    "player_publication_requires_separate_approval": true
+  },
+  "status": {
+    "historical_research_checkpoint_accepted": true,
+    "all_historical_quests_complete": false,
+    "all_historical_pets_complete": false,
+    "all_npc_interactions_complete": false,
+    "all_historical_avatars_complete": false,
+    "all_login_and_ui_frames_complete": false,
+    "all_external_helper_functions_complete": false,
+    "overall_completion_percent": null,
+    "stage_b_production_started": false,
+    "website_implementation_started": false,
+    "r79": "PAUSED_NON_BLOCKING"
+  },
+  "milestone_work_order": [
+    {
+      "id": "P1",
+      "package": "PET-ASSET-GROWTH-CATALOG-MATRIX-02",
+      "result": "source-scoped pet/template/graphics/growth multi-table links, with known and unknown ID edges",
+      "stop": "no reliable entity source -> keep OPEN; do not derive species count from graphic count"
+    },
+    {
+      "id": "P2",
+      "package": "ORIGINAL-UI-LOGIN-AVATAR-REVIEW-01",
+      "result": "login/avatar/creation/HUD/battle/NPC window source + screenshots/texture anchor register",
+      "stop": "no original runtime screenshot/callsite -> do not invent original layout"
+    },
+    {
+      "id": "P3",
+      "package": "WORLD-NPC-QUEST-SOURCE-JOIN-01",
+      "result": "versioned quest-NPC-map-item flows with exact source/unknown fields",
+      "stop": "late scripts stay late, cannot auto-map early originals"
+    },
+    {
+      "id": "P4",
+      "package": "LEGACY-ASSISTANT-FULL-FEATURE-ARCHIVE-01",
+      "result": "each tool/version known feature even exploit, historical behavior semantics, screenshots/manual/first attestation",
+      "stop": "document unverified functions; do not execute old binary or create cheating exploit"
+    },
+    {
+      "id": "P5",
+      "package": "HISTORICAL-SITE-IA-AND-WIKI-EXPORT-CONTRACT-01",
+      "result": "source-derived offline records searchable by version, gameplay category and source/copyright review",
+      "stop": "no web production or public release without user-approved game and rights review"
+    }
+  ],
+  "next_priority": "PET-ASSET-GROWTH-CATALOG-MATRIX-02",
+  "no_unbounded_feature_claim": true,
+  "raw_copyrighted_original_payload_added": false
+}

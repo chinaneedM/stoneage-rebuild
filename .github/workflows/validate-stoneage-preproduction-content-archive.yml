@@ -1,0 +1,30 @@
+name: Validate StoneAge preproduction content archive and wiki boundary
+on:
+  push:
+    paths:
+      - 'docs/STONEAGE-PREPRODUCTION-CONTENT-ARCHIVE-R1.md'
+      - 'research/recovered/STONEAGE-PREPRODUCTION-CONTENT-ARCHIVE-R1.json'
+      - 'research/recovered/STONEAGE-PREPRODUCTION-CONTENT-ARCHIVE-ACCEPTANCE-R1.json'
+      - 'tools/stoneage_preproduction_archive.py'
+      - 'tests/test_stoneage_preproduction_archive.py'
+      - 'tests/test_stoneage_preproduction_archive_continuity.py'
+      - 'docs/CURRENT-STATE.md'
+      - 'docs/DESIGN-DECISIONS.md'
+      - 'docs/RESTORATION-ROADMAP-R2.md'
+      - '.github/workflows/validate-stoneage-preproduction-content-archive.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate-preproduction-catalog:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check content provenance, false-completeness negatives, web-rights gate and historical continuity
+        run: |
+          python -m unittest tests.test_stoneage_preproduction_archive -v
+          python -m tools.stoneage_preproduction_archive
