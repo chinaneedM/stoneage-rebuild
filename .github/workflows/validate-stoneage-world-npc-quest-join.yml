@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - tools/stoneage_world_npc_quest_join_probe.py
+      - tools/stoneage_world_npc_quest_catalog.py
       - tests/test_stoneage_world_npc_quest_join_probe.py
       - tests/test_stoneage_world_npc_quest_join_archive.py
       - research/recovered/STONEAGE-WORLD-NPC-QUEST-*.json
@@ -21,7 +22,7 @@ jobs:
         with:
           python-version: '3.12'
       - name: Validate finite typed parsing and identity boundaries
-        run: python -m unittest tests.test_stoneage_world_npc_quest_join_probe -v
+        run: python -m unittest tests.test_stoneage_world_npc_quest_join_probe tests.test_stoneage_shell_delivery_witness_probe -v
       - name: Validate permanent derived archive when present
         if: ${{ hashFiles('research/recovered/STONEAGE-WORLD-NPC-QUEST-SOURCE-JOIN-R1.json') != '' }}
         run: python -m unittest tests.test_stoneage_world_npc_quest_join_archive -v

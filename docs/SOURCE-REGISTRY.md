@@ -6935,3 +6935,10 @@ SRC-SA-20010709-CLIENT-FILES-01：https://news.17173.com/z/stoneage/content/2001
 
 - 第一方实际快照：https://web.archive.org/web/20010418082314id_/http://www.titan.co.jp/stoneage/manual01.html；10924字节，SHA2565784d9f9e0ddca26240b4c163101759d772cadcc9ef8c81ef24bf99145dbd560。由manual02.html#2015链接去片段后取得，实际日期与请求不同。早期日服说明，非TW1.0/1999对应认证；无原HTML/美术入Git。
 - 原台湾1.0零售盘保存包CD_DIC.rar：沿用既有MD5/SHA1及镜像尺寸、sa_3.exe SHA256cdab9ea049a98bbc96ce93eeaa8b63c688f0c0f0ad8b3183e79d75e47621441a；本轮新静态调用、参数来源与候选写入为派生元数据。精确Git blob与Actions/artifact链由STONEAGE-TW10-LOGIN-AVATAR-ACCEPTANCE-R1固定；不声称原游戏执行、全部人物图号或真实界面。
+
+
+## 2026-10-17 — 具名送贝壳NPC/地图/物品来源
+
+- 新见证：https://news.17173.com/z/stoneage/content/2001-12-10/n281_197533.html?_platform=PC ，诗雨，原发表栏2001-12-10；限当前取得的同期署名玩家记录。姓名位置参考与贝壳获取途径有述，未锁具体构建或认证2001网页字节。与新浪01186091_c2.shtml汇编和2003-05-29 rwgl1_1.shtml的丢弃/重复操作分别处理。
+- 固定后代保存包d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5，源Action39026390233，具名NPC创建/唯一ExChangeMan参数、地图头、活动itemset2414/2415连接；原始二级脚本、对白及地图没有公开入Git。来源ZIP/raw/派生blob链见STONEAGE-WORLD-NPC-QUEST-ACCEPTANCE-R1。
+- 三页实际URL/编码/字节SHA256及事实见WITNESSES-R1；当前日期不等于历史快照认证。指定新浪URL在20011231附近Availability一次空结果不扩大为全网缺席。原台湾1.0商服同版任务、ID和真实运行保持OPEN。

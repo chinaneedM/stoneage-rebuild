@@ -1,0 +1,110 @@
+{
+  "schema": "stoneage.world_npc_quest.acceptance.r1",
+  "source_runs": {
+    "baseline": "4dfab89f83c45c310dc54a9e6dfee23dae58df48",
+    "tree": "49d9a430fb859a537c2846e264460c6e8ec07686",
+    "source": {
+      "head": "3da8de6770bfc7805a631bc036557baf8e51bc1b",
+      "tree": "e373b1c3f17cd7b2bd00513d898afb0bced99452",
+      "run": 39026390233,
+      "job": 117378103320,
+      "conclusion": "success",
+      "artifact": {
+        "id": 12097868935,
+        "node_id": "MDg6QXJ0aWZhY3QxMjA5Nzg2ODkzNQ==",
+        "name": "world-npc-quest-derived-r1",
+        "size_in_bytes": 2234,
+        "url": "https://api.github.com/repos/chinaneedM/stoneage-rebuild/actions/artifacts/12097868935",
+        "archive_download_url": "https://api.github.com/repos/chinaneedM/stoneage-rebuild/actions/artifacts/12097868935/zip",
+        "expired": false,
+        "digest": "sha256:1901f2723850604d3c3ef8f8e89f9f850b2abed6fe6dfe5f389fa06048c52131",
+        "created_at": "2026-10-17T10:50:48Z",
+        "updated_at": "2026-10-17T10:50:48Z",
+        "expires_at": "2026-10-24T10:50:48Z",
+        "workflow_run": {
+          "id": 39026390233,
+          "repository_id": 1374762421,
+          "head_repository_id": 1374762421,
+          "head_branch": "agent/world-npc-quest-source-join-r1-20261017",
+          "head_sha": "3da8de6770bfc7805a631bc036557baf8e51bc1b"
+        }
+      }
+    },
+    "witness": {
+      "head": "ebe7ac925e007abcc7844b4c8ece7867674abdd7",
+      "tree": "2b2051df7031db69b33d207c82b53926e2bf1ff1",
+      "run": 39026558177,
+      "conclusion": "success",
+      "artifact": {
+        "id": 12098712993,
+        "node_id": "MDg6QXJ0aWZhY3QxMjA5ODcxMjk5Mw==",
+        "name": "shell-delivery-witnesses-derived-r1",
+        "size_in_bytes": 1450,
+        "url": "https://api.github.com/repos/chinaneedM/stoneage-rebuild/actions/artifacts/12098712993",
+        "archive_download_url": "https://api.github.com/repos/chinaneedM/stoneage-rebuild/actions/artifacts/12098712993/zip",
+        "expired": false,
+        "digest": "sha256:dfed5ee3c79b372be58236880e3462565093dce28322853e9a7118627440d12b",
+        "created_at": "2026-10-17T10:53:57Z",
+        "updated_at": "2026-10-17T10:53:57Z",
+        "expires_at": "2026-10-24T10:53:57Z",
+        "workflow_run": {
+          "id": 39026558177,
+          "repository_id": 1374762421,
+          "head_repository_id": 1374762421,
+          "head_branch": "agent/world-npc-quest-source-join-r1-20261017",
+          "head_sha": "ebe7ac925e007abcc7844b4c8ece7867674abdd7"
+        }
+      },
+      "job": 117378570400
+    }
+  },
+  "reports": {
+    "research/recovered/STONEAGE-WORLD-NPC-QUEST-SOURCE-JOIN-R1.json": {
+      "bytes": 6850,
+      "sha256": "0b347fcbc034940247dc54ee6a30ff8aa6d1fc9ac68ecd022285f7e95970f616",
+      "git_blob": "86d4ae760aaa7028832c9d38229e0e1c5d4dfaaf"
+    },
+    "research/recovered/STONEAGE-WORLD-NPC-QUEST-WITNESSES-R1.json": {
+      "bytes": 2633,
+      "sha256": "e737c7a256da9fcfd16250b835ac90357747bdc66e9d3b88192c4673a2155e1f",
+      "git_blob": "cb7ed90fc6f3678ea7ca5bce3900ba0dee10128a"
+    },
+    "research/recovered/STONEAGE-WORLD-NPC-QUEST-CATALOG-R1.json": {
+      "bytes": 12778,
+      "sha256": "ac402f48c7045f431d0e68a48c7c3513d283f19704f3cf6bd90c3d3a773e576e",
+      "git_blob": "5aa29da3b4b62b9f2bf8f2d7ed36c750c3bb8b74"
+    }
+  },
+  "continuity_prefixes": {
+    "docs/CURRENT-STATE.md": {
+      "bytes": 1897442,
+      "sha256": "4d27562e6277ca69c1cb169546fa27fed9a1d0c33a156923a55298fea084627d",
+      "git_blob": "a05fa9f00345c12c6193961296d9ebef0d0f3183"
+    },
+    "docs/HISTORICAL-TIMELINE.md": {
+      "bytes": 426418,
+      "sha256": "1e70c0df0898aabb0b30ddf02f2068d81acc912ba7545d59991c6a81cfc2c1e4",
+      "git_blob": "6aba09498ef89609b8164f0e118d839b2c7ac821"
+    },
+    "docs/SOURCE-REGISTRY.md": {
+      "bytes": 671480,
+      "sha256": "da376d61473c96db4fcaabfe08903f81f131b2e224ef23d66bca9e96c47048b5",
+      "git_blob": "d546316971b4b1df3844605fa28fee44a1f81572"
+    },
+    "docs/RESTORATION-ROADMAP-R2.md": {
+      "bytes": 45588,
+      "sha256": "2f05673673872195a6ea2ac51ef4dede2e3afece3119a8c2c617e79eb2681033",
+      "git_blob": "3b3c776cb540665d5612d848f103aa6b290bba7e"
+    }
+  },
+  "bounded_availability_check": {
+    "url": "http://games.sina.com.cn/handbook/0101/01186091_c2.shtml",
+    "archived_snapshots": {},
+    "timestamp": "20011231"
+  },
+  "availability_empty_is_global_absence": false,
+  "archive_ci": [],
+  "main_ci": [],
+  "original_server_executed": false,
+  "original_tw10_complete_quest_restored": false
+}

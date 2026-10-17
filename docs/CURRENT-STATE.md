@@ -14988,3 +14988,16 @@ QUEST-NPC-FLOW-LINK-06有界完成：两条2465→2484候选、1条2478→2481�
 规格 docs/specs/STONEAGE-TW10-LOGIN-AVATAR-R1.md；机器目录及来源凭据见STONEAGE-TW10-LOGIN-AVATAR-CATALOG-R1.json和STONEAGE-TW10-LOGIN-AVATAR-ACCEPTANCE-R1.json。初次manual01链接片段处理、数字地址转录修正及一次合成测试失败均保留，不据错误零结果下历史结论；独立源/归档/main CI仅按随后真实结果登记。
 
 **最高NEXT WORLD-NPC-QUEST-SOURCE-JOIN-01**：按版本连接现有地图/NPC/对话/任务/物品/条件/奖励与登出标记，选择具名实质记录；无初代同源证据则UNKNOWN，不展开无界后代脚本链。人物实际图号/完整画面需要原版选择表值/边界、运行轨迹或可认证同期截图再重开。其后继续外挂全功能及历史资料站结构。Stage A既有有界研究验收保持、九族7 PARTIAL+2 OPEN；新作/网站生产与R79不启动，无全游戏百分比。
+
+
+## 2026-10-17 — WORLD-NPC-QUEST-SOURCE-JOIN-01 弥生/日美子任务静态实体连接
+
+从实时main4dfab89f83c45c310dc54a9e6dfee23dae58df48/tree49d9a430fb859a537c2846e264460c6e8ec07686启动，最新主线Action39026108091实际SUCCESS，完整当前状态1897442字节及README/协议/Design/Timeline/Source/Roadmap与Git远端源一致。最高WORLD-NPC-QUEST，具体范围先取弥生—日美子送贝壳，停止于同保存包实体/事件/物品连接，不扩通用helper。
+
+真实重新取固定recovered25双分卷、合包SHA256，通过Action39026390233/job117378103320：4985创建引用中保留30模板歧义和15缺参，精确Big5创建名称彌生、日美子分别连接地图2000/1000（两地图头存在），borncorner配置退化范围55,92与57,124，各有3条EventEnd道具记录。该后代活动itemset两ID2414、2415与NPC条件/收回/发出字段相连，名称字节SHA256分别精确等于Big5“不可思議的貝殼”“仙尼亞的花”。活动表13252行与未活动0710表13910行分别验证，不以备表替代setup。两物品dropatlogout原值0、vanishatdrop原值1；cost80/40是原字段，不当任务奖励/真实商店价格。彌生同记录收2415发2414、日美子同记录收2414发2415仅为配置候选，不声称条件满足、事务、初始任务态、完整循环或原服保存。
+
+独立网页来源Action39026558177实际SUCCESS：新浪当前早期汇编、17173诗雨2001-12-10发表栏玩家文章、2003-05-29双向友谊指南分别记录。玩家位置参考114,662与637,491不自动对应保存包NPC出生范围，坐标语境未知；送物中间贝壳与交付后的花不合成同一物。一次Wayback Availability在20011231附近对指定新浪URL返回空快照集，只限该查询，不推全网没有历史存档，亦不认证当前文章字节在2001原样存在。
+
+规格 docs/specs/STONEAGE-WORLD-NPC-QUEST-SOURCE-JOIN-R1.md，原来源派生/三网页见证/可查询实体关系/保管链分别为STONEAGE-WORLD-NPC-QUEST-SOURCE-JOIN、WITNESSES、CATALOG、ACCEPTANCE的R1 JSON。只存有限姓名查询、数字/指纹与关系，不存原脚本对白/地图/旧exe，不运行原商业服。完整布尔条件、执行顺序、TW1.0相同NPC/地图/ID与持久态仍UNKNOWN。原TW1.0 WN/M/MC只是通用观察面，不与后代配置冒充同版事件。独立归档及main CI必须随后按实际结果登记。
+
+**最高NEXT LEGACY-ASSISTANT-FULL-FEATURE-ARCHIVE-01**：以既有16家族清单中SADE早期版本序列、SaCh/SACHXP与STA同期有版号原文为第一有限批，逐版本列真实功能、出现证据与缺失；好坏功能先完整归档，不现在选择新作采用/实现。人物资源与原服任务只有新可认证同版源才重开。Stage A旧有界验收保持、九族7 PARTIAL+2 OPEN；新作/资料网站生产与R79暂停，不报全游戏百分比。
