@@ -11,7 +11,8 @@
       "zip_bytes": 2367,
       "conclusion": "success",
       "report": "research/recovered/STONEAGE-HISTORICAL-SITE-NAVIGATION-ATTEMPT1-R1.json",
-      "result_scope": "Initial seven targets; two qualified manuals; no global absence claim."
+      "result_scope": "Initial seven targets; two qualified manuals; no global absence claim.",
+      "producer_git_blob": "a017501b54df75b6e793ed782fa861cfd6ef72a4"
     },
     {
       "source_head": "c28a6ab9585d9e0a3df3204405e830aa4bcfa6d3",
@@ -23,7 +24,8 @@
       "zip_bytes": 9419,
       "conclusion": "success",
       "report": "research/recovered/STONEAGE-HISTORICAL-SITE-NAVIGATION-ATTEMPT2-R1.json",
-      "result_scope": "Bounded replay fallback and image-only index qualification; five qualified pages."
+      "result_scope": "Bounded replay fallback and image-only index qualification; five qualified pages.",
+      "producer_git_blob": "fcdcb6b64f2cffb8872713a2bce8da1b6fe00131"
     },
     {
       "source_head": "ca6e055921f265b5f5ff19242f35b155df1df3f0",
@@ -35,7 +37,8 @@
       "zip_bytes": 29624,
       "conclusion": "success",
       "report": "research/recovered/STONEAGE-HISTORICAL-SITE-NAVIGATION-R1.json",
-      "result_scope": "Eleven finite targets with observed frame children; six qualified pages, five bounded gaps."
+      "result_scope": "Eleven finite targets with observed frame children; six qualified pages, five bounded gaps.",
+      "producer_git_blob": "65a0225d080155e782eb5d37ea5f4c4b63718116"
     }
   ],
   "reports": {
@@ -72,5 +75,92 @@
   },
   "original_payloads_retained": false,
   "complete_historical_layout_verified": false,
-  "public_website_started": false
+  "public_website_started": false,
+  "archive_ci": [
+    {
+      "head": "5e1483376347cb5a237d83efdb6c1440e7b8ea37",
+      "run": 39035802074,
+      "conclusion": "success"
+    }
+  ],
+  "main_ci": [
+    {
+      "head": "5e1483376347cb5a237d83efdb6c1440e7b8ea37",
+      "run": 39035851695,
+      "name": "Acquire historical StoneAge site navigation metadata",
+      "conclusion": "success"
+    },
+    {
+      "head": "5e1483376347cb5a237d83efdb6c1440e7b8ea37",
+      "run": 39035851715,
+      "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+      "conclusion": "success"
+    },
+    {
+      "head": "5e1483376347cb5a237d83efdb6c1440e7b8ea37",
+      "run": 39035851931,
+      "name": "Validate Stage A early source gap triage",
+      "conclusion": "success"
+    },
+    {
+      "head": "5e1483376347cb5a237d83efdb6c1440e7b8ea37",
+      "run": 39035851709,
+      "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+      "conclusion": "success"
+    },
+    {
+      "head": "5e1483376347cb5a237d83efdb6c1440e7b8ea37",
+      "run": 39035851894,
+      "name": "Independently verify TW1.0 R58 rooted helper returns and source custody",
+      "conclusion": "success"
+    },
+    {
+      "head": "5e1483376347cb5a237d83efdb6c1440e7b8ea37",
+      "run": 39035851467,
+      "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+      "conclusion": "success"
+    },
+    {
+      "head": "5e1483376347cb5a237d83efdb6c1440e7b8ea37",
+      "run": 39035852002,
+      "name": "Validate archived historical site navigation and query boundaries",
+      "conclusion": "success"
+    },
+    {
+      "head": "5e1483376347cb5a237d83efdb6c1440e7b8ea37",
+      "run": 39035851503,
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "conclusion": "success"
+    },
+    {
+      "head": "5e1483376347cb5a237d83efdb6c1440e7b8ea37",
+      "run": 39035851518,
+      "name": "Validate StoneAge preproduction content archive and wiki boundary",
+      "conclusion": "success"
+    },
+    {
+      "head": "5e1483376347cb5a237d83efdb6c1440e7b8ea37",
+      "run": 39035851972,
+      "name": "Validate archived early assistant version evidence",
+      "conclusion": "success"
+    },
+    {
+      "head": "5e1483376347cb5a237d83efdb6c1440e7b8ea37",
+      "run": 39035851892,
+      "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+      "conclusion": "success"
+    },
+    {
+      "head": "5e1483376347cb5a237d83efdb6c1440e7b8ea37",
+      "run": 39035851858,
+      "name": "Validate legacy StoneAge assistant history and pet content gaps",
+      "conclusion": "success"
+    },
+    {
+      "head": "5e1483376347cb5a237d83efdb6c1440e7b8ea37",
+      "run": 39035851783,
+      "name": "Validate StoneAge Stage A joint review decision",
+      "conclusion": "success"
+    }
+  ]
 }
