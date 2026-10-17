@@ -72,7 +72,7 @@
   "stage_a": "7_PARTIAL_2_OPEN",
   "stage_b_production_started": false,
   "next": "TW10-ITEM-STATIC-BITMAP-SOURCE-SELECTOR-01",
-  "post_archive_main_ci": "PENDING_REAL_RUN_NOT_INFERRED",
+  "post_archive_main_ci": "SUCCESS_11_WORKFLOWS_ON_114fb854394d99be4702f5b07c4c0bb2f04a0a10",
   "correction_ci_history": {
     "initial_source_run": {
       "id": 39076262089,
@@ -91,5 +91,72 @@
     "failure_preserved_not_rewritten": true,
     "actual_branch_verified": true
   },
-  "post_archive_branch_ci": "SUCCESS_39076789532"
+  "post_archive_branch_ci": "SUCCESS_39076789532",
+  "main_acceptance": {
+    "remote_main_head": "114fb854394d99be4702f5b07c4c0bb2f04a0a10",
+    "remote_main_tree": "59f7e35c1cd7d141fdf14908f0fe2c3021876286",
+    "all_reported_same_head_runs_checked": true,
+    "total_completed_runs": 11,
+    "all_success": true,
+    "runs": [
+      {
+        "run_id": 39076990455,
+        "name": "Validate Stage A early source gap triage",
+        "result": "success"
+      },
+      {
+        "run_id": 39076990505,
+        "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+        "result": "success"
+      },
+      {
+        "run_id": 39076990512,
+        "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+        "result": "success"
+      },
+      {
+        "run_id": 39076990521,
+        "name": "Validate StoneAge Stage A joint review decision",
+        "result": "success"
+      },
+      {
+        "run_id": 39076990528,
+        "name": "Independently verify TW1.0 R58 rooted helper returns and source custody",
+        "result": "success"
+      },
+      {
+        "run_id": 39076990551,
+        "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+        "result": "success"
+      },
+      {
+        "run_id": 39076990573,
+        "name": "Verify source-ready original TW1.0 graphics category frame references",
+        "result": "success"
+      },
+      {
+        "run_id": 39076990618,
+        "name": "Validate Stage A evidence-limited review acceptance",
+        "result": "success"
+      },
+      {
+        "run_id": 39076990631,
+        "name": "Validate legacy StoneAge assistant history and pet content gaps",
+        "result": "success"
+      },
+      {
+        "run_id": 39076990660,
+        "name": "Validate StoneAge preproduction content archive and wiki boundary",
+        "result": "success"
+      },
+      {
+        "run_id": 39076990665,
+        "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+        "result": "success"
+      }
+    ],
+    "source_only_evidence_scope_preserved": true,
+    "original_game_complete": false,
+    "main_acceptance_recipient_note": "This records acceptance of commit 114fb8; further metadata receipt commit has its own independent workflow checks."
+  }
 }

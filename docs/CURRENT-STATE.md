@@ -15127,3 +15127,10 @@ WORLD源分支ec2aa8fac09f13a61c73c9542b2dd9c08c9fc1b9/tree0976772698b7470b72145
 第一归档测试提交`890410f`的独立Action`39076718170`实际**FAILURE**，原因仅为验收测试源码把Git blob的NUL分隔符与派生JSON行尾换行写成双重转义，两个assert因此失败，原数据散列及源CI不受影响。修复提交`1f08e3ea551e49ef7baf153e501efe58d3a24960`将测试改为真实NUL与换行，分支Action`39076789532`实际**SUCCESS**。保留失败原始记录、测试修复及更正后的回放，不将旧FAILURE涂改为SUCCESS。最终主线所有Actions及提交凭据仅可在实际快进后确认。
 
 下一NEXT `TW10-ITEM-STATIC-BITMAP-SOURCE-SELECTOR-01`，先定位真正原台湾1.0客户端静态图选择/显示入口，再连接 `S:I` 的同版字段/图号；没有真正调用参数即把用途留UNKNOWN，不继续猜“1031件原物品”。Stage A九系统7 PARTIAL+2 OPEN、Stage B及网站生产GATED、R79暂停，无全游戏完成百分比。
+
+ 
+### 2026-10-18 — T01台湾1.0位图/SPR交叉研究的主线实际验收回执
+
+在原main `114fb854394d99be4702f5b07c4c0bb2f04a0a10` 由前一 `87280e0b` 非强制快进、全量历史状态无删除后，主线同HEAD 11个实际Actions全部 **SUCCESS**。其中本次原始资源七类交叉测试为Action`39076990573`、SPR→ADRN原来源复核`39076990665`、玩家类别对照`39076990512`、Stage A联合审核`39076990521`；其余7项完整名称/运行ID保存在 `STONEAGE-TW10-VISUAL-CATEGORY-SPR-JOIN-ACCEPTANCE-R1.json` 的`main_acceptance.runs`中。最初测试转义失败39076718170保留；真实源归档ZIP/raw/代码blob与首次/修复成功CI不变。此回执不是全游戏历史验收，也不把原版静态图使用、具体宠物/人物身份认证或原服脚本复原。
+
+最高NEXT仍`TW10-ITEM-STATIC-BITMAP-SOURCE-SELECTOR-01`，先沿物品/S:I原客户端同版本资源使用路径找实际静态位图关联，不凭玩家分类硬绑定1031个原物品。其他22域原状态、九系统7 PARTIAL+2 OPEN、Stage B GATED与R79 PAUSED保持不变。
