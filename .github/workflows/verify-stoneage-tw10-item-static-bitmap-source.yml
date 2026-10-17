@@ -1,0 +1,28 @@
+name: Verify original TW1.0 item static bitmap metadata and protocol field boundary
+on:
+  push:
+    paths:
+      - tools/stoneage_tw10_item_static_bitmap_source.py
+      - tests/test_stoneage_tw10_item_static_bitmap_source.py
+      - .github/workflows/verify-stoneage-tw10-item-static-bitmap-source.yml
+      - research/recovered/STONEAGE-TW10-ITEM-STATIC-BITMAP-SOURCE-R1.json
+      - research/recovered/STONEAGE-TW10-ITEM-STATIC-BITMAP-SOURCE-ACCEPTANCE-R1.json
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original-item-metadata:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest tests.test_stoneage_tw10_item_static_bitmap_source tests.test_stoneage_tw10_gameplay_schema -v
+      - run: python -m tools.stoneage_tw10_item_static_bitmap_source --write "${{ runner.temp }}/tw10-item-static-source.json"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: tw10-item-static-source-derived
+          path: ${{ runner.temp }}/tw10-item-static-source.json
+          retention-days: 30
