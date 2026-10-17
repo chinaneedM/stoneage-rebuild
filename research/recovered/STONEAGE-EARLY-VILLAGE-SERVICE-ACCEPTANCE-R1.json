@@ -49,5 +49,37 @@
   "stage_b_gate": "GATED",
   "r79": "PAUSED_NON_BLOCKING",
   "status": "SOURCE_CONTRACT_ACCEPTED_NOT_GAMEPLAY_RESTORATION",
-  "next": "STAGE-A-EARLY-SOURCE-GAP-TRIAGE-01"
+  "next": "STAGE-A-EARLY-SOURCE-GAP-TRIAGE-01",
+  "post_archive_validation": {
+    "branch_head": "a97aede0ccb68d4f6cae3aa2621a2986e5e70566",
+    "branch_tree": "02dbb4d3997ba35ccae64eff45171116061beee8",
+    "source_test_run_id": 39001090987,
+    "source_test_conclusion": "success",
+    "archive_replay_run_id": 39001248082,
+    "archive_replay_job_id": 117304443926,
+    "archive_replay_conclusion": "success",
+    "replayed_existing_and_new_tests": 36,
+    "extra_archive_tests": 6,
+    "total_tests": 42,
+    "independently_tested_permanent_metadata": true,
+    "new_external_file_or_source_retrieved": false,
+    "main_before": "70e700243d4ecf363029601f60de7e01a51d4d49",
+    "compare_ahead": 3,
+    "compare_behind": 0,
+    "changed_paths": 9,
+    "removed_files": 0,
+    "nonforce_expected_head_fast_forward": true,
+    "main_after": "a97aede0ccb68d4f6cae3aa2621a2986e5e70566",
+    "main_early_village_workflow": {
+      "run_id": 39001293004,
+      "conclusion": "success"
+    },
+    "main_tw10_source_custody_workflow": {
+      "run_id": 39001293108,
+      "conclusion": "success"
+    },
+    "stage_a_accepted": false,
+    "stage_b_gate": "GATED",
+    "r79": "PAUSED_NON_BLOCKING"
+  }
 }

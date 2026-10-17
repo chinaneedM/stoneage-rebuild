@@ -14865,3 +14865,12 @@ QUEST-NPC-FLOW-LINK-06有界完成：两条2465→2484候选、1条2478→2481�
 首次提交8a310d6f5edf4c027f412371cacf7b2e2bfa63c4/tree b7f95938a0cdc42897aefa47b68bc90f231f2a3d，Actions39000978456/job117303630456 SUCCESS，共35项；随后强化判定器，不再把一个「原始任务物品下线删除未证明」的证据缺失判为已实际发生的游戏行为，并禁止未经校验的手册字段路径替换。强化后的实际来源提交5f27611d23fb344cec5731698bf0fe1b04aecb2f/tree66c577d69c09686bfb5bf20c2a9d7e2fc1c5494a，Action39001090987/job117303967477 SUCCESS，共36项测试及源/审阅记录校核：五类、13断言（12行为、1证据边界）、12原TW1.0客户端通用可观察字段位置、五份不可变Git源blob。JSS2001第一方官方说明与TW1.0零售客户端来源仍分离，不推成版本完全对应的商业服事件。
 
 永久报告research/recovered/STONEAGE-EARLY-VILLAGE-SERVICE-JOURNEY-R1.json Git blob7b6c724999e52a421af77d8c8e1e9351288e11ff；提取/断言工具git blob fca36a84a1843d028df3c04c4c6c0b51ae42a7fe；首次独立成功及强化后CI在STONEAGE-EARLY-VILLAGE-SERVICE-ACCEPTANCE-R1.json固定。此次只用已归档源，无新网页/原始商服下载，故无新增来源ZIP/artifact可核验；不能捏造artifact证据。后续归档重放与主线快进须以实际CI结果为准，不提前填成功。原始1999样本、商服存盘ACK、村NPC/任务、公交车运行、货品价钱和临时地面消失秒数仍OPEN；Stage A九族7 PARTIAL+2 OPEN，Stage B GATED、R79暂停。最高NEXT STAGE-A-EARLY-SOURCE-GAP-TRIAGE-01：不继续拓展早期手册的五个局部案例，评估能否取得实质原始证据，随后按九族阻塞重排。
+
+
+### EARLY-VILLAGE-SERVICE-JOURNEY-01 归档后验收、主线整合与后续任务
+
+源提交5f27611d23fb344cec5731698bf0fe1b04aecb2f/tree66c577d69c09686bfb5bf20c2a9d7e2fc1c5494a，Action39001090987/job117303967477 SUCCESS，36项来源形状、13条官方文字断言及5源blob/12原客户端观察面回归通过。归档后分支a97aede0ccb68d4f6cae3aa2621a2986e5e70566/tree02dbb4d3997ba35ccae64eff45171116061beee8，Action39001248082/job117304443926 SUCCESS：原36项加6项永久归档身份/否证门，总42 PASS。旧已知来源Git blob再审，不发生新的2001网页下载或商业服执行，当然没有新的源ZIP或短时原始artifact。完整保管链 research/recovered/STONEAGE-EARLY-VILLAGE-SERVICE-ACCEPTANCE-R1.json，永久派生原JSON blob7b6c724999e52a421af77d8c8e1e9351288e11ff。
+
+整合前再核main仍70e700243d4ecf363029601f60de7e01a51d4d49；branch ahead3/behind0，9项文件0删除，expected-head非强制快进至a97aede0ccb68d4f6cae3aa2621a2986e5e70566。主线独立服务合同Action39001293004 SUCCESS、TW1.0历史来源custody Action39001293108 SUCCESS。已验收的是五行为的来源约束与诊断分类，不是实际原NPC/任务/商服保存、不等于TW1.0事件/画面绑定。原1999/JSS首发对应未知、九系统7 PARTIAL+2 OPEN、Stage A未用户联合终验、Stage B GATED、R79 PAUSED_NON_BLOCKING。
+
+**最高NEXT STAGE-A-EARLY-SOURCE-GAP-TRIAGE-01**：对五类规则中的未知车费/线路边、供品ID/存储ACK、服务价目、任务报酬、地面超时等做有界可得来源清单；除非存在可认证同年代一手记录或原本商业服数据，不继续把文字模拟成游戏流程；随后重新按原版玩法恢复价值进行九族排序。上述main交接信息本身提交后若有新CI仍须实时核验，不得预称其成功。
