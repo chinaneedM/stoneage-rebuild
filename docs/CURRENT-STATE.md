@@ -15058,3 +15058,12 @@ WORLD源分支ec2aa8fac09f13a61c73c9542b2dd9c08c9fc1b9/tree0976772698b7470b72145
 5e1483376347cb5a237d83efdb6c1440e7b8ea37/tree080aa2318179e1badbf21f72f54fe5fb904d1818在复核最新main未变、ahead4/behind0、18路径0删除后快进；分支11项和主线13项全部实际SUCCESS。源实取主线39035851695、归档重放39035852002通过，完整运行列表及三个源生产者Git blob写入NAVIGATION-ACCEPTANCE-R1，原报告/图/全部历史前缀保留。15项相关验证通过；6合格网页/85静态链接/64目标片段存在只属网页来源，不等于初代全部内容或完整站点布局。
 
 下一最高仍同期媒体有限索引补证，按上一条具名原URL/主机迁移/档案查询线索推进；没有新源则转22域组合准备评审。未启动网站/新作生产或R79，未改写原版任务/宠物/UI及外挂穷尽缺口。
+
+
+## 2026-10-17 — 同期媒体内容补证：17173迁移文章、20条宠物候选与旧目录指针
+
+本轮从实时main 3a94ccbd06244b71bd6110be7f02efb4b9a001c9/tree d723e92c96e8f70401ab5f74a7c966efc1291bba启动，重新核验协议、完整CURRENT-STATE及历史尾部、README、Design、Timeline、Source、Roadmap和main最近九项SUCCESS Actions。旧JSS官方网站6节点/85链接的来源与主线验收仍成立，不再重复扩充它。具名同期媒体子项找到了5篇现存17173页：四篇显示2001-06-14（其中一篇为20条宠物称谓/地点玩家表，一篇送货村庄见闻，一篇成长个人分析，一篇捕宠经验），另有2001-09-11署名宠物推荐文章检索摘要。两篇现存文章明确保留旧经验目录链接 http://stoneage.17173.com/jingyan/jingyan.shtml 。本轮实际浏览的是迁移后的网页/摘要，并非2001 Wayback原页面。2004/2006目录回放没有被冒充2001。
+
+新增 docs/STONEAGE-EARLY-MEDIA-CONTENT-BRIDGE-R1.md 与 research/recovered/STONEAGE-EARLY-MEDIA-ARTICLE-PET-SOURCE-R1.json：五来源、20条逐行玩家宠物别称和出没地候选、四个跨域来源指针、精确URL和缺口字段。来源发表日仅为网页当前日期栏，不能证明原始2001 DOM/栏目树；TW1.0 graphic_id→原宠物物种/SPR、所有初代地图NPC与报酬、原增长仍UNKNOWN。独立数据边界测试在tests/test_stoneage_early_media_article_source.py，新工作流只在相关变更时触发。无原媒体HTML/图片、客户端字节或原外挂执行程序入Git。
+
+**当前最高NEXT：EARLY-MEDIA-ARCHIVE-SNAPSHOT-BOUNDARY-01**。仅具名查询上述旧经验栏目原年代快照、保留实际回放日期及原URL/主机迁移证据；无新的1999—2002有效快照则标记原媒体栏目结构OPEN_EVIDENCE_LIMITED，并转22域历史内容覆盖矩阵评审，不继续无限猜原站导航。原Stage A 7 PARTIAL+2 OPEN、有界验收、R79暂停，Stage B正式游戏/网站生产未启动；主线与CI实际成功只在后续验收后记录。

@@ -6979,3 +6979,14 @@ STONEAGE-HISTORICAL-WIKI-QUERY-CONTRACT-DRAFT-R1.json引用四个既有派生Git
 - stoneage.17173.com的根、index.shtml、guide/guide.htm、jiaoliu/jiaoliu.shtml本次实际分别20040115054253、20060205112246、20040811084749、20060205112723，全部超1999—2002窗口。响应指纹保留为拒绝倒填证据，不升为同期媒体导航。
 
 64片段引用在已取目标快照中存在，不同日期不认证当时点击与目标内容兼容；标签至22域/19集合只作22条候选研究路由。网页导航不证明原版宠物/地图/任务/数值。原HTML/图片/音效/执行文件未入Git，完整站点恢复仍OPEN。
+
+
+### 2026-10-17 — 17173年代标签玩家页的旧导航线索（迁移后页面，不是2001快照）
+
+- MEDIA17173_20010614_PET20 | https://news.17173.com/z/stoneage/content/2001-6-14/n37_953148.html | 当前页面显示2001-06-14，作者未知；20条玩家宠物名称/地点候选，正文末明示旧目录http://stoneage.17173.com/jingyan/jingyan.shtml；原年代快照未取得。
+- MEDIA17173_20010614_CATCH_GUIDE | https://news.17173.com/z/stoneage/content/2001-6-14/n500_416268.html | 当前页面显示2001-06-14，俄罗斯牛奶；另含旧经验目录URL；玩家捕捉方法不等于原服捕获率规则。
+- MEDIA17173_20010614_NORTH_ISLAND | https://news.17173.com/z/stoneage/content/2001-6-14/n781_697151.html | 当前页面显示2001-06-14，帝皇圣者；送货及路线作为玩家见闻，非同版服务器配置。
+- MEDIA17173_20010614_PET_GROWTH | https://news.17173.com/z/stoneage/content/2001-6-14/n289_205254.html | 当前页面显示2001-06-14，阿花；成长/隐藏属性是作者分析。
+- MEDIA17173_20010911_PET_RECS | https://news.17173.com/z/stoneage/content/2001-9-11/n907_823387.html | 仅查询摘要确认日期栏、作者when1314和宠物推荐主题，本轮直接阅读超时，不冒充全文采集。
+
+所有页面均为当前网页观察、非取得2001原始存档；旧目录自身当前含后期版本内容，不能证明其2001版栏目结构。证据包 docs/STONEAGE-EARLY-MEDIA-CONTENT-BRIDGE-R1.md；机器索引 research/recovered/STONEAGE-EARLY-MEDIA-ARTICLE-PET-SOURCE-R1.json。署名玩家说法只作候选内容，不认证1999/TW1.0原服规则或全宠物名录。
