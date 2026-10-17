@@ -42,10 +42,73 @@
     "preserved": true
   },
   "archive_ci": {
-    "status": "PENDING_NOT_CLAIMED"
+    "status": "SUCCESS",
+    "initial_source_only_failure": 39004208069,
+    "correction_preserves_failure": true,
+    "source_branch_commit": "153802de1c76dea3f9254cba39b2a7cb34692d7a",
+    "source_tree": "20d98bdc3f3e8ba51ccce56355860d460a324f11",
+    "runs": [
+      {
+        "id": 39004347635,
+        "name": "Validate Stage A evidence-limited review acceptance",
+        "conclusion": "SUCCESS"
+      },
+      {
+        "id": 39004347772,
+        "name": "Validate StoneAge runtime bootstrap contract",
+        "conclusion": "SUCCESS"
+      },
+      {
+        "id": 39004347811,
+        "name": "Validate Stage A early source gap triage",
+        "conclusion": "SUCCESS"
+      },
+      {
+        "id": 39004347878,
+        "name": "Validate StoneAge Stage A joint review decision",
+        "conclusion": "SUCCESS"
+      }
+    ]
   },
   "post_merge_ci": {
-    "status": "PENDING_NOT_CLAIMED"
+    "status": "SUCCESS",
+    "verified_head": "153802de1c76dea3f9254cba39b2a7cb34692d7a",
+    "verified_tree": "20d98bdc3f3e8ba51ccce56355860d460a324f11",
+    "method": "FAST_FORWARD_EXPECTED_HEAD_NON_FORCE",
+    "branch_ahead": 2,
+    "behind": 0,
+    "changed_paths": 13,
+    "deleted_files": 0,
+    "runs": [
+      {
+        "id": 39004429651,
+        "name": "Validate Stage A evidence-limited review acceptance",
+        "conclusion": "SUCCESS"
+      },
+      {
+        "id": 39004429680,
+        "name": "Validate StoneAge Stage A joint review decision",
+        "conclusion": "SUCCESS"
+      },
+      {
+        "id": 39004429733,
+        "name": "Validate Stage A early source gap triage",
+        "conclusion": "SUCCESS"
+      },
+      {
+        "id": 39004429663,
+        "name": "Independently verify TW1.0 R58 rooted helper returns and source custody",
+        "conclusion": "SUCCESS"
+      },
+      {
+        "id": 39004431702,
+        "name": "Validate StoneAge runtime bootstrap contract",
+        "conclusion": "SUCCESS"
+      }
+    ],
+    "stage_a_user_delegated_review_accepted": true,
+    "original_game_complete": false,
+    "stage_b_production_started": false
   },
   "user_delegation_used_for_option_b": true,
   "stage_a_research_review_accepted": true,

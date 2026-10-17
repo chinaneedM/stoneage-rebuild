@@ -14915,3 +14915,12 @@ QUEST-NPC-FLOW-LINK-06有界完成：两条2465→2484候选、1条2478→2481�
 正式决议`docs/STAGE-A-EVIDENCE-LIMITED-ACCEPTANCE-R1.md`、机器记录`research/recovered/STONEAGE-STAGE-A-EVIDENCE-LIMITED-ACCEPTANCE-R1.json`；现代单机设计讨论预备`docs/STAGE-B-COLLABORATIVE-DESIGN-BRIEF-R1.md`。旧`STAGE-A-JOINT-REVIEW-DECISION-R1.json`里的`stage_a_accepted=false`是之前的**时间点快照**，不修改；新的同意标记只存在新决议文件，且是“研究检查点”而非历史复原全完成。未来出现可信同版原始资料或具体机制矛盾，重开最小命名Stage A区域、追加版本化校正和反例，不能静默填补未知值。
 
 **最高NEXT STAGE-B-JOINT-DESIGN-DIRECTION-01**：准备并与用户共同讨论新单机石器的世界结构/剧情尺度、战斗和宠物养成、文明成长与首次骑宠里程碑、引擎候选与独立确定性核心、版权合规资产策略和首个体验切片验收。仅讨论准备，**未批准最终引擎/生产代码/新剧情美术制作**。本地savedata R79保持PAUSED_NON_BLOCKING。源分支初始提交后CI、完整历史追加/档案验收和主线快进必须以之后真实独立验收为准，不能预称通过。此条作为当前状态高优先级交接，旧历史的NEXT已被取代。
+
+
+### STAGE-A-EVIDENCE-LIMITED-REVIEW-ACCEPTANCE-01 真实主线CI验收与永久凭据（2026-10-17）
+
+本轮Stage A研究有界决议不是所有原版业务CLOSED。正式源审阅b4c5cf7fb43216c6fbb1b591c6863d95182156a5/tree9f0ebfea211609dc836030ad8b51993d727d3428在未追加完整5份旧史料前触发Action39004208069失败，已保留该失败事实；归档与严格五原文件前缀恢复后，修正提交153802de1c76dea3f9254cba39b2a7cb34692d7a/tree20d98bdc3f3e8ba51ccce56355860d460a324f11分支Action39004347635、39004347772、39004347811、39004347878四项实际SUCCESS。合并前实时检查main仍abf584d7858c4089aef0b103c41270665f2c8219，分支ahead2/behind0、13个路径0删除，expected_sha且force=false快进main到153802de1c76dea3f9254cba39b2a7cb34692d7a。
+
+在上述main同HEAD上，Stage A有界审核Action39004429651、原联合审阅39004429680、村庄缺源39004429733、台湾1.0原客户端R58来源保管39004429663、现有runtime bootstrap39004431702**五项全部实查SUCCESS**。完整失败保留/分支/主线Action及上述源码/历史版本界限写回`research/recovered/STONEAGE-STAGE-A-EVIDENCE-LIMITED-ACCEPTANCE-RECEIPT-R1.json`；本条追加后的独立归档CI仍待实查，不预报结果。
+
+**最新状态**：Stage A证据受限的**研究审阅检查点**经用户委托授权后已接受；九系统史料完成状态仍7 PARTIAL+2 OPEN，尚无认证初代完整游戏与原始商业服全流程，整体百分比无定义。Stage B仅设计讨论预备，无生产代码/正式引擎/新内容定案；`R79`暂停。**最高NEXT STAGE-B-JOINT-DESIGN-DIRECTION-01**：以已交付设计讨论包商定完整世界观/游戏核心设计与技术生产门槛；未来有匹配年代证据可只重开Stage A具体业务而不抹历史。
