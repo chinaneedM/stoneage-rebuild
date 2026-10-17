@@ -1,0 +1,94 @@
+{
+  "schema": "stoneage.early_content.model_crosswalk.r1",
+  "date": "2026-10-17",
+  "existing_runtime_code_changed": false,
+  "source_pins": {
+    "original_derived": {
+      "path": "research/recovered/STONEAGE-EARLY-CONTENT-GUIDE-MANUAL-R1.json",
+      "bytes": 6911,
+      "sha256": "02c854ace5ff8364fc141dc4ee58e6c518b91af126b89b8c0ee2d4b112c9ae5b",
+      "git_blob": "54404a8118f125a9a53eabbb8bad8c4a0d07b190"
+    },
+    "transport_spec": {
+      "path": "research/mechanics/STONEAGE-BUS-AIR-TRANSPORT-CORE-R1.md",
+      "bytes": 10623,
+      "sha256": "f590f124ee2bbd610c65ef73356997c40f1b542a10692a5a8bb2bcf7fd0a6e6a",
+      "git_blob": "cfc745b66ed304bf33bf7c621c94a620448c20af"
+    },
+    "transport_model": {
+      "path": "tools/stoneage_transport_core_model.py",
+      "bytes": 8811,
+      "sha256": "543732f076c45837f352ec00809ef277e7cf01b6189fe5e62668d82a546f6d21",
+      "git_blob": "a7cc1930f51623c7f588ee86b2f23195788cd0b6"
+    },
+    "savepoint_spec": {
+      "path": "research/mechanics/STONEAGE-SAVEPOINT-ELDER-RETURN-CORE-R1.md",
+      "bytes": 9998,
+      "sha256": "e3aac2632f092a962f0028f26686caf63b4048c6e1cc6318070b26f638b463e8",
+      "git_blob": "8a7e1a29b247b94c0736aadc05d8a0c1fc5f75d7"
+    },
+    "savepoint_model": {
+      "path": "tools/stoneage_savepoint_elder_model.py",
+      "bytes": 7984,
+      "sha256": "a95dfdb995a2606281428b294c7d970cc10c87048c04e477c0217522bd9da83d",
+      "git_blob": "66623cdab7ed60a0d3903f9eee8f2d990fe5777e"
+    },
+    "healer_spec": {
+      "path": "research/mechanics/STONEAGE-HEALER-RECOVERY-CORE-R1.md",
+      "bytes": 8871,
+      "sha256": "1a142645d0e1dd926cb4727fa4c5c67d3ec4df4d935480025fabf4a77a746fde",
+      "git_blob": "4cfc797503841801e84e3d14a31baaf8a46392c1"
+    },
+    "healer_model": {
+      "path": "tools/stoneage_healer_recovery_model.py",
+      "bytes": 5648,
+      "sha256": "89d388b31d1dc3af6134a93823ef01679041a3eda6ede0011eb37226b6b6e0fd",
+      "git_blob": "e9eb29ebbb70a3fbee7cff9249294d55200a3157"
+    }
+  },
+  "rows": [
+    {
+      "id": "BUS_TIMING",
+      "manual": "3 minute stop",
+      "descendant": "default180 seconds with recovered120 second exception",
+      "disposition": "COMPATIBLE_DEFAULT_NOT_UNIVERSAL_OVERRIDE",
+      "missing": [
+        "actual early fare",
+        "map/route IDs",
+        "capacity implementation join",
+        "encounter scheduling join"
+      ]
+    },
+    {
+      "id": "SAVE_POINT",
+      "manual": "first use offering and next login at selected point",
+      "descendant": "GetItem gate plus NOITEM and conditional appear-table return",
+      "disposition": "RELATED_BEHAVIOR_VERSIONED_CONTROL_FLOW_NOT_EXACT_ID_OR_ACK_PROOF",
+      "missing": [
+        "first-party item IDs/quantities",
+        "source-matched return map condition",
+        "original durable save"
+      ]
+    },
+    {
+      "id": "HEALER",
+      "manual": "village recovery service",
+      "descendant": "free healer and paid window healer coexist",
+      "disposition": "NO_INFERRED_FREE_SERVICE_REVIVAL_OR_STATUS_CLEAR",
+      "missing": [
+        "first-party charges and full recovery scope"
+      ]
+    },
+    {
+      "id": "ITEM_LIFETIME",
+      "manual": "ordinary ground lifetime unspecified",
+      "guide": "quest discard and logout separately reported",
+      "disposition": "THREE_DISTINCT_TRIGGERS_NOT_SHARED_FLAG_PROOF",
+      "missing": [
+        "actual item IDs and server flags"
+      ]
+    }
+  ],
+  "stage_a_accepted": false,
+  "stage_b_gate": "GATED"
+}

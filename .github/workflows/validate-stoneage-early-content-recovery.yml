@@ -18,6 +18,8 @@ jobs:
           python-version: '3.12'
       - name: Source-bound parser and no-promotion checks
         run: python -m unittest tests.test_stoneage_early_content_probe -v
+      - name: Existing transport save-point and healer model regressions
+        run: python -m unittest tests.test_stoneage_transport_core_model tests.test_stoneage_savepoint_elder_model tests.test_stoneage_healer_recovery_model -v
       - name: Acquire seven fixed public evidence pages, retain metadata only
         run: python tools/stoneage_early_content_probe.py --output "$RUNNER_TEMP/early-content-derived.json"
       - uses: actions/upload-artifact@v4

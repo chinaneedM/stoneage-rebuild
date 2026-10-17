@@ -14624,3 +14624,38 @@ docs/specs/STONEAGE-EARLY-CONTENT-GUIDE-MANUAL-R1.md，另有INTAKE记录
 转载不加独立见证数。sqsd-rw3.zip仅在新有效镜像/目录线索出现时重开，
 不重复502、不重新扫全部版本/地图/NPC、不扩大手册低层支线。九族仍
 7 PARTIAL+2 OPEN，原始商业世界/NPC脚本/奖赏/SAAC仍OPEN，Stage B GATED。
+
+
+### EARLY-CONTENT-RECOVERY-01 独立来源获取与永久派生归档验收
+
+源代码9f3d7abf0b6187b3404827b7ace78d44565f3f7c / tree
+ce5647bbc72fe8a768e928f600371f25e9e6cd58；Action38989940420、
+job117269867939 SUCCESS，5项解析/否证测试及7源真实独立HTTP读取通过。
+artifact12084114450为2694字节ZIP，SHA256
+c61e342c3ad101f1f18cbb4f440dd7a326fb092bbca27dd683dfebdd17aa2634；
+独立下载解压的唯一6911字节原JSON SHA256
+02c854ace5ff8364fc141dc4ee58e6c518b91af126b89b8c0ee2d4b112c9ae5b，
+永久Git blob54404a8118f125a9a53eabbb8bad8c4a0d07b190，路径
+research/recovered/STONEAGE-EARLY-CONTENT-CI-DERIVED-R1.json。
+原始JSON与本地报告逐字节相等，7源原始hash和业务语义及6节摘要全部
+相等；原始HTML没有入库。ACCEPTANCE记录完整HEAD/tree/run/job/
+artifact/ZIP/rawJSON/永久blob链；七份历史前缀逐字节保留。附加归档一致
+回归成为本包第6项检查。伴随旧来源边界Actions38989940375、
+38989940320也成功。归档后的分支CI与主线整合需再次验收。
+
+实际新增是原始手册四类合同和四条有来源的指南内容规格，不是原服
+任务脚本、地图载荷、NPC人口或真实奖励/持久化执行。下一项仍
+EARLY-QUEST-CONTENT-02；Stage A未终验、Stage B GATED、R79暂停。
+
+
+### 第一方手册→现有模型的有限对应
+
+补证后复用transport/savepoint/healer现有规格与模型，记录四条实际
+关系而不更改运行时代码：手册3分钟与默认180秒相容，但后期120秒
+配置保留；手册首次供品不能覆盖后代NOITEM例外和appear条件返回；
+手册医院不定价，不能推出免费、复活、清异常；普通落地到时消失与
+任务丢弃即时/下线销毁分为三种触发。
+MODEL-CROSSWALK-R1.json固定7来源hash/blob；本包7项来源/归档/对应
+检查与54项既有运输/记录点/治疗回归共61项本地通过。未将现代布尔
+容量检查冒充四乘客人数实现，也未宣称免遇敌调度已有完整执行证明。
+来源获取仍由前述独立原始artifact支持，后续分支CI需复验归档与对应。

@@ -1,5 +1,6 @@
 """Synthetic parser negatives and the permanent derived-content boundaries."""
 import json
+import hashlib
 from pathlib import Path
 import unittest
 
@@ -49,6 +50,35 @@ class EarlyContentProbeTests(unittest.TestCase):
         self.assertIsNone(profiles['FIVE_BROTHERS']['server_logout_flag'])
         self.assertTrue(d['comparison']['repeat_penalty_and_earlier_discard_penalty_are_different_operations'])
         self.assertTrue(d['comparison']['earlier_shell_to_flower_branch_is_not_disproved_by_reverse_branch'])
+
+    def test_archived_independent_acquisition_matches_local_semantic_report(self):
+        folder = ROOT / 'research/recovered'
+        local = json.loads((folder / 'STONEAGE-EARLY-CONTENT-GUIDE-MANUAL-R1.json').read_text())
+        remote = json.loads((folder / 'STONEAGE-EARLY-CONTENT-CI-DERIVED-R1.json').read_text())
+        self.assertEqual(remote, local)
+        self.assertFalse(remote['original_server_executed'])
+
+    def test_first_party_manual_does_not_overwrite_descendant_configuration(self):
+        from tools.stoneage_transport_core_model import DEFAULT_WAIT_SECONDS, init_state
+        from tools.stoneage_savepoint_elder_model import begin_savepoint_talk
+        from tools.stoneage_healer_recovery_model import window_healer_level_is_free
+        folder = ROOT / 'research/recovered'
+        data = json.loads((folder / 'STONEAGE-EARLY-CONTENT-GUIDE-MANUAL-R1.json').read_text())
+        self.assertEqual(data['observations']['manual_contracts']['bus']['stop_minutes'] * 60,
+                         DEFAULT_WAIT_SECONDS)
+        configured = init_state(kind='bus', route_count=1, selected_route=1,
+                                selected_route_points=3, now=0, waittime=120)
+        self.assertEqual(configured.waittime, 120)
+        noitem = begin_savepoint_talk(savepoint_mask=1, last_talk_elder=0,
+                                      elder_id=6, noitem=True, requirement_available=False)
+        self.assertEqual(noitem['stage'], 'activated')
+        self.assertFalse(window_healer_level_is_free(10, 10))
+        crosswalk = json.loads((folder / 'STONEAGE-EARLY-CONTENT-MODEL-CROSSWALK-R1.json').read_text())
+        self.assertFalse(crosswalk['existing_runtime_code_changed'])
+        for pin in crosswalk['source_pins'].values():
+            body = (ROOT / pin['path']).read_bytes()
+            self.assertEqual(hashlib.sha256(body).hexdigest(), pin['sha256'])
+            self.assertEqual(len(body), pin['bytes'])
 
 
 if __name__ == '__main__':

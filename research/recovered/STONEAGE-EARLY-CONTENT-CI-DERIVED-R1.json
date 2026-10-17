@@ -1,0 +1,191 @@
+{
+  "schema": "stoneage.early_content.guide_manual_acquisition.r1",
+  "sources": {
+    "jss_manual": {
+      "replay_url": "https://web.archive.org/web/20010418083149id_/http://www.titan.co.jp/stoneage/manual02.html",
+      "final_url": "https://web.archive.org/web/20010418083149id_/http://www.titan.co.jp/stoneage/manual02.html",
+      "bytes": 28434,
+      "sha256": "50b9771ec501067136629c8e083a190e979e53dd9ba141903f78b76d43b602cc",
+      "decoding": "shift_jis",
+      "replacement_characters": 0
+    },
+    "catalog": {
+      "replay_url": "https://games.sina.com.cn/downgames/other/0118654.shtml",
+      "final_url": "https://games.sina.com.cn/downgames/other/0118654.shtml",
+      "bytes": 27633,
+      "sha256": "e0eb3b3494ad207d3354c4a8051aec1ab6e297de9dddbc0d6b9a64ae080d0346",
+      "decoding": "gb18030",
+      "replacement_characters": 0
+    },
+    "logging": {
+      "replay_url": "https://games.sina.com.cn/handbook/0101/01186091.shtml",
+      "final_url": "https://games.sina.com.cn/handbook/0101/01186091.shtml",
+      "bytes": 37893,
+      "sha256": "1890f3f046e9d58847c1a799f2baf97298cc3dbe50d24f6d7115f7d22a5513d9",
+      "decoding": "gb18030",
+      "replacement_characters": 1
+    },
+    "adult": {
+      "replay_url": "https://games.sina.com.cn/handbook/0101/01186091_c1.shtml",
+      "final_url": "https://games.sina.com.cn/handbook/0101/01186091_c1.shtml",
+      "bytes": 36586,
+      "sha256": "18026cf27e06f33da313540146e96c9845d0a2620adc4977a17fc87fb5a836fe",
+      "decoding": "gb18030",
+      "replacement_characters": 0
+    },
+    "delivery": {
+      "replay_url": "https://games.sina.com.cn/handbook/0101/01186091_c2.shtml",
+      "final_url": "https://games.sina.com.cn/handbook/0101/01186091_c2.shtml",
+      "bytes": 36563,
+      "sha256": "91b65594bd21e2e5cb598902eecd7649fa84a1db67574515030d20dbfd4fb07c",
+      "decoding": "gb18030",
+      "replacement_characters": 2
+    },
+    "brothers": {
+      "replay_url": "https://games.sina.com.cn/handbook/0101/01186092.shtml",
+      "final_url": "https://games.sina.com.cn/handbook/0101/01186092.shtml",
+      "bytes": 40054,
+      "sha256": "8f2ad4903d7c5c4812cd7f87d9a47216abf0cc358eec2e1d4b14da8f4f4c963a",
+      "decoding": "gb18030",
+      "replacement_characters": 1
+    },
+    "later_delivery": {
+      "replay_url": "https://games.sina.com.cn/zhqu/sta/rwgl1_1.shtml",
+      "final_url": "https://games.sina.com.cn/zhqu/sta/rwgl1_1.shtml",
+      "bytes": 46601,
+      "sha256": "6313792024d9f35c1d349ef57aed559c0c3c5fa50c1837916fb0b26c666ba2bd",
+      "decoding": "gb18030",
+      "replacement_characters": 0
+    }
+  },
+  "observations": {
+    "manual_contracts": {
+      "save_point": {
+        "next_login_uses_recorded_point": true,
+        "first_use_offering_required": true,
+        "offering_id": null,
+        "offering_quantity": null,
+        "durable_server_write_proven": false
+      },
+      "bus": {
+        "route_village_sets": [
+          [
+            "サムギル",
+            "マリナス",
+            "クオ"
+          ],
+          [
+            "ジャジャ",
+            "カルターナ",
+            "タムタム"
+          ]
+        ],
+        "direct_edge_topology_proven": false,
+        "stop_minutes": 3,
+        "passenger_limit": 4,
+        "encounters_while_riding": false,
+        "boarding_and_exit_control": "GROUP_BUTTON_WHILE_FACING_BUS_FOR_BOARDING",
+        "fare": null
+      },
+      "services": {
+        "work_examples": [
+          "VILLAGE_PARCEL_DELIVERY",
+          "KURUKU_MINE_ORE_WORK"
+        ],
+        "paid_pet_skill_training": true,
+        "pet_buyback": true,
+        "every_village_has_every_facility": false,
+        "prices_or_job_payouts": null
+      },
+      "ground_item": {
+        "ordinary_ground_item_expires_after_unspecified_time": true,
+        "duration": null,
+        "quest_specific_immediate_drop_or_logout_flag_proven": false
+      }
+    },
+    "guide_profiles": [
+      {
+        "id": "FRIENDSHIP_SHELL_DELIVERY",
+        "source": "delivery",
+        "reported_flow": [
+          "YAYOI_MARINAS_GIVES_SHELL",
+          "HIMIKO_SAMGIL_RECEIVES",
+          "FLOWER_REWARD"
+        ],
+        "reported_drop_consequence": {
+          "item_vanishes": true,
+          "charm_delta": -2
+        },
+        "item_id": null,
+        "early_version_membership": "OPEN"
+      },
+      {
+        "id": "ADULT_CEREMONY",
+        "source": "adult",
+        "reported_min_level": 30,
+        "recommended_level_is_gate": false,
+        "reported_jade_quantity": 15,
+        "reported_south_approach_pass_cost": 200,
+        "pass_cost_required_for_all_approaches": false,
+        "reward_type": "CEREMONY_HELMET",
+        "item_id": null,
+        "early_version_membership": "OPEN"
+      },
+      {
+        "id": "LOGGING_LICENCE",
+        "source": "logging",
+        "reported_flow": [
+          "AXE_ERRAND",
+          "INTRODUCTION",
+          "LICENCE",
+          "PLAYER_LAST_HIT_WOOD",
+          "WOOD_BUYBACK_AND_LICENCE_RETURN"
+        ],
+        "guide_example": {
+          "wood_count": 14,
+          "approximate_total_stone": 5000,
+          "exact_unit_price": null
+        },
+        "pet_last_hit_qualifies_in_guide": false,
+        "item_id": null,
+        "early_version_membership": "OPEN"
+      },
+      {
+        "id": "FIVE_BROTHERS",
+        "source": "brothers",
+        "reported_answer_papers": 5,
+        "reported_crystal_lost_on_logout": true,
+        "party_entry_restricted_in_guide": true,
+        "in_battle_help_reported": true,
+        "server_logout_flag": null,
+        "early_version_membership": "OPEN"
+      }
+    ],
+    "comparison": {
+      "source": "later_delivery",
+      "dated_page": "2003-05-29",
+      "contains_both_delivery_directions": true,
+      "earlier_shell_to_flower_branch_is_not_disproved_by_reverse_branch": true,
+      "later_repeat_charm_delta": -1,
+      "repeat_penalty_and_earlier_discard_penalty_are_different_operations": true,
+      "all_named_shells_share_one_item_id": null
+    },
+    "manual_section_hashes": {
+      "7030": "00276a07b605d04373f78695d02f0107857eb92081c1dd9968365d6ad1a766c4",
+      "8010": "59a0eb5367aafb3178ccc5544778df4e68c217ba1f29828031e251226d0a1e65",
+      "8025": "d9b7e84c30039dea7fac1ba5b55cf40bdf1cbf3e1ddc2b9ae1046db31b219e8a",
+      "8050": "06b6727b50a85848e5f261e5eeac5e5b923565d999f662c69482d10da0c4680b",
+      "8070": "d9680dd6ee6dd46ec509200fe20b2580a6ab57c43443d58c4475b1604c831c35",
+      "8100": "90797137c5e1a1cbbc90709be890899fdcedcbd856b497e226a726570397b2e5"
+    }
+  },
+  "manual_capture": "20010418083149",
+  "manual_is_1999_or_tw10_exact_build": false,
+  "catalog_published_date": "2001-01-18",
+  "catalog_date_authenticates_current_html_bytes_in_2001": false,
+  "guide_zip_obtained": false,
+  "original_server_executed": false,
+  "early_quest_scripts_recovered": false,
+  "stage_a_accepted": false,
+  "stage_b_gate": "GATED"
+}
