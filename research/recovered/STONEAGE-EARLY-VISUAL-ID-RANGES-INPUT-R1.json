@@ -1,0 +1,330 @@
+{
+  "schema": "stoneage.early_ui_visual_resource_claims.r1",
+  "date": "2026-10-17",
+  "remote_baseline_head": "a041af528eec13a4e832efca09b6c165a146ff8e",
+  "remote_baseline_tree": "43265d6f1c317dfc4c396eba91c7934341ba8b41",
+  "task": "ORIGINAL-UI-LOGIN-AVATAR-REVIEW-01",
+  "source_grade": "2001_DATED_PLAYER_CLAIM_NOT_DIRECT_JSS_OR_TW10_UI_PROOF",
+  "articles": [
+    {
+      "id": "SA17173-20010614-STONEPIC",
+      "title": "stonepic的图片编号",
+      "author": "寻梅子・古月",
+      "published": "2001-06-14",
+      "url": "https://news.17173.com/z/stoneage/content/2001-6-14/n84_511.html?_platform=PC",
+      "evidence_type": "CONTEMPORANEOUS_PLAYER_RESOURCE_ID_CLASSIFICATION",
+      "claimed_branch": "UNSPECIFIED_2001_MAINLAND_USER_IMAGE_INDEX",
+      "not_proven": "TW10 exact intended category or actual renderer use"
+    },
+    {
+      "id": "SA17173-OLD-GUIDE-14",
+      "title": "17173石器时代新手指南",
+      "published": null,
+      "url": "https://news.17173.com/z/stoneage/guide/14.htm",
+      "evidence_type": "HISTORICAL_GUIDE_TEXT_UNDATED_ARCHIVE",
+      "claimed_branch": "UNSPECIFIED_EARLY_CHINESE",
+      "not_proven": "JSS1999 release date or identical v1 menu rendering"
+    },
+    {
+      "id": "SA17173-20010709-FILES",
+      "title": "石器游戏目录的秘密",
+      "published": "2001-07-09",
+      "url": "https://news.17173.com/z/stoneage/content/2001-7-9/n653_569161.html?_platform=PC",
+      "evidence_type": "CONTEMPORANEOUS_PLAYER_FILE_GUIDE",
+      "claimed_branch": "CHINESE_MAINLAND_OPERATOR_CONTEXT",
+      "not_proven": "TW10 exact install path/screenshots"
+    }
+  ],
+  "claimed_ranges": [
+    {
+      "id": "tiles_small",
+      "from": 1,
+      "to": 4574,
+      "claim": "小地形格",
+      "semantic": "WORLD_TILES",
+      "reference": "SA17173-20010614-STONEPIC",
+      "actual_tw10_semantic_certified": false
+    },
+    {
+      "id": "tiles_large",
+      "from": 4575,
+      "to": 5845,
+      "claim": "房屋等大地形物件",
+      "semantic": "WORLD_OBJECTS",
+      "reference": "SA17173-20010614-STONEPIC",
+      "actual_tw10_semantic_certified": false
+    },
+    {
+      "id": "npc_candidate",
+      "from": 5846,
+      "to": 5946,
+      "claim": "NPC",
+      "semantic": "NPC_ASSET",
+      "reference": "SA17173-20010614-STONEPIC",
+      "actual_tw10_semantic_certified": false
+    },
+    {
+      "id": "japanese_unknown",
+      "from": 5947,
+      "to": 5972,
+      "claim": "日文未知物件",
+      "semantic": "UNRESOLVED",
+      "reference": "SA17173-20010614-STONEPIC",
+      "actual_tw10_semantic_certified": false
+    },
+    {
+      "id": "items",
+      "from": 5973,
+      "to": 7003,
+      "claim": "装备料理素材",
+      "semantic": "ITEM_IMAGE",
+      "reference": "SA17173-20010614-STONEPIC",
+      "actual_tw10_semantic_certified": false
+    },
+    {
+      "id": "magic",
+      "from": 7004,
+      "to": 7245,
+      "claim": "魔法施展画面",
+      "semantic": "MAGIC_EFFECT",
+      "reference": "SA17173-20010614-STONEPIC",
+      "actual_tw10_semantic_certified": false
+    },
+    {
+      "id": "pet_portrait",
+      "from": 7246,
+      "to": 7366,
+      "claim": "宠物相片",
+      "semantic": "PET_PORTRAIT_CANDIDATE",
+      "reference": "SA17173-20010614-STONEPIC",
+      "actual_tw10_semantic_certified": false
+    },
+    {
+      "id": "character_portrait",
+      "from": 7367,
+      "to": 8566,
+      "claim": "人物相片",
+      "semantic": "CHARACTER_PORTRAIT_CANDIDATE",
+      "reference": "SA17173-20010614-STONEPIC",
+      "actual_tw10_semantic_certified": false
+    },
+    {
+      "id": "gm_riding_portrait",
+      "from": 8567,
+      "to": 8569,
+      "claim": "骑鸟GM照片",
+      "semantic": "GM_ONLY",
+      "reference": "SA17173-20010614-STONEPIC",
+      "actual_tw10_semantic_certified": false
+    },
+    {
+      "id": "battle",
+      "from": 8570,
+      "to": 8826,
+      "claim": "战斗相关画面",
+      "semantic": "BATTLE_RESOURCE",
+      "reference": "SA17173-20010614-STONEPIC",
+      "actual_tw10_semantic_certified": false
+    },
+    {
+      "id": "cursor",
+      "from": 8827,
+      "to": 8828,
+      "claim": "鼠标",
+      "semantic": "CURSOR_RESOURCE",
+      "reference": "SA17173-20010614-STONEPIC",
+      "actual_tw10_semantic_certified": false
+    },
+    {
+      "id": "font",
+      "from": 8829,
+      "to": 9092,
+      "claim": "日文字体字母标点",
+      "semantic": "FONT_RESOURCE",
+      "reference": "SA17173-20010614-STONEPIC",
+      "actual_tw10_semantic_certified": false
+    },
+    {
+      "id": "ui",
+      "from": 9093,
+      "to": 9288,
+      "claim": "操作画面",
+      "semantic": "UI_RESOURCE",
+      "reference": "SA17173-20010614-STONEPIC",
+      "actual_tw10_semantic_certified": false
+    },
+    {
+      "id": "character_actions",
+      "from": 9289,
+      "to": 82726,
+      "claim": "人物动作",
+      "semantic": "CHARACTER_ACTION_CANDIDATE",
+      "reference": "SA17173-20010614-STONEPIC",
+      "actual_tw10_semantic_certified": false
+    },
+    {
+      "id": "gm_actions",
+      "from": 82727,
+      "to": 95878,
+      "claim": "GM动作",
+      "semantic": "GM_ACTION_CANDIDATE",
+      "reference": "SA17173-20010614-STONEPIC",
+      "actual_tw10_semantic_certified": false
+    },
+    {
+      "id": "pet_actions",
+      "from": 95883,
+      "to": 125995,
+      "claim": "宠物动作",
+      "semantic": "PET_ACTION_CANDIDATE",
+      "reference": "SA17173-20010614-STONEPIC",
+      "actual_tw10_semantic_certified": false
+    },
+    {
+      "id": "later_seasonal",
+      "from": 125996,
+      "to": 126018,
+      "claim": "节日装扮地形",
+      "semantic": "POST_TW10_PLAYER_ALLEGED",
+      "reference": "SA17173-20010614-STONEPIC",
+      "actual_tw10_semantic_certified": false
+    },
+    {
+      "id": "later_items",
+      "from": 126019,
+      "to": 126065,
+      "claim": "JSS奖品物件",
+      "semantic": "POST_TW10_PLAYER_ALLEGED",
+      "reference": "SA17173-20010614-STONEPIC",
+      "actual_tw10_semantic_certified": false
+    },
+    {
+      "id": "later_armadillo_portraits",
+      "from": 126066,
+      "to": 126069,
+      "claim": "四只穿山甲照片",
+      "semantic": "POST_TW10_PLAYER_ALLEGED",
+      "reference": "SA17173-20010614-STONEPIC",
+      "actual_tw10_semantic_certified": false
+    },
+    {
+      "id": "later_gm_portraits",
+      "from": 126070,
+      "to": 126077,
+      "claim": "GM照片",
+      "semantic": "POST_TW10_PLAYER_ALLEGED",
+      "reference": "SA17173-20010614-STONEPIC",
+      "actual_tw10_semantic_certified": false
+    },
+    {
+      "id": "later_ui_variants",
+      "from": 126078,
+      "to": 126767,
+      "claim": "两套游戏操作画面",
+      "semantic": "POST_TW10_PLAYER_ALLEGED",
+      "reference": "SA17173-20010614-STONEPIC",
+      "actual_tw10_semantic_certified": false
+    },
+    {
+      "id": "later_dungeon",
+      "from": 126768,
+      "to": 126910,
+      "claim": "后期楼层地形",
+      "semantic": "POST_TW10_PLAYER_ALLEGED",
+      "reference": "SA17173-20010614-STONEPIC",
+      "actual_tw10_semantic_certified": false
+    }
+  ],
+  "explicit_extra_claims": [
+    {
+      "id": "mainland_login_id",
+      "bitmapno": 126766,
+      "reference": "SA17173-20010614-STONEPIC",
+      "claim": "大陆版的登陆画面",
+      "exact_tw10_presence": null,
+      "actual_tw10_login_visual_verified": false
+    },
+    {
+      "id": "unknown_first_bitmap",
+      "bitmapno": 0,
+      "reference": "SA17173-20010614-STONEPIC",
+      "claim": "first bitmap unlabelled by the 2001 author's ranges",
+      "exact_tw10_presence": null
+    }
+  ],
+  "guide_claims": [
+    {
+      "id": "wgs_login",
+      "facts": [
+        "update/launcher board",
+        "WGS member login",
+        "server selection",
+        "new character slot"
+      ],
+      "same_version_compiled_binding": false
+    },
+    {
+      "id": "character_selector",
+      "facts": [
+        "twelve selectable avatar appearances claimed",
+        "color and direction control",
+        "confirm/cancel"
+      ],
+      "same_version_compiled_binding": false
+    },
+    {
+      "id": "character_customizer",
+      "facts": [
+        "body/face/eyes/mouth as user-facing choices",
+        "attributes and two elements",
+        "birth village"
+      ],
+      "same_version_compiled_binding": false
+    },
+    {
+      "id": "early_hud",
+      "facts": [
+        "left side communication/party",
+        "right time and action",
+        "pet/status/items/map/dialog windows"
+      ],
+      "same_version_compiled_binding": false
+    }
+  ],
+  "original_tw10_source": {
+    "adrn_manifest_git_blob": "6154dcf806163b82cb96af344e6a644143d15f56",
+    "adrn_compressed_sha256": "c8669789de1cc6e3575c2412ed86354a49c2b3e90cd2854c1e7b2fc71b0fe9ea",
+    "tw10_content_direct": "BITMAP_INDEX_MEMBERSHIP_ONLY",
+    "no_original_resource_payload_added": true
+  },
+  "tw10_create_character_shape": {
+    "schema_path": "research/clients/STONEAGE-TW10-GAMEPLAY-SCHEMA-R1.json",
+    "git_blob": "e39a3a6020b578da017ab0bfa9369dc083e0b700",
+    "record": "character_creation",
+    "field_count": 13,
+    "body_field": "body_image_id",
+    "face_field": "face_image_id",
+    "render_actual_positions_verified": false
+  },
+  "expected_output": {
+    "domain": "ORIGINAL_RESOURCE_MEMBERSHIP_VS_2001_PLAYER_CLAIM",
+    "full_tw10_bitmap_records": 125996,
+    "unsourced_gap_ranges": [
+      [
+        0,
+        0
+      ],
+      [
+        95879,
+        95882
+      ]
+    ],
+    "post_tw10_ranges_must_be_absent": true
+  },
+  "game_original_login_screen_restored": false,
+  "all_original_avatars_identified": false,
+  "complete_pet_portraits_identified": false,
+  "full_original_ui_layout_verified": false,
+  "stage_b_production_started": false,
+  "next": "WORLD-NPC-QUEST-SOURCE-JOIN-01"
+}

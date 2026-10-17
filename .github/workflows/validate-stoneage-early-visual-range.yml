@@ -1,0 +1,28 @@
+name: Verify 2001 bitmap category claims vs original TW1.0 image indexes
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-EARLY-VISUAL-ID-RANGES-INPUT-R1.json'
+      - 'research/recovered/STONEAGE-EARLY-VISUAL-ID-RANGES-VERIFIED-R1.json'
+      - 'tools/stoneage_early_ui_bitmap_range_audit.py'
+      - 'tests/test_stoneage_early_ui_bitmap_range_audit.py'
+      - 'tests/test_stoneage_early_ui_visual_archive.py'
+      - 'docs/STONEAGE-EARLY-UI-AVATAR-VISUAL-RANGE-R1.md'
+      - 'docs/CURRENT-STATE.md'
+      - 'docs/RESTORATION-ROADMAP-R2.md'
+      - '.github/workflows/validate-stoneage-early-visual-range.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  2001-player-claims-versus-tw10-direct:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: |
+          python -m unittest tests.test_stoneage_early_ui_bitmap_range_audit -v
+          python -m tools.stoneage_early_ui_bitmap_range_audit
