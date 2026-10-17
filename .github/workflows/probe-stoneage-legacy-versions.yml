@@ -1,0 +1,26 @@
+name: Verify early assistant version witnesses
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_legacy_version_witness.py
+      - tests/test_stoneage_legacy_version_witness.py
+      - .github/workflows/probe-stoneage-legacy-versions.yml
+permissions:
+  contents: read
+jobs:
+  source-witnesses:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - run: python -m unittest tests.test_stoneage_legacy_version_witness -v
+      - run: |
+          mkdir -p /tmp/legacy-versions
+          python -m tools.stoneage_legacy_version_witness --output /tmp/legacy-versions/legacy-versions.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: legacy-version-witnesses-r1
+          path: /tmp/legacy-versions/*.json
+          retention-days: 7
+          if-no-files-found: error
