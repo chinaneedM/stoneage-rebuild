@@ -1,0 +1,431 @@
+{
+  "schema": "stoneage.tw10_pet_asset_growth_crosswalk.r1",
+  "date": "2026-10-17",
+  "task": "PET-ASSET-GROWTH-CATALOG-MATRIX-02",
+  "remote_main_baseline": "198a3385641d2119919b65225a65082c615b9e16",
+  "source_commit": "12e79debb172e5adee23931e395377391ae63c20",
+  "source_tree": "d63568dc3aef59c6cae0c6ba51d0b33d4edc868f",
+  "executed_action": {
+    "id": 39024292573,
+    "job": 117372109124,
+    "conclusion": "SUCCESS"
+  },
+  "source_git_blobs": {
+    "research/recovered/tw10-resource-metadata/MANIFEST-R1.txt": "6154dcf806163b82cb96af344e6a644143d15f56",
+    "research/recovered/tw10-resource-metadata/ADRN-R1.tsv.gz": "e389540f9962d1868c42b1edfe2acc7c83387ff1",
+    "research/recovered/tw10-resource-metadata/SPR-GROUP-R1.tsv.gz": "5ec65f043848fb3260bc04c94847b45fb1706d36",
+    "research/recovered/tw10-resource-metadata/SPR-ANIMATION-R1.tsv.gz": "90b19256f465effa6a8b6964a3777f7b31e3004c",
+    "research/recovered/tw10-resource-metadata/SPR-FRAME-R1.tsv.gz": "ec374e9ab30c54d29de453c51f30fa1fb0df1fd1",
+    "research/recovered/STONEAGE-25-ENEMYBASE-PROBE-R1.txt": "c1ea9f239b7377e630b2fc09d0c470d44fc6f786",
+    "research/recovered/STONEAGE-25-PET-GROWTH-R1.txt": "5c528fb382ad13484572bd49905480a6b5775e18",
+    "research/recovered/STONEAGE-25-ENEMYBASE-NAME-ENCODING-R1.txt": "34fc56b2d614d6ba1a31f04c58a3a217326fdfe1",
+    "research/recovered/STONEAGE-25-RUNTIME-GRAPHIC-MAPPING-R1.txt": "9ff1133a5bb62d4b3e07e2d6e955c54c0e30dd33"
+  },
+  "resource_report": {
+    "historical_pet_identity_verified_count": 0,
+    "later_enemybase_status": {
+      "active_rows": 988,
+      "other_rows": 640,
+      "pet_species_count_original": null,
+      "render_graphic_runtime_map": "ABSENT",
+      "source_name_hashes_distinct": 662,
+      "source_profile": "RECOVERED25_LATER_NOT_TW10"
+    },
+    "new_historical_species_names": [],
+    "record_counts": {
+      "adrn_bitmap_records": 125996,
+      "animations": 39065,
+      "frames": 242085,
+      "frames_joined_to_original_adrn": 238593,
+      "frames_without_adrn_or_sentinel": 0,
+      "sentinel_frames": 3492,
+      "spr_groups": 464
+    },
+    "sample_groups": [
+      {
+        "adrn_bitmap_references": 488,
+        "animation_records": 104,
+        "example_bitmap_nos": [
+          10177,
+          10178,
+          10179,
+          10180,
+          10181
+        ],
+        "example_direction_anim_codes": [
+          [
+            0,
+            0,
+            12
+          ],
+          [
+            0,
+            6,
+            7
+          ],
+          [
+            0,
+            2,
+            6
+          ],
+          [
+            0,
+            1,
+            2
+          ]
+        ],
+        "frame_records": 488,
+        "group_index": 0,
+        "missing_bitmap_references": 0,
+        "original_encounter_map": null,
+        "original_growth_config": null,
+        "original_pet_graphic_id": null,
+        "sentinel_frames": 0,
+        "species_identity": null,
+        "spr_no": 100000,
+        "status": "TW10_ASSET_IDENTITY_AND_FRAME_JOIN_ONLY_NOT_PET_IDENTITY"
+      },
+      {
+        "adrn_bitmap_references": 488,
+        "animation_records": 104,
+        "example_bitmap_nos": [
+          9289,
+          9290,
+          9291,
+          9292,
+          9293
+        ],
+        "example_direction_anim_codes": [
+          [
+            0,
+            0,
+            12
+          ],
+          [
+            0,
+            6,
+            7
+          ],
+          [
+            0,
+            2,
+            6
+          ],
+          [
+            0,
+            1,
+            2
+          ]
+        ],
+        "frame_records": 488,
+        "group_index": 1,
+        "missing_bitmap_references": 0,
+        "original_encounter_map": null,
+        "original_growth_config": null,
+        "original_pet_graphic_id": null,
+        "sentinel_frames": 0,
+        "species_identity": null,
+        "spr_no": 100001,
+        "status": "TW10_ASSET_IDENTITY_AND_FRAME_JOIN_ONLY_NOT_PET_IDENTITY"
+      },
+      {
+        "adrn_bitmap_references": 488,
+        "animation_records": 104,
+        "example_bitmap_nos": [
+          9881,
+          9882,
+          9883,
+          9884,
+          9885
+        ],
+        "example_direction_anim_codes": [
+          [
+            0,
+            0,
+            12
+          ],
+          [
+            0,
+            6,
+            7
+          ],
+          [
+            0,
+            2,
+            6
+          ],
+          [
+            0,
+            1,
+            2
+          ]
+        ],
+        "frame_records": 488,
+        "group_index": 2,
+        "missing_bitmap_references": 0,
+        "original_encounter_map": null,
+        "original_growth_config": null,
+        "original_pet_graphic_id": null,
+        "sentinel_frames": 0,
+        "species_identity": null,
+        "spr_no": 100002,
+        "status": "TW10_ASSET_IDENTITY_AND_FRAME_JOIN_ONLY_NOT_PET_IDENTITY"
+      },
+      {
+        "adrn_bitmap_references": 488,
+        "animation_records": 104,
+        "example_bitmap_nos": [
+          10521,
+          10522,
+          10523,
+          10524,
+          10525
+        ],
+        "example_direction_anim_codes": [
+          [
+            0,
+            0,
+            12
+          ],
+          [
+            0,
+            6,
+            7
+          ],
+          [
+            0,
+            2,
+            6
+          ],
+          [
+            0,
+            1,
+            2
+          ]
+        ],
+        "frame_records": 488,
+        "group_index": 3,
+        "missing_bitmap_references": 0,
+        "original_encounter_map": null,
+        "original_growth_config": null,
+        "original_pet_graphic_id": null,
+        "sentinel_frames": 0,
+        "species_identity": null,
+        "spr_no": 100003,
+        "status": "TW10_ASSET_IDENTITY_AND_FRAME_JOIN_ONLY_NOT_PET_IDENTITY"
+      },
+      {
+        "adrn_bitmap_references": 504,
+        "animation_records": 104,
+        "example_bitmap_nos": [
+          9585,
+          9586,
+          9587,
+          9588,
+          9589
+        ],
+        "example_direction_anim_codes": [
+          [
+            0,
+            0,
+            14
+          ],
+          [
+            0,
+            6,
+            7
+          ],
+          [
+            0,
+            2,
+            6
+          ],
+          [
+            0,
+            1,
+            2
+          ]
+        ],
+        "frame_records": 504,
+        "group_index": 4,
+        "missing_bitmap_references": 0,
+        "original_encounter_map": null,
+        "original_growth_config": null,
+        "original_pet_graphic_id": null,
+        "sentinel_frames": 0,
+        "species_identity": null,
+        "spr_no": 100004,
+        "status": "TW10_ASSET_IDENTITY_AND_FRAME_JOIN_ONLY_NOT_PET_IDENTITY"
+      },
+      {
+        "adrn_bitmap_references": 488,
+        "animation_records": 104,
+        "example_bitmap_nos": [
+          11705,
+          11706,
+          11707,
+          11708,
+          11709
+        ],
+        "example_direction_anim_codes": [
+          [
+            0,
+            0,
+            12
+          ],
+          [
+            0,
+            6,
+            7
+          ],
+          [
+            0,
+            2,
+            6
+          ],
+          [
+            0,
+            1,
+            2
+          ]
+        ],
+        "frame_records": 488,
+        "group_index": 5,
+        "missing_bitmap_references": 0,
+        "original_encounter_map": null,
+        "original_growth_config": null,
+        "original_pet_graphic_id": null,
+        "sentinel_frames": 0,
+        "species_identity": null,
+        "spr_no": 100005,
+        "status": "TW10_ASSET_IDENTITY_AND_FRAME_JOIN_ONLY_NOT_PET_IDENTITY"
+      },
+      {
+        "adrn_bitmap_references": 468,
+        "animation_records": 104,
+        "example_bitmap_nos": [
+          40441,
+          40442,
+          40443,
+          40444,
+          40445
+        ],
+        "example_direction_anim_codes": [
+          [
+            0,
+            0,
+            13
+          ],
+          [
+            0,
+            6,
+            2
+          ],
+          [
+            0,
+            2,
+            11
+          ],
+          [
+            0,
+            1,
+            2
+          ]
+        ],
+        "frame_records": 472,
+        "group_index": 102,
+        "missing_bitmap_references": 0,
+        "original_encounter_map": null,
+        "original_growth_config": null,
+        "original_pet_graphic_id": null,
+        "sentinel_frames": 4,
+        "species_identity": null,
+        "spr_no": 100102,
+        "status": "TW10_ASSET_IDENTITY_AND_FRAME_JOIN_ONLY_NOT_PET_IDENTITY"
+      },
+      {
+        "adrn_bitmap_references": 0,
+        "animation_records": 104,
+        "example_bitmap_nos": [],
+        "example_direction_anim_codes": [
+          [
+            0,
+            0,
+            8
+          ],
+          [
+            0,
+            6,
+            2
+          ],
+          [
+            0,
+            2,
+            6
+          ],
+          [
+            0,
+            1,
+            2
+          ]
+        ],
+        "frame_records": 352,
+        "group_index": 373,
+        "missing_bitmap_references": 0,
+        "original_encounter_map": null,
+        "original_growth_config": null,
+        "original_pet_graphic_id": null,
+        "sentinel_frames": 352,
+        "species_identity": null,
+        "spr_no": 100410,
+        "status": "TW10_ASSET_IDENTITY_AND_FRAME_JOIN_ONLY_NOT_PET_IDENTITY"
+      },
+      {
+        "adrn_bitmap_references": 6,
+        "animation_records": 1,
+        "example_bitmap_nos": [
+          7047,
+          7048,
+          7049,
+          7050,
+          7051
+        ],
+        "example_direction_anim_codes": [
+          [
+            0,
+            0,
+            6
+          ]
+        ],
+        "frame_records": 6,
+        "group_index": 463,
+        "missing_bitmap_references": 0,
+        "original_encounter_map": null,
+        "original_growth_config": null,
+        "original_pet_graphic_id": null,
+        "sentinel_frames": 0,
+        "species_identity": null,
+        "spr_no": 100652,
+        "status": "TW10_ASSET_IDENTITY_AND_FRAME_JOIN_ONLY_NOT_PET_IDENTITY"
+      }
+    ],
+    "schema": "stoneage.tw10.asset_frame_join.r1",
+    "source_manifest_sha": "6154dcf806163b82cb96af344e6a644143d15f56",
+    "source_profile": "TW10_DIRECT_RESOURCE_METADATA",
+    "source_scope": "Original retail graphics and animation indexes only; no species roster, pet-name, pet-stat or growth attestation",
+    "version_promotion": false
+  },
+  "reconstruction_grade": "TW10_DIRECT_SPR_TO_ANIMATION_TO_FRAME_TO_ADRN_BITMAP_RESOURCE_LINK_CERTIFIED",
+  "pet_species_crosswalk": "OPEN_SAME_BUILD_PET_IDENTITY",
+  "pet_growth_provenance": "RECOVERED25_DESCENDANT_ONLY_NO_FIRST_GENERATION_PET_CONFIG",
+  "original_pets_complete": false,
+  "original_pet_species_count": null,
+  "unknown_same_build_pet_name_and_graphic_id": true,
+  "game_runtime_rendering_verified": false,
+  "modern_render_assets_built": false,
+  "original_service_data_acquired": false,
+  "source_repo_has_full_derived_tables": true,
+  "none_of_original_image_payload_committed": true,
+  "next": "ORIGINAL-UI-LOGIN-AVATAR-REVIEW-01",
+  "pet_identity_reopen_if": "ORIGINAL_TW10_GRAPHIC_SELECTOR_OR_SAME_BUILD_SERVER_PET_MASTER_AVAILABLE"
+}

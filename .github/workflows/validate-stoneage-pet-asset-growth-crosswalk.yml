@@ -4,6 +4,7 @@ on:
     paths:
       - 'tools/stoneage_pet_asset_growth_catalog.py'
       - 'tests/test_stoneage_pet_asset_growth_catalog.py'
+      - 'tests/test_stoneage_pet_asset_growth_catalog_archive.py'
       - 'docs/STONEAGE-PET-ASSET-GROWTH-CATALOG-MATRIX-R1.md'
       - 'research/recovered/STONEAGE-PET-ASSET-GROWTH-CATALOG-MATRIX-R1.json'
       - 'research/recovered/tw10-resource-metadata/**'
@@ -24,5 +25,5 @@ jobs:
           python-version: '3.12'
       - name: Verify actual 125996 ADRN, 464 groups, 39065 animations, 242085 frames and nine sample joins
         run: |
-          python -m unittest tests.test_stoneage_pet_asset_growth_catalog -v
+          python -m unittest tests.test_stoneage_pet_asset_growth_catalog tests.test_stoneage_pet_asset_growth_catalog_archive -v
           python -m tools.stoneage_pet_asset_growth_catalog --emit-samples
