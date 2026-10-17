@@ -1,9 +1,12 @@
 """Synthetic candidate rows; never original item payload fixtures."""
 from pathlib import Path
+import copy
+import hashlib
+import json
 import tempfile
 import unittest
 from tools.stoneage_itemset_schema_probe import INDEX
-from tools.stoneage_quest_item_identity_probe import extract, name_matches, report
+from tools.stoneage_quest_item_identity_probe import extract, name_matches, report, validate_derived
 
 
 def invented_row(name='杉之手环', codec='gb18030', item_id=123):
@@ -66,6 +69,54 @@ class QuestItemIdentityTests(unittest.TestCase):
             setup.write_text('itemset6file=data/invented.txt\n')
             with self.assertRaises(ValueError):
                 report(root, setup)
+
+
+class ArchivedItemIdentityTests(unittest.TestCase):
+    def data(self):
+        root = Path(__file__).resolve().parents[1]
+        return json.loads((root / 'research/recovered/STONEAGE-QUEST-ITEM-CI-DERIVED-R1.json').read_text())
+
+    def test_permanent_custody_and_replay(self):
+        root = Path(__file__).resolve().parents[1]
+        receipt = json.loads((root / 'research/recovered/STONEAGE-QUEST-ITEM-ACCEPTANCE-R1.json').read_text())
+        raw = (root / receipt['permanent_path']).read_bytes()
+        self.assertEqual(len(raw), receipt['raw_json_bytes'])
+        self.assertEqual(hashlib.sha256(raw).hexdigest(), receipt['raw_json_sha256'])
+        self.assertEqual(hashlib.sha1(b'blob ' + str(len(raw)).encode() + b'\0' + raw).hexdigest(), receipt['permanent_git_blob'])
+        self.assertTrue(validate_derived(self.data()))
+
+    def test_promotions_duplicate_identity_and_source_drift_rejected(self):
+        original = self.data()
+        for field in ('original_early_template_ids_recovered', 'name_match_is_quest_identity_proof', 'guide_charm_conflict_resolved_for_early_build'):
+            data = copy.deepcopy(original)
+            data[field] = True
+            with self.assertRaises(ValueError):
+                validate_derived(data)
+        for change in ('duplicate', 'hash', 'codec', 'comparison', 'unknown_stat'):
+            data = copy.deepcopy(original)
+            table = data['tables']['itemset.txt']
+            if change == 'duplicate':
+                table['candidates'].append(copy.deepcopy(table['candidates'][0]))
+            elif change == 'hash':
+                table['sha256'] = '0' * 64
+            elif change == 'codec':
+                table['candidates'][0]['matches'][0]['codec'] = 'invented'
+            elif change == 'comparison':
+                data['cross_table_candidate_comparisons'][0]['numeric_changes'] = {'id': {}}
+            else:
+                table['candidates'][0]['numeric_fields']['final_equipped_charm'] = -5
+            with self.assertRaises(ValueError):
+                validate_derived(data)
+
+    def test_same_icon_and_flags_do_not_merge_two_permit_candidates(self):
+        rows = self.data()['tables']['itemset.txt']['candidates']
+        permits = [r for r in rows if any(m['role'] == 'PERMIT' for m in r['matches'])]
+        self.assertEqual(len(permits), 2)
+        self.assertNotEqual(permits[0]['numeric_fields']['id'], permits[1]['numeric_fields']['id'])
+        self.assertEqual(permits[0]['numeric_fields']['imagenumber'], permits[1]['numeric_fields']['imagenumber'])
+        self.assertNotEqual(permits[0]['name_bytes_sha256'], permits[1]['name_bytes_sha256'])
+        self.assertNotEqual(permits[0]['numeric_fields']['cost'], permits[1]['numeric_fields']['cost'])
+        self.assertEqual(self.data()['unmatched_query_roles'], ['REPAIRED_AXE'])
 
 
 if __name__ == '__main__':

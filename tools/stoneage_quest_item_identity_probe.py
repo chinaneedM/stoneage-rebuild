@@ -8,6 +8,7 @@ import argparse
 import hashlib
 import json
 from pathlib import Path
+import re
 try:
     from tools.stoneage_itemset_schema_probe import SCHEMA, INDEX, setup_itemsets
 except ModuleNotFoundError:
@@ -118,6 +119,57 @@ def report(data_dir, setup):
             'raw_stat_pairs_are_final_equipped_stats': False, 'original_early_template_ids_recovered': False,
             'guide_charm_conflict_resolved_for_early_build': False, 'original_server_executed': False,
             'runtime_code_changed': False, 'stage_a_accepted': False, 'stage_b_gate': 'GATED'}
+
+
+def validate_derived(data):
+    """Replay metadata consistency without pretending to reacquire original bytes."""
+    require(data['schema'] == 'stoneage.quest_item_identity.r1', 'wrong derived schema')
+    require(data['source_role'] == 'LATER_RECOVERED25_MASTER_CANDIDATES', 'source role promotion')
+    for flag in ('name_match_is_quest_identity_proof', 'whole_file_encoding_authenticated',
+                 'raw_stat_pairs_are_final_equipped_stats', 'original_early_template_ids_recovered',
+                 'guide_charm_conflict_resolved_for_early_build', 'original_server_executed', 'runtime_code_changed', 'stage_a_accepted'):
+        require(data[flag] is False, f'evidence promotion: {flag}')
+    require(data['stage_b_gate'] == 'GATED', 'stage promotion')
+    require(set(data['tables']) == set(EXPECTED), 'table coverage')
+    selected = {Path(v.replace('\\', '/')).name.lower() for v in data['setup']['configured_itemsets'].values()}
+    require(selected and selected <= set(EXPECTED), 'unqualified setup')
+    found = set()
+    indexes = {}
+    for filename, table in data['tables'].items():
+        for key, value in EXPECTED[filename].items():
+            require(table['row_count' if key == 'rows' else key] == value, f'table source drift {filename}')
+        require(table['selected_by_actual_setup'] is (filename in selected), 'setup selection mismatch')
+        require(len(table['candidates']) <= 100, 'candidate bound')
+        by_id = {}
+        for row in table['candidates']:
+            values = row['numeric_fields']
+            require(set(values) == set(NUMBER_FIELDS), 'unknown or missing numeric field')
+            require(type(values['id']) is int and values['id'] not in by_id, 'duplicate/missing candidate identity')
+            by_id[values['id']] = row
+            require(type(row['physical_line']) is int and row['physical_line'] > 0, 'invalid row position')
+            for key in ('row_sha256', 'name_bytes_sha256', 'secretname_bytes_sha256'):
+                require(re.fullmatch('[a-f0-9]{64}', row[key]) is not None, 'invalid source digest')
+            for field, value in values.items():
+                require(value is None or type(value) is int, 'non-integer numeric metadata')
+                if field in FLAGS:
+                    require(value in (None, 0, 1), 'invalid lifetime flag')
+            require(row['matches'], 'unmatched candidate row')
+            for match in row['matches']:
+                require(match['role'] in QUERIES and match['query'] in QUERIES[match['role']], 'invented query match')
+                require(match['codec'] in CODECS and match['field'] in ('name', 'secretname'), 'invalid codec/name field')
+                require(type(match['exact_name_match']) is bool, 'invalid exact-match status')
+                found.add(match['role'])
+        indexes[filename] = by_id
+    require(data['unmatched_query_roles'] == sorted(set(QUERIES) - found), 'unmatched-role drift')
+    comparisons = []
+    left, right = indexes['itemset.txt'], indexes['itemset0710.txt']
+    for item_id in sorted(set(left) & set(right)):
+        a, b = left[item_id], right[item_id]
+        comparisons.append({'template_id': item_id, 'same_name_bytes': a['name_bytes_sha256'] == b['name_bytes_sha256'],
+                            'same_secretname_bytes': a['secretname_bytes_sha256'] == b['secretname_bytes_sha256'],
+                            'numeric_changes': {f: {'itemset.txt': a['numeric_fields'][f], 'itemset0710.txt': b['numeric_fields'][f]} for f in NUMBER_FIELDS if a['numeric_fields'][f] != b['numeric_fields'][f]}})
+    require(data['cross_table_candidate_comparisons'] == comparisons, 'cross-table comparison drift')
+    return True
 
 
 def main():

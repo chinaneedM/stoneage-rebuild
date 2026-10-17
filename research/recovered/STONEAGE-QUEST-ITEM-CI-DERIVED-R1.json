@@ -1,0 +1,516 @@
+{
+  "schema": "stoneage.quest_item_identity.r1",
+  "source_role": "LATER_RECOVERED25_MASTER_CANDIDATES",
+  "setup": {
+    "bytes": 9715,
+    "sha256": "b4936c103efb7b3cad359e5c85c7965187306883a68c0be712ece6c374e3b12d",
+    "configured_itemsets": {
+      "itemset6file": "data/itemset.txt",
+      "itemset5file": "data/itemset.txt",
+      "itemset4file": "data/itemset.txt",
+      "itemset3file": "data/itemset.txt"
+    }
+  },
+  "tables": {
+    "itemset.txt": {
+      "row_count": 13252,
+      "candidates": [
+        {
+          "physical_line": 2048,
+          "row_sha256": "c32e30c51c7e1f9fd84291600d7e1caef32af16781eee5c95806d51e617430a5",
+          "name_bytes_sha256": "7c3a66dfd79ea0663c843fa4a6fc21a67bf68ab588c7eca9c5252d7d869d328f",
+          "secretname_bytes_sha256": "7c3a66dfd79ea0663c843fa4a6fc21a67bf68ab588c7eca9c5252d7d869d328f",
+          "matches": [
+            {
+              "codec": "big5",
+              "role": "ERRAND_AXE",
+              "query": "哈恩的斧頭",
+              "exact_name_match": true,
+              "field": "name"
+            },
+            {
+              "codec": "big5",
+              "role": "ERRAND_AXE",
+              "query": "哈恩的斧頭",
+              "exact_name_match": true,
+              "field": "secretname"
+            }
+          ],
+          "numeric_fields": {
+            "id": 2465,
+            "imagenumber": 20020,
+            "cost": 10,
+            "type": 1,
+            "level": 25,
+            "campile": null,
+            "attack_raw_a": 35,
+            "attack_raw_b": 35,
+            "defence_raw_a": -15,
+            "defence_raw_b": -15,
+            "quick_raw_a": -15,
+            "quick_raw_b": -15,
+            "charm_raw_a": 0,
+            "charm_raw_b": 0,
+            "magicid": null,
+            "dropatlogout": 0,
+            "vanishatdrop": 0,
+            "canpetmail": 1,
+            "canmergefrom": 1,
+            "canmergeto": 0
+          }
+        },
+        {
+          "physical_line": 2061,
+          "row_sha256": "24eed3342a1f74bd19651056345e7028bf5dae3d6ee658d6abe7743285682fa4",
+          "name_bytes_sha256": "32fab86cb7c98fbd3161da1420fcf341a6e7dcddaa909db5313b3a4f8507a5ec",
+          "secretname_bytes_sha256": "32fab86cb7c98fbd3161da1420fcf341a6e7dcddaa909db5313b3a4f8507a5ec",
+          "matches": [
+            {
+              "codec": "big5",
+              "role": "PERMIT",
+              "query": "採伐許可證",
+              "exact_name_match": true,
+              "field": "name"
+            },
+            {
+              "codec": "big5",
+              "role": "PERMIT",
+              "query": "採伐許可證",
+              "exact_name_match": true,
+              "field": "secretname"
+            }
+          ],
+          "numeric_fields": {
+            "id": 2478,
+            "imagenumber": 24222,
+            "cost": 10,
+            "type": 16,
+            "level": 0,
+            "campile": null,
+            "attack_raw_a": 0,
+            "attack_raw_b": 0,
+            "defence_raw_a": 0,
+            "defence_raw_b": 0,
+            "quick_raw_a": 0,
+            "quick_raw_b": 0,
+            "charm_raw_a": 0,
+            "charm_raw_b": 0,
+            "magicid": null,
+            "dropatlogout": 0,
+            "vanishatdrop": 1,
+            "canpetmail": 0,
+            "canmergefrom": 0,
+            "canmergeto": 0
+          }
+        },
+        {
+          "physical_line": 2064,
+          "row_sha256": "2da9f12389a027ef52c598f0250f8fe6b6ee4cbc6faaaa6829306d9ced589f8f",
+          "name_bytes_sha256": "ec58f1aaa309504f9b0ca41e8d0d05f79504948c8053d0c4eb755db18b510b0b",
+          "secretname_bytes_sha256": "ec58f1aaa309504f9b0ca41e8d0d05f79504948c8053d0c4eb755db18b510b0b",
+          "matches": [
+            {
+              "codec": "big5",
+              "role": "BRACELET",
+              "query": "杉的手環",
+              "exact_name_match": true,
+              "field": "name"
+            },
+            {
+              "codec": "big5",
+              "role": "BRACELET",
+              "query": "杉的手環",
+              "exact_name_match": true,
+              "field": "secretname"
+            }
+          ],
+          "numeric_fields": {
+            "id": 2481,
+            "imagenumber": 22050,
+            "cost": 10,
+            "type": 8,
+            "level": 30,
+            "campile": null,
+            "attack_raw_a": 8,
+            "attack_raw_b": 8,
+            "defence_raw_a": 5,
+            "defence_raw_b": 5,
+            "quick_raw_a": -5,
+            "quick_raw_b": -5,
+            "charm_raw_a": -5,
+            "charm_raw_b": -5,
+            "magicid": null,
+            "dropatlogout": 0,
+            "vanishatdrop": 0,
+            "canpetmail": 1,
+            "canmergefrom": 1,
+            "canmergeto": 0
+          }
+        },
+        {
+          "physical_line": 2067,
+          "row_sha256": "71e52f7f06127b64170d383d5fbaf9ef2504a0d474829cab9a5b9e84af63cfd3",
+          "name_bytes_sha256": "1203594049fc83e25272c0fcc1e274ead2ff7100c74809f8e1a22064a0185f22",
+          "secretname_bytes_sha256": "1203594049fc83e25272c0fcc1e274ead2ff7100c74809f8e1a22064a0185f22",
+          "matches": [
+            {
+              "codec": "big5",
+              "role": "BROKEN_AXE",
+              "query": "折斷的斧頭",
+              "exact_name_match": true,
+              "field": "name"
+            },
+            {
+              "codec": "big5",
+              "role": "BROKEN_AXE",
+              "query": "折斷的斧頭",
+              "exact_name_match": true,
+              "field": "secretname"
+            }
+          ],
+          "numeric_fields": {
+            "id": 2484,
+            "imagenumber": 20054,
+            "cost": 10,
+            "type": 16,
+            "level": 0,
+            "campile": null,
+            "attack_raw_a": 0,
+            "attack_raw_b": 0,
+            "defence_raw_a": 0,
+            "defence_raw_b": 0,
+            "quick_raw_a": 0,
+            "quick_raw_b": 0,
+            "charm_raw_a": 0,
+            "charm_raw_b": 0,
+            "magicid": null,
+            "dropatlogout": 0,
+            "vanishatdrop": 1,
+            "canpetmail": 0,
+            "canmergefrom": 1,
+            "canmergeto": 0
+          }
+        },
+        {
+          "physical_line": 12744,
+          "row_sha256": "8764a1508a3519836220940892b570501ee9daa3ca00df396772878d1b346b1d",
+          "name_bytes_sha256": "38390598084f04824efe161e06f65cc3cf57febe6e4811d0a88cf05f571e4e30",
+          "secretname_bytes_sha256": "38390598084f04824efe161e06f65cc3cf57febe6e4811d0a88cf05f571e4e30",
+          "matches": [
+            {
+              "codec": "big5",
+              "role": "PERMIT",
+              "query": "伐木許可證",
+              "exact_name_match": true,
+              "field": "name"
+            },
+            {
+              "codec": "big5",
+              "role": "PERMIT",
+              "query": "伐木許可證",
+              "exact_name_match": true,
+              "field": "secretname"
+            }
+          ],
+          "numeric_fields": {
+            "id": 20197,
+            "imagenumber": 24222,
+            "cost": 0,
+            "type": 16,
+            "level": 0,
+            "campile": null,
+            "attack_raw_a": 0,
+            "attack_raw_b": 0,
+            "defence_raw_a": 0,
+            "defence_raw_b": 0,
+            "quick_raw_a": 0,
+            "quick_raw_b": 0,
+            "charm_raw_a": 0,
+            "charm_raw_b": 0,
+            "magicid": null,
+            "dropatlogout": 0,
+            "vanishatdrop": 1,
+            "canpetmail": 0,
+            "canmergefrom": 0,
+            "canmergeto": 0
+          }
+        }
+      ],
+      "bytes": 3392473,
+      "sha256": "a415e78f9aab2e5ea5ca92ecb7430253f7be1ba7c876d6b0bb6d067b1b466688",
+      "selected_by_actual_setup": true
+    },
+    "itemset0710.txt": {
+      "row_count": 13910,
+      "candidates": [
+        {
+          "physical_line": 2443,
+          "row_sha256": "c32e30c51c7e1f9fd84291600d7e1caef32af16781eee5c95806d51e617430a5",
+          "name_bytes_sha256": "7c3a66dfd79ea0663c843fa4a6fc21a67bf68ab588c7eca9c5252d7d869d328f",
+          "secretname_bytes_sha256": "7c3a66dfd79ea0663c843fa4a6fc21a67bf68ab588c7eca9c5252d7d869d328f",
+          "matches": [
+            {
+              "codec": "big5",
+              "role": "ERRAND_AXE",
+              "query": "哈恩的斧頭",
+              "exact_name_match": true,
+              "field": "name"
+            },
+            {
+              "codec": "big5",
+              "role": "ERRAND_AXE",
+              "query": "哈恩的斧頭",
+              "exact_name_match": true,
+              "field": "secretname"
+            }
+          ],
+          "numeric_fields": {
+            "id": 2465,
+            "imagenumber": 20020,
+            "cost": 10,
+            "type": 1,
+            "level": 25,
+            "campile": null,
+            "attack_raw_a": 35,
+            "attack_raw_b": 35,
+            "defence_raw_a": -15,
+            "defence_raw_b": -15,
+            "quick_raw_a": -15,
+            "quick_raw_b": -15,
+            "charm_raw_a": 0,
+            "charm_raw_b": 0,
+            "magicid": null,
+            "dropatlogout": 0,
+            "vanishatdrop": 0,
+            "canpetmail": 1,
+            "canmergefrom": 1,
+            "canmergeto": 0
+          }
+        },
+        {
+          "physical_line": 2456,
+          "row_sha256": "24eed3342a1f74bd19651056345e7028bf5dae3d6ee658d6abe7743285682fa4",
+          "name_bytes_sha256": "32fab86cb7c98fbd3161da1420fcf341a6e7dcddaa909db5313b3a4f8507a5ec",
+          "secretname_bytes_sha256": "32fab86cb7c98fbd3161da1420fcf341a6e7dcddaa909db5313b3a4f8507a5ec",
+          "matches": [
+            {
+              "codec": "big5",
+              "role": "PERMIT",
+              "query": "採伐許可證",
+              "exact_name_match": true,
+              "field": "name"
+            },
+            {
+              "codec": "big5",
+              "role": "PERMIT",
+              "query": "採伐許可證",
+              "exact_name_match": true,
+              "field": "secretname"
+            }
+          ],
+          "numeric_fields": {
+            "id": 2478,
+            "imagenumber": 24222,
+            "cost": 10,
+            "type": 16,
+            "level": 0,
+            "campile": null,
+            "attack_raw_a": 0,
+            "attack_raw_b": 0,
+            "defence_raw_a": 0,
+            "defence_raw_b": 0,
+            "quick_raw_a": 0,
+            "quick_raw_b": 0,
+            "charm_raw_a": 0,
+            "charm_raw_b": 0,
+            "magicid": null,
+            "dropatlogout": 0,
+            "vanishatdrop": 1,
+            "canpetmail": 0,
+            "canmergefrom": 0,
+            "canmergeto": 0
+          }
+        },
+        {
+          "physical_line": 2459,
+          "row_sha256": "2da9f12389a027ef52c598f0250f8fe6b6ee4cbc6faaaa6829306d9ced589f8f",
+          "name_bytes_sha256": "ec58f1aaa309504f9b0ca41e8d0d05f79504948c8053d0c4eb755db18b510b0b",
+          "secretname_bytes_sha256": "ec58f1aaa309504f9b0ca41e8d0d05f79504948c8053d0c4eb755db18b510b0b",
+          "matches": [
+            {
+              "codec": "big5",
+              "role": "BRACELET",
+              "query": "杉的手環",
+              "exact_name_match": true,
+              "field": "name"
+            },
+            {
+              "codec": "big5",
+              "role": "BRACELET",
+              "query": "杉的手環",
+              "exact_name_match": true,
+              "field": "secretname"
+            }
+          ],
+          "numeric_fields": {
+            "id": 2481,
+            "imagenumber": 22050,
+            "cost": 10,
+            "type": 8,
+            "level": 30,
+            "campile": null,
+            "attack_raw_a": 8,
+            "attack_raw_b": 8,
+            "defence_raw_a": 5,
+            "defence_raw_b": 5,
+            "quick_raw_a": -5,
+            "quick_raw_b": -5,
+            "charm_raw_a": -5,
+            "charm_raw_b": -5,
+            "magicid": null,
+            "dropatlogout": 0,
+            "vanishatdrop": 0,
+            "canpetmail": 1,
+            "canmergefrom": 1,
+            "canmergeto": 0
+          }
+        },
+        {
+          "physical_line": 2462,
+          "row_sha256": "71e52f7f06127b64170d383d5fbaf9ef2504a0d474829cab9a5b9e84af63cfd3",
+          "name_bytes_sha256": "1203594049fc83e25272c0fcc1e274ead2ff7100c74809f8e1a22064a0185f22",
+          "secretname_bytes_sha256": "1203594049fc83e25272c0fcc1e274ead2ff7100c74809f8e1a22064a0185f22",
+          "matches": [
+            {
+              "codec": "big5",
+              "role": "BROKEN_AXE",
+              "query": "折斷的斧頭",
+              "exact_name_match": true,
+              "field": "name"
+            },
+            {
+              "codec": "big5",
+              "role": "BROKEN_AXE",
+              "query": "折斷的斧頭",
+              "exact_name_match": true,
+              "field": "secretname"
+            }
+          ],
+          "numeric_fields": {
+            "id": 2484,
+            "imagenumber": 20054,
+            "cost": 10,
+            "type": 16,
+            "level": 0,
+            "campile": null,
+            "attack_raw_a": 0,
+            "attack_raw_b": 0,
+            "defence_raw_a": 0,
+            "defence_raw_b": 0,
+            "quick_raw_a": 0,
+            "quick_raw_b": 0,
+            "charm_raw_a": 0,
+            "charm_raw_b": 0,
+            "magicid": null,
+            "dropatlogout": 0,
+            "vanishatdrop": 1,
+            "canpetmail": 0,
+            "canmergefrom": 1,
+            "canmergeto": 0
+          }
+        },
+        {
+          "physical_line": 13247,
+          "row_sha256": "8764a1508a3519836220940892b570501ee9daa3ca00df396772878d1b346b1d",
+          "name_bytes_sha256": "38390598084f04824efe161e06f65cc3cf57febe6e4811d0a88cf05f571e4e30",
+          "secretname_bytes_sha256": "38390598084f04824efe161e06f65cc3cf57febe6e4811d0a88cf05f571e4e30",
+          "matches": [
+            {
+              "codec": "big5",
+              "role": "PERMIT",
+              "query": "伐木許可證",
+              "exact_name_match": true,
+              "field": "name"
+            },
+            {
+              "codec": "big5",
+              "role": "PERMIT",
+              "query": "伐木許可證",
+              "exact_name_match": true,
+              "field": "secretname"
+            }
+          ],
+          "numeric_fields": {
+            "id": 20197,
+            "imagenumber": 24222,
+            "cost": 0,
+            "type": 16,
+            "level": 0,
+            "campile": null,
+            "attack_raw_a": 0,
+            "attack_raw_b": 0,
+            "defence_raw_a": 0,
+            "defence_raw_b": 0,
+            "quick_raw_a": 0,
+            "quick_raw_b": 0,
+            "charm_raw_a": 0,
+            "charm_raw_b": 0,
+            "magicid": null,
+            "dropatlogout": 0,
+            "vanishatdrop": 1,
+            "canpetmail": 0,
+            "canmergefrom": 0,
+            "canmergeto": 0
+          }
+        }
+      ],
+      "bytes": 3668487,
+      "sha256": "6d6d63fda59c6bda2f239fe18c9361b5c9da18c84f678b7cc95bde24544292fb",
+      "selected_by_actual_setup": false
+    }
+  },
+  "cross_table_candidate_comparisons": [
+    {
+      "template_id": 2465,
+      "same_name_bytes": true,
+      "same_secretname_bytes": true,
+      "numeric_changes": {}
+    },
+    {
+      "template_id": 2478,
+      "same_name_bytes": true,
+      "same_secretname_bytes": true,
+      "numeric_changes": {}
+    },
+    {
+      "template_id": 2481,
+      "same_name_bytes": true,
+      "same_secretname_bytes": true,
+      "numeric_changes": {}
+    },
+    {
+      "template_id": 2484,
+      "same_name_bytes": true,
+      "same_secretname_bytes": true,
+      "numeric_changes": {}
+    },
+    {
+      "template_id": 20197,
+      "same_name_bytes": true,
+      "same_secretname_bytes": true,
+      "numeric_changes": {}
+    }
+  ],
+  "unmatched_query_roles": [
+    "REPAIRED_AXE"
+  ],
+  "name_match_is_quest_identity_proof": false,
+  "whole_file_encoding_authenticated": false,
+  "raw_stat_pairs_are_final_equipped_stats": false,
+  "original_early_template_ids_recovered": false,
+  "guide_charm_conflict_resolved_for_early_build": false,
+  "original_server_executed": false,
+  "runtime_code_changed": false,
+  "stage_a_accepted": false,
+  "stage_b_gate": "GATED"
+}

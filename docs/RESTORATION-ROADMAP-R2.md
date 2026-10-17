@@ -301,3 +301,8 @@ EARLY-QUEST-CONTENT-02选择单条任务寻找独立早期证据；不再只增�
 ## 2026-10-17 — EARLY-LOGGING-CONTENT-03 来源分层伐木任务
 
 三个实际2003/2004快照限定文本年代与索引1.82编辑归属。尾刀、许可在回购时收回、近似14木5000、断斧修复/新斧分阶段、后期重复接取和手环魅+5/-5差异已有规格；原始ID、事件和商业服构建不补造。下一项QUEST-ITEM-IDENTITY-04只复用已有recovered25物品表schema/修订/获取流程核对手环、许可、斧头几个候选，形成版本化身份清单，不倒填TW1.0、不重新扫全部任务。正式联合审阅仍待用户，九族7 PARTIAL+2 OPEN、Stage B GATED、R79暂停。
+
+
+## 2026-10-17 — QUEST-ITEM-IDENTITY-04 后代物品候选已有来源身份
+
+同源两表各五行候选、实际setup、raw属性/生命周期与不同许可ID已固定，原始早期ID与任务绑定仍OPEN。规格STONEAGE-QUEST-ITEM-IDENTITY-R1；下一项QUEST-NPC-ITEM-BINDING-05仅追踪这五ID的同源NPC配置发放/收回，非全量NPC或通用helper深挖。无明确语法即止，Stage A未终验，Stage B GATED。

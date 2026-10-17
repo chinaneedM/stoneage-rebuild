@@ -67,5 +67,15 @@
   "source_attempt_limit": "one independently executed existing fixed-hash route; no blind local endpoint repetition",
   "expected_output": "candidate numeric IDs/stats/lifetime flags, row/name byte hashes, active setup and source hashes; no copied item descriptions or original rows",
   "early_identity_inferred": false,
-  "stage_b_gate": "GATED"
+  "stage_b_gate": "GATED",
+  "subsequent_acquisition": {
+    "run_id": 38993481443,
+    "job_id": 117280730238,
+    "conclusion": "success",
+    "route": "same fixed-hash recovery step in independent GitHub runner",
+    "master_hashes_and_counts_verified": true,
+    "source_candidates_each_table": 5,
+    "whole_rows_stored_in_git": false,
+    "local_prior_405_and_json_errors_retained": true
+  }
 }

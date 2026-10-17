@@ -14762,3 +14762,14 @@ CI另加入新抓取业务观察/手册节摘要与永久派生报告的独立�
 既有Mediafire本地POST405/GET非JSON失败保留，改在独立Actions环境执行一次已有固定分卷hash及合包hash的取得步骤；旧workflow未改、也不执行原服务程序。新工具只读两个固定hash的94列表和实际setup，以UTF8/GB18030/Big5的明确字面查询标记候选，输出ID/数值/生命周期与源/行hash，名字/描述/脚本/全行不保留。编码与同名对应仍是候选，不拿后代ID倒填TW1.0；raw_a/b不当最终装备值。六项合成反例本地通过；实际来源取得和候选结果尚未发生，待独立CI验收。
 
 若该独立路径仍失败，按失败点记录并停止，无候选也保留空缺，不编ID。已有bundle/主表hash不合即拒绝，不借近似版本替换。INTAKE记录启动前缀与复用步骤；Stage A未终验、Stage B GATED，R79暂停。
+
+
+### QUEST-ITEM-IDENTITY-04 实际独立取得与候选结果
+
+源提交d1ed96d8a970f556ab14dd6956d534e777cfee6a/tree051816088dd290a56c49b0471a18cff47cd831d8，Action38993481443/job117280730238 SUCCESS。旧固定分卷/合包及两个master hash全部通过，6项合成检查成功，原始程序未执行。独立runner取得成功不抹去此前本地405/非JSON失败。实际setup9715字节/hash b4936c103efb7b3cad359e5c85c7965187306883a68c0be712ece6c374e3b12d，itemset3/4/5/6file全指itemset.txt。
+
+两个表各5行Big5整名候选：交差斧2465，採伐許可證2478，杉的手環2481，折斷的斧頭2484，伐木許可證20197。五行在两表原始行/名字hash及数值均相同；两许可同图24222、同drop0/vanish1/mail0，但名字字节不同、cost10与0，不能并为同一ID。手环魅原始双值-5/-5，与2003页相近，不解决初代+5/-5。2465攻35/35不能替代指南改造斧攻33；改造斧本次固定词表未命中，不表示游戏不存在。原始ID/精确早期构建/任务绑定仍未知。
+
+artifact12085893496 ZIP2092字节/hash bb5a6cbedae5f06e2f12c2a51c8a2b259e6899d6757b4f79f517fa7cf258b8e8；原JSON16378字节/hash9ee594a8f9871a675c320f30c3ea727bd6eb92e5fa34584a0078bc0d42480618，永久blobd0ac9e5f5d26db5afcee07119295fd05803011b9。ACCEPTANCE保留完整HEAD/tree/run/job/artifact/hash/blob链，原始包/表/程序不入Git。归档后9项验证与元数据重放待独立验收；后续归档路径不再重复下载原始包，不能冒称新来源获取。
+
+**Highest NEXT QUEST-NPC-ITEM-BINDING-05**：同源保存包内只核对五个ID在已有NPC参数语法中的发放/收回角色，避免把同图许可合并；普通数字命中不当绑定，缺脚本即UNKNOWN，不穷举全部NPC或恢复R79。九族7 PARTIAL+2 OPEN，Stage A未终验/Stage B GATED。
