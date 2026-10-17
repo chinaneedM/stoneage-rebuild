@@ -54,5 +54,53 @@
   ],
   "stage_a_accepted": false,
   "stage_b_gate": "GATED",
-  "original_quest_or_runtime_reachability_proven": false
+  "original_quest_or_runtime_reachability_proven": false,
+  "post_archive_validation": {
+    "head": "0334f938dcb3ee628b34c5ac0cd6984833f803d5",
+    "tree": "92bd80e840738cb7e8e3a58d23e3b281591730e8",
+    "archive_replay_run_id": 38997568262,
+    "archive_replay_job_id": 117293366498,
+    "archive_replay_conclusion": "success",
+    "synthetic_tests": 9,
+    "independent_archive_tests": 6,
+    "original_bundle_retrieval_skipped": true,
+    "original_source_run_id": 38997164871,
+    "unchanged_immutable_source_blob": "b9f04bd7956a25a249e182fad4db2f0459719327",
+    "adjacent_ci_runs": [
+      38997568202,
+      38997568148
+    ],
+    "adjacent_ci_conclusion": "success",
+    "main_before": "87cef0c95dc5c3057073ee408611b1ef81ff975c",
+    "comparison_ahead": 2,
+    "comparison_behind": 0,
+    "changed_paths": 11,
+    "deleted_paths": 0,
+    "main_nonforce_fast_forward_completed": true,
+    "main_after": "0334f938dcb3ee628b34c5ac0cd6984833f803d5",
+    "main_workflow_runs": [
+      {
+        "id": 38997627845,
+        "name": "bounded_npc_flow",
+        "conclusion": "success"
+      },
+      {
+        "id": 38997627882,
+        "name": "late_client_provenance",
+        "conclusion": "success"
+      },
+      {
+        "id": 38997627871,
+        "name": "original_tw10_custody",
+        "conclusion": "success"
+      },
+      {
+        "id": 38997627820,
+        "name": "later_pet_boundary",
+        "conclusion": "success"
+      }
+    ],
+    "stage_a_accepted": false,
+    "stage_b_gate": "GATED"
+  }
 }

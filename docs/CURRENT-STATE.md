@@ -14821,3 +14821,12 @@ QUEST-ITEM-IDENTITY-04本轮有界交付完成：两个固定表各五后代候�
 独立归档ZIP artifact12087945346为2196字节/SHA256 a824365bfae4f4763192779dac853d431014bdfdc8af3c1785c1da6f71b0b3e3，唯一原JSON15004字节/SHA256 719b6dc071ea9d5946d707ced51798786d7b227d642bb80f009290ca834ad05a，永久Git blob b9f04bd7956a25a249e182fad4db2f0459719327；原JSON与创建的Git blob字节一致。完整来源/否证/永久链在research/recovered/STONEAGE-QUEST-NPC-FLOW-ACCEPTANCE-R1.json及specs/STONEAGE-QUEST-NPC-FLOW-LINK-R1.md。后续归档 CI / 主线合并的结果将在独立成功后补录，此处不预称成功。
 
 **最高NEXT STAGE-A-PORTFOLIO-CHECKPOINT-02**：连续两包后代NPC物品考据已有实际成果，但原始最早版NPC/任务仍OPEN。停止无名延伸NPC辅助函数，复查九系统真实玩法阻塞、早期定年来源和现有联合审阅入口，以更高历史复原价值确定下一有限实质包；无同年代新材料不自动深化后代链。Stage A 7 PARTIAL+2 OPEN、尚未正式联合审阅，Stage B GATED、R79 PAUSED_NON_BLOCKING。
+
+
+### QUEST-NPC-FLOW-LINK-06 来源档案验收、主线回写与下一项
+
+本轮全量来源Action38997164871/job117292136171 SUCCESS；独立下载ZIP的SHA256和唯一raw JSON、永久blob逐字节核对成功。随后归档重放分支0334f938dcb3ee628b34c5ac0cd6984833f803d5/tree92bd80e840738cb7e8e3a58d23e3b281591730e8在Action38997568262/job117293366498 SUCCESS：9项同EventEnd原型/反例和6项永久归档/旧49角色重放均PASS；固定原保存包再下载与原始参数重提取明确SKIPPED，不冒称第二次原始源获取。相邻分支来源边界Actions38997568202、38997568148均SUCCESS。
+
+合并前最新main仍87cef0c95dc5c3057073ee408611b1ef81ff975c，GitHub远端比较ahead2/behind0、11路径无删除，按expected-main非强制快进合并至0334f938dcb3ee628b34c5ac0cd6984833f803d5。新main独立运行NPC同事件38997627845、最早TW1.0来源custody38997627871、后代版来源38997627882、后期PET边界38997627820均SUCCESS；没有把客户端/商业服务端仿真当史实。MAIN tree92bd80e840738cb7e8e3a58d23e3b281591730e8，完整历史CURRENT-STATE Git blob b0058b2dae6e2a6569e9aef7742c74c94c012071（1835027字符）保留先前完整前缀。永久原JSON Git blob b9f04bd7956a25a249e182fad4db2f0459719327与最初真实CI源报告一致。ACCEPTANCE追加后续验证和主线凭据，不抹去以前失败或来源取得记录。本段交接自身提交的CI尚未验证，不能预报结果。
+
+QUEST-NPC-FLOW-LINK-06有界完成：两条2465→2484候选、1条2478→2481候选；没有证据把两段串成一个完整伐木任务或同一原版1.0商业服务端事务。**最高NEXT STAGE-A-PORTFOLIO-CHECKPOINT-02**：停止重复深化后代NPC分析，检查九族实际史料缺口、用户验收包和可靠原始时代证据优先级，再选择下一项实体恢复。正式Stage A未终验（7 PARTIAL+2 OPEN），Stage B GATED，R79 PAUSED_NON_BLOCKING。
