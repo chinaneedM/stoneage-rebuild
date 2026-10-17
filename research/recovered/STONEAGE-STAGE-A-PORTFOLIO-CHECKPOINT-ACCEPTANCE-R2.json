@@ -1,0 +1,48 @@
+{
+  "schema": "stoneage.stage_a.portfolio_checkpoint.acceptance.r2",
+  "date": "2026-10-17",
+  "source_main": "80cb09c527e7db4cc83d9f2d557a36b4b7d24a3a",
+  "source_main_tree": "ff4ba5ceed89940ad7a66113b65150a9861e55b1",
+  "branch": "agent/stage-a-portfolio-checkpoint-r2-20261017",
+  "source_commit": "c69cc89c1221739f9df8f38ae6bf2b0f7612847f",
+  "source_tree": "2205596037b55257fcbf4d564bafcf8ab11149d1",
+  "derived_report_path": "research/recovered/STONEAGE-STAGE-A-PORTFOLIO-CHECKPOINT-R2.json",
+  "derived_report_git_blob": "1666ab6597ed9a35de38a16ba6ee84761f8132c5",
+  "validator_git_blob": "2f853cb2162e47f017c98f6c7ee5426b451ae4f2",
+  "workflow": "validate-stoneage-stage-a-portfolio-checkpoint.yml",
+  "workflow_run_id": 38999995941,
+  "workflow_job_id": 117300702350,
+  "conclusion": "success",
+  "tests": {
+    "new_checkpoint": 8,
+    "prior_stage_a_review": 5,
+    "tw10_original_ui": 10,
+    "early_manual": 7,
+    "total": 30
+  },
+  "machine_check": {
+    "families": 9,
+    "playflows": 7,
+    "blockers": 5,
+    "immutable_source_git_blobs": 8,
+    "review_packet_source_pins": 54,
+    "historical_prefixes": 8,
+    "source_scope": "ARCHIVED_DERIVED_AND_EXISTING_ORIGINAL_CLIENT_SHAPES_ONLY"
+  },
+  "adjacent_ci": {
+    "run_id": 38999995889,
+    "scope": "runtime_bootstrap_contract",
+    "conclusion": "success"
+  },
+  "authenticated_new_jss1999_bytes_acquired": false,
+  "original_game_binary_or_server_executed": false,
+  "original_npc_or_quest_data_added": false,
+  "stage_a_accepted": false,
+  "joint_user_review_completed": false,
+  "stage_b_gate": "GATED",
+  "savedata_r79": "PAUSED_NON_BLOCKING",
+  "status": "REVIEWED_EVIDENCE_AND_WORK_ORDER_NOT_HISTORICAL_RESTORATION_CLOSURE",
+  "highest_next": "EARLY-VILLAGE-SERVICE-JOURNEY-01",
+  "source_files_only_derived": false,
+  "citation_basis": "first-party 2001-04-18 manual derived source plus original Taiwan v1 UI schema, distinct versions; no new source acquisition"
+}

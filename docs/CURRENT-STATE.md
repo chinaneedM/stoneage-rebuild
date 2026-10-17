@@ -14841,3 +14841,8 @@ QUEST-NPC-FLOW-LINK-06有界完成：两条2465→2484候选、1条2478→2481�
 新交付 docs/STAGE-A-PORTFOLIO-CHECKPOINT-R2.md、research/recovered/STONEAGE-STAGE-A-PORTFOLIO-CHECKPOINT-R2.json 和独立否证工具/测试，固定8份不可变审阅、手册、客户端UI、后代NPC源证据Git blob。五类可重用第一方2001-04-18日本官方手册行为：首次供品/记录点重登，三村组长毛象公交3分钟/最多4人/不遇敌，村庄医疗/付费宠物技能及收购，村庄送货/矿石工作，以及普通地面物品的未定时限消失。逐项标出TW1.0客户端通用观测面与服务端输入缺口；不填路线连通边、金钱、奖励、消失时长、供品ID/数量、原始脚本和存储ACK，不声称1999同构建。
 
 **Highest NEXT EARLY-VILLAGE-SERVICE-JOURNEY-01**：在5项固定范围内把有来源的玩家动作、前置状态、可以观察的原客户端字段形状和缺失/未获授权推断的服务端事务写成规则可消费、可反例检验的有限早期村庄体验规格；没有新资料或构建级关联时明确UNKNOWN后立即停，不启动新引擎。TW10视觉调用点及原服内容继续证据门禁，旧savedata R79 PAUSED_NON_BLOCKING、Stage A未联合终验、Stage B GATED。当前checkpoint没有取得新原始数据字节，也没有提高全局复原百分比。源/CI/主线验收应以后续实际执行结果另行记载。
+
+
+### STAGE-A-PORTFOLIO-CHECKPOINT-02 独立校验与归档凭据
+
+在分支agent/stage-a-portfolio-checkpoint-r2-20261017源提交c69cc89c1221739f9df8f38ae6bf2b0f7612847f/tree2205596037b55257fcbf4d564bafcf8ab11149d1，独立Actions38999995941/job117300702350 SUCCESS：新增8项组合门禁+既有九族审阅5项+TW1.0原版UI10项+早期官方手册7项，共30项测试PASS；machine check九族7场景5阻塞、8个本轮Git源锚点及原审阅54源锚点/8历史前缀PASS。相邻runtime bootstrap Actions38999995889 SUCCESS。不涉及新下载原始客户端、原商服运行或新模式引擎；2001-04-18手册规则与TW1.0原版通用消息形状保持不同来源层。永久验收记录research/recovered/STONEAGE-STAGE-A-PORTFOLIO-CHECKPOINT-ACCEPTANCE-R2.json，含实际CI源SHA、job、测试和否证位。本次归档重放及main合并尚待实际验收，不能预先声称成功。最高NEXT仍EARLY-VILLAGE-SERVICE-JOURNEY-01，Stage B GATED。

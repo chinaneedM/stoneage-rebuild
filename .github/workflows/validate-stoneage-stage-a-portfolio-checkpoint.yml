@@ -6,6 +6,8 @@ on:
       - 'docs/STAGE-A-PORTFOLIO-CHECKPOINT-R2.md'
       - 'tools/stoneage_stage_a_portfolio_checkpoint.py'
       - 'tests/test_stoneage_stage_a_portfolio_checkpoint.py'
+      - 'tests/test_stoneage_stage_a_portfolio_receipt.py'
+      - 'research/recovered/STONEAGE-STAGE-A-PORTFOLIO-CHECKPOINT-ACCEPTANCE-R2.json'
       - '.github/workflows/validate-stoneage-stage-a-portfolio-checkpoint.yml'
   workflow_dispatch:
 permissions:
@@ -20,7 +22,7 @@ jobs:
         with:
           python-version: '3.12'
       - name: Reject forged original gameplay and validate eight pinned source files
-        run: python -m unittest tests.test_stoneage_stage_a_portfolio_checkpoint tests.test_stoneage_stage_a_review_packet -v
+        run: python -m unittest tests.test_stoneage_stage_a_portfolio_checkpoint tests.test_stoneage_stage_a_review_packet tests.test_stoneage_stage_a_portfolio_receipt -v
       - name: Reuse original Taiwan UI and early manual negative controls
         run: python -m unittest tests.test_stoneage_tw10_ui_semantics tests.test_stoneage_early_content_probe -v
       - name: Verify machine-read source checkpoint and existing nine-family review
