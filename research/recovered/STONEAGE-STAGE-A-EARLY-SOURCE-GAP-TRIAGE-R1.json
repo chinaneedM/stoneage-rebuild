@@ -1,0 +1,174 @@
+{
+  "schema": "stoneage.stage_a_early_source_gap_triage.r1",
+  "date": "2026-10-17",
+  "baseline_head": "7093e5fb33ff7b90abce7932e17b137bffa8dec9",
+  "baseline_tree": "f58d7c81aa28d8becfb9895bc146aa896c48bcb1",
+  "task": "STAGE-A-EARLY-SOURCE-GAP-TRIAGE-01",
+  "scope": "FIVE_ALREADY_SOURCE_QUALIFIED_FIRST_PARTY_VILLAGE_SERVICES_ONLY",
+  "source_pins": {
+    "journey": {
+      "path": "research/recovered/STONEAGE-EARLY-VILLAGE-SERVICE-JOURNEY-R1.json",
+      "blob": "7b6c724999e52a421af77d8c8e1e9351288e11ff"
+    },
+    "manual": {
+      "path": "research/recovered/STONEAGE-EARLY-CONTENT-GUIDE-MANUAL-R1.json",
+      "blob": "54404a8118f125a9a53eabbb8bad8c4a0d07b190"
+    },
+    "review": {
+      "path": "docs/STAGE-A-CONSOLIDATED-REVIEW-R1.md",
+      "blob": "07c9950a40d110d4dabb80b11412db8b4ea64ba9"
+    }
+  },
+  "method": "Finite feasibility and provenance check of current repository evidence plus public discovery queries. No original binary/server download or original runtime execution.",
+  "public_discovery": {
+    "performed": true,
+    "routes": [
+      {
+        "id": "Q_JP_01",
+        "query": "石器時代 オンライン ゲーム 1999 2000 マンモスバス 記録ポイント 供え物 攻略",
+        "result": "NO_AUTHENTICATED_BUILD_MATCHING_NEW_GAMEPLAY_FIELD"
+      },
+      {
+        "id": "Q_JP_02",
+        "query": "stoneage titan.co.jp manual02",
+        "result": "NO_AUTHENTICATED_BUILD_MATCHING_NEW_GAMEPLAY_FIELD"
+      },
+      {
+        "id": "Q_ZH_01",
+        "query": "石器时代 2000 猛犸巴士 车费 3分钟 原版 村庄",
+        "result": "NO_AUTHENTICATED_BUILD_MATCHING_NEW_GAMEPLAY_FIELD"
+      },
+      {
+        "id": "Q_ARCHIVE_DIRECT_01",
+        "query": "https://web.archive.org/web/20010418083149id_/http://www.titan.co.jp/stoneage/manual02.html",
+        "result": "WEB_READER_ACCESS_ERROR_NOT_ABSENCE; EXISTING_PRIOR_ARCHIVED_DERIVED_SOURCE_RETAINED"
+      }
+    ],
+    "exhaustive_global_search": false,
+    "source_unavailable_worldwide_claim": false,
+    "new_raw_source_verified": false,
+    "new_original_game_value_obtained": false,
+    "proof_status": "LIMITED_DISCOVERY_NOT_NEGATIVE_HISTORICAL_EVIDENCE"
+  },
+  "evidence_layers": [
+    "JSS_2001_FIRST_PARTY_MANUAL_DESCRIPTION",
+    "TW10_COMPILED_GENERIC_CLIENT_CARRIER",
+    "LATER_RECOVERED_NOT_ORIGINAL_MEMBERSHIP",
+    "MODERN_SYNTHETIC_NOT_HISTORICAL_RUNTIME"
+  ],
+  "gaps": [
+    {
+      "id": "SAVE_POINT",
+      "priority": "P0",
+      "missing": [
+        "original offering item ID and quantity",
+        "original server durable save/ACK",
+        "same-build next-login location trace"
+      ],
+      "why": "初期存点及重登无法形成原商服可验的持久化体验",
+      "reopen": "具有同版身份的原始NPC/服务端存点脚本或成功存档确认及重登成对轨迹",
+      "notEvidence": "泛用S:C/WN字段不证明真实存点事务",
+      "source_status": "OPEN_EVIDENCE_LIMITED",
+      "same_build_service_binding": "UNPROVEN",
+      "verified_original_value": null,
+      "kind": "ORIGINAL_SERVER_OR_SAME_BUILD_MISSING_INPUT",
+      "recovered_by_this_package": false
+    },
+    {
+      "id": "MAMMOTH_BUS",
+      "priority": "P1",
+      "missing": [
+        "original exact adjacent stop edges and map identifiers",
+        "fare and collection rule if any",
+        "passenger dispatch/encounter suppression implementation"
+      ],
+      "why": "无法准确再现原始公车行驶路线、费用和乘客状态",
+      "reopen": "同时代第一方站点线路/票价数据，或同版运行包及服务端事件记录",
+      "notEvidence": "六村分成两组不等于每两村直达或免费",
+      "source_status": "OPEN_EVIDENCE_LIMITED",
+      "same_build_service_binding": "UNPROVEN",
+      "verified_original_value": null,
+      "kind": "ORIGINAL_SERVER_OR_SAME_BUILD_MISSING_INPUT",
+      "recovered_by_this_package": false
+    },
+    {
+      "id": "VILLAGE_CARE_TRAINING",
+      "priority": "P1",
+      "missing": [
+        "per-village service NPC identity",
+        "historical skill catalogue and prices",
+        "service completion state delta"
+      ],
+      "why": "医疗、宠物学技、回购项目无法设成原版确定菜单",
+      "reopen": "可版本归属的原版设施/NPC配置、官方价格手册或完整交易轨迹",
+      "notEvidence": "后代治疗及技能店表不可当初代服务价格",
+      "source_status": "OPEN_EVIDENCE_LIMITED",
+      "same_build_service_binding": "UNPROVEN",
+      "verified_original_value": null,
+      "kind": "ORIGINAL_SERVER_OR_SAME_BUILD_MISSING_INPUT",
+      "recovered_by_this_package": false
+    },
+    {
+      "id": "VILLAGE_WORK",
+      "priority": "P0",
+      "missing": [
+        "original delivery/ore item identifiers",
+        "task NPC event and dialogue",
+        "original reward/quest flags and transaction trace"
+      ],
+      "why": "送货和矿石工作只有种类叙述，无原版可通关任务流程",
+      "reopen": "同年代独立第一方任务页面、原版任务载荷或同版完成过程及奖励记录",
+      "notEvidence": "后代ExChangeMan物品字段不认证初代工作任务",
+      "source_status": "OPEN_EVIDENCE_LIMITED",
+      "same_build_service_binding": "UNPROVEN",
+      "verified_original_value": null,
+      "kind": "ORIGINAL_SERVER_OR_SAME_BUILD_MISSING_INPUT",
+      "recovered_by_this_package": false
+    },
+    {
+      "id": "GROUND_ITEM_EXPIRY",
+      "priority": "P1",
+      "missing": [
+        "original duration and trigger clock",
+        "same-version server ground-item removal signal",
+        "item identity/ownership conditions"
+      ],
+      "why": "不能确定原始地面物品保留时长和消失触发语义",
+      "reopen": "原版真实消失前后带时间戳采集、服务端计时配置或官方明确量值记录",
+      "notEvidence": "普通物品消失不推导任务物品/下线删除",
+      "source_status": "OPEN_EVIDENCE_LIMITED",
+      "same_build_service_binding": "UNPROVEN",
+      "verified_original_value": null,
+      "kind": "ORIGINAL_SERVER_OR_SAME_BUILD_MISSING_INPUT",
+      "recovered_by_this_package": false
+    }
+  ],
+  "triage_result": "NO_NEW_AUTHENTICATED_ORIGINAL_VALUE; DOCUMENT_KNOWN_UNKNOWNS_AND_STOP",
+  "family_gates": {
+    "PARTIAL": 7,
+    "OPEN": 2
+  },
+  "player_flow_profiles": 7,
+  "material_blockers": 5,
+  "portfolio_decision": {
+    "EARLY_VILLAGE_SERVICE_DEEPENING": "STOP_UNTIL_NAMED_SOURCE_REOPENER",
+    "TW10_VISUAL_CALLSITE": "PARK_EVIDENCE_GATED",
+    "TW10_SAVEDATA_R79": "PAUSED_NON_BLOCKING",
+    "NEXT": "STAGE-A-JOINT-REVIEW-DECISION-01",
+    "NEXT_REQUIRES_USER_ACCEPTANCE": true,
+    "NEXT_ACTION": "Present existing nine-family acceptance packet, five concrete source blockers and exact evidence-limited disposition; request Stage A joint review, not automatically enter Stage B",
+    "ORIGINAL_SERVER_MATERIAL_IF_ACQUIRED": "REOPEN_SPECIFIC_SERVICE_ONLY"
+  },
+  "unsupported_history_assertions": [],
+  "original_1999_membership_proven": false,
+  "original_tw10_same_build_service_execution_proven": false,
+  "commercial_server_durable_ack_proven": false,
+  "original_map_npc_item_reward_acquired": false,
+  "original_client_executed_this_package": false,
+  "original_server_executed_this_package": false,
+  "whole_stage_a_accepted": false,
+  "stage_b_started": false,
+  "production_engine_work_started": false,
+  "overall_restoration_percentage": null,
+  "r79": "PAUSED_NON_BLOCKING"
+}

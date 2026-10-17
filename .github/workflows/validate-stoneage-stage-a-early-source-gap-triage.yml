@@ -1,0 +1,28 @@
+name: Validate Stage A early source gap triage
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-STAGE-A-EARLY-SOURCE-GAP-TRIAGE-R1.json'
+      - 'docs/STAGE-A-EARLY-SOURCE-GAP-TRIAGE-R1.md'
+      - 'tools/stoneage_stage_a_early_source_gap_triage.py'
+      - 'tests/test_stoneage_stage_a_early_source_gap_triage.py'
+      - '.github/workflows/validate-stoneage-stage-a-early-source-gap-triage.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  finite-evidence-review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate new source-gap packet and evidence negative tests
+        run: |
+          python -m unittest tests.test_stoneage_stage_a_early_source_gap_triage tests.test_stoneage_early_village_service_journey -v
+          python -m tools.stoneage_stage_a_early_source_gap_triage
+      - name: Recheck previously accepted Stage A review evidence
+        run: |
+          python tools/stoneage_stage_a_review_packet.py
