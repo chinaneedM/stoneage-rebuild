@@ -16,7 +16,71 @@
   "original_9286_world_maps_restored": false,
   "stage_b_started": false,
   "branch_ci": "SUCCESS_39079097177",
-  "main_ci": "PENDING_ACTUAL_MAIN_RUN",
+  "main_ci": "SUCCESS_11_SAME_HEAD_MAIN_WORKFLOWS",
   "next": "TW10-AUDIO-EVENT-SOURCE-GATE-01",
-  "original_source_artifact_raw_replay_verified": true
+  "original_source_artifact_raw_replay_verified": true,
+  "main_acceptance": {
+    "head": "088f0b1af133a29d3c1d6bdefef27d9b308cc1fc",
+    "tree": "e85fa8d3277db8e4073a29d95fa9d3b6615bf7a2",
+    "verified_count": 11,
+    "all_success": true,
+    "runs": [
+      {
+        "id": 39079303103,
+        "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+        "conclusion": "success"
+      },
+      {
+        "id": 39079303231,
+        "name": "Validate StoneAge preproduction content archive and wiki boundary",
+        "conclusion": "success"
+      },
+      {
+        "id": 39079303277,
+        "name": "Validate legacy StoneAge assistant history and pet content gaps",
+        "conclusion": "success"
+      },
+      {
+        "id": 39079303283,
+        "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+        "conclusion": "success"
+      },
+      {
+        "id": 39079303323,
+        "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+        "conclusion": "success"
+      },
+      {
+        "id": 39079303346,
+        "name": "Independently verify TW1.0 R58 rooted helper returns and source custody",
+        "conclusion": "success"
+      },
+      {
+        "id": 39079303376,
+        "name": "Validate original TW1 map-number collision and player bitmap category boundary",
+        "conclusion": "success"
+      },
+      {
+        "id": 39079303378,
+        "name": "Validate Stage A evidence-limited review acceptance",
+        "conclusion": "success"
+      },
+      {
+        "id": 39079303460,
+        "name": "Validate Stage A early source gap triage",
+        "conclusion": "success"
+      },
+      {
+        "id": 39079303533,
+        "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+        "conclusion": "success"
+      },
+      {
+        "id": 39079303555,
+        "name": "Validate StoneAge Stage A joint review decision",
+        "conclusion": "success"
+      }
+    ],
+    "does_not_certify_all_original_world_maps": true
+  }
 }

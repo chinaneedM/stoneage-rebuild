@@ -15160,3 +15160,10 @@ WORLD源分支ec2aa8fac09f13a61c73c9542b2dd9c08c9fc1b9/tree0976772698b7470b72145
 来源Action`39078746682`/job`117531202789` 实际SUCCESS。独立下载artifact`12117946984` ZIP1795B SHA256`8d48e37f0eae58b7659e7315ef83ccffe95c36d8728b6fe76d68d7d0d1dab5a4`，内部raw JSON8494B SHA256`5efa5972fe68d38d0e85aad3c7e13d6c4cd588c0f1b81a5900ba79e8a6711dd9`，Git blob`7d4d5d2cae224c093b3e85e8ef1bfc49b54c5981`逐字节一致。第二轮永久归档分支独立Action`39079097177`实际SUCCESS，包含源完全重算、固定原ZIP摘要、字段界限测试及旧hitMap算法单元。规格`docs/STONEAGE-TW10-MAP-CONTENT-COLLISION-R1.md`、永久派生JSON和source custody、工具与tests及workflow均已写分支；**最终主线CI需快进后另行实核**。无原版权地图DAT/原版权图像导入。
 
 最高NEXT `TW10-AUDIO-EVENT-SOURCE-GATE-01`：从原盘音效/音乐数据与已证原exe事件播放入口找可证明的连接，不能按音乐名称凭空指派剧情场景。原世界具体DAT、NPC、任务、刷宠仍OPEN。Stage A 7 PARTIAL+2 OPEN，新游戏与网站生产GATED、R79 PAUSED；无整体复原百分比。
+
+ 
+### 2026-10-18 — T03地图属性来源正式主线验收
+
+`TW10-MAP-CONTENT-ORIGINAL-RESOURCE-BOUNDARY-01`研究与永久档案经分支10项SUCCESS后，主线以新核查 `b0e232f2b7d40a340db395c33fc08e3faeaf2204` ahead3/behind0、11文件0删除非强制快进到 `088f0b1af133a29d3c1d6bdefef27d9b308cc1fc` / tree `e85fa8d3277db8e4073a29d95fa9d3b6615bf7a2`。**同HEAD 11项main Actions全部SUCCESS**，包括新地图source复算 `39079303376`、旧原SPR/ADRN源验证 `39079303283`、原图号与玩家标签验证 `39079303103`、Stage A联合审查 `39079303555`；全部运行编号/名称已写入 `STONEAGE-TW10-MAP-CONTENT-COLLISION-ACCEPTANCE-R1.json` 的`main_acceptance.runs`。本项成功只认证原ADRN map_number→bitmap碰撞属性与玩家候选号段的数值交叉及源保管，不认证原版世界地图DAT、原NPC或后代地图年代。上轮T02原物品静态资源报告与10/11项分支/主线PASS仍独立有效。
+
+**最高NEXT `TW10-AUDIO-EVENT-SOURCE-GATE-01`**：检查同版原盘声音/音乐索引、声音资源标识与原客户端播放器选择调用的最小实际证据；无原版事件实参时保留UNKNOWN并转下一可复原内容域。九系统7 PARTIAL+2 OPEN、Stage B和网站生产GATED、R79 PAUSED不变。整体百分比不可计算。
