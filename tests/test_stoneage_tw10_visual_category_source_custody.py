@@ -14,7 +14,7 @@ class OriginalVisualSourceCustody(unittest.TestCase):
   content=REPORT.read_bytes()
   self.assertEqual(len(content),8369)
   self.assertEqual(hashlib.sha256(content).hexdigest(),RAW_SHA)
-  self.assertEqual(hashlib.sha1(b"blob "+str(len(content)).encode()+b"\\0"+content).hexdigest(),RAW_BLOB)
+  self.assertEqual(hashlib.sha1(b"blob "+str(len(content)).encode()+b"\0"+content).hexdigest(),RAW_BLOB)
   a=json.loads(RECEIPT.read_text(encoding="utf-8"))
   self.assertEqual(a["archive"]["original_zip_sha256"],"fa5ad6bf8f926feb8f8fc54e02c206760dfcaac4dbc28ef814145de7961479ee")
   self.assertEqual(a["archive"]["original_json_sha256"],RAW_SHA)
@@ -22,7 +22,7 @@ class OriginalVisualSourceCustody(unittest.TestCase):
   self.assertTrue(a["archive"]["independent_download_zip_digest_checked"])
  def test_exact_semantic_replay_and_negative_boundary(self):
   r=REPORT.read_bytes()
-  expected=(json.dumps(audit(),ensure_ascii=False,sort_keys=True,indent=2)+"\\n").encode("utf-8")
+  expected=(json.dumps(audit(),ensure_ascii=False,sort_keys=True,indent=2)+"\n").encode("utf-8")
   self.assertEqual(expected,r)
   d=json.loads(r)
   q={x["category_id"]:x for x in d["categories"]}
