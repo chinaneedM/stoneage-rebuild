@@ -1,0 +1,213 @@
+{
+  "schema": "stoneage.logging.intake.r1",
+  "remote_start_head": "bb524c4aef98e2577333df94c98a1093c9defed3",
+  "remote_start_tree": "834185c9cfd2377c4d7b9684a74c3b2eb9f23951",
+  "remote_branch_count": 298,
+  "latest_main_actions_success": [
+    38992072057,
+    38992071929
+  ],
+  "in_progress_at_start": 0,
+  "historical_queued_run_not_acceptance": 37642417333,
+  "history_prefixes": [
+    {
+      "path": "README.md",
+      "bytes": 7369,
+      "sha256": "75408a98eb11ef98f9f1327375ba0d96e3df173e9921e0830085f0d07c2066af",
+      "blob": "d362e5a1cc591158b049056b2bd438f2a64dabf5"
+    },
+    {
+      "path": "docs/PROJECT-CONTINUITY-PROTOCOL-R1.md",
+      "bytes": 9762,
+      "sha256": "c44834eeec87f7a43e9cb4905f08377349e36d58b1fff2c5a75a6975db695e3b",
+      "blob": "ba9bbe19384589400abc61af37a360a40bf91452"
+    },
+    {
+      "path": "docs/CURRENT-STATE.md",
+      "bytes": 1840721,
+      "sha256": "8f5ba88d3efa0c4c684979002c5a30c20e97da0944c3adbf36015187c5669772",
+      "blob": "707e2bebd547d10acd80a8534cefe3f706a43ae4"
+    },
+    {
+      "path": "docs/DESIGN-DECISIONS.md",
+      "bytes": 31862,
+      "sha256": "4b940540657a0141339bf0ab84e04e59e63756c3e5647ab379b2ad60bc577771",
+      "blob": "133d5c60cbbd668dbe1221098408f5f11e24b441"
+    },
+    {
+      "path": "docs/HISTORICAL-TIMELINE.md",
+      "bytes": 420783,
+      "sha256": "fe3aba31d31582ffa5930a570e981ef6acb148d04edbaf9d6dc3baebb129079b",
+      "blob": "0a9d6fdd8fdf0fce3f7bd94fb15f0a23726a17d1"
+    },
+    {
+      "path": "docs/SOURCE-REGISTRY.md",
+      "bytes": 657884,
+      "sha256": "d43ffcd4b411fb6b2d61f11706a7dba3d83a84157631d4e83d89c9253dd0af4a",
+      "blob": "4d135ddebc1d4c551dc58950e17563230af45c1c"
+    },
+    {
+      "path": "docs/RESTORATION-ROADMAP-R2.md",
+      "bytes": 25832,
+      "sha256": "753d2f67b0c4dd4866e4c263e627944dfec58f2659c7f4145032e4e09992bb76",
+      "blob": "72c21567f0ad08cf3a45b993273d85c2f8770e55"
+    },
+    {
+      "path": "docs/STAGE-A-CONSOLIDATED-REVIEW-R1.md",
+      "bytes": 14519,
+      "sha256": "9e7e1367b312b536a286d25886a005488f3195bc278b0a1e1b4732105d480c78",
+      "blob": "58c3763122547ca219839111051c6cc0290296e8"
+    }
+  ],
+  "archive_availability_initial": {
+    "compilation": {
+      "request": "https://archive.org/wayback/available?url=http%3A%2F%2Fgames.sina.com.cn%2Fhandbook%2F0101%2F01186091.shtml&timestamp=20011231",
+      "result": {
+        "url": "http://games.sina.com.cn/handbook/0101/01186091.shtml",
+        "archived_snapshots": {},
+        "timestamp": "20011231"
+      }
+    },
+    "compilation_port80": {
+      "request": "https://archive.org/wayback/available?url=http%3A%2F%2Fgames.sina.com.cn%3A80%2Fhandbook%2F0101%2F01186091.shtml&timestamp=20011231",
+      "result": {
+        "url": "http://games.sina.com.cn:80/handbook/0101/01186091.shtml",
+        "archived_snapshots": {},
+        "timestamp": "20011231"
+      }
+    }
+  },
+  "archive_exact_cdx": {
+    "sina_exact": {
+      "request": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fgames.sina.com.cn%2Fhandbook%2F0101%2F01186091.shtml&output=json&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&to=2003&collapse=digest&limit=5",
+      "error": "HTTP Error 503: Service Unavailable"
+    },
+    "17173_exact": {
+      "request": "https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fstoneage.17173.com%2Frenwu%2Fn3.htm&output=json&filter=statuscode%3A200&filter=mimetype%3Atext%2Fhtml&to=2003&collapse=digest&limit=5",
+      "result": []
+    }
+  },
+  "archive_availability_followup": {
+    "later_logging": {
+      "request": "https://archive.org/wayback/available?url=http%3A%2F%2Fgames.sina.com.cn%2Fzhqu%2Fsta%2Farticle%2F2003-05-20%2F7612.shtml&timestamp=20031231",
+      "result": {
+        "url": "http://games.sina.com.cn/zhqu/sta/article/2003-05-20/7612.shtml",
+        "archived_snapshots": {
+          "closest": {
+            "status": "200",
+            "available": true,
+            "url": "http://web.archive.org/web/20031205132111/http://games.sina.com.cn:80/zhqu/sta/article/2003-05-20/7612.shtml",
+            "timestamp": "20031205132111"
+          }
+        },
+        "timestamp": "20031231"
+      }
+    },
+    "index": {
+      "request": "https://archive.org/wayback/available?url=http%3A%2F%2Fgames.sina.com.cn%2Fzhqu%2Fsta%2Frwgl.shtml&timestamp=20031231",
+      "result": {
+        "url": "http://games.sina.com.cn/zhqu/sta/rwgl.shtml",
+        "archived_snapshots": {
+          "closest": {
+            "status": "200",
+            "available": true,
+            "url": "http://web.archive.org/web/20040218115426/http://games.sina.com.cn:80/zhqu/sta/rwgl.shtml",
+            "timestamp": "20040218115426"
+          }
+        },
+        "timestamp": "20031231"
+      }
+    },
+    "https_compilation": {
+      "request": "https://archive.org/wayback/available?url=https%3A%2F%2Fgames.sina.com.cn%2Fhandbook%2F0101%2F01186091.shtml&timestamp=20031231",
+      "result": {
+        "url": "https://games.sina.com.cn/handbook/0101/01186091.shtml",
+        "archived_snapshots": {
+          "closest": {
+            "status": "200",
+            "available": true,
+            "url": "http://web.archive.org/web/20040822040357/http://games.sina.com.cn:80/handbook/0101/01186091.shtml",
+            "timestamp": "20040822040357"
+          }
+        },
+        "timestamp": "20031231"
+      }
+    }
+  },
+  "archive_actual_requests": {
+    "archived_compilation": {
+      "request": "https://web.archive.org/web/20040822040357id_/http://games.sina.com.cn:80/handbook/0101/01186091.shtml",
+      "final_url": "https://web.archive.org/web/20040822040357id_/http://games.sina.com.cn:80/handbook/0101/01186091.shtml",
+      "bytes": 15864,
+      "sha256": "dc2bff83a0375401703460434eb7af1ac4129c9893a41ad2ec7afc1afa35b6c9",
+      "tokens": {
+        "伐木任务": true,
+        "石器时代1.82": false,
+        "2003-05-20": false,
+        "魅-5": false
+      }
+    },
+    "archived_later": {
+      "request": "https://web.archive.org/web/20031205132111id_/http://games.sina.com.cn:80/zhqu/sta/article/2003-05-20/7612.shtml",
+      "final_url": "https://web.archive.org/web/20031205132111id_/http://games.sina.com.cn:80/zhqu/sta/article/2003-05-20/7612.shtml",
+      "bytes": 31854,
+      "sha256": "bc795df4bb2d3202f5ffb5bef1ebee3e17045131be5c9ac0fda1aa1d017043a1",
+      "tokens": {
+        "伐木任务": true,
+        "石器时代1.82": false,
+        "2003-05-20": true,
+        "魅-5": true
+      }
+    },
+    "archived_index": {
+      "request": "https://web.archive.org/web/20040218115426id_/http://games.sina.com.cn:80/zhqu/sta/rwgl.shtml",
+      "final_url": "https://web.archive.org/web/20040218115426id_/http://games.sina.com.cn:80/zhqu/sta/rwgl.shtml",
+      "bytes": 43596,
+      "sha256": "7d41a9c2fd10089a46fc690d261d15d728a3d20c54a1c28dbef9a3f8a8b99ae6",
+      "tokens": {
+        "伐木任务": true,
+        "石器时代1.82": true,
+        "2003-05-20": false,
+        "魅-5": false
+      }
+    }
+  },
+  "local_live_fetch_failures": [
+    {
+      "source": "levelguide",
+      "result": "HTTP567"
+    },
+    {
+      "source": "qa",
+      "result": "HTTP567"
+    },
+    {
+      "source": "duplicate",
+      "result": "HTTP567"
+    },
+    {
+      "source": "qa_platform",
+      "result": "HTTP567"
+    },
+    {
+      "source": "web_qa",
+      "result": "timeout"
+    }
+  ],
+  "local_levelguide_basis": {
+    "fresh_local_fetch": false,
+    "prior_raw_sha256": "5bc0ffa5d8ad6becf713adfe0f7349bb1d56758d2a2ee6c4b6a4fbd168f2fed5",
+    "validated_against": "research/recovered/STONEAGE-ADULT-CEREMONY-CI-DERIVED-R1.json",
+    "permanent_derived_blob": "058225a89962dbcfb49e464f7de999f0f5f81121",
+    "prior_independent_run": 38991633626,
+    "prior_artifact_id": 12085332759,
+    "note": "Temporary cached full bytes matched prior independently acquired source hash; not labeled fresh this turn. New CI must reacquire all six URLs."
+  },
+  "rejections": [
+    "17173 task page visually same compilation; no new byte-verified duplicate comparison due HTTP567, not counted independent",
+    "2018/2026 1.82/2.5 private or later reposts cannot establish original build",
+    "header publication dates do not date all subsequent index edits",
+    "empty exact Availability or CDX result is not whole archive absence",
+    "2003 index request returned actual 2004 capture; record actual date"
+  ]
+}

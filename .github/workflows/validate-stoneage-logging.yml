@@ -1,0 +1,40 @@
+name: Qualify logging quest source contracts
+on:
+  push:
+    paths:
+      - 'tools/stoneage_logging_probe.py'
+      - 'tools/stoneage_adult_ceremony_probe.py'
+      - 'tools/stoneage_early_content_probe.py'
+      - 'tests/test_stoneage_logging_probe.py'
+      - 'research/recovered/STONEAGE-LOGGING-*.json'
+      - 'docs/specs/STONEAGE-LOGGING-SOURCE-CONTRACT-R1.md'
+      - '.github/workflows/validate-stoneage-logging.yml'
+  workflow_dispatch:
+jobs:
+  qualify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Logging and adjacent source contract boundary checks
+        run: python -m unittest tests.test_stoneage_logging_probe tests.test_stoneage_adult_ceremony_probe tests.test_stoneage_early_content_probe -v
+      - name: Independently fetch six sources including three exact captures
+        run: python tools/stoneage_logging_probe.py --output "$RUNNER_TEMP/logging-derived.json"
+      - name: Compare selected business claims and archive blocks
+        run: |
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          fresh = json.loads((Path(os.environ['RUNNER_TEMP']) / 'logging-derived.json').read_text())
+          archived = json.loads(Path('research/recovered/STONEAGE-LOGGING-SOURCE-CONTRACT-R1.json').read_text())
+          assert fresh['observations'] == archived['observations']
+          assert fresh['original_server_executed'] is False
+          print('six sources and three actual archive captures match the selected source contracts')
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: logging-derived
+          path: ${{ runner.temp }}/logging-derived.json
+          retention-days: 7

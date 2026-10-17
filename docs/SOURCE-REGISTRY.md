@@ -6846,3 +6846,10 @@ It does not change RULES-01/Stage A family status PARTIAL/OPEN.
 INTAKE保存四次精确Availability结果：成人章节/介绍文有具体捕获，旧17173两个URL空集只限定这些请求。另读介绍文20011220004340快照，仍署游民部落，预发布/台湾背景不足以认证成人规则版本，排除为独立见证。2011同文和GBC平台攻略不作初代PC证明。原始HTML只在临时研究和CI读取。六源独立CI派生artifact与永久归档receipt随后记载；不提前声称执行/验收。
 
 成人仪式独立来源Action38991633626/job117275086568通过；artifact12085332759/ZIP SHA256 d0dc207134ae801c21ce7cf2ce35a5525cf423c67b3b52b6a66dab34ca4df91a，永久派生Git blob058225a89962dbcfb49e464f7de999f0f5f81121。详见STONEAGE-ADULT-CEREMONY-ACCEPTANCE-R1.json；原始HTML未入Git，实际商服执行与ID未证。
+
+
+## 2026-10-17 — 伐木六源、实际捕获与失败边界
+
+报告research/recovered/STONEAGE-LOGGING-SOURCE-CONTRACT-R1.json记录六源原始hash/大小/实际URL/解码及选段摘要。新增实际捕获：详细页 /web/20031205132111id_/http://games.sina.com.cn:80/zhqu/sta/article/2003-05-20/7612.shtml；索引 /web/20040218115426id_/http://games.sina.com.cn:80/zhqu/sta/rwgl.shtml；汇编 /web/20040822040357id_/http://games.sina.com.cn:80/handbook/0101/01186091.shtml。域名均web.archive.org，未把请求日期当最终快照。原始HTML不入Git。
+
+INTAKE保留精确Availability/CDX请求及空集/503；本地17173练功、问答、任务页及带平台参数问答HTTP567，web问答超时；这些不是整个来源不存在。练功文使用旧临时全文时先核对原始hash与永久独立成人来源CI报告blob058225a89962dbcfb49e464f7de999f0f5f81121，不假称新本地网络读取；新CI仍必须重取全部六源。17173任务页可见同文仅排除为重复候选，没有新增字节级比对证明。共享文字/归档不提升独立作者数，现代私服“1.82”标签和后期无限收益不当原版依据。

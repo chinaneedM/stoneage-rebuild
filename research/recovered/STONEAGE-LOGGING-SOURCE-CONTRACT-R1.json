@@ -1,0 +1,185 @@
+{
+  "schema": "stoneage.logging.source_contract.r1",
+  "sources": {
+    "compilation": {
+      "url": "https://games.sina.com.cn/handbook/0101/01186091.shtml",
+      "final_url": "https://games.sina.com.cn/handbook/0101/01186091.shtml",
+      "bytes": 37893,
+      "sha256": "1890f3f046e9d58847c1a799f2baf97298cc3dbe50d24f6d7115f7d22a5513d9",
+      "decoding": "gb18030",
+      "replacement_characters": 1
+    },
+    "later_logging": {
+      "url": "https://games.sina.com.cn/zhqu/sta/article/2003-05-20/7612.shtml",
+      "final_url": "https://games.sina.com.cn/zhqu/sta/article/2003-05-20/7612.shtml",
+      "bytes": 51617,
+      "sha256": "5a9d2554fd17de759a70f6a99b976519b5be66d7b0d8263b8c834f456fd4c47d",
+      "decoding": "gb18030",
+      "replacement_characters": 0
+    },
+    "levelguide": {
+      "url": "https://news.17173.com/z/stoneage/content/2001-6-14/n654_570366.html",
+      "final_url": "https://news.17173.com/z/stoneage/content/2001-6-14/n654_570366.html",
+      "bytes": 44806,
+      "sha256": "5bc0ffa5d8ad6becf713adfe0f7349bb1d56758d2a2ee6c4b6a4fbd168f2fed5",
+      "decoding": "utf-8",
+      "replacement_characters": 4
+    },
+    "archived_compilation": {
+      "url": "https://web.archive.org/web/20040822040357id_/http://games.sina.com.cn:80/handbook/0101/01186091.shtml",
+      "final_url": "https://web.archive.org/web/20040822040357id_/http://games.sina.com.cn:80/handbook/0101/01186091.shtml",
+      "bytes": 15864,
+      "sha256": "dc2bff83a0375401703460434eb7af1ac4129c9893a41ad2ec7afc1afa35b6c9",
+      "decoding": "gb18030",
+      "replacement_characters": 1
+    },
+    "archived_later": {
+      "url": "https://web.archive.org/web/20031205132111id_/http://games.sina.com.cn:80/zhqu/sta/article/2003-05-20/7612.shtml",
+      "final_url": "https://web.archive.org/web/20031205132111id_/http://games.sina.com.cn:80/zhqu/sta/article/2003-05-20/7612.shtml",
+      "bytes": 31854,
+      "sha256": "bc795df4bb2d3202f5ffb5bef1ebee3e17045131be5c9ac0fda1aa1d017043a1",
+      "decoding": "gb18030",
+      "replacement_characters": 0
+    },
+    "archived_index": {
+      "url": "https://web.archive.org/web/20040218115426id_/http://games.sina.com.cn:80/zhqu/sta/rwgl.shtml",
+      "final_url": "https://web.archive.org/web/20040218115426id_/http://games.sina.com.cn:80/zhqu/sta/rwgl.shtml",
+      "bytes": 43596,
+      "sha256": "7d41a9c2fd10089a46fc690d261d15d728a3d20c54a1c28dbef9a3f8a8b99ae6",
+      "decoding": "gb18030",
+      "replacement_characters": 0
+    }
+  },
+  "observations": {
+    "profiles": {
+      "compilation": {
+        "flow": [
+          "AXE_REQUEST",
+          "WATER_ERRAND",
+          "HAND_IN_NEW_AXE",
+          "INTRODUCTION_AND_BROKEN_AXE",
+          "PERMIT",
+          "PLAYER_LAST_HIT_WOOD",
+          "WOOD_BUYBACK_AND_PERMIT_RETURN"
+        ],
+        "player_last_hit_gets_wood": true,
+        "pet_last_hit_gets_wood": false,
+        "guide_bag_example": {
+          "permit_slots": 1,
+          "free_slots": 14,
+          "original_inventory_capacity_proven": false
+        },
+        "payout_example": {
+          "wood_count": 14,
+          "approximate_stone": 5000,
+          "exact_unit_price": null
+        },
+        "permit_returned_to_merchant_on_buyback": true,
+        "bracelet_charm_delta": null,
+        "broken_axe_disappears_on_drop": true,
+        "repaired_broken_axe_stats": {
+          "attack": 33,
+          "defense": -10,
+          "agility": -10
+        },
+        "repeatability": null,
+        "completion_event_id": null
+      },
+      "later_logging": {
+        "reported_level_limit": "NONE",
+        "suggested_level_greater_than": 20,
+        "suggestion_is_admission_gate": false,
+        "reported_reputation_header": 2,
+        "reputation_is_bracelet_charm": false,
+        "new_errand_axe_stats": {
+          "attack": 35,
+          "defense": -15,
+          "agility": -15
+        },
+        "bracelet_stats": {
+          "attack": 8,
+          "defense": 5,
+          "agility": -5,
+          "charm": -5
+        },
+        "permit_returned_to_merchant_on_buyback": true,
+        "payout_example": {
+          "wood_count": 14,
+          "approximate_stone": 5000,
+          "exact_unit_price": null
+        },
+        "repeat_reported": true,
+        "repeat_trigger": "TALK_TO_GOSSIP_YOUTH_AFTER_COMPLETION_BEFORE_NEW_AXE_REQUEST",
+        "player_or_pet_last_hit_rule_explicit_here": false
+      },
+      "levelguide": {
+        "bracelet_stats": {
+          "attack": 8,
+          "defense": 5,
+          "agility": -5,
+          "charm": 5
+        },
+        "approximate_stone": 5000,
+        "author": "UNKNOWN",
+        "source_asserted_date": "2001-06-14",
+        "historical_bytes_authenticated_in_2001": false
+      }
+    },
+    "temporal_witnesses": {
+      "archived_compilation": "20040822040357",
+      "archived_later": "20031205132111",
+      "archived_index": "20040218115426"
+    },
+    "index_attribution": {
+      "editorial_bucket": "STONEAGE_1_82",
+      "source": "archived_index",
+      "link_to_selected_detailed_guide": true,
+      "original_1_82_server_build_authenticated": false,
+      "taiwan_1_0_or_jss_1999_attribution": "OPEN"
+    },
+    "conflicts": [
+      {
+        "field": "bracelet.charm",
+        "levelguide": 5,
+        "later_logging": -5,
+        "resolution": "KEEP_SOURCE_PROFILES_NO_DEFAULT"
+      }
+    ],
+    "distinctions": {
+      "new_errand_axe_and_repaired_broken_axe_stats_are_different_stages": true,
+      "per_kill_permit_consumption_proven": false,
+      "approximate_total_is_not_exact_unit_price": true,
+      "later_repeat_route_not_backdated_into_compilation": true
+    },
+    "lineage": {
+      "archive_is_independent_rule_author": false,
+      "independent_origins_authenticated": false,
+      "shared_buyback_wording_is_not_independent_corroboration": true,
+      "17173_task_reprint_not_counted": true
+    },
+    "selected_block_sha256": {
+      "compilation": "175c491acf0d90f32f8a19b21638a7522ce5526b5eccca8407cdbf18901a3c0d",
+      "archived_compilation": "175c491acf0d90f32f8a19b21638a7522ce5526b5eccca8407cdbf18901a3c0d",
+      "later_logging": "c91ebd25e961cca31597d0afcadd38d8af5eff16b50123ac4262a3c47b1ad87f",
+      "archived_later": "c91ebd25e961cca31597d0afcadd38d8af5eff16b50123ac4262a3c47b1ad87f",
+      "levelguide": "1835badd9898a6511d7252c2814870e6b8be3d8afdcce3bc595a943b6161b1d0",
+      "archived_index": "49b1f0604fca659a9b6ac6ac2fd541a70ea4062e6888928e243631362d45d786"
+    },
+    "unknown": {
+      "original_item_ids": null,
+      "original_npc_ids": null,
+      "original_event_id": null,
+      "exact_build_region": null,
+      "battle_reward_dispatch_code": null,
+      "durable_completion_and_repeat_reset": null,
+      "exact_unit_price": null
+    }
+  },
+  "compilation_authenticated_in_2001": false,
+  "earliest_capture_exhaustively_established": false,
+  "original_server_executed": false,
+  "original_quest_script_recovered": false,
+  "early_exact_build_membership": "OPEN",
+  "stage_a_accepted": false,
+  "stage_b_gate": "GATED"
+}
