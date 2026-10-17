@@ -345,3 +345,14 @@ NEXT STAGE-A-PORTFOLIO-CHECKPOINT-02：停止后代NPC无限加深，重新按�
 EARLY-VILLAGE-SERVICE-JOURNEY-01的五类行为来源合同已独立成功后，STAGE-A-EARLY-SOURCE-GAP-TRIAGE-01有界检查供品及ACK、公车收费和真实相邻路线、医疗宠技/回购价目、送货矿石任务奖励及普通落地物到期计时。没有取得可核原版同年代、同业务字段的新增一手记录；网页阅读器错误不代表存档不存在，空检索不是全网不存在。每项明确OPEN_EVIDENCE_LIMITED及重开触发，停止基于后代素材编造初代完整任务。报告 `docs/STAGE-A-EARLY-SOURCE-GAP-TRIAGE-R1.md`、机器清单 `research/recovered/STONEAGE-STAGE-A-EARLY-SOURCE-GAP-TRIAGE-R1.json`，分支源Action39001916143 SUCCESS。
 
 **新的最高NEXT STAGE-A-JOINT-REVIEW-DECISION-01**：向用户提交已完成的九系统联合审阅资料、五类缺源证据、版本标签、可复现但不属于原版商业服的参考流程及不可恢复边界，请用户确认是否按证据受限状态收束Stage A，或继续某项具备新证据的初代内容补证。用户的“继续”仅授权继续Stage A日常研究，不等于默认批准Stage B。正式用户审阅之前保持7 PARTIAL+2 OPEN、Stage B GATED；R79暂停。没有理由重开泛用辅助函数或人工计算百分比。
+
+
+## 2026-10-17 — STAGE-A-JOINT-REVIEW-DECISION-01 待用户明确审阅
+
+已从实时GitHub main重新核验并形成可否证的九系统+七玩家流程+五阻塞+五村服务审阅交叉表：
+`docs/STAGE-A-JOINT-REVIEW-DECISION-R1.md` 与
+`research/recovered/STONEAGE-STAGE-A-JOINT-REVIEW-DECISION-R1.json`。
+这个交付**不是新历史资料**，初代世界/NPC/任务奖励、同版人物宠物具体输入、原服持久化及真实原版画面仍缺直接执行证据。
+首次独立源Action39002948717/job117309506410 SUCCESS（证据和否证门），后续归档与main提交必须再查。
+
+**最高NEXT AWAIT_EXPLICIT_USER_STAGE_A_REVIEW_DECISION**：呈交独立的 A继续具名一手补证、B认可证据受限历史研究检查点、C暂停待源 三种选项；不替用户决定，单纯「继续」保持Stage A。即使用户选B也只是记录Stage A有限审阅结论，Stage B的引擎、内容及生产需要单独讨论/授权。未收到明确决定前九系统7 PARTIAL+2 OPEN、Stage A未用户验收，Stage B GATED，R79暂停；不无限重复低价值审计或猜100%进度。

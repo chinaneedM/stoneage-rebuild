@@ -14889,3 +14889,12 @@ QUEST-NPC-FLOW-LINK-06有界完成：两条2465→2484候选、1条2478→2481�
 ### STAGE-A-EARLY-SOURCE-GAP-TRIAGE-01 主线来源验收归档（2026-10-17）
 
 独立原始来源缺口合同Action39001916143/job117306453768 SUCCESS，历史完整前缀强化Action39002101203因新增测试使用错误SOURCE-REGISTRY标题失败，旧记录保留；修正仅测试标题标记，分支Action39002156100/job117307179926 SUCCESS，三个历史长文原Git blob前缀逐字节校核不丢失。主线实时compare确认agent分支ahead4/behind0、10路径0删除，用expected-head且force=false从7093e5fb33ff7b90abce7932e17b137bffa8dec9快进到f5180ba51dffcab71499cb1820233f2446521cca/tree1a377252feb59a100274521ed72ecf8e315fccbd。随后main相同HEAD上的早期缺源审计Action39002193724、原TW1.0 R58来源保管39002193698、后代地域来源39002193602、8.0 PET当代证据边界39002193600四项全部实际SUCCESS。永久凭据research/recovered/STONEAGE-STAGE-A-EARLY-SOURCE-GAP-ACCEPTANCE-R1.json追加相同SHA主线CI、失败修复及完整否证门；以上成果不是新原始服务端内容/游戏执行，仍Stage A 7 PARTIAL+2 OPEN、Stage B GATED、R79 PAUSED_NON_BLOCKING。下一步STAGE-A-JOINT-REVIEW-DECISION-01等待用户明确联合审阅，未自动接受Stage A收束或进入新游戏。
+
+
+## 2026-10-17 — STAGE-A-JOINT-REVIEW-DECISION-01 九系统联合审阅判据交付（未获用户决议）
+
+本轮按协议从远端main5939b90bfff514501d0cb17caefa9a8886d7d319/tree a0c641a2afbf8dcfa10e2311269a3969875deff2启动：最近两项主线Actions39002384282/39002384291均实际SUCCESS；读取README、协议、Design、Timeline、Source Registry、Roadmap R2及CURRENT-STATE全量Git blob e2c1fdd2a34f79ea55fc336c7b79816f898578b4。最新NEXT为STAGE-A-JOINT-REVIEW-DECISION-01，用户仅发送「继续」，不视为已经接受Stage A或批准Stage B。
+
+为避免将“对已有材料再写报告”误当新增初代恢复，使用已固定54源审阅底稿和五村服务来源缺口包，将九系统7 PARTIAL+2 OPEN、七条代表玩家经历、五项阻塞（其中R79暂停非阻塞）、五类官方早期村庄体验，形成一一可复核的跨表及用户决议选项。新交付 docs/STAGE-A-JOINT-REVIEW-DECISION-R1.md、research/recovered/STONEAGE-STAGE-A-JOINT-REVIEW-DECISION-R1.json、校验工具/反例测试/独立工作流。映射只是DERIVED REVIEW LINK，不能冒充新原始玩法证据。现有游戏可用的后代及现代参考合同保留，初代商服NPC/世界/奖励/存盘/完整运行仍不具证据。三种仅供用户明确选择的后续方向：A有新可认证资料再精确补证，B接受证据受限的Stage A审阅检查点（不自动启动Stage B），C暂停等待一手来源。用户尚未选择；不声称完成历史研究，也不计算无分母百分比。
+
+在源提交59fd3bcf482226c0d29fa51e840ec3529b2c2b4f/tree d8461ca61d288c49fd1ac3359b50e3d9d5f8cde4独立Action39002948717/job117309506410 SUCCESS，跨表、来源核验、对抗反例及旧Stage A证据校验通过。旧审阅文本、原手册及原版/后代来源blob未改写，未运行商服/原客户端或新增历史原始资产。新归档与主线整合须等待其各自真实CI校验后报告。当前工作定位为**提交用户联合审阅材料**，而非代替用户决议。Highest NEXT AWAIT_EXPLICIT_USER_STAGE_A_REVIEW_DECISION；正常继续仍Stage A，Stage B GATED，R79 PAUSED_NON_BLOCKING。
