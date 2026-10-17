@@ -306,3 +306,11 @@ EARLY-QUEST-CONTENT-02选择单条任务寻找独立早期证据；不再只增�
 ## 2026-10-17 — QUEST-ITEM-IDENTITY-04 后代物品候选已有来源身份
 
 同源两表各五行候选、实际setup、raw属性/生命周期与不同许可ID已固定，原始早期ID与任务绑定仍OPEN。规格STONEAGE-QUEST-ITEM-IDENTITY-R1；下一项QUEST-NPC-ITEM-BINDING-05仅追踪这五ID的同源NPC配置发放/收回，非全量NPC或通用helper深挖。无明确语法即止，Stage A未终验，Stage B GATED。
+
+## 2026-10-17 QUEST-NPC-ITEM-BINDING-05 后代任务物品NPC字段角色
+
+从五项已验证recovered25物品候选沿同保存包NPC FunctionSet/二级参数建立有限的字段角色抽取。源Action38996224450/job117289269018通过9项语法/否证检查与两分卷、合包来源hash；先前Action38996169729对ItemShop字段规则误判产生一次失败，已保留历史并收紧角色。4,985条NPC创建引用中，30模板歧义、15参数文件缺失。共49次有语法类型的引用、10类，全部ExChangeMan：2465发1收2条件4；2478发1收16条件20；2481发1；2484发2收1条件1；20197本次零合格命中。同图许可不能合并，字段出现不等于事务执行、关卡可达、原服NPC或TW1.0原始ID。
+
+来源ZIP960字节SHA256 3c4774d955c155af0d426f419ce672dba0d2321caa81a27232d4ab2353225cd2、原JSON4546字节SHA256 901e835c921557da9dae7380b70aac0522fe4ff251c888de4289c91fb0da34f6、永久Git blob 7d771b2aa4f39646879659303f4926045ae730cc，完整链与负例重放见STONEAGE-QUEST-NPC-ITEM-ACCEPTANCE-R1。原始包、NPC原文件和商业服务端未加入Git或执行。
+
+最高下一项QUEST-NPC-FLOW-LINK-06：只针对本轮已命中的后代ExChangeMan EventEnd记录核对同一条事件中的发/收/条件组合，不声称真实流程；无明确共现即UNKNOWN、停止。Stage A 7 PARTIAL+2 OPEN，Stage B GATED、R79暂停；原始早期任务、服务器执行和阶段终验均未恢复。

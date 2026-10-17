@@ -4,6 +4,7 @@ on:
     paths:
       - 'tools/stoneage_quest_npc_item_binding_probe.py'
       - 'tests/test_stoneage_quest_npc_item_binding_probe.py'
+      - 'tests/test_stoneage_quest_npc_item_acceptance.py'
       - '.github/workflows/validate-stoneage-quest-npc-item-binding.yml'
       - 'research/recovered/STONEAGE-QUEST-NPC-ITEM-*.json'
       - 'docs/specs/STONEAGE-QUEST-NPC-ITEM-BINDING-R1.md'
@@ -20,9 +21,11 @@ jobs:
         with:
           python-version: '3.12'
       - name: Test five-ID field grammar and no-promotion guards
-        run: python -m unittest tests.test_stoneage_quest_npc_item_binding_probe -v
+        run: python -m unittest tests.test_stoneage_quest_npc_item_binding_probe tests.test_stoneage_quest_npc_item_acceptance -v
       - run: sudo apt-get update && sudo apt-get install -y unar
+        if: ${{ hashFiles('research/recovered/STONEAGE-QUEST-NPC-ITEM-CI-DERIVED-R1.json') == '' || github.event_name == 'workflow_dispatch' }}
       - name: Recover verified preservation bundle
+        if: ${{ hashFiles('research/recovered/STONEAGE-QUEST-NPC-ITEM-CI-DERIVED-R1.json') == '' || github.event_name == 'workflow_dispatch' }}
         run: |
           set -euo pipefail
           mkdir -p /tmp/sa25
@@ -68,6 +71,7 @@ jobs:
           ulimit -c 0
           unar -f -o /tmp/sa25/out /tmp/sa25/bundle.rar >/dev/null 2>&1
       - name: Extract bounded NPC field-role metadata only
+        if: ${{ hashFiles('research/recovered/STONEAGE-QUEST-NPC-ITEM-CI-DERIVED-R1.json') == '' || github.event_name == 'workflow_dispatch' }}
         run: |
           set -euo pipefail
           python3 - <<'PY'
@@ -80,6 +84,7 @@ jobs:
           subprocess.run(['python','-m','tools.stoneage_quest_npc_item_binding_probe','--npc-dir',str(roots[0]),'--output',str(out)],check=True)
           PY
       - uses: actions/upload-artifact@v4
+        if: ${{ hashFiles('research/recovered/STONEAGE-QUEST-NPC-ITEM-CI-DERIVED-R1.json') == '' || github.event_name == 'workflow_dispatch' }}
         with:
           name: quest-npc-item-derived
           path: ${{ runner.temp }}/quest-npc-item-derived.json

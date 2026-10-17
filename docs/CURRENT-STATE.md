@@ -14787,3 +14787,16 @@ NEXT-BINDING-INTAKE固定四个已有NPC解析/覆盖来源及五目标ID，约�
 物品候选提取合同补强已远端验收：91e8c16e30dc768f1a0b43b237bb5951bdab4b8b/tree f8ac5f8a8c2871e7d00ff4916d8c567edbf77f44，Action38994084480/job117282616943 SUCCESS，11项检查和已归档元数据/源测试AST指纹通过，原始包取得继续明确跳过；正式审阅Action38994084428也成功。main从c4a36fc4a755bfa673bf5306a4362e51ba173438经ahead1/behind0、7路径无删除、expected-head非强制整合至91e8c16e30dc768f1a0b43b237bb5951bdab4b8b。原始派生Git blob d0ac9e5f5d26db5afcee07119295fd05803011b9由GitHub接口读回，与本地原JSON完全相等。ACCEPTANCE追加最终合同验收，不将这次重放当新下载或原版运行。
 
 QUEST-ITEM-IDENTITY-04本轮有界交付完成：两个固定表各五后代候选与未命中/同图不同许可的限定，原始早期身份不提升。Highest NEXT QUEST-NPC-ITEM-BINDING-05仅跟踪五ID相关参数角色；具体已有解析源与禁止误判项见NEXT-BINDING-INTAKE，Stage B GATED。
+
+
+## 2026-10-17 QUEST-NPC-ITEM-BINDING-05 后代伐木物品绑定有界验收
+
+本轮启动重新读取远端main 704ce4e07a4c991bb726208b40ca30eb9f0be3fb/tree20133026ff9aea81d865ee07bdf2f4d0e474040f、最新提交、Actions、协议、README/设计/编年/来源/路线/portfolio；CURRENT-STATE通过全量git blob33667156ebc5859259654426fbc437f9639148f1恢复1830400字符的完整历史前缀，绝非空文件或从旧聊天重建。先前QUEST-ITEM-IDENTITY-04五项后代表源已通过提取合同和来源保管验收。主线Action38994292061/38994291961均SUCCESS。主线历史和R79暂停保留。
+
+目标是回答伐木相关后代五物品(ID2465、2478、2481、2484、20197)的NPC参数**是否可限定发放/收回/条件角色**；只用已认证recovered25两分卷保存包、同源NPC template/create与已存在的FunctionSet语义锚点，不运行原商业服务器、不得把后代ID倒填TW1.0。新增有界解析工具/九项合成语法门、独立工作流、领域规格与永久派生源报告。第一次CI Action38996169729在ItemShop/FREE条件分类用例失败，随即按测试收紧字段分类；失败记录不删除。修正后的实际Source Action38996224450/job117289269018在c4474916add4ed3d4e867ba13d14c47e76dca86b/tree74e1aaa958d5776894245b923a3475919c51d39b SUCCESS：九项合成检查和两个已固定分卷及合包SHA256源取得、真实NPC参数读取成功。原始服务端可执行程序未运行。
+
+有限结果：4,985创建引用；参数文件引用1,758、inline 3,182、模板歧义30、文件缺失15。49次有明确语法的角色引用共10组且全属ExChangeMan：2465 GetItem1/DelItem2/EVENT ITEM4；2478 1/16/20；2481 1/0/0；2484 2/1/1；20197 0/0/0。这是源内字段命中数量，不是玩家执行次数，也不能推断不同字段与具体NPC是否在同一个EventEnd子记录。20197未命中只限定于本轮语法/数据覆盖，不能说该物品不存在；两许可证同图但不同ID不能合并。普通商店、FREE、任意纯数字命中不当成任务奖励。缺参数15、歧义30留下覆盖缺口。TW1.0原始商业服NPC、quest/event id、完整对话、交易执行/持久化/任务可达仍OPEN。
+
+来源artifact12087620874为960字节ZIP SHA256 3c4774d955c155af0d426f419ce672dba0d2321caa81a27232d4ab2353225cd2；成员quest-npc-item-derived.json 4546字节 SHA256 901e835c921557da9dae7380b70aac0522fe4ff251c888de4289c91fb0da34f6。永久衍生报告research/recovered/STONEAGE-QUEST-NPC-ITEM-CI-DERIVED-R1.json Git blob7d771b2aa4f39646879659303f4926045ae730cc，与原成员逐字节一致；来源HEAD/tree/run/job/artifact/ZIP/raw/blob及否证边界由STONEAGE-QUEST-NPC-ITEM-ACCEPTANCE-R1.json固定。Git没有原始专有NPC/对白/脚本。归档后工作流以永久元数据独立重放，不将此称为第二次下载源包。后续归档CI、分支收尾、main整合需以实时验收为准，不能预报其结果。
+
+**Highest NEXT QUEST-NPC-FLOW-LINK-06**：限于本轮已发现的ExChangeMan EventEnd物品字段，进一步查验同一记录是否有2478许可、2484断斧、2465交差斧、2481手环的确切发收/门槛组合；没有合格同记录证据时写UNKNOWN并停止。不泛扫全NPC或后世任务；后代同记录仍不等于早期游戏执行事实。正式Stage A联合审阅仍需用户，九族7 PARTIAL+2 OPEN，Stage B GATED，R79 PAUSED_NON_BLOCKING。

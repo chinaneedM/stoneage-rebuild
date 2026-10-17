@@ -26,3 +26,24 @@ python -m tools.stoneage_quest_npc_item_binding_probe --npc-dir /temporary/SA2.5
 CI `.github/workflows/validate-stoneage-quest-npc-item-binding.yml`是唯一对原始包作本轮新取得声明的入口，需先全部两分卷、合包哈希检查，再读取固定目录；合成测试成功不等于NPC源抽取成功。Actions产出短期`quest-npc-item-derived`，取得成功后必须独立核对来源HEAD/tree、run/job、artifact ZIP/raw JSON哈希，并将合法派生报告永久归档，记录验收链。未通过不得宣称成功。
 
 若有限扫描没有显式绑定，按`UNKNOWN`或“该保存包未发现有资格绑定”关闭这一有界问题，而不是编造原始NPC交付关系、泛扫所有攻略或开启R79。无论结果如何，九系统维持7 PARTIAL+2 OPEN，Stage A未终验，Stage B GATED，新石器设计不得据此启动。
+## 实际认证来源结果与边界（2026-10-17）
+
+第一次独立源CI（Action38996169729）9项语法用例有1项失败，原因是ItemShop的FREE与普通字段范围误归类；该失败不可抹去。严格限定ItemShop物品目录字段后的源提交`c4474916add4ed3d4e867ba13d14c47e76dca86b`、tree`74e1aaa958d5776894245b923a3475919c51d39b`获得[Action38996224450](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/38996224450) / job117289269018 **SUCCESS**：9项合成语法试验、两分卷与合包hash以及实际NPC参数读取成功。原服务端程序未执行。
+
+对后代`NPCCREATE`引用的有界检查：总计4,985条；模板歧义30、缺参数文件15；参数来源文件1,758、inline 3,182。只在`ExChangeMan`中取得49次具有规则字段语法的引用，汇总如下；它们是后代技术候选，**绝非已执行的伐木任务事务**。
+
+| 后代模板ID | GetItem发放候选 | DelItem收回候选 | EVENT ITEM条件候选 |
+|---|---:|---:|---:|
+| 2465 交差斧 | 1 | 2 | 4 |
+| 2478 採伐許可證 | 1 | 16 | 20 |
+| 2481 杉的手環 | 1 | 0 | 0 |
+| 2484 折斷的斧頭 | 2 | 1 | 1 |
+| 20197 伐木許可證 | 0 | 0 | 0 |
+
+这10个类型分组总和49；20197在本次限定语法与可解析NPC参数中**没有已资格化命中**，不能进一步说游戏不存在该许可。对2478既有发放又有收回及条件引用，也不能靠分布次数推断这些动作在同一NPC、相同事件分支或真实玩家执行链中。缺失的15份参数及30条歧义模板依旧是覆盖限制。
+
+永久来源交付由`research/recovered/STONEAGE-QUEST-NPC-ITEM-CI-DERIVED-R1.json`记录，4546字节、SHA256 `901e835c921557da9dae7380b70aac0522fe4ff251c888de4289c91fb0da34f6`、Git blob `7d771b2aa4f39646879659303f4926045ae730cc`；独立下载的artifact12087620874 ZIP960字节、SHA256 `3c4774d955c155af0d426f419ce672dba0d2321caa81a27232d4ab2353225cd2`。`STONEAGE-QUEST-NPC-ITEM-ACCEPTANCE-R1.json`记录完整源HEAD/tree/Action/job和ZIP/raw/blob保管链。之后的持续CI只重放这个永久派生JSON和防晋级用例；不把归档重放说成再次取得原始NPC字节。
+
+**有限任务交付**：完成后代五物品的“物品表ID—NPC字段角色”来源合格对照。未确认具体伐木任务真实函数调用、相同事件分支依赖、NPC身份或台湾v1.0原始ID；不能提交现代奖励规则作为历史结论。
+
+**下一项优先级 QUEST-NPC-FLOW-LINK-06（有界可选）**：复用本次已认证来源，仅确认2478/2484/2465/2481是否在**同一个ExChangeMan EventEnd事件记录**中具有确切GetItem/DelItem/条件的共现结构，再判断是否形成局部后代任务模型；至多检查已命中记录、不泛扫全世界。无法取得同记录证明则止于UNKNOWN。这个后代模式仍不能补写台湾1.0原始NPC/任务/服端事务。Stage A仍7 PARTIAL+2 OPEN，Stage B GATED，R79继续暂停。

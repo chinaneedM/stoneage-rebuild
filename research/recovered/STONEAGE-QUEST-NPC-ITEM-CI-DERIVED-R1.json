@@ -1,0 +1,147 @@
+{
+  "schema": "stoneage.quest_npc_item_binding.r1",
+  "source_role": "LATER_RECOVERED25",
+  "bundle_sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+  "target_ids": [
+    2465,
+    2478,
+    2481,
+    2484,
+    20197
+  ],
+  "counts": {
+    "create_enemy_references": 4985,
+    "template_ambiguous": 30,
+    "transport_FILE": 1758,
+    "transport_INLINE": 3182,
+    "transport_MISSING_FILE": 15,
+    "typed_item_field_occurrences": 49
+  },
+  "typed_reference_classes": [
+    {
+      "item_id": 2465,
+      "role": "EXCHANGE_DEL_CANDIDATE",
+      "functionset": "exchangeman",
+      "occurrences": 2,
+      "anonymous_record_count": 2,
+      "anonymous_template_record_count": 2,
+      "source_class": "LATER_RECOVERED25_NPC_PARAMETER",
+      "original_quest_binding_proven": false,
+      "runtime_executed": false
+    },
+    {
+      "item_id": 2465,
+      "role": "EXCHANGE_GET_CANDIDATE",
+      "functionset": "exchangeman",
+      "occurrences": 1,
+      "anonymous_record_count": 1,
+      "anonymous_template_record_count": 1,
+      "source_class": "LATER_RECOVERED25_NPC_PARAMETER",
+      "original_quest_binding_proven": false,
+      "runtime_executed": false
+    },
+    {
+      "item_id": 2465,
+      "role": "EXCHANGE_ITEM_PREDICATE",
+      "functionset": "exchangeman",
+      "occurrences": 4,
+      "anonymous_record_count": 4,
+      "anonymous_template_record_count": 4,
+      "source_class": "LATER_RECOVERED25_NPC_PARAMETER",
+      "original_quest_binding_proven": false,
+      "runtime_executed": false
+    },
+    {
+      "item_id": 2478,
+      "role": "EXCHANGE_DEL_CANDIDATE",
+      "functionset": "exchangeman",
+      "occurrences": 16,
+      "anonymous_record_count": 16,
+      "anonymous_template_record_count": 16,
+      "source_class": "LATER_RECOVERED25_NPC_PARAMETER",
+      "original_quest_binding_proven": false,
+      "runtime_executed": false
+    },
+    {
+      "item_id": 2478,
+      "role": "EXCHANGE_GET_CANDIDATE",
+      "functionset": "exchangeman",
+      "occurrences": 1,
+      "anonymous_record_count": 1,
+      "anonymous_template_record_count": 1,
+      "source_class": "LATER_RECOVERED25_NPC_PARAMETER",
+      "original_quest_binding_proven": false,
+      "runtime_executed": false
+    },
+    {
+      "item_id": 2478,
+      "role": "EXCHANGE_ITEM_PREDICATE",
+      "functionset": "exchangeman",
+      "occurrences": 20,
+      "anonymous_record_count": 20,
+      "anonymous_template_record_count": 20,
+      "source_class": "LATER_RECOVERED25_NPC_PARAMETER",
+      "original_quest_binding_proven": false,
+      "runtime_executed": false
+    },
+    {
+      "item_id": 2481,
+      "role": "EXCHANGE_GET_CANDIDATE",
+      "functionset": "exchangeman",
+      "occurrences": 1,
+      "anonymous_record_count": 1,
+      "anonymous_template_record_count": 1,
+      "source_class": "LATER_RECOVERED25_NPC_PARAMETER",
+      "original_quest_binding_proven": false,
+      "runtime_executed": false
+    },
+    {
+      "item_id": 2484,
+      "role": "EXCHANGE_DEL_CANDIDATE",
+      "functionset": "exchangeman",
+      "occurrences": 1,
+      "anonymous_record_count": 1,
+      "anonymous_template_record_count": 1,
+      "source_class": "LATER_RECOVERED25_NPC_PARAMETER",
+      "original_quest_binding_proven": false,
+      "runtime_executed": false
+    },
+    {
+      "item_id": 2484,
+      "role": "EXCHANGE_GET_CANDIDATE",
+      "functionset": "exchangeman",
+      "occurrences": 2,
+      "anonymous_record_count": 2,
+      "anonymous_template_record_count": 2,
+      "source_class": "LATER_RECOVERED25_NPC_PARAMETER",
+      "original_quest_binding_proven": false,
+      "runtime_executed": false
+    },
+    {
+      "item_id": 2484,
+      "role": "EXCHANGE_ITEM_PREDICATE",
+      "functionset": "exchangeman",
+      "occurrences": 1,
+      "anonymous_record_count": 1,
+      "anonymous_template_record_count": 1,
+      "source_class": "LATER_RECOVERED25_NPC_PARAMETER",
+      "original_quest_binding_proven": false,
+      "runtime_executed": false
+    }
+  ],
+  "coverage_limits": {
+    "ambiguous_templates": 30,
+    "missing_argument_files": 15,
+    "unsafe_argument_paths": 0,
+    "oversize_argument_files": 0,
+    "itemshop_not_quest_reward": true,
+    "numeric_only_fields_excluded": true,
+    "functions_not_automatically_equivalent": true
+  },
+  "original_taiwan_1_0_npc_binding_proven": false,
+  "actual_reward_or_removal_execution_proven": false,
+  "complete_original_dialogue_recovered": false,
+  "runtime_code_changed": false,
+  "stage_a_accepted": false,
+  "stage_b_gate": "GATED"
+}
