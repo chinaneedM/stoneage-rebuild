@@ -1,0 +1,33 @@
+name: Validate Stage A evidence-limited review acceptance
+on:
+  push:
+    paths:
+      - 'docs/STAGE-A-EVIDENCE-LIMITED-ACCEPTANCE-R1.md'
+      - 'docs/STAGE-B-COLLABORATIVE-DESIGN-BRIEF-R1.md'
+      - 'research/recovered/STONEAGE-STAGE-A-EVIDENCE-LIMITED-ACCEPTANCE-R1.json'
+      - 'research/recovered/STONEAGE-STAGE-A-EVIDENCE-LIMITED-ACCEPTANCE-RECEIPT-R1.json'
+      - 'tools/stoneage_stage_a_evidence_limited_acceptance.py'
+      - 'tests/test_stoneage_stage_a_evidence_limited_acceptance.py'
+      - 'tests/test_stoneage_stage_a_evidence_limited_archive.py'
+      - 'docs/CURRENT-STATE.md'
+      - 'docs/RESTORATION-ROADMAP-R2.md'
+      - 'docs/DESIGN-DECISIONS.md'
+      - 'docs/RESTORATION-PHASE-GATE-R1.md'
+      - 'README.md'
+      - '.github/workflows/validate-stoneage-stage-a-evidence-limited-acceptance.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  bounded-research-review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate reversible decision, immutable history and no premature production
+        run: |
+          python -m unittest tests.test_stoneage_stage_a_evidence_limited_acceptance tests.test_stoneage_stage_a_joint_review_decision tests.test_stoneage_stage_a_review_packet tests.test_stoneage_stage_a_early_source_gap_triage -v
+          python -m tools.stoneage_stage_a_evidence_limited_acceptance
