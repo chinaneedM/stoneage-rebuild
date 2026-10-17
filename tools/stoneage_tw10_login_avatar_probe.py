@@ -43,7 +43,8 @@ def push_source(window, index, base):
         if not prev.id or prev.mnemonic=='call' or prev.mnemonic.startswith('j'):
             break
         _,written=prev.regs_access()
-        if reg not in written:continue
+        family=lambda n: {'eax':'a','ax':'a','al':'a','ah':'a','ebx':'b','bx':'b','bl':'b','bh':'b','ecx':'c','cx':'c','cl':'c','ch':'c','edx':'d','dx':'d','dl':'d','dh':'d'}.get(n,n)
+        if not any(family(prev.reg_name(w))==family(ins.reg_name(reg)) for w in written):continue
         if (prev.mnemonic=='mov' and len(prev.operands)==2 and
             prev.operands[0].type==X86_OP_REG and prev.operands[0].reg==reg):
             src=prev.operands[1]
@@ -111,7 +112,51 @@ def inspect_runtime(runtime):
             'sender_entry_candidates':sorted(set(r['target_rva'] for r in rows)),
             'sender_callsites':rows,'callback_linear_prefix_direct_calls':callback_calls,
             'callback_prefix_is_complete_cfg':False}
+    # These globals are selected by reversed x86 pushes + EARLY_LINEAGE
+    # signature only; builder stack-field evidence is emitted independently.
+    selectors={}
+    for label,target in [('lineage_body_candidate',0x13f719c),('lineage_face_candidate',0x13f79ac)]:
+        writers=[]
+        for i,ins in enumerate(insns):
+            if not ins.id or not ins.operands:continue
+            dst=ins.operands[0]
+            if dst.type!=X86_OP_MEM or dst.mem.base or dst.mem.index or dst.mem.disp!=base+target:continue
+            if not (dst.access & 2):continue
+            window=insns[max(0,i-12):i+1]
+            boundaries=[j for j,x in enumerate(window[:-1]) if x.mnemonic=='ret' or x.mnemonic.startswith('j')]
+            window=window[(max(boundaries)+1 if boundaries else 0):]
+            operations=[]
+            for x in window:
+                if not x.id:continue
+                operands=[]
+                for op in x.operands:
+                    if op.type==X86_OP_IMM:operands.append({'kind':'imm','value':op.imm})
+                    elif op.type==X86_OP_MEM:
+                        operands.append({'kind':'mem','base':x.reg_name(op.mem.base),'index':x.reg_name(op.mem.index),
+                            'scale':op.mem.scale,'displacement':op.mem.disp,'width':op.size})
+                    else:operands.append({'kind':'register','name':x.reg_name(op.reg)})
+                operations.append({'site_rva':x.address-base,'mnemonic':x.mnemonic,'operands':operands})
+            writers.append({'write_site_rva':ins.address-base,'bounded_operand_operations':operations})
+        selectors[label]={'address_rva':target,'file_backed':rva_to_offset(sections,target) is not None,
+            'write_candidates':writers,'actual_value_verified':False,'semantic_name_evidence':'EARLY_LINEAGE_AND_CDECL_POSITION_CANDIDATE'}
+    builder=[]
+    off=rva_to_offset(sections,0x193d0)
+    body=list(md.disasm(data[off:off+0x1f0],base+0x193d0))
+    for i,x in enumerate(body):
+        if not x.id or x.mnemonic!='call' or x.operands[0].type!=X86_OP_IMM:continue
+        target=x.operands[0].imm-base
+        if target not in (0x1b0b0,0x1b0f0):continue
+        operands=[]
+        for y in body[max(0,i-6):i]:
+            if not y.id:continue
+            for op in y.operands:
+                if op.type==X86_OP_MEM:
+                    operands.append({'site_rva':y.address-base,'base':y.reg_name(op.mem.base),
+                        'index':y.reg_name(op.mem.index),'displacement':op.mem.disp,'width':op.size})
+        builder.append({'callsite_rva':x.address-base,'helper_type':'int' if target==0x1b0b0 else 'string',
+            'preceding_memory_operands':operands})
     return {'schema':'stoneage.tw10.login_avatar.static_callsite.r1',
+        'builder_field_helper_calls':builder,'avatar_selector_write_candidates':selectors,
         'runtime_sha256':RUNTIME_SHA256,'image_base':base,
         'method':'linear-sweep direct-call candidates within 32 bytes before fixed protocol header xrefs; bounded operand metadata; no complete CFG or runtime trace',
         'protocols':groups,'original_program_executed':False,'historical_screen_layout_verified':False,
