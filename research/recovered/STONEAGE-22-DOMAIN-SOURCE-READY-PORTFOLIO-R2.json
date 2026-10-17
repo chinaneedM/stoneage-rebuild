@@ -1,0 +1,325 @@
+{
+  "schema": "stoneage.preproduction_22_domain_source_ready_portfolio.r2",
+  "preparation_date": "2026-10-18",
+  "task": "PREPRODUCTION-22-DOMAIN-SOURCE-READY-PORTFOLIO-REVIEW-02",
+  "remote_baseline_head": "87280e0bfecea2c69c98e35b7dfa639d9d20e27a",
+  "remote_baseline_tree": "96d7eb073a36d739695d51cb528e19093d62c73b",
+  "anchored_sources": [
+    {
+      "path": "research/recovered/STONEAGE-22-DOMAIN-EVIDENCE-COVERAGE-CHECKPOINT-R1.json",
+      "blob": "4afcd18d2cbcbd6b101721bac987778b074b9464",
+      "role": "22-domain historical evidence-status baseline retained unchanged"
+    },
+    {
+      "path": "research/recovered/STONEAGE-PREPRODUCTION-CONTENT-ARCHIVE-R1.json",
+      "blob": "2d5b3f081d5618287f431fbded943722a820c593",
+      "role": "seven historical version profiles and future knowledge base contract"
+    },
+    {
+      "path": "research/recovered/tw10-resource-metadata/MANIFEST-R1.txt",
+      "blob": "6154dcf806163b82cb96af344e6a644143d15f56",
+      "role": "accepted TW1.0 original image and animation metadata source"
+    },
+    {
+      "path": "research/recovered/STONEAGE-EARLY-VISUAL-ID-RANGES-INPUT-R1.json",
+      "blob": "11bb14ef00c2ed354c5f00f510da8783376f1f28",
+      "role": "2001-labeled player bitmap classification, not official original semantics"
+    },
+    {
+      "path": "research/recovered/STONEAGE-EARLY-VISUAL-ID-RANGES-VERIFIED-R1.json",
+      "blob": "0007030347a635b19ec9739897f2b582bd92e98f",
+      "role": "previous original TW1.0 bitmap ID membership already verified"
+    },
+    {
+      "path": "research/recovered/STONEAGE-ORIGINAL-SERVER-NPC-QUEST-TRIAGE-R1.json",
+      "blob": "0c93fe78adebeb8b6ec41373ac0140d68f8e2918",
+      "role": "last source-limited server quest investigation; blob pinned after reading"
+    }
+  ],
+  "all_domain_rows": [
+    {
+      "domain_id": "version_lineage",
+      "original_order": 1,
+      "baseline_evidence_status": "PARTIAL_SOURCE",
+      "source_readiness": "DIRECT_TW10_BUT_MISSING_JSS1999",
+      "immediately_actionable_with_existing_original_bytes": false,
+      "bounded_next": "OPPORTUNISTIC_ORIGINAL_VERSION_BYTES",
+      "version_promotion_allowed": false,
+      "original_source_complete": false,
+      "missing_original_evidence": "same-build original Japanese 1999 launch sample and TW1/CN1.82 lineages"
+    },
+    {
+      "domain_id": "login_splash",
+      "original_order": 2,
+      "baseline_evidence_status": "OPEN_VISUAL",
+      "source_readiness": "TW10_PROTOCOL_AND_EARLY_OFFICIAL_DESCRIPTION_NO_RENDER_TRACE",
+      "immediately_actionable_with_existing_original_bytes": false,
+      "bounded_next": "BLOCKED_SAME_BUILD_UI_TRACE",
+      "version_promotion_allowed": false,
+      "original_source_complete": false,
+      "missing_original_evidence": "same-build login states, background, buttons, fonts, interaction/audio, original screenshot or trace"
+    },
+    {
+      "domain_id": "character_creation",
+      "original_order": 3,
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "source_readiness": "TW10_DIRECT_CREATE13_AND_OFFICIAL_JSS2001_LIMITED",
+      "immediately_actionable_with_existing_original_bytes": false,
+      "bounded_next": "BLOCKED_ACTUAL_ORIGINAL_SELECTOR_VALUES",
+      "version_promotion_allowed": false,
+      "original_source_complete": false,
+      "missing_original_evidence": "13-field CreateNewChar transport known, actual layout and list of original selectable characters missing"
+    },
+    {
+      "domain_id": "character_sprite_model",
+      "original_order": 4,
+      "baseline_evidence_status": "PARTIAL_RESOURCE",
+      "source_readiness": "TW10_DIRECT_RESOURCE_BUT_NO_AVATAR_NAME",
+      "immediately_actionable_with_existing_original_bytes": true,
+      "bounded_next": "T01_SPR_ACTION_CATEGORY_SOURCE_JOIN",
+      "version_promotion_allowed": false,
+      "original_source_complete": false,
+      "missing_original_evidence": "per-avatar image IDs, animation grouping, direction, portrait, equipment/riding variants"
+    },
+    {
+      "domain_id": "world_map",
+      "original_order": 5,
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "source_readiness": "TW10_CLIENT_MAP_TRANSPORT_NOT_ORIGINAL_SERVER_WORLD",
+      "immediately_actionable_with_existing_original_bytes": true,
+      "bounded_next": "T03_ORIGINAL_MAP_ASSET_GEOMETRY_BOUNDARY",
+      "version_promotion_allowed": false,
+      "original_source_complete": false,
+      "missing_original_evidence": "TW1 client M/MC/cache present, actual original server field maps missing"
+    },
+    {
+      "domain_id": "npc_identity",
+      "original_order": 6,
+      "baseline_evidence_status": "OPEN_CONTENT",
+      "source_readiness": "LATER_NPC_PLAYER_NAMES_ONLY_NO_TW10_SERVER_MASTER",
+      "immediately_actionable_with_existing_original_bytes": false,
+      "bounded_next": "BLOCKED_SAME_BUILD_NPC_MASTER",
+      "version_promotion_allowed": false,
+      "original_source_complete": false,
+      "missing_original_evidence": "original spawn position, name, look, script/service and shop stock unknown"
+    },
+    {
+      "domain_id": "npc_dialog_ui",
+      "original_order": 7,
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "source_readiness": "TW10_WN_PROTOCOL_NO_SERVER_DIALOGUE",
+      "immediately_actionable_with_existing_original_bytes": false,
+      "bounded_next": "BLOCKED_SAME_BUILD_NPC_SCRIPT",
+      "version_promotion_allowed": false,
+      "original_source_complete": false,
+      "missing_original_evidence": "WN 5-field session transport known, actual button layout and original dialog runtime unknown"
+    },
+    {
+      "domain_id": "quest_content",
+      "original_order": 8,
+      "baseline_evidence_status": "OPEN_CONTENT",
+      "source_readiness": "LATER_NPC_QUEST_AND_PLAYER_GUIDE_ONLY",
+      "immediately_actionable_with_existing_original_bytes": false,
+      "bounded_next": "BLOCKED_SAME_BUILD_QUEST_MASTER",
+      "version_promotion_allowed": false,
+      "original_source_complete": false,
+      "missing_original_evidence": "first-generation full quest IDs/branches/rewards/events/save flags absent"
+    },
+    {
+      "domain_id": "pet_species",
+      "original_order": 9,
+      "baseline_evidence_status": "OPEN_SAME_BUILD_ROSTER",
+      "source_readiness": "PLAYER_ALIASES_NO_SAME_BUILD_PET_MASTER",
+      "immediately_actionable_with_existing_original_bytes": false,
+      "bounded_next": "BLOCKED_SAME_BUILD_PET_MASTER",
+      "version_promotion_allowed": false,
+      "original_source_complete": false,
+      "missing_original_evidence": "no verified complete TW1 roster or cross-era species denominator"
+    },
+    {
+      "domain_id": "pet_visual",
+      "original_order": 10,
+      "baseline_evidence_status": "PARTIAL_RESOURCE",
+      "source_readiness": "TW10_DIRECT_RESOURCE_BUT_NO_SPECIES_ID",
+      "immediately_actionable_with_existing_original_bytes": true,
+      "bounded_next": "T01_SPR_ACTION_CATEGORY_SOURCE_JOIN",
+      "version_promotion_allowed": false,
+      "original_source_complete": false,
+      "missing_original_evidence": "125996 bitmap IDs and 464 sprite groups are not pet count; graphic_id→sprite/frame lacks original binding"
+    },
+    {
+      "domain_id": "pet_stats",
+      "original_order": 11,
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "source_readiness": "TW10_PET_PROTOCOL_NO_ORIGINAL_PET_MASTER_VALUES",
+      "immediately_actionable_with_existing_original_bytes": false,
+      "bounded_next": "BLOCKED_SAME_BUILD_PET_MASTER",
+      "version_promotion_allowed": false,
+      "original_source_complete": false,
+      "missing_original_evidence": "S:K 21-field state exists; same-build original all-species initial values/MP/AI missing"
+    },
+    {
+      "domain_id": "pet_growth",
+      "original_order": 12,
+      "baseline_evidence_status": "PARTIAL_DESCENDANT",
+      "source_readiness": "LATER_DESCENDANT_RULES_NOT_TW10",
+      "immediately_actionable_with_existing_original_bytes": false,
+      "bounded_next": "BLOCKED_SAME_BUILD_GROWTH_CONFIG",
+      "version_promotion_allowed": false,
+      "original_source_complete": false,
+      "missing_original_evidence": "descendant rank/level formula known; original 1999 coefficients and all species configs unproven"
+    },
+    {
+      "domain_id": "pet_skills",
+      "original_order": 13,
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "source_readiness": "TW10_PET_MESSAGE_WITH_LATER_CALLBACKS",
+      "immediately_actionable_with_existing_original_bytes": false,
+      "bounded_next": "BLOCKED_SAME_BUILD_SKILL_MASTER",
+      "version_promotion_allowed": false,
+      "original_source_complete": false,
+      "missing_original_evidence": "S:W view shape and descendant callbacks exist, full same-build learnable skills absent"
+    },
+    {
+      "domain_id": "pet_encounter",
+      "original_order": 14,
+      "baseline_evidence_status": "PARTIAL_DESCENDANT",
+      "source_readiness": "LATER_ENCOUNTER_PLAYER_GUIDES_NO_TW10_SERVER_SPAWN",
+      "immediately_actionable_with_existing_original_bytes": false,
+      "bounded_next": "BLOCKED_SAME_BUILD_ENCOUNTER_DATA",
+      "version_promotion_allowed": false,
+      "original_source_complete": false,
+      "missing_original_evidence": "same-build encounter spawns/habitat/level/capture chances not comprehensive"
+    },
+    {
+      "domain_id": "ride_mount",
+      "original_order": 15,
+      "baseline_evidence_status": "PARTIAL_DESCENDANT",
+      "source_readiness": "LATER_RIDING_ONLY_NO_EARLY_MEMBERSHIP",
+      "immediately_actionable_with_existing_original_bytes": false,
+      "bounded_next": "BLOCKED_EARLY_RIDE_SOURCE",
+      "version_promotion_allowed": false,
+      "original_source_complete": false,
+      "missing_original_evidence": "later rules exist, earliest era membership and all rideable sprite/character joins unproven"
+    },
+    {
+      "domain_id": "battle_ui_rules",
+      "original_order": 16,
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "source_readiness": "TW10_PROTOCOL_AND_PALETTE_STRUCTURES_NO_ORIGINAL_RENDER_STATE",
+      "immediately_actionable_with_existing_original_bytes": true,
+      "bounded_next": "T05_BATTLE_ACTION_RESOURCE_SELECTOR_SOURCE_GATE",
+      "version_promotion_allowed": false,
+      "original_source_complete": false,
+      "missing_original_evidence": "B envelope, SAB indices; actual original render/skill animation and complete command flows unverified"
+    },
+    {
+      "domain_id": "item_equipment_economy",
+      "original_order": 17,
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "source_readiness": "TW10_RESOURCE_PLUS_PROTOCOL_NOT_ORIGINAL_ITEM_MASTER",
+      "immediately_actionable_with_existing_original_bytes": true,
+      "bounded_next": "T02_ORIGINAL_ITEM_IMAGE_REFERENCE_CATALOG",
+      "version_promotion_allowed": false,
+      "original_source_complete": false,
+      "missing_original_evidence": "S:I data envelope and descendant item content; original same-build item+price+source incompletely recovered"
+    },
+    {
+      "domain_id": "audio_fx",
+      "original_order": 18,
+      "baseline_evidence_status": "PARTIAL_RESOURCE",
+      "source_readiness": "TW10_AUDIO_CONTAINER_METADATA_WITHOUT_EVENT_CALLSITE",
+      "immediately_actionable_with_existing_original_bytes": true,
+      "bounded_next": "T04_AUDIO_EVENT_CALLSITE_SOURCE_GATE",
+      "version_promotion_allowed": false,
+      "original_source_complete": false,
+      "missing_original_evidence": "raw audio containers indexed, same-build event-to-audio binding missing"
+    },
+    {
+      "domain_id": "helper_versions",
+      "original_order": 19,
+      "baseline_evidence_status": "PARTIAL_CATALOG",
+      "source_readiness": "PARTIAL_NAMED_TOOL_LINEAGE",
+      "immediately_actionable_with_existing_original_bytes": false,
+      "bounded_next": "OPPORTUNISTIC_NAMED_RELEASE_BINARY_OR_LOG",
+      "version_promotion_allowed": false,
+      "original_source_complete": false,
+      "missing_original_evidence": "initial 16 tool families with source dates, complete version genealogy undocumented"
+    },
+    {
+      "domain_id": "helper_capabilities",
+      "original_order": 20,
+      "baseline_evidence_status": "PARTIAL_CATALOG",
+      "source_readiness": "PARTIAL_OLD_TOOL_FEATURE_REPORTS",
+      "immediately_actionable_with_existing_original_bytes": false,
+      "bounded_next": "OPPORTUNISTIC_NAMED_MENU_OR_MANUAL",
+      "version_promotion_allowed": false,
+      "original_source_complete": false,
+      "missing_original_evidence": "12 initial families, incomplete versioned per-command/function coverage; no executable recovery claimed"
+    },
+    {
+      "domain_id": "reference_web",
+      "original_order": 21,
+      "baseline_evidence_status": "PARTIAL_DISCOVERY",
+      "source_readiness": "SIX_JSS2001_OFFICIAL_NODES_AND_LATER_MIGRATED_PAGES",
+      "immediately_actionable_with_existing_original_bytes": false,
+      "bounded_next": "OPPORTUNISTIC_EXACT_1999_2002_SNAPSHOT",
+      "version_promotion_allowed": false,
+      "original_source_complete": false,
+      "missing_original_evidence": "contemporaneous website archives, official guide IA, images and changed links incomplete"
+    },
+    {
+      "domain_id": "future_player_wiki",
+      "original_order": 22,
+      "baseline_evidence_status": "DESIGN_PREP_ONLY",
+      "source_readiness": "DESIGN_PREP_ONLY_NO_PUBLIC_RELEASE",
+      "immediately_actionable_with_existing_original_bytes": false,
+      "bounded_next": "GATED_DESIGN_AND_RIGHTS_APPROVAL",
+      "version_promotion_allowed": false,
+      "original_source_complete": false,
+      "missing_original_evidence": "schema prepared, no hosted website/domain/UI/official copy or production assets"
+    }
+  ],
+  "domain_count": 22,
+  "historical_statuses_unchanged": true,
+  "source_readiness_is_not_restoration_completion": true,
+  "blocked_same_build_npc_and_pet_quests_preserved": true,
+  "current_execution": {
+    "id": "T01_SPR_ACTION_CATEGORY_SOURCE_JOIN",
+    "historical_content": "TW1.0 original sprite-group/animation/frame numerical intersections with the 2001 player-labeled pet, avatar and NPC image regions",
+    "original_data": "TW10_ADRN_SPR_ANIMATION_FRAME_VERIFIED_GZIP_AND_PINNED_2001_PLAYER_RANGE_INPUT",
+    "deliverable": "Executable finite group-to-bitmap category intersection with exact frame counts and negative semantic gates; return actual tested output and archive derived report",
+    "exit_when": "Verified original group/range counts and no original species/appearance/quest identity is promoted"
+  },
+  "next_if_verified": [
+    {
+      "id": "T02_ORIGINAL_ITEM_IMAGE_REFERENCE_CATALOG",
+      "scope": "Original TW1.0 image metadata for player-labeled item/recipe candidate ranges; original same-build item master remains absent",
+      "reopen_if": "Actual item label-to-image selector or original same-version item master"
+    },
+    {
+      "id": "T03_ORIGINAL_MAP_ASSET_GEOMETRY_BOUNDARY",
+      "scope": "Finite original map payload/geometry vs later server world: no invented original NPC/encounter map",
+      "reopen_if": "Original authenticated region/event data"
+    },
+    {
+      "id": "T04_AUDIO_EVENT_CALLSITE_SOURCE_GATE",
+      "scope": "Original audio resource index and one exact sound-selection callsite if existing source pins support; no track→scene guessing",
+      "reopen_if": "Original event/audio selection trace"
+    }
+  ],
+  "explicit_pauses": [
+    "TW10_CLIENT_LOCAL_SAVEDATA_R79",
+    "FULL_ORIGINAL_SERVER_QUEST_RECONSTRUCTION_WITHOUT_ORIGINAL_DATA",
+    "PET_IDENTITY_PROMOTION_FROM_PLAYER_ALIASES",
+    "NEW_GAME_OR_PUBLIC_WIKI_PRODUCTION",
+    "UNBOUNDED_HELPER_RECONSTRUCTION"
+  ],
+  "system_family_review": "7_PARTIAL_2_OPEN",
+  "original_jss1999_server_software_recovered": false,
+  "stage_a_bounded_research_accepted": true,
+  "stage_b_production_started": false,
+  "original_game_world_fully_restored": false,
+  "original_pet_species_catalog_complete": false,
+  "overall_restoration_percentage": null
+}
