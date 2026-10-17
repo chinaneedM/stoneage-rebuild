@@ -14589,3 +14589,38 @@ c48cddedffdd7f08e9364b52718bc33de4552593。整合前再次读取main仍为
 Highest NEXT STAGE-A-JOINT-REVIEW-01；用户普通继续时仍为Stage A有限
 补证，可从EARLY-CONTENT-RECOVERY-01的三类同代内容线索开始；不表示
 同意新作设计，Stage B GATED，R79继续PAUSED_NON_BLOCKING。
+
+
+## 2026-10-17 — EARLY-CONTENT-RECOVERY-01 第一方手册业务规则与任务内容补证
+
+本轮按远端main727d1c2261f3f01ba567aa62649abe421d142e77 / tree
+fc72a0e6b0e2a6818eb2ab815fc954da408fca98启动；读取296分支、最新提交/
+Actions、完整1829470字节CURRENT-STATE及协议/决策/路线/来源。最新
+主线38926052145和38926051411成功，无in-progress；历史queued
+37642417333保留。用户普通“继续”按Stage A有限补证处理，未当成接受
+阶段收束或启动新作设计。旧R79仍PAUSED_NON_BLOCKING。
+
+实质新增：JSS第一方manual02六个业务节→四类合同（SP首次供品和下次
+登录位置、公车两组三村/3分钟/4乘客/不遇敌、村落服务/工作、普通道具
+落地未定时长消失）；原请求200103附近实际重定向到20010418083149，
+只能归属实际快照，不能当1999/TW1.0同版或商业服实际运行。
+新浪任务汇编链接的目录明确2001-01-18、36K和sqsd-rw3.zip/aid24721；
+当前网页可读，但ZIP502未得字节，目录日期不认证当前HTML在2001
+逐字相同。四条有来源的指南轮廓：送贝壳、成人仪式、伐木许可、五兄弟。
+2003送物页的两方向不是互斥规则；丢弃魅力-2与重复任务-1为不同动作。
+道具同名不能推出相同模板ID；15玉/等级30、南侧200通行费、14木约5000
+等仅保持指南陈述，不补成服务器脚本、全路径费用、精确单价或原始事件位。
+
+七源原始字节只在临时目录/CI内读取；永久派生报告
+research/recovered/STONEAGE-EARLY-CONTENT-GUIDE-MANUAL-R1.json和说明
+docs/specs/STONEAGE-EARLY-CONTENT-GUIDE-MANUAL-R1.md，另有INTAKE记录
+完整历史前缀/原始请求/实际跳转/失败边界。首轮缺requests改用标准库；
+新浪非法GB字节的严格解码失败保留，改为明确替换计数+业务锚点检查，
+不是源文本无损或历史矛盾。五项合成/来源边界测试、本地七源在线重取
+与初始获取的业务语义相等。独立远端来源获取与派生artifact验收随后记录。
+
+**Highest NEXT EARLY-QUEST-CONTENT-02**：从送贝壳/成人仪式选一条代表
+任务，寻找能明确地区/年代、动作与道具身份的独立早期资料；后世同文
+转载不加独立见证数。sqsd-rw3.zip仅在新有效镜像/目录线索出现时重开，
+不重复502、不重新扫全部版本/地图/NPC、不扩大手册低层支线。九族仍
+7 PARTIAL+2 OPEN，原始商业世界/NPC脚本/奖赏/SAAC仍OPEN，Stage B GATED。

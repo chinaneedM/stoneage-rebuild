@@ -280,3 +280,13 @@ attribution, rather than indefinite image-ID/GUI internals or R79.
 用户只说“继续”时仍为Stage A；可选择 EARLY-CONTENT-RECOVERY-01，有限
 追踪同代地图缓存、NPC/任务、商品/奖赏数字线索，先读来源账本；没有新
 实质线索则停止该搜索，不重新编年、全量枚举或深挖R79。Stage B GATED。
+
+
+## 2026-10-17 — EARLY-CONTENT-RECOVERY-01 有限原始内容补证
+
+恢复JSS第一方手册四类业务合同及新浪指南四条任务轮廓。实际手册快照
+2001-04-18；新浪目录日期2001-01-18不认证当前网页字节同年一致，ZIP
+未恢复。所有具体服务器ID/事件/存档与TW1.0/JSS1999精确归属继续OPEN。
+见docs/specs/STONEAGE-EARLY-CONTENT-GUIDE-MANUAL-R1.md。下一项
+EARLY-QUEST-CONTENT-02选择单条任务寻找独立早期证据；不再只增加
+组合审查表，不进入Stage B或恢复R79。

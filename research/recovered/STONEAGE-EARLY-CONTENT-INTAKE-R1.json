@@ -1,0 +1,155 @@
+{
+  "schema": "stoneage.early_content.intake.r1",
+  "date": "2026-10-17",
+  "source_head": "727d1c2261f3f01ba567aa62649abe421d142e77",
+  "source_tree": "fc72a0e6b0e2a6818eb2ab815fc954da408fca98",
+  "remote_branch_count": 296,
+  "preserved_historical_prefixes": [
+    {
+      "path": "README.md",
+      "bytes": 7369,
+      "sha256": "75408a98eb11ef98f9f1327375ba0d96e3df173e9921e0830085f0d07c2066af",
+      "git_blob": "d362e5a1cc591158b049056b2bd438f2a64dabf5"
+    },
+    {
+      "path": "docs/PROJECT-CONTINUITY-PROTOCOL-R1.md",
+      "bytes": 9762,
+      "sha256": "c44834eeec87f7a43e9cb4905f08377349e36d58b1fff2c5a75a6975db695e3b",
+      "git_blob": "ba9bbe19384589400abc61af37a360a40bf91452"
+    },
+    {
+      "path": "docs/CURRENT-STATE.md",
+      "bytes": 1829470,
+      "sha256": "224e17f4fc2a3d9574e16f6862f983588b0a0ed89b9e4364e19b75ebc7be8b3a",
+      "git_blob": "6c8854fdc9024d7090090bc09e6f241fd621cb85"
+    },
+    {
+      "path": "docs/DESIGN-DECISIONS.md",
+      "bytes": 31862,
+      "sha256": "4b940540657a0141339bf0ab84e04e59e63756c3e5647ab379b2ad60bc577771",
+      "git_blob": "133d5c60cbbd668dbe1221098408f5f11e24b441"
+    },
+    {
+      "path": "docs/HISTORICAL-TIMELINE.md",
+      "bytes": 419401,
+      "sha256": "0abcf82ad12901bbc77a1b58a154117eb3e4121a20a0400a2fcf5cfeaa7a4274",
+      "git_blob": "967071d7d0df8ace8e197288a4292e701e7b359e"
+    },
+    {
+      "path": "docs/SOURCE-REGISTRY.md",
+      "bytes": 654770,
+      "sha256": "909c1c84ecbe4de46ce4a0e0b661340bb117e3f0aa1b74a5aed256870c3093ed",
+      "git_blob": "8a83155f01b2f2663689f9aee9cd85aa591be32e"
+    },
+    {
+      "path": "docs/RESTORATION-ROADMAP-R2.md",
+      "bytes": 24620,
+      "sha256": "214f629445d81eb12b747d57200ae143063a170e8e8f074cdcac31ee413fd4aa",
+      "git_blob": "8717eaf2ea631b440ae40fe11024788681e12988"
+    }
+  ],
+  "local_live_replay_semantics_equal": true,
+  "original_initial_manual_request": "https://web.archive.org/web/20010303065824id_/http://www.titan.co.jp/stoneage/manual02.html",
+  "actual_manual_capture": "20010418083149",
+  "local_initial_source_request_records": [
+    {
+      "index": 0,
+      "url": "https://games.sina.com.cn/handbook/0101/01186091.shtml",
+      "final_url": "https://games.sina.com.cn/handbook/0101/01186091.shtml",
+      "status": 200,
+      "bytes": 37893,
+      "sha256": "1890f3f046e9d58847c1a799f2baf97298cc3dbe50d24f6d7115f7d22a5513d9",
+      "headers": {
+        "Content-Type": "text/html",
+        "ETag": "W/\"3d81bba5-3684\"V=5965C31"
+      }
+    },
+    {
+      "index": 1,
+      "url": "https://games.sina.com.cn/handbook/0101/01186091_c1.shtml",
+      "final_url": "https://games.sina.com.cn/handbook/0101/01186091_c1.shtml",
+      "status": 200,
+      "bytes": 36586,
+      "sha256": "18026cf27e06f33da313540146e96c9845d0a2620adc4977a17fc87fb5a836fe",
+      "headers": {
+        "Content-Type": "text/html",
+        "ETag": "\"3d81bba5-3169\"V=5965C31"
+      }
+    },
+    {
+      "index": 2,
+      "url": "https://games.sina.com.cn/handbook/0101/01186091_c2.shtml",
+      "final_url": "https://games.sina.com.cn/handbook/0101/01186091_c2.shtml",
+      "status": 200,
+      "bytes": 36563,
+      "sha256": "91b65594bd21e2e5cb598902eecd7649fa84a1db67574515030d20dbfd4fb07c",
+      "headers": {
+        "Content-Type": "text/html",
+        "ETag": "W/\"3d81bba5-3152\"V=5965C31"
+      }
+    },
+    {
+      "index": 3,
+      "url": "https://games.sina.com.cn/downgames/other/0118654.shtml",
+      "final_url": "https://games.sina.com.cn/downgames/other/0118654.shtml",
+      "status": 200,
+      "bytes": 27633,
+      "sha256": "e0eb3b3494ad207d3354c4a8051aec1ab6e297de9dddbc0d6b9a64ae080d0346",
+      "headers": {
+        "Content-Type": "text/html",
+        "ETag": "W/\"3d7f9eb3-e70\"V=5965C31"
+      }
+    },
+    {
+      "key": "jss_manual02",
+      "url": "https://web.archive.org/web/20010303065824id_/http://www.titan.co.jp/stoneage/manual02.html",
+      "final_url": "https://web.archive.org/web/20010418083149id_/http://www.titan.co.jp/stoneage/manual02.html",
+      "status": 200,
+      "bytes": 28434,
+      "sha256": "50b9771ec501067136629c8e083a190e979e53dd9ba141903f78b76d43b602cc",
+      "content_type": "text/html"
+    },
+    {
+      "key": "sina_part2",
+      "url": "https://games.sina.com.cn/handbook/0101/01186092.shtml",
+      "final_url": "https://games.sina.com.cn/handbook/0101/01186092.shtml",
+      "status": 200,
+      "bytes": 40054,
+      "sha256": "8f2ad4903d7c5c4812cd7f87d9a47216abf0cc358eec2e1d4b14da8f4f4c963a",
+      "content_type": "text/html"
+    },
+    {
+      "key": "sina_later_friendship",
+      "url": "https://games.sina.com.cn/zhqu/sta/rwgl1_1.shtml",
+      "final_url": "https://games.sina.com.cn/zhqu/sta/rwgl1_1.shtml",
+      "status": 200,
+      "bytes": 46601,
+      "sha256": "6313792024d9f35c1d349ef57aed559c0c3c5fa50c1837916fb0b26c666ba2bd",
+      "content_type": "text/html"
+    },
+    {
+      "key": "sina_archive_availability",
+      "url": "https://archive.org/wayback/available?url=games.sina.com.cn%2Fhandbook%2F0101%2F01186091.shtml&timestamp=20011231",
+      "final_url": "https://archive.org/wayback/available?url=games.sina.com.cn%2Fhandbook%2F0101%2F01186091.shtml&timestamp=20011231",
+      "status": 200,
+      "bytes": 108,
+      "sha256": "66b5fb33b2a2bdc9f759203f05f171e7f1c6755501a65b1f48a08bfafd3ba616",
+      "content_type": "application/json"
+    },
+    {
+      "key": "sina_zip",
+      "url": "https://games1.sina.com.cn/cgi-bin/games/downgames/download.pl?aid=24721&col=other&filename=sqsd-rw3.zip&size=36",
+      "error": "HTTP Error 502: Bad Gateway"
+    }
+  ],
+  "transport_limits": [
+    "Initial requests import failed because optional third-party requests was absent; replaced with Python standard-library urllib.",
+    "Strict GB decode failed on malformed page byte; replacement counts and guarded business anchors retained.",
+    "Wayback Availability empty result is only one exact URL/date query.",
+    "ZIP HTTP502 is transport failure, not proof the original file is gone."
+  ],
+  "no_raw_html_or_game_asset_committed": true,
+  "joint_user_review_completed": false,
+  "stage_b_gate": "GATED",
+  "next_priority": "EARLY-QUEST-CONTENT-02"
+}

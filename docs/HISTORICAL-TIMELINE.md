@@ -3326,3 +3326,15 @@ behavior and retained source custody, not original commercial server execution.
 No new early NPC/quest/map/master/save payload acquired; all family gates
 remain PARTIAL/OPEN and Stage B GATED pending joint user review.
 See docs/STAGE-A-CONSOLIDATED-REVIEW-R1.md.
+
+
+## 2026-10-17 — Original JSS manual and catalog-dated published quest evidence
+
+JSS official manual02 actual capture20010418083149 supplies bounded save-point,
+bus, village-service/work and ground-item semantics. A separately preserved
+Sina guide catalog explicitly dates its entry2001-01-18 and names36K ZIP
+sqsd-rw3.zip, but current guide HTML is not authenticated as byte-identical
+to a2001 capture. Four guide quest profiles remain publication-level evidence,
+not recovered original server scripts or TW1.0/JSS1999 exact release facts.
+A2003 two-direction delivery comparison preserves distinct operations.
+Stage A remains PARTIAL/OPEN; no commercial runtime/persistence or Stage B claim.

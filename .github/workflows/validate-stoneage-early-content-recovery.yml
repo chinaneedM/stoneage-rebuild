@@ -1,0 +1,27 @@
+name: Recover bounded early StoneAge manual and quest-guide content
+on:
+  push:
+    paths:
+      - 'tools/stoneage_early_content_probe.py'
+      - 'tests/test_stoneage_early_content_probe.py'
+      - 'docs/specs/STONEAGE-EARLY-CONTENT-GUIDE-MANUAL-R1.md'
+      - 'research/recovered/STONEAGE-EARLY-CONTENT-*.json'
+      - '.github/workflows/validate-stoneage-early-content-recovery.yml'
+  workflow_dispatch:
+jobs:
+  source-acquisition:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Source-bound parser and no-promotion checks
+        run: python -m unittest tests.test_stoneage_early_content_probe -v
+      - name: Acquire seven fixed public evidence pages, retain metadata only
+        run: python tools/stoneage_early_content_probe.py --output "$RUNNER_TEMP/early-content-derived.json"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: early-content-derived
+          path: ${{ runner.temp }}/early-content-derived.json
+          retention-days: 7

@@ -6827,3 +6827,13 @@ It does not change RULES-01/Stage A family status PARTIAL/OPEN.
 - Local acceptance:314 selected pre-existing checks and5 new scope/custody/omission-rejection checks PASS. Remote acceptance is separately recorded after actual success.
 - Does not prove: any new early map/quest/master/server payload, original commercial service gameplay, exact early riding/trade chronology, original rendering or original SAAC durability. No original assets or source payloads committed.
 - Joint review remains pending; Stage A not accepted, Stage B GATED; ordinary continuation stays within Stage A and only materially useful bounded evidence recovery.
+
+
+### SRC-EARLY-CONTENT-MANUAL-GUIDE-R1 — 2026-10-17
+
+- First-party: http://www.titan.co.jp/stoneage/manual02.html, actual archive https://web.archive.org/web/20010418083149id_/http://www.titan.co.jp/stoneage/manual02.html . Six named sections, four bounded gameplay contracts; capture date is not1999/build provenance or actual server execution.
+- Published guide: https://games.sina.com.cn/handbook/0101/01186091.shtml , _c1.shtml, _c2.shtml and 01186092.shtml; attributed to 游民部落网友松鼠1206. Dated catalog https://games.sina.com.cn/downgames/other/0118654.shtml gives2001-01-18/36K/sqsd-rw3.zip/aid24721; current HTML-byte continuity to2001 remains unproven.
+- Later comparison: https://games.sina.com.cn/zhqu/sta/rwgl1_1.shtml (2003-05-29), two delivery directions and distinct repetition/discard operations. Same-title shell is not an original item-ID proof.
+- Primary derived report: research/recovered/STONEAGE-EARLY-CONTENT-GUIDE-MANUAL-R1.json; intake has raw SHA/bytes/URL/decoding and full continuity prefix metadata. No source HTML, dialogue, art, binary or server payload committed.
+- Failure limits: ZIP502 is not absence; one Availability empty exact URL/date query is not an all-archive negative. GB malformed bytes retained as replacement counts; each business claim has source-token guards.
+- Supports four manual rule groups and four guide-level quest contracts only; no early exact release, raw map, quest script, commercial persistence or Stage A final acceptance.
