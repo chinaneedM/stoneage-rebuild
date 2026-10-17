@@ -104,3 +104,14 @@ python tools/stoneage_stage_a_review_packet.py --replay
 当前交付是来源规格、派生统计和独立参考代码。原客户端、原商业服载荷、美术、音乐、地图/对白脚本不随本包入Git。以后新作的引擎、画面、节奏、世界和内容取舍由共同设计决定；原资料存在、后代功能可运行、仓库公开开发，均不自动构成复制生产资产的授权。
 
 不可恢复资料、旧失败Actions及修正过程继续留在原记录。完整CURRENT-STATE、协议、决策、时间线、来源账本和阶段门的历史前缀保留；本包清单固定其基准字节数/哈希并由检查器核对，防止中断续接后以短摘要覆盖长历史。
+
+
+## 2026-10-17 审阅后的补证入口（未代替用户审阅）
+
+原审阅包基准与九族状态保留；后续Stage A内容补证现可直接查看：
+
+- [早期手册与四条任务指南](specs/STONEAGE-EARLY-CONTENT-GUIDE-MANUAL-R1.md)：JSS实际2001-04-18手册快照及四条攻略轮廓，原始商业服脚本仍缺。
+- [成人仪式的实际定年与来源差异](specs/STONEAGE-ADULT-CEREMONY-SOURCE-CONTRACT-R1.md)：完整任务段最迟见于实际2001-11-20快照；30级准入、空包领15玉及奖励有据，敏捷-2/-3分源保留。精确地区版本和原始物品/事件ID仍OPEN。
+- [成人仪式独立获取与永久归档凭据](../research/recovered/STONEAGE-ADULT-CEREMONY-ACCEPTANCE-R1.json)：六源重新取得、派生JSON永久保存；来源/参考检查不等于商业服执行。
+
+本轮主线769ac7795a34736622c74797d620aabca02dd16d对应成人来源Action38991945432与旧来源custody Action38991945356均成功。最高后续为EARLY-LOGGING-CONTENT-03的一次有限任务补证，完整当前交接以CURRENT-STATE为准。Stage A仍未最终验收，Stage B GATED；本文旧推荐候选是当时记录，后续排序由最新交接取代。
