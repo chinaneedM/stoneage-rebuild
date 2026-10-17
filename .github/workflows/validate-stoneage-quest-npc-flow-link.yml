@@ -1,0 +1,94 @@
+name: Validate bounded logging NPC same-event linkage
+on:
+  push:
+    paths:
+      - 'tools/stoneage_quest_npc_flow_link_probe.py'
+      - 'tests/test_stoneage_quest_npc_flow_link_probe.py'
+      - 'tests/test_stoneage_quest_npc_flow_link_archive.py'
+      - 'research/recovered/STONEAGE-QUEST-NPC-FLOW-*.json'
+      - 'docs/specs/STONEAGE-QUEST-NPC-FLOW-LINK-R1.md'
+      - '.github/workflows/validate-stoneage-quest-npc-flow-link.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  finite-source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test same-EventEnd grammar and no-promotion
+        run: python -m unittest tests.test_stoneage_quest_npc_flow_link_probe -v
+      - name: Independently validate permanent derived metadata
+        if: ${{ hashFiles('research/recovered/STONEAGE-QUEST-NPC-FLOW-CI-DERIVED-R1.json') != '' }}
+        run: python -m unittest tests.test_stoneage_quest_npc_flow_link_archive -v
+      - run: sudo apt-get update && sudo apt-get install -y unar
+        if: ${{ hashFiles('research/recovered/STONEAGE-QUEST-NPC-FLOW-CI-DERIVED-R1.json') == '' || github.event_name == 'workflow_dispatch' }}
+      - name: Recover verified preservation bundle
+        if: ${{ hashFiles('research/recovered/STONEAGE-QUEST-NPC-FLOW-CI-DERIVED-R1.json') == '' || github.event_name == 'workflow_dispatch' }}
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/sa25
+          python3 - <<'PY'
+          import hashlib,html,json,re,http.cookiejar,urllib.parse,urllib.request
+          from pathlib import Path
+          ua='Mozilla/5.0'
+          hashes={
+            'ev7l29fw77891go':'7cb7acdecd56617132e6f284c468158917c91d542cad5b2e7b3c7774fb5630d5',
+            'ytaa168o5jih0lx':'567e1ec0aeff9ea6a9ada791a339aa8f8bb8ffba83cf762e4b445fc0f1cb16bb',
+          }
+          op=urllib.request.build_opener(urllib.request.HTTPCookieProcessor(http.cookiejar.CookieJar()))
+          def get(k,s):
+            data=urllib.parse.urlencode({'quick_key':k,'response_format':'json'}).encode()
+            req=urllib.request.Request('https://www.mediafire.com/api/1.5/file/get_info.php',data=data,headers={'User-Agent':ua})
+            with op.open(req,timeout=60) as r:
+              info=json.load(r)['response']['file_info']
+            if str(info.get('hash','')).lower()!=hashes[k]:
+              raise SystemExit('metadata hash changed')
+            with op.open(urllib.request.Request(info['links']['normal_download'],headers={'User-Agent':ua}),timeout=60) as r:
+              page=r.read().decode('utf-8','replace')
+              ref=r.geturl()
+            m=re.search(r'id="downloadButton"[^>]*href="([^"]+)"',page,re.I|re.S) or re.search(r'(https://download\d+\.mediafire\.com/[^"\'<> ]+)',page,re.I)
+            if not m:
+              raise SystemExit('no direct link')
+            p=Path('/tmp/sa25')/('part.'+s)
+            h=hashlib.sha256()
+            with op.open(urllib.request.Request(html.unescape(m.group(1)),headers={'User-Agent':ua,'Referer':ref}),timeout=300) as r,p.open('wb') as o:
+              while True:
+                b=r.read(1048576)
+                if not b:
+                  break
+                o.write(b)
+                h.update(b)
+            if h.hexdigest()!=hashes[k]:
+              raise SystemExit('hash mismatch')
+          get('ev7l29fw77891go','001')
+          get('ytaa168o5jih0lx','002')
+          PY
+          cat /tmp/sa25/part.001 /tmp/sa25/part.002 >/tmp/sa25/bundle.rar
+          test "$(sha256sum /tmp/sa25/bundle.rar|awk '{print $1}')" = "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5"
+          mkdir -p /tmp/sa25/out
+          ulimit -c 0
+          unar -f -o /tmp/sa25/out /tmp/sa25/bundle.rar >/dev/null 2>&1
+      - name: Extract only anonymous five-ID EventEnd joins
+        if: ${{ hashFiles('research/recovered/STONEAGE-QUEST-NPC-FLOW-CI-DERIVED-R1.json') == '' || github.event_name == 'workflow_dispatch' }}
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import os, subprocess
+          from pathlib import Path
+          roots=[p for p in Path('/tmp/sa25/out').rglob('npc') if p.is_dir() and p.parent.name=='data' and p.parent.parent.name=='gmsv']
+          if len(roots)!=1:
+              raise SystemExit('missing or ambiguous original NPC parameter root')
+          out=Path(os.environ['RUNNER_TEMP'])/'quest-npc-flow-derived.json'
+          subprocess.run(['python','-m','tools.stoneage_quest_npc_flow_link_probe','--npc-dir',str(roots[0]),'--output',str(out)],check=True)
+          PY
+      - uses: actions/upload-artifact@v4
+        if: ${{ hashFiles('research/recovered/STONEAGE-QUEST-NPC-FLOW-CI-DERIVED-R1.json') == '' || github.event_name == 'workflow_dispatch' }}
+        with:
+          name: quest-npc-flow-derived
+          path: ${{ runner.temp }}/quest-npc-flow-derived.json
+          retention-days: 7
