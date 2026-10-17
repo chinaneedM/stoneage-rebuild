@@ -14846,3 +14846,8 @@ QUEST-NPC-FLOW-LINK-06有界完成：两条2465→2484候选、1条2478→2481�
 ### STAGE-A-PORTFOLIO-CHECKPOINT-02 独立校验与归档凭据
 
 在分支agent/stage-a-portfolio-checkpoint-r2-20261017源提交c69cc89c1221739f9df8f38ae6bf2b0f7612847f/tree2205596037b55257fcbf4d564bafcf8ab11149d1，独立Actions38999995941/job117300702350 SUCCESS：新增8项组合门禁+既有九族审阅5项+TW1.0原版UI10项+早期官方手册7项，共30项测试PASS；machine check九族7场景5阻塞、8个本轮Git源锚点及原审阅54源锚点/8历史前缀PASS。相邻runtime bootstrap Actions38999995889 SUCCESS。不涉及新下载原始客户端、原商服运行或新模式引擎；2001-04-18手册规则与TW1.0原版通用消息形状保持不同来源层。永久验收记录research/recovered/STONEAGE-STAGE-A-PORTFOLIO-CHECKPOINT-ACCEPTANCE-R2.json，含实际CI源SHA、job、测试和否证位。本次归档重放及main合并尚待实际验收，不能预先声称成功。最高NEXT仍EARLY-VILLAGE-SERVICE-JOURNEY-01，Stage B GATED。
+
+
+### STAGE-A-PORTFOLIO-CHECKPOINT-02 主线验收完结与下一轮交接
+
+本包归档后分支c13104d44228d028153bd27c00526ebe97a8eb6e/tree a4e1a08d67729b2c3cf89eb246efa299a75b86a8，独立Action39000224366/job117301394153 SUCCESS：17项组合+归档接力/九族测试，以及TW1.0原版UI/第一方手册17项，合计34项通过；原始商业服/客户端程序未执行，也未再次下载新源。主线合入前实时对比80cb09c527e7db4cc83d9f2d557a36b4b7d24a3a，分支ahead2/behind0、10路径0文件删除，按expected-head非强制fast-forward整合main到c13104d44228d028153bd27c00526ebe97a8eb6e。新main检查点Actions39000271345、运行基础合同39000271273及TW1.0 R58旧来源custody39000271779全部SUCCESS。来源报告blob1666ab6597ed9a35de38a16ba6ee84761f8132c5没有改动；后续验收完整信息已追加至STONEAGE-STAGE-A-PORTFOLIO-CHECKPOINT-ACCEPTANCE-R2.json。对初代NPC/脚本、完整世界、服务器存档和视觉运行依然只作证据限定，Stage A 7 PARTIAL+2 OPEN、Stage B GATED、R79 PAUSED_NON_BLOCKING；Highest NEXT EARLY-VILLAGE-SERVICE-JOURNEY-01。主线交接记录提交后的任何CI还须独立核验，不预称其成功。

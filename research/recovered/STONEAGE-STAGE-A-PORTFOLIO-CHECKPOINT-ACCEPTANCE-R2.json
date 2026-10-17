@@ -44,5 +44,44 @@
   "status": "REVIEWED_EVIDENCE_AND_WORK_ORDER_NOT_HISTORICAL_RESTORATION_CLOSURE",
   "highest_next": "EARLY-VILLAGE-SERVICE-JOURNEY-01",
   "source_files_only_derived": false,
-  "citation_basis": "first-party 2001-04-18 manual derived source plus original Taiwan v1 UI schema, distinct versions; no new source acquisition"
+  "citation_basis": "first-party 2001-04-18 manual derived source plus original Taiwan v1 UI schema, distinct versions; no new source acquisition",
+  "post_archive_validation": {
+    "source_branch_head": "c13104d44228d028153bd27c00526ebe97a8eb6e",
+    "source_branch_tree": "a4e1a08d67729b2c3cf89eb246efa299a75b86a8",
+    "archive_replay_run_id": 39000224366,
+    "archive_replay_job_id": 117301394153,
+    "archive_replay_conclusion": "success",
+    "archive_tests_total": 34,
+    "original_source_download_skipped": true,
+    "source_blob_unchanged": "1666ab6597ed9a35de38a16ba6ee84761f8132c5",
+    "integration_compare": {
+      "main_before": "80cb09c527e7db4cc83d9f2d557a36b4b7d24a3a",
+      "branch_ahead": 2,
+      "branch_behind": 0,
+      "changed_paths": 10,
+      "deleted_files": 0,
+      "nonforce_expected_head": true
+    },
+    "main_after": "c13104d44228d028153bd27c00526ebe97a8eb6e",
+    "main_tree": "a4e1a08d67729b2c3cf89eb246efa299a75b86a8",
+    "main_runs": [
+      {
+        "id": 39000271345,
+        "scope": "stage_a_checkpoint",
+        "conclusion": "success"
+      },
+      {
+        "id": 39000271273,
+        "scope": "runtime_bootstrap_contract",
+        "conclusion": "success"
+      },
+      {
+        "id": 39000271779,
+        "scope": "original_tw10_source_custody",
+        "conclusion": "success"
+      }
+    ],
+    "stage_a_accepted": false,
+    "stage_b_gate": "GATED"
+  }
 }
