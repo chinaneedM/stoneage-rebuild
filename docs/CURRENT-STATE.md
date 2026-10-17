@@ -14748,3 +14748,8 @@ CI另加入新抓取业务观察/手册节摘要与永久派生报告的独立�
 为下一项避免重复全网搜索，ITEM-INTAKE固定既有形状/schema/修订/获取workflow五个源；记录setup选中itemset.txt（13252行、hash a415e78f9aab2e5ea5ca92ecb7430253f7be1ba7c876d6b0bb6d067b1b466688），itemset0710.txt未选。94列/第17列ID已属后代证据；名字编码先核验，杉/衫不擅自同一，raw_a/b不未经工厂语义直接当成最终值。这里只做来源预检，尚未抽取候选行或恢复任何新原始ID。
 
 正式审阅入口同步本轮伐木规格/验收与普通掉落不绑定的边界，保留原审阅基准。最高NEXT仍QUEST-ITEM-IDENTITY-04的有限名称/模板候选；后代ID不倒填TW1.0，九族7 PARTIAL+2 OPEN，Stage A未终验/Stage B GATED，R79暂停。随后交接记录本身的CI不能在这里预称已发生。
+
+
+伐木最终交接b1252925c2623f2e93bded0f1cf2c6457fde09db已在main验收：成人相邻/伐木33检查及六源Action38992998048、正式审阅复跑38992997953、旧来源custody38992998092均SUCCESS。永久派生blob5d1a98763e41f33e627119eba13c7f2b25de5679再次由GitHub blob接口读回，与本地原JSON相等。八份启动历史前缀和审阅相对链接再次核对完整。
+
+下一项取证路径也做了有限实查：当前临时目录未有itemset目标字节；既有Mediafire两分卷信息接口本地POST都405，GET都JSON解析失败，未取得可核验的文件hash/尺寸响应，也未下载分卷或master。ITEM-INTAKE保留四次请求结果；不称文件不存在、不修改旧workflow假装修复、不盲目重试。QUEST-ITEM-IDENTITY-04需先核验该已记录来源的可用获取路径，再以已知hash取表；无法取得就精确保留缺口，不为同名编ID或继续泛扫攻略。

@@ -89,5 +89,39 @@
   "stop_condition": "Validate recorded bundle/table hashes and actual setup, extract only target candidate identity/numeric metadata; unresolved names stay unresolved; no all-item content dump.",
   "early_item_identity_or_exact_build_inferred": false,
   "runtime_code_changed": false,
-  "stage_b_gate": "GATED"
+  "stage_b_gate": "GATED",
+  "local_acquisition_path_check": {
+    "checked_utc_date": "2026-10-17",
+    "method_post_results": {
+      "ev7l29fw77891go": {
+        "metadata_endpoint": "https://www.mediafire.com/api/1.5/file/get_info.php",
+        "error": "HTTP Error 405: Not Allowed",
+        "file_payload_downloaded": false
+      },
+      "ytaa168o5jih0lx": {
+        "metadata_endpoint": "https://www.mediafire.com/api/1.5/file/get_info.php",
+        "error": "HTTP Error 405: Not Allowed",
+        "file_payload_downloaded": false
+      }
+    },
+    "method_get_results": {
+      "ev7l29fw77891go": {
+        "request_url": "https://www.mediafire.com/api/1.5/file/get_info.php?quick_key=ev7l29fw77891go&response_format=json",
+        "method": "GET",
+        "error": "Expecting value: line 1 column 1 (char 0)",
+        "file_payload_downloaded": false
+      },
+      "ytaa168o5jih0lx": {
+        "request_url": "https://www.mediafire.com/api/1.5/file/get_info.php?quick_key=ytaa168o5jih0lx&response_format=json",
+        "method": "GET",
+        "error": "Expecting value: line 1 column 1 (char 0)",
+        "file_payload_downloaded": false
+      }
+    },
+    "local_target_master_files_found": false,
+    "source_availability_currently_verified": false,
+    "bundle_or_master_payload_downloaded": false,
+    "existing_legacy_workflow_modified": false,
+    "disposition": "Existing recorded hashes remain the identity expectation. Local POST HTTP405 and GET JSON parse failures are not absence of the archive. Next work must first qualify a working recorded-source acquisition route; no repeated blind calls or invented item rows."
+  }
 }

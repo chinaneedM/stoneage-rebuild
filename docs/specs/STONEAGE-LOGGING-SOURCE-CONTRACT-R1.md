@@ -53,3 +53,5 @@ python tools/stoneage_logging_probe.py --output /tmp/logging-derived.json
 [有限绑定评估](../../research/recovered/STONEAGE-LOGGING-MODEL-BINDING-R1.json)固定现有后代普通掉落规格/模型：普通掉落的宠物票据可转给主人；伐木攻略则称宠物尾刀不得木。二者范围不同，不能用任务攻略覆盖全局普通掉落。伐木的原始派发器、物品与事件身份未得，仍不绑定任何现有通用掉落路径，运行时代码不变。新增归档与跨范围回归后本地共33项；归档后远端CI仍须再验。
 
 归档后Action38992814508/job117278686452已通过33项检查与六源重取，expected-head非强制整合main至4c160f49c8de8ea67013c753ab22d224271d0837。下一项[物品身份来源预检](../../research/recovered/STONEAGE-LOGGING-ITEM-INTAKE-R1.json)固定五个既有来源与两个master表hash、setup选中状态；尚未抽取名称候选行，不能宣称得到新原始ID。
+
+物品身份预检进一步实查后，本地未见目标表缓存；旧分卷元数据接口两次POST返回405，两次GET未解析成JSON，均未下载文件载荷。请求结果已追加ITEM-INTAKE；这只限定本地取得路径，不能宣布档案消失。下一项先修复/核验已有来源的取得方式，无法取表就保留未知，不能以指南同名编造ID。当前main b1252925c2623f2e93bded0f1cf2c6457fde09db的伐木、正式审阅及旧custody三项Actions均成功。
