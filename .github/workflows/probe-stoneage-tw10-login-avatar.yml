@@ -1,0 +1,45 @@
+name: Probe original TW1.0 login and avatar callsites
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_tw10_login_avatar_probe.py
+      - tests/test_stoneage_tw10_login_avatar_probe.py
+      - .github/workflows/probe-stoneage-tw10-login-avatar.yml
+permissions:
+  contents: read
+jobs:
+  original-static:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --quiet capstone pefile
+      - run: python -m unittest tests.test_stoneage_tw10_login_avatar_probe -v
+      - name: Recover accepted original specimen transiently
+        run: |
+          set -euo pipefail
+          curl -L --fail --retry 3 --retry-delay 2 --silent --show-error -o /tmp/CD_DIC.rar 'https://archive.org/download/stoneage_tw_2000_win/CD_DIC.rar'
+          echo 'b37a4a47f4eb608cac67e4ddf7a1621a  /tmp/CD_DIC.rar' | md5sum -c -
+          echo 'b8cf92720b6ec8b3f46ea2e9bfcda986d21e7ded  /tmp/CD_DIC.rar' | sha1sum -c -
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq 7zip
+          mkdir -p /tmp/tw10
+          7z x -y -o/tmp/tw10 /tmp/CD_DIC.rar 'STONEAGE.bin' >/dev/null
+          test "$(stat -c %s /tmp/tw10/STONEAGE.bin)" = '523449360'
+      - name: Inspect exact original executable without running it
+        run: |
+          mkdir -p /tmp/derived-login-avatar
+          python -m tools.stoneage_tw10_login_avatar_probe --bin /tmp/tw10/STONEAGE.bin > /tmp/derived-login-avatar/TW10-LOGIN-AVATAR-ORIGINAL-R1.json
+      - name: Remove original payload
+        if: always()
+        run: rm -rf /tmp/tw10 /tmp/CD_DIC.rar
+      - uses: actions/upload-artifact@v4
+        with:
+          name: tw10-login-avatar-derived-r1
+          path: /tmp/derived-login-avatar/*.json
+          if-no-files-found: error
+          retention-days: 7
