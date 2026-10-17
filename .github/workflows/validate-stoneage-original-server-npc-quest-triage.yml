@@ -1,0 +1,17 @@
+name: Validate original StoneAge NPC quest same-build evidence boundary
+on:
+  push:
+    paths:
+      - research/recovered/STONEAGE-ORIGINAL-SERVER-NPC-QUEST-TRIAGE-R1.json
+      - tests/test_stoneage_original_server_npc_quest_triage.py
+      - .github/workflows/validate-stoneage-original-server-npc-quest-triage.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  historical-source-boundary:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - run: python -m unittest tests.test_stoneage_original_server_npc_quest_triage tests.test_stoneage_pet_identity_same_build_triage -v

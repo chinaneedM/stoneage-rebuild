@@ -15099,3 +15099,11 @@ WORLD源分支ec2aa8fac09f13a61c73c9542b2dd9c08c9fc1b9/tree0976772698b7470b72145
 前一PET源研究分支 `b42dcf3236c8e7adb1fbb25d7e0a1fb85bbd8043` 八个工作流已实际SUCCESS、非强制快进合入main；新主线同SHA九个Actions实际SUCCESS，含专用宠物身份验证39041066950、2001图片编号原盘对照39041066860、原资源帧链39041066940。补查历史 `docs/STONEAGE-EARLY-UI-AVATAR-VISUAL-RANGE-R1.md`、`STONEAGE-EARLY-VISUAL-ID-RANGES-INPUT/VERIFIED-R1.json` 发现stonepic文章在先前包**已经存证且证实原台湾1.0 AD RN ID 0—125995连续、宠物照片121/121、宠物动作30113/30113存在**。先前PET提交把stonepic写作本轮新增来源和只讲记录数不等于最大ID，现明确更正：stonepic旧证据复核**不计新来源**；真正新增是依波波124行玩家目录与七条候选名称文字连接。原照片/动作用途和具名物种→图号依旧未经同版语义证实，补正不会把新证据量、历史谱系、进度夸大。
 
 补正规格追加至 `docs/STONEAGE-PET-IDENTITY-SAME-BUILD-SOURCE-TRIAGE-R1.md`，机器核查连接此前Input/Verified来源及指纹，补一组对照原成功编号报告的回归测试；当前纠正后分支/Actions以及新的main结果，须以后续实际状态为准，不提前宣称。原始历次Git提交、失败历史与CURRENT-STATE完整前缀未删除。最高 NEXT仍`ORIGINAL-SERVER-NPC-QUEST-SAME-BUILD-SOURCE-TRIAGE-01`，先找同构建原服NPC任务记录，证据不可得即有限停止并转组合矩阵。 Stage A 7 PARTIAL+2 OPEN，Stage B GATED，R79暂停。
+
+## 2026-10-17 — ORIGINAL-SERVER-NPC-QUEST-SAME-BUILD-SOURCE-TRIAGE-01 金布伊/三兄弟任务有限跨版审查
+
+起点为实时main `56a9430c306ca61d65fcd02437c02390ee33eff9`/tree `7a9fe595e3aceab58c453e716c29f13eb221a4f8`，此前PET同版研究补正源分支八项及主线同SHA九项Actions实际SUCCESS（含39041530179宠物身份门与39041530134原2001位图类别对照），保留重复来源错误的历史改正轨迹。最高NEXT NPC/任务选**金布伊、猜谜三兄弟**这条具名玩家材料链；不扩旧后代脚本。
+
+两篇迁移2001-06-14玩家资料此前已有：依波波124行目录第7号记渔村道场，17173原20行记卡鲁它那村道场；两条是地点差异而非同版服务器冲突已解。新增2001-07-12琨个人失败叙事，曾相信77级金布伊换金虎但描述的是NPC收走后断线，**没有成功获得金虎**。2001-12-04章鱼仔明确写**2.0**的70级按道场分流、练金布伊至77、资格/问答与蓝暴奖励等玩家步骤，该页本次可得检索摘要但全文打开超时；不能倒推TW1.0原服条件。当前17173任务总索引列2.0猜谜三兄弟，混有2.5—8.0，和当前图鉴金布伊「010」一样，不认证原始服端实体ID；已有recovered25彌生/日美子是另任务另版，不交叉嫁接。
+
+结论：六具名材料入口**0条**同构建原服NPC脚本/奖励状态源，服务器NPC ID、任务谓词、宠物发放、同版地图、持久化均**OPEN_EVIDENCE_LIMITED**。产生规格 `docs/STONEAGE-ORIGINAL-SERVER-NPC-QUEST-TRIAGE-R1.md`、有限机读来源、专用负面测试及Actions工作流；是否通过据实际CI登记。按协议有界停止，不生成模拟原任务或把玩家传闻变为历史事实。**NEXT PREPRODUCTION-22-DOMAIN-SOURCE-READY-PORTFOLIO-REVIEW-02**：按22域实际原资料与业务价值重新定序，缺原服载荷的任务留明确重开条件；九族7 PARTIAL+2 OPEN、Stage B GATED、R79 PAUSED，不报整体百分比。

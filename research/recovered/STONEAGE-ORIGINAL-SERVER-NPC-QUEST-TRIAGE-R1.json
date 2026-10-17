@@ -1,0 +1,200 @@
+{
+  "schema": "stoneage.original_server_npc_quest_same_build_source_triage.r1",
+  "prepared_at": "2026-10-17",
+  "task": "ORIGINAL-SERVER-NPC-QUEST-SAME-BUILD-SOURCE-TRIAGE-01",
+  "bounded_entity": "金布伊——道场猜谜三兄弟",
+  "target_build": "TW10_RETAIL_FOUNDATION_MATCHING_ORIGINAL_COMMERCIAL_SERVER",
+  "base_repository_sources": [
+    {
+      "path": "research/recovered/STONEAGE-EARLY-MEDIA-ARTICLE-PET-SOURCE-R1.json",
+      "blob": "f4d110b7053893898338a5b71a94ad15230caf30",
+      "role": "EXISTING_20_ALIAS_PLAYER_REPORT"
+    },
+    {
+      "path": "research/recovered/STONEAGE-PET-IDENTITY-SAME-BUILD-TRIAGE-R1.json",
+      "blob": "b338e67768c404f11f4813d2fc946fea52342816",
+      "role": "PREVIOUS_SOURCE_124_ROWS_AND_LEXICAL_LINK_WITHOUT_ORIGINAL_PET_MASTER"
+    },
+    {
+      "path": "research/recovered/STONEAGE-WORLD-NPC-QUEST-CATALOG-R1.json",
+      "blob": "5aa29da3b4b62b9f2bf8f2d7ed36c750c3bb8b74",
+      "role": "RECOVERED25_OTHER_NAMED_QUEST_NOT_SAME_BUILD_CANDIDATE"
+    }
+  ],
+  "web_witnesses": [
+    {
+      "id": "W20010614_124",
+      "url": "https://news.17173.com/z/stoneage/content/2001-6-14/n182_98793.html",
+      "displayed_date": "2001-06-14",
+      "author": "依波波",
+      "read_grade": "CURRENT_MIGRATED_PAGE",
+      "version": "UNSPECIFIED_2001_PLAYER_TEXT",
+      "report": "row_7_gold_boar_as_quiz_three_brothers_at_fishing_village_training_hall",
+      "source_history": "ALREADY_USED_IN_PRIOR_124_ROW_PACKAGE",
+      "original_date_page_bytes_certified": false,
+      "original_server_code": false
+    },
+    {
+      "id": "W20010614_20",
+      "url": "https://news.17173.com/z/stoneage/content/2001-6-14/n37_953148.html",
+      "displayed_date": "2001-06-14",
+      "author": "未知",
+      "read_grade": "CURRENT_MIGRATED_PAGE",
+      "version": "UNSPECIFIED_2001_PLAYER_TEXT",
+      "report": "gold_boar_associated_with_Karuta_dojo_riddle_three_brothers",
+      "source_history": "ALREADY_ARCHIVED_IN_20_ROW_PACKAGE",
+      "original_date_page_bytes_certified": false,
+      "original_server_code": false
+    },
+    {
+      "id": "W20010712_ANECT",
+      "url": "https://news.17173.com/z/stoneage/content/2001-7-12/n325_241570.html",
+      "displayed_date": "2001-07-12",
+      "author": "琨",
+      "read_grade": "CURRENT_MIGRATED_PAGE",
+      "version": "UNSPECIFIED_2001_PLAYER_STORY",
+      "report": "claimed_level_77_gold_boar_exchange_for_gold_tiger_rumor; described server_disconnect_after_NPC_consumed_pet; no_successful_exchange",
+      "source_history": "NEW_NAMED_PLAYER_ANECDOTE",
+      "original_date_page_bytes_certified": false,
+      "original_server_code": false
+    },
+    {
+      "id": "W20011204_TWO",
+      "url": "https://news.17173.com/z/stoneage/content/2001-12-4/n677_593697.html",
+      "displayed_date": "2001-12-04",
+      "author": "章鱼仔",
+      "read_grade": "SEARCH_RESULT_TEXT_PAGE_OPEN_TIMEOUT",
+      "version": "PLAYER_ARTICLE_EXPLICITLY_LABELLED_2_0",
+      "report": "player_2_0_guide_describes_level_70_differentiated_village_hall; level_77_gold_boar; qualification_receipt_then_quiz_pass_then_blue_dinosaur_reward",
+      "source_history": "NEW_DATE_LABELLED_2_0_GUIDE",
+      "original_date_page_bytes_certified": false,
+      "original_server_code": false
+    },
+    {
+      "id": "WQUESTIDX_MIXED",
+      "url": "https://news.17173.com/z/stoneage/renwu/renwu.htm",
+      "displayed_date": null,
+      "author": null,
+      "read_grade": "CURRENT_MIGRATED_MIXED_VERSION_INDEX",
+      "version": "VERSION_LABELS_INCLUDE_2_0_2_5_3_0_AND_LATER",
+      "report": "riddle_three_brothers_reference_is_listed_under_2_0_heading",
+      "source_history": "CURRENT_NAVIGATION_VERSION_GATE",
+      "original_date_page_bytes_certified": false,
+      "original_server_code": false
+    },
+    {
+      "id": "WPETSHOW_MIXED",
+      "url": "https://news.17173.com/z/stoneage/chongwu/petshow02.htm",
+      "displayed_date": null,
+      "author": null,
+      "read_grade": "CURRENT_MIGRATED_ENCYCLOPEDIA_PAGE",
+      "version": "UNAUTHENTICATED_SITE_DATABASE_VERSION",
+      "report": "page_displays_catalog_ordinal_010_for_gold_boar_and_quiz_three_brothers_award",
+      "source_history": "CURRENT_GUIDE_ENTRY_NOT_ORIGINAL_ID",
+      "original_date_page_bytes_certified": false,
+      "original_server_code": false
+    }
+  ],
+  "player_claim_layers": [
+    {
+      "key": "C1",
+      "version": "UNSPECIFIED_PLAYER_CLAIM",
+      "source": "W20010614_124",
+      "named_reward": "金布伊",
+      "reported_site": "fishing_village_dojo",
+      "server_event_id": null,
+      "execution_verified": false
+    },
+    {
+      "key": "C2",
+      "version": "UNSPECIFIED_PLAYER_CLAIM",
+      "source": "W20010614_20",
+      "named_reward": "金布伊",
+      "reported_site": "Karuta_village_dojo",
+      "server_event_id": null,
+      "execution_verified": false
+    },
+    {
+      "key": "C3",
+      "version": "UNSPECIFIED_PLAYER_ANECDOTE",
+      "source": "W20010712_ANECT",
+      "reported_goal": "level_77_gold_boar_exchange_for_gold_tiger",
+      "success_verified": false,
+      "reported_disconnection": true,
+      "server_event_id": null
+    },
+    {
+      "key": "C4",
+      "version": "PLAYER_EXPLICIT_2_0",
+      "source": "W20011204_TWO",
+      "reported_threshold_level": 70,
+      "required_gold_boar_level": 77,
+      "reward_claim": "blue_dinosaur",
+      "original_tw10_equality_verified": false,
+      "server_event_id": null
+    }
+  ],
+  "tensions": [
+    {
+      "id": "location_mismatch",
+      "affected_claims": [
+        "C1",
+        "C2"
+      ],
+      "resolution": "UNRESOLVED_MULTI_SITE_OR_VERSION_DIFF_OR_PLAYER_LOCATOR",
+      "retroactive_2_0_explanation_not_allowed": true
+    },
+    {
+      "id": "riddle_rewards",
+      "affected_claims": [
+        "C3",
+        "C4"
+      ],
+      "resolution": "DISTINCT_PLAYER_RUMOR_WITH_FAILED_EXPERIENCE_VS_EXPLICIT_2_0_PLAYER_GUIDE",
+      "gold_tiger_success_not_proven": true,
+      "tw10_blue_dinosaur_rule_not_proven": true
+    },
+    {
+      "id": "catalog_id_010",
+      "affected_claims": [],
+      "resolution": "SITE_ORDINAL_ONLY_NOT_ORIGINAL_PET_MASTER_ID",
+      "site_catalog_ordinal": 10,
+      "tw10_pet_id": null,
+      "tw10_graphic_id": null
+    }
+  ],
+  "exact_same_build_server_join": {
+    "tw10_orig_server_npc_master": null,
+    "tw10_orig_server_event_script": null,
+    "tw10_orig_pet_reward_master": null,
+    "tw10_orig_quest_item_master": null,
+    "tw10_orig_condition_predicate": null,
+    "tw10_orig_reward_delivery": null,
+    "tw10_orig_persistent_character_pet_state": null,
+    "original_server_same_build_identity_verified": false,
+    "original_npc_task_state_execution_verified": false
+  },
+  "prohibited_crosswalks": [
+    "RECOVERED25_YAYOI_HIMIKO_EXCHANGE_IS_DIFFERENT_QUEST_AND_BUILD",
+    "PLAYER_GUIDE_CATALOG_010_IS_NOT_TW10_SPECIES_ID",
+    "TW10_CLIENT_UI_PROTOCOL_IS_NOT_ORIGINAL_SERVER_NPC_SCRIPT",
+    "2001_12_04_PLAYER_EXPLICIT_2_0_IS_NOT_TW10_BASELINE",
+    "2026_MIGRATED_PAGE_LABEL_IS_NOT_ARCHIVED_2001_HTML"
+  ],
+  "disposition": "OPEN_EVIDENCE_LIMITED_NO_ORIGINAL_TW10_SAME_BUILD_NPC_REWARD_SCRIPT",
+  "inspected_versioned_player_guides_count": 6,
+  "same_build_original_server_script_count": 0,
+  "stop_condition_met": true,
+  "reopen_if": [
+    "AUTHENTICATED_TW10_OPERATOR_QUEST_SERVER_MASTER_WITH_QUEST_ID",
+    "PERIOD_FIRST_PARTY_NPC_REWARD_RULE_WITH_MATCHING_EXACT_BUILD",
+    "PRESERVED_ORIGINAL_TW10_NPC_INTERACTION_RUN_WITH_AUTHENTICATED_STATE"
+  ],
+  "next_priority": "PREPRODUCTION-22-DOMAIN-SOURCE-READY-PORTFOLIO-REVIEW-02",
+  "next_scope": "Prioritize material 22-domain source byte recovery and cross-system content for real user-facing original game, without spawning never-ending quests or new-game production.",
+  "stage_a_status": "7_PARTIAL_2_OPEN",
+  "stage_b_gated": true,
+  "local_savedata_R79_paused": true,
+  "no_original_game_payload_added": true,
+  "historical_total_complete": false
+}
