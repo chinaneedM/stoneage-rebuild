@@ -1,0 +1,26 @@
+name: Probe bounded 17173 early media archive snapshots
+on:
+  push:
+    paths:
+      - tools/stoneage_early_media_archive_boundary_probe.py
+      - tests/test_stoneage_early_media_archive_boundary_probe.py
+      - .github/workflows/probe-stoneage-early-media-archive-boundary.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  early-media-archive:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - run: python -m unittest tests.test_stoneage_early_media_archive_boundary_probe -v
+      - run: |
+          mkdir -p /tmp/stoneage-early-media
+          python -m tools.stoneage_early_media_archive_boundary_probe --output /tmp/stoneage-early-media/replay.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: early-media-archive-boundary-r1
+          path: /tmp/stoneage-early-media/replay.json
+          retention-days: 7
+          if-no-files-found: error
