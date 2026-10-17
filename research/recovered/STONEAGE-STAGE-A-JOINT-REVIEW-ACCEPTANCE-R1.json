@@ -35,7 +35,46 @@
   "stage_a_user_review_completed": false,
   "stage_a_accepted": false,
   "stage_b_started": false,
-  "extra_ci": "PENDING_NOT_CLAIMED",
-  "main_integration": "PENDING_NOT_CLAIMED",
+  "extra_ci": {
+    "initial_archive_run": 39003088383,
+    "initial_archive_head": "ae59b73a99deccd497a7dbf28b18a016f9d7b9ad",
+    "initial_outcome": "failure",
+    "reason": "Mutable roadmap was incorrectly checked as whole-file immutable after append; original historical prefix remained intact",
+    "failure_preserved": true,
+    "corrected_run": 39003136125,
+    "corrected_head": "443e8fe2c4289482a35437bc11d23199f40e52ea",
+    "corrected_result": "SUCCESS",
+    "corrected_scope": "Exact original roadmap blob prefix + new append, nine-family/replay/gap/source-pin guards"
+  },
+  "main_integration": {
+    "old_main": "5939b90bfff514501d0cb17caefa9a8886d7d319",
+    "integrated_main": "443e8fe2c4289482a35437bc11d23199f40e52ea",
+    "integrated_tree": "ae456d5acfe9a73ff8af036110035a6a46e82daf",
+    "ahead": 3,
+    "behind": 0,
+    "changed_paths": 9,
+    "removed_paths": 0,
+    "method": "FAST_FORWARD_EXPECTED_HEAD_NON_FORCE",
+    "accepted_main_runs": [
+      {
+        "id": 39003173961,
+        "name": "Validate StoneAge Stage A joint review decision",
+        "result": "SUCCESS"
+      },
+      {
+        "id": 39003173696,
+        "name": "Validate Stage A early source gap triage",
+        "result": "SUCCESS"
+      },
+      {
+        "id": 39003173697,
+        "name": "Independently verify TW1.0 R58 rooted helper returns and source custody",
+        "result": "SUCCESS"
+      }
+    ],
+    "new_original_content_recovered": false,
+    "user_stage_a_accepted": false,
+    "stage_b_started": false
+  },
   "next": "AWAIT_EXPLICIT_USER_STAGE_A_REVIEW_DECISION"
 }

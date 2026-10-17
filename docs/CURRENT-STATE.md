@@ -14898,3 +14898,9 @@ QUEST-NPC-FLOW-LINK-06有界完成：两条2465→2484候选、1条2478→2481�
 为避免将“对已有材料再写报告”误当新增初代恢复，使用已固定54源审阅底稿和五村服务来源缺口包，将九系统7 PARTIAL+2 OPEN、七条代表玩家经历、五项阻塞（其中R79暂停非阻塞）、五类官方早期村庄体验，形成一一可复核的跨表及用户决议选项。新交付 docs/STAGE-A-JOINT-REVIEW-DECISION-R1.md、research/recovered/STONEAGE-STAGE-A-JOINT-REVIEW-DECISION-R1.json、校验工具/反例测试/独立工作流。映射只是DERIVED REVIEW LINK，不能冒充新原始玩法证据。现有游戏可用的后代及现代参考合同保留，初代商服NPC/世界/奖励/存盘/完整运行仍不具证据。三种仅供用户明确选择的后续方向：A有新可认证资料再精确补证，B接受证据受限的Stage A审阅检查点（不自动启动Stage B），C暂停等待一手来源。用户尚未选择；不声称完成历史研究，也不计算无分母百分比。
 
 在源提交59fd3bcf482226c0d29fa51e840ec3529b2c2b4f/tree d8461ca61d288c49fd1ac3359b50e3d9d5f8cde4独立Action39002948717/job117309506410 SUCCESS，跨表、来源核验、对抗反例及旧Stage A证据校验通过。旧审阅文本、原手册及原版/后代来源blob未改写，未运行商服/原客户端或新增历史原始资产。新归档与主线整合须等待其各自真实CI校验后报告。当前工作定位为**提交用户联合审阅材料**，而非代替用户决议。Highest NEXT AWAIT_EXPLICIT_USER_STAGE_A_REVIEW_DECISION；正常继续仍Stage A，Stage B GATED，R79 PAUSED_NON_BLOCKING。
+
+### STAGE-A-JOINT-REVIEW-DECISION-01 独立归档测试修订、最终主线验收（2026-10-17）
+
+首个联合审阅源Action39002948717/job117309506410 SUCCESS，后续增强完整历史归档时Action39003088383在“路线R2整体哈希”断言上失败，原因是该路线按协议追加了本轮状态；旧33851字节Git blob b7f035623b450ed2b4eb516841978f2f1e7490d8的完整前缀未改变。纠正为旧前缀内容严格哈希+新追加存在核验，Action39003136125 SUCCESS；相邻早期缺源边界Action39003088515 SUCCESS。旧CI失败与修正一并保留。合并前远端 main仍5939b90bfff514501d0cb17caefa9a8886d7d319，分支ahead3/behind0，9路径0删除，expected-head、force=false快进写回main443e8fe2c4289482a35437bc11d23199f40e52ea/tree ae456d5acfe9a73ff8af036110035a6a46e82daf。主线同HEAD上的联合审阅Action39003173961、旧早期来源缺口39003173696、TW1.0 R58永久来源保管39003173697均实际SUCCESS。永久验收凭据 research/recovered/STONEAGE-STAGE-A-JOINT-REVIEW-ACCEPTANCE-R1.json 追加上述独立验收/修订/主线三项成功，不改写首次报告归档或任何历史原始资料。
+
+最终供用户决议文件 docs/STAGE-A-JOINT-REVIEW-DECISION-R1.md 仍为九系统7 PARTIAL/2 OPEN、七玩家经历/五阻塞/五村庄服务的来源限定审阅材料。没有取得原始同代服务器任务、确证台湾1.0全流程或新游戏工程成果。用户「继续」不视为完成联合审阅；**Highest NEXT AWAIT_EXPLICIT_USER_STAGE_A_REVIEW_DECISION**，接受证据受限阶段审阅、仅继续具名新证或暂停待源三选一；Stage A没有自动验收，Stage B GATED，R79暂停。该主线验收尾注提交后CI另需实际核验，不能提前声称成功。

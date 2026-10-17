@@ -20,8 +20,21 @@ class JointReviewArchiveTests(unittest.TestCase):
   for key in ("new_original_server_evidence","new_original_playthrough","all_historical_claims_originally_restored",
               "stage_a_user_review_completed","stage_a_accepted","stage_b_started"):
    self.assertIs(packet[key],False)
-  self.assertEqual(packet["extra_ci"],"PENDING_NOT_CLAIMED")
-  self.assertEqual(packet["main_integration"],"PENDING_NOT_CLAIMED")
+  self.assertEqual(packet["extra_ci"]["initial_archive_run"],39003088383)
+  self.assertEqual(packet["extra_ci"]["initial_outcome"],"failure")
+  self.assertTrue(packet["extra_ci"]["failure_preserved"])
+  self.assertEqual(packet["extra_ci"]["corrected_run"],39003136125)
+  self.assertEqual(packet["extra_ci"]["corrected_result"],"SUCCESS")
+  main=packet["main_integration"]
+  self.assertEqual(main["integrated_main"],"443e8fe2c4289482a35437bc11d23199f40e52ea")
+  self.assertEqual(main["integrated_tree"],"ae456d5acfe9a73ff8af036110035a6a46e82daf")
+  self.assertEqual(main["ahead"],3)
+  self.assertEqual(main["behind"],0)
+  self.assertEqual(main["removed_paths"],0)
+  self.assertEqual({x["id"] for x in main["accepted_main_runs"]},{39003173961,39003173696,39003173697})
+  self.assertTrue(all(x["result"]=="SUCCESS" for x in main["accepted_main_runs"]))
+  self.assertFalse(main["user_stage_a_accepted"])
+  self.assertFalse(main["stage_b_started"])
  def test_report_mapping_still_valid(self):
   self.assertEqual(validate(json.loads(DEFAULT.read_text(encoding="utf-8")))["status"],"PASS")
 if __name__=="__main__":
