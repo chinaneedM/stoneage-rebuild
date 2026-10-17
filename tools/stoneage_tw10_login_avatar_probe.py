@@ -115,7 +115,12 @@ def inspect_runtime(runtime):
     # These globals are selected by reversed x86 pushes + EARLY_LINEAGE
     # signature only; builder stack-field evidence is emitted independently.
     selectors={}
-    for label,target in [('lineage_body_candidate',0x13f719c),('lineage_face_candidate',0x13f79ac)]:
+    create_pushes=list(reversed(groups['CreateNewChar']['sender_callsites'][0]['bounded_push_operands']))
+    need(len(create_pushes)==14,'original create argument width')
+    for label,position in [('lineage_body_candidate',3),('lineage_face_candidate',4)]:
+        source=create_pushes[position]['static_source']
+        need(source['kind']=='absolute_memory_load','selector source not an absolute load')
+        target=source['address_rva']
         writers=[]
         for i,ins in enumerate(insns):
             if not ins.id or not ins.operands:continue

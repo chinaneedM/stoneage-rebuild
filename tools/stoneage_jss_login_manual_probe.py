@@ -34,7 +34,8 @@ def derive(body,final_url,page):
  plain={k:' '.join(' '.join(v).split()) for k,v in p.sections.items()}
  terms={'login':'ログイン','character':'キャラクタ','creation':'作成','password':'パスワード','name':'名前'}
  relevant=[k for k,s in plain.items() if any(t in s for t in terms.values())]
- return {'requested_page':page,'final_url':final_url,'actual_capture':m.group(1),
+ contract=creation_contract(plain) if page=='manual01.html' else None
+ return {'creation_contract':contract,'requested_page':page,'final_url':final_url,'actual_capture':m.group(1),
   'bytes':len(body),'sha256':hashlib.sha256(body).hexdigest(),'replacement_characters':text.count('\ufffd'),
   'section_count':len(plain),'relevant_section_anchors':relevant,
   'relevant_section_fingerprints':[{'anchor':k,'normalized_sha256':hashlib.sha256(plain[k].encode()).hexdigest(),
@@ -43,6 +44,28 @@ def derive(body,final_url,page):
   'image_references':[{'original_url':urljoin(ROOT+page,x['src']),**{k:v for k,v in x.items() if k!='src'},
       'in_relevant_section':x['section_anchor'] in relevant,'image_bytes_acquired':False} for x in p.images],
   'tw10_exact_build_authenticated':False,'historical_layout_verified':False}
+
+def creation_contract(sections):
+ s=sections.get('1020',''); login=sections.get('1010',''); delete=sections.get('1040','')
+ trans=str.maketrans('０１２３４５６７８９','0123456789');norm=s.translate(trans)
+ def number(pattern):
+  m=re.search(pattern,norm)
+  if not m:raise ValueError('missing original creation numeric assertion '+pattern)
+  return int(m.group(1))
+ name=number(r'全角\s*(\d+)\s*文字');stats=number(r'能力値.*?(\d+)\s*ポイント');elements=number(r'属性値.*?(\d+)\s*ポイント')
+ if (name,stats,elements)!=(8,20,10):raise ValueError('original creation values changed')
+ if not all(t in s for t in ('三属性以上','できません','方向','カラー','顔','出身村')):raise ValueError('creation controls/element scope')
+ if not all(t in login for t in ('ID NUMBER','パスワード','太陽','月','別の世界')):raise ValueError('original login-world separation')
+ if not all(t in delete for t in ('削除確認','OK')):raise ValueError('delete confirmation')
+ return {'source_profile':'JSS_FIRST_PARTY_MANUAL_2001_NOT_TW10_EXACT_BUILD',
+  'max_fullwidth_name_characters':name,'initial_stat_allocation_points':stats,
+  'initial_element_allocation_points':elements,'maximum_allocated_element_types':2,
+  'direction_preview_control_documented':True,'body_color_selection_documented':True,
+  'face_part_selection_documented':True,'home_village_selection_documented':True,
+  'deletion_confirmation_documented':True,'sun_moon_separate_worlds_documented':True,
+  'actual_client_or_server_enforcement_verified':False,'original_screen_coordinates':None,
+  'original_character_census':None,'same_rules_proven_in_tw10':False,
+  'section_anchors':['1010','1020','1040']}
 
 def linked_manual01(links):
  return next((urldefrag(u)[0] for u in links if urldefrag(u)[0]==ROOT+'manual01.html'),None)
