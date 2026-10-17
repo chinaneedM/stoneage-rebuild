@@ -8,7 +8,7 @@ import hashlib
 import json
 import re
 import urllib.request
-from urllib.parse import urljoin,urlsplit
+from urllib.parse import urljoin,urlsplit,urldefrag
 
 ROOT='http://www.titan.co.jp/stoneage/'
 CAPTURE='20010418083149'
@@ -44,6 +44,9 @@ def derive(body,final_url,page):
       'in_relevant_section':x['section_anchor'] in relevant,'image_bytes_acquired':False} for x in p.images],
   'tw10_exact_build_authenticated':False,'historical_layout_verified':False}
 
+def linked_manual01(links):
+ return next((urldefrag(u)[0] for u in links if urldefrag(u)[0]==ROOT+'manual01.html'),None)
+
 def main():
  out={'schema':'stoneage.jss.login_manual.provenance.r1','pages':{},'original_html_or_images_retained':False,
       'original_client_executed':False,'complete_character_roster_verified':False}
@@ -56,7 +59,7 @@ def main():
   if len(body)>2_000_000:raise ValueError('source too large')
   out['pages']['manual02']=derive(body,final,'manual02.html')
   links=out['pages']['manual02']['manual_links']
-  original=next((u for u in links if u==ROOT+'manual01.html'),None)
+  original=linked_manual01(links)
   if original:
    url=f'https://web.archive.org/web/{CAPTURE}id_/'+original
    with urllib.request.urlopen(urllib.request.Request(url,headers={'User-Agent':'StoneAgeHistoricalResearch/1.0'}),timeout=50) as r:
