@@ -1,0 +1,43 @@
+name: Verify authentic TW1 original audio API callsite source
+on:
+  push:
+    paths:
+      - tools/stoneage_tw10_audio_event_gate.py
+      - tests/test_stoneage_tw10_audio_event_gate.py
+      - .github/workflows/verify-stoneage-tw10-audio-event-gate.yml
+      - research/recovered/STONEAGE-TW10-AUDIO-EVENT-GATE-R1.json
+      - research/recovered/STONEAGE-TW10-AUDIO-EVENT-GATE-ACCEPTANCE-R1.json
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify-original-audio-interface:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --quiet capstone pefile
+      - run: python -m unittest tests.test_stoneage_tw10_audio_event_gate tests.test_stoneage_tw10_runtime_sound_probe -v
+      - name: Recover authenticated original carrier ephemerally
+        run: |
+          set -euo pipefail
+          curl -L --fail --retry 3 --retry-delay 2 --silent --show-error -o /tmp/CD_DIC.rar 'https://archive.org/download/stoneage_tw_2000_win/CD_DIC.rar'
+          echo 'b37a4a47f4eb608cac67e4ddf7a1621a  /tmp/CD_DIC.rar' | md5sum -c -
+          echo 'b8cf92720b6ec8b3f46ea2e9bfcda986d21e7ded  /tmp/CD_DIC.rar' | sha1sum -c -
+          command -v 7z >/dev/null 2>&1 || (sudo apt-get update -qq && sudo apt-get install -y -qq 7zip)
+          mkdir -p /tmp/tw10-audio-input
+          7z x -y -o/tmp/tw10-audio-input /tmp/CD_DIC.rar 'STONEAGE.bin' >/dev/null
+          test "$(stat -c %s /tmp/tw10-audio-input/STONEAGE.bin)" = '523449360'
+      - name: Verify original runtime imported sound API uses
+        run: python -m tools.stoneage_tw10_audio_event_gate --disc /tmp/tw10-audio-input/STONEAGE.bin --write "${{ runner.temp }}/tw10-original-audio-event-gate.json"
+      - name: Erase original proprietary inputs
+        if: always()
+        run: rm -rf /tmp/CD_DIC.rar /tmp/tw10-audio-input
+      - uses: actions/upload-artifact@v4
+        with:
+          name: original-tw10-audio-event-gate
+          path: ${{ runner.temp }}/tw10-original-audio-event-gate.json
+          retention-days: 30
