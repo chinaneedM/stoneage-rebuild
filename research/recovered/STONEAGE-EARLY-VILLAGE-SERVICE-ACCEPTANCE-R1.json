@@ -1,0 +1,53 @@
+{
+  "schema": "stoneage.early_village_service_journey.acceptance.r1",
+  "date": "2026-10-17",
+  "source_main_head": "70e700243d4ecf363029601f60de7e01a51d4d49",
+  "source_main_tree": "686798ad81940bd0c66c241b07ee6d02fcb10c80",
+  "branch": "agent/early-village-service-journey-r1-20261017",
+  "source_commit": "5f27611d23fb344cec5731698bf0fe1b04aecb2f",
+  "source_tree": "66c577d69c09686bfb5bf20c2a9d7e2fc1c5494a",
+  "prior_initial_run": {
+    "run_id": 39000978456,
+    "conclusion": "success",
+    "tests": 35,
+    "then_classifier_evidence_boundary_hardened": true
+  },
+  "source_validation": {
+    "run_id": 39001090987,
+    "job_id": 117303967477,
+    "conclusion": "success",
+    "tests": 36
+  },
+  "archive": {
+    "path": "research/recovered/STONEAGE-EARLY-VILLAGE-SERVICE-JOURNEY-R1.json",
+    "permanent_git_blob": "7b6c724999e52a421af77d8c8e1e9351288e11ff",
+    "source_tool_git_blob": "fca36a84a1843d028df3c04c4c6c0b51ae42a7fe",
+    "original_2001_web_download_run_this_iteration": false,
+    "source_authentication_via_prior_pinned_immutable_git_blobs": true,
+    "source_artifact_zip": "NOT_APPLICABLE_NO_NEW_BINARY_OR_WEB_BYTES"
+  },
+  "validated": {
+    "five_service_types": 5,
+    "manual_assertions": 13,
+    "manual_behavior_assertions": 12,
+    "metadata_boundary_assertions": 1,
+    "v1_generic_observation_records": 12,
+    "source_pins": 5,
+    "original_server_execution": false,
+    "original_tw10_service_binding": false
+  },
+  "evidence_promotion": {
+    "jss_1999_original_version_proven": false,
+    "tw10_same_build_service_rules_proven": false,
+    "original_quest_or_npc_scripts_recovered": false,
+    "original_trade_save_ack_observed": false,
+    "retail_client_ran": false,
+    "production_gameplay_changed": false
+  },
+  "stage_a_accepted": false,
+  "joint_user_review_completed": false,
+  "stage_b_gate": "GATED",
+  "r79": "PAUSED_NON_BLOCKING",
+  "status": "SOURCE_CONTRACT_ACCEPTED_NOT_GAMEPLAY_RESTORATION",
+  "next": "STAGE-A-EARLY-SOURCE-GAP-TRIAGE-01"
+}

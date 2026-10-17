@@ -14858,3 +14858,10 @@ QUEST-NPC-FLOW-LINK-06有界完成：两条2465→2484候选、1条2478→2481�
 在2026-10-17最新main 70e700243d4ecf363029601f60de7e01a51d4d49上启动，先读取HEAD/tree、最近提交、Actions、连续性协议与全量CURRENT-STATE，再对照官方2001-04-18 JSS手册及原版台湾1.0客户端UI消息形状。五类行为仅限记录点、长毛象公车、医疗/宠技/收宠、送货/矿石工作、普通落地物品消失；13项早期文字断言与12个原客户端通用观察槽仅作为不同来源的并排契约，不宣称同版NPC/服务器事件绑定、原始写盘ACK或实际操作画面。详见 docs/specs/STONEAGE-EARLY-VILLAGE-SERVICE-JOURNEY-R1.md 与 research/recovered/STONEAGE-EARLY-VILLAGE-SERVICE-JOURNEY-R1.json。实际证据仍未新增原始商业服内容、1999样本或真实游戏回放。
 
 **NEXT STAGE-A-EARLY-SOURCE-GAP-TRIAGE-01**：逐个核对村庄服务关键未知是否有新的、可认证的早期一手资料可补。无新证据即标记UNKNOWN并转九族联合审阅，不靠后代NPC继续扩写、不开R79。Stage A 7 PARTIAL+2 OPEN，Stage B GATED。新来源合同独立CI与主线结果必须实际验证后才能宣称通过。
+
+
+### EARLY-VILLAGE-SERVICE-JOURNEY-01 来源合同独立测试与永久验收
+
+首次提交8a310d6f5edf4c027f412371cacf7b2e2bfa63c4/tree b7f95938a0cdc42897aefa47b68bc90f231f2a3d，Actions39000978456/job117303630456 SUCCESS，共35项；随后强化判定器，不再把一个「原始任务物品下线删除未证明」的证据缺失判为已实际发生的游戏行为，并禁止未经校验的手册字段路径替换。强化后的实际来源提交5f27611d23fb344cec5731698bf0fe1b04aecb2f/tree66c577d69c09686bfb5bf20c2a9d7e2fc1c5494a，Action39001090987/job117303967477 SUCCESS，共36项测试及源/审阅记录校核：五类、13断言（12行为、1证据边界）、12原TW1.0客户端通用可观察字段位置、五份不可变Git源blob。JSS2001第一方官方说明与TW1.0零售客户端来源仍分离，不推成版本完全对应的商业服事件。
+
+永久报告research/recovered/STONEAGE-EARLY-VILLAGE-SERVICE-JOURNEY-R1.json Git blob7b6c724999e52a421af77d8c8e1e9351288e11ff；提取/断言工具git blob fca36a84a1843d028df3c04c4c6c0b51ae42a7fe；首次独立成功及强化后CI在STONEAGE-EARLY-VILLAGE-SERVICE-ACCEPTANCE-R1.json固定。此次只用已归档源，无新网页/原始商服下载，故无新增来源ZIP/artifact可核验；不能捏造artifact证据。后续归档重放与主线快进须以实际CI结果为准，不提前填成功。原始1999样本、商服存盘ACK、村NPC/任务、公交车运行、货品价钱和临时地面消失秒数仍OPEN；Stage A九族7 PARTIAL+2 OPEN，Stage B GATED、R79暂停。最高NEXT STAGE-A-EARLY-SOURCE-GAP-TRIAGE-01：不继续拓展早期手册的五个局部案例，评估能否取得实质原始证据，随后按九族阻塞重排。
