@@ -15034,3 +15034,20 @@ WORLD源分支ec2aa8fac09f13a61c73c9542b2dd9c08c9fc1b9/tree0976772698b7470b72145
 当前新浪任务索引/17173迁移导航已观察为分类与分页发现入口；页脚年份与旧文章日期不认证页面结构在当年存在。本次JSS快照阅读器未打开不构成档案不存在。没有新增“历史官网完整恢复”主张或导航源指纹验收。
 
 **最高NEXT仍HISTORICAL-SITE-IA-AND-WIKI-EXPORT-CONTRACT-01**：取得一个带快照日期的原运营商栏目树与一个同期媒体索引的真实链接元数据及保管链，再将站点分类映射22域/19集合，评审逐主张/版本/权利合同草案；没有具名新源则记录精确缺口停止扩张。Stage B生产/网站实现与R79继续暂停；原版内容缺口、所有外挂未穷尽等边界不变。
+
+
+## 2026-10-17 — HISTORICAL-SITE-IA-AND-WIKI-EXPORT-CONTRACT-01 JSS原站有限导航与段落关系
+
+从实时main472474b892fe1fd442612bd999efa15389e8f4bc/tree7c486d71e395c488c79707860b9d022247d130b9启动，读取最新四提交、317分支、无开放PR、主线最终Action39034495424真实SUCCESS，以及README/协议/完整CURRENT-STATE1906321字节/Design/Timeline/Source/Roadmap；七文件与同HEAD Git字节一致。当前最高历史资料站原始栏目和查询合同，本包只取JSS原运营商与具名17173入口，非网站/新作生产。
+
+源实取Action39035106551、39035257822、39035407893均SUCCESS，但合格页面依次2、5、6，不当全部网站恢复。最终源HEADca6e055921f265b5f5ff19242f35b155df1df3f0/tree30784a0b25a29fcf864188d4d04f998ac87b0525、job117404096972，11个有限入口。JSS manual.html实际20010417160918、3775字节/47链接；两首页框架实际20010425173204与20010406012216各215字节同SHA、引用menu.html/top.html。两官方正文actual20010418082314/20010418083149与top.html实际20010414014135合成6合格节点、85有序链接、67 distinct URL。64片段引用在所取得目标快照中存在，3项无片段目标页已有快照；不同日期不冒充同时在线的完整站点或点击成功。22候选路由仅覆盖六资料域，不把标签宠物当已证物种或凑满22域。
+
+初次manual索引缺少品牌正文，后以两份具名官方手册出链和原域/快照身份接受无品牌文字的具名手册索引；此前ATTEMPT1永久保留，非改写失败历史。JSS menu.html实际20010414013651/2683字节/15诊断链接仍未过正文品牌门，不纳入6节点；不叫不存在或错误页。17173根/index.shtml/guide/guide.htm/jiaoliu/jiaoliu.shtml实际落到2004/2006，均保留指纹但不回填2001同期导航。Availability空查询后直接回放能找到JSS首页，明确空结果不是全网缺失。
+
+最终派生219534字节SHA2567bec788ca9101aa7a06543c0df2fb15b6bc407fd47141b51cc1a99e216cd61cd，ZIP29624字节/SHA256c058cbbf2478900a129a3da5d4ef184ebb76651c6004c44dfbbbeb590813be6c；三次artifact/run/job/HEAD/tree、raw/blob与代码保管在STONEAGE-HISTORICAL-SITE-NAVIGATION-ACCEPTANCE-R1.json，三份源派生及CATALOG永久存元数据。source links→catalog精确重放、正文/目标/日期/空值/跨快照/未证执行边界，本地相关15项通过（含已有六查询案例）。原HTML/图片/旧程序未入Git。归档与主线CI须随后按实际结果追加。
+
+规格docs/specs/STONEAGE-HISTORICAL-SITE-NAVIGATION-R1.md追加补充原IA草案：本轮取得真实官网索引与帧引用，完整布局/初代游戏实体数据库/原服功能仍未证。
+
+**最高NEXT仍HISTORICAL-SITE-IA-AND-WIKI-EXPORT-CONTRACT-01的同期媒体子项**：依据可核旧文原URL/主机迁移线索或精确档案索引，有限查一份1999—2002媒体栏目/任务宠物索引，严格记录实际回放日期；无具名新源则记录精确缺口，停止扩张并回到22域组合前期准备评审。不重复JSS已取手册或无界追逐每个出链。原始宠物身份/全部任务/画面与外挂穷尽缺口保留；7 PARTIAL+2 OPEN及Stage A既有有界研究验收不变，新作/网站生产与R79继续暂停。
+
+另行复核全仓Actions：旧agent/becomepig-item-npc-map-r1-20261007的Action37642417333仍queued，未产生本轮新源验收，不取消旧运行、不改写成功，也不将其当当前最高域任务；本轮来源和归档独立验收。

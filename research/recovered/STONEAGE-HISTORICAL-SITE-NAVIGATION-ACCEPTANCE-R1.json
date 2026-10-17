@@ -1,0 +1,76 @@
+{
+  "schema": "stoneage.historical_site_navigation.acceptance.r1",
+  "source_attempts": [
+    {
+      "source_head": "97e826f078a7c39ccd2975319f116ddbb7c36764",
+      "source_tree": "8574c4849b848c87272b5c18b6d950717db3b6e1",
+      "run": 39035106551,
+      "job": 117403226055,
+      "artifact_id": 12101329768,
+      "zip_digest": "sha256:9c7469766c7b6f860b20b12adfc7565d80a780f4c0a81b5036355797e9aae061",
+      "zip_bytes": 2367,
+      "conclusion": "success",
+      "report": "research/recovered/STONEAGE-HISTORICAL-SITE-NAVIGATION-ATTEMPT1-R1.json",
+      "result_scope": "Initial seven targets; two qualified manuals; no global absence claim."
+    },
+    {
+      "source_head": "c28a6ab9585d9e0a3df3204405e830aa4bcfa6d3",
+      "source_tree": "0cb902ef30b169f22b59785fdba24583767c972c",
+      "run": 39035257822,
+      "job": 117403661989,
+      "artifact_id": 12101728674,
+      "zip_digest": "sha256:ce7a06035d083a462dfbd3c121ad9bbc7cce77af7c93412a7feaf1c5fa6a9cca",
+      "zip_bytes": 9419,
+      "conclusion": "success",
+      "report": "research/recovered/STONEAGE-HISTORICAL-SITE-NAVIGATION-ATTEMPT2-R1.json",
+      "result_scope": "Bounded replay fallback and image-only index qualification; five qualified pages."
+    },
+    {
+      "source_head": "ca6e055921f265b5f5ff19242f35b155df1df3f0",
+      "source_tree": "30784a0b25a29fcf864188d4d04f998ac87b0525",
+      "run": 39035407893,
+      "job": 117404096972,
+      "artifact_id": 12102091868,
+      "zip_digest": "sha256:c058cbbf2478900a129a3da5d4ef184ebb76651c6004c44dfbbbeb590813be6c",
+      "zip_bytes": 29624,
+      "conclusion": "success",
+      "report": "research/recovered/STONEAGE-HISTORICAL-SITE-NAVIGATION-R1.json",
+      "result_scope": "Eleven finite targets with observed frame children; six qualified pages, five bounded gaps."
+    }
+  ],
+  "reports": {
+    "research/recovered/STONEAGE-HISTORICAL-SITE-NAVIGATION-ATTEMPT1-R1.json": {
+      "bytes": 12022,
+      "sha256": "9fba8d22a292df0a3ff79de7af8efc8fec5e7d5320f5b0cb2ac1e243d92317a2",
+      "git_blob": "b53168ebc3c89bef252d47261536c1d2550d400d"
+    },
+    "research/recovered/STONEAGE-HISTORICAL-SITE-NAVIGATION-ATTEMPT2-R1.json": {
+      "bytes": 62606,
+      "sha256": "0e29f96059b77437a4037f4dca093535508c9beb18714f57bc72f4c091cb2417",
+      "git_blob": "38eaecc548a8e53b007bd5fea75f173db51802ac"
+    },
+    "research/recovered/STONEAGE-HISTORICAL-SITE-NAVIGATION-R1.json": {
+      "bytes": 219534,
+      "sha256": "7bec788ca9101aa7a06543c0df2fb15b6bc407fd47141b51cc1a99e216cd61cd",
+      "git_blob": "83ea18a70aca5f0c1c80280669ef99e344bdb52a"
+    },
+    "research/recovered/STONEAGE-HISTORICAL-SITE-NAVIGATION-CATALOG-R1.json": {
+      "bytes": 40201,
+      "sha256": "8d028a8d596f855aad436356bae2d57866a2e058748cc5d34bdfa6ac83fc4fba",
+      "git_blob": "c66fae4ad41cc410199075fbb3ce5777f79d56fa"
+    },
+    "tools/stoneage_historical_site_navigation_probe.py": {
+      "bytes": 12476,
+      "sha256": "aacfaba0fbed007f85127f4e1e4643c3c6d48d8b139d71fed80865e66c1e63c4",
+      "git_blob": "65a0225d080155e782eb5d37ea5f4c4b63718116"
+    },
+    "tools/stoneage_historical_site_navigation_catalog.py": {
+      "bytes": 5744,
+      "sha256": "a6b99ef6cf6877028de489ebbebe5d19ef45addaa1459f1201c3165fd36b6e8c",
+      "git_blob": "e907bb949590f43f84dd34c47b773fe1351e532e"
+    }
+  },
+  "original_payloads_retained": false,
+  "complete_historical_layout_verified": false,
+  "public_website_started": false
+}

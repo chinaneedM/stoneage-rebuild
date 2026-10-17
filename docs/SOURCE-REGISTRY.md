@@ -6966,3 +6966,16 @@ https://news.17173.com/z/stoneage/content/2002-3-10/n974_891060.html ，原发�
 当前新浪01186091.shtml可见面包屑、任务分组、页内索引和分页，17173迁移文页有栏目与相关文章；本条只登记当前发现，不认证2001—2002原导航字节/布局。JSS manual01归档URL本次阅读器未取得，已存早期手册正文保管仍有效，不能用读取失败推翻旧证据。实际历史栏目树、运营商改版日期及链接元数据待下一包实取，未完成导航源指纹验收。
 
 STONEAGE-HISTORICAL-WIKI-QUERY-CONTRACT-DRAFT-R1.json引用四个既有派生Git blob，仅作六个跨域查询/未知边界研究夹具，不是原始站点资料或已发布数据库；对应规范STONEAGE-HISTORICAL-SITE-IA-AND-QUERY-CONTRACT-R1.md。
+
+
+## 2026-10-17 — SRC-JSS-HISTORICAL-NAVIGATION-2001-R1
+
+原域http://www.titan.co.jp/stoneage/，仅限归档响应身份/链接元数据。实取完整URL与实际日期/字节SHA在STONEAGE-HISTORICAL-SITE-NAVIGATION-R1.json及CATALOG；三次派生、ZIP/raw/Git blob、运行HEAD/tree/job见ACCEPTANCE-R1。源Action39035106551初次仅2页；39035257822增加有限回放与图片索引条件5页；39035407893取得具名框架子项后6合格页，历次结果不删。
+
+- manual.html实际https://web.archive.org/web/20010417160918id_/http://www.titan.co.jp/stoneage/manual.html ，3775字节/SHA2567c3f5bbd6ff1d9c689fed08742f729093c4fa9f3187694f2c5451350065db713，47链接。无正文品牌字，原域/日期/两份已认证官方手册出链共同作身份门，不泛化给任意图片页。
+- /实际20010425173204、index.html实际20010406012216，均215字节/SHA256c87d79a4c48880d28ebabda7059d4f3fa99cc89d7be78f5d1f837fcfe526ce4d，框架引用menu.html/top.html；不是完整视觉首页或两套内容。
+- manual01/02实际20010418082314/20010418083149，原SHA与既有官方手册凭据一致；本包新增真实锚点与链接关系。top.html实际20010414014135，7424字节/15链接。
+- menu.html实际20010414013651、2683字节/SHA256b185fbbb0ab0c144b78f0384a91932deadd7eb258313f0b6515124c61909141c，保留15诊断链接但未过正文品牌门；不纳入合格来源图，不称错误页/全网无资料。
+- stoneage.17173.com的根、index.shtml、guide/guide.htm、jiaoliu/jiaoliu.shtml本次实际分别20040115054253、20060205112246、20040811084749、20060205112723，全部超1999—2002窗口。响应指纹保留为拒绝倒填证据，不升为同期媒体导航。
+
+64片段引用在已取目标快照中存在，不同日期不认证当时点击与目标内容兼容；标签至22域/19集合只作22条候选研究路由。网页导航不证明原版宠物/地图/任务/数值。原HTML/图片/音效/执行文件未入Git，完整站点恢复仍OPEN。
