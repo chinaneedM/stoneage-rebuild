@@ -44,3 +44,8 @@
 每个家族至少保留 `product_family, alias, region, era_attested, claimed_release_version, earliest_verified_document, feature_first_attested, proof_level, build_scope, format/syntax, adoption_review, copyright/source_custody`，找不到则填UNKNOWN。优先寻找2001—2004同期开发者主页、发布日志、截图及SHA可靠的早期压缩包目录与当代媒体报道，**不执行来历不明的古老外挂**；再以正式与私服分层，补后期ASSA、STW、NG、小明、石器圣手、SaSH、StoneBoy、SaxTop。每两轮无实质来源或新功能差异即停止横向扩张，回到宠物/玩法资产矩阵。
 
 **下一包** `LEGACY-ASSISTANT-PROVENANCE-EXPANSION-02` 仅根据新取得可靠条目补早期缺失版号与独有功能；最优先的整体复原依赖为 `PET-ASSET-GROWTH-CATALOG-MATRIX-02`。两者属于研究/设计输入，未授权新作生产。
+
+
+## STA2.52 首批逐项功能见证（2026-10-17）
+
+2002-03-10署名用户评测已按版本拆成9项记录，分别保留可用报告、改进请求、未验证菜单、比较项、临时对策和传闻。自动恢复脚本与自动缩屏是作者希望增加的能力；特殊动作条件未验证成功。详见STONEAGE-LEGACY-STA252-FEATURES-R1.json。不是开发者完整变更日志，也未执行软件或决定新作采用。

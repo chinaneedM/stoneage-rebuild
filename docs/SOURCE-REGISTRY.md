@@ -6942,3 +6942,8 @@ SRC-SA-20010709-CLIENT-FILES-01：https://news.17173.com/z/stoneage/content/2001
 - 新见证：https://news.17173.com/z/stoneage/content/2001-12-10/n281_197533.html?_platform=PC ，诗雨，原发表栏2001-12-10；限当前取得的同期署名玩家记录。姓名位置参考与贝壳获取途径有述，未锁具体构建或认证2001网页字节。与新浪01186091_c2.shtml汇编和2003-05-29 rwgl1_1.shtml的丢弃/重复操作分别处理。
 - 固定后代保存包d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5，源Action39026390233，具名NPC创建/唯一ExChangeMan参数、地图头、活动itemset2414/2415连接；原始二级脚本、对白及地图没有公开入Git。来源ZIP/raw/派生blob链见STONEAGE-WORLD-NPC-QUEST-ACCEPTANCE-R1。
 - 三页实际URL/编码/字节SHA256及事实见WITNESSES-R1；当前日期不等于历史快照认证。指定新浪URL在20011231附近Availability一次空结果不扩大为全网缺席。原台湾1.0商服同版任务、ID和真实运行保持OPEN。
+
+
+### S05 STA2.52具名版本来源重新取得
+
+https://news.17173.com/z/stoneage/content/2002-3-10/n974_891060.html ，原发表栏2002-03-10、作者☆阿仇☆，用户评测非开发者release notes。来源Action39026963821；当前HTML字节SHA与正文规范摘要、9条类别及ZIP/raw/派生Git blob保管在STONEAGE-LEGACY-STA252-ACCEPTANCE-R1。只归档派生事实和状态，不复制全文或执行旧软件。

@@ -1,0 +1,17 @@
+name: Validate archived STA2.52 feature evidence
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - research/recovered/STONEAGE-LEGACY-STA252-*.json
+      - tests/test_stoneage_sta252_feature_archive.py
+      - docs/STONEAGE-LEGACY-ASSISTANT-TOOLS-CATALOG-R1.md
+      - .github/workflows/validate-stoneage-sta252-feature-archive.yml
+permissions:
+  contents: read
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python -m unittest tests.test_stoneage_sta252_feature_witness tests.test_stoneage_sta252_feature_archive -v

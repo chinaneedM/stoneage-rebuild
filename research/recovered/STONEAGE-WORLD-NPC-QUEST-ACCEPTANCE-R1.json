@@ -103,8 +103,142 @@
     "timestamp": "20011231"
   },
   "availability_empty_is_global_absence": false,
-  "archive_ci": [],
-  "main_ci": [],
+  "archive_ci": [
+    {
+      "head": "ec2aa8fac09f13a61c73c9542b2dd9c08c9fc1b9",
+      "run": 39026832519,
+      "name": "Validate Stage A early source gap triage",
+      "conclusion": "success"
+    },
+    {
+      "head": "ec2aa8fac09f13a61c73c9542b2dd9c08c9fc1b9",
+      "run": 39026832702,
+      "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+      "conclusion": "success"
+    },
+    {
+      "head": "ec2aa8fac09f13a61c73c9542b2dd9c08c9fc1b9",
+      "run": 39026832723,
+      "name": "Validate StoneAge Stage A joint review decision",
+      "conclusion": "success"
+    },
+    {
+      "head": "ec2aa8fac09f13a61c73c9542b2dd9c08c9fc1b9",
+      "run": 39026832739,
+      "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+      "conclusion": "success"
+    },
+    {
+      "head": "ec2aa8fac09f13a61c73c9542b2dd9c08c9fc1b9",
+      "run": 39026832629,
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "conclusion": "success"
+    },
+    {
+      "head": "ec2aa8fac09f13a61c73c9542b2dd9c08c9fc1b9",
+      "run": 39026832639,
+      "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+      "conclusion": "success"
+    },
+    {
+      "head": "ec2aa8fac09f13a61c73c9542b2dd9c08c9fc1b9",
+      "run": 39026832656,
+      "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+      "conclusion": "success"
+    },
+    {
+      "head": "ec2aa8fac09f13a61c73c9542b2dd9c08c9fc1b9",
+      "run": 39026832415,
+      "name": "Validate legacy StoneAge assistant history and pet content gaps",
+      "conclusion": "success"
+    },
+    {
+      "head": "ec2aa8fac09f13a61c73c9542b2dd9c08c9fc1b9",
+      "run": 39026832423,
+      "name": "Validate StoneAge preproduction content archive and wiki boundary",
+      "conclusion": "success"
+    },
+    {
+      "head": "ec2aa8fac09f13a61c73c9542b2dd9c08c9fc1b9",
+      "run": 39026832469,
+      "name": "Validate named NPC world quest source joins",
+      "conclusion": "success"
+    }
+  ],
+  "main_ci": [
+    {
+      "head": "ec2aa8fac09f13a61c73c9542b2dd9c08c9fc1b9",
+      "run": 39026873825,
+      "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+      "conclusion": "success"
+    },
+    {
+      "head": "ec2aa8fac09f13a61c73c9542b2dd9c08c9fc1b9",
+      "run": 39026873411,
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "conclusion": "success"
+    },
+    {
+      "head": "ec2aa8fac09f13a61c73c9542b2dd9c08c9fc1b9",
+      "run": 39026873433,
+      "name": "Validate StoneAge preproduction content archive and wiki boundary",
+      "conclusion": "success"
+    },
+    {
+      "head": "ec2aa8fac09f13a61c73c9542b2dd9c08c9fc1b9",
+      "run": 39026873388,
+      "name": "Validate Stage A early source gap triage",
+      "conclusion": "success"
+    },
+    {
+      "head": "ec2aa8fac09f13a61c73c9542b2dd9c08c9fc1b9",
+      "run": 39026873350,
+      "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+      "conclusion": "success"
+    },
+    {
+      "head": "ec2aa8fac09f13a61c73c9542b2dd9c08c9fc1b9",
+      "run": 39026873383,
+      "name": "Verify dated shell delivery guide witnesses",
+      "conclusion": "success"
+    },
+    {
+      "head": "ec2aa8fac09f13a61c73c9542b2dd9c08c9fc1b9",
+      "run": 39026873372,
+      "name": "Validate legacy StoneAge assistant history and pet content gaps",
+      "conclusion": "success"
+    },
+    {
+      "head": "ec2aa8fac09f13a61c73c9542b2dd9c08c9fc1b9",
+      "run": 39026873346,
+      "name": "Validate StoneAge Stage A joint review decision",
+      "conclusion": "success"
+    },
+    {
+      "head": "ec2aa8fac09f13a61c73c9542b2dd9c08c9fc1b9",
+      "run": 39026873342,
+      "name": "Independently verify TW1.0 R58 rooted helper returns and source custody",
+      "conclusion": "success"
+    },
+    {
+      "head": "ec2aa8fac09f13a61c73c9542b2dd9c08c9fc1b9",
+      "run": 39026873280,
+      "name": "Validate named NPC world quest source joins",
+      "conclusion": "success"
+    },
+    {
+      "head": "ec2aa8fac09f13a61c73c9542b2dd9c08c9fc1b9",
+      "run": 39026873206,
+      "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+      "conclusion": "success"
+    },
+    {
+      "head": "ec2aa8fac09f13a61c73c9542b2dd9c08c9fc1b9",
+      "run": 39026873266,
+      "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+      "conclusion": "success"
+    }
+  ],
   "original_server_executed": false,
   "original_tw10_complete_quest_restored": false
 }

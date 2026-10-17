@@ -430,3 +430,12 @@ EARLY-VILLAGE-SERVICE-JOURNEY-01的五类行为来源合同已独立成功后，
 规格 docs/specs/STONEAGE-WORLD-NPC-QUEST-SOURCE-JOIN-R1.md，原来源派生/三网页见证/可查询实体关系/保管链分别为STONEAGE-WORLD-NPC-QUEST-SOURCE-JOIN、WITNESSES、CATALOG、ACCEPTANCE的R1 JSON。只存有限姓名查询、数字/指纹与关系，不存原脚本对白/地图/旧exe，不运行原商业服。完整布尔条件、执行顺序、TW1.0相同NPC/地图/ID与持久态仍UNKNOWN。原TW1.0 WN/M/MC只是通用观察面，不与后代配置冒充同版事件。独立归档及main CI必须随后按实际结果登记。
 
 **最高NEXT LEGACY-ASSISTANT-FULL-FEATURE-ARCHIVE-01**：以既有16家族清单中SADE早期版本序列、SaCh/SACHXP与STA同期有版号原文为第一有限批，逐版本列真实功能、出现证据与缺失；好坏功能先完整归档，不现在选择新作采用/实现。人物资源与原服任务只有新可认证同版源才重开。Stage A旧有界验收保持、九族7 PARTIAL+2 OPEN；新作/资料网站生产与R79暂停，不报全游戏百分比。
+
+
+### WORLD-NPC-QUEST 真实主线验收及STA2.52首批功能见证
+
+WORLD源分支ec2aa8fac09f13a61c73c9542b2dd9c08c9fc1b9/tree0976772698b7470b721452eb726050988d9c2f55已在新复核main不变、ahead3/behind0、17路径0删除后非强制快进。该HEAD主线12项实际SUCCESS，含任务目录Action39026873280、网页见证39026873383及历史/资源来源门。两名NPC、六记录、两ID是后代配置连接，不是原台湾1.0服端完整任务；源ZIP/raw/blob与所有主线运行写入WORLD-NPC-QUEST-ACCEPTANCE-R1。
+
+同轮顺序推进外挂资料第一条具名版本：STA2.52用户评测源Action39026963821实际SUCCESS，原发表栏2002-03-10、作者☆阿仇☆。9条派生记录分别保留报告可用、请求、菜单行为未验证、比较项、对策和传闻，自动脚本恢复/自动缩屏不能误记为已实现；非开发者完整更新日志，原软件未运行，不决定新作采用。派生JSON与独立ZIP/raw/代码blob保管见STONEAGE-LEGACY-STA252-FEATURES及ACCEPTANCE-R1，只有元数据永久存档；本条后归档/main CI另按真实结果确认。
+
+**下一最高NEXT仍LEGACY-ASSISTANT-FULL-FEATURE-ARCHIVE-01**：继续SADE早期版序列及SaCh/SACHXP—STA有版号对照，按实际发布/评测/作者回忆分层；已完成的STA2.52单篇见证不等于该工具全部功能或全部外挂。之后转历史官网/资料站查询结构；不重开R79或新作/网站生产。
