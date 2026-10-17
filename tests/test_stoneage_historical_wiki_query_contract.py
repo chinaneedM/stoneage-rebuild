@@ -23,6 +23,7 @@ class QueryContractTests(unittest.TestCase):
                     value = sources[query['source']]
                     for part in check['pointer'].split('/')[1:]:
                         value = value[int(part)] if isinstance(value, list) else value[part]
+                    self.assertIs(type(value), type(check['expected']))
                     self.assertEqual(value, check['expected'])
         self.assertFalse(contract['website_implemented'])
         self.assertFalse(contract['public_export_enabled'])
