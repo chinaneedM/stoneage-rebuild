@@ -1,0 +1,157 @@
+{
+  "schema": "stoneage.historical_wiki_query_contract.draft.r1",
+  "task": "HISTORICAL-SITE-IA-AND-WIKI-EXPORT-CONTRACT-01",
+  "phase": "SOURCE_MAP_AND_CLAIM_LEVEL_QUERY_DRAFT",
+  "status": "RESEARCH_CONTRACT_NOT_WEBSITE_IMPLEMENTATION",
+  "baseline_main": "77f5ffb00854a00d3bde0d3d567b75a2dac463e8",
+  "inputs": {
+    "pet": {
+      "path": "research/recovered/STONEAGE-PET-ASSET-GROWTH-CATALOG-MATRIX-R1.json",
+      "git_blob": "8e447f7bf928f3d56cf8711ed22102e7e1ccaf38"
+    },
+    "quest": {
+      "path": "research/recovered/STONEAGE-WORLD-NPC-QUEST-CATALOG-R1.json",
+      "git_blob": "5aa29da3b4b62b9f2bf8f2d7ed36c750c3bb8b74"
+    },
+    "sta252": {
+      "path": "research/recovered/STONEAGE-LEGACY-STA252-FEATURES-R1.json",
+      "git_blob": "080404f40578521e445772dee6cf606f5cf82731"
+    },
+    "legacy": {
+      "path": "research/recovered/STONEAGE-EARLY-ASSISTANT-VERSIONS-R1.json",
+      "git_blob": "7a518dff830c6a0a62add101e43a2d34aeb528c9"
+    }
+  },
+  "claim_required_fields": [
+    "claim_id",
+    "record_id",
+    "field_path",
+    "value",
+    "value_state",
+    "entity_edition_scope",
+    "game_build_scope",
+    "source_refs",
+    "evidence_status",
+    "publication_date",
+    "release_date",
+    "rights_status",
+    "record_revision"
+  ],
+  "value_states": [
+    "KNOWN",
+    "UNKNOWN",
+    "NOT_APPLICABLE",
+    "CONFLICTING"
+  ],
+  "rules": {
+    "unknown_is_zero_or_false": false,
+    "unversioned_tool_claim_inherits_nearby_version": false,
+    "same_name_implies_same_entity": false,
+    "all_fields_inherit_entity_verification_status": false,
+    "navigation_label_certifies_game_content": false,
+    "publish_original_assets_by_default": false,
+    "allow_qualified_historical_disagreement": true
+  },
+  "queries": [
+    {
+      "id": "PET_SPR_IDENTITY",
+      "scope": "TW10",
+      "source": "pet",
+      "checks": [
+        {
+          "pointer": "/resource_report/sample_groups/0/spr_no",
+          "expected": 100000
+        },
+        {
+          "pointer": "/resource_report/sample_groups/0/species_identity",
+          "expected": null
+        }
+      ],
+      "qualified_answer": "已连接原版动画帧；该SPR组宠物身份未知。"
+    },
+    {
+      "id": "QUEST_GIFT_CONFIG",
+      "scope": "RECOVERED25",
+      "source": "quest",
+      "checks": [
+        {
+          "pointer": "/event_records/1/actions/0/items/0/id",
+          "expected": 2414
+        },
+        {
+          "pointer": "/event_records/1/execution_verified",
+          "expected": false
+        }
+      ],
+      "qualified_answer": "后代配置候选发出2414；未证实际执行，不作为TW1.0奖励。"
+    },
+    {
+      "id": "STA252_SCRIPT_RESUME",
+      "scope": "STA:2.52",
+      "source": "sta252",
+      "checks": [
+        {
+          "pointer": "/features/2/feature_id",
+          "expected": "automatic_script_resume"
+        },
+        {
+          "pointer": "/features/2/evidence_status",
+          "expected": "REQUESTED_NOT_VERIFIED_AVAILABLE"
+        }
+      ],
+      "qualified_answer": "作者请求增加，不算2.52已有功能。"
+    },
+    {
+      "id": "STA_AUTO_ESCAPE_BUILD",
+      "scope": "UNKNOWN_BUILD",
+      "source": "legacy",
+      "checks": [
+        {
+          "pointer": "/comparison/0/feature",
+          "expected": "AUTO_ESCAPE"
+        },
+        {
+          "pointer": "/comparison/0/exact_versions",
+          "expected": null
+        }
+      ],
+      "qualified_answer": "同期使用报告提及STA自动逃跑；精确版号未知，不填2.52。"
+    },
+    {
+      "id": "SADE_G_VARIANT",
+      "scope": "SADE:0.2g",
+      "source": "legacy",
+      "checks": [
+        {
+          "pointer": "/sade_version_claims/8/version",
+          "expected": "0.2g"
+        },
+        {
+          "pointer": "/sade_version_claims/8/source_order",
+          "expected": null
+        },
+        {
+          "pointer": "/sade_version_claims/8/release_date",
+          "expected": null
+        }
+      ],
+      "qualified_answer": "回顾中的独立变体；发布日期与线性次序未证。"
+    },
+    {
+      "id": "SACH123_ABUSE_ATTRIBUTION",
+      "scope": "SaCh:1.23",
+      "source": "legacy",
+      "checks": [
+        {
+          "pointer": "/sach_version_attestation/nearby_abuse_claims_attributed_to_this_build",
+          "expected": false
+        }
+      ],
+      "qualified_answer": "只有名称版号见证，不能把旁文复制争议归给这个构建。"
+    }
+  ],
+  "website_implemented": false,
+  "public_export_enabled": false,
+  "historical_site_structure_fully_recovered": false,
+  "next_required_evidence": "Authenticated operator-era site navigation and dated page snapshots, not present-day migrated templates."
+}

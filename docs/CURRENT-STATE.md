@@ -15023,3 +15023,14 @@ WORLD源分支ec2aa8fac09f13a61c73c9542b2dd9c08c9fc1b9/tree0976772698b7470b72145
 规格docs/specs/STONEAGE-EARLY-ASSISTANT-VERSION-HISTORY-R1.md；派生及保管回执STONEAGE-EARLY-ASSISTANT-VERSIONS-R1.json与ACCEPTANCE-R1.json永久保存。归档与主线CI在后续回执按真实结果登记。
 
 **最高NEXT HISTORICAL-SITE-IA-SOURCE-MAP-01**：依协议结果导向顺序，从早期官网/资料站真实导航、栏目与文章归属形成有来源、版本、年代、不确定性和内容域的百科查询结构草案；仅研究信息结构，不开始网站生产。早期外挂全部家族/功能仍不完整，具名缺口是开发者发布记录、SADE版本日期/继承、STA2.53可靠正文、SACHXP精确构建及后期工具版本。找到独立同代发布/截图/包目录才再开，不把本有限批称为所有外挂完成。Stage A旧有界验收保持，九族7 PARTIAL+2 OPEN；原版宠物/任务/实际画面缺口仍在，新作/网站生产与R79暂停，无全游戏百分比。
+
+
+### 早期辅助工具主线验收与百科查询草案
+
+77f5ffb00854a00d3bde0d3d567b75a2dac463e8/treea45591aae44497a36f4d9c1146863b171ff02869在实时main不变、ahead3/behind0、13路径0删除后非强制快进，主线13项实际SUCCESS。关键源Action39034042412、归档39034042377与原STA2.52归档39034042407全部通过，完整13运行列表与源/归档链写入EARLY-ASSISTANT-VERSIONS-ACCEPTANCE-R1。失败源Action39033711856仍保留。
+
+顺序推进既有总包HISTORICAL-SITE-IA-AND-WIKI-EXPORT-CONTRACT-01的SOURCE-MAP子阶段（此前HISTORICAL-SITE-IA-SOURCE-MAP-01仅简称，不替换总工作包）。新增STONEAGE-HISTORICAL-SITE-IA-AND-QUERY-CONTRACT-R1.md与机器QUERY-CONTRACT-DRAFT-R1：针对真实四份派生blob做六个跨域查询验收，防止把SPR号当宠物、后代配置当TW1.0执行、请求当能力、无版号STA归2.52、变体当线性发布日期、旁文滥用归特定构建。只有研究规格和离线验收案例，网站/公开导出均未实现；本地新增查询验收通过，总相关18项，远端最终草案门须按后续实际结果验收。
+
+当前新浪任务索引/17173迁移导航已观察为分类与分页发现入口；页脚年份与旧文章日期不认证页面结构在当年存在。本次JSS快照阅读器未打开不构成档案不存在。没有新增“历史官网完整恢复”主张或导航源指纹验收。
+
+**最高NEXT仍HISTORICAL-SITE-IA-AND-WIKI-EXPORT-CONTRACT-01**：取得一个带快照日期的原运营商栏目树与一个同期媒体索引的真实链接元数据及保管链，再将站点分类映射22域/19集合，评审逐主张/版本/权利合同草案；没有具名新源则记录精确缺口停止扩张。Stage B生产/网站实现与R79继续暂停；原版内容缺口、所有外挂未穷尽等边界不变。

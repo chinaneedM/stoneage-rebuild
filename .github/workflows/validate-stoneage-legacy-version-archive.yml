@@ -8,6 +8,9 @@ on:
       - tests/test_stoneage_legacy_version*.py
       - docs/specs/STONEAGE-EARLY-ASSISTANT-VERSION-HISTORY-R1.md
       - .github/workflows/validate-stoneage-legacy-version-archive.yml
+      - research/recovered/STONEAGE-HISTORICAL-WIKI-QUERY-CONTRACT-DRAFT-R1.json
+      - tests/test_stoneage_historical_wiki_query_contract.py
+      - docs/specs/STONEAGE-HISTORICAL-SITE-IA-AND-QUERY-CONTRACT-R1.md
 permissions:
   contents: read
 jobs:
@@ -15,4 +18,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: python -m unittest tests.test_stoneage_legacy_version_witness tests.test_stoneage_legacy_version_archive tests.test_stoneage_sta252_feature_witness tests.test_stoneage_sta252_feature_archive -v
+      - run: python -m unittest tests.test_stoneage_legacy_version_witness tests.test_stoneage_legacy_version_archive tests.test_stoneage_sta252_feature_witness tests.test_stoneage_sta252_feature_archive tests.test_stoneage_historical_wiki_query_contract -v
