@@ -14702,3 +14702,10 @@ CI另加入新抓取业务观察/手册节摘要与永久派生报告的独立�
 规格docs/specs/STONEAGE-ADULT-CEREMONY-SOURCE-CONTRACT-R1.md，机器派生报告与INTAKE在research/recovered/STONEAGE-ADULT-CEREMONY-*；六源只存派生元数据/哈希，不存网页全文或服务器载荷。12项本包来源/否证测试+7既有来源检查本地通过，独立CI与永久归档验收随后追加。原始item/NPC/map/event ID、堆叠/容量、重复性、完成/奖励持久事务仍OPEN。
 
 **Highest NEXT EARLY-LOGGING-CONTENT-03**：有限追查既有伐木指南实际存档定年，核对玩家/宠物尾刀、交回许可与14木约5000/手环奖励差异；北岛练功文是具体候选，尚非已证独立见证。无新证据即停止，不重扫全部任务。成人仪式地区/精确版本/物品身份只在有定年官方/独立杂志/原始表时重开。本轮普通继续仍Stage A；正式联合审阅待用户，九族7 PARTIAL+2 OPEN、Stage B GATED、R79 PAUSED_NON_BLOCKING。
+
+
+### 成人仪式独立来源获取与永久派生验收
+
+源提交297b30616a2d044124ad0560ff012d582489a6bd、tree8d1b3fa3465948b3143298485d4f58781824feb5；Action38991633626/job117275086568 SUCCESS，19项检查和六个实际HTTP源读取通过，选段/合同与本地报告相等。artifact12085332759为2473字节ZIP，SHA256 d0dc207134ae801c21ce7cf2ce35a5525cf423c67b3b52b6a66dab34ca4df91a。下载解压唯一adult-derived.json为6978字节，SHA25627403615ac8f4f826db6926fb6c2fb9a60608fcc5dfd4c4d2a3d585ddd613b8b，永久Git blob058225a89962dbcfb49e464f7de999f0f5f81121。原始JSON与本地逐字节相等，全部六源原始hash相等；派生内容永久保存为STONEAGE-ADULT-CEREMONY-CI-DERIVED-R1.json，完整链见ACCEPTANCE-R1.json。
+
+额外实际源反例：修改任务等级、奖励敏捷、空包条件、断线销毁、准入等级和署名的六种输入均被拒；原始网页仍仅在临时目录。日期/署名改用页面自身header，页脚或相关新闻同词不能代替；加归档raw JSON hash/Git blob一致性回归，本地合计21项通过。补强后的分支CI与主线整合需随后核验，不提前冒称成功。最高下一项EARLY-LOGGING-CONTENT-03保持不变；Stage A未终验/Stage B GATED。

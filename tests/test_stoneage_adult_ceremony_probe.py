@@ -1,8 +1,9 @@
 """Source-bound task contracts and material false-promotion regressions."""
 import json
+import hashlib
 from pathlib import Path
 import unittest
-from tools.stoneage_adult_ceremony_probe import between, report, same_task_block, SOURCES
+from tools.stoneage_adult_ceremony_probe import between, report, same_task_block, news_header, SOURCES
 
 ROOT = Path(__file__).resolve().parents[1]
 REPORT = ROOT / 'research/recovered/STONEAGE-ADULT-CEREMONY-SOURCE-CONTRACT-R1.json'
@@ -37,6 +38,14 @@ class AdultCeremonyTests(unittest.TestCase):
         same_task_block('invented LV 30', 'inventedLV30', 'synthetic')
         with self.assertRaisesRegex(ValueError, 'requalify'):
             same_task_block('invented LV 30', 'invented LV 35', 'synthetic')
+
+    def test_footer_date_or_author_cannot_replace_publication_header(self):
+        valid = '<div id="newsriqi">2001-06-14</div><div id="zhuozhe_left">作者：Atron</div>'
+        news_header(valid, 'Atron')
+        for changed in (valid.replace('2001-06-14', 'unknown') + ' footer 2001-06-14',
+                        valid.replace('作者：Atron', 'unknown') + ' footer 作者：Atron'):
+            with self.assertRaises(ValueError):
+                news_header(changed, 'Atron')
 
     def test_archive_proves_selected_block_by_november_not_january(self):
         d = self.data()['observations']
@@ -103,6 +112,17 @@ class AdultCeremonyTests(unittest.TestCase):
             self.assertGreater(source['bytes'], 0)
             self.assertRegex(source['sha256'], r'^[0-9a-f]{64}$')
             self.assertEqual(set(source), {'url', 'final_url', 'bytes', 'sha256', 'decoding', 'replacement_characters'})
+
+    def test_independent_artifact_survives_expiry_as_exact_git_blob(self):
+        folder = ROOT / 'research/recovered'
+        receipt = json.loads((folder / 'STONEAGE-ADULT-CEREMONY-ACCEPTANCE-R1.json').read_text())
+        raw = (ROOT / receipt['permanent_path']).read_bytes()
+        self.assertEqual(len(raw), receipt['raw_json_bytes'])
+        self.assertEqual(hashlib.sha256(raw).hexdigest(), receipt['raw_json_sha256'])
+        self.assertEqual(hashlib.sha1(b'blob ' + str(len(raw)).encode() + b'\0' + raw).hexdigest(), receipt['permanent_git_blob'])
+        self.assertEqual(json.loads(raw), self.data())
+        self.assertEqual(receipt['source_acquisition_count'], 6)
+        self.assertFalse(receipt['original_server_executed'])
 
 
 if __name__ == '__main__':

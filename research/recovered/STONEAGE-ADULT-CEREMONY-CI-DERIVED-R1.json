@@ -1,0 +1,185 @@
+{
+  "schema": "stoneage.adult_ceremony.source_contract.r1",
+  "sources": {
+    "compilation": {
+      "url": "https://games.sina.com.cn/handbook/0101/01186091_c1.shtml",
+      "final_url": "https://games.sina.com.cn/handbook/0101/01186091_c1.shtml",
+      "bytes": 36586,
+      "sha256": "18026cf27e06f33da313540146e96c9845d0a2620adc4977a17fc87fb5a836fe",
+      "decoding": "gb18030",
+      "replacement_characters": 0
+    },
+    "duplicate": {
+      "url": "https://news.17173.com/z/stoneage/renwu/n10.htm",
+      "final_url": "https://news.17173.com/z/stoneage/renwu/n10.htm",
+      "bytes": 12598,
+      "sha256": "200e12c015dafc4d651fa106d9b1e4e51ccd4d0690e9f9e50d3d63316d1ab16d",
+      "decoding": "utf-8",
+      "replacement_characters": 0
+    },
+    "levelguide": {
+      "url": "https://news.17173.com/z/stoneage/content/2001-6-14/n654_570366.html",
+      "final_url": "https://news.17173.com/z/stoneage/content/2001-6-14/n654_570366.html",
+      "bytes": 44806,
+      "sha256": "5bc0ffa5d8ad6becf713adfe0f7349bb1d56758d2a2ee6c4b6a4fbd168f2fed5",
+      "decoding": "utf-8",
+      "replacement_characters": 4
+    },
+    "caves": {
+      "url": "https://news.17173.com/z/stoneage/content/2001-6-14/n730_646156.html",
+      "final_url": "https://news.17173.com/z/stoneage/content/2001-6-14/n730_646156.html",
+      "bytes": 37499,
+      "sha256": "a739fdb682addcd640b5660a70464667828f67d6bc3da0b5eb0e49d0429b7074",
+      "decoding": "utf-8",
+      "replacement_characters": 0
+    },
+    "later_adult": {
+      "url": "https://games.sina.com.cn/zhqu/sta/rwgl1_5.shtml",
+      "final_url": "https://games.sina.com.cn/zhqu/sta/rwgl1_5.shtml",
+      "bytes": 50360,
+      "sha256": "09c65acf0374a1f1c7f6f511ecb85bce8decdc106a9ab894073ad48d89a692f5",
+      "decoding": "gb18030",
+      "replacement_characters": 0
+    },
+    "archived_compilation": {
+      "url": "https://web.archive.org/web/20011120063019id_/http://games.sina.com.cn:80/handbook/0101/01186091_c1.shtml",
+      "final_url": "https://web.archive.org/web/20011120063019id_/http://games.sina.com.cn:80/handbook/0101/01186091_c1.shtml",
+      "bytes": 14617,
+      "sha256": "6338fee011897e9196fec132558bf1a4333b0b22946f026e46d4f284b3d2aeb9",
+      "decoding": "gb18030",
+      "replacement_characters": 0
+    }
+  },
+  "observations": {
+    "profiles": {
+      "compilation": {
+        "reported_minimum_level": 30,
+        "recommendation_level": 35,
+        "recommendation_is_gate": false,
+        "jade_quantity": 15,
+        "collection_requires_empty_bag": true,
+        "south_approach_pass_cost": 200,
+        "all_approaches_pay": false,
+        "reward": {
+          "name": "仪之盔",
+          "defense_delta": 15,
+          "agility_delta": -2,
+          "resistance_delta": 3,
+          "resistance_scope": "OTHER_SPELL_RESISTANCE_AS_REPORTED"
+        },
+        "drop_destroys_jade": null,
+        "logout_destroys_jade": null
+      },
+      "levelguide": {
+        "reported_minimum_level": 30,
+        "approach": "KOAO_UNDERSEA_PASSAGE_FLOOR_2_GUARD",
+        "reward": {
+          "name": "仪之兜",
+          "defense_delta": 15,
+          "agility_delta": null,
+          "resistance_delta": 3,
+          "resistance_scope": "ALL_ABNORMAL_STATUS_AS_REPORTED"
+        },
+        "advises_party_on_approach": true,
+        "party_allowed_inside_trial_proven": false
+      },
+      "caves": {
+        "adult_completion_reported_as_later_quest_prerequisite": true,
+        "adult_completion_event_id": null
+      },
+      "later_adult": {
+        "reported_minimum_level": 30,
+        "jade_quantity": 15,
+        "collection_requires_empty_bag": true,
+        "reported_flow": [
+          "TALK_TO_GUARD",
+          "JUDGE_REQUEST",
+          "MESSENGER_GIVES_15_JADE",
+          "RETURN_15_TO_JUDGE",
+          "HELMET_REWARD"
+        ],
+        "drop_destroys_jade": true,
+        "logout_destroys_jade": true,
+        "disconnect_destroys_jade": true,
+        "party_inside_trial": false,
+        "battle_help_allowed": true,
+        "reward": {
+          "name": "仪之兜",
+          "defense_delta": 15,
+          "agility_delta": -3,
+          "resistance_delta": 3,
+          "resistance_scope": "ALL_ABNORMAL_STATUS_PREVENTION_AS_REPORTED"
+        }
+      }
+    },
+    "lineage": {
+      "duplicate_of": {
+        "duplicate": "compilation"
+      },
+      "comparison": "COMPLETE_SELECTED_TASK_BLOCK_EQUAL_AFTER_WHITESPACE_REMOVAL",
+      "distinct_text_candidates": [
+        "levelguide",
+        "caves"
+      ],
+      "independent_origins_authenticated": false,
+      "levelguide_author": "UNKNOWN",
+      "caves_author": "Atron",
+      "caves_firsthand_experience_is_author_claim": true
+    },
+    "source_asserted_dates": {
+      "compilation": null,
+      "duplicate": null,
+      "levelguide": "2001-06-14",
+      "caves": "2001-06-14",
+      "later_adult": "2003-05-29"
+    },
+    "temporal_witness": {
+      "source": "archived_compilation",
+      "actual_capture": "20011120063019",
+      "selected_task_block_matches_current": true,
+      "selected_normalized_characters": 411,
+      "earliest_capture_exhaustively_established": false,
+      "january_2001_content_proven": false,
+      "archive_is_independent_rule_author": false
+    },
+    "conflicts": [
+      {
+        "field": "reward.agility_delta",
+        "compilation": -2,
+        "later_adult": -3,
+        "resolution": "UNRESOLVED_KEEP_SEPARATE_PROFILES"
+      }
+    ],
+    "scope_distinctions": {
+      "approach_party_advice_does_not_override_trial_party_restriction": true,
+      "empty_bag_at_collection_is_not_empty_bag_at_entry": true,
+      "later_jade_lifetime_not_backdated_into_compilation": true,
+      "jade_names_are_source_local_labels_not_template_identity": true
+    },
+    "selected_block_sha256": {
+      "compilation": "d2657655b96da2840fd19e9b663696a140bdb65d7f26653f36cad7e0938b828c",
+      "duplicate": "d2657655b96da2840fd19e9b663696a140bdb65d7f26653f36cad7e0938b828c",
+      "levelguide": "a08bdcf8dd299f057771fe957af76601cfdd243be5c96a970b2d5f90c47dc8f1",
+      "caves": "b237c8ef67ff4686e45a23a5315edbde1e2b9b06cbd2ad8625f0f883dac30b0a",
+      "later_adult": "6694d0d51715300d6f2ac3e427c71a3ca4816fff53971f8e4fd652791ca91155",
+      "archived_compilation": "d2657655b96da2840fd19e9b663696a140bdb65d7f26653f36cad7e0938b828c"
+    },
+    "unknown": {
+      "historical_region_and_exact_build": null,
+      "original_item_ids": null,
+      "original_npc_ids": null,
+      "completion_event_id": null,
+      "reward_delivery_transaction": null,
+      "repeatability": null,
+      "original_inventory_slots_or_stack_rules": null,
+      "cross_profile_item_identity": null
+    }
+  },
+  "current_html_authenticated_in_asserted_publication_year": false,
+  "catalog_date_authenticates_compilation_bytes": false,
+  "original_server_executed": false,
+  "early_exact_build_membership": "OPEN",
+  "original_quest_script_recovered": false,
+  "stage_a_accepted": false,
+  "stage_b_gate": "GATED"
+}

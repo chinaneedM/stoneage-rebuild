@@ -48,3 +48,8 @@ python tools/stoneage_adult_ceremony_probe.py --output /tmp/adult-derived.json
 本包关闭成人仪式这一轮有界检索，地区／精确版本／原始ID仍OPEN。仅当获得可定年的官方任务页、同时代独立杂志／作者材料、或有出处的原始任务与物品表时重开；不重复抓取同文转载提高见证数。
 
 **最高后续 EARLY-LOGGING-CONTENT-03**：对已有伐木指南做一次同样有限的实际快照定年，核对玩家尾刀／宠物尾刀、许可交回及“14木约5000”的出处与奖励差异；已有北岛练功文提伐木收益和手环，可作为具体候选，不预先称独立见证。没有新证据则保留差异并停止该支线，不扩成所有任务。正式STAGE-A-JOINT-REVIEW-01仍待用户联合审阅；九族7 PARTIAL+2 OPEN，Stage A未终验、Stage B GATED、R79暂停。
+
+
+## 独立归档验收
+
+[来源Action38991633626](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/38991633626)及job117275086568成功；六源实际读取和19项回归通过。下载ZIP hash与API一致，原始派生JSON6978字节与本地报告逐字节相同，永久Git blob `058225a89962dbcfb49e464f7de999f0f5f81121`。完整链见 [验收记录](../../research/recovered/STONEAGE-ADULT-CEREMONY-ACCEPTANCE-R1.json)。后续header／页脚隔离与永久归档回归使本地检查共21项，语义不变，另六项临时真实源变异被拒；补强后远端CI仍须独立通过。

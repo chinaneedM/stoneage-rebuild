@@ -6844,3 +6844,5 @@ It does not change RULES-01/Stage A family status PARTIAL/OPEN.
 主报告 research/recovered/STONEAGE-ADULT-CEREMONY-SOURCE-CONTRACT-R1.json 固定六源URL/最终URL/尺寸/hash/解码及选段摘要。新实际快照 https://web.archive.org/web/20011120063019id_/http://games.sina.com.cn:80/handbook/0101/01186091_c1.shtml ，SHA2566338fee011897e9196fec132558bf1a4333b0b22946f026e46d4f284b3d2aeb9；它是新浪原汇编的时间见证，不是独立规则作者。17173 renwu/n10.htm完整任务段与新浪相同，不加独立见证数。17173 content/2001-6-14/n654_570366.html（作者未知）及n730_646156.html（Atron自述四次经验）为文字不同候选，自标日期不认证历史字节或作者独立。新浪zhqu/sta/rwgl1_5.shtml自标2003-05-29，为后期详细对照，敏捷-3与早期-2保留。
 
 INTAKE保存四次精确Availability结果：成人章节/介绍文有具体捕获，旧17173两个URL空集只限定这些请求。另读介绍文20011220004340快照，仍署游民部落，预发布/台湾背景不足以认证成人规则版本，排除为独立见证。2011同文和GBC平台攻略不作初代PC证明。原始HTML只在临时研究和CI读取。六源独立CI派生artifact与永久归档receipt随后记载；不提前声称执行/验收。
+
+成人仪式独立来源Action38991633626/job117275086568通过；artifact12085332759/ZIP SHA256 d0dc207134ae801c21ce7cf2ce35a5525cf423c67b3b52b6a66dab34ca4df91a，永久派生Git blob058225a89962dbcfb49e464f7de999f0f5f81121。详见STONEAGE-ADULT-CEREMONY-ACCEPTANCE-R1.json；原始HTML未入Git，实际商服执行与ID未证。

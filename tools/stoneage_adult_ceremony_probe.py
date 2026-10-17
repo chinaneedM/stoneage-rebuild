@@ -49,6 +49,14 @@ def same_task_block(first, second, label):
     require(normalize(first) == normalize(second), f"task block changed; requalify {label}")
 
 
+def news_header(document, author):
+    """Read the publication's own date/byline cells, never related stories."""
+    for field, token in (("newsriqi", "2001-06-14"), ("zhuozhe_left", "作者：" + author)):
+        match = re.search(r'<div\s+id=["\x27]' + field + r'["\x27][^>]*>(.*?)</div>', document, re.I | re.S)
+        require(match is not None, f"missing publication header {field}")
+        contains(plain(match.group(1)), token)
+
+
 def derive(documents):
     docs = {key: plain(value) for key, value in documents.items()}
     original = between(docs["compilation"], "当你的 LV", "SBC报导")
@@ -61,12 +69,12 @@ def derive(documents):
     contains(docs["compilation"], "松鼠1206")
     level = between(docs["levelguide"], "lv30有一个很重要的迷", "过愿藏桥前往卡坦村")
     contains(level, "lv30以下进不去", "仪之兜(防+15 抗所有异常状态+3)", "海底隧道2楼", "多找几个lv30未解成人礼的伙伴")
-    contains(docs["levelguide"], "作者：未知", "2001-06-14")
+    news_header(documents["levelguide"], "未知")
     caves = between(docs["caves"], "A：需要解成人", "相关新闻")
     contains(caves, "以上是我转生4次得来的经验")
-    contains(docs["caves"], "作者：Atron", "2001-06-14")
+    news_header(documents["caves"], "Atron")
     later = between(docs["later_adult"], "1.等级要求：30级", "7.海底通路")
-    contains(docs["later_adult"], "2003-05-29 13:49")
+    contains(docs["later_adult"][:docs["later_adult"].find("1.等级要求：30级")], "2003-05-29 13:49")
     contains(later, "15个勾玉", "道具栏全部清空", "如果此时身上有任何物品", "掉落地面", "瞬间消失", "注销或断线", "敏-3", "无法组队", "利用求救", "将15个勾玉交给仪式的审判")
     return {
         "profiles": {
