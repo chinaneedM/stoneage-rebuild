@@ -468,3 +468,10 @@ JSS原域2001快照实取：手册索引47出链，两首页框架引用menu/top
 从原五篇17173迁移文章中的旧经验目录原URL出发，GitHub Actions 39038286655已完整执行三条有限Wayback直接回放；实际只返回2006年两次同一快照及2004年一次宠物目录候选，无1999—2002合格目录节点，不能证明它当年不存在。保留报告SHA/ZIP/原始Git blob与逐URL实际时间；EARLY-MEDIA-ARCHIVE-SNAPSHOT-BOUNDARY-01转OPEN_EVIDENCE_LIMITED，不再追逐猜测索引。
 
 按原22域完成来源连接及UNKNOWN矩阵。**新highest NEXT PET-IDENTITY-SAME-BUILD-SOURCE-TRIAGE-01**：围绕现有20玩家别称、TW10 graphic_id与原SPR资源寻找直接同版物种映射的具名原始资料；无法获得时就停止并转任务/NPC原服源补证。九系统7 PARTIAL+2 OPEN、Stage A有界验收、Stage B GATED、R79暂停均不变；不计算全游戏复原百分比。
+
+ 
+## 2026-10-18 结果导向复原队列超越此前局部NEXT
+
+依据新的`PREPRODUCTION-22-DOMAIN-SOURCE-READY-PORTFOLIO-REVIEW-02`有界22域机读盘点，宠物/原始任务同版服端原材料缺失不是继续空转helper的理由。TW1.0原始ADRN/SPR索引可真实核查，新的TW10-RESOURCE-CATEGORY-SPR-JOIN-01已得原帧与玩家静态/动作区间的物理交集：人物动作区间137508帧/240SPR组，宠物动作区间70236帧/124SPR组；玩家命名的NPC/宠物头像/人物相片/物品/UI静态段0SPR帧（**不是未使用**，静态渲染路径尚未查）。源Action39076262089成功、ZIP原字节及JSON SHA256独立校验已保存；原版具体宠物/角色名、图像显示及原服任务继续OPEN。
+
+**当前最高NEXT TW10-ITEM-STATIC-BITMAP-SOURCE-SELECTOR-01**：仅研究TW1.0物品静态位图（玩家称5973—7003）与已具原客户端S:I协议字段、静态图选择/渲染调用的真实连接，限定可复核的内容载荷和缺口；不自造原物品名称、商店售价/料理或以0个SPR引用否认客户端静态图存在。之后依来源可执行性表移向地图和音频。22域所有旧历史状态不变，7 PARTIAL+2 OPEN与Stage B GATED、R79暂停。历史研究不是用新增R编号或测试数计算完成百分比。

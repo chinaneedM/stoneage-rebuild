@@ -5,6 +5,8 @@ on:
       - tools/stoneage_tw10_visual_category_spr_join.py
       - tests/test_stoneage_tw10_visual_category_spr_join.py
       - tests/test_stoneage_22_domain_source_ready_portfolio.py
+      - tests/test_stoneage_tw10_visual_category_source_custody.py
+      - research/recovered/STONEAGE-TW10-VISUAL-CATEGORY-SPR-JOIN-ACCEPTANCE-R1.json
       - research/recovered/STONEAGE-22-DOMAIN-SOURCE-READY-PORTFOLIO-R2.json
       - research/recovered/STONEAGE-TW10-VISUAL-CATEGORY-SPR-JOIN-R1.json
       - .github/workflows/verify-stoneage-tw10-visual-category-spr-join.yml
@@ -22,7 +24,7 @@ jobs:
           python-version: '3.12'
       - name: Verify portfolio source statuses and original TW1.0 indexes
         run: |
-          python -m unittest tests.test_stoneage_22_domain_source_ready_portfolio tests.test_stoneage_tw10_visual_category_spr_join -v
+          python -m unittest tests.test_stoneage_22_domain_source_ready_portfolio tests.test_stoneage_tw10_visual_category_spr_join tests.test_stoneage_tw10_visual_category_source_custody -v
           python -m tools.stoneage_tw10_visual_category_spr_join --write "${{ runner.temp }}/tw10-visual-category-join.json"
       - uses: actions/upload-artifact@v4
         with:

@@ -1,0 +1,74 @@
+{
+  "schema": "stoneage.tw10_visual_category_spr_join_source_custody.r1",
+  "date": "2026-10-18",
+  "origin_head": "8aa789eeedc18bef8ba6ce078dbd5ebd92105d5c",
+  "origin_tree": "9924c96951e3a5b7d80157fc8d9de2f0ed989495",
+  "source_job": {
+    "run_id": 39076262089,
+    "job_id": 117523936561,
+    "branch": "agent/source-ready-visual-crosswalk-r1-20261018",
+    "conclusion": "success",
+    "verification": "DIRECT_ORIGINAL_COMPRESSED_METADATA_AND_22_DOMAIN_PORTFOLIO"
+  },
+  "archive": {
+    "artifact_id": 12116114738,
+    "artifact_filename": "original-tw10-visual-category-join.zip",
+    "independently_downloaded_original_zip_bytes": 1784,
+    "original_zip_sha256": "fa5ad6bf8f926feb8f8fc54e02c206760dfcaac4dbc28ef814145de7961479ee",
+    "original_json_member": "tw10-visual-category-join.json",
+    "original_json_raw_bytes": 8369,
+    "original_json_sha256": "e33bdae8c202dcf5a1374746afc505f517d8e1afc557fd07057d2d1811a54fcd",
+    "original_json_git_blob": "20a82e4d35661785c4e50b44855cf8e8a4e98f3e",
+    "independent_download_zip_digest_checked": true,
+    "raw_member_digest_checked": true,
+    "source_report_semantic_replay_required": true,
+    "archive_verification_mode": "BYTE_EXACT"
+  },
+  "fixed_original_inputs": [
+    {
+      "path": "research/recovered/tw10-resource-metadata/MANIFEST-R1.txt",
+      "blob": "6154dcf806163b82cb96af344e6a644143d15f56"
+    },
+    {
+      "path": "research/recovered/STONEAGE-EARLY-VISUAL-ID-RANGES-INPUT-R1.json",
+      "blob": "11bb14ef00c2ed354c5f00f510da8783376f1f28"
+    },
+    {
+      "path": "research/recovered/STONEAGE-22-DOMAIN-EVIDENCE-COVERAGE-CHECKPOINT-R1.json",
+      "blob": "4afcd18d2cbcbd6b101721bac987778b074b9464"
+    }
+  ],
+  "replay_integrity": {
+    "only_original_resource_membership_and_spr_frame_join": true,
+    "original_client_actual_render_execution": false,
+    "original_item_name_or_npc_identity_link": false,
+    "original_pet_species_spr_mapping": false,
+    "same_build_original_server_data": false,
+    "copyrighted_original_images_in_git": false,
+    "earlier_readiness_levels_changed": false,
+    "static_bitmap_not_in_SPR_does_not_mean_unused_by_client": true
+  },
+  "observed": {
+    "original_spr_group_count": 464,
+    "original_animation_count": 39065,
+    "original_frame_count": 242085,
+    "non_sentinel_frames": 238593,
+    "player_labeled_character_action_frame_refs": 137508,
+    "original_groups_touching_character_action_range": 240,
+    "player_labeled_pet_action_frame_refs": 70236,
+    "original_groups_touching_pet_action_range": 124,
+    "static_labeled_ranges_with_zero_spr_frame_references": [
+      "npc_candidate",
+      "pet_portrait",
+      "character_portrait",
+      "items",
+      "ui"
+    ],
+    "original_groups_touching_multiple_selected_ranges": 0
+  },
+  "interpretation": "Bounded original-client index intersection only; not 124 species, 240 selectable avatars or recovered original gameplay rendering.",
+  "stage_a": "7_PARTIAL_2_OPEN",
+  "stage_b_production_started": false,
+  "next": "TW10-ITEM-STATIC-BITMAP-SOURCE-SELECTOR-01",
+  "post_archive_main_ci": "PENDING_REAL_RUN_NOT_INFERRED"
+}

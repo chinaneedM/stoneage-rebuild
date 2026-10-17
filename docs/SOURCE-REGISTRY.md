@@ -6998,3 +6998,11 @@ STONEAGE-HISTORICAL-WIKI-QUERY-CONTRACT-DRAFT-R1.json引用四个既有派生Git
 - 原路径`http://stoneage.17173.com/jingyan/jingyan.shtml`，请求20010614000000/20021231000000，真实返回均为`https://web.archive.org/web/20060115044722id_/http://stoneage.17173.com/jingyan/jingyan.shtml`，11376B，原HTML SHA256 `b6ad1696042cdc3cdfaac671506040505be2b129c0ae9aeb9e3d3dec74753850`；不得归为同期2001原媒体目录。
 - 原路径`http://stoneage.17173.com/chongwu/pet.htm`，请求20011231000000，实际返回`https://web.archive.org/web/20040204024948id_/http://stoneage.17173.com/chongwu/pet.htm`，6546B，原HTML SHA256 `54da75bcbd7b703a336f99f00b160701c8ef8cb6c89358f3b6a08a51df052b26`；属于晚期导航线索，并非2001原目录。
 - GitHub Action `39038286655`/job`117412434137` SUCCESS，artifact`12102473238`（1094B ZIP SHA256 `ff695f20c4e38d974040ffc73f668ef7f82410193ffdd15af29b68c1819e79fd`）。无版权原HTML入库，只有raw派生3520B SHA256 `e50cf9406ba4f057915adf84536dbb6d268d8bdd3303779a7da7b783cb9d6c57`，Git blob `0d5ff5dcb8532626ff40891ff76e92cff378ec26`，待再查精确旧栏目才可重开。三次Availability HTTP503为接口结果不证全网缺失。
+
+ 
+## SRC-TW10-ORIGINAL-SPR-PLAYER-RANGE-INTERSECTION-20261018 — 原零售盘图号与帧关联
+
+- **直接事实层 S（TW1.0客户端派生、已固定来源）**：ADRN、SPR-GROUP/ANIMATION/FRAME四份gzip派生与固定源manifest，全部SHA见`tools/stoneage_pet_asset_growth_catalog.py`；项目已验125996位图ID、464 SPR组、39065段动画、242085帧。原元数据不含版权画面，保留来源身份。
+- **类别候选层 C（玩家当前迁移网页，非JSS/TW1.0官方分类）**：2001发表栏17173`stonepic的图片编号`，先前已在`STONEAGE-EARLY-VISUAL-ID-RANGES-INPUT/VERIFIED-R1.json`实录及独立原图号存在性验收；本轮不重复算作新原来源。
+- **本轮衍生交叉层（仅可复核数值）**：GitHub source HEAD `8aa789eeedc18bef8ba6ce078dbd5ebd92105d5c`/tree `9924c96951e3a5b7d80157fc8d9de2f0ed989495`，run`39076262089`/job`117523936561` SUCCESS；ZIP artifact`12116114738`，ZIP1784B SHA256`fa5ad6bf8f926feb8f8fc54e02c206760dfcaac4dbc28ef814145de7961479ee`；原派生JSON8369B SHA256`e33bdae8c202dcf5a1374746afc505f517d8e1afc557fd07057d2d1811a54fcd`，Git blob`20a82e4d35661785c4e50b44855cf8e8a4e98f3e`。下载与digest独立核验；详见永久机器报告与ACCEPTANCE-R1。
+- **只认证**：人物动作区间137508帧引用/240SPR组；宠物动作区间70236帧引用/124SPR组；NPC、两种头像、物品、UI五个静态区间没有被本SPR帧表引用。不会自动认证同版语义、原游戏显示、人物/宠物数量与原服务器任务；静态画像可能走其它资源选择路径，0命中不能解释为“客户端不用”。
