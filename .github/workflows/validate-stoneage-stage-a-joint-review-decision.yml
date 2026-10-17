@@ -1,0 +1,25 @@
+name: Validate StoneAge Stage A joint review decision
+on:
+  push:
+    paths:
+      - 'docs/STAGE-A-JOINT-REVIEW-DECISION-R1.md'
+      - 'research/recovered/STONEAGE-STAGE-A-JOINT-REVIEW-DECISION-R1.json'
+      - 'tools/stoneage_stage_a_joint_review_decision.py'
+      - 'tests/test_stoneage_stage_a_joint_review_decision.py'
+      - '.github/workflows/validate-stoneage-stage-a-joint-review-decision.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  review-guard:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify joint review mapping, negative boundaries, and previous custody
+        run: |
+          python -m unittest tests.test_stoneage_stage_a_joint_review_decision tests.test_stoneage_stage_a_review_packet tests.test_stoneage_stage_a_early_source_gap_triage -v
+          python -m tools.stoneage_stage_a_joint_review_decision
