@@ -115,3 +115,8 @@ python tools/stoneage_stage_a_review_packet.py --replay
 - [成人仪式独立获取与永久归档凭据](../research/recovered/STONEAGE-ADULT-CEREMONY-ACCEPTANCE-R1.json)：六源重新取得、派生JSON永久保存；来源/参考检查不等于商业服执行。
 
 本轮主线769ac7795a34736622c74797d620aabca02dd16d对应成人来源Action38991945432与旧来源custody Action38991945356均成功。最高后续为EARLY-LOGGING-CONTENT-03的一次有限任务补证，完整当前交接以CURRENT-STATE为准。Stage A仍未最终验收，Stage B GATED；本文旧推荐候选是当时记录，后续排序由最新交接取代。
+
+
+### 2026-10-17 伐木任务补证
+
+新增[伐木内容规格](specs/STONEAGE-LOGGING-SOURCE-CONTRACT-R1.md)和[独立验收链](../research/recovered/STONEAGE-LOGGING-ACCEPTANCE-R1.json)：三个实际2003/2004快照限定正文年代与1.82编辑分组，尾刀/许可交回/近似收益可分源查阅；手环魅+5/-5不合并，改造斧与新交差斧分阶段。既有普通掉落宠物票据可转给主人，不能被本任务尾刀限制覆盖。六源独立读取和归档后33项检查成功，原始ID/商业构建与执行仍OPEN。下一项只核对已有后代物品表中的少量候选，审阅及Stage B门不变。

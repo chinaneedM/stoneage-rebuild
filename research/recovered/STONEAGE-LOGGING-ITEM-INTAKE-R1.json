@@ -1,0 +1,93 @@
+{
+  "schema": "stoneage.logging.next_item_identity_intake.r1",
+  "status": "PREFLIGHT_ONLY_NO_ITEM_ROWS_EXTRACTED",
+  "next_package": "QUEST-ITEM-IDENTITY-04",
+  "existing_source_pins": [
+    {
+      "path": "research/recovered/STONEAGE-25-ITEMSET-SHAPE-R1.txt",
+      "bytes": 17463,
+      "sha256": "2f3974b53477a45577b625efb462bd6e99a5f7f03e74925570d8100173387669",
+      "git_blob": "8c21739d94d63d4a2abbc81029f15934b67f4175"
+    },
+    {
+      "path": "research/recovered/STONEAGE-25-ITEMSET-SCHEMA-R1.txt",
+      "bytes": 25769,
+      "sha256": "03f14b0b052a5fbeed4e2a4f8d13e0825deff273b2104f61e22fd1ccfb7e56c3",
+      "git_blob": "a4ed02392719999fd56ba4adfffde68f0bde0622"
+    },
+    {
+      "path": "research/recovered/STONEAGE-25-ITEMSET-REVISION-R1.txt",
+      "bytes": 6354,
+      "sha256": "fba61abf20d6cfbd4eac2986f584febe3f498717c1785970c8139ac26dca0b15",
+      "git_blob": "2ab7bd608f02215278f90611d862c765ee08aff1"
+    },
+    {
+      "path": "tools/stoneage_itemset_schema_probe.py",
+      "bytes": 9033,
+      "sha256": "b4d7e53b7f1a56ce00b973723f0909e6e874ad95d94f978aee65e5479a560b6d",
+      "git_blob": "7a0e41c409d3f2dc18953cc79947612f5d9ed5d4"
+    },
+    {
+      "path": ".github/workflows/probe-stoneage-25-itemset-schema.yml",
+      "bytes": 3872,
+      "sha256": "168ec21d638876fb2b13c296cfa59e5178334c31e8d3c1b820867e7fb35fd769",
+      "git_blob": "1ff6cc780f1c90cf3316b981bac6114afc8d1ceb"
+    }
+  ],
+  "expected_master_tables": [
+    {
+      "file": "itemset.txt",
+      "bytes": 3392473,
+      "sha256": "a415e78f9aab2e5ea5ca92ecb7430253f7be1ba7c876d6b0bb6d067b1b466688",
+      "rows": 13252,
+      "selected_in_recorded_setup": true
+    },
+    {
+      "file": "itemset0710.txt",
+      "bytes": 3668487,
+      "sha256": "6d6d63fda59c6bda2f239fe18c9361b5c9da18c84f678b7cc95bde24544292fb",
+      "rows": 13910,
+      "selected_in_recorded_setup": false
+    }
+  ],
+  "column_contract": {
+    "columns": 94,
+    "id_column_one_based": 17,
+    "stats_are_raw_a_b_pairs": true,
+    "name_encoding": "OPEN_REQUALIFY_BEFORE_NAME_MATCH",
+    "do_not_interpret_raw_pair_as_final_stat_without_factory_semantics": true
+  },
+  "target_name_families": [
+    {
+      "role": "BRACELET",
+      "candidates": [
+        "杉之手环",
+        "衫之手环",
+        "杉的手环"
+      ],
+      "same_template_proven": false
+    },
+    {
+      "role": "PERMIT",
+      "candidates": [
+        "伐木许可证",
+        "采伐许可证"
+      ],
+      "same_template_proven": false
+    },
+    {
+      "role": "AXE_STAGES_KEEP_DISTINCT",
+      "candidates": [
+        "折断的斧头",
+        "断斧",
+        "哈恩改造斧",
+        "哈恩的斧头"
+      ],
+      "same_template_proven": false
+    }
+  ],
+  "stop_condition": "Validate recorded bundle/table hashes and actual setup, extract only target candidate identity/numeric metadata; unresolved names stay unresolved; no all-item content dump.",
+  "early_item_identity_or_exact_build_inferred": false,
+  "runtime_code_changed": false,
+  "stage_b_gate": "GATED"
+}
