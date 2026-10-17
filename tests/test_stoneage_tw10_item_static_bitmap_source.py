@@ -23,6 +23,10 @@ class OriginalItemStaticSource(unittest.TestCase):
             self.assertEqual(sum(x["records"] for x in data["top_dimension_pairs"]) <= hi-lo+1,True)
             self.assertEqual(sum(x["count"] for x in data["rd_flag_value_counts"]),hi-lo+1)
             self.assertLessEqual(data["distinct_nonempty_rd_block_sha256"],hi-lo+1)
+            if data["missing_rd_block_sha256_records"]==0:
+                duplicate_excess=sum(c["records"]-1 for c in data["duplicate_original_block_groups"])
+                self.assertEqual(data["distinct_nonempty_rd_block_sha256"]+duplicate_excess,hi-lo+1)
+                self.assertTrue(all(not c["original_item_identity_same"] for c in data["duplicate_original_block_groups"]))
             self.assertEqual(len(data["example_original_records"]),5)
             self.assertTrue(data["displayed_2001_player_text_not_original_tw10_semantic"])
             self.assertFalse(data["original_static_draw_call_verified"])
