@@ -112,10 +112,19 @@ def claim_result(packet, service_id, claim_key, value, *, source_layer="JSS_2001
     require(row is not None, "service missing")
     claim = next((x for x in row["manual_claims"] if x["key"] == claim_key), None)
     require(claim is not None, "contract claim missing")
+    require(claim["manual_path"] == MANUAL_CLAIMS[service_id][claim_key],
+            "untrusted claim path: " + claim_key)
+    require(claim["claim_kind"] ==
+            ("EVIDENCE_BOUNDARY" if claim_key == "QUEST_DROP_LOGOUT_FLAG_PROVEN"
+             else "MANUAL_BEHAVIOR"), "untrusted claim role")
     manual = load_pin("manual")
     expected = manual_get(manual, claim["manual_path"])
     if expected is None:
         return "UNKNOWN_SOURCE_VALUE"
+    if claim["claim_kind"] == "EVIDENCE_BOUNDARY":
+        if type(expected) is type(value) and expected == value:
+            return "MATCHES_ARCHIVED_EVIDENCE_BOUNDARY"
+        return "DIFFERS_FROM_ARCHIVED_EVIDENCE_BOUNDARY"
     if type(expected) is type(value) and expected == value:
         return "MATCHES_ARCHIVED_MANUAL_DESCRIPTION"
     return "DIFFERS_FROM_ARCHIVED_MANUAL_NOT_EXECUTION_RESULT"

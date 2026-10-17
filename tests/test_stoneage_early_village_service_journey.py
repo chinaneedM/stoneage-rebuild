@@ -69,7 +69,7 @@ class VillageServiceJourneyTests(unittest.TestCase):
                          "MATCHES_ARCHIVED_MANUAL_DESCRIPTION")
         self.assertEqual(claim_result(self.packet,"GROUND_ITEM_EXPIRY",
                                        "QUEST_DROP_LOGOUT_FLAG_PROVEN",False),
-                         "MATCHES_ARCHIVED_MANUAL_DESCRIPTION")
+                         "MATCHES_ARCHIVED_EVIDENCE_BOUNDARY")
         self.assertEqual(claim_result(self.packet,"GROUND_ITEM_EXPIRY","SECONDS_TO_EXPIRE",60),
                          "NO_SOURCE_ASSERTION")
 
@@ -105,6 +105,19 @@ class VillageServiceJourneyTests(unittest.TestCase):
         x["services"][1]["manual_claims"].pop()
         with self.assertRaisesRegex(ValueError,"incomplete evidence claims"):
             validate(x)
+
+
+    def test_classifier_does_not_trust_modified_manual_paths_or_evidence_roles(self):
+        packet=deepcopy(self.packet)
+        pkt=packet["services"][0]["manual_claims"][0]
+        pkt["manual_path"]="bus.stop_minutes"
+        with self.assertRaisesRegex(ValueError,"untrusted claim path"):
+            claim_result(packet,"SAVE_POINT","FIRST_USE_OFFERING_REQUIRED",3)
+        packet=deepcopy(self.packet)
+        pkt=packet["services"][4]["manual_claims"][1]
+        pkt["claim_kind"]="MANUAL_BEHAVIOR"
+        with self.assertRaisesRegex(ValueError,"untrusted claim role"):
+            claim_result(packet,"GROUND_ITEM_EXPIRY","QUEST_DROP_LOGOUT_FLAG_PROVEN",False)
 
     def test_priorities_remain_bounded(self):
         self.assertEqual(self.packet["next"],"STAGE-A-EARLY-SOURCE-GAP-TRIAGE-01")

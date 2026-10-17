@@ -25,7 +25,7 @@
 
 ## 三、可重复的真假声明检测（不执行游戏）
 
-归档清单 `research/recovered/STONEAGE-EARLY-VILLAGE-SERVICE-JOURNEY-R1.json` 锁定五个服务的原始手册章节、13个字段路径、12个通用原版可观察槽、缺失前置条件、版本边界和停止点。源码 `tools/stoneage_early_village_service_journey.py` 逐字节校核先前5份已归档来源的Git blob身份，禁止换新版本而不通知。对外提供的 `claim_result` **只是核对有人提出的“JSS2001手册这样写吗”**：
+归档清单 `research/recovered/STONEAGE-EARLY-VILLAGE-SERVICE-JOURNEY-R1.json` 锁定五个服务的原始手册章节、12条玩法文字+1条证据边界、12个通用原版可观察槽、缺失前置条件、版本边界和停止点。源码 `tools/stoneage_early_village_service_journey.py` 逐字节校核先前5份已归档来源的Git blob身份，禁止换新版本而不通知。对外提供的 `claim_result` **只是核对有人提出的“JSS2001手册这样写吗”**：
 
 | 输入示例 | 可判结论 | 不可推断 |
 |---|---|---|
