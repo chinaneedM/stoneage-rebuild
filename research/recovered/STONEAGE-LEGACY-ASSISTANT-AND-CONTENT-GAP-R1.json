@@ -1,0 +1,730 @@
+{
+  "schema": "stoneage.legacy_assistant_and_content_gap_registry.r1",
+  "date": "2026-10-17",
+  "baseline_head": "d393b135b4fb2e62d5b5162eb3878981cb3e02a8",
+  "baseline_tree": "5f55795d1b0ad3e63e99abb3be374c8cd4a8ace7",
+  "task": "LEGACY-ASSISTANT-HISTORY-AND-PET-COVERAGE-01",
+  "objective": "Historical tooling family/feature provenance plus pet and quest completeness assessment before ratifying new-game content or automation",
+  "status": "INITIAL_SOURCE_ATTESTED_CATALOG_NOT_ALL_PROGRAMS_RECOVERED",
+  "source_count": 14,
+  "tool_family_count": 16,
+  "feature_count": 12,
+  "pet_content_domains": 10,
+  "external_sources": [
+    {
+      "id": "S01",
+      "published": "2001-06-15",
+      "scope": "CONTEMPORANEOUS_PLAYER_OPINION",
+      "title": "有感于石器时代的辅助软件",
+      "url": "https://news.17173.com/z/stoneage/content/2001-6-15/n438_354378.html",
+      "names": [
+        "SADE"
+      ],
+      "facts": [
+        "The author discusses SADE as a widely used assistance tool; not an official design statement."
+      ],
+      "caution": "Player opinion, no software binary or authenticated release chronology."
+    },
+    {
+      "id": "S02",
+      "published": "2001-08-05",
+      "scope": "CONTEMPORANEOUS_RETROSPECTIVE",
+      "title": "石器时代回忆录(附图)",
+      "url": "https://news.17173.com/z/stoneage/content/2001-8-5/n813_729424.html?_platform=PC",
+      "names": [
+        "speedgear",
+        "CSS",
+        "SADE",
+        "SAC",
+        "kittygift"
+      ],
+      "facts": [
+        "A dated player's narrative mentions CSS no-encounter/enforced-encounter and SADE multi-function evolution, then SAC and packet-abuse era."
+      ],
+      "caution": "First-person retrospective, not source-code provenance or proof of chronological first."
+    },
+    {
+      "id": "S03",
+      "published": "2001-11-11",
+      "scope": "CONTEMPORANEOUS_PLAYER_OPINION",
+      "title": "闭上眼睛说真话：我开心不起来",
+      "url": "https://news.17173.com/z/stoneage/content/2001-11-11/n691_607613.html?_platform=PC",
+      "names": [
+        "SACH"
+      ],
+      "facts": [
+        "Describes using SaCh1.23 and disputes unfair pet duplication."
+      ],
+      "caution": "Player recollection and personal position; precise official compatibility unverified."
+    },
+    {
+      "id": "S04",
+      "published": "2002-01-19",
+      "scope": "CONTEMPORANEOUS_PLAYER_OPINION",
+      "title": "关于游戏外挂问题之我见",
+      "url": "https://news.17173.com/z/stoneage/content/2002-1-19/n347_263863.html?_platform=PC",
+      "names": [
+        "SADE",
+        "SACH",
+        "STA",
+        "speedgear"
+      ],
+      "facts": [
+        "Names sade H++, sach, sta and speed gear, scripts, in-place encounters and limited movement."
+      ],
+      "caution": "Not a developer release note."
+    },
+    {
+      "id": "S05",
+      "published": "2002-03-10",
+      "scope": "CONTEMPORANEOUS_USER_REVIEW",
+      "title": "Sta2.52新增功能全面解析",
+      "url": "https://news.17173.com/z/stoneage/content/2002-3-10/n974_891060.html",
+      "names": [
+        "STA"
+      ],
+      "facts": [
+        "Explicit STA2.52, recipe scripting, reduced-window experience/automation and battle action conditions."
+      ],
+      "caution": "Reviewer reports instability; does not confirm any v1.0 compatibility."
+    },
+    {
+      "id": "S06",
+      "published": "2002-03-21",
+      "scope": "CONTEMPORANEOUS_USER_COMPARISON",
+      "title": "STA与SACHXP的比较",
+      "url": "https://news.17173.com/z/stoneage/content/2002-3-21/n936_852654.html?_platform=PC",
+      "names": [
+        "STA",
+        "SACHXP"
+      ],
+      "facts": [
+        "Side-by-side 2002 description of movement, auto-escape, PK, detailed stats, script availability, automated training and cooking."
+      ],
+      "caution": "A player's subjective and numerical comparison is not official system balance evidence."
+    },
+    {
+      "id": "S07",
+      "published": "2002-08-19",
+      "scope": "CONTEMPORANEOUS_LONG_FORM_RETROSPECTIVE",
+      "title": "回首往事，我们从外挂中走来",
+      "url": "https://news.17173.com/z/stoneage/content/2002-8-19/n337_253594.html?_platform=PC",
+      "names": [
+        "LiLiCoCo",
+        "SADE",
+        "SAC",
+        "kittygift"
+      ],
+      "facts": [
+        "An extended 2002 narrative lists a SADE 0.1a–0.2h feature sequence and claims LiLiCoCo as an earlier Taiwanese lineage."
+      ],
+      "caution": "Author calls this partly personal memory; early Japanese dates, author identities and release order remain independently unverified; avoid treating exploits as validated fact."
+    },
+    {
+      "id": "S08",
+      "published": "2002-09-27",
+      "scope": "CONTEMPORANEOUS_USER_GUIDE",
+      "title": "轻松搞定石器时代",
+      "url": "https://news.17173.com/z/stoneage/content/2002-9-27/n286_202934.html",
+      "names": [
+        "STA",
+        "SACHXP"
+      ],
+      "facts": [
+        "Battle/survival automation for player and pet with HP/MP thresholds and action-selection presets, including heal/revive."
+      ],
+      "caution": "Numbers are specific player preferences, not an original-version standard or recommended game settings."
+    },
+    {
+      "id": "S09",
+      "published": "2003-06-18",
+      "scope": "CONTEMPORANEOUS_SOFTWARE_LISTING",
+      "title": "石器外挂——SachXP++ help",
+      "url": "https://games.sina.com.cn/z/sta/2003-06-18/13369.shtml",
+      "names": [
+        "SachXP_help"
+      ],
+      "facts": [
+        "Sina explicitly describes a free 19-MB electronic game-guide help file, not itself a live cheat."
+      ],
+      "caution": "Separate reference companion from executable auto-play software."
+    },
+    {
+      "id": "S10",
+      "published": "2016-07-20",
+      "scope": "LATER_VENDOR_FORUM_EDITED_2026",
+      "title": "石器圣手2.48发布帖",
+      "url": "https://www.play56.net/forum.php?mod=viewthread&tid=1649",
+      "names": [
+        "STONESAGE"
+      ],
+      "facts": [
+        "Documented 2016+ assistant branch with multi-client convenience and script commands; post was later edited."
+      ],
+      "caution": "Not primary evidence for 2001/2002 release or original game rules."
+    },
+    {
+      "id": "S11",
+      "published": "2020-07-17",
+      "scope": "LATER_VENDOR_FORUM_EDITED_2026",
+      "title": "ASSA 8.0用輔助程式",
+      "url": "https://www.lab.welovesa.com/viewthread.php?tid=3671",
+      "names": [
+        "ASSA",
+        "SaBotSupport"
+      ],
+      "facts": [
+        "Describes pet-growth panel, predicted pet attributes, pet capture-location record, helper task/item database and automatic recipe scripting."
+      ],
+      "caution": "Specific private-server support data are not official classic pet availability or values."
+    },
+    {
+      "id": "S12",
+      "published": "undated_later_archival",
+      "scope": "LATER_COMMUNITY_REPOST",
+      "title": "石器时代当年4种外挂各自的用途回忆",
+      "url": "https://www.shiqisifu.cc/Article/1/News_89.html",
+      "names": [
+        "STW",
+        "ASSA",
+        "STRONG_OFFLINE"
+      ],
+      "facts": [
+        "A community comparison of STW GUI/offline, 小明 and 强者 offline highlights navigation scripting, pet rotation and reconnect."
+      ],
+      "caution": "Undated repost; '小明' may be ASSA nickname in this context but identities and earliest release years need source confirmation."
+    },
+    {
+      "id": "S13",
+      "published": "2023-06-24",
+      "scope": "LATER_PROJECT_AUTHOR_FORUM",
+      "title": "石器助手 SaSH 工具发布",
+      "url": "https://www.lovesa.cc/forum.php?mod=viewthread&tid=700",
+      "names": [
+        "SaSH",
+        "STW",
+        "ASSA",
+        "STONESAGE",
+        "StoneBoy",
+        "SaxTop",
+        "NG"
+      ],
+      "facts": [
+        "Developer lists several reference script families and separately notes incompatibility, e.g. NG/STW/ASSA/StoneBoy/SaxTop."
+      ],
+      "caution": "Later author testimony documents influence, not each predecessor's first release date or cross-compatibility."
+    },
+    {
+      "id": "S14",
+      "published": "2026-04-12",
+      "scope": "LATER_SCRIPT_MANUAL_COPY",
+      "title": "ASSA脚本指令资料",
+      "url": "https://www.zshiqi.com/xindejingyan/5.html",
+      "names": [
+        "ASSA"
+      ],
+      "facts": [
+        "Late script-language page shows combat/capture/route/condition/item management commands."
+      ],
+      "caution": "2026 archived guide cannot prove any listed feature existed in original 2001 build."
+    }
+  ],
+  "assistant_tools": [
+    {
+      "id": "speedgear",
+      "name": "变速齿轮/程序加速器",
+      "era": "2001 evidenced",
+      "source": [
+        "S02",
+        "S04"
+      ],
+      "functions": [
+        "SPEED_MODIFICATION"
+      ],
+      "scope": "GENERAL_PROCESS_TOOL",
+      "confidence": "EARLY_PLAYER_RECOLLECTION",
+      "recommendation": "REINTERPRET_ACCESSIBLE_SPEED_OPTION"
+    },
+    {
+      "id": "CSS",
+      "name": "CSS",
+      "era": "2001 evidenced",
+      "source": [
+        "S02"
+      ],
+      "functions": [
+        "ENCOUNTER_TOGGLE",
+        "ENCOUNTER_RATE_OVERRIDE"
+      ],
+      "scope": "EARLY_CLASSIC_PLAYER_SOURCE",
+      "confidence": "RETROSPECTIVE_SINGLE_SOURCE",
+      "recommendation": "OPTIONAL_GAME_RULES_ONLY"
+    },
+    {
+      "id": "SADE",
+      "name": "SADE / CHS / 部分H++变种",
+      "era": "2001 evidenced",
+      "source": [
+        "S01",
+        "S02",
+        "S04",
+        "S07"
+      ],
+      "functions": [
+        "MAP_ASSIST",
+        "AUTO_BATTLE",
+        "SCRIPT_LOOP",
+        "AUTO_LOGIN",
+        "DETAILED_STATS",
+        "EXPLOIT_TELEPORT"
+      ],
+      "scope": "EARLY_CLASSIC_PLAYER_SOURCE",
+      "confidence": "MULTIPLE_CONTEMPORANEOUS_PLAYER_SOURCES",
+      "recommendation": "SELECT_QOL_REJECT_PROTOCOL_EXPLOITS"
+    },
+    {
+      "id": "SAC",
+      "name": "SAC",
+      "era": "2001 evidenced",
+      "source": [
+        "S02",
+        "S07"
+      ],
+      "functions": [
+        "SCRIPT_LOOP",
+        "PACKET_SCRIPTING"
+      ],
+      "scope": "EARLY_CLASSIC_PLAYER_SOURCE",
+      "confidence": "EARLY_PLAYER_RETROSPECTIVE",
+      "recommendation": "GAME_INTERNAL_SCRIPT_ONLY"
+    },
+    {
+      "id": "SACH",
+      "name": "SACH / SACHXP / 阿贝",
+      "era": "2001-2002 evidenced",
+      "source": [
+        "S03",
+        "S04",
+        "S06",
+        "S08"
+      ],
+      "functions": [
+        "AUTO_BATTLE",
+        "AUTO_HEAL",
+        "PET_TRAINING",
+        "RECIPE_AUTOMATION",
+        "STAT_INSPECTION"
+      ],
+      "scope": "EARLY_CLASSIC_PLAYER_SOURCE",
+      "confidence": "MULTIPLE_CONTEMPORANEOUS_PLAYER_SOURCES",
+      "recommendation": "PRIORITIZE_THRESHOLD_AND_PROFILE_DESIGN"
+    },
+    {
+      "id": "STA",
+      "name": "STA / 天使",
+      "era": "2002 evidenced",
+      "source": [
+        "S04",
+        "S05",
+        "S06",
+        "S08"
+      ],
+      "functions": [
+        "AUTO_BATTLE",
+        "SCRIPT_LOOP",
+        "AUTO_ESCAPE",
+        "RECIPE_AUTOMATION",
+        "ROUTE_ASSIST"
+      ],
+      "scope": "EARLY_CLASSIC_PLAYER_SOURCE",
+      "confidence": "MULTIPLE_CONTEMPORANEOUS_PLAYER_SOURCES",
+      "recommendation": "PRIORITIZE_CONFIGURABLE_ASSISTANCE"
+    },
+    {
+      "id": "LiLiCoCo",
+      "name": "LiLiCoCo / 莉莉可可",
+      "era": "claimed pre-2001 without independent proof",
+      "source": [
+        "S07"
+      ],
+      "functions": [
+        "ENCOUNTER_CONTROL",
+        "STAT_INSPECTION",
+        "PACKET_TAMPERING",
+        "DUPLICATION_EXPLOITS"
+      ],
+      "scope": "TW_LINEAGE_PLAYER_CLAIM",
+      "confidence": "SINGLE_RETROSPECTIVE",
+      "recommendation": "HISTORICAL_ONLY_REJECT_EXPLOITS"
+    },
+    {
+      "id": "kittygift",
+      "name": "kittygift",
+      "era": "2001 evidenced",
+      "source": [
+        "S02",
+        "S07"
+      ],
+      "functions": [
+        "PACKET_TAMPERING",
+        "DUPLICATION_EXPLOITS"
+      ],
+      "scope": "CLASSIC_CHEAT_LINEAGE",
+      "confidence": "CONTEMPORANEOUS_PLAYER_RECOLLECTION",
+      "recommendation": "DOCUMENT_IMPACT_ONLY"
+    },
+    {
+      "id": "SachXP_help",
+      "name": "SachXP++ help 电子攻略",
+      "era": "2003 listing",
+      "source": [
+        "S09"
+      ],
+      "functions": [
+        "OFFLINE_HELP",
+        "GUIDE_DATABASE"
+      ],
+      "scope": "REFERENCE_COMPANION",
+      "confidence": "CONTEMPORANEOUS_SOFTWARE_LISTING",
+      "recommendation": "BUILT_IN_CONTEXTUAL_ENCYCLOPEDIA"
+    },
+    {
+      "id": "ASSA",
+      "name": "ASSA / 小明（昵称待单独核验）",
+      "era": "later documented, origin unknown",
+      "source": [
+        "S11",
+        "S12",
+        "S13",
+        "S14"
+      ],
+      "functions": [
+        "SCRIPT_LOOP",
+        "AUTO_CAPTURE",
+        "GROWTH_PANEL",
+        "NPC_DIALOG_AUTOMATION"
+      ],
+      "scope": "LATER_TOOL_LINEAGE",
+      "confidence": "LATER_SOURCES_ONLY",
+      "recommendation": "OPT_IN_SANDBOXED_OFFLINE_RULE_ENGINE"
+    },
+    {
+      "id": "STW",
+      "name": "STW 内挂/脱机",
+      "era": "later documented, origin unknown",
+      "source": [
+        "S12",
+        "S13"
+      ],
+      "functions": [
+        "SCRIPT_LOOP",
+        "AUTO_RECONNECT",
+        "MULTI_CLIENT_AUTOMATION"
+      ],
+      "scope": "LATER_PRIVATE_SERVER_TOOL",
+      "confidence": "LATER_SOURCES_ONLY",
+      "recommendation": "REPLACE_WITH_SINGLE_PLAYER_ASSIST_NO_MULTIBOX"
+    },
+    {
+      "id": "STRONG_OFFLINE",
+      "name": "强者脱机",
+      "era": "later undated comparison",
+      "source": [
+        "S12"
+      ],
+      "functions": [
+        "OFFLINE_MODE",
+        "SCRIPT_LOOP",
+        "MULTI_CLIENT_AUTOMATION"
+      ],
+      "scope": "LATER_PRIVATE_SERVER_TOOL",
+      "confidence": "UNDATED_LATER",
+      "recommendation": "NO_EXTERNAL_OFFLINE_BOT"
+    },
+    {
+      "id": "STONESAGE",
+      "name": "石器圣手",
+      "era": "2016+ verified listing",
+      "source": [
+        "S10",
+        "S13"
+      ],
+      "functions": [
+        "MULTI_CLIENT_AUTOMATION",
+        "SCRIPT_LOOP",
+        "AUTO_BATTLE"
+      ],
+      "scope": "LATER_VENDOR_TOOL",
+      "confidence": "LATER_VENDOR_SOURCE",
+      "recommendation": "QOL_SELECTIVELY"
+    },
+    {
+      "id": "SaSH",
+      "name": "石器助手 SaSH",
+      "era": "2023+ developer listing",
+      "source": [
+        "S13"
+      ],
+      "functions": [
+        "SCRIPT_LOOP",
+        "ROUTE_ASSIST",
+        "PET_STATUS",
+        "MAP_CACHE_HELP"
+      ],
+      "scope": "LATER_OPEN_SOURCE_ASSISTANT",
+      "confidence": "LATER_AUTHOR_SOURCE",
+      "recommendation": "DESIGN_REFERENCE_NOT_DIRECT_COPY"
+    },
+    {
+      "id": "NG",
+      "name": "NG 内挂",
+      "era": "later named, chronology unverified",
+      "source": [
+        "S13"
+      ],
+      "functions": [
+        "SCRIPT_LOOP"
+      ],
+      "scope": "LATER_NAMED_LINEAGE",
+      "confidence": "NAMED_ONLY",
+      "recommendation": "RESEARCH_FURTHER"
+    },
+    {
+      "id": "StoneBoy_SaxTop",
+      "name": "StoneBoy / SaxTop（待分列）",
+      "era": "later named, chronology unverified",
+      "source": [
+        "S13"
+      ],
+      "functions": [
+        "SCRIPT_LOOP"
+      ],
+      "scope": "LATER_NAMED_LINEAGE",
+      "confidence": "NAMED_ONLY",
+      "recommendation": "RESEARCH_FURTHER"
+    }
+  ],
+  "game_integrated_functions": [
+    {
+      "id": "F01",
+      "name": "人物/宠物HP与气阈值自动补给",
+      "early": [
+        "S08"
+      ],
+      "decision": "CANDIDATE_DEFAULT_OFF",
+      "rules": "Authorized game action only; costs consumables; no fake healing or original historical threshold claim."
+    },
+    {
+      "id": "F02",
+      "name": "可编辑的回合战术预设/自动防御/自动逃跑",
+      "early": [
+        "S05",
+        "S06",
+        "S08"
+      ],
+      "decision": "CANDIDATE_DEFAULT_OFF",
+      "rules": "Same action budget, valid skills and standard turn timing; optional interruption."
+    },
+    {
+      "id": "F03",
+      "name": "宠物图鉴与成长记录/预测面板",
+      "early": [
+        "S11"
+      ],
+      "decision": "HIGH_PRIORITY",
+      "rules": "Measured history vs model projection clearly separated; unknown base stats remain unknown; no fabricated IVs."
+    },
+    {
+      "id": "F04",
+      "name": "寻路、已探索地图标注、生活任务指引",
+      "early": [
+        "S07",
+        "S13"
+      ],
+      "decision": "HIGH_PRIORITY",
+      "rules": "Use discovered tiles and legal pathfinding; do not teleport through doors or unrevealed worlds."
+    },
+    {
+      "id": "F05",
+      "name": "一键整理背包/批量料理/重复生活操作",
+      "early": [
+        "S05",
+        "S06",
+        "S11"
+      ],
+      "decision": "CANDIDATE_DEFAULT_OFF",
+      "rules": "Consumes real ingredients, costs and crafting time; bounded batch and cancellation."
+    },
+    {
+      "id": "F06",
+      "name": "自动捕宠目标筛选/成长评估",
+      "early": [
+        "S06",
+        "S14"
+      ],
+      "decision": "POST_RULE_REVIEW",
+      "rules": "No guaranteed capture, no auto-generating rare encounters, never silently discards valuable creatures."
+    },
+    {
+      "id": "F07",
+      "name": "经验、掉落、捕宠历史、训练日志",
+      "early": [
+        "S06",
+        "S11"
+      ],
+      "decision": "HIGH_PRIORITY",
+      "rules": "Observable local game state only, player privacy; no false source/version claim."
+    },
+    {
+      "id": "F08",
+      "name": "任务攻略百科与版本/来源追踪",
+      "early": [
+        "S09"
+      ],
+      "decision": "HIGH_PRIORITY",
+      "rules": "Authentic historic vs new-story quests distinctly marked; spoiler control; respect content licensing."
+    },
+    {
+      "id": "F09",
+      "name": "挂机和脚本批处理",
+      "early": [
+        "S07",
+        "S14"
+      ],
+      "decision": "GATED_FUTURE_DISCUSSION",
+      "rules": "Opt-in offline-only deterministic action API, bounded energy/time, pause-on-risk; no plugin external code execution."
+    },
+    {
+      "id": "F10",
+      "name": "倍速、跳过重复演出、战斗动画加速",
+      "early": [
+        "S02",
+        "S05"
+      ],
+      "decision": "CANDIDATE_DEFAULT_OFF",
+      "rules": "Local presentation pacing adjustable; don't rely on packet-timing exploits."
+    },
+    {
+      "id": "F11",
+      "name": "断线重登、多开、脱机对服务器发包",
+      "early": [
+        "S12"
+      ],
+      "decision": "REPLACE_OR_DROP",
+      "rules": "Offline game uses autosave/recovery and one player state; no credentials, external bots or multibox demand."
+    },
+    {
+      "id": "F12",
+      "name": "复制宠物/道具、越权传送、封包篡改、收费欺诈",
+      "early": [
+        "S02",
+        "S07"
+      ],
+      "decision": "REJECT_EXPLOIT",
+      "rules": "Historically catalog only; never import as default core rules or bypass task progression."
+    }
+  ],
+  "content_gaps": [
+    {
+      "id": "pet_species_roster",
+      "grade": "PARTIAL",
+      "source": "V1_DIRECT_CLIENT_FIELDS_AND_LATER_ENEMYBASE",
+      "unknown": "complete same-build original pet name/template/variant/region inventory and pet counts"
+    },
+    {
+      "id": "pet_graphic_identity",
+      "grade": "PARTIAL",
+      "source": "V1_DIRECT_RESOURCE_ADDRESS_COUNTS",
+      "unknown": "pet graphic_id to sprite group/animation/bitmap one-to-one verified crosswalk"
+    },
+    {
+      "id": "pet_2d_frames",
+      "grade": "PARTIAL",
+      "source": "V1_DIRECT_SPR_SPRADRN_ADRN_REAL",
+      "unknown": "all pet actions facing directions coloring frame selection and actual runtime draw calls"
+    },
+    {
+      "id": "pet_base_stats",
+      "grade": "PARTIAL",
+      "source": "LATER_RECOVERED_ENEMYBASE",
+      "unknown": "every original pet base stat for JSS1999 and TW1.0"
+    },
+    {
+      "id": "pet_growth",
+      "grade": "PARTIAL",
+      "source": "LATER_DESCENDANT_CORE_FORMULA_AND_RANK",
+      "unknown": "original server exact coefficients, individual seeds and every version growth behavior"
+    },
+    {
+      "id": "pet_skills",
+      "grade": "PARTIAL",
+      "source": "MIXED_V1_TRANSPORT_LATER_RULES",
+      "unknown": "complete era-specific pet skill allocations/eligibility and executable original combination"
+    },
+    {
+      "id": "pet_capture",
+      "grade": "PARTIAL",
+      "source": "LATER_DETERMINISTIC_REFERENCE",
+      "unknown": "original source-authenticated wild placement, level probabilities, authentic pet initial runtime snapshot"
+    },
+    {
+      "id": "pet_riding",
+      "grade": "PARTIAL",
+      "source": "LATER_VERSION_RIDING_SOURCE",
+      "unknown": "early version timing, exact original riding sprites and observed ride entry"
+    },
+    {
+      "id": "original_quests",
+      "grade": "OPEN",
+      "source": "EARLY_GUIDES_LATER_RECOVERED",
+      "unknown": "complete original server quest registry dialogs triggers scripts item awards durable state"
+    },
+    {
+      "id": "world_npc",
+      "grade": "OPEN",
+      "source": "ORIGINAL_MAP_WIRE_AND_LATER_WORLD_COVERAGE",
+      "unknown": "same-build original field-map contents, NPC spawn, wild encounter distribution and UI selection"
+    }
+  ],
+  "project_source_pins": {
+    "docs/STAGE-A-CONSOLIDATED-REVIEW-R1.md": "07c9950a40d110d4dabb80b11412db8b4ea64ba9",
+    "docs/specs/STONEAGE-TW10-UI-RESOURCE-BIND-R1.md": "600ea59798153f2ab85887b5207f3323b1a19959",
+    "research/recovered/STONEAGE-TW10-UI-RESOURCE-BIND-SCOPE-R1.json": "8db0381f876aea901fbdaf55aaa031157d035800",
+    "research/recovered/STONEAGE-TW10-VS-25-RESOURCE-DIFF-R1.txt": "b86de21a9c1dc28af1b533f20ebd4b37428517a6",
+    "research/mechanics/STONEAGE-PET-GROWTH-CORE-R1.md": "87cdd063f05f6d6f334007cf3db7a31a8d1654a8",
+    "research/recovered/STONEAGE-25-PET-GROWTH-R1.txt": "5c528fb382ad13484572bd49905480a6b5775e18",
+    "research/clients/STONEAGE-TW10-CLIENT-DATA-BOUNDARY-R1.md": "11e2b77bce2febfef37c3a0c87dec878a6f289ee"
+  },
+  "source_layers": [
+    "V1_DIRECT",
+    "EARLY_LINEAGE",
+    "LATER_RECOVERED",
+    "MODERN_SYNTHETIC",
+    "NEW_DESIGN"
+  ],
+  "original_1999_tool_comprehensive_listing": false,
+  "all_original_pets_identified": false,
+  "all_original_pet_images_mapped": false,
+  "original_pet_growth_table_complete": false,
+  "original_quests_complete": false,
+  "new_game_assistant_production_started": false,
+  "raw_proprietary_binaries_added": false,
+  "pet_resource_claim": {
+    "tw10_bitmap_records": 125996,
+    "tw10_sprite_groups": 464,
+    "animations": 39065,
+    "frames": 242085,
+    "pet_species_count": null,
+    "all_pets_shown": false
+  },
+  "later_enemybase_derived_count": {
+    "recovered25_active_rows": 988,
+    "other_rows": 640,
+    "all_are_unique_1999_pet_species": false
+  },
+  "stage_a_bounded_review_reversed": false,
+  "conditional_stage_a_reopen": "ONLY_NAMED_MATERIAL_SAME_BUILD_EVIDENCE_OR_CROSSWALK_GAP",
+  "next_priority": "PET-ASSET-GROWTH-CATALOG-MATRIX-02",
+  "secondary_next": "LEGACY-ASSISTANT-PROVENANCE-EXPANSION-02",
+  "production_design_gate": "DISCUSSION_ONLY"
+}
