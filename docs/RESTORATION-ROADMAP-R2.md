@@ -482,3 +482,8 @@ JSS原域2001快照实取：手册索引47出链，两首页框架引用menu/top
 此前T01原SPR帧与外部2001图号类别交集有完整数据，当前T02新增同构建S:I/I/C的graphic_id位置与原台湾1.0ADRN物品静态区间的物理元数据：1031个bitmap号、1030份不同RD块SHA256，原图号6042/6077有相同块指纹；宠物相片121号均96×104。所有“物品”、“宠物相片”类别仍为**玩家标签**，字段值→bitmap号选择链、同版server itemset及游戏实际渲染未知。规格和可复算机读源 `docs/STONEAGE-TW10-ITEM-STATIC-BITMAP-SOURCE-R1.md` 与 `STONEAGE-TW10-ITEM-STATIC-BITMAP-SOURCE-R1.json`，并非真正原物品类型表。
 
 **最新NEXT T03 `TW10-MAP-CONTENT-ORIGINAL-RESOURCE-BOUNDARY-01`**：从原零售盘/mapcache直接可认证的地图块来源出发做有界地理结构与原服资料差异，无法取得同版NPC/掉落/遇敌绝不填充。九系统、Stage B与R79全部旧限制保持。
+
+ 
+### 2026-10-18 — T03原地图资源map_number关联检查
+
+TW1原资源9286条去重map_number→bitmap碰撞属性，按仅供候选的2001玩家地形/大物件/NPC位图分类分为4571/1271/101，其他3343。新的交集由源Action39078746682实际SUCCESS，归档Action39079097177实际SUCCESS，但源属性**不等于野外地图floor id**；零售盘仍无field-map DAT，后代资源兼容仅用作跨版对照。详见`docs/STONEAGE-TW10-MAP-CONTENT-COLLISION-R1.md`与源JSON验收凭据。下一T04 `TW10-AUDIO-EVENT-SOURCE-GATE-01`：原盘声音文件/播放器调用与原世界事件的最小直接源连接；无同版运行选择事实则有限停止。

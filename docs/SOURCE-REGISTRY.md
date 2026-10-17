@@ -7014,3 +7014,10 @@ STONEAGE-HISTORICAL-WIKI-QUERY-CONTRACT-DRAFT-R1.json引用四个既有派生Git
 - 来源候选 C：2001显示日期的stonepic玩家图号5973—7003标签为装备料理素材，此文章及编号来源已在旧表入册，不算新史料。
 - 原始台湾1.0图片物理层 S：ADRN全源meta SHA由`MANIFEST-R1.txt`锁定，本轮源Action39078043125/job117529172357实际SUCCESS。1031项位图候选号物理数据全在原盘，尺寸宽16—64高14—79，1030个不同压缩RD原块SHA256。**6042、6077共享原块哈希**；不解释为相同游戏物品。另四静态对照范围的尺寸、offset、flag与摘要在归档报告中。
 - 完整产物：artifact 12117477340 ZIP4474B SHA256 `04900b9b905610a5ae0c7b148ef8c9a12898059683fb0c35efc92fadd0b3f2c9`；raw JSON21307B SHA256`9916bab4e8b94188e8b4dc9c0e5f6cd2537464311f3c3409a6a04d72fffec2b8`、Git blob`1210b0f910c353d58a3d6a4c458dda38f48aba86`。原版权像素、同版原服务器master没有提交。研究规格、永久JSON/验收回执和回归测试相互引用，来源成功不等于早期物品图鉴/商店定价恢复。
+
+ 
+### SRC-TW10-ORIGINAL-MAP-NUMBER-COLLISION-SOURCE-20261018
+
+原盘`COLLISION-ATTR-R1.tsv.gz`的SHA256 `d26b318ea73833bd7cc68abc8b5798a81b76ef9309cc91b137f7a55c6c8275dc`及原客户端地图缓存图谱Git blob`f8792fb6c7ad22001d8400b293c775304caeb6a0`均为早期S级源。2001玩家图像分类仅C候选区间，原blob`11bb14ef00c2ed354c5f00f510da8783376f1f28`。
+
+新完整交叉表源Action39078746682/job117531202789 SUCCESS，9,286原独立map_number资源属性分别在玩家小地形/大物件/NPC号段关联4571/1271/101，其他3343。hit0/1/2=5929/3295/62为**资源属性而非地图可通行格子计数**。实际成功归档Action39079097177，JSON原blob `7d4d5d2cae224c093b3e85e8ef1bfc49b54c5981`、raw8494B SHA256 `5efa5972fe68d38d0e85aad3c7e13d6c4cd588c0f1b81a5900ba79e8a6711dd9`、ZIP1795B SHA256`8d48e37f0eae58b7659e7315ef83ccffe95c36d8728b6fe76d68d7d0d1dab5a4`。这些不是9286张原版field map、101名NPC或早期服务器内容来源。

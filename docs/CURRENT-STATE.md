@@ -15147,3 +15147,16 @@ WORLD源分支ec2aa8fac09f13a61c73c9542b2dd9c08c9fc1b9/tree0976772698b7470b72145
 源实跑Action39077916706、Action39078043125/job117529172357均SUCCESS；后者artifact12117477340，ZIP4474字节SHA256 `04900b9b905610a5ae0c7b148ef8c9a12898059683fb0c35efc92fadd0b3f2c9`，抽取JSON21307字节SHA256`9916bab4e8b94188e8b4dc9c0e5f6cd2537464311f3c3409a6a04d72fffec2b8`，永久报告git blob`1210b0f910c353d58a3d6a4c458dda38f48aba86`，独立下载与原始字节核对一致。派生表、来源回执、逐字节语义重放测试和专用CI均纳入仓库；本条发布后分支和main Actions以实际运行结果为准，不提前声称通过。
 
 当前业务停止：`BOUNDED_ORIGINAL_RESOURCE_METADATA_AND_PROTOCOL_FIELD_JOIN_OPEN_DRAW_SELECTOR`。物品/料理配方、装备名、商店真实价格、初代任务奖品绑定均不可从1031图号推导，留OPEN。**最高NEXT `TW10-MAP-CONTENT-ORIGINAL-RESOURCE-BOUNDARY-01`**：有限验证原盘地图块/局部结构和原服地图与NPC/遭遇缺口，不延伸无关R79或新作；按22域准备阶段推进。九系统7 PARTIAL+2 OPEN，Stage B生产及百科网站GATED，R79 PAUSED，整体复原无合法百分比分母。
+
+ 
+## 2026-10-18 — T03原台湾1.0地图编号/碰撞属性实证与source归档
+
+本轮T02物品静态原版数据验收后，再独立开T03 `TW10-MAP-CONTENT-ORIGINAL-RESOURCE-BOUNDARY-01`。源起于已核实时GitHub main `b0e232f2b7d40a340db395c33fc08e3faeaf2204` / tree `85649cac357a6e74cbae8eb0926cc6e676bc0b60`；T02研究分支10项和主线11项真实Actions全部SUCCESS，完整上一CURRENT-STATE历史及mapcache文档重新核实。
+
+**真原盘源层**：原TW1.0 ADRN原生`COLLISION-ATTR-R1.tsv.gz`共有**9,286个互异的非0 map_number→bitmapno属性条目**，字段`hit_raw % 100`在这9286条记录里为hit0 5929、hit1 3295、hit2 62；原文件出现3次重复map_number由已有原盘源顺序导出记录且在当前表已按last-write去重。原客户端M/MC→`map\\%d.dat`本地缓存写/检查链已较早确证，但零售盘没有实际原field-map DAT。map_number本身是地图图像/碰撞**资源编号**，绝不等同field floor地图ID或已复原野外地图张数。
+
+**本轮新的全原源交叉**：利用2001玩家stonepic的候选**位图号标签**，小地形候选关联4571个原map_number（hit0 1539、hit1 3032），大地形物件候选关联1271个（hit0 972、hit1 237、hit2 62），NPC图号候选101个（hit0 101），其它3343个（hit0 3317、hit1 26）仍保留其他。这样的分段物理索引不说明原服有101个NPC、9,286张地图、任何NPC坐标/任务/区域。后期兼容DAT仍属另版本，禁止推成初代场景。
+
+来源Action`39078746682`/job`117531202789` 实际SUCCESS。独立下载artifact`12117946984` ZIP1795B SHA256`8d48e37f0eae58b7659e7315ef83ccffe95c36d8728b6fe76d68d7d0d1dab5a4`，内部raw JSON8494B SHA256`5efa5972fe68d38d0e85aad3c7e13d6c4cd588c0f1b81a5900ba79e8a6711dd9`，Git blob`7d4d5d2cae224c093b3e85e8ef1bfc49b54c5981`逐字节一致。第二轮永久归档分支独立Action`39079097177`实际SUCCESS，包含源完全重算、固定原ZIP摘要、字段界限测试及旧hitMap算法单元。规格`docs/STONEAGE-TW10-MAP-CONTENT-COLLISION-R1.md`、永久派生JSON和source custody、工具与tests及workflow均已写分支；**最终主线CI需快进后另行实核**。无原版权地图DAT/原版权图像导入。
+
+最高NEXT `TW10-AUDIO-EVENT-SOURCE-GATE-01`：从原盘音效/音乐数据与已证原exe事件播放入口找可证明的连接，不能按音乐名称凭空指派剧情场景。原世界具体DAT、NPC、任务、刷宠仍OPEN。Stage A 7 PARTIAL+2 OPEN，新游戏与网站生产GATED、R79 PAUSED；无整体复原百分比。

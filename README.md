@@ -167,3 +167,16 @@ checks are in
 `docs/STONEAGE-TW10-ITEM-STATIC-BITMAP-SOURCE-R1.md`.
 Next bounded T03 is `TW10-MAP-CONTENT-ORIGINAL-RESOURCE-BOUNDARY-01`.
 Stage B production and wiki remain gated.
+
+ 
+### Latest original map resource source checkpoint — 2026-10-18
+
+The bounded T03 analysis cross-checks 9,286 original Taiwan-v1
+ADRN collision-resource map numbers against unverified 2001 player image
+categories: 4,571 small-tile, 1,271 large-object, 101 NPC-image
+candidates, 3,343 other entries. **Resource map numbers are not floor
+IDs or complete world-map payloads**. Original server-delivered
+field-map DAT content, NPC/quest/spawn data remain unavailable.
+See `docs/STONEAGE-TW10-MAP-CONTENT-COLLISION-R1.md` and the permanent
+derived report. Next bounded source work is
+`TW10-AUDIO-EVENT-SOURCE-GATE-01`; Stage B remains gated.
