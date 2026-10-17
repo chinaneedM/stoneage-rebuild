@@ -14659,3 +14659,24 @@ MODEL-CROSSWALK-R1.json固定7来源hash/blob；本包7项来源/归档/对应
 检查与54项既有运输/记录点/治疗回归共61项本地通过。未将现代布尔
 容量检查冒充四乘客人数实现，也未宣称免遇敌调度已有完整执行证明。
 来源获取仍由前述独立原始artifact支持，后续分支CI需复验归档与对应。
+
+
+### EARLY-CONTENT-RECOVERY-01 归档后验收与主线交接
+
+98417f39cf777d903f028771ab88c2b28af1ed13 / tree
+29fbdf9fb2dc64cc8835cb94cbf16301276e0d0a 已获独立Action38990191250、
+job117270647979 SUCCESS：7项来源/归档/对应检查、54项现有模型
+回归，及7个固定来源真实读取全部通过。再次读取main仍为本轮启动
+727d1c2261f3f01ba567aa62649abe421d142e77；比较ahead2/behind0、
+13路径无删除，expected-head非强制快进已写回main。
+
+解码质量补查：新浪logging/brothers的替换字符在未选的索引名，delivery
+的两处在另一未选任务名/奖励，不属于本轮四条合同；未替这些残缺
+专名猜字。原始字节hash、替换计数及业务锚点全部保存。原始HTML/
+对白、美术、地图、服务端载荷仍未入Git。这里只追加实际已发生的
+验收/主线凭据，不改变四合同+四指南轮廓及其版本/运行未知边界。
+
+Highest NEXT EARLY-QUEST-CONTENT-02：针对送贝壳或成人仪式一条
+任务找可明确地区/年代及动作/物品身份的独立早期资料；后世同文
+不算独立见证。原始脚本/服端世界及SAAC仍OPEN，Stage A未终验、
+Stage B GATED，R79继续PAUSED_NON_BLOCKING。
