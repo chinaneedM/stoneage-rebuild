@@ -1,0 +1,26 @@
+name: Acquire historical StoneAge site navigation metadata
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_historical_site_navigation_probe.py
+      - tests/test_stoneage_historical_site_navigation_probe.py
+      - .github/workflows/probe-stoneage-historical-site-navigation.yml
+permissions:
+  contents: read
+jobs:
+  archived-navigation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - run: python -m unittest tests.test_stoneage_historical_site_navigation_probe -v
+      - run: |
+          mkdir -p /tmp/historical-site-nav
+          python -m tools.stoneage_historical_site_navigation_probe --output /tmp/historical-site-nav/navigation.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: historical-site-navigation-r1
+          path: /tmp/historical-site-nav/*.json
+          retention-days: 7
+          if-no-files-found: error
