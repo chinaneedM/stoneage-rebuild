@@ -20,6 +20,10 @@ TARGETS = {
     'jss_manual02': ('http://www.titan.co.jp/stoneage/manual02.html', '20010418083149', 'shift_jis', 'OPERATOR_FIRST_PARTY', 'DIRECT_REPLAY_REQUEST'),
     '17173_home': ('http://stoneage.17173.com/', '20010630', 'gb18030', 'CONTEMPORANEOUS_MEDIA', 'AVAILABILITY'),
     '17173_exchange': ('http://stoneage.17173.com/jiaoliu/jiaoliu.shtml', '20020321', 'gb18030', 'CONTEMPORANEOUS_MEDIA', 'AVAILABILITY'),
+    'jss_menu': ('http://www.titan.co.jp/stoneage/menu.html', '20010418000000', 'shift_jis', 'OPERATOR_FIRST_PARTY', 'DIRECT_REPLAY_REQUEST'),
+    'jss_top': ('http://www.titan.co.jp/stoneage/top.html', '20010418000000', 'shift_jis', 'OPERATOR_FIRST_PARTY', 'DIRECT_REPLAY_REQUEST'),
+    '17173_index': ('http://stoneage.17173.com/index.shtml', '20010630000000', 'gb18030', 'CONTEMPORANEOUS_MEDIA', 'DIRECT_REPLAY_REQUEST'),
+    '17173_guide': ('http://stoneage.17173.com/guide/guide.htm', '20010630000000', 'gb18030', 'CONTEMPORANEOUS_MEDIA', 'DIRECT_REPLAY_REQUEST'),
 }
 TOPICS = {
     'login_splash': r'ログイン|登入|登录', 'character_creation': r'キャラクター|人物|角色',
