@@ -120,3 +120,8 @@ python tools/stoneage_stage_a_review_packet.py --replay
 ### 2026-10-17 伐木任务补证
 
 新增[伐木内容规格](specs/STONEAGE-LOGGING-SOURCE-CONTRACT-R1.md)和[独立验收链](../research/recovered/STONEAGE-LOGGING-ACCEPTANCE-R1.json)：三个实际2003/2004快照限定正文年代与1.82编辑分组，尾刀/许可交回/近似收益可分源查阅；手环魅+5/-5不合并，改造斧与新交差斧分阶段。既有普通掉落宠物票据可转给主人，不能被本任务尾刀限制覆盖。六源独立读取和归档后33项检查成功，原始ID/商业构建与执行仍OPEN。下一项只核对已有后代物品表中的少量候选，审阅及Stage B门不变。
+
+
+### 2026-10-17 伐木物品的后代身份补证
+
+新增[有限物品身份规格](specs/STONEAGE-QUEST-ITEM-IDENTITY-R1.md)及[永久来源验收链](../research/recovered/STONEAGE-QUEST-ITEM-ACCEPTANCE-R1.json)：独立验证环境按固定保存包/表hash取得两份master，各命中五个Big5整名候选；许可2478和20197同图仍是不同模板，手环2481魅力raw双值-5/-5不解决初代攻略差异，交差斧2465和断斧2484保持不同阶段。改造斧固定词表未命中，仍OPEN。未取得初代ID或原始NPC绑定，普通掉落运行时代码不变。下一项只追踪五ID的同源NPC配置角色，九族7 PARTIAL+2 OPEN及Stage B门不变。

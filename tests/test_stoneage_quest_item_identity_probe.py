@@ -6,7 +6,7 @@ import json
 import tempfile
 import unittest
 from tools.stoneage_itemset_schema_probe import INDEX
-from tools.stoneage_quest_item_identity_probe import extract, name_matches, report, validate_derived
+from tools.stoneage_quest_item_identity_probe import extract, name_matches, report, validate_derived, extraction_contract_fingerprint
 
 
 def invented_row(name='杉之手环', codec='gb18030', item_id=123):
@@ -84,6 +84,21 @@ class ArchivedItemIdentityTests(unittest.TestCase):
         self.assertEqual(hashlib.sha256(raw).hexdigest(), receipt['raw_json_sha256'])
         self.assertEqual(hashlib.sha1(b'blob ' + str(len(raw)).encode() + b'\0' + raw).hexdigest(), receipt['permanent_git_blob'])
         self.assertTrue(validate_derived(self.data()))
+
+    def test_archive_replay_preserves_actual_source_tested_extraction_contract(self):
+        root = Path(__file__).resolve().parents[1]
+        receipt = json.loads((root / 'research/recovered/STONEAGE-QUEST-ITEM-ACCEPTANCE-R1.json').read_text())
+        source = (root / 'tools/stoneage_quest_item_identity_probe.py').read_text()
+        self.assertEqual(extraction_contract_fingerprint(source), receipt['extraction_contract_sha256'])
+        helper = (root / 'tools/stoneage_itemset_schema_probe.py').read_bytes()
+        self.assertEqual(hashlib.sha256(helper).hexdigest(), receipt['schema_helper_sha256'])
+
+    def test_extractor_change_cannot_hide_behind_unchanged_archived_report(self):
+        root = Path(__file__).resolve().parents[1]
+        source = (root / 'tools/stoneage_quest_item_identity_probe.py').read_text()
+        original = extraction_contract_fingerprint(source)
+        self.assertNotEqual(extraction_contract_fingerprint(source.replace("int(fields[INDEX['id']])", "int(fields[INDEX['cost']])")), original)
+        self.assertNotEqual(extraction_contract_fingerprint(source.replace("'gb18030', 'big5'", "'gb18030', 'ascii'")), original)
 
     def test_promotions_duplicate_identity_and_source_drift_rejected(self):
         original = self.data()

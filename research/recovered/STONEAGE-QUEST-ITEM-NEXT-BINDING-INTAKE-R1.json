@@ -1,0 +1,51 @@
+{
+  "schema": "stoneage.quest_item.next_npc_binding_intake.r1",
+  "status": "PREFLIGHT_ONLY_NO_NPC_PAYLOAD_EXTRACTED",
+  "source_item_report": "research/recovered/STONEAGE-QUEST-ITEM-CI-DERIVED-R1.json",
+  "source_item_report_blob": "d0ac9e5f5d26db5afcee07119295fd05803011b9",
+  "target_item_ids": [
+    2465,
+    2478,
+    2481,
+    2484,
+    20197
+  ],
+  "existing_parser_pins": [
+    {
+      "path": "tools/stoneage_npc_secondary_arg_queue_probe.py",
+      "bytes": 4616,
+      "sha256": "4303af96e49999c1fbf1925db5705c3fdd120d8ce2258f40c792497062bfb309",
+      "git_blob": "9221fdae7a6045de2ceea2e0e0938fec22668a50"
+    },
+    {
+      "path": "tools/stoneage_shadowed_branch_item_npc_reference_probe.py",
+      "bytes": 6712,
+      "sha256": "87f62b84df8ab386796fba0ca65882294681aba164926ce3a7cc8bc624a5cdf8",
+      "git_blob": "2e95fabf52bd3cbd47c6a6323a74f863f15ae59c"
+    },
+    {
+      "path": "tools/stoneage_shadowed_branch_key_item_nonshop_probe.py",
+      "bytes": 12537,
+      "sha256": "fdff3903513e1f69041d347ecbdeb18532afd6f099d0d4c2a83ab50bf7435ad0",
+      "git_blob": "c9d7e9521e3f389c4ed27bb86e12b6d71e66b51a"
+    },
+    {
+      "path": "research/recovered/STONEAGE-25-NPC-SECONDARY-ARG-QUEUE-R1.txt",
+      "bytes": 3763,
+      "sha256": "e38a2b2532f65579063ed7870cf7db8673e7e0987364b9fa727b7ecfc3fe9ca7",
+      "git_blob": "28a8b6dcb7a100413dd82040beaca0d5b869b220"
+    }
+  ],
+  "mandatory_distinctions": [
+    "GetItem/DelItem meaning must come from the specific functionset implementation, not the English key alone",
+    "FREE condition references are not reward delivery",
+    "ItemShop catalog existence is not ExChangeMan quest reward",
+    "numeric token hit is discovery only until field grammar and caller are established",
+    "ambiguous templates and missing secondary files remain coverage gaps",
+    "same icon does not alias permits 2478 and 20197"
+  ],
+  "stop_condition": "Resolve only target-ID related create/template/secondary-argument references and qualified field roles; cap emitted references; no original dialogue or entire NPC catalogue dump.",
+  "early_npc_or_item_identity_proven": false,
+  "runtime_code_changed": false,
+  "stage_b_gate": "GATED"
+}

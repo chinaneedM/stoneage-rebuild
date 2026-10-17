@@ -60,3 +60,10 @@ Stage A仍未终验、九族7 PARTIAL+2 OPEN、Stage B GATED，R79暂停。普�
 归档后增加raw JSON大小/hash/Git blob、元数据一致性、来源晋级/重复ID/伪编码/比较篡改反例，共9项本地检查。后续归档CI重放永久元数据和这些检查，不反复下载整个原始保存包；只有首次缺归档或显式workflow_dispatch才执行原始资料取得。未把归档重放称作一次新来源获取。
 
 **Highest NEXT QUEST-NPC-ITEM-BINDING-05**：在同一已认证保存包内，仅追踪这五个ID在现有NPC配置／参数语法中的来源角色，区别两种许可、交差斧、断斧和手环的发放／收回关系；利用现有NPC参数解析，不用普通数字grep冒充绑定。不穷举全世界/NPC，不因本次未命中而扩大改造斧搜索；无明确参数或脚本时保留UNKNOWN。后代绑定仍不倒填台湾1.0，Stage B保持GATED。
+
+
+## 归档后验收与后续绑定约束
+
+归档Action38993879936/job117281964762已通过9项检查及永久元数据重放，原始包取得步骤明确跳过；main非强制整合至c4a36fc4a755bfa673bf5306a4362e51ba173438。新增提取AST合同和schema-helper指纹核对后本地共11项；它们固定第一次真实源实验所用的提取函数／查询／常量，提取逻辑改动不能只靠旧派生数据蒙混通过，须重新来源验收。
+
+[下一项绑定预检](../../research/recovered/STONEAGE-QUEST-ITEM-NEXT-BINDING-INTAKE-R1.json)只固定已有解析工具和五个目标ID，尚无NPC配置抽取结果。GetItem／DelItem方向必须按实际FunctionSet解释；FREE条件、普通ItemShop商品与ExChangeMan发奖不混为一谈。模板歧义和缺参数文件仍算缺口，数字命中不直接算任务绑定。

@@ -19,5 +19,28 @@
   "original_server_executed": false,
   "early_original_item_ids_proven": false,
   "stage_a_accepted": false,
-  "stage_b_gate": "GATED"
+  "stage_b_gate": "GATED",
+  "extraction_contract_sha256": "4b93280fee96a3a9e3f6300badc630f0dded63d6025f1fe0686fb2592da69a9a",
+  "schema_helper_sha256": "b4d7e53b7f1a56ce00b973723f0909e6e874ad95d94f978aee65e5479a560b6d",
+  "contract_basis": "AST of constants and actual-source-tested functions from source_head; metadata validators excluded. Extractor drift requires fresh source qualification, not archival replay.",
+  "preservation_hashes": {
+    "part001": "7cb7acdecd56617132e6f284c468158917c91d542cad5b2e7b3c7774fb5630d5",
+    "part002": "567e1ec0aeff9ea6a9ada791a339aa8f8bb8ffba83cf762e4b445fc0f1cb16bb",
+    "combined_rar": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5"
+  },
+  "subsequent_validation": {
+    "head": "c4a36fc4a755bfa673bf5306a4362e51ba173438",
+    "tree": "63154cb101dcab377ab9eb28f31551aa42031ab5",
+    "run_id": 38993879936,
+    "job_id": 117281964762,
+    "conclusion": "success",
+    "checks": 9,
+    "replay_kind": "PERMANENT_DERIVED_METADATA_NO_ORIGINAL_REDOWNLOAD",
+    "original_source_recovery_skipped": true,
+    "main_before": "a26cde43888171188a461acffa727e6b2e5dd69f",
+    "main_after": "c4a36fc4a755bfa673bf5306a4362e51ba173438",
+    "ahead": 2,
+    "behind": 0,
+    "main_nonforce_fast_forward_completed": true
+  }
 }

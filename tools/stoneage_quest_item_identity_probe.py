@@ -5,6 +5,7 @@ descriptions, scripts or whole rows are retained in the derived report.
 """
 from __future__ import annotations
 import argparse
+import ast
 import hashlib
 import json
 from pathlib import Path
@@ -36,6 +37,25 @@ FLAGS = ('dropatlogout', 'vanishatdrop', 'canpetmail', 'canmergefrom', 'canmerge
 def require(value, message):
     if not value:
         raise ValueError(message)
+
+
+def extraction_contract_fingerprint(source):
+    """Keep the actual-source-tested extractor frozen across metadata-only replay."""
+    functions = {'require', 'name_matches', 'extract', 'report', 'main'}
+    constants = {'EXPECTED', 'CODECS', 'QUERIES', 'NUMBER_FIELDS', 'FLAGS'}
+    selected = []
+    found = set()
+    for node in ast.parse(source).body:
+        if isinstance(node, ast.FunctionDef) and node.name in functions:
+            selected.append(ast.dump(node, include_attributes=False))
+            found.add(node.name)
+        elif isinstance(node, ast.Assign):
+            names = {x.id for x in node.targets if isinstance(x, ast.Name)}
+            if names & constants:
+                selected.append(ast.dump(node, include_attributes=False))
+                found |= names & constants
+    require(found == functions | constants, 'incomplete extraction contract')
+    return hashlib.sha256('\n'.join(selected).encode()).hexdigest()
 
 
 def name_matches(raw):
