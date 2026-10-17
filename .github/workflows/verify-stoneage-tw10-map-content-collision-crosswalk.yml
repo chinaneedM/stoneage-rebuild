@@ -1,0 +1,28 @@
+name: Validate original TW1 map-number collision and player bitmap category boundary
+on:
+  push:
+    paths:
+      - tools/stoneage_tw10_map_content_collision_crosswalk.py
+      - tests/test_stoneage_tw10_map_content_collision_crosswalk.py
+      - .github/workflows/verify-stoneage-tw10-map-content-collision-crosswalk.yml
+      - research/recovered/STONEAGE-TW10-MAP-CONTENT-COLLISION-R1.json
+      - research/recovered/STONEAGE-TW10-MAP-CONTENT-COLLISION-ACCEPTANCE-R1.json
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  direct-tw1-collision-source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest tests.test_stoneage_tw10_map_content_collision_crosswalk tests.test_stoneage_tw10_hit_map_model -v
+      - run: python -m tools.stoneage_tw10_map_content_collision_crosswalk --write "${{ runner.temp }}/original-tw10-map-collision.json"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: original-tw10-map-collision-crosswalk
+          path: ${{ runner.temp }}/original-tw10-map-collision.json
+          retention-days: 30
