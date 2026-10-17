@@ -397,3 +397,10 @@ EARLY-VILLAGE-SERVICE-JOURNEY-01的五类行为来源合同已独立成功后，
 本里程碑仅将**同版原SPR动画帧→原位图数据**关系验收，不把S:K graphic_id身份映射、宠物物种名录、原服HP/成长/技能/原野出没、人物/宠物实际画面补成已完成；无原始图像字节提交及版权移植。真正首版宠物内容后续再根据同版server master/原客户端图形查表或一手截图重开。
 
 **最新NEXT ORIGINAL-UI-LOGIN-AVATAR-REVIEW-01**：查原登录/选角/人物2D图像身份/动画/操作界面及对应原客户端/同期图片资料的真实来源；优先识别已存在证据，无法核验不能编造历史UI。其后按既定22域目录推进WORLD-NPC-QUEST-SOURCE-JOIN-01、LEGACY-ASSISTANT-FULL-FEATURE-ARCHIVE-01与HISTORICAL-SITE-IA-AND-WIKI-EXPORT-CONTRACT-01。Stage A旧证据有界审阅仍有效，Stage B生产、玩家百科建设不启动，R79暂停。
+
+
+## 2026-10-17 — ORIGINAL-UI-LOGIN-AVATAR-REVIEW-01 2001玩家图片索引和台湾1.0原始资源一致性
+
+2001-06-14 17173玩家曾公开stonepic图号类别（NPC、宠物/人物照片、人物/宠物动作、UI），2026-10-17源实测Action39025092843 SUCCESS：16个原位图范围其数字ID全部存在于台湾1.0原盘，后续6段超出125995的图号全部不存在。首次Action39025014067失败仅为工作流job标识问题，旧记录保留。因来源只是玩家分类，不能据存在性验证官方同版实际图片用途、玩家可选人物数或宠物物种数。作者声称“大陆版登陆画面”图126766不在原台湾1.0；真正原登录/角色创建布局仍未重现。
+
+新highest NEXT WORLD-NPC-QUEST-SOURCE-JOIN-01，优先原版任务、NPC与玩家活动真实资料交叉表；其后外挂全功能与玩家网站史料分层。历史来源缺席不推测初代世界图或奖励；Stage B生产未开始。
