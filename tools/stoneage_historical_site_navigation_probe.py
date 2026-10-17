@@ -9,6 +9,7 @@ import re
 import urllib.error
 import urllib.parse
 import urllib.request
+from tools.stoneage_early_content_probe import plain
 
 LIMIT = 2_000_000
 TARGETS = {
@@ -50,10 +51,14 @@ def identity(url):
 class Links(HTMLParser):
     def __init__(self):
         super().__init__(convert_charrefs=True)
-        self.links = []; self.active = None; self.base = None
+        self.links = []; self.active = None; self.base = None; self.anchors = []
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
+        for name in ('id', 'name'):
+            value = attrs.get(name)
+            if value and len(value) <= 120 and value not in self.anchors:
+                self.anchors.append(value)
         if tag == 'base' and attrs.get('href') and self.base is None: self.base = attrs['href']
         if tag == 'a':
             if self.active is not None: self.links.append(self.active)
@@ -111,14 +116,20 @@ def qualify(key, raw, final_url):
     require(0 < len(raw) <= LIMIT, 'bounded HTML bytes')
     doc = raw.decode(codec, errors='replace')
     require(re.search(r'<(?:html|frameset|body)\b', doc, re.I) is not None, 'not HTML')
-    # Identity guards supplement origin/date; they do not certify all content.
-    require(re.search(r'stoneage|stone\s+age|ストーンエイジ|石器', doc, re.I) is not None, 'site identity absent')
     links = derived_links(doc, actual_original)
+    # Image-only index pages may omit a textual brand. Require both known
+    # first-party manuals as links before qualifying that narrowly named index.
+    brand = re.search(r'stoneage|stone\s+age|ストーンエイジ|石器', plain(doc), re.I) is not None
+    targets = {urllib.parse.urldefrag(x['target_url'])[0] for x in links}
+    manual_index = key == 'jss_manual_index' and all('http://www.titan.co.jp/stoneage/' + p in targets for p in ['manual01.html', 'manual02.html'])
+    require(brand or manual_index, 'site identity absent')
+    parser = Links(); parser.feed(doc); parser.close()
     return {'status': 'ARCHIVED_HTML_LINK_METADATA_QUALIFIED', 'requested_original': original,
             'requested_timestamp': requested, 'actual_capture': timestamp, 'actual_original': actual_original,
             'final_url': final_url, 'source_role': role, 'discovery_method': method,
+            'identity_basis': 'BODY_BRAND_MARKER' if brand else 'TWO_KNOWN_FIRST_PARTY_MANUAL_LINK_TARGETS',
             'bytes': len(raw), 'sha256': hashlib.sha256(raw).hexdigest(), 'codec': codec,
-            'replacement_characters': doc.count('\ufffd'), 'links': links,
+            'replacement_characters': doc.count('\ufffd'), 'links': links, 'document_anchor_ids': parser.anchors,
             'link_count': len(links), 'visual_layout_verified': False,
             'linked_destination_contents_verified': False, 'full_historical_site_recovered': False}
 
@@ -142,25 +153,38 @@ def acquire(key):
             row['availability_query'] = {'url': url, 'final_url': final, 'bytes': len(raw), 'sha256': hashlib.sha256(raw).hexdigest()}
             cap = json.loads(raw).get('archived_snapshots', {}).get('closest')
             if not cap:
-                return key, dict(row, status='NO_CLOSEST_FOR_THIS_QUERY_NOT_GLOBAL_ABSENCE')
-            require(cap.get('available') is True and str(cap.get('status')) == '200', 'unqualified closest response')
-            replay = str(cap['url'])
-            ts, target = archive_parts(replay)
-            require(identity(target) == identity(original), 'availability changed target')
-            require('19990101000000' <= ts <= '20021231235959', 'closest outside early window')
+                row['availability_closest_returned'] = False
+                row['bounded_replay_fallback'] = True
+                replay = f'https://web.archive.org/web/{timestamp}000000id_/{original}'
+            else:
+                require(cap.get('available') is True and str(cap.get('status')) == '200', 'unqualified closest response')
+                replay = str(cap['url'])
+                ts, target = archive_parts(replay)
+                require(identity(target) == identity(original), 'availability changed target')
+                require('19990101000000' <= ts <= '20021231235959', 'closest outside early window')
         else:
             replay = f'https://web.archive.org/web/{timestamp}id_/{original}'
         # id_ avoids present-day replay navigation contaminating link extraction.
         ts, target = archive_parts(replay)
         replay = f'https://web.archive.org/web/{ts}id_/{target}'
         raw, final = get(replay)
+        row['replay_response'] = {'final_url': final, 'bytes': len(raw), 'sha256': hashlib.sha256(raw).hexdigest()}
         out = qualify(key, raw, final)
-        if 'availability_query' in row: out['availability_query'] = row['availability_query']
+        for field in ['availability_query', 'availability_closest_returned', 'bounded_replay_fallback']:
+            if field in row: out[field] = row[field]
         out['replay_request'] = replay
         return key, out
     except Exception as exc:
         if isinstance(exc, urllib.error.HTTPError): error = {'kind': 'HTTPError', 'status_code': exc.code}
         else: error = {'kind': type(exc).__name__, 'message': str(exc)[:180]}
+        if 'replay_response' in row:
+            # Fingerprint unqualified responses too; no raw HTML is retained.
+            codec = TARGETS[key][2]
+            doc = raw.decode(codec, errors='replace')
+            row['unqualified_diagnostics'] = {'html_tag_present': bool(re.search(r'<(?:html|body|frameset)\b', doc, re.I)),
+                                             'replacement_characters': doc.count('\ufffd')}
+            try: row['unqualified_diagnostics']['links'] = derived_links(doc, original)
+            except Exception as diagnostic_error: row['unqualified_diagnostics']['link_parse_error'] = type(diagnostic_error).__name__
         return key, dict(row, status='QUERY_OR_REPLAY_UNQUALIFIED_NOT_GLOBAL_ABSENCE', error=error)
 
 

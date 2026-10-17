@@ -37,5 +37,19 @@ class NavigationTests(unittest.TestCase):
         rows = derived_links('<a href="javascript:alert(1)">x</a><a href="mailto:x@y">y</a><a href="https://user:pass@example.com/">z</a>', 'http://www.titan.co.jp/stoneage/')
         self.assertEqual(rows, [])
 
+    def test_image_index_needs_both_named_first_party_manuals(self):
+        doc = b'<html><a href="manual01.html"><img src="one.gif"></a><a href="manual02.html"><img src="two.gif"></a></html>'
+        r = qualify('jss_manual_index', doc, self.url())
+        self.assertEqual(r['identity_basis'], 'TWO_KNOWN_FIRST_PARTY_MANUAL_LINK_TARGETS')
+        with self.assertRaises(ValueError): qualify('jss_manual_index', doc.replace(b'manual02.html', b'unknown.html'), self.url())
+
+    def test_brand_in_url_alone_does_not_qualify_error_page(self):
+        doc = b'<html><a href="http://www.titan.co.jp/stoneage/manual.html">retry</a>Page unavailable</html>'
+        with self.assertRaises(ValueError): qualify('jss_manual_index', doc, self.url())
+
+    def test_fragment_ids_are_metadata_not_label_or_game_identity(self):
+        r = qualify('jss_manual_index', b'<html>STONEAGE<a name="2015"></a><div id="7030"></div></html>', self.url())
+        self.assertEqual(r['document_anchor_ids'], ['2015', '7030'])
+
 
 if __name__ == '__main__': unittest.main()
