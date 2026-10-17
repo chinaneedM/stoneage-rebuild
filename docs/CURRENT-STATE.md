@@ -15118,3 +15118,12 @@ WORLD源分支ec2aa8fac09f13a61c73c9542b2dd9c08c9fc1b9/tree0976772698b7470b72145
 独立下载源Actions ZIP 1784B，SHA256`fa5ad6bf8f926feb8f8fc54e02c206760dfcaac4dbc28ef814145de7961479ee`；独立校验派生原JSON 8369B、SHA256`e33bdae8c202dcf5a1374746afc505f517d8e1afc557fd07057d2d1811a54fcd`、原报告Git blob`20a82e4d35661785c4e50b44855cf8e8a4e98f3e`，完全相符。永久原派生报告、完整来源/产物凭据和逐字节重放负面验收见 `STONEAGE-TW10-VISUAL-CATEGORY-SPR-JOIN-R1.json` 与 `STONEAGE-TW10-VISUAL-CATEGORY-SPR-JOIN-ACCEPTANCE-R1.json`；任何归档/主线Actions后续结果只能在实际运行后另记。无原版权位图、游戏安装包或完整原HTML入库。
 
 **NEXT TW10-ITEM-STATIC-BITMAP-SOURCE-SELECTOR-01**：面对已证物品静态段1031个bitmap号在SPR帧中0引用，核查原版静态图的真实内容/客户端选择入口，首先找可靠 `S:I`→bitmap原版运行参数或引用函数；否则只归档原ADRN静态图元数据与明确未证的名称/用途，有限停止。其后依22域最新排序转地图或音频具名来源。完整原游戏/新作网站生产不因这一源层进展而完成；Stage A九族7 PARTIAL+2 OPEN，Stage B GATED，R79 PAUSED，仍不报整体百分比。
+
+ 
+### 2026-10-18 — 原SPR资源交叉表永久归档及独立验收更正
+
+来源实跑Action`39076262089` SUCCESS、真实ZIP1784B SHA256`fa5ad6bf8f926feb8f8fc54e02c206760dfcaac4dbc28ef814145de7961479ee`、原派生JSON8369B SHA256`e33bdae8c202dcf5a1374746afc505f517d8e1afc557fd07057d2d1811a54fcd`、Git blob`20a82e4d35661785c4e50b44855cf8e8a4e98f3e`经独立下载核对与原字节重放。机器派生与保管回执永久存 `research/recovered/STONEAGE-TW10-VISUAL-CATEGORY-SPR-JOIN-R1.json` 及 `...-ACCEPTANCE-R1.json`，原始版权图像未纳入Git。当前项目交付是源层“原SPR动画帧实际落在哪些玩家标注图号区间”，并非原游戏宠物人物身份/显示闭合。
+
+第一归档测试提交`890410f`的独立Action`39076718170`实际**FAILURE**，原因仅为验收测试源码把Git blob的NUL分隔符与派生JSON行尾换行写成双重转义，两个assert因此失败，原数据散列及源CI不受影响。修复提交`1f08e3ea551e49ef7baf153e501efe58d3a24960`将测试改为真实NUL与换行，分支Action`39076789532`实际**SUCCESS**。保留失败原始记录、测试修复及更正后的回放，不将旧FAILURE涂改为SUCCESS。最终主线所有Actions及提交凭据仅可在实际快进后确认。
+
+下一NEXT `TW10-ITEM-STATIC-BITMAP-SOURCE-SELECTOR-01`，先定位真正原台湾1.0客户端静态图选择/显示入口，再连接 `S:I` 的同版字段/图号；没有真正调用参数即把用途留UNKNOWN，不继续猜“1031件原物品”。Stage A九系统7 PARTIAL+2 OPEN、Stage B及网站生产GATED、R79暂停，无全游戏完成百分比。

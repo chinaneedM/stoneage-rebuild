@@ -137,3 +137,18 @@ Next collaborative input: [Stage B design discussion brief](docs/STAGE-B-COLLABO
 **Design discussion is ready; production, final engine lock-in and new content
 implementation have not started.** Latest CURRENT-STATE and independent CI
 have authority over older README/NEXT markers.
+
+ 
+### Current research priority — 2026-10-18 (source-ready 22-domain restoration)
+
+The latest repository [22-domain source-ready review](docs/STONEAGE-22-DOMAIN-SOURCE-READY-REVIEW-R2.md)
+preserves all historic PARTIAL/OPEN boundaries. A new *original Taiwan v1.0*
+SPR-frame-to-bitmap category intersection report has been independently
+executed and archived with source ZIP/JSON checksums:
+`research/recovered/STONEAGE-TW10-VISUAL-CATEGORY-SPR-JOIN-R1.json`.
+It validates only numeric original resource links, **not actual pet species,
+avatar identities, first-generation quests or live drawing**. Previous early
+server/pet identity work remains evidence-limited. Next finite source task:
+`TW10-ITEM-STATIC-BITMAP-SOURCE-SELECTOR-01`. Stage B production and public
+wiki implementation have not begun; R79 is paused and the full history in
+CURRENT-STATE remains authoritative.

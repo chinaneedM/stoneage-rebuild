@@ -22,7 +22,9 @@
     "independent_download_zip_digest_checked": true,
     "raw_member_digest_checked": true,
     "source_report_semantic_replay_required": true,
-    "archive_verification_mode": "BYTE_EXACT"
+    "archive_verification_mode": "BYTE_EXACT",
+    "raw_member_semantics_exact_replay_verified": true,
+    "source_digest_hash_equivalence_preserved": true
   },
   "fixed_original_inputs": [
     {
@@ -70,5 +72,24 @@
   "stage_a": "7_PARTIAL_2_OPEN",
   "stage_b_production_started": false,
   "next": "TW10-ITEM-STATIC-BITMAP-SOURCE-SELECTOR-01",
-  "post_archive_main_ci": "PENDING_REAL_RUN_NOT_INFERRED"
+  "post_archive_main_ci": "PENDING_REAL_RUN_NOT_INFERRED",
+  "correction_ci_history": {
+    "initial_source_run": {
+      "id": 39076262089,
+      "result": "success"
+    },
+    "first_archive_run": {
+      "id": 39076718170,
+      "result": "failure",
+      "cause": "Two incorrect escaped literals in newly authored archive test: Git blob NUL separator and JSON newline; data and source audit unchanged"
+    },
+    "test_correction_commit": "1f08e3ea551e49ef7baf153e501efe58d3a24960",
+    "corrected_archive_run": {
+      "id": 39076789532,
+      "result": "success"
+    },
+    "failure_preserved_not_rewritten": true,
+    "actual_branch_verified": true
+  },
+  "post_archive_branch_ci": "SUCCESS_39076789532"
 }
