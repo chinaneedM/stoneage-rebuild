@@ -6867,3 +6867,16 @@ INTAKE保留精确Availability/CDX请求及空集/503；本地17173练功、问�
 源为上一轮已固定后代recovered25保存包两分卷哈希7cb7acdecd56617132e6f284c468158917c91d542cad5b2e7b3c7774fb5630d5 / 567e1ec0aeff9ea6a9ada791a339aa8f8bb8ffba83cf762e4b445fc0f1cb16bb，合包hash d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5；严格复用已有ExChangeMan/NPC类型解析及前次永久源报告Git blob7d771b2aa4f39646879659303f4926045ae730cc。实际独立Actions38997164871/job117292136171 SUCCESS，9项事件语法/否证门及源文件读取/比较通过。临时下载、NPC配置原文、对白与原服务程序不入Git/未执行。
 
 派生短期artifact12087945346 ZIP2196字节/SHA256 a824365bfae4f4763192779dac853d431014bdfdc8af3c1785c1da6f71b0b3e3，唯一quest-npc-flow-derived.json15004字节/SHA256 719b6dc071ea9d5946d707ced51798786d7b227d642bb80f009290ca834ad05a，永久Git blob b9f04bd7956a25a249e182fad4db2f0459719327，经独立下载解压及Git blob比对一致。仅27匿名记录的ID/角色/源hash：同一EventEnd的两个后代候选关联2465→2484(2记录)、2478→2481(1记录)，未证任何原版奖励事务、版本归属或整体任务图。来源可追溯矩阵和否证规则：research/recovered/STONEAGE-QUEST-NPC-FLOW-ACCEPTANCE-R1.json、docs/specs/STONEAGE-QUEST-NPC-FLOW-LINK-R1.md。不得将相同图像许可2478与20197同一化，也不得将后代引用推成JSS1999/TW1.0原始服。
+
+
+
+## 2026-10-17 — SRC-STAGE-A-EARLY-SOURCE-GAP-TRIAGE-R1
+
+性质：**现存归档来源+公开有限发现检索的缺口可得性审计**，非新取得的原始JSS1999/TW1.0服务器一手数据。五类既有官方2001-04-18村庄服务与TW1.0原始客户端通用消息形状不得拼成同版运行事件；根来源Git blob：
+- 早期五服务合同 `research/recovered/STONEAGE-EARLY-VILLAGE-SERVICE-JOURNEY-R1.json` / 7b6c724999e52a421af77d8c8e1e9351288e11ff；
+- 原始官方手册派生档 `research/recovered/STONEAGE-EARLY-CONTENT-GUIDE-MANUAL-R1.json` / 54404a8118f125a9a53eabbb8bad8c4a0d07b190；
+- Stage A联合审阅入口 `docs/STAGE-A-CONSOLIDATED-REVIEW-R1.md` / 07c9950a40d110d4dabb80b11412db8b4ea64ba9。
+
+本轮发现检索包括日本石器时代1999–2001、长毛象巴士/记录点与titan.co.jp手册地址、2000年中文公车费用关键词；未发现可归属同版并补齐五类具体服务字段的新材料。网页阅读器访问 `https://web.archive.org/web/20010418083149id_/http://www.titan.co.jp/stoneage/manual02.html` 出错，仅为当前访问失败，**不是不存在**。详细搜索词、缺失供品/保存ACK/车费/路线/医疗价格/工作奖励/物品消失时长、重开要求与否证记录见 `research/recovered/STONEAGE-STAGE-A-EARLY-SOURCE-GAP-TRIAGE-R1.json`、`docs/STAGE-A-EARLY-SOURCE-GAP-TRIAGE-R1.md`。不存版权源HTML、商服载荷及游戏资产，未运行原版客户端或原商服；不证明同版服务已经存在或完全消失。来源包独立Action39001916143/job117306453768 SUCCESS仅证明本次证据合同可审计。
+
+五服务因缺失早期原始业务量值仍OPEN_EVIDENCE_LIMITED；不填0价/地图相邻边/掉落秒数/奖励ID。九系统7 PARTIAL+2 OPEN，Stage A终验待用户联合审阅、Stage B GATED、R79 PAUSED_NON_BLOCKING。

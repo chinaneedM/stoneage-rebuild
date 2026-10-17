@@ -14874,3 +14874,13 @@ QUEST-NPC-FLOW-LINK-06有界完成：两条2465→2484候选、1条2478→2481�
 整合前再核main仍70e700243d4ecf363029601f60de7e01a51d4d49；branch ahead3/behind0，9项文件0删除，expected-head非强制快进至a97aede0ccb68d4f6cae3aa2621a2986e5e70566。主线独立服务合同Action39001293004 SUCCESS、TW1.0历史来源custody Action39001293108 SUCCESS。已验收的是五行为的来源约束与诊断分类，不是实际原NPC/任务/商服保存、不等于TW1.0事件/画面绑定。原1999/JSS首发对应未知、九系统7 PARTIAL+2 OPEN、Stage A未用户联合终验、Stage B GATED、R79 PAUSED_NON_BLOCKING。
 
 **最高NEXT STAGE-A-EARLY-SOURCE-GAP-TRIAGE-01**：对五类规则中的未知车费/线路边、供品ID/存储ACK、服务价目、任务报酬、地面超时等做有界可得来源清单；除非存在可认证同年代一手记录或原本商业服数据，不继续把文字模拟成游戏流程；随后重新按原版玩法恢复价值进行九族排序。上述main交接信息本身提交后若有新CI仍须实时核验，不得预称其成功。
+
+
+
+## 2026-10-17 — STAGE-A-EARLY-SOURCE-GAP-TRIAGE-01 有限早期来源缺口与联合审阅交接
+
+本次启动以GitHub main 7093e5fb33ff7b90abce7932e17b137bffa8dec9/tree f58d7c81aa28d8becfb9895bc146aa896c48bcb1为唯一基准；全量读取CURRENT-STATE Git blob d8e2d9d1bedac2a6b3506fc20aff06737ace416a，另读README、连续性协议、设计/编年/来源、路线R2、最新提交与两项SUCCESS主线Actions。完整历史前缀不可裁剪。五类已认证JSS2001第一方手册服务与TW1.0客户端通用消息仍保持不同来源层。检索范围及失败界限记在 research/recovered/STONEAGE-STAGE-A-EARLY-SOURCE-GAP-TRIAGE-R1.json。
+
+本轮核验记录点供品ID/数量与原服ACK/重登、公车相邻站点/费用/调度、村服务NPC与价格/技能菜单、送货/矿石任务物品及奖励、普通地面物品计时/清除源这五类真实业务缺口。既有2001网页实际存档为早期说明，不是1999或台湾1.0商服同版数据；TW1.0客户端字段不是服务绑定；后代recovered25及现代参考不能填入初代空白。当前搜索没有获得经认证的新原版字段：公开阅读器对既有Archive URL报错只限本接口，不能否定此前已固定Git原始派生报告或推断全网缺席。研究记录/中文文档/源校验器/7项反例单测/独立Actions全部提交到agent/stage-a-early-source-gap-triage-r1-20261017，源提交52ded1bc7a8923202daf0a2394bc8047fc0a2781/tree2c26a38856d9b1c60f7c72c7ac89f0e86d86d937。Actions39001916143/job117306453768 SUCCESS，新的有限缺口/否证测试与上一工作包及已有Stage A审阅校验全部通过。它验证的是证据约束，而非原版商业服运行。
+
+**最高NEXT STAGE-A-JOINT-REVIEW-DECISION-01**：依据 docs/STAGE-A-CONSOLIDATED-REVIEW-R1.md 的九系统7 PARTIAL/2 OPEN、七玩家流程与五类阻塞，加上本轮逐字段重开条件，提交正式用户联合审阅。若用户未明确接受Stage A的证据受限收束，则仍为Stage A；即使同意收束也不得改写历史未知成已恢复。无新认证原服来源时不继续扩张村庄服务或后代NPC链，TW1.0深层savedata R79 PAUSED_NON_BLOCKING。Stage B GATED，新引擎/新石器设计未开始，不报无分母复原百分比。后续归档CI和主线验证必须另据实时结果更新，不提前声称成功。

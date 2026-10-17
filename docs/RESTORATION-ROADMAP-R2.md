@@ -337,3 +337,11 @@ NEXT STAGE-A-PORTFOLIO-CHECKPOINT-02：停止后代NPC无限加深，重新按�
 在2026-10-17最新main 70e700243d4ecf363029601f60de7e01a51d4d49上启动，先读取HEAD/tree、最近提交、Actions、连续性协议与全量CURRENT-STATE，再对照官方2001-04-18 JSS手册及原版台湾1.0客户端UI消息形状。五类行为仅限记录点、长毛象公车、医疗/宠技/收宠、送货/矿石工作、普通落地物品消失；13项早期文字断言与12个原客户端通用观察槽仅作为不同来源的并排契约，不宣称同版NPC/服务器事件绑定、原始写盘ACK或实际操作画面。详见 docs/specs/STONEAGE-EARLY-VILLAGE-SERVICE-JOURNEY-R1.md 与 research/recovered/STONEAGE-EARLY-VILLAGE-SERVICE-JOURNEY-R1.json。实际证据仍未新增原始商业服内容、1999样本或真实游戏回放。
 
 **NEXT STAGE-A-EARLY-SOURCE-GAP-TRIAGE-01**：逐个核对村庄服务关键未知是否有新的、可认证的早期一手资料可补。无新证据即标记UNKNOWN并转九族联合审阅，不靠后代NPC继续扩写、不开R79。Stage A 7 PARTIAL+2 OPEN，Stage B GATED。新来源合同独立CI与主线结果必须实际验证后才能宣称通过。
+
+
+
+## 2026-10-17 — 五村服务来源可得性审计后转联合审阅
+
+EARLY-VILLAGE-SERVICE-JOURNEY-01的五类行为来源合同已独立成功后，STAGE-A-EARLY-SOURCE-GAP-TRIAGE-01有界检查供品及ACK、公车收费和真实相邻路线、医疗宠技/回购价目、送货矿石任务奖励及普通落地物到期计时。没有取得可核原版同年代、同业务字段的新增一手记录；网页阅读器错误不代表存档不存在，空检索不是全网不存在。每项明确OPEN_EVIDENCE_LIMITED及重开触发，停止基于后代素材编造初代完整任务。报告 `docs/STAGE-A-EARLY-SOURCE-GAP-TRIAGE-R1.md`、机器清单 `research/recovered/STONEAGE-STAGE-A-EARLY-SOURCE-GAP-TRIAGE-R1.json`，分支源Action39001916143 SUCCESS。
+
+**新的最高NEXT STAGE-A-JOINT-REVIEW-DECISION-01**：向用户提交已完成的九系统联合审阅资料、五类缺源证据、版本标签、可复现但不属于原版商业服的参考流程及不可恢复边界，请用户确认是否按证据受限状态收束Stage A，或继续某项具备新证据的初代内容补证。用户的“继续”仅授权继续Stage A日常研究，不等于默认批准Stage B。正式用户审阅之前保持7 PARTIAL+2 OPEN、Stage B GATED；R79暂停。没有理由重开泛用辅助函数或人工计算百分比。
