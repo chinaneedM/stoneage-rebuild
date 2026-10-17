@@ -6907,3 +6907,14 @@ INTAKE保留精确Availability/CDX请求及空集/503；本地17173练功、问�
 这些晚期网页**不能**证明2001原初1.0、2002大陆1.82已拥有所有脚本、宠物自动筛选或某具体辅助版本。没有取得早期发行包与hash，工具自身可运行性未测试；来源不含需要执行或再分发旧外挂程序的授权。新设计候选由DD-025独立作DESIGN评级。
 
 宠物原版覆盖缺口固定依据原有 `docs/specs/STONEAGE-TW10-UI-RESOURCE-BIND-R1.md`、`research/recovered/STONEAGE-TW10-UI-RESOURCE-BIND-SCOPE-R1.json`、`research/recovered/STONEAGE-25-PET-GROWTH-R1.txt`，其Git blob已在本轮机器清单钉住；没有用上述外挂网页来填补原始宠物实体/成长值。
+
+
+## 2026-10-17 — 后期资料网站结构与可查任务/宠物目录｜只供研究发现
+
+新增三个**当代访问可用而版本归属不同**的参考网站，不作为1999 JSS原始任务/宠物表；其URL、适用范围、严禁提升判断与同源project Git blob均写入`research/recovered/STONEAGE-PREPRODUCTION-CONTENT-ARCHIVE-R1.json`：
+
+- `WEB_QUEST_INDEX`：https://data.sa25.com.cn/tasks/index.html 。当前展示1.82—8.5共131个任务目录，页面自己说明131待核验；用于逐条检索有出处的任务候选和网站信息架构。其“1.82”栏目归类并不证明这些任务属于1999日版或台湾1.0商服，没有同版任务脚本的权威证明。
+- `WEB_PET_INDEX`：https://www.shiqi.club/renwu/chongsheng/pets 。发布者明确称其Lv1宠物野外/任务地点以“本服资料”为依据；可帮助定义未来网站“宠物—地图—NPC—条件—原始出处”查询视角，**不能**据此导入初代全物种名单或野外坐标。
+- `WEB_EARLY_COMMUNITY_LAYOUT`：https://news.17173.com/z/stoneage/newsa/new.shtml 。该页面是8.0时代的玩家资讯栏目/新增内容样式，可见新任务日志、宠物装备等8.0相关说明；不应把后期界面当早年v1.0当代官方画面。
+
+采集所需页面标题、发表时间、旧版网站导航、图片/文本版权归属和首见年代；若页面今日可访问仅认证“目前公开有该页”，**不认证从首发起一直存在或字段与当年服务器完全对应**。不将社区数据库整站抓取进入Git或直接复制未来新作网站。未取得合法可分发许可的原客户端美术及旧运营网页一律只引用可核查元信息/页面链接/指纹，网站正式发布须单独审批授权。

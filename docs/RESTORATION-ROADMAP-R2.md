@@ -374,3 +374,17 @@ EARLY-VILLAGE-SERVICE-JOURNEY-01的五类行为来源合同已独立成功后，
 新增史料谱系初录`docs/STONEAGE-LEGACY-ASSISTANT-TOOLS-CATALOG-R1.md`及宠物覆盖度清单`docs/STONEAGE-PET-QUEST-CONTENT-COVERAGE-RECHECK-R1.md`，由JSON记录14来源/16家族/12项候选原生功能，按2001—2002同期玩家证据与2016+、2020+、2023+晚期软件生态区分。早期资料作为外设功能存在证据，不认证最早发行时间；旧外挂可取便利性，不移植作弊协议、复制/特权漏洞。
 
 **新最优NEXT PET-ASSET-GROWTH-CATALOG-MATRIX-02**：为一组可核验的TW1.0身份与2.5后代宠物模板建立来源/版本/名称/图形号/动画/属性/成长/技能/遇敌位置/任务联动矩阵；真实缺数据即OPEN，不误报已全部复原。**并行后续 LEGACY-ASSISTANT-PROVENANCE-EXPANSION-02**：先找早年开发者发布日志、同代截图及具体函数出现年份，不编造后期产品2001首发史。四季度Stage B共同设计不应在这些资源缺口未识别前锁定宠物全集和高级内挂生产范围；仅可讨论玩法方向与体验价值。Stage A旧技术成果继续有效，R79 PAUSED_NON_BLOCKING。
+
+
+## 2026-10-17 — PREPRODUCTION-HISTORICAL-CONTENT-AND-WIKI-READINESS-01 全域前期准备交付顺序
+
+用户本次进一步强调：老石器全部可核实宠物、NPC、任务、交互/登录/选角界面、人物二维模型、资料官网与外挂所有已知功能，都应先整理作为新作共同设计的素材；未来玩家可查宠物和任务的网站也要提前考虑通用数据结构。**并不表示现在启动新游戏或网站实现**。本节点把此前宠物和外挂双线扩充成覆盖22领域、7个来源版型、15条真实关系连接的版本化全域清单和19个未来网站查询集合，交付docs/STONEAGE-PREPRODUCTION-CONTENT-ARCHIVE-R1.md及同名JSON。原数据仍缺初代商服任务/NPC、原版UI渲染实证与所有宠物跨表连接；所有未知保留UNKNOWN。
+
+按“数据完整性和未来可使用价值”排序：
+1. **PET-ASSET-GROWTH-CATALOG-MATRIX-02**：有可靠同版身份时先对宠物名、资源graphic_id→SPR动画、基础属性/成长、技能、出没/抓捕地点建立真实矩阵，没证据不插值。
+2. **ORIGINAL-UI-LOGIN-AVATAR-REVIEW-01**：复查原始客户端登录、人物创建、人物2D动作、NPC窗口、背包/宠物窗口、战斗展示和音效，从可验证的实际图片或二进制调用轨迹追溯，不抄晚期UI为首发样式。
+3. **WORLD-NPC-QUEST-SOURCE-JOIN-01**：按版本核可见地图/NPC/对话/任务/条件/道具/奖励/登出后标记与缺口。
+4. **LEGACY-ASSISTANT-FULL-FEATURE-ARCHIVE-01**：有名有版本地研究全部辅助软件功能及变化，不预先删除“未来不要”的功能史；不运行可疑外挂或做越权/复制。
+5. **HISTORICAL-SITE-IA-AND-WIKI-EXPORT-CONTRACT-01**：搜集原官网和可靠同期资料站页面结构，设计同版实体查询与版权发布检查规则，不写网站运行服务。
+
+首次源Action39007115468已实际SUCCESS，当前历史长文追加与远端主线验收还须独立完成才可宣称。原Stage A历史有界结论仍有效，现因用户补充材料要求重开有意义领域核对；整体复原百分比不能计算，Stage B只讨论准备，正式生产、网站和高级内挂一律未启动；savedata R79继续暂停。

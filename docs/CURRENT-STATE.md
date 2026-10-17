@@ -14936,3 +14936,18 @@ QUEST-NPC-FLOW-LINK-06有界完成：两条2465→2484候选、1条2478→2481�
 机器源证与负面边界在 research/recovered/STONEAGE-LEGACY-ASSISTANT-AND-CONTENT-GAP-R1.json；脚本 tools/stoneage_legacy_assistant_pet_coverage.py 和反例 tests/test_stoneage_legacy_assistant_pet_coverage.py，加专属workflow。外挂纯历史整理，未下载/运行或分发来历不明旧外挂程序、版权资产或原服载荷；“原始所有外挂”和“宠物全部图片、成长”均不声称完成。
 
 **下一个最高优先级 PET-ASSET-GROWTH-CATALOG-MATRIX-02**：从版本化宠物模板/名称与原资源graphic_id/SPR映射入手，以可访问证据为分母逐条输出已匹配、缺失、其他版本三类。次优先 LEGACY-ASSISTANT-PROVENANCE-EXPANSION-02：为SADE/SAC/SACH/STA等先做2001—2004同代版号、图片和功能首见验证，再分离后期ASSA/STW/NG/SaSH，不直接把现代私服功能塞入1999版。Stage A证据受限检查点与九族7 PARTIAL+2 OPEN既有状态保持；此任务为**有名有物重开覆盖度校勘**，不取消先前接受/不启动Stage B生产；尚未选择引擎和内挂生产配置。分支source CI和远端main必须以实际下一次成功验收为准。
+
+
+## 2026-10-17 — PREPRODUCTION-HISTORICAL-CONTENT-AND-WIKI-READINESS-01 新需求确认：全域历史内容与以后玩家资料站数据准备
+
+用户进一步确认：**前期准备工作尽可能完整后才开始正式的新石器设计**。除前轮宠物/任务/外挂外，将NPC、人物二维模型、登录与选角、所有可查的实际游戏UI窗口、场景/地图/声音/物品数据及各历史版本来源都作为新作借鉴；把经典外挂每种有证据的功能先研究/归档而非现在决定哪些功能采用；未来还可能以**自己的玩家资料网站**提供任务、宠物、地图、攻略检索，接近旧运营方可查资料的使用价值，但目前**不开始制作游戏或网站**。
+
+本轮从GitHub远端main ba4e12c265c1db7caf5d5afdd4b3e068b3df1d1f/tree 081c6952f3ae9ee37ec4e99b25f75edd6c0d3b84启动；main同HEAD的最新八项Actions均实际SUCCESS；读取完整CURRENT-STATE Git blob 697b7e61276b3e816013ec4157128da20329f24b 和协议、README、DESIGN-DECISIONS、HISTORICAL-TIMELINE、SOURCE-REGISTRY、RESTORATION-ROADMAP-R2及宠物/外挂源清单。采用已有原版TW1.0 `research/clients/STONEAGE-TW10-GAMEPLAY-SCHEMA-R1.json`中的16种记录形状及`research/recovered/STONEAGE-TW10-UI-SEMANTICS-R1.json`中的5类UI场景为直接结构输入；确认CreateNewChar13字段、S:P人物26字段、S:K宠物21字段、WN窗口5字段只说明原版数据形状，**不能自动推出原版登录、选角、NPC窗口、战斗屏幕真实布局与具体图像绑定**。
+
+新正式准备资料：
+- `docs/STONEAGE-PREPRODUCTION-CONTENT-ARCHIVE-R1.md`：22领域、7来源版本层、15关键跨系统关系，以及宠物/任务/人物/UI/外挂/玩家站资料共同归档规范；
+- `research/recovered/STONEAGE-PREPRODUCTION-CONTENT-ARCHIVE-R1.json`：历史领域与Unknown、来源精确Git SHA、网站未来19集合、公开/版权门、5包下一任务；
+- `tools/stoneage_preproduction_archive.py`+专门反例单测/Actions：自动阻止把125996位图认作宠物种数、988后代enemybase认作首代、把原版字段误当实际画面、声称外挂已全部还原或玩家网站已开发。
+检索到的现代粉丝站 `data.sa25.com.cn/tasks/index.html` 的131任务(1.82—8.5，全部待核验)及`www.shiqi.club/renwu/chongsheng/pets` 的本服宠物地点仅作为候选来源目录；不能认证1999/TW1.0相同任务/宠物。原先全部史料仍保留无删减；原版权素材/原始外挂exe不入Git。
+
+**下一最高NEXT PET-ASSET-GROWTH-CATALOG-MATRIX-02**：先完成一批来源一致、跨物种/图像/成长/技能/野外区域的真实可验证行与NULL缺口；随后 `ORIGINAL-UI-LOGIN-AVATAR-REVIEW-01`、`WORLD-NPC-QUEST-SOURCE-JOIN-01`、`LEGACY-ASSISTANT-FULL-FEATURE-ARCHIVE-01`、`HISTORICAL-SITE-IA-AND-WIKI-EXPORT-CONTRACT-01`。原阶段性Stage A“证据受限研究检查点接受”只代表当时有限结论，不排斥这些由用户明指的新领域工作；仍九系统7 PARTIAL/2 OPEN、R79暂停；不报全游戏百分比、不启动Stage B引擎/新故事/网站工程。资料目录首轮源CI Action39007115468实际SUCCESS，后续完整历史归档、独立CI和主线验收以实时结果为准。

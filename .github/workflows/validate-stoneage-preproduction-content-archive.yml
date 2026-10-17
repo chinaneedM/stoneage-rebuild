@@ -26,5 +26,5 @@ jobs:
           python-version: '3.12'
       - name: Check content provenance, false-completeness negatives, web-rights gate and historical continuity
         run: |
-          python -m unittest tests.test_stoneage_preproduction_archive -v
+          python -m unittest tests.test_stoneage_preproduction_archive tests.test_stoneage_preproduction_archive_continuity -v
           python -m tools.stoneage_preproduction_archive

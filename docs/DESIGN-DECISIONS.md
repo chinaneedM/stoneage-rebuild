@@ -540,3 +540,48 @@ crosswalk work when the user identifies material missing design inputs.
 deliverables, NOT production-game asset imports. Before a comprehensive
 pet roster or in-game automation is implemented, the applicable source
 matrices and new-game design gates must be reviewed.
+
+
+## DD-026 — Complete a versioned historical content archive before new game and future guide-site production
+
+**Status:** User-directed preparation requirement accepted on 2026-10-17.
+The project owner reinforced that the historic content itself—the original
+NPCs/quests, full pet data and graphics/growth, login and creation screens,
+character 2D sprite "models", dialogue, map, items and every documented
+legacy helper function—is a **first-class design source**. Finish the
+reasonably source-recoverable preparation coverage and record exact gaps
+**before starting production design/build**, rather than equating a Stage A
+bounded historical literature checkpoint with a complete original-game
+content database.
+
+A future standalone game may also need a **player reference website** for
+quests, pet encyclopedia, maps, historical and new-game skills and other
+player-facing knowledge similar in utility to early publisher sites.
+This is an **eventual product option**, not current approval to launch a
+website, register a domain, reproduce publisher copyrighted text/images
+or host public assets. A common provenance-bearing record layer now
+supports both future game content derivation and rights-cleared wiki export,
+with distinct source version, evidence quality, UNKNOWN fields, record
+revision and copyright/publication approval.
+
+Legacy cheat/helper archives should attempt to enumerate **all historically
+evidenced versions and functions** before adoption discussions, including
+features that will likely be rejected. Preserve period, first evidence,
+inputs, intended behavior, what was actually observed, source code/binary
+custody where lawful, and exact unsourced claims. This is archival
+**functional specification**, not blanket permission to execute unsafe
+unknown programs or re-create historical exploits against third-party
+servers. Keep positive convenience functions separated from duping,
+unauthorized teleport, packet-bypass and cheating.
+
+Adopt `docs/STONEAGE-PREPRODUCTION-CONTENT-ARCHIVE-R1.md` and its
+machine manifest as current research architecture: 22 source-content
+domains, seven version profiles, fifteen necessary cross-system
+evidence links, future data model with nineteen search collections, and
+the five bounded preparation work packages. Follow the highest
+`PET-ASSET-GROWTH-CATALOG-MATRIX-02` first; do not add another
+purely conceptual R number without an actual verifiable table/source
+connection. DD-024's Stage A evidence-limited historical milestone
+remains on record and DD-025's tool and pet completeness emphasis
+remains active. Stage B production and public wiki publication remain
+gated by subsequent collaborative choices.
