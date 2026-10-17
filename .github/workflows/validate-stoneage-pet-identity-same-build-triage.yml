@@ -1,0 +1,17 @@
+name: Validate early pet identity same-build evidence boundary
+on:
+  push:
+    paths:
+      - research/recovered/STONEAGE-PET-IDENTITY-SAME-BUILD-TRIAGE-R1.json
+      - tests/test_stoneage_pet_identity_same_build_triage.py
+      - .github/workflows/validate-stoneage-pet-identity-same-build-triage.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-qualification:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - run: python -m unittest tests.test_stoneage_pet_identity_same_build_triage tests.test_stoneage_early_media_article_source -v

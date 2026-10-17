@@ -15084,3 +15084,11 @@ WORLD源分支ec2aa8fac09f13a61c73c9542b2dd9c08c9fc1b9/tree0976772698b7470b72145
 ### 17173媒体快照与22域矩阵：主线12项完整验收
 
 研究两提交已非强制快进并入main 74c2d769694f64cc0bc1359da83e522094463281/tree76b0075304ddca0aea5238051da4a6e39b2fcc23（原main7b94fbbc，ahead2/behind0，13文件变更且无删除）。主线同HEAD 12项Actions最终均SUCCESS，独立来源与22域保管验收Action39038914482、原始网页再次探测Action39038914849/job117414233009均SUCCESS；再次实返2006/2006/2004及0合格早期节点。全部12运行名称/ID保留在STONEAGE-EARLY-MEDIA-ARCHIVE-SNAPSHOT-ACCEPTANCE-R1.json。历史前缀原样保留，本验收只是来源与覆盖工作，不声称原始游戏全部复原；NEXT仍PET-IDENTITY-SAME-BUILD-SOURCE-TRIAGE-01，Stage B与R79继续暂停。
+
+## 2026-10-17 — PET-IDENTITY-SAME-BUILD-SOURCE-TRIAGE-01：宠物姓名与图号同版证据门
+
+本轮从远端main `d82dc72a9fd2d38236f71bab31aa69d12ca17650`／tree `6a0c23a4c4b7d609211bd935009b72a70e38a661`启动，重新读取分支、HEAD、最新提交、Actions、协议、README、DESIGN、TIMELINE、SOURCE、RESTORATION-ROADMAP及完整CURRENT-STATE原Git blob `a4757b7ed32b5de90e3e0406bf7ae28a2d511a3f`。新找到17173两份具名当前迁移页（显示2001-06-14）：依波波124条一级宠物玩家编号汇编和寻梅子・古月stonepic图片编号分类。旧20候选中1条字面完全一致、另6条仅字面近似；不得提升为TW1.0同版物种或服务器刷新。stonepic宠物照片7246–7366、动作95883–125995只属玩家工具的编号范围；TW1.0已证125996条ADRN/464SPR组的资源计数不能直接当玩家工具最大ID比较。未得到原服同构建pet master、客户端选图实参、同版截图与1999–2002原页面字节。
+ 
+有界规格 `docs/STONEAGE-PET-IDENTITY-SAME-BUILD-SOURCE-TRIAGE-R1.md`、元数据 `research/recovered/STONEAGE-PET-IDENTITY-SAME-BUILD-TRIAGE-R1.json` 及独立来源边界测试、工作流。本次保留所有20条此前记录原样、不存网页原文或游戏原资产，停止状态 `OPEN_EVIDENCE_LIMITED_SAME_BUILD_PET_IDENTITY_NOT_OBTAINED`。新分支、主线是否已验收仅以后续实际GitHub Actions为准；不得在运行完成前称成功。
+
+**最高NEXT ORIGINAL-SERVER-NPC-QUEST-SAME-BUILD-SOURCE-TRIAGE-01**：有界从具名最早一手NPC/任务源寻找一个同版事件→道具/条件→持久态的真实链条，若无同构建原始服务器来源则保持UNKNOWN并按22域队列调整。初代全宠物物种/原服任务/登入界面、所有外挂全功能仍缺，Stage A九族7 PARTIAL+2 OPEN；Stage B新作和网站生产GATED，R79仍PAUSED_NON_BLOCKING。无全游戏复原百分比。

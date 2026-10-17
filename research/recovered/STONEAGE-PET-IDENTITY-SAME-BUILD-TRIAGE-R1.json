@@ -1,0 +1,165 @@
+{
+  "schema": "stoneage.pet_identity_same_build_source_triage.r1",
+  "research_date": "2026-10-17",
+  "task": "PET-IDENTITY-SAME-BUILD-SOURCE-TRIAGE-01",
+  "target_version": "TW10_RETAIL_CLIENT_AND_MATCHING_HISTORIC_SERVER",
+  "base_evidence": [
+    {
+      "path": "research/recovered/STONEAGE-EARLY-MEDIA-ARTICLE-PET-SOURCE-R1.json",
+      "git_blob": "f4d110b7053893898338a5b71a94ad15230caf30",
+      "role": "20 later-migrated player aliases, unverified pet identities"
+    },
+    {
+      "path": "research/recovered/STONEAGE-PET-ASSET-GROWTH-CATALOG-MATRIX-R1.json",
+      "git_blob": "8e447f7bf928f3d56cf8711ed22102e7e1ccaf38",
+      "role": "TW1.0 raw SPR->frame->ADRN validated metadata, no pet identity"
+    },
+    {
+      "path": "research/recovered/tw10-resource-metadata/MANIFEST-R1.txt",
+      "git_blob": "6154dcf806163b82cb96af344e6a644143d15f56",
+      "role": "TW1.0 raw-source hashes and resource counts"
+    }
+  ],
+  "newly_examined_sources": [
+    {
+      "id": "MEDIA17173_LV1_124",
+      "title": "所有lv1宠物的捕抓地点或取得法",
+      "as_displayed_date": "2001-06-14",
+      "as_displayed_author": "依波波",
+      "url": "https://news.17173.com/z/stoneage/content/2001-6-14/n182_98793.html",
+      "read_method": "CURRENT_MIGRATED_PUBLIC_PAGE_TEXT",
+      "observed_numbered_player_entries": 124,
+      "numbered_from": 1,
+      "numbered_to": 124,
+      "claim_limit": "AUTHOR_COMPILED_PLAYER_REPORT_NOT_ORIGINAL_GAME_MASTER",
+      "original_2001_page_snapshot_verified": false,
+      "original_client_build_identified": false,
+      "reported_spawns_authenticated": false
+    },
+    {
+      "id": "MEDIA17173_STONEPIC_RANGES",
+      "title": "stonepic的图片编号",
+      "as_displayed_date": "2001-06-14",
+      "as_displayed_author": "寻梅子・古月",
+      "url": "https://news.17173.com/z/stoneage/content/2001-6-14/n84_511.html",
+      "read_method": "CURRENT_MIGRATED_PUBLIC_PAGE_TEXT",
+      "claim_limit": "PLAYER_TOOL_IMAGE_RANGE_LABELS_NOT_TW10_RAW_RECORD_CLASSIFICATION",
+      "original_2001_page_snapshot_verified": false,
+      "stonepic_binary_build_identified": false,
+      "matched_tw10_build": false
+    }
+  ],
+  "selected_lexical_overlaps": [
+    {
+      "old_candidate_id": "MEDIA17173_PETNAME_13",
+      "source_name": "金布伊",
+      "lv1_row": 7,
+      "lv1_label": "金布伊",
+      "relation": "EXACT_NAME_STRING",
+      "same_species_certified": false
+    },
+    {
+      "old_candidate_id": "MEDIA17173_PETNAME_10",
+      "source_name": "奇卡宝斯(橘蟾蜍)",
+      "lv1_row": 84,
+      "lv1_label": "奇卡宝斯",
+      "relation": "PARENTHETICAL_LABEL_STEM_ONLY",
+      "same_species_certified": false
+    },
+    {
+      "old_candidate_id": "MEDIA17173_PETNAME_14",
+      "source_name": "石龟(银色)",
+      "lv1_row": 26,
+      "lv1_label": "石龟",
+      "relation": "PARENTHETICAL_LABEL_STEM_ONLY",
+      "same_species_certified": false
+    },
+    {
+      "old_candidate_id": "MEDIA17173_PETNAME_16",
+      "source_name": "贝鲁卡(绿虎)",
+      "lv1_row": 70,
+      "lv1_label": "贝鲁卡",
+      "relation": "PARENTHETICAL_LABEL_STEM_ONLY",
+      "same_species_certified": false
+    },
+    {
+      "old_candidate_id": "MEDIA17173_PETNAME_17",
+      "source_name": "贝鲁伊卡(黄虎)",
+      "lv1_row": 71,
+      "lv1_label": "贝鲁伊卡",
+      "relation": "PARENTHETICAL_LABEL_STEM_ONLY",
+      "same_species_certified": false
+    },
+    {
+      "old_candidate_id": "MEDIA17173_PETNAME_18",
+      "source_name": "格鲁西斯(红虎)",
+      "lv1_row": 72,
+      "lv1_label": "格鲁西斯",
+      "relation": "PARENTHETICAL_LABEL_STEM_ONLY",
+      "same_species_certified": false
+    },
+    {
+      "old_candidate_id": "MEDIA17173_PETNAME_20",
+      "source_name": "银呼拔拔",
+      "lv1_row": 33,
+      "lv1_label": "呼拔拔",
+      "relation": "DISTINCT_COLOR_PREFIX_LEXICAL_NEIGHBOR_ONLY",
+      "same_species_certified": false
+    }
+  ],
+  "image_category_claims": [
+    {
+      "label": "player_label_pet_portraits",
+      "first_inclusive": 7246,
+      "last_inclusive": 7366,
+      "source_id": "MEDIA17173_STONEPIC_RANGES",
+      "tw10_adrn_certified": false,
+      "tw10_spr_group_certified": false
+    },
+    {
+      "label": "player_label_pet_animations",
+      "first_inclusive": 95883,
+      "last_inclusive": 125995,
+      "source_id": "MEDIA17173_STONEPIC_RANGES",
+      "tw10_adrn_certified": false,
+      "tw10_spr_group_certified": false
+    }
+  ],
+  "image_numbering_boundary": {
+    "source_stonepic_highest_mentioned_number": 126918,
+    "tw10_adrn_record_count": 125996,
+    "comparable_as_id_range_without_index_and_build_proof": false,
+    "identical_build_inferred_from_numeric_similarity": false,
+    "contradiction_of_raw_tw10_resource_index_claimed": false
+  },
+  "identity_fields": {
+    "original_pet_master_id": null,
+    "original_pet_name_from_same_build": null,
+    "original_pet_graphic_id": null,
+    "original_spr_no_for_any_named_pet": null,
+    "verified_original_server_spawn_map": null,
+    "same_build_client_render_selection_callsite": null,
+    "same_build_original_pet_master_acquired": false,
+    "same_build_screenshot_or_provenance_trace_acquired": false
+  },
+  "source_boundaries": {
+    "media_articles_are_independent_official_pet_roster": false,
+    "player_claim_is_historical_gameplay_execution_fact": false,
+    "historical_pet_species_count_proven": false,
+    "any_of_20_candidate_records_promoted_to_same_build_pet_identity": false,
+    "raw_taiwan_resource_asset_join_preserved": true,
+    "no_copyrighted_original_source_payload_committed": true,
+    "stage_b_started": false,
+    "stage_a_system_families_closed": false
+  },
+  "disposition": "OPEN_EVIDENCE_LIMITED_SAME_BUILD_PET_IDENTITY_NOT_OBTAINED",
+  "stop_condition_met": true,
+  "reopen_only_on": [
+    "SAME_BUILD_ORIGINAL_PET_MASTER_WITH_SOURCE_PROVENANCE",
+    "TW10_GRAPHIC_ID_TO_SPR_ORIGINAL_RUNTIME_CALLSITE_WITH_ACTUAL_SELECTOR_VALUES",
+    "AUTHENTICATED_SAME_VERSION_SCREENSHOT_WITH_GRAPHIC_AND_PET_MASTER_MAPPING"
+  ],
+  "next_priority": "ORIGINAL-SERVER-NPC-QUEST-SAME-BUILD-SOURCE-TRIAGE-01",
+  "next_scope": "Check existing earliest first-party/source-provenanced NPC-quest records for one exact TW10 same-build event/state join; absent genuine same-build original server input keep open and shift to source-ready content domains.",
+  "no_restoration_percentage": true
+}
