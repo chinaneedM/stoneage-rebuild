@@ -1,0 +1,23 @@
+name: Validate original TW1.0 login avatar source archive
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_tw10_login_avatar_catalog.py
+      - tests/test_stoneage_tw10_login_avatar_catalog.py
+      - research/recovered/*LOGIN*R1.json
+      - research/recovered/STONEAGE-TW10-LOGIN-AVATAR-ACCEPTANCE-R1.json
+      - docs/specs/STONEAGE-TW10-LOGIN-AVATAR-R1.md
+      - .github/workflows/validate-stoneage-tw10-login-avatar.yml
+permissions:
+  contents: read
+jobs:
+  source-crosswalk:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --quiet capstone pefile
+      - run: python -m unittest tests.test_stoneage_tw10_login_avatar_catalog tests.test_stoneage_tw10_login_avatar_probe tests.test_stoneage_jss_login_manual_probe tests.test_stoneage_tw10_ui_semantics -v

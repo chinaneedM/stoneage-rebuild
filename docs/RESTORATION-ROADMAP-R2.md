@@ -397,3 +397,16 @@ EARLY-VILLAGE-SERVICE-JOURNEY-01的五类行为来源合同已独立成功后，
 本里程碑仅将**同版原SPR动画帧→原位图数据**关系验收，不把S:K graphic_id身份映射、宠物物种名录、原服HP/成长/技能/原野出没、人物/宠物实际画面补成已完成；无原始图像字节提交及版权移植。真正首版宠物内容后续再根据同版server master/原客户端图形查表或一手截图重开。
 
 **最新NEXT ORIGINAL-UI-LOGIN-AVATAR-REVIEW-01**：查原登录/选角/人物2D图像身份/动画/操作界面及对应原客户端/同期图片资料的真实来源；优先识别已存在证据，无法核验不能编造历史UI。其后按既定22域目录推进WORLD-NPC-QUEST-SOURCE-JOIN-01、LEGACY-ASSISTANT-FULL-FEATURE-ARCHIVE-01与HISTORICAL-SITE-IA-AND-WIKI-EXPORT-CONTRACT-01。Stage A旧证据有界审阅仍有效，Stage B生产、玩家百科建设不启动，R79暂停。
+
+
+## 2026-10-17 — ORIGINAL-UI-LOGIN-AVATAR-REVIEW-01 原版调用与官方建角规则
+
+从实时main a041af528eec13a4e832efca09b6c165a146ff8e/tree43265d6f1c317dfc4c396eba91c7934341ba8b41启动，核对最新分支、四条提交、同HEAD全部已返回主线Actions SUCCESS、无待合并PR；完整CURRENT-STATE 1892518字节与Git源逐字节一致，README/协议/Design/Timeline/Source/Roadmap和22域准备顺序已核。最高NEXT原版登录/选角/人物核查，本轮只推进该具名游戏界面内容。
+
+实际重新取得原TW1.0零售盘，校验保存包MD5/SHA1、523449360字节镜像与sa_3.exe SHA256，五种消息ClientLogin/CharList/CreateNewChar/CharDelete/CharLogin各找到一个静态直接发送调用候选与已固定接收回调。建角14压栈、原序列化器13字段转换及字段来源建立有界关联；EARLY_LINEAGE对应的body/face分别加载RVA0x13f709c、0x13f78ac，运行时实际图号、SPR/bitmap身份、完整人物数及屏幕布局均未证明，不把内存地址当图号。
+
+通过JSS官方manual02真实链接取得manual01，实际快照20010418082314（请求20010418083149发生跳转），10924字节，无Shift-JIS替换。第一方明确姓名8个全角字符、能力20点、属性10点且最多分配两类、方向预览/换色/脸部选件/出生村与删除确认；这仅属JSS2001官方说明，不认证1999或台湾1.0同数值同执行。原网页/图片/旧exe未入Git，派生来源及验收链单独永久归档。两页无img引用不代表原游戏无画面。
+
+规格 docs/specs/STONEAGE-TW10-LOGIN-AVATAR-R1.md；机器目录及来源凭据见STONEAGE-TW10-LOGIN-AVATAR-CATALOG-R1.json和STONEAGE-TW10-LOGIN-AVATAR-ACCEPTANCE-R1.json。初次manual01链接片段处理、数字地址转录修正及一次合成测试失败均保留，不据错误零结果下历史结论；独立源/归档/main CI仅按随后真实结果登记。
+
+**最高NEXT WORLD-NPC-QUEST-SOURCE-JOIN-01**：按版本连接现有地图/NPC/对话/任务/物品/条件/奖励与登出标记，选择具名实质记录；无初代同源证据则UNKNOWN，不展开无界后代脚本链。人物实际图号/完整画面需要原版选择表值/边界、运行轨迹或可认证同期截图再重开。其后继续外挂全功能及历史资料站结构。Stage A既有有界研究验收保持、九族7 PARTIAL+2 OPEN；新作/网站生产与R79不启动，无全游戏百分比。

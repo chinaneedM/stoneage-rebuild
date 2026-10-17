@@ -6918,3 +6918,9 @@ INTAKE保留精确Availability/CDX请求及空集/503；本地17173练功、问�
 - `WEB_EARLY_COMMUNITY_LAYOUT`：https://news.17173.com/z/stoneage/newsa/new.shtml 。该页面是8.0时代的玩家资讯栏目/新增内容样式，可见新任务日志、宠物装备等8.0相关说明；不应把后期界面当早年v1.0当代官方画面。
 
 采集所需页面标题、发表时间、旧版网站导航、图片/文本版权归属和首见年代；若页面今日可访问仅认证“目前公开有该页”，**不认证从首发起一直存在或字段与当年服务器完全对应**。不将社区数据库整站抓取进入Git或直接复制未来新作网站。未取得合法可分发许可的原客户端美术及旧运营网页一律只引用可核查元信息/页面链接/指纹，网站正式发布须单独审批授权。
+
+
+## 2026-10-17 — 原版登录/人物来源与JSS建角手册
+
+- 第一方实际快照：https://web.archive.org/web/20010418082314id_/http://www.titan.co.jp/stoneage/manual01.html；10924字节，SHA2565784d9f9e0ddca26240b4c163101759d772cadcc9ef8c81ef24bf99145dbd560。由manual02.html#2015链接去片段后取得，实际日期与请求不同。早期日服说明，非TW1.0/1999对应认证；无原HTML/美术入Git。
+- 原台湾1.0零售盘保存包CD_DIC.rar：沿用既有MD5/SHA1及镜像尺寸、sa_3.exe SHA256cdab9ea049a98bbc96ce93eeaa8b63c688f0c0f0ad8b3183e79d75e47621441a；本轮新静态调用、参数来源与候选写入为派生元数据。精确Git blob与Actions/artifact链由STONEAGE-TW10-LOGIN-AVATAR-ACCEPTANCE-R1固定；不声称原游戏执行、全部人物图号或真实界面。
