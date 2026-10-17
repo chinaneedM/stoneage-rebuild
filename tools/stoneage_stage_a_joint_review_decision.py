@@ -25,7 +25,14 @@ def validate(p):
     req(set(p["source_pins"])==set(SOURCE_PINS),"missing pinned source")
     for k,(path,sha) in SOURCE_PINS.items():
         req(p["source_pins"][k]=={"path":path,"git_blob":sha},"pin meta: "+k)
-        req(hash_git((ROOT/path).read_bytes())==sha,"pin bytes: "+k)
+        raw=(ROOT/path).read_bytes()
+        if k=="roadmap":
+            # Append-only continuity: pin the exact old historical blob, not
+            # the whole mutable living roadmap after this work-unit append.
+            req(len(raw)>33851 and hash_git(raw[:33851])==sha,"roadmap original prefix")
+            req(b"STAGE-A-JOINT-REVIEW-DECISION-01" in raw[33851:],"roadmap append missing")
+        else:
+            req(hash_git(raw)==sha,"pin bytes: "+k)
     rev=json.loads((ROOT/SOURCE_PINS["review"][0]).read_text(encoding="utf-8"))
     gap=json.loads((ROOT/SOURCE_PINS["gap"][0]).read_text(encoding="utf-8"))
     accepted=json.loads((ROOT/SOURCE_PINS["gap_acceptance"][0]).read_text(encoding="utf-8"))
