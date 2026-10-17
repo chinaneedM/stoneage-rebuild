@@ -92,6 +92,29 @@ class LoggingContractTests(unittest.TestCase):
             self.assertRegex(source['sha256'], r'^[a-f0-9]{64}$')
             self.assertEqual(set(source), {'url', 'final_url', 'bytes', 'sha256', 'decoding', 'replacement_characters'})
 
+    def test_permanent_independent_acquisition_preserves_exact_raw_json(self):
+        receipt = json.loads((ROOT / 'research/recovered/STONEAGE-LOGGING-ACCEPTANCE-R1.json').read_text())
+        raw = (ROOT / receipt['permanent_path']).read_bytes()
+        self.assertEqual(len(raw), receipt['raw_json_bytes'])
+        self.assertEqual(hashlib.sha256(raw).hexdigest(), receipt['raw_json_sha256'])
+        self.assertEqual(hashlib.sha1(b'blob ' + str(len(raw)).encode() + b'\0' + raw).hexdigest(), receipt['permanent_git_blob'])
+        self.assertEqual(json.loads(raw), self.data())
+        self.assertEqual(receipt['independent_actual_source_reads'], 6)
+
+    def test_quest_pet_last_hit_restriction_does_not_rewrite_ordinary_loot(self):
+        from tools.stoneage_battle_core_model import BattleDropItem, DropRecipientTicket, DropAllocationRoll, allocate_battle_drop_items
+        binding = json.loads((ROOT / 'research/recovered/STONEAGE-LOGGING-MODEL-BINDING-R1.json').read_text())
+        for pin in binding['source_pins']:
+            body = (ROOT / pin['path']).read_bytes()
+            self.assertEqual(len(body), pin['bytes'])
+            self.assertEqual(hashlib.sha256(body).hexdigest(), pin['sha256'])
+        self.assertFalse(self.data()['observations']['profiles']['compilation']['pet_last_hit_gets_wood'])
+        item = BattleDropItem('synthetic:ordinary', 1)
+        result = allocate_battle_drop_items((item,), (DropRecipientTicket('pet:ally', 'player:owner'),), (DropAllocationRoll(0),))
+        self.assertEqual(result.pending_by_player_entry_id['player:owner'], (item,))
+        self.assertFalse(binding['generic_drop_path_proven_to_implement_logging'])
+        self.assertFalse(binding['runtime_code_changed'])
+
 
 if __name__ == '__main__':
     unittest.main()

@@ -1,0 +1,27 @@
+{
+  "schema": "stoneage.logging.model_binding.r1",
+  "source_pins": [
+    {
+      "path": "research/mechanics/STONEAGE-BATTLE-DROP-SETTLEMENT-R1.md",
+      "bytes": 4961,
+      "sha256": "cdaaa50faba65a98ca8281ce5e6685729b2c6cc167378de354e09da05a449bfc",
+      "git_blob": "0c423f530b01840b5324e86dacec25414b2654a1"
+    },
+    {
+      "path": "tools/stoneage_battle_core_model.py",
+      "bytes": 53972,
+      "sha256": "aa3277294b6aed36ed13bcd90da6b4ea235304ab9a4ce0e48823002c406c2f9a",
+      "git_blob": "747494952b257edebdce956370697186c6d8efb5"
+    }
+  ],
+  "existing_model_scope": "STABLE_DESCENDANT_ORDINARY_BATTLE_DROP",
+  "logging_guide_scope": "SOURCE_SPECIFIC_QUEST_CONTENT",
+  "ordinary_pet_ticket_maps_to_owner": true,
+  "logging_guide_pet_last_hit_gets_wood": false,
+  "rules_are_not_interchangeable": true,
+  "logging_original_dispatcher_identified": false,
+  "generic_drop_path_proven_to_implement_logging": false,
+  "original_item_npc_event_ids_known": false,
+  "runtime_code_changed": false,
+  "engine_binding_action": "KEEP_UNBOUND_UNTIL_VERSIONED_QUEST_DISPATCH_AND_ITEM_ID_EVIDENCE"
+}

@@ -6853,3 +6853,5 @@ INTAKE保存四次精确Availability结果：成人章节/介绍文有具体捕�
 报告research/recovered/STONEAGE-LOGGING-SOURCE-CONTRACT-R1.json记录六源原始hash/大小/实际URL/解码及选段摘要。新增实际捕获：详细页 /web/20031205132111id_/http://games.sina.com.cn:80/zhqu/sta/article/2003-05-20/7612.shtml；索引 /web/20040218115426id_/http://games.sina.com.cn:80/zhqu/sta/rwgl.shtml；汇编 /web/20040822040357id_/http://games.sina.com.cn:80/handbook/0101/01186091.shtml。域名均web.archive.org，未把请求日期当最终快照。原始HTML不入Git。
 
 INTAKE保留精确Availability/CDX请求及空集/503；本地17173练功、问答、任务页及带平台参数问答HTTP567，web问答超时；这些不是整个来源不存在。练功文使用旧临时全文时先核对原始hash与永久独立成人来源CI报告blob058225a89962dbcfb49e464f7de999f0f5f81121，不假称新本地网络读取；新CI仍必须重取全部六源。17173任务页可见同文仅排除为重复候选，没有新增字节级比对证明。共享文字/归档不提升独立作者数，现代私服“1.82”标签和后期无限收益不当原版依据。
+
+伐木独立来源CI38992670848/job117278246924全部成功，永久派生blob5d1a98763e41f33e627119eba13c7f2b25de5679与本地字节/六源原始hash相等；artifact12085354353 ZIP hash5c64ca6d2b0142c9a446cd819c0f50343796fcb01718fe10e1f0a47aede8d96d。ACCEPTANCE保存链，MODEL-BINDING固定后代普通掉落两来源，仅说明不能把伐木尾刀限制全局化；不复跑原生深层辅助链。

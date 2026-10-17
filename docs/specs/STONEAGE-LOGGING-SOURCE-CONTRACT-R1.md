@@ -44,3 +44,10 @@ python tools/stoneage_logging_probe.py --output /tmp/logging-derived.json
 当前原始物品/NPC/事件ID、精确地区构建、尾刀奖励派发代码、完成／重复／奖励持久化仍OPEN。缺口只在有来源的原始任务或物品表、新可定年独立规则材料时重开，不重复转载搜索。
 
 **最高下一项 QUEST-ITEM-IDENTITY-04**：用已有recovered25物品表形状／94列schema／修订记录及既有获取工作流，只核对“杉／衫手环、采伐许可、断斧／改造斧”这组名称候选的后代模板与属性身份，检查当前setup选中表，停止于有限候选清单。不得把后代ID或同名物品倒填TW1.0，不再扫描整站攻略或深挖R79。正式联合审阅仍待用户；九族7 PARTIAL+2 OPEN，Stage A未终验、Stage B GATED。
+
+
+## 独立验收与现有掉落模型的边界
+
+[Action38992670848](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/38992670848) / job117278246924成功，31项检查及全部六源真实获取通过；远端读取17173成功，不抹去本地失败。下载ZIP与API digest相同，派生JSON7032字节与本地逐字节相等，永久blob `5d1a98763e41f33e627119eba13c7f2b25de5679`。详见 [验收链](../../research/recovered/STONEAGE-LOGGING-ACCEPTANCE-R1.json)。
+
+[有限绑定评估](../../research/recovered/STONEAGE-LOGGING-MODEL-BINDING-R1.json)固定现有后代普通掉落规格/模型：普通掉落的宠物票据可转给主人；伐木攻略则称宠物尾刀不得木。二者范围不同，不能用任务攻略覆盖全局普通掉落。伐木的原始派发器、物品与事件身份未得，仍不绑定任何现有通用掉落路径，运行时代码不变。新增归档与跨范围回归后本地共33项；归档后远端CI仍须再验。

@@ -14732,3 +14732,10 @@ CI另加入新抓取业务观察/手册节摘要与永久派生报告的独立�
 本地17173 HTTP567/查询超时未隐藏；练功文旧临时字节先核对已永久独立CI来源hash5bc0ffa5d8ad6becf713adfe0f7349bb1d56758d2a2ee6c4b6a4fbd168f2fed5，未称本轮新取。新CI必须实际重取六源；不以缓存冒充来源成功。原始HTML只在临时目录/CI，Git存派生元数据，规格docs/specs/STONEAGE-LOGGING-SOURCE-CONTRACT-R1.md；SOURCE-CONTRACT/INTAKE在research/recovered/STONEAGE-LOGGING-*。31项本地来源边界回归通过，独立远端来源/归档验收随后追加。
 
 **Highest NEXT QUEST-ITEM-IDENTITY-04**：复用现有recovered25物品表形状、94列schema、修订记录和既有获取流程，只核对杉/衫手环、采伐许可、断斧/改造斧名称候选、属性和setup选中表，停止于有限后代身份清单；后代ID不倒填TW1.0，不全量枚举或重扫攻略。原始NPC/item/event IDs、构建/尾刀派发/持久化仍OPEN；成人/伐木只有新原始表或定年独立规则源才重开。九族7 PARTIAL+2 OPEN，Stage A未终验、Stage B GATED，R79继续暂停。
+
+
+### 独立六源获取、永久归档与掉落绑定边界
+
+源提交690da9cedbde10235f195b69f83e0f63ef68b6b5/treeabc342002b6eb4acb11a745468352d7c3d9b804d，Action38992670848/job117278246924 SUCCESS：31项检查、六个真实URL及三个实际快照取得，全部合同/选段一致。远端17173读取成功；本地HTTP567历史仍保留，未改写为本地成功。artifact12085354353为2366字节ZIP，hash5c64ca6d2b0142c9a446cd819c0f50343796fcb01718fe10e1f0a47aede8d96d。原JSON7032字节/hash5c98e7f9287c297396d494b99a7fe658824eb2687d1654ce52faabd4de839033，永久blob5d1a98763e41f33e627119eba13c7f2b25de5679，与本地逐字节相等，六源原始hash均相等。完整链见STONEAGE-LOGGING-ACCEPTANCE-R1.json。
+
+另补有限模型绑定评估：既有后代普通掉落模型允许宠物票据映射主人，不能用汇编伐木“宠物尾刀无木”修改全局普通掉落。MODEL-BINDING固定现有模型/规格两个源hash；没有识别伐木原始派发器或改运行时代码。增加永久JSON hash/blob及跨范围回归后本地33项通过；六种真实临时源变异均拒绝。归档后远端CI/主线整合随后验收，下一项仍QUEST-ITEM-IDENTITY-04。
