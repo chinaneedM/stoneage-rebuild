@@ -1,0 +1,42 @@
+{
+  "schema": "stoneage.pet_asset_growth_crosswalk.acceptance.r1",
+  "date": "2026-10-17",
+  "start_main": "198a3385641d2119919b65225a65082c615b9e16",
+  "source_branch": "agent/pet-spr-adrn-provenance-crosswalk-r1-20261017",
+  "source_first_commit": "12e79debb172e5adee23931e395377391ae63c20",
+  "verified_machine_report_commit": "7ffca8f334030251ab0d85616b8a534d353bac9b",
+  "verified_machine_report_tree": "2948280efcae1fc1836eb7b914c38056fd645f96",
+  "resource_report_git_blob": "8e447f7bf928f3d56cf8711ed22102e7e1ccaf38",
+  "independent_ci": [
+    {
+      "run": 39024292573,
+      "job": 117372109124,
+      "conclusion": "SUCCESS"
+    },
+    {
+      "run": 39024503298,
+      "conclusion": "SUCCESS"
+    }
+  ],
+  "historical_exact_prefixes": [
+    {
+      "path": "docs/CURRENT-STATE.md",
+      "blob": "94627e6a9eb2e7a3d44bef08525f183668bb7d5f",
+      "bytes": 1889475
+    },
+    {
+      "path": "docs/RESTORATION-ROADMAP-R2.md",
+      "blob": "6e1f2b9693352767c1db474093243b79543d8844",
+      "bytes": 40553
+    }
+  ],
+  "resource_frame_adrn_complete_for_fixed_tw10": true,
+  "species_identity_crosswalk_complete": false,
+  "original_pet_growth_complete": false,
+  "original_client_render_runtime_executed": false,
+  "new_proprietary_payload_added": false,
+  "stage_b_started": false,
+  "archival_ci": "PENDING_NOT_CLAIMED",
+  "main_integration_ci": "PENDING_NOT_CLAIMED",
+  "next": "ORIGINAL-UI-LOGIN-AVATAR-REVIEW-01"
+}

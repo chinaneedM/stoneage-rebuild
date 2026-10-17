@@ -14951,3 +14951,16 @@ QUEST-NPC-FLOW-LINK-06有界完成：两条2465→2484候选、1条2478→2481�
 检索到的现代粉丝站 `data.sa25.com.cn/tasks/index.html` 的131任务(1.82—8.5，全部待核验)及`www.shiqi.club/renwu/chongsheng/pets` 的本服宠物地点仅作为候选来源目录；不能认证1999/TW1.0相同任务/宠物。原先全部史料仍保留无删减；原版权素材/原始外挂exe不入Git。
 
 **下一最高NEXT PET-ASSET-GROWTH-CATALOG-MATRIX-02**：先完成一批来源一致、跨物种/图像/成长/技能/野外区域的真实可验证行与NULL缺口；随后 `ORIGINAL-UI-LOGIN-AVATAR-REVIEW-01`、`WORLD-NPC-QUEST-SOURCE-JOIN-01`、`LEGACY-ASSISTANT-FULL-FEATURE-ARCHIVE-01`、`HISTORICAL-SITE-IA-AND-WIKI-EXPORT-CONTRACT-01`。原阶段性Stage A“证据受限研究检查点接受”只代表当时有限结论，不排斥这些由用户明指的新领域工作；仍九系统7 PARTIAL/2 OPEN、R79暂停；不报全游戏百分比、不启动Stage B引擎/新故事/网站工程。资料目录首轮源CI Action39007115468实际SUCCESS，后续完整历史归档、独立CI和主线验收以实时结果为准。
+
+
+## 2026-10-17 — PET-ASSET-GROWTH-CATALOG-MATRIX-02 台湾1.0 SPR动画帧→ADRN原始位图完整连接验收
+
+本轮从远端main 198a3385641d2119919b65225a65082c615b9e16/tree5c14453decc6ffa3fdcf01f2f90310dacb3285f6重新读取HEAD、提交与九项SUCCESS主线Actions、README、协议、历史长文完整Git blob94627e6a9eb2e7a3d44bef08525f183668bb7d5f、Roadmap、Design、Timeline、Source Registry、22域准备目录。最高NEXT为PET-ASSET-GROWTH-CATALOG-MATRIX-02，本轮先取得**实际而非概念性资料链接**。
+
+用Git已固定台湾1.0原盘派生的ADRN/SPR-GROUP/SPR-ANIMATION/SPR-FRAME四份gzip元数据文件，在脚本 `tools/stoneage_pet_asset_growth_catalog.py` 严格验证压缩包SHA256及源清单Git blob，再逐行完整连接所有记录、检查SPR组→动画index→帧序列→ADRN bitmap身份。独立实际CI Action39024292573/job117372109124 SUCCESS：125,996个原ADRN图像号、464 SPR组、39,065段动画、242,085帧；其中238,593帧成功指向原版ADRN，3,492帧是0xFFFFFFFF空位图哨兵，非空却不属于本原版ADRN的帧数量为**零**。这是完整原始资源索引的相互关系核证，**不是已认出全部宠物、人物或者原版画面实际渲染**。
+
+另外截取并保存真实9个SPR组实例（索引0—5、102、373、463），每行同时给出SPR编号、动画数、帧数、空哨兵、示例bitmap号、direction/anim_no数值；`spr_no=100410`全部352帧为哨兵，`spr_no=100102`有4个哨兵。代表数据指纹及机器存档 `research/recovered/STONEAGE-PET-ASSET-GROWTH-CATALOG-MATRIX-R1.json`，人可读 `docs/STONEAGE-PET-ASSET-GROWTH-CATALOG-MATRIX-R1.md`，独立复算和反例测试同步归档。第二次完整存档CI Action39024503298已真实SUCCESS。
+
+**限制与结论**：台湾1.0 S:K第2字段graphic_id已识别，但`graphic_id→SPR组→具体宠物物种/名字→基础成长值/技能/捕获区域`缺真实同版原服务器资料/客户端选择链，不能反推。后代2.5活动enemybase988行和名称hash662个distinct非原版物种全集；原增长公式只属后代。九系统7 PARTIAL+2 OPEN与Stage A用户接受的有界审阅保持，不声称原初所有宠物、画面或初代服已完成；原图片字节和外挂exe未提交。此成果是`RESOURCE_FRAME_TO_ADRN_CERTIFIED`，宠物身份`OPEN`，无总复原百分比。
+
+**新最高NEXT ORIGINAL-UI-LOGIN-AVATAR-REVIEW-01**：以原始客户端创建人物body_image_id/face_image_id、五类UI通信记录、资源图号及同期原始截图/原版可执行调用证据，查人物形象、登录/选角与实际窗口布局的连接；没同代截图/调用图时保持OPEN，不做现代想象替代。宠物身份映射一旦有原版`graphic_id→SPR group`或同代宠物master再具名重开。后续WORLD-NPC-QUEST、外挂全部功能归档与未来百科仍为设计前准备任务。Stage B生产/资料网站未启动，R79 PAUSED_NON_BLOCKING。归档成功与main CI必须另按实际结果验收，不提前宣称。

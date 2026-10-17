@@ -388,3 +388,12 @@ EARLY-VILLAGE-SERVICE-JOURNEY-01的五类行为来源合同已独立成功后，
 5. **HISTORICAL-SITE-IA-AND-WIKI-EXPORT-CONTRACT-01**：搜集原官网和可靠同期资料站页面结构，设计同版实体查询与版权发布检查规则，不写网站运行服务。
 
 首次源Action39007115468已实际SUCCESS，当前历史长文追加与远端主线验收还须独立完成才可宣称。原Stage A历史有界结论仍有效，现因用户补充材料要求重开有意义领域核对；整体复原百分比不能计算，Stage B只讨论准备，正式生产、网站和高级内挂一律未启动；savedata R79继续暂停。
+
+
+## 2026-10-17 — PET-ASSET-GROWTH-CATALOG-MATRIX-02 源字节索引关联完成，宠物身份未证
+
+新增直接针对四份TW1.0原资源派生gzip索引的逐条跨表核验，Action39024292573和39024503298真实SUCCESS：125996 ADRN bitmap，464 SPR组，39065段animation，242085 frame；238593非空frame全部有原ADRN bitmap身份，3492帧为0xFFFFFFFF空哨兵，其他无法连接帧为0。九个可复核原SPR组样本、各示例bitmap/direction/anim_no存在`research/recovered/STONEAGE-PET-ASSET-GROWTH-CATALOG-MATRIX-R1.json`。特别`spr_no=100410`有352个纯哨兵帧，不能因为有SPR组就说那是某只宠物的完整立绘。外部后代资料988行敌人表、662名称哈希和实际原宠物图形/增长关系仍不同版本、未验实。
+
+本里程碑仅将**同版原SPR动画帧→原位图数据**关系验收，不把S:K graphic_id身份映射、宠物物种名录、原服HP/成长/技能/原野出没、人物/宠物实际画面补成已完成；无原始图像字节提交及版权移植。真正首版宠物内容后续再根据同版server master/原客户端图形查表或一手截图重开。
+
+**最新NEXT ORIGINAL-UI-LOGIN-AVATAR-REVIEW-01**：查原登录/选角/人物2D图像身份/动画/操作界面及对应原客户端/同期图片资料的真实来源；优先识别已存在证据，无法核验不能编造历史UI。其后按既定22域目录推进WORLD-NPC-QUEST-SOURCE-JOIN-01、LEGACY-ASSISTANT-FULL-FEATURE-ARCHIVE-01与HISTORICAL-SITE-IA-AND-WIKI-EXPORT-CONTRACT-01。Stage A旧证据有界审阅仍有效，Stage B生产、玩家百科建设不启动，R79暂停。
