@@ -32,5 +32,28 @@
   "original_early_npc_binding_proven": false,
   "source_runtime_executed": false,
   "historical_stage_a_accepted": false,
-  "stage_b_gate": "GATED"
+  "stage_b_gate": "GATED",
+  "post_archival_validation": {
+    "head": "51e1e3f3d1461b10bb66e7cd073aaac551b9e9c7",
+    "tree": "0223e2afd27ee609175604be047c17f4e09e00ca",
+    "run_id": 38996581460,
+    "job_id": 117290371679,
+    "conclusion": "success",
+    "checks": 14,
+    "source_download_skipped": true,
+    "replay_scope": "PERMANENT_DERIVED_NPC_METADATA_AND_SOURCE_PROBE_BLOB",
+    "prior_failed_run_retained": 38996169729,
+    "original_source_run_id": 38996224450,
+    "main_before": "704ce4e07a4c991bb726208b40ca30eb9f0be3fb",
+    "ahead_by": 3,
+    "behind_by": 0,
+    "changed_paths": 9,
+    "deletions": 0,
+    "main_nonforce_fast_forward_completed": true,
+    "main_after": "51e1e3f3d1461b10bb66e7cd073aaac551b9e9c7",
+    "main_item_role_workflow_run_id": 38996626400,
+    "main_item_role_workflow_conclusion": "success",
+    "main_tw10_r58_custody_run_id": 38996626529,
+    "main_tw10_r58_custody_conclusion": "success"
+  }
 }

@@ -14800,3 +14800,11 @@ QUEST-ITEM-IDENTITY-04本轮有界交付完成：两个固定表各五后代候�
 来源artifact12087620874为960字节ZIP SHA256 3c4774d955c155af0d426f419ce672dba0d2321caa81a27232d4ab2353225cd2；成员quest-npc-item-derived.json 4546字节 SHA256 901e835c921557da9dae7380b70aac0522fe4ff251c888de4289c91fb0da34f6。永久衍生报告research/recovered/STONEAGE-QUEST-NPC-ITEM-CI-DERIVED-R1.json Git blob7d771b2aa4f39646879659303f4926045ae730cc，与原成员逐字节一致；来源HEAD/tree/run/job/artifact/ZIP/raw/blob及否证边界由STONEAGE-QUEST-NPC-ITEM-ACCEPTANCE-R1.json固定。Git没有原始专有NPC/对白/脚本。归档后工作流以永久元数据独立重放，不将此称为第二次下载源包。后续归档CI、分支收尾、main整合需以实时验收为准，不能预报其结果。
 
 **Highest NEXT QUEST-NPC-FLOW-LINK-06**：限于本轮已发现的ExChangeMan EventEnd物品字段，进一步查验同一记录是否有2478许可、2484断斧、2465交差斧、2481手环的确切发收/门槛组合；没有合格同记录证据时写UNKNOWN并停止。不泛扫全NPC或后世任务；后代同记录仍不等于早期游戏执行事实。正式Stage A联合审阅仍需用户，九族7 PARTIAL+2 OPEN，Stage B GATED，R79 PAUSED_NON_BLOCKING。
+
+### 归档后独立验收、main整合与下一包交接
+
+分支51e1e3f3d1461b10bb66e7cd073aaac551b9e9c7/tree0223e2afd27ee609175604be047c17f4e09e00ca的归档重放Action38996581460/job117290371679 SUCCESS：首次源Action38996224450的永久原JSON与Git blob身份、解析源blob指纹、五ID/49次10类型、覆盖缺口、原始证据不晋级及五种反例均核对，共14项测试；原始包取得、解压和上传步骤均明确SKIPPED，不冒称第二次源获取。旧失败Action38996169729保留。
+
+合并前GitHub实时比较main704ce4e07a4c991bb726208b40ca30eb9f0be3fb与分支ahead3/behind0、9路径无删除，按expected-head非强制fast-forward写回main至51e1e3f3d1461b10bb66e7cd073aaac551b9e9c7。再次确认主线tree0223e2afd27ee609175604be047c17f4e09e00ca和CURRENT-STATE完整Git blob7ea7ea7c9e120d38b259851ba31dbbaad4615213。该main的NPC角色重放Action38996626400 SUCCESS、旧TW10 R58来源custody Action38996626529 SUCCESS；不改写其它历史CI失败。
+
+后续永久保管链追加至STONEAGE-QUEST-NPC-ITEM-ACCEPTANCE-R1.json，不改变首次9项源验收。**最高下一项仍QUEST-NPC-FLOW-LINK-06**，只在同一个后代ExChangeMan EventEnd记录内核对实际共现；不恢复早期NPC身份、不推广为原服运行，不重开R79。九族7 PARTIAL+2 OPEN，Stage A待正式联合审阅、Stage B GATED。本段记录更新的CI尚须新独立验收，不可预称成功。
