@@ -67,3 +67,5 @@ Stage A仍未终验、九族7 PARTIAL+2 OPEN、Stage B GATED，R79暂停。普�
 归档Action38993879936/job117281964762已通过9项检查及永久元数据重放，原始包取得步骤明确跳过；main非强制整合至c4a36fc4a755bfa673bf5306a4362e51ba173438。新增提取AST合同和schema-helper指纹核对后本地共11项；它们固定第一次真实源实验所用的提取函数／查询／常量，提取逻辑改动不能只靠旧派生数据蒙混通过，须重新来源验收。
 
 [下一项绑定预检](../../research/recovered/STONEAGE-QUEST-ITEM-NEXT-BINDING-INTAKE-R1.json)只固定已有解析工具和五个目标ID，尚无NPC配置抽取结果。GetItem／DelItem方向必须按实际FunctionSet解释；FREE条件、普通ItemShop商品与ExChangeMan发奖不混为一谈。模板歧义和缺参数文件仍算缺口，数字命中不直接算任务绑定。
+
+提取合同补强后的Action38994084480/job117282616943已通过11项检查和永久数据/源合同重放，正式审阅Action38994084428成功；main已按expected-head非强制整合至91e8c16e30dc768f1a0b43b237bb5951bdab4b8b。原始候选JSON从GitHub不可变blob读回，与本地原字节相等。最终合同验收已追加ACCEPTANCE，初代身份与NPC绑定未知保持。
