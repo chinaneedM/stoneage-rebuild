@@ -90,10 +90,9 @@ def semantic_hits(functionset, argument):
                 matched, role = event_items(value), "EXCHANGE_ITEM_PREDICATE"
             elif key == b"additem" and func in ACTION_RUN_FUNCTIONSETS:
                 matched, role = exact_items(value), "ACTION_ADDITEM_CANDIDATE"
-            elif func == "itemshop":
-                # A shop field is never a quest reward: do not infer field meaning.
-                matched = exact_items(value)
-                role = "ITEMSHOP_CATALOG_ONLY"
+            elif func == "itemshop" and key in (b"item", b"items", b"itemid", b"itemlist"):
+                # A catalog item reference is not task delivery.
+                matched, role = exact_items(value), "ITEMSHOP_CATALOG_ONLY"
             elif key in (b"getitem", b"delitem", b"additem"):
                 matched = exact_items(value)
             elif key == b"event":
