@@ -7,6 +7,8 @@ ROOT = Path(__file__).resolve().parents[1]
 NEW = ROOT / "research/recovered/STONEAGE-PET-IDENTITY-SAME-BUILD-TRIAGE-R1.json"
 OLD = ROOT / "research/recovered/STONEAGE-EARLY-MEDIA-ARTICLE-PET-SOURCE-R1.json"
 ASSETS = ROOT / "research/recovered/STONEAGE-PET-ASSET-GROWTH-CATALOG-MATRIX-R1.json"
+ORIGINAL_VERIFIED = ROOT / "research/recovered/STONEAGE-EARLY-VISUAL-ID-RANGES-VERIFIED-R1.json"
+ORIGINAL_INPUT = ROOT / "research/recovered/STONEAGE-EARLY-VISUAL-ID-RANGES-INPUT-R1.json"
 
 class SameBuildPetIdentityTriageTest(unittest.TestCase):
     @classmethod
@@ -14,6 +16,8 @@ class SameBuildPetIdentityTriageTest(unittest.TestCase):
         cls.data = json.loads(NEW.read_text(encoding="utf-8"))
         cls.old = json.loads(OLD.read_text(encoding="utf-8"))
         cls.assets = json.loads(ASSETS.read_text(encoding="utf-8"))
+        cls.verified = json.loads(ORIGINAL_VERIFIED.read_text(encoding="utf-8"))
+        cls.original_input = json.loads(ORIGINAL_INPUT.read_text(encoding="utf-8"))
 
     def test_two_distinct_named_late_migration_sources(self):
         sources = self.data["newly_examined_sources"]
@@ -25,6 +29,10 @@ class SameBuildPetIdentityTriageTest(unittest.TestCase):
         lv1 = next(x for x in sources if x["id"] == "MEDIA17173_LV1_124")
         self.assertEqual((lv1["numbered_from"], lv1["numbered_to"], lv1["observed_numbered_player_entries"]), (1, 124, 124))
         self.assertFalse(lv1["reported_spawns_authenticated"])
+        self.assertEqual(lv1["source_material_status"], "NEW_LEXICAL_EVIDENCE_ADDED_THIS_PACKAGE")
+        stonepic = next(x for x in sources if x["id"] == "MEDIA17173_STONEPIC_RANGES")
+        self.assertEqual(stonepic["source_material_status"], "RECHECKED_PREEXISTING_GIT_EVIDENCE_NOT_NEW")
+        self.assertFalse(stonepic["tw10_semantic_categories_verified"])
 
     def test_alias_joins_are_lexical_only_and_existing_candidates_preserved(self):
         original = {x["record_id"]: x for x in self.old["pet_name_candidates"]}
@@ -52,6 +60,29 @@ class SameBuildPetIdentityTriageTest(unittest.TestCase):
         self.assertEqual(counts["spr_groups"], 464)
         self.assertFalse(self.data["image_numbering_boundary"]["comparable_as_id_range_without_index_and_build_proof"])
         self.assertFalse(self.data["image_numbering_boundary"]["contradiction_of_raw_tw10_resource_index_claimed"])
+
+    def test_prior_exact_tw10_bitmap_membership_not_reported_as_new(self):
+        rep = self.verified["verified_range_report"]
+        self.assertEqual(rep["tw10_bitmap_range"], [0, 125995])
+        self.assertEqual(rep["tw10_adrn_bitmap_records"], 125996)
+        b = self.data["image_numbering_boundary"]
+        self.assertTrue(b["tw10_adrn_record_ids_verified_contiguous"])
+        self.assertEqual((b["tw10_adrn_min_bitmap_id"], b["tw10_adrn_max_bitmap_id"]), (0, 125995))
+        self.assertTrue(b["stonepic_source_previously_examined_in_repo"])
+        self.assertTrue(b["tw10_id_membership_before_this_package"])
+        ranges = {x["id"]: x for x in rep["ranges"]}
+        for key, count in [("pet_portrait", 121), ("pet_actions", 30113)]:
+            self.assertEqual(ranges[key]["present_in_tw10_adrn"], count)
+            self.assertFalse(ranges[key]["category_tw10_verified"])
+            self.assertFalse(ranges[key]["actual_tw10_semantic_certified"])
+        claims = self.data["image_category_claims"]
+        self.assertEqual([x["tw10_adrn_present_count"] for x in claims], [121, 30113])
+        self.assertTrue(all(x["tw10_id_membership_verified_in_preexisting_repo"] for x in claims))
+        self.assertTrue(all(not x["tw10_semantic_label_verified"] for x in claims))
+        path_to_blob = {x["path"]: x["git_blob"] for x in self.data["base_evidence"]}
+        self.assertEqual(path_to_blob[str(ORIGINAL_INPUT.relative_to(ROOT))], "11bb14ef00c2ed354c5f00f510da8783376f1f28")
+        self.assertEqual(path_to_blob[str(ORIGINAL_VERIFIED.relative_to(ROOT))], "0007030347a635b19ec9739897f2b582bd92e98f")
+        self.assertTrue(self.data["correction"]["preexisting_source_is_duplicate_not_new"])
 
     def test_all_pet_identity_and_game_production_gates_remain_unproven(self):
         self.assertEqual(self.data["disposition"], "OPEN_EVIDENCE_LIMITED_SAME_BUILD_PET_IDENTITY_NOT_OBTAINED")

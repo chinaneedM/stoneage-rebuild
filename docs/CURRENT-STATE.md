@@ -15092,3 +15092,10 @@ WORLD源分支ec2aa8fac09f13a61c73c9542b2dd9c08c9fc1b9/tree0976772698b7470b72145
 有界规格 `docs/STONEAGE-PET-IDENTITY-SAME-BUILD-SOURCE-TRIAGE-R1.md`、元数据 `research/recovered/STONEAGE-PET-IDENTITY-SAME-BUILD-TRIAGE-R1.json` 及独立来源边界测试、工作流。本次保留所有20条此前记录原样、不存网页原文或游戏原资产，停止状态 `OPEN_EVIDENCE_LIMITED_SAME_BUILD_PET_IDENTITY_NOT_OBTAINED`。新分支、主线是否已验收仅以后续实际GitHub Actions为准；不得在运行完成前称成功。
 
 **最高NEXT ORIGINAL-SERVER-NPC-QUEST-SAME-BUILD-SOURCE-TRIAGE-01**：有界从具名最早一手NPC/任务源寻找一个同版事件→道具/条件→持久态的真实链条，若无同构建原始服务器来源则保持UNKNOWN并按22域队列调整。初代全宠物物种/原服任务/登入界面、所有外挂全功能仍缺，Stage A九族7 PARTIAL+2 OPEN；Stage B新作和网站生产GATED，R79仍PAUSED_NON_BLOCKING。无全游戏复原百分比。
+
+
+### 2026-10-17 — PET-IDENTITY来源去重补正及首版main验收
+
+前一PET源研究分支 `b42dcf3236c8e7adb1fbb25d7e0a1fb85bbd8043` 八个工作流已实际SUCCESS、非强制快进合入main；新主线同SHA九个Actions实际SUCCESS，含专用宠物身份验证39041066950、2001图片编号原盘对照39041066860、原资源帧链39041066940。补查历史 `docs/STONEAGE-EARLY-UI-AVATAR-VISUAL-RANGE-R1.md`、`STONEAGE-EARLY-VISUAL-ID-RANGES-INPUT/VERIFIED-R1.json` 发现stonepic文章在先前包**已经存证且证实原台湾1.0 AD RN ID 0—125995连续、宠物照片121/121、宠物动作30113/30113存在**。先前PET提交把stonepic写作本轮新增来源和只讲记录数不等于最大ID，现明确更正：stonepic旧证据复核**不计新来源**；真正新增是依波波124行玩家目录与七条候选名称文字连接。原照片/动作用途和具名物种→图号依旧未经同版语义证实，补正不会把新证据量、历史谱系、进度夸大。
+
+补正规格追加至 `docs/STONEAGE-PET-IDENTITY-SAME-BUILD-SOURCE-TRIAGE-R1.md`，机器核查连接此前Input/Verified来源及指纹，补一组对照原成功编号报告的回归测试；当前纠正后分支/Actions以及新的main结果，须以后续实际状态为准，不提前宣称。原始历次Git提交、失败历史与CURRENT-STATE完整前缀未删除。最高 NEXT仍`ORIGINAL-SERVER-NPC-QUEST-SAME-BUILD-SOURCE-TRIAGE-01`，先找同构建原服NPC任务记录，证据不可得即有限停止并转组合矩阵。 Stage A 7 PARTIAL+2 OPEN，Stage B GATED，R79暂停。

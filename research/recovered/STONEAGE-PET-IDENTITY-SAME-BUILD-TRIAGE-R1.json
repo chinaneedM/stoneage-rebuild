@@ -18,6 +18,16 @@
       "path": "research/recovered/tw10-resource-metadata/MANIFEST-R1.txt",
       "git_blob": "6154dcf806163b82cb96af344e6a644143d15f56",
       "role": "TW1.0 raw-source hashes and resource counts"
+    },
+    {
+      "path": "research/recovered/STONEAGE-EARLY-VISUAL-ID-RANGES-INPUT-R1.json",
+      "git_blob": "11bb14ef00c2ed354c5f00f510da8783376f1f28",
+      "role": "EXISTING stonepic category source and non-semantic labels already archived before this task"
+    },
+    {
+      "path": "research/recovered/STONEAGE-EARLY-VISUAL-ID-RANGES-VERIFIED-R1.json",
+      "git_blob": "0007030347a635b19ec9739897f2b582bd92e98f",
+      "role": "EXISTING independent TW10 bitmap membership: exact contiguous 0..125995, 121 pet portrait and 30113 pet action candidate IDs; semantic binding FALSE"
     }
   ],
   "newly_examined_sources": [
@@ -34,7 +44,8 @@
       "claim_limit": "AUTHOR_COMPILED_PLAYER_REPORT_NOT_ORIGINAL_GAME_MASTER",
       "original_2001_page_snapshot_verified": false,
       "original_client_build_identified": false,
-      "reported_spawns_authenticated": false
+      "reported_spawns_authenticated": false,
+      "source_material_status": "NEW_LEXICAL_EVIDENCE_ADDED_THIS_PACKAGE"
     },
     {
       "id": "MEDIA17173_STONEPIC_RANGES",
@@ -46,7 +57,13 @@
       "claim_limit": "PLAYER_TOOL_IMAGE_RANGE_LABELS_NOT_TW10_RAW_RECORD_CLASSIFICATION",
       "original_2001_page_snapshot_verified": false,
       "stonepic_binary_build_identified": false,
-      "matched_tw10_build": false
+      "matched_tw10_build": false,
+      "source_material_status": "RECHECKED_PREEXISTING_GIT_EVIDENCE_NOT_NEW",
+      "preexisting_source_path": "research/recovered/STONEAGE-EARLY-VISUAL-ID-RANGES-INPUT-R1.json",
+      "preexisting_verified_path": "research/recovered/STONEAGE-EARLY-VISUAL-ID-RANGES-VERIFIED-R1.json",
+      "tw10_id_membership_already_verified": true,
+      "tw10_semantic_categories_verified": false,
+      "tw10_same_version_pet_identity_verified": false
     }
   ],
   "selected_lexical_overlaps": [
@@ -114,7 +131,10 @@
       "last_inclusive": 7366,
       "source_id": "MEDIA17173_STONEPIC_RANGES",
       "tw10_adrn_certified": false,
-      "tw10_spr_group_certified": false
+      "tw10_spr_group_certified": false,
+      "tw10_id_membership_verified_in_preexisting_repo": true,
+      "tw10_semantic_label_verified": false,
+      "tw10_adrn_present_count": 121
     },
     {
       "label": "player_label_pet_animations",
@@ -122,7 +142,10 @@
       "last_inclusive": 125995,
       "source_id": "MEDIA17173_STONEPIC_RANGES",
       "tw10_adrn_certified": false,
-      "tw10_spr_group_certified": false
+      "tw10_spr_group_certified": false,
+      "tw10_id_membership_verified_in_preexisting_repo": true,
+      "tw10_semantic_label_verified": false,
+      "tw10_adrn_present_count": 30113
     }
   ],
   "image_numbering_boundary": {
@@ -130,7 +153,14 @@
     "tw10_adrn_record_count": 125996,
     "comparable_as_id_range_without_index_and_build_proof": false,
     "identical_build_inferred_from_numeric_similarity": false,
-    "contradiction_of_raw_tw10_resource_index_claimed": false
+    "contradiction_of_raw_tw10_resource_index_claimed": false,
+    "tw10_adrn_record_ids_verified_contiguous": true,
+    "tw10_adrn_min_bitmap_id": 0,
+    "tw10_adrn_max_bitmap_id": 125995,
+    "tw10_post_max_id_126766_absent": true,
+    "tw10_same_build_pet_semantics_verified": false,
+    "stonepic_source_previously_examined_in_repo": true,
+    "tw10_id_membership_before_this_package": true
   },
   "identity_fields": {
     "original_pet_master_id": null,
@@ -161,5 +191,14 @@
   ],
   "next_priority": "ORIGINAL-SERVER-NPC-QUEST-SAME-BUILD-SOURCE-TRIAGE-01",
   "next_scope": "Check existing earliest first-party/source-provenanced NPC-quest records for one exact TW10 same-build event/state join; absent genuine same-build original server input keep open and shift to source-ready content domains.",
-  "no_restoration_percentage": true
+  "no_restoration_percentage": true,
+  "correction": {
+    "supersedes_only_claims_of_novelty_and_missing_tw10_bitmap_id_verification": true,
+    "preexisting_source_is_duplicate_not_new": true,
+    "new_content_is_124_player_compilation_and_selected_alias_matches": true,
+    "original_prior_commit_retained": "b42dcf3236c8e7adb1fbb25d7e0a1fb85bbd8043",
+    "original_media_index_not_claimed_historical_verified": true,
+    "main_actions_on_previous_commit_all_success_count": 9,
+    "all_old_failures_and_history_preserved": true
+  }
 }
