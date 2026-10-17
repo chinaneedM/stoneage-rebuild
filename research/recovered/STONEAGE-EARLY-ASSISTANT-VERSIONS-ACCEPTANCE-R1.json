@@ -46,6 +46,16 @@
       "bytes": 9039,
       "sha256": "e65b7f6abd58ed78b3a3361aafeeba4eaf28458d9ee2be7934a2ed4c1215c20a",
       "git_blob": "c8698eb2b4d397cc754f0723b878b5ea1730a32a"
+    },
+    "research/recovered/STONEAGE-HISTORICAL-WIKI-QUERY-CONTRACT-DRAFT-R1.json": {
+      "bytes": 4711,
+      "sha256": "094073991c08282da89019212c9c6bb3638b9aa3bde772951baba8dea37c6756",
+      "git_blob": "03a008395d944afdac0d70952a0b140aba76dc29"
+    },
+    "tests/test_stoneage_historical_wiki_query_contract.py": {
+      "bytes": 1567,
+      "sha256": "b2499ae0a95fe678a6575367bdde29fe9419f063989dd8eef9ed00fb0698e5a3",
+      "git_blob": "012b2440a06d805b1aa5abcc14ec3482245ba8c7"
     }
   },
   "archive_ci": [
@@ -135,5 +145,80 @@
       "name": "Validate StoneAge Stage A joint review decision",
       "conclusion": "success"
     }
-  ]
+  ],
+  "query_contract_acceptance": {
+    "head": "b23735920771c0f0dd395e14f6a408dfa10d961b",
+    "tree": "9ef82d7c803dbaaa150331a2ae03fcf02048e04d",
+    "branch_ci": [
+      {
+        "head": "7c3daeae9633ff8a0f9613cfaf2430a798fa6498",
+        "run": 39034237533,
+        "conclusion": "success"
+      },
+      {
+        "head": "b23735920771c0f0dd395e14f6a408dfa10d961b",
+        "run": 39034380017,
+        "job": 117401149069,
+        "conclusion": "success"
+      }
+    ],
+    "main_ci": [
+      {
+        "run": 39034415920,
+        "name": "Independently verify TW1.0 R58 rooted helper returns and source custody",
+        "conclusion": "success"
+      },
+      {
+        "run": 39034415975,
+        "name": "Validate Stage A evidence-limited review acceptance",
+        "conclusion": "success"
+      },
+      {
+        "run": 39034415882,
+        "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+        "conclusion": "success"
+      },
+      {
+        "run": 39034415957,
+        "name": "Validate StoneAge Stage A joint review decision",
+        "conclusion": "success"
+      },
+      {
+        "run": 39034415945,
+        "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+        "conclusion": "success"
+      },
+      {
+        "run": 39034415859,
+        "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+        "conclusion": "success"
+      },
+      {
+        "run": 39034415867,
+        "name": "Validate Stage A early source gap triage",
+        "conclusion": "success"
+      },
+      {
+        "run": 39034415833,
+        "name": "Validate legacy StoneAge assistant history and pet content gaps",
+        "conclusion": "success"
+      },
+      {
+        "run": 39034415840,
+        "name": "Validate archived early assistant version evidence",
+        "conclusion": "success"
+      },
+      {
+        "run": 39034415836,
+        "name": "Validate StoneAge preproduction content archive and wiki boundary",
+        "conclusion": "success"
+      },
+      {
+        "run": 39034415829,
+        "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+        "conclusion": "success"
+      }
+    ],
+    "query_contract_status": "DRAFT_NOT_WEBSITE_IMPLEMENTATION"
+  }
 }
