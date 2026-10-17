@@ -1,0 +1,71 @@
+{
+  "schema": "stoneage.quest_item_identity.intake.r1",
+  "status": "INDEPENDENT_SOURCE_ACQUISITION_PENDING",
+  "remote_start_head": "a26cde43888171188a461acffa727e6b2e5dd69f",
+  "remote_start_tree": "b744991027ca81d56a97a1e67993432291496222",
+  "remote_branches": 299,
+  "latest_main_actions_success": [
+    38993108605,
+    38993108432
+  ],
+  "in_progress_at_start": 0,
+  "history_prefixes": [
+    {
+      "path": "README.md",
+      "bytes": 7369,
+      "sha256": "75408a98eb11ef98f9f1327375ba0d96e3df173e9921e0830085f0d07c2066af",
+      "blob": "d362e5a1cc591158b049056b2bd438f2a64dabf5"
+    },
+    {
+      "path": "docs/PROJECT-CONTINUITY-PROTOCOL-R1.md",
+      "bytes": 9762,
+      "sha256": "c44834eeec87f7a43e9cb4905f08377349e36d58b1fff2c5a75a6975db695e3b",
+      "blob": "ba9bbe19384589400abc61af37a360a40bf91452"
+    },
+    {
+      "path": "docs/CURRENT-STATE.md",
+      "bytes": 1846776,
+      "sha256": "7a9d0ffea956d38efedc7a11e61ee4ae29b8ecd5ca4e46e669023f2f15e82acc",
+      "blob": "065761af0788fa1fd6fe3929e2802e8d59381397"
+    },
+    {
+      "path": "docs/DESIGN-DECISIONS.md",
+      "bytes": 31862,
+      "sha256": "4b940540657a0141339bf0ab84e04e59e63756c3e5647ab379b2ad60bc577771",
+      "blob": "133d5c60cbbd668dbe1221098408f5f11e24b441"
+    },
+    {
+      "path": "docs/HISTORICAL-TIMELINE.md",
+      "bytes": 421419,
+      "sha256": "74c890c34ff3fc4b47a89768db08a8f5cdca2bd90f57362072598402213d2ae3",
+      "blob": "e5996d51ff04630f6662c6fd3be83d803769c235"
+    },
+    {
+      "path": "docs/SOURCE-REGISTRY.md",
+      "bytes": 659454,
+      "sha256": "b160373264eb62b8d0323b374b784d63a9d909c27a7f5b02b15b9ff28a26c202",
+      "blob": "e73e9578f0065d5e36aa9f9b8c0b057d40458f5d"
+    },
+    {
+      "path": "docs/RESTORATION-ROADMAP-R2.md",
+      "bytes": 26462,
+      "sha256": "da7693f97c8a8d293fd4c261fad4e47377818ba3e0b7eaef7b25c13a4ad5b0f8",
+      "blob": "9cfb552ba851d6ba339615122d5b74cfaf853b94"
+    },
+    {
+      "path": "docs/STAGE-A-CONSOLIDATED-REVIEW-R1.md",
+      "bytes": 15155,
+      "sha256": "c57edd91b76be98981e550f4c84317787c31d45d6bbfcf9d392cbb4a48437d1a",
+      "blob": "260437dd635eb277ca576a3c57b82d9d70099626"
+    }
+  ],
+  "prior_preflight": "research/recovered/STONEAGE-LOGGING-ITEM-INTAKE-R1.json",
+  "legacy_recovery_workflow_sha256": "168ec21d638876fb2b13c296cfa59e5178334c31e8d3c1b820867e7fb35fd769",
+  "independent_recovery_step_reused_unchanged": true,
+  "original_payloads_in_git": false,
+  "original_server_executed": false,
+  "source_attempt_limit": "one independently executed existing fixed-hash route; no blind local endpoint repetition",
+  "expected_output": "candidate numeric IDs/stats/lifetime flags, row/name byte hashes, active setup and source hashes; no copied item descriptions or original rows",
+  "early_identity_inferred": false,
+  "stage_b_gate": "GATED"
+}
