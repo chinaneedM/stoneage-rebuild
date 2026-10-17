@@ -22,6 +22,18 @@ jobs:
         run: python -m unittest tests.test_stoneage_transport_core_model tests.test_stoneage_savepoint_elder_model tests.test_stoneage_healer_recovery_model -v
       - name: Acquire seven fixed public evidence pages, retain metadata only
         run: python tools/stoneage_early_content_probe.py --output "$RUNNER_TEMP/early-content-derived.json"
+      - name: Independently compare fresh observations with permanent source report
+        run: |
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          fresh = json.loads((Path(os.environ['RUNNER_TEMP']) / 'early-content-derived.json').read_text())
+          archived = json.loads(Path('research/recovered/STONEAGE-EARLY-CONTENT-CI-DERIVED-R1.json').read_text())
+          assert fresh['observations'] == archived['observations']
+          assert fresh['manual_capture'] == archived['manual_capture']
+          assert fresh['original_server_executed'] is False
+          print('fresh source observations and manual section hashes match permanent derived report')
+          PY
       - uses: actions/upload-artifact@v4
         with:
           name: early-content-derived
