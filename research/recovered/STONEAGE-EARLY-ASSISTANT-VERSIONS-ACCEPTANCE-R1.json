@@ -1,0 +1,51 @@
+{
+  "schema": "stoneage.early_assistant_versions.acceptance.r1",
+  "source_head": "b4c7f322ac4e4e5db581b2af580e262db1183ef8",
+  "source_tree": "51eeba6274d781e7df3fa8b2528bf7b38b9fe797",
+  "run": 39033762316,
+  "job": 117399363842,
+  "conclusion": "success",
+  "artifact_id": 12100364947,
+  "zip_digest": "sha256:c731eb75ef251a4bd2e5428420387eb29387d1182f8c0e5b50de45e600b1345b",
+  "zip_bytes": 2549,
+  "failed_attempts": [
+    {
+      "head": "e2bc1abe29323ef48c8e2cfc1e259128f5b91fd5",
+      "run": 39033711856,
+      "job": 117399217229,
+      "conclusion": "failure",
+      "reason": "Repeated 0.2a self-reference was misread as an additional release; fixed with regression test."
+    }
+  ],
+  "all_features_recovered": false,
+  "software_executed": false,
+  "source_body_sha256": {
+    "comparison": "7cd332536020e24ac10f098bb35d3d149f562b159a3b2409537bae6c8f99a7c6",
+    "sach123": "e9b8f53452fec7e6cf42784738b77d06b13d576de564f476b84d91b6326d03a3",
+    "sade": "647eb221f1262d3e6e69b0f17a860fe7f73de6855386040672d3540a84990b16",
+    "settings": "13ee7c13ff7b7485bbc3022dabf89c4354946217b1b4edc42988b445abe05f18"
+  },
+  "version_section_sha256": [
+    "fa14efd40d51c7f5b44d7144da77be626bab286b6852fcfef99eefee9f66ae4f",
+    "0e0de87706717da24acf829894943cd3069aabe5960816ec7ba03cd925a6ba22",
+    "9a42a42ab0378ef55f101076ef9dd127a5f9a8e3f3a4e9e1860b2c9dae8045a1",
+    "0cb5a13f1b808175c96d0610b7a72eb6984ac2b774fca30baa3322a6873766fe",
+    "3e8298102e286ec151014007a9be0359a53e0935c2d34ef7084f4d4f3fc61916",
+    "63d86bfb1dbe3a036e0e29582a24b1b8cb6d4d5eb3f7cffe46ebfb34e973a443",
+    "111bd524dfd0b9ad30baca650f2170208f250d1b557ac44abc2d3db1a08b46e7",
+    "efc6060867f019e139b0f4dfae0f608647b9a78d9111748a07c3dcb078f3acbd",
+    "e217c2d8ee71c5b2e06b111383cedeae4b56c2f0b52e72f69528fed3d0acaca0"
+  ],
+  "reports": {
+    "research/recovered/STONEAGE-EARLY-ASSISTANT-VERSIONS-R1.json": {
+      "bytes": 6662,
+      "sha256": "69e79885e2c032b99f17666b131d1abf7f3f81fe33699b702103d055fc399667",
+      "git_blob": "7a518dff830c6a0a62add101e43a2d34aeb528c9"
+    },
+    "tools/stoneage_legacy_version_witness.py": {
+      "bytes": 9039,
+      "sha256": "e65b7f6abd58ed78b3a3361aafeeba4eaf28458d9ee2be7934a2ed4c1215c20a",
+      "git_blob": "c8698eb2b4d397cc754f0723b878b5ea1730a32a"
+    }
+  }
+}

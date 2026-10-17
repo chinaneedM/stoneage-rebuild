@@ -49,3 +49,10 @@
 ## STA2.52 首批逐项功能见证（2026-10-17）
 
 2002-03-10署名用户评测已按版本拆成9项记录，分别保留可用报告、改进请求、未验证菜单、比较项、临时对策和传闻。自动恢复脚本与自动缩屏是作者希望增加的能力；特殊动作条件未验证成功。详见STONEAGE-LEGACY-STA252-FEATURES-R1.json。不是开发者完整变更日志，也未执行软件或决定新作采用。
+
+
+## 早期版本有限批（2026-10-17）
+
+SADE8条部分更新回顾与0.2g独立变体、STA/SACHXP同期比较7观察面、配置7观察面、SaCh1.23名称版号见证已按来源分层，规格见docs/specs/STONEAGE-EARLY-ASSISTANT-VERSION-HISTORY-R1.md。现有STA2.52九项记录保持独立。回顾不是开发者日志，未给版号的比较不借用2.52；脚本评价矛盾、未来功能传闻、运气归因均未升级成事实。
+
+源Action39033762316真实SUCCESS；STONEAGE-EARLY-ASSISTANT-VERSIONS-R1.json与ACCEPTANCE-R1.json只保留派生与凭据。不宣称16家族或全部功能完成，未运行/采用旧工具。本有限批后按组合复原顺序转HISTORICAL-SITE-IA-SOURCE-MAP-01，工具开发者版史/精确构建缺口保留待具名新来源再开。

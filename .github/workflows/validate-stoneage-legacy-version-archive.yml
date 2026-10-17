@@ -1,0 +1,18 @@
+name: Validate archived early assistant version evidence
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - research/recovered/STONEAGE-EARLY-ASSISTANT-VERSIONS*.json
+      - tools/stoneage_legacy_version_witness.py
+      - tests/test_stoneage_legacy_version*.py
+      - docs/specs/STONEAGE-EARLY-ASSISTANT-VERSION-HISTORY-R1.md
+      - .github/workflows/validate-stoneage-legacy-version-archive.yml
+permissions:
+  contents: read
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python -m unittest tests.test_stoneage_legacy_version_witness tests.test_stoneage_legacy_version_archive tests.test_stoneage_sta252_feature_witness tests.test_stoneage_sta252_feature_archive -v

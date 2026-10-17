@@ -6947,3 +6947,15 @@ SRC-SA-20010709-CLIENT-FILES-01：https://news.17173.com/z/stoneage/content/2001
 ### S05 STA2.52具名版本来源重新取得
 
 https://news.17173.com/z/stoneage/content/2002-3-10/n974_891060.html ，原发表栏2002-03-10、作者☆阿仇☆，用户评测非开发者release notes。来源Action39026963821；当前HTML字节SHA与正文规范摘要、9条类别及ZIP/raw/派生Git blob保管在STONEAGE-LEGACY-STA252-ACCEPTANCE-R1。只归档派生事实和状态，不复制全文或执行旧软件。
+
+
+## 2026-10-17 — S03/S06/S07/S08早期版本归档加深
+
+源Action39033762316/job117399363842，HEADb4c7f322ac4e4e5db581b2af580e262db1183ef8，四页UTF-8严格解码、原始响应及正文SHA/发表栏/作者分别固定。原始HTML不提交；派生STONEAGE-EARLY-ASSISTANT-VERSIONS-R1.json及ACCEPTANCE-R1.json永久保存，含源ZIP/raw/Git blob和代码凭据。
+
+- S03 https://news.17173.com/z/stoneage/content/2001-11-11/n691_607613.html?_platform=PC — 水银水晶VS炎之天舞，2001-11-11：SaCh1.23提及，不把邻文复制指控绑定具体构建。
+- S06 https://news.17173.com/z/stoneage/content/2002-3-21/n936_852654.html?_platform=PC — 地藏乌拉，2002-03-21：STA/SACHXP用户比较7观察面；无精确版号，矛盾/传闻/主观性能不升级。
+- S07 https://news.17173.com/z/stoneage/content/2002-8-19/n337_253594.html?_platform=PC — E_skyline，2002-08-19：SADE部分版本回顾，8列表条目另加0.2g变体，不是发布日志。
+- S08 https://news.17173.com/z/stoneage/content/2002-9-27/n286_202934.html — 天行，2002-09-27：7配置/经验观察面，原称MX/SAT/阿背/天使，不绑定未知精确版本，运气归因非因果规则。
+
+当前发表栏不认证当年网页字节。额外线索“初试STA2.53bate7的小心得”由S06页相关链接导向异常转义URL，原形式404、清理目标后本次检索不可访问，搜索无结果；本次没有取得正文，不以标题/推荐日期推断功能或发布日期，保留具名待追证。

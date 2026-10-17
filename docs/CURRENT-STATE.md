@@ -15010,3 +15010,16 @@ WORLD源分支ec2aa8fac09f13a61c73c9542b2dd9c08c9fc1b9/tree0976772698b7470b72145
 同轮顺序推进外挂资料第一条具名版本：STA2.52用户评测源Action39026963821实际SUCCESS，原发表栏2002-03-10、作者☆阿仇☆。9条派生记录分别保留报告可用、请求、菜单行为未验证、比较项、对策和传闻，自动脚本恢复/自动缩屏不能误记为已实现；非开发者完整更新日志，原软件未运行，不决定新作采用。派生JSON与独立ZIP/raw/代码blob保管见STONEAGE-LEGACY-STA252-FEATURES及ACCEPTANCE-R1，只有元数据永久存档；本条后归档/main CI另按真实结果确认。
 
 **下一最高NEXT仍LEGACY-ASSISTANT-FULL-FEATURE-ARCHIVE-01**：继续SADE早期版序列及SaCh/SACHXP—STA有版号对照，按实际发布/评测/作者回忆分层；已完成的STA2.52单篇见证不等于该工具全部功能或全部外挂。之后转历史官网/资料站查询结构；不重开R79或新作/网站生产。
+
+
+## 2026-10-17 — LEGACY-ASSISTANT-FULL-FEATURE-ARCHIVE-01 早期有限版本批
+
+从实时main0758bfe120b51b3280043a7b41c43b604188701d/treeaacf83a6379661e2ab3ec3b0cfe7c740702d7660启动，重读分支/HEAD/tree/最新四提交/Actions/无待合并PR，以及README、协议、完整CURRENT-STATE1901790字节、Design、Timeline、Source和Roadmap；六份连续性文本与远端Git逐字节一致。最高早期外挂版本归档，本包只覆盖四篇已有署名来源，不扩大后代savedata或生产。
+
+源Action39033762316/job117399363842实际SUCCESS，源HEADb4c7f322ac4e4e5db581b2af580e262db1183ef8/tree51eeba6274d781e7df3fa8b2528bf7b38b9fe797。SADE回顾列8个条目0.1a、0.2a—0.2f、0.2h，另列0.2g限制分发变体，共9版本主张；只属作者部分更新回顾，不认证发布日期、首创或完整功能继承。同期STA/SACHXP比较7观察面、个人配置7观察面、SaCh1.23仅名称版号见证；无精确版号的文章不借用2.52。脚本优劣矛盾、未来练功传闻、时间锁与运气的经验归因分别保留，复制指控不自动归给SaCh1.23构建。
+
+派生JSON6662字节SHA25669e79885e2c032b99f17666b131d1abf7f3f81fe33699b702103d055fc399667，已核artifact12100364947 ZIP2549字节、SHA256c731eb75ef251a4bd2e5428420387eb29387d1182f8c0e5b50de45e600b1345b。版本局部/正文边界/来源署名/原始派生字节和代码blob保管、精确语义重放与负面边界测试本地17项通过（含已有STA2.52）。源Action39033711856因重复0.2a自指解析失败，修复回归测试后成功；本地回执JSON布尔转录曾失败，纠正后重测，均未以失败零结果下历史结论。原HTML/版权资源/旧软件未入Git，未运行外挂或决定新作采用。
+
+规格docs/specs/STONEAGE-EARLY-ASSISTANT-VERSION-HISTORY-R1.md；派生及保管回执STONEAGE-EARLY-ASSISTANT-VERSIONS-R1.json与ACCEPTANCE-R1.json永久保存。归档与主线CI在后续回执按真实结果登记。
+
+**最高NEXT HISTORICAL-SITE-IA-SOURCE-MAP-01**：依协议结果导向顺序，从早期官网/资料站真实导航、栏目与文章归属形成有来源、版本、年代、不确定性和内容域的百科查询结构草案；仅研究信息结构，不开始网站生产。早期外挂全部家族/功能仍不完整，具名缺口是开发者发布记录、SADE版本日期/继承、STA2.53可靠正文、SACHXP精确构建及后期工具版本。找到独立同代发布/截图/包目录才再开，不把本有限批称为所有外挂完成。Stage A旧有界验收保持，九族7 PARTIAL+2 OPEN；原版宠物/任务/实际画面缺口仍在，新作/网站生产与R79暂停，无全游戏百分比。
