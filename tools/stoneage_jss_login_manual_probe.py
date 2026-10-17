@@ -34,7 +34,7 @@ def derive(body,final_url,page):
  plain={k:' '.join(' '.join(v).split()) for k,v in p.sections.items()}
  terms={'login':'ログイン','character':'キャラクタ','creation':'作成','password':'パスワード','name':'名前'}
  relevant=[k for k,s in plain.items() if any(t in s for t in terms.values())]
- contract=creation_contract(plain) if page=='manual01.html' else None
+ contract=creation_contract(plain) if page=='manual01.html' and {'1010','1020','1040'}<=set(plain) else None
  return {'creation_contract':contract,'requested_page':page,'final_url':final_url,'actual_capture':m.group(1),
   'bytes':len(body),'sha256':hashlib.sha256(body).hexdigest(),'replacement_characters':text.count('\ufffd'),
   'section_count':len(plain),'relevant_section_anchors':relevant,
