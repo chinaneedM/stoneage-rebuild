@@ -22,6 +22,26 @@
   },
   "all_features_recovered": false,
   "software_executed": false,
-  "archive_ci": [],
-  "main_ci": []
+  "archive_ci": [
+    {
+      "head": "e78eda81cd5488c7ef09a4dff657c901633b545a",
+      "run": 39027105088,
+      "name": "Validate archived STA2.52 feature evidence",
+      "conclusion": "success"
+    }
+  ],
+  "main_ci": [
+    {
+      "head": "e78eda81cd5488c7ef09a4dff657c901633b545a",
+      "run": 39027138867,
+      "name": "Validate archived STA2.52 feature evidence",
+      "conclusion": "success"
+    },
+    {
+      "head": "e78eda81cd5488c7ef09a4dff657c901633b545a",
+      "run": 39027138897,
+      "name": "Verify STA2.52 versioned feature witness",
+      "conclusion": "success"
+    }
+  ]
 }
