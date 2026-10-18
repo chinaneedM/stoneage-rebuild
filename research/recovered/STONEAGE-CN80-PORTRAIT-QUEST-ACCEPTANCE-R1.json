@@ -1,0 +1,66 @@
+{
+  "schema": "stoneage.cn80.portrait.quest.acceptance.r1",
+  "source_branch": "agent/cn80-portrait-quest-source-r1-20261018",
+  "source_head_before_continuity": "ddb339991a3229669c1f0a794fc529b6690d77bd",
+  "verified_source_actions": [
+    {
+      "id": 39124563986,
+      "status": "failure",
+      "cause": "decimal_coords_parsed_as_step_number",
+      "preserve_failure": true
+    },
+    {
+      "id": 39124652068,
+      "status": "failure",
+      "cause": "fullwidth_parentheses_rejected",
+      "preserve_failure": true
+    },
+    {
+      "id": 39124716683,
+      "status": "success",
+      "job": 117667311744,
+      "adversarial_tests_passed": 8,
+      "artifact_id": 12135382985,
+      "independently_downloaded": true,
+      "zip_sha256": "b9458b30b3efcc7854f1a8bd845b8edcf511429201f53c2c520606655824f9b6",
+      "raw_json_bytes": 4349,
+      "raw_json_sha256": "a8fbd74485e53d3a0e6bab442339947a08102fcfa890fd8ce768803a614fbc74"
+    },
+    {
+      "id": 39125067564,
+      "status": "success",
+      "job": 117668345873,
+      "permanent_derived_cmp": "success"
+    },
+    {
+      "id": 39125258450,
+      "status": "success",
+      "job": 117668923114,
+      "original_source_cmp": "success",
+      "adversarial_suite": "success",
+      "archive_suite": "success"
+    }
+  ],
+  "source_index": {
+    "url": "https://news.17173.com/z/stoneage/renwu/renwu.htm",
+    "bytes": 34236,
+    "sha256": "84a4f0bb593f09d2f5dbd180142870b267d846c2c898f9d78477a3e38b7bba8f"
+  },
+  "source_detail": {
+    "url": "https://news.17173.com/z/stoneage/renwu/sa80_05.shtml",
+    "bytes": 24459,
+    "sha256": "328571c2dbabbb337f27f06a76ecaf3eeae621fdad4a0979d8089e980dfd8e19"
+  },
+  "permanent_source_derived_git_blob": "8b6457e458a2efa7c5ac8260242655d8e1c05322",
+  "permanent_catalog_git_blob": "4dd47d6fbe748729c4787444925ab364f458f628",
+  "spec_git_blob": "e597eb07c05eee658752fa9b5337f819595c6652",
+  "no_copyrighted_source_html_or_images": true,
+  "late_2012_original_byte_sha_pinned": false,
+  "old_8_0_original_publication_date": null,
+  "original_server_quest_or_reward_proven": false,
+  "stage_b_production": "GATED",
+  "r79": "PAUSED_NON_BLOCKING",
+  "next": "CN80_PORTRAIT_PREREQUISITE_VERSION_BOUNDARY-01",
+  "branch_final_ci": "PENDING_NEW_HEAD",
+  "main_integration": "PENDING_NEW_HEAD"
+}

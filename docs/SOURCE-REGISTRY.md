@@ -7107,3 +7107,11 @@ STONEAGE-HISTORICAL-WIKI-QUERY-CONTRACT-DRAFT-R1.json引用四个既有派生Git
 - **同文转载不得按第二份新闻独立认证**：https://news.17173.com/content/2005-6-9/n50_966545.html ，页面时间2005-06-09 10:30:41且末尾注明「来源：巴哈姆特」，报道内容同源。转载日期是发布日而不是另一次石器版本发布/新建source-lineage。
 - **大陆专区、原发布时间UNKNOWN**：https://news.17173.com/z/stoneage/newsa/new.shtml 与 https://news.17173.com/z/stoneage/newsa/about.shtml ，17173页面标示《新石器时代》8.0/华义开发/金山运营；列出宠物装备合成、导师、任务日志以及具名新任务「爱作画的少女」。文献等级为THIRD_PARTY_GAME_PORTAL_UNDATED，缺页面同期原始快照/精确客户端构建/任务ID；它不是华义台湾 2005-06第一方网页，也不验证TW1.0共用数据。
 - 机读source_ids、region、lineage、同源去重、验证层级和11合同见 `research/recovered/STONEAGE-80-SYSTEMS-CROSS-VERSION-EVIDENCE-R1.json`，详细见 `docs/specs/STONEAGE-80-SYSTEMS-CROSS-VERSION-EVIDENCE-R1.md`。源提交4eb3d3de/专用Action39123252107已实际SUCCESS 5项档案结构负例；**不是原网页独立哈希/实际运行确认**。原新闻全文、HTML、图片及游戏资产不入Git。
+
+
+## 2026-10-18 — CN8《爱作画的少女》玩家任务正文来源与2012异文
+
+- 真实 [17173任务目录](https://news.17173.com/z/stoneage/renwu/renwu.htm) `34236B` SHA256`84a4f0bb593f09d2f5dbd180142870b267d846c2c898f9d78477a3e38b7bba8f`，确切标签→href指向 `https://news.17173.com/z/stoneage/renwu/sa80_05.shtml`。后者`24459B` SHA256`328571c2dbabbb337f27f06a76ecaf3eeae621fdad4a0979d8089e980dfd8e19`，UTF8；独立CI首次两次错误`39124563986`/`39124652068`属工具步骤和坐标括号验证问题，不篡改失败，后续源重放`39124716683`/`39125067564`/`39125258450`成功。
+- 页面称8.0任务攻略、有14步骤；来源为`THIRD_PARTY_PLAYER_WALKTHROUGH`，原发布时间和2005同期归档未知，不把当前页面页脚Copyright 2026当任务发布日期。玩家记载的2人、5宠、5色颜料和5幅画像交付序列是逐条已源定位**叙述**，不认证原服脚本/物种ID/奖励物品ID。
+- 晚期资料`https://news.17173.com/content/2012-04-10/20120410145731224.shtml`为2012-04-10针对8.5的报道，提到完成「无法逃离的审判」后才能接任务及一幅画像，与8.0无前置描述/五幅结尾分开；原HTML未PIN，不保证一方实施证明。
+- 成功源Action`39124716683`/job`117667311744` artifact`12135382985`，独立下载ZIP1757B SHA256`b9458b30b3efcc7854f1a8bd845b8edcf511429201f53c2c520606655824f9b6`，内部`derived.json`4349B SHA256`a8fbd74485e53d3a0e6bab442339947a08102fcfa890fd8ce768803a614fbc74`。永久保管`research/recovered/STONEAGE-CN80-PORTRAIT-QUEST-R1.json`及`-CATALOG-R1.json`，出处、负例、同版与后代边界见`docs/specs/STONEAGE-CN80-PORTRAIT-QUEST-R1.md`。原HTML、美术、音乐、程序不入Git。

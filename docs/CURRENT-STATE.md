@@ -15429,3 +15429,20 @@ NEXT仍`JSS-OFFICIAL-EVENT-RESULTS-PET-ATTRIBUTION-01`：仅取真实eventjsk链
 两提交研究分支`8492ba07a6af3befe4436ec6646eec9daacaf559` / tree`b163389c72ede74fc0b08461dec2ab25cc4e5d28`在原main`cc011eb37edad790439b626a84bc62bdbcf4e0be` ahead2/behind0、10路径0删除情况下安全非强制快进；同HEAD **11项main Actions均实际SUCCESS**，专用结构验收`39123602210`与前期第一方/Stage A及资源复验全部通过。来源机器派生只包含网页观察和已验旧原页摘要，不宣称获得新闻原HTML或在原版客户端实际复演。完整run ID/名称/结论写入STONEAGE-80-SYSTEMS-CROSS-VERSION-ACCEPTANCE-R1的main_acceptance；本条独立验收提交自己的后续Actions须另核，不冒充上一个HEAD检查。
 
 前沿继续`CN80_NAMED_QUEST_ORIGINAL_SOURCE_TRACE-01`：核对17173真实“新加任务”出链的具名正文/年代来源，无法取源则保留OPEN转其它领域。原九系统7 PARTIAL + 2 OPEN、新作/百科Stage B GATED、R79暂停和同版原服证据缺口均未改变。
+
+
+## 2026-10-18 — CN80_NAMED_QUEST_ORIGINAL_SOURCE_TRACE-01 原目录到具名任务正文、NPC/宠物/颜料关系
+
+本轮按实时main `d289bda2cff3a641974e114b4724c51d9fd80e39`/tree`ca20360bcdf17945a00ad8f5a9d3bf093113715e`重启，最新HEAD8项main Actions SUCCESS。重新读取README、连续性协议、完整CURRENT-STATE精确blob`5d42a890f68b8587d87fa37fe038a2e8e81ad1cf`、Design/Timeline/Source/Roadmap与主源机读对照；不取上一轮聊天SHA代替远端。最高NEXT为大陆8.0「爱作画的少女」具体原目录出链，有实质材料即止，不横向遍历全站。
+
+实际从17173`https://news.17173.com/z/stoneage/renwu/renwu.htm`目录取唯一「爱作画的少女」链接，目标`https://news.17173.com/z/stoneage/renwu/sa80_05.shtml`，两个精确HTTPS响应均独立GitHub runner真实重取，UTF-8严格解码：目录34236B SHA256`84a4f0bb593f09d2f5dbd180142870b267d846c2c898f9d78477a3e38b7bba8f`，任务正文24459B SHA256`328571c2dbabbb337f27f06a76ecaf3eeae621fdad4a0979d8089e980dfd8e19`。此页面当前没有核实2005原始发表时刻或Wayback同期页；第三方玩家攻略，不当第一方正式脚本/原服或TW1.0同构建材料。
+
+实际恢复**来源可审核的文献内容图谱**：14步骤，瑞而亚斯(67,75)纱美加、便利店(59,17)/店内(26,47)迪伊恩；贝洛宝利→红、加比奥→黄、朵洛将恩→黑、格尔希洛→白、布林帖斯→蓝五种1级宠物交付、五色颜料，最后来源记载「不能骑宠」与五幅自画像。地点涵盖北岛迷幻洞窟、南岛拉多拉洞窟3F、吉鲁岛漆黑洞窟5F/18F及没落矿坑三楼，均只认证来源文本的地名/路线，不认证原地图floor ID、怪物生成、任务flag、NPC与物品ID或实际结算。源大陆「瑞而亚斯」与台湾华义正文「瑞爾亞斯」及三图注「薩爾亞斯」不静默改名/直接合并。
+
+另证实**不同年代文案差异**：17173 2012-04-10针对8.5的游戏报道提到「无法逃离的审判」为前置、叙述一幅画像，而原8.0标签玩家攻略没有写前置、结尾说五幅。2012来源未取HTML原字节SHA，不宣称正式8.5服务端部署；8.0不写前置不等于证实无前置，究竟版本差/语义差/作者失误仍OPEN。后期玩家转载不晋升一方证据。
+
+两次实际CI失败 `39124563986`(小数坐标误识为任务编号)、`39124652068`(全角坐标括号未识)完整保留；修正后`39124716683`/job`117667311744`8项校验真实SUCCESS、`39125067564`及`39125258450`均再次SUCCESS，后者包含4项永久档案与8.5区分测试。独立下载zip artifact`12135382985` ZIP1757B SHA256`b9458b30b3efcc7854f1a8bd845b8edcf511429201f53c2c520606655824f9b6`，内部derived.json4349B SHA256`a8fbd74485e53d3a0e6bab442339947a08102fcfa890fd8ce768803a614fbc74`，与永久Git报告经后续独立重放cmp成功；原HTML/图像/原程序均不入Git。
+
+新增`research/recovered/STONEAGE-CN80-PORTRAIT-QUEST-R1.json`、`STONEAGE-CN80-PORTRAIT-QUEST-CATALOG-R1.json`、`docs/specs/STONEAGE-CN80-PORTRAIT-QUEST-R1.md`、解析工具与源/边界测试、独立workflow。资料层按1个具名任务、2角色、5宠物需求和5颜料/地域关系入库，不算原业务实体表或完成游戏任务。完整状态前缀不删，归档提交/main最终Actions另核；九系统7 PARTIAL+2 OPEN，Stage B游戏/百科GATED，R79 PAUSED_NON_BLOCKING，无有据整体百分比。
+
+**最高NEXT `CN80_PORTRAIT_PREREQUISITE_VERSION_BOUNDARY-01`**：只在存在更高层具时效的运营商任务公告/补丁/原脚本时核实8.0与8.5的前置与奖励数量；若只能得到无日期攻略/晚期通稿，正式保持OPEN_EVIDENCE_LIMITED并切至22域新具名内容，不追第四第五个同源转载、不启动Stage B。
