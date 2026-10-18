@@ -633,3 +633,10 @@ Highest next: CN80_JUDGMENT_2005_NAMED_CONTENT-01, one source-bounded early date
 JP2003-OFFICIAL-CHARACTER-VISUAL-SOURCE-01取得实际2003人物正文，运营商明确无固定人物名字；以12研究页面位置绑定原表格中24个图像引用，非原游戏ID。只取一张头像GIF，实际2006快照与2003正文分开；其余23图与客户端模型/配色/动作未验。规格与派生见STONEAGE-JP2003-CHARACTER-VISUAL-SOURCE-R1，未启动新游戏/网站生产。
 
 **最高NEXT JP2003-OFFICIAL-PET-NAMED-VISUAL-SOURCE-01**：从该页真实宠物标签沿chara2.asp只读一正文并验主题/年代，有具名宠物和明确图像关系时最多核一原图；否则保留精确缺源回22域，不递归第三/四分栏，不执行程序。Stage A7 PARTIAL+2 OPEN、Stage B/百科GATED、R79暂停不变。
+
+
+## 2026-10-19 — 日本官方宠物分页目录有限闭合
+
+初始宠物一页/一图资料包完成资格后，仅选同页两条真实分页链接组成相邻有限闭合包，实得124条网页名称/编号/图像引用（45+45+34）。前两页2003、第三页2004、唯一原图2006分别归属；不认作某日完整原服物种或客户端ID。每条记录独立保留出处、空缺和版权，原件不入Git。规格与派生STONEAGE-JP-OFFICIAL-PET-CATALOG-R1。
+
+**最高NEXT OFFICIAL-PET-VISUAL-COVERAGE-AND-VERSION-REVIEW-01**：复用124条与22域，限定最多12条既验原图引用的一次视觉资料包，覆盖不同分页/表格组，核实际时刻/字节/帧与具体失败；不自动取全部123图，不进入其它栏目/程序，不猜别名/属性。九族7 PARTIAL+2 OPEN、Stage B/百科GATED、R79暂停不变。

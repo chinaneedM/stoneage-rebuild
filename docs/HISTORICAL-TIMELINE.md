@@ -3523,3 +3523,8 @@ eventmaz实际20010418085855有四村聊天室入口：マリナス东51南72、
 ## 2003-12-14 Japanese Hangame character-page capture, with separate2006 image capture
 
 **FACT / operator website attribution:** original chara.asp capture20031214051427 explicitly describes characters without fixed names and player-chosen naming. The page contains twelve web positions with24 paired illustration/companion references. This is not a proven client roster, ID map, cross-version equivalence or first-publication date. Only the first illustration was acquired: its actual preserved response is20060619160353, not2003. One GIF avatar illustration is qualified separately; the other23 source references and all game model/animation bindings remainOPEN. Permanent metadata/spec: STONEAGE-JP2003-CHARACTER-VISUAL-SOURCE-R1.
+
+
+## 2003-12 / 2004-02 Japanese operator pet catalog, with separate2006 image response
+
+**FACT / source attribution:** Hangame's actual pet pagination captures provide45 entries at20031214055443,45 at20031214051259 and34 at20040220221717. The resulting124 named web positions are mixed-capture documentary entries; they do not authenticate a complete2003 live-species census or a specific client build. The operator claims more than100 pets, but published positions/local image suffixes are not server species IDs. One first-entry image was recovered only from20060604065927; its picture/name reference and temporal boundary remain separate. Raw names, including source96ンモモ, are not silently corrected or translated. Permanent evidence: STONEAGE-JP-OFFICIAL-PET-CATALOG-R1.

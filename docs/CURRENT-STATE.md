@@ -15583,3 +15583,18 @@ README历史前缀修复提交2e238fcf0b0bf2e15b8ebb6f795131485a53ba9a / tree80b
 重新核main仍071009cf、按祖先关系非强制快进整合修正后，该同HEAD的九项main Actions全部实际SUCCESS，专用源主线39139042235亦SUCCESS。此前6d2f139的三个README历史前缀失败已在主验收回执保留；此处是在修复完成之后的最终整合状态，不再停留在上一条“main仍071009cf”的当时状态。所有五文件历史前缀含README完整、原校验未弱化。永久SOURCE blob fcb22eb2e385b615db2f8f13f40b83545b03d403、CATALOG blob914dd1802cff33b9a61410f63f1d1ad69fe845b4已核对，网站/游戏生产和原资产未加入。
 
 收束回执research/recovered/STONEAGE-JP2003-CHARACTER-CLOSEOUT-R1.json列出该HEAD九个主线run、八个分支run及两次网络尝试；本次只补文档，不改变已验源码、原件或派生内容，其自己的普通Actions须再观察。最高NEXT仍JP2003-OFFICIAL-PET-NAMED-VISUAL-SOURCE-01，只沿已有真实宠物链接取一正文与最多一张确切关联图；其余23人物图未取、人物客户端ID/完整动画仍OPEN。Stage A7 PARTIAL+2 OPEN，Stage B/百科GATED，R79暂停。
+
+
+## 2026-10-19 — 日本官方宠物资料：三份分页实源、124条具名引用
+
+本轮按实时远端main b25064746783051683133600404be1751e53fb49 / tree8e69a67600e6e67f5d94ed5083ea8492b61c3035重新启动，352分支、0开放PR、该HEAD8项main Actions全部SUCCESS。七文件及完整CURRENT原blob68901967ccffd6b8173372dadf0b01afbed0b24c（2016608B）、路线、22域/R5及人物源/收束回执复核；旧无关queued37642417333保留，非本任务依赖。历史前缀和失败完整保留，不根据旧聊天进度取代新远端。
+
+最高JP2003-OFFICIAL-PET-NAMED-VISUAL-SOURCE-01沿已验人物页真实“ペット”目标取chara2.asp，实际20031214055443id_，36332B，CP932严格解码，SHA256a01a2c93d410511b9e08f7a066569d8cec8db883f50047baf0ca3160d50ed0fc。第一页45条名称/编号/图片同列结构实证后，另选相邻有限包JP-OFFICIAL-PET-CATALOG-PAGINATION-CLOSURE-01，仅沿该页真实两个分页目标补chara2-2与chara2-3；仍全轮只取一原图，未访问咒术/宠物技术、表单、程序或其它站点。不是据目录编号盲目爬站，也不把旧单页条件当自动无限扩展。
+
+第二页实际20031214051259id_，36343B SHA25609faee5a55cb09ea8527090fb09fc00166abce94c83ef34322f4cacd4ad65249；第三页请求2003后实际到20040220221717id_，34310B SHA256b9284c6185fc5a999dd3bf0da3ac9d341e31312dcdf5859ee5a5786eb0cbc9ad。45+45+34=124个实得网页条目，非124种2003同刻/原服完整物种。每条三行同列核名称/网页号/图片引用，46号对应group2-1、91号对应group3-1，局部文件尾号重置，不作游戏ID；96号原“ンモモ”等名称原样保存，不猜中文别名/跨地区实体。
+
+唯一实取图为首项ウーリ同URL的petpicgroup1-1.gif，实际20060604065927id_，4460B SHA256593345c3edf78ebcaa2dff0c27a2d10a92b4eefcc4aef4db14aee2efdc5e013f，GIF60×65单帧。精确文件已目视，为圆润生物插画、橙黄色身体与浅色面部/上身；2006像素不当2003当刻外观、原游戏精灵/动画。其它123图引用未取像素，实际时刻/摘要/尺寸/帧数null。每条记录自身携带页面与图像各自证据，避免单条导出遗失年代；客户端物种/资源ID、属性成长/技能/产地、跨地区别名均null。
+
+交付research/recovered/STONEAGE-JP-OFFICIAL-PET-CATALOG-R1.json与docs/specs/STONEAGE-JP-OFFICIAL-PET-CATALOG-R1.md，124个独立pets研究记录；十项错列/分页/源资格/混年/缺字段反例通过。独立工作流精确三页+唯一GIF、整个派生报告cmp，网络仅有限重试，真实run/ZIP/raw/Git保管链和main验收须实际完成后另记。原HTML/GIF/原程序均不入Git，未启动百科或新游戏生产，未因页脚1999版权年份认证JSS1999构建。
+
+**最高NEXT OFFICIAL-PET-VISUAL-COVERAGE-AND-VERSION-REVIEW-01**：复用本124条目录与22域，优先“具名条目→实际原图参考”，限定最多12条已验原图引用的一次视觉资料包，覆盖不同分页/表格组；分别记录实际捕获/字节/帧与失败，不自动下载全部123图，不按名字猜物种/属性，不进入其它栏目。缺源保留未知，不重开R79或Stage B。九族7 PARTIAL+2 OPEN、Stage B/百科GATED、R79暂停，无整体百分比。
