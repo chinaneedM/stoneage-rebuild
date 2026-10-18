@@ -15598,3 +15598,11 @@ README历史前缀修复提交2e238fcf0b0bf2e15b8ebb6f795131485a53ba9a / tree80b
 交付research/recovered/STONEAGE-JP-OFFICIAL-PET-CATALOG-R1.json与docs/specs/STONEAGE-JP-OFFICIAL-PET-CATALOG-R1.md，124个独立pets研究记录；十项错列/分页/源资格/混年/缺字段反例通过。独立工作流精确三页+唯一GIF、整个派生报告cmp，网络仅有限重试，真实run/ZIP/raw/Git保管链和main验收须实际完成后另记。原HTML/GIF/原程序均不入Git，未启动百科或新游戏生产，未因页脚1999版权年份认证JSS1999构建。
 
 **最高NEXT OFFICIAL-PET-VISUAL-COVERAGE-AND-VERSION-REVIEW-01**：复用本124条目录与22域，优先“具名条目→实际原图参考”，限定最多12条已验原图引用的一次视觉资料包，覆盖不同分页/表格组；分别记录实际捕获/字节/帧与失败，不自动下载全部123图，不按名字猜物种/属性，不进入其它栏目。缺源保留未知，不重开R79或Stage B。九族7 PARTIAL+2 OPEN、Stage B/百科GATED、R79暂停，无整体百分比。
+
+
+## 2026-10-19 — 日本官方宠物124条目录正式主线验收与永久取源凭据
+
+- 内容HEAD `0630a7e49e710d032b80f86f657273021561aab0`，tree `babde5c3283d4747aabaff521ea38288e73a2700`：候选分支10项、主线自身11项Actions均实际success，无本HEAD失败/重跑。十项反例与精确三页＋唯一GIF重取、完整报告cmp均通过。
+- 永久凭据：`research/recovered/STONEAGE-JP-OFFICIAL-PET-CATALOG-ACCEPTANCE-R1.json`，记录run39174344977/job117813809435/artifact12153219607。下载ZIP6802字节，SHA256 `7ab3ae97e8f7f18c9e4d11a1b8a6279d497e5db44d320cf15d739b42c4d2f335`；其中唯一derived.json与Git报告182129字节完全相同，raw SHA256 `edf50ec2fe9915db1904992ee2871def9b719fa05e40619019229be21dca413f`，Git blob `85e99d6fd6a7ca27eeaa3987510a6bcc1d701708`。产物30日保留不替代永久派生报告；原HTML/GIF不入库。
+- 取得124条跨2003/2004网页名称与同列图像引用，仅一张实际2006图像；不是124种原服物种全量、不是同一2003时刻图鉴。编号/别名/原服数值仍未知，123张仍无像素证据。历史失败全部保留，九系统7 PARTIAL＋2 OPEN、Stage B/百科GATED、R79 PAUSED_NON_BLOCKING不变。
+- **唯一当前NEXT：OFFICIAL-PET-VISUAL-COVERAGE-AND-VERSION-REVIEW-01**。复用124条目录与既有22域，最多12条真实原图引用，按不同分页/表格组取样；逐图实际时刻/字节/帧/目视与失败分开记录，不自动抓余下123图或新栏目，不由名字猜属性/产地/技能。本次凭据提交是文书收尾，必须另观测其自身HEAD检查，不套用上述父提交11绿。
