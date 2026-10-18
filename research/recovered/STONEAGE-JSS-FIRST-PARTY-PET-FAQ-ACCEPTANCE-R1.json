@@ -1,0 +1,138 @@
+{
+  "schema": "stoneage.jss.first_party_pet_faq.acceptance.r1",
+  "source_head": "ea365b6113aecaf5c489cf77aae168e7a3bcf62a",
+  "source_tree": "e1362ca75836e05e2de4c0bcaf2ea9de103c5f9b",
+  "source_run": 39115082086,
+  "source_job": 117639133446,
+  "source_branch_runs": [
+    {
+      "id": 39115082097,
+      "name": "Validate StoneAge preproduction content archive and wiki boundary",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39115082130,
+      "name": "Validate StoneAge Stage A joint review decision",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39115082061,
+      "name": "Validate legacy StoneAge assistant history and pet content gaps",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39115082059,
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39115082073,
+      "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39115082065,
+      "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39115082120,
+      "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39115082071,
+      "name": "Validate Stage A early source gap triage",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39115082086,
+      "name": "Verify JSS FAQ pet defect labels and gameplay evidence boundaries",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39115082036,
+      "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "source_branch_count": 10,
+  "source_result": "SUCCESS",
+  "artifact": {
+    "artifact_id": 12131533012,
+    "zip_bytes": 4965,
+    "zip_sha256": "257892e46aa2bc2e442f8204d1b6365eb98286831228d47cb2629d4b13706c91",
+    "github_digest_matched": true,
+    "member": "jss-first-party-pet-faq.json",
+    "raw_bytes": 18138,
+    "raw_sha256": "38ebbeca6b04d4a3a229da8ac117e76bc083fcd6e03b7ece6db660b58cf153b0",
+    "git_blob": "072f407f82c78f06a09be81c06858a1c604ae277",
+    "archived_report_byte_identical": true
+  },
+  "report": {
+    "path": "research/recovered/STONEAGE-JSS-FIRST-PARTY-PET-FAQ-R1.json",
+    "bytes": 18138,
+    "sha256": "38ebbeca6b04d4a3a229da8ac117e76bc083fcd6e03b7ece6db660b58cf153b0",
+    "git_blob": "072f407f82c78f06a09be81c06858a1c604ae277"
+  },
+  "source_dependencies": [
+    {
+      "path": "tools/stoneage_jss_pet_faq.py",
+      "bytes": 11614,
+      "sha256": "cfc63a6fb4840328feea554c898521a8935a98ad947ba9da4b63e2b362393ea8",
+      "git_blob": "fb10621bf2ae3dc0998b722c531a365b1bb22454"
+    },
+    {
+      "path": "tests/test_stoneage_jss_pet_faq.py",
+      "bytes": 6063,
+      "sha256": "02b4862b59fd07263a10a03bd1da4a81b7ec20f83705523d0eb76748eddf52ad",
+      "git_blob": "58bdc6c91948b1ce65ee7b62605c117d0c2fa4e2"
+    },
+    {
+      "path": "research/recovered/STONEAGE-JSS-FIRST-PARTY-PET-FAQ-SOURCE-INTAKE-R1.json",
+      "bytes": 6426,
+      "sha256": "bba71cac363f9946e73d43da42a285d3b2fad3be6b0e56b3f05b02a9e23b2293",
+      "git_blob": "78ed8ae65a95dd735a61362b0f8108a0a3f83c9c"
+    },
+    {
+      "path": "research/recovered/STONEAGE-HISTORICAL-SITE-NAVIGATION-R1.json",
+      "bytes": 219534,
+      "sha256": "7bec788ca9101aa7a06543c0df2fb15b6bc407fd47141b51cc1a99e216cd61cd",
+      "git_blob": "83ea18a70aca5f0c1c80280669ef99e344bdb52a"
+    }
+  ],
+  "html_sources_independently_replayed": 2,
+  "local_and_source_ci_boundary_tests": 15,
+  "pet_skill_loss_repair_executed": false,
+  "quest_scripts_or_growth_formulas_recovered": false,
+  "jss1999_or_tw10_same_build_promoted": false,
+  "other_faq_details_or_referenced_archive_downloaded": false,
+  "proprietary_originals_retained_in_git": false,
+  "portfolio_domain_effects": {
+    "new_jss_documentation_layer": [
+      "pet_stats",
+      "pet_skills",
+      "quest_content",
+      "item_equipment_economy",
+      "battle_ui_rules",
+      "audio_fx",
+      "reference_web"
+    ],
+    "all22_historical_statuses_preserved": true,
+    "server_content_and_same_build_gaps_still_open": true
+  },
+  "main_acceptance": {
+    "status": "PENDING_NOT_PRECLAIMED"
+  },
+  "next_priority": "JSS-FIRST-PARTY-PATCH-PET-QUEST-01"
+}

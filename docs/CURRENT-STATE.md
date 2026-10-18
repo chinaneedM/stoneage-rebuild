@@ -15283,3 +15283,10 @@ NEXT仍`JSS-OFFICIAL-EVENT-RESULTS-PET-ATTRIBUTION-01`：仅取真实eventjsk链
 规格STONEAGE-JSS-FIRST-PARTY-PET-FAQ-R1、完整派生报告/SOURCE-INTAKE、专用解析器/15项反例检查与独立两页重放workflow已形成。本地15项PASS和精确报告重放已实证；后续分支/main及artifact ZIP/raw保管待真实验收另记。22域原历史状态保留，仅宠物状态/技能、任务、物品、战斗/UI、音效/参考站增加JSS2001文献层；原始服务器内容和成长公式没有恢复。
 
 **最高NEXT `JSS-FIRST-PARTY-PATCH-PET-QUEST-01`**：沿旧已验top真实verup.html取一个更新入口，只在真实条目/出链明确对应宠物寄存、指定宠物条件或捕获证书问题时最多追一份必要记录，争取玩法变更的日期/版本归属；只有下载说明或无匹配则登记未知停止并回跨域评审。不猜补丁路径、种名或原服脚本，不下载执行旧程序。Stage A7 PARTIAL+2 OPEN，Stage B游戏/百科生产GATED，R79 PAUSED_NON_BLOCKING，无整体复原百分比。
+
+
+### 2026-10-18 — JSS官方FAQ独立实源重放与永久保管
+
+研究源`ea365b6113aecaf5c489cf77aae168e7a3bcf62a`/tree`e1362ca75836e05e2de4c0bcaf2ea9de103c5f9b`同SHA10项Actions全部实际SUCCESS；专用source Action`39115082086`/job`117639133446`独立重取两官网FAQ，15项反例检查通过，永久派生报告精确重放。独立下载artifact`12131533012` ZIP4965B SHA256`257892e46aa2bc2e442f8204d1b6365eb98286831228d47cb2629d4b13706c91`与GitHub摘要相符，raw JSON18138B SHA256`38ebbeca6b04d4a3a229da8ac117e76bc083fcd6e03b7ece6db660b58cf153b0`、Git blob`072f407f82c78f06a09be81c06858a1c604ae277`与Git派生文件逐字节一致。源码/测试/旧导航/请求记录及十项运行链写入FAQ-ACCEPTANCE-R1，不依赖30天CI保留期。原HTML/图片/音效/程序不入Git。
+
+此归档提交及最终main CI仍须随后实际验收，不提前宣称。只取得运营商文献层，不宣称原宠物技能丢失修复执行、任务脚本、物种/成长公式或TW1.0同构建。NEXT仍JSS-FIRST-PARTY-PATCH-PET-QUEST-01，7 PARTIAL+2 OPEN、Stage B/百科GATED、R79暂停。
