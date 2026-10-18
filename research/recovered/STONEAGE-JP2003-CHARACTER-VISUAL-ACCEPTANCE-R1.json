@@ -211,5 +211,30 @@
     "source_report_bytewise_unchanged": true,
     "additional_export_negative_cases": 2,
     "own_commit_exact_catalog_replay": "OBSERVE_NEW_HEAD_WORKFLOW_CMP_NOT_INHERITED_FROM_SOURCE_HEAD"
-  }
+  },
+  "failed_receipt_attempts": [
+    {
+      "head_sha": "6d2f1393809a4d32077aedbb353d5e3b3cb48295",
+      "cause": "README introduction inserted before pinned historical prefix; corrected by appending new entry without weakening checks",
+      "failures": [
+        {
+          "run_id": 39138593090,
+          "job_id": 117708124840,
+          "conclusion": "failure"
+        },
+        {
+          "run_id": 39138593036,
+          "job_id": 117708124800,
+          "conclusion": "failure"
+        },
+        {
+          "run_id": 39138592685,
+          "job_id": 117708123645,
+          "conclusion": "failure"
+        }
+      ],
+      "source_and_catalog_replay_run": 39138593022,
+      "source_and_catalog_replay_conclusion": "success"
+    }
+  ]
 }

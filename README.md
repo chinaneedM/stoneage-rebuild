@@ -32,16 +32,6 @@ Primary targets:
 
 See [`docs/CURRENT-STATE.md`](docs/CURRENT-STATE.md).
 
-### Current source archive checkpoint — 2026-10-18
-
-The latest [Japanese operator character source](docs/specs/STONEAGE-JP2003-CHARACTER-VISUAL-SOURCE-R1.md)
-records twelve unnamed web positions and their paired image references, with
-one inspected illustration from a separate 2006 capture. These are source
-positions, not authenticated client character IDs. The adjacent
-[Wayi marine/social/crafting source](docs/specs/STONEAGE-WAYI-MARINE-SOCIAL-CRAFTING-R1.md)
-adds version-bounded official descriptions. Use the final CURRENT-STATE entry
-for the live queue; the dated notes below preserve earlier milestones.
-
 ## Continuity
 
 Every new ChatGPT conversation must start from the repository rather than chat memory.
@@ -313,3 +303,14 @@ The current research package qualified *source-described*, not runtime-verified,
 ### 2026-10-18 — CN8 source-linked portrait quest content
 
 One exact 17173 Mainland-labelled 8.0 quest index and named walkthrough have been independently byte-fingerprinted and converted into a bounded quest graph: 14 steps, two named NPC roles, five pet-to-pigment turn-ins and a portrait reward claim. The current page has no verified historical publication date, original-server script or TW1.0 build identity. A 2012 article about 8.5 reports a prerequisite and a different portrait count; both source scopes stay separate. See [CN80 quest specification](docs/specs/STONEAGE-CN80-PORTRAIT-QUEST-R1.md). The latest CURRENT-STATE governs the next finite evidence step.
+
+
+### Current source archive checkpoint — 2026-10-18
+
+The latest [Japanese operator character source](docs/specs/STONEAGE-JP2003-CHARACTER-VISUAL-SOURCE-R1.md)
+records twelve unnamed web positions and their paired image references, with
+one inspected illustration from a separate 2006 capture. These are source
+positions, not authenticated client character IDs. The adjacent
+[Wayi marine/social/crafting source](docs/specs/STONEAGE-WAYI-MARINE-SOCIAL-CRAFTING-R1.md)
+adds version-bounded official descriptions. Use the final CURRENT-STATE entry
+for the live queue; the dated notes below preserve earlier milestones.
