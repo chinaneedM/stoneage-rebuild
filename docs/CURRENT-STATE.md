@@ -15501,3 +15501,6 @@ GNN原HTML本轮取源存在403阅读器限制，只按同期索引文本见证�
 ### 2026-10-18 — 台湾8.5具名剧情研究主线验收和下一补证门
 
 源分支`eaeaf42beb3e272e3abdb923c48f7201e160fe09` / tree`e86c629f78a618832ef3c80e36859af02b30b0d5`验证分支8项全SUCCESS，Compare原main`62daff01fb0894fa87a95adbf0317674e01028fa`领先3/落后0、10路径0删除、CURRENT旧1993380B历史前缀完整，非强制fast-forward合入main后**该同SHA11项主线Actions全部真实SUCCESS**。均在`STONEAGE-TW85-PERIOD-PRESS-ACCEPTANCE-R1.json`新增`main_acceptance`保留11个运行ID和各自结论。本验收回执补记提交的自身CI须再独立核查，父SHA结果不得据此自动迁移。2006报导的7.5→8.5叙事/任务名为同期文献补强，GameZone runner403仍不能给原HTML赋SHA，发布期计划不能称已部署；不恢复原客户端/原服规则。最高NEXT`TW85_NAMED_QUEST_FIRSTPARTY_MATERIAL_GATE-01`，Stage A7 PARTIAL+2 OPEN、Stage B/百科GATED、R79暂停。
+
+### 2026-10-18 — 主线验收回执新提交的一次测试断言错误
+验收回执分支`6fbce9fbf336472d5f1a7ba99e9704759929cf17`首次专用CI`39132952437`/job`117691669550`实际FAILURE：测试错误地要求研究分支源HEAD `4569672...` 与已整合main HEAD `eaeaf42...` 完全一致。两提交本就不同。现仅修复测试断言，对原资料事实/结构/故障403记录不作掩盖，失败历史已写永久ACCEPTANCE JSON；修正后的新HEAD CI还必须独立重新验收。NEXT仍`TW85_NAMED_QUEST_FIRSTPARTY_MATERIAL_GATE-01`。

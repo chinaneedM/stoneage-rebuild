@@ -61,7 +61,8 @@ class Taiwan85PressWorldline(unittest.TestCase):
         self.assertFalse(r["original_2006_client_or_server_replayed"])
         self.assertEqual(r["receipt_own_ci"],"PENDING_NEXT_COMMIT_VALIDATION")
         main=r["main_acceptance"]
-        self.assertEqual(main["head"],r["accepted_branch_head"])
+        self.assertEqual(main["head"],"eaeaf42beb3e272e3abdb923c48f7201e160fe09")
+        self.assertNotEqual(main["head"],r["accepted_branch_head"])
         self.assertEqual(main["checks_count"],11)
         self.assertEqual(len(main["runs"]),11)
         self.assertTrue(all(x["conclusion"]=="success" and x["head_sha"]==main["head"] for x in main["runs"]))

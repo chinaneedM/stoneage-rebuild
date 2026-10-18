@@ -195,5 +195,15 @@
         "head_sha": "eaeaf42beb3e272e3abdb923c48f7201e160fe09"
       }
     ]
-  }
+  },
+  "receipt_ci_failed_attempts": [
+    {
+      "run_id": 39132952437,
+      "job_id": 117691669550,
+      "head_sha": "6fbce9fbf336472d5f1a7ba99e9704759929cf17",
+      "status": "failure",
+      "cause": "WRONG_ASSERTION_EQUATED_BRANCH_COMMIT_WITH_MAIN_INTEGRATION_COMMIT",
+      "original_historical_facts_unchanged": true
+    }
+  ]
 }
