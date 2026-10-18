@@ -89,6 +89,16 @@ def main():
     # Source excerpts are bounded diagnostic output only; not preserved as full HTML.
     visible = Visible()
     visible.feed(raw.decode("big5", errors="strict"))
+    # Establish whether this page describes released systems, future plans, or a survey.
+    head = []
+    spent = 0
+    for node in visible.pieces[:110]:
+        if spent >= 3600:
+            break
+        short = node[:min(140, 3600 - spent)]
+        spent += len(short)
+        head.append(short)
+    print("BOUNDED_PAGE_OPENING=" + json.dumps(head, ensure_ascii=False))
     for anchor, after, budget in (("寵物裝備系統", 65, 4100), ("任務日誌", 28, 1800)):
         index = next((i for i, value in enumerate(visible.pieces) if anchor in value), None)
         if index is not None:
