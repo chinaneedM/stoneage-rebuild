@@ -15654,3 +15654,16 @@ OFFICIAL-PET-VISUAL-COVERAGE-AND-VERSION-REVIEW-01从三页各四个表格组取
 交付STONEAGE-JP-OFFICIAL-VILLAGE-FACILITIES-R1.json及同名规格、11项源/同列/否定规则/费用与未知/404反例；本地相关34测试通过。修正队列元数据后的独立runner须实际重取精确正文、仅探测首图缺口、完整报告cmp并留ZIP/raw/Git与main验收，未提前记绿。原HTML/图片/程序不入Git，生产游戏/网站未启动。
 
 相邻完成OFFICIAL-VERSION-COVERAGE-MATERIAL-REVIEW-07，复用R6原22域状态；日本人物/宠物/聚落/设施已新增具体资料，停止同站扩分栏，轮换地区。**唯一当前NEXT TW-WAYI-OFFICIAL-INTRO-DETAIL-04**：从已验台湾华义game01介绍页真实第四详情game01_04.asp选一正文，先验真实主题，取得具名系统/生活/故事材料或明确缺源/重复结论即止，不按04编号推内容、不取图片/程序、不递归；此条是覆盖复审后的显式选包，不是自动追第四页。九系统7 PARTIAL+2 OPEN、Stage B及百科GATED、R79暂停，无整体百分比。
+
+
+## 2026-10-19 — 日本13设施独立验收后，华义剧场与两类游乐场实物包
+
+日本设施内容8cd9dc8b7fd7a662c4ec33ae4158253226a53864 / tree32625f68093e501c0d7d543d77e59626f987b37e，候选10门、主线自身11门实际全部success。源run39177475418/job117823024354执行11反例、重取精确正文、独立首图HTTP404及完整报告cmp；artifact12154124007下载ZIP4009B SHA2565059ff8d9befbddf87dde785ae000c57e9d80d12d74d0b4a73654e1e7bfb2d01，内唯一derived.json28705B SHA25665ed727327aae1e8b060834c11c33d56685134a6bbd8fb02e250086baf4f5dfb等于永久blob6696402b32f9767f724b7543bb4f477a67dbea6e。永久回执STONEAGE-JP-OFFICIAL-VILLAGE-FACILITIES-ACCEPTANCE-R1.json保留源/主线与最初两次404；仍无首图像素，不提升旧建筑功能。
+
+前包验收后按R7队列显式启相邻TW-WAYI-OFFICIAL-INTRO-DETAIL-04，只取已认证第四链接game01_04.asp一正文，实际20050614011214id_、21308B SHA256afaae72abf0ca60939c7e57a824cc556f0e24a2d8add77eff7f18caacb942a50，Big5严格。实际为剧场/游乐场，不是从04编号猜功能。正文8.0标签和旧站题《石器時代--精靈的召喚》分开，捕获非发布/部署/精确客户端构建，账号表单/产品包投票/公司页脚排除，不取图片或程序、不沿新链接扩展。
+
+三个具名内容：伊甸劇場报名演出按情况得藝術值、积累换特殊道具；魔法牌遊樂場报名挑战击败泛称魔王得積分、积累换特殊道具/宠物；寵物轉轉輪遊樂場买彩券下注按所述赔率给对应積分、积累换特殊道具/宠物。藝術值与積分不混用，两个同字积分不证共享钱包。童话小红帽/白雪公主只是演出宣传例子，不作原世界史或实得剧本；泛称魔王不等于艾巴登/雷爾。费用、赔率/概率、积分数值、ID、地图坐标和运行事务皆UNKNOWN，不造保赢/算法。剧场未提宠物奖励也不是全游戏永久禁止，三段各归各出处。
+
+交付永久STONEAGE-WAYI-THEATRE-ARCADES-R1.json及同名规格，3个maps集合的场所/积分循环文献记录，不是3份原地图或实际服务。9负例及相关35本地回归通过，独立一正文重取/完整cmp、ZIP/raw/Git与main验收仍须实际完成后记。原HTML/图片/程序不入Git，不把前一设施包11绿借作本包验收。
+
+**唯一最高NEXT OFFICIAL-VERSION-COVERAGE-MATERIAL-REVIEW-08**：复用22域/已认证官方发行目录，对比近期日台内容的真实增量，优先一个早期关键缺口的有身份官方源；若早期暂缺记精确缺口后选另一官方地区一个有限具名包并开始取源。只选一来源及停止条件，不写空矩阵、不重读本批旧正文、不自动抓图片/程序、不重开R79。九系统7 PARTIAL+2 OPEN、Stage B/百科GATED、R79暂停，无整体百分比。

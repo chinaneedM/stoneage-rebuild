@@ -1,0 +1,33 @@
+name: Verify Wayi theatre and two arcade source loops without shared wallet or runtime assumptions
+on:
+  push:
+    paths:
+      - tools/stoneage_wayi_theatre_arcades.py
+      - tools/stoneage_wayi_intro_detail02_probe.py
+      - tests/test_stoneage_wayi_theatre_arcades.py
+      - research/recovered/STONEAGE-WAYI-THEATRE-ARCADES-R1.json
+      - docs/specs/STONEAGE-WAYI-THEATRE-ARCADES-R1.md
+      - .github/workflows/verify-stoneage-wayi-theatre-arcades.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exact-entertainment-body:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Reject merged point wallets false canon prize projection and guessed odds
+        run: python -m unittest tests.test_stoneage_wayi_theatre_arcades -v
+      - name: Reacquire only one exact operator body
+        run: python -m tools.stoneage_wayi_theatre_arcades --output output/derived.json
+      - name: Replay complete permanent derived report
+        run: cmp output/derived.json research/recovered/STONEAGE-WAYI-THEATRE-ARCADES-R1.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: wayi-theatre-arcades-derived-only
+          path: output/derived.json
+          retention-days: 30

@@ -7226,3 +7226,10 @@ STONEAGE-JP-OFFICIAL-TOWN-ACCEPTANCE-R1.json对应内容15c8d55be9985b40cbe4e10f
 原URL http://www.hangame.co.jp/publish/sa/town2.asp，实际20031215095512id_，21792B SHA256f719ff0167c32e531f3128e47b31175df6bfc641a6a83728d2fd4370a9ae58b3，CP932严格解码，13行设施名/描述/图引用同列实证。宠物店买入禁止、医院HP但目标未知、村落库存差异、问答等级/入场费、贡献设家点、配送远近薪酬、普通步速/无怪/付费自动巴士、抽奖奖品种类等为一方文字限定，非服务端运行；原ID/阈值/价表/坐标/事务保持UNKNOWN。原名トーテンポール不静默改写，全部设施不推每村都有。
 
 首图 http://images.hangame.co.jp/_images/game/saj/town2-1.gif 两次HTTP404，后续本地独立探测仍404；无像素/目视，不提升旧石头建筑功能，另12图未试。首图无HTML声明尺寸，其余仅声明200×150，全13实得尺寸/时刻/哈希/帧数null；404不是历史不存在证据。永久元数据/规格STONEAGE-JP-OFFICIAL-VILLAGE-FACILITIES-R1；11负例及34本地相关回归通过。独立源Actions、ZIP/raw/Git及自身main结果另据实留存。R7复用22域后轮换到华义原介绍页已验game01_04.asp一正文，先核内容，不爬站、不取原程序。
+
+
+## 2026-10-19 — 台湾华义8.0正文标签：剧场/魔法牌/宠物转轮三循环
+
+原介绍页真实第四链接game01_04.asp实得20050614011214id_、21308B SHA256afaae72abf0ca60939c7e57a824cc556f0e24a2d8add77eff7f18caacb942a50，Big5严格。剧场藝術值→特殊道具；魔法牌挑战未具名魔王→積分→特殊道具/宠物；宠物转轮买票下注→按描述赔率给对应積分→特殊道具/宠物。三段长度/摘要独立保留，不推同钱包/倍率/费用/概率/原ID或实际运营；站题旧名称与正文8.0标签各存，不推同客户端。演出童话例子不是世界正史，泛称反派不合并旧世界线人物。表单/投票/页脚排除，原件和图片不入Git。派生/规格STONEAGE-WAYI-THEATRE-ARCADES-R1，9负例及相关35本地通过，独立源/产物/main另实际验收。
+
+另日本设施永久回执STONEAGE-JP-OFFICIAL-VILLAGE-FACILITIES-ACCEPTANCE-R1.json对8cd9dc8b的候选10/主线11绿、run39177475418/job117823024354/artifact12154124007 ZIP5059ff8d9befbddf87dde785ae000c57e9d80d12d74d0b4a73654e1e7bfb2d01及raw65ed727327aae1e8b060834c11c33d56685134a6bbd8fb02e250086baf4f5dfb/blob6696402b32f9767f724b7543bb4f477a67dbea6e保管链；首图404不证历史不存在，不混为华义本包验收。
