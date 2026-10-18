@@ -1,0 +1,433 @@
+{
+  "schema": "stoneage.cross_domain_material_evidence_review.r4",
+  "task": "PREPRODUCTION-CROSS-DOMAIN-MATERIAL-EVIDENCE-REVIEW-04",
+  "date": "2026-10-18",
+  "sources": [
+    {
+      "path": "research/recovered/STONEAGE-CROSS-DOMAIN-MATERIAL-REVIEW-R3.json",
+      "bytes": 15061,
+      "sha256": "51ac28e5bd15725b4375a72a61dd5ac5d0ceb38ecbc714aeb6a7588f75f82978",
+      "git_blob": "6e768786cced019928def9e08d04a709349239b2"
+    },
+    {
+      "path": "research/recovered/STONEAGE-PREPRODUCTION-CONTENT-ARCHIVE-R1.json",
+      "bytes": 24489,
+      "sha256": "e87afebc8c9590142c7cc8831b578455b3427bf7c1d10520ae02a3e8082fbddb",
+      "git_blob": "2d5b3f081d5618287f431fbded943722a820c593"
+    },
+    {
+      "path": "research/recovered/STONEAGE-WAYI-OFFICIAL-WORLDLINE-R1.json",
+      "bytes": 11952,
+      "sha256": "619c2b931174058b87eb97631beb11a995c41fedb26010a94c42e9cc54aa785b",
+      "git_blob": "be6fc0ae90243f49af8366c3817ae464c5412c18"
+    },
+    {
+      "path": "research/recovered/STONEAGE-JSS2001-PET-MANUAL-CONTRACT-R1.json",
+      "bytes": 5830,
+      "sha256": "ec4c1602472fb5daa2d458e455f06df3318011e560be053abd460d7d5fba5a13",
+      "git_blob": "53d8efd5180c87ff84445d696e6390af1cb5c0ec"
+    },
+    {
+      "path": "research/recovered/STONEAGE-JSS2001-OFFICIAL-EVENT-VENUE-R1.json",
+      "bytes": 10583,
+      "sha256": "7c105ecdf4c7ca6e751da27dbaf827013fd72b238882421bb7034ef1f7027f5b",
+      "git_blob": "1fc8ca061330655483cbc931f93043be7c3792a9"
+    },
+    {
+      "path": "research/recovered/STONEAGE-JSS-EVENT-RESULTS-PET-ATTRIBUTION-R1.json",
+      "bytes": 8778,
+      "sha256": "c343f3b1cce14ab26b3ef4c1ad7b4ca1fa0402d1ce7ad8a904d3df646ef79ff9",
+      "git_blob": "19210bbc97936130222bc83860026da33b096dfc"
+    },
+    {
+      "path": "research/recovered/STONEAGE-JSS-FIRST-PARTY-PET-FAQ-R1.json",
+      "bytes": 18138,
+      "sha256": "38ebbeca6b04d4a3a229da8ac117e76bc083fcd6e03b7ece6db660b58cf153b0",
+      "git_blob": "072f407f82c78f06a09be81c06858a1c604ae277"
+    },
+    {
+      "path": "research/recovered/STONEAGE-JSS-PET-PATCH-HISTORY-R1.json",
+      "bytes": 18907,
+      "sha256": "3fdd731a6cce9f9c4aa80d30c861f84eda46701776deee4f882731897bbedfcd",
+      "git_blob": "1a3dc51a8c1cbaf04991068aa779b62e11d99384"
+    },
+    {
+      "path": "research/recovered/STONEAGE-WAYI-2005-ARCHIVED-PAGES-R1.json",
+      "bytes": 12453,
+      "sha256": "717d01b56e6260948cdb0d99d00f4c5e856e95c65a054683c997bbf9f0df95ea",
+      "git_blob": "d5c0adb3db19ea4ef71f14fd2fa0144516d1dcce"
+    },
+    {
+      "path": "research/recovered/STONEAGE-WAYI-OFFICIAL-80-DOWNLOAD-CHAIN-R1.json",
+      "bytes": 24832,
+      "sha256": "c9b1b248966e6b811572ced9fb250df0b7e13a2adc2c4a6389eacd08ada159dc",
+      "git_blob": "8f6ddeb1dd5536194711e5d749f5eb2adf6ddc92"
+    },
+    {
+      "path": "research/recovered/STONEAGE-WAYI-85-SIXPART-METADATA-R1.json",
+      "bytes": 1942,
+      "sha256": "a0a9f8c46aadc32f56ab45a4dc053aa301c7260a09a148276e26c8cb78d826fc",
+      "git_blob": "b8744d90990c27365785f613487e64c4db288e6f"
+    }
+  ],
+  "reviewed_domains": [
+    {
+      "domain_id": "version_lineage",
+      "original_order": 1,
+      "baseline_evidence_status": "PARTIAL_SOURCE",
+      "previous_material_disposition": "SOURCE_PROFILE_SEPARATION_REQUIRED",
+      "r4_material_outcome_or_gap": "Official2005 synopsis explicitly groups nine historical version labels; not nine authenticated clients or universal canon.",
+      "historical_status_changed": false,
+      "version_promotion_allowed": false,
+      "tw10_original_content_completed": false
+    },
+    {
+      "domain_id": "login_splash",
+      "original_order": 2,
+      "baseline_evidence_status": "OPEN_VISUAL",
+      "previous_material_disposition": "ORIGINAL_LOGIN_VISUAL_STILL_OPEN",
+      "r4_material_outcome_or_gap": "No new login pixels or original interaction trace; official site shell is not the game login screen.",
+      "historical_status_changed": false,
+      "version_promotion_allowed": false,
+      "tw10_original_content_completed": false
+    },
+    {
+      "domain_id": "character_creation",
+      "original_order": 3,
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "previous_material_disposition": "NEW_JSS2001_OFFICIAL_COUNTS",
+      "r4_material_outcome_or_gap": "Prior JSS12 bodies/48 appearances retained; no new named avatar roster.",
+      "historical_status_changed": false,
+      "version_promotion_allowed": false,
+      "tw10_original_content_completed": false
+    },
+    {
+      "domain_id": "character_sprite_model",
+      "original_order": 4,
+      "baseline_evidence_status": "PARTIAL_RESOURCE",
+      "previous_material_disposition": "ORIGINAL_NUMERIC_LINKS_ONLY",
+      "r4_material_outcome_or_gap": "Original numeric frame joins retained; no new named character-to-animation mapping.",
+      "historical_status_changed": false,
+      "version_promotion_allowed": false,
+      "tw10_original_content_completed": false
+    },
+    {
+      "domain_id": "world_map",
+      "original_order": 5,
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "previous_material_disposition": "T03_RESOURCE_ATTRIBUTES_NOT_WORLD",
+      "r4_material_outcome_or_gap": "New official names Nis/Eden/lost world and undersea-to-ice-gap story relation; no playable floor IDs, coordinates or map bytes.",
+      "historical_status_changed": false,
+      "version_promotion_allowed": false,
+      "tw10_original_content_completed": false
+    },
+    {
+      "domain_id": "npc_identity",
+      "original_order": 6,
+      "baseline_evidence_status": "OPEN_CONTENT",
+      "previous_material_disposition": "JSS2001_SERVICE_VISUALS_NOT_NPC_MASTER",
+      "r4_material_outcome_or_gap": "Spirit King is an official narrative figure; no NPC master ID or proof of an interactable NPC. Prior venue roles remain anonymous.",
+      "historical_status_changed": false,
+      "version_promotion_allowed": false,
+      "tw10_original_content_completed": false
+    },
+    {
+      "domain_id": "npc_dialog_ui",
+      "original_order": 7,
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "previous_material_disposition": "STILL_MISSING_SAME_BUILD_DIALOG_TRACE",
+      "r4_material_outcome_or_gap": "No original dialogue state trace; narrative paragraph cannot stand in for NPC speech or quest script.",
+      "historical_status_changed": false,
+      "version_promotion_allowed": false,
+      "tw10_original_content_completed": false
+    },
+    {
+      "domain_id": "quest_content",
+      "original_order": 8,
+      "baseline_evidence_status": "OPEN_CONTENT",
+      "previous_material_disposition": "SAME_BUILD_SERVER_SOURCE_STILL_OPEN",
+      "r4_material_outcome_or_gap": "Prior social announcements/result, FAQ issue labels and dated pet changes remain distinct from scripted quests. Lost-world question remains open.",
+      "historical_status_changed": false,
+      "version_promotion_allowed": false,
+      "tw10_original_content_completed": false
+    },
+    {
+      "domain_id": "pet_species",
+      "original_order": 9,
+      "baseline_evidence_status": "OPEN_SAME_BUILD_ROSTER",
+      "previous_material_disposition": "NAMED_MASTER_MAPPING_STILL_OPEN",
+      "r4_material_outcome_or_gap": "Rare contest prize still unnamed; new world synopsis supplies no pet species roster or graphic binding.",
+      "historical_status_changed": false,
+      "version_promotion_allowed": false,
+      "tw10_original_content_completed": false
+    },
+    {
+      "domain_id": "pet_visual",
+      "original_order": 10,
+      "baseline_evidence_status": "PARTIAL_RESOURCE",
+      "previous_material_disposition": "NEW_JSS2001_WINDOW_AND_PHOTO_DESCRIPTION",
+      "r4_material_outcome_or_gap": "Prior qualified JSS thumbnails remain; new page has eight individually viewed original GIF slices and one404; partial illustration, not a species census.",
+      "historical_status_changed": false,
+      "version_promotion_allowed": false,
+      "tw10_original_content_completed": false
+    },
+    {
+      "domain_id": "pet_stats",
+      "original_order": 11,
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "previous_material_disposition": "NEW_JSS2001_CAPTURE_BOUND",
+      "r4_material_outcome_or_gap": "Prior loyalty description and pet-name/boarding defect labels preserved; no new same-build species parameters.",
+      "historical_status_changed": false,
+      "version_promotion_allowed": false,
+      "tw10_original_content_completed": false
+    },
+    {
+      "domain_id": "pet_growth",
+      "original_order": 12,
+      "baseline_evidence_status": "PARTIAL_DESCENDANT",
+      "previous_material_disposition": "ORIGINAL_GROWTH_TABLE_STILL_OPEN",
+      "r4_material_outcome_or_gap": "No original growth table; do not derive growth coefficients from civilization or narrative development.",
+      "historical_status_changed": false,
+      "version_promotion_allowed": false,
+      "tw10_original_content_completed": false
+    },
+    {
+      "domain_id": "pet_skills",
+      "original_order": 13,
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "previous_material_disposition": "NEW_JSS2001_SKILL_OPERATIONS",
+      "r4_material_outcome_or_gap": "Prior1999-11-08 synthesis/cooking additions and dated generic skill fixes retained; exact FAQ symptom joins still unproven.",
+      "historical_status_changed": false,
+      "version_promotion_allowed": false,
+      "tw10_original_content_completed": false
+    },
+    {
+      "domain_id": "pet_encounter",
+      "original_order": 14,
+      "baseline_evidence_status": "PARTIAL_DESCENDANT",
+      "previous_material_disposition": "NEW_JSS2001_CAPTURE_AND_PICKUP_LIMITS",
+      "r4_material_outcome_or_gap": "Prior distinct12-hour and5-minute pet-mail contexts retained; neither supplies original encounter/spawn tables.",
+      "historical_status_changed": false,
+      "version_promotion_allowed": false,
+      "tw10_original_content_completed": false
+    },
+    {
+      "domain_id": "ride_mount",
+      "original_order": 15,
+      "baseline_evidence_status": "PARTIAL_DESCENDANT",
+      "previous_material_disposition": "EARLY_RIDING_SOURCE_STILL_OPEN",
+      "r4_material_outcome_or_gap": "No new ride unlock source; first-ride emotional value is a future design priority, not proof of launch availability.",
+      "historical_status_changed": false,
+      "version_promotion_allowed": false,
+      "tw10_original_content_completed": false
+    },
+    {
+      "domain_id": "battle_ui_rules",
+      "original_order": 16,
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "previous_material_disposition": "NEW_JSS2001_COMMAND_DESCRIPTION",
+      "r4_material_outcome_or_gap": "Prior FAQ duel-ranking refresh and256-color/time-palette description preserved; no new turn rules or actual UI pixels.",
+      "historical_status_changed": false,
+      "version_promotion_allowed": false,
+      "tw10_original_content_completed": false
+    },
+    {
+      "domain_id": "item_equipment_economy",
+      "original_order": 17,
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "previous_material_disposition": "NEW_JSS2001_CRAFTING_AND_SERVICE_DESCRIPTION",
+      "r4_material_outcome_or_gap": "Prior pet boarding availability and processing descriptions retained; no original fees, recipes or inventory master.",
+      "historical_status_changed": false,
+      "version_promotion_allowed": false,
+      "tw10_original_content_completed": false
+    },
+    {
+      "domain_id": "audio_fx",
+      "original_order": 18,
+      "baseline_evidence_status": "PARTIAL_RESOURCE",
+      "previous_material_disposition": "T04_API_CALLS_NOT_EVENT_SOUNDTRACK",
+      "r4_material_outcome_or_gap": "Prior FAQ compatibility advice and original API metadata remain; no new scene-to-track mapping.",
+      "historical_status_changed": false,
+      "version_promotion_allowed": false,
+      "tw10_original_content_completed": false
+    },
+    {
+      "domain_id": "helper_versions",
+      "original_order": 19,
+      "baseline_evidence_status": "PARTIAL_CATALOG",
+      "previous_material_disposition": "NAMED_VERSION_GAPS_RETAINED",
+      "r4_material_outcome_or_gap": "Legacy helper catalog unchanged; community/helper chronology is separate from official fictional history.",
+      "historical_status_changed": false,
+      "version_promotion_allowed": false,
+      "tw10_original_content_completed": false
+    },
+    {
+      "domain_id": "helper_capabilities",
+      "original_order": 20,
+      "baseline_evidence_status": "PARTIAL_CATALOG",
+      "previous_material_disposition": "FEATURE_HISTORY_NOT_IMPLEMENTATION",
+      "r4_material_outcome_or_gap": "No assistant feature implementation or adoption decision; prior historical feature scope retained.",
+      "historical_status_changed": false,
+      "version_promotion_allowed": false,
+      "tw10_original_content_completed": false
+    },
+    {
+      "domain_id": "reference_web",
+      "original_order": 21,
+      "baseline_evidence_status": "PARTIAL_DISCOVERY",
+      "previous_material_disposition": "NEW_FIRST_PARTY_INTRO_CONTENT",
+      "r4_material_outcome_or_gap": "New actual home-to-game-intro edge, five source-ordered version groups, four unqueried detail links and nine image references.",
+      "historical_status_changed": false,
+      "version_promotion_allowed": false,
+      "tw10_original_content_completed": false
+    },
+    {
+      "domain_id": "future_player_wiki",
+      "original_order": 22,
+      "baseline_evidence_status": "DESIGN_PREP_ONLY",
+      "previous_material_disposition": "PRODUCTION_REMAINS_GATED",
+      "r4_material_outcome_or_gap": "Provenance-bearing derived records only; game/wiki production and original-asset reuse remain gated.",
+      "historical_status_changed": false,
+      "version_promotion_allowed": false,
+      "tw10_original_content_completed": false
+    }
+  ],
+  "reviewed_domains_count": 22,
+  "official_reference_coverage": {
+    "coarse_prior_profile_classes": [
+      {
+        "id": "JSS1999_ORIGIN",
+        "label": "Japan original 1999",
+        "grade": "EARLY_TARGET_NO_COMPLETE_BUILD",
+        "can_backfill": false
+      },
+      {
+        "id": "TW10",
+        "label": "Taiwan Waei/JSS v1.0 accepted disc",
+        "grade": "CLIENT_DIRECT_ONLY_ORIGINAL_SERVER_NOT_RECOVERED",
+        "can_backfill": false
+      },
+      {
+        "id": "CN182",
+        "label": "Mainland 1.82 early classic",
+        "grade": "VERSIONED_EARLY_GUIDES_NOT_TW10_SERVER",
+        "can_backfill": false
+      },
+      {
+        "id": "RECOVERED25",
+        "label": "later preserved v2.5 branch",
+        "grade": "DESCENDANT_SERVER_CONTENT_NO_AUTOMATIC_TW10",
+        "can_backfill": false
+      },
+      {
+        "id": "LATER_OFFICIAL",
+        "label": "2.0–8.5 official/later material by exact edition",
+        "grade": "MUST_TAG_VERSION_AND_PUBLICATION_DATE",
+        "can_backfill": false
+      },
+      {
+        "id": "PRIVATE_SERVER",
+        "label": "modern server and community adaptations",
+        "grade": "DISCOVERY_OR_OWN_SERVER_ONLY",
+        "can_backfill": false
+      },
+      {
+        "id": "NEW_GAME",
+        "label": "future original single-player design",
+        "grade": "DESIGN_NOT_HISTORICAL_SOURCE",
+        "can_backfill": false
+      }
+    ],
+    "known_evidence_contexts": [
+      {
+        "context": "JSS1999_ORIGIN",
+        "region_or_lineage": "EARLY_JAPAN",
+        "actual_evidence_level": "CONTEMPORANEOUS_DOCUMENTS_NO_COMPLETE_LAUNCH_BUILD"
+      },
+      {
+        "context": "JSS2001_OFFICIAL_WEB",
+        "region_or_lineage": "JSS_JAPAN",
+        "actual_evidence_level": "QUALIFIED_MANUAL_CONTENT_IMAGES_EVENTS_FAQ_AND_DATED_HISTORY"
+      },
+      {
+        "context": "TW10_CLIENT_BASELINE",
+        "region_or_lineage": "TAIWAN",
+        "actual_evidence_level": "AUTHENTICATED_CLIENT_RESOURCES_NO_ORIGINAL_SERVER_MASTER"
+      },
+      {
+        "context": "CN182_GUIDE_LAYER",
+        "region_or_lineage": "MAINLAND",
+        "actual_evidence_level": "VERSIONED_GUIDES_NOT_AUTHENTICATED_TW10_SERVER"
+      },
+      {
+        "context": "TW2005_OFFICIAL_WEB",
+        "region_or_lineage": "TAIWAN_WAYI",
+        "actual_evidence_level": "QUALIFIED_WORLD_SYNOPSIS_AND_OPERATOR_PAGES"
+      },
+      {
+        "context": "TW75_OFFICIAL_DOWNLOAD_POINTER",
+        "region_or_lineage": "TAIWAN_WAYI",
+        "actual_evidence_level": "OPERATOR_LABEL_AND_URL_NO_FULL_INSTALLER_IDENTITY"
+      },
+      {
+        "context": "TW80_OFFICIAL_DOWNLOAD_CHAIN",
+        "region_or_lineage": "TAIWAN_WAYI",
+        "actual_evidence_level": "DATED_OPERATOR_LISTING_AND_BOUNDED_UPDATER_NOT_FULL_INSTALLER"
+      },
+      {
+        "context": "TW85_COMMUNITY_CARRIER_LEAD",
+        "region_or_lineage": "CLAIMED_TAIWAN",
+        "actual_evidence_level": "COMMUNITY_LANDING_METADATA_NOT_AUTHENTICATED_OFFICIAL_BYTES"
+      },
+      {
+        "context": "RECOVERED25_DESCENDANT",
+        "region_or_lineage": "SOURCE_TREE_LINEAGE",
+        "actual_evidence_level": "DESCENDANT_MATERIAL_NOT_ORIGINAL_OFFICIAL_SERVER_PROOF"
+      }
+    ],
+    "contexts_are_distinct_official_release_count": false,
+    "all_official_release_census_complete": false,
+    "unfilled_coverage": [
+      "COMPLETE_REGION_OPERATOR_PRODUCT_PATCH_INVENTORY",
+      "NAMED_PET_NPC_QUEST_TABLES_PER_RELEASE",
+      "SOURCE_QUALIFIED_REGIONAL_BRANCH_AND_RETCON_LINKS"
+    ],
+    "later_official_content_allowed_on_its_own_version_merits": true,
+    "same_build_early_promotion_without_source_allowed": false
+  },
+  "new_material_result": {
+    "world_synopsis_report": "research/recovered/STONEAGE-WAYI-OFFICIAL-WORLDLINE-R1.json",
+    "newly_acquired_world_pages": 1,
+    "reacquired_existing_home": 1,
+    "version_groups": 5,
+    "literal_version_labels": 9,
+    "actual_image_slices_acquired": 8,
+    "unobtained_image_slices": 1,
+    "real_release_and_fictional_chronologies_separated": true,
+    "lost_world_identity_question_answered": false
+  },
+  "selected_package": {
+    "task": "TW-WAYI-OFFICIAL-WORLDLINE-SOURCE-01",
+    "result": "ONE_ACTUAL_OFFICIAL_NARRATIVE_PAGE_QUALIFIED",
+    "reason": "Actual operator synopsis directly connects named continents and version labels; adds world/story material rather than more API metadata.",
+    "stop_condition_met": "One actual introduction page via existing authenticated home; eight necessary illustration slices qualified, one404; no further detail/Flash/ActiveX crawl."
+  },
+  "next_priority": {
+    "task": "TW-WAYI-OFFICIAL-INTRO-DETAIL-01",
+    "scope": "One of four actual game01 detail links, selected from source order if labels remain unknown; validate its own heading/content before attributing topic.",
+    "goal": "One named story, character, pet, environment or gameplay contract in the Taiwan official-web profile.",
+    "stop": "One qualified detail, or one bounded unsuccessful attempt then reassess. Never infer topic/version from numeric filename; no forms or software."
+  },
+  "boundaries": {
+    "stage_a_system_families": {
+      "PARTIAL": 7,
+      "OPEN": 2
+    },
+    "all22_historical_statuses_preserved": true,
+    "original_server_or_full_world_recovered": false,
+    "stage_b_production": "GATED",
+    "public_wiki_implementation_started": false,
+    "r79": "PAUSED_NON_BLOCKING",
+    "overall_restoration_percentage": null
+  }
+}

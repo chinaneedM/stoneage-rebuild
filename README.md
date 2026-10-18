@@ -268,3 +268,15 @@ baseline and each later version's own provenance and differences. The existing
 seven profile classes are not a complete official-release census.
 See DD-027 and the current content-archive/roadmap additions for collection
 fields and priorities. Selection for the new game remains a later joint decision.
+
+
+### Official world/story source — 2026-10-18
+
+A newly acquired Taiwan Wayi2005 introduction explicitly connects Nis, Eden,
+undersea exploration and the lost world with nine version labels in five
+source-ordered groups. The mechanical-ruins/new-civilization question remains
+unanswered; version labels do not authenticate nine client builds. Eight
+original illustration slices were recovered and inspected; one remains missing.
+See [official world synopsis](docs/specs/STONEAGE-WAYI-OFFICIAL-WORLDLINE-R1.md)
+and the22-domain material review R4. NEXT: `TW-WAYI-OFFICIAL-INTRO-DETAIL-01`,
+one actual detail link, with its own heading/content verified before attribution.

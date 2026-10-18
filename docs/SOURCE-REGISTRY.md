@@ -7071,3 +7071,11 @@ STONEAGE-HISTORICAL-WIKI-QUERY-CONTRACT-DRAFT-R1.json引用四个既有派生Git
 - 旧已验top真实http://www.titan.co.jp/stoneage/verup.html，实际20010417162544，11239B SHA256`ba71d859f34f31261f4293dc61583c53a8e77133898c4a8148c544a452abc3cb`，Shift-JIS严格解码。2001档案中的运营商1999-10-18至2000-09-11自标日期，不是1999档案/部署或构建认证。
 - 全40有序日期块只存原日期/星期/正文指纹，含同日两记录及星期冲突；选择7组宠物寄存/技能/邮件语义，不宣称40条完整恢复。FAQ比较源SHA256`38ebbeca6b04d4a3a229da8ac117e76bc083fcd6e03b7ece6db660b58cf153b0`；泛称修复只同功能/缺陷族，不认证具体症状。三具体任务标签未见只是此页结果。
 - updater/manual未跟随，无程序/原资产下载。PATCH-HISTORY-SOURCE-INTAKE-R1保请求/最终URL/前置身份，永久派生/规范与独立来源验收分开保管。原HTML不入Git。
+
+
+## 2026-10-18 — TW-WAYI-OFFICIAL-WORLDLINE-SOURCE-01与22域R4
+
+- 旧认证主页http://www.wayi.com.tw/stoneage/重新取实际20050615023834/45669B SHA256`4a4a7f0667a8d71b1d37ab0b73712793cf2d7e8a6cd7a7a158a487d060657397`，不计新页面。实际HTML href指向game/game01.asp，未执行点击/脚本。
+- 新正文http://www.wayi.com.tw/stoneage/game/game01.asp，实际20050614002509/20444B SHA256`c0a2f96c1d0232eb3f94328481ff512c3efed63daeab912fcc5dd0c397f1ba0d`，Big5严格解码，5组/9版本标签及具名大陆/精灵王叙事，不是9客户端或统一正史认证；失落世界身份保持问题。
+- 原正文3×3 pic2_1—9.gif八张实取，实际2006-01-05，大小/摘要/格式/实际尺寸/帧数及局部插画观察写WORLDLINE-R1。第7片首次502、一次重试成功；第9片404未取，完整请求在SOURCE-INTAKE，缺角不补，不推全网不存在。原HTML/GIF不入Git。
+- R4逐行保留22域原状态，11份来源指纹、7粗profile/9证据上下文、全官方覆盖缺口和下一有限真实详情页来源共同存档。世界故事按台湾2005运营商归属，JSS1999/TW1.0、精确构建与原NPC/任务/宠物表仍OPEN。独立两页/八图CI及ZIP/raw接受须真实运行后记录。
