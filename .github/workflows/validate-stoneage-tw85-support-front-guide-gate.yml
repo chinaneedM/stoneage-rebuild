@@ -1,0 +1,22 @@
+name: Validate 2006 TW8.5 Support Front period guide source gates
+on:
+  push:
+    paths:
+      - research/recovered/STONEAGE-TW85-SUPPORT-FRONT-GUIDE-GATE-R1.json
+      - docs/specs/STONEAGE-TW85-SUPPORT-FRONT-GUIDE-GATE-R1.md
+      - tests/test_stoneage_tw85_support_front_gate.py
+      - .github/workflows/validate-stoneage-tw85-support-front-guide-gate.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  provenance-and-named-quest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify 8 bounded content/source/adversarial contracts
+        run: python -m unittest tests.test_stoneage_tw85_support_front_gate -v

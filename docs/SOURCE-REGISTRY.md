@@ -7154,3 +7154,19 @@ STONEAGE-HISTORICAL-WIKI-QUERY-CONTRACT-DRAFT-R1.json引用四个既有派生Git
 - Research-structural contract: `research/recovered/STONEAGE-TW85-PERIOD-PRESS-WORLDLINE-R1.json`. Original news HTML/images and proprietary game assets excluded.
 
 - **2026-10-18 exact source byte attempt:** GitHub Actions run39132023657/job117688962061 failed (6 boundary tests passed, source fetch HTTP403). No source SHA256 or retained HTML; neither missing-website conclusion nor original-byte provenance can be drawn. Follow-on probe reports `HTTP_ACCESS_DENIED_IN_RUNNER` with null bytes/hash if blocked; a green structural CI is NOT historical source-byte acceptance. This failure is an append-only evidence record.
+
+
+### SRC-TW85-20060623-BAHAMUT-SUPPORT-FRONT-GUIDE-01
+- URL: https://forum.gamer.com.tw/G2.php?bsn=1571&sn=3199
+- Contemporary-proximity lead, **C player guide**; current page displays «任務三：支援前線», `2006-06-23 19:00:09 編輯`, poster 1202/uao1222. Date is an edit marker, not first original publication, operator deployment or independently pinned 2006 HTML. No raw-byte SHA.
+- Supports as secondary text: five-step description of named 伊秋娜/奏敷/布克瑟, supply delivery, dungeon/map transitions, gift parcel and a reward with no actual item identity. Cave theft/logout remarks are player advice and not official feature confirmation.
+- Cannot support: canonical first-party quest ID/flags, floor IDs, original target coordinates, NPC item master tables or verified quest settlement; nor TW1.0 origin.
+
+### SRC-TW85-LATER-BAHAMUT-WIKI-SUPPORT-FRONT-01
+- URL: https://wiki2.gamer.com.tw/wiki.php?n=2198%3A8.5+%E9%AD%94%E5%9F%9F%E5%A4%A7%E5%86%92%E9%9A%AA%E4%BB%BB%E5%8B%99
+- Undated player/community-curated version of same named guide, **C**. Coordinates differ from dated-editor guide (伊秋娜20,27 vs 21,27; 奏敷302,130 vs 303,130; 布克瑟114,310 vs 114,309); it adds level101 and prior `枕戈待旦` conditions. Contradictions OPEN, not verified official fixes nor independently attested 2006 content.
+- Downstream secondary cross-reference only; shared text must not count as independent contemporaneous publisher witnesses. No original website HTML/assets mirrored.
+
+### SRC-TW85-WAYI-2006-SUPPORT-FRONT-FIRSTPARTY-GAP-01
+- Historical first-party candidate root: http://www.wayi.com.tw/stoneage/ — prior 2005 original pages in this repo were source qualified. This turn's one dated 2006-06-23 Wayback/availability attempt was inaccessible to the web reader; other targeted named searches did not retrieve an authenticated Wayi 2006 mission page, patch note or original build-linked script. **OPEN_EVIDENCE_LIMITED**, not a claim of global absence or HTTP404.
+- Reopen on a source-custodied original operator notice/patch/manual or official-game resource explicitly linking this task. Secondary derived catalog: `research/recovered/STONEAGE-TW85-SUPPORT-FRONT-GUIDE-GATE-R1.json`.

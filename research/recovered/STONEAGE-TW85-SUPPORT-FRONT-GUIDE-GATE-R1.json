@@ -1,0 +1,265 @@
+{
+  "schema": "stoneage.tw85.named_quest.20060623_source_bound.r1",
+  "package": "TW85_NAMED_QUEST_FIRSTPARTY_MATERIAL_GATE-01",
+  "scope": {
+    "title": "8.5 魔域大冒險 / 支援前線",
+    "region": "Taiwan",
+    "earliest_claimed_version": "8.5",
+    "category": "NPC_QUEST_ITEMS_MAP_MOVEMENT",
+    "is_tw10_original": false,
+    "original_server_recovered": false
+  },
+  "original_operator_source_status": "OPEN_EVIDENCE_LIMITED_NO_AUTHENTICATED_2006_FIRST_PARTY_TASK_SCRIPT",
+  "material_search": {
+    "constraint": "ONE_BOUNDED_FIRST_PARTY_GATE_PLUS_ONE_NEAR_CONTEMPORANEOUS_NAMED_PLAYER_GUIDE",
+    "candidate_official_site": "http://www.wayi.com.tw/stoneage/",
+    "official_2006_snapshot_access": "WEB_READER_UNAVAILABLE_FOR_REQUESTED_20060623_REPLAY_NOT_NEGATIVE_EXISTENCE_PROOF",
+    "historical_official_patch_or_client_quest_verified": false,
+    "official_quest_NPC_or_reward_table_sha256": null,
+    "reopen_if": [
+      "independently authenticated Wayi 2006 task notice/patch",
+      "2006 original Wayi site capture with matching named task",
+      "source-custodied official 8.5 client or server resource directly containing task ID/strings",
+      "contemporaneous dated publisher manual with exact gameplay rules"
+    ]
+  },
+  "sources": [
+    {
+      "id": "BAHAMUT_G2_3199",
+      "url": "https://forum.gamer.com.tw/G2.php?bsn=1571&sn=3199",
+      "title": "〖攻略〗任務三：支援前線",
+      "site": "巴哈姆特精華區",
+      "displayed_edit_time": "2006-06-23 19:00:09",
+      "date_kind": "CURRENT_PAGE_EDIT_FIELD_NOT_ORIGINAL_PUBLICATION_OR_RUNTIME",
+      "poster": "1202 / uao1222",
+      "source_tier": "C_PERIOD_PLAYER_GUIDE",
+      "original_html_sha256": null,
+      "original_2006_web_capture_verified": false,
+      "independent_original_author_verified": false
+    },
+    {
+      "id": "GAMEZONE_20060621",
+      "url": "https://www.games.idv.tw/news.php?mode=view&nid=615",
+      "title": "石器時代V8.5大改版",
+      "date": "2006-06-21",
+      "source_tier": "A_CONTEMPORANEOUS_PRESS_OPERATOR_ATTRIBUTED",
+      "supports_named_quest_only": true,
+      "supports_actual_npc_or_items": false
+    },
+    {
+      "id": "BAHAMUT_WIKI_LATER",
+      "url": "https://wiki2.gamer.com.tw/wiki.php?n=2198%3A8.5+%E9%AD%94%E5%9F%9F%E5%A4%A7%E5%86%92%E9%9A%AA%E4%BB%BB%E5%8B%99",
+      "title": "8.5 魔域大冒險任務",
+      "date": null,
+      "source_tier": "C_UNDATED_WIKI_CURATED_REWRITE",
+      "is_independent_2006_source": false,
+      "original_html_sha256": null
+    }
+  ],
+  "quest": {
+    "source_name": "支援前線",
+    "source_ordinal": "任務三",
+    "known_prior_quest_condition": null,
+    "confirmed_game_quest_id": null,
+    "server_flag": null,
+    "actual_reward": null,
+    "party_member_rule": null,
+    "first_party_reward_eligibility_verified": false
+  },
+  "guide_relationships": [
+    {
+      "step": 1,
+      "kind": "NPC_DIALOGUE_AND_SUPPLY_PICKUP",
+      "npc": "伊秋娜",
+      "location": "貧民窟",
+      "xy": [
+        21,
+        27
+      ],
+      "claimed_free_item_slots": 12,
+      "supply_kinds": 2,
+      "supply_each": 6,
+      "minimum_each_on_delivery": 4,
+      "quest_item_ids": null
+    },
+    {
+      "step": 2,
+      "kind": "MOVEMENT_GATE_AND_COMBAT",
+      "location": "地下通道",
+      "entry_xy": [
+        9,
+        10
+      ],
+      "reported_route": [
+        [
+          8,
+          16
+        ],
+        [
+          12,
+          29
+        ],
+        [
+          33,
+          19
+        ],
+        [
+          8,
+          25
+        ],
+        [
+          8,
+          8
+        ],
+        [
+          10,
+          6
+        ]
+      ],
+      "gate_name": "魔界之門",
+      "gate_xy": [
+        15,
+        14
+      ],
+      "approximate_guard_fights": 10,
+      "exact_fight_count_verified": false,
+      "transfers_to": "詭異洞窟",
+      "map_id": null
+    },
+    {
+      "step": 3,
+      "kind": "DUNGEON_ROUTE",
+      "location": "詭異洞窟",
+      "reported_route": [
+        [
+          34,
+          54
+        ],
+        [
+          43,
+          3
+        ],
+        [
+          15,
+          12
+        ],
+        [
+          15,
+          12
+        ],
+        [
+          11,
+          27
+        ],
+        [
+          8,
+          47
+        ],
+        [
+          45,
+          43
+        ],
+        [
+          29,
+          3
+        ]
+      ],
+      "transfers_to": "焦熱之地",
+      "map_id": null
+    },
+    {
+      "step": 4,
+      "kind": "DELIVER_SUPPLIES_AND_RECEIVE_PARCEL",
+      "location": "魔域前哨營地",
+      "entry_xy": [
+        296,
+        154
+      ],
+      "npc": "奏敷",
+      "npc_xy": [
+        303,
+        130
+      ],
+      "consumes_supplies_reported": true,
+      "receives": "前線包裹",
+      "parcel_item_id": null,
+      "exact_transaction_verified": false
+    },
+    {
+      "step": 5,
+      "kind": "DELIVER_PARCEL_AND_REWARD",
+      "location": "焦熱之地",
+      "return_xy": [
+        297,
+        153
+      ],
+      "npc": "布克瑟",
+      "npc_xy": [
+        114,
+        309
+      ],
+      "consumes": "前線包裹",
+      "reward_name": null,
+      "reward_id": null,
+      "exact_transaction_verified": false
+    }
+  ],
+  "supporting_player_advice": {
+    "kind": "PLAYER_WORKAROUND_NOT_OFFICIAL_BEHAVIOR",
+    "reported_cave_enemies_steal_items": true,
+    "recommends_encounter_reduction": true,
+    "mentions_logout_during_combat": true,
+    "server_behavior_or_safety_verified": false
+  },
+  "later_wiki_variants": [
+    {
+      "field": "伊秋娜_貧民窟_coordinates",
+      "period_edited_guide_xy": [
+        21,
+        27
+      ],
+      "later_wiki_xy": [
+        20,
+        27
+      ],
+      "resolution": "UNKNOWN"
+    },
+    {
+      "field": "奏敷_前哨營地_coordinates",
+      "period_edited_guide_xy": [
+        303,
+        130
+      ],
+      "later_wiki_xy": [
+        302,
+        130
+      ],
+      "resolution": "UNKNOWN"
+    },
+    {
+      "field": "布克瑟_焦熱之地_coordinates",
+      "period_edited_guide_xy": [
+        114,
+        309
+      ],
+      "later_wiki_xy": [
+        114,
+        310
+      ],
+      "resolution": "UNKNOWN"
+    },
+    {
+      "field": "quest_prerequisite_level_and_prior_named_quest",
+      "period_edited_guide": "NOT_STATED",
+      "later_wiki": "LEVEL_101_AND_枕戈待旦",
+      "resolution": "UNVERIFIED_NOT_INFERRED_IN_2006"
+    }
+  ],
+  "stage_a": "7_PARTIAL_2_OPEN",
+  "stage_b": "GATED",
+  "r79": "PAUSED_NON_BLOCKING",
+  "source_claim_status": "SOURCE_TEXT_ONLY_SERVER_RUNTIME_OPEN",
+  "dedicated_ci_interpretation": "STRUCTURAL_CONTRACT_ONLY_NOT_ORIGINAL_SOURCE_BYTES",
+  "copyrighted_game_assets_embedded": false,
+  "next": "ALL_OFFICIAL_VERSIONS_NEW_NAMED_FIRSTPARTY_DOMAIN-01"
+}

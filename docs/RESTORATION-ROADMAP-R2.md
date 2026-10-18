@@ -603,3 +603,12 @@ Highest next: CN80_JUDGMENT_2005_NAMED_CONTENT-01, one source-bounded early date
 已形成按来源/版本/年代的机器关系、文献规格和6负例测试，以及独立原新闻字节探测工作流；探测成功与源SHA归档必须以Actions实际结果为准，新闻载体不能冒充华义原官网。文献交付 `STONEAGE-TW85-PERIOD-PRESS-WORLDLINE-R1`。
 
 **最高NEXT `TW85_NAMED_QUEST_FIRSTPARTY_MATERIAL_GATE-01`**：只对真正同年代华义第一方任务公告、旧官网源或官方带版本构建原件尝试一份可定年的具体「支援前線」或雷爾/艾巴登任务来源；若无，登记缺源、转其它具名内容域，不再循环新闻转载与无构建玩家攻略。原九族7 PARTIAL+2 OPEN、Stage B及网站GATED、R79暂停。
+
+
+## 2026-10-18 — 台湾8.5「支援前線」第一方归属闸门与同期任务见证
+
+2006-06-21同期新闻仅证明华义公开宣传具名「支援前線」；对华义2006官网相应任务/补丁和原服源的本次有界访问未获得合格的独立第一方原件，Wayback访问错误仅说明这次无法读页面，不能作为历史材料不存在的结论。玩家指南巴哈姆特G2 sn=3199显示2006-06-23 **编辑日期**，留下具名伊秋娜、奏敷、布克瑟与双补给→魔界之门/詭異洞窟→前哨营地/前线包裹→焦热之地交付链；所有地图floor、NPC/物品ID、具体触发/奖励仍UNKNOWN。后期Wiki同名攻略三个地点坐标有单格差异、另载前置等级，不强合并为2006真服坐标。
+
+该资料已作为来源限定的文献任务图谱，规格`docs/specs/STONEAGE-TW85-SUPPORT-FRONT-GUIDE-GATE-R1.md`与机器源`research/recovered/STONEAGE-TW85-SUPPORT-FRONT-GUIDE-GATE-R1.json`。无原页独立字节SHA，不得将结构CI写成历史原件已认证。
+
+**新的最高NEXT `ALL_OFFICIAL_VERSIONS_NEW_NAMED_FIRSTPARTY_DOMAIN-01`**：按22资料域和全官方发行范围另取真正一手、具名、有日期的非相同任务材料；不同年代单独归属，缺原脚本就登记边界，不继续转载扫荡或savedata R79。Stage A仍7 PARTIAL+2 OPEN、Stage B/百科GATED、R79暂停。

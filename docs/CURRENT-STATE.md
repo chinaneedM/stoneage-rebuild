@@ -15504,3 +15504,16 @@ GNN原HTML本轮取源存在403阅读器限制，只按同期索引文本见证�
 
 ### 2026-10-18 — 主线验收回执新提交的一次测试断言错误
 验收回执分支`6fbce9fbf336472d5f1a7ba99e9704759929cf17`首次专用CI`39132952437`/job`117691669550`实际FAILURE：测试错误地要求研究分支源HEAD `4569672...` 与已整合main HEAD `eaeaf42...` 完全一致。两提交本就不同。现仅修复测试断言，对原资料事实/结构/故障403记录不作掩盖，失败历史已写永久ACCEPTANCE JSON；修正后的新HEAD CI还必须独立重新验收。NEXT仍`TW85_NAMED_QUEST_FIRSTPARTY_MATERIAL_GATE-01`。
+
+
+## 2026-10-18 — TW85_NAMED_QUEST_FIRSTPARTY_MATERIAL_GATE-01：华义2006任务原件缺口与6月23日具名玩家路线
+
+本轮从全新远端main`eea7c393e115a4912fe078eaebc03e06df00ed89`/tree`f8c58ec9d948965d9e6add8d35d9efbe535056ab`重新启动，9项main Actions实际全部SUCCESS。重新取回完整`CURRENT-STATE.md` Git blob `a032dbfce846c1a4b5fd87f28d044ec47227406c`（1999910B）和Protocol/README/Design/Timeline/Source/Roadmap，所有历史前缀与失败记录保留。最高NEXT为台湾8.5《支援前線》的真正2006华义官网或原补丁/服务端任务归属闸门；不能把已闭合的同期新闻宣称升级为实服证明。
+
+有界查询2006华义官网名称空间`http://www.wayi.com.tw/stoneage/`与所选2006-06-23 Wayback页面；本次网页阅读器对存档访问返回UNAVAILABLE，站内具名任务/补丁没有合格一方原件。此结论**仅限这次具体查证**，不意味Wayback从来没有2006存档或当年官方从未发布任务。GameZone的2006-06-21报道可证明华义改版宣传点名「支援前線」，不证明实际任务flag/NPC/item/reward IDs。原服务端、同构建NPC主表与任务剧本保持`OPEN_EVIDENCE_LIMITED_NO_AUTHENTICATED_2006_FIRST_PARTY_TASK_SCRIPT`，旧runner403来源哈希为空的记录不被修饰。
+
+另新取得**同期玩家体验文献**：巴哈姆特精华区`https://forum.gamer.com.tw/G2.php?bsn=1571&sn=3199`显示2006-06-23 19:00:09「編輯」，并非原创首发或真实商业服上线时间。逐段恢复玩家文字中的具名三NPC（伊秋娜、奏敷、布克瑟），貧民窟领取两种各6份补给品、地下通道与魔界之门、詭異洞窟→焦熱之地→魔域前哨營地、二次交付前線包裹与领取未具名奖励。坐标与多段转场来自玩家指南，非原始floor ID/渲染/服务器调用。玩家提示遭窃和战斗时登出仅是经验说法，不认证原游戏防偷/战斗登出正式规则。
+
+另有无具体时效的巴哈姆特Wiki任务页面，三处坐标分别差1（伊秋娜21,27 / 20,27；奏敷303,130 / 302,130；布克瑟114,309 / 114,310），并增写等级101与`枕戈待旦`前置；不可据晚期合辑强改2006标记玩家内容。相关五段文本/来源时效、坐标反例、明确缺少的奖励字段和第一方闸门用`STONEAGE-TW85-SUPPORT-FRONT-GUIDE-GATE-R1.json`、`docs/specs/STONEAGE-TW85-SUPPORT-FRONT-GUIDE-GATE-R1.md`及8项边界测试/新Actions留存。原著作权网页全文/图片、官方游戏二进制均不入Git；新CI及合并必须按实际结果验收，不提前宣称通过。
+
+**最高NEXT `ALL_OFFICIAL_VERSIONS_NEW_NAMED_FIRSTPARTY_DOMAIN-01`**：停止本任务同稿及二传循环，从JSS1999–2001已验证官方手册/网页、台湾华义其它可归属官方内容或后期另一官方地区版本中选择一份**不同领域的具名一方内容**，例如可核NPC/宠物/地理/日常玩法第一手材料；按22域和版本独立标注，不启动原8.5伪服务器任务实现或R79。Stage A九族7 PARTIAL+2 OPEN、Stage B游戏/百科生产GATED、R79 PAUSED_NON_BLOCKING，无可证全游戏恢复百分比。
