@@ -1,0 +1,31 @@
+name: Validate 2006 Taiwan 8.5 press worldline
+on:
+  push:
+    paths:
+      - research/recovered/STONEAGE-TW85-PERIOD-PRESS-WORLDLINE-R1.json
+      - docs/specs/STONEAGE-TW85-PERIOD-PRESS-WORLDLINE-R1.md
+      - tests/test_stoneage_tw85_press_worldline.py
+      - tools/stoneage_tw85_press_replay.py
+      - .github/workflows/validate-stoneage-tw85-period-press-worldline.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  press-and-provenance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Check named-content and evidence negative cases
+        run: python -m unittest tests.test_stoneage_tw85_press_worldline -v
+      - name: Replay one public contemporaneous press page metadata without saving HTML
+        run: python -m tools.stoneage_tw85_press_replay --output "${{ runner.temp }}/tw85/derived.json"
+      - uses: actions/upload-artifact@v4
+        if: success()
+        with:
+          name: tw85-dated-press-derived-metadata
+          path: ${{ runner.temp }}/tw85/derived.json
+          retention-days: 30

@@ -1,0 +1,144 @@
+{
+  "schema": "stoneage.tw85.period_press_worldline.r1",
+  "package": "ALL_OFFICIAL_VERSION_NAMED_CONTENT_SOURCE-01",
+  "region": "Taiwan",
+  "version": "8.5 魔域大冒險",
+  "source_layer": "CONTEMPORANEOUS_OPERATOR_ATTRIBUTED_PRESS_NOT_ORIGINAL_OPERATOR_SITE",
+  "sources": [
+    {
+      "id": "GNN_20060621",
+      "url": "https://gnn.gamer.com.tw/detail.php?sn=23856",
+      "publication": "2006-06-21 21:39:50",
+      "type": "PERIOD_PRESS",
+      "raw_sha256": null,
+      "original_publisher_page": false,
+      "source_family": "BAHAMUT_REPORT"
+    },
+    {
+      "id": "GAMEZONE_20060621",
+      "url": "https://www.games.idv.tw/news.php?mode=view&nid=615",
+      "publication": "2006-06-21",
+      "type": "PERIOD_PRESS_DISTINCT_NAMED_QUEST",
+      "raw_sha256": null,
+      "original_publisher_page": false,
+      "source_family": "OVERLAPPING_PRESS_BUNDLE",
+      "source_replay": "PENDING_RUNNER_BYTE_VERIFICATION"
+    },
+    {
+      "id": "17173_20060622",
+      "url": "https://news.17173.com/content/2006-06-22/20060622092748047.shtml",
+      "publication": "2006-06-22 09:27:48",
+      "type": "REPRINT_ATTRIBUTED_TO_BAHAMUT",
+      "raw_sha256": null,
+      "original_publisher_page": false,
+      "source_family": "BAHAMUT_REPORT",
+      "independent_from_gnn": false
+    }
+  ],
+  "independent_source_count_verified": null,
+  "named_story": {
+    "framing": "OFFICIAL_VERSION_STORY_AS_REPORTED_IN_2006_PRESS",
+    "continuity_claim": {
+      "from": "7.5 精靈的召喚",
+      "to": "8.5 魔域大冒險",
+      "bridges_80_explicitly": false,
+      "canonical_unified_timeline_proven": false
+    },
+    "people": [
+      "雷爾",
+      "艾巴登",
+      "勇者",
+      "族長們",
+      "魔軍"
+    ],
+    "causal_links": [
+      {
+        "from": "雷爾",
+        "relation": "SUBORDINATE_OF",
+        "to": "艾巴登"
+      },
+      {
+        "from": "雷爾",
+        "relation": "TRIES_TO_SEIZE_BY_SPIRIT_POWER",
+        "to": "人類世界"
+      },
+      {
+        "from": "勇者",
+        "relation": "DEFEATS_REPORTED",
+        "to": "雷爾"
+      },
+      {
+        "from": "雷爾",
+        "relation": "FLEES_REPORTED",
+        "to": "人類世界"
+      },
+      {
+        "from": "艾巴登",
+        "relation": "REPORTED_ARMY_THREAT",
+        "to": "伊甸大陸邊境"
+      },
+      {
+        "from": "族長們",
+        "relation": "CALL_FOR_DEFENSE",
+        "to": "勇者"
+      }
+    ],
+    "original_story_script_verified": false,
+    "character_npc_ids": null
+  },
+  "named_quest": {
+    "as_written": "支援前線",
+    "attested_by": [
+      "GAMEZONE_20060621"
+    ],
+    "proof_scope": "PERIOD_PRESS_NAMED_QUEST_NOT_EXECUTED_SERVER_MISSION",
+    "quest_script_id": null,
+    "item_table": null,
+    "actual_rewards_verified": false,
+    "absence_from_gnn_excerpt_does_not_disprove": true
+  },
+  "promoted_content": {
+    "source_scope": "ANNOUNCED_NOT_RUNTIME_REPLAY",
+    "world_feature": "魔界/人界裂縫的新冒險地",
+    "combat": "強大怪物與高AI宣傳",
+    "other": [
+      "職業新技能",
+      "主線與背景任務",
+      "討伐魔軍的獎勵",
+      "每日定時個人與家族活動"
+    ],
+    "labels_with_possible_variants": [
+      "任務常駐系統",
+      "活動常駐系統"
+    ],
+    "map_floor_ids": null,
+    "battle_ai_execution_verified": false,
+    "daily_persistence_proven": false
+  },
+  "release_schedule": {
+    "kind": "REPORTED_PLANS_NOT_ACTUAL_DEPLOYMENT",
+    "test_range": [
+      "2006-06-21",
+      "2006-07-05"
+    ],
+    "early_server": "蒼龍",
+    "early_date": "2006-07-05",
+    "others_from": "2006-07-12",
+    "actually_deployed_proven": false,
+    "original_client_sha256": null
+  },
+  "constraints": [
+    "2006 press does not prove Taiwan 1.0 game rules",
+    "17173 credits 巴哈姆特 and is not an independent primary witness",
+    "GameZone and GNN overlapping copy may share same press-release upstream",
+    "7.5→8.5 promotional continuity does not define 8.0 in-world sequence",
+    "Actual live server tasks, NPC IDs, item/reward tables, screenshots and original patch remain unknown",
+    "Later walkthroughs are not contemporaneous publisher gameplay proof"
+  ],
+  "archived_source_html": false,
+  "proprietary_art_in_git": false,
+  "stage_a": "7_PARTIAL_2_OPEN",
+  "stage_b": "GATED",
+  "r79": "PAUSED_NON_BLOCKING",
+  "next": "TW85_NAMED_QUEST_FIRSTPARTY_MATERIAL_GATE-01"
+}
