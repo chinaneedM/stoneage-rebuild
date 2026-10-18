@@ -32,5 +32,81 @@
   "original_assets_in_git": false,
   "stage_b_gated": true,
   "r79_paused": true,
-  "next": "CN80_NAMED_QUEST_ORIGINAL_SOURCE_TRACE-01"
+  "next": "CN80_NAMED_QUEST_ORIGINAL_SOURCE_TRACE-01",
+  "main_integration_confirmed": true,
+  "main_acceptance": {
+    "head_sha": "8492ba07a6af3befe4436ec6646eec9daacaf559",
+    "tree_sha": "b163389c72ede74fc0b08461dec2ab25cc4e5d28",
+    "run_count": 11,
+    "all_success": true,
+    "runs": [
+      {
+        "id": 39123602219,
+        "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39123602294,
+        "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39123602405,
+        "name": "Validate StoneAge Stage A joint review decision",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39123602278,
+        "name": "Validate Stage A early source gap triage",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39123602157,
+        "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39123602212,
+        "name": "Independently verify TW1.0 R58 rooted helper returns and source custody",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39123602200,
+        "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39123602210,
+        "name": "Validate bounded StoneAge 8.0 cross-version evidence bridge",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39123602363,
+        "name": "Validate StoneAge preproduction content archive and wiki boundary",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39123602354,
+        "name": "Validate legacy StoneAge assistant history and pet content gaps",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39123602178,
+        "name": "Validate Stage A evidence-limited review acceptance",
+        "status": "completed",
+        "conclusion": "success"
+      }
+    ],
+    "receipt_commit_own_ci": "PENDING_DIFFERENT_HEAD"
+  }
 }

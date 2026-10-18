@@ -15422,3 +15422,10 @@ NEXT仍`JSS-OFFICIAL-EVENT-RESULTS-PET-ATTRIBUTION-01`：仅取真实eventjsk链
 新增具名来源桥接账簿 `research/recovered/STONEAGE-80-SYSTEMS-CROSS-VERSION-EVIDENCE-R1.json` 和规范 `docs/specs/STONEAGE-80-SYSTEMS-CROSS-VERSION-EVIDENCE-R1.md`，11条跨源主张严格记录各自source_ids、地区和完整性；唯一新闻首发报告链与重复转载分离。研究分支`agent/stoneage-80-cross-version-gear-mentor-quest-r1-20261018`源提交`4eb3d3de0e4506d64bb41a950c9f2f309094c8b9`、tree`ab9a9118709141140493db69b5ada89e3deda67e`；该HEAD专用Action`39123252107`/job`117663017286` **实际SUCCESS**，5项结构和反例测试通过。这只认证档案逻辑，不能等同网页字节或原服运行验收。原HTML、旧原始资源、新闻全文和程序均不入Git；历史前缀完整保留。
 
 **最高NEXT `CN80_NAMED_QUEST_ORIGINAL_SOURCE_TRACE-01`**：沿已见17173「新加任务」具体链接 https://news.17173.com/z/stoneage/renwu/renwu.htm 只试一次有界真实任务来源确认，先验标题、内容、发布时间、地域和原貌，再允许登记任务人物/物品/路线。若仅目录、超时或没有可归属的任务正文则记录明确失败边界，转22域其它具名材料，不得自造NPC、奖励、原服事务或以媒体报道替代客户端文件。九系统仍7 PARTIAL+2 OPEN；Stage B 游戏/公开资料站 GATED，R79 PAUSED_NON_BLOCKING，无可证复原百分比。
+
+
+### 2026-10-18 — 8.0跨版本资料桥接真实main验收
+
+两提交研究分支`8492ba07a6af3befe4436ec6646eec9daacaf559` / tree`b163389c72ede74fc0b08461dec2ab25cc4e5d28`在原main`cc011eb37edad790439b626a84bc62bdbcf4e0be` ahead2/behind0、10路径0删除情况下安全非强制快进；同HEAD **11项main Actions均实际SUCCESS**，专用结构验收`39123602210`与前期第一方/Stage A及资源复验全部通过。来源机器派生只包含网页观察和已验旧原页摘要，不宣称获得新闻原HTML或在原版客户端实际复演。完整run ID/名称/结论写入STONEAGE-80-SYSTEMS-CROSS-VERSION-ACCEPTANCE-R1的main_acceptance；本条独立验收提交自己的后续Actions须另核，不冒充上一个HEAD检查。
+
+前沿继续`CN80_NAMED_QUEST_ORIGINAL_SOURCE_TRACE-01`：核对17173真实“新加任务”出链的具名正文/年代来源，无法取源则保留OPEN转其它领域。原九系统7 PARTIAL + 2 OPEN、新作/百科Stage B GATED、R79暂停和同版原服证据缺口均未改变。
