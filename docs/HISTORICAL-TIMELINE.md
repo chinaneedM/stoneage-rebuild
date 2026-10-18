@@ -3518,3 +3518,8 @@ eventmaz实际20010418085855有四村聊天室入口：マリナス东51南72、
 ## 2005-06-14 archived Taiwan operator description — marine fusion and social/crafting expansion
 
 **FACT / attributed official description, not deployment:** actual archived Wayi game01_03.asp capture20050614005817 links earlier6.0 marine pets to planned8.0 fusion, names four classes despite a five-class/twenty-pet plan, describes79 ordinary cards plus one mission-role slot and separate retention/overwrite/manual exchange, and outlines five crafting functions. The unidentified fifth class, per-class distribution, original recipes/item IDs and real server transactions remainOPEN. Website capture does not establish first publication, service launch or exact client build. No universal cross-region chronology or early-v1 equivalence is inferred. Derived source: STONEAGE-WAYI-MARINE-SOCIAL-CRAFTING-R1.
+
+
+## 2003-12-14 Japanese Hangame character-page capture, with separate2006 image capture
+
+**FACT / operator website attribution:** original chara.asp capture20031214051427 explicitly describes characters without fixed names and player-chosen naming. The page contains twelve web positions with24 paired illustration/companion references. This is not a proven client roster, ID map, cross-version equivalence or first-publication date. Only the first illustration was acquired: its actual preserved response is20060619160353, not2003. One GIF avatar illustration is qualified separately; the other23 source references and all game model/animation bindings remainOPEN. Permanent metadata/spec: STONEAGE-JP2003-CHARACTER-VISUAL-SOURCE-R1.

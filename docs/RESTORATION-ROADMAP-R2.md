@@ -626,3 +626,10 @@ Highest next: CN80_JUDGMENT_2005_NAMED_CONTENT-01, one source-bounded early date
 海底融合/名片/精工第一方资料已在90c7b7cf主线11门实际通过并归档独立ZIP/raw/Git保管链。相邻R5复用22域旧状态，发现近期台湾2005–2006偏重；实际重新取得20031214055553 Hangame官方安装页，从图片按钮静态onclick属性确认chara.asp真实目标，未执行脚本，未读人物页或获得人物像，不以路径名/安装日期认证1.74a构建。机器复审STONEAGE-OFFICIAL-VERSION-COVERAGE-MATERIAL-REVIEW-R5.json保留出处和未知。
 
 **最新最高NEXT JP2003-OFFICIAL-CHARACTER-VISUAL-SOURCE-01**：沿该一条真实出链取一正文，先核主题与实际时刻，最多一份有明确身份对应的原图；有归属关系或具体缺源即收束，不爬站、运行程序或扩大旧台湾任务循环。Stage A/Stage B/R79边界不变。
+
+
+## 2026-10-18 — 日本官方人物身份/网页资源对应收束
+
+JP2003-OFFICIAL-CHARACTER-VISUAL-SOURCE-01取得实际2003人物正文，运营商明确无固定人物名字；以12研究页面位置绑定原表格中24个图像引用，非原游戏ID。只取一张头像GIF，实际2006快照与2003正文分开；其余23图与客户端模型/配色/动作未验。规格与派生见STONEAGE-JP2003-CHARACTER-VISUAL-SOURCE-R1，未启动新游戏/网站生产。
+
+**最高NEXT JP2003-OFFICIAL-PET-NAMED-VISUAL-SOURCE-01**：从该页真实宠物标签沿chara2.asp只读一正文并验主题/年代，有具名宠物和明确图像关系时最多核一原图；否则保留精确缺源回22域，不递归第三/四分栏，不执行程序。Stage A7 PARTIAL+2 OPEN、Stage B/百科GATED、R79暂停不变。

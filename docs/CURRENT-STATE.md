@@ -15546,3 +15546,16 @@ GNN原HTML本轮取源存在403阅读器限制，只按同期索引文本见证�
 相邻完成OFFICIAL-VERSION-COVERAGE-MATERIAL-REVIEW-05：复用R4全部22域状态，不重复扩新矩阵；近期台湾2005–2006偏重，日本复活版人物/宠物身份视觉仍缺。实取早已登记的官方Hangame sasetup.asp，实际20031214055553id_，15583B SHA25676d972f0aac242a03f6bd411a5fedf6f9184cd4e92cd45062cc60f37210c4a21，CP932严格解码，确认9个原生图片按钮的静态onclick location目标，未执行任何JS/ActiveX。只看a href的初检漏过这些目标，已纠正为静态属性检查，不推无导航。新的chara.asp是实际人物入口候选；文件名不证正文主题。此日本页只完成本地源字节/出链资格，未独立runner重放、未取得人物正文/图像，亦不据安装页或日期认定1.74a客户端构建。
 
 **最高NEXT `JP2003-OFFICIAL-CHARACTER-VISUAL-SOURCE-01`**：沿http://www.hangame.co.jp/publish/sa/chara.asp真实静态目标，只取一正文并先验实际题名/正文/时刻；若有具名身份，最多一份明确对应的原图逐字节及目视核验，否则记录精确缺源。无猜名、全站爬取、程序或表单执行。R5永久机器记录STONEAGE-OFFICIAL-VERSION-COVERAGE-MATERIAL-REVIEW-R5.json。Stage A7 PARTIAL+2 OPEN、Stage B/百科GATED，R79暂停不变。
+
+
+## 2026-10-18 — 日本Hangame官方人物页：无固定名字、十二组网页图像对应
+
+本轮按实时远端main `7d614dacdb31728d6207c8cd67a6c1d62a6508b5` / tree `415ab8d9491a14a7d55f99f529da5fe50107780f`重启，351分支、0开放PR，该HEAD11项main Actions全SUCCESS；七连续性文件、完整CURRENT原blob b3ec2c75e8adb90a5b76418de7e6797551748f94（2009179B）、路线及R5/22域索引复核，历史前缀完整。旧无关分支的queued run37642417333仍保留，不冒称本轮启动或本任务依赖。
+
+最高JP2003-OFFICIAL-CHARACTER-VISUAL-SOURCE-01沿R5认证的真实静态chara.asp目标，仅取一正文。实际20031214051427id_，16437B，CP932严格解码，SHA25636e1600d1a6192d2613b64750676235fe42010c78b1ca24b43bc38121c9f9e50。原运营商明确人物没有固定名字、由玩家自行命名；不把熟悉的后期昵称或资源号补作官方姓名。原待办“具名才取图”据此澄清为可核的无名页面位置，仍只取一张图；这是边界内的身份表示修正，不扩大爬站。
+
+原HTML六行四列，按相邻两行同列与文件编号同时匹配，取得12个页面位置→12插画/12配套图引用的结构对应。研究record_id与网页序号均非客户端body/face/sprite ID；配套com图未取像素，不猜精灵/配色/文字用途。唯一charapicillust1.gif实取却重定向到20060619160353id_，6312B SHA2569a3d42aca28d67a57d328d33fce57f22adfd0037f064885785c82f6482b1bb39，GIF65×75单帧。已逐张（仅此一张）目视，为浅橙发人物头像插画、头顶发束与笑容，不推年龄/性别/角色名；2006图不冒充2003当刻像素或原客户端精灵。24图引用只得1图，其余23图未取，非完整12人客户端图鉴/动画。
+
+交付永久派生research/recovered/STONEAGE-JP2003-CHARACTER-VISUAL-SOURCE-R1.json（characters集合下12研究位置记录）与docs/specs/STONEAGE-JP2003-CHARACTER-VISUAL-SOURCE-R1.md、10项DOM/源边界反例、精确一正文/一GIF重取及派生cmp工作流。原HTML/图像/原程序不入Git。本地10项通过；分支与主线Actions及ZIP/raw/Git保管链按实际结果另行验收，不提前记SUCCESS。未改变JSS/TW1.0/1.74a客户端归属，也不因同为12人物而跨版本合并。
+
+**最高NEXT JP2003-OFFICIAL-PET-NAMED-VISUAL-SOURCE-01**：同页实际标签“ペット”的静态chara2.asp目标，只取一正文，先核真实主题与日期，若有具名宠物/明确图像关系最多取一图核字节与目视；无资格或取源失败则记录具体缺口回22域，不递归chara3/4，不运行JS/ActiveX/客户端。Stage A九族7 PARTIAL+2 OPEN、Stage B/百科GATED、R79暂停不变，无整体百分比。
