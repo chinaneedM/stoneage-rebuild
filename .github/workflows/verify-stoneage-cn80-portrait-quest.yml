@@ -1,0 +1,34 @@
+name: Verify source-linked CN8 portrait quest walkthrough
+on:
+  push:
+    paths:
+      - tools/stoneage_cn80_portrait_quest_source.py
+      - tests/test_stoneage_cn80_portrait_quest_source.py
+      - research/recovered/STONEAGE-CN80-PORTRAIT-QUEST-R1.json
+      - .github/workflows/verify-stoneage-cn80-portrait-quest.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  bounded-quest-source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Guard evidence scope and negative cases
+        run: python -m unittest tests.test_stoneage_cn80_portrait_quest_source -v
+      - name: Retrieve only index and named detail; no original HTML retained
+        run: |
+          python -m tools.stoneage_cn80_portrait_quest_source --output "${{ runner.temp }}/quest/derived.json"
+          if [ -f research/recovered/STONEAGE-CN80-PORTRAIT-QUEST-R1.json ]; then
+            cmp "${{ runner.temp }}/quest/derived.json" research/recovered/STONEAGE-CN80-PORTRAIT-QUEST-R1.json
+          fi
+      - uses: actions/upload-artifact@v4
+        if: success()
+        with:
+          name: cn80-portrait-quest-derived-metadata
+          path: ${{ runner.temp }}/quest/derived.json
+          retention-days: 30
