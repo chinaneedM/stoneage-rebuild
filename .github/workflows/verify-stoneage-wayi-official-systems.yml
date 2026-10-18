@@ -5,6 +5,8 @@ on:
       - tools/stoneage_wayi_official_systems.py
       - tests/test_stoneage_wayi_official_systems.py
       - research/recovered/STONEAGE-WAYI-OFFICIAL-SYSTEMS-R1.json
+      - research/recovered/STONEAGE-WAYI-OFFICIAL-SYSTEMS-ACCEPTANCE-R1.json
+      - docs/specs/STONEAGE-WAYI-OFFICIAL-SYSTEMS-R1.md
       - .github/workflows/verify-stoneage-wayi-official-systems.yml
   workflow_dispatch:
 permissions:

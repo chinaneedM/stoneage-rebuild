@@ -25,12 +25,88 @@
   ],
   "derived_repo_file": "research/recovered/STONEAGE-WAYI-OFFICIAL-SYSTEMS-R1.json",
   "derived_git_blob_sha": "4fb303eb6f8866b5454f994a0d4fedbf52ea76b0",
-  "archive_commit_ci_status": "PENDING_FRESH_HEAD_VERIFICATION",
+  "archive_commit_ci_status": "SUCCESS_MAIN_F22F38D_12_CHECKS",
   "safety": {
     "original_html_stored": false,
     "original_images_stored": false,
     "original_binaries_stored": false,
     "story_version_identity_promoted": false
   },
-  "next": "CROSS_VERSION_GEAR_MENTOR_QUEST_SOURCE_GAP_REVIEW-01"
+  "next": "CROSS_VERSION_GEAR_MENTOR_QUEST_SOURCE_GAP_REVIEW-01",
+  "main_acceptance": {
+    "head_sha": "f22f38defc3d16f4c1390db25f34009ffa07f039",
+    "tree_sha": "af81deba82b95de87a89ffcf56f4f05a47c710ab",
+    "run_count": 12,
+    "all_completed_success": true,
+    "runs": [
+      {
+        "id": 39122234276,
+        "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+        "conclusion": "success"
+      },
+      {
+        "id": 39122234362,
+        "name": "Probe exact archived Wayi intro detail 02",
+        "conclusion": "success"
+      },
+      {
+        "id": 39122234366,
+        "name": "Validate Stage A early source gap triage",
+        "conclusion": "success"
+      },
+      {
+        "id": 39122234379,
+        "name": "Independently verify TW1.0 R58 rooted helper returns and source custody",
+        "conclusion": "success"
+      },
+      {
+        "id": 39122234381,
+        "name": "Validate StoneAge Stage A joint review decision",
+        "conclusion": "success"
+      },
+      {
+        "id": 39122234389,
+        "name": "Validate StoneAge preproduction content archive and wiki boundary",
+        "conclusion": "success"
+      },
+      {
+        "id": 39122234391,
+        "name": "Validate Stage A evidence-limited review acceptance",
+        "conclusion": "success"
+      },
+      {
+        "id": 39122234401,
+        "name": "Verify one original Wayi pet gear mentor and quest log source",
+        "conclusion": "success"
+      },
+      {
+        "id": 39122234421,
+        "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+        "conclusion": "success"
+      },
+      {
+        "id": 39122234489,
+        "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+        "conclusion": "success"
+      },
+      {
+        "id": 39122234515,
+        "name": "Validate legacy StoneAge assistant history and pet content gaps",
+        "conclusion": "success"
+      },
+      {
+        "id": 39122234533,
+        "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+        "conclusion": "success"
+      }
+    ],
+    "source_replay_run": {
+      "id": 39122234401,
+      "job_id": 117659996277,
+      "artifact_id": 12134352329,
+      "githuB_artifact_zip_digest": "sha256:b7ccb8fad2ff0fab0a66b52065e7d0d030d22e3ff840785b86c3d59948a82e99",
+      "derived_report_sha256": "9bd6d626d6b8ba30238ffaedd4b1df50e7db5015ccd01ebda83eeb3946b5e45b"
+    }
+  },
+  "acceptance_receipt_own_commit_ci": "PENDING_NEW_HEAD_CHECK"
 }

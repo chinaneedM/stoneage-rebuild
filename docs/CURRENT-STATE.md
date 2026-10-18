@@ -15402,3 +15402,10 @@ NEXT仍`JSS-OFFICIAL-EVENT-RESULTS-PET-ATTRIBUTION-01`：仅取真实eventjsk链
 独立源 Action 39121796764 / job117658721531 实际 SUCCESS、4项测试 PASS；产出SHA256 9bd6d626d6b8ba30238ffaedd4b1df50e7db5015ccd01ebda83eeb3946b5e45b、ZIP GitHub给出SHA256 75ddb12a310d08ffa8fb32bcb7915c0a2f95648afc406d6cd790e8e7464e5f08，artifact12134856287；Git blob 4fb303eb6f8866b5454f994a0d4fedbf52ea76b0。原网页HTML/图像/二进制不入Git；本归档提交CI需后验。未知精确客户端、首次上线时间、原服规则/宠物与道具ID/合成表/任务位或实际界面，不能写为TW1.0原生事实。详细边界见 docs/specs/STONEAGE-WAYI-OFFICIAL-SYSTEMS-R1.md。
 
 最高NEXT CROSS_VERSION_GEAR_MENTOR_QUEST_SOURCE_GAP_REVIEW-01：从已知各官方版本或出处明确的补丁、手册选择一份具体更强内容源，争取可连接宠物装备/导师/任务日志的实物或明确变更记录；无实源则记录缺口转22域其它事项，不继续追第三四详情页或R79。7 PARTIAL+2 OPEN、Stage B及官网生产GATED、R79 PAUSED，暂无可证整体复原百分比。
+
+ 
+### 2026-10-18 — 华义官方系统资料主线独立验收
+
+研究分支归档f22f38defc3d16f4c1390db25f34009ffa07f039/tree af81deba82b95de87a89ffcf56f4f05a47c710ab，同SHA10项实际分支Actions全部SUCCESS，compare main旧0ba7b2d ahead5/behind0、13路径0删除，non-force fast-forward进入main。该HEAD **12项main Actions全部SUCCESS**，名单/ID/结论写入STONEAGE-WAYI-OFFICIAL-SYSTEMS-ACCEPTANCE-R1的main_acceptance。正式原站重放run39122234401/job117659996277，报告SHA256 9bd6d626d6b8ba30238ffaedd4b1df50e7db5015ccd01ebda83eeb3946b5e45b、原源SHA256 0868e56a81d7037e434a09fd0824a6eb59747494099087f8d1eaeaaa37fb690c，四项源反例测试PASS；artifact12134352329的ZIP摘要由GitHub报告b7ccb8fad2ff0fab0a66b52065e7d0d030d22e3ff840785b86c3d59948a82e99，未冒称独立下载验证。Git已永久保管来源派生blob4fb303eb6f8866b5454f994a0d4fedbf52ea76b0。
+
+本回执自身的新commit/Actions必须后验，不能借父HEAD成功直接声称新HEAD合格。所有旧历史前缀、未闭合问题完整保留，Stage A7 PARTIAL+2 OPEN、Stage B/公开百科GATED、R79 PAUSED。最高NEXT CROSS_VERSION_GEAR_MENTOR_QUEST_SOURCE_GAP_REVIEW-01：按官方版本和证据级别查一份更直接玩法/资源来源，避免继续读未授权内容或耗尽工具层。
