@@ -15496,3 +15496,8 @@ GNN原HTML本轮取源存在403阅读器限制，只按同期索引文本见证�
 ### 2026-10-18 — 台湾8.5同期任务来源保管链和真实边界验收
 
 原研究源Action39132023657/job117688962061:6项结构测试通过、GameZone访问HTTP403导致真实FAILURE，保留此失败。后续正式研究分支`4569672f44a779c319d119ebd391f563ae9225d9`/tree`d1ca259bebed092dde60acf7238046f8c4579b44`同SHA10项Actions实际SUCCESS，其中专用Action39132487175/job117690319992通过7项结构及原网页访问拒绝类型校验，stdout精确`SOURCE_STATUS=HTTP_ACCESS_DENIED_IN_RUNNER SHA=None`。SUCCESS只能说明否证、证据结构及未伪造的403处理正确，**不是新闻原字节、华义旧官网、服务器剧情或奖励已复现**。派生artifact12138124433 GitHub ZIP摘要`sha256:880051daa29cb1fcfe7c22b087e8b13e76c96fd5fae1674bbee65725d1e73214`(411B)系GitHub提供，未独立下载算ZIP，亦非新闻源SHA。永久记录`research/recovered/STONEAGE-TW85-PERIOD-PRESS-ACCEPTANCE-R1.json`，新验收提交自身分支与mainCI仍须随后真实查，父HEAD10绿不直接算新提交通过。新NEXT保持`TW85_NAMED_QUEST_FIRSTPARTY_MATERIAL_GATE-01`，7 PARTIAL+2 OPEN、Stage B GATED、R79暂停。
+
+
+### 2026-10-18 — 台湾8.5具名剧情研究主线验收和下一补证门
+
+源分支`eaeaf42beb3e272e3abdb923c48f7201e160fe09` / tree`e86c629f78a618832ef3c80e36859af02b30b0d5`验证分支8项全SUCCESS，Compare原main`62daff01fb0894fa87a95adbf0317674e01028fa`领先3/落后0、10路径0删除、CURRENT旧1993380B历史前缀完整，非强制fast-forward合入main后**该同SHA11项主线Actions全部真实SUCCESS**。均在`STONEAGE-TW85-PERIOD-PRESS-ACCEPTANCE-R1.json`新增`main_acceptance`保留11个运行ID和各自结论。本验收回执补记提交的自身CI须再独立核查，父SHA结果不得据此自动迁移。2006报导的7.5→8.5叙事/任务名为同期文献补强，GameZone runner403仍不能给原HTML赋SHA，发布期计划不能称已部署；不恢复原客户端/原服规则。最高NEXT`TW85_NAMED_QUEST_FIRSTPARTY_MATERIAL_GATE-01`，Stage A7 PARTIAL+2 OPEN、Stage B/百科GATED、R79暂停。

@@ -59,7 +59,12 @@ class Taiwan85PressWorldline(unittest.TestCase):
         self.assertTrue(all(x["conclusion"]=="success" and x["head_sha"]==r["accepted_branch_head"] for x in r["positive_checks"]["runs"]))
         self.assertFalse(r["official_site_original_obtained"])
         self.assertFalse(r["original_2006_client_or_server_replayed"])
-        self.assertEqual(r["receipt_own_ci"],"PENDING_NEW_HEAD")
+        self.assertEqual(r["receipt_own_ci"],"PENDING_NEXT_COMMIT_VALIDATION")
+        main=r["main_acceptance"]
+        self.assertEqual(main["head"],r["accepted_branch_head"])
+        self.assertEqual(main["checks_count"],11)
+        self.assertEqual(len(main["runs"]),11)
+        self.assertTrue(all(x["conclusion"]=="success" and x["head_sha"]==main["head"] for x in main["runs"]))
 
     def test_status_and_rights(self):
         self.assertFalse(self.d["archived_source_html"])

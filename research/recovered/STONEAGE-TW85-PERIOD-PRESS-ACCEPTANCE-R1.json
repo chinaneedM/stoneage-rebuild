@@ -121,5 +121,79 @@
   "stage_a": "7_PARTIAL_2_OPEN",
   "stage_b": "GATED",
   "r79": "PAUSED_NON_BLOCKING",
-  "receipt_own_ci": "PENDING_NEW_HEAD"
+  "receipt_own_ci": "PENDING_NEXT_COMMIT_VALIDATION",
+  "main_acceptance": {
+    "head": "eaeaf42beb3e272e3abdb923c48f7201e160fe09",
+    "tree": "e86c629f78a618832ef3c80e36859af02b30b0d5",
+    "checks_count": 11,
+    "all_passed": true,
+    "runs": [
+      {
+        "id": 39132773727,
+        "name": "Validate StoneAge preproduction content archive and wiki boundary",
+        "conclusion": "success",
+        "head_sha": "eaeaf42beb3e272e3abdb923c48f7201e160fe09"
+      },
+      {
+        "id": 39132773707,
+        "name": "Validate 2006 Taiwan 8.5 press worldline",
+        "conclusion": "success",
+        "head_sha": "eaeaf42beb3e272e3abdb923c48f7201e160fe09"
+      },
+      {
+        "id": 39132773777,
+        "name": "Validate Stage A evidence-limited review acceptance",
+        "conclusion": "success",
+        "head_sha": "eaeaf42beb3e272e3abdb923c48f7201e160fe09"
+      },
+      {
+        "id": 39132773618,
+        "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+        "conclusion": "success",
+        "head_sha": "eaeaf42beb3e272e3abdb923c48f7201e160fe09"
+      },
+      {
+        "id": 39132773563,
+        "name": "Validate StoneAge Stage A joint review decision",
+        "conclusion": "success",
+        "head_sha": "eaeaf42beb3e272e3abdb923c48f7201e160fe09"
+      },
+      {
+        "id": 39132773701,
+        "name": "Validate Stage A early source gap triage",
+        "conclusion": "success",
+        "head_sha": "eaeaf42beb3e272e3abdb923c48f7201e160fe09"
+      },
+      {
+        "id": 39132773744,
+        "name": "Validate legacy StoneAge assistant history and pet content gaps",
+        "conclusion": "success",
+        "head_sha": "eaeaf42beb3e272e3abdb923c48f7201e160fe09"
+      },
+      {
+        "id": 39132773607,
+        "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+        "conclusion": "success",
+        "head_sha": "eaeaf42beb3e272e3abdb923c48f7201e160fe09"
+      },
+      {
+        "id": 39132773692,
+        "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+        "conclusion": "success",
+        "head_sha": "eaeaf42beb3e272e3abdb923c48f7201e160fe09"
+      },
+      {
+        "id": 39132773641,
+        "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+        "conclusion": "success",
+        "head_sha": "eaeaf42beb3e272e3abdb923c48f7201e160fe09"
+      },
+      {
+        "id": 39132773557,
+        "name": "Independently verify TW1.0 R58 rooted helper returns and source custody",
+        "conclusion": "success",
+        "head_sha": "eaeaf42beb3e272e3abdb923c48f7201e160fe09"
+      }
+    ]
+  }
 }
