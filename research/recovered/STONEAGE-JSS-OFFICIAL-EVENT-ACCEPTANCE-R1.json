@@ -1,0 +1,127 @@
+{
+  "schema": "stoneage.jss.official_event_venue.acceptance.r1",
+  "source_head": "f628229cd7bdfcd5462d15366b61e0026cd8215e",
+  "source_tree": "b82b5a04eb27c75adca0f03ea504d370e20af537",
+  "source_run": 39095465825,
+  "source_job": 117580874283,
+  "source_result": "success",
+  "artifact": {
+    "id": 12123884905,
+    "zip_bytes": 3208,
+    "zip_sha256": "198841e33090f8dc1e96d70e5a05c89bad6b26db4932e79a44c771932a442890",
+    "digest_matches_github_metadata": true,
+    "raw_member": "jss-official-event-venue.json"
+  },
+  "raw_report": {
+    "path": "research/recovered/STONEAGE-JSS2001-OFFICIAL-EVENT-VENUE-R1.json",
+    "bytes": 10583,
+    "sha256": "7c105ecdf4c7ca6e751da27dbaf827013fd72b238882421bb7034ef1f7027f5b",
+    "git_blob": "1fc8ca061330655483cbc931f93043be7c3792a9",
+    "exact_source_archive_match": true
+  },
+  "source_branch_runs": [
+    {
+      "id": 39095465815,
+      "name": "Validate StoneAge Stage A joint review decision",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39095465713,
+      "name": "Validate Stage A early source gap triage",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39095465706,
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39095465807,
+      "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39095465729,
+      "name": "Validate StoneAge preproduction content archive and wiki boundary",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39095465730,
+      "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39095465766,
+      "name": "Verify JSS2001 official pet and visual content sources",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39095465736,
+      "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39095465825,
+      "name": "Verify original JSS official event and four-village venue content",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39095465746,
+      "name": "Validate legacy StoneAge assistant history and pet content gaps",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39095465715,
+      "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "source_branch_check_count": 11,
+  "derived_source_dependencies": [
+    {
+      "path": "tools/stoneage_jss_official_event_venue.py",
+      "bytes": 14864,
+      "sha256": "1775387be29ab7bca59d7956fccda1dd60ad6506d7f88fa52bcaa6f6eb4f5e4d",
+      "git_blob": "67fed9b778b82d75c27b7a6aee25bb6b6695cfef"
+    },
+    {
+      "path": "tests/test_stoneage_jss_official_event_venue.py",
+      "bytes": 7713,
+      "sha256": "6cc0566bc740815bcf6ab97e446948a2adb54316eaa0d7e81b74e42b95d6ccf5",
+      "git_blob": "a1a8f3efe3ac5658378047e5531e3dc577bc81be"
+    },
+    {
+      "path": "research/recovered/STONEAGE-JSS-OFFICIAL-EVENT-CONTENT-CATALOG-R1.json",
+      "bytes": 2881,
+      "sha256": "ff5bd588264026da1a83d6f47b5139301dbfa31abebe81bbc0702de481af2b5d",
+      "git_blob": "e8d22047e488ced5a3d79dab2a1511e98bee915a"
+    },
+    {
+      "path": "research/recovered/STONEAGE-JSS-OFFICIAL-EVENT-SOURCE-INTAKE-R1.json",
+      "bytes": 7212,
+      "sha256": "010c5bd2e1328efb4adc75d6d2ec563962ba7581139f2cf4dde4ef142f20f33a",
+      "git_blob": "20f7c59774c599897051107f1516e0137875fdea"
+    }
+  ],
+  "three_original_pages_six_original_images_replayed": true,
+  "image_pixels_or_original_html_retained_in_git": false,
+  "source_comments_excluded_from_active_links": true,
+  "unknown_event_year_and_meeting_conflict_preserved": true,
+  "original_server_or_npc_quest_executed": false,
+  "jss1999_or_tw10_same_build_promoted": false,
+  "main_acceptance": {
+    "status": "PENDING_NOT_PRECLAIMED"
+  },
+  "next_priority": "JSS-OFFICIAL-EVENT-RESULTS-PET-ATTRIBUTION-01"
+}

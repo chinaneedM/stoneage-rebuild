@@ -15227,3 +15227,10 @@ WORLD源分支ec2aa8fac09f13a61c73c9542b2dd9c08c9fc1b9/tree0976772698b7470b72145
 原6张官网JPEG全部实取且逐张目视，均160×125，有四村入口、接待室售票/引导位置、北侧大厅/婚礼入口的**编辑红字标注**；实际图像快照20010630/0701，不与4月正文当同刻，也不把编辑字当原游戏UI。三页与六图的来源/指纹/首次抓取元数据、机读合同和人工观察永久派生入册；原HTML/图像只临时使用不入Git。规格STONEAGE-JSS-OFFICIAL-EVENT-AND-VENUE-R1，新脚本/12项负面和来源边界检查、独立实源重放工作流已形成，本地12项实际通过；分支及main CI/ZIP保管以随后实际结果为准。
 
 **最高NEXT `JSS-OFFICIAL-EVENT-RESULTS-PET-ATTRIBUTION-01`**：仅查同索引真实eventjsk结果页，判断是否有已发表活动结果、具名奖励宠/角色；若仍无物种/ID或认证结果则保留未知停止，不递归表单、评论、GM后台/脚本。九系统7 PARTIAL+2 OPEN、Stage B游戏/公开百科生产GATED、R79 PAUSED_NON_BLOCKING，无整体完成百分比。
+
+
+### 2026-10-18 — JSS官方活动/四村会场独立原源重放成功与永久来源凭据
+
+研究分支`f628229cd7bdfcd5462d15366b61e0026cd8215e`/tree`b82b5a04eb27c75adca0f03ea504d370e20af537`同SHA11项Actions全部实际SUCCESS；专用source Action`39095465825`/job`117580874283`独立重取三原官网页、六原JPEG并逐字节重放派生报告，12项来源/矛盾/注释/图像/坐标边界检查通过。独立下载artifact`12123884905` ZIP3208B SHA256`198841e33090f8dc1e96d70e5a05c89bad6b26db4932e79a44c771932a442890`与GitHub摘要相符，内部raw JSON10583B SHA256`7c105ecdf4c7ca6e751da27dbaf827013fd72b238882421bb7034ef1f7027f5b`、Git blob`1fc8ca061330655483cbc931f93043be7c3792a9`与永久派生文件完全一致。SOURCE-INTAKE、CONTENT-CATALOG、工具/测试原blob及实际11项运行链全部载入EVENT-ACCEPTANCE-R1，不依赖30天产物保留期。
+
+只认证官方预告/场景指引与原图来源，不认证活动举办、年份、奖品发出/物种、NPC脚本、原服地图/事务或TW1.0身份。此归档提交和main后续CI以实际结果另记；当前不提前宣称。最高NEXT仍`JSS-OFFICIAL-EVENT-RESULTS-PET-ATTRIBUTION-01`；7 PARTIAL+2 OPEN、Stage B/百科GATED、R79暂停。
