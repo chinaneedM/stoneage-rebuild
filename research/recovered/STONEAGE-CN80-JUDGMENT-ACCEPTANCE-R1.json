@@ -1,0 +1,191 @@
+{
+  "schema": "stoneage.cn80.judgment.named_content.acceptance.r1",
+  "evidence_commit": "2a932f837585c7340a45ed426a1bc677fba36f48",
+  "evidence_tree": "79aeade261f48cf2d9d1533d90e4746ebf2e1a66",
+  "parent_main_sha": "2b8121d3260c1469ffbaa11100233518b6ece2f2",
+  "original_main_tree": "a01cbb5f9e8ac3e8a3764317e00a3fbb59feb9fa",
+  "safe_fast_forward": {
+    "ahead": 1,
+    "behind": 0,
+    "paths_changed": 8,
+    "deleted_paths": 0,
+    "forced": false
+  },
+  "branch": "agent/cn80-judgment-2005-evidence-r1-20261018",
+  "branch_checks": {
+    "count": 10,
+    "all_succeeded": true,
+    "runs": [
+      {
+        "run_id": 39129781352,
+        "workflow": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "2a932f837585c7340a45ed426a1bc677fba36f48"
+      },
+      {
+        "run_id": 39129781340,
+        "workflow": "Validate CN8 judgment 2005 named content boundaries",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "2a932f837585c7340a45ed426a1bc677fba36f48"
+      },
+      {
+        "run_id": 39129781275,
+        "workflow": "Validate direct TW1.0 sprite-to-ADRN source joins",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "2a932f837585c7340a45ed426a1bc677fba36f48"
+      },
+      {
+        "run_id": 39129781305,
+        "workflow": "Validate Stage A early source gap triage",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "2a932f837585c7340a45ed426a1bc677fba36f48"
+      },
+      {
+        "run_id": 39129781304,
+        "workflow": "Validate Stage A evidence-limited review acceptance",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "2a932f837585c7340a45ed426a1bc677fba36f48"
+      },
+      {
+        "run_id": 39129781205,
+        "workflow": "Validate legacy StoneAge assistant history and pet content gaps",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "2a932f837585c7340a45ed426a1bc677fba36f48"
+      },
+      {
+        "run_id": 39129781367,
+        "workflow": "Validate StoneAge Stage A joint review decision",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "2a932f837585c7340a45ed426a1bc677fba36f48"
+      },
+      {
+        "run_id": 39129781315,
+        "workflow": "Validate StoneAge preproduction content archive and wiki boundary",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "2a932f837585c7340a45ed426a1bc677fba36f48"
+      },
+      {
+        "run_id": 39129781347,
+        "workflow": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "2a932f837585c7340a45ed426a1bc677fba36f48"
+      },
+      {
+        "run_id": 39129781228,
+        "workflow": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "2a932f837585c7340a45ed426a1bc677fba36f48"
+      }
+    ]
+  },
+  "main_checks": {
+    "count": 11,
+    "all_succeeded": true,
+    "runs": [
+      {
+        "run_id": 39129858153,
+        "workflow": "Validate Stage A early source gap triage",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "2a932f837585c7340a45ed426a1bc677fba36f48"
+      },
+      {
+        "run_id": 39129858163,
+        "workflow": "Validate CN8 judgment 2005 named content boundaries",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "2a932f837585c7340a45ed426a1bc677fba36f48"
+      },
+      {
+        "run_id": 39129858148,
+        "workflow": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "2a932f837585c7340a45ed426a1bc677fba36f48"
+      },
+      {
+        "run_id": 39129857818,
+        "workflow": "Validate Stage A evidence-limited review acceptance",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "2a932f837585c7340a45ed426a1bc677fba36f48"
+      },
+      {
+        "run_id": 39129858067,
+        "workflow": "Validate legacy StoneAge assistant history and pet content gaps",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "2a932f837585c7340a45ed426a1bc677fba36f48"
+      },
+      {
+        "run_id": 39129858089,
+        "workflow": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "2a932f837585c7340a45ed426a1bc677fba36f48"
+      },
+      {
+        "run_id": 39129858211,
+        "workflow": "Validate StoneAge Stage A joint review decision",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "2a932f837585c7340a45ed426a1bc677fba36f48"
+      },
+      {
+        "run_id": 39129857982,
+        "workflow": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "2a932f837585c7340a45ed426a1bc677fba36f48"
+      },
+      {
+        "run_id": 39129857809,
+        "workflow": "Independently verify TW1.0 R58 rooted helper returns and source custody",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "2a932f837585c7340a45ed426a1bc677fba36f48"
+      },
+      {
+        "run_id": 39129858162,
+        "workflow": "Validate direct TW1.0 sprite-to-ADRN source joins",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "2a932f837585c7340a45ed426a1bc677fba36f48"
+      },
+      {
+        "run_id": 39129857830,
+        "workflow": "Validate StoneAge preproduction content archive and wiki boundary",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "2a932f837585c7340a45ed426a1bc677fba36f48"
+      }
+    ]
+  },
+  "permanent_derived_git_blob": "1c728ba44626f69a90323fc8d7661c0c1a4ca704",
+  "permanent_spec_git_blob": "d47de3e7be7ff7a4d45e4d557f5441b03e384d92",
+  "before_continuity_blob": "1eb635e3031da55598bfa20b0cc7e6a33ed0e26d",
+  "evidence_commit_continuity_blob": "04c7df69c8aea64dfb1c292b7575633ff138a270",
+  "continuity_prefix_preserved": true,
+  "source_grade": "C_SECONDARY_PLAYER_GUIDE",
+  "first_party_source_html_bytes_sha256": null,
+  "original_2005_page_html_pinned": false,
+  "original_server_execution_proven": false,
+  "original_2005_deployment_or_task_flag_proven": false,
+  "no_original_assets_committed": true,
+  "later_85_portrait_prerequisite_still_open": true,
+  "stage_a": "7_PARTIAL_2_OPEN",
+  "stage_b": "GATED",
+  "r79": "PAUSED_NON_BLOCKING",
+  "next": "ALL_OFFICIAL_VERSION_NAMED_CONTENT_SOURCE-01",
+  "acceptance_receipt_own_ci": "PENDING_NEW_HEAD_VERIFICATION"
+}

@@ -63,5 +63,21 @@ class Judgment2005EvidenceTests(unittest.TestCase):
         self.assertEqual(d["r79"], "PAUSED_NON_BLOCKING")
         self.assertEqual(d["next"], "ALL_OFFICIAL_VERSION_NAMED_CONTENT_SOURCE-01")
 
+    def test_ci_acceptance_is_head_scoped(self):
+        receipt = json.loads((ROOT / "research/recovered/STONEAGE-CN80-JUDGMENT-ACCEPTANCE-R1.json").read_text(encoding="utf-8"))
+        self.assertEqual(receipt["evidence_commit"], "2a932f837585c7340a45ed426a1bc677fba36f48")
+        self.assertEqual(receipt["branch_checks"]["count"], 10)
+        self.assertEqual(receipt["main_checks"]["count"], 11)
+        for scope in ("branch_checks", "main_checks"):
+            runs = receipt[scope]["runs"]
+            self.assertEqual(len(runs), receipt[scope]["count"])
+            self.assertEqual(len({r["run_id"] for r in runs}), len(runs))
+            self.assertTrue(all(r["head_sha"] == receipt["evidence_commit"] and r["status"] == "completed" and r["conclusion"] == "success" for r in runs))
+        self.assertFalse(receipt["original_server_execution_proven"])
+        self.assertIsNone(receipt["first_party_source_html_bytes_sha256"])
+        self.assertTrue(receipt["later_85_portrait_prerequisite_still_open"])
+        self.assertEqual(receipt["acceptance_receipt_own_ci"], "PENDING_NEW_HEAD_VERIFICATION")
+
+
 if __name__ == "__main__":
     unittest.main()

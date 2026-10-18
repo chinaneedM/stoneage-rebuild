@@ -15468,3 +15468,7 @@ NEXT仍`JSS-OFFICIAL-EVENT-RESULTS-PET-ATTRIBUTION-01`：仅取真实eventjsk链
 交付`research/recovered/STONEAGE-CN80-JUDGMENT-NAMED-CONTENT-R1.json`、`docs/specs/STONEAGE-CN80-JUDGMENT-NAMED-CONTENT-R1.md`、6项数据负例测试与GitHub Actions工作流。此包不下载/保管原网页HTML字节、原美术/程序，结构性CI验证只能证明文档边界，不能反证真服玩法。新HEAD验收另看真实运行，不预记SUCCESS。
 
 **最高NEXT `ALL_OFFICIAL_VERSION_NAMED_CONTENT_SOURCE-01`**：停止反复转引本任务，切到22域/全部官方版本中下一份可核具体日期与地区的原运营方具名宠物/剧情/人物/NPC/世界材料，优先第一方；无材料则写UNKNOWN转域，不展开低价值helper。Stage A 7 PARTIAL+2 OPEN、Stage B新作与百科生产GATED、R79 PAUSED_NON_BLOCKING，无整体完成百分比。
+
+
+### CN80审判研究材料的独立分支、正式主线CI与持久验收回执
+具名文献图谱源提交 `2a932f837585c7340a45ed426a1bc677fba36f48` / tree `79aeade261f48cf2d9d1533d90e4746ebf2e1a66`，新分支**同SHA10项**实际全部SUCCESS，包含定制的CN8审判6项负例与九项其它门；源main`2b8121d`复核不变、ahead1/behind0、8路径0删除，经非强制快进到main。该**同HEAD main11项**实际全部SUCCESS（包括R58、TW1.0资源、Stage A及CN8审判专用源界）。运行ID、名称、SHA及结论永久存于`research/recovered/STONEAGE-CN80-JUDGMENT-ACCEPTANCE-R1.json`，新源JSON blob `1c728ba44626f69a90323fc8d7661c0c1a4ca704`、规格blob `d47de3e7be7ff7a4d45e4d557f5441b03e384d92`。协议和当前状态历史前缀不删除。这个回执自身是另一提交，自己的分支/main CI仍须另查，不能借父HEAD11项成功。仍无可固化一方2005网页原字节、版本构建及服务端脚本；Stage A7 PARTIAL+2 OPEN、Stage B GATED、R79暂停。NEXT保持`ALL_OFFICIAL_VERSION_NAMED_CONTENT_SOURCE-01`。
