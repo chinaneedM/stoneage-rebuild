@@ -1,0 +1,178 @@
+{
+  "schema": "stoneage.wayi.marine_social_crafting.acceptance.r1",
+  "primary_source": {
+    "original_url": "http://www.wayi.com.tw/stoneage/game/game01_03.asp",
+    "actual_capture": "20050614005817",
+    "bytes": 26642,
+    "sha256": "f021c32b042dbbea480f67aeb3fbc50ba9dfab919de6c04b3240400e5b41c684",
+    "kind": "FIRST_PARTY_DESCRIPTION_NOT_DEPLOYMENT_OR_RUNTIME"
+  },
+  "initial_branch_acceptance": {
+    "head_sha": "536423d4f1fea6b12bd5685f5289ff9ccf592572",
+    "tree_sha": "b885adfdf2a1601a4f5faa95c1e2d59b181b8322",
+    "runs": [
+      {
+        "id": 39136362340,
+        "name": "Validate StoneAge Stage A joint review decision",
+        "conclusion": "success"
+      },
+      {
+        "id": 39136362365,
+        "name": "Validate StoneAge preproduction content archive and wiki boundary",
+        "conclusion": "success"
+      },
+      {
+        "id": 39136362318,
+        "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+        "conclusion": "success"
+      },
+      {
+        "id": 39136362308,
+        "name": "Validate Stage A early source gap triage",
+        "conclusion": "success"
+      },
+      {
+        "id": 39136362338,
+        "name": "Validate Stage A evidence-limited review acceptance",
+        "conclusion": "success"
+      },
+      {
+        "id": 39136362472,
+        "name": "Verify Wayi official marine fusion social cards and crafting source",
+        "conclusion": "success"
+      },
+      {
+        "id": 39136362466,
+        "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+        "conclusion": "success"
+      },
+      {
+        "id": 39136362386,
+        "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+        "conclusion": "success"
+      },
+      {
+        "id": 39136362499,
+        "name": "Validate legacy StoneAge assistant history and pet content gaps",
+        "conclusion": "success"
+      },
+      {
+        "id": 39136362392,
+        "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+        "conclusion": "success"
+      }
+    ],
+    "scope": "BEFORE_EXPLICIT_FORMAL_TAXONOMY_UNKNOWN_QUALIFIER"
+  },
+  "qualified_branch_acceptance": {
+    "head_sha": "90c7b7cfbfce976f57a27abc21ad17aa6fa970a3",
+    "tree_sha": "5c9193c21e305879b4832c4b501465964bca7c80",
+    "run_id": 39136447357,
+    "job_id": 117701802950,
+    "conclusion": "success",
+    "tests": 8,
+    "source_reacquisition_and_exact_derived_cmp": true
+  },
+  "artifact_custody": {
+    "artifact_id": 12140350181,
+    "source_run": 39136447357,
+    "zip_bytes": 2310,
+    "zip_sha256_independently_downloaded": "53c3f587b1ede48c56523b4b2302cccc3e22ff0975d55a24aab9fab6ae355e10",
+    "matches_github_reported_digest": true,
+    "entry": "derived.json",
+    "raw_bytes": 4702,
+    "raw_sha256": "d4772a21b27e50bd66d51fd9e53508a301f9e498f2d777708dd94eb87104dccd",
+    "raw_exactly_equals_permanent_git_file": true
+  },
+  "permanent_derived": {
+    "path": "research/recovered/STONEAGE-WAYI-MARINE-SOCIAL-CRAFTING-R1.json",
+    "git_blob": "8e41dc245eecb226a39c759a8249aa30a939ec9c"
+  },
+  "main_acceptance": {
+    "head_sha": "90c7b7cfbfce976f57a27abc21ad17aa6fa970a3",
+    "tree_sha": "5c9193c21e305879b4832c4b501465964bca7c80",
+    "non_force_fast_forward_from": "adb476ff162e86a2eda66b62fcf2ec6f6f2a2079",
+    "ahead": 2,
+    "behind": 0,
+    "changed_paths": 9,
+    "deletions": 0,
+    "run_count": 11,
+    "runs": [
+      {
+        "id": 39136530587,
+        "name": "Validate legacy StoneAge assistant history and pet content gaps",
+        "head_sha": "90c7b7cfbfce976f57a27abc21ad17aa6fa970a3",
+        "conclusion": "success"
+      },
+      {
+        "id": 39136530624,
+        "name": "Validate StoneAge Stage A joint review decision",
+        "head_sha": "90c7b7cfbfce976f57a27abc21ad17aa6fa970a3",
+        "conclusion": "success"
+      },
+      {
+        "id": 39136530705,
+        "name": "Validate Stage A evidence-limited review acceptance",
+        "head_sha": "90c7b7cfbfce976f57a27abc21ad17aa6fa970a3",
+        "conclusion": "success"
+      },
+      {
+        "id": 39136530623,
+        "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+        "head_sha": "90c7b7cfbfce976f57a27abc21ad17aa6fa970a3",
+        "conclusion": "success"
+      },
+      {
+        "id": 39136530595,
+        "name": "Validate StoneAge preproduction content archive and wiki boundary",
+        "head_sha": "90c7b7cfbfce976f57a27abc21ad17aa6fa970a3",
+        "conclusion": "success"
+      },
+      {
+        "id": 39136530648,
+        "name": "Validate Stage A early source gap triage",
+        "head_sha": "90c7b7cfbfce976f57a27abc21ad17aa6fa970a3",
+        "conclusion": "success"
+      },
+      {
+        "id": 39136530640,
+        "name": "Verify Wayi official marine fusion social cards and crafting source",
+        "head_sha": "90c7b7cfbfce976f57a27abc21ad17aa6fa970a3",
+        "conclusion": "success"
+      },
+      {
+        "id": 39136530710,
+        "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+        "head_sha": "90c7b7cfbfce976f57a27abc21ad17aa6fa970a3",
+        "conclusion": "success"
+      },
+      {
+        "id": 39136530729,
+        "name": "Independently verify TW1.0 R58 rooted helper returns and source custody",
+        "head_sha": "90c7b7cfbfce976f57a27abc21ad17aa6fa970a3",
+        "conclusion": "success"
+      },
+      {
+        "id": 39136530504,
+        "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+        "head_sha": "90c7b7cfbfce976f57a27abc21ad17aa6fa970a3",
+        "conclusion": "success"
+      },
+      {
+        "id": 39136530548,
+        "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+        "head_sha": "90c7b7cfbfce976f57a27abc21ad17aa6fa970a3",
+        "conclusion": "success"
+      }
+    ]
+  },
+  "receipt_own_commit_validation": "OBSERVE_ACTIONS_AT_ITS_OWN_SHA; DO_NOT_INHERIT_PARENT_CHECKS",
+  "boundaries": {
+    "original_html_or_assets_in_git": false,
+    "original_server_reproduced": false,
+    "stage_a_families_unchanged": true,
+    "stage_b_and_wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING"
+  },
+  "next": "JP2003-OFFICIAL-CHARACTER-VISUAL-SOURCE-01"
+}

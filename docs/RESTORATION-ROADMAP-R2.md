@@ -619,3 +619,10 @@ Highest next: CN80_JUDGMENT_2005_NAMED_CONTENT-01, one source-bounded early date
 新最高ALL_OFFICIAL_VERSIONS_NEW_NAMED_FIRSTPARTY_DOMAIN-01取华义2005真实第三详情的一份正文，增加海底融合、任务角色名片状态、五项精工合成扩展的来源限定规格。5类/20宠只具名4类，未补第五类；名片结束保留和下次覆盖、普通手动交换区分；无配方/概率或原服执行。规格与永久源SHA见STONEAGE-WAYI-MARINE-SOCIAL-CRAFTING-R1。
 
 **NEXT OFFICIAL-VERSION-COVERAGE-MATERIAL-REVIEW-05**：复用22域/官方源目录，检查近期台湾2005–2006材料偏重，选另年代/地区一份能带来具名宠物/人物视觉关系的真实材料；一份来源、一项身份连接或精确缺源结论即止，不默认遍历第四详情，不以新规划或无源helper替代实质材料。九族7 PARTIAL+2 OPEN、Stage B及百科GATED、R79暂停不变。
+
+
+## 2026-10-18 — R5全域复用与日本2003真实人物入口
+
+海底融合/名片/精工第一方资料已在90c7b7cf主线11门实际通过并归档独立ZIP/raw/Git保管链。相邻R5复用22域旧状态，发现近期台湾2005–2006偏重；实际重新取得20031214055553 Hangame官方安装页，从图片按钮静态onclick属性确认chara.asp真实目标，未执行脚本，未读人物页或获得人物像，不以路径名/安装日期认证1.74a构建。机器复审STONEAGE-OFFICIAL-VERSION-COVERAGE-MATERIAL-REVIEW-R5.json保留出处和未知。
+
+**最新最高NEXT JP2003-OFFICIAL-CHARACTER-VISUAL-SOURCE-01**：沿该一条真实出链取一正文，先核主题与实际时刻，最多一份有明确身份对应的原图；有归属关系或具体缺源即收束，不爬站、运行程序或扩大旧台湾任务循环。Stage A/Stage B/R79边界不变。

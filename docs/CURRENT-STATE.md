@@ -15535,3 +15535,14 @@ GNN原HTML本轮取源存在403阅读器限制，只按同期索引文本见证�
 交付永久派生 `research/recovered/STONEAGE-WAYI-MARINE-SOCIAL-CRAFTING-R1.json` 与规格 `docs/specs/STONEAGE-WAYI-MARINE-SOCIAL-CRAFTING-R1.md`、8项边界反例、精确正文重取及派生cmp工作流。原HTML/资产不入Git。本地8项通过；独立远端Actions须实际通过后合入并记录精确HEAD与保管链，不提前记绿。git直接push因无命令行凭证不可用，改用已连接GitHub的Git对象接口，非强制分支/主线更新。
 
 **最高NEXT `OFFICIAL-VERSION-COVERAGE-MATERIAL-REVIEW-05`**：复用22域及已有官方源目录，检查近期台湾2005–2006偏重，选择另年代/地区一份有身份的宠物或人物视觉材料；用一份源形成明确身份/视觉关系或精确缺源即止。不默认追第四详情，不重新铺规划、重扫同文或启动R79。Stage A九族7 PARTIAL+2 OPEN、Stage B/百科GATED，R79 PAUSED_NON_BLOCKING，无整体百分比。
+
+
+### 2026-10-18 — 华义第一方资料独立保管链与R5地区覆盖实查
+
+首研究分支536423d4f1fea6b12bd5685f5289ff9ccf592572同SHA10项SUCCESS，随后90c7b7cfbfce976f57a27abc21ad17aa6fa970a3新增“4个例举名不证明4个正式分类”的限定，独立源Action39136447357/job117701802950重取精确官方正文、8项测试及派生cmp SUCCESS。研究树5c9193c21e305879b4832c4b501465964bca7c80经ahead2/behind0、9文件0删除、历史前缀逐字节保留和新main复核后非强制快进整合；该同HEAD的11项main Actions全部实际SUCCESS，源主线运行39136530640亦SUCCESS。
+
+独立下载artifact12140350181：ZIP2310B SHA25653c3f587b1ede48c56523b4b2302cccc3e22ff0975d55a24aab9fab6ae355e10与GitHub摘要一致；内derived.json4702B SHA256d4772a21b27e50bd66d51fd9e53508a301f9e498f2d777708dd94eb87104dccd逐字节等于永久报告，Git blob8e41dc245eecb226a39c759a8249aa30a939ec9c。永久验收回执STONEAGE-WAYI-MARINE-SOCIAL-CRAFTING-ACCEPTANCE-R1.json列明分支、源job、ZIP/raw与主线11运行；回执自己的新提交必须观察自身Actions，不把父HEAD的绿迁移。
+
+相邻完成OFFICIAL-VERSION-COVERAGE-MATERIAL-REVIEW-05：复用R4全部22域状态，不重复扩新矩阵；近期台湾2005–2006偏重，日本复活版人物/宠物身份视觉仍缺。实取早已登记的官方Hangame sasetup.asp，实际20031214055553id_，15583B SHA25676d972f0aac242a03f6bd411a5fedf6f9184cd4e92cd45062cc60f37210c4a21，CP932严格解码，确认9个原生图片按钮的静态onclick location目标，未执行任何JS/ActiveX。只看a href的初检漏过这些目标，已纠正为静态属性检查，不推无导航。新的chara.asp是实际人物入口候选；文件名不证正文主题。此日本页只完成本地源字节/出链资格，未独立runner重放、未取得人物正文/图像，亦不据安装页或日期认定1.74a客户端构建。
+
+**最高NEXT `JP2003-OFFICIAL-CHARACTER-VISUAL-SOURCE-01`**：沿http://www.hangame.co.jp/publish/sa/chara.asp真实静态目标，只取一正文并先验实际题名/正文/时刻；若有具名身份，最多一份明确对应的原图逐字节及目视核验，否则记录精确缺源。无猜名、全站爬取、程序或表单执行。R5永久机器记录STONEAGE-OFFICIAL-VERSION-COVERAGE-MATERIAL-REVIEW-R5.json。Stage A7 PARTIAL+2 OPEN、Stage B/百科GATED，R79暂停不变。

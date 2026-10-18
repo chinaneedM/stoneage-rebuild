@@ -1,0 +1,168 @@
+{
+  "schema": "stoneage.official_version_coverage.material_review.r5",
+  "task": "OFFICIAL-VERSION-COVERAGE-MATERIAL-REVIEW-05",
+  "date": "2026-10-18",
+  "prior_review": {
+    "path": "research/recovered/STONEAGE-CROSS-DOMAIN-MATERIAL-REVIEW-R4.json",
+    "sha256": "ef8294b9e1f74a254a7657bd0cfedafe8d91bb73d2f06b412b3aca33b37aae09"
+  },
+  "domains_unchanged": [
+    {
+      "domain_id": "version_lineage",
+      "baseline_evidence_status": "PARTIAL_SOURCE"
+    },
+    {
+      "domain_id": "login_splash",
+      "baseline_evidence_status": "OPEN_VISUAL"
+    },
+    {
+      "domain_id": "character_creation",
+      "baseline_evidence_status": "PARTIAL_STRUCTURE"
+    },
+    {
+      "domain_id": "character_sprite_model",
+      "baseline_evidence_status": "PARTIAL_RESOURCE"
+    },
+    {
+      "domain_id": "world_map",
+      "baseline_evidence_status": "PARTIAL_STRUCTURE"
+    },
+    {
+      "domain_id": "npc_identity",
+      "baseline_evidence_status": "OPEN_CONTENT"
+    },
+    {
+      "domain_id": "npc_dialog_ui",
+      "baseline_evidence_status": "PARTIAL_STRUCTURE"
+    },
+    {
+      "domain_id": "quest_content",
+      "baseline_evidence_status": "OPEN_CONTENT"
+    },
+    {
+      "domain_id": "pet_species",
+      "baseline_evidence_status": "OPEN_SAME_BUILD_ROSTER"
+    },
+    {
+      "domain_id": "pet_visual",
+      "baseline_evidence_status": "PARTIAL_RESOURCE"
+    },
+    {
+      "domain_id": "pet_stats",
+      "baseline_evidence_status": "PARTIAL_STRUCTURE"
+    },
+    {
+      "domain_id": "pet_growth",
+      "baseline_evidence_status": "PARTIAL_DESCENDANT"
+    },
+    {
+      "domain_id": "pet_skills",
+      "baseline_evidence_status": "PARTIAL_STRUCTURE"
+    },
+    {
+      "domain_id": "pet_encounter",
+      "baseline_evidence_status": "PARTIAL_DESCENDANT"
+    },
+    {
+      "domain_id": "ride_mount",
+      "baseline_evidence_status": "PARTIAL_DESCENDANT"
+    },
+    {
+      "domain_id": "battle_ui_rules",
+      "baseline_evidence_status": "PARTIAL_STRUCTURE"
+    },
+    {
+      "domain_id": "item_equipment_economy",
+      "baseline_evidence_status": "PARTIAL_STRUCTURE"
+    },
+    {
+      "domain_id": "audio_fx",
+      "baseline_evidence_status": "PARTIAL_RESOURCE"
+    },
+    {
+      "domain_id": "helper_versions",
+      "baseline_evidence_status": "PARTIAL_CATALOG"
+    },
+    {
+      "domain_id": "helper_capabilities",
+      "baseline_evidence_status": "PARTIAL_CATALOG"
+    },
+    {
+      "domain_id": "reference_web",
+      "baseline_evidence_status": "PARTIAL_DISCOVERY"
+    },
+    {
+      "domain_id": "future_player_wiki",
+      "baseline_evidence_status": "DESIGN_PREP_ONLY"
+    }
+  ],
+  "new_material_report": "research/recovered/STONEAGE-WAYI-MARINE-SOCIAL-CRAFTING-R1.json",
+  "selection_reason": "RECENT_TAIWAN_2005_2006_CONTENT_GROWTH_DOES_NOT_COVER_JAPANESE_REVIVAL_CHARACTER_IDENTITY_OR_VISUALS",
+  "bounded_source_reacquisition": {
+    "original_url": "http://www.hangame.co.jp/publish/sa/sasetup.asp",
+    "final_url": "https://web.archive.org/web/20031214055553id_/http://www.hangame.co.jp/publish/sa/sasetup.asp",
+    "actual_capture": "20031214055553",
+    "bytes": 15583,
+    "sha256": "76d972f0aac242a03f6bd411a5fedf6f9184cd4e92cd45062cc60f37210c4a21",
+    "encoding": "CP932_STRICT",
+    "qualification": "LOCAL_SOURCE_BYTES_ONLY_NOT_INDEPENDENT_RUNNER_REPLAY",
+    "genuine_navigation_edges": [
+      {
+        "target": "http://www.hangame.co.jp/publish/sa/main.asp",
+        "kind": "LITERAL_ONCLICK_LOCATION_TARGET_NOT_EXECUTED"
+      },
+      {
+        "target": "http://www.hangame.co.jp/publish/sa/game.asp",
+        "kind": "LITERAL_ONCLICK_LOCATION_TARGET_NOT_EXECUTED"
+      },
+      {
+        "target": "http://www.hangame.co.jp/publish/sa/chara.asp",
+        "kind": "LITERAL_ONCLICK_LOCATION_TARGET_NOT_EXECUTED"
+      },
+      {
+        "target": "http://www.hangame.co.jp/publish/sa/town.asp",
+        "kind": "LITERAL_ONCLICK_LOCATION_TARGET_NOT_EXECUTED"
+      },
+      {
+        "target": "http://www.hangame.co.jp/publish/sa/sadl.asp",
+        "kind": "LITERAL_ONCLICK_LOCATION_TARGET_NOT_EXECUTED"
+      },
+      {
+        "target": "http://www.hangame.co.jp/publish/sa/howtoplay.asp",
+        "kind": "LITERAL_ONCLICK_LOCATION_TARGET_NOT_EXECUTED"
+      },
+      {
+        "target": "http://www.hangame.co.jp/publish/sa/dousa.asp",
+        "kind": "LITERAL_ONCLICK_LOCATION_TARGET_NOT_EXECUTED"
+      },
+      {
+        "target": "http://www.hangame.co.jp/publish/sa/chat.asp",
+        "kind": "LITERAL_ONCLICK_LOCATION_TARGET_NOT_EXECUTED"
+      },
+      {
+        "target": "http://www.hangame.co.jp/publish/sa/contact.asp",
+        "kind": "LITERAL_ONCLICK_LOCATION_TARGET_NOT_EXECUTED"
+      }
+    ],
+    "script_form_activex_or_download_executed": false,
+    "a_href_only_parser_would_miss_image_button_navigation": true,
+    "page_is_client_build_174a_proof": false,
+    "new_named_character_or_pet_content_recovered": false,
+    "source_html_or_images_in_git": false
+  },
+  "next": {
+    "task": "JP2003-OFFICIAL-CHARACTER-VISUAL-SOURCE-01",
+    "original_url": "http://www.hangame.co.jp/publish/sa/chara.asp",
+    "edge_source": "EXACT_ARCHIVED_SETUP_PAGE_LITERAL_IMAGE_BUTTON_ONCLICK",
+    "goal": "ONE_OFFICIAL_PAGE_IDENTITY_AND_LINKED_VISUAL_REFERENCE_OR_EXPLICIT_SOURCE_GAP",
+    "limits": "ONE_CONTENT_PAGE_AND_AT_MOST_ONE_NAMED_IDENTITY_ILLUSTRATION_NO_SITE_CRAWL",
+    "filename_alone_establishes_topic": false,
+    "must_verify_actual_title_topic_capture_and_any_image_bytes": true
+  },
+  "boundaries": {
+    "complete_official_release_census": false,
+    "stage_a_status_changed": false,
+    "stage_b_and_wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING"
+  }
+}
