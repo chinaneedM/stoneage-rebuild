@@ -5,7 +5,7 @@ import unittest
 
 from tools.stoneage_jp2003_character_visual import (
     IMAGE_FINAL, IMAGE_ROOT, PAGE_FINAL, RECORD_PATH, UNNAMED_CLAUSE,
-    build, classify_layout, inspect_image,
+    build, build_catalog, classify_layout, inspect_image,
 )
 
 
@@ -87,6 +87,29 @@ class JapaneseCharacterSourceTests(unittest.TestCase):
         self.assertFalse(p["reviewed_image"]["same_instant_or_same_bytes_as_2003_html_proven"])
         self.assertFalse(p["boundaries"]["jss1999_tw10_or_174a_build_identity_proven"])
         self.assertFalse(p["boundaries"]["original_html_or_pixels_in_git"])
+
+    def test_single_export_record_carries_separate_pixel_date_and_hash(self):
+        payload = Path(RECORD_PATH).read_text(encoding="utf-8")
+        source = json.loads(payload)
+        records = build_catalog(source, payload)["records"]
+        first = records[0]
+        self.assertEqual(first["source_refs"][0]["actual_capture"], "20031214051427")
+        self.assertEqual(first["source_refs"][1]["actual_capture"], "20060619160353")
+        self.assertEqual(first["illustration"]["sha256"], source["reviewed_image"]["sha256"])
+        self.assertFalse(first["illustration"]["same_instant_as_page_proven"])
+        self.assertNotIn("actual_capture", source["characters"][0]["illustration"])
+
+    def test_unacquired_images_keep_explicit_unknowns_in_standalone_export(self):
+        payload = Path(RECORD_PATH).read_text(encoding="utf-8")
+        records = build_catalog(json.loads(payload), payload)["records"]
+        for record in records[1:]:
+            self.assertIsNone(record["illustration"]["actual_capture"])
+            self.assertIsNone(record["illustration"]["sha256"])
+            self.assertEqual(len(record["source_refs"]), 1)
+        for record in records:
+            self.assertIsNone(record["companion_reference"]["sha256"])
+            self.assertIsNone(record["canonical_character_name"])
+            self.assertIsNone(record["client_body_face_sprite_ids"])
 
 
 if __name__ == "__main__":

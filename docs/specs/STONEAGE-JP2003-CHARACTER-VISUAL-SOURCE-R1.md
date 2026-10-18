@@ -28,6 +28,8 @@
 
 `research/recovered/STONEAGE-JP2003-CHARACTER-VISUAL-SOURCE-R1.json` 在既有characters集合合同下保存十二条研究位置记录、源SHA、单元格、真实URL、明确空的人名与客户端ID。研究record_id不是游戏角色ID；全部rights_status保持研究元数据、不准直接发布资产。精确源与一GIF独立重放、十项反例、完整派生JSON cmp是来源验收，不是原游戏运行。
 
+归档衔接另有 `STONEAGE-JP2003-CHARACTER-VISUAL-CATALOG-R1.json`：十二条记录可单独取用，位置1在记录自身分开附上2003页面与2006像素的时刻/摘要，后十一张插画和十二张配套图的实际获取时刻/摘要均显式未知。两项新增导出反例防止把总报告中的年代信息遗漏在单条目录之外。原SOURCE-R1报告逐字节保持不变；同一独立工作流重取原件后同时重放SOURCE与CATALOG并各自cmp。此处只补研究资料的来源传递，没有建立公开网站。
+
 官网同页还给出三个真实静态分栏入口：宠物 `chara2.asp`、咒术 `chara3.asp`、宠物技术 `chara4.asp`；只登记对应标签，未访问正文或执行按钮脚本。Stage A九族仍7 PARTIAL+2 OPEN，Stage B/百科GATED，savedata R79暂停。
 
 ## 下一有限资料包

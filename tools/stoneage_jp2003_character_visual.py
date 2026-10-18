@@ -196,11 +196,42 @@ def acquire(url):
                 raise
 
 
+def build_catalog(obj, payload):
+    """Each exported record retains the separate page and pixel provenance."""
+    records = json.loads(json.dumps(obj["characters"]))
+    for record in records:
+        record["source_refs"][0].update(actual_capture=obj["page"]["actual_capture"],
+                                         evidence_role="PAGE_POSITION_AND_DECLARED_IMAGE_REFERENCE")
+        image = record["illustration"]
+        image.update(actual_capture=None, bytes=None, sha256=None, actual_size=None, frames=None,
+                     same_instant_as_page_proven=False)
+        if image["pixels_acquired"]:
+            reviewed = obj["reviewed_image"]
+            for key in ("actual_capture", "bytes", "sha256", "actual_size", "frames"):
+                image[key] = reviewed[key]
+            record["source_refs"].append({"source": reviewed["original_url"],
+                                         "actual_capture": reviewed["actual_capture"],
+                                         "sha256": reviewed["sha256"],
+                                         "evidence_role": "SEPARATE_ARCHIVED_PIXELS_NOT_SAME_INSTANT_AS_PAGE"})
+        record["companion_reference"].update(actual_capture=None, bytes=None, sha256=None)
+    raw = payload.encode("utf-8")
+    return {
+        "schema": "stoneage.jp2003.character_visual.standalone_catalog.r1",
+        "derived_source": {"path": RECORD_PATH, "bytes": len(raw),
+                           "sha256": hashlib.sha256(raw).hexdigest(),
+                           "git_blob": hashlib.sha1(b"blob " + str(len(raw)).encode() + b"\0" + raw).hexdigest()},
+        "record_count": len(records), "records": records,
+        "each_record_has_independent_page_and_any_pixel_provenance": True,
+        "original_pixels_or_site_implementation_added": False,
+    }
+
+
 def main():
     p = argparse.ArgumentParser()
     p.add_argument("--page-input")
     p.add_argument("--image-input")
     p.add_argument("--output", required=True)
+    p.add_argument("--catalog-output")
     args = p.parse_args()
     require(bool(args.page_input) == bool(args.image_input), "Provide both local initial source files or neither")
     page, page_final = (Path(args.page_input).read_bytes(), PAGE_FINAL) if args.page_input else acquire(PAGE_REQUESTED)
@@ -210,6 +241,11 @@ def main():
     out = Path(args.output)
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(payload, encoding="utf-8")
+    if args.catalog_output:
+        catalog = build_catalog(obj, payload)
+        catalog_out = Path(args.catalog_output)
+        catalog_out.parent.mkdir(parents=True, exist_ok=True)
+        catalog_out.write_text(json.dumps(catalog, ensure_ascii=False, sort_keys=True, indent=2) + "\n", encoding="utf-8")
     print("PAGE_SHA256=" + PAGE_SHA)
     print("IMAGE_SHA256=" + IMAGE_SHA)
     print("DERIVED_SHA256=" + hashlib.sha256(payload.encode()).hexdigest())

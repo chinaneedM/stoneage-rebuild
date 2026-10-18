@@ -32,6 +32,16 @@ Primary targets:
 
 See [`docs/CURRENT-STATE.md`](docs/CURRENT-STATE.md).
 
+### Current source archive checkpoint — 2026-10-18
+
+The latest [Japanese operator character source](docs/specs/STONEAGE-JP2003-CHARACTER-VISUAL-SOURCE-R1.md)
+records twelve unnamed web positions and their paired image references, with
+one inspected illustration from a separate 2006 capture. These are source
+positions, not authenticated client character IDs. The adjacent
+[Wayi marine/social/crafting source](docs/specs/STONEAGE-WAYI-MARINE-SOCIAL-CRAFTING-R1.md)
+adds version-bounded official descriptions. Use the final CURRENT-STATE entry
+for the live queue; the dated notes below preserve earlier milestones.
+
 ## Continuity
 
 Every new ChatGPT conversation must start from the repository rather than chat memory.

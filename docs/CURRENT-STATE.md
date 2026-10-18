@@ -15559,3 +15559,16 @@ GNN原HTML本轮取源存在403阅读器限制，只按同期索引文本见证�
 交付永久派生research/recovered/STONEAGE-JP2003-CHARACTER-VISUAL-SOURCE-R1.json（characters集合下12研究位置记录）与docs/specs/STONEAGE-JP2003-CHARACTER-VISUAL-SOURCE-R1.md、10项DOM/源边界反例、精确一正文/一GIF重取及派生cmp工作流。原HTML/图像/原程序不入Git。本地10项通过；分支与主线Actions及ZIP/raw/Git保管链按实际结果另行验收，不提前记SUCCESS。未改变JSS/TW1.0/1.74a客户端归属，也不因同为12人物而跨版本合并。
 
 **最高NEXT JP2003-OFFICIAL-PET-NAMED-VISUAL-SOURCE-01**：同页实际标签“ペット”的静态chara2.asp目标，只取一正文，先核真实主题与日期，若有具名宠物/明确图像关系最多取一图核字节与目视；无资格或取源失败则记录具体缺口回22域，不递归chara3/4，不运行JS/ActiveX/客户端。Stage A九族7 PARTIAL+2 OPEN、Stage B/百科GATED、R79暂停不变，无整体百分比。
+
+
+### 2026-10-18 — 日本人物页独立源重放、归档合同与主线验收
+
+研究源071009cf0bdd1253bfa14ffc981310de082d118d / tree c77c90972517d25110a128f004ce561b6cb13231的10项分支门全部SUCCESS。独立源Action39138024898/job117706443771通过10项DOM/来源反例，实际重新取回2003正文和2006唯一GIF并对完整派生JSON执行cmp SUCCESS；解码依赖Pillow12.3.0在官方PyPI元数据核实可用于Python>=3.10，并在runner实际安装成功。
+
+独立下载artifact12140925697：ZIP2419B SHA2565bf9a5dd2b623de5389c3595a7b9a6e768481f4f3a99a68bbf5ba9a92f8f04d7与GitHub摘要一致；内derived.json20004B SHA25600ef16a71581ebadeed139143ab572ff5ac27c9944e82c7badcdb31611a46192逐字节等于永久Git blob fcb22eb2e385b615db2f8f13f40b83545b03d403。12个位置记录逐项核对既有19集合/7必需字段、唯一研究ID、源SHA/表格行列；名称/原游戏ID均null，版权仅研究元数据，不认证完整人物名单或网站发布许可。
+
+新main复核仍7d614dac，Compare ahead1/behind0、9路径0删除，全部历史前缀逐字节保留后非强制快进合入071009cf；该同SHA的11项main Actions全部SUCCESS，专用源主线39138211546亦SUCCESS。永久验收回执STONEAGE-JP2003-CHARACTER-VISUAL-ACCEPTANCE-R1.json记录源页/图各自年代、分支/主线全部run与ZIP/raw/Git保管链。回执自身新提交须观察自己的Actions，不借父HEAD绿。README增加当前资料入口，旧里程碑不删。
+
+最高NEXT保持JP2003-OFFICIAL-PET-NAMED-VISUAL-SOURCE-01，沿已认证chara2.asp宠物标签只取一正文及最多一份确切身份原图；未实际读取其它分栏。Stage A7 PARTIAL+2 OPEN、Stage B/百科GATED、R79暂停，人物网页位置与客户端同版身份的缺口仍OPEN。
+
+归档衔接复核另补STONEAGE-JP2003-CHARACTER-VISUAL-CATALOG-R1.json：十二条记录单独导出也携带页面日期；唯一已取插画另附2006像素日期/SHA/实际尺寸/帧数，未取图像对应实际字段明确null。避免单条目录丢失总报告的跨年边界，非新增十二个客户端角色。SOURCE-R1原报告逐字节不变，沿原永久源blob派生；新增2项反例，本地人物相关共12项通过。新HEAD工作流同时精确重放SOURCE与CATALOG，其结果须按自身Actions验收。NEXT仍日本官方宠物一正文/最多一图，未提前读取。

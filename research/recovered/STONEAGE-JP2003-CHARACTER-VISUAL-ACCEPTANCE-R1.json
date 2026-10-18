@@ -1,0 +1,215 @@
+{
+  "schema": "stoneage.jp2003.character_visual.acceptance.r1",
+  "source_head": "071009cf0bdd1253bfa14ffc981310de082d118d",
+  "source_tree": "c77c90972517d25110a128f004ce561b6cb13231",
+  "primary_source": {
+    "original_url": "http://www.hangame.co.jp/publish/sa/chara.asp",
+    "capture": "20031214051427",
+    "bytes": 16437,
+    "sha256": "36e1600d1a6192d2613b64750676235fe42010c78b1ca24b43bc38121c9f9e50"
+  },
+  "sole_image": {
+    "original_url": "http://images.hangame.co.jp/_images/game/saj/charapicillust1.gif",
+    "capture": "20060619160353",
+    "bytes": 6312,
+    "sha256": "9a3d42aca28d67a57d328d33fce57f22adfd0037f064885785c82f6482b1bb39",
+    "actual_dimensions": [
+      65,
+      75
+    ],
+    "frames": 1,
+    "human_visual_review": true,
+    "same_instant_as_html_proven": false
+  },
+  "independent_replay": {
+    "run_id": 39138024898,
+    "job_id": 117706443771,
+    "conclusion": "success",
+    "tests": 10,
+    "exact_page_and_one_gif_reacquired": true,
+    "whole_derived_report_cmp": true
+  },
+  "artifact_custody": {
+    "artifact_id": 12140925697,
+    "zip_bytes": 2419,
+    "zip_sha256_independently_downloaded": "5bf9a5dd2b623de5389c3595a7b9a6e768481f4f3a99a68bbf5ba9a92f8f04d7",
+    "matches_github_digest": true,
+    "entry": "derived.json",
+    "raw_bytes": 20004,
+    "raw_sha256": "00ef16a71581ebadeed139143ab572ff5ac27c9944e82c7badcdb31611a46192",
+    "raw_exactly_matches_durable_git_report": true
+  },
+  "permanent_derived": {
+    "path": "research/recovered/STONEAGE-JP2003-CHARACTER-VISUAL-SOURCE-R1.json",
+    "git_blob": "fcb22eb2e385b615db2f8f13f40b83545b03d403"
+  },
+  "archive_integration": {
+    "contract": "research/recovered/STONEAGE-PREPRODUCTION-CONTENT-ARCHIVE-R1.json",
+    "contract_blob": "2d5b3f081d5618287f431fbded943722a820c593",
+    "collection": "characters",
+    "record_count": 12,
+    "unique_research_ids": true,
+    "seven_required_record_fields_checked": true,
+    "all_canonical_names_and_original_game_ids_null": true,
+    "all_rights_research_metadata_only": true,
+    "original_pixels_not_stored": true,
+    "website_not_implemented": true
+  },
+  "branch_acceptance": {
+    "head_sha": "071009cf0bdd1253bfa14ffc981310de082d118d",
+    "run_count": 10,
+    "runs": [
+      {
+        "id": 39138024921,
+        "name": "Validate StoneAge Stage A joint review decision",
+        "conclusion": "success"
+      },
+      {
+        "id": 39138024945,
+        "name": "Validate legacy StoneAge assistant history and pet content gaps",
+        "conclusion": "success"
+      },
+      {
+        "id": 39138024922,
+        "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+        "conclusion": "success"
+      },
+      {
+        "id": 39138024826,
+        "name": "Validate Stage A early source gap triage",
+        "conclusion": "success"
+      },
+      {
+        "id": 39138024877,
+        "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+        "conclusion": "success"
+      },
+      {
+        "id": 39138024813,
+        "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+        "conclusion": "success"
+      },
+      {
+        "id": 39138024898,
+        "name": "Verify official Japanese character page DOM pairs and one historical illustration",
+        "conclusion": "success"
+      },
+      {
+        "id": 39138024789,
+        "name": "Validate Stage A evidence-limited review acceptance",
+        "conclusion": "success"
+      },
+      {
+        "id": 39138024863,
+        "name": "Validate StoneAge preproduction content archive and wiki boundary",
+        "conclusion": "success"
+      },
+      {
+        "id": 39138024913,
+        "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+        "conclusion": "success"
+      }
+    ]
+  },
+  "main_acceptance": {
+    "head_sha": "071009cf0bdd1253bfa14ffc981310de082d118d",
+    "tree_sha": "c77c90972517d25110a128f004ce561b6cb13231",
+    "non_force_fast_forward_from": "7d614dacdb31728d6207c8cd67a6c1d62a6508b5",
+    "ahead": 1,
+    "behind": 0,
+    "paths": 9,
+    "deletions": 0,
+    "run_count": 11,
+    "runs": [
+      {
+        "id": 39138211653,
+        "name": "Validate Stage A evidence-limited review acceptance",
+        "head_sha": "071009cf0bdd1253bfa14ffc981310de082d118d",
+        "conclusion": "success"
+      },
+      {
+        "id": 39138211652,
+        "name": "Independently verify TW1.0 R58 rooted helper returns and source custody",
+        "head_sha": "071009cf0bdd1253bfa14ffc981310de082d118d",
+        "conclusion": "success"
+      },
+      {
+        "id": 39138211358,
+        "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+        "head_sha": "071009cf0bdd1253bfa14ffc981310de082d118d",
+        "conclusion": "success"
+      },
+      {
+        "id": 39138211531,
+        "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+        "head_sha": "071009cf0bdd1253bfa14ffc981310de082d118d",
+        "conclusion": "success"
+      },
+      {
+        "id": 39138211442,
+        "name": "Validate StoneAge Stage A joint review decision",
+        "head_sha": "071009cf0bdd1253bfa14ffc981310de082d118d",
+        "conclusion": "success"
+      },
+      {
+        "id": 39138211378,
+        "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+        "head_sha": "071009cf0bdd1253bfa14ffc981310de082d118d",
+        "conclusion": "success"
+      },
+      {
+        "id": 39138211416,
+        "name": "Validate legacy StoneAge assistant history and pet content gaps",
+        "head_sha": "071009cf0bdd1253bfa14ffc981310de082d118d",
+        "conclusion": "success"
+      },
+      {
+        "id": 39138211433,
+        "name": "Validate StoneAge preproduction content archive and wiki boundary",
+        "head_sha": "071009cf0bdd1253bfa14ffc981310de082d118d",
+        "conclusion": "success"
+      },
+      {
+        "id": 39138211456,
+        "name": "Validate Stage A early source gap triage",
+        "head_sha": "071009cf0bdd1253bfa14ffc981310de082d118d",
+        "conclusion": "success"
+      },
+      {
+        "id": 39138211454,
+        "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+        "head_sha": "071009cf0bdd1253bfa14ffc981310de082d118d",
+        "conclusion": "success"
+      },
+      {
+        "id": 39138211546,
+        "name": "Verify official Japanese character page DOM pairs and one historical illustration",
+        "head_sha": "071009cf0bdd1253bfa14ffc981310de082d118d",
+        "conclusion": "success"
+      }
+    ]
+  },
+  "receipt_own_commit_validation": "OBSERVE_ITS_OWN_ACTIONS_SHA; PARENT_GREENS_ARE_NOT_INHERITED",
+  "evidence_limits": {
+    "web_positions_are_client_ids": false,
+    "unnamed_gate_adjusted_without_inventing_names": true,
+    "other_23_images_acquired": false,
+    "companion_image_semantics_proven": false,
+    "jss1999_tw10_174a_build_identity_proven": false,
+    "stage_a_families_unchanged": true,
+    "stage_b_and_wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING"
+  },
+  "next": "JP2003-OFFICIAL-PET-NAMED-VISUAL-SOURCE-01",
+  "standalone_catalog_integration": {
+    "path": "research/recovered/STONEAGE-JP2003-CHARACTER-VISUAL-CATALOG-R1.json",
+    "bytes": 21849,
+    "sha256": "5948e728b0a872f537c868d7690dfaf14caae7787c4ce290a8a97a6af2b46ba9",
+    "git_blob": "914dd1802cff33b9a61410f63f1d1ad69fe845b4",
+    "upstream_permanent_source_blob": "fcb22eb2e385b615db2f8f13f40b83545b03d403",
+    "per_record_page_and_pixel_captures_separate": true,
+    "source_report_bytewise_unchanged": true,
+    "additional_export_negative_cases": 2,
+    "own_commit_exact_catalog_replay": "OBSERVE_NEW_HEAD_WORKFLOW_CMP_NOT_INHERITED_FROM_SOURCE_HEAD"
+  }
+}
