@@ -1,0 +1,544 @@
+{
+  "schema": "stoneage.jss.first_party_pet_faq.r1",
+  "source_pages": {
+    "faqmenu": {
+      "original_url": "http://www.titan.co.jp/stoneage/faqmenu.html",
+      "actual_capture": "20010417155624",
+      "final_url": "https://web.archive.org/web/20010417155624id_/http://www.titan.co.jp/stoneage/faqmenu.html",
+      "bytes": 3356,
+      "sha256": "d5ea757e563d0bf86ad96b72dc0081761b447fa3771e00a463919b89b7017f5f",
+      "codec": "shift_jis",
+      "source_role": "OPERATOR_FIRST_PARTY_JSS_APRIL_2001"
+    },
+    "faqgame": {
+      "original_url": "http://www.titan.co.jp/stoneage/faqgame.html",
+      "actual_capture": "20010424225131",
+      "final_url": "https://web.archive.org/web/20010424225131id_/http://www.titan.co.jp/stoneage/faqgame.html",
+      "bytes": 5155,
+      "sha256": "1676093fcccaaeacd234df2dcd7fa05f1c0337c365dc787aea83b3f41fafcf91",
+      "codec": "shift_jis",
+      "source_role": "OPERATOR_FIRST_PARTY_JSS_APRIL_2001"
+    }
+  },
+  "navigation_dependency": {
+    "path": "research/recovered/STONEAGE-HISTORICAL-SITE-NAVIGATION-R1.json",
+    "sha256": "7bec788ca9101aa7a06543c0df2fb15b6bc407fd47141b51cc1a99e216cd61cd",
+    "top_actual_capture": "20010414014135",
+    "top_reacquired_this_round": false
+  },
+  "menu": {
+    "category_links": [
+      "http://www.titan.co.jp/stoneage/faqgame.html",
+      "http://www.titan.co.jp/stoneage/faqstart.html",
+      "http://www.titan.co.jp/stoneage/faqquest.html"
+    ],
+    "category_question_counts": [
+      12,
+      16,
+      4,
+      9
+    ],
+    "question_heading_count": 41,
+    "fixed_issue_count": 9,
+    "fixed_issues": [
+      {
+        "key": "MAIL_PAGE_CRASH",
+        "source_order": 0,
+        "heading_fingerprint": {
+          "characters": 26,
+          "sha256": "ae525af232519651d8dd8d4234bd07da701bd38a365e64abe4a488f1cc34f71c"
+        },
+        "evidence_kind": "INDEX_LABEL_UNDER_FIXED_ISSUES",
+        "fix_date": null,
+        "fix_build": null,
+        "fix_independently_executed": false,
+        "script_or_formula_recovered": false
+      },
+      {
+        "key": "PET_NAME_STATUS_ALBUM_MISMATCH",
+        "source_order": 1,
+        "heading_fingerprint": {
+          "characters": 26,
+          "sha256": "41abcabc2b9f47e846e659a5d3c8979b156b9cbefb613f608d0acf77f2a919ed"
+        },
+        "evidence_kind": "INDEX_LABEL_UNDER_FIXED_ISSUES",
+        "fix_date": null,
+        "fix_build": null,
+        "fix_independently_executed": false,
+        "script_or_formula_recovered": false
+      },
+      {
+        "key": "BOARDED_PET_SKILLS_LOST_ON_RETURN",
+        "source_order": 2,
+        "heading_fingerprint": {
+          "characters": 22,
+          "sha256": "afb8ecd0192fde119305c4780b5761d5cc036c1a1c0e21dfb23883dc8c644c77"
+        },
+        "evidence_kind": "INDEX_LABEL_UNDER_FIXED_ISSUES",
+        "fix_date": null,
+        "fix_build": null,
+        "fix_independently_executed": false,
+        "script_or_formula_recovered": false
+      },
+      {
+        "key": "STRING_CUTTING_STONE_NOT_CONSUMED",
+        "source_order": 3,
+        "heading_fingerprint": {
+          "characters": 17,
+          "sha256": "0d24ef0c76dc5a016fb0bb821673d062678af0347707a9b495defe62bebc90e2"
+        },
+        "evidence_kind": "INDEX_LABEL_UNDER_FIXED_ISSUES",
+        "fix_date": null,
+        "fix_build": null,
+        "fix_independently_executed": false,
+        "script_or_formula_recovered": false
+      },
+      {
+        "key": "DESERT_CANAAN_REQUIRED_PET_NOT_RECOGNIZED",
+        "source_order": 4,
+        "heading_fingerprint": {
+          "characters": 33,
+          "sha256": "905373da0a50a6e9a68e011d73c4830da36e170ba3c3f32066f62ed1c55ece75"
+        },
+        "evidence_kind": "INDEX_LABEL_UNDER_FIXED_ISSUES",
+        "fix_date": null,
+        "fix_build": null,
+        "fix_independently_executed": false,
+        "script_or_formula_recovered": false
+      },
+      {
+        "key": "DUEL_COMPANION_SKILL_BATTLE_NOT_ENDING",
+        "source_order": 5,
+        "heading_fingerprint": {
+          "characters": 25,
+          "sha256": "969aa1b146aca469fcc5386b20e8a2988fd0f8bae8204521f8bd87a77a619c3c"
+        },
+        "evidence_kind": "INDEX_LABEL_UNDER_FIXED_ISSUES",
+        "fix_date": null,
+        "fix_build": null,
+        "fix_independently_executed": false,
+        "script_or_formula_recovered": false
+      },
+      {
+        "key": "EARTH_TOUR_COUNTER_BATTLE_NOT_ENDING",
+        "source_order": 6,
+        "heading_fingerprint": {
+          "characters": 33,
+          "sha256": "c82b2ce65421d36d3f09848739ef18d94ed8abafcde5835ec66b001a957534fb"
+        },
+        "evidence_kind": "INDEX_LABEL_UNDER_FIXED_ISSUES",
+        "fix_date": null,
+        "fix_build": null,
+        "fix_independently_executed": false,
+        "script_or_formula_recovered": false
+      },
+      {
+        "key": "KUKUROSU_CAPTURE_EVENT_CERTIFICATE_NOT_RECEIVED",
+        "source_order": 7,
+        "heading_fingerprint": {
+          "characters": 21,
+          "sha256": "6e08e40bedea930c053436f3adbee173e37f6158d85ca023948046d29340b665"
+        },
+        "evidence_kind": "INDEX_LABEL_UNDER_FIXED_ISSUES",
+        "fix_date": null,
+        "fix_build": null,
+        "fix_independently_executed": false,
+        "script_or_formula_recovered": false
+      },
+      {
+        "key": "KNOWLEDGE_MAGIC_DESCRIPTION_MOJIBAKE",
+        "source_order": 8,
+        "heading_fingerprint": {
+          "characters": 23,
+          "sha256": "88e132c42be2a6b2e92eabf1b3ab73312221d941ce793f7134a1a4fc8eb86a5a"
+        },
+        "evidence_kind": "INDEX_LABEL_UNDER_FIXED_ISSUES",
+        "fix_date": null,
+        "fix_build": null,
+        "fix_independently_executed": false,
+        "script_or_formula_recovered": false
+      }
+    ],
+    "selected_detail_url": "http://www.titan.co.jp/stoneage/faqgame.html",
+    "selection_basis": "MENU_EXPLICITLY_NAMES_ENEMY_AND_PET_DISPLAY_ISSUE",
+    "faqquest_filename_is_quest_guide_proof": false,
+    "faqquest_destination_queried": false,
+    "faqstart_destination_queried": false,
+    "category_heading_fingerprints": [
+      [
+        {
+          "characters": 28,
+          "sha256": "bf5882ff878a74eb12926fdf5dd49ed8fb5b115b2579644cc2bd57cd798934d7"
+        },
+        {
+          "characters": 25,
+          "sha256": "4c54f882cafcb284fb8d43f3a5cb8d92068cf3022eb204b84bc66a9d4d98b3dd"
+        },
+        {
+          "characters": 19,
+          "sha256": "a0e2a986988e1419334aa4f1427c57ff057ae251a55add14b62fdbfa656b4fee"
+        },
+        {
+          "characters": 19,
+          "sha256": "7847c67d51491c902c18160352b22dcc479d87971d0bfaf4178b5f5ea5fcfdd2"
+        },
+        {
+          "characters": 23,
+          "sha256": "ab1c0e11e3df7a20c021903569f3304fbddfa2af19c33e4aba222004ca26d948"
+        },
+        {
+          "characters": 27,
+          "sha256": "2a90d51884d1d25c06a0b628929826f357226c57a073632142c7403854b115d5"
+        },
+        {
+          "characters": 40,
+          "sha256": "1769e7cd01f7546f34488071f4aba5981e6ded4a610de3518d32552087f61984"
+        },
+        {
+          "characters": 16,
+          "sha256": "6ad6b34da4f9bd4a3525efdbb54f796d270dcdf89d6cc0563c2f513aa8a003d7"
+        },
+        {
+          "characters": 18,
+          "sha256": "1178a28e8eb051f8aa8d1a46130b49d887981db686eabe3bae92764afb0d0103"
+        },
+        {
+          "characters": 23,
+          "sha256": "ab8d2816f20822a075323643959229ed648c0100f5c0479ba63db94dac109042"
+        },
+        {
+          "characters": 27,
+          "sha256": "3d502045c1e49c62f0e67e8b4d23beb8f56fb8e461085c741b1b710a04637155"
+        },
+        {
+          "characters": 48,
+          "sha256": "1e71b9f6e074ec87cd4b79cd7181ab8a8d15fba66584b4446649e1f211e48237"
+        }
+      ],
+      [
+        {
+          "characters": 40,
+          "sha256": "cc0fb065f279a703fb103bf2dd1f6f10cbd9af3a33135e620688cc34b3d046f5"
+        },
+        {
+          "characters": 16,
+          "sha256": "8fc1a623129f677cba720de5f16ec85acc1ddba346f6a4d9e3d5823ff5596573"
+        },
+        {
+          "characters": 43,
+          "sha256": "a6b96b2456e49d175d75ec0db478ff4e70e429a9c5b4d01124c611e576cfc1ab"
+        },
+        {
+          "characters": 29,
+          "sha256": "1fb51fb9d57ec8a4feb7fb68598bf9ca2cc668210b5720cb593d6073f301f333"
+        },
+        {
+          "characters": 22,
+          "sha256": "bec0b8d65f2576e96e04de1819642a8fc36a4c82905175b910a0a104d6b3f5bb"
+        },
+        {
+          "characters": 31,
+          "sha256": "0a4ad7d02cb2a0984e0e51af1ba43b7be29da718252356048a1e4497a6a24099"
+        },
+        {
+          "characters": 36,
+          "sha256": "31883170942ae84c4ac2644e018261e55f7c17fa987b7c5bffa4c20ee9beb532"
+        },
+        {
+          "characters": 48,
+          "sha256": "710a58741e500a73ca6915ea0d0ca29dbe546adac930f7bbee9468ceed433d78"
+        },
+        {
+          "characters": 31,
+          "sha256": "29bcf9e845cd1ef5a0d2dc34ad6e58368c2e080d219f3a4835f3ba67f2d1ad5f"
+        },
+        {
+          "characters": 29,
+          "sha256": "0b144e2921109bf90b2aa39ca2864c5cf37e8dd596c1fb9eb4d1bf292beb4a67"
+        },
+        {
+          "characters": 24,
+          "sha256": "20aa6676fe95ed69d0a220a8bdaea60680885c4e7ecfa6f50c841a0f63894731"
+        },
+        {
+          "characters": 25,
+          "sha256": "53633b24d8155e9b5a55a84eda58f4bfb65012057154b7f943ce638fdb321025"
+        },
+        {
+          "characters": 43,
+          "sha256": "6d37e07ee0cfd59c2bb2e5d8b85d7e0415c2468d4b2e4d7046f4d0169f3df76f"
+        },
+        {
+          "characters": 43,
+          "sha256": "487fc6f4f3932d04e9922d160941da93de3f62a554ec4c50591c84fce9da0702"
+        },
+        {
+          "characters": 29,
+          "sha256": "98ef4a8c8f4cd68a18415f455133333342d3132f2869f733b734f7d5e2f64e50"
+        },
+        {
+          "characters": 40,
+          "sha256": "c81af7123449220028d40a5d055fd24d81b384724ec958ceb348895bb8d8ad0f"
+        }
+      ],
+      [
+        {
+          "characters": 26,
+          "sha256": "97bd6833d0b017f70a3019bb5df889a184c10aadd0e34b7f53ff5756bddde2a8"
+        },
+        {
+          "characters": 23,
+          "sha256": "0e3d17820fe84093d4859639eb4d56f2854bb7d7d6ca3290e842b71871e8b30a"
+        },
+        {
+          "characters": 18,
+          "sha256": "3465b56dbdcf94b3055b476e0e98bd1a3180bfcef42302b5dc3e834a0bc958ea"
+        },
+        {
+          "characters": 27,
+          "sha256": "4b1c1b826d0d7928e2c7385a1c4b16f3b84d6e079a936ddc7a4f9d791e816e8b"
+        }
+      ],
+      [
+        {
+          "characters": 26,
+          "sha256": "ae525af232519651d8dd8d4234bd07da701bd38a365e64abe4a488f1cc34f71c"
+        },
+        {
+          "characters": 26,
+          "sha256": "41abcabc2b9f47e846e659a5d3c8979b156b9cbefb613f608d0acf77f2a919ed"
+        },
+        {
+          "characters": 22,
+          "sha256": "afb8ecd0192fde119305c4780b5761d5cc036c1a1c0e21dfb23883dc8c644c77"
+        },
+        {
+          "characters": 17,
+          "sha256": "0d24ef0c76dc5a016fb0bb821673d062678af0347707a9b495defe62bebc90e2"
+        },
+        {
+          "characters": 33,
+          "sha256": "905373da0a50a6e9a68e011d73c4830da36e170ba3c3f32066f62ed1c55ece75"
+        },
+        {
+          "characters": 25,
+          "sha256": "969aa1b146aca469fcc5386b20e8a2988fd0f8bae8204521f8bd87a77a619c3c"
+        },
+        {
+          "characters": 33,
+          "sha256": "c82b2ce65421d36d3f09848739ef18d94ed8abafcde5835ec66b001a957534fb"
+        },
+        {
+          "characters": 21,
+          "sha256": "6e08e40bedea930c053436f3adbee173e37f6158d85ca023948046d29340b665"
+        },
+        {
+          "characters": 23,
+          "sha256": "88e132c42be2a6b2e92eabf1b3ab73312221d941ce793f7134a1a4fc8eb86a5a"
+        }
+      ]
+    ]
+  },
+  "game_faq": {
+    "answer_count": 12,
+    "qa_fingerprints": [
+      {
+        "source_order": 0,
+        "question": {
+          "characters": 28,
+          "sha256": "bf5882ff878a74eb12926fdf5dd49ed8fb5b115b2579644cc2bd57cd798934d7"
+        },
+        "answer": {
+          "characters": 188,
+          "sha256": "8e0e47b54f169b2b0a99416f408ddeaf5a38f88ecca2ecf777814281f4f05ccd"
+        }
+      },
+      {
+        "source_order": 1,
+        "question": {
+          "characters": 25,
+          "sha256": "4c54f882cafcb284fb8d43f3a5cb8d92068cf3022eb204b84bc66a9d4d98b3dd"
+        },
+        "answer": {
+          "characters": 8,
+          "sha256": "ec7ea3e02dbe0eae730449b6bd04e8aeddbf58cae57c0c92d8872cbd288be7f5"
+        }
+      },
+      {
+        "source_order": 2,
+        "question": {
+          "characters": 19,
+          "sha256": "a0e2a986988e1419334aa4f1427c57ff057ae251a55add14b62fdbfa656b4fee"
+        },
+        "answer": {
+          "characters": 354,
+          "sha256": "3a9cb7dbbf0f1028494165e46170c404cae81cd4e1f11e43b5a17d59076b9e84"
+        }
+      },
+      {
+        "source_order": 3,
+        "question": {
+          "characters": 19,
+          "sha256": "7847c67d51491c902c18160352b22dcc479d87971d0bfaf4178b5f5ea5fcfdd2"
+        },
+        "answer": {
+          "characters": 105,
+          "sha256": "bcaecaf5b2f293595ee7d6c42e84d4888132f751f1ff60786aa0286337820d5a"
+        }
+      },
+      {
+        "source_order": 4,
+        "question": {
+          "characters": 23,
+          "sha256": "ab1c0e11e3df7a20c021903569f3304fbddfa2af19c33e4aba222004ca26d948"
+        },
+        "answer": {
+          "characters": 161,
+          "sha256": "41aef861fc0036a721ed2b010ee7fa42febc1c914af95c758542890f5e55d68c"
+        }
+      },
+      {
+        "source_order": 5,
+        "question": {
+          "characters": 27,
+          "sha256": "2a90d51884d1d25c06a0b628929826f357226c57a073632142c7403854b115d5"
+        },
+        "answer": {
+          "characters": 129,
+          "sha256": "1cb965d790e4f6fc73250cb01453423d1e72a05a67aaff0196d7598a70d500bf"
+        }
+      },
+      {
+        "source_order": 6,
+        "question": {
+          "characters": 40,
+          "sha256": "1769e7cd01f7546f34488071f4aba5981e6ded4a610de3518d32552087f61984"
+        },
+        "answer": {
+          "characters": 96,
+          "sha256": "b5652fc6d42e55b0930a914a07c94cb8182f782bbb280780de542c579a054a7a"
+        }
+      },
+      {
+        "source_order": 7,
+        "question": {
+          "characters": 16,
+          "sha256": "6ad6b34da4f9bd4a3525efdbb54f796d270dcdf89d6cc0563c2f513aa8a003d7"
+        },
+        "answer": {
+          "characters": 103,
+          "sha256": "e4280dd96538a4d5d2da8581b4872c51522046bdd1ef4d9973e4b8162357863b"
+        }
+      },
+      {
+        "source_order": 8,
+        "question": {
+          "characters": 18,
+          "sha256": "1178a28e8eb051f8aa8d1a46130b49d887981db686eabe3bae92764afb0d0103"
+        },
+        "answer": {
+          "characters": 506,
+          "sha256": "14be2326df8bf22987f8f1bd54eb809739ec596246c279f7ef1447a70e257e8a"
+        }
+      },
+      {
+        "source_order": 9,
+        "question": {
+          "characters": 23,
+          "sha256": "ab8d2816f20822a075323643959229ed648c0100f5c0479ba63db94dac109042"
+        },
+        "answer": {
+          "characters": 19,
+          "sha256": "58ffaf162d7f25f5d715673ef8ce47314330e1240eec5c1f4deb92f12bc89834"
+        }
+      },
+      {
+        "source_order": 10,
+        "question": {
+          "characters": 27,
+          "sha256": "3d502045c1e49c62f0e67e8b4d23beb8f56fb8e461085c741b1b710a04637155"
+        },
+        "answer": {
+          "characters": 52,
+          "sha256": "1c9d32e97e269dfead59a5887653079e6f6554492648a6220793588d2c12f68e"
+        }
+      },
+      {
+        "source_order": 11,
+        "question": {
+          "characters": 48,
+          "sha256": "1e71b9f6e074ec87cd4b79cd7181ab8a8d15fba66584b4446649e1f211e48237"
+        },
+        "answer": {
+          "characters": 59,
+          "sha256": "755fbf8f9a9db089e59149c5bfd42d066f82369b573aed33d9e9eface0c15afb"
+        }
+      }
+    ],
+    "yan_mito_quest": {
+      "source_order": 1,
+      "label_as_written": "ヤン＝ミト",
+      "operator_status": "UNDER_INVESTIGATION",
+      "npc_id": null,
+      "quest_script": null,
+      "fix_proven": false
+    },
+    "invisible_enemies_or_pets": {
+      "source_order": 4,
+      "operator_advice": "REINSTALL_WITH_OLD_GAME_DIRECTORY_REMOVAL",
+      "client_resource_cause_proven": false,
+      "pet_absence_or_invisibility_game_rule_proven": false,
+      "remedy_executed": false
+    },
+    "building_or_cave_entry_issue": {
+      "source_order": 5,
+      "operator_status": "UNDER_INVESTIGATION",
+      "workaround_reports": [
+        "REENTER_VIA_OTHER_BUILDING",
+        "CLOSE_MAP_MOVE_OUT_OF_VIEW_REOPEN_MAP",
+        "RELOGIN"
+      ],
+      "reported_workarounds_are_guarantees": false,
+      "floor_or_warp_id": null
+    },
+    "duel_ranking": {
+      "source_order": 9,
+      "refresh_trigger_described": "PERFORM_DUEL",
+      "dp_gain_alone_immediate_refresh_proven": false,
+      "dp_formula": null
+    },
+    "windowed_color": {
+      "source_order": 10,
+      "supported_colors_described": 256,
+      "operator_reason": "TIME_DEPENDENT_COLOR_CHANGE_USES_PALETTE",
+      "original_palette_schedule_or_pixels_recovered": false
+    },
+    "sound_issue": {
+      "source_order": 7,
+      "operator_advice": "LOWER_OR_DISABLE_AUDIO_HARDWARE_ACCELERATION",
+      "original_audio_call_or_track_mapping_proven": false
+    },
+    "download_reference": {
+      "url": "http://www.titan.co.jp/stoneage/sa_se.lzh",
+      "queried_or_downloaded": false,
+      "role": "REFERENCED_COMPATIBILITY_AUDIO_ARCHIVE_NOT_RECOVERED_ASSET"
+    }
+  },
+  "source_temporality": {
+    "same_capture_instant": false,
+    "snapshot_dates_are_fix_or_release_dates": false
+  },
+  "boundaries": {
+    "qualified_html_pages": 2,
+    "detail_pages_followed": 1,
+    "original_server_executed": false,
+    "fixes_independently_verified": false,
+    "pet_species_master_or_growth_formula_recovered": false,
+    "named_quest_or_skill_label_is_complete_definition": false,
+    "jss1999_or_tw10_build_identity_proven": false,
+    "proprietary_html_images_audio_or_binaries_retained_in_git": false,
+    "stage_a_family_status_changed": false,
+    "stage_b_production": "GATED",
+    "r79": "PAUSED_NON_BLOCKING"
+  }
+}

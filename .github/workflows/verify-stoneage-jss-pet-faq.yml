@@ -1,0 +1,32 @@
+name: Verify JSS FAQ pet defect labels and gameplay evidence boundaries
+on:
+  push:
+    paths:
+      - tools/stoneage_jss_pet_faq.py
+      - tests/test_stoneage_jss_pet_faq.py
+      - docs/specs/STONEAGE-JSS-FIRST-PARTY-PET-FAQ-R1.md
+      - research/recovered/STONEAGE-JSS-FIRST-PARTY-PET-FAQ*.json
+      - .github/workflows/verify-stoneage-jss-pet-faq.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  replay-two-official-pages:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Reject quest-filename assumptions, cross-answer joins and fix overclaims
+        run: python -m unittest tests.test_stoneage_jss_pet_faq -v
+      - name: Independently reacquire two exact HTML sources and replay derived report
+        run: |
+          python -m tools.stoneage_jss_pet_faq --output "${{ runner.temp }}/jss-first-party-pet-faq.json"
+          cmp "${{ runner.temp }}/jss-first-party-pet-faq.json" research/recovered/STONEAGE-JSS-FIRST-PARTY-PET-FAQ-R1.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: jss-first-party-pet-faq-derived-report
+          path: ${{ runner.temp }}/jss-first-party-pet-faq.json
+          retention-days: 30

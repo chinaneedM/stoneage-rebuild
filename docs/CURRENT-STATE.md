@@ -15270,3 +15270,16 @@ NEXT仍`JSS-OFFICIAL-EVENT-RESULTS-PET-ATTRIBUTION-01`：仅取真实eventjsk链
 研究源`8be71862a88dff3965d525467f69caa2284b461a`同SHA10项SUCCESS，来源保管`c5f0ee5342750e6ecc4a9f3be0fafa24aac20efb`同SHA8项SUCCESS后，重新核main仍081e141、ahead2/behind0、12路径0删除，非强制快进至c5f0ee5/tree`25df8c2488a86b4720396950c678e134c01fb763`。该HEAD **11项main Actions全部实际SUCCESS**，含两官网页独立重取与归属重放`39114374110`、SPR/ADRN`39114373983`、其它九项；全部名称/ID/结论永久写RESULTS-ACCEPTANCE-R1的main_acceptance。原1948929字节历史前缀完整，12变更路径没有原HTML、图片、游戏程序。此主线验收记录自己的后续branch/main CI须独立检查，不冒用父提交结果。
 
 第一回报道4奖项有界可用，第二回完成/稀有宠身份没有得到认证；错页07预取、09模板横幅不一致、三图404/三查询429全部保留，不改写成成功。NEXT仍JSS-FIRST-PARTY-PET-FAQ-01，从真实faqmenu入口最多一条宠物相关正文；活动资料支线停止横向遍历。Stage A7 PARTIAL+2 OPEN，Stage B/百科GATED，R79暂停，无整体百分比。
+
+
+## 2026-10-18 — JSS官方FAQ宠物缺陷标签、具名任务状态与玩法说明
+
+本轮重新核远端main`5d2fdd6f119842b3ca7e2563976e920ddb4feb99`/tree`d3571b371e6edfa5fc3d52e2d2d481e9ddc04895`、最新5提交、333分支头与无开放PR；该HEAD现有9项main Actions全部实际SUCCESS。完整CURRENT-STATE1954165B SHA256`ad73f56db3be12a425f4388a5ae07bdc304b12c0ade4356ad292ea3dcc1836e9`、blob`d05917aab95326e8377e854d2ffc7cd25455ee15`与新远端blob/checkout一致；README/协议/Design/Timeline/Source/Roadmap及22域R3组合材料重新读取，历史前缀不删。
+
+最高JSS-FIRST-PARTY-PET-FAQ-01沿此前top真实faqmenu出链取目录，实际20010417155624/3356B；仅沿目录明确敌人/宠物显示问题的faqgame链接取正文，实际20010424225131/5155B。目录4组12/16/4/9共41题目，正文12问答；faqquest只是一般提问栏目，不能由文件名认作任务攻略，另外两个详情与sa_se.lzh档案均未访问。两页不当同刻，网页快照不等于修复日期或构建号，原HTML/图片/音效/程序均不进Git。
+
+新官方文献层：目录已修正组有寄存宠物后技能丢失、状态/相册宠物名不一致、沙漠卡南指定宠物不触发、ククロス捕获活动证书未领、两项具名技能战斗不结束、ひも切り石未消耗等9标签。它们不是完整技能/任务/物种表，也没证独立修复执行或具体日期。正文ヤン＝ミト任务仍在调查，不能借已修正组改成完成；敌人/宠物不显示给重装建议，不证明唯一原因或隐身机制。建筑入口异常调查及玩家缓解报告非保证。明确的规则说明仅限强者表在决斗时刷新、窗口模式256色因按时间变色使用调色板；原榜单公式/调色板数值或TW1.0身份未知。
+
+规格STONEAGE-JSS-FIRST-PARTY-PET-FAQ-R1、完整派生报告/SOURCE-INTAKE、专用解析器/15项反例检查与独立两页重放workflow已形成。本地15项PASS和精确报告重放已实证；后续分支/main及artifact ZIP/raw保管待真实验收另记。22域原历史状态保留，仅宠物状态/技能、任务、物品、战斗/UI、音效/参考站增加JSS2001文献层；原始服务器内容和成长公式没有恢复。
+
+**最高NEXT `JSS-FIRST-PARTY-PATCH-PET-QUEST-01`**：沿旧已验top真实verup.html取一个更新入口，只在真实条目/出链明确对应宠物寄存、指定宠物条件或捕获证书问题时最多追一份必要记录，争取玩法变更的日期/版本归属；只有下载说明或无匹配则登记未知停止并回跨域评审。不猜补丁路径、种名或原服脚本，不下载执行旧程序。Stage A7 PARTIAL+2 OPEN，Stage B游戏/百科生产GATED，R79 PAUSED_NON_BLOCKING，无整体复原百分比。

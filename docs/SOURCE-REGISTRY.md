@@ -7055,3 +7055,12 @@ STONEAGE-HISTORICAL-WIKI-QUERY-CONTRACT-DRAFT-R1.json引用四个既有派生Git
 - 误预取eventj07真实回放20010421042208、2002B SHA25696e0fa659c4951dd102aa53da88110221156222a8777c0ae9fe8740a19ff4650，属别的决斗赛。实际错误/纠正路径保存在SOURCE-INTAKE，不列本轮合格结果正文、不抽取其奖励/人物事实、不隐去失误。
 - sass0901/02/03三个原JPEG路径本轮回放404；各一次Availability请求均429后停止。未取得像素或实际尺寸可验，仅HTML引用和声明尺寸；不是全网没有副本/历史无图。请求/错误/来源身份全部在STONEAGE-JSS-EVENT-RESULTS-SOURCE-INTAKE-R1，未存原HTML或图像。
 - 永久结果派生STONEAGE-JSS-EVENT-RESULTS-PET-ATTRIBUTION-R1，以旧原预告派生报告1fc8ca061330655483cbc931f93043be7c3792a9作上下文，跨届连接明确REJECT_EDITION_MISMATCH，不由奖金额相同认同活动。独立源CI/ZIP/raw/主线接受在真实成功后单记，原服与TW1.0同版身份未认证。
+
+
+## 2026-10-18 — JSS-FIRST-PARTY-PET-FAQ-01官方来源
+
+- 从原导航报告已认证top实际20010414014135的faqmenu真实URL出发；导航旧源只作已验依赖，不计本轮新取得。两页严格Shift-JIS，0解码替代。
+- faqmenu原http://www.titan.co.jp/stoneage/faqmenu.html，实际20010417155624，3356B SHA256`d5ea757e563d0bf86ad96b72dc0081761b447fa3771e00a463919b89b7017f5f`。3详情链接、4题组12/16/4/9共41标题；9项已修正问题只是目录分类，没给修复日期或版本。
+- faqgame真实目录链接因明确敌/宠显示问题而选择，实际20010424225131，5155B SHA256`1676093fcccaaeacd234df2dcd7fa05f1c0337c365dc787aea83b3f41fafcf91`，12问答。正文具名任务仍在调查、决斗刷新榜单/窗口256色与时间调色板说明、历史支持建议分开登记。
+- faqquest的一般提问标题不能从文件名判成任务攻略，该正文与faqstart、兼容声音档sa_se.lzh未请求。无图片/音效/程序取得；正文/目录快照不当修复时间或同构建。
+- 永久派生报告与SOURCE-INTAKE保留各题/答案指纹、归属、原请求/最终响应及完整历史前缀摘要；规格STONEAGE-JSS-FIRST-PARTY-PET-FAQ-R1。原HTML/版权资产不入Git。独立来源CI、ZIP/raw/Git blob及主线接受仅在真实运行后登记。

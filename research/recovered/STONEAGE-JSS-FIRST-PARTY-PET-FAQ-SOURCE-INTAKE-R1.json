@@ -1,0 +1,163 @@
+{
+  "schema": "stoneage.jss.first_party_pet_faq.source_intake.r1",
+  "task": "JSS-FIRST-PARTY-PET-FAQ-01",
+  "date": "2026-10-18",
+  "startup": {
+    "head": "5d2fdd6f119842b3ca7e2563976e920ddb4feb99",
+    "tree": "d3571b371e6edfa5fc3d52e2d2d481e9ddc04895",
+    "remote_branches": 333,
+    "open_prs": 0,
+    "startup_main_runs": [
+      {
+        "id": 39114557284,
+        "name": "Validate Stage A early source gap triage",
+        "head_sha": "5d2fdd6f119842b3ca7e2563976e920ddb4feb99",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39114557254,
+        "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+        "head_sha": "5d2fdd6f119842b3ca7e2563976e920ddb4feb99",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39114557204,
+        "name": "Validate legacy StoneAge assistant history and pet content gaps",
+        "head_sha": "5d2fdd6f119842b3ca7e2563976e920ddb4feb99",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39114557222,
+        "name": "Validate StoneAge preproduction content archive and wiki boundary",
+        "head_sha": "5d2fdd6f119842b3ca7e2563976e920ddb4feb99",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39114557164,
+        "name": "Validate Stage A evidence-limited review acceptance",
+        "head_sha": "5d2fdd6f119842b3ca7e2563976e920ddb4feb99",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39114557177,
+        "name": "Validate StoneAge Stage A joint review decision",
+        "head_sha": "5d2fdd6f119842b3ca7e2563976e920ddb4feb99",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39114557179,
+        "name": "Independently verify TW1.0 R58 rooted helper returns and source custody",
+        "head_sha": "5d2fdd6f119842b3ca7e2563976e920ddb4feb99",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39114557176,
+        "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+        "head_sha": "5d2fdd6f119842b3ca7e2563976e920ddb4feb99",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39114557207,
+        "name": "Verify JSS result edition identity and unknown rare-pet attribution",
+        "head_sha": "5d2fdd6f119842b3ca7e2563976e920ddb4feb99",
+        "status": "completed",
+        "conclusion": "success"
+      }
+    ],
+    "files": [
+      {
+        "path": "README.md",
+        "bytes": 13903,
+        "sha256": "c17ec54c15acba228936e8f045ab47efc8022d4b708ec8b0187783efde253f91",
+        "git_blob": "22cab6b511f7f8ae6e3a4d7ac861d41e5d3a0911",
+        "fresh_remote_blob_matches_checkout": true
+      },
+      {
+        "path": "docs/PROJECT-CONTINUITY-PROTOCOL-R1.md",
+        "bytes": 9762,
+        "sha256": "c44834eeec87f7a43e9cb4905f08377349e36d58b1fff2c5a75a6975db695e3b",
+        "git_blob": "ba9bbe19384589400abc61af37a360a40bf91452",
+        "fresh_remote_blob_matches_checkout": true
+      },
+      {
+        "path": "docs/CURRENT-STATE.md",
+        "bytes": 1954165,
+        "sha256": "ad73f56db3be12a425f4388a5ae07bdc304b12c0ade4356ad292ea3dcc1836e9",
+        "git_blob": "d05917aab95326e8377e854d2ffc7cd25455ee15",
+        "fresh_remote_blob_matches_checkout": true
+      },
+      {
+        "path": "docs/DESIGN-DECISIONS.md",
+        "bytes": 40409,
+        "sha256": "b82ee58df8a5bd5328aab3574df32e71e1524d9992885e2bf3344e0a364311a4",
+        "git_blob": "18dfa5af1f07c51a2fedbb68b3534eae3a1ea586",
+        "fresh_remote_blob_matches_checkout": true
+      },
+      {
+        "path": "docs/HISTORICAL-TIMELINE.md",
+        "bytes": 434063,
+        "sha256": "afb4ec69199c416d44bf29abe520547c52718ec50bd35b4b06c54c041bf2424e",
+        "git_blob": "0770cd25364f05bed332d8d35c1542ae376b4ae6",
+        "fresh_remote_blob_matches_checkout": true
+      },
+      {
+        "path": "docs/SOURCE-REGISTRY.md",
+        "bytes": 690557,
+        "sha256": "75a287909338486727fcb8419706d34f95efe208ea347b16505bc4686bbea65e",
+        "git_blob": "f861ca6048c51c052133398935ca521abab86349",
+        "fresh_remote_blob_matches_checkout": true
+      },
+      {
+        "path": "docs/RESTORATION-ROADMAP-R2.md",
+        "bytes": 60956,
+        "sha256": "20408252974e3eb45e3dcdf9c2b4aa72215d14e202aa3ad0b924ca1bab1e331d",
+        "git_blob": "5d1e923fdd6cf30a9ad7463113db4e3abc0d247f",
+        "fresh_remote_blob_matches_checkout": true
+      }
+    ]
+  },
+  "acquisition_attempts": [
+    {
+      "requested_url": "https://web.archive.org/web/20010418000000id_/http://www.titan.co.jp/stoneage/faqmenu.html",
+      "requested_at_utc": "2026-10-18T09:16:46Z",
+      "final_url": "https://web.archive.org/web/20010417155624id_/http://www.titan.co.jp/stoneage/faqmenu.html",
+      "status": 200,
+      "bytes": 3356,
+      "sha256": "d5ea757e563d0bf86ad96b72dc0081761b447fa3771e00a463919b89b7017f5f"
+    },
+    {
+      "requested_url": "https://web.archive.org/web/20010417155624id_/http://www.titan.co.jp/stoneage/faqgame.html",
+      "requested_at_utc": "2026-10-18T09:17:17Z",
+      "selection_basis": "Real faqmenu link, menu explicitly lists enemies/pets not visible in battle and Yan=Mito quest issue; no inferred growth rules",
+      "final_url": "https://web.archive.org/web/20010424225131id_/http://www.titan.co.jp/stoneage/faqgame.html",
+      "status": 200,
+      "bytes": 5155,
+      "sha256": "1676093fcccaaeacd234df2dcd7fa05f1c0337c365dc787aea83b3f41fafcf91"
+    }
+  ],
+  "qualified_report": {
+    "path": "research/recovered/STONEAGE-JSS-FIRST-PARTY-PET-FAQ-R1.json",
+    "bytes": 18138,
+    "sha256": "38ebbeca6b04d4a3a229da8ac117e76bc083fcd6e03b7ece6db660b58cf153b0",
+    "git_blob": "072f407f82c78f06a09be81c06858a1c604ae277"
+  },
+  "previous_navigation_source": {
+    "path": "research/recovered/STONEAGE-HISTORICAL-SITE-NAVIGATION-R1.json",
+    "bytes": 219534,
+    "sha256": "7bec788ca9101aa7a06543c0df2fb15b6bc407fd47141b51cc1a99e216cd61cd",
+    "git_blob": "83ea18a70aca5f0c1c80280669ef99e344bdb52a"
+  },
+  "source_acquisition_failures_this_package": [],
+  "raw_originals_retained_in_git": false,
+  "additional_detail_pages_or_archives_downloaded": false,
+  "same_time_or_build_promoted": false,
+  "next_priority": "JSS-FIRST-PARTY-PATCH-PET-QUEST-01"
+}

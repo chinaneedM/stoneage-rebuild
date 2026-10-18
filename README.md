@@ -234,3 +234,15 @@ and three429 availability responses are preserved. No result image was acquired.
 See [official result attribution](docs/specs/STONEAGE-JSS-EVENT-RESULTS-PET-ATTRIBUTION-R1.md).
 NEXT: `JSS-FIRST-PARTY-PET-FAQ-01`, one authentic FAQ index and at most one
 clearly pet-related detail page. Stage B and public wiki production remain gated.
+
+
+### Official JSS FAQ evidence — 2026-10-18
+
+Two original April2001 FAQ pages add nine operator-labelled fixed issues,
+including boarded-pet skill loss and named event failures, plus twelve game
+answers. Quest investigation, historical reinstall advice, duel-ranking refresh
+and256-color window/palette behavior are kept separate from actual fix execution,
+server scripts, species IDs and Taiwan-v1 build identity.
+See [FAQ source specification](docs/specs/STONEAGE-JSS-FIRST-PARTY-PET-FAQ-R1.md).
+NEXT: `JSS-FIRST-PARTY-PATCH-PET-QUEST-01`, a bounded authentic update-record source.
+Stage B and public wiki production remain gated.
