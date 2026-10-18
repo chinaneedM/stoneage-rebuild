@@ -15178,3 +15178,10 @@ WORLD源分支ec2aa8fac09f13a61c73c9542b2dd9c08c9fc1b9/tree0976772698b7470b72145
 源音频事件派生ZIP1999B SHA256`b5a36f3fa0c42c01dc60fd6cff9f2d3dd21443606e546f6f4da38dbb5a180d4c`；原内部JSON11013B SHA256`ce1cd5738dac1a571999eea9ea6ee5ead86341f30bff4f0c4e4610a80f917047`、Git blob`67cc3707d45b6f079432b1db29b043851571b518`核对一致。保留来源派生与原盘输入的明确身份分离，原版权音乐、exe及DAT全部不进Git。新工具、来源规范、精确报告、验收回执与单测随Git分支提交，分支及main后续CI结果只能以实际Actions为准，暂不写成功猜测。
 
 结论仅为原始**音频接口静态调用元数据可复核**，人物/宠物/登陆/村庄/战斗音效归属仍UNKNOWN。四个前期物理资源包T01～T04均给出有界来源事实与无法填补的同版业务内容门。**NEXT `PREPRODUCTION-CROSS-DOMAIN-MATERIAL-EVIDENCE-REVIEW-03`**：下一轮必须优先实物内容图谱、初代实际人物/宠物/NPC/任务/地图界面资料和缺源优先级，避免只因代码可搜就继续R编号/API调用树。系统7 PARTIAL+2 OPEN；Stage B游戏与官网/百科生产GATED，R79 PAUSED，不报告无可证分母的复原百分比。
+
+ 
+### 2026-10-18 — TW10-AUDIO-EVENT 原台湾1.0音频调用源正式main验收
+
+原音频研究包分支根`3f150651360ed1b0a4546419c65bce5e051aa4f2`及归档`178bc21f74c2ebb5b739129f79e81e1058e60e6a`在源分支10项实际Actions全部SUCCESS后，以main原`1e5b2470da55e99e662b7c15cef3e2db45e3be72`不变、ahead2/behind0、11文件0删除安全快进到`178bc21f74c2ebb5b739129f79e81e1058e60e6a`/tree`c747d472865ad6e9c0b9189d244e9d483efdc6cc`；**同HEAD 11个main Actions全部SUCCESS**，包括真正原零售盘音频源运行`39080988450`、ADRN/SPR原源`39080988411`及其余九项，编号/名称载入`STONEAGE-TW10-AUDIO-EVENT-GATE-ACCEPTANCE-R1.json`的`main_acceptance.checks`。此前全部历史与来源验收轨迹保留，原AUDIO索引114、独立SFX116、BGM11不重复算新史料。新实证仍限原音频WINMM调用8、DSOUND导入跳板1及其直接CALL1，未取得原事件→音源函数参数、游戏实际声景/宠物攻击或场景音乐对应；不得宣称原声音玩法完整复原。
+
+下轮最高NEXT `PREPRODUCTION-CROSS-DOMAIN-MATERIAL-EVIDENCE-REVIEW-03`，要求审查T01～T04已证硬素材能否支撑真实初代人物/宠物/世界/任务内容来源，优先实质恢复而非理论框架或不断增加底层调用；7 PARTIAL+2 OPEN、Stage B GATED、R79 PAUSED。仅本回执的后续branch/main CI须在运行后再验，暂不前置推定。

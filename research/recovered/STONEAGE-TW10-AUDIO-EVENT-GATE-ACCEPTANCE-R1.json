@@ -49,9 +49,74 @@
     "mciSendCommandA_import_usage_not_found_in_direct_subset"
   ],
   "original_game_audio_payload_committed": false,
-  "source_branch_ci": "PENDING_REAL_RUN",
-  "main_ci": "PENDING_REAL_RUN",
+  "source_branch_ci": "SUCCESS_10_WORKFLOWS_ON_178bc21f74c2ebb5b739129f79e81e1058e60e6a",
+  "main_ci": "SUCCESS_11_WORKFLOWS_ON_178bc21f74c2ebb5b739129f79e81e1058e60e6a",
   "next": "PREPRODUCTION-CROSS-DOMAIN-MATERIAL-EVIDENCE-REVIEW-03",
   "historical_restore_percentage": null,
-  "stage_b_gated": true
+  "stage_b_gated": true,
+  "main_acceptance": {
+    "main_head": "178bc21f74c2ebb5b739129f79e81e1058e60e6a",
+    "main_tree": "c747d472865ad6e9c0b9189d244e9d483efdc6cc",
+    "all_success": true,
+    "checks": [
+      {
+        "id": 39080988353,
+        "name": "Validate StoneAge preproduction content archive and wiki boundary",
+        "result": "success"
+      },
+      {
+        "id": 39080988354,
+        "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+        "result": "success"
+      },
+      {
+        "id": 39080988355,
+        "name": "Validate Stage A evidence-limited review acceptance",
+        "result": "success"
+      },
+      {
+        "id": 39080988386,
+        "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+        "result": "success"
+      },
+      {
+        "id": 39080988411,
+        "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+        "result": "success"
+      },
+      {
+        "id": 39080988436,
+        "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+        "result": "success"
+      },
+      {
+        "id": 39080988450,
+        "name": "Verify authentic TW1 original audio API callsite source",
+        "result": "success"
+      },
+      {
+        "id": 39080988475,
+        "name": "Validate StoneAge Stage A joint review decision",
+        "result": "success"
+      },
+      {
+        "id": 39080988590,
+        "name": "Validate Stage A early source gap triage",
+        "result": "success"
+      },
+      {
+        "id": 39080989916,
+        "name": "Validate legacy StoneAge assistant history and pet content gaps",
+        "result": "success"
+      },
+      {
+        "id": 39080990594,
+        "name": "Independently verify TW1.0 R58 rooted helper returns and source custody",
+        "result": "success"
+      }
+    ],
+    "count": 11,
+    "no_original_sound_event_trigger_certified": true,
+    "receipt_commit_must_have_separate_ci": true
+  }
 }
