@@ -1,0 +1,125 @@
+{
+  "schema": "stoneage.tw85.period_press.acceptance.r1",
+  "source_bundle": "CONTEMPORANEOUS_TW85_REPORTING_NOT_FIRST_PARTY_CLIENT",
+  "historical_entry_commit": "de79469aaab0b60ce502b3f8b176c174748eb7a3",
+  "historical_entry_tree": "2a820492cec55e7cc1d77cff8cd3be5f954d3d25",
+  "accepted_branch_head": "4569672f44a779c319d119ebd391f563ae9225d9",
+  "accepted_branch_tree": "d1ca259bebed092dde60acf7238046f8c4579b44",
+  "base_main_head": "62daff01fb0894fa87a95adbf0317674e01028fa",
+  "initial_failure": {
+    "run_id": 39132023657,
+    "job_id": 117688962061,
+    "workflow": "Validate 2006 Taiwan 8.5 press worldline",
+    "status": "FAILURE",
+    "before_source_tests_passed": 6,
+    "gamezone_raw_http_status": 403,
+    "raw_sha256": null,
+    "retained": true
+  },
+  "corrected_branch_result": {
+    "run_id": 39132487175,
+    "job_id": 117690319992,
+    "status": "SUCCESS",
+    "source_status": "HTTP_ACCESS_DENIED_IN_RUNNER",
+    "raw_source_sha256": null,
+    "source_bytes": null,
+    "adversarial_source_tests_passed": 7
+  },
+  "artifact": {
+    "id": 12138124433,
+    "name": "tw85-dated-press-derived-metadata",
+    "bytes_reported_by_github": 411,
+    "github_zip_digest": "sha256:880051daa29cb1fcfe7c22b087e8b13e76c96fd5fae1674bbee65725d1e73214",
+    "zip_independently_downloaded": false,
+    "derived_member_raw_sha256": null,
+    "retention_expires_at": "2026-11-17T13:39:22Z"
+  },
+  "positive_checks": {
+    "count": 10,
+    "all_succeeded": true,
+    "runs": [
+      {
+        "id": 39132487175,
+        "name": "Validate 2006 Taiwan 8.5 press worldline",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "4569672f44a779c319d119ebd391f563ae9225d9"
+      },
+      {
+        "id": 39132487173,
+        "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "4569672f44a779c319d119ebd391f563ae9225d9"
+      },
+      {
+        "id": 39132487211,
+        "name": "Validate StoneAge preproduction content archive and wiki boundary",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "4569672f44a779c319d119ebd391f563ae9225d9"
+      },
+      {
+        "id": 39132487056,
+        "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "4569672f44a779c319d119ebd391f563ae9225d9"
+      },
+      {
+        "id": 39132487259,
+        "name": "Validate StoneAge Stage A joint review decision",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "4569672f44a779c319d119ebd391f563ae9225d9"
+      },
+      {
+        "id": 39132487125,
+        "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "4569672f44a779c319d119ebd391f563ae9225d9"
+      },
+      {
+        "id": 39132487131,
+        "name": "Validate legacy StoneAge assistant history and pet content gaps",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "4569672f44a779c319d119ebd391f563ae9225d9"
+      },
+      {
+        "id": 39132487255,
+        "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "4569672f44a779c319d119ebd391f563ae9225d9"
+      },
+      {
+        "id": 39132487100,
+        "name": "Validate Stage A early source gap triage",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "4569672f44a779c319d119ebd391f563ae9225d9"
+      },
+      {
+        "id": 39132487088,
+        "name": "Validate Stage A evidence-limited review acceptance",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "4569672f44a779c319d119ebd391f563ae9225d9"
+      }
+    ]
+  },
+  "source_claims_admitted": "PRESS_TEXT_CLAIM_WITH_DATE_AND_DEPENDENT_REPRINT_NOT_RAW_SOURCE_VERIFICATION",
+  "official_site_original_obtained": false,
+  "original_2006_client_or_server_replayed": false,
+  "original_story_or_mission_ids_proven": false,
+  "source_HTML_or_copyrighted_assets_in_git": false,
+  "permanent_gamezone_byte_hash": null,
+  "no_current_state_history_deleted": true,
+  "next": "TW85_NAMED_QUEST_FIRSTPARTY_MATERIAL_GATE-01",
+  "stage_a": "7_PARTIAL_2_OPEN",
+  "stage_b": "GATED",
+  "r79": "PAUSED_NON_BLOCKING",
+  "receipt_own_ci": "PENDING_NEW_HEAD"
+}

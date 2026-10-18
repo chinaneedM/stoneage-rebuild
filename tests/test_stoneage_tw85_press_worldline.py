@@ -46,6 +46,21 @@ class Taiwan85PressWorldline(unittest.TestCase):
         self.assertFalse(self.d["promoted_content"]["daily_persistence_proven"])
         self.assertIsNone(self.d["promoted_content"]["map_floor_ids"])
 
+    def test_failure_and_success_receipt_are_separate_from_source_byte_proof(self):
+        r=json.loads((ROOT/"research/recovered/STONEAGE-TW85-PERIOD-PRESS-ACCEPTANCE-R1.json").read_text(encoding="utf-8"))
+        self.assertEqual(r["initial_failure"]["gamezone_raw_http_status"],403)
+        self.assertEqual(r["initial_failure"]["status"],"FAILURE")
+        self.assertEqual(r["corrected_branch_result"]["status"],"SUCCESS")
+        self.assertEqual(r["corrected_branch_result"]["source_status"],"HTTP_ACCESS_DENIED_IN_RUNNER")
+        self.assertIsNone(r["permanent_gamezone_byte_hash"])
+        self.assertIsNone(r["corrected_branch_result"]["raw_source_sha256"])
+        self.assertFalse(r["artifact"]["zip_independently_downloaded"])
+        self.assertEqual(r["positive_checks"]["count"],10)
+        self.assertTrue(all(x["conclusion"]=="success" and x["head_sha"]==r["accepted_branch_head"] for x in r["positive_checks"]["runs"]))
+        self.assertFalse(r["official_site_original_obtained"])
+        self.assertFalse(r["original_2006_client_or_server_replayed"])
+        self.assertEqual(r["receipt_own_ci"],"PENDING_NEW_HEAD")
+
     def test_status_and_rights(self):
         self.assertFalse(self.d["archived_source_html"])
         self.assertFalse(self.d["proprietary_art_in_git"])

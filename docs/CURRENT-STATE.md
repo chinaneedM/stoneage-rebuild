@@ -15491,3 +15491,8 @@ GNN原HTML本轮取源存在403阅读器限制，只按同期索引文本见证�
 
 ### TW85 首次源字节runner 403失败的保留与后验策略
 独立源Action `39132023657`/job`117688962061`确实FAILURE：6项文献边界测试PASS，但GitHub runner对GameZone指定URL接收HTTP403。**未取得原网页字节、SHA256或存档**；Web索引能读文章不推Runner可取，403不推历史内容不存在。失败不擦除、更不写成成功或改标纯测试通过。源工具更新为显式 `HTTP_ACCESS_DENIED_IN_RUNNER` 类型的机读可复核负证据，sha/null、bytes/null、marker_counts/null；新runner若仍403，结构校验通过只说明403被如实保留，不能称SRC字节证实。未来若有原始Wayback官方页面/其它可依法获取并核SHA的源，再重新评价史料级别，绝不猜/冒用SHA。首次失败永久记录于TW85派生JSON。后续分支、新主线CI待核。
+
+
+### 2026-10-18 — 台湾8.5同期任务来源保管链和真实边界验收
+
+原研究源Action39132023657/job117688962061:6项结构测试通过、GameZone访问HTTP403导致真实FAILURE，保留此失败。后续正式研究分支`4569672f44a779c319d119ebd391f563ae9225d9`/tree`d1ca259bebed092dde60acf7238046f8c4579b44`同SHA10项Actions实际SUCCESS，其中专用Action39132487175/job117690319992通过7项结构及原网页访问拒绝类型校验，stdout精确`SOURCE_STATUS=HTTP_ACCESS_DENIED_IN_RUNNER SHA=None`。SUCCESS只能说明否证、证据结构及未伪造的403处理正确，**不是新闻原字节、华义旧官网、服务器剧情或奖励已复现**。派生artifact12138124433 GitHub ZIP摘要`sha256:880051daa29cb1fcfe7c22b087e8b13e76c96fd5fae1674bbee65725d1e73214`(411B)系GitHub提供，未独立下载算ZIP，亦非新闻源SHA。永久记录`research/recovered/STONEAGE-TW85-PERIOD-PRESS-ACCEPTANCE-R1.json`，新验收提交自身分支与mainCI仍须随后真实查，父HEAD10绿不直接算新提交通过。新NEXT保持`TW85_NAMED_QUEST_FIRSTPARTY_MATERIAL_GATE-01`，7 PARTIAL+2 OPEN、Stage B GATED、R79暂停。
