@@ -22,7 +22,7 @@
       "raw_sha256": null,
       "original_publisher_page": false,
       "source_family": "OVERLAPPING_PRESS_BUNDLE",
-      "source_replay": "PENDING_RUNNER_BYTE_VERIFICATION"
+      "source_replay": "2026-10-18 RUN_39132023657 HTTP_403_NOT_BYTE_PINNED"
     },
     {
       "id": "17173_20060622",
@@ -140,5 +140,14 @@
   "stage_a": "7_PARTIAL_2_OPEN",
   "stage_b": "GATED",
   "r79": "PAUSED_NON_BLOCKING",
-  "next": "TW85_NAMED_QUEST_FIRSTPARTY_MATERIAL_GATE-01"
+  "next": "TW85_NAMED_QUEST_FIRSTPARTY_MATERIAL_GATE-01",
+  "first_source_replay_attempt": {
+    "run_id": 39132023657,
+    "job_id": 117688962061,
+    "conclusion": "failure",
+    "http_status": 403,
+    "tests_before_fetch": "6 PASS",
+    "raw_sha256": null,
+    "preserve_failed_attempt": true
+  }
 }

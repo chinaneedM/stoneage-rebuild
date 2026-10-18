@@ -7134,3 +7134,23 @@ STONEAGE-HISTORICAL-WIKI-QUERY-CONTRACT-DRAFT-R1.json引用四个既有派生Git
 - URL: https://news.17173.com/z/stoneage/renwu/sa80_06.shtml
 - Kind/confidence: C; Mainland 8.0-labeled currently indexed player guide with expanded details; actual original 2005 publication/date/HTML SHA not verified.
 - Content overlaps Bahamut guide, adds board clue, thief positions and skill-identification order. Do not count as a second independent original author or as an official first-party source. No proprietary site HTML/art/client binaries committed. Derived facts/negative evidence in `research/recovered/STONEAGE-CN80-JUDGMENT-NAMED-CONTENT-R1.json`.
+
+
+### SRC-TW85-PERIOD-GNN-20060621-NAMED-STORY-01
+- URL: https://gnn.gamer.com.tw/detail.php?sn=23856
+- Time: 2006-06-21 21:39:50 (publisher displayed); contemporary Taiwanese GNN report. Confidence A for time-bounded reporting, NOT original Wayi web/manual/server build.
+- Claims: 7.5→8.5 promotional background continuation, 雷爾 is 艾巴登's subordinate, 伊甸大陆边境 demon army and tribal mobilization; planned beta/rollout, new map, career skills, recurring personal/family activities. GNN web open gave403 during this review, indexed current article text visible; raw-byte SHA remains UNKNOWN.
+- Does not support: any TW1.0 association, 8.0 detailed bridging, original NPC/quest/item IDs, actual server deployment or playable story sequence.
+
+### SRC-TW85-PERIOD-GAMEZONE-20060621-NAMED-QUEST-01
+- URL: https://www.games.idv.tw/news.php?mode=view&nid=615
+- Time: 2006-06-21. Contemporary period gaming press, overlapping operator-attributed promo paragraphs with GNN; precise common upstream text remains uncertain.
+- Distinct claim: names «支援前線» quest and describes daily activities plus the named narrative figures, no original official task code. One-source raw-byte runner probe is `tools/stoneage_tw85_press_replay.py`; the byte hash must be filled only after actual source replay, NOT fabricated. Original site HTML must not be committed.
+- Does not support: quest prerequisites, gameplay item/NPC IDs, exact encounter/battle execution, actual 7/5 launch success.
+
+### SRC-TW85-17173-20060622-BAHAMUT-REPRINT-01
+- URL: https://news.17173.com/content/2006-06-22/20060622092748047.shtml
+- Displayed publication 2006-06-22 09:27:48 and explicit «来源：巴哈姆特». Count within the same public reporting family, not as another independent first-party proof. May bridge Chinese localization language, not actual new server content.
+- Research-structural contract: `research/recovered/STONEAGE-TW85-PERIOD-PRESS-WORLDLINE-R1.json`. Original news HTML/images and proprietary game assets excluded.
+
+- **2026-10-18 exact source byte attempt:** GitHub Actions run39132023657/job117688962061 failed (6 boundary tests passed, source fetch HTTP403). No source SHA256 or retained HTML; neither missing-website conclusion nor original-byte provenance can be drawn. Follow-on probe reports `HTTP_ACCESS_DENIED_IN_RUNNER` with null bytes/hash if blocked; a green structural CI is NOT historical source-byte acceptance. This failure is an append-only evidence record.

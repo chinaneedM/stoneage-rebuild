@@ -15472,3 +15472,22 @@ NEXT仍`JSS-OFFICIAL-EVENT-RESULTS-PET-ATTRIBUTION-01`：仅取真实eventjsk链
 
 ### CN80审判研究材料的独立分支、正式主线CI与持久验收回执
 具名文献图谱源提交 `2a932f837585c7340a45ed426a1bc677fba36f48` / tree `79aeade261f48cf2d9d1533d90e4746ebf2e1a66`，新分支**同SHA10项**实际全部SUCCESS，包含定制的CN8审判6项负例与九项其它门；源main`2b8121d`复核不变、ahead1/behind0、8路径0删除，经非强制快进到main。该**同HEAD main11项**实际全部SUCCESS（包括R58、TW1.0资源、Stage A及CN8审判专用源界）。运行ID、名称、SHA及结论永久存于`research/recovered/STONEAGE-CN80-JUDGMENT-ACCEPTANCE-R1.json`，新源JSON blob `1c728ba44626f69a90323fc8d7661c0c1a4ca704`、规格blob `d47de3e7be7ff7a4d45e4d557f5441b03e384d92`。协议和当前状态历史前缀不删除。这个回执自身是另一提交，自己的分支/main CI仍须另查，不能借父HEAD11项成功。仍无可固化一方2005网页原字节、版本构建及服务端脚本；Stage A7 PARTIAL+2 OPEN、Stage B GATED、R79暂停。NEXT保持`ALL_OFFICIAL_VERSION_NAMED_CONTENT_SOURCE-01`。
+
+
+## 2026-10-18 — ALL_OFFICIAL_VERSION_NAMED_CONTENT_SOURCE-01 台湾8.5同期具名官方版本材料
+
+按新核GitHub main `62daff01fb0894fa87a95adbf0317674e01028fa` / tree `39743d350ea8c6bd1d1e1427b5b9734`，同HEAD九项 main Actions 全部SUCCESS；完整CURRENT Git blob `a5e070696972a08d6dfa284dc1ddf57fabef4c7b`（1993380B）已真实读取，README/协议/Design/Timeline/Source/Roadmap/portfolio复核。旧连续性和失败记录不删除。
+
+从22域全官方版本内容队列选择**台湾华义8.5《魔域大冒險》2006-06-21同期运营方信息经新闻媒体发布**，目标是取得未入库的具名人物与剧情承接、任务入口及版本机制，限定最多同期两新闻+一明示转载，不扩大第四站无源同稿。这是经有日期媒体报道的官方改版**宣传内容**，不是原华义运营商原网站、商业服务器脚本或客户端。这一层可作为未来世界观参考，不允许冒充JSS1999/TW1.0事实。
+
+GNN 2006-06-21 21:39:50报道官方宣称8.5剧情延续7.5《精靈的召喚》：雷爾被称艾巴登的部下，利用精灵力量企图占据人类世界、遭勇者击败后逃离，随后伊甸大陆边境传来艾巴登率领魔军准备来袭，族长号召勇者。这是**报道叙事有向关系**，尚未证明8.0剧情如何相接、原NPC/event IDs和服务器可达流程。GameZone 2006-06-21同主题报道具名**「支援前線」**，同时描述魔界与人界裂缝、地图、职业技能、每日定时个人与家族活动。GNN未在检索摘录中具名该任务不证明其不存在；「任務常駐」「活動常駐」保留用语异文，不等于原服持久调度。17173 2006-06-22自注来源巴哈姆特、不是另一独立第一手出版证人；GNN/GameZone重合叙事是否同一运营商通稿尚UNKNOWN。
+
+GNN原HTML本轮取源存在403阅读器限制，只按同期索引文本见证；GameZone源SHA/字节待新增独立runner实际重取后回填，未跑绿不得写保管已验证。日期6/21外测、7/5蒼龍、7/12其它服为**当时报导的部署计划**，非真实上线验收。二进制、NPC/item/quest IDs、具体地图与实服任务始终UNKNOWN。
+
+新交付规格 `docs/specs/STONEAGE-TW85-PERIOD-PRESS-WORLDLINE-R1.md`、派生结构 `research/recovered/STONEAGE-TW85-PERIOD-PRESS-WORLDLINE-R1.json`、6项边界回归、仅1页面非版权原件持久留存的byte probe与独立Actions。研究分支需实际源/测试通过后才可安全合主线；CI状态未最终确证时不要宣称全绿。其他九族旧结论7 PARTIAL+2 OPEN，Stage B新作与百科生产GATED，R79 PAUSED_NON_BLOCKING，无整体复原百分比。
+
+**最高NEXT `TW85_NAMED_QUEST_FIRSTPARTY_MATERIAL_GATE-01`**：在原2006华义官网新闻/真实补丁或有构建证的客户端中，对「支援前線」、雷爾/艾巴登的具名任务或故事仅查有限一条；无第一方原料则写OPEN_EVIDENCE_LIMITED转另一官方版本有据材料，不追同一宣传通稿或后世玩法猜数。
+
+
+### TW85 首次源字节runner 403失败的保留与后验策略
+独立源Action `39132023657`/job`117688962061`确实FAILURE：6项文献边界测试PASS，但GitHub runner对GameZone指定URL接收HTTP403。**未取得原网页字节、SHA256或存档**；Web索引能读文章不推Runner可取，403不推历史内容不存在。失败不擦除、更不写成成功或改标纯测试通过。源工具更新为显式 `HTTP_ACCESS_DENIED_IN_RUNNER` 类型的机读可复核负证据，sha/null、bytes/null、marker_counts/null；新runner若仍403，结构校验通过只说明403被如实保留，不能称SRC字节证实。未来若有原始Wayback官方页面/其它可依法获取并核SHA的源，再重新评价史料级别，绝不猜/冒用SHA。首次失败永久记录于TW85派生JSON。后续分支、新主线CI待核。

@@ -6,6 +6,7 @@ import re
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.request import Request, urlopen
+from urllib.error import HTTPError
 
 URL = "https://www.games.idv.tw/news.php?mode=view&nid=615"
 MARKERS = ("魔域大冒險", "雷爾", "艾巴登", "支援前線", "伊甸大陸", "蒼龍")
@@ -59,16 +60,35 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--output", required=True)
     args = ap.parse_args()
-    with urlopen(Request(URL, headers={"User-Agent":"Mozilla/5.0 StoneAgeResearch/1.0", "Accept":"text/html"}), timeout=22) as resp:
-        if resp.status != 200: raise RuntimeError(f"HTTP {resp.status}")
-        raw = resp.read(800001)
-        content_type = resp.headers.get("Content-Type", "")
-    if not 2000 <= len(raw) <= 800000: raise RuntimeError("Source bytes outside bounded size")
-    result = derive(raw, content_type)
+    try:
+        with urlopen(Request(URL, headers={"User-Agent":"Mozilla/5.0 StoneAgeResearch/1.0", "Accept":"text/html"}), timeout=22) as resp:
+            if resp.status != 200: raise RuntimeError(f"HTTP {resp.status}")
+            raw = resp.read(800001)
+            content_type = resp.headers.get("Content-Type", "")
+        if not 2000 <= len(raw) <= 800000:
+            raise RuntimeError("Source bytes outside bounded size")
+        result = derive(raw, content_type)
+        result["source_status"] = "RAW_BYTES_VERIFIED"
+    except HTTPError as exc:
+        if exc.code not in (403, 429):
+            raise
+        result = {
+            "schema": "stoneage.tw85.press.source_probe.r1",
+            "url": URL,
+            "source_status": "HTTP_ACCESS_DENIED_IN_RUNNER",
+            "http_status": exc.code,
+            "bytes": None,
+            "sha256": None,
+            "marker_counts": None,
+            "raw_html_archived": False,
+            "original_game_asset_archived": False,
+            "evidence_kind": "NO_BYTE_VALIDATION_WITH_DOCUMENTED_HTTP_REJECTION"
+        }
     out = Path(args.output)
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps(result, ensure_ascii=False, sort_keys=True, indent=2) + "\n", encoding="utf-8")
-    print("source_sha256="+result["sha256"]+" source_bytes="+str(result["bytes"]))
+    print("SOURCE_STATUS="+result["source_status"]+" SHA="+str(result.get("sha256")))
+
 
 if __name__ == "__main__":
     main()

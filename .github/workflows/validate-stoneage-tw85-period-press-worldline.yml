@@ -21,8 +21,22 @@ jobs:
           python-version: "3.12"
       - name: Check named-content and evidence negative cases
         run: python -m unittest tests.test_stoneage_tw85_press_worldline -v
-      - name: Replay one public contemporaneous press page metadata without saving HTML
+      - name: Try bounded raw source replay or record access rejection without claiming SHA
         run: python -m tools.stoneage_tw85_press_replay --output "${{ runner.temp }}/tw85/derived.json"
+      - name: Guard access denied does not become source verification
+        run: |
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          d=json.loads((Path(os.environ["RUNNER_TEMP"])/"tw85/derived.json").read_text())
+          assert d["source_status"] in ("RAW_BYTES_VERIFIED", "HTTP_ACCESS_DENIED_IN_RUNNER")
+          if d["source_status"] == "HTTP_ACCESS_DENIED_IN_RUNNER":
+              assert d["http_status"] in (403,429)
+              assert d["sha256"] is None and d["bytes"] is None and d["marker_counts"] is None
+          else:
+              assert len(d["sha256"]) == 64 and d["bytes"] > 2000
+          assert d["raw_html_archived"] is False
+          PY
       - uses: actions/upload-artifact@v4
         if: success()
         with:

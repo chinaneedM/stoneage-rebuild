@@ -54,9 +54,18 @@ class Taiwan85PressWorldline(unittest.TestCase):
         self.assertEqual(self.d["r79"], "PAUSED_NON_BLOCKING")
         self.assertEqual(self.d["next"], "TW85_NAMED_QUEST_FIRSTPARTY_MATERIAL_GATE-01")
 
+    def test_first_403_attempt_is_retained_as_failed_attempt(self):
+        d=self.d["first_source_replay_attempt"]
+        self.assertEqual(d["run_id"],39132023657)
+        self.assertEqual(d["job_id"],117688962061)
+        self.assertEqual(d["http_status"],403)
+        self.assertEqual(d["conclusion"],"failure")
+        self.assertIsNone(d["raw_sha256"])
+        self.assertTrue(d["preserve_failed_attempt"])
+
     def test_runner_script_has_no_proprietary_writes(self):
         txt=(ROOT/"tools/stoneage_tw85_press_replay.py").read_text(encoding="utf-8")
-        self.assertIn('source_sha256=',txt)
+        self.assertIn('SOURCE_STATUS=',txt)
         self.assertIn("raw_html_archived",txt)
         self.assertNotIn("raw_html.write",txt)
 
