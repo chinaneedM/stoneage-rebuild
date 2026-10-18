@@ -88,6 +88,8 @@ def build(raw, final_url):
             "planned_class_count": 5, "planned_pet_count": 20,
             "named_classes_in_source_order": ["水母", "一角鯨", "海蠍", "滄龍"],
             "named_class_count": 4, "unlisted_class_count": 1,
+            "named_examples_are_formal_class_taxonomy_proven": False,
+            "unlisted_class_count_basis": "ARITHMETIC_GAP_NOT_A_VERIFIED_TAXONOMY",
             "missing_class_name": None, "named_classes_are_complete_species_roster": False,
             "four_pets_per_class_proven": False,
             "fusion_recipe_or_inputs": None, "pet_ids_or_graphic_bindings": None,

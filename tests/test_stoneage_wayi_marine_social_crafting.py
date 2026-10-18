@@ -42,6 +42,8 @@ class OfficialSourceBoundaries(unittest.TestCase):
         self.assertEqual((f["planned_class_count"], f["planned_pet_count"]), (5, 20))
         self.assertEqual(f["named_classes_in_source_order"], ["水母", "一角鯨", "海蠍", "滄龍"])
         self.assertIsNone(f["missing_class_name"])
+        self.assertFalse(f["named_examples_are_formal_class_taxonomy_proven"])
+        self.assertEqual(f["unlisted_class_count_basis"], "ARITHMETIC_GAP_NOT_A_VERIFIED_TAXONOMY")
         self.assertFalse(f["four_pets_per_class_proven"])
         self.assertFalse(f["actual_release_or_server_execution_proven"])
         self.assertIsNone(f["fusion_recipe_or_inputs"])
