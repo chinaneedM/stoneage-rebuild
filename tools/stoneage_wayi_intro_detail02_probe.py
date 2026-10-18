@@ -84,6 +84,24 @@ def main():
             if n == 1 or exc.code not in (502, 503, 504):
                 raise
     report = inspect(raw, final)
+    if report["response_sha256"] != "0868e56a81d7037e434a09fd0824a6eb59747494099087f8d1eaeaaa37fb690c" or report["response_bytes"] != 26414 or report["actual_capture"] != "20050614005428":
+        raise ValueError("Replayed response differs from accepted primary-source byte pin")
+    # Source excerpts are bounded diagnostic output only; not preserved as full HTML.
+    visible = Visible()
+    visible.feed(raw.decode("big5", errors="strict"))
+    for anchor, after, budget in (("寵物裝備系統", 65, 4100), ("任務日誌", 28, 1800)):
+        index = next((i for i, value in enumerate(visible.pieces) if anchor in value), None)
+        if index is not None:
+            window = visible.pieces[max(0, index - 3):index + after]
+            emitted = []
+            used = 0
+            for part in window:
+                if used >= budget:
+                    break
+                item = part[:min(175, budget - used)]
+                used += len(item)
+                emitted.append(item)
+            print("BOUNDED_CONTEXT_" + anchor + "=" + json.dumps(emitted, ensure_ascii=False))
     report["transient_attempts"] = attempts
     path = Path(args.output)
     path.parent.mkdir(parents=True, exist_ok=True)
