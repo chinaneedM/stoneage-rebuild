@@ -1,0 +1,140 @@
+{
+  "boundaries": {
+    "all_22_prior_statuses_preserved": true,
+    "complete_official_release_census": false,
+    "r79": "PAUSED_NON_BLOCKING",
+    "stage_a_families": "7_PARTIAL_2_OPEN",
+    "stage_b_and_wiki": "GATED"
+  },
+  "date": "2026-10-19",
+  "domains_unchanged": [
+    {
+      "baseline_evidence_status": "PARTIAL_SOURCE",
+      "domain_id": "version_lineage"
+    },
+    {
+      "baseline_evidence_status": "OPEN_VISUAL",
+      "domain_id": "login_splash"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "domain_id": "character_creation"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_RESOURCE",
+      "domain_id": "character_sprite_model"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "domain_id": "world_map"
+    },
+    {
+      "baseline_evidence_status": "OPEN_CONTENT",
+      "domain_id": "npc_identity"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "domain_id": "npc_dialog_ui"
+    },
+    {
+      "baseline_evidence_status": "OPEN_CONTENT",
+      "domain_id": "quest_content"
+    },
+    {
+      "baseline_evidence_status": "OPEN_SAME_BUILD_ROSTER",
+      "domain_id": "pet_species"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_RESOURCE",
+      "domain_id": "pet_visual"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "domain_id": "pet_stats"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_DESCENDANT",
+      "domain_id": "pet_growth"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "domain_id": "pet_skills"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_DESCENDANT",
+      "domain_id": "pet_encounter"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_DESCENDANT",
+      "domain_id": "ride_mount"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "domain_id": "battle_ui_rules"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "domain_id": "item_equipment_economy"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_RESOURCE",
+      "domain_id": "audio_fx"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_CATALOG",
+      "domain_id": "helper_versions"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_CATALOG",
+      "domain_id": "helper_capabilities"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_DISCOVERY",
+      "domain_id": "reference_web"
+    },
+    {
+      "baseline_evidence_status": "DESIGN_PREP_ONLY",
+      "domain_id": "future_player_wiki"
+    }
+  ],
+  "material_delta": {
+    "baseline_status_promotion": false,
+    "client_species_id_stats_growth_skills_encounter_riding_animation": "UNKNOWN",
+    "named_web_entries": 124,
+    "new_image_capture_year_counts": {
+      "2003": 5,
+      "2006": 4,
+      "2008": 2,
+      "2016": 1
+    },
+    "operator": "Japan Hangame",
+    "page_capture_years": [
+      2003,
+      2003,
+      2004
+    ],
+    "qualified_image_references_with_prior": 13,
+    "unacquired_image_references": 111
+  },
+  "new_material_reports": [
+    "research/recovered/STONEAGE-JP-OFFICIAL-PET-CATALOG-R1.json",
+    "research/recovered/STONEAGE-JP-OFFICIAL-PET-VISUAL-SAMPLE-R1.json"
+  ],
+  "next": {
+    "edge_kind": "ORIGINAL_SETUP_PAGE_STATIC_IMAGE_BUTTON_ONCLICK_ALREADY_QUALIFIED",
+    "edge_source_report": "research/recovered/STONEAGE-OFFICIAL-VERSION-COVERAGE-MATERIAL-REVIEW-R5.json",
+    "failure_reopen_trigger": "A newly qualified exact source/capture; a timeout alone does not establish historical absence",
+    "filename_alone_establishes_topic": false,
+    "goal": "ONE_ACTUAL_TOPIC_VERIFIED_BODY_WITH_NAMED_GEOGRAPHY_SETTLEMENT_OR_DAILY_LIFE_RELATION_OR_PRECISE_UNAVAILABLE_STATUS",
+    "limits": "ONE_BODY_AND_AT_MOST_ONE_EXPLICITLY_LINKED_ILLUSTRATION_NO_OTHER_TABS_OR_RECURSION",
+    "original_url": "http://www.hangame.co.jp/publish/sa/town.asp",
+    "task": "JP-OFFICIAL-TOWN-NAMED-GEOGRAPHY-SOURCE-01"
+  },
+  "prior_review": {
+    "path": "research/recovered/STONEAGE-OFFICIAL-VERSION-COVERAGE-MATERIAL-REVIEW-R5.json",
+    "sha256": "ff3b52466b3e351fd671c642cd87bb4cd9dc20c29bc5058f9030f26586ea554f"
+  },
+  "schema": "stoneage.official_version_coverage.material_review.r6",
+  "selection_reason": "Two consecutive Japanese identity/visual packages produced material content; stop image enumeration and move to named geography and everyday-world content using an already authenticated official navigation edge. Broad official reference library and early original-server gaps remain separate.",
+  "task": "OFFICIAL-VERSION-COVERAGE-MATERIAL-REVIEW-06"
+}

@@ -1,0 +1,35 @@
+name: Verify twelve named Japanese pet illustration references and separate capture epochs
+on:
+  push:
+    paths:
+      - tools/stoneage_jp_pet_visual_sample.py
+      - tests/test_stoneage_jp_pet_visual_sample.py
+      - research/recovered/STONEAGE-JP-OFFICIAL-PET-VISUAL-SAMPLE-SOURCES-R1.json
+      - research/recovered/STONEAGE-JP-OFFICIAL-PET-VISUAL-SAMPLE-R1.json
+      - docs/specs/STONEAGE-JP-OFFICIAL-PET-VISUAL-SAMPLE-R1.md
+      - .github/workflows/verify-stoneage-jp-official-pet-visual-sample.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  bounded-twelve-image-source-replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 16
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned GIF decoder
+        run: python -m pip install Pillow==12.3.0
+      - name: Reject reassigned identities wrong epochs malformed GIFs and false coverage
+        run: python -m unittest tests.test_stoneage_jp_pet_visual_sample -v
+      - name: Reacquire only the twelve qualified exact image captures
+        run: python -m tools.stoneage_jp_pet_visual_sample --output output/derived.json
+      - name: Compare entire derived report with permanent metadata
+        run: cmp output/derived.json research/recovered/STONEAGE-JP-OFFICIAL-PET-VISUAL-SAMPLE-R1.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: jp-official-pet-visual-sample-derived-only
+          path: output/derived.json
+          retention-days: 30

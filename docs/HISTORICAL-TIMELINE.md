@@ -3528,3 +3528,8 @@ eventmaz实际20010418085855有四村聊天室入口：マリナス东51南72、
 ## 2003-12 / 2004-02 Japanese operator pet catalog, with separate2006 image response
 
 **FACT / source attribution:** Hangame's actual pet pagination captures provide45 entries at20031214055443,45 at20031214051259 and34 at20040220221717. The resulting124 named web positions are mixed-capture documentary entries; they do not authenticate a complete2003 live-species census or a specific client build. The operator claims more than100 pets, but published positions/local image suffixes are not server species IDs. One first-entry image was recovered only from20060604065927; its picture/name reference and temporal boundary remain separate. Raw names, including source96ンモモ, are not silently corrected or translated. Permanent evidence: STONEAGE-JP-OFFICIAL-PET-CATALOG-R1.
+
+
+## Japanese operator pet-image captures2003/2006/2008/2016, reviewed2026-10-19
+
+Twelve actual URLs already linked from the2003/2004 Hangame catalog were acquired as60×65 single-frame GIF illustrations and individually viewed. Five image captures are2003, four2006, two2008 and one2016; position100ノガロン has2004 page provenance but actual image capture20160622101624. Conversely three page3 references resolved to2003 images. These are archived response dates, not creation/deployment dates or evidence of2016 Japanese game operation. Together with the previously qualifiedウーリ image,13 of124 web references have observed pixels;111 remain unacquired. No original species ID, cross-region alias, stats, habitat, riding or client animation is established. Separate per-record dates and metadata: STONEAGE-JP-OFFICIAL-PET-VISUAL-SAMPLE-R1.

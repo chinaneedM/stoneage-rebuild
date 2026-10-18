@@ -15608,3 +15608,16 @@ README历史前缀修复提交2e238fcf0b0bf2e15b8ebb6f795131485a53ba9a / tree80b
 - **唯一当前NEXT：OFFICIAL-PET-VISUAL-COVERAGE-AND-VERSION-REVIEW-01**。复用124条目录与既有22域，最多12条真实原图引用，按不同分页/表格组取样；逐图实际时刻/字节/帧/目视与失败分开记录，不自动抓余下123图或新栏目，不由名字猜属性/产地/技能。本次凭据提交是文书收尾，必须另观测其自身HEAD检查，不套用上述父提交11绿。
 
 收尾本地凭据审计另保留一项校验器误报：按字符串子串排除download_url时误命中了GitHub公开archive_download_url字段；改为递归排除精确临时download_url键并检查token=/sig=后通过。未改变取源、报告、artifact或CI结论，详情在凭据local_audit_history。
+
+
+## 2026-10-19 — 日本官方宠物12张具名图像有限取样及22域R6轮换
+
+按实时远端main88e6502f9f7f8857678f0163264721742bcf7e9b / treef52d5f381dd58804f2220f1e30dde13311960d37重启，353分支、0开放PR，该HEAD10项main检查实际success；协议/完整CURRENT原blob6242da753e3953cb2d670cb55f1956fac9505cc2（2021834B）及七连续性文件、路线、22域/R5与124条源报告重新读取。旧无关queued37642417333仍保留，非本任务依赖；其它无in_progress。全部历史前缀与失败保持。
+
+OFFICIAL-PET-VISUAL-COVERAGE-AND-VERSION-REVIEW-01从三页各四个表格组取12条已有真实原图引用：2/10/19/28、46/55/64/73、91/100/109/118。12张全部取得原URL对应GIF60×65单帧并逐张目视；新图实际捕获2003年5、2006年4、2008年2、2016年1。网页100ノガロン的2004正文引用实际得到20160622101624图；91/109/118图反而取到2003年，页面是2004年。所有图/正文分别存实际时刻，不能把请求时刻当实得，或以2016快照推日本游戏那年仍运营/图片创作年。网页图号/名称/局部尾号不作为游戏物种ID。
+
+新增永久元数据STONEAGE-JP-OFFICIAL-PET-VISUAL-SAMPLE-SOURCES-R1.json与派生STONEAGE-JP-OFFICIAL-PET-VISUAL-SAMPLE-R1.json、同名规格；12个独立pets视觉研究记录显式关联父记录，七归档必需字段/两类来源/未知原游戏ID、别名、数值成长产地技能逐条保留。父124条报告逐字节不改。连此前ウーリ一图，共13个已有引用取得像素，111个未取；不是新增12种或全量图鉴。颜色/形状观察不认证游戏分类、骑乘或客户端动画。原GIF/HTML不入Git，未碰新游戏/网站。
+
+首次34项本地回归1失败发现新记录遗漏entity_type；已补OFFICIAL_NAMED_PET_WEB_VISUAL_REFERENCE且保留失败记录，未弱化旧合同，修正34项通过。初次独立本地网络重取12张全部字节相符，但该进程在字段修正前启动；不把旧派生格式冒称修正后完整cmp。修正源码的独立Actions须实际重取12张并完整cmp，真实run/ZIP/raw/Git保管链和main结果另按事实收束。
+
+相邻完成OFFICIAL-VERSION-COVERAGE-MATERIAL-REVIEW-06：复用R5全部22域原状态和真实导航，不重建矩阵。人物/宠物源包已有实质内容，但原服物种/数值/动作未恢复；停止连续扩宠物图。R6机器记录STONEAGE-OFFICIAL-VERSION-COVERAGE-MATERIAL-REVIEW-R6.json。**唯一当前NEXT JP-OFFICIAL-TOWN-NAMED-GEOGRAPHY-SOURCE-01**：沿R5已认证town.asp真实按钮，只取一正文先核题名主题，期望具名地理/聚落/日常生活关系或具体缺源，最多一张明确关联图；路径名不等于主题，不递归其它栏目。九系统7 PARTIAL+2 OPEN、Stage B/百科GATED、R79 PAUSED_NON_BLOCKING，不以13图或测试数给整体百分比。
