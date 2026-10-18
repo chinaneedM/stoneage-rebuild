@@ -15409,3 +15409,16 @@ NEXT仍`JSS-OFFICIAL-EVENT-RESULTS-PET-ATTRIBUTION-01`：仅取真实eventjsk链
 研究分支归档f22f38defc3d16f4c1390db25f34009ffa07f039/tree af81deba82b95de87a89ffcf56f4f05a47c710ab，同SHA10项实际分支Actions全部SUCCESS，compare main旧0ba7b2d ahead5/behind0、13路径0删除，non-force fast-forward进入main。该HEAD **12项main Actions全部SUCCESS**，名单/ID/结论写入STONEAGE-WAYI-OFFICIAL-SYSTEMS-ACCEPTANCE-R1的main_acceptance。正式原站重放run39122234401/job117659996277，报告SHA256 9bd6d626d6b8ba30238ffaedd4b1df50e7db5015ccd01ebda83eeb3946b5e45b、原源SHA256 0868e56a81d7037e434a09fd0824a6eb59747494099087f8d1eaeaaa37fb690c，四项源反例测试PASS；artifact12134352329的ZIP摘要由GitHub报告b7ccb8fad2ff0fab0a66b52065e7d0d030d22e3ff840785b86c3d59948a82e99，未冒称独立下载验证。Git已永久保管来源派生blob4fb303eb6f8866b5454f994a0d4fedbf52ea76b0。
 
 本回执自身的新commit/Actions必须后验，不能借父HEAD成功直接声称新HEAD合格。所有旧历史前缀、未闭合问题完整保留，Stage A7 PARTIAL+2 OPEN、Stage B/公开百科GATED、R79 PAUSED。最高NEXT CROSS_VERSION_GEAR_MENTOR_QUEST_SOURCE_GAP_REVIEW-01：按官方版本和证据级别查一份更直接玩法/资源来源，避免继续读未授权内容或耗尽工具层。
+
+
+## 2026-10-18 — CROSS_VERSION_GEAR_MENTOR_QUEST_SOURCE_GAP_REVIEW-01：同期8.0上线报道与大陆具名任务线索
+
+本轮重新核远端 main `cc011eb37edad790439b626a84bc62bdbcf4e0be` / tree `dee35c73917eac37258f0c5f17c242a4337a00c7`，该HEAD9项main Actions实际SUCCESS，研究前沿与main同源。按完整精确CURRENT-STATE blob `d6fbfa8866cc9fbcdd22b6ecc6d3e54559367404`、协议、README/Design/Timeline/Source/Roadmap与已有华义系统实证重开最新NEXT，而非上一轮已完结的intro detail02。既有宠物装备／导师／任务日志第一方原页20050614005428、26414B、SHA256 0868e56a81d7037e434a09fd0824a6eb59747494099087f8d1eaeaaa37fb690c 与派生Git blob4fb303eb6f8866b5454f994a0d4fedbf52ea76b0保留为一方锚点。
+
+新查同期巴哈姆特2005-06-08 23:04:46 8.0报道（https://gnn.gamer.com.tw/detail.php?sn=20167）：报道同日上线，列新宠物装备、导师与任务日志，并披露新骑宠史卡魯／羅多克雷、史卡魯需庄园长骑宠证、合成上限11→15等出版描述。**报道日期/声称上线不等于实际部署日志／原程序构建**。17173 2005-06-09 10:30:41 文章 https://news.17173.com/content/2005-6-9/n50_966545.html 明注来源巴哈姆特，按同一报道链计数；不可冒充两位独立新闻证人。两新闻的原HTML字节未独立重取/定SHA，来源级为WEB_INDEX_TEXT_OBSERVATION_NOT_BYTE_PINNED。
+
+另实读17173《新石器时代》大陆8.0栏目 https://news.17173.com/z/stoneage/newsa/new.shtml 和 https://news.17173.com/z/stoneage/newsa/about.shtml，页面自称金山运营、华义开发；同列导师/任务日志/宠物装备及合成，任务日志入口被记为画面右上方线上说明，导师入口在画面顶部；首次记录**具名新任务「爱作画的少女」仅为大陆站点来源线索**。这些页面未有合格原发布时间/原服部署记录，既不是一方官方补丁，亦不能直接证明2005台湾或TW1.0同版客户端按钮、任务ID/NPC脚本。大陆文案延续故事属运营宣传描述，不认证单一宇宙正史。
+
+新增具名来源桥接账簿 `research/recovered/STONEAGE-80-SYSTEMS-CROSS-VERSION-EVIDENCE-R1.json` 和规范 `docs/specs/STONEAGE-80-SYSTEMS-CROSS-VERSION-EVIDENCE-R1.md`，11条跨源主张严格记录各自source_ids、地区和完整性；唯一新闻首发报告链与重复转载分离。研究分支`agent/stoneage-80-cross-version-gear-mentor-quest-r1-20261018`源提交`4eb3d3de0e4506d64bb41a950c9f2f309094c8b9`、tree`ab9a9118709141140493db69b5ada89e3deda67e`；该HEAD专用Action`39123252107`/job`117663017286` **实际SUCCESS**，5项结构和反例测试通过。这只认证档案逻辑，不能等同网页字节或原服运行验收。原HTML、旧原始资源、新闻全文和程序均不入Git；历史前缀完整保留。
+
+**最高NEXT `CN80_NAMED_QUEST_ORIGINAL_SOURCE_TRACE-01`**：沿已见17173「新加任务」具体链接 https://news.17173.com/z/stoneage/renwu/renwu.htm 只试一次有界真实任务来源确认，先验标题、内容、发布时间、地域和原貌，再允许登记任务人物/物品/路线。若仅目录、超时或没有可归属的任务正文则记录明确失败边界，转22域其它具名材料，不得自造NPC、奖励、原服事务或以媒体报道替代客户端文件。九系统仍7 PARTIAL+2 OPEN；Stage B 游戏/公开资料站 GATED，R79 PAUSED_NON_BLOCKING，无可证复原百分比。

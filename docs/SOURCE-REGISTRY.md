@@ -7098,3 +7098,12 @@ STONEAGE-HISTORICAL-WIKI-QUERY-CONTRACT-DRAFT-R1.json引用四个既有派生Git
 - 入口为此前认证game01.asp真实第二条详情href；原URL http://www.wayi.com.tw/stoneage/game/game01_02.asp；实际重定向快照 https://web.archive.org/web/20050614005428id_/http://www.wayi.com.tw/stoneage/game/game01_02.asp。
 - 原响应26414B，SHA256 0868e56a81d7037e434a09fd0824a6eb59747494099087f8d1eaeaaa37fb690c，Big5严格解码；来源重放39121796764 / job117658721531 SUCCESS，源合同4个反例测试通过，报告SHA256 9bd6d626d6b8ba30238ffaedd4b1df50e7db5015ccd01ebda83eeb3946b5e45b，Git blob4fb303eb6f8866b5454f994a0d4fedbf52ea76b0，artifact12134856287、GitHub声明ZIP digest75ddb12a310d08ffa8fb32bcb7915c0a2f95648afc406d6cd790e8e7464e5f08。
 - 只存规则派生与接纳票据，不入原HTML/图片/脚本。官方2005介绍不提供确切客户端、改版生效日、原服装备表/导师结算/任务日志实体；同页商品包调查需排除。详细SOURCE-BOUNDARY见STONEAGE-WAYI-OFFICIAL-SYSTEMS-R1.md和机读JSON。
+
+
+## 2026-10-18 — 8.0 宠物装备／导师／任务日志跨版报道归属与可追踪任务
+
+- **既有一方锚点，不重复算新原页**：台湾华义 https://web.archive.org/web/20050614005428id_/http://www.wayi.com.tw/stoneage/game/game01_02.asp 原26414B SHA256 0868e56a81d7037e434a09fd0824a6eb59747494099087f8d1eaeaaa37fb690c，派生blob4fb303eb6f8866b5454f994a0d4fedbf52ea76b0。原源认证历史独立保留，客户端构建/原服未证明。
+- **同期新闻源、字节尚未PIN**：https://gnn.gamer.com.tw/detail.php?sn=20167 ，巴哈姆特记者小贤2005-06-08 23:04:46台湾8.0报道：将失落世界改版与宠物装备、导师、任务日志、新骑宠及合成扩展一起说明。此为出版时报道事实，不等于独立记录服务器实际投产；本轮只经网页检索正文，不宣称原HTML SHA。
+- **同文转载不得按第二份新闻独立认证**：https://news.17173.com/content/2005-6-9/n50_966545.html ，页面时间2005-06-09 10:30:41且末尾注明「来源：巴哈姆特」，报道内容同源。转载日期是发布日而不是另一次石器版本发布/新建source-lineage。
+- **大陆专区、原发布时间UNKNOWN**：https://news.17173.com/z/stoneage/newsa/new.shtml 与 https://news.17173.com/z/stoneage/newsa/about.shtml ，17173页面标示《新石器时代》8.0/华义开发/金山运营；列出宠物装备合成、导师、任务日志以及具名新任务「爱作画的少女」。文献等级为THIRD_PARTY_GAME_PORTAL_UNDATED，缺页面同期原始快照/精确客户端构建/任务ID；它不是华义台湾 2005-06第一方网页，也不验证TW1.0共用数据。
+- 机读source_ids、region、lineage、同源去重、验证层级和11合同见 `research/recovered/STONEAGE-80-SYSTEMS-CROSS-VERSION-EVIDENCE-R1.json`，详细见 `docs/specs/STONEAGE-80-SYSTEMS-CROSS-VERSION-EVIDENCE-R1.md`。源提交4eb3d3de/专用Action39123252107已实际SUCCESS 5项档案结构负例；**不是原网页独立哈希/实际运行确认**。原新闻全文、HTML、图片及游戏资产不入Git。

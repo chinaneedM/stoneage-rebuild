@@ -1,0 +1,36 @@
+{
+  "schema": "stoneage.80.systems.cross_version_acceptance.r1",
+  "package": "CROSS_VERSION_GEAR_MENTOR_QUEST_SOURCE_GAP_REVIEW-01",
+  "source_commit": "4eb3d3de0e4506d64bb41a950c9f2f309094c8b9",
+  "source_tree": "ab9a9118709141140493db69b5ada89e3deda67e",
+  "verified_branch_check": {
+    "run_id": 39123252107,
+    "job_id": 117663017286,
+    "head_sha": "4eb3d3de0e4506d64bb41a950c9f2f309094c8b9",
+    "workflow": "Validate bounded StoneAge 8.0 cross-version evidence bridge",
+    "status": "completed",
+    "conclusion": "success",
+    "tests_covered": [
+      "verified first-party anchor",
+      "reprint deduplication",
+      "regional non-equivalence",
+      "unqualified named quest",
+      "no original copyrighted assets / no Stage B"
+    ]
+  },
+  "derived_source_manifest": {
+    "path": "research/recovered/STONEAGE-80-SYSTEMS-CROSS-VERSION-EVIDENCE-R1.json",
+    "blob_sha": "bfcb06e816d63f21ffcb953244ac6521b341e8e7",
+    "document_blob": "b774ee210a656a889bff0a186da274219c504b10",
+    "test_blob": "82d146db8badf202780616f2400c896f37c025dd",
+    "original_source_html_byte_replayed": false,
+    "web_pages_sha256_pinned": false,
+    "independent_news_origins": 1,
+    "reported_tw_release_is_proven_server_deployment": false,
+    "main_integration_confirmed": false
+  },
+  "original_assets_in_git": false,
+  "stage_b_gated": true,
+  "r79_paused": true,
+  "next": "CN80_NAMED_QUEST_ORIGINAL_SOURCE_TRACE-01"
+}
