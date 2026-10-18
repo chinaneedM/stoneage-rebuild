@@ -121,7 +121,144 @@
   "original_server_or_npc_quest_executed": false,
   "jss1999_or_tw10_same_build_promoted": false,
   "main_acceptance": {
-    "status": "PENDING_NOT_PRECLAIMED"
+    "status": "SUCCESS",
+    "head": "fb38ca28b68faffc7b9cbf15adbb5676020b861b",
+    "tree": "955b258d38501fc40a8048c172a13e0cfba1fb28",
+    "count": 12,
+    "runs": [
+      {
+        "id": 39095620043,
+        "name": "Validate legacy StoneAge assistant history and pet content gaps",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39095619893,
+        "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39095620216,
+        "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39095620017,
+        "name": "Validate Stage A early source gap triage",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39095620103,
+        "name": "Validate StoneAge preproduction content archive and wiki boundary",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39095619940,
+        "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39095619999,
+        "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39095620138,
+        "name": "Validate StoneAge Stage A joint review decision",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39095620074,
+        "name": "Validate Stage A evidence-limited review acceptance",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39095619947,
+        "name": "Verify original JSS official event and four-village venue content",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39095619867,
+        "name": "Verify JSS2001 official pet and visual content sources",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39095619916,
+        "name": "Independently verify TW1.0 R58 rooted helper returns and source custody",
+        "status": "completed",
+        "conclusion": "success"
+      }
+    ],
+    "receipt_commit_requires_separate_ci": true
   },
-  "next_priority": "JSS-OFFICIAL-EVENT-RESULTS-PET-ATTRIBUTION-01"
+  "next_priority": "JSS-OFFICIAL-EVENT-RESULTS-PET-ATTRIBUTION-01",
+  "archive_branch_acceptance": {
+    "head": "fb38ca28b68faffc7b9cbf15adbb5676020b861b",
+    "count": 8,
+    "runs": [
+      {
+        "id": 39095578438,
+        "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39095578471,
+        "name": "Validate StoneAge preproduction content archive and wiki boundary",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39095578405,
+        "name": "Validate Stage A evidence-limited review acceptance",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39095578470,
+        "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39095578407,
+        "name": "Validate StoneAge Stage A joint review decision",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39095578440,
+        "name": "Validate legacy StoneAge assistant history and pet content gaps",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39095578466,
+        "name": "Validate Stage A early source gap triage",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39095578602,
+        "name": "Verify original JSS official event and four-village venue content",
+        "status": "completed",
+        "conclusion": "success"
+      }
+    ]
+  },
+  "next_results_attribution_constraints": [
+    "COMPARE_EVENT_TITLE_EDITION_DATE_AND_SERVER_BEFORE_JOIN",
+    "DO_NOT_BIND_FIRST_OR_OTHER_EVENT_RESULTS_TO_SECOND_CONTEST_UNIDENTIFIED_PET",
+    "KEEP_ANNOUNCEMENT_YEAR_UNKNOWN_WITHOUT_EXPLICIT_SOURCE"
+  ]
 }

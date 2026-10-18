@@ -15234,3 +15234,10 @@ WORLD源分支ec2aa8fac09f13a61c73c9542b2dd9c08c9fc1b9/tree0976772698b7470b72145
 研究分支`f628229cd7bdfcd5462d15366b61e0026cd8215e`/tree`b82b5a04eb27c75adca0f03ea504d370e20af537`同SHA11项Actions全部实际SUCCESS；专用source Action`39095465825`/job`117580874283`独立重取三原官网页、六原JPEG并逐字节重放派生报告，12项来源/矛盾/注释/图像/坐标边界检查通过。独立下载artifact`12123884905` ZIP3208B SHA256`198841e33090f8dc1e96d70e5a05c89bad6b26db4932e79a44c771932a442890`与GitHub摘要相符，内部raw JSON10583B SHA256`7c105ecdf4c7ca6e751da27dbaf827013fd72b238882421bb7034ef1f7027f5b`、Git blob`1fc8ca061330655483cbc931f93043be7c3792a9`与永久派生文件完全一致。SOURCE-INTAKE、CONTENT-CATALOG、工具/测试原blob及实际11项运行链全部载入EVENT-ACCEPTANCE-R1，不依赖30天产物保留期。
 
 只认证官方预告/场景指引与原图来源，不认证活动举办、年份、奖品发出/物种、NPC脚本、原服地图/事务或TW1.0身份。此归档提交和main后续CI以实际结果另记；当前不提前宣称。最高NEXT仍`JSS-OFFICIAL-EVENT-RESULTS-PET-ATTRIBUTION-01`；7 PARTIAL+2 OPEN、Stage B/百科GATED、R79暂停。
+
+
+### 2026-10-18 — JSS官方活动/四村会场真实main验收
+
+研究源`f628229cd7bdfcd5462d15366b61e0026cd8215e`同SHA11项SUCCESS，来源保管`fb38ca28b68faffc7b9cbf15adbb5676020b861b`同SHA8项SUCCESS后，重新核main仍bd30efd、ahead2/behind0、13路径0删除，非强制快进至fb38ca2/tree`955b258d38501fc40a8048c172a13e0cfba1fb28`。该HEAD **12项main Actions全部实际SUCCESS**，含三页/六图实源重放`39095619947`、前轮JSS手册/截图`39095619867`、SPR/ADRN`39095619893`和其余九项；全部名称/ID/结论永久写EVENT-ACCEPTANCE-R1的main_acceptance。原1943602字节CURRENT-STATE历史前缀完整，13变更路径没有原版权HTML、JPEG、程序或地图载荷。此验收回执自己的后续branch/main CI要另验，不冒用父提交结果。
+
+NEXT仍`JSS-OFFICIAL-EVENT-RESULTS-PET-ATTRIBUTION-01`：仅取真实eventjsk链接，**先比活动名称、届数、月日/年份与服务器**；不得把第一回或其他活动的结果/宠物嫁接到本轮第二回公告里的未具名稀有宠。无具名同活动身份则保持未知停止。活动实际年份、原服NPC任务和TW1.0地图身份均未被补成事实，7 PARTIAL+2 OPEN、Stage B/百科GATED、R79暂停。
