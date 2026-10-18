@@ -15207,3 +15207,10 @@ WORLD源分支ec2aa8fac09f13a61c73c9542b2dd9c08c9fc1b9/tree0976772698b7470b72145
 研究分支`0cca7739978c24635a5f62154879737fd8af2357`/tree`39af4e8a6ecd9a01927fecc52667aaed7cde0594`同SHA10项Actions全部SUCCESS。专用来源Action`39094577988`/job`117578240408`实际重新取官方手册、介绍正文及10张已合格原JPEG，完整语义/尺寸/来源日期重放与永久派生JSON逐字节一致；五条未取得链接不会在回放中被伪装成合格图。独立下载artifact`12123459781` ZIP4427B，SHA256`58659f8724e5b6c3617dd078fef4ea572cd596bb4f85c3b849e18ad5dc7f2cb6`与GitHub摘要相符；两个内部报告5830/8434B分别SHA256`ec4c1602472fb5daa2d458e455f06df3318011e560be053abd460d7d5fba5a13`/`9acaca878cba7e8a4f7241deca1294d7e1cac7ea11e4657923024e78482295c4`，Git blob`53d8efd5180c87ff84445d696e6390af1cb5c0ec`/`7c0428a9ee1dda9420bc849a0bab166d6ae7c427`完全对应。来源/代码/ZIP/raw/check链永久写入MATERIAL-CONTENT-ACCEPTANCE-R1，不依赖30天CI保留期。原HTML、JPEG、音乐、程序均不进Git。
 
 本条归档提交与main的后续CI仍须实际执行后单独验，当前不提前判定；JSS2001不晋升TW1.0，缺原服资料和5张图保持界限。下一最高仍`JSS2001-OFFICIAL-EVENT-QUEST-CONTENT-01`，新作/百科生产GATED，R79暂停。
+
+
+### 2026-10-18 — JSS2001官方宠物/视觉内容真实main验收
+
+研究源0cca773同HEAD10项SUCCESS，来源保管追加a2e54db同HEAD8项SUCCESS后，重新核main仍08106beb、ahead2/behind0、19路径0删除，非强制快进至`a2e54db4fb5b1bc509ffba00da6628c4c369fa98`/tree`be16861f6c19c89d0db8d9632286f4b8526dcd53`。该HEAD **11项main Actions全部实际SUCCESS**，含原官网手册/介绍/10张JPEG重取与精确重放39094719950、原资源SPR/ADRN39094719886及其它九项；全部名称/ID/结论已写MATERIAL-CONTENT-ACCEPTANCE-R1的main_acceptance。原1937890字节完整历史前缀逐字节保留，19路径不含版权原图/HTML/游戏程序。此回执自己的后续CI须独立完成，不把父提交结果冒充新HEAD。
+
+本轮取得的是日本JSS2001第一方说明与10张真实缩图的有限材料，5张缺图及TW1.0同版身份、原服宠物/NPC/地图/任务仍OPEN；系统7 PARTIAL+2 OPEN、Stage B与百科生产GATED、R79暂停。最高NEXT仍`JSS2001-OFFICIAL-EVENT-QUEST-CONTENT-01`，按真实官网event链接有限研究具名内容，不扩无源API树。

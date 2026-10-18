@@ -101,7 +101,79 @@
   ],
   "source_branch_check_count": 10,
   "main_acceptance": {
-    "status": "PENDING_NOT_PRECLAIMED"
+    "status": "SUCCESS",
+    "head": "a2e54db4fb5b1bc509ffba00da6628c4c369fa98",
+    "tree": "be16861f6c19c89d0db8d9632286f4b8526dcd53",
+    "count": 11,
+    "runs": [
+      {
+        "id": 39094719863,
+        "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39094719725,
+        "name": "Validate StoneAge preproduction content archive and wiki boundary",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39094719950,
+        "name": "Verify JSS2001 official pet and visual content sources",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39094719849,
+        "name": "Validate Stage A evidence-limited review acceptance",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39094719831,
+        "name": "Validate Stage A early source gap triage",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39094719782,
+        "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39094719570,
+        "name": "Validate StoneAge Stage A joint review decision",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39094719645,
+        "name": "Validate legacy StoneAge assistant history and pet content gaps",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39094719566,
+        "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39094719886,
+        "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39094719711,
+        "name": "Independently verify TW1.0 R58 rooted helper returns and source custody",
+        "status": "completed",
+        "conclusion": "success"
+      }
+    ],
+    "receipt_commit_requires_separate_ci": true
   },
   "tools_and_tests": [
     {
@@ -129,5 +201,59 @@
       "sha256": "3e801220a5d7638decb748daa4a04e2c5c4e722977192cf5783482167bb56e68",
       "git_blob": "84b0067ae49eafcb417971d17765711ff4f500e5"
     }
-  ]
+  ],
+  "archive_branch_acceptance": {
+    "head": "a2e54db4fb5b1bc509ffba00da6628c4c369fa98",
+    "count": 8,
+    "runs": [
+      {
+        "id": 39094676472,
+        "name": "Validate legacy StoneAge assistant history and pet content gaps",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39094676455,
+        "name": "Validate Stage A evidence-limited review acceptance",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39094676421,
+        "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39094676381,
+        "name": "Validate Stage A early source gap triage",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39094676375,
+        "name": "Validate StoneAge preproduction content archive and wiki boundary",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39094676395,
+        "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39094676474,
+        "name": "Validate StoneAge Stage A joint review decision",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39094676303,
+        "name": "Verify JSS2001 official pet and visual content sources",
+        "status": "completed",
+        "conclusion": "success"
+      }
+    ]
+  }
 }
