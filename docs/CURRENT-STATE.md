@@ -15606,3 +15606,5 @@ README历史前缀修复提交2e238fcf0b0bf2e15b8ebb6f795131485a53ba9a / tree80b
 - 永久凭据：`research/recovered/STONEAGE-JP-OFFICIAL-PET-CATALOG-ACCEPTANCE-R1.json`，记录run39174344977/job117813809435/artifact12153219607。下载ZIP6802字节，SHA256 `7ab3ae97e8f7f18c9e4d11a1b8a6279d497e5db44d320cf15d739b42c4d2f335`；其中唯一derived.json与Git报告182129字节完全相同，raw SHA256 `edf50ec2fe9915db1904992ee2871def9b719fa05e40619019229be21dca413f`，Git blob `85e99d6fd6a7ca27eeaa3987510a6bcc1d701708`。产物30日保留不替代永久派生报告；原HTML/GIF不入库。
 - 取得124条跨2003/2004网页名称与同列图像引用，仅一张实际2006图像；不是124种原服物种全量、不是同一2003时刻图鉴。编号/别名/原服数值仍未知，123张仍无像素证据。历史失败全部保留，九系统7 PARTIAL＋2 OPEN、Stage B/百科GATED、R79 PAUSED_NON_BLOCKING不变。
 - **唯一当前NEXT：OFFICIAL-PET-VISUAL-COVERAGE-AND-VERSION-REVIEW-01**。复用124条目录与既有22域，最多12条真实原图引用，按不同分页/表格组取样；逐图实际时刻/字节/帧/目视与失败分开记录，不自动抓余下123图或新栏目，不由名字猜属性/产地/技能。本次凭据提交是文书收尾，必须另观测其自身HEAD检查，不套用上述父提交11绿。
+
+收尾本地凭据审计另保留一项校验器误报：按字符串子串排除download_url时误命中了GitHub公开archive_download_url字段；改为递归排除精确临时download_url键并检查token=/sig=后通过。未改变取源、报告、artifact或CI结论，详情在凭据local_audit_history。

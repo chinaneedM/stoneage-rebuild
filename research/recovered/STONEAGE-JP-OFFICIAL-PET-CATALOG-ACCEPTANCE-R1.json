@@ -363,5 +363,15 @@
     "unacquired_images": 123,
     "server_species_ids_stats_growth_habitat_skills": "UNKNOWN"
   },
-  "receipt_commit_scope": "DOCUMENTARY_CUSTODY_ONLY; OBSERVE_OWN_EXACT_HEAD_CHECKS_NOT_PARENT_CHECKS"
+  "receipt_commit_scope": "DOCUMENTARY_CUSTODY_ONLY; OBSERVE_OWN_EXACT_HEAD_CHECKS_NOT_PARENT_CHECKS",
+  "local_audit_history": [
+    {
+      "check": "No temporary signed artifact URL in custody receipt",
+      "first_result": "FALSE_POSITIVE_ASSERTION",
+      "cause": "Substring download_url also matched the ordinary public GitHub archive_download_url key",
+      "correction": "Recursive exact download_url key rejection plus token=/sig= value guard; public API artifact archive URL retained",
+      "corrected_result": "PASS",
+      "source_or_ci_failure": false
+    }
+  ]
 }
