@@ -15305,3 +15305,12 @@ NEXT仍`JSS-OFFICIAL-EVENT-RESULTS-PET-ATTRIBUTION-01`：仅取真实eventjsk链
 本页未见カナン/ククロス/ヤン＝ミト三个具体标签，保留fix_date null，不推全网缺席。构建号、物种/技能ID、寄存费用、成长公式、原服脚本仍未知。规范STONEAGE-JSS-PET-PATCH-HISTORY-R1、永久40日期索引/7合同、SOURCE-INTAKE、解析器/11反例及单页实源workflow已形成。本地11项PASS/精确重放已实证；后续分支/main和ZIP/raw保管待真实验收。原HTML/资产不入Git，游戏模型未改。
 
 **最高NEXT `PREPRODUCTION-CROSS-DOMAIN-MATERIAL-EVIDENCE-REVIEW-04`**：把近几包真实操作/图像、社交会场、第一回结果、FAQ、七组日期合同回连22域，选一项能增加具名人物/宠物/NPC/任务或实际场景的材料来源。不因40条仍可读而继续逐条扩，不重复API/资源编号验收，不重开R79。Stage A7 PARTIAL+2 OPEN、Stage B游戏/百科生产GATED，无整体百分比。
+
+
+### 2026-10-18 — JSS早期宠物更新史独立源重放与永久保管
+
+研究源`ba4cde093e2040c762a3416a763128516e45d694`/tree`e79a598de03f326e5f779510738204caa1fd5993`当前11项Actions最终全部SUCCESS。专用source Action`39115572879`/job`117640563603`独立重取verup原页，11反例及40日期索引/7合同精确重放通过。联动FAQ39115572973首次attempt1/job117640563966虽15测试PASS，但原页抓取Connection refused而FAILURE；仅重跑失败任务attempt2实际SUCCESS，原失败ID/错误与新job在PATCH-HISTORY-ACCEPTANCE-R1并存，不改成首次成功。
+
+独立下载artifact`12132740022` ZIP4147B SHA256`bf7a1ce336ccda7a2126694854f8ab384c915e0afa34c7e361843816835c5c8e`与GitHub摘要一致，raw JSON18907B SHA256`3fdd731a6cce9f9c4aa80d30c861f84eda46701776deee4f882731897bbedfcd`、Git blob`1a3dc51a8c1cbaf04991068aa779b62e11d99384`与永久报告逐字节相同。源码/测试/旧FAQ/导航/请求链保管，不依赖30天artifact。原HTML/程序/资产不进Git。野良宠在此指无主状态，不认证野外遭遇对象或消失。
+
+此归档及后续main CI待实际另验；不能把当前11绿冒充新HEAD。NEXT仍PREPRODUCTION-CROSS-DOMAIN-MATERIAL-EVIDENCE-REVIEW-04，7 PARTIAL+2 OPEN、Stage B/百科GATED、R79暂停；无原服/具体bug修复执行或TW1.0身份晋升。

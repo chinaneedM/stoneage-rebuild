@@ -1,0 +1,179 @@
+{
+  "schema": "stoneage.jss.pet_patch_history.acceptance.r1",
+  "source_head": "ba4cde093e2040c762a3416a763128516e45d694",
+  "source_tree": "e79a598de03f326e5f779510738204caa1fd5993",
+  "source_run": 39115572879,
+  "source_job": 117640563603,
+  "source_branch_runs": [
+    {
+      "id": 39115572607,
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "status": "completed",
+      "conclusion": "success",
+      "run_attempt": 1
+    },
+    {
+      "id": 39115572628,
+      "name": "Validate legacy StoneAge assistant history and pet content gaps",
+      "status": "completed",
+      "conclusion": "success",
+      "run_attempt": 1
+    },
+    {
+      "id": 39115572849,
+      "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+      "status": "completed",
+      "conclusion": "success",
+      "run_attempt": 1
+    },
+    {
+      "id": 39115572920,
+      "name": "Validate StoneAge preproduction content archive and wiki boundary",
+      "status": "completed",
+      "conclusion": "success",
+      "run_attempt": 1
+    },
+    {
+      "id": 39115572902,
+      "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+      "status": "completed",
+      "conclusion": "success",
+      "run_attempt": 1
+    },
+    {
+      "id": 39115572901,
+      "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+      "status": "completed",
+      "conclusion": "success",
+      "run_attempt": 1
+    },
+    {
+      "id": 39115572952,
+      "name": "Validate Stage A early source gap triage",
+      "status": "completed",
+      "conclusion": "success",
+      "run_attempt": 1
+    },
+    {
+      "id": 39115572776,
+      "name": "Validate StoneAge Stage A joint review decision",
+      "status": "completed",
+      "conclusion": "success",
+      "run_attempt": 1
+    },
+    {
+      "id": 39115572879,
+      "name": "Verify JSS dated pet changes and reject exact FAQ fix overclaims",
+      "status": "completed",
+      "conclusion": "success",
+      "run_attempt": 1
+    },
+    {
+      "id": 39115572951,
+      "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+      "status": "completed",
+      "conclusion": "success",
+      "run_attempt": 1
+    },
+    {
+      "id": 39115572973,
+      "name": "Verify JSS FAQ pet defect labels and gameplay evidence boundaries",
+      "status": "completed",
+      "conclusion": "success",
+      "run_attempt": 2
+    }
+  ],
+  "prior_failed_attempts": [
+    {
+      "run_id": 39115572973,
+      "run_attempt": 1,
+      "head": "ba4cde093e2040c762a3416a763128516e45d694",
+      "job_id": 117640563966,
+      "tests": "15 PASS",
+      "failed_step": "Independently reacquire two exact HTML sources and replay derived report",
+      "error": "urllib.error.URLError: <urlopen error [Errno 111] Connection refused>",
+      "classification": "SOURCE_NETWORK_CONNECTION_REFUSED_NOT_SEMANTIC_FAILURE",
+      "conclusion": "failure"
+    }
+  ],
+  "faq_retry": {
+    "run_id": 39115572973,
+    "run_attempt": 2,
+    "jobs": [
+      {
+        "id": 117640702971,
+        "status": "completed",
+        "conclusion": "success"
+      }
+    ]
+  },
+  "source_result": "SUCCESS",
+  "source_branch_count": 11,
+  "artifact": {
+    "artifact_id": 12132740022,
+    "zip_bytes": 4147,
+    "zip_sha256": "bf7a1ce336ccda7a2126694854f8ab384c915e0afa34c7e361843816835c5c8e",
+    "github_digest_matched": true,
+    "member": "jss-pet-patch-history.json",
+    "raw_bytes": 18907,
+    "raw_sha256": "3fdd731a6cce9f9c4aa80d30c861f84eda46701776deee4f882731897bbedfcd",
+    "git_blob": "1a3dc51a8c1cbaf04991068aa779b62e11d99384",
+    "archived_report_byte_identical": true
+  },
+  "report": {
+    "path": "research/recovered/STONEAGE-JSS-PET-PATCH-HISTORY-R1.json",
+    "bytes": 18907,
+    "sha256": "3fdd731a6cce9f9c4aa80d30c861f84eda46701776deee4f882731897bbedfcd",
+    "git_blob": "1a3dc51a8c1cbaf04991068aa779b62e11d99384"
+  },
+  "source_dependencies": [
+    {
+      "path": "tools/stoneage_jss_pet_patch_history.py",
+      "bytes": 8727,
+      "sha256": "1d303174df5eeac330d7b9f92f19a8978f27dde4fbf12226332d5bac2282eb89",
+      "git_blob": "0d681c0183af9781bd536441a49b33cbb0bfb285"
+    },
+    {
+      "path": "tests/test_stoneage_jss_pet_patch_history.py",
+      "bytes": 4733,
+      "sha256": "be294cc426b749e30a17f4f2009a56ac0153f3e4b50af8b73714deb487d33ce2",
+      "git_blob": "99488488ab4bb91748c0e638ddcc474fdedfdb67"
+    },
+    {
+      "path": "research/recovered/STONEAGE-JSS-PET-PATCH-HISTORY-SOURCE-INTAKE-R1.json",
+      "bytes": 4217,
+      "sha256": "c3bb3d9f1b532a124721f4d438bc784ece62bb16e46aabebde8f8ba585d7b959",
+      "git_blob": "220350ac0529b05d960ff2a5044869ba6401e763"
+    },
+    {
+      "path": "tools/stoneage_jss_pet_faq.py",
+      "bytes": 11614,
+      "sha256": "cfc63a6fb4840328feea554c898521a8935a98ad947ba9da4b63e2b362393ea8",
+      "git_blob": "fb10621bf2ae3dc0998b722c531a365b1bb22454"
+    },
+    {
+      "path": "research/recovered/STONEAGE-JSS-FIRST-PARTY-PET-FAQ-R1.json",
+      "bytes": 18138,
+      "sha256": "38ebbeca6b04d4a3a229da8ac117e76bc083fcd6e03b7ece6db660b58cf153b0",
+      "git_blob": "072f407f82c78f06a09be81c06858a1c604ae277"
+    },
+    {
+      "path": "research/recovered/STONEAGE-HISTORICAL-SITE-NAVIGATION-R1.json",
+      "bytes": 219534,
+      "sha256": "7bec788ca9101aa7a06543c0df2fb15b6bc407fd47141b51cc1a99e216cd61cd",
+      "git_blob": "83ea18a70aca5f0c1c80280669ef99e344bdb52a"
+    }
+  ],
+  "html_sources_independently_replayed": 1,
+  "local_and_source_ci_boundary_tests": 11,
+  "dated_index_entries": 40,
+  "selected_pet_contracts": 7,
+  "original_server_or_timer_executed": false,
+  "faq_exact_bug_fix_join_proven": false,
+  "jss_launch_or_tw10_same_build_promoted": false,
+  "original_html_or_binaries_retained_in_git": false,
+  "main_acceptance": {
+    "status": "PENDING_NOT_PRECLAIMED"
+  },
+  "next_priority": "PREPRODUCTION-CROSS-DOMAIN-MATERIAL-EVIDENCE-REVIEW-04"
+}
