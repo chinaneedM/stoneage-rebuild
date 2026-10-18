@@ -7092,3 +7092,9 @@ STONEAGE-HISTORICAL-WIKI-QUERY-CONTRACT-DRAFT-R1.json引用四个既有派生Git
 永久派生与规格：`research/recovered/STONEAGE-WAYI-OFFICIAL-ICE-REGION-R1.json`、`STONEAGE-WAYI-OFFICIAL-ICE-REGION-CONTENT-CATALOG-R1.json`、`STONEAGE-WAYI-OFFICIAL-ICE-REGION-SOURCE-INTAKE-R1.json`及`docs/specs/STONEAGE-WAYI-OFFICIAL-ICE-REGION-R1.md`。本地19项边界测试通过；新增独立一正文/六图、两JSON逐字节重放工作流，远端结果与ZIP/raw/Git blob保管链须随后实际验收，未提前宣称。
 
 **最高NEXT `TW-WAYI-OFFICIAL-INTRO-DETAIL-02`**：沿既验介绍页第二条真实未读game01_02.asp，最多一正文，先核题名/内容，形成一份具名宠物/人物/故事/环境或玩法合同即止；若重复、空或有限取源失败，记录具体结果并回全官方22域队列，不自动递归第三/四页。Stage A仍7 PARTIAL+2 OPEN，Stage B/百科GATED，R79暂停，无整体百分比。
+
+
+## 2026-10-18 — 官方game01_02.asp单页宠物装备/导师/任务日志来源
+- 入口为此前认证game01.asp真实第二条详情href；原URL http://www.wayi.com.tw/stoneage/game/game01_02.asp；实际重定向快照 https://web.archive.org/web/20050614005428id_/http://www.wayi.com.tw/stoneage/game/game01_02.asp。
+- 原响应26414B，SHA256 0868e56a81d7037e434a09fd0824a6eb59747494099087f8d1eaeaaa37fb690c，Big5严格解码；来源重放39121796764 / job117658721531 SUCCESS，源合同4个反例测试通过，报告SHA256 9bd6d626d6b8ba30238ffaedd4b1df50e7db5015ccd01ebda83eeb3946b5e45b，Git blob4fb303eb6f8866b5454f994a0d4fedbf52ea76b0，artifact12134856287、GitHub声明ZIP digest75ddb12a310d08ffa8fb32bcb7915c0a2f95648afc406d6cd790e8e7464e5f08。
+- 只存规则派生与接纳票据，不入原HTML/图片/脚本。官方2005介绍不提供确切客户端、改版生效日、原服装备表/导师结算/任务日志实体；同页商品包调查需排除。详细SOURCE-BOUNDARY见STONEAGE-WAYI-OFFICIAL-SYSTEMS-R1.md和机读JSON。

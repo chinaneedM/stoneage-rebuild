@@ -15393,3 +15393,12 @@ NEXT仍`JSS-OFFICIAL-EVENT-RESULTS-PET-ATTRIBUTION-01`：仅取真实eventjsk链
 
 研究源9e0a7e5同SHA10项SUCCESS，保管归档96c1217同SHA8项branch SUCCESS后，重新核main仍12d45f4、ahead2/behind0、13路径0删除，非强制快进至96c12174a9978d6611ccf02185cd421a471c1609/tree184d9495501462f040d3bf71eb6b61ff58106dab。该HEAD **11项main Actions全部实际SUCCESS**，含一正文六图独立源重放39119348444、SPR/ADRN39119348505和R58保管39119348542，名称/ID/结论永久写ICE-REGION-ACCEPTANCE-R1。本回执自己的随后branch/main CI须另验，不冒用父HEAD11绿。
 补规格“后续世界观设计的问题单”：环境与生计、公共机构与生活、探索/情绪节奏、版本叙事连续性四方向，仅为项目提案与待核问题，不当官方设定/任务路线。官方名12、场景6与19共享研究条目已保留来源，瑞/薩差异、2005正文/2006图片和精确构建未知不消除。原1971345B历史前缀及本轮中间保管记录均完整保留，原HTML/JPEG/程序不入Git。NEXT仍TW-WAYI-OFFICIAL-INTRO-DETAIL-02；7 PARTIAL+2 OPEN、Stage B/百科GATED、R79暂停，无整体百分比。
+
+
+## 2026-10-18 — TW-WAYI-OFFICIAL-INTRO-DETAIL-02：2005官方宠物装备/导师/任务日志
+
+第二详情 game01_02.asp 按前页实证 href 有界取得：实际 Wayback 20050614005428 / 26414B / SHA256 0868e56a81d7037e434a09fd0824a6eb59747494099087f8d1eaeaaa37fb690c，Big5严格解码。该页面描述七类宠物装具（頭牙爪胸背翅腳）、脚部双足/四足/鳍差异、宠物体型装备槽及合成来源；乌力适用五槽、水头盔攻+15为文案例子，地8水2/水4火6强调元素增减但没有数值公式。导师关系/字段与5%领导声望记录、任务日志已完成/未完成任务及“遊戲線上說明”入口为同页独立文献事实，未证游戏实际实现。页面商品包投票非玩法内容。乌力重复字样原样留疑。
+
+独立源 Action 39121796764 / job117658721531 实际 SUCCESS、4项测试 PASS；产出SHA256 9bd6d626d6b8ba30238ffaedd4b1df50e7db5015ccd01ebda83eeb3946b5e45b、ZIP GitHub给出SHA256 75ddb12a310d08ffa8fb32bcb7915c0a2f95648afc406d6cd790e8e7464e5f08，artifact12134856287；Git blob 4fb303eb6f8866b5454f994a0d4fedbf52ea76b0。原网页HTML/图像/二进制不入Git；本归档提交CI需后验。未知精确客户端、首次上线时间、原服规则/宠物与道具ID/合成表/任务位或实际界面，不能写为TW1.0原生事实。详细边界见 docs/specs/STONEAGE-WAYI-OFFICIAL-SYSTEMS-R1.md。
+
+最高NEXT CROSS_VERSION_GEAR_MENTOR_QUEST_SOURCE_GAP_REVIEW-01：从已知各官方版本或出处明确的补丁、手册选择一份具体更强内容源，争取可连接宠物装备/导师/任务日志的实物或明确变更记录；无实源则记录缺口转22域其它事项，不继续追第三四详情页或R79。7 PARTIAL+2 OPEN、Stage B及官网生产GATED、R79 PAUSED，暂无可证整体复原百分比。

@@ -563,3 +563,7 @@ R4逐行保留22域旧状态，复用JSS操作/图像/会场/结果/FAQ/七日�
 永久派生与规格：`research/recovered/STONEAGE-WAYI-OFFICIAL-ICE-REGION-R1.json`、`STONEAGE-WAYI-OFFICIAL-ICE-REGION-CONTENT-CATALOG-R1.json`、`STONEAGE-WAYI-OFFICIAL-ICE-REGION-SOURCE-INTAKE-R1.json`及`docs/specs/STONEAGE-WAYI-OFFICIAL-ICE-REGION-R1.md`。本地19项边界测试通过；新增独立一正文/六图、两JSON逐字节重放工作流，远端结果与ZIP/raw/Git blob保管链须随后实际验收，未提前宣称。
 
 **最高NEXT `TW-WAYI-OFFICIAL-INTRO-DETAIL-02`**：沿既验介绍页第二条真实未读game01_02.asp，最多一正文，先核题名/内容，形成一份具名宠物/人物/故事/环境或玩法合同即止；若重复、空或有限取源失败，记录具体结果并回全官方22域队列，不自动递归第三/四页。Stage A仍7 PARTIAL+2 OPEN，Stage B/百科GATED，R79暂停，无整体百分比。
+
+
+## 2026-10-18 — TW-WAYI官方第二详情实质内容取得
+实际2005华义官网game01_02.asp获单页新材料：宠物装备七种基本部位/三种足型、宠物体型与元素差异、导师5%声望文案和任务日志完成状态描述。原字节固定并在 Actions 39121796764 独立重放成功，4项负例PASS；原 HTML 不入库，资料作为后期官方系统参考，不反填TW1.0/JSS1999运行规则或宣称上线。最高下一有限批CROSS_VERSION_GEAR_MENTOR_QUEST_SOURCE_GAP_REVIEW-01：选择现有官方来源、具名补丁或手册中最有机会闭合具体装备/导师/任务日志规则的一个内容证据，不重开底层无限展开。仍7 PARTIAL+2 OPEN、Stage B/百科GATED、R79暂停。

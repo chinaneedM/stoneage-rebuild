@@ -1,0 +1,93 @@
+{
+  "boundaries": {
+    "all_official_version_equivalence": false,
+    "equipment_formula_pet_ids_or_item_ids_observed": false,
+    "game_patch_version_or_release_date": null,
+    "jss1999_or_tw1_original_client_admitted": false,
+    "modern_game_implementation_started": false,
+    "quest_flags_npc_scripts_or_mentor_server_actions_observed": false,
+    "server_master_tables_available": false,
+    "source_html_images_or_executables_in_git": false,
+    "website_publication_started": false
+  },
+  "claims": {
+    "equipment": {
+      "actual_equipment_inventory_id": null,
+      "equipment_crafting_via_synthesis_described": true,
+      "exact_stat_scaling_formula": null,
+      "example_pet_elements": [
+        {
+          "地": 8,
+          "水": 2
+        },
+        {
+          "水": 4,
+          "火": 6
+        }
+      ],
+      "foot_subtypes_in_source_order": [
+        "兩隻腳",
+        "四隻腳",
+        "魚鰭"
+      ],
+      "kind": "OPERATOR_DESCRIBED_SYSTEM_NOT_RUNTIME_VERIFIED",
+      "number_of_slot_categories": 7,
+      "pet_body_type_changes_eligible_slots": true,
+      "slot_categories_in_source_order": [
+        "頭",
+        "牙",
+        "爪",
+        "胸",
+        "背",
+        "翅",
+        "腳"
+      ],
+      "source_describes_element_interaction": true,
+      "source_has_repeated_uli_token": true,
+      "uli_example_eligible_slots": [
+        "頭",
+        "牙",
+        "胸",
+        "背",
+        "腳"
+      ],
+      "water_uli_helmet_example_attack_plus": 15
+    },
+    "mentor": {
+      "actual_mentor_contract_or_server_rule": null,
+      "fields_as_written": [
+        "領導聲望",
+        "導師帳號",
+        "導師姓名"
+      ],
+      "kind": "OPERATOR_DESCRIBED_SYSTEM_NOT_RUNTIME_VERIFIED",
+      "leadership_prestige_described_as_student_prestige_share": "5%",
+      "student_mentor_relationship": true,
+      "student_reputation_deducted_proven": false
+    },
+    "quest_log": {
+      "kind": "OPERATOR_DESCRIBED_SYSTEM_NOT_RUNTIME_VERIFIED",
+      "not_yet_completed_quests_described": true,
+      "original_task_ids_or_completion_flags": null,
+      "previously_completed_quests_described": true,
+      "ui_navigation_label_as_written": "遊戲線上說明"
+    },
+    "surrounding_website_poll_not_game_mechanic": true
+  },
+  "next": "CROSS_VERSION_GEAR_MENTOR_QUEST_SOURCE_GAP_REVIEW",
+  "schema": "stoneage.wayi.official_systems.source_contract.r1",
+  "source": {
+    "actual_capture": "20050614005428",
+    "actual_final_url": "https://web.archive.org/web/20050614005428id_/http://www.wayi.com.tw/stoneage/game/game01_02.asp",
+    "bytes": 26414,
+    "claim_type": "OPERATOR_PAGE_DESCRIPTION_NOT_RUNTIME_DEMONSTRATION",
+    "encoding": "big5_STRICT",
+    "first_party_page_verified": true,
+    "is_exact_client_build": false,
+    "operator": "WAYI_TAIWAN",
+    "original_url": "http://www.wayi.com.tw/stoneage/game/game01_02.asp",
+    "parent_link": "http://www.wayi.com.tw/stoneage/game/game01.asp",
+    "parent_qualified_capture": "20050614002509",
+    "sha256": "0868e56a81d7037e434a09fd0824a6eb59747494099087f8d1eaeaaa37fb690c"
+  }
+}

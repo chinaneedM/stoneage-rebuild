@@ -3474,3 +3474,8 @@ eventmaz实际20010418085855有四村聊天室入口：マリナス东51南72、
 永久派生与规格：`research/recovered/STONEAGE-WAYI-OFFICIAL-ICE-REGION-R1.json`、`STONEAGE-WAYI-OFFICIAL-ICE-REGION-CONTENT-CATALOG-R1.json`、`STONEAGE-WAYI-OFFICIAL-ICE-REGION-SOURCE-INTAKE-R1.json`及`docs/specs/STONEAGE-WAYI-OFFICIAL-ICE-REGION-R1.md`。本地19项边界测试通过；新增独立一正文/六图、两JSON逐字节重放工作流，远端结果与ZIP/raw/Git blob保管链须随后实际验收，未提前宣称。
 
 **最高NEXT `TW-WAYI-OFFICIAL-INTRO-DETAIL-02`**：沿既验介绍页第二条真实未读game01_02.asp，最多一正文，先核题名/内容，形成一份具名宠物/人物/故事/环境或玩法合同即止；若重复、空或有限取源失败，记录具体结果并回全官方22域队列，不自动递归第三/四页。Stage A仍7 PARTIAL+2 OPEN，Stage B/百科GATED，R79暂停，无整体百分比。
+
+ 
+### 2005-06台湾华义官方系统介绍：宠物装备、导师、任务日志（不等于客户端实装）
+
+官网game01_02.asp实际快照20050614005428/26414B，SHA256 0868e56a81d7037e434a09fd0824a6eb59747494099087f8d1eaeaaa37fb690c。官方文案描述宠物装具七类及脚部分型、乌力五槽和水装备例数、导师关系/5%声望字段及任务日志查看；本页同时含非玩法的商品包意见投票。正文不能推出正式上线日期、原始客户端/原服规则、物种/合成配方ID、具体任务或所有版本同构。详情与来源见STONEAGE-WAYI-OFFICIAL-SYSTEMS-R1，派生源重放Action39121796764 SUCCESS。
