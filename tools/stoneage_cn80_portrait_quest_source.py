@@ -108,7 +108,9 @@ def derive(index_bytes: bytes, detail_bytes: bytes) -> dict:
     steps = split_steps(full)
     if "纱美加" not in steps[1] or "迪伊恩" not in steps[2]:
         raise ValueError("two character roles missing")
-    if "(67.75)" not in steps[1] or "(59.17)" not in steps[2] or "(26.47)" not in steps[2]:
+    coords_step1 = steps[1].replace("（", "(").replace("）", ")")
+    coords_step2 = steps[2].replace("（", "(").replace("）", ")")
+    if "(67.75)" not in coords_step1 or "(59.17)" not in coords_step2 or "(26.47)" not in coords_step2:
         raise ValueError("quest origin and shop coordinates not supported")
     pairs = []
     for name, color, place, get_step, deliver_step in PETS:
