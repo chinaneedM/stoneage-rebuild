@@ -1,0 +1,133 @@
+{
+  "schema": "stoneage.jss2001.material_content_acceptance.r1",
+  "source_commit": "0cca7739978c24635a5f62154879737fd8af2357",
+  "source_tree": "39af4e8a6ecd9a01927fecc52667aaed7cde0594",
+  "source_run": 39094577988,
+  "source_job": 117578240408,
+  "source_result": "success",
+  "artifact": {
+    "id": 12123459781,
+    "zip_bytes": 4427,
+    "zip_sha256": "58659f8724e5b6c3617dd078fef4ea572cd596bb4f85c3b849e18ad5dc7f2cb6",
+    "digest_matches_github_artifact_metadata": true
+  },
+  "reports": [
+    {
+      "member": "jss2001-pet-manual.json",
+      "archive_path": "research/recovered/STONEAGE-JSS2001-PET-MANUAL-CONTRACT-R1.json",
+      "bytes": 5830,
+      "sha256": "ec4c1602472fb5daa2d458e455f06df3318011e560be053abd460d7d5fba5a13",
+      "git_blob": "53d8efd5180c87ff84445d696e6390af1cb5c0ec",
+      "exact_bytes_match": true
+    },
+    {
+      "member": "jss2001-intro-screenshots.json",
+      "archive_path": "research/recovered/STONEAGE-JSS2001-INTRO-SCREENSHOT-SOURCES-R1.json",
+      "bytes": 8434,
+      "sha256": "9acaca878cba7e8a4f7241deca1294d7e1cac7ea11e4657923024e78482295c4",
+      "git_blob": "7c0428a9ee1dda9420bc849a0bab166d6ae7c427",
+      "exact_bytes_match": true
+    }
+  ],
+  "source_html_and_jpeg_retrieved_by_independent_ci": true,
+  "qualified_screenshots": 10,
+  "unobtained_screenshot_references": 5,
+  "negative_boundary_tests_passed": true,
+  "original_assets_retained": false,
+  "jss1999_or_tw10_same_build_promoted": false,
+  "stage_b": "GATED",
+  "next_priority": "JSS2001-OFFICIAL-EVENT-QUEST-CONTENT-01",
+  "source_branch_checks": [
+    {
+      "id": 39094577901,
+      "name": "Validate StoneAge Stage A joint review decision",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39094577937,
+      "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39094577994,
+      "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39094577928,
+      "name": "Validate Stage A early source gap triage",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39094577913,
+      "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39094577957,
+      "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39094578048,
+      "name": "Validate StoneAge preproduction content archive and wiki boundary",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39094577988,
+      "name": "Verify JSS2001 official pet and visual content sources",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39094578084,
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39094577979,
+      "name": "Validate legacy StoneAge assistant history and pet content gaps",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "source_branch_check_count": 10,
+  "main_acceptance": {
+    "status": "PENDING_NOT_PRECLAIMED"
+  },
+  "tools_and_tests": [
+    {
+      "path": "tools/stoneage_jss_pet_manual_contract.py",
+      "sha256": "e7598776fe800981a5c46129a483643a5a4644776b3009233a715e784722cc34",
+      "git_blob": "18873611d479675448a165f092aca41ae79f722d"
+    },
+    {
+      "path": "tools/stoneage_jss_intro_source.py",
+      "sha256": "b243cff3aa2f59ca74532828270460018dbb35e0d6f12cd0ffa65663415db9d6",
+      "git_blob": "4cee2de22e74bf455cf9e17acaa86863a6bd19f2"
+    },
+    {
+      "path": "tests/test_stoneage_jss_pet_manual_contract.py",
+      "sha256": "ac425be3749540d83ddc063b8bea808bb6035aa7ef8368856cb2f6274030e9c9",
+      "git_blob": "722e495c5bb22eb8830bd0e51a045894d1b70354"
+    },
+    {
+      "path": "tests/test_stoneage_jss_intro_source.py",
+      "sha256": "f8ed756dadb647f2aee8a136e99c1ea7ad05d7da52a1148472f083d4966e94f7",
+      "git_blob": "3df5fa830fc087d6a94c1b6709d894d3a3853b8e"
+    },
+    {
+      "path": "tests/test_stoneage_cross_domain_material_review.py",
+      "sha256": "3e801220a5d7638decb748daa4a04e2c5c4e722977192cf5783482167bb56e68",
+      "git_blob": "84b0067ae49eafcb417971d17765711ff4f500e5"
+    }
+  ]
+}
