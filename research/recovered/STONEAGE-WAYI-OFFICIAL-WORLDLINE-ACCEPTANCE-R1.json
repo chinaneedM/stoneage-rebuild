@@ -1,0 +1,150 @@
+{
+  "schema": "stoneage.wayi.official_worldline.acceptance.r1",
+  "source_head": "2e7ac885403ea661a97194c2aa05e5909c24893e",
+  "source_tree": "4feb8b51fe28fac22778678d15d386550ed24edc",
+  "source_run": 39118070206,
+  "source_job": 117647818165,
+  "source_branch_runs": [
+    {
+      "id": 39118070157,
+      "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39118070110,
+      "name": "Validate Stage A early source gap triage",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39118070154,
+      "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39118070096,
+      "name": "Validate legacy StoneAge assistant history and pet content gaps",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39118070206,
+      "name": "Verify official Wayi world synopsis and bounded version relationships",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39118070153,
+      "name": "Validate StoneAge Stage A joint review decision",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39118070134,
+      "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39118070178,
+      "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39118070124,
+      "name": "Validate StoneAge preproduction content archive and wiki boundary",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39118070118,
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "source_branch_count": 10,
+  "source_result": "SUCCESS",
+  "artifact": {
+    "artifact_id": 12132589889,
+    "zip_bytes": 8658,
+    "zip_sha256": "0a889e3258e479ebc31a5da651f2738896ec3ca2fecf79fc0912f5f1a2d77cec",
+    "github_digest_matched": true,
+    "members": [
+      {
+        "member": "wayi-official-worldline.json",
+        "path": "research/recovered/STONEAGE-WAYI-OFFICIAL-WORLDLINE-R1.json",
+        "raw_bytes": 11952,
+        "raw_sha256": "619c2b931174058b87eb97631beb11a995c41fedb26010a94c42e9cc54aa785b",
+        "git_blob": "be6fc0ae90243f49af8366c3817ae464c5412c18",
+        "archived_report_byte_identical": true
+      },
+      {
+        "member": "material-review-r4.json",
+        "path": "research/recovered/STONEAGE-CROSS-DOMAIN-MATERIAL-REVIEW-R4.json",
+        "raw_bytes": 19286,
+        "raw_sha256": "ef8294b9e1f74a254a7657bd0cfedafe8d91bb73d2f06b412b3aca33b37aae09",
+        "git_blob": "7412cf97f16d78e212bd03c141bf5e7187c324e8",
+        "archived_report_byte_identical": true
+      }
+    ]
+  },
+  "source_dependencies": [
+    {
+      "path": "tools/stoneage_wayi_official_worldline.py",
+      "bytes": 15425,
+      "sha256": "44fd4abae555a0207bb8d59cbcce540655cc4b4e3a58ad642fbf7528bccea38b",
+      "git_blob": "b04f073b3c50ce42bc5b219a39a4627a4e5fc18f"
+    },
+    {
+      "path": "tools/stoneage_material_review_r4.py",
+      "bytes": 9276,
+      "sha256": "2db5e05977e66987e527392df1aad8139fe2fdb1a4bb956fd2e4d65ed1ea3720",
+      "git_blob": "b2b4ba18c187da078d5790cc386d4994b030abe7"
+    },
+    {
+      "path": "tests/test_stoneage_wayi_official_worldline.py",
+      "bytes": 8921,
+      "sha256": "fcd8f7aaad89c556ff898bd4f1b4de8546379a34e5772506ac457fb89cc1788d",
+      "git_blob": "d6ea899eec737a81e86d18baed85cc144ce11259"
+    },
+    {
+      "path": "research/recovered/STONEAGE-WAYI-OFFICIAL-WORLDLINE-SOURCE-INTAKE-R1.json",
+      "bytes": 10690,
+      "sha256": "8388f9a43fb03337aff5042f8257157664a61519fe8bcbf5768a275b3e91a90d",
+      "git_blob": "5f54265e2cd3601cfc6d36933c24c1cd373b56d4"
+    },
+    {
+      "path": "research/recovered/STONEAGE-CROSS-DOMAIN-MATERIAL-REVIEW-R3.json",
+      "bytes": 15061,
+      "sha256": "51ac28e5bd15725b4375a72a61dd5ac5d0ceb38ecbc714aeb6a7588f75f82978",
+      "git_blob": "6e768786cced019928def9e08d04a709349239b2"
+    },
+    {
+      "path": "research/recovered/STONEAGE-PREPRODUCTION-CONTENT-ARCHIVE-R1.json",
+      "bytes": 24489,
+      "sha256": "e87afebc8c9590142c7cc8831b578455b3427bf7c1d10520ae02a3e8082fbddb",
+      "git_blob": "2d5b3f081d5618287f431fbded943722a820c593"
+    }
+  ],
+  "independent_html_sources": 2,
+  "new_world_page_count": 1,
+  "independent_original_gif_slices": 8,
+  "unobtained_original_gif_slices": 1,
+  "boundary_tests_passed": 19,
+  "original_gif7_first502_and_retry_success_retained": true,
+  "original_gif9_404_retained_not_global_absence": true,
+  "lost_world_identity_question_answered": false,
+  "source_group_order_changed_to_numeric_chronology": false,
+  "official_version_labels_promoted_to_client_builds": false,
+  "original_server_or_quest_execution_proven": false,
+  "jss1999_or_tw10_same_build_promoted": false,
+  "original_html_pixels_or_binaries_retained_in_git": false,
+  "main_acceptance": {
+    "status": "PENDING_NOT_PRECLAIMED"
+  },
+  "next_priority": "TW-WAYI-OFFICIAL-INTRO-DETAIL-01"
+}
