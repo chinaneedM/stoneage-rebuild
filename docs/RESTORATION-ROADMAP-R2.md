@@ -508,3 +508,10 @@ T01～T04的图像/物品/地图/音频物理证据不等于具名原游戏内�
 原最高JSS2001-OFFICIAL-EVENT-QUEST-CONTENT-01从真正官方event索引及eventjss正文取得两项社交活动公告，未取得NPC任务脚本，故不扩名不副实的“任务恢复”树。同索引具名eventmaz会场页组成有限相邻材料包：四村聊天室入口方向坐标、售票/引导职能、领票进场流程、北侧右起大厅/婚礼场指引及6张实际编辑标注原JPEG。HTML4月和图片6—7月不同刻；所有同TW1.0、原服地图/NPC实体、领取事务归属继续OPEN。具体来源/矛盾/登记见STONEAGE-JSS-OFFICIAL-EVENT-AND-VENUE-R1。
 
 **最高NEXT `JSS-OFFICIAL-EVENT-RESULTS-PET-ATTRIBUTION-01`**：只读取索引真实eventjsk结果页，有限查已发表活动结果是否给出实际参与/奖励宠名字与身份；未知仍未知，不把“未登场稀有宠”猜成某物种，不递归评论或表单、GM后台。7 PARTIAL+2 OPEN、Stage B及百科生产GATED、R79暂停不变。
+
+
+## 2026-10-18 — 官方第一回结果归属有界收束，转回宠物规则资料
+
+JSS-OFFICIAL-EVENT-RESULTS-PET-ATTRIBUTION-01取得实际官方结果目录16题目/14详情链接与唯一相关第一回搞笑结果正文。正文主办方称完成并列4奖，临时增设个人奖；稀有宠仍未具名。第一回不能拼到此前第二回预告，年份/日期/服务器缺失不补；模板横幅“ねるとん”与正文不一致、误预取07页后纠正09的真实记录保留。三图404、三Availability429后停止，0图像取得，不编画面。具体来源与反例规格STONEAGE-JSS-EVENT-RESULTS-PET-ATTRIBUTION-R1。
+
+官方操作/图像、会场、结果几包已有实际内容归属成果，但不能再因目录有14出链就继续穷举活动页。**最新最高NEXT `JSS-FIRST-PARTY-PET-FAQ-01`**：从已有已验top真实faqmenu.html链接取一个官方FAQ目录，只追最多一条明确宠物、捕获或成长相关正文。若只是安装/账号问题则有界登记后重排，不猜页面名、物种参数或重开原服master/API树。7 PARTIAL+2 OPEN、Stage B/百科生产GATED、R79暂停均维持。

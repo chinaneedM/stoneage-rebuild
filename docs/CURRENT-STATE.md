@@ -15241,3 +15241,18 @@ WORLD源分支ec2aa8fac09f13a61c73c9542b2dd9c08c9fc1b9/tree0976772698b7470b72145
 研究源`f628229cd7bdfcd5462d15366b61e0026cd8215e`同SHA11项SUCCESS，来源保管`fb38ca28b68faffc7b9cbf15adbb5676020b861b`同SHA8项SUCCESS后，重新核main仍bd30efd、ahead2/behind0、13路径0删除，非强制快进至fb38ca2/tree`955b258d38501fc40a8048c172a13e0cfba1fb28`。该HEAD **12项main Actions全部实际SUCCESS**，含三页/六图实源重放`39095619947`、前轮JSS手册/截图`39095619867`、SPR/ADRN`39095619893`和其余九项；全部名称/ID/结论永久写EVENT-ACCEPTANCE-R1的main_acceptance。原1943602字节CURRENT-STATE历史前缀完整，13变更路径没有原版权HTML、JPEG、程序或地图载荷。此验收回执自己的后续branch/main CI要另验，不冒用父提交结果。
 
 NEXT仍`JSS-OFFICIAL-EVENT-RESULTS-PET-ATTRIBUTION-01`：仅取真实eventjsk链接，**先比活动名称、届数、月日/年份与服务器**；不得把第一回或其他活动的结果/宠物嫁接到本轮第二回公告里的未具名稀有宠。无具名同活动身份则保持未知停止。活动实际年份、原服NPC任务和TW1.0地图身份均未被补成事实，7 PARTIAL+2 OPEN、Stage B/百科GATED、R79暂停。
+
+
+## 2026-10-18 — JSS官方第一回结果与未具名宠物的归属核查
+
+本轮实时核main`081e141d8f35cea3556572310048a3dda218724c`/tree`c13bf6b9034e8cb7838d76733bbc31f9793614ff`，同HEAD9项main Actions全部SUCCESS，332个远端分支头、原研究分支同HEAD和无开放PR已核。完整CURRENT-STATE1948929B/SHA256`7148f0bf97c520dac9ecf76eebcee34a18836ae033b57bb379f92ca6e269d1d6`与精确远端blob/checkout一致，README/协议/Design/Timeline/Source/Roadmap/R3矩阵及旧活动上下文重新读取。原历史前缀不删除。
+
+最高JSS-OFFICIAL-EVENT-RESULTS-PET-ATTRIBUTION-01取官方eventjsk实际20010418085802/5041B，16题目、14详情链接。本轮完整解析目录前误预取eventj07，实际为第二回登录杯决斗；已公开纠正到目录第一回搞笑真行eventj09，错误页元数据与排除记录保留，不纳入合格结果来源。新选择器明确验证标题/链接/路径并拒绝07替代09，不以网页编号猜活动。
+
+正确eventj09实际20010422015200/2153B：正文标题为第一回搞笑、结尾计划第二回；顶部模板横幅却写“ねるとん”，三证定归属并保存原始不一致，不改写历史。主办方称顺利结束，4个报道奖项分别30000stone＋未具名未登场稀有宠、创意20000、最佳个人10000、临时特别个人10000，后者因最佳个人意见分歧而加设。获奖栏为玩家/队伍文字，只存指纹和长度，不误作宠物名字。活动年月日和服务器仍未给；“主办方报道完成”不等于独立原服执行/奖品写入成功。
+
+与旧第二回预告严格比较：第一回edition1与第二回edition2不同，即使30000stone＋稀有宠描述相同，也为REJECT_EDITION_MISMATCH，不把特别奖、获奖者或完成报道填进第二回，不得到宠物种名/ID/SPR/TW1.0原服身份。三JPEG引用首次回放全404，随后逐URL一次Availability全429，尊重限流后不重试；实际图像0/3，尺寸/画面/可见宠物未知，HTML声明480×360/320×240不是实际图片尺寸，也不推全网缺失。
+
+规格STONEAGE-JSS-EVENT-RESULTS-PET-ATTRIBUTION-R1、永久派生报告和SOURCE-INTAKE完整错误/纠正/来源/失败/旧前缀记录、解析工具/14项边界测试及独立源工作流已形成；本地14项实际PASS，后续分支/main和ZIP/raw保管以实际CI另记，不提前宣称。此次有界收束第一回报道归属，奖励宠身份仍OPEN；不继续穷举14活动正文。
+
+**最高NEXT `JSS-FIRST-PARTY-PET-FAQ-01`**：从旧已认证top真实faqmenu.html链接查一个FAQ目录，最多追一条明确宠物/捕获/成长相关正文；若只有安装/账号事项则登记边界重排，不猜网页名或数值，不无限活动/底层API树。Stage A7 PARTIAL+2 OPEN、Stage B游戏/百科生产GATED、R79 PAUSED_NON_BLOCKING，无整体复原百分比。

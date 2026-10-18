@@ -1,0 +1,33 @@
+name: Verify JSS result edition identity and unknown rare-pet attribution
+on:
+  push:
+    paths:
+      - tools/stoneage_jss_event_results.py
+      - tests/test_stoneage_jss_event_results.py
+      - docs/specs/STONEAGE-JSS-EVENT-RESULTS-PET-ATTRIBUTION-R1.md
+      - research/recovered/STONEAGE-JSS-EVENT-RESULTS-*.json
+      - .github/workflows/verify-stoneage-jss-event-results.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  replay-results-and-reject-cross-edition-join:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --quiet Pillow
+      - name: Verify index/body identity, recipient roles and unknown image boundaries
+        run: python -m unittest tests.test_stoneage_jss_event_results -v
+      - name: Independently recover two source pages and replay bounded attribution
+        run: |
+          python -m tools.stoneage_jss_event_results --reference research/recovered/STONEAGE-JSS-EVENT-RESULTS-PET-ATTRIBUTION-R1.json --output "${{ runner.temp }}/jss-event-results-pet-attribution.json"
+          cmp "${{ runner.temp }}/jss-event-results-pet-attribution.json" research/recovered/STONEAGE-JSS-EVENT-RESULTS-PET-ATTRIBUTION-R1.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: jss-event-results-pet-attribution-derived-report
+          path: ${{ runner.temp }}/jss-event-results-pet-attribution.json
+          retention-days: 30

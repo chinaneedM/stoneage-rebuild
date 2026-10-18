@@ -7046,3 +7046,12 @@ STONEAGE-HISTORICAL-WIKI-QUERY-CONTRACT-DRAFT-R1.json引用四个既有派生Git
 - eventmaz实际20010418085855/2652B/SHA256 2a52793ecff532885090d3336bea2cc00c6ed5ecc518f285dc41b47a1b9ec4bf，官方四村聊天室入口坐标和售票/引导角色流程；不补票ID/价格、地图floor、NPC实体或服务器事务。三页Shift-JIS严格解码无替换。
 - 原6JPEG mari01/karu01/samu01/chat01/jyajya01/chat02实际均160×125，捕获分别20010701072151/20010630212945/20010701073936/20010630190951/20010630212710/20010630210857；各字节摘要和最终原URL见STONEAGE-JSS2001-OFFICIAL-EVENT-VENUE-R1。逐张目视观察及指纹见CONTENT-CATALOG-R1；红字是官网编辑标注，不证明游戏UI本来含同样文字。4月HTML不认证6—7月图像同刻，JSS截图不认证TW1.0构建。
 - 首次抓取、基线1943602字节CURRENT-STATE前缀、原文/可见文本/SHA与来源身份见SOURCE-INTAKE-R1；永久派生报告/负面边界测试和独立源重放工作流已形成。后续Actions、ZIP/raw保管与主线结果必须实际成功后再记录；不保存原版权HTML、JPEG、游戏二进制。
+
+
+## SRC-JSS-OFFICIAL-FIRST-COMEDY-RESULT-20261018
+
+- eventjsk实际https://web.archive.org/web/20010418085802id_/http://www.titan.co.jp/stoneage/eventjsk.html ，5041B SHA2568287f0bf401201f6931edd53758129e6bb447293d0c1211efc2413247814a541；16目录题目、14详情原链，第一回搞笑行明确eventj09。反馈端点未访问/提交。
+- eventj09实际https://web.archive.org/web/20010422015200id_/http://www.titan.co.jp/stoneage/eventj09.html ，2153B SHA256230a804678c4fa21d3df9a574637a921309e25649dbe72e87e895726356724a9；Shift-JIS严格解码无替换。模板横幅与正文不一致保留，4奖项/临时加奖为官方报道，未具名稀有宠不可映射物种/SPR；获奖者栏仅存指纹，不提取成宠物名。
+- 误预取eventj07真实回放20010421042208、2002B SHA25696e0fa659c4951dd102aa53da88110221156222a8777c0ae9fe8740a19ff4650，属别的决斗赛。实际错误/纠正路径保存在SOURCE-INTAKE，不列本轮合格结果正文、不抽取其奖励/人物事实、不隐去失误。
+- sass0901/02/03三个原JPEG路径本轮回放404；各一次Availability请求均429后停止。未取得像素或实际尺寸可验，仅HTML引用和声明尺寸；不是全网没有副本/历史无图。请求/错误/来源身份全部在STONEAGE-JSS-EVENT-RESULTS-SOURCE-INTAKE-R1，未存原HTML或图像。
+- 永久结果派生STONEAGE-JSS-EVENT-RESULTS-PET-ATTRIBUTION-R1，以旧原预告派生报告1fc8ca061330655483cbc931f93043be7c3792a9作上下文，跨届连接明确REJECT_EDITION_MISMATCH，不由奖金额相同认同活动。独立源CI/ZIP/raw/主线接受在真实成功后单记，原服与TW1.0同版身份未认证。

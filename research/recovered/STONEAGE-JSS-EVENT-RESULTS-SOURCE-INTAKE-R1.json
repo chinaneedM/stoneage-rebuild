@@ -1,0 +1,166 @@
+{
+  "schema": "stoneage.jss.event_results.source_intake.r1",
+  "date": "2026-10-18",
+  "baseline_head": "081e141d8f35cea3556572310048a3dda218724c",
+  "baseline_tree": "c13bf6b9034e8cb7838d76733bbc31f9793614ff",
+  "remote_branch_heads": 332,
+  "open_prs_observed": 0,
+  "baseline_main_checks": 9,
+  "baseline_input_files": [
+    {
+      "path": "README.md",
+      "bytes": 13103,
+      "sha256": "113a46586ff8dc638f59de6f5068b04b94f52562619ef6ca46be1109119ced34",
+      "git_blob": "d9b8989f026a7cca469345189e2a65ec07504d4b"
+    },
+    {
+      "path": "docs/PROJECT-CONTINUITY-PROTOCOL-R1.md",
+      "bytes": 9762,
+      "sha256": "c44834eeec87f7a43e9cb4905f08377349e36d58b1fff2c5a75a6975db695e3b",
+      "git_blob": "ba9bbe19384589400abc61af37a360a40bf91452"
+    },
+    {
+      "path": "docs/CURRENT-STATE.md",
+      "bytes": 1948929,
+      "sha256": "7148f0bf97c520dac9ecf76eebcee34a18836ae033b57bb379f92ca6e269d1d6",
+      "git_blob": "f7704114fd745e20cfa0f2173d589348d83c5fa9"
+    },
+    {
+      "path": "docs/DESIGN-DECISIONS.md",
+      "bytes": 40409,
+      "sha256": "b82ee58df8a5bd5328aab3574df32e71e1524d9992885e2bf3344e0a364311a4",
+      "git_blob": "18dfa5af1f07c51a2fedbb68b3534eae3a1ea586"
+    },
+    {
+      "path": "docs/HISTORICAL-TIMELINE.md",
+      "bytes": 433026,
+      "sha256": "f3923e640fd6d14424c0b0d67ac1564a43f29f81096161cdcfe78b4a48562ed3",
+      "git_blob": "47c8d61ae92ab468bc78fa31409a44aa837f29c6"
+    },
+    {
+      "path": "docs/SOURCE-REGISTRY.md",
+      "bytes": 688892,
+      "sha256": "c75dd2fd43eed618bb55a80975d34112984716f18030ec8050491ec771aeb842",
+      "git_blob": "a2d2ff4c3031a9702e96748f20462f483ca4e0a2"
+    },
+    {
+      "path": "docs/RESTORATION-ROADMAP-R2.md",
+      "bytes": 59803,
+      "sha256": "f9c7d5fa29aec029a4d1515d78e5392ba65fc0c9fc3c27fb16da16260f311398",
+      "git_blob": "b470b22418ffd816c9d66b68898179516c619e4d"
+    },
+    {
+      "path": "docs/STONEAGE-CROSS-DOMAIN-MATERIAL-REVIEW-R3.md",
+      "bytes": 4039,
+      "sha256": "87fdf6c49575aa016a9512cb85842c0156211051cffa49592723598ae9224fca",
+      "git_blob": "36809e969a9b3bbb32958001d066ece47c20ba37"
+    },
+    {
+      "path": "research/recovered/STONEAGE-JSS2001-OFFICIAL-EVENT-VENUE-R1.json",
+      "bytes": 10583,
+      "sha256": "7c105ecdf4c7ca6e751da27dbaf827013fd72b238882421bb7034ef1f7027f5b",
+      "git_blob": "1fc8ca061330655483cbc931f93043be7c3792a9"
+    }
+  ],
+  "qualified_page_first_acquisitions": {
+    "eventjsk": {
+      "request_url": "https://web.archive.org/web/20010417155224id_/http://www.titan.co.jp/stoneage/eventjsk.html",
+      "final_url": "https://web.archive.org/web/20010418085802id_/http://www.titan.co.jp/stoneage/eventjsk.html",
+      "bytes": 5041,
+      "sha256": "8287f0bf401201f6931edd53758129e6bb447293d0c1211efc2413247814a541",
+      "strict_shift_jis": true
+    },
+    "eventj09": {
+      "request_url": "https://web.archive.org/web/20010418085802id_/http://www.titan.co.jp/stoneage/eventj09.html",
+      "selected_from_actual_index_row": {
+        "text": "第1回お笑いコンテスト 結果発表",
+        "links": [
+          "http://www.titan.co.jp/stoneage/eventj09.html"
+        ]
+      },
+      "final_url": "https://web.archive.org/web/20010422015200id_/http://www.titan.co.jp/stoneage/eventj09.html",
+      "bytes": 2153,
+      "sha256": "230a804678c4fa21d3df9a574637a921309e25649dbe72e87e895726356724a9",
+      "strict_shift_jis": true
+    }
+  },
+  "retrieval_correction": {
+    "mistake": "PREMATURE_NUMBERED_PAGE_PREFETCH_BEFORE_COMPLETING_INDEX_ROW_MAPPING",
+    "expected_resource": "eventj09.html",
+    "wrong_prefetched_resource": "eventj07.html",
+    "wrong_prefetch_metadata": {
+      "request_url": "https://web.archive.org/web/20010418085802id_/http://www.titan.co.jp/stoneage/eventj07.html",
+      "final_url": "https://web.archive.org/web/20010421042208id_/http://www.titan.co.jp/stoneage/eventj07.html",
+      "bytes": 2002,
+      "sha256": "96e0fa659c4951dd102aa53da88110221156222a8777c0ae9fe8740a19ff4650",
+      "strict_shift_jis": true
+    },
+    "excluded_from_current_result_and_pet_facts": true,
+    "correction": "FOLLOW_ACTUAL_FIRST_COMEDY_TITLE_ROW_AND_VALIDATE_BODY_EDITION"
+  },
+  "image_first_attempts": [
+    {
+      "file": "sass0901.jpg",
+      "original_url": "http://www.titan.co.jp/stoneage/image/sass0901.jpg",
+      "request_url": "https://web.archive.org/web/20010422015200id_/http://www.titan.co.jp/stoneage/image/sass0901.jpg",
+      "error": "HTTP Error 404: NOT FOUND",
+      "error_url": "https://web.archive.org/web/20010422015200id_/http://www.titan.co.jp/stoneage/image/sass0901.jpg",
+      "location": null
+    },
+    {
+      "file": "sass0902.jpg",
+      "original_url": "http://www.titan.co.jp/stoneage/image/sass0902.jpg",
+      "request_url": "https://web.archive.org/web/20010422015200id_/http://www.titan.co.jp/stoneage/image/sass0902.jpg",
+      "error": "HTTP Error 404: NOT FOUND",
+      "error_url": "https://web.archive.org/web/20010422015200id_/http://www.titan.co.jp/stoneage/image/sass0902.jpg",
+      "location": null
+    },
+    {
+      "file": "sass0903.jpg",
+      "original_url": "http://www.titan.co.jp/stoneage/image/sass0903.jpg",
+      "request_url": "https://web.archive.org/web/20010422015200id_/http://www.titan.co.jp/stoneage/image/sass0903.jpg",
+      "error": "HTTP Error 404: NOT FOUND",
+      "error_url": "https://web.archive.org/web/20010422015200id_/http://www.titan.co.jp/stoneage/image/sass0903.jpg",
+      "location": null
+    }
+  ],
+  "image_bounded_availability_attempts": [
+    {
+      "file": "sass0901.jpg",
+      "original_url": "http://www.titan.co.jp/stoneage/image/sass0901.jpg",
+      "availability_request": "https://archive.org/wayback/available?url=http%3A%2F%2Fwww.titan.co.jp%2Fstoneage%2Fimage%2Fsass0901.jpg&timestamp=20010422",
+      "error": "HTTP Error 429: Too Many Requests",
+      "error_url": "https://archive.org/wayback/available?url=http%3A%2F%2Fwww.titan.co.jp%2Fstoneage%2Fimage%2Fsass0901.jpg&timestamp=20010422",
+      "location": null,
+      "status": "QUERY_OR_REPLAY_UNAVAILABLE_NOT_GLOBAL_ABSENCE"
+    },
+    {
+      "file": "sass0902.jpg",
+      "original_url": "http://www.titan.co.jp/stoneage/image/sass0902.jpg",
+      "availability_request": "https://archive.org/wayback/available?url=http%3A%2F%2Fwww.titan.co.jp%2Fstoneage%2Fimage%2Fsass0902.jpg&timestamp=20010422",
+      "error": "HTTP Error 429: Too Many Requests",
+      "error_url": "https://archive.org/wayback/available?url=http%3A%2F%2Fwww.titan.co.jp%2Fstoneage%2Fimage%2Fsass0902.jpg&timestamp=20010422",
+      "location": null,
+      "status": "QUERY_OR_REPLAY_UNAVAILABLE_NOT_GLOBAL_ABSENCE"
+    },
+    {
+      "file": "sass0903.jpg",
+      "original_url": "http://www.titan.co.jp/stoneage/image/sass0903.jpg",
+      "availability_request": "https://archive.org/wayback/available?url=http%3A%2F%2Fwww.titan.co.jp%2Fstoneage%2Fimage%2Fsass0903.jpg&timestamp=20010422",
+      "error": "HTTP Error 429: Too Many Requests",
+      "error_url": "https://archive.org/wayback/available?url=http%3A%2F%2Fwww.titan.co.jp%2Fstoneage%2Fimage%2Fsass0903.jpg&timestamp=20010422",
+      "location": null,
+      "status": "QUERY_OR_REPLAY_UNAVAILABLE_NOT_GLOBAL_ABSENCE"
+    }
+  ],
+  "availability_rate_limited_no_further_retry": true,
+  "missing_images_are_not_global_absence": true,
+  "forms_or_feedback_endpoints_queried_or_submitted": false,
+  "report": {
+    "path": "research/recovered/STONEAGE-JSS-EVENT-RESULTS-PET-ATTRIBUTION-R1.json",
+    "bytes": 8778,
+    "sha256": "c343f3b1cce14ab26b3ef4c1ad7b4ca1fa0402d1ce7ad8a904d3df646ef79ff9",
+    "git_blob": "19210bbc97936130222bc83860026da33b096dfc"
+  },
+  "original_html_or_pixels_retained_in_git": false
+}

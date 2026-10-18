@@ -221,3 +221,16 @@ No NPC quest script, event year, actual prize award or Taiwan1.0 same-build map
 identity is certified. Conflicting meeting times and commented-out registration
 links are preserved. NEXT: `JSS-OFFICIAL-EVENT-RESULTS-PET-ATTRIBUTION-01`, one
 linked official results page; Stage B and public wiki production remain gated.
+
+
+### Latest official first-comedy result attribution — 2026-10-18
+
+The official results index has16 event entries/14 detail links. One followed
+first-comedy result reports four prize categories, including an ad-hoc individual
+award, while still leaving the rare pet unnamed. This first edition cannot be
+used as the second edition's result, even where prize amounts match. A mismatched
+template banner, one corrected wrong-page prefetch, three404 image attempts
+and three429 availability responses are preserved. No result image was acquired.
+See [official result attribution](docs/specs/STONEAGE-JSS-EVENT-RESULTS-PET-ATTRIBUTION-R1.md).
+NEXT: `JSS-FIRST-PARTY-PET-FAQ-01`, one authentic FAQ index and at most one
+clearly pet-related detail page. Stage B and public wiki production remain gated.
