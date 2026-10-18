@@ -15517,3 +15517,8 @@ GNN原HTML本轮取源存在403阅读器限制，只按同期索引文本见证�
 另有无具体时效的巴哈姆特Wiki任务页面，三处坐标分别差1（伊秋娜21,27 / 20,27；奏敷303,130 / 302,130；布克瑟114,309 / 114,310），并增写等级101与`枕戈待旦`前置；不可据晚期合辑强改2006标记玩家内容。相关五段文本/来源时效、坐标反例、明确缺少的奖励字段和第一方闸门用`STONEAGE-TW85-SUPPORT-FRONT-GUIDE-GATE-R1.json`、`docs/specs/STONEAGE-TW85-SUPPORT-FRONT-GUIDE-GATE-R1.md`及8项边界测试/新Actions留存。原著作权网页全文/图片、官方游戏二进制均不入Git；新CI及合并必须按实际结果验收，不提前宣称通过。
 
 **最高NEXT `ALL_OFFICIAL_VERSIONS_NEW_NAMED_FIRSTPARTY_DOMAIN-01`**：停止本任务同稿及二传循环，从JSS1999–2001已验证官方手册/网页、台湾华义其它可归属官方内容或后期另一官方地区版本中选择一份**不同领域的具名一方内容**，例如可核NPC/宠物/地理/日常玩法第一手材料；按22域和版本独立标注，不启动原8.5伪服务器任务实现或R79。Stage A九族7 PARTIAL+2 OPEN、Stage B游戏/百科生产GATED、R79 PAUSED_NON_BLOCKING，无可证全游戏恢复百分比。
+
+
+### 2026-10-18 — 支援前線玩家指南有限来源图谱与主线验收留存
+
+研究分支源`75472d112d20487c3c2dca871578f917eb710bfc` / tree`7c89976ad84ee524a210b1e2b2e6a12fcc711a9a`，同SHA10项分支Actions全部实际SUCCESS，新增来源/坐标/奖励边界专用门`39133995936`成功。重新确认原main `eea7c393` 未前进、ahead1/behind0、8文件0删除、完整CURRENT历史前缀保留，非强制快进至main后该同SHA的**11项main Actions全部SUCCESS**，含来源结构门`39134084882`与TW1.0/Stage A既有回归。具体分支和main工作流运行ID、名称及SHA写入`research/recovered/STONEAGE-TW85-SUPPORT-FRONT-ACCEPTANCE-R1.json`，派生JSON Git blob`1b40fe2ef401565db67670e36ab6e87bf14b3e01`、规格blob`e0544613d43b11a13bccc552706d72d0172af2cc`永久可回查。这个回执的新提交自身分支与主线CI须另验，不借父HEAD绿灯替它宣称成功。**第一方任务脚本、NPC/物品ID、早年玩家网页原始字节SHA仍未获得**，新作/网站生产与R79继续关闭。最高NEXT保持`ALL_OFFICIAL_VERSIONS_NEW_NAMED_FIRSTPARTY_DOMAIN-01`，7 PARTIAL+2 OPEN。

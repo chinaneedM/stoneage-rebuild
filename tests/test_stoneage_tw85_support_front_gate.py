@@ -73,6 +73,26 @@ class SupportFrontWitnessTests(unittest.TestCase):
         self.assertTrue(x["mentions_logout_during_combat"])
         self.assertFalse(x["server_behavior_or_safety_verified"])
 
+    def test_acceptance_receipt_head_scope_and_source_limit(self):
+        r=json.loads((ROOT/"research/recovered/STONEAGE-TW85-SUPPORT-FRONT-ACCEPTANCE-R1.json").read_text(encoding="utf-8"))
+        self.assertEqual(r["research_commit"],"75472d112d20487c3c2dca871578f917eb710bfc")
+        self.assertEqual(r["branch_checks"]["count"],10)
+        self.assertEqual(r["main_checks"]["count"],11)
+        for label in ("branch_checks","main_checks"):
+            d=r[label]
+            self.assertEqual(len(d["runs"]),d["count"])
+            self.assertEqual(len({x["id"] for x in d["runs"]}),d["count"])
+            self.assertTrue(all(x["status"]=="completed" and x["conclusion"]=="success" and x["sha"]==r["research_commit"] for x in d["runs"]))
+        self.assertEqual(r["merge"]["kind"],"SAFE_NON_FORCE_FAST_FORWARD")
+        self.assertEqual(r["merge"]["deleted_paths"],0)
+        self.assertTrue(r["merge"]["original_current_state_prefix_preserved"])
+        self.assertFalse(r["firstparty_server_or_task_script_obtained"])
+        self.assertFalse(r["source_bytes_retrieved_in_ci"])
+        self.assertIsNone(r["original_guide_html_sha256"])
+        self.assertIsNone(r["original_wiki_html_sha256"])
+        self.assertFalse(r["later_wiki_coordinates_reconciled"])
+        self.assertEqual(r["acceptance_receipt_own_new_head_ci"],"PENDING_INDEPENDENT_VALIDATION")
+
     def test_stage_and_rights_gate(self):
         d=self.d
         self.assertEqual(d["stage_a"],"7_PARTIAL_2_OPEN")
