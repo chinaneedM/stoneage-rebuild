@@ -1,0 +1,29 @@
+name: Probe exact archived Wayi intro detail 02
+on:
+  push:
+    paths:
+      - tools/stoneage_wayi_intro_detail02_probe.py
+      - tests/test_stoneage_wayi_intro_detail02_probe.py
+      - .github/workflows/probe-stoneage-wayi-intro-detail02.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  one-authenticated-source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate source-boundary negative cases
+        run: python -m unittest tests.test_stoneage_wayi_intro_detail02_probe -v
+      - name: Retrieve exact historic link and emit bounded content sample
+        run: python -m tools.stoneage_wayi_intro_detail02_probe --output output/wayi-detail02-probe.json
+      - uses: actions/upload-artifact@v4
+        if: success()
+        with:
+          name: wayi-intro-detail02-bounded-probe
+          path: output/wayi-detail02-probe.json
+          retention-days: 30
