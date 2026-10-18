@@ -7122,3 +7122,15 @@ STONEAGE-HISTORICAL-WIKI-QUERY-CONTRACT-DRAFT-R1.json引用四个既有派生Git
 - https://forum.gamer.com.tw/G2.php?bsn=1571&sn=2340 巴哈姆特石器時代精华区；现网页显示「2005-07-19 02:36:12 編輯」，由玩家/论坛整理，页面末尾称出处OURSA。暂未取精确HTML字节SHA、未经历史版面快照对照，不认证原始发表时间和后续改动版本。
 - 文献出现“先完成贝克/黄泉任务、暗灵法师/白狼勇士/追猎者三职业合作”作为**审判任务**自己的条件，还有守卫队长涅齊、搜捕令、沉睡洞窟、研究书等；一切只是此攻略当前文字，非原服NPC/任务ID及服务器事件认证。
 - 最关键**该指南没给「审判→爱作画的少女」前置边**。2012关于8.5的宣传文案才有此关系，不能使用独立存在的2005审判任务推出2005画作任务也需完成审判。经有限查证仍OPEN，不扩散到未知同版ID。
+
+
+### SRC-CN80-JUDGMENT-BAHAMUT-2005-EDIT-01
+- URL: https://forum.gamer.com.tw/G2.php?bsn=1571&sn=2340
+- Kind/confidence: C; contemporary **edited marker** on a currently available curated player guide, not original operator script. Displays 2005-07-19 02:36:12 編輯; credits 1202/uao1222, editor 重灌郎, maker 天波 and other players, explicitly 「出處OURSA~!」.
+- Linked old-source redirection points toward http://pisces.sbun.org/oops/ but this reader received 403; original article/first publication not obtained. No immutable original-page SHA.
+- Supports: secondary names/locations/team/claimed prerequisite/item descriptions; does NOT prove release date, actual server code, TW1.0 rule, game IDs, actual reward, or Portrait Quest dependency.
+
+### SRC-CN80-JUDGMENT-17173-PORTAL-01
+- URL: https://news.17173.com/z/stoneage/renwu/sa80_06.shtml
+- Kind/confidence: C; Mainland 8.0-labeled currently indexed player guide with expanded details; actual original 2005 publication/date/HTML SHA not verified.
+- Content overlaps Bahamut guide, adds board clue, thief positions and skill-identification order. Do not count as a second independent original author or as an official first-party source. No proprietary site HTML/art/client binaries committed. Derived facts/negative evidence in `research/recovered/STONEAGE-CN80-JUDGMENT-NAMED-CONTENT-R1.json`.

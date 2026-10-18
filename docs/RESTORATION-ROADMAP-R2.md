@@ -588,3 +588,9 @@ NEXT CN80_PORTRAIT_PREREQUISITE_VERSION_BOUNDARY-01 is a tightly bounded upgrade
 The source-qualified CN80 8.0 walkthrough graph is now on main with all 11 checks passing at the exact integrating HEAD. A 2005-07-19 **edited** Bahamut player guide exists for the separate quest 无法逃离的审判, but its text does not establish that the portrait quest depends on it. The undated 8.0 guide's omitted prerequisites and later 2012 8.5 article's explicit prerequisite/one-portrait prose cannot be flattened into a proven version patch or original-server transaction. This finite inquiry is OPEN_EVIDENCE_LIMITED_NO_FIRST_PARTY_RULE.
 
 Highest next: CN80_JUDGMENT_2005_NAMED_CONTENT-01, one source-bounded early dated guide to recover actual named NPC/item/profession constraints with source attribution—not to assert game-rule equivalence, recurse across all articles, or build new-game logic. After a useful content attribution or an explicit evidence stop, rotate back to the 22-domain portfolio. All Stage A PARTIAL/OPEN, Stage B, R79 and copyright gates persist.
+
+
+## 2026-10-18 — 2005审判任务具名文献关系审计
+从巴哈姆特2005编辑标记的《無法逃離的審判》与17173大陆8.0任务页整理具名三NPC、三职业、两项指南前置、风地水机关、地图与物品的**来源限定文本图谱**。前者写OURSA出处，后者内容重合且增补细节，无法证独立原作者/2005首版与原服务器构建；不把同源玩家转载当两份一方证明。与后期《爱作画的少女》前置冲突仍OPEN，原始服务端状态/物品NPC IDs未证。机器来源`STONEAGE-CN80-JUDGMENT-NAMED-CONTENT-R1.json`，新结构测试/Actions验收必须以运行事实为准。
+
+**最高NEXT `ALL_OFFICIAL_VERSION_NAMED_CONTENT_SOURCE-01`**：停止同文循环，按全官方22域优先下一份具名/带年代、地区的官方宠物、故事、场景、任务实质来源；缺同版规则写UNKNOWN。Stage A7 PARTIAL+2 OPEN，Stage B/百科GATED，R79暂停。

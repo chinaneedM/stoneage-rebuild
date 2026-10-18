@@ -1,0 +1,248 @@
+{
+  "schema": "stoneage.cn80.judgment_2005.named_content_r1",
+  "package": "CN80_JUDGMENT_2005_NAMED_CONTENT-01",
+  "compiled_on": "2026-10-18",
+  "purpose": "Bounded, source-linked secondary-guide content graph; not original game server reconstruction",
+  "evidence_status": "SECONDARY_PLAYER_GUIDE_WITH_ATTRIBUTION_AND_UNVERIFIED_PUBLICATION_CHAIN",
+  "first_party_game_rule_verified": false,
+  "original_game_runtime_verified": false,
+  "original_server_quest_script_verified": false,
+  "tw10_same_build_verified": false,
+  "sources": [
+    {
+      "id": "GAMER_2005_JUDGMENT",
+      "url": "https://forum.gamer.com.tw/G2.php?bsn=1571&sn=2340",
+      "title": "〖攻略〗無法逃離的審判",
+      "source_kind": "PLAYER_GUIDE_CURATED_REPOST_OR_DERIVATIVE",
+      "site": "巴哈姆特精華區",
+      "page_editor_timestamp": "2005-07-19 02:36:12",
+      "timestamp_meaning": "EDIT_LABEL_NOT_FIRST_PUBLICATION_OR_DEPLOYMENT",
+      "attributions": [
+        "頁面樓主 1202/uao1222",
+        "編輯: 重灌郎",
+        "製作: 天波",
+        "感謝大陸天波、輝輝及其他玩家"
+      ],
+      "upstream_claim": "出處OURSA",
+      "upstream_redir_observed": "https://ref.gamer.com.tw/redir.php?url=http%3A%2F%2Fpisces.sbun.org%2Foops%2F",
+      "upstream_fetch_outcome": "403_FROM_WEB_READER_NOT_PROOF_OF_ORIGIN_UNAVAILABLE",
+      "byte_sha256": null,
+      "original_publication_timestamp": null,
+      "official_operator_source": false
+    },
+    {
+      "id": "CN_17173_JUDGMENT",
+      "url": "https://news.17173.com/z/stoneage/renwu/sa80_06.shtml",
+      "title": "无法逃离的审判",
+      "source_kind": "MAINLAND_PORTAL_PLAYER_GUIDE_CURRENT_INDEX_TEXT",
+      "site": "17173石器8.0任務欄目",
+      "page_editor_timestamp": null,
+      "original_publication_timestamp": null,
+      "byte_sha256": null,
+      "official_operator_source": false,
+      "relationship_to_gamer": "SHARED_SEQUENCE_AND_CORE_TEXT_BUT_INDEPENDENCE_UNPROVEN",
+      "extra_content_scope": [
+        "元素線索牌/四元素關係",
+        "竊賊出現點列表",
+        "鑒定書序列與熟練度建議"
+      ],
+      "extra_not_assumed_in_2005_page": true
+    }
+  ],
+  "version": "8.0_LABELED_SECONDARY_GUIDE_NOT_CLIENT_BUILD_CERTIFICATE",
+  "quest_name": "無法逃離的審判",
+  "canonical_game_quest_id": null,
+  "direct_portrait_prerequisite_edge_verified": false,
+  "prior_quest_requirements_reported": [
+    {
+      "name": "思念故鄉的貝克",
+      "type": "PREREQUISITE_REPORTED_BY_PLAYER_GUIDE",
+      "runtime_flag": null
+    },
+    {
+      "name": "黃泉之路",
+      "type": "PREREQUISITE_REPORTED_BY_PLAYER_GUIDE",
+      "runtime_flag": null
+    }
+  ],
+  "required_team_roles_reported": [
+    "暗靈法師",
+    "白狼勇士",
+    "追獵者"
+  ],
+  "npc_roles_reported": [
+    {
+      "name": "守衛隊隊長涅齊",
+      "role": "COMMISSION_AND_RETURN",
+      "location": "瑞而亞斯的會議廳",
+      "reported_xy": [
+        38,
+        28
+      ],
+      "actual_npc_id": null
+    },
+    {
+      "name": "竊賊貝特漢",
+      "role": "TRACK_AND_GATHER_RESEARCH_FRAGMENTS",
+      "location": "沈睡洞窟",
+      "reported_encounters": 3,
+      "actual_npc_id": null
+    },
+    {
+      "name": "研究者杉卓",
+      "role": "REPORTED_QUEST_OUTCOME_BOOKS",
+      "location": "瑞而亞斯的研究院",
+      "reported_city_entrance_xy": [
+        32,
+        44
+      ],
+      "actual_npc_id": null
+    }
+  ],
+  "locations_reported": [
+    {
+      "name": "瑞而亞斯之都",
+      "meeting_hall_entrance_xy": [
+        17,
+        69
+      ],
+      "research_institute_entrance_xy": [
+        32,
+        44
+      ],
+      "floor_id": null
+    },
+    {
+      "name": "無息之境",
+      "sleeping_cave_east_entrance_xy": [
+        123,
+        57
+      ],
+      "floor_id": null
+    },
+    {
+      "name": "沈睡洞窟－東",
+      "role": "WIND_SWITCH",
+      "switch_xy": [
+        94,
+        48
+      ],
+      "floor_id": null
+    },
+    {
+      "name": "沈睡洞窟－北",
+      "role": "EARTH_SWITCH",
+      "switch_xy": [
+        52,
+        10
+      ],
+      "floor_id": null
+    },
+    {
+      "name": "沈睡洞窟－南",
+      "role": "WATER_SWITCH",
+      "switch_xy": [
+        5,
+        79
+      ],
+      "floor_id": null
+    },
+    {
+      "name": "沈睡洞窟－西",
+      "role": "THIEF_INTERACTION",
+      "reported_thief_xy": [
+        48,
+        35
+      ],
+      "floor_id": null
+    },
+    {
+      "name": "沈睡洞窟－中",
+      "role": "POSSIBLE_THIEF_SEARCH_AREA_IN_GUIDE",
+      "floor_id": null
+    }
+  ],
+  "reported_sequence": [
+    "完成兩個具名前置及三職業配合",
+    "議會廳接受涅齊追捕委託",
+    "領取搜捕令",
+    "由無息之境入沈睡洞窟東",
+    "法師帶隊操作風機關，前往北",
+    "白狼帶隊操作地機關，前往南",
+    "追獵者帶隊操作水機關，前往西",
+    "與貝特漢對話取得足跡",
+    "追查三次取得三部分研究資料",
+    "回議會廳交付搜捕令及足跡",
+    "至研究院與杉卓接觸並獲得學習書（攻略敘述）"
+  ],
+  "items_reported": [
+    {
+      "name": "搜捕令",
+      "role": "REPORTED_RECEIPT_AND_TURNIN",
+      "item_id": null
+    },
+    {
+      "name": "竊賊的足跡",
+      "role": "REPORTED_RECEIPT_AND_TURNIN",
+      "item_id": null
+    },
+    {
+      "name": "三部分研究書",
+      "role": "REPORTED_THREE_FRAGMENTS",
+      "item_id": null
+    },
+    {
+      "name": "寵技習書（精練）",
+      "role": "REPORTED_OUTCOME",
+      "item_id": null
+    },
+    {
+      "name": "寵物學習書（鑽孔）",
+      "role": "REPORTED_OUTCOME",
+      "item_id": null
+    },
+    {
+      "name": "鑒定學習書（牙）",
+      "role": "REPORTED_OUTCOME_WITH_FOLLOWUP_MASTERY_CONDITION",
+      "item_id": null
+    }
+  ],
+  "evidence_contrasts": [
+    {
+      "type": "REPRINT_INDEPENDENCE",
+      "observation": "Guide pages share long mission sequence and player vocabulary; original OURSA attribution appears on the dated page",
+      "conclusion": "NOT_TWO_INDEPENDENT_FIRST_PARTY_WITNESSES"
+    },
+    {
+      "type": "PAGE_EXPANSION",
+      "observation": "17173 includes element clue, detailed thief coordinate list and identification order not in bounded dated Bahamut page",
+      "conclusion": "EXPANDED_OR_DIFFERENT_EDITORIAL_CONTENT_NOT_VERIFIED_SAME_2005_TEXT"
+    },
+    {
+      "type": "LATER_REWRITE_CONFLICT",
+      "observation": "2012 8.5 press links Judgment as prerequisite to portrait quest; 8.0 portrait walkthrough did not explicitly state that edge",
+      "conclusion": "VERSION_RULE_CHANGE_UNPROVEN"
+    }
+  ],
+  "original_publication_date_verified": false,
+  "publisher_patch_or_build_verified": false,
+  "sample_archived_2005_source_html_sha256": null,
+  "source_raw_html_retained": false,
+  "source_original_media_retained": false,
+  "graph_is_gameplay_implementation": false,
+  "unknowns": [
+    "原运营商脚本和任务条件判定",
+    "服务器/地区/构建ID",
+    "职业开关实际判定与队伍规则",
+    "地图floor_id与坐标基准",
+    "NPC/item/reward IDs与奖励事务",
+    "三段资料收集的服务端触发",
+    "该任务与画像任务8.0/8.5的真正前置关系",
+    "OURSA原始发表页和日期"
+  ],
+  "stop_condition": "FIRST_PARTY_RULE_NOT_FOUND_IN_BOUNDED_NAMED_TWO_PAGE_PACKAGE",
+  "next": "ALL_OFFICIAL_VERSION_NAMED_CONTENT_SOURCE-01",
+  "stage_a_family_status": "7_PARTIAL_2_OPEN",
+  "stage_b": "GATED",
+  "r79": "PAUSED_NON_BLOCKING"
+}

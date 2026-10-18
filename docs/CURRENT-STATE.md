@@ -15455,3 +15455,16 @@ NEXT仍`JSS-OFFICIAL-EVENT-RESULTS-PET-ATTRIBUTION-01`：仅取真实eventjsk链
 随最高待查`CN80_PORTRAIT_PREREQUISITE_VERSION_BOUNDARY-01`有限补证：巴哈姆特精华区 https://forum.gamer.com.tw/G2.php?bsn=1571&sn=2340 当前页面显示**2005-07-19 02:36:12「編輯」时间**，有具名《無法逃離的審判》玩家流程（需要贝克/黄泉任务及三职业协作、守卫队长涅齊/搜捕令/沉睡洞窟等）；文字字节未独立PIN，此日期也不是可证明的初版发表日或原服patch日期。它给出“审判”题材的一条有年代玩家文献线索，**没有声明「爱作画的少女」与之存在前置边**。2012年8.5报道记载的前置及“一幅画像”与原8.0标签攻略“五幅”的冲突仍未解；不存在据此肯定8.0原服前置为无、奖物品数量恰5或2005—2012官方修改的充分证据。
 
 对前置/奖励差异的本有限批结论`OPEN_EVIDENCE_LIMITED_NO_FIRST_PARTY_RULE`，停止这条旧攻略同文转载追索，不继续无源填NPC/任务flag。**最高NEXT转为`CN80_JUDGMENT_2005_NAMED_CONTENT-01`**：限用具编辑日期2005巴哈姆特审判指南提取新的具名人物/任务物品/职业条件线索，核来源身份与是否为转载，形成小型文献版内容图谱；若找不到更早原运营商/构建，明确UNKNOWN停止并回22域另一有源内容。九系统7 PARTIAL+2 OPEN、Stage B游戏/百科GATED、R79 PAUSED_NON_BLOCKING、不计总体复原百分比。
+
+
+## 2026-10-18 — CN80_JUDGMENT_2005_NAMED_CONTENT-01 文献图谱与转载证据界限
+
+本轮重新核实GitHub main `2b8121d3260c1469ffbaa11100233518b6ece2f2`/tree`a01cbb5f9e8ac3e8a3764317e00a3fbb59feb9fa`、该SHA 10项主线Actions SUCCESS、完整CURRENT `1eb635e3031da55598bfa20b0cc7e6a33ed0e26d`、协议与README、Design、Timeline、Source、Roadmap。完整历史前缀保留，旧结果不被替换。
+
+当前最高NEXT的巴哈姆特《無法逃離的審判》页面显示2005-07-19 02:36:12的**编辑**标签及楼主、编辑重灌郎、制作天波、感谢各地玩家、「出處OURSA~!」。并非官方公告或可证首发日期；OURSA重定向至pisces.sbun.org/oops/时本次网页阅读器返回403，不推断不存在任何存档。17173大陆8.0标签同名任务页面具更长文本，含额外机关提示/盗贼点位/鉴定序列；来源未定2005原字节，长段核心文本相似，不当两条独立官方见证。
+
+新有界内容图谱保留玩家指南中的涅齊、竊賊貝特漢、杉卓，要求先完成「思念故鄉的貝克」「黃泉之路」、暗靈法師/白狼勇士/追獵者组队，瑞而亞斯会議廳与無息之境/沈睡洞窟东南西北中/研究院、风地水机关次序，以及搜捕令/足迹/三段研究资料/精練、鑽孔、鑒定学习书相关奖励叙述。所有坐标作为XY整数二元组而非小数，全部属于玩家文献层，原客户端/服务器NPC、floor、物品ID、服务端状态、地图实参与奖物事务仍未知。早先2012年8.5报道提出审判为画像任务前置，但8.0标签画像玩家文并未说明，保持`OPEN_EVIDENCE_LIMITED_NO_FIRST_PARTY_RULE`。不把攻略对审判自身的两项前置混同画像的跨任务前置，也不照搬2019私服捷径/骑证说法。
+
+交付`research/recovered/STONEAGE-CN80-JUDGMENT-NAMED-CONTENT-R1.json`、`docs/specs/STONEAGE-CN80-JUDGMENT-NAMED-CONTENT-R1.md`、6项数据负例测试与GitHub Actions工作流。此包不下载/保管原网页HTML字节、原美术/程序，结构性CI验证只能证明文档边界，不能反证真服玩法。新HEAD验收另看真实运行，不预记SUCCESS。
+
+**最高NEXT `ALL_OFFICIAL_VERSION_NAMED_CONTENT_SOURCE-01`**：停止反复转引本任务，切到22域/全部官方版本中下一份可核具体日期与地区的原运营方具名宠物/剧情/人物/NPC/世界材料，优先第一方；无材料则写UNKNOWN转域，不展开低价值helper。Stage A 7 PARTIAL+2 OPEN、Stage B新作与百科生产GATED、R79 PAUSED_NON_BLOCKING，无整体完成百分比。

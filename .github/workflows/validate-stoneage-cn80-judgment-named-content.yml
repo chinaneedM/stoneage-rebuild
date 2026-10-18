@@ -1,0 +1,22 @@
+name: Validate CN8 judgment 2005 named content boundaries
+on:
+  push:
+    paths:
+      - research/recovered/STONEAGE-CN80-JUDGMENT-NAMED-CONTENT-R1.json
+      - docs/specs/STONEAGE-CN80-JUDGMENT-NAMED-CONTENT-R1.md
+      - tests/test_stoneage_cn80_judgment_named_content.py
+      - .github/workflows/validate-stoneage-cn80-judgment-named-content.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  bounded-secondary-source-graph:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Check source lineage, entities, coordinates, absent original server proof
+        run: python -m unittest tests.test_stoneage_cn80_judgment_named_content -v

@@ -3496,3 +3496,7 @@ eventmaz实际20010418085855有四村聊天室入口：マリナス东51南72、
 ### 2005-07-19编辑标记的《無法逃離的審判》玩家文献（无画作任务前置证据）
 
 巴哈姆特当前存活的精华区页面https://forum.gamer.com.tw/G2.php?bsn=1571&sn=2340 出示2005-07-19 02:36:12「編輯」，玩家指南记载审判任务自身的贝克/黄泉条件与三职业合作；此处日期为网页显示编辑时刻，**不是原服部署、任务首发或可证明全文至今未改**。这与2012年8.5报道声称其为画作任务前置属于不同事实；尚无同版本的官方事件脚本连线证据。来源暂为网页文本观察无原始SHA，归属OPEN。
+
+
+## 2005-07-19 edited player guide — 《無法逃離的審判》 (2026-10-18 audit)
+**Documented page field, not verified publisher timeline:** https://forum.gamer.com.tw/G2.php?bsn=1571&sn=2340 displays 2005-07-19 02:36:12 **EDITED**, author/editor credits and an explicit OURSA source attribution. It describes three-profession cooperation, a guard captain, a thief/research chase and learning books. This does not certify the initial posting date, 2005 deployment or a first-party server script. A current Mainland 8.0-labeled 17173 guide at https://news.17173.com/z/stoneage/renwu/sa80_06.shtml shares the core route and extends details, but its initial publication date and independence are unverified. Cross-quest portrait prerequisite and original IDs remain OPEN. Research bounds: `docs/specs/STONEAGE-CN80-JUDGMENT-NAMED-CONTENT-R1.md`.
