@@ -12,7 +12,7 @@ def fixtures():
         14:"得到5幅自画像"
     }
     for name, color, _place, cap, pay in PETS:
-        step[cap] = "去洞窟捕捉1级宠物"+name
+        step[cap] = "去洞窟(44.15)(37.20)(9.43)捕捉1级宠物"+name
         step[pay] = "返回迪伊恩交出"+name+"得到"+color+"颜料"
     guide = '<html><body>爱作画的少女 石器8.0版本任务全攻略 '+\
         ' '.join(f'{n}.{step[n]}' for n in range(1,15))+'</body></html>'
