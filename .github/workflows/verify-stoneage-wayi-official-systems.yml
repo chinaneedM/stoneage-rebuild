@@ -1,0 +1,37 @@
+name: Verify one original Wayi pet gear mentor and quest log source
+on:
+  push:
+    paths:
+      - tools/stoneage_wayi_official_systems.py
+      - tests/test_stoneage_wayi_official_systems.py
+      - research/recovered/STONEAGE-WAYI-OFFICIAL-SYSTEMS-R1.json
+      - .github/workflows/verify-stoneage-wayi-official-systems.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-bounded-replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Reject fabricated equipment slots reputation and quest flags
+        run: python -m unittest tests.test_stoneage_wayi_official_systems -v
+      - name: Reacquire pinned official Wayi page and classify only supported claims
+        run: python -m tools.stoneage_wayi_official_systems --output output/wayi-official-systems-r1.json
+      - name: Compare source-derived report to permanent research blob when present
+        run: |
+          if test -f research/recovered/STONEAGE-WAYI-OFFICIAL-SYSTEMS-R1.json; then
+            cmp output/wayi-official-systems-r1.json research/recovered/STONEAGE-WAYI-OFFICIAL-SYSTEMS-R1.json
+          else
+            echo "Research report not archived yet; first source discovery replay only"
+          fi
+      - uses: actions/upload-artifact@v4
+        if: success()
+        with:
+          name: wayi-official-systems-derived-only
+          path: output/wayi-official-systems-r1.json
+          retention-days: 30
