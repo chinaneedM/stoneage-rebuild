@@ -28,6 +28,13 @@ class QuestSourceNegativeTests(unittest.TestCase):
         self.assertIsNone(r["unknowns"]["quest_flags"])
         self.assertIsNone(r["original_publication_date"])
         self.assertFalse(r["prerequisites"]["none_proven"])
+    def test_fullwidth_source_coordinate_punctuation(self):
+        index, page = fixtures()
+        page = page.replace(b"(67.75)", "（67.75）".encode("utf-8"))
+        page = page.replace(b"(59.17)", "（59.17）".encode("utf-8"))
+        page = page.replace(b"(26.47)", "（26.47）".encode("utf-8"))
+        r = derive(index, page)
+        self.assertEqual(r["character_roles"][1]["reported_shop_internal_xy"], [26, 47])
     def test_wrong_official_or_redirected_location_rejected(self):
         for bad in [
             "http://news.17173.com/z/stoneage/renwu/sa80_05.shtml",
