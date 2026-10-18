@@ -15314,3 +15314,10 @@ NEXT仍`JSS-OFFICIAL-EVENT-RESULTS-PET-ATTRIBUTION-01`：仅取真实eventjsk链
 独立下载artifact`12132740022` ZIP4147B SHA256`bf7a1ce336ccda7a2126694854f8ab384c915e0afa34c7e361843816835c5c8e`与GitHub摘要一致，raw JSON18907B SHA256`3fdd731a6cce9f9c4aa80d30c861f84eda46701776deee4f882731897bbedfcd`、Git blob`1a3dc51a8c1cbaf04991068aa779b62e11d99384`与永久报告逐字节相同。源码/测试/旧FAQ/导航/请求链保管，不依赖30天artifact。原HTML/程序/资产不进Git。野良宠在此指无主状态，不认证野外遭遇对象或消失。
 
 此归档及后续main CI待实际另验；不能把当前11绿冒充新HEAD。NEXT仍PREPRODUCTION-CROSS-DOMAIN-MATERIAL-EVIDENCE-REVIEW-04，7 PARTIAL+2 OPEN、Stage B/百科GATED、R79暂停；无原服/具体bug修复执行或TW1.0身份晋升。
+
+
+### 2026-10-18 — JSS早期宠物更新史真实main验收
+
+研究源ba4cde0的11项Actions最终SUCCESS（FAQ attempt1网络拒绝失败与attempt2成功均保留），归档f92ca4c同SHA8项SUCCESS后，重新核main仍335c54c、ahead2/behind0、13路径，非强制快进至`f92ca4c6b6a067f234c56b75d328223dbc3e49dd`/tree`3070bc1d62b7e8caa5a981c738fa770f3437bce2`。该HEAD **12项main Actions全部实际SUCCESS**，含原更新史39115746527、两FAQ实源39115746628、SPR/ADRN39115746658及其它九项。名称/ID/结论永久载入PATCH-HISTORY-ACCEPTANCE-R1，原1954165B完整历史前缀与本轮所有中间记录保留；原HTML/资产不进Git。此回执自己的后续branch/main CI须另验，不借父提交12项冒充新HEAD。
+
+本轮有界完成FAQ41标题/9修复标签/12问答、单页更新史40索引/7宠物合同及两套来源保管，26项相关本地检查通过。原服/计时执行、具体同bug修复、原任务脚本、物种ID/成长公式及TW1.0同构建仍未认证。NEXT仍PREPRODUCTION-CROSS-DOMAIN-MATERIAL-EVIDENCE-REVIEW-04：真实内容回连22域后选择下一具名材料源，停止沿FAQ/更新页无界扩展。7 PARTIAL+2 OPEN、Stage B/百科GATED、R79暂停，无整体百分比。
