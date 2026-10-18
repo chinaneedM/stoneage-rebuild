@@ -1,0 +1,285 @@
+{
+  "schema": "stoneage.wayi.official_ice_region.acceptance.r1",
+  "startup_main": "12d45f491ece5aa53a66b8ce17a64ddab7978cd6",
+  "source_head": "9e0a7e5c06d91dbd1d901e0c377b49682bd60922",
+  "source_tree": "03f59e6ead7d9edf583e4590e7e71dfd231c7c92",
+  "source_runs": [
+    {
+      "id": 39119205167,
+      "name": "Verify official Wayi ice-region names and scene-caption attribution",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39119205230,
+      "name": "Validate Stage A early source gap triage",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39119205193,
+      "name": "Validate StoneAge Stage A joint review decision",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39119204979,
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39119205121,
+      "name": "Validate legacy StoneAge assistant history and pet content gaps",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39119205221,
+      "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39119205126,
+      "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39119205018,
+      "name": "Validate StoneAge preproduction content archive and wiki boundary",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39119205231,
+      "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39119205105,
+      "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "source_job": {
+    "id": 117651145313,
+    "name": "replay-one-detail-and-six-original-scenes",
+    "status": "completed",
+    "conclusion": "success",
+    "run_id": 39119205167,
+    "logs_url": null,
+    "steps": [
+      {
+        "name": "Set up job",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 1
+      },
+      {
+        "name": "Run actions/checkout@v4",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 2
+      },
+      {
+        "name": "Run actions/setup-python@v5",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 3
+      },
+      {
+        "name": "Run python -m pip install --quiet Pillow",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 4
+      },
+      {
+        "name": "Reject name normalization, caption swaps and inferred map/service identities",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 5
+      },
+      {
+        "name": "Independently reacquire official detail and six exact original JPEGs",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 6
+      },
+      {
+        "name": "Run actions/upload-artifact@v4",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 7
+      },
+      {
+        "name": "Post Run actions/setup-python@v5",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 13
+      },
+      {
+        "name": "Post Run actions/checkout@v4",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 14
+      },
+      {
+        "name": "Complete job",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 15
+      }
+    ]
+  },
+  "artifact": {
+    "id": 12133711646,
+    "name": "wayi-official-ice-region-derived-report",
+    "size_in_bytes": 5428,
+    "url": "https://api.github.com/repos/chinaneedM/stoneage-rebuild/actions/artifacts/12133711646",
+    "archive_download_url": "https://api.github.com/repos/chinaneedM/stoneage-rebuild/actions/artifacts/12133711646/zip",
+    "expired": false,
+    "created_at": "2026-10-18T10:25:53Z",
+    "expires_at": "2026-11-17T10:25:53Z",
+    "updated_at": "2026-10-18T10:25:53Z",
+    "digest": "sha256:a0921d4424d1821731f200025d774895de73150762849d49f113fce1b18500a9",
+    "workflow_run": {
+      "id": 39119205167,
+      "repository_id": 1374762421,
+      "head_repository_id": 1374762421,
+      "head_branch": "agent/wayi-official-ice-region-r1-20261018",
+      "head_sha": "9e0a7e5c06d91dbd1d901e0c377b49682bd60922"
+    }
+  },
+  "independent_zip_custody": {
+    "zip_bytes": 5428,
+    "zip_sha256": "a0921d4424d1821731f200025d774895de73150762849d49f113fce1b18500a9",
+    "github_digest_match": true,
+    "members": [
+      {
+        "member": "wayi-official-ice-region.json",
+        "path": "research/recovered/STONEAGE-WAYI-OFFICIAL-ICE-REGION-R1.json",
+        "bytes": 12142,
+        "sha256": "1d798c792baf1d48d36c5818bc9e08dd9cd97ca1ccfdbef3bede6235fce19bf8",
+        "git_blob": "2d934e012f60a825ab7882a6382df66ffaa15f53",
+        "exact_bytes_match": true
+      },
+      {
+        "member": "ice-region-content-catalog.json",
+        "path": "research/recovered/STONEAGE-WAYI-OFFICIAL-ICE-REGION-CONTENT-CATALOG-R1.json",
+        "bytes": 18167,
+        "sha256": "5b583ed3646c45475aac43d94bf22a6d84e5d2b79ad9ed44c2db756ca3838f1d",
+        "git_blob": "ad52dbfab9e93109ed984c2938bde7352e541c99",
+        "exact_bytes_match": true
+      }
+    ]
+  },
+  "source_commit_file_pins": [
+    {
+      "path": ".github/workflows/verify-stoneage-wayi-ice-region.yml",
+      "bytes": 1655,
+      "sha256": "d84abe55b561804be977c9ac0ba259b67bf36f90959272258165d98c040d38c5",
+      "git_blob": "9bf590cd51dcb9c2698f41faf9209618fa5e5964"
+    },
+    {
+      "path": "README.md",
+      "bytes": 18829,
+      "sha256": "24ca30356a3bfe854ef2a76d546db78f677b703e7edd2f2b422919351816e141",
+      "git_blob": "8c75dafc7859ba0673a191b5a2ed25bd807e7b7b"
+    },
+    {
+      "path": "docs/CURRENT-STATE.md",
+      "bytes": 1973753,
+      "sha256": "54ae72bd4fc16e969c5e2118140017c10a2bb98879a96a7b84d576649bd9db47",
+      "git_blob": "6ada94b7bf316b5712f0527f5532112560daf982"
+    },
+    {
+      "path": "docs/HISTORICAL-TIMELINE.md",
+      "bytes": 439068,
+      "sha256": "7ed4c6e1fe054914593c348d8d31b2c459de0f2d25d3a346efc6accd28756f7d",
+      "git_blob": "35f421cc0c2eca1ddd70d3ad1f4ae32f171b8603"
+    },
+    {
+      "path": "docs/RESTORATION-ROADMAP-R2.md",
+      "bytes": 68445,
+      "sha256": "abcafe98f3606165fa8400292273623140621188da500168714157080d21f7a5",
+      "git_blob": "c77663e9a385f2188311b86c3d9211f052c55d45"
+    },
+    {
+      "path": "docs/SOURCE-REGISTRY.md",
+      "bytes": 696462,
+      "sha256": "a695b19e3855001a6e6f7a409f6ec0c7cab58c5d5d29f7517d05571b5675a768",
+      "git_blob": "ab6694afd87255197f7b68142a9751c9a028bc98"
+    },
+    {
+      "path": "docs/specs/STONEAGE-WAYI-OFFICIAL-ICE-REGION-R1.md",
+      "bytes": 5303,
+      "sha256": "d3e977c6d1641f2d3f32511a0cd4eec41d623460a4bb63215df217de8988256b",
+      "git_blob": "b1e51c7f30716c2cfa12586a3da744bf85305392"
+    },
+    {
+      "path": "research/recovered/STONEAGE-WAYI-OFFICIAL-ICE-REGION-CONTENT-CATALOG-R1.json",
+      "bytes": 18167,
+      "sha256": "5b583ed3646c45475aac43d94bf22a6d84e5d2b79ad9ed44c2db756ca3838f1d",
+      "git_blob": "ad52dbfab9e93109ed984c2938bde7352e541c99"
+    },
+    {
+      "path": "research/recovered/STONEAGE-WAYI-OFFICIAL-ICE-REGION-R1.json",
+      "bytes": 12142,
+      "sha256": "1d798c792baf1d48d36c5818bc9e08dd9cd97ca1ccfdbef3bede6235fce19bf8",
+      "git_blob": "2d934e012f60a825ab7882a6382df66ffaa15f53"
+    },
+    {
+      "path": "research/recovered/STONEAGE-WAYI-OFFICIAL-ICE-REGION-SOURCE-INTAKE-R1.json",
+      "bytes": 8789,
+      "sha256": "65834bdf3ff60017ab914ef2e258cefb682ec0b5f5986997ca68c13d5540912b",
+      "git_blob": "f1b5604d000dcc6d1015397b26ab3d61e2a5f61a"
+    },
+    {
+      "path": "tests/test_stoneage_wayi_ice_region.py",
+      "bytes": 8256,
+      "sha256": "7885a0774c20c95fc2ce1fa3217d1f8a2932230b4da6e2b7dc4a0f36a82f5c95",
+      "git_blob": "d4e54a557fae3e50ef16cfd06337070f4e8bec17"
+    },
+    {
+      "path": "tools/stoneage_wayi_ice_region.py",
+      "bytes": 17391,
+      "sha256": "33f9a4aa669a7a455208b6cc29d5a7b2fc013e16fad5393a87f6c7036a6bc938",
+      "git_blob": "c32cf05b8dc21be38b97837a38413e496edcfd33"
+    }
+  ],
+  "source_contract": {
+    "new_html_bodies": 1,
+    "original_scenes": 6,
+    "named_map_labels": 12,
+    "shared_research_records": 19,
+    "original_raw_assets_in_git": false,
+    "name_conflict_preserved": true,
+    "exact_client_build_known": false,
+    "riding_rules_proven": false,
+    "map_routes_or_npc_pet_identity_recovered": false,
+    "jss1999_or_tw10_same_build_promoted": false
+  },
+  "source_failed_attempts": [],
+  "main_acceptance": {
+    "status": "PENDING_NOT_PRECLAIMED"
+  },
+  "next_priority": "TW-WAYI-OFFICIAL-INTRO-DETAIL-02",
+  "existing_contract_pins": [
+    {
+      "path": "research/recovered/STONEAGE-WAYI-OFFICIAL-WORLDLINE-R1.json",
+      "bytes": 11952,
+      "sha256": "619c2b931174058b87eb97631beb11a995c41fedb26010a94c42e9cc54aa785b",
+      "git_blob": "be6fc0ae90243f49af8366c3817ae464c5412c18"
+    },
+    {
+      "path": "research/recovered/STONEAGE-PREPRODUCTION-CONTENT-ARCHIVE-R1.json",
+      "bytes": 24489,
+      "sha256": "e87afebc8c9590142c7cc8831b578455b3427bf7c1d10520ae02a3e8082fbddb",
+      "git_blob": "2d5b3f081d5618287f431fbded943722a820c593"
+    }
+  ]
+}

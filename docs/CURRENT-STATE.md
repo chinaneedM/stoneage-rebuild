@@ -15381,3 +15381,9 @@ NEXT仍`JSS-OFFICIAL-EVENT-RESULTS-PET-ATTRIBUTION-01`：仅取真实eventjsk链
 永久派生与规格：`research/recovered/STONEAGE-WAYI-OFFICIAL-ICE-REGION-R1.json`、`STONEAGE-WAYI-OFFICIAL-ICE-REGION-CONTENT-CATALOG-R1.json`、`STONEAGE-WAYI-OFFICIAL-ICE-REGION-SOURCE-INTAKE-R1.json`及`docs/specs/STONEAGE-WAYI-OFFICIAL-ICE-REGION-R1.md`。本地19项边界测试通过；新增独立一正文/六图、两JSON逐字节重放工作流，远端结果与ZIP/raw/Git blob保管链须随后实际验收，未提前宣称。
 
 **最高NEXT `TW-WAYI-OFFICIAL-INTRO-DETAIL-02`**：沿既验介绍页第二条真实未读game01_02.asp，最多一正文，先核题名/内容，形成一份具名宠物/人物/故事/环境或玩法合同即止；若重复、空或有限取源失败，记录具体结果并回全官方22域队列，不自动递归第三/四页。Stage A仍7 PARTIAL+2 OPEN，Stage B/百科GATED，R79暂停，无整体百分比。
+
+
+### 2026-10-18 — 冰世界详情与六场景独立源重放/永久保管
+
+研究源9e0a7e5c06d91dbd1d901e0c377b49682bd60922/tree03f59e6ead7d9edf583e4590e7e71dfd231c7c92同HEAD10项Actions全部SUCCESS。独立源重放run39119205167/job117651145313重新实取1正文6JPEG，19项反例检查及两JSON逐字节cmp均SUCCESS，无失败请求/重跑。artifact12133711646另行下载ZIP5428B SHA256a0921d4424d1821731f200025d774895de73150762849d49f113fce1b18500a9与GitHub摘要一致；两成员12142/18167B SHA2561d798c792baf1d48d36c5818bc9e08dd9cd97ca1ccfdbef3bede6235fce19bf8 / 5b583ed3646c45475aac43d94bf22a6d84e5d2b79ad9ed44c2db756ca3838f1d，Git blob2d934e012f60a825ab7882a6382df66ffaa15f53 / ad52dbfab9e93109ed984c2938bde7352e541c99，与永久派生逐字节一致。
+源码/测试/原请求/旧入口与共享资料合同/10项运行链写ICE-REGION-ACCEPTANCE-R1，不依赖30天附件。原HTML/JPEG/程序不入Git；本次归档及main尚待随后独立验收，父HEAD成功不代替新HEAD。12地图名称/6场景/19研究条目不证明可玩地图、NPC宠物身份、精确构建或统一无矛盾地名。NEXT仍TW-WAYI-OFFICIAL-INTRO-DETAIL-02；7 PARTIAL+2 OPEN、Stage B/百科GATED、R79暂停。
