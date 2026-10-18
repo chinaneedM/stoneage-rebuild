@@ -144,7 +144,133 @@
   "jss1999_or_tw10_same_build_promoted": false,
   "original_html_pixels_or_binaries_retained_in_git": false,
   "main_acceptance": {
-    "status": "PENDING_NOT_PRECLAIMED"
+    "status": "SUCCESS",
+    "head": "cc9d39d9257795f3b3c8136d7d590ebf2a0358a7",
+    "tree": "7d8341a6f32f2f25847d41d2b129c1d95e713429",
+    "count": 11,
+    "runs": [
+      {
+        "id": 39118227595,
+        "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39118227592,
+        "name": "Verify official Wayi world synopsis and bounded version relationships",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39118227470,
+        "name": "Validate StoneAge preproduction content archive and wiki boundary",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39118227562,
+        "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39118227561,
+        "name": "Validate legacy StoneAge assistant history and pet content gaps",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39118227423,
+        "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39118227458,
+        "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39118227495,
+        "name": "Validate StoneAge Stage A joint review decision",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39118227428,
+        "name": "Validate Stage A early source gap triage",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39118227434,
+        "name": "Validate Stage A evidence-limited review acceptance",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39118227402,
+        "name": "Independently verify TW1.0 R58 rooted helper returns and source custody",
+        "status": "completed",
+        "conclusion": "success"
+      }
+    ],
+    "receipt_commit_requires_separate_ci": true
   },
-  "next_priority": "TW-WAYI-OFFICIAL-INTRO-DETAIL-01"
+  "next_priority": "TW-WAYI-OFFICIAL-INTRO-DETAIL-01",
+  "archive_branch_acceptance": {
+    "head": "cc9d39d9257795f3b3c8136d7d590ebf2a0358a7",
+    "count": 8,
+    "runs": [
+      {
+        "id": 39118189474,
+        "name": "Validate StoneAge Stage A joint review decision",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39118189328,
+        "name": "Validate legacy StoneAge assistant history and pet content gaps",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39118189285,
+        "name": "Validate StoneAge preproduction content archive and wiki boundary",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39118189025,
+        "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39118189430,
+        "name": "Validate Stage A evidence-limited review acceptance",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39118189294,
+        "name": "Validate Stage A early source gap triage",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39118189475,
+        "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39118189396,
+        "name": "Verify official Wayi world synopsis and bounded version relationships",
+        "status": "completed",
+        "conclusion": "success"
+      }
+    ]
+  }
 }
