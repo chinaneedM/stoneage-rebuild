@@ -1,0 +1,116 @@
+{
+  "schema": "stoneage.jss.pet_patch_history.source_intake.r1",
+  "task": "JSS-FIRST-PARTY-PATCH-PET-QUEST-01",
+  "remote_parent_head": "335c54cfc9e7ce07ccdb880eba7ffcbf8d3cce4b",
+  "remote_parent_tree": "f06ae3ddadc4c0e4a5b18138a0549e69e7059c74",
+  "acquisition_attempts": [
+    {
+      "requested_url": "https://web.archive.org/web/20010418000000id_/http://www.titan.co.jp/stoneage/verup.html",
+      "requested_at_utc": "2026-10-18T09:25:04Z",
+      "source_edge": "Previously authenticated top->verup; one bounded adjacent update-record preflight",
+      "final_url": "https://web.archive.org/web/20010417162544id_/http://www.titan.co.jp/stoneage/verup.html",
+      "status": 200,
+      "bytes": 11239,
+      "sha256": "ba71d859f34f31261f4293dc61583c53a8e77133898c4a8148c544a452abc3cb"
+    }
+  ],
+  "report": {
+    "path": "research/recovered/STONEAGE-JSS-PET-PATCH-HISTORY-R1.json",
+    "bytes": 18907,
+    "sha256": "3fdd731a6cce9f9c4aa80d30c861f84eda46701776deee4f882731897bbedfcd",
+    "git_blob": "1a3dc51a8c1cbaf04991068aa779b62e11d99384"
+  },
+  "previous_navigation_and_faq": [
+    {
+      "path": "research/recovered/STONEAGE-HISTORICAL-SITE-NAVIGATION-R1.json",
+      "bytes": 219534,
+      "sha256": "7bec788ca9101aa7a06543c0df2fb15b6bc407fd47141b51cc1a99e216cd61cd",
+      "git_blob": "83ea18a70aca5f0c1c80280669ef99e344bdb52a"
+    },
+    {
+      "path": "research/recovered/STONEAGE-JSS-FIRST-PARTY-PET-FAQ-R1.json",
+      "bytes": 18138,
+      "sha256": "38ebbeca6b04d4a3a229da8ac117e76bc083fcd6e03b7ece6db660b58cf153b0",
+      "git_blob": "072f407f82c78f06a09be81c06858a1c604ae277"
+    }
+  ],
+  "parent_main_successes": {
+    "status": "SUCCESS",
+    "head": "335c54cfc9e7ce07ccdb880eba7ffcbf8d3cce4b",
+    "tree": "f06ae3ddadc4c0e4a5b18138a0549e69e7059c74",
+    "count": 11,
+    "runs": [
+      {
+        "id": 39115263423,
+        "name": "Validate Stage A early source gap triage",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39115263252,
+        "name": "Verify JSS FAQ pet defect labels and gameplay evidence boundaries",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39115263520,
+        "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39115263193,
+        "name": "Validate Stage A evidence-limited review acceptance",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39115263445,
+        "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39115263365,
+        "name": "Validate StoneAge Stage A joint review decision",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39115263467,
+        "name": "Validate legacy StoneAge assistant history and pet content gaps",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39115263330,
+        "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39115263446,
+        "name": "Independently verify TW1.0 R58 rooted helper returns and source custody",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39115263379,
+        "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39115263383,
+        "name": "Validate StoneAge preproduction content archive and wiki boundary",
+        "status": "completed",
+        "conclusion": "success"
+      }
+    ],
+    "receipt_commit_requires_separate_ci": true
+  },
+  "raw_originals_retained_in_git": false,
+  "additional_links_followed": false,
+  "bounded_stop": "One actual update page with40 metadata rows and7 selected pet contracts; no recursive all40 semantic expansion",
+  "next_priority": "PREPRODUCTION-CROSS-DOMAIN-MATERIAL-EVIDENCE-REVIEW-04"
+}

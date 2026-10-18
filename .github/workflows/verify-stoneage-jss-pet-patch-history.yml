@@ -1,0 +1,33 @@
+name: Verify JSS dated pet changes and reject exact FAQ fix overclaims
+on:
+  push:
+    paths:
+      - tools/stoneage_jss_pet_patch_history.py
+      - tools/stoneage_jss_pet_faq.py
+      - tests/test_stoneage_jss_pet_patch_history.py
+      - docs/specs/STONEAGE-JSS-PET-PATCH-HISTORY-R1.md
+      - research/recovered/STONEAGE-JSS-PET-PATCH-HISTORY*.json
+      - .github/workflows/verify-stoneage-jss-pet-patch-history.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  replay-one-dated-update-page:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify separate dates, duplicate entries, weekday conflict and timer contexts
+        run: python -m unittest tests.test_stoneage_jss_pet_patch_history -v
+      - name: Independently reacquire official update source and exactly replay metadata
+        run: |
+          python -m tools.stoneage_jss_pet_patch_history --output "${{ runner.temp }}/jss-pet-patch-history.json"
+          cmp "${{ runner.temp }}/jss-pet-patch-history.json" research/recovered/STONEAGE-JSS-PET-PATCH-HISTORY-R1.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: jss-pet-patch-history-derived-report
+          path: ${{ runner.temp }}/jss-pet-patch-history.json
+          retention-days: 30

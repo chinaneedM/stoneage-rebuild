@@ -15290,3 +15290,18 @@ NEXT仍`JSS-OFFICIAL-EVENT-RESULTS-PET-ATTRIBUTION-01`：仅取真实eventjsk链
 研究源`ea365b6113aecaf5c489cf77aae168e7a3bcf62a`/tree`e1362ca75836e05e2de4c0bcaf2ea9de103c5f9b`同SHA10项Actions全部实际SUCCESS；专用source Action`39115082086`/job`117639133446`独立重取两官网FAQ，15项反例检查通过，永久派生报告精确重放。独立下载artifact`12131533012` ZIP4965B SHA256`257892e46aa2bc2e442f8204d1b6365eb98286831228d47cb2629d4b13706c91`与GitHub摘要相符，raw JSON18138B SHA256`38ebbeca6b04d4a3a229da8ac117e76bc083fcd6e03b7ece6db660b58cf153b0`、Git blob`072f407f82c78f06a09be81c06858a1c604ae277`与Git派生文件逐字节一致。源码/测试/旧导航/请求记录及十项运行链写入FAQ-ACCEPTANCE-R1，不依赖30天CI保留期。原HTML/图片/音效/程序不入Git。
 
 此归档提交及最终main CI仍须随后实际验收，不提前宣称。只取得运营商文献层，不宣称原宠物技能丢失修复执行、任务脚本、物种/成长公式或TW1.0同构建。NEXT仍JSS-FIRST-PARTY-PATCH-PET-QUEST-01，7 PARTIAL+2 OPEN、Stage B/百科GATED、R79暂停。
+
+
+### 2026-10-18 — JSS官方FAQ真实main验收
+
+研究源ea365b6同SHA10项SUCCESS，归档335c54c同SHA8项SUCCESS后，重新核main仍5d2fdd6、ahead2/behind0、12路径0删除，非强制快进至`335c54cfc9e7ce07ccdb880eba7ffcbf8d3cce4b`/tree`f06ae3ddadc4c0e4a5b18138a0549e69e7059c74`。该HEAD11项main Actions全部实际SUCCESS，含两FAQ实源重取39115263252、SPR/ADRN39115263379和其余九项；全部名称/ID写入FAQ-ACCEPTANCE-R1，原1954165B历史前缀完整。此回执自己的后续CI另验，不借父提交结果。
+
+## 2026-10-18 — 相邻原更新史补证：JSS宠物寄存与邮件时间条件
+
+按刚记录最高JSS-FIRST-PARTY-PATCH-PET-QUEST-01，只取此前top真实verup.html，实际20010417162544/11239B SHA256`ba71d859f34f31261f4293dc61583c53a8e77133898c4a8148c544a452abc3cb`。这是2001快照保存的运营商1999—2000自标更新史，不是1999实时档案/客户端/独立部署见证。40日期块全保原序/指纹，同1999-12-20两条不合并，1999/11/9原标金而公历火的矛盾并列保存。正文足够，不追updater/manual，不下载程序。
+
+七组实际内容合同：2000-01-31初始村宠物店寄存开放；2000-02-07竞技场寄存处/寄存技能问题修正；2000-01-25DUEL旅は道連れ/换宠修正；1999-10-25地球一周问题修正、邮件宠物返回前退出的12小时不被他人拾取/期间登录返回；1999-10-26已返回邮件宠物5分钟变野宠；1999-11-08增加物品合成/调理宠物技能。两种邮件条件不合成全部放地宠物通用计时，变野宠不写成消失。补丁泛称技能问题只支持同功能/缺陷族，不认证FAQ具体丢失/反击卡战同一个bug。
+
+本页未见カナン/ククロス/ヤン＝ミト三个具体标签，保留fix_date null，不推全网缺席。构建号、物种/技能ID、寄存费用、成长公式、原服脚本仍未知。规范STONEAGE-JSS-PET-PATCH-HISTORY-R1、永久40日期索引/7合同、SOURCE-INTAKE、解析器/11反例及单页实源workflow已形成。本地11项PASS/精确重放已实证；后续分支/main和ZIP/raw保管待真实验收。原HTML/资产不入Git，游戏模型未改。
+
+**最高NEXT `PREPRODUCTION-CROSS-DOMAIN-MATERIAL-EVIDENCE-REVIEW-04`**：把近几包真实操作/图像、社交会场、第一回结果、FAQ、七组日期合同回连22域，选一项能增加具名人物/宠物/NPC/任务或实际场景的材料来源。不因40条仍可读而继续逐条扩，不重复API/资源编号验收，不重开R79。Stage A7 PARTIAL+2 OPEN、Stage B游戏/百科生产GATED，无整体百分比。

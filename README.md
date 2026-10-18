@@ -246,3 +246,14 @@ server scripts, species IDs and Taiwan-v1 build identity.
 See [FAQ source specification](docs/specs/STONEAGE-JSS-FIRST-PARTY-PET-FAQ-R1.md).
 NEXT: `JSS-FIRST-PARTY-PATCH-PET-QUEST-01`, a bounded authentic update-record source.
 Stage B and public wiki production remain gated.
+
+
+### Early JSS pet change history — 2026-10-18
+
+One original operator update page preserves40 dated entries and seven selected
+pet contracts: boarding availability/skill defects, separate pet-mail timer
+contexts, and synthesis/cooking additions. Generic fixes are not exact FAQ
+symptom matches. The2001 capture preserves operator-written1999–2000 history,
+not launch/Taiwan-v1 build identity. See [dated pet changes](docs/specs/STONEAGE-JSS-PET-PATCH-HISTORY-R1.md).
+NEXT: `PREPRODUCTION-CROSS-DOMAIN-MATERIAL-EVIDENCE-REVIEW-04`, a finite22-domain material review.
+Stage B/wiki gated; R79 paused.

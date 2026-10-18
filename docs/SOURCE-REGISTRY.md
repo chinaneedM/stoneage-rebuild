@@ -7064,3 +7064,10 @@ STONEAGE-HISTORICAL-WIKI-QUERY-CONTRACT-DRAFT-R1.json引用四个既有派生Git
 - faqgame真实目录链接因明确敌/宠显示问题而选择，实际20010424225131，5155B SHA256`1676093fcccaaeacd234df2dcd7fa05f1c0337c365dc787aea83b3f41fafcf91`，12问答。正文具名任务仍在调查、决斗刷新榜单/窗口256色与时间调色板说明、历史支持建议分开登记。
 - faqquest的一般提问标题不能从文件名判成任务攻略，该正文与faqstart、兼容声音档sa_se.lzh未请求。无图片/音效/程序取得；正文/目录快照不当修复时间或同构建。
 - 永久派生报告与SOURCE-INTAKE保留各题/答案指纹、归属、原请求/最终响应及完整历史前缀摘要；规格STONEAGE-JSS-FIRST-PARTY-PET-FAQ-R1。原HTML/版权资产不入Git。独立来源CI、ZIP/raw/Git blob及主线接受仅在真实运行后登记。
+
+
+## 2026-10-18 — JSS-FIRST-PARTY-PATCH-PET-QUEST-01单页更新史
+
+- 旧已验top真实http://www.titan.co.jp/stoneage/verup.html，实际20010417162544，11239B SHA256`ba71d859f34f31261f4293dc61583c53a8e77133898c4a8148c544a452abc3cb`，Shift-JIS严格解码。2001档案中的运营商1999-10-18至2000-09-11自标日期，不是1999档案/部署或构建认证。
+- 全40有序日期块只存原日期/星期/正文指纹，含同日两记录及星期冲突；选择7组宠物寄存/技能/邮件语义，不宣称40条完整恢复。FAQ比较源SHA256`38ebbeca6b04d4a3a229da8ac117e76bc083fcd6e03b7ece6db660b58cf153b0`；泛称修复只同功能/缺陷族，不认证具体症状。三具体任务标签未见只是此页结果。
+- updater/manual未跟随，无程序/原资产下载。PATCH-HISTORY-SOURCE-INTAKE-R1保请求/最终URL/前置身份，永久派生/规范与独立来源验收分开保管。原HTML不入Git。
