@@ -1,0 +1,157 @@
+{
+  "completion": {
+    "cannot_ride_pet_during_portrait": true,
+    "original_item_id": null,
+    "reported_count": 5,
+    "reported_reward": "自画像",
+    "transaction_verified": false
+  },
+  "conflict_disposition": "COEXISTING_UNRESOLVED_VERSION_OR_EDITORIAL_VARIANCE_NOT_AUTO_MERGED",
+  "material_roles": [
+    {
+      "kind": "PIGMENT_COLOR",
+      "name": "红色颜料",
+      "original_item_id": null
+    },
+    {
+      "kind": "PIGMENT_COLOR",
+      "name": "黄色颜料",
+      "original_item_id": null
+    },
+    {
+      "kind": "PIGMENT_COLOR",
+      "name": "黑色颜料",
+      "original_item_id": null
+    },
+    {
+      "kind": "PIGMENT_COLOR",
+      "name": "白色颜料",
+      "original_item_id": null
+    },
+    {
+      "kind": "PIGMENT_COLOR",
+      "name": "蓝色颜料",
+      "original_item_id": null
+    }
+  ],
+  "metadata_only_no_copyrighted_html": true,
+  "next_priority": "CN80_PORTRAIT_PREREQUISITE_VERSION_BOUNDARY-01",
+  "npc_roles": [
+    {
+      "name_as_written": "纱美加",
+      "npc_id": null,
+      "reported_urban_xy": [
+        67,
+        75
+      ],
+      "role": "QUEST_GIVER_AND_PORTRAIT_REWARD"
+    },
+    {
+      "name_as_written": "迪伊恩",
+      "npc_id": null,
+      "reported_shop_internal_xy": [
+        26,
+        47
+      ],
+      "reported_shop_urban_xy": [
+        59,
+        17
+      ],
+      "role": "PET_TURNIN_AND_PIGMENT_ISSUER"
+    }
+  ],
+  "original_server_reward_assignment_proven": false,
+  "pet_turnins": [
+    {
+      "actual_encounter_and_drop_verified": false,
+      "location_floor_id": null,
+      "location_reference": "北岛迷幻洞窟",
+      "pet_master_id": null,
+      "pet_name_as_written": "贝洛宝利",
+      "pigment_color": "红色",
+      "reported_capture_level": 1,
+      "source_step_capture": 3,
+      "source_step_turn_in": 4
+    },
+    {
+      "actual_encounter_and_drop_verified": false,
+      "location_floor_id": null,
+      "location_reference": "南岛拉多拉洞窟3F",
+      "pet_master_id": null,
+      "pet_name_as_written": "加比奥",
+      "pigment_color": "黄色",
+      "reported_capture_level": 1,
+      "source_step_capture": 5,
+      "source_step_turn_in": 6
+    },
+    {
+      "actual_encounter_and_drop_verified": false,
+      "location_floor_id": null,
+      "location_reference": "吉鲁岛漆黑洞窟5F",
+      "pet_master_id": null,
+      "pet_name_as_written": "朵洛将恩",
+      "pigment_color": "黑色",
+      "reported_capture_level": 1,
+      "source_step_capture": 7,
+      "source_step_turn_in": 8
+    },
+    {
+      "actual_encounter_and_drop_verified": false,
+      "location_floor_id": null,
+      "location_reference": "吉鲁岛没落的矿坑三楼",
+      "pet_master_id": null,
+      "pet_name_as_written": "格尔希洛",
+      "pigment_color": "白色",
+      "reported_capture_level": 1,
+      "source_step_capture": 9,
+      "source_step_turn_in": 10
+    },
+    {
+      "actual_encounter_and_drop_verified": false,
+      "location_floor_id": null,
+      "location_reference": "吉鲁岛漆黑洞窟18F",
+      "pet_master_id": null,
+      "pet_name_as_written": "布林帖斯",
+      "pigment_color": "蓝色",
+      "reported_capture_level": 1,
+      "source_step_capture": 11,
+      "source_step_turn_in": 12
+    }
+  ],
+  "prerequisite_evidence": [
+    {
+      "claimed_version": "8.0",
+      "id": "GUIDE_80",
+      "no_prerequisite_inferred": false,
+      "reported_reward_count": 5,
+      "source_tier": "PLAYER_WALKTHROUGH",
+      "source_url": "https://news.17173.com/z/stoneage/renwu/sa80_05.shtml",
+      "stated_prerequisite": null
+    },
+    {
+      "claimed_version": "8.5",
+      "id": "ARTICLE_2012",
+      "independent_original_server_script": false,
+      "published": "2012-04-10 14:57:31",
+      "reported_reward_count_from_narrative": 1,
+      "requires_prior_quest": "无法逃离的审判",
+      "source_tier": "LATER_PROMOTIONAL_NEWS_UNPINNED",
+      "source_url": "https://news.17173.com/content/2012-04-10/20120410145731224.shtml"
+    }
+  ],
+  "quest_count": 1,
+  "quest_id": null,
+  "quest_state_machine_executable": false,
+  "same_build_tw10_proven": false,
+  "schema": "stoneage.cn80.portrait_quest.research_graph_r1",
+  "source_byte_pinning": {
+    "both_live_https_exact_original_urls": true,
+    "detail_sha256": "328571c2dbabbb337f27f06a76ecaf3eeae621fdad4a0979d8089e980dfd8e19",
+    "index_sha256": "84a4f0bb593f09d2f5dbd180142870b267d846c2c898f9d78477a3e38b7bba8f"
+  },
+  "source_quest_title": "爱作画的少女",
+  "source_report_expected_sha256": "a8fbd74485e53d3a0e6bab442339947a08102fcfa890fd8ce768803a614fbc74",
+  "source_report_path": "research/recovered/STONEAGE-CN80-PORTRAIT-QUEST-R1.json",
+  "source_scope": "17173_CN_80_PLAYER_GUIDE_CURRENT_LIVE_BYTES_NOT_DATED_2005_CAPTURE",
+  "version_marketing_label": "8.0"
+}

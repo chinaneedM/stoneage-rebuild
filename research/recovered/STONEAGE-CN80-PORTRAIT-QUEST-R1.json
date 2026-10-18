@@ -1,0 +1,140 @@
+{
+  "archival_snapshot_date": null,
+  "capture_turnin_pair_count": 5,
+  "character_roles": [
+    {
+      "name_as_written": "纱美加",
+      "npc_id": null,
+      "reported_urban_xy": [
+        67,
+        75
+      ],
+      "role": "QUEST_GIVER_AND_PORTRAIT_REWARD"
+    },
+    {
+      "name_as_written": "迪伊恩",
+      "npc_id": null,
+      "reported_shop_internal_xy": [
+        26,
+        47
+      ],
+      "reported_shop_urban_xy": [
+        59,
+        17
+      ],
+      "role": "PET_TURNIN_AND_PIGMENT_ISSUER"
+    }
+  ],
+  "completion": {
+    "cannot_ride_pet_during_portrait_scene_reported": true,
+    "reported_portrait_reward_count": 5,
+    "requires_five_reported_pigment_colors": true,
+    "server_script_or_actual_reward_state_proven": false
+  },
+  "game_production_started": false,
+  "history_family_status_changed": false,
+  "name_variants": {
+    "identity_equivalence_confirmed": false,
+    "official_2005_ice_region": "瑞爾亞斯",
+    "walkthrough_city": "瑞而亚斯"
+  },
+  "next": "CN80_PORTRAIT_PREREQUISITE_VERSION_BOUNDARY-01",
+  "original_publication_date": null,
+  "package": "CN80_NAMED_QUEST_ORIGINAL_SOURCE_TRACE-01",
+  "pet_to_pigment": [
+    {
+      "actual_encounter_and_drop_verified": false,
+      "location_floor_id": null,
+      "location_reference": "北岛迷幻洞窟",
+      "pet_master_id": null,
+      "pet_name_as_written": "贝洛宝利",
+      "pigment_color": "红色",
+      "reported_capture_level": 1,
+      "source_step_capture": 3,
+      "source_step_turn_in": 4
+    },
+    {
+      "actual_encounter_and_drop_verified": false,
+      "location_floor_id": null,
+      "location_reference": "南岛拉多拉洞窟3F",
+      "pet_master_id": null,
+      "pet_name_as_written": "加比奥",
+      "pigment_color": "黄色",
+      "reported_capture_level": 1,
+      "source_step_capture": 5,
+      "source_step_turn_in": 6
+    },
+    {
+      "actual_encounter_and_drop_verified": false,
+      "location_floor_id": null,
+      "location_reference": "吉鲁岛漆黑洞窟5F",
+      "pet_master_id": null,
+      "pet_name_as_written": "朵洛将恩",
+      "pigment_color": "黑色",
+      "reported_capture_level": 1,
+      "source_step_capture": 7,
+      "source_step_turn_in": 8
+    },
+    {
+      "actual_encounter_and_drop_verified": false,
+      "location_floor_id": null,
+      "location_reference": "吉鲁岛没落的矿坑三楼",
+      "pet_master_id": null,
+      "pet_name_as_written": "格尔希洛",
+      "pigment_color": "白色",
+      "reported_capture_level": 1,
+      "source_step_capture": 9,
+      "source_step_turn_in": 10
+    },
+    {
+      "actual_encounter_and_drop_verified": false,
+      "location_floor_id": null,
+      "location_reference": "吉鲁岛漆黑洞窟18F",
+      "pet_master_id": null,
+      "pet_name_as_written": "布林帖斯",
+      "pigment_color": "蓝色",
+      "reported_capture_level": 1,
+      "source_step_capture": 11,
+      "source_step_turn_in": 12
+    }
+  ],
+  "prerequisites": {
+    "later_2012_8_5_claim_to_verify_separately": "无法逃离的审判",
+    "none_proven": false,
+    "stated_in_this_guide": null
+  },
+  "r79_unpaused": false,
+  "schema": "stoneage.cn80.named_quest_portrait.source_r1",
+  "site_scope": "17173_STONEAGE_80_MAINLAND_JINSHAN_LABELED_PORTAL",
+  "source_chain": {
+    "detail": {
+      "bytes": 24459,
+      "claimed_version": "8.0",
+      "codec": "utf-8",
+      "heading": "爱作画的少女",
+      "sha256": "328571c2dbabbb337f27f06a76ecaf3eeae621fdad4a0979d8089e980dfd8e19",
+      "url": "https://news.17173.com/z/stoneage/renwu/sa80_05.shtml"
+    },
+    "downloaded_original_images": false,
+    "index": {
+      "actual_named_href": "https://news.17173.com/z/stoneage/renwu/sa80_05.shtml",
+      "bytes": 34236,
+      "codec": "utf-8",
+      "sha256": "84a4f0bb593f09d2f5dbd180142870b267d846c2c898f9d78477a3e38b7bba8f",
+      "url": "https://news.17173.com/z/stoneage/renwu/renwu.htm"
+    },
+    "official_operator_patch_verified": false,
+    "page_bytes_retained_in_git": false
+  },
+  "source_type": "THIRD_PARTY_PLAYER_WALKTHROUGH_NOT_OFFICIAL_RUNTIME",
+  "step_count": 14,
+  "unknowns": {
+    "actual_first_release_build": null,
+    "exact_reward_item_ids": null,
+    "map_floor_ids": null,
+    "npc_ids": null,
+    "pet_ids": null,
+    "quest_flags": null,
+    "scripted_event_sequence": null
+  }
+}
