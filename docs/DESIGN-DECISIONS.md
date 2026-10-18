@@ -636,3 +636,41 @@ review can occur. Explicit missing releases/content remain in the coverage
 ledger. The next22-domain review must include this broad official-version
 coverage and choose a concrete content source, rather than restricting every
 new package to early-build identity or adding more low-level helper analysis.
+
+
+### DD-027 supplement — Official world history, story continuity and proactive coverage
+
+On2026-10-18 the owner clarified that official-version development, world
+history and stories should inform the future world's construction, and asked
+the assistant to identify missing dimensions proactively. Extend the archive
+from isolated content lists to source-qualified relationships among stories,
+places, peoples, pets and mechanics. This is archival preparation; the new
+world's actual canon and production remain later joint DESIGN decisions.
+
+Keep two separate chronologies: real product/operator releases and the
+fictional world's internal sequence. Store narrative continuation, prequel,
+parallel/regional branch, translation/name variation, retcon/contradiction,
+mechanics-only change, and UNKNOWN as distinct relation types. An official
+update date alone does not establish an in-world year or a single continuous
+universal canon. Claimed links require named sources and version identity.
+
+Source-supported coverage includes geography and travel; ecology/habitats
+and the role of pets; settlements, peoples, factions and relationships;
+myths, beliefs, civilization and technology; named characters' motives and
+quest consequences; events' persistent or temporary world changes; everyday
+life/economy; and player/pet progression and emotional milestones. Questions
+with no evidence remain research prompts, not invented ancient lore.
+
+For each substantial system, record its earliest supported version, later
+changes, documented narrative context, player-facing purpose and experiential
+tradeoffs where evidenced. Original developer intent needs a source; an
+analyst's interpretation is HYPOTHESIS. A proposed future explanation—such
+as a new civilization or domestication arc—is DESIGN, never backfilled into
+historical canon. Retain discarded and contradictory source ideas for review.
+
+The assistant owns proactive gap discovery and finite source prioritization
+across these dimensions. Use existing22-domain categories and add narrative
+relationship annotations rather than treating a new checklist as recovered
+content or letting planning replace material-source acquisition. Protect
+the early StoneAge emotional arc, including earning the first pet ride,
+when later joint design chooses among the collected references.
