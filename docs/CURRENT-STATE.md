@@ -15263,3 +15263,10 @@ NEXT仍`JSS-OFFICIAL-EVENT-RESULTS-PET-ATTRIBUTION-01`：仅取真实eventjsk链
 研究源`8be71862a88dff3965d525467f69caa2284b461a`/tree`e0fa0c68fb05d4f7f0008ba0f6dc24f7dc214817`同SHA10项Actions全部实际SUCCESS，专用source Action`39114206325`/job`117636538968`重新取两页官网HTML、执行14项边界检查并精确重放永久派生报告。没有复原三张缺图或取得宠物身份；重放不重试429接口，仍保留0/3未取得的本次事实边界。独立下载artifact`12131518233` ZIP2600B SHA256`e5755fd3b1ac3d677a4cfee62285a3b66c609253ba76e0ba9e543178e6313d73`与GitHub摘要相符；raw JSON8778B SHA256`c343f3b1cce14ab26b3ef4c1ad7b4ca1fa0402d1ce7ad8a904d3df646ef79ff9`、Git blob`19210bbc97936130222bc83860026da33b096dfc`与Git永久派生逐字节一致。来源、错页纠正、旧预告上下文、代码和测试摘要/10项运行写入RESULTS-ACCEPTANCE-R1，原HTML/图像均不入Git。
 
 此归档提交及最终main仍需实际CI另验，当前不提前宣称。第一回结果与第二回预告保持分开；未知年份/服务器/稀有宠和三张缺图不补造。下一最高JSS-FIRST-PARTY-PET-FAQ-01；7 PARTIAL+2 OPEN、Stage B/百科GATED、R79暂停。
+
+
+### 2026-10-18 — JSS第一回结果归属真实main验收
+
+研究源`8be71862a88dff3965d525467f69caa2284b461a`同SHA10项SUCCESS，来源保管`c5f0ee5342750e6ecc4a9f3be0fafa24aac20efb`同SHA8项SUCCESS后，重新核main仍081e141、ahead2/behind0、12路径0删除，非强制快进至c5f0ee5/tree`25df8c2488a86b4720396950c678e134c01fb763`。该HEAD **11项main Actions全部实际SUCCESS**，含两官网页独立重取与归属重放`39114374110`、SPR/ADRN`39114373983`、其它九项；全部名称/ID/结论永久写RESULTS-ACCEPTANCE-R1的main_acceptance。原1948929字节历史前缀完整，12变更路径没有原HTML、图片、游戏程序。此主线验收记录自己的后续branch/main CI须独立检查，不冒用父提交结果。
+
+第一回报道4奖项有界可用，第二回完成/稀有宠身份没有得到认证；错页07预取、09模板横幅不一致、三图404/三查询429全部保留，不改写成成功。NEXT仍JSS-FIRST-PARTY-PET-FAQ-01，从真实faqmenu入口最多一条宠物相关正文；活动资料支线停止横向遍历。Stage A7 PARTIAL+2 OPEN，Stage B/百科GATED，R79暂停，无整体百分比。

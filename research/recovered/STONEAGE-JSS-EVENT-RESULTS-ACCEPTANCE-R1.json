@@ -118,7 +118,133 @@
   "jss1999_or_tw10_same_build_promoted": false,
   "original_html_or_image_assets_retained_in_git": false,
   "main_acceptance": {
-    "status": "PENDING_NOT_PRECLAIMED"
+    "status": "SUCCESS",
+    "head": "c5f0ee5342750e6ecc4a9f3be0fafa24aac20efb",
+    "tree": "25df8c2488a86b4720396950c678e134c01fb763",
+    "count": 11,
+    "runs": [
+      {
+        "id": 39114374083,
+        "name": "Validate StoneAge Stage A joint review decision",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39114373993,
+        "name": "Validate legacy StoneAge assistant history and pet content gaps",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39114373947,
+        "name": "Validate Stage A evidence-limited review acceptance",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39114373969,
+        "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39114373941,
+        "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39114374110,
+        "name": "Verify JSS result edition identity and unknown rare-pet attribution",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39114373983,
+        "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39114373967,
+        "name": "Validate Stage A early source gap triage",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39114374021,
+        "name": "Validate StoneAge preproduction content archive and wiki boundary",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39114373875,
+        "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39114374113,
+        "name": "Independently verify TW1.0 R58 rooted helper returns and source custody",
+        "status": "completed",
+        "conclusion": "success"
+      }
+    ],
+    "receipt_commit_requires_separate_ci": true
   },
-  "next_priority": "JSS-FIRST-PARTY-PET-FAQ-01"
+  "next_priority": "JSS-FIRST-PARTY-PET-FAQ-01",
+  "archive_branch_acceptance": {
+    "head": "c5f0ee5342750e6ecc4a9f3be0fafa24aac20efb",
+    "count": 8,
+    "runs": [
+      {
+        "id": 39114323227,
+        "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39114323185,
+        "name": "Validate StoneAge preproduction content archive and wiki boundary",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39114323084,
+        "name": "Validate Stage A early source gap triage",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39114323263,
+        "name": "Validate StoneAge Stage A joint review decision",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39114323118,
+        "name": "Validate legacy StoneAge assistant history and pet content gaps",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39114323201,
+        "name": "Validate Stage A evidence-limited review acceptance",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39114323184,
+        "name": "Verify JSS result edition identity and unknown rare-pet attribution",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39114323155,
+        "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+        "status": "completed",
+        "conclusion": "success"
+      }
+    ]
+  }
 }
