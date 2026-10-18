@@ -1,0 +1,166 @@
+{
+  "schema": "stoneage.jp2003.character_source.closeout.r1",
+  "accepted_content_head": "2e238fcf0b0bf2e15b8ebb6f795131485a53ba9a",
+  "accepted_content_tree": "80ba1d093e71020ae22bc503373c27567466a38e",
+  "primary_receipt": "research/recovered/STONEAGE-JP2003-CHARACTER-VISUAL-ACCEPTANCE-R1.json",
+  "source_report_blob": "fcb22eb2e385b615db2f8f13f40b83545b03d403",
+  "standalone_catalog_blob": "914dd1802cff33b9a61410f63f1d1ad69fe845b4",
+  "corrected_branch_acceptance": {
+    "head_sha": "2e238fcf0b0bf2e15b8ebb6f795131485a53ba9a",
+    "run_count": 8,
+    "runs": [
+      {
+        "id": 39138712951,
+        "name": "Validate StoneAge Stage A joint review decision",
+        "attempt": 1,
+        "conclusion": "success"
+      },
+      {
+        "id": 39138712847,
+        "name": "Validate legacy StoneAge assistant history and pet content gaps",
+        "attempt": 1,
+        "conclusion": "success"
+      },
+      {
+        "id": 39138712870,
+        "name": "Validate Stage A early source gap triage",
+        "attempt": 1,
+        "conclusion": "success"
+      },
+      {
+        "id": 39138712871,
+        "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+        "attempt": 1,
+        "conclusion": "success"
+      },
+      {
+        "id": 39138712928,
+        "name": "Validate Stage A evidence-limited review acceptance",
+        "attempt": 1,
+        "conclusion": "success"
+      },
+      {
+        "id": 39138712971,
+        "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+        "attempt": 1,
+        "conclusion": "success"
+      },
+      {
+        "id": 39138713012,
+        "name": "Validate StoneAge preproduction content archive and wiki boundary",
+        "attempt": 1,
+        "conclusion": "success"
+      },
+      {
+        "id": 39138713024,
+        "name": "Verify official Japanese character page DOM pairs and one historical illustration",
+        "attempt": 2,
+        "conclusion": "success"
+      }
+    ]
+  },
+  "source_retry_history": [
+    {
+      "run_id": 39138713024,
+      "attempt": 1,
+      "job_id": 117708475574,
+      "head_sha": "2e238fcf0b0bf2e15b8ebb6f795131485a53ba9a",
+      "conclusion": "failure",
+      "cause": "URLError wrapping TimeoutError while following archive redirect",
+      "tests_passed": 12,
+      "source_absence_proven": false
+    },
+    {
+      "run_id": 39138713024,
+      "attempt": 2,
+      "job_id": 117708852998,
+      "head_sha": "2e238fcf0b0bf2e15b8ebb6f795131485a53ba9a",
+      "conclusion": "success",
+      "tests_passed": 12,
+      "exact_original_page_and_single_gif_reacquired": true,
+      "source_and_standalone_catalog_cmp": true
+    }
+  ],
+  "main_acceptance": {
+    "head_sha": "2e238fcf0b0bf2e15b8ebb6f795131485a53ba9a",
+    "tree_sha": "80ba1d093e71020ae22bc503373c27567466a38e",
+    "run_count": 9,
+    "runs": [
+      {
+        "id": 39139042344,
+        "name": "Validate StoneAge preproduction content archive and wiki boundary",
+        "head_sha": "2e238fcf0b0bf2e15b8ebb6f795131485a53ba9a",
+        "attempt": 1,
+        "conclusion": "success"
+      },
+      {
+        "id": 39139042418,
+        "name": "Validate Stage A evidence-limited review acceptance",
+        "head_sha": "2e238fcf0b0bf2e15b8ebb6f795131485a53ba9a",
+        "attempt": 1,
+        "conclusion": "success"
+      },
+      {
+        "id": 39139042263,
+        "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+        "head_sha": "2e238fcf0b0bf2e15b8ebb6f795131485a53ba9a",
+        "attempt": 1,
+        "conclusion": "success"
+      },
+      {
+        "id": 39139042412,
+        "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+        "head_sha": "2e238fcf0b0bf2e15b8ebb6f795131485a53ba9a",
+        "attempt": 1,
+        "conclusion": "success"
+      },
+      {
+        "id": 39139042398,
+        "name": "Validate legacy StoneAge assistant history and pet content gaps",
+        "head_sha": "2e238fcf0b0bf2e15b8ebb6f795131485a53ba9a",
+        "attempt": 1,
+        "conclusion": "success"
+      },
+      {
+        "id": 39139042235,
+        "name": "Verify official Japanese character page DOM pairs and one historical illustration",
+        "head_sha": "2e238fcf0b0bf2e15b8ebb6f795131485a53ba9a",
+        "attempt": 1,
+        "conclusion": "success"
+      },
+      {
+        "id": 39139042218,
+        "name": "Independently verify TW1.0 R58 rooted helper returns and source custody",
+        "head_sha": "2e238fcf0b0bf2e15b8ebb6f795131485a53ba9a",
+        "attempt": 1,
+        "conclusion": "success"
+      },
+      {
+        "id": 39139042204,
+        "name": "Validate StoneAge Stage A joint review decision",
+        "head_sha": "2e238fcf0b0bf2e15b8ebb6f795131485a53ba9a",
+        "attempt": 1,
+        "conclusion": "success"
+      },
+      {
+        "id": 39139042335,
+        "name": "Validate Stage A early source gap triage",
+        "head_sha": "2e238fcf0b0bf2e15b8ebb6f795131485a53ba9a",
+        "attempt": 1,
+        "conclusion": "success"
+      }
+    ]
+  },
+  "readme_failure_history": "All three failures at 6d2f139 are retained in primary receipt; original prefix restored by appending entry and existing guards unchanged.",
+  "closeout_scope": "DOCUMENTARY_ONLY_NO_SOURCE_CODE_OR_SOURCE_PAYLOAD_CHANGES; OBSERVE_OWN_ACTIONS_FOR_THIS_COMMIT",
+  "next": "JP2003-OFFICIAL-PET-NAMED-VISUAL-SOURCE-01",
+  "boundaries": {
+    "web_positions_not_game_ids": true,
+    "page_2003_and_image_2006_kept_separate": true,
+    "other_23_grid_images_unacquired": true,
+    "original_assets_in_git": false,
+    "stage_a_families": "7_PARTIAL_2_OPEN",
+    "stage_b_and_wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING"
+  }
+}
