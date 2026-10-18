@@ -494,3 +494,10 @@ TW1原资源9286条去重map_number→bitmap碰撞属性，按仅供候选的200
 真正台湾1.0原盘`sa_3.exe`来源独立Action`39080460322` SUCCESS、声音固定源不变。新识别编译体8处WinMM直接文件调用、1处DSOUND ordinal#1导入跳板及1处直接调用跳板；原`data\\se\\`与`data\\bgm\\`字样有原版字符串见证。原声音档案114内嵌索引、116外置音效及11 BGM**已经存在**，不重复算新发现；原游戏事件到具体音轨、实际播放参数和村庄/宠物语义依旧缺证。源码派生详见`STONEAGE-TW10-AUDIO-EVENT-GATE-R1.md`及原二进制逐字节验收回执。
 
 **NEXT `PREPRODUCTION-CROSS-DOMAIN-MATERIAL-EVIDENCE-REVIEW-03`**：重新用T01～T04已实证资料检查22域实际内容闭环与缺源，优先解决能恢复原生故事、人物、宠物、NPC、真实场景的材料，而非继续无限扩展无同版事件值的底层工具链。7 PARTIAL+2 OPEN，Stage B GATED，R79 PAUSED。
+
+
+## 2026-10-18 — R3实质材料复审与官方内容转向
+
+T01～T04的图像/物品/地图/音频物理证据不等于具名原游戏内容。R3逐行保留22域旧状态，新增JSS2001官方介绍正文及10张实取原JPEG缩图的出处/日期/尺寸/观察；5个链接仅失败或晚期跳转，不推缺席。正文4月、图像6月不得伪装同刻或TW1.0同版。已有手册再整理12节、11组宠物与战斗/合成说明，不计新网页。完整源和来源层见STONEAGE-CROSS-DOMAIN-MATERIAL-REVIEW-R3以及STONEAGE-JSS2001-PET-INTERACTION-AND-VISUAL-R1。
+
+**当前最高NEXT `JSS2001-OFFICIAL-EVENT-QUEST-CONTENT-01`**：沿已验JSS top.html真实event.html链接，有限查一个可定年的官方活动/任务内容页，尝试取得具名剧情/NPC/道具/参加限制；无合格实质内容便记录界限停止，不递归全站、不再扩无同版事件实参的API树。不把JSS2001默认升级成1999/TW1.0，7 PARTIAL+2 OPEN、Stage B/百科生产GATED、R79暂停。

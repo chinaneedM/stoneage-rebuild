@@ -1,0 +1,320 @@
+{
+  "schema": "stoneage.cross_domain_material_evidence_review.r3",
+  "date": "2026-10-18",
+  "task": "PREPRODUCTION-CROSS-DOMAIN-MATERIAL-EVIDENCE-REVIEW-03",
+  "source_main": "08106beb4ad665295f69f4e54e1c9946c12d5150",
+  "source_tree": "c21d24c7cffb40d8f1fcc534ceebc00d870de5dd",
+  "sources": [
+    {
+      "path": "research/recovered/STONEAGE-22-DOMAIN-SOURCE-READY-PORTFOLIO-R2.json",
+      "bytes": 15948,
+      "sha256": "7d50de08f7855cf16dbe54b1747e258f1cc1223de88cc217172fd145f3c704ce",
+      "git_blob": "088b469b3c51e689cff27f33fc3bb49de2d24b2c",
+      "role": "prior22-domain statuses preserved"
+    },
+    {
+      "path": "research/recovered/STONEAGE-TW10-VISUAL-CATEGORY-SPR-JOIN-R1.json",
+      "bytes": 8369,
+      "sha256": "e33bdae8c202dcf5a1374746afc505f517d8e1afc557fd07057d2d1811a54fcd",
+      "git_blob": "20a82e4d35661785c4e50b44855cf8e8a4e98f3e",
+      "role": "T01 original numeric frame intersections"
+    },
+    {
+      "path": "research/recovered/STONEAGE-TW10-ITEM-STATIC-BITMAP-SOURCE-R1.json",
+      "bytes": 21307,
+      "sha256": "9916bab4e8b94188e8b4dc9c0e5f6cd2537464311f3c3409a6a04d72fffec2b8",
+      "git_blob": "1210b0f910c353d58a3d6a4c458dda38f48aba86",
+      "role": "T02 original static resources, not item master"
+    },
+    {
+      "path": "research/recovered/STONEAGE-TW10-MAP-CONTENT-COLLISION-R1.json",
+      "bytes": 8494,
+      "sha256": "5efa5972fe68d38d0e85aad3c7e13d6c4cd588c0f1b81a5900ba79e8a6711dd9",
+      "git_blob": "7d4d5d2cae224c093b3e85e8ef1bfc49b54c5981",
+      "role": "T03 map resources, not world map"
+    },
+    {
+      "path": "research/recovered/STONEAGE-TW10-AUDIO-EVENT-GATE-R1.json",
+      "bytes": 11013,
+      "sha256": "ce1cd5738dac1a571999eea9ea6ee5ead86341f30bff4f0c4e4610a80f917047",
+      "git_blob": "67cc3707d45b6f079432b1db29b043851571b518",
+      "role": "T04 original API callsites, not events"
+    },
+    {
+      "path": "research/recovered/STONEAGE-JSS2001-PET-MANUAL-CONTRACT-R1.json",
+      "bytes": 5830,
+      "sha256": "ec4c1602472fb5daa2d458e455f06df3318011e560be053abd460d7d5fba5a13",
+      "git_blob": "53d8efd5180c87ff84445d696e6390af1cb5c0ec",
+      "role": "newly structured gameplay assertions from existing official manual"
+    },
+    {
+      "path": "research/recovered/STONEAGE-JSS2001-INTRO-SCREENSHOT-SOURCES-R1.json",
+      "bytes": 8434,
+      "sha256": "9acaca878cba7e8a4f7241deca1294d7e1cac7ea11e4657923024e78482295c4",
+      "git_blob": "7c0428a9ee1dda9420bc849a0bab166d6ae7c427",
+      "role": "newly acquired first-party introduction and10 verified JPEG thumbnail metadata;5 references unobtained"
+    },
+    {
+      "path": "research/recovered/STONEAGE-JSS2001-INTRO-VISUAL-CATALOG-R1.json",
+      "bytes": 4609,
+      "sha256": "d49a94568d33686e95a3a7c1434ad5c4c08e101cd919ed08fa03f787c5fe6dd2",
+      "git_blob": "c4cdf31491b841a31245586295a1013b2960241f",
+      "role": "manual visual inspection of each10 qualified source JPEGs"
+    },
+    {
+      "path": "research/recovered/STONEAGE-JSS2001-INTRO-SOURCE-ATTEMPTS-R1.json",
+      "bytes": 11452,
+      "sha256": "7d287c4f74898bbb96202ce43a1799a1cda600ac6e227357b6d88700858cb9ef",
+      "git_blob": "7c5f37f297f0090f4ab836fefebf43036cabeb53",
+      "role": "preserved failed attempts and actual late redirect boundaries"
+    }
+  ],
+  "continuity_input": {
+    "path": "docs/CURRENT-STATE.md",
+    "bytes": 1937890,
+    "sha256": "bc8a5c900a927577fda4f002b995fbce9436d466dfbc8ef93d30c2bdd53a86f3",
+    "git_blob": "4ad2f9146621ae6a9b70d5131c2a09f92209eacc",
+    "role": "complete1937890-byte historical prefix read from fresh exact HEAD"
+  },
+  "reviewed_domains": [
+    {
+      "domain_id": "version_lineage",
+      "original_order": 1,
+      "baseline_evidence_status": "PARTIAL_SOURCE",
+      "current_material_disposition": "SOURCE_PROFILE_SEPARATION_REQUIRED",
+      "material_outcome_or_gap": "New JSS April2001 first-party content is useful on its own; no claim of 1999 launch or Taiwan retail build identity.",
+      "tw10_original_content_completed": false,
+      "version_promotion_allowed": false
+    },
+    {
+      "domain_id": "login_splash",
+      "original_order": 2,
+      "baseline_evidence_status": "OPEN_VISUAL",
+      "current_material_disposition": "ORIGINAL_LOGIN_VISUAL_STILL_OPEN",
+      "material_outcome_or_gap": "Official intro is not a login screenshot source; do not relabel its creation or pet windows.",
+      "tw10_original_content_completed": false,
+      "version_promotion_allowed": false
+    },
+    {
+      "domain_id": "character_creation",
+      "original_order": 3,
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "current_material_disposition": "NEW_JSS2001_OFFICIAL_COUNTS",
+      "material_outcome_or_gap": "Introduction states 12 bodies and 48 appearances including colors; not a complete named census or TW1.0 equivalence.",
+      "tw10_original_content_completed": false,
+      "version_promotion_allowed": false
+    },
+    {
+      "domain_id": "character_sprite_model",
+      "original_order": 4,
+      "baseline_evidence_status": "PARTIAL_RESOURCE",
+      "current_material_disposition": "ORIGINAL_NUMERIC_LINKS_ONLY",
+      "material_outcome_or_gap": "T01 adds frame/range intersections; no named avatar-to-SPR binding. Official images remain separate JSS profile.",
+      "tw10_original_content_completed": false,
+      "version_promotion_allowed": false
+    },
+    {
+      "domain_id": "world_map",
+      "original_order": 5,
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "current_material_disposition": "T03_RESOURCE_ATTRIBUTES_NOT_WORLD",
+      "material_outcome_or_gap": "9286 resource map_numbers are not floors; introduction map overview and village images cannot supply field-map DAT or coordinates.",
+      "tw10_original_content_completed": false,
+      "version_promotion_allowed": false
+    },
+    {
+      "domain_id": "npc_identity",
+      "original_order": 6,
+      "baseline_evidence_status": "OPEN_CONTENT",
+      "current_material_disposition": "JSS2001_SERVICE_VISUALS_NOT_NPC_MASTER",
+      "material_outcome_or_gap": "First-party village-service descriptions and building images, not named NPC IDs, spawn coordinates or scripts.",
+      "tw10_original_content_completed": false,
+      "version_promotion_allowed": false
+    },
+    {
+      "domain_id": "npc_dialog_ui",
+      "original_order": 7,
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "current_material_disposition": "STILL_MISSING_SAME_BUILD_DIALOG_TRACE",
+      "material_outcome_or_gap": "Building screenshots and protocol envelopes do not recover original dialogue text or complete window layout.",
+      "tw10_original_content_completed": false,
+      "version_promotion_allowed": false
+    },
+    {
+      "domain_id": "quest_content",
+      "original_order": 8,
+      "baseline_evidence_status": "OPEN_CONTENT",
+      "current_material_disposition": "SAME_BUILD_SERVER_SOURCE_STILL_OPEN",
+      "material_outcome_or_gap": "Do not promote player guides or recovered25 quest links. New next source is a named official event page linked by authenticated top.",
+      "tw10_original_content_completed": false,
+      "version_promotion_allowed": false
+    },
+    {
+      "domain_id": "pet_species",
+      "original_order": 9,
+      "baseline_evidence_status": "OPEN_SAME_BUILD_ROSTER",
+      "current_material_disposition": "NAMED_MASTER_MAPPING_STILL_OPEN",
+      "material_outcome_or_gap": "First-party pet windows do not automatically name species or join TW1.0 graphic_id to SPR.",
+      "tw10_original_content_completed": false,
+      "version_promotion_allowed": false
+    },
+    {
+      "domain_id": "pet_visual",
+      "original_order": 10,
+      "baseline_evidence_status": "PARTIAL_RESOURCE",
+      "current_material_disposition": "NEW_JSS2001_WINDOW_AND_PHOTO_DESCRIPTION",
+      "material_outcome_or_gap": "Manual album separates encountered/owned names from explicit photo action; T01/2 numerical asset ranges remain independent.",
+      "tw10_original_content_completed": false,
+      "version_promotion_allowed": false
+    },
+    {
+      "domain_id": "pet_stats",
+      "original_order": 11,
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "current_material_disposition": "NEW_JSS2001_CAPTURE_BOUND",
+      "material_outcome_or_gap": "Manual loyalty at capture <=60, not always60; no initialization formula or species table.",
+      "tw10_original_content_completed": false,
+      "version_promotion_allowed": false
+    },
+    {
+      "domain_id": "pet_growth",
+      "original_order": 12,
+      "baseline_evidence_status": "PARTIAL_DESCENDANT",
+      "current_material_disposition": "ORIGINAL_GROWTH_TABLE_STILL_OPEN",
+      "material_outcome_or_gap": "UI descriptions and later growth models do not supply first-build coefficients.",
+      "tw10_original_content_completed": false,
+      "version_promotion_allowed": false
+    },
+    {
+      "domain_id": "pet_skills",
+      "original_order": 13,
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "current_material_disposition": "NEW_JSS2001_SKILL_OPERATIONS",
+      "material_outcome_or_gap": "Official bounded slots, overwrite, no standalone forget/reorder; no named skill master, price or numerical slot counts.",
+      "tw10_original_content_completed": false,
+      "version_promotion_allowed": false
+    },
+    {
+      "domain_id": "pet_encounter",
+      "original_order": 14,
+      "baseline_evidence_status": "PARTIAL_DESCENDANT",
+      "current_material_disposition": "NEW_JSS2001_CAPTURE_AND_PICKUP_LIMITS",
+      "material_outcome_or_gap": "Official gap>=6 blocks capture/pickup; lower HP helps qualitatively. No original spawn/encounter table.",
+      "tw10_original_content_completed": false,
+      "version_promotion_allowed": false
+    },
+    {
+      "domain_id": "ride_mount",
+      "original_order": 15,
+      "baseline_evidence_status": "PARTIAL_DESCENDANT",
+      "current_material_disposition": "EARLY_RIDING_SOURCE_STILL_OPEN",
+      "material_outcome_or_gap": "Do not turn mammoth public transport or a creature image into player pet riding.",
+      "tw10_original_content_completed": false,
+      "version_promotion_allowed": false
+    },
+    {
+      "domain_id": "battle_ui_rules",
+      "original_order": 16,
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "current_material_disposition": "NEW_JSS2001_COMMAND_DESCRIPTION",
+      "material_outcome_or_gap": "Manual command cycle, standby-only swaps, HELP and leader escape; no turn-cost/timeout numeric or TW1.0 actual rendering certification.",
+      "tw10_original_content_completed": false,
+      "version_promotion_allowed": false
+    },
+    {
+      "domain_id": "item_equipment_economy",
+      "original_order": 17,
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "current_material_disposition": "NEW_JSS2001_CRAFTING_AND_SERVICE_DESCRIPTION",
+      "material_outcome_or_gap": "Processing2+ inputs/max15; meat and pets can be sold; no recipe/prices. T02 1031 candidate images remain resource records only.",
+      "tw10_original_content_completed": false,
+      "version_promotion_allowed": false
+    },
+    {
+      "domain_id": "audio_fx",
+      "original_order": 18,
+      "baseline_evidence_status": "PARTIAL_RESOURCE",
+      "current_material_disposition": "T04_API_CALLS_NOT_EVENT_SOUNDTRACK",
+      "material_outcome_or_gap": "8 WinMM file calls and DirectSound trampoline do not bind a scene/pet/attack to a sound.",
+      "tw10_original_content_completed": false,
+      "version_promotion_allowed": false
+    },
+    {
+      "domain_id": "helper_versions",
+      "original_order": 19,
+      "baseline_evidence_status": "PARTIAL_CATALOG",
+      "current_material_disposition": "NAMED_VERSION_GAPS_RETAINED",
+      "material_outcome_or_gap": "Previously bounded release/recollection sources remain; no new old binary or official developer release log.",
+      "tw10_original_content_completed": false,
+      "version_promotion_allowed": false
+    },
+    {
+      "domain_id": "helper_capabilities",
+      "original_order": 20,
+      "baseline_evidence_status": "PARTIAL_CATALOG",
+      "current_material_disposition": "FEATURE_HISTORY_NOT_IMPLEMENTATION",
+      "material_outcome_or_gap": "Previously archived helper features remain candidates; this turn adds no implementation or adoption decision.",
+      "tw10_original_content_completed": false,
+      "version_promotion_allowed": false
+    },
+    {
+      "domain_id": "reference_web",
+      "original_order": 21,
+      "baseline_evidence_status": "PARTIAL_DISCOVERY",
+      "current_material_disposition": "NEW_FIRST_PARTY_INTRO_CONTENT",
+      "material_outcome_or_gap": "Previously authenticated top links to contents; actual intro capture 20010417155051 with15 screenshot references; not full official site.",
+      "tw10_original_content_completed": false,
+      "version_promotion_allowed": false
+    },
+    {
+      "domain_id": "future_player_wiki",
+      "original_order": 22,
+      "baseline_evidence_status": "DESIGN_PREP_ONLY",
+      "current_material_disposition": "PRODUCTION_REMAINS_GATED",
+      "material_outcome_or_gap": "This is source content for future discussion, not a deployed site or right to republish screenshots.",
+      "tw10_original_content_completed": false,
+      "version_promotion_allowed": false
+    }
+  ],
+  "reviewed_domains_count": 22,
+  "priorities": [
+    {
+      "rank": 1,
+      "task": "JSS2001-PET-INTERACTION-MANUAL-01",
+      "status": "EXECUTED_BOUNDED_DESCRIPTION",
+      "reason": "Actual early first-party ownership, training, album, battle and crafting instructions, no absent original server master needed"
+    },
+    {
+      "rank": 2,
+      "task": "JSS2001-OFFICIAL-INTRO-VISUAL-SOURCE-01",
+      "status": "BOUNDED_10_QUALIFIED_IMAGES_5_UNOBTAINED",
+      "reason": "Actual first-party linked screenshot bytes and character/pet/party counts, not another resource-only index"
+    },
+    {
+      "rank": 3,
+      "task": "JSS2001-OFFICIAL-EVENT-QUEST-CONTENT-01",
+      "status": "NEXT_AFTER_SOURCE_ACCEPTANCE",
+      "reason": "A real event.html link is already preserved in authenticated official top; inspect one dated official page for named story/quest content",
+      "stop_condition": "One finite dated official page plus immediately necessary linked record; no qualified content => bounded unavailable entry, then reassess; no recursive site crawl"
+    }
+  ],
+  "boundaries": {
+    "stage_a_system_families": {
+      "PARTIAL": 7,
+      "OPEN": 2
+    },
+    "all_origins_fully_recovered": false,
+    "stage_b_production": "GATED",
+    "public_wiki_implementation_started": false,
+    "r79": "PAUSED_NON_BLOCKING",
+    "overall_restoration_percentage": null,
+    "new_source_count_excludes_existing_manual_and_stonepic": true,
+    "no_original_server_data_backfilled": true
+  },
+  "startup_actions": {
+    "head": "08106beb4ad665295f69f4e54e1c9946c12d5150",
+    "observed_successful_runs": 17,
+    "all_observed_completed_success": true,
+    "prior_milestone_receipt_count_is_not_total_current_run_count": true
+  }
+}

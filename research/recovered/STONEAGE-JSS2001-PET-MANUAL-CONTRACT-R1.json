@@ -1,0 +1,165 @@
+{
+  "schema": "stoneage.jss2001.pet_manual_contract.r1",
+  "task": "JSS2001-PET-INTERACTION-MANUAL-01",
+  "source": {
+    "url": "https://web.archive.org/web/20010418083149id_/http://www.titan.co.jp/stoneage/manual02.html",
+    "final_url": "https://web.archive.org/web/20010418083149id_/http://www.titan.co.jp/stoneage/manual02.html",
+    "actual_capture": "20010418083149",
+    "sha256": "50b9771ec501067136629c8e083a190e979e53dd9ba141903f78b76d43b602cc",
+    "bytes": 28434,
+    "encoding": "shift_jis",
+    "replacement_characters": 0,
+    "role": "FIRST_PARTY_MANUAL_DESCRIPTION",
+    "newly_discovered_source": false
+  },
+  "section_sha256": {
+    "3050": "d14a279808dc18658dd2d2263b21fc081c8b12193b1aea3d782db5cf971b3f71",
+    "3051": "05ac6cf24befb311cd8053882ac10bcf096ab7315c0e28e957d1793fdd556c2c",
+    "3080": "2b462a068cfb7c0f2a2835ba714739ae0b3e1e2cfdf24d72c061e5067edfc7d3",
+    "4010": "487e57f51addbf4961485b7740ed391f266f2d05095c0b5a90c4316770c65dc5",
+    "4020": "52ec17f26a4979260e60e5e311bb0c7246d6e1e7fcbb4238870e687b75f53e96",
+    "6010": "ef3304ee35190094f1a02df28229c2a2aab78e64444c98c2fb6b3b442e0d12b9",
+    "6015": "e354b0edab5eecc581bdc68bacfdcbe6dea868e0f32392a6e99453bd61c583fe",
+    "6020": "8438422b4843efd34d20141d1dd822f152d825ded1609bf0b839ff4f717d7d8e",
+    "6030": "ddcbd04f6eba3e94a8a4681d73178c7bbf31f434c4b475d30ab3c7f09edd9afe",
+    "6040": "e9e9526167b405d6b5d311f4e44569b136527df65dd4cf5d02e84161cf61c187",
+    "8026": "6e6464e2ac827ca126740b5aed88149e4b8df036ced1c5d315cdf8ea1fb469f0",
+    "8090": "7ae7d02041115f8a98864f5c6fc6357aebbc34f7d61ab23340f210dcb42b6559"
+  },
+  "contracts": {
+    "pet_action_selection": {
+      "anchor": "3050",
+      "modes": [
+        "BATTLE",
+        "STANDBY",
+        "REST",
+        "MAIL"
+      ],
+      "initial_battle_pet_limit": 1,
+      "shortcut": "CTRL_P",
+      "mode_wire_values": null
+    },
+    "capture": {
+      "anchor": "6010",
+      "blocked_if_target_level_minus_player_level_at_least": 6,
+      "initial_loyalty_upper_bound": 60,
+      "lower_remaining_hp_improves_chance_described": true,
+      "charm_influences_chance_described": true,
+      "cannot_exceed_ownership_capacity": true,
+      "capacity_number": null,
+      "probability_formula": null,
+      "initial_loyalty_formula": null
+    },
+    "release": {
+      "anchor": "6020",
+      "control": "RIGHT_CLICK_PET_NAME",
+      "sequence": [
+        "PLACED_ON_FIELD",
+        "OWNERLESS_AFTER_UNSPECIFIED_TIME",
+        "EVENTUAL_DISAPPEARANCE"
+      ],
+      "seconds": null
+    },
+    "pickup": {
+      "anchor": "6030",
+      "control": "ADJACENT_AND_RIGHT_CLICK",
+      "blocked_if_pet_level_minus_player_level_at_least": 6,
+      "cannot_exceed_ownership_capacity": true,
+      "capacity_number": null
+    },
+    "rename": {
+      "anchors": [
+        "3051",
+        "6015"
+      ],
+      "only_naming_player_can_rename_named_pet_described": true,
+      "reset_to_default_before_transfer_allows_next_owner_rename_described": true,
+      "button_wording": {
+        "3051": "CLICK_UNSPECIFIED_BUTTON",
+        "6015": "RIGHT_CLICK_RENAME_BUTTON"
+      },
+      "button_uniformity_proven": false,
+      "persistent_owner_field_or_wire_value": null
+    },
+    "skills": {
+      "anchor": "6040",
+      "learnable_slot_count_is_bounded_per_pet": true,
+      "slot_count": null,
+      "trainer": "PET_SHOP_BREEDER",
+      "forget_without_replacement_described_as_available": false,
+      "overwrite_with_other_skill_described": true,
+      "reorder_described_as_available": false,
+      "skill_ids_prices_and_learning_predicates": null
+    },
+    "album": {
+      "anchor": "3080",
+      "name_records": [
+        "PREVIOUSLY_OWNED_PETS",
+        "BATTLE_ENCOUNTERED_CREATURES"
+      ],
+      "photo_action_adds": [
+        "ILLUSTRATION",
+        "BRIEF_STATUS"
+      ],
+      "all_encounters_automatically_include_photo": false,
+      "bitmap_or_species_ids": null
+    },
+    "battle_flow": {
+      "anchor": "4010",
+      "sequence": [
+        "COUNTED_COMMAND_INPUT",
+        "PLAYER_COMMAND",
+        "PARTICIPATING_PET_COMMAND",
+        "CONFIRM_OR_TIMEOUT",
+        "NEXT_INPUT_IF_UNRESOLVED"
+      ],
+      "timeout_seconds": null
+    },
+    "battle_pet_and_help": {
+      "anchor": "4020",
+      "join_or_swap_requires_standby_pet_described": true,
+      "help_request_enables_outside_participation": true,
+      "leader_escape_dissolves_party_described": true,
+      "equipment_change_during_battle_described": true,
+      "turn_cost_or_network_ack_proven": false
+    },
+    "loyalty": {
+      "anchor": "8026",
+      "increase_examples": [
+        "OWNER_LEVEL_UP",
+        "OWNER_CHARM_UP",
+        "REPEATED_IN_BATTLE_HEALING",
+        "SPECIFIC_ITEMS"
+      ],
+      "decrease_examples": [
+        "OWNER_CHARM_DOWN",
+        "PET_UNCONSCIOUS",
+        "ATTACKING_PET_IN_BATTLE",
+        "SPECIFIC_ITEMS"
+      ],
+      "low_loyalty_can_disobey_or_escape_described": true,
+      "numeric_deltas_or_formula": null
+    },
+    "crafting": {
+      "anchor": "8090",
+      "processing_minimum_selected_materials": 2,
+      "maximum_selected_materials": 15,
+      "control": "RIGHT_CLICK_INPUTS_THEN_PET_SKILL",
+      "same_class_inputs_described_as_easier": true,
+      "pet_aptitude_difference_described": true,
+      "broken_output_can_be_used_as_material_described": true,
+      "recipes_item_ids_success_formula": null
+    }
+  },
+  "boundaries": {
+    "scope": "JSS_JAPAN_2001_MANUAL_DESCRIPTION_ONLY",
+    "jss1999_or_tw10_same_build_proven": false,
+    "original_server_executed": false,
+    "species_graphic_ids_or_original_world_recovered": false,
+    "ownership_capacity_number_recovered": false,
+    "original_assets_retained": false,
+    "stage_a_family_status_changed": false,
+    "stage_b_production": "GATED",
+    "r79": "PAUSED_NON_BLOCKING"
+  }
+}

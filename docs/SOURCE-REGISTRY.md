@@ -7028,3 +7028,12 @@ STONEAGE-HISTORICAL-WIKI-QUERY-CONTRACT-DRAFT-R1.json引用四个既有派生Git
 原盘声音WAV与容器物理数据由旧来源`STONEAGE-TW10-AUDIO-DATASET-R1.txt` blob`094becbc92397ee8abf72a014deffffabc97a316`固定：114索引SFX、116散音效、11散BGM，107条同名字节相同、1条封装变体、6条PCM不同；这些不是本轮新内容。原编译exe先前IAT报告blob`0054c8c0c2a34652caec4ab89feac5bf821d75f7`已有WINMM/DSOUND导入。
 
 **本轮新增同版原始指令事实**：研究Action`39080460322`/job`117536170852`实际SUCCESS，原exe SHA256 `cdab9ea049a98bbc96ce93eeaa8b63c688f0c0f0ad8b3183e79d75e47621441a`，WinMM调用地址8个、DSOUND跳板1个及指向该跳板CALL1处，可查原报告`STONEAGE-TW10-AUDIO-EVENT-GATE-R1.json`。完整独立ZIP原字节1999B SHA256`b5a36f3fa0c42c01dc60fd6cff9f2d3dd21443606e546f6f4da38dbb5a180d4c`、内部JSON11013B SHA256`ce1cd5738dac1a571999eea9ea6ee5ead86341f30bff4f0c4e4610a80f917047`、Git blob`67cc3707d45b6f079432b1db29b043851571b518`独立核对。这个调用源不证明“原游戏第几关播放什么BGM、宠物战斗声音”，仍缺原事件选择参数。无版权声音/程序输入入库。
+
+
+## SRC-JSS2001-OFFICIAL-INTRO-PET-VISUAL-20261018
+
+- 新正文源：原http://www.titan.co.jp/stoneage/contents.html，由既有官方top真实出链进入，实际https://web.archive.org/web/20010417155051id_/http://www.titan.co.jp/stoneage/contents.html；6426B SHA256 a5553d476ed39deadde296d589d0a9eabe1378e11cbd528f8947f37eb74e4a8b，Shift-JIS严格解码。正文12人物/48含配色外观、5携带宠、5人队、低等级免费治疗（阈值未知）及设施/伙伴说明，只属JSS2001官方描述。
+- 15真实截图出链中10原JPEG成功，sakss02/03/04/05/06/07/08/10/13/14，全160×120；每张实际20010618/19时戳、原URL/最终URL、字节数/SHA及原图真正尺寸见STONEAGE-JSS2001-INTRO-SCREENSHOT-SOURCES-R1。未取得01/09/11/12/15；两个有限请求批的错误和2021/2022晚期主页重定向保留在INTRO-SOURCE-ATTEMPTS-R1。不可推缺席，不能用原页4月日期倒标图片。
+- 10图逐一实际目视观察：村落概览、医院/肉店/宠物店/武器店外观、图腾、PET STATUS、背包、组队场景、名片窗；不从附近文字自动给未取得图片定性，不从缩图猜全屏坐标、具名宠物物种/SPR或TW1.0身份。像素不入Git。
+- 旧正文复用源：manual02实际20010418083149，28434B SHA256 50b9771ec501067136629c8e083a190e979e53dd9ba141903f78b76d43b602cc，与旧来源相同；12节新结构化事实与hash见STONEAGE-JSS2001-PET-MANUAL-CONTRACT-R1，非新增网页。按钮点击/右键原描述不同、未知公式/ID/时长全部保持。
+- 派生物与独立重放脚本/测试/Actions纳入仓库；来源实跑、ZIP/raw摘要及分支/main状态只能在实际成功后追加回执。JSS2001不自动认证1999/TW1.0；不公开原HTML、版权图像或旧程序。

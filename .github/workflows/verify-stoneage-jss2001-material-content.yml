@@ -1,0 +1,44 @@
+name: Verify JSS2001 official pet and visual content sources
+on:
+  push:
+    paths:
+      - tools/stoneage_jss_pet_manual_contract.py
+      - tools/stoneage_jss_intro_source.py
+      - tests/test_stoneage_jss_pet_manual_contract.py
+      - tests/test_stoneage_jss_intro_source.py
+      - tests/test_stoneage_cross_domain_material_review.py
+      - docs/specs/STONEAGE-JSS2001-PET-INTERACTION-AND-VISUAL-R1.md
+      - docs/STONEAGE-CROSS-DOMAIN-MATERIAL-REVIEW-R3.md
+      - research/recovered/STONEAGE-JSS2001-*.json
+      - research/recovered/STONEAGE-CROSS-DOMAIN-MATERIAL-REVIEW-R3.json
+      - .github/workflows/verify-stoneage-jss2001-material-content.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  replay-first-party-material:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --quiet Pillow
+      - name: Verify source isolation, field boundaries and prior capture model
+        run: python -m unittest tests.test_stoneage_jss_pet_manual_contract tests.test_stoneage_jss_intro_source tests.test_stoneage_cross_domain_material_review tests.test_stoneage_pet_capture_model -v
+      - name: Independently reacquire authenticated official manual and replay contracts
+        run: |
+          python -m tools.stoneage_jss_pet_manual_contract --output "${{ runner.temp }}/jss2001-pet-manual.json"
+          cmp "${{ runner.temp }}/jss2001-pet-manual.json" research/recovered/STONEAGE-JSS2001-PET-MANUAL-CONTRACT-R1.json
+      - name: Independently reacquire official introduction and exact linked screenshot captures
+        run: |
+          python -m tools.stoneage_jss_intro_source --reference research/recovered/STONEAGE-JSS2001-INTRO-SCREENSHOT-SOURCES-R1.json --output "${{ runner.temp }}/jss2001-intro-screenshots.json"
+          cmp "${{ runner.temp }}/jss2001-intro-screenshots.json" research/recovered/STONEAGE-JSS2001-INTRO-SCREENSHOT-SOURCES-R1.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: jss2001-official-material-derived-reports
+          path: |
+            ${{ runner.temp }}/jss2001-pet-manual.json
+            ${{ runner.temp }}/jss2001-intro-screenshots.json
+          retention-days: 30

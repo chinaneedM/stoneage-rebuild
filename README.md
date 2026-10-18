@@ -193,3 +193,18 @@ Original callsite evidence and checksums:
 `docs/STONEAGE-TW10-AUDIO-EVENT-GATE-R1.md`.
 NEXT: `PREPRODUCTION-CROSS-DOMAIN-MATERIAL-EVIDENCE-REVIEW-03`,
 to prioritize meaningful original content restoration over endless API probes.
+
+
+### Latest first-party gameplay and visual material — 2026-10-18
+
+The [R3 cross-domain material review](docs/STONEAGE-CROSS-DOMAIN-MATERIAL-REVIEW-R3.md)
+retains all22 historical domain statuses and shifts from resource-only probes
+to actual first-party content. A newly acquired JSS April2001 introduction
+states12 character types/48 appearances,5 carried pets and5-player parties.
+Ten linked original160×120 JPEG thumbnails (June2001 captures) were individually
+inspected; five other references remain unobtained after bounded redirects.
+The already known official manual adds12 newly structured pet/battle/crafting
+sections, not a newly discovered source. See the [source specification](docs/specs/STONEAGE-JSS2001-PET-INTERACTION-AND-VISUAL-R1.md).
+These are JSS2001 descriptions/images, not certified Taiwan1.0 build identity.
+NEXT: `JSS2001-OFFICIAL-EVENT-QUEST-CONTENT-01`, one finite original linked
+event page for named quest/story content. Stage B and public wiki remain gated.

@@ -15185,3 +15185,18 @@ WORLD源分支ec2aa8fac09f13a61c73c9542b2dd9c08c9fc1b9/tree0976772698b7470b72145
 原音频研究包分支根`3f150651360ed1b0a4546419c65bce5e051aa4f2`及归档`178bc21f74c2ebb5b739129f79e81e1058e60e6a`在源分支10项实际Actions全部SUCCESS后，以main原`1e5b2470da55e99e662b7c15cef3e2db45e3be72`不变、ahead2/behind0、11文件0删除安全快进到`178bc21f74c2ebb5b739129f79e81e1058e60e6a`/tree`c747d472865ad6e9c0b9189d244e9d483efdc6cc`；**同HEAD 11个main Actions全部SUCCESS**，包括真正原零售盘音频源运行`39080988450`、ADRN/SPR原源`39080988411`及其余九项，编号/名称载入`STONEAGE-TW10-AUDIO-EVENT-GATE-ACCEPTANCE-R1.json`的`main_acceptance.checks`。此前全部历史与来源验收轨迹保留，原AUDIO索引114、独立SFX116、BGM11不重复算新史料。新实证仍限原音频WINMM调用8、DSOUND导入跳板1及其直接CALL1，未取得原事件→音源函数参数、游戏实际声景/宠物攻击或场景音乐对应；不得宣称原声音玩法完整复原。
 
 下轮最高NEXT `PREPRODUCTION-CROSS-DOMAIN-MATERIAL-EVIDENCE-REVIEW-03`，要求审查T01～T04已证硬素材能否支撑真实初代人物/宠物/世界/任务内容来源，优先实质恢复而非理论框架或不断增加底层调用；7 PARTIAL+2 OPEN、Stage B GATED、R79 PAUSED。仅本回执的后续branch/main CI须在运行后再验，暂不前置推定。
+
+
+## 2026-10-18 — PREPRODUCTION-CROSS-DOMAIN-MATERIAL-EVIDENCE-REVIEW-03与JSS官方实物内容
+
+本轮重新核GitHub main `08106beb4ad665295f69f4e54e1c9946c12d5150` / tree `c21d24c7cffb40d8f1fcc534ceebc00d870de5dd`、最新提交/分支、无开放PR；同SHA当前实际17条Actions记录全部SUCCESS（其中含追加workflow_dispatch；旧11项里程碑不是该SHA现有全部运行数量）。完整CURRENT-STATE1937890B SHA256`bc8a5c900a927577fda4f002b995fbce9436d466dfbc8ef93d30c2bdd53a86f3`与精确远端blob及checkout一致，README/协议/Design/Timeline/Source/Roadmap和22域队列重新读取。本历史前缀完整保留。
+
+最高R3跨域材料复审已逐行保留22域旧历史状态并检查T01～T04：原SPR/位图、1031物品候选、9286地图资源编号和音频调用地址都不是具名原游戏内容。避免继续低层调用树，实际转向可认证JSS2001第一方玩法与画面，不强行要求所有早期资料都是TW1.0才可研究，也不将JSS2001反填成同版事实。
+
+**新取得的原官网正文**来自已验top真实contents出链，实际快照20010417155051、6426B SHA256`a5553d476ed39deadde296d589d0a9eabe1378e11cbd528f8947f37eb74e4a8b`。官方明确12人物类型/48含配色外观、携带最多5宠、组队5人、低等级免费治疗但阈值未给、伙伴与村落服务描述。不能由12/48反推每个身体恰好4色或TW1.0实选名单。15张真实原JPEG出链中**10张**已实取且逐一目视，全160×120、实际图像快照在20010618/19。可见村落概览、医院/肉店/宠物店/武器店、图腾、宠物状态、物品窗、组队、名片窗。**5张01/09/11/12/15未取**，二次有界尝试出现2021/2022晚期titan主页重定向，不能当原图或断言原图不存在。正文4月不认证图片同刻；原像素只临时研究，不入Git。
+
+**已有官方手册新增语义**：manual02实际20010418083149/28434B/SHA256`50b9771ec501067136629c8e083a190e979e53dd9ba141903f78b76d43b602cc`与旧源同字节，不计新网页。新整理12节/11组合同涵盖宠物模式、捕获/拾取差6级禁入、捕获忠诚最多60（非恒等60）、放地→无主→消失（时长未知）、改名及移交、技能可覆盖但不可单忘/换序、名字记录与手工拍照区别、主人/宠物战斗指令与待机换宠/HELP、忠诚定性行为、加工至少2项/最多15项。改名“点击/右键”两个锚点差异保留；原概率、初始忠诚公式、ID/价格等不填。对照后代普通capture gate相容，但不认证其公式/绕过或原服执行；运行时代码未改。
+
+规格STONEAGE-JSS2001-PET-INTERACTION-AND-VISUAL-R1、22域R3评审、5份派生JSON及源码/测试/专用源重放工作流已形成。当前21项相关本地检查实际通过；分支/main和来源独立CI尚须真实运行后另记，不能提前声称成功。
+
+**最高NEXT `JSS2001-OFFICIAL-EVENT-QUEST-CONTENT-01`**：沿已认证官方top→event.html，有限取一个可定年的官方活动/任务页面，争取具名剧情、NPC/道具/参加限制；若无合格正文即记录具体结果并停止，不递归全站、不以缺源再扩API树。九族7 PARTIAL+2 OPEN，Stage B游戏/百科网站生产GATED、R79 PAUSED_NON_BLOCKING；无整体复原百分比。
