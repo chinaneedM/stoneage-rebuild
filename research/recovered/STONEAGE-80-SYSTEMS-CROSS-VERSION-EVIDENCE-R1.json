@@ -1,0 +1,224 @@
+{
+  "schema": "stoneage.80.systems.cross_version_evidence_bridge.r1",
+  "package": "CROSS_VERSION_GEAR_MENTOR_QUEST_SOURCE_GAP_REVIEW-01",
+  "created_on": "2026-10-18",
+  "previous_verified_official_source": {
+    "path": "research/recovered/STONEAGE-WAYI-OFFICIAL-SYSTEMS-R1.json",
+    "git_blob_sha": "4fb303eb6f8866b5454f994a0d4fedbf52ea76b0",
+    "original_html_sha256": "0868e56a81d7037e434a09fd0824a6eb59747494099087f8d1eaeaaa37fb690c"
+  },
+  "sources": [
+    {
+      "id": "TW_WAYI_20050614",
+      "origin": "http://www.wayi.com.tw/stoneage/game/game01_02.asp",
+      "archive": "https://web.archive.org/web/20050614005428id_/http://www.wayi.com.tw/stoneage/game/game01_02.asp",
+      "origin_class": "FIRST_PARTY_OPERATOR",
+      "region": "TW",
+      "site_date": "2005-06-14 archival capture; original publication date unknown",
+      "provenance": "SOURCE_BYTES_VERIFIED_IN_PREVIOUS_PACKAGE",
+      "lineage": "WAYI_OPERATOR",
+      "exact_build_identified": false
+    },
+    {
+      "id": "TW_BAHAMUT_20050608",
+      "origin": "https://gnn.gamer.com.tw/detail.php?sn=20167",
+      "title": "《石器時代 8.0》新版上線 推出「寵物裝備」",
+      "published": "2005-06-08 23:04:46",
+      "origin_class": "CONTEMPORANEOUS_JOURNALISM",
+      "region": "TW",
+      "provenance": "WEB_INDEX_FULL_TEXT_OBSERVATION_NOT_BYTE_PINNED",
+      "lineage": "BAHAMUT_ORIGINAL_REPORT",
+      "date_is_client_build": false
+    },
+    {
+      "id": "CN_17173_20050609",
+      "origin": "https://news.17173.com/content/2005-6-9/n50_966545.html",
+      "published": "2005-06-09 10:30:41",
+      "origin_class": "REPRINT_OF_CONTEMPORANEOUS_JOURNALISM",
+      "region": "CN_REPRINT_OF_TW_NEWS",
+      "provenance": "WEB_INDEX_TEXT_OBSERVATION_NOT_BYTE_PINNED",
+      "lineage": "BAHAMUT_ORIGINAL_REPORT",
+      "explicit_attribution": "来源：巴哈姆特",
+      "independent_editorial_corroboration": false
+    },
+    {
+      "id": "CN_17173_8_0_FEATURES",
+      "origin": "https://news.17173.com/z/stoneage/newsa/new.shtml",
+      "origin_class": "THIRD_PARTY_GAME_PORTAL_UNDATED",
+      "region": "CN",
+      "site_self_identified_operator": "金山软件",
+      "version_label": "新石器时代 8.0",
+      "provenance": "PUBLIC_WEB_PAGE_EXTRACTED_TEXT_NOT_BYTE_PINNED",
+      "publication_date": null,
+      "lineage": "17173_PORTAL_FEATURE_LIST",
+      "operator_patch_bytes_verified": false
+    },
+    {
+      "id": "CN_17173_8_0_OVERVIEW",
+      "origin": "https://news.17173.com/z/stoneage/newsa/about.shtml",
+      "origin_class": "THIRD_PARTY_GAME_PORTAL_UNDATED",
+      "region": "CN",
+      "site_self_identified_operator": "金山软件",
+      "version_label": "新石器时代 8.0",
+      "provenance": "PUBLIC_WEB_PAGE_EXTRACTED_TEXT_NOT_BYTE_PINNED",
+      "publication_date": null,
+      "lineage": "17173_PORTAL_FEATURE_LIST",
+      "operator_patch_bytes_verified": false
+    }
+  ],
+  "claims": [
+    {
+      "id": "TW80_REPORTED_LAUNCH",
+      "domain": "release",
+      "source_ids": [
+        "TW_BAHAMUT_20050608"
+      ],
+      "scope": "TW_REPORTED_8_0",
+      "claim": "A dated news report describes the StoneAge 8.0 Lost World update as newly launched on 2005-06-08.",
+      "assertion_type": "REPORTED_EVENT_NOT_DEPLOYMENT_LOG",
+      "exact_patch_build": null
+    },
+    {
+      "id": "TW80_GEAR_PUBLICIZED",
+      "domain": "pet_equipment",
+      "source_ids": [
+        "TW_WAYI_20050614",
+        "TW_BAHAMUT_20050608"
+      ],
+      "scope": "TW_2005_8_0_REFERENCE",
+      "claim": "The operator describes seven anatomical equipment categories and synthesis; the contemporary news report treats pet equipment as a new 8.0 feature.",
+      "assertion_type": "SOURCE_DESCRIPTIONS",
+      "actual_inventory_or_formula_verified": false
+    },
+    {
+      "id": "TW80_MENTOR_PUBLICIZED",
+      "domain": "mentor",
+      "source_ids": [
+        "TW_WAYI_20050614",
+        "TW_BAHAMUT_20050608"
+      ],
+      "scope": "TW_2005_8_0_REFERENCE",
+      "claim": "Operator describes leadership prestige and a 5% relationship; news report describes one mentor per new player and prestige spending after reaching a threshold.",
+      "assertion_type": "NONIDENTICAL_SOURCE_CLAUSES",
+      "percentage_deduction_or_threshold_number_verified": false
+    },
+    {
+      "id": "TW80_QUEST_LOG_PUBLICIZED",
+      "domain": "quest_log",
+      "source_ids": [
+        "TW_WAYI_20050614",
+        "TW_BAHAMUT_20050608"
+      ],
+      "scope": "TW_2005_8_0_REFERENCE",
+      "claim": "Operator describes completed and unfinished task status; news describes looking up prior and not-yet-done quests.",
+      "assertion_type": "SOURCE_DESCRIPTIONS",
+      "exact_flag_schema_or_original_ui_verified": false
+    },
+    {
+      "id": "CN80_QUEST_LOG_NAVIGATION",
+      "domain": "quest_log",
+      "source_ids": [
+        "CN_17173_8_0_FEATURES"
+      ],
+      "scope": "CN_NEW_STONEAGE_8_0_PORTAL",
+      "claim": "The portal locates quest log under upper-right online help, including in-progress and completed quests.",
+      "assertion_type": "THIRD_PARTY_PORTAL_DESCRIPTION",
+      "same_tw_runtime_verified": false
+    },
+    {
+      "id": "CN80_MENTOR_UI_NAVIGATION",
+      "domain": "mentor",
+      "source_ids": [
+        "CN_17173_8_0_FEATURES"
+      ],
+      "scope": "CN_NEW_STONEAGE_8_0_PORTAL",
+      "claim": "The portal places a mentor-system entry among upper-edge game controls.",
+      "assertion_type": "THIRD_PARTY_PORTAL_DESCRIPTION",
+      "mentor_server_transaction_verified": false
+    },
+    {
+      "id": "CN80_PET_GEAR_SYNTHESIS",
+      "domain": "pet_equipment",
+      "source_ids": [
+        "CN_17173_8_0_FEATURES"
+      ],
+      "scope": "CN_NEW_STONEAGE_8_0_PORTAL",
+      "claim": "Pet equipment category eligibility depends on pet type; pet gear can be made through synthesis.",
+      "assertion_type": "THIRD_PARTY_PORTAL_DESCRIPTION",
+      "recipes_or_item_ids_verified": false
+    },
+    {
+      "id": "CN80_NAMED_QUEST_LEAD",
+      "domain": "quests",
+      "source_ids": [
+        "CN_17173_8_0_FEATURES"
+      ],
+      "scope": "CN_NEW_STONEAGE_8_0_PORTAL",
+      "claim": "The feature list names a new quest as 爱作画的少女.",
+      "assertion_type": "NAMED_CONTENT_LEAD_NOT_QUEST_SCRIPT",
+      "quest_name_as_written": "爱作画的少女",
+      "npc_id": null,
+      "quest_conditions": null,
+      "quest_reward": null
+    },
+    {
+      "id": "TW80_RIDING_NAMES",
+      "domain": "riding",
+      "source_ids": [
+        "TW_BAHAMUT_20050608"
+      ],
+      "scope": "TW_REPORTED_8_0",
+      "claim": "The contemporary report names 史卡魯 and 羅多克雷 as two mount additions and describes a manor-leader riding-certificate prerequisite for 史卡魯.",
+      "assertion_type": "JOURNALISTIC_GAMEPLAY_DESCRIPTION",
+      "pet_master_ids": null,
+      "actual_certificate_transaction_verified": false
+    },
+    {
+      "id": "TW80_SYNTHESIS_CAP_REPORTED",
+      "domain": "crafting",
+      "source_ids": [
+        "TW_BAHAMUT_20050608"
+      ],
+      "scope": "TW_REPORTED_8_0",
+      "claim": "The news report states synthesis maximum was raised from 11 to 15.",
+      "assertion_type": "JOURNALISTIC_COMPARATIVE_DESCRIPTION",
+      "original_recipe_data_verified": false
+    },
+    {
+      "id": "CN80_STORY_MARKETING",
+      "domain": "world_story",
+      "source_ids": [
+        "CN_17173_8_0_OVERVIEW"
+      ],
+      "scope": "CN_NEW_STONEAGE_8_0_PORTAL",
+      "claim": "The portal markets the new release as developing the original story into a longer connected narrative.",
+      "assertion_type": "THIRD_PARTY_MARKETING_DESCRIPTION",
+      "universal_single_canon_verified": false
+    }
+  ],
+  "source_lineage": {
+    "independent_press_reports_on_tw_launch": 1,
+    "reprint_counted_as_new_origin": false,
+    "tw_first_party_statement_separate_from_press": true,
+    "china_portal_not_promoted_to_taiwan_build": true,
+    "media_publication_day_not_server_deployment_receipt": true,
+    "unpinned_web_page_raw_content_sha256": null
+  },
+  "irreversible_boundaries": {
+    "original_tw1_or_jss1999_equivalence_proven": false,
+    "all_official_80_regions_same_patch_verified": false,
+    "exact_80_client_or_server_content_recovered": false,
+    "any_pet_gear_item_id_recovered": false,
+    "any_mentor_server_rule_recovered": false,
+    "any_original_quest_log_state_machine_recovered": false,
+    "any_quest_script_recovered": false,
+    "copyrighted_original_assets_retained": false,
+    "stage_a_family_completion_changed": false,
+    "stage_b_game_and_wiki_production_started": false,
+    "r79_reopened": false,
+    "aggregate_restoration_percentage": null
+  },
+  "result": "BOUNDED_SOURCE_ATTRIBUTION_GAIN_WITH_RUNTIME_GAPS_OPEN",
+  "next": "CN80_NAMED_QUEST_ORIGINAL_SOURCE_TRACE-01",
+  "next_stop_condition": "Follow the existing 17173 named quest link once; require source-identified quest content and version context, else preserve the unresolved lead and rotate to another domain."
+}

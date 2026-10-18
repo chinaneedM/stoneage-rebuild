@@ -1,0 +1,22 @@
+name: Validate bounded StoneAge 8.0 cross-version evidence bridge
+on:
+  push:
+    paths:
+      - research/recovered/STONEAGE-80-SYSTEMS-CROSS-VERSION-EVIDENCE-R1.json
+      - docs/specs/STONEAGE-80-SYSTEMS-CROSS-VERSION-EVIDENCE-R1.md
+      - tests/test_stoneage_80_systems_cross_version_evidence.py
+      - .github/workflows/validate-stoneage-80-systems-cross-version-evidence.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-and-boundary-structure:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate cross-region claims and reprint provenance
+        run: python -m unittest tests.test_stoneage_80_systems_cross_version_evidence -v
