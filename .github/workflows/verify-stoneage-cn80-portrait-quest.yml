@@ -5,6 +5,9 @@ on:
       - tools/stoneage_cn80_portrait_quest_source.py
       - tests/test_stoneage_cn80_portrait_quest_source.py
       - research/recovered/STONEAGE-CN80-PORTRAIT-QUEST-R1.json
+      - research/recovered/STONEAGE-CN80-PORTRAIT-QUEST-CATALOG-R1.json
+      - docs/specs/STONEAGE-CN80-PORTRAIT-QUEST-R1.md
+      - tests/test_stoneage_cn80_portrait_quest_archive.py
       - .github/workflows/verify-stoneage-cn80-portrait-quest.yml
   workflow_dispatch:
 permissions:
@@ -20,6 +23,8 @@ jobs:
           python-version: '3.12'
       - name: Guard evidence scope and negative cases
         run: python -m unittest tests.test_stoneage_cn80_portrait_quest_source -v
+      - name: Guard permanent derived archive and 8.5 boundary
+        run: python -m unittest tests.test_stoneage_cn80_portrait_quest_archive -v
       - name: Retrieve only index and named detail; no original HTML retained
         run: |
           python -m tools.stoneage_cn80_portrait_quest_source --output "${{ runner.temp }}/quest/derived.json"
