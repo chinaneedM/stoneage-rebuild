@@ -1,0 +1,35 @@
+name: Verify Japanese village facility descriptions explicit prohibitions and bounded missing image
+on:
+  push:
+    paths:
+      - tools/stoneage_jp_village_facilities.py
+      - tools/stoneage_jp_pet_catalog.py
+      - tests/test_stoneage_jp_village_facilities.py
+      - research/recovered/STONEAGE-JP-OFFICIAL-VILLAGE-FACILITIES-R1.json
+      - docs/specs/STONEAGE-JP-OFFICIAL-VILLAGE-FACILITIES-R1.md
+      - .github/workflows/verify-stoneage-jp-village-facilities.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exact-facility-body-and-first-image-gap:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned shared parser dependency
+        run: python -m pip install Pillow==12.3.0
+      - name: Reject reversed prohibitions invented transactions and lost image gaps
+        run: python -m unittest tests.test_stoneage_jp_village_facilities -v
+      - name: Reacquire one exact body and probe only the first unavailable image URL
+        run: python -m tools.stoneage_jp_village_facilities --output output/derived.json
+      - name: Compare entire permanent source-derived facility report
+        run: cmp output/derived.json research/recovered/STONEAGE-JP-OFFICIAL-VILLAGE-FACILITIES-R1.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: jp-village-facilities-derived-only
+          path: output/derived.json
+          retention-days: 30

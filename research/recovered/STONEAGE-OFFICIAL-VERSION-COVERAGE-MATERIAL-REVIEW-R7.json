@@ -1,0 +1,140 @@
+{
+  "boundaries": {
+    "all_22_prior_statuses_preserved": true,
+    "complete_official_release_census": false,
+    "r79": "PAUSED_NON_BLOCKING",
+    "stage_a_families": "7_PARTIAL_2_OPEN",
+    "stage_b_and_wiki": "GATED"
+  },
+  "date": "2026-10-19",
+  "domains_unchanged": [
+    {
+      "baseline_evidence_status": "PARTIAL_SOURCE",
+      "domain_id": "version_lineage"
+    },
+    {
+      "baseline_evidence_status": "OPEN_VISUAL",
+      "domain_id": "login_splash"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "domain_id": "character_creation"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_RESOURCE",
+      "domain_id": "character_sprite_model"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "domain_id": "world_map"
+    },
+    {
+      "baseline_evidence_status": "OPEN_CONTENT",
+      "domain_id": "npc_identity"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "domain_id": "npc_dialog_ui"
+    },
+    {
+      "baseline_evidence_status": "OPEN_CONTENT",
+      "domain_id": "quest_content"
+    },
+    {
+      "baseline_evidence_status": "OPEN_SAME_BUILD_ROSTER",
+      "domain_id": "pet_species"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_RESOURCE",
+      "domain_id": "pet_visual"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "domain_id": "pet_stats"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_DESCENDANT",
+      "domain_id": "pet_growth"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "domain_id": "pet_skills"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_DESCENDANT",
+      "domain_id": "pet_encounter"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_DESCENDANT",
+      "domain_id": "ride_mount"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "domain_id": "battle_ui_rules"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "domain_id": "item_equipment_economy"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_RESOURCE",
+      "domain_id": "audio_fx"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_CATALOG",
+      "domain_id": "helper_versions"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_CATALOG",
+      "domain_id": "helper_capabilities"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_DISCOVERY",
+      "domain_id": "reference_web"
+    },
+    {
+      "baseline_evidence_status": "DESIGN_PREP_ONLY",
+      "domain_id": "future_player_wiki"
+    }
+  ],
+  "material_delta": {
+    "actual_body_capture": "20031215095512",
+    "explicit_pet_purchase_prohibition_retained": true,
+    "facility_service_descriptions": 13,
+    "first_image_http404_attempts": 2,
+    "home_contribution_and_start_location_description_retained": true,
+    "new_qualified_images": 0,
+    "operator": "Japan Hangame",
+    "other_images_not_attempted": 12,
+    "paid_normal_walking_bus_without_monsters_description_retained": true,
+    "runtime_rule_transactions_or_same_build_ids_recovered": false
+  },
+  "new_material_report": "research/recovered/STONEAGE-JP-OFFICIAL-VILLAGE-FACILITIES-R1.json",
+  "next": {
+    "edge_source": {
+      "page": {
+        "actual_capture": "20050614002509",
+        "bytes": 20444,
+        "codec": "big5",
+        "final_url": "https://web.archive.org/web/20050614002509id_/http://www.wayi.com.tw/stoneage/game/game01.asp",
+        "original_url": "http://www.wayi.com.tw/stoneage/game/game01.asp",
+        "sha256": "c0a2f96c1d0232eb3f94328481ff512c3efed63daeab912fcc5dd0c397f1ba0d"
+      },
+      "path": "research/recovered/STONEAGE-WAYI-OFFICIAL-WORLDLINE-R1.json",
+      "sha256": "619c2b931174058b87eb97631beb11a995c41fedb26010a94c42e9cc54aa785b"
+    },
+    "filename_number_or_site_title_proves_topic": false,
+    "goal": "ONE_ACTUAL_TOPIC_VERIFIED_BODY_WITH_NAMED_SYSTEM_STORY_OR_DAILY_LIFE_CONTENT_OR_EXPLICIT_GAP_OR_DUPLICATE_RESULT",
+    "limit": "ONE_BODY_NO_IMAGES_OR_PROGRAMS_NO_RECURSION",
+    "original_url": "http://www.wayi.com.tw/stoneage/game/game01_04.asp",
+    "queried": false,
+    "task": "TW-WAYI-OFFICIAL-INTRO-DETAIL-04"
+  },
+  "prior_review": {
+    "path": "research/recovered/STONEAGE-OFFICIAL-VERSION-COVERAGE-MATERIAL-REVIEW-R6.json",
+    "sha256": "cf2b27189ab5bb7dec083f55e854b1e56b3906997f713e6eb688f7aeade8f7d4"
+  },
+  "schema": "stoneage.official_version_coverage.material_review.r7",
+  "selection_reason": "Japanese identity/visual/geography/facility sources now add concrete content, not client completeness. Rotate region and topic to a specifically authenticated unread Taiwan operator detail; do not automatically crawl the remaining Japanese tabs or images.",
+  "task": "OFFICIAL-VERSION-COVERAGE-MATERIAL-REVIEW-07"
+}

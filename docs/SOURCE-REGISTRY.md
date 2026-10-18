@@ -7219,3 +7219,10 @@ Hangame town.asp真实导航：实际20031214052752id_正文14371B SHA2565627429
 ### 2026-10-19 — 日本四村原源独立验收永久回执
 
 STONEAGE-JP-OFFICIAL-TOWN-ACCEPTANCE-R1.json对应内容15c8d55be9985b40cbe4e10f2ef73915e86f1229、10分支/11主线绿，source run39175778360/job117818017266；artifact12154526602实下载ZIP2537B SHA2568825ce689496935e6314d0e680a349882ce824fd7df1ecc40d8788d4b4ff0af3，唯一derived.json10828B SHA256127d7c72de68b4a27b54d088dab74a44bb4189302c87ceaa946a72452ccd97ff与永久blob0945b5c89750cbeb6348252805583cfd9a69d194相同。2003正文/2006唯一图边界、八反例、完整派生cmp实际通过；三图未取、建筑功能/原地图/跨地区别名仍OPEN。文书回执自身检查另验，不更改既有原源/报告。
+
+
+## 2026-10-19 — Hangame村设施正文：13条服务及首图HTTP404缺口
+
+原URL http://www.hangame.co.jp/publish/sa/town2.asp，实际20031215095512id_，21792B SHA256f719ff0167c32e531f3128e47b31175df6bfc641a6a83728d2fd4370a9ae58b3，CP932严格解码，13行设施名/描述/图引用同列实证。宠物店买入禁止、医院HP但目标未知、村落库存差异、问答等级/入场费、贡献设家点、配送远近薪酬、普通步速/无怪/付费自动巴士、抽奖奖品种类等为一方文字限定，非服务端运行；原ID/阈值/价表/坐标/事务保持UNKNOWN。原名トーテンポール不静默改写，全部设施不推每村都有。
+
+首图 http://images.hangame.co.jp/_images/game/saj/town2-1.gif 两次HTTP404，后续本地独立探测仍404；无像素/目视，不提升旧石头建筑功能，另12图未试。首图无HTML声明尺寸，其余仅声明200×150，全13实得尺寸/时刻/哈希/帧数null；404不是历史不存在证据。永久元数据/规格STONEAGE-JP-OFFICIAL-VILLAGE-FACILITIES-R1；11负例及34本地相关回归通过。独立源Actions、ZIP/raw/Git及自身main结果另据实留存。R7复用22域后轮换到华义原介绍页已验game01_04.asp一正文，先核内容，不爬站、不取原程序。
