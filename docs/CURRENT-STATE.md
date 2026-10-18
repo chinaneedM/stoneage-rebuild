@@ -15321,3 +15321,12 @@ NEXT仍`JSS-OFFICIAL-EVENT-RESULTS-PET-ATTRIBUTION-01`：仅取真实eventjsk链
 研究源ba4cde0的11项Actions最终SUCCESS（FAQ attempt1网络拒绝失败与attempt2成功均保留），归档f92ca4c同SHA8项SUCCESS后，重新核main仍335c54c、ahead2/behind0、13路径，非强制快进至`f92ca4c6b6a067f234c56b75d328223dbc3e49dd`/tree`3070bc1d62b7e8caa5a981c738fa770f3437bce2`。该HEAD **12项main Actions全部实际SUCCESS**，含原更新史39115746527、两FAQ实源39115746628、SPR/ADRN39115746658及其它九项。名称/ID/结论永久载入PATCH-HISTORY-ACCEPTANCE-R1，原1954165B完整历史前缀与本轮所有中间记录保留；原HTML/资产不进Git。此回执自己的后续branch/main CI须另验，不借父提交12项冒充新HEAD。
 
 本轮有界完成FAQ41标题/9修复标签/12问答、单页更新史40索引/7宠物合同及两套来源保管，26项相关本地检查通过。原服/计时执行、具体同bug修复、原任务脚本、物种ID/成长公式及TW1.0同构建仍未认证。NEXT仍PREPRODUCTION-CROSS-DOMAIN-MATERIAL-EVIDENCE-REVIEW-04：真实内容回连22域后选择下一具名材料源，停止沿FAQ/更新页无界扩展。7 PARTIAL+2 OPEN、Stage B/百科GATED、R79暂停，无整体百分比。
+
+
+## 2026-10-18 — 用户方向确认：全官方版本内容与玩法参考库（DD-027）
+
+用户明确提出：宠物、任务及其它官方各版本的资料、模型、玩法均可收集，今后新石器即使不用也能参考。已正式采纳为长期范围，写入DD-027、README、设计前资料库与路线，保留早期复原基准并行建设全官方版本参考库。后期官方资料在其自身版本下即可入库，不要求先证明TW1.0同版才允许研究；初代归属仍须初代证据。
+
+涵盖官方主线/地区运营/补丁/临时与退场内容，相关官方衍生产品单列；人物/宠物精灵或有来源模型/动画/界面、地图/NPC/对白/任务、成长/捕获/技能/骑乘、道具/经济/战斗/社交与官方辅助玩法等。逐条保留版本/地区/语言/运营/构建或UNKNOWN、来源与日期、实体/表现/行为、完整度、变化及版权边界，禁止同名/同ID直接跨版合并。尚未收齐版本列明确缺源，不以扩大范围宣称恢复完成。
+
+本方向性文档更新基于重新核远端main06215b3598c5f335a575f64874b3086b1a305871/tree0b0b3248755c8c3954ed7b9339ea1ed5d5a9b131及其9项实际成功Actions；未新增历史游戏事实/资源，也没启动新作生产。最高NEXT仍PREPRODUCTION-CROSS-DOMAIN-MATERIAL-EVIDENCE-REVIEW-04，其审查须纳入全官方版本覆盖与可取得性，再选一个实际内容源。资料收集与新作采用分开，有限分包/去重；原证据7 PARTIAL+2 OPEN、Stage B/百科GATED、R79暂停均保留。此提交CI须随后实际检查。

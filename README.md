@@ -257,3 +257,14 @@ symptom matches. The2001 capture preserves operator-written1999–2000 history,
 not launch/Taiwan-v1 build identity. See [dated pet changes](docs/specs/STONEAGE-JSS-PET-PATCH-HISTORY-R1.md).
 NEXT: `PREPRODUCTION-CROSS-DOMAIN-MATERIAL-EVIDENCE-REVIEW-04`, a finite22-domain material review.
 Stage B/wiki gated; R79 paused.
+
+
+### Official-version reference library — user direction, 2026-10-18
+
+Collect recoverable content, visual/model/animation references and gameplay
+across all authenticated official versions and regional releases, including
+features that the future new game may never adopt. Keep the early restoration
+baseline and each later version's own provenance and differences. The existing
+seven profile classes are not a complete official-release census.
+See DD-027 and the current content-archive/roadmap additions for collection
+fields and priorities. Selection for the new game remains a later joint decision.

@@ -585,3 +585,54 @@ connection. DD-024's Stage A evidence-limited historical milestone
 remains on record and DD-025's tool and pet completeness emphasis
 remains active. Stage B production and public wiki publication remain
 gated by subsequent collaborative choices.
+
+
+## DD-027 — Archive all source-recoverable official versions as a future design reference library
+
+**Status:** Accepted user direction on 2026-10-18. The owner explicitly proposed
+collecting the pets, quests, other content, models and gameplay of all official
+versions so they can inform the new StoneAge even when ultimately unused.
+This clarifies and broadens DD-003/025/026's practical collection scope.
+
+Maintain two connected research tracks: an early historical restoration
+baseline, and a broad official-version reference library. Later official
+content is eligible for collection on its own merits without first proving
+it belonged to JSS1999 or Taiwan1.0. Early-build identity remains required
+only for claims specifically attributed to those builds. No earlier baseline
+record or unresolved original-server gap is overwritten by this scope change.
+
+The library covers authenticated official product releases, patches, regional
+operator branches, temporary events and subsequently changed/retired features.
+Official IP derivatives or different products may be useful references but
+receive separate product/lineage records; they do not automatically share
+entities, resources or rules. Community/private-server modifications and
+legacy external helpers keep their existing separate provenance categories.
+
+Collect pet species/variants, stats/growth/capture/locations/skills/riding;
+NPCs, dialogue, quest prerequisites/steps/rewards and events; world/maps;
+characters, 2D sprites or authenticated 3D models, animations and UI; items,
+crafting/economy, battle, social/progression systems and official assistance
+features where evidenced. A count of pictures or source rows is not a species
+or fully recovered-content count. Do not assume every release used 3D assets.
+
+Every record carries product/operator/region/language, version/build or explicit
+UNKNOWN, source and observed dates, entity identity, actual content/behavior,
+visual/resource reference, evidence quality and completeness. Record changes,
+renames, additions/removals and conflicts with exact source boundaries. Shared
+names or numeric IDs alone cannot establish cross-version entity identity.
+Preserve unknown fields instead of copying another version's values.
+
+Archive useful and unused content alike; adoption, adaptation or rejection
+for the new game is a later joint DESIGN decision. Reference eligibility
+does not grant production asset reuse or permission to republish originals.
+Existing copyright/custody, source-only claims, Stage B and wiki gates apply.
+
+The coverage ambition is all source-recoverable official versions. Execute
+finite packages ranked by design value, source recoverability and current
+gaps: maintain a release/source inventory, derive content tables and visual
+references, then compare material changes while deduplicating unchanged
+records. Do not require exhaustive recovery of every release before useful
+review can occur. Explicit missing releases/content remain in the coverage
+ledger. The next22-domain review must include this broad official-version
+coverage and choose a concrete content source, rather than restricting every
+new package to early-build identity or adding more low-level helper analysis.
