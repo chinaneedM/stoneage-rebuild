@@ -1,0 +1,65 @@
+{
+  "schema": "stoneage.jss.official_event_venue.content_catalog.r1",
+  "date": "2026-10-18",
+  "report": {
+    "path": "research/recovered/STONEAGE-JSS2001-OFFICIAL-EVENT-VENUE-R1.json",
+    "sha256": "7c105ecdf4c7ca6e751da27dbaf827013fd72b238882421bb7034ef1f7027f5b",
+    "git_blob": "1fc8ca061330655483cbc931f93043be7c3792a9"
+  },
+  "visual_observation_method": "MANUAL_INSPECTION_OF_ALL_SIX_QUALIFIED_ORIGINAL_JPEG_CROPS",
+  "rows": [
+    {
+      "file": "mari01.jpg",
+      "sha256": "6fde7630fc673fe95769e514d85b4c5a46afd394ed9056e70761bff675c3305f",
+      "actual_capture": "20010701072151",
+      "kind": "VILLAGE_CHATROOM_ENTRANCE",
+      "observation": "Village building and red editorial entrance annotation."
+    },
+    {
+      "file": "karu01.jpg",
+      "sha256": "85ace9515663349a7c95d5413a1d67b92c108c39e67964666e9b2960512f8d09",
+      "actual_capture": "20010630212945",
+      "kind": "VILLAGE_CHATROOM_ENTRANCE",
+      "observation": "Village building/path with red editorial entrance annotation."
+    },
+    {
+      "file": "samu01.jpg",
+      "sha256": "9841650094879261c39be9009c746db6825949ba013928106440a40de39302c3",
+      "actual_capture": "20010701073936",
+      "kind": "VILLAGE_CHATROOM_ENTRANCE",
+      "observation": "Building front with red editorial entrance annotation."
+    },
+    {
+      "file": "chat01.jpg",
+      "sha256": "cc7a0da96712c01b57a6d3f163591b3f1137bfd9591be85c39a02cb8ddc26746",
+      "actual_capture": "20010630190951",
+      "kind": "RECEPTION_INTERIOR",
+      "observation": "Interior scene; two red editorial annotations identify guide and ticket-seller areas, not a census of all NPCs."
+    },
+    {
+      "file": "jyajya01.jpg",
+      "sha256": "67019da88767f681a62d8e8071711b3ab73e8b2112251d8c91ccdaebae29e494",
+      "actual_capture": "20010630212710",
+      "kind": "VILLAGE_CHATROOM_ENTRANCE",
+      "observation": "Village building/grass with red editorial entrance annotation."
+    },
+    {
+      "file": "chat02.jpg",
+      "sha256": "6206b28cb0d18ff0a1ca19d4848709cf5ab91a7f1288148a561ffef17940e093",
+      "actual_capture": "20010630210857",
+      "kind": "NORTHERN_VENUE_ENTRANCES",
+      "observation": "Exterior/corridor scene; two red editorial annotations identify hall and wedding entrances, not destination map payloads."
+    }
+  ],
+  "material_domains": {
+    "world_map": "FOUR_LOCAL_ENTRANCE_COORDINATE_DESCRIPTIONS_NOT_ORIGINAL_FIELD_MAPS",
+    "npc_identity": "TWO_UNNAMED_SERVICE_ROLES_NOT_ENTITY_IDS",
+    "quest_content": "OFFICIAL_SOCIAL_ANNOUNCEMENTS_NOT_NPC_SCRIPTS",
+    "pet_species": "UNIDENTIFIED_RARE_PET_PRIZE_ONLY",
+    "reference_web": "THREE_FIRST_PARTY_PAGES_AND_SIX_IMAGE_CAPTURES"
+  },
+  "editorial_annotations_are_not_client_ui_proof": true,
+  "jss1999_or_tw10_same_build_proven": false,
+  "runtime_route_or_event_execution_proven": false,
+  "original_assets_retained_in_git": false
+}

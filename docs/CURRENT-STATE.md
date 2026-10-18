@@ -15214,3 +15214,16 @@ WORLD源分支ec2aa8fac09f13a61c73c9542b2dd9c08c9fc1b9/tree0976772698b7470b72145
 研究源0cca773同HEAD10项SUCCESS，来源保管追加a2e54db同HEAD8项SUCCESS后，重新核main仍08106beb、ahead2/behind0、19路径0删除，非强制快进至`a2e54db4fb5b1bc509ffba00da6628c4c369fa98`/tree`be16861f6c19c89d0db8d9632286f4b8526dcd53`。该HEAD **11项main Actions全部实际SUCCESS**，含原官网手册/介绍/10张JPEG重取与精确重放39094719950、原资源SPR/ADRN39094719886及其它九项；全部名称/ID/结论已写MATERIAL-CONTENT-ACCEPTANCE-R1的main_acceptance。原1937890字节完整历史前缀逐字节保留，19路径不含版权原图/HTML/游戏程序。此回执自己的后续CI须独立完成，不把父提交结果冒充新HEAD。
 
 本轮取得的是日本JSS2001第一方说明与10张真实缩图的有限材料，5张缺图及TW1.0同版身份、原服宠物/NPC/地图/任务仍OPEN；系统7 PARTIAL+2 OPEN、Stage B与百科生产GATED、R79暂停。最高NEXT仍`JSS2001-OFFICIAL-EVENT-QUEST-CONTENT-01`，按真实官网event链接有限研究具名内容，不扩无源API树。
+
+
+## 2026-10-18 — JSS官方两项社交活动与四村聊天室会场内容
+
+本轮实时重核main`bd30efd7cc03c9c1c5a3bcbd086d6384fc476342`/tree`34618c4ff75349dd4cf6abf1f675a9f79d84a9b3`，同HEAD9项main Actions全部SUCCESS，331远端分支头已核，先前研究分支同HEAD，无开放PR。完整CURRENT-STATE1943602字节/SHA256`f81c6bdeefb6ea5db7e86faaa3dc9e624306bcc6372898fd9b429a6f841d13c1`与精确远端Git blob及checkout逐字节相符，README/协议/Design/Timeline/Source/Roadmap和R3矩阵重新读取，历史前缀不删。
+
+最高`JSS2001-OFFICIAL-EVENT-QUEST-CONTENT-01`已有限取原top真实event入口：索引实际20010417155224，预告eventjss实际20010418090522。结果是两项**官方社交活动公告**，不是NPC任务脚本。搞笑比赛原月日11/17、太阳服、1—5人组/5分钟、30000＋未具名稀有宠/20000/10000 stone公告奖项；联谊12/22、月亮服、预计10人可旁观、需空名片槽及限定情形临时换角色图像描述。正文没有年份；不从索引自标2000更新日或2001快照推定举办年份。原联谊提示22:45集合/时间表21:45集合/22:00开始的矛盾保留；两报名链接在HTML注释里，不算活跃报名入口，未访问/提交任何表单，公告不证明实际举行、奖品发出或通用换形功能。
+
+有界收束活动包后，同索引具名会场页eventmaz（实际20010418085855）补了实际场景资料：マリナス东51南72、カルターナ东81南49、サムギル东111南38、ジャジャ东85南73四村聊天室入口；找售票员领取票→找引导员→进聊天室；北侧走廊最右入口大厅/右起第二婚礼场。两者只是未具名角色职能，不声称两个NPC实体；东/南坐标不改成TW1.0或recovered25 floor/NPC ID、票ID/价格、原始DAT或实际传送事务。
+
+原6张官网JPEG全部实取且逐张目视，均160×125，有四村入口、接待室售票/引导位置、北侧大厅/婚礼入口的**编辑红字标注**；实际图像快照20010630/0701，不与4月正文当同刻，也不把编辑字当原游戏UI。三页与六图的来源/指纹/首次抓取元数据、机读合同和人工观察永久派生入册；原HTML/图像只临时使用不入Git。规格STONEAGE-JSS-OFFICIAL-EVENT-AND-VENUE-R1，新脚本/12项负面和来源边界检查、独立实源重放工作流已形成，本地12项实际通过；分支及main CI/ZIP保管以随后实际结果为准。
+
+**最高NEXT `JSS-OFFICIAL-EVENT-RESULTS-PET-ATTRIBUTION-01`**：仅查同索引真实eventjsk结果页，判断是否有已发表活动结果、具名奖励宠/角色；若仍无物种/ID或认证结果则保留未知停止，不递归表单、评论、GM后台/脚本。九系统7 PARTIAL+2 OPEN、Stage B游戏/公开百科生产GATED、R79 PAUSED_NON_BLOCKING，无整体完成百分比。

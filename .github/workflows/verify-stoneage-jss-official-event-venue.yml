@@ -1,0 +1,34 @@
+name: Verify original JSS official event and four-village venue content
+on:
+  push:
+    paths:
+      - tools/stoneage_jss_official_event_venue.py
+      - tests/test_stoneage_jss_official_event_venue.py
+      - docs/specs/STONEAGE-JSS-OFFICIAL-EVENT-AND-VENUE-R1.md
+      - research/recovered/STONEAGE-JSS-OFFICIAL-EVENT-*.json
+      - research/recovered/STONEAGE-JSS2001-OFFICIAL-EVENT-*.json
+      - .github/workflows/verify-stoneage-jss-official-event-venue.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  replay-official-announcements-and-venues:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --quiet Pillow
+      - name: Verify chronology, comments, numeric source assertions and coordinates
+        run: python -m unittest tests.test_stoneage_jss_official_event_venue -v
+      - name: Independently recover three original pages and six exact screenshot captures
+        run: |
+          python -m tools.stoneage_jss_official_event_venue --reference research/recovered/STONEAGE-JSS2001-OFFICIAL-EVENT-VENUE-R1.json --output "${{ runner.temp }}/jss-official-event-venue.json"
+          cmp "${{ runner.temp }}/jss-official-event-venue.json" research/recovered/STONEAGE-JSS2001-OFFICIAL-EVENT-VENUE-R1.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: jss-official-event-venue-derived-report
+          path: ${{ runner.temp }}/jss-official-event-venue.json
+          retention-days: 30

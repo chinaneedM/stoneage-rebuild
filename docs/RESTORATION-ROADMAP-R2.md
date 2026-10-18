@@ -501,3 +501,10 @@ TW1原资源9286条去重map_number→bitmap碰撞属性，按仅供候选的200
 T01～T04的图像/物品/地图/音频物理证据不等于具名原游戏内容。R3逐行保留22域旧状态，新增JSS2001官方介绍正文及10张实取原JPEG缩图的出处/日期/尺寸/观察；5个链接仅失败或晚期跳转，不推缺席。正文4月、图像6月不得伪装同刻或TW1.0同版。已有手册再整理12节、11组宠物与战斗/合成说明，不计新网页。完整源和来源层见STONEAGE-CROSS-DOMAIN-MATERIAL-REVIEW-R3以及STONEAGE-JSS2001-PET-INTERACTION-AND-VISUAL-R1。
 
 **当前最高NEXT `JSS2001-OFFICIAL-EVENT-QUEST-CONTENT-01`**：沿已验JSS top.html真实event.html链接，有限查一个可定年的官方活动/任务内容页，尝试取得具名剧情/NPC/道具/参加限制；无合格实质内容便记录界限停止，不递归全站、不再扩无同版事件实参的API树。不把JSS2001默认升级成1999/TW1.0，7 PARTIAL+2 OPEN、Stage B/百科生产GATED、R79暂停。
+
+
+## 2026-10-18 — 官方社交活动有界收束与四村会场资料
+
+原最高JSS2001-OFFICIAL-EVENT-QUEST-CONTENT-01从真正官方event索引及eventjss正文取得两项社交活动公告，未取得NPC任务脚本，故不扩名不副实的“任务恢复”树。同索引具名eventmaz会场页组成有限相邻材料包：四村聊天室入口方向坐标、售票/引导职能、领票进场流程、北侧右起大厅/婚礼场指引及6张实际编辑标注原JPEG。HTML4月和图片6—7月不同刻；所有同TW1.0、原服地图/NPC实体、领取事务归属继续OPEN。具体来源/矛盾/登记见STONEAGE-JSS-OFFICIAL-EVENT-AND-VENUE-R1。
+
+**最高NEXT `JSS-OFFICIAL-EVENT-RESULTS-PET-ATTRIBUTION-01`**：只读取索引真实eventjsk结果页，有限查已发表活动结果是否给出实际参与/奖励宠名字与身份；未知仍未知，不把“未登场稀有宠”猜成某物种，不递归评论或表单、GM后台。7 PARTIAL+2 OPEN、Stage B及百科生产GATED、R79暂停不变。

@@ -7037,3 +7037,12 @@ STONEAGE-HISTORICAL-WIKI-QUERY-CONTRACT-DRAFT-R1.json引用四个既有派生Git
 - 10图逐一实际目视观察：村落概览、医院/肉店/宠物店/武器店外观、图腾、PET STATUS、背包、组队场景、名片窗；不从附近文字自动给未取得图片定性，不从缩图猜全屏坐标、具名宠物物种/SPR或TW1.0身份。像素不入Git。
 - 旧正文复用源：manual02实际20010418083149，28434B SHA256 50b9771ec501067136629c8e083a190e979e53dd9ba141903f78b76d43b602cc，与旧来源相同；12节新结构化事实与hash见STONEAGE-JSS2001-PET-MANUAL-CONTRACT-R1，非新增网页。按钮点击/右键原描述不同、未知公式/ID/时长全部保持。
 - 派生物与独立重放脚本/测试/Actions纳入仓库；来源实跑、ZIP/raw摘要及分支/main状态只能在实际成功后追加回执。JSS2001不自动认证1999/TW1.0；不公开原HTML、版权图像或旧程序。
+
+
+## SRC-JSS-OFFICIAL-EVENT-VENUE-20261018
+
+- 起点是此前已验官方top→event真出链；本轮新取event实际20010417155224/1587B/SHA256 f11aa3a19be0dc307ec4580b0c8efa919c6dcaca3a1cac988656bd32ff376fd1，四真实出链分别预告、结果、玩家赞助、会场；本轮未查结果和赞助页。
+- eventjss实际20010418090522/4166B/SHA256 51c237c961002d862fcba2a4ea3a10aa67afdf9c87d1e523818cc2db3c7dea93，限两项社交活动预告；年份缺失、联谊集合时间冲突、稀有宠未具名、评论/报名表单注释边界保存。公告不是NPC任务脚本或获奖记录。
+- eventmaz实际20010418085855/2652B/SHA256 2a52793ecff532885090d3336bea2cc00c6ed5ecc518f285dc41b47a1b9ec4bf，官方四村聊天室入口坐标和售票/引导角色流程；不补票ID/价格、地图floor、NPC实体或服务器事务。三页Shift-JIS严格解码无替换。
+- 原6JPEG mari01/karu01/samu01/chat01/jyajya01/chat02实际均160×125，捕获分别20010701072151/20010630212945/20010701073936/20010630190951/20010630212710/20010630210857；各字节摘要和最终原URL见STONEAGE-JSS2001-OFFICIAL-EVENT-VENUE-R1。逐张目视观察及指纹见CONTENT-CATALOG-R1；红字是官网编辑标注，不证明游戏UI本来含同样文字。4月HTML不认证6—7月图像同刻，JSS截图不认证TW1.0构建。
+- 首次抓取、基线1943602字节CURRENT-STATE前缀、原文/可见文本/SHA与来源身份见SOURCE-INTAKE-R1；永久派生报告/负面边界测试和独立源重放工作流已形成。后续Actions、ZIP/raw保管与主线结果必须实际成功后再记录；不保存原版权HTML、JPEG、游戏二进制。

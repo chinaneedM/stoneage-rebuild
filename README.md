@@ -208,3 +208,16 @@ sections, not a newly discovered source. See the [source specification](docs/spe
 These are JSS2001 descriptions/images, not certified Taiwan1.0 build identity.
 NEXT: `JSS2001-OFFICIAL-EVENT-QUEST-CONTENT-01`, one finite original linked
 event page for named quest/story content. Stage B and public wiki remain gated.
+
+
+### Latest official event and venue source content — 2026-10-18
+
+Three authenticated original JSS pages add two **social-event announcements**,
+four hometown chatroom entrance coordinate descriptions, ticket/guide roles
+and hall/wedding entrance directions. Six publisher-annotated JPEG crops were
+retrieved and inspected; April2001 HTML and June/July2001 images remain separate.
+See [official event and venue source specification](docs/specs/STONEAGE-JSS-OFFICIAL-EVENT-AND-VENUE-R1.md).
+No NPC quest script, event year, actual prize award or Taiwan1.0 same-build map
+identity is certified. Conflicting meeting times and commented-out registration
+links are preserved. NEXT: `JSS-OFFICIAL-EVENT-RESULTS-PET-ATTRIBUTION-01`, one
+linked official results page; Stage B and public wiki production remain gated.
