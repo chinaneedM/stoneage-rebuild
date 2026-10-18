@@ -1,0 +1,201 @@
+{
+  "schema": "stoneage.wayi.official_ice_region.source_intake.r1",
+  "date": "2026-10-18",
+  "task": "TW-WAYI-OFFICIAL-INTRO-DETAIL-01",
+  "startup": {
+    "head": "12d45f491ece5aa53a66b8ce17a64ddab7978cd6",
+    "tree": "1af86bcfd66c850024e7fd8e462ecd26667e2ad5",
+    "remote_branches": 338,
+    "open_prs": 0,
+    "main_runs": [
+      {
+        "id": 39118332588,
+        "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+        "head_sha": "12d45f491ece5aa53a66b8ce17a64ddab7978cd6",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39118332688,
+        "name": "Validate Stage A early source gap triage",
+        "head_sha": "12d45f491ece5aa53a66b8ce17a64ddab7978cd6",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39118332447,
+        "name": "Validate StoneAge Stage A joint review decision",
+        "head_sha": "12d45f491ece5aa53a66b8ce17a64ddab7978cd6",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39118332444,
+        "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+        "head_sha": "12d45f491ece5aa53a66b8ce17a64ddab7978cd6",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39118332471,
+        "name": "Validate legacy StoneAge assistant history and pet content gaps",
+        "head_sha": "12d45f491ece5aa53a66b8ce17a64ddab7978cd6",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39118332422,
+        "name": "Validate Stage A evidence-limited review acceptance",
+        "head_sha": "12d45f491ece5aa53a66b8ce17a64ddab7978cd6",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39118332549,
+        "name": "Validate StoneAge preproduction content archive and wiki boundary",
+        "head_sha": "12d45f491ece5aa53a66b8ce17a64ddab7978cd6",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39118332589,
+        "name": "Independently verify TW1.0 R58 rooted helper returns and source custody",
+        "head_sha": "12d45f491ece5aa53a66b8ce17a64ddab7978cd6",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39118332786,
+        "name": "Verify official Wayi world synopsis and bounded version relationships",
+        "head_sha": "12d45f491ece5aa53a66b8ce17a64ddab7978cd6",
+        "status": "completed",
+        "conclusion": "success"
+      }
+    ],
+    "files": [
+      {
+        "path": "README.md",
+        "bytes": 16421,
+        "sha256": "a3c3c304f6eca212aebbe725c8c4e2c1a1c0d000728bb2efeb327eadcd8665ee",
+        "git_blob": "fe13353228a023846d6b31c49cf0e1ca33e06fed"
+      },
+      {
+        "path": "docs/PROJECT-CONTINUITY-PROTOCOL-R1.md",
+        "bytes": 9762,
+        "sha256": "c44834eeec87f7a43e9cb4905f08377349e36d58b1fff2c5a75a6975db695e3b",
+        "git_blob": "ba9bbe19384589400abc61af37a360a40bf91452"
+      },
+      {
+        "path": "docs/CURRENT-STATE.md",
+        "bytes": 1971345,
+        "sha256": "fc70222006343fdcc8b5254c578e96cfc2af647cd8c833e3e77391a413360d91",
+        "git_blob": "3175e4dbd58bea62dc13a0226ff94bdaa19e2a36"
+      },
+      {
+        "path": "docs/DESIGN-DECISIONS.md",
+        "bytes": 45965,
+        "sha256": "28b572ed01179eacd5a06b4ad62c76e4baef22ac49587aa0bad452a7cb3fe8e6",
+        "git_blob": "013ae4fad9301ab0140fe408a423b3abad97d1f9"
+      },
+      {
+        "path": "docs/HISTORICAL-TIMELINE.md",
+        "bytes": 436660,
+        "sha256": "458a79342188a95941f0e294c474fef9ae9cb823138e8eb1eb5bdf8f618babe6",
+        "git_blob": "2a3cca060c301b0b8ffed650919679a0958b845b"
+      },
+      {
+        "path": "docs/SOURCE-REGISTRY.md",
+        "bytes": 694054,
+        "sha256": "233a49e9e52c9d5e673ac6311122ba9fec7d2f6245d1963fe687f2f0fbee070f",
+        "git_blob": "3d4384384edde53be3928e6768c317a82dacfa00"
+      },
+      {
+        "path": "docs/RESTORATION-ROADMAP-R2.md",
+        "bytes": 66037,
+        "sha256": "f31273a7ccb39c0c31ee4eeba54f82c46cda7ac39f05920763160f4ea6cfaa42",
+        "git_blob": "d5d61cdfb8cc8bcccaa4397fd04d5df58c0dbae2"
+      }
+    ]
+  },
+  "html_acquisition_attempts": [
+    {
+      "requested_url": "https://web.archive.org/web/20050614002509id_/http://www.wayi.com.tw/stoneage/game/game01_01.asp",
+      "original_url": "http://www.wayi.com.tw/stoneage/game/game01_01.asp",
+      "requested_at_utc": "2026-10-18T10:16:02Z",
+      "selection_basis": "First actual game01 href in authenticated source order; topic not inferred from numeric filename",
+      "final_url": "https://web.archive.org/web/20050614003328id_/http://www.wayi.com.tw/stoneage/game/game01_01.asp",
+      "status": 200,
+      "bytes": 26346,
+      "sha256": "f7e10861dd9f8ee3bef19c46863c7bc818d17635ffecab41b0189c63ff2b234c"
+    }
+  ],
+  "jpeg_acquisition_attempts": [
+    {
+      "original_url": "http://www.wayi.com.tw/stoneage/images/game/pic3.jpg",
+      "requested_url": "https://web.archive.org/web/20050614003328id_/http://www.wayi.com.tw/stoneage/images/game/pic3.jpg",
+      "requested_at_utc": "2026-10-18T10:16:50Z",
+      "final_url": "https://web.archive.org/web/20060105082058id_/http://www.wayi.com.tw/stoneage/images/game/pic3.jpg",
+      "status": 200,
+      "bytes": 14212,
+      "sha256": "803fbccf687afa1bd46db8cdceaad56fe9fb5f994b871bf3f723fe6dc04f7775"
+    },
+    {
+      "original_url": "http://www.wayi.com.tw/stoneage/images/game/pic3-3.jpg",
+      "requested_url": "https://web.archive.org/web/20050614003328id_/http://www.wayi.com.tw/stoneage/images/game/pic3-3.jpg",
+      "requested_at_utc": "2026-10-18T10:16:50Z",
+      "final_url": "https://web.archive.org/web/20060105093954id_/http://www.wayi.com.tw/stoneage/images/game/pic3-3.jpg",
+      "status": 200,
+      "bytes": 19109,
+      "sha256": "d934093ae3ea7a1e0e2bbb950f7b79e573d8d617342ea2aa698e7a1ea9854e56"
+    },
+    {
+      "original_url": "http://www.wayi.com.tw/stoneage/images/game/pic3-1.jpg",
+      "requested_url": "https://web.archive.org/web/20050614003328id_/http://www.wayi.com.tw/stoneage/images/game/pic3-1.jpg",
+      "requested_at_utc": "2026-10-18T10:16:50Z",
+      "final_url": "https://web.archive.org/web/20060105093929id_/http://www.wayi.com.tw/stoneage/images/game/pic3-1.jpg",
+      "status": 200,
+      "bytes": 16212,
+      "sha256": "7c63f9926eaa6c386feca2037398dccd6e9956c56ed1b9c5f666420b27c135dc"
+    },
+    {
+      "original_url": "http://www.wayi.com.tw/stoneage/images/game/pic3-4.jpg",
+      "requested_url": "https://web.archive.org/web/20050614003328id_/http://www.wayi.com.tw/stoneage/images/game/pic3-4.jpg",
+      "requested_at_utc": "2026-10-18T10:17:05Z",
+      "final_url": "https://web.archive.org/web/20060105093146id_/http://www.wayi.com.tw/stoneage/images/game/pic3-4.jpg",
+      "status": 200,
+      "bytes": 16292,
+      "sha256": "97ac98a40f58a2ba64f83ce718e5e787bcbd416bca3a8264bdfa7ac54e48139a"
+    },
+    {
+      "original_url": "http://www.wayi.com.tw/stoneage/images/game/pic3-2.jpg",
+      "requested_url": "https://web.archive.org/web/20050614003328id_/http://www.wayi.com.tw/stoneage/images/game/pic3-2.jpg",
+      "requested_at_utc": "2026-10-18T10:17:05Z",
+      "final_url": "https://web.archive.org/web/20060105102053id_/http://www.wayi.com.tw/stoneage/images/game/pic3-2.jpg",
+      "status": 200,
+      "bytes": 14613,
+      "sha256": "762f937ed38b5ed02ec19bb31a878adf970a30d65060cc0009055575e00d1e99"
+    },
+    {
+      "original_url": "http://www.wayi.com.tw/stoneage/images/game/pic3-5.jpg",
+      "requested_url": "https://web.archive.org/web/20050614003328id_/http://www.wayi.com.tw/stoneage/images/game/pic3-5.jpg",
+      "requested_at_utc": "2026-10-18T10:17:05Z",
+      "final_url": "https://web.archive.org/web/20060105091411id_/http://www.wayi.com.tw/stoneage/images/game/pic3-5.jpg",
+      "status": 200,
+      "bytes": 16638,
+      "sha256": "872e00e2a1283fa6dc8f447c053775244bad02f3260b70b38cf69665321ee9a6"
+    }
+  ],
+  "qualified_new_html": 1,
+  "qualified_original_jpeg": 6,
+  "source_failures_this_package": [],
+  "previous_authenticated_intro": {
+    "path": "research/recovered/STONEAGE-WAYI-OFFICIAL-WORLDLINE-R1.json",
+    "bytes": 11952,
+    "sha256": "619c2b931174058b87eb97631beb11a995c41fedb26010a94c42e9cc54aa785b",
+    "git_blob": "be6fc0ae90243f49af8366c3817ae464c5412c18"
+  },
+  "original_html_or_pixel_assets_in_git": false,
+  "manual_review": "Six exact sourceJPEGs individually viewed; visual observations kept separate from caption functions, name normalization, NPC identities and riding unlock inference",
+  "other_detail_pages_forms_flash_or_software_queried": false,
+  "next_priority": "TW-WAYI-OFFICIAL-INTRO-DETAIL-02"
+}

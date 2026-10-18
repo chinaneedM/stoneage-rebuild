@@ -1,0 +1,465 @@
+{
+  "schema": "stoneage.wayi.official_ice_region.content_catalog.r1",
+  "derived_source": {
+    "path": "research/recovered/STONEAGE-WAYI-OFFICIAL-ICE-REGION-R1.json",
+    "bytes": 12142,
+    "sha256": "1d798c792baf1d48d36c5818bc9e08dd9cd97ca1ccfdbef3bede6235fce19bf8",
+    "git_blob": "2d934e012f60a825ab7882a6382df66ffaa15f53"
+  },
+  "existing_archive_contract": {
+    "path": "research/recovered/STONEAGE-PREPRODUCTION-CONTENT-ARCHIVE-R1.json",
+    "bytes": 24489,
+    "sha256": "e87afebc8c9590142c7cc8831b578455b3427bf7c1d10520ae02a3e8082fbddb",
+    "git_blob": "2d5b3f081d5618287f431fbded943722a820c593"
+  },
+  "record_count": 19,
+  "records": [
+    {
+      "record_id": "wayi-tw-web2005-ice:region",
+      "collection": "maps",
+      "entity_type": "OFFICIAL_REGION_DESCRIPTION",
+      "version_profile": "TAIWAN_WAYI_OFFICIAL_WEB_2005_DETAIL",
+      "source_refs": [
+        {
+          "path": "research/recovered/STONEAGE-WAYI-OFFICIAL-ICE-REGION-R1.json",
+          "sha256": "1d798c792baf1d48d36c5818bc9e08dd9cd97ca1ccfdbef3bede6235fce19bf8",
+          "json_pointer": "/region"
+        }
+      ],
+      "verification_status": "OPERATOR_DESCRIPTION_WITH_UNRESOLVED_CAPTION_NAME_VARIANT",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "display_label_as_written": "瑞爾亞斯",
+      "game_ids": null,
+      "explicit_alias": "冰世界",
+      "exact_client_build": null,
+      "estate_ordinal_described": 10
+    },
+    {
+      "record_id": "wayi-tw-web2005-ice:map:0",
+      "collection": "maps",
+      "entity_type": "OFFICIAL_NAMED_MAP_LABEL",
+      "version_profile": "TAIWAN_WAYI_OFFICIAL_WEB_2005_DETAIL",
+      "source_refs": [
+        {
+          "path": "research/recovered/STONEAGE-WAYI-OFFICIAL-ICE-REGION-R1.json",
+          "sha256": "1d798c792baf1d48d36c5818bc9e08dd9cd97ca1ccfdbef3bede6235fce19bf8",
+          "json_pointer": "/region/named_maps/0"
+        }
+      ],
+      "verification_status": "NAME_ONLY_NOT_RECOVERED_FLOOR_OR_ROUTE",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "display_label_as_written": "瑞爾亞斯之都",
+      "game_ids": null,
+      "floor_id": null,
+      "coordinates": null,
+      "outgoing_routes": null
+    },
+    {
+      "record_id": "wayi-tw-web2005-ice:map:1",
+      "collection": "maps",
+      "entity_type": "OFFICIAL_NAMED_MAP_LABEL",
+      "version_profile": "TAIWAN_WAYI_OFFICIAL_WEB_2005_DETAIL",
+      "source_refs": [
+        {
+          "path": "research/recovered/STONEAGE-WAYI-OFFICIAL-ICE-REGION-R1.json",
+          "sha256": "1d798c792baf1d48d36c5818bc9e08dd9cd97ca1ccfdbef3bede6235fce19bf8",
+          "json_pointer": "/region/named_maps/1"
+        }
+      ],
+      "verification_status": "NAME_ONLY_NOT_RECOVERED_FLOOR_OR_ROUTE",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "display_label_as_written": "瑞爾亞斯莊園",
+      "game_ids": null,
+      "floor_id": null,
+      "coordinates": null,
+      "outgoing_routes": null
+    },
+    {
+      "record_id": "wayi-tw-web2005-ice:map:2",
+      "collection": "maps",
+      "entity_type": "OFFICIAL_NAMED_MAP_LABEL",
+      "version_profile": "TAIWAN_WAYI_OFFICIAL_WEB_2005_DETAIL",
+      "source_refs": [
+        {
+          "path": "research/recovered/STONEAGE-WAYI-OFFICIAL-ICE-REGION-R1.json",
+          "sha256": "1d798c792baf1d48d36c5818bc9e08dd9cd97ca1ccfdbef3bede6235fce19bf8",
+          "json_pointer": "/region/named_maps/2"
+        }
+      ],
+      "verification_status": "NAME_ONLY_NOT_RECOVERED_FLOOR_OR_ROUTE",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "display_label_as_written": "漩渦通道",
+      "game_ids": null,
+      "floor_id": null,
+      "coordinates": null,
+      "outgoing_routes": null
+    },
+    {
+      "record_id": "wayi-tw-web2005-ice:map:3",
+      "collection": "maps",
+      "entity_type": "OFFICIAL_NAMED_MAP_LABEL",
+      "version_profile": "TAIWAN_WAYI_OFFICIAL_WEB_2005_DETAIL",
+      "source_refs": [
+        {
+          "path": "research/recovered/STONEAGE-WAYI-OFFICIAL-ICE-REGION-R1.json",
+          "sha256": "1d798c792baf1d48d36c5818bc9e08dd9cd97ca1ccfdbef3bede6235fce19bf8",
+          "json_pointer": "/region/named_maps/3"
+        }
+      ],
+      "verification_status": "NAME_ONLY_NOT_RECOVERED_FLOOR_OR_ROUTE",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "display_label_as_written": "深海通道",
+      "game_ids": null,
+      "floor_id": null,
+      "coordinates": null,
+      "outgoing_routes": null
+    },
+    {
+      "record_id": "wayi-tw-web2005-ice:map:4",
+      "collection": "maps",
+      "entity_type": "OFFICIAL_NAMED_MAP_LABEL",
+      "version_profile": "TAIWAN_WAYI_OFFICIAL_WEB_2005_DETAIL",
+      "source_refs": [
+        {
+          "path": "research/recovered/STONEAGE-WAYI-OFFICIAL-ICE-REGION-R1.json",
+          "sha256": "1d798c792baf1d48d36c5818bc9e08dd9cd97ca1ccfdbef3bede6235fce19bf8",
+          "json_pointer": "/region/named_maps/4"
+        }
+      ],
+      "verification_status": "NAME_ONLY_NOT_RECOVERED_FLOOR_OR_ROUTE",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "display_label_as_written": "淺海通道",
+      "game_ids": null,
+      "floor_id": null,
+      "coordinates": null,
+      "outgoing_routes": null
+    },
+    {
+      "record_id": "wayi-tw-web2005-ice:map:5",
+      "collection": "maps",
+      "entity_type": "OFFICIAL_NAMED_MAP_LABEL",
+      "version_profile": "TAIWAN_WAYI_OFFICIAL_WEB_2005_DETAIL",
+      "source_refs": [
+        {
+          "path": "research/recovered/STONEAGE-WAYI-OFFICIAL-ICE-REGION-R1.json",
+          "sha256": "1d798c792baf1d48d36c5818bc9e08dd9cd97ca1ccfdbef3bede6235fce19bf8",
+          "json_pointer": "/region/named_maps/5"
+        }
+      ],
+      "verification_status": "NAME_ONLY_NOT_RECOVERED_FLOOR_OR_ROUTE",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "display_label_as_written": "淺冰通道",
+      "game_ids": null,
+      "floor_id": null,
+      "coordinates": null,
+      "outgoing_routes": null
+    },
+    {
+      "record_id": "wayi-tw-web2005-ice:map:6",
+      "collection": "maps",
+      "entity_type": "OFFICIAL_NAMED_MAP_LABEL",
+      "version_profile": "TAIWAN_WAYI_OFFICIAL_WEB_2005_DETAIL",
+      "source_refs": [
+        {
+          "path": "research/recovered/STONEAGE-WAYI-OFFICIAL-ICE-REGION-R1.json",
+          "sha256": "1d798c792baf1d48d36c5818bc9e08dd9cd97ca1ccfdbef3bede6235fce19bf8",
+          "json_pointer": "/region/named_maps/6"
+        }
+      ],
+      "verification_status": "NAME_ONLY_NOT_RECOVERED_FLOOR_OR_ROUTE",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "display_label_as_written": "冰顫通道",
+      "game_ids": null,
+      "floor_id": null,
+      "coordinates": null,
+      "outgoing_routes": null
+    },
+    {
+      "record_id": "wayi-tw-web2005-ice:map:7",
+      "collection": "maps",
+      "entity_type": "OFFICIAL_NAMED_MAP_LABEL",
+      "version_profile": "TAIWAN_WAYI_OFFICIAL_WEB_2005_DETAIL",
+      "source_refs": [
+        {
+          "path": "research/recovered/STONEAGE-WAYI-OFFICIAL-ICE-REGION-R1.json",
+          "sha256": "1d798c792baf1d48d36c5818bc9e08dd9cd97ca1ccfdbef3bede6235fce19bf8",
+          "json_pointer": "/region/named_maps/7"
+        }
+      ],
+      "verification_status": "NAME_ONLY_NOT_RECOVERED_FLOOR_OR_ROUTE",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "display_label_as_written": "冰封通道",
+      "game_ids": null,
+      "floor_id": null,
+      "coordinates": null,
+      "outgoing_routes": null
+    },
+    {
+      "record_id": "wayi-tw-web2005-ice:map:8",
+      "collection": "maps",
+      "entity_type": "OFFICIAL_NAMED_MAP_LABEL",
+      "version_profile": "TAIWAN_WAYI_OFFICIAL_WEB_2005_DETAIL",
+      "source_refs": [
+        {
+          "path": "research/recovered/STONEAGE-WAYI-OFFICIAL-ICE-REGION-R1.json",
+          "sha256": "1d798c792baf1d48d36c5818bc9e08dd9cd97ca1ccfdbef3bede6235fce19bf8",
+          "json_pointer": "/region/named_maps/8"
+        }
+      ],
+      "verification_status": "NAME_ONLY_NOT_RECOVERED_FLOOR_OR_ROUTE",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "display_label_as_written": "無息之境",
+      "game_ids": null,
+      "floor_id": null,
+      "coordinates": null,
+      "outgoing_routes": null
+    },
+    {
+      "record_id": "wayi-tw-web2005-ice:map:9",
+      "collection": "maps",
+      "entity_type": "OFFICIAL_NAMED_MAP_LABEL",
+      "version_profile": "TAIWAN_WAYI_OFFICIAL_WEB_2005_DETAIL",
+      "source_refs": [
+        {
+          "path": "research/recovered/STONEAGE-WAYI-OFFICIAL-ICE-REGION-R1.json",
+          "sha256": "1d798c792baf1d48d36c5818bc9e08dd9cd97ca1ccfdbef3bede6235fce19bf8",
+          "json_pointer": "/region/named_maps/9"
+        }
+      ],
+      "verification_status": "NAME_ONLY_NOT_RECOVERED_FLOOR_OR_ROUTE",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "display_label_as_written": "流冰回廊",
+      "game_ids": null,
+      "floor_id": null,
+      "coordinates": null,
+      "outgoing_routes": null
+    },
+    {
+      "record_id": "wayi-tw-web2005-ice:map:10",
+      "collection": "maps",
+      "entity_type": "OFFICIAL_NAMED_MAP_LABEL",
+      "version_profile": "TAIWAN_WAYI_OFFICIAL_WEB_2005_DETAIL",
+      "source_refs": [
+        {
+          "path": "research/recovered/STONEAGE-WAYI-OFFICIAL-ICE-REGION-R1.json",
+          "sha256": "1d798c792baf1d48d36c5818bc9e08dd9cd97ca1ccfdbef3bede6235fce19bf8",
+          "json_pointer": "/region/named_maps/10"
+        }
+      ],
+      "verification_status": "NAME_ONLY_NOT_RECOVERED_FLOOR_OR_ROUTE",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "display_label_as_written": "沉睡洞窟",
+      "game_ids": null,
+      "floor_id": null,
+      "coordinates": null,
+      "outgoing_routes": null
+    },
+    {
+      "record_id": "wayi-tw-web2005-ice:map:11",
+      "collection": "maps",
+      "entity_type": "OFFICIAL_NAMED_MAP_LABEL",
+      "version_profile": "TAIWAN_WAYI_OFFICIAL_WEB_2005_DETAIL",
+      "source_refs": [
+        {
+          "path": "research/recovered/STONEAGE-WAYI-OFFICIAL-ICE-REGION-R1.json",
+          "sha256": "1d798c792baf1d48d36c5818bc9e08dd9cd97ca1ccfdbef3bede6235fce19bf8",
+          "json_pointer": "/region/named_maps/11"
+        }
+      ],
+      "verification_status": "NAME_ONLY_NOT_RECOVERED_FLOOR_OR_ROUTE",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "display_label_as_written": "黃泉之境",
+      "game_ids": null,
+      "floor_id": null,
+      "coordinates": null,
+      "outgoing_routes": null
+    },
+    {
+      "record_id": "wayi-tw-web2005-ice:scene:0",
+      "collection": "screens",
+      "entity_type": "OFFICIAL_SCENE_JPEG_AND_CAPTION",
+      "version_profile": "TAIWAN_WAYI_OFFICIAL_WEB_2005_DETAIL",
+      "source_refs": [
+        {
+          "path": "research/recovered/STONEAGE-WAYI-OFFICIAL-ICE-REGION-R1.json",
+          "sha256": "1d798c792baf1d48d36c5818bc9e08dd9cd97ca1ccfdbef3bede6235fce19bf8",
+          "json_pointer": "/region/scenes/0"
+        }
+      ],
+      "verification_status": "SOURCE_QUALIFIED_IMAGE_CAPTION_WITH_PLACE_VARIANT_PRESERVED",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "display_label_as_written": "冰顫通道其一：",
+      "game_ids": null,
+      "asset_refs": [
+        {
+          "original_url": "http://www.wayi.com.tw/stoneage/images/game/pic3.jpg",
+          "actual_capture": "20060105082058",
+          "sha256": "803fbccf687afa1bd46db8cdceaad56fe9fb5f994b871bf3f723fe6dc04f7775"
+        }
+      ],
+      "npc_entity_id": null,
+      "pet_species_id": null,
+      "original_native_resolution": null
+    },
+    {
+      "record_id": "wayi-tw-web2005-ice:scene:1",
+      "collection": "screens",
+      "entity_type": "OFFICIAL_SCENE_JPEG_AND_CAPTION",
+      "version_profile": "TAIWAN_WAYI_OFFICIAL_WEB_2005_DETAIL",
+      "source_refs": [
+        {
+          "path": "research/recovered/STONEAGE-WAYI-OFFICIAL-ICE-REGION-R1.json",
+          "sha256": "1d798c792baf1d48d36c5818bc9e08dd9cd97ca1ccfdbef3bede6235fce19bf8",
+          "json_pointer": "/region/scenes/1"
+        }
+      ],
+      "verification_status": "SOURCE_QUALIFIED_IMAGE_CAPTION_WITH_PLACE_VARIANT_PRESERVED",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "display_label_as_written": "薩爾亞斯之都-議會廳內部：",
+      "game_ids": null,
+      "asset_refs": [
+        {
+          "original_url": "http://www.wayi.com.tw/stoneage/images/game/pic3-3.jpg",
+          "actual_capture": "20060105093954",
+          "sha256": "d934093ae3ea7a1e0e2bbb950f7b79e573d8d617342ea2aa698e7a1ea9854e56"
+        }
+      ],
+      "npc_entity_id": null,
+      "pet_species_id": null,
+      "original_native_resolution": null
+    },
+    {
+      "record_id": "wayi-tw-web2005-ice:scene:2",
+      "collection": "screens",
+      "entity_type": "OFFICIAL_SCENE_JPEG_AND_CAPTION",
+      "version_profile": "TAIWAN_WAYI_OFFICIAL_WEB_2005_DETAIL",
+      "source_refs": [
+        {
+          "path": "research/recovered/STONEAGE-WAYI-OFFICIAL-ICE-REGION-R1.json",
+          "sha256": "1d798c792baf1d48d36c5818bc9e08dd9cd97ca1ccfdbef3bede6235fce19bf8",
+          "json_pointer": "/region/scenes/2"
+        }
+      ],
+      "verification_status": "SOURCE_QUALIFIED_IMAGE_CAPTION_WITH_PLACE_VARIANT_PRESERVED",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "display_label_as_written": "薩爾亞斯之都-24小時便利商店：",
+      "game_ids": null,
+      "asset_refs": [
+        {
+          "original_url": "http://www.wayi.com.tw/stoneage/images/game/pic3-1.jpg",
+          "actual_capture": "20060105093929",
+          "sha256": "7c63f9926eaa6c386feca2037398dccd6e9956c56ed1b9c5f666420b27c135dc"
+        }
+      ],
+      "npc_entity_id": null,
+      "pet_species_id": null,
+      "original_native_resolution": null
+    },
+    {
+      "record_id": "wayi-tw-web2005-ice:scene:3",
+      "collection": "screens",
+      "entity_type": "OFFICIAL_SCENE_JPEG_AND_CAPTION",
+      "version_profile": "TAIWAN_WAYI_OFFICIAL_WEB_2005_DETAIL",
+      "source_refs": [
+        {
+          "path": "research/recovered/STONEAGE-WAYI-OFFICIAL-ICE-REGION-R1.json",
+          "sha256": "1d798c792baf1d48d36c5818bc9e08dd9cd97ca1ccfdbef3bede6235fce19bf8",
+          "json_pointer": "/region/scenes/3"
+        }
+      ],
+      "verification_status": "SOURCE_QUALIFIED_IMAGE_CAPTION_WITH_PLACE_VARIANT_PRESERVED",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "display_label_as_written": "瑞爾亞斯之都-莊園專賣店：",
+      "game_ids": null,
+      "asset_refs": [
+        {
+          "original_url": "http://www.wayi.com.tw/stoneage/images/game/pic3-4.jpg",
+          "actual_capture": "20060105093146",
+          "sha256": "97ac98a40f58a2ba64f83ce718e5e787bcbd416bca3a8264bdfa7ac54e48139a"
+        }
+      ],
+      "npc_entity_id": null,
+      "pet_species_id": null,
+      "original_native_resolution": null
+    },
+    {
+      "record_id": "wayi-tw-web2005-ice:scene:4",
+      "collection": "screens",
+      "entity_type": "OFFICIAL_SCENE_JPEG_AND_CAPTION",
+      "version_profile": "TAIWAN_WAYI_OFFICIAL_WEB_2005_DETAIL",
+      "source_refs": [
+        {
+          "path": "research/recovered/STONEAGE-WAYI-OFFICIAL-ICE-REGION-R1.json",
+          "sha256": "1d798c792baf1d48d36c5818bc9e08dd9cd97ca1ccfdbef3bede6235fce19bf8",
+          "json_pointer": "/region/scenes/4"
+        }
+      ],
+      "verification_status": "SOURCE_QUALIFIED_IMAGE_CAPTION_WITH_PLACE_VARIANT_PRESERVED",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "display_label_as_written": "薩爾亞斯之都-訓練所：",
+      "game_ids": null,
+      "asset_refs": [
+        {
+          "original_url": "http://www.wayi.com.tw/stoneage/images/game/pic3-2.jpg",
+          "actual_capture": "20060105102053",
+          "sha256": "762f937ed38b5ed02ec19bb31a878adf970a30d65060cc0009055575e00d1e99"
+        }
+      ],
+      "npc_entity_id": null,
+      "pet_species_id": null,
+      "original_native_resolution": null
+    },
+    {
+      "record_id": "wayi-tw-web2005-ice:scene:5",
+      "collection": "screens",
+      "entity_type": "OFFICIAL_SCENE_JPEG_AND_CAPTION",
+      "version_profile": "TAIWAN_WAYI_OFFICIAL_WEB_2005_DETAIL",
+      "source_refs": [
+        {
+          "path": "research/recovered/STONEAGE-WAYI-OFFICIAL-ICE-REGION-R1.json",
+          "sha256": "1d798c792baf1d48d36c5818bc9e08dd9cd97ca1ccfdbef3bede6235fce19bf8",
+          "json_pointer": "/region/scenes/5"
+        }
+      ],
+      "verification_status": "SOURCE_QUALIFIED_IMAGE_CAPTION_WITH_PLACE_VARIANT_PRESERVED",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "display_label_as_written": "瑞爾亞斯之都-武器店：",
+      "game_ids": null,
+      "asset_refs": [
+        {
+          "original_url": "http://www.wayi.com.tw/stoneage/images/game/pic3-5.jpg",
+          "actual_capture": "20060105091411",
+          "sha256": "872e00e2a1283fa6dc8f447c053775244bad02f3260b70b38cf69665321ee9a6"
+        }
+      ],
+      "npc_entity_id": null,
+      "pet_species_id": null,
+      "original_native_resolution": null
+    }
+  ],
+  "counts_are_source_records_not_complete_maps_or_entities": true,
+  "npc_pet_or_quest_entities_created": 0,
+  "all_place_name_variants_canonicalized": false,
+  "public_export_allowed": false,
+  "website_or_game_implemented": false,
+  "original_asset_bytes_included": false
+}

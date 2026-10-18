@@ -550,3 +550,16 @@ DD-027增加官方世界历史与故事关系维度：现实版本时间线和�
 R4逐行保留22域旧状态，复用JSS操作/图像/会场/结果/FAQ/七日期合同，并落实DD-027全官方与故事关系要求：旧华义2005主页真实game01链接的新正文明确尼斯/伊甸/文化/海底/失落世界5组与9版本标签，机械文明/失落世界问题仍OPEN。原顺序5.0/7.0先于6.0不强改成严格时间线；2005回顾不晋升初代同版正史。另取得8张2006原GIF插画切片、1片404缺失，7片首次502与重试成功并存，不补全画面或猜物种。
 
 **最新最高NEXT `TW-WAYI-OFFICIAL-INTRO-DETAIL-01`**：沿正文真实game01_01—04之一，标签未知时按源序，最多一页，先验正文题名内容再归具名人物/宠物/故事/环境或玩法，不能据编号猜题。取得一项实际内容合同即停，失败留界后重排；不继续全站/Flash/表单/程序。全官方覆盖目录尚不完整，7 PARTIAL+2 OPEN、Stage B/百科GATED、R79暂停，均不变。
+
+
+### 2026-10-18 — 官方冰世界详情：12个原地图名与六场景
+
+按远端main `12d45f491ece5aa53a66b8ce17a64ddab7978cd6`、tree`1af86bcfd66c850024e7fd8e462ecd26667e2ad5`重新启动，核338分支、0开放PR、同HEAD9项main SUCCESS及连续性/完整CURRENT等七文件。TW-WAYI-OFFICIAL-INTRO-DETAIL-01沿真实第一出链，只取game01_01.asp正文及其六张原场景图；实际主题为瑞爾亞斯（冰世界），不从编号预设宠物/任务。
+
+正文实际快照20050614003328，26346B SHA256`f7e10861dd9f8ee3bef19c46863c7bc818d17635ffecab41b0189c63ff2b234c`。取得官方12个新地图原名、冰雪/作物生长困难/居民叙事和“第十大莊園”序位；未恢复地图ID、路线、坐标、NPC/任务/遇敌表。六原JPEG全部220×163并逐张目视，实际快照2006-01-05，与2005正文分开记录；图注分别指冰顫通道、议会厅、24小时便利店、庄园专卖店、训练所和武器店，不能提升为真实交易/全天服务/已知NPC/原生分辨率。
+
+正文“瑞爾亞斯”与三图注“薩爾亞斯”原样保留为UNRESOLVED_VARIANT_OR_TYPO_OR_DISTINCT_NAME，不静默纠错、确认别名或合并实体；骑乘外观仅HYPOTHESIS，无宠物种类或规则。精确客户端构建/首发日期及冰世界等于整个失落世界仍未证，不回填JSS1999/TW1.0。按现有19集合归档合同新增19个研究条目（地区描述1、原地图名12、场景6），不是19张地图，不新增npcs/pets/quests实体。原HTML/JPEG/程序不入Git。
+
+永久派生与规格：`research/recovered/STONEAGE-WAYI-OFFICIAL-ICE-REGION-R1.json`、`STONEAGE-WAYI-OFFICIAL-ICE-REGION-CONTENT-CATALOG-R1.json`、`STONEAGE-WAYI-OFFICIAL-ICE-REGION-SOURCE-INTAKE-R1.json`及`docs/specs/STONEAGE-WAYI-OFFICIAL-ICE-REGION-R1.md`。本地19项边界测试通过；新增独立一正文/六图、两JSON逐字节重放工作流，远端结果与ZIP/raw/Git blob保管链须随后实际验收，未提前宣称。
+
+**最高NEXT `TW-WAYI-OFFICIAL-INTRO-DETAIL-02`**：沿既验介绍页第二条真实未读game01_02.asp，最多一正文，先核题名/内容，形成一份具名宠物/人物/故事/环境或玩法合同即止；若重复、空或有限取源失败，记录具体结果并回全官方22域队列，不自动递归第三/四页。Stage A仍7 PARTIAL+2 OPEN，Stage B/百科GATED，R79暂停，无整体百分比。
