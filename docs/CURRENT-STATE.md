@@ -15632,3 +15632,10 @@ OFFICIAL-PET-VISUAL-COVERAGE-AND-VERSION-REVIEW-01从三页各四个表格组取
 唯一town1-1.gif实际20060618193306id_，27303B SHA2565712fe0554f9daf067970ec102155fa594ee8e14c9e5333d74662180412bc560，200×150单帧GIF，逐张（仅此一张）目视为灰石建筑/动物头装饰/铺地与植被；建筑功能、地图坐标、原客户端地图未证，不猜店铺/医院/村长家。另三图未取，正文2003与配图2006各自记录。永久派生STONEAGE-JP-OFFICIAL-TOWN-SOURCE-R1.json有4个maps集合聚落研究记录和7必需字段，非4份原地图；仅原名/释义/描述摘要，不复制原正文或原GIF入Git。本地相邻/既有合计42测试通过；独立正文/唯一GIF、完整cmp、ZIP/raw/Git与main验收须实际完成后另记。
 
 **唯一最高NEXT JP-OFFICIAL-VILLAGE-FACILITIES-SOURCE-01**：本页真实静态town2.asp按钮已验标签为村设施介绍，尚未读取正文。仅一正文先核真实主题，最多一张明确关联图，整理有身份的设施/日常交互描述或具体缺源结论即止；不由标题预置NPC/交易/恢复规则，不递归其它链接。九系统7 PARTIAL+2 OPEN、Stage B/百科GATED、R79暂停不变，无整体百分比。
+
+
+### 2026-10-19 — 四村地理源与唯一配图独立保管、正式主线验收
+
+村落内容15c8d55be9985b40cbe4e10f2ef73915e86f1229 / treea6cda7bf43f03aaf0357be27f9ac48c67b8c69bd的10项候选分支、11项自身主线Actions全部实际success，无该HEAD失败/重跑。源run39175778360/job117818017266重取2003正文和2006唯一GIF、8项反例及完整报告cmp通过。下载artifact12154526602 ZIP2537B SHA2568825ce689496935e6314d0e680a349882ce824fd7df1ecc40d8788d4b4ff0af3，内唯一derived.json10828B SHA256127d7c72de68b4a27b54d088dab74a44bb4189302c87ceaa946a72452ccd97ff逐字节等于永久Git blob0945b5c89750cbeb6348252805583cfd9a69d194。永久凭据STONEAGE-JP-OFFICIAL-TOWN-ACCEPTANCE-R1.json记录所有实际run/head/job及ZIP/raw/Git链，和此前宠物12图凭据各自保管；源原件不入Git。
+
+本轮相邻成果为新增12份宠物插画证据及4处具名村落的来源限定环境关系，不是同刻完整物种或地图恢复。正文/图像跨年、111宠物引用与3村落配图未取、客户端实体ID/地图坐标/原服状态仍未知。历史前缀、初次漏entity_type失败及所有此前失败保留。**唯一NEXT保持JP-OFFICIAL-VILLAGE-FACILITIES-SOURCE-01**，仅真实town2.asp一正文/最多一明确图、先验主题，不预设设施/NPC/交易规则。文书收尾提交自身Actions另验，不把本条父HEAD11绿套用。九族7 PARTIAL+2 OPEN、Stage B/百科GATED、R79暂停不变。
