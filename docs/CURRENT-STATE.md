@@ -15446,3 +15446,12 @@ NEXT仍`JSS-OFFICIAL-EVENT-RESULTS-PET-ATTRIBUTION-01`：仅取真实eventjsk链
 新增`research/recovered/STONEAGE-CN80-PORTRAIT-QUEST-R1.json`、`STONEAGE-CN80-PORTRAIT-QUEST-CATALOG-R1.json`、`docs/specs/STONEAGE-CN80-PORTRAIT-QUEST-R1.md`、解析工具与源/边界测试、独立workflow。资料层按1个具名任务、2角色、5宠物需求和5颜料/地域关系入库，不算原业务实体表或完成游戏任务。完整状态前缀不删，归档提交/main最终Actions另核；九系统7 PARTIAL+2 OPEN，Stage B游戏/百科GATED，R79 PAUSED_NON_BLOCKING，无有据整体百分比。
 
 **最高NEXT `CN80_PORTRAIT_PREREQUISITE_VERSION_BOUNDARY-01`**：只在存在更高层具时效的运营商任务公告/补丁/原脚本时核实8.0与8.5的前置与奖励数量；若只能得到无日期攻略/晚期通稿，正式保持OPEN_EVIDENCE_LIMITED并切至22域新具名内容，不追第四第五个同源转载、不启动Stage B。
+
+
+### 2026-10-18 — CN8具名任务主线验证、前置异文有限核查与队列转移
+
+研究分支`c8aa71016ab7aff25922cc4fccc8a97374f4a1c4`/tree`401a984939b2d7e73d9bf720347a0fa87c03becf`对旧主线`d289bda2cff3a641974e114b4724c51d9fd80e39`为ahead8/behind0、13文件0删除，经9项分支Actions实际SUCCESS和完整CURRENT历史前缀校验后非强制快进合入main。该HEAD **11项main Actions全SUCCESS**，包含真实原17173两页重取与永久JSON cmp `39125561734`、Stage A、SPR/ADRN及其余范围验证。全部run名/ID/结论写入永久`STONEAGE-CN80-PORTRAIT-QUEST-ACCEPTANCE-R1.json`。本条验收回执自己的后续CI仍须新HEAD独立验收，不能冒称旧主线11绿为其结果。
+
+随最高待查`CN80_PORTRAIT_PREREQUISITE_VERSION_BOUNDARY-01`有限补证：巴哈姆特精华区 https://forum.gamer.com.tw/G2.php?bsn=1571&sn=2340 当前页面显示**2005-07-19 02:36:12「編輯」时间**，有具名《無法逃離的審判》玩家流程（需要贝克/黄泉任务及三职业协作、守卫队长涅齊/搜捕令/沉睡洞窟等）；文字字节未独立PIN，此日期也不是可证明的初版发表日或原服patch日期。它给出“审判”题材的一条有年代玩家文献线索，**没有声明「爱作画的少女」与之存在前置边**。2012年8.5报道记载的前置及“一幅画像”与原8.0标签攻略“五幅”的冲突仍未解；不存在据此肯定8.0原服前置为无、奖物品数量恰5或2005—2012官方修改的充分证据。
+
+对前置/奖励差异的本有限批结论`OPEN_EVIDENCE_LIMITED_NO_FIRST_PARTY_RULE`，停止这条旧攻略同文转载追索，不继续无源填NPC/任务flag。**最高NEXT转为`CN80_JUDGMENT_2005_NAMED_CONTENT-01`**：限用具编辑日期2005巴哈姆特审判指南提取新的具名人物/任务物品/职业条件线索，核来源身份与是否为转载，形成小型文献版内容图谱；若找不到更早原运营商/构建，明确UNKNOWN停止并回22域另一有源内容。九系统7 PARTIAL+2 OPEN、Stage B游戏/百科GATED、R79 PAUSED_NON_BLOCKING、不计总体复原百分比。

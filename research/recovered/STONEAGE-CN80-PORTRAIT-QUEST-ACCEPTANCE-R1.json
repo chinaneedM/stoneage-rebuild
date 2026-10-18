@@ -60,7 +60,81 @@
   "original_server_quest_or_reward_proven": false,
   "stage_b_production": "GATED",
   "r79": "PAUSED_NON_BLOCKING",
-  "next": "CN80_PORTRAIT_PREREQUISITE_VERSION_BOUNDARY-01",
+  "next": "CN80_JUDGMENT_2005_NAMED_CONTENT-01",
   "branch_final_ci": "PENDING_NEW_HEAD",
-  "main_integration": "PENDING_NEW_HEAD"
+  "main_integration": "SAFE_FAST_FORWARD_COMPLETED",
+  "main_acceptance": {
+    "head_sha": "c8aa71016ab7aff25922cc4fccc8a97374f4a1c4",
+    "tree_sha": "401a984939b2d7e73d9bf720347a0fa87c03becf",
+    "checks_count": 11,
+    "all_passed": true,
+    "runs": [
+      {
+        "id": 39125561937,
+        "name": "Validate Stage A evidence-limited review acceptance",
+        "conclusion": "success"
+      },
+      {
+        "id": 39125561983,
+        "name": "Validate legacy StoneAge assistant history and pet content gaps",
+        "conclusion": "success"
+      },
+      {
+        "id": 39125562225,
+        "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+        "conclusion": "success"
+      },
+      {
+        "id": 39125562190,
+        "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+        "conclusion": "success"
+      },
+      {
+        "id": 39125562150,
+        "name": "Validate StoneAge preproduction content archive and wiki boundary",
+        "conclusion": "success"
+      },
+      {
+        "id": 39125561927,
+        "name": "Validate Stage A early source gap triage",
+        "conclusion": "success"
+      },
+      {
+        "id": 39125562203,
+        "name": "Validate StoneAge Stage A joint review decision",
+        "conclusion": "success"
+      },
+      {
+        "id": 39125562121,
+        "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+        "conclusion": "success"
+      },
+      {
+        "id": 39125561991,
+        "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+        "conclusion": "success"
+      },
+      {
+        "id": 39125562131,
+        "name": "Independently verify TW1.0 R58 rooted helper returns and source custody",
+        "conclusion": "success"
+      },
+      {
+        "id": 39125561734,
+        "name": "Verify source-linked CN8 portrait quest walkthrough",
+        "conclusion": "success"
+      }
+    ]
+  },
+  "limited_followup": {
+    "outcome": "OPEN_EVIDENCE_LIMITED_NO_FIRST_PARTY_RULE",
+    "adjacent_contemporaneous_player_source": "https://forum.gamer.com.tw/G2.php?bsn=1571&sn=2340",
+    "source_displayed_edited_at": "2005-07-19 02:36:12",
+    "raw_html_sha256": null,
+    "source_proves_original_portrait_prerequisite": false,
+    "source_scope": "UNVERIFIED_BYTE_CURRENT_FORUM_PLAYER_GUIDE",
+    "admission": "ADJACENT_JUDGMENT_QUEST_ONLY",
+    "same_build_taiwan_v1_verified": false
+  },
+  "acceptance_receipt_own_ci": "PENDING_DIFFERENT_HEAD"
 }
