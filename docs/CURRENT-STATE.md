@@ -15621,3 +15621,14 @@ OFFICIAL-PET-VISUAL-COVERAGE-AND-VERSION-REVIEW-01从三页各四个表格组取
 首次34项本地回归1失败发现新记录遗漏entity_type；已补OFFICIAL_NAMED_PET_WEB_VISUAL_REFERENCE且保留失败记录，未弱化旧合同，修正34项通过。初次独立本地网络重取12张全部字节相符，但该进程在字段修正前启动；不把旧派生格式冒称修正后完整cmp。修正源码的独立Actions须实际重取12张并完整cmp，真实run/ZIP/raw/Git保管链和main结果另按事实收束。
 
 相邻完成OFFICIAL-VERSION-COVERAGE-MATERIAL-REVIEW-06：复用R5全部22域原状态和真实导航，不重建矩阵。人物/宠物源包已有实质内容，但原服物种/数值/动作未恢复；停止连续扩宠物图。R6机器记录STONEAGE-OFFICIAL-VERSION-COVERAGE-MATERIAL-REVIEW-R6.json。**唯一当前NEXT JP-OFFICIAL-TOWN-NAMED-GEOGRAPHY-SOURCE-01**：沿R5已认证town.asp真实按钮，只取一正文先核题名主题，期望具名地理/聚落/日常生活关系或具体缺源，最多一张明确关联图；路径名不等于主题，不递归其它栏目。九系统7 PARTIAL+2 OPEN、Stage B/百科GATED、R79 PAUSED_NON_BLOCKING，不以13图或测试数给整体百分比。
+
+
+## 2026-10-19 — 12宠物图已验收，四具名村落相邻资料包
+
+宠物视觉内容6ef559c1dfd7b7226dd1842bfda6488912a2f18f / treed841ddbabb79f6fde0e1d6560e1435ef21fe6713分支10项、主线自身11项Actions全部success。独立run39175372360/job117816820477实际重取12原图、9项反例与完整报告cmp通过；下载artifact12154550817 ZIP4139B SHA2562f622044ae3a66353d5688f316f77af953558109e816876537205075722519a6与GitHub一致，唯一derived.json35129B SHA256fce2492fc51abfae360d189eb6a86319bcabec482cb5f151c5a68250dbd8640e逐字节等于永久blob069280bf3fa61be0e08e979672af6864f2b7c616。永久凭据STONEAGE-JP-OFFICIAL-PET-VISUAL-SAMPLE-ACCEPTANCE-R1.json保留源job/HEAD、ZIP/raw/Git、34测试初次漏字段失败及修正；原124条目录不变。
+
+前包资格与整合完成后，按R6明确当前队列另启相邻有限JP-OFFICIAL-TOWN-NAMED-GEOGRAPHY-SOURCE-01，只读town.asp一正文和首条同列图。实际正文20031214052752id_，14371B SHA2565627429482edaad6d24ac5270b53891c227ae394ab10d07f715a336d77c3175a，CP932严格解码；真实主题村落介绍，取得サムギル村/マリナス村/ジャジャ村/カルターナ村四名与サイナス島/サイナス/ジャルガ来源限定地理/环境关系。最大/整齐是运营商描述/宣传，不造人口面积；西/东不变坐标/路线，四条不是全世界四村，地区写法不静默合并或回填中文别名。
+
+唯一town1-1.gif实际20060618193306id_，27303B SHA2565712fe0554f9daf067970ec102155fa594ee8e14c9e5333d74662180412bc560，200×150单帧GIF，逐张（仅此一张）目视为灰石建筑/动物头装饰/铺地与植被；建筑功能、地图坐标、原客户端地图未证，不猜店铺/医院/村长家。另三图未取，正文2003与配图2006各自记录。永久派生STONEAGE-JP-OFFICIAL-TOWN-SOURCE-R1.json有4个maps集合聚落研究记录和7必需字段，非4份原地图；仅原名/释义/描述摘要，不复制原正文或原GIF入Git。本地相邻/既有合计42测试通过；独立正文/唯一GIF、完整cmp、ZIP/raw/Git与main验收须实际完成后另记。
+
+**唯一最高NEXT JP-OFFICIAL-VILLAGE-FACILITIES-SOURCE-01**：本页真实静态town2.asp按钮已验标签为村设施介绍，尚未读取正文。仅一正文先核真实主题，最多一张明确关联图，整理有身份的设施/日常交互描述或具体缺源结论即止；不由标题预置NPC/交易/恢复规则，不递归其它链接。九系统7 PARTIAL+2 OPEN、Stage B/百科GATED、R79暂停不变，无整体百分比。

@@ -1,0 +1,34 @@
+name: Verify four Japanese village descriptions and separately dated first illustration
+on:
+  push:
+    paths:
+      - tools/stoneage_jp_town_source.py
+      - tests/test_stoneage_jp_town_source.py
+      - research/recovered/STONEAGE-JP-OFFICIAL-TOWN-SOURCE-R1.json
+      - docs/specs/STONEAGE-JP-OFFICIAL-TOWN-SOURCE-R1.md
+      - .github/workflows/verify-stoneage-jp-official-town-source.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exact-village-page-and-one-image:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned GIF decoder
+        run: python -m pip install Pillow==12.3.0
+      - name: Reject wrong village joins epochs and inferred game-map identities
+        run: python -m unittest tests.test_stoneage_jp_town_source -v
+      - name: Reacquire one exact official body and first image only
+        run: python -m tools.stoneage_jp_town_source --output output/derived.json
+      - name: Replay entire permanent source-derived report
+        run: cmp output/derived.json research/recovered/STONEAGE-JP-OFFICIAL-TOWN-SOURCE-R1.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: jp-official-town-source-derived-only
+          path: output/derived.json
+          retention-days: 30

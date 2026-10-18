@@ -3533,3 +3533,8 @@ eventmaz实际20010418085855有四村聊天室入口：マリナス东51南72、
 ## Japanese operator pet-image captures2003/2006/2008/2016, reviewed2026-10-19
 
 Twelve actual URLs already linked from the2003/2004 Hangame catalog were acquired as60×65 single-frame GIF illustrations and individually viewed. Five image captures are2003, four2006, two2008 and one2016; position100ノガロン has2004 page provenance but actual image capture20160622101624. Conversely three page3 references resolved to2003 images. These are archived response dates, not creation/deployment dates or evidence of2016 Japanese game operation. Together with the previously qualifiedウーリ image,13 of124 web references have observed pixels;111 remain unacquired. No original species ID, cross-region alias, stats, habitat, riding or client animation is established. Separate per-record dates and metadata: STONEAGE-JP-OFFICIAL-PET-VISUAL-SAMPLE-R1.
+
+
+## 2003 Japanese operator village descriptions, separately captured2006 building image
+
+The actual town.asp capture20031214052752 names four villages:サムギル村,マリナス村,ジャジャ村,カルターナ村. Source descriptions associate them withサイナス島/サイナス andジャルガ, west/east, beach, forest and small-island settings. Largest/best-ordered are operator descriptions, not measured area/population or a universal four-village census. The sole first illustration actually captured20060618193306 shows a gray stone building with an animal-head motif and surroundings; its function and client map identity remain unknown. Three other image references are unacquired. No cross-region aliases, original map IDs/coordinates/routes/NPC/encounter payload or first-publication date is established. Derived metadata and bounds:STONEAGE-JP-OFFICIAL-TOWN-SOURCE-R1.
