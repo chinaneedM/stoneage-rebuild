@@ -1,0 +1,124 @@
+{
+  "schema": "stoneage.jss.event_results_pet_attribution.acceptance.r1",
+  "source_head": "8be71862a88dff3965d525467f69caa2284b461a",
+  "source_tree": "e0fa0c68fb05d4f7f0008ba0f6dc24f7dc214817",
+  "source_run": 39114206325,
+  "source_job": 117636538968,
+  "source_result": "success",
+  "artifact": {
+    "id": 12131518233,
+    "zip_bytes": 2600,
+    "zip_sha256": "e5755fd3b1ac3d677a4cfee62285a3b66c609253ba76e0ba9e543178e6313d73",
+    "digest_matches_github_metadata": true,
+    "member": "jss-event-results-pet-attribution.json"
+  },
+  "report": {
+    "path": "research/recovered/STONEAGE-JSS-EVENT-RESULTS-PET-ATTRIBUTION-R1.json",
+    "bytes": 8778,
+    "sha256": "c343f3b1cce14ab26b3ef4c1ad7b4ca1fa0402d1ce7ad8a904d3df646ef79ff9",
+    "git_blob": "19210bbc97936130222bc83860026da33b096dfc",
+    "exact_artifact_report_match": true
+  },
+  "source_branch_runs": [
+    {
+      "id": 39114206212,
+      "name": "Validate StoneAge Stage A joint review decision",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39114206191,
+      "name": "Validate StoneAge preproduction content archive and wiki boundary",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39114206359,
+      "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39114206269,
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39114206325,
+      "name": "Verify JSS result edition identity and unknown rare-pet attribution",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39114206168,
+      "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39114206236,
+      "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39114206247,
+      "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39114206190,
+      "name": "Validate Stage A early source gap triage",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39114206148,
+      "name": "Validate legacy StoneAge assistant history and pet content gaps",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "source_branch_count": 10,
+  "source_dependencies": [
+    {
+      "path": "tools/stoneage_jss_event_results.py",
+      "bytes": 14559,
+      "sha256": "09613726428610bcbcbeba29e591c7a6cb792271e1e171ed505c81321f80f45d",
+      "git_blob": "d26f869b26163fbfa3a7888de2ecded0864b16d8"
+    },
+    {
+      "path": "tests/test_stoneage_jss_event_results.py",
+      "bytes": 8584,
+      "sha256": "07662ecb36162fbb00275af7dc70a692f356b5685a5586906cd822e60addecac",
+      "git_blob": "d43ad6c2fbcd5b354cd1046dd34470dcf4da3029"
+    },
+    {
+      "path": "research/recovered/STONEAGE-JSS-EVENT-RESULTS-SOURCE-INTAKE-R1.json",
+      "bytes": 7709,
+      "sha256": "8e4472366ed9c89eb98dec1a95a6fba60c408524a9c66b974d812d52cfaa5a66",
+      "git_blob": "94bcb4831d1c047d01e1b88b552dda6f2b4d2e92"
+    },
+    {
+      "path": "research/recovered/STONEAGE-JSS2001-OFFICIAL-EVENT-VENUE-R1.json",
+      "bytes": 10583,
+      "sha256": "7c105ecdf4c7ca6e751da27dbaf827013fd72b238882421bb7034ef1f7027f5b",
+      "git_blob": "1fc8ca061330655483cbc931f93043be7c3792a9"
+    }
+  ],
+  "html_sources_independently_replayed": 2,
+  "image_pixels_acquired": 0,
+  "unavailable_image_references": 3,
+  "wrong_page_prefetch_excluded": true,
+  "cross_edition_join_rejected": true,
+  "rare_pet_species_or_id_recovered": false,
+  "original_server_executed": false,
+  "jss1999_or_tw10_same_build_promoted": false,
+  "original_html_or_image_assets_retained_in_git": false,
+  "main_acceptance": {
+    "status": "PENDING_NOT_PRECLAIMED"
+  },
+  "next_priority": "JSS-FIRST-PARTY-PET-FAQ-01"
+}

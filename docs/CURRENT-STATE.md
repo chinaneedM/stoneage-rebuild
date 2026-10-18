@@ -15256,3 +15256,10 @@ NEXT仍`JSS-OFFICIAL-EVENT-RESULTS-PET-ATTRIBUTION-01`：仅取真实eventjsk链
 规格STONEAGE-JSS-EVENT-RESULTS-PET-ATTRIBUTION-R1、永久派生报告和SOURCE-INTAKE完整错误/纠正/来源/失败/旧前缀记录、解析工具/14项边界测试及独立源工作流已形成；本地14项实际PASS，后续分支/main和ZIP/raw保管以实际CI另记，不提前宣称。此次有界收束第一回报道归属，奖励宠身份仍OPEN；不继续穷举14活动正文。
 
 **最高NEXT `JSS-FIRST-PARTY-PET-FAQ-01`**：从旧已认证top真实faqmenu.html链接查一个FAQ目录，最多追一条明确宠物/捕获/成长相关正文；若只有安装/账号事项则登记边界重排，不猜网页名或数值，不无限活动/底层API树。Stage A7 PARTIAL+2 OPEN、Stage B游戏/百科生产GATED、R79 PAUSED_NON_BLOCKING，无整体复原百分比。
+
+
+### 2026-10-18 — JSS第一回结果独立源重放与永久产物保管
+
+研究源`8be71862a88dff3965d525467f69caa2284b461a`/tree`e0fa0c68fb05d4f7f0008ba0f6dc24f7dc214817`同SHA10项Actions全部实际SUCCESS，专用source Action`39114206325`/job`117636538968`重新取两页官网HTML、执行14项边界检查并精确重放永久派生报告。没有复原三张缺图或取得宠物身份；重放不重试429接口，仍保留0/3未取得的本次事实边界。独立下载artifact`12131518233` ZIP2600B SHA256`e5755fd3b1ac3d677a4cfee62285a3b66c609253ba76e0ba9e543178e6313d73`与GitHub摘要相符；raw JSON8778B SHA256`c343f3b1cce14ab26b3ef4c1ad7b4ca1fa0402d1ce7ad8a904d3df646ef79ff9`、Git blob`19210bbc97936130222bc83860026da33b096dfc`与Git永久派生逐字节一致。来源、错页纠正、旧预告上下文、代码和测试摘要/10项运行写入RESULTS-ACCEPTANCE-R1，原HTML/图像均不入Git。
+
+此归档提交及最终main仍需实际CI另验，当前不提前宣称。第一回结果与第二回预告保持分开；未知年份/服务器/稀有宠和三张缺图不补造。下一最高JSS-FIRST-PARTY-PET-FAQ-01；7 PARTIAL+2 OPEN、Stage B/百科GATED、R79暂停。
