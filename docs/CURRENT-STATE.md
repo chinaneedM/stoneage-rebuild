@@ -15522,3 +15522,16 @@ GNN原HTML本轮取源存在403阅读器限制，只按同期索引文本见证�
 ### 2026-10-18 — 支援前線玩家指南有限来源图谱与主线验收留存
 
 研究分支源`75472d112d20487c3c2dca871578f917eb710bfc` / tree`7c89976ad84ee524a210b1e2b2e6a12fcc711a9a`，同SHA10项分支Actions全部实际SUCCESS，新增来源/坐标/奖励边界专用门`39133995936`成功。重新确认原main `eea7c393` 未前进、ahead1/behind0、8文件0删除、完整CURRENT历史前缀保留，非强制快进至main后该同SHA的**11项main Actions全部SUCCESS**，含来源结构门`39134084882`与TW1.0/Stage A既有回归。具体分支和main工作流运行ID、名称及SHA写入`research/recovered/STONEAGE-TW85-SUPPORT-FRONT-ACCEPTANCE-R1.json`，派生JSON Git blob`1b40fe2ef401565db67670e36ab6e87bf14b3e01`、规格blob`e0544613d43b11a13bccc552706d72d0172af2cc`永久可回查。这个回执的新提交自身分支与主线CI须另验，不借父HEAD绿灯替它宣称成功。**第一方任务脚本、NPC/物品ID、早年玩家网页原始字节SHA仍未获得**，新作/网站生产与R79继续关闭。最高NEXT保持`ALL_OFFICIAL_VERSIONS_NEW_NAMED_FIRSTPARTY_DOMAIN-01`，7 PARTIAL+2 OPEN。
+
+
+## 2026-10-18 — 新第一方领域：海底融合、名片关系与精工合成扩展
+
+按实时远端main `adb476ff162e86a2eda66b62fcf2ec6f6f2a2079` / tree `23e30d77533c673b19ff67e22014848b73668702`重新启动。完整CURRENT原blob `e3ed96f12e8fe35a58f9368c7ce67735f8710c6b` 2004205B及七连续性文件、路线/portfolio已复核，远端无开放PR；该HEAD九类主线工作流均SUCCESS（同SHA两批共17次成功运行，非17种门）。保留全部历史前缀和失败。
+
+最高ALL_OFFICIAL_VERSIONS_NEW_NAMED_FIRSTPARTY_DOMAIN-01选择已认证华义2005介绍的真实第三出链game01_03.asp，仅一正文，停止旧任务转载循环。这是本轮按新队列重新选择，不把早先不自动递归03/04的约束当作已自动授权爬站。网页阅读器一次UNAVAILABLE不等于不存在；本地实际HTTP跟随302至20050614005817id_，26642B，SHA256 f021c32b042dbbea480f67aeb3fbc50ba9dfab919de6c04b3240400e5b41c684，Big5严格解码，第二次独立重取派生JSON逐字节相符。
+
+实质内容三组：文案把6.0海底宠与8.0融合相连，预计五类二十只、实际只点名水母/一角鯨/海蠍/滄龍四类，第五类和分配不补造；普通名片40→79及额外一个勇者/使者专用格，任务结束保留、下次角色使命覆盖、另行手动交换普通名片分别记录，不能推出跨登出原服事务；強化/鑿孔/新合成裝備/鑑定/精鍊五功能仅为源限定描述，无合成配方、概率、技能/宠物/道具ID，合成铠20不当数值ID。存档时刻不是上线日，站题不是客户端版本，同版图像没有取得。
+
+交付永久派生 `research/recovered/STONEAGE-WAYI-MARINE-SOCIAL-CRAFTING-R1.json` 与规格 `docs/specs/STONEAGE-WAYI-MARINE-SOCIAL-CRAFTING-R1.md`、8项边界反例、精确正文重取及派生cmp工作流。原HTML/资产不入Git。本地8项通过；独立远端Actions须实际通过后合入并记录精确HEAD与保管链，不提前记绿。git直接push因无命令行凭证不可用，改用已连接GitHub的Git对象接口，非强制分支/主线更新。
+
+**最高NEXT `OFFICIAL-VERSION-COVERAGE-MATERIAL-REVIEW-05`**：复用22域及已有官方源目录，检查近期台湾2005–2006偏重，选择另年代/地区一份有身份的宠物或人物视觉材料；用一份源形成明确身份/视觉关系或精确缺源即止。不默认追第四详情，不重新铺规划、重扫同文或启动R79。Stage A九族7 PARTIAL+2 OPEN、Stage B/百科GATED，R79 PAUSED_NON_BLOCKING，无整体百分比。

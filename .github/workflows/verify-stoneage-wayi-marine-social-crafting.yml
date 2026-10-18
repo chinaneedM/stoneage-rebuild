@@ -1,0 +1,32 @@
+name: Verify Wayi official marine fusion social cards and crafting source
+on:
+  push:
+    paths:
+      - tools/stoneage_wayi_marine_social_crafting.py
+      - tests/test_stoneage_wayi_marine_social_crafting.py
+      - research/recovered/STONEAGE-WAYI-MARINE-SOCIAL-CRAFTING-*.json
+      - docs/specs/STONEAGE-WAYI-MARINE-SOCIAL-CRAFTING-R1.md
+      - .github/workflows/verify-stoneage-wayi-marine-social-crafting.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  one-official-source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Reject invented pet rosters card semantics and crafting rules
+        run: python -m unittest tests.test_stoneage_wayi_marine_social_crafting -v
+      - name: Reacquire exact first-party source and reproduce derived metadata
+        run: python -m tools.stoneage_wayi_marine_social_crafting --output output/derived.json
+      - name: Compare entire derived report with permanent Git record
+        run: cmp output/derived.json research/recovered/STONEAGE-WAYI-MARINE-SOCIAL-CRAFTING-R1.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: wayi-marine-social-crafting-derived-only
+          path: output/derived.json
+          retention-days: 30

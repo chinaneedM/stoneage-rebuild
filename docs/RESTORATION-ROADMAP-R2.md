@@ -612,3 +612,10 @@ Highest next: CN80_JUDGMENT_2005_NAMED_CONTENT-01, one source-bounded early date
 该资料已作为来源限定的文献任务图谱，规格`docs/specs/STONEAGE-TW85-SUPPORT-FRONT-GUIDE-GATE-R1.md`与机器源`research/recovered/STONEAGE-TW85-SUPPORT-FRONT-GUIDE-GATE-R1.json`。无原页独立字节SHA，不得将结构CI写成历史原件已认证。
 
 **新的最高NEXT `ALL_OFFICIAL_VERSIONS_NEW_NAMED_FIRSTPARTY_DOMAIN-01`**：按22资料域和全官方发行范围另取真正一手、具名、有日期的非相同任务材料；不同年代单独归属，缺原脚本就登记边界，不继续转载扫荡或savedata R79。Stage A仍7 PARTIAL+2 OPEN、Stage B/百科GATED、R79暂停。
+
+
+## 2026-10-18 — 第一方新领域取源收束与版本覆盖复审
+
+新最高ALL_OFFICIAL_VERSIONS_NEW_NAMED_FIRSTPARTY_DOMAIN-01取华义2005真实第三详情的一份正文，增加海底融合、任务角色名片状态、五项精工合成扩展的来源限定规格。5类/20宠只具名4类，未补第五类；名片结束保留和下次覆盖、普通手动交换区分；无配方/概率或原服执行。规格与永久源SHA见STONEAGE-WAYI-MARINE-SOCIAL-CRAFTING-R1。
+
+**NEXT OFFICIAL-VERSION-COVERAGE-MATERIAL-REVIEW-05**：复用22域/官方源目录，检查近期台湾2005–2006材料偏重，选另年代/地区一份能带来具名宠物/人物视觉关系的真实材料；一份来源、一项身份连接或精确缺源结论即止，不默认遍历第四详情，不以新规划或无源helper替代实质材料。九族7 PARTIAL+2 OPEN、Stage B及百科GATED、R79暂停不变。
