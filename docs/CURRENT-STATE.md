@@ -15387,3 +15387,9 @@ NEXT仍`JSS-OFFICIAL-EVENT-RESULTS-PET-ATTRIBUTION-01`：仅取真实eventjsk链
 
 研究源9e0a7e5c06d91dbd1d901e0c377b49682bd60922/tree03f59e6ead7d9edf583e4590e7e71dfd231c7c92同HEAD10项Actions全部SUCCESS。独立源重放run39119205167/job117651145313重新实取1正文6JPEG，19项反例检查及两JSON逐字节cmp均SUCCESS，无失败请求/重跑。artifact12133711646另行下载ZIP5428B SHA256a0921d4424d1821731f200025d774895de73150762849d49f113fce1b18500a9与GitHub摘要一致；两成员12142/18167B SHA2561d798c792baf1d48d36c5818bc9e08dd9cd97ca1ccfdbef3bede6235fce19bf8 / 5b583ed3646c45475aac43d94bf22a6d84e5d2b79ad9ed44c2db756ca3838f1d，Git blob2d934e012f60a825ab7882a6382df66ffaa15f53 / ad52dbfab9e93109ed984c2938bde7352e541c99，与永久派生逐字节一致。
 源码/测试/原请求/旧入口与共享资料合同/10项运行链写ICE-REGION-ACCEPTANCE-R1，不依赖30天附件。原HTML/JPEG/程序不入Git；本次归档及main尚待随后独立验收，父HEAD成功不代替新HEAD。12地图名称/6场景/19研究条目不证明可玩地图、NPC宠物身份、精确构建或统一无矛盾地名。NEXT仍TW-WAYI-OFFICIAL-INTRO-DETAIL-02；7 PARTIAL+2 OPEN、Stage B/百科GATED、R79暂停。
+
+
+### 2026-10-18 — 冰世界资料真实main验收与设计参考边界
+
+研究源9e0a7e5同SHA10项SUCCESS，保管归档96c1217同SHA8项branch SUCCESS后，重新核main仍12d45f4、ahead2/behind0、13路径0删除，非强制快进至96c12174a9978d6611ccf02185cd421a471c1609/tree184d9495501462f040d3bf71eb6b61ff58106dab。该HEAD **11项main Actions全部实际SUCCESS**，含一正文六图独立源重放39119348444、SPR/ADRN39119348505和R58保管39119348542，名称/ID/结论永久写ICE-REGION-ACCEPTANCE-R1。本回执自己的随后branch/main CI须另验，不冒用父HEAD11绿。
+补规格“后续世界观设计的问题单”：环境与生计、公共机构与生活、探索/情绪节奏、版本叙事连续性四方向，仅为项目提案与待核问题，不当官方设定/任务路线。官方名12、场景6与19共享研究条目已保留来源，瑞/薩差异、2005正文/2006图片和精确构建未知不消除。原1971345B历史前缀及本轮中间保管记录均完整保留，原HTML/JPEG/程序不入Git。NEXT仍TW-WAYI-OFFICIAL-INTRO-DETAIL-02；7 PARTIAL+2 OPEN、Stage B/百科GATED、R79暂停，无整体百分比。

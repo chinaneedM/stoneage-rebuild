@@ -265,7 +265,79 @@
   },
   "source_failed_attempts": [],
   "main_acceptance": {
-    "status": "PENDING_NOT_PRECLAIMED"
+    "status": "SUCCESS",
+    "head": "96c12174a9978d6611ccf02185cd421a471c1609",
+    "tree": "184d9495501462f040d3bf71eb6b61ff58106dab",
+    "count": 11,
+    "runs": [
+      {
+        "id": 39119348444,
+        "name": "Verify official Wayi ice-region names and scene-caption attribution",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39119348420,
+        "name": "Validate StoneAge Stage A joint review decision",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39119348540,
+        "name": "Validate legacy StoneAge assistant history and pet content gaps",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39119348501,
+        "name": "Validate Stage A evidence-limited review acceptance",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39119348426,
+        "name": "Validate Stage A early source gap triage",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39119348502,
+        "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39119348443,
+        "name": "Validate StoneAge preproduction content archive and wiki boundary",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39119348429,
+        "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39119348505,
+        "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39119348542,
+        "name": "Independently verify TW1.0 R58 rooted helper returns and source custody",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39119348421,
+        "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+        "status": "completed",
+        "conclusion": "success"
+      }
+    ],
+    "receipt_commit_requires_separate_ci": true
   },
   "next_priority": "TW-WAYI-OFFICIAL-INTRO-DETAIL-02",
   "existing_contract_pins": [
@@ -281,5 +353,59 @@
       "sha256": "e87afebc8c9590142c7cc8831b578455b3427bf7c1d10520ae02a3e8082fbddb",
       "git_blob": "2d5b3f081d5618287f431fbded943722a820c593"
     }
-  ]
+  ],
+  "archive_branch_acceptance": {
+    "head": "96c12174a9978d6611ccf02185cd421a471c1609",
+    "count": 8,
+    "runs": [
+      {
+        "id": 39119305219,
+        "name": "Validate StoneAge Stage A joint review decision",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39119305020,
+        "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39119304953,
+        "name": "Validate legacy StoneAge assistant history and pet content gaps",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39119304985,
+        "name": "Validate Stage A early source gap triage",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39119304949,
+        "name": "Validate Stage A evidence-limited review acceptance",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39119304968,
+        "name": "Validate StoneAge preproduction content archive and wiki boundary",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39119305085,
+        "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 39119304800,
+        "name": "Verify official Wayi ice-region names and scene-caption attribution",
+        "status": "completed",
+        "conclusion": "success"
+      }
+    ]
+  }
 }
