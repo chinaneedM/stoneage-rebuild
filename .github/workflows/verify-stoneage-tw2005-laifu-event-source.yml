@@ -4,11 +4,15 @@ on:
     paths:
       - 'research/recovered/STONEAGE-TW2005-LAIFU-EVENT-SOURCE-R1.json'
       - 'tests/test_stoneage_tw2005_laifu_event_source.py'
+      - 'tests/test_stoneage_tw2005_laifu_acceptance.py'
+      - 'research/recovered/STONEAGE-TW2005-LAIFU-DERIVED-CUSTODY-R1.json'
       - '.github/workflows/verify-stoneage-tw2005-laifu-event-source.yml'
   pull_request:
     paths:
       - 'research/recovered/STONEAGE-TW2005-LAIFU-EVENT-SOURCE-R1.json'
       - 'tests/test_stoneage_tw2005_laifu_event_source.py'
+      - 'tests/test_stoneage_tw2005_laifu_acceptance.py'
+      - 'research/recovered/STONEAGE-TW2005-LAIFU-DERIVED-CUSTODY-R1.json'
       - '.github/workflows/verify-stoneage-tw2005-laifu-event-source.yml'
 jobs:
   verify-source-limits:
@@ -16,4 +20,4 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Validate reported facts and negative original-runtime boundaries
-        run: python -m unittest discover -s tests -p 'test_stoneage_tw2005_laifu_event_source.py' -v
+        run: python -m unittest discover -s tests -p 'test_stoneage_tw2005_laifu*.py' -v

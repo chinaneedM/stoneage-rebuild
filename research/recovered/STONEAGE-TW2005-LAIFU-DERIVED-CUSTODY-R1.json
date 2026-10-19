@@ -1,0 +1,48 @@
+{
+  "schema": "stoneage.r19.laifu_derived_custody.r1",
+  "published_content": {
+    "sha": "77b8b06a08ee93aea2e14887fc97de453aa6b19d",
+    "tree": "da16ae9f3701404a14052aa7f4146a705343cf9c"
+  },
+  "derived_report": {
+    "path": "research/recovered/STONEAGE-TW2005-LAIFU-EVENT-SOURCE-R1.json",
+    "git_blob": "3706c4a261ff4a62637e72376828167d0feae95d",
+    "utf8_bytes": 10447,
+    "sha256": "fb2b8e473049201e7b4a4e2b98266bc080c5e3edc1d778ef58e06a74fbb2a1b9"
+  },
+  "source_states": [
+    {
+      "url": "https://gnn.gamer.com.tw/detail.php?sn=19615",
+      "classification": "2005 contemporary press",
+      "browser_open": "HTTP_403",
+      "source_raw_sha256": null
+    },
+    {
+      "url": "https://forum.gamer.com.tw/G2.php?bsn=1571&lorder=23&parent=3229&sn=2337",
+      "classification": "later community guide edited in 2006",
+      "browser_open": "HTTP_403",
+      "source_raw_sha256": null
+    }
+  ],
+  "candidate_verification": {
+    "sha": "77b8b06a08ee93aea2e14887fc97de453aa6b19d",
+    "total": 10,
+    "all_success": true,
+    "specific_run": 39260833284,
+    "specific_job": 118087708098
+  },
+  "main_verification": {
+    "sha": "77b8b06a08ee93aea2e14887fc97de453aa6b19d",
+    "total": 11,
+    "all_success": true,
+    "specific_run": 39261024329,
+    "specific_job": 118088373092,
+    "source_tests_pass": 9
+  },
+  "original_server_quest_execution_verified": false,
+  "original_first_party_html_attested": false,
+  "artifact_zip_created": false,
+  "archive_zip_digest": null,
+  "new_receipt_self_ci_status": "REQUIRES_SEPARATE_VALIDATION",
+  "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-20"
+}
