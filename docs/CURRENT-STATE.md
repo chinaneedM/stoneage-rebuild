@@ -16186,3 +16186,10 @@ R25内容候选10/main11实际success后，从新远端main3c1fb02540e7adf710b28
 新增六研究记录：幼犬リムフィ迷入冰窟被ミデル保护，亲犬リムファン深入寻找并受神秘影子威胁，玩家带幼犬寻亲，完成获同名宠リムフィ。亲犬性别、ミデル是否接任务入口、同行宠=奖励个体、具体跟随/栏位实现、等级/成长/坐标/影子与结局均未知；火焰毛色不变火10。实际一JPEG122×99/22218B目视，SHA256600909ad41837331067eeeca9f9631f74ed1dabb4d578a7d92ba4e82b8309a42；误扩展名001.gif404保留为纠正记录，后据真实img 001.jpg取图，另两GIF未取。原HTML/图不进Git。9新+14 R25含保管+36既有=59本地测试、两实输入离线重放通过；独立CI/main与ZIP保管按实际后验，未套父绿。
 
 **唯一最高NEXT `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-27`**：返回全官方版本/22域优先另一具名一方任务/NPC/故事，停止本影子身份、等级/成长及跟随helper推断。全部旧历史/失败与22域原状态不动，Stage A7 PARTIAL+2 OPEN，Stage B/百科GATED，R79 PAUSED_NON_BLOCKING，无总体百分比。
+
+
+### R26实际主线12项验收及永久派生保管
+
+内容main ec81878609041b585e761560c283d25e2665dc27/tree415913bbfb29a0559a41b17b7462d229a77dd40b，候选11及自身main12实际全success，含R25保管/14测试源重放与R26新源验证；R26源run39344557315/job118373909956实际9测试及一HTML一JPEG通过。候选artifact12230376179/main artifact12230791155均实下载，ZIP各953B，SHA256分别afc748889b7a3b9cc6fd1716d5aac3fd625e836f25de13216757f21795ff0c1c及673836a05c1202337e43716a6bef21f3cdb5fe87b8371aac3b865a25873ca951；唯一replay.json同字节1402B SHA2567c45cdaebc6238889bafd0a8d1a2c7c43b5a816e60c903dd236838b9266b2339/Git blobdbd4cc371bc70d8a45234702b0f0915d01cc3ec7，全语义等于本地实输入。永久CI-REPLAY/CUSTODY保存实际HEAD/tree、11/12清单、源job/artifact/ZIP/raw/Git；独立干净候选59测试及两基线八全文前缀通过，协议/决策/22域原档未改。七实际网页改写反例通过并永久保留结果/变体SHA：忽略导航/编辑前言/商业日期，拒绝壶数、调查团失踪、保护角色和完成获宠条件丢失；不保留变体原文。新增保管测试后10+14+36=60项另验。此保管HEAD自身Actions仍应按实际观察，不借父绿灯。
+
+本持续单元完成赤影迷宫世界事件与亲子任务两材料规格，R25有实际官方/媒体历史HTML、R26仅现存媒体发布文并保留档案空查询。两包派生文件永久保管，原资产不入Git；没有原服恢复/总体百分比。唯一最高NEXT27，Stage A7 PARTIAL+2 OPEN，Stage B/百科GATED，R79暂停。

@@ -65,5 +65,21 @@ class RimfySource(unittest.TestCase):
         with self.assertRaises(ValueError):replay(self.report,[b''])
         with self.assertRaises(ValueError):replay(self.report,[b'',b''])
 
+    def test_permanent_ci_replay_and_head_scoped_source_custody(self):
+        import hashlib
+        receipt=json.loads((REPORT.parent/'STONEAGE-JP2008-RIMFY-CUSTODY-R1.json').read_text())
+        saved=json.loads((REPORT.parent/'STONEAGE-JP2008-RIMFY-CI-REPLAY-R1.json').read_text())
+        for pin in receipt['permanent_derived_files']:
+            b=(REPORT.parents[2]/pin['path']).read_bytes()
+            self.assertEqual((len(b),hashlib.sha256(b).hexdigest()),(pin['bytes'],pin['sha256']))
+            self.assertEqual(hashlib.sha1(b'blob '+str(len(b)).encode()+b'\0'+b).hexdigest(),pin['git_blob'])
+        self.assertEqual(saved['quest'],self.report['inputs'][0]['extracted'])
+        self.assertFalse(saved['historical_source_or_original_server_verified'])
+        self.assertFalse(saved['raw_html_or_image_in_output'])
+        for group,count in [('candidate',11),('main',12)]:
+            rows=receipt['validation'][group];self.assertEqual(len(rows),count)
+            self.assertTrue(all(r['conclusion']=='success' and r['head']==receipt['content_commit']['sha'] for r in rows))
+        self.assertEqual(len(receipt['real_input_adversarial_checks']),7)
+
 
 if __name__=='__main__':unittest.main()
