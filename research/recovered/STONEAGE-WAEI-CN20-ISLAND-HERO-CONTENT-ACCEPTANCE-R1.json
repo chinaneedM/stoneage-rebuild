@@ -1,0 +1,273 @@
+{
+  "schema": "stoneage.waei_cn20.island_hero_content.acceptance.r1",
+  "date": "2026-10-19",
+  "content_head": "96ed8d94574dfcce50a4a339e8b2e89898cb3d27",
+  "tree": "20942cea1ef1790d82220e44854f692fe9ec6d2b",
+  "parent": "f8f12ebc5e6465cde3e3bda1d04cb32693667913",
+  "sources": [
+    {
+      "actual_capture": "20011201212305",
+      "bytes": 69680,
+      "original_url": "http://www.waei.com.cn/zhuanqu/stoneage2/strategy/index.asp",
+      "sha256": "6b29b0115bcc37c4afbbe72e9061ea3ddc13d139a63753919e1a2260bd95e63c",
+      "strict_replay_url": "https://web.archive.org/web/20011201212305id_/http://www.waei.com.cn/zhuanqu/stoneage2/strategy/index.asp"
+    },
+    {
+      "actual_capture": "20011201035642",
+      "bytes": 65205,
+      "original_url": "http://www.waei.com.cn/zhuanqu/stoneage2/strategy/hero/1.asp",
+      "sha256": "1f5ce2dd27e58b9ad3f90b847559bfec1a10667c41c38e23b7c5475de89c198a",
+      "strict_replay_url": "https://web.archive.org/web/20011201035642id_/http://www.waei.com.cn/zhuanqu/stoneage2/strategy/hero/1.asp"
+    }
+  ],
+  "source_job": {
+    "run_id": 39242359029,
+    "job_id": 118025969676,
+    "actual_acquisition": "KNOWN_FACILITIES_SIDEBAR_PLUS_EXACT_ISLAND_AND_HERO_BODIES",
+    "negative_tests": 20,
+    "full_report_cmp": "PASS",
+    "initial_errors_or_redirects_repeated_by_ci": false
+  },
+  "artifact_custody": {
+    "api_metadata": {
+      "id": 12181014645,
+      "name": "waei-cn20-island-hero-derived-only",
+      "size_in_bytes": 4656,
+      "url": "https://api.github.com/repos/chinaneedM/stoneage-rebuild/actions/artifacts/12181014645",
+      "archive_download_url": "https://api.github.com/repos/chinaneedM/stoneage-rebuild/actions/artifacts/12181014645/zip",
+      "expired": false,
+      "created_at": "2026-10-19T11:07:45Z",
+      "expires_at": "2026-11-18T11:07:45Z",
+      "updated_at": "2026-10-19T11:07:45Z",
+      "digest": "sha256:b3edeb7c5e17fc503dedd6435c78c220d8bea44e91908bd4245a7c02ac2022a2",
+      "workflow_run": {
+        "id": 39242359029,
+        "repository_id": 1374762421,
+        "head_repository_id": 1374762421,
+        "head_branch": "agent/waei-cn20-island-hero-story-r1-20261019",
+        "head_sha": "96ed8d94574dfcce50a4a339e8b2e89898cb3d27"
+      }
+    },
+    "zip_bytes": 4656,
+    "zip_sha256": "b3edeb7c5e17fc503dedd6435c78c220d8bea44e91908bd4245a7c02ac2022a2",
+    "raw_bytes": 17457,
+    "raw_sha256": "4fef4edbb48e837fb49cdcab7faf801040b5d2dfcab7c1ec03e4f8bfc786fe77",
+    "git_blob": "8d95a7b2a64f0aea43b0c25beb8472d1fd114d94",
+    "all_equal_and_semantic_validation": "PASS",
+    "only_entry": "derived.json"
+  },
+  "permanent_report": {
+    "path": "research/recovered/STONEAGE-WAEI-CN20-ISLAND-HERO-CONTENT-R1.json",
+    "bytes": 17457,
+    "sha256": "4fef4edbb48e837fb49cdcab7faf801040b5d2dfcab7c1ec03e4f8bfc786fe77",
+    "git_blob": "8d95a7b2a64f0aea43b0c25beb8472d1fd114d94"
+  },
+  "branch_checks": [
+    {
+      "id": 39242358484,
+      "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+      "head_sha": "96ed8d94574dfcce50a4a339e8b2e89898cb3d27",
+      "head_branch": "agent/waei-cn20-island-hero-story-r1-20261019",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39242358484"
+    },
+    {
+      "id": 39242358841,
+      "name": "Validate StoneAge preproduction content archive and wiki boundary",
+      "head_sha": "96ed8d94574dfcce50a4a339e8b2e89898cb3d27",
+      "head_branch": "agent/waei-cn20-island-hero-story-r1-20261019",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39242358841"
+    },
+    {
+      "id": 39242358641,
+      "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+      "head_sha": "96ed8d94574dfcce50a4a339e8b2e89898cb3d27",
+      "head_branch": "agent/waei-cn20-island-hero-story-r1-20261019",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39242358641"
+    },
+    {
+      "id": 39242358549,
+      "name": "Validate legacy StoneAge assistant history and pet content gaps",
+      "head_sha": "96ed8d94574dfcce50a4a339e8b2e89898cb3d27",
+      "head_branch": "agent/waei-cn20-island-hero-story-r1-20261019",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39242358549"
+    },
+    {
+      "id": 39242358566,
+      "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+      "head_sha": "96ed8d94574dfcce50a4a339e8b2e89898cb3d27",
+      "head_branch": "agent/waei-cn20-island-hero-story-r1-20261019",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39242358566"
+    },
+    {
+      "id": 39242358809,
+      "name": "Validate StoneAge Stage A joint review decision",
+      "head_sha": "96ed8d94574dfcce50a4a339e8b2e89898cb3d27",
+      "head_branch": "agent/waei-cn20-island-hero-story-r1-20261019",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39242358809"
+    },
+    {
+      "id": 39242359029,
+      "name": "Verify CN official island prose and Taiwan-labelled hero guide",
+      "head_sha": "96ed8d94574dfcce50a4a339e8b2e89898cb3d27",
+      "head_branch": "agent/waei-cn20-island-hero-story-r1-20261019",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39242359029"
+    },
+    {
+      "id": 39242358756,
+      "name": "Validate Stage A early source gap triage",
+      "head_sha": "96ed8d94574dfcce50a4a339e8b2e89898cb3d27",
+      "head_branch": "agent/waei-cn20-island-hero-story-r1-20261019",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39242358756"
+    },
+    {
+      "id": 39242358958,
+      "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+      "head_sha": "96ed8d94574dfcce50a4a339e8b2e89898cb3d27",
+      "head_branch": "agent/waei-cn20-island-hero-story-r1-20261019",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39242358958"
+    },
+    {
+      "id": 39242358373,
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "head_sha": "96ed8d94574dfcce50a4a339e8b2e89898cb3d27",
+      "head_branch": "agent/waei-cn20-island-hero-story-r1-20261019",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39242358373"
+    }
+  ],
+  "main_checks": [
+    {
+      "id": 39242645415,
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "head_sha": "96ed8d94574dfcce50a4a339e8b2e89898cb3d27",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39242645415"
+    },
+    {
+      "id": 39242645345,
+      "name": "Validate StoneAge Stage A joint review decision",
+      "head_sha": "96ed8d94574dfcce50a4a339e8b2e89898cb3d27",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39242645345"
+    },
+    {
+      "id": 39242645172,
+      "name": "Validate legacy StoneAge assistant history and pet content gaps",
+      "head_sha": "96ed8d94574dfcce50a4a339e8b2e89898cb3d27",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39242645172"
+    },
+    {
+      "id": 39242645081,
+      "name": "Validate Stage A early source gap triage",
+      "head_sha": "96ed8d94574dfcce50a4a339e8b2e89898cb3d27",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39242645081"
+    },
+    {
+      "id": 39242645247,
+      "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+      "head_sha": "96ed8d94574dfcce50a4a339e8b2e89898cb3d27",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39242645247"
+    },
+    {
+      "id": 39242645349,
+      "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+      "head_sha": "96ed8d94574dfcce50a4a339e8b2e89898cb3d27",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39242645349"
+    },
+    {
+      "id": 39242645252,
+      "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+      "head_sha": "96ed8d94574dfcce50a4a339e8b2e89898cb3d27",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39242645252"
+    },
+    {
+      "id": 39242645250,
+      "name": "Validate StoneAge preproduction content archive and wiki boundary",
+      "head_sha": "96ed8d94574dfcce50a4a339e8b2e89898cb3d27",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39242645250"
+    },
+    {
+      "id": 39242645523,
+      "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+      "head_sha": "96ed8d94574dfcce50a4a339e8b2e89898cb3d27",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39242645523"
+    },
+    {
+      "id": 39242645201,
+      "name": "Independently verify TW1.0 R58 rooted helper returns and source custody",
+      "head_sha": "96ed8d94574dfcce50a4a339e8b2e89898cb3d27",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39242645201"
+    },
+    {
+      "id": 39242645271,
+      "name": "Verify CN official island prose and Taiwan-labelled hero guide",
+      "head_sha": "96ed8d94574dfcce50a4a339e8b2e89898cb3d27",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39242645271"
+    }
+  ],
+  "boundaries": {
+    "island_prose_records": 5,
+    "guide_records": 1,
+    "npc_mentions": 3,
+    "actual_server_entities_verified": 0,
+    "new_original_bodies": 2,
+    "new_images": 0,
+    "regional_notice": "GUIDE_SAYS_TW_OPEN_CN_NOT_YET_OPEN",
+    "root_is_authenticated_facilities_sidebar_href": false,
+    "world_fifty_years_is_absolute_date_or_guide_prerequisite": false,
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b_and_wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING"
+  },
+  "next": "CN20-HERO-GUIDE-SOURCE-RELATIONS-01"
+}

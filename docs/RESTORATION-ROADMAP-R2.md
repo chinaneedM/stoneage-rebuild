@@ -834,3 +834,21 @@ JSS2001-PLAYER-STATUS-LEVELUP-AND-KNOCKOUT-01将已知manual02的3040/8020/8060�
 波拉岛/拨拉岛、小黑猪/黑乌力、弥生/旧recovered25彌生、无名花/仙尼亞的花、当前不可思议的贝/未读4.asp不可思议的贝壳均不默认证同实体或同构建；「找寻找孙女」原导航错字保留，2/3/4.asp三正文及北岛交叉引用未取，不因红暴之谜导航推当前宠物奖品。交付STONEAGE-WAEI-CN20-ISLAND-HERO-CONTENT-R1.json/规格和R16复审，maps5描述+quests1攻略+npcs3提及共9研究记录，不是9原服实体；20新反例/与设施共33相关本地测试，独立已知设施+两新正文/全cmp/derived-only工作流。原HTML/图像/程序不入Git，22域/历史前缀保留，独立源job/ZIP/raw/Git及自身main需实际另验，不借父绿。
 
 **唯一最高NEXT CN20-HERO-GUIDE-SOURCE-RELATIONS-01**：只本新报告与既验recovered25花贝配置派生作有限来源关系，核准方向、角色/地点和缺失前置/出生条件的界限；零新原件/图像/攻略/程序请求，不把相似人名/花贝结构当同版同任务，一份有实质关系规格后返回全官方版本队列。Stage A7 PARTIAL+2 OPEN、Stage B/百科GATED、R79 PAUSED_NON_BLOCKING，无整体百分比。
+
+
+## 2026-10-19 — 英雄岛与后代花贝配置六组有限来源关系
+
+岛屿/攻略内容96ed8d94574dfcce50a4a339e8b2e89898cb3d27 / tree20942cea1ef1790d82220e44854f692fe9ec6d2b的10候选检查实全success；源run39242359029/job118025969676实际只已知设施+两原正文、20反例/段落pin/完整cmp。artifact12181014645实下载ZIP4656B SHA256b3edeb7c5e17fc503dedd6435c78c220d8bea44e91908bd4245a7c02ac2022a2，唯一derived.json17457B SHA2564fef4edbb48e837fb49cdcab7faf801040b5d2dfcab7c1ec03e4f8bfc786fe77等于永久Git blob8d95a7b2a64f0aea43b0c25beb8472d1fd114d94。该内容自身main需按实际另验，不能仅套候选10绿。
+
+按当前最高CN20-HERO-GUIDE-SOURCE-RELATIONS-01只两固定Git派生：上述岛屿/攻略报告，及既验STONEAGE-WORLD-NPC-QUEST-CATALOG-R1.json（12778B SHA256ac402f48c7045f431d0e68a48c7c3513d283f19704f3cf6bd90c3d3a773e576e / Git blob5aa29da3b4b62b9f2bf8f2d7ed36c750c3bb8b74）。后者远端精确blob重新读取；后代原bundle/脚本未重新下载或执行，不把旧六事件/两item表当新恢复。零新原件/图像/攻略/程序请求。
+
+六sources关系：大陆站台湾已开/大陆未开攻略与RECOVERED25 profile不当同发行/构建；日美子原56.124 vs后代borncorner57/124、弥生55.93 vs彌生55/92只定位字符串/配置不同，后代亦未证实际spawn，不推一格offset/交互半径/同人物；新攻略无名花→弥生→贝与后代彌生give2414/remove2415方向相似，但贝=不可思議的貝殼2414/花=仙尼亞的花2415和原版ID均不证；鱼村出生可直接取贝与后代give2414/item atoms空记录不合成出生谓词或无条件免费，complete condition仍null，等级/成人礼不被免除；黑乌力第三步超出旧两NPC样本不证整个后代bundle无此角色，也未明写贝消耗/检查；新攻略花→贝→入岛是一个用途链，后代/旧汇编另有反向贝→花，不撤销反向或判补丁/矛盾，也不作完整最终奖励表。所有2414/2415、1000/2000只后代侧，未回填网页。
+
+交付STONEAGE-WAEI-HERO-GUIDE-SOURCE-RELATIONS-R1.json/规格，六条来源关系每条两精确派生pin及可实际解析JSON指针，非六新游戏实体；12反例与独立仅两Git/全cmp/derived-only工作流。45相关本地测试通过（原件20、关系12、设施13），九内容记录/六关系均核七必需字段与19集合合同。完整初始CURRENT/历史/来源/路线前缀及22域状态保留；源job/ZIP/raw/Git与自身main仍须按实际验收，不借父或原件绿灯。
+
+**唯一最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-17**：本六关系有限闭合，返回全官方发行/22域真实材料队列，优先具名任务/故事正文缺口，选一可认证入口与有限交付/停止条件并实取；停止花贝身份/坐标/缺失布尔helper扩张，不盲取未读三攻略/Map2五目标。Stage A7 PARTIAL+2 OPEN、Stage B/百科GATED、R79 PAUSED_NON_BLOCKING，无整体百分比。
+
+
+### R16原件自身main实际验收补记
+
+岛屿/攻略96ed8d94574dfcce50a4a339e8b2e89898cb3d27的自身11项main已实际全部success（含本源工作流与R58）；STONEAGE-WAEI-CN20-ISLAND-HERO-CONTENT-ACCEPTANCE-R1.json保留精确10候选/11main run/HEAD、两原源pin和实下载ZIP/raw/Git链。此为上条待验记录的实际后续，不删除历史待验措辞。关系包新HEAD仍须观察自身检查，不能借本原件11绿；唯一最高NEXT仍OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-17。
