@@ -1,0 +1,238 @@
+{
+  "schema": "stoneage.r20.sina2004_six_named_quest_vignettes.source_contract.v1",
+  "task": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-20",
+  "date": "2026-10-19",
+  "baseline": {
+    "head": "93c76b9e0a33aeccb395b83ab027e4d3073e54a6",
+    "tree": "520ffa85204757c92b1f928cdd55d8b509b8a017"
+  },
+  "sources": [
+    {
+      "id": "SINA_20040211_INDEX",
+      "url": "https://games.sina.com.cn/z/sta/2004-02-11/104374.shtml",
+      "title": "新任务，新挑战",
+      "visible_author": "新浪游戏",
+      "publication": "2004-02-11 14:10",
+      "read_type": "WEB_RENDERED_HTML",
+      "lines": [
+        22,
+        78
+      ],
+      "original_raw_html_sha256": null,
+      "original_archive_timestamp": null,
+      "operator_first_party": false,
+      "operator_named_in_page_footer": "北京华义联合软件开发有限公司"
+    },
+    {
+      "id": "SINA_20040211_FRIENDSHIP_DETAIL",
+      "url": "https://games.sina.com.cn/z/sta/2004-02-11/rw4.shtml",
+      "title": "任务：患难见真情",
+      "publication": "2004-02-11 14:40",
+      "qualified_from": "INDEX_ACTUAL_LINK_64",
+      "visible_text_for_quest_steps": false,
+      "main_detail_is_image_references": true,
+      "images_opened": 0,
+      "lines": [
+        22,
+        34
+      ],
+      "original_raw_html_sha256": null,
+      "operator_first_party": false
+    }
+  ],
+  "task_vignettes": [
+    {
+      "id": "T01",
+      "name": "就职任务",
+      "category": "职业资格",
+      "text_lines": [
+        28,
+        36
+      ],
+      "actors": [],
+      "groups": [
+        "闇灵法师",
+        "追猎者",
+        "白狼勇士"
+      ],
+      "hook": "Guild mentors set trials for job applicants",
+      "reported_outcome": "Pass trials to qualify",
+      "walkthrough_link_number": 61,
+      "quest_steps_verified": false
+    },
+    {
+      "id": "T02",
+      "name": "事实的真相",
+      "category": "村庄谜团",
+      "text_lines": [
+        37,
+        43
+      ],
+      "actors": [],
+      "groups": [
+        "北岛村庄",
+        "九胞胎兄弟",
+        "冒充者"
+      ],
+      "hook": "Nine identical brothers appear to have become ten; identify the impersonator",
+      "reported_outcome": null,
+      "walkthrough_link_number": 62,
+      "quest_steps_verified": false
+    },
+    {
+      "id": "T03",
+      "name": "危险！熊出没！！",
+      "category": "生态与治安",
+      "text_lines": [
+        44,
+        49
+      ],
+      "actors": [],
+      "groups": [
+        "森林",
+        "大熊"
+      ],
+      "hook": "A ferocious bear threatens an otherwise peaceful forest",
+      "reported_outcome": null,
+      "walkthrough_link_number": 63,
+      "quest_steps_verified": false
+    },
+    {
+      "id": "T04",
+      "name": "患难见真情",
+      "category": "人物关系与救援",
+      "text_lines": [
+        50,
+        57
+      ],
+      "actors": [
+        "尊尼",
+        "迪克"
+      ],
+      "groups": [
+        "隔壁村",
+        "恐龙"
+      ],
+      "hook": "Johnny seeks friendship despite bullying; Dick is endangered by a dinosaur; Johnny is wounded while helping",
+      "reported_outcome": null,
+      "walkthrough_link_number": 64,
+      "quest_steps_verified": false
+    },
+    {
+      "id": "T05",
+      "name": "酿酒任务",
+      "category": "料理与村落生活",
+      "text_lines": [
+        58,
+        63
+      ],
+      "actors": [
+        "阿喇吉"
+      ],
+      "groups": [
+        "村长",
+        "宴客"
+      ],
+      "hook": "Winemaking specialist has soured wine before a village chief's banquet and seeks help",
+      "reported_outcome": null,
+      "walkthrough_link_number": 65,
+      "quest_steps_verified": false
+    },
+    {
+      "id": "T06",
+      "name": "罗曼蒂克的礼物",
+      "category": "关系与礼物",
+      "text_lines": [
+        64,
+        70
+      ],
+      "actors": [
+        "契雷多"
+      ],
+      "groups": [
+        "无名女子"
+      ],
+      "hook": "A man hopes to convey longstanding affection through a gift",
+      "reported_outcome": null,
+      "walkthrough_link_number": 66,
+      "quest_steps_verified": false
+    }
+  ],
+  "identified_actor_strings": [
+    "尊尼",
+    "迪克",
+    "阿喇吉",
+    "契雷多"
+  ],
+  "profession_groups": [
+    "闇灵法师",
+    "追猎者",
+    "白狼勇士"
+  ],
+  "bounded_summary": {
+    "index_article_count": 1,
+    "followed_detail_page_count": 1,
+    "content_vignettes": 6,
+    "profession_categories": 3,
+    "named_actor_strings": 4,
+    "distinct_story_vignettes_not_jobs": 5,
+    "actual_game_quest_instances": 0,
+    "original_dialogue_bytes": 0,
+    "original_server_reward_items": 0,
+    "original_proprietary_images_downloaded": 0
+  },
+  "source_boundaries": [
+    {
+      "id": "B01",
+      "type": "SOURCE_ATTRIBUTION",
+      "qualification": "The Sina page is byline 新浪游戏; company footer is not proof company authored the quest texts"
+    },
+    {
+      "id": "B02",
+      "type": "VERSION",
+      "qualification": "Sidebar points to mixed 6.0/7.0 information; do not attribute all six story blurbs to one precise official build"
+    },
+    {
+      "id": "B03",
+      "type": "SUMMARY_VS_WALKTHROUGH",
+      "qualification": "Task hooks describe premises, not tested completion, item hand-ins or dialogue scripts"
+    },
+    {
+      "id": "B04",
+      "type": "DETAIL_IMAGE_ONLY",
+      "qualification": "Friendship detail page contains image references but no deciphered walkthrough text; actual images not downloaded"
+    },
+    {
+      "id": "B05",
+      "type": "TYPO_LITERAL",
+      "qualification": "Source retains 舍身相救s and 真低能 as visible questionable strings; do not silently correct or infer plot outcome"
+    },
+    {
+      "id": "B06",
+      "type": "ENTITY",
+      "qualification": "Only four literal names are visible; unnamed nine brothers, impostor, bear, dinosaur and love interest not promoted to original NPC or creature ID"
+    },
+    {
+      "id": "B07",
+      "type": "DATE",
+      "qualification": "2004-02-11 news publishing does not prove when quests were released or live"
+    },
+    {
+      "id": "B08",
+      "type": "RIGHTS",
+      "qualification": "No copyrighted screenshots, original game files, programs or proprietary dialogue assets committed"
+    }
+  ],
+  "release_scope": {
+    "region": "Mainland China portal setting; precise server not identified",
+    "operator_ref": "Company footer Beijing Wayi",
+    "version_build": null,
+    "tw1_original": false,
+    "jss1999_original": false,
+    "source_is_first_party_official_quest_script": false
+  },
+  "stage_a": "7_PARTIAL_2_OPEN",
+  "stage_b": "GATED",
+  "r79": "PAUSED_NON_BLOCKING",
+  "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-21"
+}

@@ -1,0 +1,19 @@
+name: Validate 2004 Sina six StoneAge quest vignettes
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-CN2004-SIX-QUEST-STORY-VIGNETTES-R1.json'
+      - 'tests/test_stoneage_cn2004_six_quest_vignettes.py'
+      - '.github/workflows/verify-stoneage-cn2004-six-quest-vignettes.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-CN2004-SIX-QUEST-STORY-VIGNETTES-R1.json'
+      - 'tests/test_stoneage_cn2004_six_quest_vignettes.py'
+      - '.github/workflows/verify-stoneage-cn2004-six-quest-vignettes.yml'
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check six source-only premises and negative source boundaries
+        run: python -m unittest discover -s tests -p 'test_stoneage_cn2004_six_quest_vignettes.py' -v
