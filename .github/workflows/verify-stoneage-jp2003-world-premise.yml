@@ -1,0 +1,32 @@
+name: Verify Japan 2003 official world premise without roster or runtime promotion
+on:
+  push:
+    paths:
+      - tools/stoneage_jp2003_world_premise.py
+      - tests/test_stoneage_jp2003_world_premise.py
+      - tools/stoneage_early_content_probe.py
+      - research/recovered/STONEAGE-JP2003-WORLD-PREMISE-R1.json
+      - docs/specs/STONEAGE-JP2003-WORLD-PREMISE-R1.md
+      - .github/workflows/verify-stoneage-jp2003-world-premise.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exact-official-world-premise:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest tests.test_stoneage_jp2003_world_premise -v
+      - name: Acquire one exact official body without images or linked pages
+        run: python -m tools.stoneage_jp2003_world_premise --output output/derived.json
+      - name: Compare complete permanent report
+        run: cmp output/derived.json research/recovered/STONEAGE-JP2003-WORLD-PREMISE-R1.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: jp2003-world-premise-derived-only
+          path: output/derived.json
+          retention-days: 30

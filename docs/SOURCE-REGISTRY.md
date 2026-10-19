@@ -7269,3 +7269,8 @@ http://www.titan.co.jp/stoneage/manual02.html，严格重放https://web.archive.
 角色内容6b036e05fe87a87a9ac44555726c68e392a6a8ac、源run39200493982/job117892275375，artifact12163272862 ZIP3813B SHA2566e119388e2f1254c49f07fd040756191d3f654ff697ba3544f2c14ced969275a，唯一derived.json11302B SHA25613df1d32a44127f80c3e042c335dc01d9cf926011f5b7908b1b71be77d818277、Git blob4b44c6d022265c62cf2cca1d599deb85e31e1418实际下载比较；11分支/12main均success，见永久ACCEPTANCE-R1回执。
 
 新STONEAGE-JSS2001-PLAYER-PET-CREATION-BOUNDARIES-R1只四份固定报告，原manual01/manual02两正文同运营商而非独立证人；7个sources比较保留输入SHA/JSON指针/原URL捕获摘要，零网络新原源/资产。39相关本地测试通过，专用离线Actions/ZIP/raw/Git/main实际另验；不借父HEAD12绿，原文不入Git。
+
+
+### 日本Hangame2003世界観分栏 — 2026-10-19
+
+原http://www.hangame.co.jp/publish/sa/game.asp，R5setup真实静态入口。网页阅读器UNAVAILABLE不证历史不存在；直接HTTP初请20031214055553跳实际20031214053427id_，12869B SHA256c3cb0c64811dfd2d83e5ab809119ddcf09b5ce5b709d1e3c8de1e58c3ec91bfb、CP932严格。第二次严格https://web.archive.org/web/20031214053427id_/http://www.hangame.co.jp/publish/sa/game.asp本地全量cmp通过。实际标题ストーンエイジ/分栏世界観，四可见段/5sources记录，非新增具名地图/NPC/物种。学校/石币/100种下界/图鉴与轻松定位的具体未知见永久派生/规格STONEAGE-JP2003-WORLD-PREMISE-R1；原HTML/图像/程序不入Git。独立runner/ZIP/raw/Git/自身main实际另验。真实game2.asp标签ゲームの特徴仅资格，不等于已读正文。

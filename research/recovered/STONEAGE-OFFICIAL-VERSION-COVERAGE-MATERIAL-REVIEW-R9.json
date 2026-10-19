@@ -1,0 +1,130 @@
+{
+  "boundaries": {
+    "all_22_baseline_statuses_changed": false,
+    "r79": "PAUSED_NON_BLOCKING",
+    "same_build_or_original_server_verified": false,
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b_and_wiki": "GATED"
+  },
+  "date": "2026-10-19",
+  "domains_unchanged": [
+    {
+      "baseline_evidence_status": "PARTIAL_SOURCE",
+      "domain_id": "version_lineage"
+    },
+    {
+      "baseline_evidence_status": "OPEN_VISUAL",
+      "domain_id": "login_splash"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "domain_id": "character_creation"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_RESOURCE",
+      "domain_id": "character_sprite_model"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "domain_id": "world_map"
+    },
+    {
+      "baseline_evidence_status": "OPEN_CONTENT",
+      "domain_id": "npc_identity"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "domain_id": "npc_dialog_ui"
+    },
+    {
+      "baseline_evidence_status": "OPEN_CONTENT",
+      "domain_id": "quest_content"
+    },
+    {
+      "baseline_evidence_status": "OPEN_SAME_BUILD_ROSTER",
+      "domain_id": "pet_species"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_RESOURCE",
+      "domain_id": "pet_visual"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "domain_id": "pet_stats"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_DESCENDANT",
+      "domain_id": "pet_growth"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "domain_id": "pet_skills"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_DESCENDANT",
+      "domain_id": "pet_encounter"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_DESCENDANT",
+      "domain_id": "ride_mount"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "domain_id": "battle_ui_rules"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "domain_id": "item_equipment_economy"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_RESOURCE",
+      "domain_id": "audio_fx"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_CATALOG",
+      "domain_id": "helper_versions"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_CATALOG",
+      "domain_id": "helper_capabilities"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_DISCOVERY",
+      "domain_id": "reference_web"
+    },
+    {
+      "baseline_evidence_status": "DESIGN_PREP_ONLY",
+      "domain_id": "future_player_wiki"
+    }
+  ],
+  "edge_qualification": {
+    "actual_static_target": "http://www.hangame.co.jp/publish/sa/game.asp",
+    "javascript_executed": false,
+    "record": "STONEAGE-OFFICIAL-VERSION-COVERAGE-MATERIAL-REVIEW-R5.json"
+  },
+  "material_result": {
+    "actual_capture": "20031214053427",
+    "new_named_npc_species_maps_or_quests": 0,
+    "original_bytes": 12869,
+    "original_sha256": "c3cb0c64811dfd2d83e5ab809119ddcf09b5ce5b709d1e3c8de1e58c3ec91bfb",
+    "path": "research/recovered/STONEAGE-JP2003-WORLD-PREMISE-R1.json",
+    "sha256": "9879a886d17bb5658349085ccf5768f952ab2daf0aed7299a7f66bfd06915313",
+    "source_records": 5,
+    "stop_condition_met": true,
+    "visible_world_premise_paragraphs": 4
+  },
+  "next": "JP2003-OFFICIAL-GAME-FEATURES-SOURCE-01",
+  "prior_review": {
+    "path": "research/recovered/STONEAGE-OFFICIAL-VERSION-COVERAGE-MATERIAL-REVIEW-R8.json",
+    "sha256": "0617824b2d3e324da0f40f47d1ce91e4d3d8bd0388695df1815b9727932ef536"
+  },
+  "recent_material": [
+    "JSS2001 three player status/level-up/knockout semantics",
+    "Seven finite early player/pet/creation source comparisons"
+  ],
+  "schema": "stoneage.official_version_coverage.material_review.r9",
+  "selected_task": "JP2003-OFFICIAL-WORLD-PREMISE-SOURCE-01",
+  "selection_reason": "STOP_KNOWN_MANUAL_SEMANTIC_LOOP_AND_FILL_JAPAN_OPERATOR_WORLD_LIFE_PREMISE_GAP",
+  "source_scope": "ONE_EXISTING_VERIFIED_STATIC_TARGET_ONE_BODY_NO_IMAGES_PROGRAMS_OR_RECURSION",
+  "task": "OFFICIAL-VERSION-COVERAGE-MATERIAL-REVIEW-09"
+}
