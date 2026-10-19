@@ -1,0 +1,229 @@
+{
+  "schema": "stoneage.cn30_watercity_two_source_story_branch_review.r1",
+  "task": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-17-SUPPLEMENT",
+  "observed_date": "2026-10-19",
+  "material_reason": "DATED_2003_SECOND_PORTAL_ARTICLE_REVEALS_TWO_ALTERNATIVE_ENDINGS_AND_MEANINGFUL_SOURCE_DIFFERENCES",
+  "sources": [
+    {
+      "name": "17173_player_guide",
+      "url": "https://news.17173.com/z/stoneage/renwu/sa30_08.htm",
+      "source_class": "PLAYER_AUTHORED_GUIDE_ON_PORTAL",
+      "visible_byline": "微笑赢家 多多",
+      "original_publication_date": null,
+      "rendered_lines": [
+        6,
+        50
+      ],
+      "raw_html_sha256": null,
+      "full_historical_capture": false
+    },
+    {
+      "name": "sina_2003",
+      "url": "https://games.sina.com.cn/zhqu/article/2003-06-05/11022.shtml?from=wap",
+      "source_class": "DATED_SINA_GAME_EDITORIAL_ARTICLE",
+      "visible_byline": "新浪游戏",
+      "visible_publication_datetime": "2003-06-05 15:23",
+      "rendered_lines": [
+        22,
+        63
+      ],
+      "raw_html_sha256": null,
+      "full_historical_capture": false
+    }
+  ],
+  "source_extraction": "WEB_RENDERED_TEXT_ONLY_NO_RAW_BYTE_SNAPSHOT_OR_SCREENSHOT_PROVENANCE",
+  "version": {
+    "source_17173_category": "石器3.0",
+    "sina_article_task_title": "水城的爱情故事",
+    "both_exact_game_builds": null,
+    "both_actual_server_regions": null,
+    "source_independence_status": "UNKNOWN",
+    "direct_operator_approval": false
+  },
+  "branch_model_as_reported_by_sina": [
+    {
+      "source_branch": "A",
+      "headline": "喀尔斯如何唤回卡蜜儿的心",
+      "name": "力之手环",
+      "editorial_claim_end_pairing": "喀尔斯与卡蜜儿；麦特与莉娜",
+      "source_lines": [
+        36,
+        52
+      ],
+      "runtime_verified": false
+    },
+    {
+      "source_branch": "B",
+      "headline": "青梅竹马的迷惘",
+      "name": "心之手环",
+      "editorial_claim_end_pairing": "喀尔斯与莉娜",
+      "source_lines": [
+        53,
+        63
+      ],
+      "runtime_verified": false
+    }
+  ],
+  "candidate_mapping": {
+    "first_source_17173_11_steps": "B_SIMILAR_STORY_STRUCTURE_ONLY",
+    "same_runtime_script_proven": false,
+    "shared_quest_identity_proven": false
+  },
+  "relationship_assertion": "STORY_BRANCH_ONLY_NOT_UNIVERSAL_WORLDLINE",
+  "qualified_differences": [
+    {
+      "topic": "publication_provenance",
+      "source_17173": "No visible original publication date; player byline 微笑赢家 多多.",
+      "source_sina": "Page byline 新浪游戏; dated 2003-06-05 15:23.",
+      "relation": "DATED_PORTAL_EDITION_VS_UNDATED_PLAYER_GUIDE",
+      "scope": "No proof one copied or is independent actual-play; not two runtime witnesses.",
+      "refs_17173": [
+        6,
+        6
+      ],
+      "refs_sina": [
+        22,
+        23
+      ]
+    },
+    {
+      "topic": "route_split",
+      "source_17173": "Eleven numbered heart-bracelet steps; sibling force route only named as mutually exclusive.",
+      "source_sina": "Article explicitly labels A and B endings; A gives 力之手环 and B gives 心之手环.",
+      "relation": "SOURCE_REPORTED_TWO_BRANCH_ENDINGS",
+      "scope": "17173 one-path steps are structurally closer to Sina B, not evidence of identical server build.",
+      "refs_17173": [
+        26,
+        50
+      ],
+      "refs_sina": [
+        35,
+        36,
+        49,
+        52,
+        53,
+        62,
+        63
+      ]
+    },
+    {
+      "topic": "necklace_crafter",
+      "source_17173": "莉娜 prepares 花贝项链 in the documented heart path.",
+      "source_sina": "Sina A says 喀尔斯 makes it; Sina B says 莉娜 makes it.",
+      "relation": "CONDITIONAL_BRANCH_ACTOR_NOT_SINGLE_CANONICAL_CRAFTER",
+      "scope": "Do not conflate A and B or silently correct either article.",
+      "refs_17173": [
+        33,
+        39
+      ],
+      "refs_sina": [
+        39,
+        43,
+        55,
+        59
+      ]
+    },
+    {
+      "topic": "npc_coordinates",
+      "source_17173": "喀尔斯 55．51; 莉娜 83．32.",
+      "source_sina": "喀尔斯（54，51）; 莉娜（82，33）.",
+      "relation": "UNRESOLVED_SOURCE_COORDINATE_DISAGREEMENT",
+      "scope": "No common map instance/server build; cannot infer a global one-tile offset or correct original spawn.",
+      "refs_17173": [
+        26,
+        28
+      ],
+      "refs_sina": [
+        30,
+        32
+      ]
+    },
+    {
+      "topic": "level_requirement",
+      "source_17173": "条件「100级以上」.",
+      "source_sina": "「建议等级115级」.",
+      "relation": "MANDATORY_CLAIM_VS_RECOMMENDED_LEVEL",
+      "scope": "Different modalities; recommendation is not contradictory hard minimum or evidence for server predicates.",
+      "refs_17173": [
+        7,
+        12
+      ],
+      "refs_sina": [
+        24,
+        25
+      ]
+    },
+    {
+      "topic": "reward_values",
+      "source_17173": "心之手环 攻-37 防+37 敏+37 魅+8, no uncertainty marker printed.",
+      "source_sina": "心之手环 same signs and values followed by ? marks; other route 力之手环 values also ?.",
+      "relation": "MATCHED_REPORTED_SIGNS_DIFFERENT_CONFIDENCE_MARKERS",
+      "scope": "Neither is item master or verified server-produced reward; uncertainty markers must survive.",
+      "refs_17173": [
+        48,
+        48
+      ],
+      "refs_sina": [
+        35,
+        35,
+        52,
+        52,
+        62,
+        62
+      ]
+    },
+    {
+      "topic": "relationship_outcomes",
+      "source_17173": "Only one heart-route chain of letters and reported bracelet.",
+      "source_sina": "A story resolves 喀尔斯/卡蜜儿 and gives 力之手环; B resolves 喀尔斯/莉娜 and gives 心之手环.",
+      "relation": "BRANCH_CONDITIONAL_WORLD_STORY_NOT_LINEAR_CANON",
+      "scope": "The two endings cannot be merged into one universal historical outcome or the new game's selected canon.",
+      "refs_17173": [
+        41,
+        50
+      ],
+      "refs_sina": [
+        34,
+        36,
+        47,
+        52,
+        59,
+        63
+      ]
+    },
+    {
+      "topic": "repeatability",
+      "source_17173": "Mutual exclusivity of heart and force quests asserted.",
+      "source_sina": "Says can take only one route and cannot repeat unless character reincarnates again.",
+      "relation": "SECOND_SOURCE_ADDS_REPEATABILITY_CLAIM",
+      "scope": "No runtime predicate, reincarnation ID or same-build implementation verified.",
+      "refs_17173": [
+        50,
+        50
+      ],
+      "refs_sina": [
+        51,
+        51,
+        63,
+        63
+      ]
+    }
+  ],
+  "material_scope": {
+    "named_npc_strings": [
+      "喀尔斯",
+      "莉娜",
+      "麦特",
+      "卡蜜儿"
+    ],
+    "dated_new_source_bodies": 1,
+    "related_player_source_bodies": 1,
+    "source_claim_branches": 2,
+    "unverified_script_count": 0,
+    "original_client_or_assets_recovered": 0,
+    "tw10_entity_promotions": 0,
+    "original_historical_html_sha_verification": false
+  },
+  "stop": "ONE_ADDITIONAL_DATED_EDITORIAL_ARTICLE_AFTER_MATERIAL_BRANCH_DISCOVERY_NO_SIBLINGS_NO_IMAGES",
+  "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-18"
+}

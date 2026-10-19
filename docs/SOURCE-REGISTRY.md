@@ -7461,3 +7461,14 @@ R13显式轮换北京华义原http://www.waei.com.cn:80/ZHUANQU/stoneage2/tyro/u
 交付`research/recovered/STONEAGE-CN30-WATERCITY-HEART-BRACELET-GUIDE-R1.json`、`docs/specs/STONEAGE-CN30-WATERCITY-HEART-BRACELET-SOURCE-R1.md`、R17材料评审与专门反例测试/Actions。一个索引真实出链+一正文，有限停机。测试/CI是**机读内容与负面边界验证**，不替代原网页原始字节或原游戏服务器。当前分支新CI/自身main应按实际运行再另记，不提前称绿。原CURRENT所有历史前缀与失败不删，22域原状态、Stage A七PARTIAL二OPEN、Stage B/百科 GATED、R79 PAUSED_NON_BLOCKING保持。
 
 **唯一最高NEXT `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-18`**：返回官方各版本/地区优先一方任务或故事真实原文，选择不同命名内容的一条可认证入口/一实质规格或精确缺源即止；避免在心之手环数值、坐标、疑似同版身份上空转。无总体复原百分比。
+
+
+### 2026-10-19 — R17有日期校勘补正：2003新浪水城双结局，防混线
+
+前条R17只读17173一篇玩家攻略、明确其时代出处未证。在证据补核中新增一次限定的**2003-06-05 15:23新浪游戏专题《水城的爱情故事》**正文：https://games.sina.com.cn/zhqu/article/2003-06-05/11022.shtml?from=wap，编辑署名新浪游戏，非原服源码/运营方原始脚本。文章实际分A/B：A=喀尔斯挽回卡蜜儿、奖励力之手环；B=喀尔斯与莉娜情感结局、奖励心之手环（两者仅媒体描述，并非一版原服事实）。17173心之手环十一段与新浪B线**近似**，同构建/同任务脚本/来源独立性均未证，不把A/B并成一条线性正史。
+
+八关系分辨：17173由莉娜制花贝项链，新浪A由喀尔斯、B由莉娜（分支而非统一NPC造物功能）；17173喀尔斯55.51/莉娜83.32，新浪54,51/82,33，未证一格偏移规律、真实spawn；17173「100级以上」条件vs新浪「建议115级」不可互换；两处心之手环数值符号类似但新浪属性后带问号，非物品master；新浪称二选一/若不再转生不能重复，原服reset未知。新增相对日期更强的第三方媒体资料，不把媒体转载=运营方直接披露。双方历史原HTML哈希尚无，只有本轮web-rendered段落及URL/行锚。新图/原字节/可执行脚本0。
+
+补充`research/recovered/STONEAGE-CN30-WATERCITY-TWO-SOURCE-STORY-BRANCHES-R1.json`、`docs/specs/STONEAGE-CN30-WATERCITY-TWO-SOURCE-STORY-BRANCHES-R1.md`与八关系反例测试，独立工作流改为同时检查两机读档。历史上一条R17“仅一正文”不删，因为这是**后续有新材料引发的来源补正**；累计两资料正文，1无期17173 + 1明确日期新浪，不给独立执行双证人。验证待自身Actions实际结果，当前未自动宣称主线绿。止点限定两真实正文，不自动扩其它攻略/图片。
+
+**最高NEXT仍`OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-18`**：回全官方版本一方优先的新具名故事、NPC或任务来源。Stage A7 PARTIAL+2 OPEN、Stage B/百科GATED、R79 PAUSED_NON_BLOCKING，无百分比。
