@@ -1,0 +1,32 @@
+name: Verify CN2003 Christmas exchange NPC source
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-CN2003-CHRISTMAS-*.json'
+      - 'tools/stoneage_cn2003_christmas_source.py'
+      - 'tests/test_stoneage_cn2003_christmas_source.py'
+      - '.github/workflows/verify-stoneage-cn2003-christmas-source.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-CN2003-CHRISTMAS-*.json'
+      - 'tools/stoneage_cn2003_christmas_source.py'
+      - 'tests/test_stoneage_cn2003_christmas_source.py'
+      - '.github/workflows/verify-stoneage-cn2003-christmas-source.yml'
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify exchange rules and negative evidence boundaries
+        run: python -m unittest discover -s tests -p 'test_stoneage_cn2003_christmas_source.py' -v
+      - name: Read exact current page, early HTML capture and actual linked image
+        run: python -m tools.stoneage_cn2003_christmas_source --fetch --output /tmp/christmas-derived/replay.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cn2003-christmas-derived-replay
+          path: /tmp/christmas-derived/replay.json
+          if-no-files-found: error
+          retention-days: 30

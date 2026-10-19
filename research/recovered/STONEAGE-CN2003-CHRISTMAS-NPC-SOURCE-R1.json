@@ -1,0 +1,348 @@
+{
+  "schema": "stoneage.cn2003_christmas_npc_source.r1",
+  "task": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-23",
+  "date": "2026-10-20",
+  "baseline": {
+    "head": "b49955a270b9574cac6d1b18438384907be74307",
+    "tree": "855c858ec6a825f46e43979bf2fb848c2d212696",
+    "remote_branch_count": 390,
+    "open_prs": 0,
+    "own_main_checks_successful": 11,
+    "unrelated_old_queued_run": 37642417333,
+    "continuity_prefix_pins": [
+      {
+        "path": "README.md",
+        "bytes": 21648,
+        "sha256": "9e5cfa8652f58f18a0bfc1df08f5b6b4f31ba63b86f6df2385959801a10bccbb",
+        "git_blob": "961cd68e7850b5535c0c5bdc82ed2e506c651a21"
+      },
+      {
+        "path": "docs/PROJECT-CONTINUITY-PROTOCOL-R1.md",
+        "bytes": 9762,
+        "sha256": "c44834eeec87f7a43e9cb4905f08377349e36d58b1fff2c5a75a6975db695e3b",
+        "git_blob": "ba9bbe19384589400abc61af37a360a40bf91452"
+      },
+      {
+        "path": "docs/CURRENT-STATE.md",
+        "bytes": 2136335,
+        "sha256": "e60d2bb17f0576d02847f6e8811d557387c9c11814d130f7d4c12eb4936476c4",
+        "git_blob": "c58141c676f9ed49dc3f288bc5d9283c85d2937f"
+      },
+      {
+        "path": "docs/DESIGN-DECISIONS.md",
+        "bytes": 45965,
+        "sha256": "28b572ed01179eacd5a06b4ad62c76e4baef22ac49587aa0bad452a7cb3fe8e6",
+        "git_blob": "013ae4fad9301ab0140fe408a423b3abad97d1f9"
+      },
+      {
+        "path": "docs/HISTORICAL-TIMELINE.md",
+        "bytes": 497363,
+        "sha256": "d8298fe74b910583091c8fa67a6f474569fd4a7425944dad192c8691ad379ce1",
+        "git_blob": "8fed9d59fcbf903d0310d4c4a8ed927c8c23bf93"
+      },
+      {
+        "path": "docs/SOURCE-REGISTRY.md",
+        "bytes": 779094,
+        "sha256": "3e91aeefef90893cfaff410e467d8e25bfbf76e1f297fe73a8156bec2860e510",
+        "git_blob": "98277f19d1a1b615e46a49ccd7c4e63ef01670b8"
+      },
+      {
+        "path": "docs/RESTORATION-ROADMAP-R2.md",
+        "bytes": 131380,
+        "sha256": "64f3a4d370200eb42bbaaf394481d0c379f71269e1e8c7add6f8ae2708faaf76",
+        "git_blob": "4d1fa178cfe7b053dad383b0db6054185d32bd59"
+      },
+      {
+        "path": "research/recovered/STONEAGE-22-DOMAIN-SOURCE-READY-PORTFOLIO-R2.json",
+        "bytes": 15948,
+        "sha256": "7d50de08f7855cf16dbe54b1747e258f1cc1223de88cc217172fd145f3c704ce",
+        "git_blob": "088b469b3c51e689cff27f33fc3bb49de2d24b2c"
+      }
+    ]
+  },
+  "inputs": [
+    {
+      "id": "S1",
+      "http": {
+        "url": "https://games.sina.com.cn/newgames/2003/12/122310574.shtml",
+        "resolved_url": "https://games.sina.com.cn/newgames/2003/12/122310574.shtml",
+        "status": 200,
+        "bytes": 34999,
+        "sha256": "f4efe819094146604444f4c09d3bd7b1174a4387140a0a265092177f97f84488",
+        "retrieved_utc": "2026-10-19T23:26:26.539550+00:00"
+      },
+      "type": "HTML",
+      "authority": "WAYI_OFFICIAL_MESSAGE_EXPLICITLY_ATTRIBUTED_BY_SINA",
+      "visible_publication": "2003-12-23 15:28",
+      "extracted": {
+        "core_sha256": "dcef51dd7aa44b4c7030b28ac0b0b3489c08852b2cc1fef09feff9bf523c31a2",
+        "core_utf8_bytes": 487,
+        "facts": {
+          "event_dates_as_written": [
+            "2003/12/24",
+            "2003/12/26"
+          ],
+          "exchange_server_versions": [
+            "6.0",
+            "7.0"
+          ],
+          "location_scope_as_written": "四大村五大城",
+          "exchange_npc": "圣诞兑奖员",
+          "reward_label_as_written": "神秘圣诞大礼包",
+          "reward_units_per_exchange": 1,
+          "limit_subject_as_written": "人物",
+          "limit_scope_as_written": "同一服务器组",
+          "limit_quantity_as_written": "一套",
+          "level_condition_as_written": "30级以上",
+          "required_milestone": "成人仪式",
+          "materials_directed_by_npc_not_enumerated": true,
+          "snow_start_as_written": "12月24日",
+          "snow_scope_as_written": "所有石器时代",
+          "source_image_declared_http": "http://image2.sina.com.cn/gm/newgames/2003/12/U163P115T9D10574F167DT20031223152817.JPG"
+        }
+      },
+      "normalization": "GB18030_ARTICLE_VISIBLE_EXCLUDE_SCRIPT_STYLE_REMOVE_WHITESPACE_EVENT_CORE_V1"
+    },
+    {
+      "id": "H1",
+      "http": {
+        "url": "https://web.archive.org/web/20040218034443id_/http://games.sina.com.cn:80/newgames/2003/12/122310574.shtml",
+        "resolved_url": "https://web.archive.org/web/20040218034443id_/http://games.sina.com.cn:80/newgames/2003/12/122310574.shtml",
+        "status": 200,
+        "bytes": 14942,
+        "sha256": "8f6337879ad23a9db4fa484f361a44c2a938bdcf3805c5b7dbb7fa0d4c92899e",
+        "retrieved_utc": "2026-10-19T23:26:41.105314+00:00"
+      },
+      "type": "HTML",
+      "authority": "EARLY_SINA_CAPTURE_OF_SAME_PUBLICATION",
+      "visible_publication": "2003-12-23 15:28",
+      "extracted": {
+        "core_sha256": "dcef51dd7aa44b4c7030b28ac0b0b3489c08852b2cc1fef09feff9bf523c31a2",
+        "core_utf8_bytes": 487,
+        "facts": {
+          "event_dates_as_written": [
+            "2003/12/24",
+            "2003/12/26"
+          ],
+          "exchange_server_versions": [
+            "6.0",
+            "7.0"
+          ],
+          "location_scope_as_written": "四大村五大城",
+          "exchange_npc": "圣诞兑奖员",
+          "reward_label_as_written": "神秘圣诞大礼包",
+          "reward_units_per_exchange": 1,
+          "limit_subject_as_written": "人物",
+          "limit_scope_as_written": "同一服务器组",
+          "limit_quantity_as_written": "一套",
+          "level_condition_as_written": "30级以上",
+          "required_milestone": "成人仪式",
+          "materials_directed_by_npc_not_enumerated": true,
+          "snow_start_as_written": "12月24日",
+          "snow_scope_as_written": "所有石器时代",
+          "source_image_declared_http": "http://image2.sina.com.cn/gm/newgames/2003/12/U163P115T9D10574F167DT20031223152817.JPG"
+        }
+      },
+      "normalization": "GB18030_ARTICLE_VISIBLE_EXCLUDE_SCRIPT_STYLE_REMOVE_WHITESPACE_EVENT_CORE_V1",
+      "capture_timestamp": "20040218034443",
+      "same_publication_not_independent_witness": true,
+      "archive_discovery": {
+        "url": "http://games.sina.com.cn/newgames/2003/12/122310574.shtml",
+        "archived_snapshots": {
+          "closest": {
+            "status": "200",
+            "available": true,
+            "url": "http://web.archive.org/web/20040218034443/http://games.sina.com.cn:80/newgames/2003/12/122310574.shtml",
+            "timestamp": "20040218034443"
+          }
+        },
+        "timestamp": "20040101"
+      },
+      "discovery_http": {
+        "url": "https://archive.org/wayback/available?url=http%3A%2F%2Fgames.sina.com.cn%2Fnewgames%2F2003%2F12%2F122310574.shtml&timestamp=20040101",
+        "resolved_url": "https://archive.org/wayback/available?url=http%3A%2F%2Fgames.sina.com.cn%2Fnewgames%2F2003%2F12%2F122310574.shtml&timestamp=20040101",
+        "status": 200,
+        "bytes": 310,
+        "sha256": "d362fed855e5ed1b6f198de104aec650bd02cbe1b41f2b64950b3d6bc14a56d8",
+        "retrieved_utc": "2026-10-19T23:26:28.881757+00:00"
+      }
+    },
+    {
+      "id": "I1",
+      "http": {
+        "url": "https://image2.sina.com.cn/gm/newgames/2003/12/U163P115T9D10574F167DT20031223152817.JPG",
+        "resolved_url": "https://image2.sina.com.cn/gm/newgames/2003/12/U163P115T9D10574F167DT20031223152817.JPG",
+        "status": 200,
+        "bytes": 31703,
+        "sha256": "abde5fd6bfd802578077e4ca3e48a3698fbd954a5332a905887c7767c4e7ae73",
+        "retrieved_utc": "2026-10-19T23:26:43.757051+00:00"
+      },
+      "type": "JPEG",
+      "authority": "ACTUAL_IMG_SRC_IN_BOTH_CURRENT_AND_EARLY_ARTICLE",
+      "dimensions": [
+        450,
+        337
+      ],
+      "source_declared_url": "http://image2.sina.com.cn/gm/newgames/2003/12/U163P115T9D10574F167DT20031223152817.JPG",
+      "transport_upgrade_only": true,
+      "historical_image_bytes_verified": false,
+      "caption_as_written": "图为：圣诞树",
+      "visually_inspected": true
+    }
+  ],
+  "records": [
+    {
+      "record_id": "cn-wayi-2003-christmas:npc",
+      "entity_type": "SOURCE_NAMED_SEASONAL_EXCHANGE_NPC",
+      "collection": "npcs",
+      "version_profile": "LATER_OFFICIAL:CN_WAYI_60_AND_70_SERVER_GROUPS_20031224_26_ANNOUNCEMENT_NOT_BUILD",
+      "source_refs": [
+        "S1",
+        "H1"
+      ],
+      "verification_status": "ANNOUNCEMENT_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "label_as_written": "圣诞兑奖员",
+      "service": "ANNOUNCED_MATERIAL_FOR_GIFT_EXCHANGE",
+      "location_scope_as_written": "四大村五大城",
+      "map_names": null,
+      "spawn_coordinates": null,
+      "look_id": null,
+      "dialogue_options": null
+    },
+    {
+      "record_id": "cn-wayi-2003-christmas:exchange",
+      "entity_type": "SOURCE_REPORTED_SEASONAL_EXCHANGE_NOT_SCRIPT",
+      "collection": "quests",
+      "version_profile": "LATER_OFFICIAL:CN_WAYI_60_AND_70_SERVER_GROUPS_20031224_26_ANNOUNCEMENT_NOT_BUILD",
+      "source_refs": [
+        "S1",
+        "H1"
+      ],
+      "verification_status": "ANNOUNCEMENT_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "label": "2003圣诞兑奖活动（研究标签）",
+      "source_rules": {
+        "event_dates_as_written": [
+          "2003/12/24",
+          "2003/12/26"
+        ],
+        "exchange_server_versions": [
+          "6.0",
+          "7.0"
+        ],
+        "location_scope_as_written": "四大村五大城",
+        "exchange_npc": "圣诞兑奖员",
+        "reward_label_as_written": "神秘圣诞大礼包",
+        "reward_units_per_exchange": 1,
+        "limit_subject_as_written": "人物",
+        "limit_scope_as_written": "同一服务器组",
+        "limit_quantity_as_written": "一套",
+        "level_condition_as_written": "30级以上",
+        "required_milestone": "成人仪式",
+        "materials_directed_by_npc_not_enumerated": true,
+        "snow_start_as_written": "12月24日",
+        "snow_scope_as_written": "所有石器时代",
+        "source_image_declared_http": "http://image2.sina.com.cn/gm/newgames/2003/12/U163P115T9D10574F167DT20031223152817.JPG"
+      },
+      "eligibility_logic": "LEVEL_CLAUSE_AND_ADULT_CEREMONY_AND_NPC_REQUIRED_ITEMS_AND_CHARACTER_GROUP_LIMIT",
+      "level_predicate": null,
+      "server_time_window": null,
+      "reset_rule": null,
+      "required_item_list": null,
+      "exact_dialogue": null,
+      "original_script": null,
+      "consumed_item_quantities": null,
+      "reward_join": "cn-wayi-2003-christmas:gift",
+      "npc_join": "cn-wayi-2003-christmas:npc",
+      "flow": [
+        "TALK_TO_NAMED_EXCHANGE_NPC",
+        "PREPARE_NPC_REQUESTED_ITEMS_NOT_LISTED_IN_ANNOUNCEMENT",
+        "HAND_OVER_REQUIRED_ITEMS",
+        "RECEIVE_ONE_REPORTED_GIFT_PACKAGE_SUBJECT_TO_STATED_CONDITIONS"
+      ]
+    },
+    {
+      "record_id": "cn-wayi-2003-christmas:gift",
+      "entity_type": "SOURCE_NAMED_GIFT_NOT_ITEM_MASTER",
+      "collection": "items",
+      "version_profile": "LATER_OFFICIAL:CN_WAYI_60_AND_70_SERVER_GROUPS_20031224_26_ANNOUNCEMENT_NOT_BUILD",
+      "source_refs": [
+        "S1",
+        "H1"
+      ],
+      "verification_status": "ANNOUNCEMENT_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "label_as_written": "神秘圣诞大礼包",
+      "contents": null,
+      "item_master_id": null,
+      "stack_size": null,
+      "tradeable": null,
+      "per_exchange_units_reported": 1
+    },
+    {
+      "record_id": "cn-wayi-2003-christmas:tree-image",
+      "entity_type": "SOURCE_LINKED_SEASONAL_SCREENSHOT_REFERENCE",
+      "collection": "screens",
+      "version_profile": "LATER_OFFICIAL:CN_WAYI_60_AND_70_SERVER_GROUPS_20031224_26_ANNOUNCEMENT_NOT_BUILD",
+      "source_refs": [
+        "S1",
+        "H1",
+        "I1"
+      ],
+      "verification_status": "MANUAL_IMAGE_OBSERVATION_NOT_SPAWN_PROOF",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "dimensions": [
+        450,
+        337
+      ],
+      "caption_as_written": "图为：圣诞树",
+      "observations": [
+        "DECORATED_TREE_AND_CHARACTERS_ON_GAME_SCENE",
+        "BOTTOM_STATUS_LABEL_READS_圣诞兑奖员"
+      ],
+      "avatar_or_npc_sprite_binding": null,
+      "map_coordinates": null,
+      "client_resolution": null
+    }
+  ],
+  "interpretation_notes": [
+    "The date labels give calendar days, not verified server timezone, inclusive cutover seconds or historical uptime.",
+    "30级以上 is retained literally; no exact >=30 or >30 predicate is implemented.",
+    "The limit is one set per character within the same server group; no daily reset/account/global restriction is supplied.",
+    "The snow publicity says all StoneAge servers from December 24; the exchange sentence explicitly names 6.0 and 7.0 groups. These scopes are not merged.",
+    "Four villages/five cities are unnamed in the release; no roster, spawn count, coordinates or equal client build is inferred.",
+    "The adult ceremony is a prerequisite label, not proof of its script, completion flag or original quest ID.",
+    "The modern image bytes are pinned and manually viewed. The early HTML has the same link but does not authenticate early image bytes, actual server run, exact sprite or map.",
+    "The early archive is a second representation of the same release, not an independent factual witness."
+  ],
+  "boundaries": {
+    "original_operator_host_recovered": false,
+    "original_server_execution_verified": false,
+    "exact_client_build": null,
+    "named_nine_spawn_maps_recovered": false,
+    "all_server_snow_claim_expands_exchange_scope": false,
+    "once_per_character_group_means_account_global_or_daily": false,
+    "numeric_level_boundary_proven": false,
+    "historical_image_bytes_verified": false,
+    "raw_html_or_image_committed": false,
+    "tw10_or_jss1999_backfill": false,
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b_and_wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING"
+  },
+  "reopening_triggers": [
+    "CONTEMPORANEOUS_NPC_DIALOGUE_OR_SCRIPT_FOR_REQUIRED_ITEM_LIST_AND_LEVEL_BOUNDARY",
+    "SAME_EDITION_OPERATOR_SPAWN_ROSTER_OR_AUTHENTICATED_MAP_FOR_LOCATION_JOIN",
+    "HISTORICAL_IMAGE_CAPTURE_FOR_ORIGINAL_ERA_IMAGE_BYTE_IDENTITY"
+  ],
+  "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-24"
+}

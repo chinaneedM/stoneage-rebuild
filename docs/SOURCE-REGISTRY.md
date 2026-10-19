@@ -7536,3 +7536,12 @@ S1：https://games.sina.com.cn/newgames/2003/12/121610098.shtml ，2003-12-16 14
 R22后续补证：Wayback20031225115132的Sina S1原页面回放已实取15189B/SHA25645d4106f945dbf3564bed9ddcab85f2447911291a31dc97406a11c6197eb6c33；归因/刊发/核心和两图链与现页相同，查询和resolved URL见2003-SNAPSHOT报告。旧历史null记录保持取源当时事实，补证仅S1 HTML，不认证原图或华义原服。旧四输入run39338196277的artifact12228020901已实下载并永久保存派生回放/保管收据；新固定历史URL的CI须独立验收。
 
 R22同期补证独立验收：run39338706949/job118354613187、artifact12227931635已实下载ZIP/raw并完整比对；历史HTML+现行两文两图的3524B派生回放已永久归档，详见HISTORICAL-CI-REPLAY与CUSTODY后续段。此前四输入CI及历史未取注记保留为当时checkpoint；原服/历史图片不升级。
+
+
+### CN2003-CHRISTMAS-NPC-SOURCE-R1 — 华义归因兑奖员公告（2026-10-20）
+
+- S1：https://games.sina.com.cn/newgames/2003/12/122310574.shtml，2003-12-23 15:28，正文明确“来自华义的最新官方消息”，HTTP200/34999B SHA256f4efe819094146604444f4c09d3bd7b1174a4387140a0a265092177f97f84488。
+- H1：Wayback20040218034443id_/http://games.sina.com.cn:80/newgames/2003/12/122310574.shtml，实际HTTP200/14942B SHA2568f6337879ad23a9db4fa484f361a44c2a938bdcf3805c5b7dbb7fa0d4c92899e；一次availability查询所得。相同487UTF8字节活动核心SHA256dcef51dd7aa44b4c7030b28ac0b0b3489c08852b2cc1fef09feff9bf523c31a2；同稿非独立证人，非运营原主机或服务器。
+- I1：两正文真实img src，https://image2.sina.com.cn/gm/newgames/2003/12/U163P115T9D10574F167DT20031223152817.JPG，仅HTTP传输升级，31703B JPEG450×337 SHA256abde5fd6bfd802578077e4ca3e48a3698fbd954a5332a905887c7767c4e7ae73；已目视树/人物/底部兑奖员标签，未证原sprite、地图、历史图片字节及素材授权。
+
+用途：分版本NPC/兑换前置及一次性限制来源规格。四研究记录满足既有七字段/19集合，原服IDs及物品清单null。原HTML/图片不入Git；工具CI仅输出派生JSON，ZIP/raw/Git保管按后续实际验。缺源重开条件及精确状态见STONEAGE-CN2003-CHRISTMAS-NPC-SOURCE-R1.json与中文规格；Stage A/B/百科门不变。
