@@ -1,0 +1,156 @@
+{
+  "boundaries": {
+    "all_22_baseline_statuses_unchanged": true,
+    "jss1999_tw10_cn182_same_build_or_earliest_riding": false,
+    "r79": "PAUSED_NON_BLOCKING",
+    "source_plan_is_deployed_original_server_rule": false,
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b_and_wiki": "GATED"
+  },
+  "date": "2026-10-19",
+  "domains_unchanged": [
+    {
+      "baseline_evidence_status": "PARTIAL_SOURCE",
+      "domain_id": "version_lineage"
+    },
+    {
+      "baseline_evidence_status": "OPEN_VISUAL",
+      "domain_id": "login_splash"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "domain_id": "character_creation"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_RESOURCE",
+      "domain_id": "character_sprite_model"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "domain_id": "world_map"
+    },
+    {
+      "baseline_evidence_status": "OPEN_CONTENT",
+      "domain_id": "npc_identity"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "domain_id": "npc_dialog_ui"
+    },
+    {
+      "baseline_evidence_status": "OPEN_CONTENT",
+      "domain_id": "quest_content"
+    },
+    {
+      "baseline_evidence_status": "OPEN_SAME_BUILD_ROSTER",
+      "domain_id": "pet_species"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_RESOURCE",
+      "domain_id": "pet_visual"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "domain_id": "pet_stats"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_DESCENDANT",
+      "domain_id": "pet_growth"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "domain_id": "pet_skills"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_DESCENDANT",
+      "domain_id": "pet_encounter"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_DESCENDANT",
+      "domain_id": "ride_mount"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "domain_id": "battle_ui_rules"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "domain_id": "item_equipment_economy"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_RESOURCE",
+      "domain_id": "audio_fx"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_CATALOG",
+      "domain_id": "helper_versions"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_CATALOG",
+      "domain_id": "helper_capabilities"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_DISCOVERY",
+      "domain_id": "reference_web"
+    },
+    {
+      "baseline_evidence_status": "DESIGN_PREP_ONLY",
+      "domain_id": "future_player_wiki"
+    }
+  ],
+  "initial_local_intake_history_not_repeated_in_ci": [
+    {
+      "bytes": 45669,
+      "capture": "20050615023834",
+      "original_url": "http://www.wayi.com.tw/stoneage/",
+      "role": "KNOWN_AUTHENTIC_HOME_REACQUIRED_NOT_NEW_SOURCE",
+      "sha256": "4a4a7f0667a8d71b1d37ab0b73712793cf2d7e8a6cd7a7a158a487d060657397"
+    },
+    {
+      "actual_title": "石器五歲啦 玩家你最大",
+      "bytes": 7220,
+      "capture": "20050507112206",
+      "content_gap": "TITLE_ONLY_IMAGE_FLASH_REFERENCES_NO_READABLE_EVENT_RULES",
+      "homepage_anchor_label": "石器五週年活動(已結束)",
+      "images_flash_or_binaries_acquired": false,
+      "npc_slimming_actual_homepage_target": "http://groups.msn.com/i4r6uds39kdocj7iqv8l0s5sc7/page158.msnw",
+      "original_url": "http://www.wayi.com.tw/stoneage/actives/940329/index.html",
+      "role": "CORRECTED_WRONG_TOPIC_PREFETCH_NO_NPC_RULES_USED",
+      "sha256": "3e454df32dc32df55c9aafd39a70b14b3ba8fe7b90e01c7d87859345a808a53f"
+    },
+    {
+      "homepage_label": "石頭轉蛋樂獎品即將異動 要集水晶趁現在",
+      "http_status": 404,
+      "original_url": "http://www.wayi.com.tw/news-game.asp?newsid=2834&ch_id=001",
+      "requested_capture": "20050615023834",
+      "role": "BOUNDED_OFFICIAL_NEWS_REQUEST_UNAVAILABLE_NOT_HISTORICAL_ABSENCE",
+      "rule_or_reward_facts_used": false,
+      "source_sha256": null
+    }
+  ],
+  "material_result": {
+    "finite_stop_condition_met": true,
+    "images_or_programs_acquired": 0,
+    "new_original_entity_ids": 0,
+    "path": "research/recovered/STONEAGE-WAYI2003-NEWBIE-RIDING-PLAN-R1.json",
+    "sha256": "b23c0220c58840ddb14ee9eea835687924cc16b42afe091af127f67472580fcd",
+    "source_descriptions": 5
+  },
+  "next": "TW-WAYI-NEWBIE-RIDING-SUCCESSOR-GATE-01",
+  "prior_review": {
+    "path": "research/recovered/STONEAGE-OFFICIAL-VERSION-COVERAGE-MATERIAL-REVIEW-R10.json",
+    "sha256": "34435ed8123b758dec74c2f07218c173156de1bd368feef03974cd59fe32ed8a"
+  },
+  "qualification": {
+    "article_capture": "20051117143741",
+    "date_is_actual_deployment_proven": false,
+    "index_capture": "20050612011406",
+    "producer_index_is_actual_homepage_anchor": true,
+    "selected_actual_column_title": "新手騎寵計劃",
+    "selected_index_date": "2003-12-10"
+  },
+  "schema": "stoneage.official_version_regional_domain_rotation.r11",
+  "selected_task": "TW-WAYI-NEWBIE-RIDING-PLAN-SOURCE-01",
+  "selection_reason": "STOP_JAPANESE_COLUMN_IMAGES_AND_FILL_TAIWAN_OPERATOR_FIRST_MOUNT_ACCESSIBILITY_RATIONALE",
+  "task": "OFFICIAL-VERSION-REGIONAL-AND-DOMAIN-ROTATION-11"
+}

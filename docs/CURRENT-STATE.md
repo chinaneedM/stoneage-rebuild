@@ -15797,3 +15797,18 @@ OFFICIAL-VERSION-COVERAGE-MATERIAL-REVIEW-08复用R7的22域状态，近期日�
 截图内容548f2a12eada40563bd34c7981d0ac40cee515bd / treeb571ac2028ca3b8dbbad0f9a7cd9fae9c624a1e3的10候选门、自身11项main实际全部success，无本HEAD失败/重跑。专用run39202736450/job117898974380执行8反例、精确一索引/唯一GIF重取、元数据与全报告cmp；artifact12164308218实下载ZIP2255B SHA2562957f6aa7a151e840af930e1bad80a92625e3498824f9baeaabfea16c72bdad3，唯一derived.json11565B SHA256d5ce1b2589a91ddf7ef35abb7b91251adad01ef4b0d993f1cb9460e94730b858等于永久Git blobb87cdf16b7f0ed4ab7aba78bace83e36136879f1。STONEAGE-JP-OFFICIAL-SCREENSHOT-REFERENCE-ACCEPTANCE-R1.json留10/11精确run/HEAD、page/GIF各自原SHA/捕获、人工目视哈希及ZIP/raw/Git链；runner不被说成人工重看图。
 
 本轮实质为一份官方特点五组玩法说明、五组人物/初建参照和一截图索引/唯一实际像素。相关34本地测试通过，三个内容HEAD各自11项main实全绿。12类×4色非48原角色，12位置索引非新增实体；截图2003正文/2008像素和7未取得引用继续分开，275×200非原生UI/地图ID/原服状态认证。初始完整CURRENT/连续性历史前缀、旧原源及失败无删除，原HTML/图片/程序不入Git。**唯一最高NEXT仍OFFICIAL-VERSION-REGIONAL-AND-DOMAIN-ROTATION-11**：停止日本同栏/其余7图，复用22域/已有官方源目录选另一地区或版本/领域一个有身份实物，给一实际来源/有限交付/停止条件并取源；无资格精确记录，不空矩阵/猜源/公式/R79。Stage A7 PARTIAL+2 OPEN、Stage B/百科GATED、R79 PAUSED_NON_BLOCKING，无整体百分比。本收尾回执提交自身Actions必须另观察，不能套用父HEAD11绿。
+
+
+## 2026-10-19 — R11轮换台湾：官方新手骑宠计划与精确取源止损
+
+按实时远端main7487a7dfbc15fcb9efdc7dbd93ed317b21ba61bf / tree9972c9830db5183bf1d374da05bf424d8ae7e887启动，365分支、0开放PR、同HEAD10项main全success；无in_progress，旧无关queued37642417333保留。七连续性文件完整CURRENT/历史前缀、路线/22域portfolio/R10和官方源目录复读，逐项Git blob与新origin/main相符；不据旧聊天SHA/进度。原日本同栏/其余7图停止，R79未重开。
+
+最高OFFICIAL-VERSION-REGIONAL-AND-DOMAIN-ROTATION-11回台湾实际官网。已知主页20050615023834、45669B SHA2564a4a7f0667a8d71b1d37ab0b73712793cf2d7e8a6cd7a7a158a487d060657397重取相同，不冒作新源。初次预取940329在逐行锚文本核对后更正：该页实际五周年，非NPC瘦身（真实NPC入口是外部MSN）；20050507112206、7220B SHA2563e454df32dc32df55c9aafd39a70b14b3ba8fe7b90e01c7d87859345a808a53f，正文只有标题/图片及Flash引用，无活动规则，未取图/SWF。另具名转蛋公告newsid2834单次20050615捕获请求HTTP404，无正文SHA；不能推历史不存在，未用转载/搜索补奖励。这些初次本地取源结果与纠正保存在R11元数据，不说独立runner重复了初始失败。
+
+随后显式选择真实制作人栏目入口，仅一索引/一具名正文。producer01.asp实20050612011406，28883B SHA25619661e2acca046bf8c6dc86dc968107fe9935cd58a8f3cd8ce5e1de5aeba7f8b，15条标题/日期/真实链接同表行绑定，idno66为《新手騎寵計劃》、日期2003-12-10。真实正文实20051117143741，19964B SHA256b1f2163b80137e2140c36a6675a42e4ac1f2e3cc367e08b2a850cd15a6261790，Big5严格。索引标记日期不证2003原版未改、部署或精确客户端build；新一方历史设计/运营表述，不是原服实现。
+
+五tutorials合同：酷哥把骑宠称当时新手门槛；基本虎/雷龙组及黄绿虎较易、红其次、金难/红雷相对易为定性判断，不补物种ID/概率/栖地；打算每新手送一只适合其骑乘的老虎，能力略弱、忠诚较易升，明说保护正常任务宠价值；计划成人礼后领虎，无等级门槛/NPC名/任务flag；另宣称快递老板任务可连升三十级，是+30措辞非终点30，图说一甲子不作+60。所有精确增长/忠诚/兼容矩阵、任务数/实际领取/封顶与原服状态仍未知。两原JPG引用全未取，原HTML/资产/程序不入Git。
+
+交付STONEAGE-WAYI2003-NEWBIE-RIDING-PLAN-R1.json/规格、R11复审/取源历史、8负例及独立精确索引/正文全量cmp工作流。本地第二次两原件重取全报告cmp和8测试通过，远端Actions、ZIP/raw/Git和自身main须实际另验。不是1999/TW1.0/陆1.82已有骑乘证明，也不自动采纳为新石器设计。
+
+**唯一最高NEXT TW-WAYI-NEWBIE-RIDING-SUCCESSOR-GATE-01**：同已验索引实际idno67《新手騎寵計劃（續）》、2003-12-23，仅一正文先验主题/捕获，有限比较计划调整与可证实施边界；一份有内容的后续合同或具体缺源即止，不图像/其它栏目/数值或R79循环。Stage A7 PARTIAL+2 OPEN、Stage B/百科GATED、R79 PAUSED_NON_BLOCKING保持，无整体百分比。

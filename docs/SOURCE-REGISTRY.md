@@ -7301,3 +7301,8 @@ http://www.titan.co.jp/stoneage/manual02.html，严格重放https://web.archive.
 ### 唯一官方截图界面参照的永久验收保管 — 2026-10-19
 
 内容548f2a12eada40563bd34c7981d0ac40cee515bd / treeb571ac2028ca3b8dbbad0f9a7cd9fae9c624a1e3的10候选/11自身main检查实全success，源run39202736450/job117898974380重取2003索引与2008唯一GIF、8反例/元数据/全派生cmp。artifact12164308218实下载ZIP2255B SHA2562957f6aa7a151e840af930e1bad80a92625e3498824f9baeaabfea16c72bdad3，唯一derived.json11565B SHA256d5ce1b2589a91ddf7ef35abb7b91251adad01ef4b0d993f1cb9460e94730b858匹配永久Git blobb87cdf16b7f0ed4ab7aba78bace83e36136879f1。回执STONEAGE-JP-OFFICIAL-SCREENSHOT-REFERENCE-ACCEPTANCE-R1.json留每原件时刻/SHA与人工目视哈希，不将独立元数据cmp当自动目视或另7图已取，原HTML/GIF不入Git。回执自身新HEAD另验，不套用父门。
+
+
+### 华义制作人《新手騎寵計劃》两原件 — 2026-10-19
+
+真实主页入口producer/producer01.asp，精确20050612011406、28883B SHA25619661e2acca046bf8c6dc86dc968107fe9935cd58a8f3cd8ce5e1de5aeba7f8b；15标题/日期/链接同行。idno66《新手騎寵計劃》标2003-12-10，精确正文https://web.archive.org/web/20051117143741id_/http://www.wayi.com.tw/stoneage/producer/producer02.asp?idno=66，19964B SHA256b1f2163b80137e2140c36a6675a42e4ac1f2e3cc367e08b2a850cd15a6261790，Big5严格。计划/动机与实际原服奖励分开，5tutorials，无新实体ID/像素/程序。R11元数据保留已知主页重取、五周年错题预取纠正及image/Flash不可读规则、newsid2834单次404；失败无源SHA，不从新闻搜索填奖励。独立runner只重放成功索引与具名文章，不称重演初次本地失败。报告/规格STONEAGE-WAYI2003-NEWBIE-RIDING-PLAN-R1，本地两原件全cmp/8反例通过，ZIP/raw/Git及自身main按实际另验；原件不入Git。
