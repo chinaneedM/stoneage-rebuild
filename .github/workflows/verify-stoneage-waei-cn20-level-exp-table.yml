@@ -1,0 +1,32 @@
+name: Verify official Mainland CN2.0 documentary level experience table
+on:
+  push:
+    paths:
+      - tools/stoneage_waei_cn20_level_exp_table.py
+      - tools/stoneage_wayi_newbie_riding_plan.py
+      - tools/stoneage_early_content_probe.py
+      - tests/test_stoneage_waei_cn20_level_exp_table.py
+      - research/recovered/STONEAGE-WAEI-CN20-LEVEL-EXP-TABLE-R1.json
+      - docs/specs/STONEAGE-WAEI-CN20-LEVEL-EXP-TABLE-R1.md
+      - .github/workflows/verify-stoneage-waei-cn20-level-exp-table.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exact-cn20-table-source-and-full-cell-replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest tests.test_stoneage_waei_cn20_level_exp_table -v
+      - name: Reacquire only the authenticated known CN2.0 level guide
+        run: python -m tools.stoneage_waei_cn20_level_exp_table --output output/derived.json
+      - run: cmp output/derived.json research/recovered/STONEAGE-WAEI-CN20-LEVEL-EXP-TABLE-R1.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: waei-cn20-level-exp-table-derived-only
+          path: output/derived.json
+          retention-days: 30

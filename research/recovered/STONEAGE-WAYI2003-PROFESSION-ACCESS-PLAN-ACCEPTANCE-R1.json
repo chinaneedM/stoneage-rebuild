@@ -1,0 +1,261 @@
+{
+  "schema": "stoneage.wayi2003.profession_access_plan.acceptance.r1",
+  "date": "2026-10-19",
+  "task": "TW-WAYI-PROFESSION-ACCESS-PLAN-SOURCE-01",
+  "head": "f5ab25740299898e9c7450c2d99825769f83d8b1",
+  "tree": "53ebeb1f8ce7b5f01101ec8e850f50bd5fa82e0d",
+  "parent": "afac73c4a1e0e0deb8d129d7db538d19a999cb32",
+  "source": {
+    "article_original_url": "http://www.wayi.com.tw/stoneage/producer/producer02.asp?idno=64",
+    "article_capture": "20041206141244",
+    "article_bytes": 17678,
+    "article_sha256": "cd725562731d4e74f9b90bbefe9c167d499b73511d9fee2d94186ec0b2d2d8a9",
+    "index_original_url": "http://www.wayi.com.tw/stoneage/producer/producer01.asp",
+    "index_capture": "20050612011406",
+    "index_sha256": "19661e2acca046bf8c6dc86dc968107fe9935cd58a8f3cd8ce5e1de5aeba7f8b",
+    "index_date": "2003-11-14",
+    "index_date_is_verified_body_release_or_deployment": false
+  },
+  "independent_source_replay": {
+    "run_id": 39232408651,
+    "job_id": 117993271245,
+    "job": "exact-index-and-profession-proposal",
+    "artifact": {
+      "id": 12178061508,
+      "name": "wayi-profession-access-plan-derived-only",
+      "size_in_bytes": 2808,
+      "url": "https://api.github.com/repos/chinaneedM/stoneage-rebuild/actions/artifacts/12178061508",
+      "archive_download_url": "https://api.github.com/repos/chinaneedM/stoneage-rebuild/actions/artifacts/12178061508/zip",
+      "expired": false,
+      "created_at": "2026-10-19T09:46:07Z",
+      "expires_at": "2026-11-18T09:46:06Z",
+      "updated_at": "2026-10-19T09:46:07Z",
+      "digest": "sha256:34ba84683df2fc2d72734c722186634047dbb0e40f7c36c71e2c722ddbf41ce6",
+      "workflow_run": {
+        "id": 39232408651,
+        "repository_id": 1374762421,
+        "head_repository_id": 1374762421,
+        "head_branch": "agent/wayi2003-profession-access-plan-r1-20261019",
+        "head_sha": "f5ab25740299898e9c7450c2d99825769f83d8b1"
+      }
+    },
+    "zip_bytes": 2808,
+    "zip_sha256": "34ba84683df2fc2d72734c722186634047dbb0e40f7c36c71e2c722ddbf41ce6",
+    "only_entry": "derived.json",
+    "raw_json_bytes": 10859,
+    "raw_json_sha256": "e435ca9f68d1b4d13162634d8de1b664827864b40b5937ee74448464950c3075",
+    "permanent_git_blob": "f69093d0e14e0e977fe0b0aa75a3c24016ee953c",
+    "byte_comparison_and_negative_boundaries": "PASS"
+  },
+  "permanent_report": {
+    "path": "research/recovered/STONEAGE-WAYI2003-PROFESSION-ACCESS-PLAN-R1.json",
+    "git_blob": "f69093d0e14e0e977fe0b0aa75a3c24016ee953c",
+    "bytes": 10859,
+    "sha256": "e435ca9f68d1b4d13162634d8de1b664827864b40b5937ee74448464950c3075"
+  },
+  "branch_checks": [
+    {
+      "id": 39232408344,
+      "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+      "head_sha": "f5ab25740299898e9c7450c2d99825769f83d8b1",
+      "head_branch": "agent/wayi2003-profession-access-plan-r1-20261019",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39232408344"
+    },
+    {
+      "id": 39232408292,
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "head_sha": "f5ab25740299898e9c7450c2d99825769f83d8b1",
+      "head_branch": "agent/wayi2003-profession-access-plan-r1-20261019",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39232408292"
+    },
+    {
+      "id": 39232408393,
+      "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+      "head_sha": "f5ab25740299898e9c7450c2d99825769f83d8b1",
+      "head_branch": "agent/wayi2003-profession-access-plan-r1-20261019",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39232408393"
+    },
+    {
+      "id": 39232408394,
+      "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+      "head_sha": "f5ab25740299898e9c7450c2d99825769f83d8b1",
+      "head_branch": "agent/wayi2003-profession-access-plan-r1-20261019",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39232408394"
+    },
+    {
+      "id": 39232408433,
+      "name": "Validate Stage A early source gap triage",
+      "head_sha": "f5ab25740299898e9c7450c2d99825769f83d8b1",
+      "head_branch": "agent/wayi2003-profession-access-plan-r1-20261019",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39232408433"
+    },
+    {
+      "id": 39232408404,
+      "name": "Validate legacy StoneAge assistant history and pet content gaps",
+      "head_sha": "f5ab25740299898e9c7450c2d99825769f83d8b1",
+      "head_branch": "agent/wayi2003-profession-access-plan-r1-20261019",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39232408404"
+    },
+    {
+      "id": 39232408460,
+      "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+      "head_sha": "f5ab25740299898e9c7450c2d99825769f83d8b1",
+      "head_branch": "agent/wayi2003-profession-access-plan-r1-20261019",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39232408460"
+    },
+    {
+      "id": 39232408651,
+      "name": "Verify Wayi profession access proposal and separate skill learning gate",
+      "head_sha": "f5ab25740299898e9c7450c2d99825769f83d8b1",
+      "head_branch": "agent/wayi2003-profession-access-plan-r1-20261019",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39232408651"
+    },
+    {
+      "id": 39232408288,
+      "name": "Validate StoneAge preproduction content archive and wiki boundary",
+      "head_sha": "f5ab25740299898e9c7450c2d99825769f83d8b1",
+      "head_branch": "agent/wayi2003-profession-access-plan-r1-20261019",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39232408288"
+    },
+    {
+      "id": 39232408584,
+      "name": "Validate StoneAge Stage A joint review decision",
+      "head_sha": "f5ab25740299898e9c7450c2d99825769f83d8b1",
+      "head_branch": "agent/wayi2003-profession-access-plan-r1-20261019",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39232408584"
+    }
+  ],
+  "main_checks": [
+    {
+      "id": 39232661507,
+      "name": "Validate Stage A early source gap triage",
+      "head_sha": "f5ab25740299898e9c7450c2d99825769f83d8b1",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39232661507"
+    },
+    {
+      "id": 39232661371,
+      "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+      "head_sha": "f5ab25740299898e9c7450c2d99825769f83d8b1",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39232661371"
+    },
+    {
+      "id": 39232661582,
+      "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+      "head_sha": "f5ab25740299898e9c7450c2d99825769f83d8b1",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39232661582"
+    },
+    {
+      "id": 39232661170,
+      "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+      "head_sha": "f5ab25740299898e9c7450c2d99825769f83d8b1",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39232661170"
+    },
+    {
+      "id": 39232660810,
+      "name": "Validate StoneAge Stage A joint review decision",
+      "head_sha": "f5ab25740299898e9c7450c2d99825769f83d8b1",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39232660810"
+    },
+    {
+      "id": 39232660809,
+      "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+      "head_sha": "f5ab25740299898e9c7450c2d99825769f83d8b1",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39232660809"
+    },
+    {
+      "id": 39232661060,
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "head_sha": "f5ab25740299898e9c7450c2d99825769f83d8b1",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39232661060"
+    },
+    {
+      "id": 39232661027,
+      "name": "Verify Wayi profession access proposal and separate skill learning gate",
+      "head_sha": "f5ab25740299898e9c7450c2d99825769f83d8b1",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39232661027"
+    },
+    {
+      "id": 39232660877,
+      "name": "Validate StoneAge preproduction content archive and wiki boundary",
+      "head_sha": "f5ab25740299898e9c7450c2d99825769f83d8b1",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39232660877"
+    },
+    {
+      "id": 39232661142,
+      "name": "Validate legacy StoneAge assistant history and pet content gaps",
+      "head_sha": "f5ab25740299898e9c7450c2d99825769f83d8b1",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39232661142"
+    },
+    {
+      "id": 39232661494,
+      "name": "Independently verify TW1.0 R58 rooted helper returns and source custody",
+      "head_sha": "f5ab25740299898e9c7450c2d99825769f83d8b1",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39232661494"
+    }
+  ],
+  "boundaries": {
+    "source_plan_is_deployed_original_server_rule": false,
+    "occupation_entry_and_second_tier_learning_are_distinct": true,
+    "level_80_alone_or_original_rite_script_verified": false,
+    "profession_skill_tree_or_costs_verified": false,
+    "two_image_refs_unacquired": true,
+    "automatic_new_game_design_adoption": false,
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b_and_wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING"
+  },
+  "next": "OFFICIAL-VERSION-RELEASE-SOURCE-COVERAGE-REVIEW-13"
+}

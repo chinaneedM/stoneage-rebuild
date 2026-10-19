@@ -1,0 +1,146 @@
+{
+  "boundaries": {
+    "automatic_new_game_design_adoption": false,
+    "cn25_jss1999_tw10_cn182_same_rule_proven": false,
+    "r79": "PAUSED_NON_BLOCKING",
+    "raw_original_html_or_assets_in_git": false,
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b_and_wiki": "GATED",
+    "upgrade_path_is_software_download_target": false
+  },
+  "date": "2026-10-19",
+  "domains_unchanged": [
+    {
+      "baseline_evidence_status": "PARTIAL_SOURCE",
+      "domain_id": "version_lineage"
+    },
+    {
+      "baseline_evidence_status": "OPEN_VISUAL",
+      "domain_id": "login_splash"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "domain_id": "character_creation"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_RESOURCE",
+      "domain_id": "character_sprite_model"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "domain_id": "world_map"
+    },
+    {
+      "baseline_evidence_status": "OPEN_CONTENT",
+      "domain_id": "npc_identity"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "domain_id": "npc_dialog_ui"
+    },
+    {
+      "baseline_evidence_status": "OPEN_CONTENT",
+      "domain_id": "quest_content"
+    },
+    {
+      "baseline_evidence_status": "OPEN_SAME_BUILD_ROSTER",
+      "domain_id": "pet_species"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_RESOURCE",
+      "domain_id": "pet_visual"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "domain_id": "pet_stats"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_DESCENDANT",
+      "domain_id": "pet_growth"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "domain_id": "pet_skills"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_DESCENDANT",
+      "domain_id": "pet_encounter"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_DESCENDANT",
+      "domain_id": "ride_mount"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "domain_id": "battle_ui_rules"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "domain_id": "item_equipment_economy"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_RESOURCE",
+      "domain_id": "audio_fx"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_CATALOG",
+      "domain_id": "helper_versions"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_CATALOG",
+      "domain_id": "helper_capabilities"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_DISCOVERY",
+      "domain_id": "reference_web"
+    },
+    {
+      "baseline_evidence_status": "DESIGN_PREP_ONLY",
+      "domain_id": "future_player_wiki"
+    }
+  ],
+  "material_result": {
+    "known_original_reacquired": 1,
+    "new_documentary_table_records": 1,
+    "new_original_pages": 0,
+    "observed_pairs": 82,
+    "original_server_experience_table_recovered": false,
+    "path": "research/recovered/STONEAGE-WAEI-CN20-LEVEL-EXP-TABLE-R1.json",
+    "preserved_blank_pairs": 2,
+    "sha256": "e012249c799f9789e65f13c5fbb6e0ac746966d7660bb30b68bec9a0150d3b87",
+    "source_grid_sha256": "72d9161343f1ec017fa6aedead769bdc28cc004215e7ae9d0ebe5bc2300caa45"
+  },
+  "next": "CN20-OFFICIAL-NAMED-NEWCOMER-CONTENT-SOURCE-01",
+  "prior_review": {
+    "path": "research/recovered/STONEAGE-OFFICIAL-VERSION-MATERIAL-COVERAGE-REVIEW-R12.json",
+    "sha256": "876aa788d23cf1a86e6dea0387faea081cf32c216a7327e996812a78657ae799"
+  },
+  "qualified_unread_entry": {
+    "body_or_images_read": false,
+    "label": "新入石器",
+    "original_url": "http://www.waei.com.cn:80/ZHUANQU/stoneage2/sw/adventure.asp"
+  },
+  "remote_baseline_head": "f5ab25740299898e9c7450c2d99825769f83d8b1",
+  "remote_baseline_tree": "53ebeb1f8ce7b5f01101ec8e850f50bd5fa82e0d",
+  "schema": "stoneage.official_version_release_source_coverage_review.r13",
+  "selected_task": "CN20-OFFICIAL-LEVEL-EXP-CONTENT-TABLE-01",
+  "selection_reason": "STOP_TAIWAN_PRODUCER_SERIES_ROTATE_TO_EARLIER_MAINLAND_CN20_OFFICIAL_NUMERIC_PROGRESSION_CONTENT",
+  "source_qualification": {
+    "actual_capture": "20011204165711",
+    "bytes": 75141,
+    "capture_is_release_or_unchanged_launch_body_proven": false,
+    "encoding": "GB18030_STRICT",
+    "known_original_reacquired_not_new_webpage": true,
+    "original_url": "http://www.waei.com.cn:80/ZHUANQU/stoneage2/tyro/upgrade.asp",
+    "page_title_as_written": "石器时代2.0",
+    "sha256": "73fde66ffb3c92261d66715f873fa9b9f54166e4443d5d29924fe137cdcb8d35",
+    "strict_replay_url": "https://web.archive.org/web/20011204165711id_/http://www.waei.com.cn:80/ZHUANQU/stoneage2/tyro/upgrade.asp",
+    "table_intro_as_written": "以下是每个等级所需要的经验值列表："
+  },
+  "stop_condition": {
+    "no_formula_cap_actor_or_cross_version_promotion": true,
+    "no_other_body_image_or_program_acquired": true,
+    "one_known_original_one_complete_visible_table_transcribed": true
+  },
+  "task": "OFFICIAL-VERSION-RELEASE-SOURCE-COVERAGE-REVIEW-13"
+}

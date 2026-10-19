@@ -15847,3 +15847,16 @@ OFFICIAL-VERSION-COVERAGE-MATERIAL-REVIEW-08复用R7的22域状态，近期日�
 交付STONEAGE-WAYI2003-PROFESSION-ACCESS-PLAN-R1.json、同名规格、R12材料复审元数据，3tutorials+2sources是五文献记录而非五职业/技能/任务。10新负例、18相关本地测试通过；独立精确索引/唯一正文全cmp工作流、源job/ZIP/raw/Git保管与自身main必须按实际另验，不能借父HEAD绿。原HTML/JPG/程序不入Git、旧历史/失败完整保留。实施重开只接受同年代真实官方补丁/部署记录或版本合格原任务/技能/服务端源。
 
 **唯一最高NEXT OFFICIAL-VERSION-RELEASE-SOURCE-COVERAGE-REVIEW-13**：停止职业/骑宠制作人系列，复用全官方发行目录与22域，优先另一地区/版本有真实入口的一实质缺口，给一实际来源/内容交付/停止条件并取源，失败精确记录；不空矩阵/猜链接/重复图片/低层公式或重开R79。Stage A7 PARTIAL+2 OPEN、Stage B/百科GATED、R79 PAUSED_NON_BLOCKING不变，无整体百分比。
+
+
+## 2026-10-19 — 职业计划正式验收，R13转大陆2.0完整可见经验表
+
+职业计划内容f5ab25740299898e9c7450c2d99825769f83d8b1 / tree53ebeb1f8ce7b5f01101ec8e850f50bd5fa82e0d的10候选、自身11项main全部实际success；源run39232408651/job117993271245精确已知索引/唯一idno64正文重取、10负例及全报告cmp。artifact12178061508实下载ZIP2808B SHA25634ba84683df2fc2d72734c722186634047dbb0e40f7c36c71e2c722ddbf41ce6，唯一derived.json10859B SHA256e435ca9f68d1b4d13162634d8de1b664827864b40b5937ee74448464950c3075等于永久Git blobf69093d0e14e0e977fe0b0aa75a3c24016ee953c。STONEAGE-WAYI2003-PROFESSION-ACCESS-PLAN-ACCEPTANCE-R1.json保留10/11实际run/HEAD、源/ZIP/raw/Git；初次网页阅读器不可用保留，runner只精确取源不重演初次跳转/错误。八十级成人礼与二级技能一转门槛仍计划，无部署认证。
+
+按最新最高R13复用22域，停止台湾制作人系列，明确轮换大陆/更早年代CN20-OFFICIAL-LEVEL-EXP-CONTENT-TABLE-01。重新核远端main f5ab2574及tree/四完整历史前缀，选仓库已认证北京华义官方http://www.waei.com.cn:80/ZHUANQU/stoneage2/tyro/upgrade.asp，仅一已知正文；实20011204165711id_、75141B SHA25673fde66ffb3c92261d66715f873fa9b9f54166e4443d5d29924fe137cdcb8d35、GB18030严格，实际标题石器时代2.0。旧考古已知这是升级所需经验而非软件升级；重取同一原件不是新网页，新增的是此前只有片段的完整可见数字表与语义边界。第二次精确网络重取全派生cmp已通过，无其它正文/图片/程序。
+
+原表28数据行×6格、三组重复等级/所需经验值标题；组1为1–28、组2为29–56、组3为57–82，共82数值对，第三组末两行空对原样保留。派生按来源等级标签排序，每对带原行/列组，重建原grid SHA25672d9161343f1ec017fa6aedead769bdc28cc004215e7ae9d0ebe5bc2300caa45。80/81/82原值5836843/5874952/6166513不平滑/纠错，不拟合公式/累加/插值83–84，82不当等级上限。表体未明增量或累计、当前或目标级、角色或宠物、转生缩放/结转，全部UNKNOWN；不回填CN1.82/TW1.0/JSS1999/2.5原服。1tutorials文献表含82观察值，不是82原实体/已恢复原服务端表。
+
+交付STONEAGE-WAEI-CN20-LEVEL-EXP-TABLE-R1.json、同名规格、R13实质复审元数据和9新负例；本轮相关19测试通过。独立只一已知官方正文/全cell+报告cmp、ZIP/raw/Git保管和自身main须按实际另验，不借职业计划11绿。原HTML/图像/程序不入Git，所有旧历史/失败保留。
+
+**唯一最高NEXT CN20-OFFICIAL-NAMED-NEWCOMER-CONTENT-SOURCE-01**：只本源实际侧栏「新入石器」的http://www.waei.com.cn:80/ZHUANQU/stoneage2/sw/adventure.asp一正文，先验主题/实际捕获，形成一份来源限定新手/地理/NPC/任务内容规格或精确缺源即止；现只有真实入链资格，正文/图片未读，不预设名字/内容，不自动其它出链/图像/程序/公式。Stage A7 PARTIAL+2 OPEN、Stage B/百科GATED、R79 PAUSED_NON_BLOCKING保持，无整体百分比。
