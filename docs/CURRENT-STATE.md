@@ -15919,3 +15919,16 @@ OFFICIAL-VERSION-COVERAGE-MATERIAL-REVIEW-08复用R7的22域状态，近期日�
 交付STONEAGE-WAEI-CN20-NEW-PET-CATALOG-FIRST-PAGE-R1.json/规格、R14实质复审元数据、10反例及独立已知入口+唯一新目录/全cmp工作流。23相关本地测试通过，独立源job/ZIP/raw/Git和自身main必须按实际另验，不借父HEAD10绿。
 
 **唯一最高NEXT CN20-NEW-PET-NAMED-VISUAL-REFERENCE-01**：仅第一非占位位置7「阿米朵」实际img/newpet/7.JPG一图有限请求，验实际捕获/字节/格式/尺寸并目视精确原图或保留具体不可用；不取其它39图/两分页/程序、不猜属性/别名/动画、不改旧报告当时40图未取状态，一具名视觉记录或具体缺源即止。Stage A7 PARTIAL+2 OPEN、Stage B/百科GATED、R79 PAUSED_NON_BLOCKING，无整体百分比。
+
+
+## 2026-10-19 — 首宠目录正式验收，阿米朵唯一原图具名参照
+
+首目录内容ccd7bbc96f0036329185f9237ff5fae4fc7f31c7 / treec044ca66c5a866bca94044c2845e339303c76f62的10候选、自身11项main实际全部success；源run39237415071/job118009739669精确已知新手入口+唯一目录/10负例/原grid和全cmp。artifact12179238341实下载ZIP3726B SHA256db257dc75124afdbcd94a7d828617284bf050df17c3370b06670fec2aaad49b3，唯一derived.json67802B SHA2569a460c23968a714717b375d823308bb5e56848116aaf44880091b75808024df6等于永久Git blob7c729ee760306af69cb4e0f3a73f5edd6a26c921。STONEAGE-WAEI-CN20-NEW-PET-CATALOG-FIRST-PAGE-ACCEPTANCE-R1.json保留实际10/11 run/HEAD、源/入口/grid及ZIP/raw/Git；初始阅读器不可用/实际时刻跳转保留，不说runner重演初次失败。40网页格仍34名/6占位，源报告当时40图未取不改写。
+
+按最高CN20-NEW-PET-NAMED-VISUAL-REFERENCE-01只位置7阿米朵同格真实img/newpet/7.JPG一图。初请目录捕获20011204194619跳实际20011205051046id_，4831B SHA2567077cef8cfc23d67b34e3ed54ef6c57eca4c1197b44a2c513c4e43dfa1f85b30，实际JPEG83×90/RGB/单文件1帧；原图已view_image以原尺寸目视，第二次精确网络重取/全派生cmp通过。20011204正文/20011205图分别归属，阿米朵HTML本无尺寸声明，实际83×90不回填旧声明或其它图，不证同刻/精确build。
+
+仅保留小幅纵向怪兽插画、绿黄背景、黄橄榄色头/张口红色内侧、浅色颈腹与角状突起等精确哈希目视观察；不猜现实分类/宠物ID/日文别名/技能/原服数值。1静态JPEG不证客户端精灵/3D模型/原生色板、原游戏姿势或此宠无动画，网页同格名字提供来源归属而非跨服实体认证。人工目视与机器摘要/格式重放分开，独立runner不说再次人工看图。
+
+交付STONEAGE-WAEI-CN20-AMIDUO-VISUAL-REFERENCE-R1.json/规格、1pets视觉补充（引用旧位置record_id，非新游戏宠物）、8新反例/31相关本地通过及独立唯一原图+固定目录Git输入全cmp工作流。其它39首目录图/两分页正文全未取，无新HTML/程序；原JPEG/HTML/程序不入Git，独立源job/ZIP/raw/Git及自身main按实际另验，不借目录11绿。
+
+**唯一最高NEXT CN20-NEW-PET-CATALOG-FINITE-PAGINATION-01**：显式只两条已验41-80→new_pet1.asp、81-104→new_pet2.asp，两正文有限闭合这套网页目录，逐页核主题/实际捕获/同格名称与图引用，保留占位/真实行数/具体缺源；不取其它图/原程序/新出链、不补属性/别名/完整原服物种数，目录闭合或精确缺页后回全官方材料队列。Stage A7 PARTIAL+2 OPEN、Stage B/百科GATED、R79 PAUSED_NON_BLOCKING，无整体百分比。

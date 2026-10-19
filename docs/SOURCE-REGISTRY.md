@@ -7357,3 +7357,10 @@ R13显式轮换北京华义原http://www.waei.com.cn:80/ZHUANQU/stoneage2/tyro/u
 ### 华义大陆新增宠物首目录一新正文 — 2026-10-19
 
 已验新手原正文20011204212409/SHAef63a7b33db0a967823af8356bbd2369487b20781a3272e1e2c3b0d1500ec1ab真实新增宠物href /ZHUANQU/stoneage2/pet/new_pet.asp逐格资格；旧报告未列此出链。网页阅读器不可用不证缺源，初请20011204212409跳实https://web.archive.org/web/20011204194619id_/http://www.waei.com.cn/ZHUANQU/stoneage2/pet/new_pet.asp，69317B SHA256561950fd7bba41e7d39f4a781a671e11e175c7fe08dd1b5481fdf1fd23ba351b，GB18030严格/实际题石器时代2.0。两原件精确本地第二重取全cmp通过；40网页格34名/6占位/40未取图及原grid SHA25699b6274ac6ed8b03755fa940c1172371ea6a037f1c40a0cba63f4410e9fbfa67见STONEAGE-WAEI-CN20-NEW-PET-CATALOG-FIRST-PAGE-R1。10负例/23相关本地通过，独立已知入口+唯一新正文/源job/ZIP/raw/Git及main必须实际另验。两分页未读、源图像/HTML/程序不入Git，不认104原物种/构建/属性。
+
+
+### 首目录独立保管及阿米朵唯一像素 — 2026-10-19
+
+目录ccd7bbc96f0036329185f9237ff5fae4fc7f31c7 / treec044ca66c5a866bca94044c2845e339303c76f62的10分支/11自身main实际全success；源run39237415071/job118009739669、artifact12179238341 ZIP3726B SHA256db257dc75124afdbcd94a7d828617284bf050df17c3370b06670fec2aaad49b3，唯一derived.json67802B SHA2569a460c23968a714717b375d823308bb5e56848116aaf44880091b75808024df6等于永久blob7c729ee760306af69cb4e0f3a73f5edd6a26c921，已实下载/逐字节比较，详首目录ACCEPTANCE-R1。
+
+仅/records/6真实名阿米朵→http://www.waei.com.cn/ZHUANQU/stoneage2/pet/img/newpet/7.JPG，初请20011204194619跳实20011205051046id_，4831B SHA2567077cef8cfc23d67b34e3ed54ef6c57eca4c1197b44a2c513c4e43dfa1f85b30、JPEG83×90/RGB1帧，精确view_image目视；第二次精确取图/全派生cmp通过，Pillow12.3.0。永久目录Git pin验证名字/位置，独立新job不再次取HTML、不重演人工目视。STONEAGE-WAEI-CN20-AMIDUO-VISUAL-REFERENCE-R1留原图SHA/机器元数据/人工哈希与未知；8新反例/31相关通过，实际源job/ZIP/raw/Git/main另验。原JPEG/HTML/程序不入Git，39首目录图和两分页仍未取，旧报告不回写。

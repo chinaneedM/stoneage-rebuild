@@ -1,0 +1,89 @@
+{
+  "boundaries": {
+    "jss1999_tw10_cn182_or_25_same_build_or_entity_verified": false,
+    "production_reuse_approved": false,
+    "r79": "PAUSED_NON_BLOCKING",
+    "raw_original_image_html_or_program_in_git": false,
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b_and_wiki": "GATED"
+  },
+  "coverage": {
+    "actual_images_acquired": 1,
+    "new_game_pet_entities": 0,
+    "other_first_page_image_refs_unacquired": 39,
+    "prior_report_historical_unacquired_state_rewritten": false,
+    "unread_pagination_bodies": 2
+  },
+  "date": "2026-10-19",
+  "next": "CN20-NEW-PET-CATALOG-FINITE-PAGINATION-01",
+  "records": [
+    {
+      "acquired_image": {
+        "actual_capture": "20011205051046",
+        "bytes": 4831,
+        "dimensions": [
+          83,
+          90
+        ],
+        "format": "JPEG",
+        "frames_in_this_image_file": 1,
+        "mode": "RGB",
+        "original_url": "http://www.waei.com.cn/ZHUANQU/stoneage2/pet/img/newpet/7.JPG",
+        "sha256": "7077cef8cfc23d67b34e3ed54ef6c57eca4c1197b44a2c513c4e43dfa1f85b30",
+        "strict_replay_url": "https://web.archive.org/web/20011205051046id_/http://www.waei.com.cn/ZHUANQU/stoneage2/pet/img/newpet/7.JPG"
+      },
+      "catalog_body_capture": "20011204194619",
+      "client_sprite_animation_model_or_native_palette_verified": false,
+      "collection": "pets",
+      "entity_type": "NAMED_WEB_IMAGE_REFERENCE_SUPPLEMENT_NOT_NEW_GAME_PET",
+      "existing_catalog_record_id": "waei-cn20:new-pet-web-position:007",
+      "html_declared_dimensions_for_this_position": null,
+      "image_and_page_are_proven_same_instant_or_build": false,
+      "manual_inspection": {
+        "exact_image_sha256": "7077cef8cfc23d67b34e3ed54ef6c57eca4c1197b44a2c513c4e43dfa1f85b30",
+        "independent_runner_repeats_human_visual_inspection": false,
+        "observations": [
+          "Small vertically framed creature illustration on mottled green and yellow background.",
+          "Yellow to olive head, open mouth with red interior, and pale neck/belly areas.",
+          "Prominent pale horn-like projections and dark-edged projections along the right silhouette."
+        ],
+        "performed_by": "ASSISTANT_VIEW_IMAGE_ORIGINAL_PIXELS",
+        "taxonomy_species_stats_or_client_pose_inferred": false
+      },
+      "original_game_pet_id_stats_or_cross_region_alias": null,
+      "record_id": "waei-cn20:new-pet-visual:position-007",
+      "record_revision": 1,
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "source_name_as_written": "阿米朵",
+      "source_position": {
+        "column": 2,
+        "ordinal": 7,
+        "row": 2
+      },
+      "source_refs": [
+        {
+          "catalog_original_url": "http://www.waei.com.cn/ZHUANQU/stoneage2/pet/new_pet.asp",
+          "catalog_sha256": "561950fd7bba41e7d39f4a781a671e11e175c7fe08dd1b5481fdf1fd23ba351b",
+          "derived_sha256": "9a460c23968a714717b375d823308bb5e56848116aaf44880091b75808024df6",
+          "image_capture": "20011205051046",
+          "image_original_url": "http://www.waei.com.cn/ZHUANQU/stoneage2/pet/img/newpet/7.JPG",
+          "image_sha256": "7077cef8cfc23d67b34e3ed54ef6c57eca4c1197b44a2c513c4e43dfa1f85b30",
+          "json_pointer": "/records/6",
+          "path": "research/recovered/STONEAGE-WAEI-CN20-NEW-PET-CATALOG-FIRST-PAGE-R1.json"
+        }
+      ],
+      "static_jpeg_means_pet_has_no_animation": false,
+      "verification_status": "EXACT_NAMED_SOURCE_IMAGE_ACQUIRED_AND_MANUALLY_INSPECTED_NOT_CLIENT_ID",
+      "version_profile": "CN_WAEI_2_0_LABEL_PAGE_20011204_IMAGE_20011205_NOT_EXACT_BUILD"
+    }
+  ],
+  "schema": "stoneage.waei_cn20.amiduo_visual_reference.r1",
+  "source_custody": {
+    "actual_image_capture": "20011205051046",
+    "human_inspection_is_distinct_from_machine_metadata_replay": true,
+    "initial_requested_capture": "20011204194619",
+    "original_catalog_or_entry_html_reacquired_by_this_job": false,
+    "parent_git_report_sha256": "9a460c23968a714717b375d823308bb5e56848116aaf44880091b75808024df6"
+  },
+  "task": "CN20-NEW-PET-NAMED-VISUAL-REFERENCE-01"
+}
