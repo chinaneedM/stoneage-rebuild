@@ -16044,3 +16044,8 @@ OFFICIAL-VERSION-COVERAGE-MATERIAL-REVIEW-08复用R7的22域状态，近期日�
 补充`research/recovered/STONEAGE-CN30-WATERCITY-TWO-SOURCE-STORY-BRANCHES-R1.json`、`docs/specs/STONEAGE-CN30-WATERCITY-TWO-SOURCE-STORY-BRANCHES-R1.md`与八关系反例测试，独立工作流改为同时检查两机读档。历史上一条R17“仅一正文”不删，因为这是**后续有新材料引发的来源补正**；累计两资料正文，1无期17173 + 1明确日期新浪，不给独立执行双证人。验证待自身Actions实际结果，当前未自动宣称主线绿。止点限定两真实正文，不自动扩其它攻略/图片。
 
 **最高NEXT仍`OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-18`**：回全官方版本一方优先的新具名故事、NPC或任务来源。Stage A7 PARTIAL+2 OPEN、Stage B/百科GATED、R79 PAUSED_NON_BLOCKING，无百分比。
+
+
+### 2026-10-19 — R17派生档案精确摘要/原始资料缺失边界收据
+
+本R17研究内容主线`f8eeda0a473bb0c845d22ceb92cd5100e698a0c9`（tree `b2175beaf176a790b2b8a48802fb4aac699b1d2b`）自身11项main SUCCESS、对应候选分支10项SUCCESS；主线源验证run 39254789891/job118067239223离线`Ran 18 tests ... OK`。两永久Git派生JSON分别Git blob`8eddff3a5c493c1c5434417b6d4ef124b22fd2df`（8619 UTF-8字节、SHA256 `becc0ffa445c52183df16e8a5cb1e3ad7432b7b78539915053aabba2759415a6`）和Git blob`2833ca3e9a8c7ad37ac98f22c01c0fd41090e57c`（7205字节、SHA256 `4ef00084fa42e0a968d8ffb7ab9c4c3a8a5b07d5e0ef5d3ff1a646a0364d5cc8`），实际新校验独立cmp/哈希锚点测试；`STONEAGE-CN30-WATERCITY-SOURCE-BOUNDARY-ACCEPTANCE-R1.json`持久留存。**这是源读后的派生字节保管收据，不是历史原网页的取源哈希或原服务器事实验收**。两个外部原网页历史raw SHA、HTTP重放、ZIP/CI源artifact不存在，明确null；该工作流仅本地测试、无ZIP，不能伪造artifact链。后续须取有时代身份的原始网页快照或同构建官方原服证据方可升级原始来源状态。旧记录、过去当时未验注记均保留，由此后续记录补正。此回执新提交自身Actions须重新实际观察，不能借父11绿。最高NEXT仍`OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-18`，Stage A7 PARTIAL+2 OPEN、Stage B/百科GATED、R79暂停，无百分比。

@@ -1,0 +1,77 @@
+{
+  "schema": "stoneage.cn30_watercity_web_rendered_derived_only_custody_acceptance.r1",
+  "date": "2026-10-19",
+  "status": "DERIVED_GIT_PERSISTENT_SOURCE_RAW_UNATTESTED",
+  "accepted_content_main": {
+    "sha": "f8eeda0a473bb0c845d22ceb92cd5100e698a0c9",
+    "tree": "b2175beaf176a790b2b8a48802fb4aac699b1d2b",
+    "files_changed_in_prior_2_commits": 12,
+    "source_a": "https://news.17173.com/z/stoneage/renwu/sa30_08.htm",
+    "source_b": "https://games.sina.com.cn/zhqu/article/2003-06-05/11022.shtml?from=wap",
+    "source_original_raw_sha256": null,
+    "source_historical_zip_sha256": null,
+    "original_server_binary": null,
+    "original_event_script": null
+  },
+  "inputs": [
+    {
+      "role": "17173_player_guide_web_rendered",
+      "historical_raw_bytes_attested": false,
+      "raw_original_html_sha256": null,
+      "visible_original_publication_date": null
+    },
+    {
+      "role": "2003_sina_editorial_article_web_rendered",
+      "historical_raw_bytes_attested": false,
+      "raw_original_html_sha256": null,
+      "visible_publication_datetime": "2003-06-05 15:23"
+    }
+  ],
+  "permanently_retained_derived": [
+    {
+      "path": "research/recovered/STONEAGE-CN30-WATERCITY-HEART-BRACELET-GUIDE-R1.json",
+      "git_blob_sha": "8eddff3a5c493c1c5434417b6d4ef124b22fd2df",
+      "sha256_utf8": "becc0ffa445c52183df16e8a5cb1e3ad7432b7b78539915053aabba2759415a6",
+      "bytes_utf8": 8619
+    },
+    {
+      "path": "research/recovered/STONEAGE-CN30-WATERCITY-TWO-SOURCE-STORY-BRANCHES-R1.json",
+      "git_blob_sha": "2833ca3e9a8c7ad37ac98f22c01c0fd41090e57c",
+      "sha256_utf8": "4ef00084fa42e0a968d8ffb7ab9c4c3a8a5b07d5e0ef5d3ff1a646a0364d5cc8",
+      "bytes_utf8": 7205
+    }
+  ],
+  "validation": {
+    "candidate_sha": "f8eeda0a473bb0c845d22ceb92cd5100e698a0c9",
+    "candidate_workflow_count": 10,
+    "candidate_all_success": true,
+    "candidate_dedicated_run_id": 39254613973,
+    "candidate_dedicated_job_id": 118066627683,
+    "main_sha": "f8eeda0a473bb0c845d22ceb92cd5100e698a0c9",
+    "main_workflow_count": 11,
+    "main_all_success": true,
+    "main_dedicated_run_id": 39254789891,
+    "main_dedicated_job_id": 118067239223,
+    "main_dedicated_log_summary": "Ran 18 tests in 0.001s; OK",
+    "method": "OFFLINE_PYTHON_UNITTESTS_VALIDATE_DERIVED_CONTENT_SCOPE_AND_NEGATIVE_GUARDS_NOT_ORIGINAL_SOURCE_BYTE_REPLAY",
+    "source_independent_http_byte_replay": false,
+    "archived_ci_zip_artifact_id": null,
+    "archived_ci_zip_sha256": null,
+    "archived_ci_zip_status": "NO_DERIVED_ZIP_ARTIFACT_PRODUCED_BY_THIS_WORKFLOW",
+    "original_web_source_sha256_present": false
+  },
+  "revivable_evidence_requirements": [
+    "ORIGINAL_DATED_WEB_ARCHIVE_BYTE_STREAM_WITH_HASH_AND_CAPTURE_METADATA",
+    "CONTEMPORARY_FIRST_PARTY_OPERATOR_QUEST_OR_ITEM_DATA_WITH_PRECISE_BUILD",
+    "CROSS_BUILD_ENTITY_AND_NPC_IDENTITY_PROOF"
+  ],
+  "must_not_infer": [
+    "2003_DATE_PROVES_TW1.0_CONTENT",
+    "TWO_WEB_SOURCES_PROVE_TWO_SERVER_RUNS",
+    "GIT_DERIVED_HASH_IS_ORIGINAL_WEBPAGE_HASH",
+    "REWARD_STATS_ARE_OFFICIAL_ITEM_MASTER",
+    "PORTAL_GUIDE_IS_AN_OFFICIAL_OPERATOR_SCRIPT"
+  ],
+  "followup_priority": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-18",
+  "self_workflow_gate": "This receipt commit must verify its own branch and main Actions separately; parent run counts do not certify future commits."
+}
