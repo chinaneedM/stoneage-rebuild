@@ -1,0 +1,252 @@
+{
+  "schema": "stoneage.r18.cn60_named_tearstone_story_source.v1",
+  "task": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-18",
+  "research_date": "2026-10-19",
+  "priority_origin": {
+    "repo": "chinaneedM/stoneage-rebuild",
+    "head": "e648288e0ec8632bfc2564bf03c9f8e3ca03938e",
+    "tree": "d4e23d6c2b949fe4f2726cb39b22d0b4c91883c9"
+  },
+  "source_a": {
+    "id": "SINA_20030521_TEAR_STONE",
+    "url": "https://games.sina.com.cn/zhqu/sta/sa6/rw/lzs.shtml",
+    "title": "泪之石的任务",
+    "visible_publication": "2003-05-21 22:59",
+    "visible_banner": "华义官方授权新浪石器·谢绝转载",
+    "visible_item_provenance": "网友投稿",
+    "classification": "PERIOD_PORTAL_HOSTED_PLAYER_SUBMISSION_NOT_ORIGINAL_OPERATOR_QUEST_SCRIPT",
+    "site_directory_tag": "sta/sa6/rw",
+    "site_path_is_client_build_proof": false,
+    "first_party_operator_quest_author": false,
+    "source_read": "WEB_SEARCH_INDEXED_FULL_STEP_TEXT_ONLY_DIRECT_PAGE_OPEN_TIMED_OUT",
+    "body_steps_visible": 6,
+    "historical_original_html_sha256": null,
+    "original_art_images_retrieved": 0,
+    "web_archived_capture_timestamp": null
+  },
+  "source_b": {
+    "id": "LATER_REPOST",
+    "url": "https://www.shiqi.club/renwu/page/602.html",
+    "classification": "LATER_COMMUNITY_REPRINT_NOT_INDEPENDENT_HISTORICAL_WITNESS",
+    "relation_to_source_a": "NEAR_VERBATIM_GUIDE_REPRINT",
+    "historical_original_html_sha256": null,
+    "content_open_success": true
+  },
+  "source_c": {
+    "id": "BH_20250513_SUCCESSOR",
+    "url": "https://forum.gamer.com.tw/C.php?bsn=1571&snA=81769",
+    "classification": "2025_COMMUNITY_GUIDE_IN_LATER_SERVICE_CONTEXT_NOT_EARLY_OPERATOR_SCRIPT",
+    "visible_edit_date": "2025-05-13 23:04:28",
+    "article_label": "夕姬與洛林（玄武任務）",
+    "historical_original_html_sha256": null,
+    "article_retrieval": "SEARCH_RENDERED_EXCERPT_DIRECT_OPEN_403"
+  },
+  "game_lineage": {
+    "official_product_family_eligible_for_archival_reference": true,
+    "contemporaneous_guide_section_label": "6.0-related sa6 directory",
+    "exact_original_build": null,
+    "exact_taiwan_or_mainland_server": null,
+    "original_TW10": false,
+    "original_JSS1999": false,
+    "original_merchant_script_authenticated": false
+  },
+  "content": {
+    "story": "夕姬托玩家跨海寻找洛林，双方通过戒指、首饰及信件往返，途中出现战斗及洛林失踪线索。",
+    "named_characters": [
+      {
+        "name": "夕姬",
+        "role": "QUEST_GIVER_AND_RECIPIENT"
+      },
+      {
+        "name": "洛林",
+        "role": "LOST_LOVER_AND_EXCHANGE"
+      },
+      {
+        "name": "杰夫",
+        "role": "SOURCE_NAMED_COMBAT_INTERLOCUTOR"
+      }
+    ],
+    "named_creature_string": "宫本蚊帐",
+    "creature_type_reported": "怪鱼",
+    "exact_pet_species_or_enemy_master_id": null,
+    "location_leads": [
+      {
+        "name": "南岛奇喀喀村附近海滩",
+        "coordinate_as_written": "105 1011",
+        "certainty": "GUIDE_WAYPOINT_NOT_MAP_ID"
+      },
+      {
+        "name": "入海点",
+        "coordinate_as_written": "102 1022",
+        "certainty": "GUIDE_WAYPOINT_NOT_MAP_ID"
+      },
+      {
+        "name": "海底单向路段终点",
+        "coordinate_as_written": "245.260",
+        "certainty": "GUIDE_WAYPOINT_NOT_MAP_ID"
+      },
+      {
+        "name": "海底洞窟入口",
+        "coordinate_as_written": "189.513",
+        "certainty": "GUIDE_WAYPOINT_NOT_MAP_ID"
+      },
+      {
+        "name": "海底洞窟洛林",
+        "coordinate_as_written": "10，7",
+        "certainty": "GUIDE_WAYPOINT_NOT_MAP_ID"
+      }
+    ],
+    "one_way_route_strings": [
+      "146.49",
+      "144.25",
+      "143.34",
+      "146.44",
+      "145.52",
+      "149.63",
+      "148.70",
+      "255.74",
+      "262.72",
+      "264.42",
+      "272.40",
+      "365.128",
+      "358.132",
+      "376.204",
+      "369.207",
+      "245.260"
+    ],
+    "route_transitions_runtime_verified": false,
+    "ordered_walkthrough_steps": [
+      {
+        "ordinal": 1,
+        "setting": "夜晚；南岛奇喀喀村海滩",
+        "actor": "夕姬",
+        "interaction": "答应寻找其爱人洛林",
+        "claimed_output": [
+          "白星·女戒"
+        ],
+        "claimed_input": [],
+        "source_step": 1
+      },
+      {
+        "ordinal": 2,
+        "setting": "入海—单向传送路段",
+        "actor": "宫本蚊帐（来源称怪鱼）",
+        "interaction": "依来源路线穿越并击败遭遇怪物；提醒携带鱼鳃草",
+        "claimed_output": [],
+        "claimed_input": [],
+        "source_step": 2,
+        "fish_gill_grass_mandatory_unproven": true
+      },
+      {
+        "ordinal": 3,
+        "setting": "海底洞窟",
+        "actor": "洛林",
+        "interaction": "交戒指并取得饰品",
+        "claimed_input": [
+          "白星·女戒"
+        ],
+        "claimed_output": [
+          "克林斯首饰"
+        ],
+        "source_step": 3
+      },
+      {
+        "ordinal": 4,
+        "setting": "回南岛海滩",
+        "actor": "夕姬",
+        "interaction": "交饰品换洛林信件",
+        "claimed_input": [
+          "克林斯首饰"
+        ],
+        "claimed_output": [
+          "洛林的信"
+        ],
+        "source_step": 4
+      },
+      {
+        "ordinal": 5,
+        "setting": "再入泪之海—海底洞穴",
+        "actor": "洛林／杰夫",
+        "interaction": "再与洛林对话，出现两只怪物；与杰夫交谈后战斗；从破帽子取信物",
+        "claimed_input": [],
+        "claimed_output": [
+          "白星.男戒",
+          "洛林的信"
+        ],
+        "source_step": 5,
+        "monster_species_unknown": true
+      },
+      {
+        "ordinal": 6,
+        "setting": "回海滩",
+        "actor": "夕姬",
+        "interaction": "交回男戒及洛林信件，取得泪之石奖励",
+        "claimed_input": [
+          "白星.男戒",
+          "洛林的信"
+        ],
+        "claimed_output": [
+          "泪之石"
+        ],
+        "reported_count": 5,
+        "reported_effect": "五点基本能力值",
+        "server_item_id": null,
+        "source_step": 6
+      }
+    ],
+    "prerequisite_time_as_reported": "夜晚",
+    "effect_of_time_locking_unknown": true,
+    "equipment_hint": "鱼鳃草",
+    "equipment_hint_is_mandatory_predicate": false,
+    "claimed_reward": {
+      "name": "泪之石",
+      "quantity": 5,
+      "aggregate_basic_stat_point_gain_claim": 5,
+      "confirmed_game_effect": false,
+      "original_item_id": null
+    },
+    "story_time_year": null,
+    "original_dialogue_script": null
+  },
+  "distinct_later_edition_comparison": [
+    {
+      "topic": "entry_trigger",
+      "early_2003": "夜晚在海滩寻找夕姬，得到女戒",
+      "later_2025": "先持奇怪瓶子，开出泛黄的信与生锈的钥匙",
+      "status": "VERSION_OR_TASK_BRANCH_UNKNOWN_NO_DIRECT_RULE_MERGE"
+    },
+    {
+      "topic": "quest_scope",
+      "early_2003": "六段海底与信件交接攻略",
+      "later_2025": "复杂玄武/宠物线，含洛林羽毛、恐龙博士及培育马可里和蛇类等后续",
+      "status": "LATER_GUIDE_EXTENSION_NOT_PROVEN_ORIGINAL_CN60"
+    },
+    {
+      "topic": "tear_stone_reward",
+      "early_2003": "最终声称五颗可提升基本点",
+      "later_2025": "五颗泪之石要经过更晚的任务阶段才被描述为有作用",
+      "status": "SOURCE_REPORTED_EFFECT_STATE_DIFF_NOT_VERIFIED_MECHANIC"
+    },
+    {
+      "topic": "named_identity",
+      "early_2003": "夕姬、洛林共名",
+      "later_2025": "同名人物及相似泪之石",
+      "status": "STRING_MATCH_NOT_BUILD_SAME_ENTITY_OR_QUEST_ID"
+    }
+  ],
+  "boundaries": {
+    "historical_contemporaneous_index_claim_not_raw_byte_hash": true,
+    "inter_source_independence_of_reposts": false,
+    "game_build_proven": false,
+    "actual_original_server_execs": 0,
+    "original_pixels_downloaded": 0,
+    "first_party_stat_or_quest_master_recovered": 0,
+    "all_22_domain_statuses_unchanged": true,
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b": "GATED",
+    "r79": "PAUSED_NON_BLOCKING",
+    "new_game_canon_or_implementation_started": false
+  },
+  "finite_stop": "ONE_PERIOD_PORTAL_ARTICLE_SIX_STEPS_ONE_REPRINT_BOUNDARY_ONE_LATER_2025_CONTRAST_NO_IMAGES_NO_FULL_LATER_QUEST_INFERENCE",
+  "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-19"
+}

@@ -1,0 +1,19 @@
+name: Validate StoneAge 2003 tearstone narrative provenance boundaries
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-CN60-TEARSTONE-STORY-SOURCE-R1.json'
+      - 'tests/test_stoneage_cn60_tearstone_source.py'
+      - '.github/workflows/verify-stoneage-cn60-tearstone-source.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-CN60-TEARSTONE-STORY-SOURCE-R1.json'
+      - 'tests/test_stoneage_cn60_tearstone_source.py'
+      - '.github/workflows/verify-stoneage-cn60-tearstone-source.yml'
+jobs:
+  derived-source-contract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Offline check source attribution, steps, negative runtime gates
+        run: python -m unittest discover -s tests -p 'test_stoneage_cn60_tearstone_source.py' -v

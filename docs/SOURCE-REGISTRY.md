@@ -7477,3 +7477,14 @@ R13显式轮换北京华义原http://www.waei.com.cn:80/ZHUANQU/stoneage2/tyro/u
 ### 2026-10-19 — R17派生档案精确摘要/原始资料缺失边界收据
 
 本R17研究内容主线`f8eeda0a473bb0c845d22ceb92cd5100e698a0c9`（tree `b2175beaf176a790b2b8a48802fb4aac699b1d2b`）自身11项main SUCCESS、对应候选分支10项SUCCESS；主线源验证run 39254789891/job118067239223离线`Ran 18 tests ... OK`。两永久Git派生JSON分别Git blob`8eddff3a5c493c1c5434417b6d4ef124b22fd2df`（8619 UTF-8字节、SHA256 `becc0ffa445c52183df16e8a5cb1e3ad7432b7b78539915053aabba2759415a6`）和Git blob`2833ca3e9a8c7ad37ac98f22c01c0fd41090e57c`（7205字节、SHA256 `4ef00084fa42e0a968d8ffb7ab9c4c3a8a5b07d5e0ef5d3ff1a646a0364d5cc8`），实际新校验独立cmp/哈希锚点测试；`STONEAGE-CN30-WATERCITY-SOURCE-BOUNDARY-ACCEPTANCE-R1.json`持久留存。**这是源读后的派生字节保管收据，不是历史原网页的取源哈希或原服务器事实验收**。两个外部原网页历史raw SHA、HTTP重放、ZIP/CI源artifact不存在，明确null；该工作流仅本地测试、无ZIP，不能伪造artifact链。后续须取有时代身份的原始网页快照或同构建官方原服证据方可升级原始来源状态。旧记录、过去当时未验注记均保留，由此后续记录补正。此回执新提交自身Actions须重新实际观察，不能借父11绿。最高NEXT仍`OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-18`，Stage A7 PARTIAL+2 OPEN、Stage B/百科GATED、R79暂停，无百分比。
+
+
+## 2026-10-19 — R18：2003泪之石任务六段故事，后世玄武版本异文分开
+
+本轮从远端main`e648288e0ec8632bfc2564bf03c9f8e3ca03938e`/tree`d4e23d6c2b949fe4f2726cb39b22d0b4c91883c9`重新读完整CURRENT精确blob、README/协议/决策/历史/来源/路线/22域，远端该HEAD 11项main Actions均SUCCESS、无开放PR；最高任务`OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-18`。先查一方华义旧站档案，web.archive当前读取失败；TW8.5雷尔既在repo，不冒充新取；财务PDF不可直接下载，不引推源文。故选可检索全文六步且明确2003-05-21 22:59的新浪游戏《泪之石的任务》`https://games.sina.com.cn/zhqu/sta/sa6/rw/lzs.shtml`为**同期门户托管玩家“网友投稿”**。网页标“华义官方授权新浪石器”仅其专题授权，不升级任务为华义原始官方脚本；原页直开超时、搜索索引六步可见，没有原始HTML/SHA、确证区域/构建或服务器执行，`sta/sa6/rw`只是门户栏目标签。
+
+来源限定新增故事：夕姬请玩家跨海寻找洛林，与杰夫战斗，六段任务含女戒→克林斯首饰→洛林的信→男戒/信→5泪之石，原文报告5颗合计5点基本能力；“鱼鳃草”只旅行提醒不实证强制消耗；夜晚时间不推时钟或具体脚本；16文字路径/5地点候选不认证原地图ID或传送执行；怪鱼“宫本蚊帐”只保留文字，不提升为原宠物ID。后出`https://www.shiqi.club/renwu/page/602.html`现可读、但几乎逐段抄录，不是独立早期实服证人。2025巴哈玩家`夕姬與洛林（玄武任務）`https://forum.gamer.com.tw/C.php?bsn=1571&snA=81769复用了人物/泪之石却增加奇怪瓶子/旧信/生锈钥匙/羽毛、宠物及不同能力生效阶段；仅四组候选异文关系，不从2025回填2003原服，也不强判同任务扩写、改版/支线。新原始程序、图片、原服脚本、证实游戏实体0。
+
+新增`research/recovered/STONEAGE-CN60-TEARSTONE-STORY-SOURCE-R1.json`、`docs/specs/STONEAGE-CN60-TEARSTONE-STORY-SOURCE-R1.md`、R18材料评审、专门负面测试与Actions。一个同期网页索引六步+一非独立重刊+一后世异文索引，明确限度后停，不空转海底坐标helper，不继续R79。测试/CI的离线验证不会证明2003原网页字节或原版游戏执行；自身main/分支门及永久派生保管须后续按实际另记，不借旧绿。保留完整历史前缀、22域原状态、Stage A 7PARTIAL+2OPEN、Stage B/百科GATED，R79暂停，不计算总体百分比。
+
+**唯一最高NEXT `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-19`**：返全官方版本/22域队列，优先有真实一方原运营商历史任务/故事/具名NPC来源或独立同期证据；一个具名实源与有效边界即止，不把重刊算重复新增。
