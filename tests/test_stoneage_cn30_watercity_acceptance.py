@@ -16,7 +16,7 @@ class WatercityDerivedCustodyReceipt(unittest.TestCase):
             raw=(ROOT/entry["path"]).read_bytes()
             self.assertEqual(len(raw),entry["bytes_utf8"])
             self.assertEqual(hashlib.sha256(raw).hexdigest(),entry["sha256_utf8"])
-            git_blob=b"blob "+str(len(raw)).encode("ascii")+b"\\0"+raw
+            git_blob=b"blob "+str(len(raw)).encode("ascii")+b"\0"+raw
             self.assertEqual(hashlib.sha1(git_blob).hexdigest(),entry["git_blob_sha"])
 
     def test_source_original_not_misrepresented(self):

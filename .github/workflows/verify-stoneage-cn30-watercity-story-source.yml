@@ -5,6 +5,8 @@ on:
       - 'research/recovered/STONEAGE-CN30-WATERCITY-HEART-BRACELET-GUIDE-R1.json'
       - 'research/recovered/STONEAGE-CN30-WATERCITY-TWO-SOURCE-STORY-BRANCHES-R1.json'
       - 'tests/test_stoneage_cn30_watercity_story_source.py'
+      - 'tests/test_stoneage_cn30_watercity_acceptance.py'
+      - 'research/recovered/STONEAGE-CN30-WATERCITY-SOURCE-BOUNDARY-ACCEPTANCE-R1.json'
       - 'tests/test_stoneage_cn30_watercity_source_variants.py'
       - '.github/workflows/verify-stoneage-cn30-watercity-story-source.yml'
   pull_request:
@@ -12,6 +14,8 @@ on:
       - 'research/recovered/STONEAGE-CN30-WATERCITY-HEART-BRACELET-GUIDE-R1.json'
       - 'research/recovered/STONEAGE-CN30-WATERCITY-TWO-SOURCE-STORY-BRANCHES-R1.json'
       - 'tests/test_stoneage_cn30_watercity_story_source.py'
+      - 'tests/test_stoneage_cn30_watercity_acceptance.py'
+      - 'research/recovered/STONEAGE-CN30-WATERCITY-SOURCE-BOUNDARY-ACCEPTANCE-R1.json'
       - 'tests/test_stoneage_cn30_watercity_source_variants.py'
       - '.github/workflows/verify-stoneage-cn30-watercity-story-source.yml'
 jobs:
