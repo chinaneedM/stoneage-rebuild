@@ -7262,3 +7262,10 @@ STONEAGE-EARLY-SOURCE-MAIL-VENUE-CROSSWALK-ACCEPTANCE-R1.json对应内容10aa033
 ### JSS2001已知manual02参数/升级/气绝语义 — 2026-10-19
 
 http://www.titan.co.jp/stoneage/manual02.html，严格重放https://web.archive.org/web/20010418083149id_/http://www.titan.co.jp/stoneage/manual02.html；28434B SHA25650b9771ec501067136629c8e083a190e979e53dd9ba141903f78b76d43b602cc、Shift-JIS。只3040/8020/8060，旧通用目录全部三摘要保留；新增3tutorials记录和19状态表同列绑定，非首次原件/原服字段。局部语义/未知数值见STONEAGE-JSS2001-PLAYER-STATUS-LEVELUP-KNOCKOUT-R1.json及规格；无新出链/图片/程序/原文入Git。本地重取完整cmp通过，独立Actions/ZIP/raw/Git和main必须实际另验，不能借父HEAD绿。
+
+
+### JSS2001角色原件保管及七组离线衔接 — 2026-10-19
+
+角色内容6b036e05fe87a87a9ac44555726c68e392a6a8ac、源run39200493982/job117892275375，artifact12163272862 ZIP3813B SHA2566e119388e2f1254c49f07fd040756191d3f654ff697ba3544f2c14ced969275a，唯一derived.json11302B SHA25613df1d32a44127f80c3e042c335dc01d9cf926011f5b7908b1b71be77d818277、Git blob4b44c6d022265c62cf2cca1d599deb85e31e1418实际下载比较；11分支/12main均success，见永久ACCEPTANCE-R1回执。
+
+新STONEAGE-JSS2001-PLAYER-PET-CREATION-BOUNDARIES-R1只四份固定报告，原manual01/manual02两正文同运营商而非独立证人；7个sources比较保留输入SHA/JSON指针/原URL捕获摘要，零网络新原源/资产。39相关本地测试通过，专用离线Actions/ZIP/raw/Git/main实际另验；不借父HEAD12绿，原文不入Git。

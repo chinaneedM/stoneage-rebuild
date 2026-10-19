@@ -1,0 +1,37 @@
+name: Verify JSS2001 player pet and creation semantic joins without projecting values
+on:
+  push:
+    paths:
+      - tools/stoneage_jss2001_player_pet_boundaries.py
+      - tests/test_stoneage_jss2001_player_pet_boundaries.py
+      - tools/stoneage_early_mail_venue_crosswalk.py
+      - research/recovered/STONEAGE-JSS2001-PLAYER-PET-CREATION-BOUNDARIES-R1.json
+      - research/recovered/STONEAGE-JSS2001-PLAYER-STATUS-LEVELUP-KNOCKOUT-R1.json
+      - research/recovered/JSS-LOGIN-MANUAL-CREATION-CONTRACT-R1.json
+      - research/recovered/STONEAGE-JSS2001-PET-MANUAL-CONTRACT-R1.json
+      - research/recovered/STONEAGE-JSS2001-MAIL-ITEMS-SHARED-VENUES-R1.json
+      - docs/specs/STONEAGE-JSS2001-PLAYER-PET-CREATION-BOUNDARIES-R1.md
+      - .github/workflows/verify-stoneage-jss2001-player-pet-boundaries.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  offline-pinned-report-comparison:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Reject projected creation points universal loyalty cap and stat field joins
+        run: python -m unittest tests.test_stoneage_jss2001_player_pet_boundaries -v
+      - name: Replay four pinned reports offline without original source requests
+        run: python -m tools.stoneage_jss2001_player_pet_boundaries --output output/derived.json
+      - name: Compare complete permanent derived report
+        run: cmp output/derived.json research/recovered/STONEAGE-JSS2001-PLAYER-PET-CREATION-BOUNDARIES-R1.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: jss2001-player-pet-boundaries-derived-only
+          path: output/derived.json
+          retention-days: 30

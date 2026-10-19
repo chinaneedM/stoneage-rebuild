@@ -1,0 +1,342 @@
+{
+  "boundaries": {
+    "different_original_bodies_mean_independent_publishers": false,
+    "jss1999_tw10_cn182_same_build_identity": false,
+    "original_server_numeric_growth_or_save_io_recovered": false,
+    "r79": "PAUSED_NON_BLOCKING",
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b_and_wiki": "GATED"
+  },
+  "coverage": {
+    "derived_reports": 4,
+    "finite_semantic_comparisons": 7,
+    "new_assets_or_game_entities": 0,
+    "new_original_requests": 0,
+    "original_bodies_referenced": 2
+  },
+  "date": "2026-10-19",
+  "inputs": {
+    "arena": {
+      "path": "research/recovered/STONEAGE-JSS2001-MAIL-ITEMS-SHARED-VENUES-R1.json",
+      "sha256": "7a586ce0f16a3922c62f711554e9c158e659d143ad158b4cbea184936ac74122"
+    },
+    "creation": {
+      "path": "research/recovered/JSS-LOGIN-MANUAL-CREATION-CONTRACT-R1.json",
+      "sha256": "fb1bc22fbb6e42dfaf39f1ff928ab4278595b0eb3f61e98c33b50d1009690768"
+    },
+    "pet": {
+      "path": "research/recovered/STONEAGE-JSS2001-PET-MANUAL-CONTRACT-R1.json",
+      "sha256": "ec4c1602472fb5daa2d458e455f06df3318011e560be053abd460d7d5fba5a13"
+    },
+    "player": {
+      "path": "research/recovered/STONEAGE-JSS2001-PLAYER-STATUS-LEVELUP-KNOCKOUT-R1.json",
+      "sha256": "13df1d32a44127f80c3e042c335dc01d9cf926011f5b7908b1b71be77d818277"
+    }
+  },
+  "next": "OFFICIAL-VERSION-COVERAGE-MATERIAL-REVIEW-09",
+  "records": [
+    {
+      "automatic_numeric_or_field_identity_join_allowed": false,
+      "collection": "sources",
+      "entity_type": "INTRA_MANUAL_SEMANTIC_BOUNDARY_COMPARISON",
+      "original_server_execution_proven": false,
+      "original_unknown_values_and_wire_binding": null,
+      "record_id": "jss2001-source-boundary:player-pet:01",
+      "record_revision": 1,
+      "relation": "INITIAL_ALLOCATION_DOES_NOT_FILL_LATER_BONUS_COUNT",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "same_original_body_counts_as_independent_confirmation": false,
+      "source_facts": {
+        "creation_stat_points": 20,
+        "per_level_points": null
+      },
+      "source_refs": [
+        {
+          "actual_capture": "20010418082314",
+          "derived_report": "research/recovered/JSS-LOGIN-MANUAL-CREATION-CONTRACT-R1.json",
+          "derived_sha256": "fb1bc22fbb6e42dfaf39f1ff928ab4278595b0eb3f61e98c33b50d1009690768",
+          "json_pointer": "/pages/manual01/creation_contract",
+          "original_sha256": "5784d9f9e0ddca26240b4c163101759d772cadcc9ef8c81ef24bf99145dbd560",
+          "original_source": "http://www.titan.co.jp/stoneage/manual01.html"
+        },
+        {
+          "actual_capture": "20010418083149",
+          "derived_report": "research/recovered/STONEAGE-JSS2001-PLAYER-STATUS-LEVELUP-KNOCKOUT-R1.json",
+          "derived_sha256": "13df1d32a44127f80c3e042c335dc01d9cf926011f5b7908b1b71be77d818277",
+          "json_pointer": "/records/2/source_described_behavior",
+          "original_sha256": "50b9771ec501067136629c8e083a190e979e53dd9ba141903f78b76d43b602cc",
+          "original_source": "http://www.titan.co.jp/stoneage/manual02.html"
+        }
+      ],
+      "topic": "CREATION_VERSUS_LATER_LEVEL_UP_POINTS",
+      "verification_status": "SOURCE_SEMANTICS_NOT_ORIGINAL_FIELD_OR_FORMULA_IDENTITY",
+      "version_profile": "JSS_JAPAN_WEB_MANUAL_20010418"
+    },
+    {
+      "automatic_numeric_or_field_identity_join_allowed": false,
+      "collection": "sources",
+      "entity_type": "INTRA_MANUAL_SEMANTIC_BOUNDARY_COMPARISON",
+      "original_server_execution_proven": false,
+      "original_unknown_values_and_wire_binding": null,
+      "record_id": "jss2001-source-boundary:player-pet:02",
+      "record_revision": 1,
+      "relation": "INITIAL_CONFIGURATION_NOT_LEVEL_UP_BONUS_OR_ELEMENTAL_DAMAGE_FORMULA",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "same_original_body_counts_as_independent_confirmation": false,
+      "source_facts": {
+        "creation_element_points": 10,
+        "creation_max_element_types": 2,
+        "element_damage_coefficients": null,
+        "level_up_element_allocation_proven": false
+      },
+      "source_refs": [
+        {
+          "actual_capture": "20010418082314",
+          "derived_report": "research/recovered/JSS-LOGIN-MANUAL-CREATION-CONTRACT-R1.json",
+          "derived_sha256": "fb1bc22fbb6e42dfaf39f1ff928ab4278595b0eb3f61e98c33b50d1009690768",
+          "json_pointer": "/pages/manual01/creation_contract",
+          "original_sha256": "5784d9f9e0ddca26240b4c163101759d772cadcc9ef8c81ef24bf99145dbd560",
+          "original_source": "http://www.titan.co.jp/stoneage/manual01.html"
+        },
+        {
+          "actual_capture": "20010418083149",
+          "derived_report": "research/recovered/STONEAGE-JSS2001-PLAYER-STATUS-LEVELUP-KNOCKOUT-R1.json",
+          "derived_sha256": "13df1d32a44127f80c3e042c335dc01d9cf926011f5b7908b1b71be77d818277",
+          "json_pointer": "/records/0/source_described_behavior",
+          "original_sha256": "50b9771ec501067136629c8e083a190e979e53dd9ba141903f78b76d43b602cc",
+          "original_source": "http://www.titan.co.jp/stoneage/manual02.html"
+        },
+        {
+          "actual_capture": "20010418083149",
+          "derived_report": "research/recovered/STONEAGE-JSS2001-PLAYER-STATUS-LEVELUP-KNOCKOUT-R1.json",
+          "derived_sha256": "13df1d32a44127f80c3e042c335dc01d9cf926011f5b7908b1b71be77d818277",
+          "json_pointer": "/records/2/source_described_behavior",
+          "original_sha256": "50b9771ec501067136629c8e083a190e979e53dd9ba141903f78b76d43b602cc",
+          "original_source": "http://www.titan.co.jp/stoneage/manual02.html"
+        }
+      ],
+      "topic": "INITIAL_ELEMENTS_VERSUS_LEVEL_UP_AND_INFLUENCE_PAIRS",
+      "verification_status": "SOURCE_SEMANTICS_NOT_ORIGINAL_FIELD_OR_FORMULA_IDENTITY",
+      "version_profile": "JSS_JAPAN_WEB_MANUAL_20010418"
+    },
+    {
+      "automatic_numeric_or_field_identity_join_allowed": false,
+      "collection": "sources",
+      "entity_type": "INTRA_MANUAL_SEMANTIC_BOUNDARY_COMPARISON",
+      "original_server_execution_proven": false,
+      "original_unknown_values_and_wire_binding": null,
+      "record_id": "jss2001-source-boundary:player-pet:03",
+      "record_revision": 1,
+      "relation": "DOCUMENTED_RELATION_DOES_NOT_COLLAPSE_TWO_ACTORS_OR_STATE_FIELDS",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "same_original_body_counts_as_independent_confirmation": false,
+      "source_facts": {
+        "charm_change_is_loyalty_same_field": false,
+        "owner_charm_change_appears_in_loyalty_examples": true,
+        "pet_knockout_effect": "LOYALTY_DECREASES",
+        "player_knockout_effect": "CHARM_DECREASES_SLIGHTLY"
+      },
+      "source_refs": [
+        {
+          "actual_capture": "20010418083149",
+          "derived_report": "research/recovered/STONEAGE-JSS2001-PLAYER-STATUS-LEVELUP-KNOCKOUT-R1.json",
+          "derived_sha256": "13df1d32a44127f80c3e042c335dc01d9cf926011f5b7908b1b71be77d818277",
+          "json_pointer": "/records/1/source_described_behavior",
+          "original_sha256": "50b9771ec501067136629c8e083a190e979e53dd9ba141903f78b76d43b602cc",
+          "original_source": "http://www.titan.co.jp/stoneage/manual02.html"
+        },
+        {
+          "actual_capture": "20010418083149",
+          "derived_report": "research/recovered/STONEAGE-JSS2001-PET-MANUAL-CONTRACT-R1.json",
+          "derived_sha256": "ec4c1602472fb5daa2d458e455f06df3318011e560be053abd460d7d5fba5a13",
+          "json_pointer": "/contracts/loyalty",
+          "original_sha256": "50b9771ec501067136629c8e083a190e979e53dd9ba141903f78b76d43b602cc",
+          "original_source": "http://www.titan.co.jp/stoneage/manual02.html"
+        }
+      ],
+      "topic": "CHARACTER_CHARM_AND_PET_LOYALTY_RELATED_NOT_IDENTICAL",
+      "verification_status": "SOURCE_SEMANTICS_NOT_ORIGINAL_FIELD_OR_FORMULA_IDENTITY",
+      "version_profile": "JSS_JAPAN_WEB_MANUAL_20010418"
+    },
+    {
+      "automatic_numeric_or_field_identity_join_allowed": false,
+      "collection": "sources",
+      "entity_type": "INTRA_MANUAL_SEMANTIC_BOUNDARY_COMPARISON",
+      "original_server_execution_proven": false,
+      "original_unknown_values_and_wire_binding": null,
+      "record_id": "jss2001-source-boundary:player-pet:04",
+      "record_revision": 1,
+      "relation": "SAME_SOURCE_INTERNAL_CONCORDANCE_NOT_TWO_INDEPENDENT_OBSERVATIONS",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "same_original_body_counts_as_independent_confirmation": false,
+      "source_facts": {
+        "knockout_appearance_in_loyalty_decrease_examples": "PET_UNCONSCIOUS",
+        "loyalty_decrease_numeric_delta": null
+      },
+      "source_refs": [
+        {
+          "actual_capture": "20010418083149",
+          "derived_report": "research/recovered/STONEAGE-JSS2001-PLAYER-STATUS-LEVELUP-KNOCKOUT-R1.json",
+          "derived_sha256": "13df1d32a44127f80c3e042c335dc01d9cf926011f5b7908b1b71be77d818277",
+          "json_pointer": "/records/1/source_described_behavior",
+          "original_sha256": "50b9771ec501067136629c8e083a190e979e53dd9ba141903f78b76d43b602cc",
+          "original_source": "http://www.titan.co.jp/stoneage/manual02.html"
+        },
+        {
+          "actual_capture": "20010418083149",
+          "derived_report": "research/recovered/STONEAGE-JSS2001-PET-MANUAL-CONTRACT-R1.json",
+          "derived_sha256": "ec4c1602472fb5daa2d458e455f06df3318011e560be053abd460d7d5fba5a13",
+          "json_pointer": "/contracts/loyalty/decrease_examples",
+          "original_sha256": "50b9771ec501067136629c8e083a190e979e53dd9ba141903f78b76d43b602cc",
+          "original_source": "http://www.titan.co.jp/stoneage/manual02.html"
+        }
+      ],
+      "topic": "PET_KNOCKOUT_CONCORDANCE_WITHIN_ONE_MANUAL",
+      "verification_status": "SOURCE_SEMANTICS_NOT_ORIGINAL_FIELD_OR_FORMULA_IDENTITY",
+      "version_profile": "JSS_JAPAN_WEB_MANUAL_20010418"
+    },
+    {
+      "automatic_numeric_or_field_identity_join_allowed": false,
+      "collection": "sources",
+      "entity_type": "INTRA_MANUAL_SEMANTIC_BOUNDARY_COMPARISON",
+      "original_server_execution_proven": false,
+      "original_unknown_values_and_wire_binding": null,
+      "record_id": "jss2001-source-boundary:player-pet:05",
+      "record_revision": 1,
+      "relation": "MULTIPLE_RELATED_EXAMPLES_DO_NOT_PROVE_ADDITIVE_OR_RECURSIVE_FORMULA",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "same_original_body_counts_as_independent_confirmation": false,
+      "source_facts": {
+        "automatic_player_stat_increases": [
+          "魅力",
+          "デュエルポイント（DP）"
+        ],
+        "owner_level_up_is_loyalty_increase_example": true,
+        "pet_gets_player_up_allocation_ui": false,
+        "total_or_recursive_loyalty_increment": null
+      },
+      "source_refs": [
+        {
+          "actual_capture": "20010418083149",
+          "derived_report": "research/recovered/STONEAGE-JSS2001-PLAYER-STATUS-LEVELUP-KNOCKOUT-R1.json",
+          "derived_sha256": "13df1d32a44127f80c3e042c335dc01d9cf926011f5b7908b1b71be77d818277",
+          "json_pointer": "/records/2/source_described_behavior",
+          "original_sha256": "50b9771ec501067136629c8e083a190e979e53dd9ba141903f78b76d43b602cc",
+          "original_source": "http://www.titan.co.jp/stoneage/manual02.html"
+        },
+        {
+          "actual_capture": "20010418083149",
+          "derived_report": "research/recovered/STONEAGE-JSS2001-PET-MANUAL-CONTRACT-R1.json",
+          "derived_sha256": "ec4c1602472fb5daa2d458e455f06df3318011e560be053abd460d7d5fba5a13",
+          "json_pointer": "/contracts/loyalty/increase_examples",
+          "original_sha256": "50b9771ec501067136629c8e083a190e979e53dd9ba141903f78b76d43b602cc",
+          "original_source": "http://www.titan.co.jp/stoneage/manual02.html"
+        }
+      ],
+      "topic": "OWNER_LEVEL_UP_VERSUS_PET_GROWTH_AND_LOYALTY",
+      "verification_status": "SOURCE_SEMANTICS_NOT_ORIGINAL_FIELD_OR_FORMULA_IDENTITY",
+      "version_profile": "JSS_JAPAN_WEB_MANUAL_20010418"
+    },
+    {
+      "automatic_numeric_or_field_identity_join_allowed": false,
+      "collection": "sources",
+      "entity_type": "INTRA_MANUAL_SEMANTIC_BOUNDARY_COMPARISON",
+      "original_server_execution_proven": false,
+      "original_unknown_values_and_wire_binding": null,
+      "record_id": "jss2001-source-boundary:player-pet:06",
+      "record_revision": 1,
+      "relation": "ARENA_RANK_POSITION_NOT_DP_AMOUNT_AND_CHARACTER_LEVEL_IS_SEPARATE",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "same_original_body_counts_as_independent_confirmation": false,
+      "source_facts": {
+        "arena_free_cases": [
+          {
+            "level_at_most": 9
+          },
+          {
+            "duel_rank_exact": 77
+          },
+          {
+            "duel_rank_exact": 777
+          }
+        ],
+        "dp_increase_triggers": [
+          "CHARACTER_LEVEL_UP",
+          "VICTORY_IN_PLAYER_VS_PLAYER_BATTLE"
+        ],
+        "dp_to_rank_conversion": null
+      },
+      "source_refs": [
+        {
+          "actual_capture": "20010418083149",
+          "derived_report": "research/recovered/STONEAGE-JSS2001-PLAYER-STATUS-LEVELUP-KNOCKOUT-R1.json",
+          "derived_sha256": "13df1d32a44127f80c3e042c335dc01d9cf926011f5b7908b1b71be77d818277",
+          "json_pointer": "/records/0/source_described_behavior",
+          "original_sha256": "50b9771ec501067136629c8e083a190e979e53dd9ba141903f78b76d43b602cc",
+          "original_source": "http://www.titan.co.jp/stoneage/manual02.html"
+        },
+        {
+          "actual_capture": "20010418083149",
+          "derived_report": "research/recovered/STONEAGE-JSS2001-MAIL-ITEMS-SHARED-VENUES-R1.json",
+          "derived_sha256": "7a586ce0f16a3922c62f711554e9c158e659d143ad158b4cbea184936ac74122",
+          "json_pointer": "/records/8/source_described_behavior",
+          "original_sha256": "50b9771ec501067136629c8e083a190e979e53dd9ba141903f78b76d43b602cc",
+          "original_source": "http://www.titan.co.jp/stoneage/manual02.html"
+        }
+      ],
+      "topic": "DP_VALUE_VERSUS_DUEL_RANK_POSITION",
+      "verification_status": "SOURCE_SEMANTICS_NOT_ORIGINAL_FIELD_OR_FORMULA_IDENTITY",
+      "version_profile": "JSS_JAPAN_WEB_MANUAL_20010418"
+    },
+    {
+      "automatic_numeric_or_field_identity_join_allowed": false,
+      "collection": "sources",
+      "entity_type": "INTRA_MANUAL_SEMANTIC_BOUNDARY_COMPARISON",
+      "original_server_execution_proven": false,
+      "original_unknown_values_and_wire_binding": null,
+      "record_id": "jss2001-source-boundary:player-pet:07",
+      "record_revision": 1,
+      "relation": "CAPTURE_INITIAL_BOUND_NOT_MAXIMUM_LIFETIME_LOYALTY_OR_COMBAT_EXP_RULE",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "same_original_body_counts_as_independent_confirmation": false,
+      "source_facts": {
+        "capture_or_pickup_blocked_gap_at_least": 6,
+        "exp_eligibility_statement": "ONLY_CHARACTERS_AND_PETS_THAT_KNOCK_OUT_ENEMIES",
+        "initial_capture_loyalty_upper_bound": 60,
+        "pickup_blocked_gap_at_least": 6,
+        "universal_loyalty_cap_or_exp_reward_formula": null
+      },
+      "source_refs": [
+        {
+          "actual_capture": "20010418083149",
+          "derived_report": "research/recovered/STONEAGE-JSS2001-PET-MANUAL-CONTRACT-R1.json",
+          "derived_sha256": "ec4c1602472fb5daa2d458e455f06df3318011e560be053abd460d7d5fba5a13",
+          "json_pointer": "/contracts/capture",
+          "original_sha256": "50b9771ec501067136629c8e083a190e979e53dd9ba141903f78b76d43b602cc",
+          "original_source": "http://www.titan.co.jp/stoneage/manual02.html"
+        },
+        {
+          "actual_capture": "20010418083149",
+          "derived_report": "research/recovered/STONEAGE-JSS2001-PET-MANUAL-CONTRACT-R1.json",
+          "derived_sha256": "ec4c1602472fb5daa2d458e455f06df3318011e560be053abd460d7d5fba5a13",
+          "json_pointer": "/contracts/pickup",
+          "original_sha256": "50b9771ec501067136629c8e083a190e979e53dd9ba141903f78b76d43b602cc",
+          "original_source": "http://www.titan.co.jp/stoneage/manual02.html"
+        },
+        {
+          "actual_capture": "20010418083149",
+          "derived_report": "research/recovered/STONEAGE-JSS2001-PLAYER-STATUS-LEVELUP-KNOCKOUT-R1.json",
+          "derived_sha256": "13df1d32a44127f80c3e042c335dc01d9cf926011f5b7908b1b71be77d818277",
+          "json_pointer": "/records/0/source_described_behavior",
+          "original_sha256": "50b9771ec501067136629c8e083a190e979e53dd9ba141903f78b76d43b602cc",
+          "original_source": "http://www.titan.co.jp/stoneage/manual02.html"
+        }
+      ],
+      "topic": "CAPTURE_PICKUP_ELIGIBILITY_VERSUS_EXP_AND_LOYALTY_CAP",
+      "verification_status": "SOURCE_SEMANTICS_NOT_ORIGINAL_FIELD_OR_FORMULA_IDENTITY",
+      "version_profile": "JSS_JAPAN_WEB_MANUAL_20010418"
+    }
+  ],
+  "schema": "stoneage.jss2001.player_pet_creation_boundaries.r1",
+  "task": "JSS2001-PLAYER-PET-STATUS-AND-CREATION-BOUNDARY-01"
+}

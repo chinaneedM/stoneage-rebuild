@@ -1,0 +1,265 @@
+{
+  "schema": "stoneage.jss2001.player_status.acceptance.r1",
+  "date": "2026-10-19",
+  "task": "JSS2001-PLAYER-STATUS-LEVELUP-AND-KNOCKOUT-01",
+  "head": "6b036e05fe87a87a9ac44555726c68e392a6a8ac",
+  "tree": "e056aa0d1746a40434f4c33d844c35fe6e761be9",
+  "parent": "90f100453f5992415ce0c827f641924d0c55b524",
+  "source": {
+    "original_url": "http://www.titan.co.jp/stoneage/manual02.html",
+    "actual_capture": "20010418083149",
+    "bytes": 28434,
+    "sha256": "50b9771ec501067136629c8e083a190e979e53dd9ba141903f78b76d43b602cc",
+    "known_source_not_new_original": true,
+    "all_three_prior_generic_fingerprints_preserved": true,
+    "new_semantic_anchors": [
+      "3040",
+      "8020",
+      "8060"
+    ]
+  },
+  "independent_source_replay": {
+    "run_id": 39200493982,
+    "job_id": 117892275375,
+    "job": "exact-known-manual-player-semantics",
+    "artifact_id": 12163272862,
+    "artifact_name": "jss2001-player-status-derived-only",
+    "archive_download_url": "https://api.github.com/repos/chinaneedM/stoneage-rebuild/actions/artifacts/12163272862/zip",
+    "zip_bytes": 3813,
+    "zip_sha256": "6e119388e2f1254c49f07fd040756191d3f654ff697ba3544f2c14ced969275a",
+    "raw_bytes": 11302,
+    "raw_sha256": "13df1d32a44127f80c3e042c335dc01d9cf926011f5b7908b1b71be77d818277",
+    "git_blob": "4b44c6d022265c62cf2cca1d599deb85e31e1418",
+    "negative_boundaries_and_byte_cmp": "PASS"
+  },
+  "permanent_report": {
+    "path": "research/recovered/STONEAGE-JSS2001-PLAYER-STATUS-LEVELUP-KNOCKOUT-R1.json",
+    "git_blob": "4b44c6d022265c62cf2cca1d599deb85e31e1418",
+    "bytes": 11302,
+    "sha256": "13df1d32a44127f80c3e042c335dc01d9cf926011f5b7908b1b71be77d818277"
+  },
+  "branch_checks": [
+    {
+      "id": 39200493982,
+      "name": "Verify JSS2001 player status levelup and knockout source without invented formulas",
+      "head_sha": "6b036e05fe87a87a9ac44555726c68e392a6a8ac",
+      "head_branch": "agent/jss2001-player-status-levelup-knockout-r1-20261019",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39200493982"
+    },
+    {
+      "id": 39200493729,
+      "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+      "head_sha": "6b036e05fe87a87a9ac44555726c68e392a6a8ac",
+      "head_branch": "agent/jss2001-player-status-levelup-knockout-r1-20261019",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39200493729"
+    },
+    {
+      "id": 39200493845,
+      "name": "Validate StoneAge Stage A joint review decision",
+      "head_sha": "6b036e05fe87a87a9ac44555726c68e392a6a8ac",
+      "head_branch": "agent/jss2001-player-status-levelup-knockout-r1-20261019",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39200493845"
+    },
+    {
+      "id": 39200493679,
+      "name": "Verify JSS2001 official pet and visual content sources",
+      "head_sha": "6b036e05fe87a87a9ac44555726c68e392a6a8ac",
+      "head_branch": "agent/jss2001-player-status-levelup-knockout-r1-20261019",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39200493679"
+    },
+    {
+      "id": 39200493705,
+      "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+      "head_sha": "6b036e05fe87a87a9ac44555726c68e392a6a8ac",
+      "head_branch": "agent/jss2001-player-status-levelup-knockout-r1-20261019",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39200493705"
+    },
+    {
+      "id": 39200493723,
+      "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+      "head_sha": "6b036e05fe87a87a9ac44555726c68e392a6a8ac",
+      "head_branch": "agent/jss2001-player-status-levelup-knockout-r1-20261019",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39200493723"
+    },
+    {
+      "id": 39200493799,
+      "name": "Validate legacy StoneAge assistant history and pet content gaps",
+      "head_sha": "6b036e05fe87a87a9ac44555726c68e392a6a8ac",
+      "head_branch": "agent/jss2001-player-status-levelup-knockout-r1-20261019",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39200493799"
+    },
+    {
+      "id": 39200493793,
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "head_sha": "6b036e05fe87a87a9ac44555726c68e392a6a8ac",
+      "head_branch": "agent/jss2001-player-status-levelup-knockout-r1-20261019",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39200493793"
+    },
+    {
+      "id": 39200493787,
+      "name": "Validate StoneAge preproduction content archive and wiki boundary",
+      "head_sha": "6b036e05fe87a87a9ac44555726c68e392a6a8ac",
+      "head_branch": "agent/jss2001-player-status-levelup-knockout-r1-20261019",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39200493787"
+    },
+    {
+      "id": 39200493877,
+      "name": "Validate Stage A early source gap triage",
+      "head_sha": "6b036e05fe87a87a9ac44555726c68e392a6a8ac",
+      "head_branch": "agent/jss2001-player-status-levelup-knockout-r1-20261019",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39200493877"
+    },
+    {
+      "id": 39200493630,
+      "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+      "head_sha": "6b036e05fe87a87a9ac44555726c68e392a6a8ac",
+      "head_branch": "agent/jss2001-player-status-levelup-knockout-r1-20261019",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39200493630"
+    }
+  ],
+  "main_checks": [
+    {
+      "id": 39200638767,
+      "name": "Validate Stage A early source gap triage",
+      "head_sha": "6b036e05fe87a87a9ac44555726c68e392a6a8ac",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39200638767"
+    },
+    {
+      "id": 39200638629,
+      "name": "Validate StoneAge preproduction content archive and wiki boundary",
+      "head_sha": "6b036e05fe87a87a9ac44555726c68e392a6a8ac",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39200638629"
+    },
+    {
+      "id": 39200638632,
+      "name": "Verify JSS2001 player status levelup and knockout source without invented formulas",
+      "head_sha": "6b036e05fe87a87a9ac44555726c68e392a6a8ac",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39200638632"
+    },
+    {
+      "id": 39200638705,
+      "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+      "head_sha": "6b036e05fe87a87a9ac44555726c68e392a6a8ac",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39200638705"
+    },
+    {
+      "id": 39200638542,
+      "name": "Independently verify TW1.0 R58 rooted helper returns and source custody",
+      "head_sha": "6b036e05fe87a87a9ac44555726c68e392a6a8ac",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39200638542"
+    },
+    {
+      "id": 39200638585,
+      "name": "Verify JSS2001 official pet and visual content sources",
+      "head_sha": "6b036e05fe87a87a9ac44555726c68e392a6a8ac",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39200638585"
+    },
+    {
+      "id": 39200638727,
+      "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+      "head_sha": "6b036e05fe87a87a9ac44555726c68e392a6a8ac",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39200638727"
+    },
+    {
+      "id": 39200638695,
+      "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+      "head_sha": "6b036e05fe87a87a9ac44555726c68e392a6a8ac",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39200638695"
+    },
+    {
+      "id": 39200638790,
+      "name": "Validate StoneAge Stage A joint review decision",
+      "head_sha": "6b036e05fe87a87a9ac44555726c68e392a6a8ac",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39200638790"
+    },
+    {
+      "id": 39200638607,
+      "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+      "head_sha": "6b036e05fe87a87a9ac44555726c68e392a6a8ac",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39200638607"
+    },
+    {
+      "id": 39200638725,
+      "name": "Validate legacy StoneAge assistant history and pet content gaps",
+      "head_sha": "6b036e05fe87a87a9ac44555726c68e392a6a8ac",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39200638725"
+    },
+    {
+      "id": 39200638749,
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "head_sha": "6b036e05fe87a87a9ac44555726c68e392a6a8ac",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39200638749"
+    }
+  ],
+  "acceptance": {
+    "exact_source_reacquired": true,
+    "artifact_zip_and_raw_actually_downloaded_and_hashed": true,
+    "complete_derived_byte_comparison": "PASS",
+    "negative_semantic_boundaries": "PASS",
+    "three_semantic_records_and_19_table_labels_not_game_entities": true,
+    "original_server_formula_field_identity_or_save_io_verified": false,
+    "raw_original_or_asset_bytes_committed": false,
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b_and_wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING",
+    "receipt_own_commit_checks_must_be_observed_separately": true
+  }
+}
