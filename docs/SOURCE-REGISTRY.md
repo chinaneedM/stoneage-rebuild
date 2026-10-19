@@ -7313,3 +7313,8 @@ http://www.titan.co.jp/stoneage/manual02.html，严格重放https://web.archive.
 真实既验索引idno67/2003-12-23，原http://www.wayi.com.tw/stoneage/producer/producer02.asp?idno=67，严格https://web.archive.org/web/20051113145307id_/http://www.wayi.com.tw/stoneage/producer/producer02.asp?idno=67，19686B SHA256caf0ab5a51a87d0ddd6f3f6aea4be77cde4dbaed80b1c6e900f4946da703bea2、Big5。索引复用精确20050612011406；前篇派生SHA b23c0220c58840ddb14ee9eea835687924cc16b42afe091af127f67472580fcd只Git输入，不称重取前篇原文。三记录保存叙事/矿石工角色地理/轶谈边界，两个JPG引用未取。16相关本地测试和两原件第二次完整cmp通过，独立runner/ZIP/raw/Git/main实际另验；原文/图像不入Git。
 
 前篇内容ba781f0c9d9e69ad821e5599dcba853b65d45373、10候选/11自身main实全success；run39203934337/job117902568662、artifact12165057158 ZIP2723B SHA2562087881b57417c81ef64ade218a6a3e61979f3e2274c5ba80c30bec0c92ca36d、唯一derived.json11911B SHA256b23c0220c58840ddb14ee9eea835687924cc16b42afe091af127f67472580fcd、永久blobfb75c57e33a745f41634ef9ea36dfce8da2dfb4d实下载比较，详见骑宠计划ACCEPTANCE-R1，不借此绿灯验续篇。
+
+
+### 骑宠续篇一方矿石线索的独立验收保管 — 2026-10-19
+
+内容9b00dcfa0fe42cbb36ed5b2d430fd11b1df95a38 / treee6d84148602c6ede03f8b9ef283dc847a5c1c096，10候选/11自身main门实全success；run39204398649/job117903968931重取精确索引/续篇并校验前篇固定Git输入、8负例/全cmp。artifact12164888684实下载ZIP2423B SHA2565fea4df0390e30213aa24eba3cfecfa9b875c22ab5b04fd38fc6f46388d9c362；唯一derived.json7384B SHA256d2c18a33dd56c5aa5ba886ec591b619b3e6b32fcb67385db1e09db8b900b9125匹配永久bloba2e5d0c927d1c53756146ba583532e2c0ab09ec4，详见STONEAGE-WAYI2003-RIDING-SUCCESSOR-ORE-WORK-ACCEPTANCE-R1.json。原件/图像无入Git，不把作者续篇当独立原服验证，赠虎实施/矿工奖励/NPC IDs未知。收尾回执提交自身门另观测。
