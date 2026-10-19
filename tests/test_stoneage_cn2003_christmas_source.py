@@ -136,6 +136,24 @@ class ChristmasSource(unittest.TestCase):
         with self.assertRaises(ValueError):
             replay(self.report, [self.sample()])
 
+    def test_permanent_ci_replay_and_exact_custody_survive_artifact_expiry(self):
+        receipt = json.loads((REPORT.parent / 'STONEAGE-CN2003-CHRISTMAS-CUSTODY-R1.json').read_text())
+        saved = json.loads((REPORT.parent / 'STONEAGE-CN2003-CHRISTMAS-CI-REPLAY-R1.json').read_text())
+        for pin in receipt['permanent_derived_files']:
+            b = (REPORT.parents[2] / pin['path']).read_bytes()
+            self.assertEqual(len(b), pin['bytes'])
+            self.assertEqual(sha256(b).hexdigest(), pin['sha256'])
+            import hashlib
+            self.assertEqual(hashlib.sha1(b'blob ' + str(len(b)).encode() + b'\0' + b).hexdigest(), pin['git_blob'])
+        self.assertEqual(saved['announcement'], self.report['inputs'][0]['extracted'])
+        self.assertEqual(saved['early_capture'], self.report['inputs'][1]['extracted'])
+        self.assertFalse(saved['raw_html_or_image_bytes_in_output'])
+        self.assertFalse(saved['original_server_or_historical_image_execution_verified'])
+        for group, count in [('candidate', 10), ('main', 11)]:
+            rows = receipt['validation'][group]
+            self.assertEqual(len(rows), count)
+            self.assertTrue(all(r['conclusion'] == 'success' and r['head'] == receipt['content_commit']['sha'] for r in rows))
+
 
 if __name__ == '__main__':
     unittest.main()

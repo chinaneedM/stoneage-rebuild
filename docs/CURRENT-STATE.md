@@ -16142,3 +16142,8 @@ R19 内容主线77b8b06a08ee93aea2e14887fc97de453aa6b19d已检验：候选10与�
 新增四条研究记录与规格：圣诞兑奖员、2003/12/24–26兑换、神秘圣诞大礼包、树景图。6.0及7.0服组四大村五大城，交谈交所需道具，等级文字“30级以上”并成人仪式，每人物同服组一套。所需道具/礼包内容/精确等级边界/地点名称/坐标/重置/时钟/脚本均null；全服降雪宣传不扩兑奖版本范围。早期HTML不是历史图像字节或原服运行；无TW1.0回填、无设计生产。15新+36既有=51本地测试通过，初fixture编码SyntaxError及修正写在R23评审；三实输入离线重放通过。新Actions与ZIP永久派生保管待自身实际验，不借父绿。见STONEAGE-CN2003-CHRISTMAS-NPC-SOURCE-R1.json及R23评审。
 
 **唯一最高NEXT `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-24`**：返全官方版本/22域，优先另一具名任务/NPC/世界故事运营原文；停止圣诞材料猜测、九处坐标及天气helper。旧CURRENT完整历史与失败、22域原状态均保留，Stage A7 PARTIAL+2 OPEN，Stage B/百科GATED，R79 PAUSED_NON_BLOCKING，无总体百分比。
+
+
+### R23实际Actions与永久派生保管验收
+
+内容main fb53563b2592c82eb13ccd3a3d1e5c5b0eabf5e2 / tree3186277f844803f92c167356c812fb7cce9b6f0f，自身候选10及main11实际全success。main源run39342068346/job118365750750的15项测试和三固定输入实重放通过；候选artifact12229057723与main artifact12229287416均实际下载/验ZIP，各1103B，SHA256分别64e61ef8bed49fdb0fe548ff8d9141ed530b01e17f22a7488b42b378cb6a6f59与5f79aee9ab18db3d151ddad1a1d89a0386bcfb500a8b0ff6f21f388e5677968b。唯一replay.json两者完全同字节，2826B SHA256a140f588b9a14c4da05c8c6bc9dc25400af7b9e9f1f5f5ad2952ac6d9f2af63b / Git blob864d3b9958e20e5e190ca1feee7ecdbb9a686b14，完整语义等于本地实取三源重放。已永久保管CI-REPLAY和CUSTODY，含精确HEAD/tree/10与11清单、job/ZIP/raw/Git及来源边界；独立干净远端候选worktree51测试通过、八旧前缀完整且DESIGN/协议/22域原档未改。新增保管测试后16+36=52相关测试另验。此保管HEAD仍须观察自身Actions，不借父绿灯。NEXT R24及Stage门保持，未认证原服或历史图片字节。
