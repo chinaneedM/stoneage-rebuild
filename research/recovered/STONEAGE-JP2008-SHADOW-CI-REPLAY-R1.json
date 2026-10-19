@@ -1,0 +1,78 @@
+{
+  "schema": "stoneage.jp2008_shadow_chapters.replay.r1",
+  "verified_sources": [
+    {
+      "source_id": "S1",
+      "current_http_bytes": 287571,
+      "current_http_sha256": "b51102c185cda42547cbc0a4b19297effe6b07a1429da19eff242ef51396bcf6",
+      "core_sha256": "e20208120cec02b2bb9a8cb16791c2b78449d526aa1f9d452dd93a48feefabcc",
+      "core_utf8_bytes": 2555,
+      "source_facts": {
+        "chapter": 1,
+        "minimum_level_reported": 10,
+        "previous_chapter_required_reported": null,
+        "entry_or_hint_roles": [
+          {
+            "village_as_written": "クオの村",
+            "npc_label_as_written": "青年",
+            "role": "QUEST_START_ALTERNATIVE"
+          },
+          {
+            "village_as_written": "タムタムの村",
+            "npc_label_as_written": "少年",
+            "role": "QUEST_START_ALTERNATIVE"
+          }
+        ],
+        "exclusive_first_chapter_routes_reported": true,
+        "prior_chapter_changes_npc_presence_reported": null,
+        "choice_changes_dialogue_reported": true
+      }
+    },
+    {
+      "source_id": "S2",
+      "current_http_bytes": 269062,
+      "current_http_sha256": "7d6a40ca487be0a395183dd6de4add30cb336db0f3c0e6ee43ea25c820beeeae",
+      "core_sha256": "23da51db9467c8bf0a1347bd44d943255438ba5c0e91c0135d7b3ea7be5896b4",
+      "core_utf8_bytes": 1957,
+      "source_facts": {
+        "chapter": 2,
+        "minimum_level_reported": 25,
+        "previous_chapter_required_reported": 1,
+        "entry_or_hint_roles": [
+          {
+            "village_as_written": "キヌイの村",
+            "npc_label_as_written": "テケスタ",
+            "role": "HINT_NOT_PROVEN_START"
+          }
+        ],
+        "exclusive_first_chapter_routes_reported": null,
+        "prior_chapter_changes_npc_presence_reported": true,
+        "choice_changes_dialogue_reported": null
+      }
+    },
+    {
+      "source_id": "S3",
+      "current_http_bytes": 269502,
+      "current_http_sha256": "63035547629263721cc54895da6a4fc448890297ccc662884f9b11fd49846613",
+      "core_sha256": "c5373e8696abea6d2696bf6a8726453c99b09dca0e0dff0edd0e13d3c7aff642",
+      "core_utf8_bytes": 2413,
+      "source_facts": {
+        "chapter": 3,
+        "minimum_level_reported": 45,
+        "previous_chapter_required_reported": 2,
+        "entry_or_hint_roles": [
+          {
+            "village_as_written": "キヌイの村",
+            "npc_label_as_written": "テケスタ",
+            "role": "HINT_NOT_PROVEN_START"
+          }
+        ],
+        "exclusive_first_chapter_routes_reported": null,
+        "prior_chapter_changes_npc_presence_reported": true,
+        "choice_changes_dialogue_reported": null
+      }
+    }
+  ],
+  "historical_snapshot_or_server_execution_verified": false,
+  "raw_html_in_output": false
+}

@@ -16097,3 +16097,12 @@ R19 内容主线77b8b06a08ee93aea2e14887fc97de453aa6b19d已检验：候选10与�
 `STONEAGE-JP2008-SHADOW-CHAPTERS-SOURCE-R1.json`与中文规格/R21评审、固定三URL提取重放及反例测试已形成。现行完整网页SHA、归一化发布文核心SHA和派生JSON摘要分开；2008原始快照SHA、官方主机HTML与原服务器脚本仍未取得，原图/程序/HTML入Git均0。独立CI只重读固定来源、比较正文核心与机读字段，上传派生报告；候选与main的实际CI、artifact及永久保管需各自验收，不能借父绿灯。
 
 **唯一最高NEXT `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-22`**：回全官方版本/22域，选不同版本/地区有明确运营归因的具名任务或世界故事正文；不自动追第四章、付费道具池或猜测存档helper。完整旧前缀和失败记录不改写，Stage A7 PARTIAL+2 OPEN、Stage B/百科GATED、R79 PAUSED_NON_BLOCKING，无整体百分比。
+
+
+### 2026-10-20 — R21内容验收与派生保管
+
+内容主线 `2afad7c1005158cd2026ea817b74fe6c7a1a6534` / tree `ec511c2847a3d796620a13b363250f4035e4fdbd` 的候选10项和自身main 11项Actions已实际全部success。源run39336345338/job118346678887的13项测试及三固定网页重读/核心摘要/全部派生字段比较通过；本地另以独立正则剥标方式复核三核心及真实href。artifact12225748930已实下载：ZIP1002B SHA256804304f36950e4ff8af773defeb3fd9c46f9c1b68db630c426e498547a50dafd，唯一replay.json2797B SHA256dd6956f345aa3e38a8dcb388c80dbd4f7a7303fb0bb242138cc23ae414b51437 / Git blob8a60f887f6a72f82733c51ae6f4e266fbe9d8c1e，与三来源核心/字段一致。原机读内容14032B SHA256326ac46ea5b2d97b0cff448fadca78571b1047e75c4a1025b41716580d35655d / Git blobd2ee2dc38c487f090dbb0fd98ddbe4ab18cde358。
+
+永久派生 `STONEAGE-JP2008-SHADOW-CI-REPLAY-R1.json` 与 `STONEAGE-JP2008-SHADOW-CUSTODY-R1.json` 保留源job/ZIP/raw/Git及精确HEAD的10/11运行清单，新增摘要链测试后本包15项通过。现行完整页面在CI与本地一致，仍不是2008快照身份认证或原服验证。完整旧前缀和历史待验注记保留；本回执新HEAD的候选/main须另查实际结果，不套父绿灯。唯一最高NEXT保持R22；Stage A7 PARTIAL+2 OPEN、Stage B/百科GATED、R79暂停，无总百分比。
+
+远端全局排队复核仅见历史旧run37642417333（agent/becomepig-item-npc-map-r1-20261007，SHA73c45041b9ef2519ba4575471e9d374dff169fd4），与本包无关，继续保留其原排队状态。

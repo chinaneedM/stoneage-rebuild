@@ -1,4 +1,5 @@
 import copy
+import hashlib
 import json
 from pathlib import Path
 import unittest
@@ -98,6 +99,27 @@ class ShadowRelease(unittest.TestCase):
             replay(self.report, [self.sample(), self.sample(), self.sample()])
         with self.assertRaises(ValueError):
             replay(self.report, [self.sample()])
+
+    def test_permanent_ci_replay_matches_source_core_and_all_fields(self):
+        saved = json.loads((REPORT.parent / 'STONEAGE-JP2008-SHADOW-CI-REPLAY-R1.json').read_text())
+        self.assertEqual(len(saved['verified_sources']), 3)
+        self.assertFalse(saved['raw_html_in_output'])
+        self.assertFalse(saved['historical_snapshot_or_server_execution_verified'])
+        for actual, source, record in zip(saved['verified_sources'], self.report['sources'], self.report['records']):
+            self.assertEqual(actual['source_id'], source['id'])
+            self.assertEqual(actual['core_sha256'], source['release_core_sha256'])
+            self.assertEqual(actual['source_facts'], record['source_reported'])
+
+    def test_permanent_source_and_replay_hash_chain(self):
+        receipt = json.loads((REPORT.parent / 'STONEAGE-JP2008-SHADOW-CUSTODY-R1.json').read_text())
+        for pin in receipt['permanent_derived_files']:
+            payload = (REPORT.parents[2] / pin['path']).read_bytes()
+            self.assertEqual(len(payload), pin['bytes'])
+            self.assertEqual(hashlib.sha256(payload).hexdigest(), pin['sha256'])
+            self.assertEqual(hashlib.sha1(b'blob ' + str(len(payload)).encode() + b'\0' + payload).hexdigest(), pin['git_blob'])
+        self.assertFalse(receipt['original_2008_bytes_or_runtime_verified'])
+        self.assertEqual(receipt['artifact']['zip_bytes'], 1002)
+        self.assertEqual(receipt['artifact']['zip_sha256'], '804304f36950e4ff8af773defeb3fd9c46f9c1b68db630c426e498547a50dafd')
 
 
 if __name__ == '__main__':

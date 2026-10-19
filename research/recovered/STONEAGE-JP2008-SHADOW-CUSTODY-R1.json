@@ -1,0 +1,179 @@
+{
+  "schema": "stoneage.jp2008_shadow_chapters.derived_custody.r1",
+  "date": "2026-10-20",
+  "content_commit": {
+    "sha": "2afad7c1005158cd2026ea817b74fe6c7a1a6534",
+    "tree": "ec511c2847a3d796620a13b363250f4035e4fdbd"
+  },
+  "source_job": {
+    "run_id": 39336345338,
+    "job_id": 118346678887,
+    "branch": "agent/jp2008-shadow-chapters-source-r1-20261020",
+    "tests_passed": 13,
+    "fixed_url_fetches": 3,
+    "source_cores_and_fields_verified": true
+  },
+  "artifact": {
+    "id": 12225748930,
+    "name": "jp2008-shadow-derived-replay",
+    "zip_bytes": 1002,
+    "zip_sha256": "804304f36950e4ff8af773defeb3fd9c46f9c1b68db630c426e498547a50dafd",
+    "actual_download_and_zip_digest_verified": true,
+    "only_member": "replay.json",
+    "original_html_in_artifact": false
+  },
+  "permanent_derived_files": [
+    {
+      "path": "research/recovered/STONEAGE-JP2008-SHADOW-CHAPTERS-SOURCE-R1.json",
+      "bytes": 14032,
+      "sha256": "326ac46ea5b2d97b0cff448fadca78571b1047e75c4a1025b41716580d35655d",
+      "git_blob": "d2ee2dc38c487f090dbb0fd98ddbe4ab18cde358"
+    },
+    {
+      "path": "research/recovered/STONEAGE-JP2008-SHADOW-CI-REPLAY-R1.json",
+      "bytes": 2797,
+      "sha256": "dd6956f345aa3e38a8dcb388c80dbd4f7a7303fb0bb242138cc23ae414b51437",
+      "git_blob": "8a60f887f6a72f82733c51ae6f4e266fbe9d8c1e"
+    }
+  ],
+  "validation": {
+    "candidate": [
+      {
+        "run_id": 39336345128,
+        "name": "Validate Stage A early source gap triage",
+        "head": "2afad7c1005158cd2026ea817b74fe6c7a1a6534",
+        "conclusion": "success"
+      },
+      {
+        "run_id": 39336345088,
+        "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+        "head": "2afad7c1005158cd2026ea817b74fe6c7a1a6534",
+        "conclusion": "success"
+      },
+      {
+        "run_id": 39336344958,
+        "name": "Validate Stage A evidence-limited review acceptance",
+        "head": "2afad7c1005158cd2026ea817b74fe6c7a1a6534",
+        "conclusion": "success"
+      },
+      {
+        "run_id": 39336345338,
+        "name": "Verify Japanese 2008 shadow quest operator releases",
+        "head": "2afad7c1005158cd2026ea817b74fe6c7a1a6534",
+        "conclusion": "success"
+      },
+      {
+        "run_id": 39336345251,
+        "name": "Validate legacy StoneAge assistant history and pet content gaps",
+        "head": "2afad7c1005158cd2026ea817b74fe6c7a1a6534",
+        "conclusion": "success"
+      },
+      {
+        "run_id": 39336345145,
+        "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+        "head": "2afad7c1005158cd2026ea817b74fe6c7a1a6534",
+        "conclusion": "success"
+      },
+      {
+        "run_id": 39336345215,
+        "name": "Validate StoneAge Stage A joint review decision",
+        "head": "2afad7c1005158cd2026ea817b74fe6c7a1a6534",
+        "conclusion": "success"
+      },
+      {
+        "run_id": 39336345369,
+        "name": "Validate StoneAge preproduction content archive and wiki boundary",
+        "head": "2afad7c1005158cd2026ea817b74fe6c7a1a6534",
+        "conclusion": "success"
+      },
+      {
+        "run_id": 39336345244,
+        "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+        "head": "2afad7c1005158cd2026ea817b74fe6c7a1a6534",
+        "conclusion": "success"
+      },
+      {
+        "run_id": 39336345119,
+        "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+        "head": "2afad7c1005158cd2026ea817b74fe6c7a1a6534",
+        "conclusion": "success"
+      }
+    ],
+    "main": [
+      {
+        "run_id": 39336498152,
+        "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+        "head": "2afad7c1005158cd2026ea817b74fe6c7a1a6534",
+        "conclusion": "success"
+      },
+      {
+        "run_id": 39336498311,
+        "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+        "head": "2afad7c1005158cd2026ea817b74fe6c7a1a6534",
+        "conclusion": "success"
+      },
+      {
+        "run_id": 39336498144,
+        "name": "Validate legacy StoneAge assistant history and pet content gaps",
+        "head": "2afad7c1005158cd2026ea817b74fe6c7a1a6534",
+        "conclusion": "success"
+      },
+      {
+        "run_id": 39336498278,
+        "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+        "head": "2afad7c1005158cd2026ea817b74fe6c7a1a6534",
+        "conclusion": "success"
+      },
+      {
+        "run_id": 39336498073,
+        "name": "Validate StoneAge Stage A joint review decision",
+        "head": "2afad7c1005158cd2026ea817b74fe6c7a1a6534",
+        "conclusion": "success"
+      },
+      {
+        "run_id": 39336498283,
+        "name": "Validate Stage A evidence-limited review acceptance",
+        "head": "2afad7c1005158cd2026ea817b74fe6c7a1a6534",
+        "conclusion": "success"
+      },
+      {
+        "run_id": 39336497967,
+        "name": "Validate StoneAge preproduction content archive and wiki boundary",
+        "head": "2afad7c1005158cd2026ea817b74fe6c7a1a6534",
+        "conclusion": "success"
+      },
+      {
+        "run_id": 39336498297,
+        "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+        "head": "2afad7c1005158cd2026ea817b74fe6c7a1a6534",
+        "conclusion": "success"
+      },
+      {
+        "run_id": 39336498225,
+        "name": "Validate Stage A early source gap triage",
+        "head": "2afad7c1005158cd2026ea817b74fe6c7a1a6534",
+        "conclusion": "success"
+      },
+      {
+        "run_id": 39336498277,
+        "name": "Verify Japanese 2008 shadow quest operator releases",
+        "head": "2afad7c1005158cd2026ea817b74fe6c7a1a6534",
+        "conclusion": "success"
+      },
+      {
+        "run_id": 39336498171,
+        "name": "Independently verify TW1.0 R58 rooted helper returns and source custody",
+        "head": "2afad7c1005158cd2026ea817b74fe6c7a1a6534",
+        "conclusion": "success"
+      }
+    ],
+    "independent_local_regex_core_and_actual_href_checks": 3,
+    "local_content_and_related_tests_passed": 49
+  },
+  "source_scope": "CURRENT_4GAMER_HTTP_BYTES_AND_OPERATOR_RELEASE_CORE_REPLAY_NOT_AUTHENTICATED_2008_CAPTURE",
+  "original_2008_bytes_or_runtime_verified": false,
+  "official_host_original_html_sha256": null,
+  "original_server_scripts": null,
+  "receipt_own_actions": "MUST_OBSERVE_OWN_CANDIDATE_AND_MAIN_CHECKS_NOT_INHERIT_CONTENT_GREEN",
+  "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-22"
+}

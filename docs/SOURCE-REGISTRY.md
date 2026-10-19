@@ -7523,3 +7523,6 @@ R19 内容主线77b8b06a08ee93aea2e14887fc97de453aa6b19d已检验：候选10与�
 - S3：https://www.4gamer.net/games/013/G001377/20081125066/ ，刊发2008/11/25 21:14，同类署名。
 
 三页现行HTTP200实取，完整字节大小/UTC时间/SHA256与归一化核心SHA分别存 `research/recovered/STONEAGE-JP2008-SHADOW-CHAPTERS-SOURCE-R1.json`，原HTML不入Git。媒体托管运营商文稿不等于官方原主机或2008原始快照；官方出链读取失败，历史源SHA仍null。S3重复S2官方URL不更正。CI仅上传派生重放报告，原服执行、同构建NPC/对白/道具ID未证；三章共源，不当独立实服三证。中文规格和R21评审保留有限停止条件，NEXT R22。
+
+
+R21派生保管补记：源run39336345338/job118346678887与artifact12225748930已实际校验；唯一派生replay.json永久归档于 `research/recovered/STONEAGE-JP2008-SHADOW-CI-REPLAY-R1.json`，ZIP/raw/Git和候选10/main11清单见 `STONEAGE-JP2008-SHADOW-CUSTODY-R1.json`。无原HTML入Git；当前HTTP字节摘要不认证2008历史原件。NEXT R22。
