@@ -7534,3 +7534,5 @@ S1：https://games.sina.com.cn/newgames/2003/12/121610098.shtml ，2003-12-16 14
 
 
 R22后续补证：Wayback20031225115132的Sina S1原页面回放已实取15189B/SHA25645d4106f945dbf3564bed9ddcab85f2447911291a31dc97406a11c6197eb6c33；归因/刊发/核心和两图链与现页相同，查询和resolved URL见2003-SNAPSHOT报告。旧历史null记录保持取源当时事实，补证仅S1 HTML，不认证原图或华义原服。旧四输入run39338196277的artifact12228020901已实下载并永久保存派生回放/保管收据；新固定历史URL的CI须独立验收。
+
+R22同期补证独立验收：run39338706949/job118354613187、artifact12227931635已实下载ZIP/raw并完整比对；历史HTML+现行两文两图的3524B派生回放已永久归档，详见HISTORICAL-CI-REPLAY与CUSTODY后续段。此前四输入CI及历史未取注记保留为当时checkpoint；原服/历史图片不升级。

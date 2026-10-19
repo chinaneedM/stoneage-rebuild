@@ -1,0 +1,114 @@
+{
+  "schema": "stoneage.cn70_suzaku_source.replay.r1",
+  "current_http": [
+    {
+      "source_id": "S1",
+      "bytes": 35322,
+      "sha256": "48d7225afff837336f10a8a87fa412aff7623521f84d19238b3a3d459e9a9d37"
+    },
+    {
+      "source_id": "S2",
+      "bytes": 5962,
+      "sha256": "87cb6351e4fadfb6ff2172c2614fbd337d92032ff3328ca1011f2e91eff89ef2"
+    },
+    {
+      "source_id": "I1",
+      "bytes": 19475,
+      "sha256": "31022df63eaf77d1500e36e9056311ec6fd032bebea02f0e4ba2068321fc15d9"
+    },
+    {
+      "source_id": "I2",
+      "bytes": 27547,
+      "sha256": "816e7d7fd548d942581beae9234f5436f746b4ec25251b6133bfb2fd27a0d89e"
+    }
+  ],
+  "narrative_cores": [
+    {
+      "core_sha256": "f515e6c25fc3001b8be0e3fb48ddeb02d35ef4fcc348a1e6979c2ea3e648d4f6",
+      "core_utf8_bytes": 1112,
+      "facts": {
+        "beast_skill_affiliations": [
+          {
+            "beast": "白虎",
+            "skill_element": "水"
+          },
+          {
+            "beast": "青龙",
+            "skill_element": "风"
+          },
+          {
+            "beast": "玄武",
+            "skill_element": "地"
+          },
+          {
+            "beast": "朱雀",
+            "skill_element": "火"
+          }
+        ],
+        "temples_as_ordered_text_not_map_ids": [
+          "水神殿",
+          "风神殿",
+          "地神殿",
+          "火神殿"
+        ],
+        "named_suzaku_form": "菲奇亚",
+        "pure_fire_reported": true,
+        "relative_stat_description": {
+          "attack": "HIGH",
+          "agility": "HIGH",
+          "defense": "LOW"
+        },
+        "seal_context_mentions_light_dark_king_battle": true,
+        "source_images_declared_http": [
+          "http://image2.sina.com.cn/gm/newgames/2003/12/U163P115T9D10098F364DT20031216143816.jpg",
+          "http://image2.sina.com.cn/gm/newgames/2003/12/U163P115T9D10098F167DT20031216143816.JPG"
+        ]
+      }
+    },
+    {
+      "core_sha256": "ac444c1c85c76bffe07f545ce88c0501ca0a3aae8adf770fae79f34f49fee777",
+      "core_utf8_bytes": 1368,
+      "facts": {
+        "operator_authored_release_explicitly_credited": false,
+        "company_metadata_is_authorship_proof": false,
+        "two_kings_cooperate_against_machine_civilization_reported": true,
+        "dark_king_self_seal_reported": true,
+        "light_king_machine_seal_reported": true,
+        "marefia_lost_memory_and_pet_rebirth_story_reported": true
+      }
+    }
+  ],
+  "images": [
+    {
+      "source_id": "I1",
+      "bytes": 19475,
+      "sha256": "31022df63eaf77d1500e36e9056311ec6fd032bebea02f0e4ba2068321fc15d9",
+      "dimensions": [
+        400,
+        261
+      ]
+    },
+    {
+      "source_id": "I2",
+      "bytes": 27547,
+      "sha256": "816e7d7fd548d942581beae9234f5436f746b4ec25251b6133bfb2fd27a0d89e",
+      "dimensions": [
+        400,
+        299
+      ]
+    }
+  ],
+  "raw_html_or_image_bytes_in_output": false,
+  "historical_sina_html": {
+    "capture_timestamp": "20031225115132",
+    "replay_url": "https://web.archive.org/web/20031225115132id_/http://games.sina.com.cn/newgames/2003/12/121610098.shtml",
+    "bytes": 15189,
+    "sha256": "45d4106f945dbf3564bed9ddcab85f2447911291a31dc97406a11c6197eb6c33",
+    "core_sha256": "f515e6c25fc3001b8be0e3fb48ddeb02d35ef4fcc348a1e6979c2ea3e648d4f6",
+    "facts_match_prior_source": true,
+    "historical_image_or_server_bytes_verified": false
+  },
+  "historical_sina_html_verified": true,
+  "historical_image_bytes_verified": false,
+  "original_species_master_or_runtime_verified": false
+}

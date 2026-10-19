@@ -39,6 +39,12 @@
       "bytes": 1988,
       "sha256": "8d16d9c33bc8615ffd0e0fe87c8af4144bfe1e3db3ef46a34c4c14f888452aef",
       "git_blob": "d6da960faecaeba242d38e6ac2c78480d6abce26"
+    },
+    {
+      "path": "research/recovered/STONEAGE-CN70-SUZAKU-HISTORICAL-CI-REPLAY-R1.json",
+      "bytes": 3524,
+      "sha256": "9e9044525be7eac58baa3c394f60bf9e4e45f6b610a1c130264194bd275028ee",
+      "git_blob": "8461858fd12a10df563497357bea5ffeec1e1449"
     }
   ],
   "validation": {
@@ -186,5 +192,156 @@
     "original_server_or_wayi_host_verified": false
   },
   "receipt_own_checks": "MUST_OBSERVE_OWN_HEAD_NOT_PARENT_SUCCESS",
-  "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-23"
+  "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-23",
+  "subsequent_snapshot_acceptance": {
+    "content_head": "e3ada96e8f17cc4082862125a9434141823c4311",
+    "tree": "d3534410703b832d476a25175240598c21b695f4",
+    "source_run_id": 39338706949,
+    "source_job_id": 118354613187,
+    "tests_passed": 17,
+    "fixed_fetches": {
+      "current_html": 2,
+      "current_images": 2,
+      "historical_sina_html": 1
+    },
+    "artifact": {
+      "id": 12227931635,
+      "zip_bytes": 1450,
+      "zip_sha256": "e4e09f015c24590b0848447bf5f5f1a51ea83438b00267650ae5ef85e3a22772",
+      "only_member": "replay.json",
+      "actual_download_and_exact_local_json_comparison": true
+    },
+    "candidate": [
+      {
+        "run_id": 39338707170,
+        "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+        "head": "e3ada96e8f17cc4082862125a9434141823c4311",
+        "conclusion": "success"
+      },
+      {
+        "run_id": 39338707063,
+        "name": "Validate StoneAge preproduction content archive and wiki boundary",
+        "head": "e3ada96e8f17cc4082862125a9434141823c4311",
+        "conclusion": "success"
+      },
+      {
+        "run_id": 39338707122,
+        "name": "Validate StoneAge Stage A joint review decision",
+        "head": "e3ada96e8f17cc4082862125a9434141823c4311",
+        "conclusion": "success"
+      },
+      {
+        "run_id": 39338707058,
+        "name": "Validate legacy StoneAge assistant history and pet content gaps",
+        "head": "e3ada96e8f17cc4082862125a9434141823c4311",
+        "conclusion": "success"
+      },
+      {
+        "run_id": 39338706968,
+        "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+        "head": "e3ada96e8f17cc4082862125a9434141823c4311",
+        "conclusion": "success"
+      },
+      {
+        "run_id": 39338706585,
+        "name": "Validate Stage A evidence-limited review acceptance",
+        "head": "e3ada96e8f17cc4082862125a9434141823c4311",
+        "conclusion": "success"
+      },
+      {
+        "run_id": 39338706851,
+        "name": "Validate Stage A early source gap triage",
+        "head": "e3ada96e8f17cc4082862125a9434141823c4311",
+        "conclusion": "success"
+      },
+      {
+        "run_id": 39338706949,
+        "name": "Verify CN70 Suzaku attributed story and image references",
+        "head": "e3ada96e8f17cc4082862125a9434141823c4311",
+        "conclusion": "success"
+      },
+      {
+        "run_id": 39338706699,
+        "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+        "head": "e3ada96e8f17cc4082862125a9434141823c4311",
+        "conclusion": "success"
+      },
+      {
+        "run_id": 39338706928,
+        "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+        "head": "e3ada96e8f17cc4082862125a9434141823c4311",
+        "conclusion": "success"
+      }
+    ],
+    "main": [
+      {
+        "run_id": 39338788259,
+        "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+        "head": "e3ada96e8f17cc4082862125a9434141823c4311",
+        "conclusion": "success"
+      },
+      {
+        "run_id": 39338788181,
+        "name": "Validate StoneAge preproduction content archive and wiki boundary",
+        "head": "e3ada96e8f17cc4082862125a9434141823c4311",
+        "conclusion": "success"
+      },
+      {
+        "run_id": 39338788405,
+        "name": "Validate legacy StoneAge assistant history and pet content gaps",
+        "head": "e3ada96e8f17cc4082862125a9434141823c4311",
+        "conclusion": "success"
+      },
+      {
+        "run_id": 39338788683,
+        "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+        "head": "e3ada96e8f17cc4082862125a9434141823c4311",
+        "conclusion": "success"
+      },
+      {
+        "run_id": 39338788378,
+        "name": "Validate StoneAge Stage A joint review decision",
+        "head": "e3ada96e8f17cc4082862125a9434141823c4311",
+        "conclusion": "success"
+      },
+      {
+        "run_id": 39338788517,
+        "name": "Validate Stage A early source gap triage",
+        "head": "e3ada96e8f17cc4082862125a9434141823c4311",
+        "conclusion": "success"
+      },
+      {
+        "run_id": 39338788230,
+        "name": "Validate Stage A evidence-limited review acceptance",
+        "head": "e3ada96e8f17cc4082862125a9434141823c4311",
+        "conclusion": "success"
+      },
+      {
+        "run_id": 39338788627,
+        "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+        "head": "e3ada96e8f17cc4082862125a9434141823c4311",
+        "conclusion": "success"
+      },
+      {
+        "run_id": 39338788313,
+        "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+        "head": "e3ada96e8f17cc4082862125a9434141823c4311",
+        "conclusion": "success"
+      },
+      {
+        "run_id": 39338788495,
+        "name": "Verify CN70 Suzaku attributed story and image references",
+        "head": "e3ada96e8f17cc4082862125a9434141823c4311",
+        "conclusion": "success"
+      },
+      {
+        "run_id": 39338788659,
+        "name": "Independently verify TW1.0 R58 rooted helper returns and source custody",
+        "head": "e3ada96e8f17cc4082862125a9434141823c4311",
+        "conclusion": "success"
+      }
+    ],
+    "supersedes_only_prior_S1_historical_HTML_unavailability": true,
+    "historical_image_bytes_or_server_verified": false
+  }
 }

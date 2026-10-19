@@ -142,7 +142,7 @@ class SuzakuSource(unittest.TestCase):
 
     def test_permanent_initial_custody_exact_hashes_and_head_scope(self):
         receipt = json.loads((REPORT.parent / 'STONEAGE-CN70-SUZAKU-CUSTODY-R1.json').read_text())
-        self.assertEqual(len(receipt['permanent_derived_files']), 3)
+        self.assertEqual(len(receipt['permanent_derived_files']), 4)
         for pin in receipt['permanent_derived_files']:
             payload = (REPORT.parents[2] / pin['path']).read_bytes()
             self.assertEqual(len(payload), pin['bytes'])
@@ -152,6 +152,17 @@ class SuzakuSource(unittest.TestCase):
             rows = receipt['validation'][name]
             self.assertEqual(len(rows), count)
             self.assertTrue(all(r['head'] == receipt['content_commit']['sha'] and r['conclusion'] == 'success' for r in rows))
+
+    def test_permanent_historical_ci_replay_does_not_upgrade_image_or_runtime(self):
+        saved = json.loads((REPORT.parent / 'STONEAGE-CN70-SUZAKU-HISTORICAL-CI-REPLAY-R1.json').read_text())
+        h = json.loads(SNAPSHOT.read_text())
+        self.assertTrue(saved['historical_sina_html_verified'])
+        self.assertFalse(saved['historical_image_bytes_verified'])
+        self.assertFalse(saved['original_species_master_or_runtime_verified'])
+        self.assertFalse(saved['raw_html_or_image_bytes_in_output'])
+        self.assertEqual(saved['historical_sina_html']['sha256'], h['sha256'])
+        self.assertEqual(saved['historical_sina_html']['capture_timestamp'], h['capture_timestamp'])
+        self.assertTrue(saved['historical_sina_html']['facts_match_prior_source'])
 
 
 if __name__ == '__main__':

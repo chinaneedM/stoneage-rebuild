@@ -16126,3 +16126,10 @@ R19 内容主线77b8b06a08ee93aea2e14887fc97de453aa6b19d已检验：候选10与�
 有界历史身份查证新取得Wayback20031225115132的新浪正文回放，HTTP200/15189B SHA25645d4106f945dbf3564bed9ddcab85f2447911291a31dc97406a11c6197eb6c33；华义归因、刊发标签、叙事核心与全部提取字段/原图链接与现存S1相同。新增 `STONEAGE-CN70-SUZAKU-2003-SNAPSHOT-R1.json`，旧报告“历史原件未取得/null”作为当时checkpoint完整保留，由后续补证只更新S1网页身份；非华义原主机、原服、图像历史字节或精确客户端build。代码/CI增加只此固定历史URL与严格源字节pin，不允许用当前页替代；本新HEAD自身候选/main、历史CI artifact须按实际验收，不套旧13项或父绿灯。
 
 最高NEXT仍R23、Stage A7 PARTIAL+2 OPEN、Stage B/百科GATED、R79暂停；停止本朱雀/2.5故事和快照helper扩张，不把新网页补证当恢复出原服或物种成长表。
+
+
+### R22同期HTML独立CI与永久保管实际验收
+
+补证main e3ada96e8f17cc4082862125a9434141823c4311 / tree d3534410703b832d476a25175240598c21b695f4，候选10和自身main11已实际全部success。源run39338706949/job118354613187实际17项测试与固定两现存HTML/两现存图片/一个2003新浪HTML快照均通过，2003字节严格核SHA且核心/字段一致，未以当前页替换历史页。artifact12227931635已实下载ZIP1450B SHA256e4e09f015c24590b0848447bf5f5f1a51ea83438b00267650ae5ef85e3a22772，唯一replay.json3524B SHA2569e9044525be7eac58baa3c394f60bf9e4e45f6b610a1c130264194bd275028ee / Git blob8461858fd12a10df563497357bea5ffeec1e1449，与本地五输入完整派生JSON相等。永久 `STONEAGE-CN70-SUZAKU-HISTORICAL-CI-REPLAY-R1.json` 和保管收据后续段保留实际精确HEAD的10/11记录、ZIP/raw/Git、旧四输入报告与历史待验阶段，不重写过去。
+
+本轮新增一运营归因叙事、两图参考及一同期网页补证；2002旧门户作者、历史图像字节、原服pet master/成长/脚本仍未知，世界线不强合。NEXT R23，Stage A7 PARTIAL+2 OPEN、Stage B/百科GATED、R79暂停。此保管新HEAD仍须看自身Actions，不能借父绿灯。
