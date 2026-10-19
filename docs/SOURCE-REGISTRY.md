@@ -7279,3 +7279,8 @@ http://www.titan.co.jp/stoneage/manual02.html，严格重放https://web.archive.
 ### 日本世界定位正文独立原件与ZIP/raw/Git保管链 — 2026-10-19
 
 内容f04e25581e54cc8e14c35fe6fa9887539f30bb54 / tree8546aba9f05cf365f39c179b431de03ed92491f7的11候选/12自身main检查实际全success，源run39201218785/job117894396161重取精确20031214053427正文并完成7反例/完整报告cmp。artifact12164420061下载ZIP2516B SHA2568d2aaa6d85b73dbc421ce22cf4c8f7442edad4807ff21c44f38ee60999fd5e5f；唯一derived.json9192B SHA2569879a886d17bb5658349085ccf5768f952ab2daf0aed7299a7f66bfd06915313匹配永久blob7d591df2db42ed3fe2a8cd61e224475fa123990c。详见STONEAGE-JP2003-WORLD-PREMISE-ACCEPTANCE-R1.json；原正文SHA、初次阅读器不可用/捕获跳转均保留，未获取任何截图/图像/程序。回执自身新HEAD门另观测。
+
+
+### 日本Hangame2003游戏特点一正文 — 2026-10-19
+
+真实入口为已验game.asp标签ゲームの特徴，原http://www.hangame.co.jp/publish/sa/game2.asp；初请20031214053427跳实际20031214050618，精确https://web.archive.org/web/20031214050618id_/http://www.hangame.co.jp/publish/sa/game2.asp，17136B SHA2564e92ce95cfb836db9fd78f7b4f64905e60270202d1e2ea0b00cf56b79b6440b0、CP932严格。五可见行5tutorials，引用五tokuchopic图片但全无像素；本地第二次完整cmp及18相关测试通过，独立源门/ZIP/raw/Git/main必须另实际验收。规格/报告STONEAGE-JP2003-GAME-FEATURES-R1保留12×4/5人等数值语境和未知，原HTML/图片/程序不入Git。

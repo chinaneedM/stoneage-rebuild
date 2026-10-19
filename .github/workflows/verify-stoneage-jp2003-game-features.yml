@@ -1,0 +1,32 @@
+name: Verify Japanese official game features without cosmetic party or encounter promotion
+on:
+  push:
+    paths:
+      - tools/stoneage_jp2003_game_features.py
+      - tests/test_stoneage_jp2003_game_features.py
+      - tools/stoneage_early_content_probe.py
+      - research/recovered/STONEAGE-JP2003-GAME-FEATURES-R1.json
+      - docs/specs/STONEAGE-JP2003-GAME-FEATURES-R1.md
+      - .github/workflows/verify-stoneage-jp2003-game-features.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exact-official-feature-prose:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest tests.test_stoneage_jp2003_game_features -v
+      - name: Reacquire one exact original body with no assets or linked pages
+        run: python -m tools.stoneage_jp2003_game_features --output output/derived.json
+      - name: Compare complete permanent derived metadata
+        run: cmp output/derived.json research/recovered/STONEAGE-JP2003-GAME-FEATURES-R1.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: jp2003-game-features-derived-only
+          path: output/derived.json
+          retention-days: 30
