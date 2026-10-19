@@ -314,3 +314,17 @@ positions, not authenticated client character IDs. The adjacent
 [Wayi marine/social/crafting source](docs/specs/STONEAGE-WAYI-MARINE-SOCIAL-CRAFTING-R1.md)
 adds version-bounded official descriptions. Use the final CURRENT-STATE entry
 for the live queue; the dated notes below preserve earlier milestones.
+
+
+### 2026-10-19 — Island history and a region-qualified hero quest source
+
+The [island and hero guide source](docs/specs/STONEAGE-WAEI-CN20-ISLAND-HERO-CONTENT-R1.md)
+adds five island descriptions, relative fictional history, and a three-actor
+entry route with a birthplace exception. The Mainland official host explicitly
+labels the hero island as open in Taiwan and not yet open in Mainland China;
+these are documentary claims, not verified original-server execution. The
+[six source relations](docs/specs/STONEAGE-WAEI-HERO-GUIDE-SOURCE-RELATIONS-R1.md)
+compare the guide with accepted later flower/shell configuration while keeping
+names, locators, item IDs and incomplete conditions separate. Both derived
+reports and source/artifact custody receipts are retained in Git. Consult the
+last CURRENT-STATE entry for the live queue.
