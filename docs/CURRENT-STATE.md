@@ -15812,3 +15812,16 @@ OFFICIAL-VERSION-COVERAGE-MATERIAL-REVIEW-08复用R7的22域状态，近期日�
 交付STONEAGE-WAYI2003-NEWBIE-RIDING-PLAN-R1.json/规格、R11复审/取源历史、8负例及独立精确索引/正文全量cmp工作流。本地第二次两原件重取全报告cmp和8测试通过，远端Actions、ZIP/raw/Git和自身main须实际另验。不是1999/TW1.0/陆1.82已有骑乘证明，也不自动采纳为新石器设计。
 
 **唯一最高NEXT TW-WAYI-NEWBIE-RIDING-SUCCESSOR-GATE-01**：同已验索引实际idno67《新手騎寵計劃（續）》、2003-12-23，仅一正文先验主题/捕获，有限比较计划调整与可证实施边界；一份有内容的后续合同或具体缺源即止，不图像/其它栏目/数值或R79循环。Stage A7 PARTIAL+2 OPEN、Stage B/百科GATED、R79 PAUSED_NON_BLOCKING保持，无整体百分比。
+
+
+## 2026-10-19 — 新手骑宠原计划主线验收，续篇一方矿石工作线索
+
+骑宠计划内容ba781f0c9d9e69ad821e5599dcba853b65d45373 / treeef3d98d5b2670401d89e4bd3a8af38f323e8900c的10候选、自身11项main全部实际success。源run39203934337/job117902568662重取精确索引/唯一idno66文章、8负例/全cmp；artifact12165057158实下载ZIP2723B SHA2562087881b57417c81ef64ade218a6a3e61979f3e2274c5ba80c30bec0c92ca36d，唯一derived.json11911B SHA256b23c0220c58840ddb14ee9eea835687924cc16b42afe091af127f67472580fcd等于永久Git blobfb75c57e33a745f41634ef9ea36dfce8da2dfb4d。STONEAGE-WAYI2003-NEWBIE-RIDING-PLAN-ACCEPTANCE-R1.json留10/11实际run/HEAD、源/ZIP/raw/Git；初次周年错题纠正和转蛋404保留，未说runner重演初始本地失败。
+
+按当前NEXT只取已验索引真实idno67《新手騎寵計劃（續）》一正文，索引标2003-12-23；实20051113145307，19686B SHA256caf0ab5a51a87d0ddd6f3f6aea4be77cde4dbaed80b1c6e900f4946da703bea2，Big5严格。正文捕获比前篇20051117早，不把捕获先后当源文章日期/规则更新顺序。第二次精确索引/续篇网络重取全派生cmp通过，原图两引用未取，无程序/其它栏目。
+
+三个来源记录：成人礼完成/已骑宠是续篇叙事起点，未明确确认前篇赠虎、种类/忠诚/能力/领取脚本实施；新一方工作线索为渔村的「礦石研究者」找人采集「柯奧山」发现的「奇怪礦石」，是角色称谓/地理/材料关系，不给个人NPC名字、村落别名、ID/坐标/数量/路线/奖励/前置flag；矿石工与前篇快递老板上下文不同，绝不搬用30级奖励。另酷哥在「石器博物館」的真假/PK故事只留作者轶谈语境，不当GM账号、NPC身份、博物馆全域可PK或正式世界史/任务剧本。两同系列文献不是独立原服执行证人，赠虎实施保持OPEN_EVIDENCE_LIMITED。
+
+交付STONEAGE-WAYI2003-RIDING-SUCCESSOR-ORE-WORK-R1.json/规格，1tutorials+1quests工作线索+1sources轶谈语境，非恢复完整任务/NPC主表。8新负例、本轮16相关测试通过；独立精确索引/续篇+已固定前篇Git报告全cmp、ZIP/raw/Git及自身main按实际另验。原HTML/图片/程序不入Git，完整历史前缀/失败保留，原1999/TW1.0/陆1.82同构建/原服事务仍未知。
+
+**唯一最高NEXT OFFICIAL-VERSION-MATERIAL-COVERAGE-REVIEW-12**：复用22域/官方源目录，停止本系列继续推赠虎脚本或矿石奖励，选择另一实质内容缺口、一合格原源及停止条件并取源；具体同版原任务/补丁/服务端证据才重开实施问题。不自动其它制作人文/图像/公式helper/R79。Stage A7 PARTIAL+2 OPEN、Stage B/百科GATED、R79 PAUSED_NON_BLOCKING，无整体百分比。

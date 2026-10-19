@@ -1,0 +1,33 @@
+name: Verify Wayi riding sequel and ore work lead without copied reward or implementation claims
+on:
+  push:
+    paths:
+      - tools/stoneage_wayi_newbie_riding_successor.py
+      - tools/stoneage_wayi_newbie_riding_plan.py
+      - tools/stoneage_early_content_probe.py
+      - tests/test_stoneage_wayi_newbie_riding_successor.py
+      - research/recovered/STONEAGE-WAYI2003-RIDING-SUCCESSOR-ORE-WORK-R1.json
+      - research/recovered/STONEAGE-WAYI2003-NEWBIE-RIDING-PLAN-R1.json
+      - docs/specs/STONEAGE-WAYI2003-RIDING-SUCCESSOR-ORE-WORK-R1.md
+      - .github/workflows/verify-stoneage-wayi-riding-successor.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exact-successor-and-pinned-plan-comparison:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest tests.test_stoneage_wayi_newbie_riding_successor -v
+      - name: Reacquire exact index and only selected sequel then compare prior pinned Git report
+        run: python -m tools.stoneage_wayi_newbie_riding_successor --output output/derived.json
+      - run: cmp output/derived.json research/recovered/STONEAGE-WAYI2003-RIDING-SUCCESSOR-ORE-WORK-R1.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: wayi-riding-successor-derived-only
+          path: output/derived.json
+          retention-days: 30

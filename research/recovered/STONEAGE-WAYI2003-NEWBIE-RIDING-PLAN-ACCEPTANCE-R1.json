@@ -1,0 +1,244 @@
+{
+  "schema": "stoneage.wayi2003.newbie_riding_plan.acceptance.r1",
+  "date": "2026-10-19",
+  "task": "TW-WAYI-NEWBIE-RIDING-PLAN-SOURCE-01",
+  "head": "ba781f0c9d9e69ad821e5599dcba853b65d45373",
+  "tree": "ef3d98d5b2670401d89e4bd3a8af38f323e8900c",
+  "parent": "7487a7dfbc15fcb9efdc7dbd93ed317b21ba61bf",
+  "source": {
+    "index_capture": "20050612011406",
+    "index_bytes": 28883,
+    "index_sha256": "19661e2acca046bf8c6dc86dc968107fe9935cd58a8f3cd8ce5e1de5aeba7f8b",
+    "article_original_url": "http://www.wayi.com.tw/stoneage/producer/producer02.asp?idno=66",
+    "article_capture": "20051117143741",
+    "article_bytes": 19964,
+    "article_sha256": "b1f2163b80137e2140c36a6675a42e4ac1f2e3cc367e08b2a850cd15a6261790",
+    "index_date": "2003-12-10",
+    "index_date_is_deployment_proven": false
+  },
+  "independent_source_replay": {
+    "run_id": 39203934337,
+    "job_id": 117902568662,
+    "job": "exact-column-index-and-riding-plan",
+    "artifact_id": 12165057158,
+    "artifact_name": "wayi-newbie-riding-plan-derived-only",
+    "archive_download_url": "https://api.github.com/repos/chinaneedM/stoneage-rebuild/actions/artifacts/12165057158/zip",
+    "zip_bytes": 2723,
+    "zip_sha256": "2087881b57417c81ef64ade218a6a3e61979f3e2274c5ba80c30bec0c92ca36d",
+    "raw_bytes": 11911,
+    "raw_sha256": "b23c0220c58840ddb14ee9eea835687924cc16b42afe091af127f67472580fcd",
+    "git_blob": "fb75c57e33a745f41634ef9ea36dfce8da2dfb4d",
+    "byte_comparison_and_negative_boundaries": "PASS"
+  },
+  "permanent_report": {
+    "path": "research/recovered/STONEAGE-WAYI2003-NEWBIE-RIDING-PLAN-R1.json",
+    "git_blob": "fb75c57e33a745f41634ef9ea36dfce8da2dfb4d",
+    "bytes": 11911,
+    "sha256": "b23c0220c58840ddb14ee9eea835687924cc16b42afe091af127f67472580fcd"
+  },
+  "branch_checks": [
+    {
+      "id": 39203934211,
+      "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+      "head_sha": "ba781f0c9d9e69ad821e5599dcba853b65d45373",
+      "head_branch": "agent/wayi2003-newbie-riding-plan-r1-20261019",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39203934211"
+    },
+    {
+      "id": 39203934182,
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "head_sha": "ba781f0c9d9e69ad821e5599dcba853b65d45373",
+      "head_branch": "agent/wayi2003-newbie-riding-plan-r1-20261019",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39203934182"
+    },
+    {
+      "id": 39203934117,
+      "name": "Validate legacy StoneAge assistant history and pet content gaps",
+      "head_sha": "ba781f0c9d9e69ad821e5599dcba853b65d45373",
+      "head_branch": "agent/wayi2003-newbie-riding-plan-r1-20261019",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39203934117"
+    },
+    {
+      "id": 39203934115,
+      "name": "Validate StoneAge Stage A joint review decision",
+      "head_sha": "ba781f0c9d9e69ad821e5599dcba853b65d45373",
+      "head_branch": "agent/wayi2003-newbie-riding-plan-r1-20261019",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39203934115"
+    },
+    {
+      "id": 39203934212,
+      "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+      "head_sha": "ba781f0c9d9e69ad821e5599dcba853b65d45373",
+      "head_branch": "agent/wayi2003-newbie-riding-plan-r1-20261019",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39203934212"
+    },
+    {
+      "id": 39203934374,
+      "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+      "head_sha": "ba781f0c9d9e69ad821e5599dcba853b65d45373",
+      "head_branch": "agent/wayi2003-newbie-riding-plan-r1-20261019",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39203934374"
+    },
+    {
+      "id": 39203934180,
+      "name": "Validate Stage A early source gap triage",
+      "head_sha": "ba781f0c9d9e69ad821e5599dcba853b65d45373",
+      "head_branch": "agent/wayi2003-newbie-riding-plan-r1-20261019",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39203934180"
+    },
+    {
+      "id": 39203934337,
+      "name": "Verify Wayi newbie riding operator plan without implemented reward or numeric projection",
+      "head_sha": "ba781f0c9d9e69ad821e5599dcba853b65d45373",
+      "head_branch": "agent/wayi2003-newbie-riding-plan-r1-20261019",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39203934337"
+    },
+    {
+      "id": 39203934173,
+      "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+      "head_sha": "ba781f0c9d9e69ad821e5599dcba853b65d45373",
+      "head_branch": "agent/wayi2003-newbie-riding-plan-r1-20261019",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39203934173"
+    },
+    {
+      "id": 39203934206,
+      "name": "Validate StoneAge preproduction content archive and wiki boundary",
+      "head_sha": "ba781f0c9d9e69ad821e5599dcba853b65d45373",
+      "head_branch": "agent/wayi2003-newbie-riding-plan-r1-20261019",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39203934206"
+    }
+  ],
+  "main_checks": [
+    {
+      "id": 39204134233,
+      "name": "Validate legacy StoneAge assistant history and pet content gaps",
+      "head_sha": "ba781f0c9d9e69ad821e5599dcba853b65d45373",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39204134233"
+    },
+    {
+      "id": 39204133977,
+      "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+      "head_sha": "ba781f0c9d9e69ad821e5599dcba853b65d45373",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39204133977"
+    },
+    {
+      "id": 39204134114,
+      "name": "Validate StoneAge Stage A joint review decision",
+      "head_sha": "ba781f0c9d9e69ad821e5599dcba853b65d45373",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39204134114"
+    },
+    {
+      "id": 39204134041,
+      "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+      "head_sha": "ba781f0c9d9e69ad821e5599dcba853b65d45373",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39204134041"
+    },
+    {
+      "id": 39204134049,
+      "name": "Validate StoneAge preproduction content archive and wiki boundary",
+      "head_sha": "ba781f0c9d9e69ad821e5599dcba853b65d45373",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39204134049"
+    },
+    {
+      "id": 39204134177,
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "head_sha": "ba781f0c9d9e69ad821e5599dcba853b65d45373",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39204134177"
+    },
+    {
+      "id": 39204134195,
+      "name": "Validate Stage A early source gap triage",
+      "head_sha": "ba781f0c9d9e69ad821e5599dcba853b65d45373",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39204134195"
+    },
+    {
+      "id": 39204134057,
+      "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+      "head_sha": "ba781f0c9d9e69ad821e5599dcba853b65d45373",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39204134057"
+    },
+    {
+      "id": 39204134141,
+      "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+      "head_sha": "ba781f0c9d9e69ad821e5599dcba853b65d45373",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39204134141"
+    },
+    {
+      "id": 39204134219,
+      "name": "Verify Wayi newbie riding operator plan without implemented reward or numeric projection",
+      "head_sha": "ba781f0c9d9e69ad821e5599dcba853b65d45373",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39204134219"
+    },
+    {
+      "id": 39204134076,
+      "name": "Independently verify TW1.0 R58 rooted helper returns and source custody",
+      "head_sha": "ba781f0c9d9e69ad821e5599dcba853b65d45373",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39204134076"
+    }
+  ],
+  "acceptance": {
+    "source_and_actual_artifact_zip_downloaded_and_hashed": true,
+    "full_derived_byte_comparison_and_negative_boundaries": "PASS",
+    "initial_local_wrong_topic_and_404_intake_history_preserved": true,
+    "independent_job_replays_only_successful_index_and_selected_article": true,
+    "original_gift_stats_or_runtime_implemented_proven": false,
+    "images_programs_or_raw_html_committed": false,
+    "receipt_own_commit_checks_must_be_observed_separately": true,
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b_and_wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING"
+  }
+}
