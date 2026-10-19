@@ -7274,3 +7274,8 @@ http://www.titan.co.jp/stoneage/manual02.html，严格重放https://web.archive.
 ### 日本Hangame2003世界観分栏 — 2026-10-19
 
 原http://www.hangame.co.jp/publish/sa/game.asp，R5setup真实静态入口。网页阅读器UNAVAILABLE不证历史不存在；直接HTTP初请20031214055553跳实际20031214053427id_，12869B SHA256c3cb0c64811dfd2d83e5ab809119ddcf09b5ce5b709d1e3c8de1e58c3ec91bfb、CP932严格。第二次严格https://web.archive.org/web/20031214053427id_/http://www.hangame.co.jp/publish/sa/game.asp本地全量cmp通过。实际标题ストーンエイジ/分栏世界観，四可见段/5sources记录，非新增具名地图/NPC/物种。学校/石币/100种下界/图鉴与轻松定位的具体未知见永久派生/规格STONEAGE-JP2003-WORLD-PREMISE-R1；原HTML/图像/程序不入Git。独立runner/ZIP/raw/Git/自身main实际另验。真实game2.asp标签ゲームの特徴仅资格，不等于已读正文。
+
+
+### 日本世界定位正文独立原件与ZIP/raw/Git保管链 — 2026-10-19
+
+内容f04e25581e54cc8e14c35fe6fa9887539f30bb54 / tree8546aba9f05cf365f39c179b431de03ed92491f7的11候选/12自身main检查实际全success，源run39201218785/job117894396161重取精确20031214053427正文并完成7反例/完整报告cmp。artifact12164420061下载ZIP2516B SHA2568d2aaa6d85b73dbc421ce22cf4c8f7442edad4807ff21c44f38ee60999fd5e5f；唯一derived.json9192B SHA2569879a886d17bb5658349085ccf5768f952ab2daf0aed7299a7f66bfd06915313匹配永久blob7d591df2db42ed3fe2a8cd61e224475fa123990c。详见STONEAGE-JP2003-WORLD-PREMISE-ACCEPTANCE-R1.json；原正文SHA、初次阅读器不可用/捕获跳转均保留，未获取任何截图/图像/程序。回执自身新HEAD门另观测。
