@@ -15674,3 +15674,18 @@ OFFICIAL-PET-VISUAL-COVERAGE-AND-VERSION-REVIEW-01从三页各四个表格组取
 华义内容bce32d65afc4b3e3c5a31b263e9da4efc1861770 / tree20bd90961eb764921d620f10099e158ade46db84的10候选门、11项自身主线Actions全部实际success。源run39177816800/job117824021633重取唯一精确华义正文、9负例及完整报告cmp通过。artifact12154129532实下载ZIP2242B SHA2562722e0a81c35d63194b66c20514164ce077239e6944e97022f25981364b7622e，内唯一derived.json7173B SHA256f76d9008a425cc335706510303ceff96be72c1aeba9ee42a1d7b06c87a248669与永久Git blob a428b3b910e5876f0db5b2abb1977a4164fed017逐字节相同。永久凭据STONEAGE-WAYI-THEATRE-ARCADES-ACCEPTANCE-R1.json记录精确run/head/job、ZIP/raw/Git和初始连续性路径blob，与日本设施包回执独立保管。原正文、图像和程序不入Git；两个内容HEAD均无本HEAD失败/重跑，首图404仍是历史缺口而非像素取得。
 
 本轮实质为日本13类村落服务及台湾3个具名游乐循环文献。艺术值/积分/不同设施账本、原游戏ID、数值/概率/价表/地图和原服运行事务仍分开或UNKNOWN；旧四村石质建筑未认证为村长家。全部历史前缀、旧失败与图片缺口保留，Stage A7 PARTIAL+2 OPEN、Stage B/百科GATED、R79 PAUSED_NON_BLOCKING不变。**唯一最高NEXT仍OFFICIAL-VERSION-COVERAGE-MATERIAL-REVIEW-08**，复用22域和已认证官方源目录，选一个早期关键实物或明确早期缺口后另一地区具名材料，给一来源/停止条件并开始取源，不继续空矩阵、同文/图片循环或R79。此回执提交仅文书，自身Actions必须另观测，不能套用父HEAD11绿。
+
+
+## 2026-10-19 — R8回早期一方手册：物品/宠物邮件/名片/共用场所九节语义
+
+按实时远端main12e8cced70dc389abce89dd9e4b0e4c37dd63462 / tree6c354e29945a8ab8cc8144d16e8ffe1c552b981a重启，357分支、0开放PR、该HEAD10主线门实际success。七连续性文件/完整CURRENT前缀、路线、22域/R7复读并与新origin/main逐字节核对；无in_progress，旧queued37642417333保留不冒作本轮任务。全部历史与失败继续留存。
+
+OFFICIAL-VERSION-COVERAGE-MATERIAL-REVIEW-08复用R7的22域状态，近期日本人物/宠物/村落/设施与台湾2005世界/系统/游乐资料已形成实物，但早期物品与社交操作仍有来源语义缺口。选JSS2001-MAIL-ITEM-AND-SHARED-VENUE-CONTENT-01，只重取已认证manual02.html一个原URL、不取图片/程序/新链接。实得20010418083149、28434B SHA25650b9771ec501067136629c8e083a190e979e53dd9ba141903f78b76d43b602cc，Shift-JIS严格，字节与旧源完全相同。**不是新网页/首次原件**；旧通用目录已经给3070/7010/8030摘要指纹，manual02旧creation_contract为null。本轮新增九节行为语义，与旧12节宠物/战斗及6节服务合同无重叠，未把旧摘要冒作新源。
+
+实际九节3060/3070/7000/7010/7020/8030/8040/8110/8120：条件式物品目标窗/拖放或双击装备/调金额放地、普通与宠物邮件、拾取/购买入物品栏、邻接右击拾取、名片同意开关登出回NO但非删联系人、原会话日期文件说明；免费共用聊天室三房/大厅/婚礼场地、斗技场购票/等级≤9或排名77/777的枚举免票情形/局部免费医院/三类商店/四试合场/观战。四村入口只留原名与出处，不给地图ID/路线。
+
+邮件关键分支：返还未拾取即登出为流浪宠；返还前登出则数小时内登录仍返回身边、以后流浪；流浪再经另一个未知时长消失。普通邮件战斗可收发，宠物邮件不可；不填小时数、TTL/原服IO。8110/8120特殊票丢地即消失、离场问题、登出从SP重开逐节保留，不给同票ID/登录恢复票/所有免费访客买票结论，不扩大为普通落地物品一律立即消失或所有医院免费。
+
+交付STONEAGE-JSS2001-MAIL-ITEMS-SHARED-VENUES-R1.json及同名规格，7个tutorials+2个maps研究记录、七必需字段/每节出处，非9份原地图或运行事务。R8机器记录STONEAGE-OFFICIAL-VERSION-COVERAGE-MATERIAL-REVIEW-R8.json。12反例/相关31本地通过；修正来源新颖性元数据后的独立runner须实际重取同一手册、九节摘要/业务边界、完整cmp，实际ZIP/raw/Git及main验收另记。原件不入Git，原1999/TW1.0/CN1.82同构建、原服保存/价表/实体ID仍UNKNOWN。
+
+**最高NEXT EARLY-SOURCE-MAIL-VENUE-CROSS-VERSION-BOUNDARY-01**：仅复用本新语义及既有2001普通落地/2003设施/2005场所报告，有限衔接并明确不可合并的时间、物品、场所与版本；零新增原页/资产，不写空矩阵或新生产规则。Stage A7 PARTIAL+2 OPEN、Stage B/百科GATED、R79 PAUSED_NON_BLOCKING，无整体百分比。

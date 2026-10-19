@@ -1,0 +1,164 @@
+{
+  "boundaries": {
+    "all_22_baseline_statuses_unchanged": true,
+    "original_1999_tw10_or_cn182_same_build_proven": false,
+    "r79": "PAUSED_NON_BLOCKING",
+    "stage_a_families": "7_PARTIAL_2_OPEN",
+    "stage_b_and_wiki": "GATED"
+  },
+  "date": "2026-10-19",
+  "domains_unchanged": [
+    {
+      "baseline_evidence_status": "PARTIAL_SOURCE",
+      "domain_id": "version_lineage"
+    },
+    {
+      "baseline_evidence_status": "OPEN_VISUAL",
+      "domain_id": "login_splash"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "domain_id": "character_creation"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_RESOURCE",
+      "domain_id": "character_sprite_model"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "domain_id": "world_map"
+    },
+    {
+      "baseline_evidence_status": "OPEN_CONTENT",
+      "domain_id": "npc_identity"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "domain_id": "npc_dialog_ui"
+    },
+    {
+      "baseline_evidence_status": "OPEN_CONTENT",
+      "domain_id": "quest_content"
+    },
+    {
+      "baseline_evidence_status": "OPEN_SAME_BUILD_ROSTER",
+      "domain_id": "pet_species"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_RESOURCE",
+      "domain_id": "pet_visual"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "domain_id": "pet_stats"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_DESCENDANT",
+      "domain_id": "pet_growth"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "domain_id": "pet_skills"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_DESCENDANT",
+      "domain_id": "pet_encounter"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_DESCENDANT",
+      "domain_id": "ride_mount"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "domain_id": "battle_ui_rules"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "domain_id": "item_equipment_economy"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_RESOURCE",
+      "domain_id": "audio_fx"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_CATALOG",
+      "domain_id": "helper_versions"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_CATALOG",
+      "domain_id": "helper_capabilities"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_DISCOVERY",
+      "domain_id": "reference_web"
+    },
+    {
+      "baseline_evidence_status": "DESIGN_PREP_ONLY",
+      "domain_id": "future_player_wiki"
+    }
+  ],
+  "next": "EARLY-SOURCE-MAIL-VENUE-CROSS-VERSION-BOUNDARY-01",
+  "prior_review": {
+    "path": "research/recovered/STONEAGE-OFFICIAL-VERSION-COVERAGE-MATERIAL-REVIEW-R7.json",
+    "sha256": "f359c306a09435903bfaffab55cdff9fb915c69c7e26da74ac7f8dbefc5d61c8"
+  },
+  "recent_material": {
+    "early_same_build_server_and_pet_roster_gap": "OPEN_NOT_FILLED_BY_LATER_REFERENCE_LIBRARY",
+    "japan_hangame_2003": "Named characters/pets/villages and thirteen operator-described services; precise client IDs/runtime and most original pixels remain unknown",
+    "taiwan_wayi_2005": "World/ice/marine/social/crafting/system/theatre-and-arcade prose attributed separately; promotional descriptions are not original-server deployment"
+  },
+  "schema": "stoneage.official_version_coverage.material_review.r8",
+  "selected_package": {
+    "actual_capture": "20010418083149",
+    "deliverable": "Seven provenance-bearing item/mail/social operation records and two named shared-venue descriptions with exact numeric exceptions and unknown timers",
+    "earlier_generic_fingerprint_catalog": {
+      "manual02_creation_contract": null,
+      "new_material_is_behavior_contracts_not_claim_of_first_hash": true,
+      "path": "research/recovered/JSS-LOGIN-MANUAL-CREATION-CONTRACT-R1.json",
+      "selected_anchors_already_fingerprinted": [
+        "3070",
+        "7010",
+        "8030"
+      ]
+    },
+    "new_original_url": false,
+    "newly_structured_sections": [
+      "3060",
+      "3070",
+      "7000",
+      "7010",
+      "7020",
+      "8030",
+      "8040",
+      "8110",
+      "8120"
+    ],
+    "previously_structured_sections_in_two_existing_contracts": [
+      "3050",
+      "3051",
+      "3080",
+      "4010",
+      "4020",
+      "6010",
+      "6015",
+      "6020",
+      "6030",
+      "6040",
+      "7030",
+      "8010",
+      "8025",
+      "8026",
+      "8050",
+      "8070",
+      "8090",
+      "8100"
+    ],
+    "qualification": "Exact known first-party manual reacquired; material novelty is nine section contracts, not a new webpage",
+    "sha256": "50b9771ec501067136629c8e083a190e979e53dd9ba141903f78b76d43b602cc",
+    "source_url": "http://www.titan.co.jp/stoneage/manual02.html",
+    "stop_condition": "Only these nine sections, no images/binaries/new links or savedata helper execution",
+    "task": "JSS2001-MAIL-ITEM-AND-SHARED-VENUE-CONTENT-01"
+  },
+  "selection_reason": "Return to early first-party content with a concrete unsolved inventory/mail/social/venue attribution gap; reusing authenticated original bytes yields new material without repeating previously structured contracts or counting a new source.",
+  "task": "OFFICIAL-VERSION-COVERAGE-MATERIAL-REVIEW-08"
+}

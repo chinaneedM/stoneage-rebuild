@@ -1,0 +1,33 @@
+name: Verify JSS2001 mail item and shared venue source contracts without invented timers or fees
+on:
+  push:
+    paths:
+      - tools/stoneage_jss2001_mail_items_venues.py
+      - tools/stoneage_early_content_probe.py
+      - tests/test_stoneage_jss2001_mail_items_venues.py
+      - research/recovered/STONEAGE-JSS2001-MAIL-ITEMS-SHARED-VENUES-R1.json
+      - docs/specs/STONEAGE-JSS2001-MAIL-ITEMS-SHARED-VENUES-R1.md
+      - .github/workflows/verify-stoneage-jss2001-mail-items-venues.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exact-known-manual-new-sections:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Reject conflated mail timers consent resets free cases and ticket identities
+        run: python -m unittest tests.test_stoneage_jss2001_mail_items_venues -v
+      - name: Reacquire only known exact first party manual and derive nine new sections
+        run: python -m tools.stoneage_jss2001_mail_items_venues --output output/derived.json
+      - name: Replay complete permanent derived metadata
+        run: cmp output/derived.json research/recovered/STONEAGE-JSS2001-MAIL-ITEMS-SHARED-VENUES-R1.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: jss2001-mail-items-venues-derived-only
+          path: output/derived.json
+          retention-days: 30
