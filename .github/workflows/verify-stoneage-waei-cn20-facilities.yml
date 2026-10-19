@@ -1,0 +1,30 @@
+name: Verify one official CN2.0 facilities article without NPC script promotion
+on:
+  push:
+    paths:
+      - tools/stoneage_waei_cn20_facilities.py
+      - tests/test_stoneage_waei_cn20_facilities.py
+      - research/recovered/STONEAGE-WAEI-CN20-PUBLIC-FACILITIES-R1.json
+      - docs/specs/STONEAGE-WAEI-CN20-PUBLIC-FACILITIES-R1.md
+      - .github/workflows/verify-stoneage-waei-cn20-facilities.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  known-sidebar-and-one-new-facilities-body:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest tests.test_stoneage_waei_cn20_facilities -v
+      - name: Reacquire known sidebar and one selected facilities article
+        run: python -m tools.stoneage_waei_cn20_facilities --output output/derived.json
+      - run: cmp output/derived.json research/recovered/STONEAGE-WAEI-CN20-PUBLIC-FACILITIES-R1.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: waei-cn20-facilities-derived-only
+          path: output/derived.json
+          retention-days: 30

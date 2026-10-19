@@ -7384,3 +7384,18 @@ R13显式轮换北京华义原http://www.waei.com.cn:80/ZHUANQU/stoneage2/tyro/u
 工具/17反例及结构测试、独立仅两实际十月原页+固定父/视觉Git metadata、全报告cmp、derived-only工作流已加；35相关本地测试通过。第二次精确网络重取和候选/自身main源job、ZIP实下载/raw全字节/Git blob验收分别按实际记录，未发生不提前称绿。全部初始历史前缀/失败/22域原状态保留。
 
 **唯一最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-15**：本有限三页目录CLOSED_QUALIFIED_THREE_PAGE_WEB_CATALOG_NOT_GAME_ROSTER，停止分页/图像扩取，返回全部官方版本/22域材料队列，选择具名NPC/任务/故事/环境实际正文缺口、真实来源和有限取源/停止条件；不空矩阵、数值公式循环/helper/R79。Stage A7 PARTIAL+2 OPEN、Stage B/百科GATED、R79 PAUSED_NON_BLOCKING，无整体百分比。
+
+
+## 2026-10-19 — 宠物三页实际保管验收，R15转公共设施一正文
+
+三页内容e3008b0367da961999ada7634debccf9d4f1a1b4 / tree0a1177683927b12ed23e16adae624571ddda6f7e的10候选、自身11项main实际全部success；run39240145512/job118018715274独立仅两十月原页+固定父/视觉Git metadata，17反例/完整cmp。artifact12180084942实下载ZIP7302B SHA25695d7b27a15151ae22b0922d975ea9572bc510f88cb315d402cd89ca0492d6fbf，唯一derived.json173510B SHA2568bcda48e9e8e298efe446b02f0039146fa4a81e509ca4d08c4989e6448f59fdb等于永久Git blobf950aa33af0b3ec8693b2867758faf006aee546b。STONEAGE-WAEI-CN20-NEW-PET-FINITE-CATALOG-ACCEPTANCE-R1.json永久保留实际源job、ZIP/raw/Git及精确HEAD的10/11检查；此有限目录闭合不作原服物种/同日全名册。
+
+按最高OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-15复用全部官方版本/22域来源队列，停止宠物分页及图像扩取，选择大陆村落环境/通用NPC服务/经济真实正文。已取new_pet1.asp实际侧栏「公共设施」href /ZHUANQU/stoneage2/sw/facility.asp；旧宠物派生未列此出链，不伪称旧JSON指针。阅读器不可用保留，直接HTTP初请20011023173210实跳20011204213609；73356B SHA256e18f0bced4935358e3be28e328d50a49a6dfbb8c26476a98c211892974e7ba16，严格GB18030，题石器时代2.0/文公共设施。入口十月、正文十二月分时来源，不推补丁顺序。
+
+新增14设施类别tutorials研究记录：村长家、医院、武器店和防具店、道具店、宠物店、肉店、便利商店、竞技场、聊天室、道场、纪录点、长毛象快递、长毛象公车、加美航空；逐行标题/图片引用/HTML声明尺寸/服务段SHA及来源限定转述。服务内容含村长家教学与家族管理、医院医师/护士/药剂师/美容师、5宠携带与寄宠教学、萨尔吉姆/卡鲁它那加工材料和玛丽娜丝/加加料理材料、原票返村、礼堂、南北百人道场不同挑战、贡品/在线人数、快递押金和陆海交通。原文表示每村设施不一，不给每村强配全表。
+
+护理/竞技场免费「10级以下」不推含10阈值；医师等泛称不当具名NPC；5宠/100关/100题不补完整master/题库/奖励；加工重复段不当独立证人；纪录点回顾不补版本日期；快递「早上（太阳出来前）」与天黑限制原样限定转述，不修成日出后/游戏时钟；十分之一押金只页面描述不实现公式。14图全未取，HTML声明尺寸非实际图片元数据；原服NPC个体ID/坐标/库存/收费/任务脚本与跨地区等同未知，原HTML/图像/程序不入Git。
+
+交付STONEAGE-WAEI-CN20-PUBLIC-FACILITIES-R1.json/规格、R15实质复审、13反例测试及已知侧栏+唯一新正文/全cmp/derived-only工作流。设施13+分页17相关本地测试通过；精确第二次网络重取/独立源job及自身main/ZIP/raw/Git保管须按实际另验，不借父11绿。22域原状态与完整初始历史前缀保留，七资料profile不是全部发行清单。
+
+**唯一最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-16**：本设施14行正文有限关闭，返回全官方发行/22域材料队列，优先具名NPC/任务/故事真实正文缺口，选一真实资格入口与有限取源/停止条件；不自动扩14图、服务数字比较、宠物页/数值公式/helper/R79。Stage A7 PARTIAL+2 OPEN、Stage B/百科GATED、R79 PAUSED_NON_BLOCKING，无整体百分比。
