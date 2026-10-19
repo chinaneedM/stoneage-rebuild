@@ -16117,3 +16117,12 @@ R19 内容主线77b8b06a08ee93aea2e14887fc97de453aa6b19d已检验：候选10与�
 将2.5“合作抗机器文明/依约自封”与7.0“两王一战/四兽封印”分为有来源的不同事件描述，不擅自判同一事件、先后、善恶或设定矛盾。交付 `STONEAGE-CN70-SUZAKU-MYTH-VISUAL-SOURCE-R1.json`、中文规格/R22评审、两正文两图固定重放与反例测试。七条研究记录满足既有七字段/19集合，不是七个实服实体；现行HTTP/核心/图像摘要与2002/2003历史原件SHA-null分开。独立CI及分支/main与派生ZIP保管须按实际另验，不能提前套父绿。
 
 **唯一最高NEXT `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-23`**：返全官方版本/22域，优先另一具名任务/NPC/世界故事一方原文；停止本朱雀商业活动、神殿坐标、截图成长推算和2.5盲递归。完整旧前缀与历史失败保留，Stage A7 PARTIAL+2 OPEN、Stage B/百科GATED、R79 PAUSED_NON_BLOCKING，无总体百分比。
+
+
+### 2026-10-20 — R22初包验收、派生保管与同期HTML补证
+
+内容main `d50539f3464fe30cef79b1b8a3f6444d37ca38de` / tree `414b0a9ecc560363de2ec9a95cdb495dcf068f60` 的候选10与自身main11已全部success。源run39338196277/job118352878578实际13测试及两HTML/两原图哈希与语义通过；artifact12228020901已实下载，ZIP1271B SHA25661f422c40e13f145ac77e5e3a038afeec270ce6c632a140bc8e52a049cea6ac1，唯一replay.json2967B SHA25648f342248c931175d5b2c9ed16fdc407836d002bc08ca8ff6c8d5c944cec62a8 / Git blob96cc19164e4270747e468e556651a7c15bc1a866。永久CI回放/收据保留实际10/11清单与旧四输入取源范围，不声称其已验后来快照。
+
+有界历史身份查证新取得Wayback20031225115132的新浪正文回放，HTTP200/15189B SHA25645d4106f945dbf3564bed9ddcab85f2447911291a31dc97406a11c6197eb6c33；华义归因、刊发标签、叙事核心与全部提取字段/原图链接与现存S1相同。新增 `STONEAGE-CN70-SUZAKU-2003-SNAPSHOT-R1.json`，旧报告“历史原件未取得/null”作为当时checkpoint完整保留，由后续补证只更新S1网页身份；非华义原主机、原服、图像历史字节或精确客户端build。代码/CI增加只此固定历史URL与严格源字节pin，不允许用当前页替代；本新HEAD自身候选/main、历史CI artifact须按实际验收，不套旧13项或父绿灯。
+
+最高NEXT仍R23、Stage A7 PARTIAL+2 OPEN、Stage B/百科GATED、R79暂停；停止本朱雀/2.5故事和快照helper扩张，不把新网页补证当恢复出原服或物种成长表。

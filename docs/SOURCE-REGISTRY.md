@@ -7531,3 +7531,6 @@ R21派生保管补记：源run39336345338/job118346678887与artifact12225748930�
 ## 2026-10-20 — R22朱雀、神兽封印与2.5故事比较
 
 S1：https://games.sina.com.cn/newgames/2003/12/121610098.shtml ，2003-12-16 14:38，正文明确华义官方消息归因；当前HTTP200/35322B。S2：https://www.ourgame.com/news/db/32/31192.html ，2002-2-5，当前HTTP200/5962B；设计/发行公司标签不等于作者归因。S1两实际图链I1/I2分别400×261和400×299 JPEG，均目视；HTTP升级HTTPS只为传输，不改资源路径。四输入URL、原图注、当前HTTP字节/UTC/SHA与两叙事核心SHA见 `research/recovered/STONEAGE-CN70-SUZAKU-MYTH-VISUAL-SOURCE-R1.json`。历史2002/2003原HTML/图片快照身份仍未认证，原HTML/图像不入Git；没有购买/竞价或原服操作。17173 2.5 raw567与故事超时、Sina12/22后续解码失败保留，不当独立见证。派生保管和自身Actions须另验，NEXT R23。
+
+
+R22后续补证：Wayback20031225115132的Sina S1原页面回放已实取15189B/SHA25645d4106f945dbf3564bed9ddcab85f2447911291a31dc97406a11c6197eb6c33；归因/刊发/核心和两图链与现页相同，查询和resolved URL见2003-SNAPSHOT报告。旧历史null记录保持取源当时事实，补证仅S1 HTML，不认证原图或华义原服。旧四输入run39338196277的artifact12228020901已实下载并永久保存派生回放/保管收据；新固定历史URL的CI须独立验收。

@@ -1,9 +1,10 @@
 import copy
+import hashlib
 import json
 import struct
 import unittest
 
-from tools.stoneage_cn70_suzaku_source import REPORT, URLS, extract_release, jpeg_dimensions, replay, validate_report
+from tools.stoneage_cn70_suzaku_source import REPORT, SNAPSHOT, URLS, extract_release, jpeg_dimensions, replay, validate_report, verify_snapshot
 
 
 class SuzakuSource(unittest.TestCase):
@@ -112,6 +113,45 @@ class SuzakuSource(unittest.TestCase):
             replay(self.report, [self.sample()])
         with self.assertRaises(ValueError):
             replay(self.report, [self.sample(), b'', b'', b''])
+
+    def test_historical_capture_is_distinct_from_current_page_and_images(self):
+        h = json.loads(SNAPSHOT.read_text())
+        self.assertEqual(h['capture_timestamp'], '20031225115132')
+        self.assertEqual(h['bytes'], 15189)
+        self.assertNotEqual(h['sha256'], self.report['inputs'][0]['http']['sha256'])
+        self.assertEqual(h['core_sha256'], self.report['inputs'][0]['core_sha256'])
+        self.assertFalse(h['historical_image_bytes_verified'])
+        self.assertFalse(h['original_server_or_wayi_host_verified'])
+        self.assertTrue(h['prior_checkpoint_not_rewritten'])
+
+    def test_current_or_synthetic_html_cannot_replace_historical_byte_pin(self):
+        h = json.loads(SNAPSHOT.read_text())
+        with self.assertRaises(ValueError):
+            verify_snapshot(h, self.sample(), self.report)
+        h['capture_timestamp'] = '20261020'
+        with self.assertRaises(ValueError):
+            verify_snapshot(h, b'', self.report)
+
+    def test_permanent_initial_ci_replay_is_only_the_four_input_checkpoint(self):
+        saved = json.loads((REPORT.parent / 'STONEAGE-CN70-SUZAKU-CI-REPLAY-R1.json').read_text())
+        self.assertEqual(len(saved['current_http']), 4)
+        self.assertFalse(saved['historical_snapshot_species_master_or_runtime_verified'])
+        self.assertFalse(saved['raw_html_or_image_bytes_in_output'])
+        self.assertEqual([r['facts'] for r in saved['narrative_cores']], [r['extracted_facts'] for r in self.report['inputs'][:2]])
+        self.assertEqual([r['sha256'] for r in saved['images']], [r['http']['sha256'] for r in self.report['inputs'][2:]])
+
+    def test_permanent_initial_custody_exact_hashes_and_head_scope(self):
+        receipt = json.loads((REPORT.parent / 'STONEAGE-CN70-SUZAKU-CUSTODY-R1.json').read_text())
+        self.assertEqual(len(receipt['permanent_derived_files']), 3)
+        for pin in receipt['permanent_derived_files']:
+            payload = (REPORT.parents[2] / pin['path']).read_bytes()
+            self.assertEqual(len(payload), pin['bytes'])
+            self.assertEqual(hashlib.sha256(payload).hexdigest(), pin['sha256'])
+            self.assertEqual(hashlib.sha1(b'blob ' + str(len(payload)).encode() + b'\0' + payload).hexdigest(), pin['git_blob'])
+        for name, count in [('candidate', 10), ('main', 11)]:
+            rows = receipt['validation'][name]
+            self.assertEqual(len(rows), count)
+            self.assertTrue(all(r['head'] == receipt['content_commit']['sha'] and r['conclusion'] == 'success' for r in rows))
 
 
 if __name__ == '__main__':

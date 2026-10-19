@@ -1,7 +1,7 @@
-"""Replay one attributed Wayi release, two linked images, and one older portal.
+"""Replay one attributed Wayi release, two images, one older portal and a 2003 capture.
 
 Downloads are transient; output contains derived metadata only. Current HTTP
-fingerprints do not authenticate 2002/2003 snapshots or original server data.
+fingerprints alone do not authenticate historical snapshots or original server data.
 """
 import argparse
 from hashlib import sha256
@@ -14,6 +14,7 @@ import urllib.request
 
 ROOT = Path(__file__).resolve().parents[1]
 REPORT = ROOT / 'research/recovered/STONEAGE-CN70-SUZAKU-MYTH-VISUAL-SOURCE-R1.json'
+SNAPSHOT = ROOT / 'research/recovered/STONEAGE-CN70-SUZAKU-2003-SNAPSHOT-R1.json'
 URLS = (
     'https://games.sina.com.cn/newgames/2003/12/121610098.shtml',
     'https://www.ourgame.com/news/db/32/31192.html',
@@ -21,6 +22,7 @@ URLS = (
     'https://image2.sina.com.cn/gm/newgames/2003/12/U163P115T9D10098F167DT20031216143816.JPG',
 )
 NAMES = ('suzaku.html', 'ourgame.html', 'suzaku-art.jpg', 'suzaku-stats.jpg')
+HISTORICAL_URL = 'https://web.archive.org/web/20031225115132id_/http://games.sina.com.cn/newgames/2003/12/121610098.shtml'
 
 
 def require(ok, message):
@@ -176,6 +178,21 @@ def replay(report, payloads):
             'historical_snapshot_species_master_or_runtime_verified': False}
 
 
+def verify_snapshot(snapshot, payload, report):
+    require(snapshot['schema'] == 'stoneage.cn70_suzaku_2003_snapshot.r1', 'Wrong snapshot report')
+    require(snapshot['replay_url'] == HISTORICAL_URL and snapshot['capture_timestamp'] == '20031225115132', 'Different capture/source')
+    require(len(payload) == snapshot['bytes'] and sha256(payload).hexdigest() == snapshot['sha256'], 'Historical bytes differ; current page is not a substitute')
+    got = extract_release(payload)
+    require(got['core_sha256'] == snapshot['core_sha256'] == report['inputs'][0]['core_sha256'], 'Historical narrative core differs')
+    require(got['facts'] == report['inputs'][0]['extracted_facts'], 'Historical source facts differ')
+    require('2003-12-16 14:38' in payload.decode('gb18030'), 'Historical publishing label missing')
+    require(snapshot['historical_image_bytes_verified'] is False and snapshot['original_server_or_wayi_host_verified'] is False,
+            'Sina HTML promoted to historical images/original operator host/server')
+    return {'capture_timestamp': snapshot['capture_timestamp'], 'replay_url': HISTORICAL_URL,
+            'bytes': len(payload), 'sha256': sha256(payload).hexdigest(), 'core_sha256': got['core_sha256'],
+            'facts_match_prior_source': True, 'historical_image_or_server_bytes_verified': False}
+
+
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('--source-dir', type=Path)
@@ -195,9 +212,19 @@ def main():
             data = (a.source_dir / name).read_bytes()
         payloads.append(data)
     result = replay(report, payloads)
+    if a.fetch:
+        with urllib.request.urlopen(HISTORICAL_URL, timeout=45) as response:
+            require(response.status == 200 and response.url == HISTORICAL_URL, 'Unexpected historical replay response')
+            historical = response.read(2_000_001)
+    else:
+        historical = (a.source_dir / 'suzaku-era.html').read_bytes()
+    result['historical_sina_html'] = verify_snapshot(json.loads(SNAPSHOT.read_text()), historical, report)
+    del result['historical_snapshot_species_master_or_runtime_verified']
+    result.update({'historical_sina_html_verified': True, 'historical_image_bytes_verified': False,
+                   'original_species_master_or_runtime_verified': False})
     a.output.parent.mkdir(parents=True, exist_ok=True)
     a.output.write_text(json.dumps(result, ensure_ascii=False, indent=2) + '\n')
-    print('NARRATIVE_CORES_VERIFIED=2 LINKED_IMAGES_VERIFIED=2 ORIGINAL_RUNTIME_EXECUTIONS=0')
+    print('NARRATIVE_CORES_VERIFIED=2 LINKED_IMAGES_VERIFIED=2 HISTORICAL_SINA_HTML_VERIFIED=1 ORIGINAL_RUNTIME_EXECUTIONS=0')
 
 
 if __name__ == '__main__':

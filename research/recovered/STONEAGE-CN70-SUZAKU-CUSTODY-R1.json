@@ -1,0 +1,190 @@
+{
+  "schema": "stoneage.cn70_suzaku_source_custody.r1",
+  "date": "2026-10-20",
+  "content_commit": {
+    "sha": "d50539f3464fe30cef79b1b8a3f6444d37ca38de",
+    "tree": "414b0a9ecc560363de2ec9a95cdb495dcf068f60"
+  },
+  "current_source_job": {
+    "run_id": 39338196277,
+    "job_id": 118352878578,
+    "tests_passed": 13,
+    "current_html_fetches": 2,
+    "image_fetches": 2,
+    "historical_snapshot_fetched_by_this_job": false
+  },
+  "artifact": {
+    "id": 12228020901,
+    "zip_bytes": 1271,
+    "zip_sha256": "61f422c40e13f145ac77e5e3a038afeec270ce6c632a140bc8e52a049cea6ac1",
+    "only_member": "replay.json",
+    "actual_download_and_semantic_comparison": true,
+    "raw_html_or_images_in_zip": false
+  },
+  "permanent_derived_files": [
+    {
+      "path": "research/recovered/STONEAGE-CN70-SUZAKU-MYTH-VISUAL-SOURCE-R1.json",
+      "bytes": 17299,
+      "sha256": "bdddfa3d77f3b808c3b342f9d49e8518321a235be91d5e86e54d90bdf155c7fc",
+      "git_blob": "85a95f3aa893606a4100b72892d0da4bf6f25711"
+    },
+    {
+      "path": "research/recovered/STONEAGE-CN70-SUZAKU-CI-REPLAY-R1.json",
+      "bytes": 2967,
+      "sha256": "48f342248c931175d5b2c9ed16fdc407836d002bc08ca8ff6c8d5c944cec62a8",
+      "git_blob": "96cc19164e4270747e468e556651a7c15bc1a866"
+    },
+    {
+      "path": "research/recovered/STONEAGE-CN70-SUZAKU-2003-SNAPSHOT-R1.json",
+      "bytes": 1988,
+      "sha256": "8d16d9c33bc8615ffd0e0fe87c8af4144bfe1e3db3ef46a34c4c14f888452aef",
+      "git_blob": "d6da960faecaeba242d38e6ac2c78480d6abce26"
+    }
+  ],
+  "validation": {
+    "candidate": [
+      {
+        "run_id": 39338196188,
+        "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+        "head": "d50539f3464fe30cef79b1b8a3f6444d37ca38de",
+        "conclusion": "success"
+      },
+      {
+        "run_id": 39338196200,
+        "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+        "head": "d50539f3464fe30cef79b1b8a3f6444d37ca38de",
+        "conclusion": "success"
+      },
+      {
+        "run_id": 39338196151,
+        "name": "Validate StoneAge preproduction content archive and wiki boundary",
+        "head": "d50539f3464fe30cef79b1b8a3f6444d37ca38de",
+        "conclusion": "success"
+      },
+      {
+        "run_id": 39338196194,
+        "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+        "head": "d50539f3464fe30cef79b1b8a3f6444d37ca38de",
+        "conclusion": "success"
+      },
+      {
+        "run_id": 39338196333,
+        "name": "Validate legacy StoneAge assistant history and pet content gaps",
+        "head": "d50539f3464fe30cef79b1b8a3f6444d37ca38de",
+        "conclusion": "success"
+      },
+      {
+        "run_id": 39338196150,
+        "name": "Validate StoneAge Stage A joint review decision",
+        "head": "d50539f3464fe30cef79b1b8a3f6444d37ca38de",
+        "conclusion": "success"
+      },
+      {
+        "run_id": 39338196242,
+        "name": "Validate Stage A evidence-limited review acceptance",
+        "head": "d50539f3464fe30cef79b1b8a3f6444d37ca38de",
+        "conclusion": "success"
+      },
+      {
+        "run_id": 39338196102,
+        "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+        "head": "d50539f3464fe30cef79b1b8a3f6444d37ca38de",
+        "conclusion": "success"
+      },
+      {
+        "run_id": 39338196277,
+        "name": "Verify CN70 Suzaku attributed story and image references",
+        "head": "d50539f3464fe30cef79b1b8a3f6444d37ca38de",
+        "conclusion": "success"
+      },
+      {
+        "run_id": 39338196185,
+        "name": "Validate Stage A early source gap triage",
+        "head": "d50539f3464fe30cef79b1b8a3f6444d37ca38de",
+        "conclusion": "success"
+      }
+    ],
+    "main": [
+      {
+        "run_id": 39338255510,
+        "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+        "head": "d50539f3464fe30cef79b1b8a3f6444d37ca38de",
+        "conclusion": "success"
+      },
+      {
+        "run_id": 39338255368,
+        "name": "Validate StoneAge preproduction content archive and wiki boundary",
+        "head": "d50539f3464fe30cef79b1b8a3f6444d37ca38de",
+        "conclusion": "success"
+      },
+      {
+        "run_id": 39338255274,
+        "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+        "head": "d50539f3464fe30cef79b1b8a3f6444d37ca38de",
+        "conclusion": "success"
+      },
+      {
+        "run_id": 39338256030,
+        "name": "Validate Stage A evidence-limited review acceptance",
+        "head": "d50539f3464fe30cef79b1b8a3f6444d37ca38de",
+        "conclusion": "success"
+      },
+      {
+        "run_id": 39338255923,
+        "name": "Validate StoneAge Stage A joint review decision",
+        "head": "d50539f3464fe30cef79b1b8a3f6444d37ca38de",
+        "conclusion": "success"
+      },
+      {
+        "run_id": 39338255847,
+        "name": "Validate Stage A early source gap triage",
+        "head": "d50539f3464fe30cef79b1b8a3f6444d37ca38de",
+        "conclusion": "success"
+      },
+      {
+        "run_id": 39338255985,
+        "name": "Validate legacy StoneAge assistant history and pet content gaps",
+        "head": "d50539f3464fe30cef79b1b8a3f6444d37ca38de",
+        "conclusion": "success"
+      },
+      {
+        "run_id": 39338255494,
+        "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+        "head": "d50539f3464fe30cef79b1b8a3f6444d37ca38de",
+        "conclusion": "success"
+      },
+      {
+        "run_id": 39338255832,
+        "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+        "head": "d50539f3464fe30cef79b1b8a3f6444d37ca38de",
+        "conclusion": "success"
+      },
+      {
+        "run_id": 39338255257,
+        "name": "Independently verify TW1.0 R58 rooted helper returns and source custody",
+        "head": "d50539f3464fe30cef79b1b8a3f6444d37ca38de",
+        "conclusion": "success"
+      },
+      {
+        "run_id": 39338255778,
+        "name": "Verify CN70 Suzaku attributed story and image references",
+        "head": "d50539f3464fe30cef79b1b8a3f6444d37ca38de",
+        "conclusion": "success"
+      }
+    ],
+    "independent_local_regex_core_checks": 2,
+    "independent_pil_jpeg_decode_checks": 2,
+    "local_content_and_related_tests": 49
+  },
+  "historical_followup": {
+    "path": "research/recovered/STONEAGE-CN70-SUZAKU-2003-SNAPSHOT-R1.json",
+    "local_actual_replay_capture": "20031225115132",
+    "local_exact_core_and_facts_match": true,
+    "own_independent_ci": "PENDING_OWN_SNAPSHOT_FOLLOWUP_HEAD",
+    "prior_s1_history_null_preserved_as_prior_checkpoint": true,
+    "historical_image_bytes_verified": false,
+    "original_server_or_wayi_host_verified": false
+  },
+  "receipt_own_checks": "MUST_OBSERVE_OWN_HEAD_NOT_PARENT_SUCCESS",
+  "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-23"
+}
