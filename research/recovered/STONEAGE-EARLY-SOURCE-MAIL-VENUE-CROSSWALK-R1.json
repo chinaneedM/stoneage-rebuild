@@ -1,0 +1,379 @@
+{
+  "boundaries": {
+    "new_original_sources_or_assets_acquired": false,
+    "omission_is_proven_historical_rule_change": false,
+    "r79": "PAUSED_NON_BLOCKING",
+    "same_names_or_shared_delivery_word_establish_identity": false,
+    "stage_a_families": "7_PARTIAL_2_OPEN",
+    "stage_b_and_wiki": "GATED"
+  },
+  "coverage": {
+    "boundary_comparisons": 8,
+    "derived_inputs": 5,
+    "distinct_original_bodies_referenced": 4,
+    "new_game_entities_or_server_rules_recovered": 0,
+    "new_original_urls_fetched": 0
+  },
+  "date": "2026-10-19",
+  "inputs": {
+    "arcades": {
+      "path": "research/recovered/STONEAGE-WAYI-THEATRE-ARCADES-R1.json",
+      "sha256": "f76d9008a425cc335706510303ceff96be72c1aeba9ee42a1d7b06c87a248669"
+    },
+    "cards": {
+      "path": "research/recovered/STONEAGE-WAYI-MARINE-SOCIAL-CRAFTING-R1.json",
+      "sha256": "d4772a21b27e50bd66d51fd9e53508a301f9e498f2d777708dd94eb87104dccd"
+    },
+    "early": {
+      "path": "research/recovered/STONEAGE-EARLY-CONTENT-GUIDE-MANUAL-R1.json",
+      "sha256": "02c854ace5ff8364fc141dc4ee58e6c518b91af126b89b8c0ee2d4b112c9ae5b"
+    },
+    "hangame": {
+      "path": "research/recovered/STONEAGE-JP-OFFICIAL-VILLAGE-FACILITIES-R1.json",
+      "sha256": "65ed727327aae1e8b060834c11c33d56685134a6bbd8fb02e250086baf4f5dfb"
+    },
+    "manual": {
+      "path": "research/recovered/STONEAGE-JSS2001-MAIL-ITEMS-SHARED-VENUES-R1.json",
+      "sha256": "7a586ce0f16a3922c62f711554e9c158e659d143ad158b4cbea184936ac74122"
+    }
+  },
+  "next": "JSS2001-PLAYER-STATUS-LEVELUP-AND-KNOCKOUT-01",
+  "records": [
+    {
+      "automatic_entity_or_rule_merge_allowed": false,
+      "collection": "sources",
+      "entity_type": "CROSS_SOURCE_SCOPE_AND_NON_EQUIVALENCE_RECORD",
+      "historical_update_or_rule_removal_proven": false,
+      "numeric_id_price_timer_projection_allowed": false,
+      "original_server_execution_proven": false,
+      "record_id": "source-boundary:early-mail-venues:01",
+      "record_revision": 1,
+      "relation": "DISTINCT_LIFECYCLE_EVENT_AND_UNSPECIFIED_TIMER",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "same_original_manual_two_reports_are_independent_witnesses": false,
+      "source_facts": {
+        "mail_grace_and_stray_timer_values": null,
+        "ordinary_ground_item_duration": null,
+        "ordinary_ground_item_expires_after_unspecified_time": true
+      },
+      "source_refs": [
+        {
+          "actual_capture": "20010418083149",
+          "derived_report": "research/recovered/STONEAGE-JSS2001-MAIL-ITEMS-SHARED-VENUES-R1.json",
+          "derived_sha256": "7a586ce0f16a3922c62f711554e9c158e659d143ad158b4cbea184936ac74122",
+          "json_pointer": "/records/1/source_described_behavior",
+          "original_sha256": "50b9771ec501067136629c8e083a190e979e53dd9ba141903f78b76d43b602cc",
+          "original_source": "http://www.titan.co.jp/stoneage/manual02.html"
+        },
+        {
+          "actual_capture": "20010418083149",
+          "derived_report": "research/recovered/STONEAGE-EARLY-CONTENT-GUIDE-MANUAL-R1.json",
+          "derived_sha256": "02c854ace5ff8364fc141dc4ee58e6c518b91af126b89b8c0ee2d4b112c9ae5b",
+          "json_pointer": "/observations/manual_contracts/ground_item",
+          "original_sha256": "50b9771ec501067136629c8e083a190e979e53dd9ba141903f78b76d43b602cc",
+          "original_source": "http://www.titan.co.jp/stoneage/manual02.html"
+        }
+      ],
+      "topic": "MAIL_GRACE_VERSUS_STRAY_AND_ORDINARY_ITEM_TIMERS",
+      "unknown_identity_or_runtime_details": null,
+      "verification_status": "BOUNDED_COMPARISON_NOT_ENTITY_IDENTITY_OR_PATCH_HISTORY",
+      "version_profile": "CROSS_SOURCE_DOCUMENTARY_COMPARISON_NOT_UNIVERSAL_RULESET"
+    },
+    {
+      "automatic_entity_or_rule_merge_allowed": false,
+      "collection": "sources",
+      "entity_type": "CROSS_SOURCE_SCOPE_AND_NON_EQUIVALENCE_RECORD",
+      "historical_update_or_rule_removal_proven": false,
+      "numeric_id_price_timer_projection_allowed": false,
+      "original_server_execution_proven": false,
+      "record_id": "source-boundary:early-mail-venues:02",
+      "record_revision": 1,
+      "relation": "CONTEXT_SPECIFIC_IMMEDIATE_DROP_NOT_UNIVERSAL_EXPIRY",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "source_facts": {
+        "ordinary_duration": null,
+        "same_ticket_or_generic_item_id": null,
+        "special_ticket_immediate_drop_disappearance": true
+      },
+      "source_refs": [
+        {
+          "actual_capture": "20010418083149",
+          "derived_report": "research/recovered/STONEAGE-JSS2001-MAIL-ITEMS-SHARED-VENUES-R1.json",
+          "derived_sha256": "7a586ce0f16a3922c62f711554e9c158e659d143ad158b4cbea184936ac74122",
+          "json_pointer": "/records/8/source_described_behavior/ticket_warning",
+          "original_sha256": "50b9771ec501067136629c8e083a190e979e53dd9ba141903f78b76d43b602cc",
+          "original_source": "http://www.titan.co.jp/stoneage/manual02.html"
+        },
+        {
+          "actual_capture": "20010418083149",
+          "derived_report": "research/recovered/STONEAGE-EARLY-CONTENT-GUIDE-MANUAL-R1.json",
+          "derived_sha256": "02c854ace5ff8364fc141dc4ee58e6c518b91af126b89b8c0ee2d4b112c9ae5b",
+          "json_pointer": "/observations/manual_contracts/ground_item",
+          "original_sha256": "50b9771ec501067136629c8e083a190e979e53dd9ba141903f78b76d43b602cc",
+          "original_source": "http://www.titan.co.jp/stoneage/manual02.html"
+        }
+      ],
+      "topic": "SPECIAL_TICKET_DROP_VERSUS_ORDINARY_ITEM_EXPIRY",
+      "unknown_identity_or_runtime_details": null,
+      "verification_status": "BOUNDED_COMPARISON_NOT_ENTITY_IDENTITY_OR_PATCH_HISTORY",
+      "version_profile": "CROSS_SOURCE_DOCUMENTARY_COMPARISON_NOT_UNIVERSAL_RULESET"
+    },
+    {
+      "automatic_entity_or_rule_merge_allowed": false,
+      "collection": "sources",
+      "entity_type": "CROSS_SOURCE_SCOPE_AND_NON_EQUIVALENCE_RECORD",
+      "historical_update_or_rule_removal_proven": false,
+      "numeric_id_price_timer_projection_allowed": false,
+      "original_server_execution_proven": false,
+      "record_id": "source-boundary:early-mail-venues:03",
+      "record_revision": 1,
+      "relation": "DIFFERENT_SOURCE_LABEL_AND_CONTEXT_NO_ENTITY_JOIN",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "source_facts": {
+        "early_free_admission_cases": [
+          {
+            "level_at_most": 9
+          },
+          {
+            "duel_rank_exact": 77
+          },
+          {
+            "duel_rank_exact": 777
+          }
+        ],
+        "later_quiz_entry_fee_described": true,
+        "later_quiz_level_restriction_described": true,
+        "later_quiz_threshold_and_fee": null
+      },
+      "source_refs": [
+        {
+          "actual_capture": "20010418083149",
+          "derived_report": "research/recovered/STONEAGE-JSS2001-MAIL-ITEMS-SHARED-VENUES-R1.json",
+          "derived_sha256": "7a586ce0f16a3922c62f711554e9c158e659d143ad158b4cbea184936ac74122",
+          "json_pointer": "/records/8/source_described_behavior",
+          "original_sha256": "50b9771ec501067136629c8e083a190e979e53dd9ba141903f78b76d43b602cc",
+          "original_source": "http://www.titan.co.jp/stoneage/manual02.html"
+        },
+        {
+          "actual_capture": "20031215095512",
+          "derived_report": "research/recovered/STONEAGE-JP-OFFICIAL-VILLAGE-FACILITIES-R1.json",
+          "derived_sha256": "65ed727327aae1e8b060834c11c33d56685134a6bbd8fb02e250086baf4f5dfb",
+          "json_pointer": "/records/8/source_described_behaviors",
+          "original_sha256": "f719ff0167c32e531f3128e47b31175df6bfc641a6a83728d2fd4370a9ae58b3",
+          "original_source": "http://www.hangame.co.jp/publish/sa/town2.asp"
+        }
+      ],
+      "topic": "EARLY_DUEL_ARENA_VERSUS_LATER_QUIZ",
+      "unknown_identity_or_runtime_details": null,
+      "verification_status": "BOUNDED_COMPARISON_NOT_ENTITY_IDENTITY_OR_PATCH_HISTORY",
+      "version_profile": "CROSS_SOURCE_DOCUMENTARY_COMPARISON_NOT_UNIVERSAL_RULESET"
+    },
+    {
+      "automatic_entity_or_rule_merge_allowed": false,
+      "collection": "sources",
+      "entity_type": "CROSS_SOURCE_SCOPE_AND_NON_EQUIVALENCE_RECORD",
+      "historical_update_or_rule_removal_proven": false,
+      "numeric_id_price_timer_projection_allowed": false,
+      "original_server_execution_proven": false,
+      "record_id": "source-boundary:early-mail-venues:04",
+      "record_revision": 1,
+      "relation": "EARLY_LOCAL_SPECIFIC_LATER_PRICE_UNSPECIFIED_NOT_PROVEN_REMOVAL",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "source_facts": {
+        "early_arena_hospital_free": true,
+        "later_hp_recovery_offered": true,
+        "later_targets_amount_and_price": null
+      },
+      "source_refs": [
+        {
+          "actual_capture": "20010418083149",
+          "derived_report": "research/recovered/STONEAGE-JSS2001-MAIL-ITEMS-SHARED-VENUES-R1.json",
+          "derived_sha256": "7a586ce0f16a3922c62f711554e9c158e659d143ad158b4cbea184936ac74122",
+          "json_pointer": "/records/8/source_described_behavior",
+          "original_sha256": "50b9771ec501067136629c8e083a190e979e53dd9ba141903f78b76d43b602cc",
+          "original_source": "http://www.titan.co.jp/stoneage/manual02.html"
+        },
+        {
+          "actual_capture": "20031215095512",
+          "derived_report": "research/recovered/STONEAGE-JP-OFFICIAL-VILLAGE-FACILITIES-R1.json",
+          "derived_sha256": "65ed727327aae1e8b060834c11c33d56685134a6bbd8fb02e250086baf4f5dfb",
+          "json_pointer": "/records/1/source_described_behaviors",
+          "original_sha256": "f719ff0167c32e531f3128e47b31175df6bfc641a6a83728d2fd4370a9ae58b3",
+          "original_source": "http://www.hangame.co.jp/publish/sa/town2.asp"
+        }
+      ],
+      "topic": "LOCAL_ARENA_FREE_RECOVERY_VERSUS_LATER_HOSPITAL",
+      "unknown_identity_or_runtime_details": null,
+      "verification_status": "BOUNDED_COMPARISON_NOT_ENTITY_IDENTITY_OR_PATCH_HISTORY",
+      "version_profile": "CROSS_SOURCE_DOCUMENTARY_COMPARISON_NOT_UNIVERSAL_RULESET"
+    },
+    {
+      "automatic_entity_or_rule_merge_allowed": false,
+      "collection": "sources",
+      "entity_type": "CROSS_SOURCE_SCOPE_AND_NON_EQUIVALENCE_RECORD",
+      "historical_update_or_rule_removal_proven": false,
+      "numeric_id_price_timer_projection_allowed": false,
+      "original_server_execution_proven": false,
+      "record_id": "source-boundary:early-mail-venues:05",
+      "record_revision": 1,
+      "relation": "EARLY_EXPLICIT_FEE_STATE_LATER_OMISSION_NOT_PROVEN_CHANGE",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "source_facts": {
+        "early_chatroom_free": true,
+        "later_entry_described": true,
+        "later_fee": null
+      },
+      "source_refs": [
+        {
+          "actual_capture": "20010418083149",
+          "derived_report": "research/recovered/STONEAGE-JSS2001-MAIL-ITEMS-SHARED-VENUES-R1.json",
+          "derived_sha256": "7a586ce0f16a3922c62f711554e9c158e659d143ad158b4cbea184936ac74122",
+          "json_pointer": "/records/7/source_described_behavior",
+          "original_sha256": "50b9771ec501067136629c8e083a190e979e53dd9ba141903f78b76d43b602cc",
+          "original_source": "http://www.titan.co.jp/stoneage/manual02.html"
+        },
+        {
+          "actual_capture": "20031215095512",
+          "derived_report": "research/recovered/STONEAGE-JP-OFFICIAL-VILLAGE-FACILITIES-R1.json",
+          "derived_sha256": "65ed727327aae1e8b060834c11c33d56685134a6bbd8fb02e250086baf4f5dfb",
+          "json_pointer": "/records/7/source_described_behaviors",
+          "original_sha256": "f719ff0167c32e531f3128e47b31175df6bfc641a6a83728d2fd4370a9ae58b3",
+          "original_source": "http://www.hangame.co.jp/publish/sa/town2.asp"
+        }
+      ],
+      "topic": "EARLY_CHATROOM_FREE_VERSUS_LATER_ENTRY_ONLY",
+      "unknown_identity_or_runtime_details": null,
+      "verification_status": "BOUNDED_COMPARISON_NOT_ENTITY_IDENTITY_OR_PATCH_HISTORY",
+      "version_profile": "CROSS_SOURCE_DOCUMENTARY_COMPARISON_NOT_UNIVERSAL_RULESET"
+    },
+    {
+      "automatic_entity_or_rule_merge_allowed": false,
+      "collection": "sources",
+      "entity_type": "CROSS_SOURCE_SCOPE_AND_NON_EQUIVALENCE_RECORD",
+      "historical_update_or_rule_removal_proven": false,
+      "numeric_id_price_timer_projection_allowed": false,
+      "original_server_execution_proven": false,
+      "record_id": "source-boundary:early-mail-venues:06",
+      "record_revision": 1,
+      "relation": "DIFFERENT_STATE_OBJECT_PERMISSION_VERSUS_ROLE_CONTACT_SLOT",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "source_facts": {
+        "early_capacity": null,
+        "early_logout_deletes_contacts_proven": false,
+        "early_logout_resets_exchange_permission_to_no": true,
+        "later_dedicated_slot_count": 1,
+        "later_ordinary_capacity_after": 79,
+        "later_ordinary_capacity_before": 40,
+        "later_role_card_end_state": "DEDICATED_CARDS_DESCRIBED_AS_RETAINED",
+        "later_role_card_next_assignment": "DEDICATED_CARDS_DESCRIBED_AS_AUTOMATICALLY_OVERWRITTEN"
+      },
+      "source_refs": [
+        {
+          "actual_capture": "20010418083149",
+          "derived_report": "research/recovered/STONEAGE-JSS2001-MAIL-ITEMS-SHARED-VENUES-R1.json",
+          "derived_sha256": "7a586ce0f16a3922c62f711554e9c158e659d143ad158b4cbea184936ac74122",
+          "json_pointer": "/records/5/source_described_behavior",
+          "original_sha256": "50b9771ec501067136629c8e083a190e979e53dd9ba141903f78b76d43b602cc",
+          "original_source": "http://www.titan.co.jp/stoneage/manual02.html"
+        },
+        {
+          "actual_capture": "20050614005817",
+          "derived_report": "research/recovered/STONEAGE-WAYI-MARINE-SOCIAL-CRAFTING-R1.json",
+          "derived_sha256": "d4772a21b27e50bd66d51fd9e53508a301f9e498f2d777708dd94eb87104dccd",
+          "json_pointer": "/business_cards",
+          "original_sha256": "f021c32b042dbbea480f67aeb3fbc50ba9dfab919de6c04b3240400e5b41c684",
+          "original_source": "http://www.wayi.com.tw/stoneage/game/game01_03.asp"
+        }
+      ],
+      "topic": "CARD_CONSENT_RESET_VERSUS_LATER_ROLE_CARD_RETENTION",
+      "unknown_identity_or_runtime_details": null,
+      "verification_status": "BOUNDED_COMPARISON_NOT_ENTITY_IDENTITY_OR_PATCH_HISTORY",
+      "version_profile": "CROSS_SOURCE_DOCUMENTARY_COMPARISON_NOT_UNIVERSAL_RULESET"
+    },
+    {
+      "automatic_entity_or_rule_merge_allowed": false,
+      "collection": "sources",
+      "entity_type": "CROSS_SOURCE_SCOPE_AND_NON_EQUIVALENCE_RECORD",
+      "historical_update_or_rule_removal_proven": false,
+      "numeric_id_price_timer_projection_allowed": false,
+      "original_server_execution_proven": false,
+      "record_id": "source-boundary:early-mail-venues:07",
+      "record_revision": 1,
+      "relation": "DIFFERENT_MEASURES_AND_UNKNOWN_LEDGER_OR_CONVERSION",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "source_facts": {
+        "early_measure": "DUEL_RANK_POSITION_NOT_REDEEMABLE_BALANCE",
+        "later_point_labels": [
+          "藝術值",
+          "積分",
+          "積分"
+        ],
+        "shared_wallet_or_conversion_rate": null
+      },
+      "source_refs": [
+        {
+          "actual_capture": "20010418083149",
+          "derived_report": "research/recovered/STONEAGE-JSS2001-MAIL-ITEMS-SHARED-VENUES-R1.json",
+          "derived_sha256": "7a586ce0f16a3922c62f711554e9c158e659d143ad158b4cbea184936ac74122",
+          "json_pointer": "/records/8/source_described_behavior/free_admission_enumerated_cases",
+          "original_sha256": "50b9771ec501067136629c8e083a190e979e53dd9ba141903f78b76d43b602cc",
+          "original_source": "http://www.titan.co.jp/stoneage/manual02.html"
+        },
+        {
+          "actual_capture": "20050614011214",
+          "derived_report": "research/recovered/STONEAGE-WAYI-THEATRE-ARCADES-R1.json",
+          "derived_sha256": "f76d9008a425cc335706510303ceff96be72c1aeba9ee42a1d7b06c87a248669",
+          "json_pointer": "/records",
+          "original_sha256": "afaae72abf0ca60939c7e57a824cc556f0e24a2d8add77eff7f18caacb942a50",
+          "original_source": "http://www.wayi.com.tw/stoneage/game/game01_04.asp"
+        }
+      ],
+      "topic": "DUEL_RANK_VERSUS_ART_VALUE_AND_ARCADE_POINTS",
+      "unknown_identity_or_runtime_details": null,
+      "verification_status": "BOUNDED_COMPARISON_NOT_ENTITY_IDENTITY_OR_PATCH_HISTORY",
+      "version_profile": "CROSS_SOURCE_DOCUMENTARY_COMPARISON_NOT_UNIVERSAL_RULESET"
+    },
+    {
+      "automatic_entity_or_rule_merge_allowed": false,
+      "collection": "sources",
+      "entity_type": "CROSS_SOURCE_SCOPE_AND_NON_EQUIVALENCE_RECORD",
+      "historical_update_or_rule_removal_proven": false,
+      "numeric_id_price_timer_projection_allowed": false,
+      "original_server_execution_proven": false,
+      "record_id": "source-boundary:early-mail-venues:08",
+      "record_revision": 1,
+      "relation": "DIFFERENT_DELIVERY_FUNCTION_NOT_ONE_PET_OWNERSHIP_OR_PAYROLL_PIPELINE",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "source_facts": {
+        "common_pet_or_item_id_and_pay_formula": null,
+        "early_pet_can_carry_message_or_item": true,
+        "later_farther_pay_relation_described": true,
+        "later_item_delivery_job": true
+      },
+      "source_refs": [
+        {
+          "actual_capture": "20010418083149",
+          "derived_report": "research/recovered/STONEAGE-JSS2001-MAIL-ITEMS-SHARED-VENUES-R1.json",
+          "derived_sha256": "7a586ce0f16a3922c62f711554e9c158e659d143ad158b4cbea184936ac74122",
+          "json_pointer": "/records/1/source_described_behavior",
+          "original_sha256": "50b9771ec501067136629c8e083a190e979e53dd9ba141903f78b76d43b602cc",
+          "original_source": "http://www.titan.co.jp/stoneage/manual02.html"
+        },
+        {
+          "actual_capture": "20031215095512",
+          "derived_report": "research/recovered/STONEAGE-JP-OFFICIAL-VILLAGE-FACILITIES-R1.json",
+          "derived_sha256": "65ed727327aae1e8b060834c11c33d56685134a6bbd8fb02e250086baf4f5dfb",
+          "json_pointer": "/records/10/source_described_behaviors",
+          "original_sha256": "f719ff0167c32e531f3128e47b31175df6bfc641a6a83728d2fd4370a9ae58b3",
+          "original_source": "http://www.hangame.co.jp/publish/sa/town2.asp"
+        }
+      ],
+      "topic": "PET_ITEM_MAIL_VERSUS_MAMMOTH_DELIVERY_JOB",
+      "unknown_identity_or_runtime_details": null,
+      "verification_status": "BOUNDED_COMPARISON_NOT_ENTITY_IDENTITY_OR_PATCH_HISTORY",
+      "version_profile": "CROSS_SOURCE_DOCUMENTARY_COMPARISON_NOT_UNIVERSAL_RULESET"
+    }
+  ],
+  "schema": "stoneage.early_source_mail_venue.crosswalk.r1",
+  "task": "EARLY-SOURCE-MAIL-VENUE-CROSS-VERSION-BOUNDARY-01"
+}

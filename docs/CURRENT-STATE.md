@@ -15689,3 +15689,14 @@ OFFICIAL-VERSION-COVERAGE-MATERIAL-REVIEW-08复用R7的22域状态，近期日�
 交付STONEAGE-JSS2001-MAIL-ITEMS-SHARED-VENUES-R1.json及同名规格，7个tutorials+2个maps研究记录、七必需字段/每节出处，非9份原地图或运行事务。R8机器记录STONEAGE-OFFICIAL-VERSION-COVERAGE-MATERIAL-REVIEW-R8.json。12反例/相关31本地通过；修正来源新颖性元数据后的独立runner须实际重取同一手册、九节摘要/业务边界、完整cmp，实际ZIP/raw/Git及main验收另记。原件不入Git，原1999/TW1.0/CN1.82同构建、原服保存/价表/实体ID仍UNKNOWN。
 
 **最高NEXT EARLY-SOURCE-MAIL-VENUE-CROSS-VERSION-BOUNDARY-01**：仅复用本新语义及既有2001普通落地/2003设施/2005场所报告，有限衔接并明确不可合并的时间、物品、场所与版本；零新增原页/资产，不写空矩阵或新生产规则。Stage A7 PARTIAL+2 OPEN、Stage B/百科GATED、R79 PAUSED_NON_BLOCKING，无整体百分比。
+
+
+## 2026-10-19 — 早期九节主线验收与五报告八组有限来源衔接
+
+早期内容d75d2d7aa4a89bb6a595a1146119e65508d41d69 / tree256e4a9e7b85c608cd46002aacfe7c1cbd952a75候选11门、主线自身12门全部实际success，含既有JSS人物/宠物源回归（非本包新增源/图像）。专用run39199275338/job117888674327重取已知精确手册、12负例和完整报告cmp通过；artifact12163560641实下载ZIP3769B SHA25672eda1af8e1b3042c7de71e230577620bb3495f4cafb2b5e07fdb854c9799b7e，内唯一derived.json16556B SHA2567a586ce0f16a3922c62f711554e9c158e659d143ad158b4cbea184936ac74122等于永久blob a7c6400aa431bb136e726fd17f1e90df282a10d0。永久凭据STONEAGE-JSS2001-MAIL-ITEMS-SHARED-VENUES-ACCEPTANCE-R1.json保留来源重放、旧通用指纹新颖性边界、11/12实际run及ZIP/raw/Git。
+
+前包验收后按当前NEXT另启有限EARLY-SOURCE-MAIL-VENUE-CROSS-VERSION-BOUNDARY-01，仅五份已验派生报告、零新增原URL/图片/程序，实际指向四份独立原正文（新旧两份2001报告同手册，不当两名独立证人）。生成8个sources集合的比较/不可自动合并记录，每条保存输入SHA/JSON指针和原URL/捕获/摘要。八项：宠物邮件宽限/流浪/普通落地计时、特殊票丢地/普通延时、斗技/后来问答场、局部免费医院/后期医院概述、免费聊天室/后来入口、名片交换开关/后期角色卡保留覆盖、斗技排名/艺术值与积分、宠物送物/猛犸配送工作。省略不证改版，同名不证同实体；不把9/77/777移给问答场，不从两个角色补两个专用格，不填同票ID/全免费医院/共用钱包/同工资公式。
+
+永久派生/规格STONEAGE-EARLY-SOURCE-MAIL-VENUE-CROSSWALK-R1，6负例及本轮相关合计37本地测试通过。新独立工作流只读五个固定Git输入，离线重放全报告与上传派生JSON；不得把它说成再次下载四原正文或新增八实体/服务端规则。实际run、ZIP/raw/Git和自身main验收按结果另记。历史前缀与所有原报告不改，不将资料字数/R编号当进度。
+
+**唯一最高NEXT JSS2001-PLAYER-STATUS-LEVELUP-AND-KNOCKOUT-01**：只复用同一已验manual02的3040/8020/8060三节，形成角色参数/经验归属、升级奖励、气绝后果的早期一方合同；只一已知正文，无图片/新出链，不把KO经验的文字概述当原服完整分配算法，不补魅力/忠诚/DP变化量与原保存格式。不重开R79。九系统7 PARTIAL+2 OPEN、Stage B/百科GATED、R79 PAUSED_NON_BLOCKING不变，无整体百分比。

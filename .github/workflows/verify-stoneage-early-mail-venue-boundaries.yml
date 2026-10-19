@@ -1,0 +1,37 @@
+name: Verify early mail venue and later official source boundaries without rule projection
+on:
+  push:
+    paths:
+      - tools/stoneage_early_mail_venue_crosswalk.py
+      - tests/test_stoneage_early_mail_venue_crosswalk.py
+      - research/recovered/STONEAGE-EARLY-SOURCE-MAIL-VENUE-CROSSWALK-R1.json
+      - research/recovered/STONEAGE-JSS2001-MAIL-ITEMS-SHARED-VENUES-R1.json
+      - research/recovered/STONEAGE-EARLY-CONTENT-GUIDE-MANUAL-R1.json
+      - research/recovered/STONEAGE-JP-OFFICIAL-VILLAGE-FACILITIES-R1.json
+      - research/recovered/STONEAGE-WAYI-THEATRE-ARCADES-R1.json
+      - research/recovered/STONEAGE-WAYI-MARINE-SOCIAL-CRAFTING-R1.json
+      - docs/specs/STONEAGE-EARLY-SOURCE-MAIL-VENUE-CROSSWALK-R1.md
+      - .github/workflows/verify-stoneage-early-mail-venue-boundaries.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  offline-pinned-report-replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Reject changed inputs invalid provenance and historical identity projections
+        run: python -m unittest tests.test_stoneage_early_mail_venue_crosswalk -v
+      - name: Replay only five committed derived reports no original network acquisition
+        run: python -m tools.stoneage_early_mail_venue_crosswalk --output output/derived.json
+      - name: Compare complete permanent crosswalk
+        run: cmp output/derived.json research/recovered/STONEAGE-EARLY-SOURCE-MAIL-VENUE-CROSSWALK-R1.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: early-mail-venue-boundaries-derived-only
+          path: output/derived.json
+          retention-days: 30

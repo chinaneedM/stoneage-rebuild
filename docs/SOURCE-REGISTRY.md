@@ -7245,3 +7245,10 @@ STONEAGE-WAYI-THEATRE-ARCADES-ACCEPTANCE-R1.json对内容bce32d65afc4b3e3c5a31b2
 manual02.html实际20010418083149，28434B SHA25650b9771ec501067136629c8e083a190e979e53dd9ba141903f78b76d43b602cc，Shift-JIS严格；本轮重取字节完全等于已验原件。旧通用JSS-LOGIN-MANUAL-CREATION-CONTRACT已给3070/7010/8030指纹但manual02 creation_contract为null，不将其抹去或声称首次发现。九节3060/3070/7000/7010/7020/8030/8040/8110/8120增量是物品/邮件/社交和共用场所的逐条语义与未知。原有12节宠物及6节服务等既有内容不重计。
 
 核心来源限定：普通邮件/宠物邮件的战斗限制相反；返还与登出、数小时宽限、流浪另时长消失分开；名片交换开关复位非删联系人；斗技免票等级≤9或排名77/777，不把条件合取；医院恢复免费仅斗技场语境。聊天室免费及与斗技相连的票警告不混为所有人付费；票即时消失不推原物品ID或登录恢复票。9记录7tutorials/2maps，派生与规格STONEAGE-JSS2001-MAIL-ITEMS-SHARED-VENUES-R1，原文/图像/程序不入Git。12负例及相关31本地通过，独立源cmp/ZIP/raw/Git和main另据实验收；R8保留22域状态，下一仅基于既有报告做跨年代不可混用关系。
+
+
+### 2026-10-19 — 九节来源独立验收与八组五报告衔接
+
+STONEAGE-JSS2001-MAIL-ITEMS-SHARED-VENUES-ACCEPTANCE-R1.json对应内容d75d2d7a的11候选/12自身主线success，专用run39199275338/job117888674327；artifact12163560641 ZIP3769B SHA25672eda1af8e1b3042c7de71e230577620bb3495f4cafb2b5e07fdb854c9799b7e，raw16556B SHA2567a586ce0f16a3922c62f711554e9c158e659d143ad158b4cbea184936ac74122匹配永久blob a7c6400aa431bb136e726fd17f1e90df282a10d0。旧JSS通用指纹/原件复用均保留，不当新网页。
+
+相邻STONEAGE-EARLY-SOURCE-MAIL-VENUE-CROSSWALK-R1只派生自新九节、旧2001普通落地、Hangame2003设施、Wayi2005剧场/游乐场及名片五报告，指向四原正文、零新增原URL。8比较各保留输入SHA/JSON指针与原件出处，不增8新原件或游戏实体；省略不证历史改版，计时/票据/场所/费用/同名字分值不自动合并。6负例及相关37本地通过，独立离线报告cmp、ZIP/raw/Git及main另验。新NEXT为同手册3040/8020/8060三节参数/升级/气绝的有限早期合同，不重开存档IO或新游戏。
