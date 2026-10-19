@@ -1,0 +1,81 @@
+{
+  "schema": "stoneage.pirate_relic_guide.replay.r1",
+  "inputs": [
+    {
+      "source_id": "S1",
+      "bytes": 49799,
+      "sha256": "b4d9f36815b7f099d0f6d0f7915e35ceab2edd8e6ead0658e5649c58ebb031bd"
+    },
+    {
+      "source_id": "H1",
+      "bytes": 29939,
+      "sha256": "0dbcc96ef5b7a524bd3a228e6f743180195149cf5c9b082306b5790ef9c9a1e8"
+    }
+  ],
+  "guide": {
+    "core_sha256": "ad44dbe63160f4407511d9d1c40855226ad3226c834528ef0520dfbfd31c930a",
+    "core_utf8_bytes": 1722,
+    "facts": {
+      "recommended_level": 100,
+      "recommendation_is_requirement": false,
+      "repeat_claim_as_written": "可一转做一次",
+      "prerequisites": [
+        "不可思议的贝壳",
+        "解完海贼秘宝任务"
+      ],
+      "breathing_item": "鱼鳃草",
+      "breathing_duration_as_written": "一小时",
+      "no_grass_hp_loss_per_real_minute_approx_fraction": "1/30",
+      "two_hour_explanation": "USE_ONE_THEN_REQUEST_ANOTHER_NOT_ONE_GRASS_LASTS_TWO_HOURS",
+      "shark_level": 130,
+      "source_coordinates": {
+        "shark": [
+          181,
+          322
+        ],
+        "wreck_entry": [
+          54,
+          17
+        ],
+        "贝克": [
+          7,
+          12
+        ],
+        "杰克森": [
+          44,
+          56
+        ]
+      },
+      "pet_total": 3,
+      "pet_level_max_inclusive": 80,
+      "requested_pet_names": [
+        "扬奇洛斯",
+        "邦奇诺",
+        "利则诺顿"
+      ],
+      "payment_alternatives": [
+        {
+          "currency": "石币",
+          "amount": 300000
+        },
+        {
+          "item": "伏特加",
+          "quantity_as_written": "一瓶"
+        }
+      ],
+      "keys_reported": 2,
+      "random_pet_removal_warning": true,
+      "flow": [
+        "FISHERMAN_GRASS",
+        "SHARK_THEN_WRECK",
+        "BAKER_REFERS_TO_JACKSON",
+        "JACKSON_MATERIAL_EXCHANGE",
+        "RETURN_SHARK_THEN_BAKER_FIGHT_TALK_CHEST"
+      ]
+    }
+  },
+  "historical_capture_timestamp": "20031204053709",
+  "historical_guide_matches": true,
+  "raw_html_or_images_in_output": false,
+  "original_server_execution_verified": false
+}

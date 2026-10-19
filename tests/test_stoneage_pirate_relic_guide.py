@@ -85,5 +85,20 @@ class PirateGuide(unittest.TestCase):
         self.assertTrue(self.report['inputs'][0]['current_submission_link_present'])
         self.assertEqual(self.report['inputs'][0]['extracted'],self.report['inputs'][1]['extracted'])
 
+    def test_permanent_replay_exact_hashes_and_head_scoped_custody(self):
+        import hashlib
+        receipt=json.loads((REPORT.parent/'STONEAGE-PIRATE-RELIC-CUSTODY-R1.json').read_text())
+        saved=json.loads((REPORT.parent/'STONEAGE-PIRATE-RELIC-CI-REPLAY-R1.json').read_text())
+        for pin in receipt['permanent_derived_files']:
+            b=(REPORT.parents[2]/pin['path']).read_bytes()
+            self.assertEqual((len(b),hashlib.sha256(b).hexdigest()),(pin['bytes'],pin['sha256']))
+            self.assertEqual(hashlib.sha1(b'blob '+str(len(b)).encode()+b'\0'+b).hexdigest(),pin['git_blob'])
+        self.assertEqual(saved['guide'],self.report['inputs'][0]['extracted'])
+        self.assertFalse(saved['raw_html_or_images_in_output'])
+        self.assertFalse(saved['original_server_execution_verified'])
+        for group,count in [('candidate',10),('main',11)]:
+            rows=receipt['validation'][group];self.assertEqual(len(rows),count)
+            self.assertTrue(all(r['conclusion']=='success' and r['head']==receipt['content_commit']['sha'] for r in rows))
+
 
 if __name__=='__main__':unittest.main()
