@@ -1,0 +1,19 @@
+name: Verify CN3.0 Watercity player-guide source boundary
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-CN30-WATERCITY-HEART-BRACELET-GUIDE-R1.json'
+      - 'tests/test_stoneage_cn30_watercity_story_source.py'
+      - '.github/workflows/verify-stoneage-cn30-watercity-story-source.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-CN30-WATERCITY-HEART-BRACELET-GUIDE-R1.json'
+      - 'tests/test_stoneage_cn30_watercity_story_source.py'
+      - '.github/workflows/verify-stoneage-cn30-watercity-story-source.yml'
+jobs:
+  verify-source-boundary:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate cited one-guide derived report (offline only)
+        run: python -m unittest discover -s tests -p 'test_stoneage_cn30_watercity_story_source.py' -v

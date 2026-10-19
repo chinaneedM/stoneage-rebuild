@@ -1,0 +1,366 @@
+{
+  "schema": "stoneage.source_qualified_named_quest_story.r1",
+  "task": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-17",
+  "date": "2026-10-19",
+  "evidence_class": "SOURCE_REPORTED_PLAYER_GUIDE_NOT_ORIGINAL_SERVER_FACT",
+  "source": {
+    "indexed_by": "https://news.17173.com/z/stoneage/renwu/renwu.htm",
+    "index_label": "石器3.0水城爱情故事任务--心之手环任务",
+    "index_line": 38,
+    "article_url": "https://news.17173.com/z/stoneage/renwu/sa30_08.htm",
+    "article_heading": "石器3.0水城爱情故事任务――心之手环任务",
+    "byline": "微笑赢家 多多",
+    "source_type": "17173_PORTAL_HOSTED_PLAYER_AUTHORED_GUIDE",
+    "actual_publication_date": null,
+    "operator_first_party": false,
+    "original_archive_capture": null,
+    "raw_page_sha256": null,
+    "read_method": "WEB_RENDERED_PAGE_AND_ACTUAL_INDEX_CLICK",
+    "observed_date": "2026-10-19",
+    "article_body_lines": [
+      6,
+      50
+    ],
+    "no_raw_byte_attestation": true
+  },
+  "version_claim": {
+    "portal_category": "石器3.0-伊甸新大陆任务攻略",
+    "original_TW10": false,
+    "same_build_proven": false,
+    "precise_region": null,
+    "precise_build": null,
+    "original_server_execution_verified": false
+  },
+  "goal": "Preserve a named later-version love-story quest and its NPC-item-travel-reward chain without promoting community prose to official server execution.",
+  "preconditions": [
+    {
+      "label": "已成人",
+      "lines": [
+        7,
+        8
+      ]
+    },
+    {
+      "label": "完成转生宠任务",
+      "lines": [
+        9,
+        9
+      ]
+    },
+    {
+      "label": "100级以上",
+      "lines": [
+        10,
+        10
+      ],
+      "inclusive_100_ambiguous": true
+    },
+    {
+      "label": "完成金飞航空任务",
+      "lines": [
+        11,
+        11
+      ]
+    },
+    {
+      "label": "身上带着不可思议的贝",
+      "lines": [
+        12,
+        12
+      ],
+      "consumption_unproven": true
+    }
+  ],
+  "reported_materials": [
+    {
+      "label": "圣兽之麟",
+      "grade_token": "麟11",
+      "source_hint": "持采集证，在北吉鲁通道地下三楼遭遇10级以上卡拉宝斯",
+      "lines": [
+        13,
+        13
+      ]
+    },
+    {
+      "label": "柔软的黏土",
+      "grade_token": "黏土4",
+      "source_hint": "萨村或卡鲁它那24店",
+      "lines": [
+        14,
+        14
+      ]
+    },
+    {
+      "label": "草的蔓",
+      "grade_token": "线2",
+      "source_hint": "萨村或卡鲁它那24店",
+      "lines": [
+        15,
+        15
+      ]
+    },
+    {
+      "label": "千年花",
+      "grade_token": "花10",
+      "source_hint": "持园艺证，在花的世界打伊布人型敌人100次以上",
+      "lines": [
+        16,
+        16
+      ]
+    }
+  ],
+  "material_grade_tokens_are_not_item_quantities": true,
+  "access_route": {
+    "claimed_start": "伊甸园",
+    "claimed_end": "水城",
+    "lines": [
+      17,
+      25
+    ],
+    "narrative": [
+      "伊甸园",
+      "骨头拱门",
+      "西方沙漠洞穴内通道",
+      "西方沙漠洞穴外通道",
+      "伊甸大陆西方",
+      "尼克斯城区",
+      "伊甸大陆南方",
+      "尼克斯城区",
+      "水城"
+    ],
+    "coordinate_strings_are_player_waypoints_not_map_ids": true,
+    "intermediate_coordinates_excluded_from_engine_spec": true
+  },
+  "named_npc_mentions": [
+    {
+      "name": "喀尔斯",
+      "claimed_location": "水城",
+      "guide_coordinate": "55．51",
+      "steps": [
+        1,
+        3,
+        9,
+        11
+      ]
+    },
+    {
+      "name": "莉娜",
+      "claimed_location": "水城",
+      "guide_coordinate": "83．32",
+      "steps": [
+        2,
+        5,
+        6,
+        10
+      ]
+    },
+    {
+      "name": "麦特",
+      "claimed_location": "麦特家（水城）",
+      "guide_coordinate": "60．85",
+      "steps": [
+        4,
+        7
+      ]
+    },
+    {
+      "name": "卡蜜儿",
+      "claimed_location": "水城西南空屋",
+      "guide_coordinate": "16．104",
+      "steps": [
+        8
+      ]
+    }
+  ],
+  "ordered_guide_steps": [
+    {
+      "number": 1,
+      "actor": "喀尔斯",
+      "action": "在水城与喀尔斯交谈接任务",
+      "lines": [
+        26,
+        26
+      ]
+    },
+    {
+      "number": 2,
+      "actor": "莉娜",
+      "action": "对莉娜说“喀尔斯”，据攻略得到花环",
+      "keyword": "喀尔斯",
+      "reported_output": "花环",
+      "lines": [
+        28,
+        28
+      ]
+    },
+    {
+      "number": 3,
+      "actor": "喀尔斯",
+      "action": "对喀尔斯说“莉娜”，攻略称其收下花环并要求寻找卡蜜儿",
+      "keyword": "莉娜",
+      "reported_input": "花环",
+      "lines": [
+        30,
+        30
+      ]
+    },
+    {
+      "number": 4,
+      "actor": "麦特",
+      "action": "在麦特家询问卡蜜儿，麦特让玩家返回找莉娜",
+      "keyword": "卡蜜儿",
+      "lines": [
+        31,
+        31
+      ]
+    },
+    {
+      "number": 5,
+      "actor": "莉娜",
+      "action": "再次询问卡蜜儿并获花环材料清单",
+      "keyword": "卡蜜儿",
+      "reported_output": "材料表",
+      "lines": [
+        33,
+        37
+      ]
+    },
+    {
+      "number": 6,
+      "actor": "莉娜",
+      "action": "据攻略，莉娜以事先准备的四类材料制作花贝项链",
+      "reported_output": "花贝项链",
+      "lines": [
+        39,
+        39
+      ]
+    },
+    {
+      "number": 7,
+      "actor": null,
+      "action": "返回麦特家，麦特不见；在地上与信件交互后取得信并获卡蜜儿线索",
+      "reported_output": "信件",
+      "lines": [
+        41,
+        41
+      ]
+    },
+    {
+      "number": 8,
+      "actor": "卡蜜儿",
+      "action": "在西南空屋将花贝项链交给卡蜜儿，得到交予喀尔斯的信",
+      "reported_input": "花贝项链",
+      "reported_output": "卡蜜儿的信",
+      "lines": [
+        43,
+        43
+      ]
+    },
+    {
+      "number": 9,
+      "actor": "喀尔斯",
+      "action": "向喀尔斯递交卡蜜儿的信，再得一封给莉娜的信",
+      "reported_input": "卡蜜儿的信",
+      "reported_output": "给莉娜的信",
+      "lines": [
+        45,
+        45
+      ]
+    },
+    {
+      "number": 10,
+      "actor": "莉娜",
+      "action": "向莉娜交喀尔斯的信，收到需转交喀尔斯的回信",
+      "reported_input": "给莉娜的信",
+      "reported_output": "给喀尔斯的信",
+      "lines": [
+        46,
+        46
+      ]
+    },
+    {
+      "number": 11,
+      "actor": "喀尔斯",
+      "action": "将莉娜回信交喀尔斯，攻略宣称获得心之手环",
+      "reported_input": "给喀尔斯的信",
+      "reported_output": "心之手环",
+      "lines": [
+        48,
+        48
+      ]
+    }
+  ],
+  "reported_reward": {
+    "name": "心之手环",
+    "stats_as_printed": {
+      "攻": -37,
+      "防": 37,
+      "敏": 37,
+      "魅": 8
+    },
+    "source_lines": [
+      48,
+      48
+    ],
+    "item_id": null
+  },
+  "reported_choice_constraint": {
+    "one_of": [
+      "心之手环任务",
+      "力之手环任务"
+    ],
+    "cannot_complete_both": "PLAYER_GUIDE_ASSERTION_ONLY",
+    "source_lines": [
+      50,
+      50
+    ],
+    "server_predicate_unknown": true
+  },
+  "story_relations": [
+    {
+      "from": "喀尔斯",
+      "to": "莉娜",
+      "type": "MESSAGE_EXCHANGE_AND_FLOWER_WREATH",
+      "source_steps": [
+        2,
+        3,
+        9,
+        10,
+        11
+      ]
+    },
+    {
+      "from": "麦特",
+      "to": "卡蜜儿",
+      "type": "MISSING_PERSON_LEAD",
+      "source_steps": [
+        4,
+        7,
+        8
+      ]
+    },
+    {
+      "from": "卡蜜儿",
+      "to": "喀尔斯",
+      "type": "LETTER_HANDOFF",
+      "source_steps": [
+        8,
+        9
+      ]
+    }
+  ],
+  "bounds": {
+    "new_source_bodies": 1,
+    "new_original_client_files": 0,
+    "new_official_server_scripts": 0,
+    "new_original_images": 0,
+    "confirmed_runtime_entities": 0,
+    "original_TW10_entities": 0,
+    "story_entities_not_automatically_canonical": true,
+    "unread_related_article": "石器3.0水城爱情故事任务--力之手环任务",
+    "unverified_original_capture": "Source is live/rendered 17173 without a retained historical raw-byte SHA; do not infer contemporary publication.",
+    "art_reuse_authorization": false
+  },
+  "finite_stop": "ONE_17173_INDEX_TO_ONE_NAMED_CN30_ARTICLE_NO_SIBLING_LINKS_NO_IMAGES_NO_SERVER_PROJECTION",
+  "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-18"
+}
