@@ -1,0 +1,35 @@
+name: Verify finite CN2.0 pet pagination with separate October and December captures
+on:
+  push:
+    paths:
+      - tools/stoneage_waei_cn20_new_pet_pagination.py
+      - tools/stoneage_waei_cn20_new_pet_catalog.py
+      - tools/stoneage_early_content_probe.py
+      - tools/stoneage_wayi_newbie_riding_plan.py
+      - tests/test_stoneage_waei_cn20_new_pet_pagination.py
+      - research/recovered/STONEAGE-WAEI-CN20-NEW-PET-FINITE-CATALOG-R1.json
+      - research/recovered/STONEAGE-WAEI-CN20-NEW-PET-CATALOG-FIRST-PAGE-R1.json
+      - research/recovered/STONEAGE-WAEI-CN20-AMIDUO-VISUAL-REFERENCE-R1.json
+      - docs/specs/STONEAGE-WAEI-CN20-NEW-PET-FINITE-CATALOG-R1.md
+      - .github/workflows/verify-stoneage-waei-cn20-new-pet-pagination.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exactly-two-pagination-bodies-and-pinned-parent-metadata:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest tests.test_stoneage_waei_cn20_new_pet_pagination -v
+      - name: Reacquire only two actual October pagination captures
+        run: python -m tools.stoneage_waei_cn20_new_pet_pagination --output output/derived.json
+      - run: cmp output/derived.json research/recovered/STONEAGE-WAEI-CN20-NEW-PET-FINITE-CATALOG-R1.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: waei-cn20-new-pet-finite-catalog-derived-only
+          path: output/derived.json
+          retention-days: 30
