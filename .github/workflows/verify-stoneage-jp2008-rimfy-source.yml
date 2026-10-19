@@ -1,0 +1,36 @@
+name: Verify JP2008 Rimfy family quest source
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-JP2008-RIMFY-*.json'
+      - 'tools/stoneage_jp2008_rimfy_source.py'
+      - 'tools/stoneage_jp2008_shadow_release.py'
+      - 'tools/stoneage_cn2003_christmas_source.py'
+      - 'tests/test_stoneage_jp2008_rimfy_source.py'
+      - '.github/workflows/verify-stoneage-jp2008-rimfy-source.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-JP2008-RIMFY-*.json'
+      - 'tools/stoneage_jp2008_rimfy_source.py'
+      - 'tools/stoneage_jp2008_shadow_release.py'
+      - 'tools/stoneage_cn2003_christmas_source.py'
+      - 'tests/test_stoneage_jp2008_rimfy_source.py'
+      - '.github/workflows/verify-stoneage-jp2008-rimfy-source.yml'
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify family roles and source boundaries
+        run: python -m unittest discover -s tests -p 'test_stoneage_jp2008_rimfy_source.py' -v
+      - name: Read one quoted release and its actual linked pet JPEG
+        run: python -m tools.stoneage_jp2008_rimfy_source --fetch --output /tmp/rimfy-derived/replay.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: jp2008-rimfy-derived-replay
+          path: /tmp/rimfy-derived/replay.json
+          if-no-files-found: error
+          retention-days: 30

@@ -7557,3 +7557,8 @@ S1 https://games.sina.com.cn/zhqu/sta/sa6/rw/hzw.shtml，2003-05-21 22:27，现H
 S1 https://www.4gamer.net/games/013/G001377/20071120003/，2007/11/20 11:57，明确配信元デジパーク及原样厂商稿，现UTF8 HTTP200/267633B SHA2569094a04a3db86c100e987b404900b1f43b5085703ac107dff077258241b3f41a。H1 https://web.archive.org/web/20071223094402id_/http://www.4gamer.net:80/games/013/G001377/20071120003/，EUC-JP61462B SHA2569e7f0543531dc4838f7ceb8b745afe4fec9a9e1e32a2a90b7e215d8aa6f88cdc。O1 https://web.archive.org/web/20080220173517id_/http://stoneage.to:80/update/20071120_update_08_sekiei.html，真实S1出链主机/路径，UTF8 6511B SHA256bd7c436aeb0bd4d0ac3e0b73a3f3980e63105c19d040dd9403195276d9b85275。两次有界availability/回放均HTTP200，官方页更新标签2007/11/20不是2007首发日捕获；两正文核心1427/1460B分别pin，不删除异文，同语义不算独立两运营来源。
 
 I1正文实际img https://www.4gamer.net/games/013/G001377/20071120003/TN/001.jpg，410×410/159779B SHA256d0c0d7b2a287ade46a87c8278b499206896ef7cc31b2e64e4972f2ba0074be85，目视四格场景；当前媒体图不等于已取历史图片或官方原图字节，官方页面警告开发中截图。用途为神话/世界事件/任务动机与视觉来源规格，不认证地图原ID或壶奖励。8记录、原资产不入Git、CI只派生JSON，实际ZIP/raw/Git按后续收据保管；Stage门不变。
+
+
+### JP2008-RIMFY-FAMILY-QUEST-SOURCE-R1（2026-10-20）
+
+S1 https://www.4gamer.net/games/013/G001377/20080707020/，2008/07/07 17:25，现HTTP200/267000B SHA256053f7cf040ad9fc0473d8dda7a96459ec450e4301a9737fe594dc049efd76df9；明确发布文分界与官方特页链接，但引文无公司署名，保守“媒体标发布文”非已取原运营HTML。1593B核心SHA256b1acc18afe061c7845acf20beb41ba03178a6d1bbc2d2b8c4931a8728229bf84。两个固定官方/媒体URL availability（20080901）空返回，精确响应/HTTP/SHA见报告，不称全网无档案。I1真实img https://www.4gamer.net/games/013/G001377/20080707020/TN/001.jpg，22218B JPEG122×99 SHA256600909ad41837331067eeeca9f9631f74ed1dabb4d578a7d92ba4e82b8309a42，已目视红橙四足兽；非原SPR/物种master。误001.gif404只记失败，不作源。六记录/原资产不入Git，CI仅派生，ZIP/raw/Git按真实后续验收保管。历史原件、脚本与等级/结局缺失不隐去。

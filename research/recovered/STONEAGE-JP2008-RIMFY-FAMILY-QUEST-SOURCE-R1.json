@@ -1,0 +1,323 @@
+{
+  "schema": "stoneage.jp2008_rimfy_family_quest.source.r1",
+  "task": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-26",
+  "date": "2026-10-20",
+  "baseline": {
+    "head": "3c1fb02540e7adf710b284b4ba274f59ce877fd1",
+    "tree": "d10dab0014cd5c70d7edaf476e255681cf02467b",
+    "own_main_success": 11,
+    "own_candidate_success": 10,
+    "continuity_prefix_pins": [
+      {
+        "path": "README.md",
+        "bytes": 21648,
+        "sha256": "9e5cfa8652f58f18a0bfc1df08f5b6b4f31ba63b86f6df2385959801a10bccbb",
+        "git_blob": "961cd68e7850b5535c0c5bdc82ed2e506c651a21"
+      },
+      {
+        "path": "docs/PROJECT-CONTINUITY-PROTOCOL-R1.md",
+        "bytes": 9762,
+        "sha256": "c44834eeec87f7a43e9cb4905f08377349e36d58b1fff2c5a75a6975db695e3b",
+        "git_blob": "ba9bbe19384589400abc61af37a360a40bf91452"
+      },
+      {
+        "path": "docs/CURRENT-STATE.md",
+        "bytes": 2144886,
+        "sha256": "76ba26957adcb1d348054278b96021bac591771e66669a39b47e0916880cbc73",
+        "git_blob": "a6e1b9568c480f4f4cc4971b5b59f29a4836c32b"
+      },
+      {
+        "path": "docs/DESIGN-DECISIONS.md",
+        "bytes": 45965,
+        "sha256": "28b572ed01179eacd5a06b4ad62c76e4baef22ac49587aa0bad452a7cb3fe8e6",
+        "git_blob": "013ae4fad9301ab0140fe408a423b3abad97d1f9"
+      },
+      {
+        "path": "docs/HISTORICAL-TIMELINE.md",
+        "bytes": 499742,
+        "sha256": "4677b04164753a1f1d583c21f63a0d01eb7f32767c4c18190869807786faa760",
+        "git_blob": "7003ba426ae2aa2ffda62da4062a9a81e8e9ee33"
+      },
+      {
+        "path": "docs/SOURCE-REGISTRY.md",
+        "bytes": 782919,
+        "sha256": "94da858fe04b30af88ae179c622b09bce49483b6e54b077e4bc8121caef9095f",
+        "git_blob": "e4c8293933f29fa325abd297ff4e36e30f0cb6b8"
+      },
+      {
+        "path": "docs/RESTORATION-ROADMAP-R2.md",
+        "bytes": 133605,
+        "sha256": "51cefdb25d7788a1051657eeb2616bb7c9f665ccf817333f3a4799fd5321fc27",
+        "git_blob": "e40579ee156d5baefc77af33c29018c021fa8149"
+      },
+      {
+        "path": "research/recovered/STONEAGE-22-DOMAIN-SOURCE-READY-PORTFOLIO-R2.json",
+        "bytes": 15948,
+        "sha256": "7d50de08f7855cf16dbe54b1747e258f1cc1223de88cc217172fd145f3c704ce",
+        "git_blob": "088b469b3c51e689cff27f33fc3bb49de2d24b2c"
+      }
+    ]
+  },
+  "inputs": [
+    {
+      "id": "S1",
+      "type": "HTML",
+      "http": {
+        "url": "https://www.4gamer.net/games/013/G001377/20080707020/",
+        "resolved_url": "https://www.4gamer.net/games/013/G001377/20080707020/",
+        "status": 200,
+        "bytes": 267000,
+        "sha256": "053f7cf040ad9fc0473d8dda7a96459ec450e4301a9737fe594dc049efd76df9",
+        "retrieved_utc": "2026-10-19T23:49:21.256600+00:00"
+      },
+      "historical_original_sha256": null,
+      "authority": "MEDIA_LABELLED_RELEASE_WITH_OPERATOR_LINK_ISSUER_NOT_NAMED_IN_QUOTE",
+      "visible_publication": "2008/07/07 17:25",
+      "extracted": {
+        "core_sha256": "b1acc18afe061c7845acf20beb41ba03178a6d1bbc2d2b8c4931a8728229bf84",
+        "core_utf8_bytes": 1593,
+        "facts": {
+          "announced_start_as_written": "2008年7月8日（火）16：00",
+          "dungeon_as_written": "閉ざされた氷窟",
+          "quest_as_written": "親子の絆",
+          "parent_dog_as_written": "リムファン",
+          "puppy_as_written": "リムフィ",
+          "protector_as_written": "ミデル",
+          "protector_role": "PROTECTS_LOST_PUPPY_NOT_PROVEN_QUEST_START",
+          "puppy_fur_description": "RED_FLAME_LIKE_NOT_ELEMENT_STATS",
+          "parent_searches_deeper_cave_reported": true,
+          "parent_lacks_food_narrative_not_hunger_rule": true,
+          "objective": "TAKE_PUPPY_AND_SEARCH_FOR_PARENT",
+          "completion_reward_pet_label": "リムフィ",
+          "mysterious_shadow_identity": null,
+          "reunion_ending_details": null
+        }
+      },
+      "editorial_intro_excluded_from_core": true,
+      "official_link_as_written": "http://stoneage.to/update/20080708_update_rimfy_quest.html"
+    },
+    {
+      "id": "I1",
+      "type": "JPEG",
+      "http": {
+        "url": "https://www.4gamer.net/games/013/G001377/20080707020/TN/001.jpg",
+        "resolved_url": "https://www.4gamer.net/games/013/G001377/20080707020/TN/001.jpg",
+        "status": 200,
+        "bytes": 22218,
+        "sha256": "600909ad41837331067eeeca9f9631f74ed1dabb4d578a7d92ba4e82b8309a42",
+        "retrieved_utc": "2026-10-19T23:51:36.349095+00:00"
+      },
+      "historical_original_sha256": null,
+      "authority": "ACTUAL_CURRENT_MEDIA_IMG_SRC",
+      "dimensions": [
+        122,
+        99
+      ],
+      "visually_inspected": true,
+      "observations": [
+        "SMALL_RED_ORANGE_FURRED_QUADRUPED_ON_GREEN_GROUND"
+      ],
+      "original_sprite_binding": null
+    }
+  ],
+  "records": [
+    {
+      "record_id": "jp-2008-rimfy:quest",
+      "entity_type": "SOURCE_NAMED_FAMILY_QUEST_NOT_SCRIPT",
+      "collection": "quests",
+      "version_profile": "LATER_OFFICIAL:JP_20080708_ANNOUNCED_QUEST_NOT_EXACT_BUILD",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "MEDIA_RELEASE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "label_as_written": "親子の絆",
+      "source_facts": {
+        "announced_start_as_written": "2008年7月8日（火）16：00",
+        "dungeon_as_written": "閉ざされた氷窟",
+        "quest_as_written": "親子の絆",
+        "parent_dog_as_written": "リムファン",
+        "puppy_as_written": "リムフィ",
+        "protector_as_written": "ミデル",
+        "protector_role": "PROTECTS_LOST_PUPPY_NOT_PROVEN_QUEST_START",
+        "puppy_fur_description": "RED_FLAME_LIKE_NOT_ELEMENT_STATS",
+        "parent_searches_deeper_cave_reported": true,
+        "parent_lacks_food_narrative_not_hunger_rule": true,
+        "objective": "TAKE_PUPPY_AND_SEARCH_FOR_PARENT",
+        "completion_reward_pet_label": "リムフィ",
+        "mysterious_shadow_identity": null,
+        "reunion_ending_details": null
+      },
+      "minimum_level": null,
+      "escort_implementation": null,
+      "ending_details": null,
+      "reward_species_label": "リムフィ",
+      "repeatability": null
+    },
+    {
+      "record_id": "jp-2008-rimfy:parent",
+      "entity_type": "SOURCE_NAMED_PARENT_DOG_NOT_SPECIES_MASTER",
+      "collection": "pets",
+      "version_profile": "LATER_OFFICIAL:JP_20080708_ANNOUNCED_QUEST_NOT_EXACT_BUILD",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "MEDIA_RELEASE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "label_as_written": "リムファン",
+      "gender": null,
+      "capture_rule": null,
+      "stats": null
+    },
+    {
+      "record_id": "jp-2008-rimfy:puppy",
+      "entity_type": "SOURCE_NAMED_PUPPY_REWARD_LABEL_NOT_MASTER",
+      "collection": "pets",
+      "version_profile": "LATER_OFFICIAL:JP_20080708_ANNOUNCED_QUEST_NOT_EXACT_BUILD",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "MEDIA_RELEASE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "label_as_written": "リムフィ",
+      "numeric_elements": null,
+      "growth_rates": null,
+      "escorted_individual_equals_reward_individual": null,
+      "reward_level": null
+    },
+    {
+      "record_id": "jp-2008-rimfy:protector",
+      "entity_type": "SOURCE_NAMED_PROTECTOR_NOT_SPAWN",
+      "collection": "npcs",
+      "version_profile": "LATER_OFFICIAL:JP_20080708_ANNOUNCED_QUEST_NOT_EXACT_BUILD",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "MEDIA_RELEASE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "label_as_written": "ミデル",
+      "quest_start_verified": false,
+      "spawn_coordinates": null,
+      "exact_dialogue": null
+    },
+    {
+      "record_id": "jp-2008-rimfy:ice-cave",
+      "entity_type": "SOURCE_NAMED_EXISTING_DUNGEON_NOT_MAP",
+      "collection": "maps",
+      "version_profile": "LATER_OFFICIAL:JP_20080708_ANNOUNCED_QUEST_NOT_EXACT_BUILD",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "MEDIA_RELEASE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "label_as_written": "閉ざされた氷窟",
+      "promotional_title_variant": "閉ざされた氷の洞窟 〜 親子の絆 〜",
+      "map_ids": null,
+      "entry_route": null
+    },
+    {
+      "record_id": "jp-2008-rimfy:pet-image",
+      "entity_type": "SOURCE_VISUAL_REFERENCE_NOT_SPRITE_MASTER",
+      "collection": "screens",
+      "version_profile": "LATER_OFFICIAL:JP_20080708_ANNOUNCED_QUEST_NOT_EXACT_BUILD",
+      "source_refs": [
+        "S1",
+        "I1"
+      ],
+      "verification_status": "MANUAL_IMAGE_REFERENCE_NOT_SPECIES_MASTER",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "dimensions": [
+        122,
+        99
+      ],
+      "original_sprite_binding": null,
+      "animation_frames_or_directions": null
+    }
+  ],
+  "boundaries": {
+    "original_operator_html_recovered": false,
+    "historical_media_or_image_bytes_verified": false,
+    "original_server_execution_verified": false,
+    "exact_client_build": null,
+    "publication_label_proves_actual_deployment": false,
+    "image_is_original_client_sprite_master": false,
+    "red_flame_fur_proves_fire_attribute": false,
+    "parent_role_proves_mother_or_father": false,
+    "mysterious_shadow_is_named_boss": false,
+    "raw_html_or_assets_committed": false,
+    "tw10_or_jss1999_backfill": false,
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b_and_wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING"
+  },
+  "archive_discovery": [
+    {
+      "role": "official",
+      "http": {
+        "url": "https://archive.org/wayback/available?url=http%3A%2F%2Fstoneage.to%2Fupdate%2F20080708_update_rimfy_quest.html&timestamp=20080901",
+        "resolved_url": "https://archive.org/wayback/available?url=http%3A%2F%2Fstoneage.to%2Fupdate%2F20080708_update_rimfy_quest.html&timestamp=20080901",
+        "status": 200,
+        "bytes": 120,
+        "sha256": "f31e10e77e753cc8488bafc411c12851c5dfcd6340c864225ba969667427e9ea",
+        "retrieved_utc": "2026-10-19T23:49:23.852732+00:00"
+      },
+      "response": {
+        "url": "http://stoneage.to/update/20080708_update_rimfy_quest.html",
+        "archived_snapshots": {},
+        "timestamp": "20080901"
+      },
+      "meaning": "NO_CLOSEST_CAPTURE_RETURNED_FOR_THIS_QUERY_NOT_PROOF_ALL_ARCHIVES_LACK_SOURCE"
+    },
+    {
+      "role": "press",
+      "http": {
+        "url": "https://archive.org/wayback/available?url=http%3A%2F%2Fwww.4gamer.net%2Fgames%2F013%2FG001377%2F20080707020%2F&timestamp=20080901",
+        "resolved_url": "https://archive.org/wayback/available?url=http%3A%2F%2Fwww.4gamer.net%2Fgames%2F013%2FG001377%2F20080707020%2F&timestamp=20080901",
+        "status": 200,
+        "bytes": 114,
+        "sha256": "f6afac74c384c756d728ad6331daa2aef104e563e18f84d601469b9ecf8b75c4",
+        "retrieved_utc": "2026-10-19T23:50:10.861627+00:00"
+      },
+      "response": {
+        "url": "http://www.4gamer.net/games/013/G001377/20080707020/",
+        "archived_snapshots": {},
+        "timestamp": "20080901"
+      },
+      "meaning": "NO_CLOSEST_CAPTURE_RETURNED_FOR_THIS_QUERY_NOT_PROOF_ALL_ARCHIVES_LACK_SOURCE"
+    }
+  ],
+  "failed_probe": {
+    "url": "https://www.4gamer.net/games/013/G001377/20080707020/TN/001.gif",
+    "http_status": 404,
+    "reason": "INCORRECT_EXTENSION_PROBE_CORRECTED_TO_OBSERVED_001_JPG",
+    "used_as_source": false
+  },
+  "interpretation_notes": [
+    "The page explicitly marks a quoted release and links an operator special page, but its quote does not name a corporate issuer. Publisher tags outside the block do not certify the issuer.",
+    "The parent role does not establish mother/father or pet sex. The protector is not explicitly identified as the quest-start contact.",
+    "Taking the puppy along is an objective, not proof of companion AI, party slot, pet-slot or quest-item implementation.",
+    "The same puppy name is used for the promised completion pet, but the individual identity, level, transfer/consumption and ending remain unspecified.",
+    "Red flame-like fur is descriptive, not a numeric fire attribute. Hunger and a threatening shadow are narrative, not recovered hunger mechanics or a named boss.",
+    "The scheduled start/publication labels are not proven deployment or server timezone. Exact build, coordinates, prerequisites and reset flags are unknown.",
+    "The two fixed archive queries returned no closest snapshot; current HTTP/image hashes remain distinct from historical unknowns. No exhaustive archive absence claim.",
+    "One observed 122x99 JPEG is a promotional pet visual; two other linked GIF screenshots were not fetched. No animation/direction coverage or production rights."
+  ],
+  "reopening_triggers": [
+    "ORIGINAL_OPERATOR_SPECIAL_PAGE_OR_SAME_EDITION_QUEST_SCRIPT_FOR_ELIGIBILITY_AND_ENDING",
+    "AUTHENTICATED_PET_MASTER_OR_IMAGE_SELECTORS_FOR_STATS_AND_SPRITE_IDENTITY",
+    "EXACT_HISTORICAL_HTML_OR_IMAGE_CAPTURE"
+  ],
+  "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-27"
+}

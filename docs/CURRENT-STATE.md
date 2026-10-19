@@ -16172,3 +16172,17 @@ R19 内容主线77b8b06a08ee93aea2e14887fc97de453aa6b19d已检验：候选10与�
 新增赤影角兽被未限定“精霊王”分善恶魂封两壶、互相平衡、地底迷宫传说；当前海底喷发→地震→三岛间洞窟裂缝→狩猎团调查/多数未归及一返回者，入口改变与任务动机八条研究记录/中文规格。三岛原名不绑地图ID；不把此精灵王并大陆两王。现世魂壶仍传闻/问句，宝物/门槛/结局/精确build及原服脚本null。旁付费随机券不是任务奖励。实际一张四格JPEG410×410目视，历史图像字节/官方图片字节对应未证；官方页明确开发中截图。HTML/图片不进Git。13新+36既有=49本地测试和三HTML一图实输入离线重放通过；初历史EUC-JP误按UTF-8读的修正详记评审。新候选/自身main与派生ZIP须按真实结果另验，不借父绿。
 
 **唯一最高NEXT `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-26`**：返回全官方版本/22域，优先另一具名任务/NPC/世界故事一方来源，停止本壶helper、跨版精灵王身份、坐标及商业活动扩张。旧历史/失败和22域原状态保持，Stage A7 PARTIAL+2 OPEN，Stage B/百科GATED，R79 PAUSED_NON_BLOCKING，无总体百分比。
+
+
+### R25实际CI与永久派生保管验收
+
+内容main3c1fb02540e7adf710b284b4ba274f59ce877fd1/treed10dab0014cd5c70d7edaf476e255681cf02467b，候选10/自身main11均实际success；main源run39343973208/job118372013518的13项测试与三HTML一图实重取通过。候选artifact12230166011与main artifact12230695471均实下载，ZIP各1256B SHA256分别b67f04599044c1361146d22b0d114f29313e319e0caef02004370ec7644e71b3和6d882475f91f090f599e71446289f69283930da0b2dfb6f13160815e006acd44；唯一replay.json同字节4142B SHA2561d6106f47a8c46f7aebdcbda363704e7e0bf6f75787fa40c3b97e85e92e3b323/Git blob8e99543997fd817073733ce467ada9d5222922f6，完整语义等于本地实输入。CI-REPLAY/CUSTODY永久保存实际HEAD/tree、10与11清单、job/artifact/ZIP/raw/Git与边界；独立干净候选49测试/八旧全文前缀通过，协议/决策/22域原档未改。新增保管测试后14+36=50项另验。新保管提交自身Actions按实际另看，不借父绿。NEXT26，Stage A7 PARTIAL+2 OPEN，Stage B/百科GATED，R79暂停；没有原服/历史图像或精确地图恢复。
+
+
+## 2026-10-20 — R26亲子之绊：具名宠物家庭与保护者、获宠关系
+
+R25内容候选10/main11实际success后，从新远端main3c1fb02540e7adf710b284b4ba274f59ce877fd1/treed10dab0014cd5c70d7edaf476e255681cf02467b接最高R26；八连续性原全文新pin，R25保管收据与本内容一起提交、未冒称独立先绿。实取2008/07/07 17:25 4Gamer“親子の絆”稿，明确编辑/发布文分界，原发布文1593B核心SHA256b1acc18afe061c7845acf20beb41ba03178a6d1bbc2d2b8c4931a8728229bf84。引文直接链接stoneage.to特页但无公司署名，不以外围发行商标签升级为DigiPark原HTML。两个固定官方/媒体URL availability空返回只记查询范围，不称所有档案缺失；历史原HTML/图像SHA null。
+
+新增六研究记录：幼犬リムフィ迷入冰窟被ミデル保护，亲犬リムファン深入寻找并受神秘影子威胁，玩家带幼犬寻亲，完成获同名宠リムフィ。亲犬性别、ミデル是否接任务入口、同行宠=奖励个体、具体跟随/栏位实现、等级/成长/坐标/影子与结局均未知；火焰毛色不变火10。实际一JPEG122×99/22218B目视，SHA256600909ad41837331067eeeca9f9631f74ed1dabb4d578a7d92ba4e82b8309a42；误扩展名001.gif404保留为纠正记录，后据真实img 001.jpg取图，另两GIF未取。原HTML/图不进Git。9新+14 R25含保管+36既有=59本地测试、两实输入离线重放通过；独立CI/main与ZIP保管按实际后验，未套父绿。
+
+**唯一最高NEXT `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-27`**：返回全官方版本/22域优先另一具名一方任务/NPC/故事，停止本影子身份、等级/成长及跟随helper推断。全部旧历史/失败与22域原状态不动，Stage A7 PARTIAL+2 OPEN，Stage B/百科GATED，R79 PAUSED_NON_BLOCKING，无总体百分比。

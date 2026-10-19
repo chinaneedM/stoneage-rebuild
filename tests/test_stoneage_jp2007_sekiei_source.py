@@ -101,5 +101,20 @@ class SekieiSource(unittest.TestCase):
         for key,val in [('original_server_execution_verified',True),('exact_client_build','2007.exe'),('tw10_or_jss1999_backfill',True)]:
             self.rejects(lambda r:r['boundaries'].__setitem__(key,val))
 
+    def test_permanent_ci_replay_exact_hashes_and_head_scoped_custody(self):
+        import hashlib
+        receipt=json.loads((REPORT.parent/'STONEAGE-JP2007-SEKIEI-CUSTODY-R1.json').read_text())
+        saved=json.loads((REPORT.parent/'STONEAGE-JP2007-SEKIEI-CI-REPLAY-R1.json').read_text())
+        for pin in receipt['permanent_derived_files']:
+            b=(REPORT.parents[2]/pin['path']).read_bytes()
+            self.assertEqual((len(b),hashlib.sha256(b).hexdigest()),(pin['bytes'],pin['sha256']))
+            self.assertEqual(hashlib.sha1(b'blob '+str(len(b)).encode()+b'\0'+b).hexdigest(),pin['git_blob'])
+        self.assertEqual(saved['extracted'],[s['extracted'] for s in self.report['inputs'][:3]])
+        self.assertFalse(saved['original_server_or_historical_image_verified'])
+        self.assertFalse(saved['raw_html_or_images_in_output'])
+        for group,count in [('candidate',10),('main',11)]:
+            rows=receipt['validation'][group];self.assertEqual(len(rows),count)
+            self.assertTrue(all(r['conclusion']=='success' and r['head']==receipt['content_commit']['sha'] for r in rows))
+
 
 if __name__=='__main__':unittest.main()
