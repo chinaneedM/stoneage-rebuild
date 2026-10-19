@@ -7550,3 +7550,10 @@ R22同期补证独立验收：run39338706949/job118354613187、artifact122279316
 ### PIRATE-RELIC-GUIDE-SOURCE-R1 — 同期指南与历史HTML（2026-10-20）
 
 S1 https://games.sina.com.cn/zhqu/sta/sa6/rw/hzw.shtml，2003-05-21 22:27，现HTTP200/49799B SHA256b4d9f36815b7f099d0f6d0f7915e35ceab2edd8e6ead0658e5649c58ebb031bd；现投稿入口与专题授权，保守门户玩家指南，不认证运营作者或sa6版本。H1 https://web.archive.org/web/20031204053709id_/http://games.sina.com.cn:80/zhqu/sta/sa6/rw/hzw.shtml，HTTP200/29939B SHA2560dbcc96ef5b7a524bd3a228e6f743180195149cf5c9b082306b5790ef9c9a1e8。一次availability后实回放，旧作者栏授权、无当前投稿入口；两者相同1722B核心SHA256ad44dbe63160f4407511d9d1c40855226ad3226c834528ef0520dfbfd31c930a，同稿非独立运行双证。八记录/五段交接，保留素材、报酬二选一和随机收宠警告；12图未取。HTML/资产不入Git，工具只输出派生JSON，独立CI/ZIP/raw/Git保管按实际另验。未取GNN21168两接口403仅为发现失败，不作伊布原文证据。
+
+
+### JP2007-SEKIEI-WORLD-EVENT-SOURCE-R1（2026-10-20）
+
+S1 https://www.4gamer.net/games/013/G001377/20071120003/，2007/11/20 11:57，明确配信元デジパーク及原样厂商稿，现UTF8 HTTP200/267633B SHA2569094a04a3db86c100e987b404900b1f43b5085703ac107dff077258241b3f41a。H1 https://web.archive.org/web/20071223094402id_/http://www.4gamer.net:80/games/013/G001377/20071120003/，EUC-JP61462B SHA2569e7f0543531dc4838f7ceb8b745afe4fec9a9e1e32a2a90b7e215d8aa6f88cdc。O1 https://web.archive.org/web/20080220173517id_/http://stoneage.to:80/update/20071120_update_08_sekiei.html，真实S1出链主机/路径，UTF8 6511B SHA256bd7c436aeb0bd4d0ac3e0b73a3f3980e63105c19d040dd9403195276d9b85275。两次有界availability/回放均HTTP200，官方页更新标签2007/11/20不是2007首发日捕获；两正文核心1427/1460B分别pin，不删除异文，同语义不算独立两运营来源。
+
+I1正文实际img https://www.4gamer.net/games/013/G001377/20071120003/TN/001.jpg，410×410/159779B SHA256d0c0d7b2a287ade46a87c8278b499206896ef7cc31b2e64e4972f2ba0074be85，目视四格场景；当前媒体图不等于已取历史图片或官方原图字节，官方页面警告开发中截图。用途为神话/世界事件/任务动机与视觉来源规格，不认证地图原ID或壶奖励。8记录、原资产不入Git、CI只派生JSON，实际ZIP/raw/Git按后续收据保管；Stage门不变。

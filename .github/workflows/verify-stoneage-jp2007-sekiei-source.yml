@@ -1,0 +1,36 @@
+name: Verify JP2007 Sekiei operator story and historical captures
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-JP2007-SEKIEI-*.json'
+      - 'tools/stoneage_jp2007_sekiei_source.py'
+      - 'tools/stoneage_jp2008_shadow_release.py'
+      - 'tools/stoneage_cn2003_christmas_source.py'
+      - 'tests/test_stoneage_jp2007_sekiei_source.py'
+      - '.github/workflows/verify-stoneage-jp2007-sekiei-source.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-JP2007-SEKIEI-*.json'
+      - 'tools/stoneage_jp2007_sekiei_source.py'
+      - 'tools/stoneage_jp2008_shadow_release.py'
+      - 'tools/stoneage_cn2003_christmas_source.py'
+      - 'tests/test_stoneage_jp2007_sekiei_source.py'
+      - '.github/workflows/verify-stoneage-jp2007-sekiei-source.yml'
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify narrative relations and negative evidence boundaries
+        run: python -m unittest discover -s tests -p 'test_stoneage_jp2007_sekiei_source.py' -v
+      - name: Read one current release, two fixed historical captures and one linked JPEG
+        run: python -m tools.stoneage_jp2007_sekiei_source --fetch --output /tmp/sekiei-derived/replay.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: jp2007-sekiei-derived-replay
+          path: /tmp/sekiei-derived/replay.json
+          if-no-files-found: error
+          retention-days: 30
