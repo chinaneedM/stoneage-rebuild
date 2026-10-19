@@ -1,0 +1,32 @@
+name: Verify Wayi profession access proposal and separate skill learning gate
+on:
+  push:
+    paths:
+      - tools/stoneage_wayi_profession_access_plan.py
+      - tools/stoneage_wayi_newbie_riding_plan.py
+      - tools/stoneage_early_content_probe.py
+      - tests/test_stoneage_wayi_profession_access_plan.py
+      - research/recovered/STONEAGE-WAYI2003-PROFESSION-ACCESS-PLAN-R1.json
+      - docs/specs/STONEAGE-WAYI2003-PROFESSION-ACCESS-PLAN-R1.md
+      - .github/workflows/verify-stoneage-wayi-profession-access-plan.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exact-index-and-profession-proposal:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest tests.test_stoneage_wayi_profession_access_plan -v
+      - name: Reacquire exact known index and only one selected profession article
+        run: python -m tools.stoneage_wayi_profession_access_plan --output output/derived.json
+      - run: cmp output/derived.json research/recovered/STONEAGE-WAYI2003-PROFESSION-ACCESS-PLAN-R1.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: wayi-profession-access-plan-derived-only
+          path: output/derived.json
+          retention-days: 30

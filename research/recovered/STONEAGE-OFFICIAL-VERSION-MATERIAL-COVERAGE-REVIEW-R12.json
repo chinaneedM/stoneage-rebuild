@@ -1,0 +1,177 @@
+{
+  "boundaries": {
+    "automatic_new_game_design_adoption": false,
+    "r79": "PAUSED_NON_BLOCKING",
+    "raw_original_html_or_assets_in_git": false,
+    "same_build_jss1999_tw10_cn182_or_exact_first_profession_release": false,
+    "source_proposal_is_deployed_server_rule": false,
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b_and_wiki": "GATED"
+  },
+  "date": "2026-10-19",
+  "domains_unchanged": [
+    {
+      "baseline_evidence_status": "PARTIAL_SOURCE",
+      "domain_id": "version_lineage"
+    },
+    {
+      "baseline_evidence_status": "OPEN_VISUAL",
+      "domain_id": "login_splash"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "domain_id": "character_creation"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_RESOURCE",
+      "domain_id": "character_sprite_model"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "domain_id": "world_map"
+    },
+    {
+      "baseline_evidence_status": "OPEN_CONTENT",
+      "domain_id": "npc_identity"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "domain_id": "npc_dialog_ui"
+    },
+    {
+      "baseline_evidence_status": "OPEN_CONTENT",
+      "domain_id": "quest_content"
+    },
+    {
+      "baseline_evidence_status": "OPEN_SAME_BUILD_ROSTER",
+      "domain_id": "pet_species"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_RESOURCE",
+      "domain_id": "pet_visual"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "domain_id": "pet_stats"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_DESCENDANT",
+      "domain_id": "pet_growth"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "domain_id": "pet_skills"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_DESCENDANT",
+      "domain_id": "pet_encounter"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_DESCENDANT",
+      "domain_id": "ride_mount"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "domain_id": "battle_ui_rules"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "domain_id": "item_equipment_economy"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_RESOURCE",
+      "domain_id": "audio_fx"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_CATALOG",
+      "domain_id": "helper_versions"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_CATALOG",
+      "domain_id": "helper_capabilities"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_DISCOVERY",
+      "domain_id": "reference_web"
+    },
+    {
+      "baseline_evidence_status": "DESIGN_PREP_ONLY",
+      "domain_id": "future_player_wiki"
+    }
+  ],
+  "expected_and_actual_deliverable": {
+    "known_index_reacquired_not_new_source": 1,
+    "new_article_bodies": 1,
+    "original_profession_skill_or_quest_tables_restored": false,
+    "path": "research/recovered/STONEAGE-WAYI2003-PROFESSION-ACCESS-PLAN-R1.json",
+    "sha256": "e435ca9f68d1b4d13162634d8de1b664827864b40b5937ee74448464950c3075",
+    "source_context_records": 2,
+    "source_qualified_tutorials": 3
+  },
+  "initial_intake_history_not_repeated_by_ci": [
+    {
+      "historical_absence_proven": false,
+      "method": "WEB_READER",
+      "status": "UNAVAILABLE"
+    },
+    {
+      "actual_capture": "20041206141244",
+      "method": "DIRECT_HTTP",
+      "requested_capture": "20050612011406",
+      "sha256": "cd725562731d4e74f9b90bbefe9c167d499b73511d9fee2d94186ec0b2d2d8a9",
+      "status": 200
+    }
+  ],
+  "next": "OFFICIAL-VERSION-RELEASE-SOURCE-COVERAGE-REVIEW-13",
+  "prior_review": {
+    "path": "research/recovered/STONEAGE-OFFICIAL-VERSION-REGIONAL-DOMAIN-ROTATION-R11.json",
+    "sha256": "cf7cb3215b15f0eea40123d199f71c0ecceac63a55b5294b2325b259638ecef1"
+  },
+  "remote_baseline_head": "afac73c4a1e0e0deb8d129d7db538d19a999cb32",
+  "remote_baseline_tree": "fd7e4f829a4d98a53dfd8522d6f91db4ade1eb89",
+  "schema": "stoneage.official_version_material_coverage_review.r12",
+  "selected_task": "TW-WAYI-PROFESSION-ACCESS-PLAN-SOURCE-01",
+  "selection_reason": "ROTATE_FROM_MOUNT_GIFT_IMPLEMENTATION_AND_ORE_REWARD_TO_PROFESSION_ENTRY_VERSUS_HIGHER_SKILL_PROGRESSION_RATIONALE",
+  "source_qualification": {
+    "actual_bound_row": {
+      "article_id_as_web_key": 64,
+      "index_date_as_written": "2003-11-14",
+      "title": "全民就職計劃"
+    },
+    "authentic_known_index": {
+      "actual_capture": "20050612011406",
+      "bytes": 28883,
+      "original_url": "http://www.wayi.com.tw/stoneage/producer/producer01.asp",
+      "qualified_article_entries_not_whole_column_census": 15,
+      "sha256": "19661e2acca046bf8c6dc86dc968107fe9935cd58a8f3cd8ce5e1de5aeba7f8b",
+      "strict_replay_url": "https://web.archive.org/web/20050612011406id_/http://www.wayi.com.tw/stoneage/producer/producer01.asp"
+    },
+    "body": {
+      "actual_capture": "20041206141244",
+      "bytes": 17678,
+      "encoding": "BIG5_STRICT",
+      "index": {
+        "actual_capture": "20050612011406",
+        "bytes": 28883,
+        "original_url": "http://www.wayi.com.tw/stoneage/producer/producer01.asp",
+        "qualified_article_entries_not_whole_column_census": 15,
+        "sha256": "19661e2acca046bf8c6dc86dc968107fe9935cd58a8f3cd8ce5e1de5aeba7f8b",
+        "strict_replay_url": "https://web.archive.org/web/20050612011406id_/http://www.wayi.com.tw/stoneage/producer/producer01.asp"
+      },
+      "index_date_as_written": "2003-11-14",
+      "index_date_is_verified_body_release_or_deployment": false,
+      "index_title_as_written": "全民就職計劃",
+      "original_url": "http://www.wayi.com.tw/stoneage/producer/producer02.asp?idno=64",
+      "sha256": "cd725562731d4e74f9b90bbefe9c167d499b73511d9fee2d94186ec0b2d2d8a9",
+      "strict_replay_url": "https://web.archive.org/web/20041206141244id_/http://www.wayi.com.tw/stoneage/producer/producer02.asp?idno=64"
+    },
+    "scope": "TAIWAN_OFFICIAL_COLUMN_INDEX_DATED_2003_PRESERVED_2004_NOT_CERTIFIED_BUILD"
+  },
+  "stop_condition": {
+    "implementation_gate_remains": "OPEN_EVIDENCE_LIMITED",
+    "no_automatic_other_columns_images_or_binaries": true,
+    "one_selected_body_and_one_source_contract_complete": true,
+    "reopen_with": "AUTHENTIC_SAME_PERIOD_OFFICIAL_PATCH_OR_VERSION_QUALIFIED_ORIGINAL_QUEST_SKILL_SERVER_SOURCE"
+  },
+  "task": "OFFICIAL-VERSION-MATERIAL-COVERAGE-REVIEW-12"
+}

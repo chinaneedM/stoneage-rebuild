@@ -7318,3 +7318,8 @@ http://www.titan.co.jp/stoneage/manual02.html，严格重放https://web.archive.
 ### 骑宠续篇一方矿石线索的独立验收保管 — 2026-10-19
 
 内容9b00dcfa0fe42cbb36ed5b2d430fd11b1df95a38 / treee6d84148602c6ede03f8b9ef283dc847a5c1c096，10候选/11自身main门实全success；run39204398649/job117903968931重取精确索引/续篇并校验前篇固定Git输入、8负例/全cmp。artifact12164888684实下载ZIP2423B SHA2565fea4df0390e30213aa24eba3cfecfa9b875c22ab5b04fd38fc6f46388d9c362；唯一derived.json7384B SHA256d2c18a33dd56c5aa5ba886ec591b619b3e6b32fcb67385db1e09db8b900b9125匹配永久bloba2e5d0c927d1c53756146ba583532e2c0ab09ec4，详见STONEAGE-WAYI2003-RIDING-SUCCESSOR-ORE-WORK-ACCEPTANCE-R1.json。原件/图像无入Git，不把作者续篇当独立原服验证，赠虎实施/矿工奖励/NPC IDs未知。收尾回执提交自身门另观测。
+
+
+### 台湾华义职业调整计划一正文 — 2026-10-19
+
+既验官方producer01.asp真实同表行idno64《全民就職計劃》/2003-11-14；已知索引实20050612011406、28883B SHA25619661e2acca046bf8c6dc86dc968107fe9935cd58a8f3cd8ce5e1de5aeba7f8b重取相同，不算新发现。原http://www.wayi.com.tw/stoneage/producer/producer02.asp?idno=64；网页阅读器不可用不证缺源，直接HTTP初请20050612011406跳实20041206141244id_，17678B SHA256cd725562731d4e74f9b90bbefe9c167d499b73511d9fee2d94186ec0b2d2d8a9，Big5严格；本地第二次精确两原件重取全cmp通过。五段指纹、3教程/2来源语境及两未取sa921113001s/b.jpg引用见STONEAGE-WAYI2003-PROFESSION-ACCESS-PLAN-R1；2003索引日期/2004正文/2005索引分开，职业计划非原服实现，原HTML/图像/程序不入Git。10新负例和独立一索引/一正文工作流已交付；实际Actions/ZIP/raw/Git/main须另验，不预称成功。
