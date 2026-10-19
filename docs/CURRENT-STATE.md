@@ -15932,3 +15932,12 @@ OFFICIAL-VERSION-COVERAGE-MATERIAL-REVIEW-08复用R7的22域状态，近期日�
 交付STONEAGE-WAEI-CN20-AMIDUO-VISUAL-REFERENCE-R1.json/规格、1pets视觉补充（引用旧位置record_id，非新游戏宠物）、8新反例/31相关本地通过及独立唯一原图+固定目录Git输入全cmp工作流。其它39首目录图/两分页正文全未取，无新HTML/程序；原JPEG/HTML/程序不入Git，独立源job/ZIP/raw/Git及自身main按实际另验，不借目录11绿。
 
 **唯一最高NEXT CN20-NEW-PET-CATALOG-FINITE-PAGINATION-01**：显式只两条已验41-80→new_pet1.asp、81-104→new_pet2.asp，两正文有限闭合这套网页目录，逐页核主题/实际捕获/同格名称与图引用，保留占位/真实行数/具体缺源；不取其它图/原程序/新出链、不补属性/别名/完整原服物种数，目录闭合或精确缺页后回全官方材料队列。Stage A7 PARTIAL+2 OPEN、Stage B/百科GATED、R79 PAUSED_NON_BLOCKING，无整体百分比。
+
+
+### 2026-10-19 — 阿米朵唯一原图独立保管与两包正式收束
+
+视觉内容ac66558525e9c81de55abf54ba44c1b63f210af1 / tree20a31ef5274f4c8f7d8de7f67e45eec31a829af3的10候选门、自身11项main实际全success，无本HEAD失败/重跑。专用run39238029870/job118011774555独立只精确20011205051046唯一7.JPG、固定目录Git身份、8负例/实际JPEG元数据和全cmp；artifact12180360467实下载ZIP1934B SHA256db3fe4e335df1bd96f19ae7604597e4e0caa0c37043fc813ff920d21b33c2759，唯一derived.json4086B SHA2565ef2cfc5cd7f24229ece5f0fa01c924e932b40716af32417aa0bf4358eeb9cb0等于永久Git blob1f5a405f5d0dfc4ea72949b4fefb54b91260fe93。STONEAGE-WAEI-CN20-AMIDUO-VISUAL-REFERENCE-ACCEPTANCE-R1.json留实际10/11 run/HEAD、图像原SHA/机器元数据/人工目视哈希、目录pin与ZIP/raw/Git；runner不当再次人工看图/重取HTML。
+
+本轮实质为R14显式选大陆2001新增宠物首目录40网页位置（34名称+6未解问号）和阿米朵1实际原图，31相关本地测试通过，两内容HEAD各自11项main实全绿。20011204正文/20011205原图分开，83×90 JPEG一帧不是客户端精灵/模型/原生色板/无动画认证；40位置/104分页字样不当原服物种或ID。其它39首目录图/两分页正文仍未取，原目录40未取历史状态不改。所有22域原状态/初始完整CURRENT及历史前缀保留，源HTML/JPEG/程序无入Git/删除，旧失败/大小写/占位不抹。首目录原正文摘要在本轮起始远端无既有正文记录，已知旧入链不冒作旧已验正文。
+
+**唯一最高NEXT保持CN20-NEW-PET-CATALOG-FINITE-PAGINATION-01**：显式只真实已验41-80→new_pet1.asp、81-104→new_pet2.asp两正文有限闭合这套网页目录，核各实际题/捕获/同格名图和占位/真实数量，有限失败具体保留；不取其它图/程序/新出链，不猜属性/跨版别名/完整原服物种数，闭合或精确缺页后回全官方材料队列。Stage A7 PARTIAL+2 OPEN、Stage B/百科GATED、R79 PAUSED_NON_BLOCKING，无整体百分比。此回执新HEAD必须观察自身Actions，不能借父内容11绿。
