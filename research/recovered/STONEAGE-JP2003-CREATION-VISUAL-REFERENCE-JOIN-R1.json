@@ -1,0 +1,315 @@
+{
+  "boundaries": {
+    "jss1999_tw10_cn182_174a_same_build_identity": false,
+    "r79": "PAUSED_NON_BLOCKING",
+    "source_count_proves_independent_publishers": false,
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b_and_wiki": "GATED"
+  },
+  "coverage": {
+    "comparison_records": 5,
+    "distinct_original_text_bodies_referenced": 3,
+    "existing_position_references_indexed": 12,
+    "new_original_requests_images_or_entities": 0,
+    "pinned_derived_reports": 3,
+    "previously_reviewed_image_objects_referenced": 1
+  },
+  "date": "2026-10-19",
+  "inputs": {
+    "characters": {
+      "path": "research/recovered/STONEAGE-JP2003-CHARACTER-VISUAL-SOURCE-R1.json",
+      "sha256": "00ef16a71581ebadeed139143ab572ff5ac27c9944e82c7badcdb31611a46192"
+    },
+    "creation": {
+      "path": "research/recovered/JSS-LOGIN-MANUAL-CREATION-CONTRACT-R1.json",
+      "sha256": "fb1bc22fbb6e42dfaf39f1ff928ab4278595b0eb3f61e98c33b50d1009690768"
+    },
+    "features": {
+      "path": "research/recovered/STONEAGE-JP2003-GAME-FEATURES-R1.json",
+      "sha256": "f74bb9f07cdf02ca7ddb2f2e9bbeac2cd7f90b3ecb977343608e0dde626a6743"
+    }
+  },
+  "next": "OFFICIAL-VERSION-COVERAGE-MATERIAL-REVIEW-10",
+  "records": [
+    {
+      "automatic_entity_model_or_field_merge_allowed": false,
+      "collection": "sources",
+      "entity_type": "CHARACTER_CREATION_REFERENCE_SCOPE_COMPARISON",
+      "original_client_build_or_runtime_proven": false,
+      "record_id": "jp2003-creation-reference-comparison:01",
+      "record_revision": 1,
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "source_facts": {
+        "advertised_appearance_types": 12,
+        "colors_per_type": 4,
+        "forty_eight_new_character_entities": false,
+        "position_reference_index": [
+          {
+            "exact_appearance_type_or_color_ids": null,
+            "existing_record_id": "jp-hangame-web2003:character-position:01",
+            "existing_report_pointer": "/characters/0",
+            "web_ordinal": 1
+          },
+          {
+            "exact_appearance_type_or_color_ids": null,
+            "existing_record_id": "jp-hangame-web2003:character-position:02",
+            "existing_report_pointer": "/characters/1",
+            "web_ordinal": 2
+          },
+          {
+            "exact_appearance_type_or_color_ids": null,
+            "existing_record_id": "jp-hangame-web2003:character-position:03",
+            "existing_report_pointer": "/characters/2",
+            "web_ordinal": 3
+          },
+          {
+            "exact_appearance_type_or_color_ids": null,
+            "existing_record_id": "jp-hangame-web2003:character-position:04",
+            "existing_report_pointer": "/characters/3",
+            "web_ordinal": 4
+          },
+          {
+            "exact_appearance_type_or_color_ids": null,
+            "existing_record_id": "jp-hangame-web2003:character-position:05",
+            "existing_report_pointer": "/characters/4",
+            "web_ordinal": 5
+          },
+          {
+            "exact_appearance_type_or_color_ids": null,
+            "existing_record_id": "jp-hangame-web2003:character-position:06",
+            "existing_report_pointer": "/characters/5",
+            "web_ordinal": 6
+          },
+          {
+            "exact_appearance_type_or_color_ids": null,
+            "existing_record_id": "jp-hangame-web2003:character-position:07",
+            "existing_report_pointer": "/characters/6",
+            "web_ordinal": 7
+          },
+          {
+            "exact_appearance_type_or_color_ids": null,
+            "existing_record_id": "jp-hangame-web2003:character-position:08",
+            "existing_report_pointer": "/characters/7",
+            "web_ordinal": 8
+          },
+          {
+            "exact_appearance_type_or_color_ids": null,
+            "existing_record_id": "jp-hangame-web2003:character-position:09",
+            "existing_report_pointer": "/characters/8",
+            "web_ordinal": 9
+          },
+          {
+            "exact_appearance_type_or_color_ids": null,
+            "existing_record_id": "jp-hangame-web2003:character-position:10",
+            "existing_report_pointer": "/characters/9",
+            "web_ordinal": 10
+          },
+          {
+            "exact_appearance_type_or_color_ids": null,
+            "existing_record_id": "jp-hangame-web2003:character-position:11",
+            "existing_report_pointer": "/characters/10",
+            "web_ordinal": 11
+          },
+          {
+            "exact_appearance_type_or_color_ids": null,
+            "existing_record_id": "jp-hangame-web2003:character-position:12",
+            "existing_report_pointer": "/characters/11",
+            "web_ordinal": 12
+          }
+        ],
+        "web_positions": 12
+      },
+      "source_refs": [
+        {
+          "actual_capture": "20031214050618",
+          "derived_report": "research/recovered/STONEAGE-JP2003-GAME-FEATURES-R1.json",
+          "derived_sha256": "f74bb9f07cdf02ca7ddb2f2e9bbeac2cd7f90b3ecb977343608e0dde626a6743",
+          "json_pointer": "/records/0",
+          "object_kind": "ORIGINAL_TEXT_BODY",
+          "original_sha256": "4e92ce95cfb836db9fd78f7b4f64905e60270202d1e2ea0b00cf56b79b6440b0",
+          "original_url": "http://www.hangame.co.jp/publish/sa/game2.asp"
+        },
+        {
+          "actual_capture": "20031214051427",
+          "derived_report": "research/recovered/STONEAGE-JP2003-CHARACTER-VISUAL-SOURCE-R1.json",
+          "derived_sha256": "00ef16a71581ebadeed139143ab572ff5ac27c9944e82c7badcdb31611a46192",
+          "json_pointer": "/characters",
+          "object_kind": "ORIGINAL_TEXT_BODY",
+          "original_sha256": "36e1600d1a6192d2613b64750676235fe42010c78b1ca24b43bc38121c9f9e50",
+          "original_url": "http://www.hangame.co.jp/publish/sa/chara.asp"
+        }
+      ],
+      "topic": "APPEARANCE_DIMENSIONS_AND_EXISTING_WEB_POSITIONS",
+      "unknown_color_face_sprite_or_creation_values": null,
+      "verification_status": "SOURCE_RELATION_NOT_EXACT_CLIENT_ENTITY_JOIN",
+      "version_profile": "JP2001_2003_TEXT_AND_2006_IMAGE_SEPARATE_SOURCE_SCOPES"
+    },
+    {
+      "automatic_entity_model_or_field_merge_allowed": false,
+      "collection": "sources",
+      "entity_type": "CHARACTER_CREATION_REFERENCE_SCOPE_COMPARISON",
+      "original_client_build_or_runtime_proven": false,
+      "record_id": "jp2003-creation-reference-comparison:02",
+      "record_revision": 1,
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "source_facts": {
+        "canonical_names_or_later_nickname_aliases": null,
+        "operator_no_fixed_names": true,
+        "player_naming_described": true
+      },
+      "source_refs": [
+        {
+          "actual_capture": "20031214051427",
+          "derived_report": "research/recovered/STONEAGE-JP2003-CHARACTER-VISUAL-SOURCE-R1.json",
+          "derived_sha256": "00ef16a71581ebadeed139143ab572ff5ac27c9944e82c7badcdb31611a46192",
+          "json_pointer": "/identity",
+          "object_kind": "ORIGINAL_TEXT_BODY",
+          "original_sha256": "36e1600d1a6192d2613b64750676235fe42010c78b1ca24b43bc38121c9f9e50",
+          "original_url": "http://www.hangame.co.jp/publish/sa/chara.asp"
+        },
+        {
+          "actual_capture": "20031214050618",
+          "derived_report": "research/recovered/STONEAGE-JP2003-GAME-FEATURES-R1.json",
+          "derived_sha256": "f74bb9f07cdf02ca7ddb2f2e9bbeac2cd7f90b3ecb977343608e0dde626a6743",
+          "json_pointer": "/records/0",
+          "object_kind": "ORIGINAL_TEXT_BODY",
+          "original_sha256": "4e92ce95cfb836db9fd78f7b4f64905e60270202d1e2ea0b00cf56b79b6440b0",
+          "original_url": "http://www.hangame.co.jp/publish/sa/game2.asp"
+        }
+      ],
+      "topic": "PLAYER_ASSIGNED_NAME_NOT_ARCHETYPE_NAME",
+      "unknown_color_face_sprite_or_creation_values": null,
+      "verification_status": "SOURCE_RELATION_NOT_EXACT_CLIENT_ENTITY_JOIN",
+      "version_profile": "JP2001_2003_TEXT_AND_2006_IMAGE_SEPARATE_SOURCE_SCOPES"
+    },
+    {
+      "automatic_entity_model_or_field_merge_allowed": false,
+      "collection": "sources",
+      "entity_type": "CHARACTER_CREATION_REFERENCE_SCOPE_COMPARISON",
+      "original_client_build_or_runtime_proven": false,
+      "record_id": "jp2003-creation-reference-comparison:03",
+      "record_revision": 1,
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "source_facts": {
+        "companion_reference_role": "UNINSPECTED",
+        "eyes_mouth_customization_and_card_face": true,
+        "static_illustration_or_companion_is_face_editor_asset": null
+      },
+      "source_refs": [
+        {
+          "actual_capture": "20031214050618",
+          "derived_report": "research/recovered/STONEAGE-JP2003-GAME-FEATURES-R1.json",
+          "derived_sha256": "f74bb9f07cdf02ca7ddb2f2e9bbeac2cd7f90b3ecb977343608e0dde626a6743",
+          "json_pointer": "/records/1",
+          "object_kind": "ORIGINAL_TEXT_BODY",
+          "original_sha256": "4e92ce95cfb836db9fd78f7b4f64905e60270202d1e2ea0b00cf56b79b6440b0",
+          "original_url": "http://www.hangame.co.jp/publish/sa/game2.asp"
+        },
+        {
+          "actual_capture": "20031214051427",
+          "derived_report": "research/recovered/STONEAGE-JP2003-CHARACTER-VISUAL-SOURCE-R1.json",
+          "derived_sha256": "00ef16a71581ebadeed139143ab572ff5ac27c9944e82c7badcdb31611a46192",
+          "json_pointer": "/characters/0",
+          "object_kind": "ORIGINAL_TEXT_BODY",
+          "original_sha256": "36e1600d1a6192d2613b64750676235fe42010c78b1ca24b43bc38121c9f9e50",
+          "original_url": "http://www.hangame.co.jp/publish/sa/chara.asp"
+        }
+      ],
+      "topic": "CUSTOM_CARD_FACE_NOT_STATIC_ART_OR_COMPANION_ROLE",
+      "unknown_color_face_sprite_or_creation_values": null,
+      "verification_status": "SOURCE_RELATION_NOT_EXACT_CLIENT_ENTITY_JOIN",
+      "version_profile": "JP2001_2003_TEXT_AND_2006_IMAGE_SEPARATE_SOURCE_SCOPES"
+    },
+    {
+      "automatic_entity_model_or_field_merge_allowed": false,
+      "collection": "sources",
+      "entity_type": "CHARACTER_CREATION_REFERENCE_SCOPE_COMPARISON",
+      "original_client_build_or_runtime_proven": false,
+      "record_id": "jp2003-creation-reference-comparison:04",
+      "record_revision": 1,
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "source_facts": {
+        "four_colors_names_or_animation_sets": null,
+        "known_illustration_pixels": 1,
+        "page_capture": "20031214051427",
+        "reviewed_image_capture": "20060619160353",
+        "unacquired_character_page_references": 23
+      },
+      "source_refs": [
+        {
+          "actual_capture": "20031214051427",
+          "derived_report": "research/recovered/STONEAGE-JP2003-CHARACTER-VISUAL-SOURCE-R1.json",
+          "derived_sha256": "00ef16a71581ebadeed139143ab572ff5ac27c9944e82c7badcdb31611a46192",
+          "json_pointer": "/grid",
+          "object_kind": "ORIGINAL_TEXT_BODY",
+          "original_sha256": "36e1600d1a6192d2613b64750676235fe42010c78b1ca24b43bc38121c9f9e50",
+          "original_url": "http://www.hangame.co.jp/publish/sa/chara.asp"
+        },
+        {
+          "actual_capture": "20060619160353",
+          "derived_report": "research/recovered/STONEAGE-JP2003-CHARACTER-VISUAL-SOURCE-R1.json",
+          "derived_sha256": "00ef16a71581ebadeed139143ab572ff5ac27c9944e82c7badcdb31611a46192",
+          "json_pointer": "/reviewed_image",
+          "object_kind": "EXISTING_REVIEWED_WEB_IMAGE",
+          "original_sha256": "9a3d42aca28d67a57d328d33fce57f22adfd0037f064885785c82f6482b1bb39",
+          "original_url": "http://images.hangame.co.jp/_images/game/saj/charapicillust1.gif"
+        },
+        {
+          "actual_capture": "20031214050618",
+          "derived_report": "research/recovered/STONEAGE-JP2003-GAME-FEATURES-R1.json",
+          "derived_sha256": "f74bb9f07cdf02ca7ddb2f2e9bbeac2cd7f90b3ecb977343608e0dde626a6743",
+          "json_pointer": "/records/0",
+          "object_kind": "ORIGINAL_TEXT_BODY",
+          "original_sha256": "4e92ce95cfb836db9fd78f7b4f64905e60270202d1e2ea0b00cf56b79b6440b0",
+          "original_url": "http://www.hangame.co.jp/publish/sa/game2.asp"
+        }
+      ],
+      "topic": "ONE_LATER_IMAGE_NOT_ALL_APPEARANCE_COLORS_OR_ANIMATIONS",
+      "unknown_color_face_sprite_or_creation_values": null,
+      "verification_status": "SOURCE_RELATION_NOT_EXACT_CLIENT_ENTITY_JOIN",
+      "version_profile": "JP2001_2003_TEXT_AND_2006_IMAGE_SEPARATE_SOURCE_SCOPES"
+    },
+    {
+      "automatic_entity_model_or_field_merge_allowed": false,
+      "collection": "sources",
+      "entity_type": "CHARACTER_CREATION_REFERENCE_SCOPE_COMPARISON",
+      "original_client_build_or_runtime_proven": false,
+      "record_id": "jp2003-creation-reference-comparison:05",
+      "record_revision": 1,
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "source_facts": {
+        "early_creation_element_points": 10,
+        "early_creation_stat_points": 20,
+        "early_max_element_types": 2,
+        "later_element_categories": 4,
+        "same_allocation_values_or_same_build_proven": false
+      },
+      "source_refs": [
+        {
+          "actual_capture": "20010418082314",
+          "derived_report": "research/recovered/JSS-LOGIN-MANUAL-CREATION-CONTRACT-R1.json",
+          "derived_sha256": "fb1bc22fbb6e42dfaf39f1ff928ab4278595b0eb3f61e98c33b50d1009690768",
+          "json_pointer": "/pages/manual01/creation_contract",
+          "object_kind": "ORIGINAL_TEXT_BODY",
+          "original_sha256": "5784d9f9e0ddca26240b4c163101759d772cadcc9ef8c81ef24bf99145dbd560",
+          "original_url": "http://www.titan.co.jp/stoneage/manual01.html"
+        },
+        {
+          "actual_capture": "20031214050618",
+          "derived_report": "research/recovered/STONEAGE-JP2003-GAME-FEATURES-R1.json",
+          "derived_sha256": "f74bb9f07cdf02ca7ddb2f2e9bbeac2cd7f90b3ecb977343608e0dde626a6743",
+          "json_pointer": "/records/1",
+          "object_kind": "ORIGINAL_TEXT_BODY",
+          "original_sha256": "4e92ce95cfb836db9fd78f7b4f64905e60270202d1e2ea0b00cf56b79b6440b0",
+          "original_url": "http://www.hangame.co.jp/publish/sa/game2.asp"
+        }
+      ],
+      "topic": "EARLY_CREATION_ALLOCATION_VERSUS_LATER_CATEGORY_DESCRIPTION",
+      "unknown_color_face_sprite_or_creation_values": null,
+      "verification_status": "SOURCE_RELATION_NOT_EXACT_CLIENT_ENTITY_JOIN",
+      "version_profile": "JP2001_2003_TEXT_AND_2006_IMAGE_SEPARATE_SOURCE_SCOPES"
+    }
+  ],
+  "schema": "stoneage.jp2003.creation_visual_reference_join.r1",
+  "task": "JP2003-CHARACTER-CREATION-VISUAL-REFERENCE-JOIN-01"
+}

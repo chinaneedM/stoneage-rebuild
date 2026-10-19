@@ -7284,3 +7284,10 @@ http://www.titan.co.jp/stoneage/manual02.html，严格重放https://web.archive.
 ### 日本Hangame2003游戏特点一正文 — 2026-10-19
 
 真实入口为已验game.asp标签ゲームの特徴，原http://www.hangame.co.jp/publish/sa/game2.asp；初请20031214053427跳实际20031214050618，精确https://web.archive.org/web/20031214050618id_/http://www.hangame.co.jp/publish/sa/game2.asp，17136B SHA2564e92ce95cfb836db9fd78f7b4f64905e60270202d1e2ea0b00cf56b79b6440b0、CP932严格。五可见行5tutorials，引用五tokuchopic图片但全无像素；本地第二次完整cmp及18相关测试通过，独立源门/ZIP/raw/Git/main必须另实际验收。规格/报告STONEAGE-JP2003-GAME-FEATURES-R1保留12×4/5人等数值语境和未知，原HTML/图片/程序不入Git。
+
+
+### 日本特点原源验收及离线人物参照保管边界 — 2026-10-19
+
+特点内容49a9c5b1b72f79db77eac127b7bf3d14e6311546 / treea7473ab136b0b16bac602533a3cde42533433263，10候选/11自身main门实际全success；源run39201977369/job117896674711、artifact12164037843 ZIP2829B SHA25617096253aaea65117089cdfa661bed78804e77d8ff4090ab6f266ac0fa262f00；唯一derived.json10890B SHA256f74bb9f07cdf02ca7ddb2f2e9bbeac2cd7f90b3ecb977343608e0dde626a6743等于永久blob84355aad2d4c081459c783b86faa4e1814ab1703，已实际下载比较，见特点ACCEPTANCE-R1。
+
+新STONEAGE-JP2003-CREATION-VISUAL-REFERENCE-JOIN-R1只三派生输入，三原正文/一既验2006图元数据，5sources比较与12既有位置索引，零新原件/资产；每条SHA/JSON指针/原URL/捕获可查。独立离线门/ZIP/raw/Git/main实际另验，不借前一HEAD绿，不把引用说成原图重取。
