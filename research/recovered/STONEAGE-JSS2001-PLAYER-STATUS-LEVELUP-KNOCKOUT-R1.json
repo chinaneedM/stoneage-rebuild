@@ -1,0 +1,285 @@
+{
+  "boundaries": {
+    "original_exp_damage_growth_or_element_formula_recovered": false,
+    "original_html_or_asset_bytes_in_git": false,
+    "r79": "PAUSED_NON_BLOCKING",
+    "runtime_or_original_save_io_observed": false,
+    "same_build_jss1999_tw10_cn182_proven": false,
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b_and_wiki": "GATED",
+    "unmentioned_knockout_losses_proven_absent": false
+  },
+  "coverage": {
+    "known_original_bodies_reacquired": 1,
+    "new_images_programs_or_client_entities": 0,
+    "new_original_urls": 0,
+    "new_semantic_section_records": 3,
+    "status_table_labels": 19
+  },
+  "date": "2026-10-19",
+  "next": "JSS2001-PLAYER-PET-STATUS-AND-CREATION-BOUNDARY-01",
+  "records": [
+    {
+      "collection": "tutorials",
+      "entity_type": "FIRST_PARTY_MANUAL_CHARACTER_RULE_DESCRIPTION",
+      "original_ids_wire_fields_and_same_build_binding": null,
+      "record_id": "jss2001-manual:player-status:3040",
+      "record_revision": 1,
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "server_runtime_observed": false,
+      "source_described_behavior": {
+        "agility_affects_attack_speed_and_evasion_described": true,
+        "attack_and_defense_affect_damage_described": true,
+        "charm_mainly_affects_character_pet_relationship_described": true,
+        "dp_change_amount_or_complete_award_algorithm": null,
+        "dp_increases_described_on": [
+          "CHARACTER_LEVEL_UP",
+          "VICTORY_IN_PLAYER_VS_PLAYER_BATTLE"
+        ],
+        "durability_damage_and_zero_knockout_described": true,
+        "element_advantage_direction_or_coefficients": null,
+        "element_attack_defense_influence_targets": {
+          "地属性": [
+            "水",
+            "風"
+          ],
+          "水属性": [
+            "火",
+            "地"
+          ],
+          "火属性": [
+            "風",
+            "水"
+          ],
+          "風属性": [
+            "地",
+            "火"
+          ]
+        },
+        "exp_award_sharing_last_hit_formula_or_level_thresholds": null,
+        "exp_eligibility_source_statement": "ONLY_CHARACTERS_AND_PETS_THAT_KNOCK_OUT_ENEMIES",
+        "knockout_term_boundary": "3040_USES_DURABILITY_8020_USES_VITALITY_WORDING_NO_WIRE_IDENTITY",
+        "next_field_meaning": "EXP_REQUIRED_FOR_NEXT_LEVEL",
+        "primary_equals_derived_stat_identity_proven": false,
+        "primary_to_derived_relations": {
+          "丈夫さ": [
+            "防御力"
+          ],
+          "体力": [
+            "耐久力"
+          ],
+          "素早さ": [
+            "ATTACK_SPEED",
+            "EVASION"
+          ],
+          "腕力": [
+            "攻撃力"
+          ]
+        },
+        "spirit_decreases_on_spell_use_described": true,
+        "stat_conversion_formula_or_wire_offsets": null,
+        "status_rows": [
+          {
+            "description_sha256": "09f31bce3cf0cbdcc16d5dcb831dfeb1b53ef812e965ab32f7ca241cc906ba50",
+            "source_label": "DP"
+          },
+          {
+            "description_sha256": "78344a56c56bfb006208bc499b52dc1ae29e31cb775cdd54a77a6c4a3f60bd23",
+            "source_label": "称号"
+          },
+          {
+            "description_sha256": "00f9ec8fe466f49db7cf2e05214a06a01e12dd234cb92d9dcba7a0ac4ef09c05",
+            "source_label": "レベル"
+          },
+          {
+            "description_sha256": "e6a9b12576a5ba3b1a411117a21757b23e1fae020a94d5b71e100d27b41565a6",
+            "source_label": "経験値"
+          },
+          {
+            "description_sha256": "5ce304513620222468d9d590e516d332d707226743dfb63e0bc07bda19ac57fb",
+            "source_label": "NEXT"
+          },
+          {
+            "description_sha256": "51e1655ec5ff93f8efde64adc1283486486883991d84e36cddfc80d15af2ab51",
+            "source_label": "耐久力"
+          },
+          {
+            "description_sha256": "59b1eb45b57f3c9920beff190666e9932344c55e5a355d6fe71190217f1f48f5",
+            "source_label": "気力"
+          },
+          {
+            "description_sha256": "4e3cb50e7bb90d02aae1a49f332739d30ba8f3737051406083d1c7ea954e5ae0",
+            "source_label": "攻撃力"
+          },
+          {
+            "description_sha256": "daa7fb4a877319d93ad2b3a676681d2e9dea530954910206de0ea5d2a9371274",
+            "source_label": "防御力"
+          },
+          {
+            "description_sha256": "45fdd1e894b78ed663a9b6606cc9f423871fd32117e91a23b1218bdd639883ce",
+            "source_label": "俊敏力"
+          },
+          {
+            "description_sha256": "c3844ad2bfcb3e7b094134313f60688073e0154fd10634ef362c635386f39a4e",
+            "source_label": "魅力"
+          },
+          {
+            "description_sha256": "a3495e08e4bf1b9d51fcce4f23739bb3ff8bafce5e1452e4f5a93e3329e889a4",
+            "source_label": "地属性"
+          },
+          {
+            "description_sha256": "8930b41a773678cb99b4da33237806aad7b6c437e338f1bd8efd87a8a12d53ba",
+            "source_label": "水属性"
+          },
+          {
+            "description_sha256": "65d29877449ab5ad4eb7906b0c3514ae5faed66a9311c1563d1c5df68b95f450",
+            "source_label": "火属性"
+          },
+          {
+            "description_sha256": "32010c36d0ddca37ef3eab2167f515546ffa088cd0b5bbbf987d935cc887d58a",
+            "source_label": "風属性"
+          },
+          {
+            "description_sha256": "5e1e4c5a99fbae8b1d6e37284e68c4d03fc29b387ed4db24938f9b8719e20391",
+            "source_label": "体力"
+          },
+          {
+            "description_sha256": "ccb0fc2a7384de7564bc8bd73d8c4695e67aea83cd7614c4be15cce88da311c8",
+            "source_label": "腕力"
+          },
+          {
+            "description_sha256": "d4ba8e5c37eb33a9f3b5cd1635c79082020c29ee9ee78a9bfcefaf242f2f3b53",
+            "source_label": "丈夫さ"
+          },
+          {
+            "description_sha256": "45fdd1e894b78ed663a9b6606cc9f423871fd32117e91a23b1218bdd639883ce",
+            "source_label": "素早さ"
+          }
+        ],
+        "status_window_shortcut": "Ctrl+S",
+        "title_change_button_described": true
+      },
+      "source_refs": [
+        {
+          "actual_capture": "20010418083149",
+          "normalized_section_sha256": "fc79e49c446fe2f1fa3e3fa5d9e3be60ada536738ef13c7809ea4edac4548ec3",
+          "section_anchor": "3040",
+          "sha256": "50b9771ec501067136629c8e083a190e979e53dd9ba141903f78b76d43b602cc",
+          "source": "http://www.titan.co.jp/stoneage/manual02.html"
+        }
+      ],
+      "topic": "PLAYER_STATUS",
+      "verification_status": "MANUAL_DESCRIPTION_NOT_SERVER_EXECUTION",
+      "version_profile": "JSS_JAPAN_WEB_MANUAL_20010418"
+    },
+    {
+      "collection": "tutorials",
+      "entity_type": "FIRST_PARTY_MANUAL_CHARACTER_RULE_DESCRIPTION",
+      "original_ids_wire_fields_and_same_build_binding": null,
+      "record_id": "jss2001-manual:player-status:8020",
+      "record_revision": 1,
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "server_runtime_observed": false,
+      "source_described_behavior": {
+        "after_battle_revival_value_as_written": 1,
+        "applies_to": [
+          "CHARACTER",
+          "PET"
+        ],
+        "charm_and_loyalty_are_same_field": false,
+        "exp_level_money_inventory_or_pet_loss_on_knockout": "NOT_RESOLVED_BY_SELECTED_SOURCE",
+        "pet_knockout_consequence": "LOYALTY_DECREASES",
+        "player_knockout_consequence": "CHARM_DECREASES_SLIGHTLY",
+        "return_to_savepoint": "POSSIBLE_DEPENDING_ON_DAMAGE_AT_KNOCKOUT",
+        "return_to_savepoint_is_unconditional": false,
+        "revival_timing": "AFTER_BATTLE_END",
+        "sp_return_threshold_charm_delta_loyalty_delta_or_operation_order": null,
+        "zero_state_as_written": "体力が0"
+      },
+      "source_refs": [
+        {
+          "actual_capture": "20010418083149",
+          "normalized_section_sha256": "729ae5318221a018679051f6271f4fce9ec8157c8d0d7b3983ee09b805af2f99",
+          "section_anchor": "8020",
+          "sha256": "50b9771ec501067136629c8e083a190e979e53dd9ba141903f78b76d43b602cc",
+          "source": "http://www.titan.co.jp/stoneage/manual02.html"
+        }
+      ],
+      "topic": "KNOCKOUT",
+      "verification_status": "MANUAL_DESCRIPTION_NOT_SERVER_EXECUTION",
+      "version_profile": "JSS_JAPAN_WEB_MANUAL_20010418"
+    },
+    {
+      "collection": "tutorials",
+      "entity_type": "FIRST_PARTY_MANUAL_CHARACTER_RULE_DESCRIPTION",
+      "original_ids_wire_fields_and_same_build_binding": null,
+      "record_id": "jss2001-manual:player-status:8060",
+      "record_revision": 1,
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "server_runtime_observed": false,
+      "source_described_behavior": {
+        "automatic_increases_as_written": [
+          "魅力",
+          "デュエルポイント（DP）"
+        ],
+        "bonus_count_per_level_charm_delta_dp_delta_caps_or_respec": null,
+        "bonus_points_obtained_described": true,
+        "control": "STATUS_WINDOW_UP_BUTTON_FOR_CHOSEN_STAT",
+        "element_allocation_inferred_from_character_bonus_ui": false,
+        "pet_growth_distribution_inferred_from_character_bonus_ui": false,
+        "player_selectable_bonus_stats_as_written": [
+          "体力",
+          "腕力",
+          "丈夫さ",
+          "素早さ"
+        ],
+        "subject": "CHARACTER_LEVEL_UP"
+      },
+      "source_refs": [
+        {
+          "actual_capture": "20010418083149",
+          "normalized_section_sha256": "97f25718e99ce4dfe2e56cfe08dd47e35e1e6128de5134d4cd4f3389b61e5e53",
+          "section_anchor": "8060",
+          "sha256": "50b9771ec501067136629c8e083a190e979e53dd9ba141903f78b76d43b602cc",
+          "source": "http://www.titan.co.jp/stoneage/manual02.html"
+        }
+      ],
+      "topic": "CHARACTER_LEVEL_UP",
+      "verification_status": "MANUAL_DESCRIPTION_NOT_SERVER_EXECUTION",
+      "version_profile": "JSS_JAPAN_WEB_MANUAL_20010418"
+    }
+  ],
+  "schema": "stoneage.jss2001.player_status_levelup_knockout.r1",
+  "section_fingerprints": {
+    "3040": {
+      "normalized_characters": 593,
+      "sha256": "fc79e49c446fe2f1fa3e3fa5d9e3be60ada536738ef13c7809ea4edac4548ec3"
+    },
+    "8020": {
+      "normalized_characters": 143,
+      "sha256": "729ae5318221a018679051f6271f4fce9ec8157c8d0d7b3983ee09b805af2f99"
+    },
+    "8060": {
+      "normalized_characters": 154,
+      "sha256": "97f25718e99ce4dfe2e56cfe08dd47e35e1e6128de5134d4cd4f3389b61e5e53"
+    }
+  },
+  "source": {
+    "actual_capture": "20010418083149",
+    "all_three_sections_already_generically_fingerprinted": true,
+    "bytes": 28434,
+    "encoding": "SHIFT_JIS_STRICT",
+    "new_material_is_behavior_semantics_not_first_fingerprint": true,
+    "newly_discovered_source": false,
+    "newly_structured_sections": [
+      "3040",
+      "8020",
+      "8060"
+    ],
+    "original_url": "http://www.titan.co.jp/stoneage/manual02.html",
+    "previous_generic_fingerprint_catalog": "research/recovered/JSS-LOGIN-MANUAL-CREATION-CONTRACT-R1.json",
+    "sha256": "50b9771ec501067136629c8e083a190e979e53dd9ba141903f78b76d43b602cc",
+    "strict_replay_url": "https://web.archive.org/web/20010418083149id_/http://www.titan.co.jp/stoneage/manual02.html"
+  },
+  "task": "JSS2001-PLAYER-STATUS-LEVELUP-AND-KNOCKOUT-01"
+}

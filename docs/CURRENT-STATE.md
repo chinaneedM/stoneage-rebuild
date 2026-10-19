@@ -15707,3 +15707,18 @@ OFFICIAL-VERSION-COVERAGE-MATERIAL-REVIEW-08复用R7的22域状态，近期日�
 衔接内容10aa0338759d4a9fc5df4874dd1ca17b2487cc32 / tree664d1abff50c1f34d4679410b87f4b14db96006c候选11门、主线自身12项Actions全部实际success。专用run39199676876/job117889858707只读五个固定Git输入、6负例及完整离线派生cmp通过，未重新取四原正文。artifact12163088605实下载ZIP3223B SHA256bdb482c789a3bc0275dc0ad0fdac9cfa29de6063a53271998091a60618fc0122，唯一derived.json18972B SHA25606138c79d6b5c7b6586b25a88b35f0da7bee192d3745128884f34bf5f1e36e0a逐字节等于永久blob e5cb3b70dd852b7e9161098e040862ca8e4cc1f0。永久凭据STONEAGE-EARLY-SOURCE-MAIL-VENUE-CROSSWALK-ACCEPTANCE-R1.json保留输入SHA/原源分辨、11/12实际run与ZIP/raw/Git；原源独立取回则由九节主回执d75d2d7a负责，不把离线cmp说成新取源。
 
 本轮真正增量是JSS2001已知手册的九节行为合同与八组来源边界：不是新网页/首次三节摘要，不是新地图/物种/原服实现。五报告指四份不同原正文，亦非四个独立出版社证人；同手册两报告不当双证。所有旧报告、通用指纹、历史前缀及失败保留，原HTML/图像/程序不入Git。**唯一最高NEXT保持JSS2001-PLAYER-STATUS-LEVELUP-AND-KNOCKOUT-01**，只同手册3040/8020/8060三节，角色参数/经验归属、升级和气绝的有限早期说明，不造完整EXP公式或原保存IO，不扩新出链/图像，不重开R79。Stage A7 PARTIAL+2 OPEN、Stage B/百科GATED、R79暂停不变。此文书提交自身Actions须另验，不套用父内容HEAD12绿。
+
+
+## 2026-10-19 — 早期角色参数、升级与气绝三节新语义
+
+按实时远端main90f100453f5992415ce0c827f641924d0c55b524 / tree683099b9770562d51812785e226ca054fc88f07d重新启动：359分支、0开放PR，同HEAD10项main Actions实际success；无in_progress，旧无关queued37642417333保留。七连续性文件/完整CURRENT历史前缀和22域portfolio重新读取，Git blob与新本地origin/main逐项一致；不从聊天SHA推断，不删除旧失败。
+
+最高JSS2001-PLAYER-STATUS-LEVELUP-AND-KNOCKOUT-01只取已知manual02一正文，仍20010418083149、28434B SHA25650b9771ec501067136629c8e083a190e979e53dd9ba141903f78b76d43b602cc，严格Shift-JIS。本地重新网络取得、完整派生逐字节相同；仅3040/8020/8060，无图/程序/新出链。全部三节早有通用指纹，不作新网页/首次摘要；新增3个tutorials语义记录及19个同表两列参数标签/描述摘要绑定，不作19实体或协议字段。
+
+状态表：DP随角色升级或玩家对战胜利上升，数额未知；EXP只发给击倒敌人的角色/宠物为原文概述，不推完整last-hit/分享/等级阈值算法。四元素仅影响对象关系，未明确优劣/倍率；四可分配主参数与耐久/攻击/防御/速度回避关系不是同一字段或原偏移。3040耐久力归零、8020体力归零/复活1的用语差异保留，不直接连线原服HP/主参数。
+
+气绝角色和宠物战斗后以1复活，视气绝伤害可能回SP，不推无条件回点或执行顺序；角色魅力稍降、宠物忠诚下降分别留存，阈值/变化量未知，省略不证绝无其它损失。升级由UP按钮向体力/腕力/丈夫さ/素早さ选加，魅力与DP自动增；点数/增长/上限/洗点未知，初建20/10点不填升级奖励，角色界面不证明宠物同分配或升级可配元素。
+
+交付STONEAGE-JSS2001-PLAYER-STATUS-LEVELUP-KNOCKOUT-R1.json、同名规格、13项反例及独立一原文/完整cmp/仅派生上传工作流；本地相关25项通过，远端门/ZIP/raw/Git与自身main按实际另验。原件不入Git，原1999/TW1.0/CN1.82同构建与原服IO未证。
+
+**唯一最高NEXT JSS2001-PLAYER-PET-STATUS-AND-CREATION-BOUNDARY-01**：只现有已验派生，有限对照初建/后续升级、角色魅力/宠物忠诚、捕获与经验归属及DP/排名；零新原页/资产，保留同一原件非独立证人及未知值，完成后回全官方材料覆盖队列。Stage A7 PARTIAL+2 OPEN、Stage B/百科GATED、R79 PAUSED_NON_BLOCKING不变，无整体百分比。

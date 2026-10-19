@@ -7257,3 +7257,8 @@ STONEAGE-JSS2001-MAIL-ITEMS-SHARED-VENUES-ACCEPTANCE-R1.json对应内容d75d2d7a
 ### 2026-10-19 — 五派生报告八组边界的永久离线保管链
 
 STONEAGE-EARLY-SOURCE-MAIL-VENUE-CROSSWALK-ACCEPTANCE-R1.json对应内容10aa0338的11候选/12自身主线success，专用run39199676876/job117889858707离线五输入/6负例/完整cmp，零新增原源。artifact12163088605实下载ZIP3223B SHA256bdb482c789a3bc0275dc0ad0fdac9cfa29de6063a53271998091a60618fc0122，raw18972B SHA25606138c79d6b5c7b6586b25a88b35f0da7bee192d3745128884f34bf5f1e36e0a匹配永久blob e5cb3b70dd852b7e9161098e040862ca8e4cc1f0。输入来源4个不同原正文不等于4个独立证人；原手册独立下载/字节/语义由先前九节主回执单独证明。未知时间/费用/原ID/实体同一性和运行均不提升；本回执自身CI另验。
+
+
+### JSS2001已知manual02参数/升级/气绝语义 — 2026-10-19
+
+http://www.titan.co.jp/stoneage/manual02.html，严格重放https://web.archive.org/web/20010418083149id_/http://www.titan.co.jp/stoneage/manual02.html；28434B SHA25650b9771ec501067136629c8e083a190e979e53dd9ba141903f78b76d43b602cc、Shift-JIS。只3040/8020/8060，旧通用目录全部三摘要保留；新增3tutorials记录和19状态表同列绑定，非首次原件/原服字段。局部语义/未知数值见STONEAGE-JSS2001-PLAYER-STATUS-LEVELUP-KNOCKOUT-R1.json及规格；无新出链/图片/程序/原文入Git。本地重取完整cmp通过，独立Actions/ZIP/raw/Git和main必须实际另验，不能借父HEAD绿。

@@ -3558,3 +3558,8 @@ The exact already-authenticated manual02.html source was reacquired unchanged; t
 ## Cross-source boundary audit: JSS2001, Hangame2003 and Wayi2005 documentary scopes
 
 Eight finite comparisons of five existing derived reports reference four original bodies; the two JSS2001 reports share one manual and are not independent witnesses. Mail grace/stray/ordinary item timers remain distinct unknowns; special-ticket immediate drop is contextual;2001 duel exemption cases are not transferred to2003 quiz eligibility; early local arena free recovery/chat entry and later unspecified fees do not prove a historical price change.2001 card-consent logout reset is distinct from2005 dedicated-role card retention/overwrite; duel rank is not theatre art-value or arcade balances; pet mail is not mammoth delivery payroll. No new historical source, original entity ID, update chronology, runtime or cross-version identity is established. Derived relation metadata:STONEAGE-EARLY-SOURCE-MAIL-VENUE-CROSSWALK-R1.
+
+
+### 2026-10-19 — 已知JSS2001手册三节参数/成长/气绝语义
+
+源限定FACT：3040/8020/8060三节说明19状态标签、四主参数UP分配、魅力/DP自动上升、EXP击倒对象概述、战后1复活及伤害相关可能回SP；角色魅力和宠物忠诚后果分开。四元素关系不增写优劣/倍率，未提损失不等于零损失。原文气绝章节体力/状态表耐久力用语保留，不能直接等同原服字段。旧已验20010418同一手册，全部三节早有通用指纹，新增行为语义而非新原件；原1999/台1/陆1.82同构建、数值/保存事务仍未知。规格/派生STONEAGE-JSS2001-PLAYER-STATUS-LEVELUP-KNOCKOUT-R1；原件不入Git。

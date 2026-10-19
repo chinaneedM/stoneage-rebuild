@@ -682,3 +682,10 @@ JP2003-OFFICIAL-CHARACTER-VISUAL-SOURCE-01取得实际2003人物正文，运营�
 JSS九节语义内容d75d2d7a候选11/自身主线12门实全通过，独立已知手册/完整报告与ZIP/raw/Git保管链永久留存。相邻零新原源的五报告衔接产生8个sources比较记录，防止计时/票据/费用/场所/名片状态/积分等不当合并；它不是新增原件或实体，独立离线cmp和自身main另验，不借父HEAD绿。
 
 **最高NEXT JSS2001-PLAYER-STATUS-LEVELUP-AND-KNOCKOUT-01**：同一已验正文仅3040/8020/8060三节，补角色参数/经验归属、升级奖励、气绝后果的早期一方合同；无新出链/图片，不从文字推完整原服EXP公式、数值变化或保存写入。不重开R79。Stage A7 PARTIAL+2 OPEN、Stage B/百科GATED保持。
+
+
+## 2026-10-19 — 早期参数、升级、气绝来源说明
+
+JSS2001-PLAYER-STATUS-LEVELUP-AND-KNOCKOUT-01将已知manual02的3040/8020/8060变成3个来源限定教程记录、19状态标签关系；全部早有通用指纹，不算新原件。四元素仅影响关系不造倍率，EXP prose不作完整原服算法，气绝战后1和可能回SP保留条件/时序，魅力/忠诚与四主参数/派生参数分开，初建点数不填升级未知。
+
+**唯一最高NEXT JSS2001-PLAYER-PET-STATUS-AND-CREATION-BOUNDARY-01**：零新原源的现有报告有限衔接，厘清初建/升级、魅力/忠诚、捕获/经验和DP/排名；同原件不作独立双证，完成即回全官方材料覆盖队列，不循环公式/低层helper/R79。Stage A7 PARTIAL+2 OPEN、Stage B及百科GATED、R79暂停保持。

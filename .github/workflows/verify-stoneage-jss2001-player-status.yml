@@ -1,0 +1,34 @@
+name: Verify JSS2001 player status levelup and knockout source without invented formulas
+on:
+  push:
+    paths:
+      - tools/stoneage_jss2001_player_status.py
+      - tools/stoneage_jss2001_mail_items_venues.py
+      - tools/stoneage_early_content_probe.py
+      - tests/test_stoneage_jss2001_player_status.py
+      - research/recovered/STONEAGE-JSS2001-PLAYER-STATUS-LEVELUP-KNOCKOUT-R1.json
+      - docs/specs/STONEAGE-JSS2001-PLAYER-STATUS-LEVELUP-KNOCKOUT-R1.md
+      - .github/workflows/verify-stoneage-jss2001-player-status.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exact-known-manual-player-semantics:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Reject false formula stat identity loss timing and levelup inferences
+        run: python -m unittest tests.test_stoneage_jss2001_player_status -v
+      - name: Reacquire only known first party manual and bind three source sections
+        run: python -m tools.stoneage_jss2001_player_status --output output/derived.json
+      - name: Compare complete permanent metadata against independent source derivation
+        run: cmp output/derived.json research/recovered/STONEAGE-JSS2001-PLAYER-STATUS-LEVELUP-KNOCKOUT-R1.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: jss2001-player-status-derived-only
+          path: output/derived.json
+          retention-days: 30
