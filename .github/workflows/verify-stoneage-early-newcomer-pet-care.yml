@@ -1,0 +1,34 @@
+name: Verify offline early newcomer and pet care documentary boundaries
+on:
+  push:
+    paths:
+      - tools/stoneage_early_newcomer_pet_care_boundaries.py
+      - tests/test_stoneage_early_newcomer_pet_care_boundaries.py
+      - research/recovered/STONEAGE-EARLY-NEWCOMER-PET-CARE-BOUNDARIES-R1.json
+      - research/recovered/STONEAGE-WAEI-CN20-NEWCOMER-GUIDE-R1.json
+      - research/recovered/JSS-LOGIN-MANUAL-CREATION-CONTRACT-R1.json
+      - research/recovered/STONEAGE-JSS2001-PET-MANUAL-CONTRACT-R1.json
+      - research/recovered/STONEAGE-JSS2001-PLAYER-STATUS-LEVELUP-KNOCKOUT-R1.json
+      - docs/specs/STONEAGE-EARLY-NEWCOMER-PET-CARE-BOUNDARIES-R1.md
+      - .github/workflows/verify-stoneage-early-newcomer-pet-care.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  fixed-git-inputs-and-source-relations-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest tests.test_stoneage_early_newcomer_pet_care_boundaries -v
+      - name: Replay only four pinned Git reports without requesting original sources
+        run: python -m tools.stoneage_early_newcomer_pet_care_boundaries --output output/derived.json
+      - run: cmp output/derived.json research/recovered/STONEAGE-EARLY-NEWCOMER-PET-CARE-BOUNDARIES-R1.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: early-newcomer-pet-care-derived-only
+          path: output/derived.json
+          retention-days: 30

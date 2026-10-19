@@ -15882,3 +15882,16 @@ OFFICIAL-VERSION-COVERAGE-MATERIAL-REVIEW-08复用R7的22域状态，近期日�
 11段源指纹和7步叙事次序形成一新手体验文献包，不是10原任务/NPC/宠物实体；2地名只是文中提及。仅原大图1.gif/内联1s.gif两引用，后者HTML声明240×180，全未取像素/实际摘要/尺寸。交付STONEAGE-WAEI-CN20-NEWCOMER-GUIDE-R1.json/规格、13负例及独立一正文/既验Git入口/全cmp工作流；22相关本地测试通过，独立源job/ZIP/raw/Git和自身main必须按实际另验。原HTML/图像/程序不入Git，全部历史/失败保留，不作CN1.82/TW1.0/JSS1999/2.5原规则等同或新作自动采纳。
 
 **唯一最高NEXT EARLY-OFFICIAL-NEWCOMER-AND-PET-CARE-BOUNDARIES-01**：仅固定已有早期手册/初建/宠物状态与本指南派生有限比较，区分建议/数字未明含义、同原源复述及不可跨版移用，零新原件/图像/程序/公式/实体；产出一份实质来源关系规格后回全官方材料队列。Stage A7 PARTIAL+2 OPEN、Stage B/百科GATED、R79 PAUSED_NON_BLOCKING，无整体百分比。
+
+
+## 2026-10-19 — 大陆新手原件已验收，八组初建/照料跨来源边界
+
+新手内容1ff1730584de4822102680f19747c6c02ace93cf / treeb421c7b3e63bf6032cb31d1778f6d626b944a06c的10候选、自身11项main全部实际success；源run39235072328/job118002056097独立只实20011204212409一正文、固定入口Git校验、13负例/全cmp。artifact12176994685实下载ZIP4165B SHA2562d51fe38b5e5657e7487b797539bb473d008eb4d1be4134b6ea82012028dfb04，唯一derived.json19519B SHA256aecc1e18d291d6af8e7fd6e4ca913baf9aedb6e883cabad295f47a842705bed6等于永久Git blobc85fb48a8263a2d62194fd786da31034e20cd6ae。STONEAGE-WAEI-CN20-NEWCOMER-GUIDE-ACCEPTANCE-R1.json保留10/11实际run/HEAD、原件/入口pin及ZIP/raw/Git，初次阅读器不可用和时刻/端口跳转保留，runner非再次取经验原页/重演初次错误/原服体验。
+
+按最新最高EARLY-OFFICIAL-NEWCOMER-AND-PET-CARE-BOUNDARIES-01只4份固定Git派生：新CN无署名新手文、JSS初建manual01、JSS宠物manual02、JSS角色manual02。使用3实际原正文；宠物/角色共享同一manual02，不当4份独立证人，初建报告同时收录manual02但本比较只用manual01合同。逐份派生SHA、JSON指针、原URL/实际捕获/原SHA保留，零原件/图片/程序请求，无新游戏实体。
+
+八组sources关系：初建同20只是指南全耐力推荐与JSS20可分配点相容，非强制同加点/字段等同；初建20非每级奖励，JSS四主参/派生参不直接映中文耐力；CN宠物升级升忠诚与JSS主人升级例子主体不同，均非穷尽清单，不能相加成公式或断言版本补丁/矛盾；主人魅力≠宠物忠诚，CN美容目标100不填JSS cap/增量/费用；JSS捕获差>=6/初捕忠诚<=60不搬CN定性高等级宠建议、初捕60非终身上限；CN昏-4/药救-1与JSS稍降魅力不合成-5/+3返还/JSS数值，未述药救非无此功能；CN等级20防40重练建议不当JSS伤害相关可能回SP阈值，JSS战后1复活/未述损失不证无扣经验钱物宠；CN约3级/组队建议与JSS EXP资格不补固定战斗数、共享公式或CN经验表含义。
+
+交付STONEAGE-EARLY-NEWCOMER-PET-CARE-BOUNDARIES-R1.json/规格、8反例及独立4固定Git输入离线全cmp工作流；本轮30相关本地测试通过。8关系不是8原件/实体，原文不入Git；实际离线源job/ZIP/raw/Git及自身main仍须另验，不能借新手原件11绿。初始所有历史前缀及旧失败无删除，不把捕获日期顺序写成补丁顺序或跨地区规则相同。
+
+**唯一最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-14**：停止本新手/手册建议比较，复用22域与全官方发行/源索引，明确选一具名宠物/NPC/故事/任务/环境缺口、真实来源及有限交付/停止条件并取源，有限缺源精确保留；不空矩阵/同文循环/数值公式/helper/R79。Stage A7 PARTIAL+2 OPEN、Stage B/百科GATED、R79 PAUSED_NON_BLOCKING，无整体百分比。

@@ -1,0 +1,377 @@
+{
+  "boundaries": {
+    "new_original_source_or_server_execution": false,
+    "r79": "PAUSED_NON_BLOCKING",
+    "source_advice_is_new_game_design": false,
+    "source_capture_order_proves_patch_sequence": false,
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b_and_wiki": "GATED"
+  },
+  "date": "2026-10-19",
+  "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-14",
+  "pinned_git_inputs": [
+    {
+      "key": "cn",
+      "path": "research/recovered/STONEAGE-WAEI-CN20-NEWCOMER-GUIDE-R1.json",
+      "sha256": "aecc1e18d291d6af8e7fd6e4ca913baf9aedb6e883cabad295f47a842705bed6"
+    },
+    {
+      "key": "creation",
+      "path": "research/recovered/JSS-LOGIN-MANUAL-CREATION-CONTRACT-R1.json",
+      "sha256": "fb1bc22fbb6e42dfaf39f1ff928ab4278595b0eb3f61e98c33b50d1009690768"
+    },
+    {
+      "key": "pet",
+      "path": "research/recovered/STONEAGE-JSS2001-PET-MANUAL-CONTRACT-R1.json",
+      "sha256": "ec4c1602472fb5daa2d458e455f06df3318011e560be053abd460d7d5fba5a13"
+    },
+    {
+      "key": "player",
+      "path": "research/recovered/STONEAGE-JSS2001-PLAYER-STATUS-LEVELUP-KNOCKOUT-R1.json",
+      "sha256": "13df1d32a44127f80c3e042c335dc01d9cf926011f5b7908b1b71be77d818277"
+    }
+  ],
+  "records": [
+    {
+      "bounded_comparison": {
+        "cn_recommended_endurance_points": 20,
+        "jss_initial_stat_points": 20,
+        "same_number_proves_mandatory_allocation_or_stat_identity": false
+      },
+      "collection": "sources",
+      "cross_version_rule_transfer_allowed": false,
+      "entity_type": "CROSS_SOURCE_DOCUMENTARY_BOUNDARY",
+      "original_runtime_or_same_build_verified": false,
+      "record_id": "early-newcomer-pet-care:source-relation:01",
+      "record_revision": 1,
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "source_refs": [
+        {
+          "actual_capture": "20011204212409",
+          "derived_sha256": "aecc1e18d291d6af8e7fd6e4ca913baf9aedb6e883cabad295f47a842705bed6",
+          "json_pointer": "/records/4/source_described_claims",
+          "original_sha256": "ef63a7b33db0a967823af8356bbd2369487b20781a3272e1e2c3b0d1500ec1ab",
+          "original_url": "http://www.waei.com.cn/ZHUANQU/stoneage2/sw/adventure.asp",
+          "path": "research/recovered/STONEAGE-WAEI-CN20-NEWCOMER-GUIDE-R1.json"
+        },
+        {
+          "actual_capture": "20010418082314",
+          "derived_sha256": "fb1bc22fbb6e42dfaf39f1ff928ab4278595b0eb3f61e98c33b50d1009690768",
+          "json_pointer": "/pages/manual01/creation_contract",
+          "original_sha256": "5784d9f9e0ddca26240b4c163101759d772cadcc9ef8c81ef24bf99145dbd560",
+          "original_url": "http://www.titan.co.jp/stoneage/manual01.html",
+          "path": "research/recovered/JSS-LOGIN-MANUAL-CREATION-CONTRACT-R1.json"
+        }
+      ],
+      "topic": "CREATION_POOL_VERSUS_BUILD_ADVICE",
+      "verification_status": "SOURCE_RELATION_NOT_ORIGINAL_RUNTIME_OR_PROVEN_PATCH",
+      "version_profile": "CN20_2001_GUIDE_VERSUS_JSS2001_MANUAL_NOT_SAME_BUILD"
+    },
+    {
+      "bounded_comparison": {
+        "creation_twenty_is_per_level_bonus": false,
+        "cross_language_primary_to_derived_mapping_or_points_per_level": null,
+        "jss_selectable_primary_stats": [
+          "体力",
+          "腕力",
+          "丈夫さ",
+          "素早さ"
+        ]
+      },
+      "collection": "sources",
+      "cross_version_rule_transfer_allowed": false,
+      "entity_type": "CROSS_SOURCE_DOCUMENTARY_BOUNDARY",
+      "original_runtime_or_same_build_verified": false,
+      "record_id": "early-newcomer-pet-care:source-relation:02",
+      "record_revision": 1,
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "source_refs": [
+        {
+          "actual_capture": "20011204212409",
+          "derived_sha256": "aecc1e18d291d6af8e7fd6e4ca913baf9aedb6e883cabad295f47a842705bed6",
+          "json_pointer": "/records/4/source_described_claims",
+          "original_sha256": "ef63a7b33db0a967823af8356bbd2369487b20781a3272e1e2c3b0d1500ec1ab",
+          "original_url": "http://www.waei.com.cn/ZHUANQU/stoneage2/sw/adventure.asp",
+          "path": "research/recovered/STONEAGE-WAEI-CN20-NEWCOMER-GUIDE-R1.json"
+        },
+        {
+          "actual_capture": "20010418083149",
+          "derived_sha256": "13df1d32a44127f80c3e042c335dc01d9cf926011f5b7908b1b71be77d818277",
+          "json_pointer": "/records/0/source_described_behavior",
+          "original_sha256": "50b9771ec501067136629c8e083a190e979e53dd9ba141903f78b76d43b602cc",
+          "original_url": "http://www.titan.co.jp/stoneage/manual02.html",
+          "path": "research/recovered/STONEAGE-JSS2001-PLAYER-STATUS-LEVELUP-KNOCKOUT-R1.json"
+        },
+        {
+          "actual_capture": "20010418083149",
+          "derived_sha256": "13df1d32a44127f80c3e042c335dc01d9cf926011f5b7908b1b71be77d818277",
+          "json_pointer": "/records/2/source_described_behavior",
+          "original_sha256": "50b9771ec501067136629c8e083a190e979e53dd9ba141903f78b76d43b602cc",
+          "original_url": "http://www.titan.co.jp/stoneage/manual02.html",
+          "path": "research/recovered/STONEAGE-JSS2001-PLAYER-STATUS-LEVELUP-KNOCKOUT-R1.json"
+        }
+      ],
+      "topic": "CREATION_AND_LEVELUP_ARE_DISTINCT",
+      "verification_status": "SOURCE_RELATION_NOT_ORIGINAL_RUNTIME_OR_PROVEN_PATCH",
+      "version_profile": "CN20_2001_GUIDE_VERSUS_JSS2001_MANUAL_NOT_SAME_BUILD"
+    },
+    {
+      "bounded_comparison": {
+        "cn_levelup_subject": "PET",
+        "different_subjects_prove_patch_or_exhaustive_contradiction": false,
+        "jss_levelup_example_subject": "OWNER",
+        "jss_loyalty_increase_examples": [
+          "OWNER_LEVEL_UP",
+          "OWNER_CHARM_UP",
+          "REPEATED_IN_BATTLE_HEALING",
+          "SPECIFIC_ITEMS"
+        ],
+        "sum_or_shared_loyalty_formula": null
+      },
+      "collection": "sources",
+      "cross_version_rule_transfer_allowed": false,
+      "entity_type": "CROSS_SOURCE_DOCUMENTARY_BOUNDARY",
+      "original_runtime_or_same_build_verified": false,
+      "record_id": "early-newcomer-pet-care:source-relation:03",
+      "record_revision": 1,
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "source_refs": [
+        {
+          "actual_capture": "20011204212409",
+          "derived_sha256": "aecc1e18d291d6af8e7fd6e4ca913baf9aedb6e883cabad295f47a842705bed6",
+          "json_pointer": "/records/7/source_described_claims",
+          "original_sha256": "ef63a7b33db0a967823af8356bbd2369487b20781a3272e1e2c3b0d1500ec1ab",
+          "original_url": "http://www.waei.com.cn/ZHUANQU/stoneage2/sw/adventure.asp",
+          "path": "research/recovered/STONEAGE-WAEI-CN20-NEWCOMER-GUIDE-R1.json"
+        },
+        {
+          "actual_capture": "20010418083149",
+          "derived_sha256": "ec4c1602472fb5daa2d458e455f06df3318011e560be053abd460d7d5fba5a13",
+          "json_pointer": "/contracts/loyalty",
+          "original_sha256": "50b9771ec501067136629c8e083a190e979e53dd9ba141903f78b76d43b602cc",
+          "original_url": "http://www.titan.co.jp/stoneage/manual02.html",
+          "path": "research/recovered/STONEAGE-JSS2001-PET-MANUAL-CONTRACT-R1.json"
+        }
+      ],
+      "topic": "PET_AND_OWNER_LEVELUP_SUBJECTS",
+      "verification_status": "SOURCE_RELATION_NOT_ORIGINAL_RUNTIME_OR_PROVEN_PATCH",
+      "version_profile": "CN20_2001_GUIDE_VERSUS_JSS2001_MANUAL_NOT_SAME_BUILD"
+    },
+    {
+      "bounded_comparison": {
+        "cn_cosmetic_target_100_is_jss_cap_or_gain": false,
+        "cross_version_cosmetic_price_or_control_formula": null,
+        "owner_charm_and_pet_loyalty_are_same_field": false
+      },
+      "collection": "sources",
+      "cross_version_rule_transfer_allowed": false,
+      "entity_type": "CROSS_SOURCE_DOCUMENTARY_BOUNDARY",
+      "original_runtime_or_same_build_verified": false,
+      "record_id": "early-newcomer-pet-care:source-relation:04",
+      "record_revision": 1,
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "source_refs": [
+        {
+          "actual_capture": "20011204212409",
+          "derived_sha256": "aecc1e18d291d6af8e7fd6e4ca913baf9aedb6e883cabad295f47a842705bed6",
+          "json_pointer": "/records/6/source_described_claims",
+          "original_sha256": "ef63a7b33db0a967823af8356bbd2369487b20781a3272e1e2c3b0d1500ec1ab",
+          "original_url": "http://www.waei.com.cn/ZHUANQU/stoneage2/sw/adventure.asp",
+          "path": "research/recovered/STONEAGE-WAEI-CN20-NEWCOMER-GUIDE-R1.json"
+        },
+        {
+          "actual_capture": "20011204212409",
+          "derived_sha256": "aecc1e18d291d6af8e7fd6e4ca913baf9aedb6e883cabad295f47a842705bed6",
+          "json_pointer": "/records/9/source_described_claims",
+          "original_sha256": "ef63a7b33db0a967823af8356bbd2369487b20781a3272e1e2c3b0d1500ec1ab",
+          "original_url": "http://www.waei.com.cn/ZHUANQU/stoneage2/sw/adventure.asp",
+          "path": "research/recovered/STONEAGE-WAEI-CN20-NEWCOMER-GUIDE-R1.json"
+        },
+        {
+          "actual_capture": "20010418083149",
+          "derived_sha256": "ec4c1602472fb5daa2d458e455f06df3318011e560be053abd460d7d5fba5a13",
+          "json_pointer": "/contracts/loyalty",
+          "original_sha256": "50b9771ec501067136629c8e083a190e979e53dd9ba141903f78b76d43b602cc",
+          "original_url": "http://www.titan.co.jp/stoneage/manual02.html",
+          "path": "research/recovered/STONEAGE-JSS2001-PET-MANUAL-CONTRACT-R1.json"
+        },
+        {
+          "actual_capture": "20010418083149",
+          "derived_sha256": "13df1d32a44127f80c3e042c335dc01d9cf926011f5b7908b1b71be77d818277",
+          "json_pointer": "/records/0/source_described_behavior",
+          "original_sha256": "50b9771ec501067136629c8e083a190e979e53dd9ba141903f78b76d43b602cc",
+          "original_url": "http://www.titan.co.jp/stoneage/manual02.html",
+          "path": "research/recovered/STONEAGE-JSS2001-PLAYER-STATUS-LEVELUP-KNOCKOUT-R1.json"
+        }
+      ],
+      "topic": "OWNER_CHARM_VERSUS_PET_LOYALTY",
+      "verification_status": "SOURCE_RELATION_NOT_ORIGINAL_RUNTIME_OR_PROVEN_PATCH",
+      "version_profile": "CN20_2001_GUIDE_VERSUS_JSS2001_MANUAL_NOT_SAME_BUILD"
+    },
+    {
+      "bounded_comparison": {
+        "cn_numeric_capture_gap_or_loyalty_value": null,
+        "jss_capture_blocked_gap_at_least": 6,
+        "jss_initial_60_is_lifetime_cap_or_cn_rule": false,
+        "jss_initial_capture_loyalty_upper_bound": 60
+      },
+      "collection": "sources",
+      "cross_version_rule_transfer_allowed": false,
+      "entity_type": "CROSS_SOURCE_DOCUMENTARY_BOUNDARY",
+      "original_runtime_or_same_build_verified": false,
+      "record_id": "early-newcomer-pet-care:source-relation:05",
+      "record_revision": 1,
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "source_refs": [
+        {
+          "actual_capture": "20011204212409",
+          "derived_sha256": "aecc1e18d291d6af8e7fd6e4ca913baf9aedb6e883cabad295f47a842705bed6",
+          "json_pointer": "/records/7/source_described_claims",
+          "original_sha256": "ef63a7b33db0a967823af8356bbd2369487b20781a3272e1e2c3b0d1500ec1ab",
+          "original_url": "http://www.waei.com.cn/ZHUANQU/stoneage2/sw/adventure.asp",
+          "path": "research/recovered/STONEAGE-WAEI-CN20-NEWCOMER-GUIDE-R1.json"
+        },
+        {
+          "actual_capture": "20010418083149",
+          "derived_sha256": "ec4c1602472fb5daa2d458e455f06df3318011e560be053abd460d7d5fba5a13",
+          "json_pointer": "/contracts/capture",
+          "original_sha256": "50b9771ec501067136629c8e083a190e979e53dd9ba141903f78b76d43b602cc",
+          "original_url": "http://www.titan.co.jp/stoneage/manual02.html",
+          "path": "research/recovered/STONEAGE-JSS2001-PET-MANUAL-CONTRACT-R1.json"
+        }
+      ],
+      "topic": "CAPTURE_ELIGIBILITY_VERSUS_LOYALTY_ADVICE",
+      "verification_status": "SOURCE_RELATION_NOT_ORIGINAL_RUNTIME_OR_PROVEN_PATCH",
+      "version_profile": "CN20_2001_GUIDE_VERSUS_JSS2001_MANUAL_NOT_SAME_BUILD"
+    },
+    {
+      "bounded_comparison": {
+        "cn_charm_outcomes": [
+          -4,
+          -1
+        ],
+        "jss_character_consequence": "CHARM_DECREASES_SLIGHTLY",
+        "jss_rescue_omission_proves_no_rescue_feature": false,
+        "stacked_minus_five_refund_three_or_jss_numeric_delta_proven": false
+      },
+      "collection": "sources",
+      "cross_version_rule_transfer_allowed": false,
+      "entity_type": "CROSS_SOURCE_DOCUMENTARY_BOUNDARY",
+      "original_runtime_or_same_build_verified": false,
+      "record_id": "early-newcomer-pet-care:source-relation:06",
+      "record_revision": 1,
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "source_refs": [
+        {
+          "actual_capture": "20011204212409",
+          "derived_sha256": "aecc1e18d291d6af8e7fd6e4ca913baf9aedb6e883cabad295f47a842705bed6",
+          "json_pointer": "/records/6/source_described_claims",
+          "original_sha256": "ef63a7b33db0a967823af8356bbd2369487b20781a3272e1e2c3b0d1500ec1ab",
+          "original_url": "http://www.waei.com.cn/ZHUANQU/stoneage2/sw/adventure.asp",
+          "path": "research/recovered/STONEAGE-WAEI-CN20-NEWCOMER-GUIDE-R1.json"
+        },
+        {
+          "actual_capture": "20010418083149",
+          "derived_sha256": "13df1d32a44127f80c3e042c335dc01d9cf926011f5b7908b1b71be77d818277",
+          "json_pointer": "/records/1/source_described_behavior",
+          "original_sha256": "50b9771ec501067136629c8e083a190e979e53dd9ba141903f78b76d43b602cc",
+          "original_url": "http://www.titan.co.jp/stoneage/manual02.html",
+          "path": "research/recovered/STONEAGE-JSS2001-PLAYER-STATUS-LEVELUP-KNOCKOUT-R1.json"
+        }
+      ],
+      "topic": "KNOCKOUT_AND_MEDICINE_RESCUE",
+      "verification_status": "SOURCE_RELATION_NOT_ORIGINAL_RUNTIME_OR_PROVEN_PATCH",
+      "version_profile": "CN20_2001_GUIDE_VERSUS_JSS2001_MANUAL_NOT_SAME_BUILD"
+    },
+    {
+      "bounded_comparison": {
+        "cn_defense40_level20_is_death_save_threshold": false,
+        "jss_return_to_savepoint": "POSSIBLE_DEPENDING_ON_DAMAGE_AT_KNOCKOUT",
+        "jss_revival_timing": "AFTER_BATTLE_END",
+        "jss_revival_value": 1,
+        "unmentioned_exp_money_inventory_or_pet_loss_proven_absent": false
+      },
+      "collection": "sources",
+      "cross_version_rule_transfer_allowed": false,
+      "entity_type": "CROSS_SOURCE_DOCUMENTARY_BOUNDARY",
+      "original_runtime_or_same_build_verified": false,
+      "record_id": "early-newcomer-pet-care:source-relation:07",
+      "record_revision": 1,
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "source_refs": [
+        {
+          "actual_capture": "20011204212409",
+          "derived_sha256": "aecc1e18d291d6af8e7fd6e4ca913baf9aedb6e883cabad295f47a842705bed6",
+          "json_pointer": "/records/8/source_described_claims",
+          "original_sha256": "ef63a7b33db0a967823af8356bbd2369487b20781a3272e1e2c3b0d1500ec1ab",
+          "original_url": "http://www.waei.com.cn/ZHUANQU/stoneage2/sw/adventure.asp",
+          "path": "research/recovered/STONEAGE-WAEI-CN20-NEWCOMER-GUIDE-R1.json"
+        },
+        {
+          "actual_capture": "20010418083149",
+          "derived_sha256": "13df1d32a44127f80c3e042c335dc01d9cf926011f5b7908b1b71be77d818277",
+          "json_pointer": "/records/1/source_described_behavior",
+          "original_sha256": "50b9771ec501067136629c8e083a190e979e53dd9ba141903f78b76d43b602cc",
+          "original_url": "http://www.titan.co.jp/stoneage/manual02.html",
+          "path": "research/recovered/STONEAGE-JSS2001-PLAYER-STATUS-LEVELUP-KNOCKOUT-R1.json"
+        }
+      ],
+      "topic": "BUILD_WARNING_VERSUS_KNOCKOUT_RETURN",
+      "verification_status": "SOURCE_RELATION_NOT_ORIGINAL_RUNTIME_OR_PROVEN_PATCH",
+      "version_profile": "CN20_2001_GUIDE_VERSUS_JSS2001_MANUAL_NOT_SAME_BUILD"
+    },
+    {
+      "bounded_comparison": {
+        "cn_approximate_early_level": 3,
+        "fixed_party_xp_schedule_or_cn_table_filled": false,
+        "jss_exp_eligibility_statement": "ONLY_CHARACTERS_AND_PETS_THAT_KNOCK_OUT_ENEMIES"
+      },
+      "collection": "sources",
+      "cross_version_rule_transfer_allowed": false,
+      "entity_type": "CROSS_SOURCE_DOCUMENTARY_BOUNDARY",
+      "original_runtime_or_same_build_verified": false,
+      "record_id": "early-newcomer-pet-care:source-relation:08",
+      "record_revision": 1,
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "source_refs": [
+        {
+          "actual_capture": "20011204212409",
+          "derived_sha256": "aecc1e18d291d6af8e7fd6e4ca913baf9aedb6e883cabad295f47a842705bed6",
+          "json_pointer": "/records/1/source_described_claims",
+          "original_sha256": "ef63a7b33db0a967823af8356bbd2369487b20781a3272e1e2c3b0d1500ec1ab",
+          "original_url": "http://www.waei.com.cn/ZHUANQU/stoneage2/sw/adventure.asp",
+          "path": "research/recovered/STONEAGE-WAEI-CN20-NEWCOMER-GUIDE-R1.json"
+        },
+        {
+          "actual_capture": "20011204212409",
+          "derived_sha256": "aecc1e18d291d6af8e7fd6e4ca913baf9aedb6e883cabad295f47a842705bed6",
+          "json_pointer": "/records/5/source_described_claims",
+          "original_sha256": "ef63a7b33db0a967823af8356bbd2369487b20781a3272e1e2c3b0d1500ec1ab",
+          "original_url": "http://www.waei.com.cn/ZHUANQU/stoneage2/sw/adventure.asp",
+          "path": "research/recovered/STONEAGE-WAEI-CN20-NEWCOMER-GUIDE-R1.json"
+        },
+        {
+          "actual_capture": "20010418083149",
+          "derived_sha256": "13df1d32a44127f80c3e042c335dc01d9cf926011f5b7908b1b71be77d818277",
+          "json_pointer": "/records/0/source_described_behavior",
+          "original_sha256": "50b9771ec501067136629c8e083a190e979e53dd9ba141903f78b76d43b602cc",
+          "original_url": "http://www.titan.co.jp/stoneage/manual02.html",
+          "path": "research/recovered/STONEAGE-JSS2001-PLAYER-STATUS-LEVELUP-KNOCKOUT-R1.json"
+        }
+      ],
+      "topic": "EARLY_GROWTH_AND_PARTY_XP",
+      "verification_status": "SOURCE_RELATION_NOT_ORIGINAL_RUNTIME_OR_PROVEN_PATCH",
+      "version_profile": "CN20_2001_GUIDE_VERSUS_JSS2001_MANUAL_NOT_SAME_BUILD"
+    }
+  ],
+  "schema": "stoneage.early_newcomer_pet_care_boundaries.r1",
+  "source_accounting": {
+    "fixed_git_reports": 4,
+    "four_reports_are_four_independent_originals": false,
+    "images_programs_or_game_entities_added": 0,
+    "jss_pet_and_player_share_manual02": true,
+    "original_bodies_reacquired_in_this_job": 0,
+    "original_bodies_used": 3
+  },
+  "task": "EARLY-OFFICIAL-NEWCOMER-AND-PET-CARE-BOUNDARIES-01"
+}

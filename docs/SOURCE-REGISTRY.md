@@ -7340,3 +7340,10 @@ R13显式轮换北京华义原http://www.waei.com.cn:80/ZHUANQU/stoneage2/tyro/u
 ### 大陆华义新入石器官方托管无署名指南 — 2026-10-19
 
 既验经验表派生SHA256e012249c799f9789e65f13c5fbb6e0ac746966d7660bb30b68bec9a0150d3b87的/qualified_unread_entry真实新入石器→http://www.waei.com.cn:80/ZHUANQU/stoneage2/sw/adventure.asp。网页阅读器不可用不证缺源，直接HTTP初请20011204165711跳实https://web.archive.org/web/20011204212409id_/http://www.waei.com.cn/ZHUANQU/stoneage2/sw/adventure.asp，65653B SHA256ef63a7b33db0a967823af8356bbd2369487b20781a3272e1e2c3b0d1500ec1ab，GB18030严格/题石器时代2.0。官方站托管无署名攻略非运营商作者/原服独立证人。第二次精确重取全cmp通过；新工作流只一正文+固定入口Git输入，不再次取经验原页，不重演首次跳转/阅读器错误。11段指纹、10教程记录、原相对img/adventure/1.gif及1s.gif未取引用见STONEAGE-WAEI-CN20-NEWCOMER-GUIDE-R1；13负例/22相关本地通过，源job/ZIP/raw/Git/main必须实际另验。原HTML/图像/程序不入Git，正文数字/建议不回填早期原服，失败和错字保留。
+
+
+### 新手正文独立保管与四固定派生离线关系 — 2026-10-19
+
+新手内容1ff1730584de4822102680f19747c6c02ace93cf / treeb421c7b3e63bf6032cb31d1778f6d626b944a06c，10分支/11自身main实全success；源run39235072328/job118002056097、artifact12176994685 ZIP4165B SHA2562d51fe38b5e5657e7487b797539bb473d008eb4d1be4134b6ea82012028dfb04；唯一derived.json19519B SHA256aecc1e18d291d6af8e7fd6e4ca913baf9aedb6e883cabad295f47a842705bed6等于永久blobc85fb48a8263a2d62194fd786da31034e20cd6ae，实下载比较，详新手ACCEPTANCE-R1。官方托管无署名不证运营商原创，初次捕获/端口跳转和阅读器不可用不抹。
+
+新STONEAGE-EARLY-NEWCOMER-PET-CARE-BOUNDARIES-R1只新手/初建/宠物/角色4固定Git报告，3实际原正文，JSSmanual02重复不是独立见证；每条SHA/JSON指针/原URL捕获摘要可追。8sources关系零新原件/图像/程序，明确CN宠物升级与JSS主人升级、20初建/每级、魅力/忠诚/初捕界限/KO时序，原数值不跨版补齐。8新负例、30相关本地通过，离线全cmp/ZIP/raw/Git/main按实际另验。
