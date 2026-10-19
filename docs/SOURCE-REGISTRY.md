@@ -7526,3 +7526,8 @@ R19 内容主线77b8b06a08ee93aea2e14887fc97de453aa6b19d已检验：候选10与�
 
 
 R21派生保管补记：源run39336345338/job118346678887与artifact12225748930已实际校验；唯一派生replay.json永久归档于 `research/recovered/STONEAGE-JP2008-SHADOW-CI-REPLAY-R1.json`，ZIP/raw/Git和候选10/main11清单见 `STONEAGE-JP2008-SHADOW-CUSTODY-R1.json`。无原HTML入Git；当前HTTP字节摘要不认证2008历史原件。NEXT R22。
+
+
+## 2026-10-20 — R22朱雀、神兽封印与2.5故事比较
+
+S1：https://games.sina.com.cn/newgames/2003/12/121610098.shtml ，2003-12-16 14:38，正文明确华义官方消息归因；当前HTTP200/35322B。S2：https://www.ourgame.com/news/db/32/31192.html ，2002-2-5，当前HTTP200/5962B；设计/发行公司标签不等于作者归因。S1两实际图链I1/I2分别400×261和400×299 JPEG，均目视；HTTP升级HTTPS只为传输，不改资源路径。四输入URL、原图注、当前HTTP字节/UTC/SHA与两叙事核心SHA见 `research/recovered/STONEAGE-CN70-SUZAKU-MYTH-VISUAL-SOURCE-R1.json`。历史2002/2003原HTML/图片快照身份仍未认证，原HTML/图像不入Git；没有购买/竞价或原服操作。17173 2.5 raw567与故事超时、Sina12/22后续解码失败保留，不当独立见证。派生保管和自身Actions须另验，NEXT R23。

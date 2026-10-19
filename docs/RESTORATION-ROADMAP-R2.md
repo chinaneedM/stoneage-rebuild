@@ -930,3 +930,8 @@ R19 内容主线77b8b06a08ee93aea2e14887fc97de453aa6b19d已检验：候选10与�
 ## 2026-10-20 — R21 有效内容轮换：日本运营商连续剧情
 
 已取得日服2008「影の支配者」前三章DigiPark发布文（三篇媒体托管运营稿），交付章节资格与来源限定分支/人物关系规格；现行HTTP/核心摘要与历史快照/实服事实分层。见 `docs/STONEAGE-OFFICIAL-VERSION-NAMED-CONTENT-REVIEW-R21.md`。有限止点为三章来源合同；不扩后续章或无源状态位。最高NEXT `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-22`，回全官方版本/22域选择另一有运营归因具名内容。Stage A7 PARTIAL+2 OPEN、Stage B/百科GATED、R79暂停，无总百分比。
+
+
+## 2026-10-20 — R22具名宠物与世界故事参考
+
+大陆7.0朱雀华义归因稿已形成有限规格：四神兽技能/封印叙事、菲奇亚名称、概念图与单个体状态图，以及与2002年2.5门户故事的有限来源对照。详见R22评审；图像不作生产素材，截图不变成长表，未解世界线不合并。最高NEXT `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-23`，返全官方/22域，优先另一具名任务/NPC或故事一方来源；停止本包无源helper扩张。Stage A7 PARTIAL+2 OPEN、Stage B/百科GATED、R79暂停。

@@ -1,0 +1,421 @@
+{
+  "schema": "stoneage.cn70_suzaku_myth_visual_source.r1",
+  "task": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-22",
+  "date": "2026-10-20",
+  "baseline": {
+    "head": "1ed12b08e8128fc79fc55acb71511437b35a0a7d",
+    "tree": "c170a92a8b6008f2333a4437ab2bc42d822fc279",
+    "remote_branch_count": 387,
+    "open_prs": 0,
+    "own_main_checks_successful": 11,
+    "continuity_prefix_pins": [
+      {
+        "path": "README.md",
+        "bytes": 21648,
+        "sha256": "9e5cfa8652f58f18a0bfc1df08f5b6b4f31ba63b86f6df2385959801a10bccbb",
+        "git_blob": "961cd68e7850b5535c0c5bdc82ed2e506c651a21"
+      },
+      {
+        "path": "docs/PROJECT-CONTINUITY-PROTOCOL-R1.md",
+        "bytes": 9762,
+        "sha256": "c44834eeec87f7a43e9cb4905f08377349e36d58b1fff2c5a75a6975db695e3b",
+        "git_blob": "ba9bbe19384589400abc61af37a360a40bf91452"
+      },
+      {
+        "path": "docs/CURRENT-STATE.md",
+        "bytes": 2131402,
+        "sha256": "47d09b01b1fa28f16d9c1748ea0c9d69fdad7c3577aae90e1c660c230a6d6df3",
+        "git_blob": "53da4849a1435b6a1f9ad9efce5ed80239280c6a"
+      },
+      {
+        "path": "docs/DESIGN-DECISIONS.md",
+        "bytes": 45965,
+        "sha256": "28b572ed01179eacd5a06b4ad62c76e4baef22ac49587aa0bad452a7cb3fe8e6",
+        "git_blob": "013ae4fad9301ab0140fe408a423b3abad97d1f9"
+      },
+      {
+        "path": "docs/HISTORICAL-TIMELINE.md",
+        "bytes": 496652,
+        "sha256": "2ebddd93036b85927b6449366d48a33f9faa3a383d0d211b1ac24901f29c9e30",
+        "git_blob": "43a99cde50ac66fd929ac4573af788a5bc563f0c"
+      },
+      {
+        "path": "docs/SOURCE-REGISTRY.md",
+        "bytes": 777392,
+        "sha256": "06d4e6ea40d39a00ef303fee2a4075c0ed87275b230882a0e5b95b2f0099629c",
+        "git_blob": "78357712f88c598a2adad50604518419c47639cd"
+      },
+      {
+        "path": "docs/RESTORATION-ROADMAP-R2.md",
+        "bytes": 130803,
+        "sha256": "f26f93d5a0966d0a8b2be5448aacca277a8b5d01066c0edab566bc3fcb7cf70f",
+        "git_blob": "9fb89afac4107b37a55e993c4fd2efb4c030b483"
+      },
+      {
+        "path": "research/recovered/STONEAGE-22-DOMAIN-SOURCE-READY-PORTFOLIO-R2.json",
+        "bytes": 15948,
+        "sha256": "7d50de08f7855cf16dbe54b1747e258f1cc1223de88cc217172fd145f3c704ce",
+        "git_blob": "088b469b3c51e689cff27f33fc3bb49de2d24b2c"
+      }
+    ]
+  },
+  "inputs": [
+    {
+      "id": "S1",
+      "http": {
+        "url": "https://games.sina.com.cn/newgames/2003/12/121610098.shtml",
+        "resolved_url": "https://games.sina.com.cn/newgames/2003/12/121610098.shtml",
+        "status": 200,
+        "bytes": 35322,
+        "sha256": "48d7225afff837336f10a8a87fa412aff7623521f84d19238b3a3d459e9a9d37",
+        "fetched_utc": "2026-10-19T22:48:44.789441+00:00"
+      },
+      "type": "HTML",
+      "historical_original_byte_sha256": null,
+      "core_sha256": "f515e6c25fc3001b8be0e3fb48ddeb02d35ef4fcc348a1e6979c2ea3e648d4f6",
+      "core_utf8_bytes": 1112,
+      "extracted_facts": {
+        "beast_skill_affiliations": [
+          {
+            "beast": "白虎",
+            "skill_element": "水"
+          },
+          {
+            "beast": "青龙",
+            "skill_element": "风"
+          },
+          {
+            "beast": "玄武",
+            "skill_element": "地"
+          },
+          {
+            "beast": "朱雀",
+            "skill_element": "火"
+          }
+        ],
+        "temples_as_ordered_text_not_map_ids": [
+          "水神殿",
+          "风神殿",
+          "地神殿",
+          "火神殿"
+        ],
+        "named_suzaku_form": "菲奇亚",
+        "pure_fire_reported": true,
+        "relative_stat_description": {
+          "attack": "HIGH",
+          "agility": "HIGH",
+          "defense": "LOW"
+        },
+        "seal_context_mentions_light_dark_king_battle": true,
+        "source_images_declared_http": [
+          "http://image2.sina.com.cn/gm/newgames/2003/12/U163P115T9D10098F364DT20031216143816.jpg",
+          "http://image2.sina.com.cn/gm/newgames/2003/12/U163P115T9D10098F167DT20031216143816.JPG"
+        ]
+      },
+      "authority": "WAYI_OFFICIAL_MESSAGE_EXPLICITLY_ATTRIBUTED_BY_SINA",
+      "visible_publication": "2003-12-16 14:38",
+      "scope": "CN 7.0 石头就业所 release-labelled promotional story",
+      "source_body_normalization": "GB18030_HTML_VISIBLE_TEXT_SCRIPT_STYLE_EXCLUDED_WHITESPACE_REMOVED_V1"
+    },
+    {
+      "id": "S2",
+      "http": {
+        "url": "https://www.ourgame.com/news/db/32/31192.html",
+        "resolved_url": "https://www.ourgame.com/news/db/32/31192.html",
+        "status": 200,
+        "bytes": 5962,
+        "sha256": "87cb6351e4fadfb6ff2172c2614fbd337d92032ff3328ca1011f2e91eff89ef2",
+        "fetched_utc": "2026-10-19T22:47:55.337129+00:00"
+      },
+      "type": "HTML",
+      "historical_original_byte_sha256": null,
+      "core_sha256": "ac444c1c85c76bffe07f545ce88c0501ca0a3aae8adf770fae79f34f49fee777",
+      "core_utf8_bytes": 1368,
+      "extracted_facts": {
+        "operator_authored_release_explicitly_credited": false,
+        "company_metadata_is_authorship_proof": false,
+        "two_kings_cooperate_against_machine_civilization_reported": true,
+        "dark_king_self_seal_reported": true,
+        "light_king_machine_seal_reported": true,
+        "marefia_lost_memory_and_pet_rebirth_story_reported": true
+      },
+      "authority": "DATED_PORTAL_RELEASE_ARTICLE_AUTHOR_NOT_VERIFIED",
+      "visible_publication": "2002-2-5",
+      "scope": "CN 2.5 精灵王传说 company-labelled portal article",
+      "source_body_normalization": "GB18030_HTML_VISIBLE_TEXT_SCRIPT_STYLE_EXCLUDED_WHITESPACE_REMOVED_V1"
+    },
+    {
+      "id": "I1",
+      "http": {
+        "url": "https://image2.sina.com.cn/gm/newgames/2003/12/U163P115T9D10098F364DT20031216143816.jpg",
+        "resolved_url": "https://image2.sina.com.cn/gm/newgames/2003/12/U163P115T9D10098F364DT20031216143816.jpg",
+        "status": 200,
+        "bytes": 19475,
+        "sha256": "31022df63eaf77d1500e36e9056311ec6fd032bebea02f0e4ba2068321fc15d9",
+        "fetched_utc": "2026-10-19T22:49:02.305695+00:00"
+      },
+      "type": "JPEG",
+      "historical_original_byte_sha256": null,
+      "authority": "ACTUAL_IMAGE_LINK_FROM_S1_WITH_SOURCE_CAPTION",
+      "dimensions": [
+        400,
+        261
+      ],
+      "caption_as_written": "图为：神秘朱雀设定图",
+      "source_declared_url": "http://image2.sina.com.cn/gm/newgames/2003/12/U163P115T9D10098F364DT20031216143816.jpg",
+      "transport_upgrade_only": true,
+      "visually_inspected": true
+    },
+    {
+      "id": "I2",
+      "http": {
+        "url": "https://image2.sina.com.cn/gm/newgames/2003/12/U163P115T9D10098F167DT20031216143816.JPG",
+        "resolved_url": "https://image2.sina.com.cn/gm/newgames/2003/12/U163P115T9D10098F167DT20031216143816.JPG",
+        "status": 200,
+        "bytes": 27547,
+        "sha256": "816e7d7fd548d942581beae9234f5436f746b4ec25251b6133bfb2fd27a0d89e",
+        "fetched_utc": "2026-10-19T22:49:01.888829+00:00"
+      },
+      "type": "JPEG",
+      "historical_original_byte_sha256": null,
+      "authority": "ACTUAL_IMAGE_LINK_FROM_S1_WITH_SOURCE_CAPTION",
+      "dimensions": [
+        400,
+        299
+      ],
+      "caption_as_written": "图为：神秘朱雀属性",
+      "source_declared_url": "http://image2.sina.com.cn/gm/newgames/2003/12/U163P115T9D10098F167DT20031216143816.JPG",
+      "transport_upgrade_only": true,
+      "visually_inspected": true
+    }
+  ],
+  "records": [
+    {
+      "record_id": "cn-wayi-2003:sacred-beast:1",
+      "entity_type": "SOURCE_NAMED_MYTHIC_BEAST_NOT_ORIGINAL_SPECIES_ID",
+      "collection": "pets",
+      "version_profile": "LATER_OFFICIAL:CN_WAYI_70_20031216_RELEASE_LABEL_NOT_AUTHENTICATED_BUILD",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "label_as_written": "白虎",
+      "narrative_skill_element": "水",
+      "pet_attribute_vector": null,
+      "narrative_temple_in_source_list_order": "水神殿",
+      "temple_join_basis": "TEXT_ORDER_ONLY_NOT_MAP_SPAWN_OR_DUNGEON_PROOF",
+      "growth_profile": null,
+      "capture_or_quest_unlock": null
+    },
+    {
+      "record_id": "cn-wayi-2003:sacred-beast:2",
+      "entity_type": "SOURCE_NAMED_MYTHIC_BEAST_NOT_ORIGINAL_SPECIES_ID",
+      "collection": "pets",
+      "version_profile": "LATER_OFFICIAL:CN_WAYI_70_20031216_RELEASE_LABEL_NOT_AUTHENTICATED_BUILD",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "label_as_written": "青龙",
+      "narrative_skill_element": "风",
+      "pet_attribute_vector": null,
+      "narrative_temple_in_source_list_order": "风神殿",
+      "temple_join_basis": "TEXT_ORDER_ONLY_NOT_MAP_SPAWN_OR_DUNGEON_PROOF",
+      "growth_profile": null,
+      "capture_or_quest_unlock": null
+    },
+    {
+      "record_id": "cn-wayi-2003:sacred-beast:3",
+      "entity_type": "SOURCE_NAMED_MYTHIC_BEAST_NOT_ORIGINAL_SPECIES_ID",
+      "collection": "pets",
+      "version_profile": "LATER_OFFICIAL:CN_WAYI_70_20031216_RELEASE_LABEL_NOT_AUTHENTICATED_BUILD",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "label_as_written": "玄武",
+      "narrative_skill_element": "地",
+      "pet_attribute_vector": null,
+      "narrative_temple_in_source_list_order": "地神殿",
+      "temple_join_basis": "TEXT_ORDER_ONLY_NOT_MAP_SPAWN_OR_DUNGEON_PROOF",
+      "growth_profile": null,
+      "capture_or_quest_unlock": null
+    },
+    {
+      "record_id": "cn-wayi-2003:sacred-beast:4",
+      "entity_type": "SOURCE_NAMED_MYTHIC_BEAST_NOT_ORIGINAL_SPECIES_ID",
+      "collection": "pets",
+      "version_profile": "LATER_OFFICIAL:CN_WAYI_70_20031216_RELEASE_LABEL_NOT_AUTHENTICATED_BUILD",
+      "source_refs": [
+        "S1",
+        "I1",
+        "I2"
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "label_as_written": "朱雀",
+      "narrative_skill_element": "火",
+      "pet_attribute_vector": null,
+      "narrative_temple_in_source_list_order": "火神殿",
+      "temple_join_basis": "TEXT_ORDER_ONLY_NOT_MAP_SPAWN_OR_DUNGEON_PROOF",
+      "growth_profile": null,
+      "capture_or_quest_unlock": null,
+      "source_named_form": "菲奇亚",
+      "source_reports_pure_fire": true,
+      "art_reference": "I1",
+      "status_reference": "I2",
+      "screenshot_individual_is_original_species_template": false
+    },
+    {
+      "record_id": "cn-wayi-2003:sacred-beast-seal-story",
+      "entity_type": "OPERATOR_ATTRIBUTED_NARRATIVE_NOT_QUEST_SCRIPT",
+      "collection": "sources",
+      "version_profile": "LATER_OFFICIAL:CN_WAYI_70_20031216_RELEASE_LABEL_NOT_AUTHENTICATED_BUILD",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "summary": "The release links four beast skill traditions to four temples and a seal story mentioning a battle between the two kings; it presents Suzaku as an emerging companion.",
+      "which_subject_had_not_fully_recovered_power": null,
+      "absolute_fictional_date": null,
+      "map_coordinates_quest_steps_rewards_or_server_flags": null,
+      "promotional_combat_rhetoric_is_guaranteed_rule": false
+    },
+    {
+      "record_id": "cn-wayi-2003:suzaku-status-image",
+      "entity_type": "SINGLE_PROMOTIONAL_PET_STATUS_SAMPLE",
+      "collection": "screens",
+      "version_profile": "LATER_OFFICIAL:CN_WAYI_70_20031216_RELEASE_LABEL_NOT_AUTHENTICATED_BUILD",
+      "source_refs": [
+        "S1",
+        "I2"
+      ],
+      "verification_status": "MANUAL_IMAGE_OBSERVATION_NOT_SPECIES_MASTER",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "observed_image": "I2",
+      "sample_scope": "ONE_PICTURED_LEVEL_1_INDIVIDUAL_NO_SERVER_OR_CLIENT_TRACE",
+      "full_original_window_layout_or_resource_binding_verified": false,
+      "display_values_reference": "/visual_observations/status_image/observed_individual_values"
+    },
+    {
+      "record_id": "cn-wayi-2002-2003:seal-story-source-relation",
+      "entity_type": "CROSS_VERSION_SOURCE_RELATION_NOT_CANON_MERGE",
+      "collection": "sources",
+      "version_profile": "CN25_2002_PORTAL_VS_CN70_2003_OPERATOR_ATTRIBUTED_RELEASE",
+      "source_refs": [
+        "S1",
+        "S2"
+      ],
+      "verification_status": "SOURCE_RELATION_NOT_CANON_MERGE",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "older_scope": "The dated 2.5 portal reports cooperative resistance to machine civilization, a machine-imposed light-king seal, a voluntary dark-king seal, Marefia and a pet-rebirth reward rationale.",
+      "later_scope": "The attributed 7.0 release refers to a light/dark king battle and the four beasts being sealed in temples.",
+      "same_seal_event_or_complete_timeline": null,
+      "definitive_contradiction_retcon_or_moral_alignment": null,
+      "cross_language_identity_join": null,
+      "operator_authorship_of_older_text": null
+    }
+  ],
+  "visual_observations": {
+    "concept_art": {
+      "source": "I1",
+      "type": "ISOLATED_LABELLED_CONCEPT_ILLUSTRATION_NOT_CLIENT_SPRITE",
+      "visible_label": "朱雀",
+      "appearance_summary": "Red bird-like creature, cream/yellow wings and yellow feet against a pale background.",
+      "client_sprite_id_animation_or_production_rights": null
+    },
+    "status_image": {
+      "source": "I2",
+      "type": "PROMOTIONAL_PET_STATUS_SCREENSHOT_NOT_RUNTIME_CAPTURE_BY_PROJECT",
+      "name_line_transcription": null,
+      "name_line_reason": "Do not force a low-resolution pixel name into the article form name; exact name-line reading unverified.",
+      "observed_individual_values": {
+        "level": 1,
+        "experience": 0,
+        "next_experience_display": 2,
+        "hp_current": 78,
+        "hp_max": 78,
+        "attack": 21,
+        "defense": 7,
+        "agility": 11,
+        "loyalty": 100
+      },
+      "attribute_bar_observation": "Red fire bar visible; numeric element weights are not printed as a verified four-component vector.",
+      "numeric_element_weights": null,
+      "growth_rates": null,
+      "nickname_transcription": null,
+      "sprite_binding_or_screen_resolution": null
+    }
+  },
+  "discovery_and_limits": [
+    {
+      "url": "https://news.17173.com/z/stoneage/banben/sa25.htm",
+      "outcome": "Rendered index read; raw HTTP567. Existing Git topology is prior evidence, not a new source byte recovery."
+    },
+    {
+      "url": "https://news.17173.com/z/stoneage/banben/sa25-1.htm",
+      "outcome": "Actual index story link timed out in web reader; raw HTTP567; body not recovered."
+    },
+    {
+      "url": "https://news.17173.com/z/stoneage/banben/sa25-2.htm",
+      "outcome": "Rendered rebirth paragraph read; raw HTTP567; no independent early witness claimed."
+    },
+    {
+      "url": "https://games.sina.com.cn/newgames/2003/12/122210516.shtml",
+      "outcome": "Web reader Unicode decoding error; followup not used as independent story witness."
+    }
+  ],
+  "coverage": {
+    "new_operator_attributed_html_bodies": 1,
+    "older_dated_portal_html_bodies": 1,
+    "linked_images_downloaded_and_visually_inspected": 2,
+    "research_records": 7,
+    "original_pet_species_ids": 0,
+    "original_server_scripts": 0,
+    "new_game_or_site_production_assets": 0
+  },
+  "boundaries": {
+    "historical_2003_snapshot_authenticated": false,
+    "original_server_execution_verified": false,
+    "original_pet_species_master_recovered": false,
+    "exact_client_build": null,
+    "four_skill_affiliations_are_four_pet_attribute_vectors": false,
+    "ordered_temple_names_are_map_or_npc_ids": false,
+    "single_lv1_sample_is_growth_table": false,
+    "concept_art_to_sprite_or_animation_join_verified": false,
+    "both_articles_share_one_canon_or_chronology": false,
+    "retcon_or_contradiction_proven": false,
+    "auction_is_quest_reward_or_capture_rule": false,
+    "commercial_transaction_performed": false,
+    "tw10_or_jss1999_backfill": false,
+    "original_html_or_images_committed": false,
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b_and_wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING"
+  },
+  "finite_stop": "ONE_ATTRIBUTED_RELEASE_TWO_ACTUAL_IMAGE_REFERENCES_AND_ONE_BOUNDED_EARLIER_STORY_COMPARISON_THEN_PORTFOLIO",
+  "reopen_if": [
+    "Authenticated same-era official-host source or original build metadata",
+    "Same-build pet master and resource binding",
+    "Original quest/state scripts or sourced execution trace"
+  ],
+  "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-23"
+}

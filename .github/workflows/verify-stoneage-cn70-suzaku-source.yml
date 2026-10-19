@@ -1,0 +1,32 @@
+name: Verify CN70 Suzaku attributed story and image references
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-CN70-SUZAKU-*.json'
+      - 'tools/stoneage_cn70_suzaku_source.py'
+      - 'tests/test_stoneage_cn70_suzaku_source.py'
+      - '.github/workflows/verify-stoneage-cn70-suzaku-source.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-CN70-SUZAKU-*.json'
+      - 'tools/stoneage_cn70_suzaku_source.py'
+      - 'tests/test_stoneage_cn70_suzaku_source.py'
+      - '.github/workflows/verify-stoneage-cn70-suzaku-source.yml'
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify story, single-individual image observations and negative boundaries
+        run: python -m unittest discover -s tests -p 'test_stoneage_cn70_suzaku_source.py' -v
+      - name: Independently read two fixed HTML sources and two linked image byte references
+        run: python -m tools.stoneage_cn70_suzaku_source --fetch --output /tmp/suzaku-derived/replay.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cn70-suzaku-derived-replay
+          path: /tmp/suzaku-derived/replay.json
+          if-no-files-found: error
+          retention-days: 30
