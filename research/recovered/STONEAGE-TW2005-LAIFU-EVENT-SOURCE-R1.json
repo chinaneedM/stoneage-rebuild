@@ -1,0 +1,264 @@
+{
+  "schema": "stoneage.r19.tw2005_laifu_event_and_later_walkthrough_source_contract.v1",
+  "task": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-19",
+  "research_date": "2026-10-19",
+  "remote_baseline": {
+    "head": "a72034baaa02db88969fc8628a4106c41daf4000",
+    "tree": "8e51c5559b58c762698238354a22ea5ac9cdf197",
+    "repo": "chinaneedM/stoneage-rebuild"
+  },
+  "focus": {
+    "restored_player_facing_content": "Named temporary rescue quest, commission, NPC family narrative, dog-person pet reward and source-described protective skill",
+    "gap": "Lack original operator quest script, release build/pet IDs and independently byte-attested original activity page",
+    "expected_deliverable": "One period-press bounded event-content report with later-guide differences; release-source classification and explicit reopen gates",
+    "stop": "One dated 2005 report and one later-edited guide, no unbounded related-guide crawling, no original binaries or images"
+  },
+  "historical_sources": [
+    {
+      "id": "GNN_20050420",
+      "url": "https://gnn.gamer.com.tw/detail.php?sn=19615",
+      "title": "《石器時代》5 週年慶活動開跑",
+      "journalist": "小賢",
+      "visible_publication_datetime": "2005-04-20 19:26:02",
+      "kind": "CONTEMPORANEOUS_PERIOD_PRESS_OPERATOR_ATTRIBUTED",
+      "direct_browser_open": "HTTP_403",
+      "search_indexed_body": "COMPLETE_RELEVANT_EVENT_PARAGRAPH",
+      "original_byte_sha256": null,
+      "actual_archive_capture": null,
+      "operator_first_party_website": false,
+      "press_report_is_server_runtime_replay": false
+    },
+    {
+      "id": "BAHAMUT_2006_EDITED_GUIDE",
+      "url": "https://forum.gamer.com.tw/G2.php?bsn=1571&lorder=23&parent=3229&sn=2337",
+      "title": "〖情報〗犬人拿法...任務詳解",
+      "author": "戀云少年 c90045",
+      "visible_edited_datetime": "2006-10-04 18:22:48",
+      "first_post_date": null,
+      "kind": "LATER_COMMUNITY_WALKTHROUGH",
+      "direct_browser_open": "HTTP_403",
+      "search_indexed_body": "EIGHT_NUMBERED_STEPS_AND_POSTSCRIPT",
+      "original_byte_sha256": null,
+      "original_server_script": false,
+      "first_party_operator_source": false
+    }
+  ],
+  "press_qualified_2005": {
+    "operator_as_attributed": "台灣華義",
+    "version_label_in_article": "StoneAge (SA) no precise numbered build",
+    "official_operator_document_recovered": false,
+    "announced_event": {
+      "event": "石器五週年紀念",
+      "named_subquest": "犬人「萊福」新任務",
+      "start_context": "2005-04-20 article states 即日起",
+      "end_month_day": "06-15",
+      "end_year_inferred_from_article": "2005 (context only)",
+      "launch_confirmed_by_live_server": false
+    },
+    "quest": {
+      "mission_document": "任務委託書",
+      "location": "霍爾特村旁PC盜賊團基地",
+      "named_child": "乎契",
+      "father_name": null,
+      "mission_description": "營救乎契之父",
+      "reported_reward_name": "萊福",
+      "reward_form": "大型人型犬獸",
+      "reward_pet_template_id": null,
+      "known_original_presentation_resource": null
+    },
+    "reported_pet_skill": {
+      "name": "相棲共生",
+      "meaning_as_reported": "主人有死亡危機時代替主人犧牲",
+      "numeric_threshold": null,
+      "action_type": null,
+      "cost": null,
+      "activation_policy": null,
+      "client_runtime_verified": false
+    },
+    "separate_product": {
+      "name": "蟲蟲危機包",
+      "product_bundle_claim": "Subscriptions, serials, CD/guide and other promotional goods",
+      "separate_from_mission": true
+    }
+  },
+  "later_guide_as_reported": {
+    "npc_names": [
+      "乎契",
+      "拓那哩",
+      "乎卓",
+      "多格樂"
+    ],
+    "location_strings": [
+      "塔姆塔姆村",
+      "PC團洞窟",
+      "漁村盜賊地下洞窟",
+      "霍爾特村外"
+    ],
+    "single_location_coordinate": "603,128",
+    "npc_spawn_verified": false,
+    "numbered_guide_steps": [
+      {
+        "id": 1,
+        "actor": "乎契",
+        "context": "塔姆塔姆村",
+        "described_action": "取得委託書（指南稱先備GM委託書）"
+      },
+      {
+        "id": 2,
+        "actor": null,
+        "context": "PC團洞窟三樓",
+        "described_action": "尋得生鏽鎖匙"
+      },
+      {
+        "id": 3,
+        "actor": "乎契",
+        "context": "塔姆塔姆村",
+        "described_action": "詢問叔叔"
+      },
+      {
+        "id": 4,
+        "actor": "拓那哩",
+        "context": "漁村附近盜賊地下洞窟",
+        "described_action": "取得合鑰匙用的骨，並列指南合成素材"
+      },
+      {
+        "id": 5,
+        "actor": "PC團守門人",
+        "context": "PC團洞窟",
+        "described_action": "作戰後見乎卓，指南稱鑰匙回收"
+      },
+      {
+        "id": 6,
+        "actor": "乎卓",
+        "context": "PC團洞窟",
+        "described_action": "取得送家人的信"
+      },
+      {
+        "id": 7,
+        "actor": "乎契",
+        "context": "塔姆塔姆村",
+        "described_action": "換得骨頭並要求找犬人"
+      },
+      {
+        "id": 8,
+        "actor": "多格樂",
+        "context": "霍村外",
+        "described_action": "交骨及GM委託書，指南稱取得一隻一級犬人"
+      }
+    ],
+    "reported_crafting_materials": [
+      {
+        "name": "木",
+        "grade_token": "8"
+      },
+      {
+        "name": "石",
+        "grade_token": "8"
+      },
+      {
+        "name": "黏土",
+        "grade_token": "8"
+      }
+    ],
+    "craft_grade_and_quantity_not_confirmed": true,
+    "guide_claim_pet_level": 1,
+    "guide_claim_monster_level": 75,
+    "source_scope": "LATER_PLAYER_WALKTHROUGH_ONLY_NOT_AUTHENTICATED_2005_SCRIPT"
+  },
+  "source_relations": [
+    {
+      "id": "SR01",
+      "field": "publication_era",
+      "press": "GNN authored by reporter 小賢, timestamp 2005-04-20 19:26:02",
+      "guide": "Bahamut guide page displays author 戀云少年 and 2006-10-04 18:22:48 edited timestamp",
+      "assessment": "DIFFERENT_PROVENANCE_DATES_AND_TEXT_ROLES",
+      "boundary": "Edit date is not necessarily first authored date or original task patch date"
+    },
+    {
+      "id": "SR02",
+      "field": "event_window",
+      "press": "Fifth-anniversary dog-man quest described as available from reporting date to June 15",
+      "guide": "Later community walkthrough does not establish original 2005 event schedule",
+      "assessment": "PRESS_REPORTED_LIMITED_TIME_EVENT",
+      "boundary": "Cannot assert event persisted to 2006 from a later-edited walkthrough"
+    },
+    {
+      "id": "SR03",
+      "field": "request_object",
+      "press": "Prepare 任務委託書",
+      "guide": "Starts at 塔姆塔姆村, claims obtaining 乎契委託書 and having a GM委託書",
+      "assessment": "REPORTED_COMMISSION_DOCUMENTS_NOT_SAME_ITEM_ID",
+      "boundary": "GM委託書 and 乎契委託書 cannot be folded into a single original operator quest flag"
+    },
+    {
+      "id": "SR04",
+      "field": "child_and_relative",
+      "press": "Rescue 乎契's unnamed father",
+      "guide": "Contains 乎契, NPC 乎卓 at PC cave, plus uncle 拓那哩 from a separate thieves cave",
+      "assessment": "SHARED_CHILD_NAME_BUT_FATHER_IDENTITY_OPEN",
+      "boundary": "Do not promote 乎卓 to the father in 2005 brief without first-party confirmation"
+    },
+    {
+      "id": "SR05",
+      "field": "geographical_journey",
+      "press": "PC 盜賊團 base beside 霍爾特村",
+      "guide": "Later route includes 塔姆塔姆村, PC洞窟, 漁村盜賊洞, 霍村 outside and a reported 603,128 coordinate",
+      "assessment": "LATER_ROUTE_EXTENSION_NOT_ORIGINAL_MAP_PROOF",
+      "boundary": "No original same-build map IDs, actual warp edges, NPC spawns or scripted travel timings"
+    },
+    {
+      "id": "SR06",
+      "field": "dog_pet_identity",
+      "press": "Name of awarded large humanoid dog beast: 萊福",
+      "guide": "Guide says obtain level-one dog-man from 多格樂, no direct 莱福 ID or early pet template evidence",
+      "assessment": "PET_NAME_AND_NPC_NAME_MUST_NOT_MERGE",
+      "boundary": "多格樂 may be a NPC name and cannot automatically equal 萊福, pet master ID or graphic ID"
+    },
+    {
+      "id": "SR07",
+      "field": "combat_pet_skill",
+      "press": "萊福 reported to possess 相棲共生, sacrificial protection when owner near death",
+      "guide": "No original detailed trigger or validated item/pet rule visible in later walkthrough",
+      "assessment": "SOURCE_DESCRIBED_SKILL_EFFECT_ONLY",
+      "boundary": "Owner-death danger trigger, damage calculation, target, animation, cooldown, consumption, conditions unknown"
+    },
+    {
+      "id": "SR08",
+      "field": "handin_and_reward",
+      "press": "Rescue 乎契 father with commission and obtain one large humanoid dog reward",
+      "guide": "Claims rusty key, bone assembly, fights, father's letter, 乎契 bone, then dog from 多格樂, with Level 1 assertion",
+      "assessment": "LATER_GUIDE_HANDOFF_CHAIN_NOT_2005_PATCH_EXECUTION",
+      "boundary": "Material grades, duplicate retrieval, specific NPC conditions, exact dog level and master from guide cannot be ported into 2005 as FACT"
+    },
+    {
+      "id": "SR09",
+      "field": "product_extras",
+      "press": "Separate fifth-anniversary 蟲蟲危機包 promotion and virtual pet serial",
+      "guide": "Quest route does not validate a pack-based dog reward",
+      "assessment": "COMMERCIAL_PRODUCT_AND_QUEST_REWARD_SEPARATE",
+      "boundary": "Do not merge pack pets, event dog and reward into one source-based pet acquisition channel"
+    }
+  ],
+  "original_version_identification": {
+    "historical_period": "2005 Taiwan operator-period reporting",
+    "precise_executable_build": null,
+    "original_TW10": false,
+    "original_JSS1999": false,
+    "world_story_year": null,
+    "claim_event_announced_not_live_certified": true,
+    "original_server_quest_executions": 0
+  },
+  "art_and_rights": {
+    "original_pet_sprites_downloaded": 0,
+    "original_screenshots_committed": 0,
+    "original_client_binary_committed": 0,
+    "production_reuse_authorized": false
+  },
+  "historical_status": {
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b": "GATED",
+    "r79": "PAUSED_NON_BLOCKING",
+    "domains_22_promoted": 0
+  },
+  "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-20"
+}

@@ -7488,3 +7488,14 @@ R13显式轮换北京华义原http://www.waei.com.cn:80/ZHUANQU/stoneage2/tyro/u
 新增`research/recovered/STONEAGE-CN60-TEARSTONE-STORY-SOURCE-R1.json`、`docs/specs/STONEAGE-CN60-TEARSTONE-STORY-SOURCE-R1.md`、R18材料评审、专门负面测试与Actions。一个同期网页索引六步+一非独立重刊+一后世异文索引，明确限度后停，不空转海底坐标helper，不继续R79。测试/CI的离线验证不会证明2003原网页字节或原版游戏执行；自身main/分支门及永久派生保管须后续按实际另记，不借旧绿。保留完整历史前缀、22域原状态、Stage A 7PARTIAL+2OPEN、Stage B/百科GATED，R79暂停，不计算总体百分比。
 
 **唯一最高NEXT `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-19`**：返全官方版本/22域队列，优先有真实一方原运营商历史任务/故事/具名NPC来源或独立同期证据；一个具名实源与有效边界即止，不把重刊算重复新增。
+
+
+## 2026-10-19 — R19五周年犬人萊福：同期报道+后期资料关系，不混原服实体
+
+本轮起点为GitHub main `a72034baaa02db88969fc8628a4106c41daf4000` tree `8e51c5559b58c762698238354a22ea5ac9cdf197`、同HEAD主线后续按实际查看，协议/README/完整CURRENT/决策/历史/来源/路线/22域portfolio重读；唯一最高任务`OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-19`。停止R18泪之石故事重复，寻找运营归因具名剧情。选择同期2005-04-20 19:26:02 巴哈GNN记者小贤《石器時代》五周年活动，首次有具名犬人「萊福」、儿童「乎契」及其父亲营救、霍爾特村附近PC盗贼团基地、任务委托书与「相棲共生」宠物护主牺牲描述；同期活动报道仅作为**媒体转述运营商宣传**，并非华义第一方原HTML、原服运行或原客户端。报道中的蟲蟲危機包商品另保留，不并入任务奖励。
+
+同一任务可能延伸至2006编辑的巴哈社区`犬人拿法...任務詳解`；后期指南写乎契、拓那哩、乎卓、多格樂以及塔姆塔姆/PC洞/霍村八步与道具加工，但仅保留作为来源候选。九组关系严禁把「萊福」=「多格樂」、乎契之父=乎卓、2005任務委託書=后来GM委托书，也不把后期坐标/材料/犬人一级或战斗血量、合成配方回填2005原服。新闻/指南两页浏览器实际HTTP403，搜索全文相关段落可见；原HTML SHA/图片/程序均未取，版号和2005日界仅媒体报道、不证真正部署或活动持续至2006。精确开放触发需华义当年活动原网页或同构建任务脚本/执行数据。
+
+新增`STONEAGE-TW2005-LAIFU-EVENT-SOURCE-R1.json`、`docs/specs/STONEAGE-TW2005-LAIFU-EVENT-SOURCE-R1.md`、R19评审、9项独立负面合同测试/工作流。各数据作为SOURCE_REPORTED而非原始运营数值；历史前缀/已发现的不足均不覆盖。该候选提交的分支/main CI均须实际验收，不能借前一次成功。22域原系统家族7PARTIAL/2OPEN，Stage B/百科GATED，R79暂停，无总体百分比。
+
+**唯一最高NEXT `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-20`**：停止犬人同文重刊，返回全部官方版本源队列，优先有真实原运营商历史内容/当期具名故事正文，一个限定内容资料包或精确缺源后停，不再扩无源NPC身份/公式。
