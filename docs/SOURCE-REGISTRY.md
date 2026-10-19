@@ -7514,3 +7514,12 @@ R19 内容主线77b8b06a08ee93aea2e14887fc97de453aa6b19d已检验：候选10与�
 ### 2026-10-19 — R20新浪2004六任务梗概派生数据永久保管
 
 研究内容main `5ff985459a2022ce1267254d40f1b677324618be` / tree `773af9b10631fd1eaf920fc8adc2599b69542932` 已分别通过候选10项和main自身11项Actions；main专用run39264102119/job118099065594的8项离线测试成功。原派生报告 `STONEAGE-CN2004-SIX-QUEST-STORY-VIGNETTES-R1.json` Git blob `2273b04bc5ee7ea402aeac0169b616ed72ffa4e0`，共6765 UTF-8字节，SHA256 `edf10446a05f8c9d6d4ef597936e1593343486fa5c7ee73bd49bfb0c3f7c4d73`。保管收据 `STONEAGE-CN2004-SIX-QUEST-CUSTODY-R1.json` 将门户源网页与源出链详情原HTML哈希未知、图像0实取、原服务器脚本缺失和无原件ZIP明确保存；此派生报告SHA绝不能替代网页源SHA。新增独立Python哈希和反例3测试，回执新HEAD需再次验证分支/main而非套用父11绿。唯一最高NEXT保持R21，不扩6项未读图文攻略和补造任务奖励。Stage A7 PARTIAL+2 OPEN、Stage B/百科GATED、R79暂停、无全局百分比。
+
+
+## 2026-10-20 — R21 日本DigiPark「影の支配者」前三章
+
+- S1：https://www.4gamer.net/games/013/G001377/20080922005/ ，刊发2008/09/22 12:24；仅编辑引言后明确标识的发布文作为运营归因范围。
+- S2：https://www.4gamer.net/games/013/G001377/20081028007/ ，刊发2008/10/28 12:03，页面明确配信元DigiPark/原样刊登厂商发布文。
+- S3：https://www.4gamer.net/games/013/G001377/20081125066/ ，刊发2008/11/25 21:14，同类署名。
+
+三页现行HTTP200实取，完整字节大小/UTC时间/SHA256与归一化核心SHA分别存 `research/recovered/STONEAGE-JP2008-SHADOW-CHAPTERS-SOURCE-R1.json`，原HTML不入Git。媒体托管运营商文稿不等于官方原主机或2008原始快照；官方出链读取失败，历史源SHA仍null。S3重复S2官方URL不更正。CI仅上传派生重放报告，原服执行、同构建NPC/对白/道具ID未证；三章共源，不当独立实服三证。中文规格和R21评审保留有限停止条件，NEXT R22。

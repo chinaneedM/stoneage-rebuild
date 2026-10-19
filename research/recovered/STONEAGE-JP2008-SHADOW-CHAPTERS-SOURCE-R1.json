@@ -1,0 +1,341 @@
+{
+  "schema": "stoneage.jp2008_shadow_chapters.source_contract.r1",
+  "task": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-21",
+  "date": "2026-10-20",
+  "baseline": {
+    "head": "0e9acaa10346b425b74941c6b1af51c8e86936c9",
+    "tree": "333b8cd5977e8cc4b2753265bc8abb4d90bb666b",
+    "remote_branch_count": 385,
+    "open_prs": 0,
+    "main_successful_checks": 11,
+    "continuity_prefix_pins": [
+      {
+        "path": "README.md",
+        "bytes": 21648,
+        "sha256": "9e5cfa8652f58f18a0bfc1df08f5b6b4f31ba63b86f6df2385959801a10bccbb",
+        "git_blob": "961cd68e7850b5535c0c5bdc82ed2e506c651a21"
+      },
+      {
+        "path": "docs/PROJECT-CONTINUITY-PROTOCOL-R1.md",
+        "bytes": 9762,
+        "sha256": "c44834eeec87f7a43e9cb4905f08377349e36d58b1fff2c5a75a6975db695e3b",
+        "git_blob": "ba9bbe19384589400abc61af37a360a40bf91452"
+      },
+      {
+        "path": "docs/CURRENT-STATE.md",
+        "bytes": 2127893,
+        "sha256": "44a843899a5cb65b1b10383a2ecd98c1d1069b18601e5a8ca031025d5a3d0f81",
+        "git_blob": "898d9fab872eae71da785a6ca43a1eaa2aa34fc2"
+      },
+      {
+        "path": "docs/DESIGN-DECISIONS.md",
+        "bytes": 45965,
+        "sha256": "28b572ed01179eacd5a06b4ad62c76e4baef22ac49587aa0bad452a7cb3fe8e6",
+        "git_blob": "013ae4fad9301ab0140fe408a423b3abad97d1f9"
+      },
+      {
+        "path": "docs/HISTORICAL-TIMELINE.md",
+        "bytes": 495923,
+        "sha256": "1b9a146adf75c0899bbf468fd1bdff51131a4f6eba296c26828a83284355c62e",
+        "git_blob": "7bef23f5867255ab0cb3bfa26df9525cbd981f52"
+      },
+      {
+        "path": "docs/SOURCE-REGISTRY.md",
+        "bytes": 776017,
+        "sha256": "e593420248ed8fb6ad5648afc3e7c981f7c38c48b7eb4c0469e4a6f4e2e63c2e",
+        "git_blob": "9211daaf81b8bd7acca462f91e9a800da26ea1b7"
+      },
+      {
+        "path": "docs/RESTORATION-ROADMAP-R2.md",
+        "bytes": 130157,
+        "sha256": "7712b4360c6dc6f64b2753accc4812ab806ee7d1489d80f19dcd809764bea436",
+        "git_blob": "afbb2553c67bf2182efd272193cee48085613dd7"
+      },
+      {
+        "path": "research/recovered/STONEAGE-22-DOMAIN-SOURCE-READY-PORTFOLIO-R2.json",
+        "bytes": 15948,
+        "sha256": "7d50de08f7855cf16dbe54b1747e258f1cc1223de88cc217172fd145f3c704ce",
+        "git_blob": "088b469b3c51e689cff27f33fc3bb49de2d24b2c"
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "S1",
+      "url": "https://www.4gamer.net/games/013/G001377/20080922005/",
+      "visible_publication": "2008/09/22 12:24",
+      "authority": "OPERATOR_ISSUED_RELEASE_HOSTED_BY_4GAMER",
+      "credited_issuer": "デジパーク",
+      "release_boundary": "以下，リリースより",
+      "editorial_intro_is_release_body": false,
+      "current_http": {
+        "url": "https://www.4gamer.net/games/013/G001377/20080922005/",
+        "resolved_url": "https://www.4gamer.net/games/013/G001377/20080922005/",
+        "http_status": 200,
+        "fetched_at_utc": "2026-10-19T22:32:48.202963+00:00",
+        "bytes": 287571,
+        "sha256": "b51102c185cda42547cbc0a4b19297effe6b07a1429da19eff242ef51396bcf6",
+        "content_type": "text/html"
+      },
+      "historical_2008_raw_sha256": null,
+      "release_core_sha256": "e20208120cec02b2bb9a8cb16791c2b78449d526aa1f9d452dd93a48feefabcc",
+      "release_core_utf8_bytes": 2555,
+      "normalization": "UTF8_HTML_VISIBLE_TEXT_WITHOUT_SCRIPT_STYLE_REMOVE_WHITESPACE_V1",
+      "official_link_as_published": "http://stoneage.to/update/20080923_update_10_kage.html",
+      "web_visible_line_ranges": [
+        202,
+        234
+      ]
+    },
+    {
+      "id": "S2",
+      "url": "https://www.4gamer.net/games/013/G001377/20081028007/",
+      "visible_publication": "2008/10/28 12:03",
+      "authority": "OPERATOR_ISSUED_RELEASE_HOSTED_BY_4GAMER",
+      "credited_issuer": "デジパーク",
+      "release_boundary": "メーカー発表文の内容をそのまま掲載しています",
+      "editorial_intro_is_release_body": false,
+      "current_http": {
+        "url": "https://www.4gamer.net/games/013/G001377/20081028007/",
+        "resolved_url": "https://www.4gamer.net/games/013/G001377/20081028007/",
+        "http_status": 200,
+        "fetched_at_utc": "2026-10-19T22:32:48.188364+00:00",
+        "bytes": 269062,
+        "sha256": "7d6a40ca487be0a395183dd6de4add30cb336db0f3c0e6ee43ea25c820beeeae",
+        "content_type": "text/html"
+      },
+      "historical_2008_raw_sha256": null,
+      "release_core_sha256": "23da51db9467c8bf0a1347bd44d943255438ba5c0e91c0135d7b3ea7be5896b4",
+      "release_core_utf8_bytes": 1957,
+      "normalization": "UTF8_HTML_VISIBLE_TEXT_WITHOUT_SCRIPT_STYLE_REMOVE_WHITESPACE_V1",
+      "official_link_as_published": "http://stoneage.to/update/20081028_update_10_kage_page02.html",
+      "web_visible_line_ranges": [
+        191,
+        225
+      ]
+    },
+    {
+      "id": "S3",
+      "url": "https://www.4gamer.net/games/013/G001377/20081125066/",
+      "visible_publication": "2008/11/25 21:14",
+      "authority": "OPERATOR_ISSUED_RELEASE_HOSTED_BY_4GAMER",
+      "credited_issuer": "デジパーク",
+      "release_boundary": "メーカー発表文の内容をそのまま掲載しています",
+      "editorial_intro_is_release_body": false,
+      "current_http": {
+        "url": "https://www.4gamer.net/games/013/G001377/20081125066/",
+        "resolved_url": "https://www.4gamer.net/games/013/G001377/20081125066/",
+        "http_status": 200,
+        "fetched_at_utc": "2026-10-19T22:32:48.240585+00:00",
+        "bytes": 269502,
+        "sha256": "63035547629263721cc54895da6a4fc448890297ccc662884f9b11fd49846613",
+        "content_type": "text/html"
+      },
+      "historical_2008_raw_sha256": null,
+      "release_core_sha256": "c5373e8696abea6d2696bf6a8726453c99b09dca0e0dff0edd0e13d3c7aff642",
+      "release_core_utf8_bytes": 2413,
+      "normalization": "UTF8_HTML_VISIBLE_TEXT_WITHOUT_SCRIPT_STYLE_REMOVE_WHITESPACE_V1",
+      "official_link_as_published": "http://stoneage.to/update/20081028_update_10_kage_page02.html",
+      "web_visible_line_ranges": [
+        191,
+        229
+      ]
+    }
+  ],
+  "records": [
+    {
+      "record_id": "jp-digipark-2008:shadow:chapter-1",
+      "entity_type": "SOURCE_DESCRIBED_QUEST_CHAPTER_NOT_SERVER_ID",
+      "collection": "quests",
+      "version_profile": "LATER_OFFICIAL:JP_DIGIPARK_2008_SHADOW_SERIES",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "OPERATOR_RELEASE_REPUBLISHED_BY_MEDIA_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "chapter_title_as_written": "影の支配者 1章（序）",
+      "announced_start_date": "2008-09-23",
+      "announced_start_qualifier": "AFTER_REGULAR_MAINTENANCE_NOT_EXECUTION_TRACE",
+      "source_reported": {
+        "chapter": 1,
+        "minimum_level_reported": 10,
+        "previous_chapter_required_reported": null,
+        "entry_or_hint_roles": [
+          {
+            "village_as_written": "クオの村",
+            "npc_label_as_written": "青年",
+            "role": "QUEST_START_ALTERNATIVE"
+          },
+          {
+            "village_as_written": "タムタムの村",
+            "npc_label_as_written": "少年",
+            "role": "QUEST_START_ALTERNATIVE"
+          }
+        ],
+        "exclusive_first_chapter_routes_reported": true,
+        "prior_chapter_changes_npc_presence_reported": null,
+        "choice_changes_dialogue_reported": true
+      },
+      "story_summary": "Villages circulate conflicting rumors about the Scar family, spirit power in a pot and dinosaur capture. Two young informants report a hideout; the truth remains unrevealed.",
+      "named_story_strings_not_npc_identities": [
+        "スカー",
+        "ルーギ・ラウ",
+        "スー・マダ"
+      ],
+      "game_ids": null,
+      "reward": null,
+      "exact_dialogue_or_save_flags": null,
+      "actual_spawn_coordinates": null,
+      "ending_or_unmasked_identity": null
+    },
+    {
+      "record_id": "jp-digipark-2008:shadow:chapter-2",
+      "entity_type": "SOURCE_DESCRIBED_QUEST_CHAPTER_NOT_SERVER_ID",
+      "collection": "quests",
+      "version_profile": "LATER_OFFICIAL:JP_DIGIPARK_2008_SHADOW_SERIES",
+      "source_refs": [
+        "S2"
+      ],
+      "verification_status": "OPERATOR_RELEASE_REPUBLISHED_BY_MEDIA_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "chapter_title_as_written": "影の支配者 2章（序）",
+      "announced_start_date": "2008-10-28",
+      "announced_start_qualifier": "AFTER_REGULAR_MAINTENANCE_NOT_EXECUTION_TRACE",
+      "source_reported": {
+        "chapter": 2,
+        "minimum_level_reported": 25,
+        "previous_chapter_required_reported": 1,
+        "entry_or_hint_roles": [
+          {
+            "village_as_written": "キヌイの村",
+            "npc_label_as_written": "テケスタ",
+            "role": "HINT_NOT_PROVEN_START"
+          }
+        ],
+        "exclusive_first_chapter_routes_reported": null,
+        "prior_chapter_changes_npc_presence_reported": true,
+        "choice_changes_dialogue_reported": null
+      },
+      "story_summary": "The story moves to Sehm island. Thief Papascar is pursued by Mipuru; a new ally appears. Their motives and the alleged betrayal remain unanswered.",
+      "named_story_strings_not_npc_identities": [
+        "パパスカー",
+        "ミプル"
+      ],
+      "game_ids": null,
+      "reward": null,
+      "exact_dialogue_or_save_flags": null,
+      "actual_spawn_coordinates": null,
+      "ending_or_unmasked_identity": null
+    },
+    {
+      "record_id": "jp-digipark-2008:shadow:chapter-3",
+      "entity_type": "SOURCE_DESCRIBED_QUEST_CHAPTER_NOT_SERVER_ID",
+      "collection": "quests",
+      "version_profile": "LATER_OFFICIAL:JP_DIGIPARK_2008_SHADOW_SERIES",
+      "source_refs": [
+        "S3"
+      ],
+      "verification_status": "OPERATOR_RELEASE_REPUBLISHED_BY_MEDIA_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "chapter_title_as_written": "影の支配者 3章（破）",
+      "announced_start_date": "2008-11-25",
+      "announced_start_qualifier": "AFTER_REGULAR_MAINTENANCE_NOT_EXECUTION_TRACE",
+      "source_reported": {
+        "chapter": 3,
+        "minimum_level_reported": 45,
+        "previous_chapter_required_reported": 2,
+        "entry_or_hint_roles": [
+          {
+            "village_as_written": "キヌイの村",
+            "npc_label_as_written": "テケスタ",
+            "role": "HINT_NOT_PROVEN_START"
+          }
+        ],
+        "exclusive_first_chapter_routes_reported": null,
+        "prior_chapter_changes_npc_presence_reported": true,
+        "choice_changes_dialogue_reported": null
+      },
+      "story_summary": "Years before the present story, two friends sealed a dark shadow on Geel island. One failed to return and the other disappeared after reporting to an elder; neither man is named.",
+      "named_story_strings_not_npc_identities": [],
+      "game_ids": null,
+      "reward": null,
+      "exact_dialogue_or_save_flags": null,
+      "actual_spawn_coordinates": null,
+      "ending_or_unmasked_identity": null
+    }
+  ],
+  "relations": [
+    {
+      "from_chapter": 1,
+      "to_chapter": 2,
+      "kind": "SOURCE_EXPLICIT_COMPLETION_PREREQUISITE",
+      "source_ref": "S2"
+    },
+    {
+      "from_chapter": 2,
+      "to_chapter": 3,
+      "kind": "SOURCE_EXPLICIT_COMPLETION_PREREQUISITE",
+      "source_ref": "S3"
+    },
+    {
+      "from_chapter": 1,
+      "to_chapter": 2,
+      "kind": "PRIOR_PROGRESS_CHANGES_SOME_NPC_PRESENCE_AND_DIALOGUE",
+      "source_ref": "S2"
+    },
+    {
+      "from_chapter": 1,
+      "to_chapter": 3,
+      "kind": "PRIOR_PROGRESS_CHANGES_SOME_NPC_PRESENCE_AND_DIALOGUE",
+      "source_ref": "S3"
+    }
+  ],
+  "interpretation_limits": [
+    "Unmentioned mechanics remain UNKNOWN; null report flags are not false game predicates.",
+    "Chapter-one alternative NPC labels are not automatically aliases for the two named story informants.",
+    "Tekesta supplies hints in chapters two and three; the release does not establish a quest-acceptance trigger.",
+    "Rumors and rhetorical questions are not resolved world history or named antagonist identities.",
+    "Years-before in chapter three is fictional relative time; publishing dates are real release chronology.",
+    "The chapter-three release repeats the chapter-two official URL; no guessed replacement URL is fetched.",
+    "Chapter four and later are announced prospects, not recovered releases or a complete story.",
+    "Paid campaign contents in the first article are outside this quest package and are not completion rewards.",
+    "No cross-region equivalence or same-build values are derived from translated island or actor names."
+  ],
+  "source_access_notes": [
+    {
+      "target": "http://stoneage.to/update/20080923_update_10_kage.html",
+      "method": "WEB_FOLLOW_ACTUAL_CH1_LINK_100",
+      "result": "INTERNAL_ERROR_NO_OFFICIAL_HTML_RECOVERED"
+    }
+  ],
+  "coverage": {
+    "operator_release_bodies": 3,
+    "source_described_chapters": 3,
+    "chapter_dependencies": 2,
+    "historical_quest_runtime_instances": 0,
+    "images": 0,
+    "programs": 0
+  },
+  "boundaries": {
+    "official_host_html_recovered": false,
+    "historical_2008_snapshot_authenticated": false,
+    "server_execution_verified": false,
+    "exact_client_build": null,
+    "tw10_backfill": false,
+    "jss1999_backfill": false,
+    "chapter4_or_finale_recovered": false,
+    "campaign_items_are_quest_rewards": false,
+    "npc_alias_or_cross_region_identity_verified": false,
+    "images_downloaded": 0,
+    "game_programs_downloaded": 0,
+    "raw_html_committed": false,
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b_and_wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING"
+  },
+  "finite_stop": "THREE_CHAPTER_SOURCE_CONTRACT_AND_REPLAY_THEN_RETURN_TO_PORTFOLIO",
+  "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-22"
+}

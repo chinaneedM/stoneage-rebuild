@@ -3773,3 +3773,8 @@ R19 内容主线77b8b06a08ee93aea2e14887fc97de453aa6b19d已检验：候选10与�
 ### 2026-10-19 — R20新浪2004六任务梗概派生数据永久保管
 
 研究内容main `5ff985459a2022ce1267254d40f1b677324618be` / tree `773af9b10631fd1eaf920fc8adc2599b69542932` 已分别通过候选10项和main自身11项Actions；main专用run39264102119/job118099065594的8项离线测试成功。原派生报告 `STONEAGE-CN2004-SIX-QUEST-STORY-VIGNETTES-R1.json` Git blob `2273b04bc5ee7ea402aeac0169b616ed72ffa4e0`，共6765 UTF-8字节，SHA256 `edf10446a05f8c9d6d4ef597936e1593343486fa5c7ee73bd49bfb0c3f7c4d73`。保管收据 `STONEAGE-CN2004-SIX-QUEST-CUSTODY-R1.json` 将门户源网页与源出链详情原HTML哈希未知、图像0实取、原服务器脚本缺失和无原件ZIP明确保存；此派生报告SHA绝不能替代网页源SHA。新增独立Python哈希和反例3测试，回执新HEAD需再次验证分支/main而非套用父11绿。唯一最高NEXT保持R21，不扩6项未读图文攻略和补造任务奖励。Stage A7 PARTIAL+2 OPEN、Stage B/百科GATED、R79暂停、无全局百分比。
+
+
+## 2026-10-20 考据补记：日本2008「影の支配者」分章发布
+
+FACT（发布文层）：4Gamer现行页面保留2008-09-22、10-28、11-25的DigiPark发布文；公告分别称9月23日、10月28日、11月25日维护后开始前三章，资格依次≥10、≥25+第一章、≥45+第二章。第一章的两入口互斥及第二三章继承第一章部分选择影响均为公告描述，非实服状态机验收。第三章叙述数年前事件，不能按刊发日期换算虚构年份。原名/来源、当前HTTP与核心摘要及悬念边界见 `docs/specs/STONEAGE-JP2008-SHADOW-CHAPTERS-SOURCE-R1.md`。2008原始HTML、精确build、原服脚本/奖励/结局仍OPEN；不回填早期或跨区域正史。
