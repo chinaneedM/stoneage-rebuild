@@ -1,0 +1,33 @@
+name: Verify official hosted CN2.0 newcomer narrative and advice boundaries
+on:
+  push:
+    paths:
+      - tools/stoneage_waei_cn20_newcomer_guide.py
+      - tools/stoneage_early_content_probe.py
+      - tools/stoneage_wayi_newbie_riding_plan.py
+      - tests/test_stoneage_waei_cn20_newcomer_guide.py
+      - research/recovered/STONEAGE-WAEI-CN20-LEVEL-EXP-TABLE-R1.json
+      - research/recovered/STONEAGE-WAEI-CN20-NEWCOMER-GUIDE-R1.json
+      - docs/specs/STONEAGE-WAEI-CN20-NEWCOMER-GUIDE-R1.md
+      - .github/workflows/verify-stoneage-waei-cn20-newcomer-guide.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exact-newcomer-source-and-pinned-entry:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest tests.test_stoneage_waei_cn20_newcomer_guide -v
+      - name: Reacquire only exact newcomer body and validate fixed Git entry metadata
+        run: python -m tools.stoneage_waei_cn20_newcomer_guide --output output/derived.json
+      - run: cmp output/derived.json research/recovered/STONEAGE-WAEI-CN20-NEWCOMER-GUIDE-R1.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: waei-cn20-newcomer-guide-derived-only
+          path: output/derived.json
+          retention-days: 30

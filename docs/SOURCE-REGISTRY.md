@@ -7335,3 +7335,8 @@ R13显式轮换北京华义原http://www.waei.com.cn:80/ZHUANQU/stoneage2/tyro/u
 ### 大陆2.0可见经验表永久派生保管链 — 2026-10-19
 
 内容1813fa6560e9b2d30f1afbd202a44036e2c4ffdc / tree3c50cd316109adf55f2852c28d3f179f9884a5a1的10分支/11自身main门实际success；源run39233233573/job117996018294精确已知20011204165711一正文重取、9负例/原grid/全报告cmp。artifact12177087803 ZIP2895B SHA256acef6fb127fd6bd8328c5b2e4c5c6a8b941c6bf18cc6af97ce3e273d328a2bd0，唯一derived.json18121B SHA256e012249c799f9789e65f13c5fbb6e0ac746966d7660bb30b68bec9a0150d3b87等于永久blobeb30355ade1e87dc734eca3b5b8ddde575dd2c3e，已实际下载/逐字节比较。完整链见STONEAGE-WAEI-CN20-LEVEL-EXP-TABLE-ACCEPTANCE-R1.json；82观察对/两空对不提升cap/原服经验公式，正文非新源、原HTML不入Git，下一页尚未读。回执自身HEAD门另观测。
+
+
+### 大陆华义新入石器官方托管无署名指南 — 2026-10-19
+
+既验经验表派生SHA256e012249c799f9789e65f13c5fbb6e0ac746966d7660bb30b68bec9a0150d3b87的/qualified_unread_entry真实新入石器→http://www.waei.com.cn:80/ZHUANQU/stoneage2/sw/adventure.asp。网页阅读器不可用不证缺源，直接HTTP初请20011204165711跳实https://web.archive.org/web/20011204212409id_/http://www.waei.com.cn/ZHUANQU/stoneage2/sw/adventure.asp，65653B SHA256ef63a7b33db0a967823af8356bbd2369487b20781a3272e1e2c3b0d1500ec1ab，GB18030严格/题石器时代2.0。官方站托管无署名攻略非运营商作者/原服独立证人。第二次精确重取全cmp通过；新工作流只一正文+固定入口Git输入，不再次取经验原页，不重演首次跳转/阅读器错误。11段指纹、10教程记录、原相对img/adventure/1.gif及1s.gif未取引用见STONEAGE-WAEI-CN20-NEWCOMER-GUIDE-R1；13负例/22相关本地通过，源job/ZIP/raw/Git/main必须实际另验。原HTML/图像/程序不入Git，正文数字/建议不回填早期原服，失败和错字保留。
