@@ -3768,3 +3768,8 @@ R19 内容主线77b8b06a08ee93aea2e14887fc97de453aa6b19d已检验：候选10与�
 ## 2026-10-19 — R20新浪2004六个早期任务梗概与一个详情链接边界
 
 从远端main `93c76b9e0a33aeccb395b83ab027e4d3073e54a6`/tree`520ffa85204757c92b1f928cdd55d8b509b8a017`启动，前次R19犬人内容及收据已保管且自身main 11 Actions成功；本轮最高NEXT R20按全官方版本/22域转向更早的故事/NPC类内容。新实读2004-02-11 14:10新浪游戏《新任务，新挑战》80行页面：https://games.sina.com.cn/z/sta/2004-02-11/104374.shtml ，6个任务简介为三职业公会就职、九胞胎真相、森林熊患、尊尼/迪克友谊、阿喇吉酿酒和契雷多浪漫送礼，4人名/3职业明确来源限定。沿事实出链64只取2004-02-11 14:40《患难见真情》详情rw4.shtml：网页可见图像引用而无可提取逐步正文，图像0张实取、其余五子页未读。不把简介当原服务器NPC/任务ID、奖励或结局，疑似错字保留，新浪作者与华义公司页脚不推第一方原服脚本；旁侧6.0/7.0链接不证同构建。机读报告 `STONEAGE-CN2004-SIX-QUEST-STORY-VIGNETTES-R1.json`、中文规格、R20评审及源负面测试/CI按实际验收，本次源原始HTML字节/ZIP仍未取得，切勿提前说全绿。旧完整历史和22域状态保留。**唯一最高NEXT `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-21`**，继续不同原版本的有来源任务/世界故事，Stage A7 PARTIAL+2 OPEN，Stage B/百科GATED，R79暂停，无总完成百分比。
+
+
+### 2026-10-19 — R20新浪2004六任务梗概派生数据永久保管
+
+研究内容main `5ff985459a2022ce1267254d40f1b677324618be` / tree `773af9b10631fd1eaf920fc8adc2599b69542932` 已分别通过候选10项和main自身11项Actions；main专用run39264102119/job118099065594的8项离线测试成功。原派生报告 `STONEAGE-CN2004-SIX-QUEST-STORY-VIGNETTES-R1.json` Git blob `2273b04bc5ee7ea402aeac0169b616ed72ffa4e0`，共6765 UTF-8字节，SHA256 `edf10446a05f8c9d6d4ef597936e1593343486fa5c7ee73bd49bfb0c3f7c4d73`。保管收据 `STONEAGE-CN2004-SIX-QUEST-CUSTODY-R1.json` 将门户源网页与源出链详情原HTML哈希未知、图像0实取、原服务器脚本缺失和无原件ZIP明确保存；此派生报告SHA绝不能替代网页源SHA。新增独立Python哈希和反例3测试，回执新HEAD需再次验证分支/main而非套用父11绿。唯一最高NEXT保持R21，不扩6项未读图文攻略和补造任务奖励。Stage A7 PARTIAL+2 OPEN、Stage B/百科GATED、R79暂停、无全局百分比。

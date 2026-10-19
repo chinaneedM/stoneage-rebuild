@@ -1,0 +1,62 @@
+{
+  "schema": "stoneage.r20.sina2004_derived_source_custody.r1",
+  "content_commit": {
+    "main_sha": "5ff985459a2022ce1267254d40f1b677324618be",
+    "tree_sha": "773af9b10631fd1eaf920fc8adc2599b69542932"
+  },
+  "derived": {
+    "path": "research/recovered/STONEAGE-CN2004-SIX-QUEST-STORY-VIGNETTES-R1.json",
+    "git_blob": "2273b04bc5ee7ea402aeac0169b616ed72ffa4e0",
+    "sha256": "edf10446a05f8c9d6d4ef597936e1593343486fa5c7ee73bd49bfb0c3f7c4d73",
+    "bytes": 6765
+  },
+  "sources": [
+    {
+      "url": "https://games.sina.com.cn/z/sta/2004-02-11/104374.shtml",
+      "visible_publication": "2004-02-11 14:10",
+      "visible_lines": [
+        22,
+        78
+      ],
+      "web_rendered": true,
+      "original_byte_sha256": null,
+      "original_archive_capture": null,
+      "operator_owned_first_party": false
+    },
+    {
+      "url": "https://games.sina.com.cn/z/sta/2004-02-11/rw4.shtml",
+      "visible_publication": "2004-02-11 14:40",
+      "visible_lines": [
+        22,
+        34
+      ],
+      "followed_from": "index link 64",
+      "image_refs_only": true,
+      "original_image_bytes_obtained": false,
+      "original_byte_sha256": null
+    }
+  ],
+  "validations": {
+    "branch_run_id": 39263853656,
+    "branch_job_id": 118098224085,
+    "branch_checks": 10,
+    "branch_all_success": true,
+    "main_run_id": 39264102119,
+    "main_job_id": 118099065594,
+    "main_checks": 11,
+    "main_all_success": true,
+    "main_workflow_tests": 8
+  },
+  "negative_bounds": {
+    "original_source_html_hashes_verified": false,
+    "ci_download_of_original_html": false,
+    "original_image_blobs_recovered": 0,
+    "original_server_quest_scripts_recovered": 0,
+    "article_company_footer_proves_original_build": false,
+    "remaining_five_detailed_walkthroughs_read": false,
+    "zip_artifact_id": null,
+    "zip_artifact_sha256": null
+  },
+  "this_receipt_self_validation": "PENDING_CANDIDATE_AND_MAIN_ACTIONS",
+  "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-21"
+}
