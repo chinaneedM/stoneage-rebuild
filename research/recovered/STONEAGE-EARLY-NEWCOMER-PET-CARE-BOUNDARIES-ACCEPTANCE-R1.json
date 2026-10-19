@@ -1,0 +1,275 @@
+{
+  "schema": "stoneage.early_newcomer_pet_care_boundaries.acceptance.r1",
+  "date": "2026-10-19",
+  "task": "EARLY-OFFICIAL-NEWCOMER-AND-PET-CARE-BOUNDARIES-01",
+  "head": "2e45613b5683f8485872150de2cec6a71d7f25e7",
+  "tree": "00594e5884d57ceec5224464b545d3d67df1b9b7",
+  "parent": "1ff1730584de4822102680f19747c6c02ace93cf",
+  "pinned_git_inputs": [
+    {
+      "key": "cn",
+      "path": "research/recovered/STONEAGE-WAEI-CN20-NEWCOMER-GUIDE-R1.json",
+      "sha256": "aecc1e18d291d6af8e7fd6e4ca913baf9aedb6e883cabad295f47a842705bed6"
+    },
+    {
+      "key": "creation",
+      "path": "research/recovered/JSS-LOGIN-MANUAL-CREATION-CONTRACT-R1.json",
+      "sha256": "fb1bc22fbb6e42dfaf39f1ff928ab4278595b0eb3f61e98c33b50d1009690768"
+    },
+    {
+      "key": "pet",
+      "path": "research/recovered/STONEAGE-JSS2001-PET-MANUAL-CONTRACT-R1.json",
+      "sha256": "ec4c1602472fb5daa2d458e455f06df3318011e560be053abd460d7d5fba5a13"
+    },
+    {
+      "key": "player",
+      "path": "research/recovered/STONEAGE-JSS2001-PLAYER-STATUS-LEVELUP-KNOCKOUT-R1.json",
+      "sha256": "13df1d32a44127f80c3e042c335dc01d9cf926011f5b7908b1b71be77d818277"
+    }
+  ],
+  "independent_replay": {
+    "type": "OFFLINE_FIXED_GIT_INPUTS_NO_ORIGINAL_REQUESTS",
+    "run_id": 39235760241,
+    "job_id": 118004305379,
+    "job": "fixed-git-inputs-and-source-relations-only",
+    "artifact": {
+      "id": 12178752003,
+      "name": "early-newcomer-pet-care-derived-only",
+      "size_in_bytes": 2919,
+      "url": "https://api.github.com/repos/chinaneedM/stoneage-rebuild/actions/artifacts/12178752003",
+      "archive_download_url": "https://api.github.com/repos/chinaneedM/stoneage-rebuild/actions/artifacts/12178752003/zip",
+      "expired": false,
+      "created_at": "2026-10-19T10:12:47Z",
+      "expires_at": "2026-11-18T10:12:46Z",
+      "updated_at": "2026-10-19T10:12:47Z",
+      "digest": "sha256:6cb077392b4d9d10c685c1f6b4bd0465f662e982fb42f328e473d63910f09a36",
+      "workflow_run": {
+        "id": 39235760241,
+        "repository_id": 1374762421,
+        "head_repository_id": 1374762421,
+        "head_branch": "agent/early-newcomer-pet-care-boundaries-r1-20261019",
+        "head_sha": "2e45613b5683f8485872150de2cec6a71d7f25e7"
+      }
+    },
+    "zip_bytes": 2919,
+    "zip_sha256": "6cb077392b4d9d10c685c1f6b4bd0465f662e982fb42f328e473d63910f09a36",
+    "only_entry": "derived.json",
+    "raw_json_bytes": 18670,
+    "raw_json_sha256": "3606d42db083bcec622dab8e22a9b3d0c65b7a542825573b2f3082562f20b75f",
+    "permanent_git_blob": "7ef39c9106d26c4082cf39ac6e26d2e86fd7aff7",
+    "exact_bytes_pointers_and_negative_boundaries": "PASS"
+  },
+  "permanent_report": {
+    "path": "research/recovered/STONEAGE-EARLY-NEWCOMER-PET-CARE-BOUNDARIES-R1.json",
+    "bytes": 18670,
+    "sha256": "3606d42db083bcec622dab8e22a9b3d0c65b7a542825573b2f3082562f20b75f",
+    "git_blob": "7ef39c9106d26c4082cf39ac6e26d2e86fd7aff7"
+  },
+  "branch_checks": [
+    {
+      "id": 39235760241,
+      "name": "Verify offline early newcomer and pet care documentary boundaries",
+      "head_sha": "2e45613b5683f8485872150de2cec6a71d7f25e7",
+      "head_branch": "agent/early-newcomer-pet-care-boundaries-r1-20261019",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39235760241"
+    },
+    {
+      "id": 39235760161,
+      "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+      "head_sha": "2e45613b5683f8485872150de2cec6a71d7f25e7",
+      "head_branch": "agent/early-newcomer-pet-care-boundaries-r1-20261019",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39235760161"
+    },
+    {
+      "id": 39235760103,
+      "name": "Validate Stage A early source gap triage",
+      "head_sha": "2e45613b5683f8485872150de2cec6a71d7f25e7",
+      "head_branch": "agent/early-newcomer-pet-care-boundaries-r1-20261019",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39235760103"
+    },
+    {
+      "id": 39235760201,
+      "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+      "head_sha": "2e45613b5683f8485872150de2cec6a71d7f25e7",
+      "head_branch": "agent/early-newcomer-pet-care-boundaries-r1-20261019",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39235760201"
+    },
+    {
+      "id": 39235760287,
+      "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+      "head_sha": "2e45613b5683f8485872150de2cec6a71d7f25e7",
+      "head_branch": "agent/early-newcomer-pet-care-boundaries-r1-20261019",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39235760287"
+    },
+    {
+      "id": 39235759928,
+      "name": "Validate StoneAge Stage A joint review decision",
+      "head_sha": "2e45613b5683f8485872150de2cec6a71d7f25e7",
+      "head_branch": "agent/early-newcomer-pet-care-boundaries-r1-20261019",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39235759928"
+    },
+    {
+      "id": 39235760183,
+      "name": "Validate StoneAge preproduction content archive and wiki boundary",
+      "head_sha": "2e45613b5683f8485872150de2cec6a71d7f25e7",
+      "head_branch": "agent/early-newcomer-pet-care-boundaries-r1-20261019",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39235760183"
+    },
+    {
+      "id": 39235759867,
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "head_sha": "2e45613b5683f8485872150de2cec6a71d7f25e7",
+      "head_branch": "agent/early-newcomer-pet-care-boundaries-r1-20261019",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39235759867"
+    },
+    {
+      "id": 39235760074,
+      "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+      "head_sha": "2e45613b5683f8485872150de2cec6a71d7f25e7",
+      "head_branch": "agent/early-newcomer-pet-care-boundaries-r1-20261019",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39235760074"
+    },
+    {
+      "id": 39235760274,
+      "name": "Validate legacy StoneAge assistant history and pet content gaps",
+      "head_sha": "2e45613b5683f8485872150de2cec6a71d7f25e7",
+      "head_branch": "agent/early-newcomer-pet-care-boundaries-r1-20261019",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39235760274"
+    }
+  ],
+  "main_checks": [
+    {
+      "id": 39235995208,
+      "name": "Validate Stage A early source gap triage",
+      "head_sha": "2e45613b5683f8485872150de2cec6a71d7f25e7",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39235995208"
+    },
+    {
+      "id": 39235995514,
+      "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+      "head_sha": "2e45613b5683f8485872150de2cec6a71d7f25e7",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39235995514"
+    },
+    {
+      "id": 39235995226,
+      "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+      "head_sha": "2e45613b5683f8485872150de2cec6a71d7f25e7",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39235995226"
+    },
+    {
+      "id": 39235995301,
+      "name": "Validate legacy StoneAge assistant history and pet content gaps",
+      "head_sha": "2e45613b5683f8485872150de2cec6a71d7f25e7",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39235995301"
+    },
+    {
+      "id": 39235995150,
+      "name": "Validate StoneAge Stage A joint review decision",
+      "head_sha": "2e45613b5683f8485872150de2cec6a71d7f25e7",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39235995150"
+    },
+    {
+      "id": 39235995284,
+      "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+      "head_sha": "2e45613b5683f8485872150de2cec6a71d7f25e7",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39235995284"
+    },
+    {
+      "id": 39235995319,
+      "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+      "head_sha": "2e45613b5683f8485872150de2cec6a71d7f25e7",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39235995319"
+    },
+    {
+      "id": 39235994773,
+      "name": "Verify offline early newcomer and pet care documentary boundaries",
+      "head_sha": "2e45613b5683f8485872150de2cec6a71d7f25e7",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39235994773"
+    },
+    {
+      "id": 39235995044,
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "head_sha": "2e45613b5683f8485872150de2cec6a71d7f25e7",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39235995044"
+    },
+    {
+      "id": 39235995094,
+      "name": "Validate StoneAge preproduction content archive and wiki boundary",
+      "head_sha": "2e45613b5683f8485872150de2cec6a71d7f25e7",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39235995094"
+    },
+    {
+      "id": 39235995162,
+      "name": "Independently verify TW1.0 R58 rooted helper returns and source custody",
+      "head_sha": "2e45613b5683f8485872150de2cec6a71d7f25e7",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39235995162"
+    }
+  ],
+  "boundaries": {
+    "source_reports": 4,
+    "original_bodies_used": 3,
+    "original_bodies_reacquired": 0,
+    "new_original_requests": 0,
+    "source_relations_not_game_entities": 8,
+    "pet_and_owner_levelup_subjects_merged": false,
+    "cross_version_formula_or_proven_patch_inferred": false,
+    "same_manual02_counted_as_independent_sources": false,
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b_and_wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING"
+  },
+  "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-14"
+}
