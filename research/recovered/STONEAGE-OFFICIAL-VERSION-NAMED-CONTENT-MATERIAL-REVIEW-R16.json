@@ -1,0 +1,143 @@
+{
+  "actual_source_captures": [
+    {
+      "actual_capture": "20011201212305",
+      "bytes": 69680,
+      "original_url": "http://www.waei.com.cn/zhuanqu/stoneage2/strategy/index.asp",
+      "sha256": "6b29b0115bcc37c4afbbe72e9061ea3ddc13d139a63753919e1a2260bd95e63c",
+      "strict_replay_url": "https://web.archive.org/web/20011201212305id_/http://www.waei.com.cn/zhuanqu/stoneage2/strategy/index.asp"
+    },
+    {
+      "actual_capture": "20011201035642",
+      "bytes": 65205,
+      "original_url": "http://www.waei.com.cn/zhuanqu/stoneage2/strategy/hero/1.asp",
+      "sha256": "1f5ce2dd27e58b9ad3f90b847559bfec1a10667c41c38e23b7c5475de89c198a",
+      "strict_replay_url": "https://web.archive.org/web/20011201035642id_/http://www.waei.com.cn/zhuanqu/stoneage2/strategy/hero/1.asp"
+    }
+  ],
+  "critical_source_boundary": "MAINLAND_OFFICIAL_HOST_GUIDE_EXPLICITLY_SAYS_TAIWAN_OPEN_MAINLAND_NOT_YET_OPEN",
+  "date": "2026-10-19",
+  "domains_unchanged": [
+    {
+      "baseline_evidence_status": "PARTIAL_SOURCE",
+      "domain_id": "version_lineage"
+    },
+    {
+      "baseline_evidence_status": "OPEN_VISUAL",
+      "domain_id": "login_splash"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "domain_id": "character_creation"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_RESOURCE",
+      "domain_id": "character_sprite_model"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "domain_id": "world_map"
+    },
+    {
+      "baseline_evidence_status": "OPEN_CONTENT",
+      "domain_id": "npc_identity"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "domain_id": "npc_dialog_ui"
+    },
+    {
+      "baseline_evidence_status": "OPEN_CONTENT",
+      "domain_id": "quest_content"
+    },
+    {
+      "baseline_evidence_status": "OPEN_SAME_BUILD_ROSTER",
+      "domain_id": "pet_species"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_RESOURCE",
+      "domain_id": "pet_visual"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "domain_id": "pet_stats"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_DESCENDANT",
+      "domain_id": "pet_growth"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "domain_id": "pet_skills"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_DESCENDANT",
+      "domain_id": "pet_encounter"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_DESCENDANT",
+      "domain_id": "ride_mount"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "domain_id": "battle_ui_rules"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "domain_id": "item_equipment_economy"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_RESOURCE",
+      "domain_id": "audio_fx"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_CATALOG",
+      "domain_id": "helper_versions"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_CATALOG",
+      "domain_id": "helper_capabilities"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_DISCOVERY",
+      "domain_id": "reference_web"
+    },
+    {
+      "baseline_evidence_status": "DESIGN_PREP_ONLY",
+      "domain_id": "future_player_wiki"
+    }
+  ],
+  "entry_qualification": {
+    "actual_capture": "20011204213609",
+    "bytes": 73356,
+    "href": "/zhuanqu/stoneage2/strategy/hero/1.asp",
+    "label": "英雄岛",
+    "original_url": "http://www.waei.com.cn/ZHUANQU/stoneage2/sw/facility.asp",
+    "sha256": "e18f0bced4935358e3be28e328d50a49a6dfbb8c26476a98c211892974e7ba16"
+  },
+  "finite_stop": "TWO_BODIES_STATIC_WORLD_TEXT_AND_ONE_GUIDE_COMPLETE_NO_SIBLING_MAP_OR_IMAGES",
+  "material_result": {
+    "actual_server_instances": 0,
+    "bytes": 17457,
+    "island_prose_records": 5,
+    "new_images": 0,
+    "new_original_bodies": 2,
+    "npc_mentions": 3,
+    "path": "research/recovered/STONEAGE-WAEI-CN20-ISLAND-HERO-CONTENT-R1.json",
+    "quest_guide_records": 1,
+    "sha256": "4fef4edbb48e837fb49cdcab7faf801040b5d2dfcab7c1ec03e4f8bfc786fe77"
+  },
+  "next": "CN20-HERO-GUIDE-SOURCE-RELATIONS-01",
+  "official_version_scope": {
+    "all_source_recoverable_versions_eligible": true,
+    "publication_host_and_described_service_region_distinct": true,
+    "seven_profiles_complete_release_census": false
+  },
+  "remote_baseline_head": "f8f12ebc5e6465cde3e3bda1d04cb32693667913",
+  "remote_baseline_tree": "31bd8fd12a5269d24827e05fa7af64d06ac5afeb",
+  "root_probe_is_not_facilities_direct_href": true,
+  "schema": "stoneage.official_version_named_content_material_review.r16",
+  "selected_task": "CN20-OFFICIAL-ISLAND-HERO-CONTENT-SOURCE-01",
+  "selection_reason": "STOP_CLOSED_PET_AND_FACILITIES_CONTENT_SELECT_NAMED_QUEST_ACTORS_BIRTH_ROUTE_AND_WORLD_HISTORY",
+  "task": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-16"
+}

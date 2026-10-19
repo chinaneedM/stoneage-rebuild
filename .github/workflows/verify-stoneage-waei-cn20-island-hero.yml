@@ -1,0 +1,34 @@
+name: Verify CN official island prose and Taiwan-labelled hero guide
+on:
+  push:
+    paths:
+      - tools/stoneage_waei_cn20_island_hero.py
+      - tools/stoneage_waei_cn20_facilities.py
+      - tools/stoneage_waei_cn20_new_pet_catalog.py
+      - tools/stoneage_wayi_newbie_riding_plan.py
+      - tools/stoneage_early_content_probe.py
+      - tests/test_stoneage_waei_cn20_island_hero.py
+      - research/recovered/STONEAGE-WAEI-CN20-ISLAND-HERO-CONTENT-R1.json
+      - docs/specs/STONEAGE-WAEI-CN20-ISLAND-HERO-CONTENT-R1.md
+      - .github/workflows/verify-stoneage-waei-cn20-island-hero.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  known-facility-sidebar-and-exact-two-content-bodies:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest tests.test_stoneage_waei_cn20_island_hero -v
+      - name: Reacquire only known facilities entry and exact island/hero bodies
+        run: python -m tools.stoneage_waei_cn20_island_hero --output output/derived.json
+      - run: cmp output/derived.json research/recovered/STONEAGE-WAEI-CN20-ISLAND-HERO-CONTENT-R1.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: waei-cn20-island-hero-derived-only
+          path: output/derived.json
+          retention-days: 30
