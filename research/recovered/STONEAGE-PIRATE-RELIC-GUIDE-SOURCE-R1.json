@@ -1,0 +1,501 @@
+{
+  "schema": "stoneage.pirate_relic_guide_source.r1",
+  "task": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-24",
+  "date": "2026-10-20",
+  "baseline": {
+    "head": "8832d5713c8adf50385d569bcb932ce16fb9ecda",
+    "tree": "5bae00255f7f2e9b5108517acb7e1839a653a8bb",
+    "own_main_success": 9,
+    "own_candidate_success": 8,
+    "continuity_prefix_pins": [
+      {
+        "path": "README.md",
+        "bytes": 21648,
+        "sha256": "9e5cfa8652f58f18a0bfc1df08f5b6b4f31ba63b86f6df2385959801a10bccbb",
+        "git_blob": "961cd68e7850b5535c0c5bdc82ed2e506c651a21"
+      },
+      {
+        "path": "docs/PROJECT-CONTINUITY-PROTOCOL-R1.md",
+        "bytes": 9762,
+        "sha256": "c44834eeec87f7a43e9cb4905f08377349e36d58b1fff2c5a75a6975db695e3b",
+        "git_blob": "ba9bbe19384589400abc61af37a360a40bf91452"
+      },
+      {
+        "path": "docs/CURRENT-STATE.md",
+        "bytes": 2139362,
+        "sha256": "caef58e8f0a8dd59a59aa2cfea63d2a8829dd82f9eb9266ed12de58cbf625f21",
+        "git_blob": "98ea26cc1daa833fb71e52547d214ba8243afba4"
+      },
+      {
+        "path": "docs/DESIGN-DECISIONS.md",
+        "bytes": 45965,
+        "sha256": "28b572ed01179eacd5a06b4ad62c76e4baef22ac49587aa0bad452a7cb3fe8e6",
+        "git_blob": "013ae4fad9301ab0140fe408a423b3abad97d1f9"
+      },
+      {
+        "path": "docs/HISTORICAL-TIMELINE.md",
+        "bytes": 498150,
+        "sha256": "c741c481a9358e933e3667d02bacb1536f5c635e2215817ae566c2c19566a465",
+        "git_blob": "bfe6c268a84927e0c5cd13ffb5a7b6dadde128c8"
+      },
+      {
+        "path": "docs/SOURCE-REGISTRY.md",
+        "bytes": 780507,
+        "sha256": "20c137894286cbb7192efb975cdf919829568737ba01fec6b0ca82b66113fec9",
+        "git_blob": "a7b711b86bbb4bede312ce2530ec162136d92332"
+      },
+      {
+        "path": "docs/RESTORATION-ROADMAP-R2.md",
+        "bytes": 132177,
+        "sha256": "2579588e7f87cbe3013e01bb6cac55c392f8be027957c7bc2d26c50c010a41ca",
+        "git_blob": "eaf6737ae40ce95a08959c777283b6ecd0272c84"
+      },
+      {
+        "path": "research/recovered/STONEAGE-22-DOMAIN-SOURCE-READY-PORTFOLIO-R2.json",
+        "bytes": 15948,
+        "sha256": "7d50de08f7855cf16dbe54b1747e258f1cc1223de88cc217172fd145f3c704ce",
+        "git_blob": "088b469b3c51e689cff27f33fc3bb49de2d24b2c"
+      }
+    ]
+  },
+  "authority": "DATED_PORTAL_PLAYER_GUIDE_NOT_OPERATOR_AUTHORED_RELEASE",
+  "inputs": [
+    {
+      "id": "S1",
+      "http": {
+        "url": "https://games.sina.com.cn/zhqu/sta/sa6/rw/hzw.shtml",
+        "resolved_url": "https://games.sina.com.cn/zhqu/sta/sa6/rw/hzw.shtml",
+        "status": 200,
+        "bytes": 49799,
+        "sha256": "b4d9f36815b7f099d0f6d0f7915e35ceab2edd8e6ead0658e5649c58ebb031bd",
+        "retrieved_utc": "2026-10-19T23:34:12.183374+00:00"
+      },
+      "extracted": {
+        "core_sha256": "ad44dbe63160f4407511d9d1c40855226ad3226c834528ef0520dfbfd31c930a",
+        "core_utf8_bytes": 1722,
+        "facts": {
+          "recommended_level": 100,
+          "recommendation_is_requirement": false,
+          "repeat_claim_as_written": "可一转做一次",
+          "prerequisites": [
+            "不可思议的贝壳",
+            "解完海贼秘宝任务"
+          ],
+          "breathing_item": "鱼鳃草",
+          "breathing_duration_as_written": "一小时",
+          "no_grass_hp_loss_per_real_minute_approx_fraction": "1/30",
+          "two_hour_explanation": "USE_ONE_THEN_REQUEST_ANOTHER_NOT_ONE_GRASS_LASTS_TWO_HOURS",
+          "shark_level": 130,
+          "source_coordinates": {
+            "shark": [
+              181,
+              322
+            ],
+            "wreck_entry": [
+              54,
+              17
+            ],
+            "贝克": [
+              7,
+              12
+            ],
+            "杰克森": [
+              44,
+              56
+            ]
+          },
+          "pet_total": 3,
+          "pet_level_max_inclusive": 80,
+          "requested_pet_names": [
+            "扬奇洛斯",
+            "邦奇诺",
+            "利则诺顿"
+          ],
+          "payment_alternatives": [
+            {
+              "currency": "石币",
+              "amount": 300000
+            },
+            {
+              "item": "伏特加",
+              "quantity_as_written": "一瓶"
+            }
+          ],
+          "keys_reported": 2,
+          "random_pet_removal_warning": true,
+          "flow": [
+            "FISHERMAN_GRASS",
+            "SHARK_THEN_WRECK",
+            "BAKER_REFERS_TO_JACKSON",
+            "JACKSON_MATERIAL_EXCHANGE",
+            "RETURN_SHARK_THEN_BAKER_FIGHT_TALK_CHEST"
+          ]
+        }
+      },
+      "visible_publication": "2003-05-21 22:27",
+      "current_submission_link_present": true,
+      "authorization_label": "华义官方授权新浪石器·谢绝转载"
+    },
+    {
+      "id": "H1",
+      "http": {
+        "url": "https://web.archive.org/web/20031204053709id_/http://games.sina.com.cn:80/zhqu/sta/sa6/rw/hzw.shtml",
+        "resolved_url": "https://web.archive.org/web/20031204053709id_/http://games.sina.com.cn:80/zhqu/sta/sa6/rw/hzw.shtml",
+        "status": 200,
+        "bytes": 29939,
+        "sha256": "0dbcc96ef5b7a524bd3a228e6f743180195149cf5c9b082306b5790ef9c9a1e8",
+        "retrieved_utc": "2026-10-19T23:34:41.081516+00:00"
+      },
+      "extracted": {
+        "core_sha256": "ad44dbe63160f4407511d9d1c40855226ad3226c834528ef0520dfbfd31c930a",
+        "core_utf8_bytes": 1722,
+        "facts": {
+          "recommended_level": 100,
+          "recommendation_is_requirement": false,
+          "repeat_claim_as_written": "可一转做一次",
+          "prerequisites": [
+            "不可思议的贝壳",
+            "解完海贼秘宝任务"
+          ],
+          "breathing_item": "鱼鳃草",
+          "breathing_duration_as_written": "一小时",
+          "no_grass_hp_loss_per_real_minute_approx_fraction": "1/30",
+          "two_hour_explanation": "USE_ONE_THEN_REQUEST_ANOTHER_NOT_ONE_GRASS_LASTS_TWO_HOURS",
+          "shark_level": 130,
+          "source_coordinates": {
+            "shark": [
+              181,
+              322
+            ],
+            "wreck_entry": [
+              54,
+              17
+            ],
+            "贝克": [
+              7,
+              12
+            ],
+            "杰克森": [
+              44,
+              56
+            ]
+          },
+          "pet_total": 3,
+          "pet_level_max_inclusive": 80,
+          "requested_pet_names": [
+            "扬奇洛斯",
+            "邦奇诺",
+            "利则诺顿"
+          ],
+          "payment_alternatives": [
+            {
+              "currency": "石币",
+              "amount": 300000
+            },
+            {
+              "item": "伏特加",
+              "quantity_as_written": "一瓶"
+            }
+          ],
+          "keys_reported": 2,
+          "random_pet_removal_warning": true,
+          "flow": [
+            "FISHERMAN_GRASS",
+            "SHARK_THEN_WRECK",
+            "BAKER_REFERS_TO_JACKSON",
+            "JACKSON_MATERIAL_EXCHANGE",
+            "RETURN_SHARK_THEN_BAKER_FIGHT_TALK_CHEST"
+          ]
+        }
+      },
+      "visible_publication": "2003-05-21 22:27",
+      "capture_timestamp": "20031204053709",
+      "archive_discovery": {
+        "url": "http://games.sina.com.cn/zhqu/sta/sa6/rw/hzw.shtml",
+        "archived_snapshots": {
+          "closest": {
+            "status": "200",
+            "available": true,
+            "url": "http://web.archive.org/web/20031204053709/http://games.sina.com.cn:80/zhqu/sta/sa6/rw/hzw.shtml",
+            "timestamp": "20031204053709"
+          }
+        },
+        "timestamp": "20040101"
+      },
+      "current_submission_link_present": false,
+      "author_slot_label": "华义官方授权新浪石器·谢绝转载",
+      "same_release_not_independent_witness": true
+    }
+  ],
+  "records": [
+    {
+      "record_id": "sina-20030521-pirate:quest",
+      "entity_type": "GUIDE_QUEST_NOT_ORIGINAL_SCRIPT",
+      "collection": "quests",
+      "version_profile": "LATER_OFFICIAL_PORTAL_SA6_LABEL_REGION_AND_BUILD_UNVERIFIED",
+      "source_refs": [
+        "S1",
+        "H1"
+      ],
+      "verification_status": "PLAYER_GUIDE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "label_as_written": "海贼王遗迹任务",
+      "facts": {
+        "recommended_level": 100,
+        "recommendation_is_requirement": false,
+        "repeat_claim_as_written": "可一转做一次",
+        "prerequisites": [
+          "不可思议的贝壳",
+          "解完海贼秘宝任务"
+        ],
+        "breathing_item": "鱼鳃草",
+        "breathing_duration_as_written": "一小时",
+        "no_grass_hp_loss_per_real_minute_approx_fraction": "1/30",
+        "two_hour_explanation": "USE_ONE_THEN_REQUEST_ANOTHER_NOT_ONE_GRASS_LASTS_TWO_HOURS",
+        "shark_level": 130,
+        "source_coordinates": {
+          "shark": [
+            181,
+            322
+          ],
+          "wreck_entry": [
+            54,
+            17
+          ],
+          "贝克": [
+            7,
+            12
+          ],
+          "杰克森": [
+            44,
+            56
+          ]
+        },
+        "pet_total": 3,
+        "pet_level_max_inclusive": 80,
+        "requested_pet_names": [
+          "扬奇洛斯",
+          "邦奇诺",
+          "利则诺顿"
+        ],
+        "payment_alternatives": [
+          {
+            "currency": "石币",
+            "amount": 300000
+          },
+          {
+            "item": "伏特加",
+            "quantity_as_written": "一瓶"
+          }
+        ],
+        "keys_reported": 2,
+        "random_pet_removal_warning": true,
+        "flow": [
+          "FISHERMAN_GRASS",
+          "SHARK_THEN_WRECK",
+          "BAKER_REFERS_TO_JACKSON",
+          "JACKSON_MATERIAL_EXCHANGE",
+          "RETURN_SHARK_THEN_BAKER_FIGHT_TALK_CHEST"
+        ]
+      },
+      "minimum_character_level": null,
+      "reset_implementation": null,
+      "chest_contents": null,
+      "original_script": null
+    },
+    {
+      "record_id": "sina-20030521-pirate:老渔民",
+      "entity_type": "GUIDE_NAMED_NPC_NOT_MASTER",
+      "collection": "npcs",
+      "version_profile": "LATER_OFFICIAL_PORTAL_SA6_LABEL_REGION_AND_BUILD_UNVERIFIED",
+      "source_refs": [
+        "S1",
+        "H1"
+      ],
+      "verification_status": "PLAYER_GUIDE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "label_as_written": "老渔民",
+      "reported_role": "GRANTS_BREATHING_GRASS",
+      "source_location_label": "奇喀喀村附近海岸",
+      "map_id": null,
+      "sprite_id": null
+    },
+    {
+      "record_id": "sina-20030521-pirate:贝克",
+      "entity_type": "GUIDE_NAMED_NPC_NOT_MASTER",
+      "collection": "npcs",
+      "version_profile": "LATER_OFFICIAL_PORTAL_SA6_LABEL_REGION_AND_BUILD_UNVERIFIED",
+      "source_refs": [
+        "S1",
+        "H1"
+      ],
+      "verification_status": "PLAYER_GUIDE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "label_as_written": "贝克",
+      "reported_role": "REFERRAL_THEN_BATTLE_AND_POST_WIN_TALK",
+      "source_location_label": "沉船遗迹",
+      "map_id": null,
+      "sprite_id": null
+    },
+    {
+      "record_id": "sina-20030521-pirate:杰克森",
+      "entity_type": "GUIDE_NAMED_NPC_NOT_MASTER",
+      "collection": "npcs",
+      "version_profile": "LATER_OFFICIAL_PORTAL_SA6_LABEL_REGION_AND_BUILD_UNVERIFIED",
+      "source_refs": [
+        "S1",
+        "H1"
+      ],
+      "verification_status": "PLAYER_GUIDE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "label_as_written": "杰克森",
+      "reported_role": "KEY_CRAFT_SERVICE",
+      "source_location_label": "奇喀喀村",
+      "map_id": null,
+      "sprite_id": null
+    },
+    {
+      "record_id": "sina-20030521-pirate:key-recipe",
+      "entity_type": "GUIDE_EXCHANGE_NOT_SERVER_RECIPE",
+      "collection": "recipes",
+      "version_profile": "LATER_OFFICIAL_PORTAL_SA6_LABEL_REGION_AND_BUILD_UNVERIFIED",
+      "source_refs": [
+        "S1",
+        "H1"
+      ],
+      "verification_status": "PLAYER_GUIDE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "label": "人龙钥匙制作（指南标签）",
+      "pet_total": 3,
+      "pet_level_max_inclusive": 80,
+      "requested_pet_names": [
+        "扬奇洛斯",
+        "邦奇诺",
+        "利则诺顿"
+      ],
+      "quantity_per_pet_name": null,
+      "payment_logic": "PETS_AND_EITHER_MONEY_OR_VODKA",
+      "payment_alternatives": [
+        {
+          "currency": "石币",
+          "amount": 300000
+        },
+        {
+          "item": "伏特加",
+          "quantity_as_written": "一瓶"
+        }
+      ],
+      "keys_reported": 2,
+      "random_selection_filter": null,
+      "random_pet_removal_warning": true
+    },
+    {
+      "record_id": "sina-20030521-pirate:grass",
+      "entity_type": "GUIDE_NAMED_ITEM_NOT_MASTER",
+      "collection": "items",
+      "version_profile": "LATER_OFFICIAL_PORTAL_SA6_LABEL_REGION_AND_BUILD_UNVERIFIED",
+      "source_refs": [
+        "S1",
+        "H1"
+      ],
+      "verification_status": "PLAYER_GUIDE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "label_as_written": "鱼鳃草",
+      "duration_claim": "一小时现实时间",
+      "loss_claim_approx": "不使用时每分钟约总耐久1/30",
+      "actual_timer_rounding_and_clamp": null,
+      "consumption_script": null
+    },
+    {
+      "record_id": "sina-20030521-pirate:keys",
+      "entity_type": "GUIDE_NAMED_ITEM_NOT_MASTER",
+      "collection": "items",
+      "version_profile": "LATER_OFFICIAL_PORTAL_SA6_LABEL_REGION_AND_BUILD_UNVERIFIED",
+      "source_refs": [
+        "S1",
+        "H1"
+      ],
+      "verification_status": "PLAYER_GUIDE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "label_as_written": "海贼王宝箱的钥匙",
+      "quantity_reported": 2,
+      "chest_count": null,
+      "reward_quantity": null,
+      "contents": null
+    },
+    {
+      "record_id": "sina-20030521-pirate:shark",
+      "entity_type": "GUIDE_ENCOUNTER_NOT_MONSTER_TEMPLATE",
+      "collection": "encounters",
+      "version_profile": "LATER_OFFICIAL_PORTAL_SA6_LABEL_REGION_AND_BUILD_UNVERIFIED",
+      "source_refs": [
+        "S1",
+        "H1"
+      ],
+      "verification_status": "PLAYER_GUIDE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "label_as_written": "大白鲨",
+      "level_reported": 130,
+      "source_coordinate_pair": [
+        181,
+        322
+      ],
+      "actual_map_id": null,
+      "stats": null,
+      "combat_script": null
+    }
+  ],
+  "boundaries": {
+    "original_server_execution_verified": false,
+    "exact_region": null,
+    "exact_client_build": null,
+    "portal_sa6_path_certifies_cn60_or_tw45": false,
+    "portal_authorization_is_article_authorship": false,
+    "unnamed_tear_sea_lovers_are_evening_lorin": false,
+    "source_coords_are_original_map_ids": false,
+    "one_key_means_one_reward_item": false,
+    "original_images_fetched": false,
+    "original_html_or_assets_committed": false,
+    "tw10_or_jss1999_backfill": false,
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b_and_wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING"
+  },
+  "interpretation_notes": [
+    "A portal authorization string is also placed in the 2003 author slot, but does not identify the guide author or establish operator authorship. The current submission link is absent in the early layout; no retroactive claim of that exact historical link.",
+    "The sa6 URL and neighbouring 6.0 navigation are editorial context only; do not assert same-region CN6.0 or TW4.5 build identity.",
+    "Two representations of one guide are not independent factual witnesses. Images 1–12 are linked but not fetched or OCR-verified.",
+    "A recommended LV100 is not a proven minimum level. Once per rebirth is a player claim, not a recovered reset flag.",
+    "Three requested pets are named; per-name quantity and random inventory selection filter remain unknown. The warning about high-level pets is retained alongside the level<=80 material description, without inventing a safe filter.",
+    "Money OR vodka is additional to the pet input. Two keys do not prove two chest drops or reward contents.",
+    "One-hour grass plus asking again after use explains the two-hour suggestion, not a two-hour single dose. Approximate real-time HP loss is a source claim, not exact timer/formula execution."
+  ],
+  "discovery_failures": [
+    {
+      "url": "https://gnn.gamer.com.tw/detail.php?sn=21168",
+      "status": 403,
+      "used_as_material_source": false
+    },
+    {
+      "scope": "LIMITED_OPERATOR_RELEASE_SEARCH",
+      "result": "operator pirate book promotion found but no task steps; selected dated guide with lower authority"
+    }
+  ],
+  "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-25"
+}

@@ -16147,3 +16147,12 @@ R19 内容主线77b8b06a08ee93aea2e14887fc97de453aa6b19d已检验：候选10与�
 ### R23实际Actions与永久派生保管验收
 
 内容main fb53563b2592c82eb13ccd3a3d1e5c5b0eabf5e2 / tree3186277f844803f92c167356c812fb7cce9b6f0f，自身候选10及main11实际全success。main源run39342068346/job118365750750的15项测试和三固定输入实重放通过；候选artifact12229057723与main artifact12229287416均实际下载/验ZIP，各1103B，SHA256分别64e61ef8bed49fdb0fe548ff8d9141ed530b01e17f22a7488b42b378cb6a6f59与5f79aee9ab18db3d151ddad1a1d89a0386bcfb500a8b0ff6f21f388e5677968b。唯一replay.json两者完全同字节，2826B SHA256a140f588b9a14c4da05c8c6bc9dc25400af7b9e9f1f5f5ad2952ac6d9f2af63b / Git blob864d3b9958e20e5e190ca1feee7ecdbb9a686b14，完整语义等于本地实取三源重放。已永久保管CI-REPLAY和CUSTODY，含精确HEAD/tree/10与11清单、job/ZIP/raw/Git及来源边界；独立干净远端候选worktree51测试通过、八旧前缀完整且DESIGN/协议/22域原档未改。新增保管测试后16+36=52相关测试另验。此保管HEAD仍须观察自身Actions，不借父绿灯。NEXT R24及Stage门保持，未认证原服或历史图片字节。
+
+
+## 2026-10-20 — R24海贼王遗迹五段流程、贝克/杰克森人龙钥匙与2003HTML
+
+同持续工作单元R23闭合后，重新核main8832d5713c8adf50385d569bcb932ce16fb9ecda/tree5bae00255f7f2e9b5108517acb7e1839a653a8bb，R23保管候选8/自身main9实际success；八文件新完整前缀pin写入R24报告。按最高R24返回全局，优先运营检索只有攻略书宣传无步骤，伊布GNN21168网页/raw403不作材料。选新浪2003-05-21 22:27《海贼王遗迹任务》完整五段；现页“网友投稿”及专题授权不证明运营作者，sa6路径/6.0导航不认证地区/build。一次availability+实际Wayback20031204053709取得29939B SHA2560dbcc96ef5b7a524bd3a228e6f743180195149cf5c9b082306b5790ef9c9a1e8，和现49799B同1722B核心SHA256ad44dbe63160f4407511d9d1c40855226ad3226c834528ef0520dfbfd31c930a；同稿不是独立事实双证人。旧布局作者栏为授权标签、没有当前投稿链接，两布局分记。
+
+新增八来源研究记录/中文规格：任务、老渔民/贝克/杰克森、配方、鱼鳃草/钥匙/鲨鱼。五交接链中LV100是推荐非最低；贝壳+海贼秘宝前置；草一份1现实小时、先用再取解释两小时；无草约每分钟1/30是指南估计非实服公式。三人龙等级不超过80，列三名字但每种数量null；另给30万石币或一瓶伏特加，制两钥匙；随机收身上人龙警告保留，安全筛选不明。回海底战鲨/贝克后再谈下层宝箱，礼包内容/钥匙消耗/reset/原服ID/地图build均未知。12图未取，不联R18情人姓名或2012后版。62相关本地测试及两实HTML离线重放通过，本地历史布局/fixture编号误差及修正详记R24评审；新CI/main及派生ZIP待实际验。
+
+**唯一最高NEXT `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-25`**：返回全官方版本/22域，优先另一具名任务/NPC/故事一方正文；停止本钥匙helper、宠物数值与12图递归。旧前缀/失败、22域状态及决策保留，Stage A7 PARTIAL+2 OPEN，Stage B/百科GATED，R79 PAUSED_NON_BLOCKING，无总体复原百分比。

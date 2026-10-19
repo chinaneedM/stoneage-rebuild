@@ -942,3 +942,8 @@ R19 内容主线77b8b06a08ee93aea2e14887fc97de453aa6b19d已检验：候选10与�
 R23有限取一篇华义归因2003公告、一2004同期HTML、一真实配图；形成6.0/7.0圣诞兑奖员交谈交物/前置/每人物同服组一次的来源规格。未恢复原服脚本、道具/礼包明细、九处地图或等级精确边界；全服降雪不扩大兑换版本。四研究记录及51相关本地测试，独立源CI/派生保管按实际另记。原portfolio22域状态、Stage A7 PARTIAL+2 OPEN、Stage B/百科GATED、R79 PAUSED_NON_BLOCKING保持。
 
 最高NEXT `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-24`：返回全官方版本/22域挑另一具名任务/NPC/世界故事一方正文；不继续圣诞坐标、礼包猜测和天气helper。此条后续接替旧局部NEXT，不改历史。
+
+
+### 2026-10-20 — R24五段海贼王任务指南材料与NEXT25
+
+从R23实际自身8候选/9main验收后返回全局，新增一2003完整门户攻略及一同期HTML，形成贝克—杰克森人龙钥匙/老渔民潜水与战斗交接八研究记录。不是原运营作者或原服脚本，sa6不认证精确地区/build，随机收宠筛选及宝箱内容仍未知。62相关本地测试、两HTML离线重放完成，独立Actions及派生保管按实际另记。最高NEXT `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-25`，回全官方版本/22域优先另一具名一方任务/NPC/故事，停止本图像递归与钥匙helper。Stage A7 PARTIAL+2 OPEN，Stage B/百科GATED，R79暂停；22域原档与全部历史不改。

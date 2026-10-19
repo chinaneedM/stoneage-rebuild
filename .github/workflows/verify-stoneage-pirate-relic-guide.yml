@@ -1,0 +1,34 @@
+name: Verify dated pirate relic guide and 2003 capture
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-PIRATE-RELIC-*.json'
+      - 'tools/stoneage_pirate_relic_guide.py'
+      - 'tools/stoneage_cn2003_christmas_source.py'
+      - 'tests/test_stoneage_pirate_relic_guide.py'
+      - '.github/workflows/verify-stoneage-pirate-relic-guide.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-PIRATE-RELIC-*.json'
+      - 'tools/stoneage_pirate_relic_guide.py'
+      - 'tools/stoneage_cn2003_christmas_source.py'
+      - 'tests/test_stoneage_pirate_relic_guide.py'
+      - '.github/workflows/verify-stoneage-pirate-relic-guide.yml'
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify source authority and guide rule boundaries
+        run: python -m unittest discover -s tests -p 'test_stoneage_pirate_relic_guide.py' -v
+      - name: Read two fixed HTML inputs without image recursion
+        run: python -m tools.stoneage_pirate_relic_guide --fetch --output /tmp/pirate-derived/replay.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pirate-relic-guide-derived-replay
+          path: /tmp/pirate-derived/replay.json
+          if-no-files-found: error
+          retention-days: 30

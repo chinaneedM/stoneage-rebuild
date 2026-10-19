@@ -7545,3 +7545,8 @@ R22同期补证独立验收：run39338706949/job118354613187、artifact122279316
 - I1：两正文真实img src，https://image2.sina.com.cn/gm/newgames/2003/12/U163P115T9D10574F167DT20031223152817.JPG，仅HTTP传输升级，31703B JPEG450×337 SHA256abde5fd6bfd802578077e4ca3e48a3698fbd954a5332a905887c7767c4e7ae73；已目视树/人物/底部兑奖员标签，未证原sprite、地图、历史图片字节及素材授权。
 
 用途：分版本NPC/兑换前置及一次性限制来源规格。四研究记录满足既有七字段/19集合，原服IDs及物品清单null。原HTML/图片不入Git；工具CI仅输出派生JSON，ZIP/raw/Git保管按后续实际验。缺源重开条件及精确状态见STONEAGE-CN2003-CHRISTMAS-NPC-SOURCE-R1.json与中文规格；Stage A/B/百科门不变。
+
+
+### PIRATE-RELIC-GUIDE-SOURCE-R1 — 同期指南与历史HTML（2026-10-20）
+
+S1 https://games.sina.com.cn/zhqu/sta/sa6/rw/hzw.shtml，2003-05-21 22:27，现HTTP200/49799B SHA256b4d9f36815b7f099d0f6d0f7915e35ceab2edd8e6ead0658e5649c58ebb031bd；现投稿入口与专题授权，保守门户玩家指南，不认证运营作者或sa6版本。H1 https://web.archive.org/web/20031204053709id_/http://games.sina.com.cn:80/zhqu/sta/sa6/rw/hzw.shtml，HTTP200/29939B SHA2560dbcc96ef5b7a524bd3a228e6f743180195149cf5c9b082306b5790ef9c9a1e8。一次availability后实回放，旧作者栏授权、无当前投稿入口；两者相同1722B核心SHA256ad44dbe63160f4407511d9d1c40855226ad3226c834528ef0520dfbfd31c930a，同稿非独立运行双证。八记录/五段交接，保留素材、报酬二选一和随机收宠警告；12图未取。HTML/资产不入Git，工具只输出派生JSON，独立CI/ZIP/raw/Git保管按实际另验。未取GNN21168两接口403仅为发现失败，不作伊布原文证据。
