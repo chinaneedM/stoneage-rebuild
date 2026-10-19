@@ -7352,3 +7352,8 @@ R13显式轮换北京华义原http://www.waei.com.cn:80/ZHUANQU/stoneage2/tyro/u
 ### 初宠/初建八关系离线原源归属与永久保管 — 2026-10-19
 
 内容2e45613b5683f8485872150de2cec6a71d7f25e7 / tree00594e5884d57ceec5224464b545d3d67df1b9b7的10分支/11自身main实全success。专用run39235760241/job118004305379只4固定Git输入/8反例/全部指针/全cmp；artifact12178752003实下载ZIP2919B SHA2566cb077392b4d9d10c685c1f6b4bd0465f662e982fb42f328e473d63910f09a36，唯一derived.json18670B SHA2563606d42db083bcec622dab8e22a9b3d0c65b7a542825573b2f3082562f20b75f等于永久blob7ef39c9106d26c4082cf39ac6e26d2e86fd7aff7，实逐字节相同。完整回执STONEAGE-EARLY-NEWCOMER-PET-CARE-BOUNDARIES-ACCEPTANCE-R1.json留精确run/HEAD/输入pin与ZIP/raw/Git；3原正文未重新下载，manual02两报告仍同源，8关系非8游戏实体/原服规则。原件不入Git，回执自身HEAD检查另观测。
+
+
+### 华义大陆新增宠物首目录一新正文 — 2026-10-19
+
+已验新手原正文20011204212409/SHAef63a7b33db0a967823af8356bbd2369487b20781a3272e1e2c3b0d1500ec1ab真实新增宠物href /ZHUANQU/stoneage2/pet/new_pet.asp逐格资格；旧报告未列此出链。网页阅读器不可用不证缺源，初请20011204212409跳实https://web.archive.org/web/20011204194619id_/http://www.waei.com.cn/ZHUANQU/stoneage2/pet/new_pet.asp，69317B SHA256561950fd7bba41e7d39f4a781a671e11e175c7fe08dd1b5481fdf1fd23ba351b，GB18030严格/实际题石器时代2.0。两原件精确本地第二重取全cmp通过；40网页格34名/6占位/40未取图及原grid SHA25699b6274ac6ed8b03755fa940c1172371ea6a037f1c40a0cba63f4410e9fbfa67见STONEAGE-WAEI-CN20-NEW-PET-CATALOG-FIRST-PAGE-R1。10负例/23相关本地通过，独立已知入口+唯一新正文/源job/ZIP/raw/Git及main必须实际另验。两分页未读、源图像/HTML/程序不入Git，不认104原物种/构建/属性。

@@ -1,0 +1,165 @@
+{
+  "actual_entry_qualification": {
+    "actual_capture": "20011204212409",
+    "actual_href": "/ZHUANQU/stoneage2/pet/new_pet.asp",
+    "bytes": 65653,
+    "known_entry_reacquired_not_new_source": true,
+    "label": "新增宠物",
+    "original_url": "http://www.waei.com.cn/ZHUANQU/stoneage2/sw/adventure.asp",
+    "sha256": "ef63a7b33db0a967823af8356bbd2369487b20781a3272e1e2c3b0d1500ec1ab",
+    "strict_replay_url": "https://web.archive.org/web/20011204212409id_/http://www.waei.com.cn/ZHUANQU/stoneage2/sw/adventure.asp"
+  },
+  "boundaries": {
+    "image_filename_or_web_ordinal_is_client_pet_id": false,
+    "jss1999_tw10_cn182_or_25_build_equivalence": false,
+    "new_game_asset_reuse_approved": false,
+    "original_html_images_or_programs_in_git": false,
+    "r79": "PAUSED_NON_BLOCKING",
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b_and_wiki": "GATED"
+  },
+  "date": "2026-10-19",
+  "domains_unchanged": [
+    {
+      "baseline_evidence_status": "PARTIAL_SOURCE",
+      "domain_id": "version_lineage"
+    },
+    {
+      "baseline_evidence_status": "OPEN_VISUAL",
+      "domain_id": "login_splash"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "domain_id": "character_creation"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_RESOURCE",
+      "domain_id": "character_sprite_model"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "domain_id": "world_map"
+    },
+    {
+      "baseline_evidence_status": "OPEN_CONTENT",
+      "domain_id": "npc_identity"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "domain_id": "npc_dialog_ui"
+    },
+    {
+      "baseline_evidence_status": "OPEN_CONTENT",
+      "domain_id": "quest_content"
+    },
+    {
+      "baseline_evidence_status": "OPEN_SAME_BUILD_ROSTER",
+      "domain_id": "pet_species"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_RESOURCE",
+      "domain_id": "pet_visual"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "domain_id": "pet_stats"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_DESCENDANT",
+      "domain_id": "pet_growth"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "domain_id": "pet_skills"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_DESCENDANT",
+      "domain_id": "pet_encounter"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_DESCENDANT",
+      "domain_id": "ride_mount"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "domain_id": "battle_ui_rules"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "domain_id": "item_equipment_economy"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_RESOURCE",
+      "domain_id": "audio_fx"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_CATALOG",
+      "domain_id": "helper_versions"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_CATALOG",
+      "domain_id": "helper_capabilities"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_DISCOVERY",
+      "domain_id": "reference_web"
+    },
+    {
+      "baseline_evidence_status": "DESIGN_PREP_ONLY",
+      "domain_id": "future_player_wiki"
+    }
+  ],
+  "initial_intake_not_repeated_by_ci": [
+    {
+      "historical_absence_proven": false,
+      "method": "WEB_READER",
+      "status": "UNAVAILABLE"
+    },
+    {
+      "actual_capture": "20011204194619",
+      "method": "DIRECT_HTTP",
+      "requested_capture": "20011204212409",
+      "sha256": "561950fd7bba41e7d39f4a781a671e11e175c7fe08dd1b5481fdf1fd23ba351b",
+      "status": 200
+    }
+  ],
+  "material_result": {
+    "game_species_count_or_complete_104_new_pet_census_proven": false,
+    "image_refs_unacquired": 40,
+    "known_entry_reacquired": 1,
+    "named_labels": 34,
+    "new_catalog_body": 1,
+    "path": "research/recovered/STONEAGE-WAEI-CN20-NEW-PET-CATALOG-FIRST-PAGE-R1.json",
+    "sha256": "9a460c23968a714717b375d823308bb5e56848116aaf44880091b75808024df6",
+    "unresolved_placeholder_labels": 6,
+    "web_positions": 40
+  },
+  "next": "CN20-NEW-PET-NAMED-VISUAL-REFERENCE-01",
+  "prior_review": {
+    "path": "research/recovered/STONEAGE-OFFICIAL-VERSION-RELEASE-SOURCE-COVERAGE-REVIEW-R13.json",
+    "sha256": "212bfb000d1e3045e04d90206d1ec188dd657ec2d649aa8da8ad39f049101b1e"
+  },
+  "remote_baseline_head": "3ebb3a04925b92b036b859e1223a1545e57ef538",
+  "remote_baseline_tree": "5fcf32028c3c56d5cda0e70cbe4e183e0e862dda",
+  "schema": "stoneage.official_version_named_content_material_review.r14",
+  "selected_task": "CN20-OFFICIAL-NEW-PET-NAMED-CATALOG-SOURCE-01",
+  "selection_reason": "STOP_NOVICE_ADVICE_AND_MANUAL_COMPARISON_FILL_MAINLAND_NAMED_PET_LABEL_TO_VISUAL_REFERENCE_GAP",
+  "source_qualification": {
+    "actual_capture": "20011204194619",
+    "article_heading_as_written": "新 增 宠 物",
+    "bytes": 69317,
+    "encoding": "GB18030_STRICT",
+    "original_url": "http://www.waei.com.cn/ZHUANQU/stoneage2/pet/new_pet.asp",
+    "page_label_authenticates_exact_build_or_addition_date": false,
+    "page_title_as_written": "石器时代2.0",
+    "sha256": "561950fd7bba41e7d39f4a781a671e11e175c7fe08dd1b5481fdf1fd23ba351b",
+    "strict_replay_url": "https://web.archive.org/web/20011204194619id_/http://www.waei.com.cn/ZHUANQU/stoneage2/pet/new_pet.asp",
+    "visible_page_range_as_written": "1-40"
+  },
+  "stop_condition": {
+    "client_species_ids_attributes_or_aliases_not_filled": true,
+    "no_pagination_or_image_acquisition": true,
+    "one_new_catalog_body_with_name_image_cell_binding_complete": true
+  },
+  "task": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-14"
+}

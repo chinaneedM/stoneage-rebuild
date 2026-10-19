@@ -766,3 +766,10 @@ JSS2001-PLAYER-STATUS-LEVELUP-AND-KNOCKOUT-01将已知manual02的3040/8020/8060�
 新手一正文10候选/11自身main实全success且保留独立原SHA/ZIP/raw/Git回执。相邻4固定派生/3原正文离线形成8关系，初建/每级点数、主人/宠物升级忠诚、魅力/初捕60、KO/药救、回SP/防40和组队EXP分开，不补同构建公式/原服实现。原件不入Git，独立离线门和自身main实际另验。
 
 **唯一最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-14**：停止新手/手册比较，复用22域/全官方源索引，选一具名宠物/NPC/故事/任务/环境实质缺口，给真实来源/有限交付/停止条件并取源，有限失败精确保留；不空矩阵/同文数值/helper/R79。Stage A7 PARTIAL+2 OPEN、Stage B/百科GATED保持。
+
+
+## 2026-10-19 — R14大陆具名宠物首目录实物
+
+停止新手/手册建议比较，R14复用22域，显式选真实新增宠物一正文实2001捕获：40网页格34名字+6问号占位，同格40未取图引用，非客户端ID/40已恢复物种/104完整名册。原大小写/文件顺序与未知属性保留，原件不入Git；独立源/全cmp/自身main须实际另验。
+
+**唯一最高NEXT CN20-NEW-PET-NAMED-VISUAL-REFERENCE-01**：仅第一具名阿米朵位置7真实7.JPG一图，核实际捕获/摘要/格式/尺寸和目视或具体缺源即止，不扩其它图/分页/程序/别名/属性。旧当时未取报告不改。Stage A7 PARTIAL+2 OPEN、Stage B/百科GATED、R79暂停保持。

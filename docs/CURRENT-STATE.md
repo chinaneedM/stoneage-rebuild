@@ -15904,3 +15904,18 @@ OFFICIAL-VERSION-COVERAGE-MATERIAL-REVIEW-08复用R7的22域状态，近期日�
 本轮实质为大陆2001官方站无署名新手文10来源描述（初宠照料/村落经济/成长建议），及8组与JSS2001手册的有限关系；30相关本地测试通过，两内容HEAD各自11项main实全绿。CN宠物升级/JSS主人升级保持不同主体，-4/-1、20初建点、初捕60和100美容目标不推跨版公式；三实际原正文不作四独立证人，两图全未取。原HTML/图像/程序不入Git，所有22域状态/初始完整CURRENT及历史前缀不变，旧失败/错字/时刻端口跳转无删除。新手原件摘要在本轮起始远端历史未出现，旧入链/索引记录不冒作旧已验正文。
 
 **唯一最高NEXT保持OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-14**：停止新手/手册建议比较，复用22域/全官方源索引选一具名宠物/NPC/故事/任务/环境实质缺口，给一真实来源/有限交付/停止条件并取源，有限失败精确保存；不空矩阵/同文数值循环/helper/R79。Stage A7 PARTIAL+2 OPEN、Stage B/百科GATED、R79 PAUSED_NON_BLOCKING，无整体百分比。此回执新HEAD须观察自身Actions，不能套用父内容11绿。
+
+
+## 2026-10-19 — R14大陆官方新增宠物首目录：34具名/6占位及40格图引用
+
+按实时远端main3ebb3a04925b92b036b859e1223a1545e57ef538 / tree5fcf32028c3c56d5cda0e70cbe4e183e0e862dda启动，371分支、0开放PR、同HEAD10项main实际success；无in_progress，旧无关queued37642417333保留。七连续性文件完整CURRENT/历史前缀、路线/22域portfolio/R13/新手原件永久报告重新读取，逐项Git blob与新origin/main相符；不以聊天SHA/旧进度推当前。
+
+最高OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-14停止新手建议/手册比较，复用22域并显式选择大陆具名宠物—图片引用归属缺口。新手已验原正文侧栏「新增宠物」真href /ZHUANQU/stoneage2/pet/new_pet.asp重新静态绑定（旧派生未列此出链，不假称旧JSON指针）；已知entry实20011204212409、65653B原SHAef63a7b33db0a967823af8356bbd2369487b20781a3272e1e2c3b0d1500ec1ab重取非新源。网页阅读器不可用保留；直接HTTP初请20011204212409跳实20011204194619id_原new_pet.asp，69317B SHA256561950fd7bba41e7d39f4a781a671e11e175c7fe08dd1b5481fdf1fd23ba351b、GB18030严格，实际HTML题石器时代2.0/正文新增宠物，先于入口同日捕获非版本顺序冲突。第二次精确两原件网络重取全报告cmp通过，无分页/图像/程序。
+
+实际首目录标1-40，一张8×5网格，40网页位置内34名称+6未解占位（???、???、??1、??2、??3、??4）；两重复???是不同格/图，name=null不造未知宠名/合并物种。34名从阿米朵、艾尔蛙到龟之钢、呼波波逐格绑定原src；巴克亚司位置9配10.JPG、芭拉芭位置10配9.JPG等不按文件数字重排，2.jpg小写保留。原grid SHA25699b6274ac6ed8b03755fa940c1172371ea6a037f1c40a0cba63f4410e9fbfa67。40pets研究记录是网页位置，不是40已认证原服物种/客户端ID；全部属性/成长/捕获/技能/骑乘/跨地区实体等同未知。栏目新增/2.0站题/分页至104不证明104新加物种/完整原服名册/添加日期或JSS1999/TW1.0/CN1.82/2.5同构建。
+
+每格40原图引用全部未取，原URL/大小写/表格位置保存；只前4格HTML声明83×90，其余36无声明，阿米朵位置7实际尺寸/捕获/SHA/格式/帧均null。文件扩展JPG不作已验JPEG/原精灵/动画。真实41-80→new_pet1.asp、81-104→new_pet2.asp只链接资格，两正文及图未读，不自动补齐。原HTML/图像/程序不入Git，全部初始历史/失败保留。
+
+交付STONEAGE-WAEI-CN20-NEW-PET-CATALOG-FIRST-PAGE-R1.json/规格、R14实质复审元数据、10反例及独立已知入口+唯一新目录/全cmp工作流。23相关本地测试通过，独立源job/ZIP/raw/Git和自身main必须按实际另验，不借父HEAD10绿。
+
+**唯一最高NEXT CN20-NEW-PET-NAMED-VISUAL-REFERENCE-01**：仅第一非占位位置7「阿米朵」实际img/newpet/7.JPG一图有限请求，验实际捕获/字节/格式/尺寸并目视精确原图或保留具体不可用；不取其它39图/两分页/程序、不猜属性/别名/动画、不改旧报告当时40图未取状态，一具名视觉记录或具体缺源即止。Stage A7 PARTIAL+2 OPEN、Stage B/百科GATED、R79 PAUSED_NON_BLOCKING，无整体百分比。
