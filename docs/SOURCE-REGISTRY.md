@@ -7291,3 +7291,8 @@ http://www.titan.co.jp/stoneage/manual02.html，严格重放https://web.archive.
 特点内容49a9c5b1b72f79db77eac127b7bf3d14e6311546 / treea7473ab136b0b16bac602533a3cde42533433263，10候选/11自身main门实际全success；源run39201977369/job117896674711、artifact12164037843 ZIP2829B SHA25617096253aaea65117089cdfa661bed78804e77d8ff4090ab6f266ac0fa262f00；唯一derived.json10890B SHA256f74bb9f07cdf02ca7ddb2f2e9bbeac2cd7f90b3ecb977343608e0dde626a6743等于永久blob84355aad2d4c081459c783b86faa4e1814ab1703，已实际下载比较，见特点ACCEPTANCE-R1。
 
 新STONEAGE-JP2003-CREATION-VISUAL-REFERENCE-JOIN-R1只三派生输入，三原正文/一既验2006图元数据，5sources比较与12既有位置索引，零新原件/资产；每条SHA/JSON指针/原URL/捕获可查。独立离线门/ZIP/raw/Git/main实际另验，不借前一HEAD绿，不把引用说成原图重取。
+
+
+### 日本官方截图一索引/一GIF实际时刻保管 — 2026-10-19
+
+原http://www.hangame.co.jp/publish/sa/game3.asp，真实入边见已验game2.asp原SHA4e92ce95cfb836db9fd78f7b4f64905e60270202d1e2ea0b00cf56b79b6440b0及本次静态标签检查（旧派生报告未单列此入边，不假称已有JSON指针）。实际20031215093733id_，14113B SHA256e2f08e8cb7d5f9469acd158783d343349f31ef1fb4b46a493d00e5441df63a18、CP932。仅引用首http://images.hangame.co.jp/_images/game/saj/screeshot1.gif实取跳20080819022212id_，46583B SHA2560565913532b59e930958bbb04bb347a349e6667e02304426a6aa2197f48340b6、GIF275×200单帧并逐张（仅1）目视。另7引用未试；2008图非2003同刻像素/原生分辨率/精确客户端build。原页与GIF不入Git，永久报告/规格STONEAGE-JP-OFFICIAL-SCREENSHOT-REFERENCE-R1与R10复审记录只保留派生元数据。独立一页一图/全cmp、ZIP/raw/Git及自身main按实际另验，不借前包绿。

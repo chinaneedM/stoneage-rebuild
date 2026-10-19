@@ -717,3 +717,10 @@ JSS2001-PLAYER-STATUS-LEVELUP-AND-KNOCKOUT-01将已知manual02的3040/8020/8060�
 特点内容10分支/11自身主线门全success并留源/ZIP/raw/Git回执。相邻三固定报告5比较将12×4外观、12网页位置/24图引用、玩家姓名、眼口名片脸、2006唯一像和2001初建点数分开，索引已有12位置但无新实体/ID/同构建join。零新增原件/图片，离线独立cmp/main须按实际另验。
 
 **唯一最高NEXT OFFICIAL-VERSION-COVERAGE-MATERIAL-REVIEW-10**：复用22域选择有实际入口的实物缺口，给一来源/交付/停止条件并开始取源，不空矩阵或同文身份/公式循环，不默认递归截图/图片，不重开R79。Stage A7 PARTIAL+2 OPEN、Stage B/百科GATED保持。
+
+
+## 2026-10-19 — R10有限UI实物补充，停止同站继续取图
+
+人物/初建参照10候选/11自身main全绿、离线ZIP/raw/Git保管；按22域复审明确选截图像素缺口，新有界game3索引+首图包非自动递归。2003索引8引用，唯一GIF却2008捕获，275×200单帧见野外/人物状态/地图窗，另7图未尝试，非2003同刻原生UI/ID/运行认证。8screens=1图+7引用缺口，原件不入Git；独立重取/元数据/全cmp/main另验。
+
+**唯一最高NEXT OFFICIAL-VERSION-REGIONAL-AND-DOMAIN-ROTATION-11**：停止日本同栏和剩余7图，复用22域/官方源索引，选择另一地区或版本/领域一份有身份实物，实际一来源/有限交付/停止条件并取源；缺则精确登记不空规划/猜链接/低层helper/R79。Stage A7 PARTIAL+2 OPEN、Stage B及百科GATED、R79暂停保持。

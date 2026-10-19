@@ -1,0 +1,129 @@
+{
+  "boundaries": {
+    "r79": "PAUSED_NON_BLOCKING",
+    "same_time_2003_image_or_native_resolution_proven": false,
+    "source_capture_is_client_build": false,
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b_and_wiki": "GATED"
+  },
+  "date": "2026-10-19",
+  "domains_unchanged": [
+    {
+      "baseline_evidence_status": "PARTIAL_SOURCE",
+      "domain_id": "version_lineage"
+    },
+    {
+      "baseline_evidence_status": "OPEN_VISUAL",
+      "domain_id": "login_splash"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "domain_id": "character_creation"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_RESOURCE",
+      "domain_id": "character_sprite_model"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "domain_id": "world_map"
+    },
+    {
+      "baseline_evidence_status": "OPEN_CONTENT",
+      "domain_id": "npc_identity"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "domain_id": "npc_dialog_ui"
+    },
+    {
+      "baseline_evidence_status": "OPEN_CONTENT",
+      "domain_id": "quest_content"
+    },
+    {
+      "baseline_evidence_status": "OPEN_SAME_BUILD_ROSTER",
+      "domain_id": "pet_species"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_RESOURCE",
+      "domain_id": "pet_visual"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "domain_id": "pet_stats"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_DESCENDANT",
+      "domain_id": "pet_growth"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "domain_id": "pet_skills"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_DESCENDANT",
+      "domain_id": "pet_encounter"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_DESCENDANT",
+      "domain_id": "ride_mount"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "domain_id": "battle_ui_rules"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "domain_id": "item_equipment_economy"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_RESOURCE",
+      "domain_id": "audio_fx"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_CATALOG",
+      "domain_id": "helper_versions"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_CATALOG",
+      "domain_id": "helper_capabilities"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_DISCOVERY",
+      "domain_id": "reference_web"
+    },
+    {
+      "baseline_evidence_status": "DESIGN_PREP_ONLY",
+      "domain_id": "future_player_wiki"
+    }
+  ],
+  "edge_evidence": {
+    "actual_capture": "20031214050618",
+    "javascript_executed": false,
+    "label_as_written": "スクリーンショット",
+    "original_sha256": "4e92ce95cfb836db9fd78f7b4f64905e60270202d1e2ea0b00cf56b79b6440b0",
+    "original_source": "http://www.hangame.co.jp/publish/sa/game2.asp",
+    "static_literal_target": "game3.asp"
+  },
+  "explicit_scope": "ONE_AUTHENTIC_STATIC_SCREENSHOT_INDEX_AND_ONLY_FIRST_ACTUAL_REFERENCED_IMAGE_NOT_AUTOMATIC_RECURSION",
+  "material_result": {
+    "image_capture": "20080819022212",
+    "images_actually_acquired_and_reviewed": 1,
+    "index_capture": "20031215093733",
+    "observed_state": "FIELD_WITH_CHARACTER_STATUS_AND_MAP_WINDOWS",
+    "report": "research/recovered/STONEAGE-JP-OFFICIAL-SCREENSHOT-REFERENCE-R1.json",
+    "screenshot_references": 8,
+    "sha256": "d5ce1b2589a91ddf7ef35abb7b91251adad01ef4b0d993f1cb9460e94730b858",
+    "stop_condition_met": true,
+    "unacquired_images": 7
+  },
+  "next": "OFFICIAL-VERSION-REGIONAL-AND-DOMAIN-ROTATION-11",
+  "prior_review": {
+    "path": "research/recovered/STONEAGE-OFFICIAL-VERSION-COVERAGE-MATERIAL-REVIEW-R9.json",
+    "sha256": "d925adf25a71bd91e4174790c2bfb530ff6a6b188f6f45a430a586082651968b"
+  },
+  "schema": "stoneage.official_version_coverage.material_review.r10",
+  "selected_task": "JP-OFFICIAL-SCREENSHOT-REFERENCE-SOURCE-01",
+  "selection_reason": "RECENT_OPERATOR_PROSE_AND_CHARACTER_REFERENCES_DO_NOT_SUPPLY_OBSERVED_STATUS_AND_MAP_UI_PIXELS",
+  "task": "OFFICIAL-VERSION-COVERAGE-MATERIAL-REVIEW-10"
+}
