@@ -1,0 +1,262 @@
+{
+  "schema": "stoneage.waei_cn20.level_exp_table.acceptance.r1",
+  "date": "2026-10-19",
+  "task": "CN20-OFFICIAL-LEVEL-EXP-CONTENT-TABLE-01",
+  "head": "1813fa6560e9b2d30f1afbd202a44036e2c4ffdc",
+  "tree": "3c50cd316109adf55f2852c28d3f179f9884a5a1",
+  "parent": "f5ab25740299898e9c7450c2d99825769f83d8b1",
+  "source": {
+    "original_url": "http://www.waei.com.cn:80/ZHUANQU/stoneage2/tyro/upgrade.asp",
+    "actual_capture": "20011204165711",
+    "bytes": 75141,
+    "sha256": "73fde66ffb3c92261d66715f873fa9b9f54166e4443d5d29924fe137cdcb8d35",
+    "page_title": "石器时代2.0",
+    "known_original_reacquired_not_new_source": true,
+    "grid_sha256": "72d9161343f1ec017fa6aedead769bdc28cc004215e7ae9d0ebe5bc2300caa45",
+    "observed_pairs": 82,
+    "blank_pairs": 2
+  },
+  "independent_source_replay": {
+    "run_id": 39233233573,
+    "job_id": 117996018294,
+    "job": "exact-cn20-table-source-and-full-cell-replay",
+    "artifact": {
+      "id": 12177087803,
+      "name": "waei-cn20-level-exp-table-derived-only",
+      "size_in_bytes": 2895,
+      "url": "https://api.github.com/repos/chinaneedM/stoneage-rebuild/actions/artifacts/12177087803",
+      "archive_download_url": "https://api.github.com/repos/chinaneedM/stoneage-rebuild/actions/artifacts/12177087803/zip",
+      "expired": false,
+      "created_at": "2026-10-19T09:52:03Z",
+      "expires_at": "2026-11-18T09:52:02Z",
+      "updated_at": "2026-10-19T09:52:03Z",
+      "digest": "sha256:acef6fb127fd6bd8328c5b2e4c5c6a8b941c6bf18cc6af97ce3e273d328a2bd0",
+      "workflow_run": {
+        "id": 39233233573,
+        "repository_id": 1374762421,
+        "head_repository_id": 1374762421,
+        "head_branch": "agent/waei-cn20-level-exp-table-r1-20261019",
+        "head_sha": "1813fa6560e9b2d30f1afbd202a44036e2c4ffdc"
+      }
+    },
+    "zip_bytes": 2895,
+    "zip_sha256": "acef6fb127fd6bd8328c5b2e4c5c6a8b941c6bf18cc6af97ce3e273d328a2bd0",
+    "only_entry": "derived.json",
+    "raw_json_bytes": 18121,
+    "raw_json_sha256": "e012249c799f9789e65f13c5fbb6e0ac746966d7660bb30b68bec9a0150d3b87",
+    "permanent_git_blob": "eb30355ade1e87dc734eca3b5b8ddde575dd2c3e",
+    "byte_comparison_cell_grid_and_negative_boundaries": "PASS"
+  },
+  "permanent_report": {
+    "path": "research/recovered/STONEAGE-WAEI-CN20-LEVEL-EXP-TABLE-R1.json",
+    "git_blob": "eb30355ade1e87dc734eca3b5b8ddde575dd2c3e",
+    "bytes": 18121,
+    "sha256": "e012249c799f9789e65f13c5fbb6e0ac746966d7660bb30b68bec9a0150d3b87"
+  },
+  "branch_checks": [
+    {
+      "id": 39233233540,
+      "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+      "head_sha": "1813fa6560e9b2d30f1afbd202a44036e2c4ffdc",
+      "head_branch": "agent/waei-cn20-level-exp-table-r1-20261019",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39233233540"
+    },
+    {
+      "id": 39233233700,
+      "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+      "head_sha": "1813fa6560e9b2d30f1afbd202a44036e2c4ffdc",
+      "head_branch": "agent/waei-cn20-level-exp-table-r1-20261019",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39233233700"
+    },
+    {
+      "id": 39233233573,
+      "name": "Verify official Mainland CN2.0 documentary level experience table",
+      "head_sha": "1813fa6560e9b2d30f1afbd202a44036e2c4ffdc",
+      "head_branch": "agent/waei-cn20-level-exp-table-r1-20261019",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39233233573"
+    },
+    {
+      "id": 39233233660,
+      "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+      "head_sha": "1813fa6560e9b2d30f1afbd202a44036e2c4ffdc",
+      "head_branch": "agent/waei-cn20-level-exp-table-r1-20261019",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39233233660"
+    },
+    {
+      "id": 39233233031,
+      "name": "Validate StoneAge preproduction content archive and wiki boundary",
+      "head_sha": "1813fa6560e9b2d30f1afbd202a44036e2c4ffdc",
+      "head_branch": "agent/waei-cn20-level-exp-table-r1-20261019",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39233233031"
+    },
+    {
+      "id": 39233233121,
+      "name": "Validate Stage A early source gap triage",
+      "head_sha": "1813fa6560e9b2d30f1afbd202a44036e2c4ffdc",
+      "head_branch": "agent/waei-cn20-level-exp-table-r1-20261019",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39233233121"
+    },
+    {
+      "id": 39233233567,
+      "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+      "head_sha": "1813fa6560e9b2d30f1afbd202a44036e2c4ffdc",
+      "head_branch": "agent/waei-cn20-level-exp-table-r1-20261019",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39233233567"
+    },
+    {
+      "id": 39233233126,
+      "name": "Validate legacy StoneAge assistant history and pet content gaps",
+      "head_sha": "1813fa6560e9b2d30f1afbd202a44036e2c4ffdc",
+      "head_branch": "agent/waei-cn20-level-exp-table-r1-20261019",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39233233126"
+    },
+    {
+      "id": 39233233257,
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "head_sha": "1813fa6560e9b2d30f1afbd202a44036e2c4ffdc",
+      "head_branch": "agent/waei-cn20-level-exp-table-r1-20261019",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39233233257"
+    },
+    {
+      "id": 39233233566,
+      "name": "Validate StoneAge Stage A joint review decision",
+      "head_sha": "1813fa6560e9b2d30f1afbd202a44036e2c4ffdc",
+      "head_branch": "agent/waei-cn20-level-exp-table-r1-20261019",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39233233566"
+    }
+  ],
+  "main_checks": [
+    {
+      "id": 39233347585,
+      "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+      "head_sha": "1813fa6560e9b2d30f1afbd202a44036e2c4ffdc",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39233347585"
+    },
+    {
+      "id": 39233347850,
+      "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+      "head_sha": "1813fa6560e9b2d30f1afbd202a44036e2c4ffdc",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39233347850"
+    },
+    {
+      "id": 39233347997,
+      "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+      "head_sha": "1813fa6560e9b2d30f1afbd202a44036e2c4ffdc",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39233347997"
+    },
+    {
+      "id": 39233347476,
+      "name": "Validate Stage A early source gap triage",
+      "head_sha": "1813fa6560e9b2d30f1afbd202a44036e2c4ffdc",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39233347476"
+    },
+    {
+      "id": 39233347784,
+      "name": "Verify official Mainland CN2.0 documentary level experience table",
+      "head_sha": "1813fa6560e9b2d30f1afbd202a44036e2c4ffdc",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39233347784"
+    },
+    {
+      "id": 39233347902,
+      "name": "Validate StoneAge preproduction content archive and wiki boundary",
+      "head_sha": "1813fa6560e9b2d30f1afbd202a44036e2c4ffdc",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39233347902"
+    },
+    {
+      "id": 39233347986,
+      "name": "Validate legacy StoneAge assistant history and pet content gaps",
+      "head_sha": "1813fa6560e9b2d30f1afbd202a44036e2c4ffdc",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39233347986"
+    },
+    {
+      "id": 39233347956,
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "head_sha": "1813fa6560e9b2d30f1afbd202a44036e2c4ffdc",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39233347956"
+    },
+    {
+      "id": 39233348084,
+      "name": "Validate StoneAge Stage A joint review decision",
+      "head_sha": "1813fa6560e9b2d30f1afbd202a44036e2c4ffdc",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39233348084"
+    },
+    {
+      "id": 39233348179,
+      "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+      "head_sha": "1813fa6560e9b2d30f1afbd202a44036e2c4ffdc",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39233348179"
+    },
+    {
+      "id": 39233347919,
+      "name": "Independently verify TW1.0 R58 rooted helper returns and source custody",
+      "head_sha": "1813fa6560e9b2d30f1afbd202a44036e2c4ffdc",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39233347919"
+    }
+  ],
+  "boundaries": {
+    "documentary_table_not_original_server_rule": true,
+    "incremental_cumulative_current_destination_actor_and_reincarnation_semantics": "UNKNOWN",
+    "last_visible_82_is_cap_proven": false,
+    "formula_extrapolation_or_value_correction_applied": false,
+    "same_build_or_rule_cn25_jss1999_tw10_cn182": false,
+    "automatic_new_game_design_adoption": false,
+    "raw_original_assets_in_git": false,
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b_and_wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING"
+  },
+  "next": "CN20-OFFICIAL-NAMED-NEWCOMER-CONTENT-SOURCE-01"
+}

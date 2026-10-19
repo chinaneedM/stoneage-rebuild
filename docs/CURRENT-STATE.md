@@ -15860,3 +15860,12 @@ OFFICIAL-VERSION-COVERAGE-MATERIAL-REVIEW-08复用R7的22域状态，近期日�
 交付STONEAGE-WAEI-CN20-LEVEL-EXP-TABLE-R1.json、同名规格、R13实质复审元数据和9新负例；本轮相关19测试通过。独立只一已知官方正文/全cell+报告cmp、ZIP/raw/Git保管和自身main须按实际另验，不借职业计划11绿。原HTML/图像/程序不入Git，所有旧历史/失败保留。
 
 **唯一最高NEXT CN20-OFFICIAL-NAMED-NEWCOMER-CONTENT-SOURCE-01**：只本源实际侧栏「新入石器」的http://www.waei.com.cn:80/ZHUANQU/stoneage2/sw/adventure.asp一正文，先验主题/实际捕获，形成一份来源限定新手/地理/NPC/任务内容规格或精确缺源即止；现只有真实入链资格，正文/图片未读，不预设名字/内容，不自动其它出链/图像/程序/公式。Stage A7 PARTIAL+2 OPEN、Stage B/百科GATED、R79 PAUSED_NON_BLOCKING保持，无整体百分比。
+
+
+### 2026-10-19 — 大陆2.0经验表独立保管，两包主线正式收束
+
+经验表内容1813fa6560e9b2d30f1afbd202a44036e2c4ffdc / tree3c50cd316109adf55f2852c28d3f179f9884a5a1的10候选门、自身11项main实际全部success，无本HEAD失败/重跑。专用run39233233573/job117996018294独立重取唯一已知2001官方正文、9负例、原grid和全报告cmp；artifact12177087803实下载ZIP2895B SHA256acef6fb127fd6bd8328c5b2e4c5c6a8b941c6bf18cc6af97ce3e273d328a2bd0，唯一derived.json18121B SHA256e012249c799f9789e65f13c5fbb6e0ac746966d7660bb30b68bec9a0150d3b87等于永久Git blobeb30355ade1e87dc734eca3b5b8ddde575dd2c3e。STONEAGE-WAEI-CN20-LEVEL-EXP-TABLE-ACCEPTANCE-R1.json永久留10/11精确run/HEAD、已知原件SHA、grid及ZIP/raw/Git链，不把已知网页重取说新源、字节cmp说原服运行。
+
+本轮实质为台湾2003日期/2004捕获职业计划5来源记录（3教程/2语境），和大陆2001捕获2.0官方82数字对的1教程表；27相关本地测试通过，两内容HEAD各自11项main实全绿，两个独立ZIP/raw/永久Git逐字节相符。前者就职条件/高阶技能门槛仍计划，后者表义/角色或宠物适用/公式/82cap/转生均未补；不是职业/技能/原服务端完整恢复，所有22域原状态和初始历史前缀不变。两正文跨地区/年代不拼同版规则；原HTML/图像/程序不入Git，旧失败/纠正无删除。
+
+**唯一最高NEXT保持CN20-OFFICIAL-NAMED-NEWCOMER-CONTENT-SOURCE-01**：只真实新入石器→http://www.waei.com.cn:80/ZHUANQU/stoneage2/sw/adventure.asp一正文，核主题/实际时刻，一来源限定新手/地理/NPC/任务合同或精确缺源即止；尚未读正文/图像，不猜实体/规则，不递归其它页/图/程序/公式或R79。Stage A7 PARTIAL+2 OPEN、Stage B/百科GATED、R79 PAUSED_NON_BLOCKING，无整体百分比。此文书回执新HEAD须观察自身Actions，不能套用父内容11绿。
