@@ -1,0 +1,38 @@
+name: Verify TW7.5 spirit summoning preview and original screen references
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-TW75-SPIRIT-SUMMON-PREVIEW-*.json'
+      - 'tools/stoneage_tw75_spirit_summon_preview.py'
+      - 'tests/test_stoneage_tw75_spirit_summon_preview.py'
+      - 'tools/stoneage_wayi_newbie_riding_plan.py'
+      - 'tools/stoneage_early_content_probe.py'
+      - 'tools/stoneage_jp2008_cooperation_source.py'
+      - '.github/workflows/verify-stoneage-tw75-spirit-summon-preview.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-TW75-SPIRIT-SUMMON-PREVIEW-*.json'
+      - 'tools/stoneage_tw75_spirit_summon_preview.py'
+      - 'tests/test_stoneage_tw75_spirit_summon_preview.py'
+      - 'tools/stoneage_wayi_newbie_riding_plan.py'
+      - 'tools/stoneage_early_content_probe.py'
+      - 'tools/stoneage_jp2008_cooperation_source.py'
+      - '.github/workflows/verify-stoneage-tw75-spirit-summon-preview.yml'
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check source dates, player roles, token labels and screen-only observations
+        run: python -m unittest discover -s tests -p 'test_stoneage_tw75_spirit_summon_preview.py' -v
+      - name: Replay exact operator index and preview with three separately captured JPEGs
+        run: python -m tools.stoneage_tw75_spirit_summon_preview --fetch --output /tmp/tw75-summon/replay.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: tw75-spirit-summon-preview-derived-replay
+          path: /tmp/tw75-summon/replay.json
+          if-no-files-found: error
+          retention-days: 30

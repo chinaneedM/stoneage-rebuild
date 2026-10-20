@@ -1,0 +1,460 @@
+{
+  "schema": "stoneage.tw75_spirit_summon_preview.source.r1",
+  "inputs": [
+    {
+      "id": "P0",
+      "url": "https://web.archive.org/web/20050612011406id_/http://www.wayi.com.tw/stoneage/producer/producer01.asp",
+      "bytes": 28883,
+      "sha256": "19661e2acca046bf8c6dc86dc968107fe9935cd58a8f3cd8ce5e1de5aeba7f8b"
+    },
+    {
+      "id": "P1",
+      "url": "https://web.archive.org/web/20051129125915id_/http://www.wayi.com.tw/stoneage/producer/producer02.asp?idno=84",
+      "bytes": 20368,
+      "sha256": "b073ac516fd358805e961efb9b5f2746552f1d1e8f11c4a8ffa43ce3b67381ef"
+    },
+    {
+      "id": "I1",
+      "url": "https://web.archive.org/web/20041211081705id_/http://www.wayi.com.tw/images02/sa0527-1.JPG",
+      "bytes": 48080,
+      "sha256": "32bc1175cae8e972bb0930c8913aaef033606cc1417aaed1ba45f6ff1133ecec"
+    },
+    {
+      "id": "I2",
+      "url": "https://web.archive.org/web/20041211082942id_/http://www.wayi.com.tw/images02/sa0527-2.JPG",
+      "bytes": 58587,
+      "sha256": "85623ea24219725f43a0a4711e3259f0a69aa9e60436e0932ea31e50abdd7fa0"
+    },
+    {
+      "id": "I3",
+      "url": "https://web.archive.org/web/20041211084443id_/http://www.wayi.com.tw/images02/sa0527-3.JPG",
+      "bytes": 89797,
+      "sha256": "5ba05cad1f9175d61ae4beca07b2ba63c0dc340d422075e11bbd83e042722d92"
+    }
+  ],
+  "extracted": [
+    {
+      "row_count": 15,
+      "selected": {
+        "article_id_as_web_key": 84,
+        "title": "7.5版報導之一：精靈的召喚",
+        "index_date_as_written": "2004-5-28"
+      },
+      "web_key_is_game_quest_id": false
+    },
+    {
+      "paragraphs": [
+        {
+          "characters": 68,
+          "sha256": "232781772d6904d2ecdee3ac05bd00d0736262db177738f2c6a63761ac05fe5a"
+        },
+        {
+          "characters": 166,
+          "sha256": "7faeaa9624f9d8478a7ee470bd248ad06a528be6af05fad9862aea5bff69842d"
+        },
+        {
+          "characters": 128,
+          "sha256": "308f7b5a081e3845fd7074933c7b1d4ca6f8ff6a50612d46e2b518ddecfd8834"
+        },
+        {
+          "characters": 95,
+          "sha256": "846f1a16d961fb7d4af0430cb076707596137d05efed8c37754e2a17db18fa4e"
+        }
+      ],
+      "facts": {
+        "system": "精靈的召喚",
+        "preview_development_state": "7.5_DEVELOPMENT_NEARING_COMPLETION",
+        "roles": [
+          "使者",
+          "勇者"
+        ],
+        "trigger": "UNSPECIFIED_SPECIAL_CONDITION",
+        "token_category_as_written": "精靈信物",
+        "flow": [
+          "SPIRIT_CALLS_PLAYER",
+          "MESSENGER_FINDS_CHOSEN_HERO",
+          "HERO_RECEIVES_TOKEN_FROM_MESSENGER",
+          "HERO_LEARNS_MISSION",
+          "MISSION_COMPLETED",
+          "BOTH_ROLES_REPORTED_TO_RECEIVE_REWARDS"
+        ],
+        "rewards": "UNSPECIFIED_GENEROUS_REWARDS_FOR_BOTH_NOT_PROVEN_EQUAL_CONTENT",
+        "purpose": "REBUILD_NEWCOMER_VETERAN_TRUST_AND_FIGHT_DEMON_FACTION",
+        "newcomer_bridge": "DESIGN_RATIONALE_NOT_LEVEL_OR_CLASS_RULE",
+        "spirit_or_demon_individual_names": null
+      },
+      "image_refs": [
+        "http://www.wayi.com.tw/images02/sa0527-1.JPG",
+        "http://www.wayi.com.tw/images02/sa0527-2.JPG",
+        "http://www.wayi.com.tw/images02/sa0527-3.JPG"
+      ]
+    }
+  ],
+  "records": [
+    {
+      "record_id": "TW75-SUMMON-01",
+      "entity_type": "SYSTEM_PREVIEW",
+      "collection": "quests",
+      "version_profile": "TW_WAYI_7.5_PREVIEW_INDEX_2004_BODY_CAPTURE_2005_IMAGES_2004",
+      "source_refs": [
+        "P0",
+        "P1"
+      ],
+      "verification_status": "OFFICIAL_PREVIEW_OR_IMAGE_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "source_reported": {
+        "system": "精靈的召喚",
+        "preview_development_state": "7.5_DEVELOPMENT_NEARING_COMPLETION",
+        "roles": [
+          "使者",
+          "勇者"
+        ],
+        "trigger": "UNSPECIFIED_SPECIAL_CONDITION",
+        "token_category_as_written": "精靈信物",
+        "flow": [
+          "SPIRIT_CALLS_PLAYER",
+          "MESSENGER_FINDS_CHOSEN_HERO",
+          "HERO_RECEIVES_TOKEN_FROM_MESSENGER",
+          "HERO_LEARNS_MISSION",
+          "MISSION_COMPLETED",
+          "BOTH_ROLES_REPORTED_TO_RECEIVE_REWARDS"
+        ],
+        "rewards": "UNSPECIFIED_GENEROUS_REWARDS_FOR_BOTH_NOT_PROVEN_EQUAL_CONTENT",
+        "purpose": "REBUILD_NEWCOMER_VETERAN_TRUST_AND_FIGHT_DEMON_FACTION",
+        "newcomer_bridge": "DESIGN_RATIONALE_NOT_LEVEL_OR_CLASS_RULE",
+        "spirit_or_demon_individual_names": null
+      }
+    },
+    {
+      "record_id": "TW75-SUMMON-02",
+      "entity_type": "PLAYER_ROLE_NOT_NAMED_NPC",
+      "collection": "characters",
+      "version_profile": "TW_WAYI_7.5_PREVIEW_INDEX_2004_BODY_CAPTURE_2005_IMAGES_2004",
+      "source_refs": [
+        "P1"
+      ],
+      "verification_status": "OFFICIAL_PREVIEW_OR_IMAGE_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "source_reported": {
+        "role": "使者",
+        "player_role": true,
+        "named_npc": false,
+        "level_or_id": null
+      }
+    },
+    {
+      "record_id": "TW75-SUMMON-03",
+      "entity_type": "PLAYER_ROLE_NOT_NAMED_NPC",
+      "collection": "characters",
+      "version_profile": "TW_WAYI_7.5_PREVIEW_INDEX_2004_BODY_CAPTURE_2005_IMAGES_2004",
+      "source_refs": [
+        "P1"
+      ],
+      "verification_status": "OFFICIAL_PREVIEW_OR_IMAGE_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "source_reported": {
+        "role": "勇者",
+        "player_role": true,
+        "named_npc": false,
+        "level_or_id": null
+      }
+    },
+    {
+      "record_id": "TW75-SUMMON-04",
+      "entity_type": "TOKEN_CATEGORY",
+      "collection": "items",
+      "version_profile": "TW_WAYI_7.5_PREVIEW_INDEX_2004_BODY_CAPTURE_2005_IMAGES_2004",
+      "source_refs": [
+        "P1"
+      ],
+      "verification_status": "OFFICIAL_PREVIEW_OR_IMAGE_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "source_reported": {
+        "label": "精靈信物",
+        "exact_image_token_alias": null,
+        "consumption_rule": null
+      }
+    },
+    {
+      "record_id": "TW75-SUMMON-05",
+      "entity_type": "SOCIAL_AND_WORLD_RATIONALE",
+      "collection": "quests",
+      "version_profile": "TW_WAYI_7.5_PREVIEW_INDEX_2004_BODY_CAPTURE_2005_IMAGES_2004",
+      "source_refs": [
+        "P1"
+      ],
+      "verification_status": "OFFICIAL_PREVIEW_OR_IMAGE_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "source_reported": {
+        "motive": "REBUILD_NEWCOMER_VETERAN_TRUST_AND_FIGHT_DEMON_FACTION",
+        "level_definition": null,
+        "spirit_king_identity": null,
+        "canonical_worldline_union": null
+      }
+    },
+    {
+      "record_id": "TW75-SUMMON-06",
+      "entity_type": "DOCUMENTARY_SCREEN_OBSERVATION",
+      "collection": "screens",
+      "version_profile": "TW_WAYI_7.5_PREVIEW_INDEX_2004_BODY_CAPTURE_2005_IMAGES_2004",
+      "source_refs": [
+        "I1",
+        "P1"
+      ],
+      "verification_status": "OFFICIAL_PREVIEW_OR_IMAGE_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "source_reported": {
+        "image": "I1",
+        "dialog": "CONSENT_TO_FIND_HERO_AGAINST_DEMONS",
+        "buttons": [
+          "確定",
+          "取消"
+        ],
+        "visible_call_message": true,
+        "actual_audio_obtained": false,
+        "choice_effect_or_protocol_binding": null
+      }
+    },
+    {
+      "record_id": "TW75-SUMMON-07",
+      "entity_type": "DOCUMENTARY_SCREEN_OBSERVATION",
+      "collection": "screens",
+      "version_profile": "TW_WAYI_7.5_PREVIEW_INDEX_2004_BODY_CAPTURE_2005_IMAGES_2004",
+      "source_refs": [
+        "I2",
+        "P1"
+      ],
+      "verification_status": "OFFICIAL_PREVIEW_OR_IMAGE_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "source_reported": {
+        "image": "I2",
+        "mission_target_label": "古瓜",
+        "mission": "FIND_TARGET_AND_LEARN_RECENT_TROUBLES",
+        "remaining_time_display": {
+          "hours": 6,
+          "minutes": 33
+        },
+        "timer_initial_duration": null,
+        "npc_spawn_or_id": null
+      }
+    },
+    {
+      "record_id": "TW75-SUMMON-08",
+      "entity_type": "DOCUMENTARY_SCREEN_OBSERVATION",
+      "collection": "screens",
+      "version_profile": "TW_WAYI_7.5_PREVIEW_INDEX_2004_BODY_CAPTURE_2005_IMAGES_2004",
+      "source_refs": [
+        "I3",
+        "P1"
+      ],
+      "verification_status": "OFFICIAL_PREVIEW_OR_IMAGE_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "source_reported": {
+        "image": "I3",
+        "mission_completion_prompt_visible": true,
+        "remaining_time_visible_hours": 0,
+        "remaining_time_visible_minutes": 59,
+        "full_time_suffix": null,
+        "handed_over_token_label": "精靈勇者信物",
+        "received_item_label": "柳牙之槍",
+        "item_panel": {
+          "durability_percent": 100,
+          "attack_modifier": 85,
+          "agility_modifier": -18,
+          "spell_label": "毒霧的精靈",
+          "spell_level": 6
+        },
+        "money_display": 8198620,
+        "money_is_reward": false,
+        "actual_equip_or_cast_verified": false
+      }
+    },
+    {
+      "record_id": "TW75-SUMMON-09",
+      "entity_type": "VISUAL_REPORTED_ITEM",
+      "collection": "items",
+      "version_profile": "TW_WAYI_7.5_PREVIEW_INDEX_2004_BODY_CAPTURE_2005_IMAGES_2004",
+      "source_refs": [
+        "I3"
+      ],
+      "verification_status": "OFFICIAL_PREVIEW_OR_IMAGE_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "source_reported": {
+        "label": "柳牙之槍",
+        "panel": {
+          "durability_percent": 100,
+          "attack_modifier": 85,
+          "agility_modifier": -18,
+          "spell_label": "毒霧的精靈",
+          "spell_level": 6
+        },
+        "all_missions_reward_this": false,
+        "original_item_or_bitmap_id": null
+      }
+    },
+    {
+      "record_id": "TW75-SUMMON-10",
+      "entity_type": "TOKEN_LABEL_IN_ONE_IMAGE",
+      "collection": "items",
+      "version_profile": "TW_WAYI_7.5_PREVIEW_INDEX_2004_BODY_CAPTURE_2005_IMAGES_2004",
+      "source_refs": [
+        "I3"
+      ],
+      "verification_status": "OFFICIAL_PREVIEW_OR_IMAGE_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "source_reported": {
+        "label": "精靈勇者信物",
+        "alias_of_prose_token_verified": false,
+        "hand_over_message_not_consumption_script": true
+      }
+    }
+  ],
+  "manual_image_observations": [
+    {
+      "image": "I1",
+      "dialog": "CONSENT_TO_FIND_HERO_AGAINST_DEMONS",
+      "buttons": [
+        "確定",
+        "取消"
+      ],
+      "visible_call_message": true,
+      "actual_audio_obtained": false,
+      "choice_effect_or_protocol_binding": null
+    },
+    {
+      "image": "I2",
+      "mission_target_label": "古瓜",
+      "mission": "FIND_TARGET_AND_LEARN_RECENT_TROUBLES",
+      "remaining_time_display": {
+        "hours": 6,
+        "minutes": 33
+      },
+      "timer_initial_duration": null,
+      "npc_spawn_or_id": null
+    },
+    {
+      "image": "I3",
+      "mission_completion_prompt_visible": true,
+      "remaining_time_visible_hours": 0,
+      "remaining_time_visible_minutes": 59,
+      "full_time_suffix": null,
+      "handed_over_token_label": "精靈勇者信物",
+      "received_item_label": "柳牙之槍",
+      "item_panel": {
+        "durability_percent": 100,
+        "attack_modifier": 85,
+        "agility_modifier": -18,
+        "spell_label": "毒霧的精靈",
+        "spell_level": 6
+      },
+      "money_display": 8198620,
+      "money_is_reward": false,
+      "actual_equip_or_cast_verified": false
+    }
+  ],
+  "boundaries": {
+    "original_server_execution_verified": false,
+    "exact_client_build": null,
+    "index_date_is_body_capture_or_deployment": false,
+    "preview_proves_actual_release": false,
+    "summon_is_player_pet_summoning": false,
+    "messenger_min_level_or_stat_trigger": null,
+    "hero_min_level_or_rebirth": null,
+    "party_size_or_join_condition": null,
+    "universal_quest_timeout": null,
+    "figure2_timer_is_initial_duration": false,
+    "figure3_timer_is_failure": false,
+    "three_images_same_character_continuous_run": false,
+    "generic_token_is_exact_image_token_alias": false,
+    "all_quests_reward_spear": false,
+    "spear_spell_level_is_quest_requirement": false,
+    "displayed_money_is_quest_reward": false,
+    "spell_damage_or_probability": null,
+    "quest_completion_or_reward_transaction_verified": false,
+    "exact_npc_pet_item_map_or_sprite_ids": null,
+    "ancient_gu_label_proves_spawn_or_dialogue": false,
+    "spirit_is_named_spirit_king": false,
+    "demon_invasion_is_cross_region_canon": false,
+    "manual_observation_is_independent_ocr": false,
+    "raw_sources_committed": false,
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b_and_wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING",
+    "index_day_20040528_html_or_image_bytes_verified": false
+  },
+  "source_dates": {
+    "index_label": "2004-5-28",
+    "index_capture": "20050612011406",
+    "body_capture": "20051129125915",
+    "image_captures": [
+      "20041211081705",
+      "20041211082942",
+      "20041211084443"
+    ]
+  },
+  "acquisition": {
+    "index_reacquired_known_source_not_new": true,
+    "body_redirect": {
+      "requested_url": "https://web.archive.org/web/20050612011406id_/http://www.wayi.com.tw/stoneage/producer/producer02.asp?idno=84",
+      "final_url": "https://web.archive.org/web/20051129125915id_/http://www.wayi.com.tw/stoneage/producer/producer02.asp?idno=84",
+      "status": 200,
+      "bytes": 20368,
+      "sha256": "b073ac516fd358805e961efb9b5f2746552f1d1e8f11c4a8ffa43ce3b67381ef"
+    },
+    "image_redirects": [
+      {
+        "id": "I1",
+        "requested_url": "https://web.archive.org/web/20051129125915id_/http://www.wayi.com.tw/images02/sa0527-1.JPG",
+        "final_url": "https://web.archive.org/web/20041211081705id_/http://www.wayi.com.tw/images02/sa0527-1.JPG",
+        "status": 200,
+        "bytes": 48080,
+        "sha256": "32bc1175cae8e972bb0930c8913aaef033606cc1417aaed1ba45f6ff1133ecec"
+      },
+      {
+        "id": "I2",
+        "requested_url": "https://web.archive.org/web/20051129125915id_/http://www.wayi.com.tw/images02/sa0527-2.JPG",
+        "final_url": "https://web.archive.org/web/20041211082942id_/http://www.wayi.com.tw/images02/sa0527-2.JPG",
+        "status": 200,
+        "bytes": 58587,
+        "sha256": "85623ea24219725f43a0a4711e3259f0a69aa9e60436e0932ea31e50abdd7fa0"
+      },
+      {
+        "id": "I3",
+        "requested_url": "https://web.archive.org/web/20051129125915id_/http://www.wayi.com.tw/images02/sa0527-3.JPG",
+        "final_url": "https://web.archive.org/web/20041211084443id_/http://www.wayi.com.tw/images02/sa0527-3.JPG",
+        "status": 200,
+        "bytes": 89797,
+        "sha256": "5ba05cad1f9175d61ae4beca07b2ba63c0dc340d422075e11bbd83e042722d92"
+      }
+    ],
+    "excluded_discovery_http_403": [
+      "https://gnn.gamer.com.tw/detail.php?sn=17419",
+      "https://gnn.gamer.com.tw/detail.php?sn=15660"
+    ],
+    "unselected_sina_discovery_pages_not_accepted_sources": [
+      "https://games.sina.com.cn/newgames/2004/09/091548043.shtml",
+      "https://games.sina.com.cn/newgames/2004/09/091347338.shtml"
+    ]
+  },
+  "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-34"
+}
