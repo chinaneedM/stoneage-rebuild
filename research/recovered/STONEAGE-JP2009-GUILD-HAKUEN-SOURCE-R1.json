@@ -1,0 +1,262 @@
+{
+  "schema": "stoneage.jp2009_guild_hakuen.source_contract.r1",
+  "task": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-39",
+  "date": "2026-10-20",
+  "parent_main_head": "ae6c13f58f12ff9e465b1c3846b71b3956bc1d4d",
+  "parent_main_tree": "3e002fc3fc7612e6de54fb321bb05649f25efcdc",
+  "sources": [
+    {
+      "id": "S1",
+      "url": "https://www.4gamer.net/games/013/G001377/20090428039/",
+      "published_at": "2009-04-28 15:20",
+      "issue_attribution": "デジパーク",
+      "authority": "CONTEMPORANEOUS_DIGIPARK_OPERATOR_RELEASE_REPUBLISHED_BY_4GAMER",
+      "release_boundary": "メーカー発表文の内容をそのまま掲載しています",
+      "official_notice_link": "http://www.stoneage.to/news_detail.html?no=694",
+      "original_official_notice_html_sha256": null,
+      "current_media_html_sha256": null,
+      "original_2009_capture_sha256": null
+    }
+  ],
+  "guild": {
+    "announced_maintenance_date": "2009-04-28",
+    "supported_function": "MULTI_FRIEND_CHAT_ACROSS_DISTANCE",
+    "guild_creation_prerequisites": null,
+    "guild_size_or_permissions": null,
+    "guild_ui_coordinates": null
+  },
+  "hakuen": {
+    "name": "ハクエン",
+    "campaign_start": "2009-04-28",
+    "campaign_end": "2009-05-12",
+    "ticket_name": "白炎チケット",
+    "ticket_price_gstone": 400,
+    "shop_npc": "便利商店スタッフ",
+    "exchange_targets": [
+      "白炎の袋",
+      "白炎スタンプ"
+    ],
+    "bag_is_random_one_item": true,
+    "bag_declared_distinct_item_types": 7,
+    "bag_visible_named_rows": 6,
+    "bag_seventh_name": null,
+    "bag_probabilities": null,
+    "stamps": [
+      {
+        "count": 5,
+        "kind": "RANDOM_ONE_OF_TWO_FRAGMENTS",
+        "items": [
+          "[白炎]潤いの欠片Lv2",
+          "[白炎]癒しの欠片Lv2"
+        ]
+      },
+      {
+        "count": 10,
+        "kind": "PLAYER_XP_BOOST",
+        "item": "精霊の秘薬（日）",
+        "duration_hours": 24,
+        "multiplier": 2
+      },
+      {
+        "count": 15,
+        "kind": "ONE_USE_XP_ENCOUNTER_MAP_ACCESS",
+        "item": "プチ経験値イベント招待券"
+      }
+    ],
+    "npc_stamp": "すたんぷちゃん",
+    "npc_exchange": "白炎系交換員",
+    "npc_xp_map": "ExpUpスタッフ"
+  },
+  "limited_events": {
+    "lucky_enemy": "はぐれシロベアル",
+    "lucky_start": "2009-05-01 16:00",
+    "lucky_end": "2009-05-07 11:00",
+    "reported_low_probability": true,
+    "mentioned_spawns": [
+      "サイナス島 サムギルの村 周辺",
+      "サイナス島 マリナスの村 周辺",
+      "ジャルガ島 ジャジャの村 周辺",
+      "ジャルガ島 カルターナの村 周辺",
+      "カルターナの洞窟",
+      "クオ山の小洞窟",
+      "マンモス急行地下４階",
+      "アーブの洞窟",
+      "ギールの海底通路",
+      "キヌイの海底通路",
+      "ギール採石場",
+      "虎追い山",
+      "閉ざされた氷窟",
+      "鳥竜島",
+      "バルツ山"
+    ],
+    "xp_event_start": "2009-04-28",
+    "xp_event_end": "2009-05-12",
+    "xp_npc": "薬師",
+    "shard_name": "秘薬の欠片",
+    "shards_per_exchange": 5,
+    "repeatable": true,
+    "first_reward": {
+      "item": "精霊の秘薬（爆）",
+      "duration_minutes": 60,
+      "player_xp_multiplier": 3
+    },
+    "repeat_reward": {
+      "item": "精霊の秘薬（短）",
+      "duration_minutes": 15,
+      "player_xp_multiplier": 1.3
+    }
+  },
+  "records": [
+    {
+      "record_id": "jp2009-guild:group-chat-announcement",
+      "entity_type": "SOURCE_DESCRIBED_GUILD_SYSTEM",
+      "collection": "tutorials",
+      "names_and_aliases": [
+        "ギルドシステム"
+      ],
+      "notes": "Geographically separated friends can chat together; no game server UI/permissions reconstructed.",
+      "version_profile": "LATER_OFFICIAL:JP_DIGIPARK_2009",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "CONTEMPORANEOUS_OPERATOR_PRESS_RELEASE_NOT_SERVER_EXECUTION",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null
+    },
+    {
+      "record_id": "jp2009-hakuen:pet-name",
+      "entity_type": "SOURCE_NAMED_PET_NOT_MASTER_ID",
+      "collection": "pets",
+      "names_and_aliases": [
+        "ハクエン"
+      ],
+      "notes": "Announcement introduces pet name; no wild encounter or original same-build species index.",
+      "version_profile": "LATER_OFFICIAL:JP_DIGIPARK_2009",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "CONTEMPORANEOUS_OPERATOR_PRESS_RELEASE_NOT_SERVER_EXECUTION",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null
+    },
+    {
+      "record_id": "jp2009-hakuen:ticket-bag-stamp",
+      "entity_type": "LIMITED_PERIOD_NAMED_ITEM_CHAIN",
+      "collection": "items",
+      "names_and_aliases": [
+        "白炎チケット",
+        "白炎の袋",
+        "白炎スタンプ"
+      ],
+      "notes": "400 Gstone ticket; bag random one item, stamp awarded by NPC. Ratios or currency conversion not inferred.",
+      "version_profile": "LATER_OFFICIAL:JP_DIGIPARK_2009",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "CONTEMPORANEOUS_OPERATOR_PRESS_RELEASE_NOT_SERVER_EXECUTION",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null
+    },
+    {
+      "record_id": "jp2009-hakuen:stamp-npcs",
+      "entity_type": "NAMES_OF_SERVICES_NOT_SPAWN_IDS",
+      "collection": "npcs",
+      "names_and_aliases": [
+        "便利商店スタッフ",
+        "すたんぷちゃん",
+        "白炎系交換員",
+        "ExpUpスタッフ",
+        "薬師"
+      ],
+      "notes": "Ascribed roles in in-game chatroom and CP exchange; coordinates, event scripts unknown.",
+      "version_profile": "LATER_OFFICIAL:JP_DIGIPARK_2009",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "CONTEMPORANEOUS_OPERATOR_PRESS_RELEASE_NOT_SERVER_EXECUTION",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null
+    },
+    {
+      "record_id": "jp2009-hakuen:stamp-rewards",
+      "entity_type": "SOURCE_DESCRIBED_STAMP_MILESTONE_SET",
+      "collection": "items",
+      "names_and_aliases": [
+        "[白炎]潤いの欠片Lv2",
+        "[白炎]癒しの欠片Lv2",
+        "精霊の秘薬（日）",
+        "プチ経験値イベント招待券"
+      ],
+      "notes": "5,10,15 stamps; choice at 5 random. 10 grants 24h player XP x2; 15 a one-use fight-map invitation.",
+      "version_profile": "LATER_OFFICIAL:JP_DIGIPARK_2009",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "CONTEMPORANEOUS_OPERATOR_PRESS_RELEASE_NOT_SERVER_EXECUTION",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null
+    },
+    {
+      "record_id": "jp2009-event:lucky-whitebear",
+      "entity_type": "TIME_LIMITED_ENEMY_SPAWN_NOTICE",
+      "collection": "encounters",
+      "names_and_aliases": [
+        "はぐれシロベアル"
+      ],
+      "notes": "15 named areas, low-probability appearance; no coordinates, original spawn table or measured chance.",
+      "version_profile": "LATER_OFFICIAL:JP_DIGIPARK_2009",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "CONTEMPORANEOUS_OPERATOR_PRESS_RELEASE_NOT_SERVER_EXECUTION",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null
+    },
+    {
+      "record_id": "jp2009-event:xp-shards",
+      "entity_type": "TIME_LIMITED_NPC_EXCHANGE_NOTICE",
+      "collection": "items",
+      "names_and_aliases": [
+        "秘薬の欠片",
+        "精霊の秘薬（爆）",
+        "精霊の秘薬（短）"
+      ],
+      "notes": "Five shards exchange repeatable; first vs later reward differs, player XP boosts x3 60min vs x1.3 15min.",
+      "version_profile": "LATER_OFFICIAL:JP_DIGIPARK_2009",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "CONTEMPORANEOUS_OPERATOR_PRESS_RELEASE_NOT_SERVER_EXECUTION",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null
+    }
+  ],
+  "boundaries": {
+    "cross_region_tw_cn_family_guild_identity_proven": false,
+    "earliest_jss1999_guild_present_proven": false,
+    "guild_screen_or_permissions_restored": false,
+    "server_executed_or_deployed_proven": false,
+    "original_2009_html_authenticated": false,
+    "original_pet_species_id_or_sprite_proven": false,
+    "spawns_are_original_tw10_world": false,
+    "spawn_probability_or_enemy_id_proven": false,
+    "bag_declared_seven_equals_six_visible_rows": false,
+    "missing_seventh_item_invented": false,
+    "random_reward_probabilities_known": false,
+    "gstone_equals_gash_or_stone": false,
+    "logout_drop_note_means_universal_item_save_rule": false,
+    "exp_boost_stacking_formula_known": false,
+    "raw_html_or_original_images_in_git": false,
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b_wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING"
+  },
+  "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-40"
+}

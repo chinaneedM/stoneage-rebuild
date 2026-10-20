@@ -1,0 +1,32 @@
+name: Verify JP2009 guild, Hakuen and temporary XP source
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-JP2009-GUILD-HAKUEN-*.json'
+      - 'tools/stoneage_jp2009_guild_hakuen_source.py'
+      - 'tests/test_stoneage_jp2009_guild_hakuen_source.py'
+      - '.github/workflows/verify-stoneage-jp2009-guild-hakuen-source.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-JP2009-GUILD-HAKUEN-*.json'
+      - 'tools/stoneage_jp2009_guild_hakuen_source.py'
+      - 'tests/test_stoneage_jp2009_guild_hakuen_source.py'
+      - '.github/workflows/verify-stoneage-jp2009-guild-hakuen-source.yml'
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify guild versus family, merchant pricing, stamps, maps and source limitations
+        run: python -m unittest discover -s tests -p 'test_stoneage_jp2009_guild_hakuen_source.py' -v
+      - name: Replay one attributed contemporary DigiPark announcement
+        run: python -m tools.stoneage_jp2009_guild_hakuen_source --fetch --output /tmp/jp2009-guild-hakuen/replay.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: jp2009-guild-hakuen-source-replay
+          path: /tmp/jp2009-guild-hakuen/replay.json
+          if-no-files-found: error
+          retention-days: 30
