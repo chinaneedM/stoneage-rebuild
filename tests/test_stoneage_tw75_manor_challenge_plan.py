@@ -60,4 +60,15 @@ class ManorChallengePlan(unittest.TestCase):
   for f in [extract_body,extract_index]:
    with self.assertRaises((ValueError,StopIteration)):f(b'<html>Not source</html>')
   with self.assertRaises(ValueError):replay(self.r,[b'']*2)
+ def test_downloaded_candidate_main_replay_and_durable_exact_custody(self):
+  from hashlib import sha256,sha1
+  c=json.loads((REPORT.parent/'STONEAGE-TW75-MANOR-CHALLENGE-PLAN-CUSTODY-R1.json').read_text());self.assertEqual([len(c['runs'][k]) for k in ['candidate','main']],[10,11])
+  for rows in c['runs'].values():self.assertTrue(all(x['head_sha']==c['content_head'] and x['conclusion']=='success' for x in rows))
+  for pin in c['pins']:
+   b=(REPORT.parents[2]/pin['path']).read_bytes();self.assertEqual(len(b),pin['bytes']);self.assertEqual(sha256(b).hexdigest(),pin['sha256']);self.assertEqual(sha1(b'blob '+str(len(b)).encode()+bytes([0])+b).hexdigest(),pin['git_blob'])
+  payloads=[]
+  for a in c['artifacts']:
+   b=(REPORT.parents[2]/a['derived_path']).read_bytes();self.assertEqual(len(b),a['member_bytes']);self.assertEqual(sha256(b).hexdigest(),a['member_sha256']);payloads.append(b)
+   r=json.loads(b);self.assertEqual(r['extracted'],self.r['extracted']);self.assertEqual(r['manual_image_observation'],self.r['manual_image_observation']);self.assertEqual(r['derived_relation'],compare_derived(self.r))
+  self.assertEqual(payloads[0],payloads[1]);self.assertTrue(c['candidate_main_and_local_raw_json_equal']);self.assertTrue(c['threshold_conflict_preserved']);self.assertFalse(c['original_server_execution_verified']);self.assertFalse(c['raw_sources_committed'])
 if __name__=='__main__':unittest.main()

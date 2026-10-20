@@ -7661,3 +7661,10 @@ I1提供确定/取消召唤通知，未取声效或原协议绑定；I2任务目
 唯一实际内嵌sa0616.JPG请求正文时刻跳20041207062827/107675B/SHA17189e9f25e8b8e0a8c324df28a0588d4eb53cb3b8d282f188412a6a815244a1，450×338，目视/放大核十大家族氣勢选择框、合成/料理旧排行与自己家族气势排名入口。入口不是榜单数据/宣战或到账，旧入口与取消计划并存不证明已保留或已取消，非原生分辨率/同构建/原NPC/SPR。有限引用已验大陆4.0门户派生D1，完整SHA/Git blob固定前10扩前20/九庄园，地区/来源/版本分开，不给台湾附加前20资格或统一补丁序。
 
 14本包边界测试、12真实正文语义改写拒绝与两HTML一JPEG及一已验派生输入重放通过；首次相关命令误写旧测试模块名，仅本地导入错误，纠正实际文件名后重新验证，不当远端失败或源失败。原HTML/JPEG/放大图不进Git，独立CI/双ZIP保管按后续实际。最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-36回全官方22域另一具名材料，本篇/唯一直图/有限对照止点已达，不扩六转/PvP助手/全庄园。原脚本/官方勘误/规则账本或运行才重开未知，特别九成门槛与分配取值时点。Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79 PAUSED_NON_BLOCKING，原22域与全历史保持。
+
+
+## 2026-10-20 R35实际双CI、阈值冲突与永久派生保管
+
+内容f2cc9bf71421f5923f15b5691f2824bd33628f56/tree023719bced74982b6d09773ba39ca3c178868ea5自身候选10/main11全SUCCESS后非强制快进；source run39415559453/39415672602，job118603581099/118603954916各实际14测试+两HTML一JPEG及一已验派生重放。artifact12262045696/12261546475已实下载，ZIP均2746B/SHA256 f431321647f4b8ae713130f5999eeaf2368fd7a00acc9146c64b3163f4768de5/32a963dc57c25dac27e99904e2fa58d091276f095a6e252c11ae0785617c212c；唯一replay.json均6049B/SHA256 f944228117f0b487c68e56ca249ef5cd06ae3d12b44360fddbde617192b0fefd，候选/main/本地完整原JSON逐字节一致。双CI原JSON与CUSTODY永久固定本源/十二实际语义反例/大陆既验输入/双派生共五文件字节、SHA、Git blob，精确HEAD/run/job/artifact/ZIP/raw链及八启动完整前缀。原HTML/JPEG不进Git。
+
+独立远端干净检出45相关测试、另一HTMLParser重提八段hash、Pillow全JPEG解码450×338、原生Git blob核D1、1501算例与900/1000恰九成算术及八完整历史前缀通过；追加保管用例后46相关测试另实测。计划/部署、严格九成/相等例、人数算例/一般公式、累计/终生声望、在线贡献/全员发钱、战后重置/奖励取值及菜单旧入口/排行实际保留分别保持。最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-36回全官方22域另一具名材料，停止本庄园篇/助手递归。Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停，全部历史保持。保管提交自身Actions随后实际验收，不套父绿灯。
