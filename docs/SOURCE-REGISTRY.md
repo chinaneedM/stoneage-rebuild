@@ -7572,3 +7572,12 @@ N1 https://web.archive.org/web/20011204194619id_/http://www.waei.com.cn/ZHUANQU/
 ### R28 新浪4.0标记骑宠证明书/九庄园来源（2026-10-20）
 
 现页 https://games.sina.com.cn/zhuanqu/stoneage3/stoneage4_3.shtml 40475B SHA256 9860beacd990a083b096d7b046d9f59f8f5874db65e01d8c95bb31f6a74ced6b；一次availability固定历史 https://web.archive.org/web/20021201125523id_/http://games.sina.com.cn:80/zhuanqu/stoneage3/stoneage4_3.shtml 20144B SHA256 e27448cb7a6bccd92305126e1516fd2a6bb072f5046290c21c073707d532a7e9。核心各870B/SHA256 54f642c1069de1d775a852c29ba762c0f9b2a30341ad65005eb51ba39815a84a，两坏字节保留、九行列式对应不猜补；门户作者/原服未验证。派生STONEAGE-CN40-RIDING-CERTIFICATE-MANOR-SOURCE-R1.json、runner/test/中文规格；原HTML仅临时重放。R27三实源候选/mainZIP派生重放和保管清单已补。
+
+
+### R29 华义大陆2.0宠物加工/料理（2026-10-20实取）
+
+从真实导航“合成讲座/料理制作/宠物技能”取得固定快照：
+https://web.archive.org/web/20011205052725id_/http://www.waei.com.cn/ZHUANQU/stoneage2/synthesize/course.asp 66409B SHA256 9fbce4e1084747db202e8e24ec4b9993dc3fb2399710b5ce4ee839c6c6bc5cc6；
+https://web.archive.org/web/20011205052908id_/http://www.waei.com.cn/ZHUANQU/stoneage2/synthesize/cook.asp 65316B SHA256 e4ebd9244abd0f40daee66aa90a94f9d4d07fc2f4ed2f1d72e2f76bbac318960；
+https://web.archive.org/web/20011204201517id_/http://www.waei.com.cn/ZHUANQU/stoneage2/pet/skill.asp 78022B SHA256 3056d727903c56000cdfcd877924efa244967eb8b6407db08c08e60ec7a9b0ee。
+两真实原图裸域20020102225909 course/1.gif 122918B SHA256 4ed729712c5a04fb4711ded9ce9c8ab507cb23414b26594b135a5b58c861d042；20020102222833 cook/1.gif 134082B SHA256 1858c2bb6912394c9f48c5cfab0c62b140417080bd13d0c0f2f62c7f061cfd8b，GIF640×480，均已目视，只证界面参考。派生STONEAGE-CN20-PET-CRAFTING-SOURCE-R1.json/NEGATIVE-AUDIT-R1.json、中文规格与六输入runner。原HTML/图不进Git，推荐/传闻不升级原服公式。

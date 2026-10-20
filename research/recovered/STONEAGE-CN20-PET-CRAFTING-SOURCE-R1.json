@@ -1,0 +1,699 @@
+{
+  "schema": "stoneage.cn20_pet_crafting.source.r1",
+  "task": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-29",
+  "date": "2026-10-20",
+  "baseline": {
+    "head": "3910a507a61df485328488136e7395584a3cdcca",
+    "tree": "b7324baebf6946d433a0bedd5a466ad954f404e3",
+    "remote_branch_count": 400,
+    "own_main_success": 9,
+    "own_candidate_success": 8,
+    "open_prs": 0,
+    "unrelated_queued_run": 37642417333,
+    "continuity_prefix_pins": [
+      {
+        "path": "README.md",
+        "bytes": 21648,
+        "sha256": "9e5cfa8652f58f18a0bfc1df08f5b6b4f31ba63b86f6df2385959801a10bccbb",
+        "git_blob": "961cd68e7850b5535c0c5bdc82ed2e506c651a21"
+      },
+      {
+        "path": "docs/PROJECT-CONTINUITY-PROTOCOL-R1.md",
+        "bytes": 9762,
+        "sha256": "c44834eeec87f7a43e9cb4905f08377349e36d58b1fff2c5a75a6975db695e3b",
+        "git_blob": "ba9bbe19384589400abc61af37a360a40bf91452"
+      },
+      {
+        "path": "docs/CURRENT-STATE.md",
+        "bytes": 2153970,
+        "sha256": "2670dc9ab06d66b7c73abf3709899a8f2164541fa014fe0a2924b88ef3f86829",
+        "git_blob": "a40c2a83786097837e01642a782e5356d3382dcc"
+      },
+      {
+        "path": "docs/DESIGN-DECISIONS.md",
+        "bytes": 45965,
+        "sha256": "28b572ed01179eacd5a06b4ad62c76e4baef22ac49587aa0bad452a7cb3fe8e6",
+        "git_blob": "013ae4fad9301ab0140fe408a423b3abad97d1f9"
+      },
+      {
+        "path": "docs/HISTORICAL-TIMELINE.md",
+        "bytes": 501490,
+        "sha256": "6e5ccf4bd441c74c45c138906181eb85a2f528d46db50308d863695ebbd9cf3e",
+        "git_blob": "b231c053adcc3daaf07c9b19db9bfc3893baef0c"
+      },
+      {
+        "path": "docs/SOURCE-REGISTRY.md",
+        "bytes": 785837,
+        "sha256": "f2173c9feeca858de48ee60994dfa772d43f1cb143f9286893ffcc17584900ff",
+        "git_blob": "90ab49f460589b975cdc766b5bad4ec61ab0c8f7"
+      },
+      {
+        "path": "docs/RESTORATION-ROADMAP-R2.md",
+        "bytes": 135428,
+        "sha256": "6ddc4ecbfffaa965d4e24b7eb1882e564a018183823713fcd76cedc34527ce38",
+        "git_blob": "4fd87bf8fa36cfeeda133f70600386306e08cf89"
+      },
+      {
+        "path": "research/recovered/STONEAGE-22-DOMAIN-SOURCE-READY-PORTFOLIO-R2.json",
+        "bytes": 15948,
+        "sha256": "7d50de08f7855cf16dbe54b1747e258f1cc1223de88cc217172fd145f3c704ce",
+        "git_blob": "088b469b3c51e689cff27f33fc3bb49de2d24b2c"
+      }
+    ]
+  },
+  "inputs": [
+    {
+      "id": "N1",
+      "http": {
+        "url": "https://web.archive.org/web/20011204194619id_/http://www.waei.com.cn/ZHUANQU/stoneage2/pet/new_pet.asp",
+        "resolved_url": "https://web.archive.org/web/20011204194619id_/http://www.waei.com.cn/ZHUANQU/stoneage2/pet/new_pet.asp",
+        "status": 200,
+        "bytes": 69317,
+        "sha256": "561950fd7bba41e7d39f4a781a671e11e175c7fe08dd1b5481fdf1fd23ba351b",
+        "retrieved_utc": "2026-10-20T04:42:39.725814+00:00"
+      },
+      "replay_url": "https://web.archive.org/web/20011204194619id_/http://www.waei.com.cn/ZHUANQU/stoneage2/pet/new_pet.asp",
+      "capture_timestamp": "20011204194619",
+      "role": "NAVIGATION_DISCOVERY_ONLY",
+      "extracted": {
+        "routes": [
+          {
+            "label": "合成讲座",
+            "href": "/ZHUANQU/stoneage2/synthesize/course.asp"
+          },
+          {
+            "label": "料理制作",
+            "href": "/ZHUANQU/stoneage2/synthesize/cook.asp"
+          },
+          {
+            "label": "宠物技能",
+            "href": "/ZHUANQU/stoneage2/pet/skill.asp"
+          }
+        ]
+      }
+    },
+    {
+      "id": "S1",
+      "http": {
+        "url": "https://web.archive.org/web/20011204194619id_/http://www.waei.com.cn/ZHUANQU/stoneage2/synthesize/course.asp",
+        "resolved_url": "https://web.archive.org/web/20011205052725id_/http://www.waei.com.cn/ZHUANQU/stoneage2/synthesize/course.asp",
+        "status": 200,
+        "bytes": 66409,
+        "sha256": "9fbce4e1084747db202e8e24ec4b9993dc3fb2399710b5ce4ee839c6c6bc5cc6",
+        "retrieved_utc": "2026-10-20T04:43:09.019434+00:00"
+      },
+      "replay_url": "https://web.archive.org/web/20011205052725id_/http://www.waei.com.cn/ZHUANQU/stoneage2/synthesize/course.asp",
+      "capture_timestamp": "20011205052725",
+      "role": "OPERATOR_HTML_SOURCE_NOT_RUNTIME",
+      "extracted": {
+        "core_sha256": "eb326449d22a9724b0e305ab364474fcaf1619df36ddf43d884b952c9c1dbdad",
+        "core_utf8_bytes": 3360,
+        "facts": {
+          "flow": [
+            "LEARN_PROCESSING_AT_PET_SHOP",
+            "RIGHT_CLICK_ITEMS_IN_INVENTORY",
+            "CONFIRM_PROCESSING_MARKS_AND_TWO_OR_MORE_SOURCE_ITEMS",
+            "OPEN_PET_PANEL_SELECT_SKILLED_PET",
+            "SELECT_SKILL_AND_CONFIRM_MARKS",
+            "INVOKE_PROCESSING"
+          ],
+          "minimum_items_source_wording": "两种以上 / 两项",
+          "distinct_species_or_stack_predicate": null,
+          "skill_taught_to": "PET",
+          "teacher_surface": "宠物店",
+          "action_surface": "INVENTORY_RIGHT_CLICK_THEN_PET_SKILL_PANEL",
+          "failure_outcomes_reported": [
+            "ORIGINALS_DISAPPEAR",
+            "TRANSFORM_TO_OTHER_ITEMS"
+          ],
+          "probabilities": null,
+          "low_level_1_loyalty_100": "SITE_RECOMMENDATION_NOT_ACCESS_PREDICATE",
+          "pet_list": "SOURCE_SAYS_POPULAR_OR_LEGENDARY_NOT_SPECIES_MASTER",
+          "fortune_telling": "SOURCE_ADVICE_AT_VILLAGE_CHIEF_HOUSE_NOT_PROVEN_ENGINE_DEPENDENCY",
+          "enchantment_parity_mp_duration": "EXPLICIT_YOU_XIAOXI_ZHICHU_HEARSAY_NOT_RUNTIME_FORMULA"
+        },
+        "image_ref": {
+          "full": "IMG/course/1.gif",
+          "thumbnail": "IMG/course/1s.gif"
+        }
+      }
+    },
+    {
+      "id": "S2",
+      "http": {
+        "url": "https://web.archive.org/web/20011204194619id_/http://www.waei.com.cn/ZHUANQU/stoneage2/synthesize/cook.asp",
+        "resolved_url": "https://web.archive.org/web/20011205052908id_/http://www.waei.com.cn/ZHUANQU/stoneage2/synthesize/cook.asp",
+        "status": 200,
+        "bytes": 65316,
+        "sha256": "e4ebd9244abd0f40daee66aa90a94f9d4d07fc2f4ed2f1d72e2f76bbac318960",
+        "retrieved_utc": "2026-10-20T04:43:08.883159+00:00"
+      },
+      "replay_url": "https://web.archive.org/web/20011205052908id_/http://www.waei.com.cn/ZHUANQU/stoneage2/synthesize/cook.asp",
+      "capture_timestamp": "20011205052908",
+      "role": "OPERATOR_HTML_SOURCE_NOT_RUNTIME",
+      "extracted": {
+        "core_sha256": "816427ee5b88b1bf30de4dbd60fc27eb9a7bb2e585e2c7653f41fcc8c989b112",
+        "core_utf8_bytes": 1897,
+        "facts": {
+          "food_categories": [
+            {
+              "category": "汤料理",
+              "ingredients_as_written": [
+                "水"
+              ],
+              "qualification": "REQUIRED_WATER_OTHER_SIMMERED_MATERIALS_UNSPECIFIED",
+              "quantities": null
+            },
+            {
+              "category": "串烧料理",
+              "ingredients_as_written": [
+                "木串"
+              ],
+              "qualification": "REQUIRED_SKEWER_OTHER_MATERIALS_UNSPECIFIED",
+              "quantities": null
+            },
+            {
+              "category": "米饭料理",
+              "ingredients_as_written": [
+                "水",
+                "米",
+                "炭"
+              ],
+              "qualification": "SOURCE_SAYS_REQUIRED_NOT_COMPLETE_RECIPE",
+              "quantities": null
+            },
+            {
+              "category": "饭团料理",
+              "ingredients_as_written": [
+                "水",
+                "米"
+              ],
+              "qualification": "CHARCOAL_HEDGED_NOT_VERY_NEEDED_NOT_PROVEN_FORBIDDEN_OR_ABSENT",
+              "quantities": null
+            },
+            {
+              "category": "面包料理",
+              "ingredients_as_written": [
+                "橡树果"
+              ],
+              "qualification": "PRIMARY_MATERIAL_NOT_EXCLUSIVE_OR_COMPLETE",
+              "quantities": null
+            }
+          ],
+          "material_sources": [
+            "玛莉娜丝村便利商店",
+            "加加村便利商店",
+            "战斗取得的肉"
+          ],
+          "material_grade_is_not_price": true,
+          "ground_items": "ASK_OWNER_FIRST_SOCIAL_ADVICE_NOT_GAME_LOCK",
+          "temporary_storage": {
+            "surface": "便利屋右下角物品寄放处",
+            "source_limit": 5,
+            "overflow": "EARLIEST_ITEM_DISAPPEARS_SOURCE_WARNING",
+            "unit_or_persistence": null
+          },
+          "low_level_pet": "PLAYER_EXPERIENCE_HEARSAY",
+          "material_price_difference": "LOCAL_SPECIALTY_AT_CONVENIENCE_STORE_REPORTED_MORE_EXPENSIVE_NO_PRICE_LIST"
+        },
+        "image_ref": {
+          "full": "IMG/cook/1.gif",
+          "thumbnail": "IMG/cook/1s.gif"
+        }
+      }
+    },
+    {
+      "id": "S3",
+      "http": {
+        "url": "https://web.archive.org/web/20011204194619id_/http://www.waei.com.cn/ZHUANQU/stoneage2/pet/skill.asp",
+        "resolved_url": "https://web.archive.org/web/20011204201517id_/http://www.waei.com.cn/ZHUANQU/stoneage2/pet/skill.asp",
+        "status": 200,
+        "bytes": 78022,
+        "sha256": "3056d727903c56000cdfcd877924efa244967eb8b6407db08c08e60ec7a9b0ee",
+        "retrieved_utc": "2026-10-20T04:43:08.970030+00:00"
+      },
+      "replay_url": "https://web.archive.org/web/20011204201517id_/http://www.waei.com.cn/ZHUANQU/stoneage2/pet/skill.asp",
+      "capture_timestamp": "20011204201517",
+      "role": "OPERATOR_HTML_SOURCE_NOT_RUNTIME",
+      "extracted": {
+        "core_sha256": "8a6a792cc2e30d956849d0aea0e440cd7b5869ef33dc41901d08c3f6a65c5f98",
+        "core_utf8_bytes": 2481,
+        "facts": {
+          "skills": [
+            {
+              "name": "加工",
+              "description": "使用素材合成制作道具",
+              "price_label": 1500,
+              "price_currency": null,
+              "price_role": "SKILL_PRICE_COLUMN_NOT_PER_CRAFT_FEE"
+            },
+            {
+              "name": "料理",
+              "description": "使用素材合成制作料理",
+              "price_label": 1000,
+              "price_currency": null,
+              "price_role": "SKILL_PRICE_COLUMN_NOT_PER_CRAFT_FEE"
+            }
+          ],
+          "success": "NOT_GUARANTEED_PET_TRAITS_AND_LUCK_NO_FORMULA",
+          "processing_synthesis": "SAME_SOURCE_CONTEXT_TERMS_NOT_GLOBAL_CROSS_VERSION_SKILL_ID"
+        }
+      }
+    },
+    {
+      "id": "I1",
+      "http": {
+        "url": "https://web.archive.org/web/20011205052725id_/http://www.waei.com.cn/ZHUANQU/stoneage2/synthesize/IMG/course/1.gif",
+        "resolved_url": "https://web.archive.org/web/20020102225909id_/http://waei.com.cn/ZHUANQU/stoneage2/synthesize/IMG/course/1.gif",
+        "status": 200,
+        "bytes": 122918,
+        "sha256": "4ed729712c5a04fb4711ded9ce9c8ab507cb23414b26594b135a5b58c861d042",
+        "retrieved_utc": "2026-10-20T04:44:03.665225+00:00"
+      },
+      "replay_url": "https://web.archive.org/web/20020102225909id_/http://waei.com.cn/ZHUANQU/stoneage2/synthesize/IMG/course/1.gif",
+      "capture_timestamp": "20020102225909",
+      "role": "SEPARATELY_DATED_MANUAL_VISUAL_REFERENCE",
+      "extracted": {
+        "format": "GIF",
+        "width": 640,
+        "height": 480,
+        "visual_observation": "MANUAL_SOURCE_REFERENCE_ONLY_NOT_EXECUTION"
+      }
+    },
+    {
+      "id": "I2",
+      "http": {
+        "url": "https://web.archive.org/web/20011205052908id_/http://www.waei.com.cn/ZHUANQU/stoneage2/synthesize/IMG/cook/1.gif",
+        "resolved_url": "https://web.archive.org/web/20020102222833id_/http://waei.com.cn/ZHUANQU/stoneage2/synthesize/IMG/cook/1.gif",
+        "status": 200,
+        "bytes": 134082,
+        "sha256": "1858c2bb6912394c9f48c5cfab0c62b140417080bd13d0c0f2f62c7f061cfd8b",
+        "retrieved_utc": "2026-10-20T04:44:03.710563+00:00"
+      },
+      "replay_url": "https://web.archive.org/web/20020102222833id_/http://waei.com.cn/ZHUANQU/stoneage2/synthesize/IMG/cook/1.gif",
+      "capture_timestamp": "20020102222833",
+      "role": "SEPARATELY_DATED_MANUAL_VISUAL_REFERENCE",
+      "extracted": {
+        "format": "GIF",
+        "width": 640,
+        "height": 480,
+        "visual_observation": "MANUAL_SOURCE_REFERENCE_ONLY_NOT_EXECUTION"
+      }
+    }
+  ],
+  "records": [
+    {
+      "record_id": "cn20-2001-crafting:workflow",
+      "entity_type": "PET_PROCESSING_SOURCE_WORKFLOW",
+      "collection": "tutorials",
+      "version_profile": "CN_WAEI_20_OFFICIAL_PAGE_200112_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1",
+        "S3"
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "facts": {
+        "flow": [
+          "LEARN_PROCESSING_AT_PET_SHOP",
+          "RIGHT_CLICK_ITEMS_IN_INVENTORY",
+          "CONFIRM_PROCESSING_MARKS_AND_TWO_OR_MORE_SOURCE_ITEMS",
+          "OPEN_PET_PANEL_SELECT_SKILLED_PET",
+          "SELECT_SKILL_AND_CONFIRM_MARKS",
+          "INVOKE_PROCESSING"
+        ],
+        "minimum_items_source_wording": "两种以上 / 两项",
+        "distinct_species_or_stack_predicate": null,
+        "skill_taught_to": "PET",
+        "teacher_surface": "宠物店",
+        "action_surface": "INVENTORY_RIGHT_CLICK_THEN_PET_SKILL_PANEL",
+        "failure_outcomes_reported": [
+          "ORIGINALS_DISAPPEAR",
+          "TRANSFORM_TO_OTHER_ITEMS"
+        ],
+        "probabilities": null,
+        "low_level_1_loyalty_100": "SITE_RECOMMENDATION_NOT_ACCESS_PREDICATE",
+        "pet_list": "SOURCE_SAYS_POPULAR_OR_LEGENDARY_NOT_SPECIES_MASTER",
+        "fortune_telling": "SOURCE_ADVICE_AT_VILLAGE_CHIEF_HOUSE_NOT_PROVEN_ENGINE_DEPENDENCY",
+        "enchantment_parity_mp_duration": "EXPLICIT_YOU_XIAOXI_ZHICHU_HEARSAY_NOT_RUNTIME_FORMULA"
+      },
+      "teacher_npc_id": null,
+      "pet_shop_coordinates": null
+    },
+    {
+      "record_id": "cn20-2001-crafting:skill-1",
+      "entity_type": "DOCUMENTED_SKILL_PRICE_ROW",
+      "collection": "skills",
+      "version_profile": "CN_WAEI_20_OFFICIAL_PAGE_200112_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S3"
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "facts": {
+        "name": "加工",
+        "description": "使用素材合成制作道具",
+        "price_label": 1500,
+        "price_currency": null,
+        "price_role": "SKILL_PRICE_COLUMN_NOT_PER_CRAFT_FEE"
+      },
+      "success_formula": null
+    },
+    {
+      "record_id": "cn20-2001-crafting:skill-2",
+      "entity_type": "DOCUMENTED_SKILL_PRICE_ROW",
+      "collection": "skills",
+      "version_profile": "CN_WAEI_20_OFFICIAL_PAGE_200112_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S3"
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "facts": {
+        "name": "料理",
+        "description": "使用素材合成制作料理",
+        "price_label": 1000,
+        "price_currency": null,
+        "price_role": "SKILL_PRICE_COLUMN_NOT_PER_CRAFT_FEE"
+      },
+      "success_formula": null
+    },
+    {
+      "record_id": "cn20-2001-crafting:food-category-1",
+      "entity_type": "INGREDIENT_CATEGORY_NOT_COMPLETE_RECIPE",
+      "collection": "recipes",
+      "version_profile": "CN_WAEI_20_OFFICIAL_PAGE_200112_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S2"
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "facts": {
+        "category": "汤料理",
+        "ingredients_as_written": [
+          "水"
+        ],
+        "qualification": "REQUIRED_WATER_OTHER_SIMMERED_MATERIALS_UNSPECIFIED",
+        "quantities": null
+      },
+      "recipe_id": null,
+      "full_recipe": false,
+      "result_item_ids": null
+    },
+    {
+      "record_id": "cn20-2001-crafting:food-category-2",
+      "entity_type": "INGREDIENT_CATEGORY_NOT_COMPLETE_RECIPE",
+      "collection": "recipes",
+      "version_profile": "CN_WAEI_20_OFFICIAL_PAGE_200112_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S2"
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "facts": {
+        "category": "串烧料理",
+        "ingredients_as_written": [
+          "木串"
+        ],
+        "qualification": "REQUIRED_SKEWER_OTHER_MATERIALS_UNSPECIFIED",
+        "quantities": null
+      },
+      "recipe_id": null,
+      "full_recipe": false,
+      "result_item_ids": null
+    },
+    {
+      "record_id": "cn20-2001-crafting:food-category-3",
+      "entity_type": "INGREDIENT_CATEGORY_NOT_COMPLETE_RECIPE",
+      "collection": "recipes",
+      "version_profile": "CN_WAEI_20_OFFICIAL_PAGE_200112_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S2"
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "facts": {
+        "category": "米饭料理",
+        "ingredients_as_written": [
+          "水",
+          "米",
+          "炭"
+        ],
+        "qualification": "SOURCE_SAYS_REQUIRED_NOT_COMPLETE_RECIPE",
+        "quantities": null
+      },
+      "recipe_id": null,
+      "full_recipe": false,
+      "result_item_ids": null
+    },
+    {
+      "record_id": "cn20-2001-crafting:food-category-4",
+      "entity_type": "INGREDIENT_CATEGORY_NOT_COMPLETE_RECIPE",
+      "collection": "recipes",
+      "version_profile": "CN_WAEI_20_OFFICIAL_PAGE_200112_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S2"
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "facts": {
+        "category": "饭团料理",
+        "ingredients_as_written": [
+          "水",
+          "米"
+        ],
+        "qualification": "CHARCOAL_HEDGED_NOT_VERY_NEEDED_NOT_PROVEN_FORBIDDEN_OR_ABSENT",
+        "quantities": null
+      },
+      "recipe_id": null,
+      "full_recipe": false,
+      "result_item_ids": null
+    },
+    {
+      "record_id": "cn20-2001-crafting:food-category-5",
+      "entity_type": "INGREDIENT_CATEGORY_NOT_COMPLETE_RECIPE",
+      "collection": "recipes",
+      "version_profile": "CN_WAEI_20_OFFICIAL_PAGE_200112_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S2"
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "facts": {
+        "category": "面包料理",
+        "ingredients_as_written": [
+          "橡树果"
+        ],
+        "qualification": "PRIMARY_MATERIAL_NOT_EXCLUSIVE_OR_COMPLETE",
+        "quantities": null
+      },
+      "recipe_id": null,
+      "full_recipe": false,
+      "result_item_ids": null
+    },
+    {
+      "record_id": "cn20-2001-crafting:temporary-storage",
+      "entity_type": "CONVENIENCE_SHOP_DEPOSIT_SOURCE_WARNING",
+      "collection": "tutorials",
+      "version_profile": "CN_WAEI_20_OFFICIAL_PAGE_200112_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S2"
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "facts": {
+        "surface": "便利屋右下角物品寄放处",
+        "source_limit": 5,
+        "overflow": "EARLIEST_ITEM_DISAPPEARS_SOURCE_WARNING",
+        "unit_or_persistence": null
+      },
+      "original_state_layout": null,
+      "ownership_and_logout_behavior": null
+    },
+    {
+      "record_id": "cn20-2001-crafting:crafting-advice",
+      "entity_type": "RECOMMENDED_PET_LABELS_AND_LEVEL_NOT_MASTER",
+      "collection": "pets",
+      "version_profile": "CN_WAEI_20_OFFICIAL_PAGE_200112_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1",
+        "S2"
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "status": "SITE_ADVICE_AND_EXPLICIT_PLAYER_EXPERIENCE_NOT_PREREQUISITE",
+      "examples_as_written": [
+        "布克布克",
+        "布伊",
+        "金布伊",
+        "乌力"
+      ],
+      "species_master_ids": null,
+      "level_one_loyalty_hundred": "ADVICE_NOT_PREDICATE",
+      "success_rates": null
+    },
+    {
+      "record_id": "cn20-2001-crafting:enchantment-hearsay",
+      "entity_type": "HEDGED_WEAPON_ENCHANTMENT_CLAIM",
+      "collection": "sources",
+      "version_profile": "CN_WAEI_20_OFFICIAL_PAGE_200112_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "status": "EXPLICIT_SOURCE_HEARSAY_NOT_VERIFIED_FORMULA",
+      "source_qualifier": "有消息指出",
+      "claim_topics": [
+        "WEAPON_GRADE_PARITY_TARGET_SCOPE",
+        "MP_COST_EXAMPLES",
+        "WEAPON_GRADE_DURATION"
+      ],
+      "implemented_formula": null,
+      "original_server_verified": false
+    },
+    {
+      "record_id": "cn20-2001-crafting:scope-and-costs",
+      "entity_type": "CRAFTING_RULE_SCOPE_RELATION",
+      "collection": "versions",
+      "version_profile": "CN_WAEI_20_OFFICIAL_PAGE_200112_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1",
+        "S2",
+        "S3"
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "per_craft_fee": null,
+      "success_formula": null,
+      "relations": [
+        "SKILL_PRICE_COLUMN_DISTINCT_FROM_MATERIAL_COST_WARNING",
+        "PROCESSING_AND_SYNTHESIS_SAME_PAGE_CONTEXT_NOT_GLOBAL_SKILL_ID",
+        "RECOMMENDATIONS_AND_HEARSAY_DISTINCT_FROM_OPERATION_STEPS",
+        "CATEGORY_MATERIAL_GRADE_DISTINCT_FROM_PRICE",
+        "GROUND_ITEM_ETIQUETTE_NOT_ENGINE_OWNERSHIP_LOCK"
+      ],
+      "earlier_facilities_report": "STONEAGE-WAEI-CN20-PUBLIC-FACILITIES-R1.json",
+      "earlier_facilities_report_sha256": "49e48c23b2fc97f5ac64b03ce0b4f2848d04fe722005c5392e778941b33e887b"
+    },
+    {
+      "record_id": "cn20-2001-crafting:synthesis-visual",
+      "entity_type": "LATER_CAPTURE_LINKED_REFERENCE",
+      "collection": "screens",
+      "version_profile": "CN_WAEI_20_OFFICIAL_PAGE_200112_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1",
+        "I1"
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "same_build_as_2001_text": false,
+      "successful_craft_verified": false,
+      "manual_observation": {
+        "width": 640,
+        "height": 480,
+        "visible_surface": "PET_STATUS_PANEL_AND_WORLD_SCENE_NOT_CRAFT_RESULT",
+        "individual_level_label": 16,
+        "individual_loyalty_label": 59,
+        "exact_species_or_sprite_id": null
+      },
+      "image_not_a_prerequisite_test": true
+    },
+    {
+      "record_id": "cn20-2001-crafting:cooking-visual",
+      "entity_type": "LATER_CAPTURE_LINKED_REFERENCE",
+      "collection": "screens",
+      "version_profile": "CN_WAEI_20_OFFICIAL_PAGE_200112_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S2",
+        "I2"
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "same_build_as_2001_text": false,
+      "successful_craft_verified": false,
+      "manual_observation": {
+        "width": 640,
+        "height": 480,
+        "visible_surface": "INVENTORY_EQUIPMENT_ITEM_DETAIL_AND_ACTION_CONTROLS_NOT_COOKING_RESULT",
+        "exact_item_or_recipe_id": null
+      },
+      "source_filename_is_not_action_proof": true
+    }
+  ],
+  "boundaries": {
+    "original_server_execution_verified": false,
+    "exact_client_build": null,
+    "first_release_date": null,
+    "source_host_guarantees_every_claim_is_verified": false,
+    "low_level_and_loyalty_recommendation_is_hard_requirement": false,
+    "suggested_pet_names_are_species_ids": false,
+    "source_skill_price_is_per_craft_fee": false,
+    "price_currency_unit": null,
+    "recipes_complete": false,
+    "success_formula": null,
+    "item_consumption_formula": null,
+    "storage_is_authenticated_persistent_bank": false,
+    "not_taking_ground_items_is_engine_enforced": false,
+    "image_same_build_as_2001_text": false,
+    "images_prove_successful_cooking": false,
+    "enchantment_hearsay_is_verified_formula": false,
+    "tw10_or_jss1999_backfill": false,
+    "raw_sources_committed": false,
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b_and_wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING"
+  },
+  "acquisition": {
+    "finite_navigation_routes": 3,
+    "requested_timestamp": "20011204194619",
+    "actual_html_timestamps": [
+      "20011204194619",
+      "20011205052725",
+      "20011205052908",
+      "20011204201517"
+    ],
+    "actual_image_timestamps": [
+      "20020102225909",
+      "20020102222833"
+    ],
+    "url_guessing": false,
+    "original_assets_committed": false,
+    "additional_menu_or_result_tables_not_fetched": true
+  },
+  "reopen_when": [
+    "SAME_BUILD_ORIGINAL_CRAFTING_SKILL_CONFIG_OR_RUNTIME_TRACE",
+    "CONTEMPORANEOUS_OPERATOR_CORRECTION_WITH_EXPLICIT_FORMULA",
+    "ORIGINAL_RECIPE_MENU_OR_RESULT_MASTER_SUPPORTING_NAMED_RECIPE",
+    "SAME_BUILD_SCREEN_RECORDING_FOR_ACTUAL_INPUT_AND_OUTPUT"
+  ],
+  "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-30"
+}

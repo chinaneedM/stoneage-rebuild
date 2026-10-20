@@ -1,0 +1,39 @@
+name: Verify CN20 pet crafting instructions and evidence qualifiers
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-CN20-PET-CRAFTING-*.json'
+      - 'tools/stoneage_cn20_pet_crafting_source.py'
+      - 'tools/stoneage_cn20_riding_source.py'
+      - 'tools/stoneage_jp2008_shadow_release.py'
+      - 'tools/stoneage_cn2003_christmas_source.py'
+      - 'tests/test_stoneage_cn20_pet_crafting_source.py'
+      - '.github/workflows/verify-stoneage-cn20-pet-crafting-source.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-CN20-PET-CRAFTING-*.json'
+      - 'tools/stoneage_cn20_pet_crafting_source.py'
+      - 'tools/stoneage_cn20_riding_source.py'
+      - 'tools/stoneage_jp2008_shadow_release.py'
+      - 'tools/stoneage_cn2003_christmas_source.py'
+      - 'tests/test_stoneage_cn20_pet_crafting_source.py'
+      - '.github/workflows/verify-stoneage-cn20-pet-crafting-source.yml'
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify instructions, category recipes, advice and hearsay boundaries
+        run: python -m unittest discover -s tests -p 'test_stoneage_cn20_pet_crafting_source.py' -v
+      - name: Read exact four 2001 HTML and separately dated two 2002 GIF references
+        run: python -m tools.stoneage_cn20_pet_crafting_source --fetch --output /tmp/cn20-crafting-derived/replay.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cn20-pet-crafting-derived-replay
+          path: /tmp/cn20-crafting-derived/replay.json
+          if-no-files-found: error
+          retention-days: 30
+

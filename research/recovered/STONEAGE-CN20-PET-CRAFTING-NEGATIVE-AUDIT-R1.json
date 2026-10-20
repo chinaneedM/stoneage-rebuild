@@ -1,0 +1,80 @@
+{
+  "schema": "stoneage.cn20_pet_crafting.actual_source_mutations.r1",
+  "cases": [
+    {
+      "case": "missing-pet-shop-learning",
+      "source_id": "S1",
+      "original_sha256": "9fbce4e1084747db202e8e24ec4b9993dc3fb2399710b5ce4ee839c6c6bc5cc6",
+      "mutated_sha256": "2505c686397c52bcb581e3996a1184d7f9cab62086b97793182b222590b48d82",
+      "extractor_result": "REJECT",
+      "full_replay_rejected": true
+    },
+    {
+      "case": "missing-hearsay-qualifier",
+      "source_id": "S1",
+      "original_sha256": "9fbce4e1084747db202e8e24ec4b9993dc3fb2399710b5ce4ee839c6c6bc5cc6",
+      "mutated_sha256": "849a541589a73a3d28d14f26aee8ffc985fffda5ccc1fdb8e262893c8bee9039",
+      "extractor_result": "REJECT",
+      "full_replay_rejected": true
+    },
+    {
+      "case": "changed-loyalty-advice",
+      "source_id": "S1",
+      "original_sha256": "9fbce4e1084747db202e8e24ec4b9993dc3fb2399710b5ce4ee839c6c6bc5cc6",
+      "mutated_sha256": "9f524ebf5dfe0822f491a1c91debbf3826d12e5409e40f0df8b743a91dda305b",
+      "extractor_result": "REJECT",
+      "full_replay_rejected": true
+    },
+    {
+      "case": "changed-storage-limit",
+      "source_id": "S2",
+      "original_sha256": "e4ebd9244abd0f40daee66aa90a94f9d4d07fc2f4ed2f1d72e2f76bbac318960",
+      "mutated_sha256": "33e83c6c294ce18af17e684618d3f2ba549fe954dc18b4b608ace3b607893de3",
+      "extractor_result": "REJECT",
+      "full_replay_rejected": true
+    },
+    {
+      "case": "removed-charcoal-hedge",
+      "source_id": "S2",
+      "original_sha256": "e4ebd9244abd0f40daee66aa90a94f9d4d07fc2f4ed2f1d72e2f76bbac318960",
+      "mutated_sha256": "a9bf4fc234e578a2ff7af9469038bf96515e7d3df7182586b6804de37d5925f9",
+      "extractor_result": "REJECT",
+      "full_replay_rejected": true
+    },
+    {
+      "case": "removed-owner-etiquette",
+      "source_id": "S2",
+      "original_sha256": "e4ebd9244abd0f40daee66aa90a94f9d4d07fc2f4ed2f1d72e2f76bbac318960",
+      "mutated_sha256": "972acd48eabf338d38798684e0698c4c86292f6a442d55ccdfaa283d9d4ad3ad",
+      "extractor_result": "REJECT",
+      "full_replay_rejected": true
+    },
+    {
+      "case": "changed-skill-price",
+      "source_id": "S3",
+      "original_sha256": "3056d727903c56000cdfcd877924efa244967eb8b6407db08c08e60ec7a9b0ee",
+      "mutated_sha256": "949499523ffd6e5c3158ad49808a77ef188d05c9429c3e83e3461f0ffc670112",
+      "extractor_result": "REJECT",
+      "full_replay_rejected": true
+    },
+    {
+      "case": "unrelated-navigation-decoration",
+      "source_id": "S1",
+      "original_sha256": "9fbce4e1084747db202e8e24ec4b9993dc3fb2399710b5ce4ee839c6c6bc5cc6",
+      "mutated_sha256": "2f2e92164ee541b91d1d82516428062f29b8d8eff317cad4d93eae777b83baf7",
+      "extractor_result": "SAME_SEMANTICS_BYTE_PIN_REJECTED",
+      "full_replay_rejected": true
+    },
+    {
+      "case": "unrelated-cooking-navigation-decoration",
+      "source_id": "S2",
+      "original_sha256": "e4ebd9244abd0f40daee66aa90a94f9d4d07fc2f4ed2f1d72e2f76bbac318960",
+      "mutated_sha256": "c5220e1991bed9245f85f48111aed421573e128206350e4321834b6afa0a024f",
+      "extractor_result": "SAME_SEMANTICS_BYTE_PIN_REJECTED",
+      "full_replay_rejected": true
+    }
+  ],
+  "cases_passed": 9,
+  "original_page_or_mutant_bytes_in_git": false,
+  "source_execution_not_game_runtime": true
+}
