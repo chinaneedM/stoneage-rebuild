@@ -35,7 +35,7 @@ def decode(raw):
  for enc in ('utf-8-sig','cp932','euc_jp'):
   try:
    s=raw.decode(enc,'strict')
-   if 'ストーンエイジ' in s and ('紅炎' in s or '香颯' in s):return s
+   if 'ストーンエイジ' in s and ('以下リリースより' in s or '香颯の地（リリースより）' in s):return s
   except UnicodeDecodeError:pass
  raise ValueError('Source Japanese encoding or identity not verified')
 def compact(s):
