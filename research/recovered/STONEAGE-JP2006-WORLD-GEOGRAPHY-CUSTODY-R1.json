@@ -1,0 +1,58 @@
+{
+  "schema": "stoneage.jp2006_world_geography.custody.r1",
+  "task": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-40",
+  "baseline": {
+    "head": "cce8b662996516921b30a6ee61a596e6e582eb7f",
+    "tree": "2c51e66adb7ecbc71825580a73af3956e1b7f739"
+  },
+  "failed_first_ci": {
+    "commit": "fa68fcd91654c3fac8aeb79eeea6ecdd2f2963da",
+    "run": 39431468117,
+    "conclusion": "failure",
+    "reason": "second source had no volcanic island headline; first decoder incorrectly required it"
+  },
+  "passing_candidate_ci": {
+    "commit": "3e91d85a6282fea60ebf42c7b4d532915cd02171",
+    "tree": "084fd2bf00c6ea22299364643c064f64bfa2658d",
+    "run": 39431577632,
+    "job": 118657682812,
+    "conclusion": "success",
+    "artifact_id": 12267519441,
+    "zip_bytes": 669,
+    "zip_sha256": "19bf3c610109ed9794545a60d1c6573c8d584282006e7abd6af0f5d7edfc7f19",
+    "raw_bytes": 1296,
+    "raw_sha256": "07ebbe68636aa8324a7438782444f0587e0bbe7e520548640d4db99d08cc4b70",
+    "raw_git_blob": "954faf149cd97882909809bfce42dcd47d46f9e7"
+  },
+  "pinned_current_sources": [
+    {
+      "id": "M1",
+      "quote_digest": "83f8858e7cb250c2cecfbdb856b4a8fc1861ac40f2eddc96ec4a3dfbe866ef9b",
+      "current_page_digest": "d435c410e17c2633d2e9127271f0fae7753a3c7968dd334cc078f5c03b97137a",
+      "byte_count": 18170,
+      "original_2006_html_digest": null
+    },
+    {
+      "id": "M2",
+      "quote_digest": "c7a10d8aee88eaf9c01e6fd3ef87f12bb3121b8173673acf27cd328a0210704f",
+      "current_page_digest": "6c311db5fd9307728e22832057d4e43eac9d52b8efb79656906d13a98f76c772",
+      "byte_count": 19727,
+      "original_2006_html_digest": null
+    },
+    {
+      "id": "M3",
+      "quote_digest": "52a9401e82db8b4112f61c3e0a3c57b80dbdfba11913d3f7e0c42b8cb1b15b59",
+      "current_page_digest": "f26445151a038b99d952c1f114b6c0c9838a33c2ef2a82260ec041348acf8868",
+      "byte_count": 268876,
+      "original_2006_html_digest": null
+    }
+  ],
+  "boundaries": {
+    "original_html_archived": false,
+    "copyrighted_assets_committed": false,
+    "original_game_map_ids_validated": false,
+    "source_attribution_promoted_to_server_execution": false
+  },
+  "main_ci": null,
+  "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-41"
+}

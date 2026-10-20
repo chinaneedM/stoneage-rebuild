@@ -13,3 +13,9 @@
 发行方/版本边界：GaiaX日本2006运营发行信息与台湾1.0、JSS1999或大陆版本隔离。第一阶段的“已完成”是2006年5月同期运营材料的断言，**不是我们亲自验证服务器**；五月第二阶段和十二月上线仍为预告，非服务端部署记录。三份历史引文独立存源URL、时间和版本范围，当前4Gamer HTML字节不等于认证2006原始备份。所有游戏原ID、事件脚本及版权图片不入仓。
 
 派生JSON：research/recovered/STONEAGE-JP2006-WORLD-GEOGRAPHY-SOURCE-R1.json。六具名节点、五条关系、四项分期；未来世界/地图/任务研究可复核，不提前生产新地图。R40有限结束于三篇已定位原文；精确同版地图DAT、NPC脚本、Boss及版本地图链接是复开条件。NEXT41轮换22域，Stage A 7 PARTIAL+2 OPEN，Stage B/wiki GATED，R79 PAUSED_NON_BLOCKING。
+
+## 2026-10-20 候选CI实证及正文哈希固定门
+
+首版研究包在 fa68fcd91654c3fac8aeb79eeea6ecdd2f2963da 触发 Action39431468117 **FAILURE**，原因是仅用于原文识别的解码器错误要求第二篇引用必须包含火山岛标题；第二篇本身主要讲炎渦の頂，不应以错误标题拒绝。修复3e91d85a6282fea60ebf42c7b4d532915cd02171，Action39431577632/job118657682812 **SUCCESS**，源码单测和三篇同期来源实际远程重放均通过，9/10/9个文句单元。
+
+已实下载ZIP artifact12267519441：669B SHA256 19bf3c610109ed9794545a60d1c6573c8d584282006e7abd6af0f5d7edfc7f19；内replay.json 1296B SHA256 07ebbe68636aa8324a7438782444f0587e0bbe7e520548640d4db99d08cc4b70，Git blob 954faf149cd97882909809bfce42dcd47d46f9e7。三篇当前HTTP字节18170/19727/268876，规范运营文段SHA256依次为 83f8858e7cb250c2cecfbdb856b4a8fc1861ac40f2eddc96ec4a3dfbe866ef9b / c7a10d8aee88eaf9c01e6fd3ef87f12bb3121b8173673acf27cd328a0210704f / 52a9401e82db8b4112f61c3e0a3c57b80dbdfba11913d3f7e0c42b8cb1b15b59。当前HTML并非2006认证快照，所有原服字段未因此补全。现在增加发布文段哈希硬门，主线仍需独立验收。

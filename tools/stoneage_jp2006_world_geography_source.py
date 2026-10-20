@@ -63,6 +63,7 @@ def validate(r):
  require(r['schema']=='stoneage.jp2006_world_geography.source_contract.r1','Schema changed')
  require([s['url'] for s in r['sources']]==list(URLS),'Source locations changed')
  require(all(s['historical_original_2006_html_sha256'] is None for s in r['sources']),'Historical bytes invented')
+ require(all(re.fullmatch(r'[0-9a-f]{64}',s['current_quote_digest_sha256']) is not None and s['current_2026_capture_is_2006_original'] is False for s in r['sources']),'Historical/current source digest boundary changed')
  require(len(r['nodes'])==6 and len(r['relations'])==5 and len(r['timeline'])==4,'Source scope changed')
  require([x['name_as_written'] for x in r['nodes']]==['ミライア群島','紅炎の地','炎渦の頂','香颯の地','雨祝の森','ジャルガ島'],'Original written names changed')
  for x in r['nodes']:
@@ -78,9 +79,11 @@ def validate(r):
  require(r['next']=='OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-41','Portfolio queue changed')
 def replay(r,raw):
  validate(r);require(len(raw)==3,'Exactly 3 inputs required')
+ results=[extract(data,i) for i,data in enumerate(raw)]
+ for original,derived in zip(r['sources'],results):
+  require(derived['normalized_quoted_section_sha256']==original['current_quote_digest_sha256'],'Anchored 2006 operator-quote body changed')
  return {'schema':'stoneage.jp2006_world_geography.derived_replay.r1',
- 'sources':[extract(data,i) for i,data in enumerate(raw)],
- 'map_ids_or_server_runtime_proven':False,'raw_html_in_output':False}
+ 'sources':results,'map_ids_or_server_runtime_proven':False,'raw_html_in_output':False}
 def main():
  p=argparse.ArgumentParser();p.add_argument('--fetch',action='store_true');p.add_argument('--html-dir',type=Path);p.add_argument('--output',type=Path,required=True)
  args=p.parse_args();require(args.fetch!=bool(args.html_dir),'Choose exactly one input method')

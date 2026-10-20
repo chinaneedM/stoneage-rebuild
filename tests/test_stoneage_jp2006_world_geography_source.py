@@ -21,6 +21,14 @@ class WorldGeography(unittest.TestCase):
   self.rejected(['relations',2,'actual_entry_conditions'],['NEED_FIRE_STONE'])
   self.rejected(['content','boss_name'],'FIRE_KING')
   self.rejected(['content','fire_species_roster'],['KNOWN_SPECIES'])
+ def test_three_exact_source_digests_and_historical_boundary(self):
+  self.assertEqual(len(self.r['sources']),3)
+  for i,s in enumerate(self.r['sources']):
+   self.assertEqual(len(s['current_quote_digest_sha256']),64)
+   self.assertIsNone(s['historical_original_2006_html_sha256'])
+   self.assertFalse(s['current_2026_capture_is_2006_original'])
+  r=copy.deepcopy(self.r);r['sources'][1]['current_quote_digest_sha256']='not-a-hash'
+  with self.assertRaises(ValueError):validate(r)
  def test_source_section_mutations_rejected(self):
   for i,tokens in enumerate(PHRASES):
    prefix='以下リリースより' if i<2 else '香颯の地（リリースより）'
