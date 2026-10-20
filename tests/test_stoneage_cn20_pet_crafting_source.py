@@ -72,5 +72,23 @@ class CraftingSource(unittest.TestCase):
         for i,k,v in cases:
             with self.subTest(record=i,key=k):self.rejects(lambda r:r['records'][i].__setitem__(k,v))
 
+    def test_downloaded_exact_source_replay_and_durable_custody(self):
+        from hashlib import sha256,sha1
+        c=json.loads((REPORT.parent/'STONEAGE-CN20-PET-CRAFTING-CUSTODY-R1.json').read_text())
+        self.assertEqual([len(c['runs'][k]) for k in ('initial_candidate','candidate','main')],[10,1,11])
+        for kind,rows in c['runs'].items():
+            head=c['initial_content_head'] if kind=='initial_candidate' else c['content_head']
+            self.assertTrue(all(r['head_sha']==head and r['conclusion']=='success' for r in rows))
+        for pin in c['pins']:
+            b=(REPORT.parents[2]/pin['path']).read_bytes();self.assertEqual(len(b),pin['bytes']);self.assertEqual(sha256(b).hexdigest(),pin['sha256']);self.assertEqual(sha1(b'blob '+str(len(b)).encode()+bytes([0])+b).hexdigest(),pin['git_blob'])
+        raw=(REPORT.parent/'STONEAGE-CN20-PET-CRAFTING-CI-REPLAY-R1.json').read_bytes()
+        self.assertTrue(all(a['member_sha256']==sha256(raw).hexdigest() for a in c['artifacts']))
+        self.assertEqual(json.loads(raw)['extracted'],[x['extracted'] for x in self.report['inputs']])
+        a=json.loads((REPORT.parent/'STONEAGE-CN20-PET-CRAFTING-NEGATIVE-AUDIT-R1.json').read_text())
+        self.assertEqual(len(a['cases']),9);self.assertTrue(all(x['full_replay_rejected'] for x in a['cases']))
+        source_pins={s['id']:s['http']['sha256'] for s in self.report['inputs']}
+        self.assertTrue(all(x['original_sha256']==source_pins[x['source_id']] and x['mutated_sha256']!=x['original_sha256'] for x in a['cases']))
+        self.assertFalse(c['operator_authorship_verified']);self.assertIsNone(c['named_guide_author']);self.assertFalse(c['raw_sources_committed']);self.assertFalse(c['original_server_execution_verified'])
+
 if __name__=='__main__':unittest.main()
 

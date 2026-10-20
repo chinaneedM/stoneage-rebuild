@@ -328,3 +328,8 @@ compare the guide with accepted later flower/shell configuration while keeping
 names, locators, item IDs and incomplete conditions separate. Both derived
 reports and source/artifact custody receipts are retained in Git. Consult the
 last CURRENT-STATE entry for the live queue.
+
+
+### 2026-10-20 — Early riding and pet crafting source specifications
+
+The [CN2.0 riding source](docs/specs/STONEAGE-CN20-RIDING-TRAINER-COMBAT-SOURCE-R1.md) records trainer flow and documentary combat attribute sources; the [4.0-labelled certificate/manor source](docs/specs/STONEAGE-CN40-RIDING-CERTIFICATE-MANOR-SOURCE-R1.md) keeps later certificate and nine-manor service relationships separate. The [early pet crafting source](docs/specs/STONEAGE-CN20-PET-CRAFTING-SOURCE-R1.md) adds processing operations, two skill-price labels and five ingredient categories, preserving advice, hearsay and missing formulas. Operator hosting does not certify guide authorship; later captured images do not prove same-build execution. Derived source replay and custody are retained in Git; original assets and full HTML are not. The final CURRENT-STATE entry remains the live queue authority.

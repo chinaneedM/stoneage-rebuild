@@ -1,0 +1,201 @@
+{
+  "schema": "stoneage.cn20_pet_crafting.replay.r1",
+  "inputs": [
+    {
+      "source_id": "N1",
+      "bytes": 69317,
+      "sha256": "561950fd7bba41e7d39f4a781a671e11e175c7fe08dd1b5481fdf1fd23ba351b",
+      "capture_timestamp": "20011204194619"
+    },
+    {
+      "source_id": "S1",
+      "bytes": 66409,
+      "sha256": "9fbce4e1084747db202e8e24ec4b9993dc3fb2399710b5ce4ee839c6c6bc5cc6",
+      "capture_timestamp": "20011205052725"
+    },
+    {
+      "source_id": "S2",
+      "bytes": 65316,
+      "sha256": "e4ebd9244abd0f40daee66aa90a94f9d4d07fc2f4ed2f1d72e2f76bbac318960",
+      "capture_timestamp": "20011205052908"
+    },
+    {
+      "source_id": "S3",
+      "bytes": 78022,
+      "sha256": "3056d727903c56000cdfcd877924efa244967eb8b6407db08c08e60ec7a9b0ee",
+      "capture_timestamp": "20011204201517"
+    },
+    {
+      "source_id": "I1",
+      "bytes": 122918,
+      "sha256": "4ed729712c5a04fb4711ded9ce9c8ab507cb23414b26594b135a5b58c861d042",
+      "capture_timestamp": "20020102225909"
+    },
+    {
+      "source_id": "I2",
+      "bytes": 134082,
+      "sha256": "1858c2bb6912394c9f48c5cfab0c62b140417080bd13d0c0f2f62c7f061cfd8b",
+      "capture_timestamp": "20020102222833"
+    }
+  ],
+  "extracted": [
+    {
+      "routes": [
+        {
+          "label": "合成讲座",
+          "href": "/ZHUANQU/stoneage2/synthesize/course.asp"
+        },
+        {
+          "label": "料理制作",
+          "href": "/ZHUANQU/stoneage2/synthesize/cook.asp"
+        },
+        {
+          "label": "宠物技能",
+          "href": "/ZHUANQU/stoneage2/pet/skill.asp"
+        }
+      ]
+    },
+    {
+      "core_sha256": "eb326449d22a9724b0e305ab364474fcaf1619df36ddf43d884b952c9c1dbdad",
+      "core_utf8_bytes": 3360,
+      "facts": {
+        "flow": [
+          "LEARN_PROCESSING_AT_PET_SHOP",
+          "RIGHT_CLICK_ITEMS_IN_INVENTORY",
+          "CONFIRM_PROCESSING_MARKS_AND_TWO_OR_MORE_SOURCE_ITEMS",
+          "OPEN_PET_PANEL_SELECT_SKILLED_PET",
+          "SELECT_SKILL_AND_CONFIRM_MARKS",
+          "INVOKE_PROCESSING"
+        ],
+        "minimum_items_source_wording": "两种以上 / 两项",
+        "distinct_species_or_stack_predicate": null,
+        "skill_taught_to": "PET",
+        "teacher_surface": "宠物店",
+        "action_surface": "INVENTORY_RIGHT_CLICK_THEN_PET_SKILL_PANEL",
+        "failure_outcomes_reported": [
+          "ORIGINALS_DISAPPEAR",
+          "TRANSFORM_TO_OTHER_ITEMS"
+        ],
+        "probabilities": null,
+        "low_level_1_loyalty_100": "SITE_RECOMMENDATION_NOT_ACCESS_PREDICATE",
+        "pet_list": "SOURCE_SAYS_POPULAR_OR_LEGENDARY_NOT_SPECIES_MASTER",
+        "fortune_telling": "SOURCE_ADVICE_AT_VILLAGE_CHIEF_HOUSE_NOT_PROVEN_ENGINE_DEPENDENCY",
+        "enchantment_parity_mp_duration": "EXPLICIT_YOU_XIAOXI_ZHICHU_HEARSAY_NOT_RUNTIME_FORMULA"
+      },
+      "image_ref": {
+        "full": "IMG/course/1.gif",
+        "thumbnail": "IMG/course/1s.gif"
+      }
+    },
+    {
+      "core_sha256": "816427ee5b88b1bf30de4dbd60fc27eb9a7bb2e585e2c7653f41fcc8c989b112",
+      "core_utf8_bytes": 1897,
+      "facts": {
+        "food_categories": [
+          {
+            "category": "汤料理",
+            "ingredients_as_written": [
+              "水"
+            ],
+            "qualification": "REQUIRED_WATER_OTHER_SIMMERED_MATERIALS_UNSPECIFIED",
+            "quantities": null
+          },
+          {
+            "category": "串烧料理",
+            "ingredients_as_written": [
+              "木串"
+            ],
+            "qualification": "REQUIRED_SKEWER_OTHER_MATERIALS_UNSPECIFIED",
+            "quantities": null
+          },
+          {
+            "category": "米饭料理",
+            "ingredients_as_written": [
+              "水",
+              "米",
+              "炭"
+            ],
+            "qualification": "SOURCE_SAYS_REQUIRED_NOT_COMPLETE_RECIPE",
+            "quantities": null
+          },
+          {
+            "category": "饭团料理",
+            "ingredients_as_written": [
+              "水",
+              "米"
+            ],
+            "qualification": "CHARCOAL_HEDGED_NOT_VERY_NEEDED_NOT_PROVEN_FORBIDDEN_OR_ABSENT",
+            "quantities": null
+          },
+          {
+            "category": "面包料理",
+            "ingredients_as_written": [
+              "橡树果"
+            ],
+            "qualification": "PRIMARY_MATERIAL_NOT_EXCLUSIVE_OR_COMPLETE",
+            "quantities": null
+          }
+        ],
+        "material_sources": [
+          "玛莉娜丝村便利商店",
+          "加加村便利商店",
+          "战斗取得的肉"
+        ],
+        "material_grade_is_not_price": true,
+        "ground_items": "ASK_OWNER_FIRST_SOCIAL_ADVICE_NOT_GAME_LOCK",
+        "temporary_storage": {
+          "surface": "便利屋右下角物品寄放处",
+          "source_limit": 5,
+          "overflow": "EARLIEST_ITEM_DISAPPEARS_SOURCE_WARNING",
+          "unit_or_persistence": null
+        },
+        "low_level_pet": "PLAYER_EXPERIENCE_HEARSAY",
+        "material_price_difference": "LOCAL_SPECIALTY_AT_CONVENIENCE_STORE_REPORTED_MORE_EXPENSIVE_NO_PRICE_LIST"
+      },
+      "image_ref": {
+        "full": "IMG/cook/1.gif",
+        "thumbnail": "IMG/cook/1s.gif"
+      }
+    },
+    {
+      "core_sha256": "8a6a792cc2e30d956849d0aea0e440cd7b5869ef33dc41901d08c3f6a65c5f98",
+      "core_utf8_bytes": 2481,
+      "facts": {
+        "skills": [
+          {
+            "name": "加工",
+            "description": "使用素材合成制作道具",
+            "price_label": 1500,
+            "price_currency": null,
+            "price_role": "SKILL_PRICE_COLUMN_NOT_PER_CRAFT_FEE"
+          },
+          {
+            "name": "料理",
+            "description": "使用素材合成制作料理",
+            "price_label": 1000,
+            "price_currency": null,
+            "price_role": "SKILL_PRICE_COLUMN_NOT_PER_CRAFT_FEE"
+          }
+        ],
+        "success": "NOT_GUARANTEED_PET_TRAITS_AND_LUCK_NO_FORMULA",
+        "processing_synthesis": "SAME_SOURCE_CONTEXT_TERMS_NOT_GLOBAL_CROSS_VERSION_SKILL_ID"
+      }
+    },
+    {
+      "format": "GIF",
+      "width": 640,
+      "height": 480,
+      "visual_observation": "MANUAL_SOURCE_REFERENCE_ONLY_NOT_EXECUTION"
+    },
+    {
+      "format": "GIF",
+      "width": 640,
+      "height": 480,
+      "visual_observation": "MANUAL_SOURCE_REFERENCE_ONLY_NOT_EXECUTION"
+    }
+  ],
+  "raw_sources_in_output": false,
+  "original_server_execution_verified": false,
+  "hearsay_promoted": false,
+  "images_same_build_as_text": false
+}

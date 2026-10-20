@@ -56,3 +56,7 @@ I1实际为PET STATUS与世界场景，个体面板可见等级16、忠诚59，�
 
 成功率、配方、NPC、币种及存档规则，只在同版原配置/实际运行、具名菜单或明确运营勘误出现时重开。不扩结果表、全宠名单、魔法公式或自动料理helper。NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-30返回全官方版本22域另一具名材料。Stage A7 PARTIAL+2 OPEN，B/wiki GATED，R79 PAUSED_NON_BLOCKING。
 
+
+## 作者与实际验收补记
+
+三正文未见具名作者，泛投稿说明的“作者”不构成本文署名。官方域名及页脚证托管，不认证运营商撰文或开发者意图。来源阶层应理解为官方站托管、作者未知，传闻/推荐仍按原限定。补强后11个源测试，独立干净检出70相关测试、另一套三核心和两表行提取、两GIF解码通过；实际候选/main/双ZIP与永久SHA/Git链详CUSTODY，不合并不同HEAD的检查数。下一项仍R30。

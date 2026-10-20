@@ -7581,3 +7581,8 @@ https://web.archive.org/web/20011205052725id_/http://www.waei.com.cn/ZHUANQU/sto
 https://web.archive.org/web/20011205052908id_/http://www.waei.com.cn/ZHUANQU/stoneage2/synthesize/cook.asp 65316B SHA256 e4ebd9244abd0f40daee66aa90a94f9d4d07fc2f4ed2f1d72e2f76bbac318960；
 https://web.archive.org/web/20011204201517id_/http://www.waei.com.cn/ZHUANQU/stoneage2/pet/skill.asp 78022B SHA256 3056d727903c56000cdfcd877924efa244967eb8b6407db08c08e60ec7a9b0ee。
 两真实原图裸域20020102225909 course/1.gif 122918B SHA256 4ed729712c5a04fb4711ded9ce9c8ab507cb23414b26594b135a5b58c861d042；20020102222833 cook/1.gif 134082B SHA256 1858c2bb6912394c9f48c5cfab0c62b140417080bd13d0c0f2f62c7f061cfd8b，GIF640×480，均已目视，只证界面参考。派生STONEAGE-CN20-PET-CRAFTING-SOURCE-R1.json/NEGATIVE-AUDIT-R1.json、中文规格与六输入runner。原HTML/图不进Git，推荐/传闻不升级原服公式。
+
+
+### R29取源身份与双ZIP后续验收
+
+三个2001官方站正文均未见具名作者，泛投稿说明不算文章署名；运营商域名/页脚证明托管，未认证运营商撰文或开发者意图。经验/传闻逐项保留。106ac84自身源候选1/main11已success，artifact12242150789/12241821433实际ZIP2635B、唯一派生JSON6524B SHA256 af990b11c3626a2c2a2e97345ec6f1b81185c122cdc04a7b7c0e2941dc79c71f，两支与六实输入本地结果一致。CI-REPLAY/CUSTODY永久固定job/ZIP/raw/Git摘要、初候选与补强候选不同HEAD清单，原HTML/图未提交。
