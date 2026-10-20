@@ -55,3 +55,5 @@
 
 缺失创建池、布局、村宠和公式，仅在同版原屏幕/输入轨迹、具名初始表、原配置或构建可认证代码到位后重开。到达本页有限材料止点，NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-31返回全版本22域新具名材料；不扩属性/创建helper。Stage A7 PARTIAL+2 OPEN，B/wiki GATED，R79 PAUSED_NON_BLOCKING。
 
+
+配图复核补记：实际可见MENU、Mail、Action、Eng字样，只作为像素观察。它们不认证整套客户端语言/地区，Eng也不能直接当服务器语言标签；中文官方页面引用此图，不证明同一中文构建。旧派生输入的Git blob也逐一按内容重算核对。

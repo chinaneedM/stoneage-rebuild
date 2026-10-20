@@ -1,6 +1,6 @@
 """Finite CN2.0 creation/status documentary contract, not a character-stat engine."""
 import argparse
-from hashlib import sha256
+from hashlib import sha256,sha1
 import json
 from pathlib import Path
 import re
@@ -26,6 +26,7 @@ BOUNDARIES=dict(operator_authorship_verified=False,original_client_or_server_exe
  unmentioned_stat_effects_are_zero=False,reported_deltas_are_verified_full_stat_formula=False,attack_speed_means_extra_attacks=False,
  exact_element_allowed_pair_list=None,element_damage_multiplier=None,starting_village_names_ids_or_starter_species=None,
  build_nicknames_are_classes=False,image_is_creation_or_status_screen=False,image_same_build_as_body=False,
+ image_english_labels_authenticate_region_or_language=False,
  source_typo_silently_corrected=False,jss20_creation_or10_element_points_transferred_to_cn=False,
  repeated_three_point_clauses_mean_six_points=False,tw10_or_jss1999_backfill=False,raw_sources_committed=False,
  stage_a='7_PARTIAL_2_OPEN',stage_b_and_wiki='GATED',r79='PAUSED_NON_BLOCKING')
@@ -75,13 +76,13 @@ def extract_body(b):
 def image_metadata(b):
     require(b[:6] in (b'GIF87a',b'GIF89a') and len(b)>=13,'Not GIF')
     w,h=struct.unpack('<HH',b[6:10]);require((w,h)==(640,480),'Image dimensions changed')
-    return dict(format='GIF',width=w,height=h,manual_observation='OUTDOOR_HUMAN_AND_BLUE_CREATURE_NO_CREATION_OR_STATUS_PANEL',original_character_or_pet_identity=None)
+    return dict(format='GIF',width=w,height=h,manual_observation='OUTDOOR_HUMAN_AND_BLUE_CREATURE_NO_CREATION_OR_STATUS_PANEL',visible_labels=['MENU','Mail','Action','Eng'],original_character_or_pet_identity=None)
 
 def derived_comparison(r):
     pins=r['derived_inputs'];require([s['path'] for s in pins]==list(DERIVED_PATHS),'Finite derived inputs changed')
     inputs=[]
     for s in pins:
-        b=(ROOT/s['path']).read_bytes();require(len(b)==s['bytes'] and sha256(b).hexdigest()==s['sha256'],'Derived source pin changed');inputs.append(json.loads(b))
+        b=(ROOT/s['path']).read_bytes();require(len(b)==s['bytes'] and sha256(b).hexdigest()==s['sha256'] and sha1(b'blob '+str(len(b)).encode()+bytes([0])+b).hexdigest()==s['git_blob'],'Derived source pin changed');inputs.append(json.loads(b))
     jss=inputs[0]['pages']['manual01']['creation_contract']
     require(jss['initial_stat_allocation_points']==20 and jss['initial_element_allocation_points']==10,'Japanese creation scope changed')
     advice=inputs[1]['records'][4]['source_described_claims']

@@ -68,6 +68,11 @@ class CreationSource(unittest.TestCase):
         for i,k,v in [(0,'layout_coordinates',[0,0]),(0,'colors',4),(2,'exact_exp_thresholds',[1]),(3,'base_stats',{'hp':10}),(4,'rounding_or_caps','FLOOR'),(9,'mandatory_build','ENDURANCE_20'),(10,'character_or_pet_ids',[1])]:
             with self.subTest(record=i,key=k):self.rejects(lambda r:r['records'][i].__setitem__(k,v))
         self.rejects(lambda r:r['derived_inputs'][0].__setitem__('sha256','0'*64))
+    def test_visible_english_labels_do_not_certify_region_and_old_git_pins_are_checked(self):
+        self.assertEqual(self.report['inputs'][2]['extracted']['visible_labels'],['MENU','Mail','Action','Eng'])
+        self.assertFalse(self.report['boundaries']['image_english_labels_authenticate_region_or_language'])
+        self.rejects(lambda r:r['boundaries'].__setitem__('image_english_labels_authenticate_region_or_language',True))
+        self.rejects(lambda r:r['derived_inputs'][1].__setitem__('git_blob','0'*40))
 
 if __name__=='__main__':unittest.main()
 
