@@ -1,0 +1,36 @@
+name: Verify JP2008 tiger quest story, enigma and official source boundaries
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-JP2008-TIGER-QUEST-*.json'
+      - 'tools/stoneage_jp2008_tiger_quest_source.py'
+      - 'tools/stoneage_jp2008_shadow_release.py'
+      - 'tools/stoneage_jp2008_cooperation_source.py'
+      - 'tests/test_stoneage_jp2008_tiger_quest_source.py'
+      - '.github/workflows/verify-stoneage-jp2008-tiger-quest-source.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-JP2008-TIGER-QUEST-*.json'
+      - 'tools/stoneage_jp2008_tiger_quest_source.py'
+      - 'tools/stoneage_jp2008_shadow_release.py'
+      - 'tools/stoneage_jp2008_cooperation_source.py'
+      - 'tests/test_stoneage_jp2008_tiger_quest_source.py'
+      - '.github/workflows/verify-stoneage-jp2008-tiger-quest-source.yml'
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check poem chapters, unnamed story, reward ambiguity and separate image provenance
+        run: python -m unittest discover -s tests -p 'test_stoneage_jp2008_tiger_quest_source.py' -v
+      - name: Replay current media, September 2008 official page and four inspected JPEG
+        run: python -m tools.stoneage_jp2008_tiger_quest_source --fetch --output /tmp/jp2008-tiger-quest/replay.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: jp2008-tiger-quest-derived-replay
+          path: /tmp/jp2008-tiger-quest/replay.json
+          if-no-files-found: error
+          retention-days: 30

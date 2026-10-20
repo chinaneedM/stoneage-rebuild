@@ -7686,3 +7686,14 @@ I1提供确定/取消召唤通知，未取声效或原协议绑定；I2任务目
 内容c5bc2aca0eded77a3116d662a057771da1a91469/treeca30661bc367d45c9996bf2d4cc22c0ed6f651c7自身候选10/main11全SUCCESS，source run39417727148/39417830313、job118610729470/118611070986各实际10测试与两HTML两JPEG重放。artifact12262014170/12262345481已实下载，各ZIP2500B/SHA256 dfcff9d55fffe915e4353c6ec4488dfa1b600744228c5ddaf17e9512e09548f4/73be8a972b268f7f39f3b4a9c96c48927d3f18c5f9b0b0e6451aa945b090781d；唯一replay.json5713B/SHA256 1ed24ae3aa2b476f784d8577c1265900dab355ee4b01821de2bfdd19d9712bcf，候选/main/本地完整原始JSON逐字节一致。CI-CANDIDATE/CI-MAIN-REPLAY/CUSTODY永久固定源报告/11真实正文改写/双派生四文件的字节、SHA与原生Git blob及精确HEAD/tree/run/job/artifact/ZIP/raw链，八启动全文前缀固定；原HTML/JPEG不入Git。
 
 独立远端干净检出46相关测试、另一HTMLParser七段正文hash与两实际图片链接、Pillow完整JPEG双解码和八完整原生Git前缀通过。新增保管用例后47相关测试另验。物理火/闇灵火不混同，原则均分不变无条件引擎，地/风相反转伤方向保留；两瓶酒仍计划且未名，图中酷哥聊天不是任务对话，2015缩图不倒填2004。无版本号/部署/原公式/酒表/实服执行，Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停。NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-37回全官方22域另一具名材料，停止本魔法/新酒helper。保管提交自身Actions另按实际验收，不套父绿灯。
+
+
+## 2026-10-20 R37日服2008虎追任务、传承失而复现与官方谜面
+
+新读main eb9287c662656b4dd127d960e3e25b0e934c9a25/tree9d7d6a46a7634f3f7d8d32ae5cea46be8736283f，421分支/0PR/4835项完整tree无AGENTS，自身main8/候选7全SUCCESS，八连续性/路线/22域全文固定SHA/blob，旧queued37642417333保留。最高NEXT37全域重排，选择日服具名任务/地图/故事，不扩台湾魔法helper。重取R32已知媒体URL，只处理新虎追段；新得官方20080929194642捕获5760B/SHAd7f6df9e6370f8e77d09cdd335c23a735448b935588fda66e40a8e4caa65d829，UTF-8 BOM/声明核实，9月非6月上线当日字节。媒体2008/06/20 22:28发布文引文报6/24实施，编辑归运营者DigiPark，不证部署。
+
+10合同/中文规格新增虎追い山/三匹の虎～虎追いの詩～、七章捕虎传承诗与攻略线索；七章是诗结构，不是七任务且全文未取，三匹不当三种/完整宠物主表。诗在ギール岛重唱，不给山定位。ニース异变与生活变化—虎消失—诗被遗忘—某种到来—重唱的文献叙事，不具名来者/异变年代或倒填1999。官方纯水/追虎武具及防具/相逢才知其意仅谜面，非确证物品/奖励/捕获步骤。官方图示可能不同、未来平衡可能变化两限制语保留。核心官方1220B/SHA8787c1edf9cdbdd8d331382e5efe20b5f2d4db006eb10b5879a62f8f7a3238cf，媒体1180B/SHAe55c11ff1dddbbd7674b2f3b8c55f231b9096e5b6a710d7d62b7110fbeee0f01。
+
+官方真实6GIF href按裸域/www原样一次有限请求均404，未盲递归，不泛化档案全面缺失。媒体真实SS/001–004四250×200 JPEG全取/目视红黑条纹虎和队伍/灰岩走廊/另一人影室内/沙地棕榈肋骨，不绑NPC/物种/原图ID、原生分辨率或捕获奖励运行。当前媒体像素不是2008捕获，不替代缺失官方GIF。原HTML/JPEG不入Git。初次编码猜测Shift-JIS严格拒绝后纠正UTF-8；初次反例命中媒体导语而非发布文，审计未生成致本地测试缺文件，限定发布文容器重做13实际改写拒绝与两外层meta正例后50相关测试通过；不是远端失败或源缺失。
+
+独立CI/ZIP保管按后续实际。止点一官方页/一媒体任务段/四图/六精确失败，不扩七章/全地图/捕获攻略。原脚本、官方具名诗章/奖励/任务轨迹或原ID绑定才重开未知。最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-38回全官方22域另一具名材料。Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79 PAUSED_NON_BLOCKING；R32原范围及全部旧历史/22域前缀保持。
