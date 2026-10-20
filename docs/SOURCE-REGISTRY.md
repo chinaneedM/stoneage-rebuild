@@ -7625,3 +7625,10 @@ https://www.4gamer.net/games/013/G001377/20081111023/ 当前269299B SHA256695386
 I1提供确定/取消召唤通知，未取声效或原协议绑定；I2任务目标古瓜、剩余6小时33分，不认证NPC主表/坐标/初始或统一时限；I3局部剩余0小时59分/完成领奖提示，交出精靈勇者信物并收下柳牙之槍；所选同名面板耐久100%、攻+85敏-18、毒霧的精靈Lv6，余额8198620不当奖励。泛称信物与图内标签未证规范别名，图内武器不当全任务固定奖，Lv6不当任务等级，三图不同外观不当同人连续任务或两时钟相减。原ID/消耗/公式/原服执行均未知。
 
 12本包及51相关测试、五实输入离线重放与8真实正文语义改写拒绝通过；独立远端/CI/双ZIP保管按后续实际验收。原HTML/JPEG/放大图不进Git，人工转录不称独立OCR。最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-34回全官方版本22域另一具名材料；本预告止点已达，不自动扩六转/庄园续篇/全任务池或helper。只有同版资格表/脚本/菜单或轨迹才重开未知。Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79 PAUSED_NON_BLOCKING，原22域及全部历史前缀保持。
+
+
+## 2026-10-20 R33实际双CI与原图/派生永久保管
+
+内容2cde1987abce8a77dda80bc9e8cc7c3fbecf73f0/treeec9d487b9b690ffd5fbc919b16eb6131ef9a2641自身候选10/main11全success后非强制快进；source run39411352610/39411464180，job118589614407/118589982458各实际12测试+两HTML三JPEG实重放。artifact12259765024/12258609744已实际下载，ZIP均1993B/SHA256 eadf9527613f97ccf23865236da139a1545d1c1439c32da0e85f5bf6cfd27f25/45eb606c582f16fd12cdb6b87b56911c96f6994be44ec497c1e0ef599441d45d；唯一replay.json均4126B/SHA256 846cb6dbd57a0ad175f39188edf59667bb8c4510f8ae2b118c7d2541dd6134e5，两支原始JSON逐字节一致且等于本地五实输入派生。两份CI原JSON和CUSTODY永久固定源报告/八真实语义反例/派生的字节、SHA、Git blob及精确HEAD/run/job/artifact/ZIP/raw链；五实输入全字节固定，原HTML/图不进Git。
+
+独立远端干净检出51相关测试、另一HTMLParser重提四段hash、三JPEG完整解码、八完整历史前缀与本地完整JSON逐字节一致通过；追加保管用例后52相关测试另实测通过。CI路径补入实际传递依赖shadow_release，源语义未变；保管提交自身Actions随后实际验收，不套父绿灯。角色/资格/泛称与图内信物、倒计时/初始时限、局部面板/全奖励表、余额/奖金额、2004图/2005文及预告/部署保持分开，未认证原服或原ID。最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-34回全官方22域另一具名材料，停止本页/续文helper。Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停，全部旧历史保持。

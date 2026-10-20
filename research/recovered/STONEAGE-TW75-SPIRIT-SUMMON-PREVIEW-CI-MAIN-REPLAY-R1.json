@@ -1,0 +1,148 @@
+{
+  "schema": "stoneage.tw75_spirit_summon_preview.replay.r1",
+  "inputs": [
+    {
+      "id": "P0",
+      "bytes": 28883,
+      "sha256": "19661e2acca046bf8c6dc86dc968107fe9935cd58a8f3cd8ce5e1de5aeba7f8b"
+    },
+    {
+      "id": "P1",
+      "bytes": 20368,
+      "sha256": "b073ac516fd358805e961efb9b5f2746552f1d1e8f11c4a8ffa43ce3b67381ef"
+    },
+    {
+      "id": "I1",
+      "bytes": 48080,
+      "sha256": "32bc1175cae8e972bb0930c8913aaef033606cc1417aaed1ba45f6ff1133ecec"
+    },
+    {
+      "id": "I2",
+      "bytes": 58587,
+      "sha256": "85623ea24219725f43a0a4711e3259f0a69aa9e60436e0932ea31e50abdd7fa0"
+    },
+    {
+      "id": "I3",
+      "bytes": 89797,
+      "sha256": "5ba05cad1f9175d61ae4beca07b2ba63c0dc340d422075e11bbd83e042722d92"
+    }
+  ],
+  "extracted": [
+    {
+      "row_count": 15,
+      "selected": {
+        "article_id_as_web_key": 84,
+        "title": "7.5版報導之一：精靈的召喚",
+        "index_date_as_written": "2004-5-28"
+      },
+      "web_key_is_game_quest_id": false
+    },
+    {
+      "paragraphs": [
+        {
+          "characters": 68,
+          "sha256": "232781772d6904d2ecdee3ac05bd00d0736262db177738f2c6a63761ac05fe5a"
+        },
+        {
+          "characters": 166,
+          "sha256": "7faeaa9624f9d8478a7ee470bd248ad06a528be6af05fad9862aea5bff69842d"
+        },
+        {
+          "characters": 128,
+          "sha256": "308f7b5a081e3845fd7074933c7b1d4ca6f8ff6a50612d46e2b518ddecfd8834"
+        },
+        {
+          "characters": 95,
+          "sha256": "846f1a16d961fb7d4af0430cb076707596137d05efed8c37754e2a17db18fa4e"
+        }
+      ],
+      "facts": {
+        "system": "精靈的召喚",
+        "preview_development_state": "7.5_DEVELOPMENT_NEARING_COMPLETION",
+        "roles": [
+          "使者",
+          "勇者"
+        ],
+        "trigger": "UNSPECIFIED_SPECIAL_CONDITION",
+        "token_category_as_written": "精靈信物",
+        "flow": [
+          "SPIRIT_CALLS_PLAYER",
+          "MESSENGER_FINDS_CHOSEN_HERO",
+          "HERO_RECEIVES_TOKEN_FROM_MESSENGER",
+          "HERO_LEARNS_MISSION",
+          "MISSION_COMPLETED",
+          "BOTH_ROLES_REPORTED_TO_RECEIVE_REWARDS"
+        ],
+        "rewards": "UNSPECIFIED_GENEROUS_REWARDS_FOR_BOTH_NOT_PROVEN_EQUAL_CONTENT",
+        "purpose": "REBUILD_NEWCOMER_VETERAN_TRUST_AND_FIGHT_DEMON_FACTION",
+        "newcomer_bridge": "DESIGN_RATIONALE_NOT_LEVEL_OR_CLASS_RULE",
+        "spirit_or_demon_individual_names": null
+      },
+      "image_refs": [
+        "http://www.wayi.com.tw/images02/sa0527-1.JPG",
+        "http://www.wayi.com.tw/images02/sa0527-2.JPG",
+        "http://www.wayi.com.tw/images02/sa0527-3.JPG"
+      ]
+    }
+  ],
+  "image_dimensions": [
+    [
+      640,
+      480
+    ],
+    [
+      640,
+      480
+    ],
+    [
+      640,
+      480
+    ]
+  ],
+  "manual_image_observations": [
+    {
+      "image": "I1",
+      "dialog": "CONSENT_TO_FIND_HERO_AGAINST_DEMONS",
+      "buttons": [
+        "確定",
+        "取消"
+      ],
+      "visible_call_message": true,
+      "actual_audio_obtained": false,
+      "choice_effect_or_protocol_binding": null
+    },
+    {
+      "image": "I2",
+      "mission_target_label": "古瓜",
+      "mission": "FIND_TARGET_AND_LEARN_RECENT_TROUBLES",
+      "remaining_time_display": {
+        "hours": 6,
+        "minutes": 33
+      },
+      "timer_initial_duration": null,
+      "npc_spawn_or_id": null
+    },
+    {
+      "image": "I3",
+      "mission_completion_prompt_visible": true,
+      "remaining_time_visible_hours": 0,
+      "remaining_time_visible_minutes": 59,
+      "full_time_suffix": null,
+      "handed_over_token_label": "精靈勇者信物",
+      "received_item_label": "柳牙之槍",
+      "item_panel": {
+        "durability_percent": 100,
+        "attack_modifier": 85,
+        "agility_modifier": -18,
+        "spell_label": "毒霧的精靈",
+        "spell_level": 6
+      },
+      "money_display": 8198620,
+      "money_is_reward": false,
+      "actual_equip_or_cast_verified": false
+    }
+  ],
+  "image_text_independently_ocr_verified": false,
+  "original_server_executed": false,
+  "raw_sources_in_output": false
+}

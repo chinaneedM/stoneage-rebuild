@@ -56,4 +56,16 @@ class SummonPreview(unittest.TestCase):
  def test_spirit_demon_and_later_region_worldlines_are_not_merged(self):
   for k in ['spirit_is_named_spirit_king','demon_invasion_is_cross_region_canon','summon_is_player_pet_summoning','original_server_execution_verified']:
    self.reject(lambda r:r['boundaries'].__setitem__(k,True))
+ def test_downloaded_two_ci_reports_have_durable_exact_source_custody(self):
+  from hashlib import sha256,sha1
+  c=json.loads((REPORT.parent/'STONEAGE-TW75-SPIRIT-SUMMON-PREVIEW-CUSTODY-R1.json').read_text())
+  self.assertEqual([len(c['runs'][k]) for k in ['candidate','main']],[10,11])
+  for rows in c['runs'].values():self.assertTrue(all(x['head_sha']==c['content_head'] and x['conclusion']=='success' for x in rows))
+  for pin in c['pins']:
+   b=(REPORT.parents[2]/pin['path']).read_bytes();self.assertEqual(len(b),pin['bytes']);self.assertEqual(sha256(b).hexdigest(),pin['sha256']);self.assertEqual(sha1(b'blob '+str(len(b)).encode()+bytes([0])+b).hexdigest(),pin['git_blob'])
+  payloads=[]
+  for a in c['artifacts']:
+   b=(REPORT.parents[2]/a['derived_path']).read_bytes();self.assertEqual(len(b),a['member_bytes']);self.assertEqual(sha256(b).hexdigest(),a['member_sha256']);payloads.append(b)
+   r=json.loads(b);self.assertEqual(r['extracted'],self.r['extracted']);self.assertEqual(r['manual_image_observations'],self.r['manual_image_observations']);self.assertEqual(r['inputs'],[dict(id=x['id'],bytes=x['bytes'],sha256=x['sha256']) for x in self.r['inputs']])
+  self.assertEqual(payloads[0],payloads[1]);self.assertTrue(c['candidate_and_main_and_local_raw_json_equal']);self.assertFalse(c['original_server_execution_verified']);self.assertFalse(c['raw_sources_committed'])
 if __name__=='__main__':unittest.main()

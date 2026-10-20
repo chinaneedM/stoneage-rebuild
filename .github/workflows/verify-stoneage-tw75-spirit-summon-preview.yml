@@ -8,6 +8,7 @@ on:
       - 'tools/stoneage_wayi_newbie_riding_plan.py'
       - 'tools/stoneage_early_content_probe.py'
       - 'tools/stoneage_jp2008_cooperation_source.py'
+      - 'tools/stoneage_jp2008_shadow_release.py'
       - '.github/workflows/verify-stoneage-tw75-spirit-summon-preview.yml'
   pull_request:
     paths:
@@ -17,6 +18,7 @@ on:
       - 'tools/stoneage_wayi_newbie_riding_plan.py'
       - 'tools/stoneage_early_content_probe.py'
       - 'tools/stoneage_jp2008_cooperation_source.py'
+      - 'tools/stoneage_jp2008_shadow_release.py'
       - '.github/workflows/verify-stoneage-tw75-spirit-summon-preview.yml'
 permissions:
   contents: read
