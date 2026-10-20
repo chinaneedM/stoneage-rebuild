@@ -52,5 +52,16 @@ class RidingSource(unittest.TestCase):
         for key,value in [('original_server_execution_verified',True),('exact_client_build','2.0.exe'),('tw10_or_jss1999_backfill',True)]:
             self.rejects(lambda r:r['boundaries'].__setitem__(key,value))
 
+    def test_downloaded_candidate_and_main_replay_custody(self):
+        from hashlib import sha256,sha1
+        c=json.loads((REPORT.parent/'STONEAGE-CN20-RIDING-CUSTODY-R1.json').read_text())
+        self.assertEqual([len(c['runs'][k]) for k in ('candidate','main')],[10,11])
+        for rows in c['runs'].values():
+            self.assertTrue(all(r['head_sha']==c['content_head'] and r['conclusion']=='success' for r in rows))
+        for pin in c['pins']:
+            b=(REPORT.parents[2]/pin['path']).read_bytes();self.assertEqual(len(b),pin['bytes']);self.assertEqual(sha256(b).hexdigest(),pin['sha256']);self.assertEqual(sha1(b'blob '+str(len(b)).encode()+bytes([0])+b).hexdigest(),pin['git_blob'])
+        self.assertEqual(c['artifacts'][0]['member_sha256'],c['artifacts'][1]['member_sha256'])
+        self.assertFalse(c['raw_sources_committed']);self.assertFalse(c['original_server_execution_verified'])
+
 
 if __name__=='__main__':unittest.main()

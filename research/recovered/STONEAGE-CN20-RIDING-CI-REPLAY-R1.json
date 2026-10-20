@@ -1,0 +1,69 @@
+{
+  "schema": "stoneage.cn20_riding_trainer_combat.replay.r1",
+  "inputs": [
+    {
+      "source_id": "N1",
+      "bytes": 69317,
+      "sha256": "561950fd7bba41e7d39f4a781a671e11e175c7fe08dd1b5481fdf1fd23ba351b"
+    },
+    {
+      "source_id": "S1",
+      "bytes": 66879,
+      "sha256": "ee59e2c8015d39b58f466943c9cb83ec1dce9894874caa2d539006e28e320a2e"
+    },
+    {
+      "source_id": "I1",
+      "bytes": 31680,
+      "sha256": "492e22003f4537dba9468c3f50125063d21db6e4f1d546147a344ebad509459f"
+    }
+  ],
+  "navigation": {
+    "label": "骑乘宠物",
+    "href": "/ZHUANQU/stoneage2/pet/qdragon.asp"
+  },
+  "riding": {
+    "core_sha256": "9fb3fc4b1d5e6d4221564b4f5786363d476c87dff7c9cb1ceecc474a1e7b8528",
+    "core_utf8_bytes": 1212,
+    "facts": {
+      "trainer_role_as_written": "宠物骑师",
+      "location": "FOUR_MANOR_LEADERS_HOUSES_NEAR_FOUR_VILLAGES",
+      "eligible_groups_as_written": [
+        "雷龙",
+        "老虎"
+      ],
+      "compatible_pair_query": true,
+      "courses_as_written": [
+        "下级",
+        "中级",
+        "上级"
+      ],
+      "loyalty_label": 100,
+      "command_as_written": "骑乘",
+      "command_surface": "宠物栏",
+      "training_target": "HUMAN_NOT_PET",
+      "replacement_pet_retraining_not_required_reported": true,
+      "flow": [
+        "ASK_TRAINER_FOR_CHARACTER_COMPATIBILITY",
+        "OBTAIN_AND_CARRY_ELIGIBLE_PET",
+        "PAY_TUITION_AND_LEARN_MATCHING_COURSE",
+        "MEET_PET_LEVEL_AND_LOYALTY_CLAUSES",
+        "SELECT_RIDE_IN_PET_PANEL"
+      ],
+      "life_force": "SUM_OF_HUMAN_AND_PET_SOURCE_TERM",
+      "damage_split": "PROPORTIONAL_UNSPECIFIED_WEIGHTS",
+      "defense": "BETWEEN_HUMAN_AND_PET_UNSPECIFIED_WEIGHTS",
+      "melee_attack": "PET_ATTACK",
+      "ranged_attack": "HUMAN_ATTACK",
+      "melee_initiation": "PET_AGILITY",
+      "ranged_initiation": "HUMAN_AGILITY",
+      "receiving_attack_agility": "BETWEEN_HUMAN_AND_PET_UNSPECIFIED_WEIGHTS"
+    }
+  },
+  "image_dimensions": [
+    400,
+    300
+  ],
+  "image_capture_timestamp": "20020402014049",
+  "same_build_or_original_server_verified": false,
+  "raw_html_or_images_in_output": false
+}

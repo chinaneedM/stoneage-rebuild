@@ -7567,3 +7567,8 @@ S1 https://www.4gamer.net/games/013/G001377/20080707020/，2008/07/07 17:25，�
 ### CN20-RIDING-TRAINER-COMBAT-SOURCE-R1（2026-10-20）
 
 N1 https://web.archive.org/web/20011204194619id_/http://www.waei.com.cn/ZHUANQU/stoneage2/pet/new_pet.asp，69317B SHA256561950fd7bba41e7d39f4a781a671e11e175c7fe08dd1b5481fdf1fd23ba351b，重新读取其“骑乘宠物”实际href。S1 https://web.archive.org/web/20011204195948id_/http://www.waei.com.cn/ZHUANQU/stoneage2/pet/qdragon.asp，66879B SHA256ee59e2c8015d39b58f466943c9cb83ec1dce9894874caa2d539006e28e320a2e，首请求N1时间戳后跳转到此实际捕获；正文2.0标签、核心1212UTF8字节SHA2569fb3fc4b1d5e6d4221564b4f5786363d476c87dff7c9cb1ceecc474a1e7b8528。I1实际相对img/ridepet/1.jpg，最终 https://web.archive.org/web/20020402014049id_/http://waei.com.cn/ZHUANQU/stoneage2/pet/img/ridepet/1.jpg，31680B JPEG400×300 SHA256492e22003f4537dba9468c3f50125063d21db6e4f1d546147a344ebad509459f，已目视；不能称2001图像或同版SPR。三源HTTP200/实际跳转与捕获分别保存，原资产不进Git。用途：骑师服务/学习人与骑乘战斗文献约束；费用/等级上限/权重/脚本未知。独立CI与ZIP/raw/Git按真实后续收据保管。
+
+
+### R28 新浪4.0标记骑宠证明书/九庄园来源（2026-10-20）
+
+现页 https://games.sina.com.cn/zhuanqu/stoneage3/stoneage4_3.shtml 40475B SHA256 9860beacd990a083b096d7b046d9f59f8f5874db65e01d8c95bb31f6a74ced6b；一次availability固定历史 https://web.archive.org/web/20021201125523id_/http://games.sina.com.cn:80/zhuanqu/stoneage3/stoneage4_3.shtml 20144B SHA256 e27448cb7a6bccd92305126e1516fd2a6bb072f5046290c21c073707d532a7e9。核心各870B/SHA256 54f642c1069de1d775a852c29ba762c0f9b2a30341ad65005eb51ba39815a84a，两坏字节保留、九行列式对应不猜补；门户作者/原服未验证。派生STONEAGE-CN40-RIDING-CERTIFICATE-MANOR-SOURCE-R1.json、runner/test/中文规格；原HTML仅临时重放。R27三实源候选/mainZIP派生重放和保管清单已补。

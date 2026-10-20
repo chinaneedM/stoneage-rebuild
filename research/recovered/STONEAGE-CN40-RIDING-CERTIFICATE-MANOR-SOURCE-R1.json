@@ -1,0 +1,744 @@
+{
+  "schema": "stoneage.cn40_riding_certificate_manor.source.r1",
+  "task": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-28",
+  "date": "2026-10-20",
+  "baseline": {
+    "head": "5b40f22fb9b13c072d006695f462934e93bd5c04",
+    "tree": "e4e82c2431ceb487f87424d1ffd185acfefe7836",
+    "own_main_success": 11,
+    "own_candidate_success": 10,
+    "continuity_prefix_pins": [
+      {
+        "path": "README.md",
+        "bytes": 21648,
+        "sha256": "9e5cfa8652f58f18a0bfc1df08f5b6b4f31ba63b86f6df2385959801a10bccbb",
+        "git_blob": "961cd68e7850b5535c0c5bdc82ed2e506c651a21"
+      },
+      {
+        "path": "docs/PROJECT-CONTINUITY-PROTOCOL-R1.md",
+        "bytes": 9762,
+        "sha256": "c44834eeec87f7a43e9cb4905f08377349e36d58b1fff2c5a75a6975db695e3b",
+        "git_blob": "ba9bbe19384589400abc61af37a360a40bf91452"
+      },
+      {
+        "path": "docs/CURRENT-STATE.md",
+        "bytes": 2151437,
+        "sha256": "b75c7a99c8b57cd98d2800dce72c583fbef33e5ed41bc04ce9e51d3e25fe107e",
+        "git_blob": "df9feffadb759c8f20c34cfbc1153d25db354e17"
+      },
+      {
+        "path": "docs/DESIGN-DECISIONS.md",
+        "bytes": 45965,
+        "sha256": "28b572ed01179eacd5a06b4ad62c76e4baef22ac49587aa0bad452a7cb3fe8e6",
+        "git_blob": "013ae4fad9301ab0140fe408a423b3abad97d1f9"
+      },
+      {
+        "path": "docs/HISTORICAL-TIMELINE.md",
+        "bytes": 501079,
+        "sha256": "e1e10695d35008307f6f2d924afcaf414bcef2266f7ffd51deda02d6cdd90370",
+        "git_blob": "645a9c95cc88a443198b052a6449d44dcd1a4589"
+      },
+      {
+        "path": "docs/SOURCE-REGISTRY.md",
+        "bytes": 785044,
+        "sha256": "09586643b21bcc0f5a9724e36cab7e5ea413a5dba25e5932a2e42832330443bc",
+        "git_blob": "1013b91702091ec9ffe54acea567ad5ac3e83702"
+      },
+      {
+        "path": "docs/RESTORATION-ROADMAP-R2.md",
+        "bytes": 134859,
+        "sha256": "91f433e1ab7eccd2c6d9abb1c4e906a1ff6ea95cd7aedc137dad614b796e1048",
+        "git_blob": "0ed3e3f347a1367a7296979155f75aeeb7a78d74"
+      },
+      {
+        "path": "research/recovered/STONEAGE-22-DOMAIN-SOURCE-READY-PORTFOLIO-R2.json",
+        "bytes": 15948,
+        "sha256": "7d50de08f7855cf16dbe54b1747e258f1cc1223de88cc217172fd145f3c704ce",
+        "git_blob": "088b469b3c51e689cff27f33fc3bb49de2d24b2c"
+      }
+    ]
+  },
+  "authority": "PORTAL_40_LABELLED_SYSTEM_GUIDE_OPERATOR_AUTHOR_UNVERIFIED",
+  "inputs": [
+    {
+      "id": "S1",
+      "http": {
+        "url": "https://games.sina.com.cn/zhuanqu/stoneage3/stoneage4_3.shtml",
+        "resolved_url": "https://games.sina.com.cn/zhuanqu/stoneage3/stoneage4_3.shtml",
+        "status": 200,
+        "bytes": 40475,
+        "sha256": "9860beacd990a083b096d7b046d9f59f8f5874db65e01d8c95bb31f6a74ced6b",
+        "retrieved_utc": "2026-10-20T04:23:16.597948+00:00"
+      },
+      "extracted": {
+        "core_sha256": "54f642c1069de1d775a852c29ba762c0f9b2a30341ad65005eb51ba39815a84a",
+        "core_utf8_bytes": 870,
+        "encoding_issues": [
+          {
+            "offset": 35589,
+            "hex": "b1"
+          },
+          {
+            "offset": 35628,
+            "hex": "b1"
+          }
+        ],
+        "facts": {
+          "character_tiger_and_thunder_mounts_retained": true,
+          "certificate_use_permanent_riding_claim": true,
+          "certificate_manufacturers": [
+            "族长",
+            "长老"
+          ],
+          "advertised_mount_type_cap": 12,
+          "manor_rows": 9,
+          "special_mount_as_written": "帖拉所伊朵（机暴）",
+          "rebirth_condition_as_written": "五转人物",
+          "teacher_as_written": "流浪骑宠师",
+          "challenge_family_rank_change": [
+            10,
+            20
+          ],
+          "closed_shop_access": "OWN_FAMILY_OR_OTHER_WITH_INVITATION",
+          "closed_shop_fulfilment": "MATERIAL_FOR_CRAFT_NOT_DIRECT_SALE"
+        },
+        "manor_rows": [
+          {
+            "position": 1,
+            "manor": "萨姆吉尔",
+            "geography": "尼斯大陆北岛",
+            "mount_label_escaped": "巴朵兰恩(红\\xb1",
+            "mount_main_name": "巴朵兰恩",
+            "open_shop_as_written": "无",
+            "closed_shop_as_written": null,
+            "closed_shop_status": "UNSTATED_BLANK"
+          },
+          {
+            "position": 2,
+            "manor": "玛丽娜丝",
+            "geography": "尼斯大陆北岛",
+            "mount_label_escaped": "左迪洛斯(蓝\\xb1",
+            "mount_main_name": "左迪洛斯",
+            "open_shop_as_written": "定量买卖壳11",
+            "closed_shop_as_written": null,
+            "closed_shop_status": "UNSTATED_BLANK"
+          },
+          {
+            "position": 3,
+            "manor": "加加",
+            "geography": "尼斯大陆南岛",
+            "mount_label_escaped": "格尔格",
+            "mount_main_name": "格尔格",
+            "open_shop_as_written": "无",
+            "closed_shop_as_written": "落马术",
+            "closed_shop_status": "SOURCE_LABEL_NOT_STOCK_OR_SERVICE_ID"
+          },
+          {
+            "position": 4,
+            "manor": "卡鲁它那",
+            "geography": "尼斯大陆南岛",
+            "mount_label_escaped": "玛恩摩洛斯",
+            "mount_main_name": "玛恩摩洛斯",
+            "open_shop_as_written": "定量买卖线11",
+            "closed_shop_as_written": "T字技",
+            "closed_shop_status": "SOURCE_LABEL_NOT_STOCK_OR_SERVICE_ID"
+          },
+          {
+            "position": 5,
+            "manor": "伊甸",
+            "geography": "伊甸大陆",
+            "mount_label_escaped": "拉奇鲁哥",
+            "mount_main_name": "拉奇鲁哥",
+            "open_shop_as_written": "定量买卖骨11",
+            "closed_shop_as_written": "驯兽戒指",
+            "closed_shop_status": "SOURCE_LABEL_NOT_STOCK_OR_SERVICE_ID"
+          },
+          {
+            "position": 6,
+            "manor": "塔耳塔",
+            "geography": "伊甸大陆",
+            "mount_label_escaped": "卡达鲁卡斯",
+            "mount_main_name": "卡达鲁卡斯",
+            "open_shop_as_written": "定量买卖黏土11、水晶11",
+            "closed_shop_as_written": "替身娃娃LV1",
+            "closed_shop_status": "SOURCE_LABEL_NOT_STOCK_OR_SERVICE_ID"
+          },
+          {
+            "position": 7,
+            "manor": "尼克斯",
+            "geography": "伊甸大陆",
+            "mount_label_escaped": "扬奇洛斯",
+            "mount_main_name": "扬奇洛斯",
+            "open_shop_as_written": "定量买卖贝11，麟11",
+            "closed_shop_as_written": "宠物项圈LV1",
+            "closed_shop_status": "SOURCE_LABEL_NOT_STOCK_OR_SERVICE_ID"
+          },
+          {
+            "position": 8,
+            "manor": "佛烈顿",
+            "geography": "伊甸大陆",
+            "mount_label_escaped": "卡卡金宝",
+            "mount_main_name": "卡卡金宝",
+            "open_shop_as_written": "定量买卖石11、牙11",
+            "closed_shop_as_written": "恶魔宝石LV1",
+            "closed_shop_status": "SOURCE_LABEL_NOT_STOCK_OR_SERVICE_ID"
+          },
+          {
+            "position": 9,
+            "manor": "亚伊欧",
+            "geography": "伊甸大陆",
+            "mount_label_escaped": "朵拉比斯",
+            "mount_main_name": "朵拉比斯",
+            "open_shop_as_written": "定量买卖皮11、木11",
+            "closed_shop_as_written": "月神首饰LV1",
+            "closed_shop_status": "SOURCE_LABEL_NOT_STOCK_OR_SERVICE_ID"
+          }
+        ],
+        "table_shape": {
+          "html_rows": 2,
+          "columns": 5,
+          "entries_per_column": [
+            9,
+            9,
+            9,
+            9,
+            9
+          ]
+        }
+      },
+      "visible_publication": null
+    },
+    {
+      "id": "H1",
+      "http": {
+        "url": "https://web.archive.org/web/20021201125523id_/http://games.sina.com.cn:80/zhuanqu/stoneage3/stoneage4_3.shtml",
+        "resolved_url": "https://web.archive.org/web/20021201125523id_/http://games.sina.com.cn:80/zhuanqu/stoneage3/stoneage4_3.shtml",
+        "status": 200,
+        "bytes": 20144,
+        "sha256": "e27448cb7a6bccd92305126e1516fd2a6bb072f5046290c21c073707d532a7e9",
+        "retrieved_utc": "2026-10-20T04:24:04.294466+00:00"
+      },
+      "extracted": {
+        "core_sha256": "54f642c1069de1d775a852c29ba762c0f9b2a30341ad65005eb51ba39815a84a",
+        "core_utf8_bytes": 870,
+        "encoding_issues": [
+          {
+            "offset": 17740,
+            "hex": "b1"
+          },
+          {
+            "offset": 17779,
+            "hex": "b1"
+          }
+        ],
+        "facts": {
+          "character_tiger_and_thunder_mounts_retained": true,
+          "certificate_use_permanent_riding_claim": true,
+          "certificate_manufacturers": [
+            "族长",
+            "长老"
+          ],
+          "advertised_mount_type_cap": 12,
+          "manor_rows": 9,
+          "special_mount_as_written": "帖拉所伊朵（机暴）",
+          "rebirth_condition_as_written": "五转人物",
+          "teacher_as_written": "流浪骑宠师",
+          "challenge_family_rank_change": [
+            10,
+            20
+          ],
+          "closed_shop_access": "OWN_FAMILY_OR_OTHER_WITH_INVITATION",
+          "closed_shop_fulfilment": "MATERIAL_FOR_CRAFT_NOT_DIRECT_SALE"
+        },
+        "manor_rows": [
+          {
+            "position": 1,
+            "manor": "萨姆吉尔",
+            "geography": "尼斯大陆北岛",
+            "mount_label_escaped": "巴朵兰恩(红\\xb1",
+            "mount_main_name": "巴朵兰恩",
+            "open_shop_as_written": "无",
+            "closed_shop_as_written": null,
+            "closed_shop_status": "UNSTATED_BLANK"
+          },
+          {
+            "position": 2,
+            "manor": "玛丽娜丝",
+            "geography": "尼斯大陆北岛",
+            "mount_label_escaped": "左迪洛斯(蓝\\xb1",
+            "mount_main_name": "左迪洛斯",
+            "open_shop_as_written": "定量买卖壳11",
+            "closed_shop_as_written": null,
+            "closed_shop_status": "UNSTATED_BLANK"
+          },
+          {
+            "position": 3,
+            "manor": "加加",
+            "geography": "尼斯大陆南岛",
+            "mount_label_escaped": "格尔格",
+            "mount_main_name": "格尔格",
+            "open_shop_as_written": "无",
+            "closed_shop_as_written": "落马术",
+            "closed_shop_status": "SOURCE_LABEL_NOT_STOCK_OR_SERVICE_ID"
+          },
+          {
+            "position": 4,
+            "manor": "卡鲁它那",
+            "geography": "尼斯大陆南岛",
+            "mount_label_escaped": "玛恩摩洛斯",
+            "mount_main_name": "玛恩摩洛斯",
+            "open_shop_as_written": "定量买卖线11",
+            "closed_shop_as_written": "T字技",
+            "closed_shop_status": "SOURCE_LABEL_NOT_STOCK_OR_SERVICE_ID"
+          },
+          {
+            "position": 5,
+            "manor": "伊甸",
+            "geography": "伊甸大陆",
+            "mount_label_escaped": "拉奇鲁哥",
+            "mount_main_name": "拉奇鲁哥",
+            "open_shop_as_written": "定量买卖骨11",
+            "closed_shop_as_written": "驯兽戒指",
+            "closed_shop_status": "SOURCE_LABEL_NOT_STOCK_OR_SERVICE_ID"
+          },
+          {
+            "position": 6,
+            "manor": "塔耳塔",
+            "geography": "伊甸大陆",
+            "mount_label_escaped": "卡达鲁卡斯",
+            "mount_main_name": "卡达鲁卡斯",
+            "open_shop_as_written": "定量买卖黏土11、水晶11",
+            "closed_shop_as_written": "替身娃娃LV1",
+            "closed_shop_status": "SOURCE_LABEL_NOT_STOCK_OR_SERVICE_ID"
+          },
+          {
+            "position": 7,
+            "manor": "尼克斯",
+            "geography": "伊甸大陆",
+            "mount_label_escaped": "扬奇洛斯",
+            "mount_main_name": "扬奇洛斯",
+            "open_shop_as_written": "定量买卖贝11，麟11",
+            "closed_shop_as_written": "宠物项圈LV1",
+            "closed_shop_status": "SOURCE_LABEL_NOT_STOCK_OR_SERVICE_ID"
+          },
+          {
+            "position": 8,
+            "manor": "佛烈顿",
+            "geography": "伊甸大陆",
+            "mount_label_escaped": "卡卡金宝",
+            "mount_main_name": "卡卡金宝",
+            "open_shop_as_written": "定量买卖石11、牙11",
+            "closed_shop_as_written": "恶魔宝石LV1",
+            "closed_shop_status": "SOURCE_LABEL_NOT_STOCK_OR_SERVICE_ID"
+          },
+          {
+            "position": 9,
+            "manor": "亚伊欧",
+            "geography": "伊甸大陆",
+            "mount_label_escaped": "朵拉比斯",
+            "mount_main_name": "朵拉比斯",
+            "open_shop_as_written": "定量买卖皮11、木11",
+            "closed_shop_as_written": "月神首饰LV1",
+            "closed_shop_status": "SOURCE_LABEL_NOT_STOCK_OR_SERVICE_ID"
+          }
+        ],
+        "table_shape": {
+          "html_rows": 2,
+          "columns": 5,
+          "entries_per_column": [
+            9,
+            9,
+            9,
+            9,
+            9
+          ]
+        }
+      },
+      "visible_publication": null,
+      "capture_timestamp": "20021201125523",
+      "availability": {
+        "url": "http://games.sina.com.cn/zhuanqu/stoneage3/stoneage4_3.shtml",
+        "archived_snapshots": {
+          "closest": {
+            "status": "200",
+            "available": true,
+            "url": "http://web.archive.org/web/20021201125523/http://games.sina.com.cn:80/zhuanqu/stoneage3/stoneage4_3.shtml",
+            "timestamp": "20021201125523"
+          }
+        },
+        "timestamp": "20021201"
+      },
+      "availability_http": {
+        "url": "https://archive.org/wayback/available?url=http%3A%2F%2Fgames.sina.com.cn%2Fzhuanqu%2Fstoneage3%2Fstoneage4_3.shtml&timestamp=20021201",
+        "resolved_url": "https://archive.org/wayback/available?url=http%3A%2F%2Fgames.sina.com.cn%2Fzhuanqu%2Fstoneage3%2Fstoneage4_3.shtml&timestamp=20021201",
+        "status": 200,
+        "bytes": 316,
+        "sha256": "62e44c1b4f093fb586a032ceebb1c4a54a6110a0628aff1e3f1204769796e4f3",
+        "retrieved_utc": "2026-10-20T04:23:17.424343+00:00"
+      },
+      "same_publication_not_independent_witness": true
+    }
+  ],
+  "records": [
+    {
+      "record_id": "cn40-portal-20021201:manor-1",
+      "entity_type": "SOURCE_TABLE_RELATION_NOT_MANOR_OR_SPECIES_MASTER",
+      "collection": "riding",
+      "version_profile": "LATER_OFFICIAL_PORTAL_CN40_CONTENT_LABEL_CAPTURED_20021201_BUILD_UNVERIFIED",
+      "source_refs": [
+        "S1",
+        "H1"
+      ],
+      "verification_status": "PORTAL_SOURCE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "source_row": {
+        "position": 1,
+        "manor": "萨姆吉尔",
+        "geography": "尼斯大陆北岛",
+        "mount_label_escaped": "巴朵兰恩(红\\xb1",
+        "mount_main_name": "巴朵兰恩",
+        "open_shop_as_written": "无",
+        "closed_shop_as_written": null,
+        "closed_shop_status": "UNSTATED_BLANK"
+      },
+      "actual_map_id": null,
+      "actual_pet_species_id": null,
+      "complete_parenthetical_alias": null
+    },
+    {
+      "record_id": "cn40-portal-20021201:manor-2",
+      "entity_type": "SOURCE_TABLE_RELATION_NOT_MANOR_OR_SPECIES_MASTER",
+      "collection": "riding",
+      "version_profile": "LATER_OFFICIAL_PORTAL_CN40_CONTENT_LABEL_CAPTURED_20021201_BUILD_UNVERIFIED",
+      "source_refs": [
+        "S1",
+        "H1"
+      ],
+      "verification_status": "PORTAL_SOURCE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "source_row": {
+        "position": 2,
+        "manor": "玛丽娜丝",
+        "geography": "尼斯大陆北岛",
+        "mount_label_escaped": "左迪洛斯(蓝\\xb1",
+        "mount_main_name": "左迪洛斯",
+        "open_shop_as_written": "定量买卖壳11",
+        "closed_shop_as_written": null,
+        "closed_shop_status": "UNSTATED_BLANK"
+      },
+      "actual_map_id": null,
+      "actual_pet_species_id": null,
+      "complete_parenthetical_alias": null
+    },
+    {
+      "record_id": "cn40-portal-20021201:manor-3",
+      "entity_type": "SOURCE_TABLE_RELATION_NOT_MANOR_OR_SPECIES_MASTER",
+      "collection": "riding",
+      "version_profile": "LATER_OFFICIAL_PORTAL_CN40_CONTENT_LABEL_CAPTURED_20021201_BUILD_UNVERIFIED",
+      "source_refs": [
+        "S1",
+        "H1"
+      ],
+      "verification_status": "PORTAL_SOURCE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "source_row": {
+        "position": 3,
+        "manor": "加加",
+        "geography": "尼斯大陆南岛",
+        "mount_label_escaped": "格尔格",
+        "mount_main_name": "格尔格",
+        "open_shop_as_written": "无",
+        "closed_shop_as_written": "落马术",
+        "closed_shop_status": "SOURCE_LABEL_NOT_STOCK_OR_SERVICE_ID"
+      },
+      "actual_map_id": null,
+      "actual_pet_species_id": null,
+      "complete_parenthetical_alias": null
+    },
+    {
+      "record_id": "cn40-portal-20021201:manor-4",
+      "entity_type": "SOURCE_TABLE_RELATION_NOT_MANOR_OR_SPECIES_MASTER",
+      "collection": "riding",
+      "version_profile": "LATER_OFFICIAL_PORTAL_CN40_CONTENT_LABEL_CAPTURED_20021201_BUILD_UNVERIFIED",
+      "source_refs": [
+        "S1",
+        "H1"
+      ],
+      "verification_status": "PORTAL_SOURCE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "source_row": {
+        "position": 4,
+        "manor": "卡鲁它那",
+        "geography": "尼斯大陆南岛",
+        "mount_label_escaped": "玛恩摩洛斯",
+        "mount_main_name": "玛恩摩洛斯",
+        "open_shop_as_written": "定量买卖线11",
+        "closed_shop_as_written": "T字技",
+        "closed_shop_status": "SOURCE_LABEL_NOT_STOCK_OR_SERVICE_ID"
+      },
+      "actual_map_id": null,
+      "actual_pet_species_id": null,
+      "complete_parenthetical_alias": null
+    },
+    {
+      "record_id": "cn40-portal-20021201:manor-5",
+      "entity_type": "SOURCE_TABLE_RELATION_NOT_MANOR_OR_SPECIES_MASTER",
+      "collection": "riding",
+      "version_profile": "LATER_OFFICIAL_PORTAL_CN40_CONTENT_LABEL_CAPTURED_20021201_BUILD_UNVERIFIED",
+      "source_refs": [
+        "S1",
+        "H1"
+      ],
+      "verification_status": "PORTAL_SOURCE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "source_row": {
+        "position": 5,
+        "manor": "伊甸",
+        "geography": "伊甸大陆",
+        "mount_label_escaped": "拉奇鲁哥",
+        "mount_main_name": "拉奇鲁哥",
+        "open_shop_as_written": "定量买卖骨11",
+        "closed_shop_as_written": "驯兽戒指",
+        "closed_shop_status": "SOURCE_LABEL_NOT_STOCK_OR_SERVICE_ID"
+      },
+      "actual_map_id": null,
+      "actual_pet_species_id": null,
+      "complete_parenthetical_alias": null
+    },
+    {
+      "record_id": "cn40-portal-20021201:manor-6",
+      "entity_type": "SOURCE_TABLE_RELATION_NOT_MANOR_OR_SPECIES_MASTER",
+      "collection": "riding",
+      "version_profile": "LATER_OFFICIAL_PORTAL_CN40_CONTENT_LABEL_CAPTURED_20021201_BUILD_UNVERIFIED",
+      "source_refs": [
+        "S1",
+        "H1"
+      ],
+      "verification_status": "PORTAL_SOURCE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "source_row": {
+        "position": 6,
+        "manor": "塔耳塔",
+        "geography": "伊甸大陆",
+        "mount_label_escaped": "卡达鲁卡斯",
+        "mount_main_name": "卡达鲁卡斯",
+        "open_shop_as_written": "定量买卖黏土11、水晶11",
+        "closed_shop_as_written": "替身娃娃LV1",
+        "closed_shop_status": "SOURCE_LABEL_NOT_STOCK_OR_SERVICE_ID"
+      },
+      "actual_map_id": null,
+      "actual_pet_species_id": null,
+      "complete_parenthetical_alias": null
+    },
+    {
+      "record_id": "cn40-portal-20021201:manor-7",
+      "entity_type": "SOURCE_TABLE_RELATION_NOT_MANOR_OR_SPECIES_MASTER",
+      "collection": "riding",
+      "version_profile": "LATER_OFFICIAL_PORTAL_CN40_CONTENT_LABEL_CAPTURED_20021201_BUILD_UNVERIFIED",
+      "source_refs": [
+        "S1",
+        "H1"
+      ],
+      "verification_status": "PORTAL_SOURCE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "source_row": {
+        "position": 7,
+        "manor": "尼克斯",
+        "geography": "伊甸大陆",
+        "mount_label_escaped": "扬奇洛斯",
+        "mount_main_name": "扬奇洛斯",
+        "open_shop_as_written": "定量买卖贝11，麟11",
+        "closed_shop_as_written": "宠物项圈LV1",
+        "closed_shop_status": "SOURCE_LABEL_NOT_STOCK_OR_SERVICE_ID"
+      },
+      "actual_map_id": null,
+      "actual_pet_species_id": null,
+      "complete_parenthetical_alias": null
+    },
+    {
+      "record_id": "cn40-portal-20021201:manor-8",
+      "entity_type": "SOURCE_TABLE_RELATION_NOT_MANOR_OR_SPECIES_MASTER",
+      "collection": "riding",
+      "version_profile": "LATER_OFFICIAL_PORTAL_CN40_CONTENT_LABEL_CAPTURED_20021201_BUILD_UNVERIFIED",
+      "source_refs": [
+        "S1",
+        "H1"
+      ],
+      "verification_status": "PORTAL_SOURCE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "source_row": {
+        "position": 8,
+        "manor": "佛烈顿",
+        "geography": "伊甸大陆",
+        "mount_label_escaped": "卡卡金宝",
+        "mount_main_name": "卡卡金宝",
+        "open_shop_as_written": "定量买卖石11、牙11",
+        "closed_shop_as_written": "恶魔宝石LV1",
+        "closed_shop_status": "SOURCE_LABEL_NOT_STOCK_OR_SERVICE_ID"
+      },
+      "actual_map_id": null,
+      "actual_pet_species_id": null,
+      "complete_parenthetical_alias": null
+    },
+    {
+      "record_id": "cn40-portal-20021201:manor-9",
+      "entity_type": "SOURCE_TABLE_RELATION_NOT_MANOR_OR_SPECIES_MASTER",
+      "collection": "riding",
+      "version_profile": "LATER_OFFICIAL_PORTAL_CN40_CONTENT_LABEL_CAPTURED_20021201_BUILD_UNVERIFIED",
+      "source_refs": [
+        "S1",
+        "H1"
+      ],
+      "verification_status": "PORTAL_SOURCE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "source_row": {
+        "position": 9,
+        "manor": "亚伊欧",
+        "geography": "伊甸大陆",
+        "mount_label_escaped": "朵拉比斯",
+        "mount_main_name": "朵拉比斯",
+        "open_shop_as_written": "定量买卖皮11、木11",
+        "closed_shop_as_written": "月神首饰LV1",
+        "closed_shop_status": "SOURCE_LABEL_NOT_STOCK_OR_SERVICE_ID"
+      },
+      "actual_map_id": null,
+      "actual_pet_species_id": null,
+      "complete_parenthetical_alias": null
+    },
+    {
+      "record_id": "cn40-portal-20021201:wandering-trainer",
+      "entity_type": "SOURCE_NAMED_RIDING_SERVICE_NOT_SPAWN",
+      "collection": "npcs",
+      "version_profile": "LATER_OFFICIAL_PORTAL_CN40_CONTENT_LABEL_CAPTURED_20021201_BUILD_UNVERIFIED",
+      "source_refs": [
+        "S1",
+        "H1"
+      ],
+      "verification_status": "PORTAL_SOURCE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "label_as_written": "流浪骑宠师",
+      "special_mount_as_written": "帖拉所伊朵（机暴）",
+      "rebirth_condition_as_written": "五转人物",
+      "rebirth_predicate": null,
+      "coordinates": null,
+      "dialogue": null
+    },
+    {
+      "record_id": "cn40-portal-20021201:certificate",
+      "entity_type": "SOURCE_NAMED_PERMISSION_ITEM_NOT_MASTER",
+      "collection": "items",
+      "version_profile": "LATER_OFFICIAL_PORTAL_CN40_CONTENT_LABEL_CAPTURED_20021201_BUILD_UNVERIFIED",
+      "source_refs": [
+        "S1",
+        "H1"
+      ],
+      "verification_status": "PORTAL_SOURCE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "label_as_written": "骑宠证明书",
+      "manufacturers_as_written": [
+        "族长",
+        "长老"
+      ],
+      "permanent_use_claim": true,
+      "survives_rebirth": null,
+      "consumed_on_use": null,
+      "tradeable": null,
+      "recipe": null
+    },
+    {
+      "record_id": "cn40-portal-20021201:closed-shop",
+      "entity_type": "SOURCE_MATERIAL_CRAFT_SERVICE_NOT_RECIPE_MASTER",
+      "collection": "recipes",
+      "version_profile": "LATER_OFFICIAL_PORTAL_CN40_CONTENT_LABEL_CAPTURED_20021201_BUILD_UNVERIFIED",
+      "source_refs": [
+        "S1",
+        "H1"
+      ],
+      "verification_status": "PORTAL_SOURCE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "access": "OWN_FAMILY_OR_OTHER_WITH_INVITATION",
+      "fulfilment": "MATERIAL_FOR_CRAFT_NOT_DIRECT_SALE",
+      "stock_quantities": null,
+      "prices": null,
+      "actual_recipes": null
+    },
+    {
+      "record_id": "cn40-portal-20021201:cross-version",
+      "entity_type": "SOURCE_RELATION_NOT_UNIFIED_RIDING_IMPLEMENTATION",
+      "collection": "versions",
+      "version_profile": "LATER_OFFICIAL_PORTAL_CN40_CONTENT_LABEL_CAPTURED_20021201_BUILD_UNVERIFIED",
+      "source_refs": [
+        "S1",
+        "H1"
+      ],
+      "verification_status": "PORTAL_SOURCE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "earlier_report": "STONEAGE-CN20-RIDING-TRAINER-COMBAT-SOURCE-R1.json",
+      "earlier_report_sha256": "e41de8bc186771906554775e885cf66ab995a06f01618f7f2d3724a888e69c81",
+      "relations": [
+        "CN20_HUMAN_TRAINING_IS_DISTINCT_FROM_CN40_FAMILY_CERTIFICATE",
+        "CN40_RETAINS_ORDINARY_TIGER_THUNDER_RIDING_TEXT_WITHOUT_SUPPLYING_EARLIER_FEES_OR_CAPS",
+        "NINE_MANOR_TABLE_ROWS_DO_NOT_EXHAUST_TWELVE_ADVERTISED_MOUNT_TYPES",
+        "EARLY_COMBAT_DESCRIPTION_NOT_SUPERSEDED_BY_ABSENT_CN40_FORMULAS"
+      ]
+    }
+  ],
+  "boundaries": {
+    "original_operator_authorship_verified": false,
+    "original_server_execution_verified": false,
+    "exact_client_build": null,
+    "publication_date": null,
+    "broken_aliases_repaired": false,
+    "twelve_mounts_means_twelve_manors": false,
+    "blank_shop_means_no_shop": false,
+    "material_level_11_means_quantity_11": false,
+    "permanent_claim_proves_rebirth_or_account_scope": false,
+    "old_cn20_compatibility_or_combat_formula_overwritten": false,
+    "raw_html_or_assets_committed": false,
+    "tw10_or_jss1999_backfill": false,
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b_and_wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING"
+  },
+  "interpretation_notes": [
+    "A 2002 capture provides an upper bound for the content existing at that URL, not the original publication date or actual server deployment. Current 5.0 navigation does not relabel the 4.0 body as 5.0.",
+    "Both current and historical HTML have two standalone B1 bytes in the first two mount aliases. Strict decoding fails; exact offsets/hex and ASCII escapes are retained. Main names are undamaged prefixes, not original species IDs.",
+    "The table is two HTML rows with five columns, each data cell containing nine BR-separated entries. Leading blank closed-shop entries stay null/UNSTATED, distinct from explicit 无 in open-shop cells.",
+    "The advertised cap is twelve mount types, while the table lists nine manor relationships. Do not invent three more manors or assume the list is an exhaustive compatible pet roster.",
+    "Certificate permanence is a source claim, not proof of item consumption, rebirth/account persistence, issuance recipe or original flags.",
+    "五转人物 is retained as written, with no inferred >=5 predicate. The roaming teacher is not equated with the earlier unnamed manor trainer.",
+    "Shop labels/material grade 11 are not exact stock, quantity 11, prices or recipes. No new raw images or assets were fetched."
+  ],
+  "reopening_triggers": [
+    "CONTEMPORANEOUS_OPERATOR_CERTIFICATE_RULES_OR_SERVER_SCRIPT_FOR_ISSUANCE_CONSUMPTION_PERSISTENCE",
+    "SAME_EDITION_MANOR_NPC_SHOP_DATA_FOR_MAP_IDS_INVENTORY_AND_RECIPES",
+    "CORRECTLY_PRESERVED_ORIGINAL_ALIAS_TEXT_TO_REOPEN_BROKEN_PARENTHETICAL_NAMES"
+  ],
+  "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-29"
+}

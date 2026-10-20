@@ -1,0 +1,34 @@
+name: Verify CN40 riding certificates and malformed manor source table
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-CN40-RIDING-*.json'
+      - 'tools/stoneage_cn40_riding_manor_source.py'
+      - 'tools/stoneage_jp2008_shadow_release.py'
+      - 'tests/test_stoneage_cn40_riding_manor_source.py'
+      - '.github/workflows/verify-stoneage-cn40-riding-manor-source.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-CN40-RIDING-*.json'
+      - 'tools/stoneage_cn40_riding_manor_source.py'
+      - 'tools/stoneage_jp2008_shadow_release.py'
+      - 'tests/test_stoneage_cn40_riding_manor_source.py'
+      - '.github/workflows/verify-stoneage-cn40-riding-manor-source.yml'
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify source encoding faults, BR column alignment and evidence boundaries
+        run: python -m unittest discover -s tests -p 'test_stoneage_cn40_riding_manor_source.py' -v
+      - name: Read current portal source and exact 2002 capture without repairing bytes
+        run: python -m tools.stoneage_cn40_riding_manor_source --fetch --output /tmp/cn40-riding-derived/replay.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cn40-riding-manor-derived-replay
+          path: /tmp/cn40-riding-derived/replay.json
+          if-no-files-found: error
+          retention-days: 30
