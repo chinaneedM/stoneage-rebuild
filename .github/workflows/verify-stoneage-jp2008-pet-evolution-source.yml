@@ -1,0 +1,35 @@
+name: Verify JP2008 pet evolution trial and source scopes
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-JP2008-PET-EVOLUTION-*.json'
+      - 'tools/stoneage_jp2008_pet_evolution_source.py'
+      - 'tools/stoneage_jp2008_shadow_release.py'
+      - 'tests/test_stoneage_jp2008_pet_evolution_source.py'
+      - '.github/workflows/verify-stoneage-jp2008-pet-evolution-source.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-JP2008-PET-EVOLUTION-*.json'
+      - 'tools/stoneage_jp2008_pet_evolution_source.py'
+      - 'tools/stoneage_jp2008_shadow_release.py'
+      - 'tests/test_stoneage_jp2008_pet_evolution_source.py'
+      - '.github/workflows/verify-stoneage-jp2008-pet-evolution-source.yml'
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify trial, masked names, failure and optional paid guarantees
+        run: python -m unittest discover -s tests -p 'test_stoneage_jp2008_pet_evolution_source.py' -v
+      - name: Read current release, exact 2009 official page and three current GIF references
+        run: python -m tools.stoneage_jp2008_pet_evolution_source --fetch --output /tmp/jp2008-evolution-derived/replay.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: jp2008-pet-evolution-derived-replay
+          path: /tmp/jp2008-evolution-derived/replay.json
+          if-no-files-found: error
+          retention-days: 30
+

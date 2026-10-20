@@ -1,0 +1,78 @@
+{
+  "schema": "stoneage.jp2008_pet_evolution.actual_source_mutations.r1",
+  "cases": [
+    {
+      "case": "issuer-inside-release",
+      "source_id": "M1",
+      "original_sha256": "695386fb8ab426a8c6afeccc35d61638a5f5b78635b82c94dd56f49e02b0a76c",
+      "mutated_sha256": "683525dc9fad7246d38ab4b197b4d53f19d22508363230121f98c133974831bb",
+      "extractor_result": "REJECT",
+      "full_replay_rejected": true
+    },
+    {
+      "case": "ordinary-chance-not-guarantee",
+      "source_id": "M1",
+      "original_sha256": "695386fb8ab426a8c6afeccc35d61638a5f5b78635b82c94dd56f49e02b0a76c",
+      "mutated_sha256": "827a3b81708c54202d9465d094b59dec929529fed63a4b7b9a18dbefb8b7d7a3",
+      "extractor_result": "REJECT",
+      "full_replay_rejected": true
+    },
+    {
+      "case": "reroll-once",
+      "source_id": "M1",
+      "original_sha256": "695386fb8ab426a8c6afeccc35d61638a5f5b78635b82c94dd56f49e02b0a76c",
+      "mutated_sha256": "459725e2f6bbf3a7902761cbf6c0234ae6f1313eb858bcf90ef13355cc44172d",
+      "extractor_result": "REJECT",
+      "full_replay_rejected": true
+    },
+    {
+      "case": "optional-price-column",
+      "source_id": "M1",
+      "original_sha256": "695386fb8ab426a8c6afeccc35d61638a5f5b78635b82c94dd56f49e02b0a76c",
+      "mutated_sha256": "356c012befc3af88b0a8a9eae532c4c84e8971a291c2aa8b82ab7b0a238b1513",
+      "extractor_result": "REJECT",
+      "full_replay_rejected": true
+    },
+    {
+      "case": "failed-initial-name-state",
+      "source_id": "O1",
+      "original_sha256": "184017ffb882c21bb4160616d7c75ba63cb016501b171ae6eff83f8c4bf06f8d",
+      "mutated_sha256": "2ef0a5288e50027d9be3d9f40007d9ba711a65afec894c66c0de852b99ab08d5",
+      "extractor_result": "REJECT",
+      "full_replay_rejected": true
+    },
+    {
+      "case": "one-per-attempt",
+      "source_id": "O1",
+      "original_sha256": "184017ffb882c21bb4160616d7c75ba63cb016501b171ae6eff83f8c4bf06f8d",
+      "mutated_sha256": "015debd30c5d964e423b0ab9fcbd312de9eae210419ba100bc173a934ccc89c1",
+      "extractor_result": "REJECT",
+      "full_replay_rejected": true
+    },
+    {
+      "case": "masked-name-kept",
+      "source_id": "O1",
+      "original_sha256": "184017ffb882c21bb4160616d7c75ba63cb016501b171ae6eff83f8c4bf06f8d",
+      "mutated_sha256": "68aa056b40d270d936def14b4b1742aa8b5ac9be3fde30d939ad3255e37b68bb",
+      "extractor_result": "REJECT",
+      "full_replay_rejected": true
+    },
+    {
+      "case": "source-illustration-disclaimer",
+      "source_id": "O1",
+      "original_sha256": "184017ffb882c21bb4160616d7c75ba63cb016501b171ae6eff83f8c4bf06f8d",
+      "mutated_sha256": "ceba1ece745fa58fc5c26e74dd81647b38215a3195ab2e60f4018c8da8d18340",
+      "extractor_result": "REJECT",
+      "full_replay_rejected": true
+    }
+  ],
+  "cases_passed": 8,
+  "outside_release_metadata_boundary": {
+    "case": "outside_release_meta_description_issuer",
+    "original_sha256": "695386fb8ab426a8c6afeccc35d61638a5f5b78635b82c94dd56f49e02b0a76c",
+    "mutated_sha256": "f099c3e45744410470e25b9092df36602d77b732868e774810acf48264e47ac3",
+    "release_semantics_unchanged": true,
+    "current_wrapper_change_accepted": true
+  },
+  "original_source_or_mutant_bytes_in_git": false
+}

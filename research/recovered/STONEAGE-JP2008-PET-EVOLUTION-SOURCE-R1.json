@@ -1,0 +1,679 @@
+{
+  "schema": "stoneage.jp2008_pet_evolution.source.r1",
+  "task": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-31",
+  "date": "2026-10-20",
+  "authority": "MEDIATED_DIGIPARK_RELEASE_PLUS_LATER_CAPTURED_OFFICIAL_HOST",
+  "baseline": {
+    "head": "fe10f03bd227be3aa070d7690cb2d0358b9fd551",
+    "tree": "a0fe173f80cc9ab8c64dace25afc3df5ede6f66b",
+    "remote_branches": 404,
+    "own_main_success": 9,
+    "own_candidate_success": 8,
+    "open_prs": 0,
+    "unrelated_queued_run": 37642417333,
+    "continuity_prefix_pins": [
+      {
+        "path": "README.md",
+        "bytes": 23224,
+        "sha256": "d35f97fbe59c20501706232d45947e9bbb54da3630b343b7f77b602e906ec055",
+        "git_blob": "25f8ae038f12d1644e4e922d460cc126e41a4672"
+      },
+      {
+        "path": "docs/PROJECT-CONTINUITY-PROTOCOL-R1.md",
+        "bytes": 9762,
+        "sha256": "c44834eeec87f7a43e9cb4905f08377349e36d58b1fff2c5a75a6975db695e3b",
+        "git_blob": "ba9bbe19384589400abc61af37a360a40bf91452"
+      },
+      {
+        "path": "docs/CURRENT-STATE.md",
+        "bytes": 2161574,
+        "sha256": "98a136f4ebf2acc8006aba373d8656b084d1f1875f88256496151d538be82473",
+        "git_blob": "35361a303c9362f751d9b6ff77ca0a2901b847e8"
+      },
+      {
+        "path": "docs/DESIGN-DECISIONS.md",
+        "bytes": 45965,
+        "sha256": "28b572ed01179eacd5a06b4ad62c76e4baef22ac49587aa0bad452a7cb3fe8e6",
+        "git_blob": "013ae4fad9301ab0140fe408a423b3abad97d1f9"
+      },
+      {
+        "path": "docs/HISTORICAL-TIMELINE.md",
+        "bytes": 502798,
+        "sha256": "1084c5991e004fe9fca94ba75d45d6ab1704f47086ce765f384811519c0f6b40",
+        "git_blob": "92babb9a79422b11ff63b7a5ebecedad5a92f021"
+      },
+      {
+        "path": "docs/SOURCE-REGISTRY.md",
+        "bytes": 788628,
+        "sha256": "00834f3b6f08b9b50d5f41b3526186c295759c929558c59bbfe89fd9da42531c",
+        "git_blob": "ae6204dec00b140201b9ff4d7240edd339e67403"
+      },
+      {
+        "path": "docs/RESTORATION-ROADMAP-R2.md",
+        "bytes": 136690,
+        "sha256": "55c7a979f7a6d0a68a2f931d4cfa0c9e881a49750da4046c9ac9f3778708a4af",
+        "git_blob": "99f2ed753cdc363af3d3f9013b8b67786fa88552"
+      },
+      {
+        "path": "research/recovered/STONEAGE-22-DOMAIN-SOURCE-READY-PORTFOLIO-R2.json",
+        "bytes": 15948,
+        "sha256": "7d50de08f7855cf16dbe54b1747e258f1cc1223de88cc217172fd145f3c704ce",
+        "git_blob": "088b469b3c51e689cff27f33fc3bb49de2d24b2c"
+      }
+    ]
+  },
+  "inputs": [
+    {
+      "id": "M1",
+      "http": {
+        "url": "https://www.4gamer.net/games/013/G001377/20081111023/",
+        "resolved_url": "https://www.4gamer.net/games/013/G001377/20081111023/",
+        "status": 200,
+        "bytes": 269299,
+        "sha256": "695386fb8ab426a8c6afeccc35d61638a5f5b78635b82c94dd56f49e02b0a76c",
+        "retrieved_utc": "2026-10-20T05:31:58.870427+00:00"
+      },
+      "replay_url": "https://www.4gamer.net/games/013/G001377/20081111023/",
+      "capture_timestamp": null,
+      "role": "CURRENT_MEDIA_HOSTED_DIGIPARK_RELEASE",
+      "extracted": {
+        "core_utf8_bytes": 3025,
+        "core_sha256": "917dd517af3509ba1e8b4180263dd82bfe54812082f1c98002f44201cfefbd14",
+        "facts": {
+          "issuer": "株式会社デジパーク",
+          "published_label": "2008/11/11 14:28",
+          "announced_implementation": "2008-11-11_AFTER_MAINTENANCE",
+          "eligible_pet_labels": [
+            "ベルガー",
+            "ベルイガー",
+            "ゴルシス",
+            "キングサーベル"
+          ],
+          "first_batch_not_complete_game_roster": true,
+          "location": {
+            "island": "ミライア島",
+            "village": "カラの村",
+            "relative_location": "NORTHWEST_OF_VILLAGE",
+            "dungeon": "進化の洞窟",
+            "npc": "進化Gさん"
+          },
+          "flow": [
+            "FIND_EVOLUTION_CAVE_NORTHWEST_OF_KARA",
+            "TALK_TO_SHINKA_G_SAN",
+            "COMPLETE_TRIAL_QUEST",
+            "CHANCE_OF_EVOLUTION",
+            "REPEATABLE_TRIAL"
+          ],
+          "failure_level": 1,
+          "repeatable": true,
+          "success": "STRONGER_STATUS_AND_CHANGED_APPEARANCE_SOURCE_DESCRIPTION_NO_NUMBERS",
+          "mutation": "SOMETIMES_SPECIAL_STATUS_NO_RATE",
+          "new_and_existing_player_goal": "EXPLICIT_RELEASE_PURPOSE_NOT_NO_PREREQUISITE_PROOF",
+          "flavor": "SPIRITS_MISCHIEF_POETIC_INTRO_NOT_NAMED_CAUSE",
+          "campaign": {
+            "start": "2008-11-11_AFTER_MAINTENANCE",
+            "end": "2008-11-18_BEFORE_MAINTENANCE",
+            "bundle": "剣虎進化セットチケット",
+            "price": 350,
+            "currency_as_written": "Gstone",
+            "components": [
+              "進化の秘宝",
+              "剣虎進化再抽選チケット",
+              "餌付け薬[変:餌付けの輪丙]"
+            ],
+            "secret_item": "GUARANTEED_EVOLUTION_CLAIM_ITEM_NOT_BASE_PROBABILITY",
+            "reroll": "ONE_STATUS_REROLL_FOR_FOUR_EVOLVED_PET_TYPES",
+            "gift": "HUMAN_GAINED_EXPERIENCE_DISTRIBUTION_TO_PET_NO_RATIO"
+          }
+        },
+        "official_link": "http://stoneage.to/update/20081111_update_ev1.html",
+        "image_refs": [
+          "/games/013/G001377/20081111023/TN/001.gif",
+          "/games/013/G001377/20081111023/TN/002.gif",
+          "/games/013/G001377/20081111023/TN/003.gif",
+          "/games/013/G001377/20081111023/TN/004.gif"
+        ]
+      }
+    },
+    {
+      "id": "O1",
+      "http": {
+        "url": "https://web.archive.org/web/20090217151837id_/http://stoneage.to:80/update/20081111_update_ev1.html",
+        "resolved_url": "https://web.archive.org/web/20090217151837id_/http://stoneage.to:80/update/20081111_update_ev1.html",
+        "status": 200,
+        "bytes": 6538,
+        "sha256": "184017ffb882c21bb4160616d7c75ba63cb016501b171ae6eff83f8c4bf06f8d",
+        "retrieved_utc": "2026-10-20T05:32:38.670321+00:00"
+      },
+      "replay_url": "https://web.archive.org/web/20090217151837id_/http://stoneage.to:80/update/20081111_update_ev1.html",
+      "capture_timestamp": "20090217151837",
+      "role": "OFFICIAL_HOST_LATER_HISTORICAL_CAPTURE",
+      "extracted": {
+        "core_utf8_bytes": 1506,
+        "core_sha256": "f75153dcb4c09aeb7c6033bb3465ebb51f5ef3443f5a2440c72e026192f790ed",
+        "facts": {
+          "date_time_as_written": "2008年11月11日（火）16:00定期メンテナンス完了後",
+          "location": {
+            "island": "ミライア島",
+            "village": "カラの村",
+            "relative_location": "NORTHWEST_OF_VILLAGE",
+            "dungeon": "進化の洞窟",
+            "npc": "進化Gさん"
+          },
+          "chance": "LUCK_UNSPECIFIED",
+          "repeatable": true,
+          "one_pet_per_attempt": 1,
+          "failure": {
+            "level": 1,
+            "status": "INITIAL_STATE_UNSPECIFIED_NUMBERS",
+            "name": "INITIAL_STATE_UNSPECIFIED_NAME",
+            "skills": null,
+            "owner": null
+          },
+          "eligibility_name_masks": [
+            {
+              "before": "ベルガー",
+              "evolved_mask": "？？ルガー",
+              "canonical_evolved_name": null
+            },
+            {
+              "before": "ベルイガー",
+              "evolved_mask": "？？？イガー",
+              "canonical_evolved_name": null
+            },
+            {
+              "before": "ゴルシス",
+              "evolved_mask": "？？シス",
+              "canonical_evolved_name": null
+            },
+            {
+              "before": "キングサーベル",
+              "evolved_mask": "？？？サーベル",
+              "canonical_evolved_name": null
+            }
+          ],
+          "visual_notice": "ILLUSTRATION_MAY_DIFFER_FROM_ACTUAL",
+          "balance_notice": "CONTENT_SUBJECT_TO_FUTURE_BALANCE_CHANGE"
+        },
+        "actual_unacquired_image_ref": "image/20081111_ev_02.gif"
+      }
+    },
+    {
+      "id": "I1",
+      "http": {
+        "url": "https://www.4gamer.net/games/013/G001377/20081111023/TN/001.gif",
+        "resolved_url": "https://www.4gamer.net/games/013/G001377/20081111023/TN/001.gif",
+        "status": 200,
+        "bytes": 16467,
+        "sha256": "5c331077ecf7f76e9e8bd8dd536b6db59a28d4bf6193c48570bb0e08cb262900",
+        "retrieved_utc": "2026-10-20T05:32:52.353857+00:00"
+      },
+      "replay_url": "https://www.4gamer.net/games/013/G001377/20081111023/TN/001.gif",
+      "capture_timestamp": null,
+      "role": "CURRENT_DATE_BANNER",
+      "extracted": {
+        "format": "GIF",
+        "dimensions": [
+          400,
+          75
+        ],
+        "original_sprite_or_runtime_verified": false
+      }
+    },
+    {
+      "id": "I2",
+      "http": {
+        "url": "https://www.4gamer.net/games/013/G001377/20081111023/TN/002.gif",
+        "resolved_url": "https://www.4gamer.net/games/013/G001377/20081111023/TN/002.gif",
+        "status": 200,
+        "bytes": 2828,
+        "sha256": "d2703d8e751becd2e51f6ce74ac92d73f562ddbd9ed1019fc1b3272336657a9e",
+        "retrieved_utc": "2026-10-20T05:34:15.504834+00:00"
+      },
+      "replay_url": "https://www.4gamer.net/games/013/G001377/20081111023/TN/002.gif",
+      "capture_timestamp": null,
+      "role": "CURRENT_CONCEPT_PET_REFERENCE",
+      "extracted": {
+        "format": "GIF",
+        "dimensions": [
+          97,
+          96
+        ],
+        "original_sprite_or_runtime_verified": false
+      }
+    },
+    {
+      "id": "I3",
+      "http": {
+        "url": "https://www.4gamer.net/games/013/G001377/20081111023/TN/003.gif",
+        "resolved_url": "https://www.4gamer.net/games/013/G001377/20081111023/TN/003.gif",
+        "status": 200,
+        "bytes": 3843,
+        "sha256": "31d7417696c6b56febd8fa117a0106990d77dc1329a624af9d046e088065976e",
+        "retrieved_utc": "2026-10-20T05:34:15.505042+00:00"
+      },
+      "replay_url": "https://www.4gamer.net/games/013/G001377/20081111023/TN/003.gif",
+      "capture_timestamp": null,
+      "role": "CURRENT_CONCEPT_PET_REFERENCE",
+      "extracted": {
+        "format": "GIF",
+        "dimensions": [
+          135,
+          115
+        ],
+        "original_sprite_or_runtime_verified": false
+      }
+    }
+  ],
+  "boundaries": {
+    "exact_client_build": null,
+    "numeric_release_version": null,
+    "original_server_execution_verified": false,
+    "media_2008_original_html_obtained": false,
+    "official_page_is_20081111_snapshot": false,
+    "first_day_deployment_independently_verified": false,
+    "evolved_names_unmasked": false,
+    "original_pet_npc_map_item_ids": null,
+    "relative_northwest_is_coordinates": false,
+    "quest_min_level_or_rebirth": null,
+    "evolution_probability": null,
+    "mutation_probability": null,
+    "stat_growth_formula": null,
+    "success_level": null,
+    "failure_resets_skills_or_owner_proven": false,
+    "failure_initial_stats_numbers": null,
+    "one_pet_per_ritual_is_carry_limit": false,
+    "ordinary_quest_is_100_percent_success": false,
+    "ordinary_quest_fee_gstone": null,
+    "campaign_end_is_system_removal": false,
+    "reroll_is_unlimited": false,
+    "reroll_once_is_lifetime_limit": false,
+    "exp_transfer_fraction": null,
+    "flavor_spirit_is_named_world_entity": false,
+    "image_is_live_runtime_or_original_sprite": false,
+    "red_or_black_pixels_prove_elements_or_mutation": false,
+    "official_image_404_proves_all_images_missing": false,
+    "historical_image_bytes_obtained": false,
+    "cross_region_rebirth_or_fusion_equated": false,
+    "raw_sources_committed": false,
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b_and_wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING"
+  },
+  "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-32",
+  "records": [
+    {
+      "record_id": "jp2008-evolution:pet-1",
+      "collection": "pets",
+      "entity_type": "ELIGIBLE_SOURCE_LABEL_AND_UNRESOLVED_EVOLVED_NAME",
+      "version_profile": "JP_DIGIPARK_20081111_RELEASE_AND_20090217_OFFICIAL_PAGE_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "M1",
+        "O1"
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "before_label": "ベルガー",
+      "evolved_mask": "？？ルガー",
+      "canonical_evolved_name": null,
+      "original_species_or_sprite_id": null,
+      "element_growth_or_riding": null
+    },
+    {
+      "record_id": "jp2008-evolution:pet-2",
+      "collection": "pets",
+      "entity_type": "ELIGIBLE_SOURCE_LABEL_AND_UNRESOLVED_EVOLVED_NAME",
+      "version_profile": "JP_DIGIPARK_20081111_RELEASE_AND_20090217_OFFICIAL_PAGE_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "M1",
+        "O1"
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "before_label": "ベルイガー",
+      "evolved_mask": "？？？イガー",
+      "canonical_evolved_name": null,
+      "original_species_or_sprite_id": null,
+      "element_growth_or_riding": null
+    },
+    {
+      "record_id": "jp2008-evolution:pet-3",
+      "collection": "pets",
+      "entity_type": "ELIGIBLE_SOURCE_LABEL_AND_UNRESOLVED_EVOLVED_NAME",
+      "version_profile": "JP_DIGIPARK_20081111_RELEASE_AND_20090217_OFFICIAL_PAGE_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "M1",
+        "O1"
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "before_label": "ゴルシス",
+      "evolved_mask": "？？シス",
+      "canonical_evolved_name": null,
+      "original_species_or_sprite_id": null,
+      "element_growth_or_riding": null
+    },
+    {
+      "record_id": "jp2008-evolution:pet-4",
+      "collection": "pets",
+      "entity_type": "ELIGIBLE_SOURCE_LABEL_AND_UNRESOLVED_EVOLVED_NAME",
+      "version_profile": "JP_DIGIPARK_20081111_RELEASE_AND_20090217_OFFICIAL_PAGE_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "M1",
+        "O1"
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "before_label": "キングサーベル",
+      "evolved_mask": "？？？サーベル",
+      "canonical_evolved_name": null,
+      "original_species_or_sprite_id": null,
+      "element_growth_or_riding": null
+    },
+    {
+      "record_id": "jp2008-evolution:npc",
+      "collection": "npcs",
+      "entity_type": "EVOLUTION_TRIAL_SERVICE_ROLE",
+      "version_profile": "JP_DIGIPARK_20081111_RELEASE_AND_20090217_OFFICIAL_PAGE_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "M1",
+        "O1"
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "name": "進化Gさん",
+      "location": {
+        "island": "ミライア島",
+        "village": "カラの村",
+        "relative_location": "NORTHWEST_OF_VILLAGE",
+        "dungeon": "進化の洞窟",
+        "npc": "進化Gさん"
+      },
+      "coordinates": null,
+      "appearance": null,
+      "quest_id": null
+    },
+    {
+      "record_id": "jp2008-evolution:trial",
+      "collection": "quests",
+      "entity_type": "REPEATABLE_TRIAL_WITH_SOURCE_REPORTED_CHANCE",
+      "version_profile": "JP_DIGIPARK_20081111_RELEASE_AND_20090217_OFFICIAL_PAGE_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "M1",
+        "O1"
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "flow": [
+        "FIND_EVOLUTION_CAVE_NORTHWEST_OF_KARA",
+        "TALK_TO_SHINKA_G_SAN",
+        "COMPLETE_TRIAL_QUEST",
+        "CHANCE_OF_EVOLUTION",
+        "REPEATABLE_TRIAL"
+      ],
+      "one_pet_per_attempt": 1,
+      "exact_prerequisites": null,
+      "quest_steps_or_battle_encounters": null,
+      "random_roll_timing": null
+    },
+    {
+      "record_id": "jp2008-evolution:growth",
+      "collection": "growth_profiles",
+      "entity_type": "EVOLUTION_AND_POSSIBLE_MUTATION_SOURCE_CLAIM",
+      "version_profile": "JP_DIGIPARK_20081111_RELEASE_AND_20090217_OFFICIAL_PAGE_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "M1",
+        "O1"
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "status_formula": null,
+      "mutation_probability": null,
+      "successful_result_level": null,
+      "source_claim": "STRONGER_STATUS_CHANGED_APPEARANCE_AND_SOMETIMES_SPECIAL_STATUS",
+      "flavor_not_world_entity": "SPIRITS_MISCHIEF_POETIC_INTRO"
+    },
+    {
+      "record_id": "jp2008-evolution:failure",
+      "collection": "growth_profiles",
+      "entity_type": "FAILED_ATTEMPT_INITIAL_STATE_SOURCE_WARNING",
+      "version_profile": "JP_DIGIPARK_20081111_RELEASE_AND_20090217_OFFICIAL_PAGE_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "M1",
+        "O1"
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "facts": {
+        "level": 1,
+        "status": "INITIAL_STATE_UNSPECIFIED_NUMBERS",
+        "name": "INITIAL_STATE_UNSPECIFIED_NAME",
+        "skills": null,
+        "owner": null
+      },
+      "failure_species_or_identity_change": null
+    },
+    {
+      "record_id": "jp2008-evolution:secret",
+      "collection": "items",
+      "entity_type": "PAID_GUARANTEED_EVOLUTION_SOURCE_ITEM",
+      "version_profile": "JP_DIGIPARK_20081111_RELEASE_AND_20090217_OFFICIAL_PAGE_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "M1"
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "name": "進化の秘宝",
+      "scope": "ITEM_GUARANTEE_NOT_ORDINARY_QUEST_RATE",
+      "use_timing_or_consumption": null
+    },
+    {
+      "record_id": "jp2008-evolution:reroll",
+      "collection": "items",
+      "entity_type": "ONE_EVOLVED_PET_STATUS_REROLL_SOURCE_ITEM",
+      "version_profile": "JP_DIGIPARK_20081111_RELEASE_AND_20090217_OFFICIAL_PAGE_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "M1"
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "name": "剣虎進化再抽選チケット",
+      "rerolls_reported": 1,
+      "scope": "FOUR_EVOLVED_PET_TYPES_SOURCE_LABEL",
+      "reroll_distribution": null
+    },
+    {
+      "record_id": "jp2008-evolution:bundle",
+      "collection": "items",
+      "entity_type": "SOURCE_COMMERCIAL_BUNDLE_NOT_QUEST_ENTRY_FEE",
+      "version_profile": "JP_DIGIPARK_20081111_RELEASE_AND_20090217_OFFICIAL_PAGE_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "M1"
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "facts": {
+        "start": "2008-11-11_AFTER_MAINTENANCE",
+        "end": "2008-11-18_BEFORE_MAINTENANCE",
+        "bundle": "剣虎進化セットチケット",
+        "price": 350,
+        "currency_as_written": "Gstone",
+        "components": [
+          "進化の秘宝",
+          "剣虎進化再抽選チケット",
+          "餌付け薬[変:餌付けの輪丙]"
+        ],
+        "secret_item": "GUARANTEED_EVOLUTION_CLAIM_ITEM_NOT_BASE_PROBABILITY",
+        "reroll": "ONE_STATUS_REROLL_FOR_FOUR_EVOLVED_PET_TYPES",
+        "gift": "HUMAN_GAINED_EXPERIENCE_DISTRIBUTION_TO_PET_NO_RATIO"
+      },
+      "purchase_or_transaction_executed": false,
+      "ordinary_quest_fee": null
+    },
+    {
+      "record_id": "jp2008-evolution:experience-gift",
+      "collection": "items",
+      "entity_type": "CHARACTER_TO_PET_EXP_DISTRIBUTION_SOURCE_GIFT",
+      "version_profile": "JP_DIGIPARK_20081111_RELEASE_AND_20090217_OFFICIAL_PAGE_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "M1"
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "name": "餌付け薬[変:餌付けの輪丙]",
+      "transfer_ratio_or_duplication": null,
+      "exact_activation_or_duration": null
+    },
+    {
+      "record_id": "jp2008-evolution:banner",
+      "collection": "screens",
+      "entity_type": "CURRENT_RELEASE_DATE_BANNER",
+      "version_profile": "JP_DIGIPARK_20081111_RELEASE_AND_20090217_OFFICIAL_PAGE_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "M1",
+        "I1"
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "same_time_historical_pixels": false,
+      "runtime_or_sprite_binding": null,
+      "manual_observation": "400x75_TITLE_EVOLUTION_DATE_20081111_NO_NPC_OR_STATS"
+    },
+    {
+      "record_id": "jp2008-evolution:pet-visual-pair",
+      "collection": "screens",
+      "entity_type": "CURRENT_CONCEPT_IMAGES_NOT_RUNTIME_PROOF",
+      "version_profile": "JP_DIGIPARK_20081111_RELEASE_AND_20090217_OFFICIAL_PAGE_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "M1",
+        "I2",
+        "I3"
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "same_time_historical_pixels": false,
+      "runtime_or_sprite_binding": null,
+      "manual_observation": {
+        "left_source_ref": "I2",
+        "right_source_ref": "I3",
+        "appearances": [
+          "RED_SPOTTED_SABER_TOOTH_LIKE_CREATURE",
+          "DARK_SPIKED_SABER_TOOTH_LIKE_CREATURE"
+        ],
+        "named_species_or_mutation_join": null
+      },
+      "source_image_warning": "ILLUSTRATIONS_DIFFER_FROM_ACTUAL_GAME"
+    },
+    {
+      "record_id": "jp2008-evolution:source-scopes",
+      "collection": "versions",
+      "entity_type": "DATED_RELEASE_LATER_OFFICIAL_CAPTURE_AND_CAMPAIGN_RELATION",
+      "version_profile": "JP_DIGIPARK_20081111_RELEASE_AND_20090217_OFFICIAL_PAGE_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "M1",
+        "O1"
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "same_source_chain_not_independent_runtime_witnesses": true,
+      "cross_region_rebirth_fusion_equivalence": null,
+      "source_additions": {
+        "media": "MUTATION_AND_OPTIONAL_COMMERCIAL_ITEMS",
+        "official_later_capture": "ONE_PET_AT_A_TIME_AND_FAILED_STATUS_NAME_INITIAL_STATE"
+      },
+      "official_later_capture_not_original_release_day": true,
+      "campaign_end_not_system_removal": true,
+      "media_image_and_official_missing_image_not_assumed_identical": true
+    }
+  ],
+  "acquisition": {
+    "official_actual_outbound_url": "http://stoneage.to/update/20081111_update_ev1.html",
+    "official_availability": {
+      "http": {
+        "url": "https://archive.org/wayback/available?url=http%3A%2F%2Fstoneage.to%2Fupdate%2F20081111_update_ev1.html&timestamp=20090101",
+        "status": 200,
+        "bytes": 296,
+        "sha256": "4523cd92f515ac219181917ba724b67d45ab9fb102a69dd96197efa446b321e4",
+        "retrieved_utc": "2026-10-20T05:32:29.992184+00:00"
+      },
+      "response": {
+        "url": "http://stoneage.to/update/20081111_update_ev1.html",
+        "archived_snapshots": {
+          "closest": {
+            "status": "200",
+            "available": true,
+            "url": "http://web.archive.org/web/20090217151837/http://stoneage.to:80/update/20081111_update_ev1.html",
+            "timestamp": "20090217151837"
+          }
+        },
+        "timestamp": "20090101"
+      },
+      "query_scope": "ONE_FIXED_URL_AND_TIMESTAMP_NOT_GLOBAL_ARCHIVE_COVERAGE"
+    },
+    "media_availability": {
+      "http": {
+        "url": "https://archive.org/wayback/available?url=https%3A%2F%2Fwww.4gamer.net%2Fgames%2F013%2FG001377%2F20081111023%2F&timestamp=20081130",
+        "status": 200,
+        "bytes": 115,
+        "sha256": "9340ad3a192835d8609d191b1e9cb78c8fa803293f44071d6481a21f9fc8f448",
+        "retrieved_utc": "2026-10-20T05:32:30.107423+00:00"
+      },
+      "response": {
+        "url": "https://www.4gamer.net/games/013/G001377/20081111023/",
+        "archived_snapshots": {},
+        "timestamp": "20081130"
+      },
+      "query_scope": "ONE_FIXED_URL_AND_TIMESTAMP_NOT_GLOBAL_ARCHIVE_COVERAGE"
+    },
+    "official_image_failure": {
+      "requested_url": "https://web.archive.org/web/20090217151837id_/http://stoneage.to:80/update/image/20081111_ev_02.gif",
+      "http_status": 404,
+      "body_acquired": false,
+      "scope": "ONE_LINKED_IMAGE_ONLY_NOT_ALL_OFFICIAL_IMAGES",
+      "observed_utc": "2026-10-20T05:34:09.845006+00:00"
+    },
+    "current_media_images_acquired_only": [
+      "TN/001.gif",
+      "TN/002.gif",
+      "TN/003.gif"
+    ],
+    "fourth_commercial_banner_not_acquired": true,
+    "original_html_images_or_server_committed": false
+  },
+  "reopen_when": [
+    "ORIGINAL_SAME_BUILD_TRIAL_SCRIPT_OR_CONFIG_FOR_REQUIREMENTS_AND_RATES",
+    "AUTHENTICATED_UNMASKED_EVOLVED_NAME_MASTER",
+    "ACTUAL_SUCCESS_FAILURE_RUNTIME_TRACE_FOR_STATE_FIELDS",
+    "CONTEMPORANEOUS_2008_OPERATOR_PAGE_OR_IMAGE_CAPTURE"
+  ]
+}
