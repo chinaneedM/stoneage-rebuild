@@ -1,0 +1,38 @@
+name: Verify CN2.0 battle commands and distinct defeat source claims
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-CN20-BATTLE-COMMANDS-DEFEAT-*.json'
+      - 'tools/stoneage_cn20_battle_commands_defeat_source.py'
+      - 'tests/test_stoneage_cn20_battle_commands_defeat_source.py'
+      - 'tools/stoneage_cn20_riding_source.py'
+      - 'tools/stoneage_jp2008_shadow_release.py'
+      - 'tools/stoneage_cn2003_christmas_source.py'
+      - '.github/workflows/verify-stoneage-cn20-battle-commands-defeat-source.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-CN20-BATTLE-COMMANDS-DEFEAT-*.json'
+      - 'tools/stoneage_cn20_battle_commands_defeat_source.py'
+      - 'tests/test_stoneage_cn20_battle_commands_defeat_source.py'
+      - 'tools/stoneage_cn20_riding_source.py'
+      - 'tools/stoneage_jp2008_shadow_release.py'
+      - 'tools/stoneage_cn2003_christmas_source.py'
+      - '.github/workflows/verify-stoneage-cn20-battle-commands-defeat-source.yml'
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check command positions, party escape and qualified defeat boundaries
+        run: python -m unittest discover -s tests -p 'test_stoneage_cn20_battle_commands_defeat_source.py' -v
+      - name: Replay exact navigation, historical guide and linked outdoor GIF
+        run: python -m tools.stoneage_cn20_battle_commands_defeat_source --fetch --output /tmp/cn20-battle/replay.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cn20-battle-commands-defeat-derived-replay
+          path: /tmp/cn20-battle/replay.json
+          if-no-files-found: error
+          retention-days: 30

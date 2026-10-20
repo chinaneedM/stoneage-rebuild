@@ -1,0 +1,506 @@
+{
+  "schema": "stoneage.cn20_battle_commands_defeat.source.r1",
+  "authority": "OPERATOR_HOSTED_UNSIGNED_GUIDE_AUTHOR_UNVERIFIED",
+  "inputs": [
+    {
+      "id": "N1",
+      "url": "https://web.archive.org/web/20011204194619id_/http://www.waei.com.cn/ZHUANQU/stoneage2/pet/new_pet.asp",
+      "capture_timestamp": "20011204194619",
+      "bytes": 69317,
+      "sha256": "561950fd7bba41e7d39f4a781a671e11e175c7fe08dd1b5481fdf1fd23ba351b",
+      "extracted": {
+        "label": "战斗系统",
+        "href": "/ZHUANQU/stoneage2/tyro/combat.asp"
+      }
+    },
+    {
+      "id": "B1",
+      "url": "https://web.archive.org/web/20011201043456id_/http://www.waei.com.cn/ZHUANQU/stoneage2/tyro/combat.asp",
+      "capture_timestamp": "20011201043456",
+      "bytes": 65573,
+      "sha256": "944d26d035afc11a6f1af4fd135491a7ef516c20970085b68c84e1c4f7069d83",
+      "extracted": {
+        "core_utf8_bytes": 2554,
+        "core_sha256": "83663010b556ecc64829637e738648e49f48a37f51383505c7facab5e2539dc9",
+        "facts": {
+          "edition_label": "石器时代2.0",
+          "encounter": "FIELD_MOVEMENT_RANDOM_ENCOUNTERS_SOURCE_DESCRIPTION_NO_RATE",
+          "scene": "PLAYER_OR_PARTY_LOWER_RIGHT_SOURCE_PROSE_NOT_PIXELS",
+          "network_delay": "GUIDE_ATTRIBUTES_OCCASIONAL_DELAY_TO_SERVER_TRANSFER",
+          "loop": [
+            "BATTLE_SCREEN",
+            "WAIT_FOR_COMMANDS",
+            "PLAYER_COMMAND_INPUTS_IN_TURN_AS_WRITTEN",
+            "PARTICIPATING_PET_COMMANDS",
+            "CONFIRM_OR_WAIT_TIMEOUT",
+            "BATTLE_RESOLUTION",
+            "IF_UNFINISHED_WAIT_AGAIN"
+          ],
+          "labels": [
+            "攻击",
+            "咒术",
+            "捕获",
+            "请求帮助",
+            "防御",
+            "道具",
+            "宠物",
+            "脱离"
+          ],
+          "positions": [
+            "UPPER_LEFT",
+            "UPPER_SECOND",
+            "UPPER_THIRD",
+            "UPPER_RIGHT",
+            "LOWER_LEFT",
+            "LOWER_SECOND",
+            "LOWER_THIRD",
+            "LOWER_RIGHT"
+          ],
+          "attack": "SELECT_COMMAND_THEN_TARGET",
+          "spell": "SPIRIT_MAGIC_ATTACHED_TO_EQUIPMENT",
+          "capture": {
+            "chance": "MAY_FAIL",
+            "full_capacity_blocks_capture": true,
+            "pre_rebirth_capacity": 5,
+            "post_rebirth": "INCREASED_UNSPECIFIED_AMOUNT"
+          },
+          "help": {
+            "symbol": "HELP",
+            "other_players_can_join_reported": true,
+            "slots_eligibility_timing": null
+          },
+          "defense": "OFTEN_REDUCES_DAMAGE_NO_MULTIPLIER",
+          "item": "USE_ITEM_UNSPECIFIED",
+          "pet": {
+            "actions_as_written": [
+              "参战",
+              "退避"
+            ],
+            "command_eligible_state_as_written": "待机",
+            "state_numeric_id": null
+          },
+          "escape": {
+            "after_member_leaves_battle": "LEAVES_PARTY",
+            "after_leader_leaves_battle": "PARTY_DISBANDS",
+            "success_probability": null
+          },
+          "pet_skill": {
+            "input_surface": "SKILL_LIST_THEN_TARGET",
+            "actions": [
+              "ATTACK_USING_SKILL",
+              "DEFEND"
+            ],
+            "protection": "SOME_HIGH_LOYALTY_PETS_MAY_BLOCK_FATAL_BLOW",
+            "source_typo_as_written": "宠物义何中技能"
+          },
+          "solo_defeat": {
+            "hp_trigger": 0,
+            "state_label": "气绝",
+            "result": "BATTLE_FAILURE",
+            "on_return_to_scene_hp": 1,
+            "return_location": null
+          },
+          "team_defeat": {
+            "continuation": "TEAMMATE_NOT_LEFT_OR_NOT_FAINTED_AS_SOURCE_WORDING",
+            "until": "ONE_SIDE_WIPED_OUT",
+            "formal_boolean": null
+          },
+          "overkill": {
+            "damage": "FAR_ABOVE_CURRENT_HP_SOURCE_WORDING",
+            "visual": "SPINS_AND_FLIES_OUT",
+            "destination": "纪录点",
+            "exact_threshold": null
+          }
+        },
+        "image_ref": {
+          "full": "img/5.gif",
+          "thumbnail": "img/5s.gif",
+          "declared_thumbnail_size": [
+            240,
+            180
+          ]
+        },
+        "named_guide_author": null
+      }
+    },
+    {
+      "id": "I1",
+      "url": "https://web.archive.org/web/20011023202109id_/http://waei.com.cn/ZHUANQU/stoneage2/tyro/img/5.gif",
+      "capture_timestamp": "20011023202109",
+      "bytes": 119327,
+      "sha256": "7caf79fb6e27b6189669da2396129a4cd76b5e967fb7dc91fa842b6e053b165e",
+      "extracted": {
+        "format": "GIF",
+        "dimensions": [
+          640,
+          480
+        ],
+        "observation": "OUTDOOR_RIDING_SCENE_NOT_BATTLE_MENU",
+        "original_sprite_binding": null
+      }
+    }
+  ],
+  "records": [
+    {
+      "record_id": "CN20-BATTLE-01",
+      "entity_type": "PLAYER_BATTLE_COMMAND",
+      "collection": "tutorials",
+      "version_profile": "CN_OPERATOR_HOST_2.0_GUIDE_CAPTURE_2001_NOT_EXACT_BUILD",
+      "source_refs": [
+        "B1"
+      ],
+      "verification_status": "DOCUMENT_OR_IMAGE_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "source_reported": {
+        "label": "攻击",
+        "relative_position": "UPPER_LEFT",
+        "meaning": "SELECT_COMMAND_THEN_TARGET",
+        "wire_or_pixel_binding": null
+      }
+    },
+    {
+      "record_id": "CN20-BATTLE-02",
+      "entity_type": "PLAYER_BATTLE_COMMAND",
+      "collection": "tutorials",
+      "version_profile": "CN_OPERATOR_HOST_2.0_GUIDE_CAPTURE_2001_NOT_EXACT_BUILD",
+      "source_refs": [
+        "B1"
+      ],
+      "verification_status": "DOCUMENT_OR_IMAGE_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "source_reported": {
+        "label": "咒术",
+        "relative_position": "UPPER_SECOND",
+        "meaning": "SPIRIT_MAGIC_ATTACHED_TO_EQUIPMENT",
+        "wire_or_pixel_binding": null
+      }
+    },
+    {
+      "record_id": "CN20-BATTLE-03",
+      "entity_type": "PLAYER_BATTLE_COMMAND",
+      "collection": "tutorials",
+      "version_profile": "CN_OPERATOR_HOST_2.0_GUIDE_CAPTURE_2001_NOT_EXACT_BUILD",
+      "source_refs": [
+        "B1"
+      ],
+      "verification_status": "DOCUMENT_OR_IMAGE_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "source_reported": {
+        "label": "捕获",
+        "relative_position": "UPPER_THIRD",
+        "meaning": {
+          "chance": "MAY_FAIL",
+          "full_capacity_blocks_capture": true,
+          "pre_rebirth_capacity": 5,
+          "post_rebirth": "INCREASED_UNSPECIFIED_AMOUNT"
+        },
+        "wire_or_pixel_binding": null
+      }
+    },
+    {
+      "record_id": "CN20-BATTLE-04",
+      "entity_type": "PLAYER_BATTLE_COMMAND",
+      "collection": "tutorials",
+      "version_profile": "CN_OPERATOR_HOST_2.0_GUIDE_CAPTURE_2001_NOT_EXACT_BUILD",
+      "source_refs": [
+        "B1"
+      ],
+      "verification_status": "DOCUMENT_OR_IMAGE_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "source_reported": {
+        "label": "请求帮助",
+        "relative_position": "UPPER_RIGHT",
+        "meaning": {
+          "symbol": "HELP",
+          "other_players_can_join_reported": true,
+          "slots_eligibility_timing": null
+        },
+        "wire_or_pixel_binding": null
+      }
+    },
+    {
+      "record_id": "CN20-BATTLE-05",
+      "entity_type": "PLAYER_BATTLE_COMMAND",
+      "collection": "tutorials",
+      "version_profile": "CN_OPERATOR_HOST_2.0_GUIDE_CAPTURE_2001_NOT_EXACT_BUILD",
+      "source_refs": [
+        "B1"
+      ],
+      "verification_status": "DOCUMENT_OR_IMAGE_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "source_reported": {
+        "label": "防御",
+        "relative_position": "LOWER_LEFT",
+        "meaning": "OFTEN_REDUCES_DAMAGE_NO_MULTIPLIER",
+        "wire_or_pixel_binding": null
+      }
+    },
+    {
+      "record_id": "CN20-BATTLE-06",
+      "entity_type": "PLAYER_BATTLE_COMMAND",
+      "collection": "tutorials",
+      "version_profile": "CN_OPERATOR_HOST_2.0_GUIDE_CAPTURE_2001_NOT_EXACT_BUILD",
+      "source_refs": [
+        "B1"
+      ],
+      "verification_status": "DOCUMENT_OR_IMAGE_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "source_reported": {
+        "label": "道具",
+        "relative_position": "LOWER_SECOND",
+        "meaning": "USE_ITEM_UNSPECIFIED",
+        "wire_or_pixel_binding": null
+      }
+    },
+    {
+      "record_id": "CN20-BATTLE-07",
+      "entity_type": "PLAYER_BATTLE_COMMAND",
+      "collection": "tutorials",
+      "version_profile": "CN_OPERATOR_HOST_2.0_GUIDE_CAPTURE_2001_NOT_EXACT_BUILD",
+      "source_refs": [
+        "B1"
+      ],
+      "verification_status": "DOCUMENT_OR_IMAGE_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "source_reported": {
+        "label": "宠物",
+        "relative_position": "LOWER_THIRD",
+        "meaning": {
+          "actions_as_written": [
+            "参战",
+            "退避"
+          ],
+          "command_eligible_state_as_written": "待机",
+          "state_numeric_id": null
+        },
+        "wire_or_pixel_binding": null
+      }
+    },
+    {
+      "record_id": "CN20-BATTLE-08",
+      "entity_type": "PLAYER_BATTLE_COMMAND",
+      "collection": "tutorials",
+      "version_profile": "CN_OPERATOR_HOST_2.0_GUIDE_CAPTURE_2001_NOT_EXACT_BUILD",
+      "source_refs": [
+        "B1"
+      ],
+      "verification_status": "DOCUMENT_OR_IMAGE_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "source_reported": {
+        "label": "脱离",
+        "relative_position": "LOWER_RIGHT",
+        "meaning": {
+          "after_member_leaves_battle": "LEAVES_PARTY",
+          "after_leader_leaves_battle": "PARTY_DISBANDS",
+          "success_probability": null
+        },
+        "wire_or_pixel_binding": null
+      }
+    },
+    {
+      "record_id": "CN20-BATTLE-09",
+      "entity_type": "ENCOUNTER_AND_ROUND_INPUT",
+      "collection": "tutorials",
+      "version_profile": "CN_OPERATOR_HOST_2.0_GUIDE_CAPTURE_2001_NOT_EXACT_BUILD",
+      "source_refs": [
+        "B1"
+      ],
+      "verification_status": "DOCUMENT_OR_IMAGE_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "source_reported": {
+        "encounter": "FIELD_MOVEMENT_RANDOM_ENCOUNTERS_SOURCE_DESCRIPTION_NO_RATE",
+        "scene": "PLAYER_OR_PARTY_LOWER_RIGHT_SOURCE_PROSE_NOT_PIXELS",
+        "network": "GUIDE_ATTRIBUTES_OCCASIONAL_DELAY_TO_SERVER_TRANSFER",
+        "loop": [
+          "BATTLE_SCREEN",
+          "WAIT_FOR_COMMANDS",
+          "PLAYER_COMMAND_INPUTS_IN_TURN_AS_WRITTEN",
+          "PARTICIPATING_PET_COMMANDS",
+          "CONFIRM_OR_WAIT_TIMEOUT",
+          "BATTLE_RESOLUTION",
+          "IF_UNFINISHED_WAIT_AGAIN"
+        ],
+        "timeout_seconds": null
+      }
+    },
+    {
+      "record_id": "CN20-BATTLE-10",
+      "entity_type": "PET_SKILL_AND_PROTECTION",
+      "collection": "skills",
+      "version_profile": "CN_OPERATOR_HOST_2.0_GUIDE_CAPTURE_2001_NOT_EXACT_BUILD",
+      "source_refs": [
+        "B1"
+      ],
+      "verification_status": "DOCUMENT_OR_IMAGE_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "source_reported": {
+        "input_surface": "SKILL_LIST_THEN_TARGET",
+        "actions": [
+          "ATTACK_USING_SKILL",
+          "DEFEND"
+        ],
+        "protection": "SOME_HIGH_LOYALTY_PETS_MAY_BLOCK_FATAL_BLOW",
+        "source_typo_as_written": "宠物义何中技能"
+      }
+    },
+    {
+      "record_id": "CN20-BATTLE-11",
+      "entity_type": "SOLO_DEFEAT",
+      "collection": "tutorials",
+      "version_profile": "CN_OPERATOR_HOST_2.0_GUIDE_CAPTURE_2001_NOT_EXACT_BUILD",
+      "source_refs": [
+        "B1"
+      ],
+      "verification_status": "DOCUMENT_OR_IMAGE_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "source_reported": {
+        "hp_trigger": 0,
+        "state_label": "气绝",
+        "result": "BATTLE_FAILURE",
+        "on_return_to_scene_hp": 1,
+        "return_location": null
+      }
+    },
+    {
+      "record_id": "CN20-BATTLE-12",
+      "entity_type": "TEAM_DEFEAT",
+      "collection": "tutorials",
+      "version_profile": "CN_OPERATOR_HOST_2.0_GUIDE_CAPTURE_2001_NOT_EXACT_BUILD",
+      "source_refs": [
+        "B1"
+      ],
+      "verification_status": "DOCUMENT_OR_IMAGE_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "source_reported": {
+        "continuation": "TEAMMATE_NOT_LEFT_OR_NOT_FAINTED_AS_SOURCE_WORDING",
+        "until": "ONE_SIDE_WIPED_OUT",
+        "formal_boolean": null
+      }
+    },
+    {
+      "record_id": "CN20-BATTLE-13",
+      "entity_type": "OVERKILL",
+      "collection": "tutorials",
+      "version_profile": "CN_OPERATOR_HOST_2.0_GUIDE_CAPTURE_2001_NOT_EXACT_BUILD",
+      "source_refs": [
+        "B1"
+      ],
+      "verification_status": "DOCUMENT_OR_IMAGE_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "source_reported": {
+        "damage": "FAR_ABOVE_CURRENT_HP_SOURCE_WORDING",
+        "visual": "SPINS_AND_FLIES_OUT",
+        "destination": "纪录点",
+        "exact_threshold": null
+      }
+    },
+    {
+      "record_id": "CN20-BATTLE-14",
+      "entity_type": "ILLUSTRATION_MISMATCH",
+      "collection": "screens",
+      "version_profile": "CN_OPERATOR_HOST_2.0_GUIDE_CAPTURE_2001_NOT_EXACT_BUILD",
+      "source_refs": [
+        "B1",
+        "I1"
+      ],
+      "verification_status": "DOCUMENT_OR_IMAGE_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "source_reported": {
+        "observation": "OUTDOOR_RIDER_ON_QUADRUPED_WITH_NEARBY_HUMAN_NO_BATTLE_COMMAND_GRID",
+        "visible_labels": [
+          "MENU",
+          "Mail",
+          "Action",
+          "Eng"
+        ],
+        "original_character_pet_or_sprite_ids": null,
+        "battle_ui_verified": false,
+        "body_same_build": false
+      }
+    }
+  ],
+  "boundaries": {
+    "operator_authorship_verified": false,
+    "named_guide_author": null,
+    "original_server_execution_verified": false,
+    "exact_client_build": null,
+    "original_command_npc_pet_map_or_item_ids": null,
+    "command_pixel_rectangles_or_wire_ids": null,
+    "player_round_input_is_agility_execution_order": false,
+    "exact_command_timeout": null,
+    "capture_success_rate": null,
+    "capture_species_or_map_rules": null,
+    "post_rebirth_capacity": null,
+    "five_is_all_versions_or_post_rebirth_cap": false,
+    "help_is_unrestricted_join": false,
+    "help_turn_cost": null,
+    "defense_is_guaranteed_or_half_damage": false,
+    "escape_success_probability": null,
+    "leader_flee_is_automatic_leader_transfer": false,
+    "pet_standby_is_original_numeric_state": false,
+    "protect_loyalty_threshold_or_probability": null,
+    "no_death_means_no_penalties": false,
+    "all_faints_go_to_record_point": false,
+    "solo_hp1_is_max_hp_or_percent": false,
+    "team_condition_is_formal_boolean": false,
+    "overkill_damage_multiplier": null,
+    "savepoint_id_or_transition_protocol": null,
+    "source_typo_silently_corrected": false,
+    "image_is_battle_command_screen": false,
+    "image_and_body_same_build": false,
+    "image_english_labels_authenticate_region_or_language": false,
+    "image_has_original_sprite_binding": false,
+    "tw10_or_jss1999_backfill": false,
+    "raw_sources_committed": false,
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b_and_wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING"
+  },
+  "acquisition": {
+    "nav": "PREVIOUS_AUTHENTICATED_TRANSIENT_BYTES_REUSED_WITH_CURRENT_ACCEPTED_SHA_NOT_NEW_DISCOVERY",
+    "body_http": {
+      "requested_url": "https://web.archive.org/web/20011204194619id_/http://www.waei.com.cn/ZHUANQU/stoneage2/tyro/combat.asp",
+      "final_url": "https://web.archive.org/web/20011201043456id_/http://www.waei.com.cn/ZHUANQU/stoneage2/tyro/combat.asp",
+      "status": 200,
+      "bytes": 65573,
+      "sha256": "944d26d035afc11a6f1af4fd135491a7ef516c20970085b68c84e1c4f7069d83"
+    },
+    "image_http": {
+      "requested_url": "https://web.archive.org/web/20011201043456id_/http://www.waei.com.cn/ZHUANQU/stoneage2/tyro/img/5.gif",
+      "final_url": "https://web.archive.org/web/20011023202109id_/http://waei.com.cn/ZHUANQU/stoneage2/tyro/img/5.gif",
+      "status": 200,
+      "bytes": 119327,
+      "sha256": "7caf79fb6e27b6189669da2396129a4cd76b5e967fb7dc91fa842b6e053b165e"
+    },
+    "image_manual_observation": "EXACT_SOURCE_GIF_VIEWED_AND_PILLOW_FULL_DECODED_NO_BATTLE_GRID"
+  },
+  "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-35"
+}

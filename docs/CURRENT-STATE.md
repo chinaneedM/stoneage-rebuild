@@ -16313,3 +16313,14 @@ I1提供确定/取消召唤通知，未取声效或原协议绑定；I2任务目
 实际main运行：39411818528 Validate Stage A early source gap triage SUCCESS；39411818852 Validate Stage A evidence-limited review acceptance SUCCESS；39411818790 Validate StoneAge late client region/version provenance and non-executing archive probe SUCCESS；39411818853 Validate StoneAge Stage A joint review decision SUCCESS；39411818667 Validate legacy StoneAge assistant history and pet content gaps SUCCESS；39411818805 Validate StoneAge preproduction content archive and wiki boundary SUCCESS；39411818200 Validate direct TW1.0 sprite-to-ADRN source joins SUCCESS；39411818300 Verify TW7.5 spirit summoning preview and original screen references SUCCESS；39411818459 Validate StoneAge 8.0 PET contemporary evidence boundaries SUCCESS；39411818898 Verify 2001 bitmap category claims vs original TW1.0 image indexes SUCCESS；39411818484 Independently verify TW1.0 R58 rooted helper returns and source custody SUCCESS。
 
 新读开放PR0，旧queued37642417333/73c45041b9ef2519ba4575471e9d374dff169fd4保留。最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-34回全官方版本22域另一具名材料；Stage A7 PARTIAL+2 OPEN，B/wiki GATED，R79 PAUSED_NON_BLOCKING。此文档验收封口提交自身适用Actions另验，不套父绿灯。
+
+
+## 2026-10-20 R34大陆2.0八战斗指令、逃离队伍与三类失败描述
+
+本轮新读远端mainb83ab9c19380b81e97874b437c290b8068ec7c2a/treec1605fcbb0265e716e3c9934dbefc824ccc69f4f，412分支/0PR，自身8main/7候选success；八连续性/路线/22域全文固定字节/SHA/blob，旧queued37642417333保留。最高NEXT34回全版本22域，轮换到早期战斗交互。已验N1导航临时原字节按当前仓库69317B/SHA561950fd7bba41e7d39f4a781a671e11e175c7fe08dd1b5481fdf1fd23ba351b复用，不算新发现；沿真实“战斗系统”href请求20011204194619，正文实际跳20011201043456/65573B/SHA944d26d035afc11a6f1af4fd135491a7ef516c20970085b68c84e1c4f7069d83，核心SHA83663010b556ecc64829637e738648e49f48a37f51383505c7facab5e2539dc9。严格GB18030，正文无具名署名，官方托管不认证作者、精确构建或部署。
+
+14合同/中文规格补出上排攻击/咒术/捕获/请求帮助与下排防御/道具/宠物/脱离的相对位置、输入等待—决定或超时—处理—未完再等待、装备附魔、捕获可能失败/转生前5之后增加未定、HELP和队员实际退出即离队/领袖退出即解散。轮流输入不当敏捷执行顺序，未补秒数/像素框/协议枚举/成功率/额外容量/队长转让。待机宠接受指令与某些高忠诚宠挡致命击保留原措辞及原坏句“宠物义何中技能”，无状态ID/忠诚阈值或概率。
+
+单人HP0气绝判败后回场景HP1；团体中一人气绝可继续的原文“或”不强改“且”或形式化布尔；伤害远超现有HP另述旋转打飞至纪录点，无倍数/地图/事务。没有死亡不等于没有惩罚，所有气绝不一律回纪录点，HP1不当百分比/最大HP，纪录点不证明本地存盘R79。唯一原图img/5.gif实际跳裸域20011023202109/119327B/SHA7caf79fb6e27b6189669da2396129a4cd76b5e967fb7dc91fa842b6e053b165e，640×480/1帧，已目视/全解码，是户外骑乘而非八命令战斗界面；英文标签不证语言/地区/同构建，外观不绑定原人物/宠/SPR。
+
+14本包及49相关测试、两HTML一GIF实输入重放和10真实正文语义改写拒绝通过。预检曾发现HP1子串误接HP100，已发布前纠为完整整数，失败未抹去。原HTML/GIF/放大图不进Git，独立CI/双ZIP保管按实际后验。最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-35回全官方版本22域另一具名材料；本页止点已达，不扩全魔法/战斗helper，原脚本/配置/具名菜单/轨迹才重开未知。Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79 PAUSED_NON_BLOCKING，全部原历史/22域保持。

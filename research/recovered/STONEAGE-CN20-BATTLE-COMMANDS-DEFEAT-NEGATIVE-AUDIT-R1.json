@@ -1,0 +1,77 @@
+{
+  "schema": "stoneage.cn20_battle_commands_defeat.negative.r1",
+  "cases": [
+    {
+      "source_id": "B1",
+      "original_sha256": "944d26d035afc11a6f1af4fd135491a7ef516c20970085b68c84e1c4f7069d83",
+      "mutated_sha256": "7eb52fa18acfd75d0df64b1d5663062022df30fd73143415a1c93d2ace536be3",
+      "semantic_extract_rejected": true,
+      "reason": "Material battle clause missing: 为转生之前为5，转生后所持宠物的最大数有所增加"
+    },
+    {
+      "source_id": "B1",
+      "original_sha256": "944d26d035afc11a6f1af4fd135491a7ef516c20970085b68c84e1c4f7069d83",
+      "mutated_sha256": "63cd5dd5416e789c628c27fc698f52151ffcd2c6878137d1c0f486f8997e9a0c",
+      "semantic_extract_rejected": true,
+      "reason": "Material battle clause missing: 但不一定能成功"
+    },
+    {
+      "source_id": "B1",
+      "original_sha256": "944d26d035afc11a6f1af4fd135491a7ef516c20970085b68c84e1c4f7069d83",
+      "mutated_sha256": "0054895cabf0d17b8d562d679297cef81d869be675ffc249c90f09a5383ec369",
+      "semantic_extract_rejected": true,
+      "reason": "Material battle clause missing: 其他人在这时可以看到画面上出现HELP符号"
+    },
+    {
+      "source_id": "B1",
+      "original_sha256": "944d26d035afc11a6f1af4fd135491a7ef516c20970085b68c84e1c4f7069d83",
+      "mutated_sha256": "70bb27b50a1b5598dc4f09a006cb56b7622ce13725fc07d66dc3076c5f3c4a45",
+      "semantic_extract_rejected": true,
+      "reason": "Material battle clause missing: 往往能减轻所受到的伤害"
+    },
+    {
+      "source_id": "B1",
+      "original_sha256": "944d26d035afc11a6f1af4fd135491a7ef516c20970085b68c84e1c4f7069d83",
+      "mutated_sha256": "642eb5c1c1a9dc83b99624472d5586cdac7875843c285c99b3aaa4d672521c46",
+      "semantic_extract_rejected": true,
+      "reason": "Material battle clause missing: 战斗时，能接受指令的只有待机状态的宠物而已"
+    },
+    {
+      "source_id": "B1",
+      "original_sha256": "944d26d035afc11a6f1af4fd135491a7ef516c20970085b68c84e1c4f7069d83",
+      "mutated_sha256": "74ff944f8f29bebeb1f1228e7eab746c4ad267256a6758b917ebd5f76c39100d",
+      "semantic_extract_rejected": true,
+      "reason": "Material battle clause missing: 如果是领袖退出战斗的话，表示解散这个队伍"
+    },
+    {
+      "source_id": "B1",
+      "original_sha256": "944d26d035afc11a6f1af4fd135491a7ef516c20970085b68c84e1c4f7069d83",
+      "mutated_sha256": "a920919c990e3c61e5d13f8443336b751deab50715091afc50b8beee441ddb32",
+      "semantic_extract_rejected": true,
+      "reason": "Material battle clause missing: 某些忠诚度高的宠物还可以替主人挡住致命的一击"
+    },
+    {
+      "source_id": "B1",
+      "original_sha256": "944d26d035afc11a6f1af4fd135491a7ef516c20970085b68c84e1c4f7069d83",
+      "mutated_sha256": "91480cfc205c7ee628a0650c435d6d429c2ae919f642ec59121e080e1a757e80",
+      "semantic_extract_rejected": true,
+      "reason": "Solo return HP must be exactly one, not a numeric prefix"
+    },
+    {
+      "source_id": "B1",
+      "original_sha256": "944d26d035afc11a6f1af4fd135491a7ef516c20970085b68c84e1c4f7069d83",
+      "mutated_sha256": "0c43d0feac4d1d2bea3d34aeb18ba2c434f014614de111be8b42eefc8c730c00",
+      "semantic_extract_rejected": true,
+      "reason": "Material battle clause missing: 只要同队队友还没退出战斗或没有气绝"
+    },
+    {
+      "source_id": "B1",
+      "original_sha256": "944d26d035afc11a6f1af4fd135491a7ef516c20970085b68c84e1c4f7069d83",
+      "mutated_sha256": "27ea2ba881c536bf9c4a4139c71ef2cd21086fced5c9c675845458538dfe496d",
+      "semantic_extract_rejected": true,
+      "reason": "Material battle clause missing: 伤害远远高于你现有的HP"
+    }
+  ],
+  "real_source_bytes_mutated": true,
+  "prepublication_correction": "HP1_SUBSTRING_ALSO_MATCHED_HP100_NOW_EXACT_INTEGER_BOUNDARY"
+}
