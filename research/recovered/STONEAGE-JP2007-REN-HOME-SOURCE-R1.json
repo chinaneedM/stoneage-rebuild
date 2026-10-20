@@ -1,0 +1,197 @@
+{
+  "schema": "stoneage.jp2007_ren_home.source_contract.r1",
+  "review": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-44",
+  "observed_date": "2026-10-21",
+  "sources": {
+    "june": {
+      "url": "https://www.4gamer.net/news/history/2007.06/20070612195557detail.html",
+      "published": "2007-06-12 19:55",
+      "encoding": "CP932_STRICT",
+      "authority": "GAIAX_RELEASE_EXPLICITLY_REPUBLISHED_BY_4GAMER",
+      "current_bytes_are_authenticated_2007_original": false,
+      "core_sha256": "df5ce9aad50b0cc97cecd4a3941ec06cb5693cc79479ee822138b6ac203f8182",
+      "original_page_or_assets_committed": false
+    },
+    "january": {
+      "url": "https://www.4gamer.net/news/history/2007.01/20070130162900detail.html",
+      "published": "2007-01-30 16:29",
+      "encoding": "CP932_STRICT",
+      "authority": "RELEASE_EXCERPT_WITH_GAIAX_ATTRIBUTED_IN_MEDIA_INTRODUCTION",
+      "current_bytes_are_authenticated_2007_original": false,
+      "core_sha256": "f0801a2577962ff34ee495035cda98febd298799655a2072896b697ae9cae6c1",
+      "original_page_or_assets_committed": false
+    }
+  },
+  "extracted": {
+    "core_sha256": {
+      "june": "df5ce9aad50b0cc97cecd4a3941ec06cb5693cc79479ee822138b6ac203f8182",
+      "january": "f0801a2577962ff34ee495035cda98febd298799655a2072896b697ae9cae6c1"
+    },
+    "january": {
+      "npc": "レン",
+      "location": "カルターナの村の村長宅",
+      "flow": [
+        "OBTAIN_UNNAMED_REQUESTED_MATERIALS_INCLUDING_SHOP_PURCHASE",
+        "HAND_MATERIALS_TO_REN",
+        "RECEIVE_EVENT_CHOCOLATE"
+      ],
+      "item": "バレンタインチョコ",
+      "effect": {
+        "stat_label": "体力",
+        "amount_approximate": 600,
+        "target": "ALL_ALLIED_PARTY"
+      },
+      "period_as_written": [
+        "1月30日(火)定期メンテナンス後",
+        "2月27日(火)定期メンテナンス開始"
+      ],
+      "crush_named_in_january": null,
+      "ingredients_and_quantities": null,
+      "original_ids": null
+    },
+    "june": {
+      "event_title": "ワイトとレンの スウィートホーム大作戦！！",
+      "named_roles": {
+        "ワイト": "YOUNG_MAN_AND_EXCHANGE_NPC",
+        "レン": "VILLAGE_CHIEFS_GRANDDAUGHTER",
+        "レンの父": "ISSUER_OF_LAST_TRIAL"
+      },
+      "retrospective": "VALENTINE_AND_WHITE_DAY_MUTUAL_FEELINGS_CONFIRMED_AS_REPORTED_IN_JUNE",
+      "flow": [
+        "DEFEAT_UNNAMED_SPECIFIC_DINOSAURS",
+        "COLLECT_BUILDING_MATERIAL_DROPS",
+        "HAND_TO_WHITE_AT_KARTANA_OUTSKIRTS",
+        "RECEIVE_RANK_DEPENDENT_PRIZES_AND_POINTS"
+      ],
+      "world_change_claim": "HOUSE_GROWS_WHEN_SPECIFIED_COLLECTION_AMOUNTS_REACHED",
+      "period_as_written": [
+        "6月12日(火)定期メンテナンス後",
+        "6月27日(火)定期メンテナンスまで"
+      ],
+      "end_weekday_conflict": {
+        "body_weekday": "火",
+        "calendar_weekday_if_publication_year": "水",
+        "publication_year_used_for_check": 2007,
+        "actual_intended_end_date": null
+      },
+      "body_year_explicit": null,
+      "time_of_day_or_timezone": null,
+      "dinosaurs_materials_ranks_prizes_thresholds": null,
+      "counter_scope": null,
+      "final_house_or_marriage_observed": false,
+      "house_persistence": null,
+      "original_ids": null
+    },
+    "perfume": {
+      "name": "ディノ・シャルマン",
+      "shop": "マンモストア",
+      "types_by_effect_strength": 3,
+      "announcement_month_day": "6月12日",
+      "target": "PLAYER_CHARACTER_CHARM",
+      "effect": "RESTORE_CHARM_LOST_FOR_EXAMPLE_AFTER_DEFEAT",
+      "obedience_claim": "HIGHER_PLAYER_CHARM_MAKES_PETS_MORE_LIKELY_TO_OBEY",
+      "exact_recovery_prices_type_names_cap_formula": null,
+      "changes_pet_loyalty_directly": null,
+      "guarantees_obedience": false
+    },
+    "narrative_links": [
+      {
+        "from": "JANUARY_REN_ROMANCE",
+        "to": "JUNE_HOME_EVENT",
+        "relation": "NAMED_STORY_CONTINUATION_STATED_IN_JUNE_NOT_SAME_BUILD_ID"
+      },
+      {
+        "from": "WHITE_DAY_EVENT_NOT_INDEPENDENTLY_FETCHED",
+        "to": "JUNE_HOME_EVENT",
+        "relation": "JUNE_RETROSPECTIVE_ONLY"
+      }
+    ],
+    "server_execution_witnessed": false,
+    "early_build_membership_proven": false
+  },
+  "records": [
+    {
+      "record_id": "JAN-REN-EXCHANGE",
+      "source": "january",
+      "version_profile": "LATER_OFFICIAL:JP_GAIAX_2007",
+      "game_ids": null,
+      "fact_scope": "DOCUMENTARY_RELEASE_CLAIM_NOT_RUNTIME",
+      "derived_summary_zh": "村长宅レン在活动期接收指定材料并制作巧克力，便利商店购买只是取得材料的举例，不是完整材料表。"
+    },
+    {
+      "record_id": "JAN-CHOCOLATE-EFFECT",
+      "source": "january",
+      "version_profile": "LATER_OFFICIAL:JP_GAIAX_2007",
+      "game_ids": null,
+      "fact_scope": "DOCUMENTARY_RELEASE_CLAIM_NOT_RUNTIME",
+      "derived_summary_zh": "バレンタインチョコ对我方全队体力回复约600，不记录固定600、气力回复或宠物自动料理技能。"
+    },
+    {
+      "record_id": "JAN-ROMANCE-PERIOD",
+      "source": "january",
+      "version_profile": "LATER_OFFICIAL:JP_GAIAX_2007",
+      "game_ids": null,
+      "fact_scope": "DOCUMENTARY_RELEASE_CLAIM_NOT_RUNTIME",
+      "derived_summary_zh": "1月30日维护后至2月27日维护开始；レン有心仪对象，但本篇未具名也未交代结局。"
+    },
+    {
+      "record_id": "JUN-NARRATIVE-CONTINUATION",
+      "source": "june",
+      "version_profile": "LATER_OFFICIAL:JP_GAIAX_2007",
+      "game_ids": null,
+      "fact_scope": "DOCUMENTARY_RELEASE_CLAIM_NOT_RUNTIME",
+      "derived_summary_zh": "六月回顾情人节和白色情人节互明心意，ワイト与村长孙女レン受到レン父亲最后考验；不证明已结婚或存在玩家婚姻系统。"
+    },
+    {
+      "record_id": "JUN-MATERIAL-EXCHANGE",
+      "source": "june",
+      "version_profile": "LATER_OFFICIAL:JP_GAIAX_2007",
+      "game_ids": null,
+      "fact_scope": "DOCUMENTARY_RELEASE_CLAIM_NOT_RUNTIME",
+      "derived_summary_zh": "击败特定恐龙取建材，交カルターナ村边ワイト，按建材等级获奖品与点数；物种、材料、等级表与奖励数未知。"
+    },
+    {
+      "record_id": "JUN-HOUSE-AND-SCHEDULE",
+      "source": "june",
+      "version_profile": "LATER_OFFICIAL:JP_GAIAX_2007",
+      "game_ids": null,
+      "fact_scope": "DOCUMENTARY_RELEASE_CLAIM_NOT_RUNTIME",
+      "derived_summary_zh": "指定收集品达到一定量推动新居变大；计数范围、阈值、永久性和最终结果未证；原结束日期与星期矛盾原样保留。"
+    },
+    {
+      "record_id": "JUN-CHARM-OBEDIENCE",
+      "source": "june",
+      "version_profile": "LATER_OFFICIAL:JP_GAIAX_2007",
+      "game_ids": null,
+      "fact_scope": "DOCUMENTARY_RELEASE_CLAIM_NOT_RUNTIME",
+      "derived_summary_zh": "运营说明将人物魅力高低与宠物较易服从联系，提到败北等导致魅力减少；不等于宠物忠诚度、保证服从或初代通用公式。"
+    },
+    {
+      "record_id": "JUN-PERFUME-SHOP",
+      "source": "june",
+      "version_profile": "LATER_OFFICIAL:JP_GAIAX_2007",
+      "game_ids": null,
+      "fact_scope": "DOCUMENTARY_RELEASE_CLAIM_NOT_RUNTIME",
+      "derived_summary_zh": "ディノ・シャルマン香水在マンモストア销售、三种效果强度，用于恢复人物魅力；数值/单价/类型名和实际购买未证。"
+    }
+  ],
+  "unproven": {
+    "original_npc_item_map_ids_recovered": false,
+    "january_crush_named_in_january": false,
+    "white_day_original_page_retrieved": false,
+    "actual_wedding_or_player_marriage_system_proven": false,
+    "building_counter_scope_known": false,
+    "full_material_prize_threshold_table_recovered": false,
+    "final_house_or_persistence_observed": false,
+    "exact_perfume_recovery_price_or_obedience_formula_known": false,
+    "pet_loyalty_directly_changed": false,
+    "same_build_or_early_build_rules_promoted": false,
+    "original_html_or_assets_committed": false
+  },
+  "status": {
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b_wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING"
+  },
+  "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-45"
+}

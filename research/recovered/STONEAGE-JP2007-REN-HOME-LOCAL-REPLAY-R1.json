@@ -1,0 +1,212 @@
+{
+  "schema": "stoneage.jp2007_ren_home.derived_replay.r1",
+  "http": {
+    "june": {
+      "bytes": 20085,
+      "sha256": "8cf0a92fe7ab90c57a0241223d555d49ba3d17ecc4b3a6fdd43325b625ba179f"
+    },
+    "january": {
+      "bytes": 19602,
+      "sha256": "d400714fe28c614e868efee43410ee3a48184e6c4bce53b1edaf97c17987bca4"
+    }
+  },
+  "extracted": {
+    "core_sha256": {
+      "june": "df5ce9aad50b0cc97cecd4a3941ec06cb5693cc79479ee822138b6ac203f8182",
+      "january": "f0801a2577962ff34ee495035cda98febd298799655a2072896b697ae9cae6c1"
+    },
+    "january": {
+      "npc": "レン",
+      "location": "カルターナの村の村長宅",
+      "flow": [
+        "OBTAIN_UNNAMED_REQUESTED_MATERIALS_INCLUDING_SHOP_PURCHASE",
+        "HAND_MATERIALS_TO_REN",
+        "RECEIVE_EVENT_CHOCOLATE"
+      ],
+      "item": "バレンタインチョコ",
+      "effect": {
+        "stat_label": "体力",
+        "amount_approximate": 600,
+        "target": "ALL_ALLIED_PARTY"
+      },
+      "period_as_written": [
+        "1月30日(火)定期メンテナンス後",
+        "2月27日(火)定期メンテナンス開始"
+      ],
+      "crush_named_in_january": null,
+      "ingredients_and_quantities": null,
+      "original_ids": null
+    },
+    "june": {
+      "event_title": "ワイトとレンの スウィートホーム大作戦！！",
+      "named_roles": {
+        "ワイト": "YOUNG_MAN_AND_EXCHANGE_NPC",
+        "レン": "VILLAGE_CHIEFS_GRANDDAUGHTER",
+        "レンの父": "ISSUER_OF_LAST_TRIAL"
+      },
+      "retrospective": "VALENTINE_AND_WHITE_DAY_MUTUAL_FEELINGS_CONFIRMED_AS_REPORTED_IN_JUNE",
+      "flow": [
+        "DEFEAT_UNNAMED_SPECIFIC_DINOSAURS",
+        "COLLECT_BUILDING_MATERIAL_DROPS",
+        "HAND_TO_WHITE_AT_KARTANA_OUTSKIRTS",
+        "RECEIVE_RANK_DEPENDENT_PRIZES_AND_POINTS"
+      ],
+      "world_change_claim": "HOUSE_GROWS_WHEN_SPECIFIED_COLLECTION_AMOUNTS_REACHED",
+      "period_as_written": [
+        "6月12日(火)定期メンテナンス後",
+        "6月27日(火)定期メンテナンスまで"
+      ],
+      "end_weekday_conflict": {
+        "body_weekday": "火",
+        "calendar_weekday_if_publication_year": "水",
+        "publication_year_used_for_check": 2007,
+        "actual_intended_end_date": null
+      },
+      "body_year_explicit": null,
+      "time_of_day_or_timezone": null,
+      "dinosaurs_materials_ranks_prizes_thresholds": null,
+      "counter_scope": null,
+      "final_house_or_marriage_observed": false,
+      "house_persistence": null,
+      "original_ids": null
+    },
+    "perfume": {
+      "name": "ディノ・シャルマン",
+      "shop": "マンモストア",
+      "types_by_effect_strength": 3,
+      "announcement_month_day": "6月12日",
+      "target": "PLAYER_CHARACTER_CHARM",
+      "effect": "RESTORE_CHARM_LOST_FOR_EXAMPLE_AFTER_DEFEAT",
+      "obedience_claim": "HIGHER_PLAYER_CHARM_MAKES_PETS_MORE_LIKELY_TO_OBEY",
+      "exact_recovery_prices_type_names_cap_formula": null,
+      "changes_pet_loyalty_directly": null,
+      "guarantees_obedience": false
+    },
+    "narrative_links": [
+      {
+        "from": "JANUARY_REN_ROMANCE",
+        "to": "JUNE_HOME_EVENT",
+        "relation": "NAMED_STORY_CONTINUATION_STATED_IN_JUNE_NOT_SAME_BUILD_ID"
+      },
+      {
+        "from": "WHITE_DAY_EVENT_NOT_INDEPENDENTLY_FETCHED",
+        "to": "JUNE_HOME_EVENT",
+        "relation": "JUNE_RETROSPECTIVE_ONLY"
+      }
+    ],
+    "server_execution_witnessed": false,
+    "early_build_membership_proven": false
+  },
+  "audit": {
+    "real_body_mutations": [
+      {
+        "source": "january",
+        "case": "ren-location",
+        "input_sha256": "f161d030b96e76ed719a9cb9d8616ff27c597f2f0989747466afc00192580249",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "source": "january",
+        "case": "chocolate-recipient",
+        "input_sha256": "4d499b54b0186538e0754a324801dd97aef13c60a66e1fcd79fc7df2c7e099a1",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "source": "january",
+        "case": "approximate-not-exact",
+        "input_sha256": "a8b08080690ded1a74e8b9a334ad22d675e9a8a24157be95d110f9c7f88863eb",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "source": "january",
+        "case": "party-not-one",
+        "input_sha256": "b0ead5b47f413e5cd03afa3627c58df0f8198c01a714ccef5d666288bdf5f3d7",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "source": "january",
+        "case": "start-after-maintenance",
+        "input_sha256": "4ab7a518413a4ac96ce580c07fd115a66d4110d959291d9020dd07df29d0a771",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "source": "june",
+        "case": "family-relation",
+        "input_sha256": "c15f6b4b0a8e8c672367c625d08cfc7e63f03b0e0d877dbbb5a1140cb02c1ba3",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "source": "june",
+        "case": "prior-story-relation",
+        "input_sha256": "b58b0a7c756a96c8cfa5b662ecfd7514379c5403996bd08d2775b483c8066df8",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "source": "june",
+        "case": "trial-issuer",
+        "input_sha256": "e1a2eea4e8f7dd481af2b733386bd88d05cb36ae08585df8aea14d2bf3821c0a",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "source": "june",
+        "case": "defeat-not-capture",
+        "input_sha256": "716ec29a99f32850cedb70817d4cc2d33f2e08390df5e981bf55dcfdfc708e4e",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "source": "june",
+        "case": "exchange-target",
+        "input_sha256": "de062bb110587893fa15e33c68f43e90ab20685f7a85c042e415ded5ff90a23a",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "source": "june",
+        "case": "rank-not-quantity",
+        "input_sha256": "777dcaf70fd17479f7aa17b6395a28ff62952e73e992fbef30ef278f57830056",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "source": "june",
+        "case": "end-date-not-silent-fix",
+        "input_sha256": "b0d1001319a8ab9d437b88919a1a4a2b18ef96c254964f4880463c0f45288007",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "source": "june",
+        "case": "house-growth-direction",
+        "input_sha256": "95c9f5460ceec2f0ea0a64bc7d18d4963ff27bbd3fdbe93e5c58bfea067d35cd",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "source": "june",
+        "case": "player-not-pet-stat",
+        "input_sha256": "06767759f9b22a11ddfd4aff712ceb863bbdc5312e278a1dbc1f5b8a0a79d3c9",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "source": "june",
+        "case": "restore-not-unbounded-increase",
+        "input_sha256": "d6d10225ee9a07abea61eb44ce457a3ef0da3085df341ee26ccb95e362b53619",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "source": "june",
+        "case": "perfume-count",
+        "input_sha256": "1c854ef558d1e17dbab208bcf36c55546da15890b85b3840eda362db8475a86a",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "source": "june",
+        "case": "shop-name",
+        "input_sha256": "1771aa26e856809606046cbf206205f92864ec337002019d2a69f4badce34926",
+        "rejected_without_digest_gate": true
+      }
+    ],
+    "outer_script_positives": {
+      "june": true,
+      "january": true
+    }
+  },
+  "raw_html_or_assets_in_output": false,
+  "historical_server_executed": false
+}

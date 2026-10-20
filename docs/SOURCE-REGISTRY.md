@@ -7743,3 +7743,8 @@ S1 https://www.4gamer.net/games/013/G001377/20051129193618/ ，刊2005-11-29 19:
 ## 2026-10-21 R43大陆2003经典2.0运营分支来源
 
 S1 https://games.sina.com.cn/newgames/2003/11/11188486.shtml ，刊2003-11-18 15:33，标华义官方消息；当前35255B严格GB18030，正文规范SHA256 d42ada75bf6f21554f64c5373d1f423966d33d78820cceb7e6acf0eb4ca2fc9f。后期广告与2003刊文分开，源码像素不入Git。实际WGS href仅记录未取；既验大陆4.0九行表29266B/SHA256 3c0f771e0547ed753b38359ccf61023f54c82b4ba4ba2dc1684a1ac8b6f7aae8按原生Git固定，不借同名补四庄园另外两名或原构建。台湾候选 https://gnn.gamer.com.tw/detail.php?sn=14596 本轮直接HTTP403，仅保留访问失败。独立CI/保管按后续实际记录。
+
+
+## 2026-10-21 R44日本2007レン/ワイト双时期来源
+
+S1 https://www.4gamer.net/news/history/2007.06/20070612195557detail.html （2007-06-12 19:55），GaiaX明确发布文release_box，当前CP932 20085B，规范SHA256 df5ce9aad50b0cc97cecd4a3941ec06cb5693cc79479ee822138b6ac203f8182。S2 https://www.4gamer.net/news/history/2007.01/20070130162900detail.html （2007-01-30 16:29），运营节录span.blockquote、GaiaX归属在媒体导语，当前19602B，规范SHA256 f0801a2577962ff34ee495035cda98febd298799655a2072896b697ae9cae6c1。现行网页非2007原始捕获；原HTML/图不入Git。双层正文语义、17实际改写/双外层正例与独立正则摘要核实；日程矛盾、白色情人节未取及未知原ID/材料/价表显式保留。独立CI/ZIP保管按后续实证。

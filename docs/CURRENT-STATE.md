@@ -16532,3 +16532,16 @@ NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-44回22域另一具名材料
 artifact12307343148/12308191056真实下载ZIP各2138B，SHA256分别51aeae547a7f6eeaf0b79b20a77d1c5471c0b0ccde868712f4a0a256cd8a6814 / b0e11582a556f3377e0f7a8c1402b7d4238f0c5ffb05eb4040c968f5709b735b；各唯一replay.json4793B/SHA256 f6f5dc102993354d5fb35a9b6ff7718630fbe56e6b10abaa89c5b0e5c0d33981/原生Git blob1caf22375318ffd304aab110e66596f6ed48cc00，候选/main/本地完整JSON逐字节一致，ZIP摘要分别保留不伪称一致。双raw及源/工具/工作流/既验九行表pins、精确HEAD/tree/run/job/artifact链、21实际workflow记录与八启动完整前缀永久置 research/recovered/STONEAGE-CN2003-CLASSIC20-BRANCH-CUSTODY-R1.json。原版权HTML/图片/程序不入Git。
 
 新增强制收据门后本包11项/66相关测试另实跑；原内容10项不改写成11项。保管提交自身Actions继续按实际验收，不套内容绿灯。2.0运营标签/早期构建、维护开始/开服、收费新组/旧组、四庄园部分名单/九行表、宣传/实测均保持区分。R43有限来源包结束；最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-44回全22域另一具名材料，Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停，全部旧历史完整。
+
+
+## 2026-10-21 R44日本2007レン/ワイト故事承接、新居交换与人物魅力
+
+新读远端432分支/0开放PR/main bdaa1a2843d9bc494f9903f2b5d2462068c4c657/tree084140c70bf571184c9a2ac13be5df4314d2c1d4、4904项完整树无AGENTS；主线自身9项Actions全SUCCESS，旧queued37642417333保留。启动README/协议/CURRENT-STATE/决策/历史/来源/路线全文及22域组合索引固定，新读最后状态NEXT44，停止R43费用/庄园helper。
+
+本轮轮换人物任务、世界场景变化、物品和宠物关系。实际取得GaiaX2007一月发布文节录/六月明确原样发布文，两4Gamer页面当前CP932 19602/20085B，规范SHA分别f0801a2577962ff34ee495035cda98febd298799655a2072896b697ae9cae6c1 / df5ce9aad50b0cc97cecd4a3941ec06cb5693cc79479ee822138b6ac203f8182，不认证2007原始字节。八记录及中文规格 docs/specs/STONEAGE-JP2007-REN-HOME-SOURCE-R1.md、机器合同/重放/工具/专属CI新增；原HTML/图片不进Git。
+
+一月レン在カルターナ村长宅收指定材料制巧克力，商店购买仅举例，效果约600体力回复我方全队。心仪对象一月未名，不从六月倒填。六月明确回顾情人节/白色情人节互明心意、ワイト/村长孙女レン与其父最后考验；击败特定恐龙取建材交村边ワイト、按建材等级获奖品+点数，指定量推动新居扩大。没有物种/材料/奖表/阈值/计数范围/最终婚礼或房屋永久性；白色情人节原篇未独立取，续接不当玩家结婚系统。6月27日(火)与按刊年2007日历(水)矛盾双存、实际意图null，不改26或星期。
+
+迪诺香水ディノ・シャルマン三种效果强度在マンモストア销售，用于恢复败北等减少的**人物魅力**；魅力高较易使宠物服从，不是宠物忠诚度、不保证服从，不补价格/回复值/上限/公式。17实际正文改写绕过digest门拒绝、两个外层script正例和独立正则/HTML实体核心SHA核对通过，初始9用例零跳过；独立候选/main取源与ZIP保管按后续实证，不提前套绿灯。
+
+最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-45回全官方22域另一具名材料；本恋情/房屋/魅力helper止点已到。重开需官方具名日程更正/白色情人节原文/材料奖励阈值表或原服过程。Stage A7 PARTIAL+2 OPEN、Stage B/wiki GATED、R79 PAUSED_NON_BLOCKING，全部历史前缀保留，不报无分母整体百分比。
