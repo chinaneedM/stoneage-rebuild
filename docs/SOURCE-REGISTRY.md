@@ -7728,3 +7728,8 @@ I1提供确定/取消召唤通知，未取声效或原协议绑定；I2任务目
 - M1：https://www.4gamer.net/news/history/2006.03/20060314171238detail.html （2006-03-14 17:12，4Gamer引用GaiaX发行说明）；M2：https://www.4gamer.net/news/history/2006.05/20060501174657detail.html （2006-05-01 17:46）；M3：https://www.4gamer.net/games/013/G001377/20061207180354/ （2006-12-07 18:03）。均为同期公示来源，不是所述2006服务端实跑日志。
 - 3月宣称火山岛紅炎の地相对于ミライア群島的西北/分期及火属性恐龙，5月具名中央炎渦の頂的条件支路/上层Boss与第一阶段完成陈述，12月另有香颯の地（高风峡谷）、雨祝の森（ジャルガ島河源/常雨树林）。六地理实体、五条关系、四分期视图固定在 research/recovered/STONEAGE-JP2006-WORLD-GEOGRAPHY-SOURCE-R1.json；无原服地理ID/坐标/地牢钥匙条件及Boss身份/掉落。
 - 当前三篇网页大小18170/19727/268876B；同期引用正文摘要SHA256：83f8858e7cb250c2cecfbdb856b4a8fc1861ac40f2eddc96ec4a3dfbe866ef9b、c7a10d8aee88eaf9c01e6fd3ef87f12bb3121b8173673acf27cd328a0210704f、52a9401e82db8b4112f61c3e0a3c57b80dbdfba11913d3f7e0c42b8cb1b15b59，非2006原始页面字节。两候选SUCCESS Action39431577632/39432057700，另一新增保管 Action39432404764成功；最初Action39431468117 FAILURE保留。双ZIP实际不同，内部派生raw 1296B/SHA256 07ebbe68636aa8324a7438782444f0587e0bbe7e520548640d4db99d08cc4b70、Git blob954faf149cd97882909809bfce42dcd47d46f9e7恒定；详情见 CUSTODY JSON。原HTML/图片未入Git，Stage A七PARTIAL二OPEN不变。
+
+
+## 2026-10-21 R41 日本2007新手武器来源
+
+S1 https://www.4gamer.net/news/history/2007.02/20070202173939detail.html ，刊2007-02-02 17:39，当前19773B严格Shift-JIS/CP932。S1Q是两个blockquote中的GaiaX发布文引文；S1E为oNo媒体导语，六条记录分别归因。全文SHA与分层规范摘要、13真实源改写与外围正例见 research/recovered/STONEAGE-JP2007-STARTER-CLUB-LOCAL-REPLAY-R1.json；没有原2007捕获认证、物品/咒术ID、概率或NPC/码UI。原HTML/版权图片不入Git；候选/主线CI和永久保管按实际后验。

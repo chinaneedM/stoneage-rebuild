@@ -1,0 +1,175 @@
+{
+  "schema": "stoneage.jp2007_starter_club.source_contract.r1",
+  "task": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-41",
+  "date": "2026-10-21",
+  "baseline": {
+    "head": "acaec0ae8698aca8906e782182d53ccf396a5c7f",
+    "tree": "19a48fe90000350eb0c23920f1c2e36b8987c61a"
+  },
+  "source": {
+    "id": "S1",
+    "url": "https://www.4gamer.net/news/history/2007.02/20070202173939detail.html",
+    "published": "2007-02-02 17:39",
+    "quoted_primary": "GaiaX release quotation, two blockquote spans",
+    "editorial_secondary": "4Gamer oNo introduction, separately attributed; not operator quotation",
+    "encoding": "declared Shift-JIS; strictly decoded CP932",
+    "historical_2007_bytes_authenticated": false,
+    "original_official_page_bytes": null,
+    "current_observed_bytes": 19773,
+    "current_observed_sha256": "600255d21c5f764096b6b761a60720b328702fd2dfb03633063bf0edb2c305ef"
+  },
+  "extracted": {
+    "operator": {
+      "item": "始まりのこん棒",
+      "category": "WEAPON",
+      "attack_bonus": 9,
+      "agility_bonus": 1,
+      "unnamed_stat_bonus": 1,
+      "hidden_stat_name": null,
+      "spell": "猛毒の精霊",
+      "spell_level": 1,
+      "spell_vigor_cost": 0,
+      "spell_effect": "POISON_OPPONENT_DURING_BATTLE",
+      "repeat_use_claim": "REPEATED_USE_BECAUSE_NO_VIGOR_COST",
+      "distribution_start_as_announced": "2007-02-02 17:00",
+      "permanent_distribution_claim": true,
+      "mall": "マンモストア",
+      "hangame_mall": "便利商店",
+      "currency_as_written": "Gストーン",
+      "currency_acquired_by_purchase": true,
+      "random_pet_bags": [
+        "恐竜の袋",
+        "恐竜王の袋"
+      ]
+    },
+    "editorial": {
+      "free_item_reported": true,
+      "reported_sequence": [
+        "WEB_MALL",
+        "ISSUED_ITEM_CODE_INPUT",
+        "IN_GAME_NPC_TALK"
+      ],
+      "npc_name_as_written": "便利商店スタッフ",
+      "code_input_location": null,
+      "original_npc_id": null,
+      "is_operator_quote": false
+    },
+    "quote_sha256": "a13bab545ee37aa82e8a0a645955cc0efae7b10c3e0329d3eb1959516e90daa8",
+    "editorial_sha256": "44bc2cb09a240c0234197f994539e09a287a17de02e339ff559107cd7f1a5cf2"
+  },
+  "records": [
+    {
+      "record_id": "jp-gaiax-2007:starter-club-1",
+      "entity_type": "item",
+      "name_as_written_or_label": "始まりのこん棒",
+      "version_profile": "LATER_OFFICIAL:JP_GAIAX_2007",
+      "source_refs": [
+        "S1Q"
+      ],
+      "verification_status": "PRIMARY_RELEASE_QUOTATION_NOT_RUNTIME",
+      "rights_status": "DERIVED_RESEARCH_METADATA_NOT_PRODUCTION_ASSET",
+      "record_revision": 1,
+      "game_ids": null
+    },
+    {
+      "record_id": "jp-gaiax-2007:starter-club-2",
+      "entity_type": "spell",
+      "name_as_written_or_label": "猛毒の精霊",
+      "version_profile": "LATER_OFFICIAL:JP_GAIAX_2007",
+      "source_refs": [
+        "S1Q"
+      ],
+      "verification_status": "PRIMARY_RELEASE_QUOTATION_NOT_RUNTIME",
+      "rights_status": "DERIVED_RESEARCH_METADATA_NOT_PRODUCTION_ASSET",
+      "record_revision": 1,
+      "game_ids": null
+    },
+    {
+      "record_id": "jp-gaiax-2007:starter-club-3",
+      "entity_type": "unknown_stat",
+      "name_as_written_or_label": "unnamed +1 stat",
+      "version_profile": "LATER_OFFICIAL:JP_GAIAX_2007",
+      "source_refs": [
+        "S1Q"
+      ],
+      "verification_status": "PRIMARY_RELEASE_QUOTATION_NOT_RUNTIME",
+      "rights_status": "DERIVED_RESEARCH_METADATA_NOT_PRODUCTION_ASSET",
+      "record_revision": 1,
+      "game_ids": null
+    },
+    {
+      "record_id": "jp-gaiax-2007:starter-club-4",
+      "entity_type": "mall",
+      "name_as_written_or_label": "マンモストア / 便利商店",
+      "version_profile": "LATER_OFFICIAL:JP_GAIAX_2007",
+      "source_refs": [
+        "S1Q"
+      ],
+      "verification_status": "PRIMARY_RELEASE_QUOTATION_NOT_RUNTIME",
+      "rights_status": "DERIVED_RESEARCH_METADATA_NOT_PRODUCTION_ASSET",
+      "record_revision": 1,
+      "game_ids": null
+    },
+    {
+      "record_id": "jp-gaiax-2007:starter-club-5",
+      "entity_type": "random_pet_bag_offering",
+      "name_as_written_or_label": "恐竜の袋 / 恐竜王の袋",
+      "version_profile": "LATER_OFFICIAL:JP_GAIAX_2007",
+      "source_refs": [
+        "S1Q"
+      ],
+      "verification_status": "PRIMARY_RELEASE_QUOTATION_NOT_RUNTIME",
+      "rights_status": "DERIVED_RESEARCH_METADATA_NOT_PRODUCTION_ASSET",
+      "record_revision": 1,
+      "game_ids": null
+    },
+    {
+      "record_id": "jp-gaiax-2007:starter-club-6",
+      "entity_type": "editorial_reported_acquisition",
+      "name_as_written_or_label": "便利商店スタッフ / item-code route",
+      "version_profile": "LATER_OFFICIAL:JP_GAIAX_2007",
+      "source_refs": [
+        "S1E"
+      ],
+      "verification_status": "CONTEMPORANEOUS_EDITORIAL_REPORT_NOT_OPERATOR_QUOTATION",
+      "rights_status": "DERIVED_RESEARCH_METADATA_NOT_PRODUCTION_ASSET",
+      "record_revision": 1,
+      "game_ids": null
+    }
+  ],
+  "unknown_fields": [
+    "exact_build",
+    "item_id",
+    "spell_id",
+    "poison_chance",
+    "poison_damage",
+    "poison_duration",
+    "target_constraints",
+    "hidden_stat_name",
+    "weapon_durability",
+    "equip_level",
+    "claim_limit",
+    "item_code_input_location",
+    "npc_map_and_coordinates",
+    "gstone_exchange_rate",
+    "bag_species_roster_and_probabilities",
+    "real_server_execution"
+  ],
+  "unproven": {
+    "jss1999_membership": false,
+    "tw10_membership": false,
+    "cn182_membership": false,
+    "zero_vigor_means_no_other_use_limits": false,
+    "all_shop_items_free": false,
+    "all_malls_or_currencies_identical": false,
+    "original_assets_recovered": false,
+    "original_server_runtime": false,
+    "permanent_means_still_available_2026": false
+  },
+  "status": {
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b_wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING"
+  },
+  "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-42"
+}

@@ -16463,3 +16463,14 @@ R40三篇同期GaiaX日服运营说明，4Gamer 2006-03-14 / 05-01 / 12-07刊载
 首版工具 fa68fcd91654c3fac8aeb79eeea6ecdd2f2963da Action39431468117 FAILURE因误将第二篇原文必须含岛标题，已独立修复；3e91d85a6282fea60ebf42c7b4d532915cd02171 Action39431577632/job118657682812 SUCCESS，三篇HTTP实跑9/10/9原文锚。ZIP artifact12267519441 669B/SHA256 19bf3c610109ed9794545a60d1c6573c8d584282006e7abd6af0f5d7edfc7f19。固定三个规范出版文段SHA后 a5be018bfa161b00517af506b960496d71565f0d Action39432057700/job118659323340 SUCCESS，artifact12268496860 ZIP669B/SHA256 f54365543d782a920d1552a5bc278b79cb07fbb4ecc6d4bd5bb75b4915014674。两ZIP实际下载，raw replay.json 同1296B/SHA256 07ebbe68636aa8324a7438782444f0587e0bbe7e520548640d4db99d08cc4b70、Git blob954faf149cd97882909809bfce42dcd47d46f9e7，永久保留。加双CI来源保管原生Git核查后57106b68e0f6b8035919804e750549a90df22979 Action39432404764 SUCCESS。最初失败和后续修正均保留，候选Actions不能冒充主线；main自身后续独立验收。完整链见 research/recovered/STONEAGE-JP2006-WORLD-GEOGRAPHY-CUSTODY-R1.json。
 
 最高NEXT **OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-41**，回22域另一材料，不继续拓展炎渦の頂无源路线、Boss或日本2006全景地图。Stage A九族7 PARTIAL+2 OPEN、Stage B/百科GATED、R79 PAUSED_NON_BLOCKING，整体复原无可证实分母不报百分比；原历史完整保存。
+
+
+## 2026-10-21 R41 日本2007新手武器与商城领取的来源分层
+
+本轮重新读取远端429分支/0开放PR、main acaec0ae8698aca8906e782182d53ccf396a5c7f/tree19a48fe90000350eb0c23920f1c2e36b8987c61a及4874项不截断树，无AGENTS；最近R40自身来源Actions39433346041/39433176492 SUCCESS。八启动全文固定，CURRENT-STATE2211377B/blob ac86116799e367881a5d50eb450693f83d35e920。最高NEXT41从全22域轮换到第17域装备/商店，不扩R40地理helper。
+
+2007-02-02 17:39同期4Gamer一页当前19773B严格CP932，GaiaX发布文的两blockquote与媒体oNo导语分层。六记录规格补始まりのこん棒武器（攻击9/敏捷1/未名属性1加成）、Lv1猛毒の精霊零气力中毒及反复使用说明、2月2日17时恒久设置声明、マンモストア/Gストーン和Hangame便利商店入口、两随机恐龙袋。免费/商城—码输入—NPC领取顺序在媒体导语，仅记同期媒体报告，不冒充运营引文；码输入位置、隐藏属性名、毒率/伤害/持续、领取次数和原NPC坐标/ID未知。零气力不等于无其他限制、恒久不证明2026供应、此一武器免费不泛推商城、平台货币不自动合并。
+
+交付 docs/specs/STONEAGE-JP2007-STARTER-CLUB-SOURCE-R1.md、六记录机器合同/真实源派生、解析器和13真实改写反例及外围script正例、专属CI；两个来源层规范SHA分别a13bab545ee37aa82e8a0a645955cc0efae7b10c3e0329d3eb1959516e90daa8 / 44bc2cb09a240c0234197f994539e09a287a17de02e339ff559107cd7f1a5cf2。原网页/图片不进Git，不认证历史2007原字节、实际部署或JSS1999/TW1.0/CN1.82归属。候选及主线CI、永久ZIP保管以后续实证为准。
+
+最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-42，回22域另一有源具名内容；停止本武器/商城/概率helper。Stage A7 PARTIAL+2 OPEN，Stage B/wiki GATED，R79 PAUSED_NON_BLOCKING，全部旧历史前缀保留。
