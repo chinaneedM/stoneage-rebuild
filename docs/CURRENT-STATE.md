@@ -16474,3 +16474,14 @@ R40三篇同期GaiaX日服运营说明，4Gamer 2006-03-14 / 05-01 / 12-07刊载
 交付 docs/specs/STONEAGE-JP2007-STARTER-CLUB-SOURCE-R1.md、六记录机器合同/真实源派生、解析器和13真实改写反例及外围script正例、专属CI；两个来源层规范SHA分别a13bab545ee37aa82e8a0a645955cc0efae7b10c3e0329d3eb1959516e90daa8 / 44bc2cb09a240c0234197f994539e09a287a17de02e339ff559107cd7f1a5cf2。原网页/图片不进Git，不认证历史2007原字节、实际部署或JSS1999/TW1.0/CN1.82归属。候选及主线CI、永久ZIP保管以后续实证为准。
 
 最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-42，回22域另一有源具名内容；停止本武器/商城/概率helper。Stage A7 PARTIAL+2 OPEN，Stage B/wiki GATED，R79 PAUSED_NON_BLOCKING，全部旧历史前缀保留。
+
+
+## 2026-10-21 R41实际候选/主线取源与永久派生保管
+
+内容提交bdd5cae75d5d081e2a3c1276123d7fe97149b461/tree3d206e5152341a6d65487609e3ba977496ca4d44，自身候选10项及主线11项适用Actions全SUCCESS。来源候选run39509733912/job118927489860与主线run39509854623/job118927887307均真实HTTP重取19773B、13实际语义改写拒绝、外围script正例；首轮单测8项中保管用例因收据尚未生成跳过1，准确记录，不声称八项全执行。加本轮完整收据后本地45相关用例全执行通过，保管提交自身CI另按实际。
+
+两实际下载artifact12304443703/12305825483的ZIP均1941B但SHA256分别918e32b39735b6e769be3ae493a7ad6a0d919c06d13e880d68b0aa11ac2051e2 / ea0acbb6d37aae8367539ee11ae0142b14b81984b97360a45d7874a06eeff66b；各唯一replay.json4479B/SHA256 fe11845051df47b16f97ab68985986599301f5df6ad45dfbcd161cbf10b7b81e / 原生Git blob9942387926d4b75ef7e775e909333fba8be6fb6c，候选/main/本地逐字节一致。双raw永久Git副本、来源合同/工具/工作流原生Git pins、八启动完整历史前缀及全部21实际workflow记录在 research/recovered/STONEAGE-JP2007-STARTER-CLUB-CUSTODY-R1.json。原版权网页/图片不入Git。
+
+另用独立正则/HTML实体解码重提两发布文span，规范摘要与生产HTMLParser一致；首次尝试BeautifulSoup因环境未安装而未执行，换标准库重做成功。先前一条测试通配符未匹配任何用例，改用实际模块重新执行30门及本包/上包15项，共45项全部通过。普通git push因无凭据失败后，使用已授权GitHub连接写入，远端tree与本地精确相等；这些均为本地工具路径问题，不当历史源失败或远端CI失败。
+
+运营引文/媒体导语、未名属性/幸运、零气力/其他限制、恒久公告/现行服务、Gストーン/其他货币、商城/NPC实体仍分开。R41有限来源包结束；最高NEXT42回22域另一具名材料，不扩本商城/袋概率，Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停。此保管提交自身Actions继续独立验收，不套内容提交绿灯。

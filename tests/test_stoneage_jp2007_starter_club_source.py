@@ -77,6 +77,16 @@ class StarterClubSource(unittest.TestCase):
         for pin in receipt['startup_prefixes']:
             b = (ROOT / pin['path']).read_bytes()[:pin['bytes']]
             self.assertEqual(hashlib.sha256(b).hexdigest(), pin['sha256'])
+        if receipt['main'] is not None:
+            main = receipt['main']
+            self.assertEqual(main['conclusion'], 'success')
+            self.assertTrue(main['applicable_workflows_all_success'])
+            self.assertNotEqual(main['run_id'], receipt['candidate']['run_id'])
+            self.assertNotEqual(main['job_id'], receipt['candidate']['job_id'])
+            raw = (ROOT / 'research/recovered/STONEAGE-JP2007-STARTER-CLUB-CI-MAIN-REPLAY-R1.json').read_bytes()
+            self.assertEqual(hashlib.sha256(raw).hexdigest(), main['raw_sha256'])
+            candidate = (ROOT / 'research/recovered/STONEAGE-JP2007-STARTER-CLUB-CI-CANDIDATE-REPLAY-R1.json').read_bytes()
+            self.assertEqual(raw, candidate)
 
 
 if __name__ == '__main__':

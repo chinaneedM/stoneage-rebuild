@@ -1,0 +1,119 @@
+{
+  "schema": "stoneage.jp2007_starter_club.derived_replay.r1",
+  "source_url": "https://www.4gamer.net/news/history/2007.02/20070202173939detail.html",
+  "http_bytes": 19773,
+  "http_sha256": "600255d21c5f764096b6b761a60720b328702fd2dfb03633063bf0edb2c305ef",
+  "extracted": {
+    "operator": {
+      "item": "始まりのこん棒",
+      "category": "WEAPON",
+      "attack_bonus": 9,
+      "agility_bonus": 1,
+      "unnamed_stat_bonus": 1,
+      "hidden_stat_name": null,
+      "spell": "猛毒の精霊",
+      "spell_level": 1,
+      "spell_vigor_cost": 0,
+      "spell_effect": "POISON_OPPONENT_DURING_BATTLE",
+      "repeat_use_claim": "REPEATED_USE_BECAUSE_NO_VIGOR_COST",
+      "distribution_start_as_announced": "2007-02-02 17:00",
+      "permanent_distribution_claim": true,
+      "mall": "マンモストア",
+      "hangame_mall": "便利商店",
+      "currency_as_written": "Gストーン",
+      "currency_acquired_by_purchase": true,
+      "random_pet_bags": [
+        "恐竜の袋",
+        "恐竜王の袋"
+      ]
+    },
+    "editorial": {
+      "free_item_reported": true,
+      "reported_sequence": [
+        "WEB_MALL",
+        "ISSUED_ITEM_CODE_INPUT",
+        "IN_GAME_NPC_TALK"
+      ],
+      "npc_name_as_written": "便利商店スタッフ",
+      "code_input_location": null,
+      "original_npc_id": null,
+      "is_operator_quote": false
+    },
+    "quote_sha256": "a13bab545ee37aa82e8a0a645955cc0efae7b10c3e0329d3eb1959516e90daa8",
+    "editorial_sha256": "44bc2cb09a240c0234197f994539e09a287a17de02e339ff559107cd7f1a5cf2"
+  },
+  "server_execution_verified": false,
+  "raw_html_in_output": false,
+  "adversarial": {
+    "real_source_mutations": [
+      {
+        "case": "attack-90-not-9",
+        "mutated_input_sha256": "1d3c4392fa99f1f1cf752650ff9ef90be85ff18d4a9720303fa6f3e550fd326c",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "agility-10-not-1",
+        "mutated_input_sha256": "028f14d8ca7690acb8a1604e282b576c7d362857fc0504a25a6fc23c099620f9",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "hidden-bonus-10-not-1",
+        "mutated_input_sha256": "284c669a29e30b0f6531c0c92018c54d7e0bb5a0211d8e20a45a4029cd684eff",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "vigor-1-not-0",
+        "mutated_input_sha256": "e3c69c540e880898628a7fe9523ba41e99476539a15dc51ff7db2a66659024b8",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "spell-level-10-not-1",
+        "mutated_input_sha256": "750b36041683355c81931b34476aa9d5889f993898fbe52ce857262fccaaa5fc",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "hidden-stat-remains-unnamed",
+        "mutated_input_sha256": "32ce77e695c7fb2dee941f0e8a7a526d721ad7bdf0f4d43607ca2685f4eec4c2",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "poison-not-sleep",
+        "mutated_input_sha256": "0c219887c8b9a1f5a98c9aae0988fdf5639e521d1ecc99242b124eb042230292",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "permanent-not-limited",
+        "mutated_input_sha256": "b6ea45c6664e073497b44e7caf7e25dbd6f8a9f864395786bab3d2d017d575c0",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "start-time-not-18",
+        "mutated_input_sha256": "5a0ed8acf9f3d28ee3d7ca608822370142df45e63bef11514d8b072c7317c3ea",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "gstone-not-stone",
+        "mutated_input_sha256": "17854538c100507e6a2947239abcd7d638cb7b93055066bec9d42c840ecc1509",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "bag-not-fixed-pet",
+        "mutated_input_sha256": "7c12985c4b7706ffd22d0f03e5870cefeab11b78efc911014c0e4636e6d1ee4f",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "editorial-npc-not-renamed",
+        "mutated_input_sha256": "4a9c2fc935c9ee4da380f3d7d45a25eb8f75cc1826cc06a7f66867ce0bef48db",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "editorial-free-not-paid",
+        "mutated_input_sha256": "a3c5c8c559b27ca15c7763060b8ea8d0220a736bf827927fccaa181a097ceac6",
+        "rejected_without_digest_gate": true
+      }
+    ],
+    "outer_script_positive": true,
+    "outer_positive_http_sha256": "63a6908104e3759ad95b649241fdc963b59cdb53ef9a4e4dd6fb1b620c1c7b72",
+    "raw_source_in_output": false
+  }
+}
