@@ -1,0 +1,66 @@
+{
+  "schema": "stoneage.jp2009_guild_hakuen.provenance_custody.r1",
+  "task": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-39",
+  "source_contract": "stoneage.jp2009_guild_hakuen.source_contract.r1",
+  "baseline_main": {
+    "sha": "ae6c13f58f12ff9e465b1c3846b71b3956bc1d4d",
+    "tree": "3e002fc3fc7612e6de54fb321bb05649f25efcdc"
+  },
+  "candidate_ci": [
+    {
+      "head_sha": "04bbd05797b8e1570568698b5ae1c74eade52e5c",
+      "tree": "d472449896ceed2ac63c9128a36ad683300455ad",
+      "run_id": 39427043686,
+      "job_id": 118642106878,
+      "conclusion": "success",
+      "artifact_id": 12265618437,
+      "zip_bytes": 711,
+      "zip_sha256": "4dcda17f352c2cf498b4c30d8ccb69a41c32362492aa82c734468f57bc8343a1",
+      "raw_member": "replay.json"
+    },
+    {
+      "head_sha": "40f62ecf16b5d961ce2d6a4b9a4dec29b2c2eb18",
+      "tree": "1bb2108034f33a09a074caf7143842a56dc2d679",
+      "run_id": 39427426155,
+      "job_id": 118643388887,
+      "conclusion": "success",
+      "artifact_id": 12266561896,
+      "zip_bytes": 711,
+      "zip_sha256": "74a485eb74d5b94a649d57bee88600d093aceb227026acbc33fc8c617fab89aa",
+      "raw_member": "replay.json"
+    }
+  ],
+  "raw_derived": {
+    "bytes": 901,
+    "sha256": "d754c374000ee42b8f5628f62c9b26dff0ff8855dc18293846c33131873f41c0",
+    "git_blob": "fdc0adbee8880ab1558012077f244a842b9f47fd",
+    "same_bytes_across_two_ci": true
+  },
+  "source_pins": [
+    {
+      "path": "research/recovered/STONEAGE-JP2009-GUILD-HAKUEN-SOURCE-R1.json",
+      "git_blob": "d266f3e07728f9bff2cb39aea9df24639a8028fd"
+    },
+    {
+      "path": "tools/stoneage_jp2009_guild_hakuen_source.py",
+      "git_blob": "ce288fee3b236b09c2d26a27f158c9b5f34b0248"
+    },
+    {
+      "path": "docs/specs/STONEAGE-JP2009-GUILD-HAKUEN-SOURCE-R1.md",
+      "git_blob": "933b9be59eeeb8c3618118a5fdf7eac81af22573"
+    }
+  ],
+  "source_current_http_bytes": 278116,
+  "source_current_http_sha256": "3e28e624d76dbf908ee7cc393f7727bdf5e1408a94e7124ef279bceedaed7c11",
+  "source_current_operator_body_digest": "026b44ac8d658df115ed17f1071e17a845d20f62f463881030823a133d3fc946",
+  "boundaries": {
+    "2009_actual_server_execution_verified": false,
+    "original_2009_press_bytes_recovered": false,
+    "bag_seventh_type_resolved": false,
+    "TW1_or_CN_family_guild_same_system_proven": false,
+    "gameplay_reward_or_probability_original_master_restored": false,
+    "copyrighted_html_or_images_in_git": false
+  },
+  "main_ci": null,
+  "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-40"
+}

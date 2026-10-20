@@ -46,4 +46,26 @@ class GuildHakuenSource(unittest.TestCase):
    with self.subTest(phrase=phrase):
     with self.assertRaises(ValueError):extract(page.replace(phrase.encode(),b'CHANGED'))
   with self.assertRaises(ValueError):replay(self.r,b'<html>incomplete</html>')
+ def test_candidate_dual_ci_derived_custody_and_native_git_pins(self):
+  import hashlib
+  from pathlib import Path
+  path=REPORT.parent
+  c=json.loads((path/'STONEAGE-JP2009-GUILD-HAKUEN-CUSTODY-R1.json').read_text())
+  self.assertEqual(c['source_contract'],'stoneage.jp2009_guild_hakuen.source_contract.r1')
+  self.assertEqual(len(c['candidate_ci']),2)
+  self.assertTrue(all(x['conclusion']=='success' for x in c['candidate_ci']))
+  self.assertNotEqual(c['candidate_ci'][0]['artifact_id'],c['candidate_ci'][1]['artifact_id'])
+  member_bytes=[(path/n).read_bytes() for n in ['STONEAGE-JP2009-GUILD-HAKUEN-CI-CANDIDATE-REPLAY-R1.json','STONEAGE-JP2009-GUILD-HAKUEN-CI-PINNED-REPLAY-R1.json']]
+  self.assertEqual(member_bytes[0],member_bytes[1])
+  for b in member_bytes:
+   self.assertEqual(len(b),c['raw_derived']['bytes'])
+   self.assertEqual(hashlib.sha256(b).hexdigest(),c['raw_derived']['sha256'])
+   self.assertEqual(hashlib.sha1(b'blob '+str(len(b)).encode()+b'\0'+b).hexdigest(),c['raw_derived']['git_blob'])
+  for pin in c['source_pins']:
+   b=(REPORT.parents[2]/pin['path']).read_bytes()
+   self.assertEqual(hashlib.sha1(b'blob '+str(len(b)).encode()+b'\0'+b).hexdigest(),pin['git_blob'])
+  self.assertFalse(c['boundaries']['2009_actual_server_execution_verified'])
+  self.assertFalse(c['boundaries']['original_2009_press_bytes_recovered'])
+  self.assertFalse(c['boundaries']['bag_seventh_type_resolved'])
+
 if __name__=='__main__':unittest.main()
