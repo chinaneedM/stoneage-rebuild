@@ -38,4 +38,22 @@ class WorldGeography(unittest.TestCase):
     self.assertEqual(extract(fixture,i)['verified_quote_fragments'],len(tokens))
     with self.assertRaises(ValueError):extract(fixture.replace(tokens[2].encode(),b'UNVERIFIED'),i)
   with self.assertRaises(ValueError):replay(self.r,[b''])
+ def test_permanent_raw_report_and_two_candidate_ci_custody(self):
+  import hashlib
+  c=json.loads((REPORT.parent/'STONEAGE-JP2006-WORLD-GEOGRAPHY-CUSTODY-R1.json').read_text())
+  a=c['passing_candidate_ci'];b=c['pinned_candidate_ci']
+  self.assertEqual((a['conclusion'],b['conclusion']),('success','success'))
+  self.assertNotEqual(a['artifact_id'],b['artifact_id'])
+  self.assertNotEqual(a['zip_sha256'],b['zip_sha256'])
+  self.assertEqual(a['raw_sha256'],b['raw_sha256'])
+  raw=(REPORT.parent/'STONEAGE-JP2006-WORLD-GEOGRAPHY-CI-CANDIDATE-REPLAY-R1.json').read_bytes()
+  self.assertEqual(len(raw),a['raw_bytes'])
+  self.assertEqual(hashlib.sha256(raw).hexdigest(),a['raw_sha256'])
+  self.assertEqual(hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest(),a['raw_git_blob'])
+  for row in c['source_pins']:
+   data=(REPORT.parents[2]/row['path']).read_bytes()
+   self.assertEqual(hashlib.sha1(b'blob '+str(len(data)).encode()+b'\0'+data).hexdigest(),row['git_blob'])
+  self.assertEqual(c['failed_first_ci']['conclusion'],'failure')
+  self.assertFalse(c['boundaries']['original_game_map_ids_validated'])
+
 if __name__=='__main__':unittest.main()
