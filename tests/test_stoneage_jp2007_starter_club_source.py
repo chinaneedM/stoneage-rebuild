@@ -63,10 +63,9 @@ class StarterClubSource(unittest.TestCase):
         self.reject(['status', 'stage_b_wiki'], 'OPEN')
         self.reject(['status', 'r79'], 'COMPLETE')
 
-    def test_custody_if_available_validates_every_pinned_file(self):
+    def test_required_custody_validates_every_pinned_file(self):
         path = ROOT / 'research/recovered/STONEAGE-JP2007-STARTER-CLUB-CUSTODY-R1.json'
-        if not path.exists():
-            self.skipTest('Independent CI receipt is added after the first source run')
+        self.assertTrue(path.is_file(), 'The completed source milestone requires its permanent custody receipt')
         receipt = json.loads(path.read_text())
         self.assertEqual(receipt['candidate']['conclusion'], 'success')
         for pin in receipt['pins']:
