@@ -76,6 +76,42 @@ class RenHome(unittest.TestCase):
         self.reject(['status', 'stage_b_wiki'], 'OPEN')
         self.reject(['next'], 'EXPAND_HOUSE_HELPERS')
 
+    def test_permanent_independent_source_and_artifact_custody_required(self):
+        import hashlib
+        path = ROOT / ('research/recovered/' + STEM + '-CUSTODY-R1.json')
+        self.assertTrue(path.is_file(), 'Accepted source requires a permanent custody receipt')
+        r = json.loads(path.read_text())
+        self.assertEqual(r['schema'], 'stoneage.jp2007_ren_home.custody.r1')
+        for pin in r['source_pins']:
+            b = (ROOT / pin['path']).read_bytes()
+            self.assertEqual(len(b), pin['bytes'])
+            self.assertEqual(hashlib.sha256(b).hexdigest(), pin['sha256'])
+            self.assertEqual(hashlib.sha1(b'blob ' + str(len(b)).encode() + b'\0' + b).hexdigest(), pin['git_blob'])
+        self.assertEqual(len(r['startup_prefixes']), 9)
+        for pin in r['startup_prefixes']:
+            b = (ROOT / pin['path']).read_bytes()[:pin['bytes']]
+            self.assertEqual(hashlib.sha256(b).hexdigest(), pin['sha256'])
+            self.assertEqual(hashlib.sha1(b'blob ' + str(len(b)).encode() + b'\0' + b).hexdigest(), pin['git_blob'])
+        self.assertNotEqual(r['candidate']['run_id'], r['main']['run_id'])
+        self.assertNotEqual(r['candidate']['job_id'], r['main']['job_id'])
+        self.assertNotEqual(r['candidate']['artifact_id'], r['main']['artifact_id'])
+        self.assertEqual(len(r['workflow_runs']), 21)
+        self.assertTrue(all(x['conclusion'] == 'success' for x in r['workflow_runs']))
+        raw_copies = []
+        for label in ('candidate', 'main'):
+            meta = r[label]
+            self.assertTrue(meta['all_applicable_workflows_success'])
+            self.assertEqual(meta['actual_unit_tests'], 9)
+            self.assertEqual(meta['skipped_tests'], 0)
+            b = (ROOT / ('research/recovered/' + STEM + '-CI-' + label.upper() + '-REPLAY-R1.json')).read_bytes()
+            self.assertEqual(len(b), meta['raw_bytes'])
+            self.assertEqual(hashlib.sha256(b).hexdigest(), meta['raw_sha256'])
+            self.assertEqual(hashlib.sha1(b'blob ' + str(len(b)).encode() + b'\0' + b).hexdigest(), meta['raw_git_blob'])
+            self.assertEqual(json.loads(b)['extracted'], self.r['extracted'])
+            raw_copies.append(b)
+        self.assertEqual(raw_copies[0], raw_copies[1])
+        self.assertTrue(all(v is False for v in r['bounds'].values()))
+
 
 if __name__ == '__main__':
     unittest.main()

@@ -1,0 +1,335 @@
+{
+  "schema": "stoneage.jp2007_ren_home.custody.r1",
+  "candidate": {
+    "zip_bytes": 3068,
+    "zip_sha256": "6decb924bacdf91e5a3be960381d151910dc738e64d4ea31a3cd89d2b9225be0",
+    "raw_bytes": 7433,
+    "raw_sha256": "f1ecb7f73558449ae9c1939678b0d1a46273f94de06acc27b2ee83f2da014b20",
+    "raw_git_blob": "204be2cb0de67b1e5d2ce6f27102bfb4cea0c30f",
+    "matches_local_bytes": true,
+    "head": "8f4fad08a4b189ebbdddd47bc5e686f0aee0b50c",
+    "tree": "64d8f7513e55a00491573a43c0408fa4aa7516b5",
+    "run_id": 39516937794,
+    "job_id": 118951241072,
+    "artifact_id": 12307574197,
+    "conclusion": "success",
+    "applicable_workflow_count": 10,
+    "all_applicable_workflows_success": true,
+    "actual_unit_tests": 9,
+    "skipped_tests": 0,
+    "real_body_mutations": 17
+  },
+  "main": {
+    "zip_bytes": 3068,
+    "zip_sha256": "ec68f5ff337173dc3dcb30aa65a1a9a075c85cda8de9650005e2a86c8543b06a",
+    "raw_bytes": 7433,
+    "raw_sha256": "f1ecb7f73558449ae9c1939678b0d1a46273f94de06acc27b2ee83f2da014b20",
+    "raw_git_blob": "204be2cb0de67b1e5d2ce6f27102bfb4cea0c30f",
+    "matches_local_bytes": true,
+    "matches_candidate_bytes": true,
+    "head": "8f4fad08a4b189ebbdddd47bc5e686f0aee0b50c",
+    "tree": "64d8f7513e55a00491573a43c0408fa4aa7516b5",
+    "run_id": 39516996099,
+    "job_id": 118951437657,
+    "artifact_id": 12306859797,
+    "conclusion": "success",
+    "applicable_workflow_count": 11,
+    "all_applicable_workflows_success": true,
+    "actual_unit_tests": 9,
+    "skipped_tests": 0,
+    "real_body_mutations": 17
+  },
+  "workflow_runs": [
+    {
+      "run_id": 39516996125,
+      "head": "8f4fad08a4b189ebbdddd47bc5e686f0aee0b50c",
+      "branch": "main",
+      "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 39516996260,
+      "head": "8f4fad08a4b189ebbdddd47bc5e686f0aee0b50c",
+      "branch": "main",
+      "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 39516996203,
+      "head": "8f4fad08a4b189ebbdddd47bc5e686f0aee0b50c",
+      "branch": "main",
+      "name": "Validate StoneAge Stage A joint review decision",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 39516996131,
+      "head": "8f4fad08a4b189ebbdddd47bc5e686f0aee0b50c",
+      "branch": "main",
+      "name": "Validate legacy StoneAge assistant history and pet content gaps",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 39516996290,
+      "head": "8f4fad08a4b189ebbdddd47bc5e686f0aee0b50c",
+      "branch": "main",
+      "name": "Validate StoneAge preproduction content archive and wiki boundary",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 39516996194,
+      "head": "8f4fad08a4b189ebbdddd47bc5e686f0aee0b50c",
+      "branch": "main",
+      "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 39516996060,
+      "head": "8f4fad08a4b189ebbdddd47bc5e686f0aee0b50c",
+      "branch": "main",
+      "name": "Validate Stage A early source gap triage",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 39516996099,
+      "head": "8f4fad08a4b189ebbdddd47bc5e686f0aee0b50c",
+      "branch": "main",
+      "name": "Verify JP2007 Ren home story and charm source boundaries",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 39516996112,
+      "head": "8f4fad08a4b189ebbdddd47bc5e686f0aee0b50c",
+      "branch": "main",
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 39516996001,
+      "head": "8f4fad08a4b189ebbdddd47bc5e686f0aee0b50c",
+      "branch": "main",
+      "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 39516996074,
+      "head": "8f4fad08a4b189ebbdddd47bc5e686f0aee0b50c",
+      "branch": "main",
+      "name": "Independently verify TW1.0 R58 rooted helper returns and source custody",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 39516937975,
+      "head": "8f4fad08a4b189ebbdddd47bc5e686f0aee0b50c",
+      "branch": "agent/jp2007-ren-home-r44-20261021",
+      "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 39516937992,
+      "head": "8f4fad08a4b189ebbdddd47bc5e686f0aee0b50c",
+      "branch": "agent/jp2007-ren-home-r44-20261021",
+      "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 39516937942,
+      "head": "8f4fad08a4b189ebbdddd47bc5e686f0aee0b50c",
+      "branch": "agent/jp2007-ren-home-r44-20261021",
+      "name": "Validate legacy StoneAge assistant history and pet content gaps",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 39516938020,
+      "head": "8f4fad08a4b189ebbdddd47bc5e686f0aee0b50c",
+      "branch": "agent/jp2007-ren-home-r44-20261021",
+      "name": "Validate StoneAge Stage A joint review decision",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 39516937888,
+      "head": "8f4fad08a4b189ebbdddd47bc5e686f0aee0b50c",
+      "branch": "agent/jp2007-ren-home-r44-20261021",
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 39516937901,
+      "head": "8f4fad08a4b189ebbdddd47bc5e686f0aee0b50c",
+      "branch": "agent/jp2007-ren-home-r44-20261021",
+      "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 39516938032,
+      "head": "8f4fad08a4b189ebbdddd47bc5e686f0aee0b50c",
+      "branch": "agent/jp2007-ren-home-r44-20261021",
+      "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 39516938283,
+      "head": "8f4fad08a4b189ebbdddd47bc5e686f0aee0b50c",
+      "branch": "agent/jp2007-ren-home-r44-20261021",
+      "name": "Validate StoneAge preproduction content archive and wiki boundary",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 39516937799,
+      "head": "8f4fad08a4b189ebbdddd47bc5e686f0aee0b50c",
+      "branch": "agent/jp2007-ren-home-r44-20261021",
+      "name": "Validate Stage A early source gap triage",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 39516937794,
+      "head": "8f4fad08a4b189ebbdddd47bc5e686f0aee0b50c",
+      "branch": "agent/jp2007-ren-home-r44-20261021",
+      "name": "Verify JP2007 Ren home story and charm source boundaries",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "source_pins": [
+    {
+      "path": "research/recovered/STONEAGE-JP2007-REN-HOME-SOURCE-R1.json",
+      "bytes": 8248,
+      "sha256": "4617e3c10ffdc9b5eebba6ab55cc9d818eb91e0e134e381f29a349f935de1c0d",
+      "git_blob": "f8ed483fc4b2f2c1fe6575ca1a4f34ea2daba8f9"
+    },
+    {
+      "path": "research/recovered/STONEAGE-JP2007-REN-HOME-LOCAL-REPLAY-R1.json",
+      "bytes": 7433,
+      "sha256": "f1ecb7f73558449ae9c1939678b0d1a46273f94de06acc27b2ee83f2da014b20",
+      "git_blob": "204be2cb0de67b1e5d2ce6f27102bfb4cea0c30f"
+    },
+    {
+      "path": "research/recovered/STONEAGE-JP2007-REN-HOME-CI-CANDIDATE-REPLAY-R1.json",
+      "bytes": 7433,
+      "sha256": "f1ecb7f73558449ae9c1939678b0d1a46273f94de06acc27b2ee83f2da014b20",
+      "git_blob": "204be2cb0de67b1e5d2ce6f27102bfb4cea0c30f"
+    },
+    {
+      "path": "research/recovered/STONEAGE-JP2007-REN-HOME-CI-MAIN-REPLAY-R1.json",
+      "bytes": 7433,
+      "sha256": "f1ecb7f73558449ae9c1939678b0d1a46273f94de06acc27b2ee83f2da014b20",
+      "git_blob": "204be2cb0de67b1e5d2ce6f27102bfb4cea0c30f"
+    },
+    {
+      "path": "tools/stoneage_jp2007_ren_home_source.py",
+      "bytes": 13140,
+      "sha256": "2c137a7a5f0890001808ea51322afb00e9eefa881ab017ffa78cf1c15cff5bf6",
+      "git_blob": "75a8edf05c4f218e0e5ccde4cb68a72098fb0ff3"
+    },
+    {
+      "path": ".github/workflows/verify-stoneage-jp2007-ren-home-source.yml",
+      "bytes": 1295,
+      "sha256": "90d655d279cdc55fbe7f57f5b517ecce75b785517416bb2a6708f7b7394931c3",
+      "git_blob": "12fd3e1ac659e4fdd0387cdc9b48b709d52a097a"
+    },
+    {
+      "path": "docs/specs/STONEAGE-JP2007-REN-HOME-SOURCE-R1.md",
+      "bytes": 4875,
+      "sha256": "2a91b11acec21010e5019383b87ce85385d683ac5b63b6fa8c6abe4113815999",
+      "git_blob": "aecfa5441fdb0e2f588718b065e3e896ef0cfe0b"
+    },
+    {
+      "path": "docs/STONEAGE-OFFICIAL-VERSION-NAMED-CONTENT-REVIEW-R44.md",
+      "bytes": 1747,
+      "sha256": "9b4a1567ef3e7433062f7b572e02613f2513c8efdfc1b90f545fb87087fb5ab9",
+      "git_blob": "65978e02b9d22eba2e44515e05fa4b79ee72c537"
+    }
+  ],
+  "startup_prefixes": [
+    {
+      "path": "README.md",
+      "bytes": 28980,
+      "sha256": "f5353b867cb42d46b4ed9e0af7f1907120a85eb950bed9a4d8ece5719e3cfd37",
+      "git_blob": "9d4b64db617a36e88e150ee91183124310070a04"
+    },
+    {
+      "path": "docs/PROJECT-CONTINUITY-PROTOCOL-R1.md",
+      "bytes": 9762,
+      "sha256": "c44834eeec87f7a43e9cb4905f08377349e36d58b1fff2c5a75a6975db695e3b",
+      "git_blob": "ba9bbe19384589400abc61af37a360a40bf91452"
+    },
+    {
+      "path": "docs/CURRENT-STATE.md",
+      "bytes": 2223931,
+      "sha256": "c29857333b88598b4c4b1e7d19eeeef1d7ba5d86b02ea1ff7c4723bda1b6f185",
+      "git_blob": "d911213ebe9e5fcaa74bc19811a66840e4eb78bd"
+    },
+    {
+      "path": "docs/DESIGN-DECISIONS.md",
+      "bytes": 45965,
+      "sha256": "28b572ed01179eacd5a06b4ad62c76e4baef22ac49587aa0bad452a7cb3fe8e6",
+      "git_blob": "013ae4fad9301ab0140fe408a423b3abad97d1f9"
+    },
+    {
+      "path": "docs/HISTORICAL-TIMELINE.md",
+      "bytes": 532965,
+      "sha256": "0265a16d85a81b395cb9765fb6ae11f35e88665a90356a018634ec4895ed09e6",
+      "git_blob": "e348867a8fc90023e7d83f5d1f0a9dca4fd97a73"
+    },
+    {
+      "path": "docs/SOURCE-REGISTRY.md",
+      "bytes": 822159,
+      "sha256": "2b83ffb716c66c9fd8c58eb45db3a6a2efcfcd66f1a3bd601624a2ae35d1d07b",
+      "git_blob": "d888cb53f3ca26115f69fd8c1788534f0b38c06c"
+    },
+    {
+      "path": "docs/RESTORATION-ROADMAP-R2.md",
+      "bytes": 171972,
+      "sha256": "f21f9ad43b9beafb56ecd5508b0c8953b2d4ab1b3620316ca1380c7c1b230c2a",
+      "git_blob": "d52a7253aa974fe85734f9f74f0e2904faa6a2d2"
+    },
+    {
+      "path": "research/recovered/STONEAGE-22-DOMAIN-SOURCE-READY-PORTFOLIO-R2.json",
+      "bytes": 15948,
+      "sha256": "7d50de08f7855cf16dbe54b1747e258f1cc1223de88cc217172fd145f3c704ce",
+      "git_blob": "088b469b3c51e689cff27f33fc3bb49de2d24b2c"
+    },
+    {
+      "path": "docs/STONEAGE-PREPRODUCTION-CONTENT-ARCHIVE-R1.md",
+      "bytes": 12391,
+      "sha256": "ae38d1b19c7b81d8276c5f67b4f4132bf73cfedd99b44126a298d347ec645113",
+      "git_blob": "0f7724feb5484ba264bbfac01cc7e1edb9e1097e"
+    }
+  ],
+  "independent_acceptance": {
+    "fresh_content_main_checkout": "8f4fad08a4b189ebbdddd47bc5e686f0aee0b50c",
+    "related_tests": 75,
+    "skips": 0,
+    "independent_regex_core_digests_match_htmlparser": true,
+    "both_actual_downloads_match_local_raw_json": true,
+    "complete_historical_prefixes_preserved": true
+  },
+  "bounds": {
+    "original_html_or_assets_committed": false,
+    "historical_server_executed": false,
+    "june_end_conflict_resolved": false,
+    "white_day_source_independently_retrieved": false,
+    "original_ids_recovered": false,
+    "player_charm_is_pet_loyalty": false,
+    "stage_b_or_wiki_started": false
+  }
+}

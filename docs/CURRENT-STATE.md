@@ -16545,3 +16545,12 @@ artifact12307343148/12308191056真实下载ZIP各2138B，SHA256分别51aeae547a7
 迪诺香水ディノ・シャルマン三种效果强度在マンモストア销售，用于恢复败北等减少的**人物魅力**；魅力高较易使宠物服从，不是宠物忠诚度、不保证服从，不补价格/回复值/上限/公式。17实际正文改写绕过digest门拒绝、两个外层script正例和独立正则/HTML实体核心SHA核对通过，初始9用例零跳过；独立候选/main取源与ZIP保管按后续实证，不提前套绿灯。
 
 最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-45回全官方22域另一具名材料；本恋情/房屋/魅力helper止点已到。重开需官方具名日程更正/白色情人节原文/材料奖励阈值表或原服过程。Stage A7 PARTIAL+2 OPEN、Stage B/wiki GATED、R79 PAUSED_NON_BLOCKING，全部历史前缀保留，不报无分母整体百分比。
+
+
+## 2026-10-21 R44独立候选/主线取源与永久派生保管
+
+内容8f4fad08a4b189ebbdddd47bc5e686f0aee0b50c/tree64d8f7513e55a00491573a43c0408fa4aa7516b5自身候选10项、主线11项适用Actions全SUCCESS。来源候选run39516937794/job118951241072，主线run39516996099/job118951437657各实跑9用例零跳过、HTTP20085/19602B双源与17真实正文语义改写拒绝、两外围script正例。另对实际远端内容main干净检出75相关用例全过，独立正则/HTML实体解码两核心摘要、九启动完整前缀和原生Git标识核实通过。
+
+artifact12307574197/12306859797实际下载，各ZIP3068B，SHA256分别6decb924bacdf91e5a3be960381d151910dc738e64d4ea31a3cd89d2b9225be0 / ec68f5ff337173dc3dcb30aa65a1a9a075c85cda8de9650005e2a86c8543b06a；唯一replay.json7433B/SHA256 f1ecb7f73558449ae9c1939678b0d1a46273f94de06acc27b2ee83f2da014b20、原生Git blob204be2cb0de67b1e5d2ce6f27102bfb4cea0c30f，候选/main/本地完整原JSON逐字节一致。双派生副本、八个来源/工具/工作流/规格pins、21实际workflow条目和九启动完整前缀永久置 research/recovered/STONEAGE-JP2007-REN-HOME-CUSTODY-R1.json。原HTML/版权图不入Git。
+
+新增强制收据门后本包10项/76相关用例全执行通过，删除收据会失败；初始9项历史不改写为10项。保管提交自身候选/main Actions继续独立后验，不套内容提交绿灯。日程原星期矛盾、未名一月对象/六月具名关系、计划新居/实际婚礼、人物魅力/宠物忠诚、建材等级/数量保持分开。有限R44止点完成，NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-45回22域另一具名来源；Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停，全部旧历史完整。
