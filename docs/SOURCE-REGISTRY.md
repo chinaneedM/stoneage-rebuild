@@ -7706,3 +7706,11 @@ I1提供确定/取消召唤通知，未取声效或原协议绑定；I2任务目
 独立干净远端检出50相关测试、另一HTMLParser两个核心、Pillow四全JPEG、13真实改写与两meta正例重做及八完整历史前缀通过。另从同一已验官方HTML补存六失图href/alt/声明尺寸：banner未声明，uta_osa/tora_in声明250×200，tora_map1/2/3声明150×120；非已取像素实测、NPC/地图名或原ID。此补充在内容双CI之后加入，后续源重放逐字段核实六声明，不改变已验派生JSON格式/语义。加声明边界及保管两用例后52相关测试通过，保管提交自身CI另按实际。原HTML/图不入Git，七章全文、三物种、具体奖励、地图坐标和部署均不补。
 
 最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-38回全官方22域另一具名材料，停止本虎追/全图/全诗helper。Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79 PAUSED_NON_BLOCKING；全历史保持。
+
+
+## 2026-10-20 追加：JP2008 Gamania宠物第200种、捕获与GASH活动（R38）
+
+- **同期出版/来源性质：** 4Gamer《「ストーンエイジ」，GASHが当たるペット捕獲大作戦キャンペーン実施》2008/07/15 16:22，标配信元ガマニアデジタルエンターテインメント，且明确“メーカー発表文の内容をそのまま掲載しています”。URL https://www.4gamer.net/games/013/G001377/20080715027/ 。厂商平台Gamania、所述游戏运营DigiPark分开；本来源是一篇媒体刊登的当时发布文，不是游戏原服脚本。
+- **可回收内容：** 2008年活动宣传语称宠物200种、第200种名フクゥーリ；GASH用户/活动期间**直接捕获**/交易等取得不合格、一账户一参与；500份100 GASH点外部抽奖。公告期间与计划发放日期不作实服已执行事实；源数据具体字段固定在 STONEAGE-JP2008-FUKUURI-CAPTURE-SOURCE-R1.json。
+- **文件证据：** 首次分支工具转义失败 Action39424251604及修复后成功39424516338；永久派生原JSON Git blob780ec3ea27df6738e61489246eb9bf1fdb38c0a9，源HTTP当前字节270185B SHA256 25e28e9354a1a87b719399eb35ebaf7802dff83aec33da1cb4bfb271f0f9d06e、规范化发布文digest ee8041f5c433b738c2346e84a28731fffb4639c03c3fe08c8b6352b02d7fa8e1；Gamania活动详情 http://service.gamania.co.jp/stoneage/cp/080715/ 仅作为同期原文出链，未取得原2008字节。
+- **边界：** 同版本宠物ID/能力/技能/图像与捕获脚本未知，图鉴完整分母未知；GASH不当游戏货币；原HTML及版权资产不入Git。参见 docs/specs/STONEAGE-JP2008-FUKUURI-CAPTURE-CAMPAIGN-SOURCE-R1.md、docs/STONEAGE-OFFICIAL-VERSION-NAMED-CONTENT-REVIEW-R38.md。历史R21三章影之支配者已存，R38不重复其发现。

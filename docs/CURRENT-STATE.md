@@ -16423,3 +16423,14 @@ I1提供确定/取消召唤通知，未取声效或原协议绑定；I2任务目
 实际main运行：39422033039 Verify JP2008 tiger quest story, enigma and official source boundaries SUCCESS；39422033013 Validate direct TW1.0 sprite-to-ADRN source joins SUCCESS；39422032559 Independently verify TW1.0 R58 rooted helper returns and source custody SUCCESS；39422032826 Verify 2001 bitmap category claims vs original TW1.0 image indexes SUCCESS；39422032655 Validate Stage A early source gap triage SUCCESS；39422032941 Validate Stage A evidence-limited review acceptance SUCCESS；39422032014 Validate StoneAge preproduction content archive and wiki boundary SUCCESS；39422032546 Validate StoneAge 8.0 PET contemporary evidence boundaries SUCCESS；39422032427 Validate StoneAge late client region/version provenance and non-executing archive probe SUCCESS；39422031957 Validate StoneAge Stage A joint review decision SUCCESS；39422032015 Validate legacy StoneAge assistant history and pet content gaps SUCCESS。
 
 最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-38回全官方22域另一具名材料，停止本虎追/诗/全图helper。Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79 PAUSED_NON_BLOCKING；全部历史保持。此文档封口提交自身适用Actions另按实际，不套父绿灯。
+
+
+## 2026-10-20 R38日本200种宠物纪念、フクゥーリ直接捕获资格及派生保管
+
+本轮独立读取 main50574f312136ef2c5cb83929cef5bbc72d48f478/tree04b8ac1799d4ebbb5da336909787caf73ed55cba、4846项不截断全树、0开放PR、最新Actions成功与八启动/22域正文，CURRENT-STATE Git blob9992d79a9f39a32d03c6400a9c1187120bf221b8 实取非空。最高NEXT38返回全22域。先定位2008日服影の支配者，但全树发现R21原三章已有完整来源/测试/保管，不计重复新增；改选此前未入库的Gamania JP2008宠物第200种、直接捕获与GASH活动资格，停止R37虎追助手。
+
+同期4Gamer 2008-07-15 16:22“メーカー発表文の内容をそのまま掲載” Gamania平台运营方发布文，DigiPark为所报游戏运营方。发布文称日服服务第九年、宠物品种达200、フクゥーリ为第200种；2008-07-15 16:00至07-29 13:00期间玩家必须实际捕获方算GASH抽奖，交易等他途径不算，GASH账户限一次；500位每位100 GASH点是**外部活动奖**，非Stone或游戏任务奖励；8月5日17时左右拟发不等于到账。未获同版200完整物种表、原物种ID、捕获率/栖地、捕获脚本、真实部署或当年Gamania详情原网页；与JSS1999/TW1.0界限保持，原HTML/版权图不入Git。
+
+新增 docs/specs/STONEAGE-JP2008-FUKUURI-CAPTURE-CAMPAIGN-SOURCE-R1.md、research/recovered/STONEAGE-JP2008-FUKUURI-CAPTURE-SOURCE-R1.json、专属验证/边界测试/CI及 docs/STONEAGE-OFFICIAL-VERSION-NAMED-CONTENT-REVIEW-R38.md。最初误转义工具提交 eb7ee8b33ad44d7e184f0055819a840c1ff8e968 Action39424251604 FAILURE保留，修正710ab1f6cd4e6c95b3fe9fcca8431b2df6febd55 Action39424516338/job118633554765 SUCCESS，确实HTTP重放+单测。产物12265083643实际下载，ZIP607B SHA256 d71687e2652a2545d163ba5c2673d12f3feba4e34b76f6595489794fae955841，raw replay.json687B SHA256 ee9a7ec87f4c728ffda3081042adbac51745f0c000bbeadd4a72db1149c8ee23，永久Git blob780ec3ea27df6738e61489246eb9bf1fdb38c0a9。后补原生Git保管断言时误引用追加前规格文件blob，提交230118d9d82e3704f79f9ac8efec2a18378c6896 Action39425142193 FAILURE同样保留；校正保管SHA提交6be9c463c56e135aebcd8f7a7820a4cc1a0e6f3c，Action39425296403 SUCCESS。最新分支主线整合和main自身检查独立后验，不以分支绿灯预认证main。
+
+最高NEXT改 **OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-39**：重新轮换22域，独立具名官方内容/玩法入口，优先产生可检索的历史业务资料，不递归收齐本活动200宠或通用概率助手。Stage A九族7 PARTIAL+2 OPEN，Stage B和公开wiki GATED、R79 PAUSED_NON_BLOCKING，所有历史前缀保持；未计算无分母总恢复率。

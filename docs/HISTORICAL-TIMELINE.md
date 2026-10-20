@@ -3943,3 +3943,8 @@ I1提供确定/取消召唤通知，未取声效或原协议绑定；I2任务目
 独立干净远端检出50相关测试、另一HTMLParser两个核心、Pillow四全JPEG、13真实改写与两meta正例重做及八完整历史前缀通过。另从同一已验官方HTML补存六失图href/alt/声明尺寸：banner未声明，uta_osa/tora_in声明250×200，tora_map1/2/3声明150×120；非已取像素实测、NPC/地图名或原ID。此补充在内容双CI之后加入，后续源重放逐字段核实六声明，不改变已验派生JSON格式/语义。加声明边界及保管两用例后52相关测试通过，保管提交自身CI另按实际。原HTML/图不入Git，七章全文、三物种、具体奖励、地图坐标和部署均不补。
 
 最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-38回全官方22域另一具名材料，停止本虎追/全图/全诗helper。Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79 PAUSED_NON_BLOCKING；全历史保持。
+
+
+### 2008-07-15—07-29：日本版“第200种宠物”直接捕获活动（同期发布文，FACT/边界）
+
+2008-07-15 16:22 刊登的4Gamer运营商发布文（发行来源ガマニアデジタルエンターテインメント，游戏运营方DigiPark）称服务第9年有200种宠物，“フクゥーリ”称第200种。活动公告区间7月15日16:00到7月29日13:00；在游戏内**直接捕获**才计 GASH 外部抽奖，交易等取得不算；每GASH账户一次，拟抽500位各100 GASH点，8月5日约17时计划发放。同期声明不保证当时服务器实际执行及完成分发；没有原宠物master、图号、捕获率或200个姓名。**不得倒填JSS1999/TW1.0或把第200种当原服务器ID。** 原文证据、状态、当前HTML字节SHA见 docs/specs/STONEAGE-JP2008-FUKUURI-CAPTURE-CAMPAIGN-SOURCE-R1.md 和 research/recovered/STONEAGE-JP2008-FUKUURI-CAPTURE-CUSTODY-R1.json。来源 https://www.4gamer.net/games/013/G001377/20080715027/ 。

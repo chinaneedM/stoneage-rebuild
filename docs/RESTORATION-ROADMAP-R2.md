@@ -1092,3 +1092,10 @@ I1提供确定/取消召唤通知，未取声效或原协议绑定；I2任务目
 独立干净远端检出50相关测试、另一HTMLParser两个核心、Pillow四全JPEG、13真实改写与两meta正例重做及八完整历史前缀通过。另从同一已验官方HTML补存六失图href/alt/声明尺寸：banner未声明，uta_osa/tora_in声明250×200，tora_map1/2/3声明150×120；非已取像素实测、NPC/地图名或原ID。此补充在内容双CI之后加入，后续源重放逐字段核实六声明，不改变已验派生JSON格式/语义。加声明边界及保管两用例后52相关测试通过，保管提交自身CI另按实际。原HTML/图不入Git，七章全文、三物种、具体奖励、地图坐标和部署均不补。
 
 最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-38回全官方22域另一具名材料，停止本虎追/全图/全诗helper。Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79 PAUSED_NON_BLOCKING；全历史保持。
+
+
+## 2026-10-20 R38 全22域轮换：JP2008具名宠物和直接捕获事件资格
+
+新增内容为2008日本运营发布文里可检索的具名宠物“フクゥーリ”、第200种宣传口径、直接捕获与交易取得分界、限GASH账户参与的一次性外部抽奖事件。没有新增初代宠物master、原游戏捕获算法、完整200种名单或部署见证；不借外部GASH点填原Stone经济。实际带来的是宠物名称—取得途径—时期—外部活动关系一条版本化资料接缝，不是初代物种或任何玩法实现关闭。已有R21《影の支配者》前三章验证成果不重复计数；此前R37虎追后已停止扩展。
+
+优先队列下一项 **OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-39**，回全官方版本22域寻找另一独立具名官方内容的实源并按止点停止，允许资料不足时只保留精确OPEN，不无限抽图或追宠物总表。Stage A有界历史评审7 PARTIAL+2 OPEN不变；Stage B/公开wiki GATED，R79暂停。成果、失败记录、原始当前HTML派生保管见R38专项与CURRENT-STATE末尾；候选CI成功不是主线自身CI。
