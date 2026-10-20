@@ -3934,3 +3934,12 @@ I1提供确定/取消召唤通知，未取声效或原协议绑定；I2任务目
 官方真实6GIF href按裸域/www原样一次有限请求均404，未盲递归，不泛化档案全面缺失。媒体真实SS/001–004四250×200 JPEG全取/目视红黑条纹虎和队伍/灰岩走廊/另一人影室内/沙地棕榈肋骨，不绑NPC/物种/原图ID、原生分辨率或捕获奖励运行。当前媒体像素不是2008捕获，不替代缺失官方GIF。原HTML/JPEG不入Git。初次编码猜测Shift-JIS严格拒绝后纠正UTF-8；初次反例命中媒体导语而非发布文，审计未生成致本地测试缺文件，限定发布文容器重做13实际改写拒绝与两外层meta正例后50相关测试通过；不是远端失败或源缺失。
 
 独立CI/ZIP保管按后续实际。止点一官方页/一媒体任务段/四图/六精确失败，不扩七章/全地图/捕获攻略。原脚本、官方具名诗章/奖励/任务轨迹或原ID绑定才重开未知。最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-38回全官方22域另一具名材料。Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79 PAUSED_NON_BLOCKING；R32原范围及全部旧历史/22域前缀保持。
+
+
+## 2026-10-20 R37实际双CI、官方失图声明元数据与永久保管
+
+内容1463429fa2c14eeb0fd6a0d35985b5a280f14128/tree250e2f1dbefb56aa9637e3e0ac6fda822a0ea6dd自身候选10/main11全SUCCESS；source run39421273992/39421452476，job118622527112/118623140519各实际11测试与一现行媒体HTML、一2008官方HTML、四JPEG重放。artifact12264270040/12263706176实下载，各ZIP2047B/SHA256 162c4982fbe40d696e2d12b842e92891a8249cfe2379f23c532ca56a5923b87f/cb1edf00f5c3e34c4522d6e7cc88aeeb06dd3dcca0a6b8405e165944ad902682；唯一replay.json4599B/SHA256 dbfc56df3e1cbdf5d86d2c0c8a7d7d235a155be325b81434eaad43e5871b466c，候选/main/本地完整原JSON逐字节一致。永久CI-CANDIDATE/CI-MAIN-REPLAY/CUSTODY固定源报告/13实际变异及2正例/新声明元数据/双派生共五文件字节、SHA、原生Git blob和精确HEAD/tree/run/job/artifact/ZIP/raw链。
+
+独立干净远端检出50相关测试、另一HTMLParser两个核心、Pillow四全JPEG、13真实改写与两meta正例重做及八完整历史前缀通过。另从同一已验官方HTML补存六失图href/alt/声明尺寸：banner未声明，uta_osa/tora_in声明250×200，tora_map1/2/3声明150×120；非已取像素实测、NPC/地图名或原ID。此补充在内容双CI之后加入，后续源重放逐字段核实六声明，不改变已验派生JSON格式/语义。加声明边界及保管两用例后52相关测试通过，保管提交自身CI另按实际。原HTML/图不入Git，七章全文、三物种、具体奖励、地图坐标和部署均不补。
+
+最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-38回全官方22域另一具名材料，停止本虎追/全图/全诗helper。Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79 PAUSED_NON_BLOCKING；全历史保持。

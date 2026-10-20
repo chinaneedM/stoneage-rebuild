@@ -40,4 +40,20 @@ class TigerQuestSource(unittest.TestCase):
   for f in [extract_media,extract_official]:
    with self.assertRaises(ValueError):f(b'<html>Partial</html>')
   with self.assertRaises(ValueError):replay(self.r,[b'']*5)
+ def test_missing_original_image_alt_and_dimensions_are_declared_metadata_only(self):
+  m=json.loads(REPORT.with_name('STONEAGE-JP2008-TIGER-QUEST-IMAGE-LINK-METADATA-R1.json').read_text());validate_link_metadata(m,self.r)
+  self.assertEqual([x['alt_as_written'] for x in m['rows']],[None,'uta_osa','tora_in','tora_map1','tora_map2','tora_map3']);self.assertEqual([x['declared_width'] for x in m['rows']],[None,250,250,150,150,150])
+  for key in ['declared_dimensions_are_actual_pixel_measurements','alt_labels_are_original_entity_names','missing_images_recovered']:
+   changed=copy.deepcopy(m);changed[key]=True
+   with self.assertRaises(ValueError):validate_link_metadata(changed,self.r)
+ def test_downloaded_dual_ci_reports_and_five_permanent_native_blob_pins(self):
+  from hashlib import sha1
+  c=json.loads(REPORT.with_name('STONEAGE-JP2008-TIGER-QUEST-CUSTODY-R1.json').read_text());self.assertEqual([len(c['runs'][k]) for k in ['candidate','main']],[10,11]);self.assertEqual(len(c['pins']),5)
+  for rows in c['runs'].values():self.assertTrue(all(x['conclusion']=='success' and x['head_sha']==c['content_head'] for x in rows))
+  for pin in c['pins']:
+   b=(ROOT/pin['path']).read_bytes();self.assertEqual(len(b),pin['bytes']);self.assertEqual(sha256(b).hexdigest(),pin['sha256']);self.assertEqual(sha1(b'blob '+str(len(b)).encode()+b'\0'+b).hexdigest(),pin['git_blob'])
+  bs=[]
+  for a in c['artifacts']:
+   self.assertEqual(a['head_sha'],c['content_head']);self.assertIn(a['run_id'],[x['id'] for x in c['runs'][a['branch']]]);b=(ROOT/a['derived_path']).read_bytes();bs.append(b);self.assertEqual(len(b),a['member_bytes']);self.assertEqual(sha256(b).hexdigest(),a['member_sha256']);r=json.loads(b);self.assertEqual(r['extracted'],self.r['extracted']);self.assertEqual(r['manual_image_observations'],observations());self.assertFalse(r['full_seven_chapter_poem_recovered']);self.assertFalse(r['quest_rewards_verified']);self.assertEqual(r['official_gif_bytes_obtained'],0)
+  self.assertEqual(bs[0],bs[1]);self.assertTrue(c['candidate_main_and_local_raw_json_equal']);self.assertFalse(c['original_server_execution_verified']);self.assertTrue(c['link_metadata_supplement_added_after_content_ci']);self.assertFalse(c['raw_sources_committed'])
 if __name__=='__main__':unittest.main()

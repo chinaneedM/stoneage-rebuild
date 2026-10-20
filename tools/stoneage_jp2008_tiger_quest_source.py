@@ -1,5 +1,6 @@
 """Replay named tiger quest story evidence, preserving poem, reward and image gaps."""
 import argparse
+from html.parser import HTMLParser
 from hashlib import sha256
 import json
 from pathlib import Path
@@ -95,6 +96,7 @@ def extract_official(b):
 
 def validate(r):
  require(r['schema']=='stoneage.jp2008_tiger_quest.source.r1','Schema')
+ require(r['authority']=='ARCHIVED_JP_OPERATOR_SPECIAL_PAGE_WITH_MEDIA_MARKED_RELEASE_QUOTATION','Separate source authorities')
  require([s['url'] for s in r['inputs']]==URLS,'Exact two HTML/four JPEG scope')
  require(r['records']==records() and r['boundaries']==BOUNDARIES,'Story, reward, chapter or visual boundary promoted')
  require(r['manual_image_observations']==observations(),'Bounded visual observations')
@@ -102,9 +104,27 @@ def validate(r):
  require(r['inputs'][1]['capture_timestamp']=='20080929194642','September official snapshot distinct from June announcement')
  require(r['next']=='OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-38','Return whole portfolio')
 
+def validate_link_metadata(m,r):
+ require(m['schema']=='stoneage.jp2008_tiger_quest.missing_image_links.r1' and m['source_id']=='O1','Declared metadata source')
+ require(m['source_sha256']==r['inputs'][1]['sha256'] and m['capture_timestamp']=='20080929194642','Declared metadata historical byte/capture binding')
+ require([x['original_url'] for x in m['rows']]==OFFICIAL_IMAGE_REFS,'Six actual original image URLs')
+ require(m['declared_dimensions_are_actual_pixel_measurements'] is False and m['alt_labels_are_original_entity_names'] is False and m['missing_images_recovered'] is False,'Missing image evidence promoted')
+ require(all(x['actual_pixel_dimensions'] is None and x['original_bytes_obtained'] is False and x['alt_is_verified_npc_or_map_name'] is False for x in m['rows']),'Missing original image/naming promoted')
+
+def check_link_metadata(r,b):
+ m=json.loads(REPORT.with_name('STONEAGE-JP2008-TIGER-QUEST-IMAGE-LINK-METADATA-R1.json').read_text());validate_link_metadata(m,r)
+ class Links(HTMLParser):
+  def __init__(self):super().__init__();self.rows=[]
+  def handle_starttag(self,t,attrs):
+   d=dict(attrs)
+   if t=='img' and '/img/update/20080624_' in d.get('src',''):
+    self.rows.append(dict(original_url=d['src'],alt_as_written=d.get('alt'),declared_width=int(d['width']) if 'width' in d else None,declared_height=int(d['height']) if 'height' in d else None,actual_pixel_dimensions=None,original_bytes_obtained=False,alt_is_verified_npc_or_map_name=False))
+ p=Links();p.feed(b.decode('utf-8-sig'));require(p.rows==m['rows'],'Actual official declared link attributes changed')
+
 def replay(r,payloads):
  validate(r);require(len(payloads)==6,'Exactly two HTML and four inspected JPEG')
  require(len(payloads[1])==r['inputs'][1]['bytes'] and sha256(payloads[1]).hexdigest()==r['inputs'][1]['sha256'],'Historical official byte pin changed')
+ check_link_metadata(r,payloads[1])
  e=[extract_media(payloads[0]),extract_official(payloads[1])];require(e==r['extracted'],'Documentary derivation changed')
  for s,b in zip(r['inputs'][2:],payloads[2:]):
   require(len(b)==s['bytes'] and sha256(b).hexdigest()==s['sha256'] and jpeg_size(b)==s['dimensions']==[250,200],'Inspected media image bytes or dimensions changed')
@@ -123,5 +143,5 @@ def main():
   else:b=(a.source_dir/n).read_bytes()
   payloads.append(b)
  out=replay(r,payloads);a.output.parent.mkdir(parents=True,exist_ok=True);a.output.write_text(json.dumps(out,ensure_ascii=False,indent=2)+'\n')
- print('HTML_VERIFIED=2 JPEG_VERIFIED=4 ORIGINAL_SERVER_EXECUTIONS=0 FULL_POEM_RECOVERED=0 REWARDS_VERIFIED=0')
+ print('HTML_VERIFIED=2 JPEG_VERIFIED=4 DECLARED_MISSING_IMAGE_LINKS_VERIFIED=6 ORIGINAL_SERVER_EXECUTIONS=0 FULL_POEM_RECOVERED=0 REWARDS_VERIFIED=0')
 if __name__=='__main__':main()
