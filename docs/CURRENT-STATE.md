@@ -16209,3 +16209,8 @@ R25内容候选10/main11实际success后，从新远端main3c1fb02540e7adf710b28
 R27内容5b40f22fb9b13c072d006695f462934e93bd5c04，候选10/main11自身Actions全部success；source run39369730918/39369830881，job118454651255/118454963479各实际9测试+三实源。artifact12240857225/12240614305两ZIP均1246B，唯一replay.json均2150B/SHA256 c5f37b61f721ab0ec658875587bd57c2ce305a97504586f8b415fbcef4c64318，实际下载并等于本地重放。派生JSON与CUSTODY进Git，原HTML/图片未提交。独立远端干净检出45测试/八全文前缀通过。
 
 R28完成4.0标记门户现页与20021201125523存档核心一致对照，13记录包含九庄园骑宠/开放与封闭服务、证明书制作与永久骑乘原文、五转人物向流浪骑宠师学习机暴的原文条件。两坏字节可逆转义、两空白商店不补“无”；九庄园不补成十二，等级11不当数量。中文规格及审查R28/9新反例/两实源runner完成，58相关测试与本地重放作为提交前验收；新候选/main/ZIP后续追加。门户非已核实运营商作者；无原服、原ID、费用、坐标、证书消耗/转生范围，2.0公式不被4.0覆盖。最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-29，返回全版本22域新具名材料。Stage A7 PARTIAL+2 OPEN；B/wiki GATED；R79 PAUSED_NON_BLOCKING。
+
+
+## 2026-10-20 R28远端主线及实际双ZIP验收完成
+
+内容60acc4eafeea02eb50e84163566a2312c93d16e7/tree bf6322256a9d2cab1f279accdd3885f34dea926a：候选11/main12自身Actions全部success后非强制快进；source run39370496912/39370541751，job118457052010/118457195556各实际9测试+两实源。artifact12241018093/12240633633已实际下载，ZIP SHA256 e9b679964c776e94442b79e0c91a028a7e5aa029e3daab70690868985675e212/a129a74f726c4196fd83e113576050db36136a1aeaf73bcb1c59d970363606a3，唯一replay.json均10002B/SHA256 b3f7a6a222deb84793d05f00c1c3dd13e7c14df4a98dca9747c8df8befff2b5d，两支逐字节一致并等于本地两实源重放。派生CI JSON及CUSTODY清单固定来源报告/成员Git blob，原HTML不进Git。独立远端干净检出58相关测试、16全文前缀检查和3真实页删改反例通过；保管用例追加后的59测试另行验收。两处坏字节/两空白及2.0/4.0边界保留；无运营商作者/原服/原ID/费用/坐标/转生判定升级。最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-29，返回全版本22域另一新具名材料，停止本页helper。Stage A7 PARTIAL+2 OPEN，B/wiki GATED，R79 PAUSED_NON_BLOCKING。

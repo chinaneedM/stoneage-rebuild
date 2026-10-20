@@ -50,5 +50,18 @@ class ManorSource(unittest.TestCase):
         with self.assertRaises(ValueError):replay(self.report,[b''])
         with self.assertRaises(ValueError):extract(b'valid utf8 source')
 
+    def test_candidate_main_downloaded_replay_and_immutable_source_custody(self):
+        from hashlib import sha256,sha1
+        c=json.loads((REPORT.parent/'STONEAGE-CN40-RIDING-CUSTODY-R1.json').read_text())
+        self.assertEqual([len(c['runs'][k]) for k in ('candidate','main')],[11,12])
+        for rows in c['runs'].values():
+            self.assertTrue(all(r['head_sha']==c['content_head'] and r['conclusion']=='success' for r in rows))
+        for pin in c['pins']:
+            b=(REPORT.parents[2]/pin['path']).read_bytes();self.assertEqual(len(b),pin['bytes']);self.assertEqual(sha256(b).hexdigest(),pin['sha256']);self.assertEqual(sha1(b'blob '+str(len(b)).encode()+bytes([0])+b).hexdigest(),pin['git_blob'])
+        raw=(REPORT.parent/'STONEAGE-CN40-RIDING-CI-REPLAY-R1.json').read_bytes()
+        self.assertTrue(all(a['member_sha256']==sha256(raw).hexdigest() for a in c['artifacts']))
+        self.assertEqual(json.loads(raw)['extracted'],[x['extracted'] for x in self.report['inputs']])
+        self.assertTrue(c['malformed_bytes_preserved']);self.assertFalse(c['original_server_or_operator_author_verified']);self.assertFalse(c['raw_sources_committed'])
+
 
 if __name__=='__main__':unittest.main()

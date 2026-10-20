@@ -1,0 +1,293 @@
+{
+  "schema": "stoneage.cn40_riding_certificate_manor.replay.r1",
+  "inputs": [
+    {
+      "source_id": "S1",
+      "bytes": 40475,
+      "sha256": "9860beacd990a083b096d7b046d9f59f8f5874db65e01d8c95bb31f6a74ced6b"
+    },
+    {
+      "source_id": "H1",
+      "bytes": 20144,
+      "sha256": "e27448cb7a6bccd92305126e1516fd2a6bb072f5046290c21c073707d532a7e9"
+    }
+  ],
+  "extracted": [
+    {
+      "core_sha256": "54f642c1069de1d775a852c29ba762c0f9b2a30341ad65005eb51ba39815a84a",
+      "core_utf8_bytes": 870,
+      "encoding_issues": [
+        {
+          "offset": 35589,
+          "hex": "b1"
+        },
+        {
+          "offset": 35628,
+          "hex": "b1"
+        }
+      ],
+      "facts": {
+        "character_tiger_and_thunder_mounts_retained": true,
+        "certificate_use_permanent_riding_claim": true,
+        "certificate_manufacturers": [
+          "族长",
+          "长老"
+        ],
+        "advertised_mount_type_cap": 12,
+        "manor_rows": 9,
+        "special_mount_as_written": "帖拉所伊朵（机暴）",
+        "rebirth_condition_as_written": "五转人物",
+        "teacher_as_written": "流浪骑宠师",
+        "challenge_family_rank_change": [
+          10,
+          20
+        ],
+        "closed_shop_access": "OWN_FAMILY_OR_OTHER_WITH_INVITATION",
+        "closed_shop_fulfilment": "MATERIAL_FOR_CRAFT_NOT_DIRECT_SALE"
+      },
+      "manor_rows": [
+        {
+          "position": 1,
+          "manor": "萨姆吉尔",
+          "geography": "尼斯大陆北岛",
+          "mount_label_escaped": "巴朵兰恩(红\\xb1",
+          "mount_main_name": "巴朵兰恩",
+          "open_shop_as_written": "无",
+          "closed_shop_as_written": null,
+          "closed_shop_status": "UNSTATED_BLANK"
+        },
+        {
+          "position": 2,
+          "manor": "玛丽娜丝",
+          "geography": "尼斯大陆北岛",
+          "mount_label_escaped": "左迪洛斯(蓝\\xb1",
+          "mount_main_name": "左迪洛斯",
+          "open_shop_as_written": "定量买卖壳11",
+          "closed_shop_as_written": null,
+          "closed_shop_status": "UNSTATED_BLANK"
+        },
+        {
+          "position": 3,
+          "manor": "加加",
+          "geography": "尼斯大陆南岛",
+          "mount_label_escaped": "格尔格",
+          "mount_main_name": "格尔格",
+          "open_shop_as_written": "无",
+          "closed_shop_as_written": "落马术",
+          "closed_shop_status": "SOURCE_LABEL_NOT_STOCK_OR_SERVICE_ID"
+        },
+        {
+          "position": 4,
+          "manor": "卡鲁它那",
+          "geography": "尼斯大陆南岛",
+          "mount_label_escaped": "玛恩摩洛斯",
+          "mount_main_name": "玛恩摩洛斯",
+          "open_shop_as_written": "定量买卖线11",
+          "closed_shop_as_written": "T字技",
+          "closed_shop_status": "SOURCE_LABEL_NOT_STOCK_OR_SERVICE_ID"
+        },
+        {
+          "position": 5,
+          "manor": "伊甸",
+          "geography": "伊甸大陆",
+          "mount_label_escaped": "拉奇鲁哥",
+          "mount_main_name": "拉奇鲁哥",
+          "open_shop_as_written": "定量买卖骨11",
+          "closed_shop_as_written": "驯兽戒指",
+          "closed_shop_status": "SOURCE_LABEL_NOT_STOCK_OR_SERVICE_ID"
+        },
+        {
+          "position": 6,
+          "manor": "塔耳塔",
+          "geography": "伊甸大陆",
+          "mount_label_escaped": "卡达鲁卡斯",
+          "mount_main_name": "卡达鲁卡斯",
+          "open_shop_as_written": "定量买卖黏土11、水晶11",
+          "closed_shop_as_written": "替身娃娃LV1",
+          "closed_shop_status": "SOURCE_LABEL_NOT_STOCK_OR_SERVICE_ID"
+        },
+        {
+          "position": 7,
+          "manor": "尼克斯",
+          "geography": "伊甸大陆",
+          "mount_label_escaped": "扬奇洛斯",
+          "mount_main_name": "扬奇洛斯",
+          "open_shop_as_written": "定量买卖贝11，麟11",
+          "closed_shop_as_written": "宠物项圈LV1",
+          "closed_shop_status": "SOURCE_LABEL_NOT_STOCK_OR_SERVICE_ID"
+        },
+        {
+          "position": 8,
+          "manor": "佛烈顿",
+          "geography": "伊甸大陆",
+          "mount_label_escaped": "卡卡金宝",
+          "mount_main_name": "卡卡金宝",
+          "open_shop_as_written": "定量买卖石11、牙11",
+          "closed_shop_as_written": "恶魔宝石LV1",
+          "closed_shop_status": "SOURCE_LABEL_NOT_STOCK_OR_SERVICE_ID"
+        },
+        {
+          "position": 9,
+          "manor": "亚伊欧",
+          "geography": "伊甸大陆",
+          "mount_label_escaped": "朵拉比斯",
+          "mount_main_name": "朵拉比斯",
+          "open_shop_as_written": "定量买卖皮11、木11",
+          "closed_shop_as_written": "月神首饰LV1",
+          "closed_shop_status": "SOURCE_LABEL_NOT_STOCK_OR_SERVICE_ID"
+        }
+      ],
+      "table_shape": {
+        "html_rows": 2,
+        "columns": 5,
+        "entries_per_column": [
+          9,
+          9,
+          9,
+          9,
+          9
+        ]
+      }
+    },
+    {
+      "core_sha256": "54f642c1069de1d775a852c29ba762c0f9b2a30341ad65005eb51ba39815a84a",
+      "core_utf8_bytes": 870,
+      "encoding_issues": [
+        {
+          "offset": 17740,
+          "hex": "b1"
+        },
+        {
+          "offset": 17779,
+          "hex": "b1"
+        }
+      ],
+      "facts": {
+        "character_tiger_and_thunder_mounts_retained": true,
+        "certificate_use_permanent_riding_claim": true,
+        "certificate_manufacturers": [
+          "族长",
+          "长老"
+        ],
+        "advertised_mount_type_cap": 12,
+        "manor_rows": 9,
+        "special_mount_as_written": "帖拉所伊朵（机暴）",
+        "rebirth_condition_as_written": "五转人物",
+        "teacher_as_written": "流浪骑宠师",
+        "challenge_family_rank_change": [
+          10,
+          20
+        ],
+        "closed_shop_access": "OWN_FAMILY_OR_OTHER_WITH_INVITATION",
+        "closed_shop_fulfilment": "MATERIAL_FOR_CRAFT_NOT_DIRECT_SALE"
+      },
+      "manor_rows": [
+        {
+          "position": 1,
+          "manor": "萨姆吉尔",
+          "geography": "尼斯大陆北岛",
+          "mount_label_escaped": "巴朵兰恩(红\\xb1",
+          "mount_main_name": "巴朵兰恩",
+          "open_shop_as_written": "无",
+          "closed_shop_as_written": null,
+          "closed_shop_status": "UNSTATED_BLANK"
+        },
+        {
+          "position": 2,
+          "manor": "玛丽娜丝",
+          "geography": "尼斯大陆北岛",
+          "mount_label_escaped": "左迪洛斯(蓝\\xb1",
+          "mount_main_name": "左迪洛斯",
+          "open_shop_as_written": "定量买卖壳11",
+          "closed_shop_as_written": null,
+          "closed_shop_status": "UNSTATED_BLANK"
+        },
+        {
+          "position": 3,
+          "manor": "加加",
+          "geography": "尼斯大陆南岛",
+          "mount_label_escaped": "格尔格",
+          "mount_main_name": "格尔格",
+          "open_shop_as_written": "无",
+          "closed_shop_as_written": "落马术",
+          "closed_shop_status": "SOURCE_LABEL_NOT_STOCK_OR_SERVICE_ID"
+        },
+        {
+          "position": 4,
+          "manor": "卡鲁它那",
+          "geography": "尼斯大陆南岛",
+          "mount_label_escaped": "玛恩摩洛斯",
+          "mount_main_name": "玛恩摩洛斯",
+          "open_shop_as_written": "定量买卖线11",
+          "closed_shop_as_written": "T字技",
+          "closed_shop_status": "SOURCE_LABEL_NOT_STOCK_OR_SERVICE_ID"
+        },
+        {
+          "position": 5,
+          "manor": "伊甸",
+          "geography": "伊甸大陆",
+          "mount_label_escaped": "拉奇鲁哥",
+          "mount_main_name": "拉奇鲁哥",
+          "open_shop_as_written": "定量买卖骨11",
+          "closed_shop_as_written": "驯兽戒指",
+          "closed_shop_status": "SOURCE_LABEL_NOT_STOCK_OR_SERVICE_ID"
+        },
+        {
+          "position": 6,
+          "manor": "塔耳塔",
+          "geography": "伊甸大陆",
+          "mount_label_escaped": "卡达鲁卡斯",
+          "mount_main_name": "卡达鲁卡斯",
+          "open_shop_as_written": "定量买卖黏土11、水晶11",
+          "closed_shop_as_written": "替身娃娃LV1",
+          "closed_shop_status": "SOURCE_LABEL_NOT_STOCK_OR_SERVICE_ID"
+        },
+        {
+          "position": 7,
+          "manor": "尼克斯",
+          "geography": "伊甸大陆",
+          "mount_label_escaped": "扬奇洛斯",
+          "mount_main_name": "扬奇洛斯",
+          "open_shop_as_written": "定量买卖贝11，麟11",
+          "closed_shop_as_written": "宠物项圈LV1",
+          "closed_shop_status": "SOURCE_LABEL_NOT_STOCK_OR_SERVICE_ID"
+        },
+        {
+          "position": 8,
+          "manor": "佛烈顿",
+          "geography": "伊甸大陆",
+          "mount_label_escaped": "卡卡金宝",
+          "mount_main_name": "卡卡金宝",
+          "open_shop_as_written": "定量买卖石11、牙11",
+          "closed_shop_as_written": "恶魔宝石LV1",
+          "closed_shop_status": "SOURCE_LABEL_NOT_STOCK_OR_SERVICE_ID"
+        },
+        {
+          "position": 9,
+          "manor": "亚伊欧",
+          "geography": "伊甸大陆",
+          "mount_label_escaped": "朵拉比斯",
+          "mount_main_name": "朵拉比斯",
+          "open_shop_as_written": "定量买卖皮11、木11",
+          "closed_shop_as_written": "月神首饰LV1",
+          "closed_shop_status": "SOURCE_LABEL_NOT_STOCK_OR_SERVICE_ID"
+        }
+      ],
+      "table_shape": {
+        "html_rows": 2,
+        "columns": 5,
+        "entries_per_column": [
+          9,
+          9,
+          9,
+          9,
+          9
+        ]
+      }
+    }
+  ],
+  "malformed_bytes_preserved": true,
+  "historical_capture_timestamp": "20021201125523",
+  "original_server_or_operator_author_verified": false,
+  "raw_html_or_images_in_output": false
+}
