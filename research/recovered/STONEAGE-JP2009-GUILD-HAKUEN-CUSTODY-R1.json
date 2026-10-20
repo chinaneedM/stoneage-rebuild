@@ -62,5 +62,27 @@
     "copyrighted_html_or_images_in_git": false
   },
   "main_ci": null,
-  "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-40"
+  "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-40",
+  "custody_ci": {
+    "head_sha": "8ac33f28999072100974b422b2083d238d89d14f",
+    "tree": "030edca92673e6a6f4b217481f27bb8970f0467d",
+    "run_id": 39427792143,
+    "job_id": 118644630048,
+    "conclusion": "success",
+    "artifact_id": 12265829207,
+    "zip_bytes": 711,
+    "zip_sha256": "5d42eb072913a0f87d8d94a47ff3205d9da6cafd2815568988f8af4b9134c0ad",
+    "raw_bytes": 901,
+    "raw_sha256": "da38f2210456aa904f062f159ed67f5c42d99f3917422175fb37d3629f1cdeb7",
+    "raw_git_blob": "406149a3984ada9d6e5b664f662547b93772c229",
+    "operator_body_digest": "026b44ac8d658df115ed17f1071e17a845d20f62f463881030823a133d3fc946",
+    "outer_current_html_sha256": "8ca3c0412a5cd03fb9ac29a3756d28874f12046ab77c45311e597f51abed1ff4",
+    "compared_with_candidate": {
+      "raw_json_equal": false,
+      "operator_release_core_equal": true,
+      "full_current_page_hash_equal": false,
+      "source_facts_equal": true
+    }
+  },
+  "note": "Main acceptance pending; third run changes only current full-page SHA, not 37 source fragments or anchored DigiPark release core. Preserve both actual derived raw JSON variants rather than claiming byte identity."
 }

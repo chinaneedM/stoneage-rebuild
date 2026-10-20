@@ -68,4 +68,20 @@ class GuildHakuenSource(unittest.TestCase):
   self.assertFalse(c['boundaries']['original_2009_press_bytes_recovered'])
   self.assertFalse(c['boundaries']['bag_seventh_type_resolved'])
 
+ def test_ci_custody_distinguishes_full_html_mutation_from_stable_release_core(self):
+  import hashlib
+  c=json.loads((REPORT.parent/'STONEAGE-JP2009-GUILD-HAKUEN-CUSTODY-R1.json').read_text())
+  new=(REPORT.parent/'STONEAGE-JP2009-GUILD-HAKUEN-CI-CUSTODY-REPLAY-R1.json').read_bytes()
+  old=(REPORT.parent/'STONEAGE-JP2009-GUILD-HAKUEN-CI-PINNED-REPLAY-R1.json').read_bytes()
+  self.assertNotEqual(old,new)
+  self.assertEqual(len(new),c['custody_ci']['raw_bytes'])
+  self.assertEqual(hashlib.sha256(new).hexdigest(),c['custody_ci']['raw_sha256'])
+  self.assertEqual(hashlib.sha1(b'blob '+str(len(new)).encode()+b'\0'+new).hexdigest(),c['custody_ci']['raw_git_blob'])
+  a,b=json.loads(old),json.loads(new)
+  self.assertNotEqual(a['current_http_sha256'],b['current_http_sha256'])
+  self.assertEqual(a['release_digest'],b['release_digest'])
+  for k in a.keys() - {'current_http_sha256'}:self.assertEqual(a[k],b[k])
+  self.assertEqual(c['custody_ci']['operator_body_digest'],a['release_digest'])
+  self.assertFalse(c['custody_ci']['compared_with_candidate']['raw_json_equal'])
+
 if __name__=='__main__':unittest.main()
