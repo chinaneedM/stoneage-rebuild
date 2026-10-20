@@ -1,0 +1,203 @@
+{
+  "schema": "stoneage.cn2003_classic20_branch.source_contract.r1",
+  "task": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-43",
+  "date": "2026-10-21",
+  "baseline": {
+    "head": "ad9d1fd0b8ce6b7e43772ab064b294992f096b79",
+    "tree": "46155e691b107d4d1fae53631b153d0d52d530dc"
+  },
+  "source": {
+    "id": "S1",
+    "url": "https://games.sina.com.cn/newgames/2003/11/11188486.shtml",
+    "published": "2003-11-18 15:33",
+    "authority": "CONTEMPORANEOUS_WAYI_OFFICIAL_MESSAGE_REPUBLISHED_BY_SINA",
+    "encoding": "GB18030_STRICT",
+    "current_observed_bytes": 35255,
+    "current_observed_sha256": "97f455897c76d219a71831406d8308303d458c901b14220e8cd90bb128c74e60",
+    "current_bytes_are_authenticated_2003_original": false,
+    "observed_ad_comment_later_than_publication": "2005-06-08_NOT_NOTICE_EVENT_DATE"
+  },
+  "extracted": {
+    "core_sha256": "d42ada75bf6f21554f64c5373d1f423966d33d78820cceb7e6acf0eb4ca2fc9f",
+    "issuer": "华义",
+    "operator_named": "北京华义",
+    "branch_label": "石器时代2.0",
+    "label_kind": "2003_OPERATOR_SERVER_BRANCH_NOT_CLIENT_BINARY_BUILD",
+    "earlier_opening_month_day_as_written": "9月4日",
+    "earlier_launch_year_in_body": null,
+    "announced_maintenance_month_day": "11月19日",
+    "announced_maintenance_start_time": "09:00",
+    "announced_opening_relation": "AFTER_MAINTENANCE_NOT_PROVEN_EXACT_09_OPEN",
+    "time_zone": null,
+    "new_server_group_label": "石器时代2.0(2)",
+    "existing_group_renamed_to": "石器时代2.0(1)",
+    "billing": {
+      "announced_scope": "NEW_GROUP_2_AFTER_OPENING",
+      "policy_system_name": "WGS",
+      "policy_link_as_written": "http://www.wayi.com.cn/pop/server.asp",
+      "linked_policy_retrieved": false,
+      "price_or_unit": null,
+      "existing_group_1_billing_rule": null
+    },
+    "capabilities": [
+      "RIDING_ADVERTISED",
+      "SAFER_TRADE_CLAIM",
+      "FASTER_GAME_CLAIM",
+      "JIAMEI_AIRLINE_AND_VILLAGE_FEATHERS",
+      "MORE_PETS_AND_ITEMS_NOT_A_ROSTER"
+    ],
+    "family": {
+      "manor_total_reported": 4,
+      "named_manors": [
+        "萨姆吉尔",
+        "加加"
+      ],
+      "remaining_manor_names": null,
+      "functions_reported": [
+        "家族频道",
+        "家族管理制度",
+        "家族战争"
+      ]
+    },
+    "actual_server_opening_or_billing_witnessed": false,
+    "client_binary_build_authenticated": false,
+    "security_or_performance_benchmarked": false
+  },
+  "comparison_input": {
+    "path": "research/recovered/STONEAGE-CN40-RIDING-CERTIFICATE-MANOR-SOURCE-R1.json",
+    "bytes": 29266,
+    "sha256": "3c0f771e0547ed753b38359ccf61023f54c82b4ba4ba2dc1684a1ac8b6f7aae8",
+    "git_blob": "bee8fae59158f38f1167fe3b10e4ddfd7206b166"
+  },
+  "comparison": {
+    "new_notice_reported_count": 4,
+    "cn40_table_row_count": 9,
+    "relation": "DISTINCT_SOURCE_CONTEXTS_NOT_A_PROVEN_PATCH_DIFF",
+    "fills_unwritten_two_names": false,
+    "proves_five_manors_removed": false,
+    "proves_same_server_or_client_build": false,
+    "transfers_riding_rules": false
+  },
+  "records": [
+    {
+      "record_id": "cn-wayi-2003-classic20:1",
+      "entity_type": "version",
+      "label": "2003 classic 2.0 operator server branch",
+      "version_profile": "LATER_OFFICIAL:CN_WAYI_2003_CLASSIC20_SERVER_BRANCH",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "OPERATOR_REPORTED_NOT_GAME_RUNTIME",
+      "rights_status": "DERIVED_RESEARCH_METADATA_NOT_PRODUCTION_ASSET",
+      "record_revision": 1,
+      "game_ids": null
+    },
+    {
+      "record_id": "cn-wayi-2003-classic20:2",
+      "entity_type": "server_schedule",
+      "label": "new group and existing group rename",
+      "version_profile": "LATER_OFFICIAL:CN_WAYI_2003_CLASSIC20_SERVER_BRANCH",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "OPERATOR_REPORTED_NOT_GAME_RUNTIME",
+      "rights_status": "DERIVED_RESEARCH_METADATA_NOT_PRODUCTION_ASSET",
+      "record_revision": 1,
+      "game_ids": null
+    },
+    {
+      "record_id": "cn-wayi-2003-classic20:3",
+      "entity_type": "billing_scope",
+      "label": "new group 2 billing reference",
+      "version_profile": "LATER_OFFICIAL:CN_WAYI_2003_CLASSIC20_SERVER_BRANCH",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "OPERATOR_REPORTED_NOT_GAME_RUNTIME",
+      "rights_status": "DERIVED_RESEARCH_METADATA_NOT_PRODUCTION_ASSET",
+      "record_revision": 1,
+      "game_ids": null
+    },
+    {
+      "record_id": "cn-wayi-2003-classic20:4",
+      "entity_type": "reported_capabilities",
+      "label": "advertised riding/trade/transport capabilities",
+      "version_profile": "LATER_OFFICIAL:CN_WAYI_2003_CLASSIC20_SERVER_BRANCH",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "OPERATOR_REPORTED_NOT_GAME_RUNTIME",
+      "rights_status": "DERIVED_RESEARCH_METADATA_NOT_PRODUCTION_ASSET",
+      "record_revision": 1,
+      "game_ids": null
+    },
+    {
+      "record_id": "cn-wayi-2003-classic20:5",
+      "entity_type": "family_system",
+      "label": "four manors and family functions",
+      "version_profile": "LATER_OFFICIAL:CN_WAYI_2003_CLASSIC20_SERVER_BRANCH",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "OPERATOR_REPORTED_NOT_GAME_RUNTIME",
+      "rights_status": "DERIVED_RESEARCH_METADATA_NOT_PRODUCTION_ASSET",
+      "record_revision": 1,
+      "game_ids": null
+    },
+    {
+      "record_id": "cn-wayi-2003-classic20:6",
+      "entity_type": "source_comparison",
+      "label": "four-versus-nine source contexts",
+      "version_profile": "LATER_OFFICIAL:CN_WAYI_2003_CLASSIC20_SERVER_BRANCH",
+      "source_refs": [
+        "S1",
+        "DERIVED_CN40_TABLE"
+      ],
+      "verification_status": "OPERATOR_REPORTED_NOT_GAME_RUNTIME",
+      "rights_status": "DERIVED_RESEARCH_METADATA_NOT_PRODUCTION_ASSET",
+      "record_revision": 1,
+      "game_ids": null
+    }
+  ],
+  "unknowns": [
+    "client_binary_build",
+    "exact_release_or_server_source",
+    "maintenance_end_and_actual_open_time",
+    "launch_year_in_body_and_timezone",
+    "WGS_prices_or_units",
+    "existing_group1_billing_policy",
+    "remaining_two_manor_names",
+    "manor_ids_riding_rules_and_mounts",
+    "safe_trade_algorithm_or_benchmark",
+    "aviation_routes_and_feather_item_ids",
+    "complete_pet_item_rosters"
+  ],
+  "unproven": {
+    "label_is_2001_client_build": false,
+    "tw10_or_jss1999_membership": false,
+    "tw2004_retro_is_same_branch": false,
+    "same_label_means_same_binary": false,
+    "four_manors_complete_names_known": false,
+    "nine_table_implies_five_removed": false,
+    "maintenance_start_is_actual_open_time": false,
+    "group1_billing_inferred": false,
+    "all_servers_security_verified": false,
+    "first_introduction_dates_verified": false,
+    "old_riding_formulas_transferred": false,
+    "WGS_tariff_page_retrieved": false,
+    "actual_server_execution": false,
+    "original_html_or_assets_committed": false
+  },
+  "bounded_unavailable_source": {
+    "url": "https://gnn.gamer.com.tw/detail.php?sn=14596",
+    "http_status": 403,
+    "attempts": 1,
+    "claim": "LOCAL_REQUEST_FORBIDDEN_NOT_EVIDENCE_OF_ARTICLE_ABSENCE_OR_CONTENT"
+  },
+  "status": {
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b_wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING"
+  },
+  "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-44"
+}

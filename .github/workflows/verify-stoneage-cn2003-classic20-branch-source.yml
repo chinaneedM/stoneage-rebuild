@@ -1,0 +1,32 @@
+name: Verify CN2003 classic20 branch labels and rule provenance
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-CN2003-CLASSIC20-BRANCH-*.json'
+      - 'tools/stoneage_cn2003_classic20_branch_source.py'
+      - 'tests/test_stoneage_cn2003_classic20_branch_source.py'
+      - '.github/workflows/verify-stoneage-cn2003-classic20-branch-source.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-CN2003-CLASSIC20-BRANCH-*.json'
+      - 'tools/stoneage_cn2003_classic20_branch_source.py'
+      - 'tests/test_stoneage_cn2003_classic20_branch_source.py'
+      - '.github/workflows/verify-stoneage-cn2003-classic20-branch-source.yml'
+permissions:
+  contents: read
+jobs:
+  source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check branch, partial manor names, schedule and billing scope
+        run: python -m unittest discover -s tests -p 'test_stoneage_cn2003_classic20_branch_source.py' -v
+      - name: Fetch official notice and reject thirteen real body mutations
+        run: python -m tools.stoneage_cn2003_classic20_branch_source --fetch --output /tmp/cn2003-classic20/replay.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cn2003-classic20-derived-replay
+          path: /tmp/cn2003-classic20/replay.json
+          if-no-files-found: error
+          retention-days: 30

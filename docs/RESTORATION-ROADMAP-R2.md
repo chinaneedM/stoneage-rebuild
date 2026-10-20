@@ -1133,3 +1133,16 @@ I1提供确定/取消召唤通知，未取声效或原协议绑定；I2任务目
 交付 docs/specs/STONEAGE-JP2005-SPECIAL-MAPS-SOURCE-R1.md、六记录机器合同/解析器/专属CI/派生元数据。13真实正文语义改写绕过digest门后拒绝，另外围script正例及独立正则/HTML实体解码摘要通过；初始反例锚命中meta重复而拒绝，发布前限定body重做成功，不当远端CI失败。原HTML/图片不入Git。独立候选/main取源及ZIP永久保管按实际后验。
 
 最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-43回22域另一具名材料，不扩犬类全集/票据/全地图helper。Stage A7 PARTIAL+2 OPEN、Stage B/wiki GATED、R79 PAUSED_NON_BLOCKING，全部旧历史前缀保留，未有分母不报总体完成百分比。
+
+
+## 2026-10-21 R43大陆2003“2.0”服务器分支与家族玩法归属
+
+新读远端431分支/0开放PR/main ad9d1fd0b8ce6b7e43772ab064b294992f096b79/tree46155e691b107d4d1fae53631b153d0d52d530dc、4894项完整树无AGENTS，自身主线9项Actions全SUCCESS，旧queued37642417333保留。八启动全文和22域组合索引新读，CURRENT-STATE2219862B/blob f79f0006590b20ba00c836c021b1ff0cd37b3972。最高NEXT43轮换大陆版本/家族/骑宠/交通归属，停止R42地图/亲犬helper。
+
+台湾复刻版候选页一次本地HTTP403，未用搜索摘要认证正文规则；改取新浪2003-11-18 15:33明确华义官方消息 https://games.sina.com.cn/newgames/2003/11/11188486.shtml 。当前35255B/SHA256 97f455897c76d219a71831406d8308303d458c901b14220e8cd90bb128c74e60，严格GB18030；当前页夹后期广告，绝非已认证2003原始HTML。只原内容标记内运营正文，规范SHA256 d42ada75bf6f21554f64c5373d1f423966d33d78820cceb7e6acf0eb4ca2fc9f，独立移除广告+正则/HTML实体重提与HTMLParser一致。
+
+六记录：2003“石器时代2.0”运营分支不是2001客户端二进制；正文回顾9月4日原组开放（原句无年份）；预告11月19日09:00开始维护后增开2.0(2)，旧组改2.0(1)，09:00不当精确开服。新组(2)开放后收费/WGS出链，不推旧组收费/价格或单位，未取收费说明；骑宠、较安全交易、较快速度、加美航空/村庄羽毛及更多宠物道具均运营宣传，不当首发日期、安全/性能实测或完整表。四大庄园只具名萨姆吉尔/加加，另两名未知；家族频道/管理/战争缺权限/ID/公式。
+
+有限对照既验大陆4.0九行庄园派生表，完整SHA和Git blob固定：来源语境不同，不由九/四推出删五处，不移植骑宠证明书或早期训练/战斗公式，也不合并台湾复刻版。新增 docs/specs/STONEAGE-CN2003-CLASSIC20-BRANCH-SOURCE-R1.md、六条机器记录、工具/专属CI/13实际正文语义改写与外围script正例，原网页/图片/程序不入Git。独立候选/main与ZIP永久保管按后续实际验收。
+
+NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-44回22域另一具名材料，本篇/费用/全庄园/安全助手止点已到。Stage A7 PARTIAL+2 OPEN、Stage B/wiki GATED、R79 PAUSED_NON_BLOCKING，全部旧历史前缀保留，无分母不报整体百分比。

@@ -7738,3 +7738,8 @@ S1 https://www.4gamer.net/news/history/2007.02/20070202173939detail.html ，刊2
 ## 2026-10-21 R42日本2005特殊地图与跨年名称对照
 
 S1 https://www.4gamer.net/games/013/G001377/20051129193618/ ，刊2005-11-29 19:36，当前UTF8网页269601B。单blockquote为GaiaX地图说明；导语与aueki评论单列媒体角色。规范引文SHA256 5ab95832b1b1b563e0a9a36ead6bbc543fa672dfd4893eeea72103d97c93ddb1；既验2009合同9669B/SHA256 db93b87b4c019276c79f688354cfff8e74e96f24c13bc78cefd12e870a541616固定对照。原网页/图不入Git。亲犬量、物种、Boss、掉率、票价/资格、地图ID均未知；大陆导航两次/JSS手册一次503仅本轮失败，不宣称档案不存在。独立CI/保管另按实际记录。
+
+
+## 2026-10-21 R43大陆2003经典2.0运营分支来源
+
+S1 https://games.sina.com.cn/newgames/2003/11/11188486.shtml ，刊2003-11-18 15:33，标华义官方消息；当前35255B严格GB18030，正文规范SHA256 d42ada75bf6f21554f64c5373d1f423966d33d78820cceb7e6acf0eb4ca2fc9f。后期广告与2003刊文分开，源码像素不入Git。实际WGS href仅记录未取；既验大陆4.0九行表29266B/SHA256 3c0f771e0547ed753b38359ccf61023f54c82b4ba4ba2dc1684a1ac8b6f7aae8按原生Git固定，不借同名补四庄园另外两名或原构建。台湾候选 https://gnn.gamer.com.tw/detail.php?sn=14596 本轮直接HTTP403，仅保留访问失败。独立CI/保管按后续实际记录。
