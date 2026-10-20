@@ -1120,3 +1120,16 @@ I1提供确定/取消召唤通知，未取声效或原协议绑定；I2任务目
 交付 docs/specs/STONEAGE-JP2007-STARTER-CLUB-SOURCE-R1.md、六记录机器合同/真实源派生、解析器和13真实改写反例及外围script正例、专属CI；两个来源层规范SHA分别a13bab545ee37aa82e8a0a645955cc0efae7b10c3e0329d3eb1959516e90daa8 / 44bc2cb09a240c0234197f994539e09a287a17de02e339ff559107cd7f1a5cf2。原网页/图片不进Git，不认证历史2007原字节、实际部署或JSS1999/TW1.0/CN1.82归属。候选及主线CI、永久ZIP保管以后续实证为准。
 
 最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-42，回22域另一有源具名内容；停止本武器/商城/概率helper。Stage A7 PARTIAL+2 OPEN，Stage B/wiki GATED，R79 PAUSED_NON_BLOCKING，全部旧历史前缀保留。
+
+
+## 2026-10-21 R42日本2005三特殊地图、犬类收集任务与跨年地名边界
+
+新读远端430分支/0开放PR/main e27c345eaba04a54cbdffc0943065bd7c16bda61/tree99db6e7e328cddb1977f58ae4f2fc33132940627、4884项完整树无AGENTS；主线自身9项Actions全SUCCESS，旧queued37642417333原样保留。八启动全文及22域组合索引新读，CURRENT-STATE2215752B/blob a0126e5bd3f4bf69e23568fae702f3016aca70eb。最高NEXT42回全域，不延长R41武器/商城helper。
+
+先查早期组队/交互，实际大陆2.0已知导航两次/JSS2001已知手册一次精确HTTP均503；记录本轮不可取，不宣称源不存在、不撤销旧保管，也未从无正文猜交易/组队规则。改选同期GaiaX2005地图公告引文（4Gamer 2005-11-29 19:36）：巨獣の島初级/渔民近期发现/低敏蜥脚类/相对适合组队狩猎；閉ざされた氷窟中级冰洞/当地亲犬/多只亲犬换幼犬任务；バルツ山の洞窟高级/古代山地遗址与恐龙幸存者/当时最强层级与具名未知Boss/可能稀有掉落。三地图+未名任务+媒体入场说明+媒体意见六记录及中文规格新增，不补亲犬数量/宠物名、BossID/掉率、绝对古史年或地图坐标。
+
+媒体导语报告12月2日起基础游玩免费、商城票准入，评论担忧组队障碍；两者不冒充运营引文或实测影响，不补票价/时长/全队资格。既验R39派生原生Git固定对照：2009再次具名冰窟只记同名，不证同ID/收费沿用；バルツ山不自动等于本篇洞窟。现行网页269601B/SHA256 fa11e2045e8e1e2ad573ab387ac5e19990f1e4ab84cd16d83a9f9d6b912f62d9，规范运营引文SHA256 5ab95832b1b1b563e0a9a36ead6bbc543fa672dfd4893eeea72103d97c93ddb1，不当2005原始HTML认证。
+
+交付 docs/specs/STONEAGE-JP2005-SPECIAL-MAPS-SOURCE-R1.md、六记录机器合同/解析器/专属CI/派生元数据。13真实正文语义改写绕过digest门后拒绝，另外围script正例及独立正则/HTML实体解码摘要通过；初始反例锚命中meta重复而拒绝，发布前限定body重做成功，不当远端CI失败。原HTML/图片不入Git。独立候选/main取源及ZIP永久保管按实际后验。
+
+最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-43回22域另一具名材料，不扩犬类全集/票据/全地图helper。Stage A7 PARTIAL+2 OPEN、Stage B/wiki GATED、R79 PAUSED_NON_BLOCKING，全部旧历史前缀保留，未有分母不报总体完成百分比。

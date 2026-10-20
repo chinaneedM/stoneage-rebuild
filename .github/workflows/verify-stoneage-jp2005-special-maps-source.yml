@@ -1,0 +1,32 @@
+name: Verify JP2005 special maps and cross-year name boundaries
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-JP2005-SPECIAL-MAPS-*.json'
+      - 'tools/stoneage_jp2005_special_maps_source.py'
+      - 'tests/test_stoneage_jp2005_special_maps_source.py'
+      - '.github/workflows/verify-stoneage-jp2005-special-maps-source.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-JP2005-SPECIAL-MAPS-*.json'
+      - 'tools/stoneage_jp2005_special_maps_source.py'
+      - 'tests/test_stoneage_jp2005_special_maps_source.py'
+      - '.github/workflows/verify-stoneage-jp2005-special-maps-source.yml'
+permissions:
+  contents: read
+jobs:
+  source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check narrative, unknowns, source roles and pinned later names
+        run: python -m unittest discover -s tests -p 'test_stoneage_jp2005_special_maps_source.py' -v
+      - name: Fetch one notice and reject thirteen real body mutations
+        run: python -m tools.stoneage_jp2005_special_maps_source --fetch --output /tmp/jp2005-maps/replay.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: jp2005-special-maps-derived-replay
+          path: /tmp/jp2005-maps/replay.json
+          if-no-files-found: error
+          retention-days: 30

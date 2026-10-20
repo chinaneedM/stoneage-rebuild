@@ -7733,3 +7733,8 @@ I1提供确定/取消召唤通知，未取声效或原协议绑定；I2任务目
 ## 2026-10-21 R41 日本2007新手武器来源
 
 S1 https://www.4gamer.net/news/history/2007.02/20070202173939detail.html ，刊2007-02-02 17:39，当前19773B严格Shift-JIS/CP932。S1Q是两个blockquote中的GaiaX发布文引文；S1E为oNo媒体导语，六条记录分别归因。全文SHA与分层规范摘要、13真实源改写与外围正例见 research/recovered/STONEAGE-JP2007-STARTER-CLUB-LOCAL-REPLAY-R1.json；没有原2007捕获认证、物品/咒术ID、概率或NPC/码UI。原HTML/版权图片不入Git；候选/主线CI和永久保管按实际后验。
+
+
+## 2026-10-21 R42日本2005特殊地图与跨年名称对照
+
+S1 https://www.4gamer.net/games/013/G001377/20051129193618/ ，刊2005-11-29 19:36，当前UTF8网页269601B。单blockquote为GaiaX地图说明；导语与aueki评论单列媒体角色。规范引文SHA256 5ab95832b1b1b563e0a9a36ead6bbc543fa672dfd4893eeea72103d97c93ddb1；既验2009合同9669B/SHA256 db93b87b4c019276c79f688354cfff8e74e96f24c13bc78cefd12e870a541616固定对照。原网页/图不入Git。亲犬量、物种、Boss、掉率、票价/资格、地图ID均未知；大陆导航两次/JSS手册一次503仅本轮失败，不宣称档案不存在。独立CI/保管另按实际记录。
