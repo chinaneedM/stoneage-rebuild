@@ -1,0 +1,229 @@
+{
+  "schema": "stoneage.jp2006_world_geography.source_contract.r1",
+  "task": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-40",
+  "baseline": {
+    "head": "cce8b662996516921b30a6ee61a596e6e582eb7f",
+    "tree": "2c51e66adb7ecbc71825580a73af3956e1b7f739"
+  },
+  "sources": [
+    {
+      "id": "M1",
+      "url": "https://www.4gamer.net/news/history/2006.03/20060314171238detail.html",
+      "published": "2006-03-14 17:12",
+      "role": "GaiaX quoted release: two-wave volcano plan",
+      "historical_original_2006_html_sha256": null
+    },
+    {
+      "id": "M2",
+      "url": "https://www.4gamer.net/news/history/2006.05/20060501174657detail.html",
+      "published": "2006-05-01 17:46",
+      "role": "GaiaX quoted release: phase-one recorded complete and phase-two dungeon planned",
+      "historical_original_2006_html_sha256": null
+    },
+    {
+      "id": "M3",
+      "url": "https://www.4gamer.net/games/013/G001377/20061207180354/",
+      "published": "2006-12-07 18:03",
+      "role": "GaiaX quoted map descriptions: wind island and rain forest",
+      "historical_original_2006_html_sha256": null
+    }
+  ],
+  "nodes": [
+    {
+      "record_id": "jp-gaiax-2006:map-1",
+      "entity_type": "RELEASE_DESCRIBED_PLACE_NOT_GAME_MAP_ID",
+      "collection": "maps",
+      "version_profile": "LATER_OFFICIAL:JP_GAIAX_2006",
+      "source_refs": [
+        "M1",
+        "M2",
+        "M3"
+      ],
+      "verification_status": "CONTEMPORANEOUS_OPERATOR_RELEASE_QUOTE_NOT_SERVER_EXECUTION",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "name_as_written": "ミライア群島",
+      "game_ids": null,
+      "coordinate": null,
+      "asset_refs": null
+    },
+    {
+      "record_id": "jp-gaiax-2006:map-2",
+      "entity_type": "RELEASE_DESCRIBED_PLACE_NOT_GAME_MAP_ID",
+      "collection": "maps",
+      "version_profile": "LATER_OFFICIAL:JP_GAIAX_2006",
+      "source_refs": [
+        "M1",
+        "M2"
+      ],
+      "verification_status": "CONTEMPORANEOUS_OPERATOR_RELEASE_QUOTE_NOT_SERVER_EXECUTION",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "name_as_written": "紅炎の地",
+      "game_ids": null,
+      "coordinate": null,
+      "asset_refs": null
+    },
+    {
+      "record_id": "jp-gaiax-2006:map-3",
+      "entity_type": "RELEASE_DESCRIBED_PLACE_NOT_GAME_MAP_ID",
+      "collection": "maps",
+      "version_profile": "LATER_OFFICIAL:JP_GAIAX_2006",
+      "source_refs": [
+        "M2"
+      ],
+      "verification_status": "CONTEMPORANEOUS_OPERATOR_RELEASE_QUOTE_NOT_SERVER_EXECUTION",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "name_as_written": "炎渦の頂",
+      "game_ids": null,
+      "coordinate": null,
+      "asset_refs": null
+    },
+    {
+      "record_id": "jp-gaiax-2006:map-4",
+      "entity_type": "RELEASE_DESCRIBED_PLACE_NOT_GAME_MAP_ID",
+      "collection": "maps",
+      "version_profile": "LATER_OFFICIAL:JP_GAIAX_2006",
+      "source_refs": [
+        "M3"
+      ],
+      "verification_status": "CONTEMPORANEOUS_OPERATOR_RELEASE_QUOTE_NOT_SERVER_EXECUTION",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "name_as_written": "香颯の地",
+      "game_ids": null,
+      "coordinate": null,
+      "asset_refs": null
+    },
+    {
+      "record_id": "jp-gaiax-2006:map-5",
+      "entity_type": "RELEASE_DESCRIBED_PLACE_NOT_GAME_MAP_ID",
+      "collection": "maps",
+      "version_profile": "LATER_OFFICIAL:JP_GAIAX_2006",
+      "source_refs": [
+        "M3"
+      ],
+      "verification_status": "CONTEMPORANEOUS_OPERATOR_RELEASE_QUOTE_NOT_SERVER_EXECUTION",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "name_as_written": "雨祝の森",
+      "game_ids": null,
+      "coordinate": null,
+      "asset_refs": null
+    },
+    {
+      "record_id": "jp-gaiax-2006:map-6",
+      "entity_type": "RELEASE_DESCRIBED_PLACE_NOT_GAME_MAP_ID",
+      "collection": "maps",
+      "version_profile": "LATER_OFFICIAL:JP_GAIAX_2006",
+      "source_refs": [
+        "M3"
+      ],
+      "verification_status": "CONTEMPORANEOUS_OPERATOR_RELEASE_QUOTE_NOT_SERVER_EXECUTION",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "name_as_written": "ジャルガ島",
+      "game_ids": null,
+      "coordinate": null,
+      "asset_refs": null
+    }
+  ],
+  "relations": [
+    {
+      "from": "紅炎の地",
+      "to": "ミライア群島",
+      "kind": "NORTHWEST_RELATIVE_TO",
+      "source": "M1",
+      "exact_coordinates": null
+    },
+    {
+      "from": "炎渦の頂",
+      "to": "紅炎の地",
+      "kind": "CENTRAL_VOLCANO_DUNGEON",
+      "source": "M2",
+      "exact_coordinates": null
+    },
+    {
+      "from": "炎渦の頂",
+      "to": "炎渦の頂",
+      "kind": "MULTI_ROUTE_WITH_SOME_CONDITIONAL_ACCESS",
+      "source": "M2",
+      "actual_entry_conditions": null
+    },
+    {
+      "from": "香颯の地",
+      "to": "ミライア群島",
+      "kind": "WIND_ISLAND_IN_ARCHIPELAGO",
+      "source": "M3",
+      "exact_coordinates": null
+    },
+    {
+      "from": "雨祝の森",
+      "to": "ジャルガ島",
+      "kind": "RIVER_HEADWATERS_ON_ISLAND",
+      "source": "M3",
+      "exact_coordinates": null
+    }
+  ],
+  "timeline": [
+    {
+      "phase": "INITIAL_PLAN",
+      "source": "M1",
+      "target": "2006-04-18",
+      "source_wording": "FIRST_PHASE_PLANNED_PLAYABLE",
+      "server_execution_verified": false
+    },
+    {
+      "phase": "PHASE_ONE_COMPLETION_REPORTED",
+      "source": "M2",
+      "target": "2006-04-18",
+      "source_wording": "OPERATOR_RELEASE_REPORTS_PHASE_ONE_COMPLETED",
+      "server_execution_verified": false
+    },
+    {
+      "phase": "PHASE_TWO_PLAN",
+      "source": "M2",
+      "target": "2006-05-02",
+      "source_wording": "UPPER_VOLCANO_DUNGEON_BOSS_PLANNED",
+      "server_execution_verified": false
+    },
+    {
+      "phase": "WINTER_MAP_PLAN",
+      "source": "M3",
+      "target": "2006-12-12",
+      "source_wording": "WIND_ISLAND_AND_RAIN_FOREST_PLANNED",
+      "server_execution_verified": false
+    }
+  ],
+  "content": {
+    "audience": "MID_TO_HIGH_LEVEL",
+    "volcanic_region_fire_dinosaurs": true,
+    "central_volcano_has_multibranch_dungeon": true,
+    "some_branches_conditional": true,
+    "exact_conditions": null,
+    "boss_at_summit_reported": true,
+    "boss_name": null,
+    "boss_rewards": null,
+    "fire_species_roster": null,
+    "wind_island_high_altitude_and_year_round_wind": true,
+    "wind_landscape_weathering_canyon": true,
+    "rain_forest_year_round_rain": true,
+    "rain_forest_river_source": true
+  },
+  "boundaries": {
+    "early_jss1999_map_membership": false,
+    "tw10_original_map_membership": false,
+    "actual_2006_client_map_id_recovered": false,
+    "dungeon_route_topology_or_scripts_recovered": false,
+    "boss_name_stats_or_drop_proven": false,
+    "precise_map_location_proven": false,
+    "real_2006_server_update_trace_verified": false,
+    "original_2006_html_captured": false,
+    "original_game_assets_committed": false,
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b_wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING"
+  },
+  "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-41"
+}
