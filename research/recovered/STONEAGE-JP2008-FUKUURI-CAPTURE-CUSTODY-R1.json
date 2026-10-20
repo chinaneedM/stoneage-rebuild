@@ -37,7 +37,7 @@
     },
     {
       "path": "docs/specs/STONEAGE-JP2008-FUKUURI-CAPTURE-CAMPAIGN-SOURCE-R1.md",
-      "git_blob": "2d76f46facc08a58fc905dc6439dee687d801321"
+      "git_blob": "29ecca1c22b2a46e9e30e41efb56cb49e3a91608"
     },
     {
       "path": "research/recovered/STONEAGE-JP2008-FUKUURI-CAPTURE-CI-CANDIDATE-REPLAY-R1.json",
@@ -52,5 +52,12 @@
     "unknown_species_master_or_original_1999_roster_still_open": true,
     "main_replay_not_yet_verified": true
   },
-  "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-39"
+  "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-39",
+  "failed_archive_ci": {
+    "head": "230118d9d82e3704f79f9ac8efec2a18378c6896",
+    "run_id": 39425142193,
+    "conclusion": "failure",
+    "reason": "source custody pinned pre-append specification blob; exact CI reported new blob 29ecca1c...",
+    "fix": "update source pin without rewriting archival derived payload"
+  }
 }
