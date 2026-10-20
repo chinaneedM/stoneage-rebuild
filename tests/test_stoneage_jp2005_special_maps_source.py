@@ -72,6 +72,29 @@ class SpecialMaps(unittest.TestCase):
         self.reject(['status', 'stage_b_wiki'], 'OPEN')
         self.reject(['status', 'r79'], 'COMPLETE')
 
+    def test_required_durable_independent_ci_custody(self):
+        import hashlib
+        p = ROOT / 'research/recovered/STONEAGE-JP2005-SPECIAL-MAPS-CUSTODY-R1.json'
+        self.assertTrue(p.is_file(), 'The accepted source milestone must retain permanent custody')
+        receipt = json.loads(p.read_text())
+        for pin in receipt['source_pins']:
+            b = (ROOT / pin['path']).read_bytes()
+            self.assertEqual(len(b), pin['bytes'])
+            self.assertEqual(hashlib.sha256(b).hexdigest(), pin['sha256'])
+            self.assertEqual(hashlib.sha1(b'blob ' + str(len(b)).encode() + b'\0' + b).hexdigest(), pin['git_blob'])
+        for pin in receipt['startup_prefixes']:
+            b = (ROOT / pin['path']).read_bytes()[:pin['bytes']]
+            self.assertEqual(hashlib.sha256(b).hexdigest(), pin['sha256'])
+        c, m = receipt['candidate'], receipt['main']
+        self.assertEqual((c['conclusion'], m['conclusion']), ('success', 'success'))
+        self.assertNotEqual(c['run_id'], m['run_id'])
+        self.assertNotEqual(c['job_id'], m['job_id'])
+        for label, meta in [('CANDIDATE', c), ('MAIN', m)]:
+            raw = (ROOT / ('research/recovered/STONEAGE-JP2005-SPECIAL-MAPS-CI-' + label + '-REPLAY-R1.json')).read_bytes()
+            self.assertEqual(hashlib.sha256(raw).hexdigest(), meta['raw_sha256'])
+            self.assertEqual(json.loads(raw)['extracted'], self.r['extracted'])
+            self.assertTrue(meta['all_applicable_workflows_success'])
+
 
 if __name__ == '__main__':
     unittest.main()

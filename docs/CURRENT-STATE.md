@@ -16501,3 +16501,12 @@ R41保管门补强：收据生成后，最终测试强制要求永久CUSTODY文�
 交付 docs/specs/STONEAGE-JP2005-SPECIAL-MAPS-SOURCE-R1.md、六记录机器合同/解析器/专属CI/派生元数据。13真实正文语义改写绕过digest门后拒绝，另外围script正例及独立正则/HTML实体解码摘要通过；初始反例锚命中meta重复而拒绝，发布前限定body重做成功，不当远端CI失败。原HTML/图片不入Git。独立候选/main取源及ZIP永久保管按实际后验。
 
 最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-43回22域另一具名材料，不扩犬类全集/票据/全地图helper。Stage A7 PARTIAL+2 OPEN、Stage B/wiki GATED、R79 PAUSED_NON_BLOCKING，全部旧历史前缀保留，未有分母不报总体完成百分比。
+
+
+## 2026-10-21 R42独立候选/主线验收及永久派生保管
+
+内容282b0e517e4b8296a546d7f8774736cd00c025f0/tree4671b5d04ef62752ad3c8a5218c89c4f67367dca自身候选10项与主线11项适用Actions全部SUCCESS。来源候选run39511572462/job118933612703、主线run39511649348/job118933867463各真实执行9项用例（零跳过）、重取269601B网页并拒绝13个实际正文语义改写，外围script正例通过。干净远端主线检出54相关测试及八历史全文前缀/原生Git标识另验通过。
+
+artifact12306690663/12306501257实际下载，两个ZIP各2192B/SHA256分别92284b67261a622d9a8f2caa10ca5e83d13480a7290698aa0c4e55f44e71b81d / a2733601fcdabe49126c1c403282d1020d3ee247c170ca36185c2ae960a7a986；各唯一replay.json4769B/SHA256 19e4c53d36ae2e8a6f5be4d3700840ba010ccd26447ed413e69ee488075565e9/原生Git blob dd32165046fb9fec3de1de69b565647982b17a7c，与本地完整派生逐字节一致。双原JSON、完整HEAD/tree/run/job/artifact/ZIP/raw链、来源/工具/工作流/既验2009输入pins和八启动全文前缀永久保存于 research/recovered/STONEAGE-JP2005-SPECIAL-MAPS-CUSTODY-R1.json。版权原HTML/图片不入Git。
+
+新增保管门后10项本包/55相关测试按实际验收；收据缺失必须失败，初版实际9项历史不改写为10项。保管提交自身Actions继续独立后验，不套内容提交绿灯。R42有限来源结束，NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-43；古史相对时间/现实年份、同名冰窟/同ID、山/洞窟、可能掉落/必掉及媒体担忧/实测结论仍分开，Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停。
