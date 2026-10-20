@@ -1,0 +1,359 @@
+{
+  "schema": "stoneage.cn20_riding_trainer_combat.source.r1",
+  "task": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-27",
+  "date": "2026-10-20",
+  "baseline": {
+    "head": "91db5b19f6d70f46133f444cd56b4e9357fba744",
+    "tree": "3adb250a0d73d4cb7c7f229a23028487e25e462f",
+    "remote_branch_count": 397,
+    "own_main_success": 9,
+    "own_candidate_success": 8,
+    "open_prs": 0,
+    "unrelated_queued_run": 37642417333,
+    "continuity_prefix_pins": [
+      {
+        "path": "README.md",
+        "bytes": 21648,
+        "sha256": "9e5cfa8652f58f18a0bfc1df08f5b6b4f31ba63b86f6df2385959801a10bccbb",
+        "git_blob": "961cd68e7850b5535c0c5bdc82ed2e506c651a21"
+      },
+      {
+        "path": "docs/PROJECT-CONTINUITY-PROTOCOL-R1.md",
+        "bytes": 9762,
+        "sha256": "c44834eeec87f7a43e9cb4905f08377349e36d58b1fff2c5a75a6975db695e3b",
+        "git_blob": "ba9bbe19384589400abc61af37a360a40bf91452"
+      },
+      {
+        "path": "docs/CURRENT-STATE.md",
+        "bytes": 2149409,
+        "sha256": "120de7a09b8d9c0919f5d58462da9ce4fd3e5431cadc98ffbbc05bc2399da909",
+        "git_blob": "28c602f79c3634b159defb3acf9e16dab5f8c61a"
+      },
+      {
+        "path": "docs/DESIGN-DECISIONS.md",
+        "bytes": 45965,
+        "sha256": "28b572ed01179eacd5a06b4ad62c76e4baef22ac49587aa0bad452a7cb3fe8e6",
+        "git_blob": "013ae4fad9301ab0140fe408a423b3abad97d1f9"
+      },
+      {
+        "path": "docs/HISTORICAL-TIMELINE.md",
+        "bytes": 500382,
+        "sha256": "ecfd0a749697fef658246c83b18e2cfb93c17527dabd7a012abb7bc9463d5f60",
+        "git_blob": "f6418d3f331dae8d409a727d6f74dfaadbde7e75"
+      },
+      {
+        "path": "docs/SOURCE-REGISTRY.md",
+        "bytes": 783887,
+        "sha256": "589ddd8c008cf4d93d64a6e667ab1eb9eb23c8ddd04c928bf2f47e7ada1527b8",
+        "git_blob": "d5ee72df2ca3f6bff4c6f3b822db5857608e3004"
+      },
+      {
+        "path": "docs/RESTORATION-ROADMAP-R2.md",
+        "bytes": 134211,
+        "sha256": "1d62335e84eea6776ac8fe04d42ee93d5a1dd1931a0c2a0090c48a9d3633d7d4",
+        "git_blob": "c42857e43497bdd016ad4d86a5543986133e893d"
+      },
+      {
+        "path": "research/recovered/STONEAGE-22-DOMAIN-SOURCE-READY-PORTFOLIO-R2.json",
+        "bytes": 15948,
+        "sha256": "7d50de08f7855cf16dbe54b1747e258f1cc1223de88cc217172fd145f3c704ce",
+        "git_blob": "088b469b3c51e689cff27f33fc3bb49de2d24b2c"
+      }
+    ]
+  },
+  "inputs": [
+    {
+      "id": "N1",
+      "http": {
+        "url": "https://web.archive.org/web/20011204194619id_/http://www.waei.com.cn/ZHUANQU/stoneage2/pet/new_pet.asp",
+        "resolved_url": "https://web.archive.org/web/20011204194619id_/http://www.waei.com.cn/ZHUANQU/stoneage2/pet/new_pet.asp",
+        "status": 200,
+        "bytes": 69317,
+        "sha256": "561950fd7bba41e7d39f4a781a671e11e175c7fe08dd1b5481fdf1fd23ba351b",
+        "retrieved_utc": "2026-10-20T04:22:06.607913+00:00"
+      },
+      "replay_url": "https://web.archive.org/web/20011204194619id_/http://www.waei.com.cn/ZHUANQU/stoneage2/pet/new_pet.asp",
+      "capture_timestamp": "20011204194619",
+      "authority": "HISTORICAL_OPERATOR_HOST_HTML",
+      "extracted": {
+        "label": "骑乘宠物",
+        "href": "/ZHUANQU/stoneage2/pet/qdragon.asp"
+      }
+    },
+    {
+      "id": "S1",
+      "http": {
+        "url": "https://web.archive.org/web/20011204194619id_/http://www.waei.com.cn/ZHUANQU/stoneage2/pet/qdragon.asp",
+        "resolved_url": "https://web.archive.org/web/20011204195948id_/http://www.waei.com.cn/ZHUANQU/stoneage2/pet/qdragon.asp",
+        "status": 200,
+        "bytes": 66879,
+        "sha256": "ee59e2c8015d39b58f466943c9cb83ec1dce9894874caa2d539006e28e320a2e",
+        "retrieved_utc": "2026-10-20T04:22:40.796079+00:00"
+      },
+      "replay_url": "https://web.archive.org/web/20011204195948id_/http://www.waei.com.cn/ZHUANQU/stoneage2/pet/qdragon.asp",
+      "capture_timestamp": "20011204195948",
+      "authority": "HISTORICAL_OPERATOR_HOST_HTML",
+      "extracted": {
+        "core_sha256": "9fb3fc4b1d5e6d4221564b4f5786363d476c87dff7c9cb1ceecc474a1e7b8528",
+        "core_utf8_bytes": 1212,
+        "facts": {
+          "trainer_role_as_written": "宠物骑师",
+          "location": "FOUR_MANOR_LEADERS_HOUSES_NEAR_FOUR_VILLAGES",
+          "eligible_groups_as_written": [
+            "雷龙",
+            "老虎"
+          ],
+          "compatible_pair_query": true,
+          "courses_as_written": [
+            "下级",
+            "中级",
+            "上级"
+          ],
+          "loyalty_label": 100,
+          "command_as_written": "骑乘",
+          "command_surface": "宠物栏",
+          "training_target": "HUMAN_NOT_PET",
+          "replacement_pet_retraining_not_required_reported": true,
+          "flow": [
+            "ASK_TRAINER_FOR_CHARACTER_COMPATIBILITY",
+            "OBTAIN_AND_CARRY_ELIGIBLE_PET",
+            "PAY_TUITION_AND_LEARN_MATCHING_COURSE",
+            "MEET_PET_LEVEL_AND_LOYALTY_CLAUSES",
+            "SELECT_RIDE_IN_PET_PANEL"
+          ],
+          "life_force": "SUM_OF_HUMAN_AND_PET_SOURCE_TERM",
+          "damage_split": "PROPORTIONAL_UNSPECIFIED_WEIGHTS",
+          "defense": "BETWEEN_HUMAN_AND_PET_UNSPECIFIED_WEIGHTS",
+          "melee_attack": "PET_ATTACK",
+          "ranged_attack": "HUMAN_ATTACK",
+          "melee_initiation": "PET_AGILITY",
+          "ranged_initiation": "HUMAN_AGILITY",
+          "receiving_attack_agility": "BETWEEN_HUMAN_AND_PET_UNSPECIFIED_WEIGHTS"
+        }
+      },
+      "html_image_ref": "img/ridepet/1.jpg",
+      "image_declared_size": [
+        400,
+        300
+      ]
+    },
+    {
+      "id": "I1",
+      "http": {
+        "url": "https://web.archive.org/web/20011204195948id_/http://www.waei.com.cn/ZHUANQU/stoneage2/pet/img/ridepet/1.jpg",
+        "resolved_url": "https://web.archive.org/web/20020402014049id_/http://waei.com.cn/ZHUANQU/stoneage2/pet/img/ridepet/1.jpg",
+        "status": 200,
+        "bytes": 31680,
+        "sha256": "492e22003f4537dba9468c3f50125063d21db6e4f1d546147a344ebad509459f",
+        "retrieved_utc": "2026-10-20T04:24:11.402398+00:00"
+      },
+      "replay_url": "https://web.archive.org/web/20020402014049id_/http://waei.com.cn/ZHUANQU/stoneage2/pet/img/ridepet/1.jpg",
+      "capture_timestamp": "20020402014049",
+      "authority": "ACTUAL_LINKED_PATH_LATER_ARCHIVED_IMAGE_WITH_BARE_HOST_REDIRECT",
+      "dimensions": [
+        400,
+        300
+      ],
+      "visually_inspected": true,
+      "same_build_as_2001_text": false,
+      "observation": "RIDER_ON_YELLOW_TIGER_LIKE_MOUNT_IN_WORLD_SCENE_NO_TRAINER_DIALOG_VISIBLE"
+    }
+  ],
+  "records": [
+    {
+      "record_id": "cn20-20011204-riding:trainer",
+      "entity_type": "SOURCE_NAMED_SERVICE_ROLE_NOT_SPAWN",
+      "collection": "npcs",
+      "version_profile": "CN20_OPERATOR_WEB_LABEL_20011204_NOT_AUTHENTICATED_GAME_BUILD",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "OPERATOR_PAGE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "label_as_written": "宠物骑师",
+      "coordinates": null,
+      "family_membership_requirement": null,
+      "personal_name": null,
+      "location": "FOUR_MANOR_LEADER_HOUSES"
+    },
+    {
+      "record_id": "cn20-20011204-riding:first-ride",
+      "entity_type": "SOURCE_SERVICE_JOURNEY_NOT_IMPLEMENTATION",
+      "collection": "tutorials",
+      "version_profile": "CN20_OPERATOR_WEB_LABEL_20011204_NOT_AUTHENTICATED_GAME_BUILD",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "OPERATOR_PAGE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "facts": {
+        "trainer_role_as_written": "宠物骑师",
+        "location": "FOUR_MANOR_LEADERS_HOUSES_NEAR_FOUR_VILLAGES",
+        "eligible_groups_as_written": [
+          "雷龙",
+          "老虎"
+        ],
+        "compatible_pair_query": true,
+        "courses_as_written": [
+          "下级",
+          "中级",
+          "上级"
+        ],
+        "loyalty_label": 100,
+        "command_as_written": "骑乘",
+        "command_surface": "宠物栏",
+        "training_target": "HUMAN_NOT_PET",
+        "replacement_pet_retraining_not_required_reported": true,
+        "flow": [
+          "ASK_TRAINER_FOR_CHARACTER_COMPATIBILITY",
+          "OBTAIN_AND_CARRY_ELIGIBLE_PET",
+          "PAY_TUITION_AND_LEARN_MATCHING_COURSE",
+          "MEET_PET_LEVEL_AND_LOYALTY_CLAUSES",
+          "SELECT_RIDE_IN_PET_PANEL"
+        ],
+        "life_force": "SUM_OF_HUMAN_AND_PET_SOURCE_TERM",
+        "damage_split": "PROPORTIONAL_UNSPECIFIED_WEIGHTS",
+        "defense": "BETWEEN_HUMAN_AND_PET_UNSPECIFIED_WEIGHTS",
+        "melee_attack": "PET_ATTACK",
+        "ranged_attack": "HUMAN_ATTACK",
+        "melee_initiation": "PET_AGILITY",
+        "ranged_initiation": "HUMAN_AGILITY",
+        "receiving_attack_agility": "BETWEEN_HUMAN_AND_PET_UNSPECIFIED_WEIGHTS"
+      },
+      "trainer_join": "cn20-20011204-riding:trainer",
+      "future_design_adoption": false
+    },
+    {
+      "record_id": "cn20-20011204-riding:training",
+      "entity_type": "SOURCE_RIDING_TRAINING_RULES_NOT_FLAGS",
+      "collection": "riding",
+      "version_profile": "CN20_OPERATOR_WEB_LABEL_20011204_NOT_AUTHENTICATED_GAME_BUILD",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "OPERATOR_PAGE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "tuition_amounts": null,
+      "course_level_ranges": null,
+      "character_species_map": null,
+      "simultaneously_learnable_mount_count": null,
+      "teaching_target": "HUMAN",
+      "loyalty_label": 100,
+      "actual_saved_flags": null
+    },
+    {
+      "record_id": "cn20-20011204-riding:combat",
+      "entity_type": "SOURCE_MOUNTED_COMBAT_SUMMARY_NOT_FORMULA",
+      "collection": "riding",
+      "version_profile": "CN20_OPERATOR_WEB_LABEL_20011204_NOT_AUTHENTICATED_GAME_BUILD",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "OPERATOR_PAGE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "damage_weights": null,
+      "rounding": null,
+      "defense_weights": null,
+      "life_force_current_or_max": null,
+      "element_formula": null,
+      "speed_scheduler": null,
+      "reported_sources": {
+        "trainer_role_as_written": "宠物骑师",
+        "location": "FOUR_MANOR_LEADERS_HOUSES_NEAR_FOUR_VILLAGES",
+        "eligible_groups_as_written": [
+          "雷龙",
+          "老虎"
+        ],
+        "compatible_pair_query": true,
+        "courses_as_written": [
+          "下级",
+          "中级",
+          "上级"
+        ],
+        "loyalty_label": 100,
+        "command_as_written": "骑乘",
+        "command_surface": "宠物栏",
+        "training_target": "HUMAN_NOT_PET",
+        "replacement_pet_retraining_not_required_reported": true,
+        "flow": [
+          "ASK_TRAINER_FOR_CHARACTER_COMPATIBILITY",
+          "OBTAIN_AND_CARRY_ELIGIBLE_PET",
+          "PAY_TUITION_AND_LEARN_MATCHING_COURSE",
+          "MEET_PET_LEVEL_AND_LOYALTY_CLAUSES",
+          "SELECT_RIDE_IN_PET_PANEL"
+        ],
+        "life_force": "SUM_OF_HUMAN_AND_PET_SOURCE_TERM",
+        "damage_split": "PROPORTIONAL_UNSPECIFIED_WEIGHTS",
+        "defense": "BETWEEN_HUMAN_AND_PET_UNSPECIFIED_WEIGHTS",
+        "melee_attack": "PET_ATTACK",
+        "ranged_attack": "HUMAN_ATTACK",
+        "melee_initiation": "PET_AGILITY",
+        "ranged_initiation": "HUMAN_AGILITY",
+        "receiving_attack_agility": "BETWEEN_HUMAN_AND_PET_UNSPECIFIED_WEIGHTS"
+      }
+    },
+    {
+      "record_id": "cn20-20011204-riding:riding-image",
+      "entity_type": "SOURCE_LATER_SCENE_REFERENCE_NOT_SAME_BUILD",
+      "collection": "screens",
+      "version_profile": "CN20_OPERATOR_WEB_LABEL_20011204_NOT_AUTHENTICATED_GAME_BUILD",
+      "source_refs": [
+        "S1",
+        "I1"
+      ],
+      "verification_status": "MANUAL_LATER_IMAGE_NOT_SAME_BUILD",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "same_build_as_2001_text": false,
+      "original_sprite_binding": null,
+      "pet_species_id": null,
+      "character_id": null,
+      "dimensions": [
+        400,
+        300
+      ]
+    }
+  ],
+  "boundaries": {
+    "original_operator_html_captures_verified": true,
+    "original_server_execution_verified": false,
+    "exact_client_build": null,
+    "image_and_text_same_capture": false,
+    "training_is_pet_skill_slot": false,
+    "trainer_access_means_family_membership_not_needed": false,
+    "compatible_pair_proves_two_simultaneous_mount_skills": false,
+    "proportional_damage_means_half_each": false,
+    "between_means_arithmetic_mean": false,
+    "source_life_force_proves_current_or_max_hp": false,
+    "tw10_or_jss1999_backfill": false,
+    "raw_html_or_assets_committed": false,
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b_and_wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING"
+  },
+  "interpretation_notes": [
+    "Riding page first requested at navigation timestamp 20011204194619 and actually redirected to 20011204195948. CI pins the actual target, not the initial redirect.",
+    "The actual relative image link requested at the page capture redirected to bare waei.com.cn capture 20020402014049. This is a later image-path representation, not proof of 2001 pixels or same build.",
+    "A character has two compatibility candidates in the text, but the wording one thunder dinosaur OR one tiger does not specify two simultaneously learned riding skills.",
+    "Access to a leader house is stated; invitation/family membership restrictions are not resolved by this page.",
+    "Training the human permits replacement pets, but the stored player flag, skillslot representation and course pet-level ranges are unknown.",
+    "Life force is a source term: sum does not resolve current/max HP. Proportional loss and between-stat descriptions do not supply ratios, averaging or rounding.",
+    "Melee/ranged attribute sources are documentary descriptions, not an original battle scheduler, hit formula or same-build execution trace.",
+    "Do not backfill TW1.0/JSS1999. The later Taiwan newbie riding plan and 4.0 certificates need separate version/region comparisons."
+  ],
+  "reopening_triggers": [
+    "SAME_BUILD_NPC_OR_RIDING_SKILL_DATA_FOR_COMPATIBILITY_TUITION_AND_LEVEL_RANGES",
+    "ORIGINAL_COMBAT_SOURCE_OR_TRACE_FOR_DAMAGE_ALLOCATION_DEFENSE_AND_SPEED_WEIGHTS",
+    "2001_IMAGE_CAPTURE_OR_CLIENT_SPRITE_IDS_FOR_EXACT_VISUAL_JOIN"
+  ],
+  "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-28"
+}

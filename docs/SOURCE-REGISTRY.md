@@ -7562,3 +7562,8 @@ I1正文实际img https://www.4gamer.net/games/013/G001377/20071120003/TN/001.jp
 ### JP2008-RIMFY-FAMILY-QUEST-SOURCE-R1（2026-10-20）
 
 S1 https://www.4gamer.net/games/013/G001377/20080707020/，2008/07/07 17:25，现HTTP200/267000B SHA256053f7cf040ad9fc0473d8dda7a96459ec450e4301a9737fe594dc049efd76df9；明确发布文分界与官方特页链接，但引文无公司署名，保守“媒体标发布文”非已取原运营HTML。1593B核心SHA256b1acc18afe061c7845acf20beb41ba03178a6d1bbc2d2b8c4931a8728229bf84。两个固定官方/媒体URL availability（20080901）空返回，精确响应/HTTP/SHA见报告，不称全网无档案。I1真实img https://www.4gamer.net/games/013/G001377/20080707020/TN/001.jpg，22218B JPEG122×99 SHA256600909ad41837331067eeeca9f9631f74ed1dabb4d578a7d92ba4e82b8309a42，已目视红橙四足兽；非原SPR/物种master。误001.gif404只记失败，不作源。六记录/原资产不入Git，CI仅派生，ZIP/raw/Git按真实后续验收保管。历史原件、脚本与等级/结局缺失不隐去。
+
+
+### CN20-RIDING-TRAINER-COMBAT-SOURCE-R1（2026-10-20）
+
+N1 https://web.archive.org/web/20011204194619id_/http://www.waei.com.cn/ZHUANQU/stoneage2/pet/new_pet.asp，69317B SHA256561950fd7bba41e7d39f4a781a671e11e175c7fe08dd1b5481fdf1fd23ba351b，重新读取其“骑乘宠物”实际href。S1 https://web.archive.org/web/20011204195948id_/http://www.waei.com.cn/ZHUANQU/stoneage2/pet/qdragon.asp，66879B SHA256ee59e2c8015d39b58f466943c9cb83ec1dce9894874caa2d539006e28e320a2e，首请求N1时间戳后跳转到此实际捕获；正文2.0标签、核心1212UTF8字节SHA2569fb3fc4b1d5e6d4221564b4f5786363d476c87dff7c9cb1ceecc474a1e7b8528。I1实际相对img/ridepet/1.jpg，最终 https://web.archive.org/web/20020402014049id_/http://waei.com.cn/ZHUANQU/stoneage2/pet/img/ridepet/1.jpg，31680B JPEG400×300 SHA256492e22003f4537dba9468c3f50125063d21db6e4f1d546147a344ebad509459f，已目视；不能称2001图像或同版SPR。三源HTTP200/实际跳转与捕获分别保存，原资产不进Git。用途：骑师服务/学习人与骑乘战斗文献约束；费用/等级上限/权重/脚本未知。独立CI与ZIP/raw/Git按真实后续收据保管。

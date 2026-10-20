@@ -1,0 +1,36 @@
+name: Verify CN20 operator riding trainer and combat source
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-CN20-RIDING-*.json'
+      - 'tools/stoneage_cn20_riding_source.py'
+      - 'tools/stoneage_jp2008_shadow_release.py'
+      - 'tools/stoneage_cn2003_christmas_source.py'
+      - 'tests/test_stoneage_cn20_riding_source.py'
+      - '.github/workflows/verify-stoneage-cn20-riding-source.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-CN20-RIDING-*.json'
+      - 'tools/stoneage_cn20_riding_source.py'
+      - 'tools/stoneage_jp2008_shadow_release.py'
+      - 'tools/stoneage_cn2003_christmas_source.py'
+      - 'tests/test_stoneage_cn20_riding_source.py'
+      - '.github/workflows/verify-stoneage-cn20-riding-source.yml'
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify trainer flow and documentary combat boundaries
+        run: python -m unittest discover -s tests -p 'test_stoneage_cn20_riding_source.py' -v
+      - name: Read two exact 2001 operator pages and the separately dated 2002 image
+        run: python -m tools.stoneage_cn20_riding_source --fetch --output /tmp/cn20-riding-derived/replay.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cn20-riding-derived-replay
+          path: /tmp/cn20-riding-derived/replay.json
+          if-no-files-found: error
+          retention-days: 30
