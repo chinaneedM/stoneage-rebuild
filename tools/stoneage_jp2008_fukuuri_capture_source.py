@@ -42,7 +42,7 @@ def validate(report):
 
 def extract(html):
     p=Visible();p.feed(html.decode('utf-8-sig'))
-    t=re.sub(r'\\s+','', ''.join(p.parts))
+    t=re.sub(r'\s+','', ''.join(p.parts))
     mark='メーカー発表文の内容をそのまま掲載しています'
     require(t.count(mark)==1,'ambiguous release boundary')
     release=t.split(mark,1)[1].split('関連記事一覧へ',1)[0]
@@ -80,6 +80,6 @@ def main():
             content=resp.read(1_500_001);require(len(content)<=1_500_000,'Oversize response')
     else:content=args.html_file.read_bytes()
     out=replay(report,content);args.output.parent.mkdir(parents=True,exist_ok=True)
-    args.output.write_text(json.dumps(out,ensure_ascii=False,indent=2)+'\\n',encoding='utf8')
+    args.output.write_text(json.dumps(out,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
     print(json.dumps({'verified':True,'pet':out['named_pet'],'source_digest':out['current_http_sha256']},ensure_ascii=False))
 if __name__=='__main__':main()
