@@ -84,4 +84,21 @@ class GuildHakuenSource(unittest.TestCase):
   self.assertEqual(c['custody_ci']['operator_body_digest'],a['release_digest'])
   self.assertFalse(c['custody_ci']['compared_with_candidate']['raw_json_equal'])
 
+ def test_main_source_replay_is_permanently_pinned_and_matches_third_candidate(self):
+  import hashlib
+  c=json.loads((REPORT.parent/'STONEAGE-JP2009-GUILD-HAKUEN-CUSTODY-R1.json').read_text())
+  m=c['main_ci']
+  self.assertEqual(m['head_sha'],'7e3868cc3e3d99e71679fbd8278b3fc13340f4f0')
+  self.assertEqual(m['conclusion'],'success')
+  self.assertTrue(m['all_main_runs_success'] and m['checked_main_run_count']==11)
+  self.assertTrue(m['matches_third_candidate_raw_bytes'])
+  b=(REPORT.parent/'STONEAGE-JP2009-GUILD-HAKUEN-CI-MAIN-REPLAY-R1.json').read_bytes()
+  a=(REPORT.parent/'STONEAGE-JP2009-GUILD-HAKUEN-CI-CUSTODY-REPLAY-R1.json').read_bytes()
+  self.assertEqual(a,b)
+  self.assertEqual(len(b),m['raw_bytes'])
+  self.assertEqual(hashlib.sha256(b).hexdigest(),m['raw_sha256'])
+  self.assertEqual(hashlib.sha1(b'blob '+str(len(b)).encode()+b'\0'+b).hexdigest(),m['raw_git_blob'])
+  self.assertEqual(json.loads(b)['release_digest'],m['normalized_release_digest'])
+  self.assertFalse(c['boundaries']['2009_actual_server_execution_verified'])
+
 if __name__=='__main__':unittest.main()
