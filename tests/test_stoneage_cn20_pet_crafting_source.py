@@ -67,6 +67,10 @@ class CraftingSource(unittest.TestCase):
         self.rejects(lambda r:r['records'][0].__setitem__('rights_status','RELEASE_APPROVED'))
         for k in ['original_server_execution_verified','source_host_guarantees_every_claim_is_verified','tw10_or_jss1999_backfill']:
             self.rejects(lambda r:r['boundaries'].__setitem__(k,True))
+    def test_individual_records_cannot_contradict_the_global_unknown_boundaries(self):
+        cases=[(0,'teacher_npc_id',42),(0,'pet_shop_coordinates',[1,2]),(1,'success_formula',{'luck':1}),(3,'full_recipe',True),(4,'recipe_id',123),(5,'result_item_ids',[1]),(8,'ownership_and_logout_behavior','PERSISTENT_BANK'),(9,'species_master_ids',[1]),(9,'success_rates',[1.0]),(9,'level_one_loyalty_hundred','HARD_REQUIREMENT'),(10,'implemented_formula',{'mp':8}),(10,'original_server_verified',True)]
+        for i,k,v in cases:
+            with self.subTest(record=i,key=k):self.rejects(lambda r:r['records'][i].__setitem__(k,v))
 
 if __name__=='__main__':unittest.main()
 
