@@ -18,3 +18,7 @@
 已恢复的数据层是运营同期公告的7个资料库记录（tutorials/pets/items/npcs/encounters），不是实际公会程序/世界地图/宠物master。机器规格 research/recovered/STONEAGE-JP2009-GUILD-HAKUEN-SOURCE-R1.json 保留15地名、角色和关键数字；技术测试只验证这个*文献合同*，不是原服务器。来源正文目前经4Gamer阅读；2009官页 notice no=694 和可能的更多原图需要单独具名原始字节才重新打开。
 
 **止点：** 一篇同期发布文、群聊机制描述、白炎活动交换关系、15个低概率事件地点、5碎片首次/重复经验交换。下轮回22域另一版本化资料 NEXT40；不扩全日本2009运营历史/全图/虚构包内第七项。Stage A九族7 PARTIAL+2 OPEN，Stage B/公开百科GATED，R79 PAUSED_NON_BLOCKING。
+
+## 2026-10-20 首次来源重放实际摘要
+
+候选提交 04bbd05797b8e1570568698b5ae1c74eade52e5c、独立 Action39427043686/job118642106878 SUCCESS，HTTP正文与已核版本相符；GitHub artifact12265618437 ZIP711B/SHA256 4dcda17f352c2cf498b4c30d8ccb69a41c32362492aa82c734468f57bc8343a1，唯一派生 replay.json 901B/SHA256 d754c374000ee42b8f5628f62c9b26dff0ff8855dc18293846c33131873f41c0（Git blob fdc0adbee8880ab1558012077f244a842b9f47fd）。HTTP 278116B/SHA256 3e28e624d76dbf908ee7cc393f7727bdf5e1408a94e7124ef279bceedaed7c11；**当下公告发布文可见文字规范化摘要** SHA256 026b44ac8d658df115ed17f1071e17a845d20f62f463881030823a133d3fc946。此摘要用于后续精确语义变更门，不是2009原站字节证书。原HTML/JPEG未进Git。

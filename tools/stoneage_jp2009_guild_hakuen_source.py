@@ -73,6 +73,8 @@ def validate(r):
     require(len(r['sources'])==1 and r['sources'][0]['url']==URL,'Source scope changed')
     require(r['sources'][0]['issue_attribution']=='デジパーク','Misattributed issuer')
     require(r['sources'][0]['original_official_notice_html_sha256'] is None and r['sources'][0]['original_2009_capture_sha256'] is None,'Historical bytes falsely promoted')
+    require(re.fullmatch(r'[0-9a-f]{64}',r['sources'][0]['current_release_core_sha256']) is not None,'Missing source core digest')
+    require(r['sources'][0]['current_release_digest_does_not_authenticate_original_2009_html'] is True,'Current bytes claimed historical')
     g,h,e=r['guild'],r['hakuen'],r['limited_events']
     require(g['announced_maintenance_date']=='2009-04-28' and g['supported_function']=='MULTI_FRIEND_CHAT_ACROSS_DISTANCE','Guild function changed')
     require(g['guild_creation_prerequisites'] is None and g['guild_size_or_permissions'] is None,'Missing original guild rule invented')
@@ -96,6 +98,7 @@ def validate(r):
 def replay(report,payload):
     validate(report)
     fact=extract(payload)
+    require(fact['release_digest']==report['sources'][0]['current_release_core_sha256'],'Release body digest differs from anchored source')
     assert fact['ticket_price_gstone']==report['hakuen']['ticket_price_gstone']
     return {'schema':'stoneage.jp2009_guild_hakuen.source_replay.r1',
             'current_http_bytes':len(payload),'current_http_sha256':hashlib.sha256(payload).hexdigest(),**fact}

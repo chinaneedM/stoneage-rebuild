@@ -32,6 +32,11 @@ class GuildHakuenSource(unittest.TestCase):
   self.assertIsNone(self.r['sources'][0]['original_2009_capture_sha256'])
   self.fails(['sources',0,'original_official_notice_html_sha256'],'a'*64)
   self.fails(['boundaries','raw_html_or_original_images_in_git'],True)
+ def test_current_source_digest_cannot_be_promoted_or_forged(self):
+  r=copy.deepcopy(self.r);r['sources'][0]['current_release_core_sha256']='incorrect'
+  with self.assertRaises(ValueError):validate(r)
+  r=copy.deepcopy(self.r);r['sources'][0]['current_release_digest_does_not_authenticate_original_2009_html']=False
+  with self.assertRaises(ValueError):validate(r)
  def test_published_body_mutation_and_source_enclosure(self):
   marker='メーカー発表文の内容をそのまま掲載しています'
   end='※画像は、実際とは異なる場合があります。ご了承ください。'
