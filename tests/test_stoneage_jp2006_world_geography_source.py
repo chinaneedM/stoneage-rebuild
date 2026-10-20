@@ -56,4 +56,19 @@ class WorldGeography(unittest.TestCase):
   self.assertEqual(c['failed_first_ci']['conclusion'],'failure')
   self.assertFalse(c['boundaries']['original_game_map_ids_validated'])
 
+ def test_main_independent_actions_custody_keeps_same_derived_raw(self):
+  import hashlib
+  from pathlib import Path
+  c=json.loads((REPORT.parent/'STONEAGE-JP2006-WORLD-GEOGRAPHY-CUSTODY-R1.json').read_text())
+  a=c['passing_candidate_ci'];b=c['pinned_candidate_ci'];m=c['main_ci']
+  self.assertEqual([a['conclusion'],b['conclusion'],m['conclusion']],['success']*3)
+  self.assertEqual(m['main_workflow_count'],11)
+  self.assertTrue(m['main_all_success'])
+  self.assertEqual(len({a['zip_sha256'],b['zip_sha256'],m['zip_sha256']}),3)
+  payload=(REPORT.parent/'STONEAGE-JP2006-WORLD-GEOGRAPHY-CI-MAIN-REPLAY-R1.json').read_bytes()
+  candidate=(REPORT.parent/'STONEAGE-JP2006-WORLD-GEOGRAPHY-CI-CANDIDATE-REPLAY-R1.json').read_bytes()
+  self.assertEqual(candidate,payload)
+  self.assertEqual(hashlib.sha256(payload).hexdigest(),m['raw_sha256'])
+  self.assertEqual(hashlib.sha1(b'blob '+str(len(payload)).encode()+b'\0'+payload).hexdigest(),m['raw_git_blob'])
+
 if __name__=='__main__':unittest.main()
