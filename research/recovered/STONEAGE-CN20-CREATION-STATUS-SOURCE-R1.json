@@ -1,0 +1,658 @@
+{
+  "schema": "stoneage.cn20_creation_status.source.r1",
+  "task": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-30",
+  "date": "2026-10-20",
+  "authority": "OPERATOR_HOSTED_UNSIGNED_GUIDE_AUTHOR_UNVERIFIED",
+  "baseline": {
+    "head": "f9123b7ff71682b347d3d91568af692474a971e4",
+    "tree": "ecad79dd10b127df11cf9cbbdb679a03c01ad18b",
+    "remote_branches": 402,
+    "own_main_success": 11,
+    "own_candidate_success": 10,
+    "open_prs": 0,
+    "unrelated_queued_run": 37642417333,
+    "continuity_prefix_pins": [
+      {
+        "path": "README.md",
+        "bytes": 22534,
+        "sha256": "d762614a40dc91437c4590449eb95b85e7555ab5c054d7f5c5396a62fcdb45fd",
+        "git_blob": "791619d3ffd617ac0e4c426c909fa733134eed64"
+      },
+      {
+        "path": "docs/PROJECT-CONTINUITY-PROTOCOL-R1.md",
+        "bytes": 9762,
+        "sha256": "c44834eeec87f7a43e9cb4905f08377349e36d58b1fff2c5a75a6975db695e3b",
+        "git_blob": "ba9bbe19384589400abc61af37a360a40bf91452"
+      },
+      {
+        "path": "docs/CURRENT-STATE.md",
+        "bytes": 2157490,
+        "sha256": "31ddb9a461abf9a48de19504c0ce14a2844043155dc6b0db68752bb04a7fca26",
+        "git_blob": "632f09b7aa4433588fef07b17f8a84988f0611c0"
+      },
+      {
+        "path": "docs/DESIGN-DECISIONS.md",
+        "bytes": 45965,
+        "sha256": "28b572ed01179eacd5a06b4ad62c76e4baef22ac49587aa0bad452a7cb3fe8e6",
+        "git_blob": "013ae4fad9301ab0140fe408a423b3abad97d1f9"
+      },
+      {
+        "path": "docs/HISTORICAL-TIMELINE.md",
+        "bytes": 502297,
+        "sha256": "a506e7662be0e6da7850e299e97223692ac21050bac35c2dd634b35e60bcc4cc",
+        "git_blob": "9c8c2d295d436b910ff029c265e5959a805e2966"
+      },
+      {
+        "path": "docs/SOURCE-REGISTRY.md",
+        "bytes": 787593,
+        "sha256": "8212da7395af92b5e66532c16c6b06efd15d92b9e94d030361861158aaade686",
+        "git_blob": "59d2eb152f1a31b72905b6ed8d253ff942d330c3"
+      },
+      {
+        "path": "docs/RESTORATION-ROADMAP-R2.md",
+        "bytes": 135995,
+        "sha256": "6dccf8ae510686a4eb5d776b37a5367c413cdd6308a6add96cce5c24f0a411b4",
+        "git_blob": "12fe714b8912a8704bb45260c029bd31a0046606"
+      },
+      {
+        "path": "research/recovered/STONEAGE-22-DOMAIN-SOURCE-READY-PORTFOLIO-R2.json",
+        "bytes": 15948,
+        "sha256": "7d50de08f7855cf16dbe54b1747e258f1cc1223de88cc217172fd145f3c704ce",
+        "git_blob": "088b469b3c51e689cff27f33fc3bb49de2d24b2c"
+      }
+    ]
+  },
+  "inputs": [
+    {
+      "id": "N1",
+      "http": {
+        "url": "https://web.archive.org/web/20011204194619id_/http://www.waei.com.cn/ZHUANQU/stoneage2/pet/new_pet.asp",
+        "resolved_url": "https://web.archive.org/web/20011204194619id_/http://www.waei.com.cn/ZHUANQU/stoneage2/pet/new_pet.asp",
+        "status": 200,
+        "bytes": 69317,
+        "sha256": "561950fd7bba41e7d39f4a781a671e11e175c7fe08dd1b5481fdf1fd23ba351b",
+        "retrieved_utc": "2026-10-20T05:02:07.128064+00:00"
+      },
+      "replay_url": "https://web.archive.org/web/20011204194619id_/http://www.waei.com.cn/ZHUANQU/stoneage2/pet/new_pet.asp",
+      "capture_timestamp": "20011204194619",
+      "role": "NAVIGATION_ONLY",
+      "extracted": {
+        "label": "人物创造",
+        "href": "/ZHUANQU/stoneage2/tyro/creature.asp"
+      }
+    },
+    {
+      "id": "S1",
+      "http": {
+        "url": "https://web.archive.org/web/20011204194619id_/http://www.waei.com.cn/ZHUANQU/stoneage2/tyro/creature.asp",
+        "resolved_url": "https://web.archive.org/web/20011201045054id_/http://www.waei.com.cn/ZHUANQU/stoneage2/tyro/creature.asp",
+        "status": 200,
+        "bytes": 65690,
+        "sha256": "cead36699828063607a335b7c3a0458dc7bf91089cc199889070c30091fdd6bb",
+        "retrieved_utc": "2026-10-20T05:02:21.308272+00:00"
+      },
+      "replay_url": "https://web.archive.org/web/20011201045054id_/http://www.waei.com.cn/ZHUANQU/stoneage2/tyro/creature.asp",
+      "capture_timestamp": "20011201045054",
+      "role": "UNSIGNED_OPERATOR_HOSTED_CREATION_GUIDE",
+      "extracted": {
+        "core_utf8_bytes": 2544,
+        "core_sha256": "04ef969e20bbd91ef1b0d9dea0b179b6f034ec6ea1d560772593e736213c168c",
+        "facts": {
+          "name": {
+            "maximum_fullwidth_characters_as_written": 8,
+            "engine_counting_units": null
+          },
+          "face": "ANGLE_CONTROLS_SELECT_EXPRESSIONS_NOT_CHARACTER_CENSUS",
+          "primary_status_mapping": [
+            [
+              "体力",
+              "耐久力"
+            ],
+            [
+              "腕力",
+              "攻击力"
+            ],
+            [
+              "耐力",
+              "防御力"
+            ],
+            [
+              "速度",
+              "敏捷力"
+            ]
+          ],
+          "first_hp_wording_as_written": "体力（影响任务的HP）",
+          "primary_effects": [
+            {
+              "primary": "体力",
+              "source_delta": 1,
+              "reported_effects": {
+                "耐久力（HP）": 3
+              },
+              "unmentioned_effects": null
+            },
+            {
+              "primary": "腕力",
+              "source_delta": 1,
+              "reported_effects": {
+                "耐久力（HP）": 1,
+                "攻击力": 1
+              },
+              "unmentioned_effects": null
+            },
+            {
+              "primary": "耐力",
+              "source_delta": 1,
+              "reported_effects": {
+                "耐久力（HP）": 1,
+                "防御力": 1
+              },
+              "unmentioned_effects": null
+            },
+            {
+              "primary": "速度",
+              "source_delta": 1,
+              "reported_effects": {
+                "耐久力（HP）": 1,
+                "敏捷力": 1
+              },
+              "unmentioned_effects": null
+            }
+          ],
+          "levelup": {
+            "distributable_points": 3,
+            "same_claim_occurrences": 2,
+            "automatic_increase_source_term": "体力值",
+            "automatic_increase_amount": null,
+            "initial_pool": null
+          },
+          "element": {
+            "names_in_creation_order": [
+              "地",
+              "水",
+              "火",
+              "风"
+            ],
+            "maximum_types": 2,
+            "second_type": "ADJACENT_ONLY_SOURCE_TERM",
+            "opposite": "CANNOT_SELECT_OPPOSITE_SOURCE_TERM",
+            "cycle": [
+              [
+                "地",
+                "水"
+              ],
+              [
+                "水",
+                "火"
+              ],
+              [
+                "火",
+                "风"
+              ],
+              [
+                "风",
+                "地"
+              ]
+            ],
+            "initial_pool": null,
+            "exact_damage_formula": null
+          },
+          "birth": {
+            "total": 4,
+            "north_island": 2,
+            "south_island": 2,
+            "selection_after": "决定",
+            "different_starter_pet_by_birthplace_source_claim": true,
+            "village_names": null,
+            "starter_species": null
+          },
+          "labels": [
+            "血人",
+            "攻人",
+            "防人",
+            "敏人"
+          ],
+          "labels_are": "RELATIVE_HIGH_STATUS_NICKNAMES_NOT_CLASSES_OR_THRESHOLDS",
+          "creation_flow": [
+            "NAME",
+            "FACE_EXPRESSION",
+            "ALLOCATE_PRIMARY_POINTS",
+            "ALLOCATE_ELEMENT_POINTS",
+            "DECIDE",
+            "CHOOSE_BIRTHPLACE",
+            "CONFIRM_START"
+          ]
+        },
+        "image_ref": {
+          "full": "img/3.gif",
+          "thumbnail": "img/3s.gif",
+          "declared_inline_size": [
+            240,
+            180
+          ]
+        }
+      }
+    },
+    {
+      "id": "I1",
+      "http": {
+        "url": "https://web.archive.org/web/20011201045054id_/http://www.waei.com.cn/ZHUANQU/stoneage2/tyro/img/3.gif",
+        "resolved_url": "https://web.archive.org/web/20011221174011id_/http://waei.com.cn/ZHUANQU/stoneage2/tyro/img/3.gif",
+        "status": 200,
+        "bytes": 114412,
+        "sha256": "662076868208bf5587b89daade5d34a5322b3d8ac6405964aebfa175e821f544",
+        "retrieved_utc": "2026-10-20T05:03:08.419304+00:00"
+      },
+      "replay_url": "https://web.archive.org/web/20011221174011id_/http://waei.com.cn/ZHUANQU/stoneage2/tyro/img/3.gif",
+      "capture_timestamp": "20011221174011",
+      "role": "LATER_LINKED_IMAGE_MANUALLY_REVIEWED",
+      "extracted": {
+        "format": "GIF",
+        "width": 640,
+        "height": 480,
+        "manual_observation": "OUTDOOR_HUMAN_AND_BLUE_CREATURE_NO_CREATION_OR_STATUS_PANEL",
+        "original_character_or_pet_identity": null
+      }
+    }
+  ],
+  "derived_inputs": [
+    {
+      "path": "research/recovered/JSS-LOGIN-MANUAL-CREATION-CONTRACT-R1.json",
+      "bytes": 7143,
+      "sha256": "fb1bc22fbb6e42dfaf39f1ff928ab4278595b0eb3f61e98c33b50d1009690768",
+      "git_blob": "05681ff8d6092171cce32a7ece8b29160601ac44",
+      "id": "D1"
+    },
+    {
+      "path": "research/recovered/STONEAGE-WAEI-CN20-NEWCOMER-GUIDE-R1.json",
+      "bytes": 19519,
+      "sha256": "aecc1e18d291d6af8e7fd6e4ca913baf9aedb6e883cabad295f47a842705bed6",
+      "git_blob": "c85fb48a8263a2d62194fd786da31034e20cd6ae",
+      "id": "D2"
+    }
+  ],
+  "boundaries": {
+    "operator_authorship_verified": false,
+    "original_client_or_server_execution_verified": false,
+    "exact_client_build": null,
+    "original_publication_date": null,
+    "cn_initial_stat_points": null,
+    "cn_initial_element_points": null,
+    "character_type_or_color_counts": null,
+    "wire_create13_field_join": null,
+    "name_limit_bytes_or_unicode_units": null,
+    "automatic_levelup_increase_amount": null,
+    "unmentioned_stat_effects_are_zero": false,
+    "reported_deltas_are_verified_full_stat_formula": false,
+    "attack_speed_means_extra_attacks": false,
+    "exact_element_allowed_pair_list": null,
+    "element_damage_multiplier": null,
+    "starting_village_names_ids_or_starter_species": null,
+    "build_nicknames_are_classes": false,
+    "image_is_creation_or_status_screen": false,
+    "image_same_build_as_body": false,
+    "source_typo_silently_corrected": false,
+    "jss20_creation_or10_element_points_transferred_to_cn": false,
+    "repeated_three_point_clauses_mean_six_points": false,
+    "tw10_or_jss1999_backfill": false,
+    "raw_sources_committed": false,
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b_and_wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING"
+  },
+  "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-31",
+  "records": [
+    {
+      "record_id": "cn20-20011201:creation:choices",
+      "collection": "tutorials",
+      "entity_type": "DOCUMENTED_CREATION_CHOICES_NOT_AVATAR_ROSTER",
+      "version_profile": "CN_WAEI_20_PAGE_CAPTURED_20011201_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "name": {
+        "maximum_fullwidth_characters_as_written": 8,
+        "engine_counting_units": null
+      },
+      "face": "ANGLE_CONTROLS_SELECT_EXPRESSIONS_NOT_CHARACTER_CENSUS",
+      "flow": [
+        "NAME",
+        "FACE_EXPRESSION",
+        "ALLOCATE_PRIMARY_POINTS",
+        "ALLOCATE_ELEMENT_POINTS",
+        "DECIDE",
+        "CHOOSE_BIRTHPLACE",
+        "CONFIRM_START"
+      ],
+      "character_types": null,
+      "colors": null,
+      "layout_coordinates": null
+    },
+    {
+      "record_id": "cn20-20011201:creation:primary-status-map",
+      "collection": "characters",
+      "entity_type": "PRIMARY_STAT_LABEL_RELATION_NOT_CHARACTER_TYPE",
+      "version_profile": "CN_WAEI_20_PAGE_CAPTURED_20011201_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "mapping": [
+        [
+          "体力",
+          "耐久力"
+        ],
+        [
+          "腕力",
+          "攻击力"
+        ],
+        [
+          "耐力",
+          "防御力"
+        ],
+        [
+          "速度",
+          "敏捷力"
+        ]
+      ],
+      "first_hp_wording_as_written": "体力（影响任务的HP）",
+      "typo_interpretation": "POSSIBLE_TYPO_TASK_VS_PERSON_NOT_SILENTLY_CORRECTED",
+      "wire_fields": null
+    },
+    {
+      "record_id": "cn20-20011201:creation:levelup",
+      "collection": "tutorials",
+      "entity_type": "LEVELUP_ALLOCATION_SOURCE_CLAIM",
+      "version_profile": "CN_WAEI_20_PAGE_CAPTURED_20011201_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "facts": {
+        "distributable_points": 3,
+        "same_claim_occurrences": 2,
+        "automatic_increase_source_term": "体力值",
+        "automatic_increase_amount": null,
+        "initial_pool": null
+      },
+      "exact_exp_thresholds": null,
+      "initial_stat_points": null
+    },
+    {
+      "record_id": "cn20-20011201:creation:marginal-1",
+      "collection": "characters",
+      "entity_type": "REPORTED_MARGINAL_PRIMARY_STAT_CHANGE_NOT_FULL_FORMULA",
+      "version_profile": "CN_WAEI_20_PAGE_CAPTURED_20011201_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "facts": {
+        "primary": "体力",
+        "source_delta": 1,
+        "reported_effects": {
+          "耐久力（HP）": 3
+        },
+        "unmentioned_effects": null
+      },
+      "base_stats": null,
+      "rounding_or_caps": null
+    },
+    {
+      "record_id": "cn20-20011201:creation:marginal-2",
+      "collection": "characters",
+      "entity_type": "REPORTED_MARGINAL_PRIMARY_STAT_CHANGE_NOT_FULL_FORMULA",
+      "version_profile": "CN_WAEI_20_PAGE_CAPTURED_20011201_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "facts": {
+        "primary": "腕力",
+        "source_delta": 1,
+        "reported_effects": {
+          "耐久力（HP）": 1,
+          "攻击力": 1
+        },
+        "unmentioned_effects": null
+      },
+      "base_stats": null,
+      "rounding_or_caps": null
+    },
+    {
+      "record_id": "cn20-20011201:creation:marginal-3",
+      "collection": "characters",
+      "entity_type": "REPORTED_MARGINAL_PRIMARY_STAT_CHANGE_NOT_FULL_FORMULA",
+      "version_profile": "CN_WAEI_20_PAGE_CAPTURED_20011201_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "facts": {
+        "primary": "耐力",
+        "source_delta": 1,
+        "reported_effects": {
+          "耐久力（HP）": 1,
+          "防御力": 1
+        },
+        "unmentioned_effects": null
+      },
+      "base_stats": null,
+      "rounding_or_caps": null
+    },
+    {
+      "record_id": "cn20-20011201:creation:marginal-4",
+      "collection": "characters",
+      "entity_type": "REPORTED_MARGINAL_PRIMARY_STAT_CHANGE_NOT_FULL_FORMULA",
+      "version_profile": "CN_WAEI_20_PAGE_CAPTURED_20011201_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "facts": {
+        "primary": "速度",
+        "source_delta": 1,
+        "reported_effects": {
+          "耐久力（HP）": 1,
+          "敏捷力": 1
+        },
+        "unmentioned_effects": null
+      },
+      "base_stats": null,
+      "rounding_or_caps": null
+    },
+    {
+      "record_id": "cn20-20011201:creation:elements",
+      "collection": "tutorials",
+      "entity_type": "SOURCE_ELEMENT_SELECTION_AND_DOMINANCE",
+      "version_profile": "CN_WAEI_20_PAGE_CAPTURED_20011201_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "facts": {
+        "names_in_creation_order": [
+          "地",
+          "水",
+          "火",
+          "风"
+        ],
+        "maximum_types": 2,
+        "second_type": "ADJACENT_ONLY_SOURCE_TERM",
+        "opposite": "CANNOT_SELECT_OPPOSITE_SOURCE_TERM",
+        "cycle": [
+          [
+            "地",
+            "水"
+          ],
+          [
+            "水",
+            "火"
+          ],
+          [
+            "火",
+            "风"
+          ],
+          [
+            "风",
+            "地"
+          ]
+        ],
+        "initial_pool": null,
+        "exact_damage_formula": null
+      },
+      "allowed_pair_engine_predicate": null
+    },
+    {
+      "record_id": "cn20-20011201:creation:birthplace",
+      "collection": "tutorials",
+      "entity_type": "BIRTHPLACE_TO_STARTER_PET_SOURCE_RELATION",
+      "version_profile": "CN_WAEI_20_PAGE_CAPTURED_20011201_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "facts": {
+        "total": 4,
+        "north_island": 2,
+        "south_island": 2,
+        "selection_after": "决定",
+        "different_starter_pet_by_birthplace_source_claim": true,
+        "village_names": null,
+        "starter_species": null
+      },
+      "original_location_ids": null,
+      "pet_species_ids": null
+    },
+    {
+      "record_id": "cn20-20011201:creation:nicknames",
+      "collection": "characters",
+      "entity_type": "HIGH_STATUS_NICKNAMES_NOT_CHARACTER_CLASSES",
+      "version_profile": "CN_WAEI_20_PAGE_CAPTURED_20011201_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "labels": [
+        "血人",
+        "攻人",
+        "防人",
+        "敏人"
+      ],
+      "class_ids_or_thresholds": null,
+      "mandatory_build": null
+    },
+    {
+      "record_id": "cn20-20011201:creation:visual",
+      "collection": "screens",
+      "entity_type": "OUTDOOR_REFERENCE_NOT_CREATION_SCREEN",
+      "version_profile": "CN_WAEI_20_PAGE_CAPTURED_20011201_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1",
+        "I1"
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "same_build_as_body": false,
+      "creation_ui_verified": false,
+      "manual_observation": {
+        "format": "GIF",
+        "width": 640,
+        "height": 480,
+        "manual_observation": "OUTDOOR_HUMAN_AND_BLUE_CREATURE_NO_CREATION_OR_STATUS_PANEL",
+        "original_character_or_pet_identity": null
+      },
+      "character_or_pet_ids": null
+    },
+    {
+      "record_id": "cn20-20011201:creation:scope-comparison",
+      "collection": "versions",
+      "entity_type": "INITIAL_CREATION_AND_LATER_LEVELUP_REGIONAL_SOURCE_SCOPES",
+      "version_profile": "CN_WAEI_20_PAGE_CAPTURED_20011201_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1",
+        "D1",
+        "D2"
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "facts": {
+        "jss_initial_stat_points": 20,
+        "jss_initial_element_points": 10,
+        "cn_body_initial_stat_points": null,
+        "cn_body_initial_element_points": null,
+        "cn_body_levelup_points": 3,
+        "relation": "DISTINCT_REGIONAL_DOCUMENTARY_SCOPES_NO_VALUE_TRANSFER",
+        "cn_newcomer_20_endurance": "BUILD_ADVICE_NOT_COMPULSORY_CREATION_POOL_IN_THIS_BODY",
+        "shared_wire_fields_original_build_or_patch_sequence_verified": false
+      },
+      "derived_originals_reacquired": false,
+      "comparison_sources": {
+        "D1": {
+          "path": "research/recovered/JSS-LOGIN-MANUAL-CREATION-CONTRACT-R1.json",
+          "json_pointer": "/pages/manual01/creation_contract",
+          "original_replay": "https://web.archive.org/web/20010418082314id_/http://www.titan.co.jp/stoneage/manual01.html"
+        },
+        "D2": {
+          "path": "research/recovered/STONEAGE-WAEI-CN20-NEWCOMER-GUIDE-R1.json",
+          "json_pointer": "/records/4/source_described_claims",
+          "original_replay": "https://web.archive.org/web/20011204212409id_/http://www.waei.com.cn/ZHUANQU/stoneage2/sw/adventure.asp"
+        }
+      }
+    }
+  ],
+  "reopen_when": [
+    "SAME_BUILD_ORIGINAL_CREATION_SCREEN_AND_INPUT_TRACE",
+    "EXACT_PRIMARY_STATUS_RUNTIME_OR_SERVER_CONFIG",
+    "CONTEMPORANEOUS_NAMED_INITIAL_POOL_OR_STARTER_ROSTER",
+    "ORIGINAL_NAME_COUNTING_OR_ELEMENT_VALIDATION_CODE_WITH_BUILD_ID"
+  ],
+  "acquisition": {
+    "actual_navigation_label": "人物创造",
+    "actual_article_heading": "人物创建",
+    "initial_requested_capture": "20011204194619",
+    "body_resolved_capture": "20011201045054",
+    "linked_image_resolved_capture": "20011221174011",
+    "author_named_in_article": false,
+    "source_publication_date": null,
+    "body_earlier_than_navigation_capture": true,
+    "derived_original_pages_requested": false,
+    "images_or_html_committed": false,
+    "additional_attribute_page_not_requested": true
+  }
+}

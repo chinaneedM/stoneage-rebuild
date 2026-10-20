@@ -1,0 +1,71 @@
+{
+  "schema": "stoneage.cn20_creation_status.actual_source_mutations.r1",
+  "cases": [
+    {
+      "case": "name-fullwidth-eight",
+      "source_id": "S1",
+      "original_sha256": "cead36699828063607a335b7c3a0458dc7bf91089cc199889070c30091fdd6bb",
+      "mutated_sha256": "b3f0597fd8c47430c48fd84ad881d0c9cbf1c63fe96c479002d4801c37acaf17",
+      "extractor_result": "REJECT",
+      "full_replay_rejected": true
+    },
+    {
+      "case": "first-hp-typo-preserved",
+      "source_id": "S1",
+      "original_sha256": "cead36699828063607a335b7c3a0458dc7bf91089cc199889070c30091fdd6bb",
+      "mutated_sha256": "595c4f2f07f2eb38585d157605780c38cfe7a0e8d235246bee15a0191e0fa15a",
+      "extractor_result": "REJECT",
+      "full_replay_rejected": true
+    },
+    {
+      "case": "three-levelup-points",
+      "source_id": "S1",
+      "original_sha256": "cead36699828063607a335b7c3a0458dc7bf91089cc199889070c30091fdd6bb",
+      "mutated_sha256": "d5f8232c78634f1925b1ee3a6aa7a2dca42844f9ef57f07bca93c2c8e9352164",
+      "extractor_result": "REJECT",
+      "full_replay_rejected": true
+    },
+    {
+      "case": "hp-marginal-three",
+      "source_id": "S1",
+      "original_sha256": "cead36699828063607a335b7c3a0458dc7bf91089cc199889070c30091fdd6bb",
+      "mutated_sha256": "2fd273b60f9537e531a74268506d97e1140134a1763cf4c2367bc3a92f4aeb10",
+      "extractor_result": "REJECT",
+      "full_replay_rejected": true
+    },
+    {
+      "case": "adjacent-elements-only",
+      "source_id": "S1",
+      "original_sha256": "cead36699828063607a335b7c3a0458dc7bf91089cc199889070c30091fdd6bb",
+      "mutated_sha256": "fad1ba64a5996d463a5deeac83c3555e55140b312c33e8ae783940fe023abc11",
+      "extractor_result": "REJECT",
+      "full_replay_rejected": true
+    },
+    {
+      "case": "four-birthplaces",
+      "source_id": "S1",
+      "original_sha256": "cead36699828063607a335b7c3a0458dc7bf91089cc199889070c30091fdd6bb",
+      "mutated_sha256": "4f2bac2d1884608d6b33930bc9794683123bcdfe92f79625e7645b5bab9b0a65",
+      "extractor_result": "REJECT",
+      "full_replay_rejected": true
+    },
+    {
+      "case": "birthplace-starter-relation",
+      "source_id": "S1",
+      "original_sha256": "cead36699828063607a335b7c3a0458dc7bf91089cc199889070c30091fdd6bb",
+      "mutated_sha256": "e49eabcc24c7fe373ac830d72f306f3b1a39dbcb8a53266a513bfc84eb18ab7f",
+      "extractor_result": "REJECT",
+      "full_replay_rejected": true
+    },
+    {
+      "case": "unrelated-navigation",
+      "source_id": "S1",
+      "original_sha256": "cead36699828063607a335b7c3a0458dc7bf91089cc199889070c30091fdd6bb",
+      "mutated_sha256": "17258b3a2390efecc6ef4d0af09886917e8ffe271fc2fd8c690958e7da26e57b",
+      "extractor_result": "SAME_SEMANTICS_BYTE_PIN_REJECTED",
+      "full_replay_rejected": true
+    }
+  ],
+  "cases_passed": 8,
+  "original_page_or_mutant_bytes_in_git": false
+}

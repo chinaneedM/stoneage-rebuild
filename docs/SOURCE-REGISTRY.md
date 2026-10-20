@@ -7586,3 +7586,8 @@ https://web.archive.org/web/20011204201517id_/http://www.waei.com.cn/ZHUANQU/sto
 ### R29取源身份与双ZIP后续验收
 
 三个2001官方站正文均未见具名作者，泛投稿说明不算文章署名；运营商域名/页脚证明托管，未认证运营商撰文或开发者意图。经验/传闻逐项保留。106ac84自身源候选1/main11已success，artifact12242150789/12241821433实际ZIP2635B、唯一派生JSON6524B SHA256 af990b11c3626a2c2a2e97345ec6f1b81185c122cdc04a7b7c0e2941dc79c71f，两支与六实输入本地结果一致。CI-REPLAY/CUSTODY永久固定job/ZIP/raw/Git摘要、初候选与补强候选不同HEAD清单，原HTML/图未提交。
+
+
+### R30 大陆2.0人物创建/状态（2026-10-20实取）
+
+既有目录实读“人物创造”href /ZHUANQU/stoneage2/tyro/creature.asp，实际正文 https://web.archive.org/web/20011201045054id_/http://www.waei.com.cn/ZHUANQU/stoneage2/tyro/creature.asp 65690B SHA256 cead36699828063607a335b7c3a0458dc7bf91089cc199889070c30091fdd6bb，核心2544B SHA256 04ef969e20bbd91ef1b0d9dea0b179b6f034ec6ea1d560772593e736213c168c。官方站未署名指南，不认证运营商作者/首发/实服。实际原图 https://web.archive.org/web/20011221174011id_/http://waei.com.cn/ZHUANQU/stoneage2/tyro/img/3.gif GIF640×480/114412B SHA256 662076868208bf5587b89daade5d34a5322b3d8ac6405964aebfa175e821f544，已目视户外场景，非创建状态面板。两旧派生报告JSS-LOGIN-MANUAL-CREATION-CONTRACT-R1.json与STONEAGE-WAEI-CN20-NEWCOMER-GUIDE-R1.json只核Git原记录、原网页未重取。新报告STONEAGE-CN20-CREATION-STATUS-SOURCE-R1.json、8实际改写反例、中文规格与固定三输入runner；原HTML/GIF不进Git。

@@ -972,3 +972,8 @@ R27早期2.0宠物骑师/骑乘战斗来源完成10候选/11main与双ZIP保管�
 ## 2026-10-20 R29加工/料理有限材料完成，NEXT30
 
 沿官方真实导航取得三2001正文及两2002链接GIF，形成宠物加工服务链、两技能价格、五料理类别及寄放/礼仪/推荐/传闻分层的14来源记录。69相关测试、六实输入与9实际改写反例通过，独立CI/保管按实际后验；不扩全配方/魔法公式/料理helper。最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-30回全版本22域另一具名材料，Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、原portfolio和历史全文保留。
+
+
+## 2026-10-20 R30角色创建/升级有限材料完成，NEXT31
+
+大陆官方站2001年12月创建正文与一分时户外图，新增12来源条目：创建选择、全角姓名、四能力映射/局部增量、每级3点、元素方向/选择、出生地到初宠关系及旧日文/新手指南范围对照。56相关测试、三实源与8实际改写反例通过，CI/保管按后续真实验收。不补创建20/10、不补未列0值、不当完整引擎公式或同版创建UI。最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-31回全版本22域另一具名材料，停止同页helper。Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停，原portfolio与全部历史保持。
