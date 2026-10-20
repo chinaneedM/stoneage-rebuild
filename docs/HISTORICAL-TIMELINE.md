@@ -3880,3 +3880,10 @@ I1提供确定/取消召唤通知，未取声效或原协议绑定；I2任务目
 单人HP0气绝判败后回场景HP1；团体中一人气绝可继续的原文“或”不强改“且”或形式化布尔；伤害远超现有HP另述旋转打飞至纪录点，无倍数/地图/事务。没有死亡不等于没有惩罚，所有气绝不一律回纪录点，HP1不当百分比/最大HP，纪录点不证明本地存盘R79。唯一原图img/5.gif实际跳裸域20011023202109/119327B/SHA7caf79fb6e27b6189669da2396129a4cd76b5e967fb7dc91fa842b6e053b165e，640×480/1帧，已目视/全解码，是户外骑乘而非八命令战斗界面；英文标签不证语言/地区/同构建，外观不绑定原人物/宠/SPR。
 
 14本包及49相关测试、两HTML一GIF实输入重放和10真实正文语义改写拒绝通过。预检曾发现HP1子串误接HP100，已发布前纠为完整整数，失败未抹去。原HTML/GIF/放大图不进Git，独立CI/双ZIP保管按实际后验。最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-35回全官方版本22域另一具名材料；本页止点已达，不扩全魔法/战斗helper，原脚本/配置/具名菜单/轨迹才重开未知。Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79 PAUSED_NON_BLOCKING，全部原历史/22域保持。
+
+
+## 2026-10-20 R34实际双CI、图文差异与永久派生保管
+
+内容26b1ce900a732260884161704d8edd69ea397324/treed765be25545e030988bf8d835a87f9dc3d771f3f自身候选10/main11全success后非强制快进；source run39413081347/39413323716，job118595391639/118596204622各实际14测试+两HTML一GIF重放。artifact12259289716/12259992868已实下载，ZIP均2076B/SHA256 9d79accb29e4796589ea3590c07092337aa00b249ee17b6c3609c5504ac78cbd/32871b0fa14866ac138b00a20c8a2a48de1498507f94d8c3fca896f1839afd68；唯一replay.json均4360B/SHA256 f5eabc53cfc4faf6b6e04d3b5c4fd9c36c0b6f61bc375319bac3d1fa8ffaaa0d，候选/main/本地完整原派生JSON逐字节一致。双CI原JSON及CUSTODY永久固定源报告/十实际语义改写反例/派生字节、SHA、Git blob，精确HEAD/run/job/artifact/ZIP/raw链和八启动全文前缀；原HTML/GIF不进Git。
+
+独立远端干净检出49相关测试、另一HTMLParser重算正文核心、Pillow完整GIF解码/1帧与八完整历史前缀通过；追加保管用例后50相关测试另实测。户外骑乘原图不当八按钮战斗界面，托管不当作者，待机状态/转生主体/团体“或”措辞不补原状态ID或可执行判定；HP1整数不误接HP100，三类失败/返回地点分开，原脚本/概率/公式/惩罚仍未知。最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-35回全官方22域另一具名材料，停止本战斗helper。Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停保持。保管提交自身Actions后续按实际，不套父绿灯。

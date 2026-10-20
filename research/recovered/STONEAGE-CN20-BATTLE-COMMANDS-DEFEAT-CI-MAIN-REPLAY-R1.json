@@ -1,0 +1,153 @@
+{
+  "schema": "stoneage.cn20_battle_commands_defeat.replay.r1",
+  "inputs": [
+    {
+      "id": "N1",
+      "bytes": 69317,
+      "sha256": "561950fd7bba41e7d39f4a781a671e11e175c7fe08dd1b5481fdf1fd23ba351b"
+    },
+    {
+      "id": "B1",
+      "bytes": 65573,
+      "sha256": "944d26d035afc11a6f1af4fd135491a7ef516c20970085b68c84e1c4f7069d83"
+    },
+    {
+      "id": "I1",
+      "bytes": 119327,
+      "sha256": "7caf79fb6e27b6189669da2396129a4cd76b5e967fb7dc91fa842b6e053b165e"
+    }
+  ],
+  "extracted": [
+    {
+      "label": "战斗系统",
+      "href": "/ZHUANQU/stoneage2/tyro/combat.asp"
+    },
+    {
+      "core_utf8_bytes": 2554,
+      "core_sha256": "83663010b556ecc64829637e738648e49f48a37f51383505c7facab5e2539dc9",
+      "facts": {
+        "edition_label": "石器时代2.0",
+        "encounter": "FIELD_MOVEMENT_RANDOM_ENCOUNTERS_SOURCE_DESCRIPTION_NO_RATE",
+        "scene": "PLAYER_OR_PARTY_LOWER_RIGHT_SOURCE_PROSE_NOT_PIXELS",
+        "network_delay": "GUIDE_ATTRIBUTES_OCCASIONAL_DELAY_TO_SERVER_TRANSFER",
+        "loop": [
+          "BATTLE_SCREEN",
+          "WAIT_FOR_COMMANDS",
+          "PLAYER_COMMAND_INPUTS_IN_TURN_AS_WRITTEN",
+          "PARTICIPATING_PET_COMMANDS",
+          "CONFIRM_OR_WAIT_TIMEOUT",
+          "BATTLE_RESOLUTION",
+          "IF_UNFINISHED_WAIT_AGAIN"
+        ],
+        "labels": [
+          "攻击",
+          "咒术",
+          "捕获",
+          "请求帮助",
+          "防御",
+          "道具",
+          "宠物",
+          "脱离"
+        ],
+        "positions": [
+          "UPPER_LEFT",
+          "UPPER_SECOND",
+          "UPPER_THIRD",
+          "UPPER_RIGHT",
+          "LOWER_LEFT",
+          "LOWER_SECOND",
+          "LOWER_THIRD",
+          "LOWER_RIGHT"
+        ],
+        "attack": "SELECT_COMMAND_THEN_TARGET",
+        "spell": "SPIRIT_MAGIC_ATTACHED_TO_EQUIPMENT",
+        "capture": {
+          "chance": "MAY_FAIL",
+          "full_capacity_blocks_capture": true,
+          "pre_rebirth_capacity": 5,
+          "post_rebirth": "INCREASED_UNSPECIFIED_AMOUNT"
+        },
+        "help": {
+          "symbol": "HELP",
+          "other_players_can_join_reported": true,
+          "slots_eligibility_timing": null
+        },
+        "defense": "OFTEN_REDUCES_DAMAGE_NO_MULTIPLIER",
+        "item": "USE_ITEM_UNSPECIFIED",
+        "pet": {
+          "actions_as_written": [
+            "参战",
+            "退避"
+          ],
+          "command_eligible_state_as_written": "待机",
+          "state_numeric_id": null
+        },
+        "escape": {
+          "after_member_leaves_battle": "LEAVES_PARTY",
+          "after_leader_leaves_battle": "PARTY_DISBANDS",
+          "success_probability": null
+        },
+        "pet_skill": {
+          "input_surface": "SKILL_LIST_THEN_TARGET",
+          "actions": [
+            "ATTACK_USING_SKILL",
+            "DEFEND"
+          ],
+          "protection": "SOME_HIGH_LOYALTY_PETS_MAY_BLOCK_FATAL_BLOW",
+          "source_typo_as_written": "宠物义何中技能"
+        },
+        "solo_defeat": {
+          "hp_trigger": 0,
+          "state_label": "气绝",
+          "result": "BATTLE_FAILURE",
+          "on_return_to_scene_hp": 1,
+          "return_location": null
+        },
+        "team_defeat": {
+          "continuation": "TEAMMATE_NOT_LEFT_OR_NOT_FAINTED_AS_SOURCE_WORDING",
+          "until": "ONE_SIDE_WIPED_OUT",
+          "formal_boolean": null
+        },
+        "overkill": {
+          "damage": "FAR_ABOVE_CURRENT_HP_SOURCE_WORDING",
+          "visual": "SPINS_AND_FLIES_OUT",
+          "destination": "纪录点",
+          "exact_threshold": null
+        }
+      },
+      "image_ref": {
+        "full": "img/5.gif",
+        "thumbnail": "img/5s.gif",
+        "declared_thumbnail_size": [
+          240,
+          180
+        ]
+      },
+      "named_guide_author": null
+    },
+    {
+      "format": "GIF",
+      "dimensions": [
+        640,
+        480
+      ],
+      "observation": "OUTDOOR_RIDING_SCENE_NOT_BATTLE_MENU",
+      "original_sprite_binding": null
+    }
+  ],
+  "command_labels": [
+    "攻击",
+    "咒术",
+    "捕获",
+    "请求帮助",
+    "防御",
+    "道具",
+    "宠物",
+    "脱离"
+  ],
+  "solo_hp0_returns_hp1_reported": true,
+  "all_faints_return_savepoint_proven": false,
+  "original_server_executed": false,
+  "image_battle_ui_verified": false,
+  "raw_sources_in_output": false
+}
