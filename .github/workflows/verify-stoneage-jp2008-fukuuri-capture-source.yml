@@ -1,0 +1,32 @@
+name: Verify JP2008 200th pet Fukuuri capture campaign source
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-JP2008-FUKUURI-*.json'
+      - 'tools/stoneage_jp2008_fukuuri_capture_source.py'
+      - 'tests/test_stoneage_jp2008_fukuuri_capture_source.py'
+      - '.github/workflows/verify-stoneage-jp2008-fukuuri-capture-source.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-JP2008-FUKUURI-*.json'
+      - 'tools/stoneage_jp2008_fukuuri_capture_source.py'
+      - 'tests/test_stoneage_jp2008_fukuuri_capture_source.py'
+      - '.github/workflows/verify-stoneage-jp2008-fukuuri-capture-source.yml'
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check pet milestone, actual capture condition, GASH eligibility and negative boundaries
+        run: python -m unittest discover -s tests -p 'test_stoneage_jp2008_fukuuri_capture_source.py' -v
+      - name: Replay the contemporaneous Gamania press-release section
+        run: python -m tools.stoneage_jp2008_fukuuri_capture_source --fetch --output /tmp/fukuuri-derived/replay.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: jp2008-fukuuri-capture-derived-replay
+          path: /tmp/fukuuri-derived/replay.json
+          if-no-files-found: error
+          retention-days: 30
