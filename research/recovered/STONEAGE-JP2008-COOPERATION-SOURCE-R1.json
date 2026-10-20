@@ -1,0 +1,652 @@
+{
+  "schema": "stoneage.jp2008_cooperation.source.r1",
+  "inputs": [
+    {
+      "id": "M1",
+      "url": "https://www.4gamer.net/games/013/G001377/20080620060/",
+      "bytes": 280409,
+      "sha256": "70e63e25844c698ef069a0a10b39462d26992ad054ce46755de7a9bf8dcbd056",
+      "historical_2008_capture": false,
+      "extracted": {
+        "core_sha256": "3a3d781a9f3151dea50e4c0690b04fa35be11b35b754ffed818dd2122a1d772f",
+        "core_utf8_bytes": 3004,
+        "facts": {
+          "published_label": "2008/06/20 22:28",
+          "authority": "MEDIA_MARKED_RELEASE_QUOTATION_WITH_EDITORIAL_DIGIPARK_ATTRIBUTION",
+          "collection_period": {
+            "start": "2008-06-24 16:00",
+            "end": "2008-07-15 13:00",
+            "timezone": null
+          },
+          "items": [
+            "精霊の雫",
+            "精霊の恵み"
+          ],
+          "tree_flow": [
+            "ENEMY_DINOSAUR_DROPS_DEW",
+            "EXCHANGE_DEW_WITH_BLESSING_SPIRIT",
+            "GIVE_BLESSING_TO_TREE"
+          ],
+          "other_flow": [
+            "ENEMY_DINOSAUR_DROPS_DEW",
+            "DISTRIBUTE_DEW_TO_LOCAL_RECIPIENTS"
+          ],
+          "roles": [
+            {
+              "label": "恵みの精霊",
+              "role": "DEW_TO_BLESSING_EXCHANGE",
+              "place_as_written": "マンモスルーム"
+            },
+            {
+              "label": "ザハン一族の族長",
+              "role": "SEEKS_RECOVERY_OF_SACRED_WATER",
+              "place_as_written": "アーブの泉"
+            },
+            {
+              "label": "クルクの大工",
+              "role": "RECEIVES_DEW_FOR_SHOP_RENOVATION",
+              "place_as_written": "クルクのコンビニ"
+            },
+            {
+              "label": "転送員",
+              "role": "RECEIVES_DEW_AFTER_HEAT_COLLAPSE",
+              "place_as_written": "チャットルーム"
+            }
+          ],
+          "tree_location_variant": "マンモスホール",
+          "tree_location_labels_equivalence_verified": false,
+          "tree_story": "OVERUSED_NATURAL_POWER_AND_LACK_OF_DEW",
+          "local_stories": [
+            "WEAKENED_SACRED_WATER_AND_CLAN_UNABLE_TO_LEAVE_SPRING",
+            "ONE_CARPENTER_CAN_WORK_THREE_TIMES_AS_HARD_AFTER_DEW",
+            "SHOP_STAFF_WANTS_TRAVEL_BUT_TRANSPORT_WORKER_COLLAPSED"
+          ],
+          "thresholds_are_reported_delivery_totals_not_individual_fees": true
+        },
+        "image_refs": [
+          "/games/013/G001377/20080620060/TN/008.jpg",
+          "/games/013/G001377/20080620060/TN/012.jpg",
+          "/games/013/G001377/20080620060/TN/005.jpg",
+          "/games/013/G001377/20080620060/TN/006.jpg",
+          "/games/013/G001377/20080620060/TN/007.jpg",
+          "/games/013/G001377/20080620060/TN/010.jpg",
+          "/games/013/G001377/20080620060/TN/009.jpg",
+          "/games/013/G001377/20080620060/TN/011.jpg"
+        ]
+      }
+    },
+    {
+      "id": "I1",
+      "url": "https://www.4gamer.net/games/013/G001377/20080620060/TN/008.jpg",
+      "bytes": 63614,
+      "sha256": "15d7a133358a38a97602790aa443d6578b6adec444f100ea88741a68320383e4",
+      "historical_2008_capture": false,
+      "dimensions": [
+        250,
+        200
+      ]
+    },
+    {
+      "id": "I2",
+      "url": "https://www.4gamer.net/games/013/G001377/20080620060/TN/012.jpg",
+      "bytes": 73785,
+      "sha256": "85c82c924389a3759021412a5a3c3b925b20aad3076113cb0f55cce0dfb9ed4a",
+      "historical_2008_capture": false,
+      "dimensions": [
+        433,
+        167
+      ]
+    },
+    {
+      "id": "I3",
+      "url": "https://www.4gamer.net/games/013/G001377/20080620060/TN/010.jpg",
+      "bytes": 19402,
+      "sha256": "67ae2399ca1d49c52db378488d36e3bcdf63266ca63357fb1cfc8df0865d2f28",
+      "historical_2008_capture": false,
+      "dimensions": [
+        434,
+        49
+      ]
+    },
+    {
+      "id": "I4",
+      "url": "https://www.4gamer.net/games/013/G001377/20080620060/TN/009.jpg",
+      "bytes": 21944,
+      "sha256": "28f7857d58b673b93defbc7d0e80d9eb02a64ffd6245d32d216e2d2036bb8990",
+      "historical_2008_capture": false,
+      "dimensions": [
+        434,
+        49
+      ]
+    },
+    {
+      "id": "I5",
+      "url": "https://www.4gamer.net/games/013/G001377/20080620060/TN/011.jpg",
+      "bytes": 19656,
+      "sha256": "7f0f040a80ffc84765f498c6981d22cb783a7b16741dcdc1abd6a305851125d1",
+      "historical_2008_capture": false,
+      "dimensions": [
+        434,
+        49
+      ]
+    }
+  ],
+  "records": [
+    {
+      "record_id": "JP2008-COOP-01",
+      "entity_type": "EVENT_ITEM",
+      "collection": "items",
+      "version_profile": "LATER_OFFICIAL:JP_DIGIPARK_2008_COOPERATION",
+      "source_refs": [
+        "M1"
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "source_reported": {
+        "label": "精霊の雫",
+        "drop_or_exchange": "ENEMY_DROP",
+        "ratio": null,
+        "drop_rate": null
+      }
+    },
+    {
+      "record_id": "JP2008-COOP-02",
+      "entity_type": "EVENT_ITEM",
+      "collection": "items",
+      "version_profile": "LATER_OFFICIAL:JP_DIGIPARK_2008_COOPERATION",
+      "source_refs": [
+        "M1"
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "source_reported": {
+        "label": "精霊の恵み",
+        "drop_or_exchange": "EXCHANGE_FROM_DEW",
+        "ratio": null,
+        "drop_rate": null
+      }
+    },
+    {
+      "record_id": "JP2008-COOP-03",
+      "entity_type": "NPC_ROLE",
+      "collection": "npcs",
+      "version_profile": "LATER_OFFICIAL:JP_DIGIPARK_2008_COOPERATION",
+      "source_refs": [
+        "M1"
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "source_reported": {
+        "label": "恵みの精霊",
+        "role": "DEW_TO_BLESSING_EXCHANGE",
+        "place_as_written": "マンモスルーム",
+        "coordinates": null,
+        "appearance": null
+      }
+    },
+    {
+      "record_id": "JP2008-COOP-04",
+      "entity_type": "NPC_ROLE",
+      "collection": "npcs",
+      "version_profile": "LATER_OFFICIAL:JP_DIGIPARK_2008_COOPERATION",
+      "source_refs": [
+        "M1"
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "source_reported": {
+        "label": "ザハン一族の族長",
+        "role": "SEEKS_RECOVERY_OF_SACRED_WATER",
+        "place_as_written": "アーブの泉",
+        "coordinates": null,
+        "appearance": null
+      }
+    },
+    {
+      "record_id": "JP2008-COOP-05",
+      "entity_type": "NPC_ROLE",
+      "collection": "npcs",
+      "version_profile": "LATER_OFFICIAL:JP_DIGIPARK_2008_COOPERATION",
+      "source_refs": [
+        "M1"
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "source_reported": {
+        "label": "クルクの大工",
+        "role": "RECEIVES_DEW_FOR_SHOP_RENOVATION",
+        "place_as_written": "クルクのコンビニ",
+        "coordinates": null,
+        "appearance": null
+      }
+    },
+    {
+      "record_id": "JP2008-COOP-06",
+      "entity_type": "NPC_ROLE",
+      "collection": "npcs",
+      "version_profile": "LATER_OFFICIAL:JP_DIGIPARK_2008_COOPERATION",
+      "source_refs": [
+        "M1"
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "source_reported": {
+        "label": "転送員",
+        "role": "RECEIVES_DEW_AFTER_HEAT_COLLAPSE",
+        "place_as_written": "チャットルーム",
+        "coordinates": null,
+        "appearance": null
+      }
+    },
+    {
+      "record_id": "JP2008-COOP-07",
+      "entity_type": "COOPERATIVE_EVENT",
+      "collection": "quests",
+      "version_profile": "LATER_OFFICIAL:JP_DIGIPARK_2008_COOPERATION",
+      "source_refs": [
+        "M1"
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "source_reported": {
+        "label": "TREE",
+        "flow": [
+          "ENEMY_DINOSAUR_DROPS_DEW",
+          "EXCHANGE_DEW_WITH_BLESSING_SPIRIT",
+          "GIVE_BLESSING_TO_TREE"
+        ],
+        "period": {
+          "start": "2008-06-24 16:00",
+          "end": "2008-07-15 13:00",
+          "timezone": null
+        },
+        "counter_scope": null,
+        "completion_verified": false
+      }
+    },
+    {
+      "record_id": "JP2008-COOP-08",
+      "entity_type": "COOPERATIVE_EVENT",
+      "collection": "quests",
+      "version_profile": "LATER_OFFICIAL:JP_DIGIPARK_2008_COOPERATION",
+      "source_refs": [
+        "M1"
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "source_reported": {
+        "label": "LOCAL_AID",
+        "flow": [
+          "ENEMY_DINOSAUR_DROPS_DEW",
+          "DISTRIBUTE_DEW_TO_LOCAL_RECIPIENTS"
+        ],
+        "period": {
+          "start": "2008-06-24 16:00",
+          "end": "2008-07-15 13:00",
+          "timezone": null
+        },
+        "counter_scope": null,
+        "completion_verified": false
+      }
+    },
+    {
+      "record_id": "JP2008-COOP-09",
+      "entity_type": "CONDITIONAL_PUBLIC_REWARD",
+      "collection": "items",
+      "version_profile": "LATER_OFFICIAL:JP_DIGIPARK_2008_COOPERATION",
+      "source_refs": [
+        "I2"
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "source_reported": {
+        "branch": "TREE",
+        "delivery_total": 2000,
+        "delivered_item": "精霊の恵み",
+        "reward_label": "キヌイの村にセーブポイントを設置",
+        "reported_availability": "PERMANENT_FROM_2008-07-22",
+        "source_ref": "I2",
+        "actual_unlock_verified": false,
+        "individual_cost": null,
+        "exact_effect_or_stock": null
+      }
+    },
+    {
+      "record_id": "JP2008-COOP-10",
+      "entity_type": "CONDITIONAL_PUBLIC_REWARD",
+      "collection": "items",
+      "version_profile": "LATER_OFFICIAL:JP_DIGIPARK_2008_COOPERATION",
+      "source_refs": [
+        "I2"
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "source_reported": {
+        "branch": "TREE",
+        "delivery_total": 5000,
+        "delivered_item": "精霊の恵み",
+        "reward_label": "出張預かり屋NPCの設置",
+        "reported_availability": "PERMANENT_FROM_2008-07-22",
+        "source_ref": "I2",
+        "actual_unlock_verified": false,
+        "individual_cost": null,
+        "exact_effect_or_stock": null
+      }
+    },
+    {
+      "record_id": "JP2008-COOP-11",
+      "entity_type": "CONDITIONAL_PUBLIC_REWARD",
+      "collection": "items",
+      "version_profile": "LATER_OFFICIAL:JP_DIGIPARK_2008_COOPERATION",
+      "source_refs": [
+        "I2"
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "source_reported": {
+        "branch": "TREE",
+        "delivery_total": 8000,
+        "delivered_item": "精霊の恵み",
+        "reward_label": "ペット技をゲーム内で追加販売",
+        "reported_availability": "PERMANENT_FROM_2008-07-22",
+        "source_ref": "I2",
+        "actual_unlock_verified": false,
+        "individual_cost": null,
+        "exact_effect_or_stock": null
+      }
+    },
+    {
+      "record_id": "JP2008-COOP-12",
+      "entity_type": "CONDITIONAL_PUBLIC_REWARD",
+      "collection": "items",
+      "version_profile": "LATER_OFFICIAL:JP_DIGIPARK_2008_COOPERATION",
+      "source_refs": [
+        "I2"
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "source_reported": {
+        "branch": "TREE",
+        "delivery_total": 30000,
+        "delivered_item": "精霊の恵み",
+        "reward_label": "経験値獲得イベント",
+        "reported_availability": "2008-07-22_TO_2008-08-12",
+        "source_ref": "I2",
+        "actual_unlock_verified": false,
+        "individual_cost": null,
+        "exact_effect_or_stock": null
+      }
+    },
+    {
+      "record_id": "JP2008-COOP-13",
+      "entity_type": "CONDITIONAL_PUBLIC_REWARD",
+      "collection": "items",
+      "version_profile": "LATER_OFFICIAL:JP_DIGIPARK_2008_COOPERATION",
+      "source_refs": [
+        "I2"
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "source_reported": {
+        "branch": "TREE",
+        "delivery_total": 35000,
+        "delivered_item": "精霊の恵み",
+        "reward_label": "ペット再抽選NPCの設置",
+        "reported_availability": "2008-07-22_TO_2008-08-12",
+        "source_ref": "I2",
+        "actual_unlock_verified": false,
+        "individual_cost": null,
+        "exact_effect_or_stock": null
+      }
+    },
+    {
+      "record_id": "JP2008-COOP-14",
+      "entity_type": "CONDITIONAL_PUBLIC_REWARD",
+      "collection": "items",
+      "version_profile": "LATER_OFFICIAL:JP_DIGIPARK_2008_COOPERATION",
+      "source_refs": [
+        "I3"
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "source_reported": {
+        "branch": "WATER",
+        "delivery_total": 3000,
+        "delivered_item": "精霊の雫",
+        "reward_label": "アーブの水の復活",
+        "reported_availability": "2008-07-22_TO_2008-08-12",
+        "source_ref": "I3",
+        "actual_unlock_verified": false,
+        "individual_cost": null,
+        "exact_effect_or_stock": null
+      }
+    },
+    {
+      "record_id": "JP2008-COOP-15",
+      "entity_type": "CONDITIONAL_PUBLIC_REWARD",
+      "collection": "items",
+      "version_profile": "LATER_OFFICIAL:JP_DIGIPARK_2008_COOPERATION",
+      "source_refs": [
+        "I4"
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "source_reported": {
+        "branch": "SHOP",
+        "delivery_total": 3000,
+        "delivered_item": "精霊の雫",
+        "reward_label": "クルクの村のコンビニ開店",
+        "reported_availability": "PERMANENT_FROM_2008-07-22",
+        "source_ref": "I4",
+        "actual_unlock_verified": false,
+        "individual_cost": null,
+        "exact_effect_or_stock": null
+      }
+    },
+    {
+      "record_id": "JP2008-COOP-16",
+      "entity_type": "CONDITIONAL_PUBLIC_REWARD",
+      "collection": "items",
+      "version_profile": "LATER_OFFICIAL:JP_DIGIPARK_2008_COOPERATION",
+      "source_refs": [
+        "I5"
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "source_reported": {
+        "branch": "TRANSPORT",
+        "delivery_total": 10000,
+        "delivered_item": "精霊の雫",
+        "reward_label": "転送NPCの設置",
+        "reported_availability": "2008-07-22_TO_2008-08-12",
+        "source_ref": "I5",
+        "actual_unlock_verified": false,
+        "individual_cost": null,
+        "exact_effect_or_stock": null
+      }
+    },
+    {
+      "record_id": "JP2008-COOP-17",
+      "entity_type": "TREE_VISUAL_REFERENCE",
+      "collection": "screens",
+      "version_profile": "LATER_OFFICIAL:JP_DIGIPARK_2008_COOPERATION",
+      "source_refs": [
+        "M1",
+        "I1"
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "source_reported": {
+        "observation": "GREEN_TREE_CANOPY_WITH_FOREST_FLOOR",
+        "named_by_adjacent_caption": "神秘の大樹",
+        "runtime_or_sprite_id": null,
+        "historical_pixels": false
+      }
+    }
+  ],
+  "manual_reward_transcription": [
+    {
+      "branch": "TREE",
+      "delivery_total": 2000,
+      "delivered_item": "精霊の恵み",
+      "reward_label": "キヌイの村にセーブポイントを設置",
+      "reported_availability": "PERMANENT_FROM_2008-07-22",
+      "source_ref": "I2",
+      "actual_unlock_verified": false,
+      "individual_cost": null,
+      "exact_effect_or_stock": null
+    },
+    {
+      "branch": "TREE",
+      "delivery_total": 5000,
+      "delivered_item": "精霊の恵み",
+      "reward_label": "出張預かり屋NPCの設置",
+      "reported_availability": "PERMANENT_FROM_2008-07-22",
+      "source_ref": "I2",
+      "actual_unlock_verified": false,
+      "individual_cost": null,
+      "exact_effect_or_stock": null
+    },
+    {
+      "branch": "TREE",
+      "delivery_total": 8000,
+      "delivered_item": "精霊の恵み",
+      "reward_label": "ペット技をゲーム内で追加販売",
+      "reported_availability": "PERMANENT_FROM_2008-07-22",
+      "source_ref": "I2",
+      "actual_unlock_verified": false,
+      "individual_cost": null,
+      "exact_effect_or_stock": null
+    },
+    {
+      "branch": "TREE",
+      "delivery_total": 30000,
+      "delivered_item": "精霊の恵み",
+      "reward_label": "経験値獲得イベント",
+      "reported_availability": "2008-07-22_TO_2008-08-12",
+      "source_ref": "I2",
+      "actual_unlock_verified": false,
+      "individual_cost": null,
+      "exact_effect_or_stock": null
+    },
+    {
+      "branch": "TREE",
+      "delivery_total": 35000,
+      "delivered_item": "精霊の恵み",
+      "reward_label": "ペット再抽選NPCの設置",
+      "reported_availability": "2008-07-22_TO_2008-08-12",
+      "source_ref": "I2",
+      "actual_unlock_verified": false,
+      "individual_cost": null,
+      "exact_effect_or_stock": null
+    },
+    {
+      "branch": "WATER",
+      "delivery_total": 3000,
+      "delivered_item": "精霊の雫",
+      "reward_label": "アーブの水の復活",
+      "reported_availability": "2008-07-22_TO_2008-08-12",
+      "source_ref": "I3",
+      "actual_unlock_verified": false,
+      "individual_cost": null,
+      "exact_effect_or_stock": null
+    },
+    {
+      "branch": "SHOP",
+      "delivery_total": 3000,
+      "delivered_item": "精霊の雫",
+      "reward_label": "クルクの村のコンビニ開店",
+      "reported_availability": "PERMANENT_FROM_2008-07-22",
+      "source_ref": "I4",
+      "actual_unlock_verified": false,
+      "individual_cost": null,
+      "exact_effect_or_stock": null
+    },
+    {
+      "branch": "TRANSPORT",
+      "delivery_total": 10000,
+      "delivered_item": "精霊の雫",
+      "reward_label": "転送NPCの設置",
+      "reported_availability": "2008-07-22_TO_2008-08-12",
+      "source_ref": "I5",
+      "actual_unlock_verified": false,
+      "individual_cost": null,
+      "exact_effect_or_stock": null
+    }
+  ],
+  "boundaries": {
+    "exact_client_build": null,
+    "original_game_ids": null,
+    "original_server_execution_verified": false,
+    "historical_2008_html_or_image_bytes_obtained": false,
+    "official_page_obtained": false,
+    "global_archive_absence_proven": false,
+    "drop_species_or_probability": null,
+    "exchange_ratio": null,
+    "per_player_requirement": null,
+    "population_or_server_counter_scope": null,
+    "reward_actual_unlock_verified": false,
+    "reward_thresholds_are_costs": false,
+    "reward_end_is_event_end": false,
+    "reported_permanent_is_verified_current_service": false,
+    "npc_map_coordinates": null,
+    "carpenter_three_times_is_player_stat_multiplier": false,
+    "save_point_is_client_local_save_proof": false,
+    "pet_reroll_distribution": null,
+    "same_named_earlier_world_entity_verified": false,
+    "tiger_quest_recovered": false,
+    "raw_sources_committed": false,
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b_and_wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING"
+  },
+  "official_acquisition": {
+    "request_url": "https://archive.org/wayback/available?url=http%3A%2F%2Fstoneage.to%2Fevent%2F2008%2F080624_event_Cooperation.html&timestamp=20080701",
+    "http_status": 429,
+    "attempts": 1,
+    "page_obtained": false,
+    "meaning": "THIS_AVAILABILITY_REQUEST_RATE_LIMITED_NOT_GLOBAL_ABSENCE"
+  },
+  "unacquired_scene_refs": [
+    "005.jpg",
+    "006.jpg",
+    "007.jpg"
+  ],
+  "scope": "ONLY_COOPERATION_SECTION_NOT_ADJACENT_TIGER_QUEST",
+  "manual_image_observation": "LOCAL_VIEW_IMAGE_FIVE_JPEGS_REWARD_TABLE_012_ENLARGED_FOR_LABEL_CHECK",
+  "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-33"
+}

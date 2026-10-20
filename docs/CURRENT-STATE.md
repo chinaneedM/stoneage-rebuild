@@ -16268,3 +16268,14 @@ R30候选自审补充：图像可见MENU/Mail/Action/Eng仅为像素标签，不
 内容eb96bee8d2303903f55d2fad8a56c065444e8ae5/treeb21bfc56caa3b4b5b9b655c7158d6ae448092346自身候选10/main11全部success；source run39376279976/39376375767，job118475033681/118475334898各实际11测试+两HTML三GIF重放。artifact12243218796/12243676707均已实下载，ZIP候选2315B/main2313B SHA256 b0ef06e62be4a7eed77e726d7b27c0ef23a7cdc79e7cf62c4777faba040fa2d7/af9c706a2ba162a7eae4c1eb84d0da2db9d6d21b1f85ee728fde9aae91c3736b，两份replay.json各5473B、候选SHA256 5107a779f600a3ff51465774f4a76f9b68dd3bd43fdf8406f9cd047746e65cd3/main 580623283eb276712e638835c39ddd7510a75810a8edcdf472cf9e48ac2a503c。候选逐字节等于本地；main仅M1现行HTML从269299B变269654B/SHA a78ea3c34022416cacec065a12d67815a2acbc4f76182163b2e2805ec49789ab，发布文核心/所有派生语义及O1/三图字节一致。没有main原HTML独立定位变化位置，不称必为导航。两份原始派生JSON分别永久保留，非逐字节相同。CI-REPLAY/CI-MAIN-REPLAY/CUSTODY永久固定源报告/八正文改写与一外层meta正例/派生JSON的字节、SHA、Git blob与精确HEAD/run/job/artifact/ZIP/raw链；原HTML/GIF不进Git。
 
 独立干净远端检出63相关测试、八全文前缀、两正文另一提取器及三GIF解码通过；保管用例加入后64相关测试另验。普通概率不补100%、遮盖名不补全、失败未知字段不清空、促销与系统时段分开；2009官方快照不当2008首日、官方单图404不泛化，Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停保持。最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-32返回全官方22域另一新具名材料，停止本进化helper。保管HEAD自身Actions按实际观察，不借父绿灯。
+
+
+## 2026-10-20 R32日服协力活动、交纳总量与奖励开放期
+
+本轮新读远端main553a7b6501218bb510ceea0e0f060e6afe3fc3fa/tree d42f2db50d5c10b491aa021472a01185c3b27589，406分支/0PR，自身9main/8候选success；八连续性/路线/22域全文固定字节/SHA/blob，旧queued37642417333保留。最高NEXT32回全官方22域，选择日服2008初夏协力内容。一篇4Gamer2008/06/20 22:28媒体明确引文发布资料的协力段，当前280409B/SHA256 70e63e25844c698ef069a0a10b39462d26992ad054ce46755de7a9bf8dcbd056，核心SHA256 3a3d781a9f3151dea50e4c0690b04fa35be11b35b754ffed818dd2122a1d772f；一次真实官方出链availability返回429，不宣称档案全面缺失。
+
+17研究合同/中文规格补出敌恐龙掉精霊の雫—恵みの精霊交换精霊の恵み—给予神秘の大樹，以及族长/泉水、大工/便利店、転送員/聊天房三地方援助。四具名角色为来源叙事关系，不认证实际交物NPC/坐标/外观；マンモスルーム与マンモスホール两标签不强合。五JPEG含一树场景及四奖励表全取/目视；五树门槛2000/5000/8000/30000/35000与三地方3000/3000/10000分别记交纳物，不当个人费用或求和；跨服/单服计数范围未知。收集6/24 16:00–7/15 13:00与奖励7/22起常设或7/22–8/12分开；存档点/寄存NPC/技能追加销售/经验活动/宠物重抽及圣水/商店/转送奖励均未证实际开放。
+
+12本包及相关63测试、六实输入重放与8实际正文改写拒绝通过；人工表格转录不称机器OCR，放大复核キヌイ和再抽選。当前HTML/JPEG非2008捕获；008树图不证地图/SPR，另三场景未取。原HTML/图不进Git，无原服执行/原ID/交换比例/概率/商店表/奖励效果，三倍大工叙事不补玩家倍率，存档点不重开R79。独立CI/ZIP保管按后续实际验收。
+
+最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-33回全官方版本22域另一具名材料；止点为本活动来源规格，不扩活动结果、虎追七章或全图递归。同版原脚本/运营结果/计数表/具名菜单或运行才重开未知。Stage A7 PARTIAL+2 OPEN，B/wiki GATED，R79 PAUSED_NON_BLOCKING，原22域及全部旧历史前缀保持。

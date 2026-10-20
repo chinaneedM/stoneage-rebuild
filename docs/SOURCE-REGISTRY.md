@@ -7596,3 +7596,14 @@ https://web.archive.org/web/20011204201517id_/http://www.waei.com.cn/ZHUANQU/sto
 ### R31 日服宠物进化发布文/官方专题（2026-10-20）
 
 https://www.4gamer.net/games/013/G001377/20081111023/ 当前269299B SHA256695386fb8ab426a8c6afeccc35d61638a5f5b78635b82c94dd56f49e02b0a76c，明确发布文分界和配信元DigiPark，核心3025B SHA256917dd517af3509ba1e8b4180263dd82bfe54812082f1c98002f44201cfefbd14。真实官方出链的一次availability得 https://web.archive.org/web/20090217151837id_/http://stoneage.to:80/update/20081111_update_ev1.html ，6538B SHA256184017ffb882c21bb4160616d7c75ba63cb016501b171ae6eff83f8c4bf06f8d，核心1506B SHA256f75153dcb4c09aeb7c6033bb3465ebb51f5ef3443f5a2440c72e026192f790ed。媒体20081130固定查询为空，官方image/20081111_ev_02.gif固定捕获请求404，仅记该范围。实际现媒体TN/001.gif、002.gif、003.gif已取/目视，SHA256分别5c331077ecf7f76e9e8bd8dd536b6db59a28d4bf6193c48570bb0e08cb262900、d2703d8e751becd2e51f6ce74ac92d73f562ddbd9ed1019fc1b3272336657a9e、31d7417696c6b56febd8fa117a0106990d77dc1329a624af9d046e088065976e，图为示意不证原SPR/突变。STONEAGE-JP2008-PET-EVOLUTION-SOURCE-R1.json/NEGATIVE-AUDIT与中文规格/五输入runner永久保管派生，原HTML/GIF不进Git；源日期/捕获/当前可读/原服分开。
+
+
+## 2026-10-20 R32日服协力活动、交纳总量与奖励开放期
+
+本轮新读远端main553a7b6501218bb510ceea0e0f060e6afe3fc3fa/tree d42f2db50d5c10b491aa021472a01185c3b27589，406分支/0PR，自身9main/8候选success；八连续性/路线/22域全文固定字节/SHA/blob，旧queued37642417333保留。最高NEXT32回全官方22域，选择日服2008初夏协力内容。一篇4Gamer2008/06/20 22:28媒体明确引文发布资料的协力段，当前280409B/SHA256 70e63e25844c698ef069a0a10b39462d26992ad054ce46755de7a9bf8dcbd056，核心SHA256 3a3d781a9f3151dea50e4c0690b04fa35be11b35b754ffed818dd2122a1d772f；一次真实官方出链availability返回429，不宣称档案全面缺失。
+
+17研究合同/中文规格补出敌恐龙掉精霊の雫—恵みの精霊交换精霊の恵み—给予神秘の大樹，以及族长/泉水、大工/便利店、転送員/聊天房三地方援助。四具名角色为来源叙事关系，不认证实际交物NPC/坐标/外观；マンモスルーム与マンモスホール两标签不强合。五JPEG含一树场景及四奖励表全取/目视；五树门槛2000/5000/8000/30000/35000与三地方3000/3000/10000分别记交纳物，不当个人费用或求和；跨服/单服计数范围未知。收集6/24 16:00–7/15 13:00与奖励7/22起常设或7/22–8/12分开；存档点/寄存NPC/技能追加销售/经验活动/宠物重抽及圣水/商店/转送奖励均未证实际开放。
+
+12本包及相关63测试、六实输入重放与8实际正文改写拒绝通过；人工表格转录不称机器OCR，放大复核キヌイ和再抽選。当前HTML/JPEG非2008捕获；008树图不证地图/SPR，另三场景未取。原HTML/图不进Git，无原服执行/原ID/交换比例/概率/商店表/奖励效果，三倍大工叙事不补玩家倍率，存档点不重开R79。独立CI/ZIP保管按后续实际验收。
+
+最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-33回全官方版本22域另一具名材料；止点为本活动来源规格，不扩活动结果、虎追七章或全图递归。同版原脚本/运营结果/计数表/具名菜单或运行才重开未知。Stage A7 PARTIAL+2 OPEN，B/wiki GATED，R79 PAUSED_NON_BLOCKING，原22域及全部旧历史前缀保持。

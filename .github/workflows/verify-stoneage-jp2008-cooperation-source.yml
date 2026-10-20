@@ -1,0 +1,35 @@
+name: Verify JP2008 cooperative events and public reward tables
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-JP2008-COOPERATION-*.json'
+      - 'tools/stoneage_jp2008_cooperation_source.py'
+      - 'tools/stoneage_jp2008_shadow_release.py'
+      - 'tests/test_stoneage_jp2008_cooperation_source.py'
+      - '.github/workflows/verify-stoneage-jp2008-cooperation-source.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-JP2008-COOPERATION-*.json'
+      - 'tools/stoneage_jp2008_cooperation_source.py'
+      - 'tools/stoneage_jp2008_shadow_release.py'
+      - 'tests/test_stoneage_jp2008_cooperation_source.py'
+      - '.github/workflows/verify-stoneage-jp2008-cooperation-source.yml'
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check collective rewards, dates, roles and evidence boundaries
+        run: python -m unittest discover -s tests -p 'test_stoneage_jp2008_cooperation_source.py' -v
+      - name: Replay current release and five byte-pinned inspected JPEG references
+        run: python -m tools.stoneage_jp2008_cooperation_source --fetch --output /tmp/jp2008-cooperation/replay.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: jp2008-cooperation-derived-replay
+          path: /tmp/jp2008-cooperation/replay.json
+          if-no-files-found: error
+          retention-days: 30
+
