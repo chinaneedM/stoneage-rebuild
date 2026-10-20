@@ -16331,3 +16331,12 @@ I1提供确定/取消召唤通知，未取声效或原协议绑定；I2任务目
 内容26b1ce900a732260884161704d8edd69ea397324/treed765be25545e030988bf8d835a87f9dc3d771f3f自身候选10/main11全success后非强制快进；source run39413081347/39413323716，job118595391639/118596204622各实际14测试+两HTML一GIF重放。artifact12259289716/12259992868已实下载，ZIP均2076B/SHA256 9d79accb29e4796589ea3590c07092337aa00b249ee17b6c3609c5504ac78cbd/32871b0fa14866ac138b00a20c8a2a48de1498507f94d8c3fca896f1839afd68；唯一replay.json均4360B/SHA256 f5eabc53cfc4faf6b6e04d3b5c4fd9c36c0b6f61bc375319bac3d1fa8ffaaa0d，候选/main/本地完整原派生JSON逐字节一致。双CI原JSON及CUSTODY永久固定源报告/十实际语义改写反例/派生字节、SHA、Git blob，精确HEAD/run/job/artifact/ZIP/raw链和八启动全文前缀；原HTML/GIF不进Git。
 
 独立远端干净检出49相关测试、另一HTMLParser重算正文核心、Pillow完整GIF解码/1帧与八完整历史前缀通过；追加保管用例后50相关测试另实测。户外骑乘原图不当八按钮战斗界面，托管不当作者，待机状态/转生主体/团体“或”措辞不补原状态ID或可执行判定；HP1整数不误接HP100，三类失败/返回地点分开，原脚本/概率/公式/惩罚仍未知。最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-35回全官方22域另一具名材料，停止本战斗helper。Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停保持。保管提交自身Actions后续按实际，不套父绿灯。
+
+
+## 2026-10-20 R34保管提交自身独立主线验收完成
+
+保管提交1bf2740767e85c786521324eb36a3df1885db61f/tree22b94c3280321805d82ce90de146b4f3bb720f97自身候选10/main11全SUCCESS；main源run39413668204/job118597346760实际15测试+两历史HTML一历史GIF精确重放。独立干净远端检出50相关测试、四份源/十反例/双CI派生原生Git blob和SHA、八完整历史前缀通过。八指令和三类失败为文献规格，户外原图不认证战斗UI，原服/原ID/公式仍未证；本条没有新增游戏历史主张。
+
+实际main运行：39413667824 Validate StoneAge preproduction content archive and wiki boundary SUCCESS；39413667794 Validate legacy StoneAge assistant history and pet content gaps SUCCESS；39413668028 Validate StoneAge Stage A joint review decision SUCCESS；39413667892 Validate StoneAge 8.0 PET contemporary evidence boundaries SUCCESS；39413668067 Validate Stage A evidence-limited review acceptance SUCCESS；39413667669 Validate StoneAge late client region/version provenance and non-executing archive probe SUCCESS；39413667878 Validate Stage A early source gap triage SUCCESS；39413668071 Verify 2001 bitmap category claims vs original TW1.0 image indexes SUCCESS；39413667884 Validate direct TW1.0 sprite-to-ADRN source joins SUCCESS；39413668204 Verify CN2.0 battle commands and distinct defeat source claims SUCCESS；39413667675 Independently verify TW1.0 R58 rooted helper returns and source custody SUCCESS。
+
+新读0开放PR，旧queued37642417333/73c45041b9ef2519ba4575471e9d374dff169fd4保持。最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-35回全官方22域另一具名材料。Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79 PAUSED_NON_BLOCKING。此文档验收封口提交自身适用Actions另按实际，不套父绿灯。
