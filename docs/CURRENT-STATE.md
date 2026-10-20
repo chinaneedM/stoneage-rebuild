@@ -16452,3 +16452,14 @@ NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-40，回22域选另一官方
 ## 2026-10-20 R39主线独立验收完成与 NEXT40
 
 源/永久保管提交已由候选分支非强制快进至 main7e3868cc3e3d99e71679fbd8278b3fc13340f4f0/tree35007413f938212bda2ab43bb3e20d469dcb6264；独立新主线11项Actions全SUCCESS，其中来源run39428957074/job118648636847实际重新读取同期DigiPark2009发布文、7测试及派生保管断言。主线artifact12267960038真实下载ZIP711B/SHA256 51af4d2681d0e5cf7dbeff239d6c4e5ffb090e2fb50ad7da7f71799202a17ca0，raw replay.json901B/SHA256 da38f2210456aa904f062f159ed67f5c42d99f3917422175fb37d3629f1cdeb7、Git blob406149a3984ada9d6e5b664f662547b93772c229，和第三次候选raw原字节一致；与前两次候选的完整HTML SHA不同但规范运营正文核心一致。全证据保管/源码原生Git记录进一步固定在 research/recovered/STONEAGE-JP2009-GUILD-HAKUEN-CUSTODY-R1.json，并新增一份主线原raw Git副本。未获原2009游戏部署/物种ID/日本公会权限，也不提升TW1.0/JSS1999。Stage A仍7 PARTIAL+2 OPEN，Stage B/wiki GATED，R79暂停。最高 NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-40，轮换全官方22域另一实证来源，不再重复本Guild/白炎篇。此次验收追加提交自身需另取Actions，未以父提交的绿灯冒充。
+
+ 
+## 2026-10-20 R40日本2006火山地牢与风雨生态地图史料、双CI实证
+
+本轮重新核 main cce8b662996516921b30a6ee61a596e6e582eb7f/tree 2c51e66adb7ecbc71825580a73af3956e1b7f739，4865项完整树/0开放PR/9项最近main Actions全SUCCESS。读取协议要求README、PROTOCOL、CURRENT-STATE完整 blob168255146eaacd64f4a6b867f852b514256f52cd、DESIGN-DECISIONS、HISTORICAL-TIMELINE、SOURCE-REGISTRY、RESTORATION-ROADMAP-R2及22域现状索引。R39已主线验收，不重复日本2009公会/白炎业务。最高NEXT R40轮换至世界地理/生态与有条件进入地牢的历史版本关系。
+
+R40三篇同期GaiaX日服运营说明，4Gamer 2006-03-14 / 05-01 / 12-07刊载。3月源M1称「紅炎の地」火山岛位「ミライア群島」西北、面向中高阶、火恐龙多及关连任务，4月18/5月2分阶段计划；5月源M2由发行信息记首阶段4月18已结束，中央「炎渦の頂」大型地牢多路线、部分需满足特定条件，5月2上层与火山口Boss仍是公开计划。12月源M3「香颯の地」为米莱亚群岛高地强风/风化大峡谷岛，另一「雨祝の森」为「ジャルガ島」河流源头，常年大雨与迷宫状森林，12月12日新增当时为预告。六地理节点/五源支持关联/四分阶段契约新入 research/recovered/STONEAGE-JP2006-WORLD-GEOGRAPHY-SOURCE-R1.json 与中文来源规格。并未取得原同版mapID/贴图或实际原服坐标、地图NPC、进入条件、Boss种类/奖品，严格不回填JSS1999/TW1.0。天气地形是文献叙事不等于引擎天气实现，已完成发行宣称不等于本项目运行见证。三个网页当前字节不是2006原始快照，版权图片及网页不进Git。
+
+首版工具 fa68fcd91654c3fac8aeb79eeea6ecdd2f2963da Action39431468117 FAILURE因误将第二篇原文必须含岛标题，已独立修复；3e91d85a6282fea60ebf42c7b4d532915cd02171 Action39431577632/job118657682812 SUCCESS，三篇HTTP实跑9/10/9原文锚。ZIP artifact12267519441 669B/SHA256 19bf3c610109ed9794545a60d1c6573c8d584282006e7abd6af0f5d7edfc7f19。固定三个规范出版文段SHA后 a5be018bfa161b00517af506b960496d71565f0d Action39432057700/job118659323340 SUCCESS，artifact12268496860 ZIP669B/SHA256 f54365543d782a920d1552a5bc278b79cb07fbb4ecc6d4bd5bb75b4915014674。两ZIP实际下载，raw replay.json 同1296B/SHA256 07ebbe68636aa8324a7438782444f0587e0bbe7e520548640d4db99d08cc4b70、Git blob954faf149cd97882909809bfce42dcd47d46f9e7，永久保留。加双CI来源保管原生Git核查后57106b68e0f6b8035919804e750549a90df22979 Action39432404764 SUCCESS。最初失败和后续修正均保留，候选Actions不能冒充主线；main自身后续独立验收。完整链见 research/recovered/STONEAGE-JP2006-WORLD-GEOGRAPHY-CUSTODY-R1.json。
+
+最高NEXT **OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-41**，回22域另一材料，不继续拓展炎渦の頂无源路线、Boss或日本2006全景地图。Stage A九族7 PARTIAL+2 OPEN、Stage B/百科GATED、R79 PAUSED_NON_BLOCKING，整体复原无可证实分母不报百分比；原历史完整保存。
