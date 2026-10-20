@@ -1,0 +1,194 @@
+{
+  "schema": "stoneage.cn20_creation_status.replay.r1",
+  "inputs": [
+    {
+      "source_id": "N1",
+      "bytes": 69317,
+      "sha256": "561950fd7bba41e7d39f4a781a671e11e175c7fe08dd1b5481fdf1fd23ba351b",
+      "capture_timestamp": "20011204194619"
+    },
+    {
+      "source_id": "S1",
+      "bytes": 65690,
+      "sha256": "cead36699828063607a335b7c3a0458dc7bf91089cc199889070c30091fdd6bb",
+      "capture_timestamp": "20011201045054"
+    },
+    {
+      "source_id": "I1",
+      "bytes": 114412,
+      "sha256": "662076868208bf5587b89daade5d34a5322b3d8ac6405964aebfa175e821f544",
+      "capture_timestamp": "20011221174011"
+    }
+  ],
+  "extracted": [
+    {
+      "label": "人物创造",
+      "href": "/ZHUANQU/stoneage2/tyro/creature.asp"
+    },
+    {
+      "core_utf8_bytes": 2544,
+      "core_sha256": "04ef969e20bbd91ef1b0d9dea0b179b6f034ec6ea1d560772593e736213c168c",
+      "facts": {
+        "name": {
+          "maximum_fullwidth_characters_as_written": 8,
+          "engine_counting_units": null
+        },
+        "face": "ANGLE_CONTROLS_SELECT_EXPRESSIONS_NOT_CHARACTER_CENSUS",
+        "primary_status_mapping": [
+          [
+            "体力",
+            "耐久力"
+          ],
+          [
+            "腕力",
+            "攻击力"
+          ],
+          [
+            "耐力",
+            "防御力"
+          ],
+          [
+            "速度",
+            "敏捷力"
+          ]
+        ],
+        "first_hp_wording_as_written": "体力（影响任务的HP）",
+        "primary_effects": [
+          {
+            "primary": "体力",
+            "source_delta": 1,
+            "reported_effects": {
+              "耐久力（HP）": 3
+            },
+            "unmentioned_effects": null
+          },
+          {
+            "primary": "腕力",
+            "source_delta": 1,
+            "reported_effects": {
+              "耐久力（HP）": 1,
+              "攻击力": 1
+            },
+            "unmentioned_effects": null
+          },
+          {
+            "primary": "耐力",
+            "source_delta": 1,
+            "reported_effects": {
+              "耐久力（HP）": 1,
+              "防御力": 1
+            },
+            "unmentioned_effects": null
+          },
+          {
+            "primary": "速度",
+            "source_delta": 1,
+            "reported_effects": {
+              "耐久力（HP）": 1,
+              "敏捷力": 1
+            },
+            "unmentioned_effects": null
+          }
+        ],
+        "levelup": {
+          "distributable_points": 3,
+          "same_claim_occurrences": 2,
+          "automatic_increase_source_term": "体力值",
+          "automatic_increase_amount": null,
+          "initial_pool": null
+        },
+        "element": {
+          "names_in_creation_order": [
+            "地",
+            "水",
+            "火",
+            "风"
+          ],
+          "maximum_types": 2,
+          "second_type": "ADJACENT_ONLY_SOURCE_TERM",
+          "opposite": "CANNOT_SELECT_OPPOSITE_SOURCE_TERM",
+          "cycle": [
+            [
+              "地",
+              "水"
+            ],
+            [
+              "水",
+              "火"
+            ],
+            [
+              "火",
+              "风"
+            ],
+            [
+              "风",
+              "地"
+            ]
+          ],
+          "initial_pool": null,
+          "exact_damage_formula": null
+        },
+        "birth": {
+          "total": 4,
+          "north_island": 2,
+          "south_island": 2,
+          "selection_after": "决定",
+          "different_starter_pet_by_birthplace_source_claim": true,
+          "village_names": null,
+          "starter_species": null
+        },
+        "labels": [
+          "血人",
+          "攻人",
+          "防人",
+          "敏人"
+        ],
+        "labels_are": "RELATIVE_HIGH_STATUS_NICKNAMES_NOT_CLASSES_OR_THRESHOLDS",
+        "creation_flow": [
+          "NAME",
+          "FACE_EXPRESSION",
+          "ALLOCATE_PRIMARY_POINTS",
+          "ALLOCATE_ELEMENT_POINTS",
+          "DECIDE",
+          "CHOOSE_BIRTHPLACE",
+          "CONFIRM_START"
+        ]
+      },
+      "image_ref": {
+        "full": "img/3.gif",
+        "thumbnail": "img/3s.gif",
+        "declared_inline_size": [
+          240,
+          180
+        ]
+      }
+    },
+    {
+      "format": "GIF",
+      "width": 640,
+      "height": 480,
+      "manual_observation": "OUTDOOR_HUMAN_AND_BLUE_CREATURE_NO_CREATION_OR_STATUS_PANEL",
+      "visible_labels": [
+        "MENU",
+        "Mail",
+        "Action",
+        "Eng"
+      ],
+      "original_character_or_pet_identity": null
+    }
+  ],
+  "derived_source_comparison": {
+    "jss_initial_stat_points": 20,
+    "jss_initial_element_points": 10,
+    "cn_body_initial_stat_points": null,
+    "cn_body_initial_element_points": null,
+    "cn_body_levelup_points": 3,
+    "relation": "DISTINCT_REGIONAL_DOCUMENTARY_SCOPES_NO_VALUE_TRANSFER",
+    "cn_newcomer_20_endurance": "BUILD_ADVICE_NOT_COMPULSORY_CREATION_POOL_IN_THIS_BODY",
+    "shared_wire_fields_original_build_or_patch_sequence_verified": false
+  },
+  "raw_sources_in_output": false,
+  "operator_authorship_verified": false,
+  "original_client_or_server_executed": false,
+  "image_creation_ui_or_same_build_verified": false
+}

@@ -74,5 +74,21 @@ class CreationSource(unittest.TestCase):
         self.rejects(lambda r:r['boundaries'].__setitem__('image_english_labels_authenticate_region_or_language',True))
         self.rejects(lambda r:r['derived_inputs'][1].__setitem__('git_blob','0'*40))
 
+    def test_actual_candidate_main_replay_and_immutable_source_custody(self):
+        from hashlib import sha256,sha1
+        c=json.loads((REPORT.parent/'STONEAGE-CN20-CREATION-STATUS-CUSTODY-R1.json').read_text())
+        self.assertEqual([len(c['runs'][k]) for k in ('initial_candidate','candidate','main')],[10,8,11])
+        for kind,rows in c['runs'].items():
+            head=c['initial_content_head'] if kind=='initial_candidate' else c['content_head']
+            self.assertTrue(all(r['head_sha']==head and r['conclusion']=='success' for r in rows))
+        for pin in c['pins']:
+            b=(REPORT.parents[2]/pin['path']).read_bytes();self.assertEqual(len(b),pin['bytes']);self.assertEqual(sha256(b).hexdigest(),pin['sha256']);self.assertEqual(sha1(b'blob '+str(len(b)).encode()+bytes([0])+b).hexdigest(),pin['git_blob'])
+        raw=(REPORT.parent/'STONEAGE-CN20-CREATION-STATUS-CI-REPLAY-R1.json').read_bytes()
+        self.assertTrue(all(x['member_sha256']==sha256(raw).hexdigest() for x in c['artifacts']))
+        self.assertEqual(json.loads(raw)['extracted'],[x['extracted'] for x in self.report['inputs']])
+        a=json.loads((REPORT.parent/'STONEAGE-CN20-CREATION-STATUS-NEGATIVE-AUDIT-R1.json').read_text());self.assertEqual(len(a['cases']),8);self.assertTrue(all(x['full_replay_rejected'] and x['mutated_sha256']!=x['original_sha256'] for x in a['cases']))
+        self.assertTrue(all(x['original_sha256']==self.report['inputs'][1]['http']['sha256'] for x in a['cases']))
+        self.assertIsNone(c['named_guide_author']);self.assertIsNone(c['initial_stat_or_element_pool_in_this_body']);self.assertFalse(c['raw_sources_committed']);self.assertFalse(c['original_client_server_executed'])
+
 if __name__=='__main__':unittest.main()
 

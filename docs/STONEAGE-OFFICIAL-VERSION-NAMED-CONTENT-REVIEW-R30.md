@@ -10,3 +10,5 @@
 
 
 候选自审补充图像身份：截图可见MENU/Mail/Action/Eng，只记观察、不推地区/整套语言或中文同构建。两旧派生输入增加Git blob重算验证，并加入一个英文标签/错误Git pin反例测试；本包12源测试、57相关测试。初候选与补强提交各按其实际HEAD验收，不混检查。
+
+实际验收补记：初候选10、补强自身候选8/main11success，来源job各12测试及三原输入/两旧派生pin核对。两ZIP已实下载、唯一派生JSON逐字节相等并等于本地实源；永久CI-REPLAY/CUSTODY保留精确HEAD及job/artifact/ZIP/raw/Git。独立干净57测试/八全文前缀/另一核心提取/四增量/两旧Git blob/一GIF解码通过，保管用例加入后相关58项另验。原图/HTML不进Git；NEXT31与全部Stage门保持。
