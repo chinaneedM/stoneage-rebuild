@@ -16340,3 +16340,14 @@ I1提供确定/取消召唤通知，未取声效或原协议绑定；I2任务目
 实际main运行：39413667824 Validate StoneAge preproduction content archive and wiki boundary SUCCESS；39413667794 Validate legacy StoneAge assistant history and pet content gaps SUCCESS；39413668028 Validate StoneAge Stage A joint review decision SUCCESS；39413667892 Validate StoneAge 8.0 PET contemporary evidence boundaries SUCCESS；39413668067 Validate Stage A evidence-limited review acceptance SUCCESS；39413667669 Validate StoneAge late client region/version provenance and non-executing archive probe SUCCESS；39413667878 Validate Stage A early source gap triage SUCCESS；39413668071 Verify 2001 bitmap category claims vs original TW1.0 image indexes SUCCESS；39413667884 Validate direct TW1.0 sprite-to-ADRN source joins SUCCESS；39413668204 Verify CN2.0 battle commands and distinct defeat source claims SUCCESS；39413667675 Independently verify TW1.0 R58 rooted helper returns and source custody SUCCESS。
 
 新读0开放PR，旧queued37642417333/73c45041b9ef2519ba4575471e9d374dff169fd4保持。最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-35回全官方22域另一具名材料。Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79 PAUSED_NON_BLOCKING。此文档验收封口提交自身适用Actions另按实际，不套父绿灯。
+
+
+## 2026-10-20 R35台湾7.5庄园约战计划、九成资格冲突与分配边界
+
+本轮新读远端main9f97ea8dd6bb7285a18ad13c5497d571f24c36be/tree6f444bf285f20f9f437b62e4fc8c3c674c177f6d，415分支/0PR，自身8main/7候选全SUCCESS；八连续性/路线/22域全文固定字节/SHA/blob，旧queued37642417333保留。最高NEXT35回22域，选择家族庄园竞争/经济/排行UI，不扩上轮战斗helper；重新选定官方实际web键89，不自动追R33续篇。重取P0目录实际20050612011406/28883B/SHA19661e2acca046bf8c6dc86dc968107fe9935cd58a8f3cd8ce5e1de5aeba7f8b，同表行标题7.5版報導之二：莊園約戰新規/2004-6-17；P1请求目录时刻实际跳20041206162649/18288B/SHA8109af26dabefab11b4bda949c6580e68ae9d48db158a354ddf380b31e93de41。严格Big5，官方“酷哥打算”计划不认证实际部署；目录日期/网页键/捕获不当补丁上线日或游戏ID。
+
+13合同/中文规格补出气势由人数经运算加前次庄园战后累计声望、百人各5点例式100*100/10+1+5*100=1501，算术单独核对不推广一般人数/取整或五点每天。原“高于守方九成”却允许900挑战1000，严格措辞与相等例保留为UNRESOLVED，不改>=或901。更高气势可顶替既有流浪挑战者；宣战18–22、成功后24h开战、22点确认建议，时区/端点/替换重计未写。两族累计声望战后0不清人物终生值；守庄气势×10000、在线成员按贡献每点5000、余入家族银行，不补贡献定义/重置前后取值/离线或挑战方奖/银行事务。休4天、第5宣战、第6战斗不是每周或精确96h；无人挑战视同守庄奖，不补其重置。取消合成料理声望及排行不当删除两功能。
+
+唯一实际内嵌sa0616.JPG请求正文时刻跳20041207062827/107675B/SHA17189e9f25e8b8e0a8c324df28a0588d4eb53cb3b8d282f188412a6a815244a1，450×338，目视/放大核十大家族氣勢选择框、合成/料理旧排行与自己家族气势排名入口。入口不是榜单数据/宣战或到账，旧入口与取消计划并存不证明已保留或已取消，非原生分辨率/同构建/原NPC/SPR。有限引用已验大陆4.0门户派生D1，完整SHA/Git blob固定前10扩前20/九庄园，地区/来源/版本分开，不给台湾附加前20资格或统一补丁序。
+
+14本包边界测试、12真实正文语义改写拒绝与两HTML一JPEG及一已验派生输入重放通过；首次相关命令误写旧测试模块名，仅本地导入错误，纠正实际文件名后重新验证，不当远端失败或源失败。原HTML/JPEG/放大图不进Git，独立CI/双ZIP保管按后续实际。最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-36回全官方22域另一具名材料，本篇/唯一直图/有限对照止点已达，不扩六转/PvP助手/全庄园。原脚本/官方勘误/规则账本或运行才重开未知，特别九成门槛与分配取值时点。Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79 PAUSED_NON_BLOCKING，原22域与全历史保持。

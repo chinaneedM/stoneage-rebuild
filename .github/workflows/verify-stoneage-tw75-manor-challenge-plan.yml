@@ -1,0 +1,42 @@
+name: Verify TW7.5 manor challenge plan and unresolved threshold conflict
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-TW75-MANOR-CHALLENGE-PLAN-*.json'
+      - 'research/recovered/STONEAGE-CN40-RIDING-CERTIFICATE-MANOR-SOURCE-R1.json'
+      - 'tools/stoneage_tw75_manor_challenge_plan.py'
+      - 'tests/test_stoneage_tw75_manor_challenge_plan.py'
+      - 'tools/stoneage_early_content_probe.py'
+      - 'tools/stoneage_wayi_newbie_riding_plan.py'
+      - 'tools/stoneage_jp2008_cooperation_source.py'
+      - 'tools/stoneage_jp2008_shadow_release.py'
+      - '.github/workflows/verify-stoneage-tw75-manor-challenge-plan.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-TW75-MANOR-CHALLENGE-PLAN-*.json'
+      - 'research/recovered/STONEAGE-CN40-RIDING-CERTIFICATE-MANOR-SOURCE-R1.json'
+      - 'tools/stoneage_tw75_manor_challenge_plan.py'
+      - 'tests/test_stoneage_tw75_manor_challenge_plan.py'
+      - 'tools/stoneage_early_content_probe.py'
+      - 'tools/stoneage_wayi_newbie_riding_plan.py'
+      - 'tools/stoneage_jp2008_cooperation_source.py'
+      - 'tools/stoneage_jp2008_shadow_release.py'
+      - '.github/workflows/verify-stoneage-tw75-manor-challenge-plan.yml'
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check threshold conflict, worked example, schedule and scoped payouts
+        run: python -m unittest discover -s tests -p 'test_stoneage_tw75_manor_challenge_plan.py' -v
+      - name: Replay two historical HTML, exact JPEG and accepted CN4 metadata input
+        run: python -m tools.stoneage_tw75_manor_challenge_plan --fetch --output /tmp/tw75-manor/replay.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: tw75-manor-challenge-plan-derived-replay
+          path: /tmp/tw75-manor/replay.json
+          if-no-files-found: error
+          retention-days: 30

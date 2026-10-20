@@ -1,0 +1,543 @@
+{
+  "schema": "stoneage.tw75_manor_challenge_plan.source.r1",
+  "authority": "OFFICIAL_TW_OPERATOR_PLAN_WITH_SEPARATE_ACCEPTED_CN40_PORTAL_COMPARISON",
+  "inputs": [
+    {
+      "id": "P0",
+      "url": "https://web.archive.org/web/20050612011406id_/http://www.wayi.com.tw/stoneage/producer/producer01.asp",
+      "capture_timestamp": "20050612011406",
+      "bytes": 28883,
+      "sha256": "19661e2acca046bf8c6dc86dc968107fe9935cd58a8f3cd8ce5e1de5aeba7f8b"
+    },
+    {
+      "id": "P1",
+      "url": "https://web.archive.org/web/20041206162649id_/http://www.wayi.com.tw/stoneage/producer/producer02.asp?idno=89",
+      "capture_timestamp": "20041206162649",
+      "bytes": 18288,
+      "sha256": "8109af26dabefab11b4bda949c6580e68ae9d48db158a354ddf380b31e93de41"
+    },
+    {
+      "id": "I1",
+      "url": "https://web.archive.org/web/20041207062827id_/http://www.wayi.com.tw/images02/sa0616.JPG",
+      "capture_timestamp": "20041207062827",
+      "bytes": 107675,
+      "sha256": "17189e9f25e8b8e0a8c324df28a0588d4eb53cb3b8d282f188412a6a815244a1"
+    }
+  ],
+  "derived_input": {
+    "path": "research/recovered/STONEAGE-CN40-RIDING-CERTIFICATE-MANOR-SOURCE-R1.json",
+    "bytes": 29266,
+    "sha256": "3c0f771e0547ed753b38359ccf61023f54c82b4ba4ba2dc1684a1ac8b6f7aae8",
+    "git_blob": "bee8fae59158f38f1167fe3b10e4ddfd7206b166"
+  },
+  "extracted": [
+    {
+      "selected": {
+        "article_id_as_web_key": 89,
+        "title": "7.5版報導之二：莊園約戰新規",
+        "index_date_as_written": "2004-6-17"
+      },
+      "web_key_is_game_id": false
+    },
+    {
+      "paragraphs": [
+        {
+          "characters": 102,
+          "sha256": "8f70fa87fc959bdd660f29200c955eff4695c8fa11a17d4c6b28feb5527c5f0b"
+        },
+        {
+          "characters": 81,
+          "sha256": "9eeb1131553dc1e8c2a414cfee105051c920eeb2b4f3a90231d3b42bc405ed4e"
+        },
+        {
+          "characters": 140,
+          "sha256": "77cadb34af123ab9cabccf59c5a5bc854b3542b17f3f77f0fca39da270116828"
+        },
+        {
+          "characters": 64,
+          "sha256": "10630ae42b4e5cfe0be51ebdd3e44c8d09a399bde460ea45c58043866d363971"
+        },
+        {
+          "characters": 93,
+          "sha256": "d351e67fbb39421bc7f1dff892c8c6b92dbc37d90e76a89b4c903fc50234224e"
+        },
+        {
+          "characters": 93,
+          "sha256": "af277f1b35afe9e00e680546c2c3486f303b119e723b823b1179e6bdcab0244d"
+        },
+        {
+          "characters": 107,
+          "sha256": "7abd3062e90ce70ca6b69c084c87ddaca758799d49d418eaf44444cee37c0494"
+        },
+        {
+          "characters": 15,
+          "sha256": "ec323cced68d98d7c6850d3c0953fb1985981cf2864b69b7cd471bbb285af05b"
+        }
+      ],
+      "facts": {
+        "status": "OPERATOR_STATED_7.5_PLAN",
+        "speaker_as_written": "酷哥",
+        "context": {
+          "family_function_since_label": "2.0",
+          "manors_mentioned": 9,
+          "prior_challenge_basis": "聲望值",
+          "issues": [
+            "CONCENTRATED_ACCESS",
+            "UNPOPULAR_VILLAGE_LOW_INCOME"
+          ]
+        },
+        "purposes": [
+          "MORE_INTERFAMILY_INTERACTION",
+          "MANOR_INCOME_REGARDLESS_OF_VILLAGE_POPULARITY"
+        ],
+        "momentum": {
+          "label": "家族氣勢",
+          "components": [
+            "TRANSFORMED_FAMILY_HEADCOUNT",
+            "累計聲望值"
+          ],
+          "accumulated_fame": "SINCE_PREVIOUS_MANOR_BATTLE",
+          "general_formula": null
+        },
+        "example": {
+          "headcount": 100,
+          "each_member_fame": 5,
+          "expression": "100*100/10+1+5*100=1501",
+          "reported_result": 1501,
+          "arithmetic_result": 1501,
+          "arithmetic_check_only": true,
+          "general_formula_proven": false
+        },
+        "threshold": {
+          "wording": "HIGHER_THAN_NINE_TENTHS_OF_MANOR_FAMILY",
+          "challenger_example": 900,
+          "owner_example": 1000,
+          "example_eligible": true,
+          "example_ratio": [
+            9,
+            10
+          ],
+          "example_relation_to_worded_threshold": "EQUAL_NOT_STRICTLY_HIGHER",
+          "conflict": "UNRESOLVED_STRICT_WORDING_VS_EQUALITY_EXAMPLE",
+          "chosen_comparator": null
+        },
+        "displacement": {
+          "existing_challenger_can_be_replaced": true,
+          "replacer_condition": "HIGHER_FAMILY_MOMENTUM",
+          "tie_policy": null
+        },
+        "timing": {
+          "declaration_hours_as_written": "晚上6~10點",
+          "normalized_hours": [
+            18,
+            22
+          ],
+          "start_after_successful_declaration_hours": 24,
+          "leader_check_advice_as_written": "晚上10點",
+          "timezone": null
+        },
+        "reset": {
+          "subject": "BOTH_FAMILIES_ACCUMULATED_FAME",
+          "when": "AFTER_MANOR_BATTLE",
+          "value": 0
+        },
+        "payout": {
+          "condition": "MANOR_FAMILY_SUCCESSFULLY_DEFENDS",
+          "momentum_to_stone_multiplier": 10000,
+          "immediate_recipients": "ONLINE_FAMILY_MEMBERS_BY_MOMENTUM_CONTRIBUTION",
+          "stone_per_point": 5000,
+          "remainder": "FAMILY_BANK",
+          "contribution_definition": null,
+          "pre_or_post_reset_momentum": null
+        },
+        "cycle": {
+          "ceasefire_days": 4,
+          "declaration_day_ordinal": 5,
+          "battle_day_ordinal": 6,
+          "calendar_boundaries": null
+        },
+        "unchallenged": {
+          "source_period_term": "挑戰期",
+          "treated_as": "SUCCESSFUL_DEFENSE_WITH_STONE_DISTRIBUTION",
+          "reset_rule": null
+        },
+        "crafting_cooking": {
+          "planned_removed": [
+            "SYNTHESIS_FAME",
+            "COOKING_FAME",
+            "RELATED_RANKINGS"
+          ],
+          "crafting_and_cooking_removed": false
+        }
+      },
+      "actual_image_ref": "http://www.wayi.com.tw/images02/sa0616.JPG"
+    }
+  ],
+  "records": [
+    {
+      "record_id": "TW75-MANOR-01",
+      "entity_type": "CONTEXT_AND_PLAN",
+      "collection": "tutorials",
+      "version_profile": "TW_WAYI_7.5_PLAN_INDEX_2004_CAPTURED_2004",
+      "source_refs": [
+        "P0",
+        "P1"
+      ],
+      "verification_status": "SOURCE_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "source_reported": {
+        "context": {
+          "family_function_since_label": "2.0",
+          "manors_mentioned": 9,
+          "prior_challenge_basis": "聲望值",
+          "issues": [
+            "CONCENTRATED_ACCESS",
+            "UNPOPULAR_VILLAGE_LOW_INCOME"
+          ]
+        },
+        "purposes": [
+          "MORE_INTERFAMILY_INTERACTION",
+          "MANOR_INCOME_REGARDLESS_OF_VILLAGE_POPULARITY"
+        ],
+        "status": "OPERATOR_STATED_7.5_PLAN"
+      }
+    },
+    {
+      "record_id": "TW75-MANOR-02",
+      "entity_type": "MOMENTUM",
+      "collection": "tutorials",
+      "version_profile": "TW_WAYI_7.5_PLAN_INDEX_2004_CAPTURED_2004",
+      "source_refs": [
+        "P1"
+      ],
+      "verification_status": "SOURCE_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "source_reported": {
+        "label": "家族氣勢",
+        "components": [
+          "TRANSFORMED_FAMILY_HEADCOUNT",
+          "累計聲望值"
+        ],
+        "accumulated_fame": "SINCE_PREVIOUS_MANOR_BATTLE",
+        "general_formula": null
+      }
+    },
+    {
+      "record_id": "TW75-MANOR-03",
+      "entity_type": "EXAMPLE",
+      "collection": "tutorials",
+      "version_profile": "TW_WAYI_7.5_PLAN_INDEX_2004_CAPTURED_2004",
+      "source_refs": [
+        "P1"
+      ],
+      "verification_status": "SOURCE_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "source_reported": {
+        "headcount": 100,
+        "each_member_fame": 5,
+        "expression": "100*100/10+1+5*100=1501",
+        "reported_result": 1501,
+        "arithmetic_result": 1501,
+        "arithmetic_check_only": true,
+        "general_formula_proven": false
+      }
+    },
+    {
+      "record_id": "TW75-MANOR-04",
+      "entity_type": "THRESHOLD",
+      "collection": "tutorials",
+      "version_profile": "TW_WAYI_7.5_PLAN_INDEX_2004_CAPTURED_2004",
+      "source_refs": [
+        "P1"
+      ],
+      "verification_status": "SOURCE_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "source_reported": {
+        "wording": "HIGHER_THAN_NINE_TENTHS_OF_MANOR_FAMILY",
+        "challenger_example": 900,
+        "owner_example": 1000,
+        "example_eligible": true,
+        "example_ratio": [
+          9,
+          10
+        ],
+        "example_relation_to_worded_threshold": "EQUAL_NOT_STRICTLY_HIGHER",
+        "conflict": "UNRESOLVED_STRICT_WORDING_VS_EQUALITY_EXAMPLE",
+        "chosen_comparator": null
+      }
+    },
+    {
+      "record_id": "TW75-MANOR-05",
+      "entity_type": "DISPLACEMENT",
+      "collection": "tutorials",
+      "version_profile": "TW_WAYI_7.5_PLAN_INDEX_2004_CAPTURED_2004",
+      "source_refs": [
+        "P1"
+      ],
+      "verification_status": "SOURCE_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "source_reported": {
+        "existing_challenger_can_be_replaced": true,
+        "replacer_condition": "HIGHER_FAMILY_MOMENTUM",
+        "tie_policy": null
+      }
+    },
+    {
+      "record_id": "TW75-MANOR-06",
+      "entity_type": "TIMING",
+      "collection": "tutorials",
+      "version_profile": "TW_WAYI_7.5_PLAN_INDEX_2004_CAPTURED_2004",
+      "source_refs": [
+        "P1"
+      ],
+      "verification_status": "SOURCE_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "source_reported": {
+        "declaration_hours_as_written": "晚上6~10點",
+        "normalized_hours": [
+          18,
+          22
+        ],
+        "start_after_successful_declaration_hours": 24,
+        "leader_check_advice_as_written": "晚上10點",
+        "timezone": null
+      }
+    },
+    {
+      "record_id": "TW75-MANOR-07",
+      "entity_type": "RESET",
+      "collection": "tutorials",
+      "version_profile": "TW_WAYI_7.5_PLAN_INDEX_2004_CAPTURED_2004",
+      "source_refs": [
+        "P1"
+      ],
+      "verification_status": "SOURCE_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "source_reported": {
+        "subject": "BOTH_FAMILIES_ACCUMULATED_FAME",
+        "when": "AFTER_MANOR_BATTLE",
+        "value": 0
+      }
+    },
+    {
+      "record_id": "TW75-MANOR-08",
+      "entity_type": "PAYOUT",
+      "collection": "tutorials",
+      "version_profile": "TW_WAYI_7.5_PLAN_INDEX_2004_CAPTURED_2004",
+      "source_refs": [
+        "P1"
+      ],
+      "verification_status": "SOURCE_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "source_reported": {
+        "condition": "MANOR_FAMILY_SUCCESSFULLY_DEFENDS",
+        "momentum_to_stone_multiplier": 10000,
+        "immediate_recipients": "ONLINE_FAMILY_MEMBERS_BY_MOMENTUM_CONTRIBUTION",
+        "stone_per_point": 5000,
+        "remainder": "FAMILY_BANK",
+        "contribution_definition": null,
+        "pre_or_post_reset_momentum": null
+      }
+    },
+    {
+      "record_id": "TW75-MANOR-09",
+      "entity_type": "CYCLE",
+      "collection": "tutorials",
+      "version_profile": "TW_WAYI_7.5_PLAN_INDEX_2004_CAPTURED_2004",
+      "source_refs": [
+        "P1"
+      ],
+      "verification_status": "SOURCE_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "source_reported": {
+        "ceasefire_days": 4,
+        "declaration_day_ordinal": 5,
+        "battle_day_ordinal": 6,
+        "calendar_boundaries": null
+      }
+    },
+    {
+      "record_id": "TW75-MANOR-10",
+      "entity_type": "UNCHALLENGED",
+      "collection": "tutorials",
+      "version_profile": "TW_WAYI_7.5_PLAN_INDEX_2004_CAPTURED_2004",
+      "source_refs": [
+        "P1"
+      ],
+      "verification_status": "SOURCE_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "source_reported": {
+        "source_period_term": "挑戰期",
+        "treated_as": "SUCCESSFUL_DEFENSE_WITH_STONE_DISTRIBUTION",
+        "reset_rule": null
+      }
+    },
+    {
+      "record_id": "TW75-MANOR-11",
+      "entity_type": "CRAFTING_COOKING",
+      "collection": "tutorials",
+      "version_profile": "TW_WAYI_7.5_PLAN_INDEX_2004_CAPTURED_2004",
+      "source_refs": [
+        "P1"
+      ],
+      "verification_status": "SOURCE_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "source_reported": {
+        "planned_removed": [
+          "SYNTHESIS_FAME",
+          "COOKING_FAME",
+          "RELATED_RANKINGS"
+        ],
+        "crafting_and_cooking_removed": false
+      }
+    },
+    {
+      "record_id": "TW75-MANOR-12",
+      "entity_type": "MENU_VISUAL_AND_PROPOSAL_TENSION",
+      "collection": "screens",
+      "version_profile": "TW_WAYI_7.5_PLAN_INDEX_2004_CAPTURED_2004",
+      "source_refs": [
+        "P1",
+        "I1"
+      ],
+      "verification_status": "SOURCE_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "source_reported": {
+        "selected_label": "十大家族氣勢",
+        "other_visible_labels": [
+          "十大合成家族",
+          "十大料理家族",
+          "自己家族氣勢排名"
+        ],
+        "scope": "ONE_MENU_SCREEN_NOT_RANKING_RESULTS_OR_MANOR_BATTLE",
+        "old_entries_and_prospective_removal": "COEXIST_IN_SOURCE_NOT_PROOF_OF_DEPLOYED_CANCELLATION_OR_RETENTION",
+        "original_npc_map_or_sprite_id": null
+      }
+    },
+    {
+      "record_id": "TW75-MANOR-13",
+      "entity_type": "CROSS_REGION_RULE_BOUNDARY",
+      "collection": "versions",
+      "version_profile": "CN40_PORTAL_VS_TW75_OPERATOR_PLAN_SEPARATE_SCOPES",
+      "source_refs": [
+        "P1",
+        "D1"
+      ],
+      "verification_status": "SOURCE_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "source_reported": {
+        "cn40_challenge_rank_change": [
+          10,
+          20
+        ],
+        "cn40_manor_table_rows": 9,
+        "tw75_proposed_basis": "FAMILY_MOMENTUM_WITH_UNRESOLVED_THRESHOLD",
+        "cn40_top20_applies_to_tw75": false,
+        "relation": "SEPARATE_REGION_VERSION_DOCUMENTS_NOT_UNIFIED_PATCH_SEQUENCE"
+      }
+    }
+  ],
+  "boundaries": {
+    "original_server_execution_verified": false,
+    "exact_client_build": null,
+    "index_date_is_body_capture_or_deployment": false,
+    "proposal_is_verified_patch": false,
+    "general_headcount_formula": null,
+    "arbitrary_headcount_rounding": null,
+    "member_fame_is_five_per_day": false,
+    "threshold_chosen_engine_comparator": null,
+    "threshold_conflict_silently_repaired": false,
+    "tie_break_or_replacement_lock_time": null,
+    "replaced_challenger_resets_24h_timer": null,
+    "timezone": null,
+    "declaration_endpoints_inclusive": null,
+    "cycle_is_weekly": false,
+    "ceasefire_is_exact_96hours": false,
+    "reset_is_all_character_lifetime_fame": false,
+    "reward_uses_pre_or_post_reset_momentum": null,
+    "contribution_point_definition": null,
+    "offline_payment_policy": null,
+    "challenger_reward": null,
+    "no_challenge_reset_rule": null,
+    "family_bank_transaction_or_persistence_verified": false,
+    "crafting_cooking_functions_removed": false,
+    "image_old_ranking_entries_prove_deployed_retention": false,
+    "image_menu_proves_challenge_or_reward_executed": false,
+    "image_native_client_resolution_proven": false,
+    "manual_image_observation_is_independent_ocr": false,
+    "cn40_top20_rule_transferred_to_tw75": false,
+    "regions_are_one_build_or_one_patch_sequence": false,
+    "original_manor_npc_map_item_or_wire_ids": null,
+    "tw10_or_jss1999_backfill": false,
+    "raw_sources_committed": false,
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b_and_wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING"
+  },
+  "manual_image_observation": {
+    "selected_label": "十大家族氣勢",
+    "other_visible_labels": [
+      "十大合成家族",
+      "十大料理家族",
+      "自己家族氣勢排名"
+    ],
+    "scope": "ONE_MENU_SCREEN_NOT_RANKING_RESULTS_OR_MANOR_BATTLE",
+    "old_entries_and_prospective_removal": "COEXIST_IN_SOURCE_NOT_PROOF_OF_DEPLOYED_CANCELLATION_OR_RETENTION",
+    "original_npc_map_or_sprite_id": null
+  },
+  "derived_relation": {
+    "cn40_challenge_rank_change": [
+      10,
+      20
+    ],
+    "cn40_manor_table_rows": 9,
+    "tw75_proposed_basis": "FAMILY_MOMENTUM_WITH_UNRESOLVED_THRESHOLD",
+    "cn40_top20_applies_to_tw75": false,
+    "relation": "SEPARATE_REGION_VERSION_DOCUMENTS_NOT_UNIFIED_PATCH_SEQUENCE"
+  },
+  "acquisition": {
+    "index_known_source_reacquired_not_new_discovery": true,
+    "body_redirect": {
+      "requested_url": "https://web.archive.org/web/20050612011406id_/http://www.wayi.com.tw/stoneage/producer/producer02.asp?idno=89",
+      "final_url": "https://web.archive.org/web/20041206162649id_/http://www.wayi.com.tw/stoneage/producer/producer02.asp?idno=89",
+      "status": 200,
+      "bytes": 18288,
+      "sha256": "8109af26dabefab11b4bda949c6580e68ae9d48db158a354ddf380b31e93de41"
+    },
+    "image_redirect": {
+      "requested_url": "https://web.archive.org/web/20041206162649id_/http://www.wayi.com.tw/images02/sa0616.JPG",
+      "final_url": "https://web.archive.org/web/20041207062827id_/http://www.wayi.com.tw/images02/sa0616.JPG",
+      "status": 200,
+      "bytes": 107675,
+      "sha256": "17189e9f25e8b8e0a8c324df28a0588d4eb53cb3b8d282f188412a6a815244a1"
+    },
+    "manual_observation": "EXACT_JPEG_VIEWED_AND_ENLARGED_FOR_FOUR_MENU_LABELS_NO_CLICK_OR_RESULT_TABLE"
+  },
+  "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-36"
+}
