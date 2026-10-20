@@ -38,4 +38,24 @@ class FukuuriSource(unittest.TestCase):
     with self.assertRaises(ValueError):extract(original.replace(token.encode(),b'REPLACED'))
   with self.assertRaises(ValueError):extract(b'<html>not a press release</html>')
   with self.assertRaises(ValueError):replay(self.r,b'<html>missing</html>')
+
+ def test_candidate_ci_zip_raw_archive_and_native_git_source_pins(self):
+  import hashlib
+  from pathlib import Path
+  cust=json.loads((REPORT.parent/'STONEAGE-JP2008-FUKUURI-CAPTURE-CUSTODY-R1.json').read_text())
+  candidate=cust['verified_candidate_ci']
+  data=(REPORT.parent/'STONEAGE-JP2008-FUKUURI-CAPTURE-CI-CANDIDATE-REPLAY-R1.json').read_bytes()
+  self.assertEqual(candidate['conclusion'],'success')
+  self.assertEqual(candidate['raw_bytes'],len(data))
+  self.assertEqual(candidate['raw_sha256'],hashlib.sha256(data).hexdigest())
+  self.assertEqual(candidate['raw_derived_git_blob'],hashlib.sha1(b'blob '+str(len(data)).encode()+b'\0'+data).hexdigest())
+  self.assertEqual(cust['failed_initial_ci']['conclusion'],'failure')
+  self.assertNotEqual(cust['failed_initial_ci']['run_id'],candidate['run_id'])
+  self.assertTrue(cust['boundaries']['source_current_http_not_historical_2008_snapshot'])
+  self.assertFalse(cust['boundaries']['raw_html_archived'])
+  self.assertTrue(candidate['zip_sha256'] and candidate['artifact_id'])
+  for pin in cust['source_pins']:
+   p=REPORT.parents[2]/pin['path']; b=p.read_bytes()
+   self.assertEqual(hashlib.sha1(b'blob '+str(len(b)).encode()+b'\0'+b).hexdigest(),pin['git_blob'])
+
 if __name__=='__main__':unittest.main()

@@ -17,3 +17,7 @@
 机读合同在 research/recovered/STONEAGE-JP2008-FUKUURI-CAPTURE-SOURCE-R1.json；验证工具对同一固定URL读取实际发布文、拒绝缺失/改写捕获与交易限制/抽奖条件的内容，输出仅派生字段及当前HTML字节摘要，不保留整页网页。反例验证拒绝将交易视为合格、将GASH当Stone、将“200”当物种master总表、把已公告期间当原服成功执行。需同时与当期原运营快照、宠物主表和实际脚本交叉后才能填补原ID/捕获机制/发放确认。
 
 **止点：** 一篇有运营平台归因的2008同期发布文、一个宠物标签、一个活动资格模型；不扩大到所有200宠图鉴或另做GASH经济系统。下一轮回22域官方版本材料轮换 NEXT39。Stage A 7 PARTIAL + 2 OPEN，Stage B/公开百科未进入制作，R79继续非阻塞暂停。
+
+## 2026-10-20 独立重放与保管
+
+候选成功 Action 39424516338、job118633554765（首版39424251604失败保留）；download artifact12265083643 ZIP607B/SHA256 d71687e2652a2545d163ba5c2673d12f3feba4e34b76f6595489794fae955841，raw replay.json687B/SHA256 ee9a7ec87f4c728ffda3081042adbac51745f0c000bbeadd4a72db1149c8ee23、Git blob780ec3ea27df6738e61489246eb9bf1fdb38c0a9。当前媒体HTML实际270185B/SHA256 25e28e9354a1a87b719399eb35ebaf7802dff83aec33da1cb4bfb271f0f9d06e；媒体托管的运营商发布文主体规范化 SHA256 ee8041f5c433b738c2346e84a28731fffb4639c03c3fe08c8b6352b02d7fa8e1。这不是2008认证快照；原HTML/宠物图未入Git。

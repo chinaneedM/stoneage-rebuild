@@ -1,0 +1,56 @@
+{
+  "schema": "stoneage.jp2008_fukuuri_capture.derived_custody.r1",
+  "baseline_main": {
+    "head": "50574f312136ef2c5cb83929cef5bbc72d48f478",
+    "tree": "04b8ac1799d4ebbb5da336909787caf73ed55cba"
+  },
+  "failed_initial_ci": {
+    "head": "eb7ee8b33ad44d7e184f0055819a840c1ff8e968",
+    "run_id": 39424251604,
+    "conclusion": "failure",
+    "reason": "Python whitespace/newline escapes malformed in first candidate tool; retained, then corrected"
+  },
+  "verified_candidate_ci": {
+    "head": "710ab1f6cd4e6c95b3fe9fcca8431b2df6febd55",
+    "tree": "e9ed0e6871966bfbd0b4ac54eaae801775a5876f",
+    "run_id": 39424516338,
+    "job_id": 118633554765,
+    "conclusion": "success",
+    "unit_tests_and_source_http_replay_success": true,
+    "artifact_id": 12265083643,
+    "artifact_name": "jp2008-fukuuri-capture-derived-replay",
+    "zip_bytes": 607,
+    "zip_sha256": "d71687e2652a2545d163ba5c2673d12f3feba4e34b76f6595489794fae955841",
+    "raw_member_name": "replay.json",
+    "raw_bytes": 687,
+    "raw_sha256": "ee9a7ec87f4c728ffda3081042adbac51745f0c000bbeadd4a72db1149c8ee23",
+    "raw_derived_git_blob": "780ec3ea27df6738e61489246eb9bf1fdb38c0a9"
+  },
+  "source_pins": [
+    {
+      "path": "research/recovered/STONEAGE-JP2008-FUKUURI-CAPTURE-SOURCE-R1.json",
+      "git_blob": "722a1289749173195cc859fa62b69a08aa871937"
+    },
+    {
+      "path": "tools/stoneage_jp2008_fukuuri_capture_source.py",
+      "git_blob": "68e60287fab5e46681f43d5fb48d56280a6577e3"
+    },
+    {
+      "path": "docs/specs/STONEAGE-JP2008-FUKUURI-CAPTURE-CAMPAIGN-SOURCE-R1.md",
+      "git_blob": "2d76f46facc08a58fc905dc6439dee687d801321"
+    },
+    {
+      "path": "research/recovered/STONEAGE-JP2008-FUKUURI-CAPTURE-CI-CANDIDATE-REPLAY-R1.json",
+      "git_blob": "780ec3ea27df6738e61489246eb9bf1fdb38c0a9"
+    }
+  ],
+  "boundaries": {
+    "raw_html_archived": false,
+    "original_copyrighted_assets_committed": false,
+    "source_current_http_not_historical_2008_snapshot": true,
+    "operator_publication_not_game_server_execution": true,
+    "unknown_species_master_or_original_1999_roster_still_open": true,
+    "main_replay_not_yet_verified": true
+  },
+  "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-39"
+}
