@@ -20,3 +20,6 @@
 台湾复刻版候选页的一次本地请求403，仅保留可取性缺口；没有据搜索摘要认证其规则。此包止于一篇实际运营公告与一份既验对照，不扩收费、反外挂实现、全家族或客户端追索。只有同版客户端/配置、明确官方勘误或运行轨迹才重开对应未知。
 
 NEXT44返回22域另一具名资料。Stage A7 PARTIAL+2 OPEN，Stage B/wiki GATED，R79 PAUSED_NON_BLOCKING。本包提高版本与玩法归属的准确性，不证明原版游戏已可运行。
+
+
+候选/main独立来源运行均通过，完整4793B派生JSON与本地字节一致；两个实际ZIP的摘要分别保留。完整链与永久双raw见 research/recovered/STONEAGE-CN2003-CLASSIC20-BRANCH-CUSTODY-R1.json。最终保管门强制收据存在，内容CI实际10项与保管CI11项分别验收。

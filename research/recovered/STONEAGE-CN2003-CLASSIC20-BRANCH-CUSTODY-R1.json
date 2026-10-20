@@ -1,0 +1,278 @@
+{
+  "schema": "stoneage.cn2003_classic20_branch.custody.r1",
+  "candidate": {
+    "zip_bytes": 2138,
+    "zip_sha256": "51aeae547a7f6eeaf0b79b20a77d1c5471c0b0ccde868712f4a0a256cd8a6814",
+    "raw_bytes": 4793,
+    "raw_sha256": "f6f5dc102993354d5fb35a9b6ff7718630fbe56e6b10abaa89c5b0e5c0d33981",
+    "raw_git_blob": "1caf22375318ffd304aab110e66596f6ed48cc00",
+    "matches_local_bytes": true,
+    "semantic_core_matches_local": true,
+    "head": "e849ea02f7ee51e977ee7039a7b9bab1ade9c4f0",
+    "tree": "b7961d9aaa1554329b817259d36ee17577f839b6",
+    "run_id": 39515337314,
+    "job_id": 118946041042,
+    "artifact_id": 12307343148,
+    "conclusion": "success",
+    "applicable_workflow_count": 10,
+    "all_applicable_workflows_success": true,
+    "actual_unit_tests": 10,
+    "skipped_tests": 0,
+    "real_body_mutations": 13
+  },
+  "main": {
+    "zip_bytes": 2138,
+    "zip_sha256": "b0e11582a556f3377e0f7a8c1402b7d4238f0c5ffb05eb4040c968f5709b735b",
+    "raw_bytes": 4793,
+    "raw_sha256": "f6f5dc102993354d5fb35a9b6ff7718630fbe56e6b10abaa89c5b0e5c0d33981",
+    "raw_git_blob": "1caf22375318ffd304aab110e66596f6ed48cc00",
+    "matches_local_bytes": true,
+    "semantic_core_matches_local": true,
+    "head": "e849ea02f7ee51e977ee7039a7b9bab1ade9c4f0",
+    "tree": "b7961d9aaa1554329b817259d36ee17577f839b6",
+    "run_id": 39515402912,
+    "job_id": 118946253551,
+    "artifact_id": 12308191056,
+    "conclusion": "success",
+    "applicable_workflow_count": 11,
+    "all_applicable_workflows_success": true,
+    "actual_unit_tests": 10,
+    "skipped_tests": 0,
+    "real_body_mutations": 13,
+    "matches_candidate_bytes": true
+  },
+  "source_pins": [
+    {
+      "path": "research/recovered/STONEAGE-CN2003-CLASSIC20-BRANCH-SOURCE-R1.json",
+      "bytes": 7381,
+      "sha256": "fc43ed4f577e4390d3a45239f08888e319d55549b5e0b9307df35da241903bf9",
+      "git_blob": "7b9344f0cb0cbb8bb9b3d1c203239af752182af5"
+    },
+    {
+      "path": "research/recovered/STONEAGE-CN2003-CLASSIC20-BRANCH-LOCAL-REPLAY-R1.json",
+      "bytes": 4793,
+      "sha256": "f6f5dc102993354d5fb35a9b6ff7718630fbe56e6b10abaa89c5b0e5c0d33981",
+      "git_blob": "1caf22375318ffd304aab110e66596f6ed48cc00"
+    },
+    {
+      "path": "tools/stoneage_cn2003_classic20_branch_source.py",
+      "bytes": 11150,
+      "sha256": "609cd3cc7b85aefffe6684406d82ad68c8bb0a55d9eae29441d83f0d5afd6bf3",
+      "git_blob": "1e0b2dcba6b53abf6c6e9fc09670cd10568117aa"
+    },
+    {
+      "path": ".github/workflows/verify-stoneage-cn2003-classic20-branch-source.yml",
+      "bytes": 1392,
+      "sha256": "5dc3c5869250797a46db073ed5276268067aac1aa0dc23a9ad7373b371ad7945",
+      "git_blob": "1ea5eeed55ee7a859a041822355362a794279ae1"
+    },
+    {
+      "path": "research/recovered/STONEAGE-CN40-RIDING-CERTIFICATE-MANOR-SOURCE-R1.json",
+      "bytes": 29266,
+      "sha256": "3c0f771e0547ed753b38359ccf61023f54c82b4ba4ba2dc1684a1ac8b6f7aae8",
+      "git_blob": "bee8fae59158f38f1167fe3b10e4ddfd7206b166"
+    },
+    {
+      "path": "research/recovered/STONEAGE-CN2003-CLASSIC20-BRANCH-CI-CANDIDATE-REPLAY-R1.json",
+      "bytes": 4793,
+      "sha256": "f6f5dc102993354d5fb35a9b6ff7718630fbe56e6b10abaa89c5b0e5c0d33981",
+      "git_blob": "1caf22375318ffd304aab110e66596f6ed48cc00"
+    },
+    {
+      "path": "research/recovered/STONEAGE-CN2003-CLASSIC20-BRANCH-CI-MAIN-REPLAY-R1.json",
+      "bytes": 4793,
+      "sha256": "f6f5dc102993354d5fb35a9b6ff7718630fbe56e6b10abaa89c5b0e5c0d33981",
+      "git_blob": "1caf22375318ffd304aab110e66596f6ed48cc00"
+    }
+  ],
+  "startup_prefixes": [
+    {
+      "path": "README.md",
+      "bytes": 28671,
+      "sha256": "1c9caeb27a03f69b2616880864d9e0b2b66d132027f2bba66b86677ab48bb41c",
+      "git_blob": "6729ab43b50c610524c0ddf9f74cb2c09212cdd3"
+    },
+    {
+      "path": "docs/PROJECT-CONTINUITY-PROTOCOL-R1.md",
+      "bytes": 9762,
+      "sha256": "c44834eeec87f7a43e9cb4905f08377349e36d58b1fff2c5a75a6975db695e3b",
+      "git_blob": "ba9bbe19384589400abc61af37a360a40bf91452"
+    },
+    {
+      "path": "docs/CURRENT-STATE.md",
+      "bytes": 2219862,
+      "sha256": "3615902f8878e4d19ab8758e30f4da70c3aaa8645e211ecea98aa8996a9ba2a5",
+      "git_blob": "f79f0006590b20ba00c836c021b1ff0cd37b3972"
+    },
+    {
+      "path": "docs/DESIGN-DECISIONS.md",
+      "bytes": 45965,
+      "sha256": "28b572ed01179eacd5a06b4ad62c76e4baef22ac49587aa0bad452a7cb3fe8e6",
+      "git_blob": "013ae4fad9301ab0140fe408a423b3abad97d1f9"
+    },
+    {
+      "path": "docs/HISTORICAL-TIMELINE.md",
+      "bytes": 532379,
+      "sha256": "b738d97387893e8a392edadf5c2b823f5bd85671ad1277b098f4a23d8d631d3b",
+      "git_blob": "66075c69d0bc301a52fb99737aa53e13b520cea1"
+    },
+    {
+      "path": "docs/SOURCE-REGISTRY.md",
+      "bytes": 821469,
+      "sha256": "3d13cb61ec54e8a69a081fca7061a6b3cc848d668d44e8cc329ad4842478731e",
+      "git_blob": "2418aa947557d963175a9e152eacef68fbbb14b3"
+    },
+    {
+      "path": "docs/RESTORATION-ROADMAP-R2.md",
+      "bytes": 169593,
+      "sha256": "b49acfbe533a3847014be29fe06ac59016c8a63d0a0fcb0dbe166192d64052e6",
+      "git_blob": "487d5f30ff1bc658fd9957b22939ae8e4e17b4fc"
+    },
+    {
+      "path": "docs/STONEAGE-PREPRODUCTION-CONTENT-ARCHIVE-R1.md",
+      "bytes": 11952,
+      "sha256": "f97a5c14e3812e3d7f3eb7d67763a72888fce69854ca6d909a5e9b20aa051ca2",
+      "git_blob": "f1589759b3375965a0be9919332fc7ff0d597090"
+    }
+  ],
+  "observed_workflow_sets": {
+    "candidate": [
+      {
+        "id": 39515337491,
+        "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+        "head": "e849ea02f7ee51e977ee7039a7b9bab1ade9c4f0",
+        "conclusion": "success"
+      },
+      {
+        "id": 39515337625,
+        "name": "Validate StoneAge preproduction content archive and wiki boundary",
+        "head": "e849ea02f7ee51e977ee7039a7b9bab1ade9c4f0",
+        "conclusion": "success"
+      },
+      {
+        "id": 39515337387,
+        "name": "Validate Stage A evidence-limited review acceptance",
+        "head": "e849ea02f7ee51e977ee7039a7b9bab1ade9c4f0",
+        "conclusion": "success"
+      },
+      {
+        "id": 39515337370,
+        "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+        "head": "e849ea02f7ee51e977ee7039a7b9bab1ade9c4f0",
+        "conclusion": "success"
+      },
+      {
+        "id": 39515337314,
+        "name": "Verify CN2003 classic20 branch labels and rule provenance",
+        "head": "e849ea02f7ee51e977ee7039a7b9bab1ade9c4f0",
+        "conclusion": "success"
+      },
+      {
+        "id": 39515337465,
+        "name": "Validate legacy StoneAge assistant history and pet content gaps",
+        "head": "e849ea02f7ee51e977ee7039a7b9bab1ade9c4f0",
+        "conclusion": "success"
+      },
+      {
+        "id": 39515337600,
+        "name": "Validate Stage A early source gap triage",
+        "head": "e849ea02f7ee51e977ee7039a7b9bab1ade9c4f0",
+        "conclusion": "success"
+      },
+      {
+        "id": 39515337472,
+        "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+        "head": "e849ea02f7ee51e977ee7039a7b9bab1ade9c4f0",
+        "conclusion": "success"
+      },
+      {
+        "id": 39515337419,
+        "name": "Validate StoneAge Stage A joint review decision",
+        "head": "e849ea02f7ee51e977ee7039a7b9bab1ade9c4f0",
+        "conclusion": "success"
+      },
+      {
+        "id": 39515337508,
+        "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+        "head": "e849ea02f7ee51e977ee7039a7b9bab1ade9c4f0",
+        "conclusion": "success"
+      }
+    ],
+    "main": [
+      {
+        "id": 39515402841,
+        "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+        "head": "e849ea02f7ee51e977ee7039a7b9bab1ade9c4f0",
+        "conclusion": "success"
+      },
+      {
+        "id": 39515402912,
+        "name": "Verify CN2003 classic20 branch labels and rule provenance",
+        "head": "e849ea02f7ee51e977ee7039a7b9bab1ade9c4f0",
+        "conclusion": "success"
+      },
+      {
+        "id": 39515402978,
+        "name": "Validate StoneAge preproduction content archive and wiki boundary",
+        "head": "e849ea02f7ee51e977ee7039a7b9bab1ade9c4f0",
+        "conclusion": "success"
+      },
+      {
+        "id": 39515402698,
+        "name": "Validate Stage A early source gap triage",
+        "head": "e849ea02f7ee51e977ee7039a7b9bab1ade9c4f0",
+        "conclusion": "success"
+      },
+      {
+        "id": 39515402699,
+        "name": "Independently verify TW1.0 R58 rooted helper returns and source custody",
+        "head": "e849ea02f7ee51e977ee7039a7b9bab1ade9c4f0",
+        "conclusion": "success"
+      },
+      {
+        "id": 39515402606,
+        "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+        "head": "e849ea02f7ee51e977ee7039a7b9bab1ade9c4f0",
+        "conclusion": "success"
+      },
+      {
+        "id": 39515402438,
+        "name": "Validate legacy StoneAge assistant history and pet content gaps",
+        "head": "e849ea02f7ee51e977ee7039a7b9bab1ade9c4f0",
+        "conclusion": "success"
+      },
+      {
+        "id": 39515402476,
+        "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+        "head": "e849ea02f7ee51e977ee7039a7b9bab1ade9c4f0",
+        "conclusion": "success"
+      },
+      {
+        "id": 39515402563,
+        "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+        "head": "e849ea02f7ee51e977ee7039a7b9bab1ade9c4f0",
+        "conclusion": "success"
+      },
+      {
+        "id": 39515402604,
+        "name": "Validate StoneAge Stage A joint review decision",
+        "head": "e849ea02f7ee51e977ee7039a7b9bab1ade9c4f0",
+        "conclusion": "success"
+      },
+      {
+        "id": 39515402608,
+        "name": "Validate Stage A evidence-limited review acceptance",
+        "head": "e849ea02f7ee51e977ee7039a7b9bab1ade9c4f0",
+        "conclusion": "success"
+      }
+    ]
+  },
+  "independent_core_check": "REMOVE_MARKED_AD_THEN_REGEX_HTML_ENTITY_DECODE_MATCHES_HTMLPARSER",
+  "boundaries": {
+    "original_html_or_pixels_committed": false,
+    "current_media_bytes_are_2003_original": false,
+    "original_client_or_server_execution_proven": false,
+    "four_vs_nine_is_a_proven_patch_diff": false,
+    "billing_policy_page_fetched": false
+  }
+}

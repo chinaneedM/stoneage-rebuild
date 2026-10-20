@@ -1,0 +1,132 @@
+{
+  "schema": "stoneage.cn2003_classic20_branch.derived_replay.r1",
+  "http_bytes": 35255,
+  "http_sha256": "97f455897c76d219a71831406d8308303d458c901b14220e8cd90bb128c74e60",
+  "extracted": {
+    "core_sha256": "d42ada75bf6f21554f64c5373d1f423966d33d78820cceb7e6acf0eb4ca2fc9f",
+    "issuer": "华义",
+    "operator_named": "北京华义",
+    "branch_label": "石器时代2.0",
+    "label_kind": "2003_OPERATOR_SERVER_BRANCH_NOT_CLIENT_BINARY_BUILD",
+    "earlier_opening_month_day_as_written": "9月4日",
+    "earlier_launch_year_in_body": null,
+    "announced_maintenance_month_day": "11月19日",
+    "announced_maintenance_start_time": "09:00",
+    "announced_opening_relation": "AFTER_MAINTENANCE_NOT_PROVEN_EXACT_09_OPEN",
+    "time_zone": null,
+    "new_server_group_label": "石器时代2.0(2)",
+    "existing_group_renamed_to": "石器时代2.0(1)",
+    "billing": {
+      "announced_scope": "NEW_GROUP_2_AFTER_OPENING",
+      "policy_system_name": "WGS",
+      "policy_link_as_written": "http://www.wayi.com.cn/pop/server.asp",
+      "linked_policy_retrieved": false,
+      "price_or_unit": null,
+      "existing_group_1_billing_rule": null
+    },
+    "capabilities": [
+      "RIDING_ADVERTISED",
+      "SAFER_TRADE_CLAIM",
+      "FASTER_GAME_CLAIM",
+      "JIAMEI_AIRLINE_AND_VILLAGE_FEATHERS",
+      "MORE_PETS_AND_ITEMS_NOT_A_ROSTER"
+    ],
+    "family": {
+      "manor_total_reported": 4,
+      "named_manors": [
+        "萨姆吉尔",
+        "加加"
+      ],
+      "remaining_manor_names": null,
+      "functions_reported": [
+        "家族频道",
+        "家族管理制度",
+        "家族战争"
+      ]
+    },
+    "actual_server_opening_or_billing_witnessed": false,
+    "client_binary_build_authenticated": false,
+    "security_or_performance_benchmarked": false
+  },
+  "comparison": {
+    "new_notice_reported_count": 4,
+    "cn40_table_row_count": 9,
+    "relation": "DISTINCT_SOURCE_CONTEXTS_NOT_A_PROVEN_PATCH_DIFF",
+    "fills_unwritten_two_names": false,
+    "proves_five_manors_removed": false,
+    "proves_same_server_or_client_build": false,
+    "transfers_riding_rules": false
+  },
+  "audit": {
+    "real_body_mutations": [
+      {
+        "case": "reported-earlier-month-day",
+        "input_sha256": "49faf955a0736c5c4d8c095516028a2def6cc8e79fcaf1c10e5f4fd652f0bad4",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "maintenance-month-day",
+        "input_sha256": "d7b3cd946865c4a0207841025173dc292cd94a58d1addfe70c3967dcd8db29c9",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "maintenance-start-hour",
+        "input_sha256": "c0b172275db942c8ef410be4d095a786d70e2bb03430a14229a7bcb904077567",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "after-not-before-maintenance",
+        "input_sha256": "750be4c15d002a9ca11b2b54095e821a3fdb5282b8eabbe1d8db438d9224b520",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "new-group-label",
+        "input_sha256": "5171a14efa0c8b63cd97b6cdd2cc864844607162bb5de8e2c0d17469de92f166",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "rename-existing-group",
+        "input_sha256": "3af7c6ea83642ea7bf4a2a6e88642d09cbdd2bcb8be3d330a3dfc51c2684f14f",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "billing-scope",
+        "input_sha256": "119161335aa957f6da798db6a074427fdb5adc98e66276ef2d3dbbbc892a1031",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "manor-count",
+        "input_sha256": "b5969db4fc95dbde904f96e409345e5ffb0c6d807c132a55acfe9b58235e4734",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "named-manor",
+        "input_sha256": "5cc261745ca6eff06cdc5bd4381892f68d740e34769219df1e8d02bc2a3535da",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "family-channel",
+        "input_sha256": "9107df2c55bfbb89c81b6d43f2c71576f1b54525ddf352fc162709c027209812",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "airline-name",
+        "input_sha256": "f59a1b37136bd208b30c56715c4c72aedb52bb7f70c5c61dc9b2961f60575bce",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "security-claim-not-guarantee",
+        "input_sha256": "ee57dd3d2bba3223f92a6b60627ced306691e5ba31c066a92b7c1999e4201d56",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "fee-link",
+        "input_sha256": "1116c65a5ce3e8275913fba29adbaf87552151584f5b5beedf36356e421e88a0",
+        "rejected_without_digest_gate": true
+      }
+    ],
+    "outer_script_positive": true
+  },
+  "raw_html_or_assets_in_output": false,
+  "historical_server_or_client_executed": false
+}

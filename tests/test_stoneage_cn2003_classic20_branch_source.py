@@ -79,6 +79,31 @@ class Classic20Branch(unittest.TestCase):
         self.reject(['status', 'stage_b_wiki'], 'OPEN')
         self.reject(['next'], 'CONTINUE_TARIFF_OR_MANOR_HELPERS')
 
+    def test_required_durable_independent_source_custody(self):
+        import hashlib
+        path = ROOT / 'research/recovered/STONEAGE-CN2003-CLASSIC20-BRANCH-CUSTODY-R1.json'
+        self.assertTrue(path.is_file(), 'The accepted source must retain its permanent custody receipt')
+        r = json.loads(path.read_text())
+        for pin in r['source_pins']:
+            b = (ROOT / pin['path']).read_bytes()
+            self.assertEqual(len(b), pin['bytes'])
+            self.assertEqual(hashlib.sha256(b).hexdigest(), pin['sha256'])
+            self.assertEqual(hashlib.sha1(b'blob ' + str(len(b)).encode() + b'\0' + b).hexdigest(), pin['git_blob'])
+        for pin in r['startup_prefixes']:
+            b = (ROOT / pin['path']).read_bytes()[:pin['bytes']]
+            self.assertEqual(hashlib.sha256(b).hexdigest(), pin['sha256'])
+        c, m = r['candidate'], r['main']
+        self.assertNotEqual(c['run_id'], m['run_id'])
+        self.assertNotEqual(c['job_id'], m['job_id'])
+        for label, meta in [('CANDIDATE', c), ('MAIN', m)]:
+            self.assertEqual(meta['conclusion'], 'success')
+            self.assertTrue(meta['all_applicable_workflows_success'])
+            self.assertEqual(meta['actual_unit_tests'], 10)
+            self.assertEqual(meta['skipped_tests'], 0)
+            b = (ROOT / ('research/recovered/STONEAGE-CN2003-CLASSIC20-BRANCH-CI-' + label + '-REPLAY-R1.json')).read_bytes()
+            self.assertEqual(hashlib.sha256(b).hexdigest(), meta['raw_sha256'])
+            self.assertEqual(json.loads(b)['extracted'], self.r['extracted'])
+
 
 if __name__ == '__main__':
     unittest.main()

@@ -16523,3 +16523,12 @@ artifact12306690663/12306501257实际下载，两个ZIP各2192B/SHA256分别9228
 有限对照既验大陆4.0九行庄园派生表，完整SHA和Git blob固定：来源语境不同，不由九/四推出删五处，不移植骑宠证明书或早期训练/战斗公式，也不合并台湾复刻版。新增 docs/specs/STONEAGE-CN2003-CLASSIC20-BRANCH-SOURCE-R1.md、六条机器记录、工具/专属CI/13实际正文语义改写与外围script正例，原网页/图片/程序不入Git。独立候选/main与ZIP永久保管按后续实际验收。
 
 NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-44回22域另一具名材料，本篇/费用/全庄园/安全助手止点已到。Stage A7 PARTIAL+2 OPEN、Stage B/wiki GATED、R79 PAUSED_NON_BLOCKING，全部旧历史前缀保留，无分母不报整体百分比。
+
+
+## 2026-10-21 R43候选/主线实证与永久来源保管
+
+内容e849ea02f7ee51e977ee7039a7b9bab1ade9c4f0/treeb7961d9aaa1554329b817259d36ee17577f839b6自身候选10项/主线11项适用Actions全SUCCESS；来源候选run39515337314/job118946041042与主线run39515402912/job118946253551各实跑10测试（零跳过）、HTTP重取35255B及13真实正文语义改写拒绝/外围script正例。独立干净远端主线65相关测试、八启动全文前缀和原生Git标识通过。
+
+artifact12307343148/12308191056真实下载ZIP各2138B，SHA256分别51aeae547a7f6eeaf0b79b20a77d1c5471c0b0ccde868712f4a0a256cd8a6814 / b0e11582a556f3377e0f7a8c1402b7d4238f0c5ffb05eb4040c968f5709b735b；各唯一replay.json4793B/SHA256 f6f5dc102993354d5fb35a9b6ff7718630fbe56e6b10abaa89c5b0e5c0d33981/原生Git blob1caf22375318ffd304aab110e66596f6ed48cc00，候选/main/本地完整JSON逐字节一致，ZIP摘要分别保留不伪称一致。双raw及源/工具/工作流/既验九行表pins、精确HEAD/tree/run/job/artifact链、21实际workflow记录与八启动完整前缀永久置 research/recovered/STONEAGE-CN2003-CLASSIC20-BRANCH-CUSTODY-R1.json。原版权HTML/图片/程序不入Git。
+
+新增强制收据门后本包11项/66相关测试另实跑；原内容10项不改写成11项。保管提交自身Actions继续按实际验收，不套内容绿灯。2.0运营标签/早期构建、维护开始/开服、收费新组/旧组、四庄园部分名单/九行表、宣传/实测均保持区分。R43有限来源包结束；最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-44回全22域另一具名材料，Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停，全部旧历史完整。
