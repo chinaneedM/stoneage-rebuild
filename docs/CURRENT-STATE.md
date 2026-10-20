@@ -16385,3 +16385,12 @@ I1提供确定/取消召唤通知，未取声效或原协议绑定；I2任务目
 内容c5bc2aca0eded77a3116d662a057771da1a91469/treeca30661bc367d45c9996bf2d4cc22c0ed6f651c7自身候选10/main11全SUCCESS，source run39417727148/39417830313、job118610729470/118611070986各实际10测试与两HTML两JPEG重放。artifact12262014170/12262345481已实下载，各ZIP2500B/SHA256 dfcff9d55fffe915e4353c6ec4488dfa1b600744228c5ddaf17e9512e09548f4/73be8a972b268f7f39f3b4a9c96c48927d3f18c5f9b0b0e6451aa945b090781d；唯一replay.json5713B/SHA256 1ed24ae3aa2b476f784d8577c1265900dab355ee4b01821de2bfdd19d9712bcf，候选/main/本地完整原始JSON逐字节一致。CI-CANDIDATE/CI-MAIN-REPLAY/CUSTODY永久固定源报告/11真实正文改写/双派生四文件的字节、SHA与原生Git blob及精确HEAD/tree/run/job/artifact/ZIP/raw链，八启动全文前缀固定；原HTML/JPEG不入Git。
 
 独立远端干净检出46相关测试、另一HTMLParser七段正文hash与两实际图片链接、Pillow完整JPEG双解码和八完整原生Git前缀通过。新增保管用例后47相关测试另验。物理火/闇灵火不混同，原则均分不变无条件引擎，地/风相反转伤方向保留；两瓶酒仍计划且未名，图中酷哥聊天不是任务对话，2015缩图不倒填2004。无版本号/部署/原公式/酒表/实服执行，Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停。NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-37回全官方22域另一具名材料，停止本魔法/新酒helper。保管提交自身Actions另按实际验收，不套父绿灯。
+
+
+## 2026-10-20 R36保管提交自身独立主线验收完成
+
+保管提交70adda1e3e458d30094a2c1e8cd4935234ae192c/tree2c3f01db1e7c21e47c049c8290d04c28c70e889f自身候选10/main11全SUCCESS；main源run39418343305/job118612762724实际11测试与两历史HTML两独立年代JPEG精确重放。独立干净远端检出47相关测试、七正文段与两图片引用、Pillow全双JPEG、四派生SHA/原生Git blob和八完整历史前缀通过；11真实正文改写再次独立拒绝，一外层meta正例保持语义。两火异义、地/风反向转伤、两酒未名且计划未证部署，2004大图/2015缩图分开；本条不新增游戏历史主张。
+
+实际main运行：39418343165 Validate StoneAge 8.0 PET contemporary evidence boundaries SUCCESS；39418343143 Validate Stage A early source gap triage SUCCESS；39418343086 Validate legacy StoneAge assistant history and pet content gaps SUCCESS；39418343305 Verify TW2004 mage attribute repair proposal and image capture scopes SUCCESS；39418343159 Validate StoneAge Stage A joint review decision SUCCESS；39418343046 Validate StoneAge preproduction content archive and wiki boundary SUCCESS；39418343105 Validate StoneAge late client region/version provenance and non-executing archive probe SUCCESS；39418343204 Verify 2001 bitmap category claims vs original TW1.0 image indexes SUCCESS；39418343149 Validate Stage A evidence-limited review acceptance SUCCESS；39418343240 Validate direct TW1.0 sprite-to-ADRN source joins SUCCESS；39418343191 Independently verify TW1.0 R58 rooted helper returns and source custody SUCCESS。
+
+最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-37回全官方22域另一具名材料，停止本魔法/新酒helper。Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79 PAUSED_NON_BLOCKING，所有历史前缀保持。此文档验收提交自身适用Actions另按实际，不套父绿灯。
