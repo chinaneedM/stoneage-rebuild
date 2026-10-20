@@ -68,5 +68,19 @@ class PetEvolutionSource(unittest.TestCase):
         self.rejects(lambda r:r['records'][14].__setitem__('cross_region_rebirth_fusion_equivalence','SAME'))
         self.rejects(lambda r:r['boundaries'].__setitem__('original_server_execution_verified',True))
 
+    def test_downloaded_candidate_main_replay_and_durable_custody(self):
+        from hashlib import sha256,sha1
+        c=json.loads((REPORT.parent/'STONEAGE-JP2008-PET-EVOLUTION-CUSTODY-R1.json').read_text());self.assertEqual([len(c['runs'][k]) for k in ('candidate','main')],[10,11])
+        for rows in c['runs'].values():self.assertTrue(all(r['head_sha']==c['content_head'] and r['conclusion']=='success' for r in rows))
+        for pin in c['pins']:
+            b=(REPORT.parents[2]/pin['path']).read_bytes();self.assertEqual(len(b),pin['bytes']);self.assertEqual(sha256(b).hexdigest(),pin['sha256']);self.assertEqual(sha1(b'blob '+str(len(b)).encode()+bytes([0])+b).hexdigest(),pin['git_blob'])
+        payloads=[(REPORT.parent/name).read_bytes() for name in ['STONEAGE-JP2008-PET-EVOLUTION-CI-REPLAY-R1.json','STONEAGE-JP2008-PET-EVOLUTION-CI-MAIN-REPLAY-R1.json']]
+        for a,b in zip(c['artifacts'],payloads):self.assertEqual(a['member_sha256'],sha256(b).hexdigest());self.assertEqual(json.loads(b)['extracted'],[x['extracted'] for x in self.report['inputs']])
+        candidate,main=[json.loads(b) for b in payloads];self.assertEqual(candidate['inputs'][1:],main['inputs'][1:]);self.assertNotEqual(candidate['inputs'][0]['sha256'],main['inputs'][0]['sha256']);self.assertFalse(c['current_media_byte_drift']['byte_change_location_independently_identified'])
+        a=json.loads((REPORT.parent/'STONEAGE-JP2008-PET-EVOLUTION-NEGATIVE-AUDIT-R1.json').read_text());self.assertEqual(len(a['cases']),8);pins={s['id']:s['http']['sha256'] for s in self.report['inputs']}
+        self.assertTrue(all(x['full_replay_rejected'] and x['original_sha256']==pins[x['source_id']] and x['original_sha256']!=x['mutated_sha256'] for x in a['cases']))
+        self.assertTrue(a['outside_release_metadata_boundary']['current_wrapper_change_accepted']);self.assertTrue(a['outside_release_metadata_boundary']['release_semantics_unchanged'])
+        self.assertTrue(c['evolved_names_masked']);self.assertFalse(c['raw_sources_committed']);self.assertFalse(c['original_server_execution_verified'])
+
 if __name__=='__main__':unittest.main()
 

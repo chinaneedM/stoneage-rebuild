@@ -51,3 +51,7 @@
 
 有限止点为首批四标签、试炼/失败/可重复、付费保障区别及一官方晚快照。原脚本/同版配置/未遮盖主表或实际运行到位才重开概率、资格、名字和状态未知。NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-32返回全版本22域另一具名材料，不扩本进化公式/helper。Stage A7 PARTIAL+2 OPEN，B/wiki GATED，R79暂停。
 
+
+## 实际CI派生差异与保管
+
+内容候选10/main11均success。两支源任务各11测试+五实输入；下载的replay.json各5473B，候选SHA256 5107a779f600a3ff51465774f4a76f9b68dd3bd43fdf8406f9cd047746e65cd3，main SHA256 580623283eb276712e638835c39ddd7510a75810a8edcdf472cf9e48ac2a503c。仅现行媒体完整HTML的长度/SHA改变，发布文核心与全部派生字段一致，固定官方/三图字节一致。两原始派生文件分别存CI-REPLAY/CI-MAIN-REPLAY，CUSTODY记录其各自ZIP/raw/Git。原main HTML字节变化位置未独立定位，不把推测写成确定导航更新。保管测试后64相关项通过，原HTML/图仍不入Git。

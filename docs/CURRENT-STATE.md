@@ -16261,3 +16261,10 @@ R30候选自审补充：图像可见MENU/Mail/Action/Eng仅为像素标签，不
 官方一实际图固定捕获请求404精确保留，未盲递归；当前媒体真实三GIF16467B/400×75横幅、2828B/97×96红斑剑齿状与3843B/135×115深色尖刺状均已目视。现图不是2008图像字节，示意警告保留，不认证种类/突变/元素/SPR或实服。11新+52相关旧=63测试、五实输入重放及8实际正文改写拒绝/1外层meta不改正文正例通过；三次本地定位预检纠正写入R31审查。新CI/main/ZIP按真实后验，原HTML/图不入Git。
 
 最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-32回全官方22域另一具名材料，停止本进化helper/概率/名称猜测；同版原脚本/配置、未遮盖主表或运行轨迹到位才重开未知。Stage A7 PARTIAL+2 OPEN，B/wiki GATED，R79 PAUSED_NON_BLOCKING，原portfolio与全部旧历史保持。
+
+
+## 2026-10-20 R31自身主线与实际双ZIP永久保管
+
+内容eb96bee8d2303903f55d2fad8a56c065444e8ae5/treeb21bfc56caa3b4b5b9b655c7158d6ae448092346自身候选10/main11全部success；source run39376279976/39376375767，job118475033681/118475334898各实际11测试+两HTML三GIF重放。artifact12243218796/12243676707均已实下载，ZIP候选2315B/main2313B SHA256 b0ef06e62be4a7eed77e726d7b27c0ef23a7cdc79e7cf62c4777faba040fa2d7/af9c706a2ba162a7eae4c1eb84d0da2db9d6d21b1f85ee728fde9aae91c3736b，两份replay.json各5473B、候选SHA256 5107a779f600a3ff51465774f4a76f9b68dd3bd43fdf8406f9cd047746e65cd3/main 580623283eb276712e638835c39ddd7510a75810a8edcdf472cf9e48ac2a503c。候选逐字节等于本地；main仅M1现行HTML从269299B变269654B/SHA a78ea3c34022416cacec065a12d67815a2acbc4f76182163b2e2805ec49789ab，发布文核心/所有派生语义及O1/三图字节一致。没有main原HTML独立定位变化位置，不称必为导航。两份原始派生JSON分别永久保留，非逐字节相同。CI-REPLAY/CI-MAIN-REPLAY/CUSTODY永久固定源报告/八正文改写与一外层meta正例/派生JSON的字节、SHA、Git blob与精确HEAD/run/job/artifact/ZIP/raw链；原HTML/GIF不进Git。
+
+独立干净远端检出63相关测试、八全文前缀、两正文另一提取器及三GIF解码通过；保管用例加入后64相关测试另验。普通概率不补100%、遮盖名不补全、失败未知字段不清空、促销与系统时段分开；2009官方快照不当2008首日、官方单图404不泛化，Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停保持。最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-32返回全官方22域另一新具名材料，停止本进化helper。保管HEAD自身Actions按实际观察，不借父绿灯。

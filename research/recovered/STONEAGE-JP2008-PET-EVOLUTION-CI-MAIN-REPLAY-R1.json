@@ -1,0 +1,169 @@
+{
+  "schema": "stoneage.jp2008_pet_evolution.replay.r1",
+  "inputs": [
+    {
+      "source_id": "M1",
+      "bytes": 269654,
+      "sha256": "a78ea3c34022416cacec065a12d67815a2acbc4f76182163b2e2805ec49789ab"
+    },
+    {
+      "source_id": "O1",
+      "bytes": 6538,
+      "sha256": "184017ffb882c21bb4160616d7c75ba63cb016501b171ae6eff83f8c4bf06f8d"
+    },
+    {
+      "source_id": "I1",
+      "bytes": 16467,
+      "sha256": "5c331077ecf7f76e9e8bd8dd536b6db59a28d4bf6193c48570bb0e08cb262900"
+    },
+    {
+      "source_id": "I2",
+      "bytes": 2828,
+      "sha256": "d2703d8e751becd2e51f6ce74ac92d73f562ddbd9ed1019fc1b3272336657a9e"
+    },
+    {
+      "source_id": "I3",
+      "bytes": 3843,
+      "sha256": "31d7417696c6b56febd8fa117a0106990d77dc1329a624af9d046e088065976e"
+    }
+  ],
+  "extracted": [
+    {
+      "core_utf8_bytes": 3025,
+      "core_sha256": "917dd517af3509ba1e8b4180263dd82bfe54812082f1c98002f44201cfefbd14",
+      "facts": {
+        "issuer": "株式会社デジパーク",
+        "published_label": "2008/11/11 14:28",
+        "announced_implementation": "2008-11-11_AFTER_MAINTENANCE",
+        "eligible_pet_labels": [
+          "ベルガー",
+          "ベルイガー",
+          "ゴルシス",
+          "キングサーベル"
+        ],
+        "first_batch_not_complete_game_roster": true,
+        "location": {
+          "island": "ミライア島",
+          "village": "カラの村",
+          "relative_location": "NORTHWEST_OF_VILLAGE",
+          "dungeon": "進化の洞窟",
+          "npc": "進化Gさん"
+        },
+        "flow": [
+          "FIND_EVOLUTION_CAVE_NORTHWEST_OF_KARA",
+          "TALK_TO_SHINKA_G_SAN",
+          "COMPLETE_TRIAL_QUEST",
+          "CHANCE_OF_EVOLUTION",
+          "REPEATABLE_TRIAL"
+        ],
+        "failure_level": 1,
+        "repeatable": true,
+        "success": "STRONGER_STATUS_AND_CHANGED_APPEARANCE_SOURCE_DESCRIPTION_NO_NUMBERS",
+        "mutation": "SOMETIMES_SPECIAL_STATUS_NO_RATE",
+        "new_and_existing_player_goal": "EXPLICIT_RELEASE_PURPOSE_NOT_NO_PREREQUISITE_PROOF",
+        "flavor": "SPIRITS_MISCHIEF_POETIC_INTRO_NOT_NAMED_CAUSE",
+        "campaign": {
+          "start": "2008-11-11_AFTER_MAINTENANCE",
+          "end": "2008-11-18_BEFORE_MAINTENANCE",
+          "bundle": "剣虎進化セットチケット",
+          "price": 350,
+          "currency_as_written": "Gstone",
+          "components": [
+            "進化の秘宝",
+            "剣虎進化再抽選チケット",
+            "餌付け薬[変:餌付けの輪丙]"
+          ],
+          "secret_item": "GUARANTEED_EVOLUTION_CLAIM_ITEM_NOT_BASE_PROBABILITY",
+          "reroll": "ONE_STATUS_REROLL_FOR_FOUR_EVOLVED_PET_TYPES",
+          "gift": "HUMAN_GAINED_EXPERIENCE_DISTRIBUTION_TO_PET_NO_RATIO"
+        }
+      },
+      "official_link": "http://stoneage.to/update/20081111_update_ev1.html",
+      "image_refs": [
+        "/games/013/G001377/20081111023/TN/001.gif",
+        "/games/013/G001377/20081111023/TN/002.gif",
+        "/games/013/G001377/20081111023/TN/003.gif",
+        "/games/013/G001377/20081111023/TN/004.gif"
+      ]
+    },
+    {
+      "core_utf8_bytes": 1506,
+      "core_sha256": "f75153dcb4c09aeb7c6033bb3465ebb51f5ef3443f5a2440c72e026192f790ed",
+      "facts": {
+        "date_time_as_written": "2008年11月11日（火）16:00定期メンテナンス完了後",
+        "location": {
+          "island": "ミライア島",
+          "village": "カラの村",
+          "relative_location": "NORTHWEST_OF_VILLAGE",
+          "dungeon": "進化の洞窟",
+          "npc": "進化Gさん"
+        },
+        "chance": "LUCK_UNSPECIFIED",
+        "repeatable": true,
+        "one_pet_per_attempt": 1,
+        "failure": {
+          "level": 1,
+          "status": "INITIAL_STATE_UNSPECIFIED_NUMBERS",
+          "name": "INITIAL_STATE_UNSPECIFIED_NAME",
+          "skills": null,
+          "owner": null
+        },
+        "eligibility_name_masks": [
+          {
+            "before": "ベルガー",
+            "evolved_mask": "？？ルガー",
+            "canonical_evolved_name": null
+          },
+          {
+            "before": "ベルイガー",
+            "evolved_mask": "？？？イガー",
+            "canonical_evolved_name": null
+          },
+          {
+            "before": "ゴルシス",
+            "evolved_mask": "？？シス",
+            "canonical_evolved_name": null
+          },
+          {
+            "before": "キングサーベル",
+            "evolved_mask": "？？？サーベル",
+            "canonical_evolved_name": null
+          }
+        ],
+        "visual_notice": "ILLUSTRATION_MAY_DIFFER_FROM_ACTUAL",
+        "balance_notice": "CONTENT_SUBJECT_TO_FUTURE_BALANCE_CHANGE"
+      },
+      "actual_unacquired_image_ref": "image/20081111_ev_02.gif"
+    },
+    {
+      "format": "GIF",
+      "dimensions": [
+        400,
+        75
+      ],
+      "original_sprite_or_runtime_verified": false
+    },
+    {
+      "format": "GIF",
+      "dimensions": [
+        97,
+        96
+      ],
+      "original_sprite_or_runtime_verified": false
+    },
+    {
+      "format": "GIF",
+      "dimensions": [
+        135,
+        115
+      ],
+      "original_sprite_or_runtime_verified": false
+    }
+  ],
+  "official_page_capture": "20090217151837",
+  "media_2008_snapshot_obtained": false,
+  "original_server_executed": false,
+  "unresolved_names_preserved": true,
+  "ordinary_chance_not_paid_guarantee": true,
+  "raw_sources_in_output": false
+}
