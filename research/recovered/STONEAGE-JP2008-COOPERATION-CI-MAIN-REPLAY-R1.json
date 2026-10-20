@@ -1,0 +1,218 @@
+{
+  "schema": "stoneage.jp2008_cooperation.replay.r1",
+  "inputs": [
+    {
+      "id": "M1",
+      "bytes": 280349,
+      "sha256": "cb18dd7867ea296cf5e0c94164d14493455cbc35952261b72e06afb921580461"
+    },
+    {
+      "id": "I1",
+      "bytes": 63614,
+      "sha256": "15d7a133358a38a97602790aa443d6578b6adec444f100ea88741a68320383e4"
+    },
+    {
+      "id": "I2",
+      "bytes": 73785,
+      "sha256": "85c82c924389a3759021412a5a3c3b925b20aad3076113cb0f55cce0dfb9ed4a"
+    },
+    {
+      "id": "I3",
+      "bytes": 19402,
+      "sha256": "67ae2399ca1d49c52db378488d36e3bcdf63266ca63357fb1cfc8df0865d2f28"
+    },
+    {
+      "id": "I4",
+      "bytes": 21944,
+      "sha256": "28f7857d58b673b93defbc7d0e80d9eb02a64ffd6245d32d216e2d2036bb8990"
+    },
+    {
+      "id": "I5",
+      "bytes": 19656,
+      "sha256": "7f0f040a80ffc84765f498c6981d22cb783a7b16741dcdc1abd6a305851125d1"
+    }
+  ],
+  "extracted": {
+    "core_sha256": "3a3d781a9f3151dea50e4c0690b04fa35be11b35b754ffed818dd2122a1d772f",
+    "core_utf8_bytes": 3004,
+    "facts": {
+      "published_label": "2008/06/20 22:28",
+      "authority": "MEDIA_MARKED_RELEASE_QUOTATION_WITH_EDITORIAL_DIGIPARK_ATTRIBUTION",
+      "collection_period": {
+        "start": "2008-06-24 16:00",
+        "end": "2008-07-15 13:00",
+        "timezone": null
+      },
+      "items": [
+        "精霊の雫",
+        "精霊の恵み"
+      ],
+      "tree_flow": [
+        "ENEMY_DINOSAUR_DROPS_DEW",
+        "EXCHANGE_DEW_WITH_BLESSING_SPIRIT",
+        "GIVE_BLESSING_TO_TREE"
+      ],
+      "other_flow": [
+        "ENEMY_DINOSAUR_DROPS_DEW",
+        "DISTRIBUTE_DEW_TO_LOCAL_RECIPIENTS"
+      ],
+      "roles": [
+        {
+          "label": "恵みの精霊",
+          "role": "DEW_TO_BLESSING_EXCHANGE",
+          "place_as_written": "マンモスルーム"
+        },
+        {
+          "label": "ザハン一族の族長",
+          "role": "SEEKS_RECOVERY_OF_SACRED_WATER",
+          "place_as_written": "アーブの泉"
+        },
+        {
+          "label": "クルクの大工",
+          "role": "RECEIVES_DEW_FOR_SHOP_RENOVATION",
+          "place_as_written": "クルクのコンビニ"
+        },
+        {
+          "label": "転送員",
+          "role": "RECEIVES_DEW_AFTER_HEAT_COLLAPSE",
+          "place_as_written": "チャットルーム"
+        }
+      ],
+      "tree_location_variant": "マンモスホール",
+      "tree_location_labels_equivalence_verified": false,
+      "tree_story": "OVERUSED_NATURAL_POWER_AND_LACK_OF_DEW",
+      "local_stories": [
+        "WEAKENED_SACRED_WATER_AND_CLAN_UNABLE_TO_LEAVE_SPRING",
+        "ONE_CARPENTER_CAN_WORK_THREE_TIMES_AS_HARD_AFTER_DEW",
+        "SHOP_STAFF_WANTS_TRAVEL_BUT_TRANSPORT_WORKER_COLLAPSED"
+      ],
+      "thresholds_are_reported_delivery_totals_not_individual_fees": true
+    },
+    "image_refs": [
+      "/games/013/G001377/20080620060/TN/008.jpg",
+      "/games/013/G001377/20080620060/TN/012.jpg",
+      "/games/013/G001377/20080620060/TN/005.jpg",
+      "/games/013/G001377/20080620060/TN/006.jpg",
+      "/games/013/G001377/20080620060/TN/007.jpg",
+      "/games/013/G001377/20080620060/TN/010.jpg",
+      "/games/013/G001377/20080620060/TN/009.jpg",
+      "/games/013/G001377/20080620060/TN/011.jpg"
+    ]
+  },
+  "manual_reward_transcription": [
+    {
+      "branch": "TREE",
+      "delivery_total": 2000,
+      "delivered_item": "精霊の恵み",
+      "reward_label": "キヌイの村にセーブポイントを設置",
+      "reported_availability": "PERMANENT_FROM_2008-07-22",
+      "source_ref": "I2",
+      "actual_unlock_verified": false,
+      "individual_cost": null,
+      "exact_effect_or_stock": null
+    },
+    {
+      "branch": "TREE",
+      "delivery_total": 5000,
+      "delivered_item": "精霊の恵み",
+      "reward_label": "出張預かり屋NPCの設置",
+      "reported_availability": "PERMANENT_FROM_2008-07-22",
+      "source_ref": "I2",
+      "actual_unlock_verified": false,
+      "individual_cost": null,
+      "exact_effect_or_stock": null
+    },
+    {
+      "branch": "TREE",
+      "delivery_total": 8000,
+      "delivered_item": "精霊の恵み",
+      "reward_label": "ペット技をゲーム内で追加販売",
+      "reported_availability": "PERMANENT_FROM_2008-07-22",
+      "source_ref": "I2",
+      "actual_unlock_verified": false,
+      "individual_cost": null,
+      "exact_effect_or_stock": null
+    },
+    {
+      "branch": "TREE",
+      "delivery_total": 30000,
+      "delivered_item": "精霊の恵み",
+      "reward_label": "経験値獲得イベント",
+      "reported_availability": "2008-07-22_TO_2008-08-12",
+      "source_ref": "I2",
+      "actual_unlock_verified": false,
+      "individual_cost": null,
+      "exact_effect_or_stock": null
+    },
+    {
+      "branch": "TREE",
+      "delivery_total": 35000,
+      "delivered_item": "精霊の恵み",
+      "reward_label": "ペット再抽選NPCの設置",
+      "reported_availability": "2008-07-22_TO_2008-08-12",
+      "source_ref": "I2",
+      "actual_unlock_verified": false,
+      "individual_cost": null,
+      "exact_effect_or_stock": null
+    },
+    {
+      "branch": "WATER",
+      "delivery_total": 3000,
+      "delivered_item": "精霊の雫",
+      "reward_label": "アーブの水の復活",
+      "reported_availability": "2008-07-22_TO_2008-08-12",
+      "source_ref": "I3",
+      "actual_unlock_verified": false,
+      "individual_cost": null,
+      "exact_effect_or_stock": null
+    },
+    {
+      "branch": "SHOP",
+      "delivery_total": 3000,
+      "delivered_item": "精霊の雫",
+      "reward_label": "クルクの村のコンビニ開店",
+      "reported_availability": "PERMANENT_FROM_2008-07-22",
+      "source_ref": "I4",
+      "actual_unlock_verified": false,
+      "individual_cost": null,
+      "exact_effect_or_stock": null
+    },
+    {
+      "branch": "TRANSPORT",
+      "delivery_total": 10000,
+      "delivered_item": "精霊の雫",
+      "reward_label": "転送NPCの設置",
+      "reported_availability": "2008-07-22_TO_2008-08-12",
+      "source_ref": "I5",
+      "actual_unlock_verified": false,
+      "individual_cost": null,
+      "exact_effect_or_stock": null
+    }
+  ],
+  "image_dimensions": [
+    [
+      250,
+      200
+    ],
+    [
+      433,
+      167
+    ],
+    [
+      434,
+      49
+    ],
+    [
+      434,
+      49
+    ],
+    [
+      434,
+      49
+    ]
+  ],
+  "manual_transcription_independently_machine_read": false,
+  "original_server_executed": false,
+  "actual_rewards_unlocked": false,
+  "raw_sources_in_output": false
+}

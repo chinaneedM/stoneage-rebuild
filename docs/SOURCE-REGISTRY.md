@@ -7607,3 +7607,10 @@ https://www.4gamer.net/games/013/G001377/20081111023/ 当前269299B SHA256695386
 12本包及相关63测试、六实输入重放与8实际正文改写拒绝通过；人工表格转录不称机器OCR，放大复核キヌイ和再抽選。当前HTML/JPEG非2008捕获；008树图不证地图/SPR，另三场景未取。原HTML/图不进Git，无原服执行/原ID/交换比例/概率/商店表/奖励效果，三倍大工叙事不补玩家倍率，存档点不重开R79。独立CI/ZIP保管按后续实际验收。
 
 最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-33回全官方版本22域另一具名材料；止点为本活动来源规格，不扩活动结果、虎追七章或全图递归。同版原脚本/运营结果/计数表/具名菜单或运行才重开未知。Stage A7 PARTIAL+2 OPEN，B/wiki GATED，R79 PAUSED_NON_BLOCKING，原22域及全部旧历史前缀保持。
+
+
+## 2026-10-20 R32实际双CI、脚本字节差异定位与永久保管
+
+内容82551e491625911130289936da5dac966a039738/tree926c929e2fc1c700a5eba9a08a08129bedd6f9f8自身候选10/main11全success；source run39408860268/39408954668，job118581376480/118581687625各12测试与一HTML五JPEG实重放。artifact12257659302/12258114013已实下载，ZIP均2107B，SHA256 04631b56259dc04f09dfb40fceeaaab7ec24edf65682eb595346ae057adb344e/97a6d9997ce3d45ba420040f4aa6ce16fbfa40ab6724f789acae7b1c0e1a4308；唯一replay.json均6524B/SHA256 61c34db5a406c8a66913787d4f0c8b070e4a234d4e7905a507bcfd09eee14187，两CI逐字节一致但不等于首次本地JSON。差别仅M1输入字节元数据：CI280349B/SHA256 cb18dd7867ea296cf5e0c94164d14493455cbc35952261b72e06afb921580461；核心/其余全字段和五图一致。补取实际当前页恰与两CI全SHA相同，对比原HTML47个script元素，仅零基26变，去script后完整HTML逐字节一致，因此本轮可定位全部变化在脚本内，不泛称任何未来改动安全。两CI原始JSON分别永久保留。
+
+永久CI-CANDIDATE/CI-MAIN-REPLAY/CUSTODY固定源报告/8真实改写反例及外层meta正例/派生JSON字节、SHA、Git blob，精确HEAD/run/job/artifact/ZIP/raw链及八启动全文前缀。独立远端干净检出63相关测试、另一HTML解析器、五全JPEG解码和八完整前缀通过；追加保管用例后64相关测试另实验。人工奖励表不称独立OCR，条件承诺不称实际奖励，原HTML/JPEG不进Git。最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-33返回全官方22域另一材料，停止本活动helper；Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停保持。保管提交自身Actions另按实际验收，不套父绿灯。
