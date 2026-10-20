@@ -1065,3 +1065,10 @@ I1提供确定/取消召唤通知，未取声效或原协议绑定；I2任务目
 缩略图实际跳20150408182032/36917B/SHA74028b94ae5c9ced3cb537f1d44791bfd55d359dcc6dc90d40e6c21c3ade5cdb/300×225；唯一链接大图跳20040408015726/60745B/SHA7afb898b2c5f202b6c810f474c64376f3decbcf3814929f19716647aac1ba463/640×480。目视洞穴蓝水、橘红长颈骑宠/骑手及旁立人物，酷哥聊天标签；不认证同次图/原生分辨率、任务NPC、金飞外观、酒菜单或修正运行。2015缩图非2004字节。两HTML两JPEG实重放、11真实Big5正文改写在绕过全页字节门后语义拒绝；原件不进Git，CI/ZIP保管另按实际。
 
 来源规格止点已达，不扩訐譙龍全任务/全魔法/酒表；原脚本/同版补丁/具名酒表或运行才重开。最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-37回全官方版本22域另一具名材料。Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79 PAUSED_NON_BLOCKING；全历史与22域前缀保持。
+
+
+## 2026-10-20 R36实际双CI、两火语义与永久派生保管
+
+内容c5bc2aca0eded77a3116d662a057771da1a91469/treeca30661bc367d45c9996bf2d4cc22c0ed6f651c7自身候选10/main11全SUCCESS，source run39417727148/39417830313、job118610729470/118611070986各实际10测试与两HTML两JPEG重放。artifact12262014170/12262345481已实下载，各ZIP2500B/SHA256 dfcff9d55fffe915e4353c6ec4488dfa1b600744228c5ddaf17e9512e09548f4/73be8a972b268f7f39f3b4a9c96c48927d3f18c5f9b0b0e6451aa945b090781d；唯一replay.json5713B/SHA256 1ed24ae3aa2b476f784d8577c1265900dab355ee4b01821de2bfdd19d9712bcf，候选/main/本地完整原始JSON逐字节一致。CI-CANDIDATE/CI-MAIN-REPLAY/CUSTODY永久固定源报告/11真实正文改写/双派生四文件的字节、SHA与原生Git blob及精确HEAD/tree/run/job/artifact/ZIP/raw链，八启动全文前缀固定；原HTML/JPEG不入Git。
+
+独立远端干净检出46相关测试、另一HTMLParser七段正文hash与两实际图片链接、Pillow完整JPEG双解码和八完整原生Git前缀通过。新增保管用例后47相关测试另验。物理火/闇灵火不混同，原则均分不变无条件引擎，地/风相反转伤方向保留；两瓶酒仍计划且未名，图中酷哥聊天不是任务对话，2015缩图不倒填2004。无版本号/部署/原公式/酒表/实服执行，Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停。NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-37回全官方22域另一具名材料，停止本魔法/新酒helper。保管提交自身Actions另按实际验收，不套父绿灯。

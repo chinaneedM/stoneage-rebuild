@@ -39,4 +39,15 @@ class MageAttributePlan(unittest.TestCase):
   for f in [extract_index,extract_body]:
    with self.assertRaises((ValueError,StopIteration)):f(b'<html>Partial</html>')
   with self.assertRaises(ValueError):replay(self.r,[b'']*3)
+ def test_downloaded_dual_ci_raw_reports_have_durable_native_blob_custody(self):
+  from hashlib import sha1
+  c=json.loads(REPORT.with_name('STONEAGE-TW2004-MAGE-ATTRIBUTE-PLAN-CUSTODY-R1.json').read_text());self.assertEqual([len(c['runs'][k]) for k in ['candidate','main']],[10,11])
+  for runs in c['runs'].values():self.assertTrue(all(x['head_sha']==c['content_head'] and x['conclusion']=='success' for x in runs))
+  for pin in c['pins']:
+   b=(ROOT/pin['path']).read_bytes();self.assertEqual(len(b),pin['bytes']);self.assertEqual(sha256(b).hexdigest(),pin['sha256']);self.assertEqual(sha1(b'blob '+str(len(b)).encode()+b'\0'+b).hexdigest(),pin['git_blob'])
+  bs=[]
+  for a in c['artifacts']:
+   self.assertIn(a['run_id'],[x['id'] for x in c['runs'][a['branch']]]);self.assertEqual(a['head_sha'],c['content_head']);b=(ROOT/a['derived_path']).read_bytes();bs.append(b);self.assertEqual(len(b),a['member_bytes']);self.assertEqual(sha256(b).hexdigest(),a['member_sha256']);x=json.loads(b);self.assertEqual(x['extracted'],self.r['extracted']);self.assertEqual(x['manual_image_observation'],self.r['manual_image_observation']);self.assertFalse(x['proposal_deployment_verified'])
+   self.assertEqual(x['inputs'],[{k:v for k,v in s.items() if k in ['id','bytes','sha256']} for s in self.r['inputs']])
+  self.assertEqual(bs[0],bs[1]);self.assertTrue(c['candidate_main_and_local_raw_json_equal']);self.assertTrue(c['thumbnail_2015_not_promoted_to_2004']);self.assertFalse(c['raw_sources_committed']);self.assertFalse(c['original_server_execution_verified'])
 if __name__=='__main__':unittest.main()
