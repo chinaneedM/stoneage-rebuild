@@ -7714,3 +7714,10 @@ I1提供确定/取消召唤通知，未取声效或原协议绑定；I2任务目
 - **可回收内容：** 2008年活动宣传语称宠物200种、第200种名フクゥーリ；GASH用户/活动期间**直接捕获**/交易等取得不合格、一账户一参与；500份100 GASH点外部抽奖。公告期间与计划发放日期不作实服已执行事实；源数据具体字段固定在 STONEAGE-JP2008-FUKUURI-CAPTURE-SOURCE-R1.json。
 - **文件证据：** 首次分支工具转义失败 Action39424251604及修复后成功39424516338；永久派生原JSON Git blob780ec3ea27df6738e61489246eb9bf1fdb38c0a9，源HTTP当前字节270185B SHA256 25e28e9354a1a87b719399eb35ebaf7802dff83aec33da1cb4bfb271f0f9d06e、规范化发布文digest ee8041f5c433b738c2346e84a28731fffb4639c03c3fe08c8b6352b02d7fa8e1；Gamania活动详情 http://service.gamania.co.jp/stoneage/cp/080715/ 仅作为同期原文出链，未取得原2008字节。
 - **边界：** 同版本宠物ID/能力/技能/图像与捕获脚本未知，图鉴完整分母未知；GASH不当游戏货币；原HTML及版权资产不入Git。参见 docs/specs/STONEAGE-JP2008-FUKUURI-CAPTURE-CAMPAIGN-SOURCE-R1.md、docs/STONEAGE-OFFICIAL-VERSION-NAMED-CONTENT-REVIEW-R38.md。历史R21三章影之支配者已存，R38不重复其发现。
+
+
+## 2026-10-20 JP2009 Guild、ハクエン及经验限时活动来源（R39）
+
+- 同期DigiPark运营方发布文，4Gamer 2009/04/28 15:20转载，明确配信元DigiPark与原文刊载标识：https://www.4gamer.net/games/013/G001377/20090428039/ 。原公告站URL http://www.stoneage.to/news_detail.html?no=694 仅为来源出链，未获2009认证原网页。
+- 七资料实体合同分别涵盖异地Guild多人交流、ハクエン宠物、400 Gstone白炎票券/袋/印章、具名交换NPC、印章5/10/15奖励、15处稀有敌人活动和5秘药碎片的首次/重复经验领取。白炎袋源明言七条但具名正文仅六条，未知第七项/概率；不得与1999或台湾大陆家族合并，不将Gstone与GASH/Stone混同。
+- 四次候选独立成功Action39427043686、39427426155、39427792143、39428195233。两版网页全文 SHA256分别 3e28e624d76dbf908ee7cc393f7727bdf5e1408a94e7124ef279bceedaed7c11 / 8ca3c0412a5cd03fb9ac29a3756d28874f12046ab77c45311e597f51abed1ff4；共同运营正文规范SHA256 026b44ac8d658df115ed17f1071e17a845d20f62f463881030823a133d3fc946。两种派生原JSON sha256 d754c374000ee42b8f5628f62c9b26dff0ff8855dc18293846c33131873f41c0 / da38f2210456aa904f062f159ed67f5c42d99f3917422175fb37d3629f1cdeb7，Git blob fdc0adbee8880ab1558012077f244a842b9f47fd / 406149a3984ada9d6e5b664f662547b93772c229。完整ZIP/raw/job/边界永久收据见 research/recovered/STONEAGE-JP2009-GUILD-HAKUEN-CUSTODY-R1.json。未存原HTML/版权图；初代ID、guild权限、真实服务器运行及低概率数字仍未证。
