@@ -1,0 +1,474 @@
+{
+  "schema": "stoneage.tw2004_mage_attribute_plan.source.r1",
+  "authority": "OFFICIAL_TW_OPERATOR_DIAGNOSIS_AND_PROPOSAL_UNNUMBERED_APRIL_2004",
+  "inputs": [
+    {
+      "id": "P0",
+      "url": "https://web.archive.org/web/20050612011406id_/http://www.wayi.com.tw/stoneage/producer/producer01.asp",
+      "capture_timestamp": "20050612011406",
+      "bytes": 28883,
+      "sha256": "19661e2acca046bf8c6dc86dc968107fe9935cd58a8f3cd8ce5e1de5aeba7f8b"
+    },
+    {
+      "id": "P1",
+      "url": "https://web.archive.org/web/20041206160744id_/http://www.wayi.com.tw/stoneage/producer/producer02.asp?idno=69",
+      "capture_timestamp": "20041206160744",
+      "bytes": 18301,
+      "sha256": "6b3b57b574fa1c200c44aa2ea93dfffb9ce229b4e7268679a7ff0319f091300f"
+    },
+    {
+      "id": "I1",
+      "url": "https://web.archive.org/web/20150408182032id_/http://www.wayi.com.tw/images02/sa0405-1s.jpg",
+      "capture_timestamp": "20150408182032",
+      "bytes": 36917,
+      "sha256": "74028b94ae5c9ced3cb537f1d44791bfd55d359dcc6dc90d40e6c21c3ade5cdb"
+    },
+    {
+      "id": "I2",
+      "url": "https://web.archive.org/web/20040408015726id_/http://www.wayi.com.tw/images02/sa0405-1.jpg",
+      "capture_timestamp": "20040408015726",
+      "bytes": 60745,
+      "sha256": "7afb898b2c5f202b6c810f474c64376f3decbcf3814929f19716647aac1ba463"
+    }
+  ],
+  "extracted": [
+    {
+      "selected": {
+        "article_id_as_web_key": 69,
+        "title": "解開法師變強之謎？！",
+        "index_date_as_written": "2004-4-5"
+      },
+      "web_key_is_game_id": false
+    },
+    {
+      "paragraphs": [
+        {
+          "characters": 56,
+          "sha256": "fa80ce0be0e9106979fef3459eb49e90e2647b4dce8d96bc8d01c6dbbe704e37"
+        },
+        {
+          "characters": 61,
+          "sha256": "80e66e2432772a5aca6f4a1f80cb8a417fbc1e0bd77130f99d8836799224ff6f"
+        },
+        {
+          "characters": 148,
+          "sha256": "cd3664e319ce94499e9d05ccd3a3551c6e00abf005d2365032aff8017187a571"
+        },
+        {
+          "characters": 123,
+          "sha256": "300fed5ed724ab2c2e11267f9dd5fc111c07faccfc51f3facb671e9768f2f0eb"
+        },
+        {
+          "characters": 147,
+          "sha256": "2c7e9658c7a67d006602ed1215c36329b04ed48bc6d1c969f088e87f53984729"
+        },
+        {
+          "characters": 88,
+          "sha256": "05b28d0626a6124477a18c9a0702122061ae89c866d718bfba6534e9b7c065f0"
+        },
+        {
+          "characters": 25,
+          "sha256": "334fecd8335837cc69e4df299acad7721a4e5d17904f4e4997ecd96f960035d2"
+        }
+      ],
+      "facts": {
+        "context": {
+          "status": "OPERATOR_REPORTED_BUG_AND_PROPOSED_REPAIR",
+          "speaker_as_written": "酷哥",
+          "target": "MAGE_ATTACK_SKILL_AGAINST_MOUNTED_ENEMY",
+          "distribution_subjects": [
+            "RIDER",
+            "MOUNT"
+          ]
+        },
+        "diagnosis": {
+          "character_elements": [
+            "地",
+            "水",
+            "火",
+            "風"
+          ],
+          "mage_attack_elements": [
+            "火",
+            "冰",
+            "雷"
+          ],
+          "operator_explanation": "MISMATCHED_ELEMENT_SETS_IN_DAMAGE_DISTRIBUTION",
+          "reported_symptoms": [
+            "EARTH_CHARACTER_MORE_EASILY_HURT",
+            "RIDER_OF_金飛_LESS_EASILY_HURT",
+            "UNCERTAIN_RANDOM_INJURY"
+          ],
+          "original_bug_code_or_probability": null
+        },
+        "proposed_element_model": {
+          "physical": [
+            "地",
+            "水",
+            "火",
+            "風"
+          ],
+          "dark_spirit_energy": [
+            "火",
+            "冰",
+            "雷"
+          ],
+          "fire_labels_share_spelling_not_identity": true,
+          "physical_interaction": "MUTUAL_ELEMENT_RELATIONS",
+          "magic_relative_to_physical": "ATTRIBUTE_NEUTRAL",
+          "default_distribution": "IN_PRINCIPLE_EQUAL_RIDER_AND_MOUNT"
+        },
+        "battlefield": {
+          "replacement_label": "戰場屬性優勢",
+          "example_spirit": "火的精靈",
+          "example_effect": "STRENGTHEN_FIRE_BATTLEFIELD_ADVANTAGE",
+          "purpose": "REDISTRIBUTE_RIDER_AND_MOUNT_INJURY",
+          "coefficients": null
+        },
+        "directional_examples": {
+          "setup": "EARTH_CHARACTER_RIDING_金飛",
+          "examples": [
+            {
+              "spirit": "地的精靈",
+              "from_subject": "RIDER",
+              "to_subject": "MOUNT"
+            },
+            {
+              "spirit": "風的精靈",
+              "from_subject": "MOUNT",
+              "to_subject": "RIDER"
+            }
+          ],
+          "exact_shift_amount": null,
+          "alias_not_species_master": true
+        },
+        "equality_condition": {
+          "condition": "CHARACTER_ELEMENTS_EXACTLY_MATCH_MOUNT_ELEMENTS",
+          "stated_result": "KEEP_INJURY_EQUALLY_DISTRIBUTED",
+          "attribute_point_vector": null
+        },
+        "wine_plan": {
+          "quest_label": "訐譙龍",
+          "planned_new_wines": 2,
+          "purpose": "ASSIST_CHARACTER_ATTRIBUTE_POINT_ADJUSTMENT",
+          "names": null,
+          "point_amounts": null,
+          "quest_steps": null,
+          "deployment_verified": false
+        }
+      },
+      "direct_image_refs": [
+        "http://www.wayi.com.tw/images02/sa0405-1s.jpg",
+        "http://www.wayi.com.tw/images02/sa0405-1.jpg"
+      ],
+      "template_title": "石器時代--精靈的召喚",
+      "template_title_is_article_title": false
+    }
+  ],
+  "image_dimensions": [
+    [
+      300,
+      225
+    ],
+    [
+      640,
+      480
+    ]
+  ],
+  "manual_image_observation": {
+    "scene": "ROCKY_CAVE_EDGE_WITH_BLUE_WATER_RED_ORANGE_LONG_NECK_MOUNT_RIDER_AND_SMALL_STANDING_FIGURE",
+    "full_image_dimensions": [
+      640,
+      480
+    ],
+    "thumbnail_dimensions": [
+      300,
+      225
+    ],
+    "shared_composition": "VISUALLY_SIMILAR_NOT_PROVEN_SAME_CAPTURE_OR_RESAMPLE_PIPELINE",
+    "capture_relation": "FULL_IMAGE_CAPTURE_APRIL_2004_THUMBNAIL_CAPTURE_APRIL_2015",
+    "visible_chat_speaker_label": "酷哥",
+    "chat_is_quest_dialogue": false,
+    "npc_identity": null,
+    "mount_species_id": null,
+    "wine_menu_or_effect_visible": false,
+    "mage_attack_or_damage_distribution_visible": false
+  },
+  "records": [
+    {
+      "record_id": "TW2004-MAGE-01",
+      "entity_type": "CONTEXT",
+      "collection": "tutorials",
+      "version_profile": "TW_WAYI_INDEX_APRIL_2004_CAPTURE_DECEMBER_2004_UNNUMBERED",
+      "source_refs": [
+        "P0",
+        "P1"
+      ],
+      "verification_status": "OPERATOR_DOCUMENT_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "source_reported": {
+        "status": "OPERATOR_REPORTED_BUG_AND_PROPOSED_REPAIR",
+        "speaker_as_written": "酷哥",
+        "target": "MAGE_ATTACK_SKILL_AGAINST_MOUNTED_ENEMY",
+        "distribution_subjects": [
+          "RIDER",
+          "MOUNT"
+        ]
+      }
+    },
+    {
+      "record_id": "TW2004-MAGE-02",
+      "entity_type": "DIAGNOSIS",
+      "collection": "tutorials",
+      "version_profile": "TW_WAYI_INDEX_APRIL_2004_CAPTURE_DECEMBER_2004_UNNUMBERED",
+      "source_refs": [
+        "P0",
+        "P1"
+      ],
+      "verification_status": "OPERATOR_DOCUMENT_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "source_reported": {
+        "character_elements": [
+          "地",
+          "水",
+          "火",
+          "風"
+        ],
+        "mage_attack_elements": [
+          "火",
+          "冰",
+          "雷"
+        ],
+        "operator_explanation": "MISMATCHED_ELEMENT_SETS_IN_DAMAGE_DISTRIBUTION",
+        "reported_symptoms": [
+          "EARTH_CHARACTER_MORE_EASILY_HURT",
+          "RIDER_OF_金飛_LESS_EASILY_HURT",
+          "UNCERTAIN_RANDOM_INJURY"
+        ],
+        "original_bug_code_or_probability": null
+      }
+    },
+    {
+      "record_id": "TW2004-MAGE-03",
+      "entity_type": "PROPOSED_ELEMENT_MODEL",
+      "collection": "tutorials",
+      "version_profile": "TW_WAYI_INDEX_APRIL_2004_CAPTURE_DECEMBER_2004_UNNUMBERED",
+      "source_refs": [
+        "P0",
+        "P1"
+      ],
+      "verification_status": "OPERATOR_DOCUMENT_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "source_reported": {
+        "physical": [
+          "地",
+          "水",
+          "火",
+          "風"
+        ],
+        "dark_spirit_energy": [
+          "火",
+          "冰",
+          "雷"
+        ],
+        "fire_labels_share_spelling_not_identity": true,
+        "physical_interaction": "MUTUAL_ELEMENT_RELATIONS",
+        "magic_relative_to_physical": "ATTRIBUTE_NEUTRAL",
+        "default_distribution": "IN_PRINCIPLE_EQUAL_RIDER_AND_MOUNT"
+      }
+    },
+    {
+      "record_id": "TW2004-MAGE-04",
+      "entity_type": "BATTLEFIELD",
+      "collection": "tutorials",
+      "version_profile": "TW_WAYI_INDEX_APRIL_2004_CAPTURE_DECEMBER_2004_UNNUMBERED",
+      "source_refs": [
+        "P0",
+        "P1"
+      ],
+      "verification_status": "OPERATOR_DOCUMENT_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "source_reported": {
+        "replacement_label": "戰場屬性優勢",
+        "example_spirit": "火的精靈",
+        "example_effect": "STRENGTHEN_FIRE_BATTLEFIELD_ADVANTAGE",
+        "purpose": "REDISTRIBUTE_RIDER_AND_MOUNT_INJURY",
+        "coefficients": null
+      }
+    },
+    {
+      "record_id": "TW2004-MAGE-05",
+      "entity_type": "DIRECTIONAL_EXAMPLES",
+      "collection": "tutorials",
+      "version_profile": "TW_WAYI_INDEX_APRIL_2004_CAPTURE_DECEMBER_2004_UNNUMBERED",
+      "source_refs": [
+        "P0",
+        "P1"
+      ],
+      "verification_status": "OPERATOR_DOCUMENT_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "source_reported": {
+        "setup": "EARTH_CHARACTER_RIDING_金飛",
+        "examples": [
+          {
+            "spirit": "地的精靈",
+            "from_subject": "RIDER",
+            "to_subject": "MOUNT"
+          },
+          {
+            "spirit": "風的精靈",
+            "from_subject": "MOUNT",
+            "to_subject": "RIDER"
+          }
+        ],
+        "exact_shift_amount": null,
+        "alias_not_species_master": true
+      }
+    },
+    {
+      "record_id": "TW2004-MAGE-06",
+      "entity_type": "EQUALITY_CONDITION",
+      "collection": "tutorials",
+      "version_profile": "TW_WAYI_INDEX_APRIL_2004_CAPTURE_DECEMBER_2004_UNNUMBERED",
+      "source_refs": [
+        "P0",
+        "P1"
+      ],
+      "verification_status": "OPERATOR_DOCUMENT_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "source_reported": {
+        "condition": "CHARACTER_ELEMENTS_EXACTLY_MATCH_MOUNT_ELEMENTS",
+        "stated_result": "KEEP_INJURY_EQUALLY_DISTRIBUTED",
+        "attribute_point_vector": null
+      }
+    },
+    {
+      "record_id": "TW2004-MAGE-07",
+      "entity_type": "WINE_PLAN",
+      "collection": "tutorials",
+      "version_profile": "TW_WAYI_INDEX_APRIL_2004_CAPTURE_DECEMBER_2004_UNNUMBERED",
+      "source_refs": [
+        "P0",
+        "P1"
+      ],
+      "verification_status": "OPERATOR_DOCUMENT_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "source_reported": {
+        "quest_label": "訐譙龍",
+        "planned_new_wines": 2,
+        "purpose": "ASSIST_CHARACTER_ATTRIBUTE_POINT_ADJUSTMENT",
+        "names": null,
+        "point_amounts": null,
+        "quest_steps": null,
+        "deployment_verified": false
+      }
+    },
+    {
+      "record_id": "TW2004-MAGE-08",
+      "entity_type": "QUEST_RELATED_IMAGE_CONTEXT",
+      "collection": "screens",
+      "version_profile": "TW_WAYI_LINKED_IMAGE_CAPTURE_2004_THUMBNAIL_2015_SEPARATE",
+      "source_refs": [
+        "P1",
+        "I1",
+        "I2"
+      ],
+      "verification_status": "MANUAL_VISUAL_OBSERVATION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "source_reported": {
+        "scene": "ROCKY_CAVE_EDGE_WITH_BLUE_WATER_RED_ORANGE_LONG_NECK_MOUNT_RIDER_AND_SMALL_STANDING_FIGURE",
+        "full_image_dimensions": [
+          640,
+          480
+        ],
+        "thumbnail_dimensions": [
+          300,
+          225
+        ],
+        "shared_composition": "VISUALLY_SIMILAR_NOT_PROVEN_SAME_CAPTURE_OR_RESAMPLE_PIPELINE",
+        "capture_relation": "FULL_IMAGE_CAPTURE_APRIL_2004_THUMBNAIL_CAPTURE_APRIL_2015",
+        "visible_chat_speaker_label": "酷哥",
+        "chat_is_quest_dialogue": false,
+        "npc_identity": null,
+        "mount_species_id": null,
+        "wine_menu_or_effect_visible": false,
+        "mage_attack_or_damage_distribution_visible": false
+      }
+    }
+  ],
+  "boundaries": {
+    "original_server_execution_verified": false,
+    "exact_client_build": null,
+    "version_number": null,
+    "page_template_title_is_article_title": false,
+    "index_date_is_deployment": false,
+    "proposal_is_deployed_patch": false,
+    "bug_randomness_is_verified_probability_distribution": false,
+    "gold_flying_alias_is_original_species_id": false,
+    "physical_fire_equals_magic_fire": false,
+    "mage_damage_is_unconditionally_half_to_each": false,
+    "exact_damage_formula": null,
+    "battlefield_advantage_coefficients": null,
+    "spirit_cost_duration_or_stack_rules": null,
+    "attribute_equality_is_stat_or_species_equality": false,
+    "wines_have_verified_names": false,
+    "wine_attribute_directions_or_amounts": null,
+    "wine_price_or_acquisition_steps": null,
+    "quest_script_dialogue_or_reward_flags_verified": false,
+    "npc_name_or_coordinates": null,
+    "image_is_native_resolution_or_same_build": false,
+    "image_visual_is_independent_ocr": false,
+    "thumbnail_2015_bytes_are_contemporary_2004": false,
+    "pictured_mount_is_identified_as_金飛": false,
+    "pictured_character_is_identified_quest_npc": false,
+    "pictured_chat_is_quest_dialogue": false,
+    "tw10_or_jss1999_backfill": false,
+    "raw_sources_committed": false,
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b_and_wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING"
+  },
+  "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-37",
+  "acquisition": {
+    "index_known_source_reacquired_not_discovered": true,
+    "body": {
+      "requested": "https://web.archive.org/web/20050612011406id_/http://www.wayi.com.tw/stoneage/producer/producer02.asp?idno=69",
+      "url": "https://web.archive.org/web/20041206160744id_/http://www.wayi.com.tw/stoneage/producer/producer02.asp?idno=69",
+      "bytes": 18301,
+      "sha256": "6b3b57b574fa1c200c44aa2ea93dfffb9ce229b4e7268679a7ff0319f091300f"
+    },
+    "images": [
+      {
+        "requested_url": "https://web.archive.org/web/20041206160744id_/http://www.wayi.com.tw/images02/sa0405-1s.jpg",
+        "final_url": "https://web.archive.org/web/20150408182032id_/http://www.wayi.com.tw/images02/sa0405-1s.jpg",
+        "status": 200,
+        "bytes": 36917,
+        "sha256": "74028b94ae5c9ced3cb537f1d44791bfd55d359dcc6dc90d40e6c21c3ade5cdb"
+      },
+      {
+        "requested_url": "https://web.archive.org/web/20041206160744id_/http://www.wayi.com.tw/images02/sa0405-1.jpg",
+        "final_url": "https://web.archive.org/web/20040408015726id_/http://www.wayi.com.tw/images02/sa0405-1.jpg",
+        "status": 200,
+        "bytes": 60745,
+        "sha256": "7afb898b2c5f202b6c810f474c64376f3decbcf3814929f19716647aac1ba463"
+      }
+    ],
+    "original_bytes_outside_git": true
+  }
+}

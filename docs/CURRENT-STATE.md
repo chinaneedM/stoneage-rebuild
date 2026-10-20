@@ -16367,3 +16367,14 @@ I1提供确定/取消召唤通知，未取声效或原协议绑定；I2任务目
 实际main运行：39416027187 Independently verify TW1.0 R58 rooted helper returns and source custody SUCCESS；39416026878 Validate StoneAge preproduction content archive and wiki boundary SUCCESS；39416027094 Validate StoneAge Stage A joint review decision SUCCESS；39416027137 Validate legacy StoneAge assistant history and pet content gaps SUCCESS；39416027275 Validate Stage A early source gap triage SUCCESS；39416026816 Validate StoneAge 8.0 PET contemporary evidence boundaries SUCCESS；39416027366 Verify TW7.5 manor challenge plan and unresolved threshold conflict SUCCESS；39416027415 Verify 2001 bitmap category claims vs original TW1.0 image indexes SUCCESS；39416027228 Validate StoneAge late client region/version provenance and non-executing archive probe SUCCESS；39416027285 Validate Stage A evidence-limited review acceptance SUCCESS；39416027034 Validate direct TW1.0 sprite-to-ADRN source joins SUCCESS。
 
 新读开放PR0，旧queued37642417333/73c45041b9ef2519ba4575471e9d374dff169fd4保持。最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-36回全官方22域另一具名材料；Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79 PAUSED_NON_BLOCKING。此文档验收提交自身适用Actions另按实际，不套父绿灯。
+
+
+## 2026-10-20 R36台湾2004法师属性修正、相反转伤方向与两瓶新酒计划
+
+本轮新读main66fd324838517fcd496ae5bf3a7aff1f66d5ae4b/treecabf95e4664aad56116c874ce7357f153dd160e6，418分支/0PR/4825项完整tree无AGENTS、自身main8/候选7全SUCCESS；八连续性/路线/22域全文固定SHA/blob，旧queued37642417333保留。最高NEXT36全域重排，选择职业魔法/骑乘伤害/属性调整任务，停止庄园helper。P0同叶行网页键69/解開法師變強之謎？！/2004-4-5；正文请求目录时刻跳20041206160744/18301B/SHA256 6b3b57b574fa1c200c44aa2ea93dfffb9ce229b4e7268679a7ff0319f091300f，严格Big5。正文未编号，不强贴7.5；模板精灵召唤题名不当文章标题，日期不当修正部署。
+
+8派生记录/中文规格：运营方报告法师攻骑乘目标时，人物地水火风与法术火冰雷错配，引发地人较伤/骑金飞较少伤及不定随机现象；不是原代码/概率。拟分物理元素与闇灵能量，两火同字异义；法术相对物理无属性，原则上人宠平分，另以战场属性优势分配。地人骑金飞例施地的精灵把人物伤害移宠，施风的精灵反向；同属性可保持平分，不补无条件半伤/比例/取整/消耗/持续。拟在訐譙龍任务加入两瓶调人物属性点新酒，未名/方向数值/价格步骤/上线均未知；金飞不绑定物种原ID。
+
+缩略图实际跳20150408182032/36917B/SHA74028b94ae5c9ced3cb537f1d44791bfd55d359dcc6dc90d40e6c21c3ade5cdb/300×225；唯一链接大图跳20040408015726/60745B/SHA7afb898b2c5f202b6c810f474c64376f3decbcf3814929f19716647aac1ba463/640×480。目视洞穴蓝水、橘红长颈骑宠/骑手及旁立人物，酷哥聊天标签；不认证同次图/原生分辨率、任务NPC、金飞外观、酒菜单或修正运行。2015缩图非2004字节。两HTML两JPEG实重放、11真实Big5正文改写在绕过全页字节门后语义拒绝；原件不进Git，CI/ZIP保管另按实际。
+
+来源规格止点已达，不扩訐譙龍全任务/全魔法/酒表；原脚本/同版补丁/具名酒表或运行才重开。最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-37回全官方版本22域另一具名材料。Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79 PAUSED_NON_BLOCKING；全历史与22域前缀保持。

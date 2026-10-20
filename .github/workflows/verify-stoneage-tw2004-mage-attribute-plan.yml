@@ -1,0 +1,40 @@
+name: Verify TW2004 mage attribute repair proposal and image capture scopes
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-TW2004-MAGE-ATTRIBUTE-PLAN-*.json'
+      - 'tools/stoneage_tw2004_mage_attribute_plan.py'
+      - 'tests/test_stoneage_tw2004_mage_attribute_plan.py'
+      - 'tools/stoneage_early_content_probe.py'
+      - 'tools/stoneage_wayi_newbie_riding_plan.py'
+      - 'tools/stoneage_jp2008_cooperation_source.py'
+      - 'tools/stoneage_jp2008_shadow_release.py'
+      - '.github/workflows/verify-stoneage-tw2004-mage-attribute-plan.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-TW2004-MAGE-ATTRIBUTE-PLAN-*.json'
+      - 'tools/stoneage_tw2004_mage_attribute_plan.py'
+      - 'tests/test_stoneage_tw2004_mage_attribute_plan.py'
+      - 'tools/stoneage_early_content_probe.py'
+      - 'tools/stoneage_wayi_newbie_riding_plan.py'
+      - 'tools/stoneage_jp2008_cooperation_source.py'
+      - 'tools/stoneage_jp2008_shadow_release.py'
+      - '.github/workflows/verify-stoneage-tw2004-mage-attribute-plan.yml'
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check element distinctions, redistribution directions, planned wines and capture dates
+        run: python -m unittest discover -s tests -p 'test_stoneage_tw2004_mage_attribute_plan.py' -v
+      - name: Replay historical index, actual mage body, thumbnail and linked JPEG
+        run: python -m tools.stoneage_tw2004_mage_attribute_plan --fetch --output /tmp/tw2004-mage/replay.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: tw2004-mage-attribute-plan-derived-replay
+          path: /tmp/tw2004-mage/replay.json
+          if-no-files-found: error
+          retention-days: 30

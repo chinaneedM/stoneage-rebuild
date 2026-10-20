@@ -1,0 +1,84 @@
+{
+  "schema": "stoneage.tw2004_mage_attribute_plan.negative_audit.r1",
+  "actual_body_mutations": true,
+  "byte_pin_bypassed_to_test_semantic_extractor": true,
+  "cases": [
+    {
+      "original_term": "地、水、火、風",
+      "mutated_term": "地、水、火、冰",
+      "original_sha256": "6b3b57b574fa1c200c44aa2ea93dfffb9ce229b4e7268679a7ff0319f091300f",
+      "mutated_sha256": "b7e8178fba61690b09d382ceb7af2c99359f2ed703c6fc85f07f16e24ef05faf",
+      "semantic_extract_rejected": true
+    },
+    {
+      "original_term": "火、冰、雷",
+      "mutated_term": "火、水、雷",
+      "original_sha256": "6b3b57b574fa1c200c44aa2ea93dfffb9ce229b4e7268679a7ff0319f091300f",
+      "mutated_sha256": "797c4dcbad62420a9e6458d52fb9d8c25fa45051d404fa1b97f75d6a04aa7072",
+      "semantic_extract_rejected": true
+    },
+    {
+      "original_term": "不確定的亂數",
+      "mutated_term": "確定的常數",
+      "original_sha256": "6b3b57b574fa1c200c44aa2ea93dfffb9ce229b4e7268679a7ff0319f091300f",
+      "mutated_sha256": "fe5fbf34db8e7a8c2be753b11809d89d62555be6fcb55703fb2a4057d9bb51d5",
+      "semantic_extract_rejected": true
+    },
+    {
+      "original_term": "原則上人與寵應該是平分傷害力",
+      "mutated_term": "人與寵永遠平分傷害力",
+      "original_sha256": "6b3b57b574fa1c200c44aa2ea93dfffb9ce229b4e7268679a7ff0319f091300f",
+      "mutated_sha256": "92659b28de4d09836633b8bce2173384d241686bb76172baeaa20e1c2c6eb628",
+      "semantic_extract_rejected": true
+    },
+    {
+      "original_term": "戰場屬性優勢",
+      "mutated_term": "人物屬性優勢",
+      "original_sha256": "6b3b57b574fa1c200c44aa2ea93dfffb9ce229b4e7268679a7ff0319f091300f",
+      "mutated_sha256": "9bcc557c3e153ca5532fe0371f380567f8800c5ac1b299f1aeee20c8fe683272",
+      "semantic_extract_rejected": true
+    },
+    {
+      "original_term": "就施展「地的精靈」",
+      "mutated_term": "就施展「風的精靈」",
+      "original_sha256": "6b3b57b574fa1c200c44aa2ea93dfffb9ce229b4e7268679a7ff0319f091300f",
+      "mutated_sha256": "3bb9b7d71d058fcbf3ef9d06082f55f3945d87d0c707740b9f7c89c11a72181c",
+      "semantic_extract_rejected": true
+    },
+    {
+      "original_term": "就施展「風的精靈」",
+      "mutated_term": "就施展「地的精靈」",
+      "original_sha256": "6b3b57b574fa1c200c44aa2ea93dfffb9ce229b4e7268679a7ff0319f091300f",
+      "mutated_sha256": "36886442a8ba78ddac245f2736f4bb3d10f4112794fbdb0e3a818fd004954ac0",
+      "semantic_extract_rejected": true
+    },
+    {
+      "original_term": "調成跟寵物一模一樣",
+      "mutated_term": "調成跟寵物完全相反",
+      "original_sha256": "6b3b57b574fa1c200c44aa2ea93dfffb9ce229b4e7268679a7ff0319f091300f",
+      "mutated_sha256": "417fc0ccf29475b764a013ab937fcac8d9608131b11bf8e02473057be46557ac",
+      "semantic_extract_rejected": true
+    },
+    {
+      "original_term": "酷哥打算",
+      "mutated_term": "酷哥已經",
+      "original_sha256": "6b3b57b574fa1c200c44aa2ea93dfffb9ce229b4e7268679a7ff0319f091300f",
+      "mutated_sha256": "9bf106a1f51ea1a003a39b9df40b8ef98299398d2115a0234c57d4bd5e726437",
+      "semantic_extract_rejected": true
+    },
+    {
+      "original_term": "兩瓶新酒",
+      "mutated_term": "三瓶新酒",
+      "original_sha256": "6b3b57b574fa1c200c44aa2ea93dfffb9ce229b4e7268679a7ff0319f091300f",
+      "mutated_sha256": "88646c8f7141b7bfca9a50eb4dde39ef59c4d60ad31b53caa5e6375b8bab0043",
+      "semantic_extract_rejected": true
+    },
+    {
+      "original_term": "訐譙龍任務",
+      "mutated_term": "莊園任務",
+      "original_sha256": "6b3b57b574fa1c200c44aa2ea93dfffb9ce229b4e7268679a7ff0319f091300f",
+      "mutated_sha256": "ad5504c2ecd52ded5c0e06cee03f25825bd6f90689a286cefeae0dc3576c1404",
+      "semantic_extract_rejected": true
+    }
+  ]
+}
