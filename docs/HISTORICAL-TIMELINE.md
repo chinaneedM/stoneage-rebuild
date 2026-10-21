@@ -3999,3 +3999,12 @@ GaiaX引文描述巨獣の島、閉ざされた氷窟、バルツ山の洞窟的
 实际正文一图当前19585B/300×225、SHA ad1f011da8a7c83187e856064e376d011b88114ddf1590136722afa9ecd03c40，原http/requested HTTPS分开，完整Pillow解码/目视；不标庄园家族/宠物ID、拍摄日期、原生分辨率或事件证明。正文外编辑相关链接实际指回R43预告，固定旧契约全文字节/原生Git blob；仅新文补玛丽娜丝/卡鲁它那和占领快照，旧文remaining_manor_names=null保持。09:00维护与“中午”事后报告不合成精确开服，WGS执行/九变四补丁/跨版本规则不证明。
 
 8派生记录、中文规格 docs/specs/STONEAGE-CN2003-GROUP2-MANOR-REPORT-SOURCE-R1.md、真实取源工具/18实际源改写绕过digest门拒绝/外层script正例；独立正则HTML实体重建正文与顺序列表一致。初轮10本包/109相关测试零跳过。原HTML/版权JPEG不入Git；候选/main自身Actions和ZIP永久保管另据实追加。有限包止点一页一图一旧契约，不扩庄园/声望helper；重开需具名规则/原ID/实际过程或有日期原档。最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-48回全22域另一具名材料，Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停，全部历史前缀保留。
+
+
+## 2026-10-21 R47双取源原字节保管与主线独立验收
+
+内容119ba1d8ae75384f6af2fb7ff0fb5ce21fc00e44/treed67e445ca011be4e221aeea3053caa78565458e9候选10项/main11项自身适用Actions全SUCCESS。候选run39550739816/job119059107914/artifact12323665629，主线run39550814576/job119059348025/artifact12323641358各实跑10本包用例零跳过，重新取得33636B页面/19585B实际JPEG、18真实源变更拒绝/外围正例。远端内容干净检出109相关检查，独立正则/实体正文核心及有序名单/数字一致，当前图完整Pillow解码/目视；CI只验证图原字节与SOF尺寸。
+
+实际下载双ZIP各3169B，SHA256候选3fc0a10eea71efcb053af2ba8bd25abdc410c3168d463dd6da7d1cec19ae0b03 / main559545f9b4e4ccf80e5fcea4e060548514724cb593c0995eca1f330457d30a62；各唯一replay.json7654B/SHA256d7eeebad05aa8281e6b557a43532f3c667c87e061a4ad137dbc0c14b56dfc249、原生Git blobd742b10ac5fcf1e6ab35e862ca9aef17c739efd6，候选/main/本地逐字节一致。双raw、十来源/工具/工作流/规格/旧契约/依赖pins、九完整启动历史前缀与21实际workflow永久存research/recovered/STONEAGE-CN2003-GROUP2-MANOR-REPORT-CUSTODY-R1.json；原HTML/版权图不入Git。新增强制收据门后本包11项/110相关检查通过，首轮10项不改写为11项；本保管提交自身Actions须后验，不套父提交成功。
+
+R47有限报告包结束，原文“中午”/精确时分、四家族人数歧义/逐家族数、声望快照/规则门槛、未来赛事/已执行、运营方报告/独立统计、R43预告/本次后文与版权图/生产资产分开。最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-48回全22域另一具名材料；Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停，历史完整。

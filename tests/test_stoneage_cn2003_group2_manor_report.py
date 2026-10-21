@@ -84,5 +84,43 @@ class Group2ManorReport(unittest.TestCase):
         self.reject(['next'], 'EXPAND_MANOR_HELPERS')
 
 
+    def test_required_durable_custody_and_full_prefixes(self):
+        p = ROOT / ('research/recovered/' + STEM + '-CUSTODY-R1.json')
+        self.assertTrue(p.is_file(), 'Accepted material requires permanent custody')
+        r = json.loads(p.read_text())
+        self.assertEqual(r['schema'], 'stoneage.cn2003_group2_manor_report.custody.r1')
+        for pin in r['source_pins']:
+            b = (ROOT / pin['path']).read_bytes()
+            self.assertEqual(len(b), pin['bytes'])
+            self.assertEqual(hashlib.sha256(b).hexdigest(), pin['sha256'])
+            self.assertEqual(hashlib.sha1(b'blob ' + str(len(b)).encode() + b'\0' + b).hexdigest(), pin['git_blob'])
+        self.assertEqual(len(r['source_pins']), 10)
+        self.assertEqual(len(r['startup_prefixes']), 9)
+        for pin in r['startup_prefixes']:
+            b = (ROOT / pin['path']).read_bytes()[:pin['bytes']]
+            self.assertEqual(hashlib.sha256(b).hexdigest(), pin['sha256'])
+            self.assertEqual(hashlib.sha1(b'blob ' + str(len(b)).encode() + b'\0' + b).hexdigest(), pin['git_blob'])
+        self.assertEqual(len(r['workflow_runs']), 21)
+        self.assertTrue(all(x['conclusion'] == 'success' for x in r['workflow_runs']))
+        copies = []
+        for label in ('candidate', 'main'):
+            meta = r[label]
+            self.assertEqual(meta['actual_unit_tests'], 10)
+            self.assertEqual(meta['skipped_tests'], 0)
+            self.assertEqual(meta['head'], r['content_head'])
+            self.assertEqual(meta['tree'], r['content_tree'])
+            self.assertTrue(meta['all_applicable_workflows_success'])
+            b = (ROOT / meta['derived_git_path']).read_bytes()
+            self.assertEqual(len(b), meta['raw_bytes'])
+            self.assertEqual(hashlib.sha256(b).hexdigest(), meta['raw_sha256'])
+            self.assertEqual(hashlib.sha1(b'blob ' + str(len(b)).encode() + b'\0' + b).hexdigest(), meta['raw_git_blob'])
+            copies.append(b)
+        for key in ('run_id', 'job_id', 'artifact_id'):
+            self.assertNotEqual(r['candidate'][key], r['main'][key])
+        self.assertEqual(copies[0], copies[1])
+        self.assertEqual(copies[0], (ROOT / ('research/recovered/' + STEM + '-LOCAL-REPLAY-R1.json')).read_bytes())
+        self.assertTrue(all(x is False for x in r['bounds'].values()))
+
+
 if __name__ == '__main__':
     unittest.main()

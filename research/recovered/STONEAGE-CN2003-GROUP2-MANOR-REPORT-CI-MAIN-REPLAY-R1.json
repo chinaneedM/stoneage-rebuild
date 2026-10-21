@@ -1,0 +1,201 @@
+{
+  "schema": "stoneage.cn2003_group2_manor_report.derived_replay.r1",
+  "http_bytes": 33636,
+  "http_sha256": "257e6535719a8526ce893345349b0a0c467db67f6bc29c01a118c4281f5f4228",
+  "extracted": {
+    "core_sha256": "d16ab4ca25e051f0c88916df49003cfc46d66c819864be53ae4ec2d457ca8aac",
+    "server_group_label": "石器时代2.0(2)",
+    "label_is_authenticated_client_build": false,
+    "opening_report": {
+      "month_day_as_written": "11月19日",
+      "period_as_written": "中午",
+      "exact_time": null,
+      "body_year": null,
+      "timezone": null,
+      "authority": "OPERATOR_RETROSPECTIVE_REPORT_NOT_EXECUTION_TRACE"
+    },
+    "manor_snapshot": [
+      {
+        "village_label": "萨姆吉尔",
+        "occupying_family_label": "圣战部落光",
+        "reputation_reported": 4524
+      },
+      {
+        "village_label": "玛丽娜丝",
+        "occupying_family_label": "永远友情",
+        "reputation_reported": 2280
+      },
+      {
+        "village_label": "加加",
+        "occupying_family_label": "龙族",
+        "reputation_reported": 4079
+      },
+      {
+        "village_label": "卡鲁它那",
+        "occupying_family_label": "友情岁月",
+        "reputation_reported": 2811
+      }
+    ],
+    "population_report": {
+      "average_concurrent_threshold_as_written": 2000,
+      "concurrent_qualifier": "人以上",
+      "window_hours_as_written": 24,
+      "exact_window_start_end": null,
+      "families_established_strictly_more_than": 200,
+      "four_family_headcount_threshold_as_written": 90,
+      "headcount_qualifier": "超过",
+      "headcount_scope": "UNRESOLVED_PER_FAMILY_VS_AGGREGATE",
+      "per_family_counts": null,
+      "audited_statistics": false
+    },
+    "family_riding": {
+      "source_role": "EXCLUSIVE_RIDING_AS_STATUS_SYMBOL",
+      "mount_names_ids_or_eligibility_rules": null
+    },
+    "events": {
+      "labels": [
+        "庄园挑战赛",
+        "家族PK赛"
+      ],
+      "status_in_notice": "FUTURE_TENSE_NOT_COMPLETED_TOURNAMENT",
+      "schedule_rules_or_results": null
+    },
+    "operations_report": {
+      "busy_month_day_as_written": "11月20日",
+      "busy_period": "早晨",
+      "operator_claim": "TEMPORARY_ADJUSTMENT_RESTORED_NORMAL_OPERATION",
+      "independent_uptime_or_compensation": null
+    },
+    "activity_image_link_as_written": "http://image2.sina.com.cn/gm/newgames/2003/11/3_115-9-167-655_20031120164335.jpg",
+    "editorial_related_prior_notice_link": "http://games.sina.com.cn/newgames/2003/11/11188486.shtml",
+    "opening_occupancy_or_statistics_independently_witnessed": false,
+    "reputations_are_eligibility_thresholds": false,
+    "current_manor_owners_in_2026_proven": false
+  },
+  "comparison": {
+    "prior_announced_maintenance_start": "09:00",
+    "prior_opening_relation": "AFTER_MAINTENANCE_NOT_PROVEN_EXACT_09_OPEN",
+    "later_reported_opening_period": "中午",
+    "newly_named_villages_in_later_source": [
+      "玛丽娜丝",
+      "卡鲁它那"
+    ],
+    "relation": "PREANNOUNCEMENT_TO_LATER_OPERATOR_REPORT_SAME_LITERAL_GROUP_LABEL",
+    "prior_article_itself_now_contains_all_names": false,
+    "proves_exact_noon_clock_time_or_binary_build": false,
+    "manor_reputations_prove_entry_requirements": false,
+    "nine_to_four_manor_patch_or_rules_transfer_proven": false,
+    "prior_billing_execution_now_verified": false
+  },
+  "image": {
+    "url_as_written": "http://image2.sina.com.cn/gm/newgames/2003/11/3_115-9-167-655_20031120164335.jpg",
+    "requested_url": "https://image2.sina.com.cn/gm/newgames/2003/11/3_115-9-167-655_20031120164335.jpg",
+    "bytes": 19585,
+    "sha256": "ad1f011da8a7c83187e856064e376d011b88114ddf1590136722afa9ecd03c40",
+    "width": 300,
+    "height": 225
+  },
+  "visual_observation": {
+    "visible": "草地、崖壁、树木、指示牌，聚集的角色/宠物形状及工具栏；远处有天际与海岸/云状背景。",
+    "map_manor_family_mount_identification": null,
+    "proves_opening_occupancy_or_family_battle": false,
+    "current_image_not_authenticated_2003_capture": true
+  },
+  "audit": {
+    "real_source_mutations": [
+      {
+        "case": "noon-period",
+        "input_sha256": "cd0d7062e53f4f2bfe774c88af0928222fa512c36cae2307571a0b31a7c0708c",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "server-group",
+        "input_sha256": "4086586fe962f51d3afcb884f098ad00fad277e42d07b0b1501d02bcd3ff0bab",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "online-threshold",
+        "input_sha256": "50aa99b4675c5f96a0d08702c5a72323d4f41f4ddcc8b79f4c47054f5097d06c",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "online-qualifier",
+        "input_sha256": "cfd5a5d2d5e25305a8b2ad92961874ab4b43c5bfa09244cae83e2b8a53d797fc",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "reported-window",
+        "input_sha256": "1c6d588453a59567dcf02ebf1efe10534f5150285b2178e68562c68995e7526e",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "family-count",
+        "input_sha256": "e5f427fec7f47f53363648e0bcc943bfb12ef29defdf6c6f62f333c293a222be",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "literal-village-name",
+        "input_sha256": "0fbbdefa8454aec687977423ac1a6a79fb01602e94fb6c012b3f3afa48e710ae",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "literal-fourth-village",
+        "input_sha256": "6eccde5440ae578e3dc44b628e0285bd2136d6f061127420f505759d1445498c",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "family-name",
+        "input_sha256": "af1f8ae28eefebd4f77ef365e5d23c7596f2411fd31eaa6172f7e5439d28b5c3",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "ordered-occupants",
+        "input_sha256": "441d4237ff82b26fa132e6dfe40d0905fe7d5d93db45032bbb57c2d07c2becb8",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "reputation",
+        "input_sha256": "a3112a3373c4e94209b7683a092cb2a74290a9d384b91bc383b2f7728b41e607",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "headcount-scope",
+        "input_sha256": "bd1f7cf7cb84116d69ba531dc88ed356ebc682c8811d7be48c3f3b8e1ca0cf5f",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "busy-period",
+        "input_sha256": "c43d47e6a48e3cc12ee4bec41428995ed6a068fd82a326bcd12ca88e7c1fefc3",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "recovery-not-benchmark",
+        "input_sha256": "8747abe056746788ce1fa03a519ef57558899db267782eb08467db6c6db8d6f8",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "future-events",
+        "input_sha256": "dfa1f19398f1b1cc2c4253bfe7fde7ca73c79a1e533753634a1a600f0017b8d7",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "actual-related-link",
+        "input_sha256": "3890cec5f20cd7a0a5b66acf352e08a627199aa2ae59ad128b6d1790ee07cb94",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "actual-image-link",
+        "input_sha256": "74df72b45f5bef109f39ac1087fcea98b5396f3e201aac8918a1f397c952d6cc",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "riding-social-role",
+        "input_sha256": "6d2041bf9eed50add48a766d85e8a5010abfed62586c2cf6226beaae3e164162",
+        "rejected_without_digest_gate": true
+      }
+    ],
+    "outer_script_positive": true
+  },
+  "raw_html_or_assets_in_output": false,
+  "historical_server_executed": false
+}
