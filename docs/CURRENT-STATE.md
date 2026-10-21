@@ -16964,3 +16964,12 @@ R62同包增加既有19集合合同的可检索导出：6条quests文献关系�
 新增中文规格docs/specs/STONEAGE-EARLY-DINOSAUR-QUEST-SOURCE-R1.md、R64审查、有限工具与源重放workflow。S1/S2各两段任务＋S2哈鲁/助手吉鲁共六文献归档关系，原ID均null。鲁尼贴斯/鲁尼帖斯、阿西美加/阿西美拉护符1和18档护符说法分源，不能据此称确定改版；S2玩家15/25仅建议，宠物15以上/30另字段，S1布克布克LV1不回填S2。博士与同名治疗精灵哈鲁不合并，入口328,633与研究所11,12不混层。取走多宠/骑乘宠警示不证选槽/实际消费/事件或存档，原始NPC/物种/任务ID仍未知。原HTML/图像/程序不入Git。
 
 本地六测试和12真实输入语义反例＋script正例通过；初检标题误判（前置条件重复名称）及引号跨段误抓已修复并保留过程，未发生对应远端失败。实际候选/main重放、ZIP下载和永久派生保管须另后验，不预报绿。有限止于两任务三HTML，最高NEXT `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-65` 回22域另一材料域，优先可归属音效事件或官方地图/生态；Stage A7 PARTIAL+2 OPEN，B/wiki GATED，R79 PAUSED_NON_BLOCKING，全部旧历史原字节前缀保留。
+
+
+### 2026-10-22 R64双端真实网页重放与永久派生保管
+
+内容提交 `79daaaa74ed66cef7368334d91bc99853e1e87f1`/tree `4d710db760922054f1cca62a517fd94feb391a31` 候选10/main11项适用Actions全部completed/success，以实时main预期HEAD保护非强制快进。GitHub compare10文件=6新增/4只追加，历史删行0，远端十blob/整tree与本地一致，九启动全文前缀保留。候选源run39695579401/job119552007672/artifact12391110582，主线源run39695651564/job119552252036/artifact12390501269，分别真实运行六单元、三当前HTML重取、12语义改写拒绝和script正例；非商业游戏运行。
+
+实际下载两ZIP均1373B，SHA256 `d4edb91ca835ada0c1eb582c9e1f3f5f7e4d81bf721fe4d7103406882fb7cc8f` / `4778d399f727dd9cd678c1987f66f93ddd427f7d64a69253ed9f1b7fd7ece921`，各唯一replay.json，完整2932B/SHA256 `8787d2eb0fd28ecb12c39d5108fab7a5e341d24f128b21c6468ef87f1762af57`/原生Git blob `0a5b5108cf76f8a74d51691eed94160d805d91b8`。两CI/local完整raw逐字节相等，三源输入大小及摘要同初取，真实ZIP差异不抹平。独立一次性词法复核先漏HTML实体解码导致断言失败，补实体解码后原姓名/坐标、建议等级、前置/18档/LV1逐项一致，非来源变化。
+
+永久派生两CI原JSON及research/recovered/STONEAGE-EARLY-DINOSAUR-QUEST-CUSTODY-R1.json固定内容Git、双job/artifact/ZIP、21项Actions和六文件原生Git/SHA/长度，原HTML/图/程序不入Git。新强制保管门检查实际文件缺失及等长篡改，单元六→七；**保管提交自身候选/main CI须另行实查**，不将旧六项倒称七项运行。史料日期、两源名差/奖励差、建议等级、同名精灵非同NPC、取宠/存档未知均保留。最高NEXT65回22域优先音效事件或官方地图/生态，Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停，旧历史全文不改删。

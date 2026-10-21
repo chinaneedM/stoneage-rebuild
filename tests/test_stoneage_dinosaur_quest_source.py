@@ -1,7 +1,9 @@
 """Synthetic source-layout and evidence-attribution counterexamples."""
 import copy
 import json
+import tempfile
 import unittest
+from pathlib import Path
 from tools import stoneage_dinosaur_quest_source as m
 
 
@@ -28,6 +30,26 @@ def fixtures():
 
 
 class SourceTests(unittest.TestCase):
+    def test_permanent_evidence_physical_removal_and_equal_length_tampering(self):
+        receipt = m.check_custody()
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            paths = [p['path'] for p in receipt['permanent_pins']]
+            paths.append(f'research/recovered/{m.PREFIX}-CUSTODY-R1.json')
+            for rel in paths:
+                p = root / rel
+                p.parent.mkdir(parents=True, exist_ok=True)
+                p.write_bytes((m.ROOT / rel).read_bytes())
+            m.check_custody(root)
+            p = root / f'research/recovered/{m.PREFIX}-CI-MAIN-R1.json'
+            b = p.read_bytes()
+            p.unlink()
+            with self.assertRaises(ValueError):
+                m.check_custody(root)
+            p.write_bytes(b[:-1] + bytes([b[-1] ^ 1]))
+            with self.assertRaises(ValueError):
+                m.check_custody(root)
+
     def test_captures_actual_names_without_crossing_previous_quote(self):
         d = m.extract(fixtures())
         self.assertEqual(d['dated_2003']['npc']['name'], '测试博士')

@@ -1,0 +1,323 @@
+{
+  "schema": "stoneage.early_dinosaur_quest.custody.r1",
+  "date": "2026-10-22",
+  "content_commit": "79daaaa74ed66cef7368334d91bc99853e1e87f1",
+  "content_tree": "4d710db760922054f1cca62a517fd94feb391a31",
+  "parent_main": "099a196d44c5e34b382c31b912962ac94c158ca4",
+  "candidate_branch": "agent/cn-early-dinosaur-quest-r64-20261022",
+  "original_game_runtime_verified": false,
+  "temporary_source_assets_committed": false,
+  "inputs": [
+    {
+      "id": "I1",
+      "url": "https://games.sina.com.cn/handbook/0101/01186091.shtml",
+      "http_status_observed": 200,
+      "final_url": "https://games.sina.com.cn/handbook/0101/01186091.shtml",
+      "bytes": 37893,
+      "sha256": "1890f3f046e9d58847c1a799f2baf97298cc3dbe50d24f6d7115f7d22a5513d9",
+      "decoding": "gb18030 with explicitly counted replacement",
+      "historical_snapshot": null
+    },
+    {
+      "id": "S1",
+      "url": "https://games.sina.com.cn/handbook/0101/01186091_c2.shtml",
+      "http_status_observed": 200,
+      "final_url": "https://games.sina.com.cn/handbook/0101/01186091_c2.shtml",
+      "bytes": 36563,
+      "sha256": "91b65594bd21e2e5cb598902eecd7649fa84a1db67574515030d20dbfd4fb07c",
+      "decoding": "gb18030 with explicitly counted replacement",
+      "historical_snapshot": null
+    },
+    {
+      "id": "S2",
+      "url": "https://games.sina.com.cn/zhqu/sta/rwgl1_2.shtml",
+      "http_status_observed": 200,
+      "final_url": "https://games.sina.com.cn/zhqu/sta/rwgl1_2.shtml",
+      "bytes": 52445,
+      "sha256": "890148233a3cff9a63497369711fcb3af1471244a257e64fad1b369f020a52bf",
+      "decoding": "gb18030 with explicitly counted replacement",
+      "historical_snapshot": null
+    }
+  ],
+  "runs": [
+    {
+      "id": 39695651705,
+      "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "79daaaa74ed66cef7368334d91bc99853e1e87f1"
+    },
+    {
+      "id": 39695651402,
+      "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "79daaaa74ed66cef7368334d91bc99853e1e87f1"
+    },
+    {
+      "id": 39695651604,
+      "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "79daaaa74ed66cef7368334d91bc99853e1e87f1"
+    },
+    {
+      "id": 39695651441,
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "79daaaa74ed66cef7368334d91bc99853e1e87f1"
+    },
+    {
+      "id": 39695651439,
+      "name": "Validate Stage A early source gap triage",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "79daaaa74ed66cef7368334d91bc99853e1e87f1"
+    },
+    {
+      "id": 39695651327,
+      "name": "Validate legacy StoneAge assistant history and pet content gaps",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "79daaaa74ed66cef7368334d91bc99853e1e87f1"
+    },
+    {
+      "id": 39695651429,
+      "name": "Validate StoneAge Stage A joint review decision",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "79daaaa74ed66cef7368334d91bc99853e1e87f1"
+    },
+    {
+      "id": 39695651564,
+      "name": "Verify early dinosaur quest source attribution",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "79daaaa74ed66cef7368334d91bc99853e1e87f1"
+    },
+    {
+      "id": 39695651562,
+      "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "79daaaa74ed66cef7368334d91bc99853e1e87f1"
+    },
+    {
+      "id": 39695651729,
+      "name": "Independently verify TW1.0 R58 rooted helper returns and source custody",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "79daaaa74ed66cef7368334d91bc99853e1e87f1"
+    },
+    {
+      "id": 39695651112,
+      "name": "Validate StoneAge preproduction content archive and wiki boundary",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "79daaaa74ed66cef7368334d91bc99853e1e87f1"
+    },
+    {
+      "id": 39695579401,
+      "name": "Verify early dinosaur quest source attribution",
+      "branch": "agent/cn-early-dinosaur-quest-r64-20261022",
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "79daaaa74ed66cef7368334d91bc99853e1e87f1"
+    },
+    {
+      "id": 39695579487,
+      "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+      "branch": "agent/cn-early-dinosaur-quest-r64-20261022",
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "79daaaa74ed66cef7368334d91bc99853e1e87f1"
+    },
+    {
+      "id": 39695579322,
+      "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+      "branch": "agent/cn-early-dinosaur-quest-r64-20261022",
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "79daaaa74ed66cef7368334d91bc99853e1e87f1"
+    },
+    {
+      "id": 39695579206,
+      "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+      "branch": "agent/cn-early-dinosaur-quest-r64-20261022",
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "79daaaa74ed66cef7368334d91bc99853e1e87f1"
+    },
+    {
+      "id": 39695579155,
+      "name": "Validate legacy StoneAge assistant history and pet content gaps",
+      "branch": "agent/cn-early-dinosaur-quest-r64-20261022",
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "79daaaa74ed66cef7368334d91bc99853e1e87f1"
+    },
+    {
+      "id": 39695579176,
+      "name": "Validate Stage A early source gap triage",
+      "branch": "agent/cn-early-dinosaur-quest-r64-20261022",
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "79daaaa74ed66cef7368334d91bc99853e1e87f1"
+    },
+    {
+      "id": 39695579110,
+      "name": "Validate StoneAge Stage A joint review decision",
+      "branch": "agent/cn-early-dinosaur-quest-r64-20261022",
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "79daaaa74ed66cef7368334d91bc99853e1e87f1"
+    },
+    {
+      "id": 39695579201,
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "branch": "agent/cn-early-dinosaur-quest-r64-20261022",
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "79daaaa74ed66cef7368334d91bc99853e1e87f1"
+    },
+    {
+      "id": 39695579449,
+      "name": "Validate StoneAge preproduction content archive and wiki boundary",
+      "branch": "agent/cn-early-dinosaur-quest-r64-20261022",
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "79daaaa74ed66cef7368334d91bc99853e1e87f1"
+    },
+    {
+      "id": 39695579302,
+      "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+      "branch": "agent/cn-early-dinosaur-quest-r64-20261022",
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "79daaaa74ed66cef7368334d91bc99853e1e87f1"
+    }
+  ],
+  "source_jobs_and_artifacts": {
+    "candidate": {
+      "run": 39695579401,
+      "job": 119552007672,
+      "artifact": {
+        "id": 12391110582,
+        "node_id": "MDg6QXJ0aWZhY3QxMjM5MTExMDU4Mg==",
+        "name": "early-dinosaur-quest-derived-r64",
+        "size_in_bytes": 1373,
+        "url": "https://api.github.com/repos/chinaneedM/stoneage-rebuild/actions/artifacts/12391110582",
+        "archive_download_url": "https://api.github.com/repos/chinaneedM/stoneage-rebuild/actions/artifacts/12391110582/zip",
+        "expired": false,
+        "digest": "sha256:d4edb91ca835ada0c1eb582c9e1f3f5f7e4d81bf721fe4d7103406882fb7cc8f",
+        "created_at": "2026-10-21T23:46:49Z",
+        "updated_at": "2026-10-21T23:46:49Z",
+        "expires_at": "2026-11-20T23:46:48Z",
+        "workflow_run": {
+          "id": 39695579401,
+          "repository_id": 1374762421,
+          "head_repository_id": 1374762421,
+          "head_branch": "agent/cn-early-dinosaur-quest-r64-20261022",
+          "head_sha": "79daaaa74ed66cef7368334d91bc99853e1e87f1"
+        }
+      }
+    },
+    "main": {
+      "run": 39695651564,
+      "job": 119552252036,
+      "artifact": {
+        "id": 12390501269,
+        "node_id": "MDg6QXJ0aWZhY3QxMjM5MDUwMTI2OQ==",
+        "name": "early-dinosaur-quest-derived-r64",
+        "size_in_bytes": 1373,
+        "url": "https://api.github.com/repos/chinaneedM/stoneage-rebuild/actions/artifacts/12390501269",
+        "archive_download_url": "https://api.github.com/repos/chinaneedM/stoneage-rebuild/actions/artifacts/12390501269/zip",
+        "expired": false,
+        "digest": "sha256:4778d399f727dd9cd678c1987f66f93ddd427f7d64a69253ed9f1b7fd7ece921",
+        "created_at": "2026-10-21T23:47:27Z",
+        "updated_at": "2026-10-21T23:47:27Z",
+        "expires_at": "2026-11-20T23:47:26Z",
+        "workflow_run": {
+          "id": 39695651564,
+          "repository_id": 1374762421,
+          "head_repository_id": 1374762421,
+          "head_branch": "main",
+          "head_sha": "79daaaa74ed66cef7368334d91bc99853e1e87f1"
+        }
+      }
+    }
+  },
+  "permanent_pins": [
+    {
+      "path": "research/recovered/STONEAGE-EARLY-DINOSAUR-QUEST-SOURCE-R1.json",
+      "bytes": 14801,
+      "sha256": "2cdfab3e5781543eebed931e103138df16b9a6ab088e2507974549746ff7b56b",
+      "git_blob": "fc696ca71feb9d1bbbb0ab4c2f0c76e8496cb3e7"
+    },
+    {
+      "path": "research/recovered/STONEAGE-EARLY-DINOSAUR-QUEST-CI-CANDIDATE-R1.json",
+      "bytes": 2932,
+      "sha256": "8787d2eb0fd28ecb12c39d5108fab7a5e341d24f128b21c6468ef87f1762af57",
+      "git_blob": "0a5b5108cf76f8a74d51691eed94160d805d91b8"
+    },
+    {
+      "path": "research/recovered/STONEAGE-EARLY-DINOSAUR-QUEST-CI-MAIN-R1.json",
+      "bytes": 2932,
+      "sha256": "8787d2eb0fd28ecb12c39d5108fab7a5e341d24f128b21c6468ef87f1762af57",
+      "git_blob": "0a5b5108cf76f8a74d51691eed94160d805d91b8"
+    },
+    {
+      "path": "research/recovered/STONEAGE-EARLY-CONTENT-GUIDE-MANUAL-R1.json",
+      "bytes": 6911,
+      "sha256": "02c854ace5ff8364fc141dc4ee58e6c518b91af126b89b8c0ee2d4b112c9ae5b",
+      "git_blob": "54404a8118f125a9a53eabbb8bad8c4a0d07b190"
+    },
+    {
+      "path": "research/recovered/STONEAGE-CN20-HEALING-SPELLS-SOURCE-R1.json",
+      "bytes": 27194,
+      "sha256": "b1cf694e0fe49964753f84ea8b6bceb9ea4cc41039eac7f232bc864b99bf6210",
+      "git_blob": "ab6eec50fc87e1388d70658282acc4c2b14b5749"
+    },
+    {
+      "path": "research/recovered/STONEAGE-PREPRODUCTION-CONTENT-ARCHIVE-R1.json",
+      "bytes": 24489,
+      "sha256": "e87afebc8c9590142c7cc8831b578455b3427bf7c1d10520ae02a3e8082fbddb",
+      "git_blob": "2d5b3f081d5618287f431fbded943722a820c593"
+    }
+  ],
+  "verification": {
+    "actual_zip_download_both_sides": true,
+    "api_digest_matches_downloaded_zip": true,
+    "single_zip_member": "replay.json",
+    "candidate_main_local_bytes_identical": true,
+    "source_lexical_check_independent_of_htmlparser": true,
+    "source_inputs_match_initial_bytes_and_sha256": true,
+    "selected_semantic_replay_equal": true,
+    "historical_bytes_authenticated": false,
+    "tests_at_content_commit": 6,
+    "tests_after_custody_commit": 7,
+    "custody_commit_own_ci_requires_separate_verification": true
+  },
+  "boundaries_preserved": [
+    "NAME_TARGET",
+    "NAME_REWARD",
+    "PLAYER_VS_PET_LEVEL",
+    "REWARD_LEVEL",
+    "FLOOR_COORDINATES",
+    "PET_SELECTION",
+    "BUILD_DATE_AUTHOR",
+    "NARRATIVE_ROLE"
+  ]
+}

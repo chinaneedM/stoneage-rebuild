@@ -1,0 +1,100 @@
+{
+  "schema": "stoneage.dinosaur_quest.replay.r1",
+  "inputs": [
+    {
+      "source_id": "I1",
+      "url": "https://games.sina.com.cn/handbook/0101/01186091.shtml",
+      "bytes": 37893,
+      "sha256": "1890f3f046e9d58847c1a799f2baf97298cc3dbe50d24f6d7115f7d22a5513d9"
+    },
+    {
+      "source_id": "S1",
+      "url": "https://games.sina.com.cn/handbook/0101/01186091_c2.shtml",
+      "bytes": 36563,
+      "sha256": "91b65594bd21e2e5cb598902eecd7649fa84a1db67574515030d20dbfd4fb07c"
+    },
+    {
+      "source_id": "S2",
+      "url": "https://games.sina.com.cn/zhqu/sta/rwgl1_2.shtml",
+      "bytes": 52445,
+      "sha256": "890148233a3cff9a63497369711fcb3af1471244a257e64fad1b369f020a52bf"
+    }
+  ],
+  "extraction": {
+    "compiler": {
+      "quest_1": {
+        "target_label": "鲁尼贴斯",
+        "target_level_min_as_written": "十五",
+        "special_reward_level_min_as_written": "十八",
+        "special_reward_label": "阿西美加护符",
+        "equivalent_equipment_alternative": true
+      },
+      "quest_2": {
+        "target_label": "贝鲁卡",
+        "requested_level": 30,
+        "reward_label": "布克布克",
+        "reward_level": 1
+      },
+      "npc_personal_name": null,
+      "floor_wording": "最上层"
+    },
+    "dated_2003": {
+      "npc": {
+        "name": "哈鲁",
+        "role": "恐龙博士",
+        "local_xy": [
+          11,
+          12
+        ],
+        "floor_as_written": 6,
+        "entrance_xy": [
+          328,
+          633
+        ]
+      },
+      "assistant": {
+        "name": "吉鲁",
+        "role": "助手",
+        "xy": null
+      },
+      "quest_1": {
+        "target_label": "鲁尼帖斯",
+        "target_level_min": 15,
+        "recommended_player_level": 15,
+        "required_player_level": null,
+        "reward_kind": "RANDOM_ITEM",
+        "best_reward_label": "阿西美拉护符1",
+        "best_reward_charm": 1,
+        "reward_probability": null
+      },
+      "quest_2": {
+        "target_label": "贝鲁卡",
+        "requested_level": 30,
+        "recommended_player_level": 25,
+        "required_player_level": null,
+        "predecessor": "quest_1",
+        "reward_label": "布克布克",
+        "reward_level": null,
+        "must_raise_captured_pet_to_requested_level": true,
+        "multiple_pet_selection_unspecified": true,
+        "mounted_pet_warning": true
+      }
+    },
+    "selected_semantic_sha256": [
+      "822a099d863e3fef9e99f1aafad7139900dfaf99235c61f7be3e7afabbbbc020",
+      "9702fb342f7db495a2b24b787a26e8905d7d2f6070197b89384b4e8d3fe567ff",
+      "4da2cdf8a5a4cbf1d3641645faa522d7752f50d3c7db823fa911c06236d4fcf4"
+    ],
+    "decoding_replacements": [
+      1,
+      2,
+      0
+    ]
+  },
+  "audit": {
+    "real_input_mutations_rejected": 12,
+    "peripheral_script_positive": true,
+    "original_game_runtime_verified": false
+  },
+  "scope": "CURRENT_HTML_REPLAY_NOT_HISTORICAL_BYTES_OR_GAME_EXECUTION"
+}

@@ -208,6 +208,30 @@ def check_archive(report):
                 'Parent Git identity changed')
 
 
+def check_custody(root=ROOT):
+    receipt_path = root / f'research/recovered/{PREFIX}-CUSTODY-R1.json'
+    require(receipt_path.is_file(), 'Permanent custody receipt missing')
+    receipt = json.loads(receipt_path.read_text())
+    require(receipt['original_game_runtime_verified'] is False, 'Custody promoted to original runtime')
+    required = {f'research/recovered/{PREFIX}-{suffix}-R1.json'
+                for suffix in ('SOURCE', 'CI-CANDIDATE', 'CI-MAIN')}
+    require(required <= {p['path'] for p in receipt['permanent_pins']}, 'Incomplete permanent evidence set')
+    for p in receipt['permanent_pins']:
+        path = root / p['path']
+        require(path.is_file(), 'Permanent derived evidence missing')
+        b = path.read_bytes()
+        require(len(b) == p['bytes'] and digest(b) == p['sha256'], 'Permanent evidence bytes changed')
+        require(hashlib.sha1(b'blob ' + str(len(b)).encode() + bytes([0]) + b).hexdigest() == p['git_blob'],
+                'Permanent evidence Git identity changed')
+    source = json.loads((root / f'research/recovered/{PREFIX}-SOURCE-R1.json').read_text())
+    for suffix in ('CANDIDATE', 'MAIN'):
+        raw = json.loads((root / f'research/recovered/{PREFIX}-CI-{suffix}-R1.json').read_text())
+        require(raw['extraction'] == source['extraction'], 'Archived CI semantic replay differs')
+        require(raw['audit']['real_input_mutations_rejected'] == 12 and
+                raw['audit']['original_game_runtime_verified'] is False, 'Archived source audit boundary changed')
+    return receipt
+
+
 def main():
     ap = argparse.ArgumentParser()
     group = ap.add_mutually_exclusive_group(required=True)
@@ -229,6 +253,7 @@ def main():
     actual = extract(raws)
     report = json.loads(REPORT.read_text())
     check_archive(report)
+    check_custody()
     require(actual == report['extraction'], 'Source replay differs from qualified extraction')
     out = {'schema': 'stoneage.dinosaur_quest.replay.r1', 'inputs': inputs,
            'extraction': actual, 'audit': audit(raws, actual),
