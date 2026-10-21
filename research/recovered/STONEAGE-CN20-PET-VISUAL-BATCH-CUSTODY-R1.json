@@ -1,0 +1,441 @@
+{
+  "schema": "stoneage.cn20_pet_visual_batch.custody.r1",
+  "date": "2026-10-21",
+  "content_head": "bbe5302f17e182dddb86a598590cbbe8e38775b0",
+  "content_tree": "16cd0048f6abb44291fb3850a90882418fe64130",
+  "startup_head": "47b593b715e25ecb55af2e9b080d92b7a247b182",
+  "startup_tree": "16f697a355ccdf82a07dc4ed038e9688aa4b690f",
+  "startup_prefixes": [
+    {
+      "path": "README.md",
+      "bytes": 41165,
+      "sha256": "0b21182d3e49662015836e32798fb00942b70ba2c5b56056204e7ab74709e457",
+      "git_blob": "69addddbdb60df0ff126819f18a8297df633ec37"
+    },
+    {
+      "path": "docs/PROJECT-CONTINUITY-PROTOCOL-R1.md",
+      "bytes": 9762,
+      "sha256": "c44834eeec87f7a43e9cb4905f08377349e36d58b1fff2c5a75a6975db695e3b",
+      "git_blob": "ba9bbe19384589400abc61af37a360a40bf91452"
+    },
+    {
+      "path": "docs/CURRENT-STATE.md",
+      "bytes": 2258561,
+      "sha256": "8e88d7392a462c408f012107c3f1f832eecf6ef6f1495ea7d6ea31005b09775b",
+      "git_blob": "dec72222d36d7521ce061f801c19015c624d8ae8"
+    },
+    {
+      "path": "docs/DESIGN-DECISIONS.md",
+      "bytes": 45965,
+      "sha256": "28b572ed01179eacd5a06b4ad62c76e4baef22ac49587aa0bad452a7cb3fe8e6",
+      "git_blob": "013ae4fad9301ab0140fe408a423b3abad97d1f9"
+    },
+    {
+      "path": "docs/HISTORICAL-TIMELINE.md",
+      "bytes": 555491,
+      "sha256": "30dc0d668eab0c2c47bd908ea6d41affe6ead4ca51bf1782ad08bd29f282cc5a",
+      "git_blob": "ba9a0ce1f6928d62a951e39c64172f5861dfb72e"
+    },
+    {
+      "path": "docs/SOURCE-REGISTRY.md",
+      "bytes": 835638,
+      "sha256": "343509cf657360229e010f4630fd39fc6b89e5095d3aeac45b795eab66515e1d",
+      "git_blob": "8967a01ee8fa03c881f41e997c7ff96e48636c58"
+    },
+    {
+      "path": "docs/RESTORATION-ROADMAP-R2.md",
+      "bytes": 206293,
+      "sha256": "3dca9bb12b2d6253d63a1b66b6ac993772c7d1eac9c9e382dde9b1ceba51a2f5",
+      "git_blob": "1df32cb3cb2ed8768df4281546f78b06f0609b8d"
+    },
+    {
+      "path": "docs/STONEAGE-PREPRODUCTION-CONTENT-ARCHIVE-R1.md",
+      "bytes": 25181,
+      "sha256": "d68f853fc26eeda463c95c5c62a6a35a2e371f2d970e73c434db70323b412f62",
+      "git_blob": "3a7ab085393872c9372fac9ca2993525d4dd4fc3"
+    },
+    {
+      "path": "research/recovered/STONEAGE-22-DOMAIN-SOURCE-READY-PORTFOLIO-R2.json",
+      "bytes": 15948,
+      "sha256": "7d50de08f7855cf16dbe54b1747e258f1cc1223de88cc217172fd145f3c704ce",
+      "git_blob": "088b469b3c51e689cff27f33fc3bb49de2d24b2c"
+    }
+  ],
+  "workflow_runs": [
+    {
+      "id": 39590585758,
+      "name": "Independently verify TW1.0 R58 rooted helper returns and source custody",
+      "head_sha": "bbe5302f17e182dddb86a598590cbbe8e38775b0",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39590585758"
+    },
+    {
+      "id": 39590586017,
+      "name": "Validate StoneAge preproduction content archive and wiki boundary",
+      "head_sha": "bbe5302f17e182dddb86a598590cbbe8e38775b0",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39590586017"
+    },
+    {
+      "id": 39590585904,
+      "name": "Validate Stage A early source gap triage",
+      "head_sha": "bbe5302f17e182dddb86a598590cbbe8e38775b0",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39590585904"
+    },
+    {
+      "id": 39590586006,
+      "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+      "head_sha": "bbe5302f17e182dddb86a598590cbbe8e38775b0",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39590586006"
+    },
+    {
+      "id": 39590585906,
+      "name": "Validate StoneAge Stage A joint review decision",
+      "head_sha": "bbe5302f17e182dddb86a598590cbbe8e38775b0",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39590585906"
+    },
+    {
+      "id": 39590586021,
+      "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+      "head_sha": "bbe5302f17e182dddb86a598590cbbe8e38775b0",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39590586021"
+    },
+    {
+      "id": 39590585641,
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "head_sha": "bbe5302f17e182dddb86a598590cbbe8e38775b0",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39590585641"
+    },
+    {
+      "id": 39590585678,
+      "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+      "head_sha": "bbe5302f17e182dddb86a598590cbbe8e38775b0",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39590585678"
+    },
+    {
+      "id": 39590585725,
+      "name": "Verify CN2.0 three pet visual supplements and known control",
+      "head_sha": "bbe5302f17e182dddb86a598590cbbe8e38775b0",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39590585725"
+    },
+    {
+      "id": 39590585642,
+      "name": "Validate legacy StoneAge assistant history and pet content gaps",
+      "head_sha": "bbe5302f17e182dddb86a598590cbbe8e38775b0",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39590585642"
+    },
+    {
+      "id": 39590585707,
+      "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+      "head_sha": "bbe5302f17e182dddb86a598590cbbe8e38775b0",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39590585707"
+    },
+    {
+      "id": 39590372409,
+      "name": "Validate StoneAge preproduction content archive and wiki boundary",
+      "head_sha": "bbe5302f17e182dddb86a598590cbbe8e38775b0",
+      "head_branch": "agent/cn20-pet-visual-r52-20261021",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39590372409"
+    },
+    {
+      "id": 39590372366,
+      "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+      "head_sha": "bbe5302f17e182dddb86a598590cbbe8e38775b0",
+      "head_branch": "agent/cn20-pet-visual-r52-20261021",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39590372366"
+    },
+    {
+      "id": 39590372544,
+      "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+      "head_sha": "bbe5302f17e182dddb86a598590cbbe8e38775b0",
+      "head_branch": "agent/cn20-pet-visual-r52-20261021",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39590372544"
+    },
+    {
+      "id": 39590372433,
+      "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+      "head_sha": "bbe5302f17e182dddb86a598590cbbe8e38775b0",
+      "head_branch": "agent/cn20-pet-visual-r52-20261021",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39590372433"
+    },
+    {
+      "id": 39590372432,
+      "name": "Validate StoneAge Stage A joint review decision",
+      "head_sha": "bbe5302f17e182dddb86a598590cbbe8e38775b0",
+      "head_branch": "agent/cn20-pet-visual-r52-20261021",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39590372432"
+    },
+    {
+      "id": 39590372580,
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "head_sha": "bbe5302f17e182dddb86a598590cbbe8e38775b0",
+      "head_branch": "agent/cn20-pet-visual-r52-20261021",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39590372580"
+    },
+    {
+      "id": 39590372502,
+      "name": "Validate Stage A early source gap triage",
+      "head_sha": "bbe5302f17e182dddb86a598590cbbe8e38775b0",
+      "head_branch": "agent/cn20-pet-visual-r52-20261021",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39590372502"
+    },
+    {
+      "id": 39590372445,
+      "name": "Validate legacy StoneAge assistant history and pet content gaps",
+      "head_sha": "bbe5302f17e182dddb86a598590cbbe8e38775b0",
+      "head_branch": "agent/cn20-pet-visual-r52-20261021",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39590372445"
+    },
+    {
+      "id": 39590372716,
+      "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+      "head_sha": "bbe5302f17e182dddb86a598590cbbe8e38775b0",
+      "head_branch": "agent/cn20-pet-visual-r52-20261021",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39590372716"
+    },
+    {
+      "id": 39590372930,
+      "name": "Verify CN2.0 three pet visual supplements and known control",
+      "head_sha": "bbe5302f17e182dddb86a598590cbbe8e38775b0",
+      "head_branch": "agent/cn20-pet-visual-r52-20261021",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39590372930"
+    }
+  ],
+  "candidate": {
+    "head": "bbe5302f17e182dddb86a598590cbbe8e38775b0",
+    "tree": "16cd0048f6abb44291fb3850a90882418fe64130",
+    "run_id": 39590372930,
+    "job_id": 119189528231,
+    "artifact_id": 12341830649,
+    "artifact_name": "cn20-pet-visual-derived-replay",
+    "zip_bytes": 3289,
+    "zip_sha256": "43ee67d23dc76a9c7904e25ccd91199f0a3ef12f66d020908655cfa6319d43ee",
+    "zip_entry_names": [
+      "replay.json"
+    ],
+    "raw_bytes": 11704,
+    "raw_sha256": "df992d998a148eecd7e2700b4fae6f0536855858520a5d6086a6d3a0d802ef61",
+    "raw_git_blob": "517a955fdb8789f193e30b4b9e1ebbb395cd9847",
+    "derived_git_path": "research/recovered/STONEAGE-CN20-PET-VISUAL-BATCH-CI-CANDIDATE-REPLAY-R1.json",
+    "actual_unit_tests": 10,
+    "skipped_tests": 0,
+    "all_applicable_workflows_success": true,
+    "own_workflow_count": 10,
+    "actual_html_bytes": 69317,
+    "actual_jpeg_bytes": [
+      4196,
+      3785,
+      4831,
+      3520
+    ],
+    "new_visual_references": 3,
+    "known_control_replayed": 1,
+    "fully_decoded_images": 4,
+    "real_html_semantic_mutations": 14,
+    "real_image_byte_mutations": 4,
+    "outer_script_positive": true,
+    "human_inspection_repeated_by_ci": false,
+    "initial_image_redirects_repeated_by_ci": false
+  },
+  "main": {
+    "head": "bbe5302f17e182dddb86a598590cbbe8e38775b0",
+    "tree": "16cd0048f6abb44291fb3850a90882418fe64130",
+    "run_id": 39590585725,
+    "job_id": 119190238811,
+    "artifact_id": 12341196429,
+    "artifact_name": "cn20-pet-visual-derived-replay",
+    "zip_bytes": 3289,
+    "zip_sha256": "ad4ba2cbf4130491da101b75c45b1d1cd8a8f2e392a313a98f3c23d53b8e78fd",
+    "zip_entry_names": [
+      "replay.json"
+    ],
+    "raw_bytes": 11704,
+    "raw_sha256": "df992d998a148eecd7e2700b4fae6f0536855858520a5d6086a6d3a0d802ef61",
+    "raw_git_blob": "517a955fdb8789f193e30b4b9e1ebbb395cd9847",
+    "derived_git_path": "research/recovered/STONEAGE-CN20-PET-VISUAL-BATCH-CI-MAIN-REPLAY-R1.json",
+    "actual_unit_tests": 10,
+    "skipped_tests": 0,
+    "all_applicable_workflows_success": true,
+    "own_workflow_count": 11,
+    "actual_html_bytes": 69317,
+    "actual_jpeg_bytes": [
+      4196,
+      3785,
+      4831,
+      3520
+    ],
+    "new_visual_references": 3,
+    "known_control_replayed": 1,
+    "fully_decoded_images": 4,
+    "real_html_semantic_mutations": 14,
+    "real_image_byte_mutations": 4,
+    "outer_script_positive": true,
+    "human_inspection_repeated_by_ci": false,
+    "initial_image_redirects_repeated_by_ci": false
+  },
+  "independent_checks": {
+    "clean_remote_content_checkout_related_tests": 79,
+    "independent_four_leaf_cells_labels_paths_case_and_jpeg_sof_dimensions": true,
+    "four_images_fully_decoded_with_pillow": true,
+    "four_images_viewed_at_original_resolution": true,
+    "raw_candidate_main_local_byte_equality": true,
+    "three_original_parent_reports_preserved": true,
+    "same_length_same_geometry_wrong_jpeg_rejected_by_exact_sha": true
+  },
+  "source_pins": [
+    {
+      "path": "research/recovered/STONEAGE-CN20-PET-VISUAL-BATCH-SOURCE-R1.json",
+      "bytes": 13122,
+      "sha256": "284cce5c8023f0baff6b0cfd060da7ba6cf28263cafd424b2d9499137c6cf091",
+      "git_blob": "52fde4b4f0a2dd71b3751258b3d84d989074bbdc"
+    },
+    {
+      "path": "research/recovered/STONEAGE-CN20-PET-VISUAL-BATCH-LOCAL-REPLAY-R1.json",
+      "bytes": 11704,
+      "sha256": "df992d998a148eecd7e2700b4fae6f0536855858520a5d6086a6d3a0d802ef61",
+      "git_blob": "517a955fdb8789f193e30b4b9e1ebbb395cd9847"
+    },
+    {
+      "path": "tools/stoneage_cn20_pet_visual_batch.py",
+      "bytes": 12155,
+      "sha256": "2f831dd9d2ba61a5e1a904255dde7dc008aed176997798fb3a91193a3fc02db3",
+      "git_blob": "555dec7a709be48d7044fd134c6179d5571bfcd8"
+    },
+    {
+      "path": ".github/workflows/verify-stoneage-cn20-pet-visual-batch.yml",
+      "bytes": 2062,
+      "sha256": "468fdc6bd6ab7e7b7051a09663844e76f1cb6c855bb5c09a8e8fe5ba517572df",
+      "git_blob": "da5daa6eeffb6eb13a68681259b571a891021f61"
+    },
+    {
+      "path": "docs/specs/STONEAGE-CN20-PET-VISUAL-BATCH-SOURCE-R1.md",
+      "bytes": 4546,
+      "sha256": "3de97458a4e333415603ca57b4345bb8aa791ca7bccfbdd05ae023efd81d071a",
+      "git_blob": "6dd87ee14eb4723e679be0fd3dd953d9beb72cdb"
+    },
+    {
+      "path": "docs/STONEAGE-OFFICIAL-VERSION-NAMED-CONTENT-REVIEW-R52.md",
+      "bytes": 1195,
+      "sha256": "0cd134d48f773256941dff7124ed1de1afde9e30f59339cfb8306e62f49f0c21",
+      "git_blob": "27941af83b28cfc29cd8482cdc4cd7c6caa79f31"
+    },
+    {
+      "path": "tools/stoneage_cn20_recordpoint_source.py",
+      "bytes": 13752,
+      "sha256": "f59ef1121035506fc5621455a3fd8d5af96fb099add2add50eb6e7f121e8f182",
+      "git_blob": "065088b175d86b2825ea401cbed867a443bcf97c"
+    },
+    {
+      "path": "tools/stoneage_cn2003_group2_manor_report.py",
+      "bytes": 14072,
+      "sha256": "876318e9883e4d08f40c9c12e458d2473f989f65b1b301ef580c84866ece24b7",
+      "git_blob": "ee168823f2699c77ae8eefea420a34be2d24c6bd"
+    },
+    {
+      "path": "research/recovered/STONEAGE-WAEI-CN20-NEW-PET-CATALOG-FIRST-PAGE-R1.json",
+      "bytes": 67802,
+      "sha256": "9a460c23968a714717b375d823308bb5e56848116aaf44880091b75808024df6",
+      "git_blob": "7c729ee760306af69cb4e0f3a73f5edd6a26c921"
+    },
+    {
+      "path": "research/recovered/STONEAGE-WAEI-CN20-NEW-PET-FINITE-CATALOG-R1.json",
+      "bytes": 173510,
+      "sha256": "8bcda48e9e8e298efe446b02f0039146fa4a81e509ca4d08c4989e6448f59fdb",
+      "git_blob": "f950aa33af0b3ec8693b2867758faf006aee546b"
+    },
+    {
+      "path": "research/recovered/STONEAGE-WAEI-CN20-AMIDUO-VISUAL-REFERENCE-R1.json",
+      "bytes": 4086,
+      "sha256": "5ef2cfc5cd7f24229ece5f0fa01c924e932b40716af32417aa0bf4358eeb9cb0",
+      "git_blob": "1f5a405f5d0dfc4ea72949b4fefb54b91260fe93"
+    },
+    {
+      "path": "research/recovered/STONEAGE-CN20-PET-VISUAL-BATCH-CI-CANDIDATE-REPLAY-R1.json",
+      "bytes": 11704,
+      "sha256": "df992d998a148eecd7e2700b4fae6f0536855858520a5d6086a6d3a0d802ef61",
+      "git_blob": "517a955fdb8789f193e30b4b9e1ebbb395cd9847"
+    },
+    {
+      "path": "research/recovered/STONEAGE-CN20-PET-VISUAL-BATCH-CI-MAIN-REPLAY-R1.json",
+      "bytes": 11704,
+      "sha256": "df992d998a148eecd7e2700b4fae6f0536855858520a5d6086a6d3a0d802ef61",
+      "git_blob": "517a955fdb8789f193e30b4b9e1ebbb395cd9847"
+    }
+  ],
+  "bounds": {
+    "raw_html_or_original_jpegs_committed": false,
+    "body_reacquisition_is_new_page_discovery": false,
+    "known_amiduo_control_counted_as_new_image": false,
+    "three_new_references_are_three_new_species": false,
+    "placeholder_names_resolved_by_appearance": false,
+    "all_104_image_references_acquired": false,
+    "capture_time_is_first_addition_or_patch_time": false,
+    "body_and_images_same_instant_or_exact_client_build": false,
+    "www_and_bare_hosts_globally_equivalent": false,
+    "html_declared_sizes_backfilled_from_measured_images": false,
+    "filename_or_web_ordinal_is_original_game_id": false,
+    "web_jpeg_is_native_sprite_palette_or_3d_model": false,
+    "single_jpeg_frame_proves_no_pet_animation": false,
+    "game_stats_growth_skills_or_riding_recovered": false,
+    "cross_region_or_build_alias_verified": false,
+    "old_catalog_historical_unacquired_state_rewritten": false,
+    "ci_repeats_human_visual_observation": false,
+    "ci_repeats_initial_archive_redirects": false,
+    "client_or_server_executed": false,
+    "production_asset_reuse_approved": false,
+    "stage_b_open": false,
+    "r79_resumed": false
+  },
+  "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-53"
+}

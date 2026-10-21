@@ -4107,3 +4107,12 @@ R47有限报告包结束，原文“中午”/精确时分、四家族人数歧�
 旧104位置/98具名/6问号历史报告不变；补充后4引用已取、100未取，本轮新增3/旧对照1、新解名0、新原游戏实体0，不当物种总数或百分比。14实际HTML改写排除digest仍拒绝、4图真实字节反例与外围script正例；独立单元格/实体/路径大小写及JPEG SOF尺寸另核，候选/main实际取源和永久保管据实另记。
 
 止于一既有正文/三新图一旧图/三父Git报告，不自动追100图或helper。重开需明确原名、同构建SPR/原动画/数值表。最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-53回全22域，Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停，全部历史前缀完整；原HTML/JPEG不进Git。
+
+
+## 2026-10-21 R52三新图一旧对照双取源与永久派生保管
+
+内容bbe5302f17e182dddb86a598590cbbe8e38775b0/tree16cd0048f6abb44291fb3850a90882418fe64130自身候选10/main11适用Actions全SUCCESS；来源候选run39590372930/job119189528231/artifact12341830649、主线run39590585725/job119190238811/artifact12341196429各实跑10本包用例零跳过，一69317B已知HTML及4196/3785/4831/3520B四JPEG实际重取并完整像素解码，14真实HTML语义反例、4真实图字节反例和外围script正例通过。干净远端内容检出79相关测试及九完整启动历史前缀/原生Git标识通过；独立四叶单元格名称/路径/大小写、JPEG SOF尺寸一致，四图本地原像素目视。CI不复演人的目视或首次档案跳转。
+
+双ZIP实际下载，候选3289B/main3289B，SHA256分别43ee67d23dc76a9c7904e25ccd91199f0a3ef12f66d020908655cfa6319d43ee / ad4ba2cbf4130491da101b75c45b1d1cd8a8f2e392a313a98f3c23d53b8e78fd；各唯一replay.json11704B/SHA256df992d998a148eecd7e2700b4fae6f0536855858520a5d6086a6d3a0d802ef61/原生Git blob517a955fdb8789f193e30b4b9e1ebbb395cd9847，候选/main/本地逐字节一致。双raw、十三来源/工具/依赖/工作流/规格/父报告pins、九启动完整前缀与21实际workflow永久存research/recovered/STONEAGE-CN20-PET-VISUAL-BATCH-CUSTODY-R1.json；原HTML/JPEG不进Git。
+
+新增强制收据门后本包11/80相关检查另实跑，移除收据及等长改写派生raw一个字节必须失败；首轮10项不改写为11项，保管提交自身Actions另后验。新3/旧对照1、六问号仍未知、104引用中已取4/未取100、网页名/原实体、分时图档/同构建、HTML声明/实测、单JPEG帧/原动画、目视/CI解码、原档主机差异/全站等价继续分开。R52有限包结束；最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-53回全22域，Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停，所有旧记录完整。
