@@ -74,7 +74,7 @@ class TestCn2003VillageTravelSource(unittest.TestCase):
         info = r["source_derived"]
         self.assertEqual(info["utf8_byte_length"], len(b))
         self.assertEqual(info["raw_sha256"], hashlib.sha256(b).hexdigest())
-        self.assertEqual(info["git_blob_sha1"], hashlib.sha1(b"blob " + str(len(b)).encode() + b"\\0" + b).hexdigest())
+        self.assertEqual(info["git_blob_sha1"], hashlib.sha1(b"blob " + str(len(b)).encode() + b"\0" + b).hexdigest())
         self.assertEqual(info["git_blob_sha1"], "c843a41e1abca8630cdd5fa14421bb0b13c10520")
         self.assertEqual(info["source_page_count"], 3)
         self.assertEqual(info["cross_source_record_point_count"], 12)
