@@ -1492,3 +1492,16 @@ R62同包增加既有19集合合同的可检索导出：6条quests文献关系�
 两完整CI派生原JSON及源/目录分别永久入Git；保管链 `research/recovered/STONEAGE-CN20-PET-COMMISSION-HABITATS-CUSTODY-R1.json` 固定四派生文件原生Git/长度/SHA、来源输入、21实际工作流和双job/artifact/ZIP。原HTML/图不入Git。另加必须存在收据与四文件逐字节验收门，真实移除/等长修改证据文件必须失败；本包单元10→11项，**保管提交自身候选/main CI另行后验**，不倒改旧10项运行历史。
 
 同源两分页不是两独立作者来源，当前网页字节不认证首刊或历史build；F奖励仍?、坐标框架/原ID/刷怪权重未知，27文献关系不当27原游戏实体。最高NEXT63回22域优先音效事件/具名画面或模型材料，Stage A7 PARTIAL+2 OPEN，B/wiki GATED，R79暂停。
+
+
+## 2026-10-22 R63：日本2003标签开发图集的战斗／野外视觉参考
+
+新核远端main `ba2a846b4f189cbe63ce7962cf338b082f1bf8a1`/tree `349ca12168df63783ed64a43bdb62f50aae9a7ba`、457分支/0开放PR/0运行中Actions，R62最终main9/候选8项实际SUCCESS，旧queued37642417333保留。临时工作区已消失，从精确远端commit建立干净新检出；九启动文件完整读取/原生Git摘要和CURRENT原blob8710fb3069b0b74685bd910d00da05fa257b902e已核，不借旧聊天重造。最高NEXT63音效/具名视觉二选一：原TW10音效事件→音轨绑定仍false、无新触发轨迹，故选有限视觉源，不扩旧helper。
+
+4Gamer索引2003/12/12 20:20的真实图集链接→图库第一页→前二独立页面→其明确原JPEG，共四HTML/两JPEG。索引71076B/EUC-JP，图库3410B/CP932，两个独立页1826/1914B，原图242617/222940B、JPEG/RGB/640×480各单帧，完整SHA和HTTP身份见research/recovered/STONEAGE-JP2003-BATTLE-FIELD-VISUAL-SOURCE-R1.json。图库标1/3及12th Dec.2003，并明确画面开发中；近40张的宣传数不作确切总数。本轮15个第一页缩略—独立页引用中取2原图，其余13/图库页2和3/缩略图/导航图未请求。
+
+目视第一张为战斗/目标选择参考：可见五个相似背甲形象、右上PLAYER两行四格菜单、求助文字及目标提示、中央14。只记共存画面，不证HELP效果/耗回合/目标约束、单位/默认秒数、物种ID或队伍上限。第二张为野外两个人形、左上Mail/右上Action和底部文字区；角色是否NPC、地图/人物ID及按钮行为未知。当前2026原字节、2003图集标签、1999版权年、拍摄时间及原生分辨率分开，未证2003同刻像素或已部署build。
+
+新增中文规格、R63审查、15条screens归档（前2哈希绑定目视/后13实际元数据null）、有限解析/完整解码工具与专用CI。10本包测试与8真实源改写/外围script正例本地通过，原HTML/JPEG/程序不进Git。最初本地EUC-JP索引误按CP932严格解码失败，按真实声明修正后才通过；搜索阅读器打不开独立页但原HTTP成功，不记历史不存在。候选/main自身源重放、ZIP实下及永久派生保管另后验，不能预报绿。
+
+止点前两张原图，最高NEXT `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-64` 回22域另一地区/内容资料，优先早期具名NPC/任务/地图材料。Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停；旧历史前缀完整保留。

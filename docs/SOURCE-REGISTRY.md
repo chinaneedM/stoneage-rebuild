@@ -7947,3 +7947,11 @@ research/recovered/STONEAGE-CN2003-UI-TEAM-TRADE-SOURCE-R1.json源派生Git blob
 - 《石器时代2之新鲜速递(三)--任务详解》，https://games.sina.com.cn/newgames/0110/10236724.shtml 及真实首分页 https://games.sina.com.cn/newgames/0110/10236724_c1.shtml ，正文2.0标签、署新浪游戏；官方作者/首刊日/商业build未证。当前HTTP原字节33058/33200B与SHA256见源JSON，不是已认证的2001历史快照。
 - 仅提取渔村六宠物委托、19名称/21地点关系及购买/交付；不递归第三页、不归档料理和萨村委托，不请求图。F报酬?、名称前缀、地点行序、地下二楼和坐标层级原样保留；数值只属攻略陈述。
 - 规格docs/specs/STONEAGE-CN20-PET-COMMISSION-HABITATS-SOURCE-R1.md；派生research/recovered/STONEAGE-CN20-PET-COMMISSION-HABITATS-SOURCE-R1.json；工具tools/stoneage_cn20_pet_commission_source.py。源重放仅当前网页，不执行原商业客户端/服务端，原HTML/图不进Git。
+
+
+## SRC-JP2003-BATTLE-FIELD-VISUAL-R63 — 2026-10-22
+
+- 出版索引：https://www.4gamer.net/DataContents/game/1377.html ，公告2003/12/12 20:20，真实指https://www.4gamer.net/store/shots/stoneage/index.html 。图库原文标12th Dec.2003、开发中、DigiPark/BOTHTEC版权；索引较晚运营信息不倒灌2003画面。
+- 限pages/image0000.html、pages/image0001.html及各自../images/image0000.jpg、../images/image0001.jpg。四HTML/两JPEG当前原HTTP与SHA见research/recovered/STONEAGE-JP2003-BATTLE-FIELD-VISUAL-SOURCE-R1.json；首HTML为EUC-JP，图库/独立页CP932。两图原像素目视与完整解码，640×480只是网页尺寸。
+- 15个第一页来源位置仅2有目视/实际图元数据，13保持未知；不是15客户端状态或40图全覆盖。开发阶段、当前取源时刻/图集标记年/实际拍摄日、原ID与授权分别保留。原HTML/JPEG不入Git，派生记录在既有screens集合下留研究来源，不批准生产像素复用。
+- 规格docs/specs/STONEAGE-JP2003-BATTLE-FIELD-VISUAL-SOURCE-R1.md，工具tools/stoneage_jp2003_battle_field_visual_source.py。当前网页可重放不认证原商业客户端运行或历史服务器行为。

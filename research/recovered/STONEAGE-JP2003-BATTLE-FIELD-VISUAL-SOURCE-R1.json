@@ -1,0 +1,777 @@
+{
+  "schema": "stoneage.jp2003_battle_field_visual.source.r1",
+  "task": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-63",
+  "date": "2026-10-22",
+  "baseline": {
+    "head": "ba2a846b4f189cbe63ce7962cf338b082f1bf8a1",
+    "tree": "349ca12168df63783ed64a43bdb62f50aae9a7ba",
+    "branches": 457,
+    "open_prs": 0,
+    "in_progress": 0,
+    "unrelated_queued_run": 37642417333,
+    "main_success": 9,
+    "candidate_success": 8,
+    "startup_prefixes": [
+      {
+        "path": "README.md",
+        "bytes": 45937,
+        "sha256": "9feb9d418fe67809176c5c2970fc27498123531dd9051e131a4c3b3332cf803c",
+        "git_blob": "65cfe8de7ce8394f8eb659d8105a14f1d11753ca"
+      },
+      {
+        "path": "docs/PROJECT-CONTINUITY-PROTOCOL-R1.md",
+        "bytes": 9762,
+        "sha256": "c44834eeec87f7a43e9cb4905f08377349e36d58b1fff2c5a75a6975db695e3b",
+        "git_blob": "ba9bbe19384589400abc61af37a360a40bf91452"
+      },
+      {
+        "path": "docs/CURRENT-STATE.md",
+        "bytes": 2304816,
+        "sha256": "c7b9d39c0d1cc44879423afcdb37da2c851e1b0527c1ad3bd1ef6bbe66abf745",
+        "git_blob": "8710fb3069b0b74685bd910d00da05fa257b902e"
+      },
+      {
+        "path": "docs/DESIGN-DECISIONS.md",
+        "bytes": 45965,
+        "sha256": "28b572ed01179eacd5a06b4ad62c76e4baef22ac49587aa0bad452a7cb3fe8e6",
+        "git_blob": "013ae4fad9301ab0140fe408a423b3abad97d1f9"
+      },
+      {
+        "path": "docs/HISTORICAL-TIMELINE.md",
+        "bytes": 587922,
+        "sha256": "034634d6c1cf5ce18196502f91d48cdf55f3b96a0b7eb2777cf605a21179dea3",
+        "git_blob": "a49a0e409530dfcb1454f34acd491ff74cd4c080"
+      },
+      {
+        "path": "docs/SOURCE-REGISTRY.md",
+        "bytes": 857363,
+        "sha256": "733e3147f91c49e9e47541db25d6993d24346a95ba24ece476d861bba4b5a785",
+        "git_blob": "dd4f5dbe17344abed4c345becea9721626f039a3"
+      },
+      {
+        "path": "docs/RESTORATION-ROADMAP-R2.md",
+        "bytes": 241644,
+        "sha256": "4774536b02c3407a766f99f93855ae5e7cb6081d73f7273addf18ef7e81daf15",
+        "git_blob": "ca14aa7385e1cd83182423e0c07726c74cc32a00"
+      },
+      {
+        "path": "research/recovered/STONEAGE-22-DOMAIN-SOURCE-READY-PORTFOLIO-R2.json",
+        "bytes": 15948,
+        "sha256": "7d50de08f7855cf16dbe54b1747e258f1cc1223de88cc217172fd145f3c704ce",
+        "git_blob": "088b469b3c51e689cff27f33fc3bb49de2d24b2c"
+      },
+      {
+        "path": "docs/STAGE-A-PORTFOLIO-CHECKPOINT-R2.md",
+        "bytes": 6359,
+        "sha256": "c55588081f49cef00305f3b0478ffff74dba856d68fed38ac5be2ef2133a0c68",
+        "git_blob": "c5db7c1416121d2337baacd6132eae4daf23fd20"
+      }
+    ]
+  },
+  "authority": "PUBLISHER_HOSTED_SCREENSHOT_REFERENCES_WITH_EXPLICIT_DEVELOPMENT_NOTICE",
+  "source_scope": {
+    "original_runtime_executed": false,
+    "exact_build_authenticated": false,
+    "2003_same_time_image_bytes_authenticated": false,
+    "historical_archive_capture_obtained": false,
+    "native_resolution_proven": false,
+    "original_assets_committed": false,
+    "ci_repeats_human_visual_judgment": false
+  },
+  "inputs": [
+    {
+      "id": "P1",
+      "url": "https://www.4gamer.net/DataContents/game/1377.html",
+      "resolved_url": "https://www.4gamer.net/DataContents/game/1377.html",
+      "status": 200,
+      "bytes": 71076,
+      "sha256": "ae30f732aad048d3f710c30016de74f9faf9b37e009da0e4d9c114ef7649c97f",
+      "encoding": "euc_jp_strict",
+      "retrieval_date_asia_shanghai": "2026-10-22"
+    },
+    {
+      "id": "G1",
+      "url": "https://www.4gamer.net/store/shots/stoneage/index.html",
+      "resolved_url": "https://www.4gamer.net/store/shots/stoneage/index.html",
+      "status": 200,
+      "bytes": 3410,
+      "sha256": "5b2a9e7127ca72bb2fc7064998524cec5cebb2d3b71af3905b2546b4e8d4d28b",
+      "encoding": "cp932_strict",
+      "retrieval_date_asia_shanghai": "2026-10-22"
+    },
+    {
+      "id": "W1",
+      "url": "https://www.4gamer.net/store/shots/stoneage/pages/image0000.html",
+      "resolved_url": "https://www.4gamer.net/store/shots/stoneage/pages/image0000.html",
+      "status": 200,
+      "bytes": 1826,
+      "sha256": "1b89a20cf486e0b5c32f6ab47009a71b242b397f0ac6ac6df62162cfe9a96d56",
+      "encoding": "cp932_strict",
+      "retrieval_date_asia_shanghai": "2026-10-22"
+    },
+    {
+      "id": "W2",
+      "url": "https://www.4gamer.net/store/shots/stoneage/pages/image0001.html",
+      "resolved_url": "https://www.4gamer.net/store/shots/stoneage/pages/image0001.html",
+      "status": 200,
+      "bytes": 1914,
+      "sha256": "10b4a439aed5445c7e6495a7185304e360619734ae4c1b89e8cc0c7c97e7629b",
+      "encoding": "cp932_strict",
+      "retrieval_date_asia_shanghai": "2026-10-22"
+    },
+    {
+      "id": "I1",
+      "url": "https://www.4gamer.net/store/shots/stoneage/images/image0000.jpg",
+      "resolved_url": "https://www.4gamer.net/store/shots/stoneage/images/image0000.jpg",
+      "status": 200,
+      "bytes": 242617,
+      "sha256": "7bebbdcce1f893ed2740951da905dcd99a6e8ee0b15f6ac1e95faac126809559",
+      "encoding": "JPEG",
+      "retrieval_date_asia_shanghai": "2026-10-22"
+    },
+    {
+      "id": "I2",
+      "url": "https://www.4gamer.net/store/shots/stoneage/images/image0001.jpg",
+      "resolved_url": "https://www.4gamer.net/store/shots/stoneage/images/image0001.jpg",
+      "status": 200,
+      "bytes": 222940,
+      "sha256": "84c8bb631dcaff5b90372c95952060b46b05be405bf8c15eb7dacfaf3290fa59",
+      "encoding": "JPEG",
+      "retrieval_date_asia_shanghai": "2026-10-22"
+    }
+  ],
+  "extracted": {
+    "publisher": {
+      "announcement_label": "2003/12/12 20:20",
+      "time_zone": null,
+      "gallery_links_as_written": [
+        "http://www.4gamer.net/store/shots/stoneage/index.html"
+      ],
+      "claimed_image_count": "NEAR_40_NOT_EXACT",
+      "same_day_client_download_claim_not_execution": true
+    },
+    "gallery": {
+      "gallery_date_label": "12th Dec. 2003",
+      "page_index": 1,
+      "declared_pages": 3,
+      "development_notice": true,
+      "actual_image_capture_date": null,
+      "reference_rows": [
+        {
+          "href": "pages/image0000.html",
+          "src": "thumbnails/image0000.jpg",
+          "alt": "image0000"
+        },
+        {
+          "href": "pages/image0001.html",
+          "src": "thumbnails/image0001.jpg",
+          "alt": "image0001"
+        },
+        {
+          "href": "pages/image0002.html",
+          "src": "thumbnails/image0002.jpg",
+          "alt": "image0002"
+        },
+        {
+          "href": "pages/image0003.html",
+          "src": "thumbnails/image0003.jpg",
+          "alt": "image0003"
+        },
+        {
+          "href": "pages/image0004.html",
+          "src": "thumbnails/image0004.jpg",
+          "alt": "image0004"
+        },
+        {
+          "href": "pages/image0005.html",
+          "src": "thumbnails/image0005.jpg",
+          "alt": "image0005"
+        },
+        {
+          "href": "pages/image0006.html",
+          "src": "thumbnails/image0006.jpg",
+          "alt": "image0006"
+        },
+        {
+          "href": "pages/image0007.html",
+          "src": "thumbnails/image0007.jpg",
+          "alt": "image0007"
+        },
+        {
+          "href": "pages/image0008.html",
+          "src": "thumbnails/image0008.jpg",
+          "alt": "image0008"
+        },
+        {
+          "href": "pages/image0009.html",
+          "src": "thumbnails/image0009.jpg",
+          "alt": "image0009"
+        },
+        {
+          "href": "pages/image0010.html",
+          "src": "thumbnails/image0010.jpg",
+          "alt": "image0010"
+        },
+        {
+          "href": "pages/image0011.html",
+          "src": "thumbnails/image0011.jpg",
+          "alt": "image0011"
+        },
+        {
+          "href": "pages/image0012.html",
+          "src": "thumbnails/image0012.jpg",
+          "alt": "image0012"
+        },
+        {
+          "href": "pages/image0013.html",
+          "src": "thumbnails/image0013.jpg",
+          "alt": "image0013"
+        },
+        {
+          "href": "pages/image0014.html",
+          "src": "thumbnails/image0014.jpg",
+          "alt": "image0014"
+        }
+      ],
+      "later_gallery_pages_retrieved": false,
+      "copyright_label": "(C)1999 DigiPark Inc. All Rights Reserved. Produced by BOTHTEC"
+    },
+    "wrappers": [
+      {
+        "ordinal": 0,
+        "image_src_as_written": "../images/image0000.jpg",
+        "html_width_declaration": null,
+        "html_height_declaration": null,
+        "javascript_executed": false
+      },
+      {
+        "ordinal": 1,
+        "image_src_as_written": "../images/image0001.jpg",
+        "html_width_declaration": null,
+        "html_height_declaration": null,
+        "javascript_executed": false
+      }
+    ],
+    "images": [
+      {
+        "bytes": 242617,
+        "sha256": "7bebbdcce1f893ed2740951da905dcd99a6e8ee0b15f6ac1e95faac126809559",
+        "format": "JPEG",
+        "width": 640,
+        "height": 480,
+        "mode": "RGB",
+        "frames": 1,
+        "fully_decoded": true
+      },
+      {
+        "bytes": 222940,
+        "sha256": "84c8bb631dcaff5b90372c95952060b46b05be405bf8c15eb7dacfaf3290fa59",
+        "format": "JPEG",
+        "width": 640,
+        "height": 480,
+        "mode": "RGB",
+        "frames": 1,
+        "fully_decoded": true
+      }
+    ]
+  },
+  "catalog": {
+    "schema": "stoneage.jp2003_battle_field_visual.catalog.r1",
+    "records": [
+      {
+        "record_id": "jp-4gamer-20031212-gallery:page1-position-1",
+        "collection": "screens",
+        "entity_type": "DEVELOPMENT_GALLERY_REFERENCE_NOT_RENDER_STATE_MASTER",
+        "version_profile": "JP_BOTHTEC_2003_GALLERY_DEVELOPMENT_BUILD_UNVERIFIED",
+        "source_refs": [
+          "G1",
+          "W1",
+          "I1"
+        ],
+        "verification_status": "SOURCE_REFERENCE_WITH_TWO_HASH_BOUND_VISUAL_OBSERVATIONS",
+        "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+        "record_revision": 1,
+        "game_ids": null,
+        "gallery_reference": {
+          "href": "pages/image0000.html",
+          "src": "thumbnails/image0000.jpg",
+          "alt": "image0000"
+        },
+        "development_notice": true,
+        "exact_build_verified": false,
+        "image_capture_date": null,
+        "original_native_resolution": null,
+        "acquired_image": {
+          "url": "https://www.4gamer.net/store/shots/stoneage/images/image0000.jpg",
+          "bytes": 242617,
+          "sha256": "7bebbdcce1f893ed2740951da905dcd99a6e8ee0b15f6ac1e95faac126809559",
+          "format": "JPEG",
+          "width": 640,
+          "height": 480,
+          "mode": "RGB",
+          "frames": 1,
+          "fully_decoded": true
+        },
+        "manual_observation": {
+          "scene_class": "BATTLE_TARGET_SELECTION",
+          "facts": [
+            "Grass-background battle composition with five similar shell-backed opposing figures visible; species identity unknown.",
+            "Upper-right PLAYER panel has eight graphical cells in two rows of four. Icon-to-command mapping is not fully recovered.",
+            "Japanese help-request message, target-selection prompt and help-related bottom text coexist in this single frame.",
+            "Central numeric overlay reads14; its unit, initial value and temporal behavior are unknown."
+          ],
+          "not_proven": [
+            "HELP command success, cost, target requirement, trigger order or turn economy",
+            "maximum party/enemy population or species master",
+            "timer seconds or default countdown duration",
+            "native game resolution, animation or original runtime replay"
+          ],
+          "reviewed_image_sha256": "7bebbdcce1f893ed2740951da905dcd99a6e8ee0b15f6ac1e95faac126809559",
+          "method": "HUMAN_VIEW_OF_EXACT_SOURCE_JPEG_NOT_CI_OCR"
+        }
+      },
+      {
+        "record_id": "jp-4gamer-20031212-gallery:page1-position-2",
+        "collection": "screens",
+        "entity_type": "DEVELOPMENT_GALLERY_REFERENCE_NOT_RENDER_STATE_MASTER",
+        "version_profile": "JP_BOTHTEC_2003_GALLERY_DEVELOPMENT_BUILD_UNVERIFIED",
+        "source_refs": [
+          "G1",
+          "W2",
+          "I2"
+        ],
+        "verification_status": "SOURCE_REFERENCE_WITH_TWO_HASH_BOUND_VISUAL_OBSERVATIONS",
+        "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+        "record_revision": 1,
+        "game_ids": null,
+        "gallery_reference": {
+          "href": "pages/image0001.html",
+          "src": "thumbnails/image0001.jpg",
+          "alt": "image0001"
+        },
+        "development_notice": true,
+        "exact_build_verified": false,
+        "image_capture_date": null,
+        "original_native_resolution": null,
+        "acquired_image": {
+          "url": "https://www.4gamer.net/store/shots/stoneage/images/image0001.jpg",
+          "bytes": 222940,
+          "sha256": "84c8bb631dcaff5b90372c95952060b46b05be405bf8c15eb7dacfaf3290fa59",
+          "format": "JPEG",
+          "width": 640,
+          "height": 480,
+          "mode": "RGB",
+          "frames": 1,
+          "fully_decoded": true
+        },
+        "manual_observation": {
+          "scene_class": "FIELD_MAIN_UI",
+          "facts": [
+            "Field view with two humanoid figures and no open dialogue window in this frame. NPC/player identity is not established.",
+            "Mail-labelled upper-left area, Action-labelled upper-right area and bottom message/input strip are visible.",
+            "An orange directional-looking graphic appears at lower-right; exact operation is unverified."
+          ],
+          "not_proven": [
+            "NPC role, dialogue, canonical character or pet identity",
+            "click behavior, button protocol or login/creation transition",
+            "full animation/directions, native resolution or deployed build"
+          ],
+          "reviewed_image_sha256": "84c8bb631dcaff5b90372c95952060b46b05be405bf8c15eb7dacfaf3290fa59",
+          "method": "HUMAN_VIEW_OF_EXACT_SOURCE_JPEG_NOT_CI_OCR"
+        }
+      },
+      {
+        "record_id": "jp-4gamer-20031212-gallery:page1-position-3",
+        "collection": "screens",
+        "entity_type": "DEVELOPMENT_GALLERY_REFERENCE_NOT_RENDER_STATE_MASTER",
+        "version_profile": "JP_BOTHTEC_2003_GALLERY_DEVELOPMENT_BUILD_UNVERIFIED",
+        "source_refs": [
+          "G1"
+        ],
+        "verification_status": "UNREQUESTED_IMAGE_REFERENCE_ONLY",
+        "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+        "record_revision": 1,
+        "game_ids": null,
+        "gallery_reference": {
+          "href": "pages/image0002.html",
+          "src": "thumbnails/image0002.jpg",
+          "alt": "image0002"
+        },
+        "development_notice": true,
+        "exact_build_verified": false,
+        "image_capture_date": null,
+        "original_native_resolution": null,
+        "acquired_image": null,
+        "manual_observation": null
+      },
+      {
+        "record_id": "jp-4gamer-20031212-gallery:page1-position-4",
+        "collection": "screens",
+        "entity_type": "DEVELOPMENT_GALLERY_REFERENCE_NOT_RENDER_STATE_MASTER",
+        "version_profile": "JP_BOTHTEC_2003_GALLERY_DEVELOPMENT_BUILD_UNVERIFIED",
+        "source_refs": [
+          "G1"
+        ],
+        "verification_status": "UNREQUESTED_IMAGE_REFERENCE_ONLY",
+        "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+        "record_revision": 1,
+        "game_ids": null,
+        "gallery_reference": {
+          "href": "pages/image0003.html",
+          "src": "thumbnails/image0003.jpg",
+          "alt": "image0003"
+        },
+        "development_notice": true,
+        "exact_build_verified": false,
+        "image_capture_date": null,
+        "original_native_resolution": null,
+        "acquired_image": null,
+        "manual_observation": null
+      },
+      {
+        "record_id": "jp-4gamer-20031212-gallery:page1-position-5",
+        "collection": "screens",
+        "entity_type": "DEVELOPMENT_GALLERY_REFERENCE_NOT_RENDER_STATE_MASTER",
+        "version_profile": "JP_BOTHTEC_2003_GALLERY_DEVELOPMENT_BUILD_UNVERIFIED",
+        "source_refs": [
+          "G1"
+        ],
+        "verification_status": "UNREQUESTED_IMAGE_REFERENCE_ONLY",
+        "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+        "record_revision": 1,
+        "game_ids": null,
+        "gallery_reference": {
+          "href": "pages/image0004.html",
+          "src": "thumbnails/image0004.jpg",
+          "alt": "image0004"
+        },
+        "development_notice": true,
+        "exact_build_verified": false,
+        "image_capture_date": null,
+        "original_native_resolution": null,
+        "acquired_image": null,
+        "manual_observation": null
+      },
+      {
+        "record_id": "jp-4gamer-20031212-gallery:page1-position-6",
+        "collection": "screens",
+        "entity_type": "DEVELOPMENT_GALLERY_REFERENCE_NOT_RENDER_STATE_MASTER",
+        "version_profile": "JP_BOTHTEC_2003_GALLERY_DEVELOPMENT_BUILD_UNVERIFIED",
+        "source_refs": [
+          "G1"
+        ],
+        "verification_status": "UNREQUESTED_IMAGE_REFERENCE_ONLY",
+        "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+        "record_revision": 1,
+        "game_ids": null,
+        "gallery_reference": {
+          "href": "pages/image0005.html",
+          "src": "thumbnails/image0005.jpg",
+          "alt": "image0005"
+        },
+        "development_notice": true,
+        "exact_build_verified": false,
+        "image_capture_date": null,
+        "original_native_resolution": null,
+        "acquired_image": null,
+        "manual_observation": null
+      },
+      {
+        "record_id": "jp-4gamer-20031212-gallery:page1-position-7",
+        "collection": "screens",
+        "entity_type": "DEVELOPMENT_GALLERY_REFERENCE_NOT_RENDER_STATE_MASTER",
+        "version_profile": "JP_BOTHTEC_2003_GALLERY_DEVELOPMENT_BUILD_UNVERIFIED",
+        "source_refs": [
+          "G1"
+        ],
+        "verification_status": "UNREQUESTED_IMAGE_REFERENCE_ONLY",
+        "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+        "record_revision": 1,
+        "game_ids": null,
+        "gallery_reference": {
+          "href": "pages/image0006.html",
+          "src": "thumbnails/image0006.jpg",
+          "alt": "image0006"
+        },
+        "development_notice": true,
+        "exact_build_verified": false,
+        "image_capture_date": null,
+        "original_native_resolution": null,
+        "acquired_image": null,
+        "manual_observation": null
+      },
+      {
+        "record_id": "jp-4gamer-20031212-gallery:page1-position-8",
+        "collection": "screens",
+        "entity_type": "DEVELOPMENT_GALLERY_REFERENCE_NOT_RENDER_STATE_MASTER",
+        "version_profile": "JP_BOTHTEC_2003_GALLERY_DEVELOPMENT_BUILD_UNVERIFIED",
+        "source_refs": [
+          "G1"
+        ],
+        "verification_status": "UNREQUESTED_IMAGE_REFERENCE_ONLY",
+        "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+        "record_revision": 1,
+        "game_ids": null,
+        "gallery_reference": {
+          "href": "pages/image0007.html",
+          "src": "thumbnails/image0007.jpg",
+          "alt": "image0007"
+        },
+        "development_notice": true,
+        "exact_build_verified": false,
+        "image_capture_date": null,
+        "original_native_resolution": null,
+        "acquired_image": null,
+        "manual_observation": null
+      },
+      {
+        "record_id": "jp-4gamer-20031212-gallery:page1-position-9",
+        "collection": "screens",
+        "entity_type": "DEVELOPMENT_GALLERY_REFERENCE_NOT_RENDER_STATE_MASTER",
+        "version_profile": "JP_BOTHTEC_2003_GALLERY_DEVELOPMENT_BUILD_UNVERIFIED",
+        "source_refs": [
+          "G1"
+        ],
+        "verification_status": "UNREQUESTED_IMAGE_REFERENCE_ONLY",
+        "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+        "record_revision": 1,
+        "game_ids": null,
+        "gallery_reference": {
+          "href": "pages/image0008.html",
+          "src": "thumbnails/image0008.jpg",
+          "alt": "image0008"
+        },
+        "development_notice": true,
+        "exact_build_verified": false,
+        "image_capture_date": null,
+        "original_native_resolution": null,
+        "acquired_image": null,
+        "manual_observation": null
+      },
+      {
+        "record_id": "jp-4gamer-20031212-gallery:page1-position-10",
+        "collection": "screens",
+        "entity_type": "DEVELOPMENT_GALLERY_REFERENCE_NOT_RENDER_STATE_MASTER",
+        "version_profile": "JP_BOTHTEC_2003_GALLERY_DEVELOPMENT_BUILD_UNVERIFIED",
+        "source_refs": [
+          "G1"
+        ],
+        "verification_status": "UNREQUESTED_IMAGE_REFERENCE_ONLY",
+        "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+        "record_revision": 1,
+        "game_ids": null,
+        "gallery_reference": {
+          "href": "pages/image0009.html",
+          "src": "thumbnails/image0009.jpg",
+          "alt": "image0009"
+        },
+        "development_notice": true,
+        "exact_build_verified": false,
+        "image_capture_date": null,
+        "original_native_resolution": null,
+        "acquired_image": null,
+        "manual_observation": null
+      },
+      {
+        "record_id": "jp-4gamer-20031212-gallery:page1-position-11",
+        "collection": "screens",
+        "entity_type": "DEVELOPMENT_GALLERY_REFERENCE_NOT_RENDER_STATE_MASTER",
+        "version_profile": "JP_BOTHTEC_2003_GALLERY_DEVELOPMENT_BUILD_UNVERIFIED",
+        "source_refs": [
+          "G1"
+        ],
+        "verification_status": "UNREQUESTED_IMAGE_REFERENCE_ONLY",
+        "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+        "record_revision": 1,
+        "game_ids": null,
+        "gallery_reference": {
+          "href": "pages/image0010.html",
+          "src": "thumbnails/image0010.jpg",
+          "alt": "image0010"
+        },
+        "development_notice": true,
+        "exact_build_verified": false,
+        "image_capture_date": null,
+        "original_native_resolution": null,
+        "acquired_image": null,
+        "manual_observation": null
+      },
+      {
+        "record_id": "jp-4gamer-20031212-gallery:page1-position-12",
+        "collection": "screens",
+        "entity_type": "DEVELOPMENT_GALLERY_REFERENCE_NOT_RENDER_STATE_MASTER",
+        "version_profile": "JP_BOTHTEC_2003_GALLERY_DEVELOPMENT_BUILD_UNVERIFIED",
+        "source_refs": [
+          "G1"
+        ],
+        "verification_status": "UNREQUESTED_IMAGE_REFERENCE_ONLY",
+        "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+        "record_revision": 1,
+        "game_ids": null,
+        "gallery_reference": {
+          "href": "pages/image0011.html",
+          "src": "thumbnails/image0011.jpg",
+          "alt": "image0011"
+        },
+        "development_notice": true,
+        "exact_build_verified": false,
+        "image_capture_date": null,
+        "original_native_resolution": null,
+        "acquired_image": null,
+        "manual_observation": null
+      },
+      {
+        "record_id": "jp-4gamer-20031212-gallery:page1-position-13",
+        "collection": "screens",
+        "entity_type": "DEVELOPMENT_GALLERY_REFERENCE_NOT_RENDER_STATE_MASTER",
+        "version_profile": "JP_BOTHTEC_2003_GALLERY_DEVELOPMENT_BUILD_UNVERIFIED",
+        "source_refs": [
+          "G1"
+        ],
+        "verification_status": "UNREQUESTED_IMAGE_REFERENCE_ONLY",
+        "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+        "record_revision": 1,
+        "game_ids": null,
+        "gallery_reference": {
+          "href": "pages/image0012.html",
+          "src": "thumbnails/image0012.jpg",
+          "alt": "image0012"
+        },
+        "development_notice": true,
+        "exact_build_verified": false,
+        "image_capture_date": null,
+        "original_native_resolution": null,
+        "acquired_image": null,
+        "manual_observation": null
+      },
+      {
+        "record_id": "jp-4gamer-20031212-gallery:page1-position-14",
+        "collection": "screens",
+        "entity_type": "DEVELOPMENT_GALLERY_REFERENCE_NOT_RENDER_STATE_MASTER",
+        "version_profile": "JP_BOTHTEC_2003_GALLERY_DEVELOPMENT_BUILD_UNVERIFIED",
+        "source_refs": [
+          "G1"
+        ],
+        "verification_status": "UNREQUESTED_IMAGE_REFERENCE_ONLY",
+        "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+        "record_revision": 1,
+        "game_ids": null,
+        "gallery_reference": {
+          "href": "pages/image0013.html",
+          "src": "thumbnails/image0013.jpg",
+          "alt": "image0013"
+        },
+        "development_notice": true,
+        "exact_build_verified": false,
+        "image_capture_date": null,
+        "original_native_resolution": null,
+        "acquired_image": null,
+        "manual_observation": null
+      },
+      {
+        "record_id": "jp-4gamer-20031212-gallery:page1-position-15",
+        "collection": "screens",
+        "entity_type": "DEVELOPMENT_GALLERY_REFERENCE_NOT_RENDER_STATE_MASTER",
+        "version_profile": "JP_BOTHTEC_2003_GALLERY_DEVELOPMENT_BUILD_UNVERIFIED",
+        "source_refs": [
+          "G1"
+        ],
+        "verification_status": "UNREQUESTED_IMAGE_REFERENCE_ONLY",
+        "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+        "record_revision": 1,
+        "game_ids": null,
+        "gallery_reference": {
+          "href": "pages/image0014.html",
+          "src": "thumbnails/image0014.jpg",
+          "alt": "image0014"
+        },
+        "development_notice": true,
+        "exact_build_verified": false,
+        "image_capture_date": null,
+        "original_native_resolution": null,
+        "acquired_image": null,
+        "manual_observation": null
+      }
+    ],
+    "references_on_page1": 15,
+    "images_acquired": 2,
+    "unrequested_page1_images": 13,
+    "full_gallery_count_verified": null,
+    "website_built": false,
+    "public_asset_release_approved": false
+  },
+  "source_audit": {
+    "real_input_mutations": [
+      {
+        "case": "announcement-date",
+        "rejected": true,
+        "input_sha256": "e95c5d4e013374e77b97b4e5c546913731ae785e14c5c35f1ed3ef92f1ab83a7"
+      },
+      {
+        "case": "approximate-count",
+        "rejected": true,
+        "input_sha256": "9259808fa0c822b3bc69d7ca360b7d4b431c12a98d6dc674d2ed046f630781d8"
+      },
+      {
+        "case": "development-notice",
+        "rejected": true,
+        "input_sha256": "455f4c213590d2daf9503c10886a99f225d977fd2b47493508b2a209ca01dc09"
+      },
+      {
+        "case": "gallery-date",
+        "rejected": true,
+        "input_sha256": "50727f67153414c516d26600f7ff78b4ee4cf583ef971ccb2c1f783f2ad3906a"
+      },
+      {
+        "case": "wrapper-binding",
+        "rejected": true,
+        "input_sha256": "28e084ad99fe2a21dc9c2a490b2d8ee2e2363485a5f6c579a34feccb1a16779f"
+      },
+      {
+        "case": "thumbnail-binding",
+        "rejected": true,
+        "input_sha256": "776379220a9734dfbf7c834c0651616ff5712fe1a87011b03be1187ec50e49ac"
+      },
+      {
+        "case": "full-image-binding",
+        "rejected": true,
+        "input_sha256": "8e8b542a02c3ef1bfdcf24b955314c3b1a4b67ee8aab744f538ceae75754ad53"
+      },
+      {
+        "case": "swap-two-valid-jpeg-responses",
+        "rejected": true
+      }
+    ],
+    "peripheral_script_positive": true,
+    "html_digest_gate_used": false,
+    "human_visual_review_reexecuted": false
+  },
+  "audio_gate_input": {
+    "path": "research/recovered/STONEAGE-TW10-AUDIO-EVENT-GATE-R1.json",
+    "bytes": 11013,
+    "sha256": "ce1cd5738dac1a571999eea9ea6ee5ead86341f30bff4f0c4e4610a80f917047",
+    "git_blob": "67cc3707d45b6f079432b1db29b043851571b518"
+  },
+  "audio_disposition": "Existing original gameplay-event/audio-track binding remains false; no new audio event attribution or original audio acquisition. R63 rotates to the allowed visual material option.",
+  "archive_contract": {
+    "path": "research/recovered/STONEAGE-PREPRODUCTION-CONTENT-ARCHIVE-R1.json",
+    "bytes": 24489,
+    "sha256": "e87afebc8c9590142c7cc8831b578455b3427bf7c1d10520ae02a3e8082fbddb",
+    "git_blob": "2d5b3f081d5618287f431fbded943722a820c593"
+  },
+  "qualifications": [
+    "One publisher index, one first gallery page, two real wrappers and two JPEGs only; no thumbnails or gallery pages2/3 requested.",
+    "Near40 editorial wording and three-page label do not certify full gallery count, complete UI or all client screens.",
+    "Published2003 labels, development notice and current2026 response identity are separate; no exact original client or image capture date follows.",
+    "Current web wrappers returned HTTP200 even though the search reader failed on those URLs; reader failure is not historical absence.",
+    "Initial local preflight usedCP932 for an EUC-JP publisher index and failed strict decoding; actual declared charset was checked and corrected before successful extraction. No replacement decoding or remote failure claimed."
+  ],
+  "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-64",
+  "stage_a": {
+    "partial": 7,
+    "open": 2
+  },
+  "stage_b": "GATED",
+  "wiki": "GATED",
+  "r79": "PAUSED_NON_BLOCKING"
+}

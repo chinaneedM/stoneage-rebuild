@@ -1,0 +1,39 @@
+name: Verify JP2003 development battle and field visual sources
+on:
+  push:
+    paths:
+      - 'tools/stoneage_jp2003_battle_field_visual_source.py'
+      - 'tests/test_stoneage_jp2003_battle_field_visual_source.py'
+      - 'research/recovered/STONEAGE-JP2003-BATTLE-FIELD-VISUAL-*.json'
+      - 'docs/specs/STONEAGE-JP2003-BATTLE-FIELD-VISUAL-SOURCE-R1.md'
+      - '.github/workflows/verify-stoneage-jp2003-battle-field-visual.yml'
+  pull_request:
+    paths:
+      - 'tools/stoneage_jp2003_battle_field_visual_source.py'
+      - 'tests/test_stoneage_jp2003_battle_field_visual_source.py'
+      - 'research/recovered/STONEAGE-JP2003-BATTLE-FIELD-VISUAL-*.json'
+      - 'docs/specs/STONEAGE-JP2003-BATTLE-FIELD-VISUAL-SOURCE-R1.md'
+      - '.github/workflows/verify-stoneage-jp2003-battle-field-visual.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  bounded-visual-replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install Pillow
+      - name: Check visual attribution, rights and unknown acquisition guards
+        run: python -m unittest tests.test_stoneage_jp2003_battle_field_visual_source -v
+      - name: Replay exactly four HTML objects and two reviewed JPEGs
+        run: python -m tools.stoneage_jp2003_battle_field_visual_source --fetch --output "$RUNNER_TEMP/r63/replay.json"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: jp2003-battle-field-derived-r63
+          path: ${{ runner.temp }}/r63/replay.json
+          if-no-files-found: error
+          retention-days: 30
