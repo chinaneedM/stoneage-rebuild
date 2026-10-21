@@ -1,0 +1,365 @@
+{
+  "schema": "stoneage.cn20_healing_spells.derived_replay.r1",
+  "http": [
+    {
+      "bytes": 69317,
+      "sha256": "561950fd7bba41e7d39f4a781a671e11e175c7fe08dd1b5481fdf1fd23ba351b"
+    },
+    {
+      "bytes": 67848,
+      "sha256": "aa159ec42c9faf663dd726b98d356e4fb56f6903d7a75270fb52c367518e4f80"
+    }
+  ],
+  "extracted": {
+    "route": {
+      "label": "回复系",
+      "href": "/ZHUANQU/stoneage2/spell/huifu.asp"
+    },
+    "core_sha256": "d9e2a259142d981fdc2e4581979ba519b3a0b2f83daa11b8521786efa77c12cf",
+    "rows": [
+      {
+        "table_label_as_written": "治愈的精灵",
+        "level_as_written": "LV1",
+        "listed_level": 1,
+        "effect_as_written": "回复自己的耐久力+50",
+        "target_as_written": "自己",
+        "stat_as_written": "耐久力",
+        "listed_recovery_amount": 50,
+        "revival_described": false,
+        "cost_column_as_written": "消耗气力",
+        "listed_cost": 5,
+        "player_level_requirement_or_original_spell_id": null,
+        "runtime_stat_field_formula_caps_or_timing": null
+      },
+      {
+        "table_label_as_written": "治愈的精灵",
+        "level_as_written": "LV2",
+        "listed_level": 2,
+        "effect_as_written": "回复自己的耐久力+100",
+        "target_as_written": "自己",
+        "stat_as_written": "耐久力",
+        "listed_recovery_amount": 100,
+        "revival_described": false,
+        "cost_column_as_written": "消耗气力",
+        "listed_cost": 8,
+        "player_level_requirement_or_original_spell_id": null,
+        "runtime_stat_field_formula_caps_or_timing": null
+      },
+      {
+        "table_label_as_written": "治愈的精灵",
+        "level_as_written": "LV3",
+        "listed_level": 3,
+        "effect_as_written": "回复自己的耐久力+200",
+        "target_as_written": "自己",
+        "stat_as_written": "耐久力",
+        "listed_recovery_amount": 200,
+        "revival_described": false,
+        "cost_column_as_written": "消耗气力",
+        "listed_cost": 11,
+        "player_level_requirement_or_original_spell_id": null,
+        "runtime_stat_field_formula_caps_or_timing": null
+      },
+      {
+        "table_label_as_written": "治愈的精灵",
+        "level_as_written": "LV4",
+        "listed_level": 4,
+        "effect_as_written": "回复自己的耐久力+300",
+        "target_as_written": "自己",
+        "stat_as_written": "耐久力",
+        "listed_recovery_amount": 300,
+        "revival_described": false,
+        "cost_column_as_written": "消耗气力",
+        "listed_cost": 14,
+        "player_level_requirement_or_original_spell_id": null,
+        "runtime_stat_field_formula_caps_or_timing": null
+      },
+      {
+        "table_label_as_written": "滋润的精灵",
+        "level_as_written": "LV1",
+        "listed_level": 1,
+        "effect_as_written": "回复单体的耐久力+50",
+        "target_as_written": "单体",
+        "stat_as_written": "耐久力",
+        "listed_recovery_amount": 50,
+        "revival_described": false,
+        "cost_column_as_written": "消耗气力",
+        "listed_cost": 8,
+        "player_level_requirement_or_original_spell_id": null,
+        "runtime_stat_field_formula_caps_or_timing": null
+      },
+      {
+        "table_label_as_written": "滋润的精灵",
+        "level_as_written": "LV2",
+        "listed_level": 2,
+        "effect_as_written": "回复单体的耐久力+10",
+        "target_as_written": "单体",
+        "stat_as_written": "耐久力",
+        "listed_recovery_amount": 10,
+        "revival_described": false,
+        "cost_column_as_written": "消耗气力",
+        "listed_cost": 12,
+        "player_level_requirement_or_original_spell_id": null,
+        "runtime_stat_field_formula_caps_or_timing": null
+      },
+      {
+        "table_label_as_written": "滋润的精灵",
+        "level_as_written": "LV3",
+        "listed_level": 3,
+        "effect_as_written": "回复单体的耐久力+200",
+        "target_as_written": "单体",
+        "stat_as_written": "耐久力",
+        "listed_recovery_amount": 200,
+        "revival_described": false,
+        "cost_column_as_written": "消耗气力",
+        "listed_cost": 16,
+        "player_level_requirement_or_original_spell_id": null,
+        "runtime_stat_field_formula_caps_or_timing": null
+      },
+      {
+        "table_label_as_written": "滋润的精灵",
+        "level_as_written": "LV4",
+        "listed_level": 4,
+        "effect_as_written": "回复单体的耐久力+300",
+        "target_as_written": "单体",
+        "stat_as_written": "耐久力",
+        "listed_recovery_amount": 300,
+        "revival_described": false,
+        "cost_column_as_written": "消耗气力",
+        "listed_cost": 20,
+        "player_level_requirement_or_original_spell_id": null,
+        "runtime_stat_field_formula_caps_or_timing": null
+      },
+      {
+        "table_label_as_written": "恩惠的精灵",
+        "level_as_written": "LV1",
+        "listed_level": 1,
+        "effect_as_written": "回复己方全体的耐久力+50",
+        "target_as_written": "己方全体",
+        "stat_as_written": "耐久力",
+        "listed_recovery_amount": 50,
+        "revival_described": false,
+        "cost_column_as_written": "消耗气力",
+        "listed_cost": 20,
+        "player_level_requirement_or_original_spell_id": null,
+        "runtime_stat_field_formula_caps_or_timing": null
+      },
+      {
+        "table_label_as_written": "恩惠的精灵",
+        "level_as_written": "LV2",
+        "listed_level": 2,
+        "effect_as_written": "回复己方全体的耐久力+100",
+        "target_as_written": "己方全体",
+        "stat_as_written": "耐久力",
+        "listed_recovery_amount": 100,
+        "revival_described": false,
+        "cost_column_as_written": "消耗气力",
+        "listed_cost": 30,
+        "player_level_requirement_or_original_spell_id": null,
+        "runtime_stat_field_formula_caps_or_timing": null
+      },
+      {
+        "table_label_as_written": "恩惠的精灵",
+        "level_as_written": "LV3",
+        "listed_level": 3,
+        "effect_as_written": "回复己方全体的耐久力+200",
+        "target_as_written": "己方全体",
+        "stat_as_written": "耐久力",
+        "listed_recovery_amount": 200,
+        "revival_described": false,
+        "cost_column_as_written": "消耗气力",
+        "listed_cost": 40,
+        "player_level_requirement_or_original_spell_id": null,
+        "runtime_stat_field_formula_caps_or_timing": null
+      },
+      {
+        "table_label_as_written": "复活的精灵",
+        "level_as_written": "LV1",
+        "listed_level": 1,
+        "effect_as_written": "令单体复活，并回复耐久力+100",
+        "target_as_written": "单体",
+        "stat_as_written": "耐久力",
+        "listed_recovery_amount": 100,
+        "revival_described": true,
+        "cost_column_as_written": "消耗气力",
+        "listed_cost": 20,
+        "player_level_requirement_or_original_spell_id": null,
+        "runtime_stat_field_formula_caps_or_timing": null
+      },
+      {
+        "table_label_as_written": "复活的精灵",
+        "level_as_written": "LV2",
+        "listed_level": 2,
+        "effect_as_written": "令单体复活，并回复耐久力+200",
+        "target_as_written": "单体",
+        "stat_as_written": "耐久力",
+        "listed_recovery_amount": 200,
+        "revival_described": true,
+        "cost_column_as_written": "消耗气力",
+        "listed_cost": 35,
+        "player_level_requirement_or_original_spell_id": null,
+        "runtime_stat_field_formula_caps_or_timing": null
+      }
+    ],
+    "intro": {
+      "healing_roles_and_names_as_written": [
+        {
+          "role": "治愈精灵",
+          "name": "哈鲁"
+        },
+        {
+          "role": "滋润精灵",
+          "name": "芙蕾雅"
+        },
+        {
+          "role": "神恩精灵",
+          "name": "提欧"
+        }
+      ],
+      "halu_scope_as_written": "只能回复玩家",
+      "freya_scope_as_written": "我方一人或宠物一匹",
+      "tio_scope_as_written": "全员",
+      "equipment_mainly_as_written": [
+        "衣服",
+        "铠甲",
+        "等防具"
+      ],
+      "all_equipment_or_exclusive_rule": null,
+      "revival_names_as_written": [
+        "希鲁菲尔",
+        "雅鲁",
+        "哈恩"
+      ],
+      "revival_recovery_order_as_written": [
+        "希鲁菲尔",
+        "雅鲁",
+        "哈恩"
+      ],
+      "order_direction_and_name_to_lv_mapping": null,
+      "pet_faint_revive_is_advice": true,
+      "loyalty_phrase_as_written": "不会下降很多",
+      "experience_phrase_as_written": "又有经验值",
+      "exact_loyalty_loss_experience_amount_or_no_penalty": null
+    },
+    "content_images": 0,
+    "authorship": "OPERATOR_HOSTED_UNSIGNED_GUIDE_AUTHOR_UNVERIFIED",
+    "publication_date": null,
+    "exact_client_build": null,
+    "original_game_executed": false
+  },
+  "audit": {
+    "real_source_mutations": [
+      {
+        "case": "nav-label",
+        "source_index": 0,
+        "input_sha256": "68b5970fdb22d06b50ec0355d23c983d466cf5a856ae559eeced69cb3807e951",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "nav-path",
+        "source_index": 0,
+        "input_sha256": "6a4f5bf24840cccd3500c6948c4914ab21b42de46142da7cfd7a5a7b0cd2f89c",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "named-healer",
+        "source_index": 1,
+        "input_sha256": "7508804b612cae3f0b5bb193bc0ca96b8f9a9aad7b8208ad922ef98d015ad1e5",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "halu-player-only",
+        "source_index": 1,
+        "input_sha256": "844c093584fc26148ff6c94e89db98501c5a06645c5055bd37b01778d99d750f",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "freya-target",
+        "source_index": 1,
+        "input_sha256": "043bee78812af40ba47b75b5c38f285ff5828dc2bb6a9e8f56fb0d26429c0349",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "tio-scope",
+        "source_index": 1,
+        "input_sha256": "992785799caa64329ec9c6aecd8c35279455dafbd9a84f590e6e612d5f3c66a7",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "mainly-not-only",
+        "source_index": 1,
+        "input_sha256": "426a4b77d003b4592587b47c3eb83e464ab0823326d2533cefb27b58f9c12081",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "revival-name-order",
+        "source_index": 1,
+        "input_sha256": "6d8e2d0b8cc85cdf3b2ba665cde199a7cd20c417ebf07ae3accbaceed0b66d6d",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "qualified-loyalty",
+        "source_index": 1,
+        "input_sha256": "e96ae755a3bfe932332341929d377e11f3f9238fd4c152d03851308ad9c75464",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "experience-advice",
+        "source_index": 1,
+        "input_sha256": "7204b649fbbd7f13191539545190663713f01d9ecb1c59e0925e9bb52e6b0a33",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "source-plus-ten",
+        "source_index": 1,
+        "input_sha256": "bb1f211bcd3c30e17080bb85224413ee045881d3e2f62aac33b224363a82ea54",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "source-self-target",
+        "source_index": 1,
+        "input_sha256": "72b88f8065c250edae95bcb27e9cca7339356d92194107e45908dab41f36905b",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "allied-all-target",
+        "source_index": 1,
+        "input_sha256": "4fd22cd14a7c10ca283cf47e8cbab00060f37e534b9b544130c5f9a797e1761f",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "revive-amount",
+        "source_index": 1,
+        "input_sha256": "008a3705e33118441c044abb339941089549cfd8e0f5425234beec3ab2774a6b",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "table-name-not-intro-name",
+        "source_index": 1,
+        "input_sha256": "946b5d629c6c8bad7ec43abb286cd786cbbfe78924191195f4d13641cc5544e3",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "rowspan",
+        "source_index": 1,
+        "input_sha256": "4a0b40fcb3ff38f87257f76480d316be2304803a4698f81f22dc71f24f8c6e8f",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "level-not-player-requirement",
+        "source_index": 1,
+        "input_sha256": "70d9f51bdf584917238f6bee6f4a61f13087d132652ff1659bac16d5dd758ed7",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "cost-number",
+        "source_index": 1,
+        "input_sha256": "fe36ef5bb1a9ed85072f942e1cafaeee7d83d3a3b936d6f5e987eb01f99c1f27",
+        "rejected_without_digest_gate": true
+      }
+    ],
+    "outer_script_positive": true
+  },
+  "content_images_fetched": 0,
+  "raw_html_or_assets_in_output": false,
+  "original_game_executed": false
+}

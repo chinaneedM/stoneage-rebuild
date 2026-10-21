@@ -1,0 +1,433 @@
+{
+  "schema": "stoneage.cn20_healing_spells.custody.r1",
+  "date": "2026-10-21",
+  "content_head": "0278ba470b32816aaa072f5e4596d812bb0a5d14",
+  "content_tree": "2876b1b69b23ac322537011de0ee88a5a533ef12",
+  "startup_head": "7a6042d15f102e18cfb9eec01ef0f6e8e430639a",
+  "startup_tree": "b88673c3d3ea14845fef48a55dda4558090ce344",
+  "startup_prefixes": [
+    {
+      "path": "README.md",
+      "bytes": 43399,
+      "sha256": "d1d02e38bcdfe7cb79c98bd3ff454dec5d00b8d7b42e4b2320b62a13c94abc01",
+      "git_blob": "7318c3e6e478a99a5dadd85366bf131d63aeef4d"
+    },
+    {
+      "path": "docs/PROJECT-CONTINUITY-PROTOCOL-R1.md",
+      "bytes": 9762,
+      "sha256": "c44834eeec87f7a43e9cb4905f08377349e36d58b1fff2c5a75a6975db695e3b",
+      "git_blob": "ba9bbe19384589400abc61af37a360a40bf91452"
+    },
+    {
+      "path": "docs/CURRENT-STATE.md",
+      "bytes": 2262749,
+      "sha256": "a2e95926415fd0e7949e29535baa88bd359aca62ac627fc5b27ebc519bf0f088",
+      "git_blob": "157093d10977c0a1ef3a1d17b563cb896cc9cf6e"
+    },
+    {
+      "path": "docs/DESIGN-DECISIONS.md",
+      "bytes": 45965,
+      "sha256": "28b572ed01179eacd5a06b4ad62c76e4baef22ac49587aa0bad452a7cb3fe8e6",
+      "git_blob": "013ae4fad9301ab0140fe408a423b3abad97d1f9"
+    },
+    {
+      "path": "docs/HISTORICAL-TIMELINE.md",
+      "bytes": 559679,
+      "sha256": "f46473885b524fbb15a1ea618cecdd265191d388c8efac597a6fd54422b4b045",
+      "git_blob": "08ecf45e32349da12fd8812b62e770dfba25a86e"
+    },
+    {
+      "path": "docs/SOURCE-REGISTRY.md",
+      "bytes": 837872,
+      "sha256": "020926b1f79c75560834ff1dc81f002361ff0c9d016e3a5c92f511b2cd28f629",
+      "git_blob": "757b4c50becfd81b88d5bb5c6a505040da7f3d63"
+    },
+    {
+      "path": "docs/RESTORATION-ROADMAP-R2.md",
+      "bytes": 210481,
+      "sha256": "5126080c4dbb3ddbdc3b5ff8a70753f9f3f10d03542d9dafc53c50e44e51845c",
+      "git_blob": "2c35f252b46e8acd411861edea654f215d57669a"
+    },
+    {
+      "path": "docs/STONEAGE-PREPRODUCTION-CONTENT-ARCHIVE-R1.md",
+      "bytes": 27415,
+      "sha256": "d91178c03531f4fdbbc8d9e445894596aa81f9efa0b1bf13ad90be90d0da5686",
+      "git_blob": "3a63eff07fadb10fd1eab1b819be59a1a7969849"
+    },
+    {
+      "path": "research/recovered/STONEAGE-22-DOMAIN-SOURCE-READY-PORTFOLIO-R2.json",
+      "bytes": 15948,
+      "sha256": "7d50de08f7855cf16dbe54b1747e258f1cc1223de88cc217172fd145f3c704ce",
+      "git_blob": "088b469b3c51e689cff27f33fc3bb49de2d24b2c"
+    }
+  ],
+  "workflow_runs": [
+    {
+      "id": 39592599750,
+      "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+      "head_sha": "0278ba470b32816aaa072f5e4596d812bb0a5d14",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39592599750"
+    },
+    {
+      "id": 39592599567,
+      "name": "Validate legacy StoneAge assistant history and pet content gaps",
+      "head_sha": "0278ba470b32816aaa072f5e4596d812bb0a5d14",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39592599567"
+    },
+    {
+      "id": 39592599469,
+      "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+      "head_sha": "0278ba470b32816aaa072f5e4596d812bb0a5d14",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39592599469"
+    },
+    {
+      "id": 39592599672,
+      "name": "Validate StoneAge preproduction content archive and wiki boundary",
+      "head_sha": "0278ba470b32816aaa072f5e4596d812bb0a5d14",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39592599672"
+    },
+    {
+      "id": 39592599442,
+      "name": "Independently verify TW1.0 R58 rooted helper returns and source custody",
+      "head_sha": "0278ba470b32816aaa072f5e4596d812bb0a5d14",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39592599442"
+    },
+    {
+      "id": 39592599468,
+      "name": "Validate StoneAge Stage A joint review decision",
+      "head_sha": "0278ba470b32816aaa072f5e4596d812bb0a5d14",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39592599468"
+    },
+    {
+      "id": 39592599479,
+      "name": "Verify CN2.0 healing table anomalies and equipment context",
+      "head_sha": "0278ba470b32816aaa072f5e4596d812bb0a5d14",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39592599479"
+    },
+    {
+      "id": 39592599631,
+      "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+      "head_sha": "0278ba470b32816aaa072f5e4596d812bb0a5d14",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39592599631"
+    },
+    {
+      "id": 39592599418,
+      "name": "Validate Stage A early source gap triage",
+      "head_sha": "0278ba470b32816aaa072f5e4596d812bb0a5d14",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39592599418"
+    },
+    {
+      "id": 39592599407,
+      "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+      "head_sha": "0278ba470b32816aaa072f5e4596d812bb0a5d14",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39592599407"
+    },
+    {
+      "id": 39592599160,
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "head_sha": "0278ba470b32816aaa072f5e4596d812bb0a5d14",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39592599160"
+    },
+    {
+      "id": 39592464022,
+      "name": "Validate StoneAge preproduction content archive and wiki boundary",
+      "head_sha": "0278ba470b32816aaa072f5e4596d812bb0a5d14",
+      "head_branch": "agent/cn20-healing-spells-r53-20261021",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39592464022"
+    },
+    {
+      "id": 39592463788,
+      "name": "Validate legacy StoneAge assistant history and pet content gaps",
+      "head_sha": "0278ba470b32816aaa072f5e4596d812bb0a5d14",
+      "head_branch": "agent/cn20-healing-spells-r53-20261021",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39592463788"
+    },
+    {
+      "id": 39592463778,
+      "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+      "head_sha": "0278ba470b32816aaa072f5e4596d812bb0a5d14",
+      "head_branch": "agent/cn20-healing-spells-r53-20261021",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39592463778"
+    },
+    {
+      "id": 39592463750,
+      "name": "Validate Stage A early source gap triage",
+      "head_sha": "0278ba470b32816aaa072f5e4596d812bb0a5d14",
+      "head_branch": "agent/cn20-healing-spells-r53-20261021",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39592463750"
+    },
+    {
+      "id": 39592464175,
+      "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+      "head_sha": "0278ba470b32816aaa072f5e4596d812bb0a5d14",
+      "head_branch": "agent/cn20-healing-spells-r53-20261021",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39592464175"
+    },
+    {
+      "id": 39592463831,
+      "name": "Validate StoneAge Stage A joint review decision",
+      "head_sha": "0278ba470b32816aaa072f5e4596d812bb0a5d14",
+      "head_branch": "agent/cn20-healing-spells-r53-20261021",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39592463831"
+    },
+    {
+      "id": 39592463746,
+      "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+      "head_sha": "0278ba470b32816aaa072f5e4596d812bb0a5d14",
+      "head_branch": "agent/cn20-healing-spells-r53-20261021",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39592463746"
+    },
+    {
+      "id": 39592464105,
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "head_sha": "0278ba470b32816aaa072f5e4596d812bb0a5d14",
+      "head_branch": "agent/cn20-healing-spells-r53-20261021",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39592464105"
+    },
+    {
+      "id": 39592464093,
+      "name": "Verify CN2.0 healing table anomalies and equipment context",
+      "head_sha": "0278ba470b32816aaa072f5e4596d812bb0a5d14",
+      "head_branch": "agent/cn20-healing-spells-r53-20261021",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39592464093"
+    },
+    {
+      "id": 39592463922,
+      "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+      "head_sha": "0278ba470b32816aaa072f5e4596d812bb0a5d14",
+      "head_branch": "agent/cn20-healing-spells-r53-20261021",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39592463922"
+    }
+  ],
+  "candidate": {
+    "head": "0278ba470b32816aaa072f5e4596d812bb0a5d14",
+    "tree": "2876b1b69b23ac322537011de0ee88a5a533ef12",
+    "run_id": 39592464093,
+    "job_id": 119196561009,
+    "artifact_id": 12341224452,
+    "artifact_name": "cn20-healing-spells-derived-replay",
+    "zip_bytes": 2686,
+    "zip_sha256": "b44cb0bc2f39b40c5532b7fada8fdab5ba71fede4e8a66c4e256035eecfff293",
+    "zip_entry_names": [
+      "replay.json"
+    ],
+    "raw_bytes": 13077,
+    "raw_sha256": "7a7826645bba41ad773fe085fc2b40898aad7066b03b3a6f0df3c23b6c3135cf",
+    "raw_git_blob": "4e7aa4114c20e5acbe93b0cc3ebc8093714ca35e",
+    "derived_git_path": "research/recovered/STONEAGE-CN20-HEALING-SPELLS-CI-CANDIDATE-REPLAY-R1.json",
+    "actual_unit_tests": 10,
+    "skipped_tests": 0,
+    "all_applicable_workflows_success": true,
+    "own_workflow_count": 10,
+    "actual_html_bytes": [
+      69317,
+      67848
+    ],
+    "spell_level_rows": 13,
+    "context_records": 1,
+    "rowspan_group_lengths": [
+      4,
+      4,
+      3,
+      2
+    ],
+    "real_source_mutations": 18,
+    "outer_script_positive": true,
+    "content_images_fetched": 0,
+    "old_battle_originals_reacquired": false
+  },
+  "main": {
+    "head": "0278ba470b32816aaa072f5e4596d812bb0a5d14",
+    "tree": "2876b1b69b23ac322537011de0ee88a5a533ef12",
+    "run_id": 39592599479,
+    "job_id": 119197008183,
+    "artifact_id": 12341743477,
+    "artifact_name": "cn20-healing-spells-derived-replay",
+    "zip_bytes": 2686,
+    "zip_sha256": "36f7b9c7224c75a3b2a9b65d1c0be795ba7be04c284632b3fcff334d38596df2",
+    "zip_entry_names": [
+      "replay.json"
+    ],
+    "raw_bytes": 13077,
+    "raw_sha256": "7a7826645bba41ad773fe085fc2b40898aad7066b03b3a6f0df3c23b6c3135cf",
+    "raw_git_blob": "4e7aa4114c20e5acbe93b0cc3ebc8093714ca35e",
+    "derived_git_path": "research/recovered/STONEAGE-CN20-HEALING-SPELLS-CI-MAIN-REPLAY-R1.json",
+    "actual_unit_tests": 10,
+    "skipped_tests": 0,
+    "all_applicable_workflows_success": true,
+    "own_workflow_count": 11,
+    "actual_html_bytes": [
+      69317,
+      67848
+    ],
+    "spell_level_rows": 13,
+    "context_records": 1,
+    "rowspan_group_lengths": [
+      4,
+      4,
+      3,
+      2
+    ],
+    "real_source_mutations": 18,
+    "outer_script_positive": true,
+    "content_images_fetched": 0,
+    "old_battle_originals_reacquired": false
+  },
+  "independent_checks": {
+    "clean_remote_content_checkout_related_tests": 59,
+    "independent_regex_entities_13_rows_values_costs_and_qualifiers": true,
+    "published_chinese_table_all_13_rows_match_source": true,
+    "raw_candidate_main_local_byte_equality": true,
+    "prior_battle_report_preserved_and_used_only_qualitatively": true,
+    "source_plus10_preserved_and_not_corrected": true
+  },
+  "source_pins": [
+    {
+      "path": "research/recovered/STONEAGE-CN20-HEALING-SPELLS-SOURCE-R1.json",
+      "bytes": 27194,
+      "sha256": "b1cf694e0fe49964753f84ea8b6bceb9ea4cc41039eac7f232bc864b99bf6210",
+      "git_blob": "ab6eec50fc87e1388d70658282acc4c2b14b5749"
+    },
+    {
+      "path": "research/recovered/STONEAGE-CN20-HEALING-SPELLS-LOCAL-REPLAY-R1.json",
+      "bytes": 13077,
+      "sha256": "7a7826645bba41ad773fe085fc2b40898aad7066b03b3a6f0df3c23b6c3135cf",
+      "git_blob": "4e7aa4114c20e5acbe93b0cc3ebc8093714ca35e"
+    },
+    {
+      "path": "tools/stoneage_cn20_healing_spells_source.py",
+      "bytes": 13720,
+      "sha256": "d3b52f53817be75ee95c79a96f3931bcf8952623ea5339c8d3b41cd5da7e455a",
+      "git_blob": "498d9af9b926403238cbef6e69de599d669d2ed2"
+    },
+    {
+      "path": ".github/workflows/verify-stoneage-cn20-healing-spells-source.yml",
+      "bytes": 1720,
+      "sha256": "78017e3862bd1b2e7015d0ddc41368bf5d5a88a06d173dd7a72edbf3779120bf",
+      "git_blob": "470cb8052c473fd71c452dd032458aee62792728"
+    },
+    {
+      "path": "docs/specs/STONEAGE-CN20-HEALING-SPELLS-SOURCE-R1.md",
+      "bytes": 6075,
+      "sha256": "70a55960f3025f8abd70d75ba39e5bfcbfb62d18cca21ab488c5816b2ef0d98b",
+      "git_blob": "19d0049614337278350788695b653f8dffd1bb9a"
+    },
+    {
+      "path": "docs/STONEAGE-OFFICIAL-VERSION-NAMED-CONTENT-REVIEW-R53.md",
+      "bytes": 1049,
+      "sha256": "cdbea076a3922f19e4f61e5b16ef279cccf3bd18478fe0452900f1d47e8caa0a",
+      "git_blob": "6a6613c11ad728330a46ccaf2dab2afd37880cc2"
+    },
+    {
+      "path": "tools/stoneage_cn20_recordpoint_source.py",
+      "bytes": 13752,
+      "sha256": "f59ef1121035506fc5621455a3fd8d5af96fb099add2add50eb6e7f121e8f182",
+      "git_blob": "065088b175d86b2825ea401cbed867a443bcf97c"
+    },
+    {
+      "path": "tools/stoneage_cn2003_group2_manor_report.py",
+      "bytes": 14072,
+      "sha256": "876318e9883e4d08f40c9c12e458d2473f989f65b1b301ef580c84866ece24b7",
+      "git_blob": "ee168823f2699c77ae8eefea420a34be2d24c6bd"
+    },
+    {
+      "path": "research/recovered/STONEAGE-CN20-BATTLE-COMMANDS-DEFEAT-SOURCE-R1.json",
+      "bytes": 17776,
+      "sha256": "881145f56f5f279cc05afb9595e71314f74090a51f4b14307dae3cc2be67f6f9",
+      "git_blob": "85c428fe0b6ea44b00a850c0e3fc49ac1360630f"
+    },
+    {
+      "path": "research/recovered/STONEAGE-CN20-HEALING-SPELLS-CI-CANDIDATE-REPLAY-R1.json",
+      "bytes": 13077,
+      "sha256": "7a7826645bba41ad773fe085fc2b40898aad7066b03b3a6f0df3c23b6c3135cf",
+      "git_blob": "4e7aa4114c20e5acbe93b0cc3ebc8093714ca35e"
+    },
+    {
+      "path": "research/recovered/STONEAGE-CN20-HEALING-SPELLS-CI-MAIN-REPLAY-R1.json",
+      "bytes": 13077,
+      "sha256": "7a7826645bba41ad773fe085fc2b40898aad7066b03b3a6f0df3c23b6c3135cf",
+      "git_blob": "4e7aa4114c20e5acbe93b0cc3ebc8093714ca35e"
+    }
+  ],
+  "bounds": {
+    "raw_html_or_assets_committed": false,
+    "plus10_silently_corrected_to100": false,
+    "shenen_and_enhui_silently_renamed": false,
+    "three_revival_names_mapped_to_two_levels": false,
+    "revival_name_order_direction_inferred": false,
+    "table_level_is_player_or_equipment_requirement": false,
+    "listed_end_level_is_global_max": false,
+    "source_taijiuli_or_qili_bound_to_original_hp_mp_fields": false,
+    "listed_recovery_is_uncapped_runtime_formula": false,
+    "allied_all_has_verified_pet_or_slot_membership": false,
+    "mainly_clothing_armor_is_exclusive_or_every_item": false,
+    "pet_revive_advice_means_zero_loyalty_loss_or_full_exp": false,
+    "operator_host_proves_named_author_or_verbatim_manual": false,
+    "capture_time_is_publication_or_feature_launch": false,
+    "same_site_title_proves_same_client_build": false,
+    "original_spell_spirit_item_or_npc_ids_recovered": false,
+    "spirit_names_are_spawned_npcs_or_pet_species": false,
+    "tw10_jss1999_or_other_region_backfill": false,
+    "original_client_server_or_later_heal_model_executed": false,
+    "complete_all_spell_catalog_recovered": false,
+    "battle_parent_originals_refetched": false,
+    "content_screenshot_recovered": false,
+    "production_asset_reuse_approved": false,
+    "stage_b_open": false,
+    "r79_resumed": false
+  },
+  "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-54"
+}
