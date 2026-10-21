@@ -67,7 +67,7 @@ class TestCn2004PetSkillTrainerSource(unittest.TestCase):
 
     def test_permanent_receipt_matches_source_bytes(self):
         import hashlib
-        p = P.parents[0] / "research/recovered/STONEAGE-CN2004-PET-SKILL-TRAINER-ACCEPTANCE-R1.json"
+        p = P.parents[2] / "research/recovered/STONEAGE-CN2004-PET-SKILL-TRAINER-ACCEPTANCE-R1.json"
         receipt = json.loads(p.read_text(encoding="utf-8"))
         raw = P.read_bytes()
         info = receipt["derived_source"]
