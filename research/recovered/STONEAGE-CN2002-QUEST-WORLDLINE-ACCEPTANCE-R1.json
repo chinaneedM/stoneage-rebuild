@@ -1,0 +1,82 @@
+{
+  "schema": "stoneage.cn2002_quest_worldline.derived_acceptance.r1",
+  "date": "2026-10-21",
+  "scope": "R58 contemporary player guides derived claims only; original client/runtime and source HTTP unrecovered",
+  "source_content_commit": {
+    "sha": "dd30db0dfc5a3d58706c3220ea8d333aa37ba5cb",
+    "tree_sha": "c31abd5cf0bb2c885ff4b99493d6eb6c2e5780ba",
+    "parent_sha": "b94270a19e4ce5d73691e8201d00a03bcf6c8177"
+  },
+  "source_derived": {
+    "path": "research/recovered/STONEAGE-CN2002-QUEST-WORLDLINE-SOURCE-R1.json",
+    "git_blob_sha1": "5026707c16e0fdc306daf188739dcd75cb79b8b5",
+    "utf8_byte_length": 12868,
+    "raw_sha256": "58b6c1f986e0b0b30ce45cedccfce47395d95b23b905f33da7a4eafb6e909183",
+    "record_count_task_gates": 12,
+    "record_count_story_nodes": 8,
+    "boundary_count": 6,
+    "persisted_in_git": true,
+    "contains_original_html_or_game_assets": false
+  },
+  "web_sources": [
+    {
+      "id": "S1",
+      "date": "2002-09-16",
+      "url": "https://news.17173.com/z/stoneage/content/2002-9-16/n654_571022.html",
+      "source_kind": "CONTEMPORANEOUS_PLAYER",
+      "original_http_sha256": null,
+      "source_archive_replay": false
+    },
+    {
+      "id": "S2",
+      "date": "2002-12-17",
+      "url": "https://news.17173.com/z/stoneage/content/2002-12-17/n527_443886.html",
+      "source_kind": "CONTEMPORANEOUS_PLAYER",
+      "original_http_sha256": null,
+      "source_archive_replay": false
+    }
+  ],
+  "candidate_validation": {
+    "branch": "agent/cn2002-quest-worldline-r58-20261021",
+    "run_id": 39612028005,
+    "job_id": 119263072244,
+    "head_sha": "dd30db0dfc5a3d58706c3220ea8d333aa37ba5cb",
+    "conclusion": "success",
+    "tested_checks": 6,
+    "test_skips": 0,
+    "applicable_workflow_runs": 10,
+    "all_workflow_runs_success": true,
+    "artifact_count": 0
+  },
+  "main_validation": {
+    "branch": "main",
+    "run_id": 39612246843,
+    "job_id": 119263842866,
+    "head_sha": "dd30db0dfc5a3d58706c3220ea8d333aa37ba5cb",
+    "conclusion": "success",
+    "tested_checks": 6,
+    "test_skips": 0,
+    "applicable_workflow_runs": 11,
+    "all_workflow_runs_success": true,
+    "artifact_count": 0
+  },
+  "diff_acceptance": {
+    "changed_files": 8,
+    "added_files": 5,
+    "append_only_historical_files": 3,
+    "deleted_historical_lines": 0,
+    "non_force_main_fast_forward": true
+  },
+  "receipt_revision_checks": "PENDING_THIS_COMMIT_OWN_CI",
+  "source_scope_not_advanced_by_ci": true,
+  "unresolved": [
+    "original_html_bytes_or_archive_snapshot_sha256",
+    "original_jss1999_taiwan10_quest_script_and_same_build_server_master",
+    "reader_guide_level_changes_official_patch_verification",
+    "s1_and_s2_same_exact_build",
+    "quest_rewards_rng_and_dialog_runtime",
+    "mysterious_shell_item_id_cross_era"
+  ],
+  "old_history_prefix_preserved": true,
+  "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-59"
+}

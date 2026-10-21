@@ -69,5 +69,25 @@ class TestCn2002QuestWorldlineSource(unittest.TestCase):
         self.assertEqual(len(self.d["s1_4_0_quest_gates"]), 12)
         self.assertEqual(len(self.d["s2_mechanical_civilization_story_beats"]), 8)
 
+    def test_source_receipt_matches_raw_bytes(self):
+        import hashlib
+        p = SOURCE.parent / "STONEAGE-CN2002-QUEST-WORLDLINE-ACCEPTANCE-R1.json"
+        r = json.loads(p.read_text(encoding="utf-8"))
+        b = SOURCE.read_bytes()
+        info = r["source_derived"]
+        self.assertEqual(len(b), info["utf8_byte_length"])
+        self.assertEqual(hashlib.sha256(b).hexdigest(), info["raw_sha256"])
+        self.assertEqual(info["git_blob_sha1"], "5026707c16e0fdc306daf188739dcd75cb79b8b5")
+        self.assertTrue(info["persisted_in_git"])
+        self.assertFalse(info["contains_original_html_or_game_assets"])
+        self.assertEqual(r["candidate_validation"]["artifact_count"], 0)
+        self.assertEqual(r["main_validation"]["artifact_count"], 0)
+        self.assertEqual(r["candidate_validation"]["tested_checks"], 6)
+        self.assertEqual(r["main_validation"]["tested_checks"], 6)
+        self.assertTrue(r["old_history_prefix_preserved"])
+        self.assertTrue(r["source_scope_not_advanced_by_ci"])
+        self.assertTrue(all(s["original_http_sha256"] is None and not s["source_archive_replay"] for s in r["web_sources"]))
+
+
 if __name__ == "__main__":
     unittest.main()

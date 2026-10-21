@@ -7909,3 +7909,10 @@ research/recovered/STONEAGE-CN2003-UI-TEAM-TRADE-SOURCE-R1.json源派生Git blob
 重大发现与证据边界：天空岛30级+成人礼可接，不得把建议80级/四大洞变为硬门槛；黑虎原91级且金飞与作者所称现101级完成不得合并；里拉拉作者自述4.0前后宠转条件改变但无官方补丁直接证明；2002两页不证同版；同名不可思议的贝壳与R55 2001/2003记录仅作跨文献名称关联，不能当原服同一个道具ID或同时成立的任务条件。S2五转与特殊宠物不回填初代。页面可读文字已核，但原始HTTP HTML SHA、原客户端/原运营服务器实跑均无；版权源/图未入Git。
 
 新增 `docs/specs/STONEAGE-CN2002-QUEST-WORLDLINE-SOURCE-R1.md`、`research/recovered/STONEAGE-CN2002-QUEST-WORLDLINE-SOURCE-R1.json`、R58审查说明、6项结构测试及CI工作流；严格限定二页12+8行和6个歧义。研究/主线Actions及永久派生保管后验，不提前宣称成功。最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-59，Stage A7 PARTIAL+2 OPEN、Stage B/wiki GATED、R79 PAUSED，历史所有旧记录逐字保留。
+
+
+### 2026-10-21 R58双端CI完整验收及永久派生来源收据
+
+源研究提交`dd30db0dfc5a3d58706c3220ea8d333aa37ba5cb`/tree `c31abd5cf0bb2c885ff4b99493d6eb6c2e5780ba`，主线由b94270a19e4ce5d73691e8201d00a03bcf6c8177非强制且预期HEAD保护快进。GitHub compare=8变动：5新增、3历史文件仅追加、原历史行删除0。候选agent/cn2002-quest-worldline-r58-20261021同源HEAD实际10项Actions全部completed/success；专用run39612028005/job119263072244日志执行6项派生源/前置条件负边界用例，全部通过零跳过。main同源HEAD实际11项Actions全部completed/success；专用run39612246843/job119263842866 SUCCESS。两专用run各0 artifact，绝不虚称ZIP、raw原HTML SHA或原商业客户端、服务器双重放。
+
+源派生研究 `research/recovered/STONEAGE-CN2002-QUEST-WORLDLINE-SOURCE-R1.json` 原生Git blob5026707c16e0fdc306daf188739dcd75cb79b8b5/UTF8 12868B/SHA256 58b6c1f986e0b0b30ce45cedccfce47395d95b23b905f33da7a4eafb6e909183。新增 `research/recovered/STONEAGE-CN2002-QUEST-WORLDLINE-ACCEPTANCE-R1.json` 永久保管上述内容Git、两个实际source页面URL/刊期与双工作流ID、原始HTTP字节缺证及六项负边界。原网页作者文章/截图/客户端不进Git；结构化源12任务+8故事+6矛盾并不认证官方4.0补丁、同版任务ID或TW1.0内容。新专用测试由6升7项，强制收据必须存在、源原UTF8字节长度与SHA256一致；收据提交自身候选/main Actions必须独立后验，不能将旧6项成功改称新7项通过。下一最高NEXT59；Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停。历史前缀保留。
