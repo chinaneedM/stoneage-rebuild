@@ -16883,3 +16883,14 @@ S1/S2同日肉量3处冲突、奇喀喀S2不详、局部与地域坐标不等价
 永久收据候选初次提交 `980a2c7a36fc8e1e00df02b6edc191e60c475bba` 的R60专用Actions run39618677990/job119285996325确实 **failure**：新测试错误地对Git blob头使用文字反斜杠加0（Python `b"\\\\0"`）而非真正0x00空字节（`b"\\0"`），计算得SHA1 `11e3c007a3966354d76f80feb01d54c31dcc82ae`，与原生源Git blob `c843a41e1abca8630cdd5fa14421bb0b13c10520` 不符。日志显示7项中一项失败；这是**测试代码的编码错误**而非JSON源变动或历史页面真实性验证。其余同时运行的审查Actions不用于覆盖该失败事实。
 
 精确修正提交 `47fdb3418feebf364c3445e409411baa4dc8d3d2` 仅改同一测试调用为正确Git对象头空字节；后继R60专用run39618780763/job119286339522重新实际执行七项并 completed/success。原首轮失败仍可追溯，不称全部历史尝试通过。内容源Git blob/SHA256与原三网页来源范围不变；候选最终HEAD其它验收、main合入与此追加记录自身CI另查，绝不预先宣传完成。
+
+
+## 2026-10-22 R61：家族成立、权限与庄园服务的来源限定关系
+
+启动重新核main `2102aa48ab2a5abe37c27d852976219071f3bff9`/tree `5ff02575e2fa3388b57e8d468a2cc21b9b0137ac`，455分支、0开放PR、0运行中Actions；该HEAD实际main9项、候选7项均completed/success，不能把路径未触发的其它workflow记为运行。完整CURRENT原Git blob d704519240fdd25aeb16accf3c7528b6bdaad30d和九份启动文件原字节/原生Git标识已核，R60真实失败/修正历史完整保留。按最高NEXT61回22域，从交通转入家族社会服务，未重开R79。
+
+重新阅读新浪2003-04-15 23:29标网友投稿的《游戏操作》https://games.sina.com.cn/zhqu/sta/xsxl/yxcz.shtml ，只补R57没有结构化的家族/家族键/庄园功能章节。**同一URL再次取读不是第二个独立来源**。新增 docs/specs/STONEAGE-CN2003-FAMILY-LIFECYCLE-SOURCE-R1.md、research/recovered/STONEAGE-CN2003-FAMILY-LIFECYCLE-SOURCE-R1.json 与R61审查页：四生命周期节点、七服务关系、五权限记录、三组范围疑点。30级/成人礼/10000石币只是申请说明，三日十成员另列为正式成立条件，族长是否计数、计时起点和超时退款仍UNKNOWN。
+
+正文守护兽涉及特殊合成，不证战斗召唤；光明/黑暗精灵仅分别“影响”回复/攻击性魔法，增减方向和倍率不能补造。医生/银行需庄园及未知声望门槛，不能填免费治疗或账户事务。同页四大家族声望、九庄园与前二十名挑战资格保持分段、范围未解，不拼接一套规则；邀请函房间通行和封闭商店鉴权、骑宠学习同意书亦分别存储。既验R28/R43及TW75气势计划仅固定父报告/版本化对照，不当独立新网页或本文同build证明。
+
+未取得原HTTP/HTML字节摘要或历史快照、原服规则/实际运行；原网页全文/图/商业资源不入Git。不增加只镜像资料行数的测试/专项workflow，采用源段逐核、父Git摘要与完整历史前缀检查、现有相关回归和实际候选/main CI；绿灯不提升来源等级。发布与CI结果须后验，未提前称通过。有限包止于一页家族章节，下一最高 `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-62` 回22域优先具名版本宠物生态/遇敌或音效事件材料；Stage A7 PARTIAL+2 OPEN、Stage B/wiki GATED、R79 PAUSED_NON_BLOCKING。

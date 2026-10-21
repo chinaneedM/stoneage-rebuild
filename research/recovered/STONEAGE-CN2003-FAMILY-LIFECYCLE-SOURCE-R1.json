@@ -1,0 +1,371 @@
+{
+  "schema": "stoneage.cn2003_family_lifecycle.source.r1",
+  "task": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-61",
+  "date": "2026-10-22",
+  "status": "BOUNDED_DOCUMENTARY_SOURCE_ONLY",
+  "baseline": {
+    "head": "2102aa48ab2a5abe37c27d852976219071f3bff9",
+    "tree": "5ff02575e2fa3388b57e8d468a2cc21b9b0137ac",
+    "branch_count": 455,
+    "open_prs": 0,
+    "in_progress_runs": 0,
+    "main_observed_successful_runs": 9,
+    "candidate_observed_successful_runs": 7,
+    "startup_prefixes": [
+      {
+        "path": "README.md",
+        "utf8_bytes": 45937,
+        "sha256": "9feb9d418fe67809176c5c2970fc27498123531dd9051e131a4c3b3332cf803c",
+        "git_blob_sha1": "65cfe8de7ce8394f8eb659d8105a14f1d11753ca"
+      },
+      {
+        "path": "docs/PROJECT-CONTINUITY-PROTOCOL-R1.md",
+        "utf8_bytes": 9762,
+        "sha256": "c44834eeec87f7a43e9cb4905f08377349e36d58b1fff2c5a75a6975db695e3b",
+        "git_blob_sha1": "ba9bbe19384589400abc61af37a360a40bf91452"
+      },
+      {
+        "path": "docs/CURRENT-STATE.md",
+        "utf8_bytes": 2296051,
+        "sha256": "5664b5e9243c27f087c79924f05bd9140b6ce751a4316c907d9f6b6e36d16bc8",
+        "git_blob_sha1": "d704519240fdd25aeb16accf3c7528b6bdaad30d"
+      },
+      {
+        "path": "docs/DESIGN-DECISIONS.md",
+        "utf8_bytes": 45965,
+        "sha256": "28b572ed01179eacd5a06b4ad62c76e4baef22ac49587aa0bad452a7cb3fe8e6",
+        "git_blob_sha1": "013ae4fad9301ab0140fe408a423b3abad97d1f9"
+      },
+      {
+        "path": "docs/HISTORICAL-TIMELINE.md",
+        "utf8_bytes": 586810,
+        "sha256": "dac74d23eb404851bb700e88f2d458d5838b62c4f0574878f11bf8f68cf663b4",
+        "git_blob_sha1": "c56d0ef0edd8ae8f228d6abc27123732aa57fa45"
+      },
+      {
+        "path": "docs/SOURCE-REGISTRY.md",
+        "utf8_bytes": 855458,
+        "sha256": "4453307fc05c1798524979f68c2bf44bfa7912f9a44ee75161092f3ae8b1d68c",
+        "git_blob_sha1": "98facfc562eba12c546a4808db7e0d7c194999e3"
+      },
+      {
+        "path": "docs/RESTORATION-ROADMAP-R2.md",
+        "utf8_bytes": 232879,
+        "sha256": "cdfdd74bbacf4df33cb51ed63ecc365cff3f1800d672f17e0fe8bef6e7f3e475",
+        "git_blob_sha1": "2526ea109a005554f023a5c1f1bab952cf73f472"
+      },
+      {
+        "path": "research/recovered/STONEAGE-22-DOMAIN-SOURCE-READY-PORTFOLIO-R2.json",
+        "utf8_bytes": 15948,
+        "sha256": "7d50de08f7855cf16dbe54b1747e258f1cc1223de88cc217172fd145f3c704ce",
+        "git_blob_sha1": "088b469b3c51e689cff27f33fc3bb49de2d24b2c"
+      },
+      {
+        "path": "docs/STAGE-A-PORTFOLIO-CHECKPOINT-R2.md",
+        "utf8_bytes": 6359,
+        "sha256": "c55588081f49cef00305f3b0478ffff74dba856d68fed38ac5be2ef2133a0c68",
+        "git_blob_sha1": "c5db7c1416121d2337baacd6132eae4daf23fd20"
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "S1",
+      "url": "https://games.sina.com.cn/zhqu/sta/xsxl/yxcz.shtml",
+      "title": "游戏操作",
+      "page_publication_label": "2003-04-15 23:29",
+      "time_zone": null,
+      "kind": "CONTEMPORANEOUS_PORTAL_PLAYER_GUIDE",
+      "page_attribution": "网友投稿",
+      "body_version_label": "海贼王遗迹",
+      "reviewed_on": "2026-10-22",
+      "scope": "家族、家族键、庄园功能三个文本段；不重归档骑宠表",
+      "original_http_sha256": null,
+      "original_http_bytes_retained": false,
+      "historical_snapshot_verified_this_turn": false,
+      "official_authorship_verified": false,
+      "same_exact_build_verified": false,
+      "previous_use": "R57操作/交易；本包家族正文为新增结构化，不是第二个来源",
+      "independent_source_count": 1
+    }
+  ],
+  "lifecycle": [
+    {
+      "id": "APPLY",
+      "source": "S1",
+      "locator": "家族/一、成立家族/2",
+      "level_at_least": 30,
+      "coming_of_age_required": true,
+      "listed_payment_stone": 10000,
+      "npc_role": "家族管理员",
+      "location_role": "村长家",
+      "payment_time": null,
+      "npc_id": null
+    },
+    {
+      "id": "FORMALLY_ESTABLISH",
+      "source": "S1",
+      "locator": "家族/一、成立家族/2",
+      "member_target": 10,
+      "within_days": 3,
+      "leader_counted": null,
+      "timer_origin": null,
+      "inclusive_deadline": null,
+      "timeout_result": null,
+      "actual_protocol_state": null
+    },
+    {
+      "id": "JOIN",
+      "source": "S1",
+      "locator": "家族/一、成立家族/3",
+      "locked_family_leader_consent_described": true,
+      "approval_protocol": null,
+      "max_members": null
+    },
+    {
+      "id": "EXIT_OR_DISSOLVE",
+      "source": "S1",
+      "locator": "家族/一、成立家族/4",
+      "ordinary_member_result": "EXIT",
+      "leader_result": "DISSOLVE",
+      "asset_disposition": null,
+      "confirmation_protocol": null
+    }
+  ],
+  "service_relations": [
+    {
+      "id": "PRESTIGE",
+      "source": "S1",
+      "locator": "家族/二、家族功能/1",
+      "inputs": [
+        "解谜",
+        "养宠",
+        "合成",
+        "料理"
+      ],
+      "relation": "QUALITATIVE_PRESTIGE_CONTRIBUTION",
+      "formula": null
+    },
+    {
+      "id": "CHANNEL",
+      "source": "S1",
+      "locator": "家族/二、家族功能/2",
+      "relation": "SAME_FAMILY_DISTANCE_INDEPENDENT_CHAT",
+      "packet_id": null
+    },
+    {
+      "id": "GUARDIAN_PET",
+      "source": "S1",
+      "locator": "家族/二、家族功能/3",
+      "relation": "SPECIAL_CRAFTING_SERVICE",
+      "species_id": null,
+      "recipes": null,
+      "battle_summon_proven": false
+    },
+    {
+      "id": "GUARDIAN_SPIRIT",
+      "source": "S1",
+      "locator": "家族/二、家族功能/4",
+      "relations": [
+        {
+          "spirit": "光明",
+          "magic_class": "回复"
+        },
+        {
+          "spirit": "黑暗",
+          "magic_class": "攻击性"
+        }
+      ],
+      "effect_direction": null,
+      "multiplier": null
+    },
+    {
+      "id": "MANOR_CHALLENGE",
+      "source": "S1",
+      "locator": "家族/二、家族功能/5",
+      "prestige_comparison_group_label": "四大家族",
+      "relation_to_later_top20_clause": null,
+      "executable_eligibility": null
+    },
+    {
+      "id": "DOCTOR",
+      "source": "S1",
+      "locator": "家族/二、家族功能/6",
+      "manor_required": true,
+      "prestige_threshold": null,
+      "free_healing_proven": false
+    },
+    {
+      "id": "BANK",
+      "source": "S1",
+      "locator": "家族/二、家族功能/7",
+      "manor_required": true,
+      "prestige_threshold": null,
+      "account_scope": null,
+      "transaction_semantics": null
+    }
+  ],
+  "permissions": [
+    {
+      "id": "LEADER_BROADCAST",
+      "source": "S1",
+      "locator": "家族键/3",
+      "actor": "族长",
+      "audience": "在线家族成员",
+      "offline_delivery": null
+    },
+    {
+      "id": "RECRUITMENT_SWITCH",
+      "source": "S1",
+      "locator": "家族键/2、4",
+      "actor_context": "族长功能/成员管理",
+      "continued_recruitment_configurable": true,
+      "delegation": null
+    },
+    {
+      "id": "MANOR_INVITATION",
+      "source": "S1",
+      "locator": "家族键/5",
+      "issuer_context": "九大庄园族长",
+      "access_scope": "所属庄园各房间",
+      "original_item_id": null,
+      "consumed": null
+    },
+    {
+      "id": "RIDING_LEARNING_CONSENT",
+      "source": "S1",
+      "locator": "家族键/6",
+      "purpose": "相应庄园学习骑宠",
+      "equivalent_to_invitation_proven": false,
+      "issuer_in_this_clause": null,
+      "original_item_id": null
+    },
+    {
+      "id": "LEADER_SUCCESSION",
+      "source": "S1",
+      "locator": "家族键/7",
+      "target": "家族其他成员",
+      "consent_protocol": null
+    }
+  ],
+  "manor_services": {
+    "source": "S1",
+    "locator": "庄园功能/1-4",
+    "rank_eligibility_label_top": 20,
+    "tax_buy_sell_adjustable_by_manor_leader_described": true,
+    "tax_range": null,
+    "closed_shop_access": [
+      "本家族",
+      "持家族邀请函者"
+    ],
+    "closed_shop_mode": "MATERIAL_HANDIN_CRAFTING",
+    "direct_stock_sale_proven": false,
+    "recipes": null
+  },
+  "scope_tensions": [
+    {
+      "id": "FOUR_NINE_TOP20",
+      "source": "S1",
+      "locators": [
+        "家族功能/5",
+        "家族键/5",
+        "九大庄园表标题",
+        "庄园功能/1"
+      ],
+      "status": "UNRESOLVED_SCOPE_OR_COMPOSITE_GUIDE",
+      "not_proven": [
+        "same_build",
+        "patch_order",
+        "joint_eligibility_formula"
+      ],
+      "resolution": null
+    },
+    {
+      "id": "ROOMS_VS_CLOSED_SHOP",
+      "source": "S1",
+      "locators": [
+        "家族键/5",
+        "庄园功能/3"
+      ],
+      "status": "RELATED_ACCESS_DESCRIPTIONS_NOT_IDENTICAL_ACL",
+      "resolution": null
+    },
+    {
+      "id": "PRESTIGE_VS_LATER_MOMENTUM",
+      "source": "S1",
+      "comparison": "TW75 plan source report",
+      "status": "DISTINCT_REGION_DATE_AND_PLAN_SCOPE",
+      "shared_runtime_rule_proven": false,
+      "resolution": null
+    }
+  ],
+  "existing_research_bridges": [
+    {
+      "path": "research/recovered/STONEAGE-CN2003-UI-TEAM-TRADE-SOURCE-R1.json",
+      "utf8_bytes": 9904,
+      "sha256": "ef9ee96f478aa9232b1cbb9fb71716ed36302f04dfa885c3cd0eaab29d4d82dd",
+      "git_blob_sha1": "1bac3104c1d6b0d96a65a8c32e901de13a5df53d",
+      "independent_new_web_source": false
+    },
+    {
+      "path": "research/recovered/STONEAGE-CN40-RIDING-CERTIFICATE-MANOR-SOURCE-R1.json",
+      "utf8_bytes": 29266,
+      "sha256": "3c0f771e0547ed753b38359ccf61023f54c82b4ba4ba2dc1684a1ac8b6f7aae8",
+      "git_blob_sha1": "bee8fae59158f38f1167fe3b10e4ddfd7206b166",
+      "independent_new_web_source": false
+    },
+    {
+      "path": "research/recovered/STONEAGE-CN2003-CLASSIC20-BRANCH-SOURCE-R1.json",
+      "utf8_bytes": 7381,
+      "sha256": "fc43ed4f577e4390d3a45239f08888e319d55549b5e0b9307df35da241903bf9",
+      "git_blob_sha1": "7b9344f0cb0cbb8bb9b3d1c203239af752182af5",
+      "independent_new_web_source": false
+    },
+    {
+      "path": "research/recovered/STONEAGE-TW75-MANOR-CHALLENGE-PLAN-SOURCE-R1.json",
+      "utf8_bytes": 18680,
+      "sha256": "ba70038a5a316af39814b2ca15813bc8c55bdf0e6d2ee777054cd34a0cecf9e2",
+      "git_blob_sha1": "24b8da56148d9cca8fa58031d41e78d88939e6c4",
+      "independent_new_web_source": false
+    }
+  ],
+  "unknowns": [
+    "formation_failure_refund_and_asset_return",
+    "member_count_leader_and_deadline_boundaries",
+    "original_npc_item_skill_ids",
+    "prestige_gain_and_unlock_thresholds",
+    "spirit_effect_sign_and_magnitude",
+    "same_build_identity_of_internal_sections",
+    "server_authority_persistence_and_packets"
+  ],
+  "negative_claims": {
+    "tw10_or_jss1999_attribution": false,
+    "official_rule_authentication": false,
+    "original_runtime_execution": false,
+    "new_game_design_adoption": false,
+    "guardian_battle_summon": false,
+    "deterministic_spirit_bonus": false,
+    "unified_four_nine_twenty_rule": false,
+    "independent_confirmation_from_same_url": false,
+    "historical_gameplay_completion": false
+  },
+  "retention": {
+    "derived_metadata_only": true,
+    "proprietary_html_images_or_binaries_committed": false,
+    "ci_can_promote_source_level": false
+  },
+  "stop_condition": "One already-known URL, previously unstructured family sections only; lifecycle, service relationships, permissions and scope tensions documented. No full manor/riding census or formulas.",
+  "reopening_triggers": [
+    "version-qualified official correction",
+    "matching server configuration or source",
+    "authenticated runtime communication for a named unknown"
+  ],
+  "stage_a": {
+    "partial": 7,
+    "open": 2
+  },
+  "stage_b": "GATED",
+  "wiki": "GATED",
+  "r79": "PAUSED_NON_BLOCKING",
+  "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-62"
+}

@@ -4247,3 +4247,8 @@ research/recovered/STONEAGE-CN2003-UI-TEAM-TRADE-SOURCE-R1.json源派生Git blob
 **SOURCE CLAIM, NOT SERVER FACT:** The 22:14 village guide and 22:43 travel guide disagree on named meat quantities at 玛丽那丝渔村 (1/2), 柯奥村 (2/1) and 卡鲁它那村 (1/2); 奇喀喀村 is unknown in S2. Distinct coordinate frames are not matched. Reported bus/air/feather/undersea fares remain player-guide values.
 
 **OPEN:** Actual build(s), first-party source, earliest-version membership, NPC trigger/price/record-point consumption, player persistence and transport map remain unattested. The S2 hero-island age/level narrative does not resolve R55's portal-vs-quest requirement boundary.
+
+
+### 2003-04-15页面标签／2026-10-22复核：家族形成与庄园服务
+
+**FACT（文献存在及其陈述）**：新浪《游戏操作》网友稿分述申请、三日十人成立、成员/族长退出差异，以及守护兽、光暗精灵、庄园医生和银行。**OPEN**：同页四家族、九庄园、前二十名资格的适用范围；精灵影响方向、声望门槛、计时和原服事务。文中海贼王遗迹标签不能证明各段同build；不是台湾1.0或JSS1999规则。与R57为同一网页，不重复计独立来源。来源与派生见 STONEAGE-CN2003-FAMILY-LIFECYCLE-SOURCE-R1。

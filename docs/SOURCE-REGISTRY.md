@@ -7932,3 +7932,11 @@ research/recovered/STONEAGE-CN2003-UI-TEAM-TRADE-SOURCE-R1.json源派生Git blob
 - S3 https://games.sina.com.cn/zhqu/sta/xsxl/zqsz.shtml (21:54), early money-making suggestions.
 - Evidentiary reach: page text review, source dates and separately attributed claims; derived row-level metadata in R60 JSON.
 - Does **not** prove same exact game build, original HTTP bytes, TW1.0/JSS1999 membership, the server's record-point consumption, transport fare or actual save/login behavior. Raw source/html SHA unavailable. Preserve three contradictions.
+
+
+## SRC-CN2003-FAMILY-LIFECYCLE-R61 — 2026-10-22
+
+- URL：https://games.sina.com.cn/zhqu/sta/xsxl/yxcz.shtml ，《游戏操作》，页面2003-04-15 23:29，标网友投稿；时区、原作者和具体商业build未核。
+- 本包重新读取家族／家族键／庄园功能段，4生命周期、7服务、5权限及3组范围疑点。与R57同URL，仅新增章节结构化，不是独立佐证。当前网页可读文字层级，不具原HTTP摘要、历史快照或原服执行证据。
+- 派生：research/recovered/STONEAGE-CN2003-FAMILY-LIFECYCLE-SOURCE-R1.json；规格：docs/specs/STONEAGE-CN2003-FAMILY-LIFECYCLE-SOURCE-R1.md。父R57/R28/R43/TW75报告Git身份固定；各地区/年代与计划边界保留。
+- 不证明初代归属、精灵加成公式、家族实际资产事务或统一庄园挑战算法；未存原网页全文/图/客户端。重开须对应版本官方更正、原配置或真实通信。

@@ -1446,3 +1446,14 @@ research/recovered/STONEAGE-CN2003-UI-TEAM-TRADE-SOURCE-R1.json源派生Git blob
 ### 2026-10-21 R59：2003职业技能依赖，版本化网页资料包
 
 从22域组合轮换到角色成长/职业系统，真实新增2003两网页的3职业、3共通技能、9例文学习门槛与8条负边界；docs/specs/STONEAGE-CN2003-PROFESSION-DEPENDENCIES-SOURCE-R1.md 与 research/recovered/STONEAGE-CN2003-PROFESSION-DEPENDENCIES-SOURCE-R1.json。此包有实质玩法来源，但只到门户文字，绝不归属初代1.0原服，也不把熟练度70、技能点16直接做新游戏参数。范围闭合后轮换另一个域的另一具名版本内容 NEXT R60，防止无止境扩展职业技能树。Stage A与Stage B门槛不变。
+
+
+## 2026-10-22 R61：家族成立、权限与庄园服务的来源限定关系
+
+启动重新核main `2102aa48ab2a5abe37c27d852976219071f3bff9`/tree `5ff02575e2fa3388b57e8d468a2cc21b9b0137ac`，455分支、0开放PR、0运行中Actions；该HEAD实际main9项、候选7项均completed/success，不能把路径未触发的其它workflow记为运行。完整CURRENT原Git blob d704519240fdd25aeb16accf3c7528b6bdaad30d和九份启动文件原字节/原生Git标识已核，R60真实失败/修正历史完整保留。按最高NEXT61回22域，从交通转入家族社会服务，未重开R79。
+
+重新阅读新浪2003-04-15 23:29标网友投稿的《游戏操作》https://games.sina.com.cn/zhqu/sta/xsxl/yxcz.shtml ，只补R57没有结构化的家族/家族键/庄园功能章节。**同一URL再次取读不是第二个独立来源**。新增 docs/specs/STONEAGE-CN2003-FAMILY-LIFECYCLE-SOURCE-R1.md、research/recovered/STONEAGE-CN2003-FAMILY-LIFECYCLE-SOURCE-R1.json 与R61审查页：四生命周期节点、七服务关系、五权限记录、三组范围疑点。30级/成人礼/10000石币只是申请说明，三日十成员另列为正式成立条件，族长是否计数、计时起点和超时退款仍UNKNOWN。
+
+正文守护兽涉及特殊合成，不证战斗召唤；光明/黑暗精灵仅分别“影响”回复/攻击性魔法，增减方向和倍率不能补造。医生/银行需庄园及未知声望门槛，不能填免费治疗或账户事务。同页四大家族声望、九庄园与前二十名挑战资格保持分段、范围未解，不拼接一套规则；邀请函房间通行和封闭商店鉴权、骑宠学习同意书亦分别存储。既验R28/R43及TW75气势计划仅固定父报告/版本化对照，不当独立新网页或本文同build证明。
+
+未取得原HTTP/HTML字节摘要或历史快照、原服规则/实际运行；原网页全文/图/商业资源不入Git。不增加只镜像资料行数的测试/专项workflow，采用源段逐核、父Git摘要与完整历史前缀检查、现有相关回归和实际候选/main CI；绿灯不提升来源等级。发布与CI结果须后验，未提前称通过。有限包止于一页家族章节，下一最高 `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-62` 回22域优先具名版本宠物生态/遇敌或音效事件材料；Stage A7 PARTIAL+2 OPEN、Stage B/wiki GATED、R79 PAUSED_NON_BLOCKING。
