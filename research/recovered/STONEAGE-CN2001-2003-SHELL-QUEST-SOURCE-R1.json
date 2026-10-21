@@ -1,0 +1,207 @@
+{
+  "schema": "stoneage.cn2001_2003_shell_quest.source.r1",
+  "task": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-55",
+  "research_date": "2026-10-21",
+  "starting_remote_main": {
+    "commit": "8a0cd2d7f3de81737349250bd042692b07bcc866",
+    "tree": "0f727a4eadc9c3f6cc48f38f48b81787117515f7"
+  },
+  "version_scope": "CN_2001_PLAYER_ARTICLE_AND_CN_2003_GUIDES_UNVERIFIED_EXACT_BUILD_NOT_JSS1999_TW10",
+  "sources": [
+    {
+      "id": "S2001",
+      "title": "归纳拿不可思议的贝壳的5种方法",
+      "publication_date_as_page": "2001-12-10",
+      "author_as_page": "诗雨",
+      "publisher": "17173 / 石器时代",
+      "url": "https://news.17173.com/z/stoneage/content/2001-12-10/n281_197533.html?_platform=PC",
+      "document_kind": "CONTEMPORANEOUS_PLAYER_SUBMISSION",
+      "raw_http_bytes": null,
+      "raw_html_sha256": null,
+      "archive_capture_sha256": null,
+      "authorship_independently_verified": false
+    },
+    {
+      "id": "S2003_Q",
+      "title": "《石器时代》任务攻略—弥生与日美子的友谊",
+      "publication_date_as_page": "2003-05-29 10:15",
+      "author_as_page": "网友投稿",
+      "publisher": "新浪游戏",
+      "url": "https://games.sina.com.cn/zhqu/sta/rwgl1_1.shtml",
+      "document_kind": "CONTEMPORANEOUS_PORTAL_USER_SUBMISSION",
+      "raw_http_bytes": null,
+      "raw_html_sha256": null,
+      "archive_capture_sha256": null,
+      "authorship_independently_verified": false
+    },
+    {
+      "id": "S2003_H",
+      "title": "《石器时代》任务功略-英雄岛前传",
+      "publication_date_as_page": "2003-06-04 18:40",
+      "author_as_page": "新浪游戏",
+      "publisher": "新浪游戏",
+      "url": "https://games.sina.com.cn/zhqu/sta/article/2003-06-04/10857.shtml",
+      "document_kind": "CONTEMPORANEOUS_PORTAL_QUEST_GUIDE",
+      "raw_http_bytes": null,
+      "raw_html_sha256": null,
+      "archive_capture_sha256": null,
+      "authorship_independently_verified": false
+    }
+  ],
+  "routes_2003": [
+    {
+      "id": "Q_A",
+      "source_id": "S2003_Q",
+      "origin_birth_villages_as_written": [
+        "萨姆吉尔村",
+        "卡鲁它那村"
+      ],
+      "origin_npc": "日美子",
+      "origin_npc_village": "萨姆吉尔村",
+      "origin_local_location_as_written": "东56，南124",
+      "delivered_item": "仙尼亚的花",
+      "recipient_npc": "弥生",
+      "recipient_npc_village": "玛丽娜丝渔村",
+      "recipient_local_location_as_written": "东55，南92",
+      "reward_as_written": "不可思议的贝壳",
+      "guide_level_requirement": "无",
+      "reported_ferry": "长毛象公车",
+      "one_step_reward_guaranteed_in_original_client": null,
+      "repeatable_after_loss_as_guide": true,
+      "repeat_cost_as_guide": "魅力一点",
+      "repeat_cost_verified_in_original_client": null
+    },
+    {
+      "id": "Q_B",
+      "source_id": "S2003_Q",
+      "origin_birth_villages_as_written": [
+        "玛丽娜丝渔村",
+        "加加村"
+      ],
+      "origin_npc": "弥生",
+      "origin_npc_village": "玛丽娜丝渔村",
+      "origin_local_location_as_written": "东55，南92",
+      "delivered_item": "不可思议的贝壳",
+      "recipient_npc": "日美子",
+      "recipient_npc_village": "萨姆吉尔村",
+      "recipient_local_location_as_written": "东57，南124",
+      "reward_as_written": "仙尼亚的花",
+      "guide_level_requirement": "无",
+      "reported_ferry": "长毛象公车",
+      "one_step_reward_guaranteed_in_original_client": null,
+      "repeatable_after_loss_as_guide": null,
+      "repeat_cost_as_guide": null,
+      "repeat_cost_verified_in_original_client": null
+    }
+  ],
+  "source_2001_five_reported_methods": [
+    {
+      "sequence": 1,
+      "region_as_written": "北岛",
+      "path_type": "COURIER_SHELL_TO_JIMEIZI",
+      "quest_or_location": "玛丽娜斯弥生→萨姆吉尔日美子",
+      "source_claimed_result": "不可思议的贝壳",
+      "claimed_count": 1,
+      "verified_execution": false
+    },
+    {
+      "sequence": 2,
+      "region_as_written": "南岛",
+      "path_type": "GOYA_MOUNTAIN_MERCHANT",
+      "quest_or_location": "哥亚山洞窟→卡鲁它村商人",
+      "source_claimed_result": "两个不可思议的贝壳（另有交回一枚换宠物的叙述）",
+      "claimed_count": 2,
+      "verified_execution": false
+    },
+    {
+      "sequence": 3,
+      "region_as_written": "吉鲁岛",
+      "path_type": "PIG_LOVE_NPC_CONVERSATION",
+      "quest_or_location": "加都洛洞窟三楼族长房",
+      "source_claimed_result": "不可思议的贝壳",
+      "claimed_count": null,
+      "verified_execution": false
+    },
+    {
+      "sequence": 4,
+      "region_as_written": "吉鲁岛",
+      "path_type": "MELUNA_CAVE_SALE",
+      "quest_or_location": "美鲁娜洞窟村长家",
+      "source_claimed_result": "1000 Stone 售卖不可思议的贝壳",
+      "claimed_count": null,
+      "quoted_price_stone": 1000,
+      "verified_execution": false
+    },
+    {
+      "sequence": 5,
+      "region_as_written": "英雄岛",
+      "path_type": "HUNGRY_VILLAGER_MEAT_EXCHANGE",
+      "quest_or_location": "饥饿村民与两种恐龙肉交换",
+      "source_claimed_result": "不可思议的贝壳",
+      "claimed_count": null,
+      "coordinate_corrupted_in_current_html": "172.359]",
+      "fully_parsed_coordinates": null,
+      "corrupt_species_label_present": true,
+      "verified_execution": false
+    }
+  ],
+  "comparison": {
+    "topic": "NORTH_ISLAND_SHELL_COURIER_REWARD",
+    "s2001_route_claim": {
+      "source_id": "S2001",
+      "direction": "弥生→日美子",
+      "deliver": "不可思议的贝壳",
+      "claim_reward": "不可思议的贝壳"
+    },
+    "s2003_same_direction_claim": {
+      "source_id": "S2003_Q",
+      "direction": "弥生→日美子",
+      "deliver": "不可思议的贝壳",
+      "claim_reward": "仙尼亚的花"
+    },
+    "source_claims_contradict": true,
+    "version_patch_conclusion": "UNKNOWN",
+    "writer_error_conclusion": "UNKNOWN",
+    "do_not_force_reconcile": true
+  },
+  "s2003_item_restrictions": {
+    "source_id": "S2003_Q",
+    "item": "不可思议的贝壳",
+    "pet_mail_transfer_as_guide": "不可通过宠物邮件寄给他人",
+    "ground_drop_as_guide": "掉在地上会消失",
+    "cross_version_enforced_rule_proven": false
+  },
+  "s2003_hero_island_bridge": {
+    "source_id": "S2003_H",
+    "island_named": "五十年前的波拉岛（俗称英雄岛）",
+    "portal_npc": "黑乌力",
+    "portal_npc_location_as_guide": "萨姆吉尔村，东71，南49",
+    "item_requirement_as_guide": "身上带着不可思议的贝壳",
+    "transport_destination_as_guide": "五十年前的波拉岛",
+    "hero_prequel_level_requirement_as_guide": 80,
+    "hero_prequel_recommended_level_as_guide": 120,
+    "transport_min_level_verified": null,
+    "shell_consumed_during_transport": null,
+    "original_time_travel_engine_proven": false
+  },
+  "unproven": [
+    "which_CN_client_build_any_claim_applies_to",
+    "TW10_JSS1999_quest_presence",
+    "NPC_item_original_IDs",
+    "quest_flags_reentry_save_state",
+    "mail_and_grounddrop_server_enforcement",
+    "source_conflict_as_actual_patch_change",
+    "shell_consume_at_portal",
+    "full_worldline_chronology",
+    "complete_exhaustive_shell_acquisition_list",
+    "2001_corrupt_location_or_dinosaur_species_corrected"
+  ],
+  "source_replay": {
+    "readable_html_text_inspected": true,
+    "exact_original_source_bytes_downloaded": false,
+    "independent_raw_html_hash_produced": false,
+    "original_game_client_executed": false,
+    "source_custody_level": "CITABLE_WEB_RENDERED_TEXT_ONLY"
+  },
+  "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-56"
+}

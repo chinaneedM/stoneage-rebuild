@@ -1380,3 +1380,15 @@ R47有限报告包结束，原文“中午”/精确时分、四家族人数歧�
 R54资料提交2dd1c7a28b8993bebaf141b32b4cd1d4e1a7377c/tree b3fb195f0638443abae575dffe61cdae47375f43，以原main 05f14965b3c87481f2dec104813f624e553b76e6为父；候选分支agent/cn2003-crafting-guides-r54-20261021的10项Actions全部completed/success，主线同SHA的11项Actions全部completed/success，主线通过非强制的fast-forward+expected HEAD安全更新。专用候选run39594725260/job119204095403和主线run39595001302/job119205009874实际日志均显示4项派生数据检查通过、零跳过；其余Actions是现存验证矩阵，不冒称新增网页/原游戏实测。历史原CURRENT-STATE/TIMELINE/ROADMAP/SOURCE-REGISTRY旧Git内容均在R54提交中逐字前缀保留。
 
 本轮另外永久保存research/recovered/STONEAGE-CN2003-CRAFTING-GUIDES-ACCEPTANCE-R1.json，将原派生数据Git blob bb33249f20713199afc488dbf1eee2d9b42907e5、候选/主线运行及工作单元ID、执行范围、原网页字节证据欠缺与非原服事实限制相联。专用回归测试新增必须存在的收据与原派生blob SHA1一致性门，原专用workflow增加收据路径触发；收据提交自身Actions需独立后验，不沿用旧4项绿灯。原始HTML SHA256和独立原客户端执行仍无，永不把派生绿灯提升为原服成功率。R54 25项指南材料有限包结束，下一最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-55轮换22域另取源；Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停，历史记录不覆盖。
+
+## 2026-10-21 R55早期贝壳送物任务、获取路线与波拉岛入口归属
+
+本轮启动时重新读main 8a0cd2d7f3de81737349250bd042692b07bcc866/tree 0f727a4eadc9c3f6cc48f38f48b81787117515f7，R54上一轮状态及主线验收已保存，最新同HEAD 11项可见Actions全部success/0开放PR，原CURRENT-STATE精确Git blob完整读取。按22域轮换至quest/story/worldline，最高NEXT55，不再重复R54宠物加工或扩R53回复法术。
+
+三同期来源的网页可读正文于2026-10-21核对：2001-12-10 17173《归纳拿不可思议的贝壳的5种方法》署名诗雨玩家投稿；2003-05-29 10:15 新浪《弥生与日美子的友谊》标网友投稿；2003-06-04 18:40 新浪《英雄岛前传》署新浪游戏。未取得原HTTP/HTML字节、源SHA、精确客户端build、原华义服务器脚本或实机运行，不能冒称R53级别的来源双重放。旧2001来源第五条坐标和恐龙名显示损坏原文，保持未解析，不校正。
+
+限定规格docs/specs/STONEAGE-CN2001-2003-SHELL-QUEST-SOURCE-R1.md、衍生research/recovered/STONEAGE-CN2001-2003-SHELL-QUEST-SOURCE-R1.json：2003双方出生地双任务路线Q_A萨姆吉尔/卡鲁它那→日美子送花给弥生→贝壳，Q_B玛丽娜丝/加加→弥生送贝壳给日美子→花；日美子两段局部坐标(56,124)/(57,124)不能自动合并，二村世界坐标不可当NPC局部坐标。2001玩家稿五条贝壳途径只是作者枚举，不当全局穷举：北岛送物、哥亚山/卡鲁它村商人、吉鲁岛小猪爱情、美鲁娜洞窟1000Stone购买、英雄岛饥饿村民食材交换。
+
+**关键新增矛盾**：2001报告弥生→日美子送贝壳得到贝壳，2003同一方向却是贝壳换花。两者分源保留，不擅推版本改动或作者错误。2003说明贝壳宠邮受限、丢地消失、花送贝壳重作损魅力一点；只有玩家指南陈述，非原服道具过滤/忠诚或存档逻辑。2003英雄岛前传说背包持贝壳与萨姆吉尔村黑乌力(71,49)对话进“五十年前的波拉岛”；其80级要求/建议120属于英雄岛前传任务，不上升为传送门自身80级门槛；贝壳是否消耗、服务端时间线与首次原版存在均UNKNOWN。来源只作为未来世界观可选参考，不执行新石器设计。
+
+另有专用衍生记录结构测试/CI，守三个源、双路线、两篇冲突、五条2001作者枚举、文本损坏位置和入口等级限制；CI不能证明HTML源字节与游戏运行。有限止点三页及派生记录，不递归英雄岛全部后续怪/奖励；下一NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-56，从22域另选。Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79 PAUSED，全部旧历史前缀必须保留。候选/主线验收以真实Actions后验为准，不能在提交前预先称绿。

@@ -7856,3 +7856,14 @@ S1 https://www.4gamer.net/specials/stoneage2_interview/stoneage2_interview.shtml
 - Supports: S2 guide-listed 18 equipment category/material-order/range rows with unknown bow ingredient ？; S1 introductory pet-assisted crafting and seven recipe labels; material-order and output wording conflict across the two texts.
 - Does not support: true server-side percent odds, exact material-order semantics, item/skill/NPC ids, first edition game rules, guaranteed results, real UI controls, or actual game execution.
 - Permanent derived index: research/recovered/STONEAGE-CN2003-CRAFTING-GUIDES-SOURCE-R1.json; guide spec: docs/specs/STONEAGE-CN2003-CRAFTING-GUIDES-SOURCE-R1.md. Original HTML and proprietary images excluded.
+
+### SRC-CN-2001-2003-SHELL-QUEST-R55
+
+- Type: three contemporaneous Mainland player/portal quest guides; dated publication is **not** original client/build date or an official server script.
+- S2001: 17173 《归纳拿不可思议的贝壳的5种方法》, page 2001-12-10, credited player 诗雨, https://news.17173.com/z/stoneage/content/2001-12-10/n281_197533.html?_platform=PC
+- S2003_Q: 新浪游戏 《弥生与日美子的友谊》, 2003-05-29 10:15, labeled 网友投稿, https://games.sina.com.cn/zhqu/sta/rwgl1_1.shtml
+- S2003_H: 新浪游戏 《英雄岛前传》, 2003-06-04 18:40, credited 新浪游戏, https://games.sina.com.cn/zhqu/sta/article/2003-06-04/10857.shtml
+- Read date: 2026-10-21; browser-rendered source texts inspected. Exact original HTML bytes, SHA256, complete preserved capture and original game execution **unavailable/not performed**; all original images/assets excluded.
+- Reliable bounded support: 2001 player enumerates five shell acquisition leads, 2003 article has two directional friendship quest routes with different rewards, 2003 hero guide relates a shell to the Black Ury portal and the island set 50 years before. The two published 2001/2003 claims conflict for the same direction (Yayoi→Himeko: shell reward vs flower reward); no single verified runtime resolution.
+- Boundary: fifth 2001 pathway has visibly garbled coordinates/species text, no recovered exact map ID. 2003 hero quest's level 80 is not a proven portal access requirement. Shell mail/drop restrictions and charisma loss are source claims, not TW1.0 or verified server results. Version change, item IDs, quest flags, consumption, save semantics and actual time-travel mechanic all OPEN.
+- Structured record: research/recovered/STONEAGE-CN2001-2003-SHELL-QUEST-SOURCE-R1.json; explanation: docs/specs/STONEAGE-CN2001-2003-SHELL-QUEST-SOURCE-R1.md.
