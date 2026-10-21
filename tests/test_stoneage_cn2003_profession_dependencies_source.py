@@ -63,7 +63,7 @@ class TestCn2003ProfessionDependencies(unittest.TestCase):
         info = r["source_derived"]
         self.assertEqual(len(b), info["utf8_byte_length"])
         self.assertEqual(hashlib.sha256(b).hexdigest(), info["raw_sha256"])
-        actual_git_blob = hashlib.sha1(b"blob " + str(len(b)).encode() + b"\\0" + b).hexdigest()
+        actual_git_blob = hashlib.sha1(b"blob " + str(len(b)).encode() + b"\0" + b).hexdigest()
         self.assertEqual(actual_git_blob, info["git_blob_sha1"])
         self.assertEqual(info["git_blob_sha1"], "055e169a8ca632022aa85598f175945cedd31ddb")
         self.assertEqual(info["record_count_example_prerequisites"], 9)
