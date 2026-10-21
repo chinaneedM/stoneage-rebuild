@@ -4216,3 +4216,12 @@ S2宠物邮件笼统称某些落地消失特殊物品不可邮，不具名R55贝
 R57研究提交 72d5dceb03900c7f80a143201bddc11caeb1121d/tree 2a04834f9b930d1716a2b9ca7f6769fc1fdf19b4 从原main4e11dc8983cfbe0b1b667e5ee45a3b1ee4a4de6d建立，仅前进提交；GitHub compare实证9文件、5新增、4只追加、旧历史行删除0。候选分支agent/cn2003-ui-team-trade-r57-20261021该HEAD十项Actions均completed/success；专用run39608021253/job119249213662实际运行6个结构化数据与证据边界测试，零跳过。主线同HEAD十一项Actions均completed/success；专用run39608219457/job119249911845亦success。专用两run均查0 artifact，不捏造ZIP或源HTML独立双重放。
 
 research/recovered/STONEAGE-CN2003-UI-TEAM-TRADE-SOURCE-R1.json源派生Git blob1bac3104c1d6b0d96a65a8c32e901de13a5df53d/UTF8 9904B/SHA256 ef9ee96f478aa9232b1cbb9fb71716ed36302f04dfa885c3cd0eaab29d4d82dd。新增research/recovered/STONEAGE-CN2003-UI-TEAM-TRADE-ACCEPTANCE-R1.json永久收据记录内容提交、双Actions、两个同期网页的来源URL、零artifact、未取得原网页原字节与商业服务端实测。专用CI由6升级至7项，新增收据存在、派生原字节长度和SHA256验收门；收据提交自身的候选/main Actions须另行后验，绝不可把旧6项结果称7项运行。无版权原始HTML/资产入Git。保留快捷键内部矛盾、海贼王遗迹vs2003的2.0怀旧组分期、交易OKvs“更安全”机制未证和原地登出不等于TW10 save原数据。最高NEXT58，Stage A7 PARTIAL+2 OPEN，B/wiki GATED，R79暂停，旧历史全文不改删。
+
+
+## 2026-10-21 R58 2002年4.0任务前提与机械文明故事线资料（有限归档）
+
+按本轮新读远端main `b94270a19e4ce5d73691e8201d00a03bcf6c8177`/tree `882a4a1c51d507666a0751f0028330507b15a7f6` 与R57实际双端验收继续；从世界/NPC/任务域提取真实游戏内容与世界关系而非空转底层helper。本包审查17173两篇同期玩家文：2002-09-16微笑赢家《石器4.0终极总结》与2002-12-17页面署康志强《石器の机械文明流动攻略》（正文另见不同署名，作者未独立确认）。S1归档12个4.0具名前置条件，S2归档8个精灵王—天空之岛—元素之石—精灵之岛—失踪孩童/动物园剧情节点，均仅“网页指南主张”，并非原服务器任务/奖励脚本。
+
+重大发现与证据边界：天空岛30级+成人礼可接，不得把建议80级/四大洞变为硬门槛；黑虎原91级且金飞与作者所称现101级完成不得合并；里拉拉作者自述4.0前后宠转条件改变但无官方补丁直接证明；2002两页不证同版；同名不可思议的贝壳与R55 2001/2003记录仅作跨文献名称关联，不能当原服同一个道具ID或同时成立的任务条件。S2五转与特殊宠物不回填初代。页面可读文字已核，但原始HTTP HTML SHA、原客户端/原运营服务器实跑均无；版权源/图未入Git。
+
+新增 `docs/specs/STONEAGE-CN2002-QUEST-WORLDLINE-SOURCE-R1.md`、`research/recovered/STONEAGE-CN2002-QUEST-WORLDLINE-SOURCE-R1.json`、R58审查说明、6项结构测试及CI工作流；严格限定二页12+8行和6个歧义。研究/主线Actions及永久派生保管后验，不提前宣称成功。最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-59，Stage A7 PARTIAL+2 OPEN、Stage B/wiki GATED、R79 PAUSED，历史所有旧记录逐字保留。

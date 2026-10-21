@@ -1,0 +1,370 @@
+{
+  "schema": "stoneage.cn2002_quest_dependency_worldline.source_limited.r1",
+  "task": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-58",
+  "baseline": {
+    "main": "b94270a19e4ce5d73691e8201d00a03bcf6c8177",
+    "tree": "882a4a1c51d507666a0751f0028330507b15a7f6"
+  },
+  "date": "2026-10-21",
+  "scope": "CN2002_PLAYER_GUIDE_4_0_AND_DEC_2002_UNLABELED_STORY_GUIDE_NOT_TW10",
+  "sources": [
+    {
+      "id": "S1",
+      "title": "石器4.0终极总结",
+      "publisher": "17173",
+      "page_author": "微笑赢家",
+      "date_as_page": "2002-09-16",
+      "url": "https://news.17173.com/z/stoneage/content/2002-9-16/n654_571022.html",
+      "source_class": "CONTEMPORANEOUS_PLAYER_GUIDE",
+      "source_named_version": "石器4.0（玩家正文标题）",
+      "original_raw_html_sha256": null,
+      "source_raw_bytes_archived": false
+    },
+    {
+      "id": "S2",
+      "title": "石器の机械文明流动攻略",
+      "publisher": "17173",
+      "page_author": "康志强",
+      "date_as_page": "2002-12-17",
+      "url": "https://news.17173.com/z/stoneage/content/2002-12-17/n527_443886.html",
+      "source_class": "CONTEMPORANEOUS_PLAYER_GUIDE",
+      "source_named_version": null,
+      "original_raw_html_sha256": null,
+      "source_raw_bytes_archived": false
+    }
+  ],
+  "s1_4_0_quest_gates": [
+    {
+      "row": 1,
+      "task_id": "SKY_ISLAND",
+      "guide_min_level": 30,
+      "guide_prerequisite_task_ids": [
+        "ADULT_CEREMONY"
+      ],
+      "guide_item_requirements": [],
+      "qualification": "level to begin: 30; author recommends 80 plus access to four caves, which is not the stated hard starting gate",
+      "source_id": "S1",
+      "status": "GUIDE_ASSERTION_ONLY",
+      "same_build_server_config_verified": false,
+      "original_tw10_quest_presence_verified": false
+    },
+    {
+      "row": 2,
+      "task_id": "GOLDEN_FLIGHT",
+      "guide_min_level": 81,
+      "guide_prerequisite_task_ids": [
+        "ADULT_CEREMONY"
+      ],
+      "guide_item_requirements": [],
+      "qualification": "author separately writes transport quest changed to require one flying dragon; not an actual verified configuration",
+      "source_id": "S1",
+      "status": "GUIDE_ASSERTION_ONLY",
+      "same_build_server_config_verified": false,
+      "original_tw10_quest_presence_verified": false
+    },
+    {
+      "row": 3,
+      "task_id": "RIRARA",
+      "guide_min_level": 81,
+      "guide_prerequisite_task_ids": [
+        "GOLDEN_FLIGHT",
+        "PET_REBIRTH"
+      ],
+      "guide_item_requirements": [
+        "MYSTERIOUS_SHELL"
+      ],
+      "qualification": "author states 4.0 revision requires pet rebirth to finish, not merely to start",
+      "source_id": "S1",
+      "status": "GUIDE_ASSERTION_ONLY",
+      "same_build_server_config_verified": false,
+      "original_tw10_quest_presence_verified": false
+    },
+    {
+      "row": 4,
+      "task_id": "RESCUE_BLACK_KING",
+      "guide_min_level": null,
+      "guide_prerequisite_task_ids": [
+        "SKY_ISLAND"
+      ],
+      "guide_item_requirements": [],
+      "qualification": "complete sky island and receive black sheep per guide",
+      "source_id": "S1",
+      "status": "GUIDE_ASSERTION_ONLY",
+      "same_build_server_config_verified": false,
+      "original_tw10_quest_presence_verified": false
+    },
+    {
+      "row": 5,
+      "task_id": "WATER_MONSTER",
+      "guide_min_level": 91,
+      "guide_prerequisite_task_ids": [
+        "GOLDEN_FLIGHT"
+      ],
+      "guide_item_requirements": [
+        "MYSTERIOUS_SHELL"
+      ],
+      "qualification": "hidden fork reward said to need special time; avoid normalizing hidden outcome",
+      "source_id": "S1",
+      "status": "GUIDE_ASSERTION_ONLY",
+      "same_build_server_config_verified": false,
+      "original_tw10_quest_presence_verified": false
+    },
+    {
+      "row": 6,
+      "task_id": "LOVE",
+      "guide_min_level": 100,
+      "guide_prerequisite_task_ids": [
+        "GOLDEN_FLIGHT"
+      ],
+      "guide_item_requirements": [],
+      "qualification": "guide reports 100 level for this task",
+      "source_id": "S1",
+      "status": "GUIDE_ASSERTION_ONLY",
+      "same_build_server_config_verified": false,
+      "original_tw10_quest_presence_verified": false
+    },
+    {
+      "row": 7,
+      "task_id": "KU_GUA",
+      "guide_min_level": 81,
+      "guide_prerequisite_task_ids": [
+        "ADULT_CEREMONY",
+        "GOLDEN_FLIGHT",
+        "RESCUE_BLACK_KING"
+      ],
+      "guide_item_requirements": [],
+      "qualification": "author summary of prerequisites, not independent three-way original server validation",
+      "source_id": "S1",
+      "status": "GUIDE_ASSERTION_ONLY",
+      "same_build_server_config_verified": false,
+      "original_tw10_quest_presence_verified": false
+    },
+    {
+      "row": 8,
+      "task_id": "SALT_MINE",
+      "guide_min_level": 91,
+      "guide_prerequisite_task_ids": [
+        "GOLDEN_FLIGHT"
+      ],
+      "guide_item_requirements": [],
+      "qualification": "source task condition only",
+      "source_id": "S1",
+      "status": "GUIDE_ASSERTION_ONLY",
+      "same_build_server_config_verified": false,
+      "original_tw10_quest_presence_verified": false
+    },
+    {
+      "row": 9,
+      "task_id": "FIRE_RITUAL",
+      "guide_min_level": 91,
+      "guide_prerequisite_task_ids": [
+        "GOLDEN_FLIGHT"
+      ],
+      "guide_item_requirements": [],
+      "qualification": "source task condition only",
+      "source_id": "S1",
+      "status": "GUIDE_ASSERTION_ONLY",
+      "same_build_server_config_verified": false,
+      "original_tw10_quest_presence_verified": false
+    },
+    {
+      "row": 10,
+      "task_id": "FIRE_WARRIOR",
+      "guide_min_level": 101,
+      "guide_prerequisite_task_ids": [
+        "FIRE_RITUAL"
+      ],
+      "guide_item_requirements": [],
+      "qualification": "source task condition only",
+      "source_id": "S1",
+      "status": "GUIDE_ASSERTION_ONLY",
+      "same_build_server_config_verified": false,
+      "original_tw10_quest_presence_verified": false
+    },
+    {
+      "row": 11,
+      "task_id": "BLACK_TIGER",
+      "guide_min_level": 91,
+      "guide_prerequisite_task_ids": [
+        "GOLDEN_FLIGHT"
+      ],
+      "guide_item_requirements": [],
+      "qualification": "original author-described requirement 91 but reported updated 101 required to finish; do not merge gates",
+      "source_id": "S1",
+      "status": "GUIDE_ASSERTION_ONLY",
+      "same_build_server_config_verified": false,
+      "original_tw10_quest_presence_verified": false
+    },
+    {
+      "row": 12,
+      "task_id": "JIAQIAO_DRAGON",
+      "guide_min_level": null,
+      "guide_prerequisite_task_ids": [
+        "ADULT_CEREMONY"
+      ],
+      "guide_item_requirements": [],
+      "qualification": "guide lists only adult rite, no level stated",
+      "source_id": "S1",
+      "status": "GUIDE_ASSERTION_ONLY",
+      "same_build_server_config_verified": false,
+      "original_tw10_quest_presence_verified": false
+    }
+  ],
+  "s2_mechanical_civilization_story_beats": [
+    {
+      "sequence": 1,
+      "id": "WORLD_COSMOLOGY",
+      "named_entities": "精灵王之传说三部曲与拯救黑王",
+      "text_bound_claim": "mechanical civilization guide lists these as prerequisites",
+      "source_id": "S2",
+      "canonical_story_worldline_proven": false,
+      "original_server_script_proven": false,
+      "original_tw10_presence_proven": false
+    },
+    {
+      "sequence": 2,
+      "id": "REBIRTH_SPECIAL_PET",
+      "named_entities": "五次转生及随身帖拉所依朵",
+      "text_bound_claim": "guide lists special preconditions without classifying target expansion build",
+      "source_id": "S2",
+      "canonical_story_worldline_proven": false,
+      "original_server_script_proven": false,
+      "original_tw10_presence_proven": false
+    },
+    {
+      "sequence": 3,
+      "id": "SKY_BOSS",
+      "named_entities": "天空之岛/柯黑穆肯",
+      "text_bound_claim": "author describes victory preceding Spirit King elemental request",
+      "source_id": "S2",
+      "canonical_story_worldline_proven": false,
+      "original_server_script_proven": false,
+      "original_tw10_presence_proven": false
+    },
+    {
+      "sequence": 4,
+      "id": "ELEMENTAL_KEYS",
+      "named_entities": "四属性元素石与四个魔法戒指",
+      "text_bound_claim": "author describes giving them to Spirit King for 精灵之钥",
+      "source_id": "S2",
+      "canonical_story_worldline_proven": false,
+      "original_server_script_proven": false,
+      "original_tw10_presence_proven": false
+    },
+    {
+      "sequence": 5,
+      "id": "SPIRIT_ISLAND_TRAVEL",
+      "named_entities": "精灵之岛/法尔亚尼",
+      "text_bound_claim": "guide describes transport after elemental chain",
+      "source_id": "S2",
+      "canonical_story_worldline_proven": false,
+      "original_server_script_proven": false,
+      "original_tw10_presence_proven": false
+    },
+    {
+      "sequence": 6,
+      "id": "MISSING_CHILD",
+      "named_entities": "亚奥/里奥/祖父",
+      "text_bound_claim": "guide connects desert child to Samgill grandfather and Garuka zoo",
+      "source_id": "S2",
+      "canonical_story_worldline_proven": false,
+      "original_server_script_proven": false,
+      "original_tw10_presence_proven": false
+    },
+    {
+      "sequence": 7,
+      "id": "ZOO_ITEM_CHAIN",
+      "named_entities": "塔斯夫/清澈的水/格鲁西斯",
+      "text_bound_claim": "player guide links dialogue, encounter, water and finding 里奥",
+      "source_id": "S2",
+      "canonical_story_worldline_proven": false,
+      "original_server_script_proven": false,
+      "original_tw10_presence_proven": false
+    },
+    {
+      "sequence": 8,
+      "id": "STORY_RETURN",
+      "named_entities": "破烂的愿藏娃娃/信/翡翠戒指",
+      "text_bound_claim": "player guide narrates returning to 亚奥 and village chief; final reward not server verified",
+      "source_id": "S2",
+      "canonical_story_worldline_proven": false,
+      "original_server_script_proven": false,
+      "original_tw10_presence_proven": false
+    }
+  ],
+  "boundary_cases": [
+    {
+      "kind": "SKY_ACCEPT_VS_RECOMMEND",
+      "source_id": "S1",
+      "entry_level": 30,
+      "recommended_level": 80,
+      "hard_four_cave_gate_justified": false
+    },
+    {
+      "kind": "BLACK_TIGER_START_VS_FINISH",
+      "source_id": "S1",
+      "older_guide_level": 91,
+      "reported_changed_completion_level": 101,
+      "verified_patch_version": null
+    },
+    {
+      "kind": "RIRARA_BETWEEN_VERSION_CHANGE",
+      "source_id": "S1",
+      "pre_40_pet_rebirth_reported_as_required": false,
+      "current_40_completion_requires_pet_rebirth_as_guide": true,
+      "independent_official_patch_notes": false
+    },
+    {
+      "kind": "SHELL_CROSSSOURCE_SHARED_NAME",
+      "source_ids": [
+        "S1",
+        "S2",
+        "R55"
+      ],
+      "shared_page_label": "不可思议的贝壳",
+      "same_original_item_master_id_verified": false,
+      "all_version_quest_conditions_same_verified": false
+    },
+    {
+      "kind": "S2_PAGE_BYLINE_VS_BODY_SIGNATURE",
+      "source_id": "S2",
+      "page_byline": "康志强",
+      "different_first_person_signature_in_body": true,
+      "author_identity_independently_confirmed": false
+    },
+    {
+      "kind": "S1_TO_S2_SAME_BUILD_UNPROVEN",
+      "source_ids": [
+        "S1",
+        "S2"
+      ],
+      "same_exact_version_or_server_build": false,
+      "s2_version_label_absent": true
+    }
+  ],
+  "previous_derived_crosswalk": {
+    "task": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-55",
+    "source_path": "research/recovered/STONEAGE-CN2001-2003-SHELL-QUEST-SOURCE-R1.json",
+    "relation": "SHARED_SHELL_NAME_ONLY_NOT_ORIGINAL_ITEM_ID_OR_IDENTICAL_QUEST_SCRIPT"
+  },
+  "source_replay": {
+    "original_source_http_response_saved": false,
+    "original_raw_html_sha256": null,
+    "html_bytes_independently_hashed": false,
+    "live_original_game_executed": false,
+    "real_quest_prerequisite_gates_verified": false,
+    "retail_original_server_config_read": false
+  },
+  "negative_claims": {
+    "original_jss1999_or_taiwan10_membership_proven": false,
+    "player_guide_equals_first_party_patch_notes": false,
+    "source_s1_and_s2_same_build_proven": false,
+    "author_level_recommendation_is_entry_gate": false,
+    "s1_changed_quest_gate_verified_at_original_runtime": false,
+    "early_shell_original_item_identity_proven": false,
+    "original_html_or_proprietary_game_assets_committed": false,
+    "original_game_full_world_restored": false
+  },
+  "stop_condition": "Two verified readable source pages;12 guide-dependency rows;8 later-story links;6 explicit boundary cases. Do not exhaust original author's other quests or infer server script from player reports.",
+  "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-59"
+}
