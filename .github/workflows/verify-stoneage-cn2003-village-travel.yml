@@ -1,0 +1,21 @@
+name: Verify 2003 village service and travel guide boundaries
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-CN2003-VILLAGE-TRAVEL-RECORD-SOURCE-R1.json'
+      - 'tests/test_stoneage_cn2003_village_travel_source.py'
+      - '.github/workflows/verify-stoneage-cn2003-village-travel.yml'
+      - 'research/recovered/STONEAGE-CN2003-VILLAGE-TRAVEL-RECORD-ACCEPTANCE-R1.json'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-CN2003-VILLAGE-TRAVEL-RECORD-SOURCE-R1.json'
+      - 'tests/test_stoneage_cn2003_village_travel_source.py'
+      - '.github/workflows/verify-stoneage-cn2003-village-travel.yml'
+      - 'research/recovered/STONEAGE-CN2003-VILLAGE-TRAVEL-RECORD-ACCEPTANCE-R1.json'
+jobs:
+  bounded-derived-source:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Assert version boundaries and three incompatible record offerings
+        run: python -m unittest discover -s tests -p 'test_stoneage_cn2003_village_travel_source.py' -v

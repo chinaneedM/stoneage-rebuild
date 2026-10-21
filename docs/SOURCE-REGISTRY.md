@@ -7923,3 +7923,12 @@ research/recovered/STONEAGE-CN2003-UI-TEAM-TRADE-SOURCE-R1.json源派生Git blob
 - **SRC-CN-2003-SINA-70746** — 新浪游戏《全新开放的职业系统》，页面标 2003-11-19 11:04；https://games.sina.com.cn/z/sta/2003-11-19/70746.shtml。**CONTEMPORANEOUS_PORTAL_TEXT**：三职业、一般技能点与职阶、九条明确范例，正文扁平化表格的隐藏跨列连线 UNKNOWN；原HTTP SHA、原服务端运行及一手补丁身份未证。
 - **SRC-CN-2003-SINA-70759** — 新浪游戏《石器7.0各职业技能表》，页面标 2003-11-19 11:16；https://games.sina.com.cn/z/sta/2003-11-19/70759.shtml。**CONTEMPORANEOUS_PORTAL_TEXT**：三共通名称、三职业可见平面名单；同名文本差异、名单完整性和原服务器实体ID未证。无独立原网页字节保管。
 - 派生保管：research/recovered/STONEAGE-CN2003-PROFESSION-DEPENDENCIES-SOURCE-R1.json，规格 docs/specs/STONEAGE-CN2003-PROFESSION-DEPENDENCIES-SOURCE-R1.md；只保留有限结构事实与否定边界，不含原HTML全文、图片或客户端。重开同版运营公告、原始规则配置或实际学习日志。
+
+### SRC-CN-2003-SINA-VILLAGE-TRAVEL-R60
+
+- Period: 2003-04-15; source class: contemporaneous portal **reader-submitted guides**, not authenticated original operator/server material.
+- S1 https://games.sina.com.cn/zhqu/sta/xsxl/sqcty.shtml (22:14), village services and 2003 guide record-point offerings.
+- S2 https://games.sina.com.cn/zhqu/sta/xsxl/jtsc.shtml (22:43), travel services and second record offerings; inconsistent meat quantities for MARINAS/KOAO/KARUTANA.
+- S3 https://games.sina.com.cn/zhqu/sta/xsxl/zqsz.shtml (21:54), early money-making suggestions.
+- Evidentiary reach: page text review, source dates and separately attributed claims; derived row-level metadata in R60 JSON.
+- Does **not** prove same exact game build, original HTTP bytes, TW1.0/JSS1999 membership, the server's record-point consumption, transport fare or actual save/login behavior. Raw source/html SHA unavailable. Preserve three contradictions.

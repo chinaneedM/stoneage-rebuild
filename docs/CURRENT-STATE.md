@@ -16861,3 +16861,11 @@ research/recovered/STONEAGE-CN2003-UI-TEAM-TRADE-SOURCE-R1.json源派生Git blob
 R59内容提交 21ebeec046dfdfcbaeaf6dd317ca71460890a096/tree 3a6cef0877412e103ada4c095a48c3fb7d7a7692，从main2c4b1bb6b4c0dfcf6c3c06df7f20449eb3bb807c非强制、预期SHA保护快进。Git compare 8变动：4新增、4历史文件仅追加、原历史行删除0。候选agent/cn2003-profession-prereq-r59-20261021十项Actions全completed/success、专用run39614560501/job119272011174实际通过5项派生数据/来源否证测试；main同内容提交11项Actions全completed/success、专用run39614689723/job119272469128亦通过5项，全部以本轮远端实查为准。候选与main专用run均0 artifact，不虚称有原网页ZIP、源字节实时双重放或原服验证。
 
 派生 research/recovered/STONEAGE-CN2003-PROFESSION-DEPENDENCIES-SOURCE-R1.json Git blob 055e169a8ca632022aa85598f175945cedd31ddb、UTF8 10204B、SHA256 79478c0a62763cbc1bd214834e0140186f0bdc70fd9346d58e6149f2d2ef015e 已通过独立纯JS SHA256自测及原Git文件读取绑定。新增 research/recovered/STONEAGE-CN2003-PROFESSION-DEPENDENCIES-ACCEPTANCE-R1.json 永久保存源Git/双CI job/无ZIP/原网页字节缺证；专用测试升级为6项，验证收据与源文件实际原字节SHA256及Git blob SHA1。**收据自身候选/main的CI须另行后验**，不将此前5项结果冒称6项已过。保留S1/S2名单冲突与职业门槛例外；NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-60，其余项目闸门不变。
+
+## 2026-10-21 R60 | 2003 村庄服务、记录点供品与交通：证据限定资料
+
+本轮以main 0a364c5894e1d66403d9c1dd22a4ea2536b622d4/tree 754ac755b27e9ef9b1fbb77c3bbc77e3d14df513 起步，按最高 NEXT60 研究可直接关联出生村玩家经历的服务内容。查核同期新浪2003-04-15三篇 **网友投稿** 《石器初体验》22:14、《交通手册》22:43、《赚钱守则》21:54；不把门户页面当官方运营补丁，不取得或存储原网页HTML、图片、商业客户端/服务器二进制，不暗示已做原服运行。
+
+归档七类村落服务、十二个同名记录点两源比对、五类交通方式与三条初期赚钱建议。重点实际发现 S1/S2 同日供肉数值明确不符：玛丽那丝渔村乌力斯坦 1 vs 2、柯奥村龟之盾 2 vs 1、卡鲁它那村克邦凯斯 1 vs 2；奇喀喀村 S2“不详”。两页坐标可能为局部与地图坐标，不能直接等同。S2所称五十年前波拉岛80级与R55已归档英雄岛前传门槛不得自动拼作原版传送脚本已证。五转储存数量不得倒灌TW1.0初始容量。原HTTP哈希、特定build、商业服务器供品消费、飞机路线和存档ACK均UNKNOWN。具体规格docs/specs/STONEAGE-CN2003-VILLAGE-TRAVEL-RECORD-SOURCE-R1.md和派生JSON为本包事实记录，六项结构测试不证明客户端游戏运行。
+
+本次资料增益是实际玩家可见的“服务—物品—存档/出行”关联系统与冲突边界，不是全地图/NPC/任务的复原完成；Stage A维持7 PARTIAL+2 OPEN，B/wiki依旧GATED，TW10 R79仍PAUSED_NON_BLOCKING。止点三篇、7服务、12记录点、5交通、3经济建议；最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-61。从另一域取资料，不空转R60或推断初代完整参数。候选/main专用CI、永久收据均须实际完成后另行后验；所有R1–R59历史全文保留。

@@ -1,0 +1,612 @@
+{
+  "schema": "stoneage.cn2003_village_travel_records.source_limited.r1",
+  "task": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-60",
+  "researched_on": "2026-10-21",
+  "remote_baseline": {
+    "head": "0a364c5894e1d66403d9c1dd22a4ea2536b622d4",
+    "tree": "754ac755b27e9ef9b1fbb77c3bbc77e3d14df513"
+  },
+  "status": "CONTEMPORANEOUS_PLAYER_GUIDE_CLAIMS_NOT_ORIGINAL_GAME_EXECUTION",
+  "scope": "CHINA_2003_PORTAL_NEW_PLAYER_VILLAGE_TRAVEL_AND_RECORD_GUIDES_NOT_TW10",
+  "sources": [
+    {
+      "id": "S1",
+      "title": "石器初体验",
+      "url": "https://games.sina.com.cn/zhqu/sta/xsxl/sqcty.shtml",
+      "display_date": "2003-04-15 22:14",
+      "publisher": "新浪游戏",
+      "attribution": "网友投稿",
+      "kind": "CONTEMPORANEOUS_PORTAL_PLAYER_GUIDE",
+      "original_http_sha256": null,
+      "original_http_archived": false
+    },
+    {
+      "id": "S2",
+      "title": "交通手册",
+      "url": "https://games.sina.com.cn/zhqu/sta/xsxl/jtsc.shtml",
+      "display_date": "2003-04-15 22:43",
+      "publisher": "新浪游戏",
+      "attribution": "网友投稿",
+      "kind": "CONTEMPORANEOUS_PORTAL_PLAYER_GUIDE",
+      "original_http_sha256": null,
+      "original_http_archived": false
+    },
+    {
+      "id": "S3",
+      "title": "赚钱守则",
+      "url": "https://games.sina.com.cn/zhqu/sta/xsxl/zqsz.shtml",
+      "display_date": "2003-04-15 21:54",
+      "publisher": "新浪游戏",
+      "attribution": "网友投稿",
+      "kind": "CONTEMPORANEOUS_PORTAL_PLAYER_GUIDE",
+      "original_http_sha256": null,
+      "original_http_archived": false
+    }
+  ],
+  "village_service_classes": [
+    {
+      "id": "CHIEF_HOME",
+      "source": "S1",
+      "actions": [
+        "家族申请加入/退出",
+        "石币银行存取",
+        "领取活动虚拟奖品"
+      ],
+      "claim_status": "PLAYER_GUIDE_ONLY"
+    },
+    {
+      "id": "HOSPITAL",
+      "source": "S1",
+      "actions": [
+        "人物HP/气力回复",
+        "宠物HP回复",
+        "购买回复/复活物品",
+        "魅力提升服务"
+      ],
+      "claim_status": "PLAYER_GUIDE_ONLY",
+      "note": "S1描述宠物补血免费、魅力费用随等级高涨; 无服务器收费表"
+    },
+    {
+      "id": "PET_STORE_AND_24_SHOP",
+      "source": "S1",
+      "actions": [
+        "寄放宠物",
+        "寄放道具",
+        "宠物学习技能",
+        "买料理/合成原料"
+      ],
+      "claim_status": "PLAYER_GUIDE_ONLY"
+    },
+    {
+      "id": "ARENA",
+      "source": "S1",
+      "actions": [
+        "PK场地",
+        "购买竞技装备",
+        "竞技场内治疗"
+      ],
+      "claim_status": "PLAYER_GUIDE_ONLY"
+    },
+    {
+      "id": "CHAT_ROOM",
+      "source": "S1",
+      "actions": [
+        "聚会聊天",
+        "结婚礼堂",
+        "区域广播"
+      ],
+      "claim_status": "PLAYER_GUIDE_ONLY"
+    },
+    {
+      "id": "RECORD_POINT",
+      "source": "S1",
+      "actions": [
+        "首次交特定肉作记录条件",
+        "日后与记录员对话重新登记"
+      ],
+      "claim_status": "PLAYER_GUIDE_ONLY",
+      "note": "首次供品和返回记录点事件未实测"
+    },
+    {
+      "id": "PET_CRAFTING",
+      "source": "S1",
+      "actions": [
+        "宠物学习加工/料理",
+        "选择材料",
+        "触发宠物技能",
+        "取得制品或失败"
+      ],
+      "claim_status": "PLAYER_GUIDE_ONLY"
+    }
+  ],
+  "capacity_claims_s1": {
+    "carried_pets": 5,
+    "carried_items": 15,
+    "initial_stored_pets": 5,
+    "initial_stored_items": 10,
+    "additional_stored_pets_per_rebirth": 2,
+    "additional_stored_items_per_rebirth": 4,
+    "claimed_5_rebirth_stored_pets": 15,
+    "claimed_5_rebirth_stored_items": 30,
+    "original_build_verified": false
+  },
+  "record_point_comparison": [
+    {
+      "id": "MARINAS",
+      "label": "玛丽那丝渔村",
+      "s1": {
+        "item": "乌力斯坦",
+        "qty": 1,
+        "record_xy": [
+          35,
+          58
+        ]
+      },
+      "s2": {
+        "item": "乌力斯坦",
+        "qty": 2,
+        "world_xy_candidates": [
+          [
+            114,
+            662
+          ],
+          [
+            79,
+            615
+          ]
+        ]
+      },
+      "relation": "CONTRADICT_QUANTITY"
+    },
+    {
+      "id": "SAMGIR",
+      "label": "萨姆吉尔村",
+      "s1": {
+        "item": "凯比特",
+        "qty": 1,
+        "record_xy": [
+          92,
+          99
+        ]
+      },
+      "s2": {
+        "item": "凯比特",
+        "qty": 1,
+        "world_xy_candidates": [
+          [
+            637,
+            491
+          ],
+          [
+            708,
+            489
+          ]
+        ]
+      },
+      "relation": "AGREE_OFFERING_ONLY"
+    },
+    {
+      "id": "KOAO",
+      "label": "柯奥村",
+      "s1": {
+        "item": "龟之盾",
+        "qty": 2,
+        "record_xy": [
+          48,
+          91
+        ]
+      },
+      "s2": {
+        "item": "龟之盾",
+        "qty": 1,
+        "world_xy_candidates": [
+          [
+            417,
+            630
+          ]
+        ]
+      },
+      "relation": "CONTRADICT_QUANTITY"
+    },
+    {
+      "id": "KARUTANA",
+      "label": "卡鲁它那村",
+      "s1": {
+        "item": "克邦凯斯",
+        "qty": 1,
+        "record_xy": [
+          68,
+          57
+        ]
+      },
+      "s2": {
+        "item": "克邦凯斯",
+        "qty": 2,
+        "world_xy_candidates": [
+          [
+            421,
+            577
+          ]
+        ]
+      },
+      "relation": "CONTRADICT_QUANTITY"
+    },
+    {
+      "id": "JAGA",
+      "label": "加加村",
+      "s1": {
+        "item": "乌宝宝",
+        "qty": 1,
+        "record_xy": [
+          94,
+          97
+        ]
+      },
+      "s2": {
+        "item": "乌宝宝",
+        "qty": 1,
+        "world_xy_candidates": [
+          [
+            481,
+            92
+          ],
+          [
+            426,
+            94
+          ]
+        ]
+      },
+      "relation": "AGREE_OFFERING_ONLY"
+    },
+    {
+      "id": "HOTEL",
+      "label": "霍特尔村",
+      "s1": {
+        "item": "奇宝",
+        "qty": 2,
+        "record_xy": [
+          27,
+          23
+        ]
+      },
+      "s2": {
+        "item": "奇宝",
+        "qty": 2,
+        "world_xy_candidates": [
+          [
+            621,
+            191
+          ]
+        ]
+      },
+      "relation": "AGREE_OFFERING_ONLY"
+    },
+    {
+      "id": "FOLDE",
+      "label": "福尔德村",
+      "s1": {
+        "item": "格尔顿",
+        "qty": 1,
+        "record_xy": [
+          45,
+          53
+        ]
+      },
+      "s2": {
+        "item": "格尔顿",
+        "qty": 1,
+        "world_xy_candidates": [
+          [
+            263,
+            417
+          ]
+        ]
+      },
+      "relation": "AGREE_OFFERING_ONLY"
+    },
+    {
+      "id": "DANA",
+      "label": "达那村",
+      "s1": {
+        "item": "扬奇洛斯",
+        "qty": 1,
+        "record_xy": [
+          20,
+          38
+        ]
+      },
+      "s2": {
+        "item": "扬奇洛斯",
+        "qty": 1,
+        "world_xy_candidates": [
+          [
+            499,
+            167
+          ]
+        ]
+      },
+      "relation": "AGREE_OFFERING_ONLY"
+    },
+    {
+      "id": "URURI",
+      "label": "乌鲁力村",
+      "s1": {
+        "item": "巴克",
+        "qty": 2,
+        "record_xy": [
+          69,
+          51
+        ]
+      },
+      "s2": {
+        "item": "巴克",
+        "qty": 2,
+        "world_xy_candidates": [
+          [
+            571,
+            766
+          ]
+        ]
+      },
+      "relation": "AGREE_OFFERING_ONLY"
+    },
+    {
+      "id": "DODO",
+      "label": "多多村",
+      "s1": {
+        "item": "克克洛斯",
+        "qty": 1,
+        "record_xy": [
+          47,
+          60
+        ]
+      },
+      "s2": {
+        "item": "克克洛斯",
+        "qty": 1,
+        "world_xy_candidates": [
+          [
+            509,
+            496
+          ]
+        ]
+      },
+      "relation": "AGREE_OFFERING_ONLY"
+    },
+    {
+      "id": "TAMTAM",
+      "label": "塔姆塔姆村",
+      "s1": {
+        "item": "克洛尔",
+        "qty": 1,
+        "record_xy": [
+          91,
+          70
+        ]
+      },
+      "s2": {
+        "item": "克洛尔",
+        "qty": 1,
+        "world_xy_candidates": [
+          [
+            481,
+            92
+          ],
+          [
+            426,
+            94
+          ]
+        ]
+      },
+      "relation": "AGREE_OFFERING_ONLY"
+    },
+    {
+      "id": "CHIKAKA",
+      "label": "奇喀喀村",
+      "s1": {
+        "item": "贝鲁卡",
+        "qty": 2,
+        "record_xy": [
+          63,
+          48
+        ]
+      },
+      "s2": {
+        "item": null,
+        "qty": null,
+        "world_xy_candidates": [
+          [
+            124,
+            1018
+          ],
+          [
+            146,
+            1007
+          ]
+        ],
+        "printed_requirement": "不详"
+      },
+      "relation": "S2_UNSPECIFIED"
+    }
+  ],
+  "transport_modes": [
+    {
+      "id": "MAMMOTH_BUS",
+      "source": "S2",
+      "claims": {
+        "reported_stops": [
+          "萨姆吉尔",
+          "玛丽那丝",
+          "柯奥",
+          "加加",
+          "卡鲁它那",
+          "塔姆塔姆"
+        ],
+        "stop_minutes": 3,
+        "ticket_stone_range": [
+          20,
+          30
+        ],
+        "random_encounters_during_trip": false
+      },
+      "unknowns": [
+        "实际边列表",
+        "每一段时长",
+        "TW1.0同价票价"
+      ]
+    },
+    {
+      "id": "GAMI_AIR",
+      "source": "S2",
+      "claims": {
+        "fare_stone": 1000,
+        "hub": "奇努伊",
+        "named_endpoints": [
+          "玛丽娜丝",
+          "达那",
+          "米兰达",
+          "卡鲁它那"
+        ],
+        "reported_departure_words": [
+          "go",
+          "出发"
+        ]
+      },
+      "unknowns": [
+        "真实航线图",
+        "相同build执行"
+      ]
+    },
+    {
+      "id": "SPIRIT_FEATHER",
+      "source": "S2",
+      "claims": {
+        "ordinary_feather_stone": 2000,
+        "instant_destination_from_named_item": true
+      },
+      "unknowns": [
+        "具体单次使用/所有类型入服条件",
+        "各地贩卖清单"
+      ]
+    },
+    {
+      "id": "SUBSEA_ROUTE",
+      "source": "S2",
+      "claims": {
+        "reported_npc_toll_stone": 300,
+        "reported_end_regions": [
+          "吉鲁岛福尔德村",
+          "南岛塔姆塔姆附近",
+          "北岛霍特尔附近"
+        ]
+      },
+      "unknowns": [
+        "同一时期服务端地图互通关系",
+        "实际触发脚本"
+      ]
+    },
+    {
+      "id": "GOLDEN_FLIGHT",
+      "source": "S2",
+      "claims": {
+        "reported_quest_level_min": 80,
+        "quest_completion_claimed": true,
+        "special_one_time_feather_exception_reported": true
+      },
+      "unknowns": [
+        "是否适用于每个服务器",
+        "例外进入后新大陆任务与传送服务实际限制"
+      ]
+    }
+  ],
+  "economy_guide_s3": [
+    {
+      "id": "SELL_MEAT",
+      "kind": "EARLY_MONEY",
+      "source": "S3",
+      "claim": "10级以下卖肉；称5.0后某些肉无法售卖",
+      "hard_level_gate_proven": false
+    },
+    {
+      "id": "MAMMOTH_DELIVERY",
+      "kind": "EARLY_MONEY",
+      "source": "S3",
+      "claim": "建议10级以上在出生村长毛象处接送货任务",
+      "hard_level_gate_proven": false
+    },
+    {
+      "id": "CAPTURE_TRADE_PETS",
+      "kind": "EARLY_MONEY",
+      "source": "S3",
+      "claim": "野外捕捉并练级后出售宠物的玩家建议",
+      "hard_level_gate_proven": false
+    }
+  ],
+  "material_conflicts": [
+    {
+      "id": "MARINAS_QTY_1_VS_2",
+      "record": "MARINAS",
+      "first": "S1 1",
+      "second": "S2 2",
+      "resolved": false
+    },
+    {
+      "id": "KOAO_QTY_2_VS_1",
+      "record": "KOAO",
+      "first": "S1 2",
+      "second": "S2 1",
+      "resolved": false
+    },
+    {
+      "id": "KARUTANA_QTY_1_VS_2",
+      "record": "KARUTANA",
+      "first": "S1 1",
+      "second": "S2 2",
+      "resolved": false
+    },
+    {
+      "id": "CHIKAKA_S2_NOT_KNOWN",
+      "record": "CHIKAKA",
+      "first": "S1 贝鲁卡2",
+      "second": "S2 不详",
+      "resolved": false
+    },
+    {
+      "id": "COORDINATE_FRAME_NOT_EQUIVALENT",
+      "note": "S1记录点局部坐标与S2地域地图坐标未证同一参考系",
+      "resolved": false
+    },
+    {
+      "id": "2003_TRAVEL_HERO80_VS_R55_ENTRANCE_GATE_UNPROVEN",
+      "note": "S2写80级进入五十年前波拉岛，R55前传80级不是黑猪传送独立验证；不能合并为已证的传送门槛",
+      "resolved": false
+    },
+    {
+      "id": "GAMI_AIR_CLAIM_VS_TW1_JSS_MEMBERSHIP",
+      "note": "交通能力不能仅凭2003玩家稿回填1999或TW1.0",
+      "resolved": false
+    },
+    {
+      "id": "FIVE_REBIRTH_CAPACITY_NOT_INITIAL",
+      "note": "五转容量不是新建角色/初代的可用上限",
+      "resolved": false
+    }
+  ],
+  "negative_claims": {
+    "raw_original_http_archived": false,
+    "original_html_sha256_verified": false,
+    "first_party_server_config_authenticated": false,
+    "same_build_between_s1_s2_s3_verified": false,
+    "tw10_jss1999_membership_proven": false,
+    "source_xy_frames_equivalent": false,
+    "exact_server_save_or_meat_consumption_executed": false,
+    "transport_fares_verified_by_original_server": false,
+    "fully_connected_bus_graph_recovered": false,
+    "rebirth_five_capacity_is_tw10_initial_capacity": false,
+    "historic_pet_store_price_table_complete": false,
+    "restoration_stage_a_final_accepted": false,
+    "stage_b_started": false
+  },
+  "bounded_stop": "3 contemporary player pages, 7 village service families, 12 cross-page record points, 5 transport classes, 3 limited economy leads; no original client/server execution or imported assets",
+  "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-61"
+}

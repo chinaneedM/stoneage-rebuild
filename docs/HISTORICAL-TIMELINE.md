@@ -4239,3 +4239,11 @@ research/recovered/STONEAGE-CN2003-UI-TEAM-TRADE-SOURCE-R1.json源派生Git blob
 【SOURCE FACT】新浪游戏 2003-11-19《全新开放的职业系统》和《石器7.0各职业技能表》保留了同期三职业与可见技能、三共通技能及九项明确举例前置条件。S1 陈述就职初始一点技能点、职业升一级增一点、最多16点、学习不可撤销及熟练度示例。两页不是同 build 运营原配置；精确发行时间/服务端执行、TW1.0 成员资格均 OPEN。详见 docs/specs/STONEAGE-CN2003-PROFESSION-DEPENDENCIES-SOURCE-R1.md 和 research/recovered/STONEAGE-CN2003-PROFESSION-DEPENDENCIES-SOURCE-R1.json。
 
 【CONFLICT】一针见血/针针相对、驯服/驯伏、招雷/召雷、以形/移形保持源字面。尸体掠夺职位级别5独立于一般二级门槛。S1/S2列表计数差异不推服务端更新。不得用此项为现代新游戏设定职阶或熟练度公式。
+
+### 2003-04-15 — village / record-point / transport player guides (R60)
+
+**FACT (publication):** Three Sina game portal pages, attributed as reader submissions, display 2003-04-15 times 21:54, 22:14 and 22:43 and discuss earning Stone, village services/record offerings and transportation. Source registry: SRC-CN-2003-SINA-VILLAGE-TRAVEL-R60.
+
+**SOURCE CLAIM, NOT SERVER FACT:** The 22:14 village guide and 22:43 travel guide disagree on named meat quantities at 玛丽那丝渔村 (1/2), 柯奥村 (2/1) and 卡鲁它那村 (1/2); 奇喀喀村 is unknown in S2. Distinct coordinate frames are not matched. Reported bus/air/feather/undersea fares remain player-guide values.
+
+**OPEN:** Actual build(s), first-party source, earliest-version membership, NPC trigger/price/record-point consumption, player persistence and transport map remain unattested. The S2 hero-island age/level narrative does not resolve R55's portal-vs-quest requirement boundary.
