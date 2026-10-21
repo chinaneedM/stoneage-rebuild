@@ -1,0 +1,418 @@
+{
+  "schema": "stoneage.early_dinosaur_quest.source.r1",
+  "task": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-64",
+  "date": "2026-10-22",
+  "baseline_head": "099a196d44c5e34b382c31b912962ac94c158ca4",
+  "baseline_tree": "b352da6dbf506929ccf324484f16d89998cb280c",
+  "startup": {
+    "branches": 458,
+    "open_prs": 0,
+    "in_progress_actions": 0,
+    "unrelated_queued_run": 37642417333,
+    "main_successful_actions": 9,
+    "candidate_successful_actions_same_head": 8,
+    "complete_file_pins": [
+      {
+        "path": "README.md",
+        "bytes": 45937,
+        "sha256": "9feb9d418fe67809176c5c2970fc27498123531dd9051e131a4c3b3332cf803c",
+        "git_blob": "65cfe8de7ce8394f8eb659d8105a14f1d11753ca"
+      },
+      {
+        "path": "docs/PROJECT-CONTINUITY-PROTOCOL-R1.md",
+        "bytes": 9762,
+        "sha256": "c44834eeec87f7a43e9cb4905f08377349e36d58b1fff2c5a75a6975db695e3b",
+        "git_blob": "ba9bbe19384589400abc61af37a360a40bf91452"
+      },
+      {
+        "path": "docs/CURRENT-STATE.md",
+        "bytes": 2309305,
+        "sha256": "c1693fb383f995bdc6a1e2eb7d93a103d216b4d762da81121a486502f3a4faf4",
+        "git_blob": "41d8e370f9930b82ed363f8d042e5f52d79a3800"
+      },
+      {
+        "path": "docs/DESIGN-DECISIONS.md",
+        "bytes": 45965,
+        "sha256": "28b572ed01179eacd5a06b4ad62c76e4baef22ac49587aa0bad452a7cb3fe8e6",
+        "git_blob": "013ae4fad9301ab0140fe408a423b3abad97d1f9"
+      },
+      {
+        "path": "docs/HISTORICAL-TIMELINE.md",
+        "bytes": 588487,
+        "sha256": "4852ffaa44cc7f74e8ae6da15c6f52b9eddcf19c5e346abafffa8f44652beaf3",
+        "git_blob": "08baa41de6d9a599d0e025e5c6e75b80e6c438fa"
+      },
+      {
+        "path": "docs/SOURCE-REGISTRY.md",
+        "bytes": 858569,
+        "sha256": "7f48c21ce290833d42a59012c5d671ebc5fcb41dea28703179d1ef507b341fc9",
+        "git_blob": "dbe0d970854246c5d5438221c49de5411457f4c5"
+      },
+      {
+        "path": "docs/RESTORATION-ROADMAP-R2.md",
+        "bytes": 246133,
+        "sha256": "1bec65f780661f139e6852c31bfc560b73c427a552a25e9615e1fcff5b7d3480",
+        "git_blob": "3427a9ffbb4d96446fdd8bc6eb18c434017d8720"
+      },
+      {
+        "path": "research/recovered/STONEAGE-22-DOMAIN-SOURCE-READY-PORTFOLIO-R2.json",
+        "bytes": 15948,
+        "sha256": "7d50de08f7855cf16dbe54b1747e258f1cc1223de88cc217172fd145f3c704ce",
+        "git_blob": "088b469b3c51e689cff27f33fc3bb49de2d24b2c"
+      },
+      {
+        "path": "docs/STAGE-A-CONSOLIDATED-REVIEW-R1.md",
+        "bytes": 15835,
+        "sha256": "52005bc4d6eb3ec9905e026a50683ae63b0950ad755a623691c1882935d8365b",
+        "git_blob": "07c9950a40d110d4dabb80b11412db8b4ea64ba9"
+      }
+    ]
+  },
+  "scope": {
+    "runtime_verified": false,
+    "historical_bytes_authenticated": false,
+    "exact_build": null,
+    "independent_source_authors_established": false,
+    "original_server_script_recovered": false,
+    "original_assets_committed": false,
+    "source_taxonomy": "PLAYER_GUIDE_CLAIMS_NOT_FIRST_PARTY_SERVER_FACTS"
+  },
+  "profiles": {
+    "compiler": {
+      "id": "CN_EARLY_COMPILATION_UNDATED_BUILD_UNKNOWN",
+      "region": "Chinese-language portal; exact operator region unverified",
+      "language": "zh-CN",
+      "publisher": "Sina",
+      "credited_author": "游民部落网友松鼠1206",
+      "date_boundary": "Prior pinned download directory labels 2001-01-18; current chapter carries a 2004-01-06 publishing comment. Neither certifies current chapter bytes in 2001.",
+      "exact_build": null
+    },
+    "dated_2003": {
+      "id": "CN2003_SINA_DINOSAUR_GUIDE_BUILD_UNKNOWN",
+      "region": "Mainland Chinese portal; exact commercial deployment unknown",
+      "language": "zh-CN",
+      "publisher": "Sina",
+      "credited_author": "新浪游戏 / 网友投稿; individual author unknown",
+      "displayed_date": "2003-05-29 11:37",
+      "exact_build": null
+    }
+  },
+  "inputs": [
+    {
+      "id": "I1",
+      "url": "https://games.sina.com.cn/handbook/0101/01186091.shtml",
+      "http_status_observed": 200,
+      "final_url": "https://games.sina.com.cn/handbook/0101/01186091.shtml",
+      "bytes": 37893,
+      "sha256": "1890f3f046e9d58847c1a799f2baf97298cc3dbe50d24f6d7115f7d22a5513d9",
+      "decoding": "gb18030 with explicitly counted replacement",
+      "historical_snapshot": null
+    },
+    {
+      "id": "S1",
+      "url": "https://games.sina.com.cn/handbook/0101/01186091_c2.shtml",
+      "http_status_observed": 200,
+      "final_url": "https://games.sina.com.cn/handbook/0101/01186091_c2.shtml",
+      "bytes": 36563,
+      "sha256": "91b65594bd21e2e5cb598902eecd7649fa84a1db67574515030d20dbfd4fb07c",
+      "decoding": "gb18030 with explicitly counted replacement",
+      "historical_snapshot": null
+    },
+    {
+      "id": "S2",
+      "url": "https://games.sina.com.cn/zhqu/sta/rwgl1_2.shtml",
+      "http_status_observed": 200,
+      "final_url": "https://games.sina.com.cn/zhqu/sta/rwgl1_2.shtml",
+      "bytes": 52445,
+      "sha256": "890148233a3cff9a63497369711fcb3af1471244a257e64fad1b369f020a52bf",
+      "decoding": "gb18030 with explicitly counted replacement",
+      "historical_snapshot": null
+    }
+  ],
+  "extraction": {
+    "compiler": {
+      "quest_1": {
+        "target_label": "鲁尼贴斯",
+        "target_level_min_as_written": "十五",
+        "special_reward_level_min_as_written": "十八",
+        "special_reward_label": "阿西美加护符",
+        "equivalent_equipment_alternative": true
+      },
+      "quest_2": {
+        "target_label": "贝鲁卡",
+        "requested_level": 30,
+        "reward_label": "布克布克",
+        "reward_level": 1
+      },
+      "npc_personal_name": null,
+      "floor_wording": "最上层"
+    },
+    "dated_2003": {
+      "npc": {
+        "name": "哈鲁",
+        "role": "恐龙博士",
+        "local_xy": [
+          11,
+          12
+        ],
+        "floor_as_written": 6,
+        "entrance_xy": [
+          328,
+          633
+        ]
+      },
+      "assistant": {
+        "name": "吉鲁",
+        "role": "助手",
+        "xy": null
+      },
+      "quest_1": {
+        "target_label": "鲁尼帖斯",
+        "target_level_min": 15,
+        "recommended_player_level": 15,
+        "required_player_level": null,
+        "reward_kind": "RANDOM_ITEM",
+        "best_reward_label": "阿西美拉护符1",
+        "best_reward_charm": 1,
+        "reward_probability": null
+      },
+      "quest_2": {
+        "target_label": "贝鲁卡",
+        "requested_level": 30,
+        "recommended_player_level": 25,
+        "required_player_level": null,
+        "predecessor": "quest_1",
+        "reward_label": "布克布克",
+        "reward_level": null,
+        "must_raise_captured_pet_to_requested_level": true,
+        "multiple_pet_selection_unspecified": true,
+        "mounted_pet_warning": true
+      }
+    },
+    "selected_semantic_sha256": [
+      "822a099d863e3fef9e99f1aafad7139900dfaf99235c61f7be3e7afabbbbc020",
+      "9702fb342f7db495a2b24b787a26e8905d7d2f6070197b89384b4e8d3fe567ff",
+      "4da2cdf8a5a4cbf1d3641645faa522d7752f50d3c7db823fa911c06236d4fcf4"
+    ],
+    "decoding_replacements": [
+      1,
+      2,
+      0
+    ]
+  },
+  "parent_pins": [
+    {
+      "path": "research/recovered/STONEAGE-EARLY-CONTENT-GUIDE-MANUAL-R1.json",
+      "bytes": 6911,
+      "sha256": "02c854ace5ff8364fc141dc4ee58e6c518b91af126b89b8c0ee2d4b112c9ae5b",
+      "git_blob": "54404a8118f125a9a53eabbb8bad8c4a0d07b190"
+    },
+    {
+      "path": "research/recovered/STONEAGE-CN20-HEALING-SPELLS-SOURCE-R1.json",
+      "bytes": 27194,
+      "sha256": "b1cf694e0fe49964753f84ea8b6bceb9ea4cc41039eac7f232bc864b99bf6210",
+      "git_blob": "ab6eec50fc87e1388d70658282acc4c2b14b5749"
+    },
+    {
+      "path": "research/recovered/STONEAGE-PREPRODUCTION-CONTENT-ARCHIVE-R1.json",
+      "bytes": 24489,
+      "sha256": "e87afebc8c9590142c7cc8831b578455b3427bf7c1d10520ae02a3e8082fbddb",
+      "git_blob": "2d5b3f081d5618287f431fbded943722a820c593"
+    }
+  ],
+  "source_relationships": [
+    {
+      "from": "I1",
+      "to": "S1",
+      "type": "ACTUAL_LINK",
+      "href": "/handbook/0101/01186091_c2.shtml#17"
+    },
+    {
+      "from": "S1",
+      "to": "S2",
+      "type": "COMPARABLE_DOCUMENTARY_QUEST_LABELS_NOT_PROVEN_SAME_BUILD_OR_INDEPENDENT_AUTHOR"
+    },
+    {
+      "from": "S2:npc:哈鲁",
+      "to": "CN20-healing-spell:哈鲁",
+      "type": "HOMONYM_ONLY_NOT_ENTITY_IDENTITY"
+    }
+  ],
+  "ambiguities": [
+    {
+      "id": "NAME_TARGET",
+      "S1": "鲁尼贴斯",
+      "S2": "鲁尼帖斯",
+      "resolution": "UNRESOLVED_SPELLING_OR_ENTITY_VARIANT_NO_SHARED_SPECIES_ID"
+    },
+    {
+      "id": "NAME_REWARD",
+      "S1": "阿西美加护符 / 光之精灵; 18以上或同等装备",
+      "S2": "阿西美拉护符1 / 魅+1光的精灵; 随机，未写18档",
+      "resolution": "KEEP_SOURCE_SCOPED_NOT_PATCH_CHANGE_OR_GUARANTEED_REWARD"
+    },
+    {
+      "id": "PLAYER_VS_PET_LEVEL",
+      "resolution": "S2 player 15/25 are recommendations; pet 15以上 and 30 are separate requested thresholds, not player access gates"
+    },
+    {
+      "id": "REWARD_LEVEL",
+      "resolution": "S1 布克布克LV1; S2 no reward level. Do not project S1 value into S2 or interpret reward-name suffix 1 as spell level."
+    },
+    {
+      "id": "FLOOR_COORDINATES",
+      "resolution": "S1 top floor vs S2 floor6; entrance328,633 differs in frame from NPC11,12. Assistant coordinate, floor IDs, route edges unknown."
+    },
+    {
+      "id": "PET_SELECTION",
+      "resolution": "S2 warns multiple/ mounted target may be taken. No first/last-slot selection algorithm, actual consumption, repeatability, reward probability, event flag or persistence proven."
+    },
+    {
+      "id": "BUILD_DATE_AUTHOR",
+      "resolution": "2001 directory, 2004 template comment, 2003 page date and 2026 retrieval kept separate; same portal and shared content do not establish independent witnesses."
+    },
+    {
+      "id": "NARRATIVE_ROLE",
+      "resolution": "S2 describes aging researcher needing specimens and refers player to assistant; no original dialogue script, visual identity or relation to healing spirit 哈鲁 proven."
+    }
+  ],
+  "analyst_interpretation": {
+    "grade": "HYPOTHESIS",
+    "note": "Capture then raise then hand over connects pet care to a research errand; player emotional intent and future adoption remain unproven/design choices."
+  },
+  "archive_records": [
+    {
+      "record_id": "dinosaur:S1:quest_1",
+      "collection": "quests",
+      "version_profile": "CN_EARLY_COMPILATION_UNDATED_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "SOURCE_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "source_key": "quest_1",
+      "source_relation": {
+        "target_label": "鲁尼贴斯",
+        "target_level_min_as_written": "十五",
+        "special_reward_level_min_as_written": "十八",
+        "special_reward_label": "阿西美加护符",
+        "equivalent_equipment_alternative": true
+      }
+    },
+    {
+      "record_id": "dinosaur:S1:quest_2",
+      "collection": "quests",
+      "version_profile": "CN_EARLY_COMPILATION_UNDATED_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "SOURCE_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "source_key": "quest_2",
+      "source_relation": {
+        "target_label": "贝鲁卡",
+        "requested_level": 30,
+        "reward_label": "布克布克",
+        "reward_level": 1
+      }
+    },
+    {
+      "record_id": "dinosaur:S2:npc",
+      "collection": "npcs",
+      "version_profile": "CN2003_SINA_DINOSAUR_GUIDE_BUILD_UNKNOWN",
+      "source_refs": [
+        "S2"
+      ],
+      "verification_status": "SOURCE_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "source_key": "npc",
+      "source_relation": {
+        "name": "哈鲁",
+        "role": "恐龙博士",
+        "local_xy": [
+          11,
+          12
+        ],
+        "floor_as_written": 6,
+        "entrance_xy": [
+          328,
+          633
+        ]
+      }
+    },
+    {
+      "record_id": "dinosaur:S2:assistant",
+      "collection": "npcs",
+      "version_profile": "CN2003_SINA_DINOSAUR_GUIDE_BUILD_UNKNOWN",
+      "source_refs": [
+        "S2"
+      ],
+      "verification_status": "SOURCE_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "source_key": "assistant",
+      "source_relation": {
+        "name": "吉鲁",
+        "role": "助手",
+        "xy": null
+      }
+    },
+    {
+      "record_id": "dinosaur:S2:quest_1",
+      "collection": "quests",
+      "version_profile": "CN2003_SINA_DINOSAUR_GUIDE_BUILD_UNKNOWN",
+      "source_refs": [
+        "S2"
+      ],
+      "verification_status": "SOURCE_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "source_key": "quest_1",
+      "source_relation": {
+        "target_label": "鲁尼帖斯",
+        "target_level_min": 15,
+        "recommended_player_level": 15,
+        "required_player_level": null,
+        "reward_kind": "RANDOM_ITEM",
+        "best_reward_label": "阿西美拉护符1",
+        "best_reward_charm": 1,
+        "reward_probability": null
+      }
+    },
+    {
+      "record_id": "dinosaur:S2:quest_2",
+      "collection": "quests",
+      "version_profile": "CN2003_SINA_DINOSAUR_GUIDE_BUILD_UNKNOWN",
+      "source_refs": [
+        "S2"
+      ],
+      "verification_status": "SOURCE_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "source_key": "quest_2",
+      "source_relation": {
+        "target_label": "贝鲁卡",
+        "requested_level": 30,
+        "recommended_player_level": 25,
+        "required_player_level": null,
+        "predecessor": "quest_1",
+        "reward_label": "布克布克",
+        "reward_level": null,
+        "must_raise_captured_pet_to_requested_level": true,
+        "multiple_pet_selection_unspecified": true,
+        "mounted_pet_warning": true
+      }
+    }
+  ],
+  "stop_condition": "Only two dinosaur commissions, three current HTML responses, no pictures/other quests/ZIP/engine/server traversal",
+  "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-65: rotate another material domain; prioritize source-qualified audio trigger or official map/ecology material; no extension of dinosaur task helpers."
+}

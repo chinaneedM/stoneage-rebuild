@@ -7955,3 +7955,14 @@ research/recovered/STONEAGE-CN2003-UI-TEAM-TRADE-SOURCE-R1.json源派生Git blob
 - 限pages/image0000.html、pages/image0001.html及各自../images/image0000.jpg、../images/image0001.jpg。四HTML/两JPEG当前原HTTP与SHA见research/recovered/STONEAGE-JP2003-BATTLE-FIELD-VISUAL-SOURCE-R1.json；首HTML为EUC-JP，图库/独立页CP932。两图原像素目视与完整解码，640×480只是网页尺寸。
 - 15个第一页来源位置仅2有目视/实际图元数据，13保持未知；不是15客户端状态或40图全覆盖。开发阶段、当前取源时刻/图集标记年/实际拍摄日、原ID与授权分别保留。原HTML/JPEG不入Git，派生记录在既有screens集合下留研究来源，不批准生产像素复用。
 - 规格docs/specs/STONEAGE-JP2003-BATTLE-FIELD-VISUAL-SOURCE-R1.md，工具tools/stoneage_jp2003_battle_field_visual_source.py。当前网页可重放不认证原商业客户端运行或历史服务器行为。
+
+
+## 2026-10-22 R64：恐龙博士的具名NPC、捕宠培育与分源奖励
+
+新核远端main `099a196d44c5e34b382c31b912962ac94c158ca4`/tree `b352da6dbf506929ccf324484f16d89998cb280c`、458分支、0开放PR、0运行中Actions，同HEAD main9/候选8项实际SUCCESS；旧queued37642417333无关。完整CURRENT 2309305B及九启动原字节/原生Git身份已核，最新NEXT64选早期具名任务域，不继续上一包日本图库或R79。
+
+本包三份当前HTML：既有新浪汇编入口及真实c2#17、2003-05-29 11:37标网友投稿的《恐龙博士》。HTTP200，37893/36563/52445B与SHA256完整记入research/recovered/STONEAGE-EARLY-DINOSAUR-QUEST-SOURCE-R1.json；旧汇编页是已知网页的新选定节结构化，不重复计新独立来源。早期目录2001-01-18、当前页2004-01-06发布注释、S2的2003时间和2026原字节各自保留，无历史同刻/精确build认证。GB18030替换1/2/0，选定业务段全无替换。
+
+新增中文规格docs/specs/STONEAGE-EARLY-DINOSAUR-QUEST-SOURCE-R1.md、R64审查、有限工具与源重放workflow。S1/S2各两段任务＋S2哈鲁/助手吉鲁共六文献归档关系，原ID均null。鲁尼贴斯/鲁尼帖斯、阿西美加/阿西美拉护符1和18档护符说法分源，不能据此称确定改版；S2玩家15/25仅建议，宠物15以上/30另字段，S1布克布克LV1不回填S2。博士与同名治疗精灵哈鲁不合并，入口328,633与研究所11,12不混层。取走多宠/骑乘宠警示不证选槽/实际消费/事件或存档，原始NPC/物种/任务ID仍未知。原HTML/图像/程序不入Git。
+
+本地六测试和12真实输入语义反例＋script正例通过；初检标题误判（前置条件重复名称）及引号跨段误抓已修复并保留过程，未发生对应远端失败。实际候选/main重放、ZIP下载和永久派生保管须另后验，不预报绿。有限止于两任务三HTML，最高NEXT `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-65` 回22域另一材料域，优先可归属音效事件或官方地图/生态；Stage A7 PARTIAL+2 OPEN，B/wiki GATED，R79 PAUSED_NON_BLOCKING，全部旧历史原字节前缀保留。

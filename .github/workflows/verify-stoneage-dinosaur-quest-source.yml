@@ -1,0 +1,38 @@
+name: Verify early dinosaur quest source attribution
+on:
+  push:
+    paths:
+      - 'tools/stoneage_dinosaur_quest_source.py'
+      - 'tests/test_stoneage_dinosaur_quest_source.py'
+      - 'research/recovered/STONEAGE-EARLY-DINOSAUR-QUEST-*.json'
+      - 'docs/specs/STONEAGE-EARLY-DINOSAUR-QUEST-SOURCE-R1.md'
+      - '.github/workflows/verify-stoneage-dinosaur-quest-source.yml'
+  pull_request:
+    paths:
+      - 'tools/stoneage_dinosaur_quest_source.py'
+      - 'tests/test_stoneage_dinosaur_quest_source.py'
+      - 'research/recovered/STONEAGE-EARLY-DINOSAUR-QUEST-*.json'
+      - 'docs/specs/STONEAGE-EARLY-DINOSAUR-QUEST-SOURCE-R1.md'
+      - '.github/workflows/verify-stoneage-dinosaur-quest-source.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  bounded-source-replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Source parsing and evidence-boundary counterexamples
+        run: python -m unittest tests.test_stoneage_dinosaur_quest_source -v
+      - name: Retrieve exactly three HTML sources and test real semantic changes
+        run: python -m tools.stoneage_dinosaur_quest_source --fetch --output "$RUNNER_TEMP/r64/replay.json"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: early-dinosaur-quest-derived-r64
+          path: ${{ runner.temp }}/r64/replay.json
+          if-no-files-found: error
+          retention-days: 30
