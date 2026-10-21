@@ -1244,3 +1244,12 @@ R47有限报告包结束，原文“中午”/精确时分、四家族人数歧�
 宣传并列8.5魔域大冒险与2.5精灵王传说，活动适用组null，不推两组共有、不当2002原2.5或TW1/JSS1999；荣誉值不当石币或现金。两实际图115307/125689B、550×410/550×409完整Pillow解码/目视为人群宠物背景，不证料理或交付；第三壁纸只存链接、未取未验。原HTML/版权图不入Git。19真实正文语义改写绕过摘要门拒绝、外围script正例通过；独立核心/流程另核，候选/main自身取源与永久ZIP保管另据实追加。
 
 止于一活动五记录双背景图；重开需同组具名配方奖励表/坐标ID/时区次数说明或原服过程。最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-49回全22域另一材料，Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停，完整历史前缀保留，无分母不报恢复百分比。
+
+
+## 2026-10-21 R48独立双取源、背景图边界与永久派生保管
+
+内容1a6b5f2ed5f06cb68678b701442df1ef9a144f5f/tree5f6254cc7f2dddafd77d83da0dab2b046ca8a570自身候选10项/main11项适用Actions全SUCCESS；候选run39552068852/job119063286716/artifact12324405541、主线run39552188075/job119063656876/artifact12323439299各实跑9本包用例零跳过，HTTP146067B正文/115307与125689B双JPEG、19真实正文语义改写拒绝/外围script正例。干净远端内容检出119相关测试通过；独立正则/HTML实体核心与采购制作交付次序通过，本地双图完整Pillow解码/目视；CI只验原字节与SOF尺寸，不冒称运行截图。
+
+实际下载双ZIP各2902B，SHA256候选03c818f803def6829c1b6161c91c7a40d4cbee2496a2b7ca1b59d412dbad2cf5 / main3d28bf90c46413359a5a56e2dc24476c0a9406c22f5732556edb1cf4c9860fcb；各唯一replay.json7744B/SHA2567f41ff51711db4d11f82faa6b5cc9c701b756a70063895b8ac43800aa04d003c、原生Git blob33abebf55968f3d2909e224476912079efd8358e，候选/main/本地逐字节一致。双raw、十来源工具依赖/工作流/规格pins、九完整启动前缀和21实际workflow永久存research/recovered/STONEAGE-CN2012-COOKING-EVENT-CUSTODY-R1.json；原HTML/版权图不入Git。新增强制收据门后本包10项/120相关检查据实验收，原9项历史不改写为10项；保管提交自身Actions另后验，不套内容提交绿灯。
+
+两服务器宣传/活动实际适用组、或者/两种必交、荣誉值/石币现金、时段/时区次数、背景人群图/料理执行继续分开；R48有限包结束。最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-49回全22域另一材料，Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停，全部历史保存。

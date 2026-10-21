@@ -1,4 +1,5 @@
 import copy
+import hashlib
 import json
 import unittest
 from tools import stoneage_cn2012_cooking_event as m
@@ -70,6 +71,45 @@ class CookingEvent(unittest.TestCase):
             self.reject(['unproven', k], True)
         self.reject(['status', 'stage_b_wiki'], 'OPEN')
         self.reject(['next'], 'EXPAND_COOKING_HELPERS')
+
+    def test_permanent_receipt_is_required_and_pins_actual_dual_replays(self):
+        p = m.ROOT / ('research/recovered/' + m.STEM + '-CUSTODY-R1.json')
+        self.assertTrue(p.is_file(), 'Accepted source material requires permanent custody')
+        r = json.loads(p.read_text())
+        self.assertEqual(r['schema'], 'stoneage.cn2012_cooking_event.custody.r1')
+        self.assertEqual(len(r['source_pins']), 10)
+        self.assertEqual(len(r['startup_prefixes']), 9)
+        for pin in r['source_pins'] + r['startup_prefixes']:
+            b = (m.ROOT / pin['path']).read_bytes()
+            if pin in r['startup_prefixes']:
+                b = b[:pin['bytes']]
+            self.assertEqual(len(b), pin['bytes'])
+            self.assertEqual(m.sha(b), pin['sha256'])
+            self.assertEqual(hashlib.sha1(b'blob ' + str(len(b)).encode() + b'\0' + b).hexdigest(), pin['git_blob'])
+        self.assertEqual(len(r['workflow_runs']), 21)
+        self.assertTrue(all(x['conclusion'] == 'success' and x['head_sha'] == r['content_head'] for x in r['workflow_runs']))
+        copies = []
+        for label in ('candidate', 'main'):
+            meta = r[label]
+            self.assertEqual(meta['actual_unit_tests'], 9)
+            self.assertEqual(meta['skipped_tests'], 0)
+            self.assertEqual(meta['head'], r['content_head'])
+            self.assertEqual(meta['tree'], r['content_tree'])
+            self.assertEqual(meta['real_source_mutations'], 19)
+            self.assertTrue(meta['all_applicable_workflows_success'])
+            b = (m.ROOT / meta['derived_git_path']).read_bytes()
+            self.assertEqual(len(b), meta['raw_bytes'])
+            self.assertEqual(m.sha(b), meta['raw_sha256'])
+            self.assertEqual(hashlib.sha1(b'blob ' + str(len(b)).encode() + b'\0' + b).hexdigest(), meta['raw_git_blob'])
+            copies.append(b)
+            runs = [x for x in r['workflow_runs'] if x['head_branch'] == ('main' if label == 'main' else 'agent/cn2012-cooking-event-r48-20261021')]
+            self.assertEqual(len(runs), meta['own_workflow_count'])
+            self.assertIn(meta['run_id'], [x['id'] for x in runs])
+        for k in ('run_id', 'job_id', 'artifact_id'):
+            self.assertNotEqual(r['candidate'][k], r['main'][k])
+        self.assertEqual(copies[0], copies[1])
+        self.assertEqual(copies[0], (m.ROOT / ('research/recovered/' + m.STEM + '-LOCAL-REPLAY-R1.json')).read_bytes())
+        self.assertTrue(all(x is False for x in r['bounds'].values()))
 
 
 if __name__ == '__main__':

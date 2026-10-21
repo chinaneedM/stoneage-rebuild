@@ -1,0 +1,394 @@
+{
+  "schema": "stoneage.cn2012_cooking_event.custody.r1",
+  "date": "2026-10-21",
+  "content_head": "1a6b5f2ed5f06cb68678b701442df1ef9a144f5f",
+  "content_tree": "5f6254cc7f2dddafd77d83da0dab2b046ca8a570",
+  "startup_head": "551e93eef582066eef6ffc8540adb41bd4ba2e09",
+  "startup_tree": "6bbbd62a56ef8578284d35938359cc60c7b9798f",
+  "startup_prefixes": [
+    {
+      "path": "README.md",
+      "bytes": 32202,
+      "sha256": "44d9d73c89ab7bdaa3d80021542f4a0e7646df11ca17e74b614d8b5b11756b3e",
+      "git_blob": "8643dee1d5668f2403cc9c0cdb77ebbb98c4d151"
+    },
+    {
+      "path": "docs/PROJECT-CONTINUITY-PROTOCOL-R1.md",
+      "bytes": 9762,
+      "sha256": "c44834eeec87f7a43e9cb4905f08377349e36d58b1fff2c5a75a6975db695e3b",
+      "git_blob": "ba9bbe19384589400abc61af37a360a40bf91452"
+    },
+    {
+      "path": "docs/CURRENT-STATE.md",
+      "bytes": 2241870,
+      "sha256": "0a4d72ac4e405cc9566e0a16dc79e5e37f21eec2b30d83d665a94ea5572cffb8",
+      "git_blob": "3fc2c3bea0dcd0ddc1aadd1bc1ab822c4c169306"
+    },
+    {
+      "path": "docs/DESIGN-DECISIONS.md",
+      "bytes": 45965,
+      "sha256": "28b572ed01179eacd5a06b4ad62c76e4baef22ac49587aa0bad452a7cb3fe8e6",
+      "git_blob": "013ae4fad9301ab0140fe408a423b3abad97d1f9"
+    },
+    {
+      "path": "docs/HISTORICAL-TIMELINE.md",
+      "bytes": 539109,
+      "sha256": "f1963eb2f0763cdbf393e2a7796456d29fe391e904e6ba2a9bb6abfa9809025e",
+      "git_blob": "df4bc2789bcb3821f0fc890f0ab3404e48354831"
+    },
+    {
+      "path": "docs/SOURCE-REGISTRY.md",
+      "bytes": 826675,
+      "sha256": "eec80a152d30d00b3f5df3912dc12b8602aa45abc418aa8b0902c32d3197ab48",
+      "git_blob": "8dc4249ea78a099709644f85c3eabb6e899db256"
+    },
+    {
+      "path": "docs/RESTORATION-ROADMAP-R2.md",
+      "bytes": 189911,
+      "sha256": "b26db5a22ef7543e863e4dda92f58f47d48b1784962b6d7094c4837d01da9821",
+      "git_blob": "268955eb005fdc354335445523bf0f38f611422c"
+    },
+    {
+      "path": "docs/STONEAGE-PREPRODUCTION-CONTENT-ARCHIVE-R1.md",
+      "bytes": 16218,
+      "sha256": "326072a7b526cfe4fad7a05b88db663883249c883f84bd5b1d9d4f59539636ae",
+      "git_blob": "fddbe3eecfcce03f7596752fa6c02999be043346"
+    },
+    {
+      "path": "research/recovered/STONEAGE-22-DOMAIN-SOURCE-READY-PORTFOLIO-R2.json",
+      "bytes": 15948,
+      "sha256": "7d50de08f7855cf16dbe54b1747e258f1cc1223de88cc217172fd145f3c704ce",
+      "git_blob": "088b469b3c51e689cff27f33fc3bb49de2d24b2c"
+    }
+  ],
+  "workflow_runs": [
+    {
+      "id": 39552188112,
+      "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+      "head_sha": "1a6b5f2ed5f06cb68678b701442df1ef9a144f5f",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39552188112"
+    },
+    {
+      "id": 39552187908,
+      "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+      "head_sha": "1a6b5f2ed5f06cb68678b701442df1ef9a144f5f",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39552187908"
+    },
+    {
+      "id": 39552188007,
+      "name": "Validate legacy StoneAge assistant history and pet content gaps",
+      "head_sha": "1a6b5f2ed5f06cb68678b701442df1ef9a144f5f",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39552188007"
+    },
+    {
+      "id": 39552188071,
+      "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+      "head_sha": "1a6b5f2ed5f06cb68678b701442df1ef9a144f5f",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39552188071"
+    },
+    {
+      "id": 39552187956,
+      "name": "Validate StoneAge preproduction content archive and wiki boundary",
+      "head_sha": "1a6b5f2ed5f06cb68678b701442df1ef9a144f5f",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39552187956"
+    },
+    {
+      "id": 39552187863,
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "head_sha": "1a6b5f2ed5f06cb68678b701442df1ef9a144f5f",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39552187863"
+    },
+    {
+      "id": 39552187954,
+      "name": "Validate StoneAge Stage A joint review decision",
+      "head_sha": "1a6b5f2ed5f06cb68678b701442df1ef9a144f5f",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39552187954"
+    },
+    {
+      "id": 39552187934,
+      "name": "Validate Stage A early source gap triage",
+      "head_sha": "1a6b5f2ed5f06cb68678b701442df1ef9a144f5f",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39552187934"
+    },
+    {
+      "id": 39552188075,
+      "name": "Verify CN2012 cooking event source and version boundaries",
+      "head_sha": "1a6b5f2ed5f06cb68678b701442df1ef9a144f5f",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39552188075"
+    },
+    {
+      "id": 39552187982,
+      "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+      "head_sha": "1a6b5f2ed5f06cb68678b701442df1ef9a144f5f",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39552187982"
+    },
+    {
+      "id": 39552187748,
+      "name": "Independently verify TW1.0 R58 rooted helper returns and source custody",
+      "head_sha": "1a6b5f2ed5f06cb68678b701442df1ef9a144f5f",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39552187748"
+    },
+    {
+      "id": 39552068704,
+      "name": "Validate legacy StoneAge assistant history and pet content gaps",
+      "head_sha": "1a6b5f2ed5f06cb68678b701442df1ef9a144f5f",
+      "head_branch": "agent/cn2012-cooking-event-r48-20261021",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39552068704"
+    },
+    {
+      "id": 39552068765,
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "head_sha": "1a6b5f2ed5f06cb68678b701442df1ef9a144f5f",
+      "head_branch": "agent/cn2012-cooking-event-r48-20261021",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39552068765"
+    },
+    {
+      "id": 39552068826,
+      "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+      "head_sha": "1a6b5f2ed5f06cb68678b701442df1ef9a144f5f",
+      "head_branch": "agent/cn2012-cooking-event-r48-20261021",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39552068826"
+    },
+    {
+      "id": 39552068730,
+      "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+      "head_sha": "1a6b5f2ed5f06cb68678b701442df1ef9a144f5f",
+      "head_branch": "agent/cn2012-cooking-event-r48-20261021",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39552068730"
+    },
+    {
+      "id": 39552068712,
+      "name": "Validate StoneAge preproduction content archive and wiki boundary",
+      "head_sha": "1a6b5f2ed5f06cb68678b701442df1ef9a144f5f",
+      "head_branch": "agent/cn2012-cooking-event-r48-20261021",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39552068712"
+    },
+    {
+      "id": 39552068846,
+      "name": "Validate StoneAge Stage A joint review decision",
+      "head_sha": "1a6b5f2ed5f06cb68678b701442df1ef9a144f5f",
+      "head_branch": "agent/cn2012-cooking-event-r48-20261021",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39552068846"
+    },
+    {
+      "id": 39552068719,
+      "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+      "head_sha": "1a6b5f2ed5f06cb68678b701442df1ef9a144f5f",
+      "head_branch": "agent/cn2012-cooking-event-r48-20261021",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39552068719"
+    },
+    {
+      "id": 39552068880,
+      "name": "Validate Stage A early source gap triage",
+      "head_sha": "1a6b5f2ed5f06cb68678b701442df1ef9a144f5f",
+      "head_branch": "agent/cn2012-cooking-event-r48-20261021",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39552068880"
+    },
+    {
+      "id": 39552068852,
+      "name": "Verify CN2012 cooking event source and version boundaries",
+      "head_sha": "1a6b5f2ed5f06cb68678b701442df1ef9a144f5f",
+      "head_branch": "agent/cn2012-cooking-event-r48-20261021",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39552068852"
+    },
+    {
+      "id": 39552068877,
+      "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+      "head_sha": "1a6b5f2ed5f06cb68678b701442df1ef9a144f5f",
+      "head_branch": "agent/cn2012-cooking-event-r48-20261021",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/39552068877"
+    }
+  ],
+  "candidate": {
+    "head": "1a6b5f2ed5f06cb68678b701442df1ef9a144f5f",
+    "tree": "5f6254cc7f2dddafd77d83da0dab2b046ca8a570",
+    "run_id": 39552068852,
+    "job_id": 119063286716,
+    "artifact_id": 12324405541,
+    "artifact_name": "cn2012-cooking-event-derived-replay",
+    "zip_bytes": 2902,
+    "zip_sha256": "03c818f803def6829c1b6161c91c7a40d4cbee2496a2b7ca1b59d412dbad2cf5",
+    "raw_bytes": 7744,
+    "raw_sha256": "7f41ff51711db4d11f82faa6b5cc9c701b756a70063895b8ac43800aa04d003c",
+    "raw_git_blob": "33abebf55968f3d2909e224476912079efd8358e",
+    "derived_git_path": "research/recovered/STONEAGE-CN2012-COOKING-EVENT-CI-CANDIDATE-REPLAY-R1.json",
+    "actual_unit_tests": 9,
+    "skipped_tests": 0,
+    "all_applicable_workflows_success": true,
+    "own_workflow_count": 10,
+    "actual_html_bytes": 146067,
+    "actual_image_bytes": [
+      115307,
+      125689
+    ],
+    "real_source_mutations": 19,
+    "outer_script_positive": true
+  },
+  "main": {
+    "head": "1a6b5f2ed5f06cb68678b701442df1ef9a144f5f",
+    "tree": "5f6254cc7f2dddafd77d83da0dab2b046ca8a570",
+    "run_id": 39552188075,
+    "job_id": 119063656876,
+    "artifact_id": 12323439299,
+    "artifact_name": "cn2012-cooking-event-derived-replay",
+    "zip_bytes": 2902,
+    "zip_sha256": "3d28bf90c46413359a5a56e2dc24476c0a9406c22f5732556edb1cf4c9860fcb",
+    "raw_bytes": 7744,
+    "raw_sha256": "7f41ff51711db4d11f82faa6b5cc9c701b756a70063895b8ac43800aa04d003c",
+    "raw_git_blob": "33abebf55968f3d2909e224476912079efd8358e",
+    "derived_git_path": "research/recovered/STONEAGE-CN2012-COOKING-EVENT-CI-MAIN-REPLAY-R1.json",
+    "actual_unit_tests": 9,
+    "skipped_tests": 0,
+    "all_applicable_workflows_success": true,
+    "own_workflow_count": 11,
+    "actual_html_bytes": 146067,
+    "actual_image_bytes": [
+      115307,
+      125689
+    ],
+    "real_source_mutations": 19,
+    "outer_script_positive": true
+  },
+  "independent_checks": {
+    "clean_remote_content_checkout_related_tests": 119,
+    "independent_regex_entities_core_and_ordered_flow": true,
+    "pillow_full_decode_local": true,
+    "two_jpegs_visually_inspected_local": true,
+    "ci_image_check": "CURRENT_BYTES_SHA256_AND_JPEG_SOF_DIMENSIONS_ONLY",
+    "raw_candidate_main_local_byte_equality": true
+  },
+  "source_pins": [
+    {
+      "path": "research/recovered/STONEAGE-CN2012-COOKING-EVENT-SOURCE-R1.json",
+      "bytes": 9243,
+      "sha256": "76b8815df65376ef9857902ecd6ecf038d705a08807ba5fa7dd74ba8758fdc80",
+      "git_blob": "455f44551d17f69279242146fa55c76c4ebd8e94"
+    },
+    {
+      "path": "research/recovered/STONEAGE-CN2012-COOKING-EVENT-LOCAL-REPLAY-R1.json",
+      "bytes": 7744,
+      "sha256": "7f41ff51711db4d11f82faa6b5cc9c701b756a70063895b8ac43800aa04d003c",
+      "git_blob": "33abebf55968f3d2909e224476912079efd8358e"
+    },
+    {
+      "path": "tools/stoneage_cn2012_cooking_event.py",
+      "bytes": 11351,
+      "sha256": "46cad3a03aa7cbf4543d193c361d38b5b0c358f783ea48d2e4d38a040bb853da",
+      "git_blob": "ad8d72b0833e67460fd69270e7185bfc95799564"
+    },
+    {
+      "path": ".github/workflows/verify-stoneage-cn2012-cooking-event.yml",
+      "bytes": 1526,
+      "sha256": "252574796fbfbea660971d7c8e1bda83c58a770b583c41036b9fe8feb324af38",
+      "git_blob": "b2c40d776bd79bcec0e7c366bdd304424a0650f1"
+    },
+    {
+      "path": "docs/specs/STONEAGE-CN2012-COOKING-EVENT-SOURCE-R1.md",
+      "bytes": 3097,
+      "sha256": "7e5c3cf9863a4e5c6d5cf327f159de82966aedbe887ccead6cc9f0a290c277d1",
+      "git_blob": "c41ae57a79a74c5dbf175698d592c51c06f6fd7b"
+    },
+    {
+      "path": "docs/STONEAGE-OFFICIAL-VERSION-NAMED-CONTENT-REVIEW-R48.md",
+      "bytes": 1226,
+      "sha256": "a83fd4f4f6e7181bc2ee59ca0572647e6489c777e4943eb6ab5f006a26ee3bf7",
+      "git_blob": "b9799db49db1ef95409d28c1f3d6f4fdc5da3bba"
+    },
+    {
+      "path": "tools/stoneage_cn2011_stall_source.py",
+      "bytes": 13572,
+      "sha256": "9613a69f6d2cd66cb3e3d92ec651e5986a69e542a46f1f391e7b8905f7350d07",
+      "git_blob": "deabe96bcc6ec181e30511ee85c701c7c042e303"
+    },
+    {
+      "path": "tools/stoneage_cn2003_group2_manor_report.py",
+      "bytes": 14072,
+      "sha256": "876318e9883e4d08f40c9c12e458d2473f989f65b1b301ef580c84866ece24b7",
+      "git_blob": "ee168823f2699c77ae8eefea420a34be2d24c6bd"
+    },
+    {
+      "path": "research/recovered/STONEAGE-CN2012-COOKING-EVENT-CI-CANDIDATE-REPLAY-R1.json",
+      "bytes": 7744,
+      "sha256": "7f41ff51711db4d11f82faa6b5cc9c701b756a70063895b8ac43800aa04d003c",
+      "git_blob": "33abebf55968f3d2909e224476912079efd8358e"
+    },
+    {
+      "path": "research/recovered/STONEAGE-CN2012-COOKING-EVENT-CI-MAIN-REPLAY-R1.json",
+      "bytes": 7744,
+      "sha256": "7f41ff51711db4d11f82faa6b5cc9c701b756a70063895b8ac43800aa04d003c",
+      "git_blob": "33abebf55968f3d2909e224476912079efd8358e"
+    }
+  ],
+  "bounds": {
+    "original_html_or_jpeg_committed": false,
+    "authenticated_2012_original_bytes": false,
+    "historical_server_executed": false,
+    "event_assigned_to_both_advertised_groups": false,
+    "original2002_25_or_tw10_jss1999_membership": false,
+    "recipe_ingredient_prices_coordinates_ids_recovered": false,
+    "exact_vendor_recipe_mapping": false,
+    "both_dishes_required": false,
+    "reward_amount_daily_limits_timezone_endpoints_recovered": false,
+    "honor_cash_equivalence_or_tradeability_proven": false,
+    "crowd_images_prove_event_recipe_or_delivery": false,
+    "third_wallpaper_downloaded_or_inspected": false,
+    "native_client_resolution_or_capture_date_proven": false,
+    "production_asset_rights_granted": false,
+    "stage_b_open": false,
+    "r79_resumed": false
+  },
+  "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-49"
+}

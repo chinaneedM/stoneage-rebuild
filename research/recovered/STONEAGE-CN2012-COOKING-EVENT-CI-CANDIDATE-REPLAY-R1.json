@@ -1,0 +1,215 @@
+{
+  "schema": "stoneage.cn2012_cooking_event.derived_replay.r1",
+  "http_bytes": 146067,
+  "http_sha256": "84025cb5bccae8f53a85266b6ddfc9da1550ff271e2b28403338407de1eddc2d",
+  "extracted": {
+    "core_sha256": "f7a15a015e8791ed94221d43203f414b43714edff394fc1448bbeacc31111f11",
+    "issuer_evidence": "SINA_HOSTED_CINS_NAMED_PROMOTIONAL_COPY_NOT_AUTHENTICATED_ORIGINAL_ISSUER_FILE",
+    "official_link_as_written": "http://sa.cins.cn",
+    "event": "高厨料理",
+    "schedule": {
+      "weekday_start": "周一",
+      "weekday_end": "周日",
+      "start_clock": "19:00",
+      "end_clock": "21:00",
+      "timezone": null,
+      "endpoint_inclusivity": null,
+      "launch_date": null,
+      "daily_limit": null,
+      "live_execution_verified": false
+    },
+    "pet": {
+      "prerequisite": "PET_WITH_COOKING_SKILL",
+      "training_location": "村庄宠物店",
+      "skill_id_price_or_species_limits": null
+    },
+    "flow": {
+      "vendors_as_written": [
+        "扑满乌力",
+        "黑乌力"
+      ],
+      "acquisition": "购买",
+      "products_as_written": [
+        "扑满乌力的蔬菜色拉",
+        "黑乌力的蔬菜色拉"
+      ],
+      "product_connector_as_written": "或者",
+      "delivery_location_as_written": "加加村24店",
+      "recipient_as_written": "大厨",
+      "delivery_action": "换取奖励",
+      "ingredients_recipes_prices_coordinates_ids": null,
+      "both_products_required": null,
+      "vendor_to_product_exact_recipe_mapping": null,
+      "consumption_and_transaction_rules": null
+    },
+    "reward": {
+      "currency_as_written": "荣誉值",
+      "redemption_place_as_written": "荣誉商城",
+      "reported_categories": [
+        "宠物",
+        "道具",
+        "装备"
+      ],
+      "amount_rate_daily_cap_or_stock": null,
+      "cash_equivalence_or_tradeability": null
+    },
+    "server_context": {
+      "advertised_labels": [
+        "8.5魔域大冒险",
+        "2.5精灵王传说"
+      ],
+      "event_applicable_groups": null,
+      "exact_client_build": null,
+      "belongs_to_original_2002_25": false,
+      "belongs_to_tw10_or_jss1999": false
+    },
+    "images": [
+      {
+        "src": "http://i1.sinaimg.cn/gm/2012/0210/U7232P115DT20120210155012.jpg",
+        "alt": "原始人出生地火爆",
+        "title": "原始人出生地火爆"
+      },
+      {
+        "src": "http://i0.sinaimg.cn/gm/2012/0210/U7232P115DT20120210155002.jpg",
+        "alt": "一起来寻找素材",
+        "title": "一起来寻找素材"
+      },
+      {
+        "src": "http://i1.sinaimg.cn/gm/2012/0210/U7232P115DT20120210154947.jpg",
+        "alt": "精美石器时代壁纸",
+        "title": "精美石器时代壁纸"
+      }
+    ],
+    "historical_server_executed": false
+  },
+  "images": [
+    {
+      "url_as_written": "http://i1.sinaimg.cn/gm/2012/0210/U7232P115DT20120210155012.jpg",
+      "requested_url": "https://i1.sinaimg.cn/gm/2012/0210/U7232P115DT20120210155012.jpg",
+      "bytes": 115307,
+      "sha256": "9ea3f64df2995ae87e3d2cbcf615c36531e77e3d494854f8d77a7732fe1ed2f5",
+      "width": 550,
+      "height": 410,
+      "caption_as_written": "原始人出生地火爆",
+      "capture_date": null,
+      "cooking_event_or_recipe_proven": false,
+      "visible_observation_zh": "石砌室内、密集角色和宠物、上下工具栏，右下胜思网络标记。",
+      "native_client_resolution_proven": false
+    },
+    {
+      "url_as_written": "http://i0.sinaimg.cn/gm/2012/0210/U7232P115DT20120210155002.jpg",
+      "requested_url": "https://i0.sinaimg.cn/gm/2012/0210/U7232P115DT20120210155002.jpg",
+      "bytes": 125689,
+      "sha256": "930b0ddb3474e6ad97023da9b9e986940fcbf9dda62c87335e149939f8f65eb3",
+      "width": 550,
+      "height": 409,
+      "caption_as_written": "一起来寻找素材",
+      "capture_date": null,
+      "cooking_event_or_recipe_proven": false,
+      "visible_observation_zh": "户外密集角色和宠物、左侧聊天、工具栏，右下胜思网络标记。",
+      "native_client_resolution_proven": false
+    }
+  ],
+  "audit": {
+    "real_source_mutations": [
+      {
+        "case": "weekday",
+        "input_sha256": "5084fcfb5f1f48810be8a3fa4d7422476e1aa5c133fa68b2824caf2ba4e10cff",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "start-clock",
+        "input_sha256": "0d19b68a1d2bd294240fb053a9afc90b7d9aab849135a16fab1df0538c62a029",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "end-clock",
+        "input_sha256": "64c1e9ee5a7c196fef8503741521afbe0fe59bab28c062bc4b7ca8ed946b4e6c",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "cooking-pet",
+        "input_sha256": "53e32e112296f666e4f083bb5c4fa3be345c3ed82b57c45af4c36be25536c3b4",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "training",
+        "input_sha256": "87020498d1c82c7005b3c60c3eea4e9127e0e97c626c7ad9869936f668fd6ecd",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "vendor",
+        "input_sha256": "92866affc24984b45f16617d3dc01480dee20986a42aa07e72af01b635f6a472",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "purchase",
+        "input_sha256": "1c4f34d83b73494108e5cc4329f5272ed77b3ac62703891cb1454afb4f142c45",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "first-dish",
+        "input_sha256": "94899ab5ccef4dbe465361fb7647b2668dab411366b393e90341914e3d98b38b",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "second-dish",
+        "input_sha256": "587a98dbd8dbd6f8db674b06a77301296c1b7142c68ba4891ba4b065e08c47f6",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "or-vs-and",
+        "input_sha256": "dfa4589de2b7611ddb655381ecdbd1ee90043858e54c5cd552ec06fc4d445f09",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "handover-place",
+        "input_sha256": "288ab9c3e96958c091825ec4c754128cc99990dd95d5b14c16bc8227331e366c",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "recipient",
+        "input_sha256": "7ebb937a3e33898961acfb6f44bd0ea7f83a3241abc0e38c4c742604e1da6237",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "reward-action",
+        "input_sha256": "4dbcc17c886e8c7b23c5b5ecebe6a7536ec100f86eb18a46ca3cf8241546304a",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "currency",
+        "input_sha256": "f18bd3537adc2298e932d8eb2238f2168555f8787b133cc894cd4fd97ab751c7",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "redemption",
+        "input_sha256": "e49bc4c91feed84877301e956aadc70428dcb443264a94e8da85426100328b6c",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "version-context",
+        "input_sha256": "be87c45d10a0630b856a925a22a80aac006d975f4ba73f860d474cec3a309574",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "second-context",
+        "input_sha256": "835bbba6c62680e525c798cff879309790e4509bfc4067337c7763588433a782",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "official-link",
+        "input_sha256": "73bc01b02420508afbfe535a1ff05701d30e762bed7a9118d5f7e642711dbdf8",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "actual-image-link",
+        "input_sha256": "7a07f80eac0e36653b5857f43dcf6b560b753d1cb7871d514304aac142237f36",
+        "rejected_without_digest_gate": true
+      }
+    ],
+    "outer_script_positive": true
+  },
+  "raw_html_or_assets_in_output": false,
+  "historical_server_executed": false
+}
