@@ -7875,3 +7875,12 @@ S1 https://www.4gamer.net/specials/stoneage2_interview/stoneage2_interview.shtml
 - Candidate/main Actions: candidate 10/10 SUCCESS; main 11/11 SUCCESS at content commit. Dedicated candidate run39599917007 job119221512082 and main run39600076749 job119222049029 each ran four derived-structure tests successfully. Neither emitted a ZIP artifact.
 - Durable acceptance receipt: research/recovered/STONEAGE-CN2001-2003-SHELL-QUEST-ACCEPTANCE-R1.json. Mandatory receipt/hash test added in separate custody commit; acceptance of that new commit requires its **own** Actions result.
 - Source limitations unchanged: readable browser text, NO original HTML payload/hash, no original client/game runtime evidence. Material contradiction and worldline/portal questions stay unresolved.
+
+
+### SRC-CN-2004-SINA-PET-SKILL-TRAINER-R56（两网页不合并）
+- S1: 《宠物相关》, Sina Game 2004-02-23 15:24, https://games.sina.com.cn/zhqu/sta/xsxl/cwxg.shtml, contemporaneous portal guide, not original code or signed operator rule; 19 visible skill/trainer/price rows.
+- S2: 《宠物资料》, https://games.sina.com.cn/zhqu/sta/cwzl/chongwu01.shtml, Sina portal reference with **unverified publication date**; footer ©2006 is not proof of publication time; 11 selected lines cross-checked with S1 and supplementary features.
+- Reading date 2026-10-21. HTML rendered text checked, original full HTTP bytes and raw SHA256 not captured; copyright images or binaries not downloaded or committed. Exact original client/build and server skill master unknown.
+- Supports only literal guide-listed skills, NPC location labels, fee numbers, training-course wording and guide narration of pet mail. Preserved contradictions: poison attack reduction/turns/price, 3x vs 2.5x one-hit, four vs three riding courses, companion target text, 加工/料理 location.
+- Does not support: a confirmed patch order, exact damage or hit RNG, execution behavior, same-build trainer list, original NPC/skill identifiers, original TW1/JSS1999 rules, or item-specific mail filtering for R55's shell.
+- Derivative: research/recovered/STONEAGE-CN2004-PET-SKILL-TRAINER-SOURCE-R1.json; prose: docs/specs/STONEAGE-CN2004-PET-SKILL-TRAINER-SOURCE-R1.md. Original assets excluded.

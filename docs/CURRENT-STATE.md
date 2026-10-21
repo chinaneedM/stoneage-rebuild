@@ -16788,3 +16788,14 @@ R54资料提交2dd1c7a28b8993bebaf141b32b4cd1d4e1a7377c/tree b3fb195f0638443abae
 唯一持久衍生报告research/recovered/STONEAGE-CN2001-2003-SHELL-QUEST-SOURCE-R1.json为原生Git blob7157f1aca0e4f806334bb4892d294d93d106690d、UTF8 7762B、SHA256 411cd1fb8bec4c08e5ac78fa8987fb58f0cd7ee55c41397cbfcc9d0163e91d5f；永久验收收据research/recovered/STONEAGE-CN2001-2003-SHELL-QUEST-ACCEPTANCE-R1.json记候选/main run/job、内容SHA、原来源三URL、正反证据边界及缺失HTTP原字节/原游戏实测。新增收据必须存在+源派生SHA256强制测试，原4项升级为5项后的**收据自身候选/main Actions待后验**，不把早前4项成功写成5项。新工件仅为版权所有无争议的衍生元数据；未取得或存储原网页全文/图片/客户端、构建配置、服务器剧情脚本。
 
 2001弥生→日美子给贝壳/2003同方向给花之矛盾仍OPEN，五途径不是完全集合，2003后续任务80级不是已证黑乌力传送门槛。R55历史材料包完成，下一最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-56回22域轮换；Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停。所有过去报告内容保留。
+
+
+## 2026-10-21 R56宠物技能训练收费、地点与不同网页版本口径
+
+启动新核main 3380fddae94ca94967cb174491a38e8d62f9f552/tree df96f101780232c8aeb693798d0b50ba502ad51d，R55贝壳两提交已整合主线并有永久收据；同HEAD最近可见11项Actions全SUCCESS且0开放PR。最高NEXT56依据22域轮换pet skills / trainer economy，不扩R55英雄岛剧情、R54合成或R79本地存档。
+
+查看新浪2004-02-23 15:24《宠物相关》https://games.sina.com.cn/zhqu/sta/xsxl/cwxg.shtml 和新浪未见可靠文章刊日《宠物资料》https://games.sina.com.cn/zhqu/sta/cwzl/chongwu01.shtml，后者©2006页脚不得当文章发表日。两页均属门户网页文字，不能认证同一个客户端build或初代官方配置。无完整HTML原字节/原SHA、图片下载、原服务端配置或商业原客户端执行；只作可读网页的文献限定派生。
+
+新docs/specs/STONEAGE-CN2004-PET-SKILL-TRAINER-SOURCE-R1.md和research/recovered/STONEAGE-CN2004-PET-SKILL-TRAINER-SOURCE-R1.json：S1可见19行宠物技能名／页面效果／学习地点／列示价格（保留地球一周2399、达那防御例外），S2有界挑11条供语义冲突和后代技能补充。特别保留S1猛毒攻击攻-30%／3回合／4400与S2攻-50%／5回合／4000；一击必杀3倍含模糊“容易被击中”与S2 2.5倍／命中-30%；骑宠课程S1四级与S2下中上三级；旅途／旅程伙伴敌人一人／敌宠一只及学技两村／SBC。不能用S2未定刊期猜改版顺序，不能合并成确定性游戏公式、统一NPC或价格表。
+
+S2宠物邮件笼统称某些落地消失特殊物品不可邮，不具名R55贝壳，故不能当贝壳实际禁邮第二条独立证据。S1忠诚约70/20/10的失控描述仍只是指南，非原服务端阈值；S2九大家族与五转机暴不回填TW1.0。专用派生元数据结构测试/CI只验证19+11行、5组矛盾与版本缺证负边界，不是HTML源双重放或技能实测。候选/main的Actions要按实际结果后验，不预报全绿。本包两页30条有限止点，下一NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-57轮换22域另取，Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79继续暂停；旧历史完整保留。
