@@ -4148,3 +4148,10 @@ R47有限报告包结束，原文“中午”/精确时分、四家族人数歧�
 新增规格docs/specs/STONEAGE-CN2003-CRAFTING-GUIDES-SOURCE-R1.md与衍生research/recovered/STONEAGE-CN2003-CRAFTING-GUIDES-SOURCE-R1.json：S2原表18条装备类别/有序材料/列示百分比区间，原弓“木＋？＋丝”保持问号；S1七道新手料理、凯比特“加工”与乌力“料理”示例。关键源级矛盾：S2枪“石＋木”表列40–60%、投掷斧“木＋石”表列30–60%，S1木1/石1称枪；无序材料多重集重叠但**不能**证明服务器忽略顺序、确定产枪、随机双结果或指南成功率是原配置。加工/合成UI用词也不自动合并。原料后缀1/2/3不静默映射数量或等级，NPC/道具/技能ID未知。
 
 候选分支agent/cn2003-crafting-guides-r54-20261021，新增本地派生元数据结构测试及专用Action；检查对象仅Git派生JSON的18+7项、未知位、重叠但不提升运行事实、来源级别，并不联网重取两原网页；原商业图片/二进制未入Git。候选/main Actions应以后验实际结果为准，严禁把提交前检验预先称通过。有限止点两页25项，不扩配方全站、数值公式及后代执行。最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-55回全22域另取材料；Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停，全部旧历史前缀必须保留。
+
+
+## 2026-10-21 R54加工与料理派生源主线验收及永久收据
+
+R54资料提交2dd1c7a28b8993bebaf141b32b4cd1d4e1a7377c/tree b3fb195f0638443abae575dffe61cdae47375f43，以原main 05f14965b3c87481f2dec104813f624e553b76e6为父；候选分支agent/cn2003-crafting-guides-r54-20261021的10项Actions全部completed/success，主线同SHA的11项Actions全部completed/success，主线通过非强制的fast-forward+expected HEAD安全更新。专用候选run39594725260/job119204095403和主线run39595001302/job119205009874实际日志均显示4项派生数据检查通过、零跳过；其余Actions是现存验证矩阵，不冒称新增网页/原游戏实测。历史原CURRENT-STATE/TIMELINE/ROADMAP/SOURCE-REGISTRY旧Git内容均在R54提交中逐字前缀保留。
+
+本轮另外永久保存research/recovered/STONEAGE-CN2003-CRAFTING-GUIDES-ACCEPTANCE-R1.json，将原派生数据Git blob bb33249f20713199afc488dbf1eee2d9b42907e5、候选/主线运行及工作单元ID、执行范围、原网页字节证据欠缺与非原服事实限制相联。专用回归测试新增必须存在的收据与原派生blob SHA1一致性门，原专用workflow增加收据路径触发；收据提交自身Actions需独立后验，不沿用旧4项绿灯。原始HTML SHA256和独立原客户端执行仍无，永不把派生绿灯提升为原服成功率。R54 25项指南材料有限包结束，下一最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-55轮换22域另取源；Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停，历史记录不覆盖。

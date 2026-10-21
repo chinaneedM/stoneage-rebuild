@@ -1,0 +1,50 @@
+{
+  "schema": "stoneage.cn2003_crafting_guides.acceptance.r1",
+  "date": "2026-10-21",
+  "source_report": {
+    "path": "research/recovered/STONEAGE-CN2003-CRAFTING-GUIDES-SOURCE-R1.json",
+    "git_blob_sha": "bb33249f20713199afc488dbf1eee2d9b42907e5",
+    "source_raw_http_sha256": null,
+    "source_raw_html_retained": false,
+    "source_replay_against_original_html": false
+  },
+  "published_material": {
+    "commit": "2dd1c7a28b8993bebaf141b32b4cd1d4e1a7377c",
+    "tree": "b3fb195f0638443abae575dffe61cdae47375f43",
+    "parent": "05f14965b3c87481f2dec104813f624e553b76e6"
+  },
+  "candidate_ci": {
+    "branch": "agent/cn2003-crafting-guides-r54-20261021",
+    "commit": "2dd1c7a28b8993bebaf141b32b4cd1d4e1a7377c",
+    "run_count": 10,
+    "success_count": 10,
+    "derived_test_run": 39594725260,
+    "derived_test_job": 119204095403,
+    "derived_unit_test_cases": 4,
+    "all_passed": true
+  },
+  "main_ci": {
+    "branch": "main",
+    "commit": "2dd1c7a28b8993bebaf141b32b4cd1d4e1a7377c",
+    "run_count": 11,
+    "success_count": 11,
+    "derived_test_run": 39595001302,
+    "derived_test_job": 119205009874,
+    "derived_unit_test_cases": 4,
+    "all_passed": true
+  },
+  "test_scope": "GIT_DERIVED_JSON_STRUCTURE_AND_BOUNDARIES_ONLY",
+  "verified_sources": [
+    "https://games.sina.com.cn/zhqu/sta/xsxl/sqcty.shtml",
+    "https://games.sina.com.cn/zhqu/sta/wphc/wphc_1.shtml"
+  ],
+  "operational_boundaries": {
+    "original_game_executed": false,
+    "original_html_byte_replay": false,
+    "original_copyright_assets_committed": false,
+    "source_runtime_probability_calibrated": false,
+    "tw10_original_rules_promoted": false
+  },
+  "acceptance": "SOURCE_LIMITED_DERIVED_GUIDE_RECORD_ACCEPTED_NOT_ORIGINAL_RUNTIME",
+  "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-55"
+}

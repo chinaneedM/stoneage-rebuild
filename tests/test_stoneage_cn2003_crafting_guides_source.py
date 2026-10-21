@@ -41,4 +41,21 @@ class TestCn2003Guides(unittest.TestCase):
         self.assertEqual(x["meal_rows"][-1]["name_as_listed"],"豪华游乐套餐")
         self.assertFalse(x["intro_crafting_example"]["guaranteed"])
         self.assertTrue(all(r["verified_result"] is None for r in x["meal_rows"]))
+
+    def test_permanent_acceptance_receipt(self):
+        import hashlib
+        receipt_path=pathlib.Path(__file__).resolve().parents[1]/"research/recovered/STONEAGE-CN2003-CRAFTING-GUIDES-ACCEPTANCE-R1.json"
+        receipt=json.loads(receipt_path.read_text(encoding="utf-8"))
+        raw=P.read_bytes()
+        git_blob=hashlib.sha1(b"blob "+str(len(raw)).encode("ascii")+b"\x00"+raw).hexdigest()
+        self.assertEqual(receipt["source_report"]["git_blob_sha"],git_blob)
+        self.assertEqual(receipt["source_report"]["source_raw_http_sha256"],None)
+        self.assertFalse(receipt["source_report"]["source_replay_against_original_html"])
+        self.assertEqual(receipt["candidate_ci"]["success_count"],receipt["candidate_ci"]["run_count"])
+        self.assertEqual(receipt["main_ci"]["success_count"],receipt["main_ci"]["run_count"])
+        self.assertEqual(receipt["candidate_ci"]["derived_unit_test_cases"],4)
+        self.assertEqual(receipt["main_ci"]["derived_unit_test_cases"],4)
+        self.assertEqual(receipt["acceptance"],"SOURCE_LIMITED_DERIVED_GUIDE_RECORD_ACCEPTED_NOT_ORIGINAL_RUNTIME")
+        self.assertFalse(receipt["operational_boundaries"]["original_game_executed"])
+
 if __name__=="__main__": unittest.main()
