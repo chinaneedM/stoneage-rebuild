@@ -1,0 +1,323 @@
+{
+  "schema": "stoneage.cn2011_2012_stall.derived_replay.r1",
+  "http": {
+    "2011": {
+      "bytes": 76967,
+      "sha256": "63626e328aee87f40289cc693bd26d8767eda123b8cb3526e92480077ab10e54"
+    },
+    "2012": {
+      "bytes": 66924,
+      "sha256": "3b538f82bc0988f21fb965b2355b673b80e24121ce77dc880a72b0c4dd0df5ab"
+    }
+  },
+  "extracted": {
+    "core_sha256": {
+      "2011": "30be132158ef2872ebe36eb2ee4a95efae49f37d1ace8b6eada59d2a6bf44e40",
+      "2012": "19f64e22d65c43eec090e5fe86a6b64d085742112c17482a23cad8df5df33489"
+    },
+    "image_references": {
+      "2011": [
+        {
+          "src": "http://i0.sinaimg.cn/gm/2011/0112/U4512P115DT20110112103719.jpg",
+          "alt": "熙熙攘攘的摆摊场地",
+          "title": "熙熙攘攘的摆摊场地"
+        },
+        {
+          "src": "http://i1.sinaimg.cn/gm/2011/0112/U4512P115DT20110112103729.jpg",
+          "alt": "《石器时代》摆摊按钮",
+          "title": "《石器时代》摆摊按钮"
+        },
+        {
+          "src": "http://i2.sinaimg.cn/gm/2011/0112/U4512P115DT20110112103739.jpg",
+          "alt": "新货上架",
+          "title": "新货上架"
+        }
+      ],
+      "2012": [
+        {
+          "src": "http://i3.sinaimg.cn/gm/2012/1204/U4511P115DT20121204143003.jpg",
+          "alt": null,
+          "title": null
+        }
+      ]
+    },
+    "issuer_evidence": "SINA_HOSTED_CINS_NAMED_PROMOTIONAL_COPY_WITHOUT_AUTHENTICATED_ORIGINAL_ISSUER_FILE",
+    "numeric_version_or_build": null,
+    "entry": {
+      "position_reported": "UPPER_LEFT",
+      "button": "摆摊",
+      "destination": "店铺设置栏",
+      "exact_original_coordinates": null
+    },
+    "listing_steps": [
+      "SELECT_ITEMS_OR_PETS",
+      "SET_PRICE",
+      "ADD_ADVERTISEMENT",
+      "CONFIRM"
+    ],
+    "sale_marker": {
+      "text": "SELL",
+      "color_reported": "RED",
+      "meaning_reported": "LISTED_FOR_SALE_NOT_SOLD"
+    },
+    "bargaining_channels": [
+      "普通",
+      "家族",
+      "职业",
+      "密语"
+    ],
+    "fee_and_location_claim": {
+      "fee_wording_as_written": "无须缴纳任务费用",
+      "location": "PROMOTIONAL_ANYWHERE_CLAIM",
+      "all_taxes_zero_proven": false,
+      "verified_map_permission_table": null
+    },
+    "test_context_2011": {
+      "announced_date": "2011-01-15",
+      "label": "石灰封测",
+      "no_deletion_promised": true,
+      "launch_or_retention_observed": false
+    },
+    "cross_date_relation": {
+      "shared_instruction_block_sha256": "65d05187fc3a4fd3984b26e974a2ad9b56081b20f0b086d961fdc254ff3cc0cc",
+      "relation": "LITERAL_INSTRUCTION_REUSE_NOT_AUTHENTICATED_SAME_BUILD",
+      "same_build_proven": false,
+      "2012_includes_literal_weibo_token": true
+    },
+    "currency_price_limits_slots_offline_buyer_settlement_rules": null,
+    "automatic_bargaining_or_auction_rules_proven": false,
+    "historical_server_executed": false,
+    "early_build_membership_proven": false
+  },
+  "images": [
+    {
+      "source": "2011",
+      "url_as_written": "http://i0.sinaimg.cn/gm/2011/0112/U4512P115DT20110112103719.jpg",
+      "requested_url": "https://i0.sinaimg.cn/gm/2011/0112/U4512P115DT20110112103719.jpg",
+      "bytes": 94135,
+      "sha256": "a8b7784c7ed3e6a50c722e67c472164e3ab34fc80009df213d9f0bd29e35a939",
+      "width": 550,
+      "height": 413
+    },
+    {
+      "source": "2011",
+      "url_as_written": "http://i1.sinaimg.cn/gm/2011/0112/U4512P115DT20110112103729.jpg",
+      "requested_url": "https://i1.sinaimg.cn/gm/2011/0112/U4512P115DT20110112103729.jpg",
+      "bytes": 10369,
+      "sha256": "d1b0907bd49360a819ea0a8fbef585fdec3cb157e6dcd66344651a526f3075fe",
+      "width": 330,
+      "height": 60
+    },
+    {
+      "source": "2011",
+      "url_as_written": "http://i2.sinaimg.cn/gm/2011/0112/U4512P115DT20110112103739.jpg",
+      "requested_url": "https://i2.sinaimg.cn/gm/2011/0112/U4512P115DT20110112103739.jpg",
+      "bytes": 60645,
+      "sha256": "36610e7bcc41c6671399d236dee1cd56c267b30c347d4204e18c03fa70d5ed2e",
+      "width": 550,
+      "height": 413
+    },
+    {
+      "source": "2012",
+      "url_as_written": "http://i3.sinaimg.cn/gm/2012/1204/U4511P115DT20121204143003.jpg",
+      "requested_url": "https://i3.sinaimg.cn/gm/2012/1204/U4511P115DT20121204143003.jpg",
+      "bytes": 114772,
+      "sha256": "49b6f2f939ed1ba494e0981b0942bf9865390c43311d619c63662dbfe2a9e9ee",
+      "width": 550,
+      "height": 398
+    }
+  ],
+  "visual_observations": {
+    "method": "MANUAL_INSPECTION_OF_FOUR_CURRENT_LINKED_JPEGS_WITH_LOCAL_FULL_PILLOW_DECODE",
+    "button_crop": {
+      "source": "2011",
+      "current_pixels": [
+        330,
+        60
+      ],
+      "observation": "TOP_TOOLBAR_WITH_RED_RECTANGLE_AROUND_ONE_ICON",
+      "proves_original_click_coordinates": false
+    },
+    "listing_window": {
+      "source": "2011",
+      "current_pixels": [
+        550,
+        413
+      ],
+      "visible_sample_name": "巴朵兰恩",
+      "visible_sample_price": 1000,
+      "currency_unit": null,
+      "sample_is_standard_or_species_price": false,
+      "visible_bargaining_label": "议价",
+      "visible_marker": "SELL",
+      "visible_price_entry_and_confirm_cancel_controls": true,
+      "proves_purchase_completed": false,
+      "heading_proves_auction_rules": false
+    },
+    "scene_relation": {
+      "sources": [
+        "2011",
+        "2012"
+      ],
+      "current_pixels": [
+        [
+          550,
+          413
+        ],
+        [
+          550,
+          398
+        ]
+      ],
+      "observation": "VISUALLY_RECURRING_STALL_SIGNS_CHARACTERS_AND_COMPOSITION_WITH_DIFFERENT_BYTES_AND_HEIGHT",
+      "inference": "LIKELY_REUSED_SCENE_REFERENCE_NOT_AUTHENTICATED_SAME_BUILD_OR_CAPTURE_DATE",
+      "image_bytes_identical": false,
+      "exact_derivative_transform_authenticated": false
+    },
+    "original_client_resolution": null,
+    "original_asset_or_widget_ids": null,
+    "historical_runtime_observed": false
+  },
+  "audit": {
+    "real_body_mutations": [
+      {
+        "source": "2011",
+        "case": "entry-location",
+        "input_sha256": "3d1de2703a7ba544d9dce19bf222fe9a35a39085b78599ea54442b1fc2b75939",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "source": "2011",
+        "case": "entry-button",
+        "input_sha256": "6e81014ac28c325dd3369cd8835ee89fc974f941c4c1221b408cf0221e6de1e7",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "source": "2011",
+        "case": "listing-kind",
+        "input_sha256": "0d74fd6c659218c7bc642618bdc502399b9c2ade7ae36605270e3a8cd93eb19e",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "source": "2011",
+        "case": "price-step",
+        "input_sha256": "a203d6c8d4982cdeecfb43c8aabb2a31b1b64598ac57f53acfb7a84a9284ba8f",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "source": "2011",
+        "case": "advertisement-step",
+        "input_sha256": "29e02fda54b4087f6ff9f63f73300d4699719743e27c8a1353801dcc3fe3c376",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "source": "2011",
+        "case": "confirm-step",
+        "input_sha256": "262804f7950d8165a7eb23b18a657effcac93e495180a8c8ee2e6abfe3cf1b0c",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "source": "2011",
+        "case": "sale-marker-color",
+        "input_sha256": "36f2c3139c218fb327c5c8632bc55c33a358ce1e506d150b194dc4f9fc783b32",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "source": "2011",
+        "case": "sale-marker-state",
+        "input_sha256": "6e3e4ef20970dbe532b6f3c7eb8e366f1ee472ba5438c08b17a45fa876756499",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "source": "2011",
+        "case": "channel-kind",
+        "input_sha256": "5502b3e75f801cceef7be77ec1499d57f9f542625ea21836d368f942e039adad",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "source": "2011",
+        "case": "fee-claim",
+        "input_sha256": "2eaf28abc88608d5af28877fc93e0e1ea56aefaf919ff74ae127781220c951f9",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "source": "2011",
+        "case": "location-claim",
+        "input_sha256": "c559b04d74872cdedb6887fd5b91461ffd05148b886d53f9a0e736ae31ab800a",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "source": "2012",
+        "case": "entry-location",
+        "input_sha256": "791c92dde9c32bbab15d463a87f5d186bd2173a4ed773bd5f949a6c055966163",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "source": "2012",
+        "case": "entry-button",
+        "input_sha256": "0d7b2b22c262f4a25581e9503a146c1fbcf855a0419c9d9a42ae41461e5e1000",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "source": "2012",
+        "case": "listing-kind",
+        "input_sha256": "db13414b73da5a25126ce7258d919d8e53875e06e6e61fe390219f409a3687ee",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "source": "2012",
+        "case": "price-step",
+        "input_sha256": "f56fbe32bbf7f87813207886627e65262401f984e4ad6733470ea062f05e0cb7",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "source": "2012",
+        "case": "advertisement-step",
+        "input_sha256": "286a33318bf7f654d42824405ee9de8cf870f97840290cd5cbb9e7b4ee3955cc",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "source": "2012",
+        "case": "confirm-step",
+        "input_sha256": "5ed8c01f137e16b9adad6fa2844a33821bbf25089e427fc9170b576c711e356b",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "source": "2012",
+        "case": "sale-marker-color",
+        "input_sha256": "fccfd37e3e8f5999a06a258d4484ffebae74b018bb78e00578312f6a1532af15",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "source": "2012",
+        "case": "sale-marker-state",
+        "input_sha256": "2950ecb856ff03539f715e368fdad79a3cf7409c1f36d431c813bb0e3032465c",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "source": "2012",
+        "case": "channel-kind",
+        "input_sha256": "867f93f3dfbb964d5eb5bbb8683589b80735618207d2f9a30782725040390561",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "source": "2012",
+        "case": "fee-claim",
+        "input_sha256": "5d2e0f741899b84af451b1a1c361e5c3b9184dde9d5996ee0b1f58325d01efa1",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "source": "2012",
+        "case": "location-claim",
+        "input_sha256": "dd738cc8119c1acd9d1175c6558c54ef59f2aa2e30a8d0f5611b52dd5698fb5f",
+        "rejected_without_digest_gate": true
+      }
+    ],
+    "outer_script_positives": {
+      "2011": true,
+      "2012": true
+    }
+  },
+  "raw_html_or_assets_in_output": false,
+  "historical_server_executed": false
+}

@@ -1168,3 +1168,16 @@ NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-44回22域另一具名材料
 artifact12307574197/12306859797实际下载，各ZIP3068B，SHA256分别6decb924bacdf91e5a3be960381d151910dc738e64d4ea31a3cd89d2b9225be0 / ec68f5ff337173dc3dcb30aa65a1a9a075c85cda8de9650005e2a86c8543b06a；唯一replay.json7433B/SHA256 f1ecb7f73558449ae9c1939678b0d1a46273f94de06acc27b2ee83f2da014b20、原生Git blob204be2cb0de67b1e5d2ce6f27102bfb4cea0c30f，候选/main/本地完整原JSON逐字节一致。双派生副本、八个来源/工具/工作流/规格pins、21实际workflow条目和九启动完整前缀永久置 research/recovered/STONEAGE-JP2007-REN-HOME-CUSTODY-R1.json。原HTML/版权图不入Git。
 
 新增强制收据门后本包10项/76相关用例全执行通过，删除收据会失败；初始9项历史不改写为10项。保管提交自身候选/main Actions继续独立后验，不套内容提交绿灯。日程原星期矛盾、未名一月对象/六月具名关系、计划新居/实际婚礼、人物魅力/宠物忠诚、建材等级/数量保持分开。有限R44止点完成，NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-45回22域另一具名来源；Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停，全部旧历史完整。
+
+
+## 2026-10-21 R45胜思时期摆摊操作、当前界面图与跨年宣传复用
+
+新读main1f5e940731487851380f8c082255d5dcbf010948/tree67f78fa9436f91c04599534d151e88917aa566d4、433分支/0开放PR/4914项完整树无AGENTS，主线自身9项Actions全SUCCESS，旧queued37642417333保留。九启动完整正文与路线/22域组合索引固定，新读最后NEXT45，停止R44恋情/房屋/魅力helper。本轮改选第17域交易与UI交互，非新游戏生产。
+
+实际取得新浪2011-01-12 10:38及2012-12-04 14:30两篇胜思具名摆摊宣传，严格GB18030当前76967/66924B，规范段落SHA分别30be132158ef2872ebe36eb2ee4a95efae49f37d1ace8b6eada59d2a6bf44e40 / 19f64e22d65c43eec090e5fe86a6b64d085742112c17482a23cad8df5df33489。正文点名胜思及sa.cins.cn出链，但未获认证原站原始文件/署名作者/构建，具体数字版本null，不推8.5或最早版。2011预告1月15日不删档石灰封测，不当实际开放/存档生存。
+
+七记录及中文规格 docs/specs/STONEAGE-CN2011-2012-STALL-SOURCE-R1.md 新增：左上摆摊按钮→店铺设置、物品或宠物→定价→广告→确认，待售红SELL、四聊天议价渠道；原句无须缴纳任务费用/随处摆摊仅宣传，任务原词不修写为任何，不推所有税费零或全地图权限。无货币/价格范围/槽位/锁定/离线/买方扣款结算/退款算法，拍卖标题不补拍卖机制。
+
+四实际源链接JPEG当前94135/10369/60645/114772B，分别550×413/330×60/550×413/550×398，均完整Pillow解码/目视。2011工具栏单图标红框裁图不当原屏坐标；上架窗口可见巴朵兰恩样本1000、议价和SELL，不作标准物价、币种或原物种ID。2012场景与2011首图构图相似，但hash/高度不同，可能复用为HYPOTHESIS，未认证精确变换/截图年代/同构建。两文操作段逐字相同、2012多出weibo字样分开，不把复用当新增功能或两版运行等价。
+
+工具实取两页四图，22实际正文改写绕过digest门拒绝、两外围script正例、原URL与HTTPS请求改写分别保存；首轮10用例零跳过。原HTML/版权图不入Git，只派生记录/指纹/观察；候选/main自身Actions与实际ZIP永久保管按后续实证。最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-46回全22域，本摆摊/物价helper止点到；重开需具名版本原UI/真实交易/费用权限/买方结算或离线限制来源。Stage A7 PARTIAL+2 OPEN，B/wiki GATED，R79暂停，全部旧历史前缀保留。

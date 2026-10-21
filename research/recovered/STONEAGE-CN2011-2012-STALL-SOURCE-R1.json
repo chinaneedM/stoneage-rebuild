@@ -1,0 +1,297 @@
+{
+  "schema": "stoneage.cn2011_2012_stall.source_contract.r1",
+  "review": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-45",
+  "observed_date": "2026-10-21",
+  "sources": {
+    "2011": {
+      "url": "https://games.sina.com.cn/o/n/2011-01-12/1038467817.shtml",
+      "published": "2011-01-12 10:38",
+      "encoding": "GB18030_STRICT",
+      "authority": "CINS_NAMED_PROMOTIONAL_ARTICLE_PUBLISHED_BY_SINA",
+      "authenticated_historical_original_bytes": false,
+      "core_sha256": "30be132158ef2872ebe36eb2ee4a95efae49f37d1ace8b6eada59d2a6bf44e40"
+    },
+    "2012": {
+      "url": "https://games.sina.com.cn/o/n/2012-12-04/1430674461.shtml",
+      "published": "2012-12-04 14:30",
+      "encoding": "GB18030_STRICT",
+      "authority": "CINS_NAMED_PROMOTIONAL_ARTICLE_PUBLISHED_BY_SINA",
+      "authenticated_historical_original_bytes": false,
+      "core_sha256": "19f64e22d65c43eec090e5fe86a6b64d085742112c17482a23cad8df5df33489"
+    }
+  },
+  "extracted": {
+    "core_sha256": {
+      "2011": "30be132158ef2872ebe36eb2ee4a95efae49f37d1ace8b6eada59d2a6bf44e40",
+      "2012": "19f64e22d65c43eec090e5fe86a6b64d085742112c17482a23cad8df5df33489"
+    },
+    "image_references": {
+      "2011": [
+        {
+          "src": "http://i0.sinaimg.cn/gm/2011/0112/U4512P115DT20110112103719.jpg",
+          "alt": "熙熙攘攘的摆摊场地",
+          "title": "熙熙攘攘的摆摊场地"
+        },
+        {
+          "src": "http://i1.sinaimg.cn/gm/2011/0112/U4512P115DT20110112103729.jpg",
+          "alt": "《石器时代》摆摊按钮",
+          "title": "《石器时代》摆摊按钮"
+        },
+        {
+          "src": "http://i2.sinaimg.cn/gm/2011/0112/U4512P115DT20110112103739.jpg",
+          "alt": "新货上架",
+          "title": "新货上架"
+        }
+      ],
+      "2012": [
+        {
+          "src": "http://i3.sinaimg.cn/gm/2012/1204/U4511P115DT20121204143003.jpg",
+          "alt": null,
+          "title": null
+        }
+      ]
+    },
+    "issuer_evidence": "SINA_HOSTED_CINS_NAMED_PROMOTIONAL_COPY_WITHOUT_AUTHENTICATED_ORIGINAL_ISSUER_FILE",
+    "numeric_version_or_build": null,
+    "entry": {
+      "position_reported": "UPPER_LEFT",
+      "button": "摆摊",
+      "destination": "店铺设置栏",
+      "exact_original_coordinates": null
+    },
+    "listing_steps": [
+      "SELECT_ITEMS_OR_PETS",
+      "SET_PRICE",
+      "ADD_ADVERTISEMENT",
+      "CONFIRM"
+    ],
+    "sale_marker": {
+      "text": "SELL",
+      "color_reported": "RED",
+      "meaning_reported": "LISTED_FOR_SALE_NOT_SOLD"
+    },
+    "bargaining_channels": [
+      "普通",
+      "家族",
+      "职业",
+      "密语"
+    ],
+    "fee_and_location_claim": {
+      "fee_wording_as_written": "无须缴纳任务费用",
+      "location": "PROMOTIONAL_ANYWHERE_CLAIM",
+      "all_taxes_zero_proven": false,
+      "verified_map_permission_table": null
+    },
+    "test_context_2011": {
+      "announced_date": "2011-01-15",
+      "label": "石灰封测",
+      "no_deletion_promised": true,
+      "launch_or_retention_observed": false
+    },
+    "cross_date_relation": {
+      "shared_instruction_block_sha256": "65d05187fc3a4fd3984b26e974a2ad9b56081b20f0b086d961fdc254ff3cc0cc",
+      "relation": "LITERAL_INSTRUCTION_REUSE_NOT_AUTHENTICATED_SAME_BUILD",
+      "same_build_proven": false,
+      "2012_includes_literal_weibo_token": true
+    },
+    "currency_price_limits_slots_offline_buyer_settlement_rules": null,
+    "automatic_bargaining_or_auction_rules_proven": false,
+    "historical_server_executed": false,
+    "early_build_membership_proven": false
+  },
+  "images": [
+    {
+      "source": "2011",
+      "url_as_written": "http://i0.sinaimg.cn/gm/2011/0112/U4512P115DT20110112103719.jpg",
+      "requested_url": "https://i0.sinaimg.cn/gm/2011/0112/U4512P115DT20110112103719.jpg",
+      "bytes": 94135,
+      "sha256": "a8b7784c7ed3e6a50c722e67c472164e3ab34fc80009df213d9f0bd29e35a939",
+      "width": 550,
+      "height": 413,
+      "authenticated_capture_date": null,
+      "native_client_resolution_proven": false
+    },
+    {
+      "source": "2011",
+      "url_as_written": "http://i1.sinaimg.cn/gm/2011/0112/U4512P115DT20110112103729.jpg",
+      "requested_url": "https://i1.sinaimg.cn/gm/2011/0112/U4512P115DT20110112103729.jpg",
+      "bytes": 10369,
+      "sha256": "d1b0907bd49360a819ea0a8fbef585fdec3cb157e6dcd66344651a526f3075fe",
+      "width": 330,
+      "height": 60,
+      "authenticated_capture_date": null,
+      "native_client_resolution_proven": false
+    },
+    {
+      "source": "2011",
+      "url_as_written": "http://i2.sinaimg.cn/gm/2011/0112/U4512P115DT20110112103739.jpg",
+      "requested_url": "https://i2.sinaimg.cn/gm/2011/0112/U4512P115DT20110112103739.jpg",
+      "bytes": 60645,
+      "sha256": "36610e7bcc41c6671399d236dee1cd56c267b30c347d4204e18c03fa70d5ed2e",
+      "width": 550,
+      "height": 413,
+      "authenticated_capture_date": null,
+      "native_client_resolution_proven": false
+    },
+    {
+      "source": "2012",
+      "url_as_written": "http://i3.sinaimg.cn/gm/2012/1204/U4511P115DT20121204143003.jpg",
+      "requested_url": "https://i3.sinaimg.cn/gm/2012/1204/U4511P115DT20121204143003.jpg",
+      "bytes": 114772,
+      "sha256": "49b6f2f939ed1ba494e0981b0942bf9865390c43311d619c63662dbfe2a9e9ee",
+      "width": 550,
+      "height": 398,
+      "authenticated_capture_date": null,
+      "native_client_resolution_proven": false
+    }
+  ],
+  "visual_observations": {
+    "method": "MANUAL_INSPECTION_OF_FOUR_CURRENT_LINKED_JPEGS_WITH_LOCAL_FULL_PILLOW_DECODE",
+    "button_crop": {
+      "source": "2011",
+      "current_pixels": [
+        330,
+        60
+      ],
+      "observation": "TOP_TOOLBAR_WITH_RED_RECTANGLE_AROUND_ONE_ICON",
+      "proves_original_click_coordinates": false
+    },
+    "listing_window": {
+      "source": "2011",
+      "current_pixels": [
+        550,
+        413
+      ],
+      "visible_sample_name": "巴朵兰恩",
+      "visible_sample_price": 1000,
+      "currency_unit": null,
+      "sample_is_standard_or_species_price": false,
+      "visible_bargaining_label": "议价",
+      "visible_marker": "SELL",
+      "visible_price_entry_and_confirm_cancel_controls": true,
+      "proves_purchase_completed": false,
+      "heading_proves_auction_rules": false
+    },
+    "scene_relation": {
+      "sources": [
+        "2011",
+        "2012"
+      ],
+      "current_pixels": [
+        [
+          550,
+          413
+        ],
+        [
+          550,
+          398
+        ]
+      ],
+      "observation": "VISUALLY_RECURRING_STALL_SIGNS_CHARACTERS_AND_COMPOSITION_WITH_DIFFERENT_BYTES_AND_HEIGHT",
+      "inference": "LIKELY_REUSED_SCENE_REFERENCE_NOT_AUTHENTICATED_SAME_BUILD_OR_CAPTURE_DATE",
+      "image_bytes_identical": false,
+      "exact_derivative_transform_authenticated": false
+    },
+    "original_client_resolution": null,
+    "original_asset_or_widget_ids": null,
+    "historical_runtime_observed": false
+  },
+  "records": [
+    {
+      "record_id": "OPERATOR-TIME-CONTEXT",
+      "version_profile": "LATER_OFFICIAL:CN_CINS_2011_2012_BUILD_UNKNOWN",
+      "game_ids": null,
+      "source_refs": [
+        "2011",
+        "2012"
+      ],
+      "derived_summary_zh": "两文均在新浪刊发、正文点名胜思并出链sa.cins.cn；一月15日不删档封测仅2011预告，数字版本/构建未知。",
+      "evidence_scope": "DOCUMENTARY_PROMOTIONAL_AND_CURRENT_IMAGE_REFERENCE_NOT_RUNTIME"
+    },
+    {
+      "record_id": "ENTRY-TOOLBAR",
+      "version_profile": "LATER_OFFICIAL:CN_CINS_2011_2012_BUILD_UNKNOWN",
+      "game_ids": null,
+      "source_refs": [
+        "2011",
+        "2012"
+      ],
+      "derived_summary_zh": "正文称左上摆摊按钮进入店铺设置；当前330×60裁图红框指图标，不能从裁图复原原屏绝对坐标。",
+      "evidence_scope": "DOCUMENTARY_PROMOTIONAL_AND_CURRENT_IMAGE_REFERENCE_NOT_RUNTIME"
+    },
+    {
+      "record_id": "LISTING-FLOW",
+      "version_profile": "LATER_OFFICIAL:CN_CINS_2011_2012_BUILD_UNKNOWN",
+      "game_ids": null,
+      "source_refs": [
+        "2011",
+        "2012"
+      ],
+      "derived_summary_zh": "选择物品或宠物、定价、广告说明再确认；窗口样本数字1000不成为通用价格/币种，具体槽位限制未知。",
+      "evidence_scope": "DOCUMENTARY_PROMOTIONAL_AND_CURRENT_IMAGE_REFERENCE_NOT_RUNTIME"
+    },
+    {
+      "record_id": "SALE-MARKER",
+      "version_profile": "LATER_OFFICIAL:CN_CINS_2011_2012_BUILD_UNKNOWN",
+      "game_ids": null,
+      "source_refs": [
+        "2011",
+        "2012"
+      ],
+      "derived_summary_zh": "待售商品红色SELL标识，窗口示例可见；不把已上架当已售出，不补锁定/结算/退款规则。",
+      "evidence_scope": "DOCUMENTARY_PROMOTIONAL_AND_CURRENT_IMAGE_REFERENCE_NOT_RUNTIME"
+    },
+    {
+      "record_id": "BARGAINING",
+      "version_profile": "LATER_OFFICIAL:CN_CINS_2011_2012_BUILD_UNKNOWN",
+      "game_ids": null,
+      "source_refs": [
+        "2011",
+        "2012"
+      ],
+      "derived_summary_zh": "普通/家族/职业/密语可讨论价格，窗口可见议价样本；不证系统自动议价或拍卖算法。",
+      "evidence_scope": "DOCUMENTARY_PROMOTIONAL_AND_CURRENT_IMAGE_REFERENCE_NOT_RUNTIME"
+    },
+    {
+      "record_id": "FEE-LOCATION-PROMOTION",
+      "version_profile": "LATER_OFFICIAL:CN_CINS_2011_2012_BUILD_UNKNOWN",
+      "game_ids": null,
+      "source_refs": [
+        "2011",
+        "2012"
+      ],
+      "derived_summary_zh": "原句无须缴纳任务费用、随处摆摊属宣传陈述；任务一词原样保留，不能推所有税费为零或全地图实际权限。",
+      "evidence_scope": "DOCUMENTARY_PROMOTIONAL_AND_CURRENT_IMAGE_REFERENCE_NOT_RUNTIME"
+    },
+    {
+      "record_id": "CROSS-DATE-SOURCE-REUSE",
+      "version_profile": "LATER_OFFICIAL:CN_CINS_2011_2012_BUILD_UNKNOWN",
+      "game_ids": null,
+      "source_refs": [
+        "2011",
+        "2012"
+      ],
+      "derived_summary_zh": "两文从如何摆摊至SELL完全相同；2012另有weibo字样，场地图目视相似但hash/高度不同，不证构建/截图时间同一。",
+      "evidence_scope": "DOCUMENTARY_PROMOTIONAL_AND_CURRENT_IMAGE_REFERENCE_NOT_RUNTIME"
+    }
+  ],
+  "unproven": {
+    "authenticated_original_operator_page": false,
+    "numeric_version_or_exact_build_identified": false,
+    "all_maps_permissions_or_zero_taxes_verified": false,
+    "standard_species_or_item_prices_recovered": false,
+    "offline_stall_or_buyer_settlement_proven": false,
+    "automatic_auction_or_negotiation_rules_recovered": false,
+    "january_test_launch_or_retention_witnessed": false,
+    "same_build_proven_by_repeated_copy_or_scene": false,
+    "original_capture_dates_or_native_resolution_known": false,
+    "tw10_or_jss1999_membership_proven": false,
+    "original_html_or_assets_committed": false
+  },
+  "status": {
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b_wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING"
+  },
+  "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-46"
+}

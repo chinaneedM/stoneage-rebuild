@@ -7748,3 +7748,8 @@ S1 https://games.sina.com.cn/newgames/2003/11/11188486.shtml ，刊2003-11-18 15
 ## 2026-10-21 R44日本2007レン/ワイト双时期来源
 
 S1 https://www.4gamer.net/news/history/2007.06/20070612195557detail.html （2007-06-12 19:55），GaiaX明确发布文release_box，当前CP932 20085B，规范SHA256 df5ce9aad50b0cc97cecd4a3941ec06cb5693cc79479ee822138b6ac203f8182。S2 https://www.4gamer.net/news/history/2007.01/20070130162900detail.html （2007-01-30 16:29），运营节录span.blockquote、GaiaX归属在媒体导语，当前19602B，规范SHA256 f0801a2577962ff34ee495035cda98febd298799655a2072896b697ae9cae6c1。现行网页非2007原始捕获；原HTML/图不入Git。双层正文语义、17实际改写/双外层正例与独立正则摘要核实；日程矛盾、白色情人节未取及未知原ID/材料/价表显式保留。独立CI/ZIP保管按后续实证。
+
+
+## 2026-10-21 R45胜思具名摆摊双页与四图
+
+S1 https://games.sina.com.cn/o/n/2011-01-12/1038467817.shtml ；S2 https://games.sina.com.cn/o/n/2012-12-04/1430674461.shtml 。当前GB18030 76967/66924B，规范段落SHA256 30be132158ef2872ebe36eb2ee4a95efae49f37d1ace8b6eada59d2a6bf44e40 / 19f64e22d65c43eec090e5fe86a6b64d085742112c17482a23cad8df5df33489。正文点名胜思/sa.cins.cn但非已认证原站发行文件；四实际链接JPEG原HTTP地址/实际HTTPS请求、hash、尺寸及有限目视结论见CN2011-2012-STALL合同。不推数字版本、初代归属、原生分辨率或同构建；原HTML/图不入Git，候选/主线CI与ZIP保管按实际后验。

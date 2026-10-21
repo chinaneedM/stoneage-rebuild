@@ -1,0 +1,32 @@
+name: Verify CINS-era stall source UI and cross-date boundaries
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-CN2011-2012-STALL-*.json'
+      - 'tools/stoneage_cn2011_stall_source.py'
+      - 'tests/test_stoneage_cn2011_stall_source.py'
+      - '.github/workflows/verify-stoneage-cn2011-stall-source.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-CN2011-2012-STALL-*.json'
+      - 'tools/stoneage_cn2011_stall_source.py'
+      - 'tests/test_stoneage_cn2011_stall_source.py'
+      - '.github/workflows/verify-stoneage-cn2011-stall-source.yml'
+permissions:
+  contents: read
+jobs:
+  source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check stall flow, sale marker, promotional scope and current image limits
+        run: python -m unittest tests.test_stoneage_cn2011_stall_source -v
+      - name: Fetch two articles and four JPEGs and reject twenty-two real body mutations
+        run: python -m tools.stoneage_cn2011_stall_source --fetch --output /tmp/cn2011-stall/replay.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cn2011-stall-derived-replay
+          path: /tmp/cn2011-stall/replay.json
+          if-no-files-found: error
+          retention-days: 30
