@@ -1,0 +1,295 @@
+{
+  "schema": "stoneage.cn2003_ui_team_trade.source_limited.r1",
+  "task": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-57",
+  "source_scope": "2003_PORTAL_GUIDE_VS_2003_OPERATOR_ATTRIBUTED_2_0_NEWS_NOT_SAME_BUILD",
+  "historical_attribution": "LATER_RECOVERED",
+  "no_tw10_membership_assumed": true,
+  "original_game_executed": false,
+  "original_server_execution_observed": false,
+  "sources": [
+    {
+      "id": "S1",
+      "title": "游戏操作",
+      "url": "https://games.sina.com.cn/zhqu/sta/xsxl/yxcz.shtml",
+      "displayed_date": "2003-04-15 23:29",
+      "attribution": "新浪游戏·网友投稿",
+      "named_game": "石器时代ONLINE海贼王遗迹",
+      "guide_version_scope": "PIRATE_RUINS_NAMED_NOT_EXACT_BUILD",
+      "raw_html_sha256": null,
+      "raw_http_bytes": null,
+      "source_bytes_replayed": false
+    },
+    {
+      "id": "S2",
+      "title": "《石器时代》增开服务器组 开放后开始收费",
+      "url": "https://games.sina.com.cn/newgames/2003/11/11188486.shtml",
+      "displayed_date": "2003-11-18 15:33",
+      "attribution": "新浪转述华义官方消息",
+      "named_game": "石器时代2.0服务器组",
+      "guide_version_scope": "CN_2_0_RETRO_SERVER_REOPENING_NOT_ORIGINAL_RELEASE",
+      "raw_html_sha256": null,
+      "raw_http_bytes": null,
+      "source_bytes_replayed": false
+    }
+  ],
+  "guide_interactions": [
+    {
+      "ordinal": 1,
+      "id": "MOVE_CLICK_OR_HOLD",
+      "domain": "world_map",
+      "paraphrase": "左键点击目标位置或按住沿光标方向移动",
+      "source_id": "S1",
+      "original_tw10_verified": false,
+      "exact_client_build": null,
+      "original_server_config_id": null
+    },
+    {
+      "ordinal": 2,
+      "id": "FACE_RIGHT_CLICK",
+      "domain": "world_map",
+      "paraphrase": "右键用于人物朝向随光标变化",
+      "source_id": "S1",
+      "original_tw10_verified": false,
+      "exact_client_build": null,
+      "original_server_config_id": null
+    },
+    {
+      "ordinal": 3,
+      "id": "NPC_FACE_AND_TEXT",
+      "domain": "npc_dialog_ui",
+      "paraphrase": "面向村民或店员，输入文字并按Enter触发对话",
+      "source_id": "S1",
+      "original_tw10_verified": false,
+      "exact_client_build": null,
+      "original_server_config_id": null
+    },
+    {
+      "ordinal": 4,
+      "id": "SIGN_FACE_CLICK",
+      "domain": "npc_dialog_ui",
+      "paraphrase": "面向告示板后左键点击",
+      "source_id": "S1",
+      "original_tw10_verified": false,
+      "exact_client_build": null,
+      "original_server_config_id": null
+    },
+    {
+      "ordinal": 5,
+      "id": "BAG_FULL_GATE",
+      "domain": "item_equipment_economy",
+      "paraphrase": "道具栏满时不能继续拾取，需空出格位",
+      "source_id": "S1",
+      "original_tw10_verified": false,
+      "exact_client_build": null,
+      "original_server_config_id": null
+    },
+    {
+      "ordinal": 6,
+      "id": "DROP_DRAG_TO_GROUND",
+      "domain": "item_equipment_economy",
+      "paraphrase": "将道具从窗口拖至地面表示丢弃",
+      "source_id": "S1",
+      "original_tw10_verified": false,
+      "exact_client_build": null,
+      "original_server_config_id": null
+    },
+    {
+      "ordinal": 7,
+      "id": "BOTTOM_PANEL_SEVEN",
+      "domain": "login_splash",
+      "paraphrase": "下方呼出地图/状况/宠物/道具/邮件/相簿/系统七窗口",
+      "source_id": "S1",
+      "original_tw10_verified": false,
+      "exact_client_build": null,
+      "original_server_config_id": null
+    },
+    {
+      "ordinal": 8,
+      "id": "TOP_EIGHT_BUTTONS",
+      "domain": "login_splash",
+      "paraphrase": "顶部选项/名片/组队/交易/家族/参战/决斗/动作八键",
+      "source_id": "S1",
+      "original_tw10_verified": false,
+      "exact_client_build": null,
+      "original_server_config_id": null
+    },
+    {
+      "ordinal": 9,
+      "id": "TEAM_LEADER_FOLLOW",
+      "domain": "world_map",
+      "paraphrase": "组队后队长负责移动，其他队员自动跟随",
+      "source_id": "S1",
+      "original_tw10_verified": false,
+      "exact_client_build": null,
+      "original_server_config_id": null
+    },
+    {
+      "ordinal": 10,
+      "id": "TEAM_FACE_CONSENT",
+      "domain": "npc_dialog_ui",
+      "paraphrase": "队长组队YES；加入者面向队长按组队",
+      "source_id": "S1",
+      "original_tw10_verified": false,
+      "exact_client_build": null,
+      "original_server_config_id": null
+    },
+    {
+      "ordinal": 11,
+      "id": "TRADE_FACE_CONSENT",
+      "domain": "item_equipment_economy",
+      "paraphrase": "被请求者交易YES；请求者面向对象按交易",
+      "source_id": "S1",
+      "original_tw10_verified": false,
+      "exact_client_build": null,
+      "original_server_config_id": null
+    },
+    {
+      "ordinal": 12,
+      "id": "TRADE_DOUBLE_CONFIRM",
+      "domain": "item_equipment_economy",
+      "paraphrase": "交易栏容纳道具或宠物，双方分别按OK",
+      "source_id": "S1",
+      "original_tw10_verified": false,
+      "exact_client_build": null,
+      "original_server_config_id": null
+    },
+    {
+      "ordinal": 13,
+      "id": "HELP_PARTY_LIMIT",
+      "domain": "battle_ui_rules",
+      "paraphrase": "按参战键帮助显示HELP的玩家，文中记五人时无法再加入",
+      "source_id": "S1",
+      "original_tw10_verified": false,
+      "exact_client_build": null,
+      "original_server_config_id": null
+    },
+    {
+      "ordinal": 14,
+      "id": "DUEL_OPT_IN",
+      "domain": "battle_ui_rules",
+      "paraphrase": "决斗需要YES，玩家决斗不给经验且不可捕获其他玩家或其宠物",
+      "source_id": "S1",
+      "original_tw10_verified": false,
+      "exact_client_build": null,
+      "original_server_config_id": null
+    },
+    {
+      "ordinal": 15,
+      "id": "EMOTE_THIRTEEN",
+      "domain": "character_sprite_model",
+      "paraphrase": "指南称该命名版本有13种动作，不等于13个唯一图块",
+      "source_id": "S1",
+      "original_tw10_verified": false,
+      "exact_client_build": null,
+      "original_server_config_id": null
+    },
+    {
+      "ordinal": 16,
+      "id": "LOGOUT_HERE_VS_RECORD",
+      "domain": "runtime_persistence",
+      "paraphrase": "描述原地登出下次在离线位置，普通登录可回记录点",
+      "source_id": "S1",
+      "original_tw10_verified": false,
+      "exact_client_build": null,
+      "original_server_config_id": null
+    },
+    {
+      "ordinal": 17,
+      "id": "CTRL_I_IN_SHORTCUT_TABLE",
+      "domain": "login_splash",
+      "paraphrase": "快捷键表将Ctrl+I列作所持道具",
+      "source_id": "S1",
+      "original_tw10_verified": false,
+      "exact_client_build": null,
+      "original_server_config_id": null
+    },
+    {
+      "ordinal": 18,
+      "id": "CTRL_L_IN_ITEM_SECTION",
+      "domain": "login_splash",
+      "paraphrase": "同页道具视窗后文把关闭键写成Ctrl+L",
+      "source_id": "S1",
+      "original_tw10_verified": false,
+      "exact_client_build": null,
+      "original_server_config_id": null
+    },
+    {
+      "ordinal": 19,
+      "id": "PET_ACTION_STATES",
+      "domain": "pet_stats",
+      "paraphrase": "宠物窗列战斗/等待/休息/邮件/骑乘；部分模式一次只能选一只",
+      "source_id": "S1",
+      "original_tw10_verified": false,
+      "exact_client_build": null,
+      "original_server_config_id": null
+    },
+    {
+      "ordinal": 20,
+      "id": "ROUND_CMD_WAIT",
+      "domain": "battle_ui_rules",
+      "paraphrase": "轮流选人宠指令，确认或待机结束触发战斗执行",
+      "source_id": "S1",
+      "original_tw10_verified": false,
+      "exact_client_build": null,
+      "original_server_config_id": null
+    }
+  ],
+  "operator_news": [
+    {
+      "id": "CN20_2003_09_04_SERVICE",
+      "source_id": "S2",
+      "assertion": "稿件称2003-09-04开放的为2.0服务器组",
+      "not_equivalent_to": "石器时代2.0最早上市日期"
+    },
+    {
+      "id": "CN20_2003_11_19_NEW_GROUP",
+      "source_id": "S2",
+      "assertion": "宣布2003-11-19维护后增加2.0(2)服务器组并将旧组改称2.0(1)",
+      "not_equivalent_to": "台湾1.0原始服务"
+    },
+    {
+      "id": "CN20_SAFE_TRADE_UNSPECIFIED",
+      "source_id": "S2",
+      "assertion": "华义消息称2.0有更安全交易系统，未解释如何保证",
+      "not_equivalent_to": "客户端双方OK构成已验证服务端原子事务"
+    }
+  ],
+  "tensions": [
+    {
+      "id": "ITEM_HOTKEY_INTERNAL_CONFLICT",
+      "s1_first": "Ctrl+I 显示所持道具",
+      "s1_second": "道具视窗关闭键 Ctrl+L",
+      "resolution": null,
+      "do_not_silently_choose": true
+    },
+    {
+      "id": "DIFFERENT_NAMED_VERSION_CONTEXTS",
+      "s1_named": "海贼王遗迹",
+      "s2_named": "2.0服务器组",
+      "same_exact_client_build_proven": false,
+      "release_history_not_conflated": true
+    },
+    {
+      "id": "SECURE_TRADE_MECHANISM_UNPROVEN",
+      "s1_description": "双方OK",
+      "s2_description": "更安全的交易系统",
+      "server_transaction_algorithm_verified": false
+    },
+    {
+      "id": "LOGOUT_IS_NOT_SAVEDATA_BYTES",
+      "s1_description": "原地登出与记录点定位差异",
+      "original_tw10_save_bytes_or_server_state_verified": false
+    }
+  ],
+  "negative_evidence_boundaries": {
+    "original_1999_or_tw10_ui_render_not_recovered": true,
+    "no_raw_html_source_hash": true,
+    "no_authoritative_keymap_or_source_decompilation": true,
+    "no_server_side_trade_security_algorithm": true,
+    "no_npc_script_or_actor_id": true,
+    "no_png_sprite_or_original_copyright_asset_committed": true,
+    "no_tw10_feature_promotion": true,
+    "the_s2_2003_september_service_date_is_not_earliest_2_0_release": true
+  },
+  "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-58"
+}

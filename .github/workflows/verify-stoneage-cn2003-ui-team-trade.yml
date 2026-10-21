@@ -1,0 +1,19 @@
+name: Verify CN2003 UI team trade derived guide
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-CN2003-UI-TEAM-TRADE-SOURCE-R1.json'
+      - 'tests/test_stoneage_cn2003_ui_team_trade_source.py'
+      - '.github/workflows/verify-stoneage-cn2003-ui-team-trade.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-CN2003-UI-TEAM-TRADE-SOURCE-R1.json'
+      - 'tests/test_stoneage_cn2003_ui_team_trade_source.py'
+      - '.github/workflows/verify-stoneage-cn2003-ui-team-trade.yml'
+jobs:
+  derived-guide-boundaries:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify source-qualified UI, party, trade and negative claims
+        run: python -m unittest discover -s tests -p 'test_stoneage_cn2003_ui_team_trade_source.py' -v

@@ -4200,3 +4200,12 @@ S2宠物邮件笼统称某些落地消失特殊物品不可邮，不具名R55贝
 ### 2026-10-21 R56永久收据首轮测试路径错误与修复（不改写历史）
 
 首次收据候选7f5dbb1291891ffd27d700d849b9e51ce8038850专用Action run39604156414/job119235960504实际**FAILURE**。本轮静态预检发现测试将派生JSON所在的research/recovered目录作为根，再拼一次research/recovered，导致收据查找路径重复；与网页内容、来源真实性、Git SHA256或客户端规则无关。非强制提交b4f823f1c418b0569a7c938a7dfa99af6a212351仅改测试的仓库根路径为P.parents[2]，对应专用run39604294631同HEAD SUCCESS，首轮失败不称SUCCESS也不从记录中删除。此前来源内容提交83c8c8279cd5913d9c75eec467c64a965c8cfba1的main11项Actions独立全SUCCESS。下一次完整候选/主线Actions将按最终HEAD后验；最高NEXT57不变。
+
+
+## 2026-10-21 R57 2003年操作、组队交易与原地登出的来源限定取证
+
+新读取main 4e11dc8983cfbe0b1b667e5ee45a3b1ee4a4de6d/tree 5d991edadd52c12dd484dd4c689dc1be6e8127c4、连续性九文件与22域索引，R56候选失败修复历史保留。R57有限审查新浪2003-04-15 23:29网友投稿《游戏操作》（正文多次命名《海贼王遗迹》）及2003-11-18 15:33新浪转述华义《增开服务器组》消息（明确2.0怀旧服）。逐条归档S1指南20项游戏操作与S2公告3项。S1含移动/朝向、面向NPC文字对话、告示牌、背包满/拖地、下7窗/上8键、队长带队、面对对象组队YES、双方交易YES/OK、HELP五人描述、决斗、13动作、原地登出、宠物模式与战斗指令等待等；S2提2003-09-04 2.0服务器组开放、2003-11-19新组及“更安全交易”。两网页都未取得原始HTTP/HTML字节哈希或原商业客户端/服务端执行。
+
+**四项负边界：** (1) S1同页Ctrl+I“所持道具”与Ctrl+L“道具视窗关闭”矛盾并存；(2) S1海贼王遗迹与S2 2003年2.0怀旧服不能合并同build，2003-09-04不是2.0最初发行；(3) 两人OK与“更安全交易”没有服务端原子事务映射；(4) 原地登出／记录点仅网页说明，不证明原TW1.0 savedata字段或商业服务器状态。S1这些操作也不回填初代实机、UI像素、NPC/交易/战斗配置。
+
+新增docs/specs/STONEAGE-CN2003-UI-TEAM-TRADE-SOURCE-R1.md、research/recovered/STONEAGE-CN2003-UI-TEAM-TRADE-SOURCE-R1.json、R57审查页、专用6项派生元数据测试及workflow。来源是2003年具名网页阅读，不冒称原始页面双重放或真实版本运行。研究/候选和main Actions未经验收不得宣称通过；永久派生保管收据应在后验另写。止于两页23个记录；最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-58，Stage A7 PARTIAL+2 OPEN，Stage B/wiki GATED，R79 PAUSED_NON_BLOCKING，历史旧文本逐字保留。

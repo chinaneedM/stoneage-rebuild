@@ -7884,3 +7884,12 @@ S1 https://www.4gamer.net/specials/stoneage2_interview/stoneage2_interview.shtml
 - Supports only literal guide-listed skills, NPC location labels, fee numbers, training-course wording and guide narration of pet mail. Preserved contradictions: poison attack reduction/turns/price, 3x vs 2.5x one-hit, four vs three riding courses, companion target text, 加工/料理 location.
 - Does not support: a confirmed patch order, exact damage or hit RNG, execution behavior, same-build trainer list, original NPC/skill identifiers, original TW1/JSS1999 rules, or item-specific mail filtering for R55's shell.
 - Derivative: research/recovered/STONEAGE-CN2004-PET-SKILL-TRAINER-SOURCE-R1.json; prose: docs/specs/STONEAGE-CN2004-PET-SKILL-TRAINER-SOURCE-R1.md. Original assets excluded.
+
+
+## 2026-10-21 R57 2003年操作、组队交易与原地登出的来源限定取证
+
+新读取main 4e11dc8983cfbe0b1b667e5ee45a3b1ee4a4de6d/tree 5d991edadd52c12dd484dd4c689dc1be6e8127c4、连续性九文件与22域索引，R56候选失败修复历史保留。R57有限审查新浪2003-04-15 23:29网友投稿《游戏操作》（正文多次命名《海贼王遗迹》）及2003-11-18 15:33新浪转述华义《增开服务器组》消息（明确2.0怀旧服）。逐条归档S1指南20项游戏操作与S2公告3项。S1含移动/朝向、面向NPC文字对话、告示牌、背包满/拖地、下7窗/上8键、队长带队、面对对象组队YES、双方交易YES/OK、HELP五人描述、决斗、13动作、原地登出、宠物模式与战斗指令等待等；S2提2003-09-04 2.0服务器组开放、2003-11-19新组及“更安全交易”。两网页都未取得原始HTTP/HTML字节哈希或原商业客户端/服务端执行。
+
+**四项负边界：** (1) S1同页Ctrl+I“所持道具”与Ctrl+L“道具视窗关闭”矛盾并存；(2) S1海贼王遗迹与S2 2003年2.0怀旧服不能合并同build，2003-09-04不是2.0最初发行；(3) 两人OK与“更安全交易”没有服务端原子事务映射；(4) 原地登出／记录点仅网页说明，不证明原TW1.0 savedata字段或商业服务器状态。S1这些操作也不回填初代实机、UI像素、NPC/交易/战斗配置。
+
+新增docs/specs/STONEAGE-CN2003-UI-TEAM-TRADE-SOURCE-R1.md、research/recovered/STONEAGE-CN2003-UI-TEAM-TRADE-SOURCE-R1.json、R57审查页、专用6项派生元数据测试及workflow。来源是2003年具名网页阅读，不冒称原始页面双重放或真实版本运行。研究/候选和main Actions未经验收不得宣称通过；永久派生保管收据应在后验另写。止于两页23个记录；最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-58，Stage A7 PARTIAL+2 OPEN，Stage B/wiki GATED，R79 PAUSED_NON_BLOCKING，历史旧文本逐字保留。
