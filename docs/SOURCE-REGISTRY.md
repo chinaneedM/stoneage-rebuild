@@ -7867,3 +7867,11 @@ S1 https://www.4gamer.net/specials/stoneage2_interview/stoneage2_interview.shtml
 - Reliable bounded support: 2001 player enumerates five shell acquisition leads, 2003 article has two directional friendship quest routes with different rewards, 2003 hero guide relates a shell to the Black Ury portal and the island set 50 years before. The two published 2001/2003 claims conflict for the same direction (Yayoi→Himeko: shell reward vs flower reward); no single verified runtime resolution.
 - Boundary: fifth 2001 pathway has visibly garbled coordinates/species text, no recovered exact map ID. 2003 hero quest's level 80 is not a proven portal access requirement. Shell mail/drop restrictions and charisma loss are source claims, not TW1.0 or verified server results. Version change, item IDs, quest flags, consumption, save semantics and actual time-travel mechanic all OPEN.
 - Structured record: research/recovered/STONEAGE-CN2001-2003-SHELL-QUEST-SOURCE-R1.json; explanation: docs/specs/STONEAGE-CN2001-2003-SHELL-QUEST-SOURCE-R1.md.
+
+### R55 derived acceptance custody — 2026-10-21
+
+- Immutable R55 material commit: 6eada4a406b0d1709b29ad9bb1b0e858b9fe87da, tree 085b0d587bcd390ee952591cefcc6756fb7d4ac1.
+- Git derived source: research/recovered/STONEAGE-CN2001-2003-SHELL-QUEST-SOURCE-R1.json, Git blob 7157f1aca0e4f806334bb4892d294d93d106690d, UTF8 7762B, SHA256 411cd1fb8bec4c08e5ac78fa8987fb58f0cd7ee55c41397cbfcc9d0163e91d5f.
+- Candidate/main Actions: candidate 10/10 SUCCESS; main 11/11 SUCCESS at content commit. Dedicated candidate run39599917007 job119221512082 and main run39600076749 job119222049029 each ran four derived-structure tests successfully. Neither emitted a ZIP artifact.
+- Durable acceptance receipt: research/recovered/STONEAGE-CN2001-2003-SHELL-QUEST-ACCEPTANCE-R1.json. Mandatory receipt/hash test added in separate custody commit; acceptance of that new commit requires its **own** Actions result.
+- Source limitations unchanged: readable browser text, NO original HTML payload/hash, no original client/game runtime evidence. Material contradiction and worldline/portal questions stay unresolved.

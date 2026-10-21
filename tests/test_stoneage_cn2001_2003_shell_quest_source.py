@@ -61,5 +61,26 @@ class TestShellQuestR55(unittest.TestCase):
         self.assertFalse(self.r["s2003_item_restrictions"]["cross_version_enforced_rule_proven"])
         self.assertGreaterEqual(len(self.r["unproven"]),8)
 
+
+class TestR55DurableReceipt(unittest.TestCase):
+    def test_acceptance_receipt_pins_derived_source_not_html(self):
+        import hashlib
+        receipt=ROOT/"research/recovered/STONEAGE-CN2001-2003-SHELL-QUEST-ACCEPTANCE-R1.json"
+        self.assertTrue(receipt.is_file(), "R55 acceptance receipt must be preserved")
+        r=json.loads(receipt.read_text(encoding="utf-8"))
+        original=RECORD.read_bytes()
+        self.assertEqual(hashlib.sha256(original).hexdigest(),r["derived"]["sha256"])
+        self.assertEqual(len(original),r["derived"]["raw_utf8_bytes"])
+        self.assertEqual(r["derived"]["git_blob_sha"],"7157f1aca0e4f806334bb4892d294d93d106690d")
+        self.assertEqual(r["accepted_material_commit"],"6eada4a406b0d1709b29ad9bb1b0e858b9fe87da")
+        self.assertEqual(r["candidate_ci"]["observed_tests"],4)
+        self.assertEqual(r["main_ci"]["observed_tests"],4)
+        self.assertIsNone(r["source_custody"]["original_raw_http_sha256"])
+        self.assertFalse(r["source_custody"]["source_raw_html_obtained"])
+        self.assertFalse(r["source_custody"]["original_game_executed"])
+        self.assertIsNone(r["candidate_ci"]["artifact_zip_sha256"])
+        self.assertIsNone(r["main_ci"]["artifact_zip_sha256"])
+        self.assertNotEqual(hashlib.sha256(original+b"X").hexdigest(),r["derived"]["sha256"])
+
 if __name__=="__main__":
     unittest.main()

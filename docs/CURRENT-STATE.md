@@ -16780,3 +16780,11 @@ R54资料提交2dd1c7a28b8993bebaf141b32b4cd1d4e1a7377c/tree b3fb195f0638443abae
 **关键新增矛盾**：2001报告弥生→日美子送贝壳得到贝壳，2003同一方向却是贝壳换花。两者分源保留，不擅推版本改动或作者错误。2003说明贝壳宠邮受限、丢地消失、花送贝壳重作损魅力一点；只有玩家指南陈述，非原服道具过滤/忠诚或存档逻辑。2003英雄岛前传说背包持贝壳与萨姆吉尔村黑乌力(71,49)对话进“五十年前的波拉岛”；其80级要求/建议120属于英雄岛前传任务，不上升为传送门自身80级门槛；贝壳是否消耗、服务端时间线与首次原版存在均UNKNOWN。来源只作为未来世界观可选参考，不执行新石器设计。
 
 另有专用衍生记录结构测试/CI，守三个源、双路线、两篇冲突、五条2001作者枚举、文本损坏位置和入口等级限制；CI不能证明HTML源字节与游戏运行。有限止点三页及派生记录，不递归英雄岛全部后续怪/奖励；下一NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-56，从22域另选。Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79 PAUSED，全部旧历史前缀必须保留。候选/主线验收以真实Actions后验为准，不能在提交前预先称绿。
+
+## 2026-10-21 R55候选/主线CI真实验收及永久派生收据
+
+内容提交6eada4a406b0d1709b29ad9bb1b0e858b9fe87da/tree085b0d587bcd390ee952591cefcc6756fb7d4ac1已从R54 main8a0cd2d7f3de81737349250bd042692b07bcc866非强制fast-forward、带expected HEAD写入主线。9文件差异是5新增、4历史文件仅追加，Git原有行无删除。候选agent/cn2001-2003-shell-quest-r55-20261021同SHA 10项Actions全completed/success；来源候选专用run39599917007/job119221512082，日志4项派生结构测试成功、零跳过。main同SHA 11项Actions全completed/success；主线专用run39600076749/job119222049029，作业亦success。两run均没有生成/上传ZIP artifact，不捏造artifact ID、ZIP哈希或双次源HTML实时重放。
+
+唯一持久衍生报告research/recovered/STONEAGE-CN2001-2003-SHELL-QUEST-SOURCE-R1.json为原生Git blob7157f1aca0e4f806334bb4892d294d93d106690d、UTF8 7762B、SHA256 411cd1fb8bec4c08e5ac78fa8987fb58f0cd7ee55c41397cbfcc9d0163e91d5f；永久验收收据research/recovered/STONEAGE-CN2001-2003-SHELL-QUEST-ACCEPTANCE-R1.json记候选/main run/job、内容SHA、原来源三URL、正反证据边界及缺失HTTP原字节/原游戏实测。新增收据必须存在+源派生SHA256强制测试，原4项升级为5项后的**收据自身候选/main Actions待后验**，不把早前4项成功写成5项。新工件仅为版权所有无争议的衍生元数据；未取得或存储原网页全文/图片/客户端、构建配置、服务器剧情脚本。
+
+2001弥生→日美子给贝壳/2003同方向给花之矛盾仍OPEN，五途径不是完全集合，2003后续任务80级不是已证黑乌力传送门槛。R55历史材料包完成，下一最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-56回22域轮换；Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停。所有过去报告内容保留。

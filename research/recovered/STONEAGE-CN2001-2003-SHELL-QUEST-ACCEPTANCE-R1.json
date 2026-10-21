@@ -1,0 +1,84 @@
+{
+  "schema": "stoneage.cn2001_2003_shell_quest.acceptance.r1",
+  "accepted_material_commit": "6eada4a406b0d1709b29ad9bb1b0e858b9fe87da",
+  "accepted_material_tree": "085b0d587bcd390ee952591cefcc6756fb7d4ac1",
+  "derived": {
+    "path": "research/recovered/STONEAGE-CN2001-2003-SHELL-QUEST-SOURCE-R1.json",
+    "git_blob_sha": "7157f1aca0e4f806334bb4892d294d93d106690d",
+    "sha256": "411cd1fb8bec4c08e5ac78fa8987fb58f0cd7ee55c41397cbfcc9d0163e91d5f",
+    "raw_utf8_bytes": 7762,
+    "archived_in_git": true,
+    "rows": {
+      "original_2001_reported_acquisition_methods": 5,
+      "year_2003_bidirectional_quest_routes": 2,
+      "hero_island_bridge": 1,
+      "explicit_source_disagreement": 1
+    }
+  },
+  "candidate_ci": {
+    "branch": "agent/cn2001-2003-shell-quest-r55-20261021",
+    "head": "6eada4a406b0d1709b29ad9bb1b0e858b9fe87da",
+    "workflow_run_id": 39599917007,
+    "job_id": 119221512082,
+    "workflow": "Verify CN2001-2003 shell quest derived records",
+    "status": "completed",
+    "conclusion": "success",
+    "observed_tests": 4,
+    "skipped_tests": 0,
+    "run_workflow_count": 10,
+    "all_observed_workflows_success": true,
+    "artifact_id": null,
+    "artifact_zip_sha256": null,
+    "reason_no_artifact": "workflow did not upload a ZIP artifact"
+  },
+  "main_ci": {
+    "branch": "main",
+    "head": "6eada4a406b0d1709b29ad9bb1b0e858b9fe87da",
+    "workflow_run_id": 39600076749,
+    "job_id": 119222049029,
+    "workflow": "Verify CN2001-2003 shell quest derived records",
+    "status": "completed",
+    "conclusion": "success",
+    "observed_tests": 4,
+    "skipped_tests": 0,
+    "run_workflow_count": 11,
+    "all_observed_workflows_success": true,
+    "artifact_id": null,
+    "artifact_zip_sha256": null,
+    "reason_no_artifact": "workflow did not upload a ZIP artifact"
+  },
+  "source_custody": {
+    "source_count": 3,
+    "sources": [
+      {
+        "id": "S2001",
+        "url": "https://news.17173.com/z/stoneage/content/2001-12-10/n281_197533.html?_platform=PC"
+      },
+      {
+        "id": "S2003_Q",
+        "url": "https://games.sina.com.cn/zhqu/sta/rwgl1_1.shtml"
+      },
+      {
+        "id": "S2003_H",
+        "url": "https://games.sina.com.cn/zhqu/sta/article/2003-06-04/10857.shtml"
+      }
+    ],
+    "reconstructed_from_rendered_web_text": true,
+    "source_raw_html_obtained": false,
+    "original_raw_http_sha256": null,
+    "replayed_source_http_in_ci": false,
+    "archived_original_game_assets": false,
+    "original_game_executed": false,
+    "exact_build_proven": false
+  },
+  "limits": [
+    "CITABLE_WEB_RENDERED_TEXT_ONLY",
+    "DERIVED_STRUCTURE_TESTS_ONLY",
+    "NO_ORIGINAL_HTML_SHA256",
+    "NO_ZIP_ARTIFACT_PRODUCED",
+    "QUEST_DIRECTION_CONFLICT_UNRESOLVED",
+    "NO_CONFIRMED_TW1_GAME_LOGIC",
+    "NOT_AUTOMATIC_NEW_GAME_DESIGN"
+  ],
+  "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-56"
+}
