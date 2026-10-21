@@ -1,0 +1,43 @@
+name: Verify CN2.0 three pet visual supplements and known control
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-CN20-PET-VISUAL-BATCH-*.json'
+      - 'research/recovered/STONEAGE-WAEI-CN20-NEW-PET-CATALOG-FIRST-PAGE-R1.json'
+      - 'research/recovered/STONEAGE-WAEI-CN20-NEW-PET-FINITE-CATALOG-R1.json'
+      - 'research/recovered/STONEAGE-WAEI-CN20-AMIDUO-VISUAL-REFERENCE-R1.json'
+      - 'tools/stoneage_cn20_pet_visual_batch.py'
+      - 'tools/stoneage_cn20_recordpoint_source.py'
+      - 'tools/stoneage_cn2003_group2_manor_report.py'
+      - 'tests/test_stoneage_cn20_pet_visual_batch.py'
+      - '.github/workflows/verify-stoneage-cn20-pet-visual-batch.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-CN20-PET-VISUAL-BATCH-*.json'
+      - 'research/recovered/STONEAGE-WAEI-CN20-NEW-PET-CATALOG-FIRST-PAGE-R1.json'
+      - 'research/recovered/STONEAGE-WAEI-CN20-NEW-PET-FINITE-CATALOG-R1.json'
+      - 'research/recovered/STONEAGE-WAEI-CN20-AMIDUO-VISUAL-REFERENCE-R1.json'
+      - 'tools/stoneage_cn20_pet_visual_batch.py'
+      - 'tools/stoneage_cn20_recordpoint_source.py'
+      - 'tools/stoneage_cn2003_group2_manor_report.py'
+      - 'tests/test_stoneage_cn20_pet_visual_batch.py'
+      - '.github/workflows/verify-stoneage-cn20-pet-visual-batch.yml'
+permissions:
+  contents: read
+jobs:
+  source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - run: python -m pip install Pillow
+      - name: Check placeholder identity, separate captures and exact parent custody
+        run: python -m unittest tests.test_stoneage_cn20_pet_visual_batch -v
+      - name: Refetch known HTML and four exact JPEGs; fully decode and test source mutations
+        run: python -m tools.stoneage_cn20_pet_visual_batch --fetch --output /tmp/cn20-pet-visual/replay.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cn20-pet-visual-derived-replay
+          path: /tmp/cn20-pet-visual/replay.json
+          if-no-files-found: error
+          retention-days: 30

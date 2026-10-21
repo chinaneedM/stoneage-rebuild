@@ -1319,3 +1319,16 @@ R47有限报告包结束，原文“中午”/精确时分、四家族人数歧�
 双ZIP实际下载，候选3296B/main3296B，SHA256分别6ecb21d9a9f207c9bf27df95eb00b494b3c526f2d8904af2b693d5ac1f4c9888 / 83e2d71ad61af87d851a6921e995adde1ed3f67b2f630320f506269a91482968；各唯一replay.json13283B/SHA256ee53863ce796cda16294efc8f2b60dcbda8daa4d4e5f2e4d9bc9c78ba50a3789/原生Git blob6f23139cee40299ba11b087104aa36f865f5b311，候选/main/本地逐字节一致。双raw、九来源/工具/依赖/工作流/规格pins、九启动完整前缀与21实际workflow永久存research/recovered/STONEAGE-CN20-RECORDPOINT-CUSTODY-R1.json；原HTML/版权图不进Git。
 
 新增永久收据强制门后本包11/127相关检查另实跑、移除收据必须失败；首轮10项不改写为11项。保管提交自身Actions另后验，不套内容绿灯。采集日/首刊、运营主机/作者、记录贡品/银行、来源坐标/可执行NPC点、未知肉/免费、多肉顿号/AND或OR、注销目的地/保存载体、局部404/全部失图保持分开。R51有限包结束，最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-52回全22域；Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停，全部历史完整。
+
+
+## 2026-10-21 R52大陆2.0三宠物网页外观补充与阿米朵旧对照
+
+新读main47b593b715e25ecb55af2e9b080d92b7a247b182/tree16f697a355ccdf82a07dc4ed038e9688aa4b690f、440分支/0开放PR/4984完整树无AGENTS；R51保管提交自身main11项全SUCCESS。九启动全文/原生Git与22域索引重新固定，仅旧37642417333仍queued，无in_progress。最高NEXT52轮换宠物外观，不扩R51记录点/保存。
+
+选材核对发现104格三页目录已验收，故不重做名录。固定首目录、有限目录和阿米朵视觉报告全文，重取既有20011204194619华义2.0正文69317B/SHA561950fd7bba41e7d39f4a781a671e11e175c7fe08dd1b5481fdf1fd23ba351b。本轮新增网页位置001/004/040三图片像素，007阿米朵仅旧对照；规格docs/specs/STONEAGE-CN20-PET-VISUAL-BATCH-SOURCE-R1.md，三研究记录不当原宠物实体。
+
+001字面???→img/newpet/6.JPG，20011205050022/4196B；004字面??2→2.jpg，实际20011023194345/3785B且最终原主机无www；007阿米朵→7.JPG，20011205051046/4831B旧SHA一致；040呼波波→40.JPG，20011023183116/3520B。四JPEG全Pillow解码RGB83×90单文件帧并原像素目视：绿色四足、蓝圆形轮廓内浅色形象、既有黄褐阿米朵、蓝色直立形象。问号两名不补，呼波波来自源单元格；不推物种ID/技能/SPR/模型/动画。初次从正文档案跳各图，CI只精确取最终捕获，不重演初跳；主机差异不当全站等价。001/004有HTML83×90，007/040未声明，不回填。
+
+旧104位置/98具名/6问号历史报告不变；补充后4引用已取、100未取，本轮新增3/旧对照1、新解名0、新原游戏实体0，不当物种总数或百分比。14实际HTML改写排除digest仍拒绝、4图真实字节反例与外围script正例；独立单元格/实体/路径大小写及JPEG SOF尺寸另核，候选/main实际取源和永久保管据实另记。
+
+止于一既有正文/三新图一旧图/三父Git报告，不自动追100图或helper。重开需明确原名、同构建SPR/原动画/数值表。最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-53回全22域，Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停，全部历史前缀完整；原HTML/JPEG不进Git。
