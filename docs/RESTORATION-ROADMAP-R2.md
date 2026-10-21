@@ -1181,3 +1181,12 @@ artifact12307574197/12306859797实际下载，各ZIP3068B，SHA256分别6decb924
 四实际源链接JPEG当前94135/10369/60645/114772B，分别550×413/330×60/550×413/550×398，均完整Pillow解码/目视。2011工具栏单图标红框裁图不当原屏坐标；上架窗口可见巴朵兰恩样本1000、议价和SELL，不作标准物价、币种或原物种ID。2012场景与2011首图构图相似，但hash/高度不同，可能复用为HYPOTHESIS，未认证精确变换/截图年代/同构建。两文操作段逐字相同、2012多出weibo字样分开，不把复用当新增功能或两版运行等价。
 
 工具实取两页四图，22实际正文改写绕过digest门拒绝、两外围script正例、原URL与HTTPS请求改写分别保存；首轮10用例零跳过。原HTML/版权图不入Git，只派生记录/指纹/观察；候选/main自身Actions与实际ZIP永久保管按后续实证。最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-46回全22域，本摆摊/物价helper止点到；重开需具名版本原UI/真实交易/费用权限/买方结算或离线限制来源。Stage A7 PARTIAL+2 OPEN，B/wiki GATED，R79暂停，全部旧历史前缀保留。
+
+
+## 2026-10-21 R45独立候选/main双取源、四图指纹与永久派生保管
+
+内容7aa0b4272082972407c84e8347d45d48e8eb03e3/treeb883e06e48392b2389e8aaccced5c2d6ca2ae879自身候选10项/main11项适用Actions全SUCCESS；来源候选run39545800262/job119043570189、主线run39545863012/job119043767652各实际10用例零跳过、HTTP76967/66924B双页+四JPEG、22真实正文改写拒绝和双外围正例。独立远端内容main干净检出86相关测试、九完整历史前缀与原生Git标识通过；另一路正则/HTML实体段落核心SHA一致，本地四JPEG完整Pillow解码/目视。CI图检查准确限定为原字节SHA与SOF尺寸，不冒称历史客户端渲染。
+
+artifact12321353430/12321178973实际下载，各ZIP3693B，SHA256分别f3ec917037e8e22c6b59e47046b027d88140b66d00ed2bd15310aa92cf63fbd2 / 882af32e437077cb0dfbc19210703a1a606fee21b3d7b83f1909cea0252eabdf；各唯一replay.json10853B/SHA256 bda7add6deeb611680a6b00af4950dd4ba4321e248f262ec068d79695a618fdb、原生Git blob9eab3e3c11bb86eaa0c4e55d6b1e7d1805cc70ab，候选/main/本地完整JSON逐字节一致。双raw及八来源/工具/工作流/规格pins、21实际workflow、九启动全前缀永久置 research/recovered/STONEAGE-CN2011-2012-STALL-CUSTODY-R1.json。原HTML/版权图仍不入Git。
+
+新增强制保管门后本包11项/87相关用例实跑通过，删除收据应失败，原内容10项不改写成11项。保管提交自身Actions另独立后验，不套父提交成功。宣传费用/所有税费、SELL待售/成交、样本数字/主表物价、重复操作与相似图片/同构建、网页尺寸/客户端原生尺寸继续分开。R45有限包结束，最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-46回全22域另一具名材料，Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停，历史前缀完整。

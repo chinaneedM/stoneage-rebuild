@@ -1,0 +1,340 @@
+{
+  "schema": "stoneage.cn2011_2012_stall.custody.r1",
+  "candidate": {
+    "zip_bytes": 3693,
+    "zip_sha256": "f3ec917037e8e22c6b59e47046b027d88140b66d00ed2bd15310aa92cf63fbd2",
+    "raw_bytes": 10853,
+    "raw_sha256": "bda7add6deeb611680a6b00af4950dd4ba4321e248f262ec068d79695a618fdb",
+    "raw_git_blob": "9eab3e3c11bb86eaa0c4e55d6b1e7d1805cc70ab",
+    "matches_local_bytes": true,
+    "head": "7aa0b4272082972407c84e8347d45d48e8eb03e3",
+    "tree": "b883e06e48392b2389e8aaccced5c2d6ca2ae879",
+    "run_id": 39545800262,
+    "job_id": 119043570189,
+    "artifact_id": 12321353430,
+    "conclusion": "success",
+    "applicable_workflow_count": 10,
+    "all_applicable_workflows_success": true,
+    "actual_unit_tests": 10,
+    "skipped_tests": 0,
+    "real_body_mutations": 22
+  },
+  "main": {
+    "zip_bytes": 3693,
+    "zip_sha256": "882af32e437077cb0dfbc19210703a1a606fee21b3d7b83f1909cea0252eabdf",
+    "raw_bytes": 10853,
+    "raw_sha256": "bda7add6deeb611680a6b00af4950dd4ba4321e248f262ec068d79695a618fdb",
+    "raw_git_blob": "9eab3e3c11bb86eaa0c4e55d6b1e7d1805cc70ab",
+    "matches_local_bytes": true,
+    "matches_candidate_bytes": true,
+    "head": "7aa0b4272082972407c84e8347d45d48e8eb03e3",
+    "tree": "b883e06e48392b2389e8aaccced5c2d6ca2ae879",
+    "run_id": 39545863012,
+    "job_id": 119043767652,
+    "artifact_id": 12321178973,
+    "conclusion": "success",
+    "applicable_workflow_count": 11,
+    "all_applicable_workflows_success": true,
+    "actual_unit_tests": 10,
+    "skipped_tests": 0,
+    "real_body_mutations": 22
+  },
+  "workflow_runs": [
+    {
+      "run_id": 39545862848,
+      "head": "7aa0b4272082972407c84e8347d45d48e8eb03e3",
+      "branch": "main",
+      "name": "Validate legacy StoneAge assistant history and pet content gaps",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 39545862934,
+      "head": "7aa0b4272082972407c84e8347d45d48e8eb03e3",
+      "branch": "main",
+      "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 39545862926,
+      "head": "7aa0b4272082972407c84e8347d45d48e8eb03e3",
+      "branch": "main",
+      "name": "Validate Stage A early source gap triage",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 39545863292,
+      "head": "7aa0b4272082972407c84e8347d45d48e8eb03e3",
+      "branch": "main",
+      "name": "Validate StoneAge preproduction content archive and wiki boundary",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 39545863012,
+      "head": "7aa0b4272082972407c84e8347d45d48e8eb03e3",
+      "branch": "main",
+      "name": "Verify CINS-era stall source UI and cross-date boundaries",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 39545863058,
+      "head": "7aa0b4272082972407c84e8347d45d48e8eb03e3",
+      "branch": "main",
+      "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 39545862799,
+      "head": "7aa0b4272082972407c84e8347d45d48e8eb03e3",
+      "branch": "main",
+      "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 39545863014,
+      "head": "7aa0b4272082972407c84e8347d45d48e8eb03e3",
+      "branch": "main",
+      "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 39545863015,
+      "head": "7aa0b4272082972407c84e8347d45d48e8eb03e3",
+      "branch": "main",
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 39545862835,
+      "head": "7aa0b4272082972407c84e8347d45d48e8eb03e3",
+      "branch": "main",
+      "name": "Validate StoneAge Stage A joint review decision",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 39545863078,
+      "head": "7aa0b4272082972407c84e8347d45d48e8eb03e3",
+      "branch": "main",
+      "name": "Independently verify TW1.0 R58 rooted helper returns and source custody",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 39545800302,
+      "head": "7aa0b4272082972407c84e8347d45d48e8eb03e3",
+      "branch": "agent/cn2011-stall-r45-20261021",
+      "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 39545800168,
+      "head": "7aa0b4272082972407c84e8347d45d48e8eb03e3",
+      "branch": "agent/cn2011-stall-r45-20261021",
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 39545800127,
+      "head": "7aa0b4272082972407c84e8347d45d48e8eb03e3",
+      "branch": "agent/cn2011-stall-r45-20261021",
+      "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 39545800105,
+      "head": "7aa0b4272082972407c84e8347d45d48e8eb03e3",
+      "branch": "agent/cn2011-stall-r45-20261021",
+      "name": "Validate StoneAge Stage A joint review decision",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 39545800160,
+      "head": "7aa0b4272082972407c84e8347d45d48e8eb03e3",
+      "branch": "agent/cn2011-stall-r45-20261021",
+      "name": "Validate StoneAge preproduction content archive and wiki boundary",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 39545800118,
+      "head": "7aa0b4272082972407c84e8347d45d48e8eb03e3",
+      "branch": "agent/cn2011-stall-r45-20261021",
+      "name": "Validate legacy StoneAge assistant history and pet content gaps",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 39545800242,
+      "head": "7aa0b4272082972407c84e8347d45d48e8eb03e3",
+      "branch": "agent/cn2011-stall-r45-20261021",
+      "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 39545800262,
+      "head": "7aa0b4272082972407c84e8347d45d48e8eb03e3",
+      "branch": "agent/cn2011-stall-r45-20261021",
+      "name": "Verify CINS-era stall source UI and cross-date boundaries",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 39545800106,
+      "head": "7aa0b4272082972407c84e8347d45d48e8eb03e3",
+      "branch": "agent/cn2011-stall-r45-20261021",
+      "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 39545800138,
+      "head": "7aa0b4272082972407c84e8347d45d48e8eb03e3",
+      "branch": "agent/cn2011-stall-r45-20261021",
+      "name": "Validate Stage A early source gap triage",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "source_pins": [
+    {
+      "path": "research/recovered/STONEAGE-CN2011-2012-STALL-SOURCE-R1.json",
+      "bytes": 11034,
+      "sha256": "73706bb9ef8f097d7a89c7a83451a41bc60da710899e463e6fb2ecfc0c94569c",
+      "git_blob": "74aa91ba9fd1794415ceaf86c95ea702a7c5edb9"
+    },
+    {
+      "path": "research/recovered/STONEAGE-CN2011-2012-STALL-LOCAL-REPLAY-R1.json",
+      "bytes": 10853,
+      "sha256": "bda7add6deeb611680a6b00af4950dd4ba4321e248f262ec068d79695a618fdb",
+      "git_blob": "9eab3e3c11bb86eaa0c4e55d6b1e7d1805cc70ab"
+    },
+    {
+      "path": "research/recovered/STONEAGE-CN2011-2012-STALL-CI-CANDIDATE-REPLAY-R1.json",
+      "bytes": 10853,
+      "sha256": "bda7add6deeb611680a6b00af4950dd4ba4321e248f262ec068d79695a618fdb",
+      "git_blob": "9eab3e3c11bb86eaa0c4e55d6b1e7d1805cc70ab"
+    },
+    {
+      "path": "research/recovered/STONEAGE-CN2011-2012-STALL-CI-MAIN-REPLAY-R1.json",
+      "bytes": 10853,
+      "sha256": "bda7add6deeb611680a6b00af4950dd4ba4321e248f262ec068d79695a618fdb",
+      "git_blob": "9eab3e3c11bb86eaa0c4e55d6b1e7d1805cc70ab"
+    },
+    {
+      "path": "tools/stoneage_cn2011_stall_source.py",
+      "bytes": 13572,
+      "sha256": "9613a69f6d2cd66cb3e3d92ec651e5986a69e542a46f1f391e7b8905f7350d07",
+      "git_blob": "deabe96bcc6ec181e30511ee85c701c7c042e303"
+    },
+    {
+      "path": ".github/workflows/verify-stoneage-cn2011-stall-source.yml",
+      "bytes": 1286,
+      "sha256": "b6e9bf89a519932fdd545c6710ee9c7bccae7f73715c02af63cfd52499950521",
+      "git_blob": "4ab9d1c48dcd79ec82c1d089e01fd1c6062b9921"
+    },
+    {
+      "path": "docs/specs/STONEAGE-CN2011-2012-STALL-SOURCE-R1.md",
+      "bytes": 4901,
+      "sha256": "4ffa64684c3dfb27c152f79195898359366d449fbedab55e465059e8ff4bd125",
+      "git_blob": "3b51c449556b2677211c241becf3410bb0781e5c"
+    },
+    {
+      "path": "docs/STONEAGE-OFFICIAL-VERSION-NAMED-CONTENT-REVIEW-R45.md",
+      "bytes": 1629,
+      "sha256": "192ef7747ad583ef276eecb20cecb96571121001ebb8a8f6d2d731319fa58eb3",
+      "git_blob": "aa6aa76921a970f738e0e3b7654bf30a81eeecfd"
+    }
+  ],
+  "startup_prefixes": [
+    {
+      "path": "README.md",
+      "bytes": 29259,
+      "sha256": "df64b00e617a21009969cbd4346853f4d4f912566c3e4f9e239a5ad120f0ddb3",
+      "git_blob": "29357bb15396959f2b320708d804a10b50a19159"
+    },
+    {
+      "path": "docs/PROJECT-CONTINUITY-PROTOCOL-R1.md",
+      "bytes": 9762,
+      "sha256": "c44834eeec87f7a43e9cb4905f08377349e36d58b1fff2c5a75a6975db695e3b",
+      "git_blob": "ba9bbe19384589400abc61af37a360a40bf91452"
+    },
+    {
+      "path": "docs/CURRENT-STATE.md",
+      "bytes": 2228139,
+      "sha256": "4272119e3c18f568ca51fd40abecccaf9e0f91bd20c1907ac2d6feebc25e7202",
+      "git_blob": "393033b009b7f82bf8306e4d5618e84b121f8e98"
+    },
+    {
+      "path": "docs/DESIGN-DECISIONS.md",
+      "bytes": 45965,
+      "sha256": "28b572ed01179eacd5a06b4ad62c76e4baef22ac49587aa0bad452a7cb3fe8e6",
+      "git_blob": "013ae4fad9301ab0140fe408a423b3abad97d1f9"
+    },
+    {
+      "path": "docs/HISTORICAL-TIMELINE.md",
+      "bytes": 533840,
+      "sha256": "c35f5fd31ab1ac4a3c5cde55b15f37d30b074f3ed848860f3d514ff7f2d9194c",
+      "git_blob": "269c25bfc9a1debcfb455eeb36420b5c6a954373"
+    },
+    {
+      "path": "docs/SOURCE-REGISTRY.md",
+      "bytes": 822960,
+      "sha256": "302c8cb600405d7870c598e5c9059fa737ecc8e4de06e5adf2674a166fccd4c6",
+      "git_blob": "6b111da71dd937fcc92979e01343b13145db9cb7"
+    },
+    {
+      "path": "docs/RESTORATION-ROADMAP-R2.md",
+      "bytes": 176180,
+      "sha256": "4403e748edf7895c96a9ec734f1680844dc8dee298bff8135c666c710419173c",
+      "git_blob": "d6ab121e516c9bf5b540d4af1663001765d3e22b"
+    },
+    {
+      "path": "research/recovered/STONEAGE-22-DOMAIN-SOURCE-READY-PORTFOLIO-R2.json",
+      "bytes": 15948,
+      "sha256": "7d50de08f7855cf16dbe54b1747e258f1cc1223de88cc217172fd145f3c704ce",
+      "git_blob": "088b469b3c51e689cff27f33fc3bb49de2d24b2c"
+    },
+    {
+      "path": "docs/STONEAGE-PREPRODUCTION-CONTENT-ARCHIVE-R1.md",
+      "bytes": 12915,
+      "sha256": "27f75c5578c7c0d3102be4800477793e20c6e8a27ab3cc8e15469262c11359ff",
+      "git_blob": "96ac90e991f0b173a104672d9ae7f5bb50865235"
+    }
+  ],
+  "independent_acceptance": {
+    "fresh_remote_content_checkout": "7aa0b4272082972407c84e8347d45d48e8eb03e3",
+    "related_tests": 86,
+    "skipped_tests": 0,
+    "independent_regex_paragraph_digests_match_htmlparser": true,
+    "four_current_jpegs_fully_decoded_locally_with_pillow": true,
+    "four_images_manually_inspected": true,
+    "ci_image_check": "EXACT_BYTE_DIGEST_AND_JPEG_SOF_DIMENSIONS_NOT_HISTORICAL_CLIENT_RENDER",
+    "actual_zip_downloads_match_all_local_raw_bytes": true
+  },
+  "bounds": {
+    "original_html_or_assets_committed": false,
+    "historical_server_executed": false,
+    "authenticated_original_operator_file_recovered": false,
+    "specific_numeric_build_known": false,
+    "image_sample_is_standard_price": false,
+    "all_taxes_zero_proven": false,
+    "offline_or_buyer_settlement_recovered": false,
+    "same_build_from_repeated_copy_proven": false,
+    "original_capture_date_or_native_resolution_proven": false,
+    "stage_b_or_wiki_started": false
+  }
+}

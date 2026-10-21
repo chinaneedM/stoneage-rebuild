@@ -87,6 +87,44 @@ class StallSource(unittest.TestCase):
         self.reject(['status', 'stage_b_wiki'], 'OPEN')
         self.reject(['next'], 'EXPAND_STALL_HELPERS')
 
+    def test_required_permanent_custody_and_independent_main_artifact(self):
+        import hashlib
+        p = ROOT / ('research/recovered/' + STEM + '-CUSTODY-R1.json')
+        self.assertTrue(p.is_file(), 'Accepted source requires a permanent custody receipt')
+        r = json.loads(p.read_text())
+        self.assertEqual(r['schema'], 'stoneage.cn2011_2012_stall.custody.r1')
+        for pin in r['source_pins']:
+            b = (ROOT / pin['path']).read_bytes()
+            self.assertEqual(len(b), pin['bytes'])
+            self.assertEqual(hashlib.sha256(b).hexdigest(), pin['sha256'])
+            self.assertEqual(hashlib.sha1(b'blob ' + str(len(b)).encode() + b'\0' + b).hexdigest(), pin['git_blob'])
+        self.assertEqual(len(r['startup_prefixes']), 9)
+        for pin in r['startup_prefixes']:
+            b = (ROOT / pin['path']).read_bytes()[:pin['bytes']]
+            self.assertEqual(hashlib.sha256(b).hexdigest(), pin['sha256'])
+            self.assertEqual(hashlib.sha1(b'blob ' + str(len(b)).encode() + b'\0' + b).hexdigest(), pin['git_blob'])
+        for key in ('run_id', 'job_id', 'artifact_id'):
+            self.assertNotEqual(r['candidate'][key], r['main'][key])
+        self.assertEqual(len(r['workflow_runs']), 21)
+        self.assertTrue(all(x['conclusion'] == 'success' for x in r['workflow_runs']))
+        copies = []
+        for label in ('candidate', 'main'):
+            meta = r[label]
+            self.assertTrue(meta['all_applicable_workflows_success'])
+            self.assertEqual(meta['actual_unit_tests'], 10)
+            self.assertEqual(meta['skipped_tests'], 0)
+            b = (ROOT / ('research/recovered/' + STEM + '-CI-' + label.upper() + '-REPLAY-R1.json')).read_bytes()
+            self.assertEqual(len(b), meta['raw_bytes'])
+            self.assertEqual(hashlib.sha256(b).hexdigest(), meta['raw_sha256'])
+            self.assertEqual(hashlib.sha1(b'blob ' + str(len(b)).encode() + b'\0' + b).hexdigest(), meta['raw_git_blob'])
+            replay = json.loads(b)
+            self.assertEqual(replay['extracted'], self.r['extracted'])
+            self.assertEqual(len(replay['images']), 4)
+            self.assertFalse(replay['raw_html_or_assets_in_output'])
+            copies.append(b)
+        self.assertEqual(copies[0], copies[1])
+        self.assertTrue(all(v is False for v in r['bounds'].values()))
+
 
 if __name__ == '__main__':
     unittest.main()
