@@ -1213,3 +1213,14 @@ R46验收补记：初次本地派生JSON生成把定位页字段附于末尾，�
 三个ZIP真实下载各2968B，SHA256按初发/修正候选/main分别775706430eb86382b34d3ed02b5f486b879412388813b194a2391d84a15da123 / 8b185be9b17294374a78b63f547299d815cd45e5e83c655131306ecebab0fe5b / 2744ca047d3e8344ea1b3b0fc56c38bca47b10f660a36d0c4440e04692c3e73b；各唯一replay.json7320B/SHA256 876b2966758eb54a8926d5e836cec9b47ee21002b15cc099006ad6f0621cfe66、原生Git blob667b5329a58f8be01d201abdf3dea017352eb865逐字节一致并与修正本地匹配。早期本地副本blob33bfdd55892feeff991585060a43d3ffe94078d1/SHA256 99eaaa6364e80ec847689f9269f57defffeba1e683dc929f70531c88eb5b6785实际由Git重读，确认仅字段顺序不同、解析JSON语义相同；不能说源网页发生变更或初发CI失败。
 
 双raw副本/初发同blob定位、八来源工具工作流规格pins、19修正候选/main workflow与10初发workflow、三完整HEAD/tree/run/job/artifact/ZIP/raw链和九启动全前缀永久存 research/recovered/STONEAGE-SA2-PET-CARE-INTERVIEW-CUSTODY-R1.json。原HTML/照片不进Git。新增强制收据门后本包12项/99相关检查通过，首轮11项不改写为12项；保管提交自身候选/main Actions另独立后验。产品/说话者/前期与部署、录制月/刊发日/页脚发行日、種類/匹/约数、普通E邮件/游戏内邮件保持区分，项目未发信。R46结束，最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-47回22域另一材料，Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停，全部旧历史保存。
+
+
+## 2026-10-21 R47 华义2.0(2)开服后四庄园与家族具名报告
+
+新读main ac389193dbd71e5977975840601404e1fc022134 / tree d0a200343d5701c0e44af580096126b0ae32a060、435分支/0开放PR/4934项完整树无AGENTS、自身main9项全SUCCESS；旧queued37642417333保留。九启动全文与路线/22域索引固定，最高NEXT47进入有限的家族/庄园内容归属审查。
+
+新浪2003-11-20 16:43明确转华义消息的后续报道当前33636B/GB18030，核心SHA d16ab4ca25e051f0c88916df49003cfc46d66c819864be53ae4ec2d457ca8aac；按原顺序：萨姆吉尔/圣战部落光/4524，玛丽娜丝/永远友情/2280，加加/龙族/4079，卡鲁它那/友情岁月/2811。报告11月19日“中午”开机，不推精确12:00/时区/构建。平均同时在线2000人以上、24小时内建族超过200均为运营方报告；“四家族人数超过90”范围不明，不拆每家族90。声望不是门槛，家族不是2026当前占领者。专属骑宠地位表述无名单/规则；挑战/PK为未来时；20日早晨繁忙临调恢复是运营方陈述，非独立执行/uptime/补偿见证。
+
+实际正文一图当前19585B/300×225、SHA ad1f011da8a7c83187e856064e376d011b88114ddf1590136722afa9ecd03c40，原http/requested HTTPS分开，完整Pillow解码/目视；不标庄园家族/宠物ID、拍摄日期、原生分辨率或事件证明。正文外编辑相关链接实际指回R43预告，固定旧契约全文字节/原生Git blob；仅新文补玛丽娜丝/卡鲁它那和占领快照，旧文remaining_manor_names=null保持。09:00维护与“中午”事后报告不合成精确开服，WGS执行/九变四补丁/跨版本规则不证明。
+
+8派生记录、中文规格 docs/specs/STONEAGE-CN2003-GROUP2-MANOR-REPORT-SOURCE-R1.md、真实取源工具/18实际源改写绕过digest门拒绝/外层script正例；独立正则HTML实体重建正文与顺序列表一致。初轮10本包/109相关测试零跳过。原HTML/版权JPEG不入Git；候选/main自身Actions和ZIP永久保管另据实追加。有限包止点一页一图一旧契约，不扩庄园/声望helper；重开需具名规则/原ID/实际过程或有日期原档。最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-48回全22域另一具名材料，Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停，全部历史前缀保留。
