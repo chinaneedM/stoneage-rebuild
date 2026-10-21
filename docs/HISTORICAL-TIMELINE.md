@@ -4063,3 +4063,12 @@ R47有限报告包结束，原文“中午”/精确时分、四家族人数歧�
 实际三图按HTML顺序_0/_2/_1，31490/26016/24235B、200×133/170×141/170×141，完整Pillow解码/目视为地图示意、木桥与洞口场景，均无聊天过滤面板，不认证地图/人物身份或原生分辨率。原HTML/版权JPEG不进Git。20真实正文语义改写绕过摘要门拒绝，外层script与meta作者正例通过；独立核心/日程/推断词/图序另核。候选/main独立取源及实际ZIP永久保管另据实追加。
 
 有限止点一报道六记录三图，不扩聊天实现/未名地图/任务助手；重开需同构建官方UI/手册、实际过滤过程、地图名入口或任务开放日志。最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-51回全22域另一具名材料，Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停，历史前缀完整，不报无分母整体百分比。
+
+
+## 2026-10-21 R50同期报道双取源、图像边界与永久派生保管
+
+内容ba4cb029df19e17e600b8190c91e622d831450e5/tree789916334c019e00db4a0d441a2b5abd33153809自身候选10项/main11项适用Actions全SUCCESS。来源候选run39586280930/job119175869090/artifact12339775719，主线run39586486553/job119176551830/artifact12339479771各实跑10本包用例零跳过，重取10860B正文及31490/26016/24235B三JPEG，20真实语义改写拒绝、外层script/meta作者正例通过。远端内容干净检出141相关测试、九完整历史前缀及原生Git标识核验通过；独立正则/实体核心、日程/约数/推断词与图序一致，三图完整Pillow解码/目视。CI只比原字节与SOF尺寸，不冒称聊天UI或客户端运行。
+
+双ZIP真实下载，候选3435B/main3435B，SHA256分别6668720042822b995a8df522de3ea98ccdc80730edcfa72e724759b6b92ca068 / 9fc374ac7e73316eccfa90e05e98db449afd018c0d0739e88b44d5f7b97225a7；各唯一replay.json9108B/SHA256256f4fa8073b97c077c84518e0af2c3f2f78ddd785fe974c6366f1c85a68f637/原生Git blobaba19db65aafee3fb0cdda6080d129b938739de3，候选/main/本地逐字节一致。双raw、十来源/工具/依赖/工作流/规格pins、九完整启动前缀与21实际workflow永久存research/recovered/STONEAGE-JP2004-CHAT-UPDATE-CUSTODY-R1.json；原HTML/版权JPEG不入Git。
+
+新增强制收据门后本包11项/142相关检查另实跑、删除收据必须失败；初轮10项历史不改写为11项，保管提交自身Actions后验，不套内容绿灯。媒体/运营原文、2004服务阶段/原作首发、维护计划/部署、NPC配置/记者任务推断、约30分/精确时长、聊天过滤/封号、配图/过滤UI与未名地图身份均分开。R50有限包结束；最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-51回全22域，Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停，历史完整。
