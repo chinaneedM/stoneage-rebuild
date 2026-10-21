@@ -88,6 +88,49 @@ class SA2Care(unittest.TestCase):
         self.assertTrue(all(x['rejected_without_digest_gate'] for x in cases))
         self.assertTrue(r['context_audit']['outer_script_positive'])
 
+    def test_required_durable_custody_and_serialization_history(self):
+        import hashlib
+        p = ROOT / ('research/recovered/' + STEM + '-CUSTODY-R1.json')
+        self.assertTrue(p.is_file(), 'Accepted source requires a permanent custody receipt')
+        r = json.loads(p.read_text())
+        self.assertEqual(r['schema'], 'stoneage.sa2_pet_care_interview.custody.r1')
+        for pin in r['source_pins']:
+            b = (ROOT / pin['path']).read_bytes()
+            self.assertEqual(len(b), pin['bytes'])
+            self.assertEqual(hashlib.sha256(b).hexdigest(), pin['sha256'])
+            self.assertEqual(hashlib.sha1(b'blob ' + str(len(b)).encode() + b'\0' + b).hexdigest(), pin['git_blob'])
+        self.assertEqual(len(r['startup_prefixes']), 9)
+        for pin in r['startup_prefixes']:
+            b = (ROOT / pin['path']).read_bytes()[:pin['bytes']]
+            self.assertEqual(hashlib.sha256(b).hexdigest(), pin['sha256'])
+            self.assertEqual(hashlib.sha1(b'blob ' + str(len(b)).encode() + b'\0' + b).hexdigest(), pin['git_blob'])
+        for key in ('run_id', 'job_id', 'artifact_id'):
+            self.assertEqual(len({r[label][key] for label in ('initial_candidate', 'candidate', 'main')}), 3)
+        self.assertEqual(len(r['workflow_runs']), 19)
+        self.assertEqual(len(r['prior_candidate_runs']), 10)
+        self.assertTrue(all(x['conclusion'] == 'success' for x in r['workflow_runs'] + r['prior_candidate_runs']))
+        copies = []
+        for label in ('initial_candidate', 'candidate', 'main'):
+            meta = r[label]
+            self.assertEqual(meta['actual_unit_tests'], 11)
+            self.assertEqual(meta['skipped_tests'], 0)
+            self.assertTrue(meta['all_applicable_workflows_success'])
+            path = meta['derived_git_path'] if label == 'initial_candidate' else 'research/recovered/' + STEM + '-CI-' + label.upper() + '-REPLAY-R1.json'
+            b = (ROOT / path).read_bytes()
+            self.assertEqual(len(b), meta['raw_bytes'])
+            self.assertEqual(hashlib.sha256(b).hexdigest(), meta['raw_sha256'])
+            self.assertEqual(hashlib.sha1(b'blob ' + str(len(b)).encode() + b'\0' + b).hexdigest(), meta['raw_git_blob'])
+            self.assertEqual(json.loads(b)['extracted'], self.r['extracted'])
+            self.assertEqual(json.loads(b)['recording_context'], self.r['recording_context'])
+            copies.append(b)
+        self.assertEqual(copies[0], copies[1])
+        self.assertEqual(copies[1], copies[2])
+        first = r['initial_candidate']
+        self.assertFalse(first['initial_local_bytes_match_cli'])
+        self.assertTrue(first['initial_local_semantic_json_matches_cli'])
+        self.assertNotEqual(first['initial_local_git_blob'], first['raw_git_blob'])
+        self.assertTrue(all(v is False for v in r['bounds'].values()))
+
 
 if __name__ == '__main__':
     unittest.main()

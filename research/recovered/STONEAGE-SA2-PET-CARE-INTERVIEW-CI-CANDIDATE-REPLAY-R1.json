@@ -1,0 +1,197 @@
+{
+  "schema": "stoneage.sa2_pet_care_interview.derived_replay.r1",
+  "http_bytes": 32699,
+  "http_sha256": "b33a417262854cccd2870adfbb6f0490e5aa5856e14973f60699adb45ae1a2dd",
+  "extracted": {
+    "speaker_turn_core_sha256": "affbb359cca11ab96b7cf520640531a86670f050e21868d031f76f6df08fea38",
+    "speaker_turn_count": 29,
+    "product": "StoneAge2",
+    "product_relation": "SEPARATE_NEW_GAME_NOT_STONEAGE_VERSION_2_PATCH",
+    "evidence_phase": "PRE_BETA_DEVELOPER_INTERVIEW_NOT_DEPLOYMENT",
+    "publication_date": null,
+    "presentation_month_day_as_written": "2月14日",
+    "current_footer_release_date": "2006/07/25",
+    "footer_is_interview_publication_date": false,
+    "pet_ai": {
+      "speaker": "石川彰弘",
+      "influence_reported": "UPBRINGING_CHANGES_PERSONALITY_AND_HIDDEN_PARAMETERS",
+      "formula_or_hidden_parameter_names": null
+    },
+    "den": {
+      "speaker": "長田妙子",
+      "function": "PET_REARING_SPACE",
+      "larger_rooms_allow_more_pets": true,
+      "room_size_to_capacity_table": null
+    },
+    "breeding": {
+      "speaker": "石川彰弘",
+      "flow": [
+        "LEND_OR_BORROW_PETS_AS_EXAMPLES",
+        "MAKE_TWO_PETS_GET_ALONG",
+        "NEW_EGG",
+        "CHILD_INHERITS_PARENT_QUALITIES"
+      ],
+      "exact_inheritance_compatibility_cost_time": null
+    },
+    "skills": {
+      "speaker": "遊佐孝之",
+      "learner_reported": "PETS",
+      "skill_roster_or_player_has_no_actions_proven": null
+    },
+    "capacity": {
+      "speaker": "石川彰弘",
+      "walking_max_reported": 5,
+      "walking_unit": "匹",
+      "den_range_reported": [
+        10,
+        15
+      ],
+      "den_unit_as_written": "種類",
+      "den_depends_on_size": true,
+      "combined_approximate_reported": 20,
+      "combined_unit_as_written": "匹程度",
+      "exact_species_total": null,
+      "types_to_individual_slots_equivalence_proven": false
+    },
+    "lifespan_rebirth": {
+      "speaker": "石川彰弘",
+      "lifespan_reported": true,
+      "revival_through_rebirth_reported_possible": true,
+      "exact_duration_clock_cost_and_preserved_state": null
+    },
+    "runaway": {
+      "speaker": "石川彰弘",
+      "cause_reported": "BAD_TREATMENT_MAY_RESULT_IN_SULKING_AND_LEAVING",
+      "threshold_probability_and_return_rules": null
+    },
+    "notification": {
+      "speaker": "石川彰弘",
+      "trigger_reported": "PLAYER_NOT_LOGGING_IN_FOR_A_WHILE",
+      "channel_reported": "ORDINARY_EMAIL_NOT_GAME_MAIL",
+      "purpose_stated": "KEEP_PLAYER_CONNECTED_TO_WORLD_WHILE_NOT_PLAYING",
+      "delay_content_delivery_guarantee_or_consent_rules": null,
+      "message_sent_by_project": false
+    },
+    "early_stoneage_rules_transferred": false,
+    "historical_game_executed": false
+  },
+  "audit": {
+    "real_source_mutations": [
+      {
+        "case": "separate-product",
+        "input_sha256": "dcd1b3076ab9e03168c774a491ccc7f832c6865021302c36443cefae74f76418",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "developer-attribution",
+        "input_sha256": "9c63047c5bc9e87e95d290fe2c48c19a81c8fcd9437697e5fc54a42ad2c10577",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "personality-upbringing",
+        "input_sha256": "0d40e21bde96a1b6122d2cf3c9dfcc1ce11d02c186126c4c093ec7e7939aff0e",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "hidden-parameters",
+        "input_sha256": "e59aac75e1787d3534a49d4845e373fea56063419192a7a5dceb93d125397522",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "room-capacity-direction",
+        "input_sha256": "054ecd135d4e3b96fdcaad81786e917b8cab68910cf48a9247b1beb68f1c8242",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "breeding-parent-number",
+        "input_sha256": "32100af1624f329e1c7bdc75f5fe61ec0be3bf9ea67b8e5e07f1087bf6b7eeb0",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "parent-qualities",
+        "input_sha256": "e464d2daf945a5a5de1f6f6580af2ef4b5a92c06742aedfd11d941f46029d28b",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "skill-learner",
+        "input_sha256": "926931b861b7ead59bc6831fbf8bda4054a42a950aff6f05142762ea7c8a1727",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "walking-limit",
+        "input_sha256": "9ca0f0ed29f2486eb744f1ff4c3ddcb5acd32fe537fc2de668f4a5b8783826f5",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "den-unit",
+        "input_sha256": "f9ddf496d103f4131704acabf7056d08876eaa7770f98bd755083c6f776620c1",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "approximate-not-exact",
+        "input_sha256": "bca8660b92628efca06a85d1914a2c7c2756bd0ec5d75794edbc4e89a9d497e5",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "lifespan",
+        "input_sha256": "0622f07f8a1a0fbca0563a3c3dfd5ad80cff0c5beb7757984aa3ec7dae1c142c",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "rebirth-possible",
+        "input_sha256": "1a3bb563b8a84dabf0f00cedddca898e635e46b7b957786c00eec7c3cc8fc9c8",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "runaway-care-condition",
+        "input_sha256": "0801c78eaf58e23d749e66a4a69797c058d6cdb8787d11cdc3586702373f070b",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "absence-trigger",
+        "input_sha256": "79830506062fa7c5db5b962e7268c0458d245838adec29c48bef89df6ffee28e",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "email-channel",
+        "input_sha256": "f34091e16602164324f0958e125891a6df7b24422e3f82a6a44c99a0feea0558",
+        "rejected_without_digest_gate": true
+      }
+    ],
+    "outer_script_positive": true
+  },
+  "context_http_bytes": 19733,
+  "context_http_sha256": "ac5a36bfffeb18446082d5bfbe0cd50c1568d05ab907ec9345dff0c057916760",
+  "recording_context": {
+    "core_sha256": "798111f1c6291a4745eac7549a168ad1492230e971180f92007c1e1421a3e943",
+    "recorded_month_reported": "2006-02",
+    "context_article_publication": "2006-07-10 16:28",
+    "actual_interview_link_as_written": "http://www.4gamer.net/specials/stoneage2_interview/stoneage2_interview.shtml",
+    "authority": "LATER_CONTEMPORANEOUS_MEDIA_REPORT_BY_TET_NOT_INTERVIEW_SPEAKER",
+    "concurrent_separate_titles_reported": true,
+    "exact_interview_publication_date": null
+  },
+  "context_audit": {
+    "real_source_mutations": [
+      {
+        "case": "recorded-month",
+        "input_sha256": "aba76aba1d088362712b2aa8186ebf9307d915586ff6b9d3faed123e355354a6",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "product-separation",
+        "input_sha256": "cd7749fe976851a86161c586602f5b5b51acdd6b466444fc965f9701e14e78ca",
+        "rejected_without_digest_gate": true
+      },
+      {
+        "case": "linked-interview-identity",
+        "input_sha256": "880b661ac97404944603578dd460f4fcc05639117cec88a9230372a8e0c7bc9e",
+        "rejected_without_digest_gate": true
+      }
+    ],
+    "outer_script_positive": true
+  },
+  "raw_html_or_assets_in_output": false,
+  "historical_game_executed": false,
+  "message_sent": false
+}

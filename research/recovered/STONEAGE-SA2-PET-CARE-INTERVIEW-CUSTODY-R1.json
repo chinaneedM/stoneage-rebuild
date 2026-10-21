@@ -1,0 +1,427 @@
+{
+  "schema": "stoneage.sa2_pet_care_interview.custody.r1",
+  "candidate": {
+    "zip_bytes": 2968,
+    "zip_sha256": "8b185be9b17294374a78b63f547299d815cd45e5e83c655131306ecebab0fe5b",
+    "raw_bytes": 7320,
+    "raw_sha256": "876b2966758eb54a8926d5e836cec9b47ee21002b15cc099006ad6f0621cfe66",
+    "raw_git_blob": "667b5329a58f8be01d201abdf3dea017352eb865",
+    "matches_local_bytes": true,
+    "head": "a2eeaa7d74d044a065880413ea80939c588aef90",
+    "tree": "595d8e29491de06a82b1c785cd0edad816952084",
+    "run_id": 39547436315,
+    "job_id": 119048687134,
+    "artifact_id": 12321882311,
+    "conclusion": "success",
+    "applicable_workflow_count": 8,
+    "all_applicable_workflows_success": true,
+    "actual_unit_tests": 11,
+    "skipped_tests": 0,
+    "real_source_mutations": 19
+  },
+  "main": {
+    "zip_bytes": 2968,
+    "zip_sha256": "2744ca047d3e8344ea1b3b0fc56c38bca47b10f660a36d0c4440e04692c3e73b",
+    "raw_bytes": 7320,
+    "raw_sha256": "876b2966758eb54a8926d5e836cec9b47ee21002b15cc099006ad6f0621cfe66",
+    "raw_git_blob": "667b5329a58f8be01d201abdf3dea017352eb865",
+    "matches_local_bytes": true,
+    "matches_candidate_bytes": true,
+    "head": "a2eeaa7d74d044a065880413ea80939c588aef90",
+    "tree": "595d8e29491de06a82b1c785cd0edad816952084",
+    "run_id": 39547537087,
+    "job_id": 119049006704,
+    "artifact_id": 12322720679,
+    "conclusion": "success",
+    "applicable_workflow_count": 11,
+    "all_applicable_workflows_success": true,
+    "actual_unit_tests": 11,
+    "skipped_tests": 0,
+    "real_source_mutations": 19
+  },
+  "initial_candidate": {
+    "zip_bytes": 2968,
+    "zip_sha256": "775706430eb86382b34d3ed02b5f486b879412388813b194a2391d84a15da123",
+    "raw_bytes": 7320,
+    "raw_sha256": "876b2966758eb54a8926d5e836cec9b47ee21002b15cc099006ad6f0621cfe66",
+    "raw_git_blob": "667b5329a58f8be01d201abdf3dea017352eb865",
+    "matches_corrected_candidate_bytes": true,
+    "initial_local_bytes_match_cli": false,
+    "initial_local_semantic_json_matches_cli": true,
+    "initial_local_git_blob": "33bfdd55892feeff991585060a43d3ffe94078d1",
+    "initial_local_sha256": "99eaaa6364e80ec847689f9269f57defffeba1e683dc929f70531c88eb5b6785",
+    "head": "6029d48be7c7be069b69b4074a9b2392d470d9f2",
+    "tree": "9134d8ab20ebf9f5c1de07f2166f98c0d9cc5344",
+    "run_id": 39547329830,
+    "job_id": 119048351386,
+    "artifact_id": 12322385690,
+    "conclusion": "success",
+    "applicable_workflow_count": 10,
+    "all_applicable_workflows_success": true,
+    "actual_unit_tests": 11,
+    "skipped_tests": 0,
+    "real_source_mutations": 19,
+    "derived_git_path": "research/recovered/STONEAGE-SA2-PET-CARE-INTERVIEW-CI-CANDIDATE-REPLAY-R1.json"
+  },
+  "workflow_runs": [
+    {
+      "run_id": 39547536458,
+      "head": "a2eeaa7d74d044a065880413ea80939c588aef90",
+      "branch": "main",
+      "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 39547536804,
+      "head": "a2eeaa7d74d044a065880413ea80939c588aef90",
+      "branch": "main",
+      "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 39547537069,
+      "head": "a2eeaa7d74d044a065880413ea80939c588aef90",
+      "branch": "main",
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 39547536604,
+      "head": "a2eeaa7d74d044a065880413ea80939c588aef90",
+      "branch": "main",
+      "name": "Validate Stage A early source gap triage",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 39547536918,
+      "head": "a2eeaa7d74d044a065880413ea80939c588aef90",
+      "branch": "main",
+      "name": "Validate legacy StoneAge assistant history and pet content gaps",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 39547537006,
+      "head": "a2eeaa7d74d044a065880413ea80939c588aef90",
+      "branch": "main",
+      "name": "Validate StoneAge Stage A joint review decision",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 39547537013,
+      "head": "a2eeaa7d74d044a065880413ea80939c588aef90",
+      "branch": "main",
+      "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 39547537062,
+      "head": "a2eeaa7d74d044a065880413ea80939c588aef90",
+      "branch": "main",
+      "name": "Validate StoneAge preproduction content archive and wiki boundary",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 39547537087,
+      "head": "a2eeaa7d74d044a065880413ea80939c588aef90",
+      "branch": "main",
+      "name": "Verify SA2 separate-product pet care and interview speaker boundaries",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 39547537113,
+      "head": "a2eeaa7d74d044a065880413ea80939c588aef90",
+      "branch": "main",
+      "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 39547536446,
+      "head": "a2eeaa7d74d044a065880413ea80939c588aef90",
+      "branch": "main",
+      "name": "Independently verify TW1.0 R58 rooted helper returns and source custody",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 39547436320,
+      "head": "a2eeaa7d74d044a065880413ea80939c588aef90",
+      "branch": "agent/sa2-pet-care-r46-20261021",
+      "name": "Validate StoneAge Stage A joint review decision",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 39547436262,
+      "head": "a2eeaa7d74d044a065880413ea80939c588aef90",
+      "branch": "agent/sa2-pet-care-r46-20261021",
+      "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 39547436448,
+      "head": "a2eeaa7d74d044a065880413ea80939c588aef90",
+      "branch": "agent/sa2-pet-care-r46-20261021",
+      "name": "Validate legacy StoneAge assistant history and pet content gaps",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 39547436298,
+      "head": "a2eeaa7d74d044a065880413ea80939c588aef90",
+      "branch": "agent/sa2-pet-care-r46-20261021",
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 39547436611,
+      "head": "a2eeaa7d74d044a065880413ea80939c588aef90",
+      "branch": "agent/sa2-pet-care-r46-20261021",
+      "name": "Validate StoneAge preproduction content archive and wiki boundary",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 39547436315,
+      "head": "a2eeaa7d74d044a065880413ea80939c588aef90",
+      "branch": "agent/sa2-pet-care-r46-20261021",
+      "name": "Verify SA2 separate-product pet care and interview speaker boundaries",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 39547436617,
+      "head": "a2eeaa7d74d044a065880413ea80939c588aef90",
+      "branch": "agent/sa2-pet-care-r46-20261021",
+      "name": "Validate Stage A early source gap triage",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 39547436400,
+      "head": "a2eeaa7d74d044a065880413ea80939c588aef90",
+      "branch": "agent/sa2-pet-care-r46-20261021",
+      "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "prior_candidate_runs": [
+    {
+      "run_id": 39547329735,
+      "head": "6029d48be7c7be069b69b4074a9b2392d470d9f2",
+      "branch": "agent/sa2-pet-care-r46-20261021",
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 39547329797,
+      "head": "6029d48be7c7be069b69b4074a9b2392d470d9f2",
+      "branch": "agent/sa2-pet-care-r46-20261021",
+      "name": "Validate StoneAge preproduction content archive and wiki boundary",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 39547329830,
+      "head": "6029d48be7c7be069b69b4074a9b2392d470d9f2",
+      "branch": "agent/sa2-pet-care-r46-20261021",
+      "name": "Verify SA2 separate-product pet care and interview speaker boundaries",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 39547329536,
+      "head": "6029d48be7c7be069b69b4074a9b2392d470d9f2",
+      "branch": "agent/sa2-pet-care-r46-20261021",
+      "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 39547329546,
+      "head": "6029d48be7c7be069b69b4074a9b2392d470d9f2",
+      "branch": "agent/sa2-pet-care-r46-20261021",
+      "name": "Validate legacy StoneAge assistant history and pet content gaps",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 39547329620,
+      "head": "6029d48be7c7be069b69b4074a9b2392d470d9f2",
+      "branch": "agent/sa2-pet-care-r46-20261021",
+      "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 39547329514,
+      "head": "6029d48be7c7be069b69b4074a9b2392d470d9f2",
+      "branch": "agent/sa2-pet-care-r46-20261021",
+      "name": "Validate StoneAge Stage A joint review decision",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 39547329560,
+      "head": "6029d48be7c7be069b69b4074a9b2392d470d9f2",
+      "branch": "agent/sa2-pet-care-r46-20261021",
+      "name": "Validate Stage A early source gap triage",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 39547329534,
+      "head": "6029d48be7c7be069b69b4074a9b2392d470d9f2",
+      "branch": "agent/sa2-pet-care-r46-20261021",
+      "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "run_id": 39547329654,
+      "head": "6029d48be7c7be069b69b4074a9b2392d470d9f2",
+      "branch": "agent/sa2-pet-care-r46-20261021",
+      "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "source_pins": [
+    {
+      "path": "research/recovered/STONEAGE-SA2-PET-CARE-INTERVIEW-SOURCE-R1.json",
+      "bytes": 8292,
+      "sha256": "f5a2f56ea4a681b8291a75564d808bfb7e9997679b0847e1c641880f2c81f32b",
+      "git_blob": "22f032ed25ecd797becc5378c186121197de2e1d"
+    },
+    {
+      "path": "research/recovered/STONEAGE-SA2-PET-CARE-INTERVIEW-LOCAL-REPLAY-R1.json",
+      "bytes": 7320,
+      "sha256": "876b2966758eb54a8926d5e836cec9b47ee21002b15cc099006ad6f0621cfe66",
+      "git_blob": "667b5329a58f8be01d201abdf3dea017352eb865"
+    },
+    {
+      "path": "research/recovered/STONEAGE-SA2-PET-CARE-INTERVIEW-CI-CANDIDATE-REPLAY-R1.json",
+      "bytes": 7320,
+      "sha256": "876b2966758eb54a8926d5e836cec9b47ee21002b15cc099006ad6f0621cfe66",
+      "git_blob": "667b5329a58f8be01d201abdf3dea017352eb865"
+    },
+    {
+      "path": "research/recovered/STONEAGE-SA2-PET-CARE-INTERVIEW-CI-MAIN-REPLAY-R1.json",
+      "bytes": 7320,
+      "sha256": "876b2966758eb54a8926d5e836cec9b47ee21002b15cc099006ad6f0621cfe66",
+      "git_blob": "667b5329a58f8be01d201abdf3dea017352eb865"
+    },
+    {
+      "path": "tools/stoneage_sa2_pet_care_interview.py",
+      "bytes": 16180,
+      "sha256": "2654dc142e624e6509293079849d8ddd4615ea36f4f472862df0f3eb608b690b",
+      "git_blob": "5556c9889a77233236c90629d265e404502c0224"
+    },
+    {
+      "path": ".github/workflows/verify-stoneage-sa2-pet-care-interview.yml",
+      "bytes": 1337,
+      "sha256": "76f3fcc593285f23f34b61912c4f01a767eeeb7bc44744f3cb3a3763c1dded5b",
+      "git_blob": "79491b7c7031bc4347b2a4c2a9ffd30ef827be4e"
+    },
+    {
+      "path": "docs/specs/STONEAGE-SA2-PET-CARE-INTERVIEW-SOURCE-R1.md",
+      "bytes": 5010,
+      "sha256": "780ef33aa32bb421007cd1a57e05445d50edc39b5562571ebefd6144297918b1",
+      "git_blob": "0f708f596e4b3b370c208b94f9e6090c656a4c74"
+    },
+    {
+      "path": "docs/STONEAGE-OFFICIAL-VERSION-NAMED-CONTENT-REVIEW-R46.md",
+      "bytes": 1497,
+      "sha256": "fdc0da5d0f644163c48dbf247e29602f5fb845969b500f701998bc7975e0d5b4",
+      "git_blob": "0201fcc127b08dac28716fc6d77aa28b82bd56d7"
+    }
+  ],
+  "startup_prefixes": [
+    {
+      "path": "README.md",
+      "bytes": 29554,
+      "sha256": "be970b46dc79690d206f1319544f68cdfa1a2af5161cfeea9e8982c5c6ed7010",
+      "git_blob": "bc016fd5abd054be8af9527761d9ad47c7377bbe"
+    },
+    {
+      "path": "docs/PROJECT-CONTINUITY-PROTOCOL-R1.md",
+      "bytes": 9762,
+      "sha256": "c44834eeec87f7a43e9cb4905f08377349e36d58b1fff2c5a75a6975db695e3b",
+      "git_blob": "ba9bbe19384589400abc61af37a360a40bf91452"
+    },
+    {
+      "path": "docs/CURRENT-STATE.md",
+      "bytes": 2232510,
+      "sha256": "053520e780a071336ea15771b40dcc7a8ce64a71ae20f59c4821befb3651bb8c",
+      "git_blob": "a230da4289b204d7060e81f69a363e62032b0d9d"
+    },
+    {
+      "path": "docs/DESIGN-DECISIONS.md",
+      "bytes": 45965,
+      "sha256": "28b572ed01179eacd5a06b4ad62c76e4baef22ac49587aa0bad452a7cb3fe8e6",
+      "git_blob": "013ae4fad9301ab0140fe408a423b3abad97d1f9"
+    },
+    {
+      "path": "docs/HISTORICAL-TIMELINE.md",
+      "bytes": 534377,
+      "sha256": "c643da19f5e7a9171083784ca3b37688b032f14cfdea8ea738c9c8f885b271dc",
+      "git_blob": "61c131316ef6c2f44c92f5bae7a76312089fea06"
+    },
+    {
+      "path": "docs/SOURCE-REGISTRY.md",
+      "bytes": 823640,
+      "sha256": "a513f3f2bb44fed95e7b7c63528eeba0cd771b4fb5e3964a7d521cf44cc56d67",
+      "git_blob": "6351a38973b5d41cd8a3557c22d9eb083b418256"
+    },
+    {
+      "path": "docs/RESTORATION-ROADMAP-R2.md",
+      "bytes": 180551,
+      "sha256": "dd2a9d4a418d582821cd117bec68c5fbd3f42e1f7a156b9b1ed1c8b6b0782b48",
+      "git_blob": "f03dd917c711a20688161d3ab79fbffb4862f1c8"
+    },
+    {
+      "path": "research/recovered/STONEAGE-22-DOMAIN-SOURCE-READY-PORTFOLIO-R2.json",
+      "bytes": 15948,
+      "sha256": "7d50de08f7855cf16dbe54b1747e258f1cc1223de88cc217172fd145f3c704ce",
+      "git_blob": "088b469b3c51e689cff27f33fc3bb49de2d24b2c"
+    },
+    {
+      "path": "docs/STONEAGE-PREPRODUCTION-CONTENT-ARCHIVE-R1.md",
+      "bytes": 13398,
+      "sha256": "a7a7754d47e13b1c6b66c2aaf8c1ac751ce84b64aacf6fd48098621ad955b4a0",
+      "git_blob": "829888a7aa03659a1c48b11fc4c79facfa1e45d2"
+    }
+  ],
+  "independent_acceptance": {
+    "fresh_remote_content_checkout": "a2eeaa7d74d044a065880413ea80939c588aef90",
+    "related_tests": 98,
+    "skipped_tests": 0,
+    "independent_regex_reconstructed_29_speaker_turns": true,
+    "independent_context_body_core_digest_matches": true,
+    "all_three_actual_artifact_raws_match_corrected_local_bytes": true,
+    "initial_local_order_difference_semantically_equal_verified_from_git": true
+  },
+  "bounds": {
+    "original_html_or_assets_committed": false,
+    "historical_game_executed": false,
+    "rules_transferred_to_sa1": false,
+    "interview_exact_publication_date_known": false,
+    "units_silently_unified": false,
+    "exact_inheritance_lifespan_or_capacity_table_recovered": false,
+    "project_email_sent": false,
+    "stage_b_or_wiki_started": false
+  }
+}
