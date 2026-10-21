@@ -9,3 +9,6 @@
 资料属于可逆文档整理，不增加仅复述字段数量的专项测试或新工作流。以来源逐项复核、父报告原生Git摘要、旧历史完整前缀和现有仓库CI验收；CI只验证现有工具边界，不提升本资料的史料等级。候选/main状态据实际运行另行记录。
 
 止于一页有限章节。NEXT62回22域，Stage A／B与R79边界保持。
+
+
+内容提交8915bfd99d211a146e7c8ac796c98b61abe6b737的候选9/main10项适用Actions已真实成功；永久派生来源/双端运行记录见 `research/recovered/STONEAGE-CN2003-FAMILY-LIFECYCLE-ACCEPTANCE-R1.json`。仅确认文档、元数据保管和既有回归范围，收据自身CI另验。

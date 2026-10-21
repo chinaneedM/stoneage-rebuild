@@ -1457,3 +1457,12 @@ research/recovered/STONEAGE-CN2003-UI-TEAM-TRADE-SOURCE-R1.json源派生Git blob
 正文守护兽涉及特殊合成，不证战斗召唤；光明/黑暗精灵仅分别“影响”回复/攻击性魔法，增减方向和倍率不能补造。医生/银行需庄园及未知声望门槛，不能填免费治疗或账户事务。同页四大家族声望、九庄园与前二十名挑战资格保持分段、范围未解，不拼接一套规则；邀请函房间通行和封闭商店鉴权、骑宠学习同意书亦分别存储。既验R28/R43及TW75气势计划仅固定父报告/版本化对照，不当独立新网页或本文同build证明。
 
 未取得原HTTP/HTML字节摘要或历史快照、原服规则/实际运行；原网页全文/图/商业资源不入Git。不增加只镜像资料行数的测试/专项workflow，采用源段逐核、父Git摘要与完整历史前缀检查、现有相关回归和实际候选/main CI；绿灯不提升来源等级。发布与CI结果须后验，未提前称通过。有限包止于一页家族章节，下一最高 `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-62` 回22域优先具名版本宠物生态/遇敌或音效事件材料；Stage A7 PARTIAL+2 OPEN、Stage B/wiki GATED、R79 PAUSED_NON_BLOCKING。
+
+
+### 2026-10-22 R61内容双端验收及永久派生来源记录
+
+内容提交 `8915bfd99d211a146e7c8ac796c98b61abe6b737`/tree `6cee9d32396d1446798e67afdcbf79cccee44046` 候选9项/main10项适用Actions全部completed/success。目录保管门候选run39687845053/job119526333692、主线run39687935975/job119526644445成功；这些是既有回归/边界工作流，不是新增网页原字节重放或原商业游戏运行。本地20项既有相关测试通过，未增加镜像字段行数的专项测试或workflow。GitHub compare七文件=三新增/四只追加，历史行删除0，九份启动完整前缀和四父报告标识逐一保留。
+
+命令行推送访问中断，未确认发布；随后使用GitHub连接逐blob提交，七blob与本地原生Git全部相等，整tree亦相等，再以实时main预期HEAD保护非强制快进。永久来源记录 `research/recovered/STONEAGE-CN2003-FAMILY-LIFECYCLE-ACCEPTANCE-R1.json` 固定内容SHA/tree、19项实际run及两job、源JSON11824B/SHA256 `047497790eee98cd81db6d08f951580f102062e70516dfee0db20016b6aa07e0`/Git blob `0b2222f5ba48442ae1cfb07c923c83780b72ed2c`。无原HTTP哈希、源重放artifact或原服实测，不虚构ZIP保管链。旧queued37642417333仍单列为无关历史队列。
+
+同一新浪URL不重复计独立证据；三日成员统计、精灵影响方向、四/九/二十适用范围继续OPEN。收据提交自身CI另行实查，不能沿用内容提交绿灯。最高NEXT62不变，Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停。
