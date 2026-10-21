@@ -54,5 +54,29 @@ class TestCn2003ProfessionDependencies(unittest.TestCase):
         self.assertFalse(self.d["s1_summary"]["original_server_verified"])
         self.assertEqual(self.d["next"], "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-60")
 
+
+    def test_receipt_immutable_derived_source_not_original_html(self):
+        import hashlib
+        receipt = SOURCE.parent / "STONEAGE-CN2003-PROFESSION-DEPENDENCIES-ACCEPTANCE-R1.json"
+        r = json.loads(receipt.read_text(encoding="utf-8"))
+        b = SOURCE.read_bytes()
+        info = r["source_derived"]
+        self.assertEqual(len(b), info["utf8_byte_length"])
+        self.assertEqual(hashlib.sha256(b).hexdigest(), info["raw_sha256"])
+        actual_git_blob = hashlib.sha1(b"blob " + str(len(b)).encode() + b"\\0" + b).hexdigest()
+        self.assertEqual(actual_git_blob, info["git_blob_sha1"])
+        self.assertEqual(info["git_blob_sha1"], "055e169a8ca632022aa85598f175945cedd31ddb")
+        self.assertEqual(info["record_count_example_prerequisites"], 9)
+        self.assertTrue(info["persisted_in_git"])
+        self.assertFalse(info["contains_original_html_or_game_assets"])
+        for s in r["web_sources"]:
+            self.assertIsNone(s["original_http_sha256"])
+            self.assertFalse(s["original_source_replay"])
+        self.assertTrue(r["source_scope_not_advanced_by_ci"])
+        self.assertTrue(r["old_history_prefix_preserved"])
+        self.assertEqual(r["candidate_validation"]["artifact_count"], 0)
+        self.assertEqual(r["main_validation"]["artifact_count"], 0)
+
+
 if __name__ == "__main__":
     unittest.main()

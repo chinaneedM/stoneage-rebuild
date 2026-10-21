@@ -4,11 +4,13 @@ on:
     paths:
       - 'research/recovered/STONEAGE-CN2003-PROFESSION-DEPENDENCIES-SOURCE-R1.json'
       - 'tests/test_stoneage_cn2003_profession_dependencies_source.py'
+      - 'research/recovered/STONEAGE-CN2003-PROFESSION-DEPENDENCIES-ACCEPTANCE-R1.json'
       - '.github/workflows/verify-stoneage-cn2003-profession-dependencies.yml'
   pull_request:
     paths:
       - 'research/recovered/STONEAGE-CN2003-PROFESSION-DEPENDENCIES-SOURCE-R1.json'
       - 'tests/test_stoneage_cn2003_profession_dependencies_source.py'
+      - 'research/recovered/STONEAGE-CN2003-PROFESSION-DEPENDENCIES-ACCEPTANCE-R1.json'
       - '.github/workflows/verify-stoneage-cn2003-profession-dependencies.yml'
 jobs:
   derived-claims-only:

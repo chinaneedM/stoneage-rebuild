@@ -16854,3 +16854,10 @@ research/recovered/STONEAGE-CN2003-UI-TEAM-TRADE-SOURCE-R1.json源派生Git blob
 同期新浪2003-11-19两页《全新开放的职业系统》（11:04）与《石器7.0各职业技能表》（11:16）当前可读，归档源URL、页面署名和时间。仅门户网页说明；未取得原始HTTP/HTML SHA，未校验特定商业服务器版本、原技能ID和技能学习运行。新增规格 docs/specs/STONEAGE-CN2003-PROFESSION-DEPENDENCIES-SOURCE-R1.md、衍生 research/recovered/STONEAGE-CN2003-PROFESSION-DEPENDENCIES-SOURCE-R1.json、专用回归测试与Actions工作流；三职业/三共通技能、S1九个明确学习例（分别四法师、三追猎、二白狼）、八歧义/证据负边界。关键保留 S1“一针见血”vs S2“针针相对”、驯服/驯伏、招雷/召雷、以形/移形，不能自动合并同技能ID；追猎者二级尸体掠夺职业等级5是特别例外，技能点16上限仅页面宣称；S1可见分层与S2平面名单计数不相等，不能当改版或服务器配置事实。2003职业系统不回填TW1.0。原版权HTML/资源未入Git。
 
 本轮测试/候选/主线实际CI结果需后验，不得提前宣称通过。止点两页九条示例八边界；最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-60 轮换全22域另一具名内容；Stage A 7 PARTIAL + 2 OPEN、Stage B/wiki GATED、R79 PAUSED_NON_BLOCKING，原历史全文前缀完整。
+
+
+### 2026-10-21 R59 内容候选／主线 CI 真实验收与永久派生收据
+
+R59内容提交 21ebeec046dfdfcbaeaf6dd317ca71460890a096/tree 3a6cef0877412e103ada4c095a48c3fb7d7a7692，从main2c4b1bb6b4c0dfcf6c3c06df7f20449eb3bb807c非强制、预期SHA保护快进。Git compare 8变动：4新增、4历史文件仅追加、原历史行删除0。候选agent/cn2003-profession-prereq-r59-20261021十项Actions全completed/success、专用run39614560501/job119272011174实际通过5项派生数据/来源否证测试；main同内容提交11项Actions全completed/success、专用run39614689723/job119272469128亦通过5项，全部以本轮远端实查为准。候选与main专用run均0 artifact，不虚称有原网页ZIP、源字节实时双重放或原服验证。
+
+派生 research/recovered/STONEAGE-CN2003-PROFESSION-DEPENDENCIES-SOURCE-R1.json Git blob 055e169a8ca632022aa85598f175945cedd31ddb、UTF8 10204B、SHA256 79478c0a62763cbc1bd214834e0140186f0bdc70fd9346d58e6149f2d2ef015e 已通过独立纯JS SHA256自测及原Git文件读取绑定。新增 research/recovered/STONEAGE-CN2003-PROFESSION-DEPENDENCIES-ACCEPTANCE-R1.json 永久保存源Git/双CI job/无ZIP/原网页字节缺证；专用测试升级为6项，验证收据与源文件实际原字节SHA256及Git blob SHA1。**收据自身候选/main的CI须另行后验**，不将此前5项结果冒称6项已过。保留S1/S2名单冲突与职业门槛例外；NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-60，其余项目闸门不变。

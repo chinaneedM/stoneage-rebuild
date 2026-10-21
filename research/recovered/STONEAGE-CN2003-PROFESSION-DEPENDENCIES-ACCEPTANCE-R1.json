@@ -1,0 +1,81 @@
+{
+  "schema": "stoneage.cn2003_profession_dependencies.derived_acceptance.r1",
+  "date": "2026-10-21",
+  "scope": "R59 editorial 2003 profession/skill prerequisite evidence, derived Git data not first-party gameplay",
+  "source_content_commit": {
+    "sha": "21ebeec046dfdfcbaeaf6dd317ca71460890a096",
+    "tree_sha": "3a6cef0877412e103ada4c095a48c3fb7d7a7692",
+    "parent_sha": "2c4b1bb6b4c0dfcf6c3c06df7f20449eb3bb807c"
+  },
+  "source_derived": {
+    "path": "research/recovered/STONEAGE-CN2003-PROFESSION-DEPENDENCIES-SOURCE-R1.json",
+    "git_blob_sha1": "055e169a8ca632022aa85598f175945cedd31ddb",
+    "utf8_byte_length": 10204,
+    "raw_sha256": "79478c0a62763cbc1bd214834e0140186f0bdc70fd9346d58e6149f2d2ef015e",
+    "record_count_professions": 3,
+    "record_count_shared_skills": 3,
+    "record_count_example_prerequisites": 9,
+    "boundary_count": 8,
+    "persisted_in_git": true,
+    "contains_original_html_or_game_assets": false
+  },
+  "web_sources": [
+    {
+      "id": "S1",
+      "url": "https://games.sina.com.cn/z/sta/2003-11-19/70746.shtml",
+      "page_date": "2003-11-19 11:04",
+      "original_http_sha256": null,
+      "original_source_replay": false
+    },
+    {
+      "id": "S2",
+      "url": "https://games.sina.com.cn/z/sta/2003-11-19/70759.shtml",
+      "page_date": "2003-11-19 11:16",
+      "original_http_sha256": null,
+      "original_source_replay": false
+    }
+  ],
+  "candidate_validation": {
+    "branch": "agent/cn2003-profession-prereq-r59-20261021",
+    "run_id": 39614560501,
+    "job_id": 119272011174,
+    "head_sha": "21ebeec046dfdfcbaeaf6dd317ca71460890a096",
+    "conclusion": "success",
+    "tested_checks": 5,
+    "test_skips": 0,
+    "applicable_workflow_runs": 10,
+    "all_workflow_runs_success": true,
+    "artifact_count": 0
+  },
+  "main_validation": {
+    "branch": "main",
+    "run_id": 39614689723,
+    "job_id": 119272469128,
+    "head_sha": "21ebeec046dfdfcbaeaf6dd317ca71460890a096",
+    "conclusion": "success",
+    "tested_checks": 5,
+    "test_skips": 0,
+    "applicable_workflow_runs": 11,
+    "all_workflow_runs_success": true,
+    "artifact_count": 0
+  },
+  "diff_acceptance": {
+    "changed_files": 8,
+    "added_files": 4,
+    "append_only_historical_files": 4,
+    "deleted_historical_lines": 0,
+    "non_force_main_fast_forward": true
+  },
+  "receipt_revision_checks": "PENDING_THIS_COMMIT_OWN_CI",
+  "source_scope_not_advanced_by_ci": true,
+  "unresolved": [
+    "original_source_http_byte_sha256",
+    "first_party_operator_patch_or_server_skill_configuration",
+    "same_server_build_s1_vs_s2",
+    "original_tw10_1999_membership",
+    "nine_example_preconditions_original_execution",
+    "aliases_and_full_skill_pool_entity_ids"
+  ],
+  "old_history_prefix_preserved": true,
+  "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-60"
+}
