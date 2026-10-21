@@ -1466,3 +1466,18 @@ research/recovered/STONEAGE-CN2003-UI-TEAM-TRADE-SOURCE-R1.json源派生Git blob
 命令行推送访问中断，未确认发布；随后使用GitHub连接逐blob提交，七blob与本地原生Git全部相等，整tree亦相等，再以实时main预期HEAD保护非强制快进。永久来源记录 `research/recovered/STONEAGE-CN2003-FAMILY-LIFECYCLE-ACCEPTANCE-R1.json` 固定内容SHA/tree、19项实际run及两job、源JSON11824B/SHA256 `047497790eee98cd81db6d08f951580f102062e70516dfee0db20016b6aa07e0`/Git blob `0b2222f5ba48442ae1cfb07c923c83780b72ed2c`。无原HTTP哈希、源重放artifact或原服实测，不虚构ZIP保管链。旧queued37642417333仍单列为无关历史队列。
 
 同一新浪URL不重复计独立证据；三日成员统计、精灵影响方向、四/九/二十适用范围继续OPEN。收据提交自身CI另行实查，不能沿用内容提交绿灯。最高NEXT62不变，Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停。
+
+
+## 2026-10-22 R62：渔村捕宠委托与19个名称的出没地关系
+
+启动新核main `ee3130c269d8834746dd0b83ed60a925b3e836d7`/tree `1f8e60e409ff5c516853a0b1da97dd6f8c21cbb4`、456分支、0运行中Actions，历史queued37642417333单列；R61最终记录提交main8项/候选7项实际completed/success。九份启动全文与CURRENT原Git blob93f18d5609e8320fdfaaabe88d86c2013d253943重新核验、完整历史前缀保留，NEXT62选择宠物出没/任务经济关系，不继续家族或R79。
+
+新取新浪《石器时代2之新鲜速递(三)--任务详解》https://games.sina.com.cn/newgames/0110/10236724.shtml 及其真实首分页10236724_c1.shtml，当前HTTP200、33058/33200B、严格GB18030，SHA256为90316967d80cd1b3fe5ad255624f890501776ce05203a7931b7617b3349a156a / 282fc11dded94b6b9440b51ab0e7dd89296a2e7a479a00a59e153a1f4d3012da。正文2.0标签/新浪署名仅文献范围；URL0110与页脚2004不认证首刊/官方作者/商业build。不是另一款2009续作图鉴，不称原历史快照或原服实测。
+
+形成六份渔村宠物委托A–F：19不同名称、21目标—地点关系，连贩售员20,12/管理员18,12。成本50/80/150/320/400/1500S、报酬500/800/1500/3200/4000/?S各按原表；F未知不补15000，保证金返还/失败/净利未证。E目标与地点行顺序不同且凯比/凯比特为前缀名，按名字对应；两外部坐标不当矩形、便利店与NPC坐标不放同层，科奥/柯奥原字和凯比地下二楼范围保留。无等级/几率/昼夜/物种和地图ID，不把19名当19个已认证初代宠物。
+
+新增docs/specs/STONEAGE-CN20-PET-COMMISSION-HABITATS-SOURCE-R1.md、源JSON、R62审查、有限解析工具和8项独立解析测试/专用workflow；本地真实两页另有16语义改写拒绝/外围script正例及独立逐行六组数值检查。最初本地预检误判“回上页”位置与总述标题唯一性，据原HTML修正后才通过；非远端失败。远端候选/main原页重取和派生工件/永久保管须实际后验，不预报全绿。原HTML/图/商业资产不进Git，第三页不取，料理和萨村其他委托不入本包。
+
+有限止点六份渔村宠物委托，最高NEXT `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-63` 回22域优先音效事件或具名画面/模型材料；Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79 PAUSED_NON_BLOCKING。
+
+R62同包增加既有19集合合同的可检索导出：6条quests文献关系、21条encounters地点关系，全部原game_ids=null/RESEARCH_METADATA_NOT_RELEASE_APPROVED，不生成物种master或网站。固定旧归档合同原Git与SHA256，目录含源语义摘要及P1/P2 URL，10项解析/目录测试覆盖名称关联、版本/权利缺字段拒绝。原8项解析通过记录不倒改成10项；远端双输出replay.json/catalog.json须后验。

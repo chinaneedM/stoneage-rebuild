@@ -1,0 +1,38 @@
+name: Verify CN2 pet commission habitat source boundaries
+on:
+  push:
+    paths:
+      - 'tools/stoneage_cn20_pet_commission_source.py'
+      - 'tests/test_stoneage_cn20_pet_commission_source.py'
+      - 'research/recovered/STONEAGE-CN20-PET-COMMISSION-HABITATS-*.json'
+      - 'docs/specs/STONEAGE-CN20-PET-COMMISSION-HABITATS-SOURCE-R1.md'
+      - '.github/workflows/verify-stoneage-cn20-pet-commission-source.yml'
+  pull_request:
+    paths:
+      - 'tools/stoneage_cn20_pet_commission_source.py'
+      - 'tests/test_stoneage_cn20_pet_commission_source.py'
+      - 'research/recovered/STONEAGE-CN20-PET-COMMISSION-HABITATS-*.json'
+      - 'docs/specs/STONEAGE-CN20-PET-COMMISSION-HABITATS-SOURCE-R1.md'
+      - '.github/workflows/verify-stoneage-cn20-pet-commission-source.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  bounded-source-replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check independent parser fixtures
+        run: python -m unittest tests.test_stoneage_cn20_pet_commission_source -v
+      - name: Retrieve exactly two current source pages and reject real semantic mutations
+        run: python -m tools.stoneage_cn20_pet_commission_source --fetch --output "$RUNNER_TEMP/r62/replay.json" --catalog-output "$RUNNER_TEMP/r62/catalog.json"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cn20-pet-commission-derived-r62
+          path: ${{ runner.temp }}/r62/*.json
+          if-no-files-found: error
+          retention-days: 30

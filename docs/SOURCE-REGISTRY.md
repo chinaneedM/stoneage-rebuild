@@ -7940,3 +7940,10 @@ research/recovered/STONEAGE-CN2003-UI-TEAM-TRADE-SOURCE-R1.json源派生Git blob
 - 本包重新读取家族／家族键／庄园功能段，4生命周期、7服务、5权限及3组范围疑点。与R57同URL，仅新增章节结构化，不是独立佐证。当前网页可读文字层级，不具原HTTP摘要、历史快照或原服执行证据。
 - 派生：research/recovered/STONEAGE-CN2003-FAMILY-LIFECYCLE-SOURCE-R1.json；规格：docs/specs/STONEAGE-CN2003-FAMILY-LIFECYCLE-SOURCE-R1.md。父R57/R28/R43/TW75报告Git身份固定；各地区/年代与计划边界保留。
 - 不证明初代归属、精灵加成公式、家族实际资产事务或统一庄园挑战算法；未存原网页全文/图/客户端。重开须对应版本官方更正、原配置或真实通信。
+
+
+## SRC-CN20-PET-COMMISSION-HABITATS-R62 — 2026-10-22
+
+- 《石器时代2之新鲜速递(三)--任务详解》，https://games.sina.com.cn/newgames/0110/10236724.shtml 及真实首分页 https://games.sina.com.cn/newgames/0110/10236724_c1.shtml ，正文2.0标签、署新浪游戏；官方作者/首刊日/商业build未证。当前HTTP原字节33058/33200B与SHA256见源JSON，不是已认证的2001历史快照。
+- 仅提取渔村六宠物委托、19名称/21地点关系及购买/交付；不递归第三页、不归档料理和萨村委托，不请求图。F报酬?、名称前缀、地点行序、地下二楼和坐标层级原样保留；数值只属攻略陈述。
+- 规格docs/specs/STONEAGE-CN20-PET-COMMISSION-HABITATS-SOURCE-R1.md；派生research/recovered/STONEAGE-CN20-PET-COMMISSION-HABITATS-SOURCE-R1.json；工具tools/stoneage_cn20_pet_commission_source.py。源重放仅当前网页，不执行原商业客户端/服务端，原HTML/图不进Git。
