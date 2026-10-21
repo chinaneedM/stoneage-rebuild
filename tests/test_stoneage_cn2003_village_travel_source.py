@@ -65,5 +65,32 @@ class TestCn2003VillageTravelSource(unittest.TestCase):
         self.assertTrue(all(v is False for v in d["negative_claims"].values()))
         self.assertEqual(d["next"],"OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-61")
 
+
+    def test_permanent_derived_source_receipt(self):
+        import hashlib
+        receipt = PATH.parent / "STONEAGE-CN2003-VILLAGE-TRAVEL-RECORD-ACCEPTANCE-R1.json"
+        r = json.loads(receipt.read_text(encoding="utf-8"))
+        b = PATH.read_bytes()
+        info = r["source_derived"]
+        self.assertEqual(info["utf8_byte_length"], len(b))
+        self.assertEqual(info["raw_sha256"], hashlib.sha256(b).hexdigest())
+        self.assertEqual(info["git_blob_sha1"], hashlib.sha1(b"blob " + str(len(b)).encode() + b"\\0" + b).hexdigest())
+        self.assertEqual(info["git_blob_sha1"], "c843a41e1abca8630cdd5fa14421bb0b13c10520")
+        self.assertEqual(info["source_page_count"], 3)
+        self.assertEqual(info["cross_source_record_point_count"], 12)
+        self.assertEqual(info["contradictory_offering_count"], 3)
+        self.assertTrue(info["persisted_in_git"])
+        self.assertFalse(info["contains_original_html_or_game_assets"])
+        self.assertTrue(r["old_history_prefix_preserved"])
+        self.assertTrue(r["source_scope_not_advanced_by_ci"])
+        self.assertTrue(r["diff_acceptance"]["remote_prefix_verified_from_git_blobs"])
+        for v in r["web_sources"]:
+            self.assertIsNone(v["original_http_sha256"])
+            self.assertFalse(v["original_source_replay"])
+        for k, run_num in [("candidate_validation", 10), ("main_validation", 11)]:
+            self.assertTrue(r[k]["all_workflow_runs_success"])
+            self.assertEqual(r[k]["applicable_workflow_runs"], run_num)
+            self.assertEqual(r[k]["artifact_count"], 0)
+
 if __name__=="__main__":
     unittest.main()

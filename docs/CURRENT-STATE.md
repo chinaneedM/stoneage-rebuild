@@ -16869,3 +16869,11 @@ R59内容提交 21ebeec046dfdfcbaeaf6dd317ca71460890a096/tree 3a6cef0877412e103a
 归档七类村落服务、十二个同名记录点两源比对、五类交通方式与三条初期赚钱建议。重点实际发现 S1/S2 同日供肉数值明确不符：玛丽那丝渔村乌力斯坦 1 vs 2、柯奥村龟之盾 2 vs 1、卡鲁它那村克邦凯斯 1 vs 2；奇喀喀村 S2“不详”。两页坐标可能为局部与地图坐标，不能直接等同。S2所称五十年前波拉岛80级与R55已归档英雄岛前传门槛不得自动拼作原版传送脚本已证。五转储存数量不得倒灌TW1.0初始容量。原HTTP哈希、特定build、商业服务器供品消费、飞机路线和存档ACK均UNKNOWN。具体规格docs/specs/STONEAGE-CN2003-VILLAGE-TRAVEL-RECORD-SOURCE-R1.md和派生JSON为本包事实记录，六项结构测试不证明客户端游戏运行。
 
 本次资料增益是实际玩家可见的“服务—物品—存档/出行”关联系统与冲突边界，不是全地图/NPC/任务的复原完成；Stage A维持7 PARTIAL+2 OPEN，B/wiki依旧GATED，TW10 R79仍PAUSED_NON_BLOCKING。止点三篇、7服务、12记录点、5交通、3经济建议；最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-61。从另一域取资料，不空转R60或推断初代完整参数。候选/main专用CI、永久收据均须实际完成后另行后验；所有R1–R59历史全文保留。
+
+### 2026-10-21 R60 候选/main 实际验收与永久派生来源收据
+
+R60 内容提交 4a44a424a8baaac2f55a1fd722bac1020a51d893/tree bfde78327fc59c92216e593c1b26369d9ee60d5e 基于 main0a364c5894e1d66403d9c1dd22a4ea2536b622d4；compare 7文件：4新增、3个历史文件只追加、历史行删0。候选agent/cn2003-village-travel-r60-20261021同HEAD 10项 Actions 全completed/success，R60专用run39617324641/job119281660247确证6项受限资料验证成功、0跳过；main 同内容 HEAD 11项 Actions 全completed/success，专用run39617934129/job119283606779亦success。候选/main专用run两边均实际0 artifacts，不伪称原HTTP/HTML ZIP或版权资产持久化。
+
+Git原生派生JSON `research/recovered/STONEAGE-CN2003-VILLAGE-TRAVEL-RECORD-SOURCE-R1.json` blob c843a41e1abca8630cdd5fa14421bb0b13c10520，UTF8原字节13993B/SHA256 926ea5f9429f7c3ceaa0c0e85ee2c0dd1a3fc9c16e924ed9e39714a0d050f806。永久收据 `research/recovered/STONEAGE-CN2003-VILLAGE-TRAVEL-RECORD-ACCEPTANCE-R1.json` 保存同源内容提交SHA/tree、两侧实际run/job、三URL/刊期、零artifact与未取得原网页字节及原服实测的证据边界。专用测试由6增至7，追加原字节SHA256和Git blob SHA1对照；收据自身的新候选/main CI 须另行后验，**不得将此前6项结果改称7项成功**。
+
+S1/S2同日肉量3处冲突、奇喀喀S2不详、局部与地域坐标不等价、S2英雄岛80级门槛未能与R55严格合并均继续OPEN。Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停；历史R1–R59及R60首记录全部保留。下一最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-61。

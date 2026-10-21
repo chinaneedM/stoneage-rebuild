@@ -1,0 +1,95 @@
+{
+  "schema": "stoneage.cn2003_village_travel_records.derived_acceptance.r1",
+  "date": "2026-10-21",
+  "task": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-60",
+  "evidence_scope": "2003 contemporaneous portal player submissions, not original version server execution",
+  "source_content_commit": {
+    "sha": "4a44a424a8baaac2f55a1fd722bac1020a51d893",
+    "tree_sha": "bfde78327fc59c92216e593c1b26369d9ee60d5e",
+    "parent_sha": "0a364c5894e1d66403d9c1dd22a4ea2536b622d4"
+  },
+  "source_derived": {
+    "path": "research/recovered/STONEAGE-CN2003-VILLAGE-TRAVEL-RECORD-SOURCE-R1.json",
+    "git_blob_sha1": "c843a41e1abca8630cdd5fa14421bb0b13c10520",
+    "utf8_byte_length": 13993,
+    "raw_sha256": "926ea5f9429f7c3ceaa0c0e85ee2c0dd1a3fc9c16e924ed9e39714a0d050f806",
+    "source_page_count": 3,
+    "village_service_class_count": 7,
+    "cross_source_record_point_count": 12,
+    "contradictory_offering_count": 3,
+    "unspecified_second_source_count": 1,
+    "transport_class_count": 5,
+    "economy_lead_count": 3,
+    "persisted_in_git": true,
+    "contains_original_html_or_game_assets": false
+  },
+  "web_sources": [
+    {
+      "id": "S1",
+      "url": "https://games.sina.com.cn/zhqu/sta/xsxl/sqcty.shtml",
+      "page_date": "2003-04-15 22:14",
+      "original_http_sha256": null,
+      "original_source_replay": false
+    },
+    {
+      "id": "S2",
+      "url": "https://games.sina.com.cn/zhqu/sta/xsxl/jtsc.shtml",
+      "page_date": "2003-04-15 22:43",
+      "original_http_sha256": null,
+      "original_source_replay": false
+    },
+    {
+      "id": "S3",
+      "url": "https://games.sina.com.cn/zhqu/sta/xsxl/zqsz.shtml",
+      "page_date": "2003-04-15 21:54",
+      "original_http_sha256": null,
+      "original_source_replay": false
+    }
+  ],
+  "candidate_validation": {
+    "branch": "agent/cn2003-village-travel-r60-20261021",
+    "run_id": 39617324641,
+    "job_id": 119281660247,
+    "head_sha": "4a44a424a8baaac2f55a1fd722bac1020a51d893",
+    "conclusion": "success",
+    "tested_checks": 6,
+    "test_skips": 0,
+    "applicable_workflow_runs": 10,
+    "all_workflow_runs_success": true,
+    "artifact_count": 0
+  },
+  "main_validation": {
+    "branch": "main",
+    "run_id": 39617934129,
+    "job_id": 119283606779,
+    "head_sha": "4a44a424a8baaac2f55a1fd722bac1020a51d893",
+    "conclusion": "success",
+    "tested_checks": 6,
+    "test_skips": 0,
+    "applicable_workflow_runs": 11,
+    "all_workflow_runs_success": true,
+    "artifact_count": 0
+  },
+  "diff_acceptance": {
+    "changed_files": 7,
+    "added_files": 4,
+    "append_only_historical_files": 3,
+    "deleted_historical_lines": 0,
+    "non_force_main_fast_forward": true,
+    "remote_prefix_verified_from_git_blobs": true
+  },
+  "receipt_revision_checks": "PENDING_THIS_COMMIT_OWN_CI",
+  "source_scope_not_advanced_by_ci": true,
+  "old_history_prefix_preserved": true,
+  "unresolved": [
+    "original_http_html_sha256",
+    "2003_three_pages_same_build",
+    "record_meat_qty_3_conflicts",
+    "chikaka_s2_unspecified",
+    "server_record_cost_and_login_ack",
+    "original_server_transport_route_and_fare",
+    "tw10_jss1999_membership",
+    "2003_golden_ticket_vs_R55_hero_level_gate"
+  ],
+  "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-61"
+}
