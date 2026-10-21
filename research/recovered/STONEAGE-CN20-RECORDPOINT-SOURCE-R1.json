@@ -1,0 +1,694 @@
+{
+  "schema": "stoneage.cn20_recordpoint.source.r1",
+  "date": "2026-10-21",
+  "task": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-51",
+  "baseline": {
+    "head": "b1b12ebfacdb09580b812dd1fc5a498564145237",
+    "tree": "9f0ac6b72e66c5e8b00eb7cd4f1079c2819805da",
+    "branches": 439,
+    "open_prs": 0,
+    "tracked_tree_entries": 4974,
+    "own_main_success": 11,
+    "old_queued_run_preserved": 37642417333
+  },
+  "sources": [
+    {
+      "id": "N1",
+      "url": "https://web.archive.org/web/20011204194619id_/http://www.waei.com.cn/ZHUANQU/stoneage2/pet/new_pet.asp",
+      "capture_timestamp": "20011204194619",
+      "encoding": "GB18030_STRICT",
+      "publication_date": null,
+      "exact_client_build": null,
+      "author_verified": false,
+      "role": "NAVIGATION_ONLY",
+      "bytes": 69317,
+      "sha256": "561950fd7bba41e7d39f4a781a671e11e175c7fe08dd1b5481fdf1fd23ba351b"
+    },
+    {
+      "id": "S1",
+      "url": "https://web.archive.org/web/20011204000349id_/http://www.waei.com.cn/ZHUANQU/stoneage2/tyro/operation.asp",
+      "capture_timestamp": "20011204000349",
+      "encoding": "GB18030_STRICT",
+      "publication_date": null,
+      "exact_client_build": null,
+      "author_verified": false,
+      "role": "OPERATOR_HOSTED_GUIDE_NOT_RUNTIME",
+      "bytes": 68863,
+      "sha256": "9be8b3ea0d48ebc17639e1114cba6606eba1a135a181ed5ad8f192392e554809"
+    },
+    {
+      "id": "S2",
+      "url": "https://web.archive.org/web/20011204220248id_/http://www.waei.com.cn/ZHUANQU/stoneage2/sw/meat.asp",
+      "capture_timestamp": "20011204220248",
+      "encoding": "GB18030_STRICT",
+      "publication_date": null,
+      "exact_client_build": null,
+      "author_verified": false,
+      "role": "OPERATOR_HOSTED_GUIDE_NOT_RUNTIME",
+      "bytes": 69407,
+      "sha256": "ce1b846bb50c82fd7c2081a798c5b186a7ba1fc2f8212d4f2fd9a06a57164acf"
+    },
+    {
+      "id": "S3",
+      "url": "https://web.archive.org/web/20011204213609id_/http://www.waei.com.cn/ZHUANQU/stoneage2/sw/facility.asp",
+      "capture_timestamp": "20011204213609",
+      "encoding": "GB18030_STRICT",
+      "publication_date": null,
+      "exact_client_build": null,
+      "author_verified": false,
+      "role": "OPERATOR_HOSTED_GUIDE_NOT_RUNTIME",
+      "bytes": 73356,
+      "sha256": "e18f0bced4935358e3be28e328d50a49a6dfbb8c26476a98c211892974e7ba16"
+    }
+  ],
+  "extracted": {
+    "routes": [
+      {
+        "label": "基本操作",
+        "href": "/ZHUANQU/stoneage2/tyro/operation.asp"
+      },
+      {
+        "label": "存储肉位置",
+        "href": "/ZHUANQU/stoneage2/sw/meat.asp"
+      },
+      {
+        "label": "公共设施",
+        "href": "/ZHUANQU/stoneage2/sw/facility.asp"
+      }
+    ],
+    "selected_core_sha256": {
+      "operation": "993e9bc77ba759bfabc232f5d00ba413f8cf394967c9ee393da16a787fce36cc",
+      "meat": "e85058b297b1d75f1672025fae978203e21c7887cd861d52b339dd3a5b034339",
+      "recordpoint": "5cc69d4b3db3178a66e1bbc517826aad93e6fdf4b1db350fd84c755426e6fb27"
+    },
+    "logout": {
+      "normal_label_as_written": "登出",
+      "in_place_label_as_written": "原地登出",
+      "in_place_reentry": "LOGOUT_LOCATION_INSTEAD_OF_RECORD_POINT",
+      "first_introduction_date": null,
+      "exact_save_format_or_local_savedata_relation": null
+    },
+    "trade": {
+      "recipient_permission_as_written": "YES",
+      "full_exchange_confirmation_or_atomicity": null
+    },
+    "recordpoint": {
+      "facility_label_as_written": "纪录点",
+      "ordinary_logout_reentry": "LAST_RECORD_POINT",
+      "knocked_away_destination": "RECORD_POINT",
+      "in_place_label_as_written": "原地注销",
+      "talk_service_as_reported": "ONLINE_POPULATION_UNSPECIFIED_SCOPE",
+      "requires_place_specific_meat_tribute": true,
+      "consume_or_check_only": null,
+      "count_scope_refresh_or_protocol": null,
+      "original_save_storage": null
+    },
+    "rows": [
+      {
+        "island_label": "北岛",
+        "place_as_written": "萨姆吉尔村",
+        "coordinate_cell_as_written": "637，491 708 ，489",
+        "meat_cell_as_written": "凯比特X1",
+        "original_map_npc_item_ids": null,
+        "coordinates_are_verified_npc_positions": false,
+        "multiple_coordinate_meaning": null,
+        "multi_meat_operator": null
+      },
+      {
+        "island_label": "北岛",
+        "place_as_written": "玛丽那丝渔村",
+        "coordinate_cell_as_written": "114，662 79，615",
+        "meat_cell_as_written": "乌力斯坦X2",
+        "original_map_npc_item_ids": null,
+        "coordinates_are_verified_npc_positions": false,
+        "multiple_coordinate_meaning": null,
+        "multi_meat_operator": null
+      },
+      {
+        "island_label": "北岛",
+        "place_as_written": "霍特尔村",
+        "coordinate_cell_as_written": "621，191",
+        "meat_cell_as_written": "奇宝X2",
+        "original_map_npc_item_ids": null,
+        "coordinates_are_verified_npc_positions": false,
+        "multiple_coordinate_meaning": null,
+        "multi_meat_operator": null
+      },
+      {
+        "island_label": "北岛",
+        "place_as_written": "卡坦村",
+        "coordinate_cell_as_written": "260，172",
+        "meat_cell_as_written": "特洛昆X2",
+        "original_map_npc_item_ids": null,
+        "coordinates_are_verified_npc_positions": false,
+        "multiple_coordinate_meaning": null,
+        "multi_meat_operator": null
+      },
+      {
+        "island_label": "北岛",
+        "place_as_written": "柯奥村",
+        "coordinate_cell_as_written": "417，630",
+        "meat_cell_as_written": "龟之盾X1",
+        "original_map_npc_item_ids": null,
+        "coordinates_are_verified_npc_positions": false,
+        "multiple_coordinate_meaning": null,
+        "multi_meat_operator": null
+      },
+      {
+        "island_label": "北岛",
+        "place_as_written": "阿布洞窟前",
+        "coordinate_cell_as_written": "191 365",
+        "meat_cell_as_written": "布依X1、火鸡X1",
+        "original_map_npc_item_ids": null,
+        "coordinates_are_verified_npc_positions": false,
+        "multiple_coordinate_meaning": null,
+        "multi_meat_operator": null
+      },
+      {
+        "island_label": "北岛",
+        "place_as_written": "柯尔克通路附近",
+        "coordinate_cell_as_written": "342 466",
+        "meat_cell_as_written": "乌力坦斯x1 、贝恩达斯x1、 巴洛洛克斯x1",
+        "original_map_npc_item_ids": null,
+        "coordinates_are_verified_npc_positions": false,
+        "multiple_coordinate_meaning": null,
+        "multi_meat_operator": null
+      },
+      {
+        "island_label": "南岛",
+        "place_as_written": "加加村",
+        "coordinate_cell_as_written": "481，92 426，94",
+        "meat_cell_as_written": "乌宝宝X1",
+        "original_map_npc_item_ids": null,
+        "coordinates_are_verified_npc_positions": false,
+        "multiple_coordinate_meaning": null,
+        "multi_meat_operator": null
+      },
+      {
+        "island_label": "南岛",
+        "place_as_written": "卡鲁它那村",
+        "coordinate_cell_as_written": "421，577",
+        "meat_cell_as_written": "克邦凯斯X2",
+        "original_map_npc_item_ids": null,
+        "coordinates_are_verified_npc_positions": false,
+        "multiple_coordinate_meaning": null,
+        "multi_meat_operator": null
+      },
+      {
+        "island_label": "南岛",
+        "place_as_written": "多多村",
+        "coordinate_cell_as_written": "509，496",
+        "meat_cell_as_written": "克克洛斯X1",
+        "original_map_npc_item_ids": null,
+        "coordinates_are_verified_npc_positions": false,
+        "multiple_coordinate_meaning": null,
+        "multi_meat_operator": null
+      },
+      {
+        "island_label": "南岛",
+        "place_as_written": "乌鲁力村(小人国)",
+        "coordinate_cell_as_written": "571，766",
+        "meat_cell_as_written": "巴克X2",
+        "original_map_npc_item_ids": null,
+        "coordinates_are_verified_npc_positions": false,
+        "multiple_coordinate_meaning": null,
+        "multi_meat_operator": null
+      },
+      {
+        "island_label": "南岛",
+        "place_as_written": "奇喀喀村",
+        "coordinate_cell_as_written": "124，1018 146，1007",
+        "meat_cell_as_written": "不详",
+        "original_map_npc_item_ids": null,
+        "coordinates_are_verified_npc_positions": false,
+        "multiple_coordinate_meaning": null,
+        "multi_meat_operator": null
+      },
+      {
+        "island_label": "南岛",
+        "place_as_written": "塔姆塔姆村",
+        "coordinate_cell_as_written": "481，92 426，94",
+        "meat_cell_as_written": "克洛尔X1",
+        "original_map_npc_item_ids": null,
+        "coordinates_are_verified_npc_positions": false,
+        "multiple_coordinate_meaning": null,
+        "multi_meat_operator": null
+      },
+      {
+        "island_label": "南岛",
+        "place_as_written": "阿鲁姆山地下洞窟附近",
+        "coordinate_cell_as_written": "447，982",
+        "meat_cell_as_written": "克卡尔X2",
+        "original_map_npc_item_ids": null,
+        "coordinates_are_verified_npc_positions": false,
+        "multiple_coordinate_meaning": null,
+        "multi_meat_operator": null
+      },
+      {
+        "island_label": "南岛",
+        "place_as_written": "饲育员总部附近",
+        "coordinate_cell_as_written": "401，317",
+        "meat_cell_as_written": "尼可斯X2",
+        "original_map_npc_item_ids": null,
+        "coordinates_are_verified_npc_positions": false,
+        "multiple_coordinate_meaning": null,
+        "multi_meat_operator": null
+      },
+      {
+        "island_label": "吉鲁岛",
+        "place_as_written": "福尔德村",
+        "coordinate_cell_as_written": "263，417",
+        "meat_cell_as_written": "格尔顿X1",
+        "original_map_npc_item_ids": null,
+        "coordinates_are_verified_npc_positions": false,
+        "multiple_coordinate_meaning": null,
+        "multi_meat_operator": null
+      },
+      {
+        "island_label": "吉鲁岛",
+        "place_as_written": "达那村",
+        "coordinate_cell_as_written": "499，167",
+        "meat_cell_as_written": "扬奇洛斯X1",
+        "original_map_npc_item_ids": null,
+        "coordinates_are_verified_npc_positions": false,
+        "multiple_coordinate_meaning": null,
+        "multi_meat_operator": null
+      }
+    ],
+    "recordpoint_image_path_declared": "img/image011.jpg",
+    "version": "EARLY_LINEAGE:CN_WAEI_SITE_2.0_GUIDE_CAPTURED_2001",
+    "authorship": "OPERATOR_HOSTED_GUIDE_AUTHOR_UNVERIFIED",
+    "original_server_executed": false
+  },
+  "records": [
+    {
+      "record_id": "CN20-RECORDPOINT-01",
+      "version_profile": "EARLY_LINEAGE:CN_WAEI_SITE_2.0_GUIDE_CAPTURED_2001",
+      "source_refs": [
+        "S1"
+      ],
+      "evidence": {
+        "normal_label_as_written": "登出",
+        "in_place_label_as_written": "原地登出",
+        "in_place_reentry": "LOGOUT_LOCATION_INSTEAD_OF_RECORD_POINT",
+        "first_introduction_date": null,
+        "exact_save_format_or_local_savedata_relation": null
+      },
+      "game_ids": null,
+      "runtime_verified": false
+    },
+    {
+      "record_id": "CN20-RECORDPOINT-02",
+      "version_profile": "EARLY_LINEAGE:CN_WAEI_SITE_2.0_GUIDE_CAPTURED_2001",
+      "source_refs": [
+        "S1"
+      ],
+      "evidence": {
+        "recipient_permission_as_written": "YES",
+        "full_exchange_confirmation_or_atomicity": null
+      },
+      "game_ids": null,
+      "runtime_verified": false
+    },
+    {
+      "record_id": "CN20-RECORDPOINT-03",
+      "version_profile": "EARLY_LINEAGE:CN_WAEI_SITE_2.0_GUIDE_CAPTURED_2001",
+      "source_refs": [
+        "S3"
+      ],
+      "evidence": {
+        "facility_label_as_written": "纪录点",
+        "ordinary_logout_reentry": "LAST_RECORD_POINT",
+        "knocked_away_destination": "RECORD_POINT",
+        "in_place_label_as_written": "原地注销",
+        "talk_service_as_reported": "ONLINE_POPULATION_UNSPECIFIED_SCOPE",
+        "requires_place_specific_meat_tribute": true,
+        "consume_or_check_only": null,
+        "count_scope_refresh_or_protocol": null,
+        "original_save_storage": null
+      },
+      "game_ids": null,
+      "runtime_verified": false
+    },
+    {
+      "record_id": "CN20-RECORDPOINT-04",
+      "version_profile": "EARLY_LINEAGE:CN_WAEI_SITE_2.0_GUIDE_CAPTURED_2001",
+      "source_refs": [
+        "S2"
+      ],
+      "evidence": {
+        "island_label": "北岛",
+        "place_as_written": "萨姆吉尔村",
+        "coordinate_cell_as_written": "637，491 708 ，489",
+        "meat_cell_as_written": "凯比特X1",
+        "original_map_npc_item_ids": null,
+        "coordinates_are_verified_npc_positions": false,
+        "multiple_coordinate_meaning": null,
+        "multi_meat_operator": null
+      },
+      "game_ids": null,
+      "runtime_verified": false
+    },
+    {
+      "record_id": "CN20-RECORDPOINT-05",
+      "version_profile": "EARLY_LINEAGE:CN_WAEI_SITE_2.0_GUIDE_CAPTURED_2001",
+      "source_refs": [
+        "S2"
+      ],
+      "evidence": {
+        "island_label": "北岛",
+        "place_as_written": "玛丽那丝渔村",
+        "coordinate_cell_as_written": "114，662 79，615",
+        "meat_cell_as_written": "乌力斯坦X2",
+        "original_map_npc_item_ids": null,
+        "coordinates_are_verified_npc_positions": false,
+        "multiple_coordinate_meaning": null,
+        "multi_meat_operator": null
+      },
+      "game_ids": null,
+      "runtime_verified": false
+    },
+    {
+      "record_id": "CN20-RECORDPOINT-06",
+      "version_profile": "EARLY_LINEAGE:CN_WAEI_SITE_2.0_GUIDE_CAPTURED_2001",
+      "source_refs": [
+        "S2"
+      ],
+      "evidence": {
+        "island_label": "北岛",
+        "place_as_written": "霍特尔村",
+        "coordinate_cell_as_written": "621，191",
+        "meat_cell_as_written": "奇宝X2",
+        "original_map_npc_item_ids": null,
+        "coordinates_are_verified_npc_positions": false,
+        "multiple_coordinate_meaning": null,
+        "multi_meat_operator": null
+      },
+      "game_ids": null,
+      "runtime_verified": false
+    },
+    {
+      "record_id": "CN20-RECORDPOINT-07",
+      "version_profile": "EARLY_LINEAGE:CN_WAEI_SITE_2.0_GUIDE_CAPTURED_2001",
+      "source_refs": [
+        "S2"
+      ],
+      "evidence": {
+        "island_label": "北岛",
+        "place_as_written": "卡坦村",
+        "coordinate_cell_as_written": "260，172",
+        "meat_cell_as_written": "特洛昆X2",
+        "original_map_npc_item_ids": null,
+        "coordinates_are_verified_npc_positions": false,
+        "multiple_coordinate_meaning": null,
+        "multi_meat_operator": null
+      },
+      "game_ids": null,
+      "runtime_verified": false
+    },
+    {
+      "record_id": "CN20-RECORDPOINT-08",
+      "version_profile": "EARLY_LINEAGE:CN_WAEI_SITE_2.0_GUIDE_CAPTURED_2001",
+      "source_refs": [
+        "S2"
+      ],
+      "evidence": {
+        "island_label": "北岛",
+        "place_as_written": "柯奥村",
+        "coordinate_cell_as_written": "417，630",
+        "meat_cell_as_written": "龟之盾X1",
+        "original_map_npc_item_ids": null,
+        "coordinates_are_verified_npc_positions": false,
+        "multiple_coordinate_meaning": null,
+        "multi_meat_operator": null
+      },
+      "game_ids": null,
+      "runtime_verified": false
+    },
+    {
+      "record_id": "CN20-RECORDPOINT-09",
+      "version_profile": "EARLY_LINEAGE:CN_WAEI_SITE_2.0_GUIDE_CAPTURED_2001",
+      "source_refs": [
+        "S2"
+      ],
+      "evidence": {
+        "island_label": "北岛",
+        "place_as_written": "阿布洞窟前",
+        "coordinate_cell_as_written": "191 365",
+        "meat_cell_as_written": "布依X1、火鸡X1",
+        "original_map_npc_item_ids": null,
+        "coordinates_are_verified_npc_positions": false,
+        "multiple_coordinate_meaning": null,
+        "multi_meat_operator": null
+      },
+      "game_ids": null,
+      "runtime_verified": false
+    },
+    {
+      "record_id": "CN20-RECORDPOINT-10",
+      "version_profile": "EARLY_LINEAGE:CN_WAEI_SITE_2.0_GUIDE_CAPTURED_2001",
+      "source_refs": [
+        "S2"
+      ],
+      "evidence": {
+        "island_label": "北岛",
+        "place_as_written": "柯尔克通路附近",
+        "coordinate_cell_as_written": "342 466",
+        "meat_cell_as_written": "乌力坦斯x1 、贝恩达斯x1、 巴洛洛克斯x1",
+        "original_map_npc_item_ids": null,
+        "coordinates_are_verified_npc_positions": false,
+        "multiple_coordinate_meaning": null,
+        "multi_meat_operator": null
+      },
+      "game_ids": null,
+      "runtime_verified": false
+    },
+    {
+      "record_id": "CN20-RECORDPOINT-11",
+      "version_profile": "EARLY_LINEAGE:CN_WAEI_SITE_2.0_GUIDE_CAPTURED_2001",
+      "source_refs": [
+        "S2"
+      ],
+      "evidence": {
+        "island_label": "南岛",
+        "place_as_written": "加加村",
+        "coordinate_cell_as_written": "481，92 426，94",
+        "meat_cell_as_written": "乌宝宝X1",
+        "original_map_npc_item_ids": null,
+        "coordinates_are_verified_npc_positions": false,
+        "multiple_coordinate_meaning": null,
+        "multi_meat_operator": null
+      },
+      "game_ids": null,
+      "runtime_verified": false
+    },
+    {
+      "record_id": "CN20-RECORDPOINT-12",
+      "version_profile": "EARLY_LINEAGE:CN_WAEI_SITE_2.0_GUIDE_CAPTURED_2001",
+      "source_refs": [
+        "S2"
+      ],
+      "evidence": {
+        "island_label": "南岛",
+        "place_as_written": "卡鲁它那村",
+        "coordinate_cell_as_written": "421，577",
+        "meat_cell_as_written": "克邦凯斯X2",
+        "original_map_npc_item_ids": null,
+        "coordinates_are_verified_npc_positions": false,
+        "multiple_coordinate_meaning": null,
+        "multi_meat_operator": null
+      },
+      "game_ids": null,
+      "runtime_verified": false
+    },
+    {
+      "record_id": "CN20-RECORDPOINT-13",
+      "version_profile": "EARLY_LINEAGE:CN_WAEI_SITE_2.0_GUIDE_CAPTURED_2001",
+      "source_refs": [
+        "S2"
+      ],
+      "evidence": {
+        "island_label": "南岛",
+        "place_as_written": "多多村",
+        "coordinate_cell_as_written": "509，496",
+        "meat_cell_as_written": "克克洛斯X1",
+        "original_map_npc_item_ids": null,
+        "coordinates_are_verified_npc_positions": false,
+        "multiple_coordinate_meaning": null,
+        "multi_meat_operator": null
+      },
+      "game_ids": null,
+      "runtime_verified": false
+    },
+    {
+      "record_id": "CN20-RECORDPOINT-14",
+      "version_profile": "EARLY_LINEAGE:CN_WAEI_SITE_2.0_GUIDE_CAPTURED_2001",
+      "source_refs": [
+        "S2"
+      ],
+      "evidence": {
+        "island_label": "南岛",
+        "place_as_written": "乌鲁力村(小人国)",
+        "coordinate_cell_as_written": "571，766",
+        "meat_cell_as_written": "巴克X2",
+        "original_map_npc_item_ids": null,
+        "coordinates_are_verified_npc_positions": false,
+        "multiple_coordinate_meaning": null,
+        "multi_meat_operator": null
+      },
+      "game_ids": null,
+      "runtime_verified": false
+    },
+    {
+      "record_id": "CN20-RECORDPOINT-15",
+      "version_profile": "EARLY_LINEAGE:CN_WAEI_SITE_2.0_GUIDE_CAPTURED_2001",
+      "source_refs": [
+        "S2"
+      ],
+      "evidence": {
+        "island_label": "南岛",
+        "place_as_written": "奇喀喀村",
+        "coordinate_cell_as_written": "124，1018 146，1007",
+        "meat_cell_as_written": "不详",
+        "original_map_npc_item_ids": null,
+        "coordinates_are_verified_npc_positions": false,
+        "multiple_coordinate_meaning": null,
+        "multi_meat_operator": null
+      },
+      "game_ids": null,
+      "runtime_verified": false
+    },
+    {
+      "record_id": "CN20-RECORDPOINT-16",
+      "version_profile": "EARLY_LINEAGE:CN_WAEI_SITE_2.0_GUIDE_CAPTURED_2001",
+      "source_refs": [
+        "S2"
+      ],
+      "evidence": {
+        "island_label": "南岛",
+        "place_as_written": "塔姆塔姆村",
+        "coordinate_cell_as_written": "481，92 426，94",
+        "meat_cell_as_written": "克洛尔X1",
+        "original_map_npc_item_ids": null,
+        "coordinates_are_verified_npc_positions": false,
+        "multiple_coordinate_meaning": null,
+        "multi_meat_operator": null
+      },
+      "game_ids": null,
+      "runtime_verified": false
+    },
+    {
+      "record_id": "CN20-RECORDPOINT-17",
+      "version_profile": "EARLY_LINEAGE:CN_WAEI_SITE_2.0_GUIDE_CAPTURED_2001",
+      "source_refs": [
+        "S2"
+      ],
+      "evidence": {
+        "island_label": "南岛",
+        "place_as_written": "阿鲁姆山地下洞窟附近",
+        "coordinate_cell_as_written": "447，982",
+        "meat_cell_as_written": "克卡尔X2",
+        "original_map_npc_item_ids": null,
+        "coordinates_are_verified_npc_positions": false,
+        "multiple_coordinate_meaning": null,
+        "multi_meat_operator": null
+      },
+      "game_ids": null,
+      "runtime_verified": false
+    },
+    {
+      "record_id": "CN20-RECORDPOINT-18",
+      "version_profile": "EARLY_LINEAGE:CN_WAEI_SITE_2.0_GUIDE_CAPTURED_2001",
+      "source_refs": [
+        "S2"
+      ],
+      "evidence": {
+        "island_label": "南岛",
+        "place_as_written": "饲育员总部附近",
+        "coordinate_cell_as_written": "401，317",
+        "meat_cell_as_written": "尼可斯X2",
+        "original_map_npc_item_ids": null,
+        "coordinates_are_verified_npc_positions": false,
+        "multiple_coordinate_meaning": null,
+        "multi_meat_operator": null
+      },
+      "game_ids": null,
+      "runtime_verified": false
+    },
+    {
+      "record_id": "CN20-RECORDPOINT-19",
+      "version_profile": "EARLY_LINEAGE:CN_WAEI_SITE_2.0_GUIDE_CAPTURED_2001",
+      "source_refs": [
+        "S2"
+      ],
+      "evidence": {
+        "island_label": "吉鲁岛",
+        "place_as_written": "福尔德村",
+        "coordinate_cell_as_written": "263，417",
+        "meat_cell_as_written": "格尔顿X1",
+        "original_map_npc_item_ids": null,
+        "coordinates_are_verified_npc_positions": false,
+        "multiple_coordinate_meaning": null,
+        "multi_meat_operator": null
+      },
+      "game_ids": null,
+      "runtime_verified": false
+    },
+    {
+      "record_id": "CN20-RECORDPOINT-20",
+      "version_profile": "EARLY_LINEAGE:CN_WAEI_SITE_2.0_GUIDE_CAPTURED_2001",
+      "source_refs": [
+        "S2"
+      ],
+      "evidence": {
+        "island_label": "吉鲁岛",
+        "place_as_written": "达那村",
+        "coordinate_cell_as_written": "499，167",
+        "meat_cell_as_written": "扬奇洛斯X1",
+        "original_map_npc_item_ids": null,
+        "coordinates_are_verified_npc_positions": false,
+        "multiple_coordinate_meaning": null,
+        "multi_meat_operator": null
+      },
+      "game_ids": null,
+      "runtime_verified": false
+    }
+  ],
+  "image_reference": {
+    "path_as_written": "img/image011.jpg",
+    "requested_url": "https://web.archive.org/web/20011204213609id_/http://www.waei.com.cn/ZHUANQU/stoneage2/sw/img/image011.jpg",
+    "observation_date": "2026-10-21",
+    "observed_http_status": 404,
+    "image_bytes_obtained": false,
+    "capture_timestamp_verified": null,
+    "all_archives_missing_proven": false,
+    "image_authenticates_coordinates_or_save_state": false
+  },
+  "unproven": {
+    "operator_host_certifies_named_author_or_verbatim_release": false,
+    "capture_date_equals_publication_or_feature_launch": false,
+    "cn20_title_is_numeric_client_build": false,
+    "tw10_or_jss1999_rules_proven": false,
+    "meat_storage_is_item_bank": false,
+    "table_is_exhaustive_server_master": false,
+    "duplicate_coordinates_silently_corrected": false,
+    "missing_commas_or_unknown_meat_filled": false,
+    "coordinate_pairs_are_inside_outside_or_npc_locations": false,
+    "multiple_meat_is_verified_and_or_recipe": false,
+    "meat_labels_are_species_or_item_ids": false,
+    "tribute_consumption_or_transaction_atomicity_proven": false,
+    "online_count_scope_or_freshness_proven": false,
+    "logout_is_original_client_local_savedata_r79": false,
+    "in_place_logout_available_everywhere_or_in_battle": false,
+    "full_trade_sequence_or_safe_exchange_algorithm_recovered": false,
+    "recordpoint_jpeg_recovered": false,
+    "original_server_or_client_executed": false,
+    "production_asset_rights_granted": false
+  },
+  "status": {
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b_wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING"
+  },
+  "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-52"
+}

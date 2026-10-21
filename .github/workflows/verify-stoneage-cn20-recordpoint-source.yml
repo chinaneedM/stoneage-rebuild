@@ -1,0 +1,34 @@
+name: Verify CN2.0 record points, tribute table and reentry boundaries
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-CN20-RECORDPOINT-*.json'
+      - 'tools/stoneage_cn20_recordpoint_source.py'
+      - 'tools/stoneage_cn2003_group2_manor_report.py'
+      - 'tests/test_stoneage_cn20_recordpoint_source.py'
+      - '.github/workflows/verify-stoneage-cn20-recordpoint-source.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-CN20-RECORDPOINT-*.json'
+      - 'tools/stoneage_cn20_recordpoint_source.py'
+      - 'tools/stoneage_cn2003_group2_manor_report.py'
+      - 'tests/test_stoneage_cn20_recordpoint_source.py'
+      - '.github/workflows/verify-stoneage-cn20-recordpoint-source.yml'
+permissions:
+  contents: read
+jobs:
+  source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check source anomalies, reentry and unproven storage boundaries
+        run: python -m unittest tests.test_stoneage_cn20_recordpoint_source -v
+      - name: Refetch four exact archived HTML pages and reject twenty real mutations
+        run: python -m tools.stoneage_cn20_recordpoint_source --fetch --output /tmp/cn20-recordpoint/replay.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cn20-recordpoint-derived-replay
+          path: /tmp/cn20-recordpoint/replay.json
+          if-no-files-found: error
+          retention-days: 30
