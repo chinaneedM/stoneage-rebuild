@@ -1363,3 +1363,13 @@ R47有限报告包结束，原文“中午”/精确时分、四家族人数歧�
 双ZIP实际下载，候选2686B/main2686B，SHA256分别b44cb0bc2f39b40c5532b7fada8fdab5ba71fede4e8a66c4e256035eecfff293 / 36f7b9c7224c75a3b2a9b65d1c0be795ba7be04c284632b3fcff334d38596df2；各唯一replay.json13077B/SHA2567a7826645bba41ad773fe085fc2b40898aad7066b03b3a6f0df3c23b6c3135cf/原生Git blob4e7aa4114c20e5acbe93b0cc3ebc8093714ca35e，候选/main/本地逐字节一致。双raw、十一来源/工具/依赖/工作流/规格/父报告pins、九启动完整前缀及21实际workflow永久存research/recovered/STONEAGE-CN20-HEALING-SPELLS-CUSTODY-R1.json；原HTML/资产不进Git。
 
 新增永久收据强制门后本包11/60相关检查另实跑，移除收据及等长改写派生raw一字节必须失败；首轮10项历史不改写为11项，保管提交自身Actions另后验。原+10/猜100、正文神恩/表恩惠、自己/玩家/单体/全体、三复活名/两等级、主要防具/仅限或全装备、复活建议/零忠诚满经验、气力耐久力原词/运行字段、同站概念/同构建继续分开。本地首轮父报告层级错误与反例锚点修正历史保持，非远端失败。R53有限包结束，最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-54回全22域；Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停，全部历史完整。
+
+## 2026-10-21 R54大陆2003宠物加工与料理同期玩家指南边界
+
+本轮以新读远端main 05f14965b3c87481f2dec104813f624e553b76e6/tree f3ddbc12795a7216f002175c3f6064ed28baae62 为基线；完整当前状态原Git blob、连续性协议及22域组合索引新核，R53主线最近可见11项Actions全SUCCESS、0开放PR。最高NEXT54轮换物品/合成/料理，未继续扩大R53回复法术、R52图鉴余图与暂停的R79。
+
+2026-10-21实际查看两2003年新浪游戏网页可读正文：2003-04-15 22:14《石器初体验》标“网友投稿”(https://games.sina.com.cn/zhqu/sta/xsxl/sqcty.shtml)，2003-04-02 16:03《合成入门》署新浪游戏(https://games.sina.com.cn/zhqu/sta/wphc/wphc_1.shtml)。两页不是原始华义服务器规则、具体客户端build或台湾1.0；没有读取/锁存原始HTTP HTML字节或独立SHA，未重取原图，更没有原商业客户端执行。因此仅作同期来源受限文字结构化，不能借用R53真实双重放等级。
+
+新增规格docs/specs/STONEAGE-CN2003-CRAFTING-GUIDES-SOURCE-R1.md与衍生research/recovered/STONEAGE-CN2003-CRAFTING-GUIDES-SOURCE-R1.json：S2原表18条装备类别/有序材料/列示百分比区间，原弓“木＋？＋丝”保持问号；S1七道新手料理、凯比特“加工”与乌力“料理”示例。关键源级矛盾：S2枪“石＋木”表列40–60%、投掷斧“木＋石”表列30–60%，S1木1/石1称枪；无序材料多重集重叠但**不能**证明服务器忽略顺序、确定产枪、随机双结果或指南成功率是原配置。加工/合成UI用词也不自动合并。原料后缀1/2/3不静默映射数量或等级，NPC/道具/技能ID未知。
+
+候选分支agent/cn2003-crafting-guides-r54-20261021，新增本地派生元数据结构测试及专用Action；检查对象仅Git派生JSON的18+7项、未知位、重叠但不提升运行事实、来源级别，并不联网重取两原网页；原商业图片/二进制未入Git。候选/main Actions应以后验实际结果为准，严禁把提交前检验预先称通过。有限止点两页25项，不扩配方全站、数值公式及后代执行。最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-55回全22域另取材料；Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停，全部旧历史前缀必须保留。

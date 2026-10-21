@@ -1,0 +1,18 @@
+name: Verify CN2003 crafting guide derived records
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-CN2003-CRAFTING-GUIDES-SOURCE-R1.json'
+      - 'tests/test_stoneage_cn2003_crafting_guides_source.py'
+      - '.github/workflows/verify-stoneage-cn2003-crafting-guides.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-CN2003-CRAFTING-GUIDES-SOURCE-R1.json'
+      - 'tests/test_stoneage_cn2003_crafting_guides_source.py'
+      - '.github/workflows/verify-stoneage-cn2003-crafting-guides.yml'
+jobs:
+  derived-structure:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python -m unittest discover -s tests -p 'test_stoneage_cn2003_crafting_guides_source.py' -v

@@ -7845,3 +7845,14 @@ S1 https://www.4gamer.net/specials/stoneage2_interview/stoneage2_interview.shtml
 固定旧战斗派生全文/原生Git，CN20-BATTLE-02装备附魔只作定性对照，不重新取旧正文图、不认证同build或执行。18真实源语义改写排除digest仍拒绝/外围script正例；独立13行及疑点/费用/名字另核。内容无图，不抓导航chrome/其它法术页；原HTML/资产不入Git。候选/main自身取源及永久派生保管据实另记。
 
 本地预检曾错误把旧source_reported对象当字符串，首轮10项1项错误/重放拒绝；修正实际meaning读取并建立有效基线。导航反例按真实font嵌套修正，不冒称那轮已通过；非来源变化或远端Actions失败。有限止点一导航一正文一父Git，不实现治疗或扩其它四系；重开需同版配置/ID、原文+10更正或战斗/气力/忠诚经验日志。最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-54回全22域，Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停，全部历史前缀完整。
+
+### SRC-CN-2003-SINA-CRAFTING-GUIDES-R54 (S1/S2)
+
+- Type: contemporaneous Mainland Sina portal guides, not original client or signed operator specification.
+- S1: 石器初体验 — 2003-04-15 22:14, labeled 网友投稿, https://games.sina.com.cn/zhqu/sta/xsxl/sqcty.shtml ; no confirmed named author.
+- S2: 合成入门 — 2003-04-02 16:03, credited 新浪游戏, https://games.sina.com.cn/zhqu/sta/wphc/wphc_1.shtml ; Sina attribution does not prove author was Huayi game-engine developer.
+- Retrieval/reading date: 2026-10-21; readable browser text viewed. Original HTTP response bytes and original source SHA256 **not** captured in this work package; no copyrighted images downloaded or checked in.
+- Confidence: B/C for a bounded contemporary guide as an indication of 2003 player-exposed concepts; **not** S/official primary rule for original JSS1999, TW1.0 or exact CN build.
+- Supports: S2 guide-listed 18 equipment category/material-order/range rows with unknown bow ingredient ？; S1 introductory pet-assisted crafting and seven recipe labels; material-order and output wording conflict across the two texts.
+- Does not support: true server-side percent odds, exact material-order semantics, item/skill/NPC ids, first edition game rules, guaranteed results, real UI controls, or actual game execution.
+- Permanent derived index: research/recovered/STONEAGE-CN2003-CRAFTING-GUIDES-SOURCE-R1.json; guide spec: docs/specs/STONEAGE-CN2003-CRAFTING-GUIDES-SOURCE-R1.md. Original HTML and proprietary images excluded.
