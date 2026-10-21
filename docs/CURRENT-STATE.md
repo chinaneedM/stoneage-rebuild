@@ -16877,3 +16877,9 @@ R60 内容提交 4a44a424a8baaac2f55a1fd722bac1020a51d893/tree bfde78327fc59c922
 Git原生派生JSON `research/recovered/STONEAGE-CN2003-VILLAGE-TRAVEL-RECORD-SOURCE-R1.json` blob c843a41e1abca8630cdd5fa14421bb0b13c10520，UTF8原字节13993B/SHA256 926ea5f9429f7c3ceaa0c0e85ee2c0dd1a3fc9c16e924ed9e39714a0d050f806。永久收据 `research/recovered/STONEAGE-CN2003-VILLAGE-TRAVEL-RECORD-ACCEPTANCE-R1.json` 保存同源内容提交SHA/tree、两侧实际run/job、三URL/刊期、零artifact与未取得原网页字节及原服实测的证据边界。专用测试由6增至7，追加原字节SHA256和Git blob SHA1对照；收据自身的新候选/main CI 须另行后验，**不得将此前6项结果改称7项成功**。
 
 S1/S2同日肉量3处冲突、奇喀喀S2不详、局部与地域坐标不等价、S2英雄岛80级门槛未能与R55严格合并均继续OPEN。Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停；历史R1–R59及R60首记录全部保留。下一最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-61。
+
+### 2026-10-21 R60 永久收据首次CI失败与精确字节转义修正（保留真实失败）
+
+永久收据候选初次提交 `980a2c7a36fc8e1e00df02b6edc191e60c475bba` 的R60专用Actions run39618677990/job119285996325确实 **failure**：新测试错误地对Git blob头使用文字反斜杠加0（Python `b"\\\\0"`）而非真正0x00空字节（`b"\\0"`），计算得SHA1 `11e3c007a3966354d76f80feb01d54c31dcc82ae`，与原生源Git blob `c843a41e1abca8630cdd5fa14421bb0b13c10520` 不符。日志显示7项中一项失败；这是**测试代码的编码错误**而非JSON源变动或历史页面真实性验证。其余同时运行的审查Actions不用于覆盖该失败事实。
+
+精确修正提交 `47fdb3418feebf364c3445e409411baa4dc8d3d2` 仅改同一测试调用为正确Git对象头空字节；后继R60专用run39618780763/job119286339522重新实际执行七项并 completed/success。原首轮失败仍可追溯，不称全部历史尝试通过。内容源Git blob/SHA256与原三网页来源范围不变；候选最终HEAD其它验收、main合入与此追加记录自身CI另查，绝不预先宣传完成。
