@@ -7916,3 +7916,10 @@ research/recovered/STONEAGE-CN2003-UI-TEAM-TRADE-SOURCE-R1.json源派生Git blob
 源研究提交`dd30db0dfc5a3d58706c3220ea8d333aa37ba5cb`/tree `c31abd5cf0bb2c885ff4b99493d6eb6c2e5780ba`，主线由b94270a19e4ce5d73691e8201d00a03bcf6c8177非强制且预期HEAD保护快进。GitHub compare=8变动：5新增、3历史文件仅追加、原历史行删除0。候选agent/cn2002-quest-worldline-r58-20261021同源HEAD实际10项Actions全部completed/success；专用run39612028005/job119263072244日志执行6项派生源/前置条件负边界用例，全部通过零跳过。main同源HEAD实际11项Actions全部completed/success；专用run39612246843/job119263842866 SUCCESS。两专用run各0 artifact，绝不虚称ZIP、raw原HTML SHA或原商业客户端、服务器双重放。
 
 源派生研究 `research/recovered/STONEAGE-CN2002-QUEST-WORLDLINE-SOURCE-R1.json` 原生Git blob5026707c16e0fdc306daf188739dcd75cb79b8b5/UTF8 12868B/SHA256 58b6c1f986e0b0b30ce45cedccfce47395d95b23b905f33da7a4eafb6e909183。新增 `research/recovered/STONEAGE-CN2002-QUEST-WORLDLINE-ACCEPTANCE-R1.json` 永久保管上述内容Git、两个实际source页面URL/刊期与双工作流ID、原始HTTP字节缺证及六项负边界。原网页作者文章/截图/客户端不进Git；结构化源12任务+8故事+6矛盾并不认证官方4.0补丁、同版任务ID或TW1.0内容。新专用测试由6升7项，强制收据必须存在、源原UTF8字节长度与SHA256一致；收据提交自身候选/main Actions必须独立后验，不能将旧6项成功改称新7项通过。下一最高NEXT59；Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停。历史前缀保留。
+
+
+## 2026-10-21 | R59 7.0 职业依赖文字证据
+
+- **SRC-CN-2003-SINA-70746** — 新浪游戏《全新开放的职业系统》，页面标 2003-11-19 11:04；https://games.sina.com.cn/z/sta/2003-11-19/70746.shtml。**CONTEMPORANEOUS_PORTAL_TEXT**：三职业、一般技能点与职阶、九条明确范例，正文扁平化表格的隐藏跨列连线 UNKNOWN；原HTTP SHA、原服务端运行及一手补丁身份未证。
+- **SRC-CN-2003-SINA-70759** — 新浪游戏《石器7.0各职业技能表》，页面标 2003-11-19 11:16；https://games.sina.com.cn/z/sta/2003-11-19/70759.shtml。**CONTEMPORANEOUS_PORTAL_TEXT**：三共通名称、三职业可见平面名单；同名文本差异、名单完整性和原服务器实体ID未证。无独立原网页字节保管。
+- 派生保管：research/recovered/STONEAGE-CN2003-PROFESSION-DEPENDENCIES-SOURCE-R1.json，规格 docs/specs/STONEAGE-CN2003-PROFESSION-DEPENDENCIES-SOURCE-R1.md；只保留有限结构事实与否定边界，不含原HTML全文、图片或客户端。重开同版运营公告、原始规则配置或实际学习日志。

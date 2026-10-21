@@ -16845,3 +16845,12 @@ research/recovered/STONEAGE-CN2003-UI-TEAM-TRADE-SOURCE-R1.json源派生Git blob
 源研究提交`dd30db0dfc5a3d58706c3220ea8d333aa37ba5cb`/tree `c31abd5cf0bb2c885ff4b99493d6eb6c2e5780ba`，主线由b94270a19e4ce5d73691e8201d00a03bcf6c8177非强制且预期HEAD保护快进。GitHub compare=8变动：5新增、3历史文件仅追加、原历史行删除0。候选agent/cn2002-quest-worldline-r58-20261021同源HEAD实际10项Actions全部completed/success；专用run39612028005/job119263072244日志执行6项派生源/前置条件负边界用例，全部通过零跳过。main同源HEAD实际11项Actions全部completed/success；专用run39612246843/job119263842866 SUCCESS。两专用run各0 artifact，绝不虚称ZIP、raw原HTML SHA或原商业客户端、服务器双重放。
 
 源派生研究 `research/recovered/STONEAGE-CN2002-QUEST-WORLDLINE-SOURCE-R1.json` 原生Git blob5026707c16e0fdc306daf188739dcd75cb79b8b5/UTF8 12868B/SHA256 58b6c1f986e0b0b30ce45cedccfce47395d95b23b905f33da7a4eafb6e909183。新增 `research/recovered/STONEAGE-CN2002-QUEST-WORLDLINE-ACCEPTANCE-R1.json` 永久保管上述内容Git、两个实际source页面URL/刊期与双工作流ID、原始HTTP字节缺证及六项负边界。原网页作者文章/截图/客户端不进Git；结构化源12任务+8故事+6矛盾并不认证官方4.0补丁、同版任务ID或TW1.0内容。新专用测试由6升7项，强制收据必须存在、源原UTF8字节长度与SHA256一致；收据提交自身候选/main Actions必须独立后验，不能将旧6项成功改称新7项通过。下一最高NEXT59；Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停。历史前缀保留。
+
+
+## 2026-10-21 R59 大陆2003职业系统：学习前置条件与命名差异（来源限定）
+
+本轮重新核对main 2c4b1bb6b4c0dfcf6c3c06df7f20449eb3bb807c/tree 2dc1ac2fbc82e0aaaa56696e11013227ecb8a5fd，同HEAD主线11项Actions全部completed/success；CURRENT-STATE精确Git blob 4a687f438082ae5311f732842b21844fa7ffec8a、原字节约2287967B，普通file接口空返回，已从Git blob完整读取，绝不以空串覆盖。R58收据及R1–R58历史保留。实际NEXT59，轮换22域至2003大陆职业/进阶，不重走R58剧情、不扩R79。
+
+同期新浪2003-11-19两页《全新开放的职业系统》（11:04）与《石器7.0各职业技能表》（11:16）当前可读，归档源URL、页面署名和时间。仅门户网页说明；未取得原始HTTP/HTML SHA，未校验特定商业服务器版本、原技能ID和技能学习运行。新增规格 docs/specs/STONEAGE-CN2003-PROFESSION-DEPENDENCIES-SOURCE-R1.md、衍生 research/recovered/STONEAGE-CN2003-PROFESSION-DEPENDENCIES-SOURCE-R1.json、专用回归测试与Actions工作流；三职业/三共通技能、S1九个明确学习例（分别四法师、三追猎、二白狼）、八歧义/证据负边界。关键保留 S1“一针见血”vs S2“针针相对”、驯服/驯伏、招雷/召雷、以形/移形，不能自动合并同技能ID；追猎者二级尸体掠夺职业等级5是特别例外，技能点16上限仅页面宣称；S1可见分层与S2平面名单计数不相等，不能当改版或服务器配置事实。2003职业系统不回填TW1.0。原版权HTML/资源未入Git。
+
+本轮测试/候选/主线实际CI结果需后验，不得提前宣称通过。止点两页九条示例八边界；最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-60 轮换全22域另一具名内容；Stage A 7 PARTIAL + 2 OPEN、Stage B/wiki GATED、R79 PAUSED_NON_BLOCKING，原历史全文前缀完整。

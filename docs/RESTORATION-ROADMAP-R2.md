@@ -1441,3 +1441,8 @@ S2宠物邮件笼统称某些落地消失特殊物品不可邮，不具名R55贝
 R57研究提交 72d5dceb03900c7f80a143201bddc11caeb1121d/tree 2a04834f9b930d1716a2b9ca7f6769fc1fdf19b4 从原main4e11dc8983cfbe0b1b667e5ee45a3b1ee4a4de6d建立，仅前进提交；GitHub compare实证9文件、5新增、4只追加、旧历史行删除0。候选分支agent/cn2003-ui-team-trade-r57-20261021该HEAD十项Actions均completed/success；专用run39608021253/job119249213662实际运行6个结构化数据与证据边界测试，零跳过。主线同HEAD十一项Actions均completed/success；专用run39608219457/job119249911845亦success。专用两run均查0 artifact，不捏造ZIP或源HTML独立双重放。
 
 research/recovered/STONEAGE-CN2003-UI-TEAM-TRADE-SOURCE-R1.json源派生Git blob1bac3104c1d6b0d96a65a8c32e901de13a5df53d/UTF8 9904B/SHA256 ef9ee96f478aa9232b1cbb9fb71716ed36302f04dfa885c3cd0eaab29d4d82dd。新增research/recovered/STONEAGE-CN2003-UI-TEAM-TRADE-ACCEPTANCE-R1.json永久收据记录内容提交、双Actions、两个同期网页的来源URL、零artifact、未取得原网页原字节与商业服务端实测。专用CI由6升级至7项，新增收据存在、派生原字节长度和SHA256验收门；收据提交自身的候选/main Actions须另行后验，绝不可把旧6项结果称7项运行。无版权原始HTML/资产入Git。保留快捷键内部矛盾、海贼王遗迹vs2003的2.0怀旧组分期、交易OKvs“更安全”机制未证和原地登出不等于TW10 save原数据。最高NEXT58，Stage A7 PARTIAL+2 OPEN，B/wiki GATED，R79暂停，旧历史全文不改删。
+
+
+### 2026-10-21 R59：2003职业技能依赖，版本化网页资料包
+
+从22域组合轮换到角色成长/职业系统，真实新增2003两网页的3职业、3共通技能、9例文学习门槛与8条负边界；docs/specs/STONEAGE-CN2003-PROFESSION-DEPENDENCIES-SOURCE-R1.md 与 research/recovered/STONEAGE-CN2003-PROFESSION-DEPENDENCIES-SOURCE-R1.json。此包有实质玩法来源，但只到门户文字，绝不归属初代1.0原服，也不把熟练度70、技能点16直接做新游戏参数。范围闭合后轮换另一个域的另一具名版本内容 NEXT R60，防止无止境扩展职业技能树。Stage A与Stage B门槛不变。

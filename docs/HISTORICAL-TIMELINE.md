@@ -4232,3 +4232,10 @@ research/recovered/STONEAGE-CN2003-UI-TEAM-TRADE-SOURCE-R1.json源派生Git blob
 源研究提交`dd30db0dfc5a3d58706c3220ea8d333aa37ba5cb`/tree `c31abd5cf0bb2c885ff4b99493d6eb6c2e5780ba`，主线由b94270a19e4ce5d73691e8201d00a03bcf6c8177非强制且预期HEAD保护快进。GitHub compare=8变动：5新增、3历史文件仅追加、原历史行删除0。候选agent/cn2002-quest-worldline-r58-20261021同源HEAD实际10项Actions全部completed/success；专用run39612028005/job119263072244日志执行6项派生源/前置条件负边界用例，全部通过零跳过。main同源HEAD实际11项Actions全部completed/success；专用run39612246843/job119263842866 SUCCESS。两专用run各0 artifact，绝不虚称ZIP、raw原HTML SHA或原商业客户端、服务器双重放。
 
 源派生研究 `research/recovered/STONEAGE-CN2002-QUEST-WORLDLINE-SOURCE-R1.json` 原生Git blob5026707c16e0fdc306daf188739dcd75cb79b8b5/UTF8 12868B/SHA256 58b6c1f986e0b0b30ce45cedccfce47395d95b23b905f33da7a4eafb6e909183。新增 `research/recovered/STONEAGE-CN2002-QUEST-WORLDLINE-ACCEPTANCE-R1.json` 永久保管上述内容Git、两个实际source页面URL/刊期与双工作流ID、原始HTTP字节缺证及六项负边界。原网页作者文章/截图/客户端不进Git；结构化源12任务+8故事+6矛盾并不认证官方4.0补丁、同版任务ID或TW1.0内容。新专用测试由6升7项，强制收据必须存在、源原UTF8字节长度与SHA256一致；收据提交自身候选/main Actions必须独立后验，不能将旧6项成功改称新7项通过。下一最高NEXT59；Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停。历史前缀保留。
+
+
+## 2026-10-21 R59：2003 年 7.0 职业系统和技能门槛（门户网页，不是运行证据）
+
+【SOURCE FACT】新浪游戏 2003-11-19《全新开放的职业系统》和《石器7.0各职业技能表》保留了同期三职业与可见技能、三共通技能及九项明确举例前置条件。S1 陈述就职初始一点技能点、职业升一级增一点、最多16点、学习不可撤销及熟练度示例。两页不是同 build 运营原配置；精确发行时间/服务端执行、TW1.0 成员资格均 OPEN。详见 docs/specs/STONEAGE-CN2003-PROFESSION-DEPENDENCIES-SOURCE-R1.md 和 research/recovered/STONEAGE-CN2003-PROFESSION-DEPENDENCIES-SOURCE-R1.json。
+
+【CONFLICT】一针见血/针针相对、驯服/驯伏、招雷/召雷、以形/移形保持源字面。尸体掠夺职位级别5独立于一般二级门槛。S1/S2列表计数差异不推服务端更新。不得用此项为现代新游戏设定职阶或熟练度公式。

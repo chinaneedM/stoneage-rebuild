@@ -1,0 +1,382 @@
+{
+  "schema": "stoneage.cn2003_profession_dependencies.source_limited.r1",
+  "task": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-59",
+  "date": "2026-10-21",
+  "baseline": {
+    "main": "2c4b1bb6b4c0dfcf6c3c06df7f20449eb3bb807c",
+    "tree": "2dc1ac2fbc82e0aaaa56696e11013227ecb8a5fd"
+  },
+  "scope": "CN_2003_LABELED_7_0_PORTAL_CAREER_SYSTEM_NOT_TW10_OR_ORIGINAL_SERVER",
+  "sources": [
+    {
+      "id": "S1",
+      "title": "全新开放的职业系统",
+      "url": "https://games.sina.com.cn/z/sta/2003-11-19/70746.shtml",
+      "page_date": "2003-11-19 11:04",
+      "page_author_label": "新浪游戏",
+      "class": "CONTEMPORANEOUS_PORTAL_GAME_GUIDE",
+      "version_label": "7.0_CONTEXT_NOT_EXACT_BUILD",
+      "original_http_sha256": null,
+      "raw_http_saved": false
+    },
+    {
+      "id": "S2",
+      "title": "石器7.0各职业技能表",
+      "url": "https://games.sina.com.cn/z/sta/2003-11-19/70759.shtml",
+      "page_date": "2003-11-19 11:16",
+      "page_author_label": "新浪游戏",
+      "class": "CONTEMPORANEOUS_PORTAL_SKILL_NAME_LIST",
+      "version_label": "7.0_PAGE_TITLE",
+      "original_http_sha256": null,
+      "raw_http_saved": false
+    }
+  ],
+  "profession_names": [
+    {
+      "id": "MAGE",
+      "s1": "暗灵法师",
+      "s2": "暗灵法师",
+      "s1_listed_tier_counts": [
+        8,
+        7,
+        5,
+        1
+      ],
+      "s2_visible_skill_name_count": 21
+    },
+    {
+      "id": "HUNTER",
+      "s1": "追猎者",
+      "s2": "追猎者",
+      "s1_listed_tier_counts": [
+        7,
+        7,
+        5,
+        2
+      ],
+      "s2_visible_skill_name_count": 19
+    },
+    {
+      "id": "WARRIOR",
+      "s1": "白狼勇士",
+      "s2": "白狼勇士",
+      "s1_listed_tier_counts": [
+        7,
+        9,
+        5
+      ],
+      "s2_visible_skill_name_count": 20
+    }
+  ],
+  "shared_skill_labels_from_s2": [
+    "自我强化",
+    "负重增加",
+    "气力充沛"
+  ],
+  "s1_summary": {
+    "skill_tiers_reported": "THREE_OR_FOUR",
+    "level_gate_by_tier": "LEVEL_1_FOR_TIER_1_ETC_WITH_NAMED_EXCEPTION",
+    "skill_points_on_job_change": 1,
+    "skill_points_per_profession_level_gain": 1,
+    "max_reported_skill_points": 16,
+    "skill_learn_reversible_as_page": false,
+    "original_server_verified": false
+  },
+  "prerequisite_examples": [
+    {
+      "id": "MAGE_ICE_PROFICIENCY",
+      "class": "MAGE",
+      "target": "冰气熟练度",
+      "target_tier": 2,
+      "prerequisite_group_type": "ALL",
+      "prerequisites": [
+        {
+          "name": "冰附体",
+          "reported_proficiency_min": 70
+        }
+      ],
+      "source": "S1",
+      "level_addendum": null,
+      "claim_status": "PORTAL_EXAMPLE_ONLY",
+      "original_server_verified": false
+    },
+    {
+      "id": "MAGE_NEEDLE",
+      "class": "MAGE",
+      "target": "一针见血",
+      "target_tier": 3,
+      "prerequisite_group_type": "SEQUENTIAL_ALL",
+      "prerequisites": [
+        {
+          "name": "移形换位",
+          "reported_proficiency_min": 70
+        },
+        {
+          "name": "嗜血成性",
+          "reported_proficiency_min": 70
+        },
+        {
+          "name": "嗜血蛊",
+          "reported_proficiency_min": 70
+        }
+      ],
+      "source": "S1",
+      "level_addendum": null,
+      "claim_status": "PORTAL_EXAMPLE_ONLY",
+      "original_server_verified": false
+    },
+    {
+      "id": "MAGE_ICE_BLAST",
+      "class": "MAGE",
+      "target": "冰暴术",
+      "target_tier": 3,
+      "prerequisite_group_type": "ALL_WITH_ORDERED_CHAINS_UNRESOLVED",
+      "prerequisites": [
+        {
+          "name": "冰箭",
+          "reported_proficiency_min": 70
+        },
+        {
+          "name": "冰镜术",
+          "reported_proficiency_min": 70
+        },
+        {
+          "name": "冰附体",
+          "reported_proficiency_min": 70
+        }
+      ],
+      "source": "S1",
+      "level_addendum": null,
+      "claim_status": "PORTAL_EXAMPLE_ONLY",
+      "original_server_verified": false
+    },
+    {
+      "id": "MAGE_POSSESSION",
+      "class": "MAGE",
+      "target": "附身术",
+      "target_tier": 3,
+      "prerequisite_group_type": "ALL",
+      "prerequisites": [
+        {
+          "name": "火附体",
+          "reported_proficiency_min": 70
+        },
+        {
+          "name": "雷附体",
+          "reported_proficiency_min": 70
+        },
+        {
+          "name": "冰附体",
+          "reported_proficiency_min": 70
+        },
+        {
+          "name": "移形换位",
+          "reported_proficiency_min": 70
+        }
+      ],
+      "source": "S1",
+      "level_addendum": null,
+      "claim_status": "PORTAL_EXAMPLE_ONLY",
+      "original_server_verified": false
+    },
+    {
+      "id": "HUNTER_POISON_WEAPON",
+      "class": "HUNTER",
+      "target": "毒素武器",
+      "target_tier": 2,
+      "prerequisite_group_type": "ANY_ONE",
+      "prerequisites": [
+        {
+          "name": "精通投斧",
+          "reported_proficiency_min": 70
+        },
+        {
+          "name": "精通投石",
+          "reported_proficiency_min": 70
+        },
+        {
+          "name": "精通镖类",
+          "reported_proficiency_min": 70
+        }
+      ],
+      "source": "S1",
+      "level_addendum": null,
+      "claim_status": "PORTAL_EXAMPLE_ONLY",
+      "original_server_verified": false
+    },
+    {
+      "id": "HUNTER_FORGET",
+      "class": "HUNTER",
+      "target": "遗忘",
+      "target_tier": 3,
+      "prerequisite_group_type": "SEQUENTIAL_ALL",
+      "prerequisites": [
+        {
+          "name": "追寻敌踪",
+          "reported_proficiency_min": 70
+        },
+        {
+          "name": "驯服宠物",
+          "reported_proficiency_min": 70
+        },
+        {
+          "name": "回避战斗",
+          "reported_proficiency_min": 70
+        },
+        {
+          "name": "挑拨",
+          "reported_proficiency_min": 70
+        }
+      ],
+      "source": "S1",
+      "level_addendum": null,
+      "claim_status": "PORTAL_EXAMPLE_ONLY",
+      "original_server_verified": false
+    },
+    {
+      "id": "HUNTER_CORPSE",
+      "class": "HUNTER",
+      "target": "尸体掠夺",
+      "target_tier": 2,
+      "prerequisite_group_type": "NONE_STATED",
+      "prerequisites": [],
+      "source": "S1",
+      "level_addendum": {
+        "profession_level_min": 5
+      },
+      "claim_status": "PORTAL_EXAMPLE_ONLY",
+      "original_server_verified": false
+    },
+    {
+      "id": "WARRIOR_DUAL_WIELD",
+      "class": "WARRIOR",
+      "target": "二刀流",
+      "target_tier": 2,
+      "prerequisite_group_type": "ALL",
+      "prerequisites": [
+        {
+          "name": "连环攻击",
+          "reported_proficiency_min": 70
+        },
+        {
+          "name": "盾击",
+          "reported_proficiency_min": 70
+        }
+      ],
+      "source": "S1",
+      "level_addendum": null,
+      "claim_status": "PORTAL_EXAMPLE_ONLY",
+      "original_server_verified": false
+    },
+    {
+      "id": "WARRIOR_MOUNT_ATTACK",
+      "class": "WARRIOR",
+      "target": "座骑攻击",
+      "target_tier": 3,
+      "prerequisite_group_type": "ANY_ONE",
+      "prerequisites": [
+        {
+          "name": "枪熟练度",
+          "reported_proficiency_min": 70
+        },
+        {
+          "name": "斧熟练度",
+          "reported_proficiency_min": 70
+        },
+        {
+          "name": "棍熟练度",
+          "reported_proficiency_min": 70
+        }
+      ],
+      "source": "S1",
+      "level_addendum": null,
+      "claim_status": "PORTAL_EXAMPLE_ONLY",
+      "original_server_verified": false
+    }
+  ],
+  "ambiguities": [
+    {
+      "kind": "MAGE_NEEDLE_NAME_CONFLICT",
+      "s1_example": "一针见血",
+      "s2_list": "针针相对",
+      "same_skill_id_proven": false
+    },
+    {
+      "kind": "HUNTER_TAMING_LABEL",
+      "s1_example": "驯服宠物",
+      "s2_list": "驯伏宠物",
+      "same_skill_id_proven": false
+    },
+    {
+      "kind": "SPELL_ALIASES_NOT_CANONICAL",
+      "s1_example": "招雷术/以形换位",
+      "s2_list": "召雷术/移形换位",
+      "same_skill_id_proven": false
+    },
+    {
+      "kind": "SKILL_TIER_COUNTERS_NOT_EXECUTION",
+      "s1_tiers": {
+        "MAGE": [
+          8,
+          7,
+          5,
+          1
+        ],
+        "HUNTER": [
+          7,
+          7,
+          5,
+          2
+        ],
+        "WARRIOR": [
+          7,
+          9,
+          5
+        ]
+      },
+      "s2_page_visible_counts": {
+        "MAGE": 21,
+        "HUNTER": 19,
+        "WARRIOR": 20
+      },
+      "same_complete_skill_pool_proven": false
+    },
+    {
+      "kind": "HUNTER_LEVEL_5_EXCEPTION",
+      "s1_general_tier_2_profession_level_min": 2,
+      "s1_corpse_skill_profession_level_min": 5,
+      "exception_preserved": true
+    },
+    {
+      "kind": "SKILL_POINT_CAP_NOT_ACTIVE_BUILD_PROOF",
+      "s1_granted_on_job_change": 1,
+      "s1_gain_per_profession_level": 1,
+      "s1_points_max": 16,
+      "same_build_runtime_verified": false
+    },
+    {
+      "kind": "PAGE_TABLE_TEXT_COLLAPSE",
+      "s1_column_spanning_threshold_60_visible": true,
+      "exact_fourth_tier_dependency_edges_from_flattened_table_proven": false
+    },
+    {
+      "kind": "SOURCE_TO_GAME_PROVENANCE",
+      "s1_and_s2_are_editorial_portal_pages": true,
+      "first_party_original_patch_note_authenticated": false,
+      "tw10_or_jss1999_membership_proven": false
+    }
+  ],
+  "negative_claims": {
+    "same_exact_build_between_two_pages_proven": false,
+    "raw_original_html_archived": false,
+    "source_html_sha256_verified": false,
+    "first_party_game_patch_notes_authenticated": false,
+    "original_server_skill_tree_executed": false,
+    "original_tw10_profession_membership_proven": false,
+    "source_skill_names_are_original_internal_ids": false,
+    "s2_page_list_is_complete_active_skill_config": false,
+    "modern_singleplayer_career_design_adopted": false
+  },
+  "stop_condition": "Two contemporaneous editorial pages;3 professions,3 shared names,9 named prerequisite cases,8 negative boundaries. No guessed server skill graph, IDs, precise version build or TW1.0 membership.",
+  "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-60"
+}
