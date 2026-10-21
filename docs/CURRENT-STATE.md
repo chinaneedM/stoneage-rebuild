@@ -16808,3 +16808,8 @@ S2宠物邮件笼统称某些落地消失特殊物品不可邮，不具名R55贝
 衍生研究research/recovered/STONEAGE-CN2004-PET-SKILL-TRAINER-SOURCE-R1.json原生Git blob b6f42811c23cadc8b80fabb0a53b98a6aa9e8b2f，UTF8长度14778B、派生SHA256 90bc79a7c824ffae88f2e974de692252fb37345eacafa9db26f87bb62bbc9a70，19条S1完整可见学技行＋11条S2对照及5组来源矛盾永久存在Git。新增research/recovered/STONEAGE-CN2004-PET-SKILL-TRAINER-ACCEPTANCE-R1.json记录内容提交/双工作流job/两URL/缺失原HTML与实机证据；测试增加必须存在收据及SHA256原字节逐验门，专用workflow添加收据路径触发。收据**自身提交**的5→6测试与候选/main Actions须完成后另后验，不沿用旧5项绿灯。
 
 2004《宠物相关》与S2未定刊期《宠物资料》同名技能冲突仍不认证任何patch顺序；猛毒攻击效果/费用、一击必杀乘数、骑乘课程3/4级、旅程伙伴对象及训练地分开；宠邮泛指特殊物品不认证R55贝壳过滤器。无原网页HTML SHA/精确build/技能或NPC ID/商业原服测试。本包有限闭合，最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-57回22域另取重要材料；Stage A7 PARTIAL+2 OPEN、Stage B/wiki GATED、R79暂停，历史全部前缀保留。
+
+
+### 2026-10-21 R56永久收据首轮测试路径错误与修复（不改写历史）
+
+首次收据候选7f5dbb1291891ffd27d700d849b9e51ce8038850专用Action run39604156414/job119235960504实际**FAILURE**。本轮静态预检发现测试将派生JSON所在的research/recovered目录作为根，再拼一次research/recovered，导致收据查找路径重复；与网页内容、来源真实性、Git SHA256或客户端规则无关。非强制提交b4f823f1c418b0569a7c938a7dfa99af6a212351仅改测试的仓库根路径为P.parents[2]，对应专用run39604294631同HEAD SUCCESS，首轮失败不称SUCCESS也不从记录中删除。此前来源内容提交83c8c8279cd5913d9c75eec467c64a965c8cfba1的main11项Actions独立全SUCCESS。下一次完整候选/主线Actions将按最终HEAD后验；最高NEXT57不变。
