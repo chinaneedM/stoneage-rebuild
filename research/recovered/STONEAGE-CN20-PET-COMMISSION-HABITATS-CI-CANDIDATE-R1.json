@@ -1,0 +1,681 @@
+{
+  "schema": "stoneage.cn20_pet_commission.derived_replay.r1",
+  "http_inputs": [
+    {
+      "url": "https://games.sina.com.cn/newgames/0110/10236724.shtml",
+      "bytes": 33058,
+      "sha256": "90316967d80cd1b3fe5ad255624f890501776ce05203a7931b7617b3349a156a"
+    },
+    {
+      "url": "https://games.sina.com.cn/newgames/0110/10236724_c1.shtml",
+      "bytes": 33200,
+      "sha256": "282fc11dded94b6b9440b51ab0e7dd89296a2e7a479a00a59e153a1f4d3012da"
+    }
+  ],
+  "extracted": {
+    "title": "石器时代2之新鲜速递(三)--任务详解",
+    "body_version_label": "石器时代2.0",
+    "publication_date_verified": null,
+    "exact_build_verified": false,
+    "intro_categories": [
+      "宠物",
+      "道具",
+      "料理",
+      "特别委托"
+    ],
+    "marinas_categories": [
+      "宠物",
+      "料理"
+    ],
+    "category_scopes_equivalent": false,
+    "marinas_requirements": {
+      "level_label": "无",
+      "special_label": "无",
+      "universal_no_gate_proven": false
+    },
+    "purchase": {
+      "place_text": "玛丽娜斯渔村（东113,南661）（东78,南615）",
+      "outer_coordinate_pairs": [
+        [
+          113,
+          661
+        ],
+        [
+          78,
+          615
+        ]
+      ],
+      "shop_label": "24小时便利商店",
+      "shop_xy_as_written": [
+        102,
+        96
+      ],
+      "seller_role": "委托书贩售员",
+      "seller_xy_as_written": [
+        20,
+        12
+      ],
+      "general_intro_payment_context": "保证金",
+      "coordinate_frames_and_npc_ids_verified": false
+    },
+    "handin": {
+      "role": "委托管理员",
+      "xy_as_written": [
+        18,
+        12
+      ],
+      "actual_npc_id": null,
+      "consumed_pet_state_rules": null
+    },
+    "commissions": [
+      {
+        "id": "A",
+        "source_page": "P1",
+        "targets": [
+          {
+            "species_label": "乌力",
+            "quantity_each": 1
+          },
+          {
+            "species_label": "乌力斯坦",
+            "quantity_each": 1
+          },
+          {
+            "species_label": "贝恩达斯",
+            "quantity_each": 1
+          },
+          {
+            "species_label": "多利凯拉",
+            "quantity_each": 1
+          }
+        ],
+        "listed_cost_S": 50,
+        "listed_reward_S": 500,
+        "reward_as_written": "500S",
+        "deposit_refund": null,
+        "net_profit_S": null,
+        "habitats_in_source_order": [
+          {
+            "species_label": "乌力",
+            "location_text": "玛丽娜斯渔村（东113,南661）（东78,南615）村口",
+            "coordinate_pairs_in_source_order": [
+              [
+                113,
+                661
+              ],
+              [
+                78,
+                615
+              ]
+            ],
+            "coordinate_frame_verified": false,
+            "spawn_level": null,
+            "spawn_weight": null,
+            "map_id": null,
+            "species_id": null
+          },
+          {
+            "species_label": "乌力斯坦",
+            "location_text": "玛丽娜斯渔村（东113,南661）（东78,南615）村口",
+            "coordinate_pairs_in_source_order": [
+              [
+                113,
+                661
+              ],
+              [
+                78,
+                615
+              ]
+            ],
+            "coordinate_frame_verified": false,
+            "spawn_level": null,
+            "spawn_weight": null,
+            "map_id": null,
+            "species_id": null
+          },
+          {
+            "species_label": "贝恩达斯",
+            "location_text": "玛丽娜斯渔村（东113,南661）（东78,南615）村口",
+            "coordinate_pairs_in_source_order": [
+              [
+                113,
+                661
+              ],
+              [
+                78,
+                615
+              ]
+            ],
+            "coordinate_frame_verified": false,
+            "spawn_level": null,
+            "spawn_weight": null,
+            "map_id": null,
+            "species_id": null
+          },
+          {
+            "species_label": "多利凯拉",
+            "location_text": "玛丽娜斯渔村（东113,南661）（东78,南615）村口",
+            "coordinate_pairs_in_source_order": [
+              [
+                113,
+                661
+              ],
+              [
+                78,
+                615
+              ]
+            ],
+            "coordinate_frame_verified": false,
+            "spawn_level": null,
+            "spawn_weight": null,
+            "map_id": null,
+            "species_id": null
+          }
+        ],
+        "actual_handover_or_payment_verified": false
+      },
+      {
+        "id": "B",
+        "source_page": "P1",
+        "targets": [
+          {
+            "species_label": "昆伊",
+            "quantity_each": 2
+          },
+          {
+            "species_label": "凯比特",
+            "quantity_each": 2
+          }
+        ],
+        "listed_cost_S": 80,
+        "listed_reward_S": 800,
+        "reward_as_written": "800S",
+        "deposit_refund": null,
+        "net_profit_S": null,
+        "habitats_in_source_order": [
+          {
+            "species_label": "昆伊",
+            "location_text": "北岛萨尔吉姆村（东638,南493）（东708,南487）村口",
+            "coordinate_pairs_in_source_order": [
+              [
+                638,
+                493
+              ],
+              [
+                708,
+                487
+              ]
+            ],
+            "coordinate_frame_verified": false,
+            "spawn_level": null,
+            "spawn_weight": null,
+            "map_id": null,
+            "species_id": null
+          },
+          {
+            "species_label": "凯比特",
+            "location_text": "北岛萨尔吉姆村（东638,南493）（东708,南487）村口",
+            "coordinate_pairs_in_source_order": [
+              [
+                638,
+                493
+              ],
+              [
+                708,
+                487
+              ]
+            ],
+            "coordinate_frame_verified": false,
+            "spawn_level": null,
+            "spawn_weight": null,
+            "map_id": null,
+            "species_id": null
+          }
+        ],
+        "actual_handover_or_payment_verified": false
+      },
+      {
+        "id": "C",
+        "source_page": "P1",
+        "targets": [
+          {
+            "species_label": "贝洛恩",
+            "quantity_each": 1
+          },
+          {
+            "species_label": "贝洛洛克",
+            "quantity_each": 1
+          }
+        ],
+        "listed_cost_S": 150,
+        "listed_reward_S": 1500,
+        "reward_as_written": "1500S",
+        "deposit_refund": null,
+        "net_profit_S": null,
+        "habitats_in_source_order": [
+          {
+            "species_label": "贝洛恩",
+            "location_text": "北岛阿布的洞窟（东191,南365）",
+            "coordinate_pairs_in_source_order": [
+              [
+                191,
+                365
+              ]
+            ],
+            "coordinate_frame_verified": false,
+            "spawn_level": null,
+            "spawn_weight": null,
+            "map_id": null,
+            "species_id": null
+          },
+          {
+            "species_label": "贝洛洛克",
+            "location_text": "北岛阿布的洞窟（东191,南365）",
+            "coordinate_pairs_in_source_order": [
+              [
+                191,
+                365
+              ]
+            ],
+            "coordinate_frame_verified": false,
+            "spawn_level": null,
+            "spawn_weight": null,
+            "map_id": null,
+            "species_id": null
+          }
+        ],
+        "actual_handover_or_payment_verified": false
+      },
+      {
+        "id": "D",
+        "source_page": "P2",
+        "targets": [
+          {
+            "species_label": "奇宝",
+            "quantity_each": 1
+          },
+          {
+            "species_label": "火鸡",
+            "quantity_each": 1
+          },
+          {
+            "species_label": "布伊",
+            "quantity_each": 1
+          },
+          {
+            "species_label": "布比",
+            "quantity_each": 1
+          }
+        ],
+        "listed_cost_S": 320,
+        "listed_reward_S": 3200,
+        "reward_as_written": "3200S",
+        "deposit_refund": null,
+        "net_profit_S": null,
+        "habitats_in_source_order": [
+          {
+            "species_label": "奇宝",
+            "location_text": "北岛卡坦村（东259,南170）附近",
+            "coordinate_pairs_in_source_order": [
+              [
+                259,
+                170
+              ]
+            ],
+            "coordinate_frame_verified": false,
+            "spawn_level": null,
+            "spawn_weight": null,
+            "map_id": null,
+            "species_id": null
+          },
+          {
+            "species_label": "火鸡",
+            "location_text": "北岛卡坦村（东259,南170）附近",
+            "coordinate_pairs_in_source_order": [
+              [
+                259,
+                170
+              ]
+            ],
+            "coordinate_frame_verified": false,
+            "spawn_level": null,
+            "spawn_weight": null,
+            "map_id": null,
+            "species_id": null
+          },
+          {
+            "species_label": "布伊",
+            "location_text": "北岛卡坦村（东259,南170）附近",
+            "coordinate_pairs_in_source_order": [
+              [
+                259,
+                170
+              ]
+            ],
+            "coordinate_frame_verified": false,
+            "spawn_level": null,
+            "spawn_weight": null,
+            "map_id": null,
+            "species_id": null
+          },
+          {
+            "species_label": "布比",
+            "location_text": "北岛卡坦村（东259,南170）附近",
+            "coordinate_pairs_in_source_order": [
+              [
+                259,
+                170
+              ]
+            ],
+            "coordinate_frame_verified": false,
+            "spawn_level": null,
+            "spawn_weight": null,
+            "map_id": null,
+            "species_id": null
+          }
+        ],
+        "actual_handover_or_payment_verified": false
+      },
+      {
+        "id": "E",
+        "source_page": "P2",
+        "targets": [
+          {
+            "species_label": "昆伊",
+            "quantity_each": 1
+          },
+          {
+            "species_label": "凯比",
+            "quantity_each": 1
+          },
+          {
+            "species_label": "凯比特",
+            "quantity_each": 1
+          },
+          {
+            "species_label": "卡比特",
+            "quantity_each": 1
+          }
+        ],
+        "listed_cost_S": 400,
+        "listed_reward_S": 4000,
+        "reward_as_written": "4000S",
+        "deposit_refund": null,
+        "net_profit_S": null,
+        "habitats_in_source_order": [
+          {
+            "species_label": "昆伊",
+            "location_text": "北岛萨尔吉姆村（东638,南493）（东708,南487）村口",
+            "coordinate_pairs_in_source_order": [
+              [
+                638,
+                493
+              ],
+              [
+                708,
+                487
+              ]
+            ],
+            "coordinate_frame_verified": false,
+            "spawn_level": null,
+            "spawn_weight": null,
+            "map_id": null,
+            "species_id": null
+          },
+          {
+            "species_label": "凯比特",
+            "location_text": "北岛萨尔吉姆村（东638,南493）（东708,南487）村口",
+            "coordinate_pairs_in_source_order": [
+              [
+                638,
+                493
+              ],
+              [
+                708,
+                487
+              ]
+            ],
+            "coordinate_frame_verified": false,
+            "spawn_level": null,
+            "spawn_weight": null,
+            "map_id": null,
+            "species_id": null
+          },
+          {
+            "species_label": "凯比",
+            "location_text": "北岛科奥海底通路（柯奥村内（东96,南61））地下二楼（举行成人仪式的地方）",
+            "coordinate_pairs_in_source_order": [
+              [
+                96,
+                61
+              ]
+            ],
+            "coordinate_frame_verified": false,
+            "spawn_level": null,
+            "spawn_weight": null,
+            "map_id": null,
+            "species_id": null
+          },
+          {
+            "species_label": "卡比特",
+            "location_text": "北岛玄黄洞窟（东278,南325）附近",
+            "coordinate_pairs_in_source_order": [
+              [
+                278,
+                325
+              ]
+            ],
+            "coordinate_frame_verified": false,
+            "spawn_level": null,
+            "spawn_weight": null,
+            "map_id": null,
+            "species_id": null
+          }
+        ],
+        "actual_handover_or_payment_verified": false
+      },
+      {
+        "id": "F",
+        "source_page": "P2",
+        "targets": [
+          {
+            "species_label": "卡达鲁卡斯",
+            "quantity_each": 1
+          },
+          {
+            "species_label": "兰贝鲁斯",
+            "quantity_each": 1
+          },
+          {
+            "species_label": "贝洛宝利",
+            "quantity_each": 1
+          },
+          {
+            "species_label": "加格",
+            "quantity_each": 1
+          },
+          {
+            "species_label": "姆伊",
+            "quantity_each": 1
+          }
+        ],
+        "listed_cost_S": 1500,
+        "listed_reward_S": null,
+        "reward_as_written": "?",
+        "deposit_refund": null,
+        "net_profit_S": null,
+        "habitats_in_source_order": [
+          {
+            "species_label": "卡达鲁卡斯",
+            "location_text": "北岛东柯尔克的通道（东412,南339）",
+            "coordinate_pairs_in_source_order": [
+              [
+                412,
+                339
+              ]
+            ],
+            "coordinate_frame_verified": false,
+            "spawn_level": null,
+            "spawn_weight": null,
+            "map_id": null,
+            "species_id": null
+          },
+          {
+            "species_label": "兰贝鲁斯",
+            "location_text": "北岛盗贼的洞窟（东132,南421）",
+            "coordinate_pairs_in_source_order": [
+              [
+                132,
+                421
+              ]
+            ],
+            "coordinate_frame_verified": false,
+            "spawn_level": null,
+            "spawn_weight": null,
+            "map_id": null,
+            "species_id": null
+          },
+          {
+            "species_label": "贝洛宝利",
+            "location_text": "北岛迷幻洞窟（卡坦村内（东100,南97））",
+            "coordinate_pairs_in_source_order": [
+              [
+                100,
+                97
+              ]
+            ],
+            "coordinate_frame_verified": false,
+            "spawn_level": null,
+            "spawn_weight": null,
+            "map_id": null,
+            "species_id": null
+          },
+          {
+            "species_label": "加格",
+            "location_text": "北岛科奥海底通路（柯奥村内（东96,南61））",
+            "coordinate_pairs_in_source_order": [
+              [
+                96,
+                61
+              ]
+            ],
+            "coordinate_frame_verified": false,
+            "spawn_level": null,
+            "spawn_weight": null,
+            "map_id": null,
+            "species_id": null
+          },
+          {
+            "species_label": "姆伊",
+            "location_text": "北岛基努伊海底通路（东666,南235）",
+            "coordinate_pairs_in_source_order": [
+              [
+                666,
+                235
+              ]
+            ],
+            "coordinate_frame_verified": false,
+            "spawn_level": null,
+            "spawn_weight": null,
+            "map_id": null,
+            "species_id": null
+          }
+        ],
+        "actual_handover_or_payment_verified": false
+      }
+    ],
+    "species_label_count": 19,
+    "target_relation_count": 21,
+    "next_page_link": "10236724_c1.shtml",
+    "further_page_retrieved": false,
+    "original_server_executed": false,
+    "tw10_attribution_proven": false
+  },
+  "audit": {
+    "real_response_mutations": [
+      {
+        "case": "quantity",
+        "changed_page_sha256": "c140dc1d69b44572c25c2628de824bc36795ba82cce9ed06c6ebb87837d2cefe",
+        "rejected": true
+      },
+      {
+        "case": "cost",
+        "changed_page_sha256": "96e4e93c0366502dd5af23c05fed683d4523fdf4053820ddc6ae4b0e72650ddf",
+        "rejected": true
+      },
+      {
+        "case": "reward",
+        "changed_page_sha256": "1448cfdf736d99c0886ba98b2c4b9ee58c61450e40971ee8d265cda8ed0aa6ad",
+        "rejected": true
+      },
+      {
+        "case": "outer-coordinate",
+        "changed_page_sha256": "867673f6a9e4cdeed90a4bbf809e102c7c006466848d5df2d67ff6d501983436",
+        "rejected": true
+      },
+      {
+        "case": "shop-coordinate",
+        "changed_page_sha256": "52c129054ff688d09c2ff08791b7ee09b1c04d4b8383d5f637b1ede402b4db4b",
+        "rejected": true
+      },
+      {
+        "case": "seller-coordinate",
+        "changed_page_sha256": "11b8a2999fe3791ecde17c09cec53a5ff9bb73380bfb875ec3dd07fcf538f364",
+        "rejected": true
+      },
+      {
+        "case": "scope-level",
+        "changed_page_sha256": "488bc4432deeb2cd3285f495e08fb8ba92c8ffa7c55cf273ad691024758a6e25",
+        "rejected": true
+      },
+      {
+        "case": "body-version",
+        "changed_page_sha256": "06bcc7cf546ade1453c136bcbbe769ee075acb09d46560d58c4d01a4ac4a7c10",
+        "rejected": true
+      },
+      {
+        "case": "deposit-context",
+        "changed_page_sha256": "9d588a52b55ad9d5a952adef1ad21f52c372b0bc6d2dcf57ba2fa909bd48b665",
+        "rejected": true
+      },
+      {
+        "case": "page-link",
+        "changed_page_sha256": "1551cd4fe4d089f2e757844b664b69c58445615aeb15a429b3edb9a14545a4d4",
+        "rejected": true
+      },
+      {
+        "case": "unknown-reward",
+        "changed_page_sha256": "77a4e0e2859b81f2eb3891f0e3da4f3c27656093cd575f582408f9bb0755ccf9",
+        "rejected": true
+      },
+      {
+        "case": "habitat-floor",
+        "changed_page_sha256": "2dd8897f193f9a42075dceb4f0c1f44ed94c16acbd60f7d4391ead386703fa43",
+        "rejected": true
+      },
+      {
+        "case": "nested-village-coordinate",
+        "changed_page_sha256": "3c80c1f6ae092547ab94312697015529ced4d2610876592f90ee60b4f479b349",
+        "rejected": true
+      },
+      {
+        "case": "distinct-npc-role",
+        "changed_page_sha256": "b72167ef6ce9dec53202ee7c4b1592a0c0f55f72b3cd755c7472f362a88d30a2",
+        "rejected": true
+      },
+      {
+        "case": "handin-coordinate",
+        "changed_page_sha256": "c05dece7200e6c47201670d988bc0c6ec4cca53e9cef75afa4d21fed635754d5",
+        "rejected": true
+      },
+      {
+        "case": "prefix-species-binding",
+        "changed_page_sha256": "e8fa2a48c7a934e9099b7cc83c3a3e95d459053f67bdf397e24d8c14cf5234f2",
+        "rejected": true
+      }
+    ],
+    "peripheral_script_positive": true,
+    "digest_gate_used": false
+  },
+  "original_html_assets_or_game_runtime_in_output": false
+}

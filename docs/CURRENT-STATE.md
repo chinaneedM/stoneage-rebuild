@@ -16918,3 +16918,14 @@ S1/S2同日肉量3处冲突、奇喀喀S2不详、局部与地域坐标不等价
 有限止点六份渔村宠物委托，最高NEXT `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-63` 回22域优先音效事件或具名画面/模型材料；Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79 PAUSED_NON_BLOCKING。
 
 R62同包增加既有19集合合同的可检索导出：6条quests文献关系、21条encounters地点关系，全部原game_ids=null/RESEARCH_METADATA_NOT_RELEASE_APPROVED，不生成物种master或网站。固定旧归档合同原Git与SHA256，目录含源语义摘要及P1/P2 URL，10项解析/目录测试覆盖名称关联、版本/权利缺字段拒绝。原8项解析通过记录不倒改成10项；远端双输出replay.json/catalog.json须后验。
+
+
+### 2026-10-22 R62双端真实网页重放及永久派生保管
+
+内容提交 `bfa487ae254aa2f6eb24bf8fa03f481b7f889a47`/tree `bac64b3248a3739193708c2cb79365bd2169e6de` 候选10/main11项适用Actions全部completed/success，主线以实时预期HEAD保护非强制快进。GitHub compare11文件=7新增/4仅追加，历史行删除0；11远端blob/整tree和本地一致，九启动完整前缀保留。源候选run39689552403/job119532052387/artifact12387901290，主线run39689613709/job119532259256/artifact12388126682，各真实执行10单元测试、两当前HTTP取源、16真实源语义改写拒绝与外围script正例；没有原商业运行或原图请求。
+
+双ZIP实际下载4635/4635B，SHA256 `4551ae0c6f837a40d10d3aed3877d14fed77a7fd1f85f885d5e1edd0b6cd943a` / `62620ea98f6a1787b7d6bfed5e2561692d7fe18ec1967b13327ded3f73f2463e`，各含replay.json和catalog.json两派生文件。候选/main/local完整replay原字节均19562B/SHA256 `953f789ca0c5ff3809b6b8c7b04cb81894b6f9ac120c5656ed10ba8e10c3a1f1`，两catalog原字节亦等于永久27关系目录；本次两HTTP均实际重得33058/33200B及同初取摘要。不同ZIP摘要是实际容器差异，不伪称同ZIP。
+
+两完整CI派生原JSON及源/目录分别永久入Git；保管链 `research/recovered/STONEAGE-CN20-PET-COMMISSION-HABITATS-CUSTODY-R1.json` 固定四派生文件原生Git/长度/SHA、来源输入、21实际工作流和双job/artifact/ZIP。原HTML/图不入Git。另加必须存在收据与四文件逐字节验收门，真实移除/等长修改证据文件必须失败；本包单元10→11项，**保管提交自身候选/main CI另行后验**，不倒改旧10项运行历史。
+
+同源两分页不是两独立作者来源，当前网页字节不认证首刊或历史build；F奖励仍?、坐标框架/原ID/刷怪权重未知，27文献关系不当27原游戏实体。最高NEXT63回22域优先音效事件/具名画面或模型材料，Stage A7 PARTIAL+2 OPEN，B/wiki GATED，R79暂停。

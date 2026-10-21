@@ -1,6 +1,9 @@
 """Parser behavior and evidence boundaries, using independent synthetic fragments."""
 import unittest
-from tools.stoneage_cn20_pet_commission_source import between, parse_block, visible, catalog
+import hashlib
+import tempfile
+from pathlib import Path
+from tools.stoneage_cn20_pet_commission_source import between, parse_block, visible, catalog, verify_custody
 
 
 SAMPLE = ('渔村宠物委托书A：甲、甲乙各2只成本：3S报酬：?宠物出没地点：'
@@ -72,6 +75,25 @@ class PetCommissionParserTests(unittest.TestCase):
         self.assertEqual(len({r['record_id'] for r in out['records']}), 3)
         self.assertTrue(all(r['game_ids'] is None and r['rights_status'] != 'RELEASE_APPROVED' for r in out['records']))
         self.assertFalse(out['public_release_approved'])
+
+    def test_custody_gate_rejects_removed_and_equal_length_modified_evidence(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            pins = []
+            for i in range(4):
+                name = str(i) + '.json'
+                raw = b'{"a":1}\n'
+                (root / name).write_bytes(raw)
+                pins.append({'path': name, 'bytes': len(raw), 'sha256': hashlib.sha256(raw).hexdigest(),
+                             'git_blob': hashlib.sha1(b'blob 8' + bytes([0]) + raw).hexdigest()})
+            receipt = {'source_scope': {'original_runtime_executed': False}, 'permanent_derived_files': pins}
+            verify_custody(receipt, root)
+            (root / '0.json').write_bytes(b'{"a":2}\n')
+            with self.assertRaises(ValueError):
+                verify_custody(receipt, root)
+            (root / '0.json').unlink()
+            with self.assertRaises(FileNotFoundError):
+                verify_custody(receipt, root)
 
 
 if __name__ == '__main__':

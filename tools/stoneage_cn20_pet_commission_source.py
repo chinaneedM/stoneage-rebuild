@@ -9,6 +9,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 REPORT = ROOT / 'research/recovered/STONEAGE-CN20-PET-COMMISSION-HABITATS-SOURCE-R1.json'
+CUSTODY = ROOT / 'research/recovered/STONEAGE-CN20-PET-COMMISSION-HABITATS-CUSTODY-R1.json'
 URLS = ('https://games.sina.com.cn/newgames/0110/10236724.shtml',
         'https://games.sina.com.cn/newgames/0110/10236724_c1.shtml')
 TITLE = '石器时代2之新鲜速递(三)--任务详解'
@@ -181,6 +182,16 @@ def catalog(extracted, archive):
             'authenticated_game_master_count': 0, 'public_release_approved': False, 'website_built': False}
 
 
+def verify_custody(receipt, root):
+    require(receipt['source_scope']['original_runtime_executed'] is False, 'Custody is not game runtime evidence')
+    require(len(receipt['permanent_derived_files']) >= 4, 'Incomplete permanent evidence custody')
+    for pin in receipt['permanent_derived_files']:
+        raw = (root / pin['path']).read_bytes()
+        blob = hashlib.sha1(b'blob ' + str(len(raw)).encode() + bytes([0]) + raw).hexdigest()
+        require(len(raw) == pin['bytes'] and sha(raw) == pin['sha256'] and blob == pin['git_blob'],
+                'Permanent derived evidence changed: ' + pin['path'])
+
+
 def audit(expected, raws):
     # Real response mutations; verify uses parsed semantics, not raw/digest equality.
     changes = [(0, '各2只', '各1只', 'quantity'), (0, '成本：50S', '成本：55S', 'cost'),
@@ -234,6 +245,7 @@ def main():
     else:
         raws = [path.read_bytes() for path in args.html]
     report = json.loads(REPORT.read_text())
+    verify_custody(json.loads(CUSTODY.read_text()), ROOT)
     extracted = verify(report['extracted'], raws)
     result = {'schema': 'stoneage.cn20_pet_commission.derived_replay.r1',
               'http_inputs': [{'url': url, 'bytes': len(raw), 'sha256': sha(raw)} for url, raw in zip(URLS, raws)],

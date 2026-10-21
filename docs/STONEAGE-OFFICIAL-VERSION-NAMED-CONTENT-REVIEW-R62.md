@@ -10,3 +10,5 @@
 
 
 同一有限包另导出既有19集合合同下的6条quests文献关系＋21条encounters地点关系，永久文件 `research/recovered/STONEAGE-CN20-PET-COMMISSION-HABITATS-CATALOG-R1.json`。研究record_id只定位来源记录，game_ids全部null，公开复用仍未批准；不是新增27个真实任务/刷怪实体。另两项目录关联/版本与权利合同测试加入后，本包解析与目录测试合计10项；此前8项解析结果保持其原范围。
+
+内容bfa487ae254aa2f6eb24bf8fa03f481b7f889a47候选10/main11项Actions实际成功；双实下ZIP与完整派生JSON保管见 `research/recovered/STONEAGE-CN20-PET-COMMISSION-HABITATS-CUSTODY-R1.json`。新增四文件强制保管门的11项测试及自身CI另验，源语义和阶段边界不提升。
