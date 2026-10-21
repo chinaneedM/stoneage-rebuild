@@ -16639,3 +16639,18 @@ R47有限报告包结束，原文“中午”/精确时分、四家族人数歧�
 实际下载双ZIP各2902B，SHA256候选03c818f803def6829c1b6161c91c7a40d4cbee2496a2b7ca1b59d412dbad2cf5 / main3d28bf90c46413359a5a56e2dc24476c0a9406c22f5732556edb1cf4c9860fcb；各唯一replay.json7744B/SHA2567f41ff51711db4d11f82faa6b5cc9c701b756a70063895b8ac43800aa04d003c、原生Git blob33abebf55968f3d2909e224476912079efd8358e，候选/main/本地逐字节一致。双raw、十来源工具依赖/工作流/规格pins、九完整启动前缀和21实际workflow永久存research/recovered/STONEAGE-CN2012-COOKING-EVENT-CUSTODY-R1.json；原HTML/版权图不入Git。新增强制收据门后本包10项/120相关检查据实验收，原9项历史不改写为10项；保管提交自身Actions另后验，不套内容提交绿灯。
 
 两服务器宣传/活动实际适用组、或者/两种必交、荣誉值/石币现金、时段/时区次数、背景人群图/料理执行继续分开；R48有限包结束。最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-49回全22域另一材料，Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停，全部历史保存。
+
+
+## 2026-10-21 R49大陆6.0登录建角、新手村及透明伴随图边界
+
+新读main51bec22420b3ebdef554a6ebaeee3904350002f9/treeaa3dbc5f746a4141b3187a508b0538db8d8cee5f，437分支/0开放PR/4937项完整树无AGENTS，R48保管提交自身main11项Actions全SUCCESS。九启动全文/原生Git与22域索引重读固定，最高NEXT49轮换登录建角，不扩料理/荣誉助手。
+
+新取得新浪6.0新手流程https://games.sina.com.cn/zhqu/sta/liucheng.shtml 当前64286B/GB18030，显示新浪游戏2003-05-30 14:14、投稿入口及2006-10-09重生成注记。投稿入口不证明网友作者，亦未认证华义原版手册；注记不当原刊或拍摄日。所选进入/建角/新手村与图链接核心SHA7530ed367b3deb63486378be93773078bb4e484e5da84506789c496dd62af92e。另新浪2003-06-09 12:15运营口吻分服升级预告https://games.sina.com.cn/newgames/2003/06/06092201.shtml 当前33218B，去广告核心65c6c350d032f4e6d6be5099db28bfaaef09d4be7fcb781f89ffa7d7831723de；预告6月10日中国网通9先升、其他分期并需更新客户端/有新手村，不当实际执行、不替指南和图认证构建。
+
+七条记录与规格docs/specs/STONEAGE-CN2003-ONBOARDING-SOURCE-R1.md：Deeplay/登录说明、插叙角色页、12人物各4配色、8个字符/面部可设、20点经验值原词、四具名出生宠/未名技能、新手村出至萨姆吉尔后不能再入等均保留来源层。字节/汉字数、独立4×4色、EXP或属性点真实语义、技能ID/首发、地图NPC坐标与执行未知；原文乌力乌力不擅改，速度体力建议不当最优公式。
+
+实际十GIF中032/035/038/041/044为五张当前低分辨率画面；033/036/039/042/045各73B全透明，逐一完整Pillow解码alpha[0,0]，不算另外五张恢复画面。五画面目视，尺寸不当原生分辨率/确切构建；原HTML/版权图不进Git。20真实正文语义改写绕过摘要门拒绝、双外层script与重生成注记正例通过；独立核心/数值/有序图链另核。候选/main独立取源与实际ZIP永久保管另据实追加。
+
+有限止点两源选定内容/十图对象；重开需同构建原手册或运行过程、姓名编码/20点规则/技能ID或传送证据。最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-50回全22域另一具名材料，Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停，所有历史前缀完整，无分母不报整体完成百分比。
+
+本地预检补记：首轮联网校验仍持有旧内存合同，期间增补“投稿入口不证明网友作者”字段，新本地派生与旧内存不一致时检查如实拒绝。原网页核心和图字节未改；停止来源字段写入后重跑。不是远端Actions失败或历史来源变更。

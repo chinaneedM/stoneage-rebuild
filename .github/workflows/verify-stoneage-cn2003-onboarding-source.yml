@@ -1,0 +1,36 @@
+name: Verify CN2003 onboarding guide and paired GIF evidence boundaries
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-CN2003-ONBOARDING-*.json'
+      - 'tools/stoneage_cn2003_onboarding_source.py'
+      - 'tools/stoneage_cn2003_group2_manor_report.py'
+      - 'tools/stoneage_cn2011_stall_source.py'
+      - 'tests/test_stoneage_cn2003_onboarding_source.py'
+      - '.github/workflows/verify-stoneage-cn2003-onboarding-source.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-CN2003-ONBOARDING-*.json'
+      - 'tools/stoneage_cn2003_onboarding_source.py'
+      - 'tools/stoneage_cn2003_group2_manor_report.py'
+      - 'tools/stoneage_cn2011_stall_source.py'
+      - 'tests/test_stoneage_cn2003_onboarding_source.py'
+      - '.github/workflows/verify-stoneage-cn2003-onboarding-source.yml'
+permissions:
+  contents: read
+jobs:
+  source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check guide authority, literal values, notice scope and five transparent objects
+        run: python -m unittest tests.test_stoneage_cn2003_onboarding_source -v
+      - name: Refetch two pages and ten GIF objects; reject twenty actual source mutations
+        run: python -m tools.stoneage_cn2003_onboarding_source --fetch --output /tmp/cn2003-onboarding/replay.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cn2003-onboarding-derived-replay
+          path: /tmp/cn2003-onboarding/replay.json
+          if-no-files-found: error
+          retention-days: 30
