@@ -1,0 +1,251 @@
+{
+  "schema": "stoneage.cn2012_cooking_event.source_contract.r1",
+  "task": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-48",
+  "observed_date": "2026-10-21",
+  "baseline": {
+    "head": "551e93eef582066eef6ffc8540adb41bd4ba2e09",
+    "tree": "6bbbd62a56ef8578284d35938359cc60c7b9798f"
+  },
+  "source": {
+    "url": "https://games.sina.com.cn/o/n/2012-02-10/1551581681.shtml",
+    "title": "每晚准时开启石器时代美味料理制作",
+    "published": "2012-02-10 15:51",
+    "authority": "SINA_HOSTED_CINS_NAMED_PROMOTIONAL_COPY_NOT_AUTHENTICATED_ORIGINAL_ISSUER_FILE",
+    "encoding": "GB18030_STRICT",
+    "current_observed_bytes": 146067,
+    "current_observed_sha256": "84025cb5bccae8f53a85266b6ddfc9da1550ff271e2b28403338407de1eddc2d",
+    "authenticated_2012_original_bytes": false
+  },
+  "extracted": {
+    "core_sha256": "f7a15a015e8791ed94221d43203f414b43714edff394fc1448bbeacc31111f11",
+    "issuer_evidence": "SINA_HOSTED_CINS_NAMED_PROMOTIONAL_COPY_NOT_AUTHENTICATED_ORIGINAL_ISSUER_FILE",
+    "official_link_as_written": "http://sa.cins.cn",
+    "event": "高厨料理",
+    "schedule": {
+      "weekday_start": "周一",
+      "weekday_end": "周日",
+      "start_clock": "19:00",
+      "end_clock": "21:00",
+      "timezone": null,
+      "endpoint_inclusivity": null,
+      "launch_date": null,
+      "daily_limit": null,
+      "live_execution_verified": false
+    },
+    "pet": {
+      "prerequisite": "PET_WITH_COOKING_SKILL",
+      "training_location": "村庄宠物店",
+      "skill_id_price_or_species_limits": null
+    },
+    "flow": {
+      "vendors_as_written": [
+        "扑满乌力",
+        "黑乌力"
+      ],
+      "acquisition": "购买",
+      "products_as_written": [
+        "扑满乌力的蔬菜色拉",
+        "黑乌力的蔬菜色拉"
+      ],
+      "product_connector_as_written": "或者",
+      "delivery_location_as_written": "加加村24店",
+      "recipient_as_written": "大厨",
+      "delivery_action": "换取奖励",
+      "ingredients_recipes_prices_coordinates_ids": null,
+      "both_products_required": null,
+      "vendor_to_product_exact_recipe_mapping": null,
+      "consumption_and_transaction_rules": null
+    },
+    "reward": {
+      "currency_as_written": "荣誉值",
+      "redemption_place_as_written": "荣誉商城",
+      "reported_categories": [
+        "宠物",
+        "道具",
+        "装备"
+      ],
+      "amount_rate_daily_cap_or_stock": null,
+      "cash_equivalence_or_tradeability": null
+    },
+    "server_context": {
+      "advertised_labels": [
+        "8.5魔域大冒险",
+        "2.5精灵王传说"
+      ],
+      "event_applicable_groups": null,
+      "exact_client_build": null,
+      "belongs_to_original_2002_25": false,
+      "belongs_to_tw10_or_jss1999": false
+    },
+    "images": [
+      {
+        "src": "http://i1.sinaimg.cn/gm/2012/0210/U7232P115DT20120210155012.jpg",
+        "alt": "原始人出生地火爆",
+        "title": "原始人出生地火爆"
+      },
+      {
+        "src": "http://i0.sinaimg.cn/gm/2012/0210/U7232P115DT20120210155002.jpg",
+        "alt": "一起来寻找素材",
+        "title": "一起来寻找素材"
+      },
+      {
+        "src": "http://i1.sinaimg.cn/gm/2012/0210/U7232P115DT20120210154947.jpg",
+        "alt": "精美石器时代壁纸",
+        "title": "精美石器时代壁纸"
+      }
+    ],
+    "historical_server_executed": false
+  },
+  "records": [
+    {
+      "record_id": "CN2012-COOKING-SCHEDULE",
+      "label": "高厨料理时段",
+      "version_profile": "LATER_OFFICIAL:CN_CINS_2012_PROMOTION_SERVER_SCOPE_UNRESOLVED",
+      "game_ids": null,
+      "evidence_status": "SOURCE_REPORTED_NOT_RUNTIME_VERIFIED",
+      "evidence": {
+        "weekday_start": "周一",
+        "weekday_end": "周日",
+        "start_clock": "19:00",
+        "end_clock": "21:00",
+        "timezone": null,
+        "endpoint_inclusivity": null,
+        "launch_date": null,
+        "daily_limit": null,
+        "live_execution_verified": false
+      }
+    },
+    {
+      "record_id": "CN2012-COOKING-PET",
+      "label": "宠物料理前置",
+      "version_profile": "LATER_OFFICIAL:CN_CINS_2012_PROMOTION_SERVER_SCOPE_UNRESOLVED",
+      "game_ids": null,
+      "evidence_status": "SOURCE_REPORTED_NOT_RUNTIME_VERIFIED",
+      "evidence": {
+        "prerequisite": "PET_WITH_COOKING_SKILL",
+        "training_location": "村庄宠物店",
+        "skill_id_price_or_species_limits": null
+      }
+    },
+    {
+      "record_id": "CN2012-COOKING-FLOW",
+      "label": "具名采购制作交付链",
+      "version_profile": "LATER_OFFICIAL:CN_CINS_2012_PROMOTION_SERVER_SCOPE_UNRESOLVED",
+      "game_ids": null,
+      "evidence_status": "SOURCE_REPORTED_NOT_RUNTIME_VERIFIED",
+      "evidence": {
+        "vendors_as_written": [
+          "扑满乌力",
+          "黑乌力"
+        ],
+        "acquisition": "购买",
+        "products_as_written": [
+          "扑满乌力的蔬菜色拉",
+          "黑乌力的蔬菜色拉"
+        ],
+        "product_connector_as_written": "或者",
+        "delivery_location_as_written": "加加村24店",
+        "recipient_as_written": "大厨",
+        "delivery_action": "换取奖励",
+        "ingredients_recipes_prices_coordinates_ids": null,
+        "both_products_required": null,
+        "vendor_to_product_exact_recipe_mapping": null,
+        "consumption_and_transaction_rules": null
+      }
+    },
+    {
+      "record_id": "CN2012-COOKING-REWARD",
+      "label": "荣誉值兑换类别",
+      "version_profile": "LATER_OFFICIAL:CN_CINS_2012_PROMOTION_SERVER_SCOPE_UNRESOLVED",
+      "game_ids": null,
+      "evidence_status": "SOURCE_REPORTED_NOT_RUNTIME_VERIFIED",
+      "evidence": {
+        "currency_as_written": "荣誉值",
+        "redemption_place_as_written": "荣誉商城",
+        "reported_categories": [
+          "宠物",
+          "道具",
+          "装备"
+        ],
+        "amount_rate_daily_cap_or_stock": null,
+        "cash_equivalence_or_tradeability": null
+      }
+    },
+    {
+      "record_id": "CN2012-COOKING-SERVER_CONTEXT",
+      "label": "同时宣传两服务器的适用范围缺口",
+      "version_profile": "LATER_OFFICIAL:CN_CINS_2012_PROMOTION_SERVER_SCOPE_UNRESOLVED",
+      "game_ids": null,
+      "evidence_status": "SOURCE_REPORTED_NOT_RUNTIME_VERIFIED",
+      "evidence": {
+        "advertised_labels": [
+          "8.5魔域大冒险",
+          "2.5精灵王传说"
+        ],
+        "event_applicable_groups": null,
+        "exact_client_build": null,
+        "belongs_to_original_2002_25": false,
+        "belongs_to_tw10_or_jss1999": false
+      }
+    }
+  ],
+  "images": [
+    {
+      "url_as_written": "http://i1.sinaimg.cn/gm/2012/0210/U7232P115DT20120210155012.jpg",
+      "requested_url": "https://i1.sinaimg.cn/gm/2012/0210/U7232P115DT20120210155012.jpg",
+      "bytes": 115307,
+      "sha256": "9ea3f64df2995ae87e3d2cbcf615c36531e77e3d494854f8d77a7732fe1ed2f5",
+      "width": 550,
+      "height": 410,
+      "caption_as_written": "原始人出生地火爆",
+      "capture_date": null,
+      "cooking_event_or_recipe_proven": false,
+      "visible_observation_zh": "石砌室内、密集角色和宠物、上下工具栏，右下胜思网络标记。",
+      "native_client_resolution_proven": false
+    },
+    {
+      "url_as_written": "http://i0.sinaimg.cn/gm/2012/0210/U7232P115DT20120210155002.jpg",
+      "requested_url": "https://i0.sinaimg.cn/gm/2012/0210/U7232P115DT20120210155002.jpg",
+      "bytes": 125689,
+      "sha256": "930b0ddb3474e6ad97023da9b9e986940fcbf9dda62c87335e149939f8f65eb3",
+      "width": 550,
+      "height": 409,
+      "caption_as_written": "一起来寻找素材",
+      "capture_date": null,
+      "cooking_event_or_recipe_proven": false,
+      "visible_observation_zh": "户外密集角色和宠物、左侧聊天、工具栏，右下胜思网络标记。",
+      "native_client_resolution_proven": false
+    }
+  ],
+  "excluded_image": {
+    "reference": {
+      "src": "http://i1.sinaimg.cn/gm/2012/0210/U7232P115DT20120210154947.jpg",
+      "alt": "精美石器时代壁纸",
+      "title": "精美石器时代壁纸"
+    },
+    "role": "WALLPAPER_CAPTION_NOT_NEEDED_FOR_EVENT_CHAIN",
+    "downloaded_or_inspected": false
+  },
+  "unproven": {
+    "historical_server_executed": false,
+    "exact_build_or_server_group_applicability": false,
+    "original2002_25_membership": false,
+    "tw10_or_jss1999_membership": false,
+    "recipe_ingredient_quantity_or_prices_recovered": false,
+    "reward_amount_or_daily_limit_recovered": false,
+    "both_dishes_required": false,
+    "exact_vendor_recipe_mapping": false,
+    "cash_tradeability_or_fee_policy_recovered": false,
+    "image_demonstrates_event_recipe_or_redemption": false,
+    "production_asset_rights_granted": false,
+    "raw_html_or_images_committed": false
+  },
+  "status": {
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b_wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING"
+  },
+  "stop": "ONE_NAMED_EVENT_ARTICLE_TWO_LINKED_CONTEXT_IMAGES_NO_RECIPE_OR_HONOR_HELPER_EXPANSION",
+  "reopen": "具名同组官方配方/奖励表、NPC坐标ID、时区/次数说明或实际原服过程直接补足缺口时重开。",
+  "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-49"
+}

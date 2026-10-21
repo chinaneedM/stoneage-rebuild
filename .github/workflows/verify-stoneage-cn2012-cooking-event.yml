@@ -1,0 +1,36 @@
+name: Verify CN2012 cooking event source and version boundaries
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-CN2012-COOKING-EVENT-*.json'
+      - 'tools/stoneage_cn2012_cooking_event.py'
+      - 'tools/stoneage_cn2011_stall_source.py'
+      - 'tools/stoneage_cn2003_group2_manor_report.py'
+      - 'tests/test_stoneage_cn2012_cooking_event.py'
+      - '.github/workflows/verify-stoneage-cn2012-cooking-event.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-CN2012-COOKING-EVENT-*.json'
+      - 'tools/stoneage_cn2012_cooking_event.py'
+      - 'tools/stoneage_cn2011_stall_source.py'
+      - 'tools/stoneage_cn2003_group2_manor_report.py'
+      - 'tests/test_stoneage_cn2012_cooking_event.py'
+      - '.github/workflows/verify-stoneage-cn2012-cooking-event.yml'
+permissions:
+  contents: read
+jobs:
+  source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check event chain, currencies, screenshot and server scope limits
+        run: python -m unittest tests.test_stoneage_cn2012_cooking_event -v
+      - name: Refetch one article and two linked JPEGs; reject nineteen real source mutations
+        run: python -m tools.stoneage_cn2012_cooking_event --fetch --output /tmp/cn2012-cooking-event/replay.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cn2012-cooking-event-derived-replay
+          path: /tmp/cn2012-cooking-event/replay.json
+          if-no-files-found: error
+          retention-days: 30
