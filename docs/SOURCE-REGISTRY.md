@@ -7753,3 +7753,8 @@ S1 https://www.4gamer.net/news/history/2007.06/20070612195557detail.html （2007
 ## 2026-10-21 R45胜思具名摆摊双页与四图
 
 S1 https://games.sina.com.cn/o/n/2011-01-12/1038467817.shtml ；S2 https://games.sina.com.cn/o/n/2012-12-04/1430674461.shtml 。当前GB18030 76967/66924B，规范段落SHA256 30be132158ef2872ebe36eb2ee4a95efae49f37d1ace8b6eada59d2a6bf44e40 / 19f64e22d65c43eec090e5fe86a6b64d085742112c17482a23cad8df5df33489。正文点名胜思/sa.cins.cn但非已认证原站发行文件；四实际链接JPEG原HTTP地址/实际HTTPS请求、hash、尺寸及有限目视结论见CN2011-2012-STALL合同。不推数字版本、初代归属、原生分辨率或同构建；原HTML/图不入Git，候选/主线CI与ZIP保管按实际后验。
+
+
+## 2026-10-21 R46具名SA2访谈与录制月份定位
+
+S1 https://www.4gamer.net/specials/stoneage2_interview/stoneage2_interview.shtml ，当前32699B/EUC-JP，首个宠物问答29轮规范SHA256 affbb359cca11ab96b7cf520640531a86670f050e21868d031f76f6df08fea38。S2 https://www.4gamer.net/news/history/2006.07/20060710162836detail.html ，2006-07-10 16:28，当前19733B/CP932，实际链接S1/说明2006年2月录制，规范本文SHA256 798111f1c6291a4745eac7549a168ad1492230e971180f92007c1e1421a3e943。原刊发日null；具名开发者回答/记者问题/后续媒体定位分开。未获原始快照/规则表/运行或版权图，原HTML/照片不入Git，CI/ZIP保管按实际后验。

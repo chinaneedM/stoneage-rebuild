@@ -1,0 +1,185 @@
+{
+  "schema": "stoneage.sa2_pet_care_interview.source_contract.r1",
+  "review": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-46",
+  "observed_date": "2026-10-21",
+  "source": {
+    "url": "https://www.4gamer.net/specials/stoneage2_interview/stoneage2_interview.shtml",
+    "authority": "NAMED_DEVELOPER_AND_PRODUCER_INTERVIEW_PUBLISHED_BY_4GAMER",
+    "encoding": "EUC_JP_STRICT_DECLARED_BY_PAGE",
+    "writer": "TeT",
+    "photo_credit": "新井邦彦",
+    "authenticated_historical_original_bytes": false,
+    "publication_date": null,
+    "core_sha256": "affbb359cca11ab96b7cf520640531a86670f050e21868d031f76f6df08fea38",
+    "selected_scope": "FIRST_PET_CARE_QA_BLOCK_OF_FIVE_MAINTXT_CONTAINERS",
+    "context_note": "The July10 contemporary media report explicitly links this interview and says recorded in February2006; exact interview publication day remains unknown.",
+    "context_url": "https://www.4gamer.net/news/history/2006.07/20060710162836detail.html"
+  },
+  "extracted": {
+    "speaker_turn_core_sha256": "affbb359cca11ab96b7cf520640531a86670f050e21868d031f76f6df08fea38",
+    "speaker_turn_count": 29,
+    "product": "StoneAge2",
+    "product_relation": "SEPARATE_NEW_GAME_NOT_STONEAGE_VERSION_2_PATCH",
+    "evidence_phase": "PRE_BETA_DEVELOPER_INTERVIEW_NOT_DEPLOYMENT",
+    "publication_date": null,
+    "presentation_month_day_as_written": "2月14日",
+    "current_footer_release_date": "2006/07/25",
+    "footer_is_interview_publication_date": false,
+    "pet_ai": {
+      "speaker": "石川彰弘",
+      "influence_reported": "UPBRINGING_CHANGES_PERSONALITY_AND_HIDDEN_PARAMETERS",
+      "formula_or_hidden_parameter_names": null
+    },
+    "den": {
+      "speaker": "長田妙子",
+      "function": "PET_REARING_SPACE",
+      "larger_rooms_allow_more_pets": true,
+      "room_size_to_capacity_table": null
+    },
+    "breeding": {
+      "speaker": "石川彰弘",
+      "flow": [
+        "LEND_OR_BORROW_PETS_AS_EXAMPLES",
+        "MAKE_TWO_PETS_GET_ALONG",
+        "NEW_EGG",
+        "CHILD_INHERITS_PARENT_QUALITIES"
+      ],
+      "exact_inheritance_compatibility_cost_time": null
+    },
+    "skills": {
+      "speaker": "遊佐孝之",
+      "learner_reported": "PETS",
+      "skill_roster_or_player_has_no_actions_proven": null
+    },
+    "capacity": {
+      "speaker": "石川彰弘",
+      "walking_max_reported": 5,
+      "walking_unit": "匹",
+      "den_range_reported": [
+        10,
+        15
+      ],
+      "den_unit_as_written": "種類",
+      "den_depends_on_size": true,
+      "combined_approximate_reported": 20,
+      "combined_unit_as_written": "匹程度",
+      "exact_species_total": null,
+      "types_to_individual_slots_equivalence_proven": false
+    },
+    "lifespan_rebirth": {
+      "speaker": "石川彰弘",
+      "lifespan_reported": true,
+      "revival_through_rebirth_reported_possible": true,
+      "exact_duration_clock_cost_and_preserved_state": null
+    },
+    "runaway": {
+      "speaker": "石川彰弘",
+      "cause_reported": "BAD_TREATMENT_MAY_RESULT_IN_SULKING_AND_LEAVING",
+      "threshold_probability_and_return_rules": null
+    },
+    "notification": {
+      "speaker": "石川彰弘",
+      "trigger_reported": "PLAYER_NOT_LOGGING_IN_FOR_A_WHILE",
+      "channel_reported": "ORDINARY_EMAIL_NOT_GAME_MAIL",
+      "purpose_stated": "KEEP_PLAYER_CONNECTED_TO_WORLD_WHILE_NOT_PLAYING",
+      "delay_content_delivery_guarantee_or_consent_rules": null,
+      "message_sent_by_project": false
+    },
+    "early_stoneage_rules_transferred": false,
+    "historical_game_executed": false
+  },
+  "records": [
+    {
+      "record_id": "PRODUCT-BOUNDARY",
+      "speaker": "遊佐孝之",
+      "version_profile": "SEPARATE_OFFICIAL_PRODUCT:JP_STONEAGE2_PREBETA_INTERVIEW",
+      "game_ids": null,
+      "derived_summary_zh": "SA2是重新开发的独立新作，并非SA的2.0补丁；系统/地图/角色/技能描述不自动共用。",
+      "evidence_scope": "ATTRIBUTED_DEVELOPER_DESCRIPTION_NOT_DEPLOYMENT"
+    },
+    {
+      "record_id": "AI-UPBRINGING",
+      "speaker": "石川彰弘",
+      "version_profile": "SEPARATE_OFFICIAL_PRODUCT:JP_STONEAGE2_PREBETA_INTERVIEW",
+      "game_ids": null,
+      "derived_summary_zh": "培养方式影响宠物性格和隐藏参数，AI成长作为养育乐趣；参数名/算法/阈值未给。",
+      "evidence_scope": "ATTRIBUTED_DEVELOPER_DESCRIPTION_NOT_DEPLOYMENT"
+    },
+    {
+      "record_id": "DEN-REARING",
+      "speaker": "長田妙子",
+      "version_profile": "SEPARATE_OFFICIAL_PRODUCT:JP_STONEAGE2_PREBETA_INTERVIEW",
+      "game_ids": null,
+      "derived_summary_zh": "DEN用于饲养宠物、房间增大会增加可养宠物；尺寸与容量表未知。",
+      "evidence_scope": "ATTRIBUTED_DEVELOPER_DESCRIPTION_NOT_DEPLOYMENT"
+    },
+    {
+      "record_id": "BREEDING-EGG",
+      "speaker": "石川彰弘",
+      "version_profile": "SEPARATE_OFFICIAL_PRODUCT:JP_STONEAGE2_PREBETA_INTERVIEW",
+      "game_ids": null,
+      "derived_summary_zh": "举例借出/借入宠物，两只相处后产卵，幼宠承继双亲资质；不补种类相容/遗传公式/费用或时间。",
+      "evidence_scope": "ATTRIBUTED_DEVELOPER_DESCRIPTION_NOT_DEPLOYMENT"
+    },
+    {
+      "record_id": "PET-SKILLS",
+      "speaker": "遊佐孝之",
+      "version_profile": "SEPARATE_OFFICIAL_PRODUCT:JP_STONEAGE2_PREBETA_INTERVIEW",
+      "game_ids": null,
+      "derived_summary_zh": "采用等级制，受访者称学技能的是宠物；不推玩家没有任何指令，也无完整技能表。",
+      "evidence_scope": "ATTRIBUTED_DEVELOPER_DESCRIPTION_NOT_DEPLOYMENT"
+    },
+    {
+      "record_id": "CAPACITY-UNITS",
+      "speaker": "石川彰弘",
+      "version_profile": "SEPARATE_OFFICIAL_PRODUCT:JP_STONEAGE2_PREBETA_INTERVIEW",
+      "game_ids": null,
+      "derived_summary_zh": "携带最多5匹，DEN依大小养10至15種類，总量称约20匹；原单位不同与约数保留，不制造准确槽位或全部物种数。",
+      "evidence_scope": "ATTRIBUTED_DEVELOPER_DESCRIPTION_NOT_DEPLOYMENT"
+    },
+    {
+      "record_id": "LIFESPAN-REBIRTH-RUNAWAY",
+      "speaker": "石川彰弘",
+      "version_profile": "SEPARATE_OFFICIAL_PRODUCT:JP_STONEAGE2_PREBETA_INTERVIEW",
+      "game_ids": null,
+      "derived_summary_zh": "有寿命/天寿，称可通过转生复活；照顾不佳可能闹别扭离家。时钟、消耗、保留字段与回归条件未知。",
+      "evidence_scope": "ATTRIBUTED_DEVELOPER_DESCRIPTION_NOT_DEPLOYMENT"
+    },
+    {
+      "record_id": "ORDINARY-EMAIL-INTENT",
+      "speaker": "石川彰弘",
+      "version_profile": "SEPARATE_OFFICIAL_PRODUCT:JP_STONEAGE2_PREBETA_INTERVIEW",
+      "game_ids": null,
+      "derived_summary_zh": "一段时间未登录可收到普通E邮件，受访者说明让离线玩家仍与世界相连的目的；不是游戏内邮件，没有触发时长/送达保证，本项目未发信。",
+      "evidence_scope": "ATTRIBUTED_DEVELOPER_DESCRIPTION_NOT_DEPLOYMENT"
+    }
+  ],
+  "unproven": {
+    "interview_publication_date_authenticated": false,
+    "original_game_or_server_executed": false,
+    "sa2_rules_belong_to_sa1_or_tw10": false,
+    "complete_species_or_skill_roster_recovered": false,
+    "ai_or_inheritance_formula_recovered": false,
+    "exact_den_slot_capacity_table_recovered": false,
+    "exact_lifespan_clock_or_rebirth_preservation_recovered": false,
+    "runaway_probability_or_return_conditions_recovered": false,
+    "email_delay_delivery_or_consent_rules_verified": false,
+    "project_sent_any_email": false,
+    "original_html_or_assets_committed": false
+  },
+  "status": {
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b_wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING"
+  },
+  "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-47",
+  "recording_context": {
+    "core_sha256": "798111f1c6291a4745eac7549a168ad1492230e971180f92007c1e1421a3e943",
+    "recorded_month_reported": "2006-02",
+    "context_article_publication": "2006-07-10 16:28",
+    "actual_interview_link_as_written": "http://www.4gamer.net/specials/stoneage2_interview/stoneage2_interview.shtml",
+    "authority": "LATER_CONTEMPORANEOUS_MEDIA_REPORT_BY_TET_NOT_INTERVIEW_SPEAKER",
+    "concurrent_separate_titles_reported": true,
+    "exact_interview_publication_date": null
+  }
+}

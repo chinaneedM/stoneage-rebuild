@@ -1190,3 +1190,14 @@ artifact12307574197/12306859797实际下载，各ZIP3068B，SHA256分别6decb924
 artifact12321353430/12321178973实际下载，各ZIP3693B，SHA256分别f3ec917037e8e22c6b59e47046b027d88140b66d00ed2bd15310aa92cf63fbd2 / 882af32e437077cb0dfbc19210703a1a606fee21b3d7b83f1909cea0252eabdf；各唯一replay.json10853B/SHA256 bda7add6deeb611680a6b00af4950dd4ba4321e248f262ec068d79695a618fdb、原生Git blob9eab3e3c11bb86eaa0c4e55d6b1e7d1805cc70ab，候选/main/本地完整JSON逐字节一致。双raw及八来源/工具/工作流/规格pins、21实际workflow、九启动全前缀永久置 research/recovered/STONEAGE-CN2011-2012-STALL-CUSTODY-R1.json。原HTML/版权图仍不入Git。
 
 新增强制保管门后本包11项/87相关用例实跑通过，删除收据应失败，原内容10项不改写成11项。保管提交自身Actions另独立后验，不套父提交成功。宣传费用/所有税费、SELL待售/成交、样本数字/主表物价、重复操作与相似图片/同构建、网页尺寸/客户端原生尺寸继续分开。R45有限包结束，最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-46回全22域另一具名材料，Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停，历史前缀完整。
+
+
+## 2026-10-21 R46独立作品SA2宠物养育、生命状态与有源设计意图
+
+新读maina884ad32e4d6bdcc81ab0fc194905e93cf71d030/treed7ec7b90743989db349e6a98f56766fb3019cd03、434分支/0开放PR/4924项完整树无AGENTS，自身main9项Actions全SUCCESS，旧queued37642417333保留。九启动全文、路线及22域组合索引固定，最高NEXT46回宠物养育/成长领域，停止R45交易helper。
+
+取得4Gamer/TeT的GaiaX遊佐孝之、DigiPark長田妙子/石川彰弘访谈，只取首个29轮宠物问答。当前32699B/严格EUC-JP，规范说话者+回答摘要affbb359cca11ab96b7cf520640531a86670f050e21868d031f76f6df08fea38；最初CP932/UTF8未成功，按页面声明纠正EUC-JP，不当源缺失。另取2006-07-10 16:28 TeT同期定位报道19733B/CP932，实际href指回该访谈且说明2006年2月录制，规范SHA798111f1c6291a4745eac7549a168ad1492230e971180f92007c1e1421a3e943。访谈刊发日仍null，2月14日发布会与页脚2006/07/25发行日分别保存，当前字节非认证2006原快照。
+
+八记录/中文规格 docs/specs/STONEAGE-SA2-PET-CARE-INTERVIEW-SOURCE-R1.md：独立新作非SA补丁、培养影响AI性格/隐藏参数、DEN随房间增大增养量、借出/借入两宠相处产卵/幼宠承双亲资质、宠物为技能学习主体、随行5匹/DEN10—15種類/合计约20匹原单位、寿命与转生复活/照顾不佳离家、久未登录普通E邮件及开发者所说维系离线世界联系的目的。公式/阈值/物种全集、精确DEN槽位、寿命时钟/转生保留态、回归/邮件延迟送达等未知。不得转成SA1/TW1.0/大陆2.0规则，前期访谈不当部署见证，开发者对旧作宠物的比喻也不是旧作客观全集。
+
+本包仅归档，未取版权照片、原客户端/原服务器或实现/发送邮件。16访谈+3定位页实际语义改写绕过digest门拒绝，双外围script正例；独立正则/HTML实体重建29轮摘要一致，首轮11用例零跳过。候选/main自身取源和ZIP永久保管按后续实证。止于一问答块+一期定位页+八记录；重开需具名SA2手册/规则表/原ID/实际过程或有日期原档，不扩养育/寿命/通知helper。最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-47回22域另一具名材料，Stage A7 PARTIAL+2 OPEN，B/wiki GATED，R79暂停，全部旧历史前缀保留。

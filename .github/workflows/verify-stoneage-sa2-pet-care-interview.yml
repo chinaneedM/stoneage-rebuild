@@ -1,0 +1,32 @@
+name: Verify SA2 separate-product pet care and interview speaker boundaries
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-SA2-PET-CARE-INTERVIEW-*.json'
+      - 'tools/stoneage_sa2_pet_care_interview.py'
+      - 'tests/test_stoneage_sa2_pet_care_interview.py'
+      - '.github/workflows/verify-stoneage-sa2-pet-care-interview.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-SA2-PET-CARE-INTERVIEW-*.json'
+      - 'tools/stoneage_sa2_pet_care_interview.py'
+      - 'tests/test_stoneage_sa2_pet_care_interview.py'
+      - '.github/workflows/verify-stoneage-sa2-pet-care-interview.yml'
+permissions:
+  contents: read
+jobs:
+  source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check separate product, interview phase, speakers and pet state unknowns
+        run: python -m unittest tests.test_stoneage_sa2_pet_care_interview -v
+      - name: Fetch interview and linked recording-month report; reject nineteen real mutations
+        run: python -m tools.stoneage_sa2_pet_care_interview --fetch --output /tmp/sa2-pet-care/replay.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: sa2-pet-care-derived-replay
+          path: /tmp/sa2-pet-care/replay.json
+          if-no-files-found: error
+          retention-days: 30
