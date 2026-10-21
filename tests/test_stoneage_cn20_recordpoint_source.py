@@ -1,4 +1,5 @@
 import copy
+import hashlib
 import json
 import unittest
 from tools import stoneage_cn20_recordpoint_source as m
@@ -89,6 +90,53 @@ class RecordPointSource(unittest.TestCase):
             self.reject(['unproven', k], True)
         self.reject(['status', 'stage_b_wiki'], 'OPEN')
         self.reject(['next'], 'EXPAND_BANK_OR_SAVEDATA_HELPERS')
+
+    def test_permanent_receipt_required_and_actual_dual_replays_pinned(self):
+        p = m.ROOT / ('research/recovered/' + m.STEM + '-CUSTODY-R1.json')
+        self.assertTrue(p.is_file(), 'Accepted source material requires permanent custody')
+        r = json.loads(p.read_text())
+        self.assertEqual(r['schema'], 'stoneage.cn20_recordpoint.custody.r1')
+        self.assertEqual(len(r['source_pins']), 9)
+        self.assertEqual(len(r['startup_prefixes']), 9)
+        for pin in r['source_pins'] + r['startup_prefixes']:
+            b = (m.ROOT / pin['path']).read_bytes()
+            if pin in r['startup_prefixes']:
+                b = b[:pin['bytes']]
+            self.assertEqual(len(b), pin['bytes'])
+            self.assertEqual(m.sha(b), pin['sha256'])
+            self.assertEqual(hashlib.sha1(b'blob ' + str(len(b)).encode() + b'\0' + b).hexdigest(), pin['git_blob'])
+        self.assertEqual(len(r['workflow_runs']), 21)
+        self.assertTrue(all(x['status'] == 'completed' and x['conclusion'] == 'success' and x['head_sha'] == r['content_head'] for x in r['workflow_runs']))
+        copies = []
+        for label in ('candidate', 'main'):
+            meta = r[label]
+            self.assertEqual(meta['actual_unit_tests'], 10)
+            self.assertEqual(meta['skipped_tests'], 0)
+            self.assertEqual(meta['head'], r['content_head'])
+            self.assertEqual(meta['tree'], r['content_tree'])
+            self.assertEqual(meta['real_source_mutations'], 20)
+            self.assertEqual(meta['actual_html_bytes'], [69317, 68863, 69407, 73356])
+            self.assertEqual(meta['actual_table_rows'], 17)
+            self.assertTrue(meta['outer_script_positive'])
+            self.assertTrue(meta['all_applicable_workflows_success'])
+            self.assertFalse(meta['image_bytes_obtained'])
+            self.assertEqual(meta['zip_entry_names'], ['replay.json'])
+            b = (m.ROOT / meta['derived_git_path']).read_bytes()
+            self.assertEqual(len(b), meta['raw_bytes'])
+            self.assertEqual(m.sha(b), meta['raw_sha256'])
+            self.assertEqual(hashlib.sha1(b'blob ' + str(len(b)).encode() + b'\0' + b).hexdigest(), meta['raw_git_blob'])
+            copies.append(b)
+            branch = 'main' if label == 'main' else 'agent/cn20-recordpoint-r51-20261021'
+            runs = [x for x in r['workflow_runs'] if x['head_branch'] == branch]
+            self.assertEqual(len(runs), meta['own_workflow_count'])
+            self.assertEqual(meta['own_workflow_count'], 11 if label == 'main' else 10)
+            self.assertIn(meta['run_id'], [x['id'] for x in runs])
+        for k in ('run_id', 'job_id', 'artifact_id'):
+            self.assertNotEqual(r['candidate'][k], r['main'][k])
+        self.assertEqual(copies[0], copies[1])
+        self.assertEqual(copies[0], (m.ROOT / ('research/recovered/' + m.STEM + '-LOCAL-REPLAY-R1.json')).read_bytes())
+        self.assertFalse(r['independent_checks']['ci_image_refetch_or_decode_claimed'])
+        self.assertTrue(all(x is False for x in r['bounds'].values()))
 
 
 if __name__ == '__main__':
