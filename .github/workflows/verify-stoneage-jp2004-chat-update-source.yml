@@ -1,0 +1,36 @@
+name: Verify JP2004 chat filter and staged update report boundaries
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-JP2004-CHAT-UPDATE-*.json'
+      - 'tools/stoneage_jp2004_chat_update_source.py'
+      - 'tools/stoneage_cn2003_group2_manor_report.py'
+      - 'tools/stoneage_cn2011_stall_source.py'
+      - 'tests/test_stoneage_jp2004_chat_update_source.py'
+      - '.github/workflows/verify-stoneage-jp2004-chat-update-source.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-JP2004-CHAT-UPDATE-*.json'
+      - 'tools/stoneage_jp2004_chat_update_source.py'
+      - 'tools/stoneage_cn2003_group2_manor_report.py'
+      - 'tools/stoneage_cn2011_stall_source.py'
+      - 'tests/test_stoneage_jp2004_chat_update_source.py'
+      - '.github/workflows/verify-stoneage-jp2004-chat-update-source.yml'
+permissions:
+  contents: read
+jobs:
+  source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check press authority, filter limits and NPC/quest timing inference
+        run: python -m unittest tests.test_stoneage_jp2004_chat_update_source -v
+      - name: Refetch report and three JPEGs; reject twenty real source mutations
+        run: python -m tools.stoneage_jp2004_chat_update_source --fetch --output /tmp/jp2004-chat-update/replay.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: jp2004-chat-update-derived-replay
+          path: /tmp/jp2004-chat-update/replay.json
+          if-no-files-found: error
+          retention-days: 30

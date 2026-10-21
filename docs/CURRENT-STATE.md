@@ -16663,3 +16663,16 @@ R47有限报告包结束，原文“中午”/精确时分、四家族人数歧�
 双ZIP真实下载，长度候选4442B/main4442B，SHA256分别21b46bd3a31fac7e30c93ca66c84b32375cdf850f7a213c264b595fdb8b793bd / 484ee50524be6c4c67a41e24532e215fa326d4c77289771b43430ce87f7cd735；各唯一replay.json19804B/SHA2568879a3ec6021797d56a9bfd235a2aaa3794f468f72962c9d0497fbcd78b5cff6/原生Git blobde5b40eefcb5fca0775af785914e97e22bb4a455，候选/main/本地逐字节一致。双raw、十来源/工具/依赖/工作流/规格pins、九完整启动前缀和21实际workflow永久置research/recovered/STONEAGE-CN2003-ONBOARDING-CUSTODY-R1.json；原HTML/版权GIF不入Git。
 
 新增强制收据门后本包11项/131相关检查另实验收、删除收据必须失败；首轮10项历史不改写为11项，保管提交自身Actions后验，不套内容绿灯。投稿入口/作者资格、重生成/刊发、八字符/编码、二十点原词/运行时字段、预告/执行、五画面/五透明伴随对象保持分开。R49有限包结束；最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-50回全22域，Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停，全部历史保留。
+
+
+## 2026-10-21 R50日服2004聊天过滤、探索信息与NPC配置分期
+
+新读main531f15f7f3831300a288e66b8883adfafbb3c9f0/tree8b749c1c0a13648759d36703700cf55cf9feef38，438分支/0开放PR/4947项完整树无AGENTS；R49保管提交自身main11项Actions全SUCCESS，九启动全文/原生Git与22域索引新读固定。最高NEXT50轮换社交交互，不扩R49建角/新手村助手。
+
+4Gamer2004-07-30 23:12署名Kawamura同期报道https://www.4gamer.net/news/history/2004.07/20040730231235detail.html 当前10860B/CP932，正文核心SHA4ea1de1163cd989576c5fd90714eb43644b6a222416ceedad8fd0aa9ab5af506；不是逐字运营发布文或运行见证。HTML meta作者不当正文署名，五正文槽仅一实文四空模板，不认证2004原字节。六记录/规格docs/specs/STONEAGE-JP2004-CHAT-UPDATE-SOURCE-R1.md新增。
+
+报道登记对象聊天过滤，不补UI/容量/频道/身份键/保存、封号或交易阻断；首次大更新仅指报道所称2004年6月正式服务以后，8月1日15—16时为维护计划。新未名岛、サイナス岛/ジャルガ岛各一未名洞窟、マーナ推测秘密均不补地名ID/入口/剧情Boss；部分NPC迁居带ようだ，非执行认证。8月3/6日任务NPC配置及约30分钟维护，与记者推测新任务届时触发分开；无任务条件/实际开放/精确时刻。新用户十日试用不当所有人永久免费。
+
+实际三图按HTML顺序_0/_2/_1，31490/26016/24235B、200×133/170×141/170×141，完整Pillow解码/目视为地图示意、木桥与洞口场景，均无聊天过滤面板，不认证地图/人物身份或原生分辨率。原HTML/版权JPEG不进Git。20真实正文语义改写绕过摘要门拒绝，外层script与meta作者正例通过；独立核心/日程/推断词/图序另核。候选/main独立取源及实际ZIP永久保管另据实追加。
+
+有限止点一报道六记录三图，不扩聊天实现/未名地图/任务助手；重开需同构建官方UI/手册、实际过滤过程、地图名入口或任务开放日志。最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-51回全22域另一具名材料，Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停，历史前缀完整，不报无分母整体百分比。
