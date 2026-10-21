@@ -65,5 +65,27 @@ class TestCn2003UiTeamTradeSource(unittest.TestCase):
         self.assertTrue(all(self.d["negative_evidence_boundaries"].values()))
         self.assertEqual(self.d["next"], "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-58")
 
+    def test_permanent_derived_receipt_raw_byte_integrity(self):
+        import hashlib
+        rp = P.parents[2] / "research/recovered/STONEAGE-CN2003-UI-TEAM-TRADE-ACCEPTANCE-R1.json"
+        receipt = json.loads(rp.read_text(encoding="utf-8"))
+        raw = P.read_bytes()
+        pinned = receipt["derived_source"]
+        self.assertEqual(len(raw), pinned["raw_utf8_bytes"])
+        self.assertEqual(hashlib.sha256(raw).hexdigest(), pinned["raw_sha256"])
+        self.assertEqual(pinned["native_git_blob_sha1"], "1bac3104c1d6b0d96a65a8c32e901de13a5df53d")
+        self.assertTrue(pinned["persisted_in_git"])
+        self.assertFalse(pinned["contains_original_html_or_game_assets"])
+        self.assertEqual([z["id"] for z in receipt["sources"]], ["S1", "S2"])
+        self.assertTrue(all(z["raw_http_sha256"] is None for z in receipt["sources"]))
+        self.assertEqual(receipt["candidate_validation"]["tests_run"], 6)
+        self.assertEqual(receipt["main_validation"]["tests_run"], 6)
+        self.assertEqual(receipt["candidate_validation"]["run_total"], 10)
+        self.assertEqual(receipt["main_validation"]["run_total"], 11)
+        self.assertEqual(receipt["candidate_validation"]["run_artifacts_count"], 0)
+        self.assertEqual(receipt["main_validation"]["run_artifacts_count"], 0)
+        self.assertTrue(receipt["negative_boundaries"]["history_not_rewritten"])
+
+
 if __name__ == "__main__":
     unittest.main()

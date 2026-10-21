@@ -1434,3 +1434,10 @@ S2宠物邮件笼统称某些落地消失特殊物品不可邮，不具名R55贝
 **四项负边界：** (1) S1同页Ctrl+I“所持道具”与Ctrl+L“道具视窗关闭”矛盾并存；(2) S1海贼王遗迹与S2 2003年2.0怀旧服不能合并同build，2003-09-04不是2.0最初发行；(3) 两人OK与“更安全交易”没有服务端原子事务映射；(4) 原地登出／记录点仅网页说明，不证明原TW1.0 savedata字段或商业服务器状态。S1这些操作也不回填初代实机、UI像素、NPC/交易/战斗配置。
 
 新增docs/specs/STONEAGE-CN2003-UI-TEAM-TRADE-SOURCE-R1.md、research/recovered/STONEAGE-CN2003-UI-TEAM-TRADE-SOURCE-R1.json、R57审查页、专用6项派生元数据测试及workflow。来源是2003年具名网页阅读，不冒称原始页面双重放或真实版本运行。研究/候选和main Actions未经验收不得宣称通过；永久派生保管收据应在后验另写。止于两页23个记录；最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-58，Stage A7 PARTIAL+2 OPEN，Stage B/wiki GATED，R79 PAUSED_NON_BLOCKING，历史旧文本逐字保留。
+
+
+### 2026-10-21 R57内容提交及双端CI后验，永久派生保管
+
+R57研究提交 72d5dceb03900c7f80a143201bddc11caeb1121d/tree 2a04834f9b930d1716a2b9ca7f6769fc1fdf19b4 从原main4e11dc8983cfbe0b1b667e5ee45a3b1ee4a4de6d建立，仅前进提交；GitHub compare实证9文件、5新增、4只追加、旧历史行删除0。候选分支agent/cn2003-ui-team-trade-r57-20261021该HEAD十项Actions均completed/success；专用run39608021253/job119249213662实际运行6个结构化数据与证据边界测试，零跳过。主线同HEAD十一项Actions均completed/success；专用run39608219457/job119249911845亦success。专用两run均查0 artifact，不捏造ZIP或源HTML独立双重放。
+
+research/recovered/STONEAGE-CN2003-UI-TEAM-TRADE-SOURCE-R1.json源派生Git blob1bac3104c1d6b0d96a65a8c32e901de13a5df53d/UTF8 9904B/SHA256 ef9ee96f478aa9232b1cbb9fb71716ed36302f04dfa885c3cd0eaab29d4d82dd。新增research/recovered/STONEAGE-CN2003-UI-TEAM-TRADE-ACCEPTANCE-R1.json永久收据记录内容提交、双Actions、两个同期网页的来源URL、零artifact、未取得原网页原字节与商业服务端实测。专用CI由6升级至7项，新增收据存在、派生原字节长度和SHA256验收门；收据提交自身的候选/main Actions须另行后验，绝不可把旧6项结果称7项运行。无版权原始HTML/资产入Git。保留快捷键内部矛盾、海贼王遗迹vs2003的2.0怀旧组分期、交易OKvs“更安全”机制未证和原地登出不等于TW10 save原数据。最高NEXT58，Stage A7 PARTIAL+2 OPEN，B/wiki GATED，R79暂停，旧历史全文不改删。

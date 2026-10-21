@@ -1,0 +1,81 @@
+{
+  "schema": "stoneage.cn2003_ui_team_trade.derived_acceptance.r1",
+  "date": "2026-10-21",
+  "scope": "Guide-derived R57 UI/team/trade records; not original game runtime or original raw web-source replay",
+  "content_commit": {
+    "sha": "72d5dceb03900c7f80a143201bddc11caeb1121d",
+    "tree": "2a04834f9b930d1716a2b9ca7f6769fc1fdf19b4",
+    "parent_sha": "4e11dc8983cfbe0b1b667e5ee45a3b1ee4a4de6d"
+  },
+  "derived_source": {
+    "path": "research/recovered/STONEAGE-CN2003-UI-TEAM-TRADE-SOURCE-R1.json",
+    "native_git_blob_sha1": "1bac3104c1d6b0d96a65a8c32e901de13a5df53d",
+    "raw_utf8_bytes": 9904,
+    "raw_sha256": "ef9ee96f478aa9232b1cbb9fb71716ed36302f04dfa885c3cd0eaab29d4d82dd",
+    "persisted_in_git": true,
+    "contains_original_html_or_game_assets": false
+  },
+  "sources": [
+    {
+      "id": "S1",
+      "url": "https://games.sina.com.cn/zhqu/sta/xsxl/yxcz.shtml",
+      "date": "2003-04-15 23:29",
+      "raw_http_sha256": null,
+      "raw_html_archived": false
+    },
+    {
+      "id": "S2",
+      "url": "https://games.sina.com.cn/newgames/2003/11/11188486.shtml",
+      "date": "2003-11-18 15:33",
+      "raw_http_sha256": null,
+      "raw_html_archived": false
+    }
+  ],
+  "candidate_validation": {
+    "branch": "agent/cn2003-ui-team-trade-r57-20261021",
+    "run_id": 39608021253,
+    "job_id": 119249213662,
+    "commit_sha": "72d5dceb03900c7f80a143201bddc11caeb1121d",
+    "conclusion": "success",
+    "tests_run": 6,
+    "tests_skipped": 0,
+    "run_total": 10,
+    "all_success": true,
+    "run_artifacts_count": 0
+  },
+  "main_validation": {
+    "branch": "main",
+    "run_id": 39608219457,
+    "job_id": 119249911845,
+    "commit_sha": "72d5dceb03900c7f80a143201bddc11caeb1121d",
+    "conclusion": "success",
+    "tests_run": 6,
+    "tests_skipped": 0,
+    "run_total": 11,
+    "all_success": true,
+    "run_artifacts_count": 0
+  },
+  "content_diff_acceptance": {
+    "added_files": 5,
+    "append_only_historical_files": 4,
+    "deleted_lines": 0,
+    "fast_forward_expected_head": true
+  },
+  "unresolved": [
+    "raw_original_HTTP_or_HTML_byte_hashes",
+    "independent_official_notice_original_copy",
+    "actual_original_TW10_keymap_and_NPC_UI_render",
+    "same_build_provenance_between_guides_and_2_0_retro_service",
+    "trade_server_atomicity_anti_fraud_algorithm",
+    "original_SA1_0_save_logout_runtime_behavior"
+  ],
+  "negative_boundaries": {
+    "source_is_web_text_not_raw_capture": true,
+    "first_generation_tw10_runtime_verified": false,
+    "source_same_build_verified": false,
+    "operator_2003_09_04_retro_date_is_not_original_version_release": true,
+    "history_not_rewritten": true
+  },
+  "receipt_commit_checks": "NOT_YET_CHECKED_AT_CREATION",
+  "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-58"
+}
