@@ -1,0 +1,81 @@
+{
+  "schema": "stoneage.cn2004_pet_skill_trainer.derived_source_acceptance.r1",
+  "date": "2026-10-21",
+  "scope": "R56 guide-derived skill/trainer list only; not raw website or original-game execution",
+  "content_commit": {
+    "sha": "83c8c8279cd5913d9c75eec467c64a965c8cfba1",
+    "tree_sha": "674511414043d78f29b53317d093cac3703a121a",
+    "parent_sha": "3380fddae94ca94967cb174491a38e8d62f9f552"
+  },
+  "derived_source": {
+    "path": "research/recovered/STONEAGE-CN2004-PET-SKILL-TRAINER-SOURCE-R1.json",
+    "native_git_blob_sha1": "b6f42811c23cadc8b80fabb0a53b98a6aa9e8b2f",
+    "raw_utf8_bytes": 14778,
+    "raw_sha256": "90bc79a7c824ffae88f2e974de692252fb37345eacafa9db26f87bb62bbc9a70",
+    "persisted_in_git": true,
+    "contains_original_html_or_game_assets": false
+  },
+  "web_sources": [
+    {
+      "id": "S1",
+      "url": "https://games.sina.com.cn/zhqu/sta/xsxl/cwxg.shtml",
+      "raw_http_sha256": null,
+      "source_archive_replay": false
+    },
+    {
+      "id": "S2",
+      "url": "https://games.sina.com.cn/zhqu/sta/cwzl/chongwu01.shtml",
+      "raw_http_sha256": null,
+      "source_archive_replay": false,
+      "article_publication_date": null
+    }
+  ],
+  "candidate_validation": {
+    "branch": "agent/cn2004-pet-skill-trainer-r56-20261021",
+    "commit_sha": "83c8c8279cd5913d9c75eec467c64a965c8cfba1",
+    "run_id": 39603382601,
+    "job_id": 119233280942,
+    "tests_run": 5,
+    "tests_skipped": 0,
+    "conclusion": "success",
+    "run_total": 10,
+    "run_total_all_success": true,
+    "run_artifacts_count": 0
+  },
+  "main_validation": {
+    "branch": "main",
+    "commit_sha": "83c8c8279cd5913d9c75eec467c64a965c8cfba1",
+    "run_id": 39603519751,
+    "job_id": 119233745574,
+    "tests_run": 5,
+    "tests_skipped": 0,
+    "conclusion": "success",
+    "run_total": 11,
+    "run_total_all_success": true,
+    "run_artifacts_count": 0
+  },
+  "content_diff_acceptance": {
+    "added_files": 5,
+    "append_only_historical_files": 4,
+    "deleted_lines": 0,
+    "main_fast_forward_lease": true
+  },
+  "future_receipt_commit_validation": "NOT_YET_CHECKED_AT_CREATION",
+  "explicit_unknowns": [
+    "original_HTML_bytes_and_digest",
+    "all_skill_and_NPC_original_IDs",
+    "original_client_and_server_execution",
+    "same_exact_version_between_S1_and_S2",
+    "original_poison_and_critical_attack_math",
+    "actual_training_currency_and_locations",
+    "mail_shell_item_specific_server_filter"
+  ],
+  "claim_boundaries": {
+    "source_is_only_rendered_web_text": true,
+    "published_2006_assumed_from_footer": false,
+    "game_mechanics_confirmed": false,
+    "shell_mail_filter_confirmed": false,
+    "history_not_rewritten": true
+  },
+  "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-57"
+}

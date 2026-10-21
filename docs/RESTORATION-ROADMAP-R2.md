@@ -1411,3 +1411,12 @@ R54资料提交2dd1c7a28b8993bebaf141b32b4cd1d4e1a7377c/tree b3fb195f0638443abae
 新docs/specs/STONEAGE-CN2004-PET-SKILL-TRAINER-SOURCE-R1.md和research/recovered/STONEAGE-CN2004-PET-SKILL-TRAINER-SOURCE-R1.json：S1可见19行宠物技能名／页面效果／学习地点／列示价格（保留地球一周2399、达那防御例外），S2有界挑11条供语义冲突和后代技能补充。特别保留S1猛毒攻击攻-30%／3回合／4400与S2攻-50%／5回合／4000；一击必杀3倍含模糊“容易被击中”与S2 2.5倍／命中-30%；骑宠课程S1四级与S2下中上三级；旅途／旅程伙伴敌人一人／敌宠一只及学技两村／SBC。不能用S2未定刊期猜改版顺序，不能合并成确定性游戏公式、统一NPC或价格表。
 
 S2宠物邮件笼统称某些落地消失特殊物品不可邮，不具名R55贝壳，故不能当贝壳实际禁邮第二条独立证据。S1忠诚约70/20/10的失控描述仍只是指南，非原服务端阈值；S2九大家族与五转机暴不回填TW1.0。专用派生元数据结构测试/CI只验证19+11行、5组矛盾与版本缺证负边界，不是HTML源双重放或技能实测。候选/main的Actions要按实际结果后验，不预报全绿。本包两页30条有限止点，下一NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-57轮换22域另取，Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79继续暂停；旧历史完整保留。
+
+
+## 2026-10-21 R56技能表候选/主线实跑验收与永久派生收据
+
+内容提交83c8c8279cd5913d9c75eec467c64a965c8cfba1/tree674511414043d78f29b53317d093cac3703a121a由R55主线3380fddae94ca94967cb174491a38e8d62f9f552非强制fast-forward、带expected HEAD写入main；Git compare显示9变动：5新增、4历史文件仅追加/旧行删除0。候选agent/cn2004-pet-skill-trainer-r56-20261021共10个Actions均SUCCESS，主线同内容HEAD共11个Actions均SUCCESS。候选专用run39603382601/job119233280942、主线专用run39603519751/job119233745574各真实执行5项衍生字段/来源边界测试成功、零跳过。双方专用run查得artifact数量均0，不虚构ZIP或初代原客户端重放。
+
+衍生研究research/recovered/STONEAGE-CN2004-PET-SKILL-TRAINER-SOURCE-R1.json原生Git blob b6f42811c23cadc8b80fabb0a53b98a6aa9e8b2f，UTF8长度14778B、派生SHA256 90bc79a7c824ffae88f2e974de692252fb37345eacafa9db26f87bb62bbc9a70，19条S1完整可见学技行＋11条S2对照及5组来源矛盾永久存在Git。新增research/recovered/STONEAGE-CN2004-PET-SKILL-TRAINER-ACCEPTANCE-R1.json记录内容提交/双工作流job/两URL/缺失原HTML与实机证据；测试增加必须存在收据及SHA256原字节逐验门，专用workflow添加收据路径触发。收据**自身提交**的5→6测试与候选/main Actions须完成后另后验，不沿用旧5项绿灯。
+
+2004《宠物相关》与S2未定刊期《宠物资料》同名技能冲突仍不认证任何patch顺序；猛毒攻击效果/费用、一击必杀乘数、骑乘课程3/4级、旅程伙伴对象及训练地分开；宠邮泛指特殊物品不认证R55贝壳过滤器。无原网页HTML SHA/精确build/技能或NPC ID/商业原服测试。本包有限闭合，最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-57回22域另取重要材料；Stage A7 PARTIAL+2 OPEN、Stage B/wiki GATED、R79暂停，历史全部前缀保留。

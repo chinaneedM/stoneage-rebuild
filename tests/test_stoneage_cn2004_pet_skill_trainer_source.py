@@ -64,5 +64,23 @@ class TestCn2004PetSkillTrainerSource(unittest.TestCase):
         self.assertFalse(self.x["extra_claims"]["s2_pet_mail"]["actual_server_validation"])
         self.assertFalse(self.x["extra_claims"]["s1_pet_loyalty_thresholds"]["original_runtime_tested"])
 
+
+    def test_permanent_receipt_matches_source_bytes(self):
+        import hashlib
+        p = P.parents[0] / "research/recovered/STONEAGE-CN2004-PET-SKILL-TRAINER-ACCEPTANCE-R1.json"
+        receipt = json.loads(p.read_text(encoding="utf-8"))
+        raw = P.read_bytes()
+        info = receipt["derived_source"]
+        self.assertEqual(len(raw), info["raw_utf8_bytes"])
+        self.assertEqual(hashlib.sha256(raw).hexdigest(), info["raw_sha256"])
+        self.assertEqual(info["native_git_blob_sha1"], "b6f42811c23cadc8b80fabb0a53b98a6aa9e8b2f")
+        self.assertTrue(info["persisted_in_git"])
+        self.assertFalse(info["contains_original_html_or_game_assets"])
+        self.assertIsNone(receipt["web_sources"][0]["raw_http_sha256"])
+        self.assertIsNone(receipt["web_sources"][1]["raw_http_sha256"])
+        self.assertEqual(receipt["candidate_validation"]["run_artifacts_count"], 0)
+        self.assertEqual(receipt["main_validation"]["run_artifacts_count"], 0)
+        self.assertTrue(receipt["claim_boundaries"]["history_not_rewritten"])
+
 if __name__ == "__main__":
     unittest.main()
