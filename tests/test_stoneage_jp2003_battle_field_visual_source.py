@@ -1,9 +1,10 @@
 """Guard screenshot attribution and acquisition boundaries, not game behavior."""
 import copy
 import json
+import tempfile
 from pathlib import Path
 import unittest
-from tools.stoneage_jp2003_battle_field_visual_source import Page, page, check_catalog, image_metadata
+from tools.stoneage_jp2003_battle_field_visual_source import Page, page, check_catalog, image_metadata, verify_custody
 
 REPORT = Path(__file__).resolve().parents[1] / 'research/recovered/STONEAGE-JP2003-BATTLE-FIELD-VISUAL-SOURCE-R1.json'
 
@@ -72,6 +73,25 @@ class VisualSourceTests(unittest.TestCase):
     def test_invalid_image_is_not_declared_decoded(self):
         with self.assertRaises(OSError):
             image_metadata(b'not an image')
+
+    def test_actual_derived_custody_rejects_removal_and_same_length_corruption(self):
+        root = REPORT.parents[2]
+        receipt = json.loads((REPORT.parent / 'STONEAGE-JP2003-BATTLE-FIELD-VISUAL-CUSTODY-R1.json').read_text())
+        with tempfile.TemporaryDirectory() as directory:
+            copied = Path(directory)
+            for row in receipt['permanent_derived_files']:
+                path = copied / row['path']
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_bytes((root / row['path']).read_bytes())
+            verify_custody(receipt, copied)
+            path = copied / 'research/recovered/STONEAGE-JP2003-BATTLE-FIELD-VISUAL-CI-MAIN-R1.json'
+            raw = path.read_bytes()
+            path.write_bytes(raw[:-2] + bytes([raw[-2] ^ 1]) + raw[-1:])
+            with self.assertRaises(ValueError):
+                verify_custody(receipt, copied)
+            path.unlink()
+            with self.assertRaises(FileNotFoundError):
+                verify_custody(receipt, copied)
 
 
 if __name__ == '__main__':

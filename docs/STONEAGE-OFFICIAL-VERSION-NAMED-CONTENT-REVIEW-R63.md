@@ -7,3 +7,5 @@
 成果：[来源规格](specs/STONEAGE-JP2003-BATTLE-FIELD-VISUAL-SOURCE-R1.md)、[派生目录和目视记录](../research/recovered/STONEAGE-JP2003-BATTLE-FIELD-VISUAL-SOURCE-R1.json)。战斗目标提示/求助文字/八格菜单、野外Mail/Action区域成为可查证界面参考，但不推导指令效果、原生分辨率、具体NPC/宠物ID或同版服务器。数据可供后续研究和共同设计选择，未批准直接复用原像素。
 
 本地10项测试、8真实输入语义反例和外围script正例；源CI、实际工件下载、永久保管须据远端后验。有限两图包结束后NEXT64轮换地区/内容，不自动取余图或扩音频helper；Stage A7 PARTIAL+2 OPEN，B/wiki GATED，R79暂停。
+
+内容2e7c6fea0984c015a9dfd3c08efbed5cc738e439候选10/main11项Actions实际成功；双ZIP实下、完整派生和来源/输入保管见 `research/recovered/STONEAGE-JP2003-BATTLE-FIELD-VISUAL-CUSTODY-R1.json`。新增强制保管门11项测试及其自身CI另验，不把来源视觉参考提升为原服行为。

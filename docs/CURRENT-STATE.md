@@ -16942,3 +16942,14 @@ R62同包增加既有19集合合同的可检索导出：6条quests文献关系�
 新增中文规格、R63审查、15条screens归档（前2哈希绑定目视/后13实际元数据null）、有限解析/完整解码工具与专用CI。10本包测试与8真实源改写/外围script正例本地通过，原HTML/JPEG/程序不进Git。最初本地EUC-JP索引误按CP932严格解码失败，按真实声明修正后才通过；搜索阅读器打不开独立页但原HTTP成功，不记历史不存在。候选/main自身源重放、ZIP实下及永久派生保管另后验，不能预报绿。
 
 止点前两张原图，最高NEXT `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-64` 回22域另一地区/内容资料，优先早期具名NPC/任务/地图材料。Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停；旧历史前缀完整保留。
+
+
+### 2026-10-22 R63开发版画面双端重放与永久保管
+
+内容提交 `2e7c6fea0984c015a9dfd3c08efbed5cc738e439`/tree `2d0e6ac9214510777b458ceded454b225b5324fe` 候选10/main11项适用Actions全部completed/success，主线实时预期HEAD保护非强制快进。GitHub compare10文件=6新增/4只追加、旧历史行删0；10远端blob和整tree与本地一致，九启动完整前缀保留。源候选run39693866957/job119546402129/artifact12389916564；主线run39694039366/job119546956810/artifact12390465612，各真实执行10单元、四HTML/两JPEG取源/完整解码、8真实输入反例与外围script正例；CI不复演人的目视或商业运行。
+
+两ZIP实际下载3477/3477B，SHA256 `98211042535da278e81e702b72a8eab63ac7b186df8153adca2d7ec0aa188a33` / `fec412ba5f621dcbcf1aa0cc3e69cda4bc982d07c6fb15278d3248629a641ad7`，各唯一replay.json完整23241B/SHA256 `703a81bc572f3f8bb2e47d2762837bf4db32a7577f0b0b38f9f0b083dbd3b92a`，候选/main/local逐字节相等。六HTTP大小和摘要亦同初取。独立正则重建15缩略—独立页配对；JPEG SOF另验两图640×480/8位/3分量，与Pillow一致，不能据此称原生分辨率。
+
+两原CI派生JSON和保管链 `research/recovered/STONEAGE-JP2003-BATTLE-FIELD-VISUAL-CUSTODY-R1.json` 永久入Git，固定源/双raw/旧音效门/旧归档合同原字节、Git身份、21工作流及双job/artifact/ZIP。原HTML/JPEG/音频/商业程序不入Git，旧音效绑定false未变。新增必须存在收据及逐文件原字节校验，真实证据副本等长改动或移除会拒绝；本包测试10→11，保管提交自身候选/main CI须另行后验，不将旧10项称11项运行。
+
+开发警示、当前HTTP与历史字节未认证、两图目视/十三未取、14无单位与HELP行为未知继续保留。最高NEXT64回全22域另一地区/内容，优先早期具名NPC/任务/地图；Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停，全部历史完整。

@@ -11,6 +11,7 @@ from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[1]
 REPORT = ROOT / 'research/recovered/STONEAGE-JP2003-BATTLE-FIELD-VISUAL-SOURCE-R1.json'
+CUSTODY = ROOT / 'research/recovered/STONEAGE-JP2003-BATTLE-FIELD-VISUAL-CUSTODY-R1.json'
 BASE = 'https://www.4gamer.net/store/shots/stoneage/'
 URLS = ['https://www.4gamer.net/DataContents/game/1377.html', BASE + 'index.html',
         BASE + 'pages/image0000.html', BASE + 'pages/image0001.html',
@@ -153,6 +154,19 @@ def check_catalog(catalog, extracted):
                 'Web dimensions or gallery label became native resolution/capture date')
 
 
+def verify_custody(receipt, root):
+    paths = {row['path'] for row in receipt['permanent_derived_files']}
+    stem = 'research/recovered/STONEAGE-JP2003-BATTLE-FIELD-VISUAL-'
+    require({stem + 'SOURCE-R1.json', stem + 'CI-CANDIDATE-R1.json', stem + 'CI-MAIN-R1.json'} <= paths,
+            'Permanent source/dual replay custody incomplete')
+    require(receipt['source_scope']['original_runtime_executed'] is False, 'Custody promoted to game execution')
+    for row in receipt['permanent_derived_files']:
+        raw = (root / row['path']).read_bytes()
+        blob = hashlib.sha1(b'blob ' + str(len(raw)).encode() + bytes([0]) + raw).hexdigest()
+        require(len(raw) == row['bytes'] and sha(raw) == row['sha256'] and blob == row['git_blob'],
+                'Permanent derived evidence changed: ' + row['path'])
+
+
 def audit(expected, raws):
     mutations = [(0, '2003/12/12 20:20', '2003/12/13 20:20', 'announcement-date'),
                  (0, '合計40点近く', '合計40点ちょうど', 'approximate-count'),
@@ -197,6 +211,7 @@ def main():
     p.add_argument('--output', type=Path, required=True)
     args = p.parse_args()
     report = json.loads(REPORT.read_text())
+    verify_custody(json.loads(CUSTODY.read_text()), ROOT)
     check_catalog(report['catalog'], report['extracted'])
     raws = []
     if args.fetch:
