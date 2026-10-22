@@ -1972,3 +1972,8 @@ CLI现强制要求收据；缺失、同长篡改、门禁遗漏/重复、错误�
 七pin固定SOURCE、三父报告、复用解析器和两原CI JSON的原字节/Git身份；收据永久记录21真实run和双job/artifact/ZIP/raw/input初取历史。CLI强制验保管，除缺失/同长篡改、错内容HEAD/tree/分支/原输入相等性和运行权威，还固定整21项实际run清单摘要及准确run/job/artifact ID，拒绝仅用另一成功门替代。本包7→8单元、相关28项本地通过；保管门后输出逐字节不变，七单元内容CI历史不改称八单元。保管提交自身候选/main另实际后验。
 
 本次是同期报道的可审计内容规格，不提升为直取运营公告或已发生发奖。料理挑战/官网竞赛、两村食材范围、指定服课程、配图无身份边界保持；菜谱数量/原ID/数值/实例唯一性/公式/持久化仍OPEN。下一最高NEXT81为另一地区早期地图/NPC/世界任务或具名宠物生态原件；Stage A7 PARTIAL+2 OPEN，B/wiki GATED，savedata R79 PAUSED_NON_BLOCKING，旧历史不删。
+
+
+### 2026-10-23 R81三村守护石与梦德洞窟
+
+最高NEXT81交付CN2003-MENGDE-CAVE具名内容规格：一标2003/5/29的未具名作者门户攻略、两实际奖品全图，三村叙事/7 NPC出现/井口暗号/两守卫/取石及卡坦→霍特尔→柯尔克奖励次序，17文献行。推荐60/成人前置/反序失黄首饰各按原文归属，不冒原flag或脚本；同称村姑/世界局部坐标/勾玉售价/静态tooltip/早期记录点和吉鲁生态不混。27语义改写/2隐藏正文外反例，本包7单元/相关24本地通过；远端及永久保管待实际。停止一文两图，最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-82转台湾具名宠物模型/技能/生态或官方版本世界线资料。原商业脚本/ID/历史像素/实服行为才重开本支；不再延长盗物helper。Stage A7 PARTIAL+2 OPEN，B/wiki GATED，savedata R79 PAUSED_NON_BLOCKING。

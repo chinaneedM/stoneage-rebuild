@@ -8078,3 +8078,10 @@ I1正文实际 https://www.4gamer.net/news/image/2005.09/20050921202336_0.jpg �
 七pin固定SOURCE、三父报告、复用解析器和两原CI JSON的原字节/Git身份；收据永久记录21真实run和双job/artifact/ZIP/raw/input初取历史。CLI强制验保管，除缺失/同长篡改、错内容HEAD/tree/分支/原输入相等性和运行权威，还固定整21项实际run清单摘要及准确run/job/artifact ID，拒绝仅用另一成功门替代。本包7→8单元、相关28项本地通过；保管门后输出逐字节不变，七单元内容CI历史不改称八单元。保管提交自身候选/main另实际后验。
 
 本次是同期报道的可审计内容规格，不提升为直取运营公告或已发生发奖。料理挑战/官网竞赛、两村食材范围、指定服课程、配图无身份边界保持；菜谱数量/原ID/数值/实例唯一性/公式/持久化仍OPEN。下一最高NEXT81为另一地区早期地图/NPC/世界任务或具名宠物生态原件；Stage A7 PARTIAL+2 OPEN，B/wiki GATED，savedata R79 PAUSED_NON_BLOCKING，旧历史不删。
+
+
+### 2026-10-23 R81梦德洞窟具日期门户指南与两奖励屏幕
+
+S1 https://games.sina.com.cn/zhqu/sta/rwgl1_11.shtml ，可见2003-05-29 17:00/新浪游戏/网友投稿，无具名作者/官方脚本认证。当前HTTP200无跳转50035B/85b08eec3a4235de8e9a19f8e88abd4698573a74e2c96afb8667fcc4a8208d8b，严格GB18030零替换，核心1683字符4783UTF8B/247b07e0ea2ce1fc925e24cad336b0ab02b2e5a95f9cc6e40f6b38ef50b083bc，独立可见文本复核。门户后置标题/2006页脚不认证版本/首刊/2003原件，网页读取器Unicode错误由实际HTTP严格解码解决，不叫来源不存在。
+
+正文末组第1/3实际全图 https://image2.sina.com.cn/gm/zhqu/sta/article/2003-05-29/1_115-15-232-572_2003052917425.jpg 和同目录1_115-15-238-572_2003052917425.jpg，原href HTTP仅升HTTPS，均200无跳转。I1 92532B/9489d96399a014a090b3265e00af75e2241a96c20e98af75922c3319bc889948；I2 94389B/c5196cae526922f517fe5e146c068e0e23b389b6fe4581d926660f3bab59a5e6；JPEG/RGB640×480单帧完整解码目视，铠防敏精灵/黄首饰魅耐性标签与正文相符，非实际发奖/属性测试/NPC身份或原SPR。另十全图/缩略像素未取。17研究记录七必填，三父报告及解析器原生Git固定见CN2003-MENGDE-CAVE-SOURCE-R1；27语义改写/隐藏正文外2反例，原HTML/JPEG不入Git，实CI保管后验。
