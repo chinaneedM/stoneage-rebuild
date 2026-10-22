@@ -17181,3 +17181,16 @@ S1/S3所选全文去空白一致，#3核心712UTF8B/SHA256 810507b9e173d90951e20
 固定旧白炎父报告与19集合合同；ハクエン与コクエン不合ID/进化谱，旧7类声明对6具名行异文不被黑炎6类补齐。白炎400买票、黑炎400买袋不混。六单元/18真实HTML去摘要门语义改写、外围script与未选活动正例，本包/旧白炎/组合合同28项本地回归通过；独立词法核919核心、三处10合计、两5票边、两生成物消失说明及原图实参。一次合成图末字节篡改使解码先报OSError而非测试预设ValueError，改用可解码的等长尾随TESTA/TESTB后确证摘要门拒绝，旧本地失败不倒记成功，无远端失败。
 
 候选/main实取、ZIP实下与永久派生保管须实际后验，不预报绿。止于一发布详节/一图/六类/三兑换边；最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-73回22域另一地区具名NPC/剧情/交通或人物界面，音效仍需同版实参，不扩商城helper。Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停，全部旧历史完整。
+
+
+### 2026-10-22 R72双端实源验收、不同整页取证与永久派生保管
+
+内容提交6f434cf519b0e76aaa2ede3c2ceb51ea5b3b637f/tree6d0303abe02843d5f135425f250cba4ee4face47，候选10/main11项适用Actions实际completed/success；实时main预期SHA非强制快进。十文件/整tree与本地原生Git吻合，四连续性文档旧行删除0。专用候选run39771318971/job119799288844/artifact12422213142，主线run39771422647/job119799632302/artifact12422427180，实际六单元、HTML+原图实取、18去摘要门语义改写及外围/相邻活动正例，Pillow12.3.0完整解码。
+
+两CI各整页HTML276942B/SHA256 068a3897a620edb0591ca2945f021c8a3de1f2f423fb81b2cb827a4a152258f3，与初取277194B/cda0c2ce2d4389ed89107feeef40f58a2470341a01fce800f9cf4eafc23f6cf5不同；所选919字符核心/抽取字段/精确JPEG/样本转录/目录/反例结果均相同。两CI原JSON逐字节相等，但不能称等于初取local。保留各自原始inputs，不删字段或规范化改写来假造原字节全等；加入保管门后local仍逐字节等于门前初取local。
+
+实下双ZIP各2665B，SHA256 7aa7eba4710c87a9bcbc820acc594d27da8787e0d358b1a1942a399cb7f85a59 / 9fc6a362c218552cf96584950081f09de5a3cf8bd3310d24af9905971fd9b2e4逐一匹配API；唯一replay.json完整12859B/SHA256 cb40620d16d3ac61e87317d9e141ab7aee5c4b400e6c318dc98b55f013d371f4/Git blob1d85db17802d7705b9b508d5d815f7ba3708b200。原图始终68476B/2949b7719977756fe0789b25f687122ba1b9c0381979bd8bf95e606f7bca59a0；没有将HTML波动扩大成图片或所选规则变化。
+
+双CI原JSON与research/recovered/STONEAGE-JP2009-KOKUEN-CUSTODY-R1.json永久入Git，固定内容Git、21实际run、双job/artifact/ZIP、每次原inputs/raw摘要及五永久文件原生Git身份。强制保管门拒绝缺失/等长篡改、错HEAD/分支、重复run/job、图/输入错配、丢失初取历史、把差异写成原字节相等或冒充2009历史字节；六→七单元，相关29项本地通过。保管提交自身候选/main CI需另真实后验，旧六项不倒改。
+
+原ID、精确build/原站快照、固定物种初值、图片模型/动画关联、概率/保留字段/时长/消费/实际保存仍未知；原HTML/JPEG/程序不进Git。止于具名发布详节和一图，不扩商城helper；最高NEXT73回22域另一地区NPC/剧情/交通或人物界面；Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停，全部旧历史保留。

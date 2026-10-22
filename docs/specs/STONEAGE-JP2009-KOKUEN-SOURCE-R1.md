@@ -56,3 +56,10 @@ S1-IMAGE：[公告的全尺寸001.jpg](https://www.4gamer.net/games/013/G001377/
 `python -m unittest tests.test_stoneage_jp2009_kokuen_source -v`；`python -m tools.stoneage_jp2009_kokuen_source --fetch --output /tmp/r72/replay.json`。真实HTML语义改写绕过摘要门；专测来源边界、混合例、生成物/袋区别、相邻活动不污染、图被移出所选节、图片等长变更和证据晋升。独立词法另核计价、数量、六行及兑换，人工转录与计算提取分别注明。
 
 止于一发布文所选节、一个状态JPEG、六类产物及三条兑换边；不扫全商城/博彩/EXP或扩底层helper。重开需同版原NPC/item/pet数据、真实交换或重抽/生命周期过程、概率/保留字段、变身主体/时长/效果，或宠物名到原模型的同版关联。候选/main实取、ZIP实下和永久派生保管均按实际后验另记。
+
+
+## 实际双端取证与保管
+
+内容提交6f434cf519b0e76aaa2ede3c2ceb51ea5b3b637f的候选10/main11项实际成功，专用run39771318971/39771422647均实际六单元、网页与图取证、18实源改写和两外围正例。双ZIP2665B已实下并匹配API摘要；原JSON12859B/SHA256 cb40620d16d3ac61e87317d9e141ab7aee5c4b400e6c318dc98b55f013d371f4永久保存。完整内容Git、run/job/artifact/ZIP、逐次输入与raw/Git身份见CUSTODY-R1.json。
+
+两CI整页HTML276942B/068a3897a620edb0591ca2945f021c8a3de1f2f423fb81b2cb827a4a152258f3，不同于初取277194B/cda0c2ce2d4389ed89107feeef40f58a2470341a01fce800f9cf4eafc23f6cf5；所选全文核心、结构化语义及原JPEG相同。两CI原JSON相等，但与初取local原JSON不同；四份原inputs均原样保留，不伪称逐字节全等。初取local前后重放全等；SOURCE中的初取记录不被CI替换。保管门逐次验原始派生，独立校核核心/语义和精确图，拒绝错输入/错图/伪相等及来源资格晋升。七单元和相关29项本地通过，保管提交自身CI另验；不是原游戏执行。

@@ -37,6 +37,37 @@ def fixture():
 
 
 class KokuenTests(unittest.TestCase):
+    def test_custody_rejects_missing_changed_and_misattributed_original_reports(self):
+        receipt = m.verify_custody()
+        with tempfile.TemporaryDirectory() as name:
+            root = Path(name)
+            path = root / f'research/recovered/{m.STEM}-CUSTODY-R1.json'
+            for pin in receipt['permanent_pins']:
+                p = root / pin['path']; p.parent.mkdir(parents=True, exist_ok=True)
+                p.write_bytes((m.ROOT / pin['path']).read_bytes())
+            path.write_text(json.dumps(receipt)); m.verify_custody(root)
+            for pin in receipt['permanent_pins']:
+                p = root / pin['path']; raw = p.read_bytes()
+                p.write_bytes(raw[:-1] + bytes([raw[-1] ^ 1]))
+                with self.assertRaises(ValueError): m.verify_custody(root)
+                p.unlink()
+                with self.assertRaises(FileNotFoundError): m.verify_custody(root)
+                p.write_bytes(raw)
+            for change in [lambda d: d['runs'].append(d['runs'][0]),
+                           lambda d: d.update(content_commit='0' * 40),
+                           lambda d: d['jobs_and_artifacts']['main']['artifact']['workflow_run'].update(head_branch='OTHER'),
+                           lambda d: d.update(historical_bytes_authenticated=True),
+                           lambda d: d.update(full_html_input_digests_may_differ=False),
+                           lambda d: d.update(local_raw_equals_candidate=True),
+                           lambda d: d['initial_local_inputs'][0].update(bytes=100),
+                           lambda d: d['jobs_and_artifacts']['candidate']['accepted_inputs'][0].update(sha256='0'*64),
+                           lambda d: d['jobs_and_artifacts']['main']['accepted_inputs'][1].update(bytes=100),
+                           lambda d: d['jobs_and_artifacts']['main'].update(job=d['jobs_and_artifacts']['candidate']['job'])]:
+                changed = copy.deepcopy(receipt); change(changed); path.write_text(json.dumps(changed))
+                with self.assertRaises(ValueError): m.verify_custody(root)
+            path.unlink()
+            with self.assertRaises(FileNotFoundError): m.verify_custody(root)
+
     def test_dynamic_dates_price_exchange_counts_and_npc_are_extracted(self):
         ex=m.derive(fixture())
         self.assertEqual(ex['announced_sale']['start_date'],'2009-06-24')

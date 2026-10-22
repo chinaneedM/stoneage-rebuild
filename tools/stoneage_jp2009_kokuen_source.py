@@ -287,10 +287,80 @@ def audit(raw, expected):
             'adjacent_unselected_event_positive':True}
 
 
+def verify_custody(root=None):
+    root = ROOT if root is None else Path(root)
+    receipt = json.loads((root / f'research/recovered/{STEM}-CUSTODY-R1.json').read_text())
+    require(receipt['original_game_runtime_verified'] is False and
+            receipt['historical_bytes_authenticated'] is False, 'Custody authority promoted')
+    require(receipt['full_html_input_digests_may_differ'] is True and
+            receipt['core_semantics_and_exact_image_equal'] is True and
+            receipt['only_derived_metadata_retained'] is True, 'Acquisition/semantic distinction lost')
+    runs = receipt['runs']
+    require(len(runs) == 21 and len({r['id'] for r in runs}) == 21 and all(
+        r['head_sha'] == receipt['content_commit'] and r['status'] == 'completed' and
+        r['conclusion'] == 'success' for r in runs), 'CI provenance incomplete or changed')
+    pins = receipt['permanent_pins']
+    required = {f'research/recovered/{STEM}-{part}-R1.json' for part in ('SOURCE', 'CI-CANDIDATE', 'CI-MAIN')}
+    require(len({p['path'] for p in pins}) == len(pins) and required <= {p['path'] for p in pins},
+            'Permanent pins incomplete/duplicate')
+    for p in pins:
+        require(not Path(p['path']).is_absolute() and '..' not in Path(p['path']).parts, 'Invalid pin path')
+        raw = (root / p['path']).read_bytes()
+        require(len(raw) == p['bytes'] and sha(raw) == p['sha256'] and
+            hashlib.sha1(b'blob ' + str(len(raw)).encode() + b'\0' + raw).hexdigest() == p['git_blob'],
+            'Permanent bytes/Git identity changed')
+    source = json.loads((root / f'research/recovered/{STEM}-SOURCE-R1.json').read_text())
+    initial_inputs = [{k: p[k] for k in ('id', 'url', 'bytes', 'sha256')} for p in source['source_pages']]
+    initial_inputs.append({'id': 'S1-IMAGE', **source['visual_reference']['image_metadata']})
+    require(receipt['initial_local_inputs'] == initial_inputs, 'Initial acquisition history changed')
+    raw_replays = []
+    require({p['path'] for p in source['parent_pins']} <= {p['path'] for p in pins}, 'Parent custody missing')
+    artifacts, jobs = [], []
+    for role in ('candidate', 'main'):
+        proof = receipt['jobs_and_artifacts'][role]
+        matches = [r for r in runs if r['id'] == proof['run']]
+        artifact = proof['artifact']
+        a = artifact['workflow_run']
+        branch = 'main' if role == 'main' else receipt['candidate_branch']
+        require(len(matches) == 1 and matches[0]['branch'] == branch and a['head_branch'] == branch and
+            a['id'] == proof['run'] and a['head_sha'] == receipt['content_commit'] and
+            proof['job_conclusion'] == 'success' and proof['job_run_id'] == proof['run'] and
+            proof['job_head_sha'] == receipt['content_commit'] and proof['zip_downloaded_and_digest_verified'] is True and
+            artifact['name'] == 'jp2009-kokuen-derived-r72' and re.fullmatch(r'sha256:[0-9a-f]{64}', artifact['digest']),
+            'Artifact/run/job detached from accepted content')
+        artifacts.append(artifact['id']); jobs.append(proof['job'])
+        raw = (root / f'research/recovered/{STEM}-CI-{role.upper()}-R1.json').read_bytes()
+        require(len(raw) == proof['raw_replay']['bytes'] and sha(raw) == proof['raw_replay']['sha256'] and
+            hashlib.sha1(b'blob ' + str(len(raw)).encode() + b'\0' + raw).hexdigest() == proof['raw_replay']['git_blob'],
+            'Raw CI replay changed')
+        raw_replays.append(raw)
+        replay = json.loads(raw)
+        inputs = proof['accepted_inputs']
+        require(len(inputs) == 2 and inputs[0]['id'] == 'S1' and inputs[0]['url'] == URL and
+                isinstance(inputs[0]['bytes'], int) and inputs[0]['bytes'] > 0 and
+                re.fullmatch(r'[0-9a-f]{64}', inputs[0]['sha256']) and
+                inputs[1] == {'id': 'S1-IMAGE', **source['visual_reference']['image_metadata']} and
+                receipt['selected_visible_compact_core'] == source['selected_visible_compact_core'],
+                'Acquisition identities/image/core detached')
+        require(replay['inputs'] == inputs and replay['extraction'] == source['extraction'] and
+            replay['catalog_records'] == source['catalog_records'] and
+            replay['visual_reference'] == source['visual_reference'] and
+            replay['audit'] == {'semantic_mutations_rejected_without_digest_gate': 18, 'peripheral_script_positive': True,
+                                'adjacent_unselected_event_positive': True} and
+            replay['original_html_or_assets_in_output'] is False and replay['original_game_runtime_verified'] is False,
+            'Raw replay semantic/boundary mismatch')
+    require(receipt['candidate_main_raw_equal'] == (raw_replays[0] == raw_replays[1]) and
+            receipt['local_raw_equals_candidate'] == (receipt['jobs_and_artifacts']['candidate']['accepted_inputs'] == initial_inputs),
+            'Raw acquisition equality misstated')
+    require(len(set(artifacts)) == len(set(jobs)) == 2, 'Candidate and main evidence substituted')
+    return receipt
+
+
 def main():
     p=argparse.ArgumentParser();g=p.add_mutually_exclusive_group(required=True)
     g.add_argument('--fetch',action='store_true');g.add_argument('--input-dir');p.add_argument('--output',required=True)
     args=p.parse_args();r=json.loads(REPORT.read_text());verify_report(r)
+    verify_custody()
     payloads=[]
     for url,name in [(URL,'source.html'),(IMAGE_URL,'pet-panel.jpg')]:
         if args.fetch:
