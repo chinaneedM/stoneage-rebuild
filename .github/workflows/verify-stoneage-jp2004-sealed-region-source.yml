@@ -1,0 +1,38 @@
+name: Verify JP2004 sealed region and pet operation sources
+on:
+  push:
+    paths:
+      - 'tools/stoneage_jp2004_sealed_region_source.py'
+      - 'tests/test_stoneage_jp2004_sealed_region_source.py'
+      - 'research/recovered/STONEAGE-JP2004-SEALED-REGION-*.json'
+      - 'docs/specs/STONEAGE-JP2004-SEALED-REGION-SOURCE-R1.md'
+      - '.github/workflows/verify-stoneage-jp2004-sealed-region-source.yml'
+  pull_request:
+    paths:
+      - 'tools/stoneage_jp2004_sealed_region_source.py'
+      - 'tests/test_stoneage_jp2004_sealed_region_source.py'
+      - 'research/recovered/STONEAGE-JP2004-SEALED-REGION-*.json'
+      - 'docs/specs/STONEAGE-JP2004-SEALED-REGION-SOURCE-R1.md'
+      - '.github/workflows/verify-stoneage-jp2004-sealed-region-source.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  bounded-source-replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Layout and source-boundary counterexamples
+        run: python -m unittest tests.test_stoneage_jp2004_sealed_region_source -v
+      - name: Retrieve two current press pages and reject semantic mutations without digest gate
+        run: python -m tools.stoneage_jp2004_sealed_region_source --fetch --output "$RUNNER_TEMP/r65/replay.json"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: jp2004-sealed-region-derived-r65
+          path: ${{ runner.temp }}/r65/replay.json
+          if-no-files-found: error
+          retention-days: 30

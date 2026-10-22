@@ -7966,3 +7966,10 @@ research/recovered/STONEAGE-CN2003-UI-TEAM-TRADE-SOURCE-R1.json源派生Git blob
 新增中文规格docs/specs/STONEAGE-EARLY-DINOSAUR-QUEST-SOURCE-R1.md、R64审查、有限工具与源重放workflow。S1/S2各两段任务＋S2哈鲁/助手吉鲁共六文献归档关系，原ID均null。鲁尼贴斯/鲁尼帖斯、阿西美加/阿西美拉护符1和18档护符说法分源，不能据此称确定改版；S2玩家15/25仅建议，宠物15以上/30另字段，S1布克布克LV1不回填S2。博士与同名治疗精灵哈鲁不合并，入口328,633与研究所11,12不混层。取走多宠/骑乘宠警示不证选槽/实际消费/事件或存档，原始NPC/物种/任务ID仍未知。原HTML/图像/程序不入Git。
 
 本地六测试和12真实输入语义反例＋script正例通过；初检标题误判（前置条件重复名称）及引号跨段误抓已修复并保留过程，未发生对应远端失败。实际候选/main重放、ZIP下载和永久派生保管须另后验，不预报绿。有限止于两任务三HTML，最高NEXT `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-65` 回22域另一材料域，优先可归属音效事件或官方地图/生态；Stage A7 PARTIAL+2 OPEN，B/wiki GATED，R79 PAUSED_NON_BLOCKING，全部旧历史原字节前缀保留。
+
+
+## SRC-JP2004-SEALED-REGION-R65 — 2026-10-22
+
+- 新结构化：https://www.4gamer.net/news/history/2004.09/20040917191201detail.html ，正文Asakura，可见2004/09/17 19:12；当前HTTP200/10300B/CP932、SHA256 f544f907badeb6855cc79bd76821d8e0aaf8c5498e095bc1d193cb5c5e47a057。媒体署名报道，非直接运营原文或商业运行，实际同期快照未认证。
+- 既有7月页仅重取，10860B/160d53f4aa399d06ca9406b00baf0bd85e955370571957fd08e45aceb92455ad，与旧CHAT-UPDATE报告逐语义核对；不重新算独立新来源。不取原图，不沿stoneage.to官网链接递归。
+- 规格docs/specs/STONEAGE-JP2004-SEALED-REGION-SOURCE-R1.md与七条派生目录research/recovered/STONEAGE-JP2004-SEALED-REGION-SOURCE-R1.json分离两具名区域、未名生态和三宠物操作，保留跨文献不合并与原ID未知。

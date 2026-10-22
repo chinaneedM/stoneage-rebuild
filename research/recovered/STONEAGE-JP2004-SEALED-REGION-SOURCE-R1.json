@@ -1,0 +1,406 @@
+{
+  "schema": "stoneage.jp2004_sealed_region.source.r1",
+  "task": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-65",
+  "date": "2026-10-22",
+  "baseline_head": "3e1f4c7ce75def12a63e0c3b76ac9a68b6ac0c62",
+  "baseline_tree": "d42c31975755e9020fcd140d8467d1d59e8d5dbc",
+  "startup": {
+    "branches": 459,
+    "open_prs": 0,
+    "in_progress_actions": 0,
+    "unrelated_queued_run": 37642417333,
+    "main_successful_actions": 9,
+    "candidate_successful_actions_same_head": 8,
+    "complete_file_pins": [
+      {
+        "path": "README.md",
+        "bytes": 45937,
+        "sha256": "9feb9d418fe67809176c5c2970fc27498123531dd9051e131a4c3b3332cf803c",
+        "git_blob": "65cfe8de7ce8394f8eb659d8105a14f1d11753ca"
+      },
+      {
+        "path": "docs/PROJECT-CONTINUITY-PROTOCOL-R1.md",
+        "bytes": 9762,
+        "sha256": "c44834eeec87f7a43e9cb4905f08377349e36d58b1fff2c5a75a6975db695e3b",
+        "git_blob": "ba9bbe19384589400abc61af37a360a40bf91452"
+      },
+      {
+        "path": "docs/CURRENT-STATE.md",
+        "bytes": 2313363,
+        "sha256": "bd33cf03ce3e381977c51e46240e21c1efd8435579c8c147dbe9b1cd99a193d2",
+        "git_blob": "d71f2cb9da6741273aadd354cf7a0ab5e26eb8ba"
+      },
+      {
+        "path": "docs/DESIGN-DECISIONS.md",
+        "bytes": 45965,
+        "sha256": "28b572ed01179eacd5a06b4ad62c76e4baef22ac49587aa0bad452a7cb3fe8e6",
+        "git_blob": "013ae4fad9301ab0140fe408a423b3abad97d1f9"
+      },
+      {
+        "path": "docs/HISTORICAL-TIMELINE.md",
+        "bytes": 590651,
+        "sha256": "d752b54f5ed0543203f9cb23373b3d1c404082862924c018a7766eace7093382",
+        "git_blob": "4ec3ad9f66a1e6dfdc48f849be77f7f08d5c8de5"
+      },
+      {
+        "path": "docs/SOURCE-REGISTRY.md",
+        "bytes": 860733,
+        "sha256": "939ea55fc4177387c2354736664bb59d8e6106ed927fd3086ff992ebcf764953",
+        "git_blob": "61e1107b8fa5ba7815c22fff97d552a5eb1a5e22"
+      },
+      {
+        "path": "docs/RESTORATION-ROADMAP-R2.md",
+        "bytes": 250191,
+        "sha256": "71da450abe2c72b464625ae11f12652c1de3054fc4dda2a4fcc5f0a5d1de316a",
+        "git_blob": "895e3545d189fd5e91bd65c27e7cc3958a41bedd"
+      },
+      {
+        "path": "research/recovered/STONEAGE-22-DOMAIN-SOURCE-READY-PORTFOLIO-R2.json",
+        "bytes": 15948,
+        "sha256": "7d50de08f7855cf16dbe54b1747e258f1cc1223de88cc217172fd145f3c704ce",
+        "git_blob": "088b469b3c51e689cff27f33fc3bb49de2d24b2c"
+      },
+      {
+        "path": "docs/STAGE-A-CONSOLIDATED-REVIEW-R1.md",
+        "bytes": 15835,
+        "sha256": "52005bc4d6eb3ec9905e026a50683ae63b0950ad755a623691c1882935d8365b",
+        "git_blob": "07c9950a40d110d4dabb80b11412db8b4ea64ba9"
+      }
+    ]
+  },
+  "scope": {
+    "historical_bytes_authenticated": false,
+    "runtime_verified": false,
+    "exact_build": null,
+    "new_source_pages": 1,
+    "reused_source_pages": 1,
+    "new_original_assets_retrieved": 0,
+    "first_party_webpage_retrieved": false,
+    "operator_identity_in_september_body": null,
+    "region": "Japan-related product reported by Japanese press; no exact server build",
+    "original_game_assets_committed": false,
+    "same_2004_build_between_july_september_proven": false
+  },
+  "source_pages": [
+    {
+      "id": "S1",
+      "url": "https://www.4gamer.net/news/history/2004.07/20040730231235detail.html",
+      "http_status_observed": 200,
+      "final_url": "https://www.4gamer.net/news/history/2004.07/20040730231235detail.html",
+      "bytes": 10860,
+      "sha256": "160d53f4aa399d06ca9406b00baf0bd85e955370571957fd08e45aceb92455ad",
+      "codec": "CP932_STRICT",
+      "observed_date": "2026-10-22",
+      "role": "REACQUIRED_ALREADY_ARCHIVED_JULY_CONTEXT_NOT_NEW",
+      "historical_capture": null
+    },
+    {
+      "id": "S2",
+      "url": "https://www.4gamer.net/news/history/2004.09/20040917191201detail.html",
+      "http_status_observed": 200,
+      "final_url": "https://www.4gamer.net/news/history/2004.09/20040917191201detail.html",
+      "bytes": 10300,
+      "sha256": "f544f907badeb6855cc79bd76821d8e0aaf8c5498e095bc1d193cb5c5e47a057",
+      "codec": "CP932_STRICT",
+      "observed_date": "2026-10-22",
+      "role": "NEW_STRUCTURED_SEPTEMBER_PRESS_REPORT",
+      "historical_capture": null
+    }
+  ],
+  "july_parent_path": "research/recovered/STONEAGE-JP2004-CHAT-UPDATE-SOURCE-R1.json",
+  "parent_pins": [
+    {
+      "path": "research/recovered/STONEAGE-JP2004-CHAT-UPDATE-SOURCE-R1.json",
+      "bytes": 13906,
+      "sha256": "10c61f4fc158b7a0c740c805246511c9205d85337e8e301e6afd2bffafda9dc4",
+      "git_blob": "6acbd703e365688a7341fed69ec1e8411f71d07b"
+    },
+    {
+      "path": "research/recovered/STONEAGE-JP2006-WORLD-GEOGRAPHY-SOURCE-R1.json",
+      "bytes": 8316,
+      "sha256": "c34c4e9aef27a0639943ea82dea6181b10d6582c0363d1b8fc03200c781c6442",
+      "git_blob": "f9d122eeb71957c2e25e68309754ef663dd14697"
+    },
+    {
+      "path": "research/recovered/STONEAGE-JSS-PET-PATCH-HISTORY-R1.json",
+      "bytes": 18907,
+      "sha256": "3fdd731a6cce9f9c4aa80d30c861f84eda46701776deee4f882731897bbedfcd",
+      "git_blob": "1a3dc51a8c1cbaf04991068aa779b62e11d99384"
+    },
+    {
+      "path": "research/recovered/STONEAGE-TW10-AUDIO-EVENT-GATE-R1.json",
+      "bytes": 11013,
+      "sha256": "ce1cd5738dac1a571999eea9ea6ee5ead86341f30bff4f0c4e4610a80f917047",
+      "git_blob": "67cc3707d45b6f079432b1db29b043851571b518"
+    },
+    {
+      "path": "research/recovered/STONEAGE-PREPRODUCTION-CONTENT-ARCHIVE-R1.json",
+      "bytes": 24489,
+      "sha256": "e87afebc8c9590142c7cc8831b578455b3427bf7c1d10520ae02a3e8082fbddb",
+      "git_blob": "2d5b3f081d5618287f431fbded943722a820c593"
+    }
+  ],
+  "extraction": {
+    "core_sha256": "58190642acbb6402a1693d4464c0298d6341148bbb95563079abecb8d09332ef",
+    "authority": "CONTEMPORARY_4GAMER_EDITORIAL_NOT_DIRECT_OPERATOR_OR_RUNTIME",
+    "publication": "2004-09-17 19:12",
+    "body_byline": "Asakura",
+    "update": {
+      "label": "封印の開放",
+      "ordinal_as_written": "第三弾",
+      "reported_status": "COMPLETED_TODAY_AS_REPORTED_NOT_INDEPENDENTLY_EXECUTED",
+      "category_count": 2,
+      "numeric_build": null
+    },
+    "maps": [
+      {
+        "name": "封印された洞窟",
+        "kind": "CAVE",
+        "relative_position": "EAST_OF_FIRST_DISCOVERED_ISLAND",
+        "reference_island_name": null,
+        "reference_island_id": null,
+        "formerly_inaccessible": true,
+        "reported_access_after_update": true,
+        "complex_interior_reported": true,
+        "map_id": null,
+        "coordinates": null
+      },
+      {
+        "name": "穀嶺の地",
+        "kind": "SUBMERGED_ISLAND",
+        "approach": "UNDERGROUND_ONLY_AS_REPORTED",
+        "exact_route_edges": null,
+        "next_secret_identity": null,
+        "map_id": null,
+        "coordinates": null
+      }
+    ],
+    "encounter_hint": {
+      "map_label": "封印された洞窟",
+      "description": "UNNAMED_NEW_DINOSAURS_AS_REPORTED",
+      "certainty": "QUALIFIED_REPORT_ということ",
+      "species": null,
+      "species_id": null,
+      "level": null,
+      "spawn_rate": null
+    },
+    "pet_operations": [
+      {
+        "label": "見せる",
+        "action": "PLACE_ON_FIELD_WITH_SELF_ONLY_PICKUP_AS_REPORTED",
+        "ownership_transfer_proven": false,
+        "server_object_or_slot_algorithm": null
+      },
+      {
+        "label": "野に放す",
+        "action": "RELINQUISH_LOCALLY_WITHOUT_PET_SHOP_AS_REPORTED",
+        "sale_payment_proven": false,
+        "permanent_deletion_or_recovery_proven": false
+      },
+      {
+        "label": "ペットメール",
+        "restriction_as_written": "一匹",
+        "per_operation_pet_count_as_reported": 1,
+        "limit_window_or_cooldown": null,
+        "previous_limit": null,
+        "delivery_success_verified": false
+      }
+    ],
+    "official_link_as_written_not_retrieved": "http://stoneage.to/",
+    "original_game_runtime_verified": false
+  },
+  "catalog": [
+    {
+      "record_id": "jp2004-20040917191201:1",
+      "collection": "versions",
+      "entity_type": "DOCUMENTARY_REFERENCE_NOT_ORIGINAL_GAME_MASTER",
+      "version_profile": "JP2004_4GAMER_OFFICIAL_PRODUCT_PRESS_REPORTED_BUILD_UNVERIFIED",
+      "source_refs": [
+        "S2"
+      ],
+      "verification_status": "SOURCE_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "label": "封印の開放",
+        "ordinal_as_written": "第三弾",
+        "reported_status": "COMPLETED_TODAY_AS_REPORTED_NOT_INDEPENDENTLY_EXECUTED",
+        "category_count": 2,
+        "numeric_build": null
+      }
+    },
+    {
+      "record_id": "jp2004-20040917191201:2",
+      "collection": "maps",
+      "entity_type": "DOCUMENTARY_REFERENCE_NOT_ORIGINAL_GAME_MASTER",
+      "version_profile": "JP2004_4GAMER_OFFICIAL_PRODUCT_PRESS_REPORTED_BUILD_UNVERIFIED",
+      "source_refs": [
+        "S2"
+      ],
+      "verification_status": "SOURCE_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "name": "封印された洞窟",
+        "kind": "CAVE",
+        "relative_position": "EAST_OF_FIRST_DISCOVERED_ISLAND",
+        "reference_island_name": null,
+        "reference_island_id": null,
+        "formerly_inaccessible": true,
+        "reported_access_after_update": true,
+        "complex_interior_reported": true,
+        "map_id": null,
+        "coordinates": null
+      }
+    },
+    {
+      "record_id": "jp2004-20040917191201:3",
+      "collection": "maps",
+      "entity_type": "DOCUMENTARY_REFERENCE_NOT_ORIGINAL_GAME_MASTER",
+      "version_profile": "JP2004_4GAMER_OFFICIAL_PRODUCT_PRESS_REPORTED_BUILD_UNVERIFIED",
+      "source_refs": [
+        "S2"
+      ],
+      "verification_status": "SOURCE_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "name": "穀嶺の地",
+        "kind": "SUBMERGED_ISLAND",
+        "approach": "UNDERGROUND_ONLY_AS_REPORTED",
+        "exact_route_edges": null,
+        "next_secret_identity": null,
+        "map_id": null,
+        "coordinates": null
+      }
+    },
+    {
+      "record_id": "jp2004-20040917191201:4",
+      "collection": "encounters",
+      "entity_type": "DOCUMENTARY_REFERENCE_NOT_ORIGINAL_GAME_MASTER",
+      "version_profile": "JP2004_4GAMER_OFFICIAL_PRODUCT_PRESS_REPORTED_BUILD_UNVERIFIED",
+      "source_refs": [
+        "S2"
+      ],
+      "verification_status": "SOURCE_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "map_label": "封印された洞窟",
+        "description": "UNNAMED_NEW_DINOSAURS_AS_REPORTED",
+        "certainty": "QUALIFIED_REPORT_ということ",
+        "species": null,
+        "species_id": null,
+        "level": null,
+        "spawn_rate": null
+      }
+    },
+    {
+      "record_id": "jp2004-20040917191201:5",
+      "collection": "tutorials",
+      "entity_type": "DOCUMENTARY_REFERENCE_NOT_ORIGINAL_GAME_MASTER",
+      "version_profile": "JP2004_4GAMER_OFFICIAL_PRODUCT_PRESS_REPORTED_BUILD_UNVERIFIED",
+      "source_refs": [
+        "S2"
+      ],
+      "verification_status": "SOURCE_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "label": "見せる",
+        "action": "PLACE_ON_FIELD_WITH_SELF_ONLY_PICKUP_AS_REPORTED",
+        "ownership_transfer_proven": false,
+        "server_object_or_slot_algorithm": null
+      }
+    },
+    {
+      "record_id": "jp2004-20040917191201:6",
+      "collection": "tutorials",
+      "entity_type": "DOCUMENTARY_REFERENCE_NOT_ORIGINAL_GAME_MASTER",
+      "version_profile": "JP2004_4GAMER_OFFICIAL_PRODUCT_PRESS_REPORTED_BUILD_UNVERIFIED",
+      "source_refs": [
+        "S2"
+      ],
+      "verification_status": "SOURCE_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "label": "野に放す",
+        "action": "RELINQUISH_LOCALLY_WITHOUT_PET_SHOP_AS_REPORTED",
+        "sale_payment_proven": false,
+        "permanent_deletion_or_recovery_proven": false
+      }
+    },
+    {
+      "record_id": "jp2004-20040917191201:7",
+      "collection": "tutorials",
+      "entity_type": "DOCUMENTARY_REFERENCE_NOT_ORIGINAL_GAME_MASTER",
+      "version_profile": "JP2004_4GAMER_OFFICIAL_PRODUCT_PRESS_REPORTED_BUILD_UNVERIFIED",
+      "source_refs": [
+        "S2"
+      ],
+      "verification_status": "SOURCE_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "label": "ペットメール",
+        "restriction_as_written": "一匹",
+        "per_operation_pet_count_as_reported": 1,
+        "limit_window_or_cooldown": null,
+        "previous_limit": null,
+        "delivery_success_verified": false
+      }
+    }
+  ],
+  "cross_source_nonjoins": [
+    {
+      "from": "July unnamed new island",
+      "to": "September first-discovered island east-reference",
+      "identity_established": false,
+      "reason": "No explicit name or link; first-discovered island could refer to another historical reference."
+    },
+    {
+      "from": "July two unnamed dungeons",
+      "to": "September sealed cave",
+      "identity_established": false,
+      "reason": "No explicit correspondence, entrance or same-build identity."
+    },
+    {
+      "from": "September 穀嶺の地 submerged island",
+      "to": "2006 ミライア群島 regions",
+      "identity_established": false,
+      "reason": "Water/underground scenery alone is not an entity join."
+    },
+    {
+      "from": "2004 pet-mail one-pet statement",
+      "to": "JSS 1999–2000 operator timer contexts",
+      "identity_established": false,
+      "reason": "Count and time limit are different quantities from different branches; no continuous patch chain."
+    }
+  ],
+  "negative_boundaries": {
+    "same_july_and_september_island": false,
+    "cave_to_submerged_island_route": false,
+    "reference_island_named": false,
+    "new_dinosaur_species_identified": false,
+    "secret_is_mechanical_civilization": false,
+    "pet_display_transfers_ownership": false,
+    "release_is_sale_or_proven_permanent_deletion": false,
+    "mail_cooldown_or_prior_limit_recovered": false,
+    "original_tw10_rules_backfilled": false,
+    "official_site_link_followed": false
+  },
+  "analyst_interpretation": {
+    "grade": "HYPOTHESIS",
+    "note": "Withholding route names and reporting subsequent openings may support an exploration-led experience; this does not establish developer intent or future design adoption."
+  },
+  "stop": "Two current press HTML responses only; no game, images, site recursion, species master or quest helper reconstruction. Seven source records, not seven maps/entities.",
+  "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-66: rotate portfolio; prioritize new versioned classic helper capability material with unofficial identity preserved, otherwise named item/recipe/economy material. Do not expand sealed-region helpers."
+}

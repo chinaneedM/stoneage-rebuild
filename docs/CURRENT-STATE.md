@@ -16973,3 +16973,14 @@ R62同包增加既有19集合合同的可检索导出：6条quests文献关系�
 实际下载两ZIP均1373B，SHA256 `d4edb91ca835ada0c1eb582c9e1f3f5f7e4d81bf721fe4d7103406882fb7cc8f` / `4778d399f727dd9cd678c1987f66f93ddd427f7d64a69253ed9f1b7fd7ece921`，各唯一replay.json，完整2932B/SHA256 `8787d2eb0fd28ecb12c39d5108fab7a5e341d24f128b21c6468ef87f1762af57`/原生Git blob `0a5b5108cf76f8a74d51691eed94160d805d91b8`。两CI/local完整raw逐字节相等，三源输入大小及摘要同初取，真实ZIP差异不抹平。独立一次性词法复核先漏HTML实体解码导致断言失败，补实体解码后原姓名/坐标、建议等级、前置/18档/LV1逐项一致，非来源变化。
 
 永久派生两CI原JSON及research/recovered/STONEAGE-EARLY-DINOSAUR-QUEST-CUSTODY-R1.json固定内容Git、双job/artifact/ZIP、21项Actions和六文件原生Git/SHA/长度，原HTML/图/程序不入Git。新强制保管门检查实际文件缺失及等长篡改，单元六→七；**保管提交自身候选/main CI须另行实查**，不将旧六项倒称七项运行。史料日期、两源名差/奖励差、建议等级、同名精灵非同NPC、取宠/存档未知均保留。最高NEXT65回22域优先音效事件或官方地图/生态，Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停，旧历史全文不改删。
+
+
+## 2026-10-22 R65：日服封印地域与宠物展示／放生／邮寄的来源分界
+
+启动新读main `3e1f4c7ce75def12a63e0c3b76ac9a68b6ac0c62`/tree `d42c31975755e9020fcd140d8467d1d59e8d5dbc`、459分支/0开放PR/0运行中Actions，该HEAD main9/候选8项实际SUCCESS，历史queued37642417333无关。完整CURRENT 2313363B/blob d71f2cb9da6741273aadd354cf7a0ab5e26eb8ba及九启动全文指纹核验，按最高NEXT65选地图生态；无新TW10事件实参，旧音效API树不重开。
+
+新取4Gamer Asakura署名2004-09-17 19:12《封印の開放》相关同期报道，10300B/SHA256 f544f907badeb6855cc79bd76821d8e0aaf8c5498e095bc1d193cb5c5e47a057，CP932严格解码；7月已归档报道10860B/160d53f4aa399d06ca9406b00baf0bd85e955370571957fd08e45aceb92455ad仅重取上下文，不计新来源。S2报道第三弹、当日新增封印された洞窟／穀嶺の地和展示／放生／一次一只宠邮；媒体当日完成语气仍非本项目原服认证。官方stoneage.to仅原文出链，未访问或冒称直接运营原文，2004同刻原字节及精确build未证。
+
+新增docs/specs/STONEAGE-JP2004-SEALED-REGION-SOURCE-R1.md、R65审查、research/recovered/STONEAGE-JP2004-SEALED-REGION-SOURCE-R1.json与有限解析/CI：七来源目录=版本1、地图2、未名生态提示1、操作文献3，原ID均null；不是七原游戏实体。S2洞窟东侧参照岛与S1未名新岛、2006群岛不自动连接；地底前往不补洞窟直通、物种/坐标/机械文明秘密。自拾取展示与放生放手不混，永久删除/售款/选槽/持久化未知，宠邮只数不等计时或旧上限。五父报告原生Git/SHA固定，既有19集合合同沿用，原HTML/原图/程序不入Git。
+
+本地七项边界/实际父文件缺失与等长篡改检查，17真实源语义反例（去正文摘要比较）与script/meta作者两正例通过。最初EUC-JP误用按源Shift_JIS声明修正CP932，另反例跨SPAN未命中后缩为真实连续文本；本地修正过程保留，非远端失败。候选/main自身Actions、ZIP实下与永久派生保管需后验。止于两HTML/两区域与三宠物操作，最高NEXT `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-66` 回22域优先具版号经典辅助工具能力新材料，保留非官方来源；缺新源则选具名物品/配方/经济，不扩本包helper。Stage A7 PARTIAL+2 OPEN，B/wiki GATED，R79暂停，历史完整前缀不改删。

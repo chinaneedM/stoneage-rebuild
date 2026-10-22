@@ -4273,3 +4273,8 @@ research/recovered/STONEAGE-CN2003-UI-TEAM-TRADE-SOURCE-R1.json源派生Git blob
 新增中文规格docs/specs/STONEAGE-EARLY-DINOSAUR-QUEST-SOURCE-R1.md、R64审查、有限工具与源重放workflow。S1/S2各两段任务＋S2哈鲁/助手吉鲁共六文献归档关系，原ID均null。鲁尼贴斯/鲁尼帖斯、阿西美加/阿西美拉护符1和18档护符说法分源，不能据此称确定改版；S2玩家15/25仅建议，宠物15以上/30另字段，S1布克布克LV1不回填S2。博士与同名治疗精灵哈鲁不合并，入口328,633与研究所11,12不混层。取走多宠/骑乘宠警示不证选槽/实际消费/事件或存档，原始NPC/物种/任务ID仍未知。原HTML/图像/程序不入Git。
 
 本地六测试和12真实输入语义反例＋script正例通过；初检标题误判（前置条件重复名称）及引号跨段误抓已修复并保留过程，未发生对应远端失败。实际候选/main重放、ZIP下载和永久派生保管须另后验，不预报绿。有限止于两任务三HTML，最高NEXT `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-65` 回22域另一材料域，优先可归属音效事件或官方地图/生态；Stage A7 PARTIAL+2 OPEN，B/wiki GATED，R79 PAUSED_NON_BLOCKING，全部旧历史原字节前缀保留。
+
+
+### 2004-09-17报道／2026-10-22复核：日服封印地域与宠物操作
+
+**FACT（同期媒体陈述）**：4Gamer署Asakura报道称第三弹更新新增两个具名区域，含东侧封印洞窟、沉没穀嶺之地和未名恐龙提示；并述自拾取展示、原地放生及一次一只宠邮。**OPEN**：具体运营构建/原服部署/地图ID与路径/物种、参照岛身份、售款或删除/计时/持久化。7月既有未名地图及2006群岛不自动合并，来源和时间见STONEAGE-JP2004-SEALED-REGION-SOURCE-R1，旧历史保留。
