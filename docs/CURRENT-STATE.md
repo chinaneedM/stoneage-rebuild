@@ -17142,3 +17142,16 @@ S1/S3所选全文去空白一致，#3核心712UTF8B/SHA256 810507b9e173d90951e20
 双原CI JSON与research/recovered/STONEAGE-CN30-SPECIAL-PET-SKILLS-CUSTODY-R1.json永久入Git，固定内容Git、21真实run、双job/artifact/ZIP、明确历史参考捕获及六永久文件原字节/Git身份。保管门强制存在，拒绝缺失/等长篡改、重复run/job、错HEAD/分支、当前网页冒充历史字节及重放错配；本包七→八单元，相关本地22项通过。保管提交自身候选/main CI须另实际后验，不倒称旧七项为八。原HTML/图/杂志/程序不入Git。
 
 最高NEXT71回22域另一具名地图/NPC/生态或同版音效事件，不扩本技能helper；Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停，全部旧历史保留。
+
+
+## 2026-10-22 R71：五兄弟答题、条件通行与成对奖励
+
+新核远端默认main44726d49ed577bcb67ccbf8a0dd7ad5a99eb8b49/tree04dcb80460797a1dc5576fde9bb9d36fd159cd78，467分支/0开放PR/0运行中Actions，原HEAD候选8/main9项SUCCESS；旧queued37642417333单列。启动全文UTF8/git show与原生Git一致，CURRENT2343759B历史完整，5133项完整树无AGENTS。最新NEXT71及22域组合队列新读，选world_map/npc_identity/quest_content并补items/pets归属，不继续技能helper。
+
+新取得新浪2003-06-02 14:22《五兄弟之谜》当前57507B/SHA256 698e278925115ce38b98faa61a3d5f3d9d236dd9076980a4d6be5725a34acc35，以及单次Availability实回20031204051508精确历史捕获40631B/SHA256 fa70ad0d654660d0f90d44c59f68c2b6aa3a7353ef980906a4a6075acd72425f。均HTTP200无跳转/GB18030严格；当前td.l15z与历史span.l15z的整篇可见正文去空白相等，2463字符/6833UTF8B/SHA256 5b8733fd860bc4971255dbbed75c4a52a8d221c74efc4d5cba390ae566b6c9b1。捕获不是首刊或商业build，两个包装只计一来源；当前字节不认证成旧字节。作者栏新浪游戏/官方页脚不当官方原稿认证；原HTML/图不入Git。
+
+交付docs/specs/STONEAGE-CN2003-FIVE-BROTHERS-SOURCE-R1.md及SOURCE JSON：五层题板/答案纸与答案键、五正确纸→蓝人龙两次谈话→秘宝检查通行、地下6层返程/挑战/兑奖点；五颜色明确选择的饰品+一级人龙对，不随机、不一次全领。青/蓝及火风/风火不归一，未注精灵等级不补1。五空道具/一空宠栏为建议，转生后可重做不推终生次数/flag复原。浦鲁德/布鲁德/浦洛斯等按原出现位置保留；两地图生态四加四标签不是完整物种或可捕主表，坐标帧/概率/原ID未知。13研究目录=1任务+5饰品+5一级奖励宠物+2生态地图，不当13恢复实体。
+
+固定旧早期指南与19集合合同；旧文组队入场/注销消失记录不删，本页只明确不能预组队战斗但可战斗中HELP，水晶用“离开这个世界”而非直接注销，掉线与具体销毁位未知。不借相似文字认证同构建/独立见证/同ID。五单元、每输入25去摘要门真实源改写及script正例，本包/旧指南/组合合同24项本地回归通过。独立正则/实体另核全篇相等、五答案/五奖励对；其初版错误假定当前span有结束标签、随后泛化剥标签吞掉颜文字的<，改为按center外界与合法字母标签分隔后与HTMLParser全等。一次性插入脚本初误计两个h赋值位置已在写入前中止并限定首处；没有远端失败或来源改动。
+
+候选/main当前及历史实取、ZIP实下与永久派生保管须实际后验，不预报绿。有限止点一文两包装，不扩全转生/人龙helper；最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-72回22域另一地区具名宠物/模型或物品/经济，音效只凭同版实际调用输入。Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停，全部历史原样保留。

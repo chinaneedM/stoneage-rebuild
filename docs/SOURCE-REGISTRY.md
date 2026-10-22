@@ -8006,3 +8006,8 @@ research/recovered/STONEAGE-CN2003-UI-TEAM-TRADE-SOURCE-R1.json源派生Git blob
 - 两页GB18030严格解码，日期/年代/当前字节分层。14分源技能及1GP落马描述；80例子、听说队友和回合结束限制不晋升确定公式/运行。共同文字不计独立见证。原HTML/图/杂志/程序不入Git；规格STONEAGE-CN30-SPECIAL-PET-SKILLS-SOURCE-R1，有限工具stoneage_cn30_special_pet_skills.py。
 
 R70同包补S3：https://web.archive.org/web/20030324221124id_/http://games.sina.com.cn:80/zhuanqu/stoneage3/yaosu.shtml ，捕获20030324221124，实际21853B/SHA256 3a270f86e42cc6e7f68a8e2dd0c765097b442b1dd2d9c4eadeec091d3222059e。#3/#5完整可见去空白文字及本包字段与现页相等；不是另一独立来源，不证明原始服务器build或首刊。当前两HTML不冒称2003原字节，历史HTML亦不入Git。
+
+
+## 2026-10-22 R71 五兄弟之谜新文章与精确历史参考
+
+新增https://games.sina.com.cn/zhqu/sta/article/2003-06-02/10423.shtml和https://web.archive.org/web/20031204051508id_/http://games.sina.com.cn:80/zhqu/sta/article/2003-06-02/10423.shtml；来源身份、实际57507/40631B及完整SHA、一次定年查询、作者栏/包装日期及整篇核心一致见research/recovered/STONEAGE-CN2003-FIVE-BROTHERS-SOURCE-R1.json。旧handbook/0101/01186092.shtml是另一个既验URL，旧正文记录完整保留。两新包装不增独立见证数、不认证首刊/官方作者/build/TW1.0；原HTML/图不入Git。详来源规格，派生保管须实际后验。
