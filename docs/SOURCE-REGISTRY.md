@@ -8016,3 +8016,8 @@ R70同包补S3：https://web.archive.org/web/20030324221124id_/http://games.sina
 ## 2026-10-22 R72 日服コクエン/黑炎袋发布文与状态图
 
 https://www.4gamer.net/games/013/G001377/20090629031/ 当前HTTP200/277194B，署归DigiPark厂商发布文；所选黑炎详节与原onclick https://www.4gamer.net/games/013/G001377/20090629031/SS/001.jpg 当前68476B/JPEG270×363实取、严格解码/目视。完整摘要、图人工转录、源层与旧白炎对照见research/recovered/STONEAGE-JP2009-KOKUEN-SOURCE-R1.json。不认证2009原站HTML/实服/原模型ID，不发布原HTML/图。六类产物和生成物消失范围单列，旧白炎7/6异文完整保留。
+
+
+## 2026-10-22 R73 琉璃洞窟指南与精确2003参考
+
+https://games.sina.com.cn/zhqu/sta/article/2003-06-06/11290.shtml 当前55319B；https://web.archive.org/web/20031204051540id_/http://games.sina.com.cn:80/zhqu/sta/article/2003-06-06/11290.shtml 历史38444B；均HTTP200/严格GB18030，完整SHA与单次定年请求见research/recovered/STONEAGE-CN2003-LIULI-CAVE-SOURCE-R1.json。整篇1997字符核心相等只计同文一见证，不认证首刊/官方作者/商业build或原ID。新补父子寻母/宿身关系及主支任务，旧梦幻成人奖励资格不改写；原HTML/图不入Git。

@@ -1,0 +1,40 @@
+name: Verify source-qualified Liuli cave family narrative and separate quest branches
+on:
+  push:
+    paths:
+      - 'tools/stoneage_liuli_cave_source.py'
+      - 'tools/stoneage_five_brothers_source.py'
+      - 'tests/test_stoneage_liuli_cave_source.py'
+      - 'research/recovered/STONEAGE-CN2003-LIULI-CAVE-*.json'
+      - 'docs/specs/STONEAGE-CN2003-LIULI-CAVE-SOURCE-R1.md'
+      - '.github/workflows/verify-stoneage-liuli-cave-source.yml'
+  pull_request:
+    paths:
+      - 'tools/stoneage_liuli_cave_source.py'
+      - 'tools/stoneage_five_brothers_source.py'
+      - 'tests/test_stoneage_liuli_cave_source.py'
+      - 'research/recovered/STONEAGE-CN2003-LIULI-CAVE-*.json'
+      - 'docs/specs/STONEAGE-CN2003-LIULI-CAVE-SOURCE-R1.md'
+      - '.github/workflows/verify-stoneage-liuli-cave-source.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  bounded-source-replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Branch, source scope and unknown-identity counterexamples
+        run: python -m unittest tests.test_stoneage_liuli_cave_source -v
+      - name: Retrieve current source and reject semantic mutations
+        run: python -m tools.stoneage_liuli_cave_source --fetch --output "$RUNNER_TEMP/r73/replay.json"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: liuli-cave-derived-r73
+          path: ${{ runner.temp }}/r73/replay.json
+          if-no-files-found: error
+          retention-days: 30
