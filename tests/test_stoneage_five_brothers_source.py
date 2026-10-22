@@ -35,6 +35,32 @@ def fixture(root_tag='td'):
 
 
 class FiveBrothersTests(unittest.TestCase):
+    def test_custody_rejects_missing_changed_and_misattributed_original_reports(self):
+        receipt = m.verify_custody()
+        with tempfile.TemporaryDirectory() as name:
+            root = Path(name)
+            path = root / f'research/recovered/{m.STEM}-CUSTODY-R1.json'
+            for pin in receipt['permanent_pins']:
+                p = root / pin['path']; p.parent.mkdir(parents=True, exist_ok=True)
+                p.write_bytes((m.ROOT / pin['path']).read_bytes())
+            path.write_text(json.dumps(receipt)); m.verify_custody(root)
+            for pin in receipt['permanent_pins']:
+                p = root / pin['path']; raw = p.read_bytes()
+                p.write_bytes(raw[:-1] + bytes([raw[-1] ^ 1]))
+                with self.assertRaises(ValueError): m.verify_custody(root)
+                p.unlink()
+                with self.assertRaises(FileNotFoundError): m.verify_custody(root)
+                p.write_bytes(raw)
+            for change in [lambda d: d['runs'].append(d['runs'][0]),
+                           lambda d: d.update(content_commit='0' * 40),
+                           lambda d: d['jobs_and_artifacts']['main']['artifact']['workflow_run'].update(head_branch='OTHER'),
+                           lambda d: d.update(current_http_bytes_are_historical_bytes=True),
+                           lambda d: d['jobs_and_artifacts']['main'].update(job=d['jobs_and_artifacts']['candidate']['job'])]:
+                changed = copy.deepcopy(receipt); change(changed); path.write_text(json.dumps(changed))
+                with self.assertRaises(ValueError): m.verify_custody(root)
+            path.unlink()
+            with self.assertRaises(FileNotFoundError): m.verify_custody(root)
+
     def test_dynamic_values_and_two_real_wrapper_shapes(self):
         ex=m.derive(fixture())
         self.assertEqual(ex,m.derive(fixture('span')))
@@ -79,6 +105,8 @@ class FiveBrothersTests(unittest.TestCase):
             lambda d:d['historical_comparison'].update(first_publication_authenticated=True)]
         for change in changes:
             d=copy.deepcopy(report);change(d)
+            if d['extraction'] != report['extraction']:
+                d['catalog_records'] = m.catalog(d['extraction'])
             with self.assertRaises(ValueError):m.verify_report(d)
 
     def test_same_length_parent_tamper_or_absence_is_not_accepted(self):

@@ -62,3 +62,10 @@ S2：[同文精确历史捕获](https://web.archive.org/web/20031204051508id_/ht
 按既有19集合合同导出13条研究记录：任务1、饰品文献5、一级奖励宠物文献5、生态地图2。不是13个新恢复实体或完整初代内容表，公开使用权未批准。原ID、原服务端执行及TW1.0/JSS1999同版归属继续未知。有限止点为一篇文章的两种包装；不扩全转生/人龙/地图helper。
 
 验证：`python -m unittest tests.test_stoneage_five_brothers_source -v`；`python -m tools.stoneage_five_brothers_source --fetch --output /tmp/r71/replay.json`。真实源语义改写绕过字节摘要门，验证范围与未知项；CI派生仅含元数据。重开需同版原始脚本/运行、真实提示板、具名矛盾来源、ID关联或重复/HELP/物品生命周期证据。Stage A仍7 PARTIAL+2 OPEN，Stage B/wiki GATED，savedata R79 PAUSED_NON_BLOCKING。
+
+
+## 实际双端验收与永久保管
+
+内容ab7d54b056d68a2b17e6720b9fd030964470454e的候选10/main11项Actions全部成功；专用run39768977232/39769093934各实际五单元、双HTML重取、各25语义改写与外围script正例。双artifact12420074995/12421068332 ZIP已实下并逐一匹配API大小/SHA，唯一原JSON29401B与本地逐字节相等。两个CI原JSON与CUSTODY-R1.json永久保存，完整run/job/commit/tree/ZIP/raw/Git blob及五永久文件身份可核验；仅保留派生研究元数据。
+
+保管门强制存在，拒绝缺失、等长篡改、错HEAD/分支、重复run/job和历史字节资格晋升；本包六单元及相关25项本地回归通过。保管提交自身CI必须另查，不能用内容提交的五项结果代替。捕获与首刊、原服务器实际执行、权利与原ID未知边界均未改变。
