@@ -8021,3 +8021,8 @@ https://www.4gamer.net/games/013/G001377/20090629031/ 当前HTTP200/277194B，�
 ## 2026-10-22 R73 琉璃洞窟指南与精确2003参考
 
 https://games.sina.com.cn/zhqu/sta/article/2003-06-06/11290.shtml 当前55319B；https://web.archive.org/web/20031204051540id_/http://games.sina.com.cn:80/zhqu/sta/article/2003-06-06/11290.shtml 历史38444B；均HTTP200/严格GB18030，完整SHA与单次定年请求见research/recovered/STONEAGE-CN2003-LIULI-CAVE-SOURCE-R1.json。整篇1997字符核心相等只计同文一见证，不认证首刊/官方作者/商业build或原ID。新补父子寻母/宿身关系及主支任务，旧梦幻成人奖励资格不改写；原HTML/图不入Git。
+
+
+## 2026-10-22 R74 日本2005市场与玩家公告申请
+
+新增https://www.4gamer.net/news/history/2005.06/20050603191514detail.html 与https://www.4gamer.net/news/history/2005.10/20051021150740detail.html ，同期Seirou/aueki报道GaiaX公告，非取得原始官方稿。初取18498B/4ce485c6f7f64b9c88f3bdac393aa685304de55b6018283d4a7e7d25c00d07da及18275B/8bdb842ff493e7b2a55a8c1679c2105b7c4ef0f6e42ad3fd0478ea34b2c4d78c，严格CP932/HTTP200。两个刊时、S1改装计划、六月与十一月活动、S2回述、公告招募/活动适用/计划刊登三窗口及付费AND(粉丝站OR Blog)申请资格各分层。原链接三包装/JPEG实取并解码/目视均人物插画，不是市场地图或交易屏；完整URL/字节/SHA/几何见SOURCE JSON与规格。当前字节不认证2005原物，原HTML/JPEG不进Git。旧JSS与晚期CN摆摊只作版本隔离比较，未知税费/结算/摊位UI/build/原ID。3研究目录/17实源语义改写，不是恢复率；实际CI/永久保管待后验。
