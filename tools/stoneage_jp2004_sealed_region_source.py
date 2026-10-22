@@ -196,6 +196,53 @@ def verify_catalog(report):
                 'Parent Git identity changed')
 
 
+def check_custody(root=None):
+    """Require durable evidence, exact bytes and commit-scoped CI provenance."""
+    root = ROOT if root is None else Path(root)
+    receipt = json.loads((root / f'research/recovered/{STEM}-CUSTODY-R1.json').read_text())
+    require(receipt['schema'] == 'stoneage.jp2004_sealed_region.custody.r1', 'Wrong custody schema')
+    require(receipt['original_game_runtime_verified'] is False and
+            receipt['historical_bytes_authenticated'] is False, 'Custody authority promoted')
+    runs = receipt['runs']
+    require(len({r['id'] for r in runs}) == len(runs) and all(
+        r['head_sha'] == receipt['content_commit'] and r['status'] == 'completed' and
+        r['conclusion'] == 'success' for r in runs), 'Duplicate or unverified CI run')
+    pins = receipt['permanent_pins']
+    required = {f'research/recovered/{STEM}-{s}-R1.json' for s in ('SOURCE', 'CI-CANDIDATE', 'CI-MAIN')}
+    require(len({p['path'] for p in pins}) == len(pins) and
+            required <= {p['path'] for p in pins}, 'Incomplete or duplicate evidence pins')
+    for pin in pins:
+        path = root / pin['path']
+        require(path.is_relative_to(root) and '..' not in Path(pin['path']).parts,
+                'Evidence path outside repository')
+        b = path.read_bytes()
+        require(len(b) == pin['bytes'] and sha(b) == pin['sha256'], 'Permanent evidence changed')
+        require(hashlib.sha1(b'blob ' + str(len(b)).encode() + bytes([0]) + b).hexdigest() == pin['git_blob'],
+                'Permanent Git identity changed')
+    source = json.loads((root / f'research/recovered/{STEM}-SOURCE-R1.json').read_text())
+    require({p['path'] for p in source['parent_pins']} <= {p['path'] for p in pins}, 'Parent custody incomplete')
+    inputs = [{k: p[k] for k in ('id', 'url', 'bytes', 'sha256')} for p in source['source_pages']]
+    for role in ('candidate', 'main'):
+        run = receipt['source_jobs_and_artifacts'][role]
+        matches = [r for r in receipt['runs'] if r['id'] == run['run']]
+        require(len(matches) == 1 and matches[0]['head_sha'] == receipt['content_commit'] and
+                matches[0]['status'] == 'completed' and matches[0]['conclusion'] == 'success',
+                'CI run not successful at content commit')
+        artifact_run = run['artifact']['workflow_run']
+        require(artifact_run['id'] == run['run'] and artifact_run['head_sha'] == receipt['content_commit'] and
+                artifact_run['head_branch'] == matches[0]['branch'] and
+                (matches[0]['branch'] == 'main') == (role == 'main'), 'Artifact detached from run or branch')
+        raw = json.loads((root / f'research/recovered/{STEM}-CI-{role.upper()}-R1.json').read_text())
+        require(raw['schema'] == 'stoneage.jp2004_sealed_region.replay.r1' and
+                raw['inputs'] == inputs and raw['extraction'] == source['extraction'], 'Archived replay detached from source')
+        require(raw['runtime_verified'] is False and raw['original_assets_or_html_in_output'] is False and
+                raw['july_context_reused_not_new_source'] is True and
+                raw['audit'] == {'real_input_mutations_rejected_without_digest_gate': 17,
+                                 'peripheral_script_positive': True, 'meta_author_positive': True,
+                                 'historical_game_execution_verified': False}, 'Archived evidence boundary changed')
+    return receipt
+
+
 def main():
     p = argparse.ArgumentParser()
     group = p.add_mutually_exclusive_group(required=True)
@@ -205,6 +252,7 @@ def main():
     a = p.parse_args()
     report = json.loads(REPORT.read_text())
     verify_catalog(report)
+    check_custody()
     raws, inputs = [], []
     for i, url in enumerate(URLS):
         if a.fetch:

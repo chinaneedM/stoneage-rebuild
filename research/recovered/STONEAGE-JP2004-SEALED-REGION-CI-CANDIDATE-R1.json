@@ -1,0 +1,95 @@
+{
+  "schema": "stoneage.jp2004_sealed_region.replay.r1",
+  "inputs": [
+    {
+      "id": "S1",
+      "url": "https://www.4gamer.net/news/history/2004.07/20040730231235detail.html",
+      "bytes": 10860,
+      "sha256": "160d53f4aa399d06ca9406b00baf0bd85e955370571957fd08e45aceb92455ad"
+    },
+    {
+      "id": "S2",
+      "url": "https://www.4gamer.net/news/history/2004.09/20040917191201detail.html",
+      "bytes": 10300,
+      "sha256": "f544f907badeb6855cc79bd76821d8e0aaf8c5498e095bc1d193cb5c5e47a057"
+    }
+  ],
+  "extraction": {
+    "core_sha256": "58190642acbb6402a1693d4464c0298d6341148bbb95563079abecb8d09332ef",
+    "authority": "CONTEMPORARY_4GAMER_EDITORIAL_NOT_DIRECT_OPERATOR_OR_RUNTIME",
+    "publication": "2004-09-17 19:12",
+    "body_byline": "Asakura",
+    "update": {
+      "label": "封印の開放",
+      "ordinal_as_written": "第三弾",
+      "reported_status": "COMPLETED_TODAY_AS_REPORTED_NOT_INDEPENDENTLY_EXECUTED",
+      "category_count": 2,
+      "numeric_build": null
+    },
+    "maps": [
+      {
+        "name": "封印された洞窟",
+        "kind": "CAVE",
+        "relative_position": "EAST_OF_FIRST_DISCOVERED_ISLAND",
+        "reference_island_name": null,
+        "reference_island_id": null,
+        "formerly_inaccessible": true,
+        "reported_access_after_update": true,
+        "complex_interior_reported": true,
+        "map_id": null,
+        "coordinates": null
+      },
+      {
+        "name": "穀嶺の地",
+        "kind": "SUBMERGED_ISLAND",
+        "approach": "UNDERGROUND_ONLY_AS_REPORTED",
+        "exact_route_edges": null,
+        "next_secret_identity": null,
+        "map_id": null,
+        "coordinates": null
+      }
+    ],
+    "encounter_hint": {
+      "map_label": "封印された洞窟",
+      "description": "UNNAMED_NEW_DINOSAURS_AS_REPORTED",
+      "certainty": "QUALIFIED_REPORT_ということ",
+      "species": null,
+      "species_id": null,
+      "level": null,
+      "spawn_rate": null
+    },
+    "pet_operations": [
+      {
+        "label": "見せる",
+        "action": "PLACE_ON_FIELD_WITH_SELF_ONLY_PICKUP_AS_REPORTED",
+        "ownership_transfer_proven": false,
+        "server_object_or_slot_algorithm": null
+      },
+      {
+        "label": "野に放す",
+        "action": "RELINQUISH_LOCALLY_WITHOUT_PET_SHOP_AS_REPORTED",
+        "sale_payment_proven": false,
+        "permanent_deletion_or_recovery_proven": false
+      },
+      {
+        "label": "ペットメール",
+        "restriction_as_written": "一匹",
+        "per_operation_pet_count_as_reported": 1,
+        "limit_window_or_cooldown": null,
+        "previous_limit": null,
+        "delivery_success_verified": false
+      }
+    ],
+    "official_link_as_written_not_retrieved": "http://stoneage.to/",
+    "original_game_runtime_verified": false
+  },
+  "july_context_reused_not_new_source": true,
+  "audit": {
+    "real_input_mutations_rejected_without_digest_gate": 17,
+    "peripheral_script_positive": true,
+    "meta_author_positive": true,
+    "historical_game_execution_verified": false
+  },
+  "original_assets_or_html_in_output": false,
+  "runtime_verified": false
+}

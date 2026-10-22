@@ -4278,3 +4278,14 @@ research/recovered/STONEAGE-CN2003-UI-TEAM-TRADE-SOURCE-R1.json源派生Git blob
 ### 2004-09-17报道／2026-10-22复核：日服封印地域与宠物操作
 
 **FACT（同期媒体陈述）**：4Gamer署Asakura报道称第三弹更新新增两个具名区域，含东侧封印洞窟、沉没穀嶺之地和未名恐龙提示；并述自拾取展示、原地放生及一次一只宠邮。**OPEN**：具体运营构建/原服部署/地图ID与路径/物种、参照岛身份、售款或删除/计时/持久化。7月既有未名地图及2006群岛不自动合并，来源和时间见STONEAGE-JP2004-SEALED-REGION-SOURCE-R1，旧历史保留。
+
+
+### 2026-10-22 R65双端重放验收、永久派生保管与收据运行归属门
+
+本轮重新核远端main `2a0583bc5961e2220cbf2335e66aeb72df8ec078`/tree `9ca97ba64ca171225f35e50bcc59d1f0e223c779`，460分支、0开放PR、5082项完整树无AGENTS；九启动文件完整原字节与原生Git身份核验，CURRENT 2315806B/blob b472fb7db1dcfe948c94fa029315aec69becfa0b，普通file接口空返回后以精确commit干净检出取得，所有历史前缀保留。该内容提交候选10/main11项适用Actions全部completed/success；候选源run39724361777/job119644784179/artifact12402935589，主线源run39724455796/job119645076819/artifact12403070177。日志均实际执行七项单元、两当前HTML取源、17去摘要门语义反例及script/meta作者正例，不是商业运行。
+
+实际下载双ZIP各1619B，SHA256 `8dcabcf0dafddaa738ede42e8ae7d3c9b6be333d50b050098e6bffd16fd7a03d` / `cf5c20a63c5d3952285ead4d89619c1083a820dd772cd6aa5e0a1dfed18ee3f7`，逐一匹配API大小/摘要；各唯一replay.json原字节3136B/SHA256 `d7c30e3a817d34420724bf6b3b56dc08befed20df34e8a7b90cde102daa4495a`，候选/main/local逐字节一致。两输入摘要均同初取；独立正则去标签/实体解码另核9月正文核心、两地名/东侧、沉没岛/地底限定、自拾取/放手/一次一只及Asakura署名，不复用HTMLParser作独立证明。
+
+两CI原派生JSON与 `research/recovered/STONEAGE-JP2004-SEALED-REGION-CUSTODY-R1.json` 永久入Git，固定源、双raw及五父报告原字节/原生Git、21项真实运行和双job/artifact/ZIP。保管门要求收据存在，逐文件检查缺失及等长篡改，核对整组run唯一性/成功/同内容HEAD、专用工件run/分支归属、源输入及全部语义重放。新增两项反例测试，单元七→九；首轮九项中重复非专用run反例未被拒绝，补整组唯一性/提交检查后18项本包与相邻回归全部通过零跳过。真实本地失败保留，不冒称首轮通过或来源变化；保管提交自身候选/main CI须另后验，不把旧七项运行改称九项。
+
+当前HTTP不认证2004原字节或精确build；未名岛不乱并、放生不当销售/永久删除、宠邮只数不补计时，十项负边界继续false。原HTML/图像/商业程序不进Git。本轮关闭R65临时派生工件的永久保管缺口，不扩地图或宠物操作helper。最高NEXT `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-66` 回22域优先具版号经典辅助工具能力新材料，缺新源转具名物品/配方/经济；Stage A7 PARTIAL+2 OPEN、Stage B/wiki GATED、R79 PAUSED_NON_BLOCKING。
