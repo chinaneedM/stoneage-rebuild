@@ -8049,3 +8049,6 @@ R75验收前措辞收紧：首候选eca552d814b87f42536175d435dfc699077b22a9的�
 ## 2026-10-23 — R78日本UTD具名宠物商城抽签公告
 
 来源 https://www.4gamer.net/news/history/2007.07/20070730194730detail.html ，页标2007/07/30 19:47，明示配信元UTDエンターテインメント及厂商原文转载。当前CP932正文19696B/SHA2560b584c6a5af65b4344f703b20c7676f9accbea9e4c4d5df59e0bf406bebc6e43；非已取得运营原页/2007历史字节。FACT_SOURCE_REPORTED：黒檀のくじ两具名宠物相对率各2倍、四未名余项略降、公告窗及1000GStone价格标签；不认野外生态率、绝对概率、完整奖池/精确build。两附图均HTTP200完整解码目视，无名字的促销插画不能左右归种。官网首页Availability仅返回20070805235420未取捕获，非概率表；失败推测URL不作来源。摘要/语义/图像身份和两亲代/共享解析器见STONEAGE-JP2007-EBONY-LOTTERY-SOURCE-R1.json及对应中文规格。原HTML/JPEG不入Git。
+
+
+R78后验保管：内容7d6cae1候选10/main11项真实通过；两端ZIP/API摘要、6934B原JSON/SHA2562d4cc54965cc7d60ec05af66461571c8463b3516a238bf1b7de6d5f05aee72e2已逐一核验并永久保留。收据STONEAGE-JP2007-EBONY-LOTTERY-CUSTODY-R1.json固定六原生Git证据pin、21run及双job/artifact/input初取历史。当前字节仍非2007原件；保管改动自身CI另验。

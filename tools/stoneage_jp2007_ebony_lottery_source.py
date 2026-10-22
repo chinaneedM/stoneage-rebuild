@@ -180,10 +180,51 @@ def read_inputs(directory=None):
     return result
 
 
+def verify_custody(root=None):
+    root = ROOT if root is None else Path(root)
+    receipt = json.loads((root/f'research/recovered/{STEM}-CUSTODY-R1.json').read_text())
+    require(receipt['schema'] == 'stoneage.jp2007_ebony_lottery.custody.r1', 'Custody schema')
+    require(receipt['content_commit'] == '7d6cae1fb2353bd163e687da368596c4343939f2' and receipt['content_tree'] == '44f322bca54ab4c115a49ed9f7a5829888ded917', 'Content Git identity')
+    require(receipt['candidate_branch'] == 'agent/named-content-r78-20261023', 'Candidate identity')
+    require(receipt['historical_bytes_authenticated'] is False and receipt['server_execution_verified'] is False, 'Custody authority promoted')
+    paths = [f'research/recovered/{STEM}-SOURCE-R1.json']+PARENTS+[PARSER]+[f'research/recovered/{STEM}-CI-{role}-R1.json' for role in ('CANDIDATE','MAIN')]
+    pins = receipt['permanent_pins']
+    require([p['path'] for p in pins] == paths, 'Mandatory permanent evidence missing or duplicated')
+    for p in pins:
+        b = (root/p['path']).read_bytes()
+        require(p == {'path':p['path'],'bytes':len(b),'sha256':sha(b),'git_blob':hashlib.sha1(b'blob '+str(len(b)).encode()+b'\0'+b).hexdigest()}, 'Permanent evidence bytes changed')
+    source = json.loads((root/paths[0]).read_text())
+    initial = [{'id':'S1','bytes':source['source']['bytes'],'sha256':source['source']['sha256']}]+[{k:v[k] for k in ('id','bytes','sha256')} for v in source['images']]
+    require(receipt['initial_inputs'] == initial, 'Initial HTTP history missing')
+    runs = receipt['runs']; require(len(runs)==21 and len({v['id'] for v in runs})==21, 'Accepted run inventory missing or duplicated')
+    expected_branches = {'candidate':receipt['candidate_branch'],'main':'main'}
+    for role,count in (('candidate',10),('main',11)):
+        group = [v for v in runs if v['branch']==expected_branches[role]]
+        require(len(group)==count and len({v['name'] for v in group})==count, 'Accepted branch gate inventory changed')
+    require(all(v['head']==receipt['content_commit'] and v['status']=='completed' and v['conclusion']=='success' for v in runs), 'Unverified/failed run promoted')
+    raw_files=[]; job_ids=[]; artifact_ids=[]
+    for role,branch in expected_branches.items():
+        proof=receipt['jobs_and_artifacts'][role]; artifact=proof['artifact']; run=artifact['workflow_run']
+        require(run['id']==proof['run'] and run['head_sha']==receipt['content_commit'] and run['head_branch']==branch, 'Artifact source run detached')
+        matching=[v for v in runs if v['id']==proof['run']]
+        require(len(matching)==1 and matching[0]['branch']==branch and matching[0]['name']=='Verify Japan 2007 named pet lottery scope and relative rates', 'Wrong source workflow')
+        require(proof['job_name']=='bounded-source-replay' and proof['job_conclusion']=='success' and artifact['name']=='jp2007-ebony-lottery-derived-r78', 'Wrong job or artifact')
+        require(proof['zip_downloaded_and_digest_verified'] is True and re.fullmatch(r'sha256:[0-9a-f]{64}',artifact['digest']) and artifact['size_in_bytes']>0, 'ZIP custody missing')
+        job_ids.append(proof['job']); artifact_ids.append(artifact['id'])
+        path=f'research/recovered/{STEM}-CI-{role.upper()}-R1.json'; raw=(root/path).read_bytes(); raw_files.append(raw); replayed=json.loads(raw)
+        record=receipt['raw_replays'][role]; p=next(v for v in pins if v['path']==path)
+        require(all(record[k]==p[k] for k in p) and record['inputs']==replayed['inputs'] and record['equals_initial_inputs']==(replayed['inputs']==initial), 'Raw digest/input equality misreported')
+        require(all(replayed[k]==source[k] for k in ('extraction','images','visual_observations','catalog_records','comparison')), 'Archived replay semantics changed')
+        require(replayed['audit']=={'semantic_mutations_without_fingerprint_gate':13,'hidden_and_outside_quote_counterexamples':2,'peripheral_script_positive':True} and replayed['original_html_or_assets_in_output'] is False and replayed['original_server_runtime_verified'] is False, 'Archived audit/authority changed')
+    require(len(set(job_ids))==len(set(artifact_ids))==2 and receipt['candidate_main_raw_bytes_equal']==(raw_files[0]==raw_files[1]), 'Candidate/main evidence substituted')
+    return receipt
+
+
 def main():
     p = argparse.ArgumentParser(); p.add_argument('--input-dir'); p.add_argument('--fetch',action='store_true'); p.add_argument('--output',required=True); a = p.parse_args()
     require(bool(a.input_dir) != a.fetch, 'Choose input directory or live fetch')
     result = replay(read_inputs(a.input_dir),json.loads(REPORT.read_text()))
+    verify_custody()
     out=Path(a.output); out.parent.mkdir(parents=True,exist_ok=True); out.write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n')
     print('R78 bounded source replay passed; original server execution remains unproven.')
 

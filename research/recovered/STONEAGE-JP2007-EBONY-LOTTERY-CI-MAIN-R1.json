@@ -1,0 +1,242 @@
+{
+  "schema": "stoneage.jp2007_ebony_lottery.replay.r1",
+  "inputs": [
+    {
+      "id": "S1",
+      "bytes": 19696,
+      "sha256": "0b584c6a5af65b4344f703b20c7676f9accbea9e4c4d5df59e0bf406bebc6e43"
+    },
+    {
+      "id": "I1",
+      "bytes": 26401,
+      "sha256": "b511b1091843075a2f8e08915fa2b7fc1fda4fbb83197e89a4d71b56bdd2b516"
+    },
+    {
+      "id": "I2",
+      "bytes": 44950,
+      "sha256": "194a88bf354674e896bbfb871858d26f15aa3ddc34010665d98dee73c4b62fac"
+    }
+  ],
+  "extraction": {
+    "lottery_name": "黒檀のくじ",
+    "acquisition_context": "PAID_SHOP_LOTTERY_NOT_WILD_ENCOUNTER",
+    "issuer_as_written": "UTDエンターテインメント",
+    "publication_as_written": "2007/07/30 19:47",
+    "sale_start_month_day_as_reported": [
+      7,
+      27
+    ],
+    "rate_window_using_publication_year": [
+      [
+        2007,
+        7,
+        30,
+        18,
+        0
+      ],
+      [
+        2007,
+        7,
+        31,
+        13,
+        0
+      ]
+    ],
+    "year_in_window_body_explicit": false,
+    "timezone_explicit": null,
+    "window_end_also_sale_end_as_reported": true,
+    "price_as_reported": {
+      "amount": 1000,
+      "currency": "GStone",
+      "shop": "マンモストア",
+      "purchase_unit_or_bundle_count": null
+    },
+    "named_pet_relative_rates": [
+      {
+        "name": "ギガドラン",
+        "relative_multiplier_as_reported": 2,
+        "base_probability": null,
+        "changed_probability": null,
+        "original_species_id": null
+      },
+      {
+        "name": "ドルーザス",
+        "relative_multiplier_as_reported": 2,
+        "base_probability": null,
+        "changed_probability": null,
+        "original_species_id": null
+      }
+    ],
+    "other_pet_types_count": 4,
+    "other_rate_direction": "SLIGHT_DECREASE_AS_REPORTED",
+    "other_pet_names": null,
+    "official_probability_details_promised_after_hour": 18,
+    "absolute_rates_or_normalization_formula": null,
+    "guarantee_or_pity": null,
+    "pet_stats_growth_skills_habitat": null,
+    "exact_build": null,
+    "image_references": [
+      "https://www.4gamer.net/news/image/2007.07/20070730194730_0.jpg",
+      "https://www.4gamer.net/news/image/2007.07/20070730194730_3.jpg"
+    ],
+    "core_fingerprint": {
+      "characters": 675,
+      "utf8_bytes": 1673,
+      "sha256": "b02e9b6773e5c569ce64bc2c28e686bed92cdac38e0f6b1e451464b4aaab763b"
+    }
+  },
+  "images": [
+    {
+      "id": "I1",
+      "url": "https://www.4gamer.net/news/image/2007.07/20070730194730_0.jpg",
+      "bytes": 26401,
+      "sha256": "b511b1091843075a2f8e08915fa2b7fc1fda4fbb83197e89a4d71b56bdd2b516",
+      "format": "JPEG",
+      "mode": "RGB",
+      "size": [
+        140,
+        240
+      ],
+      "http_status": 200,
+      "no_redirect": true
+    },
+    {
+      "id": "I2",
+      "url": "https://www.4gamer.net/news/image/2007.07/20070730194730_3.jpg",
+      "bytes": 44950,
+      "sha256": "194a88bf354674e896bbfb871858d26f15aa3ddc34010665d98dee73c4b62fac",
+      "format": "JPEG",
+      "mode": "RGB",
+      "size": [
+        306,
+        189
+      ],
+      "http_status": 200,
+      "no_redirect": true
+    }
+  ],
+  "visual_observations": [
+    {
+      "id": "I1",
+      "kind": "SHOP_PROMOTIONAL_BANNER",
+      "manual_visual_review": true,
+      "description": "Red-brown horned creature, flame and limited-sale wording; no species label or stats.",
+      "original_sprite_or_animation_proven": false
+    },
+    {
+      "id": "I2",
+      "kind": "TWO_CREATURE_PROMOTIONAL_ILLUSTRATION",
+      "manual_visual_review": true,
+      "description": "Grey and brown horned creatures face one another against a red burst; no individual name labels.",
+      "left_right_named_species_join": null,
+      "original_sprite_or_animation_proven": false
+    }
+  ],
+  "catalog_records": [
+    {
+      "record_id": "JP2007-R78-LOTTERY",
+      "collection": "items",
+      "content": {
+        "name": "黒檀のくじ",
+        "context": "PAID_SHOP_LOTTERY_NOT_WILD_ENCOUNTER",
+        "price": {
+          "amount": 1000,
+          "currency": "GStone",
+          "shop": "マンモストア",
+          "purchase_unit_or_bundle_count": null
+        }
+      },
+      "version_profile": "JP_PC_2007_UTD_RELEASE_REPUBLISHED_BY_4GAMER_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "game_ids": null,
+      "record_revision": 1
+    },
+    {
+      "record_id": "JP2007-R78-PET1",
+      "collection": "pets",
+      "content": {
+        "name": "ギガドラン",
+        "relative_multiplier_as_reported": 2,
+        "base_probability": null,
+        "changed_probability": null,
+        "original_species_id": null
+      },
+      "version_profile": "JP_PC_2007_UTD_RELEASE_REPUBLISHED_BY_4GAMER_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "game_ids": null,
+      "record_revision": 1
+    },
+    {
+      "record_id": "JP2007-R78-PET2",
+      "collection": "pets",
+      "content": {
+        "name": "ドルーザス",
+        "relative_multiplier_as_reported": 2,
+        "base_probability": null,
+        "changed_probability": null,
+        "original_species_id": null
+      },
+      "version_profile": "JP_PC_2007_UTD_RELEASE_REPUBLISHED_BY_4GAMER_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "game_ids": null,
+      "record_revision": 1
+    },
+    {
+      "record_id": "JP2007-R78-WINDOW",
+      "collection": "tutorials",
+      "content": {
+        "window": [
+          [
+            2007,
+            7,
+            30,
+            18,
+            0
+          ],
+          [
+            2007,
+            7,
+            31,
+            13,
+            0
+          ]
+        ],
+        "sale_end": true,
+        "other_types": 4,
+        "other_direction": "SLIGHT_DECREASE_AS_REPORTED"
+      },
+      "version_profile": "JP_PC_2007_UTD_RELEASE_REPUBLISHED_BY_4GAMER_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "game_ids": null,
+      "record_revision": 1
+    }
+  ],
+  "comparison": {
+    "gash_capture_campaign_is_separate_acquisition_and_currency": true,
+    "same_pet_ids_or_build_proven": false,
+    "modern_adoption_decided": false
+  },
+  "audit": {
+    "semantic_mutations_without_fingerprint_gate": 13,
+    "hidden_and_outside_quote_counterexamples": 2,
+    "peripheral_script_positive": true
+  },
+  "original_html_or_assets_in_output": false,
+  "original_server_runtime_verified": false
+}

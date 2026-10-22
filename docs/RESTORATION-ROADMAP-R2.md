@@ -1906,3 +1906,16 @@ CLI现强制要求收据；缺失、同长篡改、门禁遗漏/重复、错误�
 交付docs/specs/STONEAGE-JP2007-EBONY-LOTTERY-SOURCE-R1.md、SOURCE JSON和有界实源重放工具/工作流。4目录=1抽签物品描述+2具名获宠描述+1公告/余项规则，附两图元数据，不当4恢复原实体。两父报告与复用可见标记解析器原生Git身份固定。13去指纹门语义改写、隐藏/移引文外2反例、外围script正例，本包5单元/相关合20项本地通过，精确原输入离线重放通过。候选/main实取、实际ZIP和永久派生保管待后验，不预报通过；原HTML/JPEG/程序不进Git。
 
 止于一发布文两附图。重开需原运营概率表/同版配置、具名原画或实际通信/保存。不递归商城。最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-79回22域另一地区的早期人物创建、交互界面或生活服务具名原件（此内容队列编号与暂停的savedata R79无关）。Stage A仍7 PARTIAL+2 OPEN，B/wiki仍GATED，savedata R79仍PAUSED_NON_BLOCKING；无整体完成百分比。
+
+
+### 2026-10-23 R78双端实源验收与永久派生保管
+
+内容提交7d6cae1fb2353bd163e687da368596c4343939f2/tree44f322bca54ab4c115a49ed9f7a5829888ded917，候选10/main11项实际completed/success；主线新读旧HEAD后以expected_sha保护非强制快进。九文件Git blob与整tree逐一符合本地原生Git，四连续性文档完整前缀保留。专用候选run39866592550/job120130214377/artifact12463688573，主线run39866717616/job120130630206/artifact12464660896，各真实5单元、一发布文两JPEG实取/完整解码、13去正文指纹门语义改写及隐藏/引文外2反例和外围script正例。
+
+两ZIP均2169B，SHA2565d7317aefeaecc9a249bde33b5d2a13915359664179a75959a335a9a2537f675 / e454bb122f25028e842e1da7c30517aa3bcba54615bc469843535f214e51c143逐一符合API；唯一replay.json均6934B/SHA2562d4cc54965cc7d60ec05af66461571c8463b3516a238bf1b7de6d5f05aee72e2。候选/main/local/加入保管门后local四份逐字节相等，三HTTP输入亦同初取；不把2026当前字节称2007原件。
+
+两原CI JSON与research/recovered/STONEAGE-JP2007-EBONY-LOTTERY-CUSTODY-R1.json永久入Git。六pin固定SOURCE、两父报告、共享解析器与两原CI报告原生Git身份；收据含内容Git、21实际run、双job/artifact/ZIP/raw/input及初取历史。CLI强制验收收据，拒绝缺失/同长篡改、错HEAD/tree/分支/任务/工件、遗漏/重复run、失败改成功、复用job/artifact、虚报输入相等或抬高历史/运行权威。本包5→6单元，相关21项本地回归与原输入逐字节重放通过；保管提交自身候选/main检查另实际后验，不倒称内容CI跑过6单元。
+
+相对商城概率、四未名余项、币种和时间边界保持；左右物种配对、绝对率、初代归属、原成长/技能/栖地/ID/build与真实部署保存仍未知。止于一公告两插画，不继续扩商城。最高NEXT79回另一地区的早期人物创建/交互界面/生活服务具名原件，与暂停savedata R79无关；Stage A7 PARTIAL+2 OPEN，B/wiki GATED，旧历史全文保留。
+
+原CI JSON原生Git blob：62047d8f74202da0b929391a24d3995e73e0478e（两端原字节相同）。
