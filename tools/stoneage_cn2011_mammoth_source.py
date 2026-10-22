@@ -60,7 +60,7 @@ def extract(raw):
   'version_context':{'advertised':['8.5魔域大冒险','2.5精灵王传说'],'transport_bound_to_either_build':None},
   'station_scope':'VILLAGE_ENTRANCES_AS_PROMOTIONAL_DESCRIPTION_NOT_ENUMERATED_ALL_VILLAGES',
   'stated_planning_factors':['VILLAGE_POPULATION_DENSITY','DISTANCE_TO_NEXT_DESTINATION'],
-  'boarding':{'steps':['FIND_BUS_STATION','SELECT_DESTINATION_ROUTE','FACE_MAMMOTH','CLICK_JOIN_PARTY'],
+  'boarding':{'steps':['FIND_BUS_STATION','SELECT_DESTINATION_ROUTE','STAND_IN_FRONT_OF_MAMMOTH','CLICK_JOIN_PARTY'],
    'button_as_written':button,'exact_icon_or_coordinates':None},
   'fast_departure':{'channel_as_written':channel,'command_as_written':command,'timing_as_written':timing,
    'case_variants':None,'authorization_or_minimum_passengers':None,'accepted_server_command_observed':False},

@@ -35,7 +35,7 @@
       "steps": [
         "FIND_BUS_STATION",
         "SELECT_DESTINATION_ROUTE",
-        "FACE_MAMMOTH",
+        "STAND_IN_FRONT_OF_MAMMOTH",
         "CLICK_JOIN_PARTY"
       ],
       "button_as_written": "加入队伍",
@@ -297,7 +297,7 @@
           "steps": [
             "FIND_BUS_STATION",
             "SELECT_DESTINATION_ROUTE",
-            "FACE_MAMMOTH",
+            "STAND_IN_FRONT_OF_MAMMOTH",
             "CLICK_JOIN_PARTY"
           ],
           "button_as_written": "加入队伍",
@@ -394,5 +394,6 @@
       }
     }
   ],
-  "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-76"
+  "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-76",
+  "editorial_correction": "Earlier candidate FACE_MAMMOTH overstated orientation. Source only locates the player in front of the mammoth; an engine facing-direction check remains unproven."
 }
