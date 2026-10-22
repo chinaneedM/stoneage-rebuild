@@ -8026,3 +8026,8 @@ https://games.sina.com.cn/zhqu/sta/article/2003-06-06/11290.shtml 当前55319B�
 ## 2026-10-22 R74 日本2005市场与玩家公告申请
 
 新增https://www.4gamer.net/news/history/2005.06/20050603191514detail.html 与https://www.4gamer.net/news/history/2005.10/20051021150740detail.html ，同期Seirou/aueki报道GaiaX公告，非取得原始官方稿。初取18498B/4ce485c6f7f64b9c88f3bdac393aa685304de55b6018283d4a7e7d25c00d07da及18275B/8bdb842ff493e7b2a55a8c1679c2105b7c4ef0f6e42ad3fd0478ea34b2c4d78c，严格CP932/HTTP200。两个刊时、S1改装计划、六月与十一月活动、S2回述、公告招募/活动适用/计划刊登三窗口及付费AND(粉丝站OR Blog)申请资格各分层。原链接三包装/JPEG实取并解码/目视均人物插画，不是市场地图或交易屏；完整URL/字节/SHA/几何见SOURCE JSON与规格。当前字节不认证2005原物，原HTML/JPEG不进Git。旧JSS与晚期CN摆摊只作版本隔离比较，未知税费/结算/摊位UI/build/原ID。3研究目录/17实源语义改写，不是恢复率；实际CI/永久保管待后验。
+
+
+## 2026-10-22 R75：胜思2011长毛象交通
+
+新增https://games.sina.com.cn/o/n/2011-12-19/1108562894.shtml ，2011-12-19 11:08新浪刊发、正文胜思与sa.cins.cn出链的宣传文，非取得原运营页。初取70268B/SHA256f0af4be08fe1878032567bca084badd71cb7bd684c2527b596536f012bc0af36、GB18030严格/HTTP200。三交通段389字符/1163UTF8B/831e7c0b1a427aec972f1377c5793305e121e6651248a65f3168f9b8d48f2581，找站选线、面向公车组队、普通频道go、退队下车；页尾8.5/2.5不绑定具体交通构建。实际两原IMG 74139B与72157B，各550×413/JPEG完整解码目视，摘要/URL见SOURCE；场景静态标签两地名不当方向路线或执行证据。第三壁纸未取，原HTML/JPEG不进Git。既有早期JSS/2003玩家稿只作分层比较，不填收费/人数/时长/遇敌或把航空go转公车。六单元/12去摘要及正文指纹门实源反例、双正例；CI与永久保管待后验。

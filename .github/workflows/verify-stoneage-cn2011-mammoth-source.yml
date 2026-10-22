@@ -1,0 +1,50 @@
+name: Verify CINS mammoth boarding, normal-chat departure and exit scope
+on:
+  push:
+    paths:
+      - 'tools/stoneage_cn2011_mammoth_source.py'
+      - 'tools/stoneage_jp2005_treasure_source.py'
+      - 'tools/stoneage_cn2011_stall_source.py'
+      - 'research/recovered/STONEAGE-EARLY-CONTENT-GUIDE-MANUAL-R1.json'
+      - 'research/recovered/STONEAGE-CN2003-VILLAGE-TRAVEL-RECORD-SOURCE-R1.json'
+      - 'research/recovered/STONEAGE-PREPRODUCTION-CONTENT-ARCHIVE-R1.json'
+      - 'tests/test_stoneage_cn2011_mammoth_source.py'
+      - 'research/recovered/STONEAGE-CN2011-MAMMOTH-BUS-*.json'
+      - 'docs/specs/STONEAGE-CN2011-MAMMOTH-BUS-SOURCE-R1.md'
+      - '.github/workflows/verify-stoneage-cn2011-mammoth-source.yml'
+  pull_request:
+    paths:
+      - 'tools/stoneage_cn2011_mammoth_source.py'
+      - 'tools/stoneage_jp2005_treasure_source.py'
+      - 'tools/stoneage_cn2011_stall_source.py'
+      - 'research/recovered/STONEAGE-EARLY-CONTENT-GUIDE-MANUAL-R1.json'
+      - 'research/recovered/STONEAGE-CN2003-VILLAGE-TRAVEL-RECORD-SOURCE-R1.json'
+      - 'research/recovered/STONEAGE-PREPRODUCTION-CONTENT-ARCHIVE-R1.json'
+      - 'tests/test_stoneage_cn2011_mammoth_source.py'
+      - 'research/recovered/STONEAGE-CN2011-MAMMOTH-BUS-*.json'
+      - 'docs/specs/STONEAGE-CN2011-MAMMOTH-BUS-SOURCE-R1.md'
+      - '.github/workflows/verify-stoneage-cn2011-mammoth-source.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  bounded-source-replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Decode referenced JPEG originals
+        run: python -m pip install Pillow==12.3.0
+      - name: Boarding, chat, exit and version boundary counterexamples
+        run: python -m unittest tests.test_stoneage_cn2011_mammoth_source -v
+      - name: Retrieve article and two actual original transport scene JPEGs
+        run: python -m tools.stoneage_cn2011_mammoth_source --fetch --output "$RUNNER_TEMP/r75/replay.json"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cn2011-mammoth-derived-r75
+          path: ${{ runner.temp }}/r75/replay.json
+          if-no-files-found: error
+          retention-days: 30

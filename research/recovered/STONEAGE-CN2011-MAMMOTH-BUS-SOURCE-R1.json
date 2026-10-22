@@ -1,0 +1,398 @@
+{
+  "schema": "stoneage.cn2011_mammoth.source.r1",
+  "task": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-75",
+  "observed_date": "2026-10-22",
+  "version_profile": "LATER_OFFICIAL_CN_CINS_2011_PROMOTIONAL_TRANSPORT_EXACT_BUILD_UNKNOWN",
+  "source_pages": [
+    {
+      "id": "S1",
+      "url": "https://games.sina.com.cn/o/n/2011-12-19/1108562894.shtml",
+      "final_url": "https://games.sina.com.cn/o/n/2011-12-19/1108562894.shtml",
+      "http_status": 200,
+      "bytes": 70268,
+      "sha256": "f0af4be08fe1878032567bca084badd71cb7bd684c2527b596536f012bc0af36"
+    }
+  ],
+  "extraction": {
+    "title": "长毛象公车有木有石器时代长毛象出动",
+    "publication_as_written": "2011年12月19日11:08",
+    "source_layer": "CINS_NAMED_PROMOTIONAL_ARTICLE_PUBLISHED_BY_SINA_NOT_AUTHENTICATED_ISSUER_FILE",
+    "operator": "广东胜思网络科技有限公司",
+    "official_link_as_written": "http://sa.cins.cn",
+    "version_context": {
+      "advertised": [
+        "8.5魔域大冒险",
+        "2.5精灵王传说"
+      ],
+      "transport_bound_to_either_build": null
+    },
+    "station_scope": "VILLAGE_ENTRANCES_AS_PROMOTIONAL_DESCRIPTION_NOT_ENUMERATED_ALL_VILLAGES",
+    "stated_planning_factors": [
+      "VILLAGE_POPULATION_DENSITY",
+      "DISTANCE_TO_NEXT_DESTINATION"
+    ],
+    "boarding": {
+      "steps": [
+        "FIND_BUS_STATION",
+        "SELECT_DESTINATION_ROUTE",
+        "FACE_MAMMOTH",
+        "CLICK_JOIN_PARTY"
+      ],
+      "button_as_written": "加入队伍",
+      "exact_icon_or_coordinates": null
+    },
+    "fast_departure": {
+      "channel_as_written": "普通聊天频道",
+      "command_as_written": "go",
+      "timing_as_written": "立即为你启动",
+      "case_variants": null,
+      "authorization_or_minimum_passengers": null,
+      "accepted_server_command_observed": false
+    },
+    "exit": {
+      "control_as_written": "退出团队",
+      "mid_trip_exit_described": true,
+      "drop_location": null,
+      "refund": null
+    },
+    "unknown_rules": {
+      "fare": null,
+      "passenger_capacity": null,
+      "normal_wait_minutes": null,
+      "random_encounters": null,
+      "named_stop_roster": null,
+      "route_edges": null,
+      "travel_duration": null,
+      "npc_ids": null,
+      "map_ids": null,
+      "original_build": null,
+      "server_save_result": null
+    },
+    "core_fingerprint": {
+      "characters": 389,
+      "utf8_bytes": 1163,
+      "sha256": "831e7c0b1a427aec972f1377c5793305e121e6651248a65f3168f9b8d48f2581"
+    },
+    "image_references": [
+      {
+        "src": "http://i1.sinaimg.cn/gm/2011/1219/U7233P115DT20111219110711.jpg",
+        "alt": "长毛象客运",
+        "title": "长毛象客运"
+      },
+      {
+        "src": "http://i1.sinaimg.cn/gm/2011/1219/U7233P115DT20111219110814.jpg",
+        "alt": "长毛象公车",
+        "title": "长毛象公车"
+      },
+      {
+        "src": "http://i1.sinaimg.cn/gm/2011/1219/U7233P115DT20111219110755.jpg",
+        "alt": "精美的石器时代壁纸",
+        "title": "精美的石器时代壁纸"
+      }
+    ],
+    "original_server_runtime_verified": false
+  },
+  "images": [
+    {
+      "id": "I1",
+      "url_as_written": "http://i1.sinaimg.cn/gm/2011/1219/U7233P115DT20111219110711.jpg",
+      "requested_url": "https://i1.sinaimg.cn/gm/2011/1219/U7233P115DT20111219110711.jpg",
+      "final_url": "https://i1.sinaimg.cn/gm/2011/1219/U7233P115DT20111219110711.jpg",
+      "http_status": 200,
+      "bytes": 74139,
+      "sha256": "2b95dc810d305fb58d0cb6132e5d6e0b26f6ac970c1146fa9907e940b698f21b",
+      "format": "JPEG",
+      "mode": "RGB",
+      "size": [
+        550,
+        413
+      ]
+    },
+    {
+      "id": "I2",
+      "url_as_written": "http://i1.sinaimg.cn/gm/2011/1219/U7233P115DT20111219110814.jpg",
+      "requested_url": "https://i1.sinaimg.cn/gm/2011/1219/U7233P115DT20111219110814.jpg",
+      "final_url": "https://i1.sinaimg.cn/gm/2011/1219/U7233P115DT20111219110814.jpg",
+      "http_status": 200,
+      "bytes": 72157,
+      "sha256": "3324aaaf92d8b7c39b4d5ea20f8bb60d09d276cc96aaaf5b2554dfece057b239",
+      "format": "JPEG",
+      "mode": "RGB",
+      "size": [
+        550,
+        413
+      ]
+    }
+  ],
+  "image_observations": [
+    {
+      "id": "I1",
+      "manual_visual_review": true,
+      "kind": "GAME_SCENE_WITH_TRANSPORT_STATION",
+      "observed": [
+        "TOP_ICON_TOOLBAR",
+        "MAMMOTH_NEAR_STONE_QUEUE_BAYS",
+        "CHARACTERS_AND_SIGNPOSTS",
+        "BOTTOM_LABEL_LONG_HAIRED_ELEPHANT_TRANSPORT"
+      ],
+      "original_map_or_npc_id": null,
+      "boarding_or_command_execution_observed": false,
+      "native_client_resolution": null
+    },
+    {
+      "id": "I2",
+      "manual_visual_review": true,
+      "kind": "GAME_SCENE_WITH_MAMMOTH_AND_HOVER_LABEL",
+      "observed": [
+        "TOP_ICON_TOOLBAR",
+        "MAMMOTH_AT_QUEUE_BAY",
+        "CHARACTERS_AND_SIGNPOSTS"
+      ],
+      "readable_endpoint_tokens": [
+        "萨姆吉尔",
+        "玛丽那丝"
+      ],
+      "label_scope": "TWO_NAMES_IN_DISPLAYED_LABEL_NOT_DIRECTED_ROUTE_EDGES",
+      "separator_and_full_line_not_transcribed": true,
+      "original_map_or_npc_id": null,
+      "boarding_or_command_execution_observed": false,
+      "native_client_resolution": null
+    }
+  ],
+  "unselected_image": {
+    "source_reference_index": 2,
+    "role_as_written": "精美的石器时代壁纸",
+    "pixels_acquired": false
+  },
+  "comparison": {
+    "relation": "SOURCE_AND_REGION_SEPARATION_NOT_PROVEN_HISTORICAL_EVOLUTION",
+    "jss2001": {
+      "source_report": "research/recovered/STONEAGE-EARLY-CONTENT-GUIDE-MANUAL-R1.json",
+      "actual_capture": "20010418083149",
+      "bus": {
+        "route_village_sets": [
+          [
+            "サムギル",
+            "マリナス",
+            "クオ"
+          ],
+          [
+            "ジャジャ",
+            "カルターナ",
+            "タムタム"
+          ]
+        ],
+        "direct_edge_topology_proven": false,
+        "stop_minutes": 3,
+        "passenger_limit": 4,
+        "encounters_while_riding": false,
+        "boarding_and_exit_control": "GROUP_BUTTON_WHILE_FACING_BUS_FOR_BOARDING",
+        "fare": null
+      }
+    },
+    "cn2003_player_guide": {
+      "source_report": "research/recovered/STONEAGE-CN2003-VILLAGE-TRAVEL-RECORD-SOURCE-R1.json",
+      "bus": {
+        "id": "MAMMOTH_BUS",
+        "source": "S2",
+        "claims": {
+          "reported_stops": [
+            "萨姆吉尔",
+            "玛丽那丝",
+            "柯奥",
+            "加加",
+            "卡鲁它那",
+            "塔姆塔姆"
+          ],
+          "stop_minutes": 3,
+          "ticket_stone_range": [
+            20,
+            30
+          ],
+          "random_encounters_during_trip": false
+        },
+        "unknowns": [
+          "实际边列表",
+          "每一段时长",
+          "TW1.0同价票价"
+        ]
+      },
+      "aviation_departure_words": [
+        "go",
+        "出发"
+      ],
+      "go_aviation_not_mammoth_in_that_guide": true
+    },
+    "same_original_npc_map_or_command_id_proven": false,
+    "jss_go_support_proven": false,
+    "early_numbers_fill_2011_unknowns": false,
+    "both_2011_advertised_versions_verified": false,
+    "modern_adoption_decided": false
+  },
+  "negative_boundaries": {
+    "direct_original_operator_page_acquired": false,
+    "current_bytes_authenticated_as_2011_original": false,
+    "original_server_runtime_verified": false,
+    "both_advertised_versions_share_transport_build": false,
+    "early_jss_go_command_backfilled": false,
+    "early_fare_capacity_wait_encounter_rules_backfilled_to_2011": false,
+    "screenshot_is_completed_trip_or_command_execution": false,
+    "displayed_endpoint_names_are_directed_route_edges": false,
+    "jpeg_size_is_native_client_resolution": false,
+    "same_scene_means_before_after_or_animation": false,
+    "pixels_are_release_approved": false,
+    "original_html_or_assets_committed": false,
+    "stage_b_started": false
+  },
+  "parent_pins": [
+    {
+      "path": "research/recovered/STONEAGE-EARLY-CONTENT-GUIDE-MANUAL-R1.json",
+      "bytes": 6911,
+      "sha256": "02c854ace5ff8364fc141dc4ee58e6c518b91af126b89b8c0ee2d4b112c9ae5b",
+      "git_blob": "54404a8118f125a9a53eabbb8bad8c4a0d07b190"
+    },
+    {
+      "path": "research/recovered/STONEAGE-CN2003-VILLAGE-TRAVEL-RECORD-SOURCE-R1.json",
+      "bytes": 13993,
+      "sha256": "926ea5f9429f7c3ceaa0c0e85ee2c0dd1a3fc9c16e924ed9e39714a0d050f806",
+      "git_blob": "c843a41e1abca8630cdd5fa14421bb0b13c10520"
+    },
+    {
+      "path": "research/recovered/STONEAGE-PREPRODUCTION-CONTENT-ARCHIVE-R1.json",
+      "bytes": 24489,
+      "sha256": "e87afebc8c9590142c7cc8831b578455b3427bf7c1d10520ae02a3e8082fbddb",
+      "git_blob": "2d5b3f081d5618287f431fbded943722a820c593"
+    }
+  ],
+  "parser_dependency_pins": [
+    {
+      "path": "tools/stoneage_cn2011_stall_source.py",
+      "bytes": 13572,
+      "sha256": "9613a69f6d2cd66cb3e3d92ec651e5986a69e542a46f1f391e7b8905f7350d07",
+      "git_blob": "deabe96bcc6ec181e30511ee85c701c7c042e303"
+    },
+    {
+      "path": "tools/stoneage_jp2005_treasure_source.py",
+      "bytes": 20924,
+      "sha256": "d541c0fb832447f203ad0618ea86d0ed39e0a32bdf5c26f509dde6f5ffecba40",
+      "git_blob": "350e9d3769597ea4b47959cf2dbd3edf8d97916f"
+    }
+  ],
+  "catalog_records": [
+    {
+      "record_id": "CN2011-R75-TRANSIT",
+      "collection": "tutorials",
+      "entity_type": "DOCUMENTARY_TRANSIT_INTERACTION",
+      "version_profile": "LATER_OFFICIAL_CN_CINS_2011_PROMOTIONAL_TRANSPORT_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "SOURCE_DESCRIPTION_OR_STATIC_IMAGE_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "station_scope": "VILLAGE_ENTRANCES_AS_PROMOTIONAL_DESCRIPTION_NOT_ENUMERATED_ALL_VILLAGES",
+        "boarding": {
+          "steps": [
+            "FIND_BUS_STATION",
+            "SELECT_DESTINATION_ROUTE",
+            "FACE_MAMMOTH",
+            "CLICK_JOIN_PARTY"
+          ],
+          "button_as_written": "加入队伍",
+          "exact_icon_or_coordinates": null
+        },
+        "fast_departure": {
+          "channel_as_written": "普通聊天频道",
+          "command_as_written": "go",
+          "timing_as_written": "立即为你启动",
+          "case_variants": null,
+          "authorization_or_minimum_passengers": null,
+          "accepted_server_command_observed": false
+        },
+        "exit": {
+          "control_as_written": "退出团队",
+          "mid_trip_exit_described": true,
+          "drop_location": null,
+          "refund": null
+        },
+        "unknown_rules": {
+          "fare": null,
+          "passenger_capacity": null,
+          "normal_wait_minutes": null,
+          "random_encounters": null,
+          "named_stop_roster": null,
+          "route_edges": null,
+          "travel_duration": null,
+          "npc_ids": null,
+          "map_ids": null,
+          "original_build": null,
+          "server_save_result": null
+        }
+      }
+    },
+    {
+      "record_id": "CN2011-R75-I1",
+      "collection": "screens",
+      "entity_type": "DOCUMENTARY_TRANSPORT_SCENE",
+      "version_profile": "LATER_OFFICIAL_CN_CINS_2011_PROMOTIONAL_TRANSPORT_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1",
+        "I1"
+      ],
+      "verification_status": "SOURCE_DESCRIPTION_OR_STATIC_IMAGE_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "id": "I1",
+        "manual_visual_review": true,
+        "kind": "GAME_SCENE_WITH_TRANSPORT_STATION",
+        "observed": [
+          "TOP_ICON_TOOLBAR",
+          "MAMMOTH_NEAR_STONE_QUEUE_BAYS",
+          "CHARACTERS_AND_SIGNPOSTS",
+          "BOTTOM_LABEL_LONG_HAIRED_ELEPHANT_TRANSPORT"
+        ],
+        "original_map_or_npc_id": null,
+        "boarding_or_command_execution_observed": false,
+        "native_client_resolution": null
+      }
+    },
+    {
+      "record_id": "CN2011-R75-I2",
+      "collection": "screens",
+      "entity_type": "DOCUMENTARY_TRANSPORT_SCENE",
+      "version_profile": "LATER_OFFICIAL_CN_CINS_2011_PROMOTIONAL_TRANSPORT_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1",
+        "I2"
+      ],
+      "verification_status": "SOURCE_DESCRIPTION_OR_STATIC_IMAGE_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "id": "I2",
+        "manual_visual_review": true,
+        "kind": "GAME_SCENE_WITH_MAMMOTH_AND_HOVER_LABEL",
+        "observed": [
+          "TOP_ICON_TOOLBAR",
+          "MAMMOTH_AT_QUEUE_BAY",
+          "CHARACTERS_AND_SIGNPOSTS"
+        ],
+        "readable_endpoint_tokens": [
+          "萨姆吉尔",
+          "玛丽那丝"
+        ],
+        "label_scope": "TWO_NAMES_IN_DISPLAYED_LABEL_NOT_DIRECTED_ROUTE_EDGES",
+        "separator_and_full_line_not_transcribed": true,
+        "original_map_or_npc_id": null,
+        "boarding_or_command_execution_observed": false,
+        "native_client_resolution": null
+      }
+    }
+  ],
+  "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-76"
+}
