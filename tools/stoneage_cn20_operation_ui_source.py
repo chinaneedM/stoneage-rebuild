@@ -147,6 +147,7 @@ def catalog(ex, image):
 def validate(r):
  require(r['schema']=='stoneage.cn20_operation_ui.source.r1' and r['version_profile']==PROFILE and r['negative_boundaries']==BOUNDARIES,'Version/authority boundary changed')
  require(r['source']['url']==URL and r['source']['capture']=='20011204000349' and r['source']['authority']=='OPERATOR_HOSTED_UNSIGNED_GUIDE_AUTHOR_UNVERIFIED','Source authority changed')
+ require(r['source']['first_publication'] is None and r['source']['http_status']==200 and r['source']['encoding']=='GB18030_STRICT' and r['source']['no_redirect'] is True,'Publication/intake promoted')
  require(r['parent_pins']==[pin(p) for p in PARENTS] and r['parser_pin']==pin(PARSER),'Parent/parser bytes changed')
  require(r['comparison']==comparison(),'Prior version differences overwritten')
  old=r['comparison']['same_archived_html_as_recordpoint_package']
@@ -222,9 +223,50 @@ def read_inputs(directory=None):
  return result
 
 
+def verify_custody(root=None):
+ root=ROOT if root is None else Path(root)
+ receipt=json.loads((root/f'research/recovered/{STEM}-CUSTODY-R1.json').read_text())
+ require(receipt['schema']=='stoneage.cn20_operation_ui.custody.r1','Custody schema')
+ require(receipt['content_commit']=='416cbe29e663b02665f0a24e1fef131ad9069941' and receipt['content_tree']=='2a06ae793788cdeb46664b78a39c97fb753fd851','Content Git identity')
+ require(receipt['candidate_branch']=='agent/named-content-r79-ui-20261023','Candidate branch')
+ require(receipt['server_execution_verified'] is False and receipt['same_build_body_image_proven'] is False and receipt['capture_date_is_publication_date'] is False,'Custody authority promoted')
+ paths=[f'research/recovered/{STEM}-SOURCE-R1.json']+PARENTS+[PARSER]+[f'research/recovered/{STEM}-CI-{role}-R1.json' for role in ('CANDIDATE','MAIN')]
+ pins=receipt['permanent_pins'];require([p['path'] for p in pins]==paths,'Eight mandatory permanent evidence pins changed')
+ for p in pins:
+  b=(root/p['path']).read_bytes()
+  require(p=={'path':p['path'],'bytes':len(b),'sha256':sha(b),'git_blob':hashlib.sha1(b'blob '+str(len(b)).encode()+b'\0'+b).hexdigest()},'Permanent original bytes changed')
+ source=json.loads((root/paths[0]).read_text())
+ initial=[{'id':'S1','url':URL,'bytes':source['source']['bytes'],'sha256':source['source']['sha256']},
+          {'id':'I1','url':IMAGE_URL,'bytes':source['image']['bytes'],'sha256':source['image']['sha256']}]
+ require(receipt['initial_inputs']==initial,'Original intake/input dates lost')
+ runs=receipt['runs'];require(len(runs)==21 and len({v['id'] for v in runs})==21,'Actual gate inventory missing/duplicated')
+ branches={'candidate':receipt['candidate_branch'],'main':'main'}
+ for role,count in (('candidate',10),('main',11)):
+  group=[v for v in runs if v['branch']==branches[role]]
+  require(len(group)==count and len({v['name'] for v in group})==count,'Branch gate inventory changed')
+ require(all(v['head']==receipt['content_commit'] and v['status']=='completed' and v['conclusion']=='success' for v in runs),'Unverified/failed gate promoted')
+ raw_files=[];jobs=[];artifacts=[]
+ for role,branch in branches.items():
+  proof=receipt['jobs_and_artifacts'][role];artifact=proof['artifact'];run=artifact['workflow_run']
+  require(run['id']==proof['run'] and run['head_sha']==receipt['content_commit'] and run['head_branch']==branch,'Artifact origin detached')
+  matching=[v for v in runs if v['id']==proof['run']]
+  require(len(matching)==1 and matching[0]['branch']==branch and matching[0]['name']=='Verify early CN20 interaction conditions and name-card screen provenance','Wrong source workflow')
+  require(proof['job_name']=='bounded-source-replay' and proof['job_conclusion']=='success' and artifact['name']=='cn20-operation-ui-derived-r79','Wrong job/artifact')
+  require(proof['zip_downloaded_and_digest_verified'] is True and artifact['size_in_bytes']>0 and re.fullmatch(r'sha256:[0-9a-f]{64}',artifact['digest']),'ZIP custody missing')
+  jobs.append(proof['job']);artifacts.append(artifact['id'])
+  path=f'research/recovered/{STEM}-CI-{role.upper()}-R1.json';raw=(root/path).read_bytes();raw_files.append(raw);replayed=json.loads(raw)
+  record=receipt['raw_replays'][role];p=next(v for v in pins if v['path']==path)
+  require(all(record[k]==p[k] for k in p) and record['inputs']==replayed['inputs'] and record['equals_initial_inputs']==(replayed['inputs']==initial),'Raw identity/input equality misreported')
+  require(all(replayed[k]==source[k] for k in ('extraction','image','visual_observation','comparison','catalog_records')),'Raw replay semantics detached')
+  require(replayed['audit']=={'semantic_mutations_without_all_fingerprints':23,'hidden_and_outside_article_counterexamples':2,'outside_script_positive':True} and replayed['original_html_or_assets_in_output'] is False and replayed['original_server_runtime_verified'] is False,'Raw audit/authority promoted')
+ require(len(set(jobs))==len(set(artifacts))==2 and receipt['candidate_main_raw_bytes_equal']==(raw_files[0]==raw_files[1]),'Candidate/main evidence substituted')
+ return receipt
+
+
 def main():
  p=argparse.ArgumentParser();g=p.add_mutually_exclusive_group(required=True);g.add_argument('--fetch',action='store_true');g.add_argument('--input-dir');p.add_argument('--output',required=True);a=p.parse_args()
  r=json.loads(REPORT.read_text());out=replay(read_inputs(a.input_dir),r)
+ verify_custody()
  path=Path(a.output);path.parent.mkdir(parents=True,exist_ok=True);path.write_text(json.dumps(out,ensure_ascii=False,indent=2)+'\n');print('R79 early UI source replay passed; no original server execution or complete contact capacity proven.')
 
 

@@ -8057,3 +8057,6 @@ R78后验保管：内容7d6cae1候选10/main11项真实通过；两端ZIP/API摘
 ## 2026-10-23 R79内容：华义2.0操作正文及名片窗口原图
 
 已知运营站基本操作https://web.archive.org/web/20011204000349id_/http://www.waei.com.cn/ZHUANQU/stoneage2/tyro/operation.asp 68863B/SHA2569be8b3ea0d48ebc17639e1114cba6606eba1a135a181ed5ad8f192392e554809，与记录点包同原件，不是新发现/独立证人；新结构化22完整章节/8目录，补早期窗口、宠物模式、家族文书权限。官网托管不升具名作者/首刊/build。实际img/4.gif转https://web.archive.org/web/20011227175240id_/http://waei.com.cn/ZHUANQU/stoneage2/tyro/img/4.gif ，155995B/e91b36552855db65420ca2c0762f7409ef797ce8d88c2d87532c6bac92322a4b、GIF/P640×480单帧完整解码目视；四可视名片条及Online/Offline/Mail/Delete不证明总容量、在线、投递或删除。正文12/4/图12/27分别归属，Eng不认证地区；原HTML/图不入Git。SOURCE、四父报告/共享解析器pin及中文规格固定于STONEAGE-CN20-OPERATION-UI-*；2003旧报告无原HTML SHA的缺口保留，不因本轮pin抬权。
+
+
+R79内容双端后验：416cbe29候选10/main11项真实通过；双ZIP/API摘要和23470B原JSON/SHA2565f4d13881af77a13cab06f6c232cde1dba89fd19b63254fbebca496b6527413e已实际核验，候选/main/local相等。双原报告与CUSTODY收据永久保留，八原生Git pin/21run/双job工件及初取历史。正文与配图分捕获、官网托管作者未知和原服执行OPEN保持；保管改动自身CI另验。

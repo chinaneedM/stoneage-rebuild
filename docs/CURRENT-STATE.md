@@ -17396,3 +17396,16 @@ CLI现强制要求收据；缺失、同长篡改、门禁遗漏/重复、错误�
 交付docs/specs/STONEAGE-CN20-OPERATION-UI-SOURCE-R1.md、SOURCE JSON及独立实源工作流。8条完整目录=7组教程+1静态屏幕，七必填字段/19集合逐一核验，不当8恢复原实体。四父报告与共享可见解析器原字节/Git固定。23去全部章节/正文指纹门语义改写、隐藏/移正文外同词2反例、外围script正例，本包7单元及相关25项本地/源重放通过。一次合成测试替换了不含空格的题名导致无实际改写并失败，已按原基 本 操 作修正重跑；无远端失败。候选/main实取、实际ZIP/永久报告保管须后验，不提前宣称通过。原HTML/GIF/程序不进Git。
 
 止于一已知正文/一新获实际界面图，不扩全部快捷键、庄园或helper。重开需同build屏幕/操作轨迹、原协议配置、名片或文书持久化原件。最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-80回22域另一地区具名任务、宠物生态或世界叙事原件。Stage A7 PARTIAL+2 OPEN，B/wiki GATED，savedata R79 PAUSED_NON_BLOCKING；不报整体百分比。
+
+
+### R79内容双端实源验收与永久保管（2026-10-23）
+
+内容416cbe29e663b02665f0a24e1fef131ad9069941/tree2a06ae793788cdeb46664b78a39c97fb753fd851的候选10/main11项实际completed/success；主线新读旧HEAD后expected_sha保护非强制快进。九文件与整tree逐一符合本地原生Git，四连续性历史旧前缀完整。专用候选run39868987195/job120138321325/artifact12465576209，主线run39869070986/job120138610152/artifact12465227797，实际各7单元及12/4正文、独立12/27原GIF取源/完整解码，23去全部章节/正文指纹门语义改写和隐藏/移正文外2反例通过。
+
+双ZIP各6344B，SHA25658dbcda024024d3d2edcc6a4ac4ad086344c0f406f7b7b2843784833cdf5d1af / ea9669ae0f7726ea0d74738be583cdb8f43b3e74faabccee33eca6616dcbae4e逐一符合API；唯一replay.json均23470B/SHA2565f4d13881af77a13cab06f6c232cde1dba89fd19b63254fbebca496b6527413e。候选/main/local/加入保管门后local四份逐字节相等，两HTTP输入均同初取；已知正文亦同旧记录点包原件，不新增独立见证或提升为原服执行。
+
+原CI JSON两份及research/recovered/STONEAGE-CN20-OPERATION-UI-CUSTODY-R1.json永久入Git，八pin固定SOURCE、四亲代报告、共享解析器、双原报告的原字节/Git身份；收据含21真实run及双job/artifact/ZIP/raw/input初取历史。CLI强制保管门拒绝缺失/同长篡改、错HEAD/tree/分支/工件、门遗漏/重复、失败改成功、复用job/artifact、虚报输入相等或把正文/图拼成同版/首刊/实服。补强源首刊空值/取源元数据守卫，增加保管反例后本包7→8单元，相关26项本地回归/原输入重放通过；内容CI七单元历史保留，保管提交自身候选/main须另后验，不提前倒称八单元。
+
+真实名片窗口仅证明图像中可见四条，不认证容量/在线或Mail/Delete执行。两存档时间/域名变化与缩略图未取范围完整保留，原HTML/GIF/程序不入Git。骑宠AND条件、邀请函所属庄园/学习文书、HELP玩家数和既验JSS/2003版本边界不变；最高NEXT80回另一地区具名任务/宠物生态/世界叙事，Stage A7 PARTIAL+2 OPEN、B/wiki GATED、savedata R79暂停，旧全文保留。
+
+双CI原JSON原生Git blob：06f3f04280311dbd7b49f4477f76856b7152cc56。

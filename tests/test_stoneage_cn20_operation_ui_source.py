@@ -32,6 +32,7 @@ class OperationUITests(unittest.TestCase):
             lambda d:d.update(version_profile='TW10'),
             lambda d:d['source'].update(authority='OPERATOR_WRITTEN'),
             lambda d:d['source'].update(new_source_url=True),
+            lambda d:d['source'].update(first_publication='2001-12-04'),
             lambda d:d['source'].update(sha256='0'*64),
             lambda d:d['image'].update(capture='20011204000349'),
             lambda d:d['image'].update(initial_request_same_capture_as_actual=True),
@@ -111,6 +112,36 @@ class OperationUITests(unittest.TestCase):
                     target.unlink()
                     with self.assertRaises(FileNotFoundError):m.validate(r)
                     target.write_bytes(raw)
+
+    def test_custody_rejects_missing_changed_reused_or_authority_promoted_evidence(self):
+        receipt=m.verify_custody()
+        with tempfile.TemporaryDirectory() as name:
+            root=Path(name);out=root/f'research/recovered/{m.STEM}-CUSTODY-R1.json'
+            for p in receipt['permanent_pins']:
+                target=root/p['path'];target.parent.mkdir(parents=True,exist_ok=True);target.write_bytes((m.ROOT/p['path']).read_bytes())
+            out.write_text(json.dumps(receipt));m.verify_custody(root)
+            for p in receipt['permanent_pins']:
+                target=root/p['path'];raw=target.read_bytes();target.write_bytes(raw[:-1]+bytes([raw[-1]^1]))
+                with self.assertRaises(ValueError):m.verify_custody(root)
+                target.unlink()
+                with self.assertRaises(FileNotFoundError):m.verify_custody(root)
+                target.write_bytes(raw)
+            changes=[lambda d:d.update(content_commit='0'*40),lambda d:d.update(content_tree='0'*40),
+                     lambda d:d.update(candidate_branch='main'),lambda d:d.update(server_execution_verified=True),
+                     lambda d:d.update(same_build_body_image_proven=True),lambda d:d.update(capture_date_is_publication_date=True),
+                     lambda d:d['runs'].pop(),lambda d:d['runs'].append(d['runs'][0]),lambda d:d['runs'][0].update(conclusion='failure'),
+                     lambda d:d['runs'][0].update(branch='OTHER'),lambda d:d['permanent_pins'].pop(),
+                     lambda d:d.update(initial_inputs=[]),lambda d:d.update(candidate_main_raw_bytes_equal=False),
+                     lambda d:d['raw_replays']['main'].update(equals_initial_inputs=False),
+                     lambda d:d['jobs_and_artifacts']['main'].update(job=d['jobs_and_artifacts']['candidate']['job']),
+                     lambda d:d['jobs_and_artifacts']['main']['artifact'].update(id=d['jobs_and_artifacts']['candidate']['artifact']['id']),
+                     lambda d:d['jobs_and_artifacts']['main']['artifact']['workflow_run'].update(head_branch='OTHER'),
+                     lambda d:d['jobs_and_artifacts']['main'].update(zip_downloaded_and_digest_verified=False)]
+            for change in changes:
+                d=copy.deepcopy(receipt);change(d);out.write_text(json.dumps(d))
+                with self.assertRaises(ValueError):m.verify_custody(root)
+            out.unlink()
+            with self.assertRaises(FileNotFoundError):m.verify_custody(root)
 
 
 if __name__=='__main__':unittest.main()
