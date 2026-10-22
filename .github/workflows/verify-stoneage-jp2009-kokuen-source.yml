@@ -1,0 +1,39 @@
+name: Verify source-qualified Kokuen pet sample, random bag and conversion scope
+on:
+  push:
+    paths:
+      - 'tools/stoneage_jp2009_kokuen_source.py'
+      - 'tests/test_stoneage_jp2009_kokuen_source.py'
+      - 'research/recovered/STONEAGE-JP2009-KOKUEN-*.json'
+      - 'docs/specs/STONEAGE-JP2009-KOKUEN-SOURCE-R1.md'
+      - '.github/workflows/verify-stoneage-jp2009-kokuen-source.yml'
+  pull_request:
+    paths:
+      - 'tools/stoneage_jp2009_kokuen_source.py'
+      - 'tests/test_stoneage_jp2009_kokuen_source.py'
+      - 'research/recovered/STONEAGE-JP2009-KOKUEN-*.json'
+      - 'docs/specs/STONEAGE-JP2009-KOKUEN-SOURCE-R1.md'
+      - '.github/workflows/verify-stoneage-jp2009-kokuen-source.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  bounded-source-replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install Pillow==12.3.0
+      - name: Branch, source scope and unknown-identity counterexamples
+        run: python -m unittest tests.test_stoneage_jp2009_kokuen_source -v
+      - name: Retrieve current source and reject semantic mutations
+        run: python -m tools.stoneage_jp2009_kokuen_source --fetch --output "$RUNNER_TEMP/r72/replay.json"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: jp2009-kokuen-derived-r72
+          path: ${{ runner.temp }}/r72/replay.json
+          if-no-files-found: error
+          retention-days: 30

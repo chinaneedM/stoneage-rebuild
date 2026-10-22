@@ -8011,3 +8011,8 @@ R70同包补S3：https://web.archive.org/web/20030324221124id_/http://games.sina
 ## 2026-10-22 R71 五兄弟之谜新文章与精确历史参考
 
 新增https://games.sina.com.cn/zhqu/sta/article/2003-06-02/10423.shtml和https://web.archive.org/web/20031204051508id_/http://games.sina.com.cn:80/zhqu/sta/article/2003-06-02/10423.shtml；来源身份、实际57507/40631B及完整SHA、一次定年查询、作者栏/包装日期及整篇核心一致见research/recovered/STONEAGE-CN2003-FIVE-BROTHERS-SOURCE-R1.json。旧handbook/0101/01186092.shtml是另一个既验URL，旧正文记录完整保留。两新包装不增独立见证数、不认证首刊/官方作者/build/TW1.0；原HTML/图不入Git。详来源规格，派生保管须实际后验。
+
+
+## 2026-10-22 R72 日服コクエン/黑炎袋发布文与状态图
+
+https://www.4gamer.net/games/013/G001377/20090629031/ 当前HTTP200/277194B，署归DigiPark厂商发布文；所选黑炎详节与原onclick https://www.4gamer.net/games/013/G001377/20090629031/SS/001.jpg 当前68476B/JPEG270×363实取、严格解码/目视。完整摘要、图人工转录、源层与旧白炎对照见research/recovered/STONEAGE-JP2009-KOKUEN-SOURCE-R1.json。不认证2009原站HTML/实服/原模型ID，不发布原HTML/图。六类产物和生成物消失范围单列，旧白炎7/6异文完整保留。

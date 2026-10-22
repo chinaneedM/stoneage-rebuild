@@ -1,0 +1,463 @@
+{
+  "schema": "stoneage.jp2009_kokuen.source.r1",
+  "work_package": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-72",
+  "date": "2026-10-22",
+  "version_profile": "LATER_OFFICIAL_JP_DIGIPARK_2009_KOKUEN_EXACT_BUILD_UNKNOWN",
+  "negative_boundaries": {
+    "current_bytes_authenticated_as_2009_capture": false,
+    "original_official_site_bytes_obtained": false,
+    "same_build_tw10_membership_verified": false,
+    "original_server_runtime_verified": false,
+    "original_ids_recovered": false,
+    "screenshot_is_species_base_stats": false,
+    "bag_guarantees_pet": false,
+    "all_items_disappear_on_logout": false,
+    "kokuen_and_hakuen_share_original_id": false,
+    "transformation_is_pet_species_change": false,
+    "original_html_or_assets_committed": false,
+    "stage_b_started": false
+  },
+  "source_pages": [
+    {
+      "id": "S1",
+      "url": "https://www.4gamer.net/games/013/G001377/20090629031/",
+      "final_url": "https://www.4gamer.net/games/013/G001377/20090629031/",
+      "status": 200,
+      "bytes": 277194,
+      "sha256": "cda0c2ce2d4389ed89107feeef40f58a2470341a01fce800f9cf4eafc23f6cf5",
+      "content_type": "text/html",
+      "strict_decoder": "utf-8",
+      "replacement_characters": 0,
+      "visible_publication": "2009/06/29 16:55",
+      "issue_attribution": "デジパーク",
+      "source_role": "MEDIA_HOSTED_CREDITED_MANUFACTURER_RELEASE",
+      "historical_capture": null,
+      "manufacturer_original_notice_bytes_obtained": false,
+      "current_html_authenticates_2009_bytes": false
+    }
+  ],
+  "source_layers": [
+    {
+      "id": "S1",
+      "role": "CREDITED_RELEASE_IN_ENTRY_CONTENT"
+    },
+    {
+      "id": "S1-IMAGE",
+      "parent_source": "S1",
+      "role": "ORIGINAL_LINKED_CURRENT_JPEG_REFERENCE"
+    }
+  ],
+  "scope": "Detailed Kokuen/black bag section only; adjacent site renewal, betting event and EXP sales are excluded.",
+  "source_discovery_unselected": [
+    {
+      "url": "https://www.4gamer.net/news/history/2006.05/20060523181644detail.html",
+      "reason": "Ranks and server cooperation only; no new named pet roster or numerical conversion table selected for this unit."
+    },
+    {
+      "url": "https://www.4gamer.net/news/history/2006.10/20061031185933detail.html",
+      "reason": "Naming preview does not provide final pet identity; not part of accepted input or an added source witness."
+    }
+  ],
+  "parent_pins": [
+    {
+      "path": "research/recovered/STONEAGE-JP2009-GUILD-HAKUEN-SOURCE-R1.json",
+      "bytes": 9669,
+      "sha256": "db93b87b4c019276c79f688354cfff8e74e96f24c13bc78cefd12e870a541616",
+      "git_blob": "d266f3e07728f9bff2cb39aea9df24639a8028fd"
+    },
+    {
+      "path": "research/recovered/STONEAGE-PREPRODUCTION-CONTENT-ARCHIVE-R1.json",
+      "bytes": 24489,
+      "sha256": "e87afebc8c9590142c7cc8831b578455b3427bf7c1d10520ae02a3e8082fbddb",
+      "git_blob": "2d5b3f081d5618287f431fbded943722a820c593"
+    }
+  ],
+  "parent_comparison": {
+    "source_path": "research/recovered/STONEAGE-JP2009-GUILD-HAKUEN-SOURCE-R1.json",
+    "parent_pet_name": "ハクエン",
+    "current_pet_name": "コクエン",
+    "kokuen_is_hakuen_alias_verified": false,
+    "hakuen_declared_types": 7,
+    "hakuen_named_types": 6,
+    "kokuen_declared_and_named_types": 6,
+    "parent_seventh_item_filled_from_kokuen": false,
+    "parent_ticket_then_bag_or_stamp_vs_current_direct_bag_price_not_merged": true
+  },
+  "extraction": {
+    "pet_name": "コクエン",
+    "pet_id": null,
+    "exact_game_build": null,
+    "announced_sale": {
+      "start_date": "2009-06-23",
+      "start_event": "REGULAR_MAINTENANCE_END",
+      "end_date": "2009-07-21",
+      "end_event": "REGULAR_MAINTENANCE_START",
+      "timezone": null,
+      "deployment_verified": false
+    },
+    "bag": {
+      "name": "黒炎の袋",
+      "price": 400,
+      "currency_as_written": "Gstone",
+      "random_item_count": 1,
+      "declared_item_types": 6,
+      "listed_item_types": [
+        "耐久のほら貝袋(黒炎)",
+        "気力のほら貝袋(黒炎)",
+        "黒炎変身薬",
+        "黒炎変身鎧チケット",
+        "黒炎再抽選チケット",
+        "黒炎交換チケット"
+      ],
+      "outcome_probabilities": null,
+      "pet_guaranteed_on_open": false,
+      "item_id": null
+    },
+    "recovery_bags": [
+      {
+        "bag_name": "耐久のほら貝袋(黒炎)",
+        "resource_label": "耐久力",
+        "repeated_use_of_generated_item_as_reported": true,
+        "logout_disappearance_scope": "GENERATED_ITEM",
+        "drop_disappearance_scope": "GENERATED_ITEM",
+        "recovery_amount": null,
+        "generated_item_name": null,
+        "outer_bag_logout_behavior": null,
+        "disconnect_behavior": null
+      },
+      {
+        "bag_name": "気力のほら貝袋(黒炎)",
+        "resource_label": "気力",
+        "repeated_use_of_generated_item_as_reported": true,
+        "logout_disappearance_scope": "GENERATED_ITEM",
+        "drop_disappearance_scope": "GENERATED_ITEM",
+        "recovery_amount": null,
+        "generated_item_name": null,
+        "outer_bag_logout_behavior": null,
+        "disconnect_behavior": null
+      }
+    ],
+    "conversion": {
+      "eligible_base_item_names_as_written": [
+        "耐久のほら貝袋",
+        "気力のほら貝袋",
+        "黒炎変身薬"
+      ],
+      "base_names_to_suffixed_table_names_same_id": null,
+      "mixed_total_for_armor_ticket": 10,
+      "example_mixture_counts": [
+        3,
+        1,
+        6
+      ],
+      "example_is_exclusive_required_recipe": false,
+      "armor_tickets_for_reroll_ticket": 5,
+      "reroll_tickets_for_pet_ticket": 5,
+      "item_consumption_or_atomicity_verified": false,
+      "guaranteed_bag_open_count_for_pet": null,
+      "expected_gstone_cost_for_pet": null
+    },
+    "exchange_npc": {
+      "name": "黒炎系交換員",
+      "location_label": "CP交換所",
+      "npc_id": null,
+      "coordinates": null
+    },
+    "ticket_effects": [
+      {
+        "name": "黒炎変身鎧チケット",
+        "exchange_for": "KOKUEN_TRANSFORMATION_ARMOR",
+        "armor_name": null
+      },
+      {
+        "name": "黒炎再抽選チケット",
+        "exchange_for": "KOKUEN_STATUS_REROLL",
+        "retained_fields": null,
+        "reroll_distribution": null
+      },
+      {
+        "name": "黒炎交換チケット",
+        "exchange_for": "KOKUEN_PET",
+        "pet_level": null,
+        "tickets_per_pet_exchange": null
+      }
+    ],
+    "transformation": {
+      "medicine": "黒炎変身薬",
+      "form_label": "コクエン",
+      "subject_identity": null,
+      "duration": null,
+      "battle_stat_effects": null,
+      "permanent_species_change_verified": false
+    },
+    "status_warning_random_around_unspecified_reference": true,
+    "species_base_values": null,
+    "original_image_url": "https://www.4gamer.net/games/013/G001377/20090629031/SS/001.jpg",
+    "original_server_runtime_verified": false
+  },
+  "visual_reference": {
+    "id": "S1-IMAGE",
+    "parent_source": "S1",
+    "image_metadata": {
+      "url": "https://www.4gamer.net/games/013/G001377/20090629031/SS/001.jpg",
+      "bytes": 68476,
+      "sha256": "2949b7719977756fe0789b25f687122ba1b9c0381979bd8bf95e606f7bca59a0",
+      "format": "JPEG",
+      "size": [
+        270,
+        363
+      ],
+      "mode": "RGB"
+    },
+    "html_fullsize_reference": "/games/013/G001377/20090629031/SS/001.jpg",
+    "html_thumbnail_reference": "/games/013/G001377/20090629031/TN/001.jpg",
+    "review_method": "MANUAL_TRANSCRIPTION_BOUND_TO_EXACT_JPEG_NOT_OCR",
+    "sample": {
+      "name": "コクエン",
+      "level": 1,
+      "exp_display": 0,
+      "next_display": 2,
+      "hp_display": [
+        72,
+        72
+      ],
+      "attack_display": 18,
+      "defense_display": 19,
+      "agility_display": 15,
+      "loyalty_display": 0,
+      "element_numeric_values": null,
+      "original_sprite_or_model_id": null
+    },
+    "sample_is_species_base_values": false,
+    "runtime_build_authenticated": false,
+    "visual_description_as_research_observation": "Single cropped PET STATUS panel with a dark blue/purple quadruped and colored element bars; exact model/animation/asset IDs unknown.",
+    "screenshot_taken_at": null,
+    "native_client_resolution": null,
+    "full_ui_behavior_recovered": false
+  },
+  "selected_visible_compact_core": {
+    "characters": 919,
+    "sha256": "d6ef38d7c57410b13298d2f29a013a2d6213f3b0e354b0a6a0f946af6655b0d0"
+  },
+  "reopen_if": [
+    "Same-build original NPC/item/pet data or authenticated exchange/runtime trace",
+    "Original probability or reroll distribution and preserved-fields specification",
+    "Original visual/animation selector linking this pet name and status example to asset IDs",
+    "Original recovery generated-item lifecycle or transformation subject/duration/effect evidence"
+  ],
+  "stop_condition": "One credited release section, one linked status JPEG, six outcome types and three bounded conversion edges; no whole-store or betting/EXP/helper expansion.",
+  "original_html_or_assets_in_output": false,
+  "original_game_runtime_verified": false,
+  "catalog_records": [
+    {
+      "record_id": "JP2009-KOKUEN-R72-01",
+      "collection": "pets",
+      "entity_type": "documentary_named_pet_and_single_status_sample",
+      "version_profile": "LATER_OFFICIAL_JP_DIGIPARK_2009_KOKUEN_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1",
+        "S1-IMAGE"
+      ],
+      "verification_status": "SOURCE_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "pet": "コクエン",
+        "sample": {
+          "name": "コクエン",
+          "level": 1,
+          "exp_display": 0,
+          "next_display": 2,
+          "hp_display": [
+            72,
+            72
+          ],
+          "attack_display": 18,
+          "defense_display": 19,
+          "agility_display": 15,
+          "loyalty_display": 0,
+          "element_numeric_values": null,
+          "original_sprite_or_model_id": null
+        },
+        "species_base_values": null,
+        "sample_is_species_base_values": false
+      }
+    },
+    {
+      "record_id": "JP2009-KOKUEN-R72-02",
+      "collection": "npcs",
+      "entity_type": "documentary_exchange_npc",
+      "version_profile": "LATER_OFFICIAL_JP_DIGIPARK_2009_KOKUEN_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "SOURCE_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "name": "黒炎系交換員",
+        "location_label": "CP交換所",
+        "npc_id": null,
+        "coordinates": null
+      }
+    },
+    {
+      "record_id": "JP2009-KOKUEN-R72-03",
+      "collection": "items",
+      "entity_type": "documentary_random_bag",
+      "version_profile": "LATER_OFFICIAL_JP_DIGIPARK_2009_KOKUEN_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "SOURCE_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "name": "黒炎の袋",
+        "price": 400,
+        "currency_as_written": "Gstone",
+        "random_item_count": 1,
+        "declared_item_types": 6,
+        "listed_item_types": [
+          "耐久のほら貝袋(黒炎)",
+          "気力のほら貝袋(黒炎)",
+          "黒炎変身薬",
+          "黒炎変身鎧チケット",
+          "黒炎再抽選チケット",
+          "黒炎交換チケット"
+        ],
+        "outcome_probabilities": null,
+        "pet_guaranteed_on_open": false,
+        "item_id": null
+      }
+    },
+    {
+      "record_id": "JP2009-KOKUEN-R72-04",
+      "collection": "items",
+      "entity_type": "documentary_recovery_bag_generated_item_lifetime",
+      "version_profile": "LATER_OFFICIAL_JP_DIGIPARK_2009_KOKUEN_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "SOURCE_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "bag_name": "耐久のほら貝袋(黒炎)",
+        "resource_label": "耐久力",
+        "repeated_use_of_generated_item_as_reported": true,
+        "logout_disappearance_scope": "GENERATED_ITEM",
+        "drop_disappearance_scope": "GENERATED_ITEM",
+        "recovery_amount": null,
+        "generated_item_name": null,
+        "outer_bag_logout_behavior": null,
+        "disconnect_behavior": null
+      }
+    },
+    {
+      "record_id": "JP2009-KOKUEN-R72-05",
+      "collection": "items",
+      "entity_type": "documentary_recovery_bag_generated_item_lifetime",
+      "version_profile": "LATER_OFFICIAL_JP_DIGIPARK_2009_KOKUEN_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "SOURCE_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "bag_name": "気力のほら貝袋(黒炎)",
+        "resource_label": "気力",
+        "repeated_use_of_generated_item_as_reported": true,
+        "logout_disappearance_scope": "GENERATED_ITEM",
+        "drop_disappearance_scope": "GENERATED_ITEM",
+        "recovery_amount": null,
+        "generated_item_name": null,
+        "outer_bag_logout_behavior": null,
+        "disconnect_behavior": null
+      }
+    },
+    {
+      "record_id": "JP2009-KOKUEN-R72-06",
+      "collection": "items",
+      "entity_type": "documentary_transformation",
+      "version_profile": "LATER_OFFICIAL_JP_DIGIPARK_2009_KOKUEN_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "SOURCE_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "medicine": "黒炎変身薬",
+        "form_label": "コクエン",
+        "subject_identity": null,
+        "duration": null,
+        "battle_stat_effects": null,
+        "permanent_species_change_verified": false
+      }
+    },
+    {
+      "record_id": "JP2009-KOKUEN-R72-07",
+      "collection": "items",
+      "entity_type": "documentary_ticket_function",
+      "version_profile": "LATER_OFFICIAL_JP_DIGIPARK_2009_KOKUEN_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "SOURCE_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "name": "黒炎変身鎧チケット",
+        "exchange_for": "KOKUEN_TRANSFORMATION_ARMOR",
+        "armor_name": null
+      }
+    },
+    {
+      "record_id": "JP2009-KOKUEN-R72-08",
+      "collection": "items",
+      "entity_type": "documentary_ticket_function",
+      "version_profile": "LATER_OFFICIAL_JP_DIGIPARK_2009_KOKUEN_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "SOURCE_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "name": "黒炎再抽選チケット",
+        "exchange_for": "KOKUEN_STATUS_REROLL",
+        "retained_fields": null,
+        "reroll_distribution": null
+      }
+    },
+    {
+      "record_id": "JP2009-KOKUEN-R72-09",
+      "collection": "items",
+      "entity_type": "documentary_ticket_function",
+      "version_profile": "LATER_OFFICIAL_JP_DIGIPARK_2009_KOKUEN_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "SOURCE_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "name": "黒炎交換チケット",
+        "exchange_for": "KOKUEN_PET",
+        "pet_level": null,
+        "tickets_per_pet_exchange": null
+      }
+    }
+  ]
+}
