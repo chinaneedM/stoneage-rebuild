@@ -1815,3 +1815,16 @@ S1/S3所选全文去空白一致，#3核心712UTF8B/SHA256 810507b9e173d90951e20
 
 
 R75验收前措辞收紧：首候选eca552d814b87f42536175d435dfc699077b22a9的“面向”/FACE_MAMMOTH过强；原文仅“在长毛象面前”，现改为STAND_IN_FRONT_OF_MAMMOTH（站在公车面前），不证明人物朝向检查或方向标志。原候选、六单元工件及其Git历史保留，新内容提交需重新实取验收，不能借前稿绿灯。本次不是源正文或图片变化。
+
+
+### 2026-10-22 R75修正稿双端实源验收与永久派生保管
+
+最终内容提交057eadeb49fa847d4d6092840afd64a79efd3765/tree757c3c3bdeb013646a178b6f3774cc765c55fa81，候选10/main11项实际completed/success，最新main预期SHA保护非强制快进。正文/图片字节不变，步骤已收紧为站在长毛象面前，朝向检查不证。首候选eca552d814b87f42536175d435dfc699077b22a9及其source run39786866710/job119852281383/artifact12429049151、11036B原派生摘要dcdf6c4ada9b6ef6c9a966882d1057ad8015e1d4ca692705d7371f3fd0f3752b仅保留更正历史/元数据，不借其绿灯验收最终语义；原候选源报告Git仍可读，旧临时raw未另永久归档，收据明确区分。
+
+正确稿专用候选run39787629042/job119854849617/artifact12429068184，主线run39787861655/job119855657301/artifact12430325393，实际各六单元、一文两原JPEG实取完整解码、12去整页摘要及正文指纹门语义改写、外围script/未选地图宣传正例。独立另核五个字段确实动态变化，三个隐藏正文条件无法被页尾同文补证。
+
+实际双ZIP各3429B，SHA2561f03d67183cc5057f532796805b3018cab9ffce09540cc3a1017d933b91f7f2c / d25376d500deea65d8e9f6a3b938a53d5a411aba3739a47f6b237f86b28cd2dd逐一比API；唯一replay.json各11062B/SHA256b80fa0a345db306b86bd2e3b3588e1a4bba548dae4707da14e33537f8a701c3c/Git blob22ac399dca4162ff69b0ef3a9d5d8e7938341adb。双CI/修正后local/保管门后local四份逐字节一致，原HTML与两图输入均同初取，不称2011原始字节。
+
+双正确稿原CI JSON与research/recovered/STONEAGE-CN2011-MAMMOTH-BUS-CUSTODY-R1.json永久入Git，固定最终内容Git、21实际run、双job/artifact/ZIP/raw/input、八永久文件原生Git身份，含三父报告/两共享解析器，并保留首稿更正归属。强制保管门拒绝缺失/等长篡改、错HEAD/分支、重复run/job、历史权威升级/虚报字节相等或借首稿作最终验收；六→七单元，相关26项本地通过。保管提交自身候选/main CI须另真实后验，不把首内容六项绿灯写成七项。
+
+两图只作静态交通场景/标签，不证go执行/乘车成功/方向检查/完整拓扑；早期3分钟4人/2003航空go不回填，收费/容量/遇敌/权限/原ID/build/保存仍未知。原HTML/JPEG/程序不入Git；最高NEXT76回另一地区人物创建/外观或具名宠物生态，优先运营站；Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停，全部旧历史完整。

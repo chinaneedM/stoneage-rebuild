@@ -24,7 +24,7 @@ class MammothSourceTests(unittest.TestCase):
    lambda d:d['extraction']['version_context'].update(transport_bound_to_either_build='BOTH'),
    lambda d:d['extraction']['fast_departure'].update(case_variants=['GO']),lambda d:d['extraction']['fast_departure'].update(authorization_or_minimum_passengers=1),
    lambda d:d['extraction']['fast_departure'].update(accepted_server_command_observed=True),
-   lambda d:d['extraction']['exit'].update(refund=0),lambda d:d['extraction']['boarding'].update(exact_icon_or_coordinates=[1,2]),
+   lambda d:d['extraction']['exit'].update(refund=0),lambda d:d['extraction']['boarding'].update(exact_icon_or_coordinates=[1,2]),lambda d:d['extraction']['boarding']['steps'].__setitem__(2,'FACE_MAMMOTH'),
    lambda d:d['extraction'].update(source_layer='DIRECT_OFFICIAL'),lambda d:d['image_observations'][1].update(label_scope='DIRECTED_ROUTE_EDGES'),
    lambda d:d['image_observations'][0].update(native_client_resolution=[550,413]),lambda d:d['images'][0].update(sha256='0'*64),
    lambda d:d['unselected_image'].update(pixels_acquired=True)]
@@ -67,5 +67,31 @@ class MammothSourceTests(unittest.TestCase):
   for p,ref in zip(r['images'],r['extraction']['image_references']):self.assertEqual(p['url_as_written'],ref['src'])
   with self.assertRaises(KeyError):m.inspect_images({},r)
   with self.assertRaises((ValueError,OSError)):m.inspect_images({'I1':b'<html>error</html>'},r)
+
+ def test_custody_rejects_missing_changed_misattributed_or_promoted_reports(self):
+  receipt=m.verify_custody()
+  with tempfile.TemporaryDirectory() as name:
+   root=Path(name);path=root/f'research/recovered/{m.STEM}-CUSTODY-R1.json'
+   for pin in receipt['permanent_pins']:
+    p=root/pin['path'];p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes((m.ROOT/pin['path']).read_bytes())
+   path.write_text(json.dumps(receipt));m.verify_custody(root)
+   for pin in receipt['permanent_pins']:
+    p=root/pin['path'];raw=p.read_bytes();p.write_bytes(raw[:-1]+bytes([raw[-1]^1]))
+    with self.assertRaises(ValueError):m.verify_custody(root)
+    p.unlink()
+    with self.assertRaises(FileNotFoundError):m.verify_custody(root)
+    p.write_bytes(raw)
+   changes=[lambda d:d['runs'].append(d['runs'][0]),lambda d:d.update(content_commit='0'*40),
+    lambda d:d['jobs_and_artifacts']['main']['artifact']['workflow_run'].update(head_branch='OTHER'),
+    lambda d:d['jobs_and_artifacts']['main'].update(job=d['jobs_and_artifacts']['candidate']['job']),
+    lambda d:d.update(current_http_bytes_are_historical_bytes=True),
+    lambda d:d['raw_replays']['main'].update(equals_initial_inputs=False),
+    lambda d:d.update(candidate_main_raw_bytes_equal=False),lambda d:d.update(initial_inputs=[]),
+    lambda d:d['permanent_pins'].pop(),lambda d:d['superseded_candidate'].update(not_used_for_final_semantic_acceptance=False)]
+   for change in changes:
+    d=copy.deepcopy(receipt);change(d);path.write_text(json.dumps(d))
+    with self.assertRaises(ValueError):m.verify_custody(root)
+   path.unlink()
+   with self.assertRaises(FileNotFoundError):m.verify_custody(root)
 
 if __name__=='__main__':unittest.main()

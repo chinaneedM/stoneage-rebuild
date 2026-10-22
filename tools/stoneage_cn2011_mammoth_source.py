@@ -110,6 +110,7 @@ def verify_report(r):
  require(r['comparison']==comparison() and r['catalog_records']==catalog(r['extraction'],r['image_observations']),'Comparison/catalog detached')
  ex=r['extraction'];require(ex['source_layer']=='CINS_NAMED_PROMOTIONAL_ARTICLE_PUBLISHED_BY_SINA_NOT_AUTHENTICATED_ISSUER_FILE' and ex['original_server_runtime_verified'] is False,'Source authority promoted')
  require(all(v is None for v in ex['unknown_rules'].values()) and len(ex['unknown_rules'])==11 and ex['version_context']['transport_bound_to_either_build'] is None,'Cross version unknown promoted')
+ require(ex['boarding']['steps'][2]=='STAND_IN_FRONT_OF_MAMMOTH','Source front position became orientation check')
  require(ex['boarding']['exact_icon_or_coordinates'] is None and all(ex['fast_departure'][k] is None for k in ('case_variants','authorization_or_minimum_passengers')) and ex['fast_departure']['accepted_server_command_observed'] is False and ex['exit']['drop_location'] is None and ex['exit']['refund'] is None,'UI/command execution invented')
  require(r['image_observations']==[
   {'id':'I1','manual_visual_review':True,'kind':'GAME_SCENE_WITH_TRANSPORT_STATION','observed':['TOP_ICON_TOOLBAR','MAMMOTH_NEAR_STONE_QUEUE_BAYS','CHARACTERS_AND_SIGNPOSTS','BOTTOM_LABEL_LONG_HAIRED_ELEPHANT_TRANSPORT'],
@@ -157,10 +158,41 @@ def read_inputs(directory=None):
  return out
 
 
+def verify_custody(root=None):
+ root=ROOT if root is None else Path(root)
+ receipt=json.loads((root/f'research/recovered/{STEM}-CUSTODY-R1.json').read_text())
+ require(receipt['original_game_runtime_verified'] is False and receipt['current_http_bytes_are_historical_bytes'] is False,'Custody authority promoted')
+ old=receipt['superseded_candidate'];require(old['commit']!=receipt['content_commit'] and old['not_used_for_final_semantic_acceptance'] is True and old['source_report_history_retained_in_original_git_commit'] is True and old['artifact']['workflow_run']['head_sha']==old['commit'],'Pre-correction candidate became final authority')
+ runs=receipt['runs'];require(len(runs)>=2 and len({r['id'] for r in runs})==len(runs) and all(r['head_sha']==receipt['content_commit'] and r['status']=='completed' and r['conclusion']=='success' for r in runs),'CI provenance incomplete/changed')
+ required={f'research/recovered/{STEM}-{part}-R1.json' for part in ('SOURCE','CI-CANDIDATE','CI-MAIN')}|set(PARENTS)|set(PARSERS)
+ pins=receipt['permanent_pins'];require(len(pins)==len(required) and {p['path'] for p in pins}==required,'Permanent pins missing/duplicate')
+ for p in pins:
+  require(not Path(p['path']).is_absolute() and '..' not in Path(p['path']).parts,'Invalid pin path')
+  raw=(root/p['path']).read_bytes();require(len(raw)==p['bytes'] and sha(raw)==p['sha256'] and hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest()==p['git_blob'],'Permanent bytes/Git identity changed')
+ source=json.loads((root/f'research/recovered/{STEM}-SOURCE-R1.json').read_text())
+ require(source['parent_pins']+source['parser_dependency_pins']==[next(p for p in pins if p['path']==path) for path in PARENTS+PARSERS],'Parent custody detached')
+ initial=[{k:p[k] for k in ('id','url','bytes','sha256')} for p in source['source_pages']]
+ require(receipt['initial_inputs']==initial,'Initial source history lost')
+ artifacts=[];jobs=[];raws=[]
+ for role in ('candidate','main'):
+  proof=receipt['jobs_and_artifacts'][role];a=proof['artifact'];ar=a['workflow_run'];branch='main' if role=='main' else receipt['candidate_branch']
+  matching=[r for r in runs if r['id']==proof['run']]
+  require(len(matching)==1 and matching[0]['branch']==branch and ar['head_branch']==branch and ar['head_sha']==receipt['content_commit'] and ar['id']==proof['run'] and proof['job_conclusion']=='success' and proof['zip_downloaded_and_digest_verified'] is True and a['name']=='cn2011-mammoth-derived-r75' and re.fullmatch(r'sha256:[0-9a-f]{64}',a['digest']),'Job/artifact/run detached')
+  artifacts.append(a['id']);jobs.append(proof['job'])
+  path=f'research/recovered/{STEM}-CI-{role.upper()}-R1.json';raw=(root/path).read_bytes();raws.append(raw);replay=json.loads(raw)
+  expected_pin=next(p for p in pins if p['path']==path);record=receipt['raw_replays'][role]
+  require(all(record[k]==expected_pin[k] for k in ('path','bytes','sha256','git_blob')) and record['inputs']==replay['inputs'],'Original replay record changed')
+  require(len(replay['inputs'])==1 and all(i['id']==sid and i['url']==URLS[sid] and isinstance(i['bytes'],int) and i['bytes']>0 and re.fullmatch('[0-9a-f]{64}',i['sha256']) for sid,i in zip(('S1',),replay['inputs'])),'Input identity changed')
+  require(record['equals_initial_inputs']==(replay['inputs']==initial),'Current-byte equality misreported')
+  require(all(replay[k]==source[k] for k in ('extraction','images','image_observations','catalog_records','comparison')) and replay['audit']=={'semantic_mutations_rejected_without_digest_or_core_fingerprint_gate':12,'peripheral_script_positive':True,'unselected_map_count_positive':True} and replay['original_html_or_assets_in_output'] is False and replay['original_game_runtime_verified'] is False,'Raw replay semantic/boundary mismatch')
+ require(len(set(artifacts))==len(set(jobs))==2 and receipt['candidate_main_raw_bytes_equal']==(raws[0]==raws[1]),'Candidate/main evidence substituted or equality misreported')
+ return receipt
+
+
 def main():
  p=argparse.ArgumentParser();g=p.add_mutually_exclusive_group(required=True);g.add_argument('--fetch',action='store_true');g.add_argument('--input-dir');p.add_argument('--output',required=True);a=p.parse_args()
  r=json.loads(REPORT.read_text());out=replay(read_inputs(a.input_dir),r)
- if (ROOT/f'research/recovered/{STEM}-CUSTODY-R1.json').exists():verify_custody()
+ verify_custody()
  target=Path(a.output);target.parent.mkdir(parents=True,exist_ok=True);target.write_text(json.dumps(out,ensure_ascii=False,indent=2)+'\n')
  print(json.dumps({'articles':1,'actual_scene_jpegs':2,'catalog_records':3,'semantic_mutations':12}))
 

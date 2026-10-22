@@ -46,3 +46,6 @@
 
 
 R75验收前措辞收紧：首候选eca552d814b87f42536175d435dfc699077b22a9的“面向”/FACE_MAMMOTH过强；原文仅“在长毛象面前”，现改为STAND_IN_FRONT_OF_MAMMOTH（站在公车面前），不证明人物朝向检查或方向标志。原候选、六单元工件及其Git历史保留，新内容提交需重新实取验收，不能借前稿绿灯。本次不是源正文或图片变化。
+
+
+最终内容057eadeb49fa847d4d6092840afd64a79efd3765的候选10/main11项实际成功，两专用job各六单元、一文两图实取。双ZIP实际下载比API，正确稿双原JSON11062B/SHA256b80fa0a345db306b86bd2e3b3588e1a4bba548dae4707da14e33537f8a701c3c/Git22ac399dca4162ff69b0ef3a9d5d8e7938341adb，与修正后local及保管门后local逐字节一致；原输入未变。双正确稿原JSON及CUSTODY收据永久保存，固定八文件/21run/job/artifact/ZIP链，另明确首候选仅更正历史、不是最终验收。强制保管门后七单元、相关26项本地通过，保管提交自身候选/main CI另须实查。朝向检查仍未知；NEXT76与Stage状态不变。
