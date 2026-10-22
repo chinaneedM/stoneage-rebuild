@@ -17004,3 +17004,10 @@ R62同包增加既有19集合合同的可检索导出：6条quests文献关系�
 R66已取得一篇新具名版号文献，预检见 research/recovered/STONEAGE-STA253-SPEAKER-SOURCE-HANDOFF-R1.json：17173 2002-03-27页面，当前HTTP200/UTF8严格/45844B/SHA256 de559d52986b8403c96b4657d6744af8f3f164b4611fddab661090532297fb4e。外层作者ZHY、附录暗夜之狼及附录内地藏乌拉引文分三发言层；仅一当前页面，不能计三个独立来源。具名Sta2.53的详细信息/可编辑料理脚本/原地遇敌与速度争议值得下一步有限结构化；当前仅保存选材线索与话语冲突，不决断谁正确、不补未知build、不认证原服或内挂采纳。未下载工具、原HTML/资源不入Git。
 
 最高NEXT仍OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-66，预检不当R66验收或全部外挂完成。Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停。所有旧历史完整保留。
+
+
+### 2026-10-22 R65运行归属增量真实双端验收
+
+增量提交 `989cf27ca93d557656c2d0cd25a65b54447a0ef5` / tree `9d24d9722a6bc09f173b9c9ce05671138946f314` 已从新读main117fc2a以expected-SHA保护非强制快进。五blob及整tree与本地一致，CURRENT/路线此前2317750/254578B完整历史前缀保留。候选8/main9项适用Actions实际全部completed/success；专用候选run39725374177/job119647942675、主线run39725427542/job119648112322日志均实际9单元及两网页/17语义反例通过。不同提交的七/八项记录原样保留。
+
+两个新源工件artifact12402667974/12402294739各1619B，实际下载摘要7b6e55ed8e4db14456faf5994bfe71349ab1b463863bfc915fdc3cf35c6b49fb / f591c04160f870c3e581b61d640420cadd0b2f50373d413a45e1da25abee3ca4逐一符合API；各唯一replay.json仍逐字节等于原永久3136B/raw d7c30e3a817d34420724bf6b3b56dc08befed20df34e8a7b90cde102daa4495a，不再复制相同raw。永久增量验收见research/recovered/STONEAGE-JP2004-SEALED-REGION-PROVENANCE-GUARD-ACCEPTANCE-R1.json；原收据没有被替换。当前新说明/验收文件自身CI另查，不借用旧绿灯。最高NEXT66及新取得STA2.53发言层预检保持OPEN，未称完整功能归档已验收；Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停。
