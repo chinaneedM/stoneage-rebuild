@@ -17456,3 +17456,14 @@ CLI现强制要求收据；缺失、同长篡改、门禁遗漏/重复、错误�
 新增spec/SOURCE/工具/专用工作流，17完整文献目录行=1任务+7 NPC出现+1地图路线关系+5物品+1教程+2屏幕，七必填/19集合核验，不当17原实体恢复。三父报告/共享解析器原字节Git固定，27去指纹门语义改写、隐藏/正文外2反例、外围script正例；本包7单元/相关24项及原输入离线回放通过。首次相关回归误写不存在的five_brothers模块名，修正后全过，源本包测试/回放本身未失败；远端门/原ZIP保管待后验。
 
 停止于一攻略两图。重开需同版原商业脚本/flag/ID、认证历史原画或实服通信/保存。最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-82回台湾地区具名宠物模型/技能/生态或官方版本世界线，不继续扩梦德盗物/helper。Stage A7 PARTIAL+2 OPEN，B/wiki GATED，savedata R79 PAUSED_NON_BLOCKING，无整体百分比，旧历史不删。
+
+
+### R81双端取源验收与永久派生保管（2026-10-23）
+
+内容2530499c76c3780e8b7d2e15982563d88f93f0c5/treed112a01ed9f932df14745e94792acf92f412f29c，候选10/main11项实际completed/success，九文件原生Git blob及整tree逐一相符，四连续性旧全文前缀完整；新读main旧HEAD后expected_sha保护非强制快进。专用候选run39874364409/job120156231594/artifact12466888933，主线run39874471682/job120156583328/artifact12467880934，实际各7单元及一正文两完整JPEG实取解码、27去正文指纹门语义改写、隐藏/正文外2反例成功。
+
+两实际ZIP各5170B，SHA25686f190d3e823f3c69ab6bc823a7256b4bace790c8b6061ac981c4eb51f225ef7 / 8922bd5b4b1067e48a207800bab5b30f3fa4c28d58b9bdbed9055d68e85ce93f分别符合API；唯一replay.json各32210B/SHA25643a01c1bcce470814879c163a7b1d135874b5777aa218c2a92063263a64861cb。候选/main/local/保管门后local四份逐字节相同，三HTTP输入均同初取；这不是2003原字节/原像素认证或原服事件运行。
+
+双原CI JSON与STONEAGE-CN2003-MENGDE-CAVE-CUSTODY-R1.json永久入Git；七pin固定SOURCE、三父报告、共享解析器和双原报告原字节/Git身份。收据保存内容HEAD/tree、21实际run、双job/artifact/ZIP/raw/input历史。CLI强制验保管并固定完整21项run摘要及源run/job/artifact准确ID，拒绝缺失/同长篡改、错HEAD/tree/分支/任务、遗漏/重复或成功门替代、复用工件、虚报初取相等或提升官方作者/历史字节/原服权威。新增第8保管单元，相关25项本地回归通过，原输出字节不变；原内容CI七单元历史不改称八单元。保管提交自身候选/main须另实后验。
+
+本包可查的是三村叙事、文献NPC出现/分层坐标、口令、取石和顺序敏感奖励，未取得原任务脚本/flag、模型或盗物算法。领奖次序与原字串、2000S可售非现金、推荐非硬门、画面非实发奖及早期记录点/吉鲁生态边界不变。最高NEXT82转台湾具名宠物模型/技能/生态或官方版本世界线；Stage A7 PARTIAL+2 OPEN，B/wiki GATED，savedata R79 PAUSED_NON_BLOCKING，旧历史全留。

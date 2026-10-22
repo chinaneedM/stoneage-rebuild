@@ -1,0 +1,1020 @@
+{
+  "schema": "stoneage.cn2003_mengde.replay.r1",
+  "inputs": [
+    {
+      "id": "S1",
+      "url": "https://games.sina.com.cn/zhqu/sta/rwgl1_11.shtml",
+      "bytes": 50035,
+      "sha256": "85b08eec3a4235de8e9a19f8e88abd4698573a74e2c96afb8667fcc4a8208d8b"
+    },
+    {
+      "id": "I1",
+      "url": "https://image2.sina.com.cn/gm/zhqu/sta/article/2003-05-29/1_115-15-232-572_2003052917425.jpg",
+      "bytes": 92532,
+      "sha256": "9489d96399a014a090b3265e00af75e2241a96c20e98af75922c3319bc889948"
+    },
+    {
+      "id": "I2",
+      "url": "https://image2.sina.com.cn/gm/zhqu/sta/article/2003-05-29/1_115-15-238-572_2003052917425.jpg",
+      "bytes": 94389,
+      "sha256": "c5196cae526922f517fe5e146c068e0e23b389b6fe4581d926660f3bab59a5e6"
+    }
+  ],
+  "extraction": {
+    "name": "梦德洞窟",
+    "recommended_level_as_reported": 60,
+    "hard_level_gate": null,
+    "prerequisite_as_reported": "解过成人仪式",
+    "transport": [
+      "步行",
+      "骑宠"
+    ],
+    "feather_labels": [
+      "卡坦村",
+      "霍特尔村"
+    ],
+    "village_interactions": [
+      {
+        "occurrence": "KELKE_GIRL",
+        "village": "柯尔克村",
+        "world_coord": [
+          43,
+          49
+        ],
+        "npc_label": "村姑",
+        "local_coord": [
+          96,
+          75
+        ],
+        "outfit": "红色战斗装",
+        "role": "INTRODUCE_FRIENDS_IN_TWO_VILLAGES"
+      },
+      {
+        "occurrence": "HOTER_GIRL",
+        "village": "霍特尔村",
+        "world_coord": [
+          622,
+          193
+        ],
+        "npc_label": "村姑",
+        "local_coord": [
+          64,
+          65
+        ],
+        "outfit": "绿色战斗装",
+        "role": "REPORT_STOLEN_STONE_AND_ASK_TO_VISIT_KATAN"
+      },
+      {
+        "occurrence": "KATAN_YOUTH",
+        "village": "卡坦村",
+        "world_coord": [
+          259,
+          170
+        ],
+        "npc_label": "年轻人",
+        "local_coord": [
+          71,
+          76
+        ],
+        "outfit": null,
+        "role": "REPORT_STOLEN_STONE_AND_TELL_PASSWORD"
+      }
+    ],
+    "story": {
+      "setting": "SPARSE_DESERT_BETWEEN_KATAN_AND_HOTER_CONTROLLED_BY_MENGDE_THIEVES",
+      "hoter_consequence_as_told": "BAD_OMENS_WITHOUT_GUARDIAN_STONE",
+      "katan_consequence_as_told": "IMPORTANT_FESTIVAL_CANNOT_BE_HELD",
+      "chief_response_as_told": "SURRENDERS_STONES_AFTER_TANG_WU_DEFEATED",
+      "developer_intent_or_real_world_history": null
+    },
+    "dungeon": {
+      "road_label": "往柯尔克的道路",
+      "road_coord": [
+        318,
+        428
+      ],
+      "entrance_world_coord": [
+        443,
+        127
+      ],
+      "entrance_description": "WELL_WEST_OF_HOTER_MOUNTAIN",
+      "gate_actor": "UNNAMED_THIEF",
+      "password": "在卡坦有梦德",
+      "quote_delimiters_as_written": [
+        "\"在卡坦有梦德\"",
+        "「在卡坦有梦德\""
+      ],
+      "server_case_encoding_or_punctuation_match": null,
+      "guards": [
+        {
+          "name": "唐",
+          "local_coord": [
+            23,
+            42
+          ]
+        },
+        {
+          "name": "悟",
+          "local_coord": [
+            22,
+            42
+          ]
+        }
+      ],
+      "guard_floor_description": "最底层",
+      "numeric_floor_count": null,
+      "chief": "梦德",
+      "chief_coord": null,
+      "theft_warning": "BELONGINGS_MAY_BE_STOLEN",
+      "theft_targets_algorithm_probability": null,
+      "enemy_stats_or_spawn_table": null
+    },
+    "stones": [
+      {
+        "name_as_quoted": "霍特尔的保护石",
+        "return_context": "霍特尔村的守护石",
+        "recipient": "HOTER_GIRL"
+      },
+      {
+        "name_as_quoted": "卡坦的保护石",
+        "return_context": "卡坦村的守护石",
+        "recipient": "KATAN_YOUTH"
+      }
+    ],
+    "reward_sequence_as_reported": [
+      "KATAN_YOUTH_RETURN_STONE",
+      "HOTER_GIRL_RETURN_STONE",
+      "KELKE_GIRL_REPORT_SUCCESS"
+    ],
+    "reversed_first_two_warning": "NO_YELLOW_ACCESSORY_FROM_KELKE_GIRL_AS_GUIDE_CLAIM",
+    "reward_order_server_flag_or_atomic_transaction": null,
+    "rewards": [
+      {
+        "name": "芙蕾雅Lv1铠6",
+        "from": "KATAN_YOUTH",
+        "stats": {
+          "防": 20,
+          "敏": -6
+        },
+        "spirit": "滋润的精灵",
+        "spirit_level": 1,
+        "label_number_6_is_native_equipment_level_verified": false
+      },
+      {
+        "name": "勾玉",
+        "from": "HOTER_GIRL",
+        "description": "美丽的勾玉",
+        "sale_value_as_reported": 2000,
+        "currency_label_as_written": "S",
+        "sale_venue_or_actual_sale": null,
+        "automatic_cash_reward": false
+      },
+      {
+        "name": "黄色大首饰",
+        "from": "KELKE_GIRL",
+        "stats": {
+          "魅": 5,
+          "睡眠耐性": 30
+        },
+        "condition": "RETURN_KATAN_THEN_HOTER_THEN_REPORT_KELKE",
+        "actual_status_resistance_tested": false
+      }
+    ],
+    "route_advice": {
+      "kelke_feather_unavailable_as_guide_claim": true,
+      "recordpoint_meat_as_written": "贝洛恩的肉",
+      "suggested_first_checkpoint": "柯尔克村",
+      "meat_quantity_consumption_original_id": null,
+      "storage_format_or_original_io_test": null,
+      "party_or_over_60_is_advice_not_admission_rule": true
+    },
+    "exact_game_build": null,
+    "original_map_npc_quest_item_ids": null,
+    "repeatability_reset_and_item_consumption": null,
+    "original_server_runtime_verified": false,
+    "image_links": {
+      "full_thumbnail_pairs": 12,
+      "selected_full_http": [
+        "http://image2.sina.com.cn/gm/zhqu/sta/article/2003-05-29/1_115-15-232-572_2003052917425.jpg",
+        "http://image2.sina.com.cn/gm/zhqu/sta/article/2003-05-29/1_115-15-238-572_2003052917425.jpg"
+      ],
+      "selected_thumbnails_http": [
+        "http://image2.sina.com.cn/gm/zhqu/sta/article/2003-05-29/1_115-15-231-572_2003052917425.jpg",
+        "http://image2.sina.com.cn/gm/zhqu/sta/article/2003-05-29/1_115-15-237-572_2003052917425.jpg"
+      ],
+      "unacquired_full_images": 10
+    },
+    "core_fingerprint": {
+      "characters": 1683,
+      "utf8_bytes": 4783,
+      "sha256": "247b07e0ea2ce1fc925e24cad336b0ab02b2e5a95f9cc6e40f6b38ef50b083bc"
+    }
+  },
+  "images": [
+    {
+      "id": "I1",
+      "url": "https://image2.sina.com.cn/gm/zhqu/sta/article/2003-05-29/1_115-15-232-572_2003052917425.jpg",
+      "http_status": 200,
+      "no_redirect": true,
+      "bytes": 92532,
+      "sha256": "9489d96399a014a090b3265e00af75e2241a96c20e98af75922c3319bc889948",
+      "format": "JPEG",
+      "mode": "RGB",
+      "size": [
+        640,
+        480
+      ],
+      "frames": 1
+    },
+    {
+      "id": "I2",
+      "url": "https://image2.sina.com.cn/gm/zhqu/sta/article/2003-05-29/1_115-15-238-572_2003052917425.jpg",
+      "http_status": 200,
+      "no_redirect": true,
+      "bytes": 94389,
+      "sha256": "c5196cae526922f517fe5e146c068e0e23b389b6fe4581d926660f3bab59a5e6",
+      "format": "JPEG",
+      "mode": "RGB",
+      "size": [
+        640,
+        480
+      ],
+      "frames": 1
+    }
+  ],
+  "visual_observations": [
+    {
+      "id": "I1",
+      "manual_visual_review": true,
+      "kind": "STATIC_INVENTORY_ARMOR_TOOLTIP_WITH_DESERT_CHARACTERS",
+      "displayed_item_label": "芙蕾雅Lv1铠6",
+      "displayed_stats": {
+        "防": 20,
+        "敏": -6
+      },
+      "displayed_spirit": "滋润的精灵Lv1",
+      "scene": [
+        "DESERT",
+        "CACTUS",
+        "TWO_CHARACTERS"
+      ],
+      "npc_identity_independently_visible": false,
+      "actual_reward_delivery_or_item_effect_tested": false,
+      "original_sprite_or_model": false,
+      "exact_build_or_native_resolution_verified": false
+    },
+    {
+      "id": "I2",
+      "manual_visual_review": true,
+      "kind": "STATIC_INVENTORY_ACCESSORY_TOOLTIP_WITH_GRASS_ROCKS",
+      "displayed_item_label": "黄色大首饰",
+      "displayed_stats": {
+        "魅": 5,
+        "睡眠耐性": 30
+      },
+      "scene": [
+        "GRASS",
+        "ROCK_WALL",
+        "TWO_CHARACTERS"
+      ],
+      "npc_identity_independently_visible": false,
+      "actual_reward_delivery_or_item_effect_tested": false,
+      "original_sprite_or_model": false,
+      "exact_build_or_native_resolution_verified": false
+    }
+  ],
+  "comparison": {
+    "early_recordpoint": {
+      "schema": "stoneage.cn20_recordpoint.source.r1",
+      "source_role": "EARLY_OPERATOR_HOSTED_GUIDE",
+      "near_kelke_row": [
+        {
+          "island_label": "北岛",
+          "place_as_written": "柯尔克通路附近",
+          "coordinate_cell_as_written": "342 466",
+          "meat_cell_as_written": "乌力坦斯x1 、贝恩达斯x1、 巴洛洛克斯x1",
+          "original_map_npc_item_ids": null,
+          "coordinates_are_verified_npc_positions": false,
+          "multiple_coordinate_meaning": null,
+          "multi_meat_operator": null
+        }
+      ],
+      "nearby_row_equals_village_checkpoint": false,
+      "meat_names_forced_to_alias": false,
+      "missing_village_row_means_no_checkpoint": false,
+      "later_guide_advice_is_original_save_format": false
+    },
+    "five_brothers": {
+      "schema": "stoneage.five_brothers.source.r1",
+      "ecology_region_label": "吉鲁岛",
+      "beluorn_jilu_ecology_backfilled_to_mengde": false,
+      "recommended_60_is_shared_hard_level": false,
+      "reward_reset_after_rebirth_backfilled": false,
+      "same_spirit_name_means_same_item_id": false
+    },
+    "modern_adoption_decided": false,
+    "portal_title_authenticates_version_182": false
+  },
+  "catalog_records": [
+    {
+      "record_id": "CN2003-R81-quest",
+      "entity_type": "DOCUMENTARY_ORDER_SENSITIVE_RECOVERY_QUEST",
+      "collection": "quests",
+      "version_profile": "CN_SINA_GUIDE_MENGDE_20030529_EXACT_OFFICIAL_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "DATED_PLAYER_GUIDE_OR_STATIC_SCREEN_NOT_SERVER_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "name": "梦德洞窟",
+        "recommended_level_as_reported": 60,
+        "hard_level_gate": null,
+        "prerequisite_as_reported": "解过成人仪式",
+        "transport": [
+          "步行",
+          "骑宠"
+        ],
+        "feather_labels": [
+          "卡坦村",
+          "霍特尔村"
+        ],
+        "village_interactions": [
+          {
+            "occurrence": "KELKE_GIRL",
+            "village": "柯尔克村",
+            "world_coord": [
+              43,
+              49
+            ],
+            "npc_label": "村姑",
+            "local_coord": [
+              96,
+              75
+            ],
+            "outfit": "红色战斗装",
+            "role": "INTRODUCE_FRIENDS_IN_TWO_VILLAGES"
+          },
+          {
+            "occurrence": "HOTER_GIRL",
+            "village": "霍特尔村",
+            "world_coord": [
+              622,
+              193
+            ],
+            "npc_label": "村姑",
+            "local_coord": [
+              64,
+              65
+            ],
+            "outfit": "绿色战斗装",
+            "role": "REPORT_STOLEN_STONE_AND_ASK_TO_VISIT_KATAN"
+          },
+          {
+            "occurrence": "KATAN_YOUTH",
+            "village": "卡坦村",
+            "world_coord": [
+              259,
+              170
+            ],
+            "npc_label": "年轻人",
+            "local_coord": [
+              71,
+              76
+            ],
+            "outfit": null,
+            "role": "REPORT_STOLEN_STONE_AND_TELL_PASSWORD"
+          }
+        ],
+        "story": {
+          "setting": "SPARSE_DESERT_BETWEEN_KATAN_AND_HOTER_CONTROLLED_BY_MENGDE_THIEVES",
+          "hoter_consequence_as_told": "BAD_OMENS_WITHOUT_GUARDIAN_STONE",
+          "katan_consequence_as_told": "IMPORTANT_FESTIVAL_CANNOT_BE_HELD",
+          "chief_response_as_told": "SURRENDERS_STONES_AFTER_TANG_WU_DEFEATED",
+          "developer_intent_or_real_world_history": null
+        },
+        "dungeon": {
+          "road_label": "往柯尔克的道路",
+          "road_coord": [
+            318,
+            428
+          ],
+          "entrance_world_coord": [
+            443,
+            127
+          ],
+          "entrance_description": "WELL_WEST_OF_HOTER_MOUNTAIN",
+          "gate_actor": "UNNAMED_THIEF",
+          "password": "在卡坦有梦德",
+          "quote_delimiters_as_written": [
+            "\"在卡坦有梦德\"",
+            "「在卡坦有梦德\""
+          ],
+          "server_case_encoding_or_punctuation_match": null,
+          "guards": [
+            {
+              "name": "唐",
+              "local_coord": [
+                23,
+                42
+              ]
+            },
+            {
+              "name": "悟",
+              "local_coord": [
+                22,
+                42
+              ]
+            }
+          ],
+          "guard_floor_description": "最底层",
+          "numeric_floor_count": null,
+          "chief": "梦德",
+          "chief_coord": null,
+          "theft_warning": "BELONGINGS_MAY_BE_STOLEN",
+          "theft_targets_algorithm_probability": null,
+          "enemy_stats_or_spawn_table": null
+        },
+        "stones": [
+          {
+            "name_as_quoted": "霍特尔的保护石",
+            "return_context": "霍特尔村的守护石",
+            "recipient": "HOTER_GIRL"
+          },
+          {
+            "name_as_quoted": "卡坦的保护石",
+            "return_context": "卡坦村的守护石",
+            "recipient": "KATAN_YOUTH"
+          }
+        ],
+        "reward_sequence_as_reported": [
+          "KATAN_YOUTH_RETURN_STONE",
+          "HOTER_GIRL_RETURN_STONE",
+          "KELKE_GIRL_REPORT_SUCCESS"
+        ],
+        "reversed_first_two_warning": "NO_YELLOW_ACCESSORY_FROM_KELKE_GIRL_AS_GUIDE_CLAIM",
+        "reward_order_server_flag_or_atomic_transaction": null,
+        "rewards": [
+          {
+            "name": "芙蕾雅Lv1铠6",
+            "from": "KATAN_YOUTH",
+            "stats": {
+              "防": 20,
+              "敏": -6
+            },
+            "spirit": "滋润的精灵",
+            "spirit_level": 1,
+            "label_number_6_is_native_equipment_level_verified": false
+          },
+          {
+            "name": "勾玉",
+            "from": "HOTER_GIRL",
+            "description": "美丽的勾玉",
+            "sale_value_as_reported": 2000,
+            "currency_label_as_written": "S",
+            "sale_venue_or_actual_sale": null,
+            "automatic_cash_reward": false
+          },
+          {
+            "name": "黄色大首饰",
+            "from": "KELKE_GIRL",
+            "stats": {
+              "魅": 5,
+              "睡眠耐性": 30
+            },
+            "condition": "RETURN_KATAN_THEN_HOTER_THEN_REPORT_KELKE",
+            "actual_status_resistance_tested": false
+          }
+        ],
+        "route_advice": {
+          "kelke_feather_unavailable_as_guide_claim": true,
+          "recordpoint_meat_as_written": "贝洛恩的肉",
+          "suggested_first_checkpoint": "柯尔克村",
+          "meat_quantity_consumption_original_id": null,
+          "storage_format_or_original_io_test": null,
+          "party_or_over_60_is_advice_not_admission_rule": true
+        },
+        "exact_game_build": null,
+        "original_map_npc_quest_item_ids": null,
+        "repeatability_reset_and_item_consumption": null,
+        "original_server_runtime_verified": false,
+        "image_links": {
+          "full_thumbnail_pairs": 12,
+          "selected_full_http": [
+            "http://image2.sina.com.cn/gm/zhqu/sta/article/2003-05-29/1_115-15-232-572_2003052917425.jpg",
+            "http://image2.sina.com.cn/gm/zhqu/sta/article/2003-05-29/1_115-15-238-572_2003052917425.jpg"
+          ],
+          "selected_thumbnails_http": [
+            "http://image2.sina.com.cn/gm/zhqu/sta/article/2003-05-29/1_115-15-231-572_2003052917425.jpg",
+            "http://image2.sina.com.cn/gm/zhqu/sta/article/2003-05-29/1_115-15-237-572_2003052917425.jpg"
+          ],
+          "unacquired_full_images": 10
+        },
+        "core_fingerprint": {
+          "characters": 1683,
+          "utf8_bytes": 4783,
+          "sha256": "247b07e0ea2ce1fc925e24cad336b0ab02b2e5a95f9cc6e40f6b38ef50b083bc"
+        }
+      }
+    },
+    {
+      "record_id": "CN2003-R81-KELKE_GIRL",
+      "entity_type": "DOCUMENTARY_VILLAGE_NPC_OCCURRENCE_NOT_NATIVE_ID",
+      "collection": "npcs",
+      "version_profile": "CN_SINA_GUIDE_MENGDE_20030529_EXACT_OFFICIAL_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "DATED_PLAYER_GUIDE_OR_STATIC_SCREEN_NOT_SERVER_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "occurrence": "KELKE_GIRL",
+        "village": "柯尔克村",
+        "world_coord": [
+          43,
+          49
+        ],
+        "npc_label": "村姑",
+        "local_coord": [
+          96,
+          75
+        ],
+        "outfit": "红色战斗装",
+        "role": "INTRODUCE_FRIENDS_IN_TWO_VILLAGES"
+      }
+    },
+    {
+      "record_id": "CN2003-R81-HOTER_GIRL",
+      "entity_type": "DOCUMENTARY_VILLAGE_NPC_OCCURRENCE_NOT_NATIVE_ID",
+      "collection": "npcs",
+      "version_profile": "CN_SINA_GUIDE_MENGDE_20030529_EXACT_OFFICIAL_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "DATED_PLAYER_GUIDE_OR_STATIC_SCREEN_NOT_SERVER_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "occurrence": "HOTER_GIRL",
+        "village": "霍特尔村",
+        "world_coord": [
+          622,
+          193
+        ],
+        "npc_label": "村姑",
+        "local_coord": [
+          64,
+          65
+        ],
+        "outfit": "绿色战斗装",
+        "role": "REPORT_STOLEN_STONE_AND_ASK_TO_VISIT_KATAN"
+      }
+    },
+    {
+      "record_id": "CN2003-R81-KATAN_YOUTH",
+      "entity_type": "DOCUMENTARY_VILLAGE_NPC_OCCURRENCE_NOT_NATIVE_ID",
+      "collection": "npcs",
+      "version_profile": "CN_SINA_GUIDE_MENGDE_20030529_EXACT_OFFICIAL_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "DATED_PLAYER_GUIDE_OR_STATIC_SCREEN_NOT_SERVER_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "occurrence": "KATAN_YOUTH",
+        "village": "卡坦村",
+        "world_coord": [
+          259,
+          170
+        ],
+        "npc_label": "年轻人",
+        "local_coord": [
+          71,
+          76
+        ],
+        "outfit": null,
+        "role": "REPORT_STOLEN_STONE_AND_TELL_PASSWORD"
+      }
+    },
+    {
+      "record_id": "CN2003-R81-gate",
+      "entity_type": "DOCUMENTARY_UNNAMED_PASSWORD_GATE_ACTOR",
+      "collection": "npcs",
+      "version_profile": "CN_SINA_GUIDE_MENGDE_20030529_EXACT_OFFICIAL_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "DATED_PLAYER_GUIDE_OR_STATIC_SCREEN_NOT_SERVER_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "label": "UNNAMED_THIEF",
+        "coord": null
+      }
+    },
+    {
+      "record_id": "CN2003-R81-唐",
+      "entity_type": "DOCUMENTARY_NAMED_GUARD",
+      "collection": "npcs",
+      "version_profile": "CN_SINA_GUIDE_MENGDE_20030529_EXACT_OFFICIAL_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "DATED_PLAYER_GUIDE_OR_STATIC_SCREEN_NOT_SERVER_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "name": "唐",
+        "local_coord": [
+          23,
+          42
+        ]
+      }
+    },
+    {
+      "record_id": "CN2003-R81-悟",
+      "entity_type": "DOCUMENTARY_NAMED_GUARD",
+      "collection": "npcs",
+      "version_profile": "CN_SINA_GUIDE_MENGDE_20030529_EXACT_OFFICIAL_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "DATED_PLAYER_GUIDE_OR_STATIC_SCREEN_NOT_SERVER_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "name": "悟",
+        "local_coord": [
+          22,
+          42
+        ]
+      }
+    },
+    {
+      "record_id": "CN2003-R81-chief",
+      "entity_type": "DOCUMENTARY_THIEF_CHIEF",
+      "collection": "npcs",
+      "version_profile": "CN_SINA_GUIDE_MENGDE_20030529_EXACT_OFFICIAL_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "DATED_PLAYER_GUIDE_OR_STATIC_SCREEN_NOT_SERVER_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "name": "梦德",
+        "coord": null
+      }
+    },
+    {
+      "record_id": "CN2003-R81-routes",
+      "entity_type": "DOCUMENTARY_THREE_VILLAGE_AND_WELL_ROUTE_NOT_MAP_MASTER",
+      "collection": "maps",
+      "version_profile": "CN_SINA_GUIDE_MENGDE_20030529_EXACT_OFFICIAL_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "DATED_PLAYER_GUIDE_OR_STATIC_SCREEN_NOT_SERVER_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "villages": [
+          {
+            "occurrence": "KELKE_GIRL",
+            "village": "柯尔克村",
+            "world_coord": [
+              43,
+              49
+            ],
+            "npc_label": "村姑",
+            "local_coord": [
+              96,
+              75
+            ],
+            "outfit": "红色战斗装",
+            "role": "INTRODUCE_FRIENDS_IN_TWO_VILLAGES"
+          },
+          {
+            "occurrence": "HOTER_GIRL",
+            "village": "霍特尔村",
+            "world_coord": [
+              622,
+              193
+            ],
+            "npc_label": "村姑",
+            "local_coord": [
+              64,
+              65
+            ],
+            "outfit": "绿色战斗装",
+            "role": "REPORT_STOLEN_STONE_AND_ASK_TO_VISIT_KATAN"
+          },
+          {
+            "occurrence": "KATAN_YOUTH",
+            "village": "卡坦村",
+            "world_coord": [
+              259,
+              170
+            ],
+            "npc_label": "年轻人",
+            "local_coord": [
+              71,
+              76
+            ],
+            "outfit": null,
+            "role": "REPORT_STOLEN_STONE_AND_TELL_PASSWORD"
+          }
+        ],
+        "dungeon": {
+          "road_label": "往柯尔克的道路",
+          "road_coord": [
+            318,
+            428
+          ],
+          "entrance_world_coord": [
+            443,
+            127
+          ],
+          "entrance_description": "WELL_WEST_OF_HOTER_MOUNTAIN",
+          "gate_actor": "UNNAMED_THIEF",
+          "password": "在卡坦有梦德",
+          "quote_delimiters_as_written": [
+            "\"在卡坦有梦德\"",
+            "「在卡坦有梦德\""
+          ],
+          "server_case_encoding_or_punctuation_match": null,
+          "guards": [
+            {
+              "name": "唐",
+              "local_coord": [
+                23,
+                42
+              ]
+            },
+            {
+              "name": "悟",
+              "local_coord": [
+                22,
+                42
+              ]
+            }
+          ],
+          "guard_floor_description": "最底层",
+          "numeric_floor_count": null,
+          "chief": "梦德",
+          "chief_coord": null,
+          "theft_warning": "BELONGINGS_MAY_BE_STOLEN",
+          "theft_targets_algorithm_probability": null,
+          "enemy_stats_or_spawn_table": null
+        },
+        "coordinate_frames_not_interchangeable": true
+      }
+    },
+    {
+      "record_id": "CN2003-R81-stone-0",
+      "entity_type": "DOCUMENTARY_RETURN_OBJECT",
+      "collection": "items",
+      "version_profile": "CN_SINA_GUIDE_MENGDE_20030529_EXACT_OFFICIAL_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "DATED_PLAYER_GUIDE_OR_STATIC_SCREEN_NOT_SERVER_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "name_as_quoted": "霍特尔的保护石",
+        "return_context": "霍特尔村的守护石",
+        "recipient": "HOTER_GIRL"
+      }
+    },
+    {
+      "record_id": "CN2003-R81-stone-1",
+      "entity_type": "DOCUMENTARY_RETURN_OBJECT",
+      "collection": "items",
+      "version_profile": "CN_SINA_GUIDE_MENGDE_20030529_EXACT_OFFICIAL_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "DATED_PLAYER_GUIDE_OR_STATIC_SCREEN_NOT_SERVER_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "name_as_quoted": "卡坦的保护石",
+        "return_context": "卡坦村的守护石",
+        "recipient": "KATAN_YOUTH"
+      }
+    },
+    {
+      "record_id": "CN2003-R81-reward-0",
+      "entity_type": "DOCUMENTARY_QUEST_REWARD",
+      "collection": "items",
+      "version_profile": "CN_SINA_GUIDE_MENGDE_20030529_EXACT_OFFICIAL_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "DATED_PLAYER_GUIDE_OR_STATIC_SCREEN_NOT_SERVER_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "name": "芙蕾雅Lv1铠6",
+        "from": "KATAN_YOUTH",
+        "stats": {
+          "防": 20,
+          "敏": -6
+        },
+        "spirit": "滋润的精灵",
+        "spirit_level": 1,
+        "label_number_6_is_native_equipment_level_verified": false
+      }
+    },
+    {
+      "record_id": "CN2003-R81-reward-1",
+      "entity_type": "DOCUMENTARY_QUEST_REWARD",
+      "collection": "items",
+      "version_profile": "CN_SINA_GUIDE_MENGDE_20030529_EXACT_OFFICIAL_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "DATED_PLAYER_GUIDE_OR_STATIC_SCREEN_NOT_SERVER_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "name": "勾玉",
+        "from": "HOTER_GIRL",
+        "description": "美丽的勾玉",
+        "sale_value_as_reported": 2000,
+        "currency_label_as_written": "S",
+        "sale_venue_or_actual_sale": null,
+        "automatic_cash_reward": false
+      }
+    },
+    {
+      "record_id": "CN2003-R81-reward-2",
+      "entity_type": "DOCUMENTARY_QUEST_REWARD",
+      "collection": "items",
+      "version_profile": "CN_SINA_GUIDE_MENGDE_20030529_EXACT_OFFICIAL_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "DATED_PLAYER_GUIDE_OR_STATIC_SCREEN_NOT_SERVER_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "name": "黄色大首饰",
+        "from": "KELKE_GIRL",
+        "stats": {
+          "魅": 5,
+          "睡眠耐性": 30
+        },
+        "condition": "RETURN_KATAN_THEN_HOTER_THEN_REPORT_KELKE",
+        "actual_status_resistance_tested": false
+      }
+    },
+    {
+      "record_id": "CN2003-R81-checkpoint-advice",
+      "entity_type": "DOCUMENTARY_ROUTE_CHECKPOINT_ADVICE",
+      "collection": "tutorials",
+      "version_profile": "CN_SINA_GUIDE_MENGDE_20030529_EXACT_OFFICIAL_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "DATED_PLAYER_GUIDE_OR_STATIC_SCREEN_NOT_SERVER_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "kelke_feather_unavailable_as_guide_claim": true,
+        "recordpoint_meat_as_written": "贝洛恩的肉",
+        "suggested_first_checkpoint": "柯尔克村",
+        "meat_quantity_consumption_original_id": null,
+        "storage_format_or_original_io_test": null,
+        "party_or_over_60_is_advice_not_admission_rule": true
+      }
+    },
+    {
+      "record_id": "CN2003-R81-I1",
+      "entity_type": "DOCUMENTARY_STATIC_INVENTORY_TOOLTIP",
+      "collection": "screens",
+      "version_profile": "CN_SINA_GUIDE_MENGDE_20030529_EXACT_OFFICIAL_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1",
+        "I1"
+      ],
+      "verification_status": "DATED_PLAYER_GUIDE_OR_STATIC_SCREEN_NOT_SERVER_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "image": {
+          "id": "I1",
+          "url": "https://image2.sina.com.cn/gm/zhqu/sta/article/2003-05-29/1_115-15-232-572_2003052917425.jpg",
+          "http_status": 200,
+          "no_redirect": true,
+          "bytes": 92532,
+          "sha256": "9489d96399a014a090b3265e00af75e2241a96c20e98af75922c3319bc889948",
+          "format": "JPEG",
+          "mode": "RGB",
+          "size": [
+            640,
+            480
+          ],
+          "frames": 1
+        },
+        "observation": {
+          "id": "I1",
+          "manual_visual_review": true,
+          "kind": "STATIC_INVENTORY_ARMOR_TOOLTIP_WITH_DESERT_CHARACTERS",
+          "displayed_item_label": "芙蕾雅Lv1铠6",
+          "displayed_stats": {
+            "防": 20,
+            "敏": -6
+          },
+          "displayed_spirit": "滋润的精灵Lv1",
+          "scene": [
+            "DESERT",
+            "CACTUS",
+            "TWO_CHARACTERS"
+          ],
+          "npc_identity_independently_visible": false,
+          "actual_reward_delivery_or_item_effect_tested": false,
+          "original_sprite_or_model": false,
+          "exact_build_or_native_resolution_verified": false
+        }
+      }
+    },
+    {
+      "record_id": "CN2003-R81-I2",
+      "entity_type": "DOCUMENTARY_STATIC_INVENTORY_TOOLTIP",
+      "collection": "screens",
+      "version_profile": "CN_SINA_GUIDE_MENGDE_20030529_EXACT_OFFICIAL_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1",
+        "I2"
+      ],
+      "verification_status": "DATED_PLAYER_GUIDE_OR_STATIC_SCREEN_NOT_SERVER_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "image": {
+          "id": "I2",
+          "url": "https://image2.sina.com.cn/gm/zhqu/sta/article/2003-05-29/1_115-15-238-572_2003052917425.jpg",
+          "http_status": 200,
+          "no_redirect": true,
+          "bytes": 94389,
+          "sha256": "c5196cae526922f517fe5e146c068e0e23b389b6fe4581d926660f3bab59a5e6",
+          "format": "JPEG",
+          "mode": "RGB",
+          "size": [
+            640,
+            480
+          ],
+          "frames": 1
+        },
+        "observation": {
+          "id": "I2",
+          "manual_visual_review": true,
+          "kind": "STATIC_INVENTORY_ACCESSORY_TOOLTIP_WITH_GRASS_ROCKS",
+          "displayed_item_label": "黄色大首饰",
+          "displayed_stats": {
+            "魅": 5,
+            "睡眠耐性": 30
+          },
+          "scene": [
+            "GRASS",
+            "ROCK_WALL",
+            "TWO_CHARACTERS"
+          ],
+          "npc_identity_independently_visible": false,
+          "actual_reward_delivery_or_item_effect_tested": false,
+          "original_sprite_or_model": false,
+          "exact_build_or_native_resolution_verified": false
+        }
+      }
+    }
+  ],
+  "audit": {
+    "semantic_mutations_without_all_fingerprints": 27,
+    "hidden_and_outside_article_counterexamples": 2,
+    "outside_script_positive": true
+  },
+  "original_html_or_assets_in_output": false,
+  "original_server_runtime_verified": false
+}

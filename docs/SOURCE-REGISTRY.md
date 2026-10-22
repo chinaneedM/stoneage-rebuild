@@ -8085,3 +8085,14 @@ I1正文实际 https://www.4gamer.net/news/image/2005.09/20050921202336_0.jpg �
 S1 https://games.sina.com.cn/zhqu/sta/rwgl1_11.shtml ，可见2003-05-29 17:00/新浪游戏/网友投稿，无具名作者/官方脚本认证。当前HTTP200无跳转50035B/85b08eec3a4235de8e9a19f8e88abd4698573a74e2c96afb8667fcc4a8208d8b，严格GB18030零替换，核心1683字符4783UTF8B/247b07e0ea2ce1fc925e24cad336b0ab02b2e5a95f9cc6e40f6b38ef50b083bc，独立可见文本复核。门户后置标题/2006页脚不认证版本/首刊/2003原件，网页读取器Unicode错误由实际HTTP严格解码解决，不叫来源不存在。
 
 正文末组第1/3实际全图 https://image2.sina.com.cn/gm/zhqu/sta/article/2003-05-29/1_115-15-232-572_2003052917425.jpg 和同目录1_115-15-238-572_2003052917425.jpg，原href HTTP仅升HTTPS，均200无跳转。I1 92532B/9489d96399a014a090b3265e00af75e2241a96c20e98af75922c3319bc889948；I2 94389B/c5196cae526922f517fe5e146c068e0e23b389b6fe4581d926660f3bab59a5e6；JPEG/RGB640×480单帧完整解码目视，铠防敏精灵/黄首饰魅耐性标签与正文相符，非实际发奖/属性测试/NPC身份或原SPR。另十全图/缩略像素未取。17研究记录七必填，三父报告及解析器原生Git固定见CN2003-MENGDE-CAVE-SOURCE-R1；27语义改写/隐藏正文外2反例，原HTML/JPEG不入Git，实CI保管后验。
+
+
+### R81双端取源验收与永久派生保管（2026-10-23）
+
+内容2530499c76c3780e8b7d2e15982563d88f93f0c5/treed112a01ed9f932df14745e94792acf92f412f29c，候选10/main11项实际completed/success，九文件原生Git blob及整tree逐一相符，四连续性旧全文前缀完整；新读main旧HEAD后expected_sha保护非强制快进。专用候选run39874364409/job120156231594/artifact12466888933，主线run39874471682/job120156583328/artifact12467880934，实际各7单元及一正文两完整JPEG实取解码、27去正文指纹门语义改写、隐藏/正文外2反例成功。
+
+两实际ZIP各5170B，SHA25686f190d3e823f3c69ab6bc823a7256b4bace790c8b6061ac981c4eb51f225ef7 / 8922bd5b4b1067e48a207800bab5b30f3fa4c28d58b9bdbed9055d68e85ce93f分别符合API；唯一replay.json各32210B/SHA25643a01c1bcce470814879c163a7b1d135874b5777aa218c2a92063263a64861cb。候选/main/local/保管门后local四份逐字节相同，三HTTP输入均同初取；这不是2003原字节/原像素认证或原服事件运行。
+
+双原CI JSON与STONEAGE-CN2003-MENGDE-CAVE-CUSTODY-R1.json永久入Git；七pin固定SOURCE、三父报告、共享解析器和双原报告原字节/Git身份。收据保存内容HEAD/tree、21实际run、双job/artifact/ZIP/raw/input历史。CLI强制验保管并固定完整21项run摘要及源run/job/artifact准确ID，拒绝缺失/同长篡改、错HEAD/tree/分支/任务、遗漏/重复或成功门替代、复用工件、虚报初取相等或提升官方作者/历史字节/原服权威。新增第8保管单元，相关25项本地回归通过，原输出字节不变；原内容CI七单元历史不改称八单元。保管提交自身候选/main须另实后验。
+
+本包可查的是三村叙事、文献NPC出现/分层坐标、口令、取石和顺序敏感奖励，未取得原任务脚本/flag、模型或盗物算法。领奖次序与原字串、2000S可售非现金、推荐非硬门、画面非实发奖及早期记录点/吉鲁生态边界不变。最高NEXT82转台湾具名宠物模型/技能/生态或官方版本世界线；Stage A7 PARTIAL+2 OPEN，B/wiki GATED，savedata R79 PAUSED_NON_BLOCKING，旧历史全留。
