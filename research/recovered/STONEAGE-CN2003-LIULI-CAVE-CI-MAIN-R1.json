@@ -1,0 +1,710 @@
+{
+  "schema": "stoneage.liuli_cave.replay.r1",
+  "inputs": [
+    {
+      "id": "S1",
+      "url": "https://games.sina.com.cn/zhqu/sta/article/2003-06-06/11290.shtml",
+      "bytes": 55319,
+      "sha256": "e3ec609550d745c6917349d28bf243a91ed979340453c1bf23d009b8640c58ef"
+    },
+    {
+      "id": "S2",
+      "url": "https://web.archive.org/web/20031204051540id_/http://games.sina.com.cn:80/zhqu/sta/article/2003-06-06/11290.shtml",
+      "bytes": 38444,
+      "sha256": "104821fed0069da91a0188eef6f551756c2b14c737df415c42322d469cf08350"
+    }
+  ],
+  "extraction": {
+    "region_label": "南岛",
+    "village": "奇喀喀村",
+    "village_coordinate_literals": [
+      [
+        139,
+        1008
+      ],
+      [
+        125,
+        1048
+      ]
+    ],
+    "village_coordinate_frames": null,
+    "cave_entrance_as_reported": [
+      359,
+      671
+    ],
+    "main_quest": {
+      "recommended_level": 80,
+      "hard_entry_level": null,
+      "adult_completion_required_as_reported": true,
+      "rebirth_related_as_reported": true,
+      "follow_on_cave_names": [
+        "碧青的洞窟",
+        "漆黑的洞窟"
+      ],
+      "four_cave_proofs_exchange_mentioned": true,
+      "four_proofs_reward": null,
+      "event_id": null
+    },
+    "side_quest": {
+      "reported_level_requirement": 65,
+      "recommended_level": 80,
+      "adult_completion_required_as_reported": true,
+      "server_level_gate_verified": false,
+      "can_do_with_main_as_reported": true,
+      "rebirth_required_as_reported": false,
+      "target": {
+        "name": "鲁尼帖斯",
+        "floor_as_reported": 2,
+        "level_literal": "50几级",
+        "exact_level": null,
+        "enemy_id": null
+      },
+      "reward_choices": [
+        "大袋",
+        "小袋"
+      ],
+      "reward_selection": "RANDOM",
+      "caption_example_reward": "洗涤石",
+      "caption_is_guaranteed": false,
+      "reward_pool": null,
+      "event_id": null
+    },
+    "npc_occurrences": [
+      {
+        "name": "拉鲁",
+        "role": "requesting_father",
+        "location": "森林的独栋房屋",
+        "coord": [
+          229,
+          988
+        ],
+        "floor": null,
+        "npc_id": null
+      },
+      {
+        "name": "伊布",
+        "role": "lost_son_diary_handoff",
+        "reported_search_positions": [
+          [
+            215,
+            1017
+          ],
+          [
+            198,
+            1001
+          ],
+          [
+            186,
+            1032
+          ],
+          [
+            173,
+            1008
+          ],
+          [
+            99,
+            1085
+          ],
+          [
+            115,
+            1011
+          ],
+          [
+            218,
+            953
+          ],
+          [
+            158,
+            1005
+          ]
+        ],
+        "spawn_selection": null,
+        "npc_id": null
+      },
+      {
+        "name": "女神蒂亚特",
+        "role": "mother_host_revelation_and_main_reward",
+        "floor": 15,
+        "coord": null,
+        "npc_id": null
+      },
+      {
+        "name": "大地的审判",
+        "role": "optional_request",
+        "floor": 4,
+        "coord": [
+          34,
+          10
+        ],
+        "npc_id": null
+      },
+      {
+        "name": "大地的主人",
+        "role": "optional_bag_choice",
+        "floor": 15,
+        "coord": null,
+        "npc_id": null
+      }
+    ],
+    "delivery_and_reward_items": [
+      {
+        "name": "拉鲁的项链",
+        "role": "narrative_delivery",
+        "stats_as_written": {
+          "魅力": 2,
+          "回避率上升": 2
+        },
+        "drop_disappears_as_reported": true,
+        "logout_behavior": null,
+        "disconnect_behavior": null,
+        "item_id": null
+      },
+      {
+        "name": "雅哈奴的日记",
+        "role": "narrative_delivery",
+        "caption_name_variant": "雅哈奴日记",
+        "drop_disappears_as_reported": true,
+        "logout_behavior": null,
+        "disconnect_behavior": null,
+        "item_id": null
+      },
+      {
+        "name": "大地的羁绊",
+        "role": "main_quest_reward",
+        "stats_as_written": {
+          "攻": -4,
+          "防": 5,
+          "魅": 3
+        },
+        "description_as_written": "制服大地的证据",
+        "spirit_name": null,
+        "item_id": null
+      },
+      {
+        "name": "大地之羽",
+        "role": "optional_enemy_reward_to_bag_choice",
+        "item_id": null,
+        "consumed_at_exchange": null
+      }
+    ],
+    "guard_occurrences": [
+      {
+        "floor_as_reported": 9,
+        "level_lower_word_以上": 65,
+        "name_as_written": "大地守护兽",
+        "original_enemy_id": null,
+        "stats": null
+      },
+      {
+        "floor_as_reported": 14,
+        "level_lower_word_以上": 70,
+        "name_as_written": "大地守护兽",
+        "original_enemy_id": null,
+        "stats": null
+      }
+    ],
+    "limited_exit": {
+      "from_floor_as_reported": 11,
+      "to_floor_as_reported": 12,
+      "coord": [
+        5,
+        32
+      ],
+      "other_exits_described_as": [
+        "DEAD_END",
+        "RETURN_FLOOR_10"
+      ],
+      "map_ids": null
+    },
+    "narrative": {
+      "father": "拉鲁",
+      "son": "伊布",
+      "mother_host": "雅哈奴",
+      "goddess_label": "女神蒂亚特",
+      "father_initial_account": "MOTHER_DIED_AS_TOLD_TO_SON",
+      "later_account": "MOTHER_SERVES_AS_GODDESS_HOST",
+      "diary_written_years_before_as_reported": 14,
+      "son_age": null,
+      "discovery_two_weeks_before_as_narrated": true,
+      "host_cycle_years_as_reported": 50,
+      "selection_condition": "FIRST_MOTHER_GIVING_BIRTH_IN_HOST_CHANGE_YEAR_AS_NARRATED",
+      "requires_mothers_first_child": null,
+      "mother_reunion_after_duty_not_completed": true,
+      "npc_original_id_equivalence": null,
+      "real_time_host_rotation_implemented": false,
+      "relations": [
+        {
+          "subject": "拉鲁",
+          "relation": "father_of",
+          "object": "伊布"
+        },
+        {
+          "subject": "雅哈奴",
+          "relation": "mother_of",
+          "object": "伊布"
+        },
+        {
+          "subject": "拉鲁",
+          "relation": "spouse_of",
+          "object": "雅哈奴"
+        },
+        {
+          "subject": "雅哈奴",
+          "relation": "serves_as_host_for",
+          "object": "女神蒂亚特"
+        },
+        {
+          "subject": "女神蒂亚特",
+          "relation": "awaits_future_visit_by",
+          "object": "伊布"
+        }
+      ]
+    },
+    "ecology": {
+      "map_label": "琉璃的洞窟",
+      "monster_levels_as_reported": [
+        53,
+        75
+      ],
+      "monster_labels_as_reported": [
+        "大地守护兽",
+        "克雷尔",
+        "绿龟",
+        "多利凯拉",
+        "特洛昆",
+        "贝洛洛克",
+        "卡拉卡利",
+        "利则诺顿",
+        "洛奇安"
+      ],
+      "encounter_weights": null,
+      "capture_eligibility": null,
+      "map_id": null
+    },
+    "original_server_runtime_verified": false,
+    "exact_game_build": null,
+    "quest_ids": null
+  },
+  "catalog_records": [
+    {
+      "record_id": "CN2003-LIULI-R73-01",
+      "collection": "quests",
+      "entity_type": "documentary_main_quest",
+      "version_profile": "CN2003_SINA_LIULI_CAVE_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1",
+        "S2"
+      ],
+      "verification_status": "SOURCE_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "requirements": {
+          "recommended_level": 80,
+          "hard_entry_level": null,
+          "adult_completion_required_as_reported": true,
+          "rebirth_related_as_reported": true,
+          "follow_on_cave_names": [
+            "碧青的洞窟",
+            "漆黑的洞窟"
+          ],
+          "four_cave_proofs_exchange_mentioned": true,
+          "four_proofs_reward": null,
+          "event_id": null
+        },
+        "narrative": {
+          "father": "拉鲁",
+          "son": "伊布",
+          "mother_host": "雅哈奴",
+          "goddess_label": "女神蒂亚特",
+          "father_initial_account": "MOTHER_DIED_AS_TOLD_TO_SON",
+          "later_account": "MOTHER_SERVES_AS_GODDESS_HOST",
+          "diary_written_years_before_as_reported": 14,
+          "son_age": null,
+          "discovery_two_weeks_before_as_narrated": true,
+          "host_cycle_years_as_reported": 50,
+          "selection_condition": "FIRST_MOTHER_GIVING_BIRTH_IN_HOST_CHANGE_YEAR_AS_NARRATED",
+          "requires_mothers_first_child": null,
+          "mother_reunion_after_duty_not_completed": true,
+          "npc_original_id_equivalence": null,
+          "real_time_host_rotation_implemented": false,
+          "relations": [
+            {
+              "subject": "拉鲁",
+              "relation": "father_of",
+              "object": "伊布"
+            },
+            {
+              "subject": "雅哈奴",
+              "relation": "mother_of",
+              "object": "伊布"
+            },
+            {
+              "subject": "拉鲁",
+              "relation": "spouse_of",
+              "object": "雅哈奴"
+            },
+            {
+              "subject": "雅哈奴",
+              "relation": "serves_as_host_for",
+              "object": "女神蒂亚特"
+            },
+            {
+              "subject": "女神蒂亚特",
+              "relation": "awaits_future_visit_by",
+              "object": "伊布"
+            }
+          ]
+        },
+        "delivery_item_names": [
+          "拉鲁的项链",
+          "雅哈奴的日记"
+        ],
+        "reward_item_name": "大地的羁绊",
+        "original_script_recovered": false
+      }
+    },
+    {
+      "record_id": "CN2003-LIULI-R73-02",
+      "collection": "quests",
+      "entity_type": "documentary_optional_quest",
+      "version_profile": "CN2003_SINA_LIULI_CAVE_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1",
+        "S2"
+      ],
+      "verification_status": "SOURCE_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "reported_level_requirement": 65,
+        "recommended_level": 80,
+        "adult_completion_required_as_reported": true,
+        "server_level_gate_verified": false,
+        "can_do_with_main_as_reported": true,
+        "rebirth_required_as_reported": false,
+        "target": {
+          "name": "鲁尼帖斯",
+          "floor_as_reported": 2,
+          "level_literal": "50几级",
+          "exact_level": null,
+          "enemy_id": null
+        },
+        "reward_choices": [
+          "大袋",
+          "小袋"
+        ],
+        "reward_selection": "RANDOM",
+        "caption_example_reward": "洗涤石",
+        "caption_is_guaranteed": false,
+        "reward_pool": null,
+        "event_id": null
+      }
+    },
+    {
+      "record_id": "CN2003-LIULI-R73-03",
+      "collection": "npcs",
+      "entity_type": "documentary_npc_occurrence_not_original_population",
+      "version_profile": "CN2003_SINA_LIULI_CAVE_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1",
+        "S2"
+      ],
+      "verification_status": "SOURCE_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "name": "拉鲁",
+        "role": "requesting_father",
+        "location": "森林的独栋房屋",
+        "coord": [
+          229,
+          988
+        ],
+        "floor": null,
+        "npc_id": null
+      }
+    },
+    {
+      "record_id": "CN2003-LIULI-R73-04",
+      "collection": "npcs",
+      "entity_type": "documentary_npc_occurrence_not_original_population",
+      "version_profile": "CN2003_SINA_LIULI_CAVE_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1",
+        "S2"
+      ],
+      "verification_status": "SOURCE_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "name": "伊布",
+        "role": "lost_son_diary_handoff",
+        "reported_search_positions": [
+          [
+            215,
+            1017
+          ],
+          [
+            198,
+            1001
+          ],
+          [
+            186,
+            1032
+          ],
+          [
+            173,
+            1008
+          ],
+          [
+            99,
+            1085
+          ],
+          [
+            115,
+            1011
+          ],
+          [
+            218,
+            953
+          ],
+          [
+            158,
+            1005
+          ]
+        ],
+        "spawn_selection": null,
+        "npc_id": null
+      }
+    },
+    {
+      "record_id": "CN2003-LIULI-R73-05",
+      "collection": "npcs",
+      "entity_type": "documentary_npc_occurrence_not_original_population",
+      "version_profile": "CN2003_SINA_LIULI_CAVE_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1",
+        "S2"
+      ],
+      "verification_status": "SOURCE_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "name": "女神蒂亚特",
+        "role": "mother_host_revelation_and_main_reward",
+        "floor": 15,
+        "coord": null,
+        "npc_id": null
+      }
+    },
+    {
+      "record_id": "CN2003-LIULI-R73-06",
+      "collection": "npcs",
+      "entity_type": "documentary_npc_occurrence_not_original_population",
+      "version_profile": "CN2003_SINA_LIULI_CAVE_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1",
+        "S2"
+      ],
+      "verification_status": "SOURCE_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "name": "大地的审判",
+        "role": "optional_request",
+        "floor": 4,
+        "coord": [
+          34,
+          10
+        ],
+        "npc_id": null
+      }
+    },
+    {
+      "record_id": "CN2003-LIULI-R73-07",
+      "collection": "npcs",
+      "entity_type": "documentary_npc_occurrence_not_original_population",
+      "version_profile": "CN2003_SINA_LIULI_CAVE_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1",
+        "S2"
+      ],
+      "verification_status": "SOURCE_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "name": "大地的主人",
+        "role": "optional_bag_choice",
+        "floor": 15,
+        "coord": null,
+        "npc_id": null
+      }
+    },
+    {
+      "record_id": "CN2003-LIULI-R73-08",
+      "collection": "items",
+      "entity_type": "documentary_delivery_or_reward_item",
+      "version_profile": "CN2003_SINA_LIULI_CAVE_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1",
+        "S2"
+      ],
+      "verification_status": "SOURCE_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "name": "拉鲁的项链",
+        "role": "narrative_delivery",
+        "stats_as_written": {
+          "魅力": 2,
+          "回避率上升": 2
+        },
+        "drop_disappears_as_reported": true,
+        "logout_behavior": null,
+        "disconnect_behavior": null,
+        "item_id": null
+      }
+    },
+    {
+      "record_id": "CN2003-LIULI-R73-09",
+      "collection": "items",
+      "entity_type": "documentary_delivery_or_reward_item",
+      "version_profile": "CN2003_SINA_LIULI_CAVE_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1",
+        "S2"
+      ],
+      "verification_status": "SOURCE_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "name": "雅哈奴的日记",
+        "role": "narrative_delivery",
+        "caption_name_variant": "雅哈奴日记",
+        "drop_disappears_as_reported": true,
+        "logout_behavior": null,
+        "disconnect_behavior": null,
+        "item_id": null
+      }
+    },
+    {
+      "record_id": "CN2003-LIULI-R73-10",
+      "collection": "items",
+      "entity_type": "documentary_delivery_or_reward_item",
+      "version_profile": "CN2003_SINA_LIULI_CAVE_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1",
+        "S2"
+      ],
+      "verification_status": "SOURCE_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "name": "大地的羁绊",
+        "role": "main_quest_reward",
+        "stats_as_written": {
+          "攻": -4,
+          "防": 5,
+          "魅": 3
+        },
+        "description_as_written": "制服大地的证据",
+        "spirit_name": null,
+        "item_id": null
+      }
+    },
+    {
+      "record_id": "CN2003-LIULI-R73-11",
+      "collection": "items",
+      "entity_type": "documentary_delivery_or_reward_item",
+      "version_profile": "CN2003_SINA_LIULI_CAVE_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1",
+        "S2"
+      ],
+      "verification_status": "SOURCE_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "name": "大地之羽",
+        "role": "optional_enemy_reward_to_bag_choice",
+        "item_id": null,
+        "consumed_at_exchange": null
+      }
+    },
+    {
+      "record_id": "CN2003-LIULI-R73-12",
+      "collection": "maps",
+      "entity_type": "documentary_cave_ecology_not_original_geometry",
+      "version_profile": "CN2003_SINA_LIULI_CAVE_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1",
+        "S2"
+      ],
+      "verification_status": "SOURCE_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "map_label": "琉璃的洞窟",
+        "monster_levels_as_reported": [
+          53,
+          75
+        ],
+        "monster_labels_as_reported": [
+          "大地守护兽",
+          "克雷尔",
+          "绿龟",
+          "多利凯拉",
+          "特洛昆",
+          "贝洛洛克",
+          "卡拉卡利",
+          "利则诺顿",
+          "洛奇安"
+        ],
+        "encounter_weights": null,
+        "capture_eligibility": null,
+        "map_id": null
+      }
+    }
+  ],
+  "historical_comparison": {
+    "reference_capture": "20031204051540",
+    "reference_capture_is_first_publication": false,
+    "selected_full_visible_article_equal": true,
+    "visible_compact_characters": 1997,
+    "visible_compact_utf8_bytes": 5485,
+    "visible_compact_utf8_sha256": "a5ba592e619b77b726bbb89ab0c81531b95c583691866bbaf5ebc7992c067d41",
+    "independent_witness_count": 1,
+    "first_publication_authenticated": false,
+    "current_raw_equals_archive_raw": false,
+    "current_wrapper_generation_comment": "2003-12-25 03:27:57",
+    "archive_wrapper_generation_comment": "2003-7-2 12:47:25",
+    "wrapper_comments_are_not_original_publication_or_game_build": true
+  },
+  "audit": [
+    {
+      "id": "S1",
+      "semantic_mutations_rejected_without_digest_gate": 23,
+      "peripheral_script_positive": true
+    },
+    {
+      "id": "S2",
+      "semantic_mutations_rejected_without_digest_gate": 23,
+      "peripheral_script_positive": true
+    }
+  ],
+  "original_html_or_assets_in_output": false,
+  "original_game_runtime_verified": false
+}

@@ -17209,3 +17209,14 @@ S1/S3所选全文去空白一致，#3核心712UTF8B/SHA256 810507b9e173d90951e20
 五单元、每输入23实源去摘要门语义改写/script正例；本包/复用正文解析器/旧梦幻/19集合合同29项本地通过。独立正则/实体另核两篇1997核心、双成人要求/建议80、14与50及奖励原字，不能把合成值当历史恢复。解析器只复用既有td/span有界实现并固定原字节/Git身份，不另扩helper。候选/main实取、实际ZIP及永久派生保管须后验，不预报绿。
 
 止于一文两包装/两分支，不扩全四洞窟/转生helper。最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-74回全22域另一地区人物/交互界面或交通生活服务，音效仍需同版实参。Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停，全部旧历史完整。
+
+
+### 2026-10-22 R73双端实源重放验收与永久派生保管
+
+内容提交8ff5eddaf5eecb5ab809fe5d8573ac9dc39181e3/tree4c052658257b34fb16972c76a92ca6b739526000，候选10/main11项适用Actions实际completed/success，实时main预期SHA保护非强制快进。初次状态查询时九项queued、一项成功，随后实际完成全部10项才整合，未把排队当成功。十文件/整tree与本地原生Git一致，四连续性文档旧行删除0。专用候选run39775472279/job119813181782/artifact12424417265，主线run39775728979/job119814053556/artifact12424750608，各真实五单元、当前/20031204051540历史两HTML、各23实源去摘要门语义改写及script正例。
+
+实下双ZIP各3604B，SHA256 10cdfeefb06d29a62780182c3c5da1af37347c378c75cf210469788b38891a25 / cd9ccbaa3ba7bd47005a2b60280cd4f079e125dc9dad5b78e046bcf05b1a01a7逐一符合API；各唯一replay.json完整19798B/SHA256 b152d3260f31fc666ce08c301958cf4e8d93e5fba002e8e0f5b76b571addf992/Git blobd9e9768ef78c97890b98b31dd5e366cc3233ab87。双CI/local/加入保管门后local四份逐字节全等，两HTML摘要仍同初取。独立词法全篇1997字符/5485UTF8B再次与历史参考一致，不把捕获当首刊。
+
+双原CI JSON与research/recovered/STONEAGE-CN2003-LIULI-CAVE-CUSTODY-R1.json永久入Git，固定内容Git、21实际run、双job/artifact/ZIP、历史参考与六永久文件原字节/原生Git身份，包含复用解析器。强制保管门拒绝缺失/等长篡改、错HEAD/分支、重复run/job、当代字节冒充历史及语义错配；本包五→六单元，相关30项本地回归通过。保管提交自身候选/main CI须另实查，旧五项不倒称六项。
+
+补核支线目标鲁尼帖斯不在附表九怪标签中，保留各自范围，不擅加第十项、认定同一敌人或称附表完整。母亲宿身关系仍不并原NPC ID，家庭重聚/原服消费/奖池/任务保存未证。原HTML/图/程序不进Git；最高NEXT74回22域另一地区人物/交互界面或交通生活服务，不扩四洞窟helper。Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停，旧全文保留。

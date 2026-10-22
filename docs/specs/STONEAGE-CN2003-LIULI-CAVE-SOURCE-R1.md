@@ -70,3 +70,10 @@ S2：[同页20031204051540精确历史捕获](https://web.archive.org/web/200312
 验证入口：`python -m unittest tests.test_stoneage_liuli_cave_source -v`；`python -m tools.stoneage_liuli_cave_source --fetch --output /tmp/r73/replay.json`。正文范围、叙事视角、两支资格、掉弃/注销差别及源字节/未知项均设反例；整篇核心还与历史参考比对。候选/main真实取源、实际ZIP及永久派生保管按后验记录，不预报成功。
 
 止于同篇指南两包装及上述人物/分支/道具/有限通路，不扩四属性洞窟全集或底层helper。重开需同版原NPC/任务/地图/item数据、实际剧情与持久化、奖池/消费、原身份或有具名矛盾的同代叙事来源。
+
+
+## 实际双端验收与永久派生
+
+内容提交8ff5eddaf5eecb5ab809fe5d8573ac9dc39181e3候选10/main11项已实际通过；初次排队状态单列，没有借它报绿。专用run39775472279/39775728979各实际五单元、两源HTML重取、各23语义改写与外围script正例。双ZIP3604B已下载并逐一匹配API摘要，各唯一原JSON19798B/SHA256 b152d3260f31fc666ce08c301958cf4e8d93e5fba002e8e0f5b76b571addf992，与本地和加入保管门后本地逐字节全等。两CI原JSON及CUSTODY-R1.json永久保存，仅含派生研究资料；完整内容Git/21run/job/artifact/ZIP/raw和六永久文件原生Git身份可核。
+
+强制保管门拒绝缺失、等长篡改、错HEAD/分支、重复run/job、源或解析器错配及历史资格晋升。本包六单元与相关30项本地回归通过；保管提交自身CI须另验，旧五单元不倒改。支线目标鲁尼帖斯未在附表九标签中，不能补为完整名录第十项或类推同一敌人；原始敌人/任务/道具/人物ID继续未知。Stage和NEXT边界不变。
