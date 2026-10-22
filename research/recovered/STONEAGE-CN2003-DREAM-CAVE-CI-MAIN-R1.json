@@ -1,0 +1,464 @@
+{
+  "schema": "stoneage.dream_cave.replay.r1",
+  "inputs": [
+    {
+      "id": "S1",
+      "url": "https://games.sina.com.cn/zhqu/sta/article/2003-05-30/10033.shtml",
+      "bytes": 49845,
+      "sha256": "2044ba7f8346bba7e043a6601fd9e00fe664c527109bb41e0ddea5b8de57fec9"
+    }
+  ],
+  "extraction": {
+    "recommended_level": 60,
+    "hard_entry_level": null,
+    "adult_required_for_admission": false,
+    "adult_required_for_named_reward_sequence": true,
+    "region": "沙姆岛",
+    "village": "奇努伊村",
+    "village_coordinate_literals": [
+      "（东33，南99）",
+      "（东80，南78）",
+      "（东67，南44）"
+    ],
+    "village_coordinate_frames": null,
+    "elder_position_as_reported": [
+      73,
+      55
+    ],
+    "entrances_as_reported": {
+      "day": [
+        96,
+        120
+      ],
+      "night": [
+        87,
+        102
+      ]
+    },
+    "transport_as_reported": "加美航空",
+    "feather_as_reported": "无",
+    "offering": {
+      "name": "先见之光",
+      "drop_disappears": true,
+      "logout_disappears": true,
+      "disconnect_behavior": null,
+      "elder_regrant_reported": true,
+      "regrant_limit": null,
+      "item_id": null
+    },
+    "narrative_relations": [
+      {
+        "from": "奇努伊村村民",
+        "relation": "annual_offering_custom",
+        "to": "梦见的仙人"
+      },
+      {
+        "from": "仙人守护航空安全",
+        "relation": "source_legend_and_speculation",
+        "to": "沙姆岛"
+      },
+      {
+        "from": [
+          "卡卡金宝",
+          "奇卡洛斯"
+        ],
+        "relation": "guard_battle_then_described_as_sages_conversation_companions",
+        "to": "梦见的仙人"
+      }
+    ],
+    "named_guards": [
+      "卡卡金宝",
+      "奇卡洛斯"
+    ],
+    "sage": "梦见的仙人",
+    "documentary_flow": [
+      {
+        "order": 1,
+        "actor": "村中的老人",
+        "action": "accept_annual_offering_request",
+        "item": "先见之光"
+      },
+      {
+        "order": 2,
+        "actor": "勇者",
+        "action": "choose_time_dependent_entrance_then_teleport",
+        "route_pair_assignment": null
+      },
+      {
+        "order": 3,
+        "actor": [
+          "卡卡金宝",
+          "奇卡洛斯"
+        ],
+        "action": "defeat_guard_party_before_visiting_sage",
+        "battle_script_id": null
+      },
+      {
+        "order": 4,
+        "actor": "梦见的仙人",
+        "action": "receive_offering_and_give_conditional_reward",
+        "server_event_id": null
+      }
+    ],
+    "rewards": [
+      {
+        "name": "空想的竖琴",
+        "stats": {
+          "攻": 2,
+          "敏": 1,
+          "魅": 5
+        },
+        "spirit_name": "睡眠的精灵",
+        "spirit_level": 1,
+        "item_id": null
+      },
+      {
+        "name": "空想的帽子",
+        "stats": {
+          "防": 4,
+          "敏": 2
+        },
+        "spirit_name": "滋润的精灵",
+        "spirit_level": 2,
+        "item_id": null
+      },
+      {
+        "name": "空想的衣服",
+        "stats": {
+          "攻": -2,
+          "防": 12,
+          "敏": 7
+        },
+        "spirit_name": "治愈的精灵",
+        "spirit_level": 2,
+        "item_id": null
+      }
+    ],
+    "reward_sequence_if_adult": [
+      "空想的竖琴",
+      "空想的帽子",
+      "空想的衣服",
+      "RANDOM_FROM_FOURTH"
+    ],
+    "nonadult_reward": "RANDOM_ITEM",
+    "random_item_pool": null,
+    "repeat_counter_storage": null,
+    "monster_level_range_as_reported": [
+      37,
+      60
+    ],
+    "monster_labels_as_reported": [
+      "卡卡金宝",
+      "奇卡洛斯",
+      "卡比特",
+      "特洛昆",
+      "山贼",
+      "旅人",
+      "小孩"
+    ],
+    "route_pairs_in_source_order": [
+      [
+        {
+          "direction": "去程",
+          "steps": [
+            "下",
+            "左",
+            "左",
+            "上",
+            "下",
+            "右",
+            "下",
+            "左",
+            "右",
+            "左",
+            "下"
+          ],
+          "day_night_assignment": null
+        },
+        {
+          "direction": "回程",
+          "steps": [
+            "右",
+            "上",
+            "左",
+            "右",
+            "右"
+          ],
+          "day_night_assignment": null
+        }
+      ],
+      [
+        {
+          "direction": "去程",
+          "steps": [
+            "下",
+            "上",
+            "右",
+            "右",
+            "右",
+            "右",
+            "左",
+            "上",
+            "右"
+          ],
+          "day_night_assignment": null
+        },
+        {
+          "direction": "回程",
+          "steps": [
+            "右",
+            "左",
+            "左",
+            "右",
+            "上",
+            "左"
+          ],
+          "day_night_assignment": null
+        }
+      ]
+    ],
+    "map_geometry": null,
+    "quest_id": null,
+    "npc_ids": null,
+    "map_ids": null,
+    "exact_game_build": null,
+    "original_server_runtime_verified": false
+  },
+  "catalog_records": [
+    {
+      "record_id": "CN2003-SINA-R68-QUEST-01",
+      "entity_type": "documentary_quest_description",
+      "collection": "quests",
+      "version_profile": "CN2003_SINA_DREAM_CAVE_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "SOURCE_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "recommended_level": 60,
+        "hard_entry_level": null,
+        "adult_required_for_admission": false,
+        "adult_required_for_named_reward_sequence": true,
+        "region": "沙姆岛",
+        "village": "奇努伊村",
+        "village_coordinate_literals": [
+          "（东33，南99）",
+          "（东80，南78）",
+          "（东67，南44）"
+        ],
+        "village_coordinate_frames": null,
+        "elder_position_as_reported": [
+          73,
+          55
+        ],
+        "entrances_as_reported": {
+          "day": [
+            96,
+            120
+          ],
+          "night": [
+            87,
+            102
+          ]
+        },
+        "transport_as_reported": "加美航空",
+        "feather_as_reported": "无",
+        "offering": {
+          "name": "先见之光",
+          "drop_disappears": true,
+          "logout_disappears": true,
+          "disconnect_behavior": null,
+          "elder_regrant_reported": true,
+          "regrant_limit": null,
+          "item_id": null
+        },
+        "narrative_relations": [
+          {
+            "from": "奇努伊村村民",
+            "relation": "annual_offering_custom",
+            "to": "梦见的仙人"
+          },
+          {
+            "from": "仙人守护航空安全",
+            "relation": "source_legend_and_speculation",
+            "to": "沙姆岛"
+          },
+          {
+            "from": [
+              "卡卡金宝",
+              "奇卡洛斯"
+            ],
+            "relation": "guard_battle_then_described_as_sages_conversation_companions",
+            "to": "梦见的仙人"
+          }
+        ],
+        "named_guards": [
+          "卡卡金宝",
+          "奇卡洛斯"
+        ],
+        "sage": "梦见的仙人",
+        "documentary_flow": [
+          {
+            "order": 1,
+            "actor": "村中的老人",
+            "action": "accept_annual_offering_request",
+            "item": "先见之光"
+          },
+          {
+            "order": 2,
+            "actor": "勇者",
+            "action": "choose_time_dependent_entrance_then_teleport",
+            "route_pair_assignment": null
+          },
+          {
+            "order": 3,
+            "actor": [
+              "卡卡金宝",
+              "奇卡洛斯"
+            ],
+            "action": "defeat_guard_party_before_visiting_sage",
+            "battle_script_id": null
+          },
+          {
+            "order": 4,
+            "actor": "梦见的仙人",
+            "action": "receive_offering_and_give_conditional_reward",
+            "server_event_id": null
+          }
+        ],
+        "rewards": [
+          {
+            "name": "空想的竖琴",
+            "stats": {
+              "攻": 2,
+              "敏": 1,
+              "魅": 5
+            },
+            "spirit_name": "睡眠的精灵",
+            "spirit_level": 1,
+            "item_id": null
+          },
+          {
+            "name": "空想的帽子",
+            "stats": {
+              "防": 4,
+              "敏": 2
+            },
+            "spirit_name": "滋润的精灵",
+            "spirit_level": 2,
+            "item_id": null
+          },
+          {
+            "name": "空想的衣服",
+            "stats": {
+              "攻": -2,
+              "防": 12,
+              "敏": 7
+            },
+            "spirit_name": "治愈的精灵",
+            "spirit_level": 2,
+            "item_id": null
+          }
+        ],
+        "reward_sequence_if_adult": [
+          "空想的竖琴",
+          "空想的帽子",
+          "空想的衣服",
+          "RANDOM_FROM_FOURTH"
+        ],
+        "nonadult_reward": "RANDOM_ITEM",
+        "random_item_pool": null,
+        "repeat_counter_storage": null,
+        "monster_level_range_as_reported": [
+          37,
+          60
+        ],
+        "monster_labels_as_reported": [
+          "卡卡金宝",
+          "奇卡洛斯",
+          "卡比特",
+          "特洛昆",
+          "山贼",
+          "旅人",
+          "小孩"
+        ],
+        "route_pairs_in_source_order": [
+          [
+            {
+              "direction": "去程",
+              "steps": [
+                "下",
+                "左",
+                "左",
+                "上",
+                "下",
+                "右",
+                "下",
+                "左",
+                "右",
+                "左",
+                "下"
+              ],
+              "day_night_assignment": null
+            },
+            {
+              "direction": "回程",
+              "steps": [
+                "右",
+                "上",
+                "左",
+                "右",
+                "右"
+              ],
+              "day_night_assignment": null
+            }
+          ],
+          [
+            {
+              "direction": "去程",
+              "steps": [
+                "下",
+                "上",
+                "右",
+                "右",
+                "右",
+                "右",
+                "左",
+                "上",
+                "右"
+              ],
+              "day_night_assignment": null
+            },
+            {
+              "direction": "回程",
+              "steps": [
+                "右",
+                "左",
+                "左",
+                "右",
+                "上",
+                "左"
+              ],
+              "day_night_assignment": null
+            }
+          ]
+        ],
+        "map_geometry": null,
+        "quest_id": null,
+        "npc_ids": null,
+        "map_ids": null,
+        "exact_game_build": null,
+        "original_server_runtime_verified": false
+      }
+    }
+  ],
+  "audit": {
+    "semantic_mutations_rejected_without_digest_gate": 16,
+    "peripheral_script_positive": true
+  },
+  "original_html_or_assets_in_output": false,
+  "original_game_runtime_verified": false
+}

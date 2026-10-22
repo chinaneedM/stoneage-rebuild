@@ -33,6 +33,32 @@ def fixture():
 
 
 class DreamCaveTests(unittest.TestCase):
+    def test_custody_rejects_missing_changed_and_misattributed_original_reports(self):
+        receipt = m.verify_custody()
+        with tempfile.TemporaryDirectory() as name:
+            root = Path(name)
+            path = root / f'research/recovered/{m.STEM}-CUSTODY-R1.json'
+            for pin in receipt['permanent_pins']:
+                p = root / pin['path']; p.parent.mkdir(parents=True, exist_ok=True)
+                p.write_bytes((m.ROOT / pin['path']).read_bytes())
+            path.write_text(json.dumps(receipt)); m.verify_custody(root)
+            for pin in receipt['permanent_pins']:
+                p = root / pin['path']; raw = p.read_bytes()
+                p.write_bytes(raw[:-1] + bytes([raw[-1] ^ 1]))
+                with self.assertRaises(ValueError): m.verify_custody(root)
+                p.unlink()
+                with self.assertRaises(FileNotFoundError): m.verify_custody(root)
+                p.write_bytes(raw)
+            for change in [lambda d: d['runs'].append(d['runs'][0]),
+                           lambda d: d.update(content_commit='0' * 40),
+                           lambda d: d['jobs_and_artifacts']['main']['artifact']['workflow_run'].update(head_branch='OTHER'),
+                           lambda d: d.update(historical_bytes_authenticated=True),
+                           lambda d: d['jobs_and_artifacts']['main'].update(job=d['jobs_and_artifacts']['candidate']['job'])]:
+                changed = copy.deepcopy(receipt); change(changed); path.write_text(json.dumps(changed))
+                with self.assertRaises(ValueError): m.verify_custody(root)
+            path.unlink()
+            with self.assertRaises(FileNotFoundError): m.verify_custody(root)
+
     def test_values_are_extracted_and_ambiguous_routes_stay_unassigned(self):
         ex = m.derive(fixture())
         self.assertEqual(ex['recommended_level'], 42)

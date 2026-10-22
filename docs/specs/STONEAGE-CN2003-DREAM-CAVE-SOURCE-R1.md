@@ -43,3 +43,8 @@ python -m tools.stoneage_dream_cave_source --fetch --output /tmp/dream-cave-repl
 父档案以完整SHA/Git blob固定：成人仪式合同仅说明已研究的前置概念，19集合合同允许本条进入quests研究集合；不重开成人仪式来源独立性或将两个版本的条件拼接。原始脚本、官方同版说明或带来源的路线标签可重开对应缺口；仅出现同文转载不增加独立支持。
 
 下一项 `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-69` 回全22域，优先其他地区的具名地图/生态、人物关系或有同版实参的音效。Stage A仍7 PARTIAL+2 OPEN、Stage B/wiki GATED、R79 PAUSED_NON_BLOCKING，无整体复原百分比。
+
+
+## 双端独立验收与保管
+
+内容提交17c9d9a231ce4eef12daed44881cbff4b2c58db0的候选10/main11项Actions均成功，专用run39761395749/39761469475各实际五单元及实源重取。两ZIP实下，API摘要匹配；完整派生11446B/SHA256 1ca6e1dfcc4ac24f1303d90c2a26f6fc32a7efbd2c1a2574290c68c795560222，双CI/local逐字节等同。原派生和CUSTODY-R1永久保管五文件原字节与完整出处，不包含原HTML。新增必须存在的保管门及缺失/篡改/来源错配检查，使本包增为六测试；保管提交自身远端验收另实查。

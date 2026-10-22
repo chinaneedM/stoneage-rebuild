@@ -1620,3 +1620,14 @@ R66已取得一篇新具名版号文献，预检见 research/recovered/STONEAGE-
 本包有限解析、五单元、16真实源去摘要门改写及script正例；具体远端候选/main重取与ZIP/永久派生保管须后验，不预告成功。最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-69回22域其他地区地图生态/人物或有同版实参的音效；Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停，旧历史不改删。
 
 本地首次相关回归误写模块名导致ImportError，改用真实tests.test_stoneage_preproduction_archive后19项通过；独立词法复核初将非路线图片表计入，按含路径字段筛选后通过。解析器新增路线成对表结构时先误纳外层父表，实源拒绝后修为只取叶表，五单元与16实源反例重验通过。这些为本地修正，未伪记远端失败或来源改动。
+
+
+### 2026-10-22 R68双端实源重放验收及永久派生保管
+
+内容提交17c9d9a231ce4eef12daed44881cbff4b2c58db0/tree41ccd755ae0c52ea1c8b75ec7669cf205a7cb585，候选10/main11项适用Actions实际completed/success；实时main预期HEAD保护非强制快进。十文件/整tree与本地一致，四历史文档只追加，旧行删除0。专用候选run39761395749/job119766175945/artifact12417249986，主线run39761469475/job119766416879/artifact12417668351，分别真实执行五单元、当前HTML重取及16实源语义改写/script正例，非原游戏运行。
+
+实下双ZIP均2669B，SHA256 81770b559cfaff84507c6f541a52bca0e69d9f2625525177bc1c36269291a772 / fc0ac725d2de76fab1bfd55a8e792476ffceb72305fb3b45cdf0c0ccb44370ae逐一符合API；各唯一replay.json完整11446B/SHA256 1ca6e1dfcc4ac24f1303d90c2a26f6fc32a7efbd2c1a2574290c68c795560222/Git blob180ad0e60bfab78acd33513ff6ad8a09c6048428。两CI/local/新增保管门后local四份逐字节相同，原HTTP摘要同初取。独立正则/实体复核三奖励属性与精灵、两入口及两路线表，确认无昼夜标签。
+
+双原派生JSON与research/recovered/STONEAGE-CN2003-DREAM-CAVE-CUSTODY-R1.json永久入Git，固定内容Git、21实际run、双job/artifact/ZIP和五永久文件原字节/Git身份。强制保管门拒绝文件缺失/等长篡改、错HEAD/分支、重复run/job和历史字节认证晋升；本包五→六单元，与旧档案/组合队列共20项本地通过。保管提交自身候选/main CI仍需真实后验，不把旧五单元倒称六项。原HTML/图/程序不进Git，资格/路线/坐标/原ID/build边界保留。
+
+最高NEXT69回全22域其他地区具名地图生态/人物关系或有同版实参音效；Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停，旧历史全文保留。
