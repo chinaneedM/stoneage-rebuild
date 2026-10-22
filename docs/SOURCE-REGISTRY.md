@@ -7978,3 +7978,8 @@ research/recovered/STONEAGE-CN2003-UI-TEAM-TRADE-SOURCE-R1.json源派生Git blob
 ### 2026-10-22 R66 STA2.53来源补充
 
 来源身份、三个当前HTTP摘要、四引文复用检验及原始链接恢复记录见 research/recovered/STONEAGE-STA253-SPEAKER-SOURCE-R1.json；分源界限见 docs/specs/STONEAGE-STA253-SPEAKER-SOURCE-R1.md。S2为旧源复取，预检不改写；当前网页不认证同期原字节，原HTML/工具不入Git。验收与保管后验。
+
+
+### 2026-10-22 R67两页料理资料来源
+
+两当前HTTP身份、原字节SHA、可见刊时及模块/导航注记见research/recovered/STONEAGE-COOKING-EFFECT-SOURCE-R1.json；限定规格docs/specs/STONEAGE-COOKING-EFFECT-SOURCE-R1.md。门户署名栏不认证运营商撰文，未取得同期原档；选定四行，不保存原HTML/图。双端运行与永久保管后验。

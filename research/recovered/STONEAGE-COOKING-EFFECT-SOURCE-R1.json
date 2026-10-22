@@ -1,0 +1,409 @@
+{
+  "schema": "stoneage.cooking_effect.source.r1",
+  "task": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-67",
+  "date": "2026-10-22",
+  "baseline_head": "c84d7af570676d510a520f19b8f8ff1be00c014b",
+  "baseline_tree": "eae5686b404d704c3f48266386a54ee0d4541c4d",
+  "startup": {
+    "branches": 463,
+    "open_prs": 0,
+    "in_progress_actions": 0,
+    "unrelated_queued_run": 37642417333,
+    "tree_entries": 5097,
+    "agents_files": [],
+    "full_file_pins": [
+      {
+        "path": "README.md",
+        "bytes": 45937,
+        "sha256": "9feb9d418fe67809176c5c2970fc27498123531dd9051e131a4c3b3332cf803c",
+        "git_blob": "65cfe8de7ce8394f8eb659d8105a14f1d11753ca"
+      },
+      {
+        "path": "docs/PROJECT-CONTINUITY-PROTOCOL-R1.md",
+        "bytes": 9762,
+        "sha256": "c44834eeec87f7a43e9cb4905f08377349e36d58b1fff2c5a75a6975db695e3b",
+        "git_blob": "ba9bbe19384589400abc61af37a360a40bf91452"
+      },
+      {
+        "path": "docs/CURRENT-STATE.md",
+        "bytes": 2325668,
+        "sha256": "c981e04991932d51dc7688a07b11868f02623bcc825b052533a8611a0c0920df",
+        "git_blob": "6bf8c6f1d9902fbce4b85e9af8d2e99cb40e6262"
+      },
+      {
+        "path": "docs/DESIGN-DECISIONS.md",
+        "bytes": 45965,
+        "sha256": "28b572ed01179eacd5a06b4ad62c76e4baef22ac49587aa0bad452a7cb3fe8e6",
+        "git_blob": "013ae4fad9301ab0140fe408a423b3abad97d1f9"
+      },
+      {
+        "path": "docs/HISTORICAL-TIMELINE.md",
+        "bytes": 591517,
+        "sha256": "c3666c66b198ac04d83332ad85d0b929721b411b09a7766aa04563a6ae8c7725",
+        "git_blob": "fb2e0218b83cc391e8a30d0a3edbd89a29fab38f"
+      },
+      {
+        "path": "docs/SOURCE-REGISTRY.md",
+        "bytes": 861966,
+        "sha256": "cac862bf351658a92b56d72988c8b13315238da473c63579c9206f95d943137a",
+        "git_blob": "213162bce4d523340e1931f24910f68ccaf0697a"
+      },
+      {
+        "path": "docs/RESTORATION-ROADMAP-R2.md",
+        "bytes": 260139,
+        "sha256": "76ec4c8bb69a40ca44a3a112b261a2bcb3e6e6811e8393f13b4beefef85630ae",
+        "git_blob": "59fd0373e26734761ab01e4a4fa616ba23781360"
+      },
+      {
+        "path": "research/recovered/STONEAGE-22-DOMAIN-SOURCE-READY-PORTFOLIO-R2.json",
+        "bytes": 15948,
+        "sha256": "7d50de08f7855cf16dbe54b1747e258f1cc1223de88cc217172fd145f3c704ce",
+        "git_blob": "088b469b3c51e689cff27f33fc3bb49de2d24b2c"
+      },
+      {
+        "path": "docs/STAGE-A-CONSOLIDATED-REVIEW-R1.md",
+        "bytes": 15835,
+        "sha256": "52005bc4d6eb3ec9905e026a50683ae63b0950ad755a623691c1882935d8365b",
+        "git_blob": "07c9950a40d110d4dabb80b11412db8b4ea64ba9"
+      }
+    ],
+    "main_successful_actions": 8,
+    "candidate_successful_actions_same_head": 7
+  },
+  "version_profile": "CN2003_SINA_COOKING_DOCUMENT_EXACT_GAME_BUILD_UNKNOWN",
+  "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+  "source_pages": [
+    {
+      "id": "S1",
+      "url": "https://games.sina.com.cn/zhqu/sta/lldq/lldq_2.shtml",
+      "final_url": "https://games.sina.com.cn/zhqu/sta/lldq/lldq_2.shtml",
+      "status": 200,
+      "bytes": 52549,
+      "sha256": "fc211a8b14ad9f503ed725130dc43a394d91a53a2039ffe514b591718042d3bb",
+      "declared_charset": "gb2312",
+      "decoder": "GB18030_STRICT",
+      "displayed_publication": "2003-04-02 15:04",
+      "publication_comments_not_original_dates": [
+        "<!--[115,15,2] published at 2006-10-09 17:40:44 from #237 by system-->",
+        "<!--[115,39,47] published at 2015-12-16 15:32:07 from #21 by 12887-->",
+        "<!--[115,21,3] published at 2015-12-16 10:08:42 from #21 by 12887-->",
+        "<!--[115,8,207] published at 2003-12-24 18:10:30 from #006 by 0-->"
+      ],
+      "historical_capture": null,
+      "source_role": "CURRENT_PORTAL_GUIDE_UNKNOWN_AUTHOR_NOT_DIRECT_OPERATOR_OR_RUNTIME",
+      "author_identity": null
+    },
+    {
+      "id": "S2",
+      "url": "https://games.sina.com.cn/zhqu/sta/lldq/lldq_4.shtml",
+      "final_url": "https://games.sina.com.cn/zhqu/sta/lldq/lldq_4.shtml",
+      "status": 200,
+      "bytes": 44295,
+      "sha256": "249c5b94acd00ed0116342b4de5f18f8a484c0e70d1a87f41050561bc07e6f98",
+      "declared_charset": "gb2312",
+      "decoder": "GB18030_STRICT",
+      "displayed_publication": "2003-04-02 16:01",
+      "publication_comments_not_original_dates": [
+        "<!--[115,15,5] published at 2006-10-09 17:40:47 from #237 by system-->",
+        "<!--[115,39,47] published at 2015-12-16 15:32:07 from #21 by 12887-->",
+        "<!--[115,21,3] published at 2015-12-16 10:08:42 from #21 by 12887-->",
+        "<!--[115,8,207] published at 2003-12-24 18:10:30 from #006 by 0-->"
+      ],
+      "historical_capture": null,
+      "source_role": "CURRENT_PORTAL_GUIDE_UNKNOWN_AUTHOR_NOT_DIRECT_OPERATOR_OR_RUNTIME",
+      "author_identity": null
+    }
+  ],
+  "extraction": {
+    "schema": "stoneage.cooking_effect.extraction.r1",
+    "rows": [
+      {
+        "source_ref": "S1",
+        "category_as_written": "耐力回复类（全体）",
+        "name_as_written": "豪华生鱼片",
+        "effect_as_written": "回复耐力500(全体)",
+        "ingredient_cell_as_written": "鱼4+螃蟹4+花枝4+章鱼4+虾4",
+        "ingredient_tokens_as_written": [
+          "鱼4",
+          "螃蟹4",
+          "花枝4",
+          "章鱼4",
+          "虾4"
+        ],
+        "use_note_as_written": null,
+        "ingredient_suffix_meaning": null,
+        "ingredient_quantities": null,
+        "ingredient_grades": null,
+        "resource_to_hp_mp_mapping": null,
+        "item_id": null,
+        "recipe_id": null,
+        "success_rate": null,
+        "runtime_verified": false
+      },
+      {
+        "source_ref": "S2",
+        "category_as_written": "PK使用类",
+        "name_as_written": "铁人关东煮",
+        "effect_as_written": "恢复耐力300+气力100",
+        "ingredient_cell_as_written": "串4+虾4+螃蟹4+章鱼4+水4（只能平时使用，战斗中无效）",
+        "ingredient_tokens_as_written": [
+          "串4",
+          "虾4",
+          "螃蟹4",
+          "章鱼4",
+          "水4"
+        ],
+        "use_note_as_written": "只能平时使用，战斗中无效",
+        "ingredient_suffix_meaning": null,
+        "ingredient_quantities": null,
+        "ingredient_grades": null,
+        "resource_to_hp_mp_mapping": null,
+        "item_id": null,
+        "recipe_id": null,
+        "success_rate": null,
+        "runtime_verified": false
+      },
+      {
+        "source_ref": "S2",
+        "category_as_written": "PK使用类",
+        "name_as_written": "豪华生鱼片",
+        "effect_as_written": "全体耐力500以上",
+        "ingredient_cell_as_written": "鱼4+螃蟹4+花枝4+章鱼4+虾4",
+        "ingredient_tokens_as_written": [
+          "鱼4",
+          "螃蟹4",
+          "花枝4",
+          "章鱼4",
+          "虾4"
+        ],
+        "use_note_as_written": null,
+        "ingredient_suffix_meaning": null,
+        "ingredient_quantities": null,
+        "ingredient_grades": null,
+        "resource_to_hp_mp_mapping": null,
+        "item_id": null,
+        "recipe_id": null,
+        "success_rate": null,
+        "runtime_verified": false
+      },
+      {
+        "source_ref": "S2",
+        "category_as_written": "PK使用类",
+        "name_as_written": "青鱼子",
+        "effect_as_written": "单体异常状态恢复",
+        "ingredient_cell_as_written": "刚产的蛋+深海鱼",
+        "ingredient_tokens_as_written": [
+          "刚产的蛋",
+          "深海鱼"
+        ],
+        "use_note_as_written": null,
+        "ingredient_suffix_meaning": null,
+        "ingredient_quantities": null,
+        "ingredient_grades": null,
+        "resource_to_hp_mp_mapping": null,
+        "item_id": null,
+        "recipe_id": null,
+        "success_rate": null,
+        "runtime_verified": false
+      }
+    ],
+    "counterpart": {
+      "same_display_name": true,
+      "same_ingredient_literals": true,
+      "effect_literals_equal": false,
+      "same_item_id_established": false,
+      "runtime_contradiction_proven": false,
+      "numeric_effects_reconciled": false
+    },
+    "category_does_not_override_row_restriction": true,
+    "all_abnormal_status_types_recovered": false,
+    "all_other_recipes_archived": false,
+    "exact_game_build": null,
+    "author_identity": null,
+    "historical_bytes_authenticated": false
+  },
+  "parent_pins": [
+    {
+      "path": "research/recovered/STONEAGE-COOKING-EFFECT-SOURCE-HANDOFF-R1.json",
+      "bytes": 1798,
+      "sha256": "7469969a2eba0523fe6625c687853589aedec8832cf745095b7156750d6c0aa8",
+      "git_blob": "6ffaa503b11a53cf5b9be1402e4a4fe90b648bf6"
+    },
+    {
+      "path": "research/recovered/STONEAGE-CN20-PET-CRAFTING-SOURCE-R1.json",
+      "bytes": 26300,
+      "sha256": "ea9cf8f54aaf5996289007d2c543b7ca7dccd64b457d296694dada99361cb31f",
+      "git_blob": "a8c0298afe23e4aecb6c0e669a8683dd5842e491"
+    },
+    {
+      "path": "research/recovered/STONEAGE-CN20-HEALING-SPELLS-SOURCE-R1.json",
+      "bytes": 27194,
+      "sha256": "b1cf694e0fe49964753f84ea8b6bceb9ea4cc41039eac7f232bc864b99bf6210",
+      "git_blob": "ab6eec50fc87e1388d70658282acc4c2b14b5749"
+    },
+    {
+      "path": "research/recovered/STONEAGE-PREPRODUCTION-CONTENT-ARCHIVE-R1.json",
+      "bytes": 24489,
+      "sha256": "e87afebc8c9590142c7cc8831b578455b3427bf7c1d10520ae02a3e8082fbddb",
+      "git_blob": "2d5b3f081d5618287f431fbded943722a820c593"
+    }
+  ],
+  "negative_boundaries": {
+    "official_operator_authorship_verified": false,
+    "exact_game_build_verified": false,
+    "tw10_rules_backfilled": false,
+    "same_item_ids_proven": false,
+    "runtime_formula_recovered": false,
+    "all_abnormal_statuses_cured": false,
+    "all_recipes_recovered": false,
+    "ingredient_suffix_quantity_or_grade_decoded": false,
+    "hp_mp_mapping_proven": false,
+    "original_html_or_assets_committed": false,
+    "new_game_production_started": false
+  },
+  "stop_condition": "Two current HTML pages; three PK rows and one counterpart, no other cooking pages, recipe database, pictures or runtime implementation.",
+  "next_priority": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-68: rotate to a named map/NPC/quest or same-build audio event source; do not expand cooking helpers without a material source dependency.",
+  "catalog_records": [
+    {
+      "record_id": "CN2003-SINA-R67-RECIPE-01",
+      "entity_type": "documentary_recipe_description",
+      "collection": "recipes",
+      "version_profile": "CN2003_SINA_COOKING_DOCUMENT_EXACT_GAME_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "SOURCE_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "source_ref": "S1",
+        "category_as_written": "耐力回复类（全体）",
+        "name_as_written": "豪华生鱼片",
+        "effect_as_written": "回复耐力500(全体)",
+        "ingredient_cell_as_written": "鱼4+螃蟹4+花枝4+章鱼4+虾4",
+        "ingredient_tokens_as_written": [
+          "鱼4",
+          "螃蟹4",
+          "花枝4",
+          "章鱼4",
+          "虾4"
+        ],
+        "use_note_as_written": null,
+        "ingredient_suffix_meaning": null,
+        "ingredient_quantities": null,
+        "ingredient_grades": null,
+        "resource_to_hp_mp_mapping": null,
+        "item_id": null,
+        "recipe_id": null,
+        "success_rate": null,
+        "runtime_verified": false
+      }
+    },
+    {
+      "record_id": "CN2003-SINA-R67-RECIPE-02",
+      "entity_type": "documentary_recipe_description",
+      "collection": "recipes",
+      "version_profile": "CN2003_SINA_COOKING_DOCUMENT_EXACT_GAME_BUILD_UNKNOWN",
+      "source_refs": [
+        "S2"
+      ],
+      "verification_status": "SOURCE_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "source_ref": "S2",
+        "category_as_written": "PK使用类",
+        "name_as_written": "铁人关东煮",
+        "effect_as_written": "恢复耐力300+气力100",
+        "ingredient_cell_as_written": "串4+虾4+螃蟹4+章鱼4+水4（只能平时使用，战斗中无效）",
+        "ingredient_tokens_as_written": [
+          "串4",
+          "虾4",
+          "螃蟹4",
+          "章鱼4",
+          "水4"
+        ],
+        "use_note_as_written": "只能平时使用，战斗中无效",
+        "ingredient_suffix_meaning": null,
+        "ingredient_quantities": null,
+        "ingredient_grades": null,
+        "resource_to_hp_mp_mapping": null,
+        "item_id": null,
+        "recipe_id": null,
+        "success_rate": null,
+        "runtime_verified": false
+      }
+    },
+    {
+      "record_id": "CN2003-SINA-R67-RECIPE-03",
+      "entity_type": "documentary_recipe_description",
+      "collection": "recipes",
+      "version_profile": "CN2003_SINA_COOKING_DOCUMENT_EXACT_GAME_BUILD_UNKNOWN",
+      "source_refs": [
+        "S2"
+      ],
+      "verification_status": "SOURCE_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "source_ref": "S2",
+        "category_as_written": "PK使用类",
+        "name_as_written": "豪华生鱼片",
+        "effect_as_written": "全体耐力500以上",
+        "ingredient_cell_as_written": "鱼4+螃蟹4+花枝4+章鱼4+虾4",
+        "ingredient_tokens_as_written": [
+          "鱼4",
+          "螃蟹4",
+          "花枝4",
+          "章鱼4",
+          "虾4"
+        ],
+        "use_note_as_written": null,
+        "ingredient_suffix_meaning": null,
+        "ingredient_quantities": null,
+        "ingredient_grades": null,
+        "resource_to_hp_mp_mapping": null,
+        "item_id": null,
+        "recipe_id": null,
+        "success_rate": null,
+        "runtime_verified": false
+      }
+    },
+    {
+      "record_id": "CN2003-SINA-R67-RECIPE-04",
+      "entity_type": "documentary_recipe_description",
+      "collection": "recipes",
+      "version_profile": "CN2003_SINA_COOKING_DOCUMENT_EXACT_GAME_BUILD_UNKNOWN",
+      "source_refs": [
+        "S2"
+      ],
+      "verification_status": "SOURCE_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "source_ref": "S2",
+        "category_as_written": "PK使用类",
+        "name_as_written": "青鱼子",
+        "effect_as_written": "单体异常状态恢复",
+        "ingredient_cell_as_written": "刚产的蛋+深海鱼",
+        "ingredient_tokens_as_written": [
+          "刚产的蛋",
+          "深海鱼"
+        ],
+        "use_note_as_written": null,
+        "ingredient_suffix_meaning": null,
+        "ingredient_quantities": null,
+        "ingredient_grades": null,
+        "resource_to_hp_mp_mapping": null,
+        "item_id": null,
+        "recipe_id": null,
+        "success_rate": null,
+        "runtime_verified": false
+      }
+    }
+  ]
+}

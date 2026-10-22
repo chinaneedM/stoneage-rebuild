@@ -1587,3 +1587,14 @@ R66已取得一篇新具名版号文献，预检见 research/recovered/STONEAGE-
 实际双ZIP各1812B，SHA256 77e921ebf5d8da110ce5b47e9a626dcbcfb33430af2981b211fb6c148edd75b3 / 1c570c5b69d6ecee89812c20812453d71b545c01886db3d659adb6e9f7efd289分别匹配API；唯一replay.json完整4226B/SHA256 52c021152e77da75c752c5a3d7be8127cea4a2298aaf57be3fdb0ad5be4676bd，候选/main/local以及加保管门后本地重放逐字节相等，三输入大小/摘要同初取。完整两CI派生原JSON与research/recovered/STONEAGE-STA253-SPEAKER-CUSTODY-R1.json永久入Git，固定内容Git、21项实际run、双job/artifact/ZIP及七个永久文件原生Git身份。
 
 新增强制保管门：收据/原派生实际缺失及等长篡改、重复run、错HEAD/分支拒绝；单元七→八，与旧档案17项本地回归通过。保管提交自身候选/main CI另行实查，不把旧七项称八项。原网页全文/HTML/图/工具不进Git；附录再引不增独立支持，beta表现与全部2.53同构建/稳定性未知等限制原样保留。最高NEXT67轮换22域的具名物品/配方/经济或地图/NPC，不继续扩STA内部helper；Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停，全部历史前缀完整。
+
+
+## 2026-10-22 R67：料理效果、原料字串与平时／战斗场景
+
+新读mainc84d7af570676d510a520f19b8f8ff1be00c014b/treeeae5686b404d704c3f48266386a54ee0d4541c4d，463分支/0开放PR/0运行中Actions，原HEAD main8/候选7项全SUCCESS，旧queued37642417333单列。九启动文件完整UTF8/原生Git核验，CURRENT2325668B历史前缀完整，5097项完整树无AGENTS。按最高NEXT67从预检进入两页四条具名料理文献记录，详docs/specs/STONEAGE-COOKING-EFFECT-SOURCE-R1.md与research/recovered/STONEAGE-COOKING-EFFECT-SOURCE-R1.json。
+
+当前两HTML实际52549/44295B、严格GB18030，SHA完整保管；可见2003-04-02两刊时与2006整页/2003模块/2015导航注记分开。四行是三具名料理加同名对照，不当四个原游戏实体；行内使用备注不能被PK分类标题覆盖，同名效果字面差别不当原服数值矛盾，原料尾数不猜数量或等级。作者、精确build、原ID和配方执行未证；旧2.0宠物加工/回复法术仅版本化父证据，不倒灌字段。原HTML/图片不入Git。
+
+七项反例测试与12真实源语义改写无摘要门、两外围script正例本地通过；一次性独立正则/实体复核四原单元格。本包与旧档案/组合队列17项相关回归先通过，再加强可见标题归属及负边界不得缺失的检查，本包七项重验通过；无相应远端失败。源候选/main网页重取、ZIP实下和永久派生保管须真实后验，不先报绿。
+
+有限止点两页四行，不扫余下食谱或扩料理helper。最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-68回22域，优先具名地图/NPC/任务或有同版实参的音效材料；Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79 PAUSED_NON_BLOCKING，完整历史保留。

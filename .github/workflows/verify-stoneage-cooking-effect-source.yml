@@ -1,0 +1,38 @@
+name: Verify source-qualified cooking effects and usage limits
+on:
+  push:
+    paths:
+      - 'tools/stoneage_cooking_effect_source.py'
+      - 'tests/test_stoneage_cooking_effect_source.py'
+      - 'research/recovered/STONEAGE-COOKING-EFFECT-*.json'
+      - 'docs/specs/STONEAGE-COOKING-EFFECT-SOURCE-R1.md'
+      - '.github/workflows/verify-stoneage-cooking-effect-source.yml'
+  pull_request:
+    paths:
+      - 'tools/stoneage_cooking_effect_source.py'
+      - 'tests/test_stoneage_cooking_effect_source.py'
+      - 'research/recovered/STONEAGE-COOKING-EFFECT-*.json'
+      - 'docs/specs/STONEAGE-COOKING-EFFECT-SOURCE-R1.md'
+      - '.github/workflows/verify-stoneage-cooking-effect-source.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  bounded-source-replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Row scope, ingredient notation and source-boundary counterexamples
+        run: python -m unittest tests.test_stoneage_cooking_effect_source -v
+      - name: Retrieve two current source tables and reject semantic mutations
+        run: python -m tools.stoneage_cooking_effect_source --fetch --output "$RUNNER_TEMP/r67/replay.json"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cooking-effect-derived-r67
+          path: ${{ runner.temp }}/r67/replay.json
+          if-no-files-found: error
+          retention-days: 30

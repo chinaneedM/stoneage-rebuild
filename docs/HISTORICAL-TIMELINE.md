@@ -4283,3 +4283,8 @@ research/recovered/STONEAGE-CN2003-UI-TEAM-TRADE-SOURCE-R1.json源派生Git blob
 ### 2026-10-22 R66工具文献分层归档
 
 新增STA2.53相关玩家文献的版本/发言归属与beta试用边界；见 docs/specs/STONEAGE-STA253-SPEAKER-SOURCE-R1.md。页面发表时间不当软件发布日期，未认证具体官方游戏build或运行；不据冲突编造确定补丁演化。
+
+
+### 2026-10-22 R67分源料理文献关系
+
+新增有限料理效果与使用场景关系，见docs/specs/STONEAGE-COOKING-EFFECT-SOURCE-R1.md。网页的刊时、模块发布注记和当前取得时间不是确定产品更新时间；未认证原服配方或同build身份，不据同名差异编造补丁演化。
