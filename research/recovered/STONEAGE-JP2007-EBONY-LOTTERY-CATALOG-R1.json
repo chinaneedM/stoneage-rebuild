@@ -1,0 +1,110 @@
+{
+  "schema": "stoneage.jp2007_ebony_lottery.catalog.r1",
+  "source_report_pin": {
+    "path": "research/recovered/STONEAGE-JP2007-EBONY-LOTTERY-SOURCE-R1.json",
+    "bytes": 9083,
+    "sha256": "3ed42585e63d043626d2966dab65ea54d18f1813004e8bd546eace3b027e1b01",
+    "git_blob": "7ac180ad8d5bb549b696d73c8e344eacf47e59cb"
+  },
+  "legacy_source_rows_omit_required_entity_type": true,
+  "legacy_source_and_ci_bytes_preserved": true,
+  "records": [
+    {
+      "record_id": "JP2007-R78-LOTTERY",
+      "collection": "items",
+      "content": {
+        "name": "黒檀のくじ",
+        "context": "PAID_SHOP_LOTTERY_NOT_WILD_ENCOUNTER",
+        "price": {
+          "amount": 1000,
+          "currency": "GStone",
+          "shop": "マンモストア",
+          "purchase_unit_or_bundle_count": null
+        }
+      },
+      "version_profile": "JP_PC_2007_UTD_RELEASE_REPUBLISHED_BY_4GAMER_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "game_ids": null,
+      "record_revision": 1,
+      "entity_type": "DOCUMENTARY_SHOP_LOTTERY_ITEM"
+    },
+    {
+      "record_id": "JP2007-R78-PET1",
+      "collection": "pets",
+      "content": {
+        "name": "ギガドラン",
+        "relative_multiplier_as_reported": 2,
+        "base_probability": null,
+        "changed_probability": null,
+        "original_species_id": null
+      },
+      "version_profile": "JP_PC_2007_UTD_RELEASE_REPUBLISHED_BY_4GAMER_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "game_ids": null,
+      "record_revision": 1,
+      "entity_type": "DOCUMENTARY_PET_ACQUISITION"
+    },
+    {
+      "record_id": "JP2007-R78-PET2",
+      "collection": "pets",
+      "content": {
+        "name": "ドルーザス",
+        "relative_multiplier_as_reported": 2,
+        "base_probability": null,
+        "changed_probability": null,
+        "original_species_id": null
+      },
+      "version_profile": "JP_PC_2007_UTD_RELEASE_REPUBLISHED_BY_4GAMER_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "game_ids": null,
+      "record_revision": 1,
+      "entity_type": "DOCUMENTARY_PET_ACQUISITION"
+    },
+    {
+      "record_id": "JP2007-R78-WINDOW",
+      "collection": "tutorials",
+      "content": {
+        "window": [
+          [
+            2007,
+            7,
+            30,
+            18,
+            0
+          ],
+          [
+            2007,
+            7,
+            31,
+            13,
+            0
+          ]
+        ],
+        "sale_end": true,
+        "other_types": 4,
+        "other_direction": "SLIGHT_DECREASE_AS_REPORTED"
+      },
+      "version_profile": "JP_PC_2007_UTD_RELEASE_REPUBLISHED_BY_4GAMER_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "game_ids": null,
+      "record_revision": 1,
+      "entity_type": "DOCUMENTARY_RATE_CHANGE_ANNOUNCEMENT"
+    }
+  ]
+}

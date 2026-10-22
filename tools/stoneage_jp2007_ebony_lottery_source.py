@@ -92,12 +92,34 @@ def pin(path):
 
 
 def catalog(ex):
+    """Retained original R78 derived rows; use export_catalog for the full record contract."""
     rows = [('LOTTERY', 'items', {'name': ex['lottery_name'], 'context': ex['acquisition_context'], 'price': ex['price_as_reported']})]
     rows += [('PET'+str(i), 'pets', v) for i,v in enumerate(ex['named_pet_relative_rates'],1)]
     rows += [('WINDOW', 'tutorials', {'window': ex['rate_window_using_publication_year'], 'sale_end': True, 'other_types': ex['other_pet_types_count'], 'other_direction': ex['other_rate_direction']})]
     return [{'record_id': 'JP2007-R78-'+ident, 'collection': coll, 'content': c, 'version_profile': PROFILE,
              'source_refs': ['S1'], 'verification_status': 'SOURCE_REPORTED_NOT_RUNTIME',
              'rights_status': 'RESEARCH_METADATA_NOT_RELEASE_APPROVED', 'game_ids': None, 'record_revision': 1} for ident,coll,c in rows]
+
+
+def export_catalog(r):
+    types = ('DOCUMENTARY_SHOP_LOTTERY_ITEM', 'DOCUMENTARY_PET_ACQUISITION',
+             'DOCUMENTARY_PET_ACQUISITION', 'DOCUMENTARY_RATE_CHANGE_ANNOUNCEMENT')
+    rows = [dict(row, entity_type=kind) for row,kind in zip(catalog(r['extraction']),types)]
+    return {'schema':'stoneage.jp2007_ebony_lottery.catalog.r1',
+            'source_report_pin':pin(f'research/recovered/{STEM}-SOURCE-R1.json'),
+            'legacy_source_rows_omit_required_entity_type':True,
+            'legacy_source_and_ci_bytes_preserved':True, 'records':rows}
+
+
+def verify_export_catalog(r, exported=None):
+    if exported is None:
+        exported=json.loads((ROOT/f'research/recovered/{STEM}-CATALOG-R1.json').read_text())
+    contract=json.loads((ROOT/PARENTS[1]).read_text())['future_website']
+    require(exported==export_catalog(r), 'Complete export detached from preserved source rows')
+    for row in exported['records']:
+        require(set(contract['record_contract']['required']).issubset(row), 'Required record field missing')
+        require(row['collection'] in contract['required_collections'], 'Unknown collection')
+    return exported
 
 
 def validate(r):
@@ -225,6 +247,7 @@ def main():
     require(bool(a.input_dir) != a.fetch, 'Choose input directory or live fetch')
     result = replay(read_inputs(a.input_dir),json.loads(REPORT.read_text()))
     verify_custody()
+    verify_export_catalog(json.loads(REPORT.read_text()))
     out=Path(a.output); out.parent.mkdir(parents=True,exist_ok=True); out.write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n')
     print('R78 bounded source replay passed; original server execution remains unproven.')
 

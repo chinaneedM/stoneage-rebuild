@@ -56,6 +56,22 @@ class EbonyLotteryTests(unittest.TestCase):
             d=copy.deepcopy(r);d['catalog_records'][0][key]=value
             with self.assertRaises(ValueError):m.validate(d)
 
+    def test_complete_export_supplies_every_required_field_without_rewriting_original_rows(self):
+        r=self.report();exported=m.verify_export_catalog(r)
+        self.assertEqual(len(exported['records']),4)
+        required=json.loads((m.ROOT/m.PARENTS[1]).read_text())['future_website']['record_contract']['required']
+        self.assertTrue(all(set(required).issubset(row) for row in exported['records']))
+        self.assertTrue(all('entity_type' not in row for row in r['catalog_records']))
+        for key in required:
+            changed=copy.deepcopy(exported);changed['records'][0].pop(key)
+            with self.assertRaises(ValueError):m.verify_export_catalog(r,changed)
+        for change in [lambda d:d['records'][1].update(entity_type='ORIGINAL_PET_MASTER'),
+                       lambda d:d.update(legacy_source_rows_omit_required_entity_type=False),
+                       lambda d:d['records'][1].update(version_profile='TW10'),
+                       lambda d:d['source_report_pin'].update(sha256='0'*64)]:
+            changed=copy.deepcopy(exported);change(changed)
+            with self.assertRaises(ValueError):m.verify_export_catalog(r,changed)
+
     def test_parent_and_parser_bytes_are_required_and_not_just_valid_json(self):
         r=self.report()
         with tempfile.TemporaryDirectory() as name:
