@@ -1,0 +1,38 @@
+name: Verify STA253 speaker-scoped historical tool claims
+on:
+  push:
+    paths:
+      - 'tools/stoneage_sta253_speaker_source.py'
+      - 'tests/test_stoneage_sta253_speaker_source.py'
+      - 'research/recovered/STONEAGE-STA253-SPEAKER-*.json'
+      - 'docs/specs/STONEAGE-STA253-SPEAKER-SOURCE-R1.md'
+      - '.github/workflows/verify-stoneage-sta253-speaker-source.yml'
+  pull_request:
+    paths:
+      - 'tools/stoneage_sta253_speaker_source.py'
+      - 'tests/test_stoneage_sta253_speaker_source.py'
+      - 'research/recovered/STONEAGE-STA253-SPEAKER-*.json'
+      - 'docs/specs/STONEAGE-STA253-SPEAKER-SOURCE-R1.md'
+      - '.github/workflows/verify-stoneage-sta253-speaker-source.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  bounded-source-replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Speaker and quote boundary counterexamples
+        run: python -m unittest tests.test_stoneage_sta253_speaker_source -v
+      - name: Retrieve three current player documents and verify speaker claims
+        run: python -m tools.stoneage_sta253_speaker_source --fetch --output "$RUNNER_TEMP/r66/replay.json"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: sta253-speaker-derived-r66
+          path: ${{ runner.temp }}/r66/replay.json
+          if-no-files-found: error
+          retention-days: 30

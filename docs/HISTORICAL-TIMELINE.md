@@ -4278,3 +4278,8 @@ research/recovered/STONEAGE-CN2003-UI-TEAM-TRADE-SOURCE-R1.json源派生Git blob
 ### 2004-09-17报道／2026-10-22复核：日服封印地域与宠物操作
 
 **FACT（同期媒体陈述）**：4Gamer署Asakura报道称第三弹更新新增两个具名区域，含东侧封印洞窟、沉没穀嶺之地和未名恐龙提示；并述自拾取展示、原地放生及一次一只宠邮。**OPEN**：具体运营构建/原服部署/地图ID与路径/物种、参照岛身份、售款或删除/计时/持久化。7月既有未名地图及2006群岛不自动合并，来源和时间见STONEAGE-JP2004-SEALED-REGION-SOURCE-R1，旧历史保留。
+
+
+### 2026-10-22 R66工具文献分层归档
+
+新增STA2.53相关玩家文献的版本/发言归属与beta试用边界；见 docs/specs/STONEAGE-STA253-SPEAKER-SOURCE-R1.md。页面发表时间不当软件发布日期，未认证具体官方游戏build或运行；不据冲突编造确定补丁演化。

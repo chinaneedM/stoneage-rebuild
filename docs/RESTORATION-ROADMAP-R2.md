@@ -1567,3 +1567,14 @@ R62同包增加既有19集合合同的可检索导出：6条quests文献关系�
 R66已取得一篇新具名版号文献，预检见 research/recovered/STONEAGE-STA253-SPEAKER-SOURCE-HANDOFF-R1.json：17173 2002-03-27页面，当前HTTP200/UTF8严格/45844B/SHA256 de559d52986b8403c96b4657d6744af8f3f164b4611fddab661090532297fb4e。外层作者ZHY、附录暗夜之狼及附录内地藏乌拉引文分三发言层；仅一当前页面，不能计三个独立来源。具名Sta2.53的详细信息/可编辑料理脚本/原地遇敌与速度争议值得下一步有限结构化；当前仅保存选材线索与话语冲突，不决断谁正确、不补未知build、不认证原服或内挂采纳。未下载工具、原HTML/资源不入Git。
 
 最高NEXT仍OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-66，预检不当R66验收或全部外挂完成。Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停。所有旧历史完整保留。
+
+
+## 2026-10-22 R66：STA2.53分发言功能档案与具名beta试用
+
+本轮新读main5ec4ef2a75ef24e2655ff387d8da0d73489fdafc/tree7c6a049df39a5ae8224595e1c11073cd0a0d09ae，462分支/0开放PR/0运行中Actions，原HEAD main9/候选8项全SUCCESS，旧queued37642417333单列。九启动文件完整原字节/原生Git校验，CURRENT2321108B完整历史前缀保留，5087项完整树无AGENTS。按最高NEXT66交付docs/specs/STONEAGE-STA253-SPEAKER-SOURCE-R1.md、来源JSON和有限源重放工具；前次预检原样保留。
+
+三当前HTML中S1与S3为新具名材料，S2仅已归档比较文复取；来源身份、字节摘要和S3畸形链接恢复过程均入派生记录。四类能力形成七条分发言主张；四段附录引文与S2对应段去空白后逐字一致，不增加独立支持数。未具版号外层/引文不借用2.53，具名beta标签不当二进制身份；来源冲突、性能评价、未试用料理、未知设置单位和崩溃原因保留，不决定内挂采用。详见分源规格；原HTML/软件/图片不进Git。
+
+七项独立反例测试、14真实源改写去摘要门及三script正例、本包与旧档案16项本地回归通过；一次性正则/实体另核引文一致与beta限定。搜索阅读器S3打不开、畸形外壳404，与实际内层HTTPS200分别记录，不称历史不存在。候选/main当前网页重取、双ZIP下载及永久派生保管须实际后验，不提前报绿。
+
+有限止点三页/四能力域/七主张和beta观察，不扩STA助手或全构建史。最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-67回22域，优先具名物品/配方/经济或地图/NPC；Stage A7 PARTIAL+2 OPEN、Stage B/wiki GATED、R79 PAUSED_NON_BLOCKING，全部旧历史不改删。

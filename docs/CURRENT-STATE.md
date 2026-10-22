@@ -17011,3 +17011,14 @@ R66已取得一篇新具名版号文献，预检见 research/recovered/STONEAGE-
 增量提交 `989cf27ca93d557656c2d0cd25a65b54447a0ef5` / tree `9d24d9722a6bc09f173b9c9ce05671138946f314` 已从新读main117fc2a以expected-SHA保护非强制快进。五blob及整tree与本地一致，CURRENT/路线此前2317750/254578B完整历史前缀保留。候选8/main9项适用Actions实际全部completed/success；专用候选run39725374177/job119647942675、主线run39725427542/job119648112322日志均实际9单元及两网页/17语义反例通过。不同提交的七/八项记录原样保留。
 
 两个新源工件artifact12402667974/12402294739各1619B，实际下载摘要7b6e55ed8e4db14456faf5994bfe71349ab1b463863bfc915fdc3cf35c6b49fb / f591c04160f870c3e581b61d640420cadd0b2f50373d413a45e1da25abee3ca4逐一符合API；各唯一replay.json仍逐字节等于原永久3136B/raw d7c30e3a817d34420724bf6b3b56dc08befed20df34e8a7b90cde102daa4495a，不再复制相同raw。永久增量验收见research/recovered/STONEAGE-JP2004-SEALED-REGION-PROVENANCE-GUARD-ACCEPTANCE-R1.json；原收据没有被替换。当前新说明/验收文件自身CI另查，不借用旧绿灯。最高NEXT66及新取得STA2.53发言层预检保持OPEN，未称完整功能归档已验收；Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停。
+
+
+## 2026-10-22 R66：STA2.53分发言功能档案与具名beta试用
+
+本轮新读main5ec4ef2a75ef24e2655ff387d8da0d73489fdafc/tree7c6a049df39a5ae8224595e1c11073cd0a0d09ae，462分支/0开放PR/0运行中Actions，原HEAD main9/候选8项全SUCCESS，旧queued37642417333单列。九启动文件完整原字节/原生Git校验，CURRENT2321108B完整历史前缀保留，5087项完整树无AGENTS。按最高NEXT66交付docs/specs/STONEAGE-STA253-SPEAKER-SOURCE-R1.md、来源JSON和有限源重放工具；前次预检原样保留。
+
+三当前HTML中S1与S3为新具名材料，S2仅已归档比较文复取；来源身份、字节摘要和S3畸形链接恢复过程均入派生记录。四类能力形成七条分发言主张；四段附录引文与S2对应段去空白后逐字一致，不增加独立支持数。未具版号外层/引文不借用2.53，具名beta标签不当二进制身份；来源冲突、性能评价、未试用料理、未知设置单位和崩溃原因保留，不决定内挂采用。详见分源规格；原HTML/软件/图片不进Git。
+
+七项独立反例测试、14真实源改写去摘要门及三script正例、本包与旧档案16项本地回归通过；一次性正则/实体另核引文一致与beta限定。搜索阅读器S3打不开、畸形外壳404，与实际内层HTTPS200分别记录，不称历史不存在。候选/main当前网页重取、双ZIP下载及永久派生保管须实际后验，不提前报绿。
+
+有限止点三页/四能力域/七主张和beta观察，不扩STA助手或全构建史。最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-67回22域，优先具名物品/配方/经济或地图/NPC；Stage A7 PARTIAL+2 OPEN、Stage B/wiki GATED、R79 PAUSED_NON_BLOCKING，全部旧历史不改删。

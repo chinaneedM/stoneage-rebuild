@@ -7973,3 +7973,8 @@ research/recovered/STONEAGE-CN2003-UI-TEAM-TRADE-SOURCE-R1.json源派生Git blob
 - 新结构化：https://www.4gamer.net/news/history/2004.09/20040917191201detail.html ，正文Asakura，可见2004/09/17 19:12；当前HTTP200/10300B/CP932、SHA256 f544f907badeb6855cc79bd76821d8e0aaf8c5498e095bc1d193cb5c5e47a057。媒体署名报道，非直接运营原文或商业运行，实际同期快照未认证。
 - 既有7月页仅重取，10860B/160d53f4aa399d06ca9406b00baf0bd85e955370571957fd08e45aceb92455ad，与旧CHAT-UPDATE报告逐语义核对；不重新算独立新来源。不取原图，不沿stoneage.to官网链接递归。
 - 规格docs/specs/STONEAGE-JP2004-SEALED-REGION-SOURCE-R1.md与七条派生目录research/recovered/STONEAGE-JP2004-SEALED-REGION-SOURCE-R1.json分离两具名区域、未名生态和三宠物操作，保留跨文献不合并与原ID未知。
+
+
+### 2026-10-22 R66 STA2.53来源补充
+
+来源身份、三个当前HTTP摘要、四引文复用检验及原始链接恢复记录见 research/recovered/STONEAGE-STA253-SPEAKER-SOURCE-R1.json；分源界限见 docs/specs/STONEAGE-STA253-SPEAKER-SOURCE-R1.md。S2为旧源复取，预检不改写；当前网页不认证同期原字节，原HTML/工具不入Git。验收与保管后验。
