@@ -196,6 +196,30 @@ def verify_catalog(report):
                 'Parent Git identity changed')
 
 
+def verify_custody(root=ROOT):
+    path = root / f'research/recovered/{STEM}-CUSTODY-R1.json'
+    require(path.is_file(), 'Permanent custody receipt missing')
+    receipt = json.loads(path.read_text())
+    require(receipt['runtime_verified'] is False, 'Custody promoted to original game execution')
+    required = {f'research/recovered/{STEM}-{s}-R1.json' for s in ('SOURCE', 'CI-CANDIDATE', 'CI-MAIN')}
+    require(required <= {p['path'] for p in receipt['permanent_pins']}, 'Incomplete permanent derived evidence')
+    for pin in receipt['permanent_pins']:
+        p = root / pin['path']
+        require(p.is_file(), 'Permanent derived file missing')
+        b = p.read_bytes()
+        require(len(b) == pin['bytes'] and sha(b) == pin['sha256'], 'Permanent derived bytes changed')
+        require(hashlib.sha1(b'blob ' + str(len(b)).encode() + bytes([0]) + b).hexdigest() == pin['git_blob'],
+                'Permanent derived Git identity changed')
+    source = json.loads((root / f'research/recovered/{STEM}-SOURCE-R1.json').read_text())
+    for suffix in ('CANDIDATE', 'MAIN'):
+        raw = json.loads((root / f'research/recovered/{STEM}-CI-{suffix}-R1.json').read_text())
+        require(raw['extraction'] == source['extraction'], 'Archived semantic replay detached from source')
+        require(raw['audit']['real_input_mutations_rejected_without_digest_gate'] == len(MUTATIONS) and
+                raw['runtime_verified'] is False and raw['original_assets_or_html_in_output'] is False,
+                'Archived source audit boundary promoted')
+    return receipt
+
+
 def main():
     p = argparse.ArgumentParser()
     group = p.add_mutually_exclusive_group(required=True)
@@ -205,6 +229,7 @@ def main():
     a = p.parse_args()
     report = json.loads(REPORT.read_text())
     verify_catalog(report)
+    verify_custody()
     raws, inputs = [], []
     for i, url in enumerate(URLS):
         if a.fetch:

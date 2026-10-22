@@ -16,6 +16,26 @@ def layout(first='仮の<span>中身</span>'):
 
 
 class SourceTests(unittest.TestCase):
+    def test_actual_permanent_replays_reject_missing_and_equal_length_corruption(self):
+        receipt = m.verify_custody()
+        with tempfile.TemporaryDirectory() as name:
+            root = Path(name)
+            paths = [p['path'] for p in receipt['permanent_pins']]
+            paths.append(f'research/recovered/{m.STEM}-CUSTODY-R1.json')
+            for rel in paths:
+                p = root / rel
+                p.parent.mkdir(parents=True, exist_ok=True)
+                p.write_bytes((m.ROOT / rel).read_bytes())
+            m.verify_custody(root)
+            p = root / f'research/recovered/{m.STEM}-CI-MAIN-R1.json'
+            b = p.read_bytes()
+            p.write_bytes(b[:-1] + bytes([b[-1] ^ 1]))
+            with self.assertRaises(ValueError):
+                m.verify_custody(root)
+            p.unlink()
+            with self.assertRaises(ValueError):
+                m.verify_custody(root)
+
     def test_article_uses_visible_text_and_first_slot_only(self):
         raw = layout('仮の<script>隠れた情報</script><style>隠れた装飾</style><b>中身</b>')
         self.assertEqual(m.article(raw)[0], '仮の中身')
