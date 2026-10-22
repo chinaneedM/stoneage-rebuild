@@ -17084,3 +17084,14 @@ R67同包将四行按既有19集合合同导出recipes研究目录，原ID=null�
 双原派生JSON与research/recovered/STONEAGE-CN2003-DREAM-CAVE-CUSTODY-R1.json永久入Git，固定内容Git、21实际run、双job/artifact/ZIP和五永久文件原字节/Git身份。强制保管门拒绝文件缺失/等长篡改、错HEAD/分支、重复run/job和历史字节认证晋升；本包五→六单元，与旧档案/组合队列共20项本地通过。保管提交自身候选/main CI仍需真实后验，不把旧五单元倒称六项。原HTML/图/程序不进Git，资格/路线/坐标/原ID/build边界保留。
 
 最高NEXT69回全22域其他地区具名地图生态/人物关系或有同版实参音效；Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停，旧历史全文保留。
+
+
+## 2026-10-22 R69：日服寻宝NPC、两阶段收集与可转交活动物
+
+新核mainc8b13ee1980b52d9e8544c3ed529654309d9715f/treec0d7442939ac75650210c21fb8c246bec99710af，465分支、0开放PR、0运行中Actions，原HEAD main9/候选8项SUCCESS；旧queued37642417333为无关历史。九启动文件完整UTF8/git show原字节一致，CURRENT2333600B历史完整；5115项递归树无AGENTS。按NEXT69回日本具名NPC委托，不重复旧地图/章节资料。
+
+新取4Gamer 2005/09/06 17:23《限定アイテムが入手できるイベント》，HTTP200/19613B/SHA256 70ac6ac9dec4895f67a5d6dc2d83be9a65377acd7698338dbf3600d93c29075b，严格CP932。媒体GaiaX归属/TeT导语、可见FONT运营发布文分别提取；星期金/火异文保留，不借页脚免费模式回填2005。实际原出链event_020.html的单次精确档案查询429，原页未得，不称全档案不存在。同文迁移页未算新独立见证。
+
+交付docs/specs/STONEAGE-JP2005-TREASURE-EVENT-SOURCE-R1.md及SOURCE JSON：サムギルの村光の精霊の使徒委托、两维护窗口、3+2共5种、部分区域低概率掉落、第二阶段收齐全种类兑奖、收集物玩家转交/买卖与可重复。五种不当五件、转交不推广奖品、不补先接任务才掉或每日重置；原ID/build/数量/概率/奖池/断线与最终持久化仍未知。旧2008协力父报告仅做分版机制比较：种类数非交付量、阈值非个人费用、不合并精灵物/NPC或编历史演化。
+
+有限解析/七单元、18真实源去摘要门改写与script正例、本包与旧档案21项相关回归；独立词法核两窗口/份额/具名人和交换/转交。原HTML/图/程序不入Git，候选/main实取与ZIP/永久保管必须另实查，不预报绿。止于一新页、两研究目录和一个限定比较；最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-70回22域宠物/技能/骑乘或同版音效事件。Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停，旧全文不改删。

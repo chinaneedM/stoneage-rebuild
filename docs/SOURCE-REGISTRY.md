@@ -7990,3 +7990,10 @@ research/recovered/STONEAGE-CN2003-UI-TEAM-TRADE-SOURCE-R1.json源派生Git blob
 - 新浪《任务功略-梦幻洞窟》，https://games.sina.com.cn/zhqu/sta/article/2003-05-30/10033.shtml ，可见2003-05-30 13:51、网友投稿；原作者、商业build、精确地区未知。当前原HTTP49845B/SHA256 2044ba7f8346bba7e043a6601fd9e00fe664c527109bb41e0ddea5b8de57fec9；声明gb2312/严格GB18030；2006再发布注记不当最早刊时或游戏更新。
 - 仅提取一条任务的入口/老人/供物/双蛙与仙人/三档重复奖励/两对未标昼夜路线；不是官方实服见证、TW1.0规则或原始地图。图像未请求，源原HTML不入Git。
 - 规格docs/specs/STONEAGE-CN2003-DREAM-CAVE-SOURCE-R1.md，派生research/recovered/STONEAGE-CN2003-DREAM-CAVE-SOURCE-R1.json，工具tools/stoneage_dream_cave_source.py。旧成人仪式合同和19集合合同仅固定研究上下文，未据同名旧助手脚本认证源身份。
+
+
+## SRC-JP2005-TREASURE-EVENT-R69 — 2026-10-22
+
+- https://www.4gamer.net/news/history/2005.09/20050906172318detail.html ，可见2005/09/06 17:23，GaiaX发布文由4Gamer引述，TeT媒体外层另存；非直接官方原站。当前HTTP19613B/SHA256 70ac6ac9dec4895f67a5d6dc2d83be9a65377acd7698338dbf3600d93c29075b、shift_jis声明/CP932严格解码。历史同刻字节、商业build和原服部署未知。
+- 仅一新页的两阶段、NPC/村落、活动物可转交与全种类后期兑奖；金/火星期异文不改。event_020.html精确档案一次429，未取得官方页，镜像不计独立支持。
+- 规格docs/specs/STONEAGE-JP2005-TREASURE-EVENT-SOURCE-R1.md，SOURCE-R1与有限重放工具stoneage_jp2005_treasure_source.py。既有2008协力派生仅分版比较，不回取旧图、不合并实体。原HTML/图片/软件不入Git。

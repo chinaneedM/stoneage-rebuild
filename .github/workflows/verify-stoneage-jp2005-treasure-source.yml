@@ -1,0 +1,38 @@
+name: Verify JP2005 treasure event phases and transferable collectibles
+on:
+  push:
+    paths:
+      - 'tools/stoneage_jp2005_treasure_source.py'
+      - 'tests/test_stoneage_jp2005_treasure_source.py'
+      - 'research/recovered/STONEAGE-JP2005-TREASURE-EVENT-*.json'
+      - 'docs/specs/STONEAGE-JP2005-TREASURE-EVENT-SOURCE-R1.md'
+      - '.github/workflows/verify-stoneage-jp2005-treasure-source.yml'
+  pull_request:
+    paths:
+      - 'tools/stoneage_jp2005_treasure_source.py'
+      - 'tests/test_stoneage_jp2005_treasure_source.py'
+      - 'research/recovered/STONEAGE-JP2005-TREASURE-EVENT-*.json'
+      - 'docs/specs/STONEAGE-JP2005-TREASURE-EVENT-SOURCE-R1.md'
+      - '.github/workflows/verify-stoneage-jp2005-treasure-source.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  bounded-source-replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Phase, transfer-target and provenance counterexamples
+        run: python -m unittest tests.test_stoneage_jp2005_treasure_source -v
+      - name: Retrieve release quotation and reject semantic mutations
+        run: python -m tools.stoneage_jp2005_treasure_source --fetch --output "$RUNNER_TEMP/r69/replay.json"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: jp2005-treasure-derived-r69
+          path: ${{ runner.temp }}/r69/replay.json
+          if-no-files-found: error
+          retention-days: 30
