@@ -184,7 +184,7 @@ def catalog(ex):
     entries = [('QUEST', 'quests', 'documentary_event_quest', ex),
                ('NPC', 'npcs', 'documentary_event_npc', ex['npc'])]
     return [{'record_id': 'JP2005-GAIAX-R69-' + ident, 'entity_type': kind, 'collection': collection,
-        'version_profile': PROFILE, 'source_refs': ['S1-RELEASE'], 'verification_status': 'SOURCE_DESCRIPTION_NOT_RUNTIME',
+        'version_profile': PROFILE, 'source_refs': (['S1-RELEASE', 'S1-EDITORIAL'] if ident == 'QUEST' else ['S1-RELEASE']), 'verification_status': 'SOURCE_DESCRIPTION_NOT_RUNTIME',
         'rights_status': 'RESEARCH_METADATA_NOT_RELEASE_APPROVED', 'record_revision': 1, 'game_ids': None,
         'content': content} for ident, collection, kind, content in entries]
 
@@ -223,6 +223,10 @@ def verify_report(report):
     ex = report['extraction']
     require(report['catalog_records'] == catalog(ex), 'Catalog detached/promoted')
     require(report['cross_version_comparison'] == compare_event_shapes(ex), 'Cross-version relation changed')
+    require(report['source_layers'] == [
+        {'id': 'S1-RELEASE', 'parent': 'S1', 'role': 'VISIBLE_PUBLISHER_RELEASE_QUOTATION'},
+        {'id': 'S1-EDITORIAL', 'parent': 'S1', 'role': 'MEDIA_INTRO_AND_TET_OUTRO_NOT_OPERATOR_PROSE'}],
+        'Source layers detached')
     require(ex['editorial']['conflict_resolved'] is False and ex['editorial']['direct_official_page_obtained'] is False and
             ex['original_server_runtime_verified'] is False, 'Authority or resolved conflict invented')
     for obj, keys in [(ex, ('per_type_required_quantity', 'collectible_names', 'collectible_item_ids', 'quest_id', 'exact_game_build')),

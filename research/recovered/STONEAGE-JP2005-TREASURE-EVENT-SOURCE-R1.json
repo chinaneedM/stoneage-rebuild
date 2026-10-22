@@ -164,7 +164,8 @@
       "collection": "quests",
       "version_profile": "LATER_OFFICIAL_JP_GAIAX_2005_RELEASE_QUOTED_BY_4GAMER_EXACT_BUILD_UNKNOWN",
       "source_refs": [
-        "S1-RELEASE"
+        "S1-RELEASE",
+        "S1-EDITORIAL"
       ],
       "verification_status": "SOURCE_DESCRIPTION_NOT_RUNTIME",
       "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
@@ -423,5 +424,17 @@
     "shared_item_or_npc_identity_established": false,
     "historical_evolution_proven": false,
     "modern_game_adoption_decided": false
-  }
+  },
+  "source_layers": [
+    {
+      "id": "S1-RELEASE",
+      "parent": "S1",
+      "role": "VISIBLE_PUBLISHER_RELEASE_QUOTATION"
+    },
+    {
+      "id": "S1-EDITORIAL",
+      "parent": "S1",
+      "role": "MEDIA_INTRO_AND_TET_OUTRO_NOT_OPERATOR_PROSE"
+    }
+  ]
 }
