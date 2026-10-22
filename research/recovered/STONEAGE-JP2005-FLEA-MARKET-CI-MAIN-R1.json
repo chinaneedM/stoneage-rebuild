@@ -1,0 +1,417 @@
+{
+  "schema": "stoneage.jp2005_market.replay.r1",
+  "inputs": [
+    {
+      "id": "S1",
+      "url": "https://www.4gamer.net/news/history/2005.06/20050603191514detail.html",
+      "bytes": 18498,
+      "sha256": "4ce485c6f7f64b9c88f3bdac393aa685304de55b6018283d4a7e7d25c00d07da"
+    },
+    {
+      "id": "S2",
+      "url": "https://www.4gamer.net/news/history/2005.10/20051021150740detail.html",
+      "bytes": 18275,
+      "sha256": "8bdb842ff493e7b2a55a8c1679c2105b7c4ef0f6e42ad3fd0478ea34b2c4d78c"
+    }
+  ],
+  "extraction": {
+    "articles": {
+      "S1": {
+        "publication_as_written": "2005/06/0319:15",
+        "title": "「ストーンエイジ」フリーマーケットを実装，イベントも開催",
+        "wrapper_urls": [
+          "https://www.4gamer.net/news/image/2005.06/20050603191514_3big.html",
+          "https://www.4gamer.net/news/image/2005.06/20050603191514_2big.html"
+        ],
+        "body_fingerprint": {
+          "characters": 316,
+          "utf8_bytes": 896,
+          "sha256": "6ffcc7a5a93b44fd325dc8d4772620bfdb19b7852ebfa0e3053b7eccb668b54d"
+        }
+      },
+      "S2": {
+        "publication_as_written": "2005/10/2115:07",
+        "title": "MMORPG「ストーンエイジ」11月のイベント予定を発表",
+        "wrapper_urls": [
+          "https://www.4gamer.net/news/image/2005.10/20051021150740_0big.html"
+        ],
+        "body_fingerprint": {
+          "characters": 485,
+          "utf8_bytes": 1323,
+          "sha256": "afe342fa9db80f015a9b5d71f55c34ecfb7067471e6d5c5f3de15829fd881eaa"
+        }
+      }
+    },
+    "operator_attributed_by_media": "ガイアックス",
+    "source_layer": "CONTEMPORARY_MEDIA_REPORT_OF_OPERATOR_ANNOUNCEMENT_NOT_DIRECT_RELEASE",
+    "venue": {
+      "label": "フリーマーケットスペース",
+      "server": "水星サーバー",
+      "prior_map_role": "CHAT_ROOM_MAP",
+      "conversion_date_announced": {
+        "year": 2005,
+        "month": 6,
+        "day": 14,
+        "weekday_as_written": null
+      },
+      "date_status": "FORWARD_LOOKING_AT_S1_PUBLICATION",
+      "purpose": "FACILITATE_PLAYER_TO_PLAYER_ITEM_AND_PET_TRADE",
+      "map_id": null,
+      "coordinates": null,
+      "geometry": null
+    },
+    "official_markets": [
+      {
+        "name": "ニースフリーマーケット",
+        "ordinal": null,
+        "date": {
+          "year": 2005,
+          "month": 6,
+          "day": 18,
+          "weekday_as_written": null
+        },
+        "start": "18:00",
+        "end": "20:00",
+        "timezone": null,
+        "status": "ANNOUNCED_IN_S1",
+        "gm_patrol_as_reported": true,
+        "gm_chat_photo_suggested": true,
+        "source_refs": [
+          "S1"
+        ]
+      },
+      {
+        "name": "ニースフリーマーケット",
+        "ordinal": 2,
+        "date": {
+          "year": 2005,
+          "month": 11,
+          "day": 19,
+          "weekday_as_written": "土"
+        },
+        "start": "18:00",
+        "end": "22:00",
+        "timezone": null,
+        "status": "SCHEDULED_IN_S2",
+        "location_as_written": "水星サーバーチャットルーム内フリーマーケット",
+        "source_refs": [
+          "S2"
+        ]
+      }
+    ],
+    "retrospective": {
+      "source_ref": "S2",
+      "june_market_held_and_popular_as_reported": true,
+      "independent_runtime_verification": false
+    },
+    "announcement_service": {
+      "posts_per_month_as_reported": 2,
+      "channel": "OFFICIAL_WEBSITE",
+      "application_start": {
+        "year": 2005,
+        "month": 10,
+        "day": 20,
+        "weekday_as_written": "木"
+      },
+      "application_end": {
+        "year": 2005,
+        "month": 10,
+        "day": 25,
+        "weekday_as_written": "火"
+      },
+      "eligible_hosted_event_start": {
+        "year": 2005,
+        "month": 11,
+        "day": 1,
+        "weekday_as_written": "火"
+      },
+      "eligible_hosted_event_end": {
+        "year": 2005,
+        "month": 11,
+        "day": 15,
+        "weekday_as_written": "火"
+      },
+      "planned_posting_date": {
+        "year": 2005,
+        "month": 10,
+        "day": 28,
+        "weekday_as_written": "金"
+      },
+      "posting_status": "PLANNED_NOT_OBSERVED",
+      "applicant_logic": {
+        "paid_member": true,
+        "operates_any_of": [
+          "FAN_SITE",
+          "BLOG"
+        ],
+        "join": "PAID_AND_ANY_SITE"
+      },
+      "scope": "ANNOUNCEMENT_APPLICANT_NOT_MARKET_ATTENDEE",
+      "exact_clock_timezone": null,
+      "selection_or_acceptance_guarantee": null,
+      "exact_posting_cadence_days": null
+    },
+    "trade_system": {
+      "targets": [
+        "ITEMS",
+        "PETS"
+      ],
+      "player_trade_freedom_as_reported": true,
+      "tax": null,
+      "entry_fee": null,
+      "listing_fee": null,
+      "stall_ui": null,
+      "offline_automation": null,
+      "auction": null,
+      "currency": null,
+      "settlement": null,
+      "pet_transfer_constraints": null
+    },
+    "market_attendee_eligibility": null,
+    "exact_build": null,
+    "original_server_runtime_verified": false
+  },
+  "images": [
+    {
+      "id": "S1-MAP",
+      "article": "S1",
+      "wrapper_url": "https://www.4gamer.net/news/image/2005.06/20050603191514_3big.html",
+      "image_url": "https://www.4gamer.net/news/image/2005.06/20050603191514_3big.jpg",
+      "wrapper_bytes": 173,
+      "wrapper_sha256": "cf30b717ccadf435b1c50526bc810258f22a1305e0a653115206991247942e16",
+      "bytes": 72711,
+      "sha256": "26f7e4d4c9e0065e086cd280573179e63e4befd931a6c19891a627ad700151e7",
+      "format": "JPEG",
+      "mode": "RGB",
+      "size": [
+        720,
+        982
+      ]
+    },
+    {
+      "id": "S1-VIEW",
+      "article": "S1",
+      "wrapper_url": "https://www.4gamer.net/news/image/2005.06/20050603191514_2big.html",
+      "image_url": "https://www.4gamer.net/news/image/2005.06/20050603191514_2big.jpg",
+      "wrapper_bytes": 173,
+      "wrapper_sha256": "5ca5f06acea427b0e63d67d8597459da55d67436e50b0ac8f72af67d480d153f",
+      "bytes": 30525,
+      "sha256": "51ab163d6d190a11e60b2073fe30e80895aaa199c8e5bd450353b28ed6c33a73",
+      "format": "JPEG",
+      "mode": "RGB",
+      "size": [
+        283,
+        567
+      ]
+    },
+    {
+      "id": "S2-MAP",
+      "article": "S2",
+      "wrapper_url": "https://www.4gamer.net/news/image/2005.10/20051021150740_0big.html",
+      "image_url": "https://www.4gamer.net/news/image/2005.10/20051021150740_0big.jpg",
+      "wrapper_bytes": 165,
+      "wrapper_sha256": "2c186e213528e9329c3933841032edad490aa9cbc2d1e7d46d41c7f17c7b4450",
+      "bytes": 128375,
+      "sha256": "be45d403b623fd69b3810bc646489aaf6e117014c9f8fd83e6a8e851e56c89ce",
+      "format": "JPEG",
+      "mode": "RGB",
+      "size": [
+        648,
+        948
+      ]
+    }
+  ],
+  "image_observations": [
+    {
+      "id": "S1-MAP",
+      "actual_kind": "CHARACTER_ILLUSTRATION_NOT_MAP",
+      "manual_visual_review": true,
+      "observed": "BLOND_FIGURE_HOLDING_COLORED_SMALL_CREATURES",
+      "game_entity_identity": null
+    },
+    {
+      "id": "S1-VIEW",
+      "actual_kind": "CHARACTER_ILLUSTRATION_NOT_UI",
+      "manual_visual_review": true,
+      "observed": "SMILING_FIGURE_HOLDING_A_GRAY_OBJECT",
+      "game_entity_identity": null
+    },
+    {
+      "id": "S2-MAP",
+      "actual_kind": "CHARACTER_ILLUSTRATION_NOT_MAP",
+      "manual_visual_review": true,
+      "observed": "SIMILAR_BLOND_FIGURE_COMPOSITION_DIFFERENT_IMAGE_BYTES_AND_GEOMETRY",
+      "game_entity_identity": null
+    }
+  ],
+  "catalog_records": [
+    {
+      "record_id": "JP2005-R74-VENUE",
+      "collection": "maps",
+      "entity_type": "DOCUMENTARY_SOCIAL_VENUE",
+      "version_profile": "LATER_OFFICIAL_JP_GAIAX_2005_REPORTED_BY_4GAMER_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1",
+        "S2"
+      ],
+      "verification_status": "MEDIA_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "label": "フリーマーケットスペース",
+        "server": "水星サーバー",
+        "prior_map_role": "CHAT_ROOM_MAP",
+        "conversion_date_announced": {
+          "year": 2005,
+          "month": 6,
+          "day": 14,
+          "weekday_as_written": null
+        },
+        "date_status": "FORWARD_LOOKING_AT_S1_PUBLICATION",
+        "purpose": "FACILITATE_PLAYER_TO_PLAYER_ITEM_AND_PET_TRADE",
+        "map_id": null,
+        "coordinates": null,
+        "geometry": null
+      }
+    },
+    {
+      "record_id": "JP2005-R74-MARKETS",
+      "collection": "tutorials",
+      "entity_type": "DOCUMENTARY_SCHEDULED_SOCIAL_EVENT",
+      "version_profile": "LATER_OFFICIAL_JP_GAIAX_2005_REPORTED_BY_4GAMER_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1",
+        "S2"
+      ],
+      "verification_status": "MEDIA_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": [
+        {
+          "name": "ニースフリーマーケット",
+          "ordinal": null,
+          "date": {
+            "year": 2005,
+            "month": 6,
+            "day": 18,
+            "weekday_as_written": null
+          },
+          "start": "18:00",
+          "end": "20:00",
+          "timezone": null,
+          "status": "ANNOUNCED_IN_S1",
+          "gm_patrol_as_reported": true,
+          "gm_chat_photo_suggested": true,
+          "source_refs": [
+            "S1"
+          ]
+        },
+        {
+          "name": "ニースフリーマーケット",
+          "ordinal": 2,
+          "date": {
+            "year": 2005,
+            "month": 11,
+            "day": 19,
+            "weekday_as_written": "土"
+          },
+          "start": "18:00",
+          "end": "22:00",
+          "timezone": null,
+          "status": "SCHEDULED_IN_S2",
+          "location_as_written": "水星サーバーチャットルーム内フリーマーケット",
+          "source_refs": [
+            "S2"
+          ]
+        }
+      ]
+    },
+    {
+      "record_id": "JP2005-R74-ANNOUNCEMENT",
+      "collection": "tutorials",
+      "entity_type": "DOCUMENTARY_PLAYER_EVENT_ANNOUNCEMENT_SERVICE",
+      "version_profile": "LATER_OFFICIAL_JP_GAIAX_2005_REPORTED_BY_4GAMER_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S2"
+      ],
+      "verification_status": "MEDIA_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "posts_per_month_as_reported": 2,
+        "channel": "OFFICIAL_WEBSITE",
+        "application_start": {
+          "year": 2005,
+          "month": 10,
+          "day": 20,
+          "weekday_as_written": "木"
+        },
+        "application_end": {
+          "year": 2005,
+          "month": 10,
+          "day": 25,
+          "weekday_as_written": "火"
+        },
+        "eligible_hosted_event_start": {
+          "year": 2005,
+          "month": 11,
+          "day": 1,
+          "weekday_as_written": "火"
+        },
+        "eligible_hosted_event_end": {
+          "year": 2005,
+          "month": 11,
+          "day": 15,
+          "weekday_as_written": "火"
+        },
+        "planned_posting_date": {
+          "year": 2005,
+          "month": 10,
+          "day": 28,
+          "weekday_as_written": "金"
+        },
+        "posting_status": "PLANNED_NOT_OBSERVED",
+        "applicant_logic": {
+          "paid_member": true,
+          "operates_any_of": [
+            "FAN_SITE",
+            "BLOG"
+          ],
+          "join": "PAID_AND_ANY_SITE"
+        },
+        "scope": "ANNOUNCEMENT_APPLICANT_NOT_MARKET_ATTENDEE",
+        "exact_clock_timezone": null,
+        "selection_or_acceptance_guarantee": null,
+        "exact_posting_cadence_days": null
+      }
+    }
+  ],
+  "comparison": {
+    "relation": "VERSION_SEPARATION_NOT_LINEAGE_OR_SHARED_ID",
+    "early_jss": {
+      "report": "research/recovered/STONEAGE-JSS2001-MAIL-ITEMS-SHARED-VENUES-R1.json",
+      "record": "jss2001-manual:mail-items-venues:8110",
+      "profile": "JSS_JAPAN_WEB_MANUAL_20010418",
+      "scope": "EARLY_SHARED_CHAT_ROOMS_NOT_2005_MARKET_MAP_ID"
+    },
+    "later_cn": {
+      "report": "research/recovered/STONEAGE-CN2011-2012-STALL-SOURCE-R1.json",
+      "record": "LISTING-FLOW",
+      "profile": "LATER_OFFICIAL:CN_CINS_2011_2012_BUILD_UNKNOWN",
+      "scope": "SEPARATE_LISTING_UI_EVIDENCE_NOT_2005_UI"
+    },
+    "same_map_id_proven": false,
+    "same_stall_ui_proven": false,
+    "historical_evolution_proven": false,
+    "modern_adoption_decided": false
+  },
+  "audit": {
+    "semantic_mutations_rejected_without_digest_gate": 17,
+    "peripheral_script_positive_each_article": true
+  },
+  "original_html_or_assets_in_output": false,
+  "original_game_runtime_verified": false
+}

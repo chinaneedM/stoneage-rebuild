@@ -71,4 +71,30 @@ class MarketSourceTests(unittest.TestCase):
   self.assertNotEqual(r['images'][0]['sha256'],r['images'][2]['sha256'])
   self.assertTrue(all(i['game_entity_identity'] is None for i in r['image_observations']))
 
+ def test_custody_rejects_missing_changed_misattributed_or_promoted_reports(self):
+  receipt=m.verify_custody()
+  with tempfile.TemporaryDirectory() as name:
+   root=Path(name);path=root/f'research/recovered/{m.STEM}-CUSTODY-R1.json'
+   for pin in receipt['permanent_pins']:
+    p=root/pin['path'];p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes((m.ROOT/pin['path']).read_bytes())
+   path.write_text(json.dumps(receipt));m.verify_custody(root)
+   for pin in receipt['permanent_pins']:
+    p=root/pin['path'];raw=p.read_bytes();p.write_bytes(raw[:-1]+bytes([raw[-1]^1]))
+    with self.assertRaises(ValueError):m.verify_custody(root)
+    p.unlink()
+    with self.assertRaises(FileNotFoundError):m.verify_custody(root)
+    p.write_bytes(raw)
+   changes=[lambda d:d['runs'].append(d['runs'][0]),lambda d:d.update(content_commit='0'*40),
+    lambda d:d['jobs_and_artifacts']['main']['artifact']['workflow_run'].update(head_branch='OTHER'),
+    lambda d:d['jobs_and_artifacts']['main'].update(job=d['jobs_and_artifacts']['candidate']['job']),
+    lambda d:d.update(current_http_bytes_are_historical_bytes=True),
+    lambda d:d['raw_replays']['main'].update(equals_initial_inputs=False),
+    lambda d:d.update(candidate_main_raw_bytes_equal=False),lambda d:d.update(initial_inputs=[]),
+    lambda d:d['permanent_pins'].pop()]
+   for change in changes:
+    d=copy.deepcopy(receipt);change(d);path.write_text(json.dumps(d))
+    with self.assertRaises(ValueError):m.verify_custody(root)
+   path.unlink()
+   with self.assertRaises(FileNotFoundError):m.verify_custody(root)
+
 if __name__=='__main__':unittest.main()

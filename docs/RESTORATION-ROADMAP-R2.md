@@ -1784,3 +1784,14 @@ S1/S3所选全文去空白一致，#3核心712UTF8B/SHA256 810507b9e173d90951e20
 固定JSS2001公共聊天房、大陆2011–12摆摊及19集合合同三父报告和共享可见正文解析器；不合地图ID或把晚期摆摊UI回填。3目录=1maps文献场地+2tutorials活动/公告描述，不当恢复实体数。六单元、17实源去摘要门语义改写及每文外围script正例，本包/复用模块14项本地通过。初次泛h5选中菜单、合同测试漏嵌套键的本地错误已修正重跑，不倒记成功；无远端失败。候选/main实际CI及ZIP永久保管须后验。
 
 止于两报道三插画链，不扩全交易系统；重新打开需同版原站规则/投稿页、实际入口地图/交易屏或原ID。最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-75回全22域另一地区人物创建/角色外观或交通服务具名材料，音效仅同版实际调用输入。Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停，全部旧历史完整。
+
+
+### 2026-10-22 R74双端实源验收与永久派生保管
+
+内容提交b2371f81689e2a2bba9d56f86a63d0c94c62069f/treebe20947faaf4cd515f078d64d9c4ca163f595898，候选10/main11项适用Actions实际completed/success；最新main预期SHA保护非强制快进。十文件及整tree与本地原生Git一致，四连续性文档旧行删除0。专用候选run39778168917/job119822326970/artifact12425955325，主线run39778315542/job119822823027/artifact12425078703，各真实六单元、两文/三包装/三原JPEG实取、17去摘要门语义改写及每文script正例，Pillow12.3.0完整解码。
+
+实际下载双ZIP各3580B，SHA256 c301dfa0fa74034a98ff1c6cc3f40c4bb7b6c324f146092f5db1c3822c663ef6 / ab6056e8273c99f882c6f63b8e716b3e520fa4883f1b35abeef279d858058c00逐一符合API；唯一replay.json完整12870B/SHA25675c727e6d6ac73ee229487c270adde7d98fe2ef842b462736b1500d36fe72ccd/Git blob64891c06460ff6efc36b6049e228fa9e696f010e。双CI/local/加入保管门后local四份逐字节一致，整页、包装与图片输入仍同初取；不称2005原始字节。
+
+双CI原JSON及research/recovered/STONEAGE-JP2005-FLEA-MARKET-CUSTODY-R1.json永久入Git，固定内容Git、21实际run、双job/artifact/ZIP、每次raw/input摘要和七永久文件原字节/原生Git身份，含三父报告与复用解析器。强制保管门拒绝缺失/等长篡改、错HEAD/分支、重复run/job、遗漏初取历史、虚报原字节相等及历史权威升级；六→七单元，相关38项本地回归通过。保管提交自身候选/main CI须另真实后验，不拿内容六项绿灯称七项。
+
+场地/活动/公告申请分层保持；三插画不是市场地图/UI，付费报名条件不外推入场，自由买卖不证零税费/自动摆摊。原ID/build/投稿表单/交易界面/结算与实际保存仍未知；原HTML/JPEG/程序不进Git。最高NEXT75回22域另一地区人物创建/角色外观或交通服务具名材料；Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停，旧全文保留。
