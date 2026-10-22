@@ -22,6 +22,7 @@ class WaterMonsterTests(unittest.TestCase):
  def test_scoped_requirements_routes_unknowns_and_source_authority_are_not_promoted(self):
   r=json.loads(m.REPORT.read_text());m.verify_report(r)
   changes=[lambda d:d.update(version_profile='TW10'),lambda d:d['negative_boundaries'].pop('official_authorship_verified'),
+   lambda d:d['archive_discovery'].update(is_2003_original_capture=True),lambda d:d['archive_discovery'].update(closest_timestamp='20031201000000'),lambda d:d['source_pages'][1].update(actual_capture='20031201000000'),
    lambda d:d['extraction'].update(hard_entry_level=105),lambda d:d['extraction'].update(official_authorship_verified=True),
    lambda d:d['extraction']['shell'].update(entrance_key=True),lambda d:d['extraction']['shell'].update(consumed=True),lambda d:d['extraction']['shell'].update(all_three_required=True),
    lambda d:d['extraction']['bark_battle'].update(restriction_scope='WHOLE_QUEST'),lambda d:d['extraction']['bark_battle'].update(help_behavior='FORBIDDEN'),
@@ -72,5 +73,31 @@ class WaterMonsterTests(unittest.TestCase):
    d=copy.deepcopy(r);change(d);d['catalog_records']=m.catalog(d['extraction'],d['images'],d['image_observations'])
    with self.assertRaises(ValueError):m.verify_report(d)
   with self.assertRaises((ValueError,OSError)):m.inspect_images({'I1':b'<html>error</html>'},r)
+
+ def test_custody_rejects_missing_changed_misattributed_or_promoted_reports(self):
+  receipt=m.verify_custody()
+  with tempfile.TemporaryDirectory() as name:
+   root=Path(name);path=root/f'research/recovered/{m.STEM}-CUSTODY-R1.json'
+   for pin in receipt['permanent_pins']:
+    p=root/pin['path'];p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes((m.ROOT/pin['path']).read_bytes())
+   path.write_text(json.dumps(receipt));m.verify_custody(root)
+   for pin in receipt['permanent_pins']:
+    p=root/pin['path'];raw=p.read_bytes();p.write_bytes(raw[:-1]+bytes([raw[-1]^1]))
+    with self.assertRaises(ValueError):m.verify_custody(root)
+    p.unlink()
+    with self.assertRaises(FileNotFoundError):m.verify_custody(root)
+    p.write_bytes(raw)
+   changes=[lambda d:d.update(schema='OTHER'),lambda d:d['jobs_and_artifacts']['main'].update(job_name='OTHER'),lambda d:d['jobs_and_artifacts']['main']['artifact'].update(id=d['jobs_and_artifacts']['candidate']['artifact']['id']),lambda d:d['runs'].pop(),lambda d:d['runs'][0].update(branch='OTHER'),lambda d:d['runs'].append(d['runs'][0]),lambda d:d.update(content_commit='0'*40),
+    lambda d:d['jobs_and_artifacts']['main']['artifact']['workflow_run'].update(head_branch='OTHER'),
+    lambda d:d['jobs_and_artifacts']['main'].update(job=d['jobs_and_artifacts']['candidate']['job']),
+    lambda d:d.update(current_http_bytes_are_historical_bytes=True),
+    lambda d:d['raw_replays']['main'].update(equals_initial_inputs=not receipt['raw_replays']['main']['equals_initial_inputs']),
+    lambda d:d.update(candidate_main_raw_bytes_equal=not receipt['candidate_main_raw_bytes_equal']),lambda d:d.update(initial_inputs=[]),
+    lambda d:d['permanent_pins'].pop()]
+   for change in changes:
+    d=copy.deepcopy(receipt);change(d);path.write_text(json.dumps(d))
+    with self.assertRaises(ValueError):m.verify_custody(root)
+   path.unlink()
+   with self.assertRaises(FileNotFoundError):m.verify_custody(root)
 
 if __name__=='__main__':unittest.main()

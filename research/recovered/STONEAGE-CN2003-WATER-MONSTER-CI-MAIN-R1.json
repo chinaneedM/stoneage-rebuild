@@ -1,0 +1,726 @@
+{
+  "schema": "stoneage.cn2003_water_monster.replay.r1",
+  "inputs": [
+    {
+      "id": "S1",
+      "url": "https://games.sina.com.cn/zhqu/sta/article/2003-06-03/10555.shtml",
+      "bytes": 54531,
+      "sha256": "e9308a360a7fa4acf63cfb1965f4c18dc72e504a5b7da1266d88e5f405b580a3"
+    },
+    {
+      "id": "S2",
+      "url": "https://web.archive.org/web/20160929133108id_/http://games.sina.com.cn:80/zhqu/sta/article/2003-06-03/10555.shtml",
+      "bytes": 60767,
+      "sha256": "265aa1cbfbf7f2f413a1d4055953981191850817900d54c800c5d3caafb84d33"
+    }
+  ],
+  "extraction": {
+    "city": "尼克斯城",
+    "recommended_level": 105,
+    "hard_entry_level": null,
+    "header_requirements": {
+      "holds_communication_shell_as_reported": true,
+      "completed_golden_flight_quest_as_reported": true,
+      "server_flags_verified": false
+    },
+    "shell": {
+      "name": "不可思议的贝壳",
+      "function": "UNDERSTAND_CREATURE_SPEECH",
+      "absence_description": "ONLY_GURGLING_AS_REPORTED",
+      "origins_as_reported": [
+        "北岛弥生与日美子的友谊",
+        "南岛哥亚山小猪传情任务",
+        "吉鲁岛小猪爱情故事"
+      ],
+      "all_three_required": false,
+      "entrance_key": null,
+      "consumed": null,
+      "equipment_slot": null,
+      "original_item_id": null
+    },
+    "narrative": {
+      "initial_damage": "SOUTHEAST_CITY_HOUSES_AND_RESIDENTS",
+      "usual_habitat": "EAST_CITY_UNDERGROUND_WATERWAY",
+      "initially_not_attacking_residents_as_reported": true,
+      "motive": "CHILD_ABDUCTED_BY_NET_WIELDING_HUMANS",
+      "abductor": "副园长巴克",
+      "royal_preference": "RESOLVE_WITHOUT_FORCE_IF_POSSIBLE",
+      "mentioned_spirit": "妮芙",
+      "queen_original_identity": null,
+      "child_body_name": "莫拉司",
+      "child_caption_name": "莫拉斯",
+      "child_spelling_conflict_unresolved": true,
+      "child_original_id": null,
+      "child_is_reward_pet_proven": false,
+      "child_returned_in_described_outcome": true,
+      "reconciliation_described": true,
+      "actual_reunion_runtime_observed": false,
+      "frog_dinner_motif": "REPORTED_STORY_NOT_FEEDING_AI"
+    },
+    "routes": [
+      {
+        "route": "A",
+        "sequence": [
+          "CITY_REQUEST",
+          "SOLDIER_TELEPORT",
+          "FIGHT_PARENT_WATER_MONSTER",
+          "LEARN_ABDUCTION",
+          "INVESTIGATE_ZOO",
+          "FIGHT_BARK",
+          "RETURN_CHILD",
+          "REPORT_TO_GUARD"
+        ],
+        "parent_battle_described": true,
+        "parent_level_as_reported": 100,
+        "pet_reward": "尤里蛙",
+        "weapon_reward_described": false
+      },
+      {
+        "route": "B",
+        "sequence": [
+          "CITY_REQUEST",
+          "INVESTIGATE_ZOO_FIRST",
+          "FIGHT_BARK",
+          "RETURN_CHILD",
+          "REPORT_TO_GUARD"
+        ],
+        "parent_battle_described": false,
+        "no_parent_battle_server_guarantee": null,
+        "pet_reward": "尤里蛙",
+        "weapon_reward_described": true
+      }
+    ],
+    "bark_battle": {
+      "boss_level_as_reported": 100,
+      "henchman_level_as_reported": 75,
+      "party_prohibited_as_reported": true,
+      "restriction_scope": "BARK_BATTLE_ONLY",
+      "help_behavior": null,
+      "pets_allowed": null,
+      "advisory_target_order": [
+        "BARK",
+        "HENCHMEN"
+      ],
+      "mandatory_target_order": null
+    },
+    "reward_pet": {
+      "name": "尤里蛙",
+      "routes": [
+        "A",
+        "B"
+      ],
+      "level": null,
+      "stats": null,
+      "growth": null,
+      "original_id": null
+    },
+    "weapon": {
+      "name": "双头叉",
+      "route": "B",
+      "stats_as_reported": {
+        "攻": 75,
+        "敏": -25
+      },
+      "spirit_as_reported": "滋润的精灵",
+      "spirit_level_as_reported": 5,
+      "role": "NYX_GUARD_SYMBOL",
+      "additional_condition": "FIRST_OPPORTUNITY_AFTER_SERVER_MAINTENANCE_AS_GUIDE_CLAIM",
+      "every_completion_guaranteed": false,
+      "deadline_seconds": null,
+      "quota": null,
+      "reset_cycle": null,
+      "original_id": null
+    },
+    "npc_occurrences": [
+      {
+        "name": "近卫长邬莉叶",
+        "role": "REQUEST_AND_CITY_RECONCILIATION",
+        "location": "尼克斯王宫前",
+        "coord": null,
+        "original_id": null
+      },
+      {
+        "name": "近卫队员麦叶",
+        "role": "ROUTE_A_SEWER_TELEPORT",
+        "coord": [
+          96,
+          24
+        ],
+        "destination": "地下水路",
+        "original_id": null
+      },
+      {
+        "name": "水怪克拉肯",
+        "role": "AGGRIEVED_PARENT_CREATURE",
+        "floor_as_reported": 8,
+        "coord": [
+          18,
+          13
+        ],
+        "original_id": null
+      },
+      {
+        "name": "副园长巴克",
+        "role": "ZOO_ABDUCTOR_AND_WAREHOUSE_OPPONENT",
+        "coord": [
+          41,
+          5
+        ],
+        "battle_location": "动物园仓库",
+        "original_id": null
+      }
+    ],
+    "ecology": {
+      "map_label": "地下水路",
+      "entrance_as_reported": [
+        291,
+        34
+      ],
+      "floors_captioned": 8,
+      "level_range_as_reported": [
+        80,
+        100
+      ],
+      "source_labels": [
+        "克拉肯",
+        "欧瑟菲",
+        "玛斯特",
+        "沙瓦列",
+        "迪加"
+      ],
+      "complete_roster_proven": false,
+      "capturability": null,
+      "original_map_ids": null,
+      "full_geometry": null,
+      "stray_caption_prefix_7_8_as_written": "果"
+    },
+    "core_fingerprint": {
+      "characters": 2897,
+      "utf8_bytes": 8409,
+      "sha256": "c4fbb96139601b83f89e4a1be243cc370a12fb8396358d3a1a2a53c7f64657bc"
+    },
+    "image_references": [
+      "http://image2.sina.com.cn/gm/newgames/0303/images/axiaoshuiguai0603_01.jpg",
+      "http://image2.sina.com.cn/gm/newgames/0303/images/axiaoshuiguai0603_02.jpg",
+      "http://image2.sina.com.cn/gm/newgames/0303/images/axiaoshuiguai0603_03.jpg",
+      "http://image2.sina.com.cn/gm/newgames/0303/images/axiaoshuiguai0603_04.jpg",
+      "http://image2.sina.com.cn/gm/newgames/0303/images/axiaoshuiguai0603_05.jpg",
+      "http://image2.sina.com.cn/gm/newgames/0303/images/axiaoshuiguai0603_06.jpg",
+      "http://image2.sina.com.cn/gm/newgames/0303/images/axiaoshuiguai0603_07.jpg",
+      "http://image2.sina.com.cn/gm/newgames/0303/images/axiaoshuiguai0603_08.jpg",
+      "http://image2.sina.com.cn/gm/newgames/0303/images/axiaoshuiguai0603_09.jpg",
+      "http://image2.sina.com.cn/gm/newgames/0303/images/axiaoshuiguai0603_010.jpg",
+      "http://image2.sina.com.cn/gm/newgames/0303/images/axiaoshuiguai0603_011.jpg",
+      "http://image2.sina.com.cn/gm/newgames/0303/images/axiaoshuiguai0603_012.jpg",
+      "http://image2.sina.com.cn/gm/newgames/0303/images/axiaoshuiguai0603_013.jpg",
+      "http://image2.sina.com.cn/gm/newgames/0303/images/axiaoshuiguai0603_014.jpg",
+      "http://image2.sina.com.cn/gm/newgames/0303/images/axiaoshuiguai0603_015.jpg",
+      "http://image2.sina.com.cn/gm/newgames/0303/images/axiaoshuiguai0603_016.jpg",
+      "http://image2.sina.com.cn/gm/newgames/0303/images/axiaoshuiguai0603_017.jpg",
+      "http://image2.sina.com.cn/gm/newgames/0303/images/axiaoshuiguai0603_018.jpg"
+    ],
+    "exact_build": null,
+    "official_authorship_verified": false,
+    "original_server_runtime_verified": false
+  },
+  "images": [
+    {
+      "id": "I1",
+      "source_reference_index": 3,
+      "url_as_written": "http://image2.sina.com.cn/gm/newgames/0303/images/axiaoshuiguai0603_04.jpg",
+      "requested_url": "https://image2.sina.com.cn/gm/newgames/0303/images/axiaoshuiguai0603_04.jpg",
+      "final_url": "https://image2.sina.com.cn/gm/newgames/0303/images/axiaoshuiguai0603_04.jpg",
+      "http_status": 200,
+      "bytes": 71197,
+      "sha256": "11afbc0228cba1784870958ae96472595a3fbe9876fc13580ed8a8c067c73f27",
+      "format": "JPEG",
+      "mode": "RGB",
+      "size": [
+        640,
+        480
+      ]
+    },
+    {
+      "id": "I2",
+      "source_reference_index": 9,
+      "url_as_written": "http://image2.sina.com.cn/gm/newgames/0303/images/axiaoshuiguai0603_010.jpg",
+      "requested_url": "https://image2.sina.com.cn/gm/newgames/0303/images/axiaoshuiguai0603_010.jpg",
+      "final_url": "https://image2.sina.com.cn/gm/newgames/0303/images/axiaoshuiguai0603_010.jpg",
+      "http_status": 200,
+      "bytes": 95671,
+      "sha256": "248f1daeb4d1e9b12c9b523d69971ae604ecabdddcf44500c6d5a06314c1387d",
+      "format": "JPEG",
+      "mode": "RGB",
+      "size": [
+        640,
+        480
+      ]
+    }
+  ],
+  "image_observations": [
+    {
+      "id": "I1",
+      "manual_visual_review": true,
+      "kind": "STATIC_BATTLE_TARGET_SCREEN",
+      "readable_target_label": "克拉肯",
+      "displayed_target_level": 100,
+      "central_25_is_target_level": false,
+      "original_enemy_id": null,
+      "capture_date_authenticated": null,
+      "native_client_resolution_proven": false
+    },
+    {
+      "id": "I2",
+      "manual_visual_review": true,
+      "kind": "STATIC_ITEM_WINDOW_SCREEN",
+      "readable_item_name": "双头叉",
+      "displayed_stats": {
+        "攻": 75,
+        "敏": -25
+      },
+      "displayed_spirit": "滋润的精灵",
+      "displayed_spirit_level": 5,
+      "displayed_player_level_sample": 87,
+      "sample_level_is_entry_gate": false,
+      "actual_reward_acquisition_observed": false,
+      "original_item_id": null,
+      "capture_date_authenticated": null,
+      "native_client_resolution_proven": false
+    }
+  ],
+  "catalog_records": [
+    {
+      "record_id": "CN2003-R77-QUEST",
+      "collection": "quests",
+      "entity_type": "DOCUMENTARY_BRANCHING_RESCUE_QUEST",
+      "version_profile": "CN2003_LABELLED_SINA_EDEN_WATER_MONSTER_GUIDE_EXACT_BUILD_AND_AUTHORSHIP_UNKNOWN",
+      "source_refs": [
+        "S1",
+        "S2"
+      ],
+      "verification_status": "GUIDE_OR_CURRENT_IMAGE_NOT_ORIGINAL_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "recommended_level": 105,
+        "hard_entry_level": null,
+        "header_requirements": {
+          "holds_communication_shell_as_reported": true,
+          "completed_golden_flight_quest_as_reported": true,
+          "server_flags_verified": false
+        },
+        "narrative": {
+          "initial_damage": "SOUTHEAST_CITY_HOUSES_AND_RESIDENTS",
+          "usual_habitat": "EAST_CITY_UNDERGROUND_WATERWAY",
+          "initially_not_attacking_residents_as_reported": true,
+          "motive": "CHILD_ABDUCTED_BY_NET_WIELDING_HUMANS",
+          "abductor": "副园长巴克",
+          "royal_preference": "RESOLVE_WITHOUT_FORCE_IF_POSSIBLE",
+          "mentioned_spirit": "妮芙",
+          "queen_original_identity": null,
+          "child_body_name": "莫拉司",
+          "child_caption_name": "莫拉斯",
+          "child_spelling_conflict_unresolved": true,
+          "child_original_id": null,
+          "child_is_reward_pet_proven": false,
+          "child_returned_in_described_outcome": true,
+          "reconciliation_described": true,
+          "actual_reunion_runtime_observed": false,
+          "frog_dinner_motif": "REPORTED_STORY_NOT_FEEDING_AI"
+        },
+        "routes": [
+          {
+            "route": "A",
+            "sequence": [
+              "CITY_REQUEST",
+              "SOLDIER_TELEPORT",
+              "FIGHT_PARENT_WATER_MONSTER",
+              "LEARN_ABDUCTION",
+              "INVESTIGATE_ZOO",
+              "FIGHT_BARK",
+              "RETURN_CHILD",
+              "REPORT_TO_GUARD"
+            ],
+            "parent_battle_described": true,
+            "parent_level_as_reported": 100,
+            "pet_reward": "尤里蛙",
+            "weapon_reward_described": false
+          },
+          {
+            "route": "B",
+            "sequence": [
+              "CITY_REQUEST",
+              "INVESTIGATE_ZOO_FIRST",
+              "FIGHT_BARK",
+              "RETURN_CHILD",
+              "REPORT_TO_GUARD"
+            ],
+            "parent_battle_described": false,
+            "no_parent_battle_server_guarantee": null,
+            "pet_reward": "尤里蛙",
+            "weapon_reward_described": true
+          }
+        ],
+        "bark_battle": {
+          "boss_level_as_reported": 100,
+          "henchman_level_as_reported": 75,
+          "party_prohibited_as_reported": true,
+          "restriction_scope": "BARK_BATTLE_ONLY",
+          "help_behavior": null,
+          "pets_allowed": null,
+          "advisory_target_order": [
+            "BARK",
+            "HENCHMEN"
+          ],
+          "mandatory_target_order": null
+        }
+      }
+    },
+    {
+      "record_id": "CN2003-R77-NPC1",
+      "collection": "npcs",
+      "entity_type": "DOCUMENTARY_NPC_OR_CREATURE_OCCURRENCE",
+      "version_profile": "CN2003_LABELLED_SINA_EDEN_WATER_MONSTER_GUIDE_EXACT_BUILD_AND_AUTHORSHIP_UNKNOWN",
+      "source_refs": [
+        "S1",
+        "S2"
+      ],
+      "verification_status": "GUIDE_OR_CURRENT_IMAGE_NOT_ORIGINAL_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "name": "近卫长邬莉叶",
+        "role": "REQUEST_AND_CITY_RECONCILIATION",
+        "location": "尼克斯王宫前",
+        "coord": null,
+        "original_id": null
+      }
+    },
+    {
+      "record_id": "CN2003-R77-NPC2",
+      "collection": "npcs",
+      "entity_type": "DOCUMENTARY_NPC_OR_CREATURE_OCCURRENCE",
+      "version_profile": "CN2003_LABELLED_SINA_EDEN_WATER_MONSTER_GUIDE_EXACT_BUILD_AND_AUTHORSHIP_UNKNOWN",
+      "source_refs": [
+        "S1",
+        "S2"
+      ],
+      "verification_status": "GUIDE_OR_CURRENT_IMAGE_NOT_ORIGINAL_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "name": "近卫队员麦叶",
+        "role": "ROUTE_A_SEWER_TELEPORT",
+        "coord": [
+          96,
+          24
+        ],
+        "destination": "地下水路",
+        "original_id": null
+      }
+    },
+    {
+      "record_id": "CN2003-R77-NPC3",
+      "collection": "npcs",
+      "entity_type": "DOCUMENTARY_NPC_OR_CREATURE_OCCURRENCE",
+      "version_profile": "CN2003_LABELLED_SINA_EDEN_WATER_MONSTER_GUIDE_EXACT_BUILD_AND_AUTHORSHIP_UNKNOWN",
+      "source_refs": [
+        "S1",
+        "S2"
+      ],
+      "verification_status": "GUIDE_OR_CURRENT_IMAGE_NOT_ORIGINAL_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "name": "水怪克拉肯",
+        "role": "AGGRIEVED_PARENT_CREATURE",
+        "floor_as_reported": 8,
+        "coord": [
+          18,
+          13
+        ],
+        "original_id": null
+      }
+    },
+    {
+      "record_id": "CN2003-R77-NPC4",
+      "collection": "npcs",
+      "entity_type": "DOCUMENTARY_NPC_OR_CREATURE_OCCURRENCE",
+      "version_profile": "CN2003_LABELLED_SINA_EDEN_WATER_MONSTER_GUIDE_EXACT_BUILD_AND_AUTHORSHIP_UNKNOWN",
+      "source_refs": [
+        "S1",
+        "S2"
+      ],
+      "verification_status": "GUIDE_OR_CURRENT_IMAGE_NOT_ORIGINAL_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "name": "副园长巴克",
+        "role": "ZOO_ABDUCTOR_AND_WAREHOUSE_OPPONENT",
+        "coord": [
+          41,
+          5
+        ],
+        "battle_location": "动物园仓库",
+        "original_id": null
+      }
+    },
+    {
+      "record_id": "CN2003-R77-SHELL",
+      "collection": "items",
+      "entity_type": "DOCUMENTARY_COMMUNICATION_ITEM",
+      "version_profile": "CN2003_LABELLED_SINA_EDEN_WATER_MONSTER_GUIDE_EXACT_BUILD_AND_AUTHORSHIP_UNKNOWN",
+      "source_refs": [
+        "S1",
+        "S2"
+      ],
+      "verification_status": "GUIDE_OR_CURRENT_IMAGE_NOT_ORIGINAL_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "name": "不可思议的贝壳",
+        "function": "UNDERSTAND_CREATURE_SPEECH",
+        "absence_description": "ONLY_GURGLING_AS_REPORTED",
+        "origins_as_reported": [
+          "北岛弥生与日美子的友谊",
+          "南岛哥亚山小猪传情任务",
+          "吉鲁岛小猪爱情故事"
+        ],
+        "all_three_required": false,
+        "entrance_key": null,
+        "consumed": null,
+        "equipment_slot": null,
+        "original_item_id": null
+      }
+    },
+    {
+      "record_id": "CN2003-R77-FORK",
+      "collection": "items",
+      "entity_type": "DOCUMENTARY_CONDITIONAL_REWARD_ITEM",
+      "version_profile": "CN2003_LABELLED_SINA_EDEN_WATER_MONSTER_GUIDE_EXACT_BUILD_AND_AUTHORSHIP_UNKNOWN",
+      "source_refs": [
+        "S1",
+        "S2",
+        "I2"
+      ],
+      "verification_status": "GUIDE_OR_CURRENT_IMAGE_NOT_ORIGINAL_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "name": "双头叉",
+        "route": "B",
+        "stats_as_reported": {
+          "攻": 75,
+          "敏": -25
+        },
+        "spirit_as_reported": "滋润的精灵",
+        "spirit_level_as_reported": 5,
+        "role": "NYX_GUARD_SYMBOL",
+        "additional_condition": "FIRST_OPPORTUNITY_AFTER_SERVER_MAINTENANCE_AS_GUIDE_CLAIM",
+        "every_completion_guaranteed": false,
+        "deadline_seconds": null,
+        "quota": null,
+        "reset_cycle": null,
+        "original_id": null
+      }
+    },
+    {
+      "record_id": "CN2003-R77-FROG",
+      "collection": "pets",
+      "entity_type": "DOCUMENTARY_REWARD_PET",
+      "version_profile": "CN2003_LABELLED_SINA_EDEN_WATER_MONSTER_GUIDE_EXACT_BUILD_AND_AUTHORSHIP_UNKNOWN",
+      "source_refs": [
+        "S1",
+        "S2"
+      ],
+      "verification_status": "GUIDE_OR_CURRENT_IMAGE_NOT_ORIGINAL_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "name": "尤里蛙",
+        "routes": [
+          "A",
+          "B"
+        ],
+        "level": null,
+        "stats": null,
+        "growth": null,
+        "original_id": null
+      }
+    },
+    {
+      "record_id": "CN2003-R77-WATERWAY",
+      "collection": "maps",
+      "entity_type": "DOCUMENTARY_ECOLOGY_NOT_GEOMETRY",
+      "version_profile": "CN2003_LABELLED_SINA_EDEN_WATER_MONSTER_GUIDE_EXACT_BUILD_AND_AUTHORSHIP_UNKNOWN",
+      "source_refs": [
+        "S1",
+        "S2"
+      ],
+      "verification_status": "GUIDE_OR_CURRENT_IMAGE_NOT_ORIGINAL_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "map_label": "地下水路",
+        "entrance_as_reported": [
+          291,
+          34
+        ],
+        "floors_captioned": 8,
+        "level_range_as_reported": [
+          80,
+          100
+        ],
+        "source_labels": [
+          "克拉肯",
+          "欧瑟菲",
+          "玛斯特",
+          "沙瓦列",
+          "迪加"
+        ],
+        "complete_roster_proven": false,
+        "capturability": null,
+        "original_map_ids": null,
+        "full_geometry": null,
+        "stray_caption_prefix_7_8_as_written": "果"
+      }
+    },
+    {
+      "record_id": "CN2003-R77-I1",
+      "collection": "screens",
+      "entity_type": "DOCUMENTARY_CURRENT_IMAGE_REFERENCE",
+      "version_profile": "CN2003_LABELLED_SINA_EDEN_WATER_MONSTER_GUIDE_EXACT_BUILD_AND_AUTHORSHIP_UNKNOWN",
+      "source_refs": [
+        "S1",
+        "I1"
+      ],
+      "verification_status": "GUIDE_OR_CURRENT_IMAGE_NOT_ORIGINAL_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "image": {
+          "id": "I1",
+          "source_reference_index": 3,
+          "url_as_written": "http://image2.sina.com.cn/gm/newgames/0303/images/axiaoshuiguai0603_04.jpg",
+          "requested_url": "https://image2.sina.com.cn/gm/newgames/0303/images/axiaoshuiguai0603_04.jpg",
+          "final_url": "https://image2.sina.com.cn/gm/newgames/0303/images/axiaoshuiguai0603_04.jpg",
+          "http_status": 200,
+          "bytes": 71197,
+          "sha256": "11afbc0228cba1784870958ae96472595a3fbe9876fc13580ed8a8c067c73f27",
+          "format": "JPEG",
+          "mode": "RGB",
+          "size": [
+            640,
+            480
+          ]
+        },
+        "observation": {
+          "id": "I1",
+          "manual_visual_review": true,
+          "kind": "STATIC_BATTLE_TARGET_SCREEN",
+          "readable_target_label": "克拉肯",
+          "displayed_target_level": 100,
+          "central_25_is_target_level": false,
+          "original_enemy_id": null,
+          "capture_date_authenticated": null,
+          "native_client_resolution_proven": false
+        }
+      }
+    },
+    {
+      "record_id": "CN2003-R77-I2",
+      "collection": "screens",
+      "entity_type": "DOCUMENTARY_CURRENT_IMAGE_REFERENCE",
+      "version_profile": "CN2003_LABELLED_SINA_EDEN_WATER_MONSTER_GUIDE_EXACT_BUILD_AND_AUTHORSHIP_UNKNOWN",
+      "source_refs": [
+        "S1",
+        "I2"
+      ],
+      "verification_status": "GUIDE_OR_CURRENT_IMAGE_NOT_ORIGINAL_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "image": {
+          "id": "I2",
+          "source_reference_index": 9,
+          "url_as_written": "http://image2.sina.com.cn/gm/newgames/0303/images/axiaoshuiguai0603_010.jpg",
+          "requested_url": "https://image2.sina.com.cn/gm/newgames/0303/images/axiaoshuiguai0603_010.jpg",
+          "final_url": "https://image2.sina.com.cn/gm/newgames/0303/images/axiaoshuiguai0603_010.jpg",
+          "http_status": 200,
+          "bytes": 95671,
+          "sha256": "248f1daeb4d1e9b12c9b523d69971ae604ecabdddcf44500c6d5a06314c1387d",
+          "format": "JPEG",
+          "mode": "RGB",
+          "size": [
+            640,
+            480
+          ]
+        },
+        "observation": {
+          "id": "I2",
+          "manual_visual_review": true,
+          "kind": "STATIC_ITEM_WINDOW_SCREEN",
+          "readable_item_name": "双头叉",
+          "displayed_stats": {
+            "攻": 75,
+            "敏": -25
+          },
+          "displayed_spirit": "滋润的精灵",
+          "displayed_spirit_level": 5,
+          "displayed_player_level_sample": 87,
+          "sample_level_is_entry_gate": false,
+          "actual_reward_acquisition_observed": false,
+          "original_item_id": null,
+          "capture_date_authenticated": null,
+          "native_client_resolution_proven": false
+        }
+      }
+    }
+  ],
+  "comparison": {
+    "source_history": {
+      "visible_publication": "2003-06-03 11:57",
+      "archive_actual_capture": "20160929133108",
+      "requested_availability_timestamp": "20031201",
+      "archive_does_not_authenticate_2003_bytes": true,
+      "wrappers_are_one_source_not_independent_witnesses": true
+    },
+    "family_comparison": {
+      "report": "research/recovered/STONEAGE-CN2003-LIULI-CAVE-SOURCE-R1.json",
+      "liuli_completed_reunion_claim_permitted": false,
+      "this_guide_child_return_is_described_outcome_not_runtime": true,
+      "shared_family_or_quest_id_proven": false
+    },
+    "shell_comparison": {
+      "report": "research/recovered/STONEAGE-EARLY-CONTENT-GUIDE-MANUAL-R1.json",
+      "early_guide_profile": "FRIENDSHIP_SHELL_DELIVERY",
+      "early_flow": [
+        "YAYOI_MARINAS_GIVES_SHELL",
+        "HIMIKO_SAMGIL_RECEIVES",
+        "FLOWER_REWARD"
+      ],
+      "same_original_shell_id_proven": false,
+      "communication_function_backfilled_to_early_build": false
+    },
+    "modern_adoption_decided": false
+  },
+  "audit": {
+    "semantic_mutations_per_input": 22,
+    "total_semantic_mutations": 44,
+    "digest_and_whole_body_fingerprint_gate_removed": true,
+    "peripheral_script_positive_each_input": true
+  },
+  "original_html_or_assets_in_output": false,
+  "original_game_runtime_verified": false
+}

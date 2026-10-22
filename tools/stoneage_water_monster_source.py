@@ -208,10 +208,44 @@ def read_inputs(directory=None):
  return raws
 
 
+def verify_custody(root=None):
+ root=ROOT if root is None else Path(root)
+ receipt=json.loads((root/f'research/recovered/{STEM}-CUSTODY-R1.json').read_text())
+ require(receipt['schema']=='stoneage.cn2003_water_monster.custody.r1','Custody schema changed')
+ require(receipt['original_game_runtime_verified'] is False and receipt['current_http_bytes_are_historical_bytes'] is False,'Custody authority promoted')
+ require(re.fullmatch('[0-9a-f]{40}',receipt['content_commit']) and re.fullmatch('[0-9a-f]{40}',receipt['content_tree']),'Invalid content Git identity')
+ runs=receipt['runs'];require(len(runs)==21 and len({r['id'] for r in runs})==len(runs) and all(r['head_sha']==receipt['content_commit'] and r['status']=='completed' and r['conclusion']=='success' for r in runs),'CI provenance incomplete/changed')
+ branches={receipt['candidate_branch']:10,'main':11}
+ require(all(r['branch'] in branches for r in runs) and all(len([r for r in runs if r['branch']==branch])==count and len({r['name'] for r in runs if r['branch']==branch})==count for branch,count in branches.items()),'Candidate/main gate set incomplete or duplicated')
+ required={f'research/recovered/{STEM}-{part}-R1.json' for part in ('SOURCE','CI-CANDIDATE','CI-MAIN')}|set(PARENTS)|{PARSER}
+ pins=receipt['permanent_pins'];require(len(pins)==len(required) and {p['path'] for p in pins}==required,'Permanent pins missing/duplicate')
+ for p in pins:
+  require(not Path(p['path']).is_absolute() and '..' not in Path(p['path']).parts,'Invalid pin path')
+  raw=(root/p['path']).read_bytes();require(len(raw)==p['bytes'] and sha(raw)==p['sha256'] and hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest()==p['git_blob'],'Permanent bytes/Git identity changed')
+ source=json.loads((root/f'research/recovered/{STEM}-SOURCE-R1.json').read_text())
+ require(source['parent_pins']+[source['parser_dependency_pin']]==[next(p for p in pins if p['path']==path) for path in PARENTS+[PARSER]],'Parent custody detached')
+ initial=[{k:p[k] for k in ('id','url','bytes','sha256')} for p in source['source_pages']]
+ require(receipt['initial_inputs']==initial,'Initial source history lost')
+ artifacts=[];jobs=[];raws=[]
+ for role in ('candidate','main'):
+  proof=receipt['jobs_and_artifacts'][role];a=proof['artifact'];ar=a['workflow_run'];branch='main' if role=='main' else receipt['candidate_branch']
+  matching=[r for r in runs if r['id']==proof['run']]
+  require(len(matching)==1 and matching[0]['name']=='Verify water-monster rescue branches, source history and conditional rewards' and matching[0]['branch']==branch and ar['head_branch']==branch and ar['head_sha']==receipt['content_commit'] and ar['id']==proof['run'] and proof['job_name']=='bounded-source-replay' and proof['job_conclusion']=='success' and proof['zip_downloaded_and_digest_verified'] is True and a['name']=='water-monster-derived-r77' and re.fullmatch(r'sha256:[0-9a-f]{64}',a['digest']),'Job/artifact/run detached')
+  artifacts.append(a['id']);jobs.append(proof['job'])
+  path=f'research/recovered/{STEM}-CI-{role.upper()}-R1.json';raw=(root/path).read_bytes();raws.append(raw);replay=json.loads(raw)
+  expected_pin=next(p for p in pins if p['path']==path);record=receipt['raw_replays'][role]
+  require(all(record[k]==expected_pin[k] for k in ('path','bytes','sha256','git_blob')) and record['inputs']==replay['inputs'],'Original replay record changed')
+  require(len(replay['inputs'])==2 and all(i['id']==sid and i['url']==URLS[sid] and isinstance(i['bytes'],int) and i['bytes']>0 and re.fullmatch('[0-9a-f]{64}',i['sha256']) for sid,i in zip(('S1','S2'),replay['inputs'])),'Input identity changed')
+  require(record['equals_initial_inputs']==(replay['inputs']==initial),'Current-byte equality misreported')
+  require(all(replay[k]==source[k] for k in ('extraction','images','image_observations','catalog_records','comparison')) and replay['audit']=={'semantic_mutations_per_input':22,'total_semantic_mutations':44,'digest_and_whole_body_fingerprint_gate_removed':True,'peripheral_script_positive_each_input':True} and replay['original_html_or_assets_in_output'] is False and replay['original_game_runtime_verified'] is False,'Raw replay semantic/boundary mismatch')
+ require(len(set(artifacts))==len(set(jobs))==2 and receipt['candidate_main_raw_bytes_equal']==(raws[0]==raws[1]),'Candidate/main evidence substituted or equality misreported')
+ return receipt
+
+
 def main():
  p=argparse.ArgumentParser();g=p.add_mutually_exclusive_group(required=True);g.add_argument('--fetch',action='store_true');g.add_argument('--input-dir');p.add_argument('--output',required=True);a=p.parse_args()
  r=json.loads(REPORT.read_text());out=replay(read_inputs(a.input_dir),r)
- if (ROOT/f'research/recovered/{STEM}-CUSTODY-R1.json').exists():verify_custody()
+ verify_custody()
  target=Path(a.output);target.parent.mkdir(parents=True,exist_ok=True);target.write_text(json.dumps(out,ensure_ascii=False,indent=2)+'\n');print(json.dumps({'source_wrappers':2,'routes':2,'linked_original_jpegs':2,'catalog_records':11,'semantic_mutations':44}))
 
 if __name__=='__main__':main()

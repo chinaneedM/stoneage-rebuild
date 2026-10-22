@@ -60,3 +60,17 @@ B线叉的附加说法是“服务器维修过后第一时间”领取，否则�
 11研究记录=1任务双分支、4互动对象、2道具、1奖励宠物、1生态地图、2静态截图。研究record_id不是原服ID，不以记录数或测试数计算恢复率。六单元、每输入22个去整页摘要/正文指纹门语义改写合44个及script正例；本包/复用解析器/旧琉璃18项本地回归通过。独立正则/实体解码另核2897核心、坐标出现次数、战斗等级/分支先后、三贝壳来源与武器数值。一次本地初稿误把A/B“将/把原本当晚餐”的字面要求统一，已据原文修正，不把两路线改成同句；无远端失败。
 
 止于一攻略两包装、两分支、两图，不扩全动物园/金飞/地下水路地图。重开需同版官方原文、商业脚本/原ID、维修奖励实际规则、历史原图或真实通信/保存。最高NEXT78回另一地区PC官方宠物生态/技能或具名NPC内容；音效只随同版真实输入推进。Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停。
+
+
+## R77 实际CI与永久证据保管验收（2026-10-22）
+
+内容提交 `87fd1bcb8b2b3e4d00cc506a9b11c601289d4b6b`，原生Git tree `905773d0fe86a872620fb8c274e198ec30f29db7`：候选10/main11个实际Actions全部completed/success，来源任务两端各6单元及实际双HTML/双JPEG取回、44个去摘要/正文指纹门语义反例成功。逐一下载ZIP、核API大小和SHA256、只含replay.json，再与SOURCE语义/两图/11目录逐字段比较。
+
+- candidate run `39795522113` / job `119881789480` / artifact `12433431840`：ZIP 4852B `sha256:c5d95daf925f8116bdca3e629469dcab9dca0f3c3600d5a3a84cde27ddc867a7`；原始JSON 24288B/SHA256 `50af6fdbbd0b27fbc76d0d6a5421857382f210c1a543d624cbee2c764a3cdf47`/Git blob `c3314e43dd714f723a10e185e13c507448a5ba4c`。
+- main run `39797430927` / job `119888249554` / artifact `12434366035`：ZIP 4852B `sha256:fb13ce4af18767aaf65f365cc689c8d4edeccbded6fbbed52a869adcc9486417`；原始JSON 24288B/SHA256 `50af6fdbbd0b27fbc76d0d6a5421857382f210c1a543d624cbee2c764a3cdf47`/Git blob `c3314e43dd714f723a10e185e13c507448a5ba4c`。
+
+两个CI原始报告逐字节相同：True；两端各自等于初始HTTP输入：[True, True]。逐字节相同只是这次实际观察，不把当前HTTP或2016存档包装称为2003原始字节。原始derived JSON两份及CUSTODY收据永久进入Git，七pin固定SOURCE、三亲代报告、共享解析器与两原始报告；30天工件过期不删除这条已核链。原HTML/JPEG及任何专有资产均未归档。
+
+CLI现强制要求收据；缺失、同长篡改、门禁遗漏/重复、错误分支/HEAD/任务/工件、改报输入相等、抬高历史/运行权威均拒绝。加入保管反例后本包7单元，相关合19项本地回归及同输入重放通过，旧6单元CI历史保留；保管提交自身候选/main检查另行后验，不预报结果。
+
+这完成的是有来源的分支任务/NPC/动物沟通/奖励与生态规格；官方作者、商业build、原服ID/flags、硬准入、实际HELP/宠物、维修奖励配额与真实服执行仍OPEN。Stage A仍7 PARTIAL+2 OPEN，B/wiki仍GATED，savedata R79仍PAUSED_NON_BLOCKING。最高NEXT：OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-78，回另一地区PC官方宠物生态/技能或具名NPC材料；不扩本攻略其他16张图，不因相近名字合并早期贝壳ID。
