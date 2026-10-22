@@ -1,0 +1,40 @@
+name: Verify Japan 2007 named pet lottery scope and relative rates
+on:
+  push:
+    paths:
+      - 'tools/stoneage_jp2007_ebony_lottery_source.py'
+      - 'tools/stoneage_jp2005_treasure_source.py'
+      - 'tests/test_stoneage_jp2007_ebony_lottery_source.py'
+      - 'research/recovered/STONEAGE-JP2007-EBONY-LOTTERY-*.json'
+      - 'research/recovered/STONEAGE-JP2008-FUKUURI-CAPTURE-SOURCE-R1.json'
+      - 'research/recovered/STONEAGE-PREPRODUCTION-CONTENT-ARCHIVE-R1.json'
+      - '.github/workflows/verify-stoneage-jp2007-ebony-lottery-source.yml'
+  pull_request:
+    paths:
+      - 'tools/stoneage_jp2007_ebony_lottery_source.py'
+      - 'tests/test_stoneage_jp2007_ebony_lottery_source.py'
+      - 'research/recovered/STONEAGE-JP2007-EBONY-LOTTERY-*.json'
+      - '.github/workflows/verify-stoneage-jp2007-ebony-lottery-source.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  bounded-source-replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install Pillow==12.3.0
+      - name: Relative rates, missing probabilities, visual identity and source authority
+        run: python -m unittest tests.test_stoneage_jp2007_ebony_lottery_source -v
+      - name: Fetch the actual release and its two attached promotional JPEGs
+        run: python -m tools.stoneage_jp2007_ebony_lottery_source --fetch --output "$RUNNER_TEMP/r78/replay.json"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: jp2007-ebony-lottery-derived-r78
+          path: ${{ runner.temp }}/r78/replay.json
+          if-no-files-found: error
+          retention-days: 30
