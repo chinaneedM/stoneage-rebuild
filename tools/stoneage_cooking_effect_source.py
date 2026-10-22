@@ -255,6 +255,47 @@ def audit(raws, expected):
             'two_peripheral_script_positives': True, 'original_game_runtime_verified': False}
 
 
+def verify_custody(root=None):
+    root = ROOT if root is None else Path(root)
+    receipt = json.loads((root / f'research/recovered/{STEM}-CUSTODY-R1.json').read_text())
+    require(receipt['original_game_runtime_verified'] is False and
+            receipt['historical_bytes_authenticated'] is False, 'Custody authority promoted')
+    runs = receipt['runs']
+    require(len({r['id'] for r in runs}) == len(runs) and all(
+        r['head_sha'] == receipt['content_commit'] and r['status'] == 'completed' and
+        r['conclusion'] == 'success' for r in runs), 'CI provenance changed')
+    pins = receipt['permanent_pins']
+    paths = {p['path'] for p in pins}
+    required = {f'research/recovered/{STEM}-{s}-R1.json' for s in ('SOURCE', 'CI-CANDIDATE', 'CI-MAIN')}
+    require(len(paths) == len(pins) and required <= paths, 'Incomplete/duplicate evidence pins')
+    for pin in pins:
+        require(not Path(pin['path']).is_absolute() and '..' not in Path(pin['path']).parts, 'Invalid pin path')
+        raw = (root / pin['path']).read_bytes()
+        require(len(raw) == pin['bytes'] and sha(raw) == pin['sha256'], 'Permanent evidence changed')
+        require(hashlib.sha1(b'blob ' + str(len(raw)).encode() + bytes([0]) + raw).hexdigest() == pin['git_blob'],
+                'Permanent Git identity changed')
+    source = json.loads((root / f'research/recovered/{STEM}-SOURCE-R1.json').read_text())
+    require({p['path'] for p in source['parent_pins']} <= paths, 'Parent custody incomplete')
+    inputs = [{k: p[k] for k in ('id', 'url', 'bytes', 'sha256')} for p in source['source_pages']]
+    for role in ('candidate', 'main'):
+        proof = receipt['jobs_and_artifacts'][role]
+        matches = [r for r in runs if r['id'] == proof['run']]
+        artifact = proof['artifact']['workflow_run']
+        require(len(matches) == 1 and artifact['id'] == proof['run'] and
+                artifact['head_sha'] == receipt['content_commit'] and
+                artifact['head_branch'] == matches[0]['branch'] and
+                matches[0]['branch'] == ('main' if role == 'main' else receipt['candidate_branch']),
+                'Artifact detached from content/run/branch')
+        raw = json.loads((root / f'research/recovered/{STEM}-CI-{role.upper()}-R1.json').read_text())
+        require(raw['inputs'] == inputs and raw['extraction'] == source['extraction'] and
+                raw['catalog_records'] == source['catalog_records'], 'Archived source or catalog replay changed')
+        require(raw['audit'] == {'real_source_semantic_mutations_rejected_without_digest_gate': 12,
+                                'two_peripheral_script_positives': True, 'original_game_runtime_verified': False} and
+                raw['original_html_or_assets_in_output'] is False and
+                raw['original_game_runtime_verified'] is False, 'Archived audit boundary promoted')
+    return receipt
+
+
 def main():
     parser = argparse.ArgumentParser()
     group = parser.add_mutually_exclusive_group(required=True)
@@ -264,6 +305,7 @@ def main():
     args = parser.parse_args()
     report = json.loads(REPORT.read_text())
     verify_report(report)
+    verify_custody()
     raws, inputs = [], []
     for i, url in enumerate(URLS):
         if args.fetch:

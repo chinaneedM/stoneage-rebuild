@@ -5,3 +5,6 @@
 交付[分源规格](specs/STONEAGE-COOKING-EFFECT-SOURCE-R1.md)、[四条文献记录](../research/recovered/STONEAGE-COOKING-EFFECT-SOURCE-R1.json)、有限解析/反例测试与来源CI。R66与R67预检历史不改写。没有原料理ID、配方成功率或服务端执行，PK标题不覆盖行内限制；尾随数字不推数量／等级。
 
 止于两页选定四行，八本包测试与12真实文本反例及两个外围script正例先本地验收；远端双端来源重放和派生保管后验。下一R68轮换地图／NPC／任务或同版音效；Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停。未制作新作或网站。
+
+
+内容提交双端10/11项Actions实过，完整派生见research/recovered/STONEAGE-COOKING-EFFECT-CUSTODY-R1.json。双ZIP/原JSON摘要和九项保管门后验以CURRENT末条及实时远端为准，八项旧历史不倒改；下一R68。

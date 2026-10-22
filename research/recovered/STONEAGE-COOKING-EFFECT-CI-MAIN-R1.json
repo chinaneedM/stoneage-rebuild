@@ -1,0 +1,275 @@
+{
+  "schema": "stoneage.cooking_effect.replay.r1",
+  "inputs": [
+    {
+      "id": "S1",
+      "url": "https://games.sina.com.cn/zhqu/sta/lldq/lldq_2.shtml",
+      "bytes": 52549,
+      "sha256": "fc211a8b14ad9f503ed725130dc43a394d91a53a2039ffe514b591718042d3bb"
+    },
+    {
+      "id": "S2",
+      "url": "https://games.sina.com.cn/zhqu/sta/lldq/lldq_4.shtml",
+      "bytes": 44295,
+      "sha256": "249c5b94acd00ed0116342b4de5f18f8a484c0e70d1a87f41050561bc07e6f98"
+    }
+  ],
+  "extraction": {
+    "schema": "stoneage.cooking_effect.extraction.r1",
+    "rows": [
+      {
+        "source_ref": "S1",
+        "category_as_written": "耐力回复类（全体）",
+        "name_as_written": "豪华生鱼片",
+        "effect_as_written": "回复耐力500(全体)",
+        "ingredient_cell_as_written": "鱼4+螃蟹4+花枝4+章鱼4+虾4",
+        "ingredient_tokens_as_written": [
+          "鱼4",
+          "螃蟹4",
+          "花枝4",
+          "章鱼4",
+          "虾4"
+        ],
+        "use_note_as_written": null,
+        "ingredient_suffix_meaning": null,
+        "ingredient_quantities": null,
+        "ingredient_grades": null,
+        "resource_to_hp_mp_mapping": null,
+        "item_id": null,
+        "recipe_id": null,
+        "success_rate": null,
+        "runtime_verified": false
+      },
+      {
+        "source_ref": "S2",
+        "category_as_written": "PK使用类",
+        "name_as_written": "铁人关东煮",
+        "effect_as_written": "恢复耐力300+气力100",
+        "ingredient_cell_as_written": "串4+虾4+螃蟹4+章鱼4+水4（只能平时使用，战斗中无效）",
+        "ingredient_tokens_as_written": [
+          "串4",
+          "虾4",
+          "螃蟹4",
+          "章鱼4",
+          "水4"
+        ],
+        "use_note_as_written": "只能平时使用，战斗中无效",
+        "ingredient_suffix_meaning": null,
+        "ingredient_quantities": null,
+        "ingredient_grades": null,
+        "resource_to_hp_mp_mapping": null,
+        "item_id": null,
+        "recipe_id": null,
+        "success_rate": null,
+        "runtime_verified": false
+      },
+      {
+        "source_ref": "S2",
+        "category_as_written": "PK使用类",
+        "name_as_written": "豪华生鱼片",
+        "effect_as_written": "全体耐力500以上",
+        "ingredient_cell_as_written": "鱼4+螃蟹4+花枝4+章鱼4+虾4",
+        "ingredient_tokens_as_written": [
+          "鱼4",
+          "螃蟹4",
+          "花枝4",
+          "章鱼4",
+          "虾4"
+        ],
+        "use_note_as_written": null,
+        "ingredient_suffix_meaning": null,
+        "ingredient_quantities": null,
+        "ingredient_grades": null,
+        "resource_to_hp_mp_mapping": null,
+        "item_id": null,
+        "recipe_id": null,
+        "success_rate": null,
+        "runtime_verified": false
+      },
+      {
+        "source_ref": "S2",
+        "category_as_written": "PK使用类",
+        "name_as_written": "青鱼子",
+        "effect_as_written": "单体异常状态恢复",
+        "ingredient_cell_as_written": "刚产的蛋+深海鱼",
+        "ingredient_tokens_as_written": [
+          "刚产的蛋",
+          "深海鱼"
+        ],
+        "use_note_as_written": null,
+        "ingredient_suffix_meaning": null,
+        "ingredient_quantities": null,
+        "ingredient_grades": null,
+        "resource_to_hp_mp_mapping": null,
+        "item_id": null,
+        "recipe_id": null,
+        "success_rate": null,
+        "runtime_verified": false
+      }
+    ],
+    "counterpart": {
+      "same_display_name": true,
+      "same_ingredient_literals": true,
+      "effect_literals_equal": false,
+      "same_item_id_established": false,
+      "runtime_contradiction_proven": false,
+      "numeric_effects_reconciled": false
+    },
+    "category_does_not_override_row_restriction": true,
+    "all_abnormal_status_types_recovered": false,
+    "all_other_recipes_archived": false,
+    "exact_game_build": null,
+    "author_identity": null,
+    "historical_bytes_authenticated": false
+  },
+  "catalog_records": [
+    {
+      "record_id": "CN2003-SINA-R67-RECIPE-01",
+      "entity_type": "documentary_recipe_description",
+      "collection": "recipes",
+      "version_profile": "CN2003_SINA_COOKING_DOCUMENT_EXACT_GAME_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "SOURCE_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "source_ref": "S1",
+        "category_as_written": "耐力回复类（全体）",
+        "name_as_written": "豪华生鱼片",
+        "effect_as_written": "回复耐力500(全体)",
+        "ingredient_cell_as_written": "鱼4+螃蟹4+花枝4+章鱼4+虾4",
+        "ingredient_tokens_as_written": [
+          "鱼4",
+          "螃蟹4",
+          "花枝4",
+          "章鱼4",
+          "虾4"
+        ],
+        "use_note_as_written": null,
+        "ingredient_suffix_meaning": null,
+        "ingredient_quantities": null,
+        "ingredient_grades": null,
+        "resource_to_hp_mp_mapping": null,
+        "item_id": null,
+        "recipe_id": null,
+        "success_rate": null,
+        "runtime_verified": false
+      }
+    },
+    {
+      "record_id": "CN2003-SINA-R67-RECIPE-02",
+      "entity_type": "documentary_recipe_description",
+      "collection": "recipes",
+      "version_profile": "CN2003_SINA_COOKING_DOCUMENT_EXACT_GAME_BUILD_UNKNOWN",
+      "source_refs": [
+        "S2"
+      ],
+      "verification_status": "SOURCE_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "source_ref": "S2",
+        "category_as_written": "PK使用类",
+        "name_as_written": "铁人关东煮",
+        "effect_as_written": "恢复耐力300+气力100",
+        "ingredient_cell_as_written": "串4+虾4+螃蟹4+章鱼4+水4（只能平时使用，战斗中无效）",
+        "ingredient_tokens_as_written": [
+          "串4",
+          "虾4",
+          "螃蟹4",
+          "章鱼4",
+          "水4"
+        ],
+        "use_note_as_written": "只能平时使用，战斗中无效",
+        "ingredient_suffix_meaning": null,
+        "ingredient_quantities": null,
+        "ingredient_grades": null,
+        "resource_to_hp_mp_mapping": null,
+        "item_id": null,
+        "recipe_id": null,
+        "success_rate": null,
+        "runtime_verified": false
+      }
+    },
+    {
+      "record_id": "CN2003-SINA-R67-RECIPE-03",
+      "entity_type": "documentary_recipe_description",
+      "collection": "recipes",
+      "version_profile": "CN2003_SINA_COOKING_DOCUMENT_EXACT_GAME_BUILD_UNKNOWN",
+      "source_refs": [
+        "S2"
+      ],
+      "verification_status": "SOURCE_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "source_ref": "S2",
+        "category_as_written": "PK使用类",
+        "name_as_written": "豪华生鱼片",
+        "effect_as_written": "全体耐力500以上",
+        "ingredient_cell_as_written": "鱼4+螃蟹4+花枝4+章鱼4+虾4",
+        "ingredient_tokens_as_written": [
+          "鱼4",
+          "螃蟹4",
+          "花枝4",
+          "章鱼4",
+          "虾4"
+        ],
+        "use_note_as_written": null,
+        "ingredient_suffix_meaning": null,
+        "ingredient_quantities": null,
+        "ingredient_grades": null,
+        "resource_to_hp_mp_mapping": null,
+        "item_id": null,
+        "recipe_id": null,
+        "success_rate": null,
+        "runtime_verified": false
+      }
+    },
+    {
+      "record_id": "CN2003-SINA-R67-RECIPE-04",
+      "entity_type": "documentary_recipe_description",
+      "collection": "recipes",
+      "version_profile": "CN2003_SINA_COOKING_DOCUMENT_EXACT_GAME_BUILD_UNKNOWN",
+      "source_refs": [
+        "S2"
+      ],
+      "verification_status": "SOURCE_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "source_ref": "S2",
+        "category_as_written": "PK使用类",
+        "name_as_written": "青鱼子",
+        "effect_as_written": "单体异常状态恢复",
+        "ingredient_cell_as_written": "刚产的蛋+深海鱼",
+        "ingredient_tokens_as_written": [
+          "刚产的蛋",
+          "深海鱼"
+        ],
+        "use_note_as_written": null,
+        "ingredient_suffix_meaning": null,
+        "ingredient_quantities": null,
+        "ingredient_grades": null,
+        "resource_to_hp_mp_mapping": null,
+        "item_id": null,
+        "recipe_id": null,
+        "success_rate": null,
+        "runtime_verified": false
+      }
+    }
+  ],
+  "audit": {
+    "real_source_semantic_mutations_rejected_without_digest_gate": 12,
+    "two_peripheral_script_positives": true,
+    "original_game_runtime_verified": false
+  },
+  "original_html_or_assets_in_output": false,
+  "original_game_runtime_verified": false
+}

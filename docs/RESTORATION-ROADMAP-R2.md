@@ -1598,3 +1598,12 @@ R66已取得一篇新具名版号文献，预检见 research/recovered/STONEAGE-
 七项反例测试与12真实源语义改写无摘要门、两外围script正例本地通过；一次性独立正则/实体复核四原单元格。本包与旧档案/组合队列17项相关回归先通过，再加强可见标题归属及负边界不得缺失的检查，本包七项重验通过；无相应远端失败。源候选/main网页重取、ZIP实下和永久派生保管须真实后验，不先报绿。
 
 有限止点两页四行，不扫余下食谱或扩料理helper。最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-68回22域，优先具名地图/NPC/任务或有同版实参的音效材料；Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79 PAUSED_NON_BLOCKING，完整历史保留。
+
+
+### 2026-10-22 R67双端实源重放与永久派生保管
+
+内容提交e4d05c0016961d5471914db58c2b45b71e274d77/tree05e6d78045b20b6a326b4c5297ddfdd5f810b9a3，候选10/main11项适用Actions全部completed/success，实时main预期SHA保护非强制快进。十文件/整tree与本地一致，四历史文件仅追加，旧行删0。专用候选run39729369175/job119660632222/artifact12404124612，主线run39729448409/job119660886022/artifact12404158041，各实际执行八单元、两当前HTML、12语义反例及两外围script正例；非原商业运行。
+
+实下双ZIP各1643B，SHA256 31f254808efb16370c9dad9c96417d23e5090365c8c4a6744a54932b0a666593 / 73782e55e24be87c8a07f2ba6c2da8a0eb22ce10726367faff99807f10c92d77逐一符合API；各唯一replay.json完整9141B/SHA256 e335e8cc3eae2796dc43bc60fff7c62e05021d67ac2bbd6a00bb9547facc40e7。候选/main/local及加保管门后本地重放四份原字节全等，包含四条原文献记录与四条recipes研究目录；两HTTP摘要仍同初取。
+
+两CI派生原JSON与research/recovered/STONEAGE-COOKING-EFFECT-CUSTODY-R1.json永久入Git，固定内容Git、21真实run、双job/artifact/ZIP与七文件原字节/原生Git。保管门强制收据存在，拒绝实际文件缺失/等长篡改、重复run、错HEAD或分支，并绑定输入、语义、目录及原始来源边界；单元八→九，本包与旧档案19项本地回归通过。保管提交自身候选/main CI另须实查，旧八项不倒改。原HTML/图/程序不进Git；精确build/原ID/原料后缀与实际效果均继续未证。有限包止于两页四行，不扩全食谱。最高NEXT68回22域优先地图/NPC/任务或有同版实参的音效；Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停，全部历史完整。
