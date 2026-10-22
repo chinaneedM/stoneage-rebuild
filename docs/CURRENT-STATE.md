@@ -17031,3 +17031,10 @@ R66已取得一篇新具名版号文献，预检见 research/recovered/STONEAGE-
 实际双ZIP各1812B，SHA256 77e921ebf5d8da110ce5b47e9a626dcbcfb33430af2981b211fb6c148edd75b3 / 1c570c5b69d6ecee89812c20812453d71b545c01886db3d659adb6e9f7efd289分别匹配API；唯一replay.json完整4226B/SHA256 52c021152e77da75c752c5a3d7be8127cea4a2298aaf57be3fdb0ad5be4676bd，候选/main/local以及加保管门后本地重放逐字节相等，三输入大小/摘要同初取。完整两CI派生原JSON与research/recovered/STONEAGE-STA253-SPEAKER-CUSTODY-R1.json永久入Git，固定内容Git、21项实际run、双job/artifact/ZIP及七个永久文件原生Git身份。
 
 新增强制保管门：收据/原派生实际缺失及等长篡改、重复run、错HEAD/分支拒绝；单元七→八，与旧档案17项本地回归通过。保管提交自身候选/main CI另行实查，不把旧七项称八项。原网页全文/HTML/图/工具不进Git；附录再引不增独立支持，beta表现与全部2.53同构建/稳定性未知等限制原样保留。最高NEXT67轮换22域的具名物品/配方/经济或地图/NPC，不继续扩STA内部helper；Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停，全部历史前缀完整。
+
+
+### 2026-10-22 R66保管提交验收完成，R67已有具名来源入口
+
+保管提交653e2512042cfda9791ca8bd9c70fc9442d278a2/tree230b8d2348fa6d44e696b59918df73ec17b84303的候选8/main9项适用Actions已实查全部completed/success，主线专用run39727126423/job119653501032日志实际执行八单元及三页重放；原内容七单元历史保持不变。当前复核永久收据21原内容run与七文件pin仍一致；本包来源目录及保管缺口已完成有限验收，不表示所有外挂或原服内容完成。
+
+最高NEXT67具体来源入口已保存于research/recovered/STONEAGE-COOKING-EFFECT-SOURCE-HANDOFF-R1.json：两当前HTML实取/严格GB18030/原字节摘要固定，仅是SOURCE_PREFLIGHT_NOT_PACKAGE_ACCEPTANCE。下一步限三条PK分类料理和回复表同名行，核效果文字、场景限定及原料数字后缀，不自动扫全料理库；精确游戏build/作者与运行仍未知，不报R67完成。Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停，所有历史保留。本次续接说明自身CI另查。

@@ -1,0 +1,50 @@
+{
+  "schema": "stoneage.recipe_source_handoff.r1",
+  "date": "2026-10-22",
+  "task": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-67",
+  "status": "SOURCE_PREFLIGHT_NOT_PACKAGE_ACCEPTANCE",
+  "inputs": [
+    {
+      "id": "P1",
+      "url": "https://games.sina.com.cn/zhqu/sta/lldq/lldq_2.shtml",
+      "final_url": "https://games.sina.com.cn/zhqu/sta/lldq/lldq_2.shtml",
+      "status": 200,
+      "bytes": 52549,
+      "sha256": "fc211a8b14ad9f503ed725130dc43a394d91a53a2039ffe514b591718042d3bb"
+    },
+    {
+      "id": "P2",
+      "url": "https://games.sina.com.cn/zhqu/sta/lldq/lldq_4.shtml",
+      "final_url": "https://games.sina.com.cn/zhqu/sta/lldq/lldq_4.shtml",
+      "status": 200,
+      "bytes": 44295,
+      "sha256": "249c5b94acd00ed0116342b4de5f18f8a484c0e70d1a87f41050561bc07e6f98"
+    }
+  ],
+  "codec": "GB18030_STRICT",
+  "displayed_publications": [
+    "2003-04-02 15:04",
+    "2003-04-02 16:01"
+  ],
+  "author_identity": null,
+  "exact_game_build": null,
+  "historical_bytes_authenticated": false,
+  "material_leads": [
+    "SAME_NAMED_DISH_RECOVERY_WORDING_DIFF_NOT_PROVEN_RUNTIME_CONFLICT",
+    "PK_CATEGORY_HAS_EXPLICIT_OUTSIDE_COMBAT_ONLY_ROW",
+    "INGREDIENT_DIGIT_SUFFIX_NOT_YET_CLASSIFIED_AS_GRADE_OR_COUNT"
+  ],
+  "bounded_next": "Select three PK-use rows and matching recovery-table row, preserve effect/scope wording and ingredient suffixes; do not ingest the whole cooking database automatically.",
+  "not_proven": [
+    "OFFICIAL_OPERATOR_AUTHORSHIP",
+    "VERSION1_OR_VERSION20_IDENTITY",
+    "FIRST_INTRODUCTION",
+    "RECIPE_SUCCESS_RATE",
+    "DISH_OR_ITEM_IDS",
+    "SERVER_EXECUTION",
+    "INGREDIENT_QUANTITIES"
+  ],
+  "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+  "original_html_or_assets_committed": false,
+  "runtime_verified": false
+}
