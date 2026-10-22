@@ -7997,3 +7997,12 @@ research/recovered/STONEAGE-CN2003-UI-TEAM-TRADE-SOURCE-R1.json源派生Git blob
 - https://www.4gamer.net/news/history/2005.09/20050906172318detail.html ，可见2005/09/06 17:23，GaiaX发布文由4Gamer引述，TeT媒体外层另存；非直接官方原站。当前HTTP19613B/SHA256 70ac6ac9dec4895f67a5d6dc2d83be9a65377acd7698338dbf3600d93c29075b、shift_jis声明/CP932严格解码。历史同刻字节、商业build和原服部署未知。
 - 仅一新页的两阶段、NPC/村落、活动物可转交与全种类后期兑奖；金/火星期异文不改。event_020.html精确档案一次429，未取得官方页，镜像不计独立支持。
 - 规格docs/specs/STONEAGE-JP2005-TREASURE-EVENT-SOURCE-R1.md，SOURCE-R1与有限重放工具stoneage_jp2005_treasure_source.py。既有2008协力派生仅分版比较，不回取旧图、不合并实体。原HTML/图片/软件不入Git。
+
+
+## SRC-CN30-SPECIAL-PET-SKILLS-R70 — 2026-10-22
+
+- S1 https://games.sina.com.cn/zhuanqu/stoneage3/yaosu.shtml ，当前42680B/SHA256 ff4cb19d0f1346e827c70b10b4d6ff7eeb7b3ac71d11e81e6013368267350fea；3.0正文标签、首刊/作者未知，仅#3/#5。5.0导航和官方外链不构成运营作者/精确build证明。
+- S2 https://games.sina.com.cn/zhqu/sta/article/2003-05-01/3953.shtml ，当前50384B/SHA256 6d7a707425b8eaed2db49192453cca7a7d95098ea13c90bca5d9c41f169e73b1；黄建枝2003-05-01 06:52玩家征文，自述5.0起玩、转引未名杂志，非亲测3.0。
+- 两页GB18030严格解码，日期/年代/当前字节分层。14分源技能及1GP落马描述；80例子、听说队友和回合结束限制不晋升确定公式/运行。共同文字不计独立见证。原HTML/图/杂志/程序不入Git；规格STONEAGE-CN30-SPECIAL-PET-SKILLS-SOURCE-R1，有限工具stoneage_cn30_special_pet_skills.py。
+
+R70同包补S3：https://web.archive.org/web/20030324221124id_/http://games.sina.com.cn:80/zhuanqu/stoneage3/yaosu.shtml ，捕获20030324221124，实际21853B/SHA256 3a270f86e42cc6e7f68a8e2dd0c765097b442b1dd2d9c4eadeec091d3222059e。#3/#5完整可见去空白文字及本包字段与现页相等；不是另一独立来源，不证明原始服务器build或首刊。当前两HTML不冒称2003原字节，历史HTML亦不入Git。

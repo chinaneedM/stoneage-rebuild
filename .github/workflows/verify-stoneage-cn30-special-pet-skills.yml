@@ -1,0 +1,38 @@
+name: Verify source-qualified special pet skills and temporary battle states
+on:
+  push:
+    paths:
+      - 'tools/stoneage_cn30_special_pet_skills.py'
+      - 'tests/test_stoneage_cn30_special_pet_skills.py'
+      - 'research/recovered/STONEAGE-CN30-SPECIAL-PET-SKILLS-*.json'
+      - 'docs/specs/STONEAGE-CN30-SPECIAL-PET-SKILLS-SOURCE-R1.md'
+      - '.github/workflows/verify-stoneage-cn30-special-pet-skills.yml'
+  pull_request:
+    paths:
+      - 'tools/stoneage_cn30_special_pet_skills.py'
+      - 'tests/test_stoneage_cn30_special_pet_skills.py'
+      - 'research/recovered/STONEAGE-CN30-SPECIAL-PET-SKILLS-*.json'
+      - 'docs/specs/STONEAGE-CN30-SPECIAL-PET-SKILLS-SOURCE-R1.md'
+      - '.github/workflows/verify-stoneage-cn30-special-pet-skills.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  bounded-source-replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Eligibility, hearsay, state timing and provenance counterexamples
+        run: python -m unittest tests.test_stoneage_cn30_special_pet_skills -v
+      - name: Retrieve two current pages and exact 20030324 archived reference
+        run: python -m tools.stoneage_cn30_special_pet_skills --fetch --output "$RUNNER_TEMP/r70/replay.json"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cn30-special-pet-skills-derived-r70
+          path: ${{ runner.temp }}/r70/replay.json
+          if-no-files-found: error
+          retention-days: 30

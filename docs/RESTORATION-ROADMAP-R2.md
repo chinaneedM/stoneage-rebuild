@@ -1658,3 +1658,21 @@ R66已取得一篇新具名版号文献，预检见 research/recovered/STONEAGE-
 双原派生JSON和research/recovered/STONEAGE-JP2005-TREASURE-EVENT-CUSTODY-R1.json永久入Git，固定合格内容Git、19实际run、初候选10run、双job/artifact/ZIP及五永久文件原字节/Git身份。新保管门必须存在，拒绝实际文件缺失/等长篡改、错HEAD/分支、重复run/job、历史字节认证晋升和派生比较错配；本包七→八单元，相关本地回归22项成功。保管提交自身候选/main CI须另真实后验，旧七单元不倒称八。原HTML/图/程序不入Git，429不反复请求或否定历史。
 
 星期异文、种类/件数、收集物/奖品的流转范围、两个年份活动非继承关系均保留。最高NEXT70回全22域宠物/技能/骑乘或可归属原音效事件；Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停，全部历史保留。
+
+
+## 2026-10-22 R70：特殊宠技资格、捐献状态与回合落马限制
+
+启动新核main67353924c46d2fa1073a009c7f2fe05f8c47907f/treec82fbbed89a459e659552359386ef745f809ebcf，466分支/0开放PR/0运行中Actions，原HEAD main9/候选8项SUCCESS；旧queued37642417333单列。九启动完整UTF8/git show一致，CURRENT2338194B历史全文保留，5124项树未截断且无AGENTS。按NEXT70选择宠物技能/骑乘，旧R56表格不重复计新来源或擦除冲突。
+
+两新当前HTML：3.0新增要素专题S1之#3/#5、2003-05-01 06:52黄建枝征文S2的技能转引段，HTTP200/42680与50384B，SHA完整入research/recovered/STONEAGE-CN30-SPECIAL-PET-SKILLS-SOURCE-R1.json。严格GB18030无替换；S1首刊/作者未知、导航5.0不改正文3.0，S2作者从5.0开始且引未具名杂志，2006再发布/2003刊时/2026字节分开。原杂志/官方原配置未得。S1定年精确档案一次请求结果见dating_attempt，非全局缺档，不由检索点赋刊期。
+
+交付docs/specs/STONEAGE-CN30-SPECIAL-PET-SKILLS-SOURCE-R1.md：两组各七原名、T类别/机暴与非T捐献/扑满乌力资格、S1两层坐标/非族员进入与S2只内层坐标；末项背水原名差和全半角保留。捐献80仅举例，使用后等待→调回战斗→下一回合，队友目标仍听说。GP落马限制原坐骑至回合结束，不扩为永久/全部宠，次数无限不当零成本或必中。机暴驾驭含义、金乌力交易等级方向、费用/原ID/build/公式/状态enum全保留未知。相似文字不增加独立支持，也不确立抄袭谱系。原HTML/图/杂志全文/程序不入Git。
+
+六单元、21实源去摘要门改写与两script正例、本包及旧档案20项相关本地通过；独立词法另核14原标签/末项异文/两层坐标和状态时序。15研究目录=14技能文献+1骑乘文献，不是15恢复实体。候选/main真实网页重取、ZIP实下及永久保管须另后验，不预报绿。最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-71回22域另一地图/NPC/生态或同版音效事件；Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停，全部旧历史保留。
+
+
+### R70精确历史捕获补证：2003-03-24（同包出版前）
+
+上文定年查询返回HTTP200及精确可用捕获，并非空集或限流；随后真实取得 https://web.archive.org/web/20030324221124id_/http://games.sina.com.cn:80/zhuanqu/stoneage3/yaosu.shtml ，无跳转、HTTP200、21853B/SHA256 3a270f86e42cc6e7f68a8e2dd0c765097b442b1dd2d9c4eadeec091d3222059e，严格GB18030。此S3为S1的历史参考，不计第三独立规则见证；2003-03-24是捕获时刻，首刊、官方作者、商业build仍未知，当前原HTML字节不等于旧捕获。该补证取代上文“未得历史正文”的阶段性状态。
+
+S1/S3两个所选节的完整可见文本去空白后逐字相等，#3核心UTF8/摘要与#5核心UTF8/摘要固定在historical_comparison；提取的技能/资格/状态/坐标亦全等。重放新增S3实取，输入总计三个HTML；不重查Availability、不递归截图。七单元、23实源改写和三外围script正例，本包与旧档案21本地检查通过；旧六/21改写/两script的早先结果不倒改。15目录不增实体，S1技能/骑乘记录同时指S1/S3，S2仍只指具名玩家转引。原HTML/图/杂志全文不入Git。
