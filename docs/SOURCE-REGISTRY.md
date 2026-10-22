@@ -8052,3 +8052,8 @@ R75验收前措辞收紧：首候选eca552d814b87f42536175d435dfc699077b22a9的�
 
 
 R78后验保管：内容7d6cae1候选10/main11项真实通过；两端ZIP/API摘要、6934B原JSON/SHA2562d4cc54965cc7d60ec05af66461571c8463b3516a238bf1b7de6d5f05aee72e2已逐一核验并永久保留。收据STONEAGE-JP2007-EBONY-LOTTERY-CUSTODY-R1.json固定六原生Git证据pin、21run及双job/artifact/input初取历史。当前字节仍非2007原件；保管改动自身CI另验。
+
+
+## 2026-10-23 R79内容：华义2.0操作正文及名片窗口原图
+
+已知运营站基本操作https://web.archive.org/web/20011204000349id_/http://www.waei.com.cn/ZHUANQU/stoneage2/tyro/operation.asp 68863B/SHA2569be8b3ea0d48ebc17639e1114cba6606eba1a135a181ed5ad8f192392e554809，与记录点包同原件，不是新发现/独立证人；新结构化22完整章节/8目录，补早期窗口、宠物模式、家族文书权限。官网托管不升具名作者/首刊/build。实际img/4.gif转https://web.archive.org/web/20011227175240id_/http://waei.com.cn/ZHUANQU/stoneage2/tyro/img/4.gif ，155995B/e91b36552855db65420ca2c0762f7409ef797ce8d88c2d87532c6bac92322a4b、GIF/P640×480单帧完整解码目视；四可视名片条及Online/Offline/Mail/Delete不证明总容量、在线、投递或删除。正文12/4/图12/27分别归属，Eng不认证地区；原HTML/图不入Git。SOURCE、四父报告/共享解析器pin及中文规格固定于STONEAGE-CN20-OPERATION-UI-*；2003旧报告无原HTML SHA的缺口保留，不因本轮pin抬权。

@@ -1,0 +1,42 @@
+name: Verify early CN20 interaction conditions and name-card screen provenance
+on:
+  push:
+    paths:
+      - 'tools/stoneage_cn20_operation_ui_source.py'
+      - 'tools/stoneage_jp2005_treasure_source.py'
+      - 'tests/test_stoneage_cn20_operation_ui_source.py'
+      - 'research/recovered/STONEAGE-CN20-OPERATION-UI-*.json'
+      - 'research/recovered/STONEAGE-CN20-RECORDPOINT-SOURCE-R1.json'
+      - 'research/recovered/STONEAGE-CN2003-UI-TEAM-TRADE-SOURCE-R1.json'
+      - 'research/recovered/STONEAGE-JSS2001-MAIL-ITEMS-SHARED-VENUES-R1.json'
+      - 'research/recovered/STONEAGE-PREPRODUCTION-CONTENT-ARCHIVE-R1.json'
+      - '.github/workflows/verify-stoneage-cn20-operation-ui-source.yml'
+  pull_request:
+    paths:
+      - 'tools/stoneage_cn20_operation_ui_source.py'
+      - 'tests/test_stoneage_cn20_operation_ui_source.py'
+      - 'research/recovered/STONEAGE-CN20-OPERATION-UI-*.json'
+      - '.github/workflows/verify-stoneage-cn20-operation-ui-source.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  bounded-source-replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install Pillow==12.3.0
+      - name: Operator hosting, early UI conditions, family permission and static-contact counterexamples
+        run: python -m unittest tests.test_stoneage_cn20_operation_ui_source -v
+      - name: Retrieve the exact December 4 body and separate December 27 name-card GIF
+        run: python -m tools.stoneage_cn20_operation_ui_source --fetch --output "$RUNNER_TEMP/r79-content/replay.json"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cn20-operation-ui-derived-r79
+          path: ${{ runner.temp }}/r79-content/replay.json
+          if-no-files-found: error
+          retention-days: 30

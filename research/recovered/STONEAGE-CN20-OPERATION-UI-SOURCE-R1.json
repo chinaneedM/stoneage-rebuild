@@ -1,0 +1,769 @@
+{
+  "schema": "stoneage.cn20_operation_ui.source.r1",
+  "task": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-79",
+  "date": "2026-10-23",
+  "version_profile": "EARLY_LINEAGE_CN_WAEI_SITE_2_0_CAPTURE_20011204_EXACT_BUILD_UNKNOWN",
+  "baseline": {
+    "head": "63b50f86101de7c8e29c86322d5b9ccba5cc0cde",
+    "tree": "0383f022fcb1cc417a13d3ab91a977533224bd94",
+    "branches": 481,
+    "open_prs": 0,
+    "main_success": 9,
+    "candidate_success": 8,
+    "unrelated_queued_run": 37642417333
+  },
+  "source": {
+    "id": "S1",
+    "url": "https://web.archive.org/web/20011204000349id_/http://www.waei.com.cn/ZHUANQU/stoneage2/tyro/operation.asp",
+    "capture": "20011204000349",
+    "bytes": 68863,
+    "sha256": "9be8b3ea0d48ebc17639e1114cba6606eba1a135a181ed5ad8f192392e554809",
+    "http_status": 200,
+    "no_redirect": true,
+    "encoding": "GB18030_STRICT",
+    "authority": "OPERATOR_HOSTED_UNSIGNED_GUIDE_AUTHOR_UNVERIFIED",
+    "first_publication": null,
+    "new_source_url": false
+  },
+  "image": {
+    "id": "I1",
+    "url": "https://web.archive.org/web/20011227175240id_/http://waei.com.cn/ZHUANQU/stoneage2/tyro/img/4.gif",
+    "capture": "20011227175240",
+    "bytes": 155995,
+    "sha256": "e91b36552855db65420ca2c0762f7409ef797ce8d88c2d87532c6bac92322a4b",
+    "size": [
+      640,
+      480
+    ],
+    "format": "GIF",
+    "mode": "P",
+    "frames": 1,
+    "http_status": 200,
+    "initial_request": "https://web.archive.org/web/20011204000349id_/http://www.waei.com.cn/ZHUANQU/stoneage2/tyro/img/4.gif",
+    "resolved_url": "https://web.archive.org/web/20011227175240id_/http://waei.com.cn/ZHUANQU/stoneage2/tyro/img/4.gif",
+    "initial_request_same_capture_as_actual": false,
+    "initial_www_dropped_by_archive": true,
+    "thumbnail_pixels_acquired": false
+  },
+  "extraction": {
+    "pointer_and_text": {
+      "move": "LEFT_CLICK_TARGET_OR_HOLD_FOLLOW_POINTER",
+      "face": "RIGHT_CLICK_DIRECTION",
+      "first_visit_delay": "SOMETIMES_REPORTED_NOT_FIXED_DURATION",
+      "chat_recipients": "NEARBY_PLAYERS_OR_TEAM_AS_REPORTED",
+      "submit": "ENTER",
+      "chinese_input_shortcut_as_written": [
+        "Ctrl",
+        "空格"
+      ],
+      "input_line": "BOTTOM",
+      "npc": "FACE_NPC_THEN_TEXT_ENTER",
+      "sign": "FACE_SIGN_THEN_LEFT_CLICK"
+    },
+    "windows": {
+      "bar_reveal": "POINTER_AT_SCREEN_BOTTOM",
+      "labels_as_listed": [
+        "地图",
+        "状况",
+        "宠物",
+        "道具",
+        "邮件",
+        "相簿",
+        "系统"
+      ],
+      "close_controls_as_written": [
+        "关闭",
+        "回上页",
+        "Esc"
+      ],
+      "status_subsection_label": "状态视窗",
+      "status_includes_party_members_as_reported": true,
+      "map": "CURRENT_PLAYER_LOCATION",
+      "settings": [
+        "CHAT_COLOR_AND_LINE_COUNT",
+        "BGM_AND_RHYTHM_AS_WRITTEN",
+        "SFX_VOLUME_AND_STEREO_SWITCH"
+      ],
+      "actual_audio_event": null,
+      "items": "CARRIED_ITEMS_AND_EQUIPMENT_WITH_SPELL_LIST",
+      "item_sources": [
+        "GROUND_PICKUP",
+        "SHOP",
+        "BATTLE_VICTORY_AS_REPORTED_NOT_GUARANTEED"
+      ]
+    },
+    "pet_modes": {
+      "labels": [
+        "战斗",
+        "等待",
+        "休息",
+        "邮件",
+        "骑乘"
+      ],
+      "single_pet_limits_as_reported": [
+        "战斗",
+        "邮件",
+        "骑乘"
+      ],
+      "waiting": "CAN_EXCHANGE_WITH_OTHER_PETS_DURING_BATTLE",
+      "rest": "REST_DESCRIPTION_ONLY",
+      "details_controls": [
+        "状态",
+        "PET_NAME"
+      ],
+      "ride_visibility": "LEARNED_RIDING_AND_SELECTED_RIDEABLE_PET",
+      "numeric_mode_ids": null,
+      "extra_hidden_modes": null
+    },
+    "mail_album": {
+      "contacts": "EXCHANGED_CARDS",
+      "click_player_name": "RECEIVE_MAIL_AS_DESCRIBED",
+      "mail_types": [
+        "普通邮件",
+        "宠物邮件"
+      ],
+      "pet_mail": "MESSAGES_AND_ITEM_DELIVERY_DESCRIPTION",
+      "actual_delivery_or_save": null,
+      "album_scope": "PETS_OWNED_SINCE_GAME_START_CAN_BE_PHOTOGRAPHED",
+      "automatic_complete_history": null,
+      "storage_format": null
+    },
+    "top_buttons": {
+      "position": "UPPER_LEFT",
+      "source_order": [
+        "选项键",
+        "名片交换键",
+        "组队键",
+        "交易键",
+        "家族键",
+        "参战键",
+        "决斗键",
+        "动作键"
+      ],
+      "order_is_explicit_left_to_right": false,
+      "options": [
+        "组队",
+        "决斗",
+        "交换名片",
+        "聊天",
+        "交易"
+      ],
+      "team": "FORM_PARTY_ONLY",
+      "card_exchange": "EXCHANGE_USE_ONLY",
+      "trade_recipient_permission": "YES",
+      "double_ok_trade_or_leader_follow_described": false,
+      "battle_left": "SELECT_COMMAND_ACTION_OR_ACTOR",
+      "battle_right": "CANCEL_COMMAND"
+    },
+    "family": {
+      "channels": "MULTIPLE_AND_WHOLE_FAMILY",
+      "leader_functions_only_leader": true,
+      "broadcast_audience": "ALL_ONLINE_FAMILY_MEMBERS",
+      "management": [
+        "CHANGE_MEMBER_INFORMATION",
+        "CHANGE_RECRUITMENT_SETTING"
+      ],
+      "succession": "OTHER_FAMILY_MEMBER",
+      "invitation_issuers": "LEADERS_OF_FOUR_MANORS_AS_WRITTEN",
+      "invitation_access": "ROOMS_OF_ISSUING_MANOR",
+      "invitation_original_item_id": null,
+      "study_document_label": "学习同意书",
+      "study_document_alias_as_written": "骑宠同意书",
+      "study_scope": "HOLDER_MAY_LEARN_RIDING_AT_CORRESPONDING_MANOR",
+      "manor_names_ids_skill_or_pet_roster_prices": null
+    },
+    "help_duel_emotes": {
+      "help_preconditions": [
+        "HELP_MARKER",
+        "APPROACH",
+        "FACE_PLAYER",
+        "PRESS_HELP_BUTTON"
+      ],
+      "help_player_max_as_reported": 5,
+      "pets_included_in_limit": null,
+      "duel_recipient_permission": "YES",
+      "duel_exp_or_capturability": null,
+      "emote_count_as_reported": 13,
+      "emote_names_or_sprite_ids": null
+    },
+    "image_reference": {
+      "full": "img/4.gif",
+      "thumbnail": "img/4s.gif",
+      "inline_declared_size": [
+        240,
+        180
+      ]
+    },
+    "section_fingerprints": [
+      {
+        "label": "一、移动",
+        "characters": 95,
+        "sha256": "cb635be8a04f082697b6397a1eb801bc7e5b72b9f9e989b68f0356833200ef2c"
+      },
+      {
+        "label": "二、方向转移",
+        "characters": 24,
+        "sha256": "00a6c9c0ed345c10a55265bf6a1438a257c6bd4a2535b0ef6fc6cbc97a0fcf85"
+      },
+      {
+        "label": "三、对话",
+        "characters": 135,
+        "sha256": "f0fa6ef4dba39fedf07726500866809ecc2d4d8c234fb5d27d19e8b1b1875141"
+      },
+      {
+        "label": "四、看板、告示板",
+        "characters": 17,
+        "sha256": "9a12ff49acc2814f6dd70cf35cffc04430a67dda5f0ac77b8eb5081f0df14445"
+      },
+      {
+        "label": "五、道具",
+        "characters": 33,
+        "sha256": "7f9c64ec28812d8481bab554eea3ee35d911bd5114e56992fc7148fc4b9749aa"
+      },
+      {
+        "label": "六、功能视窗栏",
+        "characters": 102,
+        "sha256": "23f2ad60909c6d45c592971821ce9d843e6b6bffe1296950ead45d599a6ca68c"
+      },
+      {
+        "label": "a.系统视窗",
+        "characters": 118,
+        "sha256": "f479b06128a894d6a775105514ba306d587bb1ab45bb0b06ecb2c88f2bd35fa3"
+      },
+      {
+        "label": "b.地图视窗",
+        "characters": 11,
+        "sha256": "28263d35abd2d8173d2dc8e53c5c6cc8685212aa39b7858c5268f3bdd2a08921"
+      },
+      {
+        "label": "c.状态视窗",
+        "characters": 28,
+        "sha256": "acd412221ec47821838ad2c61917829ca36cdab06faf42b9b136d8b53ff2b345"
+      },
+      {
+        "label": "d.宠物视窗",
+        "characters": 183,
+        "sha256": "38be41d6ff1b4a9131df50b7a8f5a53a72556a79618fa11a806430a979b04d11"
+      },
+      {
+        "label": "e.道具视窗",
+        "characters": 41,
+        "sha256": "e8af7040e8f1c1b84e0b675aad29b5a988eab3c8178c7c31409a48f017402a5c"
+      },
+      {
+        "label": "f.邮件视窗",
+        "characters": 129,
+        "sha256": "1b13edc44d9759fdf61d6d26c55f14153a6e4f7f7cc257f545ee6c2b58e8abff"
+      },
+      {
+        "label": "七、相簿视窗",
+        "characters": 35,
+        "sha256": "de40573239be159627dd51529bd6eabfae352761e280bc6579304ae75374fe76"
+      },
+      {
+        "label": "八、功能按键",
+        "characters": 53,
+        "sha256": "ae7afeda29edc2cb3d2eb5a543eff146faefecf1454ca7b49b6f1668585f0fee"
+      },
+      {
+        "label": "a.选项键",
+        "characters": 23,
+        "sha256": "71632d60c3b134242d080412f29ab210a044851cec43b535bab94ac4254642a9"
+      },
+      {
+        "label": "b.名片交换键",
+        "characters": 9,
+        "sha256": "95aac4e4af478953a3c6bf6c7c080a9a7bbe395999c48437bce28ffcf6daef21"
+      },
+      {
+        "label": "c.组队键",
+        "characters": 11,
+        "sha256": "d59f29847ef359a76814e867cae5cf418d153ed805f0086fd7c7a7c5f59e23b4"
+      },
+      {
+        "label": "d.交易键",
+        "characters": 21,
+        "sha256": "4906d28927a18691fba977141b950fbba519a2036be0a956aded1d62ed78bbdc"
+      },
+      {
+        "label": "e.家族键",
+        "characters": 248,
+        "sha256": "7e498981ff4ff1d30d6a836faa074eb5005fed300a89e0d47e6ebc8f0e512769"
+      },
+      {
+        "label": "f.参战键",
+        "characters": 69,
+        "sha256": "8745c2668f0b3c5613699cd8676de35512bcd813ee3b5c504f09c53b9f7f920c"
+      },
+      {
+        "label": "g.决斗键",
+        "characters": 30,
+        "sha256": "91bc8d54310589e7319bedf6e6b5aef3bacdf53d87480b1ba48d2058dad729c1"
+      },
+      {
+        "label": "h.动作键",
+        "characters": 43,
+        "sha256": "4a5cc290076fe0971c15cd8ea1bc9757551c69fb4518566a1d7e5095e38facca"
+      }
+    ],
+    "core_fingerprint": {
+      "characters": 1650,
+      "utf8_bytes": 4786,
+      "sha256": "8bbcbf8e9867f60fc07d3eb5c4c79ce54b94e3cf552705b5f6fa49b1320f4d05"
+    },
+    "exact_client_build": null,
+    "publication_date": null,
+    "operator_authorship_verified": false,
+    "original_server_runtime_verified": false
+  },
+  "visual_observation": {
+    "id": "I1",
+    "manual_visual_review": true,
+    "kind": "STATIC_NAME_CARD_WINDOW_OVER_OUTDOOR_SCENE",
+    "readable_title": "名片",
+    "readable_controls": [
+      "Mail",
+      "Delete"
+    ],
+    "readable_fields": [
+      "LV",
+      "DP"
+    ],
+    "status_labels": [
+      "Online",
+      "Offline"
+    ],
+    "visible_rows": 4,
+    "populated_rows": 3,
+    "empty_rows": 1,
+    "visible_rows_are_total_capacity": false,
+    "original_contact_or_character_ids": null,
+    "actual_button_action_or_message_delivery_observed": false,
+    "actual_online_state_verified": false,
+    "bottom_right_label": "Eng",
+    "region_or_build_authenticated_by_label": false,
+    "native_client_resolution_proven": false,
+    "viewport_page_index_transcribed": false
+  },
+  "comparison": {
+    "same_archived_html_as_recordpoint_package": {
+      "url": "https://web.archive.org/web/20011204000349id_/http://www.waei.com.cn/ZHUANQU/stoneage2/tyro/operation.asp",
+      "bytes": 68863,
+      "sha256": "9be8b3ea0d48ebc17639e1114cba6606eba1a135a181ed5ad8f192392e554809",
+      "previous_scope": "IN_PLACE_LOGOUT_AND_TRADE_YES_ONLY",
+      "new_body_discovered": false,
+      "newly_structured_full_sections": 22
+    },
+    "later_portal": {
+      "source": {
+        "id": "S1",
+        "title": "游戏操作",
+        "url": "https://games.sina.com.cn/zhqu/sta/xsxl/yxcz.shtml",
+        "displayed_date": "2003-04-15 23:29",
+        "attribution": "新浪游戏·网友投稿",
+        "named_game": "石器时代ONLINE海贼王遗迹",
+        "guide_version_scope": "PIRATE_RUINS_NAMED_NOT_EXACT_BUILD",
+        "raw_html_sha256": null,
+        "raw_http_bytes": null,
+        "source_bytes_replayed": false
+      },
+      "added_conditions_not_backfilled": [
+        "DOUBLE_OK_TRADE",
+        "TEAM_LEADER_FOLLOW_AND_TEAM_YES",
+        "SHORTCUT_CTRL_I_VS_CTRL_L"
+      ],
+      "same_author_copying_or_same_build_proven": false,
+      "earlier_capture_is_not_proof_of_feature_first_release": true
+    },
+    "jss": {
+      "source": {
+        "actual_capture": "20010418083149",
+        "bytes": 28434,
+        "encoding": "SHIFT_JIS_STRICT",
+        "newly_discovered_source": false,
+        "newly_structured_sections": [
+          "3060",
+          "3070",
+          "7000",
+          "7010",
+          "7020",
+          "8030",
+          "8040",
+          "8110",
+          "8120"
+        ],
+        "original_url": "http://www.titan.co.jp/stoneage/manual02.html",
+        "previous_generic_fingerprint_catalog": {
+          "already_fingerprinted_selected_anchors": [
+            "3070",
+            "7010",
+            "8030"
+          ],
+          "manual02_prior_creation_contract": null,
+          "new_material_is_behavior_semantics_not_first_fingerprint": true,
+          "path": "research/recovered/JSS-LOGIN-MANUAL-CREATION-CONTRACT-R1.json"
+        },
+        "sha256": "50b9771ec501067136629c8e083a190e979e53dd9ba141903f78b76d43b602cc",
+        "strict_replay_url": "https://web.archive.org/web/20010418083149id_/http://www.titan.co.jp/stoneage/manual02.html"
+      },
+      "card_exchange_logout_no_reset_backfilled_to_cn": false,
+      "mail_battle_restrictions_or_stray_timers_backfilled_to_cn": false,
+      "same_contact_ids_or_capacity_proven": false
+    },
+    "modern_adoption_decided": false
+  },
+  "parent_pins": [
+    {
+      "path": "research/recovered/STONEAGE-CN20-RECORDPOINT-SOURCE-R1.json",
+      "bytes": 24701,
+      "sha256": "a00be58a1772c0354a69e7c5adf17bc5bff427f8e7392bbec04d73db39c1a475",
+      "git_blob": "e007d19a65e43a169dd641777bf80676e50c5bcd"
+    },
+    {
+      "path": "research/recovered/STONEAGE-CN2003-UI-TEAM-TRADE-SOURCE-R1.json",
+      "bytes": 9904,
+      "sha256": "ef9ee96f478aa9232b1cbb9fb71716ed36302f04dfa885c3cd0eaab29d4d82dd",
+      "git_blob": "1bac3104c1d6b0d96a65a8c32e901de13a5df53d"
+    },
+    {
+      "path": "research/recovered/STONEAGE-JSS2001-MAIL-ITEMS-SHARED-VENUES-R1.json",
+      "bytes": 16556,
+      "sha256": "7a586ce0f16a3922c62f711554e9c158e659d143ad158b4cbea184936ac74122",
+      "git_blob": "a7c6400aa431bb136e726fd17f1e90df282a10d0"
+    },
+    {
+      "path": "research/recovered/STONEAGE-PREPRODUCTION-CONTENT-ARCHIVE-R1.json",
+      "bytes": 24489,
+      "sha256": "e87afebc8c9590142c7cc8831b578455b3427bf7c1d10520ae02a3e8082fbddb",
+      "git_blob": "2d5b3f081d5618287f431fbded943722a820c593"
+    }
+  ],
+  "parser_pin": {
+    "path": "tools/stoneage_jp2005_treasure_source.py",
+    "bytes": 20924,
+    "sha256": "d541c0fb832447f203ad0618ea86d0ed39e0a32bdf5c26f509dde6f5ffecba40",
+    "git_blob": "350e9d3769597ea4b47959cf2dbd3edf8d97916f"
+  },
+  "catalog_records": [
+    {
+      "record_id": "CN20-R79-pointer_and_text",
+      "entity_type": "DOCUMENTARY_EARLY_UI_BEHAVIOR",
+      "collection": "tutorials",
+      "version_profile": "EARLY_LINEAGE_CN_WAEI_SITE_2_0_CAPTURE_20011204_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "OPERATOR_HOSTED_GUIDE_OR_STATIC_IMAGE_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "move": "LEFT_CLICK_TARGET_OR_HOLD_FOLLOW_POINTER",
+        "face": "RIGHT_CLICK_DIRECTION",
+        "first_visit_delay": "SOMETIMES_REPORTED_NOT_FIXED_DURATION",
+        "chat_recipients": "NEARBY_PLAYERS_OR_TEAM_AS_REPORTED",
+        "submit": "ENTER",
+        "chinese_input_shortcut_as_written": [
+          "Ctrl",
+          "空格"
+        ],
+        "input_line": "BOTTOM",
+        "npc": "FACE_NPC_THEN_TEXT_ENTER",
+        "sign": "FACE_SIGN_THEN_LEFT_CLICK"
+      }
+    },
+    {
+      "record_id": "CN20-R79-windows",
+      "entity_type": "DOCUMENTARY_EARLY_UI_BEHAVIOR",
+      "collection": "tutorials",
+      "version_profile": "EARLY_LINEAGE_CN_WAEI_SITE_2_0_CAPTURE_20011204_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "OPERATOR_HOSTED_GUIDE_OR_STATIC_IMAGE_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "bar_reveal": "POINTER_AT_SCREEN_BOTTOM",
+        "labels_as_listed": [
+          "地图",
+          "状况",
+          "宠物",
+          "道具",
+          "邮件",
+          "相簿",
+          "系统"
+        ],
+        "close_controls_as_written": [
+          "关闭",
+          "回上页",
+          "Esc"
+        ],
+        "status_subsection_label": "状态视窗",
+        "status_includes_party_members_as_reported": true,
+        "map": "CURRENT_PLAYER_LOCATION",
+        "settings": [
+          "CHAT_COLOR_AND_LINE_COUNT",
+          "BGM_AND_RHYTHM_AS_WRITTEN",
+          "SFX_VOLUME_AND_STEREO_SWITCH"
+        ],
+        "actual_audio_event": null,
+        "items": "CARRIED_ITEMS_AND_EQUIPMENT_WITH_SPELL_LIST",
+        "item_sources": [
+          "GROUND_PICKUP",
+          "SHOP",
+          "BATTLE_VICTORY_AS_REPORTED_NOT_GUARANTEED"
+        ]
+      }
+    },
+    {
+      "record_id": "CN20-R79-pet_modes",
+      "entity_type": "DOCUMENTARY_EARLY_UI_BEHAVIOR",
+      "collection": "tutorials",
+      "version_profile": "EARLY_LINEAGE_CN_WAEI_SITE_2_0_CAPTURE_20011204_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "OPERATOR_HOSTED_GUIDE_OR_STATIC_IMAGE_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "labels": [
+          "战斗",
+          "等待",
+          "休息",
+          "邮件",
+          "骑乘"
+        ],
+        "single_pet_limits_as_reported": [
+          "战斗",
+          "邮件",
+          "骑乘"
+        ],
+        "waiting": "CAN_EXCHANGE_WITH_OTHER_PETS_DURING_BATTLE",
+        "rest": "REST_DESCRIPTION_ONLY",
+        "details_controls": [
+          "状态",
+          "PET_NAME"
+        ],
+        "ride_visibility": "LEARNED_RIDING_AND_SELECTED_RIDEABLE_PET",
+        "numeric_mode_ids": null,
+        "extra_hidden_modes": null
+      }
+    },
+    {
+      "record_id": "CN20-R79-mail_album",
+      "entity_type": "DOCUMENTARY_EARLY_UI_BEHAVIOR",
+      "collection": "tutorials",
+      "version_profile": "EARLY_LINEAGE_CN_WAEI_SITE_2_0_CAPTURE_20011204_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "OPERATOR_HOSTED_GUIDE_OR_STATIC_IMAGE_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "contacts": "EXCHANGED_CARDS",
+        "click_player_name": "RECEIVE_MAIL_AS_DESCRIBED",
+        "mail_types": [
+          "普通邮件",
+          "宠物邮件"
+        ],
+        "pet_mail": "MESSAGES_AND_ITEM_DELIVERY_DESCRIPTION",
+        "actual_delivery_or_save": null,
+        "album_scope": "PETS_OWNED_SINCE_GAME_START_CAN_BE_PHOTOGRAPHED",
+        "automatic_complete_history": null,
+        "storage_format": null
+      }
+    },
+    {
+      "record_id": "CN20-R79-top_buttons",
+      "entity_type": "DOCUMENTARY_EARLY_UI_BEHAVIOR",
+      "collection": "tutorials",
+      "version_profile": "EARLY_LINEAGE_CN_WAEI_SITE_2_0_CAPTURE_20011204_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "OPERATOR_HOSTED_GUIDE_OR_STATIC_IMAGE_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "position": "UPPER_LEFT",
+        "source_order": [
+          "选项键",
+          "名片交换键",
+          "组队键",
+          "交易键",
+          "家族键",
+          "参战键",
+          "决斗键",
+          "动作键"
+        ],
+        "order_is_explicit_left_to_right": false,
+        "options": [
+          "组队",
+          "决斗",
+          "交换名片",
+          "聊天",
+          "交易"
+        ],
+        "team": "FORM_PARTY_ONLY",
+        "card_exchange": "EXCHANGE_USE_ONLY",
+        "trade_recipient_permission": "YES",
+        "double_ok_trade_or_leader_follow_described": false,
+        "battle_left": "SELECT_COMMAND_ACTION_OR_ACTOR",
+        "battle_right": "CANCEL_COMMAND"
+      }
+    },
+    {
+      "record_id": "CN20-R79-family",
+      "entity_type": "DOCUMENTARY_EARLY_UI_BEHAVIOR",
+      "collection": "tutorials",
+      "version_profile": "EARLY_LINEAGE_CN_WAEI_SITE_2_0_CAPTURE_20011204_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "OPERATOR_HOSTED_GUIDE_OR_STATIC_IMAGE_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "channels": "MULTIPLE_AND_WHOLE_FAMILY",
+        "leader_functions_only_leader": true,
+        "broadcast_audience": "ALL_ONLINE_FAMILY_MEMBERS",
+        "management": [
+          "CHANGE_MEMBER_INFORMATION",
+          "CHANGE_RECRUITMENT_SETTING"
+        ],
+        "succession": "OTHER_FAMILY_MEMBER",
+        "invitation_issuers": "LEADERS_OF_FOUR_MANORS_AS_WRITTEN",
+        "invitation_access": "ROOMS_OF_ISSUING_MANOR",
+        "invitation_original_item_id": null,
+        "study_document_label": "学习同意书",
+        "study_document_alias_as_written": "骑宠同意书",
+        "study_scope": "HOLDER_MAY_LEARN_RIDING_AT_CORRESPONDING_MANOR",
+        "manor_names_ids_skill_or_pet_roster_prices": null
+      }
+    },
+    {
+      "record_id": "CN20-R79-help_duel_emotes",
+      "entity_type": "DOCUMENTARY_EARLY_UI_BEHAVIOR",
+      "collection": "tutorials",
+      "version_profile": "EARLY_LINEAGE_CN_WAEI_SITE_2_0_CAPTURE_20011204_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "OPERATOR_HOSTED_GUIDE_OR_STATIC_IMAGE_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "help_preconditions": [
+          "HELP_MARKER",
+          "APPROACH",
+          "FACE_PLAYER",
+          "PRESS_HELP_BUTTON"
+        ],
+        "help_player_max_as_reported": 5,
+        "pets_included_in_limit": null,
+        "duel_recipient_permission": "YES",
+        "duel_exp_or_capturability": null,
+        "emote_count_as_reported": 13,
+        "emote_names_or_sprite_ids": null
+      }
+    },
+    {
+      "record_id": "CN20-R79-NAME_CARD_SCREEN",
+      "entity_type": "DOCUMENTARY_STATIC_NAME_CARD_WINDOW",
+      "collection": "screens",
+      "version_profile": "EARLY_LINEAGE_CN_WAEI_SITE_2_0_CAPTURE_20011204_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1",
+        "I1"
+      ],
+      "verification_status": "OPERATOR_HOSTED_GUIDE_OR_STATIC_IMAGE_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "image": {
+          "id": "I1",
+          "url": "https://web.archive.org/web/20011227175240id_/http://waei.com.cn/ZHUANQU/stoneage2/tyro/img/4.gif",
+          "capture": "20011227175240",
+          "bytes": 155995,
+          "sha256": "e91b36552855db65420ca2c0762f7409ef797ce8d88c2d87532c6bac92322a4b",
+          "size": [
+            640,
+            480
+          ],
+          "format": "GIF",
+          "mode": "P",
+          "frames": 1,
+          "http_status": 200,
+          "initial_request": "https://web.archive.org/web/20011204000349id_/http://www.waei.com.cn/ZHUANQU/stoneage2/tyro/img/4.gif",
+          "resolved_url": "https://web.archive.org/web/20011227175240id_/http://waei.com.cn/ZHUANQU/stoneage2/tyro/img/4.gif",
+          "initial_request_same_capture_as_actual": false,
+          "initial_www_dropped_by_archive": true,
+          "thumbnail_pixels_acquired": false
+        },
+        "observation": {
+          "id": "I1",
+          "manual_visual_review": true,
+          "kind": "STATIC_NAME_CARD_WINDOW_OVER_OUTDOOR_SCENE",
+          "readable_title": "名片",
+          "readable_controls": [
+            "Mail",
+            "Delete"
+          ],
+          "readable_fields": [
+            "LV",
+            "DP"
+          ],
+          "status_labels": [
+            "Online",
+            "Offline"
+          ],
+          "visible_rows": 4,
+          "populated_rows": 3,
+          "empty_rows": 1,
+          "visible_rows_are_total_capacity": false,
+          "original_contact_or_character_ids": null,
+          "actual_button_action_or_message_delivery_observed": false,
+          "actual_online_state_verified": false,
+          "bottom_right_label": "Eng",
+          "region_or_build_authenticated_by_label": false,
+          "native_client_resolution_proven": false,
+          "viewport_page_index_transcribed": false
+        }
+      }
+    }
+  ],
+  "negative_boundaries": {
+    "operator_authorship_verified": false,
+    "capture_date_is_publication_or_build": false,
+    "body_and_image_same_capture_or_build": false,
+    "tw10_or_jss1999_membership_verified": false,
+    "original_server_runtime_verified": false,
+    "static_online_label_is_live_connection_test": false,
+    "mail_or_delete_button_execution_verified": false,
+    "four_visible_slots_are_total_contact_capacity": false,
+    "english_label_authenticates_client_region": false,
+    "cn_body_describes_double_trade_confirmation": false,
+    "cn_body_describes_leader_follow_or_team_yes": false,
+    "cn_body_describes_jss_logout_permission_reset": false,
+    "help_limit_includes_pets": false,
+    "riding_permission_is_skill_or_pet_master": false,
+    "invitation_means_all_manors_or_production_access": false,
+    "album_is_proven_automatic_complete_history": false,
+    "pet_mail_proves_permanent_ownership_transfer": false,
+    "audio_settings_prove_specific_audio_event": false,
+    "original_html_or_assets_committed": false,
+    "stage_b_started": false
+  },
+  "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-80",
+  "stop_condition": "One previously source-pinned operation page, newly structured UI sections and one attached original name-card image; no recursive family, manor, shortcuts or local-savedata work."
+}
