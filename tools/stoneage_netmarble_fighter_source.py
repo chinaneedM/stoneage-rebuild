@@ -127,8 +127,10 @@ def verify_report(r):
  require(r['parent_pins']==[pin(p) for p in PARENTS] and r['parser_dependency_pin']==pin(PARSER),'Parent or shared parser bytes changed')
  require(r['comparison']==comparison() and r['catalog_records']==catalog(r['extraction'],r['images'],r['image_observations']),'Comparison/catalog detached')
  ex=r['extraction'];require(ex['source_layer']=='CURRENT_FIRST_PARTY_NETMARBLE_JAPANESE_MOBILE_PRODUCT_WEBSITE' and ex['logical_characters_in_selected_detail']==1 and ex['name_render_instances']==2 and ex['original_game_runtime_verified'] is False,'Source scope or duplicate presentation promoted')
+ require(ex['name']=='ウッディ' and ex['title']=='ストーンエイジ：放置冒険' and ex['language']=='ja','Selected product/fighter changed')
  require(ex['publication_date'] is None and ex['exact_client_build'] is None and len(ex['unknowns'])==9 and all(v is None for v in ex['unknowns'].values()),'Unknown dates/identity/stats promoted')
  require(ex['residence']['scope']=='NARRATIVE_RESIDENCE_NOT_SPAWN' and ex['residence']['map_id'] is None and ex['residence']['coordinates'] is None and ex['personality']['scope']=='BIOGRAPHY_NOT_COMBAT_STATS','Story became gameplay coordinates/stats')
+ require(ex['narrative_arc']['gradual_as_described'] is True and ex['narrative_arc']['experience']=='ADVENTURES','Narrative qualifier changed')
  require(ex['narrative_arc']['scope']=='NARRATIVE_CHARACTER_DEVELOPMENT_NOT_PROVEN_GAMEPLAY_PROGRESSION' and ex['narrative_arc']['level_or_quest_trigger'] is None and ex['narrative_arc']['stat_delta'] is None,'Narrative arc became gameplay trigger')
  require(r['image_observations']==[{'id':'I1','manual_visual_review':True,'kind':'STATIC_FULL_FIGURE_OFFICIAL_WEB_ILLUSTRATION',
   'observed':['BROWN_HAIR_WITH_TOP_KNOT','FUR_TRIMMED_WRAPS','BARE_FEET','LARGE_STONE_BLADE_RESTING_OVER_SHOULDER'],
@@ -169,10 +171,41 @@ def read_inputs(directory=None):
  raw=get(URL,'S1.html');ex=extract(raw);return {'S1':raw,'I1':get(ex['artwork_url'],'I1.png')}
 
 
+def verify_custody(root=None):
+ root=ROOT if root is None else Path(root)
+ receipt=json.loads((root/f'research/recovered/{STEM}-CUSTODY-R1.json').read_text())
+ require(receipt['original_game_runtime_verified'] is False and receipt['current_http_bytes_are_historical_bytes'] is False,'Custody authority promoted')
+ runs=receipt['runs'];require(len(runs)>=2 and len({r['id'] for r in runs})==len(runs) and all(r['head_sha']==receipt['content_commit'] and r['status']=='completed' and r['conclusion']=='success' for r in runs),'CI provenance incomplete/changed')
+ required={f'research/recovered/{STEM}-{part}-R1.json' for part in ('SOURCE','CI-CANDIDATE','CI-MAIN')}|set(PARENTS)|{PARSER}
+ pins=receipt['permanent_pins'];require(len(pins)==len(required) and {p['path'] for p in pins}==required,'Permanent pins missing/duplicate')
+ for p in pins:
+  require(not Path(p['path']).is_absolute() and '..' not in Path(p['path']).parts,'Invalid pin path')
+  raw=(root/p['path']).read_bytes();require(len(raw)==p['bytes'] and sha(raw)==p['sha256'] and hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest()==p['git_blob'],'Permanent bytes/Git identity changed')
+ source=json.loads((root/f'research/recovered/{STEM}-SOURCE-R1.json').read_text())
+ require(source['parent_pins']+[source['parser_dependency_pin']]==[next(p for p in pins if p['path']==path) for path in PARENTS+[PARSER]],'Parent custody detached')
+ initial=[{k:p[k] for k in ('id','url','bytes','sha256')} for p in source['source_pages']]
+ require(receipt['initial_inputs']==initial,'Initial source history lost')
+ check=receipt['source_page_recheck'];require(check['bytes']==initial[0]['bytes'] and check['sha256']==initial[0]['sha256'] and check['same_as_initial'] is True and check['ci_html_difference_location_and_cause'] is None,'Unobserved HTML difference cause invented')
+ artifacts=[];jobs=[];raws=[]
+ for role in ('candidate','main'):
+  proof=receipt['jobs_and_artifacts'][role];a=proof['artifact'];ar=a['workflow_run'];branch='main' if role=='main' else receipt['candidate_branch']
+  matching=[r for r in runs if r['id']==proof['run']]
+  require(len(matching)==1 and matching[0]['branch']==branch and ar['head_branch']==branch and ar['head_sha']==receipt['content_commit'] and ar['id']==proof['run'] and proof['job_conclusion']=='success' and proof['zip_downloaded_and_digest_verified'] is True and a['name']=='netmarble-fighter-derived-r76' and re.fullmatch(r'sha256:[0-9a-f]{64}',a['digest']),'Job/artifact/run detached')
+  artifacts.append(a['id']);jobs.append(proof['job'])
+  path=f'research/recovered/{STEM}-CI-{role.upper()}-R1.json';raw=(root/path).read_bytes();raws.append(raw);replay=json.loads(raw)
+  expected_pin=next(p for p in pins if p['path']==path);record=receipt['raw_replays'][role]
+  require(all(record[k]==expected_pin[k] for k in ('path','bytes','sha256','git_blob')) and record['inputs']==replay['inputs'],'Original replay record changed')
+  require(len(replay['inputs'])==1 and all(i['id']==sid and i['url']==URLS[sid] and isinstance(i['bytes'],int) and i['bytes']>0 and re.fullmatch('[0-9a-f]{64}',i['sha256']) for sid,i in zip(('S1',),replay['inputs'])),'Input identity changed')
+  require(record['equals_initial_inputs']==(replay['inputs']==initial),'Current-byte equality misreported')
+  require(all(replay[k]==source[k] for k in ('extraction','images','image_observations','catalog_records','comparison')) and replay['audit']=={'semantic_mutations_rejected_without_digest_or_biography_fingerprint_gate':12,'peripheral_script_positive':True,'cdn_path_not_publication_date_positive':True} and replay['original_html_or_assets_in_output'] is False and replay['original_game_runtime_verified'] is False,'Raw replay semantic/boundary mismatch')
+ require(len(set(artifacts))==len(set(jobs))==2 and receipt['candidate_main_raw_bytes_equal']==(raws[0]==raws[1]),'Candidate/main evidence substituted or equality misreported')
+ return receipt
+
+
 def main():
  p=argparse.ArgumentParser();g=p.add_mutually_exclusive_group(required=True);g.add_argument('--fetch',action='store_true');g.add_argument('--input-dir');p.add_argument('--output',required=True);a=p.parse_args()
  r=json.loads(REPORT.read_text());out=replay(read_inputs(a.input_dir),r)
- if (ROOT/f'research/recovered/{STEM}-CUSTODY-R1.json').exists():verify_custody()
+ verify_custody()
  target=Path(a.output);target.parent.mkdir(parents=True,exist_ok=True);target.write_text(json.dumps(out,ensure_ascii=False,indent=2)+'\n');print(json.dumps({'official_detail':1,'logical_character':1,'static_png':1,'semantic_mutations':12}))
 
 if __name__=='__main__':main()

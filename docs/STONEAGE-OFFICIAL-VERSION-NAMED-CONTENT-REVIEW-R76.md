@@ -9,3 +9,6 @@
 六单元、12去整页摘要及背景指纹门实源改写、两正例；相关14项本地通过，独立词法复核55字符背景/同名双标签/同detail唯一原图URL。实际候选/main CI和ZIP永久派生保管须后验，不预报成功。
 
 止于一角色一图，最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-77回另一地区PC官方NPC/任务或具名宠物生态，优先原运营站/同期一手，不连续扩本手游缩略图/商城。Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停，旧历史完整。
+
+
+内容候选10/main11项实际成功，两专用job各六单元、官网detail和原PNG实取。CI整页37247B/1496a6eea925ab6aa86ae249196d6b3e9700156e718be3ebb3c9a198fb25ab35不同于初取/一次local复取37246B/bf0c6d8ecd7a59378749b763b46baacaee634a8a5761e7549674d54511e2b87d；差异位置/原因未证，未删改inputs伪造一致。所选背景/精确图片/提取字段及边界相同。双实际ZIP逐一比API，双CI原JSON6987B/SHA256fee0f3377b8fe76e258182d2dbbd34432acf2fe9371f78f258dc8947be7f0935逐字节全等并永久入Git，但不能称同初取local；保管门前后对初取输入的local各自全等。CUSTODY固定七文件与21run/job/artifact/ZIP/raw链，强制门后七单元、相关15项本地通过，其自身候选/main CI另须实查。原PNG不变；NEXT77/Stage门禁不变。

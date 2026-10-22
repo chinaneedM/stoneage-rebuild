@@ -1845,3 +1845,16 @@ R75验收前措辞收紧：首候选eca552d814b87f42536175d435dfc699077b22a9的�
 六单元、12实源语义改写在去整页摘要/背景指纹门后均拒绝；外围script/修改CDN路径仍不认发布日期正例。合成不同村落/性格另证动态提取，目录重建后的权威/未知反例及父报告/解析器缺失/等长篡改拒绝，本包/复用模块14项本地通过。一次探索缺BeautifulSoup后改标准库，未新增依赖；候选/main实源重放/实际ZIP/永久派生保管须后验。
 
 止于官网默认一角色一图，重新打开需另一明确官方人物正文/同产品模型或实际剧情规则，初代身份仍需对应原件。最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-77回另一地区PC官方NPC/任务或具名宠物生态，优先运营站/同期一手；不连续扩本手游缩略图/商城，音效需同版真实输入。Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停，全部旧历史完整。
+
+
+### 2026-10-22 R76双端官网实取、整页差异与永久派生保管
+
+内容提交2902639e92e733f15a6169da02dfffa097de0f57/tree87b6aa2894efd9fa37f0369f89106cebd860661d，候选10/main11项实际completed/success，最新main预期SHA非强制快进。十文件/整tree与本地原生Git一致，四连续性旧文前缀完整。专用候选run39790920975/job119866404613/artifact12431123105，主线run39791101746/job119867034158/artifact12431177139，各实际六单元、第一方当前detail+原PNG实取完整解码、12去整页摘要/背景指纹门语义改写及两正例。
+
+两CI整页37247B/SHA2561496a6eea925ab6aa86ae249196d6b3e9700156e718be3ebb3c9a198fb25ab35，与初取local37246B/bf0c6d8ecd7a59378749b763b46baacaee634a8a5761e7549674d54511e2b87d不同；长度多1B不等于证明只改一个字符，未获CI原HTML的差异位置/原因。一次有界local复取仍同初取37246B，原因保留未知。所选55字符背景、名字/产品/字段、精确PNG、目视观察、目录/版本比较和反例结果均一致。保留每次原inputs，不删字段/规范化伪造全字节相等。
+
+实际下载双ZIP各2488B，SHA25682460ffe608da649f22591c4d7e6805b9829d947f828a565b50bbc3f463c6f73 / 8c6b9e24393c9d2b2c249a7e468bff434528abfdfd5f0336fb4d46f44eb61505逐一比API；唯一replay.json各6987B/SHA256fee0f3377b8fe76e258182d2dbbd34432acf2fe9371f78f258dc8947be7f0935/Git bloba154d4fe30c57bca50479a8f28ec1edf82fc5495。双CI原JSON逐字节全等，但与初取local不同；加入保管门后对初取输入的local重放仍与门前local逐字节全等。PNG始终133427B/623e33509df4f46aa7adaf8862d1d9676606579bc3b81fc4b13f66cf6ce5a62a，不把HTML差异扩大成角色或图片变化。
+
+双CI原JSON与research/recovered/STONEAGE-NETMARBLE-JA-WOODY-CUSTODY-R1.json永久入Git，固定内容Git/21真实run/双job-artifact-ZIP、原raw/input及七文件原生Git身份，含三父报告/共享解析器。强制门拒绝缺失/等长篡改、错HEAD/分支、重复run/job、遗漏初取历史、虚报CI等于local、擅定整页变化原因/历史权威升级；六→七单元，相关15项本地通过。保管提交自身候选/main CI须另真实后验，不拿旧六项绿灯冒充七项。
+
+本手游身份/叙事/静态原图不合早期PC角色；未恢复初代人名、原模型/精灵/动画、数值或可玩剧情。原HTML/PNG/程序不入Git，止于默认一角色一图。最高NEXT77回另一地区PC官方NPC/任务或具名宠物生态、优先运营站/同期一手；Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停，全部旧历史完整。

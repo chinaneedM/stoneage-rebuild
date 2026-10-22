@@ -24,7 +24,7 @@ class FighterSourceTests(unittest.TestCase):
  def test_unknowns_story_product_and_static_art_cannot_be_promoted(self):
   r=json.loads(m.REPORT.read_text());m.verify_report(r)
   changes=[lambda d:d.update(version_profile='JSS1999'),lambda d:d['negative_boundaries'].pop('personality_is_combat_stats'),
-   lambda d:d['extraction'].update(publication_date='2026-02-09'),lambda d:d['extraction'].update(exact_client_build='20260209'),
+   lambda d:d['extraction'].update(publication_date='2026-02-09'),lambda d:d['extraction'].update(name='OTHER_FIGHTER'),lambda d:d['extraction']['narrative_arc'].update(gradual_as_described=False),lambda d:d['extraction'].update(exact_client_build='20260209'),
    lambda d:d['extraction'].update(logical_characters_in_selected_detail=2),lambda d:d['extraction']['residence'].update(map_id=1000),
    lambda d:d['extraction']['residence'].update(scope='PLAYER_SPAWN'),lambda d:d['extraction']['personality'].update(scope='COMBAT_STATS'),
    lambda d:d['extraction']['narrative_arc'].update(level_or_quest_trigger=10),lambda d:d['extraction']['narrative_arc'].update(stat_delta=5),
@@ -69,5 +69,31 @@ class FighterSourceTests(unittest.TestCase):
   with self.assertRaises((ValueError,OSError)):m.inspect_image(b'<html>error</html>',r)
   changed=fixture().replace(b'class="image-main"',b'class="thumbnail"')
   with self.assertRaises(ValueError):m.parse(changed)
+
+ def test_custody_rejects_missing_changed_misattributed_or_promoted_reports(self):
+  receipt=m.verify_custody()
+  with tempfile.TemporaryDirectory() as name:
+   root=Path(name);path=root/f'research/recovered/{m.STEM}-CUSTODY-R1.json'
+   for pin in receipt['permanent_pins']:
+    p=root/pin['path'];p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes((m.ROOT/pin['path']).read_bytes())
+   path.write_text(json.dumps(receipt));m.verify_custody(root)
+   for pin in receipt['permanent_pins']:
+    p=root/pin['path'];raw=p.read_bytes();p.write_bytes(raw[:-1]+bytes([raw[-1]^1]))
+    with self.assertRaises(ValueError):m.verify_custody(root)
+    p.unlink()
+    with self.assertRaises(FileNotFoundError):m.verify_custody(root)
+    p.write_bytes(raw)
+   changes=[lambda d:d['runs'].append(d['runs'][0]),lambda d:d.update(content_commit='0'*40),
+    lambda d:d['jobs_and_artifacts']['main']['artifact']['workflow_run'].update(head_branch='OTHER'),
+    lambda d:d['jobs_and_artifacts']['main'].update(job=d['jobs_and_artifacts']['candidate']['job']),
+    lambda d:d.update(current_http_bytes_are_historical_bytes=True),
+    lambda d:d['raw_replays']['main'].update(equals_initial_inputs=True),
+    lambda d:d.update(candidate_main_raw_bytes_equal=False),lambda d:d.update(initial_inputs=[]),
+    lambda d:d['permanent_pins'].pop(),lambda d:d['source_page_recheck'].update(ci_html_difference_location_and_cause='ASSUMED_NEWLINE')]
+   for change in changes:
+    d=copy.deepcopy(receipt);change(d);path.write_text(json.dumps(d))
+    with self.assertRaises(ValueError):m.verify_custody(root)
+   path.unlink()
+   with self.assertRaises(FileNotFoundError):m.verify_custody(root)
 
 if __name__=='__main__':unittest.main()
