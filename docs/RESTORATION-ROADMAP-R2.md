@@ -1607,3 +1607,16 @@ R66已取得一篇新具名版号文献，预检见 research/recovered/STONEAGE-
 实下双ZIP各1643B，SHA256 31f254808efb16370c9dad9c96417d23e5090365c8c4a6744a54932b0a666593 / 73782e55e24be87c8a07f2ba6c2da8a0eb22ce10726367faff99807f10c92d77逐一符合API；各唯一replay.json完整9141B/SHA256 e335e8cc3eae2796dc43bc60fff7c62e05021d67ac2bbd6a00bb9547facc40e7。候选/main/local及加保管门后本地重放四份原字节全等，包含四条原文献记录与四条recipes研究目录；两HTTP摘要仍同初取。
 
 两CI派生原JSON与research/recovered/STONEAGE-COOKING-EFFECT-CUSTODY-R1.json永久入Git，固定内容Git、21真实run、双job/artifact/ZIP与七文件原字节/原生Git。保管门强制收据存在，拒绝实际文件缺失/等长篡改、重复run、错HEAD或分支，并绑定输入、语义、目录及原始来源边界；单元八→九，本包与旧档案19项本地回归通过。保管提交自身候选/main CI另须实查，旧八项不倒改。原HTML/图/程序不进Git；精确build/原ID/原料后缀与实际效果均继续未证。有限包止于两页四行，不扩全食谱。最高NEXT68回22域优先地图/NPC/任务或有同版实参的音效；Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停，全部历史完整。
+
+
+## 2026-10-22 R68：梦幻洞窟的昼夜入口、供物与重复奖励
+
+启动新核main22b987d4b25c026d6ffc7f74437c67c2fed76ed3/tree0baa3b8f5da486e795c26e8486eb3d3e204c1d42，464分支、0开放PR、0运行中Actions，原HEAD main9/候选8项SUCCESS；历史queued37642417333单列。九启动全文UTF8/git show一致，CURRENT2329498B完整历史保留，5106项树未截断且无AGENTS。按最高NEXT68从全22域选择一条具名任务，不重复计已归档成人仪式或泪之石。
+
+新取2003-05-30 13:51新浪《任务功略-梦幻洞窟》，当前HTTP200/49845B/SHA256 2044ba7f8346bba7e043a6601fd9e00fe664c527109bb41e0ddea5b8de57fec9，严格GB18030无替换。网友投稿非官方脚本；2006页首再发布与2003可见刊时、2026字节分别记录。搜索阅读器Unicode错误不等于原HTTP失败。详docs/specs/STONEAGE-CN2003-DREAM-CAVE-SOURCE-R1.md及research/recovered/STONEAGE-CN2003-DREAM-CAVE-SOURCE-R1.json。
+
+保留成人完成仅为具名奖励资格，推荐60非准入硬值；三档装备属性/精灵与第4次后随机、非成人随机分支；先见之光丢地/注销消失与可补领，不推断线或无限补领。昼夜入口明确，村名后三坐标未解，两去回路线表未标昼夜，不能依表序猜配；七怪物标签含人类，不称七物种。村民威胁视角和仙人伙伴解释、年度供物及航空传说分层，未证原服或永久世界变化。原ID/build/随机池/计数存档未知，原HTML/图/程序不入Git。
+
+本包有限解析、五单元、16真实源去摘要门改写及script正例；具体远端候选/main重取与ZIP/永久派生保管须后验，不预告成功。最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-69回22域其他地区地图生态/人物或有同版实参的音效；Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停，旧历史不改删。
+
+本地首次相关回归误写模块名导致ImportError，改用真实tests.test_stoneage_preproduction_archive后19项通过；独立词法复核初将非路线图片表计入，按含路径字段筛选后通过。解析器新增路线成对表结构时先误纳外层父表，实源拒绝后修为只取叶表，五单元与16实源反例重验通过。这些为本地修正，未伪记远端失败或来源改动。

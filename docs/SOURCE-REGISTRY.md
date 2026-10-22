@@ -7983,3 +7983,10 @@ research/recovered/STONEAGE-CN2003-UI-TEAM-TRADE-SOURCE-R1.json源派生Git blob
 ### 2026-10-22 R67两页料理资料来源
 
 两当前HTTP身份、原字节SHA、可见刊时及模块/导航注记见research/recovered/STONEAGE-COOKING-EFFECT-SOURCE-R1.json；限定规格docs/specs/STONEAGE-COOKING-EFFECT-SOURCE-R1.md。门户署名栏不认证运营商撰文，未取得同期原档；选定四行，不保存原HTML/图。双端运行与永久保管后验。
+
+
+## SRC-CN2003-DREAM-CAVE-R68 — 2026-10-22
+
+- 新浪《任务功略-梦幻洞窟》，https://games.sina.com.cn/zhqu/sta/article/2003-05-30/10033.shtml ，可见2003-05-30 13:51、网友投稿；原作者、商业build、精确地区未知。当前原HTTP49845B/SHA256 2044ba7f8346bba7e043a6601fd9e00fe664c527109bb41e0ddea5b8de57fec9；声明gb2312/严格GB18030；2006再发布注记不当最早刊时或游戏更新。
+- 仅提取一条任务的入口/老人/供物/双蛙与仙人/三档重复奖励/两对未标昼夜路线；不是官方实服见证、TW1.0规则或原始地图。图像未请求，源原HTML不入Git。
+- 规格docs/specs/STONEAGE-CN2003-DREAM-CAVE-SOURCE-R1.md，派生research/recovered/STONEAGE-CN2003-DREAM-CAVE-SOURCE-R1.json，工具tools/stoneage_dream_cave_source.py。旧成人仪式合同和19集合合同仅固定研究上下文，未据同名旧助手脚本认证源身份。

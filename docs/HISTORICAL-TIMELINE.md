@@ -4288,3 +4288,8 @@ research/recovered/STONEAGE-CN2003-UI-TEAM-TRADE-SOURCE-R1.json源派生Git blob
 ### 2026-10-22 R67分源料理文献关系
 
 新增有限料理效果与使用场景关系，见docs/specs/STONEAGE-COOKING-EFFECT-SOURCE-R1.md。网页的刊时、模块发布注记和当前取得时间不是确定产品更新时间；未认证原服配方或同build身份，不据同名差异编造补丁演化。
+
+
+### 2003-05-30页面标签／2026-10-22核验：沙姆岛梦幻洞窟
+
+**文献FACT**：新浪网友攻略给昼夜入口与成人完成后的三次具名装备、以后随机奖励，并说明非成人随机。**OPEN**：原始商业build/地区、任务与地图ID、三村坐标含义、两路线的昼夜归属、随机池与存档。开篇航空安全是传说推测；年度供物与守门者的视角转折按同文关系记录，不写成确定补丁演化。见STONEAGE-CN2003-DREAM-CAVE-SOURCE-R1。
