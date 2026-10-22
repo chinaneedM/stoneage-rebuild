@@ -265,12 +265,63 @@ def audit(raw, expected):
     return {'semantic_mutations_rejected_without_digest_gate': len(MUTATIONS), 'peripheral_script_positive': True}
 
 
+def verify_custody(root=None):
+    root = ROOT if root is None else Path(root)
+    receipt = json.loads((root / f'research/recovered/{STEM}-CUSTODY-R1.json').read_text())
+    require(receipt['original_game_runtime_verified'] is False and
+            receipt['historical_bytes_authenticated'] is False, 'Custody authority promoted')
+    runs = receipt['runs']
+    require(len(runs) >= 2 and len({r['id'] for r in runs}) == len(runs) and all(
+        r['head_sha'] == receipt['content_commit'] and r['status'] == 'completed' and
+        r['conclusion'] == 'success' for r in runs), 'CI provenance incomplete or changed')
+    pins = receipt['permanent_pins']
+    required = {f'research/recovered/{STEM}-{part}-R1.json' for part in ('SOURCE', 'CI-CANDIDATE', 'CI-MAIN')}
+    require(len({p['path'] for p in pins}) == len(pins) and required <= {p['path'] for p in pins},
+            'Permanent pins incomplete/duplicate')
+    for p in pins:
+        require(not Path(p['path']).is_absolute() and '..' not in Path(p['path']).parts, 'Invalid pin path')
+        raw = (root / p['path']).read_bytes()
+        require(len(raw) == p['bytes'] and sha(raw) == p['sha256'] and
+            hashlib.sha1(b'blob ' + str(len(raw)).encode() + b'\0' + raw).hexdigest() == p['git_blob'],
+            'Permanent bytes/Git identity changed')
+    source = json.loads((root / f'research/recovered/{STEM}-SOURCE-R1.json').read_text())
+    require({p['path'] for p in source['parent_pins']} <= {p['path'] for p in pins}, 'Parent custody missing')
+    artifacts, jobs = [], []
+    for role in ('candidate', 'main'):
+        proof = receipt['jobs_and_artifacts'][role]
+        matches = [r for r in runs if r['id'] == proof['run']]
+        artifact = proof['artifact']
+        a = artifact['workflow_run']
+        branch = 'main' if role == 'main' else receipt['candidate_branch']
+        require(len(matches) == 1 and matches[0]['branch'] == branch and a['head_branch'] == branch and
+            a['id'] == proof['run'] and a['head_sha'] == receipt['content_commit'] and
+            proof['job_conclusion'] == 'success' and proof['zip_downloaded_and_digest_verified'] is True and
+            artifact['name'] == 'jp2005-treasure-derived-r69' and re.fullmatch(r'sha256:[0-9a-f]{64}', artifact['digest']),
+            'Artifact/run/job detached from accepted content')
+        artifacts.append(artifact['id']); jobs.append(proof['job'])
+        raw = (root / f'research/recovered/{STEM}-CI-{role.upper()}-R1.json').read_bytes()
+        require(len(raw) == receipt['raw_replay_bytes'] and sha(raw) == receipt['raw_replay_sha256'] and
+            hashlib.sha1(b'blob ' + str(len(raw)).encode() + b'\0' + raw).hexdigest() == receipt['raw_replay_git_blob'],
+            'Raw CI replay changed')
+        replay = json.loads(raw)
+        inputs = [{k: p[k] for k in ('id', 'url', 'bytes', 'sha256')} for p in source['source_pages']]
+        require(replay['inputs'] == inputs and replay['extraction'] == source['extraction'] and
+            replay['catalog_records'] == source['catalog_records'] and
+            replay['cross_version_comparison'] == source['cross_version_comparison'] and
+            replay['audit'] == {'semantic_mutations_rejected_without_digest_gate': 18, 'peripheral_script_positive': True} and
+            replay['original_html_or_assets_in_output'] is False and replay['original_game_runtime_verified'] is False,
+            'Raw replay semantic/boundary mismatch')
+    require(len(set(artifacts)) == len(set(jobs)) == 2, 'Candidate and main evidence substituted')
+    return receipt
+
+
 def main():
     p = argparse.ArgumentParser()
     g = p.add_mutually_exclusive_group(required=True)
     g.add_argument('--fetch', action='store_true'); g.add_argument('--input')
     p.add_argument('--output', required=True); args = p.parse_args()
     report = json.loads(REPORT.read_text()); verify_report(report)
+    verify_custody()
     if args.fetch:
         with urllib.request.urlopen(urllib.request.Request(URL, headers={'User-Agent': 'StoneAge-research/1.0'}), timeout=45) as response:
             require(response.status == 200 and response.url == URL, 'HTTP source identity changed')

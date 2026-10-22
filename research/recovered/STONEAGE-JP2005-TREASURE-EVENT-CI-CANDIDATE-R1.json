@@ -1,0 +1,386 @@
+{
+  "schema": "stoneage.jp2005_treasure.replay.r1",
+  "inputs": [
+    {
+      "id": "S1",
+      "url": "https://www.4gamer.net/news/history/2005.09/20050906172318detail.html",
+      "bytes": 19613,
+      "sha256": "70ac6ac9dec4895f67a5d6dc2d83be9a65377acd7698338dbf3600d93c29075b"
+    }
+  ],
+  "extraction": {
+    "event_name": "トレジャーハント大作戦！",
+    "operator_as_attributed_by_media": "ガイアックス",
+    "release_scope": "PUBLISHER_RELEASE_QUOTED_IN_CONTEMPORARY_PRESS_NOT_DIRECT_SITE",
+    "phases": [
+      {
+        "phase": 1,
+        "start": {
+          "month": 9,
+          "day": 13,
+          "weekday_as_written": "火",
+          "time": "16:00",
+          "maintenance_relation": "AFTER"
+        },
+        "end": {
+          "month": 9,
+          "day": 20,
+          "weekday_as_written": "火",
+          "time": "13:00",
+          "maintenance_relation": "BEFORE"
+        },
+        "timezone": null,
+        "year_context_from_article": 2005,
+        "actual_operation_verified": false
+      },
+      {
+        "phase": 2,
+        "start": {
+          "month": 9,
+          "day": 20,
+          "weekday_as_written": "火",
+          "time": "16:00",
+          "maintenance_relation": "AFTER"
+        },
+        "end": {
+          "month": 9,
+          "day": 27,
+          "weekday_as_written": "火",
+          "time": "13:00",
+          "maintenance_relation": "BEFORE"
+        },
+        "timezone": null,
+        "year_context_from_article": 2005,
+        "actual_operation_verified": false
+      }
+    ],
+    "collectible_type_counts_by_phase": [
+      3,
+      2
+    ],
+    "total_collectible_types": 5,
+    "per_type_required_quantity": null,
+    "collectible_names": null,
+    "collectible_item_ids": null,
+    "locations": {
+      "server_scope": "ALL_SERVERS",
+      "drop_area_scope": "SOME_DUNGEONS_AND_AREAS",
+      "dungeon_names": null,
+      "npc_village_as_written": "サムギルの村",
+      "coordinates": null,
+      "map_ids": null
+    },
+    "npc": {
+      "name": "光の精霊の使徒",
+      "request_theme": "COLLECT_SCATTERED_SPIRIT_POWER_CRYSTALS",
+      "roles": [
+        "GIVE_QUEST",
+        "RECEIVE_ALL_COLLECTIBLE_TYPES_IN_PHASE_2"
+      ],
+      "npc_id": null
+    },
+    "participation": "NO_SPECIAL_CONDITION_ALL_USERS_AS_REPORTED",
+    "drop": {
+      "producer": "DINOSAURS_IN_SOME_AREAS",
+      "probability_qualifier": "LOW",
+      "probability": null,
+      "species_ids": null,
+      "requires_accepting_quest": null
+    },
+    "collection_rules": {
+      "phase_type_sets_differ": true,
+      "phase1_only_acquisition_reported": true,
+      "player_transfer_allowed": true,
+      "player_trade_suggested": true,
+      "transferable_target": "COLLECTIBLE_EVENT_ITEMS",
+      "trade_price": null,
+      "phase1_items_usable_in_phase2_exchange_as_reported": true,
+      "post_event_item_persistence": null
+    },
+    "exchange": {
+      "starts_phase": 2,
+      "requires_all_types": true,
+      "repeatable_as_reported": true,
+      "repeat_limit": null,
+      "daily_reset": null,
+      "quantity_consumed": null,
+      "reward_description": "EVENT_LIMITED_ITEM",
+      "reward_names": null,
+      "reward_ids": null,
+      "reward_probabilities": null,
+      "reward_transferability": null
+    },
+    "editorial": {
+      "author": "TeT",
+      "intro_start_weekday": "金",
+      "release_start_weekday": "火",
+      "weekday_literals_disagree": true,
+      "conflict_resolved": false,
+      "prize_details_reported_unannounced": true,
+      "official_link_as_cited": "http://stoneage.to/info/event_020.html",
+      "direct_official_page_obtained": false
+    },
+    "quest_id": null,
+    "exact_game_build": null,
+    "original_server_runtime_verified": false
+  },
+  "catalog_records": [
+    {
+      "record_id": "JP2005-GAIAX-R69-QUEST",
+      "entity_type": "documentary_event_quest",
+      "collection": "quests",
+      "version_profile": "LATER_OFFICIAL_JP_GAIAX_2005_RELEASE_QUOTED_BY_4GAMER_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1-RELEASE",
+        "S1-EDITORIAL"
+      ],
+      "verification_status": "SOURCE_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "event_name": "トレジャーハント大作戦！",
+        "operator_as_attributed_by_media": "ガイアックス",
+        "release_scope": "PUBLISHER_RELEASE_QUOTED_IN_CONTEMPORARY_PRESS_NOT_DIRECT_SITE",
+        "phases": [
+          {
+            "phase": 1,
+            "start": {
+              "month": 9,
+              "day": 13,
+              "weekday_as_written": "火",
+              "time": "16:00",
+              "maintenance_relation": "AFTER"
+            },
+            "end": {
+              "month": 9,
+              "day": 20,
+              "weekday_as_written": "火",
+              "time": "13:00",
+              "maintenance_relation": "BEFORE"
+            },
+            "timezone": null,
+            "year_context_from_article": 2005,
+            "actual_operation_verified": false
+          },
+          {
+            "phase": 2,
+            "start": {
+              "month": 9,
+              "day": 20,
+              "weekday_as_written": "火",
+              "time": "16:00",
+              "maintenance_relation": "AFTER"
+            },
+            "end": {
+              "month": 9,
+              "day": 27,
+              "weekday_as_written": "火",
+              "time": "13:00",
+              "maintenance_relation": "BEFORE"
+            },
+            "timezone": null,
+            "year_context_from_article": 2005,
+            "actual_operation_verified": false
+          }
+        ],
+        "collectible_type_counts_by_phase": [
+          3,
+          2
+        ],
+        "total_collectible_types": 5,
+        "per_type_required_quantity": null,
+        "collectible_names": null,
+        "collectible_item_ids": null,
+        "locations": {
+          "server_scope": "ALL_SERVERS",
+          "drop_area_scope": "SOME_DUNGEONS_AND_AREAS",
+          "dungeon_names": null,
+          "npc_village_as_written": "サムギルの村",
+          "coordinates": null,
+          "map_ids": null
+        },
+        "npc": {
+          "name": "光の精霊の使徒",
+          "request_theme": "COLLECT_SCATTERED_SPIRIT_POWER_CRYSTALS",
+          "roles": [
+            "GIVE_QUEST",
+            "RECEIVE_ALL_COLLECTIBLE_TYPES_IN_PHASE_2"
+          ],
+          "npc_id": null
+        },
+        "participation": "NO_SPECIAL_CONDITION_ALL_USERS_AS_REPORTED",
+        "drop": {
+          "producer": "DINOSAURS_IN_SOME_AREAS",
+          "probability_qualifier": "LOW",
+          "probability": null,
+          "species_ids": null,
+          "requires_accepting_quest": null
+        },
+        "collection_rules": {
+          "phase_type_sets_differ": true,
+          "phase1_only_acquisition_reported": true,
+          "player_transfer_allowed": true,
+          "player_trade_suggested": true,
+          "transferable_target": "COLLECTIBLE_EVENT_ITEMS",
+          "trade_price": null,
+          "phase1_items_usable_in_phase2_exchange_as_reported": true,
+          "post_event_item_persistence": null
+        },
+        "exchange": {
+          "starts_phase": 2,
+          "requires_all_types": true,
+          "repeatable_as_reported": true,
+          "repeat_limit": null,
+          "daily_reset": null,
+          "quantity_consumed": null,
+          "reward_description": "EVENT_LIMITED_ITEM",
+          "reward_names": null,
+          "reward_ids": null,
+          "reward_probabilities": null,
+          "reward_transferability": null
+        },
+        "editorial": {
+          "author": "TeT",
+          "intro_start_weekday": "金",
+          "release_start_weekday": "火",
+          "weekday_literals_disagree": true,
+          "conflict_resolved": false,
+          "prize_details_reported_unannounced": true,
+          "official_link_as_cited": "http://stoneage.to/info/event_020.html",
+          "direct_official_page_obtained": false
+        },
+        "quest_id": null,
+        "exact_game_build": null,
+        "original_server_runtime_verified": false
+      }
+    },
+    {
+      "record_id": "JP2005-GAIAX-R69-NPC",
+      "entity_type": "documentary_event_npc",
+      "collection": "npcs",
+      "version_profile": "LATER_OFFICIAL_JP_GAIAX_2005_RELEASE_QUOTED_BY_4GAMER_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1-RELEASE"
+      ],
+      "verification_status": "SOURCE_DESCRIPTION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "name": "光の精霊の使徒",
+        "request_theme": "COLLECT_SCATTERED_SPIRIT_POWER_CRYSTALS",
+        "roles": [
+          "GIVE_QUEST",
+          "RECEIVE_ALL_COLLECTIBLE_TYPES_IN_PHASE_2"
+        ],
+        "npc_id": null
+      }
+    }
+  ],
+  "cross_version_comparison": {
+    "relation": "DOCUMENTED_MECHANIC_COMPARISON_NOT_LINEAGE_OR_ENTITY_IDENTITY",
+    "jp2005": {
+      "profile": "LATER_OFFICIAL_JP_GAIAX_2005_RELEASE_QUOTED_BY_4GAMER_EXACT_BUILD_UNKNOWN",
+      "collectible_types": 5,
+      "exchange_starts_phase": 2,
+      "specified_per_type_quantities": null,
+      "repeatable_as_reported": true
+    },
+    "jp2008": {
+      "source_report": "research/recovered/STONEAGE-JP2008-COOPERATION-SOURCE-R1.json",
+      "profile": "LATER_OFFICIAL:JP_DIGIPARK_2008_COOPERATION",
+      "tree_flow": [
+        "ENEMY_DINOSAUR_DROPS_DEW",
+        "EXCHANGE_DEW_WITH_BLESSING_SPIRIT",
+        "GIVE_BLESSING_TO_TREE"
+      ],
+      "reported_delivery_thresholds": [
+        {
+          "branch": "TREE",
+          "delivery_total": 2000,
+          "delivered_item": "精霊の恵み",
+          "reward_label": "キヌイの村にセーブポイントを設置",
+          "reported_availability": "PERMANENT_FROM_2008-07-22",
+          "individual_cost": null,
+          "actual_unlock_verified": false
+        },
+        {
+          "branch": "TREE",
+          "delivery_total": 5000,
+          "delivered_item": "精霊の恵み",
+          "reward_label": "出張預かり屋NPCの設置",
+          "reported_availability": "PERMANENT_FROM_2008-07-22",
+          "individual_cost": null,
+          "actual_unlock_verified": false
+        },
+        {
+          "branch": "TREE",
+          "delivery_total": 8000,
+          "delivered_item": "精霊の恵み",
+          "reward_label": "ペット技をゲーム内で追加販売",
+          "reported_availability": "PERMANENT_FROM_2008-07-22",
+          "individual_cost": null,
+          "actual_unlock_verified": false
+        },
+        {
+          "branch": "TREE",
+          "delivery_total": 30000,
+          "delivered_item": "精霊の恵み",
+          "reward_label": "経験値獲得イベント",
+          "reported_availability": "2008-07-22_TO_2008-08-12",
+          "individual_cost": null,
+          "actual_unlock_verified": false
+        },
+        {
+          "branch": "TREE",
+          "delivery_total": 35000,
+          "delivered_item": "精霊の恵み",
+          "reward_label": "ペット再抽選NPCの設置",
+          "reported_availability": "2008-07-22_TO_2008-08-12",
+          "individual_cost": null,
+          "actual_unlock_verified": false
+        },
+        {
+          "branch": "WATER",
+          "delivery_total": 3000,
+          "delivered_item": "精霊の雫",
+          "reward_label": "アーブの水の復活",
+          "reported_availability": "2008-07-22_TO_2008-08-12",
+          "individual_cost": null,
+          "actual_unlock_verified": false
+        },
+        {
+          "branch": "SHOP",
+          "delivery_total": 3000,
+          "delivered_item": "精霊の雫",
+          "reward_label": "クルクの村のコンビニ開店",
+          "reported_availability": "PERMANENT_FROM_2008-07-22",
+          "individual_cost": null,
+          "actual_unlock_verified": false
+        },
+        {
+          "branch": "TRANSPORT",
+          "delivery_total": 10000,
+          "delivered_item": "精霊の雫",
+          "reward_label": "転送NPCの設置",
+          "reported_availability": "2008-07-22_TO_2008-08-12",
+          "individual_cost": null,
+          "actual_unlock_verified": false
+        }
+      ],
+      "counter_scope": null
+    },
+    "types_are_not_delivery_units": true,
+    "thresholds_are_not_per_player_costs": true,
+    "shared_item_or_npc_identity_established": false,
+    "historical_evolution_proven": false,
+    "modern_game_adoption_decided": false
+  },
+  "audit": {
+    "semantic_mutations_rejected_without_digest_gate": 18,
+    "peripheral_script_positive": true
+  },
+  "original_html_or_assets_in_output": false,
+  "original_game_runtime_verified": false
+}

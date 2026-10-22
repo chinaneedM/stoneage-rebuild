@@ -17100,3 +17100,14 @@ R67同包将四行按既有19集合合同导出recipes研究目录，原ID=null�
 ### R69来源层资格补正（首次候选后、主线整合前）
 
 人工复核发现任务研究目录同时含媒体给出的活动名/运营归属与刊文末段不确定性，故其source_refs必须同时指S1-RELEASE与S1-EDITORIAL，NPC条目仍只指发布文；源层正式声明父页面S1，防止子来源标签悬空。真实结构化语义未改，须对补正后的候选重新验收。规格初版“六条阈值”是文字计数错误：实际父档案与JSON均为八条（大树五、地方三），本补正取代该句，不改既有2008历史或数值。首次候选的检查不能代替补正提交的检查。
+
+
+### 2026-10-22 R69合格来源层双端重放及永久保管
+
+最终内容提交acf3fda07761778b22519d41f51fe2ee6bf28b09/tree96985348230d2934585fc4dc76195afd3e770b9c，候选8/main11项适用Actions实际completed/success；实时main预期HEAD非强制快进。初次候选a69b2eb72c11e4b34dfb712a49803ca505bc5bbf的10项成功单独保留，不代替来源层补正后的验收。四连续性文档旧行删除0，完整Git tree及blob与本地吻合；新增资格不是游戏规则变化。
+
+专用候选run39763769475/job119774054126/artifact12419063020，主线run39763847201/job119774310379/artifact12418684089，各真实七单元、当前HTML、18去摘要门语义改写/script正例。实下双ZIP3125B，SHA256 9034ddd04a91fad382a519d2e89ef0a9d365ba75a0f071e048dfb6824a89d1aa / 5b6d9b2759e54c46376517c91c136f984447d3270a74002efb2f4e74948f6830逐一匹配API；各唯一replay.json完整12816B/SHA256 c18bcce46dfaf541e80a705053164f891ea07604e83178c623cbce9d84e0be94/Git blob0474f35cb4f35d450456f878fca3a889bcb1dd4a。双CI/local及加保管门后local四份逐字节相同，输入SHA与初取同。
+
+双原派生JSON和research/recovered/STONEAGE-JP2005-TREASURE-EVENT-CUSTODY-R1.json永久入Git，固定合格内容Git、19实际run、初候选10run、双job/artifact/ZIP及五永久文件原字节/Git身份。新保管门必须存在，拒绝实际文件缺失/等长篡改、错HEAD/分支、重复run/job、历史字节认证晋升和派生比较错配；本包七→八单元，相关本地回归22项成功。保管提交自身候选/main CI须另真实后验，旧七单元不倒称八。原HTML/图/程序不入Git，429不反复请求或否定历史。
+
+星期异文、种类/件数、收集物/奖品的流转范围、两个年份活动非继承关系均保留。最高NEXT70回全22域宠物/技能/骑乘或可归属原音效事件；Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停，全部历史保留。
