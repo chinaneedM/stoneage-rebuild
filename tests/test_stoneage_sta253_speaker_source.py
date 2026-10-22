@@ -29,6 +29,41 @@ def fixture():
 
 
 class SourceTests(unittest.TestCase):
+    def test_permanent_files_and_commit_scoped_artifacts_cannot_be_substituted(self):
+        receipt = m.verify_custody()
+        with tempfile.TemporaryDirectory() as name:
+            root = Path(name)
+            receipt_path = root / f'research/recovered/{m.STEM}-CUSTODY-R1.json'
+            for pin in receipt['permanent_pins']:
+                p = root / pin['path']
+                p.parent.mkdir(parents=True, exist_ok=True)
+                p.write_bytes((m.ROOT / pin['path']).read_bytes())
+            receipt_path.write_text(json.dumps(receipt))
+            m.verify_custody(root)
+            for pin in receipt['permanent_pins']:
+                with self.subTest(path=pin['path']):
+                    p = root / pin['path']
+                    raw = p.read_bytes()
+                    p.write_bytes(raw[:-1] + bytes([raw[-1] ^ 1]))
+                    with self.assertRaises(ValueError):
+                        m.verify_custody(root)
+                    p.unlink()
+                    with self.assertRaises(FileNotFoundError):
+                        m.verify_custody(root)
+                    p.write_bytes(raw)
+            for change in [lambda d: d['runs'].append(d['runs'][0]),
+                           lambda d: d.update(content_commit='0' * 40),
+                           lambda d: d['jobs_and_artifacts']['main']['artifact']['workflow_run'].update(head_branch='other'),
+                           lambda d: d.update(historical_bytes_authenticated=True)]:
+                changed = copy.deepcopy(receipt)
+                change(changed)
+                receipt_path.write_text(json.dumps(changed))
+                with self.assertRaises(ValueError):
+                    m.verify_custody(root)
+            receipt_path.unlink()
+            with self.assertRaises(FileNotFoundError):
+                m.verify_custody(root)
+
     def test_title_cannot_assign_version_to_outer_or_quoted_speakers(self):
         result = m.derive(fixture())
         self.assertIsNone(result['speaker_sections']['outer_version'])

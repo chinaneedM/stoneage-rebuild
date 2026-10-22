@@ -1578,3 +1578,12 @@ R66已取得一篇新具名版号文献，预检见 research/recovered/STONEAGE-
 七项独立反例测试、14真实源改写去摘要门及三script正例、本包与旧档案16项本地回归通过；一次性正则/实体另核引文一致与beta限定。搜索阅读器S3打不开、畸形外壳404，与实际内层HTTPS200分别记录，不称历史不存在。候选/main当前网页重取、双ZIP下载及永久派生保管须实际后验，不提前报绿。
 
 有限止点三页/四能力域/七主张和beta观察，不扩STA助手或全构建史。最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-67回22域，优先具名物品/配方/经济或地图/NPC；Stage A7 PARTIAL+2 OPEN、Stage B/wiki GATED、R79 PAUSED_NON_BLOCKING，全部旧历史不改删。
+
+
+### 2026-10-22 R66双端实源重放验收及永久派生保管
+
+内容提交5a9679dc853c122cd47f83d09615351031e3f9f3/treea4b0e0f4efc98d2fde907cca814e5fd57f329553，候选10/main11项适用Actions全部completed/success，实时main预期SHA保护非强制快进。十文件/整tree与本地一致，四历史文件仅追加，无旧行删除。专用候选run39726627024/job119651903336/artifact12403044614，主线run39726677904/job119652064762/artifact12403541734，均实际七单元、三当前HTTP、14去摘要门反例及三外围script正例，不是工具或原游戏执行。
+
+实际双ZIP各1812B，SHA256 77e921ebf5d8da110ce5b47e9a626dcbcfb33430af2981b211fb6c148edd75b3 / 1c570c5b69d6ecee89812c20812453d71b545c01886db3d659adb6e9f7efd289分别匹配API；唯一replay.json完整4226B/SHA256 52c021152e77da75c752c5a3d7be8127cea4a2298aaf57be3fdb0ad5be4676bd，候选/main/local以及加保管门后本地重放逐字节相等，三输入大小/摘要同初取。完整两CI派生原JSON与research/recovered/STONEAGE-STA253-SPEAKER-CUSTODY-R1.json永久入Git，固定内容Git、21项实际run、双job/artifact/ZIP及七个永久文件原生Git身份。
+
+新增强制保管门：收据/原派生实际缺失及等长篡改、重复run、错HEAD/分支拒绝；单元七→八，与旧档案17项本地回归通过。保管提交自身候选/main CI另行实查，不把旧七项称八项。原网页全文/HTML/图/工具不进Git；附录再引不增独立支持，beta表现与全部2.53同构建/稳定性未知等限制原样保留。最高NEXT67轮换22域的具名物品/配方/经济或地图/NPC，不继续扩STA内部helper；Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停，全部历史前缀完整。

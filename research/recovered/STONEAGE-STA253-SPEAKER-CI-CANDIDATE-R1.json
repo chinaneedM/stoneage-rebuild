@@ -1,0 +1,133 @@
+{
+  "schema": "stoneage.sta253_speaker.replay.r1",
+  "inputs": [
+    {
+      "id": "S1",
+      "url": "https://news.17173.com/z/stoneage/content/2002-3-27/n352_268196.html?_platform=PC",
+      "bytes": 45844,
+      "sha256": "de559d52986b8403c96b4657d6744af8f3f164b4611fddab661090532297fb4e"
+    },
+    {
+      "id": "S2",
+      "url": "https://news.17173.com/z/stoneage/content/2002-3-21/n936_852654.html?_platform=PC",
+      "bytes": 39501,
+      "sha256": "365381a0f47733bff36d6ef03307482c38911529d6cd8c0e196f984d6b701bf8"
+    },
+    {
+      "id": "S3",
+      "url": "https://news.17173.com/z/stoneage/content/2002-3-21/n372_288246.html",
+      "bytes": 37105,
+      "sha256": "647c434046a8f31bd79ee5fa4f78cff5b9b64064254d44d7716dd2c8cd4d329a"
+    }
+  ],
+  "extraction": {
+    "schema": "stoneage.sta253_speaker.extraction.r1",
+    "speaker_sections": {
+      "outer_version": null,
+      "appendix_version_context": "Sta2.53",
+      "quote_versions": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "beta_labels_as_written": [
+        "STA2.53bate7",
+        "beta7"
+      ]
+    },
+    "quote_crosscheck": {
+      "exact_normalized_matches": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "sha256": [
+        "0c7875051fdc1273c3b2bd9ba0c8e92723e6e5739ee0d60e8c221031f7ea6c49",
+        "1ca6340067c80db198ee38cde59b81b9631a0a12339cf3031694980fc8535a6d",
+        "b1d1facaf86c8f10786b35d7d204e36502f82806ea1a7fe6b0102ae64e7c542b",
+        "2fb7b164ff620b9efa933b9fed4e04e4babb21fa07eec2d1188c468ee175853e"
+      ],
+      "independent_sources_created_by_requoting": 0
+    },
+    "claims": [
+      {
+        "feature": "OPPONENT_DETAIL",
+        "speaker": "ZHY",
+        "tool_version": null,
+        "status": "REPORTED_ABSENT"
+      },
+      {
+        "feature": "OPPONENT_DETAIL",
+        "speaker": "暗夜之狼",
+        "tool_version": "2.53",
+        "status": "REPORTED_PRESENT"
+      },
+      {
+        "feature": "FAST_BATTLE",
+        "speaker": "ZHY",
+        "tool_version": null,
+        "status": "PRESENT_SPEED_DISPUTED"
+      },
+      {
+        "feature": "FAST_BATTLE",
+        "speaker": "暗夜之狼",
+        "tool_version": "2.53",
+        "status": "PRESENT_SPEED_DISPUTED"
+      },
+      {
+        "feature": "AUTO_COOKING",
+        "speaker": "ZHY",
+        "tool_version": null,
+        "status": "BOTH_FAMILIES_REPORTED_PRESENT"
+      },
+      {
+        "feature": "EDITABLE_COOKING_SCRIPT",
+        "speaker": "暗夜之狼",
+        "tool_version": "2.53",
+        "status": "REPORTED_PRESENT"
+      },
+      {
+        "feature": "STATIONARY_ENCOUNTER",
+        "speaker": "暗夜之狼",
+        "tool_version": "2.53",
+        "status": "REPORTED_PRESENT"
+      }
+    ],
+    "beta_observations": {
+      "speaker": "加林多斯",
+      "environment_as_written": "WIN2000",
+      "setting_as_written": "100",
+      "setting_unit": null,
+      "post_enemy_death_wait_reported": true,
+      "message_switch_slowness_or_exit_reported": true,
+      "cause_identified": false,
+      "cooking_tested": false,
+      "trial_duration_independently_verified": false,
+      "same_binary_as_unqualified_253_proven": false
+    },
+    "section_digests": {
+      "outer": "eb2094d1fcbe51c3c9a7475e11ff05186dcdd8b37fb97e3f4dd4da8e3a28f969",
+      "appendix_intro": "ac9658386b2b5bac76b5d424ad1d91d63ab11684279450ce198ad16949cdab3b",
+      "replies": [
+        "bcda18ac103ec06b2f1e6fff98b209e79bbca8d9114f584bf0eea86d9b244e0f",
+        "ad0d725971fe7665ab297d94be0c6fe055f75640cc58258a70bf0163aec5a7f1",
+        "d69436f174e472aa14847d5151e02e1e57ad72b2c8e1b3ec804f72ae13c18080",
+        "bd205ffa0cdfe722bff94f031c46ef4b591b09c17f2df8492bf4ffedd71cc64f"
+      ],
+      "beta": "f70fa87a0d25c619094c57ed8667be45b84326793cae81c0e912bed6bd45fe04"
+    },
+    "historical_bytes_authenticated": false,
+    "software_executed": false,
+    "performance_benchmark_verified": false,
+    "conflict_resolved": false
+  },
+  "audit": {
+    "real_source_mutations_rejected_without_digest_gate": 14,
+    "three_peripheral_script_positives": true,
+    "original_game_runtime_verified": false
+  },
+  "original_html_or_assets_in_output": false,
+  "original_game_runtime_verified": false
+}

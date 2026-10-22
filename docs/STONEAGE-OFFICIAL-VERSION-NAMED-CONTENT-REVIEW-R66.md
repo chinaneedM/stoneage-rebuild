@@ -7,3 +7,6 @@
 止于三HTML、四类能力、七条分发言主张及beta观察；冲突和未知版本保留，不运行工具或开发内挂。正文再引不增加独立证据，网页日期不当软件发布时间。source JSON和实跑工件须分别保管；候选/main验收与永久收据需实查后追加。
 
 下一R67轮换全22域，优先具名物品／配方／经济或地图／NPC。Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停；没有全工程完成比例或“全部外挂已恢复”结论。
+
+
+永久派生保管见research/recovered/STONEAGE-STA253-SPEAKER-CUSTODY-R1.json。内容候选10/main11项Actions实际成功；双ZIP完整核对及八项保管门的真实验收以CURRENT末条为准，原七项历史不倒改。下一R67。
