@@ -8067,3 +8067,14 @@ R79内容双端后验：416cbe29候选10/main11项真实通过；双ZIP/API摘�
 S1 https://www.4gamer.net/news/history/2005.09/20050921202336detail.html ，可见2005/09/21 20:23，aueki署名，ガイアックス安排的同期记者报道，非明示厂商原文转载或官网直取。HTTP200无跳转/CP932严格19261B/fa5f6876b8385ee7851eeafcb57cfbfb065abafb0b2879993208d6f183f1407f；正文无官网详情外链，不能用别的宝藏活动event_020.html替代。五标题/一非空本文核心796字符2228UTF8B/f6b6ff962f7af8ae5ec4a0a173f17abd822c04d40b8dbe3bc4c2b8bb6ec13f64，独立可见文本核对。当前字节不认证2005原件。
 
 I1正文实际 https://www.4gamer.net/news/image/2005.09/20050921202336_0.jpg ，HTTP200无跳转28727B/9b801c91204166fdfea81ca20f38ab049137c144a9c8edf1d85d7d6bd2f14cab，JPEG/RGB232×310单帧完整解码/目视，仅料理主题人物插画，无具名身份/客户端界面/原SPR。资料限日本PC2005秋安排；不补原菜谱ID/角色控制/宠物成长/奖品公式或真实部署。三父报告/共享解析器pin见STONEAGE-JP2005-AUTUMN-COOKING-SOURCE-R1.json，11研究目录记录均七必填，原HTML/JPEG不入Git/无生产授权。27语义改写和2隐藏正文外反例；原CI报告保管须实际验收。
+
+
+### R80双端独立取源与永久派生保管（2026-10-23）
+
+内容1661fbf97dc3daee68db7cf888dbd0cd1316971e/tree0a23592f4fe6bf87acf715a81fb505155e7854ca，候选10/main11实际completed/success。九文件原生Git blob/整tree一致，四连续性文档原全文前缀保留；主线新读HEAD后expected_sha非强制快进。专用候选run39872608102/job120150412494/artifact12465759972，主线run39872716074/job120150771890/artifact12465814773，日志实际各7单元、一同期正文一JPEG取源/完整解码、27去全部指纹门改写及隐藏/正文外2反例通过。
+
+两下载ZIP各4152B，SHA25653d34d07464b432f855e4ddc825a60055e605c212bc4e8baba24677a0e593b14 / f05269a5ce19739ec5386bf2eea54f93d19a5dff99f6d96fbed38badcaf50648分别符合API；唯一replay.json两份均17829B/SHA256a892610a1740692743adb95090e007daa9fc376880b5237c8b790e925cd42d82。候选/main/local/保管门后local四份逐字节相等，两HTTP输入摘要也均同初取。双CI原JSON和STONEAGE-JP2005-AUTUMN-COOKING-CUSTODY-R1.json永久入Git，原文/插画仅临时验证不入Git。
+
+七pin固定SOURCE、三父报告、复用解析器和两原CI JSON的原字节/Git身份；收据永久记录21真实run和双job/artifact/ZIP/raw/input初取历史。CLI强制验保管，除缺失/同长篡改、错内容HEAD/tree/分支/原输入相等性和运行权威，还固定整21项实际run清单摘要及准确run/job/artifact ID，拒绝仅用另一成功门替代。本包7→8单元、相关28项本地通过；保管门后输出逐字节不变，七单元内容CI历史不改称八单元。保管提交自身候选/main另实际后验。
+
+本次是同期报道的可审计内容规格，不提升为直取运营公告或已发生发奖。料理挑战/官网竞赛、两村食材范围、指定服课程、配图无身份边界保持；菜谱数量/原ID/数值/实例唯一性/公式/持久化仍OPEN。下一最高NEXT81为另一地区早期地图/NPC/世界任务或具名宠物生态原件；Stage A7 PARTIAL+2 OPEN，B/wiki GATED，savedata R79 PAUSED_NON_BLOCKING，旧历史不删。

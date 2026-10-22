@@ -1,0 +1,529 @@
+{
+  "schema": "stoneage.jp2005_autumn_cooking.replay.r1",
+  "inputs": [
+    {
+      "id": "S1",
+      "url": "https://www.4gamer.net/news/history/2005.09/20050921202336detail.html",
+      "bytes": 19261,
+      "sha256": "fa5f6876b8385ee7851eeafcb57cfbfb065abafb0b2879993208d6f183f1407f"
+    },
+    {
+      "id": "I1",
+      "url": "https://www.4gamer.net/news/image/2005.09/20050921202336_0.jpg",
+      "bytes": 28727,
+      "sha256": "9b801c91204166fdfea81ca20f38ab049137c144a9c8edf1d85d7d6bd2f14cab"
+    }
+  ],
+  "extraction": {
+    "year_context": 2005,
+    "year_repeated_in_each_window": false,
+    "timezone": null,
+    "actual_execution_verified": false,
+    "challenge": {
+      "name": "グルメマスターに挑戦！",
+      "window_month_day": [
+        "10-04",
+        "10-11"
+      ],
+      "exact_hours": null,
+      "start": "ALL_SERVERS_CHATROOM",
+      "role": "グルメマスター",
+      "role_controller_npc_or_gm": null,
+      "condition": "COMPLETE_ALL_DISHES_SPECIFIED_BY_GOURMET_MASTER",
+      "reward": "石器時代フルコース",
+      "recipes_quantities_turnin_consumption_repeatability": null,
+      "reward_effect": null
+    },
+    "sale": {
+      "name": "食材半額セール",
+      "window_month_day": [
+        "10-04",
+        "10-11"
+      ],
+      "servers": "ALL",
+      "villages_as_written": [
+        "ジャジャ村",
+        "マリナスの漁村"
+      ],
+      "shops": "CONVENIENCE_STORES_OF_THESE_TWO_VILLAGES",
+      "goods": "ALL_FOOD_INGREDIENTS_SOLD_THERE",
+      "price_fraction_as_reported": [
+        1,
+        2
+      ],
+      "base_prices_currency_rounding_inventory_transactions": null
+    },
+    "lessons": {
+      "name": "GMのお料理教室",
+      "date_month_day": "10-08",
+      "sessions": [
+        {
+          "part": "昼の部",
+          "hours": [
+            "14:00",
+            "14:30"
+          ],
+          "server": "火星サーバー",
+          "place": "ジャジャ村のコンビニ"
+        },
+        {
+          "part": "夜の部",
+          "hours": [
+            "20:00",
+            "20:30"
+          ],
+          "server": "水星サーバー",
+          "place": "マリナス漁村のコンビニ"
+        }
+      ],
+      "actor": "GM",
+      "purpose": "LECTURE_ON_AUTUMN_COOKING_RECIPES",
+      "actual_recipes_and_gm_names": null
+    },
+    "contest": {
+      "name": "ストーンエイジ川柳コンテスト ～秋～",
+      "window_month_day": [
+        "10-04",
+        "10-18"
+      ],
+      "venue": "OFFICIAL_WEBSITE",
+      "theme": "AUTUMN_STONEAGE_SENRYU",
+      "haiku_question": "EDITORIAL_ASIDE_NOT_OFFICIAL_RECLASSIFICATION",
+      "best_prize": {
+        "name": "ガーヴィ",
+        "kind_as_reported": "ペット恐竜",
+        "claim_as_written": "世界に1匹のレアペット",
+        "verified_world_instance_count": null,
+        "stats_growth_skills_habitat_native_id": null
+      },
+      "honorable_mentions": [
+        {
+          "name": "すらすらペン",
+          "effect": "NAME_ONES_OWN_SYNTHESIZED_EQUIPMENT",
+          "uses_consumption": null
+        },
+        {
+          "name": "秋の満腹セット",
+          "effect": "GREATLY_BOOST_CAPTURE_RATE_AS_REPORTED",
+          "formula_duration_guarantee": null
+        }
+      ],
+      "winner_count_each_winner_gets_both_and_actual_award": null
+    },
+    "halloween": {
+      "name": "ハロウィンイベント（仮称）",
+      "provisional_title": true,
+      "date_month_day": "10-29",
+      "hours": [
+        "21:00",
+        "22:00"
+      ],
+      "servers": "ALL",
+      "places": "VARIOUS_UNSPECIFIED",
+      "actor": "GM",
+      "distribution": "TRANSFORMATION_ITEMS_CANDY_AND_OTHER_ITEMS_AS_REPORTED",
+      "item_names_forms_duration_spawn_algorithm_and_drop_rules": null
+    },
+    "original_event_npc_item_pet_recipe_ids": null,
+    "exact_client_build": null,
+    "section_fingerprints": [
+      {
+        "label": "ストーンエイジ秋の祭典その1「グルメマスターに挑戦！」",
+        "characters": 114,
+        "sha256": "14d3d08d92810743cabbb28e72dad5e76a1de216037f413d530dea493ec7f8c1"
+      },
+      {
+        "label": "ストーンエイジ秋の祭典その2「食材半額セール」",
+        "characters": 86,
+        "sha256": "c80b611a28a6f02dfb49acf7e98062c3c74343a8f805a845ed3420fc9bce7994"
+      },
+      {
+        "label": "GMのお料理教室",
+        "characters": 106,
+        "sha256": "3fd3c4bc8802a1b15dc14cf4c09833564262ae5e0186a2ad624fa9b22f6433b5"
+      },
+      {
+        "label": "ストーンエイジ川柳コンテスト ～秋～",
+        "characters": 172,
+        "sha256": "1389ba71eee84be879ccad96461b569d46a8049f8862a39e6e93b485e300153a"
+      },
+      {
+        "label": "ハロウィンイベント（仮称）",
+        "characters": 148,
+        "sha256": "a94a9ebdcfc931904f213f41444061033d5013eca4edacb577cb3538dbd625eb"
+      }
+    ],
+    "core_fingerprint": {
+      "characters": 796,
+      "utf8_bytes": 2228,
+      "sha256": "f6b6ff962f7af8ae5ec4a0a173f17abd822c04d40b8dbe3bc4c2b8bb6ec13f64"
+    }
+  },
+  "image": {
+    "id": "I1",
+    "url": "https://www.4gamer.net/news/image/2005.09/20050921202336_0.jpg",
+    "http_status": 200,
+    "no_redirect": true,
+    "bytes": 28727,
+    "sha256": "9b801c91204166fdfea81ca20f38ab049137c144a9c8edf1d85d7d6bd2f14cab",
+    "size": [
+      232,
+      310
+    ],
+    "format": "JPEG",
+    "mode": "RGB",
+    "frames": 1
+  },
+  "visual_observation": {
+    "manual_visual_review": true,
+    "kind": "COOKING_THEME_CHARACTER_ILLUSTRATION",
+    "visible": [
+      "SPIKY_HAIRED_CHARACTER",
+      "STEAMING_CAULDRON_OVER_FIRE_AND_STONES",
+      "STIRRING_UTENSIL"
+    ],
+    "identified_as_gavi_or_gourmet_master": false,
+    "game_screenshot": false,
+    "recipe_ui_or_reward_delivery": false,
+    "original_sprite_model_animation": false,
+    "species_npc_or_character_id": null,
+    "native_client_resolution_proven": false
+  },
+  "comparison": {
+    "cn20_crafting": {
+      "parent_schema": "stoneage.cn20_pet_crafting.source.r1",
+      "source_region": "EARLY_CN_OPERATOR_HOSTED_GUIDE",
+      "shared_native_village_recipe_or_item_ids_verified": false,
+      "cn_skill_price_is_jp_sale_price": false,
+      "cn_partial_categories_complete_jp_recipes": false,
+      "cn_recipe_gaps_remain_open": true
+    },
+    "jp_treasure": {
+      "parent_schema": "stoneage.jp2005_treasure.source.r1",
+      "separate_event": "トレジャーハント大作戦！",
+      "crystal_collection_and_light_spirit_actor_backfilled": false,
+      "trade_or_repeat_rules_backfilled": false,
+      "old_official_detail_availability_is_current_event_page": false
+    },
+    "modern_adoption_decided": false,
+    "free_to_play_footer_backfilled_to_september_2005": false
+  },
+  "catalog_records": [
+    {
+      "record_id": "JP2005-R80-challenge",
+      "entity_type": "DOCUMENTARY_NAMED_COOKING_CHALLENGE",
+      "collection": "quests",
+      "version_profile": "JP_PC_2005_GAIAX_AUTUMN_SCHEDULE_REPORTED_20050921_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "JOURNALISTIC_SCHEDULE_OR_ILLUSTRATION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "name": "グルメマスターに挑戦！",
+        "window_month_day": [
+          "10-04",
+          "10-11"
+        ],
+        "exact_hours": null,
+        "start": "ALL_SERVERS_CHATROOM",
+        "role": "グルメマスター",
+        "role_controller_npc_or_gm": null,
+        "condition": "COMPLETE_ALL_DISHES_SPECIFIED_BY_GOURMET_MASTER",
+        "reward": "石器時代フルコース",
+        "recipes_quantities_turnin_consumption_repeatability": null,
+        "reward_effect": null
+      }
+    },
+    {
+      "record_id": "JP2005-R80-gourmet-role",
+      "entity_type": "DOCUMENTARY_EVENT_ROLE_NPC_STATUS_UNVERIFIED",
+      "collection": "npcs",
+      "version_profile": "JP_PC_2005_GAIAX_AUTUMN_SCHEDULE_REPORTED_20050921_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "JOURNALISTIC_SCHEDULE_OR_ILLUSTRATION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "name": "グルメマスター",
+        "place": "CHATROOM",
+        "npc_or_gm_controller": null,
+        "original_id": null
+      }
+    },
+    {
+      "record_id": "JP2005-R80-full-course",
+      "entity_type": "DOCUMENTARY_CHALLENGE_REWARD",
+      "collection": "items",
+      "version_profile": "JP_PC_2005_GAIAX_AUTUMN_SCHEDULE_REPORTED_20050921_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "JOURNALISTIC_SCHEDULE_OR_ILLUSTRATION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "name": "石器時代フルコース",
+        "condition": "COMPLETE_ALL_DISHES_SPECIFIED_BY_GOURMET_MASTER",
+        "effect": null
+      }
+    },
+    {
+      "record_id": "JP2005-R80-sale",
+      "entity_type": "DOCUMENTARY_TIMED_SHOP_INGREDIENT_SALE",
+      "collection": "tutorials",
+      "version_profile": "JP_PC_2005_GAIAX_AUTUMN_SCHEDULE_REPORTED_20050921_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "JOURNALISTIC_SCHEDULE_OR_ILLUSTRATION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "name": "食材半額セール",
+        "window_month_day": [
+          "10-04",
+          "10-11"
+        ],
+        "servers": "ALL",
+        "villages_as_written": [
+          "ジャジャ村",
+          "マリナスの漁村"
+        ],
+        "shops": "CONVENIENCE_STORES_OF_THESE_TWO_VILLAGES",
+        "goods": "ALL_FOOD_INGREDIENTS_SOLD_THERE",
+        "price_fraction_as_reported": [
+          1,
+          2
+        ],
+        "base_prices_currency_rounding_inventory_transactions": null
+      }
+    },
+    {
+      "record_id": "JP2005-R80-lessons",
+      "entity_type": "DOCUMENTARY_GM_LESSON_SCHEDULE",
+      "collection": "tutorials",
+      "version_profile": "JP_PC_2005_GAIAX_AUTUMN_SCHEDULE_REPORTED_20050921_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "JOURNALISTIC_SCHEDULE_OR_ILLUSTRATION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "name": "GMのお料理教室",
+        "date_month_day": "10-08",
+        "sessions": [
+          {
+            "part": "昼の部",
+            "hours": [
+              "14:00",
+              "14:30"
+            ],
+            "server": "火星サーバー",
+            "place": "ジャジャ村のコンビニ"
+          },
+          {
+            "part": "夜の部",
+            "hours": [
+              "20:00",
+              "20:30"
+            ],
+            "server": "水星サーバー",
+            "place": "マリナス漁村のコンビニ"
+          }
+        ],
+        "actor": "GM",
+        "purpose": "LECTURE_ON_AUTUMN_COOKING_RECIPES",
+        "actual_recipes_and_gm_names": null
+      }
+    },
+    {
+      "record_id": "JP2005-R80-contest",
+      "entity_type": "DOCUMENTARY_WEBSITE_CONTEST",
+      "collection": "tutorials",
+      "version_profile": "JP_PC_2005_GAIAX_AUTUMN_SCHEDULE_REPORTED_20050921_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "JOURNALISTIC_SCHEDULE_OR_ILLUSTRATION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "name": "ストーンエイジ川柳コンテスト ～秋～",
+        "window_month_day": [
+          "10-04",
+          "10-18"
+        ],
+        "venue": "OFFICIAL_WEBSITE",
+        "theme": "AUTUMN_STONEAGE_SENRYU",
+        "haiku_question": "EDITORIAL_ASIDE_NOT_OFFICIAL_RECLASSIFICATION",
+        "best_prize": {
+          "name": "ガーヴィ",
+          "kind_as_reported": "ペット恐竜",
+          "claim_as_written": "世界に1匹のレアペット",
+          "verified_world_instance_count": null,
+          "stats_growth_skills_habitat_native_id": null
+        },
+        "honorable_mentions": [
+          {
+            "name": "すらすらペン",
+            "effect": "NAME_ONES_OWN_SYNTHESIZED_EQUIPMENT",
+            "uses_consumption": null
+          },
+          {
+            "name": "秋の満腹セット",
+            "effect": "GREATLY_BOOST_CAPTURE_RATE_AS_REPORTED",
+            "formula_duration_guarantee": null
+          }
+        ],
+        "winner_count_each_winner_gets_both_and_actual_award": null
+      }
+    },
+    {
+      "record_id": "JP2005-R80-gavi",
+      "entity_type": "DOCUMENTARY_CONTEST_PET_PRIZE_NOT_SPECIES_MASTER",
+      "collection": "pets",
+      "version_profile": "JP_PC_2005_GAIAX_AUTUMN_SCHEDULE_REPORTED_20050921_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "JOURNALISTIC_SCHEDULE_OR_ILLUSTRATION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "name": "ガーヴィ",
+        "kind_as_reported": "ペット恐竜",
+        "claim_as_written": "世界に1匹のレアペット",
+        "verified_world_instance_count": null,
+        "stats_growth_skills_habitat_native_id": null
+      }
+    },
+    {
+      "record_id": "JP2005-R80-pen",
+      "entity_type": "DOCUMENTARY_CONTEST_EQUIPMENT_NAMING_PRIZE",
+      "collection": "items",
+      "version_profile": "JP_PC_2005_GAIAX_AUTUMN_SCHEDULE_REPORTED_20050921_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "JOURNALISTIC_SCHEDULE_OR_ILLUSTRATION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "name": "すらすらペン",
+        "effect": "NAME_ONES_OWN_SYNTHESIZED_EQUIPMENT",
+        "uses_consumption": null
+      }
+    },
+    {
+      "record_id": "JP2005-R80-meal",
+      "entity_type": "DOCUMENTARY_CONTEST_CAPTURE_MEAL_PRIZE",
+      "collection": "items",
+      "version_profile": "JP_PC_2005_GAIAX_AUTUMN_SCHEDULE_REPORTED_20050921_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "JOURNALISTIC_SCHEDULE_OR_ILLUSTRATION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "name": "秋の満腹セット",
+        "effect": "GREATLY_BOOST_CAPTURE_RATE_AS_REPORTED",
+        "formula_duration_guarantee": null
+      }
+    },
+    {
+      "record_id": "JP2005-R80-halloween",
+      "entity_type": "DOCUMENTARY_PROVISIONAL_TRANSFORMATION_EVENT",
+      "collection": "tutorials",
+      "version_profile": "JP_PC_2005_GAIAX_AUTUMN_SCHEDULE_REPORTED_20050921_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "JOURNALISTIC_SCHEDULE_OR_ILLUSTRATION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "name": "ハロウィンイベント（仮称）",
+        "provisional_title": true,
+        "date_month_day": "10-29",
+        "hours": [
+          "21:00",
+          "22:00"
+        ],
+        "servers": "ALL",
+        "places": "VARIOUS_UNSPECIFIED",
+        "actor": "GM",
+        "distribution": "TRANSFORMATION_ITEMS_CANDY_AND_OTHER_ITEMS_AS_REPORTED",
+        "item_names_forms_duration_spawn_algorithm_and_drop_rules": null
+      }
+    },
+    {
+      "record_id": "JP2005-R80-illustration",
+      "entity_type": "DOCUMENTARY_ILLUSTRATION_NOT_GAME_SCREEN",
+      "collection": "screens",
+      "version_profile": "JP_PC_2005_GAIAX_AUTUMN_SCHEDULE_REPORTED_20050921_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1",
+        "I1"
+      ],
+      "verification_status": "JOURNALISTIC_SCHEDULE_OR_ILLUSTRATION_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "image": {
+          "id": "I1",
+          "url": "https://www.4gamer.net/news/image/2005.09/20050921202336_0.jpg",
+          "http_status": 200,
+          "no_redirect": true,
+          "bytes": 28727,
+          "sha256": "9b801c91204166fdfea81ca20f38ab049137c144a9c8edf1d85d7d6bd2f14cab",
+          "size": [
+            232,
+            310
+          ],
+          "format": "JPEG",
+          "mode": "RGB",
+          "frames": 1
+        },
+        "observation": {
+          "manual_visual_review": true,
+          "kind": "COOKING_THEME_CHARACTER_ILLUSTRATION",
+          "visible": [
+            "SPIKY_HAIRED_CHARACTER",
+            "STEAMING_CAULDRON_OVER_FIRE_AND_STONES",
+            "STIRRING_UTENSIL"
+          ],
+          "identified_as_gavi_or_gourmet_master": false,
+          "game_screenshot": false,
+          "recipe_ui_or_reward_delivery": false,
+          "original_sprite_model_animation": false,
+          "species_npc_or_character_id": null,
+          "native_client_resolution_proven": false
+        }
+      }
+    }
+  ],
+  "audit": {
+    "semantic_mutations_without_all_fingerprints": 27,
+    "hidden_and_outside_article_counterexamples": 2,
+    "outside_script_positive": true
+  },
+  "original_html_or_assets_in_output": false,
+  "original_server_runtime_verified": false
+}

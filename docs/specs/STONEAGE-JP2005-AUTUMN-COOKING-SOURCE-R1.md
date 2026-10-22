@@ -33,3 +33,14 @@ I1取自正文实际IMG链接20050921202336_0.jpg；HTTP200无跳转，28727B/SH
 工具tools/stoneage_jp2005_autumn_source.py有界一文一图，27个去全部指纹门的真实语义改写，隐藏/移正文外同词2反例、外围script正例；7单元及相关合27项本地通过，原始输入离线回放通过。首次本地使用共享plain时空白归一预期不符，已统一可见文本归一后重新跑通；无远端成功预报。专用工作流取源并只上传派生replay.json；候选/main原报告与完整保管在实际验收后永久写入。
 
 止于此同期报道及一料理插画，不扩抽签或递归官网。重开需同版原运营详细料理表/任务配置、具名原画、原服通信/发奖或持久化材料。最高NEXT81回22域另一地区早期地图/NPC/世界任务或具名宠物生态原件。Stage A仍7 PARTIAL+2 OPEN；B/wiki GATED；savedata R79 PAUSED_NON_BLOCKING。无整体完成百分比。
+
+
+### R80双端独立取源与永久派生保管（2026-10-23）
+
+内容1661fbf97dc3daee68db7cf888dbd0cd1316971e/tree0a23592f4fe6bf87acf715a81fb505155e7854ca，候选10/main11实际completed/success。九文件原生Git blob/整tree一致，四连续性文档原全文前缀保留；主线新读HEAD后expected_sha非强制快进。专用候选run39872608102/job120150412494/artifact12465759972，主线run39872716074/job120150771890/artifact12465814773，日志实际各7单元、一同期正文一JPEG取源/完整解码、27去全部指纹门改写及隐藏/正文外2反例通过。
+
+两下载ZIP各4152B，SHA25653d34d07464b432f855e4ddc825a60055e605c212bc4e8baba24677a0e593b14 / f05269a5ce19739ec5386bf2eea54f93d19a5dff99f6d96fbed38badcaf50648分别符合API；唯一replay.json两份均17829B/SHA256a892610a1740692743adb95090e007daa9fc376880b5237c8b790e925cd42d82。候选/main/local/保管门后local四份逐字节相等，两HTTP输入摘要也均同初取。双CI原JSON和STONEAGE-JP2005-AUTUMN-COOKING-CUSTODY-R1.json永久入Git，原文/插画仅临时验证不入Git。
+
+七pin固定SOURCE、三父报告、复用解析器和两原CI JSON的原字节/Git身份；收据永久记录21真实run和双job/artifact/ZIP/raw/input初取历史。CLI强制验保管，除缺失/同长篡改、错内容HEAD/tree/分支/原输入相等性和运行权威，还固定整21项实际run清单摘要及准确run/job/artifact ID，拒绝仅用另一成功门替代。本包7→8单元、相关28项本地通过；保管门后输出逐字节不变，七单元内容CI历史不改称八单元。保管提交自身候选/main另实际后验。
+
+本次是同期报道的可审计内容规格，不提升为直取运营公告或已发生发奖。料理挑战/官网竞赛、两村食材范围、指定服课程、配图无身份边界保持；菜谱数量/原ID/数值/实例唯一性/公式/持久化仍OPEN。下一最高NEXT81为另一地区早期地图/NPC/世界任务或具名宠物生态原件；Stage A7 PARTIAL+2 OPEN，B/wiki GATED，savedata R79 PAUSED_NON_BLOCKING，旧历史不删。
