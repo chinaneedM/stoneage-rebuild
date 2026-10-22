@@ -8039,3 +8039,8 @@ R75验收前措辞收紧：首候选eca552d814b87f42536175d435dfc699077b22a9的�
 ## 2026-10-22 R76：Netmarble现行日语手游人物
 
 新增原运营站https://stoneage.netmarble.com/ja/gameinfo/character ，title/og/canonical/ja及Netmarble/N2页脚验证当前《ストーンエイジ：放置冒険》独立手游产品，不是PC历史版本。初取37246B/SHA256bf0c6d8ecd7a59378749b763b46baacaee634a8a5761e7549674d54511e2b87d、UTF8严格/HTTP200；默认detailウッディ双同名em只一实体，55字符背景摘要937adccae4696a3d60ffdfa3d8504a9da299010a42e447b56a8e4d974b152db3，村落居住/性格/逐渐勇敢叙事分开，不补数值或出生点。实际figure.image-main原PNG133427B/623e33509df4f46aa7adaf8862d1d9676606579bc3b81fc4b13f66cf6ce5a62a、960×1196/P单帧/透明，完整解码目视静态全身立绘，非模型/动画。页面无刊时/build，CDN路径不认证年代；原HTML/PNG不入Git。早期PC无固定名12位置不自动合并，现代手游作者/产品/世界线单列。六单元/12去摘要与背景指纹门实源改写，实际CI/永久保管待后验。
+
+
+## 2026-10-22 R77：PC小水怪事件攻略与2016实际捕获
+
+新增https://games.sina.com.cn/zhqu/sta/article/2003-06-03/10555.shtml ，标2003-06-03 11:57、作者新浪游戏；不认证官方作者/商业build。初取54531B/e9308a360a7fa4acf63cfb1965f4c18dc72e504a5b7da1266d88e5f405b580a3。单次Availability请求20031201实际返20160929133108，历史HTML60767B/265aa1cbfbf7f2f413a1d4055953981191850817900d54c800c5d3caafb84d33，两GB18030/HTTP200正文2897字符/8409UTF8B/c4fbb96139601b83f89e4a1be243cc370a12fb8396358d3a1a2a53c7f64657bc一致。2016不冒充2003原始字节，两包装非独立见证。A/B调查/战水怪顺序、还子动机、贝壳沟通、巴克局部禁队、共同蛙与B叉/未量化维修后条件均分层；莫拉司/斯异文未裁。18原图链接登记，实际两JPG核100级目标/叉+75/-25/Lv5，摘要与URL见SOURCE，其余16像素未得，原件不入Git。六单元/44去摘要及正文指纹门反例，不认原服执行；实际CI/保管待后验。

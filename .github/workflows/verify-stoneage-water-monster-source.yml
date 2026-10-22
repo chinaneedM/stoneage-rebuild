@@ -1,0 +1,48 @@
+name: Verify water-monster rescue branches, source history and conditional rewards
+on:
+  push:
+    paths:
+      - 'tools/stoneage_water_monster_source.py'
+      - 'tools/stoneage_five_brothers_source.py'
+      - 'research/recovered/STONEAGE-CN2003-LIULI-CAVE-SOURCE-R1.json'
+      - 'research/recovered/STONEAGE-EARLY-CONTENT-GUIDE-MANUAL-R1.json'
+      - 'research/recovered/STONEAGE-PREPRODUCTION-CONTENT-ARCHIVE-R1.json'
+      - 'tests/test_stoneage_water_monster_source.py'
+      - 'research/recovered/STONEAGE-CN2003-WATER-MONSTER-*.json'
+      - 'docs/specs/STONEAGE-CN2003-WATER-MONSTER-SOURCE-R1.md'
+      - '.github/workflows/verify-stoneage-water-monster-source.yml'
+  pull_request:
+    paths:
+      - 'tools/stoneage_water_monster_source.py'
+      - 'tools/stoneage_five_brothers_source.py'
+      - 'research/recovered/STONEAGE-CN2003-LIULI-CAVE-SOURCE-R1.json'
+      - 'research/recovered/STONEAGE-EARLY-CONTENT-GUIDE-MANUAL-R1.json'
+      - 'research/recovered/STONEAGE-PREPRODUCTION-CONTENT-ARCHIVE-R1.json'
+      - 'tests/test_stoneage_water_monster_source.py'
+      - 'research/recovered/STONEAGE-CN2003-WATER-MONSTER-*.json'
+      - 'docs/specs/STONEAGE-CN2003-WATER-MONSTER-SOURCE-R1.md'
+      - '.github/workflows/verify-stoneage-water-monster-source.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  bounded-source-replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Decode referenced JPEG originals
+        run: python -m pip install Pillow==12.3.0
+      - name: Branches, communication shell, guide authority and conditional reward counterexamples
+        run: python -m unittest tests.test_stoneage_water_monster_source -v
+      - name: Retrieve current and 2016 archived guide plus two actual linked JPEGs
+        run: python -m tools.stoneage_water_monster_source --fetch --output "$RUNNER_TEMP/r77/replay.json"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: water-monster-derived-r77
+          path: ${{ runner.temp }}/r77/replay.json
+          if-no-files-found: error
+          retention-days: 30
