@@ -17129,3 +17129,16 @@ R67同包将四行按既有19集合合同导出recipes研究目录，原ID=null�
 上文定年查询返回HTTP200及精确可用捕获，并非空集或限流；随后真实取得 https://web.archive.org/web/20030324221124id_/http://games.sina.com.cn:80/zhuanqu/stoneage3/yaosu.shtml ，无跳转、HTTP200、21853B/SHA256 3a270f86e42cc6e7f68a8e2dd0c765097b442b1dd2d9c4eadeec091d3222059e，严格GB18030。此S3为S1的历史参考，不计第三独立规则见证；2003-03-24是捕获时刻，首刊、官方作者、商业build仍未知，当前原HTML字节不等于旧捕获。该补证取代上文“未得历史正文”的阶段性状态。
 
 S1/S3两个所选节的完整可见文本去空白后逐字相等，#3核心UTF8/摘要与#5核心UTF8/摘要固定在historical_comparison；提取的技能/资格/状态/坐标亦全等。重放新增S3实取，输入总计三个HTML；不重查Availability、不递归截图。七单元、23实源改写和三外围script正例，本包与旧档案21本地检查通过；旧六/21改写/两script的早先结果不倒改。15目录不增实体，S1技能/骑乘记录同时指S1/S3，S2仍只指具名玩家转引。原HTML/图/杂志全文不入Git。
+
+
+### 2026-10-22 R70三输入双端重放验收与永久派生保管
+
+内容提交b97bccff947c571851db1f9997d76831dc02813a/treed4048b9cf5a41423880f5e7cdcf92bb77031737e，候选10/main11项适用Actions实际completed/success；实时main预期SHA非强制快进。十文件/整tree远端与本地原生Git吻合，四连续性文档仅追加；初始两现页阶段及同包历史补证均保留，不把查询点当捕获日期。
+
+专用候选run39766482469/job119783089446/artifact12419564808，主线run39766563402/job119783360423/artifact12419764140，各实际七单元、两当前HTML和精确20030324221124历史HTML、23去摘要门语义改写及三script正例。实下两ZIP各2912B，SHA256 2bf444b9290b0699ce4c7d7261713e3c00a547f0d574e88c2e3cd1df95e455f3 / ec0c1354c2f92f470cbb2cc97c1696c0ecf9d4bec0d60c07159051d0c6c87bbe逐一符合API；唯一replay.json完整23318B/SHA256 637702fd6eed2b37c6cbece438bc537f55369859b9ff46cdfabb8f94afdd83c6/Git blob8a0fc18068196ff20af9022d237d3a8e8100640c。双CI/local及新增保管门后local四份逐字节全等，三输入摘要同初取。
+
+S1/S3所选全文去空白一致，#3核心712UTF8B/SHA256 810507b9e173d90951e20c68fc563adc208017fcdf05d547b5cbdc41bcca6195，#5核心2493UTF8B/SHA256 7798e1c46150e83a180098fe15c61c4c5c46275fb643a6ce6e61f8b444dbf54a；独立词法另验248/839字符和全文相等，S1当前原字节仍不等于S3历史原字节，未认证同客户端build、原作者或首刊。S2未名杂志、5.0起玩及传闻限定未变。
+
+双原CI JSON与research/recovered/STONEAGE-CN30-SPECIAL-PET-SKILLS-CUSTODY-R1.json永久入Git，固定内容Git、21真实run、双job/artifact/ZIP、明确历史参考捕获及六永久文件原字节/Git身份。保管门强制存在，拒绝缺失/等长篡改、重复run/job、错HEAD/分支、当前网页冒充历史字节及重放错配；本包七→八单元，相关本地22项通过。保管提交自身候选/main CI须另实际后验，不倒称旧七项为八。原HTML/图/杂志/程序不入Git。
+
+最高NEXT71回22域另一具名地图/NPC/生态或同版音效事件，不扩本技能helper；Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停，全部旧历史保留。
