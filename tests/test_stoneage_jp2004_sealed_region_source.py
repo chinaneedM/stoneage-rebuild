@@ -16,6 +16,31 @@ def layout(first='仮の<span>中身</span>'):
 
 
 class SourceTests(unittest.TestCase):
+    def test_success_from_other_commit_or_branch_cannot_supply_custody(self):
+        receipt = m.verify_custody()
+        with tempfile.TemporaryDirectory() as name:
+            root = Path(name)
+            for pin in receipt['permanent_pins']:
+                p = root / pin['path']
+                p.parent.mkdir(parents=True, exist_ok=True)
+                p.write_bytes((m.ROOT / pin['path']).read_bytes())
+            target = root / f'research/recovered/{m.STEM}-CUSTODY-R1.json'
+            changes = [
+                lambda d: d.update(content_commit='0' * 40),
+                lambda d: d.update(runtime_verified=True),
+                lambda d: d['jobs_and_artifacts']['main']['artifact']['workflow_run'].update(head_sha='0' * 40),
+                lambda d: d['jobs_and_artifacts']['main']['artifact']['workflow_run'].update(head_branch='other'),
+                lambda d: d['runs'].extend([d['runs'][0]]),
+                lambda d: d.update(permanent_pins=d['permanent_pins'][1:]),
+            ]
+            for i, change in enumerate(changes):
+                with self.subTest(change=i):
+                    changed = copy.deepcopy(receipt)
+                    change(changed)
+                    target.write_text(json.dumps(changed))
+                    with self.assertRaises(ValueError):
+                        m.verify_custody(root)
+
     def test_actual_permanent_replays_reject_missing_and_equal_length_corruption(self):
         receipt = m.verify_custody()
         with tempfile.TemporaryDirectory() as name:

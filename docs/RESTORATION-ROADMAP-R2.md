@@ -1556,3 +1556,14 @@ R62同包增加既有19集合合同的可检索导出：6条quests文献关系�
 两ZIP实际实下均1619B，SHA256 `8dcabcf0dafddaa738ede42e8ae7d3c9b6be333d50b050098e6bffd16fd7a03d` / `cf5c20a63c5d3952285ead4d89619c1083a820dd772cd6aa5e0a1dfed18ee3f7`；各唯一replay.json完整3136B/SHA256 `d7c30e3a817d34420724bf6b3b56dc08befed20df34e8a7b90cde102daa4495a`/Git blob `899800df88f2ddd8573f0d6311b63db1007b2b9c`，候选/main/local完整原字节相等。两源大小/摘要同初取，正文语义亦同；ZIP差异保留。独立正则/实体解码复核图名顺序、穀字、东侧与地底限定、自拾取、一次一只和正文署名一致，没取像素。
 
 两CI原派生JSON及research/recovered/STONEAGE-JP2004-SEALED-REGION-CUSTODY-R1.json永久入Git，固定内容Git、21工作流、双job/artifact/ZIP及八文件原生Git/SHA/长度。新增收据必须存在、真实新派生文件缺失/等长篡改拒绝，单元七→八，保管提交自身候选/main CI必须另实查，不倒改旧七项。另26项旧7月来源/归档/连续性回归通过。原HTML/原图/音频/程序不入Git，史料≠原服、未名岛不乱并、放生/售款/删除/邮寄计时未知等边界未变。最高NEXT66优先具版号经典辅助工具能力新材料，缺新源选物品/配方/经济；Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停，历史全保留。
+
+
+### 2026-10-22 R65并发主线续接与R66来源预检（R66未关闭）
+
+本轮以main2a0583b启动；完成R65独立双ZIP/本地raw逐字节核对与独立词法复核后，发布候选 `2efdf25620dcd6109ebc69cc38b079eb97eb84f8`，十项适用Actions全部成功。合入前新读main发现已前进到 `117fc2a4ec749ca6bde8a353a1cfa7a750041775`（tree1c0a33681173c315d74f7948f73c69ab57a234da），其R65永久保管工作与本轮重合；因此没有把旧候选强写主线，保留该候选为已被主线同类工作取代的研究记录。已按最新主线干净worktree续接，保留该提交全部历史及既有verify_custody接口/收据字段。
+
+实际增量仅为收据整组run唯一性、成功与内容HEAD一致、专用artifact到run/分支/HEAD归属，以及CI输入列表到源报告绑定；补一项反例测试，本包八→九，相关18项本地通过。初轮独立候选重复run反例暴露漏检，续接主线时误用了另一候选收据键导致两项KeyError，按最新main jobs_and_artifacts实际结构修正后才全部通过；均为本地过程，不改写为远端失败或原源变动。此增量候选/main CI另后验，不替换原七/八项历史。
+
+R66已取得一篇新具名版号文献，预检见 research/recovered/STONEAGE-STA253-SPEAKER-SOURCE-HANDOFF-R1.json：17173 2002-03-27页面，当前HTTP200/UTF8严格/45844B/SHA256 de559d52986b8403c96b4657d6744af8f3f164b4611fddab661090532297fb4e。外层作者ZHY、附录暗夜之狼及附录内地藏乌拉引文分三发言层；仅一当前页面，不能计三个独立来源。具名Sta2.53的详细信息/可编辑料理脚本/原地遇敌与速度争议值得下一步有限结构化；当前仅保存选材线索与话语冲突，不决断谁正确、不补未知build、不认证原服或内挂采纳。未下载工具、原HTML/资源不入Git。
+
+最高NEXT仍OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-66，预检不当R66验收或全部外挂完成。Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停。所有旧历史完整保留。

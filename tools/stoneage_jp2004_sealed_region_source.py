@@ -201,6 +201,19 @@ def verify_custody(root=ROOT):
     require(path.is_file(), 'Permanent custody receipt missing')
     receipt = json.loads(path.read_text())
     require(receipt['runtime_verified'] is False, 'Custody promoted to original game execution')
+    runs = receipt['runs']
+    require(len({r['id'] for r in runs}) == len(runs) and all(
+        r['head_sha'] == receipt['content_commit'] and r['status'] == 'completed' and
+        r['conclusion'] == 'success' for r in runs), 'Duplicate or unverified CI run')
+    for role in ('candidate', 'main'):
+        proof = receipt['jobs_and_artifacts'][role]
+        matches = [r for r in runs if r['id'] == proof['run']]
+        artifact_run = proof['artifact']['workflow_run']
+        require(len(matches) == 1 and artifact_run['id'] == proof['run'] and
+                artifact_run['head_sha'] == receipt['content_commit'] and
+                artifact_run['head_branch'] == matches[0]['branch'] and
+                (matches[0]['branch'] == 'main') == (role == 'main'),
+                'Artifact detached from content commit, run or branch')
     required = {f'research/recovered/{STEM}-{s}-R1.json' for s in ('SOURCE', 'CI-CANDIDATE', 'CI-MAIN')}
     require(required <= {p['path'] for p in receipt['permanent_pins']}, 'Incomplete permanent derived evidence')
     for pin in receipt['permanent_pins']:
@@ -211,9 +224,10 @@ def verify_custody(root=ROOT):
         require(hashlib.sha1(b'blob ' + str(len(b)).encode() + bytes([0]) + b).hexdigest() == pin['git_blob'],
                 'Permanent derived Git identity changed')
     source = json.loads((root / f'research/recovered/{STEM}-SOURCE-R1.json').read_text())
+    inputs = [{k: p[k] for k in ('id', 'url', 'bytes', 'sha256')} for p in source['source_pages']]
     for suffix in ('CANDIDATE', 'MAIN'):
         raw = json.loads((root / f'research/recovered/{STEM}-CI-{suffix}-R1.json').read_text())
-        require(raw['extraction'] == source['extraction'], 'Archived semantic replay detached from source')
+        require(raw['inputs'] == inputs and raw['extraction'] == source['extraction'], 'Archived semantic replay detached from source')
         require(raw['audit']['real_input_mutations_rejected_without_digest_gate'] == len(MUTATIONS) and
                 raw['runtime_verified'] is False and raw['original_assets_or_html_in_output'] is False,
                 'Archived source audit boundary promoted')

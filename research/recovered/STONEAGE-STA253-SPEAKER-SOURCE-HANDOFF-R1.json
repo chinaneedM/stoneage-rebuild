@@ -1,0 +1,66 @@
+{
+  "schema": "stoneage.assistant_source_handoff.r1",
+  "date": "2026-10-22",
+  "task": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-66",
+  "status": "SOURCE_PREFLIGHT_NOT_PACKAGE_ACCEPTANCE",
+  "source": {
+    "url": "https://news.17173.com/z/stoneage/content/2002-3-27/n352_268196.html?_platform=PC",
+    "final_url": "https://news.17173.com/z/stoneage/content/2002-3-27/n352_268196.html?_platform=PC",
+    "http_status": 200,
+    "bytes": 45844,
+    "sha256": "de559d52986b8403c96b4657d6744af8f3f164b4611fddab661090532297fb4e",
+    "codec": "UTF8_STRICT",
+    "visible_publication": "2002-03-27",
+    "page_author": "ZHY",
+    "current_bytes_not_authenticated_2002_capture": true
+  },
+  "speaker_layers": [
+    {
+      "id": "OUTER",
+      "speaker": "ZHY",
+      "build": null,
+      "role": "CURRENT_PAGE_AUTHOR_OPINION"
+    },
+    {
+      "id": "APPENDIX",
+      "speaker": "暗夜之狼",
+      "build_as_written": "Sta2.53",
+      "role": "EMBEDDED_EARLIER_REBUTTAL_NOT_SECOND_RETRIEVED_DOCUMENT"
+    },
+    {
+      "id": "QUOTED",
+      "speaker_as_attributed": "地藏乌拉",
+      "build": null,
+      "role": "QUOTES_WITHIN_APPENDIX_NOT_INDEPENDENT_RETRIEVAL"
+    }
+  ],
+  "material_leads": [
+    "CONTRADICTORY_OPPONENT_DETAIL_CLAIMS_BETWEEN_SPEAKERS",
+    "APPENDIX_253_EDITABLE_COOKING_SCRIPT_CLAIM",
+    "APPENDIX_253_STATIONARY_ENCOUNTER_CLAIM",
+    "FAST_BATTLE_AND_COOKING_SPEED_DISPUTE_NOT_BENCHMARK"
+  ],
+  "unknowns": [
+    "EXACT_BINARY",
+    "DEVELOPER_RELEASE_LOG",
+    "PUBLISH_DATE_OF_EMBEDDED_TEXT",
+    "RUNTIME_COMPATIBILITY",
+    "HISTORICAL_CAPTURE",
+    "WHICH_OPINION_IS_CORRECT"
+  ],
+  "parent_pin": {
+    "path": "research/recovered/STONEAGE-EARLY-ASSISTANT-VERSIONS-R1.json",
+    "bytes": 6662,
+    "sha256": "69e79885e2c032b99f17666b131d1abf7f3f81fe33699b702103d055fc399667",
+    "git_blob": "7a518dff830c6a0a62add101e43a2d34aeb528c9"
+  },
+  "boundaries": {
+    "one_current_document_not_three_sources": true,
+    "article_date_not_software_release_date": true,
+    "two_tool_versions_not_game_build_numbers": true,
+    "no_executable_download_or_execution": true,
+    "no_original_html_or_asset_committed": true,
+    "no_adoption_decision": true
+  },
+  "remaining_work": "Select bounded version claims with speaker-specific attribution; cross-check earlier source without merging unknown STA builds, then normal candidate/main acceptance. R66 remains open."
+}
