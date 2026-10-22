@@ -1,0 +1,48 @@
+name: Verify current official Netmarble fighter biography and static art scope
+on:
+  push:
+    paths:
+      - 'tools/stoneage_netmarble_fighter_source.py'
+      - 'tools/stoneage_jp2005_treasure_source.py'
+      - 'research/recovered/STONEAGE-JP2003-CHARACTER-VISUAL-SOURCE-R1.json'
+      - 'research/recovered/STONEAGE-PREPRODUCTION-CONTENT-ARCHIVE-R1.json'
+      - 'docs/STONEAGE-PREPRODUCTION-CONTENT-ARCHIVE-R1.md'
+      - 'tests/test_stoneage_netmarble_fighter_source.py'
+      - 'research/recovered/STONEAGE-NETMARBLE-JA-WOODY-*.json'
+      - 'docs/specs/STONEAGE-NETMARBLE-JA-WOODY-SOURCE-R1.md'
+      - '.github/workflows/verify-stoneage-netmarble-fighter-source.yml'
+  pull_request:
+    paths:
+      - 'tools/stoneage_netmarble_fighter_source.py'
+      - 'tools/stoneage_jp2005_treasure_source.py'
+      - 'research/recovered/STONEAGE-JP2003-CHARACTER-VISUAL-SOURCE-R1.json'
+      - 'research/recovered/STONEAGE-PREPRODUCTION-CONTENT-ARCHIVE-R1.json'
+      - 'docs/STONEAGE-PREPRODUCTION-CONTENT-ARCHIVE-R1.md'
+      - 'tests/test_stoneage_netmarble_fighter_source.py'
+      - 'research/recovered/STONEAGE-NETMARBLE-JA-WOODY-*.json'
+      - 'docs/specs/STONEAGE-NETMARBLE-JA-WOODY-SOURCE-R1.md'
+      - '.github/workflows/verify-stoneage-netmarble-fighter-source.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  bounded-source-replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Decode actual attached palette PNG
+        run: python -m pip install Pillow==12.3.0
+      - name: Product, biography, duplicate presentation and static-art counterexamples
+        run: python -m unittest tests.test_stoneage_netmarble_fighter_source -v
+      - name: Retrieve current first-party active detail and actual attached PNG
+        run: python -m tools.stoneage_netmarble_fighter_source --fetch --output "$RUNNER_TEMP/r76/replay.json"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: netmarble-fighter-derived-r76
+          path: ${{ runner.temp }}/r76/replay.json
+          if-no-files-found: error
+          retention-days: 30

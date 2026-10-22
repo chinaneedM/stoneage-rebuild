@@ -1,0 +1,256 @@
+{
+  "schema": "stoneage.netmarble_ja_woody.source.r1",
+  "task": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-76",
+  "observed_date": "2026-10-22",
+  "version_profile": "OFFICIAL_NETMARBLE_STONEAGE_IDLE_ADVENTURE_JA_CURRENT_20261022_BUILD_UNKNOWN",
+  "source_pages": [
+    {
+      "id": "S1",
+      "url": "https://stoneage.netmarble.com/ja/gameinfo/character",
+      "final_url": "https://stoneage.netmarble.com/ja/gameinfo/character",
+      "http_status": 200,
+      "bytes": 37246,
+      "sha256": "bf0c6d8ecd7a59378749b763b46baacaee634a8a5761e7549674d54511e2b87d"
+    }
+  ],
+  "extraction": {
+    "title": "ストーンエイジ：放置冒険",
+    "language": "ja",
+    "name": "ウッディ",
+    "name_render_instances": 2,
+    "artwork_url": "https://sgimage.netmarble.com/images/netmarble/stonkey/20260209/rm2x1770604222589.png",
+    "source_layer": "CURRENT_FIRST_PARTY_NETMARBLE_JAPANESE_MOBILE_PRODUCT_WEBSITE",
+    "logical_characters_in_selected_detail": 1,
+    "publication_date": null,
+    "exact_client_build": null,
+    "residence": {
+      "village_as_written": "サムギル村",
+      "scope": "NARRATIVE_RESIDENCE_NOT_SPAWN",
+      "map_id": null,
+      "coordinates": null
+    },
+    "personality": {
+      "traits_as_written": [
+        "優柔不断",
+        "天然",
+        "楽天的"
+      ],
+      "scope": "BIOGRAPHY_NOT_COMBAT_STATS"
+    },
+    "narrative_arc": {
+      "experience": "ADVENTURES",
+      "qualities_as_written": "正義感溢れる勇敢な",
+      "gradual_as_described": true,
+      "scope": "NARRATIVE_CHARACTER_DEVELOPMENT_NOT_PROVEN_GAMEPLAY_PROGRESSION",
+      "level_or_quest_trigger": null,
+      "stat_delta": null
+    },
+    "unknowns": {
+      "age": null,
+      "gender_as_stated_in_text": null,
+      "hp": null,
+      "attack": null,
+      "defense": null,
+      "skills": null,
+      "original_character_id": null,
+      "body_face_sprite_ids": null,
+      "animation_ids": null
+    },
+    "biography_fingerprint": {
+      "characters": 55,
+      "utf8_bytes": 165,
+      "sha256": "937adccae4696a3d60ffdfa3d8504a9da299010a42e447b56a8e4d974b152db3"
+    },
+    "original_game_runtime_verified": false
+  },
+  "images": [
+    {
+      "id": "I1",
+      "url": "https://sgimage.netmarble.com/images/netmarble/stonkey/20260209/rm2x1770604222589.png",
+      "final_url": "https://sgimage.netmarble.com/images/netmarble/stonkey/20260209/rm2x1770604222589.png",
+      "http_status": 200,
+      "bytes": 133427,
+      "sha256": "623e33509df4f46aa7adaf8862d1d9676606579bc3b81fc4b13f66cf6ce5a62a",
+      "format": "PNG",
+      "mode": "P",
+      "size": [
+        960,
+        1196
+      ],
+      "frames": 1
+    }
+  ],
+  "image_observations": [
+    {
+      "id": "I1",
+      "manual_visual_review": true,
+      "kind": "STATIC_FULL_FIGURE_OFFICIAL_WEB_ILLUSTRATION",
+      "observed": [
+        "BROWN_HAIR_WITH_TOP_KNOT",
+        "FUR_TRIMMED_WRAPS",
+        "BARE_FEET",
+        "LARGE_STONE_BLADE_RESTING_OVER_SHOULDER"
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "canonical_weapon_item_id": null,
+      "client_model_or_sprite_binding": null,
+      "animation_or_direction_set": null,
+      "release_rights_granted": false
+    }
+  ],
+  "negative_boundaries": {
+    "current_mobile_product_is_original_pc_build": false,
+    "official_name_backfilled_to_unnamed_2003_web_position": false,
+    "residence_is_proven_spawn_or_original_map_id": false,
+    "personality_is_combat_stats": false,
+    "narrative_courage_is_levelup_or_buff": false,
+    "duplicate_name_em_elements_are_two_characters": false,
+    "default_ssr_detail_is_full_roster": false,
+    "static_png_is_client_sprite_model_or_animation": false,
+    "cdn_path_date_authenticates_publication_or_build": false,
+    "bgm_button_proves_audio_call_arguments": false,
+    "production_rights_granted": false,
+    "original_html_or_assets_committed": false,
+    "original_game_runtime_verified": false,
+    "stage_b_started": false
+  },
+  "parent_pins": [
+    {
+      "path": "research/recovered/STONEAGE-JP2003-CHARACTER-VISUAL-SOURCE-R1.json",
+      "bytes": 20004,
+      "sha256": "00ef16a71581ebadeed139143ab572ff5ac27c9944e82c7badcdb31611a46192",
+      "git_blob": "fcb22eb2e385b615db2f8f13f40b83545b03d403"
+    },
+    {
+      "path": "research/recovered/STONEAGE-PREPRODUCTION-CONTENT-ARCHIVE-R1.json",
+      "bytes": 24489,
+      "sha256": "e87afebc8c9590142c7cc8831b578455b3427bf7c1d10520ae02a3e8082fbddb",
+      "git_blob": "2d5b3f081d5618287f431fbded943722a820c593"
+    },
+    {
+      "path": "docs/STONEAGE-PREPRODUCTION-CONTENT-ARCHIVE-R1.md",
+      "bytes": 29953,
+      "sha256": "ae6a085dd87eedfa96d710411be5b42637f1f358373101e70b58f2cd5f0b8e1a",
+      "git_blob": "30f5568884a6f1d688c2eed923cd1e6ffce0346b"
+    }
+  ],
+  "parser_dependency_pin": {
+    "path": "tools/stoneage_jp2005_treasure_source.py",
+    "bytes": 20924,
+    "sha256": "d541c0fb832447f203ad0618ea86d0ed39e0a32bdf5c26f509dde6f5ffecba40",
+    "git_blob": "350e9d3769597ea4b47959cf2dbd3edf8d97916f"
+  },
+  "comparison": {
+    "relation": "DIFFERENT_OFFICIAL_PRODUCTS_NOT_AN_IDENTITY_OR_CANON_JOIN",
+    "pc_hangame2003": {
+      "source_report": "research/recovered/STONEAGE-JP2003-CHARACTER-VISUAL-SOURCE-R1.json",
+      "page_capture": "20031214051427",
+      "operator_describes_no_fixed_names": true,
+      "player_naming_described": true,
+      "web_positions": 12
+    },
+    "current_mobile": {
+      "product": "ストーンエイジ：放置冒険",
+      "language": "ja",
+      "selected_character": "ウッディ",
+      "source": "https://stoneage.netmarble.com/ja/gameinfo/character"
+    },
+    "current_name_applied_to_pc_position": null,
+    "same_original_model_or_body_id_proven": false,
+    "same_worldline_or_retcon_proven": false,
+    "early_naming_description_contradicted": false,
+    "modern_adoption_decided": false
+  },
+  "catalog_records": [
+    {
+      "record_id": "NETMARBLE-JA-R76-WOODY",
+      "collection": "characters",
+      "entity_type": "OFFICIAL_MOBILE_FIGHTER_BIOGRAPHY_AND_WEB_ART_REFERENCE",
+      "version_profile": "OFFICIAL_NETMARBLE_STONEAGE_IDLE_ADVENTURE_JA_CURRENT_20261022_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1",
+        "I1"
+      ],
+      "verification_status": "OFFICIAL_WEB_TEXT_AND_STATIC_ART_NOT_CLIENT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "biography": {
+          "name": "ウッディ",
+          "residence": {
+            "village_as_written": "サムギル村",
+            "scope": "NARRATIVE_RESIDENCE_NOT_SPAWN",
+            "map_id": null,
+            "coordinates": null
+          },
+          "personality": {
+            "traits_as_written": [
+              "優柔不断",
+              "天然",
+              "楽天的"
+            ],
+            "scope": "BIOGRAPHY_NOT_COMBAT_STATS"
+          },
+          "narrative_arc": {
+            "experience": "ADVENTURES",
+            "qualities_as_written": "正義感溢れる勇敢な",
+            "gradual_as_described": true,
+            "scope": "NARRATIVE_CHARACTER_DEVELOPMENT_NOT_PROVEN_GAMEPLAY_PROGRESSION",
+            "level_or_quest_trigger": null,
+            "stat_delta": null
+          },
+          "unknowns": {
+            "age": null,
+            "gender_as_stated_in_text": null,
+            "hp": null,
+            "attack": null,
+            "defense": null,
+            "skills": null,
+            "original_character_id": null,
+            "body_face_sprite_ids": null,
+            "animation_ids": null
+          }
+        },
+        "artwork": {
+          "id": "I1",
+          "url": "https://sgimage.netmarble.com/images/netmarble/stonkey/20260209/rm2x1770604222589.png",
+          "final_url": "https://sgimage.netmarble.com/images/netmarble/stonkey/20260209/rm2x1770604222589.png",
+          "http_status": 200,
+          "bytes": 133427,
+          "sha256": "623e33509df4f46aa7adaf8862d1d9676606579bc3b81fc4b13f66cf6ce5a62a",
+          "format": "PNG",
+          "mode": "P",
+          "size": [
+            960,
+            1196
+          ],
+          "frames": 1
+        },
+        "visual_observation": {
+          "id": "I1",
+          "manual_visual_review": true,
+          "kind": "STATIC_FULL_FIGURE_OFFICIAL_WEB_ILLUSTRATION",
+          "observed": [
+            "BROWN_HAIR_WITH_TOP_KNOT",
+            "FUR_TRIMMED_WRAPS",
+            "BARE_FEET",
+            "LARGE_STONE_BLADE_RESTING_OVER_SHOULDER"
+          ],
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "canonical_weapon_item_id": null,
+          "client_model_or_sprite_binding": null,
+          "animation_or_direction_set": null,
+          "release_rights_granted": false
+        }
+      }
+    }
+  ],
+  "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-77"
+}

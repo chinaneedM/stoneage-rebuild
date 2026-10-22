@@ -1828,3 +1828,20 @@ R75验收前措辞收紧：首候选eca552d814b87f42536175d435dfc699077b22a9的�
 双正确稿原CI JSON与research/recovered/STONEAGE-CN2011-MAMMOTH-BUS-CUSTODY-R1.json永久入Git，固定最终内容Git、21实际run、双job/artifact/ZIP/raw/input、八永久文件原生Git身份，含三父报告/两共享解析器，并保留首稿更正归属。强制保管门拒绝缺失/等长篡改、错HEAD/分支、重复run/job、历史权威升级/虚报字节相等或借首稿作最终验收；六→七单元，相关26项本地通过。保管提交自身候选/main CI须另真实后验，不把首内容六项绿灯写成七项。
 
 两图只作静态交通场景/标签，不证go执行/乘车成功/方向检查/完整拓扑；早期3分钟4人/2003航空go不回填，收费/容量/遇敌/权限/原ID/build/保存仍未知。原HTML/JPEG/程序不入Git；最高NEXT76回另一地区人物创建/外观或具名宠物生态，优先运营站；Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停，全部旧历史完整。
+
+
+## 2026-10-22 R76：Netmarble手游具名人物背景与官方立绘
+
+启动远端main7fad6905615b3b6167820a2aa4d786d6afb4d799/tree0674e93a1194e36d2a9ea36e1b3be34c6b14b033；474分支、0开放PR，原HEAD候选8/main9项成功。首稿eca旧run39786866705仍in_progress、旧queued37642417333单列，不与最终HEAD混淆或取消。九启动来源完整UTF8/精确git show/原生Git核对，CURRENT2371038B历史保留，5178项树未截断无AGENTS；读取最新NEXT76与22域索引，回人物身份/外观，依既有资料库规范将现代手游/同IP续作独立产品归档。
+
+新增第一方https://stoneage.netmarble.com/ja/gameinfo/character ，title/og:title《ストーンエイジ：放置冒険》、ja/canonical同页，页脚Netmarble Corp./N2 Inc.。当前HTTP200无跳转37246B/SHA256bf0c6d8ecd7a59378749b763b46baacaee634a8a5761e7549674d54511e2b87d、严格UTF8。无页面刊时/精确build，2026-10-22仅观察日；CDN20260209/文件名数字/meta年份不当发行日期，不是原PC历史页面或原客户端。
+
+交付docs/specs/STONEAGE-NETMARBLE-JA-WOODY-SOURCE-R1.md及SOURCE JSON，一默认SSR detail具名ウッディ，两个相同em只一角色；背景去空白55字符/165UTF8B/SHA256937adccae4696a3d60ffdfa3d8504a9da299010a42e447b56a8e4d974b152db3独立词法核对。サムギル村为故事居住关系非出生点/地图ID，優柔不断/天然/楽天的保留原词不作数值；冒险后逐渐勇敢/正义感是叙事非等级/任务触发/buff。文本年龄/性别、HP/技能/原ID/模型/精灵与动画均未知。
+
+同detail figure.image-main实际IMG PNG取得HTTP200，133427B/SHA256623e33509df4f46aa7adaf8862d1d9676606579bc3b81fc4b13f66cf6ce5a62a，960×1196、PNG/P单帧、alpha0–255，Pillow完整解码/目视。棕发发束、毛皮装束、赤脚、肩扛大石刃仅图像描述，不命名装备/攻击数值，非游戏精灵/模型/动画/原TW1调色板或客户端分辨率。原HTML/PNG不进Git、生产权利未授；未取缩略图/其他角色/JS/样式/音效，BGM按钮不构成真实调用输入。
+
+固定旧Hangame2003人物SOURCE、19集合合同、允许现代手游但要求产品隔离的资料库规范三父文件与共享可见标记解析器。早期运营商无固定名字/玩家命名、12页面位置不被本手游具名改写；不合2003位置1、2006头像或原body/face/模型ID，不报同一世界线retcon或早期资料被推翻。一个characters研究目录不是一位可玩初代人物恢复，也不称全手游名单。
+
+六单元、12实源语义改写在去整页摘要/背景指纹门后均拒绝；外围script/修改CDN路径仍不认发布日期正例。合成不同村落/性格另证动态提取，目录重建后的权威/未知反例及父报告/解析器缺失/等长篡改拒绝，本包/复用模块14项本地通过。一次探索缺BeautifulSoup后改标准库，未新增依赖；候选/main实源重放/实际ZIP/永久派生保管须后验。
+
+止于官网默认一角色一图，重新打开需另一明确官方人物正文/同产品模型或实际剧情规则，初代身份仍需对应原件。最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-77回另一地区PC官方NPC/任务或具名宠物生态，优先运营站/同期一手；不连续扩本手游缩略图/商城，音效需同版真实输入。Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停，全部旧历史完整。

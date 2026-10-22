@@ -8034,3 +8034,8 @@ https://games.sina.com.cn/zhqu/sta/article/2003-06-06/11290.shtml 当前55319B�
 
 
 R75验收前措辞收紧：首候选eca552d814b87f42536175d435dfc699077b22a9的“面向”/FACE_MAMMOTH过强；原文仅“在长毛象面前”，现改为STAND_IN_FRONT_OF_MAMMOTH（站在公车面前），不证明人物朝向检查或方向标志。原候选、六单元工件及其Git历史保留，新内容提交需重新实取验收，不能借前稿绿灯。本次不是源正文或图片变化。
+
+
+## 2026-10-22 R76：Netmarble现行日语手游人物
+
+新增原运营站https://stoneage.netmarble.com/ja/gameinfo/character ，title/og/canonical/ja及Netmarble/N2页脚验证当前《ストーンエイジ：放置冒険》独立手游产品，不是PC历史版本。初取37246B/SHA256bf0c6d8ecd7a59378749b763b46baacaee634a8a5761e7549674d54511e2b87d、UTF8严格/HTTP200；默认detailウッディ双同名em只一实体，55字符背景摘要937adccae4696a3d60ffdfa3d8504a9da299010a42e447b56a8e4d974b152db3，村落居住/性格/逐渐勇敢叙事分开，不补数值或出生点。实际figure.image-main原PNG133427B/623e33509df4f46aa7adaf8862d1d9676606579bc3b81fc4b13f66cf6ce5a62a、960×1196/P单帧/透明，完整解码目视静态全身立绘，非模型/动画。页面无刊时/build，CDN路径不认证年代；原HTML/PNG不入Git。早期PC无固定名12位置不自动合并，现代手游作者/产品/世界线单列。六单元/12去摘要与背景指纹门实源改写，实际CI/永久保管待后验。
