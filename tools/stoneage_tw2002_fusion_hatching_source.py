@@ -196,9 +196,55 @@ def read_inputs(directory=None):
  return result
 
 
+def verify_custody(root=None):
+ root=ROOT if root is None else Path(root)
+ receipt=json.loads((root/f'research/recovered/{STEM}-CUSTODY-R1.json').read_text())
+ require(receipt['schema']=='stoneage.tw2002_fusion_hatching.custody.r1','Custody schema')
+ require(receipt['content_commit']=='c1bec4061c26d83835757a650673a5b859881e18' and receipt['content_tree']=='6706e55c087a6622b2a1fd81177057fd77a30462','Content Git identity')
+ require(receipt['candidate_branch']=='agent/named-content-r84-fusion-hatching-20261023','Candidate branch')
+ require(receipt['server_execution_verified'] is False and receipt['current_bytes_authenticate_2002_original'] is False and receipt['official_authorship_verified'] is False,'Custody authority promoted')
+ require(receipt['archive_capture_is_publication_date'] is False and receipt['current_article_body_acquired'] is False and receipt['full_original_images_acquired'] is False,'Capture/current-body/full-image coverage promoted')
+ require(all(receipt[k] is False for k in ('original_species_identified','original_fusion_formula_verified','game_audio_binding_verified')),'Missing species, formulas or audio binding promoted')
+ paths=[f'research/recovered/{STEM}-SOURCE-R1.json']+PARENTS+[PARSER]+[f'research/recovered/{STEM}-CI-{role}-R1.json' for role in ('CANDIDATE','MAIN')]
+ pins=receipt['permanent_pins'];require([p['path'] for p in pins]==paths,'Seven mandatory permanent evidence pins changed')
+ for p in pins:
+  b=(root/p['path']).read_bytes()
+  require(p=={'path':p['path'],'bytes':len(b),'sha256':sha(b),'git_blob':hashlib.sha1(b'blob '+str(len(b)).encode()+b'\0'+b).hexdigest()},'Permanent original bytes changed')
+ source=json.loads((root/paths[0]).read_text())
+ initial=[{'id':'S1','url':URL,'bytes':source['source']['bytes'],'sha256':source['source']['sha256']}] + [{k:im[k] for k in ('id','url','bytes','sha256')} for im in source['images']]
+ require(receipt['initial_inputs']==initial,'Original intake/input dates lost')
+ runs=receipt['runs'];require(len(runs)==21 and len({v['id'] for v in runs})==21,'Actual gate inventory missing/duplicated')
+ require(sha(json.dumps(sorted(runs,key=lambda v:v['id']),sort_keys=True).encode())=='102c9c74731e68b4615a4b3fba991fdce4d472f28fd6949e0b7df41fa04b4817','Actual immutable run inventory changed')
+ branches={'candidate':receipt['candidate_branch'],'main':'main'}
+ for role,count in (('candidate',10),('main',11)):
+  group=[v for v in runs if v['branch']==branches[role]]
+  require(len(group)==count and len({v['name'] for v in group})==count,'Branch gate inventory changed')
+ require(all(v['head']==receipt['content_commit'] and v['status']=='completed' and v['conclusion']=='success' for v in runs),'Unverified/failed gate promoted')
+ raw_files=[];jobs=[];artifacts=[]
+ for role,branch in branches.items():
+  proof=receipt['jobs_and_artifacts'][role];artifact=proof['artifact'];run=artifact['workflow_run']
+  expected={'candidate': (39903937009, 120251467895, 12479469761), 'main': (39904047488, 120251808268, 12479568177)}[role]
+  require((proof['run'],proof['job'],artifact['id'])==expected,'Verified run/job/artifact identity changed')
+  require(run['id']==proof['run'] and run['head_sha']==receipt['content_commit'] and run['head_branch']==branch,'Artifact origin detached')
+  matching=[v for v in runs if v['id']==proof['run']]
+  require(len(matching)==1 and matching[0]['branch']==branch and matching[0]['name']=='Verify TW2002 fusion egg and hatching announcement boundaries','Wrong source workflow')
+  require(proof['job_name']=='bounded-source-replay' and proof['job_conclusion']=='success' and artifact['name']=='tw2002-fusion-hatching-derived-r84','Wrong job/artifact')
+  require(proof['zip_downloaded_and_digest_verified'] is True and artifact['size_in_bytes']>0 and re.fullmatch(r'sha256:[0-9a-f]{64}',artifact['digest']),'ZIP custody missing')
+  require((artifact['size_in_bytes'],artifact['digest'])=={'candidate': (3839, 'sha256:cf8fa208414c3f505502fc09050faaec289990aed415299f42ae5e7f5af7aa9e'), 'main': (3839, 'sha256:5674174133cda9231d48d934b7ba71f149bcf22ccd7e552e2c24a669e3e7d0f4')}[role],'Actual ZIP byte identity changed')
+  jobs.append(proof['job']);artifacts.append(artifact['id'])
+  path=f'research/recovered/{STEM}-CI-{role.upper()}-R1.json';raw=(root/path).read_bytes();raw_files.append(raw);replayed=json.loads(raw)
+  record=receipt['raw_replays'][role];p=next(v for v in pins if v['path']==path)
+  require(all(record[k]==p[k] for k in p) and record['inputs']==replayed['inputs'] and record['equals_initial_inputs']==(replayed['inputs']==initial),'Raw identity/input equality misreported')
+  require(all(replayed[k]==source[k] for k in ('extraction','images','visual_observations','comparison','catalog_records')),'Raw replay semantics detached')
+  require(replayed['audit']=={'semantic_mutations_without_all_fingerprints':19,'hidden_and_outside_article_counterexamples':2,'outside_script_positive':True} and replayed['original_html_or_assets_in_output'] is False and replayed['original_server_runtime_verified'] is False,'Raw audit/authority promoted')
+ require(len(set(jobs))==len(set(artifacts))==2 and receipt['candidate_main_raw_bytes_equal']==(raw_files[0]==raw_files[1]),'Candidate/main evidence substituted')
+ return receipt
+
+
 def main():
  p=argparse.ArgumentParser();g=p.add_mutually_exclusive_group(required=True);g.add_argument('--fetch',action='store_true');g.add_argument('--input-dir');p.add_argument('--output',required=True);a=p.parse_args()
  r=json.loads(REPORT.read_text());out=replay(read_inputs(a.input_dir),r)
+ verify_custody()
  path=Path(a.output);path.parent.mkdir(parents=True,exist_ok=True);path.write_text(json.dumps(out,ensure_ascii=False,indent=2)+'\n')
  print('R84 announced fusion stages and two event photos replayed; species, formulas, build and original server execution remain unknown.')
 
