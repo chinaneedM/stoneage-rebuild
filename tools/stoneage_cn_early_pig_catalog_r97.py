@@ -18,7 +18,7 @@ THUMBS=[1,2,3,4,5,6,8,7]
 ROOT_IMG="https://images.17173cdn.com/stoneage/images/chongwu"
 
 def blob_sha(raw):
-    return hashlib.sha1(b"blob "+str(len(raw)).encode("ascii")+b"\\0"+raw).hexdigest()
+    return hashlib.sha1(b"blob "+str(len(raw)).encode("ascii")+b"\0"+raw).hexdigest()
 
 def verify(data):
     raw=P.read_bytes()
