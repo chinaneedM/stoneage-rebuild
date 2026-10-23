@@ -1,0 +1,112 @@
+{
+  "schema": "stoneage.cn2001_world_routes_record_acceptance.r96",
+  "task": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-96",
+  "base_main": {
+    "sha": "5acf20e4355b2cc5864a057993403bda701fae64",
+    "tree": "ecc703a93fdf71d886541edfef4802dda26378ad"
+  },
+  "candidate_branch": "agent/cn2001-world-routes-record-gates-r96-20261023",
+  "content": {
+    "commit": "94f08deefbf82da05cba51f9b6699adbfd485deb",
+    "tree": "65d25c9694cebf4ce1fcdf788b80673f9e00c926"
+  },
+  "docs": {
+    "commit": "9386c6f3147796b9b1a55c0fbe22c8fe5006437c",
+    "tree": "50e1dd81863eb58efdfc872f625a534f0df66a31"
+  },
+  "permanent_derived_source": {
+    "path": "research/recovered/STONEAGE-CN2001-WORLD-ROUTES-RECORD-SOURCE-R96.json",
+    "sha1_git_blob": "e2bc3c5e1dc3eae4ee61b9c6ab85de7cb9f82538",
+    "historical_original_html": false,
+    "proprietary_images": false,
+    "exact_original_build_verified": false
+  },
+  "candidate_content_validation": {
+    "run_id": 39961754440,
+    "job_id": 120441214658,
+    "conclusion": "success",
+    "test_methods": 11,
+    "checked_actual_steps": [
+      "python -m unittest tests.test_stoneage_cn2001_world_routes_record_source -v",
+      "python -m tools.stoneage_cn2001_world_routes_record_source"
+    ]
+  },
+  "candidate_docs_validation": {
+    "run_ids": [
+      39962171437,
+      39962170882,
+      39962171010,
+      39962170780,
+      39962170851,
+      39962170960,
+      39962171207,
+      39962170616,
+      39962170499
+    ],
+    "all_success": true
+  },
+  "main_docs_validation": {
+    "run_ids": [
+      39962313709,
+      39962313500,
+      39962313586,
+      39962313589,
+      39962313591,
+      39962313483,
+      39962313485,
+      39962313523,
+      39962313470,
+      39962313469,
+      39962313604
+    ],
+    "all_success": true,
+    "dedicated_run_id": 39962313604,
+    "dedicated_job_id": 120443120286
+  },
+  "publication": {
+    "main_fast_forward_non_force": true,
+    "main_head_for_validation": "9386c6f3147796b9b1a55c0fbe22c8fe5006437c",
+    "before_main_sha": "5acf20e4355b2cc5864a057993403bda701fae64",
+    "compare_ahead_by": 2,
+    "compare_behind_by": 0
+  },
+  "historical_prefix": [
+    {
+      "path": "docs/CURRENT-STATE.md",
+      "old": "eae9c780509a95cc9e6a3cce39a07040ac5bf957",
+      "new": "7394357dbaf17c0fb2ee624bd1bb2022a1bdc738",
+      "old_prefix_retained": true
+    },
+    {
+      "path": "docs/HISTORICAL-TIMELINE.md",
+      "old": "30072b26ddc7bb4603200df5803fa92b445cee41",
+      "new": "c981494f0d1bacacfa72a363963946c0085eb19f",
+      "old_prefix_retained": true
+    },
+    {
+      "path": "docs/SOURCE-REGISTRY.md",
+      "old": "5f62c9e423ba9ee7f755e4dd0f130935b7ab1e48",
+      "new": "f55c057b9b78a1badf8b17e78260d110b10502ea",
+      "old_prefix_retained": true
+    }
+  ],
+  "ci_artifacts": {
+    "candidate_dedicated_artifact_count": 0,
+    "main_dedicated_artifact_count": 0,
+    "raw_source_html_zip_saved": false,
+    "raw_image_zip_saved": false,
+    "derived_report_zip_saved": false
+  },
+  "claim_boundaries": {
+    "article_display_date_is_first_publish_proven": false,
+    "cave_status_original_server_deployment_proven": false,
+    "undersea_all_ends_known": false,
+    "record_point_real_server_ack_proven": false,
+    "original_jss1999_world_recovered": false,
+    "original_tw10_server_master_recovered": false,
+    "stage_a_accepted": false,
+    "stage_b_started": false,
+    "overall_restoration_percentage": null
+  },
+  "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-97"
+}
