@@ -1,0 +1,24 @@
+name: Verify R104 immutable named-pet image source custody
+on:
+  push:
+    paths:
+      - 'tools/stoneage_cn20_named_pet_visual_r104_custody.py'
+      - 'tests/test_stoneage_cn20_named_pet_visual_r104_custody.py'
+      - 'research/recovered/STONEAGE-CN20-NAMED-PET-VISUAL-CUSTODY-R104.json'
+      - 'research/recovered/STONEAGE-CN20-NAMED-PET-VISUAL-CI-*-R104.json'
+      - '.github/workflows/verify-stoneage-cn20-r104-custody.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  derived-only-custody:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install Pillow==11.3.0
+      - run: python -m unittest tests.test_stoneage_cn20_named_pet_visual_r104 tests.test_stoneage_cn20_named_pet_visual_r104_custody -v
+      - run: python -m tools.stoneage_cn20_named_pet_visual_r104_custody

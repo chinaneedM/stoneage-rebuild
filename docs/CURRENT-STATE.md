@@ -18047,3 +18047,14 @@ GitHub新核main `33b953c56fec4fc9bc36d30738a83c6041d02fa6` / tree `58173bfc7077
 网页10月23日与图片25/26日异时，证明网页引用→另时点同URL像素，不证同刻/精确构建。第088/089HTML未声明尺寸，实测83×90不回填；网页序号/图片数字非原生物种/bitmap/SPR ID，单帧JPEG不证没有原动画。新增3独立研究记录引用旧catalog ID，七必填/pets/非发行授权/game_ids null，旧未请求记录与有限104数不改，不计三新增物种或全部图片恢复。
 
 交付SOURCE/LOCAL派生、中文规格、源级重放器、8项负向单元及专用CI；新8+旧相关28共36本地测试通过。初负例误删导航行导致预期错误，改真正图格行缺失后通过，失败不隐去。原HTML/JPEG/商业程序未入Git；候选/main、源工件与永久保管需按真实后验。最高NEXT `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-105` 转具名地图/NPC位置/服务的分版实源，不连续补图鉴图片批。Stage A7 PARTIAL+2 OPEN、B/wiki GATED、savedataR79暂停、整体百分比null。
+
+
+### R104 三图源重放、双端ZIP与永久证据验收 — 2026-10-24
+
+内容commit `2097b01a599b701114080832e549486d06c8f07b` / tree `fcb549b4c1b18588c7d7fbc40672ec0566e77ea0`，候选11/main12共23不同Actions实际completed/success。专用candidate run40042194131/job120715608522、main run40042301696/job120715940635日志各实际8单元+重新获取原64382B页面及三张原引用JPEG、全部字节SHA/完整图格和解码校验成功，非仅用合成表通过冒充网络取源。fresh main确认旧HEAD未变后以expected_sha非force快进；compare前进1/落后0、10文件0删行。四份历史旧/新远端原生blob全文双读保持完整前缀，新tree等本地。
+
+从公开nightly.link的精确run路径取得双真正ZIP，最终Actions blob响应字节长度/摘要逐份等GitHub artifact API：candidate artifact12540230053/ZIP1904B/SHA256 `84af8b018939ac39a6a89b92a5e9719b01890b76a2773423809208ba61320dc9`；main artifact12539124679/ZIP1904B/`3959042e3423ab3807f8db7cd86bb8558088885a144ca4004e105ca4bbef950e`。已知connector二进制下载曾返回元数据的限制不再重复；没有把metadata当ZIP。本轮两ZIP唯一成员r104-replay.json，原样8363B/SHA256 `a1cb259a6f2f57162310a84145e84f403214f1fabfec1b3d8ac91282e4ce3517` / Git blob `42e650ec8f2da39a17b705bdde4788256fde51fe`；双端与LOCAL逐字节相同。
+
+永久CI-CANDIDATE/CI-MAIN原报、CUSTODY及独立保管器固定13证据pin（SOURCE/LOCAL/双CI/工具/测试/规格/workflow/五父）、23实际run、内容HEAD/tree/分支、双job/artifact/ZIP、四完整历史前缀。整份收据SHA锁拒绝原报等长破坏、重算pin、错commit/ZIP/artifact、虚报原生ID/双端相等。新8＋保管4项本地12通过，加旧相关28，本轮40不同测试成功；原内容远端8项不改称12，最终保管提交自身Actions仍须实际后验。六份本轮临时原输入（被排除2008公告/宣传图及接纳的一页三图）逐份验SHA后删除，原HTML/图片/程序不入Git。
+
+真正推进是旧官方三个具名网页位置的另时点视觉补充，非新物种、同刻像素、原SPR/动画/成长/捕获表或全图鉴完备。旧104记录与旧未请求历史不重写。最高NEXT `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-105` 轮换明确分版具名地图/NPC位置或服务实源，不连续扩图鉴批。Stage A7 PARTIAL+2 OPEN、B/wiki GATED、savedataR79暂停、总体百分比null。
