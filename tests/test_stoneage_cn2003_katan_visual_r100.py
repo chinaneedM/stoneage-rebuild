@@ -1,5 +1,7 @@
 import copy
 import json
+import hashlib
+import io
 import unittest
 from tools import stoneage_cn2003_katan_visual_r100 as m
 
@@ -20,7 +22,7 @@ class KatanVisual(unittest.TestCase):
         self.assertEqual(m.parse_page(self.html, self.d), [x['url'] for x in self.d['images']])
 
     def test_hidden_or_duplicated_table_cannot_supply_evidence(self):
-        for before, after in [(b'<!--', b'-->'), (b'<script>', b'</script>'), (b'<style>', b'</style>')]:
+        for before, after in [(b'<!--', b'-->'), (b'<script>', b'</script>'), (b'<style>', b'</style>'), (b'<div hidden>', b'</div>'), (b'<div style="display: none">', b'</div>'), (b'<div aria-hidden="true">', b'</div>')]:
             with self.subTest(before=before), self.assertRaises(ValueError):
                 m.parse_page(before + self.html + after, self.d)
         with self.assertRaises(ValueError):
@@ -42,6 +44,18 @@ class KatanVisual(unittest.TestCase):
         for b in (b'', b'not a jpeg', b'\xff\xd8\xff\xd9'):
             with self.assertRaises(ValueError):
                 m.decode_image(b, self.d['images'][0])
+
+    def test_full_decoder_accepts_synthetic_and_rejects_matching_hash_truncation(self):
+        from PIL import Image
+        output = io.BytesIO()
+        Image.new('RGB', (8, 8), (20, 40, 60)).save(output, format='JPEG')
+        raw = output.getvalue()
+        expected = {'bytes': len(raw), 'sha256': hashlib.sha256(raw).hexdigest(), 'format': 'JPEG', 'size': [8, 8], 'mode': 'RGB', 'frames': 1}
+        self.assertEqual(m.decode_image(raw, expected)['size'], [8, 8])
+        truncated = raw[:len(raw) // 2]
+        expected.update(bytes=len(truncated), sha256=hashlib.sha256(truncated).hexdigest())
+        with self.assertRaises(OSError):
+            m.decode_image(truncated, expected)
 
     def test_forged_build_server_and_identity_claims_rejected(self):
         for key, value in [('tw10_same_build_authenticated', True), ('original_render_selector_proven', True), ('native_npc_id', 16000), ('server_handover_executed', True), ('ring_loss_conflict_resolved', True), ('stage_a_closed', True), ('overall_percent', 100)]:

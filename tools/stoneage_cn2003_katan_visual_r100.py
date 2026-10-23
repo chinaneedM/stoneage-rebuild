@@ -5,7 +5,6 @@ import io
 import json
 from html.parser import HTMLParser
 from pathlib import Path
-from urllib.parse import urljoin
 from urllib.request import urlopen
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -24,15 +23,17 @@ class Tables(HTMLParser):
         super().__init__(convert_charrefs=True)
         self.tables = []
         self.stack = []
-        self.hidden = 0
-        self.headings = []
+        self.hidden_tags = []
         self.text = []
 
     def handle_starttag(self, tag, attrs):
         a = dict(attrs)
-        if tag in ('script', 'style'):
-            self.hidden += 1
-        if self.hidden:
+        void = tag in ('area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'link', 'meta', 'param', 'source', 'track', 'wbr')
+        style = ''.join(a.get('style', '').lower().split())
+        hidden = tag in ('script', 'style') or 'hidden' in a or a.get('aria-hidden') == 'true' or 'display:none' in style or 'visibility:hidden' in style
+        if self.hidden_tags or hidden:
+            if not void:
+                self.hidden_tags.append(tag)
             return
         if tag == 'table':
             self.stack.append({'rows': [], 'row': None, 'cell': None, 'anchor': None})
@@ -51,10 +52,11 @@ class Tables(HTMLParser):
             t['cell']['images'].append({'href': t['anchor'], 'src': a.get('src')})
 
     def handle_endtag(self, tag):
-        if tag in ('script', 'style'):
-            self.hidden = max(0, self.hidden - 1)
+        if self.hidden_tags:
+            if tag in self.hidden_tags:
+                self.hidden_tags = self.hidden_tags[:len(self.hidden_tags) - 1 - self.hidden_tags[::-1].index(tag)]
             return
-        if self.hidden or not self.stack:
+        if not self.stack:
             return
         t = self.stack[-1]
         if tag == 'table':
@@ -65,7 +67,7 @@ class Tables(HTMLParser):
             t['anchor'] = None
 
     def handle_data(self, data):
-        if self.hidden:
+        if self.hidden_tags:
             return
         self.text.append(data)
         if self.stack and self.stack[-1]['cell'] is not None:
