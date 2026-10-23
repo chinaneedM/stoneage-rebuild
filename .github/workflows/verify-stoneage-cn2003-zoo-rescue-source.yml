@@ -1,0 +1,45 @@
+name: Verify CN2003 zoo rescue actors and ordered rewards
+on:
+  push:
+    paths:
+      - 'tools/stoneage_cn2003_zoo_rescue_source.py'
+      - 'tools/stoneage_jp2005_treasure_source.py'
+      - 'tests/test_stoneage_cn2003_zoo_rescue_source.py'
+      - 'research/recovered/STONEAGE-CN2003-ZOO-RESCUE-*.json'
+      - 'research/recovered/STONEAGE-CN2001-2003-SHELL-QUEST-SOURCE-R1.json'
+      - 'research/recovered/STONEAGE-WAEI-CN20-NEW-PET-FINITE-CATALOG-R1.json'
+      - 'research/recovered/STONEAGE-PREPRODUCTION-CONTENT-ARCHIVE-R1.json'
+      - '.github/workflows/verify-stoneage-cn2003-zoo-rescue-source.yml'
+  pull_request:
+    paths:
+      - 'tools/stoneage_cn2003_zoo_rescue_source.py'
+      - 'tools/stoneage_jp2005_treasure_source.py'
+      - 'tests/test_stoneage_cn2003_zoo_rescue_source.py'
+      - 'research/recovered/STONEAGE-CN2003-ZOO-RESCUE-*.json'
+      - 'research/recovered/STONEAGE-CN2001-2003-SHELL-QUEST-SOURCE-R1.json'
+      - 'research/recovered/STONEAGE-WAEI-CN20-NEW-PET-FINITE-CATALOG-R1.json'
+      - 'research/recovered/STONEAGE-PREPRODUCTION-CONTENT-ARCHIVE-R1.json'
+      - '.github/workflows/verify-stoneage-cn2003-zoo-rescue-source.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  bounded-source-replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install Pillow==12.3.0
+      - name: Named actors, radish gates, safety-report order and duplicate attack labels
+        run: python -m unittest tests.test_stoneage_cn2003_zoo_rescue_source -v
+      - name: Retrieve one dated zoo guide and two actual linked full NPC screens
+        run: python -m tools.stoneage_cn2003_zoo_rescue_source --fetch --output "$RUNNER_TEMP/r88-content/replay.json"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cn2003-zoo-rescue-derived-r88
+          path: ${{ runner.temp }}/r88-content/replay.json
+          if-no-files-found: error
+          retention-days: 30

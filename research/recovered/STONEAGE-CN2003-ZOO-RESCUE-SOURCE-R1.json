@@ -1,0 +1,2340 @@
+{
+  "schema": "stoneage.cn2003_zoo_rescue.source.r1",
+  "task": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-88",
+  "version_profile": "CN_SINA2003_EDEN_ZOO_RESCUE_EXACT_BUILD_UNKNOWN",
+  "source": {
+    "url": "https://games.sina.com.cn/zhqu/sta/article/2003-06-03/10646.shtml",
+    "http_status": 200,
+    "no_redirect": true,
+    "bytes": 72640,
+    "sha256": "e92f92126182fb0834f7ec329a615cb1b7629e54da1de1943dd016af828ad046",
+    "encoding": "GB18030_STRICT",
+    "visible_title": "《石器时代》任务功略-动物园任务",
+    "visible_publication": "2003-06-03 17:58",
+    "publisher_field": "新浪游戏",
+    "named_original_author": null,
+    "submission_link_label": "我要投稿",
+    "authority": "DATED_PORTAL_GUIDE_NOT_AUTHENTICATED_OPERATOR_SCRIPT",
+    "official_authorship_verified": false,
+    "actual_operator_script_acquired": false,
+    "current_bytes_authenticate_2003_original": false,
+    "exact_client_build": null
+  },
+  "images": [
+    {
+      "id": "I1",
+      "url": "https://image2.sina.com.cn/gm/newgames/0303/images/dongwu0603_08.jpg",
+      "http_status": 200,
+      "no_redirect": true,
+      "bytes": 108055,
+      "sha256": "3cdfea6514804d9ee9d7a0dd6b72c40df4bc2dafbf5c94654a190360dda82301",
+      "format": "JPEG",
+      "mode": "RGB",
+      "size": [
+        640,
+        480
+      ],
+      "frames": 1
+    },
+    {
+      "id": "I2",
+      "url": "https://image2.sina.com.cn/gm/newgames/0303/images/dongwu0603_020.jpg",
+      "http_status": 200,
+      "no_redirect": true,
+      "bytes": 88503,
+      "sha256": "1afc3b40e06f874c4b5b016bc2c852769ded5bcfa6c04a19bccee75d39425b8c",
+      "format": "JPEG",
+      "mode": "RGB",
+      "size": [
+        640,
+        480
+      ],
+      "frames": 1
+    }
+  ],
+  "visual_observations": [
+    {
+      "id": "I1",
+      "manual_visual_review": true,
+      "kind": "STATIC_INVENTORY_SHOVEL_TOOLTIP",
+      "displayed_item_name": "可以挖萝卜的铲子",
+      "displayed_description": "好用的铲子",
+      "item_selected": true,
+      "npc_name_readable": false,
+      "original_item_id_or_actual_delivery_verified": false,
+      "original_sprite_animation_or_native_id_verified": false,
+      "historical_2003_pixels_authenticated": false,
+      "interaction_or_item_effect_tested": false
+    },
+    {
+      "id": "I2",
+      "manual_visual_review": true,
+      "kind": "STATIC_NAMED_RESCUED_PET_STATUS_SAMPLE",
+      "displayed_pet_name": "动物园养的拉斯基",
+      "displayed_level": 1,
+      "displayed_next": 2,
+      "displayed_stats": {
+        "耐久力": {
+          "current": 17,
+          "maximum": 17
+        },
+        "攻击力": 2,
+        "防御力": 3,
+        "敏捷力": 2,
+        "忠诚度": 100
+      },
+      "visible_nonempty_element_bars": [
+        "火属性",
+        "风属性"
+      ],
+      "element_numeric_ratios": null,
+      "appearance": "RED_RABBITLIKE_FIGURE",
+      "one_displayed_pet_proves_species_initial_stats_or_growth": false,
+      "npc_name_readable": false,
+      "actual_combat_handover_or_reward_verified": false,
+      "original_sprite_animation_or_native_id_verified": false,
+      "historical_2003_pixels_authenticated": false,
+      "interaction_or_item_effect_tested": false
+    }
+  ],
+  "negative_boundaries": {
+    "official_authorship_verified": false,
+    "current_bytes_authenticate_2003_original": false,
+    "recommended90_is_hard_gate": false,
+    "moving_actor_coordinates_share_one_world_frame": false,
+    "restart_notes_are_observed_server_behavior": false,
+    "bert_five_points_prove_timed_closed_cycle": false,
+    "rabbit_twenty_two_points_prove_random_uniform_spawn": false,
+    "all_buipang_are_quest_leierpang": false,
+    "all_popodun_levels_are_valid": false,
+    "correct_feed_guarantees_encounter_or_capture": false,
+    "hit_first_advice_is_capture_probability_formula": false,
+    "shell_is_consumed_on_every_dialogue": false,
+    "bad_white_radish_spellings_are_verified_native_aliases": false,
+    "shovel_or_red_radish_confiscation_is_global_item_rule": false,
+    "after_fifth_narrative_is_verified_sixth_server_counter": false,
+    "forestry_clue_is_actual_lasiji_location": false,
+    "collar_and_black_clothes_are_guaranteed_drop_rates": false,
+    "duplicate_attack700_is_silently_defense700": false,
+    "enemy_samples_are_pet_master_stats": false,
+    "reported_lower_bounds_are_exact_values": false,
+    "map_header0_64_corrected_to_floor_entry20_64": false,
+    "report_safety_after_pet_return_still_guarantees_armour": false,
+    "buipang_newborn_means_verified_level1_stats": false,
+    "static_screen_proves_dialogue_choices_reward_or_combat_execution": false,
+    "web_catalog_positions_are_native_ids_or_same_instances": false,
+    "original_html_or_assets_committed": false,
+    "stage_b_started": false
+  },
+  "parent_pins": [
+    {
+      "path": "research/recovered/STONEAGE-CN2001-2003-SHELL-QUEST-SOURCE-R1.json",
+      "bytes": 7762,
+      "sha256": "411cd1fb8bec4c08e5ac78fa8987fb58f0cd7ee55c41397cbfcc9d0163e91d5f",
+      "git_blob": "7157f1aca0e4f806334bb4892d294d93d106690d"
+    },
+    {
+      "path": "research/recovered/STONEAGE-WAEI-CN20-NEW-PET-FINITE-CATALOG-R1.json",
+      "bytes": 173510,
+      "sha256": "8bcda48e9e8e298efe446b02f0039146fa4a81e509ca4d08c4989e6448f59fdb",
+      "git_blob": "f950aa33af0b3ec8693b2867758faf006aee546b"
+    },
+    {
+      "path": "research/recovered/STONEAGE-PREPRODUCTION-CONTENT-ARCHIVE-R1.json",
+      "bytes": 24489,
+      "sha256": "e87afebc8c9590142c7cc8831b578455b3427bf7c1d10520ae02a3e8082fbddb",
+      "git_blob": "2d5b3f081d5618287f431fbded943722a820c593"
+    }
+  ],
+  "parser_pin": {
+    "path": "tools/stoneage_jp2005_treasure_source.py",
+    "bytes": 20924,
+    "sha256": "d541c0fb832447f203ad0618ea86d0ed39e0a32bdf5c26f509dde6f5ffecba40",
+    "git_blob": "350e9d3769597ea4b47959cf2dbd3edf8d97916f"
+  },
+  "comparison": {
+    "shell_quest": {
+      "schema": "stoneage.cn2001_2003_shell_quest.source.r1",
+      "shell_item_is_textual_reference_not_native_id_join": true,
+      "southern_and_jilu_complete_quest_rules_backfilled": false
+    },
+    "cn20_web_pets": {
+      "schema": "stoneage.waei_cn20.new_pet_finite_catalog.r1",
+      "lilara_lasiji_gorilla_name_overlap_proves_same_native_instances": false,
+      "web_positions_are_native_pet_ids": false
+    },
+    "2024_mobile_reenactment_or_modern_private_server_rules_backfilled": false,
+    "modern_adoption_decided": false
+  },
+  "extraction": {
+    "name": "动物园任务",
+    "recommended_level": 90,
+    "hard_level_gate": null,
+    "prerequisite_as_reported": "COMPLETE_GOLD_FLYING_QUEST",
+    "feather_field_locations_as_written": [
+      "玛丽娜丝渔村",
+      "卡鲁它那村",
+      "福尔德村"
+    ],
+    "npcs": [
+      {
+        "label": "沙利斯园长",
+        "role": "QUEST_GIVER_AND_PET_RETURN",
+        "native_id": null
+      },
+      {
+        "label": "布伊太郎",
+        "role": "LEIERPANG_KEEPER_AND_APPRAISER",
+        "native_id": null
+      },
+      {
+        "label": "鲛岛太郎",
+        "role": "POPODUN_APPRAISER",
+        "native_id": null
+      },
+      {
+        "label": "里拉拉",
+        "role": "MOVING_WHITE_RABBIT_INFORMATION_AND_ARMOUR",
+        "native_id": null,
+        "sites_as_reported": [
+          {
+            "coordinate": [
+              166,
+              161
+            ],
+            "note_as_written": "宠物店旁",
+            "coordinate_scope": "EDEN_OUTDOOR_AS_GUIDE",
+            "restart_only_as_guide_claim": false,
+            "original_map_id": null
+          },
+          {
+            "coordinate": [
+              109,
+              51
+            ],
+            "note_as_written": "金飞航空旁",
+            "coordinate_scope": "EDEN_OUTDOOR_AS_GUIDE",
+            "restart_only_as_guide_claim": false,
+            "original_map_id": null
+          },
+          {
+            "coordinate": [
+              81,
+              69
+            ],
+            "note_as_written": "金飞航空左下方，靠近水池处（平常在这里是找不到的，只有在服务器重开机的时候，才能在这里找到！）",
+            "coordinate_scope": "EDEN_OUTDOOR_AS_GUIDE",
+            "restart_only_as_guide_claim": true,
+            "original_map_id": null
+          },
+          {
+            "coordinate": [
+              82,
+              37
+            ],
+            "note_as_written": "金飞航空左方，靠近北方出口处",
+            "coordinate_scope": "EDEN_OUTDOOR_AS_GUIDE",
+            "restart_only_as_guide_claim": false,
+            "original_map_id": null
+          },
+          {
+            "coordinate": [
+              132,
+              95
+            ],
+            "note_as_written": "格斗场右后方",
+            "coordinate_scope": "EDEN_OUTDOOR_AS_GUIDE",
+            "restart_only_as_guide_claim": false,
+            "original_map_id": null
+          },
+          {
+            "coordinate": [
+              171,
+              101
+            ],
+            "note_as_written": "剧院门口",
+            "coordinate_scope": "EDEN_OUTDOOR_AS_GUIDE",
+            "restart_only_as_guide_claim": false,
+            "original_map_id": null
+          },
+          {
+            "coordinate": [
+              122,
+              137
+            ],
+            "note_as_written": "格斗场门口",
+            "coordinate_scope": "EDEN_OUTDOOR_AS_GUIDE",
+            "restart_only_as_guide_claim": false,
+            "original_map_id": null
+          },
+          {
+            "coordinate": [
+              147,
+              141
+            ],
+            "note_as_written": "肉店右方",
+            "coordinate_scope": "EDEN_OUTDOOR_AS_GUIDE",
+            "restart_only_as_guide_claim": false,
+            "original_map_id": null
+          },
+          {
+            "coordinate": [
+              102,
+              181
+            ],
+            "note_as_written": "南方出口附近",
+            "coordinate_scope": "EDEN_OUTDOOR_AS_GUIDE",
+            "restart_only_as_guide_claim": false,
+            "original_map_id": null
+          },
+          {
+            "coordinate": [
+              21,
+              115
+            ],
+            "note_as_written": "西方出口附近",
+            "coordinate_scope": "EDEN_OUTDOOR_AS_GUIDE",
+            "restart_only_as_guide_claim": false,
+            "original_map_id": null
+          },
+          {
+            "coordinate": [
+              107,
+              98
+            ],
+            "note_as_written": "靠近神秘老人处",
+            "coordinate_scope": "EDEN_OUTDOOR_AS_GUIDE",
+            "restart_only_as_guide_claim": false,
+            "original_map_id": null
+          },
+          {
+            "coordinate": [
+              44,
+              61
+            ],
+            "note_as_written": "动物园的右后方，靠近山壁处",
+            "coordinate_scope": "EDEN_OUTDOOR_AS_GUIDE",
+            "restart_only_as_guide_claim": false,
+            "original_map_id": null
+          },
+          {
+            "coordinate": [
+              58,
+              139
+            ],
+            "note_as_written": "宠物竞技场门口",
+            "coordinate_scope": "EDEN_OUTDOOR_AS_GUIDE",
+            "restart_only_as_guide_claim": false,
+            "original_map_id": null
+          },
+          {
+            "coordinate": [
+              179,
+              119
+            ],
+            "note_as_written": "剧院前水池右方，靠近东方出口处",
+            "coordinate_scope": "EDEN_OUTDOOR_AS_GUIDE",
+            "restart_only_as_guide_claim": false,
+            "original_map_id": null
+          },
+          {
+            "coordinate": [
+              132,
+              180
+            ],
+            "note_as_written": "东南方水池（抓波波顿的地方）的左方，靠围墙处",
+            "coordinate_scope": "EDEN_OUTDOOR_AS_GUIDE",
+            "restart_only_as_guide_claim": false,
+            "original_map_id": null
+          },
+          {
+            "coordinate": [
+              35,
+              97
+            ],
+            "note_as_written": "动物园门口",
+            "coordinate_scope": "EDEN_OUTDOOR_AS_GUIDE",
+            "restart_only_as_guide_claim": false,
+            "original_map_id": null
+          },
+          {
+            "coordinate": [
+              9,
+              11
+            ],
+            "note_as_written": "伊甸训练所内",
+            "coordinate_scope": "INTERIOR_AS_NAMED_NOT_WORLD",
+            "restart_only_as_guide_claim": false,
+            "original_map_id": null
+          },
+          {
+            "coordinate": [
+              0,
+              12
+            ],
+            "note_as_written": "肉店内",
+            "coordinate_scope": "INTERIOR_AS_NAMED_NOT_WORLD",
+            "restart_only_as_guide_claim": false,
+            "original_map_id": null
+          },
+          {
+            "coordinate": [
+              14,
+              2
+            ],
+            "note_as_written": "医院内",
+            "coordinate_scope": "INTERIOR_AS_NAMED_NOT_WORLD",
+            "restart_only_as_guide_claim": false,
+            "original_map_id": null
+          },
+          {
+            "coordinate": [
+              7,
+              2
+            ],
+            "note_as_written": "员工宿舍内",
+            "coordinate_scope": "INTERIOR_AS_NAMED_NOT_WORLD",
+            "restart_only_as_guide_claim": false,
+            "original_map_id": null
+          },
+          {
+            "coordinate": [
+              10,
+              10
+            ],
+            "note_as_written": "旅馆内",
+            "coordinate_scope": "INTERIOR_AS_NAMED_NOT_WORLD",
+            "restart_only_as_guide_claim": false,
+            "original_map_id": null
+          },
+          {
+            "coordinate": [
+              2,
+              2
+            ],
+            "note_as_written": "动物园正后方的民房内",
+            "coordinate_scope": "INTERIOR_AS_NAMED_NOT_WORLD",
+            "restart_only_as_guide_claim": false,
+            "original_map_id": null
+          }
+        ]
+      },
+      {
+        "label": "伯特",
+        "role": "MOVING_GARDENER_SHOVEL_AND_RADISH",
+        "native_id": null,
+        "sites_as_reported": [
+          {
+            "coordinate": [
+              171,
+              72
+            ],
+            "note_as_written": "菜园内（这是只有服务器重开机的时候，才找得到的地点！）",
+            "coordinate_scope": "EDEN_OUTDOOR_AS_GUIDE",
+            "restart_only_as_guide_claim": true,
+            "original_map_id": null
+          },
+          {
+            "coordinate": [
+              134,
+              89
+            ],
+            "note_as_written": "格斗场右后方",
+            "coordinate_scope": "EDEN_OUTDOOR_AS_GUIDE",
+            "restart_only_as_guide_claim": false,
+            "original_map_id": null
+          },
+          {
+            "coordinate": [
+              184,
+              107
+            ],
+            "note_as_written": "剧院的右方，靠近东方出口处",
+            "coordinate_scope": "EDEN_OUTDOOR_AS_GUIDE",
+            "restart_only_as_guide_claim": false,
+            "original_map_id": null
+          },
+          {
+            "coordinate": [
+              146,
+              143
+            ],
+            "note_as_written": "肉店门口",
+            "coordinate_scope": "EDEN_OUTDOOR_AS_GUIDE",
+            "restart_only_as_guide_claim": false,
+            "original_map_id": null
+          },
+          {
+            "coordinate": [
+              186,
+              58
+            ],
+            "note_as_written": "菜园后方",
+            "coordinate_scope": "EDEN_OUTDOOR_AS_GUIDE",
+            "restart_only_as_guide_claim": false,
+            "original_map_id": null
+          }
+        ],
+        "ordered_movement_as_claimed": true,
+        "cycle_period_and_actual_path": null
+      },
+      {
+        "label": "白菜",
+        "role": "TALKING_PLANT_HINT_NOT_NATIVE_NPC_PROOF",
+        "native_id": null
+      },
+      {
+        "label": "席格",
+        "role": "DISGUISED_RESCUER_COMBAT_AND_LASIJI_HANDOVER",
+        "native_id": null
+      }
+    ],
+    "rescue_targets": [
+      {
+        "name": "雷尔胖",
+        "previous_name_in_story": "布伊胖",
+        "owner_as_told": "雷尔大人",
+        "appearance_as_written": "蓝色",
+        "outdoor_coordinate": [
+          75,
+          170
+        ],
+        "place": "员工宿舍后面",
+        "valid_target": "NAMED_LEIERPANG_NOT_OTHER_BUIPANG",
+        "feed": "雷尔胖专用饲料",
+        "alternative_feed_as_reported": "草食性饲料",
+        "appraiser": "布伊太郎",
+        "feed_reclaimed_after_appraisal": true,
+        "pet_consumed_at_appraisal": null
+      },
+      {
+        "name": "波波顿",
+        "outdoor_coordinate": [
+          170,
+          181
+        ],
+        "place": "东南方水池边",
+        "valid_target_level_as_reported": 1,
+        "feed": "肉食性饲料2",
+        "feed_location": "园长室最里面房间的饲料桶",
+        "appraiser": "鲛岛太郎",
+        "appraiser_place": "园长室隔壁"
+      },
+      {
+        "name": "拉斯基",
+        "appearance_as_written": "红兔子",
+        "nickname_as_written": "拉拉",
+        "dedicated_feed": null,
+        "acquisition_as_reported": "SIGE_HANDOVER_AFTER_FIFTH_FLOOR_BATTLE",
+        "capture_coordinate_or_native_id": null,
+        "single_status_screen_sample_ref": "I2"
+      }
+    ],
+    "capture_advice": {
+      "one_correct_feed_at_a_time": true,
+      "carrying_many_feeds": "DIFFICULT_TO_ENCOUNTER_DESIRED_PET_AS_GUIDE_CLAIM",
+      "hit_once_before_capture": "GUIDE_ADVICE_NOT_PROBABILITY_FORMULA",
+      "encounter_or_capture_rates": null
+    },
+    "shell_communication": {
+      "item": "不可思议的贝壳",
+      "needed_as_reported": true,
+      "listed_sources": [
+        "北岛弥生与日美子的友谊",
+        "南岛哥亚山事件",
+        "吉鲁岛小猪爱情故事"
+      ],
+      "consumption_or_all_other_prerequisites": null
+    },
+    "gardener_and_radish_flow": {
+      "spoken_tokens": [
+        "伯特",
+        "铲子",
+        "啦啦"
+      ],
+      "shovel": "可以挖萝卜的铲子",
+      "dig_products_as_reported": [
+        "白萝卜",
+        "红萝卜3"
+      ],
+      "show_red3_to_bert": true,
+      "bring_red4_from": "柯奥",
+      "white_radish_wordings_as_written": [
+        "不太差的白萝卜",
+        "还不差的白萝卜"
+      ],
+      "native_alias_verified": false,
+      "exchange_inputs_as_written": [
+        "红萝卜4",
+        "还不差的白萝卜"
+      ],
+      "exchange_output": "上等白萝卜",
+      "exchange_quantity_as_reported": 1,
+      "shovel_ground_disappears_and_reacquire_by_token": true,
+      "radish_ground_disappears_as_reported": true,
+      "before_rabbit_discard_shovel": true,
+      "carrying_shovel_confiscates": [
+        "铲子",
+        "上等白萝卜"
+      ],
+      "carrying_red_radish_confiscates": [
+        "红萝卜",
+        "上等白萝卜"
+      ],
+      "exact_item_ids_inventory_predicates_and_reset_flags": null
+    },
+    "rabbit_story_order": [
+      {
+        "source_occurrence": "FIRST",
+        "event": "BITES_RADISH_AND_RUNS"
+      },
+      {
+        "source_occurrence": "SECOND",
+        "event": "BITES_AGAIN"
+      },
+      {
+        "source_occurrence": "THIRD",
+        "event": "SUSPICIOUS_AND_WARNS"
+      },
+      {
+        "source_occurrence": "FOURTH",
+        "event": "ADMITS_LALA_NAME_THEN_RUNS"
+      },
+      {
+        "source_occurrence": "FIFTH",
+        "event": "REVEALS_LASIJI_LALA_NICKNAME_AND_ESCAPE_PLOT"
+      },
+      {
+        "source_occurrence": "FOLLOWUP_AFTER_FIFTH_NOT_NUMBERED_SERVER_COUNTER",
+        "event": "ADMITS_RELEASED_ALL_THREE_AND_GIVES_FORESTRY_DECOY"
+      }
+    ],
+    "clue_item_flow": [
+      {
+        "from": "FORESTRY_GORILLA_BATTLE",
+        "item": "格尔希洛的项圈",
+        "to": "里拉拉",
+        "reclaimed": true,
+        "next_clue": "大雕像"
+      },
+      {
+        "from": "ASK_RABBIT_AGAIN",
+        "spoken": "啦啦",
+        "next_clue": "伊甸园南边的雷尔大雕像"
+      },
+      {
+        "from": "STATUE_DELINQUENT_BATTLE",
+        "item": "黑色的服",
+        "to": "里拉拉",
+        "reclaimed": true
+      },
+      {
+        "from": "ASK_RABBIT_AGAIN",
+        "next_clue": "动物园后方的不良少年老巢"
+      },
+      {
+        "from": "DUNGEON_FLOOR4",
+        "item": "黑色的旗",
+        "purpose_as_reported": "PROVE_ABILITY_TO_BRING_LASIJI_BACK",
+        "consumption_or_drop_rate": null
+      }
+    ],
+    "sige_story": {
+      "group": "塔尔塔战士团",
+      "motive_as_told": "FIND_MISSING_OLD_LEADER",
+      "zoo_training_center": "CHARACTER_SUSPICION_NOT_OBJECTIVELY_PROVEN",
+      "disguised_as_delinquents_to_rescue_animals": true,
+      "rabbit_release_plan_was_theirs": false,
+      "hands_over_lasiji_after_defeat": true,
+      "original_dialogue_or_flags": null
+    },
+    "enemy_samples": [
+      {
+        "context_label": "凶悍的格尔希洛（林务局）",
+        "ordered_stat_entries": [
+          {
+            "label_as_written": "等级",
+            "value_as_written": "Lv80以上"
+          },
+          {
+            "label_as_written": "耐久力",
+            "value_as_written": "2400以上"
+          },
+          {
+            "label_as_written": "攻击力",
+            "value_as_written": "290以上"
+          },
+          {
+            "label_as_written": "防御力",
+            "value_as_written": "90以上"
+          },
+          {
+            "label_as_written": "敏捷力",
+            "value_as_written": "260以上"
+          }
+        ],
+        "skills_as_written": [
+          "三段攻击",
+          "破除防御",
+          "T一击必杀改"
+        ],
+        "duplicate_attack_label_unresolved": false,
+        "native_enemy_or_pet_master_id": null
+      },
+      {
+        "context_label": "不良少年",
+        "ordered_stat_entries": [
+          {
+            "label_as_written": "等级",
+            "value_as_written": "Lv70以上"
+          },
+          {
+            "label_as_written": "耐久力",
+            "value_as_written": "1700-1900"
+          },
+          {
+            "label_as_written": "攻击力",
+            "value_as_written": "300"
+          },
+          {
+            "label_as_written": "防御力",
+            "value_as_written": "300-350"
+          },
+          {
+            "label_as_written": "敏捷力",
+            "value_as_written": "160-180"
+          }
+        ],
+        "skills_as_written": [
+          "连续攻击",
+          "一击必杀",
+          "落石撞击（地魔法Lv2）"
+        ],
+        "duplicate_attack_label_unresolved": false,
+        "native_enemy_or_pet_master_id": null
+      },
+      {
+        "context_label": "凶悍的格尔希洛（不良少年洞窟）",
+        "ordered_stat_entries": [
+          {
+            "label_as_written": "等级",
+            "value_as_written": "Lv70以上"
+          },
+          {
+            "label_as_written": "耐久力",
+            "value_as_written": "2700以上"
+          },
+          {
+            "label_as_written": "攻击力",
+            "value_as_written": "350以上"
+          },
+          {
+            "label_as_written": "防御力",
+            "value_as_written": "300以上"
+          },
+          {
+            "label_as_written": "敏捷力",
+            "value_as_written": "300以上"
+          }
+        ],
+        "skills_as_written": [
+          "三段攻击",
+          "破除防御",
+          "T一击必杀改"
+        ],
+        "duplicate_attack_label_unresolved": false,
+        "native_enemy_or_pet_master_id": null
+      },
+      {
+        "context_label": "席格",
+        "ordered_stat_entries": [
+          {
+            "label_as_written": "等级",
+            "value_as_written": "Lv70以上"
+          },
+          {
+            "label_as_written": "耐久力",
+            "value_as_written": "3600以上"
+          },
+          {
+            "label_as_written": "攻击力",
+            "value_as_written": "500"
+          },
+          {
+            "label_as_written": "攻击力",
+            "value_as_written": "700"
+          },
+          {
+            "label_as_written": "敏捷力",
+            "value_as_written": "600"
+          }
+        ],
+        "skills_as_written": [
+          "T一击必杀改",
+          "土石流（地魔法Lv3-1）",
+          "巨岩撞击（地魔法Lv3-2）",
+          "地震（地魔法Lv3-3）"
+        ],
+        "duplicate_attack_label_unresolved": true,
+        "native_enemy_or_pet_master_id": null
+      }
+    ],
+    "enemy_comparison": {
+      "prose_claim": "DEN_GORILLA_LESS_FIERCE_THAN_FORESTRY",
+      "numeric_samples_harmonized_to_prose": false
+    },
+    "dungeon": {
+      "name_as_written": "伊甸地下信道（不良少年洞窟）",
+      "header_coordinate": [
+        0,
+        64
+      ],
+      "floor_pairs": [
+        {
+          "floor_as_written": "一",
+          "entry_local_coord": [
+            20,
+            64
+          ],
+          "exit_local_coord": [
+            20,
+            10
+          ]
+        },
+        {
+          "floor_as_written": "二",
+          "entry_local_coord": [
+            1,
+            29
+          ],
+          "exit_local_coord": [
+            47,
+            34
+          ]
+        },
+        {
+          "floor_as_written": "三",
+          "entry_local_coord": [
+            1,
+            17
+          ],
+          "exit_local_coord": [
+            32,
+            48
+          ]
+        },
+        {
+          "floor_as_written": "四",
+          "entry_local_coord": [
+            16,
+            4
+          ],
+          "exit_local_coord": [
+            34,
+            34
+          ]
+        }
+      ],
+      "header_vs_floor1_entry_resolution": null,
+      "source_enemy_level_range": [
+        70,
+        90
+      ],
+      "source_enemy_labels": [
+        "席格",
+        "不良少年",
+        "凶悍的格尔希洛"
+      ],
+      "fifth_floor_battle": "席格",
+      "runtime_map_ids_or_reverse_transitions": null
+    },
+    "completion_order": {
+      "report_lasiji_safety_to_rabbit_before_returning_three": true,
+      "return_all_three_to": "沙利斯园长",
+      "zoo_reward": {
+        "name": "布伊胖",
+        "quantity_as_reported": 1,
+        "description_as_written": "刚出生",
+        "verified_numeric_level_or_stats": null
+      },
+      "armour_followup": {
+        "turn_in": "里拉拉咬过的白萝卜",
+        "recipient": "里拉拉",
+        "item_wordings": [
+          "里拉拉赠送的铠",
+          "里拉拉的铠"
+        ],
+        "stats_as_written": {
+          "防": 40,
+          "敏": 10
+        },
+        "spirit_as_written": "恩惠的精灵",
+        "spirit_level": 4,
+        "missed_safety_report_loses_armour_as_guide_claim": true
+      }
+    },
+    "image_links": {
+      "actual_full_thumbnail_pairs": 26,
+      "selected_full_indexes_one_based": [
+        8,
+        20
+      ],
+      "other_full_images_not_acquired": 24
+    },
+    "exact_client_build": null,
+    "original_server_runtime_verified": false,
+    "core_fingerprint": {
+      "characters": 5709,
+      "utf8_bytes": 16417,
+      "sha256": "88dcb71b8dc3f8779ee546b999b68c6c18304d5f97d822bc8301875a1ec47151"
+    }
+  },
+  "catalog_records": [
+    {
+      "record_id": "CN2003-R88-quest",
+      "entity_type": "DOCUMENTARY_ZOO_RESCUE_FLOW",
+      "collection": "quests",
+      "version_profile": "CN_SINA2003_EDEN_ZOO_RESCUE_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "PORTAL_GUIDE_OR_STATIC_SCREEN_NOT_SERVER_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "name": "动物园任务",
+        "recommended_level": 90,
+        "hard_level_gate": null,
+        "prerequisite_as_reported": "COMPLETE_GOLD_FLYING_QUEST",
+        "feather_field_locations_as_written": [
+          "玛丽娜丝渔村",
+          "卡鲁它那村",
+          "福尔德村"
+        ],
+        "npcs": [
+          {
+            "label": "沙利斯园长",
+            "role": "QUEST_GIVER_AND_PET_RETURN",
+            "native_id": null
+          },
+          {
+            "label": "布伊太郎",
+            "role": "LEIERPANG_KEEPER_AND_APPRAISER",
+            "native_id": null
+          },
+          {
+            "label": "鲛岛太郎",
+            "role": "POPODUN_APPRAISER",
+            "native_id": null
+          },
+          {
+            "label": "里拉拉",
+            "role": "MOVING_WHITE_RABBIT_INFORMATION_AND_ARMOUR",
+            "native_id": null,
+            "sites_as_reported": [
+              {
+                "coordinate": [
+                  166,
+                  161
+                ],
+                "note_as_written": "宠物店旁",
+                "coordinate_scope": "EDEN_OUTDOOR_AS_GUIDE",
+                "restart_only_as_guide_claim": false,
+                "original_map_id": null
+              },
+              {
+                "coordinate": [
+                  109,
+                  51
+                ],
+                "note_as_written": "金飞航空旁",
+                "coordinate_scope": "EDEN_OUTDOOR_AS_GUIDE",
+                "restart_only_as_guide_claim": false,
+                "original_map_id": null
+              },
+              {
+                "coordinate": [
+                  81,
+                  69
+                ],
+                "note_as_written": "金飞航空左下方，靠近水池处（平常在这里是找不到的，只有在服务器重开机的时候，才能在这里找到！）",
+                "coordinate_scope": "EDEN_OUTDOOR_AS_GUIDE",
+                "restart_only_as_guide_claim": true,
+                "original_map_id": null
+              },
+              {
+                "coordinate": [
+                  82,
+                  37
+                ],
+                "note_as_written": "金飞航空左方，靠近北方出口处",
+                "coordinate_scope": "EDEN_OUTDOOR_AS_GUIDE",
+                "restart_only_as_guide_claim": false,
+                "original_map_id": null
+              },
+              {
+                "coordinate": [
+                  132,
+                  95
+                ],
+                "note_as_written": "格斗场右后方",
+                "coordinate_scope": "EDEN_OUTDOOR_AS_GUIDE",
+                "restart_only_as_guide_claim": false,
+                "original_map_id": null
+              },
+              {
+                "coordinate": [
+                  171,
+                  101
+                ],
+                "note_as_written": "剧院门口",
+                "coordinate_scope": "EDEN_OUTDOOR_AS_GUIDE",
+                "restart_only_as_guide_claim": false,
+                "original_map_id": null
+              },
+              {
+                "coordinate": [
+                  122,
+                  137
+                ],
+                "note_as_written": "格斗场门口",
+                "coordinate_scope": "EDEN_OUTDOOR_AS_GUIDE",
+                "restart_only_as_guide_claim": false,
+                "original_map_id": null
+              },
+              {
+                "coordinate": [
+                  147,
+                  141
+                ],
+                "note_as_written": "肉店右方",
+                "coordinate_scope": "EDEN_OUTDOOR_AS_GUIDE",
+                "restart_only_as_guide_claim": false,
+                "original_map_id": null
+              },
+              {
+                "coordinate": [
+                  102,
+                  181
+                ],
+                "note_as_written": "南方出口附近",
+                "coordinate_scope": "EDEN_OUTDOOR_AS_GUIDE",
+                "restart_only_as_guide_claim": false,
+                "original_map_id": null
+              },
+              {
+                "coordinate": [
+                  21,
+                  115
+                ],
+                "note_as_written": "西方出口附近",
+                "coordinate_scope": "EDEN_OUTDOOR_AS_GUIDE",
+                "restart_only_as_guide_claim": false,
+                "original_map_id": null
+              },
+              {
+                "coordinate": [
+                  107,
+                  98
+                ],
+                "note_as_written": "靠近神秘老人处",
+                "coordinate_scope": "EDEN_OUTDOOR_AS_GUIDE",
+                "restart_only_as_guide_claim": false,
+                "original_map_id": null
+              },
+              {
+                "coordinate": [
+                  44,
+                  61
+                ],
+                "note_as_written": "动物园的右后方，靠近山壁处",
+                "coordinate_scope": "EDEN_OUTDOOR_AS_GUIDE",
+                "restart_only_as_guide_claim": false,
+                "original_map_id": null
+              },
+              {
+                "coordinate": [
+                  58,
+                  139
+                ],
+                "note_as_written": "宠物竞技场门口",
+                "coordinate_scope": "EDEN_OUTDOOR_AS_GUIDE",
+                "restart_only_as_guide_claim": false,
+                "original_map_id": null
+              },
+              {
+                "coordinate": [
+                  179,
+                  119
+                ],
+                "note_as_written": "剧院前水池右方，靠近东方出口处",
+                "coordinate_scope": "EDEN_OUTDOOR_AS_GUIDE",
+                "restart_only_as_guide_claim": false,
+                "original_map_id": null
+              },
+              {
+                "coordinate": [
+                  132,
+                  180
+                ],
+                "note_as_written": "东南方水池（抓波波顿的地方）的左方，靠围墙处",
+                "coordinate_scope": "EDEN_OUTDOOR_AS_GUIDE",
+                "restart_only_as_guide_claim": false,
+                "original_map_id": null
+              },
+              {
+                "coordinate": [
+                  35,
+                  97
+                ],
+                "note_as_written": "动物园门口",
+                "coordinate_scope": "EDEN_OUTDOOR_AS_GUIDE",
+                "restart_only_as_guide_claim": false,
+                "original_map_id": null
+              },
+              {
+                "coordinate": [
+                  9,
+                  11
+                ],
+                "note_as_written": "伊甸训练所内",
+                "coordinate_scope": "INTERIOR_AS_NAMED_NOT_WORLD",
+                "restart_only_as_guide_claim": false,
+                "original_map_id": null
+              },
+              {
+                "coordinate": [
+                  0,
+                  12
+                ],
+                "note_as_written": "肉店内",
+                "coordinate_scope": "INTERIOR_AS_NAMED_NOT_WORLD",
+                "restart_only_as_guide_claim": false,
+                "original_map_id": null
+              },
+              {
+                "coordinate": [
+                  14,
+                  2
+                ],
+                "note_as_written": "医院内",
+                "coordinate_scope": "INTERIOR_AS_NAMED_NOT_WORLD",
+                "restart_only_as_guide_claim": false,
+                "original_map_id": null
+              },
+              {
+                "coordinate": [
+                  7,
+                  2
+                ],
+                "note_as_written": "员工宿舍内",
+                "coordinate_scope": "INTERIOR_AS_NAMED_NOT_WORLD",
+                "restart_only_as_guide_claim": false,
+                "original_map_id": null
+              },
+              {
+                "coordinate": [
+                  10,
+                  10
+                ],
+                "note_as_written": "旅馆内",
+                "coordinate_scope": "INTERIOR_AS_NAMED_NOT_WORLD",
+                "restart_only_as_guide_claim": false,
+                "original_map_id": null
+              },
+              {
+                "coordinate": [
+                  2,
+                  2
+                ],
+                "note_as_written": "动物园正后方的民房内",
+                "coordinate_scope": "INTERIOR_AS_NAMED_NOT_WORLD",
+                "restart_only_as_guide_claim": false,
+                "original_map_id": null
+              }
+            ]
+          },
+          {
+            "label": "伯特",
+            "role": "MOVING_GARDENER_SHOVEL_AND_RADISH",
+            "native_id": null,
+            "sites_as_reported": [
+              {
+                "coordinate": [
+                  171,
+                  72
+                ],
+                "note_as_written": "菜园内（这是只有服务器重开机的时候，才找得到的地点！）",
+                "coordinate_scope": "EDEN_OUTDOOR_AS_GUIDE",
+                "restart_only_as_guide_claim": true,
+                "original_map_id": null
+              },
+              {
+                "coordinate": [
+                  134,
+                  89
+                ],
+                "note_as_written": "格斗场右后方",
+                "coordinate_scope": "EDEN_OUTDOOR_AS_GUIDE",
+                "restart_only_as_guide_claim": false,
+                "original_map_id": null
+              },
+              {
+                "coordinate": [
+                  184,
+                  107
+                ],
+                "note_as_written": "剧院的右方，靠近东方出口处",
+                "coordinate_scope": "EDEN_OUTDOOR_AS_GUIDE",
+                "restart_only_as_guide_claim": false,
+                "original_map_id": null
+              },
+              {
+                "coordinate": [
+                  146,
+                  143
+                ],
+                "note_as_written": "肉店门口",
+                "coordinate_scope": "EDEN_OUTDOOR_AS_GUIDE",
+                "restart_only_as_guide_claim": false,
+                "original_map_id": null
+              },
+              {
+                "coordinate": [
+                  186,
+                  58
+                ],
+                "note_as_written": "菜园后方",
+                "coordinate_scope": "EDEN_OUTDOOR_AS_GUIDE",
+                "restart_only_as_guide_claim": false,
+                "original_map_id": null
+              }
+            ],
+            "ordered_movement_as_claimed": true,
+            "cycle_period_and_actual_path": null
+          },
+          {
+            "label": "白菜",
+            "role": "TALKING_PLANT_HINT_NOT_NATIVE_NPC_PROOF",
+            "native_id": null
+          },
+          {
+            "label": "席格",
+            "role": "DISGUISED_RESCUER_COMBAT_AND_LASIJI_HANDOVER",
+            "native_id": null
+          }
+        ],
+        "rescue_targets": [
+          {
+            "name": "雷尔胖",
+            "previous_name_in_story": "布伊胖",
+            "owner_as_told": "雷尔大人",
+            "appearance_as_written": "蓝色",
+            "outdoor_coordinate": [
+              75,
+              170
+            ],
+            "place": "员工宿舍后面",
+            "valid_target": "NAMED_LEIERPANG_NOT_OTHER_BUIPANG",
+            "feed": "雷尔胖专用饲料",
+            "alternative_feed_as_reported": "草食性饲料",
+            "appraiser": "布伊太郎",
+            "feed_reclaimed_after_appraisal": true,
+            "pet_consumed_at_appraisal": null
+          },
+          {
+            "name": "波波顿",
+            "outdoor_coordinate": [
+              170,
+              181
+            ],
+            "place": "东南方水池边",
+            "valid_target_level_as_reported": 1,
+            "feed": "肉食性饲料2",
+            "feed_location": "园长室最里面房间的饲料桶",
+            "appraiser": "鲛岛太郎",
+            "appraiser_place": "园长室隔壁"
+          },
+          {
+            "name": "拉斯基",
+            "appearance_as_written": "红兔子",
+            "nickname_as_written": "拉拉",
+            "dedicated_feed": null,
+            "acquisition_as_reported": "SIGE_HANDOVER_AFTER_FIFTH_FLOOR_BATTLE",
+            "capture_coordinate_or_native_id": null,
+            "single_status_screen_sample_ref": "I2"
+          }
+        ],
+        "capture_advice": {
+          "one_correct_feed_at_a_time": true,
+          "carrying_many_feeds": "DIFFICULT_TO_ENCOUNTER_DESIRED_PET_AS_GUIDE_CLAIM",
+          "hit_once_before_capture": "GUIDE_ADVICE_NOT_PROBABILITY_FORMULA",
+          "encounter_or_capture_rates": null
+        },
+        "shell_communication": {
+          "item": "不可思议的贝壳",
+          "needed_as_reported": true,
+          "listed_sources": [
+            "北岛弥生与日美子的友谊",
+            "南岛哥亚山事件",
+            "吉鲁岛小猪爱情故事"
+          ],
+          "consumption_or_all_other_prerequisites": null
+        },
+        "gardener_and_radish_flow": {
+          "spoken_tokens": [
+            "伯特",
+            "铲子",
+            "啦啦"
+          ],
+          "shovel": "可以挖萝卜的铲子",
+          "dig_products_as_reported": [
+            "白萝卜",
+            "红萝卜3"
+          ],
+          "show_red3_to_bert": true,
+          "bring_red4_from": "柯奥",
+          "white_radish_wordings_as_written": [
+            "不太差的白萝卜",
+            "还不差的白萝卜"
+          ],
+          "native_alias_verified": false,
+          "exchange_inputs_as_written": [
+            "红萝卜4",
+            "还不差的白萝卜"
+          ],
+          "exchange_output": "上等白萝卜",
+          "exchange_quantity_as_reported": 1,
+          "shovel_ground_disappears_and_reacquire_by_token": true,
+          "radish_ground_disappears_as_reported": true,
+          "before_rabbit_discard_shovel": true,
+          "carrying_shovel_confiscates": [
+            "铲子",
+            "上等白萝卜"
+          ],
+          "carrying_red_radish_confiscates": [
+            "红萝卜",
+            "上等白萝卜"
+          ],
+          "exact_item_ids_inventory_predicates_and_reset_flags": null
+        },
+        "rabbit_story_order": [
+          {
+            "source_occurrence": "FIRST",
+            "event": "BITES_RADISH_AND_RUNS"
+          },
+          {
+            "source_occurrence": "SECOND",
+            "event": "BITES_AGAIN"
+          },
+          {
+            "source_occurrence": "THIRD",
+            "event": "SUSPICIOUS_AND_WARNS"
+          },
+          {
+            "source_occurrence": "FOURTH",
+            "event": "ADMITS_LALA_NAME_THEN_RUNS"
+          },
+          {
+            "source_occurrence": "FIFTH",
+            "event": "REVEALS_LASIJI_LALA_NICKNAME_AND_ESCAPE_PLOT"
+          },
+          {
+            "source_occurrence": "FOLLOWUP_AFTER_FIFTH_NOT_NUMBERED_SERVER_COUNTER",
+            "event": "ADMITS_RELEASED_ALL_THREE_AND_GIVES_FORESTRY_DECOY"
+          }
+        ],
+        "clue_item_flow": [
+          {
+            "from": "FORESTRY_GORILLA_BATTLE",
+            "item": "格尔希洛的项圈",
+            "to": "里拉拉",
+            "reclaimed": true,
+            "next_clue": "大雕像"
+          },
+          {
+            "from": "ASK_RABBIT_AGAIN",
+            "spoken": "啦啦",
+            "next_clue": "伊甸园南边的雷尔大雕像"
+          },
+          {
+            "from": "STATUE_DELINQUENT_BATTLE",
+            "item": "黑色的服",
+            "to": "里拉拉",
+            "reclaimed": true
+          },
+          {
+            "from": "ASK_RABBIT_AGAIN",
+            "next_clue": "动物园后方的不良少年老巢"
+          },
+          {
+            "from": "DUNGEON_FLOOR4",
+            "item": "黑色的旗",
+            "purpose_as_reported": "PROVE_ABILITY_TO_BRING_LASIJI_BACK",
+            "consumption_or_drop_rate": null
+          }
+        ],
+        "sige_story": {
+          "group": "塔尔塔战士团",
+          "motive_as_told": "FIND_MISSING_OLD_LEADER",
+          "zoo_training_center": "CHARACTER_SUSPICION_NOT_OBJECTIVELY_PROVEN",
+          "disguised_as_delinquents_to_rescue_animals": true,
+          "rabbit_release_plan_was_theirs": false,
+          "hands_over_lasiji_after_defeat": true,
+          "original_dialogue_or_flags": null
+        },
+        "enemy_samples": [
+          {
+            "context_label": "凶悍的格尔希洛（林务局）",
+            "ordered_stat_entries": [
+              {
+                "label_as_written": "等级",
+                "value_as_written": "Lv80以上"
+              },
+              {
+                "label_as_written": "耐久力",
+                "value_as_written": "2400以上"
+              },
+              {
+                "label_as_written": "攻击力",
+                "value_as_written": "290以上"
+              },
+              {
+                "label_as_written": "防御力",
+                "value_as_written": "90以上"
+              },
+              {
+                "label_as_written": "敏捷力",
+                "value_as_written": "260以上"
+              }
+            ],
+            "skills_as_written": [
+              "三段攻击",
+              "破除防御",
+              "T一击必杀改"
+            ],
+            "duplicate_attack_label_unresolved": false,
+            "native_enemy_or_pet_master_id": null
+          },
+          {
+            "context_label": "不良少年",
+            "ordered_stat_entries": [
+              {
+                "label_as_written": "等级",
+                "value_as_written": "Lv70以上"
+              },
+              {
+                "label_as_written": "耐久力",
+                "value_as_written": "1700-1900"
+              },
+              {
+                "label_as_written": "攻击力",
+                "value_as_written": "300"
+              },
+              {
+                "label_as_written": "防御力",
+                "value_as_written": "300-350"
+              },
+              {
+                "label_as_written": "敏捷力",
+                "value_as_written": "160-180"
+              }
+            ],
+            "skills_as_written": [
+              "连续攻击",
+              "一击必杀",
+              "落石撞击（地魔法Lv2）"
+            ],
+            "duplicate_attack_label_unresolved": false,
+            "native_enemy_or_pet_master_id": null
+          },
+          {
+            "context_label": "凶悍的格尔希洛（不良少年洞窟）",
+            "ordered_stat_entries": [
+              {
+                "label_as_written": "等级",
+                "value_as_written": "Lv70以上"
+              },
+              {
+                "label_as_written": "耐久力",
+                "value_as_written": "2700以上"
+              },
+              {
+                "label_as_written": "攻击力",
+                "value_as_written": "350以上"
+              },
+              {
+                "label_as_written": "防御力",
+                "value_as_written": "300以上"
+              },
+              {
+                "label_as_written": "敏捷力",
+                "value_as_written": "300以上"
+              }
+            ],
+            "skills_as_written": [
+              "三段攻击",
+              "破除防御",
+              "T一击必杀改"
+            ],
+            "duplicate_attack_label_unresolved": false,
+            "native_enemy_or_pet_master_id": null
+          },
+          {
+            "context_label": "席格",
+            "ordered_stat_entries": [
+              {
+                "label_as_written": "等级",
+                "value_as_written": "Lv70以上"
+              },
+              {
+                "label_as_written": "耐久力",
+                "value_as_written": "3600以上"
+              },
+              {
+                "label_as_written": "攻击力",
+                "value_as_written": "500"
+              },
+              {
+                "label_as_written": "攻击力",
+                "value_as_written": "700"
+              },
+              {
+                "label_as_written": "敏捷力",
+                "value_as_written": "600"
+              }
+            ],
+            "skills_as_written": [
+              "T一击必杀改",
+              "土石流（地魔法Lv3-1）",
+              "巨岩撞击（地魔法Lv3-2）",
+              "地震（地魔法Lv3-3）"
+            ],
+            "duplicate_attack_label_unresolved": true,
+            "native_enemy_or_pet_master_id": null
+          }
+        ],
+        "enemy_comparison": {
+          "prose_claim": "DEN_GORILLA_LESS_FIERCE_THAN_FORESTRY",
+          "numeric_samples_harmonized_to_prose": false
+        },
+        "dungeon": {
+          "name_as_written": "伊甸地下信道（不良少年洞窟）",
+          "header_coordinate": [
+            0,
+            64
+          ],
+          "floor_pairs": [
+            {
+              "floor_as_written": "一",
+              "entry_local_coord": [
+                20,
+                64
+              ],
+              "exit_local_coord": [
+                20,
+                10
+              ]
+            },
+            {
+              "floor_as_written": "二",
+              "entry_local_coord": [
+                1,
+                29
+              ],
+              "exit_local_coord": [
+                47,
+                34
+              ]
+            },
+            {
+              "floor_as_written": "三",
+              "entry_local_coord": [
+                1,
+                17
+              ],
+              "exit_local_coord": [
+                32,
+                48
+              ]
+            },
+            {
+              "floor_as_written": "四",
+              "entry_local_coord": [
+                16,
+                4
+              ],
+              "exit_local_coord": [
+                34,
+                34
+              ]
+            }
+          ],
+          "header_vs_floor1_entry_resolution": null,
+          "source_enemy_level_range": [
+            70,
+            90
+          ],
+          "source_enemy_labels": [
+            "席格",
+            "不良少年",
+            "凶悍的格尔希洛"
+          ],
+          "fifth_floor_battle": "席格",
+          "runtime_map_ids_or_reverse_transitions": null
+        },
+        "completion_order": {
+          "report_lasiji_safety_to_rabbit_before_returning_three": true,
+          "return_all_three_to": "沙利斯园长",
+          "zoo_reward": {
+            "name": "布伊胖",
+            "quantity_as_reported": 1,
+            "description_as_written": "刚出生",
+            "verified_numeric_level_or_stats": null
+          },
+          "armour_followup": {
+            "turn_in": "里拉拉咬过的白萝卜",
+            "recipient": "里拉拉",
+            "item_wordings": [
+              "里拉拉赠送的铠",
+              "里拉拉的铠"
+            ],
+            "stats_as_written": {
+              "防": 40,
+              "敏": 10
+            },
+            "spirit_as_written": "恩惠的精灵",
+            "spirit_level": 4,
+            "missed_safety_report_loses_armour_as_guide_claim": true
+          }
+        },
+        "image_links": {
+          "actual_full_thumbnail_pairs": 26,
+          "selected_full_indexes_one_based": [
+            8,
+            20
+          ],
+          "other_full_images_not_acquired": 24
+        },
+        "exact_client_build": null,
+        "original_server_runtime_verified": false,
+        "core_fingerprint": {
+          "characters": 5709,
+          "utf8_bytes": 16417,
+          "sha256": "88dcb71b8dc3f8779ee546b999b68c6c18304d5f97d822bc8301875a1ec47151"
+        }
+      }
+    },
+    {
+      "record_id": "CN2003-R88-npc-0",
+      "entity_type": "DOCUMENTARY_NAMED_ACTOR_OR_TALKING_OBJECT",
+      "collection": "npcs",
+      "version_profile": "CN_SINA2003_EDEN_ZOO_RESCUE_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "PORTAL_GUIDE_OR_STATIC_SCREEN_NOT_SERVER_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "label": "沙利斯园长",
+        "role": "QUEST_GIVER_AND_PET_RETURN",
+        "native_id": null
+      }
+    },
+    {
+      "record_id": "CN2003-R88-npc-1",
+      "entity_type": "DOCUMENTARY_NAMED_ACTOR_OR_TALKING_OBJECT",
+      "collection": "npcs",
+      "version_profile": "CN_SINA2003_EDEN_ZOO_RESCUE_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "PORTAL_GUIDE_OR_STATIC_SCREEN_NOT_SERVER_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "label": "布伊太郎",
+        "role": "LEIERPANG_KEEPER_AND_APPRAISER",
+        "native_id": null
+      }
+    },
+    {
+      "record_id": "CN2003-R88-npc-2",
+      "entity_type": "DOCUMENTARY_NAMED_ACTOR_OR_TALKING_OBJECT",
+      "collection": "npcs",
+      "version_profile": "CN_SINA2003_EDEN_ZOO_RESCUE_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "PORTAL_GUIDE_OR_STATIC_SCREEN_NOT_SERVER_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "label": "鲛岛太郎",
+        "role": "POPODUN_APPRAISER",
+        "native_id": null
+      }
+    },
+    {
+      "record_id": "CN2003-R88-npc-3",
+      "entity_type": "DOCUMENTARY_NAMED_ACTOR_OR_TALKING_OBJECT",
+      "collection": "npcs",
+      "version_profile": "CN_SINA2003_EDEN_ZOO_RESCUE_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "PORTAL_GUIDE_OR_STATIC_SCREEN_NOT_SERVER_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "label": "里拉拉",
+        "role": "MOVING_WHITE_RABBIT_INFORMATION_AND_ARMOUR",
+        "native_id": null,
+        "sites_as_reported": [
+          {
+            "coordinate": [
+              166,
+              161
+            ],
+            "note_as_written": "宠物店旁",
+            "coordinate_scope": "EDEN_OUTDOOR_AS_GUIDE",
+            "restart_only_as_guide_claim": false,
+            "original_map_id": null
+          },
+          {
+            "coordinate": [
+              109,
+              51
+            ],
+            "note_as_written": "金飞航空旁",
+            "coordinate_scope": "EDEN_OUTDOOR_AS_GUIDE",
+            "restart_only_as_guide_claim": false,
+            "original_map_id": null
+          },
+          {
+            "coordinate": [
+              81,
+              69
+            ],
+            "note_as_written": "金飞航空左下方，靠近水池处（平常在这里是找不到的，只有在服务器重开机的时候，才能在这里找到！）",
+            "coordinate_scope": "EDEN_OUTDOOR_AS_GUIDE",
+            "restart_only_as_guide_claim": true,
+            "original_map_id": null
+          },
+          {
+            "coordinate": [
+              82,
+              37
+            ],
+            "note_as_written": "金飞航空左方，靠近北方出口处",
+            "coordinate_scope": "EDEN_OUTDOOR_AS_GUIDE",
+            "restart_only_as_guide_claim": false,
+            "original_map_id": null
+          },
+          {
+            "coordinate": [
+              132,
+              95
+            ],
+            "note_as_written": "格斗场右后方",
+            "coordinate_scope": "EDEN_OUTDOOR_AS_GUIDE",
+            "restart_only_as_guide_claim": false,
+            "original_map_id": null
+          },
+          {
+            "coordinate": [
+              171,
+              101
+            ],
+            "note_as_written": "剧院门口",
+            "coordinate_scope": "EDEN_OUTDOOR_AS_GUIDE",
+            "restart_only_as_guide_claim": false,
+            "original_map_id": null
+          },
+          {
+            "coordinate": [
+              122,
+              137
+            ],
+            "note_as_written": "格斗场门口",
+            "coordinate_scope": "EDEN_OUTDOOR_AS_GUIDE",
+            "restart_only_as_guide_claim": false,
+            "original_map_id": null
+          },
+          {
+            "coordinate": [
+              147,
+              141
+            ],
+            "note_as_written": "肉店右方",
+            "coordinate_scope": "EDEN_OUTDOOR_AS_GUIDE",
+            "restart_only_as_guide_claim": false,
+            "original_map_id": null
+          },
+          {
+            "coordinate": [
+              102,
+              181
+            ],
+            "note_as_written": "南方出口附近",
+            "coordinate_scope": "EDEN_OUTDOOR_AS_GUIDE",
+            "restart_only_as_guide_claim": false,
+            "original_map_id": null
+          },
+          {
+            "coordinate": [
+              21,
+              115
+            ],
+            "note_as_written": "西方出口附近",
+            "coordinate_scope": "EDEN_OUTDOOR_AS_GUIDE",
+            "restart_only_as_guide_claim": false,
+            "original_map_id": null
+          },
+          {
+            "coordinate": [
+              107,
+              98
+            ],
+            "note_as_written": "靠近神秘老人处",
+            "coordinate_scope": "EDEN_OUTDOOR_AS_GUIDE",
+            "restart_only_as_guide_claim": false,
+            "original_map_id": null
+          },
+          {
+            "coordinate": [
+              44,
+              61
+            ],
+            "note_as_written": "动物园的右后方，靠近山壁处",
+            "coordinate_scope": "EDEN_OUTDOOR_AS_GUIDE",
+            "restart_only_as_guide_claim": false,
+            "original_map_id": null
+          },
+          {
+            "coordinate": [
+              58,
+              139
+            ],
+            "note_as_written": "宠物竞技场门口",
+            "coordinate_scope": "EDEN_OUTDOOR_AS_GUIDE",
+            "restart_only_as_guide_claim": false,
+            "original_map_id": null
+          },
+          {
+            "coordinate": [
+              179,
+              119
+            ],
+            "note_as_written": "剧院前水池右方，靠近东方出口处",
+            "coordinate_scope": "EDEN_OUTDOOR_AS_GUIDE",
+            "restart_only_as_guide_claim": false,
+            "original_map_id": null
+          },
+          {
+            "coordinate": [
+              132,
+              180
+            ],
+            "note_as_written": "东南方水池（抓波波顿的地方）的左方，靠围墙处",
+            "coordinate_scope": "EDEN_OUTDOOR_AS_GUIDE",
+            "restart_only_as_guide_claim": false,
+            "original_map_id": null
+          },
+          {
+            "coordinate": [
+              35,
+              97
+            ],
+            "note_as_written": "动物园门口",
+            "coordinate_scope": "EDEN_OUTDOOR_AS_GUIDE",
+            "restart_only_as_guide_claim": false,
+            "original_map_id": null
+          },
+          {
+            "coordinate": [
+              9,
+              11
+            ],
+            "note_as_written": "伊甸训练所内",
+            "coordinate_scope": "INTERIOR_AS_NAMED_NOT_WORLD",
+            "restart_only_as_guide_claim": false,
+            "original_map_id": null
+          },
+          {
+            "coordinate": [
+              0,
+              12
+            ],
+            "note_as_written": "肉店内",
+            "coordinate_scope": "INTERIOR_AS_NAMED_NOT_WORLD",
+            "restart_only_as_guide_claim": false,
+            "original_map_id": null
+          },
+          {
+            "coordinate": [
+              14,
+              2
+            ],
+            "note_as_written": "医院内",
+            "coordinate_scope": "INTERIOR_AS_NAMED_NOT_WORLD",
+            "restart_only_as_guide_claim": false,
+            "original_map_id": null
+          },
+          {
+            "coordinate": [
+              7,
+              2
+            ],
+            "note_as_written": "员工宿舍内",
+            "coordinate_scope": "INTERIOR_AS_NAMED_NOT_WORLD",
+            "restart_only_as_guide_claim": false,
+            "original_map_id": null
+          },
+          {
+            "coordinate": [
+              10,
+              10
+            ],
+            "note_as_written": "旅馆内",
+            "coordinate_scope": "INTERIOR_AS_NAMED_NOT_WORLD",
+            "restart_only_as_guide_claim": false,
+            "original_map_id": null
+          },
+          {
+            "coordinate": [
+              2,
+              2
+            ],
+            "note_as_written": "动物园正后方的民房内",
+            "coordinate_scope": "INTERIOR_AS_NAMED_NOT_WORLD",
+            "restart_only_as_guide_claim": false,
+            "original_map_id": null
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "CN2003-R88-npc-4",
+      "entity_type": "DOCUMENTARY_NAMED_ACTOR_OR_TALKING_OBJECT",
+      "collection": "npcs",
+      "version_profile": "CN_SINA2003_EDEN_ZOO_RESCUE_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "PORTAL_GUIDE_OR_STATIC_SCREEN_NOT_SERVER_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "label": "伯特",
+        "role": "MOVING_GARDENER_SHOVEL_AND_RADISH",
+        "native_id": null,
+        "sites_as_reported": [
+          {
+            "coordinate": [
+              171,
+              72
+            ],
+            "note_as_written": "菜园内（这是只有服务器重开机的时候，才找得到的地点！）",
+            "coordinate_scope": "EDEN_OUTDOOR_AS_GUIDE",
+            "restart_only_as_guide_claim": true,
+            "original_map_id": null
+          },
+          {
+            "coordinate": [
+              134,
+              89
+            ],
+            "note_as_written": "格斗场右后方",
+            "coordinate_scope": "EDEN_OUTDOOR_AS_GUIDE",
+            "restart_only_as_guide_claim": false,
+            "original_map_id": null
+          },
+          {
+            "coordinate": [
+              184,
+              107
+            ],
+            "note_as_written": "剧院的右方，靠近东方出口处",
+            "coordinate_scope": "EDEN_OUTDOOR_AS_GUIDE",
+            "restart_only_as_guide_claim": false,
+            "original_map_id": null
+          },
+          {
+            "coordinate": [
+              146,
+              143
+            ],
+            "note_as_written": "肉店门口",
+            "coordinate_scope": "EDEN_OUTDOOR_AS_GUIDE",
+            "restart_only_as_guide_claim": false,
+            "original_map_id": null
+          },
+          {
+            "coordinate": [
+              186,
+              58
+            ],
+            "note_as_written": "菜园后方",
+            "coordinate_scope": "EDEN_OUTDOOR_AS_GUIDE",
+            "restart_only_as_guide_claim": false,
+            "original_map_id": null
+          }
+        ],
+        "ordered_movement_as_claimed": true,
+        "cycle_period_and_actual_path": null
+      }
+    },
+    {
+      "record_id": "CN2003-R88-npc-5",
+      "entity_type": "DOCUMENTARY_NAMED_ACTOR_OR_TALKING_OBJECT",
+      "collection": "npcs",
+      "version_profile": "CN_SINA2003_EDEN_ZOO_RESCUE_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "PORTAL_GUIDE_OR_STATIC_SCREEN_NOT_SERVER_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "label": "白菜",
+        "role": "TALKING_PLANT_HINT_NOT_NATIVE_NPC_PROOF",
+        "native_id": null
+      }
+    },
+    {
+      "record_id": "CN2003-R88-npc-6",
+      "entity_type": "DOCUMENTARY_NAMED_ACTOR_OR_TALKING_OBJECT",
+      "collection": "npcs",
+      "version_profile": "CN_SINA2003_EDEN_ZOO_RESCUE_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "PORTAL_GUIDE_OR_STATIC_SCREEN_NOT_SERVER_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "label": "席格",
+        "role": "DISGUISED_RESCUER_COMBAT_AND_LASIJI_HANDOVER",
+        "native_id": null
+      }
+    },
+    {
+      "record_id": "CN2003-R88-target-0",
+      "entity_type": "DOCUMENTARY_NAMED_RESCUE_TARGET_NOT_SPECIES_MASTER",
+      "collection": "pets",
+      "version_profile": "CN_SINA2003_EDEN_ZOO_RESCUE_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "PORTAL_GUIDE_OR_STATIC_SCREEN_NOT_SERVER_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "name": "雷尔胖",
+        "previous_name_in_story": "布伊胖",
+        "owner_as_told": "雷尔大人",
+        "appearance_as_written": "蓝色",
+        "outdoor_coordinate": [
+          75,
+          170
+        ],
+        "place": "员工宿舍后面",
+        "valid_target": "NAMED_LEIERPANG_NOT_OTHER_BUIPANG",
+        "feed": "雷尔胖专用饲料",
+        "alternative_feed_as_reported": "草食性饲料",
+        "appraiser": "布伊太郎",
+        "feed_reclaimed_after_appraisal": true,
+        "pet_consumed_at_appraisal": null
+      }
+    },
+    {
+      "record_id": "CN2003-R88-target-1",
+      "entity_type": "DOCUMENTARY_NAMED_RESCUE_TARGET_NOT_SPECIES_MASTER",
+      "collection": "pets",
+      "version_profile": "CN_SINA2003_EDEN_ZOO_RESCUE_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "PORTAL_GUIDE_OR_STATIC_SCREEN_NOT_SERVER_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "name": "波波顿",
+        "outdoor_coordinate": [
+          170,
+          181
+        ],
+        "place": "东南方水池边",
+        "valid_target_level_as_reported": 1,
+        "feed": "肉食性饲料2",
+        "feed_location": "园长室最里面房间的饲料桶",
+        "appraiser": "鲛岛太郎",
+        "appraiser_place": "园长室隔壁"
+      }
+    },
+    {
+      "record_id": "CN2003-R88-target-2",
+      "entity_type": "DOCUMENTARY_NAMED_RESCUE_TARGET_NOT_SPECIES_MASTER",
+      "collection": "pets",
+      "version_profile": "CN_SINA2003_EDEN_ZOO_RESCUE_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "PORTAL_GUIDE_OR_STATIC_SCREEN_NOT_SERVER_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "name": "拉斯基",
+        "appearance_as_written": "红兔子",
+        "nickname_as_written": "拉拉",
+        "dedicated_feed": null,
+        "acquisition_as_reported": "SIGE_HANDOVER_AFTER_FIFTH_FLOOR_BATTLE",
+        "capture_coordinate_or_native_id": null,
+        "single_status_screen_sample_ref": "I2"
+      }
+    },
+    {
+      "record_id": "CN2003-R88-reward",
+      "entity_type": "DOCUMENTARY_NEWBORN_PET_REWARD",
+      "collection": "pets",
+      "version_profile": "CN_SINA2003_EDEN_ZOO_RESCUE_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "PORTAL_GUIDE_OR_STATIC_SCREEN_NOT_SERVER_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "name": "布伊胖",
+        "quantity_as_reported": 1,
+        "description_as_written": "刚出生",
+        "verified_numeric_level_or_stats": null
+      }
+    },
+    {
+      "record_id": "CN2003-R88-dungeon",
+      "entity_type": "DOCUMENTARY_QUEST_FLOOR_COORDINATES",
+      "collection": "maps",
+      "version_profile": "CN_SINA2003_EDEN_ZOO_RESCUE_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "PORTAL_GUIDE_OR_STATIC_SCREEN_NOT_SERVER_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "name_as_written": "伊甸地下信道（不良少年洞窟）",
+        "header_coordinate": [
+          0,
+          64
+        ],
+        "floor_pairs": [
+          {
+            "floor_as_written": "一",
+            "entry_local_coord": [
+              20,
+              64
+            ],
+            "exit_local_coord": [
+              20,
+              10
+            ]
+          },
+          {
+            "floor_as_written": "二",
+            "entry_local_coord": [
+              1,
+              29
+            ],
+            "exit_local_coord": [
+              47,
+              34
+            ]
+          },
+          {
+            "floor_as_written": "三",
+            "entry_local_coord": [
+              1,
+              17
+            ],
+            "exit_local_coord": [
+              32,
+              48
+            ]
+          },
+          {
+            "floor_as_written": "四",
+            "entry_local_coord": [
+              16,
+              4
+            ],
+            "exit_local_coord": [
+              34,
+              34
+            ]
+          }
+        ],
+        "header_vs_floor1_entry_resolution": null,
+        "source_enemy_level_range": [
+          70,
+          90
+        ],
+        "source_enemy_labels": [
+          "席格",
+          "不良少年",
+          "凶悍的格尔希洛"
+        ],
+        "fifth_floor_battle": "席格",
+        "runtime_map_ids_or_reverse_transitions": null
+      }
+    },
+    {
+      "record_id": "CN2003-R88-armour",
+      "entity_type": "DOCUMENTARY_ORDER_DEPENDENT_ARMOUR_REWARD",
+      "collection": "items",
+      "version_profile": "CN_SINA2003_EDEN_ZOO_RESCUE_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "PORTAL_GUIDE_OR_STATIC_SCREEN_NOT_SERVER_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "turn_in": "里拉拉咬过的白萝卜",
+        "recipient": "里拉拉",
+        "item_wordings": [
+          "里拉拉赠送的铠",
+          "里拉拉的铠"
+        ],
+        "stats_as_written": {
+          "防": 40,
+          "敏": 10
+        },
+        "spirit_as_written": "恩惠的精灵",
+        "spirit_level": 4,
+        "missed_safety_report_loses_armour_as_guide_claim": true
+      }
+    },
+    {
+      "record_id": "CN2003-R88-I1",
+      "entity_type": "DOCUMENTARY_STATIC_NPC_SCREEN",
+      "collection": "screens",
+      "version_profile": "CN_SINA2003_EDEN_ZOO_RESCUE_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1",
+        "I1"
+      ],
+      "verification_status": "PORTAL_GUIDE_OR_STATIC_SCREEN_NOT_SERVER_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "image": {
+          "id": "I1",
+          "url": "https://image2.sina.com.cn/gm/newgames/0303/images/dongwu0603_08.jpg",
+          "http_status": 200,
+          "no_redirect": true,
+          "bytes": 108055,
+          "sha256": "3cdfea6514804d9ee9d7a0dd6b72c40df4bc2dafbf5c94654a190360dda82301",
+          "format": "JPEG",
+          "mode": "RGB",
+          "size": [
+            640,
+            480
+          ],
+          "frames": 1
+        },
+        "observation": {
+          "id": "I1",
+          "manual_visual_review": true,
+          "kind": "STATIC_INVENTORY_SHOVEL_TOOLTIP",
+          "displayed_item_name": "可以挖萝卜的铲子",
+          "displayed_description": "好用的铲子",
+          "item_selected": true,
+          "npc_name_readable": false,
+          "original_item_id_or_actual_delivery_verified": false,
+          "original_sprite_animation_or_native_id_verified": false,
+          "historical_2003_pixels_authenticated": false,
+          "interaction_or_item_effect_tested": false
+        }
+      }
+    },
+    {
+      "record_id": "CN2003-R88-I2",
+      "entity_type": "DOCUMENTARY_STATIC_NPC_SCREEN",
+      "collection": "screens",
+      "version_profile": "CN_SINA2003_EDEN_ZOO_RESCUE_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1",
+        "I2"
+      ],
+      "verification_status": "PORTAL_GUIDE_OR_STATIC_SCREEN_NOT_SERVER_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "image": {
+          "id": "I2",
+          "url": "https://image2.sina.com.cn/gm/newgames/0303/images/dongwu0603_020.jpg",
+          "http_status": 200,
+          "no_redirect": true,
+          "bytes": 88503,
+          "sha256": "1afc3b40e06f874c4b5b016bc2c852769ded5bcfa6c04a19bccee75d39425b8c",
+          "format": "JPEG",
+          "mode": "RGB",
+          "size": [
+            640,
+            480
+          ],
+          "frames": 1
+        },
+        "observation": {
+          "id": "I2",
+          "manual_visual_review": true,
+          "kind": "STATIC_NAMED_RESCUED_PET_STATUS_SAMPLE",
+          "displayed_pet_name": "动物园养的拉斯基",
+          "displayed_level": 1,
+          "displayed_next": 2,
+          "displayed_stats": {
+            "耐久力": {
+              "current": 17,
+              "maximum": 17
+            },
+            "攻击力": 2,
+            "防御力": 3,
+            "敏捷力": 2,
+            "忠诚度": 100
+          },
+          "visible_nonempty_element_bars": [
+            "火属性",
+            "风属性"
+          ],
+          "element_numeric_ratios": null,
+          "appearance": "RED_RABBITLIKE_FIGURE",
+          "one_displayed_pet_proves_species_initial_stats_or_growth": false,
+          "npc_name_readable": false,
+          "actual_combat_handover_or_reward_verified": false,
+          "original_sprite_animation_or_native_id_verified": false,
+          "historical_2003_pixels_authenticated": false,
+          "interaction_or_item_effect_tested": false
+        }
+      }
+    }
+  ]
+}
