@@ -17904,3 +17904,13 @@ R97 原始候选内容 `9198b803507e78d05d1f494578b9d4dfb5ce4a5a` 首次run39964
 
 最高下一项 `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-99` 返还原版地图／NPC实像或同build宠物SPR选择绑定（真来源优先），不连续扩卡坦与相似玩家攻略。Stage A 7PARTIAL+2OPEN、B/wiki GATED，TW1.0 savedata R79 PAUSED_NON_BLOCKING；全游戏恢复百分比null。完整旧历史前缀保留。
 
+
+
+### R98 源资料、主线与不可变保管记录最终验收 — 2026-10-23
+
+本包内容 commit `2a2bb6bf63c7e4e1a4e9b3fdd14641379aa558b4` / tree `a60c5871687d56ce793ca2ac6cad190158ebe011` 专用候选 run39966865260/job120458877622 真实通过15项回归与CLI。历史记录追加 commit `79fb6dc54f4b67dc0f12e235916ab3f5db3f8100` / tree `a43cae98e85fb2cb5d5f1dd4435cbbf5b2404be5`，候选9与主线11条不同 Actions 均实际 completed/success，主线专用 run39967404086/job120460766533 成功。与旧main `8697dc3808c074f98e9116d8378c711581ff2f2f` 比较 ahead2/behind0，仅增改9文件、0删行；main使用 expected_sha 非强制快进。旧 CURRENT／TIMELINE／SOURCE／ROADMAP 四历史前缀已逐字保留，不以空文件API回报覆盖整份。
+
+永久保管 `research/recovered/STONEAGE-CN-KATAN-QUEST-ACCEPTANCE-R98.json`（Git blob `0fa918fb83b90025d3ee1e6c7e20547a8c971570`）固定实际 source/meta 文件 blob `e92c249a74582ba6f5af5b41f49540ec9d1cd1d2`、两次提交与旧基线、21条不重复实际CI运行／专用job、四历史追加blob以及全部否定边界。候选保管修订 commit `d70727ce096ef4ad8ed28ac3d59065843db74875` / tree `8e9e6efc9aa5d24950198354ac594d67faca50da` 专用run39968156414/job120463382791真实完成原15+独立保管6项测试及CLI，随后非强制快进主线，主线自身专用run39968254045已completed/success。验收覆盖的是现有文献合同+永久派生JSON，而非2001／2003原HTML、图片原字节、原商业客户端与服务器已运行；源和主线专用两个对应run的Actions artifact API均实际为0件，因此不捏造ZIP摘要、工件ID或图片hash。过往任何失败记录不改写为通过。
+
+收益：锁定卡坦两阶段各四宠、两批次交付和五条不同玩家稿冲突；保留戒指补领/原始NPC地点/生成/交易/保存的实际不明，未通过原版物种或原图身份认证。最高NEXT `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-99` 要转回实际原版地图／NPC截图、同构建图号／宠物／SPR 的可验证绑定，而不是连续用玩家任务攻略当原服主表。Stage A仍7PARTIAL+2OPEN，Stage B及资料站生产 GATED，savedataR79 PAUSED_NON_BLOCKING；总体复原百分比null。历史连续性完好。
+
