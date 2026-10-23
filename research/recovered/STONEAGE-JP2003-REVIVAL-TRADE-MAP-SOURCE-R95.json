@@ -1,0 +1,174 @@
+{
+  "schema": "stoneage.jp2003_revival_prebeta_ui_map_source.r95",
+  "task": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-95",
+  "source_scope": "JP_2003_BOTHTEC_NHN_REVIVAL_PRESS_PREVIEW_NOT_1999_JSS_RUNTIME_NOT_TW10",
+  "source_category": "CONTEMPORARY_PRESS_REPORTED_CLAIMS_NOT_EXECUTED_SERVER_TRACE",
+  "sources": [
+    {
+      "id": "R95-S1",
+      "uri": "https://www.4gamer.net/news/history/2003.07/20030726001803detail.html",
+      "displayed_title": "［OGF＃06］ボーステックが「Stone Age」（ストーンエイジ）を復活",
+      "displayed_date": "2003-07-26 00:18",
+      "attribution": "4Gamer conference coverage and post-presentation BOTHTEC interview",
+      "role": "July 2003 preview",
+      "raw_html_bytes_authenticated": false,
+      "original_html_sha256": null,
+      "original_build_sha": null
+    },
+    {
+      "id": "R95-S2",
+      "uri": "https://www.4gamer.net/news/history/2003.11/20031125203537detail.html",
+      "displayed_title": "MMORPG「ストーンエイジ」のβテストは12月に！",
+      "displayed_date": "2003-11-25 20:35",
+      "attribution": "4Gamer reporting on BOTHTEC beta announcement",
+      "role": "November reschedule update",
+      "raw_html_bytes_authenticated": false,
+      "original_html_sha256": null,
+      "original_build_sha": null
+    },
+    {
+      "id": "R95-S3",
+      "uri": "https://www.4gamer.net/news/history/2003.12/20031212000000detail.html",
+      "displayed_title": "「ストーンエイジ」のオープンβテストが12月16日より開始",
+      "displayed_date": "2003-12-12 00:00",
+      "attribution": "4Gamer reporting BOTHTEC and NHN Japan announcement plus TGS conversation",
+      "role": "December pre-beta reported feature changes",
+      "raw_html_bytes_authenticated": false,
+      "original_html_sha256": null,
+      "original_build_sha": null
+    }
+  ],
+  "claims": [
+    {
+      "id": "R95-C01",
+      "source_id": "R95-S1",
+      "topic": "historical_product_lineage",
+      "text_summary": "1999 Japanese System Supply StoneAge was the older Japanese service being revived",
+      "reported_state": "PRESS_BACKGROUND",
+      "temporal_scope": "OLDER_1999_PRODUCT_CONTEXT",
+      "runtime_proven": false
+    },
+    {
+      "id": "R95-C02",
+      "source_id": "R95-S1",
+      "topic": "planned_version_delta",
+      "text_summary": "Post-presentation interview attributes forthcoming map and character additions and minor user-interface improvements to the revival version",
+      "reported_state": "PREVIEW_NOT_RELEASE_ASSERTION",
+      "temporal_scope": "JULY_2003_PREVIEW_OF_REVIVAL",
+      "runtime_proven": false
+    },
+    {
+      "id": "R95-C03",
+      "source_id": "R95-S1",
+      "topic": "editorial_speculation",
+      "text_summary": "Reporter speculates about using a later Korean version plus added features and wishes for player dinosaur riding; not a company confirmation",
+      "reported_state": "REPORTER_HYPOTHESIS",
+      "temporal_scope": "JULY_2003_UNVERIFIED_FORECAST",
+      "runtime_proven": false
+    },
+    {
+      "id": "R95-C04",
+      "source_id": "R95-S2",
+      "topic": "beta_window_change",
+      "text_summary": "Formerly publicized November open beta now announced for December with day still unresolved as of November 25",
+      "reported_state": "REVISED_SCHEDULE_ANNOUNCEMENT",
+      "temporal_scope": "NOVEMBER_25_2003",
+      "runtime_proven": false
+    },
+    {
+      "id": "R95-C05",
+      "source_id": "R95-S3",
+      "topic": "prelaunch_download",
+      "text_summary": "BOTHTEC and NHN Japan announce advance client download on December 12 and an open beta to begin December 16",
+      "reported_state": "PRESS_ANNOUNCEMENT_NOT_CLIENT_BINARY",
+      "temporal_scope": "DECEMBER_12_2003",
+      "runtime_proven": false
+    },
+    {
+      "id": "R95-C06",
+      "source_id": "R95-S3",
+      "topic": "trade_window_ui",
+      "text_summary": "Revived Japanese version described as having added a trade window along with other minor UI changes",
+      "reported_state": "REPORTED_ADDITION_NOT_SCREEN_EXECUTION",
+      "temporal_scope": "DECEMBER_12_2003_PRE_BETA",
+      "runtime_proven": false
+    },
+    {
+      "id": "R95-C07",
+      "source_id": "R95-S3",
+      "topic": "postbeta_world_avatar_plan",
+      "text_summary": "Map expansion and new player characters discussed at TGS for a planned major update after the open beta",
+      "reported_state": "LATER_UPDATE_PLAN_NOT_BETA_DEPLOYMENT",
+      "temporal_scope": "PLANNED_POST_BETA_UNDATED",
+      "runtime_proven": false
+    }
+  ],
+  "ordered_announcement_dates": [
+    {
+      "source_id": "R95-S1",
+      "reported": "2003-11",
+      "precision": "MONTH_ONLY",
+      "role": "initially planned beta month"
+    },
+    {
+      "source_id": "R95-S2",
+      "reported": "2003-12",
+      "precision": "MONTH_ONLY",
+      "role": "revised announced beta month"
+    },
+    {
+      "source_id": "R95-S3",
+      "reported": "2003-12-16",
+      "precision": "DAY",
+      "role": "announced future open beta start; execution unverified"
+    }
+  ],
+  "cross_reference": {
+    "existing_repo_spec": "docs/specs/STONEAGE-JP2003-BATTLE-FIELD-VISUAL-SOURCE-R1.md",
+    "existing_git_blob_sha1": "63b274f5bc8e1508eb1e8f9dfe2a1e27544ea093",
+    "existing_gallery": "https://www.4gamer.net/store/shots/stoneage/index.html",
+    "gallery_displayed_date": "2003-12-12",
+    "gallery_images_labeled_in_development": true,
+    "existing_actual_first_two_jpeg_restored_in_R63": true,
+    "trade_window_observable_in_first_two_R63_frames": false,
+    "full_trade_transaction_trace_recovered": false,
+    "gallery_extra_images_fetched_in_R95": false,
+    "screenshot_archive_publication_is_build_hash": false
+  },
+  "version_promotion_guards": {
+    "original_1999_jss_trade_ui_present_verified": false,
+    "original_1999_jss_trade_ui_absent_verified": false,
+    "original_2003_trade_window_runtime_verified": false,
+    "original_2003_trade_window_coordinates_verified": false,
+    "same_build_trade_protocol_or_ack_verified": false,
+    "beta_started_on_dec16_directly_observed": false,
+    "advance_client_binary_downloaded_or_sha_verified": false,
+    "new_maps_in_december_beta_verified": false,
+    "new_avatar_roster_in_december_beta_verified": false,
+    "korean_client_version_merge_verified": false,
+    "player_pet_riding_in_2003_build_verified": false,
+    "original_1999_jss_and_2003_jp_same_build": false,
+    "tw10_interaction_semantics_promoted": false
+  },
+  "material_gaps": [
+    "2003 operator build ID, archived advance-download client bytes and executable provenance",
+    "single screenshot of opened Japanese 2003 trade window and input/action result",
+    "trade request packet and server ACK, item/pet acceptance and rollback rules",
+    "source for pre-beta versus post-beta map and avatar differences",
+    "unambiguous first publication or effective date of announced UI change",
+    "1999 JSS baseline actual trade UI and riding behavior backed by binaries or contemporary video"
+  ],
+  "source_assets": {
+    "original_html_saved_in_git": false,
+    "original_screenshots_copied": false,
+    "original_client_binary_saved": false,
+    "derived_metadata_only": true
+  },
+  "acceptance": {
+    "stage_a_accepted": false,
+    "stage_b_started": false,
+    "public_wiki_open": false,
+    "overall_restoration_percentage": null,
+    "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-96"
+  }
+}

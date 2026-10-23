@@ -1,0 +1,28 @@
+name: Verify R95 JP2003 revival trade UI and map planning source bounds
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-JP2003-REVIVAL-TRADE-MAP-SOURCE-R95.json'
+      - 'research/recovered/STONEAGE-JP2003-REVIVAL-TRADE-MAP-ACCEPTANCE-R95.json'
+      - 'tools/stoneage_jp2003_revival_trade_map_source.py'
+      - 'tests/test_stoneage_jp2003_revival_trade_map_source.py'
+      - '.github/workflows/verify-stoneage-jp2003-revival-trade-map.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-JP2003-REVIVAL-TRADE-MAP-SOURCE-R95.json'
+      - 'tools/stoneage_jp2003_revival_trade_map_source.py'
+      - 'tests/test_stoneage_jp2003_revival_trade_map_source.py'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify-revival-chronology:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest tests.test_stoneage_jp2003_revival_trade_map_source -v
+      - run: python -m tools.stoneage_jp2003_revival_trade_map_source
