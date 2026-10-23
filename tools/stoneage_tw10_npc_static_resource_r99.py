@@ -148,6 +148,19 @@ def validate_report(x,truth):
     require(set(x["limits"].values())=={False,None,"OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-100"},"authority boundary")
     return True
 
+
+REPORT=ROOT/"research/recovered/STONEAGE-TW10-NPC-STATIC-RESOURCE-JOIN-R99.json"
+REPORT_BLOB="21d49800a1191f87a006aaa5af4a6f7975f91bf7"
+
+def check_saved(truth):
+    raw=REPORT.read_bytes()
+    require(gitblob(raw)==REPORT_BLOB,"R99 source Git blob changed")
+    actual=json.loads(raw.decode("utf-8"))
+    validate_report(actual,truth)
+    canon=(json.dumps(truth,ensure_ascii=False,sort_keys=True,indent=2)+"\n").encode("utf-8")
+    require(raw==canon,"R99 derived report not byte-identical to fresh original-source replay")
+    return True
+
 def main():
     ap=argparse.ArgumentParser()
     ap.add_argument("--write",type=Path)
@@ -155,6 +168,7 @@ def main():
     args=ap.parse_args()
     r=audit()
     validate_report(r,r)
+    check_saved(r)
     payload=json.dumps(r,ensure_ascii=False,sort_keys=True,indent=2)+"\n"
     if args.write:
         args.write.parent.mkdir(parents=True,exist_ok=True)

@@ -1,7 +1,7 @@
 """R99 101 real TW1.0 candidate image resource row joins and negative claims."""
 import copy
 import unittest
-from tools.stoneage_tw10_npc_static_resource_r99 import audit,validate_report
+from tools.stoneage_tw10_npc_static_resource_r99 import audit,validate_report,check_saved
 
 class R99ResourceJoin(unittest.TestCase):
     @classmethod
@@ -14,6 +14,8 @@ class R99ResourceJoin(unittest.TestCase):
             validate_report(a,self.truth)
     def test_full_original_join(self):
         self.assertTrue(validate_report(self.truth,self.truth))
+    def test_saved_report_byte_exact(self):
+        self.assertTrue(check_saved(self.truth))
     def test_bitmap_not_npc_id(self):
         self.broken(lambda d:d["rows"][0].update(original_npc_id=16000))
     def test_map_number_not_floor(self):
