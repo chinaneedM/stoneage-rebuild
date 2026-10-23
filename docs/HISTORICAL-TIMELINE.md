@@ -4694,3 +4694,13 @@ Sina另存档 https://games.sina.com.cn/zhqu/sta/2/cwzl/index.shtml 显示扑满
 **FACT (player text as text):** An extant 17173 submission labeled 2001-06-14, by 依波波, describes 乌力布鲁 and 黑乌力 as JSS prize pets. This is a player's report, not a Japanese original award register or game runtime record. Source R97-S3.
 
 **OPEN:** date of the present pet catalog and its earliest archived form, website-to-original-pet identity binding, original image bytes/authenticity, same-build per-species PET master and whether numbering/labels were later revised. Previous independently validated TW1.0 bitmap+SPR **numeric** intersections do not close these historical claims.
+
+
+### R98 source-bounded Katan handover quest comparison — 2026-10-23
+
+**FACT about surviving guides, not certified runtime:** A current 17173 page labeled 2001-06-14 and credited to 陶陶 narrates two Katan NPC handover sequences: four Lv25 fish (first 加格＋帮恩吉, then 克邦凯斯＋加克拉) to receive a golden 修宝, and four Lv25 birds (first 火鸡＋奇宝, then 克克洛斯＋霍尔克) to receive a golden 朵拉比斯. The two page labels do not certify original build timestamps. [SRC-CN-KATAN-R98-2001-17173-TAOTAO]
+
+**FACT about surviving 2003 player-posted source:** A Sina page labeled 2003-05-29 14:24 narrates the same two-stage paired deliveries and lists multiple illustrated-guide captions, but the accompanying original image bytes, precise client build, native NPC/script and transactional behavior were not authenticated. [SRC-CN-KATAN-R98-2003-SINA-PLAYER]
+
+**OPEN and explicit contradiction:** S1 advises searching Katan along south 198; S2 along south 190 and claims random position, so neither is a unique spawn coordinate. S1 does not name the first fish ring and warns losing it wastes the stage; S2 names 火鸡的戒指 and claims it is reissued. S1 calls the bird-stage ring 火难戒指, S2 calls it 火鸡的戒指; stated +5 effects differ in wording. No implied equivalent original item opcode, fish/animal master, fixed despawn/give-back contract, reissue ACK or repeated task flag. Site captions are not screenshot authentication. The 2001 guide's repeat-bird-only remark includes explicit uncertainty. [SRC-CN-KATAN-R98-2001-17173-TAOTAO; SRC-CN-KATAN-R98-2003-SINA-PLAYER]
+

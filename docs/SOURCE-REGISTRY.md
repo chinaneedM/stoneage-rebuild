@@ -8472,3 +8472,21 @@ main: run39943895787 / job120381709724 / artifact12496718117；ZIP3458 bytes `sh
 - Existing canonical record `SA17173-20010614-STONEPIC` and Git input blob `11bb14ef00c2ed354c5f00f510da8783376f1f28`; no new source counted.
 - Physical cross-check report Git blob `20a82e4d35661785c4e50b44855cf8e8a4e98f3e`: 121 original TW1.0 bitmap IDs exist in player-labeled portrait candidate span 7246—7366; SPR frame references 0; semantic identity none verified.
 - These two retained sources do not provide a bridge to the numbered website GIF catalog. Original copyrighted images/html not committed; only source pointers/derived observations are retained.
+
+
+### SRC-CN-KATAN-R98-2001-17173-TAOTAO
+
+- URL: https://news.17173.com/z/stoneage/content/2001-6-14/n950_866585.html
+- Observed current page label: 2001-06-14; byline 陶陶. Contemporary-looking migrated player text, **not** an authenticated original HTML capture, official NPC script or build.
+- Supports as **PLAYER TEXT** only: Katan moving-guide south 198; Lv25 fish pair 加格＋帮恩吉 then 克邦凯斯＋加克拉; fish reward golden 修宝; first ring name not observed by author; alleged lost-ring "work wasted" warning; second Lv25 bird pair 火鸡＋奇宝 then 克克洛斯＋霍尔克; alleged 火难戒指／golden 朵拉比斯 and tentative repeated-bird-only acquisition.
+- Limits: no NPC population/coordinates, actual save/reissue/transfer ACK, original quest flags, historical game build, image pixels, or server-side source. The author's repeat constraints and original fish-ring unknown name cannot be upgraded to fact.
+
+### SRC-CN-KATAN-R98-2003-SINA-PLAYER
+
+- URL: https://games.sina.com.cn/zhqu/sta/rwgl1_6.shtml
+- Visible portal label: 2003-05-29 14:24, 新浪游戏; user-submitted content, article author's name not given. Modern HTML is not original 2003 byte-authenticated source.
+- Supports as **PLAYER GUIDE TEXT**: named female quest NPC Katan between Katan village and Hotel village; village landmark coordinates (259,170)/(622,193); recommended search south 190 and claimed random appearances; Lv25 fish and bird two-batch submit narrative with intermediate 火鸡的戒指 and rewards 修宝／朵拉比斯; claims lost fish ring can be requested again; the article contains multiple descriptive figure captions.
+- Limits: neither verified source image payload nor original NPC sprite/UI layout, native pet/item IDs, server transaction, exact game build, 2001 original server equivalence or confirmed actual repeatability.
+- **Conflict ledger**: R98-S1 vs S2 south198/south190, unnamed vs named fish ring, allegedly unrecoverable vs refillable ring, 火难戒指 vs 火鸡的戒指, 一击必杀+5 vs 会心一击率上升+5. Preserve all alternatives; game state and actual historical authority OPEN.
+- Derived research: `research/recovered/STONEAGE-CN-KATAN-QUEST-SOURCE-CONFLICTS-R98.json` and `docs/specs/STONEAGE-CN-KATAN-QUEST-SOURCE-CONFLICTS-R98.md`.
+

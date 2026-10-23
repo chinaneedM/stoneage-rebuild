@@ -17888,3 +17888,19 @@ S1当前17173宠物图鉴总目录 https://news.17173.com/z/stoneage/chongwu/pet
 R97 原始候选内容 `9198b803507e78d05d1f494578b9d4dfb5ce4a5a` 首次run39964383907因Git blob NUL校验器转义错误失败，保留该记录；随后修复 `b653c5a51cc159106a0f744c932862d6c5a28e6a` 专用run39964485685/job120450670263实际完成14 tests+CLI SUCCESS。四份历史完整追加的候选文档commit `6b2b1a89fb3600c33f896d91fcd958e821450317`/tree `66ec7bea645c986817981031ee2cedbd3315d046` 9项Actions全部success。Git compare相对 `5ddd2f6e79603b43b8d8d18c0d7337e134ae0268` ahead3/behind0共9文件无删除；四份历史远端原生blob逐份双读确认老前缀完整相同。确认旧main未动后以 expected SHA 非force快进，主线该内容HEAD触发11项实际Actions全部completed/success，R97专用run39965302676/job120453484392成功。
 
 审查GitHub Actions artifact API：候选修复专用与main专用工件均0；因此没有原网站HTML/GIF的原始字节哈希、ZIP/artifact ID或原始sprite授权资产。R97接受的是网页8行／7不同详情名、二页两处命名冲突、小图两条倒序URL以及原盘数值相交证据的**界限**，不是宠物八物种最终身份；永久元数据源blob `d182d35eaf3d803c488fbf697e757deb75ccd193` 原样留存，新增 `research/recovered/STONEAGE-CN-EARLY-PIG-CATALOG-ACCEPTANCE-R97.json`，包含全部21实际通过的候选/main docs runs与首次失败、修复专用运行、源父blob、无工件事实、前缀校验。新增专用反篡改验证，不回写任何旧失败为成功。最高NEXT `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-98`；Stage A7PARTIAL+2OPEN、B/wiki gated、savedataR79继续暂停、overall percent=null。
+
+
+### R98 卡坦的愿望：2001／2003 具名 NPC 任务交付与戒指回补分歧 — 2026-10-23
+
+本轮重新取 GitHub 实时 `main 8697dc3808c074f98e9116d8378c711581ff2f2f` / tree `92299895083314a104e3837561dfce2f7d7087a0`，R97 后续实际收据两次提交与主线相关 Actions 已 success，未把较早会话 SHA 当新状态。重新核读协议、README、完整 CURRENT 原生 Git blob、SOURCE、TIMELINE、DESIGN、Roadmap及22域索引，并证实 R97 实际 MAIN HEAD 专用run39966194245成功。原客户端/宠物master依旧不具同版绑定，不重做旧 savedata R79 与整套图鉴。
+
+最高 `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-98` 的有限成果为具名卡坦 NPC 玩家指南**两代可见文字**的物品/宠物交付契约与五个待查矛盾。S1 17173《卡坦任务祥解》 https://news.17173.com/z/stoneage/content/2001-6-14/n950_866585.html 页面标2001-06-14/陶陶；S2 新浪《卡坦的愿望》 https://games.sina.com.cn/zhqu/sta/rwgl1_6.shtml 页面标2003-05-29 14:24/网友投稿。二者均未鉴原发表HTML字节、确切商业版本或原始NPC脚本。当前正文可见S2图文图注但未得到当年原像素和原版客户端画面身份；不冒称已复原原始人物模型/对话UI。
+
+文献共同的有序环节：先 Lv25 四鱼（加格、帮恩吉→克邦凯斯、加克拉）换金修宝；后 Lv25 四鸟（火鸡、奇宝→克克洛斯、霍尔克）换金朵拉比斯；两阶段首批两只之后各有戒指凭证说法。S2“建议等级35”不是服务端准入证据。二者分别称NPC可沿南198／南190寻找；S2的卡坦村东259南170与霍特尔村东622南193是村庄位置，绝非卡坦自身两精准刷新点。
+
+冲突完整保留：S1鱼阶段戒指作者没看清名字，S2称“火鸡的戒指”；S1丢了便白做的警告与S2可回卡坦重领的说法冲突；S1鸟阶段“火难戒指”与S2“火鸡的戒指”不强合同原物ID；S1“一击必杀+5”与S2“会心一击率上升+5”不等同原opcode或5%公式。S1称重新做金飞可仅交鸟，但带不带原金飞本身为猜想；服务端重置/交易/存档原件仍OPEN。S1水壶任务的巴尔/哈恩路线与S2柯奥、阿鲁姆、卡鲁它那牧场路线只是建议生态，不补真实生成/捕获成功消息。R81梦德洞窟的卡坦村叙事不是本卡坦NPC脚本，两网页和现代同文转载不当多个独立执行记录。
+
+新交付 `docs/specs/STONEAGE-CN-KATAN-QUEST-SOURCE-CONFLICTS-R98.md`、`research/recovered/STONEAGE-CN-KATAN-QUEST-SOURCE-CONFLICTS-R98.json`（不可变原生 Git blob `e92c249a74582ba6f5af5b41f49540ec9d1cd1d2`）、Python检验、15项含负面边界单元与专用工作流。内容候选 `agent/cn-katan-quest-source-conflicts-r98-20261023`，提交 `2a2bb6bf63c7e4e1a4e9b3fdd14641379aa558b4` / tree `a60c5871687d56ce793ca2ac6cad190158ebe011`，专用候选run39966865260/job120458877622实际completed/success（15tests+CLI）。未提交原HTML、图片、客户端/服务端资产，未将文献引文推实服成功；此文档追加后的候选/main CI还须独立实际验收，严禁预记。
+
+最高下一项 `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-99` 返还原版地图／NPC实像或同build宠物SPR选择绑定（真来源优先），不连续扩卡坦与相似玩家攻略。Stage A 7PARTIAL+2OPEN、B/wiki GATED，TW1.0 savedata R79 PAUSED_NON_BLOCKING；全游戏恢复百分比null。完整旧历史前缀保留。
+
