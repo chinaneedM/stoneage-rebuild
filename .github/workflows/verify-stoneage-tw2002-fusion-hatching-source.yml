@@ -1,0 +1,45 @@
+name: Verify TW2002 fusion egg and hatching announcement boundaries
+on:
+  push:
+    paths:
+      - 'tools/stoneage_tw2002_fusion_hatching_source.py'
+      - 'tools/stoneage_jp2005_treasure_source.py'
+      - 'tests/test_stoneage_tw2002_fusion_hatching_source.py'
+      - 'research/recovered/STONEAGE-TW2002-FUSION-HATCHING-*.json'
+      - 'research/recovered/STONEAGE-JP2008-PET-EVOLUTION-SOURCE-R1.json'
+      - 'research/recovered/STONEAGE-TW2002-WEREWOLF-FORMS-SOURCE-R1.json'
+      - 'research/recovered/STONEAGE-PREPRODUCTION-CONTENT-ARCHIVE-R1.json'
+      - '.github/workflows/verify-stoneage-tw2002-fusion-hatching-source.yml'
+  pull_request:
+    paths:
+      - 'tools/stoneage_tw2002_fusion_hatching_source.py'
+      - 'tools/stoneage_jp2005_treasure_source.py'
+      - 'tests/test_stoneage_tw2002_fusion_hatching_source.py'
+      - 'research/recovered/STONEAGE-TW2002-FUSION-HATCHING-*.json'
+      - 'research/recovered/STONEAGE-JP2008-PET-EVOLUTION-SOURCE-R1.json'
+      - 'research/recovered/STONEAGE-TW2002-WEREWOLF-FORMS-SOURCE-R1.json'
+      - 'research/recovered/STONEAGE-PREPRODUCTION-CONTENT-ARCHIVE-R1.json'
+      - '.github/workflows/verify-stoneage-tw2002-fusion-hatching-source.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  bounded-source-replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install Pillow==12.3.0
+      - name: Fusion stages, material and identity unknowns, advertising and photo counterexamples
+        run: python -m unittest tests.test_stoneage_tw2002_fusion_hatching_source -v
+      - name: Retrieve the exact 2019 archive and two selected small event photos
+        run: python -m tools.stoneage_tw2002_fusion_hatching_source --fetch --output "$RUNNER_TEMP/r84-content/replay.json"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: tw2002-fusion-hatching-derived-r84
+          path: ${{ runner.temp }}/r84-content/replay.json
+          if-no-files-found: error
+          retention-days: 30
