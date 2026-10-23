@@ -8398,3 +8398,13 @@ main: run39943895787 / job120381709724 / artifact12496718117；ZIP3458 bytes `sh
 - Title: 新浪游戏“宠物资料”；本轮无法确证初刊日或主表对应原游戏构建。
 - Cross-source comparison only: 该页对扑满乌力列LV1体力55–61，2003-01-08玩家稿为`？–61`。禁止把新浪55填入前者缺项，也禁止从名字推出两页的同PET ID、同服务器、同期实测或TW1.0游戏初始值。
 - Source grade: 有实际可读表格；准确性/样本量/原官方主表归属未验证。关联R92的source隔离JSON，重开需同版原始配置。
+
+
+### SRC-CN70-17173-WEAPON-COLLECTION-NPC-UI-R93
+
+- URL: https://news.17173.com/z/stoneage/renwu/sa70_05.htm
+- Page title: 石器时代7.0-A搜集武器任务（渔村）; site: 17173 石器时代-石头就业所专区. Initial publication date, original author, original HTML bytes/SHA and exact game build **unverified**. A current portal guide is not an authenticated first-party quest master.
+- Guide content: 玛丽娜丝渔村(66,93) NPC史比; distinct five-item near/far weapon routes yielding stated 双尖枪 / 乱射弓 stats and magic names. Text conflict 近藏 / 进藏的棍棒 remains unresolved. “无任务要求” is a guide claim, not server gate execution. See `docs/specs/STONEAGE-CN70-WEAPON-COLLECTION-NPC-UI-SOURCE-R93.md`.
+- Paired visible image (directly opened): https://images.17173cdn.com/stoneage/images/mission/sa70/sa70_05/sa031027_002.jpg . Search result associated image with guide; HTML img-link bytes are not verified. Brown framed dialogue panel with green 下一页, cursor and bottom mode bar are visually observable; NPC name, full dialogue, click event, date, capture provenance and native client pixels **not verified**. Filename numeric substring not a publication date.
+- Repository metadata: `research/recovered/STONEAGE-CN70-WEAPON-COLLECTION-NPC-UI-SOURCE-R93.json`, pinned Git blob SHA1 `932547f5258b6ff5aa78cf722c815d29834585ef` with strict verifier, negative boundary tests and dedicated Actions. Not original source HTML, screenshot file, game asset, official runtime or production permission.
+- Reopen only with same-build source configuration, direct dialogue interaction/capture, source-image lineage, item transaction, or original resource binding.

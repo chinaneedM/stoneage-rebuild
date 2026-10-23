@@ -17795,3 +17795,16 @@ FACT（限当年玩家写下的内容）：按本轮新读main `76ee0e47eb2bd21a
 派生JSON `research/recovered/STONEAGE-CN2003-PET-GROWTH-PLAYER-CLAIMS-SOURCE-R1.json` 为Git blob `863a773feecaa1d129789e46b966078b9e6c7b3b`，可长期重取，非2003原网页。专用main run `39948235290` 的Actions artifacts API实得0项，本包未生产短期原样来源ZIP/原HTML工件，不编造原始URL HTTP摘要、run artifact ID、ZIP digest或声称网络原字节重放。独立收据 `research/recovered/STONEAGE-CN2003-PET-GROWTH-ACCEPTANCE-R92.json` 固定这21实际run、双端job ID、源码/资料边界与Git blob。额外反例阻止将缺失HP填55、未知鲁比成长变具体值、2.0X变2.00、玩家值升级为官方上限、技能声明变实服执行、JSS/TW1.0跨版回填、Stage A宣称通过。原始文献与历史三大长文均完整保留，不更换旧研究。
 
 NEXT继续 `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-93`，不同地区具名世界/地图/NPC窗口实像或同build宠物原始模型证据。Stage A 7 PARTIAL+2 OPEN，B/wiki GATED，R79 PAUSED_NON_BLOCKING，overall percent=null。验收收据commit之后的新run须独立看实际结果，不能将前一提交的通过转用。
+
+
+### R93 大陆7.0玩家攻略NPC史比双武器路线与单张可见对话窗 — 2026-10-23
+
+本轮从GitHub fresh main `fc77a2dbddffb6928a22662c8d1ac7f788d82635` / tree `1bd712764acd0c12fe1bbe269488d2f613f763f8` 及R92 receipt后重开，实核R92 candidate/main最新专用run和Stage A有关Actions均completed/success；独立blob回读完整CURRENT、历史时间线、来源簿及九项连续性要求，未用旧聊天SHA推断。这一次按最高 `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-93` 轮换NPC对话可见UI，不扩R92玩家成长率猜测、不重启R79。
+
+资料为17173当前公开《石器时代7.0-A搜集武器任务（渔村）》https://news.17173.com/z/stoneage/renwu/sa70_05.htm 。S1标签“7.0”，未见已鉴真页面初刊日/原作者/运营原稿、原HTML字节SHA或精确build，故仅称当前网站攻略所载内容。史比位于玛丽娜丝渔村局部(66,93)，“无任务要求”为攻略栏目而非原服无条件证明。近程5件=合成斧8、合成枪8、合成棍棒8、合成爪8、愿藏的斧头；攻略称换双尖枪（攻+53、敏-12、魅+6、“混迷的精灵”LV4）。远程5件=合成弓箭8、合成投掷斧8、合成回旋标8、合成石8、近藏的棍棒；称换乱射弓（攻+23、防-24、对象10、毒雾的精灵LV4）。尾注“进藏的棍棒”与列表“近藏的棍棒”差异保留；“混迷”不改成“昏迷”。攻略所述收集、换物不当原服扣物/触发/精灵执行/兑换日志。
+
+I1为实际公开直连图 https://images.17173cdn.com/stoneage/images/mission/sa70/sa70_05/sa031027_002.jpg ，搜索结果关联S1专题，本轮未验原HTML img标签/源图bytes哈希、摄影日期或确切客户端build；文件名数字不当日期。画面可见镶框对话窗、文字、绿色“下一页”与鼠标手形指针、底部一般/玩家模式条、人物与黄色坐骑/宠物样式。不能从单帧转录完整NPC台词、证明截图中的NPC就是史比、按钮已按下、实服响应成功、原生屏幕分辨率或原SPR身份。与台湾1.0 WN协议只是并存分版资料，不补同build的窗口状态机。
+
+新增中文规格 `docs/specs/STONEAGE-CN70-WEAPON-COLLECTION-NPC-UI-SOURCE-R93.md`、结构化研究 `research/recovered/STONEAGE-CN70-WEAPON-COLLECTION-NPC-UI-SOURCE-R93.json`、按不可变Git blob SHA1校验的Python解析保护与10项含负向反例测试、专用Actions。候选内容commit `07268f0702af26102d2a1afe7146479c370c363a` / tree `4e4854515b98185cc8a1ee1907e2a3fe222adb6c`，分支 `agent/cn70-weapon-npc-ui-r93-20261023`；写本文时其专用CI仍须以后续实际完成状态验收，不能将“queued”称成功。原商业客户端/任务脚本/JPEG/原网页均未进Git，只有研究元数据和验证代码。
+
+当前R93停止于一个指南页面、两组各五件、一个可见图像。重开需同build官方任务配置、原始NPC窗口截图或事件日志、真实源HTML图链与图片原字节、服务器扣物/奖励ACK、原画/物种绑定其中之一。下一最高 `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-94` 回22域挑另一地区具名宠物原始外观或较早地图NPC实像证据，避免连续扩本任务攻略；Stage A 7 PARTIAL＋2 OPEN、Stage B/wiki GATED、R79 PAUSED_NON_BLOCKING，overall restoration percentage=null。旧全部历史保留。
