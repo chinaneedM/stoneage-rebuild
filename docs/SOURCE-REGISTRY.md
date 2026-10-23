@@ -8355,3 +8355,18 @@ FACT：以本轮GitHub新读main `8c60f9139ff149f4e1f846e74a4f575c73321ee7` / tr
 交付SOURCE、5条研究目录（具名骑宠2/类型装备教程1/合成上限语境1/面板参考1）、契约、专用工具7单元及Actions。7必填/19合法集合、game_ids null、非发行授权。两HTML各自实际bytes/hash与初取是否相等如实保留，选定三正文段/图库图注与链接严格固定；初取基线不被CI包装变化覆写，JPEG完整固定。三父（旧CN20骑乘、旧PET80发布规格、内容档案）及parser完整固定。独立regex/entity三段与解析一致；20语义变异移除fingerprint仍拒绝、3图库身份反例、2隐藏/正文外伪修复及外围script正例通过。本地生成器首有正则引号语法错误，继有脚括号内顿号误拆；修正结构分组后，真实反例发现“不能透过合成制作”仍命中子串，收紧肯定完整句后20变异/7项通过。保留预检失败，不冒称已远端验收。
 
 止点：一台湾报道衍生转载＋一实际图库＋一全图，完成具名骑证条件与装备类型资料，不实现骑乘/装备或推原服。候选/main真实CI后保存双原派生报告和收据再验收。最高后续OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-91：优先早期具名NPC对话/交互界面或另一地区具名宠物技能数值来源，避免连扩本报道其它娱乐设施/无名图；Stage A7PARTIAL+2OPEN，B/wiki GATED，savedataR79 PAUSED_NON_BLOCKING，无整体百分比。
+
+
+### R90 内容双端实际验收及永久派生保管 — 2026-10-23
+
+内容commit `f2ce09647efd8cbb67994e7f9718b18d3efc8e15` / tree `c5b2d1c9760ff14917fc2f4cee499d87153caf43`，候选10/main11共21实际Actions全completed/success，双专用日志各7tests与真实两HTML一全图取源成功。
+
+candidate: run39943758433 / job120381250855 / artifact12497147418；ZIP3458 bytes `sha256:fc1551cc8a3a904cf00e8c0d36b61eb787c122ce812c55f12defdd4b8be87046`；原样JSON12168 bytes SHA256 `75bb718becb3e152bbe0057988cb355739810351d23c992304456b3cccec41d9` / Git blob `584983c1b8c7137c72b70d64675a1da0ff722801`；equals_initial_inputs=true。
+
+main: run39943895787 / job120381709724 / artifact12496718117；ZIP3458 bytes `sha256:5b12c0a77e9bb6872e01bbfedeff3fef8481188dc408c40d6c371cd09782a028`；原样JSON12168 bytes SHA256 `75bb718becb3e152bbe0057988cb355739810351d23c992304456b3cccec41d9` / Git blob `584983c1b8c7137c72b70d64675a1da0ff722801`；equals_initial_inputs=true。
+
+双ZIP真实下载核API摘要和长度、唯一成员replay.json。双原样JSON与初始local逐字相等，3个实际输入bytes/SHA256一致，candidate_main_raw_bytes_equal=true；S1/S2初取比较均true，如将来包装变化仍各自诚实记录，不覆盖初取。引文三段、图库图注/链接、5纪录、完整解码照片与视觉边界一致。原HTML/JPEG不入Git，永久保留双派生JSON及CUSTODY。
+
+7证据SOURCE、旧CN20骑乘、旧PET80发布规格、内容档案、parser与双原报告按bytes/SHA256/Git blob固定，完整7pin清单摘要另锁代码；证据被改后连receipt pin一起重算仍拒绝。固定21真实run清单摘要、准确内容HEAD/tree/候选分支、双run/job/artifact/ZIP长度与摘要，不接受缺失、等长破坏、漏门/重复/复用工件、虚报初取或双端相等、错任务/分支/HEAD、2005原字节或服务器运行抬高。逐份核schema、两HTML实际identity及初取布尔、全图固定、语义/audit与原件界限。CLI强制保管，第8单元增加所有保管反例及骑证泛化至两宠/七类别变全宠槽位矩阵/静态持物变成功穿戴的拒绝。本地最终8项及关联16项共24通过，原输入强制保管重放输出与初始local逐字相等；独立发布边界工具通过，旧文完整保留。原内容CI7项不改称8项；保管提交候选/main自身仍待实际8项及全门后验。
+
+交付具体收益是把“持有史卡鲁”和“获族长骑乘证”分开，以及宠物类型→可用装备栏、7大类/脚子类型、属性增减的有限资料。没有宠物物种完整数值、技能/成长率、骑证原ID与实际装备事务。最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-91：早期具名NPC对话/交互界面或另一地区具名宠物技能数值来源，避免连扩本报道娱乐设施/匿名图。Stage A7PARTIAL+2OPEN、B/wiki GATED、savedataR79 PAUSED_NON_BLOCKING，整体恢复百分比仍null。

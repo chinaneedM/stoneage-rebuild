@@ -180,9 +180,57 @@ def read_inputs(directory=None):
  return result
 
 
+def verify_custody(root=None):
+ root=ROOT if root is None else Path(root)
+ receipt=json.loads((root/f'research/recovered/{STEM}-CUSTODY-R1.json').read_text())
+ require(receipt['schema']=='stoneage.tw80_mount_certificate_equipment.custody.r1','Custody schema')
+ require(receipt['content_commit']=='f2ce09647efd8cbb67994e7f9718b18d3efc8e15' and receipt['content_tree']=='c5b2d1c9760ff14917fc2f4cee499d87153caf43','Content Git identity')
+ require(receipt['candidate_branch']=='agent/named-content-r90-mount-certificate-equipment-20261023','Candidate branch')
+ require(receipt['server_execution_verified'] is False and receipt['current_bytes_authenticate_2005_original'] is False and receipt['original_operator_script_acquired'] is False,'Custody authority promoted')
+ require(all(receipt[k] is False for k in ('certificate_applies_to_both_mounts','seven_categories_are_all_pet_slot_matrix','static_cursor_is_equipping_trace')),'Screenshot, navigation or pet-master coverage promoted')
+ paths=[f'research/recovered/{STEM}-SOURCE-R1.json']+PARENTS+[PARSER]+[f'research/recovered/{STEM}-CI-{role}-R1.json' for role in ('CANDIDATE','MAIN')]
+ pins=receipt['permanent_pins'];require(sha(json.dumps(pins,sort_keys=True).encode())=='e03e9fe63813da39d41cff308c30cb66bc2ba198a28037e085583af15a3c909c','Original seven-pin identity list replaced');require([p['path'] for p in pins]==paths,'Seven mandatory permanent evidence pins changed')
+ for p in pins:
+  b=(root/p['path']).read_bytes()
+  require(p=={'path':p['path'],'bytes':len(b),'sha256':sha(b),'git_blob':hashlib.sha1(b'blob '+str(len(b)).encode()+b'\0'+b).hexdigest()},'Permanent original bytes changed')
+ source=json.loads((root/paths[0]).read_text())
+ initial=[{'id':s['id'],'url':s['url'],'bytes':s['initial_intake_bytes'],'sha256':s['initial_intake_sha256']} for s in source['sources']]+[{k:v[k] for k in ('id','url','bytes','sha256')} for v in source['images']]
+ require(receipt['initial_inputs']==initial,'Original intake/input dates lost')
+ runs=receipt['runs'];require(len(runs)==21 and len({v['id'] for v in runs})==21,'Actual gate inventory missing/duplicated')
+ require(sha(json.dumps(sorted(runs,key=lambda v:v['id']),sort_keys=True).encode())=='53dfdeea8132122b25142d65ef33088bee8e6dc5df63082c25498f009cd37350','Actual immutable run inventory changed')
+ branches={'candidate':receipt['candidate_branch'],'main':'main'}
+ for role,count in (('candidate',10),('main',11)):
+  group=[v for v in runs if v['branch']==branches[role]]
+  require(len(group)==count and len({v['name'] for v in group})==count,'Branch gate inventory changed')
+ require(all(v['head']==receipt['content_commit'] and v['status']=='completed' and v['conclusion']=='success' for v in runs),'Unverified/failed gate promoted')
+ raw_files=[];jobs=[];artifacts=[]
+ for role,branch in branches.items():
+  proof=receipt['jobs_and_artifacts'][role];artifact=proof['artifact'];run=artifact['workflow_run']
+  expected={'candidate': (39943758433, 120381250855, 12497147418), 'main': (39943895787, 120381709724, 12496718117)}[role]
+  require((proof['run'],proof['job'],artifact['id'])==expected,'Verified run/job/artifact identity changed')
+  require(run['id']==proof['run'] and run['head_sha']==receipt['content_commit'] and run['head_branch']==branch,'Artifact origin detached')
+  matching=[v for v in runs if v['id']==proof['run']]
+  require(len(matching)==1 and matching[0]['branch']==branch and matching[0]['name']=='Verify TW80 mount certificates and typed pet equipment','Wrong source workflow')
+  require(proof['job_name']=='bounded-source-replay' and proof['job_conclusion']=='success' and artifact['name']=='tw80-mount-certificate-equipment-derived-r90','Wrong job/artifact')
+  require(proof['zip_downloaded_and_digest_verified'] is True and artifact['size_in_bytes']>0 and re.fullmatch(r'sha256:[0-9a-f]{64}',artifact['digest']),'ZIP custody missing')
+  require((artifact['size_in_bytes'],artifact['digest'])=={'candidate': (3458, 'sha256:fc1551cc8a3a904cf00e8c0d36b61eb787c122ce812c55f12defdd4b8be87046'), 'main': (3458, 'sha256:5b12c0a77e9bb6872e01bbfedeff3fef8481188dc408c40d6c371cd09782a028')}[role],'Actual ZIP byte identity changed')
+  jobs.append(proof['job']);artifacts.append(artifact['id'])
+  path=f'research/recovered/{STEM}-CI-{role.upper()}-R1.json';raw=(root/path).read_bytes();raw_files.append(raw);replayed=json.loads(raw)
+  require(replayed['schema']=='stoneage.tw80_mount_certificate_equipment.replay.r1' and len(replayed['inputs'])==3 and [v['id'] for v in replayed['inputs']]==['S1','S2','I1'] and replayed['inputs'][2]==initial[2],'Replay/image input identity changed')
+  require(all(v['url']==initial[i]['url'] and v['bytes']>0 and re.fullmatch(r'[0-9a-f]{64}',v['sha256']) for i,v in enumerate(replayed['inputs'][:2])),'Actual HTML inputs changed')
+  require(replayed['source_identity']=={'html_equals_initial_intake':{v['id']:v==initial[i] for i,v in enumerate(replayed['inputs'][:2])},'selected_paragraphs_and_gallery_equal_initial':True,'current_bytes_authenticate_2005_original':False},'Per-HTML equality or authority misreported')
+  record=receipt['raw_replays'][role];p=next(v for v in pins if v['path']==path)
+  require(all(record[k]==p[k] for k in p) and record['inputs']==replayed['inputs'] and record['equals_initial_inputs']==(replayed['inputs']==initial),'Raw identity/input equality misreported')
+  require(all(replayed[k]==source[k] for k in ('extraction','images','visual_observations','comparison','catalog_records')),'Raw replay semantics detached')
+  require(replayed['audit']=={'semantic_mutations_without_all_fingerprints':20,'gallery_identity_mutations':3,'hidden_and_outside_article_counterexamples':2,'outside_script_positive':True} and replayed['original_html_or_assets_in_output'] is False and replayed['original_server_runtime_verified'] is False,'Raw audit/authority promoted')
+ require(len(set(jobs))==len(set(artifacts))==2 and receipt['candidate_main_raw_bytes_equal']==(raw_files[0]==raw_files[1]),'Candidate/main evidence substituted')
+ return receipt
+
+
 def main():
  p=argparse.ArgumentParser();g=p.add_mutually_exclusive_group(required=True);g.add_argument('--fetch',action='store_true');g.add_argument('--input-dir');p.add_argument('--output',required=True);a=p.parse_args()
  r=json.loads(REPORT.read_text());out=replay(read_inputs(a.input_dir),r)
+ verify_custody()
  path=Path(a.output);path.parent.mkdir(parents=True,exist_ok=True);path.write_text(json.dumps(out,ensure_ascii=False,indent=2)+'\n')
  print('R90 Taiwan8 mount certificates, type-dependent equipment and static panel replayed; original IO and named mount skills remain unknown.')
 

@@ -1,0 +1,357 @@
+{
+  "schema": "stoneage.tw80_mount_certificate_equipment.custody.r1",
+  "content_commit": "f2ce09647efd8cbb67994e7f9718b18d3efc8e15",
+  "content_tree": "c5b2d1c9760ff14917fc2f4cee499d87153caf43",
+  "candidate_branch": "agent/named-content-r90-mount-certificate-equipment-20261023",
+  "server_execution_verified": false,
+  "current_bytes_authenticate_2005_original": false,
+  "original_operator_script_acquired": false,
+  "certificate_applies_to_both_mounts": false,
+  "seven_categories_are_all_pet_slot_matrix": false,
+  "static_cursor_is_equipping_trace": false,
+  "permanent_pins": [
+    {
+      "path": "research/recovered/STONEAGE-TW80-MOUNT-CERTIFICATE-EQUIPMENT-SOURCE-R1.json",
+      "bytes": 14349,
+      "sha256": "265a3a9cc19d5a349bf15e381875b20ea2899562ff950d2fc513be8a77fec2e4",
+      "git_blob": "67035e1035f3ed2ee02a7b9dbe56db0b6bd654ea"
+    },
+    {
+      "path": "research/recovered/STONEAGE-CN20-RIDING-TRAINER-COMBAT-SOURCE-R1.json",
+      "bytes": 14868,
+      "sha256": "e41de8bc186771906554775e885cf66ab995a06f01618f7f2d3724a888e69c81",
+      "git_blob": "3e196dce7e0e04250814ac93a6b8e6fad0fc3dfd"
+    },
+    {
+      "path": "docs/specs/STONEAGE-PET-80-CONTEMPORARY-RELEASE-EVIDENCE-R1.md",
+      "bytes": 5400,
+      "sha256": "60ca5637d325f44c5c6051e32e69d9f99c0605655563c0b6a04166f869ad2438",
+      "git_blob": "1a6496648076effafd0b14305c7a5ebb676b62d5"
+    },
+    {
+      "path": "research/recovered/STONEAGE-PREPRODUCTION-CONTENT-ARCHIVE-R1.json",
+      "bytes": 24489,
+      "sha256": "e87afebc8c9590142c7cc8831b578455b3427bf7c1d10520ae02a3e8082fbddb",
+      "git_blob": "2d5b3f081d5618287f431fbded943722a820c593"
+    },
+    {
+      "path": "tools/stoneage_jp2005_treasure_source.py",
+      "bytes": 20924,
+      "sha256": "d541c0fb832447f203ad0618ea86d0ed39e0a32bdf5c26f509dde6f5ffecba40",
+      "git_blob": "350e9d3769597ea4b47959cf2dbd3edf8d97916f"
+    },
+    {
+      "path": "research/recovered/STONEAGE-TW80-MOUNT-CERTIFICATE-EQUIPMENT-CI-CANDIDATE-R1.json",
+      "bytes": 12168,
+      "sha256": "75bb718becb3e152bbe0057988cb355739810351d23c992304456b3cccec41d9",
+      "git_blob": "584983c1b8c7137c72b70d64675a1da0ff722801"
+    },
+    {
+      "path": "research/recovered/STONEAGE-TW80-MOUNT-CERTIFICATE-EQUIPMENT-CI-MAIN-R1.json",
+      "bytes": 12168,
+      "sha256": "75bb718becb3e152bbe0057988cb355739810351d23c992304456b3cccec41d9",
+      "git_blob": "584983c1b8c7137c72b70d64675a1da0ff722801"
+    }
+  ],
+  "initial_inputs": [
+    {
+      "id": "S1",
+      "url": "https://games.sina.com.cn/o/n/2005-06-09/1552109910.shtml",
+      "bytes": 48685,
+      "sha256": "a67c9ee21070d048c7dae901cf8c505b6ced3c888abd1ebcc190f764c1f7f4d8"
+    },
+    {
+      "id": "S2",
+      "url": "https://games.sina.com.cn/o/i/2005-06-09/61677.shtml",
+      "bytes": 35353,
+      "sha256": "41ae049999094a87ef0a6a1789c2ab9ef55d226093267d9a1a191a883c5b11fc"
+    },
+    {
+      "id": "I1",
+      "url": "https://image2.sina.com.cn/gm/o/n/2005-06-09/U508P115T9D109910F376DT20050609155230.jpg",
+      "bytes": 77930,
+      "sha256": "3126fbb80a7d379530519840e78563dc850707a17e89764f21ad2b82df52aa23"
+    }
+  ],
+  "runs": [
+    {
+      "id": 39943895834,
+      "name": "Validate Stage A early source gap triage",
+      "head": "f2ce09647efd8cbb67994e7f9718b18d3efc8e15",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39943895847,
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "head": "f2ce09647efd8cbb67994e7f9718b18d3efc8e15",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39943895824,
+      "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+      "head": "f2ce09647efd8cbb67994e7f9718b18d3efc8e15",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39943895889,
+      "name": "Independently verify TW1.0 R58 rooted helper returns and source custody",
+      "head": "f2ce09647efd8cbb67994e7f9718b18d3efc8e15",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39943895931,
+      "name": "Validate legacy StoneAge assistant history and pet content gaps",
+      "head": "f2ce09647efd8cbb67994e7f9718b18d3efc8e15",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39943895876,
+      "name": "Validate StoneAge Stage A joint review decision",
+      "head": "f2ce09647efd8cbb67994e7f9718b18d3efc8e15",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39943895793,
+      "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+      "head": "f2ce09647efd8cbb67994e7f9718b18d3efc8e15",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39943895709,
+      "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+      "head": "f2ce09647efd8cbb67994e7f9718b18d3efc8e15",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39943895766,
+      "name": "Validate StoneAge preproduction content archive and wiki boundary",
+      "head": "f2ce09647efd8cbb67994e7f9718b18d3efc8e15",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39943895888,
+      "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+      "head": "f2ce09647efd8cbb67994e7f9718b18d3efc8e15",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39943895787,
+      "name": "Verify TW80 mount certificates and typed pet equipment",
+      "head": "f2ce09647efd8cbb67994e7f9718b18d3efc8e15",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39943758433,
+      "name": "Verify TW80 mount certificates and typed pet equipment",
+      "head": "f2ce09647efd8cbb67994e7f9718b18d3efc8e15",
+      "branch": "agent/named-content-r90-mount-certificate-equipment-20261023",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39943758307,
+      "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+      "head": "f2ce09647efd8cbb67994e7f9718b18d3efc8e15",
+      "branch": "agent/named-content-r90-mount-certificate-equipment-20261023",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39943758402,
+      "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+      "head": "f2ce09647efd8cbb67994e7f9718b18d3efc8e15",
+      "branch": "agent/named-content-r90-mount-certificate-equipment-20261023",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39943758384,
+      "name": "Validate legacy StoneAge assistant history and pet content gaps",
+      "head": "f2ce09647efd8cbb67994e7f9718b18d3efc8e15",
+      "branch": "agent/named-content-r90-mount-certificate-equipment-20261023",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39943758435,
+      "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+      "head": "f2ce09647efd8cbb67994e7f9718b18d3efc8e15",
+      "branch": "agent/named-content-r90-mount-certificate-equipment-20261023",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39943758328,
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "head": "f2ce09647efd8cbb67994e7f9718b18d3efc8e15",
+      "branch": "agent/named-content-r90-mount-certificate-equipment-20261023",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39943758351,
+      "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+      "head": "f2ce09647efd8cbb67994e7f9718b18d3efc8e15",
+      "branch": "agent/named-content-r90-mount-certificate-equipment-20261023",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39943758381,
+      "name": "Validate StoneAge Stage A joint review decision",
+      "head": "f2ce09647efd8cbb67994e7f9718b18d3efc8e15",
+      "branch": "agent/named-content-r90-mount-certificate-equipment-20261023",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39943758455,
+      "name": "Validate StoneAge preproduction content archive and wiki boundary",
+      "head": "f2ce09647efd8cbb67994e7f9718b18d3efc8e15",
+      "branch": "agent/named-content-r90-mount-certificate-equipment-20261023",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39943758366,
+      "name": "Validate Stage A early source gap triage",
+      "head": "f2ce09647efd8cbb67994e7f9718b18d3efc8e15",
+      "branch": "agent/named-content-r90-mount-certificate-equipment-20261023",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "jobs_and_artifacts": {
+    "candidate": {
+      "run": 39943758433,
+      "job": 120381250855,
+      "job_name": "bounded-source-replay",
+      "job_conclusion": "success",
+      "artifact": {
+        "id": 12497147418,
+        "name": "tw80-mount-certificate-equipment-derived-r90",
+        "size_in_bytes": 3458,
+        "url": "https://api.github.com/repos/chinaneedM/stoneage-rebuild/actions/artifacts/12497147418",
+        "archive_download_url": "https://api.github.com/repos/chinaneedM/stoneage-rebuild/actions/artifacts/12497147418/zip",
+        "expired": false,
+        "created_at": "2026-10-23T11:06:43Z",
+        "expires_at": "2026-11-22T11:06:42Z",
+        "updated_at": "2026-10-23T11:06:43Z",
+        "digest": "sha256:fc1551cc8a3a904cf00e8c0d36b61eb787c122ce812c55f12defdd4b8be87046",
+        "workflow_run": {
+          "id": 39943758433,
+          "repository_id": 1374762421,
+          "head_repository_id": 1374762421,
+          "head_branch": "agent/named-content-r90-mount-certificate-equipment-20261023",
+          "head_sha": "f2ce09647efd8cbb67994e7f9718b18d3efc8e15"
+        }
+      },
+      "zip_downloaded_and_digest_verified": true
+    },
+    "main": {
+      "run": 39943895787,
+      "job": 120381709724,
+      "job_name": "bounded-source-replay",
+      "job_conclusion": "success",
+      "artifact": {
+        "id": 12496718117,
+        "name": "tw80-mount-certificate-equipment-derived-r90",
+        "size_in_bytes": 3458,
+        "url": "https://api.github.com/repos/chinaneedM/stoneage-rebuild/actions/artifacts/12496718117",
+        "archive_download_url": "https://api.github.com/repos/chinaneedM/stoneage-rebuild/actions/artifacts/12496718117/zip",
+        "expired": false,
+        "created_at": "2026-10-23T11:07:52Z",
+        "expires_at": "2026-11-22T11:07:51Z",
+        "updated_at": "2026-10-23T11:07:52Z",
+        "digest": "sha256:5b12c0a77e9bb6872e01bbfedeff3fef8481188dc408c40d6c371cd09782a028",
+        "workflow_run": {
+          "id": 39943895787,
+          "repository_id": 1374762421,
+          "head_repository_id": 1374762421,
+          "head_branch": "main",
+          "head_sha": "f2ce09647efd8cbb67994e7f9718b18d3efc8e15"
+        }
+      },
+      "zip_downloaded_and_digest_verified": true
+    }
+  },
+  "raw_replays": {
+    "candidate": {
+      "path": "research/recovered/STONEAGE-TW80-MOUNT-CERTIFICATE-EQUIPMENT-CI-CANDIDATE-R1.json",
+      "bytes": 12168,
+      "sha256": "75bb718becb3e152bbe0057988cb355739810351d23c992304456b3cccec41d9",
+      "git_blob": "584983c1b8c7137c72b70d64675a1da0ff722801",
+      "inputs": [
+        {
+          "id": "S1",
+          "url": "https://games.sina.com.cn/o/n/2005-06-09/1552109910.shtml",
+          "bytes": 48685,
+          "sha256": "a67c9ee21070d048c7dae901cf8c505b6ced3c888abd1ebcc190f764c1f7f4d8"
+        },
+        {
+          "id": "S2",
+          "url": "https://games.sina.com.cn/o/i/2005-06-09/61677.shtml",
+          "bytes": 35353,
+          "sha256": "41ae049999094a87ef0a6a1789c2ab9ef55d226093267d9a1a191a883c5b11fc"
+        },
+        {
+          "id": "I1",
+          "url": "https://image2.sina.com.cn/gm/o/n/2005-06-09/U508P115T9D109910F376DT20050609155230.jpg",
+          "bytes": 77930,
+          "sha256": "3126fbb80a7d379530519840e78563dc850707a17e89764f21ad2b82df52aa23"
+        }
+      ],
+      "equals_initial_inputs": true
+    },
+    "main": {
+      "path": "research/recovered/STONEAGE-TW80-MOUNT-CERTIFICATE-EQUIPMENT-CI-MAIN-R1.json",
+      "bytes": 12168,
+      "sha256": "75bb718becb3e152bbe0057988cb355739810351d23c992304456b3cccec41d9",
+      "git_blob": "584983c1b8c7137c72b70d64675a1da0ff722801",
+      "inputs": [
+        {
+          "id": "S1",
+          "url": "https://games.sina.com.cn/o/n/2005-06-09/1552109910.shtml",
+          "bytes": 48685,
+          "sha256": "a67c9ee21070d048c7dae901cf8c505b6ced3c888abd1ebcc190f764c1f7f4d8"
+        },
+        {
+          "id": "S2",
+          "url": "https://games.sina.com.cn/o/i/2005-06-09/61677.shtml",
+          "bytes": 35353,
+          "sha256": "41ae049999094a87ef0a6a1789c2ab9ef55d226093267d9a1a191a883c5b11fc"
+        },
+        {
+          "id": "I1",
+          "url": "https://image2.sina.com.cn/gm/o/n/2005-06-09/U508P115T9D109910F376DT20050609155230.jpg",
+          "bytes": 77930,
+          "sha256": "3126fbb80a7d379530519840e78563dc850707a17e89764f21ad2b82df52aa23"
+        }
+      ],
+      "equals_initial_inputs": true
+    }
+  },
+  "candidate_main_raw_bytes_equal": true
+}
