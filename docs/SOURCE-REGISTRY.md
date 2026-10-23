@@ -8103,3 +8103,14 @@ S1 https://games.sina.com.cn/zhqu/sta/rwgl1_11.shtml ，可见2003-05-29 17:00/�
 GNN原https://gnn.gamer.com.tw/detail.php?sn=5718 可见2002-09-13 21:06:37/记者未具名，当前网页/原HTTP403，未取当前正文。一次Availability查询20020914回20190820052955，实际S1 https://web.archive.org/web/20190820052955id_/https://gnn.gamer.com.tw/detail.php?sn=5718 ，200无跳转UTF8严格25749B/860bfa744ce89248eb64d73636e2ccc6bcb26e12b63e62b5506d6e5cf7237998。正文四段646字符1842UTF8B/f85f79dcdae3dd800d41a65fe48056680fe34cb282baed43e24d2d72d0cfa821独立核对。2019是捕获非2002认证原字节/官方发布稿/精确build，当前/存档未作相等判断。
 
 图库只取实际https://p2.bahamut.com.tw/S/2KU/55/0000089255.JPG、/S/2KU/56/0000089256.JPG、/S/2KU/57/0000089257.JPG；14244/fa4fe54fd11130616026702f9f20096284f4496267ea370d9a67e682f9cf81a2、15506/f46a29766362cb70270653ba1c62d5e4da28b20c7a1c902d367cbb83110f3994、12617/511919de15d047ec0ebe2ad5c8b733fda962ee249dac5427b4df5bc1747bfd74，均200无跳转JPEG/RGB120×120单帧完整解码目视。商品画与两兽插画无具名图注，不按颜色/排序合火/地兽或形态，不作原SPR/模型/2002像素，B大图/meta封面未取。十条研究目录、三父报告/解析器原生Git固定见TW2002-WEREWOLF-FORMS-SOURCE-R1；原HTML/JPEG不入Git，实CI保管后验。
+
+
+### R82双端实源验收与永久派生保管（2026-10-23）
+
+内容1a851305330508a55cc70e5b8b4e8f15fac585e4/tree9237a486886b45509d89baf12dcff12a97993603，候选10/main11项实际completed/success。九文件原生Git blob及整tree逐一一致，四连续性旧全文前缀完整；新读main旧HEAD后expected_sha非强制快进。专用候选run39901001585/job120242308486/artifact12478711794，主线run39901121177/job120242684110/artifact12478952260，日志实际各7单元、精确2019存档三120小JPEG实取/完整解码、23去全部段落/正文指纹门改写及隐藏/正文外2反例成功。未重新访问403原文或重查Availability。
+
+两实际ZIP各4138B，SHA25610e0dc6f684a1d261e814e0bf531d0e9792ce67bd07b64e6617158288066236c / 41914e47e5c11c690e37f193b31eba4aed2968ee794fc8320301456b02b5b325逐一符合API；唯一replay.json各19228B/SHA2562cac950f34acb4a5f034703bc150e91fab5ca8c74dd054c9311dd8d3cb6c8817。候选/main/local/保管门后local四份逐字节相同，四HTTP输入均同初取。这只比较存档与三当前CDN小图，不称未取得的当前GNN正文也相等，不认证2002原字节/像素。
+
+双原CI JSON与STONEAGE-TW2002-WEREWOLF-FORMS-CUSTODY-R1.json永久入Git。七pin固定SOURCE、三父报告、共享解析器和双原报告的字节/SHA256/原生Git身份；收据记录21实际run、准确双run/job/artifact及ZIP/raw/input初取历史。CLI强制保管门拒绝缺失/同长篡改、错HEAD/tree/分支/任务/ID、门遗漏/重复或成功门替代、工件复用、虚报输入相等或抬高运行/官方作者/历史权威；另显式拒绝捕获=刊时、声称取得当前正文或完整原图。新增第8保管单元，相关24项本地回归与原输入逐字节重放通过；旧内容CI七单元不改称八单元，保管自身候选/main另实际后验。
+
+狼人进入战斗才狼形及月夜原称谓、逆转换未知、促销强度/限量非数字主表、4.0媒体不认证build、手机/实体卡牌不混虚拟兑换、三小图不按颜色/顺序绑定物种的边界全部保留。最高NEXT83回早期具名任务/地图生态或有同版实参音效，不连扩付费商品；Stage A7 PARTIAL+2 OPEN，B/wiki GATED，savedata R79 PAUSED_NON_BLOCKING，历史旧全文不删。

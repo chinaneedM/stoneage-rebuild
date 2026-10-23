@@ -51,3 +51,14 @@ OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-82。交付具名宠物的文献�
 本包7单元/相关23项本地通过，23去全部段落/正文指纹门的语义改写、隐藏/正文外2反例、外围script正例，以及一存档三小图离线回放通过。首次测试夹具把中文UTF8误写为非ASCII bytes字面量；第一次修正后还留一条控制字符分隔残行，清除后完整回归通过，生产提取/原输入重放未失败。候选/main独立实取及永久保管须实际后验。
 
 止于一存档正文三实际小图，不扩商品/桌游/大图抓取。重开需同版运营宠物/技能表、具名原画/SPR选择链、原服形态轨迹或明确兑换配置。下一最高NEXT83回早期具名任务/地图生态或有同版实参的音效资料，避免连扩付费商品；Stage A7 PARTIAL+2 OPEN、B/wiki GATED、savedata R79 PAUSED_NON_BLOCKING，无整体百分比。
+
+
+### R82双端实源验收与永久派生保管（2026-10-23）
+
+内容1a851305330508a55cc70e5b8b4e8f15fac585e4/tree9237a486886b45509d89baf12dcff12a97993603，候选10/main11项实际completed/success。九文件原生Git blob及整tree逐一一致，四连续性旧全文前缀完整；新读main旧HEAD后expected_sha非强制快进。专用候选run39901001585/job120242308486/artifact12478711794，主线run39901121177/job120242684110/artifact12478952260，日志实际各7单元、精确2019存档三120小JPEG实取/完整解码、23去全部段落/正文指纹门改写及隐藏/正文外2反例成功。未重新访问403原文或重查Availability。
+
+两实际ZIP各4138B，SHA25610e0dc6f684a1d261e814e0bf531d0e9792ce67bd07b64e6617158288066236c / 41914e47e5c11c690e37f193b31eba4aed2968ee794fc8320301456b02b5b325逐一符合API；唯一replay.json各19228B/SHA2562cac950f34acb4a5f034703bc150e91fab5ca8c74dd054c9311dd8d3cb6c8817。候选/main/local/保管门后local四份逐字节相同，四HTTP输入均同初取。这只比较存档与三当前CDN小图，不称未取得的当前GNN正文也相等，不认证2002原字节/像素。
+
+双原CI JSON与STONEAGE-TW2002-WEREWOLF-FORMS-CUSTODY-R1.json永久入Git。七pin固定SOURCE、三父报告、共享解析器和双原报告的字节/SHA256/原生Git身份；收据记录21实际run、准确双run/job/artifact及ZIP/raw/input初取历史。CLI强制保管门拒绝缺失/同长篡改、错HEAD/tree/分支/任务/ID、门遗漏/重复或成功门替代、工件复用、虚报输入相等或抬高运行/官方作者/历史权威；另显式拒绝捕获=刊时、声称取得当前正文或完整原图。新增第8保管单元，相关24项本地回归与原输入逐字节重放通过；旧内容CI七单元不改称八单元，保管自身候选/main另实际后验。
+
+狼人进入战斗才狼形及月夜原称谓、逆转换未知、促销强度/限量非数字主表、4.0媒体不认证build、手机/实体卡牌不混虚拟兑换、三小图不按颜色/顺序绑定物种的边界全部保留。最高NEXT83回早期具名任务/地图生态或有同版实参音效，不连扩付费商品；Stage A7 PARTIAL+2 OPEN，B/wiki GATED，savedata R79 PAUSED_NON_BLOCKING，历史旧全文不删。
