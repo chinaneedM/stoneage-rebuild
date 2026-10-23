@@ -8319,3 +8319,18 @@ FACT（限定报社回刊）：报时光／聯合報系2023-04-13 13:22《元祖
 产物：SOURCE、可重放工具、7项单元、专用Actions、内容契约；4条纪录为人物选择数量组/败北简述/支付简述/标题照片，使用19集合及7必需字段，game_ids null，仅研究元数据不获发行授权。三父SOURCE及共享parser bytes/SHA/Git blob固定不改。独立regex/entity归一化与解析器双核对；16语义变异在不依赖全文fingerprint下拒绝、2隐藏/范围外伪修复拒绝、script与外层回顾改写正例保留。测试使用内存合成JPEG，未提交原HTML/JPEG。本地语义键改名后3单元与CLI曾因同秒等长重写残留pyc SHA失配，清除此任务缓存后7项全部通过；失败不抹除，不伪称远端失败或成功。
 
 待双端真实CI与原样派生报告永久保管后验收。下一优先OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-90：另一地区具名宠物技能、成长或骑乘材料，优先具体规则与可辨认宠物，不连续拓展本回刊泛述。Stage A7PARTIAL+2OPEN，B/wiki GATED，savedataR79 PAUSED_NON_BLOCKING；缺同build真实音频参数不扩音频helper。
+
+
+### R89 内容双端实际验收及原样派生报告永久保管 — 2026-10-23
+
+内容commit `6c753de234e5fe173b1f312839e272101d6dbb88` / tree `8d7cfe602786543d9d534cd41231d7e2f69baafc`。候选10/main11共21个实际Actions全部completed/success，双专用任务日志均7tests与真实网络重放成功。
+
+candidate实际run39940945771 / job120371931887 / artifact12495304253；ZIP3184 bytes `sha256:ee3f97d59bc297b6058a843e68bd55a9448bb85b4af703a9d231c4142363f77d`；原样JSON11015 bytes SHA256 `1dc1787940c20bbd9627ef06e1498561b6fc84b6cd1d5a7f4746f425582b1b89` / Git blob `a2cc7bab38e292a05e17531d8a1be42d08a36658`。实际HTML137528 bytes / `95df497b74e0415641829eb05a2b4d865fa35b456896fd17742fc2f82582006e`，equals_initial_inputs=false。
+
+main实际run39941078117 / job120372368259 / artifact12496250941；ZIP3184 bytes `sha256:a2ba935c6afe0751204efd4bb766ce83eb61060ca3e2226d51bc28ae38aba6db`；原样JSON11015 bytes SHA256 `de842a9ab4fb1fa74b8b4fc0bae9f64f26da1d65e1daca1529f072cb0f3a4dfb` / Git blob `93bc265dd144affe91a480e95b754e97b1c75e88`。实际HTML137670 bytes / `14137dd92f1529dcf8b0e32de0b779e67b767e18c45adf62e396b0017028f9b3`，equals_initial_inputs=false。
+
+双ZIP真实下载核对API摘要与长度，唯一成员replay.json；原样JSON分别永久入Git，candidate_main_raw_bytes_equal=false。两端所选引文/图注fingerprints、4条内容语义、照片bytes/full decode/视觉观察、父比较、16语义变异及2隐藏反例和双范围外正例严格相等；两次HTML整页均不等于初取且互异，source_identity.full_html_equals_initial_intake=false。保留初取137674/hash44553c…不改写，原件鉴真仍false；网页推荐/广告包装变化不影响选定内容，亦不构成原报或历史像素鉴真。没有把两份不同原样JSON重写成同一份。
+
+保管收据固定SOURCE、三父、parser、双原报告共7证据的bytes/SHA256/Git blob，代码另锁完整7pin清单摘要；同时破坏证据并重算receipt pin仍拒绝。固定21真实run清单摘要、精确内容HEAD/tree/候选分支、双run/job/artifact与ZIP摘要/长度；检查每份schema/实际inputs、是否初取的真实布尔值与source_identity、内容语义和边界。CLI强制检查保管；新增第8项反例覆盖缺失、等长破坏、重算pin、虚报相等、任务/分支/HEAD/ID/ZIP错误、复用工件、冒充原报/服务器执行及数量填原版主表/照片升截图/外层骑乘反填。初始远端日志7项不改称8项；本地最终8项及20项相关父域测试共28项通过，原初取输入重放输出与初始local逐字相等，diff check通过。保管提交候选/main自身仍须远端8项和全门后验。
+
+最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-90：另一地区具名宠物技能、成长或骑乘，要求具体来源和宠物，不连扩回刊泛述或匿名宣传；Stage A7PARTIAL+2OPEN、B/wiki GATED、savedataR79 PAUSED_NON_BLOCKING保持。原HTML/JPEG及原报扫描未入Git；4条研究记录不是48个已恢复原版人物。

@@ -184,9 +184,56 @@ def read_inputs(directory=None):
  return result
 
 
+def verify_custody(root=None):
+ root=ROOT if root is None else Path(root)
+ receipt=json.loads((root/f'research/recovered/{STEM}-CUSTODY-R1.json').read_text())
+ require(receipt['schema']=='stoneage.tw2000_launch_avatar_photo.custody.r1','Custody schema')
+ require(receipt['content_commit']=='6c753de234e5fe173b1f312839e272101d6dbb88' and receipt['content_tree']=='8d7cfe602786543d9d534cd41231d7e2f69baafc','Content Git identity')
+ require(receipt['candidate_branch']=='agent/named-content-r89-launch-avatar-photo-20261023','Candidate branch')
+ require(receipt['server_execution_verified'] is False and receipt['current_bytes_authenticate_2000_original'] is False and receipt['original_2000_paper_scan_acquired'] is False,'Custody authority promoted')
+ require(all(receipt[k] is False for k in ('reported_counts_fill_native_roster','photo_is_direct_screenshot','outer_riding_is_launch_rule')),'Screenshot, navigation or pet-master coverage promoted')
+ paths=[f'research/recovered/{STEM}-SOURCE-R1.json']+PARENTS+[PARSER]+[f'research/recovered/{STEM}-CI-{role}-R1.json' for role in ('CANDIDATE','MAIN')]
+ pins=receipt['permanent_pins'];require(sha(json.dumps(pins,sort_keys=True).encode())=='6782658ea9e36e926b86464686f984010c371c60b579272ef5c2008b2f41cb10','Original seven-pin identity list replaced');require([p['path'] for p in pins]==paths,'Seven mandatory permanent evidence pins changed')
+ for p in pins:
+  b=(root/p['path']).read_bytes()
+  require(p=={'path':p['path'],'bytes':len(b),'sha256':sha(b),'git_blob':hashlib.sha1(b'blob '+str(len(b)).encode()+b'\0'+b).hexdigest()},'Permanent original bytes changed')
+ source=json.loads((root/paths[0]).read_text())
+ initial=[{'id':'S1','url':URL,'bytes':source['source']['initial_intake_bytes'],'sha256':source['source']['initial_intake_sha256']}]+[{k:v[k] for k in ('id','url','bytes','sha256')} for v in source['images']]
+ require(receipt['initial_inputs']==initial,'Original intake/input dates lost')
+ runs=receipt['runs'];require(len(runs)==21 and len({v['id'] for v in runs})==21,'Actual gate inventory missing/duplicated')
+ require(sha(json.dumps(sorted(runs,key=lambda v:v['id']),sort_keys=True).encode())=='4634c8fa9bfcebf63b8ee07f2a4e2c8306d106f2ffdd3207b6d7e06e61ee408a','Actual immutable run inventory changed')
+ branches={'candidate':receipt['candidate_branch'],'main':'main'}
+ for role,count in (('candidate',10),('main',11)):
+  group=[v for v in runs if v['branch']==branches[role]]
+  require(len(group)==count and len({v['name'] for v in group})==count,'Branch gate inventory changed')
+ require(all(v['head']==receipt['content_commit'] and v['status']=='completed' and v['conclusion']=='success' for v in runs),'Unverified/failed gate promoted')
+ raw_files=[];jobs=[];artifacts=[]
+ for role,branch in branches.items():
+  proof=receipt['jobs_and_artifacts'][role];artifact=proof['artifact'];run=artifact['workflow_run']
+  expected={'candidate': (39940945771, 120371931887, 12495304253), 'main': (39941078117, 120372368259, 12496250941)}[role]
+  require((proof['run'],proof['job'],artifact['id'])==expected,'Verified run/job/artifact identity changed')
+  require(run['id']==proof['run'] and run['head_sha']==receipt['content_commit'] and run['head_branch']==branch,'Artifact origin detached')
+  matching=[v for v in runs if v['id']==proof['run']]
+  require(len(matching)==1 and matching[0]['branch']==branch and matching[0]['name']=='Verify TW2000 quoted avatar counts and credited title photo','Wrong source workflow')
+  require(proof['job_name']=='bounded-source-replay' and proof['job_conclusion']=='success' and artifact['name']=='tw2000-launch-avatar-photo-derived-r89','Wrong job/artifact')
+  require(proof['zip_downloaded_and_digest_verified'] is True and artifact['size_in_bytes']>0 and re.fullmatch(r'sha256:[0-9a-f]{64}',artifact['digest']),'ZIP custody missing')
+  require((artifact['size_in_bytes'],artifact['digest'])=={'candidate': (3184, 'sha256:ee3f97d59bc297b6058a843e68bd55a9448bb85b4af703a9d231c4142363f77d'), 'main': (3184, 'sha256:a2ba935c6afe0751204efd4bb766ce83eb61060ca3e2226d51bc28ae38aba6db')}[role],'Actual ZIP byte identity changed')
+  jobs.append(proof['job']);artifacts.append(artifact['id'])
+  path=f'research/recovered/{STEM}-CI-{role.upper()}-R1.json';raw=(root/path).read_bytes();raw_files.append(raw);replayed=json.loads(raw)
+  require(replayed['schema']=='stoneage.tw2000_launch_avatar_photo.replay.r1' and len(replayed['inputs'])==2 and replayed['inputs'][0]['id']=='S1' and replayed['inputs'][0]['url']==URL and replayed['inputs'][0]['bytes']>0 and re.fullmatch(r'[0-9a-f]{64}',replayed['inputs'][0]['sha256']) and replayed['inputs'][1]==initial[1],'Actual wrapper/image input identity changed')
+  require(replayed['source_identity']=={'full_html_equals_initial_intake':replayed['inputs'][0]==initial[0],'selected_quote_and_caption_equal_initial':True,'current_wrapper_change_is_original_2000_authentication':False},'Wrapper equality or historical authority misreported')
+  record=receipt['raw_replays'][role];p=next(v for v in pins if v['path']==path)
+  require(all(record[k]==p[k] for k in p) and record['inputs']==replayed['inputs'] and record['equals_initial_inputs']==(replayed['inputs']==initial),'Raw identity/input equality misreported')
+  require(all(replayed[k]==source[k] for k in ('extraction','images','visual_observations','comparison','catalog_records')),'Raw replay semantics detached')
+  require(replayed['audit']=={'semantic_mutations_without_all_fingerprints':16,'hidden_and_outside_article_counterexamples':2,'outside_script_positive':True,'outside_retrospective_positive':True} and replayed['original_html_or_assets_in_output'] is False and replayed['original_server_runtime_verified'] is False,'Raw audit/authority promoted')
+ require(len(set(jobs))==len(set(artifacts))==2 and receipt['candidate_main_raw_bytes_equal']==(raw_files[0]==raw_files[1]),'Candidate/main evidence substituted')
+ return receipt
+
+
 def main():
  p=argparse.ArgumentParser();g=p.add_mutually_exclusive_group(required=True);g.add_argument('--fetch',action='store_true');g.add_argument('--input-dir');p.add_argument('--output',required=True);a=p.parse_args()
  r=json.loads(REPORT.read_text());out=replay(read_inputs(a.input_dir),r)
+ verify_custody()
  path=Path(a.output);path.parent.mkdir(parents=True,exist_ok=True);path.write_text(json.dumps(out,ensure_ascii=False,indent=2)+'\n')
  print('R89 reprinted 4/48 counts and credited early title photo replayed; native roster and login runtime remain unknown.')
 

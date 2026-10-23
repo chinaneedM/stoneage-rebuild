@@ -1,0 +1,339 @@
+{
+  "schema": "stoneage.tw2000_launch_avatar_photo.custody.r1",
+  "content_commit": "6c753de234e5fe173b1f312839e272101d6dbb88",
+  "content_tree": "8d7cfe602786543d9d534cd41231d7e2f69baafc",
+  "candidate_branch": "agent/named-content-r89-launch-avatar-photo-20261023",
+  "server_execution_verified": false,
+  "current_bytes_authenticate_2000_original": false,
+  "original_2000_paper_scan_acquired": false,
+  "reported_counts_fill_native_roster": false,
+  "photo_is_direct_screenshot": false,
+  "outer_riding_is_launch_rule": false,
+  "permanent_pins": [
+    {
+      "path": "research/recovered/STONEAGE-TW2000-LAUNCH-AVATAR-PHOTO-SOURCE-R1.json",
+      "bytes": 13729,
+      "sha256": "a499e3f8dd39cc76e8e687411541fb272af826235e063bfe4aa7bf37e4a5adb3",
+      "git_blob": "8411e79c8c3f25c5055a578853a2817e077e7f19"
+    },
+    {
+      "path": "research/recovered/STONEAGE-TW10-LOGIN-AVATAR-CATALOG-R1.json",
+      "bytes": 21450,
+      "sha256": "ca177dd642f3b539a8aa4bfa27edfe1694dc813fa28f294973f5613fba575682",
+      "git_blob": "d09ff9961f677b7e0b212fbfc8c290cc04892c14"
+    },
+    {
+      "path": "research/recovered/STONEAGE-CN20-CREATION-STATUS-SOURCE-R1.json",
+      "bytes": 22643,
+      "sha256": "2249df2b0e95573534fd22c2e5012e292cac0d9dd4b64f85cbac9b776f4ee995",
+      "git_blob": "bdc460b59ec8b0cdd6c66885e051be27dcf4cb97"
+    },
+    {
+      "path": "research/recovered/STONEAGE-PREPRODUCTION-CONTENT-ARCHIVE-R1.json",
+      "bytes": 24489,
+      "sha256": "e87afebc8c9590142c7cc8831b578455b3427bf7c1d10520ae02a3e8082fbddb",
+      "git_blob": "2d5b3f081d5618287f431fbded943722a820c593"
+    },
+    {
+      "path": "tools/stoneage_jp2005_treasure_source.py",
+      "bytes": 20924,
+      "sha256": "d541c0fb832447f203ad0618ea86d0ed39e0a32bdf5c26f509dde6f5ffecba40",
+      "git_blob": "350e9d3769597ea4b47959cf2dbd3edf8d97916f"
+    },
+    {
+      "path": "research/recovered/STONEAGE-TW2000-LAUNCH-AVATAR-PHOTO-CI-CANDIDATE-R1.json",
+      "bytes": 11015,
+      "sha256": "1dc1787940c20bbd9627ef06e1498561b6fc84b6cd1d5a7f4746f425582b1b89",
+      "git_blob": "a2cc7bab38e292a05e17531d8a1be42d08a36658"
+    },
+    {
+      "path": "research/recovered/STONEAGE-TW2000-LAUNCH-AVATAR-PHOTO-CI-MAIN-R1.json",
+      "bytes": 11015,
+      "sha256": "de842a9ab4fb1fa74b8b4fc0bae9f64f26da1d65e1daca1529f072cb0f3a4dfb",
+      "git_blob": "93bc265dd144affe91a480e95b754e97b1c75e88"
+    }
+  ],
+  "initial_inputs": [
+    {
+      "id": "S1",
+      "url": "https://time.udn.com/udntime/story/122835/7095433",
+      "bytes": 137674,
+      "sha256": "44553c4e5c981b8d28534bf250a32f60496d116b84cc42b14071be441682b238"
+    },
+    {
+      "id": "I1",
+      "url": "https://pgw.udn.com.tw/gw/photo.php?u=https://uc.udn.com.tw/photo/2023/04/13/0/21173547.jpg&s=Y&x=0&y=0&sw=1280&sh=720&sl=W&fw=800&exp=3600",
+      "bytes": 109235,
+      "sha256": "7477d5b56427520ede444b5d8f8baa105373a4d004efa2420782ff6e3de11ddc"
+    }
+  ],
+  "runs": [
+    {
+      "id": 39941078147,
+      "name": "Independently verify TW1.0 R58 rooted helper returns and source custody",
+      "head": "6c753de234e5fe173b1f312839e272101d6dbb88",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39941078068,
+      "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+      "head": "6c753de234e5fe173b1f312839e272101d6dbb88",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39941078117,
+      "name": "Verify TW2000 quoted avatar counts and credited title photo",
+      "head": "6c753de234e5fe173b1f312839e272101d6dbb88",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39941078104,
+      "name": "Validate legacy StoneAge assistant history and pet content gaps",
+      "head": "6c753de234e5fe173b1f312839e272101d6dbb88",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39941078031,
+      "name": "Validate StoneAge preproduction content archive and wiki boundary",
+      "head": "6c753de234e5fe173b1f312839e272101d6dbb88",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39941078033,
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "head": "6c753de234e5fe173b1f312839e272101d6dbb88",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39941077940,
+      "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+      "head": "6c753de234e5fe173b1f312839e272101d6dbb88",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39941078210,
+      "name": "Validate StoneAge Stage A joint review decision",
+      "head": "6c753de234e5fe173b1f312839e272101d6dbb88",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39941077870,
+      "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+      "head": "6c753de234e5fe173b1f312839e272101d6dbb88",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39941077977,
+      "name": "Validate Stage A early source gap triage",
+      "head": "6c753de234e5fe173b1f312839e272101d6dbb88",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39941077886,
+      "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+      "head": "6c753de234e5fe173b1f312839e272101d6dbb88",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39940945602,
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "head": "6c753de234e5fe173b1f312839e272101d6dbb88",
+      "branch": "agent/named-content-r89-launch-avatar-photo-20261023",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39940945543,
+      "name": "Validate legacy StoneAge assistant history and pet content gaps",
+      "head": "6c753de234e5fe173b1f312839e272101d6dbb88",
+      "branch": "agent/named-content-r89-launch-avatar-photo-20261023",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39940945748,
+      "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+      "head": "6c753de234e5fe173b1f312839e272101d6dbb88",
+      "branch": "agent/named-content-r89-launch-avatar-photo-20261023",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39940945611,
+      "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+      "head": "6c753de234e5fe173b1f312839e272101d6dbb88",
+      "branch": "agent/named-content-r89-launch-avatar-photo-20261023",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39940945613,
+      "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+      "head": "6c753de234e5fe173b1f312839e272101d6dbb88",
+      "branch": "agent/named-content-r89-launch-avatar-photo-20261023",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39940945662,
+      "name": "Validate Stage A early source gap triage",
+      "head": "6c753de234e5fe173b1f312839e272101d6dbb88",
+      "branch": "agent/named-content-r89-launch-avatar-photo-20261023",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39940945553,
+      "name": "Validate StoneAge Stage A joint review decision",
+      "head": "6c753de234e5fe173b1f312839e272101d6dbb88",
+      "branch": "agent/named-content-r89-launch-avatar-photo-20261023",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39940945589,
+      "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+      "head": "6c753de234e5fe173b1f312839e272101d6dbb88",
+      "branch": "agent/named-content-r89-launch-avatar-photo-20261023",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39940945738,
+      "name": "Validate StoneAge preproduction content archive and wiki boundary",
+      "head": "6c753de234e5fe173b1f312839e272101d6dbb88",
+      "branch": "agent/named-content-r89-launch-avatar-photo-20261023",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39940945771,
+      "name": "Verify TW2000 quoted avatar counts and credited title photo",
+      "head": "6c753de234e5fe173b1f312839e272101d6dbb88",
+      "branch": "agent/named-content-r89-launch-avatar-photo-20261023",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "jobs_and_artifacts": {
+    "candidate": {
+      "run": 39940945771,
+      "job": 120371931887,
+      "job_name": "bounded-source-replay",
+      "job_conclusion": "success",
+      "artifact": {
+        "id": 12495304253,
+        "name": "tw2000-launch-avatar-photo-derived-r89",
+        "size_in_bytes": 3184,
+        "url": "https://api.github.com/repos/chinaneedM/stoneage-rebuild/actions/artifacts/12495304253",
+        "archive_download_url": "https://api.github.com/repos/chinaneedM/stoneage-rebuild/actions/artifacts/12495304253/zip",
+        "expired": false,
+        "created_at": "2026-10-23T10:42:18Z",
+        "expires_at": "2026-11-22T10:42:18Z",
+        "updated_at": "2026-10-23T10:42:18Z",
+        "digest": "sha256:ee3f97d59bc297b6058a843e68bd55a9448bb85b4af703a9d231c4142363f77d",
+        "workflow_run": {
+          "id": 39940945771,
+          "repository_id": 1374762421,
+          "head_repository_id": 1374762421,
+          "head_branch": "agent/named-content-r89-launch-avatar-photo-20261023",
+          "head_sha": "6c753de234e5fe173b1f312839e272101d6dbb88"
+        }
+      },
+      "zip_downloaded_and_digest_verified": true
+    },
+    "main": {
+      "run": 39941078117,
+      "job": 120372368259,
+      "job_name": "bounded-source-replay",
+      "job_conclusion": "success",
+      "artifact": {
+        "id": 12496250941,
+        "name": "tw2000-launch-avatar-photo-derived-r89",
+        "size_in_bytes": 3184,
+        "url": "https://api.github.com/repos/chinaneedM/stoneage-rebuild/actions/artifacts/12496250941",
+        "archive_download_url": "https://api.github.com/repos/chinaneedM/stoneage-rebuild/actions/artifacts/12496250941/zip",
+        "expired": false,
+        "created_at": "2026-10-23T10:43:24Z",
+        "expires_at": "2026-11-22T10:43:24Z",
+        "updated_at": "2026-10-23T10:43:24Z",
+        "digest": "sha256:a2ba935c6afe0751204efd4bb766ce83eb61060ca3e2226d51bc28ae38aba6db",
+        "workflow_run": {
+          "id": 39941078117,
+          "repository_id": 1374762421,
+          "head_repository_id": 1374762421,
+          "head_branch": "main",
+          "head_sha": "6c753de234e5fe173b1f312839e272101d6dbb88"
+        }
+      },
+      "zip_downloaded_and_digest_verified": true
+    }
+  },
+  "raw_replays": {
+    "candidate": {
+      "path": "research/recovered/STONEAGE-TW2000-LAUNCH-AVATAR-PHOTO-CI-CANDIDATE-R1.json",
+      "bytes": 11015,
+      "sha256": "1dc1787940c20bbd9627ef06e1498561b6fc84b6cd1d5a7f4746f425582b1b89",
+      "git_blob": "a2cc7bab38e292a05e17531d8a1be42d08a36658",
+      "inputs": [
+        {
+          "id": "S1",
+          "url": "https://time.udn.com/udntime/story/122835/7095433",
+          "bytes": 137528,
+          "sha256": "95df497b74e0415641829eb05a2b4d865fa35b456896fd17742fc2f82582006e"
+        },
+        {
+          "id": "I1",
+          "url": "https://pgw.udn.com.tw/gw/photo.php?u=https://uc.udn.com.tw/photo/2023/04/13/0/21173547.jpg&s=Y&x=0&y=0&sw=1280&sh=720&sl=W&fw=800&exp=3600",
+          "bytes": 109235,
+          "sha256": "7477d5b56427520ede444b5d8f8baa105373a4d004efa2420782ff6e3de11ddc"
+        }
+      ],
+      "equals_initial_inputs": false
+    },
+    "main": {
+      "path": "research/recovered/STONEAGE-TW2000-LAUNCH-AVATAR-PHOTO-CI-MAIN-R1.json",
+      "bytes": 11015,
+      "sha256": "de842a9ab4fb1fa74b8b4fc0bae9f64f26da1d65e1daca1529f072cb0f3a4dfb",
+      "git_blob": "93bc265dd144affe91a480e95b754e97b1c75e88",
+      "inputs": [
+        {
+          "id": "S1",
+          "url": "https://time.udn.com/udntime/story/122835/7095433",
+          "bytes": 137670,
+          "sha256": "14137dd92f1529dcf8b0e32de0b779e67b767e18c45adf62e396b0017028f9b3"
+        },
+        {
+          "id": "I1",
+          "url": "https://pgw.udn.com.tw/gw/photo.php?u=https://uc.udn.com.tw/photo/2023/04/13/0/21173547.jpg&s=Y&x=0&y=0&sw=1280&sh=720&sl=W&fw=800&exp=3600",
+          "bytes": 109235,
+          "sha256": "7477d5b56427520ede444b5d8f8baa105373a4d004efa2420782ff6e3de11ddc"
+        }
+      ],
+      "equals_initial_inputs": false
+    }
+  },
+  "candidate_main_raw_bytes_equal": false
+}
