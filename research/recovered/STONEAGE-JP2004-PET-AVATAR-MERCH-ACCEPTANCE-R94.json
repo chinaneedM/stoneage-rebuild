@@ -1,0 +1,92 @@
+{
+  "schema": "stoneage.jp2004_pet_avatar_merch_acceptance.r94",
+  "task": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-94",
+  "base_head": "b5c251885923093da15934953e87d9a224f66d26",
+  "source_commit": "9a3c8eb1b777b18419c08f1e55423ea110c8ba88",
+  "source_tree": "59ef05d99dd6bf51ebcc382df085456ce6a352d5",
+  "docs_commit": "e21f500e92087be5405e891c055e3c30f6568aab",
+  "docs_tree": "79feb50dcd0deb97fd6226c6da5369940a9ec3f2",
+  "source_file": {
+    "path": "research/recovered/STONEAGE-JP2004-PET-AVATAR-MERCH-SOURCE-R94.json",
+    "git_blob_sha1": "766ef71c55fd9bc0d7a68e255032ed790163805d",
+    "bytes": 5696,
+    "contains_original_html": false,
+    "contains_original_art": false,
+    "original_news_html_sha256": null,
+    "original_image_sha256": null
+  },
+  "source_validation": {
+    "branch": "agent/jp2004-pet-avatar-and-upopo-package-r94-20261023",
+    "run_id": 39955095328,
+    "job_id": 120418840764,
+    "conclusion": "success",
+    "original_test_methods": 10,
+    "original_game_executed": false
+  },
+  "candidate_continuity_validation": {
+    "commit": "e21f500e92087be5405e891c055e3c30f6568aab",
+    "run_ids": [
+      39955457792,
+      39955457601,
+      39955457676,
+      39955457569,
+      39955457683,
+      39955457640,
+      39955457690,
+      39955457523,
+      39955457594
+    ],
+    "all_completed_success": true
+  },
+  "main_publication_validation": {
+    "commit": "e21f500e92087be5405e891c055e3c30f6568aab",
+    "run_ids": [
+      39955548688,
+      39955548617,
+      39955548650,
+      39955548372,
+      39955548578,
+      39955548531,
+      39955548470,
+      39955548582,
+      39955548600,
+      39955548758,
+      39955548615
+    ],
+    "dedicated_run_id": 39955548531,
+    "dedicated_job_id": 120420375893,
+    "all_completed_success": true
+  },
+  "actions_artifacts": {
+    "candidate_dedicated_artifact_count": 0,
+    "main_dedicated_artifact_count": 0,
+    "raw_original_html_zip_present": false,
+    "raw_original_image_zip_present": false,
+    "raw_derived_json_zip_present": false,
+    "note": "No short-lived Actions artifact is present. Permanent source-derived JSON is held by immutable Git blob; source media raw bytes were not verified or preserved."
+  },
+  "preservation": {
+    "historical_current_state_old_blob": "6aca1774e36d35a1d6e35b19b2da7c21956ae869",
+    "historical_current_state_new_blob": "5a90c58c85bea305e5f5f3b2c3d0364e268c7af6",
+    "historical_timeline_old_blob": "0c52f3aa1d8dea33e409089936b2c3d309618f91",
+    "historical_timeline_new_blob": "1e80a51cd55f36f2b277dac2510768ec23c34d4d",
+    "historical_source_registry_old_blob": "fb66c9cf44c7945f62c3357e9dfac5bb3775d813",
+    "historical_source_registry_new_blob": "d26e44407532289c6062b4bf8b597f161bf33999",
+    "old_full_file_preserved_as_prefix": true
+  },
+  "scope": {
+    "named_2004_avatars": 3,
+    "total_announced_avatars": 7,
+    "total_announced_backgrounds": 2,
+    "physical_name_match": "ウポポ",
+    "original_pet_species_master_recovered": false,
+    "original_sprite_animation_binding_recovered": false,
+    "external_merchandise_reuse_license_granted": false,
+    "original_source_html_authenticated": false,
+    "original_game_runtime_executed": false,
+    "stage_a_accepted": false,
+    "stage_b_open": false,
+    "overall_restoration_percentage": null
+  },
+  "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-95"
+}
