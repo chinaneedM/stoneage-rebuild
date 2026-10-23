@@ -1,0 +1,342 @@
+{
+  "schema": "stoneage.cn2003.katan.visual-custody.r100",
+  "date": "2026-10-23",
+  "source_head": "88b62f1665621094467ee86d92dd763a79a13129",
+  "source_tree": "626c8649811edcdf629174c4d6e73051660657c4",
+  "hardened_head": "1a7ff343c2004c1ec58a01a4df8ccd7920875690",
+  "hardened_tree": "1cd1b963272f6f4986eaac609db11df976a6e8da",
+  "evidence_pins": {
+    "research/recovered/STONEAGE-CN2003-KATAN-NPC-VISUAL-SOURCE-R100.json": {
+      "bytes": 5564,
+      "sha256": "04494355d31ac97e26f6ce275ca6c10eb05a5b50da0998bece67439a0a7c6cdf",
+      "git_blob": "9069cbc0c880971c8ebb91ffd565f81c4caf5e8f"
+    },
+    "research/recovered/STONEAGE-CN2003-KATAN-NPC-VISUAL-LOCAL-REPLAY-R100.json": {
+      "bytes": 3212,
+      "sha256": "3be73ef4fad742b6f4bd6baa2fca1e73fdaec81a7b38357b8985d6d6431beb5c",
+      "git_blob": "6d2b2079f7b7da955007efc0cc886e0000bc4f7b"
+    },
+    "research/recovered/STONEAGE-CN2003-KATAN-NPC-VISUAL-CI-INITIAL-REPLAY-R100.json": {
+      "bytes": 3212,
+      "sha256": "3be73ef4fad742b6f4bd6baa2fca1e73fdaec81a7b38357b8985d6d6431beb5c",
+      "git_blob": "6d2b2079f7b7da955007efc0cc886e0000bc4f7b"
+    },
+    "research/recovered/STONEAGE-CN2003-KATAN-NPC-VISUAL-CI-CANDIDATE-REPLAY-R100.json": {
+      "bytes": 3212,
+      "sha256": "3be73ef4fad742b6f4bd6baa2fca1e73fdaec81a7b38357b8985d6d6431beb5c",
+      "git_blob": "6d2b2079f7b7da955007efc0cc886e0000bc4f7b"
+    },
+    "research/recovered/STONEAGE-CN2003-KATAN-NPC-VISUAL-CI-MAIN-REPLAY-R100.json": {
+      "bytes": 3212,
+      "sha256": "3be73ef4fad742b6f4bd6baa2fca1e73fdaec81a7b38357b8985d6d6431beb5c",
+      "git_blob": "6d2b2079f7b7da955007efc0cc886e0000bc4f7b"
+    },
+    "tools/stoneage_cn2003_katan_visual_r100.py": {
+      "bytes": 7209,
+      "sha256": "7a1e9010765740bd2d4274227c281f65ed8f00cbe19019a7f21caaef8dfd8b7c",
+      "git_blob": "2cbd67ddc93d41cdb5c492079f3111b70afe8977"
+    },
+    "tests/test_stoneage_cn2003_katan_visual_r100.py": {
+      "bytes": 3891,
+      "sha256": "94c269c99a49ebb54de23e0548a051af94e4ad6b87c007abfa34ef4bb12a33ab",
+      "git_blob": "6b67186ae88da285872b3bee3c0bf63d23f134c9"
+    },
+    "docs/specs/STONEAGE-CN2003-KATAN-NPC-VISUAL-R100.md": {
+      "bytes": 4226,
+      "sha256": "211abd226e0b55333399f65b3598a12b94e7ff74e45663f43c236962e61e3eb9",
+      "git_blob": "b758d4f7c132dd95cec859493c24a9940579067d"
+    }
+  },
+  "actual_success_runs": [
+    {
+      "id": 39974948317,
+      "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+      "head": "88b62f1665621094467ee86d92dd763a79a13129",
+      "branch": "agent/cn2003-katan-visual-r100-20261023",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39974948390,
+      "name": "Validate StoneAge preproduction content archive and wiki boundary",
+      "head": "88b62f1665621094467ee86d92dd763a79a13129",
+      "branch": "agent/cn2003-katan-visual-r100-20261023",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39974948430,
+      "name": "Validate Stage A early source gap triage",
+      "head": "88b62f1665621094467ee86d92dd763a79a13129",
+      "branch": "agent/cn2003-katan-visual-r100-20261023",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39974948361,
+      "name": "Validate legacy StoneAge assistant history and pet content gaps",
+      "head": "88b62f1665621094467ee86d92dd763a79a13129",
+      "branch": "agent/cn2003-katan-visual-r100-20261023",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39974948425,
+      "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+      "head": "88b62f1665621094467ee86d92dd763a79a13129",
+      "branch": "agent/cn2003-katan-visual-r100-20261023",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39974948485,
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "head": "88b62f1665621094467ee86d92dd763a79a13129",
+      "branch": "agent/cn2003-katan-visual-r100-20261023",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39974948450,
+      "name": "Validate StoneAge Stage A joint review decision",
+      "head": "88b62f1665621094467ee86d92dd763a79a13129",
+      "branch": "agent/cn2003-katan-visual-r100-20261023",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39974948461,
+      "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+      "head": "88b62f1665621094467ee86d92dd763a79a13129",
+      "branch": "agent/cn2003-katan-visual-r100-20261023",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39974948463,
+      "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+      "head": "88b62f1665621094467ee86d92dd763a79a13129",
+      "branch": "agent/cn2003-katan-visual-r100-20261023",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39974948559,
+      "name": "Verify R100 Katan NPC target and dialogue image source",
+      "head": "88b62f1665621094467ee86d92dd763a79a13129",
+      "branch": "agent/cn2003-katan-visual-r100-20261023",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39975301672,
+      "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+      "head": "1a7ff343c2004c1ec58a01a4df8ccd7920875690",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39975301869,
+      "name": "Validate Stage A early source gap triage",
+      "head": "1a7ff343c2004c1ec58a01a4df8ccd7920875690",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39975301625,
+      "name": "Validate legacy StoneAge assistant history and pet content gaps",
+      "head": "1a7ff343c2004c1ec58a01a4df8ccd7920875690",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39975302012,
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "head": "1a7ff343c2004c1ec58a01a4df8ccd7920875690",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39975301742,
+      "name": "Validate StoneAge Stage A joint review decision",
+      "head": "1a7ff343c2004c1ec58a01a4df8ccd7920875690",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39975301987,
+      "name": "Validate StoneAge preproduction content archive and wiki boundary",
+      "head": "1a7ff343c2004c1ec58a01a4df8ccd7920875690",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39975301805,
+      "name": "Independently verify TW1.0 R58 rooted helper returns and source custody",
+      "head": "1a7ff343c2004c1ec58a01a4df8ccd7920875690",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39975301701,
+      "name": "Verify R100 Katan NPC target and dialogue image source",
+      "head": "1a7ff343c2004c1ec58a01a4df8ccd7920875690",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39975301668,
+      "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+      "head": "1a7ff343c2004c1ec58a01a4df8ccd7920875690",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39975301899,
+      "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+      "head": "1a7ff343c2004c1ec58a01a4df8ccd7920875690",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39975301724,
+      "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+      "head": "1a7ff343c2004c1ec58a01a4df8ccd7920875690",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39975145224,
+      "name": "Verify R100 Katan NPC target and dialogue image source",
+      "head": "1a7ff343c2004c1ec58a01a4df8ccd7920875690",
+      "branch": "agent/cn2003-katan-visual-r100-20261023",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "source_artifacts": [
+    {
+      "role": "initial",
+      "run_id": 39974948559,
+      "head": "88b62f1665621094467ee86d92dd763a79a13129",
+      "branch": "agent/cn2003-katan-visual-r100-20261023",
+      "job_id": 120486986202,
+      "artifact_id": 12510249178,
+      "artifact_name": "r100-katan-two-image-derived-replay",
+      "zip_bytes": 1557,
+      "zip_digest": "sha256:b9c590ecfd0464a29b9735d10f14469e2a9a058571a57e4e5cf60ffa09cfd3a7",
+      "raw_report": "research/recovered/STONEAGE-CN2003-KATAN-NPC-VISUAL-CI-INITIAL-REPLAY-R100.json",
+      "raw_sha256": "3be73ef4fad742b6f4bd6baa2fca1e73fdaec81a7b38357b8985d6d6431beb5c",
+      "raw_bytes": 3212,
+      "tests_in_actual_log": 7,
+      "real_network_replay_passed": true
+    },
+    {
+      "role": "candidate",
+      "run_id": 39975145224,
+      "head": "1a7ff343c2004c1ec58a01a4df8ccd7920875690",
+      "branch": "agent/cn2003-katan-visual-r100-20261023",
+      "job_id": 120487671773,
+      "artifact_id": 12510219766,
+      "artifact_name": "r100-katan-two-image-derived-replay",
+      "zip_bytes": 1557,
+      "zip_digest": "sha256:c63017f45685559395ad05da9452f31f2c3e88a9634a5c72475314e55fa7727e",
+      "raw_report": "research/recovered/STONEAGE-CN2003-KATAN-NPC-VISUAL-CI-CANDIDATE-REPLAY-R100.json",
+      "raw_sha256": "3be73ef4fad742b6f4bd6baa2fca1e73fdaec81a7b38357b8985d6d6431beb5c",
+      "raw_bytes": 3212,
+      "tests_in_actual_log": 8,
+      "real_network_replay_passed": true
+    },
+    {
+      "role": "main",
+      "run_id": 39975301701,
+      "head": "1a7ff343c2004c1ec58a01a4df8ccd7920875690",
+      "branch": "main",
+      "job_id": 120488216462,
+      "artifact_id": 12510073896,
+      "artifact_name": "r100-katan-two-image-derived-replay",
+      "zip_bytes": 1557,
+      "zip_digest": "sha256:2a5d77c7db8c9ef6e75acf2d00fc61bfeea93d5026e41854bcc105619ff7ea13",
+      "raw_report": "research/recovered/STONEAGE-CN2003-KATAN-NPC-VISUAL-CI-MAIN-REPLAY-R100.json",
+      "raw_sha256": "3be73ef4fad742b6f4bd6baa2fca1e73fdaec81a7b38357b8985d6d6431beb5c",
+      "raw_bytes": 3212,
+      "tests_in_actual_log": 8,
+      "real_network_replay_passed": true
+    }
+  ],
+  "all_raw_reports_equal": true,
+  "original_inputs_equal_initial_intake": true,
+  "historical_prefixes": [
+    {
+      "path": "docs/CURRENT-STATE.md",
+      "old_bytes": 2517154,
+      "old_sha256": "cec7cc606232a09907be8ce7f3b09bd1d74e3d5ec34403f1cba9ab3d61904745",
+      "new_blob": "f63967a665a583226a0eda29008f14f3977ea921",
+      "prefix_preserved": true
+    },
+    {
+      "path": "docs/HISTORICAL-TIMELINE.md",
+      "old_bytes": 673328,
+      "old_sha256": "011f98fca5ea6b8d60f54165809807b7ce6c3cb1fdf796c32754c3d8da01232d",
+      "new_blob": "330c2959c05cde9b8e2f9898ac4a3fe2feee0287",
+      "prefix_preserved": true
+    },
+    {
+      "path": "docs/SOURCE-REGISTRY.md",
+      "old_bytes": 960346,
+      "old_sha256": "d74821bed2518589aa9fb73fc4bdc5d00d5e5fa4898569dfe9719f689d6251c8",
+      "new_blob": "5d5c649ec533396085490642e37b69c79953fc59",
+      "prefix_preserved": true
+    },
+    {
+      "path": "docs/RESTORATION-ROADMAP-R2.md",
+      "old_bytes": 400809,
+      "old_sha256": "ef958ef72571957b863732f7b8820e477cb9b15dcbfb3304aadfece7da38ff9f",
+      "new_blob": "a4d289c877a4767e53021d23b415128449a80ddf",
+      "prefix_preserved": true
+    }
+  ],
+  "content_main_fast_forward": {
+    "from": "8e2ba7f7484a406120fc6292a3578018148ec888",
+    "to": "1a7ff343c2004c1ec58a01a4df8ccd7920875690",
+    "ahead": 2,
+    "behind": 0,
+    "changed_files": 10,
+    "deleted_lines": 0,
+    "expected_sha_checked": true,
+    "force": false
+  },
+  "boundaries": {
+    "raw_html_committed": false,
+    "raw_images_committed": false,
+    "current_image_bytes_verified": true,
+    "original_publication_pixels_authenticated": false,
+    "tw10_same_build_authenticated": false,
+    "original_render_selector_proven": false,
+    "native_npc_id": null,
+    "native_bitmap_id": null,
+    "native_spr_id": null,
+    "world_floor_id": null,
+    "map_dat_recovered": false,
+    "exact_npc_spawn_proven": false,
+    "server_handover_executed": false,
+    "ring_loss_conflict_resolved": false,
+    "stage_a_closed": false,
+    "stage_b_started": false,
+    "wiki_started": false,
+    "overall_percent": null
+  },
+  "proprietary_source_assets_in_git": false,
+  "custody_commit_ci": "NOT_PRECLAIMED_CHECK_ACTUAL_HEAD"
+}

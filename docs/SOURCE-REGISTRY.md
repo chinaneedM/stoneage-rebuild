@@ -8513,3 +8513,14 @@ R98新浪S2实际HTML的第一插图表仍含原href与独立缩略图src；本�
 交付SOURCE/LOCAL-REPLAY原样派生JSON、中文规格、解析/实际网络重放工具、7项负向测试及专用CI；完整图文顺序另以独立regex从真实HTML复核，真实两图CLI全部通过。原HTML/JPEG不入Git。候选/main远端及工件保管须按随后实际结果验收，未提前宣称。
 
 最高NEXT `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-101`：转同版可认证宠物物种—SPR选择或含实体地图DAT；无新源则有限全域缺口复核，不再连续扩卡坦攻略/图组或静态资源列。Stage A7 PARTIAL+2 OPEN，B/wiki GATED，savedataR79 PAUSED_NON_BLOCKING，整体百分比null。
+
+
+### R100 内容主线验收与三次源工件永久保管 — 2026-10-23
+
+初内容提交 `88b62f1665621094467ee86d92dd763a79a13129` / tree `626c8649811edcdf629174c4d6e73051660657c4` 候选10项Actions全success，专用run39974948559/job120486986202实际7项测试和真实一HTML两全图重放成功。随后强化显式hidden/aria-hidden/inline隐藏与完整JPEG解码，提交 `1a7ff343c2004c1ec58a01a4df8ccd7920875690`，专用候选run39975145224/job120487671773实际8项通过；本地关联总44项通过。两次真实日志7/8分别保留，不倒改旧运行测试数。
+
+重新核main仍为8e2ba7f7、compare前进2/落后0、10文件无删行；四份旧历史前缀逐字保留，所有发布blob/最终tree与本地逐一相等后，以expected_sha非强制快进主线。该内容HEAD主线11项实际Actions全success，专用run39975301701/job120488216462实际8项和真实取源成功。永久保管收据含22个不同源/候选/主线真实运行。
+
+三次ZIP均真实下载、校验API摘要/1557字节和唯一成员r100-replay.json：初取artifact12510249178 / sha256:b9c590ecfd0464a29b9735d10f14469e2a9a058571a57e4e5cf60ffa09cfd3a7；强化候选artifact12510219766 / sha256:c63017f45685559395ad05da9452f31f2c3e88a9634a5c72475314e55fa7727e；main artifact12510073896 / sha256:2a5d77c7db8c9ef6e75acf2d00fc61bfeea93d5026e41854bcc105619ff7ea13。三原样JSON与local完全相等：3212B / SHA256 `3be73ef4fad742b6f4bd6baa2fca1e73fdaec81a7b38357b8985d6d6431beb5c`，Git blob `6d2b2079f7b7da955007efc0cc886e0000bc4f7b`。ZIP容器摘要各异不影响raw相等；三次网页实际bytes/hash皆等于初取，未覆盖初取记录。
+
+新增三原样派生报告、CUSTODY及独立验收器：锁8份source/local/三CI/tool/test/spec的bytes/SHA256/Git blob、三run/job/artifact/ZIP、22门和4历史前缀，拒绝缺失/篡改/复用工件/提升为原服/同版NPC身份；原版权HTML/JPEG仍未入Git。此保管提交自身CI以实际后验为准，不把内容主线成功冒充其检查。实质收益为一具名NPC目标及其请求对话的两张当前文献图像，**原台湾1.0具名NPC/SPR闭合仍为0**。最高NEXT101按上一条转同构建身份/实体来源，Stage A7 PARTIAL+2 OPEN、B/wiki GATED、savedataR79暂停、总体百分比null。

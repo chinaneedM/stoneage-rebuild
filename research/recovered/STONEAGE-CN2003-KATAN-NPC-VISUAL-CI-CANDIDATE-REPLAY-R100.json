@@ -1,0 +1,99 @@
+{
+  "schema": "stoneage.cn2003.katan.visual-replay.r100",
+  "contract_sha256": "04494355d31ac97e26f6ce275ca6c10eb05a5b50da0998bece67439a0a7c6cdf",
+  "html": {
+    "bytes": 53124,
+    "sha256": "7230667db91cc824fb6fe6b3d0a833611170a1de1e15bc23f367b623240f7b9c",
+    "equals_initial": true
+  },
+  "selected_links": [
+    "https://image2.sina.com.cn/gm/zhqu/sta/1_115-15-232-572_20030529142417.jpg",
+    "https://image2.sina.com.cn/gm/zhqu/sta/1_115-15-235-572_20030529142417.jpg"
+  ],
+  "images": [
+    {
+      "url": "https://image2.sina.com.cn/gm/zhqu/sta/1_115-15-232-572_20030529142417.jpg",
+      "bytes": 58651,
+      "sha256": "ace7096c3866400dd4400be5169dfaa76f73ae902e7bfb3b3bf8e9a2a76420fc",
+      "format": "JPEG",
+      "size": [
+        640,
+        480
+      ],
+      "mode": "RGB",
+      "frames": 1
+    },
+    {
+      "url": "https://image2.sina.com.cn/gm/zhqu/sta/1_115-15-235-572_20030529142417.jpg",
+      "bytes": 70065,
+      "sha256": "fbb31bd1726db8c25ef41005af28abbf76bfb6b6b6988bec504928e2c3a60b24",
+      "format": "JPEG",
+      "size": [
+        640,
+        480
+      ],
+      "mode": "RGB",
+      "frames": 1
+    }
+  ],
+  "observations": [
+    {
+      "image": 0,
+      "grade": "CURRENT_IMAGE_VISUAL_OBSERVATION_WITH_PUBLISHER_CAPTION",
+      "visible": [
+        "sandy outdoor scene with two humanoid figures",
+        "yellow/red target marker and pointer beside one figure",
+        "bottom status label 卡坦",
+        "upper-right MAP panel with local minimap and east/south coordinate display"
+      ],
+      "not_transcribed": [
+        "uncertain numeric coordinates",
+        "native resource IDs"
+      ],
+      "named_attribution": "caption and visible target label agree on 卡坦",
+      "sprite_identity": null
+    },
+    {
+      "image": 1,
+      "grade": "CURRENT_IMAGE_VISUAL_OBSERVATION_WITH_PUBLISHER_CAPTION",
+      "visible": [
+        "framed translucent brown dialogue window over the sandy scene",
+        "rendered dialogue lists four fish pets and mentions two free pet positions",
+        "bottom dialogue choices including an affirmative choice inside green frame",
+        "bottom-right 玩家模式 label"
+      ],
+      "dialogue_semantics": {
+        "requested_pet_level": 25,
+        "fish_names": [
+          "加格",
+          "邦恩吉",
+          "克邦凯斯",
+          "加克拉"
+        ],
+        "free_pet_positions": 2
+      },
+      "screen_text_is_live_execution": false
+    }
+  ],
+  "boundaries": {
+    "raw_html_committed": false,
+    "raw_images_committed": false,
+    "current_image_bytes_verified": true,
+    "original_publication_pixels_authenticated": false,
+    "tw10_same_build_authenticated": false,
+    "original_render_selector_proven": false,
+    "native_npc_id": null,
+    "native_bitmap_id": null,
+    "native_spr_id": null,
+    "world_floor_id": null,
+    "map_dat_recovered": false,
+    "exact_npc_spawn_proven": false,
+    "server_handover_executed": false,
+    "ring_loss_conflict_resolved": false,
+    "stage_a_closed": false,
+    "stage_b_started": false,
+    "wiki_started": false,
+    "overall_percent": null
+  },
+  "semantic_replay": "CURRENT_PAGE_LINK_AND_IMAGE_BYTES_VERIFIED_NOT_LIVE_SERVER_EXECUTION"
+}
