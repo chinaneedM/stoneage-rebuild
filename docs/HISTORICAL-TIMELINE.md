@@ -4661,3 +4661,12 @@ Sina另存档 https://games.sina.com.cn/zhqu/sta/2/cwzl/index.shtml 显示扑满
 - 内部文本冲突：正文远程“近藏的棍棒”，尾注“进藏的棍棒”；原文“混迷的精灵”保留不纠字。
 - 图像观察：关联直接图 https://images.17173cdn.com/stoneage/images/mission/sa70/sa70_05/sa031027_002.jpg 可见有框NPC对话样式、“下一页”绿控件/鼠标指针及底部模式条。图片文件名不得解释为2003日期；未验证HTML内嵌链接、源图时间/原像素、NPC文字或按钮实服动作。
 - OPEN：游戏正式版本/构建，原NPC物品ID，物品消费及技能实际施放，真实窗口状态与服务器交互。原HTML/版权画面未入Git；研究材料见R93规格/JSON。
+
+
+### 2004-03-18 — 日版Hangame《石器时代》衍生宠物Avatar具名 [R94]
+- FACT_OF_REPORT：ITmedia/RBB Today https://www.itmedia.co.jp/news/article/0403/18/1040318075/ 发布显示2004-03-18 19:22，称NHN Japan当日提供石器宠物的Hangame头像与背景；仅具名“ゴルシス”“ウポポ”“ミドリガメ”，文本总数为7款宠物Avatar+2背景、200–350日元，可跨其它Hangame游戏使用。
+- 可查看的附图 https://www.itmedia.co.jp/news/article/image/0403/18/1040318075/15463/728 是卡通图像与背景拼版；没有原图哈希／原款命名一一绑定，也不是TW1.0/JSS1999原宠物客户端SPR。4款未具名不补全，7件商品不当七个确定物种。
+
+### 2004-05-20（报道）与2004-06-03（预告日服正式服务）— ウポポ实体赠品 [R94]
+- FACT_OF_REPORT：4Gamer https://www.4gamer.net/news/history/2004.05/20040520194557detail.html 2004-05-20 19:45转述BOTHTEC日服计划6月3日正式服务、5月20日盒装版开始销售，其中有两张客户端CD-ROM、两张30日票、手册和**一只ウポポ毛绒挂件**。媒体发布与服务器执行/实物拣选分开；2004-06-03不是1999首发。
+- 文献性同名跨产品“ウポポ”链接2004-03 Hangame宠物Avatar和2004-05 盒装实物，不建立同游戏数值ID、同造型素材、版权许可或新世界正史。详情 R94 source规格/JSON；原图及二进制不入Git。

@@ -17815,3 +17815,16 @@ I1为实际公开直连图 https://images.17173cdn.com/stoneage/images/mission/s
 新档内容提交 `07268f0702af26102d2a1afe7146479c370c363a` / tree `4e4854515b98185cc8a1ee1907e2a3fe222adb6c`，候选专用run 39951549696 / job 120406954551 完成10项静态负向边界测试＋CLI，全为completed/success。连续性追加提交 `8b95c2571034b164008d7f2f80e118f0ad9b3585` / tree `56fd5fa2de80d8974ef62b550da78e0ac2463910`，候选本次九Actions均success，GitHub compare对原main `fc77a2db…` 确认ahead2/behind0、8文件，其中三大历史文件仅追加、无删除。重新取main仍为原基线后CAS非强制快进整合，该commit主线自身11项实际Actions全部completed/success，专用run 39952020028 / job 120408510653 亦通过。内容两阶段验收单据详见 `research/recovered/STONEAGE-CN70-WEAPON-COLLECTION-NPC-UI-ACCEPTANCE-R93.json`，当前receipt提交自身后验不借前一成功自动认证。
 
 永久派生来源JSON Git blob SHA1 `932547f5258b6ff5aa78cf722c815d29834585ef`，严格本地验证可从Git回取；只有攻略叙述、两路线和画面可见界限，没有上传原HTML、图像、原版客户端/服务端数据。主线专用Actions artifact API实得0件，不能编造临时ZIP、原字节SHA或抓图验签。新增receipt与测试校验来源blob、候选10/9和main11的真实run、原服未证与Stage A未过。原有CURRENT、SOURCE、TIMELINE前缀逐份原生Git blob字节一致，没有空文件覆盖。最高NEXT R94仍按上一条的跨域具名实体/早期实像；Stage A7PARTIAL+2OPEN、B/wiki GATED，R79暂停，总体百分比null。
+
+
+### R94 日本2004三具名宠物Avatar与乌波波盒装实体挂件的跨媒介身份边界 — 2026-10-23
+
+FACT（限两份同时代媒体报道内容）：按fresh GitHub main `b5c251885923093da15934953e87d9a224f66d26` / tree `6f49bd486ed71c1eafced5914357fc44b9f898bc`、现行连续性协议、2.48MB CURRENT原生blob、SOURCE/历史/路线/22域索引和最终R93收据启动。R93候选/main专用及最近Stage A相关Actions实际completed/success，0开放PR；旧媒体材料仅作方向，不用旧聊天SHA推断。本轮最高 `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-94` 优先另一地区具名宠物外观，查询归档发现2004日语“ウポポ”包装及“ミドリガメ”“ゴルシス”未登记该日服Avatar来源，不重做2008戈尔西斯进化语义。
+
+S1：ITmedia刊RBB Today 2004-03-18 19:22《ハンゲーム、MMORPG「ストーンエイジ」のペットアバターを提供》https://www.itmedia.co.jp/news/article/0403/18/1040318075/ 。同日消息称NHN Japan开始在Hangame提供StoneAge宠物Avatar，共7只Avatar、2个背景，可用于Hangame其它游戏、单件200—350日元；正文只具名“ゴルシス”“ウポポ”“ミドリガメ”，不能把7当7个已恢复原版物种，也不能把日元零售价当游戏内金币。真实文章链接图 https://www.itmedia.co.jp/news/article/image/0403/18/1040318075/15463/728 是带卡通宠物与背景的低分辨率商品拼版，未取得原图原字节HASH/历史首版或单只兽图对全名字的可认证关系；图片数字与原SPR资源不匹配，不下载入库。S1是RBB媒体在ITmedia上的刊载，不冒充一手运营公告或原始历史HTML。
+
+S2：4Gamer 2004-05-20 19:45《ほのぼのMMORPG「ストーンエイジ」正式サービス開始日決定》https://www.4gamer.net/news/history/2004.05/20040520194557detail.html 转述ボーステック宣布日本服拟于2004-06-03正式服务，并称当日出售两张客户端CD-ROM、两张各30天票券、说明材料与一只“ウポポ”ぬいぐるみストラップ实体挂件的盒装产品。此报道不是当日盒装实物或对应安装CD SHA，2004-06-03是本轮报道的日本运营阶段，不是1999 JSS首发。史料能确认同日语标签“ウポポ”同时出现在三月跨游戏Avatar和五月实体包装中，不能由同名推同一程序PET ID、游戏内宠物生物学、同款美术资源或任何复用授权。
+
+本轮四条有界可查询关系（S1三个具名数字Avatar／S2一实体赠品），一条同名跨产品关系，两份媒体、一张原文图库链接与全部未知字段。研究规格 `docs/specs/STONEAGE-JP2004-PET-AVATAR-MERCH-SOURCE-R94.md`；机器原文派生 `research/recovered/STONEAGE-JP2004-PET-AVATAR-MERCH-SOURCE-R94.json`、封闭源SHA Git blob、10项负面边界单测和专用CI。内容候选commit `9a3c8eb1b777b18419c08f1e55423ea110c8ba88` / tree `59ef05d99dd6bf51ebcc382df085456ce6a352d5`，候选分支 `agent/jp2004-pet-avatar-and-upopo-package-r94-20261023`；此条写作时后续CI与main验收不能预记success，须按实际运行记录另增不可变收据。原图、HTML、包装文件、原SPR、版权商品素材及所有客户端不入Git。
+
+停于两篇2004报道和一直接关联媒体拼图；未见全7具名名单、2004当时原图字节、同build资源ID和源客户端验证，不能把另外四只或日服2008“ゴルシス”强合原版。下轮最高 `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-95`：转换到**较早有名地图/NPC原画或同构建原宠物SPR绑定**的实体证据，不连续扩2004商店营销及派生周边。Stage A仍7 PARTIAL + 2 OPEN、Stage B/wiki GATED、savedata R79 PAUSED_NON_BLOCKING，整体恢复百分比null；完整旧连续性前缀保留。

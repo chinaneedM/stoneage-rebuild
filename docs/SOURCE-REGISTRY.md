@@ -8408,3 +8408,15 @@ main: run39943895787 / job120381709724 / artifact12496718117；ZIP3458 bytes `sh
 - Paired visible image (directly opened): https://images.17173cdn.com/stoneage/images/mission/sa70/sa70_05/sa031027_002.jpg . Search result associated image with guide; HTML img-link bytes are not verified. Brown framed dialogue panel with green 下一页, cursor and bottom mode bar are visually observable; NPC name, full dialogue, click event, date, capture provenance and native client pixels **not verified**. Filename numeric substring not a publication date.
 - Repository metadata: `research/recovered/STONEAGE-CN70-WEAPON-COLLECTION-NPC-UI-SOURCE-R93.json`, pinned Git blob SHA1 `932547f5258b6ff5aa78cf722c815d29834585ef` with strict verifier, negative boundary tests and dedicated Actions. Not original source HTML, screenshot file, game asset, official runtime or production permission.
 - Reopen only with same-build source configuration, direct dialogue interaction/capture, source-image lineage, item transaction, or original resource binding.
+
+
+### SRC-JP-2004-ITMEDIA-RBB-HANGAME-NAMED-PET-AVATARS-R94
+- Source: ITmedia再刊RBB Today《ハンゲーム、MMORPG「ストーンエイジ」のペットアバターを提供》，显示2004-03-18 19:22，https://www.itmedia.co.jp/news/article/0403/18/1040318075/ 。不是已获原运营官网或2004原始HTML的字节认证。
+- Document says: NHN Japan/Hangame石器宠物数字Avatar总7及背景2；仅三个名字ゴルシス／ウポポ／ミドリガメ；每件200–350日元、可在其它Hangame游戏显示。衍生商品不当游戏中宠物数值、完整7只原物种或1999／TW1.0资源。
+- Current linked image https://www.itmedia.co.jp/news/article/image/0403/18/1040318075/15463/728 目视为宠物卡通和背景小拼图；未取原HTML字节／JPEG bytes/SHA256或完整个体标签配对；不能认证原生产SPR、2004像素或个体数值。原版权图不入Git。
+
+### SRC-JP-2004-4GAMER-BOTHTEC-UPOPO-PACKAGED-PREMIUM-R94
+- Source: 4Gamer《ほのぼのMMORPG「ストーンエイジ」正式サービス開始日決定》，显示2004-05-20 19:45，https://www.4gamer.net/news/history/2004.05/20040520194557detail.html ，作为同期行业报道转述BOTHTEC宣布；非实体包装扫描、原CD数据或实际销售回执。
+- Reported Japanese formal service target 2004-06-03; boxed product described on 2004-05-20 with 2 game-client CD-ROMs, 2 30-day tickets, manuals and one “ウポポ” plush strap. Not retroactively Japanese JSS1999 launch or same-build pet master.
+- Relation: ITmedia 3月的ウポポ数字宠物Avatar与4Gamer 5月实体挂件有可核查的**同名跨媒介归属**，却没有视觉资产字节相同、同PET主表ID、物种跨版本稳定或版权复用授权。
+- Materialization: `docs/specs/STONEAGE-JP2004-PET-AVATAR-MERCH-SOURCE-R94.md`, `research/recovered/STONEAGE-JP2004-PET-AVATAR-MERCH-SOURCE-R94.json` （原生Git派生blob `766ef71c55fd9bc0d7a68e255032ed790163805d`）, verifier/negative tests and dedicated Actions. HTML/商品插画/模型未入Git。
