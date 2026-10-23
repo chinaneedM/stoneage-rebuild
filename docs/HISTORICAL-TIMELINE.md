@@ -4557,3 +4557,18 @@ FACT：按新远端main `7b358092650612d506b2a29cd5c8be7715186d53`／tree `47327
 16条文献目录＝任务1／具名行动者或会说话物件7／救援目标3／奖励宠1／任务地图1／铠1／画面2；满足7必填与19集合，原game_ids空，非发行授权。三父与解析器原bytes/SHA256/Git blob固定；49项真实HTML去全部指纹语义改写、隐藏/正文外2反例与外围脚本正例通过，独立regex/entity全文相同。初始20项关联测试成功。补充园主／两场景语义后，快速同尺寸写入摘要导致本地Python缓存仍读旧常量，一次validate及两测试失败；核对磁盘摘要与JSON一致、移除本包缓存后 fresh import／20项测试及源回放通过，保留此失败事实。未产生失败远端Actions，远端验收仍待实际后验。
 
 NEXT：先内容候选10/main11实际验收，再永久保留双原派生CI JSON及真实run/job/artifact/ZIP/raw/blob收据，强制保管与反篡改测试后再次验收。最高后续 OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-89 优先另一地区具名宠物技能／成长／骑乘或早期登录人物视觉的原始资料，避免连续扩本篇伊甸线或通用helper；同版实际audio实参才重开音效。Stage A7PARTIAL+2OPEN，B/wiki GATED，savedataR79 PAUSED_NON_BLOCKING；无整体完成百分比，旧历史全部保留。
+
+
+### R88 内容双端实际验收与永久派生保管 — 2026-10-23
+
+内容提交 `34c59aabfbd96b20c41df22dbbe44e8191ac1010`／tree `4a178c2b41cbccf284f5fc9785c7812991bdfee4`，候选10/main11共21个实际Actions全部completed/success，专用日志初始各7tests成功。
+
+candidate: run39938717033／job120364577573／artifact12493839392，ZIP9699 bytes `sha256:212bfa8808e70bad2e49de3a232d43a8ed494274637dcc12b7d02b1d87c0603c`；原样JSON71990 bytes SHA256 `e4f1c8b8e11497ead6beb3f41a5706d7c79472f608c17be7782611e3cfe55d1e`，Git blob `4d8e620cc87dd073ca3ac2fb3f6fdc322a2a39a9`。
+
+main: run39938920735／job120365251773／artifact12495411010，ZIP9699 bytes `sha256:1cc958f7e0ef623e3e18637084c17716b7b3c93758fa132de2597ef851fea071`；原样JSON71990 bytes SHA256 `e4f1c8b8e11497ead6beb3f41a5706d7c79472f608c17be7782611e3cfe55d1e`，Git blob `4d8e620cc87dd073ca3ac2fb3f6fdc322a2a39a9`。
+
+双ZIP实际下载核对GitHub digest与长度，唯一成员replay.json；双端原样JSON与初始local相等，3个HTTP输入bytes/SHA256同初取。双原CI派生JSON及CUSTODY永久入Git，原HTML/JPEG不入Git。7证据pin固定SOURCE、三父、解析器和双原报告bytes/SHA256/Git blob，代码另锁完整7pin清单摘要；同时篡改证据和重算receipt pin仍拒绝。收据固定21真实run清单摘要、准确双run/job/artifact及ZIP长度/摘要；CLI强制保管，拒绝缺失/等长破坏、错HEAD/tree/分支/任务/ID、重复或遗漏门、工件复用、虚报初取相等及历史/运营/运行权威抬高。第8单元还拒绝单只拉斯基截图升物种主表、静态图升任务执行、席格第二攻击力改防御。原内容CI7tests不改称8tests；保管候选/main自身仍须另实际后验。
+
+最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-89：另一地区具名宠物技能/成长/骑乘或早期登录人物视觉，避免连扩本篇伊甸与无名宣传图。新候选分支将使总分支超过500；下轮分支清单须继续分页到不足100条，不能停在固定第5页。Stage A7PARTIAL+2OPEN，B/wiki GATED，savedataR79 PAUSED_NON_BLOCKING。
+
+R88保管提交前：本包8项／关联21项本地测试成功；原始3输入经强制保管门回放，输出与初始local／双原CI JSON逐字节相同。完整旧历史前缀保持不变。

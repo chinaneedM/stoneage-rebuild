@@ -261,9 +261,54 @@ def read_inputs(directory=None):
  return result
 
 
+def verify_custody(root=None):
+ root=ROOT if root is None else Path(root)
+ receipt=json.loads((root/f'research/recovered/{STEM}-CUSTODY-R1.json').read_text())
+ require(receipt['schema']=='stoneage.cn2003_zoo_rescue.custody.r1','Custody schema')
+ require(receipt['content_commit']=='34c59aabfbd96b20c41df22dbbe44e8191ac1010' and receipt['content_tree']=='4a178c2b41cbccf284f5fc9785c7812991bdfee4','Content Git identity')
+ require(receipt['candidate_branch']=='agent/named-content-r88-zoo-rescue-20261023','Candidate branch')
+ require(receipt['server_execution_verified'] is False and receipt['current_bytes_authenticate_2003_original'] is False and receipt['actual_operator_script_acquired'] is False,'Custody authority promoted')
+ require(all(receipt[k] is False for k in ('pet_sample_is_species_master','screen_proves_quest_execution','duplicate_attack_is_defense')),'Screenshot, navigation or pet-master coverage promoted')
+ paths=[f'research/recovered/{STEM}-SOURCE-R1.json']+PARENTS+[PARSER]+[f'research/recovered/{STEM}-CI-{role}-R1.json' for role in ('CANDIDATE','MAIN')]
+ pins=receipt['permanent_pins'];require(sha(json.dumps(pins,sort_keys=True).encode())=='5ed082057cf835a7c44d8a9541424a91ed63017c465a5ae5ec9c51494e97daf9','Original seven-pin identity list replaced');require([p['path'] for p in pins]==paths,'Seven mandatory permanent evidence pins changed')
+ for p in pins:
+  b=(root/p['path']).read_bytes()
+  require(p=={'path':p['path'],'bytes':len(b),'sha256':sha(b),'git_blob':hashlib.sha1(b'blob '+str(len(b)).encode()+b'\0'+b).hexdigest()},'Permanent original bytes changed')
+ source=json.loads((root/paths[0]).read_text())
+ initial=[{'id':'S1','url':URL,'bytes':source['source']['bytes'],'sha256':source['source']['sha256']}]+[{k:v[k] for k in ('id','url','bytes','sha256')} for v in source['images']]
+ require(receipt['initial_inputs']==initial,'Original intake/input dates lost')
+ runs=receipt['runs'];require(len(runs)==21 and len({v['id'] for v in runs})==21,'Actual gate inventory missing/duplicated')
+ require(sha(json.dumps(sorted(runs,key=lambda v:v['id']),sort_keys=True).encode())=='1ca7f0c9e8b044e680c118fbe315e9ed143924456b8a88f6bd54ed7ead01dd85','Actual immutable run inventory changed')
+ branches={'candidate':receipt['candidate_branch'],'main':'main'}
+ for role,count in (('candidate',10),('main',11)):
+  group=[v for v in runs if v['branch']==branches[role]]
+  require(len(group)==count and len({v['name'] for v in group})==count,'Branch gate inventory changed')
+ require(all(v['head']==receipt['content_commit'] and v['status']=='completed' and v['conclusion']=='success' for v in runs),'Unverified/failed gate promoted')
+ raw_files=[];jobs=[];artifacts=[]
+ for role,branch in branches.items():
+  proof=receipt['jobs_and_artifacts'][role];artifact=proof['artifact'];run=artifact['workflow_run']
+  expected={'candidate': (39938717033, 120364577573, 12493839392), 'main': (39938920735, 120365251773, 12495411010)}[role]
+  require((proof['run'],proof['job'],artifact['id'])==expected,'Verified run/job/artifact identity changed')
+  require(run['id']==proof['run'] and run['head_sha']==receipt['content_commit'] and run['head_branch']==branch,'Artifact origin detached')
+  matching=[v for v in runs if v['id']==proof['run']]
+  require(len(matching)==1 and matching[0]['branch']==branch and matching[0]['name']=='Verify CN2003 zoo rescue actors and ordered rewards','Wrong source workflow')
+  require(proof['job_name']=='bounded-source-replay' and proof['job_conclusion']=='success' and artifact['name']=='cn2003-zoo-rescue-derived-r88','Wrong job/artifact')
+  require(proof['zip_downloaded_and_digest_verified'] is True and artifact['size_in_bytes']>0 and re.fullmatch(r'sha256:[0-9a-f]{64}',artifact['digest']),'ZIP custody missing')
+  require((artifact['size_in_bytes'],artifact['digest'])=={'candidate': (9699, 'sha256:212bfa8808e70bad2e49de3a232d43a8ed494274637dcc12b7d02b1d87c0603c'), 'main': (9699, 'sha256:1cc958f7e0ef623e3e18637084c17716b7b3c93758fa132de2597ef851fea071')}[role],'Actual ZIP byte identity changed')
+  jobs.append(proof['job']);artifacts.append(artifact['id'])
+  path=f'research/recovered/{STEM}-CI-{role.upper()}-R1.json';raw=(root/path).read_bytes();raw_files.append(raw);replayed=json.loads(raw)
+  record=receipt['raw_replays'][role];p=next(v for v in pins if v['path']==path)
+  require(all(record[k]==p[k] for k in p) and record['inputs']==replayed['inputs'] and record['equals_initial_inputs']==(replayed['inputs']==initial),'Raw identity/input equality misreported')
+  require(all(replayed[k]==source[k] for k in ('extraction','images','visual_observations','comparison','catalog_records')),'Raw replay semantics detached')
+  require(replayed['audit']=={'semantic_mutations_without_all_fingerprints':49,'hidden_and_outside_article_counterexamples':2,'outside_script_positive':True} and replayed['original_html_or_assets_in_output'] is False and replayed['original_server_runtime_verified'] is False,'Raw audit/authority promoted')
+ require(len(set(jobs))==len(set(artifacts))==2 and receipt['candidate_main_raw_bytes_equal']==(raw_files[0]==raw_files[1]),'Candidate/main evidence substituted')
+ return receipt
+
+
 def main():
  p=argparse.ArgumentParser();g=p.add_mutually_exclusive_group(required=True);g.add_argument('--fetch',action='store_true');g.add_argument('--input-dir');p.add_argument('--output',required=True);a=p.parse_args()
  r=json.loads(REPORT.read_text());out=replay(read_inputs(a.input_dir),r)
+ verify_custody()
  path=Path(a.output);path.parent.mkdir(parents=True,exist_ok=True);path.write_text(json.dumps(out,ensure_ascii=False,indent=2)+'\n')
  print('R88 zoo actors, item conditions, reward order and unresolved duplicate stats replayed; native IDs/runtime remain unknown.')
 

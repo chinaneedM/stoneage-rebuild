@@ -1,0 +1,357 @@
+{
+  "schema": "stoneage.cn2003_zoo_rescue.custody.r1",
+  "content_commit": "34c59aabfbd96b20c41df22dbbe44e8191ac1010",
+  "content_tree": "4a178c2b41cbccf284f5fc9785c7812991bdfee4",
+  "candidate_branch": "agent/named-content-r88-zoo-rescue-20261023",
+  "server_execution_verified": false,
+  "current_bytes_authenticate_2003_original": false,
+  "actual_operator_script_acquired": false,
+  "pet_sample_is_species_master": false,
+  "screen_proves_quest_execution": false,
+  "duplicate_attack_is_defense": false,
+  "permanent_pins": [
+    {
+      "path": "research/recovered/STONEAGE-CN2003-ZOO-RESCUE-SOURCE-R1.json",
+      "bytes": 74583,
+      "sha256": "bf37d19e3f88b711483289dd1b17255925d0bfcdbbbe64bea52f13815f7b2ca6",
+      "git_blob": "36c7f10f5a80a5d718d12470be4e86be990acb1b"
+    },
+    {
+      "path": "research/recovered/STONEAGE-CN2001-2003-SHELL-QUEST-SOURCE-R1.json",
+      "bytes": 7762,
+      "sha256": "411cd1fb8bec4c08e5ac78fa8987fb58f0cd7ee55c41397cbfcc9d0163e91d5f",
+      "git_blob": "7157f1aca0e4f806334bb4892d294d93d106690d"
+    },
+    {
+      "path": "research/recovered/STONEAGE-WAEI-CN20-NEW-PET-FINITE-CATALOG-R1.json",
+      "bytes": 173510,
+      "sha256": "8bcda48e9e8e298efe446b02f0039146fa4a81e509ca4d08c4989e6448f59fdb",
+      "git_blob": "f950aa33af0b3ec8693b2867758faf006aee546b"
+    },
+    {
+      "path": "research/recovered/STONEAGE-PREPRODUCTION-CONTENT-ARCHIVE-R1.json",
+      "bytes": 24489,
+      "sha256": "e87afebc8c9590142c7cc8831b578455b3427bf7c1d10520ae02a3e8082fbddb",
+      "git_blob": "2d5b3f081d5618287f431fbded943722a820c593"
+    },
+    {
+      "path": "tools/stoneage_jp2005_treasure_source.py",
+      "bytes": 20924,
+      "sha256": "d541c0fb832447f203ad0618ea86d0ed39e0a32bdf5c26f509dde6f5ffecba40",
+      "git_blob": "350e9d3769597ea4b47959cf2dbd3edf8d97916f"
+    },
+    {
+      "path": "research/recovered/STONEAGE-CN2003-ZOO-RESCUE-CI-CANDIDATE-R1.json",
+      "bytes": 71990,
+      "sha256": "e4f1c8b8e11497ead6beb3f41a5706d7c79472f608c17be7782611e3cfe55d1e",
+      "git_blob": "4d8e620cc87dd073ca3ac2fb3f6fdc322a2a39a9"
+    },
+    {
+      "path": "research/recovered/STONEAGE-CN2003-ZOO-RESCUE-CI-MAIN-R1.json",
+      "bytes": 71990,
+      "sha256": "e4f1c8b8e11497ead6beb3f41a5706d7c79472f608c17be7782611e3cfe55d1e",
+      "git_blob": "4d8e620cc87dd073ca3ac2fb3f6fdc322a2a39a9"
+    }
+  ],
+  "initial_inputs": [
+    {
+      "id": "S1",
+      "url": "https://games.sina.com.cn/zhqu/sta/article/2003-06-03/10646.shtml",
+      "bytes": 72640,
+      "sha256": "e92f92126182fb0834f7ec329a615cb1b7629e54da1de1943dd016af828ad046"
+    },
+    {
+      "id": "I1",
+      "url": "https://image2.sina.com.cn/gm/newgames/0303/images/dongwu0603_08.jpg",
+      "bytes": 108055,
+      "sha256": "3cdfea6514804d9ee9d7a0dd6b72c40df4bc2dafbf5c94654a190360dda82301"
+    },
+    {
+      "id": "I2",
+      "url": "https://image2.sina.com.cn/gm/newgames/0303/images/dongwu0603_020.jpg",
+      "bytes": 88503,
+      "sha256": "1afc3b40e06f874c4b5b016bc2c852769ded5bcfa6c04a19bccee75d39425b8c"
+    }
+  ],
+  "runs": [
+    {
+      "id": 39938920735,
+      "name": "Verify CN2003 zoo rescue actors and ordered rewards",
+      "head": "34c59aabfbd96b20c41df22dbbe44e8191ac1010",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39938920561,
+      "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+      "head": "34c59aabfbd96b20c41df22dbbe44e8191ac1010",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39938920795,
+      "name": "Independently verify TW1.0 R58 rooted helper returns and source custody",
+      "head": "34c59aabfbd96b20c41df22dbbe44e8191ac1010",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39938920874,
+      "name": "Validate StoneAge Stage A joint review decision",
+      "head": "34c59aabfbd96b20c41df22dbbe44e8191ac1010",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39938920650,
+      "name": "Validate legacy StoneAge assistant history and pet content gaps",
+      "head": "34c59aabfbd96b20c41df22dbbe44e8191ac1010",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39938920901,
+      "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+      "head": "34c59aabfbd96b20c41df22dbbe44e8191ac1010",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39938920871,
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "head": "34c59aabfbd96b20c41df22dbbe44e8191ac1010",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39938920948,
+      "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+      "head": "34c59aabfbd96b20c41df22dbbe44e8191ac1010",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39938920514,
+      "name": "Validate Stage A early source gap triage",
+      "head": "34c59aabfbd96b20c41df22dbbe44e8191ac1010",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39938920721,
+      "name": "Validate StoneAge preproduction content archive and wiki boundary",
+      "head": "34c59aabfbd96b20c41df22dbbe44e8191ac1010",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39938920614,
+      "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+      "head": "34c59aabfbd96b20c41df22dbbe44e8191ac1010",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39938716840,
+      "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+      "head": "34c59aabfbd96b20c41df22dbbe44e8191ac1010",
+      "branch": "agent/named-content-r88-zoo-rescue-20261023",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39938717104,
+      "name": "Validate StoneAge preproduction content archive and wiki boundary",
+      "head": "34c59aabfbd96b20c41df22dbbe44e8191ac1010",
+      "branch": "agent/named-content-r88-zoo-rescue-20261023",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39938717299,
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "head": "34c59aabfbd96b20c41df22dbbe44e8191ac1010",
+      "branch": "agent/named-content-r88-zoo-rescue-20261023",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39938717037,
+      "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+      "head": "34c59aabfbd96b20c41df22dbbe44e8191ac1010",
+      "branch": "agent/named-content-r88-zoo-rescue-20261023",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39938717033,
+      "name": "Verify CN2003 zoo rescue actors and ordered rewards",
+      "head": "34c59aabfbd96b20c41df22dbbe44e8191ac1010",
+      "branch": "agent/named-content-r88-zoo-rescue-20261023",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39938717218,
+      "name": "Validate StoneAge Stage A joint review decision",
+      "head": "34c59aabfbd96b20c41df22dbbe44e8191ac1010",
+      "branch": "agent/named-content-r88-zoo-rescue-20261023",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39938716999,
+      "name": "Validate legacy StoneAge assistant history and pet content gaps",
+      "head": "34c59aabfbd96b20c41df22dbbe44e8191ac1010",
+      "branch": "agent/named-content-r88-zoo-rescue-20261023",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39938716976,
+      "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+      "head": "34c59aabfbd96b20c41df22dbbe44e8191ac1010",
+      "branch": "agent/named-content-r88-zoo-rescue-20261023",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39938717200,
+      "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+      "head": "34c59aabfbd96b20c41df22dbbe44e8191ac1010",
+      "branch": "agent/named-content-r88-zoo-rescue-20261023",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39938716937,
+      "name": "Validate Stage A early source gap triage",
+      "head": "34c59aabfbd96b20c41df22dbbe44e8191ac1010",
+      "branch": "agent/named-content-r88-zoo-rescue-20261023",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "jobs_and_artifacts": {
+    "candidate": {
+      "run": 39938717033,
+      "job": 120364577573,
+      "job_name": "bounded-source-replay",
+      "job_conclusion": "success",
+      "artifact": {
+        "id": 12493839392,
+        "name": "cn2003-zoo-rescue-derived-r88",
+        "size_in_bytes": 9699,
+        "url": "https://api.github.com/repos/chinaneedM/stoneage-rebuild/actions/artifacts/12493839392",
+        "archive_download_url": "https://api.github.com/repos/chinaneedM/stoneage-rebuild/actions/artifacts/12493839392/zip",
+        "expired": false,
+        "created_at": "2026-10-23T10:23:54Z",
+        "expires_at": "2026-11-22T10:23:54Z",
+        "updated_at": "2026-10-23T10:23:54Z",
+        "digest": "sha256:212bfa8808e70bad2e49de3a232d43a8ed494274637dcc12b7d02b1d87c0603c",
+        "workflow_run": {
+          "id": 39938717033,
+          "repository_id": 1374762421,
+          "head_repository_id": 1374762421,
+          "head_branch": "agent/named-content-r88-zoo-rescue-20261023",
+          "head_sha": "34c59aabfbd96b20c41df22dbbe44e8191ac1010"
+        }
+      },
+      "zip_downloaded_and_digest_verified": true
+    },
+    "main": {
+      "run": 39938920735,
+      "job": 120365251773,
+      "job_name": "bounded-source-replay",
+      "job_conclusion": "success",
+      "artifact": {
+        "id": 12495411010,
+        "name": "cn2003-zoo-rescue-derived-r88",
+        "size_in_bytes": 9699,
+        "url": "https://api.github.com/repos/chinaneedM/stoneage-rebuild/actions/artifacts/12495411010",
+        "archive_download_url": "https://api.github.com/repos/chinaneedM/stoneage-rebuild/actions/artifacts/12495411010/zip",
+        "expired": false,
+        "created_at": "2026-10-23T10:25:05Z",
+        "expires_at": "2026-11-22T10:25:05Z",
+        "updated_at": "2026-10-23T10:25:05Z",
+        "digest": "sha256:1cc958f7e0ef623e3e18637084c17716b7b3c93758fa132de2597ef851fea071",
+        "workflow_run": {
+          "id": 39938920735,
+          "repository_id": 1374762421,
+          "head_repository_id": 1374762421,
+          "head_branch": "main",
+          "head_sha": "34c59aabfbd96b20c41df22dbbe44e8191ac1010"
+        }
+      },
+      "zip_downloaded_and_digest_verified": true
+    }
+  },
+  "raw_replays": {
+    "candidate": {
+      "path": "research/recovered/STONEAGE-CN2003-ZOO-RESCUE-CI-CANDIDATE-R1.json",
+      "bytes": 71990,
+      "sha256": "e4f1c8b8e11497ead6beb3f41a5706d7c79472f608c17be7782611e3cfe55d1e",
+      "git_blob": "4d8e620cc87dd073ca3ac2fb3f6fdc322a2a39a9",
+      "inputs": [
+        {
+          "id": "S1",
+          "url": "https://games.sina.com.cn/zhqu/sta/article/2003-06-03/10646.shtml",
+          "bytes": 72640,
+          "sha256": "e92f92126182fb0834f7ec329a615cb1b7629e54da1de1943dd016af828ad046"
+        },
+        {
+          "id": "I1",
+          "url": "https://image2.sina.com.cn/gm/newgames/0303/images/dongwu0603_08.jpg",
+          "bytes": 108055,
+          "sha256": "3cdfea6514804d9ee9d7a0dd6b72c40df4bc2dafbf5c94654a190360dda82301"
+        },
+        {
+          "id": "I2",
+          "url": "https://image2.sina.com.cn/gm/newgames/0303/images/dongwu0603_020.jpg",
+          "bytes": 88503,
+          "sha256": "1afc3b40e06f874c4b5b016bc2c852769ded5bcfa6c04a19bccee75d39425b8c"
+        }
+      ],
+      "equals_initial_inputs": true
+    },
+    "main": {
+      "path": "research/recovered/STONEAGE-CN2003-ZOO-RESCUE-CI-MAIN-R1.json",
+      "bytes": 71990,
+      "sha256": "e4f1c8b8e11497ead6beb3f41a5706d7c79472f608c17be7782611e3cfe55d1e",
+      "git_blob": "4d8e620cc87dd073ca3ac2fb3f6fdc322a2a39a9",
+      "inputs": [
+        {
+          "id": "S1",
+          "url": "https://games.sina.com.cn/zhqu/sta/article/2003-06-03/10646.shtml",
+          "bytes": 72640,
+          "sha256": "e92f92126182fb0834f7ec329a615cb1b7629e54da1de1943dd016af828ad046"
+        },
+        {
+          "id": "I1",
+          "url": "https://image2.sina.com.cn/gm/newgames/0303/images/dongwu0603_08.jpg",
+          "bytes": 108055,
+          "sha256": "3cdfea6514804d9ee9d7a0dd6b72c40df4bc2dafbf5c94654a190360dda82301"
+        },
+        {
+          "id": "I2",
+          "url": "https://image2.sina.com.cn/gm/newgames/0303/images/dongwu0603_020.jpg",
+          "bytes": 88503,
+          "sha256": "1afc3b40e06f874c4b5b016bc2c852769ded5bcfa6c04a19bccee75d39425b8c"
+        }
+      ],
+      "equals_initial_inputs": true
+    }
+  },
+  "candidate_main_raw_bytes_equal": true
+}
