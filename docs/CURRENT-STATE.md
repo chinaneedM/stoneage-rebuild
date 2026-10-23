@@ -18034,3 +18034,16 @@ R98新浪S2实际HTML的第一插图表仍含原href与独立缩略图src；本�
 永久新增CI-CANDIDATE/CI-MAIN原样派生、CUSTODY与独立保管器/CI；13个证据pin固定SOURCE/LOCAL/双CI/工具/测试/规格/workflow/五父的bytes/SHA256/Git blob，25实际run、精确HEAD/tree/分支、双job/artifact/ZIP、五历史前缀均保留。整份收据SHA锁拒绝等长改报、重算pin、错commit/artifact/ZIP/路线、虚报相等或执行；新12+保管4项本地16通过，连此前关联20项本轮36不同测试通过。最终保管提交自身候选/main须实际后验，不套用旧内容25门。临时原HTML/JPEG及其文本/输入副本12份逐项验哈希后删除；文本副本初因read_text归一CRLF被拒，改按原UTF8字节解码保留换行再回编码核等，未跳过哈希。原图/程序/脚本未入Git。
 
 实质新增为SACH-MX两明确版别的18次有限功能见证与2张真实静态界面，非软件可运行恢复、开发者发布链、全集或新作内挂采用。最高NEXT `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-104` 转具名官方宠物分版页面→全图来源，不连续外挂调查；Stage A7 PARTIAL+2 OPEN、B/wiki GATED、savedataR79暂停、总体百分比null。
+
+
+### R104 CN2.0裘里蛙／沙瓦列／砂鲨：官方图格到三张实际存档图 — 2026-10-24
+
+GitHub新核main `33b953c56fec4fc9bc36d30738a83c6041d02fa6` / tree `58173bfc7077cb3bbea863837ac938467a930c61` 启动；523分支6页、0开放PR/0 in_progress、旧queued37642417333保留；当前HEAD候选9/main10共19实际Actions全success，tree5400完整无AGENTS。八启动文件完整严格UTF8与fresh exact Git相等，CURRENT旧2538067B/SHA256 `df14ad31e7378e7839025b53d53efbf626d4db5ab7270fca65b7dd2926065349`。最高NEXT104转具名宠物图像，不扩外挂。
+
+先核4Gamer/Gamania2008 GASH公告及真实正文宣传JPEG，文字虽提ゴルンフット，画中多角色未逐只标名，无法认证该宠物像素；不接纳该关联、不猜无TN原图，负向发现元数据保留。转北京华义CN2.0原图鉴new_pet2.asp已存20011023181629原页面，实取64382B/SHA256 `2c7aea8d0319c2070d5c7590a95bfc892c2463deb76c5b95fca8c281549c76f0`，等旧源。全24格行长5/5/5/5/4、末行未闭tr保留，独立DOM和旧分页器核三格同名/src；未重做整个图鉴或改变原104记录。
+
+实质新增三具名视觉补充：第084裘里蛙→104.JPG，088沙瓦列→88.JPG，089砂鲨→87.JPG；不能按文件名改图号/姓名。对三格实际图片URL查询available API后分别实取20011025223732/20011026030709/20011026030145存档，HTTP200无跳转，4474/4261/4210B、JPEG RGB83×90单帧，完整解码并逐图目视。SHA分别 `3c21c85837534ff5ff4d754d70a9eb5f4d7f65833151d2ad166e5e9807107ca2`、`40733496c09fdbff22f5a280ba74d334f1252d5f06efb2049511385410d42425`、`46794d669650fa4d1ad2096a85ccd316f43078ca0f56712cc6413d358c7c4a9c`。保留原图片路径大小写、archive返回:80及最终URL，不以available代像素。
+
+网页10月23日与图片25/26日异时，证明网页引用→另时点同URL像素，不证同刻/精确构建。第088/089HTML未声明尺寸，实测83×90不回填；网页序号/图片数字非原生物种/bitmap/SPR ID，单帧JPEG不证没有原动画。新增3独立研究记录引用旧catalog ID，七必填/pets/非发行授权/game_ids null，旧未请求记录与有限104数不改，不计三新增物种或全部图片恢复。
+
+交付SOURCE/LOCAL派生、中文规格、源级重放器、8项负向单元及专用CI；新8+旧相关28共36本地测试通过。初负例误删导航行导致预期错误，改真正图格行缺失后通过，失败不隐去。原HTML/JPEG/商业程序未入Git；候选/main、源工件与永久保管需按真实后验。最高NEXT `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-105` 转具名地图/NPC位置/服务的分版实源，不连续补图鉴图片批。Stage A7 PARTIAL+2 OPEN、B/wiki GATED、savedataR79暂停、整体百分比null。

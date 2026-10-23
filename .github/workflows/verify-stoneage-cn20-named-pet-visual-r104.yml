@@ -1,0 +1,31 @@
+name: Verify R104 official named pet cells and archived pixels
+on:
+  push:
+    paths:
+      - 'tools/stoneage_cn20_named_pet_visual_r104.py'
+      - 'tests/test_stoneage_cn20_named_pet_visual_r104.py'
+      - 'research/recovered/STONEAGE-CN20-NAMED-PET-VISUAL-SOURCE-R104.json'
+      - 'research/recovered/STONEAGE-CN20-NAMED-PET-VISUAL-LOCAL-REPLAY-R104.json'
+      - 'docs/specs/STONEAGE-CN20-NAMED-PET-VISUAL-R104.md'
+      - '.github/workflows/verify-stoneage-cn20-named-pet-visual-r104.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  archived-named-cell-pixels:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install Pillow==11.3.0
+      - run: python -m unittest tests.test_stoneage_cn20_named_pet_visual_r104 -v
+      - name: Reacquire exact archived page and three literal referenced JPEGs
+        run: python -m tools.stoneage_cn20_named_pet_visual_r104 --write /tmp/r104-replay.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: r104-three-named-pet-derived-replay
+          path: /tmp/r104-replay.json
+          retention-days: 30
