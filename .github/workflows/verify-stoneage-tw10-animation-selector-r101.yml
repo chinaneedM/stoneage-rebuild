@@ -1,0 +1,41 @@
+name: Verify R101 original TW1.0 animation selection and countdown rules
+on:
+  push:
+    paths:
+      - 'tools/stoneage_tw10_animation_selector_r101.py'
+      - 'tests/test_stoneage_tw10_animation_selector_r101.py'
+      - 'research/recovered/STONEAGE-TW10-ANIMATION-SELECTOR-R101.json'
+      - '.github/workflows/verify-stoneage-tw10-animation-selector-r101.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  replay-original-instructions:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install capstone==5.0.9 pefile==2024.8.26 unicorn==2.1.4
+      - run: python -m unittest tests.test_stoneage_tw10_animation_selector_r101 -v
+      - name: Recover authenticated original carrier ephemerally
+        run: |
+          set -euo pipefail
+          python -m tools.stoneage_tw10_archive_parallel_download --output /tmp/r101-CD_DIC.rar --workers 16 --deadline 600
+          command -v 7z >/dev/null 2>&1 || (sudo apt-get update -qq && sudo apt-get install -y -qq 7zip)
+          mkdir -p /tmp/r101-disc
+          7z x -y -o/tmp/r101-disc /tmp/r101-CD_DIC.rar STONEAGE.bin >/dev/null
+      - name: Replay original selector and normalizer with explicit synthetic-memory boundaries
+        run: |
+          python -m tools.stoneage_tw10_animation_selector_r101 --disc /tmp/r101-disc/STONEAGE.bin --write /tmp/r101-source-replay.json
+          cmp /tmp/r101-source-replay.json research/recovered/STONEAGE-TW10-ANIMATION-SELECTOR-R101.json
+      - name: Erase proprietary original carrier
+        if: always()
+        run: rm -rf /tmp/r101-CD_DIC.rar /tmp/r101-disc
+      - uses: actions/upload-artifact@v4
+        with:
+          name: r101-original-animation-selection-derived-only
+          path: /tmp/r101-source-replay.json
+          retention-days: 30

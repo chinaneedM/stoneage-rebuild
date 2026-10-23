@@ -1,0 +1,730 @@
+{
+  "schema": "stoneage.tw10.animation-selector.r101",
+  "task": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-101",
+  "runtime": {
+    "bytes": 425984,
+    "sha256": "cdab9ea049a98bbc96ce93eeaa8b63c688f0c0f0ad8b3183e79d75e47621441a",
+    "version": "AUTHENTICATED_TW1_RETAIL"
+  },
+  "source_windows": {
+    "index_loader": {
+      "start_rva": 59184,
+      "end_rva_exclusive": 60147,
+      "sha256": "285680741b801315c2a3968c70cd9cd69adfaf044c04dc4d6d9bea80c612514b",
+      "instructions": 287
+    },
+    "object_selector": {
+      "start_rva": 246656,
+      "end_rva_exclusive": 247224,
+      "sha256": "0d671aab30706ec4392ceca9a575078079b10e8876ba36d175186e414f097a5b",
+      "instructions": 173
+    },
+    "bitmap_lookup": {
+      "start_rva": 58976,
+      "end_rva_exclusive": 59019,
+      "sha256": "1a4f14e9b4842d341d71fdd23b8957d274e062e3a1c96a041fee8cc84ed85831",
+      "instructions": 12
+    },
+    "loader_call": {
+      "start_rva": 54733,
+      "end_rva_exclusive": 54765,
+      "sha256": "8b1bcd2003c03cbcc496e3fcddd7f5452447e2b76fd0db97d377967db3fec736",
+      "instructions": 8
+    },
+    "filename_writers": {
+      "start_rva": 116488,
+      "end_rva_exclusive": 116623,
+      "sha256": "4e6dd0864047c602bafa2934301a6db2bc3e80a79749856441db18d203e4e511",
+      "instructions": 44
+    }
+  },
+  "source_filename_literals": {
+    "368136": "data\\spr_%d.bin",
+    "368104": "data\\spradrn_%d.bin"
+  },
+  "selected_instruction_pivots": [
+    {
+      "rva": 54743,
+      "mnemonic": "push",
+      "operands": "0x179b96c"
+    },
+    {
+      "rva": 54748,
+      "mnemonic": "push",
+      "operands": "0x179b658"
+    },
+    {
+      "rva": 54753,
+      "mnemonic": "call",
+      "operands": "0x40e730"
+    },
+    {
+      "rva": 116538,
+      "mnemonic": "push",
+      "operands": "0x459e08"
+    },
+    {
+      "rva": 116543,
+      "mnemonic": "push",
+      "operands": "0x179b658"
+    },
+    {
+      "rva": 116548,
+      "mnemonic": "call",
+      "operands": "0x448748"
+    },
+    {
+      "rva": 116605,
+      "mnemonic": "push",
+      "operands": "0x459de8"
+    },
+    {
+      "rva": 116610,
+      "mnemonic": "push",
+      "operands": "0x179b96c"
+    },
+    {
+      "rva": 116615,
+      "mnemonic": "call",
+      "operands": "0x448748"
+    },
+    {
+      "rva": 59407,
+      "mnemonic": "lea",
+      "operands": "eax, [ecx + ecx*2 - 0x493e0]"
+    },
+    {
+      "rva": 59414,
+      "mnemonic": "lea",
+      "operands": "edi, [ecx - 0x186a0]"
+    },
+    {
+      "rva": 59420,
+      "mnemonic": "shl",
+      "operands": "eax, 2"
+    },
+    {
+      "rva": 59595,
+      "mnemonic": "mov",
+      "operands": "word ptr [esi - 4], dx"
+    },
+    {
+      "rva": 59603,
+      "mnemonic": "mov",
+      "operands": "dword ptr [esi], eax"
+    },
+    {
+      "rva": 59611,
+      "mnemonic": "shl",
+      "operands": "ecx, 4"
+    },
+    {
+      "rva": 59813,
+      "mnemonic": "shl",
+      "operands": "ebp, 4"
+    },
+    {
+      "rva": 59818,
+      "mnemonic": "div",
+      "operands": "ebp"
+    },
+    {
+      "rva": 59838,
+      "mnemonic": "mov",
+      "operands": "dword ptr [eax], 1"
+    },
+    {
+      "rva": 60000,
+      "mnemonic": "add",
+      "operands": "ecx, 0xc"
+    },
+    {
+      "rva": 246780,
+      "mnemonic": "cmp",
+      "operands": "eax, 0x63"
+    },
+    {
+      "rva": 246798,
+      "mnemonic": "cmp",
+      "operands": "eax, 0x186a0"
+    },
+    {
+      "rva": 246803,
+      "mnemonic": "jge",
+      "operands": "0x43c468"
+    },
+    {
+      "rva": 246888,
+      "mnemonic": "cmp",
+      "operands": "eax, 0x206a0"
+    },
+    {
+      "rva": 246893,
+      "mnemonic": "jg",
+      "operands": "0x43c5b1"
+    },
+    {
+      "rva": 246899,
+      "mnemonic": "mov",
+      "operands": "dx, word ptr [eax*8 + 0x10937f0]"
+    },
+    {
+      "rva": 246907,
+      "mnemonic": "mov",
+      "operands": "ecx, dword ptr [eax*8 + 0x10937f4]"
+    },
+    {
+      "rva": 246939,
+      "mnemonic": "mov",
+      "operands": "bp, word ptr [ecx]"
+    },
+    {
+      "rva": 246948,
+      "mnemonic": "mov",
+      "operands": "bp, word ptr [ecx + 2]"
+    },
+    {
+      "rva": 246957,
+      "mnemonic": "add",
+      "operands": "ecx, 0x10"
+    },
+    {
+      "rva": 246968,
+      "mnemonic": "xor",
+      "operands": "eax, eax"
+    },
+    {
+      "rva": 246978,
+      "mnemonic": "shl",
+      "operands": "eax, 4"
+    },
+    {
+      "rva": 246999,
+      "mnemonic": "mov",
+      "operands": "dword ptr [esi + 0x140], ecx"
+    },
+    {
+      "rva": 247005,
+      "mnemonic": "cmp",
+      "operands": "edx, dword ptr [eax + 8]"
+    },
+    {
+      "rva": 247023,
+      "mnemonic": "mov",
+      "operands": "dword ptr [esi + 0x140], 0xff"
+    },
+    {
+      "rva": 247038,
+      "mnemonic": "mov",
+      "operands": "dword ptr [esi + 0x13c], 0"
+    },
+    {
+      "rva": 247122,
+      "mnemonic": "mov",
+      "operands": "ecx, dword ptr [edi + eax*4]"
+    },
+    {
+      "rva": 247128,
+      "mnemonic": "mov",
+      "operands": "dword ptr [esi + 0x80], ecx"
+    },
+    {
+      "rva": 247159,
+      "mnemonic": "movsx",
+      "operands": "edx, word ptr [edi + ecx*4 + 4]"
+    },
+    {
+      "rva": 247180,
+      "mnemonic": "movsx",
+      "operands": "ecx, word ptr [ecx + 6]"
+    },
+    {
+      "rva": 247191,
+      "mnemonic": "inc",
+      "operands": "eax"
+    },
+    {
+      "rva": 247204,
+      "mnemonic": "dec",
+      "operands": "eax"
+    }
+  ],
+  "source_tables": {
+    "SPR-GROUP-R1.tsv.gz": {
+      "bytes": 23827,
+      "sha256": "4db7809de4197eb90cca6dc04bda8550025e022c8232e2ebb902db0e9faf0175",
+      "rows": 464
+    },
+    "SPR-ANIMATION-R1.tsv.gz": {
+      "bytes": 340632,
+      "sha256": "25f8039e6c6ca47d94289b269d5ff74a67fde999c6b6d4dbb08af297ddcaa567",
+      "rows": 39065
+    },
+    "derived_countdown": {
+      "minimum": 1,
+      "maximum": 75,
+      "zero_frame_headers": 0,
+      "max_frame_count": 112
+    }
+  },
+  "native_countdown_replays": [
+    {
+      "duration": 1000,
+      "frames": 12,
+      "native_result": 5,
+      "reference_result": 5
+    },
+    {
+      "duration": 1000,
+      "frames": 7,
+      "native_result": 8,
+      "reference_result": 8
+    },
+    {
+      "duration": 1,
+      "frames": 1,
+      "native_result": 1,
+      "reference_result": 1
+    },
+    {
+      "duration": 0,
+      "frames": 1,
+      "native_result": 1,
+      "reference_result": 1
+    },
+    {
+      "duration": 15,
+      "frames": 1,
+      "native_result": 1,
+      "reference_result": 1
+    },
+    {
+      "duration": 16,
+      "frames": 1,
+      "native_result": 1,
+      "reference_result": 1
+    },
+    {
+      "duration": 31,
+      "frames": 2,
+      "native_result": 1,
+      "reference_result": 1
+    },
+    {
+      "duration": 32,
+      "frames": 2,
+      "native_result": 1,
+      "reference_result": 1
+    },
+    {
+      "duration": 64,
+      "frames": 2,
+      "native_result": 2,
+      "reference_result": 2
+    },
+    {
+      "duration": 1000,
+      "frames": 0,
+      "native_result": 1000,
+      "reference_result": 1000
+    }
+  ],
+  "native_selector_replays": [
+    {
+      "input": {
+        "name": "matching_second_record",
+        "direction": 2,
+        "action": 6
+      },
+      "native": {
+        "bitmap": 2222,
+        "frame": 1,
+        "countdown": 6,
+        "x": -5,
+        "y": 6,
+        "return": 0,
+        "helper_calls": [
+          {
+            "rva": 58592,
+            "bitmap": 2222,
+            "stub_offsets": [
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      "reference": {
+        "bitmap": 2222,
+        "frame": 1,
+        "countdown": 6,
+        "x": -5,
+        "y": 6,
+        "return": 0,
+        "helper_calls": [
+          {
+            "rva": 58592,
+            "bitmap": 2222,
+            "stub_offsets": [
+              0,
+              0
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "input": {
+        "name": "unmatched_pair_falls_back_first",
+        "direction": 9,
+        "action": 9
+      },
+      "native": {
+        "bitmap": 1111,
+        "frame": 1,
+        "countdown": 4,
+        "x": -3,
+        "y": 4,
+        "return": 0,
+        "helper_calls": [
+          {
+            "rva": 58592,
+            "bitmap": 1111,
+            "stub_offsets": [
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      "reference": {
+        "bitmap": 1111,
+        "frame": 1,
+        "countdown": 4,
+        "x": -3,
+        "y": 4,
+        "return": 0,
+        "helper_calls": [
+          {
+            "rva": 58592,
+            "bitmap": 1111,
+            "stub_offsets": [
+              0,
+              0
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "input": {
+        "name": "duplicate_pair_uses_first",
+        "direction": 2,
+        "action": 6,
+        "duplicate": true
+      },
+      "native": {
+        "bitmap": 1111,
+        "frame": 1,
+        "countdown": 4,
+        "x": -3,
+        "y": 4,
+        "return": 0,
+        "helper_calls": [
+          {
+            "rva": 58592,
+            "bitmap": 1111,
+            "stub_offsets": [
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      "reference": {
+        "bitmap": 1111,
+        "frame": 1,
+        "countdown": 4,
+        "x": -3,
+        "y": 4,
+        "return": 0,
+        "helper_calls": [
+          {
+            "rva": 58592,
+            "bitmap": 1111,
+            "stub_offsets": [
+              0,
+              0
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "input": {
+        "name": "positive_countdown_defers_selection",
+        "direction": 2,
+        "action": 6,
+        "countdown": 3
+      },
+      "native": {
+        "bitmap": 7777,
+        "frame": 0,
+        "countdown": 2,
+        "x": 0,
+        "y": 0,
+        "return": 0,
+        "helper_calls": []
+      },
+      "reference": {
+        "bitmap": 7777,
+        "frame": 0,
+        "countdown": 2,
+        "x": 0,
+        "y": 0,
+        "return": 0,
+        "helper_calls": []
+      }
+    },
+    {
+      "input": {
+        "name": "changed_pair_resets_frame_and_countdown",
+        "direction": 2,
+        "action": 6,
+        "countdown": 9,
+        "frame": 1,
+        "changed": true
+      },
+      "native": {
+        "bitmap": 2222,
+        "frame": 1,
+        "countdown": 6,
+        "x": -5,
+        "y": 6,
+        "return": 0,
+        "helper_calls": [
+          {
+            "rva": 58592,
+            "bitmap": 2222,
+            "stub_offsets": [
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      "reference": {
+        "bitmap": 2222,
+        "frame": 1,
+        "countdown": 6,
+        "x": -5,
+        "y": 6,
+        "return": 0,
+        "helper_calls": [
+          {
+            "rva": 58592,
+            "bitmap": 2222,
+            "stub_offsets": [
+              0,
+              0
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "input": {
+        "name": "missing_group_keeps_prior_bitmap",
+        "direction": 2,
+        "action": 6,
+        "missing": true
+      },
+      "native": {
+        "bitmap": 7777,
+        "frame": 0,
+        "countdown": 0,
+        "x": 0,
+        "y": 0,
+        "return": 0,
+        "helper_calls": []
+      },
+      "reference": {
+        "bitmap": 7777,
+        "frame": 0,
+        "countdown": 0,
+        "x": 0,
+        "y": 0,
+        "return": 0,
+        "helper_calls": []
+      }
+    },
+    {
+      "input": {
+        "name": "frame_end_wraps_when_once_zero",
+        "direction": 2,
+        "action": 6,
+        "frame": 2
+      },
+      "native": {
+        "bitmap": 2222,
+        "frame": 1,
+        "countdown": 6,
+        "x": -5,
+        "y": 6,
+        "return": 0,
+        "helper_calls": [
+          {
+            "rva": 58592,
+            "bitmap": 2222,
+            "stub_offsets": [
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      "reference": {
+        "bitmap": 2222,
+        "frame": 1,
+        "countdown": 6,
+        "x": -5,
+        "y": 6,
+        "return": 0,
+        "helper_calls": [
+          {
+            "rva": 58592,
+            "bitmap": 2222,
+            "stub_offsets": [
+              0,
+              0
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "input": {
+        "name": "frame_end_once_one_returns_one",
+        "direction": 2,
+        "action": 6,
+        "frame": 2,
+        "once": 1
+      },
+      "native": {
+        "bitmap": 7777,
+        "frame": 2,
+        "countdown": 255,
+        "x": 0,
+        "y": 0,
+        "return": 1,
+        "helper_calls": []
+      },
+      "reference": {
+        "bitmap": 7777,
+        "frame": 2,
+        "countdown": 255,
+        "x": 0,
+        "y": 0,
+        "return": 1,
+        "helper_calls": []
+      }
+    },
+    {
+      "input": {
+        "name": "low_key_clears_bitmap",
+        "direction": 2,
+        "action": 6,
+        "graphic": 99
+      },
+      "native": {
+        "bitmap": 0,
+        "frame": 0,
+        "countdown": 0,
+        "x": 0,
+        "y": 0,
+        "return": 0,
+        "helper_calls": []
+      },
+      "reference": {
+        "bitmap": 0,
+        "frame": 0,
+        "countdown": 0,
+        "x": 0,
+        "y": 0,
+        "return": 0,
+        "helper_calls": []
+      }
+    },
+    {
+      "input": {
+        "name": "above_compiled_upper_guard_keeps_prior",
+        "direction": 2,
+        "action": 6,
+        "graphic": 132769
+      },
+      "native": {
+        "bitmap": 7777,
+        "frame": 0,
+        "countdown": 0,
+        "x": 0,
+        "y": 0,
+        "return": 0,
+        "helper_calls": []
+      },
+      "reference": {
+        "bitmap": 7777,
+        "frame": 0,
+        "countdown": 0,
+        "x": 0,
+        "y": 0,
+        "return": 0,
+        "helper_calls": []
+      }
+    }
+  ],
+  "compiled_contract": {
+    "object_graphic_offset": 292,
+    "selected_bitmap_offset": 128,
+    "low_graphic_clears_at_or_below": 99,
+    "animation_lower_inclusive": 100000,
+    "compiled_upper_inclusive": 132768,
+    "loader_slot_count": 32768,
+    "upper_endpoint_memory_safety_proven": false,
+    "runtime_slot_bytes": 8,
+    "table_base_va": 18181360,
+    "disk_index_record_bytes": 12,
+    "expanded_animation_bytes": 16,
+    "disk_frame_bytes": 10,
+    "expanded_frame_bytes": 12,
+    "direction_selector_offset": 308,
+    "action_selector_offset": 300,
+    "unmatched_pair_fallback_record": 0,
+    "zero_count_group_keeps_previous_bitmap": true,
+    "positive_frame_count_ticks": "max(1, floor(duration / (16 * frame_count)))",
+    "zero_frame_count_duration_unchanged": true,
+    "tick_milliseconds_proven": false
+  },
+  "instrumentation": {
+    "mode": "BOUNDED_ORIGINAL_X86_WITH_SYNTHETIC_MEMORY",
+    "bitmap_helper_0xe4e0": "STUBBED_ZERO_OFFSETS_RETURN_ONE",
+    "audio_calls": "SYNTHETIC_FRAMES_SOUND_ZERO",
+    "selector_instruction_limit": 2000,
+    "normalizer_instruction_limit": 100,
+    "whole_client_or_server_executed": false
+  },
+  "boundaries": {
+    "same_build_packet_to_object_graphic_path_proven": false,
+    "named_pet_to_spr_proven": false,
+    "named_npc_to_spr_proven": false,
+    "actual_screen_draw_or_palette_proven": false,
+    "original_server_master_recovered": false,
+    "original_world_dat_recovered": false,
+    "original_assets_committed": false,
+    "stage_a_closed": false,
+    "stage_b_started": false,
+    "wiki_started": false,
+    "overall_percent": null
+  },
+  "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-102",
+  "next_scope": "Finite whole-portfolio material-gap review before expanding this low-level branch; no further rendering helpers without an upstream named identity or screen deliverable."
+}

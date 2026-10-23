@@ -8524,3 +8524,18 @@ R98新浪S2实际HTML的第一插图表仍含原href与独立缩略图src；本�
 三次ZIP均真实下载、校验API摘要/1557字节和唯一成员r100-replay.json：初取artifact12510249178 / sha256:b9c590ecfd0464a29b9735d10f14469e2a9a058571a57e4e5cf60ffa09cfd3a7；强化候选artifact12510219766 / sha256:c63017f45685559395ad05da9452f31f2c3e88a9634a5c72475314e55fa7727e；main artifact12510073896 / sha256:2a5d77c7db8c9ef6e75acf2d00fc61bfeea93d5026e41854bcc105619ff7ea13。三原样JSON与local完全相等：3212B / SHA256 `3be73ef4fad742b6f4bd6baa2fca1e73fdaec81a7b38357b8985d6d6431beb5c`，Git blob `6d2b2079f7b7da955007efc0cc886e0000bc4f7b`。ZIP容器摘要各异不影响raw相等；三次网页实际bytes/hash皆等于初取，未覆盖初取记录。
 
 新增三原样派生报告、CUSTODY及独立验收器：锁8份source/local/三CI/tool/test/spec的bytes/SHA256/Git blob、三run/job/artifact/ZIP、22门和4历史前缀，拒绝缺失/篡改/复用工件/提升为原服/同版NPC身份；原版权HTML/JPEG仍未入Git。此保管提交自身CI以实际后验为准，不把内容主线成功冒充其检查。实质收益为一具名NPC目标及其请求对话的两张当前文献图像，**原台湾1.0具名NPC/SPR闭合仍为0**。最高NEXT101按上一条转同构建身份/实体来源，Stage A7 PARTIAL+2 OPEN、B/wiki GATED、savedataR79暂停、总体百分比null。
+
+
+### R101 原台湾1.0动画槽位选择、回退与帧倒计时 — 2026-10-23
+
+按GitHub新核main `226c3f4763448ad30ef8cc4c896128fa60a8e9bd` / tree `bc614cf032595fe9cd264a1a18c092fd50d2cc2a` 启动；完整520分支至第6页20条，0开放PR/0 in_progress，旧queued37642417333保留。R100当前HEAD候选10/main11共21实际Actions全success；八启动文件完整UTF8与fresh exact Git blob一致，CURRENT旧前缀2521980B / SHA256 `23790aede7ebce00a484d9f13fd39fd38a01c034ba34c890be37cba3d3906a3a`。最高NEXT101转原客户端选择链，不扩大卡坦图组/静态图列。
+
+原IA目录本次元数据200，仅有整盘RAR、包装图/日志，无独立exe或field DAT；DiscMaster精确文件名搜索仍返回广泛近似项，未获得新的同版安装树来源，不把搜索响应大当命中。改直接重取既接纳CD_DIC.rar整842125501B，16并行101合法范围，MD5 b37a4a47f4eb608cac67e4ddf7a1621a与SHA1 b8cf92720b6ec8b3f46ea2e9bfcda986d21e7ded全部重新通过；BIN523449360B/hash905ee6…、exe425984B/hashcdab9e…和SPRADRN5568B/hash275b64…均重新等于旧源。并非新客户端。
+
+实质新规则：原路径写入SPR/地址文件缓冲区→0xe730加载→0x1156cf0运行表→0x3c380对象选择。磁盘12B地址条目转换为8B运行槽，方向/动作配对按顺序取首个匹配，无匹配回退0，空组保留此前位图；动画条目16B、帧12B与磁盘头12B/帧10B分别记录。对象键0x124与最终bitmap0x80分开，尚未证S:K到对象写入路径。原上界比较保留132768含端点，而加载槽数32768；不默修比较、不保证该端点内存安全。
+
+原加载器计时公式对正帧数为max(1,floor(duration/(16*frame_count)))，合成0帧案例保持原duration。原39065动画头零帧0、最大112帧，换算倒计时范围1—75；不是毫秒或已证FPS。10个原指令计时案例与10个选择案例同独立参考结果一致。Unicorn只跑两个限定区域、使用合成内存，明确bitmap助手0xe4e0替换零偏移/返回1、音效字段0；不是完整原客户端、真实绘制或原服。Capstone与objdump对关键分支/地址独立核对。
+
+本地前置下载调用误用了不存在--max-seconds，改为脚本真实--deadline；libarchive因RAR字典不支持失败、apt因当前系统权限失败，改用官网真实出链的独立7-Zip成功解压，未升级权限。初静态扫描遇skipdata伪指令，改显式跳过；算术片段初漏设合成ESI导致未映射读，补齐寄存器模型后通过；加载调用窗口曾截在指令中间而被拒，改在0xd5ed指令边界停止。保留这些本地预检失败，不冒称远端失败或第一次全过。
+
+交付中文规格、原源派生R101 JSON、工具、七项单元及专用原盘CI。本地七项与真实原字节20案例均成功；候选/main及工件保管仍须随后实际验收。原商业程序/光盘/SPR/像素不入Git。宠物/NPC名字—SPR、原包写入、真实场景/调色板、世界DAT及服务器master未获补齐。最高NEXT102 `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-102` 有限全域材料缺口复核，不在无上游身份/画面交付时继续扩渲染/音效helper。Stage A7 PARTIAL+2 OPEN、B/wiki GATED、savedataR79 PAUSED_NON_BLOCKING，整体复原百分比null。
