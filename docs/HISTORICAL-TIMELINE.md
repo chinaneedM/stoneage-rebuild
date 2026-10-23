@@ -4638,3 +4638,10 @@ main: run39943895787 / job120381709724 / artifact12496718117；ZIP3458 bytes `sh
 7证据SOURCE、旧CN20骑乘、旧PET80发布规格、内容档案、parser与双原报告按bytes/SHA256/Git blob固定，完整7pin清单摘要另锁代码；证据被改后连receipt pin一起重算仍拒绝。固定21真实run清单摘要、准确内容HEAD/tree/候选分支、双run/job/artifact/ZIP长度与摘要，不接受缺失、等长破坏、漏门/重复/复用工件、虚报初取或双端相等、错任务/分支/HEAD、2005原字节或服务器运行抬高。逐份核schema、两HTML实际identity及初取布尔、全图固定、语义/audit与原件界限。CLI强制保管，第8单元增加所有保管反例及骑证泛化至两宠/七类别变全宠槽位矩阵/静态持物变成功穿戴的拒绝。本地最终8项及关联16项共24通过，原输入强制保管重放输出与初始local逐字相等；独立发布边界工具通过，旧文完整保留。原内容CI7项不改称8项；保管提交候选/main自身仍待实际8项及全门后验。
 
 交付具体收益是把“持有史卡鲁”和“获族长骑乘证”分开，以及宠物类型→可用装备栏、7大类/脚子类型、属性增减的有限资料。没有宠物物种完整数值、技能/成长率、骑证原ID与实际装备事务。最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-91：早期具名NPC对话/交互界面或另一地区具名宠物技能数值来源，避免连扩本报道娱乐设施/匿名图。Stage A7PARTIAL+2OPEN、B/wiki GATED、savedataR79 PAUSED_NON_BLOCKING，整体恢复百分比仍null。
+
+
+### 2003-05-29 (displayed portal publication) — Mainland player guide describes Goya cave pig-letter chain [R91]
+- FACT about dated guide text: Sina Games page https://games.sina.com.cn/zhqu/sta/article/2003-05-29/9803.shtml is headed as a pig-letter quest guide and displays 2003-05-29 16:24 and 网友投稿; original contributor unnamed.
+- Guide account: cave youth asks for a shell, Karuta merchant gives two, youth describes one pet reward (特洛昆 or 呼拔拔), pig 乌力斯凯 entrusts letter, fourth-floor pig flower shop gives 月光花, 乌力美 takes flower and letter then gives reply on a second contact, 乌力斯凯 exchanges the reply for 红玉的手环 (+2 attack/+2 defense/-2 agility/+1 charm). Cave entrance (99,425) and footer (98,426) conflict and remain separate transcribed claims.
+- HYPOTHESIS / OPEN: actual program build, original NPC scripts/word-for-word dialogue, exact runtime rules and UI, item consumption, variable pet draw chance, quest persistence, 2003 HTML byte provenance. Do not project to JSS1999, TW1.0 or worldwide first release. R55 earlier 2001 player source only overlaps the shell/pet route.
+- Preservation: R91 source contract, structured seven-node guide-derived JSON and tests; no proprietary binary, screenshot, or source HTML added.

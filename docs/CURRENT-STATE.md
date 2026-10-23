@@ -17751,3 +17751,16 @@ main: run39943895787 / job120381709724 / artifact12496718117；ZIP3458 bytes `sh
 7证据SOURCE、旧CN20骑乘、旧PET80发布规格、内容档案、parser与双原报告按bytes/SHA256/Git blob固定，完整7pin清单摘要另锁代码；证据被改后连receipt pin一起重算仍拒绝。固定21真实run清单摘要、准确内容HEAD/tree/候选分支、双run/job/artifact/ZIP长度与摘要，不接受缺失、等长破坏、漏门/重复/复用工件、虚报初取或双端相等、错任务/分支/HEAD、2005原字节或服务器运行抬高。逐份核schema、两HTML实际identity及初取布尔、全图固定、语义/audit与原件界限。CLI强制保管，第8单元增加所有保管反例及骑证泛化至两宠/七类别变全宠槽位矩阵/静态持物变成功穿戴的拒绝。本地最终8项及关联16项共24通过，原输入强制保管重放输出与初始local逐字相等；独立发布边界工具通过，旧文完整保留。原内容CI7项不改称8项；保管提交候选/main自身仍待实际8项及全门后验。
 
 交付具体收益是把“持有史卡鲁”和“获族长骑乘证”分开，以及宠物类型→可用装备栏、7大类/脚子类型、属性增减的有限资料。没有宠物物种完整数值、技能/成长率、骑证原ID与实际装备事务。最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-91：早期具名NPC对话/交互界面或另一地区具名宠物技能数值来源，避免连扩本报道娱乐设施/匿名图。Stage A7PARTIAL+2OPEN、B/wiki GATED、savedataR79 PAUSED_NON_BLOCKING，整体恢复百分比仍null。
+
+
+### R91 大陆2003哥亚山小猪送信：七节点NPC交互与相异入口坐标 — 2026-10-23
+
+FACT（限玩家指南出版文字）：本轮从GitHub新读main `026905b6cfc72505db17577c81fbfc4bba9380e5` / tree `f5a1237e535c3d644ae40d0433671745c5fa19e9` 启动，5302条完整tree，协议/README/历史源簿/路线/22域索引及2.47MB CURRENT-STATE经原生Git blob读取。原HEAD的最新10项Actions completed/success；连续性原文与既有R90未替换。本轮最高NEXT91，转向早期有名字的NPC交互而非重复R90装备报道。
+
+公开来源新浪游戏《石器时代》任务功略-哥亚山小猪传情任务 https://games.sina.com.cn/zhqu/sta/article/2003-05-29/9803.shtml ，页面显示2003-05-29 16:24、网友投稿；不是华义官方游戏脚本、源HTML的2003签名、原服游戏运行或确切build。此次获取可读网页正文，不具备认证原HTML bytes/SHA，原始字段保持null。与旧R55 2001贝壳五途径的哥亚山青年+卡鲁它那商人线索交叉核对；不称独立两次实际NPC事务或2001/2003同构建。
+
+R91新增有序7节点：哥亚山1F青年(12,14)请求研究语言→卡鲁它那村玛丽娜丝商人(70,97)据指南给2不可思议贝壳→青年收1贝壳据指南赠1只特洛昆或呼拔拔→一楼乌力斯凯(14,11)给信→4F乌力花店(44,14)猪店长赠月光花→山顶乌力美(35,34)收信花、需再次对话取回信→乌力斯凯取信给红玉的手环(攻+2防+2敏-2魅+1)。原指南开头洞窟入口(99,425)，末尾(98,426)，两条原文并存；卡鲁它那村世界坐标(303,599)/(301,640)与村内商人局部(70,97)分框。推荐等级20不是入场必需条件；玩家攻略转述不冒充原NPC逐字对话、实际赠品概率、强制扣贝壳或物品背包持久性。页面没有验出的精确NPC对白窗布局或状态ACK。
+
+新增 `docs/specs/STONEAGE-CN2003-GOYA-PIG-LETTER-NPC-FLOW-SOURCE-R1.md`、`research/recovered/STONEAGE-CN2003-GOYA-PIG-LETTER-NPC-FLOW-SOURCE-R1.json`、`tools/stoneage_cn2003_goya_pig_npc_flow_source.py`、7项本地静态负向边界测试及专用workflow。候选分支 `agent/cn2003-goya-pig-npc-r91-20261023`，内容commit `b4e4dd8d9b1717efe7f5fa62214daa39401a6963` / tree `de362494c3e8f2e4a994fc7b4796fe0aeb39578f`。实际候选Actions run39945314969/job120386438959 completed/success，包含单元测试及命令行结构校验；不是原客户端/服务端运行。没有短时派生CI原网页工件，也不伪造原HTTP digest；R91结构化JSON长期在Git。主线整合和主线自身Actions应以实际后续结果为准。
+
+本轮止于单篇2003指南和R55交叉源，下一最高 `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-92`：轮换到另一地区具体宠物技能/成长数值，或能证明NPC窗口与输入动作的图文/运行材料。现Stage A 7 PARTIAL+2 OPEN，B/wiki GATED，R79 PAUSED_NON_BLOCKING，总体恢复百分比null；未恢复NPC原版脚本/物品原ID/原服动画、任务状态机与存档。

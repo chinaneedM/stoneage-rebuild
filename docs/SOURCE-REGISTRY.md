@@ -8370,3 +8370,15 @@ main: run39943895787 / job120381709724 / artifact12496718117；ZIP3458 bytes `sh
 7证据SOURCE、旧CN20骑乘、旧PET80发布规格、内容档案、parser与双原报告按bytes/SHA256/Git blob固定，完整7pin清单摘要另锁代码；证据被改后连receipt pin一起重算仍拒绝。固定21真实run清单摘要、准确内容HEAD/tree/候选分支、双run/job/artifact/ZIP长度与摘要，不接受缺失、等长破坏、漏门/重复/复用工件、虚报初取或双端相等、错任务/分支/HEAD、2005原字节或服务器运行抬高。逐份核schema、两HTML实际identity及初取布尔、全图固定、语义/audit与原件界限。CLI强制保管，第8单元增加所有保管反例及骑证泛化至两宠/七类别变全宠槽位矩阵/静态持物变成功穿戴的拒绝。本地最终8项及关联16项共24通过，原输入强制保管重放输出与初始local逐字相等；独立发布边界工具通过，旧文完整保留。原内容CI7项不改称8项；保管提交候选/main自身仍待实际8项及全门后验。
 
 交付具体收益是把“持有史卡鲁”和“获族长骑乘证”分开，以及宠物类型→可用装备栏、7大类/脚子类型、属性增减的有限资料。没有宠物物种完整数值、技能/成长率、骑证原ID与实际装备事务。最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-91：早期具名NPC对话/交互界面或另一地区具名宠物技能数值来源，避免连扩本报道娱乐设施/匿名图。Stage A7PARTIAL+2OPEN、B/wiki GATED、savedataR79 PAUSED_NON_BLOCKING，整体恢复百分比仍null。
+
+
+### SRC-CN-2003-SINA-GOYA-PIG-LETTER-GUIDE-R91
+
+- Source: 新浪游戏《石器时代》任务功略-哥亚山小猪传情任务，https://games.sina.com.cn/zhqu/sta/article/2003-05-29/9803.shtml
+- Displayed date: 2003-05-29 16:24; tagged 网友投稿, unnamed actual contributor.
+- Evidence grade: A for a dated contemporaneous portal guide's readable *reported content*; C for uncorroborated original-game transaction/dialogue precision. No proof of an original official script or matching TW1.0/JSS1999 build.
+- Content: youth in Goya cave 1F, Karuta village merchant giving two 不可思议的贝壳, youth's one-of-two named pet rewards, 乌力斯凯/乌力美 letter cycle, 4F 乌力花店, moonlight flower and 红玉的手环 described +2/+2/-2/+1; local map floors and coordinates.
+- Inconsistency: cave-world entrance shown (99,425) in introduction vs (98,426) in summary; preserve both, no correction. Level 20 is explicitly recommended, not demonstrated gate.
+- Linked prior source: `docs/specs/STONEAGE-CN2001-2003-SHELL-QUEST-SOURCE-R1.md` (R55), 2001 named player enumeration that includes the Goya shell/pet route; not proof of independent same-build runtime.
+- Derived files: `docs/specs/STONEAGE-CN2003-GOYA-PIG-LETTER-NPC-FLOW-SOURCE-R1.md`, `research/recovered/STONEAGE-CN2003-GOYA-PIG-LETTER-NPC-FLOW-SOURCE-R1.json`, strict verifier/tests and dedicated CI.
+- Negative boundary: no authenticated raw HTML hash / copyright artwork, exact NPC dialogue bytes, UI screenshot, spawn ID, item-consumption receipt, pet probability, source build, original server or client execution. Guide narrative only.
