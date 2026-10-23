@@ -1,0 +1,45 @@
+name: Verify TW2000 quoted avatar counts and credited title photo
+on:
+  push:
+    paths:
+      - 'tools/stoneage_tw2000_launch_avatar_photo_source.py'
+      - 'tools/stoneage_jp2005_treasure_source.py'
+      - 'tests/test_stoneage_tw2000_launch_avatar_photo_source.py'
+      - 'research/recovered/STONEAGE-TW2000-LAUNCH-AVATAR-PHOTO-*.json'
+      - 'research/recovered/STONEAGE-TW10-LOGIN-AVATAR-CATALOG-R1.json'
+      - 'research/recovered/STONEAGE-CN20-CREATION-STATUS-SOURCE-R1.json'
+      - 'research/recovered/STONEAGE-PREPRODUCTION-CONTENT-ARCHIVE-R1.json'
+      - '.github/workflows/verify-stoneage-tw2000-launch-avatar-photo-source.yml'
+  pull_request:
+    paths:
+      - 'tools/stoneage_tw2000_launch_avatar_photo_source.py'
+      - 'tools/stoneage_jp2005_treasure_source.py'
+      - 'tests/test_stoneage_tw2000_launch_avatar_photo_source.py'
+      - 'research/recovered/STONEAGE-TW2000-LAUNCH-AVATAR-PHOTO-*.json'
+      - 'research/recovered/STONEAGE-TW10-LOGIN-AVATAR-CATALOG-R1.json'
+      - 'research/recovered/STONEAGE-CN20-CREATION-STATUS-SOURCE-R1.json'
+      - 'research/recovered/STONEAGE-PREPRODUCTION-CONTENT-ARCHIVE-R1.json'
+      - '.github/workflows/verify-stoneage-tw2000-launch-avatar-photo-source.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  bounded-source-replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install Pillow==12.3.0
+      - name: Reprinted counts, independent photo credit and honest wrapper drift
+        run: python -m unittest tests.test_stoneage_tw2000_launch_avatar_photo_source -v
+      - name: Retrieve publisher reprint and actual linked credited photograph
+        run: python -m tools.stoneage_tw2000_launch_avatar_photo_source --fetch --output "$RUNNER_TEMP/r89-content/replay.json"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: tw2000-launch-avatar-photo-derived-r89
+          path: ${{ runner.temp }}/r89-content/replay.json
+          if-no-files-found: error
+          retention-days: 30
