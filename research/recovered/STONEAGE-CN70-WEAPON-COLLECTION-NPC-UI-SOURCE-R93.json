@@ -1,0 +1,137 @@
+{
+  "schema": "stoneage.cn70_weapon_collection_npc_ui_guide.r93",
+  "task": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-93",
+  "source": {
+    "id": "R93-S1",
+    "url": "https://news.17173.com/z/stoneage/renwu/sa70_05.htm",
+    "page_title": "石器时代7.0-A搜集武器任务（渔村）",
+    "website": "17173石器时代-石头就业所专区",
+    "page_version_label": "7.0",
+    "displayed_publication_date": null,
+    "original_publish_date_authenticated": false,
+    "original_html_bytes": null,
+    "original_html_sha256": null,
+    "official_guide": false,
+    "client_build": null,
+    "game_server_executed": false
+  },
+  "scene": {
+    "guide_reported_village": "玛丽娜丝渔村",
+    "guide_reported_npc": "史比",
+    "reported_local_coord": [
+      66,
+      93
+    ],
+    "original_npc_id": null,
+    "original_map_id": null,
+    "guide_says_no_quest_requirements": true,
+    "hidden_conditions_excluded_by_source": false,
+    "guide_npc_role": "收集及改造武器的专家",
+    "dialogue_verbatim_authenticated": false
+  },
+  "routes": [
+    {
+      "id": "near",
+      "guide_reports_five_items": true,
+      "items": [
+        "合成斧8",
+        "合成枪8",
+        "合成棍棒8",
+        "合成爪8",
+        "愿藏的斧头"
+      ],
+      "reward_name": "双尖枪",
+      "reward_stats": {
+        "attack": 53,
+        "agility": -12,
+        "charm": 6
+      },
+      "reward_magic_text": "混迷的精灵",
+      "reward_magic_level": 4,
+      "server_item_consumption_verified": false
+    },
+    {
+      "id": "far",
+      "guide_reports_five_items": true,
+      "items": [
+        "合成弓箭8",
+        "合成投掷斧8",
+        "合成回旋标8",
+        "合成石8",
+        "近藏的棍棒"
+      ],
+      "reward_name": "乱射弓",
+      "reward_stats": {
+        "attack": 23,
+        "defense": -24,
+        "target_count": 10
+      },
+      "reward_magic_text": "毒雾的精灵",
+      "reward_magic_level": 4,
+      "server_item_consumption_verified": false
+    }
+  ],
+  "source_text_conflicts": [
+    {
+      "id": "axe-sourced",
+      "main_list_name": "愿藏的斧头",
+      "footnote_name": "愿藏的斧头",
+      "same_origin_verified": false
+    },
+    {
+      "id": "staff-text-variant",
+      "main_list_name": "近藏的棍棒",
+      "footnote_name": "进藏的棍棒",
+      "which_is_original_item_name": null
+    }
+  ],
+  "screenshot": {
+    "id": "R93-I1",
+    "url": "https://images.17173cdn.com/stoneage/images/mission/sa70/sa70_05/sa031027_002.jpg",
+    "retrieval_channel": "public_image_search_and_direct_open",
+    "linked_article_html_img_tag_verified": false,
+    "source_archive_date_verified": false,
+    "filename_is_release_date": false,
+    "original_game_build": null,
+    "visually_observed": [
+      "棕色矩形边框对话窗口",
+      "窗口中文字",
+      "绿色“下一页”按钮",
+      "鼠标手形指针",
+      "底部一般模式与玩家模式状态栏",
+      "外景地面、玩家与宠物样式"
+    ],
+    "npc_name_legible_in_screenshot": false,
+    "button_function_executed": false,
+    "screen_layout_native_resolution_verified": false,
+    "original_image_bytes_sha256": null,
+    "original_screenshot_capture_date": null,
+    "image_binary_in_git": false
+  },
+  "evidence_grade": "FACT_OF_CURRENT_PORTAL_GUIDE_AND_VISIBLE_IMAGE_NOT_OFFICIAL_CONFIG",
+  "known_unknowns": [
+    "7.0页面标签与精确官方客户端和服务器构建号的对应",
+    "原NPC名称/坐标与服务器主表ID",
+    "两组五件物品真正校验/消耗和异常路径",
+    "两奖励精灵具体效果和装备代码",
+    "截图拍摄日期、玩家宠物身份、原始像素与完整对话文本",
+    "截图与文章原HTML内嵌关系及初次发布年份",
+    "UI下一页按钮真实分支和窗口事件/网络ACK"
+  ],
+  "execution": {
+    "original_client_executed": false,
+    "original_server_executed": false,
+    "network_capture_verified": false,
+    "original_item_ids_recovered": false,
+    "original_ui_runtime_recovered": false,
+    "derived_source_only": true
+  },
+  "acceptance": {
+    "stage_a_closed": false,
+    "stage_b_started": false,
+    "wiki_unlocked": false,
+    "original_mainline_npc_ui_recovered": false,
+    "overall_restoration_percentage": null,
+    "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-94"
+  }
+}

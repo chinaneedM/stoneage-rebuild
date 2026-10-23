@@ -1,0 +1,27 @@
+name: Verify R93 CN7.0 weapon collection NPC and dialogue screenshot boundaries
+on:
+  push:
+    paths:
+      - 'tools/stoneage_cn70_weapon_npc_ui_source.py'
+      - 'tests/test_stoneage_cn70_weapon_npc_ui_source.py'
+      - 'research/recovered/STONEAGE-CN70-WEAPON-COLLECTION-NPC-UI-SOURCE-R93.json'
+      - '.github/workflows/verify-stoneage-cn70-weapon-npc-ui.yml'
+  pull_request:
+    paths:
+      - 'tools/stoneage_cn70_weapon_npc_ui_source.py'
+      - 'tests/test_stoneage_cn70_weapon_npc_ui_source.py'
+      - 'research/recovered/STONEAGE-CN70-WEAPON-COLLECTION-NPC-UI-SOURCE-R93.json'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify-guide-and-image:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest tests.test_stoneage_cn70_weapon_npc_ui_source -v
+      - run: python -m tools.stoneage_cn70_weapon_npc_ui_source
