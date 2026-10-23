@@ -2310,3 +2310,10 @@ R98新浪S2实际HTML的第一插图表仍含原href与独立缩略图src；本�
 本地前置下载调用误用了不存在--max-seconds，改为脚本真实--deadline；libarchive因RAR字典不支持失败、apt因当前系统权限失败，改用官网真实出链的独立7-Zip成功解压，未升级权限。初静态扫描遇skipdata伪指令，改显式跳过；算术片段初漏设合成ESI导致未映射读，补齐寄存器模型后通过；加载调用窗口曾截在指令中间而被拒，改在0xd5ed指令边界停止。保留这些本地预检失败，不冒称远端失败或第一次全过。
 
 交付中文规格、原源派生R101 JSON、工具、七项单元及专用原盘CI。本地七项与真实原字节20案例均成功；候选/main及工件保管仍须随后实际验收。原商业程序/光盘/SPR/像素不入Git。宠物/NPC名字—SPR、原包写入、真实场景/调色板、世界DAT及服务器master未获补齐。最高NEXT102 `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-102` 有限全域材料缺口复核，不在无上游身份/画面交付时继续扩渲染/音效helper。Stage A7 PARTIAL+2 OPEN、B/wiki GATED、savedataR79 PAUSED_NON_BLOCKING，整体复原百分比null。
+
+
+### R102 2026-10-24 — 全域材料复核与最高队列替换
+
+当前22域材料视图以 `docs/specs/STONEAGE-MATERIAL-PORTFOLIO-REVIEW-R102.md` 和 `research/recovered/STONEAGE-MATERIAL-PORTFOLIO-REVIEW-R102.json` 为准；旧portfolio状态与历史NEXT原样保留，由本条替换优先级而非改写。冻结880顶层JSON可重放，1339记录出现/871研究ID/883正文/456相同重复，12个日服人物投影被原builder完整解释，26无collection待人工归属。CN40包含于104，加JP124只有228网页位置ID，不作为原物种分母；本轮没有新历史源或原游戏实现。
+
+最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-103转早期辅助工具一个版本明确的用户可见功能/改动实源，优先开发者说明，查重现有STA2.52与早期SACH/STA/SADE；玩家稿明确降级，不执行旧工具、不决定采纳。一个来源包/一个版本比较止步；无新来源则转具名官方宠物图像材料。停止无身份/可见交付的渲染音效helper扩张，原TW1身份缺口有具体实源才重开。Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、总体完成百分比null。

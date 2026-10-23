@@ -1,0 +1,460 @@
+{
+  "schema": "stoneage.material_record_audit.r102",
+  "baseline_commit": "3782b518b1e457024d33f05df11eea4b9d979549",
+  "scope": "TOP_LEVEL_RECOVERED_JSON_ONLY_FROZEN_BEFORE_R102_NOT_WHOLE_REPOSITORY",
+  "input_manifest": "research/recovered/STONEAGE-MATERIAL-REVIEW-INPUTS-R102.json",
+  "input_manifest_sha256": "8f236ee26c119121469d45c8bb5b2e793d14d74da380c1357bd7c04f6d8998fa",
+  "counts": {
+    "json_files_scanned": 880,
+    "files_with_full_records": 128,
+    "full_record_occurrences": 1339,
+    "unique_research_record_ids": 871,
+    "distinct_record_bodies": 883,
+    "identical_body_repeat_occurrences": 456,
+    "ids_with_distinct_bodies": 12,
+    "unrouted_unique_ids": 26,
+    "near_records_missing_required_fields": 0
+  },
+  "unique_ids_by_collection": {
+    "UNROUTED": 26,
+    "characters": 22,
+    "encounters": 24,
+    "growth_profiles": 3,
+    "historical_sites": 2,
+    "items": 62,
+    "maps": 67,
+    "npcs": 53,
+    "pets": 276,
+    "quests": 37,
+    "recipes": 11,
+    "riding": 12,
+    "screens": 72,
+    "skills": 31,
+    "sources": 46,
+    "tutorials": 119,
+    "versions": 8
+  },
+  "distinct_body_ids": [
+    {
+      "record_id": "jp-hangame-web2003:character-position:01",
+      "classification": "DOCUMENTED_PROVENANCE_ENRICHMENT_NOT_HISTORICAL_CONFLICT",
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-JP2003-CHARACTER-VISUAL-CATALOG-R1.json",
+          "pointer": "/records/0"
+        },
+        {
+          "path": "research/recovered/STONEAGE-JP2003-CHARACTER-VISUAL-SOURCE-R1.json",
+          "pointer": "/characters/0"
+        }
+      ]
+    },
+    {
+      "record_id": "jp-hangame-web2003:character-position:02",
+      "classification": "DOCUMENTED_PROVENANCE_ENRICHMENT_NOT_HISTORICAL_CONFLICT",
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-JP2003-CHARACTER-VISUAL-CATALOG-R1.json",
+          "pointer": "/records/1"
+        },
+        {
+          "path": "research/recovered/STONEAGE-JP2003-CHARACTER-VISUAL-SOURCE-R1.json",
+          "pointer": "/characters/1"
+        }
+      ]
+    },
+    {
+      "record_id": "jp-hangame-web2003:character-position:03",
+      "classification": "DOCUMENTED_PROVENANCE_ENRICHMENT_NOT_HISTORICAL_CONFLICT",
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-JP2003-CHARACTER-VISUAL-CATALOG-R1.json",
+          "pointer": "/records/2"
+        },
+        {
+          "path": "research/recovered/STONEAGE-JP2003-CHARACTER-VISUAL-SOURCE-R1.json",
+          "pointer": "/characters/2"
+        }
+      ]
+    },
+    {
+      "record_id": "jp-hangame-web2003:character-position:04",
+      "classification": "DOCUMENTED_PROVENANCE_ENRICHMENT_NOT_HISTORICAL_CONFLICT",
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-JP2003-CHARACTER-VISUAL-CATALOG-R1.json",
+          "pointer": "/records/3"
+        },
+        {
+          "path": "research/recovered/STONEAGE-JP2003-CHARACTER-VISUAL-SOURCE-R1.json",
+          "pointer": "/characters/3"
+        }
+      ]
+    },
+    {
+      "record_id": "jp-hangame-web2003:character-position:05",
+      "classification": "DOCUMENTED_PROVENANCE_ENRICHMENT_NOT_HISTORICAL_CONFLICT",
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-JP2003-CHARACTER-VISUAL-CATALOG-R1.json",
+          "pointer": "/records/4"
+        },
+        {
+          "path": "research/recovered/STONEAGE-JP2003-CHARACTER-VISUAL-SOURCE-R1.json",
+          "pointer": "/characters/4"
+        }
+      ]
+    },
+    {
+      "record_id": "jp-hangame-web2003:character-position:06",
+      "classification": "DOCUMENTED_PROVENANCE_ENRICHMENT_NOT_HISTORICAL_CONFLICT",
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-JP2003-CHARACTER-VISUAL-CATALOG-R1.json",
+          "pointer": "/records/5"
+        },
+        {
+          "path": "research/recovered/STONEAGE-JP2003-CHARACTER-VISUAL-SOURCE-R1.json",
+          "pointer": "/characters/5"
+        }
+      ]
+    },
+    {
+      "record_id": "jp-hangame-web2003:character-position:07",
+      "classification": "DOCUMENTED_PROVENANCE_ENRICHMENT_NOT_HISTORICAL_CONFLICT",
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-JP2003-CHARACTER-VISUAL-CATALOG-R1.json",
+          "pointer": "/records/6"
+        },
+        {
+          "path": "research/recovered/STONEAGE-JP2003-CHARACTER-VISUAL-SOURCE-R1.json",
+          "pointer": "/characters/6"
+        }
+      ]
+    },
+    {
+      "record_id": "jp-hangame-web2003:character-position:08",
+      "classification": "DOCUMENTED_PROVENANCE_ENRICHMENT_NOT_HISTORICAL_CONFLICT",
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-JP2003-CHARACTER-VISUAL-CATALOG-R1.json",
+          "pointer": "/records/7"
+        },
+        {
+          "path": "research/recovered/STONEAGE-JP2003-CHARACTER-VISUAL-SOURCE-R1.json",
+          "pointer": "/characters/7"
+        }
+      ]
+    },
+    {
+      "record_id": "jp-hangame-web2003:character-position:09",
+      "classification": "DOCUMENTED_PROVENANCE_ENRICHMENT_NOT_HISTORICAL_CONFLICT",
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-JP2003-CHARACTER-VISUAL-CATALOG-R1.json",
+          "pointer": "/records/8"
+        },
+        {
+          "path": "research/recovered/STONEAGE-JP2003-CHARACTER-VISUAL-SOURCE-R1.json",
+          "pointer": "/characters/8"
+        }
+      ]
+    },
+    {
+      "record_id": "jp-hangame-web2003:character-position:10",
+      "classification": "DOCUMENTED_PROVENANCE_ENRICHMENT_NOT_HISTORICAL_CONFLICT",
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-JP2003-CHARACTER-VISUAL-CATALOG-R1.json",
+          "pointer": "/records/9"
+        },
+        {
+          "path": "research/recovered/STONEAGE-JP2003-CHARACTER-VISUAL-SOURCE-R1.json",
+          "pointer": "/characters/9"
+        }
+      ]
+    },
+    {
+      "record_id": "jp-hangame-web2003:character-position:11",
+      "classification": "DOCUMENTED_PROVENANCE_ENRICHMENT_NOT_HISTORICAL_CONFLICT",
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-JP2003-CHARACTER-VISUAL-CATALOG-R1.json",
+          "pointer": "/records/10"
+        },
+        {
+          "path": "research/recovered/STONEAGE-JP2003-CHARACTER-VISUAL-SOURCE-R1.json",
+          "pointer": "/characters/10"
+        }
+      ]
+    },
+    {
+      "record_id": "jp-hangame-web2003:character-position:12",
+      "classification": "DOCUMENTED_PROVENANCE_ENRICHMENT_NOT_HISTORICAL_CONFLICT",
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-JP2003-CHARACTER-VISUAL-CATALOG-R1.json",
+          "pointer": "/records/11"
+        },
+        {
+          "path": "research/recovered/STONEAGE-JP2003-CHARACTER-VISUAL-SOURCE-R1.json",
+          "pointer": "/characters/11"
+        }
+      ]
+    }
+  ],
+  "unrouted_records": [
+    {
+      "record_id": "CN2003-GROUP2-01",
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-CN2003-GROUP2-MANOR-REPORT-SOURCE-R1.json",
+          "pointer": "/records/0"
+        }
+      ]
+    },
+    {
+      "record_id": "CN2003-GROUP2-02",
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-CN2003-GROUP2-MANOR-REPORT-SOURCE-R1.json",
+          "pointer": "/records/1"
+        }
+      ]
+    },
+    {
+      "record_id": "CN2003-GROUP2-03",
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-CN2003-GROUP2-MANOR-REPORT-SOURCE-R1.json",
+          "pointer": "/records/2"
+        }
+      ]
+    },
+    {
+      "record_id": "CN2003-GROUP2-04",
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-CN2003-GROUP2-MANOR-REPORT-SOURCE-R1.json",
+          "pointer": "/records/3"
+        }
+      ]
+    },
+    {
+      "record_id": "CN2003-GROUP2-05",
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-CN2003-GROUP2-MANOR-REPORT-SOURCE-R1.json",
+          "pointer": "/records/4"
+        }
+      ]
+    },
+    {
+      "record_id": "CN2003-GROUP2-06",
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-CN2003-GROUP2-MANOR-REPORT-SOURCE-R1.json",
+          "pointer": "/records/5"
+        }
+      ]
+    },
+    {
+      "record_id": "CN2003-GROUP2-07",
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-CN2003-GROUP2-MANOR-REPORT-SOURCE-R1.json",
+          "pointer": "/records/6"
+        }
+      ]
+    },
+    {
+      "record_id": "CN2003-GROUP2-08",
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-CN2003-GROUP2-MANOR-REPORT-SOURCE-R1.json",
+          "pointer": "/records/7"
+        }
+      ]
+    },
+    {
+      "record_id": "cn-wayi-2003-classic20:1",
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-CN2003-CLASSIC20-BRANCH-SOURCE-R1.json",
+          "pointer": "/records/0"
+        }
+      ]
+    },
+    {
+      "record_id": "cn-wayi-2003-classic20:2",
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-CN2003-CLASSIC20-BRANCH-SOURCE-R1.json",
+          "pointer": "/records/1"
+        }
+      ]
+    },
+    {
+      "record_id": "cn-wayi-2003-classic20:3",
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-CN2003-CLASSIC20-BRANCH-SOURCE-R1.json",
+          "pointer": "/records/2"
+        }
+      ]
+    },
+    {
+      "record_id": "cn-wayi-2003-classic20:4",
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-CN2003-CLASSIC20-BRANCH-SOURCE-R1.json",
+          "pointer": "/records/3"
+        }
+      ]
+    },
+    {
+      "record_id": "cn-wayi-2003-classic20:5",
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-CN2003-CLASSIC20-BRANCH-SOURCE-R1.json",
+          "pointer": "/records/4"
+        }
+      ]
+    },
+    {
+      "record_id": "cn-wayi-2003-classic20:6",
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-CN2003-CLASSIC20-BRANCH-SOURCE-R1.json",
+          "pointer": "/records/5"
+        }
+      ]
+    },
+    {
+      "record_id": "jp-gaiax-2005:special-map-1",
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-JP2005-SPECIAL-MAPS-SOURCE-R1.json",
+          "pointer": "/records/0"
+        }
+      ]
+    },
+    {
+      "record_id": "jp-gaiax-2005:special-map-2",
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-JP2005-SPECIAL-MAPS-SOURCE-R1.json",
+          "pointer": "/records/1"
+        }
+      ]
+    },
+    {
+      "record_id": "jp-gaiax-2005:special-map-3",
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-JP2005-SPECIAL-MAPS-SOURCE-R1.json",
+          "pointer": "/records/2"
+        }
+      ]
+    },
+    {
+      "record_id": "jp-gaiax-2005:special-map-4",
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-JP2005-SPECIAL-MAPS-SOURCE-R1.json",
+          "pointer": "/records/3"
+        }
+      ]
+    },
+    {
+      "record_id": "jp-gaiax-2005:special-map-5",
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-JP2005-SPECIAL-MAPS-SOURCE-R1.json",
+          "pointer": "/records/4"
+        }
+      ]
+    },
+    {
+      "record_id": "jp-gaiax-2005:special-map-6",
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-JP2005-SPECIAL-MAPS-SOURCE-R1.json",
+          "pointer": "/records/5"
+        }
+      ]
+    },
+    {
+      "record_id": "jp-gaiax-2007:starter-club-1",
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-JP2007-STARTER-CLUB-SOURCE-R1.json",
+          "pointer": "/records/0"
+        }
+      ]
+    },
+    {
+      "record_id": "jp-gaiax-2007:starter-club-2",
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-JP2007-STARTER-CLUB-SOURCE-R1.json",
+          "pointer": "/records/1"
+        }
+      ]
+    },
+    {
+      "record_id": "jp-gaiax-2007:starter-club-3",
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-JP2007-STARTER-CLUB-SOURCE-R1.json",
+          "pointer": "/records/2"
+        }
+      ]
+    },
+    {
+      "record_id": "jp-gaiax-2007:starter-club-4",
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-JP2007-STARTER-CLUB-SOURCE-R1.json",
+          "pointer": "/records/3"
+        }
+      ]
+    },
+    {
+      "record_id": "jp-gaiax-2007:starter-club-5",
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-JP2007-STARTER-CLUB-SOURCE-R1.json",
+          "pointer": "/records/4"
+        }
+      ]
+    },
+    {
+      "record_id": "jp-gaiax-2007:starter-club-6",
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-JP2007-STARTER-CLUB-SOURCE-R1.json",
+          "pointer": "/records/5"
+        }
+      ]
+    }
+  ],
+  "near_records": [],
+  "pet_catalog_overlap": {
+    "first_page_occurrences": 40,
+    "finite_cn_positions": 104,
+    "jp_positions": 124,
+    "file_occurrences": 268,
+    "unique_versioned_web_position_ids": 228,
+    "same_build_or_cross_region_species_count": null
+  },
+  "interpretation": {
+    "counts_are_species_or_restoration_progress": false,
+    "full_record_schema_does_not_cover_all_legacy_evidence": true,
+    "no_record_automatically_selected_or_rewritten": true,
+    "original_server_or_full_client_execution_proven": false,
+    "new_historical_source_acquired": false,
+    "public_export_approved": false
+  }
+}

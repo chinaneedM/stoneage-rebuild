@@ -1,0 +1,249 @@
+{
+  "schema": "stoneage.material_portfolio_review.r102",
+  "date": "2026-10-24",
+  "task": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-102",
+  "baseline_commit": "3782b518b1e457024d33f05df11eea4b9d979549",
+  "evidence_class": "DERIVED_MATERIAL_INTEGRATION_NO_NEW_HISTORICAL_SOURCE",
+  "scope": "22_DOMAINS_AND_FROZEN_RECOVERED_JSON_RECORD_AUDIT",
+  "domains": [
+    {
+      "id": "version_lineage",
+      "order": 1,
+      "label": "版本谱系",
+      "baseline_status": "PARTIAL_SOURCE",
+      "anchor": "research/recovered/STONEAGE-WAYI-OFFICIAL-WORLDLINE-R1.json",
+      "available": "分地区版本与运营叙事已有；不能以页脚年份认证客户端构建。",
+      "remaining_gap": "日本1999同版原客户端及服务器谱系仍缺。",
+      "complete": false
+    },
+    {
+      "id": "login_splash",
+      "order": 2,
+      "label": "登录、选服、角色列表",
+      "baseline_status": "OPEN_VISUAL",
+      "anchor": "research/recovered/STONEAGE-TW10-LOGIN-AVATAR-CATALOG-R1.json",
+      "available": "原TW1传输/选角字段已有，台湾2000报刊照片另有边界。",
+      "remaining_gap": "同build登录全状态、原背景/字体/音效与真实交互仍缺。",
+      "complete": false
+    },
+    {
+      "id": "character_creation",
+      "order": 3,
+      "label": "人物创建和选角",
+      "baseline_status": "PARTIAL_STRUCTURE",
+      "anchor": "research/recovered/STONEAGE-JP2003-CHARACTER-VISUAL-CATALOG-R1.json",
+      "available": "日服2003官方网页12个未命名位置，补充像素来自2006另一时点。",
+      "remaining_gap": "不能转作TW1可选人物表、姓名或原生body/face ID。",
+      "complete": false
+    },
+    {
+      "id": "character_sprite_model",
+      "order": 4,
+      "label": "人物二维模型/动作/外观",
+      "baseline_status": "PARTIAL_RESOURCE",
+      "anchor": "research/recovered/STONEAGE-TW10-ANIMATION-SELECTOR-R101.json",
+      "available": "同版原指令补方向/动作首匹配、回退及帧倒计时。",
+      "remaining_gap": "人物/宠物身份→对象键→原SPR尚缺；合成执行不证完整绘制。",
+      "complete": false
+    },
+    {
+      "id": "world_map",
+      "order": 5,
+      "label": "原野地图、村落、坐标、道路",
+      "baseline_status": "PARTIAL_STRUCTURE",
+      "anchor": "research/recovered/STONEAGE-CN2001-WORLD-ROUTES-RECORD-SOURCE-R96.json",
+      "available": "2001玩家稿保存四岛、路线与记录点叙述。",
+      "remaining_gap": "原TW1地图DAT、场景实体、floor及端点仍未联接。",
+      "complete": false
+    },
+    {
+      "id": "npc_identity",
+      "order": 6,
+      "label": "NPC及商店服务人员",
+      "baseline_status": "OPEN_CONTENT",
+      "anchor": "research/recovered/STONEAGE-TW10-NPC-STATIC-RESOURCE-JOIN-R99.json",
+      "available": "101条同版静态图号→资源map_number已固定；不是101具名NPC。",
+      "remaining_gap": "NPC名/出生位置/脚本→静态图身份仍缺。",
+      "complete": false
+    },
+    {
+      "id": "npc_dialog_ui",
+      "order": 7,
+      "label": "NPC对话窗口与选项",
+      "baseline_status": "PARTIAL_STRUCTURE",
+      "anchor": "research/recovered/STONEAGE-CN2003-KATAN-NPC-VISUAL-SOURCE-R100.json",
+      "available": "当前新浪指南两张全图支持卡坦目标名/四鱼请求窗口。",
+      "remaining_gap": "未知准确商业build，不证原TW1 WN布局、成功交宠或确认ACK。",
+      "complete": false
+    },
+    {
+      "id": "quest_content",
+      "order": 8,
+      "label": "任务与奖励",
+      "baseline_status": "OPEN_CONTENT",
+      "anchor": "research/recovered/STONEAGE-CN-KATAN-QUEST-SOURCE-CONFLICTS-R98.json",
+      "available": "两代卡坦玩家稿保存分阶段交付及五项冲突。",
+      "remaining_gap": "服务端任务脚本、戒指回补、保存标志与真实交易仍缺。",
+      "complete": false
+    },
+    {
+      "id": "pet_species",
+      "order": 9,
+      "label": "宠物物种/变体/名称",
+      "baseline_status": "OPEN_SAME_BUILD_ROSTER",
+      "anchor": "research/recovered/STONEAGE-WAEI-CN20-NEW-PET-FINITE-CATALOG-R1.json",
+      "available": "CN2.0网页104位置包含原首批40；JP目录124位置另版独立。",
+      "remaining_gap": "228跨版网页位置不是原TW1物种分母；不按译名合种。",
+      "complete": false
+    },
+    {
+      "id": "pet_visual",
+      "order": 10,
+      "label": "宠物图像、动画、动作",
+      "baseline_status": "PARTIAL_RESOURCE",
+      "anchor": "research/recovered/STONEAGE-CN-EARLY-PIG-CATALOG-IMAGE-IDENTITY-SOURCE-R97.json",
+      "available": "乌力系8行仅7不同详情名，007/008图片链接倒序。",
+      "remaining_gap": "不能按文件号/相同名补原物种、bitmap或SPR。",
+      "complete": false
+    },
+    {
+      "id": "pet_stats",
+      "order": 11,
+      "label": "宠物等级/属性与个体差异",
+      "baseline_status": "PARTIAL_STRUCTURE",
+      "anchor": "research/recovered/STONEAGE-PET-ASSET-GROWTH-CATALOG-MATRIX-R1.json",
+      "available": "已有S:K状态结构与版本边界，界面数值不是物种master。",
+      "remaining_gap": "同构建全物种初值/个体公式/MP/AI仍缺。",
+      "complete": false
+    },
+    {
+      "id": "pet_growth",
+      "order": 12,
+      "label": "宠物成长、经验与升级",
+      "baseline_status": "PARTIAL_DESCENDANT",
+      "anchor": "research/recovered/STONEAGE-CN2003-PET-GROWTH-PLAYER-CLAIMS-SOURCE-R1.json",
+      "available": "2003玩家成长算法说法独立保存，与后裔公式分开。",
+      "remaining_gap": "不能认证原1999/TW1系数、全物种成长与取整。",
+      "complete": false
+    },
+    {
+      "id": "pet_skills",
+      "order": 13,
+      "label": "宠物技能/学习/条件",
+      "baseline_status": "PARTIAL_STRUCTURE",
+      "anchor": "research/recovered/STONEAGE-CN2004-PET-SKILL-TRAINER-SOURCE-R1.json",
+      "available": "具名训练师/技能资料按地区年代保存。",
+      "remaining_gap": "同版全技能名单、费用条件和服务端执行仍缺。",
+      "complete": false
+    },
+    {
+      "id": "pet_encounter",
+      "order": 14,
+      "label": "宠物出现地点/捕获",
+      "baseline_status": "PARTIAL_DESCENDANT",
+      "anchor": "research/recovered/STONEAGE-CN20-PET-COMMISSION-HABITATS-CATALOG-R1.json",
+      "available": "27条寄养/出现地资料行已有独立来源。",
+      "remaining_gap": "网页地点不是原服完整生成表或捕获概率。",
+      "complete": false
+    },
+    {
+      "id": "ride_mount",
+      "order": 15,
+      "label": "骑宠界面、资格与动作",
+      "baseline_status": "PARTIAL_DESCENDANT",
+      "anchor": "research/recovered/STONEAGE-CN40-RIDING-CERTIFICATE-MANOR-SOURCE-R1.json",
+      "available": "CN4.0骑证庄园叙事与CN2.0、台湾8.0保持分版。",
+      "remaining_gap": "早期全骑宠资格、人物动作绑定和真实事务仍缺。",
+      "complete": false
+    },
+    {
+      "id": "battle_ui_rules",
+      "order": 16,
+      "label": "战斗界面/指令/表现",
+      "baseline_status": "PARTIAL_STRUCTURE",
+      "anchor": "research/recovered/STONEAGE-CN20-BATTLE-COMMANDS-DEFEAT-SOURCE-R1.json",
+      "available": "CN2.0战斗指令/战败文献已有，原TW1结构另存。",
+      "remaining_gap": "完整原生战斗画面、所有指令回合和技能动作联调仍缺。",
+      "complete": false
+    },
+    {
+      "id": "item_equipment_economy",
+      "order": 17,
+      "label": "物品/装备/商店/料理",
+      "baseline_status": "PARTIAL_STRUCTURE",
+      "anchor": "research/recovered/STONEAGE-TW10-ITEM-STATIC-BITMAP-SOURCE-R1.json",
+      "available": "原TW1物品静态位图选择规格已有，后期物品配方分版。",
+      "remaining_gap": "原全物品身份/商店库存/价格/合成表与事务仍缺。",
+      "complete": false
+    },
+    {
+      "id": "audio_fx",
+      "order": 18,
+      "label": "音效/配乐与事件触发",
+      "baseline_status": "PARTIAL_RESOURCE",
+      "anchor": "research/recovered/STONEAGE-TW10-AUDIO-EVENT-GATE-R1.json",
+      "available": "原资源与声音事件门控报告已有。",
+      "remaining_gap": "不把音频块数当事件覆盖；真实场景声画联合执行仍缺。",
+      "complete": false
+    },
+    {
+      "id": "helper_versions",
+      "order": 19,
+      "label": "历代外挂产品与版本",
+      "baseline_status": "PARTIAL_CATALOG",
+      "anchor": "research/recovered/STONEAGE-EARLY-ASSISTANT-VERSIONS-R1.json",
+      "available": "SACH/STA/SADE玩家使用文献与确切/未给版本区别已有。",
+      "remaining_gap": "开发者发布谱系、全版本首见及精确客户端兼容未证。",
+      "complete": false
+    },
+    {
+      "id": "helper_capabilities",
+      "order": 20,
+      "label": "全部外挂功能/变动",
+      "baseline_status": "PARTIAL_CATALOG",
+      "anchor": "research/recovered/STONEAGE-LEGACY-STA252-FEATURES-R1.json",
+      "available": "STA2.52玩家功能说明按版本独立保存。",
+      "remaining_gap": "全产品逐命令/改动覆盖未齐；未运行旧工具、未决定新作采用。",
+      "complete": false
+    },
+    {
+      "id": "reference_web",
+      "order": 21,
+      "label": "原官方/社区资料网站内容",
+      "baseline_status": "PARTIAL_DISCOVERY",
+      "anchor": "research/recovered/STONEAGE-HISTORICAL-SITE-NAVIGATION-CATALOG-R1.json",
+      "available": "运营/社区导航与页面、像素实际抓取时间分层保存。",
+      "remaining_gap": "网站目录不等于正文/像素全部取得、同年代或授权可发行。",
+      "complete": false
+    },
+    {
+      "id": "future_player_wiki",
+      "order": 22,
+      "label": "未来游戏玩家资料站",
+      "baseline_status": "DESIGN_PREP_ONLY",
+      "anchor": "research/recovered/STONEAGE-PREPRODUCTION-CONTENT-ARCHIVE-R1.json",
+      "available": "七字段/19集合研究规范已有，本轮增加去重/投影审计。",
+      "remaining_gap": "26条无collection先隔离，不自动迁移；生产站及公开内容仍GATED。",
+      "complete": false
+    }
+  ],
+  "next": {
+    "task": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-103",
+    "priority": "VERSIONED_LEGACY_HELPER_SOURCE",
+    "deliverable": "One bounded early helper product/version feature-change contract, developer manual/release page preferred; contemporary named-version player document fallback explicitly labeled. Compare existing STA2.52 and early assistant sources before claiming novelty.",
+    "stop_condition": "At most one product/version source package and one independently scoped version comparison. If no new attributable source is acquired, retain unknowns and rotate to a named official pet visual source; do not run old executables or expand generic rendering/audio helpers.",
+    "reopen_tw10_identity": "Authenticated same-build server master, named pixel-to-resource bridge, or original field entity payload."
+  },
+  "boundaries": {
+    "baseline_domain_statuses_preserved": true,
+    "original_full_payload_recovered": false,
+    "new_historical_source_acquired": false,
+    "new_game_or_wiki_production_started": false,
+    "public_export_approved": false,
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b_and_wiki": "GATED",
+    "savedata_r79": "PAUSED_NON_BLOCKING",
+    "overall_completion_percentage": null,
+    "counts_are_restoration_progress": false
+  }
+}

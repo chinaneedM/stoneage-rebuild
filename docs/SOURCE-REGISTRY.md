@@ -8552,3 +8552,8 @@ R98新浪S2实际HTML的第一插图表仍含原href与独立缩略图src；本�
 永久新增双原样报告、CUSTODY与独立保管器/CI；11个证据pin包括原报告/工具/测试/规格/原取源workflow/双CI/原GROUP与ANIMATION gzip/旧UI及宠物身份缺口父报告，固定bytes/SHA256/Git blob，并保存21实际门、双run/job/artifact/ZIP及4完整历史前缀。回执及原样报告同长度破坏反例均拒绝后恢复原字节。本保管提交自身候选/main CI须按其实际HEAD后验，不预记成功。
 
 实际完成的是原动画表的选择、无匹配回退、空组保留、帧间隔换算与有限帧尾状态规格；只有合成内存中的限定原指令执行，不是历史UI画面、真实服务器交付或完整游戏执行。原S:K→对象0x124、宠物/NPC名字—SPR、场景调色板与世界DAT保持OPEN；原上界132768的安全性仍未证。最高NEXT102有限全域材料缺口复核，优先具名内容/画面身份实源，不再无上游交付扩渲染/音效helper；Stage A7 PARTIAL+2 OPEN、B/wiki GATED、savedataR79 PAUSED_NON_BLOCKING、总体百分比null。
+
+
+### R102 2026-10-24 — 冻结材料索引与重复/投影审计
+
+本条登记派生整合资料，不计新历史来源。`research/recovered/STONEAGE-MATERIAL-REVIEW-INPUTS-R102.json` 固定main3782b518/tree f086c47b时880份顶层JSON的路径、原字节长度、SHA256及Git blob；范围不含子目录/非JSON/新R102文件。`STONEAGE-MATERIAL-RECORD-AUDIT-R102.json` 永久保存可复算计数、12日服人物位置来源补充投影、26无collection ID路径/JSON Pointer及CN40→104包含关系。`STONEAGE-MATERIAL-PORTFOLIO-REVIEW-R102.json` 覆盖22域，每域anchor在冻结清单内；不是全域已完成或全部版权已清。新程序调用旧JP人物builder精确复算，不任选重复记录、不合并跨区物种。旧证据不重写，原HTML/图片/程序/服务器资产未入Git；研究用途及生产站GATED保持。

@@ -17986,3 +17986,16 @@ R98新浪S2实际HTML的第一插图表仍含原href与独立缩略图src；本�
 永久新增双原样报告、CUSTODY与独立保管器/CI；11个证据pin包括原报告/工具/测试/规格/原取源workflow/双CI/原GROUP与ANIMATION gzip/旧UI及宠物身份缺口父报告，固定bytes/SHA256/Git blob，并保存21实际门、双run/job/artifact/ZIP及4完整历史前缀。回执及原样报告同长度破坏反例均拒绝后恢复原字节。本保管提交自身候选/main CI须按其实际HEAD后验，不预记成功。
 
 实际完成的是原动画表的选择、无匹配回退、空组保留、帧间隔换算与有限帧尾状态规格；只有合成内存中的限定原指令执行，不是历史UI画面、真实服务器交付或完整游戏执行。原S:K→对象0x124、宠物/NPC名字—SPR、场景调色板与世界DAT保持OPEN；原上界132768的安全性仍未证。最高NEXT102有限全域材料缺口复核，优先具名内容/画面身份实源，不再无上游交付扩渲染/音效helper；Stage A7 PARTIAL+2 OPEN、B/wiki GATED、savedataR79 PAUSED_NON_BLOCKING、总体百分比null。
+
+
+### R102 全22域材料复核、记录重复与来源补充边界 — 2026-10-24（Asia/Shanghai）
+
+本轮以GitHub新核main `3782b518b1e457024d33f05df11eea4b9d979549` / tree `f086c47bb2c16f1e48f29deecc44747753c2feac` 启动，完整521分支（6页）、0开放PR/0 in_progress；同HEAD候选10/main11共21实际Actions completed/success，旧queued37642417333独立保留。八份启动文档完整UTF8与fresh exact Git blob相等，CURRENT旧前缀2527930B / SHA256 `fed8bfd4e1e5773fcf30993177dd0d9d3f631307419b13c9bcc598e80e6149a4`。按最高NEXT102执行有限全域材料整合，未依据旧SHA推断现状。
+
+交付 `docs/specs/STONEAGE-MATERIAL-PORTFOLIO-REVIEW-R102.md`、22域机器review、880份顶层recovered JSON逐文件bytes/SHA256/Git blob冻结清单、可重放记录审计与11项反例测试。原22域状态不改；旧文献/协议格式不会被“七字段记录”统计排除历史价值。128文件含完整记录，1339次出现→871研究ID、883不同正文、456次相同正文重复；这些都是资料整合数字，不是物种/人物数或复原进度。
+
+12个日服2003人物位置ID的双正文全部等于既有build_catalog来源补充转换，非历史矛盾；网页2003和第一幅插画2006不同捕获时点不合成同刻。CN2.0首批40对象完全等于有限104目录前40，叠JP124目录，268次文件记录只有228个版本限定网页位置，不称原TW1物种。26不同ID无collection（旧七必填字段并不要求collection），保留完整路径/Pointer待整理，不猜集合或自动导出。其它未解释的同ID不同正文会拒绝；无旧记录重写/删除。
+
+本轮没有新历史实源、原HTML/图片/商业程序或服务器执行。38项本地测试（新11＋档案/人物来源关联27）与完整CLI重放通过；远端候选/main检查须实际后验，不提前记录成功。Stage A7 PARTIAL+2 OPEN、B/wiki GATED、savedataR79 PAUSED_NON_BLOCKING，overall百分比null。
+
+最高NEXT `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-103`：早期辅助工具一个明确产品/版本的功能/改动实源，优先开发者说明或发布页；同期署名玩家稿为降级来源必须明确，先与既有STA2.52/SACH/SADE资料查重。一个来源包及一份分版比较止步；不运行旧工具、不决定新作采用。无新可归属来源则转具名官方宠物像素来源，不连续填计划。TW1原身份仅在同build服务器master、具名像素→原资源桥或场景实体payload到位时重开；不扩无上游交付的渲染/音效helper。

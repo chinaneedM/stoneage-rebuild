@@ -1,0 +1,27 @@
+name: Verify R102 frozen material portfolio and record projections
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-MATERIAL-*-R102.json'
+      - 'tools/stoneage_material_review_r102.py'
+      - 'tools/stoneage_jp2003_character_visual.py'
+      - 'tests/test_stoneage_material_review_r102.py'
+      - 'docs/specs/STONEAGE-MATERIAL-PORTFOLIO-REVIEW-R102.md'
+      - 'docs/CURRENT-STATE.md'
+      - 'docs/RESTORATION-ROADMAP-R2.md'
+      - '.github/workflows/verify-stoneage-material-review-r102.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  material-review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install Pillow==11.3.0
+      - run: python -m unittest tests.test_stoneage_material_review_r102 -v
+      - run: python -m tools.stoneage_material_review_r102
