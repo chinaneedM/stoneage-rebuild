@@ -1,0 +1,1088 @@
+{
+  "schema": "stoneage.cn2003_ladora_crimson.replay.r1",
+  "inputs": [
+    {
+      "id": "S1",
+      "url": "https://games.sina.com.cn/zhqu/sta/article/2003-06-09/11645.shtml",
+      "bytes": 59256,
+      "sha256": "684983365e929e42d7987e86f962ca2d7641e6185c98464cd4788023909fe3ae"
+    },
+    {
+      "id": "I1",
+      "url": "https://image2.sina.com.cn/gm/newgames/0303/images/tuxing0610_03.jpg",
+      "bytes": 22812,
+      "sha256": "15f3e751a5828d906815e2b3d514e0d9940e87c52cb2f605789dcd7b2183e9ef"
+    }
+  ],
+  "extraction": {
+    "geography_occurrences": [
+      {
+        "occurrence_id": "E1",
+        "name_as_written": "拉多拉的回廊",
+        "coordinate_frame": "WORLD_COORDINATES_AS_PRINTED",
+        "coordinate_literals": [
+          [
+            421,
+            577
+          ],
+          [
+            501,
+            647
+          ]
+        ],
+        "coordinate_roles": null,
+        "monster_levels_as_reported": [
+          25,
+          30
+        ],
+        "enemy_labels_as_written": [
+          "加美",
+          "加比"
+        ],
+        "native_map_id_or_capture_eligibility": null
+      },
+      {
+        "occurrence_id": "E2",
+        "name_as_written": "拉多拉洞窟",
+        "coordinate_frame": "拉多拉的回廊",
+        "coordinate_literals": [
+          [
+            228,
+            27
+          ],
+          [
+            240,
+            24
+          ],
+          [
+            254,
+            30
+          ],
+          [
+            275,
+            21
+          ]
+        ],
+        "coordinate_roles": null,
+        "monster_levels_as_reported": [
+          51,
+          59
+        ],
+        "enemy_labels_as_written": [
+          "加美",
+          "加比",
+          "加比奥",
+          "加斯"
+        ],
+        "native_map_id_or_capture_eligibility": null
+      },
+      {
+        "occurrence_id": "E3",
+        "name_as_written": "北吉鲁山岭",
+        "coordinate_frame": "WORLD_COORDINATES_AS_PRINTED",
+        "coordinate_literals": [
+          [
+            275,
+            149
+          ],
+          [
+            289,
+            174
+          ]
+        ],
+        "coordinate_roles": null,
+        "monster_levels_as_reported": [
+          51,
+          56
+        ],
+        "enemy_labels_as_written": [
+          "呼拔拔",
+          "鲁尼帖斯"
+        ],
+        "native_map_id_or_capture_eligibility": null
+      },
+      {
+        "occurrence_id": "E4",
+        "name_as_written": "巴那姆的洞窟",
+        "coordinate_frame": "WORLD_COORDINATES_AS_PRINTED",
+        "coordinate_literals": [
+          [
+            295,
+            259
+          ]
+        ],
+        "coordinate_roles": null,
+        "monster_levels_as_reported": [
+          55,
+          58
+        ],
+        "enemy_labels_as_written": [
+          "加克拉",
+          "石龟"
+        ],
+        "native_map_id_or_capture_eligibility": null
+      },
+      {
+        "occurrence_id": "E5",
+        "name_as_written": "深红的洞窟",
+        "coordinate_frame": "巴那姆的洞窟地下2楼",
+        "coordinate_literals": [
+          [
+            45,
+            41
+          ]
+        ],
+        "coordinate_roles": null,
+        "monster_levels_as_reported": [
+          57,
+          75
+        ],
+        "enemy_labels_as_written": [
+          "火的守护兽",
+          "拉奇鲁哥",
+          "多洛加",
+          "格鲁西"
+        ],
+        "native_map_id_or_capture_eligibility": null
+      },
+      {
+        "occurrence_id": "E6",
+        "name_as_written": "巴那姆的洞窟",
+        "coordinate_frame": "WORLD_COORDINATES_AS_PRINTED",
+        "coordinate_literals": [
+          [
+            388,
+            337
+          ]
+        ],
+        "coordinate_roles": null,
+        "monster_levels_as_reported": [
+          55,
+          58
+        ],
+        "enemy_labels_as_written": [
+          "加克拉",
+          "石龟"
+        ],
+        "native_map_id_or_capture_eligibility": null
+      },
+      {
+        "occurrence_id": "E7",
+        "name_as_written": "深红的洞窟",
+        "coordinate_frame": "巴那姆的洞窟地下2楼",
+        "coordinate_literals": [
+          [
+            26,
+            5
+          ]
+        ],
+        "coordinate_roles": null,
+        "monster_levels_as_reported": [
+          57,
+          75
+        ],
+        "enemy_labels_as_written": [
+          "火的守护兽",
+          "拉奇鲁哥",
+          "多洛加",
+          "格鲁西斯"
+        ],
+        "native_map_id_or_capture_eligibility": null
+      }
+    ],
+    "four_routes": [
+      {
+        "label": "路线一",
+        "directed_edges": [
+          {
+            "from_floor": "1",
+            "to_floor": "2",
+            "source_floor_local_coord": [
+              38,
+              87
+            ]
+          },
+          {
+            "from_floor": "2",
+            "to_floor": "3",
+            "source_floor_local_coord": [
+              11,
+              6
+            ]
+          },
+          {
+            "from_floor": "3",
+            "to_floor": "顶",
+            "source_floor_local_coord": [
+              44,
+              75
+            ]
+          }
+        ]
+      },
+      {
+        "label": "路线二",
+        "directed_edges": [
+          {
+            "from_floor": "1",
+            "to_floor": "2",
+            "source_floor_local_coord": [
+              38,
+              87
+            ]
+          },
+          {
+            "from_floor": "2",
+            "to_floor": "3",
+            "source_floor_local_coord": [
+              8,
+              43
+            ]
+          },
+          {
+            "from_floor": "3",
+            "to_floor": "顶",
+            "source_floor_local_coord": [
+              65,
+              5
+            ]
+          }
+        ]
+      },
+      {
+        "label": "路线三",
+        "directed_edges": [
+          {
+            "from_floor": "1",
+            "to_floor": "2",
+            "source_floor_local_coord": [
+              64,
+              87
+            ]
+          },
+          {
+            "from_floor": "2",
+            "to_floor": "3",
+            "source_floor_local_coord": [
+              15,
+              17
+            ]
+          },
+          {
+            "from_floor": "3",
+            "to_floor": "顶",
+            "source_floor_local_coord": [
+              66,
+              47
+            ]
+          }
+        ]
+      },
+      {
+        "label": "路线四",
+        "directed_edges": [
+          {
+            "from_floor": "1",
+            "to_floor": "2",
+            "source_floor_local_coord": [
+              64,
+              87
+            ]
+          },
+          {
+            "from_floor": "2",
+            "to_floor": "3",
+            "source_floor_local_coord": [
+              34,
+              59
+            ]
+          },
+          {
+            "from_floor": "3",
+            "to_floor": "顶",
+            "source_floor_local_coord": [
+              8,
+              31
+            ]
+          }
+        ]
+      }
+    ],
+    "route_entry_mapping": null,
+    "route_reversal_or_walkable_geometry_verified": false,
+    "quest_header_context_only": {
+      "recommended_level": 80,
+      "hard_map_gate": null,
+      "adult_ceremony_requirement_scope": "ASSOCIATED_QUEST_HEADER_ONLY",
+      "transport": [
+        "步行",
+        "骑宠"
+      ]
+    },
+    "village": {
+      "name": "达那村",
+      "coordinate_literals": [
+        [
+          499,
+          167
+        ],
+        [
+          511,
+          152
+        ]
+      ],
+      "coordinate_roles": null
+    },
+    "corridor_guard": {
+      "name_as_written": "拉特拉的守门人",
+      "corridor_local_coord": [
+        200,
+        38
+      ],
+      "same_native_name_as_ladora": null
+    },
+    "world_story": {
+      "island": "吉鲁岛",
+      "composition_as_told": [
+        "石头",
+        "火山"
+      ],
+      "eruption_consequence_as_told": "WHOLE_ISLAND_SINKS",
+      "non_eruption_duration_as_told": "百余年",
+      "goddess_name": "伊拉",
+      "explanation_as_told": "FIRE_GODDESS_PRAYER",
+      "calendar_or_simulation_verified": false
+    },
+    "phoenix_context": {
+      "label": "不死鸟",
+      "summit_count_as_reported": 4,
+      "moves_after_found_as_reported": true,
+      "guide_advice": [
+        "注销换星系",
+        "前往其它山顶"
+      ],
+      "display_form_as_written": "奇宝",
+      "standing_on": "草席",
+      "front_guard_label": "奇宝护卫",
+      "observed_runtime_template_or_original_native_pet_id": null
+    },
+    "diagram_relationship": {
+      "printed_common_summit_label": "c120309",
+      "text_says_four_distinct_summits": true,
+      "native_instance_resolution": null
+    },
+    "excluded_scope": [
+      "BOTH_COMPLETE_QUESTS",
+      "COMBAT_AND_FEATHER_REWARD_STATS",
+      "THIRSTY_DUOLUOJIA_WATER_JUG_REWARD_TABLE",
+      "OTHER_LINKED_IMAGES"
+    ],
+    "exact_game_build": null,
+    "original_server_runtime_verified": false,
+    "fingerprints": {
+      "intro": {
+        "characters": 903,
+        "sha256": "00bfb12bf8f0f0813835d67512f7bda25e134a3218367c3349fcdd0323dcc561"
+      },
+      "ecology": {
+        "characters": 426,
+        "sha256": "10e1dec68e24ac36306f2bc382bdd4fb6d946b946b51e0fbc89dcff806dd51a5"
+      }
+    }
+  },
+  "images": [
+    {
+      "id": "I1",
+      "url": "https://image2.sina.com.cn/gm/newgames/0303/images/tuxing0610_03.jpg",
+      "http_status": 200,
+      "no_redirect": true,
+      "bytes": 22812,
+      "sha256": "15f3e751a5828d906815e2b3d514e0d9940e87c52cb2f605789dcd7b2183e9ef",
+      "format": "JPEG",
+      "mode": "RGB",
+      "size": [
+        500,
+        236
+      ],
+      "frames": 1
+    }
+  ],
+  "visual_observations": [
+    {
+      "id": "I1",
+      "manual_visual_review": true,
+      "kind": "STATIC_FOUR_ROUTE_SCHEMATIC_NOT_GAME_SCREEN",
+      "printed_nodes": [
+        {
+          "label": "c120302",
+          "floor_as_printed": "拉多拉洞窟1楼"
+        },
+        {
+          "label": "c120303",
+          "floor_as_printed": "拉多拉洞窟2楼"
+        },
+        {
+          "label": "c120306",
+          "floor_as_printed": "拉多拉洞窟2楼"
+        },
+        {
+          "label": "c120305",
+          "floor_as_printed": "拉多拉洞窟3楼"
+        },
+        {
+          "label": "c120304",
+          "floor_as_printed": "拉多拉洞窟3楼"
+        },
+        {
+          "label": "c120308",
+          "floor_as_printed": "拉多拉洞窟3楼"
+        },
+        {
+          "label": "c120307",
+          "floor_as_printed": "拉多拉洞窟3楼"
+        },
+        {
+          "label": "c120309",
+          "floor_as_printed": "拉多拉山顶"
+        }
+      ],
+      "arrows_as_drawn": [
+        [
+          "c120302",
+          "c120303"
+        ],
+        [
+          "c120302",
+          "c120306"
+        ],
+        [
+          "c120303",
+          "c120305"
+        ],
+        [
+          "c120303",
+          "c120304"
+        ],
+        [
+          "c120306",
+          "c120308"
+        ],
+        [
+          "c120306",
+          "c120307"
+        ],
+        [
+          "c120305",
+          "c120309"
+        ],
+        [
+          "c120304",
+          "c120309"
+        ],
+        [
+          "c120308",
+          "c120309"
+        ],
+        [
+          "c120307",
+          "c120309"
+        ]
+      ],
+      "route_labels_as_printed": [
+        "路线一",
+        "路线二",
+        "路线三",
+        "路线四"
+      ],
+      "one_summit_label_proves_one_native_summit_instance": false,
+      "printed_codes_are_verified_native_map_ids": false,
+      "arrow_geometry_or_walkable_tiles_verified": false,
+      "original_client_build_or_historical_pixels_authenticated": false
+    }
+  ],
+  "comparison": {
+    "parents": [
+      {
+        "schema": "stoneage.cn2003_qiang_en.source.r1",
+        "path": "research/recovered/STONEAGE-CN2003-QIANG-EN-FAMILY-SOURCE-R1.json"
+      },
+      {
+        "schema": "stoneage.cn20_pet_commission_habitats.source.r1",
+        "path": "research/recovered/STONEAGE-CN20-PET-COMMISSION-HABITATS-SOURCE-R1.json"
+      }
+    ],
+    "qiang_en_floor_or_adult_ceremony_rules_backfilled": false,
+    "pet_commission_target_means_capturable_ecology": false,
+    "different_spelling_or_same_map_label_proves_native_alias": false,
+    "modern_adoption_decided": false
+  },
+  "catalog_records": [
+    {
+      "record_id": "CN2003-R86-E1",
+      "entity_type": "DOCUMENTARY_ECOLOGY_OCCURRENCE",
+      "collection": "maps",
+      "version_profile": "CN_SINA2003_LADORA_CRIMSON_GEOGRAPHY_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "PORTAL_GUIDE_OR_SCHEMATIC_NOT_SERVER_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "occurrence_id": "E1",
+        "name_as_written": "拉多拉的回廊",
+        "coordinate_frame": "WORLD_COORDINATES_AS_PRINTED",
+        "coordinate_literals": [
+          [
+            421,
+            577
+          ],
+          [
+            501,
+            647
+          ]
+        ],
+        "coordinate_roles": null,
+        "monster_levels_as_reported": [
+          25,
+          30
+        ],
+        "enemy_labels_as_written": [
+          "加美",
+          "加比"
+        ],
+        "native_map_id_or_capture_eligibility": null
+      }
+    },
+    {
+      "record_id": "CN2003-R86-E2",
+      "entity_type": "DOCUMENTARY_ECOLOGY_OCCURRENCE",
+      "collection": "maps",
+      "version_profile": "CN_SINA2003_LADORA_CRIMSON_GEOGRAPHY_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "PORTAL_GUIDE_OR_SCHEMATIC_NOT_SERVER_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "occurrence_id": "E2",
+        "name_as_written": "拉多拉洞窟",
+        "coordinate_frame": "拉多拉的回廊",
+        "coordinate_literals": [
+          [
+            228,
+            27
+          ],
+          [
+            240,
+            24
+          ],
+          [
+            254,
+            30
+          ],
+          [
+            275,
+            21
+          ]
+        ],
+        "coordinate_roles": null,
+        "monster_levels_as_reported": [
+          51,
+          59
+        ],
+        "enemy_labels_as_written": [
+          "加美",
+          "加比",
+          "加比奥",
+          "加斯"
+        ],
+        "native_map_id_or_capture_eligibility": null
+      }
+    },
+    {
+      "record_id": "CN2003-R86-E3",
+      "entity_type": "DOCUMENTARY_ECOLOGY_OCCURRENCE",
+      "collection": "maps",
+      "version_profile": "CN_SINA2003_LADORA_CRIMSON_GEOGRAPHY_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "PORTAL_GUIDE_OR_SCHEMATIC_NOT_SERVER_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "occurrence_id": "E3",
+        "name_as_written": "北吉鲁山岭",
+        "coordinate_frame": "WORLD_COORDINATES_AS_PRINTED",
+        "coordinate_literals": [
+          [
+            275,
+            149
+          ],
+          [
+            289,
+            174
+          ]
+        ],
+        "coordinate_roles": null,
+        "monster_levels_as_reported": [
+          51,
+          56
+        ],
+        "enemy_labels_as_written": [
+          "呼拔拔",
+          "鲁尼帖斯"
+        ],
+        "native_map_id_or_capture_eligibility": null
+      }
+    },
+    {
+      "record_id": "CN2003-R86-E4",
+      "entity_type": "DOCUMENTARY_ECOLOGY_OCCURRENCE",
+      "collection": "maps",
+      "version_profile": "CN_SINA2003_LADORA_CRIMSON_GEOGRAPHY_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "PORTAL_GUIDE_OR_SCHEMATIC_NOT_SERVER_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "occurrence_id": "E4",
+        "name_as_written": "巴那姆的洞窟",
+        "coordinate_frame": "WORLD_COORDINATES_AS_PRINTED",
+        "coordinate_literals": [
+          [
+            295,
+            259
+          ]
+        ],
+        "coordinate_roles": null,
+        "monster_levels_as_reported": [
+          55,
+          58
+        ],
+        "enemy_labels_as_written": [
+          "加克拉",
+          "石龟"
+        ],
+        "native_map_id_or_capture_eligibility": null
+      }
+    },
+    {
+      "record_id": "CN2003-R86-E5",
+      "entity_type": "DOCUMENTARY_ECOLOGY_OCCURRENCE",
+      "collection": "maps",
+      "version_profile": "CN_SINA2003_LADORA_CRIMSON_GEOGRAPHY_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "PORTAL_GUIDE_OR_SCHEMATIC_NOT_SERVER_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "occurrence_id": "E5",
+        "name_as_written": "深红的洞窟",
+        "coordinate_frame": "巴那姆的洞窟地下2楼",
+        "coordinate_literals": [
+          [
+            45,
+            41
+          ]
+        ],
+        "coordinate_roles": null,
+        "monster_levels_as_reported": [
+          57,
+          75
+        ],
+        "enemy_labels_as_written": [
+          "火的守护兽",
+          "拉奇鲁哥",
+          "多洛加",
+          "格鲁西"
+        ],
+        "native_map_id_or_capture_eligibility": null
+      }
+    },
+    {
+      "record_id": "CN2003-R86-E6",
+      "entity_type": "DOCUMENTARY_ECOLOGY_OCCURRENCE",
+      "collection": "maps",
+      "version_profile": "CN_SINA2003_LADORA_CRIMSON_GEOGRAPHY_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "PORTAL_GUIDE_OR_SCHEMATIC_NOT_SERVER_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "occurrence_id": "E6",
+        "name_as_written": "巴那姆的洞窟",
+        "coordinate_frame": "WORLD_COORDINATES_AS_PRINTED",
+        "coordinate_literals": [
+          [
+            388,
+            337
+          ]
+        ],
+        "coordinate_roles": null,
+        "monster_levels_as_reported": [
+          55,
+          58
+        ],
+        "enemy_labels_as_written": [
+          "加克拉",
+          "石龟"
+        ],
+        "native_map_id_or_capture_eligibility": null
+      }
+    },
+    {
+      "record_id": "CN2003-R86-E7",
+      "entity_type": "DOCUMENTARY_ECOLOGY_OCCURRENCE",
+      "collection": "maps",
+      "version_profile": "CN_SINA2003_LADORA_CRIMSON_GEOGRAPHY_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "PORTAL_GUIDE_OR_SCHEMATIC_NOT_SERVER_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "occurrence_id": "E7",
+        "name_as_written": "深红的洞窟",
+        "coordinate_frame": "巴那姆的洞窟地下2楼",
+        "coordinate_literals": [
+          [
+            26,
+            5
+          ]
+        ],
+        "coordinate_roles": null,
+        "monster_levels_as_reported": [
+          57,
+          75
+        ],
+        "enemy_labels_as_written": [
+          "火的守护兽",
+          "拉奇鲁哥",
+          "多洛加",
+          "格鲁西斯"
+        ],
+        "native_map_id_or_capture_eligibility": null
+      }
+    },
+    {
+      "record_id": "CN2003-R86-routes",
+      "entity_type": "DOCUMENTARY_DIRECTED_ROUTE_GROUP",
+      "collection": "maps",
+      "version_profile": "CN_SINA2003_LADORA_CRIMSON_GEOGRAPHY_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "PORTAL_GUIDE_OR_SCHEMATIC_NOT_SERVER_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "routes": [
+          {
+            "label": "路线一",
+            "directed_edges": [
+              {
+                "from_floor": "1",
+                "to_floor": "2",
+                "source_floor_local_coord": [
+                  38,
+                  87
+                ]
+              },
+              {
+                "from_floor": "2",
+                "to_floor": "3",
+                "source_floor_local_coord": [
+                  11,
+                  6
+                ]
+              },
+              {
+                "from_floor": "3",
+                "to_floor": "顶",
+                "source_floor_local_coord": [
+                  44,
+                  75
+                ]
+              }
+            ]
+          },
+          {
+            "label": "路线二",
+            "directed_edges": [
+              {
+                "from_floor": "1",
+                "to_floor": "2",
+                "source_floor_local_coord": [
+                  38,
+                  87
+                ]
+              },
+              {
+                "from_floor": "2",
+                "to_floor": "3",
+                "source_floor_local_coord": [
+                  8,
+                  43
+                ]
+              },
+              {
+                "from_floor": "3",
+                "to_floor": "顶",
+                "source_floor_local_coord": [
+                  65,
+                  5
+                ]
+              }
+            ]
+          },
+          {
+            "label": "路线三",
+            "directed_edges": [
+              {
+                "from_floor": "1",
+                "to_floor": "2",
+                "source_floor_local_coord": [
+                  64,
+                  87
+                ]
+              },
+              {
+                "from_floor": "2",
+                "to_floor": "3",
+                "source_floor_local_coord": [
+                  15,
+                  17
+                ]
+              },
+              {
+                "from_floor": "3",
+                "to_floor": "顶",
+                "source_floor_local_coord": [
+                  66,
+                  47
+                ]
+              }
+            ]
+          },
+          {
+            "label": "路线四",
+            "directed_edges": [
+              {
+                "from_floor": "1",
+                "to_floor": "2",
+                "source_floor_local_coord": [
+                  64,
+                  87
+                ]
+              },
+              {
+                "from_floor": "2",
+                "to_floor": "3",
+                "source_floor_local_coord": [
+                  34,
+                  59
+                ]
+              },
+              {
+                "from_floor": "3",
+                "to_floor": "顶",
+                "source_floor_local_coord": [
+                  8,
+                  31
+                ]
+              }
+            ]
+          }
+        ],
+        "entry_mapping": null
+      }
+    },
+    {
+      "record_id": "CN2003-R86-myth",
+      "entity_type": "DOCUMENTARY_WORLD_STORY_AND_PHOENIX_CONTEXT",
+      "collection": "tutorials",
+      "version_profile": "CN_SINA2003_LADORA_CRIMSON_GEOGRAPHY_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "PORTAL_GUIDE_OR_SCHEMATIC_NOT_SERVER_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "story": {
+          "island": "吉鲁岛",
+          "composition_as_told": [
+            "石头",
+            "火山"
+          ],
+          "eruption_consequence_as_told": "WHOLE_ISLAND_SINKS",
+          "non_eruption_duration_as_told": "百余年",
+          "goddess_name": "伊拉",
+          "explanation_as_told": "FIRE_GODDESS_PRAYER",
+          "calendar_or_simulation_verified": false
+        },
+        "phoenix": {
+          "label": "不死鸟",
+          "summit_count_as_reported": 4,
+          "moves_after_found_as_reported": true,
+          "guide_advice": [
+            "注销换星系",
+            "前往其它山顶"
+          ],
+          "display_form_as_written": "奇宝",
+          "standing_on": "草席",
+          "front_guard_label": "奇宝护卫",
+          "observed_runtime_template_or_original_native_pet_id": null
+        }
+      }
+    },
+    {
+      "record_id": "CN2003-R86-diagram",
+      "entity_type": "DOCUMENTARY_MAP_SCHEMATIC",
+      "collection": "screens",
+      "version_profile": "CN_SINA2003_LADORA_CRIMSON_GEOGRAPHY_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1",
+        "I1"
+      ],
+      "verification_status": "PORTAL_GUIDE_OR_SCHEMATIC_NOT_SERVER_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "image": {
+          "id": "I1",
+          "url": "https://image2.sina.com.cn/gm/newgames/0303/images/tuxing0610_03.jpg",
+          "http_status": 200,
+          "no_redirect": true,
+          "bytes": 22812,
+          "sha256": "15f3e751a5828d906815e2b3d514e0d9940e87c52cb2f605789dcd7b2183e9ef",
+          "format": "JPEG",
+          "mode": "RGB",
+          "size": [
+            500,
+            236
+          ],
+          "frames": 1
+        },
+        "observation": {
+          "id": "I1",
+          "manual_visual_review": true,
+          "kind": "STATIC_FOUR_ROUTE_SCHEMATIC_NOT_GAME_SCREEN",
+          "printed_nodes": [
+            {
+              "label": "c120302",
+              "floor_as_printed": "拉多拉洞窟1楼"
+            },
+            {
+              "label": "c120303",
+              "floor_as_printed": "拉多拉洞窟2楼"
+            },
+            {
+              "label": "c120306",
+              "floor_as_printed": "拉多拉洞窟2楼"
+            },
+            {
+              "label": "c120305",
+              "floor_as_printed": "拉多拉洞窟3楼"
+            },
+            {
+              "label": "c120304",
+              "floor_as_printed": "拉多拉洞窟3楼"
+            },
+            {
+              "label": "c120308",
+              "floor_as_printed": "拉多拉洞窟3楼"
+            },
+            {
+              "label": "c120307",
+              "floor_as_printed": "拉多拉洞窟3楼"
+            },
+            {
+              "label": "c120309",
+              "floor_as_printed": "拉多拉山顶"
+            }
+          ],
+          "arrows_as_drawn": [
+            [
+              "c120302",
+              "c120303"
+            ],
+            [
+              "c120302",
+              "c120306"
+            ],
+            [
+              "c120303",
+              "c120305"
+            ],
+            [
+              "c120303",
+              "c120304"
+            ],
+            [
+              "c120306",
+              "c120308"
+            ],
+            [
+              "c120306",
+              "c120307"
+            ],
+            [
+              "c120305",
+              "c120309"
+            ],
+            [
+              "c120304",
+              "c120309"
+            ],
+            [
+              "c120308",
+              "c120309"
+            ],
+            [
+              "c120307",
+              "c120309"
+            ]
+          ],
+          "route_labels_as_printed": [
+            "路线一",
+            "路线二",
+            "路线三",
+            "路线四"
+          ],
+          "one_summit_label_proves_one_native_summit_instance": false,
+          "printed_codes_are_verified_native_map_ids": false,
+          "arrow_geometry_or_walkable_tiles_verified": false,
+          "original_client_build_or_historical_pixels_authenticated": false
+        }
+      }
+    }
+  ],
+  "audit": {
+    "semantic_mutations_without_all_fingerprints": 41,
+    "hidden_and_outside_article_counterexamples": 2,
+    "outside_script_positive": true
+  },
+  "original_html_or_assets_in_output": false,
+  "original_server_runtime_verified": false
+}

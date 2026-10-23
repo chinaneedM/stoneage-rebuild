@@ -8217,3 +8217,16 @@ FACT：本轮从新读远端 main `a16fde079936e9fd893f68e8b2941162b7b33030`、t
 10条目录记录满足7必填字段／19合法集合；game_ids空、仅研究元数据非发行授权。三个父规格和共享解析器钉原始bytes／SHA256／Git blob。41项真实HTML语义改写（排除所有指纹）＋2项隐藏／正文外反例＋外围脚本正例；独立regex/entity生态读取一致。初始本地26项关联测试成功，源回放成功。原始HTML和图像留临时目录，Git仅派生JSON。完整两支任务、送水7/7奖励表、其他配图、本服运行、版本号和原始地图／宠物ID均未恢复。
 
 NEXT：内容候选10项成功后以fresh main expected-SHA非强制快进，再核main11项；永久保存原样CI JSON和完整run/job/artifact/ZIP/raw/blob保管链，加入强制缺失／等长损坏／身份替换拒绝测试，再验收保管链候选与main。阶段A仍7PARTIAL＋2OPEN，阶段B/wiki GATED；savedata R79 PAUSED_NON_BLOCKING。之后 OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-87 优先具名宠物／人物原始内容或具体原始UI交互证据，避免连续扩洞窟路线；若找到同版本实际audio调用实参才重开音效依赖。
+
+
+### R86 内容双分支实际验收与永久保管链 — 2026-10-23
+
+内容提交 `3c0b80a38ad7cdfc2604496681020b4a7ad126f0`，tree `e4be822c5f6e2e594103d896ca7511deb2b73f72`；候选10／main11共21个实际Actions全部completed/success，专用job初始7tests成功。
+
+candidate: run39934221560／job120349672167／artifact12492434392，ZIP4125 bytes `sha256:369e57a355b72c5795201f05ec71b9b53d3448259546739879e4c041894ea998`；原样JSON28147 bytes SHA256 `4c84646a0e36b39fe938ccf08cb07a036d3296cc658176e3a06b9da6467f2fa9`，Git blob `55cf00fe36db65e10a79079a4c92c59e38340c75`。
+
+main: run39934550590／job120350775724／artifact12492594617，ZIP4125 bytes `sha256:46eea10ea08ed5f94b55df2cb8b2a3b7415ee2a07435863536fede12b767b414`；原样JSON28147 bytes SHA256 `4c84646a0e36b39fe938ccf08cb07a036d3296cc658176e3a06b9da6467f2fa9`，Git blob `55cf00fe36db65e10a79079a4c92c59e38340c75`。
+
+两个ZIP均实际下载核对GitHub digest与长度，成员仅replay.json；CI原样JSON与初始本地回放逐字节相同，输入当前原页／JPEG bytes和SHA256一致。永久保存CI-CANDIDATE、CI-MAIN、CUSTODY三个派生JSON（原始HTML/JPEG不入Git）；收据固定全部21run清单摘要、两个真实run/job/artifact、ZIP长度/digest、raw字节SHA256与Git blob、7份永久证据pin。CLI强制校验；第8项测试拒绝缺失／等长破坏／run和job替换／重复清单／ZIP身份变化／原生ID或运行覆盖抬高。保管链候选及主线仍须按实际Actions再验收。
+
+NEXT最高 OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-87：优先具名宠物／人物内容或原始UI交互证据；版本／本服运行／可捕性仍OPEN，阶段B/wiki GATED，savedata R79保持非阻塞暂停。
