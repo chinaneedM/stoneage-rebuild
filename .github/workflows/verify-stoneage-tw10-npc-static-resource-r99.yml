@@ -5,6 +5,8 @@ on:
       - 'tools/stoneage_tw10_npc_static_resource_r99.py'
       - 'tests/test_stoneage_tw10_npc_static_resource_r99.py'
       - 'research/recovered/STONEAGE-TW10-NPC-STATIC-RESOURCE-JOIN-R99.json'
+      - 'research/recovered/STONEAGE-TW10-NPC-STATIC-RESOURCE-JOIN-ACCEPTANCE-R99.json'
+      - 'tests/test_stoneage_tw10_npc_static_resource_r99_custody.py'
       - '.github/workflows/verify-stoneage-tw10-npc-static-resource-r99.yml'
   pull_request:
     paths:
@@ -23,6 +25,7 @@ jobs:
         with:
           python-version: '3.12'
       - run: python -m unittest tests.test_stoneage_tw10_npc_static_resource_r99 -v
+      - run: python -m unittest tests.test_stoneage_tw10_npc_static_resource_r99_custody -v
       - run: python -m tools.stoneage_tw10_npc_static_resource_r99 --print-rows --write /tmp/r99-join-report.json
       - run: sha256sum /tmp/r99-join-report.json
       - uses: actions/upload-artifact@v4

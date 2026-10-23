@@ -1,0 +1,175 @@
+{
+  "schema": "stoneage.tw10_original_static_resource_join_r99_acceptance.v1",
+  "task": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-99",
+  "initial_main": {
+    "sha": "1ab3968decb3ee9abde1898d4e63a18ff176ad2e",
+    "tree": "baf513c1fc8879128824a10cecddedc0569ffe41"
+  },
+  "commits": {
+    "initial_tool": {
+      "sha": "389669f3bf2ba7bdcc1254bf0378106d846e8a34",
+      "tree": "9de008db94f23ca4ec2bb6a2db0099e7ef9c13aa"
+    },
+    "derived_archive": {
+      "sha": "5643b3f7d0a8e7797ce8ea0642a0dab5d8ccb4ef",
+      "tree": "86f28d771b8b9feff109ce149ecfd43783535dc0"
+    },
+    "docs_main": {
+      "sha": "a4628bec7b2aac33feb33980a9ef7660494bea24",
+      "tree": "383a2f5bb5304ddff4c18c30772b8ae37d8ed499"
+    }
+  },
+  "derived_source": {
+    "path": "research/recovered/STONEAGE-TW10-NPC-STATIC-RESOURCE-JOIN-R99.json",
+    "git_blob": "21d49800a1191f87a006aaa5af4a6f7975f91bf7",
+    "raw_sha256": "9b73469fef2ebe27a4369ecc76e8cb57d0ef853ffb4f87d2228609c7a8b52ee1",
+    "original_copyrighted_image_bytes_committed": false,
+    "original_game_client_binary_committed": false,
+    "original_server_NPC_table_claimed": false
+  },
+  "source_runs": [
+    {
+      "stage": "first_full_source",
+      "run": 39970753998,
+      "job": 120472469976,
+      "methods": 13,
+      "artifact_id": 12508399205,
+      "artifact_zip_bytes": 7625,
+      "artifact_zip_sha256": "ec2d1211dbec79465077393b885eb64b1d34d85b1a0a5a9194f3dc56f3461a4e",
+      "success": true
+    },
+    {
+      "stage": "archived_source_replay",
+      "run": 39971115264,
+      "job": 120473726586,
+      "methods": 14,
+      "artifact_id": 12509006934,
+      "artifact_zip_bytes": 7625,
+      "artifact_zip_sha256": "3d4880a4dbf5995687458e7e5bd41594413d611487f46700872a4f7d84632689",
+      "success": true
+    },
+    {
+      "stage": "candidate_docs",
+      "run": 39972087601,
+      "job": 120477120997,
+      "methods": 15,
+      "artifact_id": 12509711942,
+      "artifact_zip_bytes": 7625,
+      "artifact_zip_sha256": "94ffc1f0c4e508502ecf05b8d966cdd020f3f8eefecd63f68e1024a3f45f3a5c",
+      "success": true
+    },
+    {
+      "stage": "main_docs",
+      "run": 39972245520,
+      "job": 120477669326,
+      "methods": 15,
+      "artifact_id": 12509283397,
+      "artifact_zip_bytes": 7625,
+      "artifact_zip_sha256": "79cd3b3e214e3e4715580aed6ae70bc451effc6637957d82e70bde5e8e9bf760",
+      "success": true
+    }
+  ],
+  "candidate_all_runs": [
+    39972087522,
+    39972087601,
+    39972087612,
+    39972087613,
+    39972087619,
+    39972087643,
+    39972087684,
+    39972087699,
+    39972087705,
+    39972087722
+  ],
+  "main_all_runs": [
+    39972245449,
+    39972245481,
+    39972245487,
+    39972245499,
+    39972245520,
+    39972245552,
+    39972245554,
+    39972245598,
+    39972245633,
+    39972245700,
+    39972245714
+  ],
+  "main_publication": {
+    "compare_ahead": 3,
+    "compare_behind": 0,
+    "changed_files": 9,
+    "deletions": 0,
+    "nonforce_expected_sha_fast_forward": true,
+    "candidate_ci_all_success": true,
+    "main_ci_all_success": true,
+    "raw_source_sha256_candidate_equals_main": true
+  },
+  "preserved_historical_prefixes": [
+    {
+      "path": "docs/CURRENT-STATE.md",
+      "old_blob": "23c15a3a1fc43a5186c5469232c232a9a520db53",
+      "new_blob": "62095ba5e79a3fca731909439b3b0c5ce22d6fe0",
+      "prefix_exact": true
+    },
+    {
+      "path": "docs/HISTORICAL-TIMELINE.md",
+      "old_blob": "a6697359dcc673ccd1bc627b0cc7a75e8502417e",
+      "new_blob": "19ad7a73d9439f03173dc0d8070e51ecd3629aee",
+      "prefix_exact": true
+    },
+    {
+      "path": "docs/SOURCE-REGISTRY.md",
+      "old_blob": "7d37602af4b4187dfff3cbcf95db385706e4b6e9",
+      "new_blob": "7e4de96233ff25419408fe6b6469355e82cfe467",
+      "prefix_exact": true
+    },
+    {
+      "path": "docs/RESTORATION-ROADMAP-R2.md",
+      "old_blob": "277f01ae7da8316532faeba54d6d7edb8b32db20",
+      "new_blob": "355688f5a69a5c629121d96fe299754f1ec973ee",
+      "prefix_exact": true
+    }
+  ],
+  "verified_physical_findings": {
+    "source_original_disc_metadata": true,
+    "rows": 101,
+    "one_to_one_resource_join": true,
+    "distinct_rd_block_hashes": 101,
+    "first_run": {
+      "bitmap": [
+        5846,
+        5919
+      ],
+      "map_resource": [
+        16000,
+        16073
+      ],
+      "rows": 74
+    },
+    "second_run": {
+      "bitmap": [
+        5920,
+        5946
+      ],
+      "map_resource": [
+        16200,
+        16226
+      ],
+      "rows": 27
+    },
+    "original_spr_frame_records_examined": 242085,
+    "zero_direct_spr_references": true
+  },
+  "boundaries": {
+    "original_NPC_identity_proven": false,
+    "world_floor_map_number_proven": false,
+    "original_server_NPC_spawn_verified": false,
+    "original_game_render_execution_verified": false,
+    "native_image_pixels_archived": false,
+    "original_art_reuse_approved": false,
+    "stage_a_closed": false,
+    "stage_b_started": false,
+    "overall_restoration_percent": null,
+    "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-100"
+  }
+}
