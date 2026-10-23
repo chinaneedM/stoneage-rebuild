@@ -17828,3 +17828,16 @@ S2：4Gamer 2004-05-20 19:45《ほのぼのMMORPG「ストーンエイジ」正�
 本轮四条有界可查询关系（S1三个具名数字Avatar／S2一实体赠品），一条同名跨产品关系，两份媒体、一张原文图库链接与全部未知字段。研究规格 `docs/specs/STONEAGE-JP2004-PET-AVATAR-MERCH-SOURCE-R94.md`；机器原文派生 `research/recovered/STONEAGE-JP2004-PET-AVATAR-MERCH-SOURCE-R94.json`、封闭源SHA Git blob、10项负面边界单测和专用CI。内容候选commit `9a3c8eb1b777b18419c08f1e55423ea110c8ba88` / tree `59ef05d99dd6bf51ebcc382df085456ce6a352d5`，候选分支 `agent/jp2004-pet-avatar-and-upopo-package-r94-20261023`；此条写作时后续CI与main验收不能预记success，须按实际运行记录另增不可变收据。原图、HTML、包装文件、原SPR、版权商品素材及所有客户端不入Git。
 
 停于两篇2004报道和一直接关联媒体拼图；未见全7具名名单、2004当时原图字节、同build资源ID和源客户端验证，不能把另外四只或日服2008“ゴルシス”强合原版。下轮最高 `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-95`：转换到**较早有名地图/NPC原画或同构建原宠物SPR绑定**的实体证据，不连续扩2004商店营销及派生周边。Stage A仍7 PARTIAL + 2 OPEN、Stage B/wiki GATED、savedata R79 PAUSED_NON_BLOCKING，整体恢复百分比null；完整旧连续性前缀保留。
+
+
+### R95 日本2003复活计划的交易窗口／地图与角色版本差分来源 —— 2026-10-23
+
+按远端fresh main `de78e7d1fe934555cc180c90e1c53ec3d401a8bd` / tree `bc2b725ff17e474d1f12d9388d58c013e1698d8c`、协议与现行CURRENT的真实原生Git blob，重读README、历史、来源簿、设计、路线和22域组合索引，主线最近R94提交、Actions验收均实际成功，0开放PR，旧“已做R95”不能从聊天推定。本轮最高 `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-95`，寻找较早日本地图／交互版本差分，先查重：R63已完整保留2003-12-12开发图集前两原图及ZIP保管；另有2003 Hangame运营原文“12类×4色”等游戏特色，不重取/重算；新缺口选择同期媒体明确“新增交易窗口”及β后地图/新人物的不同实现语态，非扩R94周边。
+
+S1 4Gamer会场/采访 https://www.4gamer.net/news/history/2003.07/20030726001803detail.html （显示2003-07-26 00:18）记日服JSS1999为旧运营背景，BOTHTEC说明准备以更新版复活，地图/人物增加与少许UI改良为未来方向，β当时预定11月。作者“韩国最新版＋α”和玩家也骑宠的联想是记者个人推测／希望，不是公司承诺、韩服代码来源、JSS1999实机纪录。S2 https://www.4gamer.net/news/history/2003.11/20031125203537detail.html （2003-11-25 20:35）将β计划从11月改为12月，但仍无具体日期。S3 https://www.4gamer.net/news/history/2003.12/20031212000000detail.html （2003-12-12 显示00:00）转述BOTHTEC/NHN宣布12月12日提前开放安装客户端的下载入口、12月16日拟启动公开β；报道具名“トレードウインドウ”**交易窗口新增**及其他小UI改动，另将地图扩充、新玩家人物安排为**β后大更新计划**。网页00:00是页面标签而非实际精准公告时刻，日期/运营执行未获服务器日志认证。
+
+产物：`docs/specs/STONEAGE-JP2003-REVIVAL-TRADE-MAP-SOURCE-R95.md`、`research/recovered/STONEAGE-JP2003-REVIVAL-TRADE-MAP-SOURCE-R95.json`，7条带时间阶段与陈述性质的机器合同、永久Git源blob锚、10项含反例测试及独立workflow。候选分支 `agent/jp2003-revival-trade-ui-and-map-gates-r95-20261023`，源提交 `d51c8f1c10ae109f705027063bc7545dfc5ec709` / tree `c15c56a8af27b33d4356b92ef31d8f3ba6a56602`，专用Actions `39958828076` 当前实际completed/success。此条写作时后续完整连续性候选与主线Actions仍须另行真验，不能借首个任务通过宣称主线集成成功。
+
+没有原版交易窗口截图、按钮/两个玩家确认、服务器交易事务/回滚、2003原始客户端安装包SHA或确切build。报道“加窗”不意味着JSS1999没有任何交易协议；R63已取的两张开发图均不显示打开交易窗，但不能反证其存在，R95没有复制R63图片或假装验证40张；地图/新人物β后计划不补实施、名称/ID、原画或同构建SPR。没有取得新原HTML/JPEG或二进制字节；只保存作者的研究派生与来源 URL。阶段A 7 PARTIAL＋2 OPEN，阶段B/wiki GATED，R79 PAUSED_NON_BLOCKING，整体百分比null。
+
+本包终止于三篇2003媒体 + 既有R63有界对照，不扩交易helper或泛化地图。下一最高 `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-96`：回22域，优先早期明确具名地图/NPC实体、源图或同一构建宠物原SPR身份，避免连续只搜运营公告和复活期窗口说明。重开R95需同期交易窗原图/录像、安装包真实SHA、UI事件/封包ACK或同build地图角色配置之一。全部旧连续性前缀必须保留。

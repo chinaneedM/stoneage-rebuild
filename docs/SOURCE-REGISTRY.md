@@ -8420,3 +8420,13 @@ main: run39943895787 / job120381709724 / artifact12496718117；ZIP3458 bytes `sh
 - Reported Japanese formal service target 2004-06-03; boxed product described on 2004-05-20 with 2 game-client CD-ROMs, 2 30-day tickets, manuals and one “ウポポ” plush strap. Not retroactively Japanese JSS1999 launch or same-build pet master.
 - Relation: ITmedia 3月的ウポポ数字宠物Avatar与4Gamer 5月实体挂件有可核查的**同名跨媒介归属**，却没有视觉资产字节相同、同PET主表ID、物种跨版本稳定或版权复用授权。
 - Materialization: `docs/specs/STONEAGE-JP2004-PET-AVATAR-MERCH-SOURCE-R94.md`, `research/recovered/STONEAGE-JP2004-PET-AVATAR-MERCH-SOURCE-R94.json` （原生Git派生blob `766ef71c55fd9bc0d7a68e255032ed790163805d`）, verifier/negative tests and dedicated Actions. HTML/商品插画/模型未入Git。
+
+
+### SRC-JP2003-4GAMER-REVIVAL-TRADE-WINDOW-CHRONOLOGY-R95
+
+- S1: 4Gamer《［OGF＃06］ボーステックが「Stone Age」を復活》, published label 2003-07-26 00:18, https://www.4gamer.net/news/history/2003.07/20030726001803detail.html ; contemporaneous press interview describes planned upgraded map/character/UI; Korean-version and player-mount ideas in author's speculative voice, not confirmed.
+- S2: 4Gamer《MMORPG「ストーンエイジ」のβテストは12月に！》, label 2003-11-25 20:35, https://www.4gamer.net/news/history/2003.11/20031125203537detail.html ; November target superseded by December without a fixed date at that point, not evidence of successful launch.
+- S3: 4Gamer《「ストーンエイジ」のオープンβテストが12月16日より開始》, label 2003-12-12 00:00, https://www.4gamer.net/news/history/2003.12/20031212000000detail.html ; reports planned December12 prior download, December16 open beta, additional trade window and unspecified minor UI updates; map expansion/new player characters belong to reported post-beta plan. Source label 00:00 is not execution timestamp.
+- Cross-reference R63 `docs/specs/STONEAGE-JP2003-BATTLE-FIELD-VISUAL-SOURCE-R1.md`, immutable original Git blob `63b274f5bc8e1508eb1e8f9dfe2a1e27544ea093`. Existing first two 2003 development-labeled battle/field screenshots cannot verify trading UI; image bytes/ZIP already held via original R63 custody and not reprocessed this round.
+- R95 materialization: `docs/specs/STONEAGE-JP2003-REVIVAL-TRADE-MAP-SOURCE-R95.md`; `research/recovered/STONEAGE-JP2003-REVIVAL-TRADE-MAP-SOURCE-R95.json` immutable source-derived Git blob `c491542dbeb7523169615482bfbfefff728ea9f5`, 7 claims, 3 release timing records, full bounded unknowns; verifier and 10 counterexample tests.
+- Evidence status: press-era descriptions FACT_OF_REPORT only, not source-backed original 1999 game mechanics, not live 2003 same-build transaction, original HTML byte capture or deployed map/character master. These materials and actual original game code remain separate. No original copyrighted binary/HTML/screenshot stored in Git.
