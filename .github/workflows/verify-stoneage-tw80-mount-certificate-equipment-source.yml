@@ -1,0 +1,45 @@
+name: Verify TW80 mount certificates and typed pet equipment
+on:
+  push:
+    paths:
+      - 'tools/stoneage_tw80_mount_certificate_equipment_source.py'
+      - 'tools/stoneage_jp2005_treasure_source.py'
+      - 'tests/test_stoneage_tw80_mount_certificate_equipment_source.py'
+      - 'research/recovered/STONEAGE-TW80-MOUNT-CERTIFICATE-EQUIPMENT-*.json'
+      - 'research/recovered/STONEAGE-CN20-RIDING-TRAINER-COMBAT-SOURCE-R1.json'
+      - 'docs/specs/STONEAGE-PET-80-CONTEMPORARY-RELEASE-EVIDENCE-R1.md'
+      - 'research/recovered/STONEAGE-PREPRODUCTION-CONTENT-ARCHIVE-R1.json'
+      - '.github/workflows/verify-stoneage-tw80-mount-certificate-equipment-source.yml'
+  pull_request:
+    paths:
+      - 'tools/stoneage_tw80_mount_certificate_equipment_source.py'
+      - 'tools/stoneage_jp2005_treasure_source.py'
+      - 'tests/test_stoneage_tw80_mount_certificate_equipment_source.py'
+      - 'research/recovered/STONEAGE-TW80-MOUNT-CERTIFICATE-EQUIPMENT-*.json'
+      - 'research/recovered/STONEAGE-CN20-RIDING-TRAINER-COMBAT-SOURCE-R1.json'
+      - 'docs/specs/STONEAGE-PET-80-CONTEMPORARY-RELEASE-EVIDENCE-R1.md'
+      - 'research/recovered/STONEAGE-PREPRODUCTION-CONTENT-ARCHIVE-R1.json'
+      - '.github/workflows/verify-stoneage-tw80-mount-certificate-equipment-source.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  bounded-source-replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install Pillow==12.3.0
+      - name: Named mount certificate scope and pet-type equipment categories
+        run: python -m unittest tests.test_stoneage_tw80_mount_certificate_equipment_source -v
+      - name: Retrieve Taiwan report republication, actual gallery and full panel image
+        run: python -m tools.stoneage_tw80_mount_certificate_equipment_source --fetch --output "$RUNNER_TEMP/r90-content/replay.json"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: tw80-mount-certificate-equipment-derived-r90
+          path: ${{ runner.temp }}/r90-content/replay.json
+          if-no-files-found: error
+          retention-days: 30

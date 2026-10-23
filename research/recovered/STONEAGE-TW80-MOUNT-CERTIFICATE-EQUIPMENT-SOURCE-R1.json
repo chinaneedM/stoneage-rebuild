@@ -1,0 +1,389 @@
+{
+  "schema": "stoneage.tw80_mount_certificate_equipment.source.r1",
+  "version_profile": "TW80_2005_LOST_WORLD_SINA_REPUBLICATION_CREDITS_BAHAMUT_EXACT_BUILD_UNKNOWN",
+  "sources": [
+    {
+      "id": "S1",
+      "url": "https://games.sina.com.cn/o/n/2005-06-09/1552109910.shtml",
+      "http_status": 200,
+      "no_redirect": true,
+      "initial_intake_bytes": 48685,
+      "initial_intake_sha256": "a67c9ee21070d048c7dae901cf8c505b6ced3c888abd1ebcc190f764c1f7f4d8",
+      "encoding": "GB18030_STRICT",
+      "authority": "DATED_SINA_REPUBLICATION_CREDITS_BAHAMUT_NOT_INDEPENDENT_PRIMARY",
+      "current_bytes_authenticate_2005_original": false,
+      "official_operator_authorship_verified": false
+    },
+    {
+      "id": "S2",
+      "url": "https://games.sina.com.cn/o/i/2005-06-09/61677.shtml",
+      "http_status": 200,
+      "no_redirect": true,
+      "initial_intake_bytes": 35353,
+      "initial_intake_sha256": "41ae049999094a87ef0a6a1789c2ab9ef55d226093267d9a1a191a883c5b11fc",
+      "encoding": "GB18030_STRICT",
+      "authority": "SINA_LINKED_GALLERY_NOT_NATIVE_CLIENT_MASTER",
+      "current_bytes_authenticate_2005_original": false,
+      "official_operator_authorship_verified": false
+    }
+  ],
+  "images": [
+    {
+      "id": "I1",
+      "url": "https://image2.sina.com.cn/gm/o/n/2005-06-09/U508P115T9D109910F376DT20050609155230.jpg",
+      "http_status": 200,
+      "no_redirect": true,
+      "bytes": 77930,
+      "sha256": "3126fbb80a7d379530519840e78563dc850707a17e89764f21ad2b82df52aa23",
+      "size": [
+        640,
+        480
+      ],
+      "format": "JPEG",
+      "mode": "RGB",
+      "frames": 1
+    }
+  ],
+  "visual_observations": [
+    {
+      "id": "I1",
+      "manual_visual_review": true,
+      "kind": "STATIC_PET_STATUS_AND_EQUIPMENT_PANEL_REFERENCE",
+      "visible": [
+        "YELLOW_BIRD_LIKE_PET_IN_STATUS",
+        "CHARACTER_OVER_YELLOW_BIRD_LIKE_MOUNT",
+        "PET_EQUIPMENT_PANEL_WITH_SEVEN_POSITIONS",
+        "ITEM_ICONS_IN_GRID",
+        "CURSOR_WITH_ITEM_ICON_AND_GREEN_OUTLINE"
+      ],
+      "panel_label_as_read": "PET STATUS",
+      "image_caption": "宠物装备套装",
+      "pet_name_or_native_species_id_transcribed": null,
+      "depicted_pet_is_reported_shikalu_or_luoduokelei": false,
+      "displayed_stats_are_species_master_or_growth": false,
+      "element_bar_lengths_are_numeric_percentages": false,
+      "static_cursor_proves_successful_equipping": false,
+      "all_pet_types_have_same_slots_proven": false,
+      "native_sprite_animation_or_button_coordinates_verified": false,
+      "historical_2005_pixels_authenticated": false
+    }
+  ],
+  "negative_boundaries": {
+    "gnn_original_article_acquired_this_round": false,
+    "sina_reprint_is_independent_second_primary_witness": false,
+    "sina_republication_today_is_exact_taiwan_launch_date": false,
+    "current_bytes_authenticate_2005_original": false,
+    "official_operator_authorship_verified": false,
+    "exact_build_or_native_ids_verified": false,
+    "two_new_mounts_are_two_new_species": false,
+    "obtaining_pet_is_same_as_obtaining_riding_certificate": false,
+    "chief_certificate_applies_to_both_reported_mounts": false,
+    "cn20_courses_loyalty_or_combat_formula_backfilled": false,
+    "all_pet_types_equip_all_seven_categories": false,
+    "foot_subtypes_are_three_extra_equipment_categories": false,
+    "elemental_effect_numeric_formula_recovered": false,
+    "crafting_cap15_means_all_recipes_recovered": false,
+    "screenshot_pet_is_one_of_two_named_mounts": false,
+    "static_cursor_proves_server_equipping": false,
+    "screenshot_proves_opcode127_or_enabled_pet_item_build": false,
+    "picture_proves_gear_base_stats_or_growth": false,
+    "original_html_or_assets_committed": false,
+    "stage_b_started": false
+  },
+  "parent_pins": [
+    {
+      "path": "research/recovered/STONEAGE-CN20-RIDING-TRAINER-COMBAT-SOURCE-R1.json",
+      "bytes": 14868,
+      "sha256": "e41de8bc186771906554775e885cf66ab995a06f01618f7f2d3724a888e69c81",
+      "git_blob": "3e196dce7e0e04250814ac93a6b8e6fad0fc3dfd"
+    },
+    {
+      "path": "docs/specs/STONEAGE-PET-80-CONTEMPORARY-RELEASE-EVIDENCE-R1.md",
+      "bytes": 5400,
+      "sha256": "60ca5637d325f44c5c6051e32e69d9f99c0605655563c0b6a04166f869ad2438",
+      "git_blob": "1a6496648076effafd0b14305c7a5ebb676b62d5"
+    },
+    {
+      "path": "research/recovered/STONEAGE-PREPRODUCTION-CONTENT-ARCHIVE-R1.json",
+      "bytes": 24489,
+      "sha256": "e87afebc8c9590142c7cc8831b578455b3427bf7c1d10520ae02a3e8082fbddb",
+      "git_blob": "2d5b3f081d5618287f431fbded943722a820c593"
+    }
+  ],
+  "parser_pin": {
+    "path": "tools/stoneage_jp2005_treasure_source.py",
+    "bytes": 20924,
+    "sha256": "d541c0fb832447f203ad0618ea86d0ed39e0a32bdf5c26f509dde6f5ffecba40",
+    "git_blob": "350e9d3769597ea4b47959cf2dbd3edf8d97916f"
+  },
+  "extraction": {
+    "riding": {
+      "reported_new_mount_count": 2,
+      "pets": [
+        {
+          "name_as_written": "史卡鲁",
+          "description_as_written": "水魔鬼鱼",
+          "manor_pet_reported": true,
+          "main_habitat_as_written": "泪之海",
+          "riding_condition": "NEW_MANOR_CHIEF_ISSUES_MOUNT_CERTIFICATE",
+          "obtaining_difficulty": "QUALITATIVE_NOT_DIFFICULT_NOT_CAPTURE_RATE",
+          "certificate_item_id_issuer_name_coordinates_cost_or_consumption": null
+        },
+        {
+          "name_as_written": "罗多克雷",
+          "description_as_written": "恐龙系中常被遗忘",
+          "manor_pet_reported": null,
+          "main_habitat_as_written": null,
+          "riding_condition": null,
+          "certificate_item_id_issuer_name_coordinates_cost_or_consumption": null
+        }
+      ],
+      "announced_mount_addition_is_new_species_introduction": false,
+      "training_level_loyalty_combat_stats_or_character_compatibility": null
+    },
+    "equipment": {
+      "reported_category_count": 7,
+      "categories_as_written": [
+        "头",
+        "牙",
+        "爪",
+        "胸",
+        "背",
+        "翅",
+        "脚"
+      ],
+      "foot_type_parenthetical_as_written": [
+        "两只脚",
+        "四只脚",
+        "鱼鳍"
+      ],
+      "slots_depend_on_pet_type": true,
+      "crafting_equipment_reported": true,
+      "equipment_has_elements_reported": true,
+      "element_order_as_written": [
+        "地",
+        "水",
+        "火",
+        "风"
+      ],
+      "equipping_can_increase_or_decrease_abilities_reported": true,
+      "all_seven_slots_for_every_pet_or_body_type_matrix": null,
+      "numeric_modifiers_stacking_rounding_or_gear_base_stats": null
+    },
+    "crafting_context": {
+      "reported_previous_cap": 11,
+      "reported_new_cap": 15,
+      "scope_as_written": [
+        "料理",
+        "合成"
+      ],
+      "character_level_or_all_recipe_ids": null
+    },
+    "source_scope": {
+      "reported_region": "台湾",
+      "reported_version": "8.0：失落的世界",
+      "sina_republication_as_written": "2005-06-09 15:52",
+      "credited_source": "巴哈姆特",
+      "editor_as_written": "梁凌",
+      "today_resolved_to_exact_launch_day": null,
+      "gnn_original_retrieved_this_round": false,
+      "original_operator_script_or_exact_build": null
+    },
+    "original_server_runtime_verified": false,
+    "fingerprints": {
+      "equipment": {
+        "utf8_bytes": 411,
+        "sha256": "c71b33a3ae07caed3fdcc5449aa187271247078b72a8c5839378549ca86d34e4"
+      },
+      "riding": {
+        "utf8_bytes": 289,
+        "sha256": "268b8d211a17f20e415e6246ef58fb727cb1fd9eb95cedbd8dbbc6c86b65a35c"
+      },
+      "crafting": {
+        "utf8_bytes": 133,
+        "sha256": "0b38ead501f13fb54f6f3ff53aec4c7f559efd2f55a3bfa32237e73fa70621bd"
+      },
+      "gallery_caption": {
+        "utf8_bytes": 271,
+        "sha256": "6eb631f05bd2aeece2e27c2711e34f01f7d64d74c8631217f9d306cb0f71b581"
+      }
+    }
+  },
+  "comparison": {
+    "cn20": {
+      "schema": "stoneage.cn20_riding_trainer_combat.source.r1",
+      "four_manor_trainer_courses_or_loyalty100_backfilled": false,
+      "same_build_combat_formula_established": false
+    },
+    "pet80_prior_gate": {
+      "contemporary_feature_release_already_recorded": true,
+      "new_result_is_first_discovery_of_equipment_system": false,
+      "default_pet_item_macro_or_paired_binary_gate_changed": false,
+      "opcode127_or_inventory_lifecycle_execution_verified": false
+    },
+    "modern_adoption_decided": false
+  },
+  "catalog_records": [
+    {
+      "record_id": "TW80-R90-mount-1",
+      "entity_type": "DOCUMENTARY_NAMED_MOUNT_ELIGIBILITY",
+      "collection": "pets",
+      "version_profile": "TW80_2005_LOST_WORLD_SINA_REPUBLICATION_CREDITS_BAHAMUT_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "DATED_DERIVATIVE_PRESS_OR_STATIC_REFERENCE_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "name_as_written": "史卡鲁",
+        "description_as_written": "水魔鬼鱼",
+        "manor_pet_reported": true,
+        "main_habitat_as_written": "泪之海",
+        "riding_condition": "NEW_MANOR_CHIEF_ISSUES_MOUNT_CERTIFICATE",
+        "obtaining_difficulty": "QUALITATIVE_NOT_DIFFICULT_NOT_CAPTURE_RATE",
+        "certificate_item_id_issuer_name_coordinates_cost_or_consumption": null
+      }
+    },
+    {
+      "record_id": "TW80-R90-mount-2",
+      "entity_type": "DOCUMENTARY_NAMED_MOUNT_ELIGIBILITY",
+      "collection": "pets",
+      "version_profile": "TW80_2005_LOST_WORLD_SINA_REPUBLICATION_CREDITS_BAHAMUT_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "DATED_DERIVATIVE_PRESS_OR_STATIC_REFERENCE_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "name_as_written": "罗多克雷",
+        "description_as_written": "恐龙系中常被遗忘",
+        "manor_pet_reported": null,
+        "main_habitat_as_written": null,
+        "riding_condition": null,
+        "certificate_item_id_issuer_name_coordinates_cost_or_consumption": null
+      }
+    },
+    {
+      "record_id": "TW80-R90-equipment",
+      "entity_type": "DOCUMENTARY_PET_TYPE_EQUIPMENT_CATEGORIES",
+      "collection": "tutorials",
+      "version_profile": "TW80_2005_LOST_WORLD_SINA_REPUBLICATION_CREDITS_BAHAMUT_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "DATED_DERIVATIVE_PRESS_OR_STATIC_REFERENCE_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "reported_category_count": 7,
+        "categories_as_written": [
+          "头",
+          "牙",
+          "爪",
+          "胸",
+          "背",
+          "翅",
+          "脚"
+        ],
+        "foot_type_parenthetical_as_written": [
+          "两只脚",
+          "四只脚",
+          "鱼鳍"
+        ],
+        "slots_depend_on_pet_type": true,
+        "crafting_equipment_reported": true,
+        "equipment_has_elements_reported": true,
+        "element_order_as_written": [
+          "地",
+          "水",
+          "火",
+          "风"
+        ],
+        "equipping_can_increase_or_decrease_abilities_reported": true,
+        "all_seven_slots_for_every_pet_or_body_type_matrix": null,
+        "numeric_modifiers_stacking_rounding_or_gear_base_stats": null
+      }
+    },
+    {
+      "record_id": "TW80-R90-crafting-cap",
+      "entity_type": "DOCUMENTARY_CAP_CONTEXT_NOT_RECIPE_CATALOG",
+      "collection": "tutorials",
+      "version_profile": "TW80_2005_LOST_WORLD_SINA_REPUBLICATION_CREDITS_BAHAMUT_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "DATED_DERIVATIVE_PRESS_OR_STATIC_REFERENCE_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "reported_previous_cap": 11,
+        "reported_new_cap": 15,
+        "scope_as_written": [
+          "料理",
+          "合成"
+        ],
+        "character_level_or_all_recipe_ids": null
+      }
+    },
+    {
+      "record_id": "TW80-R90-panel",
+      "entity_type": "STATIC_PET_EQUIPMENT_REFERENCE_NOT_IO_TRACE",
+      "collection": "screens",
+      "version_profile": "TW80_2005_LOST_WORLD_SINA_REPUBLICATION_CREDITS_BAHAMUT_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1",
+        "S2",
+        "I1"
+      ],
+      "verification_status": "DATED_DERIVATIVE_PRESS_OR_STATIC_REFERENCE_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "image": {
+          "id": "I1",
+          "url": "https://image2.sina.com.cn/gm/o/n/2005-06-09/U508P115T9D109910F376DT20050609155230.jpg",
+          "http_status": 200,
+          "no_redirect": true,
+          "bytes": 77930,
+          "sha256": "3126fbb80a7d379530519840e78563dc850707a17e89764f21ad2b82df52aa23",
+          "size": [
+            640,
+            480
+          ],
+          "format": "JPEG",
+          "mode": "RGB",
+          "frames": 1
+        },
+        "observation": {
+          "id": "I1",
+          "manual_visual_review": true,
+          "kind": "STATIC_PET_STATUS_AND_EQUIPMENT_PANEL_REFERENCE",
+          "visible": [
+            "YELLOW_BIRD_LIKE_PET_IN_STATUS",
+            "CHARACTER_OVER_YELLOW_BIRD_LIKE_MOUNT",
+            "PET_EQUIPMENT_PANEL_WITH_SEVEN_POSITIONS",
+            "ITEM_ICONS_IN_GRID",
+            "CURSOR_WITH_ITEM_ICON_AND_GREEN_OUTLINE"
+          ],
+          "panel_label_as_read": "PET STATUS",
+          "image_caption": "宠物装备套装",
+          "pet_name_or_native_species_id_transcribed": null,
+          "depicted_pet_is_reported_shikalu_or_luoduokelei": false,
+          "displayed_stats_are_species_master_or_growth": false,
+          "element_bar_lengths_are_numeric_percentages": false,
+          "static_cursor_proves_successful_equipping": false,
+          "all_pet_types_have_same_slots_proven": false,
+          "native_sprite_animation_or_button_coordinates_verified": false,
+          "historical_2005_pixels_authenticated": false
+        }
+      }
+    }
+  ]
+}
