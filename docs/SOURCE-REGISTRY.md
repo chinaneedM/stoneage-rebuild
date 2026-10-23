@@ -8096,3 +8096,10 @@ S1 https://games.sina.com.cn/zhqu/sta/rwgl1_11.shtml ，可见2003-05-29 17:00/�
 双原CI JSON与STONEAGE-CN2003-MENGDE-CAVE-CUSTODY-R1.json永久入Git；七pin固定SOURCE、三父报告、共享解析器和双原报告原字节/Git身份。收据保存内容HEAD/tree、21实际run、双job/artifact/ZIP/raw/input历史。CLI强制验保管并固定完整21项run摘要及源run/job/artifact准确ID，拒绝缺失/同长篡改、错HEAD/tree/分支/任务、遗漏/重复或成功门替代、复用工件、虚报初取相等或提升官方作者/历史字节/原服权威。新增第8保管单元，相关25项本地回归通过，原输出字节不变；原内容CI七单元历史不改称八单元。保管提交自身候选/main须另实后验。
 
 本包可查的是三村叙事、文献NPC出现/分层坐标、口令、取石和顺序敏感奖励，未取得原任务脚本/flag、模型或盗物算法。领奖次序与原字串、2000S可售非现金、推荐非硬门、画面非实发奖及早期记录点/吉鲁生态边界不变。最高NEXT82转台湾具名宠物模型/技能/生态或官方版本世界线；Stage A7 PARTIAL+2 OPEN，B/wiki GATED，savedata R79 PAUSED_NON_BLOCKING，旧历史全留。
+
+
+### 2026-10-23 R82台湾市场狼人形态GNN存档
+
+GNN原https://gnn.gamer.com.tw/detail.php?sn=5718 可见2002-09-13 21:06:37/记者未具名，当前网页/原HTTP403，未取当前正文。一次Availability查询20020914回20190820052955，实际S1 https://web.archive.org/web/20190820052955id_/https://gnn.gamer.com.tw/detail.php?sn=5718 ，200无跳转UTF8严格25749B/860bfa744ce89248eb64d73636e2ccc6bcb26e12b63e62b5506d6e5cf7237998。正文四段646字符1842UTF8B/f85f79dcdae3dd800d41a65fe48056680fe34cb282baed43e24d2d72d0cfa821独立核对。2019是捕获非2002认证原字节/官方发布稿/精确build，当前/存档未作相等判断。
+
+图库只取实际https://p2.bahamut.com.tw/S/2KU/55/0000089255.JPG、/S/2KU/56/0000089256.JPG、/S/2KU/57/0000089257.JPG；14244/fa4fe54fd11130616026702f9f20096284f4496267ea370d9a67e682f9cf81a2、15506/f46a29766362cb70270653ba1c62d5e4da28b20c7a1c902d367cbb83110f3994、12617/511919de15d047ec0ebe2ad5c8b733fda962ee249dac5427b4df5bc1747bfd74，均200无跳转JPEG/RGB120×120单帧完整解码目视。商品画与两兽插画无具名图注，不按颜色/排序合火/地兽或形态，不作原SPR/模型/2002像素，B大图/meta封面未取。十条研究目录、三父报告/解析器原生Git固定见TW2002-WEREWOLF-FORMS-SOURCE-R1；原HTML/JPEG不入Git，实CI保管后验。
