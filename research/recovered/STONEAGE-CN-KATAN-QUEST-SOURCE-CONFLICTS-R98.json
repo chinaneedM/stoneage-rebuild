@@ -1,0 +1,240 @@
+{
+  "schema": "stoneage.cn2001_2003_katan_quest_source_disagreements.r98",
+  "task": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-98",
+  "record_date": "2026-10-23",
+  "scope": "PRESENT_MIGRATED_CN_PLAYER_GUIDE_2001_AND_SINA_USER_GUIDE_2003_NOT_GAME_RUNTIME",
+  "sources": [
+    {
+      "id": "R98-S1",
+      "url": "https://news.17173.com/z/stoneage/content/2001-6-14/n950_866585.html",
+      "page_title": "卡坦任务祥解",
+      "display_date": "2001-06-14",
+      "byline": "陶陶",
+      "type": "migrated_player_submission",
+      "original_publication_bytes_verified": false,
+      "original_game_build": null,
+      "original_server_authority": false
+    },
+    {
+      "id": "R98-S2",
+      "url": "https://games.sina.com.cn/zhqu/sta/rwgl1_6.shtml",
+      "page_title": "《石器时代》任务攻略—卡坦的愿望",
+      "display_date": "2003-05-29 14:24",
+      "byline": null,
+      "type": "sina_user_submitted_portal_guide",
+      "original_publication_bytes_verified": false,
+      "original_game_build": null,
+      "original_server_authority": false
+    }
+  ],
+  "npcs": [
+    {
+      "name": "卡坦",
+      "role": "NPC_QUEST_GIVER_CLAIM",
+      "sources": [
+        "R98-S1",
+        "R98-S2"
+      ],
+      "native_npc_id": null,
+      "original_dialogue_assets": null
+    },
+    {
+      "name": "樵夫巴尔",
+      "role": "JSS_ORIGINAL_PROVENANCE_UNCONFIRMED_LUMBER_ROUTE_IN_S1",
+      "sources": [
+        "R98-S1"
+      ],
+      "native_npc_id": null,
+      "original_dialogue_assets": null
+    },
+    {
+      "name": "哈恩",
+      "role": "WATER_POT_ROUTE_IN_BOTH_SOURCES",
+      "sources": [
+        "R98-S1",
+        "R98-S2"
+      ],
+      "native_npc_id": null,
+      "original_dialogue_assets": null
+    }
+  ],
+  "npc_search": {
+    "area": "卡坦村与霍特尔村之间的沙漠",
+    "s1_player_search_south_coordinate": 198,
+    "s2_player_search_south_coordinate": 190,
+    "s2_village_landmarks": [
+      {
+        "name": "卡坦村",
+        "east": 259,
+        "south": 170
+      },
+      {
+        "name": "霍特尔村",
+        "east": 622,
+        "south": 193
+      }
+    ],
+    "s2_calls_npc_location_random": true,
+    "exact_spawn_locations": null,
+    "fixed_original_npc_position_proven": false,
+    "reported_search_lines_are_same_coordinate": false
+  },
+  "quest": {
+    "fish_stage": {
+      "required_level_for_each_pet": 25,
+      "pet_names": [
+        "加格",
+        "邦恩吉",
+        "克邦凯斯",
+        "加克拉"
+      ],
+      "first_pair": [
+        "加格",
+        "邦恩吉"
+      ],
+      "second_pair": [
+        "克邦凯斯",
+        "加克拉"
+      ],
+      "intermediate_item_s1": "未记名称的戒指",
+      "intermediate_item_s2": "火鸡的戒指",
+      "reward_name_both": "修宝",
+      "reward_color_both": "金色",
+      "guide_drop_ring_s1": "作者认为丢弃后无法继续该阶段，不确定是否能补领",
+      "guide_drop_ring_s2": "作者称丢失可再次向卡坦索取",
+      "s2_ring_claimed_charm": 2,
+      "s2_ring_claimed_critical": 5,
+      "s2_ring_critical_as_percentage_proven": false,
+      "original_item_consumption_trace": false,
+      "original_give_back_transaction_proven": false
+    },
+    "bird_stage": {
+      "prerequisite": "先完成卡坦的愿望（一）",
+      "required_level_for_each_pet": 25,
+      "pet_names": [
+        "火鸡",
+        "奇宝",
+        "克克洛斯",
+        "霍尔克"
+      ],
+      "first_pair": [
+        "火鸡",
+        "奇宝"
+      ],
+      "second_pair": [
+        "克克洛斯",
+        "霍尔克"
+      ],
+      "intermediate_item_s1": "火难戒指",
+      "intermediate_item_s2": "火鸡的戒指",
+      "s1_reported_buff": "魅力+2、一击必杀+5",
+      "s2_reported_buff": "魅力+2、会心一击率上升+5",
+      "reward_name_both": "朵拉比斯",
+      "reward_color_both": "金色",
+      "s1_repeat_after_completion": "作者声称之后可以只交四鸟再次取金飞，并猜测身上不能带金飞",
+      "s1_repeat_condition_verified": false,
+      "item_equivalence_proven": false,
+      "original_second_cycle_execution_proven": false
+    },
+    "s2_suggested_player_level": 35,
+    "suggested_level_is_hard_server_gate": false
+  },
+  "world_links": [
+    {
+      "claim": "S1 describes carpenter 巴尔 at 乌鲁力村, 哈恩水壶 and underground passage to find 邦恩吉",
+      "source": "R98-S1",
+      "exact_original_map_id": null
+    },
+    {
+      "claim": "S2 describes a filled 哈恩的壶 as condition for encountering 邦恩吉",
+      "source": "R98-S2",
+      "exact_original_map_id": null
+    },
+    {
+      "claim": "S2 lists 柯奥村海底洞窟（东96，南62） as fish hunting guide",
+      "source": "R98-S2",
+      "exact_original_map_id": null
+    },
+    {
+      "claim": "S2 lists 卡鲁它那牧场（东328，南661） as a bird hunting route",
+      "source": "R98-S2",
+      "exact_original_map_id": null
+    }
+  ],
+  "conflicts": [
+    {
+      "id": "NPC_SEARCH_LINE",
+      "s1": "南198",
+      "s2": "南190",
+      "resolved": false,
+      "not_translated_into_unique_spawn_x_y": true
+    },
+    {
+      "id": "INTERMEDIATE_FISH_RING",
+      "s1": "未记名称",
+      "s2": "火鸡的戒指",
+      "resolved": false,
+      "official_item_id": null
+    },
+    {
+      "id": "FISH_RING_LOSS",
+      "s1": "警告遗失导致前段白做",
+      "s2": "声称可重新向卡坦领取",
+      "resolved": false,
+      "server_recovery_contract": null
+    },
+    {
+      "id": "BIRD_RING_NAME",
+      "s1": "火难戒指",
+      "s2": "火鸡的戒指",
+      "resolved": false,
+      "official_item_id": null
+    },
+    {
+      "id": "BIRD_RING_EFFECT_WORDING",
+      "s1": "一击必杀+5",
+      "s2": "会心一击率上升+5",
+      "resolved": false,
+      "effect_opcode": null
+    }
+  ],
+  "illustrated_guide": {
+    "s2_inline_caption_examples": [
+      "专门收集恐龙的“卡坦”",
+      "请玩家帮忙抓到四种鱼类恐龙",
+      "可以帮助玩家更容易抓到宠物的“火鸡的戒指”",
+      "可爱的金色“修宝”",
+      "金飞耶~真是赚到了！"
+    ],
+    "captions_observed_in_page": true,
+    "article_specific_image_bytes_verified": false,
+    "screenshot_original_build_authenticated": false,
+    "npc_pixels_identified": false,
+    "screenshot_proves_server_transaction": false
+  },
+  "dedup": {
+    "modern_reposts_counted_as_independent_sources": false,
+    "old_cn2003_mengde_r81_is_same_katan_quest": false,
+    "cross_2001_2003_exact_game_build_match": false,
+    "known_r96_world_routes_not_reproved": true
+  },
+  "unknowns": [
+    "original NPC patrol/spawn table",
+    "game-build timestamps of both player accounts",
+    "complete exact NPC dialogue text and UI",
+    "native fish/bird pet and ring item IDs",
+    "ring-loss reissue and pet handover server ACK",
+    "third-party screenshot original bytes and selection chain",
+    "second-cycle quest flag and saved roster"
+  ],
+  "publication": {
+    "metadata_only": true,
+    "original_html_committed": false,
+    "images_committed": false,
+    "commercial_server_executed": false,
+    "stage_a_closed": false,
+    "stage_b_started": false,
+    "overall_restoration_percent": null,
+    "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-99"
+  }
+}
