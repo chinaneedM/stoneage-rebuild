@@ -17786,3 +17786,12 @@ FACT（限当年玩家写下的内容）：按本轮新读main `76ee0e47eb2bd21a
 交付：`docs/specs/STONEAGE-CN2003-PET-GROWTH-PLAYER-CLAIMS-SOURCE-R1.md`，`research/recovered/STONEAGE-CN2003-PET-GROWTH-PLAYER-CLAIMS-SOURCE-R1.json`，4段语义SHA256校验器、9项负向边界单元与独立workflow。候选分支 `agent/cn2003-pet-growth-claims-r92-20261023` 首个内容commit `bfa36b2aa79e09dafe36f261b0443c896f6bb52f` / tree `ff63044062492d0c1cee742a67ce598f01dacdeb`；其专用run `39947773737` 真实completed/success。完整连续性追加后的候选及主线Actions必须以后续实际结果为准，不能提前记成功或声称原服运行。
 
 停止于一篇玩家稿、一个独立页面之差异、8宠数值及3技能说法，不扩大成全版本宠物主表。重开需精确地区build绑定的原宠物配置／主表、宠物级别/成长实测存档、原技能处理或网络记录、原模型/SPR挂钩，同名跨版本不能自动同ID。最高下一 `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-93`：轮换另一地区有据的具名世界地点／人物UI画面或同版可定位宠物资源，不继续无限扩玩家成长推测。Stage A 7 PARTIAL + 2 OPEN、Stage B/wiki GATED、R79 PAUSED_NON_BLOCKING，overall restoration percent=null，旧全历史前缀完整保留。
+
+
+### R92 内容双端验收、派生JSON Git保管与反篡改校验 — 2026-10-23
+
+候选内容 `bfa36b2aa79e09dafe36f261b0443c896f6bb52f` / tree `ff63044062492d0c1cee742a67ce598f01dacdeb` 的专用run `39947773737` / job `120394538483` 已实际completed/success，执行了9项来源边界unittest及固定语义SHA256 CLI。附加完整连续性文件的候选commit `a1e2de273a077b283d3c056124945af57d0c6f8d` / tree `257a3aba26ada0d6d5f63816e84e0c3a3c74fa8e` 自身9项Actions全部completed/success。GitHub compare初始main `76ee0e47…`→候选确认ahead2/behind0及8文件、三大历史正文全部只增加无删行；新读main未漂移后使用expected_sha非强制快进整合，main自身11项Actions（包含R92专用 `39948235290` / job `120396056316`）再次全部completed/success，合计21项实际成功互异runs。R92新测试增加验收收据第10项，收据提交自身Actions尚须按后续实际状态验收，不提前写成功。
+
+派生JSON `research/recovered/STONEAGE-CN2003-PET-GROWTH-PLAYER-CLAIMS-SOURCE-R1.json` 为Git blob `863a773feecaa1d129789e46b966078b9e6c7b3b`，可长期重取，非2003原网页。专用main run `39948235290` 的Actions artifacts API实得0项，本包未生产短期原样来源ZIP/原HTML工件，不编造原始URL HTTP摘要、run artifact ID、ZIP digest或声称网络原字节重放。独立收据 `research/recovered/STONEAGE-CN2003-PET-GROWTH-ACCEPTANCE-R92.json` 固定这21实际run、双端job ID、源码/资料边界与Git blob。额外反例阻止将缺失HP填55、未知鲁比成长变具体值、2.0X变2.00、玩家值升级为官方上限、技能声明变实服执行、JSS/TW1.0跨版回填、Stage A宣称通过。原始文献与历史三大长文均完整保留，不更换旧研究。
+
+NEXT继续 `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-93`，不同地区具名世界/地图/NPC窗口实像或同build宠物原始模型证据。Stage A 7 PARTIAL+2 OPEN，B/wiki GATED，R79 PAUSED_NON_BLOCKING，overall percent=null。验收收据commit之后的新run须独立看实际结果，不能将前一提交的通过转用。

@@ -45,5 +45,33 @@ class TestPetGrowthClaims(unittest.TestCase):
         self.reject(lambda x: x['records'].reverse())
         self.reject(lambda x: x.update(original_server_formula='confirmed'))
 
+
+class TestR92AcceptanceReceipt(unittest.TestCase):
+    def test_accepted_derived_blob_and_bounded_actions(self):
+        import hashlib
+        from pathlib import Path
+        root = P.parents[2]
+        receipt = json.loads((root / 'research/recovered/STONEAGE-CN2003-PET-GROWTH-ACCEPTANCE-R92.json').read_text(encoding='utf-8'))
+        raw = P.read_bytes()
+        self.assertEqual(receipt['task'], 'OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-92')
+        self.assertEqual(receipt['derived_json']['git_blob_sha1'], hashlib.sha1(b'blob ' + str(len(raw)).encode('ascii') + b'\x00' + raw).hexdigest())
+        self.assertEqual(receipt['derived_json']['path'], 'research/recovered/STONEAGE-CN2003-PET-GROWTH-PLAYER-CLAIMS-SOURCE-R1.json')
+        self.assertFalse(receipt['derived_json']['contains_original_html'])
+        self.assertFalse(receipt['verification']['has_ci_artifacts'])
+        self.assertEqual(receipt['verification']['candidate_content_run_id'], 39947773737)
+        self.assertEqual(receipt['verification']['candidate_content_job_id'], 120394538483)
+        self.assertEqual(receipt['verification']['main_dedicated_run_id'], 39948235290)
+        self.assertEqual(receipt['verification']['main_dedicated_job_id'], 120396056316)
+        for key, count in [('candidate_continuity_run_ids', 9), ('main_content_run_ids', 11)]:
+            actual = receipt['verification'][key]
+            self.assertEqual(len(actual), count)
+            self.assertEqual(len(set(actual)), count)
+        self.assertTrue(receipt['verification']['all_original_validation_runs_completed_success'])
+        self.assertFalse(receipt['scope']['original_pet_master_recovered'])
+        self.assertFalse(receipt['scope']['original_client_executed'])
+        self.assertFalse(receipt['scope']['stage_a_accepted'])
+        self.assertFalse(receipt['scope']['stage_b_open'])
+        self.assertIsNone(receipt['scope']['overall_restoration_percentage'])
+
 if __name__ == '__main__':
     unittest.main()

@@ -1,0 +1,63 @@
+{
+  "schema": "stoneage.cn2003_pet_growth_claims_acceptance.r92",
+  "task": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-92",
+  "base_head": "76ee0e47eb2bd21a9812162d2d4454d8f3697046",
+  "accepted_content_commit": "a1e2de273a077b283d3c056124945af57d0c6f8d",
+  "accepted_content_tree": "257a3aba26ada0d6d5f63816e84e0c3a3c74fa8e",
+  "candidate_source_commit": "bfa36b2aa79e09dafe36f261b0443c896f6bb52f",
+  "candidate_source_tree": "ff63044062492d0c1cee742a67ce598f01dacdeb",
+  "derived_json": {
+    "path": "research/recovered/STONEAGE-CN2003-PET-GROWTH-PLAYER-CLAIMS-SOURCE-R1.json",
+    "git_blob_sha1": "863a773feecaa1d129789e46b966078b9e6c7b3b",
+    "contains_original_html": false,
+    "source_original_raw_html_sha256": null,
+    "original_server_data_embedded": false
+  },
+  "verification": {
+    "candidate_content_run_id": 39947773737,
+    "candidate_content_job_id": 120394538483,
+    "candidate_continuity_run_ids": [
+      39948104161,
+      39948104202,
+      39948104236,
+      39948104255,
+      39948104316,
+      39948104334,
+      39948104407,
+      39948104415,
+      39948104454
+    ],
+    "main_content_run_ids": [
+      39948235158,
+      39948235160,
+      39948235182,
+      39948235207,
+      39948235213,
+      39948235238,
+      39948235269,
+      39948235284,
+      39948235290,
+      39948235298,
+      39948235342
+    ],
+    "main_dedicated_run_id": 39948235290,
+    "main_dedicated_job_id": 120396056316,
+    "all_original_validation_runs_completed_success": true,
+    "has_ci_artifacts": false,
+    "ci_artifacts_checked_run_id": 39948235290,
+    "ci_artifacts_count": 0,
+    "candidate_run_count": 9,
+    "main_run_count": 11,
+    "note": "These run IDs validate R92 content/continuity commit; future acceptance-receipt commit has its own independently checked Actions. No source HTML replay artifact was produced."
+  },
+  "scope": {
+    "original_pet_master_recovered": false,
+    "original_client_executed": false,
+    "stage_a_accepted": false,
+    "stage_b_open": false,
+    "overall_restoration_percentage": null,
+    "reported_growth_source": "2003 named player submission; not a server growth-cap master",
+    "future_game_code_added": false
+  },
+  "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-93"
+}
