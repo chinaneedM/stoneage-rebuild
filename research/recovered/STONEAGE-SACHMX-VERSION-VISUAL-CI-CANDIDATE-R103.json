@@ -1,0 +1,767 @@
+{
+  "schema": "stoneage.sachmx.version_visual_replay.r103",
+  "contract_sha256": "5ea71a0338fb4bfb0a6b3c2d6d47313d4c9238c91a52d913413e81b0f744f2f2",
+  "actual_inputs": {
+    "free_html": {
+      "bytes": 43097,
+      "sha256": "0b7827b74b927e00e44a05dd994020b5bfb53e733889c92d02f4256e095b3643",
+      "equals_initial": true
+    },
+    "free_image": {
+      "bytes": 150678,
+      "sha256": "fb8553aced4123aa1e1cbbeed5f18af182ca1b1c0c0f419376e5768287a3547b",
+      "equals_initial": true
+    },
+    "index": {
+      "bytes": 80504,
+      "sha256": "62f81806473cc2227e1de51c70276313bc1ee9bd1f081ed9aa48c4e75d133d31",
+      "equals_initial": true
+    },
+    "member_html": {
+      "bytes": 43198,
+      "sha256": "b2ef2c089fb2d836bff0d397a73bf936a285b03fb9953e625bb8b983e3b98f75",
+      "equals_initial": true
+    },
+    "member_image": {
+      "bytes": 161022,
+      "sha256": "05c70f5a7466dc18738e5cf35748bd28e707522789a6fac098f7cbccd9ac94c6",
+      "equals_initial": true
+    }
+  },
+  "index": {
+    "both_edition_links_verified": true,
+    "editorial_helper_urls_redacted": true,
+    "developer_homepage_obtained": false,
+    "binary_download_performed": false
+  },
+  "articles": [
+    {
+      "edition": "member",
+      "explicit_abuse_categories": [
+        "unrestricted_level_claim",
+        "game_speed",
+        "movement_speed",
+        "wall_bypass",
+        "encounter_speed"
+      ],
+      "explicit_assistance_categories": [
+        "automatic_login",
+        "task_scripts",
+        "task_secret_text",
+        "information_display",
+        "delivery_currency_script"
+      ],
+      "table_sha256": "171f8440a9d69324bc61d302b7e915c08ee1c30f5bb8ff3dd00aa5ec1c7029aa",
+      "full_image_url": "https://image2.sina.com.cn/gm/ads/sachmx5.00b9.JPG",
+      "review_is_benchmark": false,
+      "edition_feature_list_complete": false,
+      "decoded_image": {
+        "format": "JPEG",
+        "mode": "RGB",
+        "size": [
+          945,
+          505
+        ],
+        "frames": 1
+      }
+    },
+    {
+      "edition": "free",
+      "explicit_abuse_categories": [
+        "game_speed",
+        "movement_speed",
+        "wall_bypass",
+        "encounter_speed"
+      ],
+      "explicit_assistance_categories": [
+        "automatic_login",
+        "task_scripts",
+        "task_secret_text",
+        "information_display"
+      ],
+      "table_sha256": "e694a2f01c89a2f6ff3a6c54060a27833ca6d46e42a53e38b323364065eebce6",
+      "full_image_url": "https://image2.sina.com.cn/gm/ads/sachmx6.00freeb1.JPG",
+      "review_is_benchmark": false,
+      "edition_feature_list_complete": false,
+      "decoded_image": {
+        "format": "JPEG",
+        "mode": "RGB",
+        "size": [
+          951,
+          497
+        ],
+        "frames": 1
+      }
+    }
+  ],
+  "comparison": {
+    "scope": "TWO_SAME_DAY_MEDIA_LISTINGS_NOT_VERIFIED_RELEASE_SEQUENCE",
+    "shared_explicit_categories": [
+      "game_speed",
+      "movement_speed",
+      "wall_bypass",
+      "encounter_speed",
+      "automatic_login",
+      "task_scripts",
+      "task_secret_text",
+      "information_display"
+    ],
+    "member_explicit_free_not_explicit": [
+      "unrestricted_level_claim",
+      "delivery_currency_script"
+    ],
+    "free_status_for_those_two": "NOT_EXPLICITLY_LISTED_NOT_VERIFIED_ABSENT",
+    "free_general_similarity_claim": "QUALIFIED_SUMMARY_NOT_FEATURE_BY_FEATURE_EQUIVALENCE",
+    "unrestricted_level_exact_mechanism": "UNKNOWN_DO_NOT_INFER_MAP_LEVEL_GATE_OR_OPCODE",
+    "server_field": "LISTING_SAYS_PRESENT_NOT_SERVER_PROGRAM_RECOVERY",
+    "historical_billing": {
+      "member": "50_CNY_PER_YEAR_AS_LISTED",
+      "free": "FREE_AS_LISTED"
+    },
+    "review_claims": {
+      "member": "FAVORABLE_SPEED_VS_UNNAMED_PREVIOUS_VERSIONS_AND_LOGIN_EASE",
+      "free": "LOGIN_DIFFICULTY_ATTRIBUTED_TO_FREE_STATUS_BY_PAGE"
+    },
+    "review_claims_are_measurements": false,
+    "numbered_feature_attestations": 18,
+    "unique_explicit_feature_categories": 10
+  },
+  "records": [
+    {
+      "version_profile": "CN_MEDIA_2003_SACHMX_MEMBER_5.00B9会员版",
+      "source_refs": [
+        {
+          "url": "https://games.sina.com.cn/z/sta/2003-06-18/13364.shtml",
+          "display_date": "2003-06-18 15:28",
+          "initial_html_sha256": "b2ef2c089fb2d836bff0d397a73bf936a285b03fb9953e625bb8b983e3b98f75",
+          "table_sha256": "171f8440a9d69324bc61d302b7e915c08ee1c30f5bb8ff3dd00aa5ec1c7029aa"
+        }
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME_VERIFIED",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "implemented_in_rebuild": false,
+      "adoption_decided": false,
+      "record_id": "sachmx2003:member:program",
+      "entity_type": "helper_program",
+      "collection": "helper_programs",
+      "family": "SACH-MX",
+      "claimed_version": "5.00B9会员版",
+      "release_date": null,
+      "maker_identity_authenticated": false
+    },
+    {
+      "version_profile": "CN_MEDIA_2003_SACHMX_MEMBER_5.00B9会员版",
+      "source_refs": [
+        {
+          "url": "https://games.sina.com.cn/z/sta/2003-06-18/13364.shtml",
+          "display_date": "2003-06-18 15:28",
+          "initial_html_sha256": "b2ef2c089fb2d836bff0d397a73bf936a285b03fb9953e625bb8b983e3b98f75",
+          "table_sha256": "171f8440a9d69324bc61d302b7e915c08ee1c30f5bb8ff3dd00aa5ec1c7029aa"
+        }
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME_VERIFIED",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "implemented_in_rebuild": false,
+      "adoption_decided": false,
+      "record_id": "sachmx2003:member:unrestricted_level_claim",
+      "entity_type": "helper_capability",
+      "collection": "helper_capabilities",
+      "program_ref": "sachmx2003:member:program",
+      "category": "unrestricted_level_claim",
+      "source_category": "explicit_abuse_categories",
+      "first_introduction_proven": false,
+      "complete_behavior_or_syntax_recovered": false
+    },
+    {
+      "version_profile": "CN_MEDIA_2003_SACHMX_MEMBER_5.00B9会员版",
+      "source_refs": [
+        {
+          "url": "https://games.sina.com.cn/z/sta/2003-06-18/13364.shtml",
+          "display_date": "2003-06-18 15:28",
+          "initial_html_sha256": "b2ef2c089fb2d836bff0d397a73bf936a285b03fb9953e625bb8b983e3b98f75",
+          "table_sha256": "171f8440a9d69324bc61d302b7e915c08ee1c30f5bb8ff3dd00aa5ec1c7029aa"
+        }
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME_VERIFIED",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "implemented_in_rebuild": false,
+      "adoption_decided": false,
+      "record_id": "sachmx2003:member:game_speed",
+      "entity_type": "helper_capability",
+      "collection": "helper_capabilities",
+      "program_ref": "sachmx2003:member:program",
+      "category": "game_speed",
+      "source_category": "explicit_abuse_categories",
+      "first_introduction_proven": false,
+      "complete_behavior_or_syntax_recovered": false
+    },
+    {
+      "version_profile": "CN_MEDIA_2003_SACHMX_MEMBER_5.00B9会员版",
+      "source_refs": [
+        {
+          "url": "https://games.sina.com.cn/z/sta/2003-06-18/13364.shtml",
+          "display_date": "2003-06-18 15:28",
+          "initial_html_sha256": "b2ef2c089fb2d836bff0d397a73bf936a285b03fb9953e625bb8b983e3b98f75",
+          "table_sha256": "171f8440a9d69324bc61d302b7e915c08ee1c30f5bb8ff3dd00aa5ec1c7029aa"
+        }
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME_VERIFIED",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "implemented_in_rebuild": false,
+      "adoption_decided": false,
+      "record_id": "sachmx2003:member:movement_speed",
+      "entity_type": "helper_capability",
+      "collection": "helper_capabilities",
+      "program_ref": "sachmx2003:member:program",
+      "category": "movement_speed",
+      "source_category": "explicit_abuse_categories",
+      "first_introduction_proven": false,
+      "complete_behavior_or_syntax_recovered": false
+    },
+    {
+      "version_profile": "CN_MEDIA_2003_SACHMX_MEMBER_5.00B9会员版",
+      "source_refs": [
+        {
+          "url": "https://games.sina.com.cn/z/sta/2003-06-18/13364.shtml",
+          "display_date": "2003-06-18 15:28",
+          "initial_html_sha256": "b2ef2c089fb2d836bff0d397a73bf936a285b03fb9953e625bb8b983e3b98f75",
+          "table_sha256": "171f8440a9d69324bc61d302b7e915c08ee1c30f5bb8ff3dd00aa5ec1c7029aa"
+        }
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME_VERIFIED",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "implemented_in_rebuild": false,
+      "adoption_decided": false,
+      "record_id": "sachmx2003:member:wall_bypass",
+      "entity_type": "helper_capability",
+      "collection": "helper_capabilities",
+      "program_ref": "sachmx2003:member:program",
+      "category": "wall_bypass",
+      "source_category": "explicit_abuse_categories",
+      "first_introduction_proven": false,
+      "complete_behavior_or_syntax_recovered": false
+    },
+    {
+      "version_profile": "CN_MEDIA_2003_SACHMX_MEMBER_5.00B9会员版",
+      "source_refs": [
+        {
+          "url": "https://games.sina.com.cn/z/sta/2003-06-18/13364.shtml",
+          "display_date": "2003-06-18 15:28",
+          "initial_html_sha256": "b2ef2c089fb2d836bff0d397a73bf936a285b03fb9953e625bb8b983e3b98f75",
+          "table_sha256": "171f8440a9d69324bc61d302b7e915c08ee1c30f5bb8ff3dd00aa5ec1c7029aa"
+        }
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME_VERIFIED",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "implemented_in_rebuild": false,
+      "adoption_decided": false,
+      "record_id": "sachmx2003:member:encounter_speed",
+      "entity_type": "helper_capability",
+      "collection": "helper_capabilities",
+      "program_ref": "sachmx2003:member:program",
+      "category": "encounter_speed",
+      "source_category": "explicit_abuse_categories",
+      "first_introduction_proven": false,
+      "complete_behavior_or_syntax_recovered": false
+    },
+    {
+      "version_profile": "CN_MEDIA_2003_SACHMX_MEMBER_5.00B9会员版",
+      "source_refs": [
+        {
+          "url": "https://games.sina.com.cn/z/sta/2003-06-18/13364.shtml",
+          "display_date": "2003-06-18 15:28",
+          "initial_html_sha256": "b2ef2c089fb2d836bff0d397a73bf936a285b03fb9953e625bb8b983e3b98f75",
+          "table_sha256": "171f8440a9d69324bc61d302b7e915c08ee1c30f5bb8ff3dd00aa5ec1c7029aa"
+        }
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME_VERIFIED",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "implemented_in_rebuild": false,
+      "adoption_decided": false,
+      "record_id": "sachmx2003:member:automatic_login",
+      "entity_type": "helper_capability",
+      "collection": "helper_capabilities",
+      "program_ref": "sachmx2003:member:program",
+      "category": "automatic_login",
+      "source_category": "explicit_assistance_categories",
+      "first_introduction_proven": false,
+      "complete_behavior_or_syntax_recovered": false
+    },
+    {
+      "version_profile": "CN_MEDIA_2003_SACHMX_MEMBER_5.00B9会员版",
+      "source_refs": [
+        {
+          "url": "https://games.sina.com.cn/z/sta/2003-06-18/13364.shtml",
+          "display_date": "2003-06-18 15:28",
+          "initial_html_sha256": "b2ef2c089fb2d836bff0d397a73bf936a285b03fb9953e625bb8b983e3b98f75",
+          "table_sha256": "171f8440a9d69324bc61d302b7e915c08ee1c30f5bb8ff3dd00aa5ec1c7029aa"
+        }
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME_VERIFIED",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "implemented_in_rebuild": false,
+      "adoption_decided": false,
+      "record_id": "sachmx2003:member:task_scripts",
+      "entity_type": "helper_capability",
+      "collection": "helper_capabilities",
+      "program_ref": "sachmx2003:member:program",
+      "category": "task_scripts",
+      "source_category": "explicit_assistance_categories",
+      "first_introduction_proven": false,
+      "complete_behavior_or_syntax_recovered": false
+    },
+    {
+      "version_profile": "CN_MEDIA_2003_SACHMX_MEMBER_5.00B9会员版",
+      "source_refs": [
+        {
+          "url": "https://games.sina.com.cn/z/sta/2003-06-18/13364.shtml",
+          "display_date": "2003-06-18 15:28",
+          "initial_html_sha256": "b2ef2c089fb2d836bff0d397a73bf936a285b03fb9953e625bb8b983e3b98f75",
+          "table_sha256": "171f8440a9d69324bc61d302b7e915c08ee1c30f5bb8ff3dd00aa5ec1c7029aa"
+        }
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME_VERIFIED",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "implemented_in_rebuild": false,
+      "adoption_decided": false,
+      "record_id": "sachmx2003:member:task_secret_text",
+      "entity_type": "helper_capability",
+      "collection": "helper_capabilities",
+      "program_ref": "sachmx2003:member:program",
+      "category": "task_secret_text",
+      "source_category": "explicit_assistance_categories",
+      "first_introduction_proven": false,
+      "complete_behavior_or_syntax_recovered": false
+    },
+    {
+      "version_profile": "CN_MEDIA_2003_SACHMX_MEMBER_5.00B9会员版",
+      "source_refs": [
+        {
+          "url": "https://games.sina.com.cn/z/sta/2003-06-18/13364.shtml",
+          "display_date": "2003-06-18 15:28",
+          "initial_html_sha256": "b2ef2c089fb2d836bff0d397a73bf936a285b03fb9953e625bb8b983e3b98f75",
+          "table_sha256": "171f8440a9d69324bc61d302b7e915c08ee1c30f5bb8ff3dd00aa5ec1c7029aa"
+        }
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME_VERIFIED",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "implemented_in_rebuild": false,
+      "adoption_decided": false,
+      "record_id": "sachmx2003:member:information_display",
+      "entity_type": "helper_capability",
+      "collection": "helper_capabilities",
+      "program_ref": "sachmx2003:member:program",
+      "category": "information_display",
+      "source_category": "explicit_assistance_categories",
+      "first_introduction_proven": false,
+      "complete_behavior_or_syntax_recovered": false
+    },
+    {
+      "version_profile": "CN_MEDIA_2003_SACHMX_MEMBER_5.00B9会员版",
+      "source_refs": [
+        {
+          "url": "https://games.sina.com.cn/z/sta/2003-06-18/13364.shtml",
+          "display_date": "2003-06-18 15:28",
+          "initial_html_sha256": "b2ef2c089fb2d836bff0d397a73bf936a285b03fb9953e625bb8b983e3b98f75",
+          "table_sha256": "171f8440a9d69324bc61d302b7e915c08ee1c30f5bb8ff3dd00aa5ec1c7029aa"
+        }
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME_VERIFIED",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "implemented_in_rebuild": false,
+      "adoption_decided": false,
+      "record_id": "sachmx2003:member:delivery_currency_script",
+      "entity_type": "helper_capability",
+      "collection": "helper_capabilities",
+      "program_ref": "sachmx2003:member:program",
+      "category": "delivery_currency_script",
+      "source_category": "explicit_assistance_categories",
+      "first_introduction_proven": false,
+      "complete_behavior_or_syntax_recovered": false
+    },
+    {
+      "version_profile": "CN_MEDIA_2003_SACHMX_MEMBER_5.00B9会员版",
+      "source_refs": [
+        {
+          "url": "https://games.sina.com.cn/z/sta/2003-06-18/13364.shtml",
+          "display_date": "2003-06-18 15:28",
+          "initial_html_sha256": "b2ef2c089fb2d836bff0d397a73bf936a285b03fb9953e625bb8b983e3b98f75",
+          "table_sha256": "171f8440a9d69324bc61d302b7e915c08ee1c30f5bb8ff3dd00aa5ec1c7029aa"
+        },
+        {
+          "url": "https://image2.sina.com.cn/gm/ads/sachmx5.00b9.JPG",
+          "sha256": "05c70f5a7466dc18738e5cf35748bd28e707522789a6fac098f7cbccd9ac94c6",
+          "evidence_role": "CURRENT_LINKED_FULL_IMAGE_STATIC_PIXELS"
+        }
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME_VERIFIED",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "implemented_in_rebuild": false,
+      "adoption_decided": false,
+      "record_id": "sachmx2003:member:screen",
+      "entity_type": "screen",
+      "collection": "screens",
+      "pixel_identity_sha256": "05c70f5a7466dc18738e5cf35748bd28e707522789a6fac098f7cbccd9ac94c6",
+      "observations": {
+        "title_bar": "SACH-MX 5.00 B9",
+        "visible_families": [
+          "CLIENT_AND_SERVER_SELECTORS",
+          "LOGIN_CONTROLS",
+          "ENCOUNTER_SETTINGS",
+          "BATTLE_CONTROLS",
+          "INFORMATION_TREE",
+          "PLAYER_AND_FIVE_PET_STAT_COLUMNS"
+        ],
+        "client_selector_text": "石器时代1.82",
+        "selector_proves_compatibility": false,
+        "player_values_zero_and_status_login": true,
+        "editorial_black_redaction_bars_visible": true
+      },
+      "click_or_success_trace_recovered": false
+    },
+    {
+      "version_profile": "CN_MEDIA_2003_SACHMX_FREE_6.0B1免费版",
+      "source_refs": [
+        {
+          "url": "https://games.sina.com.cn/z/sta/2003-06-18/13365.shtml",
+          "display_date": "2003-06-18 15:32",
+          "initial_html_sha256": "0b7827b74b927e00e44a05dd994020b5bfb53e733889c92d02f4256e095b3643",
+          "table_sha256": "e694a2f01c89a2f6ff3a6c54060a27833ca6d46e42a53e38b323364065eebce6"
+        }
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME_VERIFIED",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "implemented_in_rebuild": false,
+      "adoption_decided": false,
+      "record_id": "sachmx2003:free:program",
+      "entity_type": "helper_program",
+      "collection": "helper_programs",
+      "family": "SACH-MX",
+      "claimed_version": "6.0B1免费版",
+      "release_date": null,
+      "maker_identity_authenticated": false
+    },
+    {
+      "version_profile": "CN_MEDIA_2003_SACHMX_FREE_6.0B1免费版",
+      "source_refs": [
+        {
+          "url": "https://games.sina.com.cn/z/sta/2003-06-18/13365.shtml",
+          "display_date": "2003-06-18 15:32",
+          "initial_html_sha256": "0b7827b74b927e00e44a05dd994020b5bfb53e733889c92d02f4256e095b3643",
+          "table_sha256": "e694a2f01c89a2f6ff3a6c54060a27833ca6d46e42a53e38b323364065eebce6"
+        }
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME_VERIFIED",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "implemented_in_rebuild": false,
+      "adoption_decided": false,
+      "record_id": "sachmx2003:free:game_speed",
+      "entity_type": "helper_capability",
+      "collection": "helper_capabilities",
+      "program_ref": "sachmx2003:free:program",
+      "category": "game_speed",
+      "source_category": "explicit_abuse_categories",
+      "first_introduction_proven": false,
+      "complete_behavior_or_syntax_recovered": false
+    },
+    {
+      "version_profile": "CN_MEDIA_2003_SACHMX_FREE_6.0B1免费版",
+      "source_refs": [
+        {
+          "url": "https://games.sina.com.cn/z/sta/2003-06-18/13365.shtml",
+          "display_date": "2003-06-18 15:32",
+          "initial_html_sha256": "0b7827b74b927e00e44a05dd994020b5bfb53e733889c92d02f4256e095b3643",
+          "table_sha256": "e694a2f01c89a2f6ff3a6c54060a27833ca6d46e42a53e38b323364065eebce6"
+        }
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME_VERIFIED",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "implemented_in_rebuild": false,
+      "adoption_decided": false,
+      "record_id": "sachmx2003:free:movement_speed",
+      "entity_type": "helper_capability",
+      "collection": "helper_capabilities",
+      "program_ref": "sachmx2003:free:program",
+      "category": "movement_speed",
+      "source_category": "explicit_abuse_categories",
+      "first_introduction_proven": false,
+      "complete_behavior_or_syntax_recovered": false
+    },
+    {
+      "version_profile": "CN_MEDIA_2003_SACHMX_FREE_6.0B1免费版",
+      "source_refs": [
+        {
+          "url": "https://games.sina.com.cn/z/sta/2003-06-18/13365.shtml",
+          "display_date": "2003-06-18 15:32",
+          "initial_html_sha256": "0b7827b74b927e00e44a05dd994020b5bfb53e733889c92d02f4256e095b3643",
+          "table_sha256": "e694a2f01c89a2f6ff3a6c54060a27833ca6d46e42a53e38b323364065eebce6"
+        }
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME_VERIFIED",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "implemented_in_rebuild": false,
+      "adoption_decided": false,
+      "record_id": "sachmx2003:free:wall_bypass",
+      "entity_type": "helper_capability",
+      "collection": "helper_capabilities",
+      "program_ref": "sachmx2003:free:program",
+      "category": "wall_bypass",
+      "source_category": "explicit_abuse_categories",
+      "first_introduction_proven": false,
+      "complete_behavior_or_syntax_recovered": false
+    },
+    {
+      "version_profile": "CN_MEDIA_2003_SACHMX_FREE_6.0B1免费版",
+      "source_refs": [
+        {
+          "url": "https://games.sina.com.cn/z/sta/2003-06-18/13365.shtml",
+          "display_date": "2003-06-18 15:32",
+          "initial_html_sha256": "0b7827b74b927e00e44a05dd994020b5bfb53e733889c92d02f4256e095b3643",
+          "table_sha256": "e694a2f01c89a2f6ff3a6c54060a27833ca6d46e42a53e38b323364065eebce6"
+        }
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME_VERIFIED",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "implemented_in_rebuild": false,
+      "adoption_decided": false,
+      "record_id": "sachmx2003:free:encounter_speed",
+      "entity_type": "helper_capability",
+      "collection": "helper_capabilities",
+      "program_ref": "sachmx2003:free:program",
+      "category": "encounter_speed",
+      "source_category": "explicit_abuse_categories",
+      "first_introduction_proven": false,
+      "complete_behavior_or_syntax_recovered": false
+    },
+    {
+      "version_profile": "CN_MEDIA_2003_SACHMX_FREE_6.0B1免费版",
+      "source_refs": [
+        {
+          "url": "https://games.sina.com.cn/z/sta/2003-06-18/13365.shtml",
+          "display_date": "2003-06-18 15:32",
+          "initial_html_sha256": "0b7827b74b927e00e44a05dd994020b5bfb53e733889c92d02f4256e095b3643",
+          "table_sha256": "e694a2f01c89a2f6ff3a6c54060a27833ca6d46e42a53e38b323364065eebce6"
+        }
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME_VERIFIED",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "implemented_in_rebuild": false,
+      "adoption_decided": false,
+      "record_id": "sachmx2003:free:automatic_login",
+      "entity_type": "helper_capability",
+      "collection": "helper_capabilities",
+      "program_ref": "sachmx2003:free:program",
+      "category": "automatic_login",
+      "source_category": "explicit_assistance_categories",
+      "first_introduction_proven": false,
+      "complete_behavior_or_syntax_recovered": false
+    },
+    {
+      "version_profile": "CN_MEDIA_2003_SACHMX_FREE_6.0B1免费版",
+      "source_refs": [
+        {
+          "url": "https://games.sina.com.cn/z/sta/2003-06-18/13365.shtml",
+          "display_date": "2003-06-18 15:32",
+          "initial_html_sha256": "0b7827b74b927e00e44a05dd994020b5bfb53e733889c92d02f4256e095b3643",
+          "table_sha256": "e694a2f01c89a2f6ff3a6c54060a27833ca6d46e42a53e38b323364065eebce6"
+        }
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME_VERIFIED",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "implemented_in_rebuild": false,
+      "adoption_decided": false,
+      "record_id": "sachmx2003:free:task_scripts",
+      "entity_type": "helper_capability",
+      "collection": "helper_capabilities",
+      "program_ref": "sachmx2003:free:program",
+      "category": "task_scripts",
+      "source_category": "explicit_assistance_categories",
+      "first_introduction_proven": false,
+      "complete_behavior_or_syntax_recovered": false
+    },
+    {
+      "version_profile": "CN_MEDIA_2003_SACHMX_FREE_6.0B1免费版",
+      "source_refs": [
+        {
+          "url": "https://games.sina.com.cn/z/sta/2003-06-18/13365.shtml",
+          "display_date": "2003-06-18 15:32",
+          "initial_html_sha256": "0b7827b74b927e00e44a05dd994020b5bfb53e733889c92d02f4256e095b3643",
+          "table_sha256": "e694a2f01c89a2f6ff3a6c54060a27833ca6d46e42a53e38b323364065eebce6"
+        }
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME_VERIFIED",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "implemented_in_rebuild": false,
+      "adoption_decided": false,
+      "record_id": "sachmx2003:free:task_secret_text",
+      "entity_type": "helper_capability",
+      "collection": "helper_capabilities",
+      "program_ref": "sachmx2003:free:program",
+      "category": "task_secret_text",
+      "source_category": "explicit_assistance_categories",
+      "first_introduction_proven": false,
+      "complete_behavior_or_syntax_recovered": false
+    },
+    {
+      "version_profile": "CN_MEDIA_2003_SACHMX_FREE_6.0B1免费版",
+      "source_refs": [
+        {
+          "url": "https://games.sina.com.cn/z/sta/2003-06-18/13365.shtml",
+          "display_date": "2003-06-18 15:32",
+          "initial_html_sha256": "0b7827b74b927e00e44a05dd994020b5bfb53e733889c92d02f4256e095b3643",
+          "table_sha256": "e694a2f01c89a2f6ff3a6c54060a27833ca6d46e42a53e38b323364065eebce6"
+        }
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME_VERIFIED",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "implemented_in_rebuild": false,
+      "adoption_decided": false,
+      "record_id": "sachmx2003:free:information_display",
+      "entity_type": "helper_capability",
+      "collection": "helper_capabilities",
+      "program_ref": "sachmx2003:free:program",
+      "category": "information_display",
+      "source_category": "explicit_assistance_categories",
+      "first_introduction_proven": false,
+      "complete_behavior_or_syntax_recovered": false
+    },
+    {
+      "version_profile": "CN_MEDIA_2003_SACHMX_FREE_6.0B1免费版",
+      "source_refs": [
+        {
+          "url": "https://games.sina.com.cn/z/sta/2003-06-18/13365.shtml",
+          "display_date": "2003-06-18 15:32",
+          "initial_html_sha256": "0b7827b74b927e00e44a05dd994020b5bfb53e733889c92d02f4256e095b3643",
+          "table_sha256": "e694a2f01c89a2f6ff3a6c54060a27833ca6d46e42a53e38b323364065eebce6"
+        },
+        {
+          "url": "https://image2.sina.com.cn/gm/ads/sachmx6.00freeb1.JPG",
+          "sha256": "fb8553aced4123aa1e1cbbeed5f18af182ca1b1c0c0f419376e5768287a3547b",
+          "evidence_role": "CURRENT_LINKED_FULL_IMAGE_STATIC_PIXELS"
+        }
+      ],
+      "verification_status": "SOURCE_REPORTED_NOT_RUNTIME_VERIFIED",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "implemented_in_rebuild": false,
+      "adoption_decided": false,
+      "record_id": "sachmx2003:free:screen",
+      "entity_type": "screen",
+      "collection": "screens",
+      "pixel_identity_sha256": "fb8553aced4123aa1e1cbbeed5f18af182ca1b1c0c0f419376e5768287a3547b",
+      "observations": {
+        "title_bar": "SACH-MX 6.00 Free B1",
+        "visible_families": [
+          "MAP_SECRET_SCRIPT_NAVIGATION",
+          "TASK_TREE",
+          "BATTLE_SETTINGS_TABS",
+          "PLAYER_PET_RIDING_THRESHOLDS",
+          "STOP_CONDITION_CONTROLS",
+          "INFORMATION_TREE"
+        ],
+        "checkbox_or_sample_value_is_default_or_rule": false,
+        "editorial_black_redaction_bars_visible": false
+      },
+      "click_or_success_trace_recovered": false
+    }
+  ],
+  "visual_observations": {
+    "member": {
+      "title_bar": "SACH-MX 5.00 B9",
+      "visible_families": [
+        "CLIENT_AND_SERVER_SELECTORS",
+        "LOGIN_CONTROLS",
+        "ENCOUNTER_SETTINGS",
+        "BATTLE_CONTROLS",
+        "INFORMATION_TREE",
+        "PLAYER_AND_FIVE_PET_STAT_COLUMNS"
+      ],
+      "client_selector_text": "石器时代1.82",
+      "selector_proves_compatibility": false,
+      "player_values_zero_and_status_login": true,
+      "editorial_black_redaction_bars_visible": true
+    },
+    "free": {
+      "title_bar": "SACH-MX 6.00 Free B1",
+      "visible_families": [
+        "MAP_SECRET_SCRIPT_NAVIGATION",
+        "TASK_TREE",
+        "BATTLE_SETTINGS_TABS",
+        "PLAYER_PET_RIDING_THRESHOLDS",
+        "STOP_CONDITION_CONTROLS",
+        "INFORMATION_TREE"
+      ],
+      "checkbox_or_sample_value_is_default_or_rule": false,
+      "editorial_black_redaction_bars_visible": false
+    },
+    "both": {
+      "static_pixels_not_interaction_trace": true,
+      "capture_time_and_software_build_authenticated": false,
+      "image_dimensions_are_not_game_native_resolution": true,
+      "ui_control_presence_is_not_feature_execution": true
+    }
+  },
+  "boundaries": {
+    "developer_release_or_author_identity_authenticated": false,
+    "current_html_authenticated_as_2003_original_bytes": false,
+    "software_release_dates_proven": false,
+    "exact_official_client_build_compatibility_proven": false,
+    "helper_server_or_original_game_server_recovered": false,
+    "software_or_scripts_executed": false,
+    "successful_login_battle_or_delivery_proven": false,
+    "benchmarked_speed_or_login_reliability": false,
+    "free_omissions_prove_feature_absence": false,
+    "later_edition_inherits_all_earlier_features": false,
+    "complete_helper_genealogy_or_features_recovered": false,
+    "new_game_adoption_decided": false,
+    "original_html_images_or_binaries_in_git": false,
+    "public_asset_reuse_approved": false,
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b_and_wiki": "GATED",
+    "savedata_r79": "PAUSED_NON_BLOCKING",
+    "overall_completion_percentage": null
+  }
+}

@@ -18023,3 +18023,14 @@ R98新浪S2实际HTML的第一插图表仍含原href与独立缩略图src；本�
 交付SOURCE、LOCAL-REPLAY、中文规格、表格/图链/完整解码重放器、12项反例与专用CI。22研究记录＝2工具版本+18功能见证+2静态screen，七必填/19集合、来源分版、game_ids null、未实现/未采用/非发行授权。12新项及20旧工具关联测试本地32项通过；真实另次网络五输入SHA均等初取，独立regex/entity两表10行和图链均等DOM。初JPEG n_frames属性探查失败已用真实单帧回退纠正；中性“不限等”解释在本地复核收紧，未虚报远端成功。候选/main/工件需按后验，旧历史完整追加。
 
 最高NEXT `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-104` 转具名官方宠物图像的分版页面→原图绑定，不连续扩外挂调查；原网页号/图名非原游戏ID、跨时代/同构建未知保持。开发者版史有可认证具名来源再开。Stage A7 PARTIAL+2 OPEN、B/wiki GATED、savedataR79暂停、总体百分比null。
+
+
+### R103 双端真实源重放、ZIP与永久保管 — 2026-10-24（Asia/Shanghai）
+
+内容commit `1cf5565d0a6e4a6e056204ac6f1c1fa65ec2f98a` / tree `27bc8b87266d610b240ff11027ef599b9e711b91`，候选12/main13共25不同Actions全completed/success。专用candidate run40040524038/job120710256949、main run40040573381/job120710421665各实际12项单元+三HTML/双全JPEG真实重取、表格图链与完整图像解码成功，五实际输入SHA/bytes均等初取；日志分别核实，不能用仅单元通过代替源获取。fresh main未动后expected_sha非force快进；compare ahead1/behind0、11文件0删行，五份历史旧/新远端Git blob全文双读均保留完整旧前缀，新tree与本地相同。
+
+工件下载初审失败保留：connector下载返回755B/718B工件元数据JSON，非API登记3593B ZIP，摘要断言拒绝；connector fetch ZIP不支持，直接未认证GitHub ZIP路径403。改公开nightly.link精确run下载，重定向Actions blob取得真ZIP，逐份长度/摘要完全等GitHub API：candidate artifact12539042258 / ZIP3593B / SHA256 `f34e1c3a4992ba2f863351f21c0212849d1d1907071e9895127732b4c82f2dc8`；main artifact12538274334 / ZIP3593B / `ac4c7d8d92bb819113f8f9ac965b6c3e7e5e08f59e0beb5766c6a2b636cd64f4`。唯一成员r103-replay.json双原样31130B/SHA256 `16724e6408436d42e7ac34b827e0573a02c7fe100c701aeef0b1c3ec327c088e` / Git blob `a4ac252bb8901077a3cf34b84eb2460d5dc376f0`，双端与LOCAL逐字节相等；元数据JSON不冒充工件。
+
+永久新增CI-CANDIDATE/CI-MAIN原样派生、CUSTODY与独立保管器/CI；13个证据pin固定SOURCE/LOCAL/双CI/工具/测试/规格/workflow/五父的bytes/SHA256/Git blob，25实际run、精确HEAD/tree/分支、双job/artifact/ZIP、五历史前缀均保留。整份收据SHA锁拒绝等长改报、重算pin、错commit/artifact/ZIP/路线、虚报相等或执行；新12+保管4项本地16通过，连此前关联20项本轮36不同测试通过。最终保管提交自身候选/main须实际后验，不套用旧内容25门。临时原HTML/JPEG及其文本/输入副本12份逐项验哈希后删除；文本副本初因read_text归一CRLF被拒，改按原UTF8字节解码保留换行再回编码核等，未跳过哈希。原图/程序/脚本未入Git。
+
+实质新增为SACH-MX两明确版别的18次有限功能见证与2张真实静态界面，非软件可运行恢复、开发者发布链、全集或新作内挂采用。最高NEXT `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-104` 转具名官方宠物分版页面→全图来源，不连续外挂调查；Stage A7 PARTIAL+2 OPEN、B/wiki GATED、savedataR79暂停、总体百分比null。
