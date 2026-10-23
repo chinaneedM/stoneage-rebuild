@@ -1,0 +1,245 @@
+{
+  "schema": "stoneage.cn2003_goya_pig_letter_npc_guide.r1",
+  "task": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-91",
+  "source": {
+    "id": "R91-S1",
+    "url": "https://games.sina.com.cn/zhqu/sta/article/2003-05-29/9803.shtml",
+    "page_title": "《石器时代》任务功略-哥亚山小猪传情任务",
+    "displayed_publication": "2003-05-29 16:24",
+    "publisher": "新浪游戏",
+    "submit_marker": "网友投稿",
+    "named_author": null,
+    "source_kind": "contemporary_player_guide_on_portal",
+    "raw_html_bytes": null,
+    "raw_html_sha256": null,
+    "original_page_bytes_authenticated": false,
+    "game_build": null
+  },
+  "prior_corroboration": {
+    "document": "docs/specs/STONEAGE-CN2001-2003-SHELL-QUEST-SOURCE-R1.md",
+    "relevant": "2001年五种贝壳途径的作者枚举之一包括哥亚山／卡鲁它村商人和换宠",
+    "same_game_runtime_verified": false,
+    "independent_source_exact_dialogue_verified": false
+  },
+  "scope": "CN_GUIDE_2003_VERSION_UNRESOLVED_NOT_JSS1999_NOT_TW10",
+  "evidence_type": "FACT_OF_GUIDE_TEXT_NOT_EXECUTED_GAME_SCRIPT",
+  "coordinate_frames": {
+    "cave_world_entry_intro": [
+      99,
+      425
+    ],
+    "cave_world_entry_footer": [
+      98,
+      426
+    ],
+    "village_world_entrances": [
+      [
+        303,
+        599
+      ],
+      [
+        301,
+        640
+      ]
+    ],
+    "village_local_trader": [
+      70,
+      97
+    ],
+    "entry_coordinates_equivalent_proven": false,
+    "all_local_coords_are_game_entity_ids": false
+  },
+  "suggested_level_not_gate": 20,
+  "transport_alternatives": [
+    "步行",
+    "骑宠"
+  ],
+  "interaction_flow": [
+    {
+      "id": "N1",
+      "actor": "年轻人",
+      "place": "哥亚山洞窟1楼",
+      "coord": [
+        12,
+        14
+      ],
+      "action": "要求不可思议的贝壳以研究宠物语言",
+      "in": [],
+      "out": [
+        "贝壳获取线索"
+      ],
+      "next": [
+        "N2"
+      ],
+      "dialogue_verbatim": false
+    },
+    {
+      "id": "N2",
+      "actor": "玛丽娜丝商人",
+      "place": "卡鲁它那村",
+      "coord": [
+        70,
+        97
+      ],
+      "action": "据指南给玩家两枚不可思议的贝壳",
+      "in": [
+        "贝壳获取线索"
+      ],
+      "out": [
+        "不可思议的贝壳×2（指南叙述）"
+      ],
+      "next": [
+        "N3"
+      ],
+      "dialogue_verbatim": false
+    },
+    {
+      "id": "N3",
+      "actor": "年轻人",
+      "place": "哥亚山洞窟1楼",
+      "coord": [
+        12,
+        14
+      ],
+      "action": "玩家拿一个贝壳交涉；指南称赠送一只宠物",
+      "in": [
+        "不可思议的贝壳"
+      ],
+      "out": [
+        "宠物：特洛昆 或 呼拔拔（非保证两只）"
+      ],
+      "next": [
+        "N4"
+      ],
+      "dialogue_verbatim": false
+    },
+    {
+      "id": "N4",
+      "actor": "乌力斯凯",
+      "place": "哥亚山洞窟1楼",
+      "coord": [
+        14,
+        11
+      ],
+      "action": "叙述想向乌力美送信与花；交给玩家乌力斯凯的信",
+      "in": [
+        "与猪交流所用贝壳（持有要求未验证）"
+      ],
+      "out": [
+        "乌力斯凯的信"
+      ],
+      "next": [
+        "N5"
+      ],
+      "dialogue_verbatim": false
+    },
+    {
+      "id": "N5",
+      "actor": "乌力花店",
+      "place": "哥亚山洞窟4楼",
+      "coord": [
+        44,
+        14
+      ],
+      "action": "店长据指南赠送月光花，未报告付费交易",
+      "in": [],
+      "out": [
+        "月光花"
+      ],
+      "next": [
+        "N6"
+      ],
+      "dialogue_verbatim": false
+    },
+    {
+      "id": "N6",
+      "actor": "乌力美",
+      "place": "哥亚山洞窟山顶",
+      "coord": [
+        35,
+        34
+      ],
+      "action": "首次交信与花；再次对话领取乌力美的回信",
+      "in": [
+        "乌力斯凯的信",
+        "月光花"
+      ],
+      "out": [
+        "乌力美的信"
+      ],
+      "next": [
+        "N7"
+      ],
+      "dialogue_verbatim": false,
+      "talk_count_in_guide": 2
+    },
+    {
+      "id": "N7",
+      "actor": "乌力斯凯",
+      "place": "哥亚山洞窟1楼",
+      "coord": [
+        14,
+        11
+      ],
+      "action": "送还乌力美的回信后据指南取得红玉的手环",
+      "in": [
+        "乌力美的信"
+      ],
+      "out": [
+        "红玉的手环"
+      ],
+      "next": [],
+      "dialogue_verbatim": false
+    }
+  ],
+  "guide_rewards": {
+    "pet_alternatives": [
+      "特洛昆",
+      "呼拔拔"
+    ],
+    "pet_draw_probability": null,
+    "bracelet": {
+      "name": "红玉的手环",
+      "attack": 2,
+      "defense": 2,
+      "agility": -2,
+      "charm": 1
+    },
+    "gifted_shell_count_in_narrative": 2,
+    "shell_final_inventory_count_verified": false,
+    "original_item_ids": null,
+    "original_pet_ids": null
+  },
+  "historical_worldline_reference": "乌力斯凯→乌力美的送信与回信；不是已证原服剧情脚本",
+  "unknowns": [
+    "NPC原始ID与确切地图编号",
+    "任一对话逐字台词/实际弹窗样式与分支",
+    "交付物品是否消费及服务器事务",
+    "两贝壳与任务状态持久性",
+    "宠物奖励随机规则/概率/独立分支",
+    "攻略页面显示日期与确切上线版本关联",
+    "2003年原网页字节及图片/游戏UI实像"
+  ],
+  "execution": {
+    "original_client_executed": false,
+    "original_server_executed": false,
+    "actual_network_capture": false,
+    "dialogue_ui_screenshot_verified": false,
+    "external_http_raw_replayed": false,
+    "guide_derived_only": true
+  },
+  "acceptance": {
+    "domain": [
+      "npc_identity",
+      "npc_dialog_ui",
+      "quest_content",
+      "pet_species",
+      "item_equipment_economy"
+    ],
+    "historical_status_promoted": false,
+    "stage_a_closed": false,
+    "stage_b_started": false,
+    "overall_restoration_percentage": null,
+    "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-92"
+  }
+}

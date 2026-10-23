@@ -1,0 +1,27 @@
+name: Verify R91 CN2003 Goya NPC letter quest boundaries
+on:
+  push:
+    paths:
+      - 'tools/stoneage_cn2003_goya_pig_npc_flow_source.py'
+      - 'tests/test_stoneage_cn2003_goya_pig_npc_flow_source.py'
+      - 'research/recovered/STONEAGE-CN2003-GOYA-PIG-LETTER-NPC-FLOW-SOURCE-R1.json'
+      - '.github/workflows/verify-stoneage-cn2003-goya-pig-npc-flow.yml'
+  pull_request:
+    paths:
+      - 'tools/stoneage_cn2003_goya_pig_npc_flow_source.py'
+      - 'tests/test_stoneage_cn2003_goya_pig_npc_flow_source.py'
+      - 'research/recovered/STONEAGE-CN2003-GOYA-PIG-LETTER-NPC-FLOW-SOURCE-R1.json'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify-bounded-guide:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest tests.test_stoneage_cn2003_goya_pig_npc_flow_source -v
+      - run: python -m tools.stoneage_cn2003_goya_pig_npc_flow_source
