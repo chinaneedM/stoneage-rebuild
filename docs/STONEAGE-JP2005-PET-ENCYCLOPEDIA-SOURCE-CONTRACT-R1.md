@@ -18,3 +18,18 @@ FACT：按新读远端main `cf52a0a35ea7d4f13e24b1ff17abfefd4ebb16a0`／tree `2d
 5条目录记录：两阶段教程＋登记规则教程＋计划GM展示教程＋未具名插图，7必填／19合法集合、game_ids空／非发行授权。三父报告及共享解析器固定原bytes／SHA256／Git blob。独立regex/entity正文逐字一致，19项真实HTML语义改写排除全部指纹门、2项隐藏／正文外反例及外围script正例通过；初始本包7tests及关联回归、源回放通过。止点一报道一实际小图，重开需原操作视频／同build脚本或具名图像／数值绑定，不靠更多匿名宣传图扩张。
 
 NEXT：候选10/main11实际成功后永久保存双端原样派生JSON与准确run/job/artifact/ZIP/raw/blob收据，强制保管链校验并再验收。最高后续 OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-88 优先早期具名人物/NPC对话或具名宠物属性的原始证据，不连扩匿名插图或奖励宣传。阶段A仍7PARTIAL＋2OPEN，B/wiki GATED，savedataR79 PAUSED_NON_BLOCKING；无整体完成百分比。
+
+
+### R87 内容双端实际验收与永久派生保管 — 2026-10-23
+
+内容提交 `7c734e08fc53540045063816409484c8133732df`／tree `8cc44097da5c022ef12e488ec72156411b1b7e7f`，候选10/main11共21个实际Actions全部completed/success，专用日志初始各7tests成功。
+
+candidate: run39935988520／job120355531891／artifact12494111171，ZIP2720 bytes `sha256:0179f8b274a1003612b70f36cab4355ecd3fb257c7d731fcdf8642c8ed8169a4`；原样JSON10170 bytes SHA256 `c1f6ba1456c16a9cd5479deb43456d00e14f03e10c2f352eb13451ea32fdaaa5`，Git blob `b0142336c98750fc831b753179c7a23e5e3d56e1`。
+
+main: run39936177726／job120356148265／artifact12493847454，ZIP2720 bytes `sha256:d65293c7d90e418f886c28c56698424e73bbc5d4d89c3c1fb8ec65f8f5c3815d`；原样JSON10170 bytes SHA256 `c1f6ba1456c16a9cd5479deb43456d00e14f03e10c2f352eb13451ea32fdaaa5`，Git blob `b0142336c98750fc831b753179c7a23e5e3d56e1`。
+
+双ZIP已实际下载核GitHub长度与digest，唯一成员replay.json；候选/main/初始local的原样JSON与两个实际输入bytes/SHA256一致。双原CI派生JSON及CUSTODY永久入Git，原HTML/JPEG不入Git；7份证据pin固定SOURCE、三父、解析器和双原报告bytes/SHA256/Git blob。收据与代码常量锁定完整七pin清单摘要，反例同时改证据与重算receipt pin仍拒绝；收据锁定21真实run清单摘要、准确双run/job/artifact及ZIP摘要；CLI强制保管，拒绝缺失/等长篡改、run/job/artifact替换、遗漏/重复/复用工件、虚报原输入相等及历史/本服权威抬高。第8项专测还拒绝插图指认物种、图鉴实际交互已测、名字登记等于获得宠物。保管候选及main自身仍须实际后验；原内容CI7tests历史不改称8tests。
+
+交付为文献中的画面显示→名字登记与两次更新范围；没有运行原服/完整图鉴数据/宠物原属性或UI画面。最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-88优先早期具名人物/NPC对话或具名宠物属性，避免连续匿名插图/奖励宣传。Stage A7PARTIAL+2OPEN，B/wiki GATED，savedataR79 PAUSED_NON_BLOCKING。
+
+R87保管门本包8项／关联24项本地测试成功；CLI原输入回放与初始输出逐字节不变。完整七pin身份摘要另固定在代码常量中，连同篡改证据后重算收据pin的反例一起通过。

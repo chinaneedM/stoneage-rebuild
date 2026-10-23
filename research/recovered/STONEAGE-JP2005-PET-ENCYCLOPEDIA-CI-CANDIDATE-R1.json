@@ -1,0 +1,280 @@
+{
+  "schema": "stoneage.jp2005_pet_encyclopedia.replay.r1",
+  "inputs": [
+    {
+      "id": "S1",
+      "url": "https://www.4gamer.net/news/history/2005.07/20050705162235detail.html",
+      "bytes": 17834,
+      "sha256": "983b11f84dd9c492c4b868bc96921fecbbb582e87a6243c322c9f8ad684f06b9"
+    },
+    {
+      "id": "I1",
+      "url": "https://www.4gamer.net/news/image/2005.07/20050705162235_0.jpg",
+      "bytes": 3371,
+      "sha256": "81a547ca33684426e6c9b42fcace9850e543955b379d49487d2da6d276383394"
+    }
+  ],
+  "extraction": {
+    "rollout": {
+      "year_context": 2005,
+      "maintenance_relation": "AFTER_REGULAR_MAINTENANCE_ON_EACH_DATE",
+      "stages": [
+        {
+          "date_month_day": "07-05",
+          "scope": [
+            "NEW_PET_GRAPHICS",
+            "SAME_KIND_FIELD_MONSTER_GRAPHICS",
+            "PET_ENCYCLOPEDIA_EXPANSION"
+          ],
+          "new_creatures_live_in_world_on_this_stage": false
+        },
+        {
+          "date_month_day": "07-12",
+          "scope": [
+            "PREVIOUSLY_UNAPPEARING_LEVEL_ONE_FIELD_DINOSAURS",
+            "SOME_DINOSAUR_PLACEMENTS_CHANGED",
+            "ACTUAL_NEW_CREATURE_APPEARANCE_AFTER_PATCH"
+          ],
+          "reported_new_field_level": 1,
+          "specific_names_counts_locations_coordinates_and_spawn_rates": null
+        }
+      ],
+      "patch_distribution_and_world_activation_are_distinct": true,
+      "actual_deployment_verified": false,
+      "exact_patch_files_build_or_maintenance_times": null
+    },
+    "encyclopedia": {
+      "source_label": "ペット図鑑",
+      "reported_scope": "NEW_PETS_DESCRIBED_IN_THIS_UPDATE",
+      "reported_trigger": "NEW_PET_DISPLAYED_ON_SCREEN",
+      "reported_result": "THAT_NEW_PET_NAME_REGISTERED",
+      "capture_or_ownership_required_by_this_sentence": false,
+      "all_possible_conditions_or_exclusions_known": false,
+      "registered_stats_skills_images_or_pet_ownership_proven": false,
+      "applies_to_all_old_pets_or_other_versions": null,
+      "exact_button_layout_input_action_persistence_duplicates_or_storage_format": null,
+      "actual_ui_interaction_verified": false
+    },
+    "gm_showcase": {
+      "planned_date_month_day": "07-12",
+      "approximate_hour": 22,
+      "exact_minute_or_timezone": null,
+      "status_as_reported": "PLANNED",
+      "purpose_as_reported": "SHOW_NEW_PET_DINOSAURS",
+      "guide_advice": "FIND_GM_TO_LEARN_NEW_PET_NAMES",
+      "only_gm_pets_can_register": null,
+      "actual_showcase_execution_verified": false
+    },
+    "new_pet_identity": {
+      "species_names_original_ids_stats_growth_skills_and_sprite_binding": null,
+      "number_of_new_species": null,
+      "one_illustration_proves_one_new_species": false
+    },
+    "image_link": {
+      "actual_path": "/news/image/2005.07/20050705162235_0.jpg",
+      "html_dimensions": [
+        96,
+        104
+      ],
+      "caption_as_written": "",
+      "unlinked_big_image_guessed_or_acquired": false,
+      "named_pet_or_ui_binding": null
+    },
+    "exact_client_build": null,
+    "original_server_runtime_verified": false,
+    "core_fingerprint": {
+      "characters": 420,
+      "utf8_bytes": 1190,
+      "sha256": "968c53f23aacd773fe25cfa3efed467941e5b053bf9fc106f53ba68a544b70f9"
+    }
+  },
+  "images": [
+    {
+      "id": "I1",
+      "url": "https://www.4gamer.net/news/image/2005.07/20050705162235_0.jpg",
+      "http_status": 200,
+      "no_redirect": true,
+      "bytes": 3371,
+      "sha256": "81a547ca33684426e6c9b42fcace9850e543955b379d49487d2da6d276383394",
+      "format": "JPEG",
+      "mode": "RGB",
+      "size": [
+        96,
+        104
+      ],
+      "frames": 1
+    }
+  ],
+  "visual_observations": [
+    {
+      "id": "I1",
+      "manual_visual_review": true,
+      "kind": "SMALL_UNCAPTIONED_CREATURE_ILLUSTRATION_NOT_UI_SCREEN",
+      "visible_shape": "PALE_BLUE_ARMORED_CRABLIKE_CREATURE_ON_BLACK_BACKGROUND",
+      "pet_name_text_visible": false,
+      "encyclopedia_window_visible": false,
+      "native_species_or_original_sprite_assigned": false,
+      "registration_or_capture_interaction_observed": false,
+      "historical_2005_pixels_authenticated": false
+    }
+  ],
+  "comparison": {
+    "cn20_album": {
+      "schema": "stoneage.cn20_operation_ui.source.r1",
+      "described_scope": "OWNED_PETS_CAN_BE_PHOTOGRAPHED",
+      "same_registration_trigger_as_jp2005": false,
+      "cn20_scope_backfilled": false
+    },
+    "jp_official_website_pet_catalog": {
+      "schema": "stoneage.jp.official_pet_catalog.r1",
+      "is_same_as_ingame_encyclopedia": false,
+      "web_names_numbers_bind_this_illustration": false
+    },
+    "stoneage2_pal_book_or_later_fan_du_database_backfilled": false,
+    "modern_adoption_decided": false
+  },
+  "catalog_records": [
+    {
+      "record_id": "JP2005-R87-stage-0",
+      "entity_type": "DOCUMENTARY_PATCH_STAGE",
+      "collection": "tutorials",
+      "version_profile": "JP_PC_2005_GAIAX_PET_ENCYCLOPEDIA_REPORTED_20050705_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "CONTEMPORANEOUS_REPORT_OR_ILLUSTRATION_NOT_UI_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "date_month_day": "07-05",
+        "scope": [
+          "NEW_PET_GRAPHICS",
+          "SAME_KIND_FIELD_MONSTER_GRAPHICS",
+          "PET_ENCYCLOPEDIA_EXPANSION"
+        ],
+        "new_creatures_live_in_world_on_this_stage": false
+      }
+    },
+    {
+      "record_id": "JP2005-R87-stage-1",
+      "entity_type": "DOCUMENTARY_PATCH_STAGE",
+      "collection": "tutorials",
+      "version_profile": "JP_PC_2005_GAIAX_PET_ENCYCLOPEDIA_REPORTED_20050705_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "CONTEMPORANEOUS_REPORT_OR_ILLUSTRATION_NOT_UI_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "date_month_day": "07-12",
+        "scope": [
+          "PREVIOUSLY_UNAPPEARING_LEVEL_ONE_FIELD_DINOSAURS",
+          "SOME_DINOSAUR_PLACEMENTS_CHANGED",
+          "ACTUAL_NEW_CREATURE_APPEARANCE_AFTER_PATCH"
+        ],
+        "reported_new_field_level": 1,
+        "specific_names_counts_locations_coordinates_and_spawn_rates": null
+      }
+    },
+    {
+      "record_id": "JP2005-R87-encyclopedia",
+      "entity_type": "DOCUMENTARY_INGAME_NAME_REGISTRATION_RULE",
+      "collection": "tutorials",
+      "version_profile": "JP_PC_2005_GAIAX_PET_ENCYCLOPEDIA_REPORTED_20050705_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "CONTEMPORANEOUS_REPORT_OR_ILLUSTRATION_NOT_UI_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "source_label": "ペット図鑑",
+        "reported_scope": "NEW_PETS_DESCRIBED_IN_THIS_UPDATE",
+        "reported_trigger": "NEW_PET_DISPLAYED_ON_SCREEN",
+        "reported_result": "THAT_NEW_PET_NAME_REGISTERED",
+        "capture_or_ownership_required_by_this_sentence": false,
+        "all_possible_conditions_or_exclusions_known": false,
+        "registered_stats_skills_images_or_pet_ownership_proven": false,
+        "applies_to_all_old_pets_or_other_versions": null,
+        "exact_button_layout_input_action_persistence_duplicates_or_storage_format": null,
+        "actual_ui_interaction_verified": false
+      }
+    },
+    {
+      "record_id": "JP2005-R87-showcase",
+      "entity_type": "DOCUMENTARY_PLANNED_GM_SHOWCASE",
+      "collection": "tutorials",
+      "version_profile": "JP_PC_2005_GAIAX_PET_ENCYCLOPEDIA_REPORTED_20050705_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "CONTEMPORANEOUS_REPORT_OR_ILLUSTRATION_NOT_UI_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "planned_date_month_day": "07-12",
+        "approximate_hour": 22,
+        "exact_minute_or_timezone": null,
+        "status_as_reported": "PLANNED",
+        "purpose_as_reported": "SHOW_NEW_PET_DINOSAURS",
+        "guide_advice": "FIND_GM_TO_LEARN_NEW_PET_NAMES",
+        "only_gm_pets_can_register": null,
+        "actual_showcase_execution_verified": false
+      }
+    },
+    {
+      "record_id": "JP2005-R87-illustration",
+      "entity_type": "DOCUMENTARY_UNNAMED_CREATURE_ILLUSTRATION",
+      "collection": "screens",
+      "version_profile": "JP_PC_2005_GAIAX_PET_ENCYCLOPEDIA_REPORTED_20050705_EXACT_BUILD_UNKNOWN",
+      "source_refs": [
+        "S1",
+        "I1"
+      ],
+      "verification_status": "CONTEMPORANEOUS_REPORT_OR_ILLUSTRATION_NOT_UI_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "content": {
+        "image": {
+          "id": "I1",
+          "url": "https://www.4gamer.net/news/image/2005.07/20050705162235_0.jpg",
+          "http_status": 200,
+          "no_redirect": true,
+          "bytes": 3371,
+          "sha256": "81a547ca33684426e6c9b42fcace9850e543955b379d49487d2da6d276383394",
+          "format": "JPEG",
+          "mode": "RGB",
+          "size": [
+            96,
+            104
+          ],
+          "frames": 1
+        },
+        "observation": {
+          "id": "I1",
+          "manual_visual_review": true,
+          "kind": "SMALL_UNCAPTIONED_CREATURE_ILLUSTRATION_NOT_UI_SCREEN",
+          "visible_shape": "PALE_BLUE_ARMORED_CRABLIKE_CREATURE_ON_BLACK_BACKGROUND",
+          "pet_name_text_visible": false,
+          "encyclopedia_window_visible": false,
+          "native_species_or_original_sprite_assigned": false,
+          "registration_or_capture_interaction_observed": false,
+          "historical_2005_pixels_authenticated": false
+        }
+      }
+    }
+  ],
+  "audit": {
+    "semantic_mutations_without_all_fingerprints": 19,
+    "hidden_and_outside_article_counterexamples": 2,
+    "outside_script_positive": true
+  },
+  "original_html_or_assets_in_output": false,
+  "original_server_runtime_verified": false
+}

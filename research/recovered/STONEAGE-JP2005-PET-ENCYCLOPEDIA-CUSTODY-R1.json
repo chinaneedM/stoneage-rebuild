@@ -1,0 +1,339 @@
+{
+  "schema": "stoneage.jp2005_pet_encyclopedia.custody.r1",
+  "content_commit": "7c734e08fc53540045063816409484c8133732df",
+  "content_tree": "8cc44097da5c022ef12e488ec72156411b1b7e7f",
+  "candidate_branch": "agent/named-content-r87-pet-encyclopedia-20261023",
+  "server_execution_verified": false,
+  "current_bytes_authenticate_2005_original": false,
+  "actual_operator_update_page_acquired": false,
+  "illustration_identifies_species": false,
+  "actual_encyclopedia_interaction_verified": false,
+  "registered_name_means_ownership": false,
+  "permanent_pins": [
+    {
+      "path": "research/recovered/STONEAGE-JP2005-PET-ENCYCLOPEDIA-SOURCE-R1.json",
+      "bytes": 12687,
+      "sha256": "3b496acef69e42ba1400b1395bc47ee9d1bf694018385ab0570b00a08c706be4",
+      "git_blob": "7c5bead4699810679085e8ec50b9d5520d1c2394"
+    },
+    {
+      "path": "research/recovered/STONEAGE-CN20-OPERATION-UI-SOURCE-R1.json",
+      "bytes": 26293,
+      "sha256": "b4016b89db3cb7b2cea3afc6582d5d2484c93644e8d3c53a429badfdb6bc20c6",
+      "git_blob": "8fa1c44e28eba12fc7fdff7545adeda1a8967a3a"
+    },
+    {
+      "path": "research/recovered/STONEAGE-JP-OFFICIAL-PET-CATALOG-R1.json",
+      "bytes": 182129,
+      "sha256": "edf50ec2fe9915db1904992ee2871def9b719fa05e40619019229be21dca413f",
+      "git_blob": "85e99d6fd6a7ca27eeaa3987510a6bcc1d701708"
+    },
+    {
+      "path": "research/recovered/STONEAGE-PREPRODUCTION-CONTENT-ARCHIVE-R1.json",
+      "bytes": 24489,
+      "sha256": "e87afebc8c9590142c7cc8831b578455b3427bf7c1d10520ae02a3e8082fbddb",
+      "git_blob": "2d5b3f081d5618287f431fbded943722a820c593"
+    },
+    {
+      "path": "tools/stoneage_jp2005_treasure_source.py",
+      "bytes": 20924,
+      "sha256": "d541c0fb832447f203ad0618ea86d0ed39e0a32bdf5c26f509dde6f5ffecba40",
+      "git_blob": "350e9d3769597ea4b47959cf2dbd3edf8d97916f"
+    },
+    {
+      "path": "research/recovered/STONEAGE-JP2005-PET-ENCYCLOPEDIA-CI-CANDIDATE-R1.json",
+      "bytes": 10170,
+      "sha256": "c1f6ba1456c16a9cd5479deb43456d00e14f03e10c2f352eb13451ea32fdaaa5",
+      "git_blob": "b0142336c98750fc831b753179c7a23e5e3d56e1"
+    },
+    {
+      "path": "research/recovered/STONEAGE-JP2005-PET-ENCYCLOPEDIA-CI-MAIN-R1.json",
+      "bytes": 10170,
+      "sha256": "c1f6ba1456c16a9cd5479deb43456d00e14f03e10c2f352eb13451ea32fdaaa5",
+      "git_blob": "b0142336c98750fc831b753179c7a23e5e3d56e1"
+    }
+  ],
+  "initial_inputs": [
+    {
+      "id": "S1",
+      "url": "https://www.4gamer.net/news/history/2005.07/20050705162235detail.html",
+      "bytes": 17834,
+      "sha256": "983b11f84dd9c492c4b868bc96921fecbbb582e87a6243c322c9f8ad684f06b9"
+    },
+    {
+      "id": "I1",
+      "url": "https://www.4gamer.net/news/image/2005.07/20050705162235_0.jpg",
+      "bytes": 3371,
+      "sha256": "81a547ca33684426e6c9b42fcace9850e543955b379d49487d2da6d276383394"
+    }
+  ],
+  "runs": [
+    {
+      "id": 39936177580,
+      "name": "Validate Stage A early source gap triage",
+      "head": "7c734e08fc53540045063816409484c8133732df",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39936177657,
+      "name": "Validate StoneAge Stage A joint review decision",
+      "head": "7c734e08fc53540045063816409484c8133732df",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39936177551,
+      "name": "Validate StoneAge preproduction content archive and wiki boundary",
+      "head": "7c734e08fc53540045063816409484c8133732df",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39936177590,
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "head": "7c734e08fc53540045063816409484c8133732df",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39936177929,
+      "name": "Validate legacy StoneAge assistant history and pet content gaps",
+      "head": "7c734e08fc53540045063816409484c8133732df",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39936177581,
+      "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+      "head": "7c734e08fc53540045063816409484c8133732df",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39936177603,
+      "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+      "head": "7c734e08fc53540045063816409484c8133732df",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39936177645,
+      "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+      "head": "7c734e08fc53540045063816409484c8133732df",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39936177726,
+      "name": "Verify JP2005 pet encyclopedia registration and staged rollout",
+      "head": "7c734e08fc53540045063816409484c8133732df",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39936177692,
+      "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+      "head": "7c734e08fc53540045063816409484c8133732df",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39936177708,
+      "name": "Independently verify TW1.0 R58 rooted helper returns and source custody",
+      "head": "7c734e08fc53540045063816409484c8133732df",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39935988372,
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "head": "7c734e08fc53540045063816409484c8133732df",
+      "branch": "agent/named-content-r87-pet-encyclopedia-20261023",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39935988366,
+      "name": "Validate legacy StoneAge assistant history and pet content gaps",
+      "head": "7c734e08fc53540045063816409484c8133732df",
+      "branch": "agent/named-content-r87-pet-encyclopedia-20261023",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39935988360,
+      "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+      "head": "7c734e08fc53540045063816409484c8133732df",
+      "branch": "agent/named-content-r87-pet-encyclopedia-20261023",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39935988374,
+      "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+      "head": "7c734e08fc53540045063816409484c8133732df",
+      "branch": "agent/named-content-r87-pet-encyclopedia-20261023",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39935988373,
+      "name": "Validate StoneAge preproduction content archive and wiki boundary",
+      "head": "7c734e08fc53540045063816409484c8133732df",
+      "branch": "agent/named-content-r87-pet-encyclopedia-20261023",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39935988436,
+      "name": "Validate Stage A early source gap triage",
+      "head": "7c734e08fc53540045063816409484c8133732df",
+      "branch": "agent/named-content-r87-pet-encyclopedia-20261023",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39935988375,
+      "name": "Validate StoneAge Stage A joint review decision",
+      "head": "7c734e08fc53540045063816409484c8133732df",
+      "branch": "agent/named-content-r87-pet-encyclopedia-20261023",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39935988417,
+      "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+      "head": "7c734e08fc53540045063816409484c8133732df",
+      "branch": "agent/named-content-r87-pet-encyclopedia-20261023",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39935988370,
+      "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+      "head": "7c734e08fc53540045063816409484c8133732df",
+      "branch": "agent/named-content-r87-pet-encyclopedia-20261023",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39935988520,
+      "name": "Verify JP2005 pet encyclopedia registration and staged rollout",
+      "head": "7c734e08fc53540045063816409484c8133732df",
+      "branch": "agent/named-content-r87-pet-encyclopedia-20261023",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "jobs_and_artifacts": {
+    "candidate": {
+      "run": 39935988520,
+      "job": 120355531891,
+      "job_name": "bounded-source-replay",
+      "job_conclusion": "success",
+      "artifact": {
+        "id": 12494111171,
+        "name": "jp2005-pet-encyclopedia-derived-r87",
+        "size_in_bytes": 2720,
+        "url": "https://api.github.com/repos/chinaneedM/stoneage-rebuild/actions/artifacts/12494111171",
+        "archive_download_url": "https://api.github.com/repos/chinaneedM/stoneage-rebuild/actions/artifacts/12494111171/zip",
+        "expired": false,
+        "created_at": "2026-10-23T10:00:44Z",
+        "expires_at": "2026-11-22T10:00:44Z",
+        "updated_at": "2026-10-23T10:00:44Z",
+        "digest": "sha256:0179f8b274a1003612b70f36cab4355ecd3fb257c7d731fcdf8642c8ed8169a4",
+        "workflow_run": {
+          "id": 39935988520,
+          "repository_id": 1374762421,
+          "head_repository_id": 1374762421,
+          "head_branch": "agent/named-content-r87-pet-encyclopedia-20261023",
+          "head_sha": "7c734e08fc53540045063816409484c8133732df"
+        }
+      },
+      "zip_downloaded_and_digest_verified": true
+    },
+    "main": {
+      "run": 39936177726,
+      "job": 120356148265,
+      "job_name": "bounded-source-replay",
+      "job_conclusion": "success",
+      "artifact": {
+        "id": 12493847454,
+        "name": "jp2005-pet-encyclopedia-derived-r87",
+        "size_in_bytes": 2720,
+        "url": "https://api.github.com/repos/chinaneedM/stoneage-rebuild/actions/artifacts/12493847454",
+        "archive_download_url": "https://api.github.com/repos/chinaneedM/stoneage-rebuild/actions/artifacts/12493847454/zip",
+        "expired": false,
+        "created_at": "2026-10-23T10:03:16Z",
+        "expires_at": "2026-11-22T10:03:16Z",
+        "updated_at": "2026-10-23T10:03:16Z",
+        "digest": "sha256:d65293c7d90e418f886c28c56698424e73bbc5d4d89c3c1fb8ec65f8f5c3815d",
+        "workflow_run": {
+          "id": 39936177726,
+          "repository_id": 1374762421,
+          "head_repository_id": 1374762421,
+          "head_branch": "main",
+          "head_sha": "7c734e08fc53540045063816409484c8133732df"
+        }
+      },
+      "zip_downloaded_and_digest_verified": true
+    }
+  },
+  "raw_replays": {
+    "candidate": {
+      "path": "research/recovered/STONEAGE-JP2005-PET-ENCYCLOPEDIA-CI-CANDIDATE-R1.json",
+      "bytes": 10170,
+      "sha256": "c1f6ba1456c16a9cd5479deb43456d00e14f03e10c2f352eb13451ea32fdaaa5",
+      "git_blob": "b0142336c98750fc831b753179c7a23e5e3d56e1",
+      "inputs": [
+        {
+          "id": "S1",
+          "url": "https://www.4gamer.net/news/history/2005.07/20050705162235detail.html",
+          "bytes": 17834,
+          "sha256": "983b11f84dd9c492c4b868bc96921fecbbb582e87a6243c322c9f8ad684f06b9"
+        },
+        {
+          "id": "I1",
+          "url": "https://www.4gamer.net/news/image/2005.07/20050705162235_0.jpg",
+          "bytes": 3371,
+          "sha256": "81a547ca33684426e6c9b42fcace9850e543955b379d49487d2da6d276383394"
+        }
+      ],
+      "equals_initial_inputs": true
+    },
+    "main": {
+      "path": "research/recovered/STONEAGE-JP2005-PET-ENCYCLOPEDIA-CI-MAIN-R1.json",
+      "bytes": 10170,
+      "sha256": "c1f6ba1456c16a9cd5479deb43456d00e14f03e10c2f352eb13451ea32fdaaa5",
+      "git_blob": "b0142336c98750fc831b753179c7a23e5e3d56e1",
+      "inputs": [
+        {
+          "id": "S1",
+          "url": "https://www.4gamer.net/news/history/2005.07/20050705162235detail.html",
+          "bytes": 17834,
+          "sha256": "983b11f84dd9c492c4b868bc96921fecbbb582e87a6243c322c9f8ad684f06b9"
+        },
+        {
+          "id": "I1",
+          "url": "https://www.4gamer.net/news/image/2005.07/20050705162235_0.jpg",
+          "bytes": 3371,
+          "sha256": "81a547ca33684426e6c9b42fcace9850e543955b379d49487d2da6d276383394"
+        }
+      ],
+      "equals_initial_inputs": true
+    }
+  },
+  "candidate_main_raw_bytes_equal": true
+}
