@@ -40,3 +40,14 @@ S2保留13条带方向的层间/出口坐标（见SOURCE），不自动补反向
 18文献目录=1任务+6故事NPC出现+3守卫出现+1固定战斗组+1地图关系+4物品流+2屏幕，非18原实体。逐行满足档案七必填/19集合；原ID null。三父报告与共享解析器固定原字节/Git blob。34次真实源语义改写去全部指纹门，隐藏/正文外2反例、地图行外1反例及两外围script正例；七单元，候选/main实际取源和永久保管在验收段记录。
 
 下一最高NEXT84转另一地区早期具名宠物/生态，或具备同版真实调用实参的音效资料；避免连续大陆洞窟任务/底层helper扩张。Stage A7 PARTIAL+2 OPEN，Stage B/wiki GATED，无整体完成百分比。
+
+
+### R83双端实源验收与永久派生保管（2026-10-23）
+
+内容64553597373015c99b90c1d2953b31230d3e835b/treec82760bc9c68e592b6099568198bfe9196a69d2d，候选10/main11实际completed/success。九文件原生Git blob及整tree逐一一致，四连续性旧全文前缀完整；新读main旧HEAD后expected_sha非强制快进。专用候选run39902606043/job120247332480/artifact12479626746，主线run39902723105/job120247695519/artifact12479800876，实际日志各七单元、两HTTP正文/两全JPEG实取解码、34去全部指纹门语义改写、隐藏/正文外2+地图行外1反例及两外围script正例通过。
+
+两ZIP各6599B，SHA2563ddcef8c9ca7d5d3b5240a3169f3355e50692af8714c98dc2bc0c5e33561e634 / 1e3812f798ab2f32549a95287ea520b77f56cd935bb48c77b3f9b49d94da51bc分别符合API。唯一replay.json各43717B/SHA25693907315f3d9a34af6899f1a240fc379861486f1c098c09b6fa22d12747a83d8，候选/main/local/保管门后local四份逐字节相等，四实际HTTP输入摘要均同初取；这不认证2003原文/原像素、同build或两独立作者。
+
+双原CI JSON与STONEAGE-CN2003-QIANG-EN-FAMILY-CUSTODY-R1.json永久入Git。七pin固定SOURCE、三父报告、共享解析器和双原报告原字节/SHA256/Git blob。收据保存21真实run、准确双run/job/artifact、ZIP与raw/input初取历史。CLI强制保管，固定完整run清单摘要、实际run/job/artifact和ZIP长度/摘要，拒绝缺失/同长篡改、错HEAD/tree/分支/任务/ID、门遗漏重复或成功门替换、工件复用、虚报输入相等及抬高历史/官方/原服权威。新增第8保管单元，本包8/相关22本地通过，原输出字节不变；内容CI原七单元历史不改称八单元。保管提交自身候选/main另实后验。
+
+本轮交付18条可查询文献记录和家庭选择/口令/可选文件/道具流/分域生态规格；原任务引擎、flag、ID、原模型及实服发奖仍OPEN。保持沙拉自主留下、母亲已亡、羽饰非保证、木笛缩写、两地名/母名异写、三层口令关联、方向坐标与两页敌Lv范围，S1七层截图不当总七楼。下一最高NEXT84转另一地区早期具名宠物/生态或同版实参音效，不连扩本洞窟helper；Stage A7 PARTIAL+2 OPEN，B/wiki GATED，savedataR79 PAUSED_NON_BLOCKING，旧历史全留。
