@@ -43,5 +43,44 @@ class JP2003RevivalPressTests(unittest.TestCase):
         self.reject(lambda x:x["acceptance"].update(overall_restoration_percentage=100))
         self.reject(lambda x:x.update(original_trade_transaction_count=1))
 
+
+    def test_referenced_r63_evidence_is_not_silently_replaced(self):
+        import hashlib
+        from pathlib import Path
+        path=P.parents[2] / "docs/specs/STONEAGE-JP2003-BATTLE-FIELD-VISUAL-SOURCE-R1.md"
+        raw=path.read_bytes()
+        gitsha=hashlib.sha1(b"blob "+str(len(raw)).encode()+b"\0"+raw).hexdigest()
+        self.assertEqual(gitsha,"63b274f5bc8e1508eb1e8f9dfe2a1e27544ea093")
+        self.assertFalse(self.d["cross_reference"]["trade_window_observable_in_first_two_R63_frames"])
+    def test_published_r95_ci_and_immutable_derived_source_receipt(self):
+        import hashlib
+        from pathlib import Path
+        receipt=P.parents[2] / "research/recovered/STONEAGE-JP2003-REVIVAL-TRADE-MAP-ACCEPTANCE-R95.json"
+        raw=receipt.read_bytes()
+        digest=hashlib.sha1(b"blob "+str(len(raw)).encode()+b"\0"+raw).hexdigest()
+        self.assertEqual(digest,"28d3285fc9c0c47c388b763686d4fb45e77c545c")
+        info=json.loads(raw.decode("utf-8"))
+        self.assertEqual(info["original_source_derived_json"]["git_blob_sha1"],
+                         "c491542dbeb7523169615482bfbfefff728ea9f5")
+        self.assertEqual(info["original_source_derived_json"]["utf8_bytes"], P.stat().st_size)
+        self.assertEqual(info["candidate_dedicated_source_ci"]["run_id"], 39958828076)
+        self.assertEqual(info["candidate_dedicated_source_ci"]["test_methods"], 10)
+        self.assertEqual(info["main_publication_ci"]["dedicated_run_id"], 39959563014)
+        cand=info["candidate_continuity_ci"]["run_ids"]
+        main=info["main_publication_ci"]["run_ids"]
+        self.assertEqual((len(cand),len(set(cand))), (9,9))
+        self.assertEqual((len(main),len(set(main))), (11,11))
+        self.assertTrue(set(cand).isdisjoint(set(main)))
+        self.assertTrue(info["candidate_continuity_ci"]["all_success"])
+        self.assertTrue(info["main_publication_ci"]["all_success"])
+        self.assertFalse(info["artifact_check"]["source_original_html_zip_present"])
+        self.assertFalse(info["artifact_check"]["source_original_jpeg_zip_present"])
+        self.assertEqual(info["artifact_check"]["main_dedicated_artifact_count"],0)
+        self.assertTrue(all(z["full_prefix_preserved"] for z in info["document_preservation"]))
+        self.assertFalse(info["negative_limits"]["trade_window_action_ack_verified"])
+        self.assertFalse(info["negative_limits"]["stage_a_accepted"])
+        self.assertIsNone(info["negative_limits"]["overall_restoration_percentage"])
+        self.assertEqual(info["next"],"OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-96")
+
 if __name__=="__main__":
     unittest.main()

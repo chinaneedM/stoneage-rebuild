@@ -1,0 +1,103 @@
+{
+  "schema": "stoneage.jp2003_revival_trade_map_acceptance.r95",
+  "task": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-95",
+  "base_main_head": "de78e7d1fe934555cc180c90e1c53ec3d401a8bd",
+  "source_commit": "d51c8f1c10ae109f705027063bc7545dfc5ec709",
+  "source_tree": "c15c56a8af27b33d4356b92ef31d8f3ba6a56602",
+  "candidate_continuity_commit": "4aba5f98cb10a2cd96b7952886adb7a4fde320f8",
+  "candidate_continuity_tree": "3413859e6a7cc3a5e1b8a929488b0de70dea6988",
+  "published_main_commit": "4aba5f98cb10a2cd96b7952886adb7a4fde320f8",
+  "original_source_derived_json": {
+    "path": "research/recovered/STONEAGE-JP2003-REVIVAL-TRADE-MAP-SOURCE-R95.json",
+    "git_blob_sha1": "c491542dbeb7523169615482bfbfefff728ea9f5",
+    "utf8_bytes": 7427,
+    "three_continuing_media_sources": true,
+    "seven_versioned_claims": true,
+    "original_html_preserved": false,
+    "original_html_sha256": null,
+    "original_client_bytes_present": false
+  },
+  "candidate_dedicated_source_ci": {
+    "run_id": 39958828076,
+    "job_id": 120431346363,
+    "status": "completed",
+    "conclusion": "success",
+    "test_methods": 10,
+    "original_runtime_executed": false
+  },
+  "candidate_continuity_ci": {
+    "head": "4aba5f98cb10a2cd96b7952886adb7a4fde320f8",
+    "all_success": true,
+    "run_ids": [
+      39959190346,
+      39959190492,
+      39959190457,
+      39959190432,
+      39959190360,
+      39959190464,
+      39959190365,
+      39959190334,
+      39959190375
+    ]
+  },
+  "main_publication_ci": {
+    "head": "4aba5f98cb10a2cd96b7952886adb7a4fde320f8",
+    "all_success": true,
+    "run_ids": [
+      39959563246,
+      39959563104,
+      39959563014,
+      39959563149,
+      39959563115,
+      39959563123,
+      39959563036,
+      39959563089,
+      39959562924,
+      39959563037,
+      39959563110
+    ],
+    "dedicated_run_id": 39959563014,
+    "dedicated_job_id": 120433827981
+  },
+  "artifact_check": {
+    "candidate_dedicated_artifact_count": 0,
+    "main_dedicated_artifact_count": 0,
+    "source_original_html_zip_present": false,
+    "source_original_jpeg_zip_present": false,
+    "source_original_client_zip_present": false,
+    "derived_report_zip_present": false,
+    "durable_git_derived_blob_present": true
+  },
+  "document_preservation": [
+    {
+      "path": "docs/CURRENT-STATE.md",
+      "old_blob": "5a90c58c85bea305e5f5f3b2c3d0364e268c7af6",
+      "new_blob": "9835f8befcc1dfda6f9d02e96baf2835faa9f531",
+      "full_prefix_preserved": true
+    },
+    {
+      "path": "docs/HISTORICAL-TIMELINE.md",
+      "old_blob": "1e80a51cd55f36f2b277dac2510768ec23c34d4d",
+      "new_blob": "30072b26ddc7bb4603200df5803fa92b445cee41",
+      "full_prefix_preserved": true
+    },
+    {
+      "path": "docs/SOURCE-REGISTRY.md",
+      "old_blob": "d26e44407532289c6062b4bf8b597f161bf33999",
+      "new_blob": "5f62c9e423ba9ee7f755e4dd0f130935b7ab1e48",
+      "full_prefix_preserved": true
+    }
+  ],
+  "negative_limits": {
+    "old_1999_jss_trade_absence_verified": false,
+    "trade_window_action_ack_verified": false,
+    "map_expansion_in_december_beta_verified": false,
+    "postbeta_character_roster_verified": false,
+    "original_build_captured": false,
+    "cross_region_identity_promoted": false,
+    "stage_a_accepted": false,
+    "stage_b_started": false,
+    "overall_restoration_percentage": null
+  },
+  "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-96"
+}

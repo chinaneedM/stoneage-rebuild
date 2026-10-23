@@ -17841,3 +17841,12 @@ S1 4Gamer会场/采访 https://www.4gamer.net/news/history/2003.07/2003072600180
 没有原版交易窗口截图、按钮/两个玩家确认、服务器交易事务/回滚、2003原始客户端安装包SHA或确切build。报道“加窗”不意味着JSS1999没有任何交易协议；R63已取的两张开发图均不显示打开交易窗，但不能反证其存在，R95没有复制R63图片或假装验证40张；地图/新人物β后计划不补实施、名称/ID、原画或同构建SPR。没有取得新原HTML/JPEG或二进制字节；只保存作者的研究派生与来源 URL。阶段A 7 PARTIAL＋2 OPEN，阶段B/wiki GATED，R79 PAUSED_NON_BLOCKING，整体百分比null。
 
 本包终止于三篇2003媒体 + 既有R63有界对照，不扩交易helper或泛化地图。下一最高 `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-96`：回22域，优先早期明确具名地图/NPC实体、源图或同一构建宠物原SPR身份，避免连续只搜运营公告和复活期窗口说明。重开R95需同期交易窗原图/录像、安装包真实SHA、UI事件/封包ACK或同build地图角色配置之一。全部旧连续性前缀必须保留。
+
+
+### R95 最终候选／主线真实验收与不可变研究收据 —— 2026-10-23
+
+本轮源内容commit `d51c8f1c10ae109f705027063bc7545dfc5ec709` / tree `c15c56a8af27b33d4356b92ef31d8f3ba6a56602`，独立候选专用run `39958828076` / job `120431346363` 完成10项来源边界单测和校验CLI，均success。完整连续性候选commit `4aba5f98cb10a2cd96b7952886adb7a4fde320f8` / tree `3413859e6a7cc3a5e1b8a929488b0de70dea6988` 自身9个Actions全completed/success。远端比较旧main `de78e7d1fe934555cc180c90e1c53ec3d401a8bd` →候选ahead2/behind0，8项文件只增加，无删行，复核main未漂移后以expected_sha非强制快进整合；主线自身11个实际run全completed/success，专用 `39959563014` / job `120433827981`成功。共20个非重复候选连续性＋main验收run，另有1个源专用run。最末保管提交自身后验不能借前一commit自动声称通过。
+
+三大长文远端原生Git blob完整保留旧prefix：CURRENT `5a90c58c…`→`9835f8be…`，TIMELINE `1e80a51c…`→`30072b26…`，REGISTRY `d26e4440…`→`5f62c9e4…`，精确旧/新blob见永久收据。源派生JSON `research/recovered/STONEAGE-JP2003-REVIVAL-TRADE-MAP-SOURCE-R95.json` 长期Git SHA1 `c491542dbeb7523169615482bfbfefff728ea9f5` / 7427 UTF8B；R63旧图库原生SPEC blob `63b274f5…` 另做不变源证据校验。候选和main专用run均无artifact，不能虚构2003原始HTML/JPEG的ZIP/raw摘要、也不能声称下载并试跑2003安装包。新增收据 `research/recovered/STONEAGE-JP2003-REVIVAL-TRADE-MAP-ACCEPTANCE-R95.json` 保存21项实际run/两端job、原派生blob/旧文件保留及Stage A未闭合；源码新增反篡改/父证据核验，原10项源校验不会改记成后续扩充项。
+
+交付是“交易窗口新增”日服2003文献说法、测试启动公告修正与“β后地图及新角色”的规划时间限定，而不是交易ACK、地图或新角色原建构恢复。最高后续 `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-96` 保持转向早期实体地图／NPC／宠物原SPR身份证据，不再连续做复活宣传链；Stage A 7 PARTIAL＋2 OPEN、B/wiki GATED、R79 PAUSED_NON_BLOCKING、总体百分比null。
