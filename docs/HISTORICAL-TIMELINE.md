@@ -4645,3 +4645,12 @@ main: run39943895787 / job120381709724 / artifact12496718117；ZIP3458 bytes `sh
 - Guide account: cave youth asks for a shell, Karuta merchant gives two, youth describes one pet reward (特洛昆 or 呼拔拔), pig 乌力斯凯 entrusts letter, fourth-floor pig flower shop gives 月光花, 乌力美 takes flower and letter then gives reply on a second contact, 乌力斯凯 exchanges the reply for 红玉的手环 (+2 attack/+2 defense/-2 agility/+1 charm). Cave entrance (99,425) and footer (98,426) conflict and remain separate transcribed claims.
 - HYPOTHESIS / OPEN: actual program build, original NPC scripts/word-for-word dialogue, exact runtime rules and UI, item consumption, variable pet draw chance, quest persistence, 2003 HTML byte provenance. Do not project to JSS1999, TW1.0 or worldwide first release. R55 earlier 2001 player source only overlaps the shell/pet route.
 - Preservation: R91 source contract, structured seven-node guide-derived JSON and tests; no proprietary binary, screenshot, or source HTML added.
+
+
+### 2003-01-08（报道页面显示）— 玩家笔下宠物个体范围、版本感受及技能（R92）
+
+FACT **of source statement**：17173《让我来评价石器宠吧》，署名小白虎，https://news.17173.com/z/stoneage/content/2003-1-8/n852_768685.html 。文章在玩家视角区分所谓JSS早期、华义新宠、2.5/4.0叙事，提供葛雷马恩／葛雷基欧／葛雷洛比／吉比／鲁比／扑满乌力／里昂蛙／莫拉斯八具名宠的一级HP、攻、防、敏区间和「成长最高数值」说法；仅为2003玩家文献，不是已认证官方构建/宠物主表/精灵演算或真实运行。作者对4.0的PK强弱、宠物稀有度和发行历史属评价/未经独立认证，不能合并为产品发布时间或世界观正史。
+
+具体缺失必须保留：鲁比HP [41,null]和四成长全部null、扑满乌力HP [null,61]、`10.2以上`、`12.3X`／`2.0X`等非精确数字。作者记吉比「落马」、鲁比「狂暴攻击」攻+100%／防-30%／3–10次、扑满乌力「捐献」之PK偷钱用途，不能反推原技能公式/伤害/货币转移。网页字符损坏不能自恢复宠名。
+
+Sina另存档 https://games.sina.com.cn/zhqu/sta/2/cwzl/index.shtml 显示扑满乌力LV1体力55–61，未认证原网站入库日期与S1同build、两边不可互填或视作双官方独立实测。版本/创作与来源报告分层，不投回JSS1999或TW1.0。详情见 `docs/specs/STONEAGE-CN2003-PET-GROWTH-PLAYER-CLAIMS-SOURCE-R1.md` 与结构数据。原HTML及原宠物图未入Git。

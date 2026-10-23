@@ -17773,3 +17773,16 @@ R91新增有序7节点：哥亚山1F青年(12,14)请求研究语言→卡鲁它�
 本轮对三大长文严格以老/新原生Git blob回读核验旧文本为新文本完整前缀：CURRENT-STATE `c79c4465…`→`8adbe704…`、SOURCE-REGISTRY `218b7305…`→`8371c194…`、HISTORICAL-TIMELINE `15a72f7c…`→`b301868d…`；没有发生空文件覆盖、历史删改或上轮R90证据丢失。七节点派生JSON永久Git blob `dc8be290ce2371c8521ffa63353923156433ab6a` / 6027 UTF8 bytes，非原始2003网页字节。真实run ID、永久blob、源限界归档于 `research/recovered/STONEAGE-CN2003-GOYA-PIG-NPC-ACCEPTANCE-R91.json`，专用单测加入验收收据SHA1与负向边界检查。
 
 验收收据自己的候选/main新工作流仍以实际后验为准，不能把早先7测试重称8测试。NEXT仍 `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-92`，Stage A 7PARTIAL+2OPEN、B/wiki GATED、R79暂停。
+
+
+### R92 2003同时代玩家宠物数值与技能文字，未知值不得跨来源填补 — 2026-10-23
+
+FACT（限当年玩家写下的内容）：按本轮新读main `76ee0e47eb2bd21a9812162d2d4454d8f3697046` / tree `039365164f35ea1c579288f63fb553a26720661f`、连续性协议、完整2MB以上原生CURRENT-STATE blob、九类工作范围与22域索引确定最高NEXT92。R91 main最新专用和预生产有关Actions本轮实查 completed/success，R79继续PAUSED_NON_BLOCKING；不从旧聊天确定最新状态。
+
+17173玩家投稿《让我来评价石器宠吧》 https://news.17173.com/z/stoneage/content/2003-1-8/n852_768685.html 页面显示2003-01-08、作者小白虎，描述几代宠物、个人评价及多宠一级能力/成长上限说法。此次取得公开网页可读正文而非认证2003原始HTML字节，原HTML长度/SHA256和精确游戏构建保持null；不把玩家投稿说法或后期网站包装称作官方配置。公开Sina《宠物资料》 https://games.sina.com.cn/zhqu/sta/2/cwzl/index.shtml 对扑满乌力给一级体力55–61，但初刊日和与玩家文章同构建未认证；2003投稿原本「？–61」保持null–61，不偷补55。
+
+新归档8个具名玩家报告样本：葛雷马恩、葛雷基欧、葛雷洛比、吉比、鲁比、扑满乌力、里昂蛙、莫拉斯；各4项一级区间、4项「成长最高数值」原文字符串独立保存，不把「10.2以上」解成精确上限、`12.3X`解成小数、鲁比未知成长或两宠的未知HP边界补全。作者称吉比落马、鲁比狂暴攻击（攻+100%、防-30%、3–10次）、扑满乌力捐献，均未验证真实服务器概率、伤害顺序、PK交易/原ID。网页有损宠名字形葛雷吉��／卡恩米��不猜字。
+
+交付：`docs/specs/STONEAGE-CN2003-PET-GROWTH-PLAYER-CLAIMS-SOURCE-R1.md`，`research/recovered/STONEAGE-CN2003-PET-GROWTH-PLAYER-CLAIMS-SOURCE-R1.json`，4段语义SHA256校验器、9项负向边界单元与独立workflow。候选分支 `agent/cn2003-pet-growth-claims-r92-20261023` 首个内容commit `bfa36b2aa79e09dafe36f261b0443c896f6bb52f` / tree `ff63044062492d0c1cee742a67ce598f01dacdeb`；其专用run `39947773737` 真实completed/success。完整连续性追加后的候选及主线Actions必须以后续实际结果为准，不能提前记成功或声称原服运行。
+
+停止于一篇玩家稿、一个独立页面之差异、8宠数值及3技能说法，不扩大成全版本宠物主表。重开需精确地区build绑定的原宠物配置／主表、宠物级别/成长实测存档、原技能处理或网络记录、原模型/SPR挂钩，同名跨版本不能自动同ID。最高下一 `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-93`：轮换另一地区有据的具名世界地点／人物UI画面或同版可定位宠物资源，不继续无限扩玩家成长推测。Stage A 7 PARTIAL + 2 OPEN、Stage B/wiki GATED、R79 PAUSED_NON_BLOCKING，overall restoration percent=null，旧全历史前缀完整保留。

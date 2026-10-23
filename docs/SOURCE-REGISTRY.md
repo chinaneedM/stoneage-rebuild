@@ -8382,3 +8382,19 @@ main: run39943895787 / job120381709724 / artifact12496718117；ZIP3458 bytes `sh
 - Linked prior source: `docs/specs/STONEAGE-CN2001-2003-SHELL-QUEST-SOURCE-R1.md` (R55), 2001 named player enumeration that includes the Goya shell/pet route; not proof of independent same-build runtime.
 - Derived files: `docs/specs/STONEAGE-CN2003-GOYA-PIG-LETTER-NPC-FLOW-SOURCE-R1.md`, `research/recovered/STONEAGE-CN2003-GOYA-PIG-LETTER-NPC-FLOW-SOURCE-R1.json`, strict verifier/tests and dedicated CI.
 - Negative boundary: no authenticated raw HTML hash / copyright artwork, exact NPC dialogue bytes, UI screenshot, spawn ID, item-consumption receipt, pet probability, source build, original server or client execution. Guide narrative only.
+
+
+### SRC-CN-2003-17173-NAMED-PET-PLAYER-OPINION-R92
+
+- URL: https://news.17173.com/z/stoneage/content/2003-1-8/n852_768685.html
+- Title/date/byline: 《让我来评价石器宠吧》 / 2003-01-08（页面显示） / 小白虎；有日期的同时代玩家投稿，**不是官方原宠物主表或原版服务器数据**。本轮仅读可见页面正文，无经过认证的2003原始HTML字节/SHA256，原始source bytes和build保持null。
+- Distinct source observations: 8具名宠的LV1 HP／攻击／防御／敏捷区间和文字形式成长最高说法；三具名技能“落马”“狂暴攻击”“捐献”。鲁比未知成长和体力上界、扑满乌力未知体力下界、成长数字中的X和「以上」逐个保留；作者意见不等于定量人口统计或官方公式。页面乱码原样说明而不修复游戏实体身份。
+- Authority/limits: 同时代玩家观点记录可靠度高于后世私服表的归属猜测，但对官方真实游戏值、同build身份、触发公式及奖励/获得途径准确度仍未验证；不可升级FACT_OF_SOURCE为GAME_FACT。
+- Artifacts: `docs/specs/STONEAGE-CN2003-PET-GROWTH-PLAYER-CLAIMS-SOURCE-R1.md`; `research/recovered/STONEAGE-CN2003-PET-GROWTH-PLAYER-CLAIMS-SOURCE-R1.json`; dedicated validator/9 negative tests/Actions. No copyright HTML/images and no game implementation.
+
+### SRC-CN-SINA-UNBOUND-PET-TABLE-CROSSCHECK-R92
+
+- URL: https://games.sina.com.cn/zhqu/sta/2/cwzl/index.shtml
+- Title: 新浪游戏“宠物资料”；本轮无法确证初刊日或主表对应原游戏构建。
+- Cross-source comparison only: 该页对扑满乌力列LV1体力55–61，2003-01-08玩家稿为`？–61`。禁止把新浪55填入前者缺项，也禁止从名字推出两页的同PET ID、同服务器、同期实测或TW1.0游戏初始值。
+- Source grade: 有实际可读表格；准确性/样本量/原官方主表归属未验证。关联R92的source隔离JSON，重开需同版原始配置。
