@@ -3,14 +3,17 @@ on:
   push:
     paths:
       - 'research/recovered/STONEAGE-CN-EARLY-PIG-CATALOG-IMAGE-IDENTITY-SOURCE-R97.json'
+      - 'research/recovered/STONEAGE-CN-EARLY-PIG-CATALOG-ACCEPTANCE-R97.json'
       - 'tools/stoneage_cn_early_pig_catalog_r97.py'
       - 'tests/test_stoneage_cn_early_pig_catalog_r97.py'
+      - 'tests/test_stoneage_cn_early_pig_catalog_r97_custody.py'
       - '.github/workflows/verify-stoneage-cn-early-pig-catalog-r97.yml'
   pull_request:
     paths:
       - 'research/recovered/STONEAGE-CN-EARLY-PIG-CATALOG-IMAGE-IDENTITY-SOURCE-R97.json'
       - 'tools/stoneage_cn_early_pig_catalog_r97.py'
       - 'tests/test_stoneage_cn_early_pig_catalog_r97.py'
+      - 'tests/test_stoneage_cn_early_pig_catalog_r97_custody.py'
   workflow_dispatch:
 permissions:
   contents: read
@@ -23,5 +26,5 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: python -m unittest tests.test_stoneage_cn_early_pig_catalog_r97 -v
+      - run: python -m unittest tests.test_stoneage_cn_early_pig_catalog_r97 tests.test_stoneage_cn_early_pig_catalog_r97_custody -v
       - run: python -m tools.stoneage_cn_early_pig_catalog_r97

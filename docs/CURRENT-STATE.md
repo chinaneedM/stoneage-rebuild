@@ -17881,3 +17881,10 @@ S1当前17173宠物图鉴总目录 https://news.17173.com/z/stoneage/chongwu/pet
 候选 `agent/cn-early-pet-catalog-image-identity-r97-20261023` 原内容提交 `9198b803507e78d05d1f494578b9d4dfb5ce4a5a` 首次专用run39964383907因校验程序把Git blob的NUL写成双反斜线而失败（13种负例通过，正例1项失败）；修复提交 `b653c5a51cc159106a0f744c932862d6c5a28e6a` 后 run39964485685/job120450670263 实际completed/success，14项单元与CLI通过。失败保持历史可见，不冒充第一次通过。本文追加后的候选/main CI仍须单独实查后整合验收。
 
 有限止点：当前2个图鉴页、1个2001玩家Lv1攻略＋已保存stonepic物理区间索引；8条资料行、2处跨页名冲突、2张小图倒置链接；未恢复原物种ID/动画身份/数值master、真实捕捉/送宠、页面年代及图像文件原字节。最高NEXT `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-98` 回另一地区原版地图／具名NPC交互实像或同build可验证PET SPR资源身份证据，不连续扩完整图鉴页。Stage A 7PARTIAL+2OPEN，Stage B/wiki GATED，TW10 savedataR79 PAUSED_NON_BLOCKING；overall percentage=null。
+
+
+### R97 源与双端后验收据永久归档 — 2026-10-23
+
+R97 原始候选内容 `9198b803507e78d05d1f494578b9d4dfb5ce4a5a` 首次run39964383907因Git blob NUL校验器转义错误失败，保留该记录；随后修复 `b653c5a51cc159106a0f744c932862d6c5a28e6a` 专用run39964485685/job120450670263实际完成14 tests+CLI SUCCESS。四份历史完整追加的候选文档commit `6b2b1a89fb3600c33f896d91fcd958e821450317`/tree `66ec7bea645c986817981031ee2cedbd3315d046` 9项Actions全部success。Git compare相对 `5ddd2f6e79603b43b8d8d18c0d7337e134ae0268` ahead3/behind0共9文件无删除；四份历史远端原生blob逐份双读确认老前缀完整相同。确认旧main未动后以 expected SHA 非force快进，主线该内容HEAD触发11项实际Actions全部completed/success，R97专用run39965302676/job120453484392成功。
+
+审查GitHub Actions artifact API：候选修复专用与main专用工件均0；因此没有原网站HTML/GIF的原始字节哈希、ZIP/artifact ID或原始sprite授权资产。R97接受的是网页8行／7不同详情名、二页两处命名冲突、小图两条倒序URL以及原盘数值相交证据的**界限**，不是宠物八物种最终身份；永久元数据源blob `d182d35eaf3d803c488fbf697e757deb75ccd193` 原样留存，新增 `research/recovered/STONEAGE-CN-EARLY-PIG-CATALOG-ACCEPTANCE-R97.json`，包含全部21实际通过的候选/main docs runs与首次失败、修复专用运行、源父blob、无工件事实、前缀校验。新增专用反篡改验证，不回写任何旧失败为成功。最高NEXT `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-98`；Stage A7PARTIAL+2OPEN、B/wiki gated、savedataR79继续暂停、overall percent=null。

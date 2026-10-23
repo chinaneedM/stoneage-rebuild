@@ -1,0 +1,126 @@
+{
+  "schema": "stoneage.cn_early_pig_catalog_r97_acceptance.v1",
+  "task": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-97",
+  "remote_base": {
+    "head": "5ddd2f6e79603b43b8d8d18c0d7337e134ae0268",
+    "tree": "10effc12c4eac5bf71968bf8bc6a708c9b05b675"
+  },
+  "candidate_branch": "agent/cn-early-pet-catalog-image-identity-r97-20261023",
+  "content_commit": "9198b803507e78d05d1f494578b9d4dfb5ce4a5a",
+  "content_tree": "6fe7e48977ebbd46601c4cf0ef9cf6d6edc51dfc",
+  "fix_commit": "b653c5a51cc159106a0f744c932862d6c5a28e6a",
+  "docs_main_commit": "6b2b1a89fb3600c33f896d91fcd958e821450317",
+  "docs_tree": "66ec7bea645c986817981031ee2cedbd3315d046",
+  "source": {
+    "path": "research/recovered/STONEAGE-CN-EARLY-PIG-CATALOG-IMAGE-IDENTITY-SOURCE-R97.json",
+    "git_blob_sha1": "d182d35eaf3d803c488fbf697e757deb75ccd193",
+    "original_historical_html_authenticated": false,
+    "original_sprite_mapping_verified": false,
+    "original_gif_bytes_hashed": false
+  },
+  "source_parent_blobs": {
+    "research/recovered/STONEAGE-EARLY-VISUAL-ID-RANGES-INPUT-R1.json": "11bb14ef00c2ed354c5f00f510da8783376f1f28",
+    "research/recovered/STONEAGE-TW10-VISUAL-CATEGORY-SPR-JOIN-R1.json": "20a82e4d35661785c4e50b44855cf8e8a4e98f3e"
+  },
+  "candidate_source_ci": {
+    "initial_failed_run": 39964383907,
+    "initial_failed_job": 120450316527,
+    "reason": "git_blob_NUL_escaped_twice",
+    "corrected_run": 39964485685,
+    "corrected_job": 120450670263,
+    "corrected_test_methods": 14,
+    "corrected_conclusion": "success",
+    "initial_failure_preserved": true
+  },
+  "candidate_docs_ci": {
+    "run_ids": [
+      39964913607,
+      39964913681,
+      39964913687,
+      39964913707,
+      39964913738,
+      39964913791,
+      39964913904,
+      39964913913,
+      39964914009
+    ],
+    "all_success": true
+  },
+  "main_docs_ci": {
+    "run_ids": [
+      39965302501,
+      39965302508,
+      39965302596,
+      39965302636,
+      39965302676,
+      39965302722,
+      39965302749,
+      39965302850,
+      39965302865,
+      39965302877,
+      39965302940
+    ],
+    "all_success": true,
+    "dedicated_run": 39965302676,
+    "dedicated_job": 120453484392
+  },
+  "historical_prefix": [
+    {
+      "path": "docs/CURRENT-STATE.md",
+      "prior_blob": "7394357dbaf17c0fb2ee624bd1bb2022a1bdc738",
+      "new_blob": "6a0a1558304a764fff2ea2b9266f81e4525a6ea3",
+      "prior_chars": 2197834,
+      "new_chars": 2200093,
+      "prefix_verified": true
+    },
+    {
+      "path": "docs/HISTORICAL-TIMELINE.md",
+      "prior_blob": "c981494f0d1bacacfa72a363963946c0085eb19f",
+      "new_blob": "81dc3f1778c6e1dc7e86bb298105e0de4bf0808d",
+      "prior_chars": 557638,
+      "new_chars": 558879,
+      "prefix_verified": true
+    },
+    {
+      "path": "docs/SOURCE-REGISTRY.md",
+      "prior_blob": "f55c057b9b78a1badf8b17e78260d110b10502ea",
+      "new_blob": "a7b073ae7c730805118e9358d4a2e83646f0a6d8",
+      "prior_chars": 836274,
+      "new_chars": 838923,
+      "prefix_verified": true
+    },
+    {
+      "path": "docs/RESTORATION-ROADMAP-R2.md",
+      "prior_blob": "3a225fce3e86ec4d0402018355b32b97a10ade11",
+      "new_blob": "87f9040c84e4a4055e04d806c73eae390aec02a1",
+      "prior_chars": 217219,
+      "new_chars": 218651,
+      "prefix_verified": true
+    }
+  ],
+  "compare": {
+    "ahead_by": 3,
+    "behind_by": 0,
+    "changed_files": 9,
+    "deletions": 0,
+    "nonforce_fast_forward_main": true
+  },
+  "github_actions_artifacts": {
+    "candidate_source_corrected_artifact_count": 0,
+    "main_source_artifact_count": 0,
+    "raw_source_zip_sha256": null,
+    "original_historical_html_sha256": null,
+    "original_gif_sha256": null
+  },
+  "limits": {
+    "source_is_web_catalog_not_original_pet_master": true,
+    "named_entries": 8,
+    "unique_detail_names": 7,
+    "rows_007_008_name_mismatches": true,
+    "thumb_links_007_008_swapped": true,
+    "stage_a_complete": false,
+    "stage_b_started": false,
+    "overall_restoration_percent": null,
+    "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-98"
+  }
+}
