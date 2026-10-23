@@ -17764,3 +17764,12 @@ R91新增有序7节点：哥亚山1F青年(12,14)请求研究语言→卡鲁它�
 新增 `docs/specs/STONEAGE-CN2003-GOYA-PIG-LETTER-NPC-FLOW-SOURCE-R1.md`、`research/recovered/STONEAGE-CN2003-GOYA-PIG-LETTER-NPC-FLOW-SOURCE-R1.json`、`tools/stoneage_cn2003_goya_pig_npc_flow_source.py`、7项本地静态负向边界测试及专用workflow。候选分支 `agent/cn2003-goya-pig-npc-r91-20261023`，内容commit `b4e4dd8d9b1717efe7f5fa62214daa39401a6963` / tree `de362494c3e8f2e4a994fc7b4796fe0aeb39578f`。实际候选Actions run39945314969/job120386438959 completed/success，包含单元测试及命令行结构校验；不是原客户端/服务端运行。没有短时派生CI原网页工件，也不伪造原HTTP digest；R91结构化JSON长期在Git。主线整合和主线自身Actions应以实际后续结果为准。
 
 本轮止于单篇2003指南和R55交叉源，下一最高 `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-92`：轮换到另一地区具体宠物技能/成长数值，或能证明NPC窗口与输入动作的图文/运行材料。现Stage A 7 PARTIAL+2 OPEN，B/wiki GATED，R79 PAUSED_NON_BLOCKING，总体恢复百分比null；未恢复NPC原版脚本/物品原ID/原服动画、任务状态机与存档。
+
+
+### R91 独立主线验收与不可变派生记录收据 — 2026-10-23
+
+候选内容commit `b4e4dd8d9b1717efe7f5fa62214daa39401a6963` / tree `de362494c3e8f2e4a994fc7b4796fe0aeb39578f` 的专用Actions `39945314969` / job `120386438959` 实际通过7项测试；第二候选连续性commit `15f74430642b4de583eeb62cc887c7841e6ba3e0` / tree `f6d598dd06850c54d2852fa6673bc581a8c20f00` 验证9项success。远端compare确认相对初始main仅ahead2/behind0，非强制CAS推进main同一commit后，主线自身11项实际completed/success（专用R91 run39945765609），合计21项互异实际成功Actions。没有把本地脚本单测称作原版运行成功。
+
+本轮对三大长文严格以老/新原生Git blob回读核验旧文本为新文本完整前缀：CURRENT-STATE `c79c4465…`→`8adbe704…`、SOURCE-REGISTRY `218b7305…`→`8371c194…`、HISTORICAL-TIMELINE `15a72f7c…`→`b301868d…`；没有发生空文件覆盖、历史删改或上轮R90证据丢失。七节点派生JSON永久Git blob `dc8be290ce2371c8521ffa63353923156433ab6a` / 6027 UTF8 bytes，非原始2003网页字节。真实run ID、永久blob、源限界归档于 `research/recovered/STONEAGE-CN2003-GOYA-PIG-NPC-ACCEPTANCE-R91.json`，专用单测加入验收收据SHA1与负向边界检查。
+
+验收收据自己的候选/main新工作流仍以实际后验为准，不能把早先7测试重称8测试。NEXT仍 `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-92`，Stage A 7PARTIAL+2OPEN、B/wiki GATED、R79暂停。
