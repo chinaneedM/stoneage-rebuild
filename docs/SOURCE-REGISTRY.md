@@ -8490,3 +8490,13 @@ main: run39943895787 / job120381709724 / artifact12496718117；ZIP3458 bytes `sh
 - **Conflict ledger**: R98-S1 vs S2 south198/south190, unnamed vs named fish ring, allegedly unrecoverable vs refillable ring, 火难戒指 vs 火鸡的戒指, 一击必杀+5 vs 会心一击率上升+5. Preserve all alternatives; game state and actual historical authority OPEN.
 - Derived research: `research/recovered/STONEAGE-CN-KATAN-QUEST-SOURCE-CONFLICTS-R98.json` and `docs/specs/STONEAGE-CN-KATAN-QUEST-SOURCE-CONFLICTS-R98.md`.
 
+
+
+### SRC-TW10-R99-ORIGINAL-NPC-CANDIDATE-MAP-RESOURCE
+
+- Artifact scope: authenticated original Taiwan Waei/JSS v1.0 retail disc Redump 104630, existing immutable `tw10-resource-metadata/MANIFEST-R1.txt` plus original extracted metadata `ADRN-R1.tsv.gz`, `COLLISION-ATTR-R1.tsv.gz` and `SPR-FRAME-R1.tsv.gz`. Confidence **S for source file bytes and numeric resource metadata only**.
+- Secondary category label: 17173 contemporary 2001 player `stonepic` index, listing 5846—5946 as NPC images. Confidence **C for intended NPC semantics**, not original official NPC master or static selector.
+- New derived report: `research/recovered/STONEAGE-TW10-NPC-STATIC-RESOURCE-JOIN-R99.json`, Git blob `21d49800a1191f87a006aaa5af4a6f7975f91bf7`; source `tools/stoneage_tw10_npc_static_resource_r99.py`; contract `docs/specs/STONEAGE-TW10-NPC-STATIC-RESOURCE-JOIN-R99.md`. Precise source SHA/parent manifests pinned in the report; no original copyrighted bitmap payload in Git.
+- Supports: 101 records with exact original bitmapno→map-resource-number and distinct RD compressed block hashes and position/dimension/collision fields. Bitmap5846—5919 (74 rows) maps resource16000—16073; bitmap5920—5946 (27 rows) maps resource16200—16226; SPR frame table has zero direct references in this band across 242085 rows.
+- Does not support: 101 original NPC identities or world map numbers, village locations, NPC spawn/animation selection, actual printed original NPC pixels, original server configurations/encounters/dialogue, or asset reuse rights. Zero direct SPR references are not a proof of never drawn.
+- Direct bounded CI: content candidate run `39970753998` succeeded with 13 tests and GitHub artifact12508399205 for derived source only; preserved exact report run `39971115264` succeeded with 14 tests and byte-for-byte reconstruction. Future continuity/main publication needs its own fresh CI verification.

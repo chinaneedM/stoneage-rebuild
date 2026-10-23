@@ -2275,3 +2275,10 @@ From freshly verified remote R97 custody main `8697dc3808c074f98e9116d8378c71158
 
 No historical NPC image payload or original server action was obtained: therefore R98 is a **bounded textual NPC/quest-stage reconciliation**, not an accepted original UI reconstruction. Highest next R99: actual original client NPC/map graphic/interaction binding, or same-build pet model selection evidence, prioritized over another Katan guide expansion. Stage A remains 7 PARTIAL / 2 OPEN, Stage B/wiki gated, savedata R79 paused, overall restoration percent null.
 
+
+
+## 2026-10-23 R99 — 原台湾1.0 101条候选NPC静态位图与碰撞资源号全量索引
+
+最新NEXT99从网页NPC任务转到早期**原盘同版**资源的可重建关联。固定ADRN/COLLISION/SPR原资料并非补原服务器人口：实算位图5846—5919→map资源16000—16073（74条），5920—5946→16200—16226（27条），压缩块101个SHA互异；242085原SPR帧对该静态号段直接引用0条。编号断档不能推NPC缺口，map_number不当世界floor ID，玩家“NPC图”类别不能升原角色身份。保存完整101行派生元数据及源级校验，不能宣称原NPC模型/动作、图像或场景恢复成功，也不可提交原版权像素。
+
+最高NEXT `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-100`：优先实际具名原NPC画面与原生渲染选择链、原台湾1.0地图DAT内容实体或确证同build宠物物种—SPR关联；没有新增身份来源时不再继续细拆静态图属性。Stage A 7 PARTIAL+2 OPEN；B/wiki GATED；savedata R79 PAUSED_NON_BLOCKING，总恢复百分比null。

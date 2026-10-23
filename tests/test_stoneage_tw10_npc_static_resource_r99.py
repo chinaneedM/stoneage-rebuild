@@ -12,6 +12,11 @@ class R99ResourceJoin(unittest.TestCase):
         change(a)
         with self.assertRaises(ValueError):
             validate_report(a,self.truth)
+    def test_two_original_map_resource_number_runs(self):
+        rows=self.truth["rows"]
+        self.assertEqual((rows[0]["bitmapno"],rows[73]["bitmapno"],rows[0]["map_number"],rows[73]["map_number"]),(5846,5919,16000,16073))
+        self.assertEqual((rows[74]["bitmapno"],rows[100]["bitmapno"],rows[74]["map_number"],rows[100]["map_number"]),(5920,5946,16200,16226))
+        self.assertEqual([rows[i+1]["map_number"]-rows[i]["map_number"] for i in range(100) if rows[i+1]["map_number"]-rows[i]["map_number"]!=1],[127])
     def test_full_original_join(self):
         self.assertTrue(validate_report(self.truth,self.truth))
     def test_saved_report_byte_exact(self):

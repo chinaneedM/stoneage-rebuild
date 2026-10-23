@@ -4704,3 +4704,10 @@ Sina另存档 https://games.sina.com.cn/zhqu/sta/2/cwzl/index.shtml 显示扑满
 
 **OPEN and explicit contradiction:** S1 advises searching Katan along south 198; S2 along south 190 and claims random position, so neither is a unique spawn coordinate. S1 does not name the first fish ring and warns losing it wastes the stage; S2 names 火鸡的戒指 and claims it is reissued. S1 calls the bird-stage ring 火难戒指, S2 calls it 火鸡的戒指; stated +5 effects differ in wording. No implied equivalent original item opcode, fish/animal master, fixed despawn/give-back contract, reissue ACK or repeated task flag. Site captions are not screenshot authentication. The 2001 guide's repeat-bird-only remark includes explicit uncertainty. [SRC-CN-KATAN-R98-2001-17173-TAOTAO; SRC-CN-KATAN-R98-2003-SINA-PLAYER]
 
+
+
+### 2026-10-23 台湾1.0早期静态NPC候选号段的资源层连接（R99）
+
+**FACT（仅原盘资源物理层）**：台湾 Waei/JSS v1.0 同一原盘派生的 ADRN 位图和碰撞资源表，在bitmapno5846—5946间完整给出101个独立位图与101个互异map_number的准确映射，每个RD图像块SHA256不同；其资源号并非连续101号，而分两段：前74个位图5846—5919→原资源16000—16073，后27个位图5920—5946→原资源16200—16226。原SPR帧242085项中这101号静态位图的直接引用0项，不能证明它们从未用于静态绘制。[SRC-TW10-R99-ORIGINAL-NPC-CANDIDATE-MAP-RESOURCE]
+
+**OPEN（严禁提升）**：“NPC”是2001玩家对图号段的分类，而非原官方角色选择表；`map_number` 是ADRN资源编号，并非游戏世界楼层/地图ID或NPC实体ID。原NPC人物名字、坐标、互动状态、完整原场景画面与服务端脚本依旧未知；101资源行不等于101个NPC、101个物种或真实可达场景，图像源块哈希不是版权复用许可。

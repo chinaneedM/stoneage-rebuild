@@ -17914,3 +17914,14 @@ R97 原始候选内容 `9198b803507e78d05d1f494578b9d4dfb5ce4a5a` 首次run39964
 
 收益：锁定卡坦两阶段各四宠、两批次交付和五条不同玩家稿冲突；保留戒指补领/原始NPC地点/生成/交易/保存的实际不明，未通过原版物种或原图身份认证。最高NEXT `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-99` 要转回实际原版地图／NPC截图、同构建图号／宠物／SPR 的可验证绑定，而不是连续用玩家任务攻略当原服主表。Stage A仍7PARTIAL+2OPEN，Stage B及资料站生产 GATED，savedataR79 PAUSED_NON_BLOCKING；总体复原百分比null。历史连续性完好。
 
+
+
+### R99 台湾1.0原资源：101个NPC候选静态图号及map_number完整连接 — 2026-10-23
+
+本轮按GitHub远端实际 main `1ab3968decb3ee9abde1898d4e63a18ff176ad2e` / tree `baf513c1fc8879128824a10cecddedc0569ffe41` 启动；R98原任务、主线与后验凭据已实际通过。最高NEXT99选择同版原盘静态图片资源层，不再连续扩卡坦NPC玩家攻略。
+
+以原TW1.0零售盘已认证的ADRNR1、COLLISION-ATTR-R1与SPR-FRAME-R1完整源级TSV重放 bitmapno 5846—5946 共101条。源完整101个bitmap、101个互异资源map_number、101个互异压缩块RD-SHA256；并联接宽高/偏移/命中标志与单格碰撞。**原资源号有两段：bitmap5846—5919共74个，对应map_number16000—16073；bitmap5920—5946共27个，对应map_number16200—16226。**断档不是“原版缺失126个NPC”。原242085个SPR帧里本号段直接引用数0，仅限SPR帧入口，不足以证明从未静态绘图。原2001玩家名册仅把号段称“NPC图像”，不是官方同构建NPC ID。原地图 `map_number` 是资源表编号，**不是地图世界floor ID，更不是具体NPC实体编号**；原版具体角色、名字、场景像素、出生位置、任务/对话、真正渲染选择器仍未闭合。
+
+交付 `docs/specs/STONEAGE-TW10-NPC-STATIC-RESOURCE-JOIN-R99.md`、`tools/stoneage_tw10_npc_static_resource_r99.py`、独立负向测试以及 `research/recovered/STONEAGE-TW10-NPC-STATIC-RESOURCE-JOIN-R99.json`，派生全101行Git blob `21d49800a1191f87a006aaa5af4a6f7975f91bf7`。候选 `agent/tw10-npc-static-resource-row-join-r99-20261023`，首内容 `389669f3bf2ba7bdcc1254bf0378106d846e8a34`/tree `9de008db94f23ca4ec2bb6a2db0099e7ef9c13aa` 专用run39970753998/job120472469976完成13tests+完整101行派生输出，artifact12508399205，ZIP 7625B/digest sha256:ec2d1211dbec79465077393b885eb64b1d34d85b1a0a5a9194f3dc56f3461a4e。另提交 `5643b3f7d0a8e7797ce8ea0642a0dab5d8ccb4ef` / tree `86f28d771b8b9feff109ce149ecfd43783535dc0` 永久研究原样元数据，专用run39971115264/job120473726586成功14项测试及重新从原盘TSV逐字节等同验证。原图像/商业程序及原HTML未进入Git，本包只证明物理资源来源而非原游戏NPC名字。后续文档提交与main自身Actions按实际后验，不能提前报通过。
+
+下一最高 `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-100` 需寻真正原NPC具名截图/同构建选择器、原世界DAT实体关联或宠物原身份绑定；如无新实源则停止同类低级helper扩张。Stage A依然7 PARTIAL + 2 OPEN，Stage B/wiki GATED，TW10 savedata R79 PAUSED_NON_BLOCKING，整体恢复百分比null。所有旧历史前缀保持。
