@@ -4685,3 +4685,12 @@ Sina另存档 https://games.sina.com.cn/zhqu/sta/2/cwzl/index.shtml 显示扑满
 - 该文章称村庄神像首次记录需要该村特定肉，再次不需，并决定下次登入位置。现缺原版服务器记录/背包消费及重登网络ACK，不能把该叙述当自动角色全量存盘规则。
 - **属性洞窟的同期文献状态**：深红(火)、玄黄(地)、琉璃(风)在文章中“称已开放”，碧青(水)“称尚未开放”。这是2001日期标签的玩家文章说法，历史首刊原字节及部署时刻均未核实；不能拿它证明后来/更早所有版本的实际开放状态。
 - **R96-S2**：17173《石器之练功篇（二）》 https://news.17173.com/z/stoneage/content/2001-6-14/n254_170616.html ，作者未知。称四岛间有三海底通道、霍特尔首次神像记录用两块奇宝肉、沙姆岛有一个村而无记录点；科奥通道需要于卡鲁它那购200stone通行证。未知三通道端点、商人身份、原物品ID；不推其他通道有同pass，也不跨版填原地图/任务数据。两页面当年原始HTML/准确build仍OPEN。
+
+
+## R97 supplementary source differentiation — 2026-10-23 (currently available web catalog, historical date OPEN)
+
+**FACT (present page text/link only):** 17173's extant `petshow.htm` links the pig-series records 001—008 in `petshow01.htm`. The extant index uses labels 007 “乌力 德” and 008 “乌力固力”; the detailed page instead says 007 “乌力莱德” and 008 “乌力布鲁”, the latter duplicating detailed 004 while reporting different element/HP values. Details 007/008 also cross-link small images `a-008.gif`/`a-007.gif` in reverse numerical order. Sources R97-S1/R97-S2. These are **website inconsistencies**, not proven original game species variants or repaired names.
+
+**FACT (player text as text):** An extant 17173 submission labeled 2001-06-14, by 依波波, describes 乌力布鲁 and 黑乌力 as JSS prize pets. This is a player's report, not a Japanese original award register or game runtime record. Source R97-S3.
+
+**OPEN:** date of the present pet catalog and its earliest archived form, website-to-original-pet identity binding, original image bytes/authenticity, same-build per-species PET master and whether numbering/labels were later revised. Previous independently validated TW1.0 bitmap+SPR **numeric** intersections do not close these historical claims.

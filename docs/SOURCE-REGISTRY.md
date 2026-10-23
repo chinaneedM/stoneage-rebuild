@@ -8441,3 +8441,34 @@ main: run39943895787 / job120381709724 / artifact12496718117；ZIP3458 bytes `sh
 - URL: https://news.17173.com/z/stoneage/content/2001-6-14/n254_170616.html ; shown title 石器之练功篇（二）, page display date 2001-06-14, author unknown. This is another currently readable player guide; its 2001 historic HTML/region-build have not been independently authenticated, do not infer statistical independence from S1.
 - Claims include 4-island topology and **3 passages** without all endpoints; 科奥通路 south→north with 卡鲁它那-sold passage ticket reportedly 200stones (seller name forgotten), 霍特尔首次记录需两奇宝肉, 沙姆岛在该文章中没有记录点. Distinct author names and spellings require no invented seller, NPC, original item ID, encounter probabilities, universally shared gate or server proof.
 - Existing repository `MEDIA17173_20010614_NORTH_ISLAND` is a **previous** index of a different guide and not a newly authenticated source in R96. Reopen with contemporaneous original official/client or runtime transaction/trace; negative tests bind state/unknowns and prevent semantic promotion.
+
+
+## R97 — 2026-10-23 source records for eight linked pig catalog rows
+
+### R97-S1 — 17173 pet catalog index
+
+- URL: https://news.17173.com/z/stoneage/chongwu/petshow.htm
+- Type: preserved/currently accessible portal catalog; originally published date and exact edition **OPEN**; confidence B/C as a web source, **not official client/server data**.
+- Supports: currently displayed pig catalog row numbers 001—008, exact row name spellings, and links to details.
+- Limits: row ID cannot be interpreted as original ADRN ID, species ID, or 2001 launch roster. In particular, row 007 displays “乌力 德” and 008 “乌力固力”.
+
+### R97-S2 — 17173 pig-series details with named graphic links
+
+- URL: https://news.17173.com/z/stoneage/chongwu/petshow01.htm
+- Type: preserved/currently accessible portal pet data and linked GIFs; date of first version **OPEN**.
+- Supports: names/element/HP and locality or award *as reported on the page*, and direct image links for eight entries. 007 is shown as “乌力莱德”; 008 is shown as “乌力布鲁”, duplicating 004 with different reported fields. 007 thumbnail target `a-008.gif`, 008 `a-007.gif`, while larger photos have per-row `b007.gif` and `b008.gif`.
+- Limits: source GIF image bytes not authenticated as original commercial art, originally rendered pixels not SHA-pinned; website file stems not original bitmap/SPRs/PET master IDs. The page does not establish original publication date or all eight first-version pets.
+
+### R97-S3 — 2001 labeled Lv1 pet acquisition list
+
+- URL: https://news.17173.com/z/stoneage/content/2001-6-14/n182_98793.html
+- Page byline/date: 依波波 / displayed 2001-06-14; grade C player claim, migrated page bytes not original authenticated.
+- Supports: literal player assertion of Japanese JSS prize provenance for 乌力布鲁 / 黑乌力.
+- Limits: not an official JSS gift list or realized 2001 game-master validation; cannot choose whether 004 or 008 corresponds to any particular server pet.
+
+### R97-S4 — previously registered stonepic player resource-number classification
+
+- URL: https://news.17173.com/z/stoneage/content/2001-6-14/n84_511.html
+- Existing canonical record `SA17173-20010614-STONEPIC` and Git input blob `11bb14ef00c2ed354c5f00f510da8783376f1f28`; no new source counted.
+- Physical cross-check report Git blob `20a82e4d35661785c4e50b44855cf8e8a4e98f3e`: 121 original TW1.0 bitmap IDs exist in player-labeled portrait candidate span 7246—7366; SPR frame references 0; semantic identity none verified.
+- These two retained sources do not provide a bridge to the numbered website GIF catalog. Original copyrighted images/html not committed; only source pointers/derived observations are retained.

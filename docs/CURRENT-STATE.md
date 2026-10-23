@@ -17865,3 +17865,19 @@ S2称南岛到北岛的科奥海底通路需从卡鲁它那购买200 stone的通
 交付 `docs/specs/STONEAGE-CN2001-WORLD-ROUTES-RECORD-SOURCE-R96.md`、`research/recovered/STONEAGE-CN2001-WORLD-ROUTES-RECORD-SOURCE-R96.json`、不可变Git blob `e2bc3c5e1dc3eae4ee61b9c6ab85de7cb9f82538` 及11项负向来源边界测试＋专用Actions。候选分支 `agent/cn2001-world-routes-record-gates-r96-20261023`，首个内容commit `94f08deefbf82da05cba51f9b6699adbfd485deb` / tree `65d25c9694cebf4ce1fcdf788b80673f9e00c926`；专用run `39961754440` 实际已 `completed/success`，不是原服地图/记录点执行。正文和程序不含原有版权HTML、图片或客户端资源。候选后续文档提交／主线Actions不得提前宣称成功，要逐次核实。
 
 止点为两篇当前网页、四岛/四出生村、两条玩家推荐路线、四条记录点关系、一条科奥pass说法和四洞窟状态候选。重新开启需要同年代同版原地图/NPC配置或已验真通行/记录ACK、运营公告、同构建录像。**NEXT** `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-97` 轮换有明确原图/SPR联接的宠物或早期实体地图NPC证据，不连续扩玩家练功路线；Stage A 7 PARTIAL+2 OPEN、Stage B/wiki GATED，TW1.0 savedata R79 PAUSED_NON_BLOCKING，无分母不报总体百分比。
+
+
+
+### R97 早期乌力系具名图鉴的双页冲突与 GIF 身份边界 — 2026-10-23
+
+FACT（限当前可见17173网页，不认证当年原HTML）：本轮从GitHub远端main `5ddd2f6e79603b43b8d8d18c0d7337e134ae0268` / tree `10effc12c4eac5bf71968bf8bc6a708c9b05b675` 新启动，重新读取HEAD/tree/最新提交/Actions/协议、README、CURRENT原生2197834字符blob、历史/来源/设计/路线及22域索引。完整分支清单分页7页511分支，0开放PR、0 in_progress，仅旧queued37642417333独立保留。R96最近主线专用run39963019409 actual completed/success。依最高 `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-97` 研究有明确可查网页图片引用的具名宠物，不重做已经闭合的2001 stonepic分类交集R1。
+
+S1当前17173宠物图鉴总目录 https://news.17173.com/z/stoneage/chongwu/petshow.htm 和S2乌力系001—008 https://news.17173.com/z/stoneage/chongwu/petshow01.htm ，实际读取两页正文、16个原网页IMG链接目标；未取得2001源HTML的已验字节/哈希、原作者或这些目录的原发表日期、精确客户端build。网页8行分别保存索引名称、详情名称、属性、出生HP字段、出处文字、缩略图和形象照URL，非原官方宠物主表。S3 17173作者依波波 https://news.17173.com/z/stoneage/content/2001-6-14/n182_98793.html 页标2001-06-14仅给乌力布鲁/黑乌力为JSS奖品的玩家声称；不使当前图鉴002—008归属2001同构建。S4先前收录的stonepic图号玩家分类只提供可能区间，与本轮具名网页编号无已证直接映射。
+
+本轮实质发现是**跨页与图片文件名冲突不能静默修正**：总目录007字面“乌力 德”、详情007“乌力莱德”；目录008“乌力固力”、详情008却写“乌力布鲁”与004重复；004详情火7风3、HP18-19，008详情地6风4、HP39。详情007的小图明确链接 `images3/a-008.gif`，详情008反链接 `images3/a-007.gif`，但对应形象照为 `images2/b007.gif` 和 `b008.gif`。8行只有7个不同详情名称；不知道改名、排表/图片交换或客户端物种对应，不能把序号/文件名数字/相同文字升级原PET/ADRN/SPR ID。链接可到达性和原版权像素鉴真未通过整批字节哈希；未上传GIF/HTML。
+
+已有原台湾1.0 ADRN/SPR交集报告 blob `20a82e4d35661785c4e50b44855cf8e8a4e98f3e` 表明玩家7246—7366“宠物照片”候选号段，原盘位图ID存在121个，但SPR帧对此号段0引用；此零不是图像不用，更不能给出本网页八行哪只宠物对应哪张原图。新结构化源 `research/recovered/STONEAGE-CN-EARLY-PIG-CATALOG-IMAGE-IDENTITY-SOURCE-R97.json` Git blob `d182d35eaf3d803c488fbf697e757deb75ccd193`，以及中文契约、14项负向边界测试、来源双父不变校验及专用CI，原美术不入Git。
+
+候选 `agent/cn-early-pet-catalog-image-identity-r97-20261023` 原内容提交 `9198b803507e78d05d1f494578b9d4dfb5ce4a5a` 首次专用run39964383907因校验程序把Git blob的NUL写成双反斜线而失败（13种负例通过，正例1项失败）；修复提交 `b653c5a51cc159106a0f744c932862d6c5a28e6a` 后 run39964485685/job120450670263 实际completed/success，14项单元与CLI通过。失败保持历史可见，不冒充第一次通过。本文追加后的候选/main CI仍须单独实查后整合验收。
+
+有限止点：当前2个图鉴页、1个2001玩家Lv1攻略＋已保存stonepic物理区间索引；8条资料行、2处跨页名冲突、2张小图倒置链接；未恢复原物种ID/动画身份/数值master、真实捕捉/送宠、页面年代及图像文件原字节。最高NEXT `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-98` 回另一地区原版地图／具名NPC交互实像或同build可验证PET SPR资源身份证据，不连续扩完整图鉴页。Stage A 7PARTIAL+2OPEN，Stage B/wiki GATED，TW10 savedataR79 PAUSED_NON_BLOCKING；overall percentage=null。
