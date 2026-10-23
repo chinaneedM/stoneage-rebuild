@@ -1,0 +1,45 @@
+name: Verify JP2005 GW stamp prerequisite and Momotora reward
+on:
+  push:
+    paths:
+      - 'tools/stoneage_jp2005_gw_stamp_source.py'
+      - 'tools/stoneage_jp2005_treasure_source.py'
+      - 'tests/test_stoneage_jp2005_gw_stamp_source.py'
+      - 'research/recovered/STONEAGE-JP2005-GW-STAMP-RALLY-*.json'
+      - 'research/recovered/STONEAGE-JSS2001-OFFICIAL-EVENT-VENUE-R1.json'
+      - 'research/recovered/STONEAGE-JP2005-TREASURE-EVENT-SOURCE-R1.json'
+      - 'research/recovered/STONEAGE-PREPRODUCTION-CONTENT-ARCHIVE-R1.json'
+      - '.github/workflows/verify-stoneage-jp2005-gw-stamp-source.yml'
+  pull_request:
+    paths:
+      - 'tools/stoneage_jp2005_gw_stamp_source.py'
+      - 'tools/stoneage_jp2005_treasure_source.py'
+      - 'tests/test_stoneage_jp2005_gw_stamp_source.py'
+      - 'research/recovered/STONEAGE-JP2005-GW-STAMP-RALLY-*.json'
+      - 'research/recovered/STONEAGE-JSS2001-OFFICIAL-EVENT-VENUE-R1.json'
+      - 'research/recovered/STONEAGE-JP2005-TREASURE-EVENT-SOURCE-R1.json'
+      - 'research/recovered/STONEAGE-PREPRODUCTION-CONTENT-ARCHIVE-R1.json'
+      - '.github/workflows/verify-stoneage-jp2005-gw-stamp-source.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  bounded-source-replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install Pillow==12.3.0
+      - name: Quest prerequisite, named pet, unknown villages and screenshot boundaries
+        run: python -m unittest tests.test_stoneage_jp2005_gw_stamp_source -v
+      - name: Retrieve one current period report and its actual linked full screenshot
+        run: python -m tools.stoneage_jp2005_gw_stamp_source --fetch --output "$RUNNER_TEMP/r85-content/replay.json"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: jp2005-gw-stamp-derived-r85
+          path: ${{ runner.temp }}/r85-content/replay.json
+          if-no-files-found: error
+          retention-days: 30
