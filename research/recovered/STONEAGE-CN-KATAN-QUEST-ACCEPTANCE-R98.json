@@ -1,0 +1,110 @@
+{
+  "schema": "stoneage.cn_katan_quest_r98_acceptance.v1",
+  "task": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-98",
+  "starting_main": {
+    "sha": "8697dc3808c074f98e9116d8378c711581ff2f2f",
+    "tree": "92299895083314a104e3837561dfce2f7d7087a0"
+  },
+  "content": {
+    "sha": "2a2bb6bf63c7e4e1a4e9b3fdd14641379aa558b4",
+    "tree": "a60c5871687d56ce793ca2ac6cad190158ebe011"
+  },
+  "docs": {
+    "sha": "79fb6dc54f4b67dc0f12e235916ab3f5db3f8100",
+    "tree": "a43cae98e85fb2cb5d5f1dd4435cbbf5b2404be5"
+  },
+  "source": {
+    "path": "research/recovered/STONEAGE-CN-KATAN-QUEST-SOURCE-CONFLICTS-R98.json",
+    "git_blob_sha": "e92c249a74582ba6f5af5b41f49540ec9d1cd1d2"
+  },
+  "candidate_source_ci": {
+    "run": 39966865260,
+    "job": 120458877622,
+    "methods": 15,
+    "success": true
+  },
+  "candidate_docs_ci": {
+    "runs": [
+      39967296613,
+      39967296675,
+      39967296804,
+      39967296839,
+      39967296905,
+      39967296910,
+      39967297026,
+      39967297041,
+      39967297049
+    ],
+    "success": true
+  },
+  "main_docs_ci": {
+    "runs": [
+      39967404086,
+      39967404107,
+      39967404199,
+      39967404204,
+      39967404317,
+      39967404328,
+      39967404381,
+      39967404384,
+      39967404394,
+      39967404424,
+      39967404533
+    ],
+    "dedicated_run": 39967404086,
+    "dedicated_job": 120460766533,
+    "success": true
+  },
+  "prefixes": [
+    {
+      "path": "docs/CURRENT-STATE.md",
+      "old_blob": "5407acadd7e9e0e90668645fb920c50aee358fce",
+      "new_blob": "26deb0c4cc9db6afc1a194b14abfbe979d1610d2",
+      "prefix_kept": true
+    },
+    {
+      "path": "docs/HISTORICAL-TIMELINE.md",
+      "old_blob": "81dc3f1778c6e1dc7e86bb298105e0de4bf0808d",
+      "new_blob": "a6697359dcc673ccd1bc627b0cc7a75e8502417e",
+      "prefix_kept": true
+    },
+    {
+      "path": "docs/SOURCE-REGISTRY.md",
+      "old_blob": "a7b073ae7c730805118e9358d4a2e83646f0a6d8",
+      "new_blob": "7d37602af4b4187dfff3cbcf95db385706e4b6e9",
+      "prefix_kept": true
+    },
+    {
+      "path": "docs/RESTORATION-ROADMAP-R2.md",
+      "old_blob": "87f9040c84e4a4055e04d806c73eae390aec02a1",
+      "new_blob": "277f01ae7da8316532faeba54d6d7edb8b32db20",
+      "prefix_kept": true
+    }
+  ],
+  "git_publication": {
+    "ahead": 2,
+    "behind": 0,
+    "files": 9,
+    "deletions": 0,
+    "nonforce_fast_forward": true
+  },
+  "artifact": {
+    "candidate_count": 0,
+    "main_count": 0,
+    "original_html_sha256": null,
+    "original_screenshots_sha256": null,
+    "artifact_zip_sha256": null,
+    "derived_blob_in_git": true
+  },
+  "boundaries": {
+    "source_is_player_guide": true,
+    "original_server_ack": false,
+    "original_game_build_verified": false,
+    "ring_reissue_conflict_resolved": false,
+    "authentic_NPC_screenshot": false,
+    "stage_a_complete": false,
+    "stage_b_started": false,
+    "overall_percent": null,
+    "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-99"
+  }
+}

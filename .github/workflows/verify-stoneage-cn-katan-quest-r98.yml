@@ -5,12 +5,16 @@ on:
       - 'research/recovered/STONEAGE-CN-KATAN-QUEST-SOURCE-CONFLICTS-R98.json'
       - 'tools/stoneage_cn_katan_quest_r98.py'
       - 'tests/test_stoneage_cn_katan_quest_r98.py'
+      - 'tests/test_stoneage_cn_katan_quest_r98_custody.py'
+      - 'research/recovered/STONEAGE-CN-KATAN-QUEST-ACCEPTANCE-R98.json'
       - '.github/workflows/verify-stoneage-cn-katan-quest-r98.yml'
   pull_request:
     paths:
       - 'research/recovered/STONEAGE-CN-KATAN-QUEST-SOURCE-CONFLICTS-R98.json'
       - 'tools/stoneage_cn_katan_quest_r98.py'
       - 'tests/test_stoneage_cn_katan_quest_r98.py'
+      - 'tests/test_stoneage_cn_katan_quest_r98_custody.py'
+      - 'research/recovered/STONEAGE-CN-KATAN-QUEST-ACCEPTANCE-R98.json'
   workflow_dispatch:
 permissions:
   contents: read
@@ -25,3 +29,4 @@ jobs:
           python-version: '3.12'
       - run: python -m unittest tests.test_stoneage_cn_katan_quest_r98 -v
       - run: python -m tools.stoneage_cn_katan_quest_r98
+      - run: python -m unittest tests.test_stoneage_cn_katan_quest_r98_custody -v
