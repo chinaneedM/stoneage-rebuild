@@ -8557,3 +8557,10 @@ R98新浪S2实际HTML的第一插图表仍含原href与独立缩略图src；本�
 ### R102 2026-10-24 — 冻结材料索引与重复/投影审计
 
 本条登记派生整合资料，不计新历史来源。`research/recovered/STONEAGE-MATERIAL-REVIEW-INPUTS-R102.json` 固定main3782b518/tree f086c47b时880份顶层JSON的路径、原字节长度、SHA256及Git blob；范围不含子目录/非JSON/新R102文件。`STONEAGE-MATERIAL-RECORD-AUDIT-R102.json` 永久保存可复算计数、12日服人物位置来源补充投影、26无collection ID路径/JSON Pointer及CN40→104包含关系。`STONEAGE-MATERIAL-PORTFOLIO-REVIEW-R102.json` 覆盖22域，每域anchor在冻结清单内；不是全域已完成或全部版权已清。新程序调用旧JP人物builder精确复算，不任选重复记录、不合并跨区物种。旧证据不重写，原HTML/图片/程序/服务器资产未入Git；研究用途及生产站GATED保持。
+
+
+### R103 2026-10-24 — SACH-MX两版新浪媒体列项及实际界面图
+
+S1 https://games.sina.com.cn/zhuanti/waigua.shtml 当前80504B/SHA25662f81806473cc2227e1de51c70276313bc1ee9bd1f081ed9aa48c4e75d133d31，提供两版真实链接及隐去工具网址/无下载的编辑背景；S2 https://games.sina.com.cn/z/sta/2003-06-18/13364.shtml 43198B/SHA256b2ef2c089fb2d836bff0d397a73bf936a285b03fb9953e625bb8b983e3b98f75，标2003-06-18 15:28的5.00B9会员版；S3 https://games.sina.com.cn/z/sta/2003-06-18/13365.shtml 43097B/SHA2560b7827b74b927e00e44a05dd994020b5bfb53e733889c92d02f4256e095b3643，15:32的6.0B1免费版。署名/制作者均SACH-MX(万宇在线)，来源等级是同期媒体列项而非认证开发者日志/独立执行测试。三页同专题不是三个独立实验，华义游戏官网非工具官网。
+
+S2原href https://image2.sina.com.cn/gm/ads/sachmx5.00b9.JPG ，JPEG RGB945×505单帧161022B/SHA25605c70f5a7466dc18738e5cf35748bd28e707522789a6fac098f7cbccd9ac94c6；S3 https://image2.sina.com.cn/gm/ads/sachmx6.00freeb1.JPG ，RGB951×497单帧150678B/SHA256fb8553aced4123aa1e1cbbeed5f18af182ca1b1c0c0f419376e5768287a3547b。只按原href同路径HTTP升HTTPS，不猜名/取兄弟工具；完整解码实际目视。仅永久保存SOURCE/LOCAL派生及后验CI报告/收据，不存原HTML/JPEG/工具/脚本。三HTML初取与每次重放实际SHA分别保存，图像取到不代表2003像素鉴真或授权复用。五父档案及既有R100表解析器固定bytes/SHA/Git blob，22研究记录非生产网站导出。

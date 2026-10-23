@@ -1,0 +1,31 @@
+name: Verify R103 SACH-MX edition listings and linked UI pixels
+on:
+  push:
+    paths:
+      - 'tools/stoneage_sachmx_version_visual_r103.py'
+      - 'tests/test_stoneage_sachmx_version_visual_r103.py'
+      - 'research/recovered/STONEAGE-SACHMX-VERSION-VISUAL-SOURCE-R103.json'
+      - 'research/recovered/STONEAGE-SACHMX-VERSION-VISUAL-LOCAL-REPLAY-R103.json'
+      - 'docs/specs/STONEAGE-SACHMX-VERSION-VISUAL-R103.md'
+      - '.github/workflows/verify-stoneage-sachmx-version-visual-r103.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-and-static-visuals:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install Pillow==11.3.0
+      - run: python -m unittest tests.test_stoneage_sachmx_version_visual_r103 -v
+      - name: Reacquire three actual pages and two full JPEGs, emit derived report only
+        run: python -m tools.stoneage_sachmx_version_visual_r103 --write /tmp/r103-replay.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: r103-sachmx-editions-static-ui-derived
+          path: /tmp/r103-replay.json
+          retention-days: 30

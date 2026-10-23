@@ -56,3 +56,8 @@
 SADE8条部分更新回顾与0.2g独立变体、STA/SACHXP同期比较7观察面、配置7观察面、SaCh1.23名称版号见证已按来源分层，规格见docs/specs/STONEAGE-EARLY-ASSISTANT-VERSION-HISTORY-R1.md。现有STA2.52九项记录保持独立。回顾不是开发者日志，未给版号的比较不借用2.52；脚本评价矛盾、未来功能传闻、运气归因均未升级成事实。
 
 源Action39033762316真实SUCCESS；STONEAGE-EARLY-ASSISTANT-VERSIONS-R1.json与ACCEPTANCE-R1.json只保留派生与凭据。不宣称16家族或全部功能完成，未运行/采用旧工具。本有限批后按组合复原顺序转HISTORICAL-SITE-IA-SOURCE-MAP-01，工具开发者版史/精确构建缺口保留待具名新来源再开。
+
+
+## R103 SACH-MX具体版别与两张实际界面（2026-10-24）
+
+新增新浪同专题2003-06-18页面所标SACH-MX5.00B9会员/6.0B1免费两列项及原href全JPEG，详见 `docs/specs/STONEAGE-SACHMX-VERSION-VISUAL-R103.md`。两页共同明列8类，会员另列“不限等”和送货脚本；后者免费页未明列，不推出没有或完全继承。版号、收费差别和网页时刻不构成发布增删谱。作者/制作者栏虽署工具名，仍未认证开发者身份；专题隐藏工具网址，游戏官网不是外挂官网。静态界面补任务树/五宠信息栏/战斗阈值/停止条件控件，但不证运行、默认设置或原客户端兼容。22研究记录按helper_programs/helper_capabilities/screens分版保存；不自动合并旧SACH/SACHXP、不运行工具/脚本、不决定采纳。原16家族与不完整状态保留；后续队列转具名官方宠物图像，不横扩其它工具。

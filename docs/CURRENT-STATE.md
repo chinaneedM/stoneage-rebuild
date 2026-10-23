@@ -18008,3 +18008,18 @@ R98新浪S2实际HTML的第一插图表仍含原href与独立缩略图src；本�
 四份连续性文档旧/新原生远端Git blob完整双读且逐字旧前缀相同；冻结输入另与基线git ls-tree独立核全880路径和blob。新增 `research/recovered/STONEAGE-MATERIAL-ACCEPTANCE-R102.json` 固定内容HEAD/tree、全部21不同实际run、双专用job、11内容文件bytes/SHA256/Git blob和四历史前缀。两个专用run的artifact API均实际0件；本轮没有新历史源获取，不虚构ZIP、原图或2000年原字节。报告与清单在Git永久保存，不依赖短期工件。此次收据追加提交自身Actions仍按实际后验，不套用上述内容提交结果。
 
 下一最高仍 `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-103`，早期辅助工具一个版本明确的新实源与功能变动契约，优先开发者资料并对既有玩家记录查重；不运行旧工具、不决新作采用。22域状态、Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、总体百分比null均未抬高。
+
+
+### R103 SACH-MX会员/免费两版列项与两张原链接界面实像 — 2026-10-24（Asia/Shanghai）
+
+从GitHub新核main `6adb86d65f34bef4f80ffa474f92471797084bba` / tree `d4a2628db92f7aec927df9fe6a0477b605edc7a2` 启动；522分支分页6页、0开放PR/0 in_progress，旧queued37642417333保留。同HEAD候选8/main9共17实际Actions全success，tree5388完整无AGENTS；八启动文件严格UTF8与fresh exact Git blob相同，CURRENT旧2532049B/SHA256 `4dc5f492930f455a7b7814ac09233508509f0446199eef7067b205d3ee3f9618`。按最高NEXT103转早期辅助工具具体版本，不再扩渲染音效helper或重复全域索引。
+
+有限开发者来源搜索未得可认证原发布日志；查重既有STA2.52/SACH1.23/SADE记录后，取得新浪专题及2003-06-18两详情5.00B9会员版（15:28）/6.0B1免费版（15:32）。三HTML实际HTTP200无跳转、GB18030严格解码；搜索打开接口曾报不可用，与本机实际取源成功分别保存。两页署名/制作者栏均SACH-MX(万宇在线)，只作为媒体列项，不认证开发者本人、发布日或真实测试。专题明说隐去工具网址、不供下载，页尾华义官网不当外挂官网。SACH-MX不自动并成SACHXP或SachXP++ help。
+
+共同明列八类：游戏/走路速度、穿墙、快速遇敌、自动登入、任务脚本、任务秘语、情报显示。会员另列“不限等”及送货赚石币脚本；会员10+免费8共18次版本限定见证/10不同类别，免费“大致相同”不能补两项拥有/删除或完全继承。不限等只保留中性主张，具体对象/地图门/opcode未知。历史每年50元/免费、服务器端有与OS/速度/登录评价均保留文献主张，不认证运行兼容/服务端恢复/性能测量或发布日期先后。
+
+两实际href全JPEG完整解码并目视：会员945×505 RGB单帧161022B/SHA256 `05c70f5a7466dc18738e5cf35748bd28e707522789a6fac098f7cbccd9ac94c6`；免费951×497 RGB单帧150678B/`fb8553aced4123aa1e1cbbeed5f18af182ca1b1c0c0f419376e5768287a3547b`。独立于_small缩略图。可见具名版号、资料树/多宠物栏、任务脚本树、战斗阈值与停止条件控件；会员客户端框1.82不证兼容，样例勾选/数值不当默认或原游戏规则。静态零值/登录状态不证明成功或失败执行，外部工具图幅不当游戏原生UI。原HTML/图片/软件未入Git。
+
+交付SOURCE、LOCAL-REPLAY、中文规格、表格/图链/完整解码重放器、12项反例与专用CI。22研究记录＝2工具版本+18功能见证+2静态screen，七必填/19集合、来源分版、game_ids null、未实现/未采用/非发行授权。12新项及20旧工具关联测试本地32项通过；真实另次网络五输入SHA均等初取，独立regex/entity两表10行和图链均等DOM。初JPEG n_frames属性探查失败已用真实单帧回退纠正；中性“不限等”解释在本地复核收紧，未虚报远端成功。候选/main/工件需按后验，旧历史完整追加。
+
+最高NEXT `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-104` 转具名官方宠物图像的分版页面→原图绑定，不连续扩外挂调查；原网页号/图名非原游戏ID、跨时代/同构建未知保持。开发者版史有可认证具名来源再开。Stage A7 PARTIAL+2 OPEN、B/wiki GATED、savedataR79暂停、总体百分比null。

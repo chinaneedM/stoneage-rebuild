@@ -2317,3 +2317,10 @@ R98新浪S2实际HTML的第一插图表仍含原href与独立缩略图src；本�
 当前22域材料视图以 `docs/specs/STONEAGE-MATERIAL-PORTFOLIO-REVIEW-R102.md` 和 `research/recovered/STONEAGE-MATERIAL-PORTFOLIO-REVIEW-R102.json` 为准；旧portfolio状态与历史NEXT原样保留，由本条替换优先级而非改写。冻结880顶层JSON可重放，1339记录出现/871研究ID/883正文/456相同重复，12个日服人物投影被原builder完整解释，26无collection待人工归属。CN40包含于104，加JP124只有228网页位置ID，不作为原物种分母；本轮没有新历史源或原游戏实现。
 
 最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-103转早期辅助工具一个版本明确的用户可见功能/改动实源，优先开发者说明，查重现有STA2.52与早期SACH/STA/SADE；玩家稿明确降级，不执行旧工具、不决定采纳。一个来源包/一个版本比较止步；无新来源则转具名官方宠物图像材料。停止无身份/可见交付的渲染音效helper扩张，原TW1身份缺口有具体实源才重开。Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、总体完成百分比null。
+
+
+### R103 2026-10-24 — 外挂版本列项与可见界面的实质补证
+
+一个产品两媒体列项SACH-MX5.00B9会员/6.0B1免费、三HTML与双实际全JPEG已形成来源规格。共同8类、会员另2类；免费概述不能代替逐项继承/缺失证明。22研究记录（2版本/18能力见证/2静态screen）供后续比较，不是旧软件恢复可运行或内挂已采用。开发者身份、原发布日期、原服兼容、真实事务、全集与源码未知；不得因两个版号构造线性更新史。
+
+最高NEXT `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-104` 轮换具名官方宠物图像的明确分版页面→全图来源；保持网页位置/文件号非原游戏ID与跨时代身份边界，不连续扩外挂家族或Mission脚本。早期开发者版史有可认证具名新源再开。Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、总体百分比null。
