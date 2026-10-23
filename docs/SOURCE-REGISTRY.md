@@ -8539,3 +8539,16 @@ R98新浪S2实际HTML的第一插图表仍含原href与独立缩略图src；本�
 本地前置下载调用误用了不存在--max-seconds，改为脚本真实--deadline；libarchive因RAR字典不支持失败、apt因当前系统权限失败，改用官网真实出链的独立7-Zip成功解压，未升级权限。初静态扫描遇skipdata伪指令，改显式跳过；算术片段初漏设合成ESI导致未映射读，补齐寄存器模型后通过；加载调用窗口曾截在指令中间而被拒，改在0xd5ed指令边界停止。保留这些本地预检失败，不冒称远端失败或第一次全过。
 
 交付中文规格、原源派生R101 JSON、工具、七项单元及专用原盘CI。本地七项与真实原字节20案例均成功；候选/main及工件保管仍须随后实际验收。原商业程序/光盘/SPR/像素不入Git。宠物/NPC名字—SPR、原包写入、真实场景/调色板、世界DAT及服务器master未获补齐。最高NEXT102 `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-102` 有限全域材料缺口复核，不在无上游身份/画面交付时继续扩渲染/音效helper。Stage A7 PARTIAL+2 OPEN、B/wiki GATED、savedataR79 PAUSED_NON_BLOCKING，整体复原百分比null。
+
+
+### R101 双端原盘重放、主线验收及永久源保管 — 2026-10-23
+
+内容提交 `66da7bf84c18ce566890d61c880f4aadab3f23d8` / tree `b28b5fe6d2e7d3e3d2f87cdff50cf5d82ed5e6cc`。候选10/main11共21个不同Actions全部实际completed/success；专用candidate run39979317272/job120502105197、main run39979544963/job120502895969均实际7项单元+重新下载完整842125501B原盘压缩包并核MD5/SHA1+原BIN/exe SHA+20个限定原x86案例+报告逐字节cmp成功。两个日志均明示原载体校验成功，不把仅单元成功当真实取源。候选source表新增41处关键指令边界另由objdump独立相等核对；本地本包/R99/归档边界关联44项通过。
+
+重新核main仍为226c3f47，compare前进1/落后0、9文件0删行、4历史前缀完整，远端每新blob和最终tree逐一等于本地后以expected_sha非强制快进主线。主线自身11项按实际回报通过，不沿用候选结论。
+
+双工件真实下载核API长度/摘要与唯一成员r101-source-replay.json：candidate artifact12511589634 / ZIP3050B / sha256:3d18c107656cdf8b97cfbff196e5c0d6c1e859965941a9fb1b227871f13f257b；main artifact12512034672 / ZIP3050B / sha256:7031190ecfb595f5e5603c525118f3937b5747ba423c0c1f85449d02fa3606a1。两原样JSON与local均15620B / SHA256 `b6e0dd1482a675d49d005fb947c1873b0776ba25289c1c03f3ac259fa54ddd92` / Git blob `4623037e3ef703ae7bf81acc9a5ba35eaa587517`。ZIP容器摘要不同、raw完全相等。两CI各自已删除原版权输入，本地4份临时原载体/BIN/exe/SPRADRN也逐份先核哈希再删除；未将它们上传。
+
+永久新增双原样报告、CUSTODY与独立保管器/CI；11个证据pin包括原报告/工具/测试/规格/原取源workflow/双CI/原GROUP与ANIMATION gzip/旧UI及宠物身份缺口父报告，固定bytes/SHA256/Git blob，并保存21实际门、双run/job/artifact/ZIP及4完整历史前缀。回执及原样报告同长度破坏反例均拒绝后恢复原字节。本保管提交自身候选/main CI须按其实际HEAD后验，不预记成功。
+
+实际完成的是原动画表的选择、无匹配回退、空组保留、帧间隔换算与有限帧尾状态规格；只有合成内存中的限定原指令执行，不是历史UI画面、真实服务器交付或完整游戏执行。原S:K→对象0x124、宠物/NPC名字—SPR、场景调色板与世界DAT保持OPEN；原上界132768的安全性仍未证。最高NEXT102有限全域材料缺口复核，优先具名内容/画面身份实源，不再无上游交付扩渲染/音效helper；Stage A7 PARTIAL+2 OPEN、B/wiki GATED、savedataR79 PAUSED_NON_BLOCKING、总体百分比null。

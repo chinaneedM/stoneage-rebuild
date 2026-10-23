@@ -1,0 +1,22 @@
+name: Verify R101 permanent original-instruction source custody
+on:
+  push:
+    paths:
+      - 'tools/stoneage_tw10_animation_selector_r101_custody.py'
+      - 'research/recovered/STONEAGE-TW10-ANIMATION-SELECTOR-CUSTODY-R101.json'
+      - 'research/recovered/STONEAGE-TW10-ANIMATION-SELECTOR-CI-*-R101.json'
+      - '.github/workflows/verify-stoneage-tw10-animation-selector-r101-custody.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify-derived-only-custody:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest tests.test_stoneage_tw10_animation_selector_r101 -v
+      - run: python -m tools.stoneage_tw10_animation_selector_r101_custody

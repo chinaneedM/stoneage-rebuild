@@ -1,0 +1,332 @@
+{
+  "schema": "stoneage.tw10.animation-selector-custody.r101",
+  "date": "2026-10-23",
+  "content_head": "66da7bf84c18ce566890d61c880f4aadab3f23d8",
+  "content_tree": "b28b5fe6d2e7d3e3d2f87cdff50cf5d82ed5e6cc",
+  "evidence_pins": {
+    "research/recovered/STONEAGE-TW10-ANIMATION-SELECTOR-R101.json": {
+      "bytes": 15620,
+      "sha256": "b6e0dd1482a675d49d005fb947c1873b0776ba25289c1c03f3ac259fa54ddd92",
+      "git_blob": "4623037e3ef703ae7bf81acc9a5ba35eaa587517"
+    },
+    "tools/stoneage_tw10_animation_selector_r101.py": {
+      "bytes": 14078,
+      "sha256": "96b6930a73e53305e5404b6eafd1e64d14d43775e8246dbf1e7c4b76513a8bfd",
+      "git_blob": "830e8be8c73963a4a50593e7ba46d56f773c09d0"
+    },
+    "tests/test_stoneage_tw10_animation_selector_r101.py": {
+      "bytes": 3400,
+      "sha256": "fca55fe046cc8e444fa9dd64a436bee27956fa78d9128b064d0d15f6fc7bba2a",
+      "git_blob": "20b9ef685c9f1828320eee67079f579a67d35986"
+    },
+    "docs/specs/STONEAGE-TW10-ANIMATION-SELECTOR-R101.md": {
+      "bytes": 6452,
+      "sha256": "7d97b1da6d03765944859e15441330bb55cef3d766589bbb62b914131a85748d",
+      "git_blob": "02e4d3bbf397a8909387c6cb68100f6cf34778cf"
+    },
+    ".github/workflows/verify-stoneage-tw10-animation-selector-r101.yml": {
+      "bytes": 1913,
+      "sha256": "a1f71bd79ef481940dbf091f67c5651160e40aff8ff3148c2329ea2736c03fe9",
+      "git_blob": "7cbffecef8c810ec495944c44464b60f24d8d3b6"
+    },
+    "research/recovered/STONEAGE-TW10-ANIMATION-SELECTOR-CI-CANDIDATE-R101.json": {
+      "bytes": 15620,
+      "sha256": "b6e0dd1482a675d49d005fb947c1873b0776ba25289c1c03f3ac259fa54ddd92",
+      "git_blob": "4623037e3ef703ae7bf81acc9a5ba35eaa587517"
+    },
+    "research/recovered/STONEAGE-TW10-ANIMATION-SELECTOR-CI-MAIN-R101.json": {
+      "bytes": 15620,
+      "sha256": "b6e0dd1482a675d49d005fb947c1873b0776ba25289c1c03f3ac259fa54ddd92",
+      "git_blob": "4623037e3ef703ae7bf81acc9a5ba35eaa587517"
+    },
+    "research/recovered/tw10-resource-metadata/SPR-GROUP-R1.tsv.gz": {
+      "bytes": 23827,
+      "sha256": "4db7809de4197eb90cca6dc04bda8550025e022c8232e2ebb902db0e9faf0175",
+      "git_blob": "5ec65f043848fb3260bc04c94847b45fb1706d36"
+    },
+    "research/recovered/tw10-resource-metadata/SPR-ANIMATION-R1.tsv.gz": {
+      "bytes": 340632,
+      "sha256": "25f8039e6c6ca47d94289b269d5ff74a67fde999c6b6d4dbb08af297ddcaa567",
+      "git_blob": "90b19256f465effa6a8b6964a3777f7b31e3004c"
+    },
+    "research/recovered/STONEAGE-TW10-UI-RESOURCE-BIND-SCOPE-R1.json": {
+      "bytes": 5231,
+      "sha256": "0354abc051881b6ecae47a84d0cb020bd9d8417db995c877a5531e6d087ea294",
+      "git_blob": "8db0381f876aea901fbdaf55aaa031157d035800"
+    },
+    "research/recovered/STONEAGE-PET-IDENTITY-SAME-BUILD-TRIAGE-R1.json": {
+      "bytes": 8650,
+      "sha256": "b61bdadf74b21795586838898726eb586e93f2a91a155b3595fc768d2a7667b2",
+      "git_blob": "b338e67768c404f11f4813d2fc946fea52342816"
+    }
+  },
+  "actual_content_runs": [
+    {
+      "id": 39979544967,
+      "name": "Independently verify TW1.0 R58 rooted helper returns and source custody",
+      "head": "66da7bf84c18ce566890d61c880f4aadab3f23d8",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39979544978,
+      "name": "Validate Stage A early source gap triage",
+      "head": "66da7bf84c18ce566890d61c880f4aadab3f23d8",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39979544981,
+      "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+      "head": "66da7bf84c18ce566890d61c880f4aadab3f23d8",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39979545099,
+      "name": "Validate StoneAge Stage A joint review decision",
+      "head": "66da7bf84c18ce566890d61c880f4aadab3f23d8",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39979545023,
+      "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+      "head": "66da7bf84c18ce566890d61c880f4aadab3f23d8",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39979545065,
+      "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+      "head": "66da7bf84c18ce566890d61c880f4aadab3f23d8",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39979545145,
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "head": "66da7bf84c18ce566890d61c880f4aadab3f23d8",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39979545005,
+      "name": "Validate legacy StoneAge assistant history and pet content gaps",
+      "head": "66da7bf84c18ce566890d61c880f4aadab3f23d8",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39979545033,
+      "name": "Validate StoneAge preproduction content archive and wiki boundary",
+      "head": "66da7bf84c18ce566890d61c880f4aadab3f23d8",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39979545097,
+      "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+      "head": "66da7bf84c18ce566890d61c880f4aadab3f23d8",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39979544963,
+      "name": "Verify R101 original TW1.0 animation selection and countdown rules",
+      "head": "66da7bf84c18ce566890d61c880f4aadab3f23d8",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39979317272,
+      "name": "Verify R101 original TW1.0 animation selection and countdown rules",
+      "head": "66da7bf84c18ce566890d61c880f4aadab3f23d8",
+      "branch": "agent/tw10-animation-selector-r101-20261023",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39979317013,
+      "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+      "head": "66da7bf84c18ce566890d61c880f4aadab3f23d8",
+      "branch": "agent/tw10-animation-selector-r101-20261023",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39979317028,
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "head": "66da7bf84c18ce566890d61c880f4aadab3f23d8",
+      "branch": "agent/tw10-animation-selector-r101-20261023",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39979317131,
+      "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+      "head": "66da7bf84c18ce566890d61c880f4aadab3f23d8",
+      "branch": "agent/tw10-animation-selector-r101-20261023",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39979317195,
+      "name": "Validate StoneAge Stage A joint review decision",
+      "head": "66da7bf84c18ce566890d61c880f4aadab3f23d8",
+      "branch": "agent/tw10-animation-selector-r101-20261023",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39979317108,
+      "name": "Validate StoneAge preproduction content archive and wiki boundary",
+      "head": "66da7bf84c18ce566890d61c880f4aadab3f23d8",
+      "branch": "agent/tw10-animation-selector-r101-20261023",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39979316910,
+      "name": "Validate Stage A early source gap triage",
+      "head": "66da7bf84c18ce566890d61c880f4aadab3f23d8",
+      "branch": "agent/tw10-animation-selector-r101-20261023",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39979317198,
+      "name": "Validate legacy StoneAge assistant history and pet content gaps",
+      "head": "66da7bf84c18ce566890d61c880f4aadab3f23d8",
+      "branch": "agent/tw10-animation-selector-r101-20261023",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39979317130,
+      "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+      "head": "66da7bf84c18ce566890d61c880f4aadab3f23d8",
+      "branch": "agent/tw10-animation-selector-r101-20261023",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 39979317001,
+      "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+      "head": "66da7bf84c18ce566890d61c880f4aadab3f23d8",
+      "branch": "agent/tw10-animation-selector-r101-20261023",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "source_artifacts": [
+    {
+      "role": "candidate",
+      "run_id": 39979317272,
+      "head": "66da7bf84c18ce566890d61c880f4aadab3f23d8",
+      "branch": "agent/tw10-animation-selector-r101-20261023",
+      "job_id": 120502105197,
+      "artifact_id": 12511589634,
+      "artifact_name": "r101-original-animation-selection-derived-only",
+      "zip_bytes": 3050,
+      "zip_digest": "sha256:3d18c107656cdf8b97cfbff196e5c0d6c1e859965941a9fb1b227871f13f257b",
+      "raw_report": "research/recovered/STONEAGE-TW10-ANIMATION-SELECTOR-CI-CANDIDATE-R101.json",
+      "raw_bytes": 15620,
+      "raw_sha256": "b6e0dd1482a675d49d005fb947c1873b0776ba25289c1c03f3ac259fa54ddd92",
+      "tests_in_actual_log": 7,
+      "original_carrier_hash_reverified": true,
+      "original_exe_hash_reverified": true,
+      "bounded_twenty_original_instruction_cases_passed": true
+    },
+    {
+      "role": "main",
+      "run_id": 39979544963,
+      "head": "66da7bf84c18ce566890d61c880f4aadab3f23d8",
+      "branch": "main",
+      "job_id": 120502895969,
+      "artifact_id": 12512034672,
+      "artifact_name": "r101-original-animation-selection-derived-only",
+      "zip_bytes": 3050,
+      "zip_digest": "sha256:7031190ecfb595f5e5603c525118f3937b5747ba423c0c1f85449d02fa3606a1",
+      "raw_report": "research/recovered/STONEAGE-TW10-ANIMATION-SELECTOR-CI-MAIN-R101.json",
+      "raw_bytes": 15620,
+      "raw_sha256": "b6e0dd1482a675d49d005fb947c1873b0776ba25289c1c03f3ac259fa54ddd92",
+      "tests_in_actual_log": 7,
+      "original_carrier_hash_reverified": true,
+      "original_exe_hash_reverified": true,
+      "bounded_twenty_original_instruction_cases_passed": true
+    }
+  ],
+  "all_three_raw_reports_equal": true,
+  "independent_objdump_pivots_checked": 41,
+  "local_related_tests_passed": 44,
+  "historical_prefixes": [
+    {
+      "path": "docs/CURRENT-STATE.md",
+      "old_bytes": 2521980,
+      "old_sha256": "23790aede7ebce00a484d9f13fd39fd38a01c034ba34c890be37cba3d3906a3a",
+      "content_blob": "0f348d2580805962e1b1a86a41c35e55f05f0e69"
+    },
+    {
+      "path": "docs/HISTORICAL-TIMELINE.md",
+      "old_bytes": 675856,
+      "old_sha256": "cf933d8452bb81e4487c4d887aee27ad6be3d00c4efb14b426c953a0362b542c",
+      "content_blob": "158e4ae32e8cc9f7bda17f38654f91305eb53a20"
+    },
+    {
+      "path": "docs/SOURCE-REGISTRY.md",
+      "old_bytes": 965172,
+      "old_sha256": "f4bcc5d686959497a421a6ff87e661c3d7e5a07bb9a89cb93e4c71e971b962ff",
+      "content_blob": "57f6250dfc30c9b5f4288c08431b7059eddcca56"
+    },
+    {
+      "path": "docs/RESTORATION-ROADMAP-R2.md",
+      "old_bytes": 403337,
+      "old_sha256": "00618b76b2b9c11014525c674588604ff64c56bd3963ce7c5a06244452340049",
+      "content_blob": "bb4bfa0f57e325768e30814872edc837db4c2d5a"
+    }
+  ],
+  "content_integration": {
+    "base": "226c3f4763448ad30ef8cc4c896128fa60a8e9bd",
+    "ahead": 1,
+    "behind": 0,
+    "changed_files": 9,
+    "deleted_lines": 0,
+    "expected_sha_checked": true,
+    "force": false
+  },
+  "boundaries": {
+    "same_build_packet_to_object_graphic_path_proven": false,
+    "named_pet_to_spr_proven": false,
+    "named_npc_to_spr_proven": false,
+    "actual_screen_draw_or_palette_proven": false,
+    "original_server_master_recovered": false,
+    "original_world_dat_recovered": false,
+    "original_assets_committed": false,
+    "stage_a_closed": false,
+    "stage_b_started": false,
+    "wiki_started": false,
+    "overall_percent": null
+  },
+  "instrumentation": {
+    "mode": "BOUNDED_ORIGINAL_X86_WITH_SYNTHETIC_MEMORY",
+    "bitmap_helper_0xe4e0": "STUBBED_ZERO_OFFSETS_RETURN_ONE",
+    "audio_calls": "SYNTHETIC_FRAMES_SOUND_ZERO",
+    "selector_instruction_limit": 2000,
+    "normalizer_instruction_limit": 100,
+    "whole_client_or_server_executed": false
+  },
+  "local_proprietary_source_files_erased_after_hash_check": true,
+  "custody_commit_ci": "NOT_PRECLAIMED_CHECK_ACTUAL_HEAD"
+}
