@@ -1,0 +1,185 @@
+{
+  "schema": "stoneage.cn2001_world_routes_record_gates.r96",
+  "task": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-96",
+  "scope": "2001_17173_MIGRATED_PLAYER_GUIDES_NOT_ORIGINAL_1999_JSS_OR_TW10_MASTER",
+  "sources": [
+    {
+      "id": "R96-S1",
+      "url": "https://news.17173.com/z/stoneage/content/2001-6-14/n3_920052.html",
+      "title": "石器之练功篇（一）",
+      "display_date": "2001-06-14",
+      "byline": "正伟",
+      "original_html_authenticated": false,
+      "raw_original_sha256": null,
+      "exact_game_build": null
+    },
+    {
+      "id": "R96-S2",
+      "url": "https://news.17173.com/z/stoneage/content/2001-6-14/n254_170616.html",
+      "title": "石器之练功篇（二）",
+      "display_date": "2001-06-14",
+      "byline": null,
+      "original_html_authenticated": false,
+      "raw_original_sha256": null,
+      "exact_game_build": null
+    }
+  ],
+  "geography": {
+    "islands": [
+      "南岛",
+      "北岛",
+      "沙姆岛",
+      "吉鲁岛"
+    ],
+    "reported_subsea_passages": 3,
+    "passage_endpoints_identified": false,
+    "original_map_ids": null,
+    "actual_geometry_recovered": false
+  },
+  "birthplaces": [
+    {
+      "island": "南岛",
+      "name": "加加村"
+    },
+    {
+      "island": "南岛",
+      "name": "卡鲁它那村",
+      "alternate_in_s2": "卡鲁他那村"
+    },
+    {
+      "island": "北岛",
+      "name": "玛丽娜斯渔村",
+      "alternate_in_s2": "玛丽娜斯村"
+    },
+    {
+      "island": "北岛",
+      "name": "萨姆吉尔村"
+    }
+  ],
+  "suggested_routes": [
+    {
+      "code": "S",
+      "stops": [
+        "加加村",
+        "多多村",
+        "乌鲁力村",
+        "霍特尔村",
+        "沙姆岛奇努伊村",
+        "吉鲁岛达那村"
+      ],
+      "strict_game_gate": false
+    },
+    {
+      "code": "N",
+      "stops": [
+        "萨姆吉尔村",
+        "霍特尔村",
+        "沙姆岛奇努伊村",
+        "吉鲁岛达那村"
+      ],
+      "strict_game_gate": false
+    }
+  ],
+  "statue_record_claims": [
+    {
+      "source": "R96-S1",
+      "claim": "初次在某村神像记录需要该村特定肉，以后该点记录不再需要肉",
+      "original_server_ack": false
+    },
+    {
+      "source": "R96-S1",
+      "claim": "记录地点决定下一次登入时的起点",
+      "actual_save_reentry_trace": false
+    },
+    {
+      "source": "R96-S2",
+      "claim": "霍特尔村记录需要两块奇宝的肉",
+      "reported_meat": "奇宝的肉",
+      "count": 2,
+      "all_statues_same_meat": false
+    },
+    {
+      "source": "R96-S2",
+      "claim": "作者称沙姆岛仅有一个村，没有记录点，建议出发前在霍特尔村记录",
+      "entire_game_has_no_other_record_points": false
+    }
+  ],
+  "transport": {
+    "source": "R96-S2",
+    "path": "科奥海底通路",
+    "from": "南岛",
+    "toward": "北岛",
+    "pass_location": "卡鲁它那村",
+    "pass_price_stones": 200,
+    "merchant_identity": null,
+    "all_three_passages_same_gate": false,
+    "original_pass_item_id": null,
+    "live_server_transaction_verified": false
+  },
+  "elemental_caves": [
+    {
+      "name": "深红洞窟",
+      "element": "火",
+      "source": "R96-S1",
+      "reported_status": "称已开放",
+      "original_operation_log_verified": false
+    },
+    {
+      "name": "玄黄洞窟",
+      "element": "地",
+      "source": "R96-S1",
+      "reported_status": "称已开放",
+      "original_operation_log_verified": false
+    },
+    {
+      "name": "琉璃洞窟",
+      "element": "风",
+      "source": "R96-S1",
+      "reported_status": "称已开放",
+      "original_operation_log_verified": false
+    },
+    {
+      "name": "碧青洞窟",
+      "element": "水",
+      "source": "R96-S1",
+      "reported_status": "称尚未开放",
+      "original_operation_log_verified": false
+    }
+  ],
+  "cross_reference": {
+    "old_repo_index": "MEDIA17173_20010614_NORTH_ISLAND",
+    "old_repo_guide": "https://news.17173.com/z/stoneage/content/2001-6-14/n781_697151.html",
+    "r96_no_reimport_of_old_indexed_guide": true,
+    "same_version_as_r95_jp2003_verified": false
+  },
+  "evidence_guards": {
+    "actual_2001_origin_html_verified": false,
+    "server_world_exact_map_ids_verified": false,
+    "s1_cave_status_server_deployment_verified": false,
+    "statue_save_and_login_executed": false,
+    "birthplace_roster_identified_in_1999_original": false,
+    "pass_cost_verified_in_server": false,
+    "all_areas_traversed_in_matching_build": false,
+    "source_guide_is_official_manual": false,
+    "player_level_suggestions_are_server_gates": false
+  },
+  "unknowns": [
+    "2001 original article HTML snapshots",
+    "relevant CN game build and player guide transmission chain",
+    "original server map/edge and portal IDs",
+    "statue invocation meat and reentry message sequence",
+    "all 3 subsea passage endpoints and gate requirements",
+    "cave launch announcements or server deployment proofs",
+    "original game pet/encounter levels along training routes"
+  ],
+  "publication": {
+    "derived_metadata_only": true,
+    "original_copyright_html_saved": false,
+    "original_images_saved": false,
+    "original_client_executed": false,
+    "stage_a_closed": false,
+    "stage_b_started": false,
+    "overall_restoration_percent": null,
+    "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-97"
+  }
+}

@@ -1,0 +1,28 @@
+name: Verify R96 2001 player island routes and statue record boundaries
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-CN2001-WORLD-ROUTES-RECORD-SOURCE-R96.json'
+      - 'research/recovered/STONEAGE-CN2001-WORLD-ROUTES-RECORD-ACCEPTANCE-R96.json'
+      - 'tools/stoneage_cn2001_world_routes_record_source.py'
+      - 'tests/test_stoneage_cn2001_world_routes_record_source.py'
+      - '.github/workflows/verify-stoneage-cn2001-world-routes-record.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-CN2001-WORLD-ROUTES-RECORD-SOURCE-R96.json'
+      - 'tools/stoneage_cn2001_world_routes_record_source.py'
+      - 'tests/test_stoneage_cn2001_world_routes_record_source.py'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify-world-text-boundaries:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest tests.test_stoneage_cn2001_world_routes_record_source -v
+      - run: python -m tools.stoneage_cn2001_world_routes_record_source
