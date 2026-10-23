@@ -1,0 +1,31 @@
+name: Verify R99 original TW1.0 static NPC-candidate image/map resource join
+on:
+  push:
+    paths:
+      - 'tools/stoneage_tw10_npc_static_resource_r99.py'
+      - 'tests/test_stoneage_tw10_npc_static_resource_r99.py'
+      - 'research/recovered/STONEAGE-TW10-NPC-STATIC-RESOURCE-JOIN-R99.json'
+      - '.github/workflows/verify-stoneage-tw10-npc-static-resource-r99.yml'
+  pull_request:
+    paths:
+      - 'tools/stoneage_tw10_npc_static_resource_r99.py'
+      - 'tests/test_stoneage_tw10_npc_static_resource_r99.py'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify-original-static-resource-join:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest tests.test_stoneage_tw10_npc_static_resource_r99 -v
+      - run: python -m tools.stoneage_tw10_npc_static_resource_r99 --print-rows --write /tmp/r99-join-report.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: r99-original-derived-source-only
+          path: /tmp/r99-join-report.json
+          retention-days: 30

@@ -1,0 +1,14 @@
+# R99：台湾 1.0 原盘静态 NPC 候选图号 ↔ map_number ↔ 图像块全量连接
+
+本工作包恢复的是**原始图像资源的编号和物理元数据**：把同一份已认证台湾 1.0 零售盘提取的 `ADRN-R1.tsv.gz` 与 `COLLISION-ATTR-R1.tsv.gz` 按 **bitmapno** 做完整联接，另由 `SPR-FRAME-R1.tsv.gz` 对照是否有动画帧直接引用该号段。本包不触碰游戏原商业图片和客户端运行画面。
+
+**来源与证据分层：** `bitmapno`、原图宽高、绘制偏移、RD 压缩块 SHA256、`map_number`、碰撞和占格字段来自同一台湾原盘源衍生文件（原数据）；“NPC”是 2001 年玩家文章 `stonepic` 对 **5846—5946** 号段的类别猜测（不是运营官方同版本身份）。已有报告 `STONEAGE-TW10-MAP-CONTENT-COLLISION-R1.json` 只给分类统计与 5 个例子；本包补逐条物理来源，不宣称画面和运行时 NPC 身份。
+
+产物 `research/recovered/STONEAGE-TW10-NPC-STATIC-RESOURCE-JOIN-R99.json` 固化原始 101 行及 8 个源/历史 Git/SHA 锚；每行含原位图 ID、原 `map_number`、尺寸、偏移、RD 块 SHA256、碰撞数值，以及 NULL 的 `original_npc_id/world_floor_id/npc_name`。 **尤其不能把 `map_number=16000` 当作游戏地图 16000、NPC 16000 或其世界坐标。**
+
+独立有界 CI 从原始全量 TSV 重算来源矩阵、检验 101/101 一对一连接与冲突、检查所有 242085 条原SPR帧并验证零直接引用，守护原始物理元数据和文献身份边界。零引用仅说明此资源号段**没有以那种格式在该 SPR 帧表直接出现**，不证明静态绘图或其他调用路径没有使用。
+
+历史证据保守结论：即使源矩阵通过，也 **不能恢复卡坦、玛丽娜丝村长等具名 NPC 与对应图像的真实连接**，因为原版具体 `map/*.dat` 世界层载荷、NPC master/出生记录、具体运行时选择器与截图同构建绑定尚缺。只有出现某一可重放同版原生选择器、NPC 主表或带完整来源链的原场景图，才以单点扩展该项；不可将玩家名字、后代脚本或原号段形状自动转成同版真相。
+
+版本归属：**TW1.0 ORIGINAL RESOURCE PHYSICAL LAYER**，不适用于自动认定 JSS1999/大陆1.82的具体NPC、地图人口及任务条件。Stage A仍7 PARTIAL＋2 OPEN，Stage B与资料站生产 GATED，savedata R79 PAUSED_NON_BLOCKING。下一项 R100 应转寻**具名原图／同构建选择链**，不得因101物理记录生成101原物种或101 NPC。
+
