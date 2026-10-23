@@ -1,0 +1,45 @@
+name: Verify CN2003 Qiang En family choice and cave ecology
+on:
+  push:
+    paths:
+      - 'tools/stoneage_cn2003_qiang_en_source.py'
+      - 'tools/stoneage_jp2005_treasure_source.py'
+      - 'tests/test_stoneage_cn2003_qiang_en_source.py'
+      - 'research/recovered/STONEAGE-CN2003-QIANG-EN-FAMILY-*.json'
+      - 'research/recovered/STONEAGE-CN2003-LIULI-CAVE-SOURCE-R1.json'
+      - 'research/recovered/STONEAGE-CN2003-MENGDE-CAVE-SOURCE-R1.json'
+      - 'research/recovered/STONEAGE-PREPRODUCTION-CONTENT-ARCHIVE-R1.json'
+      - '.github/workflows/verify-stoneage-cn2003-qiang-en-source.yml'
+  pull_request:
+    paths:
+      - 'tools/stoneage_cn2003_qiang_en_source.py'
+      - 'tools/stoneage_jp2005_treasure_source.py'
+      - 'tests/test_stoneage_cn2003_qiang_en_source.py'
+      - 'research/recovered/STONEAGE-CN2003-QIANG-EN-FAMILY-*.json'
+      - 'research/recovered/STONEAGE-CN2003-LIULI-CAVE-SOURCE-R1.json'
+      - 'research/recovered/STONEAGE-CN2003-MENGDE-CAVE-SOURCE-R1.json'
+      - 'research/recovered/STONEAGE-PREPRODUCTION-CONTENT-ARCHIVE-R1.json'
+      - '.github/workflows/verify-stoneage-cn2003-qiang-en-source.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  bounded-source-replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install Pillow==12.3.0
+      - name: Family choice, optional document, directional transitions and source boundaries
+        run: python -m unittest tests.test_stoneage_cn2003_qiang_en_source -v
+      - name: Retrieve one quest, one bounded map row and two selected full screenshots
+        run: python -m tools.stoneage_cn2003_qiang_en_source --fetch --output "$RUNNER_TEMP/r83-content/replay.json"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cn2003-qiang-en-derived-r83
+          path: ${{ runner.temp }}/r83-content/replay.json
+          if-no-files-found: error
+          retention-days: 30
