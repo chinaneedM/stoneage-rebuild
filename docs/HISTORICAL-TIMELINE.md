@@ -4711,3 +4711,16 @@ Sina另存档 https://games.sina.com.cn/zhqu/sta/2/cwzl/index.shtml 显示扑满
 **FACT（仅原盘资源物理层）**：台湾 Waei/JSS v1.0 同一原盘派生的 ADRN 位图和碰撞资源表，在bitmapno5846—5946间完整给出101个独立位图与101个互异map_number的准确映射，每个RD图像块SHA256不同；其资源号并非连续101号，而分两段：前74个位图5846—5919→原资源16000—16073，后27个位图5920—5946→原资源16200—16226。原SPR帧242085项中这101号静态位图的直接引用0项，不能证明它们从未用于静态绘制。[SRC-TW10-R99-ORIGINAL-NPC-CANDIDATE-MAP-RESOURCE]
 
 **OPEN（严禁提升）**：“NPC”是2001玩家对图号段的分类，而非原官方角色选择表；`map_number` 是ADRN资源编号，并非游戏世界楼层/地图ID或NPC实体ID。原NPC人物名字、坐标、互动状态、完整原场景画面与服务端脚本依旧未知；101资源行不等于101个NPC、101个物种或真实可达场景，图像源块哈希不是版权复用许可。
+
+
+### R100 卡坦具名目标与四鱼请求窗口：两张实际全图补证 — 2026-10-23
+
+从新核GitHub main `8e2ba7f7484a406120fc6292a3578018148ec888` / tree `870b7bbff3a810aff8f1c5cd5c43358f92b5b699` 启动；完整519分支分页至不足100，0开放PR/0 in_progress，旧无关queued37642417333保留；同HEAD候选9/main8合计17个实际Actions全部success。八启动文件完整UTF8与精确checkout Git blob逐字一致；CURRENT旧前缀2517154 bytes / SHA256 `cec7cc606232a09907be8ce7f3b09bd1d74e3d5ec34403f1cba9ab3d61904745`，未依据旧聊天恢复进度。R100缺口是具名NPC实际图像关联，不延长R99静态资源列。
+
+R98新浪S2实际HTML的第一插图表仍含原href与独立缩略图src；本次仅取首两张全图。https://games.sina.com.cn/zhqu/sta/rwgl1_6.shtml 当前53124B / SHA256 `7230667db91cc824fb6fe6b3d0a833611170a1de1e15bc23f367b623240f7b9c`，显示2003-05-29 14:24网友投稿。两个真实全图仅将http升级同主机同路径https，均200无跳转、RGB JPEG640×480单帧完整解码：232图58651B / `ace7096c3866400dd4400be5169dfaa76f73ae902e7bfb3b3bf8e9a2a76420fc`；235图70065B / `fbb31bd1726db8c25ef41005af28abbf76bfb6b6b6988bec504928e2c3a60b24`。原缩略图231/234未冒充全图。
+
+实际逐图查看：图一沙漠、两个人形、目标标记和指针、底栏卡坦、右上MAP和局部坐标显示；图二棕框半透明对话窗、25级四鱼与两空宠物位置、窗口选项和玩家模式标志。建立当前文献图像→卡坦目标/请求对话的有限关联；不是两次独立执行，不证确认/交宠成功或失戒回补。图片尺寸不是原生分辨率认证，文件名时间不是拍摄鉴真；精确地区build、台湾1.0同版、NPC/bitmap/SPR原ID、DAT/floor与原渲染调用保持OPEN。R98五条冲突、旧图片未取历史及R99具名TW10绑定0全部不改。
+
+交付SOURCE/LOCAL-REPLAY原样派生JSON、中文规格、解析/实际网络重放工具、7项负向测试及专用CI；完整图文顺序另以独立regex从真实HTML复核，真实两图CLI全部通过。原HTML/JPEG不入Git。候选/main远端及工件保管须按随后实际结果验收，未提前宣称。
+
+最高NEXT `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-101`：转同版可认证宠物物种—SPR选择或含实体地图DAT；无新源则有限全域缺口复核，不再连续扩卡坦攻略/图组或静态资源列。Stage A7 PARTIAL+2 OPEN，B/wiki GATED，savedataR79 PAUSED_NON_BLOCKING，整体百分比null。

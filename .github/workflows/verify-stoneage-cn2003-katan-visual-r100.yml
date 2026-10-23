@@ -1,0 +1,29 @@
+name: Verify R100 Katan NPC target and dialogue image source
+on:
+  push:
+    paths:
+      - 'tools/stoneage_cn2003_katan_visual_r100.py'
+      - 'tests/test_stoneage_cn2003_katan_visual_r100.py'
+      - 'research/recovered/STONEAGE-CN2003-KATAN-NPC-VISUAL-*.json'
+      - 'docs/specs/STONEAGE-CN2003-KATAN-NPC-VISUAL-R100.md'
+      - '.github/workflows/verify-stoneage-cn2003-katan-visual-r100.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify-caption-linked-original-image-payloads:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install Pillow==11.3.0
+      - run: python -m unittest tests.test_stoneage_cn2003_katan_visual_r100 -v
+      - run: python -m tools.stoneage_cn2003_katan_visual_r100 --write /tmp/r100-replay.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: r100-katan-two-image-derived-replay
+          path: /tmp/r100-replay.json
+          retention-days: 30

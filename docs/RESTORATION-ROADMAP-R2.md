@@ -2282,3 +2282,16 @@ No historical NPC image payload or original server action was obtained: therefor
 最新NEXT99从网页NPC任务转到早期**原盘同版**资源的可重建关联。固定ADRN/COLLISION/SPR原资料并非补原服务器人口：实算位图5846—5919→map资源16000—16073（74条），5920—5946→16200—16226（27条），压缩块101个SHA互异；242085原SPR帧对该静态号段直接引用0条。编号断档不能推NPC缺口，map_number不当世界floor ID，玩家“NPC图”类别不能升原角色身份。保存完整101行派生元数据及源级校验，不能宣称原NPC模型/动作、图像或场景恢复成功，也不可提交原版权像素。
 
 最高NEXT `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-100`：优先实际具名原NPC画面与原生渲染选择链、原台湾1.0地图DAT内容实体或确证同build宠物物种—SPR关联；没有新增身份来源时不再继续细拆静态图属性。Stage A 7 PARTIAL+2 OPEN；B/wiki GATED；savedata R79 PAUSED_NON_BLOCKING，总恢复百分比null。
+
+
+### R100 卡坦具名目标与四鱼请求窗口：两张实际全图补证 — 2026-10-23
+
+从新核GitHub main `8e2ba7f7484a406120fc6292a3578018148ec888` / tree `870b7bbff3a810aff8f1c5cd5c43358f92b5b699` 启动；完整519分支分页至不足100，0开放PR/0 in_progress，旧无关queued37642417333保留；同HEAD候选9/main8合计17个实际Actions全部success。八启动文件完整UTF8与精确checkout Git blob逐字一致；CURRENT旧前缀2517154 bytes / SHA256 `cec7cc606232a09907be8ce7f3b09bd1d74e3d5ec34403f1cba9ab3d61904745`，未依据旧聊天恢复进度。R100缺口是具名NPC实际图像关联，不延长R99静态资源列。
+
+R98新浪S2实际HTML的第一插图表仍含原href与独立缩略图src；本次仅取首两张全图。https://games.sina.com.cn/zhqu/sta/rwgl1_6.shtml 当前53124B / SHA256 `7230667db91cc824fb6fe6b3d0a833611170a1de1e15bc23f367b623240f7b9c`，显示2003-05-29 14:24网友投稿。两个真实全图仅将http升级同主机同路径https，均200无跳转、RGB JPEG640×480单帧完整解码：232图58651B / `ace7096c3866400dd4400be5169dfaa76f73ae902e7bfb3b3bf8e9a2a76420fc`；235图70065B / `fbb31bd1726db8c25ef41005af28abbf76bfb6b6b6988bec504928e2c3a60b24`。原缩略图231/234未冒充全图。
+
+实际逐图查看：图一沙漠、两个人形、目标标记和指针、底栏卡坦、右上MAP和局部坐标显示；图二棕框半透明对话窗、25级四鱼与两空宠物位置、窗口选项和玩家模式标志。建立当前文献图像→卡坦目标/请求对话的有限关联；不是两次独立执行，不证确认/交宠成功或失戒回补。图片尺寸不是原生分辨率认证，文件名时间不是拍摄鉴真；精确地区build、台湾1.0同版、NPC/bitmap/SPR原ID、DAT/floor与原渲染调用保持OPEN。R98五条冲突、旧图片未取历史及R99具名TW10绑定0全部不改。
+
+交付SOURCE/LOCAL-REPLAY原样派生JSON、中文规格、解析/实际网络重放工具、7项负向测试及专用CI；完整图文顺序另以独立regex从真实HTML复核，真实两图CLI全部通过。原HTML/JPEG不入Git。候选/main远端及工件保管须按随后实际结果验收，未提前宣称。
+
+最高NEXT `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-101`：转同版可认证宠物物种—SPR选择或含实体地图DAT；无新源则有限全域缺口复核，不再连续扩卡坦攻略/图组或静态资源列。Stage A7 PARTIAL+2 OPEN，B/wiki GATED，savedataR79 PAUSED_NON_BLOCKING，整体百分比null。

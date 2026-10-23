@@ -1,0 +1,144 @@
+{
+  "schema": "stoneage.cn2003.katan.visual-source.r100",
+  "task": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-100",
+  "date": "2026-10-23",
+  "startup": {
+    "head": "8e2ba7f7484a406120fc6292a3578018148ec888",
+    "tree": "870b7bbff3a810aff8f1c5cd5c43358f92b5b699",
+    "branches": 519,
+    "open_prs": 0,
+    "in_progress": 0,
+    "head_success_runs": 17,
+    "current_prefix_bytes": 2517154,
+    "current_prefix_sha256": "cec7cc606232a09907be8ce7f3b09bd1d74e3d5ec34403f1cba9ab3d61904745"
+  },
+  "source": {
+    "url": "https://games.sina.com.cn/zhqu/sta/rwgl1_6.shtml",
+    "title": "《石器时代》任务攻略—卡坦的愿望",
+    "display_date": "2003-05-29 14:24",
+    "attribution": "网友投稿",
+    "encoding": "gb18030",
+    "initial_bytes": 53124,
+    "initial_sha256": "7230667db91cc824fb6fe6b3d0a833611170a1de1e15bc23f367b623240f7b9c",
+    "region_scope": "SINA_CN_SECTION_CURRENT_SURVIVING_GUIDE",
+    "exact_client_build": null,
+    "original_2003_bytes_authenticated": false
+  },
+  "images": [
+    {
+      "i": 0,
+      "url": "https://image2.sina.com.cn/gm/zhqu/sta/1_115-15-232-572_20030529142417.jpg",
+      "status": 200,
+      "final": "https://image2.sina.com.cn/gm/zhqu/sta/1_115-15-232-572_20030529142417.jpg",
+      "bytes": 58651,
+      "sha256": "ace7096c3866400dd4400be5169dfaa76f73ae902e7bfb3b3bf8e9a2a76420fc",
+      "format": "JPEG",
+      "size": [
+        640,
+        480
+      ],
+      "mode": "RGB",
+      "original_href": "http://image2.sina.com.cn/gm/zhqu/sta/1_115-15-232-572_20030529142417.jpg",
+      "thumbnail": "http://image2.sina.com.cn/gm/zhqu/sta/1_115-15-231-572_20030529142417.jpg",
+      "frames": 1,
+      "caption": "专门收集恐龙的“卡坦”~"
+    },
+    {
+      "i": 1,
+      "url": "https://image2.sina.com.cn/gm/zhqu/sta/1_115-15-235-572_20030529142417.jpg",
+      "status": 200,
+      "final": "https://image2.sina.com.cn/gm/zhqu/sta/1_115-15-235-572_20030529142417.jpg",
+      "bytes": 70065,
+      "sha256": "fbb31bd1726db8c25ef41005af28abbf76bfb6b6b6988bec504928e2c3a60b24",
+      "format": "JPEG",
+      "size": [
+        640,
+        480
+      ],
+      "mode": "RGB",
+      "original_href": "http://image2.sina.com.cn/gm/zhqu/sta/1_115-15-235-572_20030529142417.jpg",
+      "thumbnail": "http://image2.sina.com.cn/gm/zhqu/sta/1_115-15-234-572_20030529142417.jpg",
+      "frames": 1,
+      "caption": "请玩家帮忙抓到四种鱼类恐龙"
+    }
+  ],
+  "observations": [
+    {
+      "image": 0,
+      "grade": "CURRENT_IMAGE_VISUAL_OBSERVATION_WITH_PUBLISHER_CAPTION",
+      "visible": [
+        "sandy outdoor scene with two humanoid figures",
+        "yellow/red target marker and pointer beside one figure",
+        "bottom status label 卡坦",
+        "upper-right MAP panel with local minimap and east/south coordinate display"
+      ],
+      "not_transcribed": [
+        "uncertain numeric coordinates",
+        "native resource IDs"
+      ],
+      "named_attribution": "caption and visible target label agree on 卡坦",
+      "sprite_identity": null
+    },
+    {
+      "image": 1,
+      "grade": "CURRENT_IMAGE_VISUAL_OBSERVATION_WITH_PUBLISHER_CAPTION",
+      "visible": [
+        "framed translucent brown dialogue window over the sandy scene",
+        "rendered dialogue lists four fish pets and mentions two free pet positions",
+        "bottom dialogue choices including an affirmative choice inside green frame",
+        "bottom-right 玩家模式 label"
+      ],
+      "dialogue_semantics": {
+        "requested_pet_level": 25,
+        "fish_names": [
+          "加格",
+          "邦恩吉",
+          "克邦凯斯",
+          "加克拉"
+        ],
+        "free_pet_positions": 2
+      },
+      "screen_text_is_live_execution": false
+    }
+  ],
+  "parents": {
+    "research/recovered/STONEAGE-CN-KATAN-QUEST-SOURCE-CONFLICTS-R98.json": {
+      "bytes": 7341,
+      "sha256": "551a397d3a339d6444b03f7121e02bf47aef15ae1071f042f6ef04ca737d0eef",
+      "git_blob": "e92c249a74582ba6f5af5b41f49540ec9d1cd1d2"
+    },
+    "research/recovered/STONEAGE-TW10-NPC-STATIC-RESOURCE-JOIN-R99.json": {
+      "bytes": 54728,
+      "sha256": "9b73469fef2ebe27a4369ecc76e8cb57d0ef853ffb4f87d2228609c7a8b52ee1",
+      "git_blob": "21d49800a1191f87a006aaa5af4a6f7975f91bf7"
+    }
+  },
+  "boundaries": {
+    "raw_html_committed": false,
+    "raw_images_committed": false,
+    "current_image_bytes_verified": true,
+    "original_publication_pixels_authenticated": false,
+    "tw10_same_build_authenticated": false,
+    "original_render_selector_proven": false,
+    "native_npc_id": null,
+    "native_bitmap_id": null,
+    "native_spr_id": null,
+    "world_floor_id": null,
+    "map_dat_recovered": false,
+    "exact_npc_spawn_proven": false,
+    "server_handover_executed": false,
+    "ring_loss_conflict_resolved": false,
+    "stage_a_closed": false,
+    "stage_b_started": false,
+    "wiki_started": false,
+    "overall_percent": null
+  },
+  "supersession": {
+    "r98_preserved_unchanged": true,
+    "r98_image_payload_gap_now": "CURRENT_SINA_IMAGE_BYTES_AND_CAPTION_ASSOCIATION_VERIFIED_ONLY",
+    "r99_named_original_tw10_npc_count": 0
+  },
+  "stop": "First two actual linked full images of first fish-stage illustration table only; no other Katan guide expansion or inferred original selector.",
+  "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-101",
+  "next_scope": "Rotate to original version-authenticated pet species/SPR selector or field-map DAT with actual entities; if no new source, bounded whole-portfolio triage instead of more Katan illustrations."
+}
