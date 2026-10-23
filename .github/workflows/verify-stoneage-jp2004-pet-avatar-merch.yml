@@ -1,0 +1,28 @@
+name: Verify R94 Japan 2004 named pet avatar and physical premium evidence
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-JP2004-PET-AVATAR-MERCH-SOURCE-R94.json'
+      - 'research/recovered/STONEAGE-JP2004-PET-AVATAR-MERCH-ACCEPTANCE-R94.json'
+      - 'tools/stoneage_jp2004_pet_avatar_merch_source.py'
+      - 'tests/test_stoneage_jp2004_pet_avatar_merch_source.py'
+      - '.github/workflows/verify-stoneage-jp2004-pet-avatar-merch.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-JP2004-PET-AVATAR-MERCH-SOURCE-R94.json'
+      - 'tools/stoneage_jp2004_pet_avatar_merch_source.py'
+      - 'tests/test_stoneage_jp2004_pet_avatar_merch_source.py'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  check-cross-media-provenance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest tests.test_stoneage_jp2004_pet_avatar_merch_source -v
+      - run: python -m tools.stoneage_jp2004_pet_avatar_merch_source

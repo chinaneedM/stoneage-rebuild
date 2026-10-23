@@ -1,0 +1,145 @@
+{
+  "schema": "stoneage.jp2004_pet_avatar_merch_visual_crosswalk.r94",
+  "task": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-94",
+  "sources": [
+    {
+      "id": "R94-S1",
+      "url": "https://www.itmedia.co.jp/news/article/0403/18/1040318075/",
+      "title": "ハンゲーム、MMORPG「ストーンエイジ」のペットアバターを提供",
+      "published": "2004-03-18 19:22",
+      "attributed_reporting": "RBB Today via ITmedia",
+      "evidence_kind": "contemporaneous_press_report_not_official_source_payload",
+      "claimed_operator": "NHNジャパン / ハンゲーム",
+      "original_html_authenticated": false,
+      "original_http_sha256": null,
+      "exact_game_build": null
+    },
+    {
+      "id": "R94-S2",
+      "url": "https://www.4gamer.net/news/history/2004.05/20040520194557detail.html",
+      "title": "ほのぼのMMORPG「ストーンエイジ」正式サービス開始日決定",
+      "published": "2004-05-20 19:45",
+      "evidence_kind": "contemporaneous_trade_press_reporting_on_BOTHTEC_announcement",
+      "claimed_operator": "ボーステック",
+      "original_html_authenticated": false,
+      "original_http_sha256": null,
+      "exact_game_build": null
+    }
+  ],
+  "source_claims": {
+    "s1_avatar_start_reported_date": "2004-03-18",
+    "s1_named_pet_avatar_text": [
+      "ゴルシス",
+      "ウポポ",
+      "ミドリガメ"
+    ],
+    "s1_pet_avatar_total": 7,
+    "s1_background_total": 2,
+    "s1_per_item_pricing_jpy_range": [
+      200,
+      350
+    ],
+    "s1_available_in_other_hangame_games": true,
+    "s1_availability_is_game_playable_build_evidence": false,
+    "s2_packaged_release_reported_date": "2004-05-20",
+    "s2_jp_formal_service_announced_date": "2004-06-03",
+    "s2_client_cd_rom_count": 2,
+    "s2_30_day_pass_count": 2,
+    "s2_named_physical_premium": "ウポポ",
+    "s2_physical_premium_type": "ぬいぐるみストラップ",
+    "s2_physical_premium_count": 1,
+    "s2_product_may_20_announcement_is_execution_log": false
+  },
+  "observations": [
+    {
+      "id": "R94-AV01",
+      "reported_name": "ゴルシス",
+      "product": "Hangame pet avatar",
+      "source_id": "R94-S1",
+      "avatar_art_specific_asset_id": null,
+      "in_game_pet_numeric_id": null,
+      "original_sprite_id": null,
+      "species_stat_table_known": false
+    },
+    {
+      "id": "R94-AV02",
+      "reported_name": "ウポポ",
+      "product": "Hangame pet avatar",
+      "source_id": "R94-S1",
+      "avatar_art_specific_asset_id": null,
+      "in_game_pet_numeric_id": null,
+      "original_sprite_id": null,
+      "species_stat_table_known": false
+    },
+    {
+      "id": "R94-AV03",
+      "reported_name": "ミドリガメ",
+      "product": "Hangame pet avatar",
+      "source_id": "R94-S1",
+      "avatar_art_specific_asset_id": null,
+      "in_game_pet_numeric_id": null,
+      "original_sprite_id": null,
+      "species_stat_table_known": false
+    },
+    {
+      "id": "R94-PKG01",
+      "reported_name": "ウポポ",
+      "product": "physical plush strap bundled in May 2004 Japanese boxed package",
+      "source_id": "R94-S2",
+      "avatar_art_specific_asset_id": null,
+      "in_game_pet_numeric_id": null,
+      "original_sprite_id": null,
+      "species_stat_table_known": false
+    }
+  ],
+  "illustration": {
+    "id": "R94-I1",
+    "url": "https://www.itmedia.co.jp/news/article/image/0403/18/1040318075/15463/728",
+    "source_page": "R94-S1",
+    "observed_visual": "a small captioned merchandise montage showing cartoon pet-avatar pictures and an avatar background",
+    "individual_animal_to_reported_name_mapping_verified": false,
+    "original_image_bytes_authenticated": false,
+    "original_image_sha256": null,
+    "original_pet_animation_sprite_verified": false,
+    "native_game_resolution_verified": false,
+    "production_asset_license_granted": false,
+    "artwork_embedded_in_repository": false
+  },
+  "relation": {
+    "named_entity": "ウポポ",
+    "supported_link": "the same Japanese pet name is used in a Hangame avatar report and a separately reported boxed-game plush strap",
+    "same_visual_asset_identical": false,
+    "same_pet_numeric_id_verified": false,
+    "source_a": "R94-S1",
+    "source_b": "R94-S2",
+    "relationship_type": "documentary_cross_product_name_match_not_same_build_identity"
+  },
+  "attribution_boundaries": {
+    "s1_seven_avatars_named_all_seven": false,
+    "two_backgrounds_are_typed_pet_species": false,
+    "price_is_virtual_pet_in_game_price": false,
+    "s2_june_3_is_1999_launch_date": false,
+    "existing_2008_golcis_entity_equals_2004_original_build": false,
+    "japanese_avatar_item_equals_tw10_sprite": false,
+    "physical_merch_is_reusable_game_asset": false,
+    "game_client_or_server_executed": false,
+    "all_unseen_art_or_original_models_recovered": false
+  },
+  "unknowns": [
+    "four remaining 2004 avatar item names, original source asset IDs, actual marketplace listing",
+    "two original background image IDs and fidelity of captioned low-resolution collage",
+    "named individual avatars’ exact one-to-one link to images, alternate color/body morphs",
+    "2004 Japanese pet master species IDs, names in JSS1999/Taiwan v1, and exact builds",
+    "physical plush strap design files, original source material and copyright permissions",
+    "in-game pet sprite selection, animation, growth, catchability and skills"
+  ],
+  "acceptance": {
+    "content_ledger_only": true,
+    "new_game_implementation": false,
+    "stage_a_closed": false,
+    "stage_b_open": false,
+    "wiki_unlocked": false,
+    "overall_restoration_percentage": null,
+    "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-95"
+  }
+}
