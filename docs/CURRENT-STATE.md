@@ -17850,3 +17850,18 @@ S1 4Gamer会场/采访 https://www.4gamer.net/news/history/2003.07/2003072600180
 三大长文远端原生Git blob完整保留旧prefix：CURRENT `5a90c58c…`→`9835f8be…`，TIMELINE `1e80a51c…`→`30072b26…`，REGISTRY `d26e4440…`→`5f62c9e4…`，精确旧/新blob见永久收据。源派生JSON `research/recovered/STONEAGE-JP2003-REVIVAL-TRADE-MAP-SOURCE-R95.json` 长期Git SHA1 `c491542dbeb7523169615482bfbfefff728ea9f5` / 7427 UTF8B；R63旧图库原生SPEC blob `63b274f5…` 另做不变源证据校验。候选和main专用run均无artifact，不能虚构2003原始HTML/JPEG的ZIP/raw摘要、也不能声称下载并试跑2003安装包。新增收据 `research/recovered/STONEAGE-JP2003-REVIVAL-TRADE-MAP-ACCEPTANCE-R95.json` 保存21项实际run/两端job、原派生blob/旧文件保留及Stage A未闭合；源码新增反篡改/父证据核验，原10项源校验不会改记成后续扩充项。
 
 交付是“交易窗口新增”日服2003文献说法、测试启动公告修正与“β后地图及新角色”的规划时间限定，而不是交易ACK、地图或新角色原建构恢复。最高后续 `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-96` 保持转向早期实体地图／NPC／宠物原SPR身份证据，不再连续做复活宣传链；Stage A 7 PARTIAL＋2 OPEN、B/wiki GATED、R79 PAUSED_NON_BLOCKING、总体百分比null。
+
+ 
+### R96 2001玩家世界路线：四岛、记录神像与属性洞窟在页面年代标签下的状态 — 2026-10-23
+
+按本次重新读取的GitHub main `5acf20e4355b2cc5864a057993403bda701fae64` / tree `ecc703a93fdf71d886541edfef4802dda26378ad`、完整CONTINUITY、22域索引及R95的Actions/收据启动；`CURRENT-STATE.md` 通常读取接口返回空正文，但树显示原blob非空，已改用原生Git blob读出完整2MB以上历史全文，以远端真实当前状态为准。未见开放PR；上轮R95已全部成功/已整合，不重复其交易UI辅助分支。执行最高 `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-96`，改选早期地图/记录交互内容，停止继续复活测试新闻。
+
+本轮发现并来源限定两篇17173迁移网页：S1《石器之练功篇（一）》 https://news.17173.com/z/stoneage/content/2001-6-14/n3_920052.html （页面显示2001-06-14／署名正伟）；S2《石器之练功篇（二）》 https://news.17173.com/z/stoneage/content/2001-6-14/n254_170616.html （页面显示同日，作者未知）。这都是当前可见玩家稿，**不具备当年原HTML字节SHA或准确服务端构建验签**。仓库此前有帝皇圣者《北岛一人玩不组队攻略法》旧索引，此轮做查重且不把旧文章再次计新来源，亦不把玩家作者的体感升级为运营事实。
+
+可复原的**文章语义**：四岛为南岛、北岛、沙姆岛、吉鲁岛，S2称有三条海底通道但未提供三条精确端点。出生村南岛加加与卡鲁它那，北岛玛丽娜斯渔村与萨姆吉尔；S2有“卡鲁他那/玛丽娜斯村”写法，保留别名。S1南岛推荐顺序加加→多多→乌鲁力→霍特尔→沙姆奇努伊→吉鲁达那，北岛萨姆吉尔→霍特尔→奇努伊→达那；这是建议路线，非任何强制等级/传送门。S1所述首次在村庄神像记录需该地特定肉，再次同点不需要，记录决定下一登入出现位置；S2指出霍特尔首次记录需两块奇宝肉、沙姆岛仅一个村而没有记录点。**不证明服务端自动保存原始字段/消费、原版NPC ID或所有版本都存在上述限制**。
+
+S2称南岛到北岛的科奥海底通路需从卡鲁它那购买200 stone的通行证，文章忘记卖方名字；不补NPC或真实passID、不扩至三通道共用门槛。S1明确其时间叙述里深红（火）、玄黄（地）、琉璃（风）称已开放、碧青（水）称尚未开放；**不能认证实际2001-06-14运营状态、洞窟开放日或倒填1999 JSS/2003日服**，但可保存为未来版本演变核对的问题。原地图几何／怪物分布／原客户端—服务器联合重放仍OPEN。
+
+交付 `docs/specs/STONEAGE-CN2001-WORLD-ROUTES-RECORD-SOURCE-R96.md`、`research/recovered/STONEAGE-CN2001-WORLD-ROUTES-RECORD-SOURCE-R96.json`、不可变Git blob `e2bc3c5e1dc3eae4ee61b9c6ab85de7cb9f82538` 及11项负向来源边界测试＋专用Actions。候选分支 `agent/cn2001-world-routes-record-gates-r96-20261023`，首个内容commit `94f08deefbf82da05cba51f9b6699adbfd485deb` / tree `65d25c9694cebf4ce1fcdf788b80673f9e00c926`；专用run `39961754440` 实际已 `completed/success`，不是原服地图/记录点执行。正文和程序不含原有版权HTML、图片或客户端资源。候选后续文档提交／主线Actions不得提前宣称成功，要逐次核实。
+
+止点为两篇当前网页、四岛/四出生村、两条玩家推荐路线、四条记录点关系、一条科奥pass说法和四洞窟状态候选。重新开启需要同年代同版原地图/NPC配置或已验真通行/记录ACK、运营公告、同构建录像。**NEXT** `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-97` 轮换有明确原图/SPR联接的宠物或早期实体地图NPC证据，不连续扩玩家练功路线；Stage A 7 PARTIAL+2 OPEN、Stage B/wiki GATED，TW1.0 savedata R79 PAUSED_NON_BLOCKING，无分母不报总体百分比。
