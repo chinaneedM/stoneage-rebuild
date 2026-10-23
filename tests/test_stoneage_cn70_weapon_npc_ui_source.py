@@ -43,5 +43,36 @@ class R93SourceTests(unittest.TestCase):
     def test_extra_unverified_field_rejected(self):
         self.reject(lambda x:x.update(original_quest_script="confirmed"))
 
+    def test_actual_ci_acceptance_receipt_and_blob_identity(self):
+        import hashlib
+        from pathlib import Path
+        path = P.parents[2] / "research/recovered/STONEAGE-CN70-WEAPON-COLLECTION-NPC-UI-ACCEPTANCE-R93.json"
+        receipt = json.loads(path.read_text(encoding="utf-8"))
+        self.assertEqual(receipt["schema"], "stoneage.cn70_weapon_npc_ui_content_acceptance.r93")
+        self.assertEqual(receipt["accepted_main_content_commit"], "8b95c2571034b164008d7f2f80e118f0ad9b3585")
+        raw = P.read_bytes()
+        source = receipt["source_derived_json"]
+        self.assertEqual(hashlib.sha1(b"blob " + str(len(raw)).encode() + b"\0" + raw).hexdigest(), source["git_blob_sha1"])
+        self.assertIsNone(source["raw_source_html_sha256"])
+        self.assertIsNone(source["raw_screenshot_sha256"])
+        self.assertFalse(source["original_binaries_embedded"])
+        runs = receipt["original_validation"]
+        self.assertEqual(runs["source_candidate_run_id"], 39951549696)
+        self.assertEqual(runs["source_candidate_job_id"], 120406954551)
+        self.assertEqual(runs["source_candidate_static_tests"], 10)
+        self.assertEqual(runs["source_candidate_conclusion"], "success")
+        self.assertEqual(len(set(runs["candidate_continuity_runs"])), 9)
+        self.assertEqual(len(set(runs["main_content_runs"])), 11)
+        self.assertTrue(runs["candidate_continuity_all_success"])
+        self.assertTrue(runs["main_content_all_success"])
+        self.assertEqual(runs["main_dedicated_run_id"], 39952020028)
+        self.assertEqual(runs["main_dedicated_job_id"], 120408510653)
+        self.assertEqual(runs["main_dedicated_conclusion"], "success")
+        self.assertEqual(runs["main_dedicated_artifact_count"], 0)
+        self.assertFalse(receipt["acceptance_receipt_commit_ci_verified_at_generation"])
+        self.assertTrue(all(v is False for k,v in receipt["scope"].items() if k != "overall_restoration_percentage"))
+        self.assertIsNone(receipt["scope"]["overall_restoration_percentage"])
+        self.assertEqual(receipt["next"], "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-94")
+
 if __name__=="__main__":
     unittest.main()

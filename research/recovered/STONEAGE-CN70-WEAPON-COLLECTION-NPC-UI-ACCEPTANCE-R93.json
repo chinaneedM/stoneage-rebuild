@@ -1,0 +1,66 @@
+{
+  "schema": "stoneage.cn70_weapon_npc_ui_content_acceptance.r93",
+  "task": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-93",
+  "repository": "chinaneedM/stoneage-rebuild",
+  "base_before_r93": "fc77a2dbddffb6928a22662c8d1ac7f788d82635",
+  "source_commit": "07268f0702af26102d2a1afe7146479c370c363a",
+  "source_tree": "4e4854515b98185cc8a1ee1907e2a3fe222adb6c",
+  "accepted_main_content_commit": "8b95c2571034b164008d7f2f80e118f0ad9b3585",
+  "accepted_main_content_tree": "56fd5fa2de80d8974ef62b550da78e0ac2463910",
+  "source_derived_json": {
+    "path": "research/recovered/STONEAGE-CN70-WEAPON-COLLECTION-NPC-UI-SOURCE-R93.json",
+    "git_blob_sha1": "932547f5258b6ff5aa78cf722c815d29834585ef",
+    "raw_source_html_sha256": null,
+    "raw_screenshot_sha256": null,
+    "original_binaries_embedded": false
+  },
+  "original_validation": {
+    "source_candidate_run_id": 39951549696,
+    "source_candidate_job_id": 120406954551,
+    "source_candidate_static_tests": 10,
+    "source_candidate_conclusion": "success",
+    "candidate_continuity_runs": [
+      39951918230,
+      39951918133,
+      39951918174,
+      39951918219,
+      39951918348,
+      39951918117,
+      39951918198,
+      39951918211,
+      39951918207
+    ],
+    "candidate_continuity_all_success": true,
+    "main_content_runs": [
+      39952020073,
+      39952020091,
+      39952020360,
+      39952020106,
+      39952019980,
+      39952019972,
+      39952020164,
+      39952020028,
+      39952020233,
+      39952020273,
+      39952020112
+    ],
+    "main_content_all_success": true,
+    "main_dedicated_run_id": 39952020028,
+    "main_dedicated_job_id": 120408510653,
+    "main_dedicated_conclusion": "success",
+    "main_dedicated_artifact_count": 0
+  },
+  "scope": {
+    "original_npc_server_config_recovered": false,
+    "original_html_bytes_authenticated": false,
+    "original_screenshot_bytes_authenticated": false,
+    "actual_npc_dialogue_click_verified": false,
+    "actual_item_exchange_verified": false,
+    "original_sprite_mapping_verified": false,
+    "stage_a_accepted": false,
+    "stage_b_open": false,
+    "overall_restoration_percentage": null
+  },
+  "acceptance_receipt_commit_ci_verified_at_generation": false,
+  "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-94"
+}

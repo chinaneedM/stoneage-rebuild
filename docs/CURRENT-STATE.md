@@ -17808,3 +17808,10 @@ I1为实际公开直连图 https://images.17173cdn.com/stoneage/images/mission/s
 新增中文规格 `docs/specs/STONEAGE-CN70-WEAPON-COLLECTION-NPC-UI-SOURCE-R93.md`、结构化研究 `research/recovered/STONEAGE-CN70-WEAPON-COLLECTION-NPC-UI-SOURCE-R93.json`、按不可变Git blob SHA1校验的Python解析保护与10项含负向反例测试、专用Actions。候选内容commit `07268f0702af26102d2a1afe7146479c370c363a` / tree `4e4854515b98185cc8a1ee1907e2a3fe222adb6c`，分支 `agent/cn70-weapon-npc-ui-r93-20261023`；写本文时其专用CI仍须以后续实际完成状态验收，不能将“queued”称成功。原商业客户端/任务脚本/JPEG/原网页均未进Git，只有研究元数据和验证代码。
 
 当前R93停止于一个指南页面、两组各五件、一个可见图像。重开需同build官方任务配置、原始NPC窗口截图或事件日志、真实源HTML图链与图片原字节、服务器扣物/奖励ACK、原画/物种绑定其中之一。下一最高 `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-94` 回22域挑另一地区具名宠物原始外观或较早地图NPC实像证据，避免连续扩本任务攻略；Stage A 7 PARTIAL＋2 OPEN、Stage B/wiki GATED、R79 PAUSED_NON_BLOCKING，overall restoration percentage=null。旧全部历史保留。
+
+
+### R93 独立内容验收、永久源派生保管与后验边界 — 2026-10-23
+
+新档内容提交 `07268f0702af26102d2a1afe7146479c370c363a` / tree `4e4854515b98185cc8a1ee1907e2a3fe222adb6c`，候选专用run 39951549696 / job 120406954551 完成10项静态负向边界测试＋CLI，全为completed/success。连续性追加提交 `8b95c2571034b164008d7f2f80e118f0ad9b3585` / tree `56fd5fa2de80d8974ef62b550da78e0ac2463910`，候选本次九Actions均success，GitHub compare对原main `fc77a2db…` 确认ahead2/behind0、8文件，其中三大历史文件仅追加、无删除。重新取main仍为原基线后CAS非强制快进整合，该commit主线自身11项实际Actions全部completed/success，专用run 39952020028 / job 120408510653 亦通过。内容两阶段验收单据详见 `research/recovered/STONEAGE-CN70-WEAPON-COLLECTION-NPC-UI-ACCEPTANCE-R93.json`，当前receipt提交自身后验不借前一成功自动认证。
+
+永久派生来源JSON Git blob SHA1 `932547f5258b6ff5aa78cf722c815d29834585ef`，严格本地验证可从Git回取；只有攻略叙述、两路线和画面可见界限，没有上传原HTML、图像、原版客户端/服务端数据。主线专用Actions artifact API实得0件，不能编造临时ZIP、原字节SHA或抓图验签。新增receipt与测试校验来源blob、候选10/9和main11的真实run、原服未证与Stage A未过。原有CURRENT、SOURCE、TIMELINE前缀逐份原生Git blob字节一致，没有空文件覆盖。最高NEXT R94仍按上一条的跨域具名实体/早期实像；Stage A7PARTIAL+2OPEN、B/wiki GATED，R79暂停，总体百分比null。
