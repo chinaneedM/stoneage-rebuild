@@ -18311,3 +18311,8 @@ Integration preflight also preserved the c6a07dc92ad3dc2f97156044f17c59e0915fb08
 
 ### 2026-10-24 R117取源日志范围更正（归属结论不变）
 复核工具调用顺序：Google Groups直接HTTP实际429后，没有第二次直接HTTP请求；另有一次网页工具open仍不可用。初版“429后不重试”及retry_after_429=false表述过宽，现由R117报告attempt_log_correction明确订正为additional_direct_http_attempts_after_429=0、additional_web_open_after_direct_429=1/UNAVAILABLE。原记录Git历史和四大连续性旧前缀保留；未取得消息头/正文/源字节，未晋级2000日期或本体/永久，原结论不变。
+
+
+### 2026-10-24 R117 双端验收与资格报告永久保管
+内容最终commit `c0465f10e0d8936848b4aec54e54e5e400a3292e` / tree `37e4987b65f541a82b7cd0b1f366bdcdb1647f16` 已经新读主线后expected_sha非强制快进。相对保留的8d58d1f8：3commit/9变更路径/0删除路径，四份完整最新历史前缀全部保留，原JSS R116收据不改写。最终内容candidate11项、main12项共23次Actions全completed/success；专用candidate run40063612164/job120782122078、main run40063653749/job120782247918日志各51项单元、资格报告五父档重放、JSS九内容blob/八当前源pin及四最新前缀全部通过。
+永久收据 `research/recovered/STONEAGE-ADULT-QUEST-ORIGIN-CUSTODY-R117.json` 固定九内容bytes/SHA256/Git blob、四旧完整前缀、23真实运行与双job、早先快照验收及取源日志范围订正。R117没有新增原件ZIP，不能虚构该摘要；旧JSS两实际下载工件匹配API/raw/永久报告的独立复核保管在原收据及本轮记录。成人礼仍ORIGIN_UNRESOLVED；2001-11-20只是已验文献时间，2000索引未晋级，活动前置不继承活动归属，新增本体/永久/原服实体0。最高NEXT EARLY-NPC-VISUAL-SOURCE-118不变；Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、整体百分比null。保管提交自身Actions按后验核验，不预报通过。
