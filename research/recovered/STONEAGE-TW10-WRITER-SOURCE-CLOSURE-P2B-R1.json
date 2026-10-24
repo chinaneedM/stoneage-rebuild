@@ -1,0 +1,126 @@
+{
+  "schema": "stoneage.tw10.writer_source_closure_p2b.r1",
+  "source": "original TW1.0 sa_3.exe SHA-256 cdab9ea049a98bbc96ce93eeaa8b63c688f0c0f0ad8b3183e79d75e47621441a",
+  "parent_git_blob": "a9adc6a94e8e062b730e0114df581c7b4ad20d62",
+  "action": {
+    "run_id": 40099299814,
+    "job_id": 120887951431,
+    "head": "c333f6792fcd0720fa102f78c2fb9493220cd5f9",
+    "status": "completed",
+    "conclusion": "success",
+    "original_source_reacquired": true
+  },
+  "artifact": {
+    "id": 12562416023,
+    "zip_bytes": 2419,
+    "zip_sha256": "aca92b0b8ee2cdf663ab65b4a1838c224cf99653e07ca73aea03c4d2b8473853",
+    "member": "p2bw-original-writer-report.json",
+    "raw_bytes": 18564,
+    "raw_sha256": "9f6170001e1696b0b24be6430c71490a932ebee4aa190b7562ebe4c7b10d3dc4",
+    "zip_independently_downloaded_and_hashed": true,
+    "raw_full_text_in_git": false
+  },
+  "sites": [
+    {
+      "rva": "0x54cb",
+      "nearest_local_value_source": "STACK_FRAME_MEMORY",
+      "value_register": "eax",
+      "write_base_register": "esi",
+      "lexical_previous_assignment": "[esp + 0x10]",
+      "same_object_as_selector_proven": false
+    },
+    {
+      "rva": "0x65ab",
+      "nearest_local_value_source": "STACK_FRAME_MEMORY",
+      "value_register": "eax",
+      "write_base_register": "esi",
+      "lexical_previous_assignment": "[esp + 0x10]",
+      "same_object_as_selector_proven": false
+    },
+    {
+      "rva": "0x672b",
+      "nearest_local_value_source": "STACK_FRAME_MEMORY",
+      "value_register": "eax",
+      "write_base_register": "esi",
+      "lexical_previous_assignment": "[esp + 0x10]",
+      "same_object_as_selector_proven": false
+    },
+    {
+      "rva": "0x7142",
+      "nearest_local_value_source": "STACK_FRAME_MEMORY",
+      "value_register": "edx",
+      "write_base_register": "eax",
+      "lexical_previous_assignment": "[esp + 0x18]",
+      "same_object_as_selector_proven": false
+    },
+    {
+      "rva": "0x7466",
+      "nearest_local_value_source": "STACK_FRAME_MEMORY",
+      "value_register": "ecx",
+      "write_base_register": "eax",
+      "lexical_previous_assignment": "[esp + 0x18]",
+      "same_object_as_selector_proven": false
+    },
+    {
+      "rva": "0x7611",
+      "nearest_local_value_source": "STACK_FRAME_MEMORY",
+      "value_register": "ecx",
+      "write_base_register": "eax",
+      "lexical_previous_assignment": "[esp + 0x18]",
+      "same_object_as_selector_proven": false
+    },
+    {
+      "rva": "0x856d",
+      "nearest_local_value_source": "STACK_FRAME_MEMORY",
+      "value_register": "eax",
+      "write_base_register": "esi",
+      "lexical_previous_assignment": "[esp + 0x14]",
+      "same_object_as_selector_proven": false
+    },
+    {
+      "rva": "0x10b8d",
+      "nearest_local_value_source": "OTHER_MEMORY",
+      "value_register": "ecx",
+      "write_base_register": "eax",
+      "lexical_previous_assignment": "[esi + 0x458e28]",
+      "same_object_as_selector_proven": false
+    },
+    {
+      "rva": "0x10c43",
+      "nearest_local_value_source": "OTHER_MEMORY",
+      "value_register": "ecx",
+      "write_base_register": "eax",
+      "lexical_previous_assignment": "[esi + 0x458e28]",
+      "same_object_as_selector_proven": false
+    },
+    {
+      "rva": "0x10ea5",
+      "nearest_local_value_source": "COMPUTED_OR_BITWISE",
+      "value_register": "eax",
+      "write_base_register": "ecx",
+      "lexical_previous_assignment": "add eax, ecx",
+      "same_object_as_selector_proven": false
+    }
+  ],
+  "counts": {
+    "candidate_native_writes": 10,
+    "stack_sources": 7,
+    "other_memory_sources": 2,
+    "arithmetic_sources": 1,
+    "named_entities_identified": 0
+  },
+  "qualifications": {
+    "lexical_neighbor_proves_control_flow": false,
+    "all_offsets_refer_to_same_object": false,
+    "server_origin_or_packet_proven": false,
+    "any_named_pet_or_npc_proven": false,
+    "original_game_executed": false,
+    "overall_completion_percent": null
+  },
+  "disposition": "STOP_GENERIC_NATIVE_SWEEPS_SWITCH_TO_AUTHENTIC_NAMED_SOURCE",
+  "reopen_triggers": [
+    "same-build NPC or pet master linked to graphic key",
+    "authenticated same-build object producer to R101 selector",
+    "contemporaneous official named illustration with exact resource identifier"
+  ]
+}
