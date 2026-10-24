@@ -1,0 +1,132 @@
+{
+  "schema": "stoneage.pet_species_same_build_primary_master_08.v1",
+  "observed_date": "2026-10-25",
+  "baseline": {
+    "repository": "chinaneedM/stoneage-rebuild",
+    "branch": "main",
+    "head": "9b2c58ef6d64e2e28dbbbec72900ad07c9e4c342",
+    "tree": "71c61243cff90543dd8d7dd43b7444dd9e8f11c1"
+  },
+  "status": "OPEN_NO_AUTHENTICATED_SAME_BUILD_PRIMARY_MASTER",
+  "target": "species_name_to_server_enemy_template_to_graphic_to_same_build_original_client_image",
+  "admitted_official_original_species_mappings": 0,
+  "sources": [
+    {
+      "kind": "community_code_static",
+      "repository": "librae8226/gmsv",
+      "commit": "49928c291c6789013cba56d7c07d389f87cdfb0c",
+      "tree": "b774ac0b874d8a5465b391524e02335693fb7feb",
+      "commit_date_git": "2012-05-04T15:13:35Z",
+      "paths": [
+        {
+          "path": "setup.cf",
+          "blob": "b79678ddb86daf923f8068509bb6a588638ac5c2",
+          "lines": [
+            77,
+            79
+          ],
+          "role": "server_file_paths"
+        },
+        {
+          "path": "include/enemy.h",
+          "blob": "a0253f6f2d5e36e4a40a37e8399a3a127382932e",
+          "lines": [
+            7,
+            60
+          ],
+          "role": "template_graphic_field_definitions"
+        },
+        {
+          "path": "char/enemy.c",
+          "blob": "9e09d3d9b5696ebcd130755607bacef4c8854e50",
+          "lines": [
+            365,
+            370,
+            517,
+            528,
+            1138,
+            1140,
+            1580,
+            1608
+          ],
+          "role": "template_join_and_graphic_assignment"
+        }
+      ],
+      "expected_data_files": [
+        {
+          "path": "data/enemy1.txt",
+          "found_in_pinned_tree": false
+        },
+        {
+          "path": "data/enemybase1.txt",
+          "found_in_pinned_tree": false
+        }
+      ],
+      "authenticated_as_official": false,
+      "authenticated_as_tw10_same_build": false
+    },
+    {
+      "kind": "community_tutorial_unverified_sample",
+      "url": "https://www.shiqisifu.cc/Article/5/News_104.html",
+      "name_raw": "毕可斯",
+      "claimed_enemy_id": 2349,
+      "claimed_template_id": 90,
+      "claimed_graphic_field_value": 101621,
+      "proven_same_source_build": false,
+      "proven_tw10_resource_identity": false
+    },
+    {
+      "kind": "late_community_field_guide",
+      "url": "https://www.shiqi.me/pt_167.htm",
+      "field": "IMGNUMBER",
+      "ordinal_1_based": 32
+    },
+    {
+      "kind": "late_software_description_not_original_master",
+      "url": "https://www.246sa.com/?p=1176",
+      "claimed_bridge": [
+        "enemy1.txt",
+        "enemybase1.txt"
+      ],
+      "is_official_source": false
+    }
+  ],
+  "repository_preexisting_constraints": [
+    {
+      "path": "specs/STONEAGE-ENEMY-LOADER-R1.md",
+      "status": "PREEXISTING_DESCENDANT_RECORDS_EXECUTED_NOT_NEW"
+    },
+    {
+      "path": "docs/STONEAGE-PET-IDENTITY-SAME-BUILD-SOURCE-TRIAGE-R1.md",
+      "status": "PREEXISTING_TW10_BITMAP_AND_PLAYER_LABELS_NO_SPECIES_BRIDGE"
+    },
+    {
+      "path": "specs/STONEAGE-PARTY-PET-ORIGINAL-PET-GROWTH-R1.md",
+      "status": "PREEXISTING_BOUNDED_DESCENDANT_GROWTH_NOT_TW10"
+    }
+  ],
+  "missing_original_fields": [
+    "source_package_sha256",
+    "region",
+    "client_server_build_evidence",
+    "species_name_raw",
+    "enemy_id",
+    "template_id",
+    "graphics_selection_id",
+    "client_resource_occurrence",
+    "original_pixel_or_animation_sha256"
+  ],
+  "official_tw10_same_build_link": null,
+  "status_reason": "2012 community source tree omits configured master data; later tutorial sample is unpinned to source/client build; preexisting descendant Gavin and original TW1.0 bitmap chains are distinct provenances",
+  "material_result": "verified static join from enemy template to pet/enemy base graphic fields in a specific community source tree without new official-version mapping",
+  "next": "NPC-QUEST-SAME-BUILD-PRIMARY-EVENT-09",
+  "custody": "PAUSED_EXTERNAL_PRIVATE_STORAGE_DEPENDENCY",
+  "stage_a": {
+    "partial": 7,
+    "open": 2
+  },
+  "stage_b": "GATED",
+  "wiki": "GATED",
+  "savedata_r79": "PAUSED_NON_BLOCKING",
+  "overall_restoration_percent": null
+}

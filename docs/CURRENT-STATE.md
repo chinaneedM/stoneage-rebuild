@@ -18540,3 +18540,12 @@ bot完整派生commit d82113d7a9dcd53d43f2f4c3d9113d542c746f44/tree37246c14dd35d
 ### 2026-10-25 — 私人原件保管门槛候选/main验收实际后验
 
 内容commit main `de1effd648b3475a05816a9c1a375c32fb0aee1e` / tree `e64c47e28417a80d53e931148db911184f5ed2f6` 已经非强制快进发布。候选工具自身run40143101226、连续性候选8项Actions、同内容主线10项Actions全部实际completed/success；并独立从原生Git blob核实先前CURRENT `d5b1b62b35e85f4ea4297f813be888ab04d3829f` 全文本为当前 `0b6187b05468e7662f27cc15d41d070bbcfd352b` 的原样前缀，没有截断、删改历史。永久派生验收收据 `research/recovered/STONEAGE-PRIVATE-ARTIFACT-CUSTODY-PUBLICATION-R1.json` 记载8+10运行和所有文件Git SHA。此后验仅接受归档工具/元数据/连续性发布，不改变私人原版存储未落实、未实测跨会话回读或原商用程序未重跑的事实。最高主动NEXT仍 `PET-SPECIES-SAME-BUILD-PRIMARY-MASTER-08`；CUSTODY-07暂停等私人存储依赖具备后重开。Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、percent=null不变。此验收收据提交自身Actions须下轮另据实观察。
+
+
+## 2026-10-25 — PET-SPECIES-SAME-BUILD-PRIMARY-MASTER-08 源码约束与同构建缺口
+
+本轮从fresh远端 main `9b2c58ef6d64e2e28dbbbec72900ad07c9e4c342` / tree `71c61243cff90543dd8d7dd43b7444dd9e8f11c1` 读取 HEAD/协议/README/CURRENT/设计/历史/来源/路线/主线Actions：该 HEAD 9 项全部 completed/success；普通 CURRENT 接口空值由原生 Git blob `df67cad0ae4e2e6ab764beea1dcb395bd95d8f83` 读回，既有全历史前缀保留。按主动最高 NEXT 宠物同构建主表取证，已实核 2012 Git 时间的社区 `librae8226/gmsv` 精确 commit `49928c291c6789013cba56d7c07d389f87cdfb0c` 的原文件路径配置、`ENEMY_TEMPNO→E_T_TEMPNO` 模板查找、`E_T_IMGNUMBER→CHAR_BASEIMAGENUMBER` 源码赋值；但该 Git tree 不含被引用的两份原 master，且没有此社区源码与原 TW1.0/1999 官方发行 build 的归属证明。
+
+晚近社区教程的毕可斯示例（enemy 2349→模板90、图形字段101621）仅为其网页自述，原包和同构建 SHA 未得；不能合并独立两源为官方物种映射。先前 Gavin 完整后代 master 原字节执行1,816模板/2,935载入行及 TW1.0 原 AD RN/SPR 图号全部属历史已验事实，不算本轮首次发现或同构建连接。本轮新增**可复核代码调用路径**，新增官方初代具名宠物映射仍0。未下载/运行新版权原包，不增加具名宠物/成长/遇敌或原版像素，不把代码静态结构当游戏画面。见 `docs/specs/STONEAGE-PET-SPECIES-SAME-BUILD-MASTER-TRIAGE-R1.md` 与机读收据。
+
+本分支按协议13有界停止，不扩社区服务端 helper；最高主动 NEXT **NPC-QUEST-SAME-BUILD-PRIMARY-EVENT-09**：只选一条早期地区、发行基线可辨的官方 NPC/本体任务原始事件材料，尝试 NPC 身份/对话/前置/奖励/服务器脚本的同版证据链接，证据不够就登记精确缺口后回22域队列。维持 DD-028 本体／永久新增／运营活动／起源待考四档隔离。CUSTODY-07 等私人持久保管条件具备再重开；Stage A7 PARTIAL+2 OPEN，B/wiki GATED，R79 PAUSED_NON_BLOCKING，总体 percent=null。本轮 candidate/main Actions 结果须另据实际后验观察，不能先写 SUCCESS。
