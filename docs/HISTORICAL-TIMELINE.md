@@ -4791,3 +4791,11 @@ R98新浪S2实际HTML的第一插图表仍含原href与独立缩略图src；本�
 同一S1存在交一只/备或需三只互相冲突；S2另一时点玩家文写一只，不能反向裁定S1。S1“80级”与S2“80级以上(不包含80级)”版本对照保留。10项分版研究记录和规格 `docs/specs/STONEAGE-CN2003-2006-DRAGON-FLIGHT-R109.md` 已由候选专用run40048210484 PASS元数据CI，不作HTML字节重放、原服执行或初代故事认证。版权HTML/图片/程序不入Git；Stage A仍7 PARTIAL+2 OPEN，B/wiki GATED，R79暂停，百分比null。
 
 最高NEXT `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-110`：轮换新的第一方具名NPC剧情或带身份交互视觉、早期地图实体源，不持续扩金飞攻略。原候选内容commit `208b2af542cea42fb5f64ccab1c22e881af1c696`，连续性追加另提交，候选/main总CI需真实后验。
+
+### R110 2026-10-24 日本2004圣诞具名NPC/队友误伤规则的来源限定补证
+
+按fresh远端main e928f525f6c6f7a5b0aa4e0bd706405ae8d0f948与历史不缺损原则，选择尚未入库的日本2004季节NPC及战斗防误伤报道，明确区别大陆2003圣诞与日本2005集章。4Gamer S1 <https://www.4gamer.net/news/history/2004.12/20041215210314detail.html> 2004-12-15称圣诞2004-12-20至27/「成人の儀」完成者得礼，新年2005-01-01至07神社抽「おみくじ」、参加无限制但结果影响未知；GAME Watch S2 <https://game.watch.impress.co.jp/docs/20041224/on1224.htm> 于2004-12-18至24周报称「サンタガール」出没マリナス/ジャジャ/カルターナ/サムギル四村，找到可得礼，报道12月20日把自队成员（包括宠物）遭己方攻击通常伤害统一1，混乱例外正常伤害，并称新增圣诞NPC和物品。S2不述成人条件不等于免资格、S1泛称圣诞老人不直接证明S2女圣诞NPC同一原游戏实体。
+
+S1运营者栏ボーステック与S2栏ガマニアデジタルエンターテインメント不同，不能无合约证据归并运营/平台/支付责任或宣称2004-12换运营。S2一方旧URL http://stoneage.to/event/Xmas04.html 当前不能获取原HTML或档案；两报道均是同期媒体转述，不具原运营文bytes、SHA、截图、主表、完整构建或服务器事务证据。任何「四村」不当四张新地图、NPC名字不当原像素SPR、礼品身份/发放次数未知；1伤害只保留条件句，不迁移TW1.0或补自身运行成功。版权原HTML/图片/程序不入Git。
+
+六项研究记录及规格 `docs/specs/STONEAGE-JP2004-XMAS-PARTY-COMBAT-R110.md`、派生JSON/校验器/21单元/独立CI已提交候选，内容与历史候选/主线实际验收以后验为准，不能提前报成功。最高NEXT `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-111` 返回其它地区/年代的具名故事与真实可归属画面或第一方地图实体，不继续扩节日赠奖/友伤helper。Stage A7 PARTIAL+2 OPEN、Stage B/wiki GATED、R79暂停、总复原百分比null。
