@@ -18307,3 +18307,7 @@ Integration preflight also preserved the c6a07dc92ad3dc2f97156044f17c59e0915fb08
 交付docs/specs/STONEAGE-ADULT-QUEST-ORIGIN-QUALIFICATION-R117.md、research/recovered/STONEAGE-ADULT-QUEST-ORIGIN-QUALIFICATION-R117.json、五父源固定重放器/七新正反单元/专用CI；与旧来源边界共51本地单元通过，远端候选/main结果随后据实际验收记录，未预支成功。此为有限归属资格结果及精准取源缺口，不是原服任务执行/源网页本轮重取。
 
 **最高NEXT EARLY-NPC-VISUAL-SOURCE-118**：轮换实际NPC/交互画面缺口，先查重，优先一张带官方具名图注与年代的早期JSS/台湾原画面，形成一个有原始来源及像素的具名视觉合同或具体有界缺口；不以静态图号/同名/晚期活动回填初代。成人礼仅遇同地区定年发行手册/明确永久更新/鉴定同build脚本主表才重开，不重复六源、429链接或无名更新helper。Stage A7 PARTIAL+2 OPEN，B/wiki GATED，R79暂停，整体百分比null。全历史旧前缀均保留。
+
+
+### 2026-10-24 R117取源日志范围更正（归属结论不变）
+复核工具调用顺序：Google Groups直接HTTP实际429后，没有第二次直接HTTP请求；另有一次网页工具open仍不可用。初版“429后不重试”及retry_after_429=false表述过宽，现由R117报告attempt_log_correction明确订正为additional_direct_http_attempts_after_429=0、additional_web_open_after_direct_429=1/UNAVAILABLE。原记录Git历史和四大连续性旧前缀保留；未取得消息头/正文/源字节，未晋级2000日期或本体/永久，原结论不变。

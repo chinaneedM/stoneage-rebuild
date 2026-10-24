@@ -91,7 +91,14 @@ def build(objects, pins):
             'original_message_headers_obtained': False, 'body_obtained': False,
             'raw_bytes': None, 'raw_sha256': None, 'independent_date_authenticated': False,
             'admitted_as_historical_date_or_release_evidence': False,
-            'retry_after_429': False}],
+            'additional_direct_http_attempts_after_429': 0,
+            'additional_web_open_after_direct_429': 1,
+            'additional_web_open_result': 'UNAVAILABLE'}],
+        'attempt_log_correction': {
+            'date': '2026-10-24',
+            'supersedes': 'retry_after_429=false in initial R117 metadata',
+            'reason': 'That field was too broad: no second direct HTTP request, but a subsequent web-tool open also failed',
+            'origin_qualification_changed': False},
         'bounded_search': {
             'targets': ['TW2000_ADULTHOOD_OFFICIAL_RELEASE_OR_MANUAL', 'JSS_ADULTHOOD_1999_2000',
                         'JSS_GENKOU_NOT_GBC_OR_LATER_PLAYER_GUIDE'],

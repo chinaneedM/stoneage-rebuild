@@ -37,3 +37,7 @@
 **最高NEXT `EARLY-NPC-VISUAL-SOURCE-118`**：回到实际NPC／交互画面缺口，优先一张有官方具名图注与清楚年代的早期JSS／台湾原画面；先查重，再取得来源与像素，止于一个具名视觉合同或具体取源缺口。不用静态图号、同名或晚期活动推定原NPC身份。成人礼起源保留可重开OPEN，不连续在同一无新源问题上扩索引。
 
 Stage A仍7 PARTIAL＋2 OPEN，Stage B/wiki GATED，R79 PAUSED_NON_BLOCKING，整体复原百分比null。候选/main发布及Actions须实际后验记录。
+
+
+### 2026-10-24 R117取源日志范围更正（归属结论不变）
+复核工具调用顺序：Google Groups直接HTTP实际429后，没有第二次直接HTTP请求；另有一次网页工具open仍不可用。初版“429后不重试”及retry_after_429=false表述过宽，现由R117报告attempt_log_correction明确订正为additional_direct_http_attempts_after_429=0、additional_web_open_after_direct_429=1/UNAVAILABLE。原记录Git历史和四大连续性旧前缀保留；未取得消息头/正文/源字节，未晋级2000日期或本体/永久，原结论不变。

@@ -8680,3 +8680,7 @@ faqquest正文只有系统兼容/截图三答，旧体验版答在注释内；F1
 ### 2026-10-24 R117 — 成人礼起源资格：五父档与失败取源记录
 固定既有ADULT-CEREMONY-SOURCE-CONTRACT/CI-DERIVED/ACCEPTANCE、JP2004-XMAS-PARTY-COMBAT-R110、JSS-EARLY-QUEST-ORIGINS-R116五文件原bytes/SHA/Git blob，详STONEAGE-ADULT-QUEST-ORIGIN-QUALIFICATION-R117.json。旧新浪实际20011120063019快照及选段SHA不作新发现；新浪/17173同文不算独立见证；2004日本活动前置不传活动期限或跨区原ID。Google Groups A0YUU3uzAaQ本轮网页open不可用、直接HTTP429，无源正文/消息头/原字节，索引2000-06-13不能晋为史实，429后停止。有限检索无可晋级原件不证明全网缺失。
 JSS R116两实际工件12547837667/12547793357 ZIP摘要分别394c0baddfc1c9408358c37df1b7872c46af15444907757108925ec33a0a843a与8d69a40a2cbf5b5259369fe660a5ea534dc36cabed0c30141ff2be800814b6cc均匹配API；双18363B原JSON/永久派生SHAe66a477e6096babce940abaa62d33977c1a5912f547e320db07e62c4a3f4b894全等。另由现存临时三原HTML独立重放同字节，不新计原件或网络取源；保留最新远端原始JSS保管收据，未覆盖为本地草稿。R117工具/七新单元/专用CI验证永久归属边界，不声称本轮商业服执行。下一EARLY-NPC-VISUAL-SOURCE-118转一项具名官方早期NPC/交互像素实源。
+
+
+### 2026-10-24 R117取源日志范围更正（归属结论不变）
+复核工具调用顺序：Google Groups直接HTTP实际429后，没有第二次直接HTTP请求；另有一次网页工具open仍不可用。初版“429后不重试”及retry_after_429=false表述过宽，现由R117报告attempt_log_correction明确订正为additional_direct_http_attempts_after_429=0、additional_web_open_after_direct_429=1/UNAVAILABLE。原记录Git历史和四大连续性旧前缀保留；未取得消息头/正文/源字节，未晋级2000日期或本体/永久，原结论不变。
