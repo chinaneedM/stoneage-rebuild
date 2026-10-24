@@ -18549,3 +18549,8 @@ bot完整派生commit d82113d7a9dcd53d43f2f4c3d9113d542c746f44/tree37246c14dd35d
 晚近社区教程的毕可斯示例（enemy 2349→模板90、图形字段101621）仅为其网页自述，原包和同构建 SHA 未得；不能合并独立两源为官方物种映射。先前 Gavin 完整后代 master 原字节执行1,816模板/2,935载入行及 TW1.0 原 AD RN/SPR 图号全部属历史已验事实，不算本轮首次发现或同构建连接。本轮新增**可复核代码调用路径**，新增官方初代具名宠物映射仍0。未下载/运行新版权原包，不增加具名宠物/成长/遇敌或原版像素，不把代码静态结构当游戏画面。见 `docs/specs/STONEAGE-PET-SPECIES-SAME-BUILD-MASTER-TRIAGE-R1.md` 与机读收据。
 
 本分支按协议13有界停止，不扩社区服务端 helper；最高主动 NEXT **NPC-QUEST-SAME-BUILD-PRIMARY-EVENT-09**：只选一条早期地区、发行基线可辨的官方 NPC/本体任务原始事件材料，尝试 NPC 身份/对话/前置/奖励/服务器脚本的同版证据链接，证据不够就登记精确缺口后回22域队列。维持 DD-028 本体／永久新增／运营活动／起源待考四档隔离。CUSTODY-07 等私人持久保管条件具备再重开；Stage A7 PARTIAL+2 OPEN，B/wiki GATED，R79 PAUSED_NON_BLOCKING，总体 percent=null。本轮 candidate/main Actions 结果须另据实际后验观察，不能先写 SUCCESS。
+
+
+### 2026-10-25 — PET-08具名源码缺口 candidate/main Actions 实际终验
+
+内容 main `a50d577f6be93178c8071970bbdc9ff71dd3c0da` / tree `affc0e1bccac7bb04a6369c28d9f89ca85a0cbae` 为非强制快进发布，候选分支 `agent/pet-master-code-boundary-r1-20261025` 同内容10项 Actions、主线同HEAD11项 Actions 已分别实际 `completed/success`（实际运行ID与名称逐项钉入 `research/recovered/STONEAGE-PET-SPECIES-SAME-BUILD-PRIMARY-MASTER-08-PUBLICATION-R1.json`）。内容差异仅5个预期文档/元数据文件；旧CURRENT原生Git blob历史全文是新版本原样前缀，没有截断覆盖。新社区源码静态 `TEMPNO→IMGNUMBER→BASEIMAGENUMBER` 路径、教程样本与老 Gavin 执行/ TW1.0 原图索引严格分源，未新增TW1.0/JSS1999物种鉴真、图片原像素或原服务器master。10+11 Actions只是内容门槛通过，不是原版运行验收；本后验收据提交自身 Actions 另据实观察。最高NEXT仍 `NPC-QUEST-SAME-BUILD-PRIMARY-EVENT-09`；CUSTODY-07暂停、Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、总体percent=null均不变。
