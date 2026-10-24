@@ -685,3 +685,15 @@ The canonical classification contract is `docs/QUEST-ORIGIN-TAXONOMY-R1.md`; sou
 Seasonal/anniversary/one-off activities (including non-quest GM reward ceremonies) are maintained in independent operator-event archives, never merged with the base-game quest list. Distinguish `EVENT_ACTIVITY_CLAIM` from an actual scripted `EVENT_QUEST_CLAIM`. Published announcement, actual server execution, event duration, recurring return and post-event permanent feature retention are independent facts. Festival identity alone does not establish exact close date. Operator identity without authenticated attribution remains explicitly qualified.
 
 Prior source records and accepted custody are immutable. R115 Mid-Autumn 2003, R110 JP Christmas 2004, R111 JP 2009 anniversary and R112 CN 2001 Valentine's GM campaign are separated into the operator-event overlay; R114 merchant-elephant and R113 Spirit King version narratives remain `ORIGIN_UNRESOLVED` until positive original/base, permanent-version or event evidence is found. No currently reviewed item is promoted to a verified original JSS1999/TW1.0 base quest. Corrections use dated overlays, not edits to original blobs or retrospective source confidence inflation.
+
+## DD-029 — Artifact-first multi-version official client acquisition and lossless deduplication
+
+**Status:** Accepted — user priority change on 2026-10-24.
+
+Prioritize authentic preserved bytes of every publicly recoverable official StoneAge client, update package and regional build over speculative reconstruction from later web/forum descriptions. Exact distribution provenance, declared versus independently observed version, operator, region and modification risk must be recorded separately; a community client/server bundle is not automatically an official clean client.
+
+Retain original packages and complete source custody without deleting apparent duplicates. SHA-256-equal extracted files may be stored/processed once through a content-addressed index while their full per-version occurrences remain. De-duplicate container records separately using format-aware parsing. File hash equality proves neither pet species equivalence nor identical NPC/quest/server scripts. Contradictory versions and translation variations remain traceable.
+
+The first priority is to reconnect previously acquired Taiwan 1.0 and preserved 2.5 bytes; the older TW1/2.5 resource-prefix evidence and new 383-vs-2302 file SHA join are valid derived inventory evidence but not newly downloaded binaries. Continue early Japanese/Korean and mainland/regional clean official clients as source availability allows. Client-only data gaps require actual server/master sources rather than fabricated formulas.
+
+All archive downloads must be lawful and malware-aware, inspected offline where possible, and proprietary executable/art/sound payloads kept outside the public Git repository by default. Event quests must remain separate from base/long-lived quests under DD-028. This changes the research work order, not the closed Stage A evidence-limited review or gated game-production status.
