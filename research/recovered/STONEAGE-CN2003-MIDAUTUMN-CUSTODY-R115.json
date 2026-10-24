@@ -1,0 +1,109 @@
+{
+  "schema": "stoneage.cn2003.midautumn.custody.r115",
+  "date": "2026-10-24",
+  "repo": "chinaneedM/stoneage-rebuild",
+  "original_main_before_r115": "58387170b956205497ce959b3881a9ff50678e78",
+  "content_commit": "47c25d3b72c2df895ffd7bf53529b71297979b33",
+  "candidate_history_commit": "dc7e5b18926505162d1b526362559f4eefc3b230",
+  "candidate_final_commit_and_main_head": "0d8f6491159adc193372f4df97afae2526af4b61",
+  "candidate_final_tree_and_main_tree": "d9276790bc0b7b974fd3609beafed33c46013db1",
+  "publish_method": "NON_FORCE_FAST_FORWARD_WITH_EXPECTED_SHA",
+  "candidate_work_branch": "agent/cn2003-midautumn-official-byline-r115-20261024",
+  "changed_file_count": 9,
+  "deleted_file_count": 0,
+  "preserved_original_docs": {
+    "docs/CURRENT-STATE.md": {
+      "bytes": 2577712,
+      "git_blob": "0f96b6e70aa83bd26a1dd02e22e7dda9c144a14f"
+    },
+    "docs/HISTORICAL-TIMELINE.md": {
+      "bytes": 695183,
+      "git_blob": "3eb4229c102b104d51d983d29e09cb17998f65c6"
+    },
+    "docs/RESTORATION-ROADMAP-R2.md": {
+      "bytes": 429143,
+      "git_blob": "e168dac0579a82aea0d96f01f02d9a13dc44bd36"
+    },
+    "docs/SOURCE-REGISTRY.md": {
+      "bytes": 990908,
+      "git_blob": "cb00263c710e327242f9e7a5c4633fb041956e29"
+    }
+  },
+  "versioned_github_git_blobs": {
+    ".github/workflows/stoneage-cn2003-midautumn-r115.yml": "c87f98447ddebda34ae936fdaeae5bb380998eec",
+    "docs/CURRENT-STATE.md": "11263d3630c09a2115fe6ae8ab81cf586a813c1d",
+    "docs/HISTORICAL-TIMELINE.md": "d1812252bf0a1888944e5720609421b702491989",
+    "docs/RESTORATION-ROADMAP-R2.md": "8baf06e2786524f908cf95f822279c6563e61037",
+    "docs/SOURCE-REGISTRY.md": "a678ec225069662deb3a110b0ee58cfca5a0db0a",
+    "docs/specs/STONEAGE-CN2003-MIDAUTUMN-R115.md": "97e84a26c8d4f225058fb1ef7a9a77801632fabe",
+    "research/recovered/STONEAGE-CN2003-MIDAUTUMN-R115.json": "ba8f5caf05e00bcf57da47884c794cbec2cfa15f",
+    "tests/test_stoneage_cn2003_midautumn_r115.py": "ca87882c29fc6ab346742dcac7988568127bb156",
+    "tools/stoneage_cn2003_midautumn_r115.py": "ada69248fe202f9f96621715a445e1433e5f3ada"
+  },
+  "source_provenance": {
+    "web_article": "https://news.17173.com/z/stoneage/content/2003-9-11/n631_547722.html",
+    "publisher_byline_shown": "华义",
+    "page_date_shown": "2003-09-11",
+    "original_2003_website_html_sha256": null,
+    "original_2003_operator_html": null,
+    "original_server_quest_transaction_verified": false,
+    "original_runtime_sprites": null,
+    "historical_web_html_bytes_archived": false,
+    "original_source_ci_zip_sha256": null,
+    "reason_no_source_zip": "NO_BYTE_EXACT_ORIGINAL_HTTP_RESOURCE_ACQUIRED_ONLY_PUBLIC_WEB_TEXT"
+  },
+  "derived_report_provenance": {
+    "json_path": "research/recovered/STONEAGE-CN2003-MIDAUTUMN-R115.json",
+    "json_sha256": "41bb39aaa43d6d112a1f3a00822875954970344d99753b322bec6a7dfcf371f3",
+    "json_git_blob_sha": "ba8f5caf05e00bcf57da47884c794cbec2cfa15f",
+    "test_case_count": 30,
+    "content_candidate_workflow_run": 40060300925,
+    "content_candidate_workflow_job": 120772126075,
+    "candidate_final_workflow_runs": [
+      40060490636,
+      40060490647,
+      40060490673,
+      40060490708,
+      40060490709,
+      40060490725,
+      40060490739,
+      40060490743,
+      40060490792,
+      40060490906
+    ],
+    "main_workflow_runs": [
+      40060550927,
+      40060550928,
+      40060550930,
+      40060550945,
+      40060550958,
+      40060550974,
+      40060550987,
+      40060550992,
+      40060551006,
+      40060551022,
+      40060551044,
+      40060551059
+    ],
+    "candidate_final_count": 10,
+    "main_count": 12,
+    "runs_distinct_and_all_success": true,
+    "main_specific_workflow_run": 40060550927,
+    "main_specific_workflow_job": 120772906615,
+    "main_specific_workflow_name": "Validate R115 CN2003 Mid-Autumn narrative and reward evidence boundary",
+    "source_raw_html_replayed": false,
+    "original_server_script_replayed": false
+  },
+  "scope_guards": {
+    "only_archived_2003_cn_media_text": true,
+    "narrative_characters_not_validated_original_npcs": true,
+    "reward_item_ids_unknown": true,
+    "random_reward_probabilities_unknown": true,
+    "no_cross_promotion_to_1999_or_tw10": true,
+    "stage_a_systems": "7_PARTIAL_2_OPEN",
+    "stage_b_wiki": "GATED",
+    "savedata_r79": "PAUSED_NON_BLOCKING",
+    "overall_restoration_percentage": null,
+    "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-116"
+  }
+}
