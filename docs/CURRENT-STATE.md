@@ -18485,3 +18485,8 @@ source run40132510243/job120987039808/HEAD96e6963c4944f03736f0fa6d64ec6730f0e9ca
 
 ### 2026-10-25 — 同包无损地图层去重接入
 在已验42个TW8.5及35个mixed同路径地图范围，建立STONEAGE-TW85-MIXED25-MAP-LAYER-DEDUP-R1.json：231次原层引用对应210个不同(size,SHA256)字节块，21组重复（其中19跨样本），逻辑层字节25688190/不同块25646240，41950B只是可避免重复分析/存储的引用预算，不是已实现磁盘回收或恢复率。保留全部样本/路径/层序号/尺寸，原文件和载荷均未删除/内嵌，不把相同层绑定同名地点或完整几何。守卫重建全部231引用并校验守恒；旧已发表比较及历史后缀保留。本项是本包实际逐层结果的无损集成，最高NEXT仍官方ADRN129小修复包，不展开地图helper。
+
+
+### 2026-10-25 — 地图逐层对照及无损索引候选/main实际终验
+内容main `d39cbaba06d9cd89d3a4097a48a4eb6e239546f5` / tree `6958f129f746b6009723ab7fc9c993820eefe969`；候选11项Actions与主线12项Actions全部实际completed/success。source40132510243为本包唯一原混合包取源，TW8.5原包和main归档验收均无重复整包下载。原source派生ZIP15914B独立校验SHA44b09c7f471772c928c34bbf90f7f2a95f93b1c82306771690c05ebf7ebbada2、raw139701B/SHA caa47b1e35f267d8805eabc4a941b49623b691e1f7624f77630aef943b20d7e6与Git blob5c5d10456d1ec55bf7a1bc2a5d3969fffd338f00原样对应，不冒称原361MB包已下载到当前会话或永久库。
+最终17单元、14项绕过digest变异拒绝、两个旧独立工具13个不同路径三层SHA/尺寸同一；另独立重建231层引用多重集，与210个内容块索引的全部样本/路径/ordinal/尺寸逐项守恒。68165B去重catalog及原raw/22域轮换pins完整写research/recovered/STONEAGE-TW85-MIXED25-MAP-PUBLICATION-R1.json。初始CUSTODY中PENDING保留为历史，由本条后验补证；此验收记录提交自身Actions须另据实际结果核实。NEXT仍TW-WAYI-ADRN129-OFFICIAL-RESOURCE-PATCH-PAYLOAD-05，原任务四档、7PARTIAL+2OPEN、B/wiki GATED、R79暂停、总体percent=null不变。
