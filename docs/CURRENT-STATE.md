@@ -18153,3 +18153,14 @@ S1 新浪游戏2003-06-03 17:04《金飞任务》 https://games.sina.com.cn/zhqu
 关键保留S1同页“一只”与“三只”互相冲突；S2标题8.0攻略写一只，不能倒裁2003真实服务器；S1“80级”与S2“80级以上（不包含80级）”分开，不补共用阈值。地图坐标是攻略位置，不补原NPC坐标。规格 `docs/specs/STONEAGE-CN2003-2006-DRAGON-FLIGHT-R109.md`、10条分版研究记录JSON、校验器、21项单元案例和CI已在候选 `208b2af542cea42fb5f64ccab1c22e881af1c696`，其专用run40048210484 completed/success；这是源边界元数据验收，不是原源byte replay或原服成功。原版权HTML/图/程序不入Git。
 
 最高NEXT `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-110`，换其他版本的第一方具名NPC剧情、可确认身份的真实交互画面或早期具实体地图证据；避免再细拆金飞攻略。Stage A7 PARTIAL+2 OPEN，Stage B/wiki GATED，savedataR79 PAUSED_NON_BLOCKING，整体复原百分比null。
+
+
+## 2026-10-24 R110 — 日本2004圣诞「サンタガール」与友军误伤规则边界
+
+从远端main e928f525f6c6f7a5b0aa4e0bd706405ae8d0f948 / tree 76519efca3e9554a8de52fa708b6f5f70d503dbc 重新启动，main最新R109保管本体专用Action40048617769 success；R109候选/主线原工作门均成功。原连续性协议、CURRENT真实Git blob、RESTORATION-ROADMAP-R2、SOURCE-REGISTRY、HISTORICAL-TIMELINE与DESIGN-DECISIONS完整读取，0开放PR。因R42日服2005特殊地图/R77小水怪/R109金飞航空等已入库去重，R110选日服2004明确命名节庆NPC及友伤防误操作补丁，非重复后期祭典/旧服务器helper。
+
+S1 4Gamer 2004-12-15 21:03「石器時代MMORPG『ストーンエイジ』の年末年始イベント情報」 https://www.4gamer.net/news/history/2004.12/20041215210314detail.html 报2004-12-20至27圣诞/先完成「成人の儀」方有礼；另报2005-01-01至07神社「おみくじ」、参与条件「特になし」但签文效果未公布。S2 GAME Watch周报2004-12-18至24 https://game.watch.impress.co.jp/docs/20041224/on1224.htm 在石器独立段明确「サンタガール」出现于マリナス/ジャジャ/カルターナ/サムギル四村，找到得礼；本段不写成人仪式并非门槛删除。S2称12月20日更新把攻击包含宠物的自队成员通常伤害改为1，**混乱状态例外正常伤害**；不是原1999/TW1版公式或实际执行证明。12月20日的“NPC/道具追加”是当时报导，不补原ID、奖励数量、地点坐标、宠物品种、已发奖与保存事务。
+
+二同期媒体来源角色标签不一：S1称运营ボーステック，S2称ガマニアデジタルエンターテインメント；2005-04前对运营/营销/结算合作并无本包原始合约证明，不能推断当月交接。S2链接2004旧官方 http://stoneage.to/event/Xmas04.html 当前工具无法取其历史原HTML，容器DNS不可用，原始HTML SHA/字节/原画/截图都未获得，不冒充2004原样byte replay。两媒体表述均有限事实主张，非当年服务器脚本或相互独立原服执行。
+
+交付 research/recovered/STONEAGE-JP2004-XMAS-PARTY-COMBAT-R110.json、docs/specs/STONEAGE-JP2004-XMAS-PARTY-COMBAT-R110.md、Python语义边界校验、21项测试及专用Actions；六条分版目录不是六个原服实体。内容候选 agent/jp2004-xmas-party-combat-r110-20261024 的实际SHA/专用CI/后续源保管、主线合并须以真实后验写入，不提前报绿。原网页/图像/商业程序不入Git。止于二同期来源及官网缺口，不继续猜礼物物品或扩友伤汇编。**最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-111**：轮换其它分版早期具名故事NPC／真实交互画面或原地图实体数据，优先可重放第一方原件。Stage A仍7 PARTIAL+2 OPEN；Stage B/百科GATED；R79 PAUSED_NON_BLOCKING；整体完成度null。
