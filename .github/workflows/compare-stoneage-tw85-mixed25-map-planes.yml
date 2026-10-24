@@ -1,0 +1,36 @@
+name: Compare TW8.5 map layers with actual qualified mixed25 payload
+on:
+  workflow_dispatch:
+  push:
+    branches: ['agent/tw85-mixed25-map-planes-20261025', 'main']
+    paths:
+      - 'tools/stoneage_tw85_mixed25_map_diff.py'
+      - 'tests/test_stoneage_tw85_mixed25_map_diff.py'
+      - '.github/workflows/compare-stoneage-tw85-mixed25-map-planes.yml'
+permissions:
+  contents: read
+jobs:
+  source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m unittest tests.test_stoneage_tw85_mixed25_map_diff tests.test_stoneage_tw85_map_payload -v
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq unar
+      - name: Download only mixed25 source, verify original whole bundle and individual map bytes
+        run: python -m tools.stoneage_tw85_mixed25_map_diff --work /tmp/tw85-25-map-source --output /tmp/tw85-25-map-diff.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: tw85-mixed25-map-planes-derived-r1
+          path: /tmp/tw85-25-map-diff.json
+          if-no-files-found: warn
+          retention-days: 30
+      - name: Remove temporary proprietary preservation payload
+        if: always()
+        run: rm -rf /tmp/tw85-25-map-source
