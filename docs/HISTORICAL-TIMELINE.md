@@ -4889,3 +4889,7 @@ source run40132510243/job120987039808/HEAD96e6963c4944f03736f0fa6d64ec6730f0e9ca
 交付docs/specs/STONEAGE-TW85-MIXED25-MAP-PLANE-DIFF-R1.md、research/recovered/STONEAGE-TW85-MIXED25-MAP-PLANE-DIFF-R1.json及CUSTODY-R1.json。连续两包地图已各有实质结果，按协议13回全22域原件队列，不再扩缓存helper。有限复核原JSS/韩国无新可取载体、日本gm/hg附件仍受限、TW8.5/mixed地图包已止点；patch007只有同目录命中无StoneAge归属链，不纳入游戏补丁。
 
 最高NEXT **TW-WAYI-ADRN129-OFFICIAL-RESOURCE-PATCH-PAYLOAD-05**：旧官方fileid333真实出链已取得2006-09-11保存adrn_129.rar 3983427B/SHA b077dcc7f1e944c33c6df4fe629d5e37abce9cb4d40f5b8d800cc69d59416e25，但内部成员与索引记录未提取。下一包只取这一小档、静态安全解包并产完整成员/格式可支持的原ADRN记录摘要及既有数据交集，或具体有限缺口即止；源列表2005-05-18且描述7.5黑屏修复，与2006实际载荷分开，不强称8.0独占/2005同build/具名宠物或原REAL像素齐全。选择依据与22域原边界见STONEAGE-ARTIFACT-MATERIAL-ROTATION-R5.json，不重复ISBN/四死口/十写点。Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、DD-028四档、总体percent=null均保留。
+
+
+### 2026-10-25 — 同包无损地图层去重接入
+在已验42个TW8.5及35个mixed同路径地图范围，建立STONEAGE-TW85-MIXED25-MAP-LAYER-DEDUP-R1.json：231次原层引用对应210个不同(size,SHA256)字节块，21组重复（其中19跨样本），逻辑层字节25688190/不同块25646240，41950B只是可避免重复分析/存储的引用预算，不是已实现磁盘回收或恢复率。保留全部样本/路径/层序号/尺寸，原文件和载荷均未删除/内嵌，不把相同层绑定同名地点或完整几何。守卫重建全部231引用并校验守恒；旧已发表比较及历史后缀保留。本项是本包实际逐层结果的无损集成，最高NEXT仍官方ADRN129小修复包，不展开地图helper。

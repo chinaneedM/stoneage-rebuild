@@ -1,12 +1,23 @@
 import copy
 import json
 import unittest
-from tools.stoneage_tw85_mixed25_map_archive import ROOT, REPORT, replay, validate
+from tools.stoneage_tw85_mixed25_map_archive import ROOT, REPORT, replay, validate, layer_catalog
 
 
 class ArchiveTests(unittest.TestCase):
     def test_actual_archive(self):
         self.assertEqual(validate()['status'], 'PASS')
+
+    def test_lossless_occurrence_conservation_and_no_source_deletion(self):
+        catalog = layer_catalog()
+        refs = [x for group in catalog['groups'] for x in group['occurrences']]
+        self.assertEqual(len(refs), 231)
+        self.assertEqual(len({(x['sample'], x['path'], x['ordinal']) for x in refs}), 231)
+        self.assertEqual(sum(x['sample'] == 'TW85' for x in refs), 126)
+        self.assertEqual(sum(x['sample'] == 'MIXED25' for x in refs), 105)
+        self.assertEqual(catalog['distinct_layer_byte_blocks'], 210)
+        self.assertEqual(catalog['logical_layer_bytes']-catalog['distinct_layer_bytes'], 41950)
+        self.assertTrue(all(v is False for v in catalog['boundaries'].values()))
 
     def test_semantic_mutations_without_digest_gate(self):
         original = json.loads((ROOT/REPORT).read_bytes())
