@@ -1,0 +1,218 @@
+{
+  "evidence_boundaries": {
+    "complete_3d_models_demonstrated": false,
+    "original_server_npc_quest_growth_master_recovered": false,
+    "proprietary_bytes_emitted": false,
+    "same_payload_is_not_same_original_server_entity": true,
+    "same_resource_id_is_not_a_pet_species_id": true,
+    "variant_resources_not_immediately_attributed_to_official_update": true
+  },
+  "families": {
+    "animation_spr": {
+      "comparison": {
+        "ambiguous_ids_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "ambiguous_shared_id_count": 0,
+        "changed_payload_or_segment_count": 0,
+        "changed_payload_samples": [],
+        "common_unique_id_count": 464,
+        "common_unique_ids_sha256": "d5ccdc94b48b4b521446329b947d78e36b7a77d9ce1a07dff1611bc2e361a7ed",
+        "exact_payload_or_segment_count": 464,
+        "missing_old_id_sample": [],
+        "missing_old_ids_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "new_duplicate_ids": 0,
+        "new_id_sample": [
+          100700,
+          100701,
+          100702,
+          100703,
+          100704,
+          100705,
+          100706,
+          100707,
+          100708,
+          100709,
+          100710,
+          100711,
+          100712,
+          100713,
+          100714,
+          100715,
+          100716,
+          100717,
+          100718,
+          100719,
+          100720,
+          100721,
+          100722,
+          100723,
+          100724,
+          100725,
+          100726,
+          100727,
+          100728,
+          100729,
+          100730,
+          100731
+        ],
+        "new_ids_sha256": "dbbe574d7b392f2d148e357663f907238c9872d5d55abd5ba6338cc1595202ae",
+        "new_total_ids": 1185,
+        "new_unique_ids_absent_in_old_count": 721,
+        "old_duplicate_ids": 0,
+        "old_total_ids": 464,
+        "old_unique_ids_absent_in_new_count": 0,
+        "same_geometry_or_animation_count": 464,
+        "same_index_descriptor_or_frame_count": 464
+      },
+      "new": {
+        "index_count": 1185,
+        "index_sha256": "fec0e780fe3cdb5455e7fb7b2526cbbe9758cc5310e4b8857f0008ea31fc327b",
+        "problems": {},
+        "valid_segments": 1185
+      },
+      "old": {
+        "index_count": 464,
+        "index_sha256": "275b64ff55667aec633a7e82e09d65c84141380521f0f2e64c9a28e0d3aa6c25",
+        "problems": {},
+        "valid_segments": 464
+      }
+    },
+    "bitmap_rd": {
+      "comparison": {
+        "ambiguous_ids_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "ambiguous_shared_id_count": 0,
+        "changed_payload_or_segment_count": 0,
+        "changed_payload_samples": [],
+        "common_unique_id_count": 125996,
+        "common_unique_ids_sha256": "8ae91e06bd1cac4cc4fd3e83943cb2b056e65d8abacbf3e4636adc1456f8a56a",
+        "exact_payload_or_segment_count": 125996,
+        "missing_old_id_sample": [],
+        "missing_old_ids_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "new_duplicate_ids": 0,
+        "new_id_sample": [
+          125996,
+          125997,
+          125998,
+          125999,
+          126000,
+          126001,
+          126002,
+          126003,
+          126004,
+          126005,
+          126006,
+          126007,
+          126008,
+          126009,
+          126010,
+          126011,
+          126012,
+          126013,
+          126014,
+          126015,
+          126016,
+          126017,
+          126018,
+          126019,
+          126020,
+          126021,
+          126022,
+          126023,
+          126024,
+          126025,
+          126026,
+          126027
+        ],
+        "new_ids_sha256": "0f0d86834c586ee28e200dac5de95b96588d1c94b8c846fab3d8256fe7fb3a2b",
+        "new_total_ids": 303197,
+        "new_unique_ids_absent_in_old_count": 177201,
+        "old_duplicate_ids": 0,
+        "old_total_ids": 125996,
+        "old_unique_ids_absent_in_new_count": 0,
+        "same_geometry_or_animation_count": 125996,
+        "same_index_descriptor_or_frame_count": 125996
+      },
+      "new": {
+        "index_count": 303197,
+        "index_sha256": "0a1b600b25f4ccb181fe862970fb40298e49d5665728974587fd5e59b7f53d4c",
+        "problems": {},
+        "valid_payload_rows": 303197
+      },
+      "old": {
+        "index_count": 125996,
+        "index_sha256": "47254c0ff904d363fb5c3c5297edf553c8eaf24cd933f346d8ce7aabed4155c8",
+        "problems": {},
+        "valid_payload_rows": 125996
+      }
+    }
+  },
+  "prerequisites": {
+    "cn50_413_files_rehashed_again": true,
+    "cn50_durable_original_bytes_stored": false,
+    "cn50_source_report": "research/recovered/STONEAGE-STONEAGE5-REAL-CAB-PAYLOAD-R1.json",
+    "old_tw10_four_files_rehashed_again": true,
+    "tw10_durable_original_bytes_stored_here": false,
+    "tw10_original_manifest": "research/recovered/STONEAGE-TW10-CLIENT-INVENTORY-R1.txt"
+  },
+  "result": "DERIVED_RECORD_LEVEL_DIFF_OF_REACQUIRED_ORIGINAL_RESOURCE_BYTES",
+  "schema": "stoneage.tw10_cn50.record_level_resource_diff_r1",
+  "source_claims": {
+    "CN50": {
+      "cab_sha256": "cb414ad1ef4cc7925ec429ec088d0146892834c72667d1af82c8075d09f1683b",
+      "carrier_catalogue_sha1_not_rehashed": "6053dce3df2723250ddb52a98b3e8cf2552cd791",
+      "class": "PRESERVED_OPTICAL_INSTALLER_IDENTITY_PROVEN_BY_INTERNAL_MSI",
+      "files": {
+        "adrn": {
+          "bytes": 24255760,
+          "file": "adrn_31.bin",
+          "sha256": "0a1b600b25f4ccb181fe862970fb40298e49d5665728974587fd5e59b7f53d4c"
+        },
+        "real": {
+          "bytes": 1102755808,
+          "file": "real_31.bin",
+          "sha256": "9ecf2180170b8bb1886beba428eaf0e3ed8036332835046df0960a26fabeacc7"
+        },
+        "spr": {
+          "bytes": 7145946,
+          "file": "spr_17.bin",
+          "sha256": "1df3b732bd46ec5531806226447ac51e835db0bbfb39226c26ce34c89122f606"
+        },
+        "spradrn": {
+          "bytes": 14220,
+          "file": "spradrn_17.bin",
+          "sha256": "fec0e780fe3cdb5455e7fb7b2526cbbe9758cc5310e4b8857f0008ea31fc327b"
+        }
+      },
+      "official_clean_release_mastering_authenticated": false
+    },
+    "TW10": {
+      "class": "ACCEPTED_RETAIL_DISC_CLIENT",
+      "disc_image_bytes": 523449360,
+      "disc_structure": {
+        "joliet": true,
+        "layout": "mode1-2352"
+      },
+      "files": {
+        "adrn": {
+          "bytes": 10079680,
+          "file": "StoneAge/data/adrn_1.bin",
+          "sha256": "47254c0ff904d363fb5c3c5297edf553c8eaf24cd933f346d8ce7aabed4155c8"
+        },
+        "real": {
+          "bytes": 315842228,
+          "file": "StoneAge/data/real_1.bin",
+          "sha256": "408e6ee05c83354349691937da2ad8f7488ac10f65f07e6681b7d92cb1c9ed13"
+        },
+        "spr": {
+          "bytes": 2889630,
+          "file": "StoneAge/data/spr_1.bin",
+          "sha256": "53d5b2d40453a30fd1569637ebf0db7b3010542b00970ec83af0295a3b3ae31a"
+        },
+        "spradrn": {
+          "bytes": 5568,
+          "file": "StoneAge/data/spradrn_1.bin",
+          "sha256": "275b64ff55667aec633a7e82e09d65c84141380521f0f2e64c9a28e0d3aa6c25"
+        }
+      }
+    }
+  }
+}
