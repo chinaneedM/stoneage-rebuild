@@ -6,4 +6,12 @@
 
 先验状态为PENDING。下载失败必须保存准确的有界失败与已验证分卷数；安装器不支持解档则记录UNSUPPORTED_INSTALLER_CONTAINER，不能编造内部清单。载体服务hash仅验证本次下载一致性，不能证明2006发行包未被改动。成功后仍保持UNVERIFIED_COMMUNITY_PRESERVED_CLAIMED_WAYI85_INSTALLER，直到独立发行方或同源原件认证。
 
+## 同轮资料遗漏订正及实际止点
+
+启动时沿最新NEXT误将旧六分卷metadata视为全部既有证据；随后全库查得WAEI85-MEDIAFIRE-CANDIDATE、INSTALLER-ANALYSIS、INSTALLSHIELD-EXTRACT和ISX-WINDOWS旧真实报告，已经存在完整六卷SHA、wrapper971780ab、Windows ISx导出的MSI8f99ceb1及ProductVersion8.50.0000。旧签名输出包含WAYI主体/2007-02-15时间及本地信任链验证失败，不能只摘署名宣称完整信任链通过；20060616文件名不认证生产日期。旧报告全文保留，本轮不得将重取算新增官方版本。
+
+第一轮635d31bd source run40087390591实际下载成功、wrapper与旧SHA完全相同，但7zip只得到21个PE段/资源/overlay，并未得到游戏安装树。绿色工作流和21文件不能计为客户端恢复；旧的同类报告早已记录相同限制。本轮必须继续到真正MSI载荷，或留下精确解码缺口。
+
+修正方案以ISx固定3c4177ddd的MIT许可格式为参考，独立Python实现仅针对该固定SHA的InstallShield10.5流，静态解出StoneAge85.msi并要求SHA逐字节等于旧Windows独立结果，再用msitools导出Property/File/Directory/Component/Media表和实际解档文件SHA清单。不调用msiexec、不执行原安装器或其自定义动作。只交付真实载荷清单/地图文件线索/容器差异，不把PE外壳再当客户端。需要再次取得旧大包是更深实质提取的输入，第一次重复下载的证据认定错误如实保留。
+
 源码、合成测试、工作流与派生报告允许进Git；原分卷/安装器/素材不能默认放进公开仓库或工件。工作目录可复用已校验分卷，但Actions作业生命周期内的字节不等于跨会话永久原件仓；长期原包留存须单独成功验收，不提前声称完成。源下载工作流仅在本候选分支源码变动或手动触发时运行，合入main只跑派生/单元验收，避免重复下载一千余MB。实际run/job/artifact/ZIP/raw收据在结果产生后登记。

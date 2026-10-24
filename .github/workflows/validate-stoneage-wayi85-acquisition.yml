@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - 'tools/stoneage_wayi85_sixpart_acquisition.py'
+      - 'tools/stoneage_wayi85_installshield_payload.py'
       - 'tests/test_stoneage_wayi85_sixpart_acquisition.py'
       - '.github/workflows/validate-stoneage-wayi85-acquisition.yml'
 permissions:

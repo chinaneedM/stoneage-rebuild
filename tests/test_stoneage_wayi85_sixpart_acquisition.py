@@ -5,6 +5,7 @@ import unittest
 
 from tools.stoneage_wayi85_sixpart_acquisition import (
     STEM, check_metadata, direct_link, assemble, safe_7z_members)
+from tools.stoneage_wayi85_installshield_payload import decode_blocks
 
 
 class Wayi85AcquisitionTests(unittest.TestCase):
@@ -58,3 +59,19 @@ class Wayi85AcquisitionTests(unittest.TestCase):
                      'Path = a\nSize = 1\n\nPath = A\nSize = 1'):
             with self.subTest(text=text), self.assertRaises(ValueError):
                 safe_7z_members('----------\n'+text)
+
+    def test_installshield_filename_key_and_1024_phase_reset(self):
+        # Independent byte-wise encoding oracle; deliberately span a block edge.
+        name = 'StoneAge85.msi'
+        plain = bytes(range(256))*9
+        magic = (0x13, 0x35, 0x86, 0x07)
+        encoded = bytearray()
+        for i, b in enumerate(plain):
+            n = (i % 1024) % len(name)
+            key = ord(name[n]) ^ magic[n % 4]
+            value = b ^ key ^ 255
+            encoded.append(((value & 15) << 4) | (value >> 4))
+        self.assertEqual(decode_blocks(bytes(encoded), name), plain)
+        self.assertNotEqual(decode_blocks(bytes(encoded), 'StoneAge80.msi'), plain)
+        with self.assertRaises(ValueError):
+            decode_blocks(b'1', '')

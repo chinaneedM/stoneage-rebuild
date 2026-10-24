@@ -192,8 +192,17 @@ def acquire(work, output):
         report['assembled_installer'] = {'filename': STEM, **rehash(installer)}
         report['status'] = 'ALL_SIX_PARTS_DOWNLOADED_AND_ASSEMBLED'
         checkpoint()
-        report['inspection'] = inspect_installer(installer, work)
-        report['status'] = 'BYTE_ACQUISITION_AND_STATIC_INSPECTION_COMPLETE'
+        from tools.stoneage_wayi85_installshield_payload import extract_client
+        report['inspection'] = extract_client(installer, work)
+        # Actual MSI payload files, never the PE wrapper's 21 sections.
+        baseline = replay()
+        by_hash = {}
+        for file in report['inspection']['inventory']['samples'][0]['files']:
+            by_hash.setdefault(file['sha256'], []).append(file['path'])
+        report['inspection']['tw10_exact_file_matches'] = [
+            {**p, 'candidate_paths': by_hash[p['sha256']]}
+            for p in baseline['matched']+baseline['unmatched'] if p['sha256'] in by_hash]
+        report['status'] = 'MSI_CLIENT_PAYLOAD_ACQUISITION_AND_INVENTORY_COMPLETE'
     except Exception as exc:
         report['status'] = 'BOUNDED_ACQUISITION_OR_INSPECTION_FAILURE'
         # Avoid temporary signed payload URLs in permanent derived reports.
