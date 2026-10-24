@@ -1,0 +1,282 @@
+{
+  "schema": "stoneage.jp2004.osanpo_replay.r106",
+  "source_sha256": "2cd59ffeff87adc4d0fa6c1530df9e970f8404cf84b62bfd72a625462cbfe40c",
+  "actual_page": {
+    "bytes": 6840,
+    "sha256": "7a461f45d5a5a38892afeaf5257233bf909fcfcfe1b1f206f604fd2b30d1c299",
+    "git_blob": "a6626e2186812674c47bc10861ae291483f4c33b"
+  },
+  "sections": [
+    {
+      "topic": "SKILL_LEARNING_AND_OVERWRITE",
+      "table_close_ordinal": 1,
+      "row": 0,
+      "column": 1,
+      "normalized_utf8_bytes": 708,
+      "normalized_sha256": "3c8d94b822dbfc995876c5bc991c503a84b34f45e1b1373197fd5c7fc9687ee4"
+    },
+    {
+      "topic": "OSANPO_FIELD_COMPANIONSHIP",
+      "table_close_ordinal": 2,
+      "row": 0,
+      "column": 1,
+      "normalized_utf8_bytes": 607,
+      "normalized_sha256": "d14719e6b1ba76a5117684279a02deff8cd960f8e8b0e0cfc5e86033b937c833"
+    }
+  ],
+  "html_metadata": {
+    "image_references": [
+      {
+        "src": "../image/manual/pet_03.gif",
+        "width": "195",
+        "height": "259",
+        "usemap": "#petstatus"
+      },
+      {
+        "src": "../image/manual/pet_waza.gif",
+        "width": "195",
+        "height": "248",
+        "usemap": "#pettec"
+      },
+      {
+        "src": "../image/manual/pet_osanpo.gif",
+        "width": "200",
+        "height": "127",
+        "usemap": null
+      }
+    ],
+    "skill_map_areas": [
+      {
+        "coords": "10,24,108,38",
+        "alt": "ペットの名前"
+      },
+      {
+        "coords": "12,42,41,146",
+        "alt": "技の番号"
+      },
+      {
+        "coords": "41,44,122,92",
+        "alt": "暗色の技名は、この場では使用する事ができません"
+      },
+      {
+        "coords": "41,108,106,145",
+        "alt": "白色の技名は、この場で使用する事が可能です"
+      },
+      {
+        "coords": "9,170,186,224",
+        "alt": "選択している技の説明"
+      },
+      {
+        "coords": "33,226,56,240",
+        "alt": "前のペットの技に移動"
+      },
+      {
+        "coords": "62,225,88,239",
+        "alt": "次のペットの技に移動"
+      },
+      {
+        "coords": "105,222,166,242",
+        "alt": "ひとつ前の画面にもどる"
+      }
+    ],
+    "osanpo_fragment_targets": []
+  },
+  "rules": {
+    "learning": {
+      "finite_skill_capacity_described": true,
+      "skill_capacity_number": null,
+      "teaching_sources": [
+        "PET_SHOP_BREEDERS_AND_OTHERS_UNNAMED"
+      ],
+      "direct_forget_described": false,
+      "overwrite_with_another_skill_described": true,
+      "reorder_described": false,
+      "most_skills_used_in_battle_described": true,
+      "field_use_examples": [
+        "料理",
+        "加工"
+      ],
+      "examples_are_exhaustive": false,
+      "training_price_or_slot_formula": null
+    },
+    "osanpo": {
+      "name_as_written": "おさんぽ",
+      "effect_as_described": "COMPANION_PET_MOVES_WITH_CHARACTER_IN_FIELD",
+      "source_presentation": "COMPANIONSHIP_RATHER_THAN_GAMEPLAY_ADVANTAGE",
+      "learned_at_conditionally_accessible_pet_shop": true,
+      "teaching_shop_entry_conditions": null,
+      "teaching_shop_or_trainer_name": null,
+      "teaching_price": null,
+      "low_loyalty_blocks_use": true,
+      "loyalty_threshold": null,
+      "mail_state_blocks_use": true,
+      "mail_state_numeric_id": null,
+      "two_absent_blockers_sufficient_for_success": false,
+      "speed_or_battle_bonus": null,
+      "pathfinding_spacing_number_of_followers": null,
+      "species_eligibility": null,
+      "skill_id": null
+    },
+    "ui_html_hints": {
+      "dark_skill_names": "CANNOT_USE_HERE_AS_DESCRIBED_BY_IMAGE_MAP",
+      "white_skill_names": "CAN_USE_HERE_AS_DESCRIBED_BY_IMAGE_MAP",
+      "text_map_labels_are_verified_pixels": false,
+      "image_map_skill_number_is_native_skill_id": false
+    }
+  },
+  "derived_blocker_table": [
+    {
+      "qualitative_low_loyalty": true,
+      "mail_state": true,
+      "documented_blockers": [
+        "LOW_LOYALTY",
+        "MAIL_STATE"
+      ],
+      "verdict": "BLOCKED_BY_DOCUMENTED_RULE",
+      "original_execution_observed": false
+    },
+    {
+      "qualitative_low_loyalty": true,
+      "mail_state": false,
+      "documented_blockers": [
+        "LOW_LOYALTY"
+      ],
+      "verdict": "BLOCKED_BY_DOCUMENTED_RULE",
+      "original_execution_observed": false
+    },
+    {
+      "qualitative_low_loyalty": true,
+      "mail_state": null,
+      "documented_blockers": [
+        "LOW_LOYALTY"
+      ],
+      "verdict": "BLOCKED_BY_DOCUMENTED_RULE",
+      "original_execution_observed": false
+    },
+    {
+      "qualitative_low_loyalty": false,
+      "mail_state": true,
+      "documented_blockers": [
+        "MAIL_STATE"
+      ],
+      "verdict": "BLOCKED_BY_DOCUMENTED_RULE",
+      "original_execution_observed": false
+    },
+    {
+      "qualitative_low_loyalty": false,
+      "mail_state": false,
+      "documented_blockers": [],
+      "verdict": "SUFFICIENCY_UNPROVEN",
+      "original_execution_observed": false
+    },
+    {
+      "qualitative_low_loyalty": false,
+      "mail_state": null,
+      "documented_blockers": [],
+      "verdict": "SUFFICIENCY_UNPROVEN",
+      "original_execution_observed": false
+    },
+    {
+      "qualitative_low_loyalty": null,
+      "mail_state": true,
+      "documented_blockers": [
+        "MAIL_STATE"
+      ],
+      "verdict": "BLOCKED_BY_DOCUMENTED_RULE",
+      "original_execution_observed": false
+    },
+    {
+      "qualitative_low_loyalty": null,
+      "mail_state": false,
+      "documented_blockers": [],
+      "verdict": "SUFFICIENCY_UNPROVEN",
+      "original_execution_observed": false
+    },
+    {
+      "qualitative_low_loyalty": null,
+      "mail_state": null,
+      "documented_blockers": [],
+      "verdict": "SUFFICIENCY_UNPROVEN",
+      "original_execution_observed": false
+    }
+  ],
+  "records": [
+    {
+      "record_id": "jp-bothtec-2004:r106:manual-topic:01",
+      "entity_type": "OFFICIAL_DESCRIBED_FIELD_COMPANION_SKILL",
+      "collection": "skills",
+      "name_as_written": "おさんぽ",
+      "version_profile": "JP_OPERATOR_WEB_CAPTURE_20041106_NOT_EXACT_CLIENT_BUILD",
+      "source_refs": [
+        {
+          "url": "http://stoneage.to/gameguid/manual_pet_03.html",
+          "capture": "20041106005417",
+          "sha256": "7a461f45d5a5a38892afeaf5257233bf909fcfcfe1b1f206f604fd2b30d1c299",
+          "topic": "OSANPO_FIELD_COMPANIONSHIP"
+        }
+      ],
+      "verification_status": "ARCHIVED_OPERATOR_TEXT_NOT_RUNTIME_OR_PIXEL_RESTORATION",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "asset_refs": null,
+      "cross_region_aliases": null,
+      "server_runtime_verified": false
+    },
+    {
+      "record_id": "jp-bothtec-2004:r106:manual-topic:02",
+      "entity_type": "OFFICIAL_SKILL_MANAGEMENT_MANUAL",
+      "collection": "tutorials",
+      "name_as_written": "日服2004宠物技能学习与覆盖说明",
+      "version_profile": "JP_OPERATOR_WEB_CAPTURE_20041106_NOT_EXACT_CLIENT_BUILD",
+      "source_refs": [
+        {
+          "url": "http://stoneage.to/gameguid/manual_pet_03.html",
+          "capture": "20041106005417",
+          "sha256": "7a461f45d5a5a38892afeaf5257233bf909fcfcfe1b1f206f604fd2b30d1c299",
+          "topic": "SKILL_LEARNING_AND_OVERWRITE"
+        }
+      ],
+      "verification_status": "ARCHIVED_OPERATOR_TEXT_NOT_RUNTIME_OR_PIXEL_RESTORATION",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "asset_refs": null,
+      "cross_region_aliases": null,
+      "server_runtime_verified": false
+    }
+  ],
+  "image_probe": {
+    "original_url": "http://stoneage.to/image/manual/pet_osanpo.gif",
+    "requested_url": "https://web.archive.org/web/20041106005417id_/http://stoneage.to/image/manual/pet_osanpo.gif",
+    "http_status_observed": 404,
+    "qualified_image_bytes": false,
+    "html_declared_dimensions": [
+      200,
+      127
+    ],
+    "actual_dimensions": null,
+    "historical_absence_proven": false,
+    "other_two_images_requested": false
+  },
+  "image_probe_repeated_by_ci": false,
+  "boundaries": {
+    "exact_client_build_verified": false,
+    "native_skill_or_map_npc_ids_recovered": false,
+    "all_species_learning_or_slot_count_restored": false,
+    "success_sufficient_conditions_proven": false,
+    "source_text_alone_proves_follow_animation": false,
+    "source_map_alt_labels_prove_actual_screen_pixels": false,
+    "html_declared_size_is_measured_original_image": false,
+    "source_fragment_is_native_game_id": false,
+    "original_server_transactions_observed": 0,
+    "original_html_or_pixels_committed": false,
+    "asset_reuse_approved": false,
+    "new_game_or_wiki_production_started": false,
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b_and_wiki": "GATED",
+    "savedata_r79": "PAUSED_NON_BLOCKING",
+    "overall_completion_percentage": null
+  },
+  "original_server_transactions_observed": 0
+}

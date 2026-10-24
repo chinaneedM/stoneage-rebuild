@@ -18095,3 +18095,14 @@ GitHub重新核main `b4f5a28a09efa40bfcd60401f0885c9a6f270f5b` / tree `6df1fb27f
 交付SOURCE/LOCAL及LOCAL-AUDIT、中文规格、源级工具、十项单元及专用CI。新十＋旧大陆训练师六本地16项全通过；另次网络取页与初取及LOCAL逐字一致。独立regex/entity两段摘要与DOM相等，真实原页十个极性/条件/场合变异在移除原字节校验时仍拒绝；不冒称CI重新执行人工审计/404探测。原HTML/图片/程序不入Git。候选/main及派生工件永久保管按后验，不提前报绿。
 
 最高NEXT `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-107` 转另一版本具名NPC任务/奖励正文或目标交互画面，优先运营方原文，先查重既有卡坦、レン/ワイト及22域来源；一来源包/最多两张明确归属图止步，无新增实源则转材料缺口评估，不连续扩日服手册相邻页/村庄公告。Stage A7 PARTIAL+2 OPEN，B/wiki GATED，savedataR79暂停，整体百分比null。
+
+
+### R106 单页真实重放、双端ZIP与永久派生保管 — 2026-10-24（Asia/Shanghai）
+
+内容commit `48376b0d79ee0f462f2e8770fbb731a951873dfe` / tree `7f91d09083d08ed9b3b7716a8ab96d96ee0e78f8`，候选11/main12共23不同Actions实际completed/success。专用candidate run40045319094/job120725587438、main run40045489695/job120726120389日志各真实十项单元＋重新取精确档案手册页、原6840B/SHA与两个正文单元/HTML标注校验，派生报告同LOCAL逐字cmp相等。fresh main未变后expected_sha非force快进；compare前进1/落后0、11文件0删行，四历史旧/新远端原生blob全文双读完整前缀，新tree等本地。
+
+真实ZIP逐份从公开nightly.link精确run路径取得，并以实际字节核对GitHub API长度/摘要：candidate artifact12541056258/2923B/`9d0bc4ee8ebfe6dc325758b1e8dcdde425ac5b64810ffdb60596833948ac7805`；main artifact12541061528/2923B/`866eee1bfe42d2c5e130a713b1611612c82df60b3ca015a7078b9a3c78c1439f`。唯一ZIP成员r106-replay.json，双端与LOCAL原样8980B/SHA256 `437cf188c9ad4a016a0a42c3f12a775babfcf20ed24dc2c14a90cb152f048871` / Git blob `11219b94316848b6c5d81f9a30c61ab3d2843fd8`。未将已知connector下载元数据当成ZIP。
+
+永久双CI原报与CUSTODY（16777B，SHA256 `03dfcb37f13ae671afc0079fbff8e1acd1096296e72dd793a16711870076573b`，Git blob `998a4442ed9e087cd2dbec35f30eaa14a02521e8`）固定13证据pin、八完整启动文件身份、23运行、内容HEAD/tree/job/artifact/ZIP和四前缀。保管器校验原报一致、两段独立审计及十个本地真实原页变异结果，拒绝等长损坏/重算收据/错commit或ZIP/充分成功或原生ID提升。新十＋保管四＋旧大陆六共20不同本地测试通过；原内容CI十项不改称十四项。最终保管提交候选/main自身按实际后验，不提前报绿。唯一落盘原HTML已逐字节验长度/SHA后删除，未取得图片字节；原资产不入Git。
+
+实质收益是日服2004具名伴游技能的两项禁用条件和学习/覆盖/重排规则；九定性案例不是原服执行、黑白HTML标注不是实际像素、源无门槛数值也不借大陆数值填补。原服务器充分条件、完整技能/物种/SPR和世界DAT仍OPEN；Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、整体百分比null。最高NEXT107转另一版本具名NPC任务/奖励正文或目标交互画面，先查重，一来源包/最多两张归属图止步，不连续扩本手册相邻页。

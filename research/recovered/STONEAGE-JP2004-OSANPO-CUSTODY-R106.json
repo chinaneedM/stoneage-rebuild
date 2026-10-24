@@ -1,0 +1,443 @@
+{
+  "schema": "stoneage.jp2004.osanpo_custody.r106",
+  "date": "2026-10-24",
+  "source_commit": "48376b0d79ee0f462f2e8770fbb731a951873dfe",
+  "source_tree": "7f91d09083d08ed9b3b7716a8ab96d96ee0e78f8",
+  "baseline": {
+    "head": "b4f5a28a09efa40bfcd60401f0885c9a6f270f5b",
+    "tree": "6df1fb27fdc7ddf29923c80e7df55da690bd7a58"
+  },
+  "startup": {
+    "branches": 525,
+    "open_prs": 0,
+    "in_progress": 0,
+    "unrelated_queued_run": 37642417333,
+    "all_same_head_actions_success": 19,
+    "tree_entries": 5424,
+    "tree_truncated": false,
+    "agents_files": 0,
+    "complete_file_pins": {
+      "README.md": {
+        "bytes": 45937,
+        "sha256": "9feb9d418fe67809176c5c2970fc27498123531dd9051e131a4c3b3332cf803c",
+        "git_blob": "65cfe8de7ce8394f8eb659d8105a14f1d11753ca"
+      },
+      "docs/PROJECT-CONTINUITY-PROTOCOL-R1.md": {
+        "bytes": 9762,
+        "sha256": "c44834eeec87f7a43e9cb4905f08377349e36d58b1fff2c5a75a6975db695e3b",
+        "git_blob": "ba9bbe19384589400abc61af37a360a40bf91452"
+      },
+      "docs/CURRENT-STATE.md": {
+        "bytes": 2548056,
+        "sha256": "7d13bf98ec290e12cc83988e71b52f9d1dfe47ec87774880ac8e0572ab646d37",
+        "git_blob": "35ddae091c4b81e79b82ed162fed3346aebca6ba"
+      },
+      "docs/DESIGN-DECISIONS.md": {
+        "bytes": 45965,
+        "sha256": "28b572ed01179eacd5a06b4ad62c76e4baef22ac49587aa0bad452a7cb3fe8e6",
+        "git_blob": "013ae4fad9301ab0140fe408a423b3abad97d1f9"
+      },
+      "docs/HISTORICAL-TIMELINE.md": {
+        "bytes": 681978,
+        "sha256": "bc917d43a646cc4391ea9b6f13fd932696a6e0e3ab44ab3a1c6ada15f9e711ad",
+        "git_blob": "eb1839cccefc7b46e5cfd23417d1a7e75398fdbc"
+      },
+      "docs/SOURCE-REGISTRY.md": {
+        "bytes": 975775,
+        "sha256": "097802646e0078dae7f371777e5b57929a1b26db43af8d2388e6961ec328443f",
+        "git_blob": "4a6db7f05be2938ec39eb29211fc2e0b3d4d9d97"
+      },
+      "docs/RESTORATION-ROADMAP-R2.md": {
+        "bytes": 411879,
+        "sha256": "31e34e6a04224c5028ba83d600900ea98b3d521b89f591a8c3fa4fdc736ba28e",
+        "git_blob": "4137469ed7ab4c49e3267689b6a5e1834f8291ef"
+      },
+      "research/recovered/STONEAGE-MATERIAL-PORTFOLIO-REVIEW-R102.json": {
+        "bytes": 11482,
+        "sha256": "e555451cf5f214547a44413ac66645cfd1130913d70e3df7c11755eb481017fe",
+        "git_blob": "4c5b3da314fe6cc13863323ba78eb8adbc583d95"
+      }
+    }
+  },
+  "source_branch": "agent/jp2004-osanpo-r106-20261024",
+  "runs": [
+    {
+      "id": 40045489739,
+      "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+      "head_sha": "48376b0d79ee0f462f2e8770fbb731a951873dfe",
+      "head_branch": "main",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 40045489757,
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "head_sha": "48376b0d79ee0f462f2e8770fbb731a951873dfe",
+      "head_branch": "main",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 40045489785,
+      "name": "Validate StoneAge preproduction content archive and wiki boundary",
+      "head_sha": "48376b0d79ee0f462f2e8770fbb731a951873dfe",
+      "head_branch": "main",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 40045489715,
+      "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+      "head_sha": "48376b0d79ee0f462f2e8770fbb731a951873dfe",
+      "head_branch": "main",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 40045489756,
+      "name": "Validate Stage A early source gap triage",
+      "head_sha": "48376b0d79ee0f462f2e8770fbb731a951873dfe",
+      "head_branch": "main",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 40045489833,
+      "name": "Validate legacy StoneAge assistant history and pet content gaps",
+      "head_sha": "48376b0d79ee0f462f2e8770fbb731a951873dfe",
+      "head_branch": "main",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 40045489720,
+      "name": "Validate StoneAge Stage A joint review decision",
+      "head_sha": "48376b0d79ee0f462f2e8770fbb731a951873dfe",
+      "head_branch": "main",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 40045489695,
+      "name": "Verify R106 official pet walking skill and negative eligibility rules",
+      "head_sha": "48376b0d79ee0f462f2e8770fbb731a951873dfe",
+      "head_branch": "main",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 40045489797,
+      "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+      "head_sha": "48376b0d79ee0f462f2e8770fbb731a951873dfe",
+      "head_branch": "main",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 40045489693,
+      "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+      "head_sha": "48376b0d79ee0f462f2e8770fbb731a951873dfe",
+      "head_branch": "main",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 40045489776,
+      "name": "Verify R102 frozen material portfolio and record projections",
+      "head_sha": "48376b0d79ee0f462f2e8770fbb731a951873dfe",
+      "head_branch": "main",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 40045489746,
+      "name": "Independently verify TW1.0 R58 rooted helper returns and source custody",
+      "head_sha": "48376b0d79ee0f462f2e8770fbb731a951873dfe",
+      "head_branch": "main",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 40045318959,
+      "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+      "head_sha": "48376b0d79ee0f462f2e8770fbb731a951873dfe",
+      "head_branch": "agent/jp2004-osanpo-r106-20261024",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 40045318969,
+      "name": "Validate StoneAge preproduction content archive and wiki boundary",
+      "head_sha": "48376b0d79ee0f462f2e8770fbb731a951873dfe",
+      "head_branch": "agent/jp2004-osanpo-r106-20261024",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 40045318963,
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "head_sha": "48376b0d79ee0f462f2e8770fbb731a951873dfe",
+      "head_branch": "agent/jp2004-osanpo-r106-20261024",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 40045319054,
+      "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+      "head_sha": "48376b0d79ee0f462f2e8770fbb731a951873dfe",
+      "head_branch": "agent/jp2004-osanpo-r106-20261024",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 40045318999,
+      "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+      "head_sha": "48376b0d79ee0f462f2e8770fbb731a951873dfe",
+      "head_branch": "agent/jp2004-osanpo-r106-20261024",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 40045318950,
+      "name": "Validate Stage A early source gap triage",
+      "head_sha": "48376b0d79ee0f462f2e8770fbb731a951873dfe",
+      "head_branch": "agent/jp2004-osanpo-r106-20261024",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 40045319076,
+      "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+      "head_sha": "48376b0d79ee0f462f2e8770fbb731a951873dfe",
+      "head_branch": "agent/jp2004-osanpo-r106-20261024",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 40045319094,
+      "name": "Verify R106 official pet walking skill and negative eligibility rules",
+      "head_sha": "48376b0d79ee0f462f2e8770fbb731a951873dfe",
+      "head_branch": "agent/jp2004-osanpo-r106-20261024",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 40045318958,
+      "name": "Validate legacy StoneAge assistant history and pet content gaps",
+      "head_sha": "48376b0d79ee0f462f2e8770fbb731a951873dfe",
+      "head_branch": "agent/jp2004-osanpo-r106-20261024",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 40045319015,
+      "name": "Verify R102 frozen material portfolio and record projections",
+      "head_sha": "48376b0d79ee0f462f2e8770fbb731a951873dfe",
+      "head_branch": "agent/jp2004-osanpo-r106-20261024",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 40045319083,
+      "name": "Validate StoneAge Stage A joint review decision",
+      "head_sha": "48376b0d79ee0f462f2e8770fbb731a951873dfe",
+      "head_branch": "agent/jp2004-osanpo-r106-20261024",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "comparison": {
+    "ahead": 1,
+    "behind": 0,
+    "changed_files": 11,
+    "deleted_lines": 0,
+    "integration": "FRESH_MAIN_EXPECTED_SHA_NON_FORCE_FAST_FORWARD"
+  },
+  "history_prefixes": [
+    {
+      "path": "docs/CURRENT-STATE.md",
+      "sha": "44ea192e6c44f40b3bd3a8704715835c3247b3a9",
+      "old_blob": "35ddae091c4b81e79b82ed162fed3346aebca6ba",
+      "old_bytes": 2548056,
+      "old_sha256": "7d13bf98ec290e12cc83988e71b52f9d1dfe47ec87774880ac8e0572ab646d37"
+    },
+    {
+      "path": "docs/HISTORICAL-TIMELINE.md",
+      "sha": "0668a92359386b0b82a9c8342d94c6750ee02647",
+      "old_blob": "eb1839cccefc7b46e5cfd23417d1a7e75398fdbc",
+      "old_bytes": 681978,
+      "old_sha256": "bc917d43a646cc4391ea9b6f13fd932696a6e0e3ab44ab3a1c6ada15f9e711ad"
+    },
+    {
+      "path": "docs/RESTORATION-ROADMAP-R2.md",
+      "sha": "151eda3ac9c4e6b01b7306a3f3097ae01191427d",
+      "old_blob": "4137469ed7ab4c49e3267689b6a5e1834f8291ef",
+      "old_bytes": 411879,
+      "old_sha256": "31e34e6a04224c5028ba83d600900ea98b3d521b89f591a8c3fa4fdc736ba28e"
+    },
+    {
+      "path": "docs/SOURCE-REGISTRY.md",
+      "sha": "c109dfca1d191bd0018a4a9ef5d6eebd582c093c",
+      "old_blob": "4a6db7f05be2938ec39eb29211fc2e0b3d4d9d97",
+      "old_bytes": 975775,
+      "old_sha256": "097802646e0078dae7f371777e5b57929a1b26db43af8d2388e6961ec328443f"
+    }
+  ],
+  "remote_full_old_and_new_blob_prefixes_verified": true,
+  "local_tree_equals_remote_tree": true,
+  "evidence": {
+    "research/recovered/STONEAGE-JP2004-OSANPO-SOURCE-R106.json": {
+      "bytes": 11462,
+      "sha256": "2cd59ffeff87adc4d0fa6c1530df9e970f8404cf84b62bfd72a625462cbfe40c",
+      "git_blob": "d49b82ee11c45280139189b157757b6b7979f453"
+    },
+    "research/recovered/STONEAGE-JP2004-OSANPO-LOCAL-REPLAY-R106.json": {
+      "bytes": 8980,
+      "sha256": "437cf188c9ad4a016a0a42c3f12a775babfcf20ed24dc2c14a90cb152f048871",
+      "git_blob": "11219b94316848b6c5d81f9a30c61ab3d2843fd8"
+    },
+    "research/recovered/STONEAGE-JP2004-OSANPO-LOCAL-AUDIT-R106.json": {
+      "bytes": 1954,
+      "sha256": "056d6aa2ff6cc3d0a1b09f055ed304385636ba8f29f8fb23eaa31e05e28cc1ef",
+      "git_blob": "41e37e40a0a6493e1746c255086cf85784f96f76"
+    },
+    "research/recovered/STONEAGE-JP2004-OSANPO-CI-CANDIDATE-R106.json": {
+      "bytes": 8980,
+      "sha256": "437cf188c9ad4a016a0a42c3f12a775babfcf20ed24dc2c14a90cb152f048871",
+      "git_blob": "11219b94316848b6c5d81f9a30c61ab3d2843fd8"
+    },
+    "research/recovered/STONEAGE-JP2004-OSANPO-CI-MAIN-R106.json": {
+      "bytes": 8980,
+      "sha256": "437cf188c9ad4a016a0a42c3f12a775babfcf20ed24dc2c14a90cb152f048871",
+      "git_blob": "11219b94316848b6c5d81f9a30c61ab3d2843fd8"
+    },
+    "tools/stoneage_jp2004_osanpo_r106.py": {
+      "bytes": 6303,
+      "sha256": "5a76b56c01b6a7a2970d1031f4b44660f10aacee8dbcf1025d07bbfa266f1f80",
+      "git_blob": "0161f86aef70d3f9d0f6c8faa640f13ed0abc7a0"
+    },
+    "tests/test_stoneage_jp2004_osanpo_r106.py": {
+      "bytes": 6031,
+      "sha256": "a7b4f3be0d8a9065e3f7f41da2f6df067a20250fc56d39620ccd2b778c602793",
+      "git_blob": "41ee7070db5d6f009d4ccfef0b62e0288e6c5e9a"
+    },
+    "docs/specs/STONEAGE-JP2004-OSANPO-R106.md": {
+      "bytes": 5792,
+      "sha256": "69d3291bf858af95ef45b2660ed3add8075c1a3c6d1c1bbb2f8ed38ab1defce4",
+      "git_blob": "9f391ed57edff81598729bd6009e035c62f1e493"
+    },
+    ".github/workflows/verify-stoneage-jp2004-osanpo-r106.yml": {
+      "bytes": 1245,
+      "sha256": "5ac53784707e8a5a2fb009b0d21bb6f5e50ca9df889efb22b39ca1690cfd74b2",
+      "git_blob": "aedf79780fa47978d93b08cb42dbdfa404167815"
+    },
+    "research/recovered/STONEAGE-JP2004-NAMED-VILLAGE-SOURCE-R105.json": {
+      "bytes": 8521,
+      "sha256": "530fa72dcb0ffe6265677713af4350ffee0a0e7cec4d5685d57ea5ab3b31692a",
+      "git_blob": "850f7052c0964098067c814cf8c557ca1f19bcc8"
+    },
+    "research/recovered/STONEAGE-CN2004-PET-SKILL-TRAINER-SOURCE-R1.json": {
+      "bytes": 14778,
+      "sha256": "90bc79a7c824ffae88f2e974de692252fb37345eacafa9db26f87bb62bbc9a70",
+      "git_blob": "b6f42811c23cadc8b80fabb0a53b98a6aa9e8b2f"
+    },
+    "research/recovered/STONEAGE-PREPRODUCTION-CONTENT-ARCHIVE-R1.json": {
+      "bytes": 24489,
+      "sha256": "e87afebc8c9590142c7cc8831b578455b3427bf7c1d10520ae02a3e8082fbddb",
+      "git_blob": "2d5b3f081d5618287f431fbded943722a820c593"
+    },
+    "tools/stoneage_cn2003_katan_visual_r100.py": {
+      "bytes": 7209,
+      "sha256": "7a1e9010765740bd2d4274227c281f65ed8f00cbe19019a7f21caaef8dfd8b7c",
+      "git_blob": "2cbd67ddc93d41cdb5c492079f3111b70afe8977"
+    }
+  },
+  "local_report": "research/recovered/STONEAGE-JP2004-OSANPO-LOCAL-REPLAY-R106.json",
+  "local_audit": "research/recovered/STONEAGE-JP2004-OSANPO-LOCAL-AUDIT-R106.json",
+  "artifacts": [
+    {
+      "kind": "candidate",
+      "run": 40045319094,
+      "job": 120725587438,
+      "artifact": 12541056258,
+      "zip_bytes": 2923,
+      "zip_sha256": "9d0bc4ee8ebfe6dc325758b1e8dcdde425ac5b64810ffdb60596833948ac7805",
+      "zip_member": "r106-replay.json",
+      "path": "research/recovered/STONEAGE-JP2004-OSANPO-CI-CANDIDATE-R106.json",
+      "raw_identity": {
+        "bytes": 8980,
+        "sha256": "437cf188c9ad4a016a0a42c3f12a775babfcf20ed24dc2c14a90cb152f048871",
+        "git_blob": "11219b94316848b6c5d81f9a30c61ab3d2843fd8"
+      },
+      "equals_local": true,
+      "download_route": "PUBLIC_NIGHTLY_LINK_ACTUAL_ZIP_BYTES_MATCH_GITHUB_API_DIGEST"
+    },
+    {
+      "kind": "main",
+      "run": 40045489695,
+      "job": 120726120389,
+      "artifact": 12541061528,
+      "zip_bytes": 2923,
+      "zip_sha256": "866eee1bfe42d2c5e130a713b1611612c82df60b3ca015a7078b9a3c78c1439f",
+      "zip_member": "r106-replay.json",
+      "path": "research/recovered/STONEAGE-JP2004-OSANPO-CI-MAIN-R106.json",
+      "raw_identity": {
+        "bytes": 8980,
+        "sha256": "437cf188c9ad4a016a0a42c3f12a775babfcf20ed24dc2c14a90cb152f048871",
+        "git_blob": "11219b94316848b6c5d81f9a30c61ab3d2843fd8"
+      },
+      "equals_local": true,
+      "download_route": "PUBLIC_NIGHTLY_LINK_ACTUAL_ZIP_BYTES_MATCH_GITHUB_API_DIGEST"
+    }
+  ],
+  "candidate_main_local_raw_equal": true,
+  "source_tests_per_remote_job": 10,
+  "local_unique_tests_with_custody_and_old_trainer": 20,
+  "positive_success_predicate_recovered": false,
+  "native_skill_ids_recovered": false,
+  "original_server_transactions_observed": 0,
+  "image_probe_and_independent_local_audit_repeated_by_ci": false,
+  "original_input_copies_hash_verified_and_deleted": 1,
+  "original_image_bytes_acquired": 0,
+  "boundaries": {
+    "exact_client_build_verified": false,
+    "native_skill_or_map_npc_ids_recovered": false,
+    "all_species_learning_or_slot_count_restored": false,
+    "success_sufficient_conditions_proven": false,
+    "source_text_alone_proves_follow_animation": false,
+    "source_map_alt_labels_prove_actual_screen_pixels": false,
+    "html_declared_size_is_measured_original_image": false,
+    "source_fragment_is_native_game_id": false,
+    "original_server_transactions_observed": 0,
+    "original_html_or_pixels_committed": false,
+    "asset_reuse_approved": false,
+    "new_game_or_wiki_production_started": false,
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b_and_wiki": "GATED",
+    "savedata_r79": "PAUSED_NON_BLOCKING",
+    "overall_completion_percentage": null
+  }
+}

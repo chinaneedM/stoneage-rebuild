@@ -1,0 +1,24 @@
+name: Verify R106 immutable official pet skill source custody
+on:
+  push:
+    paths:
+      - 'tools/stoneage_jp2004_osanpo_r106_custody.py'
+      - 'tests/test_stoneage_jp2004_osanpo_r106_custody.py'
+      - 'research/recovered/STONEAGE-JP2004-OSANPO-CUSTODY-R106.json'
+      - 'research/recovered/STONEAGE-JP2004-OSANPO-CI-*-R106.json'
+      - 'research/recovered/STONEAGE-JP2004-OSANPO-LOCAL-AUDIT-R106.json'
+      - '.github/workflows/verify-stoneage-jp2004-r106-custody.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  derived-only-custody:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest tests.test_stoneage_jp2004_osanpo_r106 tests.test_stoneage_jp2004_osanpo_r106_custody -v
+      - run: python -m tools.stoneage_jp2004_osanpo_r106_custody
