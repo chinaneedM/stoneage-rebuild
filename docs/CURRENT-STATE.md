@@ -18254,3 +18254,8 @@ R115正文与四份历史记录候选最终内容 commit `0d8f6491159adc193372f4
 产物 `docs/specs/STONEAGE-QUEST-MATERIAL-REVIEW-R116.md`、`research/recovered/STONEAGE-QUEST-MATERIAL-INPUTS-R116.json`、`STONEAGE-QUEST-MATERIAL-REVIEW-R116.json` 及语义重放工具/13正反例/专用CI。15条归属只依据既有有界文献；不新取原HTML/像素、不证原服部署、不改旧来源正文/旧保管收据。22域历史ID/状态/源锚和缺口全保留；元数据测试不是游戏执行。候选/main运行与发布须实际后验记录，不提前称绿。
 
 **最高NEXT `EARLY-BASE-QUEST-PROVENANCE-117`**：聚焦早期成人礼或四大洞窟其中一项的发行基线归属；优先同地区有日期原官方发行说明/手册/明确更新公告或同构建脚本，旧攻略只作存在时间线索。止于一项来源明确的本体/永久/活动/待考归属或确切有界取源缺口；不继续堆后期促销、helper或重复索引。Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79 PAUSED_NON_BLOCKING、总体复原百分比null。此前全历史前缀原样保留。
+
+
+### 2026-10-24 R116 双端实际验收与永久保管
+R116内容commit `48d07c55690b0e9b5b6633f02325548381967945` / tree `68ac2c75217dde653009428d1c765751d1f5aa8b` 已从新核main1a5bb8d以expected_sha非强制快进。远端比较1commit/10文件/0删除，整tree与本地验收一致。候选11项、main12项共23次Actions全部completed/success；专用candidate run40062111097/job120777658272、main run40062148839/job120777769876日志各实际13单元、924输入完整语义重放、四大历史原前缀逐字节保留通过。另独立73位置JSON Pointer回查与49ID四视图互斥核对通过；原分类16项本地通过。
+永久收据 `research/recovered/STONEAGE-QUEST-MATERIAL-CUSTODY-R116.json` 固定十文件bytes/SHA256/Git blob、四大历史旧blob/长度、全部23运行及双专用job。无源下载或短期工件；清单和派生报告已永久入Git，不能虚造原HTML/ZIP校验或原服任务执行。15活动记录/34待考仍只是研究记录；零新证本体/永久。最高NEXT `EARLY-BASE-QUEST-PROVENANCE-117` 不变：一项早期成人礼/四洞窟的发行基线或明确更新归属。Stage A7 PARTIAL+2 OPEN，B/wiki GATED，R79暂停，总体复原百分比null。保管提交自身Actions继续按真实后验，不预报通过。

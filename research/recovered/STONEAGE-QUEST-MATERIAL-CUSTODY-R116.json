@@ -1,0 +1,359 @@
+{
+  "schema": "stoneage.quest_material_custody.r116",
+  "date": "2026-10-24",
+  "baseline_head": "1a5bb8d67ab6a4e7189968f53f007c41083a1f63",
+  "baseline_tree": "a9becaebf199329327f7bd1bb985de5e61fe787f",
+  "content_head": "48d07c55690b0e9b5b6633f02325548381967945",
+  "content_tree": "68ac2c75217dde653009428d1c765751d1f5aa8b",
+  "content_files": [
+    {
+      "path": ".github/workflows/verify-stoneage-quest-material-review-r116.yml",
+      "bytes": 1466,
+      "sha256": "94db2c31d349ac5e63476f5564b2340137690335630bb69cd87e5eb9ffc29931",
+      "git_blob": "ac25b4ac9ab672bb7e3342b7223c084bbcfe90e8"
+    },
+    {
+      "path": "docs/CURRENT-STATE.md",
+      "bytes": 2586459,
+      "sha256": "339d79c426380ac495e2fa5b1189cc059eca66cf72c9d03a3379bf4748ab4aed",
+      "git_blob": "faf4a0a402833dc76b3c243daeb644cd5fe08de1"
+    },
+    {
+      "path": "docs/HISTORICAL-TIMELINE.md",
+      "bytes": 697269,
+      "sha256": "221c08cddac24b8ba3e4f593af109fc8d046a78498a8408e0ae47fea594ceb1e",
+      "git_blob": "ce5e0f5a731116b23e8f3f03680d8528182aa8e3"
+    },
+    {
+      "path": "docs/RESTORATION-ROADMAP-R2.md",
+      "bytes": 434504,
+      "sha256": "688c7dc6795e846f99ecd2e4012803e19491ad30c85da44bbb4bed5ced1f81fe",
+      "git_blob": "68e3cf51853a0bc68627d526b388903cbc7868c7"
+    },
+    {
+      "path": "docs/SOURCE-REGISTRY.md",
+      "bytes": 993859,
+      "sha256": "a4ad1d496d96ac0cbf827b197f564aaddf7d515d4c1eb08a99b94ff4544d3cb9",
+      "git_blob": "6a51914b0481a0fe887d3c12de17f33d76a3f928"
+    },
+    {
+      "path": "docs/specs/STONEAGE-QUEST-MATERIAL-REVIEW-R116.md",
+      "bytes": 6862,
+      "sha256": "a3aa2ad0d503f485c952fba39e87ad4a0d79b0998c26af8db6a91e21fe1702bc",
+      "git_blob": "a57b3dd9fc91ac51e8b5c8c9f955202109a00d43"
+    },
+    {
+      "path": "research/recovered/STONEAGE-QUEST-MATERIAL-INPUTS-R116.json",
+      "bytes": 245553,
+      "sha256": "326a25a9cb43b1bba0feb04d0bc4c5e1e9bc9e03152f6cf469525b06a0701827",
+      "git_blob": "b91d494b4759ccb0e6f140305146cb4ea6a9af41"
+    },
+    {
+      "path": "research/recovered/STONEAGE-QUEST-MATERIAL-REVIEW-R116.json",
+      "bytes": 66891,
+      "sha256": "3dc43bf94755a2fdcd05f12abb75bc77da6be5fb805dce6a26b840db29914de1",
+      "git_blob": "43359b732fa10b4bb5a19c412d6f155b577e3dfa"
+    },
+    {
+      "path": "tests/test_stoneage_quest_material_review_r116.py",
+      "bytes": 6368,
+      "sha256": "b5543ca7212f78870f031ec16bc7f3ea331a91da0a94b2cab5394d253fc2dcdb",
+      "git_blob": "1fbcbc143b0baa7ab059b648a03b5b7c2cf02beb"
+    },
+    {
+      "path": "tools/stoneage_quest_material_review_r116.py",
+      "bytes": 10328,
+      "sha256": "9ad51b3192e3bd81732e0945dbe1c24bd36cee2de9822ec00fe76dbd77129191",
+      "git_blob": "bb737962e7a3503bf8490d330676c184675daf77"
+    }
+  ],
+  "historical_prefixes": [
+    {
+      "path": "docs/CURRENT-STATE.md",
+      "old_bytes": 2584027,
+      "old_git_blob": "f9918513d8e2f3aa821601c9870ef1e01bf8e366",
+      "old_sha256": "5c528889883d881e9d99a6c3b6626d4be2500331fbc77eb66af506d69909ab16",
+      "preserved_byte_for_byte": true
+    },
+    {
+      "path": "docs/HISTORICAL-TIMELINE.md",
+      "old_bytes": 696557,
+      "old_git_blob": "d1812252bf0a1888944e5720609421b702491989",
+      "old_sha256": "fb7a5f13ed70517f29773be80c8ff6381f82478b54a1547845f8e09a1e0ab50b",
+      "preserved_byte_for_byte": true
+    },
+    {
+      "path": "docs/RESTORATION-ROADMAP-R2.md",
+      "old_bytes": 432072,
+      "old_git_blob": "df1750fd41a186fdeaad893cf869e1e07399d99b",
+      "old_sha256": "c2c53fcebd051596b7ef79d1a87ac4f9b91fcd236078e6d1e46841b60d217444",
+      "preserved_byte_for_byte": true
+    },
+    {
+      "path": "docs/SOURCE-REGISTRY.md",
+      "old_bytes": 992531,
+      "old_git_blob": "a678ec225069662deb3a110b0ee58cfca5a0db0a",
+      "old_sha256": "8df3e5e8940c5ec6e15152187af919757be7c9fa0bb72a683ddf815d0cac03e5",
+      "preserved_byte_for_byte": true
+    }
+  ],
+  "remote_comparison": {
+    "commits": 1,
+    "changed_files": 10,
+    "deletions": 0,
+    "remote_tree_equals_verified_local_tree": true
+  },
+  "actions": [
+    {
+      "run_id": 40062148897,
+      "head": "48d07c55690b0e9b5b6633f02325548381967945",
+      "branch": "main",
+      "name": "Validate StoneAge preproduction content archive and wiki boundary",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40062148897"
+    },
+    {
+      "run_id": 40062148902,
+      "head": "48d07c55690b0e9b5b6633f02325548381967945",
+      "branch": "main",
+      "name": "Validate legacy StoneAge assistant history and pet content gaps",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40062148902"
+    },
+    {
+      "run_id": 40062148976,
+      "head": "48d07c55690b0e9b5b6633f02325548381967945",
+      "branch": "main",
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40062148976"
+    },
+    {
+      "run_id": 40062148892,
+      "head": "48d07c55690b0e9b5b6633f02325548381967945",
+      "branch": "main",
+      "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40062148892"
+    },
+    {
+      "run_id": 40062148911,
+      "head": "48d07c55690b0e9b5b6633f02325548381967945",
+      "branch": "main",
+      "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40062148911"
+    },
+    {
+      "run_id": 40062149116,
+      "head": "48d07c55690b0e9b5b6633f02325548381967945",
+      "branch": "main",
+      "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40062149116"
+    },
+    {
+      "run_id": 40062149036,
+      "head": "48d07c55690b0e9b5b6633f02325548381967945",
+      "branch": "main",
+      "name": "Verify R102 frozen material portfolio and record projections",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40062149036"
+    },
+    {
+      "run_id": 40062148925,
+      "head": "48d07c55690b0e9b5b6633f02325548381967945",
+      "branch": "main",
+      "name": "Validate Stage A early source gap triage",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40062148925"
+    },
+    {
+      "run_id": 40062149125,
+      "head": "48d07c55690b0e9b5b6633f02325548381967945",
+      "branch": "main",
+      "name": "Validate StoneAge Stage A joint review decision",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40062149125"
+    },
+    {
+      "run_id": 40062149016,
+      "head": "48d07c55690b0e9b5b6633f02325548381967945",
+      "branch": "main",
+      "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40062149016"
+    },
+    {
+      "run_id": 40062148839,
+      "head": "48d07c55690b0e9b5b6633f02325548381967945",
+      "branch": "main",
+      "name": "Verify R116 frozen quest archive origins and material gaps",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40062148839"
+    },
+    {
+      "run_id": 40062148931,
+      "head": "48d07c55690b0e9b5b6633f02325548381967945",
+      "branch": "main",
+      "name": "Independently verify TW1.0 R58 rooted helper returns and source custody",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40062148931"
+    },
+    {
+      "run_id": 40062111012,
+      "head": "48d07c55690b0e9b5b6633f02325548381967945",
+      "branch": "agent/quest-origin-material-review-r116-20261024",
+      "name": "Validate legacy StoneAge assistant history and pet content gaps",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40062111012"
+    },
+    {
+      "run_id": 40062111145,
+      "head": "48d07c55690b0e9b5b6633f02325548381967945",
+      "branch": "agent/quest-origin-material-review-r116-20261024",
+      "name": "Validate StoneAge Stage A joint review decision",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40062111145"
+    },
+    {
+      "run_id": 40062111128,
+      "head": "48d07c55690b0e9b5b6633f02325548381967945",
+      "branch": "agent/quest-origin-material-review-r116-20261024",
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40062111128"
+    },
+    {
+      "run_id": 40062111028,
+      "head": "48d07c55690b0e9b5b6633f02325548381967945",
+      "branch": "agent/quest-origin-material-review-r116-20261024",
+      "name": "Validate StoneAge preproduction content archive and wiki boundary",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40062111028"
+    },
+    {
+      "run_id": 40062111017,
+      "head": "48d07c55690b0e9b5b6633f02325548381967945",
+      "branch": "agent/quest-origin-material-review-r116-20261024",
+      "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40062111017"
+    },
+    {
+      "run_id": 40062111097,
+      "head": "48d07c55690b0e9b5b6633f02325548381967945",
+      "branch": "agent/quest-origin-material-review-r116-20261024",
+      "name": "Verify R116 frozen quest archive origins and material gaps",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40062111097"
+    },
+    {
+      "run_id": 40062111059,
+      "head": "48d07c55690b0e9b5b6633f02325548381967945",
+      "branch": "agent/quest-origin-material-review-r116-20261024",
+      "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40062111059"
+    },
+    {
+      "run_id": 40062111100,
+      "head": "48d07c55690b0e9b5b6633f02325548381967945",
+      "branch": "agent/quest-origin-material-review-r116-20261024",
+      "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40062111100"
+    },
+    {
+      "run_id": 40062111065,
+      "head": "48d07c55690b0e9b5b6633f02325548381967945",
+      "branch": "agent/quest-origin-material-review-r116-20261024",
+      "name": "Validate Stage A early source gap triage",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40062111065"
+    },
+    {
+      "run_id": 40062111061,
+      "head": "48d07c55690b0e9b5b6633f02325548381967945",
+      "branch": "agent/quest-origin-material-review-r116-20261024",
+      "name": "Verify R102 frozen material portfolio and record projections",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40062111061"
+    },
+    {
+      "run_id": 40062111011,
+      "head": "48d07c55690b0e9b5b6633f02325548381967945",
+      "branch": "agent/quest-origin-material-review-r116-20261024",
+      "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40062111011"
+    }
+  ],
+  "dedicated_jobs": [
+    {
+      "run_id": 40062111097,
+      "job_id": 120777658272,
+      "branch": "agent/quest-origin-material-review-r116-20261024",
+      "conclusion": "success",
+      "logs_inspected": true
+    },
+    {
+      "run_id": 40062148839,
+      "job_id": 120777769876,
+      "branch": "main",
+      "conclusion": "success",
+      "logs_inspected": true
+    }
+  ],
+  "verification": {
+    "unit_tests": 13,
+    "semantic_replay": "ALL_924_FROZEN_INPUTS_AND_EXACT_REPORT",
+    "source_sha_and_git_blobs_verified": true,
+    "four_complete_historical_prefixes_verified": true,
+    "independent_pointer_dereference_and_disjoint_views": {
+      "occurrences": 73,
+      "ids": 49
+    },
+    "legacy_origin_overlay_tests_local": 16
+  },
+  "artifact_retention": {
+    "source_artifact_required": false,
+    "artifact_zip_sha256": null,
+    "reason": "No source download or short-lived artifact in R116; frozen repository input identities and derived reports permanently versioned"
+  },
+  "evidence_boundary": {
+    "new_historical_source_acquired": false,
+    "raw_original_html_or_image_obtained": false,
+    "original_server_quest_execution_proven": false,
+    "base_or_permanent_origin_verified_this_review": false,
+    "research_record_counts_are_native_quest_count": false,
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b": "GATED",
+    "savedata_r79": "PAUSED_NON_BLOCKING",
+    "overall_restoration_percentage": null
+  },
+  "next": "EARLY-BASE-QUEST-PROVENANCE-117"
+}
