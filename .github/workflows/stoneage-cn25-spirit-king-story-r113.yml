@@ -1,0 +1,25 @@
+name: Validate R113 CN2.5 Spirit King narrative source boundaries
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-CN25-SPIRIT-KING-STORY-R113.json'
+      - 'tools/stoneage_cn25_spirit_king_story_r113.py'
+      - 'tests/test_stoneage_cn25_spirit_king_story_r113.py'
+      - '.github/workflows/stoneage-cn25-spirit-king-story-r113.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-CN25-SPIRIT-KING-STORY-R113.json'
+      - 'tools/stoneage_cn25_spirit_king_story_r113.py'
+      - 'tests/test_stoneage_cn25_spirit_king_story_r113.py'
+      - '.github/workflows/stoneage-cn25-spirit-king-story-r113.yml'
+  workflow_dispatch:
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python tools/stoneage_cn25_spirit_king_story_r113.py
+      - run: python tests/test_stoneage_cn25_spirit_king_story_r113.py
