@@ -24,6 +24,8 @@ jobs:
           mkdir -p derived
           python -m tools.stoneage_early_official_payload_probe --output derived/official-korea-original-payload-prefix-r1.json
           python -m json.tool derived/official-korea-original-payload-prefix-r1.json >/dev/null
+      - name: Print bounded source results (metadata only, no source bytes)
+        run: python -m json.tool derived/official-korea-original-payload-prefix-r1.json
       - uses: actions/upload-artifact@v4
         with:
           name: official-korea-original-payload-prefix-r1
