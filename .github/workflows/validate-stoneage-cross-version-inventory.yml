@@ -1,0 +1,30 @@
+name: Validate original-client cross-version metadata inventory
+on:
+  push:
+    paths:
+      - 'tools/stoneage_cross_version_file_inventory.py'
+      - 'tests/test_stoneage_cross_version_file_inventory.py'
+      - '.github/workflows/validate-stoneage-cross-version-inventory.yml'
+      - 'docs/STONEAGE-CLIENT-FIRST-CROSS-VERSION-ACQUISITION-R1.md'
+  pull_request:
+    paths:
+      - 'tools/stoneage_cross_version_file_inventory.py'
+      - 'tests/test_stoneage_cross_version_file_inventory.py'
+      - '.github/workflows/validate-stoneage-cross-version-inventory.yml'
+      - 'docs/STONEAGE-CLIENT-FIRST-CROSS-VERSION-ACQUISITION-R1.md'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  synthetic-provenance-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Test exact dedup and hostile archives with synthetic bytes only
+        run: python -m unittest discover -s tests -p 'test_stoneage_cross_version_file_inventory.py' -v
+      - name: Python parse check
+        run: python -m py_compile tools/stoneage_cross_version_file_inventory.py
