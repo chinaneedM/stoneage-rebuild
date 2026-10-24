@@ -1,0 +1,135 @@
+{
+  "schema": "stoneage.cn2003.merchant_elephant_quest.r114",
+  "task": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-114",
+  "date": "2026-10-24",
+  "baseline": {
+    "main_head": "33091550d0a2beed10e2bccfe8d97b0ff765080a",
+    "tree": "b727d344c3546001f869b8b0e13e541873a9fbc2"
+  },
+  "objective": "VERSION_SCOPED_NAMED_NPC_CAPTURE_ITEM_REWARD_QUEST_CLAIM_NOT_EXECUTABLE_SERVER",
+  "sources": [
+    {
+      "id": "S1",
+      "url": "https://games.sina.com.cn/z/sta/rwgl/fs.shtml?from=wap",
+      "title": "富商的货物",
+      "byline": "新浪游戏",
+      "publication_date": "2003-06-30",
+      "publication_time": "11:55",
+      "tier": "CONTEMPORANEOUS_MEDIA_GUIDE_NOT_AUTHENTICATED_OPERATOR_MASTER",
+      "original_article_html_bytes": null,
+      "original_article_html_sha256": null,
+      "historical_capture_sha256": null,
+      "actual_original_game_build": null,
+      "article_text_accessible": true,
+      "official_server_implementation_authenticated": false
+    },
+    {
+      "id": "S2",
+      "url": "https://games.sina.com.cn/z/sta/2004-10-15/180146.shtml?from=wap",
+      "title": "石器时代-任务攻略",
+      "tier": "SAME_SITE_LATER_CATEGORY_INDEX_NOT_INDEPENDENT_GAMEPLAY_WITNESS",
+      "labelled_version": "石器时代6.0海贼王遗迹",
+      "list_entry": "富商的货物",
+      "page_date": "2004-10-15",
+      "original_2003_release_build_authenticated": false,
+      "independent_contemporary_server_eyewitness": false
+    },
+    {
+      "id": "L1",
+      "url": "https://www.shiqiso.com/sq/160.htm",
+      "publication_date": "2018-06-01",
+      "tier": "LATER_COMMUNITY_REPOST_PRIVATE_SERVER_FEATURE_MIX_RISK",
+      "independent_original_2003_witness": false,
+      "current_repost_not_used_to_raise_historical_rule_certainty": true
+    }
+  ],
+  "edition": {
+    "market": "CN_MAINLAND",
+    "source_year": 2003,
+    "sina_index_version_label": "6.0",
+    "confirmed_original_client_build": null,
+    "confirmed_original_server_build": null,
+    "jss1999_or_tw10_identity_proven": false,
+    "original_operator_quest_master_proven": false,
+    "exact_earliest_release_version": null
+  },
+  "quest": {
+    "reported_title": "富商的货物",
+    "precondition_adult_ceremony": "REQUIRED_AS_GUIDE_STATES",
+    "level55": "RECOMMENDED_NOT_MANDATORY_AS_GUIDE_STATES",
+    "feather_items": [
+      "福尔德村的羽毛",
+      "达那村的羽毛"
+    ],
+    "feather_status": "RECOMMENDED_NOT_PROVEN_QUEST_DEPENDENCIES",
+    "repeatability": "REPEATABLE_AS_REPORTED_NO_SERVER_LOG",
+    "request_location": {
+      "island": "沙姆岛",
+      "village": "奇努伊村",
+      "npc_name_first": "盖落比",
+      "coordinate_original": "54。76",
+      "original_npc_id": null,
+      "original_map_id": null,
+      "original_sprite_id": null
+    },
+    "npc_return_spelling": "盖洛比",
+    "original_npc_identity_equivalence_verified": false,
+    "gives_cargo_item_name": "富商的货物",
+    "original_cargo_item_id": null,
+    "capture_location": {
+      "island": "吉鲁岛",
+      "zone_as_written": "5X级小象区",
+      "target_name": "巨大玛恩摩",
+      "target_level_reported": 60,
+      "actual_encounter_spawn_table": null,
+      "original_pet_species_id": null
+    },
+    "reported_cargo_disappears_after_successful_capture": true,
+    "original_cargo_consumption_transaction_verified": false,
+    "returns_to_npc_for_reward": true,
+    "reward_item_name": "宠物忠诚肉片",
+    "original_reward_item_id": null,
+    "reward_effect_loyalty_delta_reported": 10,
+    "actual_original_loyalty_effect_verified": false,
+    "capture_advice_hp_below_100": "PLAYER_GUIDE_TIP_NOT_CAPTURING_PROBABILITY_FORMULA",
+    "original_capture_chance_formula": null,
+    "original_quest_flag_names": null,
+    "original_reward_delivery_log": null,
+    "original_save_state_fields": null
+  },
+  "text_flow": [
+    "成人礼→奇努伊村具名交谈→取得货物名义道具",
+    "吉鲁岛小象区遇LV60巨大玛恩摩→攻略叙述抓获后货物消失",
+    "返回具名NPC→攻略称得宠物忠诚肉片(+10)及可重复"
+  ],
+  "evidence_boundary": {
+    "image_placeholders_count": 9,
+    "original_nine_image_bytes_captured": false,
+    "original_nine_image_sha256": null,
+    "pixel_content_identity_verified": false,
+    "same_build_spr_or_npc_visual_join": null,
+    "original_server_script_or_runtime_trace": null,
+    "original_client_same_build_executable_trace": null,
+    "claims_are_media_guide_not_implemented_original_game_entities": true,
+    "no_original_proprietary_html_or_images_committed": true,
+    "overall_restoration_percentage": null,
+    "cross_version_projection_to_1999_or_tw10": false
+  },
+  "conflicts_to_preserve": [
+    "S1 first contact 盖落比 vs return 盖洛比; no original NPC ID to collapse",
+    "S1 level55 is explicitly 建议; later repost LV55+ is not proof of original hard level requirement",
+    "Sina 6.0 navigation label does not date an original patch/build or authenticate quest server rollout",
+    "Visible image placeholders do not establish actual screenshot bytes, original sprites, animation or interaction",
+    "Reported cargo disappearance and loyalty +10 are guide claims, not verified atomic transactions or loyalty formula"
+  ],
+  "next_reopen_if": [
+    "dated original operator 2003 patch/quest HTML bytes with authenticated provenance",
+    "same-build original NPC/item/pet/map master binding with identities and coordinates",
+    "original screen sequence and authenticated original images",
+    "original quest/capture/reward/save runtime log or server script"
+  ],
+  "archive_record_not_original_entity_count": true,
+  "stage_a_system_families": "7_PARTIAL_2_OPEN",
+  "stage_b_and_wiki": "GATED",
+  "tw10_savedata_r79": "PAUSED_NON_BLOCKING"
+}
