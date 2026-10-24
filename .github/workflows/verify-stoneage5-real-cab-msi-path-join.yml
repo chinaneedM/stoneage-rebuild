@@ -1,0 +1,49 @@
+name: Validate Stoneage-5 413 real-byte MSI destination path joins
+on:
+  push:
+    branches:
+      - agent/stoneage5-cab-full-payload-r1-20261024
+    paths:
+      - tools/stoneage_stoneage5_install_path_join.py
+      - tests/test_stoneage_stoneage5_install_path_join.py
+      - .github/workflows/verify-stoneage5-real-cab-msi-path-join.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: stoneage5-real-cab-pathmap
+  cancel-in-progress: false
+jobs:
+  join:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Independently replay 413 real-byte CAB-to-MSI mapping
+        run: |
+          python3 -m unittest tests.test_stoneage_stoneage5_install_path_join -v
+          python3 -m tools.stoneage_stoneage5_install_path_join --output /tmp/stoneage5-real-cab-msi-join-r1.json
+      - name: Publish hash/path metadata only on isolated branch
+        run: |
+          set -euo pipefail
+          F=research/recovered/STONEAGE-STONEAGE5-REAL-CAB-MSI-PATH-JOIN-R1.json
+          mkdir -p research/recovered
+          cp /tmp/stoneage5-real-cab-msi-join-r1.json "$F"
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git add "$F"
+          if ! git diff --cached --quiet; then
+            git commit -m "research: archive 413 real 5.0 CAB-to-MSI installed paths"
+            git push origin HEAD:agent/stoneage5-cab-full-payload-r1-20261024
+          fi
+      - name: Upload derived crosswalk only
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: stoneage5-real-cab-msi-crosswalk-r1
+          path: /tmp/stoneage5-real-cab-msi-join-r1.json
+          if-no-files-found: warn
+          retention-days: 30
