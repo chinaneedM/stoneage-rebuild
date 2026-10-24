@@ -1,0 +1,172 @@
+{
+  "archive_bytes": 3983427,
+  "archive_sha256": "b077dcc7f1e944c33c6df4fe629d5e37abce9cb4d40f5b8d800cc69d59416e25",
+  "baseline_records": {
+    "CN50": 303197,
+    "TW10": 125996
+  },
+  "boundaries": {
+    "all_official_clients_collected": false,
+    "exact_2005_build_proven": false,
+    "game_or_installer_executed": false,
+    "named_pet_npc_identity_proven": false,
+    "original_real_pixel_blocks_verified": false,
+    "original_server_master_recovered": false,
+    "proprietary_payload_published": false,
+    "version_80_exclusivity_proven": false
+  },
+  "final_url": "https://web.archive.org/web/20060911180132id_/http://www.wayi.com.tw:80/download/file/onlineGame/adrn_129.rar",
+  "indexes": [
+    {
+      "bitmap_max": 389697,
+      "bitmap_min": 0,
+      "comparisons_by_bitmap_id": {
+        "CN50": {
+          "baseline_ids_absent_from_patch": 0,
+          "counts": {
+            "ABSENT_ID": 86501,
+            "CHANGED_INDEX_METADATA": 177,
+            "EXACT_HEADER_AND_ATTR_HASH": 303020
+          },
+          "nonexact_samples": [
+            {
+              "bitmapno": 303020,
+              "index": 303020,
+              "status": "CHANGED_INDEX_METADATA"
+            },
+            {
+              "bitmapno": 303021,
+              "index": 303021,
+              "status": "CHANGED_INDEX_METADATA"
+            },
+            {
+              "bitmapno": 303022,
+              "index": 303022,
+              "status": "CHANGED_INDEX_METADATA"
+            },
+            {
+              "bitmapno": 303023,
+              "index": 303023,
+              "status": "CHANGED_INDEX_METADATA"
+            },
+            {
+              "bitmapno": 303024,
+              "index": 303024,
+              "status": "CHANGED_INDEX_METADATA"
+            },
+            {
+              "bitmapno": 303025,
+              "index": 303025,
+              "status": "CHANGED_INDEX_METADATA"
+            },
+            {
+              "bitmapno": 303026,
+              "index": 303026,
+              "status": "CHANGED_INDEX_METADATA"
+            },
+            {
+              "bitmapno": 303027,
+              "index": 303027,
+              "status": "CHANGED_INDEX_METADATA"
+            }
+          ]
+        },
+        "TW10": {
+          "baseline_ids_absent_from_patch": 0,
+          "counts": {
+            "ABSENT_ID": 263702,
+            "EXACT_HEADER_AND_ATTR_HASH": 125996
+          },
+          "nonexact_samples": [
+            {
+              "bitmapno": 125996,
+              "index": 125996,
+              "status": "ABSENT_ID"
+            },
+            {
+              "bitmapno": 125997,
+              "index": 125997,
+              "status": "ABSENT_ID"
+            },
+            {
+              "bitmapno": 125998,
+              "index": 125998,
+              "status": "ABSENT_ID"
+            },
+            {
+              "bitmapno": 125999,
+              "index": 125999,
+              "status": "ABSENT_ID"
+            },
+            {
+              "bitmapno": 126000,
+              "index": 126000,
+              "status": "ABSENT_ID"
+            },
+            {
+              "bitmapno": 126001,
+              "index": 126001,
+              "status": "ABSENT_ID"
+            },
+            {
+              "bitmapno": 126002,
+              "index": 126002,
+              "status": "ABSENT_ID"
+            },
+            {
+              "bitmapno": 126003,
+              "index": 126003,
+              "status": "ABSENT_ID"
+            }
+          ]
+        }
+      },
+      "derived_pin": {
+        "bytes": 23924728,
+        "git_blob": "065ecc874adc637098dc7c8f177e478bc7b6f054",
+        "sha256": "d8049cb6ce74a2c048372aa51fc81b6921a995b6fa45b03dd5511a93509958ca"
+      },
+      "derived_table": "INDEX-1-R1.tsv.gz",
+      "distinct_bitmap_ids": 389670,
+      "duplicate_bitmap_occurrences": 28,
+      "format": "80_BYTE_HEADER28_ATTR52_LAYOUT",
+      "max_declared_real_span_end": 1492361857,
+      "member_path": "adrn_129.bin",
+      "nonzero_distinct_map_numbers": 19643,
+      "records": 389698,
+      "special_dimensions_preserved": 4,
+      "unique_record_hashes": 389698
+    }
+  ],
+  "listing_display_date": "2005-05-18",
+  "members": [
+    {
+      "bytes": 31175840,
+      "git_blob": "727aae965a62409b5bc8200d282a648a672e7bb1",
+      "path": "adrn_129.bin",
+      "sha256": "4fb45027f87d44d70675827870a74110fb6c07f65a529bd89e6dc52c0a2b388f"
+    }
+  ],
+  "requested_url": "https://web.archive.org/web/20060911180132id_/http://www.wayi.com.tw:80/download/file/onlineGame/adrn_129.rar",
+  "schema": "stoneage.wayi_adrn129_official_patch_payload.r1",
+  "source_capture": "2006-09-11T18:01:32Z",
+  "source_pins": {
+    "research/recovered/STONEAGE-WAYI-OFFICIAL-80-DOWNLOAD-CHAIN-R1.json": {
+      "bytes": 24832,
+      "git_blob": "8f6ddeb1dd5536194711e5d749f5eb2adf6ddc92",
+      "sha256": "c9b1b248966e6b811572ced9fb250df0b7e13a2adc2c4a6389eacd08ada159dc"
+    },
+    "research/recovered/cn50-resource-metadata/ADRN-R1.tsv.gz": {
+      "bytes": 19745873,
+      "git_blob": "127670eaf2bc19ba9d15776d090a8307058f729d",
+      "sha256": "e24afc513d28c7f25bd26bde9c69ddc0de4000147a2b11f50b5176655d8558fd"
+    },
+    "research/recovered/tw10-resource-metadata/ADRN-R1.tsv.gz": {
+      "bytes": 8238749,
+      "git_blob": "e389540f9962d1868c42b1edfe2acc7c83387ff1",
+      "sha256": "c8669789de1cc6e3575c2412ed86354a49c2b3e90cd2854c1e7b2fc71b0fe9ea"
+    }
+  },
+  "source_role": "OFFICIAL_LIST_DESCRIBED_75_BLACK_SCREEN_INDEX_REPAIR_2006_CAPTURE_BYTES",
+  "task": "TW-WAYI-ADRN129-OFFICIAL-RESOURCE-PATCH-PAYLOAD-05"
+}
