@@ -1,0 +1,80 @@
+{
+  "all_source_metadata_zip_members_independently_matched_to_git": true,
+  "candidate_success_run_ids": [
+    40139767688,
+    40139767704,
+    40139767689,
+    40139767664,
+    40139767649,
+    40139767818,
+    40139767755,
+    40139767685,
+    40139767708,
+    40139767684,
+    40139767631
+  ],
+  "content_main": "2d6cadc757d3e270dfe3d2e59166d760b192dc52",
+  "content_tree": "0ab7ed6b62afbde57719f88a733dc3857b5a005e",
+  "date": "2026-10-25",
+  "derived_git_pins": {
+    "research/recovered/STONEAGE-WAYI-ADRN129-INDEPENDENT-REPLAY-R1.json": {
+      "bytes": 3174,
+      "git_blob": "ca27ff19ef85558da25a32b0c4aa92f58c348d72",
+      "sha256": "1391baad2526c56a295bcba820e210fe53be5f93a855b625b21c72b8d6543b8d"
+    },
+    "research/recovered/wayi-adrn129-patch-metadata/ATTEMPT-R1.json": {
+      "bytes": 651,
+      "git_blob": "89b863200b80d50fc9cd88ae99590a9e64cc8f81",
+      "sha256": "8eb5570026676189ba3c360acc3cc55f1b66eb017ee2ab40df39828bec6b9a76"
+    },
+    "research/recovered/wayi-adrn129-patch-metadata/INDEX-1-R1.tsv.gz": {
+      "bytes": 23924728,
+      "git_blob": "065ecc874adc637098dc7c8f177e478bc7b6f054",
+      "sha256": "d8049cb6ce74a2c048372aa51fc81b6921a995b6fa45b03dd5511a93509958ca"
+    },
+    "research/recovered/wayi-adrn129-patch-metadata/REPORT-R1.json": {
+      "bytes": 5555,
+      "git_blob": "04c9f96cbc8badb2cab12ee133ea08b253e79fab",
+      "sha256": "f78d225722e94b48fceff9e1e7757bc6e927f11b783477dbbe72fac40c2b6d49"
+    }
+  },
+  "failed_source_run": {
+    "conclusion": "failure",
+    "id": 40139069912,
+    "reason": "7zip extraction SIGSEGV11",
+    "retained": true
+  },
+  "independent_full_attribute_and_record_replays": 389698,
+  "independent_whole_member_reconstructed_sha256": "4fb45027f87d44d70675827870a74110fb6c07f65a529bd89e6dc52c0a2b388f",
+  "local_unit_tests_passed": 15,
+  "main_success_run_ids": [
+    40139809828,
+    40139809857,
+    40139809837,
+    40139809839,
+    40139809864,
+    40139809870,
+    40139809907,
+    40139809811,
+    40139809763,
+    40139809752,
+    40139809829,
+    40139809852
+  ],
+  "next": "TW-WAYI-ADRN129-REAL-COMPANION-QUALIFICATION-06",
+  "overall_restoration_percentage": null,
+  "pixel_REAL_pair_acquired": false,
+  "publication_commit_own_ci": "MUST_BE_OBSERVED_AFTER_COMMIT",
+  "publisher_full_client_or_2005_build_authenticated": false,
+  "raw_member_reconstruction_saved_to_disk": false,
+  "raw_rar_or_bin_in_git_or_artifact": false,
+  "schema": "stoneage.wayi_adrn129_payload_publication.r1",
+  "semantic_mutations_rejected": 13,
+  "source_metadata_zip_sha256": "55bbdf5d22ceaa31cc7c2ab43afd95558a4d34bd42686f00be38b466ba5ecade",
+  "successful_source_run": {
+    "conclusion": "success",
+    "head": "36d05dedbd6efbfdc9f3e5f8118fc2ef8455331b",
+    "id": 40139226150,
+    "job_id": 121007199214
+  }
+}

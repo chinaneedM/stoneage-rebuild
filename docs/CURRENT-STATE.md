@@ -18503,3 +18503,8 @@ source run40132510243/job120987039808/HEAD96e6963c4944f03736f0fa6d64ec6730f0e9ca
 独立下载artifact12577143886 ZIP23677146B/SHA55bbdf5d22ceaa31cc7c2ab43afd95558a4d34bd42686f00be38b466ba5ecade与API一致，恰三JSON/TSV.gz元数据成员全部与Git同字节；完整表23924728B/SHA d8049cb6ce74a2c048372aa51fc81b6921a995b6fa45b03dd5511a93509958ca/blob065ecc874adc637098dc7c8f177e478bc7b6f054永久保管。新独立守卫从全部数值重建每条80B只用于哈希（不存原BIN），389698原attr/recordSHA全通过，整个31MB成员SHA与source一致，复算28重复位置和双基线计数/字段差异。15项本地单元、9报告合同+4逐记录变异拒绝；候选/main后验另记，不提前预支。
 
 交付docs/specs/STONEAGE-WAYI-ADRN129-OFFICIAL-PATCH-PAYLOAD-R1.md、完整wayi-adrn129-patch-metadata及STONEAGE-WAYI-ADRN129-PAYLOAD-CUSTODY-R1.json/INDEPENDENT-REPLAY-R1.json。最高NEXT **TW-WAYI-ADRN129-REAL-COMPANION-QUALIFICATION-06**：以实际REAL容器按原offset/size/RD头/尺寸/块SHA做有限像素配对；先复用TW1/CN5已验metadata，若缺晚期像素确有实质依赖才一次重取已知TW8.5包并同作业导出完整配对/记录差异，禁止只复算文件哈希或按129/158文件名猜同版。保留28重号竞争记录，不无依据套last-wins。止于一项实际配对/新增内容或精确缺源。DD-028四任务档、Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、总体percent=null均不变。
+
+
+### 2026-10-25 — ADRN129完整metadata候选/main实际终验
+内容main2d6cadc757d3e270dfe3d2e59166d760b192dc52/tree0ab7ed6b62afbde57719f88a733dc3857b5a005e；候选11项、主线12项Actions实际全部completed/success，主线独立全记录重放亦通过。source40139069912仍真实failed（7zip解压SIGSEGV11），修正source40139226150成功与其分开保留。全389698原attr/record哈希和整个31175840B成员SHA4fb45027f87d44d70675827870a74110fb6c07f65a529bd89e6dc52c0a2b388f由数值metadata独立复算一致，不存重建原BIN。23924728B全表及原report/attempt/独立重放的Git pins、源工件独立ZIP验证写STONEAGE-WAYI-ADRN129-PAYLOAD-PUBLICATION-R1.json永久保存。
+本地15单元/13语义变异已过；原图像REAL/具名实体、2005同build与全官方客户合集仍未取得或认证，绝不按389698条/389670不同号虚报物种或恢复率。下一包仍TW-WAYI-ADRN129-REAL-COMPANION-QUALIFICATION-06；最初CUSTODY的PENDING原文保留，由本条后验补证。本验收记录提交自身CI须随后实际观察，不预支成功。原任务四档、Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、percent=null均不变。
