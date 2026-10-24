@@ -18439,3 +18439,16 @@ NEXT仍客户端P1取新增可验证版本。既有六分卷STONEAGE20060616.exe
 候选分支`agent/client-named-entity-primary-source-gap-20261024`源提交`11ee0a132cfe6a47c027d3a3a551c080f09f4a92`真实同HEAD校验Action `40101314008` completed/success；新tool交叉读8父Git blob及101行、对8类伪造实体/构建/下载率/空SHA做负例。**本段的续传提交自身与未来主线同HEAD Actions必须后验，当前不预支成功。**
 
 **最高NEXT EARLY-OFFICIAL-CLIENT-ORIGINAL-PAYLOAD-QUALIFICATION-02**：不重开十处低级写入，改以日JSS1999完整游戏盘、韩国2000–2001正式/试玩原包、台湾同构建商业原服master的**真正原始载荷/文件哈希**为门槛，选有新证据且可实际取得的一件，完成来源URL+SHA+解包路径+版别污染门控后再加入跨版资源差分及具名实体绑定；确实无法获得则登记具体失败/缺字段并切换地图/NPC/其他域，不无期限执行同样Wayback零命中调用。原包长存与原服NPC/任务/宠物成长均OPEN。任务四档DD-028不混；Stage A仍7 PARTIAL+2 OPEN，B/wiki GATED，R79 PAUSED_NON_BLOCKING，整体百分比null。
+
+ 
+## 2026-10-24 — EARLY-OFFICIAL-CLIENT-ORIGINAL-PAYLOAD-QUALIFICATION-02：韩国四条官方历史下载口真实字节资格探测
+
+本轮重新读取远端main `58c544787457516d9914d4adcb6b3a32ce89a49f` / tree `5c6b6bda95a69c8c2c2584280146559304e3d332`、README、完整原生CURRENT Git blob `7872437d5110c9eec7365b520c8b49eb2a7d4692` (2,274,943字符)、连续性协议/设计决策/历史/来源/路线及同HEAD十项completed/success Actions；0开放PR。沿当时最高NEXT而非旧聊天HASH，以早期日JSS1999、韩国2000–2001实际原包字节为优先；不重做已闭合TW1原程序十写点和101静态资源号。
+
+建立带七项离线正反测试的有限原始端点探测`tools/stoneage_early_official_payload_probe.py`、独立验收收据三项测试、CI及中文规格。原同代Inium/Hananet资料实载目录证韩国STAD 8119正式`http://stoneage.hananet.net/down/sa.exe`、8120试玩`sa_demo.exe`，2000官方CNET镜像`http://korea.cnet.com/pc/games/online/stoneage.zip`，2001 Gagamel正式镜像虽文件名`stoneagebeta.zip`，均为历史URL线索，不等于已取得/鉴真二进制。
+
+候选首次探测source run`40102349701`/job`120896914256`及永久同日志收据`research/recovered/STONEAGE-EARLY-OFFICIAL-PAYLOAD-PROBE-R1.json`：2026-10-24 14:24:37Z四个历史URL限定4096B Range请求，Hananet正式/试玩和CNET均仅`URLError`（无HTTP status，不能冒认404/服务器下线）；Gagamel为HTTP 441；全部取样字节0，无MZ/ZIP真实prefix，无原完整安装包、新全包SHA或同构建具名NPC/宠物↔图像号配对。所有请求有边界，不执行原EXE。source Actions本身completed/success只证明测试/尝试/派生工件上传成功。上传元数据ZIP artifact`12562948821`的Actions API digest为`53715dbd672bdb058c12420492053146355bcbc5879f959af42f470b120af021`，**未独立下载重哈希**，不虚报完整原包或者独立校验。完整日志结构化JSON与URL均有版本化Git收据；失败不证明全网已灭失。
+
+候选提交`b19e4234408501c2fbc33faacb740873be50b53a`实际源/收据门CI `40102647927`/job`120897783611` completed/success，含离线探测正反测试、收据三检、原地址Range、日志与元数据工件上传。旧有失败与先前资源派生不被覆盖；原版权程序/宠物画面/服务器数据未入Git；完整旧CURRENT历史作为本条前缀逐字保留。
+
+**最高NEXT CLIENT-ORIGINAL-PHYSICAL-CARRIER-RECOVERY-03**：转向已由同期资料和2001 GameTime ISBN13 9788995182123带安装器/试玩光盘目录证实存在过的韩国零售/攻略附赠原CD，及1999 JSS初回实体游戏CD原像；要有可合法取得的真实完整光盘镜像/发行安装包字节、全SHA256、完整文件目录/解包、地区/运营/版本归属和私服污染否定，才允许新增来源/跨版资源或具名实体。GameTime商品目录非当前字节或在线可取证明；既有Hananet四地址本批死口不无新线索重复查，不重做CNET十六Wayback零命中。该实体载体线若一有界工作单元仍无法取得可用原字节，依协议第13节转另一可实取地图/NPC/原服内容域，不为增加R号继续扩搜索脚手架。DD-028任务四档继续分离，Stage A7 PARTIAL+2 OPEN，Stage B/wiki GATED，R79 PAUSED_NON_BLOCKING，整体复原百分比null。

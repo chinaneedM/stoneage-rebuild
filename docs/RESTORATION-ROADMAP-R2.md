@@ -2537,3 +2537,8 @@ P1大陆5.0全CAB取得后，本轮P2A真实重取台湾1.0原盘和大陆5.0 CA
 ## 2026-10-24 — P2B具名原始实体取证有限止点与原包优先接续
 
 fresh主线main `0e450712b23d61ce54bc9e7fa230bef3df186aa1` 严格源锚与101原记录逐项核验，TW1原NPC名/id及宠物物种ID在这101行均null；10个原生写点已证词法来源，未证同对象/物种。JSS2001已验10张官方介绍截图与217088B日本更新器原字节**不是**TW1同版实体映射，也不是1999零售游戏盘；韩国早期Hananet正式/试玩+CNET包均有官方目录URL但无全载荷及包SHA。新机器证据锁、六类不许升格关系与原版准确缺口见 `research/recovered/STONEAGE-CLIENT-NAMED-ENTITY-PRIMARY-SOURCE-GAP-R1.json`。没有新增具名实体，保留全部原负例/原版源。下一工作包**EARLY-OFFICIAL-CLIENT-ORIGINAL-PAYLOAD-QUALIFICATION-02**以能够下载并鉴别原发行客户端实际字节为止点；不继续无收获十写点扫描、资源号猜名或泛网页逆推。必要时有界转地图/NPC源。Stage A7 PARTIAL+2 OPEN，B/wiki GATED，R79暂停，百分比null。
+
+ 
+## 2026-10-24 — 原始官方客户载体接续：从历史URL转有界实体镜像
+
+根据远端CURRENT最后一次项目事实审计，本轮正式/试玩Hananet、CNET、Gagamel四真实历史URL经新CI source40102349701/job120896914256有界前缀取源均未得游戏字节（前三URLError但无HTTP码、后一HTTP441；0真实载荷）。永久派生收据 `research/recovered/STONEAGE-EARLY-OFFICIAL-PAYLOAD-PROBE-R1.json`、专用CI与反例门保留原日志，不把Actions success解释成官方版已下载；保留之前所有物理差异结果。下一个材料包 `CLIENT-ORIGINAL-PHYSICAL-CARRIER-RECOVERY-03` 应尝试取得有物理原始 provenance 的韩国GameTime 2001攻略附赠原CD/韩国Inium零售CD或日本JSS1999原游戏盘**完整镜像**，并做跨版SHA、来源污染、实体主表存在性验收；未取得实物即登记具体缺字节与有界中止，转可得地图/NPC原始素材，禁止盲重复上述URL/10个TW1原写点。DD-028四任务起源档继续分离，R79暂停，Stage A7PARTIAL+2OPEN/B及wiki GATED、总体百分比null。历史原文不删。
