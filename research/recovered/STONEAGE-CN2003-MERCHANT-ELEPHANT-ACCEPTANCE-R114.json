@@ -1,0 +1,286 @@
+{
+  "schema": "stoneage.r114.nine_file_git_custody.receipt.r1",
+  "date": "2026-10-24",
+  "repo": "chinaneedM/stoneage-rebuild",
+  "content_head": "aac31addabbaf8ac23bd7df8488c8679a63ae57d",
+  "content_tree": "e1bffd75587400de747ab6f755f273cdec188e86",
+  "previous_main_head": "33091550d0a2beed10e2bccfe8d97b0ff765080a",
+  "source_scope": "CN2003_SINA_GUIDE_META_NOT_ORIGINAL_SERVER",
+  "candidate_content_commit": "0f468798056679a39324975bb6578c3f27e512cb",
+  "candidate_content_ci": {
+    "run_id": 40055929518,
+    "job_id": 120758795903,
+    "conclusion": "success",
+    "head_sha": "0f468798056679a39324975bb6578c3f27e512cb"
+  },
+  "main_content_ci": {
+    "run_id": 40056110228,
+    "job_id": 120759341359,
+    "conclusion": "success",
+    "head_sha": "aac31addabbaf8ac23bd7df8488c8679a63ae57d"
+  },
+  "continuity_commit": "aac31addabbaf8ac23bd7df8488c8679a63ae57d",
+  "nine_files": [
+    {
+      "path": ".github/workflows/stoneage-cn2003-merchant-elephant-r114.yml",
+      "blob_sha": "93b9ff49050f0b4e2525466dea02a1b303f28135",
+      "existing_historical_prefix_blob": null
+    },
+    {
+      "path": "docs/CURRENT-STATE.md",
+      "blob_sha": "12dca26bd907c73edc94415bdacefa678133263a",
+      "existing_historical_prefix_blob": "e5eba6014658de032edb5e348643bb6b26b134c9"
+    },
+    {
+      "path": "docs/HISTORICAL-TIMELINE.md",
+      "blob_sha": "3eb4229c102b104d51d983d29e09cb17998f65c6",
+      "existing_historical_prefix_blob": "d940a51ab2b616e7f50af44b1e3671bc1911213d"
+    },
+    {
+      "path": "docs/RESTORATION-ROADMAP-R2.md",
+      "blob_sha": "2b32106ec77e3e5a0c9d9cfba31b92f60826bca8",
+      "existing_historical_prefix_blob": "85b4f7681e08cb19167e0c7306e609ffb87f48ab"
+    },
+    {
+      "path": "docs/SOURCE-REGISTRY.md",
+      "blob_sha": "cb00263c710e327242f9e7a5c4633fb041956e29",
+      "existing_historical_prefix_blob": "6b7de5b20e11a46330ee34a365b29ea78d1b8a9c"
+    },
+    {
+      "path": "docs/specs/STONEAGE-CN2003-MERCHANT-ELEPHANT-R114.md",
+      "blob_sha": "616491c19221c3e66a2876c33e54609ad09a047b",
+      "existing_historical_prefix_blob": null
+    },
+    {
+      "path": "research/recovered/STONEAGE-CN2003-MERCHANT-ELEPHANT-R114.json",
+      "blob_sha": "1fb238ea9352adc2e144529b1ef5bd6d5765bb13",
+      "existing_historical_prefix_blob": null
+    },
+    {
+      "path": "tests/test_stoneage_cn2003_merchant_elephant_r114.py",
+      "blob_sha": "7b557f46b118731a2d03f717df87e8b8098e6e4d",
+      "existing_historical_prefix_blob": null
+    },
+    {
+      "path": "tools/stoneage_cn2003_merchant_elephant_r114.py",
+      "blob_sha": "0812334029645c5fc04e57891e3ab781ad55c781",
+      "existing_historical_prefix_blob": null
+    }
+  ],
+  "zero_deletions_in_remote_compare": true,
+  "all_previous_historical_prefixes_byte_preserved": true,
+  "candidate_continuity_actions": [
+    {
+      "run_id": 40056066702,
+      "head_branch": "agent/cn2003-merchant-elephant-r114-20261024",
+      "head_sha": "aac31addabbaf8ac23bd7df8488c8679a63ae57d",
+      "workflow_name": "Validate Stage A evidence-limited review acceptance",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40056066702"
+    },
+    {
+      "run_id": 40056066706,
+      "head_branch": "agent/cn2003-merchant-elephant-r114-20261024",
+      "head_sha": "aac31addabbaf8ac23bd7df8488c8679a63ae57d",
+      "workflow_name": "Validate legacy StoneAge assistant history and pet content gaps",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40056066706"
+    },
+    {
+      "run_id": 40056066708,
+      "head_branch": "agent/cn2003-merchant-elephant-r114-20261024",
+      "head_sha": "aac31addabbaf8ac23bd7df8488c8679a63ae57d",
+      "workflow_name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40056066708"
+    },
+    {
+      "run_id": 40056066716,
+      "head_branch": "agent/cn2003-merchant-elephant-r114-20261024",
+      "head_sha": "aac31addabbaf8ac23bd7df8488c8679a63ae57d",
+      "workflow_name": "Validate Stage A early source gap triage",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40056066716"
+    },
+    {
+      "run_id": 40056066723,
+      "head_branch": "agent/cn2003-merchant-elephant-r114-20261024",
+      "head_sha": "aac31addabbaf8ac23bd7df8488c8679a63ae57d",
+      "workflow_name": "Validate StoneAge Stage A joint review decision",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40056066723"
+    },
+    {
+      "run_id": 40056066730,
+      "head_branch": "agent/cn2003-merchant-elephant-r114-20261024",
+      "head_sha": "aac31addabbaf8ac23bd7df8488c8679a63ae57d",
+      "workflow_name": "Validate StoneAge preproduction content archive and wiki boundary",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40056066730"
+    },
+    {
+      "run_id": 40056066741,
+      "head_branch": "agent/cn2003-merchant-elephant-r114-20261024",
+      "head_sha": "aac31addabbaf8ac23bd7df8488c8679a63ae57d",
+      "workflow_name": "Verify R102 frozen material portfolio and record projections",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40056066741"
+    },
+    {
+      "run_id": 40056066749,
+      "head_branch": "agent/cn2003-merchant-elephant-r114-20261024",
+      "head_sha": "aac31addabbaf8ac23bd7df8488c8679a63ae57d",
+      "workflow_name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40056066749"
+    },
+    {
+      "run_id": 40056066755,
+      "head_branch": "agent/cn2003-merchant-elephant-r114-20261024",
+      "head_sha": "aac31addabbaf8ac23bd7df8488c8679a63ae57d",
+      "workflow_name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40056066755"
+    },
+    {
+      "run_id": 40056066797,
+      "head_branch": "agent/cn2003-merchant-elephant-r114-20261024",
+      "head_sha": "aac31addabbaf8ac23bd7df8488c8679a63ae57d",
+      "workflow_name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40056066797"
+    }
+  ],
+  "main_content_actions": [
+    {
+      "run_id": 40056110227,
+      "head_branch": "main",
+      "head_sha": "aac31addabbaf8ac23bd7df8488c8679a63ae57d",
+      "workflow_name": "Validate Stage A early source gap triage",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40056110227"
+    },
+    {
+      "run_id": 40056110228,
+      "head_branch": "main",
+      "head_sha": "aac31addabbaf8ac23bd7df8488c8679a63ae57d",
+      "workflow_name": "Validate R114 CN2003 merchant elephant quest evidence boundaries",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40056110228"
+    },
+    {
+      "run_id": 40056110234,
+      "head_branch": "main",
+      "head_sha": "aac31addabbaf8ac23bd7df8488c8679a63ae57d",
+      "workflow_name": "Independently verify TW1.0 R58 rooted helper returns and source custody",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40056110234"
+    },
+    {
+      "run_id": 40056110243,
+      "head_branch": "main",
+      "head_sha": "aac31addabbaf8ac23bd7df8488c8679a63ae57d",
+      "workflow_name": "Verify R102 frozen material portfolio and record projections",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40056110243"
+    },
+    {
+      "run_id": 40056110266,
+      "head_branch": "main",
+      "head_sha": "aac31addabbaf8ac23bd7df8488c8679a63ae57d",
+      "workflow_name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40056110266"
+    },
+    {
+      "run_id": 40056110272,
+      "head_branch": "main",
+      "head_sha": "aac31addabbaf8ac23bd7df8488c8679a63ae57d",
+      "workflow_name": "Validate StoneAge preproduction content archive and wiki boundary",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40056110272"
+    },
+    {
+      "run_id": 40056110277,
+      "head_branch": "main",
+      "head_sha": "aac31addabbaf8ac23bd7df8488c8679a63ae57d",
+      "workflow_name": "Validate StoneAge Stage A joint review decision",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40056110277"
+    },
+    {
+      "run_id": 40056110280,
+      "head_branch": "main",
+      "head_sha": "aac31addabbaf8ac23bd7df8488c8679a63ae57d",
+      "workflow_name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40056110280"
+    },
+    {
+      "run_id": 40056110304,
+      "head_branch": "main",
+      "head_sha": "aac31addabbaf8ac23bd7df8488c8679a63ae57d",
+      "workflow_name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40056110304"
+    },
+    {
+      "run_id": 40056110309,
+      "head_branch": "main",
+      "head_sha": "aac31addabbaf8ac23bd7df8488c8679a63ae57d",
+      "workflow_name": "Validate Stage A evidence-limited review acceptance",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40056110309"
+    },
+    {
+      "run_id": 40056110310,
+      "head_branch": "main",
+      "head_sha": "aac31addabbaf8ac23bd7df8488c8679a63ae57d",
+      "workflow_name": "Validate legacy StoneAge assistant history and pet content gaps",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40056110310"
+    },
+    {
+      "run_id": 40056110342,
+      "head_branch": "main",
+      "head_sha": "aac31addabbaf8ac23bd7df8488c8679a63ae57d",
+      "workflow_name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40056110342"
+    }
+  ],
+  "provenance_limit": {
+    "original_2003_html_sha256": null,
+    "original_quest_images_sha256": null,
+    "original_client_build": null,
+    "original_server_execution_proof": null,
+    "real_capture_cargo_and_loyalty_transaction_proven": false,
+    "html_or_pixels_archived_in_git": false,
+    "original_game_entity_count_newly_recovered": 0,
+    "restore_percentage": null
+  },
+  "receipt_role": "EXACT_DERIVED_GIT_BLOBS_AND_CI_ACCEPTANCE_NOT_ORIGINAL_GAME_EXECUTION",
+  "highest_next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-115"
+}

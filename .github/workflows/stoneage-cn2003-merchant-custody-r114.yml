@@ -1,0 +1,27 @@
+name: Verify R114 nine-file derived Git custody and historical prefixes
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-CN2003-MERCHANT-ELEPHANT-ACCEPTANCE-R114.json'
+      - 'tools/verify_stoneage_cn2003_merchant_custody_r114.py'
+      - 'tests/test_stoneage_cn2003_merchant_custody_r114.py'
+      - '.github/workflows/stoneage-cn2003-merchant-custody-r114.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-CN2003-MERCHANT-ELEPHANT-ACCEPTANCE-R114.json'
+      - 'tools/verify_stoneage_cn2003_merchant_custody_r114.py'
+      - 'tests/test_stoneage_cn2003_merchant_custody_r114.py'
+      - '.github/workflows/stoneage-cn2003-merchant-custody-r114.yml'
+  workflow_dispatch:
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python tools/verify_stoneage_cn2003_merchant_custody_r114.py
+      - run: python tests/test_stoneage_cn2003_merchant_custody_r114.py
