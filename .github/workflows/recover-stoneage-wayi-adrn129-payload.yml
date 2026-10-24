@@ -1,0 +1,43 @@
+name: Recover actual official Wayi ADRN129 repair archive payload
+on:
+  workflow_dispatch:
+  push:
+    branches: ['agent/wayi-adrn129-payload-source-20261025']
+    paths:
+      - 'tools/stoneage_wayi_adrn129_payload.py'
+      - 'tests/test_stoneage_wayi_adrn129_payload.py'
+      - '.github/workflows/recover-stoneage-wayi-adrn129-payload.yml'
+permissions:
+  contents: write
+jobs:
+  source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m unittest tests.test_stoneage_wayi_adrn129_payload -v
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq 7zip
+      - name: Download exact 4MB source and export metadata without executing original code
+        run: python -m tools.stoneage_wayi_adrn129_payload --work /tmp/adrn129-source --derived research/recovered/wayi-adrn129-patch-metadata
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: wayi-adrn129-patch-derived-r1
+          path: research/recovered/wayi-adrn129-patch-metadata
+          if-no-files-found: warn
+          retention-days: 30
+      - name: Preserve only complete derived metadata on this source branch
+        run: |
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git add research/recovered/wayi-adrn129-patch-metadata
+          git diff --cached --quiet || git commit -m 'research: preserve actual official ADRN129 repair member and record metadata'
+          git push origin HEAD:refs/heads/agent/wayi-adrn129-payload-source-20261025
+      - name: Remove temporary proprietary archive and members
+        if: always()
+        run: rm -rf /tmp/adrn129-source
