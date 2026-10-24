@@ -1,0 +1,147 @@
+{
+  "schema": "stoneage.cn25.spirit_king_story.acceptance.r113",
+  "date": "2026-10-24",
+  "repository": "chinaneedM/stoneage-rebuild",
+  "source_content": {
+    "base_main_head": "f6d81f7f43c926d4ac36acbe9eca0cac19e77c49",
+    "base_tree": "b6ae1a0e6254dd04e4c7757a27b4ecb432e16fef",
+    "source_commit": "95428cb63616163c1a68581806098e8722f01729",
+    "source_tree": "b673c9ac390ef85362e9a38a4d698d6ba1db73e5",
+    "document_commit": "292c6f278659b5dccb553b6bf806b6142896da9b",
+    "document_tree": "52f70d404fd2b9eb15a245f74af6d69238563323",
+    "branch": "agent/cn25-spirit-king-story-r113-20261024",
+    "main_integrated": true,
+    "non_force_fast_forward": true,
+    "commit_ahead": 2,
+    "commit_behind": 0,
+    "changed_files": 9,
+    "lines_deleted": 0
+  },
+  "provenance": {
+    "source_urls": [
+      "https://news.17173.com/z/stoneage/banben/sa10/39.htm",
+      "https://news.17173.com/z/stoneage/content/2002-5-20/n855_771416.html"
+    ],
+    "source_39_authoritative_official_original": false,
+    "source_39_display_year": 2004,
+    "source_2002_player_guide_credited": "柯南",
+    "original_publisher_html_sha256": null,
+    "actual_current_media_html_sha256": null,
+    "original_html_captured_in_2002": false,
+    "live_media_text_read": true,
+    "original_client_or_server_replay": false,
+    "source_zip_artifact_sha256": null,
+    "independent_same_build_npc_identity_proven": false,
+    "copyrighted_html_or_images_archived": false,
+    "source_42_is_duplicate_of_39_character_excerpt": true
+  },
+  "candidate_ci": {
+    "initial_source_run": {
+      "id": 40055060535,
+      "head_sha": "95428cb63616163c1a68581806098e8722f01729",
+      "job_id": 120756118894,
+      "status": "completed",
+      "conclusion": "success"
+    },
+    "full_branch_head": "292c6f278659b5dccb553b6bf806b6142896da9b",
+    "run_ids": [
+      40055236751,
+      40055236721,
+      40055236706,
+      40055236763,
+      40055236703,
+      40055236729,
+      40055236764,
+      40055236796,
+      40055236750,
+      40055236757
+    ],
+    "status": "completed",
+    "conclusion": "success"
+  },
+  "main_ci": {
+    "head_sha": "292c6f278659b5dccb553b6bf806b6142896da9b",
+    "run_ids": [
+      40055283083,
+      40055283077,
+      40055283051,
+      40055283038,
+      40055283035,
+      40055283068,
+      40055283070,
+      40055283037,
+      40055283080,
+      40055283004,
+      40055283067,
+      40055283022
+    ],
+    "specific_source_run": 40055283038,
+    "specific_source_job_id": 120756807254,
+    "status": "completed",
+    "conclusion": "success"
+  },
+  "distinct_actions_count": 23,
+  "ci_original_source_html_replayed": false,
+  "ci_original_server_runtime_replayed": false,
+  "verified_tree": {
+    "at_commit": "292c6f278659b5dccb553b6bf806b6142896da9b",
+    "sha": "52f70d404fd2b9eb15a245f74af6d69238563323",
+    "recursive_tree_complete": true,
+    "tree_entry_count": 5489,
+    "blob_pins": {
+      ".github/workflows/stoneage-cn25-spirit-king-story-r113.yml": "eab218f49e6c95ae5de41a6a657de18897a16952",
+      "docs/CURRENT-STATE.md": "e5eba6014658de032edb5e348643bb6b26b134c9",
+      "docs/HISTORICAL-TIMELINE.md": "d940a51ab2b616e7f50af44b1e3671bc1911213d",
+      "docs/RESTORATION-ROADMAP-R2.md": "85b4f7681e08cb19167e0c7306e609ffb87f48ab",
+      "docs/SOURCE-REGISTRY.md": "6b7de5b20e11a46330ee34a365b29ea78d1b8a9c",
+      "docs/specs/STONEAGE-CN25-SPIRIT-KING-STORY-R113.md": "89b7c759b407e46e6c094e36d826585b01c1dcdc",
+      "research/recovered/STONEAGE-CN25-SPIRIT-KING-STORY-R113.json": "a753fe2416d1209929d9e3e5a49c7d55a3c04ad7",
+      "tests/test_stoneage_cn25_spirit_king_story_r113.py": "08d60f9854c0659eefacba64454d0400ca20b25b",
+      "tools/stoneage_cn25_spirit_king_story_r113.py": "e13c89f9afdcbcc1a4478d8786ec34e12c82c17d"
+    }
+  },
+  "history_prefixes": [
+    {
+      "path": "docs/CURRENT-STATE.md",
+      "old_blob": "f5274b8a9b8e696186d824d2cff1fbc6d54f37d7",
+      "new_blob": "e5eba6014658de032edb5e348643bb6b26b134c9",
+      "old_chars": 2238850,
+      "new_chars": 2240152,
+      "exact_prefix_verified_before_publication": true
+    },
+    {
+      "path": "docs/HISTORICAL-TIMELINE.md",
+      "old_blob": "ec02a8d6f2ba7966dc12ae91a9f9bad848c07fbd",
+      "new_blob": "d940a51ab2b616e7f50af44b1e3671bc1911213d",
+      "old_chars": 570562,
+      "new_chars": 571113,
+      "exact_prefix_verified_before_publication": true
+    },
+    {
+      "path": "docs/SOURCE-REGISTRY.md",
+      "old_blob": "04dc8b0b056f1409f8e01a442279c926cd89a280",
+      "new_blob": "6b7de5b20e11a46330ee34a365b29ea78d1b8a9c",
+      "old_chars": 859066,
+      "new_chars": 859830,
+      "exact_prefix_verified_before_publication": true
+    },
+    {
+      "path": "docs/RESTORATION-ROADMAP-R2.md",
+      "old_blob": "c36f73e642c1a4de43542095aba40b32785b353b",
+      "new_blob": "85b4f7681e08cb19167e0c7306e609ffb87f48ab",
+      "old_chars": 232908,
+      "new_chars": 233470,
+      "exact_prefix_verified_before_publication": true
+    }
+  ],
+  "boundaries": {
+    "archived_actor_text_rows": 12,
+    "archived_story_edges": 11,
+    "actual_restored_game_entity_count_claim": null,
+    "dark_king_seal_conflict_preserved": true,
+    "feng_feng_orthography_conflict_preserved": true,
+    "old_2001_black_jade_identity_not_joined": true,
+    "aggregate_restoration_percentage": null
+  },
+  "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-114"
+}

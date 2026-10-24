@@ -1,0 +1,24 @@
+name: Verify R113 permanent nine-file Git custody
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-CN25-SPIRIT-KING-STORY-ACCEPTANCE-R113.json'
+      - 'tools/verify_stoneage_cn25_spirit_king_custody_r113.py'
+      - '.github/workflows/stoneage-cn25-spirit-king-custody-r113.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-CN25-SPIRIT-KING-STORY-ACCEPTANCE-R113.json'
+      - 'tools/verify_stoneage_cn25_spirit_king_custody_r113.py'
+      - '.github/workflows/stoneage-cn25-spirit-king-custody-r113.yml'
+  workflow_dispatch:
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python tools/verify_stoneage_cn25_spirit_king_custody_r113.py
