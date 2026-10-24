@@ -8692,3 +8692,11 @@ JSS R116两实际工件12547837667/12547793357 ZIP摘要分别394c0baddfc1c94083
 
 ### SRC-TW85-MSI-CLIENT-PAYLOAD-20261024-R1
 订正前轮“sixpart仅metadata”：五个WAEI85旧真实字节报告全部钉Git blob并保留，早有wrapper971780ab与Windows MSI8f99ceb1。旧签名含WAYI身份/2007时间但本地信任链失败，来源强度不可简化为全链已认证。新source dc0f3693/run40087665571/job120853787888再次下载六卷并独立Python静态解码同SHA MSI，msitools真实解档557文件/1808555613B和五张安装数据库表；无原EXE/msiexec执行。artifact12557771421 ZIP67658B/SHA7d11424a44f5705c7b7b313f23aae05f3920e9899763849b1a44b693b8bc47db独立匹配API/日志；永久STONEAGE-WAYI85-MSI-CLIENT-PAYLOAD/REVIEW/CUSTODY-R1及外壳阶段原JSON。42数字map DAT候选、3BGM DAT；不认45全世界地图，不证明NPC/宠物server master或原服。保留2012保存载体、2007签名与MSI版本/文件名不同时间维度，零新官方发行认证。
+
+
+## 2026-10-24 — SRC-CN-2003-WAEI-STA5-IA-OPTICAL-01 原完整CAB有效载荷新取证（保留历史原条目）
+- 既有来源：Internet Archive `Stoneage-5`，旧小型STA5.MSI及CAB头曾被实读，原条目不更改或覆盖。
+- 本轮source run `40089256861` / job `120858382831` 成功：光盘原BIN按CUE正确扇区布局与HTTP Range校验，实际回取完整612,584,670 B的DATA1.CAB并静态cabextract。CAB完整SHA-256 `cb414ad1ef4cc7925ec429ec088d0146892834c72667d1af82c8075d09f1683b`；413文件合计解出1,211,040,029B，每文件各有实际SHA-256。
+- 永久派生源 `research/recovered/STONEAGE-STONEAGE5-REAL-CAB-PAYLOAD-R1.json`，Git blob `1edbd31872386753bf9fc62a2260db316ccf84ed`；全文件清单摘要 `079b961d076cebf990358b35712e3cecd8b342467eb8118c446458cea4ab5dbe`。原CAB、原光盘、音乐、美术、可执行文件未入Git，原字节未跨会话长期保存；光盘整体catalogue SHA1未于本轮重算。
+- 后续run `40090112644` / job `120860900735` success：原413个CAB文件键与MSI File→Component→Directory全量关联，保存413唯一安装路径，409项属data子树。永久派生 `research/recovered/STONEAGE-STONEAGE5-REAL-CAB-MSI-PATH-JOIN-R1.json`，Git blob `b2532248355b35cd9d4ed7d15d3f59aeeb9beadf`。TW1.0同路径362、完全相同361、仅StoneAge.exe不同1；TW8.5同路径407、完全相同407、异0。同路径之外仍可能有同哈希文件，不推断物种、NPC或原服任务身份。
+- 原字节来源是第三方保留光盘；微软MSI ProductName/Version/Manufacturer是安装器内证据，**不等于**此实物已经由独立光盘版次鉴真为未经修改的官方原盘；最初发行、运营部署服务器数据及宠物成长主表仍未取得。新增获取是既有5.0载荷恢复深度，不是新增官方发行版本数量。
