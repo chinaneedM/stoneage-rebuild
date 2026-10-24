@@ -18427,3 +18427,15 @@ NEXT仍客户端P1取新增可验证版本。既有六分卷STONEAGE20060616.exe
 ### 2026-10-24 — P2B写入来源分析candidate/main双端实际终验
 
 内容main de18fdd2fed2f569f58da45ef6b02ae64ce4f8ca/tree6f335822c57fc94df58d8d38cf306f430fbc9e56（此处head以数字ASCII Git API为准；旧字节前缀不改）。前述限定源source run40099299814与独立保管40099776027已completed/success；提交候选同HEAD10项Actions全部success，非强制快进main后同HEAD13项Actions全部success。main真实原字节再获取run40100105420/job120890325813亦成功：原exe静态取证结果18,564字节派生JSON与候选raw逐字节一致/SHA256 9f6170001e1696b0b24be6430c71490a932ebee4aa190b7562ebe4c7b10d3dc4；候选ZIP2419字节SHA aca92b0b8ee2cdf663ab65b4a1838c224cf99653e07ca73aea03c4d2b8473853，main ZIP2419字节SHA fd90130203bbece3ac98fccae8803b93b54817c54316e305b25e132b93abd7c2，均独立下载完整解压对比。ZIP不同未假报字节一致，只有内部报告一致。主线10个写入来源分类7栈／2内存／1算术，具名身份仍0。完整工件为临时30天，Git永久的有界事实收据及全运行列表见research/recovered/STONEAGE-TW10-WRITER-SOURCE-PUBLICATION-P2B-R1.json；商业原文件仍未入库。最高NEXT依旧CLIENT-ARTIFACT-NAMED-ENTITY-PROVENANCE-01、R79暂停、Stage A7PARTIAL+2OPEN/B/wiki GATED、总恢复率null。下一条独立保管提交自身Actions须单独后验，不在此提前宣布通过。
+
+## 2026-10-24 — CLIENT-ARTIFACT-NAMED-ENTITY-PROVENANCE-01：同构建具名物证限定审查与官方原包来源移交
+
+本轮全新读取远端main `0e450712b23d61ce54bc9e7fa230bef3df186aa1` / tree `21050bef2ffe4f4b11290822d6bb9066cd999022`、协议、README、完整CURRENT原生blob `5ea31062fac3ca500f8d06b7acdc752b8e6ba9c7`、路线/决策/历史/来源及主线9项同HEAD completed/success Actions；0开放PR。所有2,273,183字符旧连续性历史前缀完整保留；标准fetch_file空响应不是文件空。仅按新的Git源确定优先级，不沿用旧聊天SHA。
+
+按最高NEXT审阅台湾1.0与大陆5.0同ID真实101/101原图像/RD块对照，原报告101行 `original_npc_name`/`original_npc_id`/`original_pet_species_id` 全为null；TW1原 `sa_3.exe` 10个字节级词法写点已验为7栈/2内存/1算术、仍无同一个R101对象或名字数据流。JSS2001官网10张已验截图/原FAQ有具名文字、但不证明同台湾1.0 build图形ID；2001日本旧更新器原字节217088B此前已取，不能再称新JSS1999安装盘。韩国2000–2001 Hananet 8119/8120正式`sa.exe`、试玩`sa_demo.exe`与CNET软件ID200009263856的`/pc/games/online/stoneage.zip`有历史官方目录线索，**当前无这些包的经哈希原始字节**；旧CNET16次Wayback元数据0命中仅对应其确切查询。公开网页、玩家图片名、后代私服/外挂不能晋级具名实体。
+
+实审得到新认证具名人物/宠物/NPC↔原bitmap/SPR ID关系**0**、本次新增官方安装包**0**；是具体字段/载体受限审查，不是内容完成。已在`docs/specs/STONEAGE-CLIENT-NAMED-ENTITY-PRIMARY-SOURCE-GAP-R1.md`和永久机器凭据`research/recovered/STONEAGE-CLIENT-NAMED-ENTITY-PRIMARY-SOURCE-GAP-R1.json`汇总8项原生Git blob pins、101真实空值、早期日本/韩国确定下载/截图证据、六类禁用推断及精确重开条件。原版权字节/截图不入Git。
+
+候选分支`agent/client-named-entity-primary-source-gap-20261024`源提交`11ee0a132cfe6a47c027d3a3a551c080f09f4a92`真实同HEAD校验Action `40101314008` completed/success；新tool交叉读8父Git blob及101行、对8类伪造实体/构建/下载率/空SHA做负例。**本段的续传提交自身与未来主线同HEAD Actions必须后验，当前不预支成功。**
+
+**最高NEXT EARLY-OFFICIAL-CLIENT-ORIGINAL-PAYLOAD-QUALIFICATION-02**：不重开十处低级写入，改以日JSS1999完整游戏盘、韩国2000–2001正式/试玩原包、台湾同构建商业原服master的**真正原始载荷/文件哈希**为门槛，选有新证据且可实际取得的一件，完成来源URL+SHA+解包路径+版别污染门控后再加入跨版资源差分及具名实体绑定；确实无法获得则登记具体失败/缺字段并切换地图/NPC/其他域，不无期限执行同样Wayback零命中调用。原包长存与原服NPC/任务/宠物成长均OPEN。任务四档DD-028不混；Stage A仍7 PARTIAL+2 OPEN，B/wiki GATED，R79 PAUSED_NON_BLOCKING，整体百分比null。
