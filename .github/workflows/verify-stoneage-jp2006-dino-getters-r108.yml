@@ -1,0 +1,18 @@
+name: Verify JP2006 Dino Getters source boundaries
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-JP2006-DINO-GETTERS-R108.json'
+      - 'tools/stoneage_jp2006_dino_getters_r108.py'
+      - 'tests/test_stoneage_jp2006_dino_getters_r108.py'
+      - '.github/workflows/verify-stoneage-jp2006-dino-getters-r108.yml'
+  workflow_dispatch:
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate source-bounded R108 contracts (not live 2006 replay)
+        run: |
+          python tools/stoneage_jp2006_dino_getters_r108.py
+          python -m unittest discover -s tests -p test_stoneage_jp2006_dino_getters_r108.py -v

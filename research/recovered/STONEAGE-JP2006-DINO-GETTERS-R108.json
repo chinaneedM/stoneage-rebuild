@@ -1,0 +1,142 @@
+{
+  "schema": "stoneage.jp2006.dino_getters.r108",
+  "task": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-108",
+  "date": "2026-10-24",
+  "baseline": {
+    "head": "e7ad36ff4862138d0f5fa82e158bf945f21846ec",
+    "tree": "4ed6d6ba1c27f14ed82696a601b75cdb493d01e8"
+  },
+  "scope": "ONE_CONTEMPORANEOUS_GAME_PRESS_ARTICLE_2006_JAPAN_BOUNDED_FOUR_CONTRACTS_NO_IMAGE_OR_RAW_HTML",
+  "source": {
+    "id": "S1",
+    "url": "https://www.4gamer.net/news/history/2006.05/20060523181644detail.html",
+    "reported_headline": "「ストーンエイジ」サーバーの全員で恐竜を捕まえるイベント開催",
+    "article_publication": "2006-05-23 18:16",
+    "attribution": "4GAMER_EDITORIAL_BY_NOGUCHI_REPORTING_GAIAX_EVENT_NOT_OPERATOR_ORIGINAL_RELEASE",
+    "observed_web_render": "2026-10-24",
+    "actual_raw_html_bytes": null,
+    "actual_raw_html_sha256": null,
+    "exact_historical_capture": null,
+    "operator_original_html": null,
+    "provenance_level": "CONTEMPORANEOUS_SECONDARY_PRESS_WEB_RENDER_ONLY_NO_BYTE_REPLAY",
+    "source_excerpts_not_committed": true
+  },
+  "records": [
+    {
+      "record_id": "jp-gaiax-stoneage-2006:r108:event",
+      "entity_type": "SOURCE_NAMED_TEMPORARY_CAPTURE_EVENT_NOT_QUEST_SCRIPT",
+      "collection": "quests",
+      "version_profile": "LATER_OFFICIAL:JP_GAIAX_STONEAGE_2006_4GAMER_CONTEMPORANEOUS_NOT_EXACT_CLIENT_BUILD",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "CONTEMPORANEOUS_PRESS_DESCRIPTION_NOT_OPERATOR_RAW_BYTES_OR_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "event_name_as_written": "GMからの挑戦状 ～ダイノ ゲッターズ～",
+      "start_date_reported": "2006-05-23",
+      "end_date_reported": "2006-06-06",
+      "schedule_time_zone": null,
+      "actual_live_dates_verified": false,
+      "client_build": null,
+      "server_script": null,
+      "quest_repeatability": null,
+      "npc_service_ref": "jp-gaiax-stoneage-2006:r108:npc-handin",
+      "rank_ref": "jp-gaiax-stoneage-2006:r108:capture-ranks",
+      "server_progress_ref": "jp-gaiax-stoneage-2006:r108:per-server-reward"
+    },
+    {
+      "record_id": "jp-gaiax-stoneage-2006:r108:npc-handin",
+      "entity_type": "SOURCE_DESCRIBED_THREE_UNNAMED_EVENT_HANDIN_NPCS",
+      "collection": "npcs",
+      "version_profile": "LATER_OFFICIAL:JP_GAIAX_STONEAGE_2006_4GAMER_CONTEMPORANEOUS_NOT_EXACT_CLIENT_BUILD",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "CONTEMPORANEOUS_PRESS_DESCRIPTION_NOT_OPERATOR_RAW_BYTES_OR_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "location_as_written": "カルターナの村",
+      "reported_npc_count": 3,
+      "npc_names_as_written": [],
+      "npc_original_ids": null,
+      "coordinates": null,
+      "dialogue_text": null,
+      "reported_interaction": "CAPTURE_SPECIFIED_DINOSAURS_AND_HAND_TO_EVENT_NPCS_FOR_GET_POINTS",
+      "successful_handoff_observed": false,
+      "consumes_captured_pet": null
+    },
+    {
+      "record_id": "jp-gaiax-stoneage-2006:r108:capture-ranks",
+      "entity_type": "SOURCE_DESCRIBED_EVENT_CAPTURE_DIFFICULTY_TIERS_NOT_SPECIES_MASTER",
+      "collection": "pets",
+      "version_profile": "LATER_OFFICIAL:JP_GAIAX_STONEAGE_2006_4GAMER_CONTEMPORANEOUS_NOT_EXACT_CLIENT_BUILD",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "CONTEMPORANEOUS_PRESS_DESCRIPTION_NOT_OPERATOR_RAW_BYTES_OR_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "tier_names_as_written": [
+        "下級",
+        "中級",
+        "上級"
+      ],
+      "tier_count": 3,
+      "capture_ease_and_points_differ_by_tier_reported": true,
+      "tier_point_values": null,
+      "eligible_species_names": [],
+      "species_master_ids": null,
+      "catch_probabilities": null,
+      "rarity_formula": null
+    },
+    {
+      "record_id": "jp-gaiax-stoneage-2006:r108:per-server-reward",
+      "entity_type": "SOURCE_DESCRIBED_SERVER_AGGREGATE_EVENT_INCENTIVE_NOT_TRANSACTION",
+      "collection": "quests",
+      "version_profile": "LATER_OFFICIAL:JP_GAIAX_STONEAGE_2006_4GAMER_CONTEMPORANEOUS_NOT_EXACT_CLIENT_BUILD",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "CONTEMPORANEOUS_PRESS_DESCRIPTION_NOT_OPERATOR_RAW_BYTES_OR_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "event_name_as_written": "GMからの挑戦状 ～ダイノ ゲッターズ～",
+      "aggregation_scope": "SAME_SERVER_ALL_PLAYERS",
+      "claimed_beneficiary_scope": "ALL_PLAYERS_ON_SAME_SERVER",
+      "point_target_value": null,
+      "threshold_comparator_executable": null,
+      "points_credit_rule": null,
+      "award_content": null,
+      "award_distribution_schedule": null,
+      "reported_condition": "SERVER_TOTAL_GET_POINTS_SURPASS_UNSPECIFIED_TARGET",
+      "observed_total_points": null,
+      "actual_reward_granted": false,
+      "npc_service_ref": "jp-gaiax-stoneage-2006:r108:npc-handin",
+      "rank_ref": "jp-gaiax-stoneage-2006:r108:capture-ranks"
+    }
+  ],
+  "semantic_boundaries": [
+    "three event NPCs are unnamed in the source; do not invent three identities or coordinates",
+    "no client executable, NPC dialogue, quest-state write, item/pet transaction or server log was observed",
+    "get-point numeric values, per-tier formulas, eligible species, three NPC assignments and all rewards remain unknown",
+    "the Japanese release is not evidence for JSS1999/TW1.0 or the CN2003 golden-pet tournament",
+    "server-scoped aggregate is not a cross-server counter or guaranteed reward actually paid",
+    "press publish date is not a byte-exact original page snapshot or verified operation start/end",
+    "surpass is a reported natural-language condition, not proof of a coded strict comparison",
+    "the source names the event and village but not a named NPC or captured species"
+  ],
+  "continuation": {
+    "status": "R108_CONTEMPORANEOUS_PRESS_CONTENT_ATTESTED_RAW_BYTES_PENDING",
+    "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-109",
+    "next_focus": "Rotate to authenticated named NPC/quest story or actual interaction visual from another version; prioritise archived operator byte source; do not exhaust Dino Getters mechanics without source",
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b_and_wiki": "GATED",
+    "savedata_r79": "PAUSED_NON_BLOCKING",
+    "overall_restoration_percent": null
+  }
+}

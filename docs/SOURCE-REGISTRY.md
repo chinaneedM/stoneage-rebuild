@@ -8591,3 +8591,14 @@ SOURCE `research/recovered/STONEAGE-CN20-NAMED-PET-VISUAL-SOURCE-R104.json` 固�
 - Supported: qualified participants announced Golden-Bao / 金暴 one-pet giveaway; NPC label 「华义大财神」 at last star-system village chief house on each server; two incompatible semifinal application deadline claims (2003-04-21 09:00 vs 2003-04-22).
 - Critical unknowns: raw source bytes/SHA256 not captured in this runtime, authenticated 2003 snapshot, actual gift transaction, exact NPC/game/pet IDs, world coordinates, precise version/build, cutoff resolution and player-specific event state.
 - Boundary: tournament prize selection is not a standard story quest; real-world tournament merchandise/cash is not in-game loot; Chinese 2003 report does not prove TW1/JSS1999. See `docs/specs/STONEAGE-CN2003-TOURNAMENT-REWARD-R107.md` and `research/recovered/STONEAGE-CN2003-TOURNAMENT-REWARD-R107.json`.
+
+
+## 2026-10-24 R108 日本2006跨玩家同服捕宠活动有界证据
+
+以本轮新核远端main `e7ad36ff4862138d0f5fa82e158bf945f21846ec` / tree `4ed6d6ba1c27f14ed82696a601b75cdb493d01e8` 和全部连续性状态为基线，上一R107在主线且已核main近期9项Actions completed/success、无开放PR及in_progress。CURRENT原生Git blob非空，精确sha `87665403d02ddbe9395c4cc98b42ba307e7b31c2`；四长历史全文已读取，未使用旧聊天SHA推断。
+
+按最高NEXT108轮换不同年代/地区。同期2006-05-23 18:16 4Gamer编辑署名noguchi报道日服运营GaiaX举办「GMからの挑戦状 ～ダイノ ゲッターズ～」，计划2006-05-23—06-06在「カルターナの村」由三名**未记姓名**NPC接收指定恐龙并获get points；下級／中級／上級分档捕获难度与分值不同，积分按**同服务器全体玩家**累计，目标达成时有面向该服玩家奖励的报道。这是单服共同贡献激励，不同于CN2003的个人参赛领奖与已入库JP2005集章；严格未认定NPC姓名/原ID、具体恐龙与分值、阈值、真实发奖或服务器实现。
+
+新四条研究资料记录和规格 `docs/specs/STONEAGE-JP2006-DINO-GETTERS-R108.md`，派生 `research/recovered/STONEAGE-JP2006-DINO-GETTERS-R108.json`、元数据验证器、15个变异反例+1正例及专用CI。来源仅当前网页**文本层**可读，执行环境未取得原HTML字节/历史存档/官方原公告，SHA和真实运行证据保持null；新测试即使绿色也不是byte-exact网页重放或原服事务。无版权网页/图像/程序入Git。候选和main远端CI/保管需以真实后验另记，不提前报成功。
+
+有限止于一份2006媒体报道、四记录、无新增原服实体或产线；需档案官网、NPC交互图、同服积分日志或服务端实证才重开细节。**最高NEXT `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-109`** 换另一具名NPC故事或真实交互视觉，不持续挖单服活动猜阈值。Stage A7 PARTIAL+2 OPEN、Stage B/wiki GATED、TW1同构建NPC/SPR与服务端事务仍OPEN、savedataR79 PAUSED_NON_BLOCKING，整体恢复百分比null。

@@ -18124,3 +18124,14 @@ GitHub重新核main `b4f5a28a09efa40bfcd60401f0885c9a6f270f5b` / tree `6df1fb27f
 候选 `agent/cn2003-tournament-reward-r107-20261024` 内容commit `eb1c57edc0952434de11bcf1d186fbf09fa70697` / tree `a3fac618a26cbc1efcf1f33a9dda7b7bff2b4b51`，在主线原HEAD `4bda0fc8a49a9b01be519f735761362bdf3bc53b` 上前进1/落后0、九文件0删除；四份长历史只追加。候选本commit自身11项Actions completed/success，包括R107专用run40046329523/job120728785388；fresh main未改变后以expected_sha非force快进。主线同内容commit自身12项Actions completed/success，包括R107专用run40046390497/job120728979044，远端HEAD/tree和九个文件Git blob一致。总计23个不同运行。永久收据 `research/recovered/STONEAGE-CN2003-TOURNAMENT-REWARD-ACCEPTANCE-R107.json` 固定内容、候选/主线运行、实际专用job与九个文件原生SHA；不伪造原始网页SHA、ZIP保管或服务器日志。
 
 本轮新增的是2003赛事限定华义大财神NPC/金暴领取及互相冲突的复赛二日期文本，**历史网页原始HTML字节并未取得**。专用CI只验元数据边界与九个本地正反例，不能称原页实际复取、宠物到账、台湾1.0实体绑定、完整任务已复原。最高NEXT R108，Stage A7 PARTIAL＋2 OPEN、B/wiki GATED、R79继续暂停、整体百分比null。
+
+
+## 2026-10-24 R108 日本2006跨玩家同服捕宠活动有界证据
+
+以本轮新核远端main `e7ad36ff4862138d0f5fa82e158bf945f21846ec` / tree `4ed6d6ba1c27f14ed82696a601b75cdb493d01e8` 和全部连续性状态为基线，上一R107在主线且已核main近期9项Actions completed/success、无开放PR及in_progress。CURRENT原生Git blob非空，精确sha `87665403d02ddbe9395c4cc98b42ba307e7b31c2`；四长历史全文已读取，未使用旧聊天SHA推断。
+
+按最高NEXT108轮换不同年代/地区。同期2006-05-23 18:16 4Gamer编辑署名noguchi报道日服运营GaiaX举办「GMからの挑戦状 ～ダイノ ゲッターズ～」，计划2006-05-23—06-06在「カルターナの村」由三名**未记姓名**NPC接收指定恐龙并获get points；下級／中級／上級分档捕获难度与分值不同，积分按**同服务器全体玩家**累计，目标达成时有面向该服玩家奖励的报道。这是单服共同贡献激励，不同于CN2003的个人参赛领奖与已入库JP2005集章；严格未认定NPC姓名/原ID、具体恐龙与分值、阈值、真实发奖或服务器实现。
+
+新四条研究资料记录和规格 `docs/specs/STONEAGE-JP2006-DINO-GETTERS-R108.md`，派生 `research/recovered/STONEAGE-JP2006-DINO-GETTERS-R108.json`、元数据验证器、15个变异反例+1正例及专用CI。来源仅当前网页**文本层**可读，执行环境未取得原HTML字节/历史存档/官方原公告，SHA和真实运行证据保持null；新测试即使绿色也不是byte-exact网页重放或原服事务。无版权网页/图像/程序入Git。候选和main远端CI/保管需以真实后验另记，不提前报成功。
+
+有限止于一份2006媒体报道、四记录、无新增原服实体或产线；需档案官网、NPC交互图、同服积分日志或服务端实证才重开细节。**最高NEXT `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-109`** 换另一具名NPC故事或真实交互视觉，不持续挖单服活动猜阈值。Stage A7 PARTIAL+2 OPEN、Stage B/wiki GATED、TW1同构建NPC/SPR与服务端事务仍OPEN、savedataR79 PAUSED_NON_BLOCKING，整体恢复百分比null。

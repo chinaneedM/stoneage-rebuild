@@ -4771,3 +4771,14 @@ R98新浪S2实际HTML的第一插图表仍含原href与独立缩略图src；本�
 **SOURCE / ANNOUNCEMENT:** [Sina 石器时代大赛公告](https://games.sina.com.cn/zhuanqu/sa/gonggao.shtml) 保存「金暴领取通知(4/11)」等当时组委会口吻公告文本；此为媒体托管文献，未认证华义原域字节或2003网页捕获。正文显示2003-04-11开始向符合参赛标准并积极配合的初赛玩家赠送金暴一只，发放场所表述为「每个服务器最后一个星系村长家的华义大财神处」。相应NPC标签/赛事资格/奖励名称分开登记，不证明实际执行、独立原服NPC ID或发行于台湾1.0。
 
 **SOURCE CONFLICT / OPEN:** 两条复赛奖品选择通知分别写截至2003-04-21 09:00与2003-04-22，原文并存且未获运营方更正，不将其静默校正。此复赛白虎/魔法兽二选一的项目不能和初赛金暴领奖合成同一任务；大会实体/现金奖不当游戏奖励。详细机器对象见 `research/recovered/STONEAGE-CN2003-TOURNAMENT-REWARD-R107.json`，来源等级为网页文本展示（原字节SHA null）、所有原游戏ID null。
+
+
+## 2026-10-24 R108 日本2006跨玩家同服捕宠活动有界证据
+
+以本轮新核远端main `e7ad36ff4862138d0f5fa82e158bf945f21846ec` / tree `4ed6d6ba1c27f14ed82696a601b75cdb493d01e8` 和全部连续性状态为基线，上一R107在主线且已核main近期9项Actions completed/success、无开放PR及in_progress。CURRENT原生Git blob非空，精确sha `87665403d02ddbe9395c4cc98b42ba307e7b31c2`；四长历史全文已读取，未使用旧聊天SHA推断。
+
+按最高NEXT108轮换不同年代/地区。同期2006-05-23 18:16 4Gamer编辑署名noguchi报道日服运营GaiaX举办「GMからの挑戦状 ～ダイノ ゲッターズ～」，计划2006-05-23—06-06在「カルターナの村」由三名**未记姓名**NPC接收指定恐龙并获get points；下級／中級／上級分档捕获难度与分值不同，积分按**同服务器全体玩家**累计，目标达成时有面向该服玩家奖励的报道。这是单服共同贡献激励，不同于CN2003的个人参赛领奖与已入库JP2005集章；严格未认定NPC姓名/原ID、具体恐龙与分值、阈值、真实发奖或服务器实现。
+
+新四条研究资料记录和规格 `docs/specs/STONEAGE-JP2006-DINO-GETTERS-R108.md`，派生 `research/recovered/STONEAGE-JP2006-DINO-GETTERS-R108.json`、元数据验证器、15个变异反例+1正例及专用CI。来源仅当前网页**文本层**可读，执行环境未取得原HTML字节/历史存档/官方原公告，SHA和真实运行证据保持null；新测试即使绿色也不是byte-exact网页重放或原服事务。无版权网页/图像/程序入Git。候选和main远端CI/保管需以真实后验另记，不提前报成功。
+
+有限止于一份2006媒体报道、四记录、无新增原服实体或产线；需档案官网、NPC交互图、同服积分日志或服务端实证才重开细节。**最高NEXT `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-109`** 换另一具名NPC故事或真实交互视觉，不持续挖单服活动猜阈值。Stage A7 PARTIAL+2 OPEN、Stage B/wiki GATED、TW1同构建NPC/SPR与服务端事务仍OPEN、savedataR79 PAUSED_NON_BLOCKING，整体恢复百分比null。
