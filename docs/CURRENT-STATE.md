@@ -18371,3 +18371,16 @@ NEXT仍客户端P1取新增可验证版本。既有六分卷STONEAGE20060616.exe
 
 ### 2026-10-24 大陆5.0完整CAB工作包最终main验收与永久独立收据
 对应实物获取source run40089256861、MSI全413路径重放run40090112644均completed/success；内容main commit48376e95a6eaea6bc5861e75167bdeb2de273310/tree4ecb95c33c90aeaa7db61c091005166ae33526c5的11项相关Actions全部completed/success，四历史文件前缀与永久派生JSON原样保留。独立事实保管 research/recovered/STONEAGE-STONEAGE5-REAL-CAB-PUBLICATION-R1.json 固定main各运行、双source job、原CAB SHA/413文件全量、Git blob和旧前缀。两份30天artifact仅取得API身份未独立下载ZIP复核，ZIP SHA与 crosswalk原JSON额外SHA留null，不虚报闭合。首次真实提取不等于长期留存商有原件或原服任务数据；下一NEXT仍P2资源容器记录级差异，Stage A7 PARTIAL+2 OPEN、Stage B/wiki gated、R79暂停、整体百分比null。
+
+
+## 2026-10-24 — P2A 原始图像与动画内容记录级跨版继承验收（台湾1.0→大陆5.0）
+
+启动fresh远端main 849e9bb14b6f0b35bf5a67302a8691bdf10467c0/tree be577930464b055df4ef5fcb4fb37360e6798d9c；完整协议、README、CURRENT原生Git blob ead66853c13e19ea22ba618b00a4cc086108ef0f及设计/路线/历史/来源、Actions重新读取。上述旧CURRENT非空历史完整作为本条前缀保留，未从旧聊天SHA判断当前进度。
+
+本包为 CLIENT-ARTIFACT-ACQUISITION-AND-CROSS-VERSION-DEDUP-01/P2A，实物重取TW1官方零售盘RAR/原光盘轨道及CN5保存光盘完整DATA1.CAB，严格核来源MD5/SHA1/CAB SHA256；大陆5.0 413文件全量按已存完备清单逐哈希吻合；双方ADRN/REAL/SPRADRN/SPR四容器逐SHA匹配历史原始来源。真正source run40091960688/job120866302979完成success，而不是仅跑历史元数据模型；生成独立Git派生 reports research/recovered/STONEAGE-TW10-CN50-REAL-RECORD-DIFF-R1.json blob7eef214be6f6b4f70e96c5c04c5fe31dd36165b3，source HEAD18f9a50f3af402d1c8447bd274fd830ee33d1a3d。再次核取得到大陆5.0真实REAL(1,102,755,808B)/ADRN(24,255,760B)/SPR(7,145,946B)/SPRADRN(14,220B)原字节，不在公开Git留版权资源或程序。源artifact12559626425仅API身份已见，ZIP自身摘要未独立下载验算，不捏造其hash。
+
+**真正内容继承结论**：台湾1.0 ADRN/REAL位图125,996条，在大陆5.0的303,197条记录中所有原位图ID都存在，而且相同ID的完整RD块SHA、尺寸/绘图偏移及80B ADRN记录全部相同；新增独立资源ID177,201，老ID缺失0，同ID载荷改变0。台湾1.0 SPRADRN/SPR动画464组，在大陆5.0的1,185组中所有原ID动画段逐SHA相同、帧计数/动画数同；额外资源ID721，老ID缺失0，同ID段改变0。双方此批资源族均无重复ID、异常越界或未解析项。所有数字是**客户端物理资源记录**，不是已恢复种宠物/NPC/地图数，更不能从内部版本名得知全部新增发行时间。
+
+新增源码/测试 docs/specs/STONEAGE-TW10-CN50-REAL-RESOURCE-INHERITANCE-R1.md、tools/stoneage_tw10_cn50_record_resource_diff.py、tools/stoneage_tw10_cn50_resource_acquisition.py、tools/stoneage_tw10_cn50_record_report_verify.py 及各独立正反用例，source run40091960688与永久派生源pin/负例复验run40092558627均completed/success；旧1.0→混合2.5的125,996/464资源前缀比较保留为独立横向证据，不能把混合2.5叫纯净官方发行版。本包仅证明存在一套5.0存留资源的实际物理扩展，尚缺原盘压模独立认证、资源ID到真实具名宠物/NPC/人物/地图的同构建选择器、原服master/任务脚本；无原字节跨会话持久仓。
+
+**最高NEXT CLIENT-RESOURCE-ENTITY-BRIDGE-P2B**：以真实新增RD/SPR资源ID及现有1.0和8.5原索引，优先找可验证的同构建资源选择链/具名视觉与实际内容映射；确有新增来源时对8.5或其它官方同版容器做记录级三方差异，交付至少一种具体可引用的形象/动画类别或明确停点。连续两轮仅增加大数字而无内容归属需重排队列；禁止把资源号等同物种/任务或从网页主观命名。JSS/韩国老版载体继续有界取证，DD-028四档任务归档不变。Stage A7 PARTIAL+2 OPEN，Stage B/wiki GATED，savedataR79 PAUSED_NON_BLOCKING，整体复原百分比null。源候选成功不提前冒称main同HEAD成功；最终合并与接续验收须后验。
