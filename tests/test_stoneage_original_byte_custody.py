@@ -2,7 +2,7 @@
 import copy
 import json
 import unittest
-from tools.stoneage_original_byte_custody import ROOT, REPORT, validate, validate_report
+from tools.stoneage_original_byte_custody import ROOT, REPORT, RECEIPT, validate, validate_report, validate_receipt
 
 
 class OriginalByteCustodyTests(unittest.TestCase):
@@ -43,3 +43,13 @@ class OriginalByteCustodyTests(unittest.TestCase):
         report['archive_digest_gates']['bridge_combined_sha256'] = '0' * 64
         with self.assertRaises(ValueError):
             validate_report(report)
+
+    def test_missing_prefix_and_unretained_payload_overclaim_rejected(self):
+        receipt = json.loads((ROOT / RECEIPT).read_bytes())
+        receipt['historical_prefixes'].pop('docs/CURRENT-STATE.md')
+        with self.assertRaises(ValueError):
+            validate_receipt(receipt)
+        receipt = json.loads((ROOT / RECEIPT).read_bytes())
+        receipt['boundaries']['original_source_payload_retained_after_runner_cleanup'] = True
+        with self.assertRaises(ValueError):
+            validate_receipt(receipt)
