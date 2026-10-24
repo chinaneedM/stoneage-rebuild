@@ -1,0 +1,119 @@
+{
+  "schema": "stoneage.cn2003.tournament_reward_acceptance.r107",
+  "date": "2026-10-24",
+  "task": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-107",
+  "source_commit": {
+    "sha": "eb1c57edc0952434de11bcf1d186fbf09fa70697",
+    "tree_sha": "a3fac618a26cbc1efcf1f33a9dda7b7bff2b4b51",
+    "parent_sha": "4bda0fc8a49a9b01be519f735761362bdf3bc53b"
+  },
+  "candidate_branch": "agent/cn2003-tournament-reward-r107-20261024",
+  "main_integration": {
+    "method": "EXPECTED_SHA_NONFORCED_FAST_FORWARD",
+    "verified_head_sha": "eb1c57edc0952434de11bcf1d186fbf09fa70697",
+    "verified_tree_sha": "a3fac618a26cbc1efcf1f33a9dda7b7bff2b4b51"
+  },
+  "content_pins": [
+    {
+      "path": ".github/workflows/verify-stoneage-cn2003-tournament-r107.yml",
+      "git_blob": "02272be89d7a3128e2ec399fcd0d31e04632588a"
+    },
+    {
+      "path": "docs/CURRENT-STATE.md",
+      "git_blob": "34e0c60655bde13dc212cdf624acd19711c301df"
+    },
+    {
+      "path": "docs/HISTORICAL-TIMELINE.md",
+      "git_blob": "84fc1cb0d46e7d5f8d3ed87ef2e5c5b0ded69cd9"
+    },
+    {
+      "path": "docs/RESTORATION-ROADMAP-R2.md",
+      "git_blob": "61c1e2b5b27b1e1705cd21c8ba630db6170f81d1"
+    },
+    {
+      "path": "docs/SOURCE-REGISTRY.md",
+      "git_blob": "8599f1232295b77793c890009eabd346aa7c5bbf"
+    },
+    {
+      "path": "docs/specs/STONEAGE-CN2003-TOURNAMENT-REWARD-R107.md",
+      "git_blob": "f2b4bfa12e00b86d4859b8efc47b9c174d5d2c68"
+    },
+    {
+      "path": "research/recovered/STONEAGE-CN2003-TOURNAMENT-REWARD-R107.json",
+      "git_blob": "2f4f393d0858eb6c93bb3a5ed5e0d42790c85108"
+    },
+    {
+      "path": "tests/test_stoneage_cn2003_tournament_reward_r107.py",
+      "git_blob": "5e84606b7f05b78774c998064738366000c4fbdb"
+    },
+    {
+      "path": "tools/stoneage_cn2003_tournament_reward_r107.py",
+      "git_blob": "328522028115bab4d3e065e69218df0968fa29f0"
+    }
+  ],
+  "commit_diff": {
+    "changed_files": 9,
+    "deleted_lines": 0,
+    "prior_history_replaced": false,
+    "continuity_files_append_only": true
+  },
+  "actions": {
+    "candidate": {
+      "runs": [
+        40046329456,
+        40046329478,
+        40046329523,
+        40046329452,
+        40046329348,
+        40046329441,
+        40046329366,
+        40046329380,
+        40046329437,
+        40046329451,
+        40046329423
+      ],
+      "completed_success": 11,
+      "dedicated_run": 40046329523,
+      "dedicated_job": 120728785388
+    },
+    "main": {
+      "runs": [
+        40046390606,
+        40046390497,
+        40046390523,
+        40046390559,
+        40046390491,
+        40046390554,
+        40046390544,
+        40046390509,
+        40046390496,
+        40046390514,
+        40046390551,
+        40046390526
+      ],
+      "completed_success": 12,
+      "dedicated_run": 40046390497,
+      "dedicated_job": 120728979044
+    },
+    "distinct_runs_accepted": 23
+  },
+  "source_custody_boundaries": {
+    "url": "https://games.sina.com.cn/zhuanqu/sa/gonggao.shtml",
+    "current_rendered_web_text_attested": true,
+    "original_html_bytes_captured": false,
+    "original_html_sha256": null,
+    "source_time_capsule_authenticated": false,
+    "actual_tournament_npc_or_pet_delivery_verified": false,
+    "original_game_ids_accepted": false,
+    "raw_source_zip_retained": false,
+    "ci_validates_metadata_only": true,
+    "web_assertions_can_require_future_correction": true
+  },
+  "continuity": {
+    "highest_next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-108",
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b_and_wiki": "GATED",
+    "savedata_r79": "PAUSED_NON_BLOCKING",
+    "overall_restoration_percent": null
+  }
+}

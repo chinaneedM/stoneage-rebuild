@@ -18117,3 +18117,10 @@ GitHub重新核main `b4f5a28a09efa40bfcd60401f0885c9a6f270f5b` / tree `6df1fb27f
 交付研究JSON `research/recovered/STONEAGE-CN2003-TOURNAMENT-REWARD-R107.json`、中文规格 `docs/specs/STONEAGE-CN2003-TOURNAMENT-REWARD-R107.md`、源边界校验器、九项Python反例/正例及专用CI；一页三个公告块、四条版本限定对象（赛事NPC、奖励宠物名、初赛领取条件、复赛申请），非四个已运行游戏对象。没有原HTML/资产/程序入Git。候选/main实际CI、远端tree与历史前缀需后验，不提前报成功。
 
 最高NEXT `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-108`：轮换另一版本具名NPC故事/奖励或实际交互画面，优先带原官网字节/档案与可复核任务条件；不继续填赛事报表。Stage A7 PARTIAL＋2 OPEN、B/wiki GATED、TW1原实体/服务器事务仍OPEN、savedataR79 PAUSED_NON_BLOCKING、整体百分比null。
+
+
+### R107 远端候选／主线双端验收（2026-10-24）
+
+候选 `agent/cn2003-tournament-reward-r107-20261024` 内容commit `eb1c57edc0952434de11bcf1d186fbf09fa70697` / tree `a3fac618a26cbc1efcf1f33a9dda7b7bff2b4b51`，在主线原HEAD `4bda0fc8a49a9b01be519f735761362bdf3bc53b` 上前进1/落后0、九文件0删除；四份长历史只追加。候选本commit自身11项Actions completed/success，包括R107专用run40046329523/job120728785388；fresh main未改变后以expected_sha非force快进。主线同内容commit自身12项Actions completed/success，包括R107专用run40046390497/job120728979044，远端HEAD/tree和九个文件Git blob一致。总计23个不同运行。永久收据 `research/recovered/STONEAGE-CN2003-TOURNAMENT-REWARD-ACCEPTANCE-R107.json` 固定内容、候选/主线运行、实际专用job与九个文件原生SHA；不伪造原始网页SHA、ZIP保管或服务器日志。
+
+本轮新增的是2003赛事限定华义大财神NPC/金暴领取及互相冲突的复赛二日期文本，**历史网页原始HTML字节并未取得**。专用CI只验元数据边界与九个本地正反例，不能称原页实际复取、宠物到账、台湾1.0实体绑定、完整任务已复原。最高NEXT R108，Stage A7 PARTIAL＋2 OPEN、B/wiki GATED、R79继续暂停、整体百分比null。
