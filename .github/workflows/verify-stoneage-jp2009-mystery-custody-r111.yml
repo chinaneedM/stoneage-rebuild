@@ -1,0 +1,18 @@
+name: Verify R111 permanent source boundary and nine Git blob identities
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-JP2009-MYSTERY-DUNGEON-ACCEPTANCE-R111.json'
+      - 'tools/stoneage_jp2009_mystery_custody_r111.py'
+      - 'tests/test_stoneage_jp2009_mystery_custody_r111.py'
+      - '.github/workflows/verify-stoneage-jp2009-mystery-custody-r111.yml'
+  workflow_dispatch:
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check immutable blobs, source boundaries and negative tests
+        run: |
+          python tools/stoneage_jp2009_mystery_custody_r111.py
+          python -m unittest discover -s tests -p test_stoneage_jp2009_mystery_custody_r111.py -v
