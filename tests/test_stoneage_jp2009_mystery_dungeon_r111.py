@@ -1,0 +1,35 @@
+import copy, importlib.util, json, unittest
+from pathlib import Path
+ROOT=Path(__file__).resolve().parents[1]
+spec=importlib.util.spec_from_file_location("r111",ROOT/"tools/stoneage_jp2009_mystery_dungeon_r111.py")
+mod=importlib.util.module_from_spec(spec)
+spec.loader.exec_module(mod)
+original=json.loads(mod.PATH.read_text(encoding="utf-8"))
+class TestR111(unittest.TestCase):
+    def test_original(self):
+        self.assertTrue(mod.verify(copy.deepcopy(original)))
+    def bad(self,f):
+        d=copy.deepcopy(original); f(d)
+        with self.assertRaises((AssertionError,KeyError,TypeError)): mod.verify(d)
+    def test_fake_html_hash(self):self.bad(lambda d:d["source"].__setitem__("original_2009_html_sha256","ab"*32))
+    def test_fake_page_bytes(self):self.bad(lambda d:d["source"].__setitem__("actual_media_html_bytes",5000))
+    def test_claim_exact_build(self):self.bad(lambda d:d["historical_version"].__setitem__("specific_client_build","2009_10"))
+    def test_early_identity(self):self.bad(lambda d:d["historical_version"].__setitem__("tw10_1999_equivalence",True))
+    def test_claim_live(self):self.bad(lambda d:d["historical_version"].__setitem__("server_script_authenticated",True))
+    def test_wrong_room_count(self):self.bad(lambda d:d["gameplay"].__setitem__("floor_or_room_count",11))
+    def test_ten_maps(self):self.bad(lambda d:d["records"][1].__setitem__("is_ten_game_maps_proven",True))
+    def test_no_restart(self):self.bad(lambda d:d["gameplay"]["failure_branch"].__setitem__("restart","RETRY_CURRENT_ROOM"))
+    def test_wrong_destination(self):self.bad(lambda d:d["gameplay"]["failure_branch"].__setitem__("destination","ROOM_ONE"))
+    def test_fake_questions(self):self.bad(lambda d:d["gameplay"].__setitem__("puzzle_bank_or_exact_answers",["foo"]))
+    def test_fake_reward(self):self.bad(lambda d:d["gameplay"]["success_branch"].__setitem__("reward_item_ids",[9]))
+    def test_all_combat_absent(self):self.bad(lambda d:d["gameplay"]["encounters"].__setitem__("all_combat_disabled_proven",True))
+    def test_entry_id(self):self.bad(lambda d:d["gameplay"].__setitem__("original_npc_id",3))
+    def test_fake_picture_id(self):self.bad(lambda d:d["media_visual"].__setitem__("this_thumbnail_shows_lete_proven",True))
+    def test_fake_visual_hash(self):self.bad(lambda d:d["media_visual"].__setitem__("actual_image_sha256","abc"))
+    def test_fake_image_permission(self):self.bad(lambda d:d["media_visual"].__setitem__("republication_permission",True))
+    def test_fake_npc_id(self):self.bad(lambda d:d["records"][0].__setitem__("npc_original_id",100))
+    def test_fake_reward_grant(self):self.bad(lambda d:d["records"][4].__setitem__("grant_verified",True))
+    def test_remove_record(self):self.bad(lambda d:d["records"].pop())
+    def test_missing_source_ref(self):self.bad(lambda d:d["records"][0].__setitem__("source_refs",[]))
+    def test_unbounded_percent(self):self.bad(lambda d:d["continuation"].__setitem__("overall_restoration_percent",100))
+if __name__=="__main__":unittest.main()

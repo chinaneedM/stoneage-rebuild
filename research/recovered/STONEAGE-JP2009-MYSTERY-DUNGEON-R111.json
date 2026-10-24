@@ -1,0 +1,226 @@
+{
+  "schema": "stoneage.jp2009.mystery_dungeon.r111",
+  "task": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-111",
+  "date": "2026-10-24",
+  "baseline": {
+    "head": "554a0ec1ab53823496eee75ebe8f8c58ef7f4efb",
+    "tree": "682b54a754968f84d994ba866da1d6f12d39e944"
+  },
+  "scope": "ONE_2009_PUBLISHER_PRESS_RELEASE_REPRODUCTION_WITH_BOUNDED_SINGLE_THUMBNAIL_VIEW",
+  "source": {
+    "id": "S1",
+    "url": "https://www.4gamer.net/games/013/G001377/20091019025/",
+    "title": "「ストーンエイジ」10周年イベント第3弾。10の謎を解き明かせ！",
+    "media_timestamp": "2009-10-19 19:49",
+    "publisher_announced": "デジパーク",
+    "publisher_report_date": "2009-10-19",
+    "source_rank": "CONTEMPORARY_PUBLISHER_PRESS_TEXT_REPRODUCED_AT_4GAMER",
+    "media_says_verbatim_release": true,
+    "live_opened_article_as_text": true,
+    "live_opened_article_timestamp": "2026-10-24",
+    "original_2009_html_capture": null,
+    "original_2009_html_sha256": null,
+    "actual_media_html_bytes": null,
+    "actual_media_html_sha256": null,
+    "operator_hosted_original_page": null,
+    "source_text_excerpt_republication_approved": false
+  },
+  "historical_version": {
+    "region": "JP",
+    "edition": "2009_DigiPark_StoneAge",
+    "specific_client_build": null,
+    "tw10_1999_equivalence": false,
+    "server_script_authenticated": false
+  },
+  "event": {
+    "headline": "生誕10周年イベント 第三弾",
+    "dungeon_name": "ミステリーダンジョン",
+    "scheduled_start": "2009-10-20",
+    "scheduled_end": "2009-11-04",
+    "start_trigger": "AFTER_WEEKLY_MAINTENANCE",
+    "end_trigger": "BEFORE_WEEKLY_MAINTENANCE",
+    "chronological_status": "ANNOUNCED_SCHEDULE_NOT_DEPLOYMENT_LOG",
+    "other_first_second_phase_events_not_imported": true
+  },
+  "gameplay": {
+    "entrance_npc_as_written": "レテ",
+    "entrance_location": "チャットルーム",
+    "interaction": "TALK_TO_NPC_FOR_DUNGEON_TRANSFER",
+    "floor_or_room_count": 10,
+    "room_number_semantics": "TEN_ROOMS_ANNOUNCED_NOT_TEN_SEPARATE_MAP_PAYLOADS",
+    "puzzle_progression": "ANSWER_ROOM_QUESTION_TO_ADVANCE",
+    "puzzle_theme_examples": [
+      "STONEAGE_KNOWLEDGE",
+      "IN_SCENE_WHO_DID_IT_MYSTERY"
+    ],
+    "puzzle_bank_or_exact_answers": null,
+    "failure_branch": {
+      "condition": "ANSWER_INCORRECT",
+      "destination": "チャットルーム",
+      "restart": "BEGIN_FROM_FIRST_ROOM"
+    },
+    "success_branch": {
+      "condition": "ALL_TEN_QUESTIONS_CORRECT",
+      "reward": "UNSPECIFIED_TREASURE",
+      "reward_item_ids": null
+    },
+    "encounters": {
+      "claim": "NO_HOSTILE_DINOSAUR_SPAWNS_INSIDE_MYSTERY_DUNGEON",
+      "non_dinosaur_battles_excluded": false,
+      "all_combat_disabled_proven": false
+    },
+    "reported_participation": "どなたでも参加することができます",
+    "exact_entry_eligibility_predicate": null,
+    "actual_portal_working_verified": false,
+    "original_npc_id": null,
+    "actual_map_floor_ids": null,
+    "original_server_transitions": null
+  },
+  "media_visual": {
+    "one_link_actually_opened": "https://www.4gamer.net/games/013/G001377/20091019025/TN/002.jpg",
+    "kind": "MEDIA_THUMBNAIL_ILLUSTRATION_OR_GAMEPLAY_SHOT",
+    "observed_through_retrieval_tool": true,
+    "actual_image_bytes_local": null,
+    "actual_image_sha256": null,
+    "caption_group_mentions_lete": true,
+    "this_thumbnail_shows_lete_proven": false,
+    "in_game_screenshot_same_build_proven": false,
+    "original_sprite_or_bitmap_id": null,
+    "republication_permission": null,
+    "original_art_committed": false
+  },
+  "records": [
+    {
+      "record_id": "jp-digipark-2009:r111:lete-npc",
+      "entity_type": "NAMED_SOURCE_ENTRANCE_NPC_NOT_ORIGINAL_MASTER",
+      "collection": "npcs",
+      "version_profile": "LATER_OFFICIAL:JP_DIGIPARK_2009_TENTH_ANNIVERSARY_NOT_EARLY_TW10",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "PUBLISHER_PRESS_TEXT_REPRODUCED_IN_CONTEMPORARY_MEDIA_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "name_as_written": "レテ",
+      "service": "MYSTERY_DUNGEON_ENTRY",
+      "reported_location": "チャットルーム",
+      "npc_original_id": null,
+      "npc_coordinate": null,
+      "visual_name_identity_verified": false
+    },
+    {
+      "record_id": "jp-digipark-2009:r111:mystery-dungeon-place",
+      "entity_type": "SOURCE_NAMED_2009_TEMPORARY_DUNGEON_NOT_TW10_MAP",
+      "collection": "maps",
+      "version_profile": "LATER_OFFICIAL:JP_DIGIPARK_2009_TENTH_ANNIVERSARY_NOT_EARLY_TW10",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "PUBLISHER_PRESS_TEXT_REPRODUCED_IN_CONTEMPORARY_MEDIA_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "name_as_written": "ミステリーダンジョン",
+      "reported_room_count": 10,
+      "original_map_dat": null,
+      "independent_floor_id_count": null,
+      "is_ten_game_maps_proven": false
+    },
+    {
+      "record_id": "jp-digipark-2009:r111:puzzle-state-machine",
+      "entity_type": "SOURCE_DESCRIBED_PUZZLE_FLOW_NOT_SCRIPT",
+      "collection": "quests",
+      "version_profile": "LATER_OFFICIAL:JP_DIGIPARK_2009_TENTH_ANNIVERSARY_NOT_EARLY_TW10",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "PUBLISHER_PRESS_TEXT_REPRODUCED_IN_CONTEMPORARY_MEDIA_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "progress": "CORRECT_TO_NEXT_ROOM",
+      "fail": "WRONG_BACK_TO_CHATROOM_AND_RESTART",
+      "reward_condition": "CLEAR_ALL_TEN",
+      "question_bank": null,
+      "actual_server_script": null,
+      "quest_completion_persistence": null
+    },
+    {
+      "record_id": "jp-digipark-2009:r111:wild-encounter-boundary",
+      "entity_type": "SOURCE_DESCRIBED_NO_DINOSAUR_ENCOUNTERS",
+      "collection": "quests",
+      "version_profile": "LATER_OFFICIAL:JP_DIGIPARK_2009_TENTH_ANNIVERSARY_NOT_EARLY_TW10",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "PUBLISHER_PRESS_TEXT_REPRODUCED_IN_CONTEMPORARY_MEDIA_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "wild_dinosaur_encounters_reported": false,
+      "all_battles_absent_proven": false,
+      "participation_as_written": "どなたでも参加することができます",
+      "minimum_level_proven": null
+    },
+    {
+      "record_id": "jp-digipark-2009:r111:unnamed-reward",
+      "entity_type": "SOURCE_DESCRIBED_UNSPECIFIED_EVENT_TREASURE",
+      "collection": "items",
+      "version_profile": "LATER_OFFICIAL:JP_DIGIPARK_2009_TENTH_ANNIVERSARY_NOT_EARLY_TW10",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "PUBLISHER_PRESS_TEXT_REPRODUCED_IN_CONTEMPORARY_MEDIA_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "reward_label": "報酬",
+      "actual_item_name": null,
+      "quantity": null,
+      "drop_probability": null,
+      "original_item_ids": null,
+      "grant_verified": false
+    },
+    {
+      "record_id": "jp-digipark-2009:r111:thumbnail-caption",
+      "entity_type": "MEDIA_IMAGE_URL_WITH_UNVERIFIED_NPC_IDENTITY",
+      "collection": "screens",
+      "version_profile": "LATER_OFFICIAL:JP_DIGIPARK_2009_TENTH_ANNIVERSARY_NOT_EARLY_TW10",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "PUBLISHER_PRESS_TEXT_REPRODUCED_IN_CONTEMPORARY_MEDIA_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "image_url": "https://www.4gamer.net/games/013/G001377/20091019025/TN/002.jpg",
+      "media_thumbnail_opened": true,
+      "original_image_sha256": null,
+      "pixel_to_named_npc_binding": null,
+      "client_build": null
+    }
+  ],
+  "rejected_inferences": [
+    "the number of rooms equals independently recovered original map DAT floors",
+    "R111 reconstructs all ten puzzle questions or their accepted answers",
+    "an incorrect answer resets only a room and keeps deeper progress",
+    "no dinosaurs means all possible battles or future mechanisms are disabled",
+    "the generic reward proves a particular named item or probability",
+    "a media thumbnail establishes the NPC Lete sprite, visual identity or TW1.0 model",
+    "a 2009 reproduced press statement certifies real server deployment",
+    "an announced accessible-for-all event proves an unconditional runtime predicate",
+    "the 2009 NPC or event existed in Japan 1999 or Taiwan 1.0",
+    "2009 related first/second phase attractions are new R111 entities",
+    "metadata checks constitute historical source-byte replay or actual game execution"
+  ],
+  "continuation": {
+    "status": "SOURCE_TEXT_ATTESTED_OPERATOR_RELEASE_REPRODUCTION_SOURCE_BYTES_OPEN",
+    "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-112",
+    "next_focus": "choose earlier first-party named story NPC or source-identified original UI encounter; no further speculative puzzle bank or 2009 reward expansion",
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b_and_wiki": "GATED",
+    "savedata_r79": "PAUSED_NON_BLOCKING",
+    "overall_restoration_percent": null
+  }
+}
