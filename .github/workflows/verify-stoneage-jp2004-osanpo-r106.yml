@@ -1,0 +1,32 @@
+name: Verify R106 official pet walking skill and negative eligibility rules
+on:
+  push:
+    paths:
+      - 'tools/stoneage_jp2004_osanpo_r106.py'
+      - 'tests/test_stoneage_jp2004_osanpo_r106.py'
+      - 'research/recovered/STONEAGE-JP2004-OSANPO-SOURCE-R106.json'
+      - 'research/recovered/STONEAGE-JP2004-OSANPO-LOCAL-REPLAY-R106.json'
+      - 'docs/specs/STONEAGE-JP2004-OSANPO-R106.md'
+      - '.github/workflows/verify-stoneage-jp2004-osanpo-r106.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  official-manual:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest tests.test_stoneage_jp2004_osanpo_r106 -v
+      - name: Reacquire exact archived operator manual and compare derived report
+        run: |
+          python -m tools.stoneage_jp2004_osanpo_r106 --write /tmp/r106-replay.json
+          cmp /tmp/r106-replay.json research/recovered/STONEAGE-JP2004-OSANPO-LOCAL-REPLAY-R106.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: r106-osanpo-derived-manual-replay
+          path: /tmp/r106-replay.json
+          retention-days: 30

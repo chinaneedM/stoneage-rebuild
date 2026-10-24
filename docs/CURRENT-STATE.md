@@ -18082,3 +18082,16 @@ GitHub新核main `33b953c56fec4fc9bc36d30738a83c6041d02fa6` / tree `58173bfc7077
 永久CI-CANDIDATE/CI-MAIN原报与CUSTODY（Git blob `efeb7427d37c650d32e084cb6df266326af61a68`，SHA256 `5624df1c0ffd001ca051d42d14d9b15a20d5efbfc6193bac51f694c6e37fef0f`）固定12证据pin、23运行、源HEAD/tree/job/artifact/ZIP和四历史前缀。独立验收器锁整份收据及原报、拒绝等长损坏/重算pin/错commit/错ZIP/正文或运行伪提升。新七＋保管四＋旧设施十一共22不同本地测试全部通过；源远端七测试不倒称十一，最终保管提交自身Actions按真实后验。十份本轮原HTML输入及复制件逐份验哈希删除，版权原文/像素/程序未入Git。
 
 新增成果为两运营方原页的具名卡拉村分批设施公告关联、征名计划/结果索引的时态边界，以及独立归属的同期媒体地名/巴士8人记述。四公告详情仍404、具名NPC/原地图payload/价表/实际运行未闭合，不计新恢复地图或整体百分比。最高NEXT106按上一条转已观察官方宠物「おさんぽ」行为手册，Stage A7 PARTIAL+2 OPEN，B/wiki GATED，savedataR79暂停，整体百分比null。
+
+
+### R106 日本2004官方宠物伴随技与学习/覆盖条件 — 2026-10-24（Asia/Shanghai）
+
+GitHub重新核main `b4f5a28a09efa40bfcd60401f0885c9a6f270f5b` / tree `6df1fb27fdc7ddf29923c80e7df55da690bd7a58`，525分支6页、0开放PR/0 in_progress、旧queued37642417333保留；同HEAD候选9/main10共19实际success，tree5424完整无AGENTS。八启动文件完整严格UTF8与fresh exact checkout相等，CURRENT旧2548056B/SHA256 `7d13bf98ec290e12cc83988e71b52f9d1dfe47ec87774880ac8e0572ab646d37`。按最高NEXT106转已观察原官方手册，未据旧聊天SHA恢复。
+
+实取原官网manual_pet_03.html实际档案20041106005417，6840B/CP932严格/SHA256 `7a461f45d5a5a38892afeaf5257233bf909fcfcfe1b1f206f604fd2b30d1c299`。两相关正文段支持有限技能容量、饲育人员等教授、不能直接遗忘但能被另一技覆盖、不能调换顺序；料理/加工为原野技能例子非全集。具名「おさんぽ」用于宠物伴随角色在原野移动，某有进入条件的宠物店教授；忠诚度低或邮件状态禁用。原数值门槛、店/NPC名、费用、物种/槽数、动画/寻路/速度与完整成功条件均null；不移植大陆约70/20/10阈值，不与大陆战斗旅途伙伴并名。
+
+保存九个定性三值组合，五触发文字禁用、四充分条件未证，均为推导规格非九次原服执行；两禁用项为假不能返回可用成功。两研究记录skills/tutorials七必填、原ID null、非发行授权。正文三个图引用和技能图八area仅HTML标注；深色/白色含义不当实际像素、游戏槽数/布局。真实伴随图引用pet_osanpo.gif一次档案请求404，实测尺寸null。原链接#osanpo在该页无真实id/命名锚点，仅末尾div误用usemap，不依赖其定位或当原生ID。
+
+交付SOURCE/LOCAL及LOCAL-AUDIT、中文规格、源级工具、十项单元及专用CI。新十＋旧大陆训练师六本地16项全通过；另次网络取页与初取及LOCAL逐字一致。独立regex/entity两段摘要与DOM相等，真实原页十个极性/条件/场合变异在移除原字节校验时仍拒绝；不冒称CI重新执行人工审计/404探测。原HTML/图片/程序不入Git。候选/main及派生工件永久保管按后验，不提前报绿。
+
+最高NEXT `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-107` 转另一版本具名NPC任务/奖励正文或目标交互画面，优先运营方原文，先查重既有卡坦、レン/ワイト及22域来源；一来源包/最多两张明确归属图止步，无新增实源则转材料缺口评估，不连续扩日服手册相邻页/村庄公告。Stage A7 PARTIAL+2 OPEN，B/wiki GATED，savedataR79暂停，整体百分比null。

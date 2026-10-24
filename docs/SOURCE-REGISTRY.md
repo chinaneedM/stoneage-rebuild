@@ -8576,3 +8576,8 @@ SOURCE `research/recovered/STONEAGE-CN20-NAMED-PET-VISUAL-SOURCE-R104.json` 固�
 ### R105 日本2004官方村庄公告索引与同期交通容量记述 — 2026-10-24
 
 接纳精确https://web.archive.org/web/20041207044457id_/http://www.stoneage.to/main_index.html (17214B SHA256 df26f4f500fcdbb7decaa81b420e7d016e91f54ad04a41c2e1394eb9db7e27e0)、https://web.archive.org/web/20041103111115id_/http://stoneage.to/cgi/namecon_finish.html (2775B SHA256 5406a60aac47f19bac95afd1c0fc6b593f0983aa00d786ac6e7c1278f289563b)、https://game.watch.impress.co.jp/docs/20041112/on1112.htm (45582B SHA256 c04ac7eb7c03a64cfbbb5cbd0d2f112b38ea789ff19561206c3e6fa1ee3a64dd)。前二CP932严格，媒体当前UTF8严格；官网标题不当缺失详情、征名计划不当执行、媒体不当官方补丁正文。三设施图各404/API429/CDX空；四详情两主机各404，另pach_021也404，不猜其他路径。派生SOURCE/LOCAL与工具/七测试及规格，不保存原HTML/像素；既有设施、地理、封印区域与七字段契约四父原样锁定。
+
+
+### R106 日服2004宠物技能官方原手册 — 2026-10-24
+
+接纳https://web.archive.org/web/20041106005417id_/http://stoneage.to/gameguid/manual_pet_03.html ，实际6840B，CP932严格，SHA256 7a461f45d5a5a38892afeaf5257233bf909fcfcfe1b1f206f604fd2b30d1c299，Git blob a6626e2186812674c47bc10861ae291483f4c33b。两正文单元规范化摘要3c8d94b822dbfc995876c5bc991c503a84b34f45e1b1373197fd5c7fc9687ee4和d14719e6b1ba76a5117684279a02deff8cd960f8e8b0e0cfc5e86033b937c833。原图pet_osanpo.gif同参考时点HTTP404，只取得HTML声明200×127，实际尺寸null。八技能area与三图片引用不冒充像素；#osanpo无锚点。四父为R105来源、旧大陆2004训练师、七字段档案契约及R100 parser，保持旧冲突/阈值独立。派生SOURCE/LOCAL/LOCAL-AUDIT及十测试/工具/规格/CI，不保存原HTML/图/程序；原始执行0。

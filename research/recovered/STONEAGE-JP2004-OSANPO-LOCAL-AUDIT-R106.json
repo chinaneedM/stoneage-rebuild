@@ -1,0 +1,66 @@
+{
+  "schema": "stoneage.jp2004.osanpo_independent_local_audit.r106",
+  "page_identity": {
+    "bytes": 6840,
+    "sha256": "7a461f45d5a5a38892afeaf5257233bf909fcfcfe1b1f206f604fd2b30d1c299",
+    "git_blob": "a6626e2186812674c47bc10861ae291483f4c33b"
+  },
+  "sections": [
+    {
+      "topic": "SKILL_LEARNING_AND_OVERWRITE",
+      "normalized_sha256": "3c8d94b822dbfc995876c5bc991c503a84b34f45e1b1373197fd5c7fc9687ee4",
+      "method": "INDEPENDENT_WIDTH_SCOPED_REGEX_STRIP_AND_ENTITY_DECODE"
+    },
+    {
+      "topic": "OSANPO_FIELD_COMPANIONSHIP",
+      "normalized_sha256": "d14719e6b1ba76a5117684279a02deff8cd960f8e8b0e0cfc5e86033b937c833",
+      "method": "INDEPENDENT_WIDTH_SCOPED_REGEX_STRIP_AND_ENTITY_DECODE"
+    }
+  ],
+  "image_reference_metadata_matches": true,
+  "actual_osanpo_fragment_anchor_exists": false,
+  "source_mutations": [
+    {
+      "case": "LOYALTY_POLARITY",
+      "rejected_without_raw_byte_check": true
+    },
+    {
+      "case": "MAIL_STATE_RELABEL",
+      "rejected_without_raw_byte_check": true
+    },
+    {
+      "case": "OVERWRITE_DENIAL",
+      "rejected_without_raw_byte_check": true
+    },
+    {
+      "case": "FORGET_ALLOWED",
+      "rejected_without_raw_byte_check": true
+    },
+    {
+      "case": "REORDER_ALLOWED",
+      "rejected_without_raw_byte_check": true
+    },
+    {
+      "case": "FIELD_SKILL_TURNED_BATTLE",
+      "rejected_without_raw_byte_check": true
+    },
+    {
+      "case": "SPECIAL_SHOP_GATE_REMOVED",
+      "rejected_without_raw_byte_check": true
+    },
+    {
+      "case": "CAPACITY_UNLIMITED",
+      "rejected_without_raw_byte_check": true
+    },
+    {
+      "case": "ADVANTAGE_REVERSED",
+      "rejected_without_raw_byte_check": true
+    },
+    {
+      "case": "FIELD_EXAMPLE_REPLACED",
+      "rejected_without_raw_byte_check": true
+    }
+  ],
+  "test_inputs": "ACTUAL_DOWNLOADED_PAGE_MUTATED_LOCALLY_NO_PROPRIETARY_HTML_RETAINED",
+  "negative_cases_are_original_server_executions": false
+}
