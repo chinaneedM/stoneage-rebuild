@@ -18201,3 +18201,11 @@ S1 4Gamer 2004-12-15 21:03「石器時代MMORPG『ストーンエイジ』の年
 交付docs/specs/STONEAGE-CN25-SPIRIT-KING-STORY-R113.md、research/recovered/STONEAGE-CN25-SPIRIT-KING-STORY-R113.json及边界校验器、20项预设测试、专用CI。候选内容commit95428cb63616163c1a68581806098e8722f01729及专用run40055060535已实际completed/success；只是元数据边界而非原2002网页字节或服务器复现。原官方网页/地图DAT、NPC/SPR身份、build、任务状态、宠物转生公式仍未知，版权原html/像素/程序不进Git。长历史全文按原生blob获取并只能追加。
 
 本轮止于这两页交集与有歧义的2.5故事，不扩练宠成长数值/无源脚本。**最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-114**：另版本1999—2003的原图或原任务NPC源，优先真实同版命名画面或第一手字节；没有实源即进行材料缺口审查而非堆无关helper。Stage A7 PARTIAL+2 OPEN、Stage B/wiki GATED、R79 PAUSED_NON_BLOCKING，总复原百分比null。
+
+
+## 
+### 2026-10-24 R114 — 新浪游戏2003《富商的货物》捕宠与忠诚奖励任务（来源限定）
+按远端main 33091550d0a2beed10e2bccfe8d97b0ff765080a/tree b727d344c3546001f869b8b0e13e541873a9fbc2 核验启动，旧R89已归档台湾2000人物报道，本轮选择未入库Sina同期攻略 https://games.sina.com.cn/z/sta/rwgl/fs.shtml?from=wap （新浪游戏、2003-06-30 11:55）。同站较晚目录 https://games.sina.com.cn/z/sta/2004-10-15/180146.shtml?from=wap 把题目列在6.0栏，属后期版本分类不是2003补丁、精确客户端或原服构建证明。2018转载 https://www.shiqiso.com/sq/160.htm 非当年独立目击，不能据其LV55+硬门槛或懒人传送覆盖同期原文。
+S1所述：成人礼是条件，55级以上与福尔德/达那羽毛均为建议；沙姆岛奇努伊村「盖落比」(原文「54。76」)给「富商的货物」，去吉鲁岛「5X级小象区」抓LV60「巨大玛恩摩」，正文称抓到后货物消失，回报段写「盖洛比」并得「宠物忠诚肉片」（忠诚度+10），称可重做。HP低于100比较好抓为玩家建议，不是捕获概率原公式。两种NPC写法并存，原ID未知不能默合；原HTML字节/原始九图像素、原NPC/地图/宠物/物品主表和捕获/物品消耗/奖励/保存事务均OPEN；不反填JSS1999/TW1.0，不把文字记录算原游戏实体。
+成果 docs/specs/STONEAGE-CN2003-MERCHANT-ELEPHANT-R114.md、research/recovered/STONEAGE-CN2003-MERCHANT-ELEPHANT-R114.json、校验器、28项测试与CI。候选内容commit 0f468798056679a39324975bb6578c3f27e512cb/tree c600685e62bbb6495c5e1751a5eeedd1eed407cd，专用run40055929518 completed/success，仅证明元数据边界测试，非当年HTML重放或原服任务执行。版权所有HTML/图/商业代码不入Git。
+最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-115：轮换1999–2003另一地区真正同版具名NPC/宠物视觉原件；否则有限复核22域缺口，不扩大本任务helper。Stage A7 PARTIAL+2 OPEN，B/wiki GATED，R79暂停，整体恢复百分比null。原历史前缀全部保留。

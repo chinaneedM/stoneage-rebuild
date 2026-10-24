@@ -2415,3 +2415,11 @@ R110主线保管验收后从最新CURRENT/R2/22域源队列转2009DigiPark厂商
 源材料选择17173一篇现存2004-07-02的2.5剧情简介和一篇2002-05-20同时代玩家任务稿，两者对新藏／黑蛙王／玛蕾菲雅有有限叙事交集，但都不具原官方2002网页byte-exact、原像素、服务端数据、客户端精确build。R113新增12个名字/人物文本标签及11条关系，仅是叙事档案不是23个原NPC实体；自封/被封双说、风/凤字异、相对时间及同名黑玉分版冲突均保留。不能把同站/39和/42重复段当两份独立出处。不扩S2灵石成长无证公式和旧R112 GM服务后台。候选元数据CI通过不等于原创网页或原服通关，候选/main最终发布仍须实际后验。
 
 **最高NEXT `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-114`**：轮到不同早期地域有原图片／NPC宠物名可核同源版本的官方材料，取真实可用一手字节优于再积累二手叙事；若真实来源缺席，有限评审22域缺口而不是无端延伸R113。Stage A7 PARTIAL+2 OPEN、B/wiki GATED、savedata R79 PAUSED_NON_BLOCKING，总完成百分比null。
+
+
+
+### 2026-10-24 R114 — 新浪游戏2003《富商的货物》捕宠与忠诚奖励任务（来源限定）
+按远端main 33091550d0a2beed10e2bccfe8d97b0ff765080a/tree b727d344c3546001f869b8b0e13e541873a9fbc2 核验启动，旧R89已归档台湾2000人物报道，本轮选择未入库Sina同期攻略 https://games.sina.com.cn/z/sta/rwgl/fs.shtml?from=wap （新浪游戏、2003-06-30 11:55）。同站较晚目录 https://games.sina.com.cn/z/sta/2004-10-15/180146.shtml?from=wap 把题目列在6.0栏，属后期版本分类不是2003补丁、精确客户端或原服构建证明。2018转载 https://www.shiqiso.com/sq/160.htm 非当年独立目击，不能据其LV55+硬门槛或懒人传送覆盖同期原文。
+S1所述：成人礼是条件，55级以上与福尔德/达那羽毛均为建议；沙姆岛奇努伊村「盖落比」(原文「54。76」)给「富商的货物」，去吉鲁岛「5X级小象区」抓LV60「巨大玛恩摩」，正文称抓到后货物消失，回报段写「盖洛比」并得「宠物忠诚肉片」（忠诚度+10），称可重做。HP低于100比较好抓为玩家建议，不是捕获概率原公式。两种NPC写法并存，原ID未知不能默合；原HTML字节/原始九图像素、原NPC/地图/宠物/物品主表和捕获/物品消耗/奖励/保存事务均OPEN；不反填JSS1999/TW1.0，不把文字记录算原游戏实体。
+成果 docs/specs/STONEAGE-CN2003-MERCHANT-ELEPHANT-R114.md、research/recovered/STONEAGE-CN2003-MERCHANT-ELEPHANT-R114.json、校验器、28项测试与CI。候选内容commit 0f468798056679a39324975bb6578c3f27e512cb/tree c600685e62bbb6495c5e1751a5eeedd1eed407cd，专用run40055929518 completed/success，仅证明元数据边界测试，非当年HTML重放或原服任务执行。版权所有HTML/图/商业代码不入Git。
+最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-115：轮换1999–2003另一地区真正同版具名NPC/宠物视觉原件；否则有限复核22域缺口，不扩大本任务helper。Stage A7 PARTIAL+2 OPEN，B/wiki GATED，R79暂停，整体恢复百分比null。原历史前缀全部保留。
