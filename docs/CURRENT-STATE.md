@@ -18190,3 +18190,14 @@ S1 4Gamer 2004-12-15 21:03「石器時代MMORPG『ストーンエイジ』の年
 交付 `research/recovered/STONEAGE-CN2001-EARLY-SOCIAL-R112.json`、`docs/specs/STONEAGE-CN2001-EARLY-SOCIAL-R112.md`、研究元数据校验器/17单元正反例/专用CI，候选内容commit `3722cb0535484673fbc6f9bee58e1abe0e2c5b6f`；实际Actions及主线发布必须后验核验，未提前报通过。原HTML、图像、玩家名单、商业程序不入Git。新5条来源目录不是5个已恢复原客户端NPC或服务器对象。
 
 **最高NEXT `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-113`** 继续优先JSS1999/TW1或2001–2003原运营网页/当时实体截图的具名NPC/地图/宠物真实性，若仅后世镜像不作层层拆解。Stage A九族7 PARTIAL＋2 OPEN；Stage B/百科GATED；R79 PAUSED_NON_BLOCKING；总体恢复百分比null，历史缺口未填。
+
+
+## 2026-10-24 R113 — 2.5《精灵王传说》人物与世界线来源有限复原
+
+本轮从新读远端main f6d81f7f43c926d4ac36acbe9eca0cac19e77c49 / tree b6ae1a0e6254dd04e4c7757a27b4ecb432e16fef（此前R112候选与主线23 Actions及保管本身均success）启动最高NEXT113。原生Git blob文件有效而非空，研究只按真实源推进。选择S1 17173现存2004-07-02《石器时代2.5版 精灵王传说》详解 https://news.17173.com/z/stoneage/banben/sa10/39.htm ，S2 17173署柯南2002-05-20玩家任务稿 https://news.17173.com/z/stoneage/content/2002-5-20/n855_771416.html 。S1相关人物子页/42.htm为重复同文而非独立第三材料。
+
+新增12个**人物文本位置**和11条**叙事关系**：库伊/新藏/红蛙/黑蛙王的金珠与黑玉交换→失忆玛蕾菲雅被委托照顾→妮斯恢复记忆→漆黑洞窟光王所称宠物重生；机械文明及光暗双王、萨姆吉尔与玛丽娜丝波拉史、柯黑穆肯/天空之岛、魔力分流成三大陆只是中国2.5版本故事文献主张，不回填JSS1999或TW1.0事实。S1自称暗王自行封印及光王封印暗王两说并存，S1“凤为信”和S2“风为信”不偷偷订正，愿藏/原藏/新臧异文不当同原ID。千五百年前、二千年、十年前、五十年前均为各段虚构叙事相对时间，不映射现代公历或无缝世界年表。R112情人节黑玉同名不能跨版自动并物。
+
+交付docs/specs/STONEAGE-CN25-SPIRIT-KING-STORY-R113.md、research/recovered/STONEAGE-CN25-SPIRIT-KING-STORY-R113.json及边界校验器、20项预设测试、专用CI。候选内容commit95428cb63616163c1a68581806098e8722f01729及专用run40055060535已实际completed/success；只是元数据边界而非原2002网页字节或服务器复现。原官方网页/地图DAT、NPC/SPR身份、build、任务状态、宠物转生公式仍未知，版权原html/像素/程序不进Git。长历史全文按原生blob获取并只能追加。
+
+本轮止于这两页交集与有歧义的2.5故事，不扩练宠成长数值/无源脚本。**最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-114**：另版本1999—2003的原图或原任务NPC源，优先真实同版命名画面或第一手字节；没有实源即进行材料缺口审查而非堆无关helper。Stage A7 PARTIAL+2 OPEN、Stage B/wiki GATED、R79 PAUSED_NON_BLOCKING，总复原百分比null。
