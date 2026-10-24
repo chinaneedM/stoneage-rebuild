@@ -18384,3 +18384,15 @@ NEXT仍客户端P1取新增可验证版本。既有六分卷STONEAGE20060616.exe
 新增源码/测试 docs/specs/STONEAGE-TW10-CN50-REAL-RESOURCE-INHERITANCE-R1.md、tools/stoneage_tw10_cn50_record_resource_diff.py、tools/stoneage_tw10_cn50_resource_acquisition.py、tools/stoneage_tw10_cn50_record_report_verify.py 及各独立正反用例，source run40091960688与永久派生源pin/负例复验run40092558627均completed/success；旧1.0→混合2.5的125,996/464资源前缀比较保留为独立横向证据，不能把混合2.5叫纯净官方发行版。本包仅证明存在一套5.0存留资源的实际物理扩展，尚缺原盘压模独立认证、资源ID到真实具名宠物/NPC/人物/地图的同构建选择器、原服master/任务脚本；无原字节跨会话持久仓。
 
 **最高NEXT CLIENT-RESOURCE-ENTITY-BRIDGE-P2B**：以真实新增RD/SPR资源ID及现有1.0和8.5原索引，优先找可验证的同构建资源选择链/具名视觉与实际内容映射；确有新增来源时对8.5或其它官方同版容器做记录级三方差异，交付至少一种具体可引用的形象/动画类别或明确停点。连续两轮仅增加大数字而无内容归属需重排队列；禁止把资源号等同物种/任务或从网页主观命名。JSS/韩国老版载体继续有界取证，DD-028四档任务归档不变。Stage A7 PARTIAL+2 OPEN，Stage B/wiki GATED，savedataR79 PAUSED_NON_BLOCKING，整体复原百分比null。源候选成功不提前冒称main同HEAD成功；最终合并与接续验收须后验。
+
+## 2026-10-24 — P2B：台湾1.0静态图像NPC类别候选号段到大陆5.0原生资源逐ID映射
+
+本轮重新核验main 47a137e3a392917cf9fe436f4d8d9534c93f56c2及协议、历史状态、路线与Actions；原始大陆5.0完整ADRN/SPR派生记录从已通过实物run40093980003导入main9ca8cecbec5e7240c1063f0ebfb5301fb835972c；最初导出run40093556343曾失败并因非单调SPR物理offset修正，失败证据保留。大陆5.0原保存光盘全资源表303197位图记录/1185动画组，数字是物理资源，不是宠物/角色数。
+
+实际P2B选择台湾1.0 R99已按原盘图像号+原MAP_ATTR和玩家当代类别线索提取的5846–5946共101个静态位图候选。第一层101项目录谱系CI run40094709535 completed/success；更强的独立双源逐行复算run40095074458/job120875491994 completed/success，实际读取TW1原盘已验ADRN-R1.tsv.gz 125996行与新CN5已验ADRN-R1.tsv.gz 303197行并先校验源文件长度/完整SHA。101/101图号都存在，RD图像块SHA、80字节ADRN中的MAP_ATTR摘要、长宽/偏移/RD旗标及尺寸全部相同；0缺失、0变更。保存了两份永久派生JSON，且对假名、错误资源ID、篡改来源摘要设负面回归。只交付source metadata，不发布原像素或程序。
+
+2001玩家资料称这段“NPC”仍是候选类别，不是官方身份；101不等于101位已证NPC。原服NPC ID、名字、任务、坐标、宠物成长、原同版图形选择器均未复原。原SPR全部242085帧未直接引用该号段，不可排除其它渲染路径。原版权客户端载荷及原服务器未持久存进Git，CN5独立压模鉴真仍OPEN。
+
+成果详docs/specs/STONEAGE-TW10-CN50-STATIC-VISUAL-P2B-R1.md；source派生research/recovered/STONEAGE-TW10-CN50-STATIC-VISUAL-LINEAGE-P2B-R1.json及research/recovered/STONEAGE-TW10-CN50-DIRECT-STATIC-VISUAL-P2B-R1.json；工作分支agent/p2b-npc-visual-physical-lineage-20261024。Actions已实测成功，主线合并和同HEAD Actions必须后验。
+
+最高NEXT继续CLIENT-RESOURCE-ENTITY-BRIDGE-P2B / NAMED-SELECTOR-SOURCE：必须取到台湾初代sa_3.exe同build中可重复审查的真正bitmap/spr选择函数，或同版官方手册有具名画面ID的原证；至少一件具名角色/宠物/静态NPC的资源关系得到证实才晋级。若没有来源明确阻断，转其他具名官方客户端素材，不重复“101”纯数量报告或无限扩helper。四档任务DD-028独立，Stage A 7 PARTIAL + 2 OPEN，B/wiki GATED，R79 PAUSED_NON_BLOCKING，总进度percent=null；全部旧历史原样保留。
