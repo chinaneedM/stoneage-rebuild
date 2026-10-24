@@ -4799,3 +4799,8 @@ R98新浪S2实际HTML的第一插图表仍含原href与独立缩略图src；本�
 S1运营者栏ボーステック与S2栏ガマニアデジタルエンターテインメント不同，不能无合约证据归并运营/平台/支付责任或宣称2004-12换运营。S2一方旧URL http://stoneage.to/event/Xmas04.html 当前不能获取原HTML或档案；两报道均是同期媒体转述，不具原运营文bytes、SHA、截图、主表、完整构建或服务器事务证据。任何「四村」不当四张新地图、NPC名字不当原像素SPR、礼品身份/发放次数未知；1伤害只保留条件句，不迁移TW1.0或补自身运行成功。版权原HTML/图片/程序不入Git。
 
 六项研究记录及规格 `docs/specs/STONEAGE-JP2004-XMAS-PARTY-COMBAT-R110.md`、派生JSON/校验器/21单元/独立CI已提交候选，内容与历史候选/主线实际验收以后验为准，不能提前报成功。最高NEXT `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-111` 返回其它地区/年代的具名故事与真实可归属画面或第一方地图实体，不继续扩节日赠奖/友伤helper。Stage A7 PARTIAL+2 OPEN、Stage B/wiki GATED、R79暂停、总复原百分比null。
+
+
+### 2026-10-24 R111 2009-10-19 日本DigiPark十周年第三弹公告中具名NPC「レテ」
+
+4Gamer网页 https://www.4gamer.net/games/013/G001377/20091019025/ 于2009-10-19 19:49刊出“メーカー発表文の内容をそのまま掲載”，署DigiPark；今仅文字网页可读，**无原2009 HTML字节/捕获或发布时同刻像素**，不能称服务器真的按时开。10-20维护后至11-04维护前预告「ミステリーダンジョン」；聊天室NPC「レテ」对话进场、十房答题、错一题送回聊天室并从头、通关有未名奖物、洞内无敌对恐龙；未证十地图DAT、原回答/物品ID、任何其它战斗关闭或早期TW1身份。相邻第一/二弹仅背景不新增本轮系统。4Gamer真实缩略URL TN/002.jpg网页已查看但未下载字节/验图名到具体NPC像素，禁止SPR绑定。6来源记录见 `research/recovered/STONEAGE-JP2009-MYSTERY-DUNGEON-R111.json`，候选内容 `5ee78dc02cac14b407ce099f54ccdc4a8fc6356e` 专用CI run40051427341成功，非原服实测。最高NEXT R112转更早分版一手NPC故事或具名场景。Stage A7 PARTIAL+2 OPEN，Stage B/wiki GATED，R79暂停、总百分比null。

@@ -8619,3 +8619,10 @@ SOURCE `research/recovered/STONEAGE-CN20-NAMED-PET-VISUAL-SOURCE-R104.json` 固�
 S1运营者栏ボーステック与S2栏ガマニアデジタルエンターテインメント不同，不能无合约证据归并运营/平台/支付责任或宣称2004-12换运营。S2一方旧URL http://stoneage.to/event/Xmas04.html 当前不能获取原HTML或档案；两报道均是同期媒体转述，不具原运营文bytes、SHA、截图、主表、完整构建或服务器事务证据。任何「四村」不当四张新地图、NPC名字不当原像素SPR、礼品身份/发放次数未知；1伤害只保留条件句，不迁移TW1.0或补自身运行成功。版权原HTML/图片/程序不入Git。
 
 六项研究记录及规格 `docs/specs/STONEAGE-JP2004-XMAS-PARTY-COMBAT-R110.md`、派生JSON/校验器/21单元/独立CI已提交候选，内容与历史候选/主线实际验收以后验为准，不能提前报成功。最高NEXT `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-111` 返回其它地区/年代的具名故事与真实可归属画面或第一方地图实体，不继续扩节日赠奖/友伤helper。Stage A7 PARTIAL+2 OPEN、Stage B/wiki GATED、R79暂停、总复原百分比null。
+
+
+### R111 — JP DigiPark 2009 十周年第三弹媒体承载厂商公告（2026-10-24核验）
+
+**S1**：https://www.4gamer.net/games/013/G001377/20091019025/ ，标2009-10-19 19:49 / 配信元デジパーク，媒体声明厂商发布文照录；网页当前可读，证据为同期**厂商公告在媒体的转录**。2009原站HTML/媒体此页面实际HTML bytes及SHA/精确历史archive均null；本执行环境直连4gamer DNS失败，不可冒充byte-for-byte来源回放。报道属于2009日版资料，不认证其TW1/JSS1999原始版本或实际服务器执行。文献见「レテ」NPC、聊天室入口、十题房间、错题回聊天室重来、未具名奖励、限洞无敌对恐龙，以及2009-10-20至11-04公告时段。原题/答案/物品数量/角色NPC ID/地图DAT未知。
+
+**I1 仅媒体缩略图引用**：https://www.4gamer.net/games/013/G001377/20091019025/TN/002.jpg 在本轮网页图片接口已打开显示，当前像素视觉概览不能证明图中具体角色是「レテ」或原客户端build。实际图片bytes/SHA、历史拍摄时间、可再发行权null；原图和HTML不入Git。对应研究规格 `docs/specs/STONEAGE-JP2009-MYSTERY-DUNGEON-R111.md`、派生 `research/recovered/STONEAGE-JP2009-MYSTERY-DUNGEON-R111.json`、校验器/22负向与正向案例；CI只保源**语义边界**，不源HTML字节或服务器重放。

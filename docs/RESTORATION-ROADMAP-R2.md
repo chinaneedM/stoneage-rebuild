@@ -2392,3 +2392,10 @@ GitHub重新核main `b4f5a28a09efa40bfcd60401f0885c9a6f270f5b` / tree `6df1fb27f
 S1运营者栏ボーステック与S2栏ガマニアデジタルエンターテインメント不同，不能无合约证据归并运营/平台/支付责任或宣称2004-12换运营。S2一方旧URL http://stoneage.to/event/Xmas04.html 当前不能获取原HTML或档案；两报道均是同期媒体转述，不具原运营文bytes、SHA、截图、主表、完整构建或服务器事务证据。任何「四村」不当四张新地图、NPC名字不当原像素SPR、礼品身份/发放次数未知；1伤害只保留条件句，不迁移TW1.0或补自身运行成功。版权原HTML/图片/程序不入Git。
 
 六项研究记录及规格 `docs/specs/STONEAGE-JP2004-XMAS-PARTY-COMBAT-R110.md`、派生JSON/校验器/21单元/独立CI已提交候选，内容与历史候选/主线实际验收以后验为准，不能提前报成功。最高NEXT `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-111` 返回其它地区/年代的具名故事与真实可归属画面或第一方地图实体，不继续扩节日赠奖/友伤helper。Stage A7 PARTIAL+2 OPEN、Stage B/wiki GATED、R79暂停、总复原百分比null。
+
+
+### R111 — 日本2009十周年谜题地图/「レテ」来源限定补充（2026-10-24）
+
+R110主线保管验收后从最新CURRENT/R2/22域源队列转2009DigiPark厂商发布文媒体重印，补**NPC入口+十房逐题/失败回聊天室从头+未名奖励+洞内无敌对恐龙**的有界游戏可感知合同；补一真实媒体缩略引用，但无法认证具体像素与NPC身份，也没有原HTML字节或早期同版DAT。六源记录是档案资料、非已恢复六个原实体。只扩该源合同，未扩全部十周年活动、题库、答案或奖励实现。R111候选内容commit `5ee78dc02cac14b407ce099f54ccdc4a8fc6356e` 专用run40051427341 success，永久主线保管以后验为准。后续必须有同版原脚本/截图/地图/奖励日志才可提升历史执行状态。
+
+**最高NEXT `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-112`**：优先更早版本第一方具名NPC叙事/原图身份或真实服务端地图实体，避免连续扩2009迷宫/后期市场活动；找不到新实源则有限复核22域缺口，不用无源helper充进度。Stage A7 PARTIAL+2 OPEN，Stage B/wiki GATED，R79 PAUSED_NON_BLOCKING，总复原百分比null。
