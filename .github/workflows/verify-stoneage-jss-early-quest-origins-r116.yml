@@ -1,0 +1,46 @@
+name: Verify R116 early JSS quest origins against archived official bytes
+on:
+  push:
+    paths:
+      - 'tools/stoneage_jss_early_quest_origins_r116.py'
+      - 'tools/stoneage_jss_pet_faq.py'
+      - 'tools/stoneage_jss_pet_patch_history.py'
+      - 'tests/test_stoneage_jss_early_quest_origins_r116.py'
+      - 'research/recovered/STONEAGE-JSS-EARLY-QUEST-ORIGINS-R116.json'
+      - 'docs/specs/STONEAGE-JSS-EARLY-QUEST-ORIGINS-R116.md'
+      - '.github/workflows/verify-stoneage-jss-early-quest-origins-r116.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original-source-and-origin-isolation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test date, clause isolation, unknown origins and inactive FAQ content
+        run: python -m unittest tests.test_stoneage_jss_early_quest_origins_r116 tests.test_stoneage_jss_pet_patch_history tests.test_stoneage_quest_origin_classification_r1 -v
+      - name: Reacquire three exact official pages and replay derived metadata
+        run: |
+          python -m tools.stoneage_jss_early_quest_origins_r116 --output "${{ runner.temp }}/r116-replay.json"
+          cmp "${{ runner.temp }}/r116-replay.json" research/recovered/STONEAGE-JSS-EARLY-QUEST-ORIGINS-R116.json
+      - name: Preserve all four pre-R116 historical prefixes
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import subprocess
+          for p in ('docs/CURRENT-STATE.md', 'docs/HISTORICAL-TIMELINE.md', 'docs/SOURCE-REGISTRY.md', 'docs/RESTORATION-ROADMAP-R2.md'):
+              previous = subprocess.check_output(['git', 'show', '1a5bb8d67ab6a4e7189968f53f007c41083a1f63:' + p])
+              assert Path(p).read_bytes().startswith(previous), p
+          print('Four full pre-R116 history prefixes preserved')
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: r116-jss-early-quest-origin-derived-replay
+          path: ${{ runner.temp }}/r116-replay.json
+          retention-days: 30

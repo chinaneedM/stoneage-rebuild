@@ -1,0 +1,500 @@
+{
+  "schema": "stoneage.jss.early_quest_origins.r116",
+  "date": "2026-10-24",
+  "source_pages": {
+    "verup": {
+      "original_url": "http://www.titan.co.jp/stoneage/verup.html",
+      "actual_capture": "20010417162544",
+      "final_url": "https://web.archive.org/web/20010417162544id_/http://www.titan.co.jp/stoneage/verup.html",
+      "bytes": 11239,
+      "sha256": "ba71d859f34f31261f4293dc61583c53a8e77133898c4a8148c544a452abc3cb",
+      "codec": "shift_jis",
+      "document_publication_date": null,
+      "newly_acquired_page_this_package": false
+    },
+    "faqmenu": {
+      "original_url": "http://www.titan.co.jp/stoneage/faqmenu.html",
+      "actual_capture": "20010417155624",
+      "final_url": "https://web.archive.org/web/20010417155624id_/http://www.titan.co.jp/stoneage/faqmenu.html",
+      "bytes": 3356,
+      "sha256": "d5ea757e563d0bf86ad96b72dc0081761b447fa3771e00a463919b89b7017f5f",
+      "codec": "shift_jis",
+      "document_publication_date": null,
+      "newly_acquired_page_this_package": false
+    },
+    "faqquest": {
+      "original_url": "http://www.titan.co.jp/stoneage/faqquest.html",
+      "actual_capture": "20010425044210",
+      "final_url": "https://web.archive.org/web/20010425044210id_/http://www.titan.co.jp/stoneage/faqquest.html",
+      "bytes": 1654,
+      "sha256": "7b2006a9d9bf6297523b13d650b23c070d1901b5976a3eccda2c9a12374b4be8",
+      "codec": "shift_jis",
+      "document_publication_date": null,
+      "newly_acquired_page_this_package": true
+    }
+  },
+  "dependency": {
+    "path": "research/recovered/STONEAGE-HISTORICAL-SITE-NAVIGATION-R1.json",
+    "sha256": "7bec788ca9101aa7a06543c0df2fb15b6bc407fd47141b51cc1a99e216cd61cd"
+  },
+  "update_evidence": {
+    "records": [
+      {
+        "archive_id": "JSS-TREASURE-20000424",
+        "source_label": "宝捜し",
+        "record_kind": "EVENT_ACTIVITY_CLAIM",
+        "origin_class": "OPERATOR_EVENT_QUEST",
+        "region": "JP",
+        "operator_source": "JSS_TITAN_OFFICIAL_ARCHIVE",
+        "version": "JSS_1999_2000_OPERATOR_HISTORY_CAPTURED_2001_EXACT_BUILD_UNKNOWN",
+        "source_clauses": [
+          {
+            "source_order": 10,
+            "date_as_written": "2000/4/24（月）",
+            "operator_written_date": "2000-04-24",
+            "clause_fingerprint": {
+              "characters": 41,
+              "sha256": "88a15256c6f729284113e0927100ed6936e6d984e3d5b973e5eae3275a1a6dba"
+            }
+          }
+        ],
+        "bounded_claim": "OPERATOR_REPORTS_START_OF_ONE_MONTH_JOINT_LOGIN_EVENT_NOT_QUEST_FLOW",
+        "native_quest_id": null,
+        "native_npc_id": null,
+        "first_introduced_date": null,
+        "document_publication_date": null,
+        "recurrence_or_rerun": null,
+        "post_event_retention": null,
+        "native_reward_ids": null,
+        "permanence_proven": false,
+        "baseline_core_admission": false,
+        "server_execution_verified": false,
+        "reported_window": {
+          "start_date_as_written": "2000-04-24",
+          "duration_as_written": "１ヶ月",
+          "exact_end_date": null,
+          "actual_runtime_window": null
+        }
+      },
+      {
+        "archive_id": "JSS-SJOT-200004",
+        "source_label": "SJOT",
+        "record_kind": "EVENT_ACTIVITY_CLAIM",
+        "origin_class": "OPERATOR_EVENT_QUEST",
+        "region": "JP",
+        "operator_source": "JSS_TITAN_OFFICIAL_ARCHIVE",
+        "version": "JSS_1999_2000_OPERATOR_HISTORY_CAPTURED_2001_EXACT_BUILD_UNKNOWN",
+        "source_clauses": [
+          {
+            "source_order": 12,
+            "date_as_written": "2000/4/10（月）",
+            "operator_written_date": "2000-04-10",
+            "clause_fingerprint": {
+              "characters": 32,
+              "sha256": "edddefba02b912e0d93c67bcfd62f8c0ed5ced77523fb20cdce0197838ae916b"
+            }
+          },
+          {
+            "source_order": 11,
+            "date_as_written": "2000/4/17（月）",
+            "operator_written_date": "2000-04-17",
+            "clause_fingerprint": {
+              "characters": 28,
+              "sha256": "01f1fbc037ee4e6ad415ef361e5e606179a2a4e90b098a42a541d7f4a2388afe"
+            }
+          }
+        ],
+        "bounded_claim": "JOINT_LOGIN_EVENT_HAS_NPC_SETTING_FIX_THEN_REPORTED_END_NOT_A_COMPLETE_QUEST",
+        "native_quest_id": null,
+        "native_npc_id": null,
+        "first_introduced_date": null,
+        "document_publication_date": null,
+        "recurrence_or_rerun": null,
+        "post_event_retention": null,
+        "native_reward_ids": null,
+        "permanence_proven": false,
+        "baseline_core_admission": false,
+        "server_execution_verified": false,
+        "reported_window": {
+          "start_date_as_written": null,
+          "end_date_as_written": "2000-04-17",
+          "actual_runtime_window": null
+        }
+      },
+      {
+        "archive_id": "JSS-REBIRTH-20000828",
+        "source_label": "転生",
+        "record_kind": "QUEST_OR_SYSTEM_ADDITION_CLAIM",
+        "origin_class": "ORIGIN_UNRESOLVED",
+        "region": "JP",
+        "operator_source": "JSS_TITAN_OFFICIAL_ARCHIVE",
+        "version": "JSS_1999_2000_OPERATOR_HISTORY_CAPTURED_2001_EXACT_BUILD_UNKNOWN",
+        "source_clauses": [
+          {
+            "source_order": 2,
+            "date_as_written": "2000/8/28（月）",
+            "operator_written_date": "2000-08-28",
+            "clause_fingerprint": {
+              "characters": 16,
+              "sha256": "cd6b44c2a7bb5a5a351d39da058c431909dad5d8113b52dc02ed970baf6f9935"
+            }
+          }
+        ],
+        "bounded_claim": "NAMED_GAMEPLAY_ADDITION_WITH_NO_DURATION_OR_PERMANENT_QUEST_PROOF",
+        "native_quest_id": null,
+        "native_npc_id": null,
+        "first_introduced_date": null,
+        "document_publication_date": null,
+        "recurrence_or_rerun": null,
+        "post_event_retention": null,
+        "native_reward_ids": null,
+        "permanence_proven": false,
+        "baseline_core_admission": false,
+        "server_execution_verified": false
+      },
+      {
+        "archive_id": "JSS-GENKOU-20000424",
+        "source_label": "玄黄の洞窟",
+        "record_kind": "QUEST_OR_EVENT_BUGFIX_CLAIM",
+        "origin_class": "ORIGIN_UNRESOLVED",
+        "region": "JP",
+        "operator_source": "JSS_TITAN_OFFICIAL_ARCHIVE",
+        "version": "JSS_1999_2000_OPERATOR_HISTORY_CAPTURED_2001_EXACT_BUILD_UNKNOWN",
+        "source_clauses": [
+          {
+            "source_order": 10,
+            "date_as_written": "2000/4/24（月）",
+            "operator_written_date": "2000-04-24",
+            "clause_fingerprint": {
+              "characters": 20,
+              "sha256": "dfc54038c300628d13133041e997c364c4d7f01bca698ebef34f88d1e5932c46"
+            }
+          }
+        ],
+        "bounded_claim": "PROGRESSION_FIX_AT_NAMED_CAVE_NOT_LAUNCH_OR_PERMANENCE_PROOF",
+        "native_quest_id": null,
+        "native_npc_id": null,
+        "first_introduced_date": null,
+        "document_publication_date": null,
+        "recurrence_or_rerun": null,
+        "post_event_retention": null,
+        "native_reward_ids": null,
+        "permanence_proven": false,
+        "baseline_core_admission": false,
+        "server_execution_verified": false
+      },
+      {
+        "archive_id": "JSS-URIURI-19991018",
+        "source_label": "ウリウリイベント",
+        "record_kind": "QUEST_OR_EVENT_BUGFIX_CLAIM",
+        "origin_class": "ORIGIN_UNRESOLVED",
+        "region": "JP",
+        "operator_source": "JSS_TITAN_OFFICIAL_ARCHIVE",
+        "version": "JSS_1999_2000_OPERATOR_HISTORY_CAPTURED_2001_EXACT_BUILD_UNKNOWN",
+        "source_clauses": [
+          {
+            "source_order": 39,
+            "date_as_written": "1999/10/18（月）",
+            "operator_written_date": "1999-10-18",
+            "clause_fingerprint": {
+              "characters": 27,
+              "sha256": "9ce102223f549a612ae8d7ae7413aca887ea5eb48eb841ebaedfbd6763a419aa"
+            }
+          }
+        ],
+        "bounded_claim": "SHELL_DUPLICATION_BUG_FIX_NOT_INTENDED_SHELL_COUNT_OR_QUEST_FLOW",
+        "native_quest_id": null,
+        "native_npc_id": null,
+        "first_introduced_date": null,
+        "document_publication_date": null,
+        "recurrence_or_rerun": null,
+        "post_event_retention": null,
+        "native_reward_ids": null,
+        "permanence_proven": false,
+        "baseline_core_admission": false,
+        "server_execution_verified": false
+      },
+      {
+        "archive_id": "JSS-QUIZ-DOJO-200005",
+        "source_label": "クイズ道場",
+        "record_kind": "VENUE_DIALOGUE_AND_ACCESS_CHANGE_CLAIM",
+        "origin_class": "ORIGIN_UNRESOLVED",
+        "region": "JP",
+        "operator_source": "JSS_TITAN_OFFICIAL_ARCHIVE",
+        "version": "JSS_1999_2000_OPERATOR_HISTORY_CAPTURED_2001_EXACT_BUILD_UNKNOWN",
+        "source_clauses": [
+          {
+            "source_order": 9,
+            "date_as_written": "2000/5/8（月）",
+            "operator_written_date": "2000-05-08",
+            "clause_fingerprint": {
+              "characters": 29,
+              "sha256": "5edb619390c4e358fb664148a2ccc2a8a532a4555d7ae9e356af37be320a67a8"
+            }
+          },
+          {
+            "source_order": 7,
+            "date_as_written": "2000/5/29（月）",
+            "operator_written_date": "2000-05-29",
+            "clause_fingerprint": {
+              "characters": 20,
+              "sha256": "61d53f86f2f97684a75f29434232ba4e5f2233a16b7ceffc1c07a0c82f2b285d"
+            }
+          }
+        ],
+        "bounded_claim": "NPC_DIALOGUE_FIX_AT_VENUE_THEN_INTERIOR_ACCESS_NOT_QUEST_COMPLETION_OR_NPC_IDENTITY",
+        "native_quest_id": null,
+        "native_npc_id": null,
+        "first_introduced_date": null,
+        "document_publication_date": null,
+        "recurrence_or_rerun": null,
+        "post_event_retention": null,
+        "native_reward_ids": null,
+        "permanence_proven": false,
+        "baseline_core_admission": false,
+        "server_execution_verified": false
+      }
+    ],
+    "unnamed_addition_clauses": [
+      {
+        "source_order": 1,
+        "operator_written_date": "2000-09-04",
+        "date_as_written": "2000/9/4（月）",
+        "clause_fingerprint": {
+          "characters": 12,
+          "sha256": "16974978a84ee48d4217cf1db0903f43532d22f02c0e49a5e6b1969b5679d774"
+        }
+      },
+      {
+        "source_order": 4,
+        "operator_written_date": "2000-07-10",
+        "date_as_written": "2000/7/10（月）",
+        "clause_fingerprint": {
+          "characters": 12,
+          "sha256": "16974978a84ee48d4217cf1db0903f43532d22f02c0e49a5e6b1969b5679d774"
+        }
+      },
+      {
+        "source_order": 5,
+        "operator_written_date": "2000-06-12",
+        "date_as_written": "2000/6/12（月）",
+        "clause_fingerprint": {
+          "characters": 12,
+          "sha256": "16974978a84ee48d4217cf1db0903f43532d22f02c0e49a5e6b1969b5679d774"
+        }
+      },
+      {
+        "source_order": 14,
+        "operator_written_date": "2000-03-21",
+        "date_as_written": "2000/3/21（火）",
+        "clause_fingerprint": {
+          "characters": 12,
+          "sha256": "16974978a84ee48d4217cf1db0903f43532d22f02c0e49a5e6b1969b5679d774"
+        }
+      },
+      {
+        "source_order": 15,
+        "operator_written_date": "2000-03-13",
+        "date_as_written": "2000/3/13（月）",
+        "clause_fingerprint": {
+          "characters": 12,
+          "sha256": "16974978a84ee48d4217cf1db0903f43532d22f02c0e49a5e6b1969b5679d774"
+        }
+      },
+      {
+        "source_order": 22,
+        "operator_written_date": "2000-01-25",
+        "date_as_written": "2000/1/25（火）",
+        "clause_fingerprint": {
+          "characters": 12,
+          "sha256": "16974978a84ee48d4217cf1db0903f43532d22f02c0e49a5e6b1969b5679d774"
+        }
+      },
+      {
+        "source_order": 24,
+        "operator_written_date": "2000-01-17",
+        "date_as_written": "2000/1/17（月）",
+        "clause_fingerprint": {
+          "characters": 14,
+          "sha256": "b13b9a3dd00ca90796dde9b9382a9ac1eeb92983789e039e6f3d5a25c79f5c24"
+        }
+      },
+      {
+        "source_order": 28,
+        "operator_written_date": "1999-12-06",
+        "date_as_written": "1999/12/06（月）",
+        "clause_fingerprint": {
+          "characters": 12,
+          "sha256": "16974978a84ee48d4217cf1db0903f43532d22f02c0e49a5e6b1969b5679d774"
+        }
+      },
+      {
+        "source_order": 31,
+        "operator_written_date": "1999-11-22",
+        "date_as_written": "1999/11/22（月）",
+        "clause_fingerprint": {
+          "characters": 12,
+          "sha256": "16974978a84ee48d4217cf1db0903f43532d22f02c0e49a5e6b1969b5679d774"
+        }
+      },
+      {
+        "source_order": 33,
+        "operator_written_date": "1999-11-09",
+        "date_as_written": "1999/11/9（金）",
+        "clause_fingerprint": {
+          "characters": 29,
+          "sha256": "1a3554b2387dadff708655b3db461774792126f7972fe69b7fd6a68502c977ae"
+        }
+      },
+      {
+        "source_order": 34,
+        "operator_written_date": "1999-11-08",
+        "date_as_written": "1999/11/8（月）",
+        "clause_fingerprint": {
+          "characters": 29,
+          "sha256": "1a3554b2387dadff708655b3db461774792126f7972fe69b7fd6a68502c977ae"
+        }
+      },
+      {
+        "source_order": 35,
+        "operator_written_date": "1999-11-01",
+        "date_as_written": "1999/11/1（月）",
+        "clause_fingerprint": {
+          "characters": 29,
+          "sha256": "1a3554b2387dadff708655b3db461774792126f7972fe69b7fd6a68502c977ae"
+        }
+      },
+      {
+        "source_order": 38,
+        "operator_written_date": "1999-10-25",
+        "date_as_written": "1999/10/25（月）",
+        "clause_fingerprint": {
+          "characters": 13,
+          "sha256": "40def293fcb1a85740c54999f8fc3647cf3b8e7e10d6f0790319b67efb7d35a1"
+        }
+      }
+    ],
+    "unnamed_clauses_are_not_13_distinct_quests": true,
+    "context_separations": {
+      "rebirth_and_esthe_are_distinct_same_day_clauses": {
+        "gameplay": {
+          "source_order": 2,
+          "date_as_written": "2000/8/28（月）",
+          "operator_written_date": "2000-08-28",
+          "clause_fingerprint": {
+            "characters": 16,
+            "sha256": "cd6b44c2a7bb5a5a351d39da058c431909dad5d8113b52dc02ed970baf6f9935"
+          }
+        },
+        "campaign": {
+          "source_order": 2,
+          "date_as_written": "2000/8/28（月）",
+          "operator_written_date": "2000-08-28",
+          "clause_fingerprint": {
+            "characters": 20,
+            "sha256": "cceb96e45c214e7fc75d3e3269b2b096ebe312e62c6ca21daa3468e47f006a56"
+          }
+        },
+        "campaign_duration_transferred_to_rebirth": false
+      },
+      "limited_chatroom_and_map_addition_are_distinct_clauses": {
+        "chatroom": {
+          "source_order": 35,
+          "date_as_written": "1999/11/1（月）",
+          "operator_written_date": "1999-11-01",
+          "clause_fingerprint": {
+            "characters": 20,
+            "sha256": "7e96bdbb5419ba543af4b5b6206e5af2ee5ad4e34deb64839a008740b1101f67"
+          }
+        },
+        "map": {
+          "source_order": 35,
+          "date_as_written": "1999/11/1（月）",
+          "operator_written_date": "1999-11-01",
+          "clause_fingerprint": {
+            "characters": 11,
+            "sha256": "d754731da1da67a9209d4a19ee1cca57320dd611d6cf0e5e92f8347e4957ad27"
+          }
+        },
+        "limited_duration_transferred_to_maps_or_unnamed_event": false
+      }
+    },
+    "material_views": {
+      "game_base_quests": [],
+      "version_permanent_quests": [],
+      "operator_event_quests_and_activities": [
+        "JSS-TREASURE-20000424",
+        "JSS-SJOT-200004"
+      ],
+      "unresolved_origin": [
+        "JSS-REBIRTH-20000828",
+        "JSS-GENKOU-20000424",
+        "JSS-URIURI-19991018",
+        "JSS-QUIZ-DOJO-200005"
+      ]
+    }
+  },
+  "faq_evidence": {
+    "active_question_count": 3,
+    "commented_question_count": 1,
+    "question_answer_fingerprints": [
+      {
+        "question": {
+          "characters": 23,
+          "sha256": "0e3d17820fe84093d4859639eb4d56f2854bb7d7d6ca3290e842b71871e8b30a"
+        },
+        "answer": {
+          "characters": 88,
+          "sha256": "52d7ababb9555eea85f2d010abe6858e15d8451f6e95b6bfa519bc50245e0c98"
+        }
+      },
+      {
+        "question": {
+          "characters": 18,
+          "sha256": "3465b56dbdcf94b3055b476e0e98bd1a3180bfcef42302b5dc3e834a0bc958ea"
+        },
+        "answer": {
+          "characters": 81,
+          "sha256": "3bf387afe87f77d8a410530541d9b7f2f93e0a198b2937853491472000429bc0"
+        }
+      },
+      {
+        "question": {
+          "characters": 27,
+          "sha256": "4b1c1b826d0d7928e2c7385a1c4b16f3b84d6e079a936ddc7a4f9d791e816e8b"
+        },
+        "answer": {
+          "characters": 111,
+          "sha256": "428ed863d7bed1eda15b6da589a05dd6c943f9c4ead83a370c966ec3f4986a93"
+        }
+      }
+    ],
+    "quest_definition_recovered": false,
+    "filename_proves_quest_topic": false,
+    "screenshot_description": {
+      "key": "F12",
+      "subdirectory": "stoneage/screenshot",
+      "evidence": "OFFICIAL_FAQ_DESCRIPTION_NOT_EXECUTED_CLIENT_TRACE",
+      "image_format": null
+    },
+    "copyright_notice_is_blanket_asset_license": false,
+    "inactive_trial_data_answer_is_current_operator_policy": false,
+    "windows2000_retail_compatibility_guaranteed": false
+  },
+  "boundaries": {
+    "capture_dates_are_not_deployment_dates": true,
+    "operator_written_updates_are_not_independently_observed_deployments": true,
+    "japanese_event_word_alone_proves_operator_campaign": false,
+    "all_update_rows_semantically_restored": false,
+    "first_party_quest_scripts_recovered": false,
+    "native_ids_or_reward_tables_recovered": false,
+    "source_labels_are_new_original_entities": false,
+    "cross_region_same_names_or_later_pet_species_equivalence_proven": false,
+    "jss1999_launch_or_tw10_same_build_proven": false,
+    "proprietary_html_images_or_binaries_retained_in_git": false,
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b_wiki": "GATED",
+    "savedata_r79": "PAUSED_NON_BLOCKING",
+    "overall_restoration_percentage": null
+  }
+}

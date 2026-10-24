@@ -18243,3 +18243,14 @@ R115正文与四份历史记录候选最终内容 commit `0d8f6491159adc193372f4
 新档四类：`BASE_GAME_QUEST`（有具体发售版来源）、`PERMANENT_VERSION_QUEST`（后来正式版永久新增）、`OPERATOR_EVENT_QUEST`（运营公司节庆/特殊期活动及明确标出的人工领奖活动）、`ORIGIN_UNRESOLVED`（证据不足待考）。R115 2003中秋、R110日本2004圣诞、R111日本2009十周年、R112大陆2001情人节GM人工领奖划入独立运营活动档，但旧原服部署/身份/有效日期仍按原文源边界；R112是人工活动不是已恢复NPC脚本任务。R114《富商的货物》和R113精灵王叙事任务暂列待考，**没有确证它们是发行本体任务、正式永久加入还是其他身份**，不能因标题/年代虚升。旧R110–R115六源原样保留且新overlay对六个Git blob SHA分别锁定，原R114/R115永久保管收据不改、原游戏任务实体新增数仍0；无任何任务被假提升为JSS1999/TW1.0首发本体。
 
 这次修改仅是资料库分类、决策与验收收束，**不构成**服务端原任务/画面/掉落/永久性新事实。当前最高原任务 `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-116` 继续，但以后所有任务研究必须先判本体/版本常驻/运营活动/待考，再进入各自目录；遇新的原始版本和运营公告可根据明确证据订正。Stage A 7 PARTIAL + 2 OPEN，Stage B/wiki GATED，savedata R79 PAUSED_NON_BLOCKING，整体完成百分比 null。历史完整前缀必须保留，候选/main验收结果以远端实际后验为准。
+
+
+## 2026-10-24 R116 — JSS原官网早期任务起源与合作活动分离
+
+本轮从新核远端main `1a5bb8d67ab6a4e7189968f53f007c41083a1f63` / tree `a9becaebf199329327f7bd1bb985de5e61fe787f` 启动，547分支、0开放PR/运行中Actions、同HEAD11项main completed/success；七启动文件与精确checkout逐字节一致，CURRENT全2584027B/SHA256 `5c528889883d881e9d99a6c3b6626d4be2500331fbc77eb66af506d69909ab16` 保留。旧聊天SHA未作为当前事实依据。
+
+重新实取JSS官方verup/faqmenu两旧源，沿真实菜单首次取faqquest正文：三页实际档案2001-04-17/17/25、11239/3356/1654B，严格Shift-JIS并固定SHA。新增源语义合同6项：2000-04-24限一个月合作寻宝和04-17结束的SJOT归独立运营活动资料；转生、玄黄洞窟、ウリウリ贝壳缺陷、クイズ道場台词/内部通路改动仍起源待考。本体/永久新增均未晋级；日文イベント不直接等同限时活动，同日美容推广、限时聊天室不把属性传给转生/地图/任务。13条未名追加不是13个不同任务；六合同不是六已复原原服任务/NPC。新取得FAQ正文是系统/截图问答而非任务攻略，注释中的体验版答复不当有效公开政策，F12截图只为文字证据非运行/像素。
+
+交付 `docs/specs/STONEAGE-JSS-EARLY-QUEST-ORIGINS-R116.md`、永久派生JSON、源字节重放器、17项新单元及专用独立取三页CI；新旧合计44项本地通过。独立regex/entity核40更新段及旧报告摘要全部一致；原文绕过SHA门禁的11项语义变异拒绝。原HTML/图/程序不入Git，原任务ID、奖品表、发售基线与服务器执行仍缺。候选/main Actions及ZIP/raw/Git blob保管待实际验收后记录，不提前报绿。
+
+最高NEXT `QUEST-ORIGIN-BACKFILL-AND-GAP-REVIEW-R117`：有限审查既有早期任务与R107–R109等未纳入六组旧档覆层的任务材料，补运营活动/待考视图及具体一手缺口；不重拉已验页，不连续扩更新helper，不把分类整理当本体复原。Stage A7 PARTIAL+2 OPEN、Stage B/wiki GATED、savedataR79 PAUSED_NON_BLOCKING、总体复原百分比null。四大历史前缀全保留。
