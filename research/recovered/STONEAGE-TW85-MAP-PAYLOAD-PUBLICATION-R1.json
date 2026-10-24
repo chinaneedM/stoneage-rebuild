@@ -1,0 +1,82 @@
+{
+  "boundaries": {
+    "full_world_maps_certified": false,
+    "npc_quest_master_recovered": false,
+    "original_game_executed": false,
+    "original_package_durable_store_established": false
+  },
+  "candidate_and_main_artifact_zip_bytes_equal": false,
+  "candidate_source": {
+    "conclusion": "success",
+    "head": "86a1f9fd0ee10c5e53ec085cd3227fbb54f83d2f",
+    "id": 40131518031,
+    "job_id": 120984031027,
+    "tree": "5c132480c4441f4a129a8d95cb848dc3008cca21"
+  },
+  "candidate_validation_success_run_ids": [
+    40131891927,
+    40131891842,
+    40131891868,
+    40131891865,
+    40131891878,
+    40131891880,
+    40131891923,
+    40131891840,
+    40131891948,
+    40131891801,
+    40131891807
+  ],
+  "content_main": "bbf29cb196f1ceb0bcd182f347d31936b6727fd3",
+  "content_tree": "b9ff1937586f93362bfacccb85db6ddc6046c731",
+  "date": "2026-10-25",
+  "local_final_adjacent_unit_tests_passed": 24,
+  "main_acquisition_manifest": {
+    "artifact_retention_days": 30,
+    "bytes": 385776,
+    "full_content_in_git": false,
+    "sha256": "a86d14cab4d109ed9197c8c18fd534dab6a9ae48c8ae0cd31919ef088cca717d"
+  },
+  "main_map_report": {
+    "bytes": 149924,
+    "git_blob": "7b9233aa3876c6a0f3b2b3699964ac5d7f4d94cb",
+    "sha256": "aacac89c451305c59adf38cfc6c14ba8a2efb88705607206aee7f63a8e14ead5"
+  },
+  "main_source_artifact": {
+    "api_sha256": "a1d2dc63b68f8a39af39dd247815721734de222e868db57a02dce8130828457a",
+    "id": 12575426987,
+    "independent_download_sha256": "a1d2dc63b68f8a39af39dd247815721734de222e868db57a02dce8130828457a",
+    "members": [
+      "tw85-map-acquisition.json",
+      "tw85-map-structure.json"
+    ],
+    "zip_bytes": 86498
+  },
+  "main_source_map_report_equals_candidate_and_permanent_git_bytes": true,
+  "main_source_run": {
+    "all_six_parts_newly_downloaded": true,
+    "conclusion": "success",
+    "head": "bbf29cb196f1ceb0bcd182f347d31936b6727fd3",
+    "id": 40131929814,
+    "job_id": 120985270711
+  },
+  "main_validation_success_run_ids": [
+    40131929865,
+    40131930000,
+    40131929802,
+    40131929847,
+    40131929880,
+    40131929876,
+    40131929858,
+    40131929767,
+    40131929927,
+    40131929814,
+    40131929883,
+    40131929969,
+    40131929895
+  ],
+  "next": "CLIENT-MAP-CROSS-VERSION-PLANE-DIFF-04",
+  "publication_commit_own_actions": "MUST_BE_OBSERVED_AFTER_COMMIT_NOT_PRECLAIMED",
+  "receipt_creation_note": "Earlier PENDING receipt is preserved as historical evidence; this later observed result supersedes its pending main replay field.",
+  "schema": "stoneage.tw85_map_payload_publication.r1",
+  "semantic_mutations_rejected_ignoring_digest_gate": 9
+}
