@@ -18536,3 +18536,7 @@ bot完整派生commit d82113d7a9dcd53d43f2f4c3d9113d542c746f44/tree37246c14dd35d
 交付 `docs/STONEAGE-PRIVATE-ORIGINAL-ARTIFACT-CUSTODY-GATE-R1.md`、`research/recovered/STONEAGE-PRIVATE-ARTIFACT-CUSTODY-PREFLIGHT-R1.json`、`tools/stoneage_private_archive_custody.py`、`tests/test_stoneage_private_archive_custody.py`及独立workflow；候选 `71d5d1b2c66f524f682b59e8ae68badbb8098d5b` 的独立Actions run40143101226/job121018758289已实际completed/success，合成样本多件分块SHA、错误摘要/对象大小/缺失来源/损坏回读等守卫有效，未取真实原商用文件，也非耐久服务实测。归档工具仅本地拷贝/即时完整回读；未来须先验证私有可持续目标、容量/单件/权限，再回读与跨会话证明后才可称长期保管。原件不得入公开仓。
 
 协议13有限止点已触达，CUSTODY-07转 `PAUSED_EXTERNAL_PRIVATE_STORAGE_DEPENDENCY`；下一个主动材料优先 `PET-SPECIES-SAME-BUILD-PRIMARY-MASTER-08`，寻找一项可鉴真的同构建官方宠物名称→资源ID/图像连接的原主表/官方源，或者登记精确缺源并轮换NPC/本体任务，不把416220 ADRN记录当物种，不将运营活动混入本体任务。若无新原字节，不无限扩低层helper。DD-028/029、Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、overall percent=null均保留。主线提交及主线Actions后验另据实际结果补证。
+
+### 2026-10-25 — 私人原件保管门槛候选/main验收实际后验
+
+内容commit main `de1effd648b3475a05816a9c1a375c32fb0aee1e` / tree `e64c47e28417a80d53e931148db911184f5ed2f6` 已经非强制快进发布。候选工具自身run40143101226、连续性候选8项Actions、同内容主线10项Actions全部实际completed/success；并独立从原生Git blob核实先前CURRENT `d5b1b62b35e85f4ea4297f813be888ab04d3829f` 全文本为当前 `0b6187b05468e7662f27cc15d41d070bbcfd352b` 的原样前缀，没有截断、删改历史。永久派生验收收据 `research/recovered/STONEAGE-PRIVATE-ARTIFACT-CUSTODY-PUBLICATION-R1.json` 记载8+10运行和所有文件Git SHA。此后验仅接受归档工具/元数据/连续性发布，不改变私人原版存储未落实、未实测跨会话回读或原商用程序未重跑的事实。最高主动NEXT仍 `PET-SPECIES-SAME-BUILD-PRIMARY-MASTER-08`；CUSTODY-07暂停等私人存储依赖具备后重开。Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、percent=null不变。此验收收据提交自身Actions须下轮另据实观察。

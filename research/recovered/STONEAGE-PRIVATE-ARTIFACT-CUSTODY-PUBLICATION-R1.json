@@ -1,0 +1,148 @@
+{
+  "schema": "stoneage.private_original_archive_publication_r1",
+  "date": "2026-10-25",
+  "recording_base_main": "de1effd648b3475a05816a9c1a375c32fb0aee1e",
+  "recording_base_tree": "e64c47e28417a80d53e931148db911184f5ed2f6",
+  "stage_content_commit": "71d5d1b2c66f524f682b59e8ae68badbb8098d5b",
+  "stage_continuity_commit": "de1effd648b3475a05816a9c1a375c32fb0aee1e",
+  "source_base_main": "9dbc0c5a971d48805bb220330ec5850a923850b5",
+  "source_base_tree": "bebd37ab83a5c77baf1e74d5c0bbe313795de279",
+  "legacy_state_git_blob": "d5b1b62b35e85f4ea4297f813be888ab04d3829f",
+  "retained_state_git_blob": "0b6187b05468e7662f27cc15d41d070bbcfd352b",
+  "legacy_state_prefix_verified_by_exact_remote_blob": true,
+  "files": {
+    "tools/stoneage_private_archive_custody.py": "51fc267ba62a5db34a494b2f196d619debf98324",
+    "tests/test_stoneage_private_archive_custody.py": "9fccccd288b3bdbe1e0af6ff552b0e6b426adae9",
+    "docs/STONEAGE-PRIVATE-ORIGINAL-ARTIFACT-CUSTODY-GATE-R1.md": "31473d9301ae0e638be82f2c94da5a00b330a1c8",
+    "research/recovered/STONEAGE-PRIVATE-ARTIFACT-CUSTODY-PREFLIGHT-R1.json": "2731ff5ef84cfc9d8265ecf750350409b499c9a2",
+    ".github/workflows/verify-stoneage-private-archive-gate.yml": "26ff3f059f9e9b29cf52a4df44c42e8ed70595af"
+  },
+  "candidate_synthetic_run": {
+    "id": 40143101226,
+    "job": 121018758289,
+    "status": "completed",
+    "conclusion": "success"
+  },
+  "candidate_continuity_runs": [
+    {
+      "id": 40143222623,
+      "status": "completed",
+      "conclusion": "success",
+      "name": "Validate StoneAge Stage A joint review decision"
+    },
+    {
+      "id": 40143222679,
+      "status": "completed",
+      "conclusion": "success",
+      "name": "Validate direct TW1.0 sprite-to-ADRN source joins"
+    },
+    {
+      "id": 40143222681,
+      "status": "completed",
+      "conclusion": "success",
+      "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes"
+    },
+    {
+      "id": 40143222618,
+      "status": "completed",
+      "conclusion": "success",
+      "name": "Validate Stage A early source gap triage"
+    },
+    {
+      "id": 40143222638,
+      "status": "completed",
+      "conclusion": "success",
+      "name": "Validate StoneAge preproduction content archive and wiki boundary"
+    },
+    {
+      "id": 40143222648,
+      "status": "completed",
+      "conclusion": "success",
+      "name": "Verify R102 frozen material portfolio and record projections"
+    },
+    {
+      "id": 40143222637,
+      "status": "completed",
+      "conclusion": "success",
+      "name": "Validate legacy StoneAge assistant history and pet content gaps"
+    },
+    {
+      "id": 40143222617,
+      "status": "completed",
+      "conclusion": "success",
+      "name": "Validate Stage A evidence-limited review acceptance"
+    }
+  ],
+  "main_acceptance_runs": [
+    {
+      "id": 40143277278,
+      "status": "completed",
+      "conclusion": "success",
+      "name": "Validate StoneAge Stage A joint review decision"
+    },
+    {
+      "id": 40143277253,
+      "status": "completed",
+      "conclusion": "success",
+      "name": "Validate legacy StoneAge assistant history and pet content gaps"
+    },
+    {
+      "id": 40143277331,
+      "status": "completed",
+      "conclusion": "success",
+      "name": "Validate Stage A early source gap triage"
+    },
+    {
+      "id": 40143277424,
+      "status": "completed",
+      "conclusion": "success",
+      "name": "Verify StoneAge private original-byte archive boundary"
+    },
+    {
+      "id": 40143277312,
+      "status": "completed",
+      "conclusion": "success",
+      "name": "Verify R102 frozen material portfolio and record projections"
+    },
+    {
+      "id": 40143277255,
+      "status": "completed",
+      "conclusion": "success",
+      "name": "Independently verify TW1.0 R58 rooted helper returns and source custody"
+    },
+    {
+      "id": 40143277300,
+      "status": "completed",
+      "conclusion": "success",
+      "name": "Validate Stage A evidence-limited review acceptance"
+    },
+    {
+      "id": 40143277489,
+      "status": "completed",
+      "conclusion": "success",
+      "name": "Validate direct TW1.0 sprite-to-ADRN source joins"
+    },
+    {
+      "id": 40143277396,
+      "status": "completed",
+      "conclusion": "success",
+      "name": "Validate StoneAge preproduction content archive and wiki boundary"
+    },
+    {
+      "id": 40143277441,
+      "status": "completed",
+      "conclusion": "success",
+      "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes"
+    }
+  ],
+  "authentic_carriers_reacquired_in_this_package": false,
+  "private_durable_original_carriers_retained": false,
+  "private_provider_full_later_readback": false,
+  "publication_acceptance": "DERIVED_TOOL_AND_CONTINUITY_ACCEPTED_ONLY",
+  "storage_status": "BLOCKED_PRIVATE_STORAGE_NOT_PROVISIONED",
+  "next_active": "PET-SPECIES-SAME-BUILD-PRIMARY-MASTER-08",
+  "source_server_or_pet_identification_claimed": false,
+  "stage_a": "7_PARTIAL_2_OPEN",
+  "stage_b": "GATED",
+  "overall_restoration_percentage": null
+}
