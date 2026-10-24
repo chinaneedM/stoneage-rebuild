@@ -1,0 +1,31 @@
+name: Probe original Korea official client payload endpoints R1
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'tools/stoneage_early_official_payload_probe.py'
+      - 'tests/test_stoneage_early_official_payload_probe.py'
+      - '.github/workflows/probe-stoneage-early-official-original-payload-r1.yml'
+permissions:
+  contents: read
+jobs:
+  source-endpoint-prefix-qualification:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Offline negative and source-boundary tests
+        run: python -m unittest tests.test_stoneage_early_official_payload_probe -v
+      - name: Probe four independently documented historical binary endpoints
+        run: |
+          mkdir -p derived
+          python -m tools.stoneage_early_official_payload_probe --output derived/official-korea-original-payload-prefix-r1.json
+          python -m json.tool derived/official-korea-original-payload-prefix-r1.json >/dev/null
+      - uses: actions/upload-artifact@v4
+        with:
+          name: official-korea-original-payload-prefix-r1
+          path: derived/official-korea-original-payload-prefix-r1.json
+          retention-days: 30
