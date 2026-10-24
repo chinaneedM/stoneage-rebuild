@@ -18292,3 +18292,18 @@ Integration preflight also preserved the c6a07dc92ad3dc2f97156044f17c59e0915fb08
 永久收据research/recovered/STONEAGE-JSS-EARLY-QUEST-ORIGINS-CUSTODY-R116.json固定9个内容Git blobs、最新b5c四历史原前缀、3页源SHA、3次派生工件ZIP/JSON摘要、实际运行与job。main artifact12547793357 ZIP SHA256 8d69a40a2cbf5b5259369fe660a5ea534dc36cabed0c30141ff2be800814b6cc，raw JSON SHA256 e66a477e6096babce940abaa62d33977c1a5912f547e320db07e62c4a3f4b894，与永久派生Git blob5ddcee9183702d5e4856d0807dc29a23beef435e逐字节一致。独立40段regex/entity及11原文语义变异只声明本地审计，不冒称CI重跑。原HTML/图/商业程序不入库。
 
 本补充的两项合作运营活动单列，四项早期具名内容待考，初代/永久任务无新晋级；同轮49研究ID审查及其保管收据完整保留，不能与本包6合同相加成原任务数。最高NEXT EARLY-BASE-QUEST-PROVENANCE-117：成人礼或四大洞窟一项的早期发行基线归属；不重复索引/活动helper。Stage A7 PARTIAL+2 OPEN，Stage B/wiki GATED，R79暂停，整体复原百分比null。
+
+
+## 2026-10-24 R117 — 成人礼起源资格查证与活动前置的独立归属
+
+新核远端main e4f8f064678a7ef6bda59f03bf44738dd9da8a5b/tree0f36a7a181d430a205d4469bfdd56846d058d906启动，七连续性/状态全文原生Git重读，最高EARLY-BASE-QUEST-PROVENANCE-117。途中main新增JSS源保管05b33354/8d58d1f8，已非强制快进保留其原收据和完整新历史；独立草稿不覆盖远端已发布收据。R116冻结924输入/49ID与JSS六合同两项研究仍各自保留、不相加当任务总数。
+
+本轮止于成人礼一项起源问题：旧六源合同与CI两份6978B完全相同；真实新浪20011120063019快照14617B及411字任务选段已验，但这里只能证明该选段最迟当时存在，不能按目录0101推出1月、按网页语言推出游戏地区、或证明1999/JSS及台湾1.0首发已有。新浪/17173同文不算两独立规则见证；奖励敏捷-2/-3及其它流程差异旧档不合并。日服2004圣诞要求先完成「成人の儀」是媒体前置主张，不把前置任务变成圣诞活动，也不自动证永久/首发或与中文同原ID。JSS玄黄洞窟2000修正不能用于另一成人礼任务定年。
+
+早期台湾/JSS/官方发行限定检索未得可晋级原件，不作全网缺失证明。Google Groups候选A0YUU3uzAaQ仍仅索引显示2000-06-13及成人礼目标；网页open不可用，直接HTTP实返429，未取原消息头/正文/原字节/独立日期；429后不重试。2000年日期仍UNQUALIFIED_SEARCH_LEAD，不能报告为已证最早存在。结果ORIGIN_UNRESOLVED，本轮新增本体/永久/原服实体均0，起源缺证不表示原游戏没有此任务。
+
+独立下载JSS源候选run40062437430/artifact12547837667与main40062697253/artifact12547793357，两ZIP各4113B/SHA与API一致，唯一r116-replay.json各18363B/SHAe66a477e6096babce940abaa62d33977c1a5912f547e320db07e62c4a3f4b894与永久Git blob5ddcee9183702d5e4856d0807dc29a23beef435e一致；日志各44单元/三原页重放/cmp/四前缀成功。另从现存临时三原HTML独立取SHA与完整语义重放逐字节一致，不算再次网络取源或新发现；已发布完整R116保管收据原样保留。
+
+交付docs/specs/STONEAGE-ADULT-QUEST-ORIGIN-QUALIFICATION-R117.md、research/recovered/STONEAGE-ADULT-QUEST-ORIGIN-QUALIFICATION-R117.json、五父源固定重放器/七新正反单元/专用CI；与旧来源边界共51本地单元通过，远端候选/main结果随后据实际验收记录，未预支成功。此为有限归属资格结果及精准取源缺口，不是原服任务执行/源网页本轮重取。
+
+**最高NEXT EARLY-NPC-VISUAL-SOURCE-118**：轮换实际NPC/交互画面缺口，先查重，优先一张带官方具名图注与年代的早期JSS/台湾原画面，形成一个有原始来源及像素的具名视觉合同或具体有界缺口；不以静态图号/同名/晚期活动回填初代。成人礼仅遇同地区定年发行手册/明确永久更新/鉴定同build脚本主表才重开，不重复六源、429链接或无名更新helper。Stage A7 PARTIAL+2 OPEN，B/wiki GATED，R79暂停，整体百分比null。全历史旧前缀均保留。

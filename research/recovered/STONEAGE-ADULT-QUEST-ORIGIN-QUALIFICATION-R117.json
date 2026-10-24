@@ -1,0 +1,155 @@
+{
+  "schema": "stoneage.adult_quest_origin_qualification.r117",
+  "date": "2026-10-24",
+  "baseline_head": "e4f8f064678a7ef6bda59f03bf44738dd9da8a5b",
+  "task": "EARLY-BASE-QUEST-PROVENANCE-117",
+  "inputs": [
+    {
+      "key": "adult",
+      "path": "research/recovered/STONEAGE-ADULT-CEREMONY-SOURCE-CONTRACT-R1.json",
+      "bytes": 6978,
+      "sha256": "27403615ac8f4f826db6926fb6c2fb9a60608fcc5dfd4c4d2a3d585ddd613b8b",
+      "git_blob": "058225a89962dbcfb49e464f7de999f0f5f81121"
+    },
+    {
+      "key": "adult_ci",
+      "path": "research/recovered/STONEAGE-ADULT-CEREMONY-CI-DERIVED-R1.json",
+      "bytes": 6978,
+      "sha256": "27403615ac8f4f826db6926fb6c2fb9a60608fcc5dfd4c4d2a3d585ddd613b8b",
+      "git_blob": "058225a89962dbcfb49e464f7de999f0f5f81121"
+    },
+    {
+      "key": "adult_receipt",
+      "path": "research/recovered/STONEAGE-ADULT-CEREMONY-ACCEPTANCE-R1.json",
+      "bytes": 1899,
+      "sha256": "0a1f9ad69d024ebbab586f6373a93e2f8a015e0335f582074f5de2f73d15b21d",
+      "git_blob": "fac1f84a2c8aece49713a6729ad4aaa8dd99f6d5"
+    },
+    {
+      "key": "xmas",
+      "path": "research/recovered/STONEAGE-JP2004-XMAS-PARTY-COMBAT-R110.json",
+      "bytes": 9228,
+      "sha256": "e6f15494d1da10e33f53abc5e23f7a23d37e89226e7b16c66c5bef6ba6d5185e",
+      "git_blob": "eb22c2c7b918088e386f5fea90104549c81a6183"
+    },
+    {
+      "key": "jss",
+      "path": "research/recovered/STONEAGE-JSS-EARLY-QUEST-ORIGINS-R116.json",
+      "bytes": 18363,
+      "sha256": "e66a477e6096babce940abaa62d33977c1a5912f547e320db07e62c4a3f4b894",
+      "git_blob": "5ddcee9183702d5e4856d0807dc29a23beef435e"
+    }
+  ],
+  "scope": "ONE_ADULTHOOD_QUEST_ORIGIN_QUESTION_NOT_A_GLOBAL_QUEST_CENSUS",
+  "qualification": {
+    "documentary_label": "成人仪式／成人礼（中文文献标签）",
+    "origin_class": "ORIGIN_UNRESOLVED",
+    "record_kind": "QUEST_ORIGIN_QUALIFICATION",
+    "region": null,
+    "exact_release_or_build": null,
+    "operator": null,
+    "first_introduced_date": null,
+    "native_quest_id": null,
+    "native_npc_ids": null,
+    "native_reward_ids": null,
+    "launch_baseline_admission": false,
+    "permanence_proven": false,
+    "is_operator_event_proven": false,
+    "original_server_executed": false
+  },
+  "documentary_time_evidence": {
+    "accepted_capture": "20011120063019",
+    "archived_page": {
+      "url": "https://web.archive.org/web/20011120063019id_/http://games.sina.com.cn:80/handbook/0101/01186091_c1.shtml",
+      "final_url": "https://web.archive.org/web/20011120063019id_/http://games.sina.com.cn:80/handbook/0101/01186091_c1.shtml",
+      "bytes": 14617,
+      "sha256": "6338fee011897e9196fec132558bf1a4333b0b22946f026e46d4f284b3d2aeb9",
+      "decoding": "gb18030",
+      "replacement_characters": 0
+    },
+    "selected_block_sha256": "d2657655b96da2840fd19e9b663696a140bdb65d7f26653f36cad7e0938b828c",
+    "selected_normalized_characters": 411,
+    "meaning": "THIS_SELECTED_GUIDE_TEXT_EXISTED_BY_THE_ACCEPTED_CAPTURE_NOT_GAME_RELEASE_DATE",
+    "earliest_capture_exhaustively_established": false,
+    "page_directory_0101_proves_january_2001_text": false,
+    "sina_and_17173_same_block_are_independent_rule_witnesses": false,
+    "guide_host_language_proves_game_region_or_build": false,
+    "newly_acquired_source_this_turn": false
+  },
+  "event_dependency_boundary": {
+    "source_path": "research/recovered/STONEAGE-JP2004-XMAS-PARTY-COMBAT-R110.json",
+    "source_pointer": "/observations/christmas/s1_required_quest",
+    "source_label": "成人の儀",
+    "event_window": {
+      "start": "2004-12-20",
+      "end": "2004-12-27"
+    },
+    "relation": "REPORTED_REQUIRED_COMPLETION_BEFORE_CHRISTMAS_PARTICIPATION",
+    "prerequisite_quest_inherits_event_origin_or_window": false,
+    "prerequisite_is_base_or_permanent_proven": false,
+    "jp2004_prerequisite_equals_2001_chinese_quest_native_entity": false
+  },
+  "excluded_cross_quest_inference": {
+    "jss_named_cave": "玄黄の洞窟",
+    "operator_written_date": "2000-04-24",
+    "evidence": "NAMED_CAVE_PROGRESSION_FIX_NOT_ADULTHOOD_OR_LAUNCH_PROOF",
+    "jss_cave_fix_dates_chinese_adulthood_quest": false
+  },
+  "new_acquisition_attempts": [
+    {
+      "url": "https://groups.google.com/g/tw.bbs.rec.mud/c/A0YUU3uzAaQ",
+      "search_title": "SA....石器時代.....",
+      "index_display_date_claim": "2000-06-13",
+      "indexed_quest_label": "成人禮",
+      "status": "UNQUALIFIED_SEARCH_LEAD",
+      "web_open": "UNAVAILABLE",
+      "direct_http_status": 429,
+      "original_message_headers_obtained": false,
+      "body_obtained": false,
+      "raw_bytes": null,
+      "raw_sha256": null,
+      "independent_date_authenticated": false,
+      "admitted_as_historical_date_or_release_evidence": false,
+      "retry_after_429": false
+    }
+  ],
+  "bounded_search": {
+    "targets": [
+      "TW2000_ADULTHOOD_OFFICIAL_RELEASE_OR_MANUAL",
+      "JSS_ADULTHOOD_1999_2000",
+      "JSS_GENKOU_NOT_GBC_OR_LATER_PLAYER_GUIDE"
+    ],
+    "new_qualifying_first_party_launch_or_permanence_evidence_found": false,
+    "later_guides_or_cross_platform_matches_used_to_backfill_launch": false,
+    "global_source_absence_established": false
+  },
+  "decision": {
+    "outcome": "BOUNDED_ORIGIN_QUESTION_REMAINS_OPEN_NO_PROMOTION",
+    "reopen_on": [
+      "DATED_SAME_REGION_RELEASE_MANUAL_WITH_NAMED_TASK",
+      "EXPLICIT_SAME_REGION_PERMANENT_TASK_ADDITION_NOTICE",
+      "AUTHENTICATED_SAME_BUILD_SCRIPT_OR_TASK_MASTER"
+    ],
+    "do_not_repeat": [
+      "OLD_SIX_ADULT_SOURCE_ACQUISITIONS_WITHOUT_NEW_MATERIAL",
+      "GOOGLE_GROUPS_RATE_LIMIT_RETRY_THIS_UNIT",
+      "R116_FROZEN_CENSUS",
+      "JSS_UNNAMED_UPDATE_HELPER_EXPANSION"
+    ]
+  },
+  "boundaries": {
+    "new_original_game_entities": 0,
+    "new_verified_launch_quests": 0,
+    "new_verified_permanent_quests": 0,
+    "new_raw_historical_source_obtained": false,
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b_wiki": "GATED",
+    "savedata_r79": "PAUSED_NON_BLOCKING",
+    "overall_restoration_percentage": null
+  },
+  "next": {
+    "task": "EARLY-NPC-VISUAL-SOURCE-118",
+    "deliverable": "One early JSS or Taiwan official named NPC/interaction image with actual source attribution, or a precise acquisition gap",
+    "stop": "One source-qualified named visual contract; no guessing native IDs or repeating unqualified later event archives"
+  }
+}

@@ -1,0 +1,66 @@
+name: Verify R117 adulthood origin limits and JSS source custody
+on:
+  push:
+    paths:
+      - 'tools/stoneage_adult_origin_r117.py'
+      - 'tests/test_stoneage_adult_origin_r117.py'
+      - 'research/recovered/STONEAGE-ADULT-QUEST-ORIGIN-QUALIFICATION-R117.json'
+      - 'research/recovered/STONEAGE-ADULT-CEREMONY-SOURCE-CONTRACT-R1.json'
+      - 'research/recovered/STONEAGE-ADULT-CEREMONY-CI-DERIVED-R1.json'
+      - 'research/recovered/STONEAGE-ADULT-CEREMONY-ACCEPTANCE-R1.json'
+      - 'research/recovered/STONEAGE-JP2004-XMAS-PARTY-COMBAT-R110.json'
+      - 'research/recovered/STONEAGE-JSS-EARLY-QUEST-ORIGINS-R116.json'
+      - 'research/recovered/STONEAGE-JSS-EARLY-QUEST-ORIGINS-CUSTODY-R116.json'
+      - 'docs/specs/STONEAGE-ADULT-QUEST-ORIGIN-QUALIFICATION-R117.md'
+      - '.github/workflows/verify-stoneage-adult-origin-r117.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  origin-and-custody:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest tests.test_stoneage_adult_origin_r117 tests.test_stoneage_jss_early_quest_origins_r116 tests.test_stoneage_jss_pet_patch_history tests.test_stoneage_quest_origin_classification_r1 -v
+      - run: python -m tools.stoneage_adult_origin_r117
+      - name: Verify permanent JSS replay metadata and custody pins
+        run: |
+          python - <<'PY'
+          import hashlib,json
+          import subprocess
+          from pathlib import Path
+          d=json.loads(Path('research/recovered/STONEAGE-JSS-EARLY-QUEST-ORIGINS-CUSTODY-R116.json').read_bytes())
+          subprocess.run(['git','fetch','--depth=1','origin',d['content_commit']],check=True)
+          for pin in d['content_files']:
+              raw=subprocess.check_output(['git','show',d['content_commit']+':'+pin['path']])
+              assert len(raw)==pin['bytes']
+              assert hashlib.sha256(raw).hexdigest()==pin['sha256']
+              assert hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest()==pin['git_blob']
+          for path,blob in d['unchanged_source_replay_files_from_5576_integration_through_final_merge'].items():
+              raw=Path(path).read_bytes()
+              assert hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest()==blob
+          raw=Path('research/recovered/STONEAGE-JSS-EARLY-QUEST-ORIGINS-R116.json').read_bytes()
+          a=d['main_source_replay']
+          assert len(raw)==a['json_bytes'] and hashlib.sha256(raw).hexdigest()==a['json_sha256']
+          assert a['artifact']['digest']=='sha256:'+a['zip_sha256']
+          assert a['job']['conclusion']=='success'
+          assert len(d['main_workflow_runs'])==12
+          assert all(r['status']=='completed' and r['conclusion']=='success' for r in d['main_workflow_runs'])
+          assert d['scope']['base_game_quest_admissions']==d['scope']['permanent_version_quest_admissions']==0
+          print('Nine immutable content pins/eight current source pins and exact-payload receipt PASS; no live source reacquisition in R117')
+          PY
+      - name: Preserve full latest-main historical prefixes
+        run: |
+          python - <<'PY'
+          import subprocess
+          from pathlib import Path
+          baseline='8d58d1f8ae5a04453fb286b102a4b272d2f50f24'
+          subprocess.run(['git','fetch','--depth=1','origin',baseline],check=True)
+          for p in ('docs/CURRENT-STATE.md','docs/HISTORICAL-TIMELINE.md','docs/SOURCE-REGISTRY.md','docs/RESTORATION-ROADMAP-R2.md'):
+              assert Path(p).read_bytes().startswith(subprocess.check_output(['git','show',baseline+':'+p])),p
+          print('Four complete latest-main historical prefixes PASS')
+          PY

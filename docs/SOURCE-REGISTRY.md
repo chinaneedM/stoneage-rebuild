@@ -8675,3 +8675,8 @@ SRC-JSS-EARLY-QUEST-ORIGINS-R116：重新取得原官网 https://web.archive.org
 源称2000-04-24寻宝是与ログイン合作的一个月活动，04-17结束SJOT、04-10修正其NPC设定；两项只作活动文献合同，不具任务全过程。转生2000-08-28追加、玄黄洞窟04-24进程修正、ウリウリ1999-10-18贝壳重复缺陷修正、クイズ道場2000-05-08台词/05-29内部通路变化，仍起源待考；无原任务/NPC/奖品/地图ID、永久性、1999首发或TW1.0同构建证明。13条泛称事件追加不算13个原任务，同日其他推广或场所期限不能跨句转移。
 
 faqquest正文只有系统兼容/截图三答，旧体验版答在注释内；F12与stoneage/screenshot目录仅运营方说明，非实际客户端执行或资产授权。永久派生 `research/recovered/STONEAGE-JSS-EARLY-QUEST-ORIGINS-R116.json` 和规格 `docs/specs/STONEAGE-JSS-EARLY-QUEST-ORIGINS-R116.md`。原HTML/图/商业资产不入Git；byte-exact源说明仍不同于原服事务。候选/main以真实CI和永久收据后验。
+
+
+### 2026-10-24 R117 — 成人礼起源资格：五父档与失败取源记录
+固定既有ADULT-CEREMONY-SOURCE-CONTRACT/CI-DERIVED/ACCEPTANCE、JP2004-XMAS-PARTY-COMBAT-R110、JSS-EARLY-QUEST-ORIGINS-R116五文件原bytes/SHA/Git blob，详STONEAGE-ADULT-QUEST-ORIGIN-QUALIFICATION-R117.json。旧新浪实际20011120063019快照及选段SHA不作新发现；新浪/17173同文不算独立见证；2004日本活动前置不传活动期限或跨区原ID。Google Groups A0YUU3uzAaQ本轮网页open不可用、直接HTTP429，无源正文/消息头/原字节，索引2000-06-13不能晋为史实，429后停止。有限检索无可晋级原件不证明全网缺失。
+JSS R116两实际工件12547837667/12547793357 ZIP摘要分别394c0baddfc1c9408358c37df1b7872c46af15444907757108925ec33a0a843a与8d69a40a2cbf5b5259369fe660a5ea534dc36cabed0c30141ff2be800814b6cc均匹配API；双18363B原JSON/永久派生SHAe66a477e6096babce940abaa62d33977c1a5912f547e320db07e62c4a3f4b894全等。另由现存临时三原HTML独立重放同字节，不新计原件或网络取源；保留最新远端原始JSS保管收据，未覆盖为本地草稿。R117工具/七新单元/专用CI验证永久归属边界，不声称本轮商业服执行。下一EARLY-NPC-VISUAL-SOURCE-118转一项具名官方早期NPC/交互像素实源。
