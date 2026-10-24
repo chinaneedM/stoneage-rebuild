@@ -18264,3 +18264,22 @@ R116内容commit `48d07c55690b0e9b5b6633f02325548381967945` / tree `68ac2c75217d
 ### 2026-10-24 R117取源交接线索（未认证，不算新史实）
 R116保管commit c6a07dc92ad3dc2f97156044f17c59e0915fb089/tree2c6ddc4348d99cda3c4a85885ba77ba81b63ff5c自身候选9项/main10项Actions实际全success；专用main run40062302289/job120778227087各步骤成功。最高任务仍EARLY-BASE-QUEST-PROVENANCE-117。预检旧成人礼合同已具20011120063019新浪实际快照及六源比对，不能再算新发现或回填2000首发；应寻找更早地区/基线证据。
 定向检索出现 https://groups.google.com/g/tw.bbs.rec.mud/c/A0YUU3uzAaQ ，索引标题「SA....石器時代.....」、显示2000-06-13及成人礼目标字样；正文open失败，未取原消息头/全文/原始字节/独立日期认证。仅登记UNQUALIFIED_SEARCH_LEAD_NOT_HISTORICAL_FACT，非官方发行证据、不计独立已核见证；即便后续认证玩家当时提及，也只支持当时存在的有限线索，不自动证明4月首发或JSS1999已有。优先官方原件，若有限重试仍不可用则保留缺口，不重复旧新浪正文/转载。旧分类/边界/历史前缀不变。
+
+
+## 2026-10-24 R116 — JSS原官网早期任务起源与合作活动分离
+
+本轮从新核远端main `1a5bb8d67ab6a4e7189968f53f007c41083a1f63` / tree `a9becaebf199329327f7bd1bb985de5e61fe787f` 启动，547分支、0开放PR/运行中Actions、同HEAD11项main completed/success；七启动文件与精确checkout逐字节一致，CURRENT全2584027B/SHA256 `5c528889883d881e9d99a6c3b6626d4be2500331fbc77eb66af506d69909ab16` 保留。旧聊天SHA未作为当前事实依据。
+
+重新实取JSS官方verup/faqmenu两旧源，沿真实菜单首次取faqquest正文：三页实际档案2001-04-17/17/25、11239/3356/1654B，严格Shift-JIS并固定SHA。新增源语义合同6项：2000-04-24限一个月合作寻宝和04-17结束的SJOT归独立运营活动资料；转生、玄黄洞窟、ウリウリ贝壳缺陷、クイズ道場台词/内部通路改动仍起源待考。本体/永久新增均未晋级；日文イベント不直接等同限时活动，同日美容推广、限时聊天室不把属性传给转生/地图/任务。13条未名追加不是13个不同任务；六合同不是六已复原原服任务/NPC。新取得FAQ正文是系统/截图问答而非任务攻略，注释中的体验版答复不当有效公开政策，F12截图只为文字证据非运行/像素。
+
+交付 `docs/specs/STONEAGE-JSS-EARLY-QUEST-ORIGINS-R116.md`、永久派生JSON、源字节重放器、17项新单元及专用独立取三页CI；新旧合计44项本地通过。独立regex/entity核40更新段及旧报告摘要全部一致；原文绕过SHA门禁的11项语义变异拒绝。原HTML/图/程序不入Git，原任务ID、奖品表、发售基线与服务器执行仍缺。候选/main Actions及ZIP/raw/Git blob保管待实际验收后记录，不提前报绿。
+
+最高NEXT `QUEST-ORIGIN-BACKFILL-AND-GAP-REVIEW-R117`：有限审查既有早期任务与R107–R109等未纳入六组旧档覆层的任务材料，补运营活动/待考视图及具体一手缺口；不重拉已验页，不连续扩更新helper，不把分类整理当本体复原。Stage A7 PARTIAL+2 OPEN、Stage B/wiki GATED、savedataR79 PAUSED_NON_BLOCKING、总体复原百分比null。四大历史前缀全保留。
+
+
+### 2026-10-24 R116同轮并行主线更新的整合与NEXT订正
+发布前重新发现main已为 `48d07c55690b0e9b5b6633f02325548381967945` / tree `68ac2c75217dde653009428d1c765751d1f5aa8b`，新加入924冻结JSON/49研究ID的任务分类复核。本包不是替换该成果，而是补充新实取JSS官方FAQ与早期更新逐句来源合同。合并先完整保留该新main四份历史文件，再追加本候选的原样历史后缀；两份R116规格/报告各保其范围，6项新源合同不能与49研究ID相加成任务总量。
+此前本包拟定的 `QUEST-ORIGIN-BACKFILL-AND-GAP-REVIEW-R117` 已被该主线材料审查覆盖，现明确取消重复索引工作，最高NEXT统一为 **`EARLY-BASE-QUEST-PROVENANCE-117`**：聚焦成人礼或四大洞窟一项具体任务的早期发行基线归属。R116中第一方玄黄洞窟2000-04-24进程修正提供JSS运营历史的存在时间线索，但不证明1999首发或TW1.0原生已有；后续需同地区发行/手册/更新或同构建脚本证据。不得继续扩合作活动、未名更新或重复分类来充任务量。原Stage A/B/wiki/R79/百分比边界均不变。
+
+
+Integration preflight also preserved the c6a07dc92ad3dc2f97156044f17c59e0915fb089 R116 material-review custody receipt and its complete CURRENT prefix. Both packages remain distinct; EARLY-BASE-QUEST-PROVENANCE-117 controls the next source task.

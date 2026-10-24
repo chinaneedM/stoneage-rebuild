@@ -8666,3 +8666,12 @@ S1所述：成人礼是条件，55级以上与福尔德/达那羽毛均为建议
 
 ### 2026-10-24 — R117候选线索，尚未取得正文
 UNQUALIFIED_SEARCH_LEAD_NOT_HISTORICAL_FACT：https://groups.google.com/g/tw.bbs.rec.mud/c/A0YUU3uzAaQ ，公开搜索索引显示标题「SA....石器時代.....」、2000-06-13及成人礼目标文字；本轮直接open失败。未取得正文、原Message-ID/Date头、原字节SHA或日期独立认证，不能当已认证2000史料、官方发行说明或首发任务依据，亦不计已核独立来源。下一包EARLY-BASE-QUEST-PROVENANCE-117可作有限候选；若后来认证，仍需区分同期玩家提及与具体发行基线存在。已存成人礼20011120063019新浪快照并非本轮新源，不重复计数。
+
+
+## 2026-10-24 R116 — JSS早期任务起源的逐句第一方限定
+
+SRC-JSS-EARLY-QUEST-ORIGINS-R116：重新取得原官网 https://web.archive.org/web/20010417162544id_/http://www.titan.co.jp/stoneage/verup.html （11239B/SHA256 ba71d859f34f31261f4293dc61583c53a8e77133898c4a8148c544a452abc3cb）与 https://web.archive.org/web/20010417155624id_/http://www.titan.co.jp/stoneage/faqmenu.html （3356B/d5ea757e563d0bf86ad96b72dc0081761b447fa3771e00a463919b89b7017f5f）；二者为已验旧源，本包新增事件用语分类合同。首次沿真菜单读取 https://web.archive.org/web/20010425044210id_/http://www.titan.co.jp/stoneage/faqquest.html （1654B/7b2006a9d9bf6297523b13d650b23c070d1901b5976a3eccda2c9a12374b4be8）。全Shift-JIS严格，原文发布日期未知，档案捕获非实服部署。
+
+源称2000-04-24寻宝是与ログイン合作的一个月活动，04-17结束SJOT、04-10修正其NPC设定；两项只作活动文献合同，不具任务全过程。转生2000-08-28追加、玄黄洞窟04-24进程修正、ウリウリ1999-10-18贝壳重复缺陷修正、クイズ道場2000-05-08台词/05-29内部通路变化，仍起源待考；无原任务/NPC/奖品/地图ID、永久性、1999首发或TW1.0同构建证明。13条泛称事件追加不算13个原任务，同日其他推广或场所期限不能跨句转移。
+
+faqquest正文只有系统兼容/截图三答，旧体验版答在注释内；F12与stoneage/screenshot目录仅运营方说明，非实际客户端执行或资产授权。永久派生 `research/recovered/STONEAGE-JSS-EARLY-QUEST-ORIGINS-R116.json` 和规格 `docs/specs/STONEAGE-JSS-EARLY-QUEST-ORIGINS-R116.md`。原HTML/图/商业资产不入Git；byte-exact源说明仍不同于原服事务。候选/main以真实CI和永久收据后验。
