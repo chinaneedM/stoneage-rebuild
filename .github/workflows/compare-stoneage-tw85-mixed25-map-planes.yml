@@ -2,7 +2,7 @@ name: Compare TW8.5 map layers with actual qualified mixed25 payload
 on:
   workflow_dispatch:
   push:
-    branches: ['agent/tw85-mixed25-map-planes-20261025', 'main']
+    branches: ['agent/tw85-mixed25-map-planes-20261025']
     paths:
       - 'tools/stoneage_tw85_mixed25_map_diff.py'
       - 'tests/test_stoneage_tw85_mixed25_map_diff.py'

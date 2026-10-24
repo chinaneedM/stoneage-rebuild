@@ -1,0 +1,159 @@
+{
+  "date": "2026-10-25",
+  "domains_unchanged": [
+    {
+      "baseline_evidence_status": "PARTIAL_SOURCE",
+      "domain_id": "version_lineage"
+    },
+    {
+      "baseline_evidence_status": "OPEN_VISUAL",
+      "domain_id": "login_splash"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "domain_id": "character_creation"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_RESOURCE",
+      "domain_id": "character_sprite_model"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "domain_id": "world_map"
+    },
+    {
+      "baseline_evidence_status": "OPEN_CONTENT",
+      "domain_id": "npc_identity"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "domain_id": "npc_dialog_ui"
+    },
+    {
+      "baseline_evidence_status": "OPEN_CONTENT",
+      "domain_id": "quest_content"
+    },
+    {
+      "baseline_evidence_status": "OPEN_SAME_BUILD_ROSTER",
+      "domain_id": "pet_species"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_RESOURCE",
+      "domain_id": "pet_visual"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "domain_id": "pet_stats"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_DESCENDANT",
+      "domain_id": "pet_growth"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "domain_id": "pet_skills"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_DESCENDANT",
+      "domain_id": "pet_encounter"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_DESCENDANT",
+      "domain_id": "ride_mount"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "domain_id": "battle_ui_rules"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_STRUCTURE",
+      "domain_id": "item_equipment_economy"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_RESOURCE",
+      "domain_id": "audio_fx"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_CATALOG",
+      "domain_id": "helper_versions"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_CATALOG",
+      "domain_id": "helper_capabilities"
+    },
+    {
+      "baseline_evidence_status": "PARTIAL_DISCOVERY",
+      "domain_id": "reference_web"
+    },
+    {
+      "baseline_evidence_status": "DESIGN_PREP_ONLY",
+      "domain_id": "future_player_wiki"
+    }
+  ],
+  "expected_archive_bytes": 3983427,
+  "expected_archive_sha256": "b077dcc7f1e944c33c6df4fe629d5e37abce9cb4d40f5b8d800cc69d59416e25",
+  "expected_url": "https://web.archive.org/web/20060911180132id_/http://www.wayi.com.tw:80/download/file/onlineGame/adrn_129.rar",
+  "finite_candidates": [
+    {
+      "reopen": "new public original payload URL or exact carrier/file checksum; no repeated dead endpoints or ISBN catalogs",
+      "source": "JSS1999 / Korean Inium original full-client carriers",
+      "status": "NO_NEW_PUBLIC_BYTE_SOURCE_QUALIFIED"
+    },
+    {
+      "limits": "2020 attachments have access controls; no login/payment or bypass; do not merge hg/gm by name",
+      "source": "Japanese sa174gm/sa174hg",
+      "status": "EXACT_IDENTITIES_EXIST_BUT_NO_NEW_ACCESSIBLE_BYTES"
+    },
+    {
+      "limits": "No further generic cache-helper chain without a named game-content dependency",
+      "source": "TW8.5 / mixed25 DAT",
+      "status": "FINITE_MAP_STRUCTURE_AND_35_PATH_LAYER_COMPARISON_DELIVERED"
+    },
+    {
+      "limits": "No source chain identifies it as StoneAge; not an authenticated game patch",
+      "source": "Wayi onlineGame/patch007.exe",
+      "status": "NOT_SELECTED_UNATTRIBUTED_DIRECTORY_HIT"
+    },
+    {
+      "limits": "Previously downloaded 2006 archive bytes are known but archive member identity / index-record metadata not recovered in the existing chain report",
+      "source": "Wayi fileid333 -> adrn_129.rar",
+      "status": "SELECTED_EXISTING_ORIGINAL_BINARY_WITH_UNRESOLVED_MEMBER_PAYLOAD"
+    }
+  ],
+  "overall_restoration_percentage": null,
+  "production_or_wiki_started": false,
+  "reason": "Two consecutive bounded map-source packages now have material results; stop map-helper expansion and reassess the whole-system artifact queue under protocol section13.",
+  "review_source_pins": {
+    "docs/STONEAGE-CLIENT-FIRST-CROSS-VERSION-ACQUISITION-R1.md": {
+      "bytes": 5163,
+      "git_blob": "07b30d32634c5a1f147d33a319bbabae6a5c7e8d",
+      "sha256": "8f9a6c32921425aa0dd0e377c7b4ea8f57c5011507e7d40aee794b0a9d6ce34d"
+    },
+    "research/clients/STONEAGE-JAPAN-SA174GM-GAMANIA-RECOVERY-R1.md": {
+      "bytes": 6925,
+      "git_blob": "f2ce2a1b85dd3acb9282687ad0ebeb8c993546dd",
+      "sha256": "663dfb5e29ac31550ab1c9a155f46aed2a2b49807f6abcbb375ee302fc529951"
+    },
+    "research/recovered/STONEAGE-EARLY-OFFICIAL-PAYLOAD-PROBE-R1.json": {
+      "bytes": 6235,
+      "git_blob": "86c208c0f4aa18db7c899b223e86c600cd66175a",
+      "sha256": "f901de595885203e9e7cd0740574bd5984220820056049b791882dfa5df591a3"
+    },
+    "research/recovered/STONEAGE-OFFICIAL-VERSION-RELEASE-SOURCE-COVERAGE-REVIEW-R13.json": {
+      "bytes": 4943,
+      "git_blob": "61a9947aca6d9ac2ff5ca3bfb2f5a02ffbf6d500",
+      "sha256": "212bfb000d1e3045e04d90206d1ec188dd657ec2d649aa8da8ad39f049101b1e"
+    },
+    "research/recovered/STONEAGE-WAYI-OFFICIAL-80-DOWNLOAD-CHAIN-R1.json": {
+      "bytes": 24832,
+      "git_blob": "8f6ddeb1dd5536194711e5d749f5eb2adf6ddc92",
+      "sha256": "c9b1b248966e6b811572ced9fb250df0b7e13a2adc2c4a6389eacd08ada159dc"
+    }
+  },
+  "schema": "stoneage.artifact_material_rotation.r5",
+  "scope": "Static RAR member extraction and complete derived member/index-record metadata; compare exact original ADRN record bytes/hashes to existing datasets if format supports it, preserving all occurrence paths. No REAL art bytes or entity names inferred.",
+  "selected_parent_source": "research/recovered/STONEAGE-WAYI-OFFICIAL-80-DOWNLOAD-CHAIN-R1.json",
+  "selected_task": "TW-WAYI-ADRN129-OFFICIAL-RESOURCE-PATCH-PAYLOAD-05",
+  "source_date_boundary": "Official listing displays 2005-05-18 and 7.5 black-screen index repair; actual accepted payload capture is 2006-09-11. No exact 2005 build or 8.0-only assertion.",
+  "stop": "One exact archive verified and safely unpacked into substantive index/member metadata, or a precise bounded acquisition/format failure. Do not recursively acquire unrelated directory hits."
+}

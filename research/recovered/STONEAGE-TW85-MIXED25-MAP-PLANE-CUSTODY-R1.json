@@ -1,0 +1,161 @@
+{
+  "actual_mixed25_bundle_downloaded_bytes": 361255180,
+  "artifact": {
+    "api_zip_sha256": "44b09c7f471772c928c34bbf90f7f2a95f93b1c82306771690c05ebf7ebbada2",
+    "id": 12575143331,
+    "independent_zip_sha256": "44b09c7f471772c928c34bbf90f7f2a95f93b1c82306771690c05ebf7ebbada2",
+    "members": [
+      "tw85-25-map-diff.json"
+    ],
+    "zip_bytes": 15914
+  },
+  "base_main": "d5dd923f9c5f14d3ad9e611212a91d2e2d55b190",
+  "base_tree": "d33d08b50de770ca1425be82dc8c1850605e8a82",
+  "candidate_and_main_acceptance": "PENDING_AT_RECEIPT_CREATION",
+  "date": "2026-10-25",
+  "full_derived_report_in_git": true,
+  "historical_prefixes": {
+    "docs/CURRENT-STATE.md": {
+      "bytes": 2641916,
+      "git_blob": "77c37d981882d5d9c777c9df29630063f268c0f3",
+      "sha256": "b6b29515e7420fefcfcc99aa5ce40bed025a659295182d62f00fc08b95783308"
+    },
+    "docs/HISTORICAL-TIMELINE.md": {
+      "bytes": 705026,
+      "git_blob": "550b6c12d850843cf1dc8874d8f4e505c840b097",
+      "sha256": "d47de0aa14e5360cb3c4c6d8c220c0eb2244d5c407e55f0bcf5fceffe737fad1"
+    },
+    "docs/RESTORATION-ROADMAP-R2.md": {
+      "bytes": 454403,
+      "git_blob": "144126e88cbb6bc0d89425173dcf617c8a0a0a8c",
+      "sha256": "4af00d0a96d67448b12dce44274f592904c6ae598cafcc642b03bf1d07243bf2"
+    },
+    "docs/SOURCE-REGISTRY.md": {
+      "bytes": 1011112,
+      "git_blob": "1ccc6b9b16487662cc6f5422d36409a52c046b63",
+      "sha256": "9cef8499e82f68cc14bbc5edd59f651d206cab7ce458c6effb392ec1d2adbf06"
+    }
+  },
+  "independent_legacy_plane_controls": {
+    "bytes": 14683,
+    "matched_source_plane_controls": [
+      "100.dat",
+      "1000.dat",
+      "1001.dat",
+      "1003.dat",
+      "1005.dat",
+      "1006.dat",
+      "1009.dat"
+    ],
+    "second_matched_controls": [
+      "100.dat",
+      "1000.dat",
+      "130.dat",
+      "200.dat",
+      "2000.dat",
+      "3000.dat",
+      "32020.dat",
+      "4000.dat"
+    ],
+    "second_source_path": "research/recovered/STONEAGE-HISTORICAL-MAPEXE-SA25-LAYER-DIFF-R1.txt",
+    "sha256": "821e7b8d7b521ac279021ac42cc09890e742cf8f14cee9133881d22e0e04e8aa",
+    "source_path": "research/recovered/STONEAGE-25-MAP-DAT-RELATION-R1.txt",
+    "unique_controlled_files": [
+      "100.dat",
+      "1000.dat",
+      "1001.dat",
+      "1003.dat",
+      "1005.dat",
+      "1006.dat",
+      "1009.dat",
+      "130.dat",
+      "200.dat",
+      "2000.dat",
+      "3000.dat",
+      "32020.dat",
+      "4000.dat"
+    ]
+  },
+  "legacy_report_pins": {
+    "research/recovered/STONEAGE-25-MAP-DAT-RELATION-R1.txt": {
+      "bytes": 14683,
+      "git_blob": "3ac79aa17e593ab197d1ef809084d06d20142683",
+      "sha256": "821e7b8d7b521ac279021ac42cc09890e742cf8f14cee9133881d22e0e04e8aa"
+    },
+    "research/recovered/STONEAGE-HISTORICAL-MAPEXE-SA25-LAYER-DIFF-R1.txt": {
+      "bytes": 11061,
+      "git_blob": "6f9b9f87e3664a6e226cd0317f08a1d3e9137b89",
+      "sha256": "1a6649e3977987f47fdcb9278ee4f8ffccddde05520addce298ba14a4cc5aa5a"
+    }
+  },
+  "main_original_bundle_not_redownloaded_for_metadata_acceptance": true,
+  "material_rotation_path": "research/recovered/STONEAGE-ARTIFACT-MATERIAL-ROTATION-R5.json",
+  "next": "TW-WAYI-ADRN129-OFFICIAL-RESOURCE-PATCH-PAYLOAD-05",
+  "original_binary_or_map_grid_in_git": false,
+  "overall_restoration_percentage": null,
+  "permanent_report": {
+    "bytes": 139701,
+    "git_blob": "5c5d10456d1ec55bf7a1bc2a5d3969fffd338f00",
+    "sha256": "caa47b1e35f267d8805eabc4a941b49623b691e1f7624f77630aef943b20d7e6"
+  },
+  "permanent_report_path": "research/recovered/STONEAGE-TW85-MIXED25-MAP-PLANE-DIFF-R1.json",
+  "schema": "stoneage.tw85_mixed25_map_plane_custody.r1",
+  "semantic_mutations_without_digest_rejected": 14,
+  "source_run": {
+    "conclusion": "success",
+    "head": "96e6963c4944f03736f0fa6d64ec6730f0e9ca59",
+    "id": 40132510243,
+    "job_id": 120987039808,
+    "tree": "d837641f2729b614c3fa11fa0aba41de30790e74"
+  },
+  "source_workflow_final_trigger_note": "Original source run stays immutable. Archive branch changes the source workflow to its source-only branch plus manual dispatch; main performs fixed-report semantic acceptance without another 361MB acquisition.",
+  "startup_file_pins": {
+    "README.md": {
+      "bytes": 45937,
+      "git_blob": "65cfe8de7ce8394f8eb659d8105a14f1d11753ca",
+      "sha256": "9feb9d418fe67809176c5c2970fc27498123531dd9051e131a4c3b3332cf803c"
+    },
+    "docs/CURRENT-STATE.md": {
+      "bytes": 2641916,
+      "git_blob": "77c37d981882d5d9c777c9df29630063f268c0f3",
+      "sha256": "b6b29515e7420fefcfcc99aa5ce40bed025a659295182d62f00fc08b95783308"
+    },
+    "docs/DESIGN-DECISIONS.md": {
+      "bytes": 49898,
+      "git_blob": "713caaecc6a43a92e5cb7f939954026b859bac20",
+      "sha256": "6d481f4eb0185ab0c8da34e697ae39f4137638d9484de4ed48d1875ec3af4f73"
+    },
+    "docs/HISTORICAL-TIMELINE.md": {
+      "bytes": 705026,
+      "git_blob": "550b6c12d850843cf1dc8874d8f4e505c840b097",
+      "sha256": "d47de0aa14e5360cb3c4c6d8c220c0eb2244d5c407e55f0bcf5fceffe737fad1"
+    },
+    "docs/PROJECT-CONTINUITY-PROTOCOL-R1.md": {
+      "bytes": 9762,
+      "git_blob": "ba9bbe19384589400abc61af37a360a40bf91452",
+      "sha256": "c44834eeec87f7a43e9cb4905f08377349e36d58b1fff2c5a75a6975db695e3b"
+    },
+    "docs/RESTORATION-ROADMAP-R2.md": {
+      "bytes": 454403,
+      "git_blob": "144126e88cbb6bc0d89425173dcf617c8a0a0a8c",
+      "sha256": "4af00d0a96d67448b12dce44274f592904c6ae598cafcc642b03bf1d07243bf2"
+    },
+    "docs/SOURCE-REGISTRY.md": {
+      "bytes": 1011112,
+      "git_blob": "1ccc6b9b16487662cc6f5422d36409a52c046b63",
+      "sha256": "9cef8499e82f68cc14bbc5edd59f651d206cab7ce458c6effb392ec1d2adbf06"
+    },
+    "research/recovered/STONEAGE-22-DOMAIN-SOURCE-READY-PORTFOLIO-R2.json": {
+      "bytes": 15948,
+      "git_blob": "088b469b3c51e689cff27f33fc3bb49de2d24b2c",
+      "sha256": "7d50de08f7855cf16dbe54b1747e258f1cc1223de88cc217172fd145f3c704ce"
+    }
+  },
+  "startup_remote": {
+    "branch_refs": 569,
+    "in_progress_runs": 0,
+    "open_prs": 0,
+    "same_head_main_success_runs": 10
+  },
+  "tw85_original_package_redownloaded": false
+}

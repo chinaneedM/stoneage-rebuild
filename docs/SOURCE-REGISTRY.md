@@ -8742,3 +8742,16 @@ source run40131518031/job120984031027真实completed/success，从六卷重新�
 独立下载artifact12575356288 ZIP86498B/SHA256 b1254d6db8e581bd69db093455ce587c9d40ccb091885c05cda5c06a009be450与API相同，恰两JSON；map结构149924B/SHA aacac89c451305c59adf38cfc6c14ba8a2efb88705607206aee7f63a8e14ead5完整派生永久Git。acquisition385776B完整manifest仅30天临时工件，永久收据保存其SHA，未虚报完整原包持久仓。工具4项+相邻共22项本地通过，另档案守卫及九类绕过digest语义反例验证；候选归档/main自身Actions须据后验记录。原版权网格/图/程序不入Git。
 
 交付docs/specs/STONEAGE-TW85-MAP-PAYLOAD-STRUCTURE-R1.md、research/recovered/STONEAGE-TW85-MAP-PAYLOAD-STRUCTURE-R1.json及CUSTODY-R1.json。最高NEXT **CLIENT-MAP-CROSS-VERSION-PLANE-DIFF-04**：真正实取mixed2.5对照35同路径，分第一/二/三层差异，区分几何候选与其它层变化，停止于有限实质内容对照或精确取源缺口。禁止同名补地名或混合社区源冒认TW1/JSS原服；JSS/韩国原盘仅新可取字节/精确清单摘要触发重开，不重扫旧四死口/ISBN/十写点。DD-028四任务档、Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、总复原百分比null均保留。
+
+
+## 2026-10-25 — TW8.5与mixed2.5真实地图逐层对照：34异中14保留第一层
+
+从fresh远端main `d5dd923f9c5f14d3ad9e611212a91d2e2d55b190` / tree `d33d08b50de770ca1425be82dc8c1850605e8a82` 启动，569分支、0开放PR/运行中、10项同HEAD main成功；八启动文件原生Git全文字节一致，CURRENT完整2641916B与四大历史前缀保留。最高CLIENT-MAP-CROSS-VERSION-PLANE-DIFF-04实际推进；未按旧聊天SHA推断。
+
+source run40132510243/job120987039808/HEAD96e6963c4944f03736f0fa6d64ec6730f0e9ca59已completed/success，真实重取两分卷361255180B混合保存包，分卷及整包SHA d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5与既有一致；只读解档并选唯一原stoneage2.5子树，35同路径DAT逐SHA核对2302文件原清单。复用TW8.5已验149924B原层摘要，未再下载1.145GB原包。35/35尺寸同且三层结构可解析；层相同mask000为20、100为12、110为2、111为1。34整文件不同中14第一层仍完全相同；3020/7405仅第三层不同；40.dat为整文件精确控制。7条缺路径1214/1215/61000/61100/7503/8216/9000只指该混合子树，不推版本首见。整文件不同不能冒认地形改版，ordinal层不强认运行语义/任务/传送/探索状态，具名地名仍null。
+
+独立下载artifact12575143331 ZIP15914B/SHA44b09c7f471772c928c34bbf90f7f2a95f93b1c82306771690c05ebf7ebbada2与API一致，恰一JSON139701B/SHA caa47b1e35f267d8805eabc4a941b49623b691e1f7624f77630aef943b20d7e6全量派生永久Git；无网格/原图/程序。两个旧独立解析报告7+8项覆盖13个不同文件，三层SHA及尺寸全部同一；新守卫重算全部35层相等/汇总并拒绝14类绕过digest语义变异，非本轮原服执行。原混合包仍非认证官方2.5，零新增官方版认证；源分支保留真实取源记录，归档分支/main用固定原结果离线验收，避免重复下载整包。候选/main后验另据实际记录，不预支成功。
+
+交付docs/specs/STONEAGE-TW85-MIXED25-MAP-PLANE-DIFF-R1.md、research/recovered/STONEAGE-TW85-MIXED25-MAP-PLANE-DIFF-R1.json及CUSTODY-R1.json。连续两包地图已各有实质结果，按协议13回全22域原件队列，不再扩缓存helper。有限复核原JSS/韩国无新可取载体、日本gm/hg附件仍受限、TW8.5/mixed地图包已止点；patch007只有同目录命中无StoneAge归属链，不纳入游戏补丁。
+
+最高NEXT **TW-WAYI-ADRN129-OFFICIAL-RESOURCE-PATCH-PAYLOAD-05**：旧官方fileid333真实出链已取得2006-09-11保存adrn_129.rar 3983427B/SHA b077dcc7f1e944c33c6df4fe629d5e37abce9cb4d40f5b8d800cc69d59416e25，但内部成员与索引记录未提取。下一包只取这一小档、静态安全解包并产完整成员/格式可支持的原ADRN记录摘要及既有数据交集，或具体有限缺口即止；源列表2005-05-18且描述7.5黑屏修复，与2006实际载荷分开，不强称8.0独占/2005同build/具名宠物或原REAL像素齐全。选择依据与22域原边界见STONEAGE-ARTIFACT-MATERIAL-ROTATION-R5.json，不重复ISBN/四死口/十写点。Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、DD-028四档、总体percent=null均保留。

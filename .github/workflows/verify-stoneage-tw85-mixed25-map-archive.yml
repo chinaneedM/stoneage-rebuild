@@ -1,0 +1,23 @@
+name: Verify durable TW8.5 mixed25 map layer comparison
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'tools/stoneage_tw85_mixed25_map_archive.py'
+      - 'tests/test_stoneage_tw85_mixed25_map_archive.py'
+      - 'research/recovered/STONEAGE-TW85-MIXED25-MAP-*.json'
+      - '.github/workflows/verify-stoneage-tw85-mixed25-map-archive.yml'
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m unittest tests.test_stoneage_tw85_mixed25_map_diff tests.test_stoneage_tw85_mixed25_map_archive tests.test_stoneage_tw85_map_archive -v
+      - run: python -m tools.stoneage_tw85_mixed25_map_archive
