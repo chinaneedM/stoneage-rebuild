@@ -77,7 +77,7 @@ def build(objects, pins):
             'relation': 'REPORTED_REQUIRED_COMPLETION_BEFORE_CHRISTMAS_PARTICIPATION',
             'prerequisite_quest_inherits_event_origin_or_window': False,
             'prerequisite_is_base_or_permanent_proven': False,
-            'jp2004_prerequisite_equals_2001_chinese_quest_native_entity': False},
+            'jp2004_prerequisite_equals_2001_chinese_quest_native_entity_proven': False},
         'excluded_cross_quest_inference': {
             'jss_named_cave': genkou['source_label'],
             'operator_written_date': genkou['source_clauses'][0]['operator_written_date'],
