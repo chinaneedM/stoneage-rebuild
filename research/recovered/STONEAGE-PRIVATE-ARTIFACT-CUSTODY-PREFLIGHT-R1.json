@@ -1,0 +1,59 @@
+{
+  "schema": "stoneage.private_original_archive_gate_r1",
+  "date": "2026-10-25",
+  "base_main": "9dbc0c5a971d48805bb220330ec5850a923850b5",
+  "base_tree": "bebd37ab83a5c77baf1e74d5c0bbe313795de279",
+  "active_task": "CLIENT-ORIGINAL-ARTIFACT-PRIVATE-CUSTODY-07",
+  "outcome": "BLOCKED_PRIVATE_STORAGE_NOT_PROVISIONED",
+  "observed_session": {
+    "transient_local_free_bytes_approx": 32212254720,
+    "container_network_to_github": "DNS_RESOLUTION_FAILED",
+    "persistent_private_target_verified": false,
+    "max_single_object_bytes_verified": false,
+    "provider_later_readback_verified": false
+  },
+  "verified_previous_source_references": [
+    {
+      "artifact": "TW8.5 six-volume delivery",
+      "bytes": 1145465184,
+      "source_run_id": 40140366886,
+      "private_original_preserved": false
+    },
+    {
+      "artifact": "TW8.5 REAL extracted",
+      "bytes": 1607321502,
+      "sha256": "e0f9c0d20fd3d9daae0701d8a872c9842e27d3da1be4d449d558c9c76d1c5f5b",
+      "private_original_preserved": false
+    },
+    {
+      "artifact": "mixed 2.5 two-volume delivery",
+      "bytes": 361255180,
+      "source_run_id": 40132510243,
+      "private_original_preserved": false
+    },
+    {
+      "artifact": "Wayi adrn_129.rar",
+      "bytes": 3983427,
+      "sha256": "b077dcc7f1e944c33c6df4fe629d5e37abce9cb4d40f5b8d800cc69d59416e25",
+      "private_original_preserved": false
+    }
+  ],
+  "deliverable": "docs/STONEAGE-PRIVATE-ORIGINAL-ARTIFACT-CUSTODY-GATE-R1.md",
+  "helper": "tools/stoneage_private_archive_custody.py",
+  "runtime_original_bytes_reacquired_this_unit": false,
+  "proprietary_payload_in_public_git": false,
+  "source_container_longterm_saved": false,
+  "source_provenance_promoted": false,
+  "original_pet_species_identified": false,
+  "active_next": "PET-SPECIES-SAME-BUILD-PRIMARY-MASTER-08",
+  "reopen_requires": [
+    "private durable storage target",
+    "capacity and max object verified",
+    "provider legal/rights boundary",
+    "cross-session private full readback proof"
+  ],
+  "stage_a": "EVIDENCE_LIMITED_7_PARTIAL_2_OPEN",
+  "stage_b": "GATED",
+  "savedata_r79": "PAUSED",
+  "overall_restoration_percentage": null
+}

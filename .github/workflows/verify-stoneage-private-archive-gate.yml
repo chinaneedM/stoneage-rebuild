@@ -1,0 +1,33 @@
+name: Verify StoneAge private original-byte archive boundary
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'tools/stoneage_private_archive_custody.py'
+      - 'tests/test_stoneage_private_archive_custody.py'
+      - 'docs/STONEAGE-PRIVATE-ORIGINAL-ARTIFACT-CUSTODY-GATE-R1.md'
+      - 'research/recovered/STONEAGE-PRIVATE-ARTIFACT-CUSTODY-PREFLIGHT-R1.json'
+      - '.github/workflows/verify-stoneage-private-archive-gate.yml'
+permissions:
+  contents: read
+jobs:
+  synthetic-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m unittest tests.test_stoneage_private_archive_custody -v
+      - run: |
+          python - <<'PY'
+          import json
+          p='research/recovered/STONEAGE-PRIVATE-ARTIFACT-CUSTODY-PREFLIGHT-R1.json'
+          x=json.load(open(p))
+          assert x['outcome']=='BLOCKED_PRIVATE_STORAGE_NOT_PROVISIONED'
+          assert x['proprietary_payload_in_public_git'] is False
+          assert x['overall_restoration_percentage'] is None
+          assert x['runtime_original_bytes_reacquired_this_unit'] is False
+          assert all(a['private_original_preserved'] is False for a in x['verified_previous_source_references'])
+          print('synthetic-custody evidence boundary PASS')
+          PY
