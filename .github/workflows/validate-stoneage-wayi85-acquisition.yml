@@ -1,0 +1,19 @@
+name: Validate claimed Wayi installer acquisition boundaries
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'tools/stoneage_wayi85_sixpart_acquisition.py'
+      - 'tests/test_stoneage_wayi85_sixpart_acquisition.py'
+      - '.github/workflows/validate-stoneage-wayi85-acquisition.yml'
+permissions:
+  contents: read
+jobs:
+  bounded-acquisition:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python3 -m unittest tests.test_stoneage_wayi85_sixpart_acquisition tests.test_stoneage_cross_version_file_inventory -v

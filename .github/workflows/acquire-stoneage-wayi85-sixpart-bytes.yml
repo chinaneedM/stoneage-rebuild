@@ -1,0 +1,34 @@
+name: Acquire and statically inventory claimed Wayi 8.5 six-part installer
+on:
+  workflow_dispatch:
+  push:
+    branches: ['agent/wayi85-sixpart-byte-acquisition-r1-20261024']
+    paths:
+      - 'tools/stoneage_wayi85_sixpart_acquisition.py'
+      - '.github/workflows/acquire-stoneage-wayi85-sixpart-bytes.yml'
+permissions:
+  contents: read
+concurrency:
+  group: wayi85-sixpart-source-acquisition
+  cancel-in-progress: false
+jobs:
+  acquire:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python3 -m unittest tests.test_stoneage_wayi85_sixpart_acquisition tests.test_stoneage_cross_version_file_inventory -v
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq 7zip innoextract
+      - name: Download real six-part candidate and inspect without execution
+        run: python3 -m tools.stoneage_wayi85_sixpart_acquisition --work /tmp/wayi85-source --output /tmp/wayi85-derived.json
+      - name: Upload derived metadata only including bounded failed attempts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: stoneage-wayi85-sixpart-derived-r1
+          path: /tmp/wayi85-derived.json
+          if-no-files-found: warn
+          retention-days: 30
