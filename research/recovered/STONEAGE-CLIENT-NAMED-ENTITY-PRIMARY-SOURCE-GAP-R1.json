@@ -1,0 +1,129 @@
+{
+  "schema": "stoneage.client_named_entity_primary_source_gap.r1",
+  "date": "2026-10-24",
+  "baseline_main_head": "0e450712b23d61ce54bc9e7fa230bef3df186aa1",
+  "baseline_main_tree": "21050bef2ffe4f4b11290822d6bb9066cd999022",
+  "task": "CLIENT-ARTIFACT-NAMED-ENTITY-PROVENANCE-01",
+  "result": {
+    "classification": "BOUNDED_PRIMARY_ARTIFACT_GAP_NO_NAMED_RESOURCE_LINK",
+    "tw10_cn50_same_original_physical_bitmap_candidates": 101,
+    "tw10_same_build_authenticated_npc_names": 0,
+    "tw10_same_build_authenticated_npc_ids": 0,
+    "tw10_same_build_authenticated_pet_species_ids": 0,
+    "tw10_writer_candidate_sites": 10,
+    "tw10_writer_source_classes": {
+      "stack": 7,
+      "memory": 2,
+      "arithmetic": 1
+    },
+    "native_packet_to_selector_object_proven": false,
+    "jss2001_archive_qualified_intro_screenshots": 10,
+    "jss2001_or_tw10_same_build_proven": false,
+    "korea_2000_complete_installer_acquired_by_evidence_sources": false,
+    "confirmed_original_named_entity_to_bitmap_or_animation_id_pairs": 0,
+    "new_official_installers_acquired_in_this_audit": 0,
+    "historical_original_client_bytes_committed": false,
+    "overall_restoration_percent": null
+  },
+  "source_pins": [
+    {
+      "path": "research/recovered/STONEAGE-TW10-CN50-DIRECT-STATIC-VISUAL-P2B-R1.json",
+      "git_blob_sha": "23d1a0fb85ac7a83f92cdfb9757618e85e36f9a9"
+    },
+    {
+      "path": "research/recovered/STONEAGE-TW10-WRITER-SOURCE-CLOSURE-P2B-R1.json",
+      "git_blob_sha": "9a18e35b651d0816b67506f59ff450937006099d"
+    },
+    {
+      "path": "research/recovered/STONEAGE-TW10-WRITER-SOURCE-PUBLICATION-P2B-R1.json",
+      "git_blob_sha": "edbffefb82eb74d260df59c8b7f62e181a50914a"
+    },
+    {
+      "path": "research/recovered/STONEAGE-JSS2001-INTRO-SCREENSHOT-SOURCES-R1.json",
+      "git_blob_sha": "7c0428a9ee1dda9420bc849a0bab166d6ae7c427"
+    },
+    {
+      "path": "research/recovered/STONEAGE-JSS-FIRST-PARTY-PET-FAQ-R1.json",
+      "git_blob_sha": "072f407f82c78f06a09be81c06858a1c604ae277"
+    },
+    {
+      "path": "research/clients/STONEAGE-KOREA-2000-PUBLIC-DISTRIBUTION-RECOVERY-R1.md",
+      "git_blob_sha": "fce17302fcd28bce0616d0d98cdc666226753d70"
+    },
+    {
+      "path": "research/recovered/STONEAGE-CNET-KOREA-PAYLOAD-PROBE-R1.txt",
+      "git_blob_sha": "310bbd84029087df4bad06bf20b7e4b763c16300"
+    },
+    {
+      "path": "research/recovered/STONEAGE-JSS-LAUNCHER-DEEP-PROBE-R1.txt",
+      "git_blob_sha": "72cf67bd7794e34578753b0152d11814fe65529a"
+    }
+  ],
+  "exact_missing_evidence": [
+    {
+      "region": "TW",
+      "version": "1.0",
+      "requirement": "同构建原始 NPC/宠物/人物 master 或真正网络源输入，字段至少含可靠实体ID/名称及实例图形ID或动画组ID。",
+      "existing": "真实原ADRN/RD资源与原sa_3.exe字节、10个词法字段写点，缺实例字段/同物件数据流。",
+      "qualified": "PARTIAL_RESOURCE_NO_NAMED_BINDING"
+    },
+    {
+      "region": "JP",
+      "version": "JSS 1999 retail / 2001 update distinct",
+      "requirement": "有原光盘游戏资源和与具名图像的同构建ID对照；官方图注须显式连到源资源ID。",
+      "existing": "官方2001介绍10张真图与2001年217088字节更新器；不是1999零售盘，更新器不携带宠物master。",
+      "qualified": "OFFICIAL_SCREENSHOT_AND_UPDATER_NOT_SAME_BUILD_BINDING"
+    },
+    {
+      "region": "KR",
+      "version": "2000–2001 Inium/Hananet/CNET",
+      "requirement": "原安装包完整字节、尺寸/哈希、构建与签名/分发源以及提取主表的名字和具体资源ID。",
+      "existing": "2001目录记录8119/8120、正式sa.exe/试玩sa_demo.exe、CNET 257MB的stoneage.zip；文件URL是历史线索，尚无核实载荷。",
+      "qualified": "ORIGINAL_INSTALLER_BYTES_UNACQUIRED"
+    }
+  ],
+  "named_original_client_acquisition_leads": [
+    {
+      "label": "KOREA_HANANET_2001_FULL",
+      "url": "http://stoneage.hananet.net/down/sa.exe",
+      "source_record": "STAD 8119, 260 M, 2001-02-10",
+      "downloaded_and_hashed": false
+    },
+    {
+      "label": "KOREA_HANANET_2001_TRIAL",
+      "url": "http://stoneage.hananet.net/down/sa_demo.exe",
+      "source_record": "STAD 8120, 240 M, 2001-02-10",
+      "downloaded_and_hashed": false
+    },
+    {
+      "label": "KOREA_CNET_2000_2001",
+      "url": "http://korea.cnet.com/pc/games/online/stoneage.zip",
+      "source_record": "Software_Id 200009263856, detail size 257MB",
+      "downloaded_and_hashed": false
+    },
+    {
+      "label": "JSS_ORIGINAL_1999_RETAIL_CD",
+      "url": null,
+      "source_record": "First-party CD-based installation proven; no original disc bytes accepted",
+      "downloaded_and_hashed": false
+    }
+  ],
+  "rejected_joins": [
+    "2001玩家静态图像类别 ≠ 同版官方具名NPC",
+    "原版相同物理图像字节 ≠ 相同服务器实体或任务",
+    "JSS2001官网截图或宠物/任务字面名 ≠ 台湾1.0同构建图形ID",
+    "JSS 2001真实217088字节更新器 ≠ 1999零售安装盘或原服务器master",
+    "韩国2001历史目录文件名 ≠ 已下载/哈希认证安装包",
+    "后来私服源码/外挂客户端 ≠ 原运营正式发行版"
+  ],
+  "domain_disposition": "SOURCE_GAP_RECORDED_STOP_P2B_NATIVE_WRITER_EXPANSION",
+  "next": "EARLY-OFFICIAL-CLIENT-ORIGINAL-PAYLOAD-QUALIFICATION-02",
+  "reopening": "仅当具真字节与构建的官方原包/原服务器实体master、同构建自带名称-图形ID映射，或可复现的同构建名字/资源选择实例同时到手，才重开具名绑定；先按来源链审核再晋级。",
+  "project_boundaries": {
+    "stage_a": "7 PARTIAL + 2 OPEN",
+    "stage_b": "GATED",
+    "wiki": "GATED",
+    "savedata_r79": "PAUSED_NON_BLOCKING",
+    "quest_origin_rule": "DD-028 four classes kept distinct"
+  }
+}

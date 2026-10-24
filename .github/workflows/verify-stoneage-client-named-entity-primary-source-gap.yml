@@ -1,0 +1,23 @@
+name: Verify original-client named entity source gap R1
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-CLIENT-NAMED-ENTITY-PRIMARY-SOURCE-GAP-R1.json'
+      - 'docs/specs/STONEAGE-CLIENT-NAMED-ENTITY-PRIMARY-SOURCE-GAP-R1.md'
+      - 'tools/stoneage_client_named_entity_primary_source_gate.py'
+      - 'tests/test_stoneage_client_named_entity_primary_source_gate.py'
+      - '.github/workflows/verify-stoneage-client-named-entity-primary-source-gap.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify-source-pins-and-nonpromotion:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest tests.test_stoneage_client_named_entity_primary_source_gate -v
+      - run: python -m tools.stoneage_client_named_entity_primary_source_gate
