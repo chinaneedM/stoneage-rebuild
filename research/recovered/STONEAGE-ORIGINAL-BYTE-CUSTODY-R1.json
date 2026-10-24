@@ -1,0 +1,69 @@
+{
+  "artifact": {
+    "downloaded_and_inspected": true,
+    "expires_at": "2026-11-23T05:52:23Z",
+    "id": 12550560415,
+    "member": "stoneage-original-cross-version-derived.json",
+    "name": "stoneage-real-source-cross-version-derived-r1",
+    "zip_bytes": 977,
+    "zip_digest_independently_matched_api_and_job_log": true,
+    "zip_sha256": "766629c9795a0326b7a767f12ffb7abd7e245202436f69cb65a319cd21a70433"
+  },
+  "base_main": "bab09ab6c9453cbd0e9af2b1631ad5ffe46004d6",
+  "base_tree": "4453569ff761d8eab183bc519dc7cceb65cec6ef",
+  "boundaries": {
+    "historical_resource_prefix_report_not_rerun_by_this_source_job": true,
+    "local_validation_reexecutes_original_client": false,
+    "mixed_bridge_not_clean_official": true,
+    "new_official_versions_acquired": 0,
+    "original_server_entities_recovered": false,
+    "original_source_payload_retained_after_runner_cleanup": false,
+    "tw_core_only_not_all_disc_files": true
+  },
+  "date": "2026-10-24",
+  "derived_files": {
+    ".github/workflows/reacquire-stoneage-cross-version-original-bytes.yml": {
+      "bytes": 10688,
+      "git_blob": "2b9c90b88833d1991c261c37ecae8506386e14b6",
+      "sha256": "c63268dcfd9c003faf5fa4ed08085f31c2dd006cc727d56385bd79cc128a688d"
+    },
+    "docs/STONEAGE-ORIGINAL-BYTE-REACQUISITION-R1.md": {
+      "bytes": 2738,
+      "git_blob": "1df6b62cdda624614852a6cc47ccdc67e759f233",
+      "sha256": "46e2420bfde5cc74686f5944685114ec7822535049c8bad88265c2000f37e3d2"
+    },
+    "research/recovered/STONEAGE-ORIGINAL-BYTE-REACQUISITION-R1.json": {
+      "bytes": 1406,
+      "git_blob": "766d6e542410c302a9f417890c276f7b47fc2814",
+      "sha256": "ece1c28c852fece19bb526ab06ac36bc79b3da4f7b05c706ffc094d561e24200"
+    }
+  },
+  "historical_prefixes": {
+    "docs/CURRENT-STATE.md": {
+      "bytes": 2603149,
+      "git_blob": "be592158543cd3026d7c6da4b55119a2a4d56a7f"
+    },
+    "docs/HISTORICAL-TIMELINE.md": {
+      "bytes": 699582,
+      "git_blob": "68483799c6895c7d1892480fbaf2b6d7d3e056cd"
+    },
+    "docs/RESTORATION-ROADMAP-R2.md": {
+      "bytes": 441583,
+      "git_blob": "7318ffdad9bddf909c1ba01852f898bfca77dc6d"
+    },
+    "docs/SOURCE-REGISTRY.md": {
+      "bytes": 998237,
+      "git_blob": "5a181852a4e9829df0d3636c37be8facacfbae28"
+    }
+  },
+  "schema": "stoneage.original_byte_custody_r1",
+  "source_run": {
+    "conclusion": "success",
+    "decoded_job_log_sha256": "f5029753673a74a63335340f2cccd6dcaa29ca4062a030b8707d67fbb51b9ec8",
+    "head_sha": "2c93130f10b4414ab1e3226fe0c88aec9edabf41",
+    "id": 40067698285,
+    "job_id": 120794301801,
+    "source_byte_steps_all_success": true,
+    "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40067698285"
+  }
+}

@@ -1,0 +1,23 @@
+name: Verify durable StoneAge original-byte custody
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'tools/stoneage_original_byte_custody.py'
+      - 'tests/test_stoneage_original_byte_custody.py'
+      - 'research/recovered/STONEAGE-ORIGINAL-BYTE-*.json'
+      - '.github/workflows/verify-stoneage-original-byte-custody.yml'
+permissions:
+  contents: read
+jobs:
+  custody:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python3 -m unittest tests.test_stoneage_original_byte_custody tests.test_stoneage_tw10_preserved25_file_intersection tests.test_stoneage_cross_version_file_inventory -v
+      - run: python3 -m tools.stoneage_original_byte_custody

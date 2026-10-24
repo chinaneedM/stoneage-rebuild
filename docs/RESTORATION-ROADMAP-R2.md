@@ -2494,3 +2494,7 @@ R114内容及四份历史追加已在main commit aac31addabbaf8ac23bd7df8488c867
 
 ### 2026-10-24 R117取源日志范围更正（归属结论不变）
 复核工具调用顺序：Google Groups直接HTTP实际429后，没有第二次直接HTTP请求；另有一次网页工具open仍不可用。初版“429后不重试”及retry_after_429=false表述过宽，现由R117报告attempt_log_correction明确订正为additional_direct_http_attempts_after_429=0、additional_web_open_after_direct_429=1/UNAVAILABLE。原记录Git历史和四大连续性旧前缀保留；未取得消息头/正文/源字节，未晋级2000日期或本体/永久，原结论不变。
+
+
+## 2026-10-24 — DD-029客户端实物优先P0验收与P1接续
+P0真实原件重取run40067698285成功；383台湾核心/2302混合桥接文件重哈希与旧清单一致，派生与收据永久保存。零新增官方发行版本，原包临时清理，不假报持久原件仓。当前最高CLIENT-ARTIFACT-ACQUISITION-AND-CROSS-VERSION-DEDUP-01/P1转取尚缺JSS/韩国、日本sa174hg.exe及台陆正式原包/补丁。若再下载旧大包，必须同时交付实质资源/地图/数据增量，禁止重复计数充进度。原任务活动与本体分档，Stage A/B/R79/百分比边界不变，旧历史前缀完整保留。

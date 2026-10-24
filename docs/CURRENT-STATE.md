@@ -18328,3 +18328,11 @@ Integration preflight also preserved the c6a07dc92ad3dc2f97156044f17c59e0915fb08
 交付docs/STONEAGE-CLIENT-FIRST-CROSS-VERSION-ACQUISITION-R1.md、只读流式tools/stoneage_cross_version_file_inventory.py、10项合成数据测试、recovered跨版235/148路径及SHA报告research/recovered/STONEAGE-TW10-PRESERVED25-FILE-SHA-INTERSECTION-R1.json、源码Git blob钉死语义重放tools/stoneage_tw10_preserved25_file_intersection.py及3项专门测试/CI。远端候选最初run40066191349完成success，新派生联合CI run40066439357完成success（实际运行SHA5aa57e03），后续决定/本状态提交的运行仍须在提交后真实核验，不提前报绿。
 
 本轮没有新增下载一个新的官方商业客户端包；执行容器不可恢复旧会话中原始二进制（此Git仓库默认不收专有二进制），所以实物复核仅对已有永久哈希来源作可重放交集，不宣称再次扫描了旧原包。不得删除原包或把不同正式版本混入单一去名空间；RAR/ISO需原有认证解析器，通用工具只支持解包目录/ZIP。**最高NEXT CLIENT-ARTIFACT-ACQUISITION-AND-CROSS-VERSION-DEDUP-01**：首先接入现有实物存储，核其摘要再做真实样本的全文件对照；然后有界核取JSS1999/韩2000及各官方地区版本可下载的认证包/补丁；按官方地区/日期/构建归档与资源级增量，缺原服务器字段仍OPEN。Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、完成百分比null；原全历史旧文本完全保留。
+
+
+## 2026-10-24 官方原客户端实际字节重取验收与永久保管 R1
+
+fresh main bab09ab6c9453cbd0e9af2b1631ad5ffe46004d6/tree4453569ff761d8eab183bc519dc7cceb65cec6ef启动；CURRENT原2603149B/blob be592158543cd3026d7c6da4b55119a2a4d56a7f及四大历史完整前缀保留。0开放PR。发现未合入候选2c93130f10b4414ab1e3226fe0c88aec9edabf41，其source run40067698285/job120794301801已实际completed/success，原下载、包摘要、重哈希及清理各步骤均通过。
+本次原件job实际重新下载台湾Redump104630光盘RAR及MediaFire混合2.5双分卷，不是只重放旧清单。台湾RAR MD5/SHA1、分卷及合并SHA256、原轨长度通过，台湾383核心文件/373564663B与桥接子树2302文件/863480809B逐路径重哈希与两旧清单完全相同；235台湾文件命中、148未整文件匹配、237桥接路径、3882018B命中字节。383不是全盘411文件；混合2.5仍MIXED_COMMUNITY_BRIDGE，零新增官方发行版本、零新服务器实体/宠物/任务ID认证。旧资源记录级diff本job未重跑。
+独立下载artifact12550560415：ZIP977B/SHA256 766629c9795a0326b7a767f12ffb7abd7e245202436f69cb65a319cd21a70433同时匹配API及真实上传日志；唯一原JSON永久入research/recovered/STONEAGE-ORIGINAL-BYTE-REACQUISITION-R1.json，配套STONEAGE-ORIGINAL-BYTE-CUSTODY-R1.json固定run/job/HEAD、ZIP/raw/Git blob、源工作流/说明和四大历史旧前缀。新增保管校验器、来源替换/计数混淆/原包摘要与字节截断/虚假纯净及服务器晋级负例和独立CI；其候选/main结果须后验登记，不冒充源字节重跑。
+原件job结束已按隔离流程清理临时包，当前没有跨会话持久原字节仓，不能声称全部下载已长期保存。本轮P0完成的是实际文件重哈希验收，尚未取得新正式版本或建成全版本原件存储。**最高NEXT CLIENT-ARTIFACT-ACQUISITION-AND-CROSS-VERSION-DEDUP-01/P1**：取尚缺早期JSS/韩国2000、日本sa174hg.exe或台陆可认证原完整包/更新包，先用已有精确路径，有界取源并按地区/运营/构建保留差异。再取旧大包必须同时提取实质资源/地图/数据增量，禁止只重复383/2302计数。任务按DD-028四档；Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、总百分比null。

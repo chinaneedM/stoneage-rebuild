@@ -8684,3 +8684,7 @@ JSS R116两实际工件12547837667/12547793357 ZIP摘要分别394c0baddfc1c94083
 
 ### 2026-10-24 R117取源日志范围更正（归属结论不变）
 复核工具调用顺序：Google Groups直接HTTP实际429后，没有第二次直接HTTP请求；另有一次网页工具open仍不可用。初版“429后不重试”及retry_after_429=false表述过宽，现由R117报告attempt_log_correction明确订正为additional_direct_http_attempts_after_429=0、additional_web_open_after_direct_429=1/UNAVAILABLE。原记录Git历史和四大连续性旧前缀保留；未取得消息头/正文/源字节，未晋级2000日期或本体/永久，原结论不变。
+
+
+### SRC-ORIGINAL-CLIENT-BYTE-REACQUISITION-20261024-R1
+已验TW1 Redump104630/archive.org stoneage_tw_2000_win/CD_DIC.rar及MediaFire ev7l29fw77891go/ytaa168o5jih0lx混合2.5桥接包。本次实际source run40067698285/job120794301801/HEAD2c93130f原下载与摘要校验成功，383/2302文件逐项重哈希通过；台湾原官方基线与混合桥接等级分开。独立ZIP下载977B与API/日志SHA一致，artifact12550560415原JSON永久存STONEAGE-ORIGINAL-BYTE-REACQUISITION-R1.json；STONEAGE-ORIGINAL-BYTE-CUSTODY-R1.json保管ZIP/raw/Git blob、原源workflow及四大历史前缀。原包已清理，不在Git。派生元数据验收不证明客户端执行、新官方版本或服务器内容全集。
