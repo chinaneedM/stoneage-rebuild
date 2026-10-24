@@ -1,0 +1,353 @@
+{
+  "schema": "stoneage.cn_dragon_flight.r109",
+  "task": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-109",
+  "date": "2026-10-24",
+  "baseline": {
+    "head": "559ddce8c474d8982b4ca84ec798799b3b25ed70",
+    "tree": "bb6b62780c5f1032e6fb71bb22d80c26a6f641ea"
+  },
+  "scope": "ONE_2003_CONTEMPORARY_SINA_GUIDE_PLUS_ONE_2006_PLAYER_COMPARISON_NO_SOURCE_BYTES_NO_VISUALS",
+  "sources": [
+    {
+      "id": "S1",
+      "url": "https://games.sina.com.cn/zhqu/sta/article/2003-06-03/10634.shtml",
+      "display_title": "《石器时代》任务功略-金飞任务",
+      "published_label": "2003-06-03 17:04",
+      "authorship_label": "新浪游戏",
+      "provenance_class": "CONTEMPORARY_MEDIA_GAME_GUIDE_NOT_OPERATOR_PRIMARY",
+      "observed_mode": "WEB_TEXT_ONLY",
+      "raw_html_bytes": null,
+      "raw_html_sha256": null,
+      "archival_capture": null
+    },
+    {
+      "id": "S2",
+      "url": "https://news.17173.com/z/stoneage/content/2006-05-14/1147617360.shtml",
+      "display_title": "石器8.0新金飞龙航空任务任务",
+      "published_label": "2006-05-14",
+      "authorship_label": "┗庙街★Tim┓",
+      "provenance_class": "PLAYER_SIGNED_LATER_VERSION_GUIDE_NOT_OPERATOR_PRIMARY",
+      "version_label_in_title": "石器8.0",
+      "observed_mode": "WEB_TEXT_ONLY",
+      "raw_html_bytes": null,
+      "raw_html_sha256": null,
+      "archival_capture": null
+    }
+  ],
+  "version_constraints": {
+    "s1_exact_build": null,
+    "s2_exact_build": null,
+    "s2_title_claim_is_build_proof": false,
+    "early_taiwan_1_0_lineage_proven": false,
+    "mutual_independence_of_guides_proven": false
+  },
+  "claim_crosswalk": {
+    "required_levels": {
+      "S1_literal": "80级",
+      "S1_recommended": "100级",
+      "S2_literal": "80级以上(不包含80级)",
+      "shared_runtime_threshold": null
+    },
+    "adult_ceremony": {
+      "S1": true,
+      "S2": true,
+      "identical_runtime_flag_proven": false
+    },
+    "accepted_flyer_names_as_written": [
+      "帖拉格恩",
+      "洛卡伦恩",
+      "加宝格恩",
+      "朵拉比斯"
+    ],
+    "flyer_delivery_count": {
+      "S1_one_claims": [
+        {
+          "place": "首段四种中任一种",
+          "count": 1
+        },
+        {
+          "place": "飞龙图说明只要一只",
+          "count": 1
+        }
+      ],
+      "S1_three_claims": [
+        {
+          "place": "建议先备三只不同颜色",
+          "count": 3
+        },
+        {
+          "place": "霍特雷敦只需要三只",
+          "count": 3
+        }
+      ],
+      "S2_claimed_count": 1,
+      "S1_conflict": "UNRESOLVED_SAME_2003_GUIDE_ONE_VS_THREE_FLYERS",
+      "S1_actual_consumption": null,
+      "S2_actual_consumption": null,
+      "cross_version_retroactive_resolution": false
+    },
+    "transport": {
+      "origin_as_guide": "尼斯/波拉岛米兰达机场",
+      "destination_as_guide": "伊甸大陆",
+      "S1_report_required_as_claimed": "飞龙研究报告",
+      "S1_report_handover_target": "飞龙总教练布鲁斯",
+      "S1_reported_repeat_fare_stone": 10000,
+      "S1_reported_reward_stone": 200000,
+      "S1_reincarnation_replay_note": true,
+      "S2_reported_reward_stone": 200000,
+      "real_transaction_verified": false
+    },
+    "fictional_worldline": {
+      "S1_claim": "伊甸是尼斯的故乡",
+      "origin_type": "MEDIA_GUIDE_NARRATIVE",
+      "universal_official_canon_verified": false
+    }
+  },
+  "records": [
+    {
+      "record_id": "cn-dragon-flight:r109:clark-referral",
+      "entity_type": "SOURCE_NAMED_GUIDE_NPC_NOT_MASTER",
+      "collection": "npcs",
+      "version_profile": "LATER_CN_GUIDE_2003_WITH_CN8_PLAYER_COMPARISON_NO_EXACT_BUILD",
+      "source_refs": [
+        "S1",
+        "S2"
+      ],
+      "verification_status": "PUBLISHED_GUIDE_CLAIM_NOT_ORIGINAL_SERVER_EXECUTION",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "name_as_written": "打工名人克拉克",
+      "reported_site": "米兰达机场",
+      "reported_action": "发打工少年的推荐函",
+      "original_npc_id": null,
+      "original_coordinates": null
+    },
+    {
+      "record_id": "cn-dragon-flight:r109:hortledun",
+      "entity_type": "SOURCE_NAMED_GUIDE_NPC_NOT_MASTER",
+      "collection": "npcs",
+      "version_profile": "LATER_CN_GUIDE_2003_WITH_CN8_PLAYER_COMPARISON_NO_EXACT_BUILD",
+      "source_refs": [
+        "S1",
+        "S2"
+      ],
+      "verification_status": "PUBLISHED_GUIDE_CLAIM_NOT_ORIGINAL_SERVER_EXECUTION",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "name_as_written": "霍特雷敦",
+      "reported_role": "伊甸寻根计划负责人",
+      "reported_site": "训练师的住所",
+      "reported_actions": [
+        "交接推荐函/捕捉证明书",
+        "收取飞龙数量存在同文冲突",
+        "布兰恩002失窃后要求追查",
+        "归还悔过书后交付飞龙研究报告"
+      ],
+      "original_npc_id": null,
+      "original_coordinates": null
+    },
+    {
+      "record_id": "cn-dragon-flight:r109:pc-thief-chief",
+      "entity_type": "SOURCE_NAMED_ROLE_GUIDE_ANTAGONIST_NOT_MASTER",
+      "collection": "npcs",
+      "version_profile": "LATER_CN_GUIDE_2003_WITH_CN8_PLAYER_COMPARISON_NO_EXACT_BUILD",
+      "source_refs": [
+        "S1",
+        "S2"
+      ],
+      "verification_status": "PUBLISHED_GUIDE_CLAIM_NOT_ORIGINAL_SERVER_EXECUTION",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "name_as_written": "PC盗贼团老大",
+      "reported_site": "波拉山谷",
+      "reported_role": "布兰恩002失窃事件对手",
+      "original_npc_id": null,
+      "dialogue_script": null
+    },
+    {
+      "record_id": "cn-dragon-flight:r109:bruce",
+      "entity_type": "SOURCE_NAMED_GUIDE_NPC_NOT_MASTER",
+      "collection": "npcs",
+      "version_profile": "LATER_CN_GUIDE_2003_WITH_CN8_PLAYER_COMPARISON_NO_EXACT_BUILD",
+      "source_refs": [
+        "S1",
+        "S2"
+      ],
+      "verification_status": "PUBLISHED_GUIDE_CLAIM_NOT_ORIGINAL_SERVER_EXECUTION",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "name_as_written": "飞龙总教练布鲁斯",
+      "reported_site": "伊甸训练所/伊甸抵达后",
+      "reported_action": "交付研究报告后领取奖金",
+      "original_npc_id": null,
+      "original_coordinates": null
+    },
+    {
+      "record_id": "cn-dragon-flight:r109:loli-caption",
+      "entity_type": "CAPTION_ONLY_ACTOR_NAME_NOT_CONFIRMED_NPC",
+      "collection": "npcs",
+      "version_profile": "LATER_CN_GUIDE_2003_WITH_CN8_PLAYER_COMPARISON_NO_EXACT_BUILD",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "PUBLISHED_GUIDE_CLAIM_NOT_ORIGINAL_SERVER_EXECUTION",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "caption_label": "罗丽小姐",
+      "record_scope": "S1图注称其提供飞龙航空服务；未取得图片像素或对话，不能验证原生NPC名称/位置",
+      "original_npc_id": null,
+      "caption_visual_acquired": false
+    },
+    {
+      "record_id": "cn-dragon-flight:r109:four-flyer-names",
+      "entity_type": "GUIDE_REPORTED_CAPTURE_CHOICES_NOT_PET_MASTER",
+      "collection": "pets",
+      "version_profile": "LATER_CN_GUIDE_2003_WITH_CN8_PLAYER_COMPARISON_NO_EXACT_BUILD",
+      "source_refs": [
+        "S1",
+        "S2"
+      ],
+      "verification_status": "PUBLISHED_GUIDE_CLAIM_NOT_ORIGINAL_SERVER_EXECUTION",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "as_written": [
+        {
+          "colour": "橘飞",
+          "name": "帖拉格恩"
+        },
+        {
+          "colour": "红飞",
+          "name": "洛卡伦恩"
+        },
+        {
+          "colour": "绿飞",
+          "name": "加宝格恩"
+        },
+        {
+          "colour": "金飞",
+          "name": "朵拉比斯"
+        }
+      ],
+      "named_missing_pet_as_written": "布兰恩002",
+      "all_original_species_ids": null,
+      "animation_resource_ids": null,
+      "growth_and_base_stats": null,
+      "consumed_flyer_count": null
+    },
+    {
+      "record_id": "cn-dragon-flight:r109:flight-gate",
+      "entity_type": "SOURCE_DESCRIBED_QUEST_GATE_WITH_CONFLICT",
+      "collection": "quests",
+      "version_profile": "LATER_CN_GUIDE_2003_WITH_CN8_PLAYER_COMPARISON_NO_EXACT_BUILD",
+      "source_refs": [
+        "S1",
+        "S2"
+      ],
+      "verification_status": "PUBLISHED_GUIDE_CLAIM_NOT_ORIGINAL_SERVER_EXECUTION",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "quest_label": "金飞任务/飞龙航空任务",
+      "S1_required_level_literal": "80级",
+      "S1_recommended_level": 100,
+      "S2_required_level_literal": "80级以上(不包含80级)",
+      "adult_ceremony_claimed_by_both": true,
+      "exact_level_rule": null,
+      "guide_count_conflict": "UNRESOLVED_SAME_2003_GUIDE_ONE_VS_THREE_FLYERS",
+      "actual_server_flag": null
+    },
+    {
+      "record_id": "cn-dragon-flight:r109:flight-story-chain",
+      "entity_type": "SOURCE_DESCRIBED_STORY_STEPS_NOT_SERVER_SCRIPT",
+      "collection": "quests",
+      "version_profile": "LATER_CN_GUIDE_2003_WITH_CN8_PLAYER_COMPARISON_NO_EXACT_BUILD",
+      "source_refs": [
+        "S1",
+        "S2"
+      ],
+      "verification_status": "PUBLISHED_GUIDE_CLAIM_NOT_ORIGINAL_SERVER_EXECUTION",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "reported_stages": [
+        "克拉克推荐函",
+        "霍特雷敦飞龙与证书",
+        "布兰恩002失窃",
+        "波拉山谷盗贼头目与悔过书",
+        "回报霍特雷敦取得飞龙研究报告",
+        "前往伊甸向布鲁斯交报告领奖"
+      ],
+      "branching_proven": false,
+      "server_state_machine": null,
+      "retry_and_failure_handling": null
+    },
+    {
+      "record_id": "cn-dragon-flight:r109:dragon-airline",
+      "entity_type": "SOURCE_REPORTED_INTER_REGION_FLIGHT_SERVICE",
+      "collection": "maps",
+      "version_profile": "LATER_CN_GUIDE_2003_WITH_CN8_PLAYER_COMPARISON_NO_EXACT_BUILD",
+      "source_refs": [
+        "S1",
+        "S2"
+      ],
+      "verification_status": "PUBLISHED_GUIDE_CLAIM_NOT_ORIGINAL_SERVER_EXECUTION",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "service_name": "飞龙航空/金飞航空",
+      "guide_origin": "波拉岛米兰达机场",
+      "guide_destination": "伊甸大陆",
+      "reported_S1_stone_fare": 10000,
+      "reported_S1_completion_reward_stone": 200000,
+      "after_reincarnation_quest_repeat_reported": true,
+      "actual_travel_proven": false,
+      "original_floor_ids": null,
+      "actual_save_format": null
+    },
+    {
+      "record_id": "cn-dragon-flight:r109:eden-nis-story",
+      "entity_type": "SOURCE_DESCRIBED_WORLDLINE_LINE_NOT_CANON",
+      "collection": "quests",
+      "version_profile": "LATER_CN_GUIDE_2003_WITH_CN8_PLAYER_COMPARISON_NO_EXACT_BUILD",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "PUBLISHED_GUIDE_CLAIM_NOT_ORIGINAL_SERVER_EXECUTION",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "story_as_reported": "伊甸大陆被说成尼斯大陆的故乡；寻根计划探索出往来路线",
+      "narrative_source_kind": "S1_MEDIA_GUIDE",
+      "official_canonical_status": null,
+      "fictional_in_world_date": null,
+      "links_to_original_1999": null
+    }
+  ],
+  "negative_claims": [
+    "the 2003 player/media guide is the original Beijing Wayi server script",
+    "the 2003 same-page 1 vs 3 flyer count is resolved by later 2006 guide",
+    "S2's 8.0 headline authenticates one exact executable build",
+    "the minimum level is proven identical across 2003 and 2006",
+    "named NPC titles are original server entity IDs or fixed coordinates",
+    "source captions are actual acquired NPC portrait pixels",
+    "10k fee or 200k reward transaction was observed",
+    "Eden/Nis relationship is authenticated as JSS1999/TW1.0 universal canon",
+    "R79 savedata persistence or Stage B production is unlocked",
+    "all four flyer names establish early 1.0 pet master IDs"
+  ],
+  "continuation": {
+    "status": "R109_TWO_WEB_TEXT_GUIDES_CONFLICT_PRESERVED_NO_BYTE_REPLAY",
+    "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-110",
+    "next_focus": "Move to independent version-specific first-party named story/NPC interface or early-map content source, not deeper reworking of flight guide or borrowed private server rules",
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b_and_wiki": "GATED",
+    "savedata_r79": "PAUSED_NON_BLOCKING",
+    "overall_restoration_percent": null
+  }
+}
