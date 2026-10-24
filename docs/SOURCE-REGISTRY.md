@@ -8602,3 +8602,12 @@ SOURCE `research/recovered/STONEAGE-CN20-NAMED-PET-VISUAL-SOURCE-R104.json` 固�
 新四条研究资料记录和规格 `docs/specs/STONEAGE-JP2006-DINO-GETTERS-R108.md`，派生 `research/recovered/STONEAGE-JP2006-DINO-GETTERS-R108.json`、元数据验证器、15个变异反例+1正例及专用CI。来源仅当前网页**文本层**可读，执行环境未取得原HTML字节/历史存档/官方原公告，SHA和真实运行证据保持null；新测试即使绿色也不是byte-exact网页重放或原服事务。无版权网页/图像/程序入Git。候选和main远端CI/保管需以真实后验另记，不提前报成功。
 
 有限止于一份2006媒体报道、四记录、无新增原服实体或产线；需档案官网、NPC交互图、同服积分日志或服务端实证才重开细节。**最高NEXT `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-109`** 换另一具名NPC故事或真实交互视觉，不持续挖单服活动猜阈值。Stage A7 PARTIAL+2 OPEN、Stage B/wiki GATED、TW1同构建NPC/SPR与服务端事务仍OPEN、savedataR79 PAUSED_NON_BLOCKING，整体恢复百分比null。
+
+
+### 2026-10-24 R109 CN2003/2006金飞航空资料交叉归档
+
+来源S1新浪2003-06-03 17:04 https://games.sina.com.cn/zhqu/sta/article/2003-06-03/10634.shtml 是同期媒体玩家攻略；来源S2 17173署名┗庙街★Tim┓于2006-05-14的自称“8.0”玩家稿 https://news.17173.com/z/stoneage/content/2006-05-14/1147617360.shtml。均仅网页文本可读，无原HTML bytes/hash/历史捕获、同商业build或实际任务日志。S1具名打工名人克拉克、霍特雷敦、PC盗贼团老大、飞龙总教练布鲁斯，罗丽小姐仅图注，原生NPC/地图坐标和视觉身份全null。四飞龙帖拉格恩、洛卡伦恩、加宝格恩、朵拉比斯及布兰恩002按原文保存，不补物种主表/SPR/成长。伊甸寻根/尼斯故乡仅文献叙事，飞龙航空1万旅费、交报告20万石币与转生重解仅S1主张，未验证事务。
+
+同一S1存在交一只/备或需三只互相冲突；S2另一时点玩家文写一只，不能反向裁定S1。S1“80级”与S2“80级以上(不包含80级)”版本对照保留。10项分版研究记录和规格 `docs/specs/STONEAGE-CN2003-2006-DRAGON-FLIGHT-R109.md` 已由候选专用run40048210484 PASS元数据CI，不作HTML字节重放、原服执行或初代故事认证。版权HTML/图片/程序不入Git；Stage A仍7 PARTIAL+2 OPEN，B/wiki GATED，R79暂停，百分比null。
+
+最高NEXT `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-110`：轮换新的第一方具名NPC剧情或带身份交互视觉、早期地图实体源，不持续扩金飞攻略。原候选内容commit `208b2af542cea42fb5f64ccab1c22e881af1c696`，连续性追加另提交，候选/main总CI需真实后验。
