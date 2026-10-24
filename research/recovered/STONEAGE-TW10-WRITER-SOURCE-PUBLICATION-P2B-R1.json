@@ -1,0 +1,193 @@
+{
+  "schema": "stoneage.tw10.p2b.writer_source_publication.r1",
+  "main_accepted": {
+    "head": "de18fdd2fed2f569f58da45ef6b02ae64ce4f8ca",
+    "tree": "6f335822c57fc94df58d8d38cf306f430fbc9e56",
+    "source_run_id": 40100105420,
+    "source_job_id": 120890325813
+  },
+  "candidate_accepted": {
+    "head": "de18fdd2fed2f569f58da45ef6b02ae64ce4f8ca"
+  },
+  "verified_runs": {
+    "candidate": [
+      {
+        "id": 40099969561,
+        "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 40099969581,
+        "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 40099969588,
+        "name": "Validate StoneAge Stage A joint review decision",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 40099969597,
+        "name": "Verify R102 frozen material portfolio and record projections",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 40099969601,
+        "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 40099969629,
+        "name": "Validate Stage A evidence-limited review acceptance",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 40099969640,
+        "name": "Validate Stage A early source gap triage",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 40099969703,
+        "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 40099969743,
+        "name": "Validate legacy StoneAge assistant history and pet content gaps",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 40099969756,
+        "name": "Validate StoneAge preproduction content archive and wiki boundary",
+        "status": "completed",
+        "conclusion": "success"
+      }
+    ],
+    "main": [
+      {
+        "id": 40100105382,
+        "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 40100105401,
+        "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 40100105403,
+        "name": "Verify original TW1.0 writer origin bounded closure P2B",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 40100105410,
+        "name": "Validate StoneAge preproduction content archive and wiki boundary",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 40100105415,
+        "name": "Validate StoneAge Stage A joint review decision",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 40100105418,
+        "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 40100105420,
+        "name": "Audit native TW1.0 graphic writer value origins P2B",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 40100105436,
+        "name": "Validate legacy StoneAge assistant history and pet content gaps",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 40100105437,
+        "name": "Verify R102 frozen material portfolio and record projections",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 40100105445,
+        "name": "Independently verify TW1.0 R58 rooted helper returns and source custody",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 40100105447,
+        "name": "Validate Stage A early source gap triage",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 40100105456,
+        "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 40100105468,
+        "name": "Validate Stage A evidence-limited review acceptance",
+        "status": "completed",
+        "conclusion": "success"
+      }
+    ]
+  },
+  "source_artifacts": {
+    "candidate": {
+      "id": 12562416023,
+      "zip_bytes": 2419,
+      "zip_sha256": "aca92b0b8ee2cdf663ab65b4a1838c224cf99653e07ca73aea03c4d2b8473853"
+    },
+    "main": {
+      "id": 12562670953,
+      "zip_bytes": 2419,
+      "zip_sha256": "fd90130203bbece3ac98fccae8803b93b54817c54316e305b25e132b93abd7c2"
+    },
+    "both_member": "p2bw-original-writer-report.json",
+    "both_raw_bytes": 18564,
+    "both_raw_sha256": "9f6170001e1696b0b24be6430c71490a932ebee4aa190b7562ebe4c7b10d3dc4",
+    "both_downloaded_and_independently_hashed": true,
+    "zip_bytes_equal": false,
+    "raw_json_bytes_equal": true
+  },
+  "source_repo": "research/recovered/STONEAGE-TW10-WRITER-SOURCE-CLOSURE-P2B-R1.json",
+  "result": {
+    "native_write_sites": 10,
+    "local_stack_sources": 7,
+    "local_memory_sources": 2,
+    "local_arithmetic_sources": 1,
+    "named_entities": 0,
+    "packet_to_original_object_proven": false,
+    "source_full_raw_permanent_in_git": false,
+    "proprietary_original_committed": false
+  },
+  "next": "CLIENT-ARTIFACT-NAMED-ENTITY-PROVENANCE-01",
+  "boundedness": {
+    "stage_a": "7 PARTIAL + 2 OPEN",
+    "stage_b": "GATED",
+    "wiki": "GATED",
+    "savedata_r79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  }
+}
