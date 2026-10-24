@@ -1,0 +1,134 @@
+{
+  "boundaries": {
+    "all_images_decoded_or_drawn": false,
+    "duplicate_id_winner_chosen": false,
+    "official_2005_same_build_proven": false,
+    "official_clean_tw85_pressing_authenticated": false,
+    "original_game_executed": false,
+    "proprietary_pixels_or_bins_published": false,
+    "server_npc_pet_quest_tables_recovered": false,
+    "source_pixel_semantics_or_species_proven": false
+  },
+  "containers": {
+    "adrn": {
+      "bytes": 33297600,
+      "git_blob": "d1b8843d6b3238616bc7609d5f21344b48b1ba52",
+      "name": "adrn_158.bin",
+      "sha256": "16ba4fa3825b2c4b6645bab8b4fe3152a262a4789c8bb89e3043a7d3f0d53681"
+    },
+    "real": {
+      "bytes": 1607321502,
+      "git_blob": "8b852799de8f1bf73b9224f91f863dffa1b1beeb",
+      "name": "real_158.bin",
+      "sha256": "e0f9c0d20fd3d9daae0701d8a872c9842e27d3da1be4d449d558c9c76d1c5f5b"
+    }
+  },
+  "metrics": {
+    "exact_native_match_multiplicity": {
+      "1": 389698
+    },
+    "first_pair_samples": [
+      {
+        "bitmapno": 0,
+        "native_exact_indices": "0",
+        "patch_index": "0",
+        "patch_record_sha256": "60ac0309db43572fc4073b5db7eb8669c7b2abe3ec623d06d3cfe012dac470fc",
+        "qualification": "EXACT_NATIVE_RECORD_AND_RD_STRUCTURE",
+        "rd_sha256": "62035d480ac7fb2d9fca57f033a108c0bfe9f9bf3ced783dbee245c3be4be370",
+        "rd_status": "HEADER_MATCH"
+      },
+      {
+        "bitmapno": 1,
+        "native_exact_indices": "1",
+        "patch_index": "1",
+        "patch_record_sha256": "7fc789902f5f3c98f2e5dc0afaba643218f04630ac49b7afad66bb0775c06a17",
+        "qualification": "EXACT_NATIVE_RECORD_AND_RD_STRUCTURE",
+        "rd_sha256": "962d42eadb7ce836b503f774f34951284ec338b0956d4269bf1b1f6f555d7903",
+        "rd_status": "HEADER_MATCH"
+      },
+      {
+        "bitmapno": 2,
+        "native_exact_indices": "2",
+        "patch_index": "2",
+        "patch_record_sha256": "eeb51b6acf4ea8b1c2781e926ecc705cff0893eb60aba6c332c4e19729022b24",
+        "qualification": "EXACT_NATIVE_RECORD_AND_RD_STRUCTURE",
+        "rd_sha256": "6ec0bfc94fe4817885b2264872caed4165f3b48be9bbc2d5f439ad34716bac04",
+        "rd_status": "HEADER_MATCH"
+      },
+      {
+        "bitmapno": 3,
+        "native_exact_indices": "3",
+        "patch_index": "3",
+        "patch_record_sha256": "bebbb7bd8cae29fd63707d20e0d62942dac536e36567ad357a89be2a6e42519d",
+        "qualification": "EXACT_NATIVE_RECORD_AND_RD_STRUCTURE",
+        "rd_sha256": "13c43423677841e1e77bd9bc19af41f79abf652578b461fe6665fc857be97876",
+        "rd_status": "HEADER_MATCH"
+      },
+      {
+        "bitmapno": 4,
+        "native_exact_indices": "4",
+        "patch_index": "4",
+        "patch_record_sha256": "a8a572a50bf4d6e5cf532671842cd4bb1f8f00d37d0a10e87b824286675874da",
+        "qualification": "EXACT_NATIVE_RECORD_AND_RD_STRUCTURE",
+        "rd_sha256": "b03a99684c2d1f3c0c086711fe3b8c92c057ac2a3760bcd7124997b759ddaf19",
+        "rd_status": "HEADER_MATCH"
+      }
+    ],
+    "native_distinct_bitmap_ids": 416192,
+    "native_duplicate_number_occurrences": 28,
+    "native_rd_hash_comparison_with_cn50": {
+      "ABSENT_ID": 113023,
+      "CHANGED_RD_BLOCK_BYTES": 177,
+      "SAME_RD_BLOCK_BYTES": 303020
+    },
+    "native_rd_status_counts": {
+      "HEADER_MATCH": 416189,
+      "HEADER_MISMATCH": 31
+    },
+    "native_records": 416220,
+    "native_records_not_exactly_present_in_patch": 26522,
+    "patch_distinct_bitmap_ids": 389670,
+    "patch_duplicate_number_occurrences": 28,
+    "patch_qualification_counts": {
+      "EXACT_NATIVE_RECORD_AND_RD_STRUCTURE": 389671,
+      "RD_STRUCTURE_NOT_QUALIFIED": 27
+    },
+    "patch_rd_status_counts": {
+      "HEADER_MATCH": 389671,
+      "HEADER_MISMATCH": 27
+    },
+    "patch_records": 389698,
+    "unique_real_extents_hashed": 416220
+  },
+  "schema": "stoneage.adrn129_tw85_real_pair.r1",
+  "source_pins": {
+    "research/recovered/STONEAGE-WAYI85-MSI-CLIENT-PAYLOAD-R1.json": {
+      "bytes": 385776,
+      "git_blob": "18a68c9d4275763ef0ed7a347cca940cffe0fee2",
+      "sha256": "4ea7b43a7e3427ab4443afe801ae7d3e156e6193e1d42ce1b261f733e07de1d8"
+    },
+    "research/recovered/cn50-resource-metadata/ADRN-R1.tsv.gz": {
+      "bytes": 19745873,
+      "git_blob": "127670eaf2bc19ba9d15776d090a8307058f729d",
+      "sha256": "e24afc513d28c7f25bd26bde9c69ddc0de4000147a2b11f50b5176655d8558fd"
+    },
+    "research/recovered/wayi-adrn129-patch-metadata/INDEX-1-R1.tsv.gz": {
+      "bytes": 23924728,
+      "git_blob": "065ecc874adc637098dc7c8f177e478bc7b6f054",
+      "sha256": "d8049cb6ce74a2c048372aa51fc81b6921a995b6fa45b03dd5511a93509958ca"
+    }
+  },
+  "tables": {
+    "NATIVE-R1.tsv.gz": {
+      "bytes": 43825625,
+      "git_blob": "ffb7b3340116ecaf57daa08242c1ce271e3ad86f",
+      "sha256": "495928a0a44d7c81bf1d6ef7b06d26decfc5096803fbd60b9e8e0aa9752a45ce"
+    },
+    "PAIRS-R1.tsv.gz": {
+      "bytes": 33542797,
+      "git_blob": "7f41ca49ff576914764b77f22684fbc113e1d90e",
+      "sha256": "ee41e4266b3bbab162d9271c1b86cceaa85354e60ff3e389fffccd68010b1314"
+    }
+  },
+  "task": "TW-WAYI-ADRN129-REAL-COMPANION-QUALIFICATION-06"
+}
