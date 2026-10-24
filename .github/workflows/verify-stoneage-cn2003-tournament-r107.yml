@@ -1,0 +1,18 @@
+name: Verify R107 tournament reward source boundaries
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-CN2003-TOURNAMENT-REWARD-R107.json'
+      - 'tools/stoneage_cn2003_tournament_reward_r107.py'
+      - 'tests/test_stoneage_cn2003_tournament_reward_r107.py'
+      - '.github/workflows/verify-stoneage-cn2003-tournament-r107.yml'
+  workflow_dispatch:
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate R107 source-bounded event records
+        run: |
+          python tools/stoneage_cn2003_tournament_reward_r107.py
+          python -m unittest discover -s tests -p test_stoneage_cn2003_tournament_reward_r107.py -v

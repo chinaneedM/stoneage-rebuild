@@ -1,0 +1,155 @@
+{
+  "schema": "stoneage.cn2003.tournament_reward.r107",
+  "task": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-107",
+  "date": "2026-10-24",
+  "baseline": {
+    "head": "4bda0fc8a49a9b01be519f735761362bdf3bc53b",
+    "tree": "34d10b0952c2a2383c0c94af7b4b98b5fc0943dd"
+  },
+  "scope": "ONE_SINA_TOURNAMENT_NOTICE_PAGE_THREE_BOUNDED_SECTIONS_NO_IMAGES",
+  "source": {
+    "id": "S1",
+    "url": "https://games.sina.com.cn/zhuanqu/sa/gonggao.shtml",
+    "title": "大赛公告_石器时代_新浪游戏",
+    "authorship": "SINA_MEDIA_HOSTS_ORGANIZING_COMMITTEE_NOTICES_ORIGINAL_OPERATOR_FILE_UNVERIFIED",
+    "dated_event_context": "2003 tournament; notice labels 4/11 and 4/21",
+    "document_sections": [
+      "金暴领取通知 (4/11)",
+      "LG未来窗杯PK大赛复赛奖品领取通知 (4/21)",
+      "进入复赛队伍奖品选择"
+    ],
+    "observed_web_render": "2026-10-24",
+    "actual_raw_html_bytes": null,
+    "actual_raw_html_sha256": null,
+    "exact_historical_capture": null,
+    "provenance_level": "PUBLIC_WEB_TEXT_RENDER_ONLY_NO_BYTE_REPLAY",
+    "source_excerpts_not_committed": true
+  },
+  "records": [
+    {
+      "record_id": "cn-wayi-tournament-2003:r107:golden-pet-npc",
+      "entity_type": "SOURCE_NAMED_EVENT_REDEMPTION_NPC_NOT_SERVER_ID",
+      "collection": "npcs",
+      "version_profile": "LATER_OFFICIAL:CN_WAYI_TOURNAMENT_2003_MEDIA_HOSTED_NOT_EXACT_CLIENT_BUILD",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "TOURNAMENT_ORGANIZER_CLAIM_IN_MEDIA_PAGE_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "name_as_written": "华义大财神",
+      "location_as_written": "每个服务器最后一个星系村长家",
+      "exact_map_name": null,
+      "coordinates": null,
+      "npc_instance_count": null,
+      "npc_original_id": null,
+      "reward_service": "CONTEST_GOLDEN_PET_COLLECTION_ANNOUNCEMENT_ONLY"
+    },
+    {
+      "record_id": "cn-wayi-tournament-2003:r107:golden-pet-reward",
+      "entity_type": "SOURCE_DESCRIBED_TOURNAMENT_REWARD_NOT_PET_MASTER",
+      "collection": "pets",
+      "version_profile": "LATER_OFFICIAL:CN_WAYI_TOURNAMENT_2003_MEDIA_HOSTED_NOT_EXACT_CLIENT_BUILD",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "TOURNAMENT_ORGANIZER_CLAIM_IN_MEDIA_PAGE_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "name_as_written": "金暴",
+      "reported_reward_quantity": 1,
+      "pet_species_id": null,
+      "form_sprite_id": null,
+      "genetics_and_growth": null,
+      "actual_delivery_verified": false
+    },
+    {
+      "record_id": "cn-wayi-tournament-2003:r107:golden-pet-claim",
+      "entity_type": "SOURCE_REPORTED_EVENT_CLAIM_NOT_GENERAL_QUEST",
+      "collection": "quests",
+      "version_profile": "LATER_OFFICIAL:CN_WAYI_TOURNAMENT_2003_MEDIA_HOSTED_NOT_EXACT_CLIENT_BUILD",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "TOURNAMENT_ORGANIZER_CLAIM_IN_MEDIA_PAGE_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "event_label": "LG未来窗杯石器时代天下第一武道大会",
+      "notice_label": "金暴领取通知 (4/11)",
+      "announced_claim_start": "2003-04-11",
+      "claimed_required_eligibility": "符合参赛标准并在比赛中积极配合的参赛玩家",
+      "eligibility_predicate": null,
+      "npc_ref": "cn-wayi-tournament-2003:r107:golden-pet-npc",
+      "reward_ref": "cn-wayi-tournament-2003:r107:golden-pet-reward",
+      "pet_quantity_as_claimed": 1,
+      "redeem_location_as_written": "每个服务器最后一个星系村长家",
+      "real_transaction_observed": false,
+      "quest_storyline": false,
+      "client_build": null,
+      "dialogue_script": null,
+      "server_master_id": null
+    },
+    {
+      "record_id": "cn-wayi-tournament-2003:r107:semifinal-selection",
+      "entity_type": "SOURCE_REPORTED_TOURNAMENT_STAGE_PRIZE_APPLICATION",
+      "collection": "quests",
+      "version_profile": "LATER_OFFICIAL:CN_WAYI_TOURNAMENT_2003_MEDIA_HOSTED_NOT_EXACT_CLIENT_BUILD",
+      "source_refs": [
+        "S1"
+      ],
+      "verification_status": "TOURNAMENT_ORGANIZER_CLAIM_IN_MEDIA_PAGE_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "event_label": "LG未来窗杯石器时代天下第一武道大会",
+      "qualifying_stage": "复赛",
+      "choice_options_as_written": [
+        "白虎",
+        "魔法兽"
+      ],
+      "choice_is_reported": true,
+      "site_deadline_claims": [
+        {
+          "notice": "进入复赛队伍奖品选择",
+          "as_written": "2003年4月21日上午9时",
+          "parsed_date": "2003-04-21",
+          "time_as_written": "09:00"
+        },
+        {
+          "notice": "LG未来窗杯PK大赛复赛奖品领取通知 (4/21)",
+          "as_written": "2003年4月22日",
+          "parsed_date": "2003-04-22",
+          "time_as_written": null
+        }
+      ],
+      "deadline_conflict": "UNRESOLVED_SAME_PAGE_TWO_DIFFERENT_DEADLINES",
+      "late_application_reported_random_assignment": true,
+      "qualified_reward_unconditional": false,
+      "original_application_submission": null,
+      "actual_reward_delivery": null
+    }
+  ],
+  "claims_not_supported": [
+    "original taiwan 1.0 NPC, quest or pet IDs",
+    "2003 exact client build or server scripting",
+    "universal reward to all players",
+    "reward actually issued or pet inventory persisted",
+    "the two application deadlines are equivalent",
+    "semifinal pet selection is the same as preliminary golden-pet claim",
+    "real-world finals cash prizes are game item rewards",
+    "NPC has one instance in each named village",
+    "pet asset image or species identity"
+  ],
+  "continuation": {
+    "status": "R107_MEDIA_TEXT_ATTESTED_RAW_BYTES_PENDING",
+    "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-108",
+    "next_focus": "Different edition named NPC dialogue/quest reward or a source-backed visual interaction; prefer direct operator original or archived byte-exact copy; do not repeat tournament table",
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b_and_wiki": "GATED",
+    "savedata_r79": "PAUSED_NON_BLOCKING",
+    "overall_restoration_percent": null
+  }
+}

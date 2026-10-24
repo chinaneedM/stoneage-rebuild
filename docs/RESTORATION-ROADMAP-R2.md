@@ -2357,3 +2357,10 @@ GitHub重新核main `b4f5a28a09efa40bfcd60401f0885c9a6f270f5b` / tree `6df1fb27f
 交付SOURCE/LOCAL及LOCAL-AUDIT、中文规格、源级工具、十项单元及专用CI。新十＋旧大陆训练师六本地16项全通过；另次网络取页与初取及LOCAL逐字一致。独立regex/entity两段摘要与DOM相等，真实原页十个极性/条件/场合变异在移除原字节校验时仍拒绝；不冒称CI重新执行人工审计/404探测。原HTML/图片/程序不入Git。候选/main及派生工件永久保管按后验，不提前报绿。
 
 最高NEXT `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-107` 转另一版本具名NPC任务/奖励正文或目标交互画面，优先运营方原文，先查重既有卡坦、レン/ワイト及22域来源；一来源包/最多两张明确归属图止步，无新增实源则转材料缺口评估，不连续扩日服手册相邻页/村庄公告。Stage A7 PARTIAL+2 OPEN，B/wiki GATED，savedataR79暂停，整体百分比null。
+
+
+### R107 2026-10-24：大陆2003赛事NPC礼物公告的有界补档
+
+按现行22域排队轮换具名NPC／奖励；JP2008「影の支配者」三章已留完整来源资料而被去重。本轮Sina转载的赛事组委会公告补「华义大财神」具名领取点、限定玩家资格、金暴一只，以及两条互不一致的复赛截止日期（4月21日9时／4月22日）。它是一个事件型NPC领奖资料点，不是可重复剧情任务，更不是原服事务闭合；文献可见但原HTML字节/历史快照未获，不对资料可靠性作过度提升。Stage A7 PARTIAL＋2 OPEN、B/wiki GATED、R79暂停且完成百分比null均不变。
+
+最高NEXT `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-108`：转另一明确版本、具名NPC奖励/剧情正文或有可靠归属的目标交互画面。优先运营方真实原网页/档案byte-exact并比对已录来源；不自动扩本赛事各队伍、线下奖项或无真实输入的工具。

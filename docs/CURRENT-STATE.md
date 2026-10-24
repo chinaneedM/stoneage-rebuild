@@ -18106,3 +18106,14 @@ GitHub重新核main `b4f5a28a09efa40bfcd60401f0885c9a6f270f5b` / tree `6df1fb27f
 永久双CI原报与CUSTODY（16777B，SHA256 `03dfcb37f13ae671afc0079fbff8e1acd1096296e72dd793a16711870076573b`，Git blob `998a4442ed9e087cd2dbec35f30eaa14a02521e8`）固定13证据pin、八完整启动文件身份、23运行、内容HEAD/tree/job/artifact/ZIP和四前缀。保管器校验原报一致、两段独立审计及十个本地真实原页变异结果，拒绝等长损坏/重算收据/错commit或ZIP/充分成功或原生ID提升。新十＋保管四＋旧大陆六共20不同本地测试通过；原内容CI十项不改称十四项。最终保管提交候选/main自身按实际后验，不提前报绿。唯一落盘原HTML已逐字节验长度/SHA后删除，未取得图片字节；原资产不入Git。
 
 实质收益是日服2004具名伴游技能的两项禁用条件和学习/覆盖/重排规则；九定性案例不是原服执行、黑白HTML标注不是实际像素、源无门槛数值也不借大陆数值填补。原服务器充分条件、完整技能/物种/SPR和世界DAT仍OPEN；Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、整体百分比null。最高NEXT107转另一版本具名NPC任务/奖励正文或目标交互画面，先查重，一来源包/最多两张归属图止步，不连续扩本手册相邻页。
+
+
+## 2026-10-24 R107 大陆2003武道大会 NPC 领奖公告与申请截止冲突（待远端验收）
+
+本轮从fresh远端 main `4bda0fc8a49a9b01be519f735761362bdf3bc53b` / tree `34d10b0952c2a2383c0c94af7b4b98b5fc0943dd` 启动。实际 Git ref/commit/tree 与连续性协议核验一致；本HEAD 19个相关Actions均completed/success、开放PR0，CURRENT非空的原生Git blob `6313430cf82aba92fc5cb0945dc11563a7a7c820` 全文成功读取，未信空文件接口。按最高NEXT107先核既有JP2008「影の支配者」三章和CN2003圣诞NPC研究以免重复，选新浪托管2003「LG未来窗杯石器时代天下第一武道大会」组委会公告中新的赛事领奖服务，不继承旧NEXT或旧SHA。
+
+新页 https://games.sina.com.cn/zhuanqu/sa/gonggao.shtml 本轮网页可读，但本执行环境无法取得原HTML bytes；源码原始bytes/SHA256、2003原始快照仍null，不能把网页文本展示称作byte-exact源重放。选定「金暴领取通知(4/11)」与复赛选择两公告单元：符合参赛标准并积极配合者一只金暴，自2003-04-11起在每服最后星系村长家「华义大财神」处按主张领取；不是所有玩家福利，也未证实服务端发放、NPC ID、原SPR/成长或地图坐标。复赛选择白虎或魔法兽，公告一处截止2003-04-21 09:00、另一处2003-04-22，严格保留UNRESOLVED冲突；复赛奖励与初赛金暴不合并；线上赛事线下现金实物奖不是游戏物品。
+
+交付研究JSON `research/recovered/STONEAGE-CN2003-TOURNAMENT-REWARD-R107.json`、中文规格 `docs/specs/STONEAGE-CN2003-TOURNAMENT-REWARD-R107.md`、源边界校验器、九项Python反例/正例及专用CI；一页三个公告块、四条版本限定对象（赛事NPC、奖励宠物名、初赛领取条件、复赛申请），非四个已运行游戏对象。没有原HTML/资产/程序入Git。候选/main实际CI、远端tree与历史前缀需后验，不提前报成功。
+
+最高NEXT `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-108`：轮换另一版本具名NPC故事/奖励或实际交互画面，优先带原官网字节/档案与可复核任务条件；不继续填赛事报表。Stage A7 PARTIAL＋2 OPEN、B/wiki GATED、TW1原实体/服务器事务仍OPEN、savedataR79 PAUSED_NON_BLOCKING、整体百分比null。

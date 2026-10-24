@@ -8581,3 +8581,13 @@ SOURCE `research/recovered/STONEAGE-CN20-NAMED-PET-VISUAL-SOURCE-R104.json` 固�
 ### R106 日服2004宠物技能官方原手册 — 2026-10-24
 
 接纳https://web.archive.org/web/20041106005417id_/http://stoneage.to/gameguid/manual_pet_03.html ，实际6840B，CP932严格，SHA256 7a461f45d5a5a38892afeaf5257233bf909fcfcfe1b1f206f604fd2b30d1c299，Git blob a6626e2186812674c47bc10861ae291483f4c33b。两正文单元规范化摘要3c8d94b822dbfc995876c5bc991c503a84b34f45e1b1373197fd5c7fc9687ee4和d14719e6b1ba76a5117684279a02deff8cd960f8e8b0e0cfc5e86033b937c833。原图pet_osanpo.gif同参考时点HTTP404，只取得HTML声明200×127，实际尺寸null。八技能area与三图片引用不冒充像素；#osanpo无锚点。四父为R105来源、旧大陆2004训练师、七字段档案契约及R100 parser，保持旧冲突/阈值独立。派生SOURCE/LOCAL/LOCAL-AUDIT及十测试/工具/规格/CI，不保存原HTML/图/程序；原始执行0。
+
+
+### SRC-CN2003-SINA-TOURNAMENT-GOLDEN-PET-NPC-R107 — 2026-10-24 intake
+
+- URL: https://games.sina.com.cn/zhuanqu/sa/gonggao.shtml
+- Source class: contemporary event-organizer claims hosted by Sina games; not certified first-party Waei original HTML or actual gameplay execution.
+- Observed source body: tournament notices for 「金暴领取通知(4/11)」, 「LG未来窗杯PK大赛复赛奖品领取通知(4/21)」 and 「进入复赛队伍奖品选择」; text readable via public web this round.
+- Supported: qualified participants announced Golden-Bao / 金暴 one-pet giveaway; NPC label 「华义大财神」 at last star-system village chief house on each server; two incompatible semifinal application deadline claims (2003-04-21 09:00 vs 2003-04-22).
+- Critical unknowns: raw source bytes/SHA256 not captured in this runtime, authenticated 2003 snapshot, actual gift transaction, exact NPC/game/pet IDs, world coordinates, precise version/build, cutoff resolution and player-specific event state.
+- Boundary: tournament prize selection is not a standard story quest; real-world tournament merchandise/cash is not in-game loot; Chinese 2003 report does not prove TW1/JSS1999. See `docs/specs/STONEAGE-CN2003-TOURNAMENT-REWARD-R107.md` and `research/recovered/STONEAGE-CN2003-TOURNAMENT-REWARD-R107.json`.
