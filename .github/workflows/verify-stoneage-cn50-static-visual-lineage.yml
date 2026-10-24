@@ -1,0 +1,53 @@
+name: Verify physical static candidate graphics lineage TW1 to mainland5
+on:
+  push:
+    branches:
+      - agent/p2b-npc-visual-physical-lineage-20261024
+    paths:
+      - tools/stoneage_tw10_cn50_static_visual_lineage.py
+      - tests/test_stoneage_tw10_cn50_static_visual_lineage.py
+      - .github/workflows/verify-stoneage-cn50-static-visual-lineage.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Revalidate original byte lineage and reject fabricated named NPCs
+        run: |
+          python3 -m unittest tests.test_stoneage_tw10_cn50_static_visual_lineage -v
+          python3 -m tools.stoneage_tw10_cn50_static_visual_lineage --output /tmp/stoneage-p2b-static-visual-lineage.json
+      - name: Verify material status and archive source-only derived records
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json
+          j=json.load(open('/tmp/stoneage-p2b-static-visual-lineage.json'))
+          assert j['metrics']['identical_cn50_rd_blocks']==101
+          assert len(j['records'])==101
+          assert j['metrics']['cn50_verified_named_npc_entities']==0
+          assert j['limits']['new_proprietary_pixels_published'] is False
+          PY
+          mkdir -p research/recovered
+          cp /tmp/stoneage-p2b-static-visual-lineage.json research/recovered/STONEAGE-TW10-CN50-STATIC-VISUAL-LINEAGE-P2B-R1.json
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git add research/recovered/STONEAGE-TW10-CN50-STATIC-VISUAL-LINEAGE-P2B-R1.json
+          if ! git diff --cached --quiet; then
+            git commit -m "research: retain 101 static graphic source lineage records only"
+            git push origin HEAD:agent/p2b-npc-visual-physical-lineage-20261024
+          fi
+      - name: Upload derived JSON only
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: stoneage-tw10-cn50-p2b-static-visual-lineage
+          path: /tmp/stoneage-p2b-static-visual-lineage.json
+          if-no-files-found: warn
+          retention-days: 30

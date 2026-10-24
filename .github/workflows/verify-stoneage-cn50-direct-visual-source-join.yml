@@ -1,0 +1,53 @@
+name: Verify 101 original static visual resources directly in both client catalogs
+on:
+  push:
+    branches:
+      - agent/p2b-npc-visual-physical-lineage-20261024
+    paths:
+      - tools/stoneage_tw10_cn50_direct_visual_source_join.py
+      - tests/test_stoneage_tw10_cn50_direct_visual_source_join.py
+      - .github/workflows/verify-stoneage-cn50-direct-visual-source-join.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  join:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Parse real 303197 and 125996 source-qualified compressed ADRN metadata records
+        run: |
+          python3 -m unittest tests.test_stoneage_tw10_cn50_static_visual_lineage tests.test_stoneage_tw10_cn50_direct_visual_source_join -v
+          python3 -m tools.stoneage_tw10_cn50_direct_visual_source_join --output /tmp/direct-cn50-tw10-static-r1.json
+      - name: Retain source-only qualified derived record map
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json
+          v=json.load(open('/tmp/direct-cn50-tw10-static-r1.json'))
+          assert v['counts']['direct_original_id_matches']==101
+          assert v['counts']['map_collision_attr_raw_hash_equal']==101
+          assert v['counts']['verified_named_npcs']==0
+          assert v['limitations']['proprietary_original_game_bytes_committed'] is False
+          PY
+          mkdir -p research/recovered
+          cp /tmp/direct-cn50-tw10-static-r1.json research/recovered/STONEAGE-TW10-CN50-DIRECT-STATIC-VISUAL-P2B-R1.json
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git add research/recovered/STONEAGE-TW10-CN50-DIRECT-STATIC-VISUAL-P2B-R1.json
+          if ! git diff --cached --quiet; then
+            git commit -m "research: archive 101 directly compared TW1 CN5 bitmap and collision records"
+            git push origin HEAD:agent/p2b-npc-visual-physical-lineage-20261024
+          fi
+      - name: Upload derived report only
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: stoneage-p2b-direct-tw10-cn50-static-visual
+          path: /tmp/direct-cn50-tw10-static-r1.json
+          if-no-files-found: warn
+          retention-days: 30
