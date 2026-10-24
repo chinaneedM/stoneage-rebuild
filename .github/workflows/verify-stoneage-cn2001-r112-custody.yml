@@ -1,0 +1,25 @@
+name: Verify R112 permanent derived custody and nine Git blob identities
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-CN2001-EARLY-SOCIAL-ACCEPTANCE-R112.json'
+      - 'tools/stoneage_cn2001_r112_custody.py'
+      - '.github/workflows/verify-stoneage-cn2001-r112-custody.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-CN2001-EARLY-SOCIAL-ACCEPTANCE-R112.json'
+      - 'tools/stoneage_cn2001_r112_custody.py'
+      - '.github/workflows/verify-stoneage-cn2001-r112-custody.yml'
+  workflow_dispatch:
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Recheck exact source-derived Git objects and historical prefixes
+        run: python tools/stoneage_cn2001_r112_custody.py

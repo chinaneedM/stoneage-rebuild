@@ -1,0 +1,138 @@
+{
+  "schema": "stoneage.cn2001.early_social.acceptance.r112",
+  "date": "2026-10-24",
+  "repository": "chinaneedM/stoneage-rebuild",
+  "content": {
+    "start_main_head": "de4b4b7a37486d34b8c84da18e893f0bd9550750",
+    "initial_source_commit": "3722cb0535484673fbc6f9bee58e1abe0e2c5b6f",
+    "integrated_commit": "21d38c18e8c913edd1ec05401ad3c12c05724a33",
+    "integrated_tree": "d3daa54b140d0bc543afd804bdce78e9dea8c267",
+    "branch": "agent/cn2001-early-social-r112-20261024",
+    "candidate_merge_ahead": 2,
+    "candidate_merge_behind": 0,
+    "changed_file_count": 9,
+    "deleted_lines": 0,
+    "published_to_main": true,
+    "four_history_full_old_prefixes_preserved": true
+  },
+  "ci": {
+    "candidate_source_only_run": {
+      "id": 40053501186,
+      "head": "3722cb0535484673fbc6f9bee58e1abe0e2c5b6f",
+      "job_id": 120751185975,
+      "status": "completed",
+      "conclusion": "success"
+    },
+    "candidate_final": {
+      "head": "21d38c18e8c913edd1ec05401ad3c12c05724a33",
+      "runs": [
+        40053586360,
+        40053586382,
+        40053586375,
+        40053586354,
+        40053586365,
+        40053586445,
+        40053586368,
+        40053586370,
+        40053586376,
+        40053586429
+      ],
+      "status": "completed",
+      "conclusion": "success",
+      "run_count": 10
+    },
+    "main_final": {
+      "head": "21d38c18e8c913edd1ec05401ad3c12c05724a33",
+      "runs": [
+        40053734752,
+        40053734674,
+        40053734670,
+        40053734757,
+        40053734657,
+        40053734651,
+        40053734775,
+        40053734676,
+        40053734645,
+        40053734772,
+        40053734668,
+        40053734781
+      ],
+      "status": "completed",
+      "conclusion": "success",
+      "run_count": 12,
+      "source_specific_run": 40053734657,
+      "source_specific_job_id": 120751933304
+    },
+    "distinct_run_count_including_initial_source_ci": 23,
+    "acceptance_run_status_observed_through_remote_api": true,
+    "actual_original_2001_webpage_fetched_by_ci": false,
+    "actual_game_runtime_executed_by_ci": false
+  },
+  "files": {
+    "type": "exact_git_blob_sha1",
+    "at_integrated_commit": "21d38c18e8c913edd1ec05401ad3c12c05724a33",
+    "pins": {
+      ".github/workflows/stoneage-cn2001-early-social-r112.yml": "9a2445d4e68502468c8895f77892e84959e059bb",
+      "docs/CURRENT-STATE.md": "f5274b8a9b8e696186d824d2cff1fbc6d54f37d7",
+      "docs/HISTORICAL-TIMELINE.md": "ec02a8d6f2ba7966dc12ae91a9f9bad848c07fbd",
+      "docs/RESTORATION-ROADMAP-R2.md": "c36f73e642c1a4de43542095aba40b32785b353b",
+      "docs/SOURCE-REGISTRY.md": "04dc8b0b056f1409f8e01a442279c926cd89a280",
+      "docs/specs/STONEAGE-CN2001-EARLY-SOCIAL-R112.md": "ed7ec73623043569d3117c070d9309f6772e6c2c",
+      "research/recovered/STONEAGE-CN2001-EARLY-SOCIAL-R112.json": "77149e798d11976ccb0fa9bffdff7bc7cab1f835",
+      "tests/test_stoneage_cn2001_early_social_r112.py": "8e1dbc954474a1144ab391d43f5f2dd95ea0ef76",
+      "tools/stoneage_cn2001_early_social_r112.py": "3ca3c0e9901fddb410b9f85663c15a31dcc7bb7b"
+    }
+  },
+  "history_prefixes": {
+    "docs/CURRENT-STATE.md": {
+      "old_blob": "ea98fd0b4ea031cc69a3a32cb68e108651395bef",
+      "new_blob": "f5274b8a9b8e696186d824d2cff1fbc6d54f37d7",
+      "old_char_count": 2237398,
+      "appended_char_count": 1452,
+      "exact_prefix": true
+    },
+    "docs/HISTORICAL-TIMELINE.md": {
+      "old_blob": "26d2231eedafa2922d2da30f8c2752546dcf9735",
+      "new_blob": "ec02a8d6f2ba7966dc12ae91a9f9bad848c07fbd",
+      "old_char_count": 570085,
+      "appended_char_count": 477,
+      "exact_prefix": true
+    },
+    "docs/SOURCE-REGISTRY.md": {
+      "old_blob": "d81be0454ac2b05f753f91d971cade53d287e4bd",
+      "new_blob": "04dc8b0b056f1409f8e01a442279c926cd89a280",
+      "old_char_count": 858115,
+      "appended_char_count": 951,
+      "exact_prefix": true
+    },
+    "docs/RESTORATION-ROADMAP-R2.md": {
+      "old_blob": "e449fd480a63a865ceafd70506d18219b4e0b568",
+      "new_blob": "c36f73e642c1a4de43542095aba40b32785b353b",
+      "old_char_count": 232212,
+      "appended_char_count": 696,
+      "exact_prefix": true
+    }
+  },
+  "source_custody": {
+    "source_url": "https://www.shiqi.me/pt_25.htm",
+    "repost_publication_date": "2016-02-12",
+    "source_rank": "LATER_THIRD_PARTY_REPRINT_CLAIMING_VERBATIM_OPERATOR_NOTICES_UNAUTHENTICATED",
+    "actual_2001_original_html_sha256": null,
+    "actual_current_2016_reprint_html_sha256": null,
+    "original_2001_archive_capture": null,
+    "ci_source_zip_digest": null,
+    "ci_raw_html_replay_digest": null,
+    "metadata_only_persisted_to_git": true,
+    "operator_notice_text_authenticated_to_2001": false,
+    "server_delivery_or_migration_verified": false,
+    "original_copyrighted_html_or_player_names_committed": false,
+    "provenance_quality": "SINGLE_LATER_REPRINT_TEXT_ONLY_WITH_PERMANENT_DERIVED_GIT_BLOBS"
+  },
+  "continuation": {
+    "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-113",
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b_and_wiki": "GATED",
+    "savedata_r79": "PAUSED_NON_BLOCKING",
+    "overall_restoration_percent": null
+  }
+}
