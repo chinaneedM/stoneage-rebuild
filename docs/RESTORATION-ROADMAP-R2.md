@@ -2423,3 +2423,13 @@ R110主线保管验收后从最新CURRENT/R2/22域源队列转2009DigiPark厂商
 S1所述：成人礼是条件，55级以上与福尔德/达那羽毛均为建议；沙姆岛奇努伊村「盖落比」(原文「54。76」)给「富商的货物」，去吉鲁岛「5X级小象区」抓LV60「巨大玛恩摩」，正文称抓到后货物消失，回报段写「盖洛比」并得「宠物忠诚肉片」（忠诚度+10），称可重做。HP低于100比较好抓为玩家建议，不是捕获概率原公式。两种NPC写法并存，原ID未知不能默合；原HTML字节/原始九图像素、原NPC/地图/宠物/物品主表和捕获/物品消耗/奖励/保存事务均OPEN；不反填JSS1999/TW1.0，不把文字记录算原游戏实体。
 成果 docs/specs/STONEAGE-CN2003-MERCHANT-ELEPHANT-R114.md、research/recovered/STONEAGE-CN2003-MERCHANT-ELEPHANT-R114.json、校验器、28项测试与CI。候选内容commit 0f468798056679a39324975bb6578c3f27e512cb/tree c600685e62bbb6495c5e1751a5eeedd1eed407cd，专用run40055929518 completed/success，仅证明元数据边界测试，非当年HTML重放或原服任务执行。版权所有HTML/图/商业代码不入Git。
 最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-115：轮换1999–2003另一地区真正同版具名NPC/宠物视觉原件；否则有限复核22域缺口，不扩大本任务helper。Stage A7 PARTIAL+2 OPEN，B/wiki GATED，R79暂停，整体恢复百分比null。原历史前缀全部保留。
+
+
+
+## 2026-10-24 R114 候选/主线永久九文件保管及全历史前缀双端验收
+
+R114内容及四份历史追加已在main commit aac31addabbaf8ac23bd7df8488c8679a63ae57d/tree e1bffd75587400de747ab6f755f273cdec188e86，比较原main33091550d0a2beed10e2bccfe8d97b0ff765080a，2 commits/9 changed files/0 deletions；候选续接提交自身10项Actions和main 12项Actions分别全部success，其中来源边界专用candidate run40055929518（内容commit0f468798056679a39324975bb6578c3f27e512cb）以及main run40056110228（内容及四份历史main aac31）全部completed/success。双端不可合并算源码执行试验。
+
+九文件Git Blob精确固定、CURRENT/HISTORICAL/SOURCE/ROADMAP四大历史前缀在原main与R114内容main两版Git对象逐字节保留，已由永久收据 research/recovered/STONEAGE-CN2003-MERCHANT-ELEPHANT-ACCEPTANCE-R114.json 和独立校验器/13项正反例保管。保管candidate commit fdd06159490a529f9c9974d75ab7af899f704d75/tree 1f6ea622169b28b6ffe674347546fa321ea15fc5，candidate run40056244411/job120759750884 SUCCESS；对同commit非强制快进main后，main run40056280048/job120759857346 SUCCESS，实际独立校验旧历史全部前缀和九文件精确SHA。验收比的是派生Git blobs、真实CI结果，不是原2003 HTML/截图或原商业服任务执行；无原件ZIP/HTML/图/SHA可供声称。相关R114一手原始构建和NPC、宠物、物品、地图ID及交易/忠诚/存档日志仍OPEN。
+
+最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-115：换另早期地域具名人物/宠物原像素或原运营实源，欠缺则有限22域证据缺口审查；R79 PAUSED_NON_BLOCKING、Stage A 7 PARTIAL+2 OPEN、Stage B/wiki GATED、整体复原百分比null。此前R1–R114历史前缀均保留。
