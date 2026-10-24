@@ -3,12 +3,18 @@ on:
   push:
     paths:
       - 'tools/stoneage_cross_version_file_inventory.py'
+      - 'tools/stoneage_tw10_preserved25_file_intersection.py'
+      - 'tests/test_stoneage_tw10_preserved25_file_intersection.py'
+      - 'research/recovered/STONEAGE-TW10-PRESERVED25-FILE-SHA-INTERSECTION-R1.json'
       - 'tests/test_stoneage_cross_version_file_inventory.py'
       - '.github/workflows/validate-stoneage-cross-version-inventory.yml'
       - 'docs/STONEAGE-CLIENT-FIRST-CROSS-VERSION-ACQUISITION-R1.md'
   pull_request:
     paths:
       - 'tools/stoneage_cross_version_file_inventory.py'
+      - 'tools/stoneage_tw10_preserved25_file_intersection.py'
+      - 'tests/test_stoneage_tw10_preserved25_file_intersection.py'
+      - 'research/recovered/STONEAGE-TW10-PRESERVED25-FILE-SHA-INTERSECTION-R1.json'
       - 'tests/test_stoneage_cross_version_file_inventory.py'
       - '.github/workflows/validate-stoneage-cross-version-inventory.yml'
       - 'docs/STONEAGE-CLIENT-FIRST-CROSS-VERSION-ACQUISITION-R1.md'
@@ -25,6 +31,9 @@ jobs:
         with:
           python-version: '3.11'
       - name: Test exact dedup and hostile archives with synthetic bytes only
-        run: python -m unittest discover -s tests -p 'test_stoneage_cross_version_file_inventory.py' -v
+        run: |
+          python -m unittest discover -s tests -p 'test_stoneage_cross_version_file_inventory.py' -v
+          python -m unittest discover -s tests -p 'test_stoneage_tw10_preserved25_file_intersection.py' -v
+          python tools/stoneage_tw10_preserved25_file_intersection.py
       - name: Python parse check
         run: python -m py_compile tools/stoneage_cross_version_file_inventory.py
