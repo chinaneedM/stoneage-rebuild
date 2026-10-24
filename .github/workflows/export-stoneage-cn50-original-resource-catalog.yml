@@ -5,7 +5,9 @@ on:
       - agent/cn50-original-resource-record-catalog-r1-20261024
     paths:
       - tools/stoneage_cn50_original_resource_catalog.py
+      - tools/stoneage_cn50_spr_metadata.py
       - tests/test_stoneage_cn50_original_resource_catalog.py
+      - tests/test_stoneage_cn50_spr_metadata.py
       - .github/workflows/export-stoneage-cn50-original-resource-catalog.yml
   workflow_dispatch:
 permissions:
@@ -24,7 +26,7 @@ jobs:
           python-version: '3.11'
       - name: Validate source pins and existing byte-derived resource format parsers
         run: |
-          python3 -m unittest tests.test_stoneage_tw10_resource_metadata tests.test_stoneage_cn50_original_resource_catalog -v
+          python3 -m unittest tests.test_stoneage_tw10_resource_metadata tests.test_stoneage_cn50_original_resource_catalog tests.test_stoneage_cn50_spr_metadata -v
       - name: Install static CAB decompressor
         run: |
           sudo apt-get update -qq

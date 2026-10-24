@@ -16,7 +16,8 @@ from tools.stoneage_stoneage5_msi_probe import load_root, find_entry
 from tools.stoneage_stoneage5_cab_probe import iso_file_slice
 from tools.stoneage_stoneage5_full_cab_acquisition import (
     EXPECTED_SIZE, checked_layout, download_cab, extracted_inventory, hash_file)
-from tools.stoneage_tw10_resource_metadata import export_adrn, export_spr, sha256_file
+from tools.stoneage_tw10_resource_metadata import export_adrn, sha256_file
+from tools.stoneage_cn50_spr_metadata import export_cn50_spr
 
 REPORT="research/recovered/STONEAGE-STONEAGE5-REAL-CAB-PAYLOAD-R1.json"
 COMPARE="research/recovered/STONEAGE-TW10-CN50-REAL-RECORD-DIFF-R1.json"
@@ -113,7 +114,7 @@ def build(output_dir):
         output_dir.mkdir(parents=True,exist_ok=True)
         adrn=export_adrn(expanded/NAMES["adrn"],expanded/NAMES["real"],
                          output_dir/DATASETS[0],output_dir/DATASETS[1])
-        spr=export_spr(expanded/NAMES["spradrn"],expanded/NAMES["spr"],
+        spr=export_cn50_spr(expanded/NAMES["spradrn"],expanded/NAMES["spr"],
                        output_dir/DATASETS[2],output_dir/DATASETS[3],output_dir/DATASETS[4])
         if adrn["records"]!=303197 or spr["groups"]!=1185:
             raise ValueError("source-r1-record-inheritance-mismatch")
