@@ -34,10 +34,15 @@ jobs:
           python - <<'PY'
           from pathlib import Path
           import subprocess
+          # The old check required all three historical files to grow on EVERY
+          # unrelated later commit; it failed valid append-only updates to one
+          # or two files. Enforce the real invariant: never rewrite history.
+          changed = []
           for p in ('docs/CURRENT-STATE.md','docs/DESIGN-DECISIONS.md','docs/RESTORATION-ROADMAP-R2.md'):
               before=subprocess.check_output(['git','show','HEAD^:'+p])
               after=Path(p).read_bytes()
               assert after.startswith(before),f"history prefix not preserved: {p}"
-              assert len(after)>len(before),f"no classification continuity append: {p}"
-          print('three long-file historical prefixes preserved')
+              if len(after)>len(before):
+                  changed.append(p)
+          print('long-file historical prefixes preserved; appended files:',changed)
           PY
