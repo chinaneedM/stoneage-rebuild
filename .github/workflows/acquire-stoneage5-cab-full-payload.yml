@@ -1,0 +1,59 @@
+name: Recover Stoneage-5 original cabinet file payload (static)
+on:
+  push:
+    branches:
+      - agent/stoneage5-cab-full-payload-r1-20261024
+    paths:
+      - tools/stoneage_stoneage5_full_cab_acquisition.py
+      - tests/test_stoneage_stoneage5_full_cab_acquisition.py
+      - .github/workflows/acquire-stoneage5-cab-full-payload.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: stoneage5-real-cab-acquisition
+  cancel-in-progress: false
+jobs:
+  source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run existing CAB and new acquisition safety tests
+        run: python3 -m unittest tests.test_stoneage_stoneage5_cab_probe tests.test_stoneage_stoneage5_full_cab_acquisition -v
+      - name: Install offline CAB decompressor
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq cabextract
+      - name: Fetch actual 612 MB cabinet through checked source ranges and hash all 413 decompressed files
+        run: python3 -m tools.stoneage_stoneage5_full_cab_acquisition --output /tmp/stoneage5-real-cab-derived.json
+      - name: Save derived JSON only as short-lived CI artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: stoneage5-real-cab-hashes-only
+          path: /tmp/stoneage5-real-cab-derived.json
+          if-no-files-found: warn
+          retention-days: 30
+      - name: Permanently retain bounded derived metadata on isolated branch only
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json
+          j=json.load(open('/tmp/stoneage5-real-cab-derived.json'))
+          assert j['status']=='REAL_FULL_CAB_EXTRACTED_AND_413_FILES_HASHED'
+          assert j['files']['count']==len(j['files']['inventory'])==413
+          assert j['boundaries']['original_binary_committed'] is False
+          PY
+          mkdir -p research/recovered
+          cp /tmp/stoneage5-real-cab-derived.json research/recovered/STONEAGE-STONEAGE5-REAL-CAB-PAYLOAD-R1.json
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git add research/recovered/STONEAGE-STONEAGE5-REAL-CAB-PAYLOAD-R1.json
+          if ! git diff --cached --quiet; then
+            git commit -m "research: archive real Stoneage-5 CAB extracted file hashes"
+            git push origin HEAD:agent/stoneage5-cab-full-payload-r1-20261024
+          fi
