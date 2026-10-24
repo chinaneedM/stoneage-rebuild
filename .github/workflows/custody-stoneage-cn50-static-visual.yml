@@ -1,0 +1,41 @@
+name: Independently retain P2B direct visual source artifact custody
+on:
+  push:
+    branches:
+      - agent/p2b-static-visual-custody-20261024
+    paths:
+      - tools/stoneage_tw10_cn50_static_visual_custody.py
+      - tests/test_stoneage_tw10_cn50_static_visual_custody.py
+      - .github/workflows/custody-stoneage-cn50-static-visual.yml
+  workflow_dispatch:
+permissions:
+  actions: read
+  contents: write
+jobs:
+  custody:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Test archived source consistency and dangerous mutations
+        run: python3 -m unittest tests.test_stoneage_tw10_cn50_static_visual_custody -v
+      - name: Download real GitHub Actions ZIP and match exact accepted permanent Git JSON
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 -m tools.stoneage_tw10_cn50_static_visual_custody /tmp/static-p2b-receipt.json
+      - name: Archive metadata receipt only on research branch
+        run: |
+          set -euo pipefail
+          F=research/recovered/STONEAGE-TW10-CN50-STATIC-VISUAL-P2B-CUSTODY-R1.json
+          mkdir -p research/recovered
+          cp /tmp/static-p2b-receipt.json "$F"
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git add "$F"
+          if ! git diff --cached --quiet; then
+            git commit -m "research: retain independently verified P2B visual source ZIP/Git custody"
+            git push origin HEAD:agent/p2b-static-visual-custody-20261024
+          fi
