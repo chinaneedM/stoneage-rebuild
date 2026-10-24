@@ -18140,3 +18140,16 @@ GitHub重新核main `b4f5a28a09efa40bfcd60401f0885c9a6f270f5b` / tree `6df1fb27f
 ### R108 日本2006「ダイノ ゲッターズ」候选/主线23项实际验收与保管 — 2026-10-24
 
 R108内容commit `9c0ac985a6fcd699052a2869e9b19a898254ab1e`、tree `c5e23cda9cfc6d9297c30c9837122039e039ebbe`，候选分支11项Actions和非强制expected_sha快进后的主线12项Actions分别全部completed/success；专用candidate run40047068517/job120731131021、main run40047275067/job120731777289两端源边界测试均成功，共23不同Actions。主线commit原生tree核验与九个精确Git blob保存在 `research/recovered/STONEAGE-JP2006-DINO-GETTERS-ACCEPTANCE-R108.json`，原四份长历史旧前缀完整保留、9文件0删行。候选11/主线12不能与16个R108单元案例混算；专用runner未取得原网页HTML字节，也未生成原来源ZIP或实际NPC交付/计分事务日志，永久仓库仅保管派生材料及其源边界；source SHA和历史捕获仍null，不得将元数据CI称为2006原服重放。保管提交本身的Actions需以后验事实为准，不提前算入23。最高NEXT仍`OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-109`轮换具名故事NPC/交互视觉；Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、整体百分比null。
+
+
+## 2026-10-24 R109 — 2003/2006金飞航空角色、交通与冲突边界
+
+从fresh main `559ddce8c474d8982b4ca84ec798799b3b25ed70` / tree `bb6b62780c5f1032e6fb71bb22d80c26a6f641ea` 按连续性协议核验，R108保管已在主线，main近期九项Actions SUCCESS。原生Git blob全文非空、主历史不覆盖。经现有22域去重，R32/R37已有日本2008“神秘大树”和“三匹の虎”，故R109转2003金飞航空NPC故事与2006不同分版对照。
+
+S1 新浪游戏2003-06-03 17:04《金飞任务》 https://games.sina.com.cn/zhqu/sta/article/2003-06-03/10634.shtml；S2 17173玩家署名┗庙街★Tim┓于2006-05-14《石器8.0新金飞龙航空任务任务》 https://news.17173.com/z/stoneage/content/2006-05-14/1147617360.shtml。两页仅当前网页文本可读，原始HTML字节/精确历史档案/SHA/原客户端实际运行均未得；S1是媒体攻略，S2是玩家稿，不能当作运营方原始任务表，8.0题名也不认证精确build。
+
+恢复资料关系：克拉克推荐函→霍特雷敦伊甸寻根/布兰恩002失窃→波拉山谷PC盗贼团老大/悔过书→研究报告与飞龙航空→伊甸布鲁斯领奖20万石币；S1描述往返1万石币及转生后重解，只能视其文献主张。罗丽小姐仅出现图注，未取得实际像素/本人NPC ID。四飞龙名字帖拉格恩/洛卡伦恩/加宝格恩/朵拉比斯为候选奖励/捕捉名称，不认证同版宠物主表。S1称伊甸为尼斯故乡属文本虚构世界线，不回填JSS1999/TW1.0。
+
+关键保留S1同页“一只”与“三只”互相冲突；S2标题8.0攻略写一只，不能倒裁2003真实服务器；S1“80级”与S2“80级以上（不包含80级）”分开，不补共用阈值。地图坐标是攻略位置，不补原NPC坐标。规格 `docs/specs/STONEAGE-CN2003-2006-DRAGON-FLIGHT-R109.md`、10条分版研究记录JSON、校验器、21项单元案例和CI已在候选 `208b2af542cea42fb5f64ccab1c22e881af1c696`，其专用run40048210484 completed/success；这是源边界元数据验收，不是原源byte replay或原服成功。原版权HTML/图/程序不入Git。
+
+最高NEXT `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-110`，换其他版本的第一方具名NPC剧情、可确认身份的真实交互画面或早期具实体地图证据；避免再细拆金飞攻略。Stage A7 PARTIAL+2 OPEN，Stage B/wiki GATED，savedataR79 PAUSED_NON_BLOCKING，整体复原百分比null。
