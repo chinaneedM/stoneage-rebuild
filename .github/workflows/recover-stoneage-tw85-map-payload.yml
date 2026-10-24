@@ -1,0 +1,38 @@
+name: Recover hash-qualified TW8.5 map payload structure
+on:
+  push:
+    branches: ['agent/tw85-map-payload-20261025', 'main']
+    paths:
+      - 'tools/stoneage_tw85_map_payload.py'
+      - 'tests/test_stoneage_tw85_map_payload.py'
+      - '.github/workflows/recover-stoneage-tw85-map-payload.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m unittest tests.test_stoneage_tw85_map_payload -v
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq msitools
+      - name: Reacquire pinned carrier and extract real MSI payload without execution
+        run: python -m tools.stoneage_wayi85_sixpart_acquisition --work /tmp/tw85-map --output /tmp/tw85-map-acquisition.json
+      - name: Read actual map bytes qualified against accepted complete MSI inventory
+        run: python -m tools.stoneage_tw85_map_payload --client '/tmp/tw85-map/msi-client/Program Files/WAYI/石器時代 魔域大冒險' --output /tmp/tw85-map-structure.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: tw85-map-derived-metadata-r1
+          path: |
+            /tmp/tw85-map-structure.json
+            /tmp/tw85-map-acquisition.json
+          if-no-files-found: warn
+          retention-days: 30
+      - name: Remove proprietary temporary carrier and payload
+        if: always()
+        run: rm -rf /tmp/tw85-map
