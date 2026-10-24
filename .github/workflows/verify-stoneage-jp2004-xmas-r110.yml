@@ -1,0 +1,18 @@
+name: Validate R110 JP2004 Christmas NPC and party-damage source boundaries
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-JP2004-XMAS-PARTY-COMBAT-R110.json'
+      - 'tools/stoneage_jp2004_xmas_party_r110.py'
+      - 'tests/test_stoneage_jp2004_xmas_party_r110.py'
+      - '.github/workflows/verify-stoneage-jp2004-xmas-r110.yml'
+  workflow_dispatch:
+jobs:
+  guard:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify source-limited JP2004 rules (no source replay)
+        run: |
+          python tools/stoneage_jp2004_xmas_party_r110.py
+          python -m unittest discover -s tests -p test_stoneage_jp2004_xmas_party_r110.py -v

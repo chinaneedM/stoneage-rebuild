@@ -1,0 +1,242 @@
+{
+  "schema": "stoneage.jp2004.xmas_party_damage.r110",
+  "task": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-110",
+  "date": "2026-10-24",
+  "baseline": {
+    "head": "e928f525f6c6f7a5b0aa4e0bd706405ae8d0f948",
+    "tree": "76519efca3e9554a8de52fa708b6f5f70d503dbc"
+  },
+  "source_scope": "TWO_CONTEMPORARY_MEDIA_ARTICLES_DIRECT_OFFICIAL_2004_EVENT_PAGE_INACCESSIBLE_NO_SOURCE_BYTES",
+  "sources": [
+    {
+      "id": "S1",
+      "name": "4Gamer 年末年始イベント情報",
+      "url": "https://www.4gamer.net/news/history/2004.12/20041215210314detail.html",
+      "published": "2004-12-15 21:03",
+      "source_role": "CONTEMPORARY_MEDIA_EVENT_PREVIEW",
+      "credited_operator": "ボーステック",
+      "actual_html_bytes": null,
+      "actual_html_sha256": null,
+      "original_operator_announcement_bytes": null,
+      "first_party_authorship": false
+    },
+    {
+      "id": "S2",
+      "name": "GAME Watch 週刊オンラインRPGアップデートレポート",
+      "url": "https://game.watch.impress.co.jp/docs/20041224/on1224.htm",
+      "published_week": "2004-12-18 through 2004-12-24",
+      "source_role": "CONTEMPORARY_MEDIA_EVENT_AND_UPDATE_REPORT",
+      "credited_operator": "ガマニアデジタルエンターテインメント",
+      "actual_html_bytes": null,
+      "actual_html_sha256": null,
+      "original_operator_announcement_bytes": null,
+      "first_party_authorship": false,
+      "reported_official_page": "http://stoneage.to/event/Xmas04.html"
+    }
+  ],
+  "source_relationship": {
+    "separate_media_outlets": true,
+    "operator_labels_differ": true,
+    "operator_label_conflict": "S1_BOTHTEC_VS_S2_GAMANIA_ROLE_AMBIGUITY",
+    "operator_identity_fully_reconciled": false,
+    "first_party_webpage_access": "UNAVAILABLE_IN_THIS_SESSION",
+    "original_game_build": null,
+    "original_taiwan_v1_0_equivalence": false
+  },
+  "observations": {
+    "christmas": {
+      "s1_announced_window": {
+        "start": "2004-12-20",
+        "end": "2004-12-27"
+      },
+      "s1_required_quest": "成人の儀",
+      "s1_requirement_is_media_claim": true,
+      "s2_observed_description": "SANTA_GIRL_PRESENT_THROUGH_DEC_27_IN_FOUR_VILLAGES",
+      "s2_four_villages": [
+        "マリナス",
+        "ジャジャ",
+        "カルターナ",
+        "サムギル"
+      ],
+      "s2_reward_category": "プレゼント",
+      "reward_item_ids": null,
+      "reward_frequency": null,
+      "npc_original_id": null,
+      "exact_spawn_coordinates": null,
+      "worldwide_unrestricted_access": false,
+      "server_activity_confirmed": false,
+      "independent_identification_of_santa_and_santa_girl_same_entity": false,
+      "s1_absent_from_s2_requirements_not_evidence_of_removal": true
+    },
+    "combat_patch": {
+      "s2_reported_update_date": "2004-12-20",
+      "target_group": "自パーティメンバー（ペットを含む）",
+      "attack_type": "own_party_attacks",
+      "normal_reported_damage": 1,
+      "confusion_exception": "混乱",
+      "confusion_damage": "NORMAL_DAMAGE",
+      "actual_formula_verified": false,
+      "melee_only_proven": false,
+      "reflect_damage_included": false,
+      "original_taiwan_v1_0_supported": false,
+      "live_client_execution_proven": false
+    },
+    "new_year": {
+      "s1_window": {
+        "start": "2005-01-01",
+        "end": "2005-01-07"
+      },
+      "location_type": "神社",
+      "mechanism": "おみくじ",
+      "eligibility_as_written": "特になし",
+      "exact_impact_on_gameplay": null,
+      "shrine_map_id": null,
+      "confirmed_live": false
+    }
+  },
+  "records": [
+    {
+      "record_id": "jp2004-dec:r110:santa-girl",
+      "entity_type": "SOURCE_NAMED_SEASONAL_NPC_NOT_SERVER_MASTER",
+      "collection": "npcs",
+      "source_refs": [
+        "S1",
+        "S2"
+      ],
+      "version_profile": "JP_BOTHTEC_2004_DEC_MEDIA_UPDATE_NOT_EXACT_BUILD",
+      "verification_status": "CONTEMPORARY_MEDIA_REPORT_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "name_as_reported": "サンタガール",
+      "named_only_by": "S2",
+      "S1_uses_generic_santa": true,
+      "original_npc_id": null,
+      "appearance_sprite_id": null,
+      "actual_screenshot_obtained": false
+    },
+    {
+      "record_id": "jp2004-dec:r110:four-village-appearances",
+      "entity_type": "SOURCE_REPORTED_EVENT_VILLAGE_SET_NOT_NEW_MAPS",
+      "collection": "maps",
+      "source_refs": [
+        "S2"
+      ],
+      "version_profile": "JP_BOTHTEC_2004_DEC_MEDIA_UPDATE_NOT_EXACT_BUILD",
+      "verification_status": "CONTEMPORARY_MEDIA_REPORT_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "place_names": [
+        "マリナス",
+        "ジャジャ",
+        "カルターナ",
+        "サムギル"
+      ],
+      "village_count": 4,
+      "each_location_coordinates": null,
+      "original_floor_ids": null,
+      "not_four_new_maps": true
+    },
+    {
+      "record_id": "jp2004-dec:r110:christmas-claim",
+      "entity_type": "SOURCE_REPORTED_TEMPORARY_EVENT_NOT_REUSABLE_QUEST",
+      "collection": "quests",
+      "source_refs": [
+        "S1",
+        "S2"
+      ],
+      "version_profile": "JP_BOTHTEC_2004_DEC_MEDIA_UPDATE_NOT_EXACT_BUILD",
+      "verification_status": "CONTEMPORARY_MEDIA_REPORT_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "announced_start": "2004-12-20",
+      "announced_end": "2004-12-27",
+      "eligibility_S1": "成人の儀クエストをクリア",
+      "S2_omits_eligibility": true,
+      "free_for_everyone_verified": false,
+      "prize_as_written": "プレゼント",
+      "actual_reward_transaction": null,
+      "repeatability": null
+    },
+    {
+      "record_id": "jp2004-dec:r110:friendly-fire-patch",
+      "entity_type": "SOURCE_REPORTED_COMBAT_DAMAGE_ADJUSTMENT_NOT_1999_RULE",
+      "collection": "skills",
+      "source_refs": [
+        "S2"
+      ],
+      "version_profile": "JP_BOTHTEC_2004_DEC_MEDIA_UPDATE_NOT_EXACT_BUILD",
+      "verification_status": "CONTEMPORARY_MEDIA_REPORT_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "announced_patch": "2004-12-20",
+      "target_scope": "OWN_PARTY_MEMBERS_INCLUDING_PETS",
+      "reported_non_confused_damage": 1,
+      "reported_confused_damage": "NORMAL_DAMAGE",
+      "effective_damage_formula": null,
+      "ally_attack_protocol_id": null,
+      "same_as_TW10_runtime": false
+    },
+    {
+      "record_id": "jp2004-dec:r110:new-year-shrine",
+      "entity_type": "SOURCE_REPORTED_NEW_YEAR_FORTUNE_EVENT",
+      "collection": "quests",
+      "source_refs": [
+        "S1"
+      ],
+      "version_profile": "JP_BOTHTEC_2004_DEC_MEDIA_UPDATE_NOT_EXACT_BUILD",
+      "verification_status": "CONTEMPORARY_MEDIA_REPORT_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "announced_start": "2005-01-01",
+      "announced_end": "2005-01-07",
+      "site_as_written": "神社",
+      "activity": "おみくじ",
+      "participation_as_written": "特になし",
+      "fortune_effect_on_state": null,
+      "original_shrine_id": null
+    },
+    {
+      "record_id": "jp2004-dec:r110:operator-role-attribution",
+      "entity_type": "SOURCE_IDENTITY_CAUTION_NOT_GAME_CONTENT",
+      "collection": "tutorials",
+      "source_refs": [
+        "S1",
+        "S2"
+      ],
+      "version_profile": "JP_BOTHTEC_2004_DEC_MEDIA_UPDATE_NOT_EXACT_BUILD",
+      "verification_status": "CONTEMPORARY_MEDIA_REPORT_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "S1_operator_label": "ボーステック",
+      "S2_operator_label": "ガマニアデジタルエンターテインメント",
+      "unified_company_role": null,
+      "operator_original_notice": null
+    }
+  ],
+  "negative_claims": [
+    "S2 omitting adult ceremony proves unrestricted gifts",
+    "generic Santa label and Santa Girl are proved original server same entity",
+    "four villages are four new maps or exact spawn coordinates",
+    "1 damage applies even under confusion",
+    "1 damage is a Taiwan v1 or JSS1999 combat formula",
+    "new year fortune outcome effects are known",
+    "media operator label divergence establishes an actual operator handover in December",
+    "two media articles are equivalent to original operator source HTML",
+    "a named festive NPC has a verified species/SPR ID",
+    "announcement entails verified gift delivery"
+  ],
+  "continuation": {
+    "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-111",
+    "next_focus": "rotate to original release-story first-party text or identifiable actual NPC dialogue/screenshot; avoid continued holiday patch speculation",
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b_and_wiki": "GATED",
+    "savedata_r79": "PAUSED_NON_BLOCKING",
+    "overall_restoration_percent": null
+  }
+}
