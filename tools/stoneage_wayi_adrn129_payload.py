@@ -29,7 +29,11 @@ BASES = {
     'TW10': 'research/recovered/tw10-resource-metadata/ADRN-R1.tsv.gz',
     'CN50': 'research/recovered/cn50-resource-metadata/ADRN-R1.tsv.gz'}
 HEADER = ('bitmapno', 'adder', 'size', 'xoff', 'yoff', 'width', 'height')
-FIELDS = ('index', *HEADER, 'record_sha256', 'attr_sha256', 'map_number', 'hit_raw', 'atari_x', 'atari_y')
+ATTR_FIELDS = ('atari_x', 'atari_y', 'hit_raw', 'height_flag', 'broken', 'indamage', 'outdamage',
+    'inpoison', 'innumb', 'inquiet', 'instone', 'indark', 'inconfuse', 'outpoison', 'outnumb',
+    'outquiet', 'outstone', 'outdark', 'outconfuse', 'effect1', 'effect2', 'damy_a', 'damy_b',
+    'damy_c', 'map_number', 'hit_flag', 'priority_type')
+FIELDS = ('index', *HEADER, 'record_sha256', 'attr_sha256', *ATTR_FIELDS)
 
 
 def source_contract():
@@ -108,6 +112,11 @@ def acquire(work, derived):
     entry = source_contract()
     work.mkdir(parents=True, exist_ok=True)
     derived.mkdir(parents=True, exist_ok=True)
+    attempt = {'status': 'STARTED', 'expected_archive_sha256': ARCHIVE_SHA, 'archive_verified': False,
+               'extractor': 'unar', 'original_code_executed': False}
+    def checkpoint():
+        (derived/'ATTEMPT-R1.json').write_text(json.dumps(attempt, sort_keys=True, indent=2)+'\n')
+    checkpoint()
     archive = work/'adrn_129.rar'
     request = urllib.request.Request(URL, headers={'User-Agent': 'StoneAge-history-research/1.0'})
     with urllib.request.urlopen(request, timeout=90) as response:
@@ -116,11 +125,19 @@ def acquire(work, derived):
     if len(raw) != ARCHIVE_BYTES or digest(raw) != ARCHIVE_SHA:
         raise ValueError('actual repair archive differs from accepted source bytes')
     archive.write_bytes(raw)
+    attempt.update(status='ARCHIVE_VERIFIED', archive_verified=True, actual_archive_bytes=len(raw),
+                   actual_archive_sha256=digest(raw))
+    checkpoint()
     listing = subprocess.run(['7z', 'l', '-slt', str(archive)], capture_output=True, text=True, check=True, timeout=60)
     members = safe_members(listing.stdout)
+    attempt.update(status='BOUNDED_MEMBER_LIST_VERIFIED', members=members)
+    checkpoint()
     destination = work/'members'
-    subprocess.run(['7z', 'x', '-y', '-o'+str(destination), str(archive)], check=True,
+    destination.mkdir(exist_ok=True)
+    subprocess.run(['unar', '-f', '-D', '-o', str(destination), str(archive)], check=True,
                    stdout=subprocess.DEVNULL, timeout=90)
+    attempt['status'] = 'MEMBERS_STATICALLY_EXTRACTED'
+    checkpoint()
     actual = []
     indexes = []
     baselines = {name: load_baseline(ROOT/path) for name, path in BASES.items()}
@@ -157,6 +174,8 @@ def acquire(work, derived):
                   'original_real_pixel_blocks_verified', 'game_or_installer_executed', 'named_pet_npc_identity_proven',
                   'original_server_master_recovered', 'all_official_clients_collected', 'proprietary_payload_published')}}
     (derived/'REPORT-R1.json').write_text(json.dumps(report, ensure_ascii=False, sort_keys=True, indent=2)+'\n')
+    attempt.update(status='COMPLETE_DERIVED_METADATA', report_pin=pin(derived/'REPORT-R1.json'))
+    checkpoint()
     print(json.dumps({'members': len(actual), 'indexes': indexes}, ensure_ascii=False, sort_keys=True), flush=True)
 
 
@@ -165,4 +184,12 @@ if __name__ == '__main__':
     parser.add_argument('--work', type=Path, required=True)
     parser.add_argument('--derived', type=Path, required=True)
     args = parser.parse_args()
-    acquire(args.work.resolve(), args.derived.resolve())
+    try:
+        acquire(args.work.resolve(), args.derived.resolve())
+    except Exception as exc:
+        args.derived.mkdir(parents=True, exist_ok=True)
+        path = args.derived/'ATTEMPT-R1.json'
+        state = json.loads(path.read_bytes()) if path.exists() else {}
+        state.update(status='FAILURE', error_type=type(exc).__name__, error_detail=str(exc)[:500])
+        path.write_text(json.dumps(state, sort_keys=True, indent=2)+'\n')
+        raise

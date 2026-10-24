@@ -21,7 +21,7 @@ jobs:
         with:
           python-version: '3.11'
       - run: python -m unittest tests.test_stoneage_wayi_adrn129_payload -v
-      - run: sudo apt-get update -qq && sudo apt-get install -y -qq 7zip
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq 7zip unar
       - name: Download exact 4MB source and export metadata without executing original code
         run: python -m tools.stoneage_wayi_adrn129_payload --work /tmp/adrn129-source --derived research/recovered/wayi-adrn129-patch-metadata
       - uses: actions/upload-artifact@v4

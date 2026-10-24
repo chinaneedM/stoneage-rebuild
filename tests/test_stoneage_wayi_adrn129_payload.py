@@ -27,6 +27,8 @@ class IndexPayloadTests(unittest.TestCase):
                 rows=list(csv.DictReader(f,delimiter='\t'))
             self.assertEqual(len(rows),2)
             self.assertNotIn('rd_block_sha256',rows[0])
+            self.assertIn('outpoison', rows[0])
+            self.assertIn('map_number', rows[0])
 
     def test_duplicates_and_special_dimensions_preserved(self):
         with tempfile.TemporaryDirectory() as temp:
