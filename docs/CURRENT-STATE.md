@@ -18400,3 +18400,12 @@ NEXT仍客户端P1取新增可验证版本。既有六分卷STONEAGE20060616.exe
 ### 2026-10-24 P2B 101静态资源工件独立ZIP保管补证
 
 初稿来源注册写“artifact12560353388 ZIP SHA尚未独立下载验算”是当时正确边界；现新增有时间的正向补证，保留原文不覆盖。新工作流40095855124/job已completed/success，从Actions API实际读取原run40095074458的12,035B ZIP，SHA256 d903a07de29932a98056eca39778887b648e9eea54ebcc80f2e705aa964c444d；解压仅一个direct-cn50-tw10-static-r1.json，76,838B，原JSON SHA256 a58bb6bf6e785a0dbb5d859cafa2790b56765fd32e97daae6c8148cb83336c3b，与研究Git blob23d1a0fb85ac7a83f92cdfb9757618e85e36f9a9内容逐字相同；已存research/recovered/STONEAGE-TW10-CN50-STATIC-VISUAL-P2B-CUSTODY-R1.json永久保管。原任务/宠物数据库与NPC名仍未认证，原程序/版权素材未入Git。主线后验CI需据实际状态单独复核。
+
+
+
+## 2026-10-24 — P2B 原始台湾1.0图形号写入候选：成功实取，身份仍待证
+本次启动实际远端main 378c590b9b7fb8371ed877748727ed47923b35a3/tree 5d8783289b14515d7d1e3d2d710eb630cc39b；README、协议、CURRENT完整Git blob、决策、历史、来源、路线、当时11项同HEAD成功Actions重读。原CURRENT通过原生blob取得全文，而不是把fetch_file空响应当空档。现有R101早已由同构建原版sa_3.exe指令证明对象0x124的图形键分支与写出0x80位图，故本轮不冒称首次找到选择器。R99/P2B的5846–5946共101真实静态图块仍仅有玩家类别“NPC”提示，101不是具名NPC数量。
+新分支agent/p2b-tw10-graphic-upstream-source-20261024沿原main创建。源验证run40097583415/job120882962808第一次实际失败：原档下载和哈希成功，但全PE线性解码跨内嵌数据导致对R101已知函数的错误锚要求失败。保留失败不改写。原源码改用另外独立校验R101函数窗口后，第二次source run40097693133/job120883285615 completed/success；再次实际取回台湾1.0保存原盘RAR 842125501B并校核旧MD5/SHA1、原exe 425984B/SHA256 cdab9ea049a98bbc96ce93eeaa8b63c688f0c0f0ad8b3183e79d75e47621441a，仅做原指令静态解码，未执行原Windows程序。
+解析原PE代码段22405条连续指令，取得0x124/0x80内存位移候选45处，其中0x124为17处（含10处词法写入），0x80为28处；单独锚定的原R101选择函数内0x124读取2处、0x80写入3处。十个原始写入候选RVA为0x54cb/0x65ab/0x672b/0x7142/0x7466/0x7611/0x856d/0x10b8d/0x10c43/0x10ea5。证据是原指令语法，不证明十处都写同种对象、不证明原服协议/建角/NPC主表→对象0x124上游数据流，也没有具名宠物/NPC与位图号的历史身份连接；本轮真实新增具名实体0。
+成功源artifact12561048182 ZIP经独立下载，4508B/SHA256 f0bc6cb2851d253168dfd85d011548e9f5515a84149d476c30782865384d60f7，唯一派生JSON 40550B/SHA256 7ec6a7da6d915d410a839f70d9bf2bc1358253832a18da8f83050aa702818afd。原版权原件不入Git；目前仓库永久保存十候选RVA与源指令SHA、来源ZIP/JSON哈希、实际运行与否定边界于research/recovered/STONEAGE-TW10-GRAPHIC-UPSTREAM-CANDIDATES-P2B-R1.json；完整40550B JSON仅临时Actions工件，未声称永久保管。独立验收run40098160214/job120884655334实际completed/success；候选完整提交及main后验必须依据真实新结果分别报告。
+**最高NEXT CLIENT-RESOURCE-ENTITY-BRIDGE-P2B/UPSTREAM-WRITE-IDENTITY**：限定核查十个0x124写入点来源寄存器、对象指针与R101同一对象实例的可重放连接；得到同版具名游戏原始数据再晋级人物/宠物/NPC，否则按协议不继续扩大低级helper，转向独立官方具名材料与真实master/手册。DD-028四档任务继续分开，Stage A 7 PARTIAL+2 OPEN、Stage B/wiki GATED、R79 PAUSED_NON_BLOCKING、总体复原百分比null。原历史全文前缀逐字保留，不因本轮二进制研究填造服务器事实。

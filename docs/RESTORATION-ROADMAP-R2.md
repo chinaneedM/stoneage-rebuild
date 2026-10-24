@@ -2520,3 +2520,9 @@ P1大陆5.0全CAB取得后，本轮P2A真实重取台湾1.0原盘和大陆5.0 CA
 已接受大陆5.0真实源全303197 AD RN及1185动画组元数据(source40093980003)。新物理内容归属工作将台湾1.0原盘已固定101个玩家称NPC的静态资源号5846—5946，在双方完整原生位图数据集按逐行同ID/原RD块SHA/碰撞MAP_ATTR SHA/尺寸与offset完成101/101等值对照；Actions40094709535和40095074458 completed/success。资源继承证据和碰撞等技术属性可供后续设计资料库使用，仍非具名NPC/服务器行为已恢复；玩家类别不能转官方真相。
 
 最高NEXT CLIENT-RESOURCE-ENTITY-BRIDGE-P2B/NAMED-SELECTOR-SOURCE，目标是原初人物/宠物/NPC可见图像如何与具体资源号相连。只选一个原版本有可复现来源的sa_3.exe图形选择调用链、早期官方手册明确图注或原NPC master；成功止点为至少一个可检证的具名对象或明确类别图号连接；失败止点为具体来源无法取得/选择证据不足，并重排资源包队列。不能以文件名、近现代论坛图、同号资源或缓存场景猜宠物种类/任务。Stage A7 PARTIAL+2 OPEN，B/wiki GATED，R79暂停，整体百分比null，活动任务保持DD-028独立四档。
+
+
+
+## 2026-10-24 — P2B UPSTREAM-WRITE-IDENTITY 限定实体关系补证
+原main378c590b9b7fb8371ed877748727ed47923b35a3/tree5d8783289b14515d7d1e3d2d710eb630cc39b为真实本轮起点。R101原生selector**已恢复**，不能以“未找到selector”作为重复任务。原TW1.0可执行源本轮重取、静态语法扫描，first run40097583415 failed（函数锚错位）；修正后source40097693133与独立验收40098160214实际success，保存10处0x124候选写入指令RVA及真实原始SHA于专用资料。共有45条位移词法候选，具名实体晋级0；原文件不入Git，临时ZIP/raw独立摘要保留。
+**当前最高NEXT CLIENT-RESOURCE-ENTITY-BRIDGE-P2B/UPSTREAM-WRITE-IDENTITY**。成果要求是真正同版写入源→R101对象0x124→资源ID的可重放关联并有可认证具名身份；不追不着边的同偏移指令或为增长回合数做helper。最多下一有限取证单元，若只是另外的候选RVA/静态统计，关闭此分支并转官方具名原文件/原服务器master来源。未知保留OPEN，不推物种/NPC/地图/任务数量；任务DD-028四档、Stage A7 PARTIAL+2 OPEN、Stage B/wiki GATED、R79暂停，总恢复率null。

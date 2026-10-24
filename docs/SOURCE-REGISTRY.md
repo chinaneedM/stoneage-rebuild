@@ -8716,3 +8716,11 @@ JSS R116两实际工件12547837667/12547793357 ZIP摘要分别394c0baddfc1c94083
 
 #### 2026-10-24 SRC-TW10-CN50-P2B 后验工件保管更正
 原登记“artifact12560353388初始仅API身份，ZIP摘要待验”后，由独立来源审计run40095855124 completed/success补齐：ZIP12035B/SHA256 d903a07de29932a98056eca39778887b648e9eea54ebcc80f2e705aa964c444d；其唯一JSON 76838B/SHA256 a58bb6bf6e785a0dbb5d859cafa2790b56765fd32e97daae6c8148cb83336c3b与永久Git blob23d1a0fb85ac7a83f92cdfb9757618e85e36f9a9完全一致；来源run40095074458/job120875491994/HEAD137d92992004bef7e1ef127c5160adf506968a36全固定，永久收据STONEAGE-TW10-CN50-STATIC-VISUAL-P2B-CUSTODY-R1.json。此保管验证为2026派生文件同一性，不是2000—2003正式压模或服务器NPC身份认证。
+
+
+
+## 2026-10-24 — Taiwan 1.0 original sa_3.exe graphic-field writer candidates (P2B)
+- Authentic original retail client exe (TW1.0 preservation) 425984 bytes, SHA-256 cdab9ea049a98bbc96ce93eeaa8b63c688f0c0f0ad8b3183e79d75e47621441a, independently source-reacquired by completed/success Actions 40097693133/job120883285615. The first run 40097583415 failed from section-linear instruction alignment; this failure remains on record.
+- R101 had previously proven static-versus-SPR selector for object graphic field +0x124 and bitmap output +0x80. New native analysis covers 45 lexical displacement instruction references, including 10 candidate writes to +0x124 at RVAs 0x54cb/0x65ab/0x672b/0x7142/0x7466/0x7611/0x856d/0x10b8d/0x10c43/0x10ea5. These are **not** proven the same object or actual packet-to-object mappings.
+- Source artifact ID12561048182 independently downloaded: ZIP 4508 bytes, SHA-256 f0bc6cb2851d253168dfd85d011548e9f5515a84149d476c30782865384d60f7; sole JSON 40550 bytes, SHA-256 7ec6a7da6d915d410a839f70d9bf2bc1358253832a18da8f83050aa702818afd. Permanent limited derived metadata: research/recovered/STONEAGE-TW10-GRAPHIC-UPSTREAM-CANDIDATES-P2B-R1.json; spec: docs/specs/STONEAGE-TW10-GRAPHIC-UPSTREAM-P2B-R1.md. Raw 40KB report remains a time-limited CI artifact, not a permanent original asset vault.
+- Separate derived acceptance Actions 40098160214/job120884655334 success. No authenticated specific NPC or pet species ID/name/quest mapping, deployed source execution, server master, or whole-game coverage. 101 static bitmap candidates retain unverified player NPC category and same-build physical lineage only.
