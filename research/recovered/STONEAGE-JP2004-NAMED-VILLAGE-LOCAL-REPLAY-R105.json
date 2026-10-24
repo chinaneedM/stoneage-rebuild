@@ -1,0 +1,183 @@
+{
+  "schema": "stoneage.jp2004.named_village_replay.r105",
+  "source_sha256": "530fa72dcb0ffe6265677713af4350ffee0a0e7cec4d5685d57ea5ab3b31692a",
+  "actual_sources": {
+    "operator_index": {
+      "bytes": 17214,
+      "sha256": "df26f4f500fcdbb7decaa81b420e7d016e91f54ad04a41c2e1394eb9db7e27e0",
+      "git_blob": "b3a379aad03467af4dfe6cc33230946386151b40"
+    },
+    "contest": {
+      "bytes": 2775,
+      "sha256": "5406a60aac47f19bac95afd1c0fc6b593f0983aa00d786ac6e7c1278f289563b",
+      "git_blob": "494e78852016f460b52e9f0927a92d1ea3279581"
+    },
+    "press": {
+      "bytes": 45582,
+      "sha256": "c04ac7eb7c03a64cfbbb5cbd0d2f112b38ea789ff19561206c3e6fa1ee3a64dd",
+      "git_blob": "0f6356bfe9d667082479c06940302d7fc768fbe2"
+    }
+  },
+  "operator_rows": [
+    {
+      "date": "2004/11/09",
+      "title": "NPCとの会話方法改善、各種不具合の修正など",
+      "href": "javascript:infoView('info/pach_024.html',330);"
+    },
+    {
+      "date": "2004/11/12",
+      "title": "カラの村の各種施設を実装",
+      "href": "javascript:infoView('info/pach_025.html',300);"
+    },
+    {
+      "date": "2004/11/16",
+      "title": "カラの村に新しい施設を追加",
+      "href": "javascript:infoView('info/pach_026.html',300);"
+    },
+    {
+      "date": "2004/11/09",
+      "title": "ネーミングコンテスト結果発表！",
+      "href": "javascript:viewWin('cgi/namecon_result.html',528,656);"
+    }
+  ],
+  "contest": {
+    "applications": [
+      "2004-10-16",
+      "2004-11-02T23:59"
+    ],
+    "timezone": null,
+    "planned_result_and_ingame_reflection": "2004-11-09_AFTER_REGULAR_MAINTENANCE",
+    "applications_closed_in_capture": true,
+    "winning_names_in_this_capture": null,
+    "planned_is_executed": false
+  },
+  "press": {
+    "operator_as_reported": "ボーステック",
+    "developer_as_reported": "Digi Park",
+    "reported_update_date": "2004-11-09",
+    "claims": [
+      "NPCとの会話方法の改善を実施",
+      "マンモスバスが8人乗りになる",
+      "正式決定した新島名ミライアと新村名カラの村の名称をゲーム内に反映",
+      "確認されていた不具合の修正を実施"
+    ],
+    "authority": "CONTEMPORARY_PRESS_NOT_OPERATOR_PATCH_BODY_OR_RUNTIME"
+  },
+  "records": [
+    {
+      "record_id": "jp-bothtec-2004:r105:name-evidence:01",
+      "entity_type": "DATED_WEB_NAMED_PLACE_ATTRIBUTION_SUPPLEMENT",
+      "collection": "maps",
+      "name_as_written": "ミライア",
+      "version_profile": "JP_BOTHTEC_2004_WEB_MIXED_DATES_NOT_EXACT_CLIENT_BUILD",
+      "source_refs": [
+        {
+          "source_id": "press",
+          "url": "https://game.watch.impress.co.jp/docs/20041112/on1112.htm",
+          "sha256": "c04ac7eb7c03a64cfbbb5cbd0d2f112b38ea789ff19561206c3e6fa1ee3a64dd"
+        }
+      ],
+      "verification_status": "PRESS_REPORTED_ISLAND_NAME_REFLECTION_NOT_OPERATOR_WINNER_BODY",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "coordinates": null,
+      "asset_refs": null,
+      "runtime_verified": false,
+      "new_world_map_census_increment": null,
+      "cross_region_aliases": null
+    },
+    {
+      "record_id": "jp-bothtec-2004:r105:name-evidence:02",
+      "entity_type": "DATED_WEB_NAMED_PLACE_ATTRIBUTION_SUPPLEMENT",
+      "collection": "maps",
+      "name_as_written": "カラの村",
+      "version_profile": "JP_BOTHTEC_2004_WEB_MIXED_DATES_NOT_EXACT_CLIENT_BUILD",
+      "source_refs": [
+        {
+          "source_id": "press",
+          "url": "https://game.watch.impress.co.jp/docs/20041112/on1112.htm",
+          "sha256": "c04ac7eb7c03a64cfbbb5cbd0d2f112b38ea789ff19561206c3e6fa1ee3a64dd"
+        },
+        {
+          "source_id": "operator_index",
+          "url": "https://web.archive.org/web/20041207044457id_/http://www.stoneage.to/main_index.html",
+          "sha256": "df26f4f500fcdbb7decaa81b420e7d016e91f54ad04a41c2e1394eb9db7e27e0"
+        }
+      ],
+      "verification_status": "OPERATOR_NAMED_FACILITY_INDEX_AND_PRESS_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "coordinates": null,
+      "asset_refs": null,
+      "runtime_verified": false,
+      "new_world_map_census_increment": null,
+      "cross_region_aliases": null
+    }
+  ],
+  "gaps": {
+    "facility_images": {
+      "originals": [
+        "http://images.hangame.co.jp/_images/game/saj/town2-2.gif",
+        "http://images.hangame.co.jp/_images/game/saj/town2-5.gif",
+        "http://images.hangame.co.jp/_images/game/saj/town2-12.gif"
+      ],
+      "requested_capture": "20031215095512",
+      "direct_http_statuses": [
+        404,
+        404,
+        404
+      ],
+      "available_api_statuses": [
+        429,
+        429,
+        429
+      ],
+      "cdx_prefix_query_result": [],
+      "qualified_images": 0,
+      "historical_absence_proven": false
+    },
+    "patch_and_result_bodies": {
+      "paths": [
+        "info/pach_024.html",
+        "info/pach_025.html",
+        "info/pach_026.html",
+        "cgi/namecon_result.html"
+      ],
+      "capture_requested": "20041207044457",
+      "observed_hosts": [
+        "www.stoneage.to",
+        "stoneage.to"
+      ],
+      "each_host_statuses": [
+        404,
+        404,
+        404,
+        404
+      ],
+      "body_available": false,
+      "linked_title_is_full_body": false
+    },
+    "reopen_if": "Exact archived patch/result body or named scene/map/NPC asset with build provenance becomes obtainable; do not guess further numbered paths"
+  },
+  "boundaries": {
+    "original_runtime_verified": false,
+    "exact_client_build_verified": false,
+    "original_map_floor_npc_ids_recovered": false,
+    "full_facility_list_or_prices_recovered": false,
+    "bus_capacity_is_tw10_rule": false,
+    "operator_announced_dates_are_packet_trace": false,
+    "media_is_official_patch_body": false,
+    "new_named_places_are_new_map_census": false,
+    "old_unacquired_records_rewritten": false,
+    "asset_reuse_approved": false,
+    "original_html_or_pixels_committed": false,
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b_and_wiki": "GATED",
+    "savedata_r79": "PAUSED_NON_BLOCKING",
+    "overall_completion_percentage": null
+  },
+  "negative_http_probes_repeated_by_ci": false,
+  "original_server_transactions_observed": 0
+}

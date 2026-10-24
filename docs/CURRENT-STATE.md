@@ -18058,3 +18058,16 @@ GitHub新核main `33b953c56fec4fc9bc36d30738a83c6041d02fa6` / tree `58173bfc7077
 永久CI-CANDIDATE/CI-MAIN原报、CUSTODY及独立保管器固定13证据pin（SOURCE/LOCAL/双CI/工具/测试/规格/workflow/五父）、23实际run、内容HEAD/tree/分支、双job/artifact/ZIP、四完整历史前缀。整份收据SHA锁拒绝原报等长破坏、重算pin、错commit/ZIP/artifact、虚报原生ID/双端相等。新8＋保管4项本地12通过，加旧相关28，本轮40不同测试成功；原内容远端8项不改称12，最终保管提交自身Actions仍须实际后验。六份本轮临时原输入（被排除2008公告/宣传图及接纳的一页三图）逐份验SHA后删除，原HTML/图片/程序不入Git。
 
 真正推进是旧官方三个具名网页位置的另时点视觉补充，非新物种、同刻像素、原SPR/动画/成长/捕获表或全图鉴完备。旧104记录与旧未请求历史不重写。最高NEXT `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-105` 轮换明确分版具名地图/NPC位置或服务实源，不连续扩图鉴批。Stage A7 PARTIAL+2 OPEN、B/wiki GATED、savedataR79暂停、总体百分比null。
+
+
+### R105 日本2004具名村庄设施公告与交通服务分版来源 — 2026-10-24
+
+以GitHub新核main `1c29821627b4b775639634bcea36631ebe0ac03a` / tree `700509191de404375cc15ecdeafdfb017c099d86` 启动；524分支、0开放PR/0 in_progress，同HEAD候选9/main10共19实际运行success；旧queued37642417333保留，tree5412完整无AGENTS。八启动文档完整UTF8与fresh exact checkout相等，CURRENT旧2543293B / SHA256 `b270247654e73ada473c29081dbb263d9ae2a076cf5a018b95a0810cabc1bdb7`。最高NEXT105从图鉴轮换具名地图/服务；执行环境短暂不可用后恢复，未丢工作区。
+
+有限补充日本2004运营方村庄设施发布归属：实际20041207044457官方首页四行分别连接11月9日NPC会话改善与征名结果、11月12日卡拉村各设施实装、11月16日追加新设施；保留日期—标题—真实链接同表行。20041103111115官方征名结束页只预告11月9日维护后发表和反映，未给获选名。同期GAME Watch11月12日周报报道11月9日猛犸巴士8人、新岛ミライア/新村カラの村名反映；其当前正文严格UTF8，最初CP932失败后实查并更正，不称2004原始HTML。三页字节分别17214/2775/45582，全部SHA/Git blob锁在SOURCE。
+
+新增2个maps记录只是内容时间/来源补充，不计两张新世界地图。ミライア不默认为2006ミライア群島完整实体；11月12/16设施标题不补具体服务/NPC/库存/价表，不称11月9已全开。8人旧容量、司机是否占位、会话输入方式及精确客户端build均未知；原台湾1.0具名NPC/SPR闭合依然0。
+
+原Hangame医院/宠物店/巴士站三图限定请求各404，availability均429，有限CDX空，不称历史图不存在。官方首页实际pach_024/025/026和namecon_result链接在www/非www各404，标题不是正文；旧十三设施及未取图历史不改。交付SOURCE/LOCAL、中文规格、源级三页重放器、七项负向单元及专用CI，原版权HTML/图像/程序不入Git。候选/main与永久工件保管以随后真实后验验收，未提前报绿。
+
+最高NEXT `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-106` 转同官网已观察宠物技「おさんぽ」手册gameguid/manual_pet_03.html#osanpo：先查重、一页行为/条件实源止步；无新正文则转材料缺口评估，不连续扩村庄公告/猜号。Stage A7 PARTIAL+2 OPEN，B/wiki GATED，savedataR79暂停，整体百分比null。

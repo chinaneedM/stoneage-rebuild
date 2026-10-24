@@ -8571,3 +8571,8 @@ S2原href https://image2.sina.com.cn/gm/ads/sachmx5.00b9.JPG ，JPEG RGB945×505
 SOURCE `research/recovered/STONEAGE-CN20-NAMED-PET-VISUAL-SOURCE-R104.json` 固定原页 https://web.archive.org/web/20011023181629id_/http://www.waei.com.cn/ZHUANQU/stoneage2/pet/new_pet2.asp （64382B/SHA2562c7aea8d0319c2070d5c7590a95bfc892c2463deb76c5b95fca8c281549c76f0）与五父。第84/88/89的实际相对src104.JPG/88.JPG/87.JPG分别在available API找到20011025223732/20011026030709/20011026030145后实取；三JPEG SHA分别3c21c85837534ff5ff4d754d70a9eb5f4d7f65833151d2ad166e5e9807107ca2、40733496c09fdbff22f5a280ba74d334f1252d5f06efb2049511385410d42425、46794d669650fa4d1ad2096a85ccd316f43078ca0f56712cc6413d358c7c4a9c。最终URL、:80、大小写和分时点分别记录，均完整解码目视。3条视觉补充引用旧目录ID、不回写旧未请求状态；不是新物种ID/属性/动画或同刻原画认证。仅派生元数据/后验CI报告与收据入Git，原HTML/JPEG不存。
 
 负向候选4Gamer https://www.4gamer.net/games/013/G001377/20080415033/ 当前公告与TN/001.jpg已实取，但宣传图不能按文中ゴルンフット名字认定角色像素，SOURCE保留两SHA与拒绝关联；没有把宣传图放进本包三具名图或伪称原图。
+
+
+### R105 日本2004官方村庄公告索引与同期交通容量记述 — 2026-10-24
+
+接纳精确https://web.archive.org/web/20041207044457id_/http://www.stoneage.to/main_index.html (17214B SHA256 df26f4f500fcdbb7decaa81b420e7d016e91f54ad04a41c2e1394eb9db7e27e0)、https://web.archive.org/web/20041103111115id_/http://stoneage.to/cgi/namecon_finish.html (2775B SHA256 5406a60aac47f19bac95afd1c0fc6b593f0983aa00d786ac6e7c1278f289563b)、https://game.watch.impress.co.jp/docs/20041112/on1112.htm (45582B SHA256 c04ac7eb7c03a64cfbbb5cbd0d2f112b38ea789ff19561206c3e6fa1ee3a64dd)。前二CP932严格，媒体当前UTF8严格；官网标题不当缺失详情、征名计划不当执行、媒体不当官方补丁正文。三设施图各404/API429/CDX空；四详情两主机各404，另pach_021也404，不猜其他路径。派生SOURCE/LOCAL与工具/七测试及规格，不保存原HTML/像素；既有设施、地理、封印区域与七字段契约四父原样锁定。

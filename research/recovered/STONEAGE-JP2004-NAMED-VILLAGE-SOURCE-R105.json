@@ -1,0 +1,225 @@
+{
+  "schema": "stoneage.jp2004.named_village_source.r105",
+  "task": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-105",
+  "date": "2026-10-24",
+  "baseline": {
+    "head": "1c29821627b4b775639634bcea36631ebe0ac03a",
+    "tree": "700509191de404375cc15ecdeafdfb017c099d86"
+  },
+  "sources": {
+    "operator_index": {
+      "url": "https://web.archive.org/web/20041207044457id_/http://www.stoneage.to/main_index.html",
+      "bytes": 17214,
+      "sha256": "df26f4f500fcdbb7decaa81b420e7d016e91f54ad04a41c2e1394eb9db7e27e0",
+      "git_blob": "b3a379aad03467af4dfe6cc33230946386151b40",
+      "codec": "cp932",
+      "authority": "ARCHIVED_OPERATOR_INDEX_NOT_LINKED_PATCH_BODY"
+    },
+    "contest": {
+      "url": "https://web.archive.org/web/20041103111115id_/http://stoneage.to/cgi/namecon_finish.html",
+      "bytes": 2775,
+      "sha256": "5406a60aac47f19bac95afd1c0fc6b593f0983aa00d786ac6e7c1278f289563b",
+      "git_blob": "494e78852016f460b52e9f0927a92d1ea3279581",
+      "codec": "cp932",
+      "authority": "ARCHIVED_OPERATOR_PRE_RESULT_CONTEST_PAGE"
+    },
+    "press": {
+      "url": "https://game.watch.impress.co.jp/docs/20041112/on1112.htm",
+      "bytes": 45582,
+      "sha256": "c04ac7eb7c03a64cfbbb5cbd0d2f112b38ea789ff19561206c3e6fa1ee3a64dd",
+      "git_blob": "0f6356bfe9d667082479c06940302d7fc768fbe2",
+      "codec": "utf-8",
+      "authority": "CONTEMPORARY_PRESS_CURRENT_UTF8_TRANSCODING_NOT_2004_ORIGINAL_BYTES"
+    }
+  },
+  "parents": {
+    "research/recovered/STONEAGE-JP-OFFICIAL-VILLAGE-FACILITIES-R1.json": {
+      "bytes": 28705,
+      "sha256": "65ed727327aae1e8b060834c11c33d56685134a6bbd8fb02e250086baf4f5dfb",
+      "git_blob": "6696402b32f9767f724b7543bb4f477a67dbea6e"
+    },
+    "research/recovered/STONEAGE-JP2006-WORLD-GEOGRAPHY-SOURCE-R1.json": {
+      "bytes": 8316,
+      "sha256": "c34c4e9aef27a0639943ea82dea6181b10d6582c0363d1b8fc03200c781c6442",
+      "git_blob": "f9d122eeb71957c2e25e68309754ef663dd14697"
+    },
+    "research/recovered/STONEAGE-JP2004-SEALED-REGION-SOURCE-R1.json": {
+      "bytes": 15433,
+      "sha256": "50e171953c2182777427cc63df61224178c3a6f8055ab5897104b208df026243",
+      "git_blob": "d1826a008b497a3651ba7ffa05b050a613145bf9"
+    },
+    "research/recovered/STONEAGE-PREPRODUCTION-CONTENT-ARCHIVE-R1.json": {
+      "bytes": 24489,
+      "sha256": "e87afebc8c9590142c7cc8831b578455b3427bf7c1d10520ae02a3e8082fbddb",
+      "git_blob": "2d5b3f081d5618287f431fbded943722a820c593"
+    }
+  },
+  "operator_rows": [
+    {
+      "date": "2004/11/09",
+      "title": "NPCとの会話方法改善、各種不具合の修正など",
+      "href": "javascript:infoView('info/pach_024.html',330);"
+    },
+    {
+      "date": "2004/11/12",
+      "title": "カラの村の各種施設を実装",
+      "href": "javascript:infoView('info/pach_025.html',300);"
+    },
+    {
+      "date": "2004/11/16",
+      "title": "カラの村に新しい施設を追加",
+      "href": "javascript:infoView('info/pach_026.html',300);"
+    },
+    {
+      "date": "2004/11/09",
+      "title": "ネーミングコンテスト結果発表！",
+      "href": "javascript:viewWin('cgi/namecon_result.html',528,656);"
+    }
+  ],
+  "press_bullets": [
+    "NPCとの会話方法の改善を実施",
+    "マンモスバスが8人乗りになる",
+    "正式決定した新島名ミライアと新村名カラの村の名称をゲーム内に反映",
+    "確認されていた不具合の修正を実施"
+  ],
+  "records": [
+    {
+      "record_id": "jp-bothtec-2004:r105:name-evidence:01",
+      "entity_type": "DATED_WEB_NAMED_PLACE_ATTRIBUTION_SUPPLEMENT",
+      "collection": "maps",
+      "name_as_written": "ミライア",
+      "version_profile": "JP_BOTHTEC_2004_WEB_MIXED_DATES_NOT_EXACT_CLIENT_BUILD",
+      "source_refs": [
+        {
+          "source_id": "press",
+          "url": "https://game.watch.impress.co.jp/docs/20041112/on1112.htm",
+          "sha256": "c04ac7eb7c03a64cfbbb5cbd0d2f112b38ea789ff19561206c3e6fa1ee3a64dd"
+        }
+      ],
+      "verification_status": "PRESS_REPORTED_ISLAND_NAME_REFLECTION_NOT_OPERATOR_WINNER_BODY",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "coordinates": null,
+      "asset_refs": null,
+      "runtime_verified": false,
+      "new_world_map_census_increment": null,
+      "cross_region_aliases": null
+    },
+    {
+      "record_id": "jp-bothtec-2004:r105:name-evidence:02",
+      "entity_type": "DATED_WEB_NAMED_PLACE_ATTRIBUTION_SUPPLEMENT",
+      "collection": "maps",
+      "name_as_written": "カラの村",
+      "version_profile": "JP_BOTHTEC_2004_WEB_MIXED_DATES_NOT_EXACT_CLIENT_BUILD",
+      "source_refs": [
+        {
+          "source_id": "press",
+          "url": "https://game.watch.impress.co.jp/docs/20041112/on1112.htm",
+          "sha256": "c04ac7eb7c03a64cfbbb5cbd0d2f112b38ea789ff19561206c3e6fa1ee3a64dd"
+        },
+        {
+          "source_id": "operator_index",
+          "url": "https://web.archive.org/web/20041207044457id_/http://www.stoneage.to/main_index.html",
+          "sha256": "df26f4f500fcdbb7decaa81b420e7d016e91f54ad04a41c2e1394eb9db7e27e0"
+        }
+      ],
+      "verification_status": "OPERATOR_NAMED_FACILITY_INDEX_AND_PRESS_NOT_RUNTIME",
+      "rights_status": "RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+      "record_revision": 1,
+      "game_ids": null,
+      "coordinates": null,
+      "asset_refs": null,
+      "runtime_verified": false,
+      "new_world_map_census_increment": null,
+      "cross_region_aliases": null
+    }
+  ],
+  "interpretation": {
+    "operator_titles_support": [
+      "2004-11-09 NPC conversation improvement entry",
+      "2004-11-12 Kara various facility implementation entry",
+      "2004-11-16 Kara new facility addition entry"
+    ],
+    "media_reported_bus_capacity": 8,
+    "previous_bus_capacity": null,
+    "capacity_includes_driver_npc": null,
+    "specific_facility_names_or_transactions": null,
+    "conversation_input_method": null,
+    "renamed_island_is_exact_2006_archipelago_entity": null,
+    "contest_plan_is_deployment_proof": false,
+    "new_2004_map_payloads": 0
+  },
+  "gaps": {
+    "facility_images": {
+      "originals": [
+        "http://images.hangame.co.jp/_images/game/saj/town2-2.gif",
+        "http://images.hangame.co.jp/_images/game/saj/town2-5.gif",
+        "http://images.hangame.co.jp/_images/game/saj/town2-12.gif"
+      ],
+      "requested_capture": "20031215095512",
+      "direct_http_statuses": [
+        404,
+        404,
+        404
+      ],
+      "available_api_statuses": [
+        429,
+        429,
+        429
+      ],
+      "cdx_prefix_query_result": [],
+      "qualified_images": 0,
+      "historical_absence_proven": false
+    },
+    "patch_and_result_bodies": {
+      "paths": [
+        "info/pach_024.html",
+        "info/pach_025.html",
+        "info/pach_026.html",
+        "cgi/namecon_result.html"
+      ],
+      "capture_requested": "20041207044457",
+      "observed_hosts": [
+        "www.stoneage.to",
+        "stoneage.to"
+      ],
+      "each_host_statuses": [
+        404,
+        404,
+        404,
+        404
+      ],
+      "body_available": false,
+      "linked_title_is_full_body": false
+    },
+    "reopen_if": "Exact archived patch/result body or named scene/map/NPC asset with build provenance becomes obtainable; do not guess further numbered paths"
+  },
+  "discovery": {
+    "official_root": "https://web.archive.org/web/20041109033145id_/http://stoneage.to/",
+    "root_frame_literal": "main_index.html",
+    "earlier_frame_capture": "20041106013147",
+    "later_frame_actual_capture": "20041207044457",
+    "snapshots_are_not_one_instant": true,
+    "unrelated_express_patch_021_http": 404,
+    "original_html_or_images_saved_in_git": false
+  },
+  "boundaries": {
+    "original_runtime_verified": false,
+    "exact_client_build_verified": false,
+    "original_map_floor_npc_ids_recovered": false,
+    "full_facility_list_or_prices_recovered": false,
+    "bus_capacity_is_tw10_rule": false,
+    "operator_announced_dates_are_packet_trace": false,
+    "media_is_official_patch_body": false,
+    "new_named_places_are_new_map_census": false,
+    "old_unacquired_records_rewritten": false,
+    "asset_reuse_approved": false,
+    "original_html_or_pixels_committed": false,
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b_and_wiki": "GATED",
+    "savedata_r79": "PAUSED_NON_BLOCKING",
+    "overall_completion_percentage": null
+  },
+  "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-106"
+}

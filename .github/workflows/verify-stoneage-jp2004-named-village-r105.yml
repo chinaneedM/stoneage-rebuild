@@ -1,0 +1,32 @@
+name: Verify R105 named village operator chronology and press boundaries
+on:
+  push:
+    paths:
+      - 'tools/stoneage_jp2004_named_village_r105.py'
+      - 'tests/test_stoneage_jp2004_named_village_r105.py'
+      - 'research/recovered/STONEAGE-JP2004-NAMED-VILLAGE-SOURCE-R105.json'
+      - 'research/recovered/STONEAGE-JP2004-NAMED-VILLAGE-LOCAL-REPLAY-R105.json'
+      - 'docs/specs/STONEAGE-JP2004-NAMED-VILLAGE-R105.md'
+      - '.github/workflows/verify-stoneage-jp2004-named-village-r105.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-chronology:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest tests.test_stoneage_jp2004_named_village_r105 -v
+      - name: Reacquire two archived operator pages and the current press body
+        run: |
+          python -m tools.stoneage_jp2004_named_village_r105 --write /tmp/r105-replay.json
+          cmp /tmp/r105-replay.json research/recovered/STONEAGE-JP2004-NAMED-VILLAGE-LOCAL-REPLAY-R105.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: r105-named-village-derived-replay
+          path: /tmp/r105-replay.json
+          retention-days: 30
