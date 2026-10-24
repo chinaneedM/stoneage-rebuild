@@ -18316,3 +18316,15 @@ Integration preflight also preserved the c6a07dc92ad3dc2f97156044f17c59e0915fb08
 ### 2026-10-24 R117 双端验收与资格报告永久保管
 内容最终commit `c0465f10e0d8936848b4aec54e54e5e400a3292e` / tree `37e4987b65f541a82b7cd0b1f366bdcdb1647f16` 已经新读主线后expected_sha非强制快进。相对保留的8d58d1f8：3commit/9变更路径/0删除路径，四份完整最新历史前缀全部保留，原JSS R116收据不改写。最终内容candidate11项、main12项共23次Actions全completed/success；专用candidate run40063612164/job120782122078、main run40063653749/job120782247918日志各51项单元、资格报告五父档重放、JSS九内容blob/八当前源pin及四最新前缀全部通过。
 永久收据 `research/recovered/STONEAGE-ADULT-QUEST-ORIGIN-CUSTODY-R117.json` 固定九内容bytes/SHA256/Git blob、四旧完整前缀、23真实运行与双job、早先快照验收及取源日志范围订正。R117没有新增原件ZIP，不能虚构该摘要；旧JSS两实际下载工件匹配API/raw/永久报告的独立复核保管在原收据及本轮记录。成人礼仍ORIGIN_UNRESOLVED；2001-11-20只是已验文献时间，2000索引未晋级，活动前置不继承活动归属，新增本体/永久/原服实体0。最高NEXT EARLY-NPC-VISUAL-SOURCE-118不变；Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、整体百分比null。保管提交自身Actions按后验核验，不预报通过。
+
+## 2026-10-24 用户改定最高优先级：官方原始客户端全版本采集、字节实物优先与无损跨版去重
+
+用户指出持续从网页/论坛/图片逆推任务、宠物、地图、模型效率不足，要求优先尽量下载所有可验证的历代官方客户端及补丁，从实际客户端资源提取、哈希去重、按版本保留差异，再以网页查缺补漏。本方向覆盖先前原优先EARLY-NPC-VISUAL-SOURCE-118；原R117成人礼与其未解缺口仍完整保留，但下一有效工作单元优先 CLIENT-ARTIFACT-ACQUISITION-AND-CROSS-VERSION-DEDUP-01。新增决策DD-029；任务起源继续遵守DD-028四档。
+
+以2026-10-24实读main cb8f2e0fb7e24f0a8e4476444ad457962e74e4c9/tree39c75089ccc31bd8ad0fcaba8c879e3b5645b933为该工作单元起点，完整Git blob CURRENT 564f3408ba7f60804139380b510efaa2bb74c5c7非空且被逐字节作为本后缀前缀保留。README、协议、决策、路线、原客户端接收报告、恢复资料/来源注册表和Actions复核。已有TW1.0 Redump104630真正零售光盘来源、383核心文件/373,564,663字节及全部SHA；两分卷来源混杂的2.5资料包已经历史下载/验证，stoneage2.5客户端子树2302文件，但未认证为纯净官方2.5发行客户端。2000年韩国正式/试玩安装包仍只有精确历史下载线索，无可验证字节。任何网页、第三方二次客户端、活动资料均不当官方安装包实物。
+
+本次新实核研究/recovered/STONEAGE-TW10-CLIENT-INVENTORY-R1.txt Git blob564233902b10c60760d4f93b1ea65d4dd1469206与research/recovered/STONEAGE-25-PRESERVED-BUNDLE-STATIC-INVENTORY-R1.txt Git blob78e8260e89928df76513799511d45c14a9e24dfc。从383个TW1核心文件SHA256对2302个后代stoneage2.5子树文件的历史SHA256再联接：235个TW1核心文件匹配，148个未在该子树找到相同SHA，237次后代路径命中（battle145/146重复数据形成2对多）；命中按类别为218个SAB、16个SAP/调色板、1个sound_1.bin，共3,882,018字节TW1原文件。较大REAL/ADRN及SPR原容器文件整哈希不同，但之前已独立验证资源记录/容器前缀保留，不能误称资源不共享；匹配SHA亦不能当相同宠物/任务/服务器内容。
+
+交付docs/STONEAGE-CLIENT-FIRST-CROSS-VERSION-ACQUISITION-R1.md、只读流式tools/stoneage_cross_version_file_inventory.py、10项合成数据测试、recovered跨版235/148路径及SHA报告research/recovered/STONEAGE-TW10-PRESERVED25-FILE-SHA-INTERSECTION-R1.json、源码Git blob钉死语义重放tools/stoneage_tw10_preserved25_file_intersection.py及3项专门测试/CI。远端候选最初run40066191349完成success，新派生联合CI run40066439357完成success（实际运行SHA5aa57e03），后续决定/本状态提交的运行仍须在提交后真实核验，不提前报绿。
+
+本轮没有新增下载一个新的官方商业客户端包；执行容器不可恢复旧会话中原始二进制（此Git仓库默认不收专有二进制），所以实物复核仅对已有永久哈希来源作可重放交集，不宣称再次扫描了旧原包。不得删除原包或把不同正式版本混入单一去名空间；RAR/ISO需原有认证解析器，通用工具只支持解包目录/ZIP。**最高NEXT CLIENT-ARTIFACT-ACQUISITION-AND-CROSS-VERSION-DEDUP-01**：首先接入现有实物存储，核其摘要再做真实样本的全文件对照；然后有界核取JSS1999/韩2000及各官方地区版本可下载的认证包/补丁；按官方地区/日期/构建归档与资源级增量，缺原服务器字段仍OPEN。Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、完成百分比null；原全历史旧文本完全保留。
