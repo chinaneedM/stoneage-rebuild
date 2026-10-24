@@ -18227,3 +18227,10 @@ R114内容及四份历史追加已在main commit aac31addabbaf8ac23bd7df8488c867
 “后羿→嫦娥月饼、月兔捉迷藏取柚子、月宫**许可与引路”是媒体描述的任务骨架，不是三位已映射原NPC身份；当前字面「月兔和**」「得到**许可」被屏蔽，不擅自补全或猜角色。称任务可重做、随机发「变身镜子lv1」（变自己的宠物一分钟）、「宠物技能罐头」（旅途伙伴2/狂乱暴走，罐头数量及映射未知）、「爱相随戒指」（指定好友传送，标10次）或「14~16级精灵武器装备中的一个」，缺原物品ID、概率、原生计时/传送/宠物技能实现、完成flag及原服务器领奖日志。媒体相关推荐链接被改写至不可达位置不算第二独立见证；不得从台湾R82狼人/JSS1999/TW1.0反推变身行为。
 本包有限产物：docs/specs/STONEAGE-CN2003-MIDAUTUMN-R115.md、research/recovered/STONEAGE-CN2003-MIDAUTUMN-R115.json、验证器、30项正反单元及独立专用CI。候选内容commit 47c25d3b72c2df895ffd7bf53529b71297979b33/tree e351fd2ad4a76648a8adaeedff2ccf64c139da45，专用run40060300925/job120772126075 completed/success仅证明源边界与元数据合约可运行，**不是原HTML重放、原服/地图/原像素复原**。无版权网页/商业程序/角色像素入Git；本轮内容与连续性候选/main验收按实际后验状态，不预支成功。
 最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-116：从更早台湾/JSS/具同版本的原生画面或真实NPC材料轮换，若无新来源，有限22域缺口重排；停止扩本次中秋同站无原件推断。Stage A7 PARTIAL+2 OPEN，Stage B/wiki GATED，R79 PAUSED_NON_BLOCKING，整体恢复百分比null；旧全历史前缀不覆盖。
+
+
+
+### 2026-10-24 R115 双端永久派生证据保管及主线验收
+R115正文与四份历史记录候选最终内容 commit `0d8f6491159adc193372f4df97afae2526af4b61`/tree `d9276790bc0b7b974fd3609beafed33c46013db1` 已于原main `58387170b956205497ce959b3881a9ff50678e78` 上以 expected_sha 非强制快进。9文件/0删除；四份历史旧Git blob的每一字节均保留为新文件前缀。候选最终HEAD 10项、main同HEAD 12项不同Actions均 completed/success，共22项，R115专用content candidate run40060300925/job120772126075、main run40060550927/job120772906615 全success，30项R115测试为元数据边界验收。
+永久收据 `research/recovered/STONEAGE-CN2003-MIDAUTUMN-CUSTODY-R115.json` 固定九文件Git blob及四大历史旧blob与长度、派生JSON SHA256 `41bb39aaa43d6d112a1f3a00822875954970344d99753b322bec6a7dfcf371f3`、全部22运行ID、双专用job、原始网页/源ZIP缺失事实及禁止跨版身份提升。保管commit `da38a8bf01eed732accd25d1fecb7823e400591f` / tree `d651b4e5f482abd642b8c4c147248c6c5321ad53`；保管candidate run40060743712/job120773477987 SUCCESS，main run40060792277 completed/success。这里保管的是派生Git对象、并非2003华义原站HTML、原NPC/像素、原服任务逻辑、原变身动画或服务器奖励成功，故实证范围不升格。
+**最高NEXT `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-116`**：回到更早台湾/JSS时期同版具名真实NPC/宠物图像原件，若无有出典新材则执行有限22域缺口回顾；不继续展开R115中秋档案及其未取关联链接。Stage A仍7 PARTIAL+2 OPEN，Stage B/wiki GATED，TW1本地savedata R79继续PAUSED_NON_BLOCKING，整体恢复率仍为null。此前R1–R115所有历史均保留。
