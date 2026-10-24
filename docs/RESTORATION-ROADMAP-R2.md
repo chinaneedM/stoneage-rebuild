@@ -2570,3 +2570,16 @@ source run40132510243/job120987039808/HEAD96e6963c4944f03736f0fa6d64ec6730f0e9ca
 
 ### 2026-10-25 — 同包无损地图层去重接入
 在已验42个TW8.5及35个mixed同路径地图范围，建立STONEAGE-TW85-MIXED25-MAP-LAYER-DEDUP-R1.json：231次原层引用对应210个不同(size,SHA256)字节块，21组重复（其中19跨样本），逻辑层字节25688190/不同块25646240，41950B只是可避免重复分析/存储的引用预算，不是已实现磁盘回收或恢复率。保留全部样本/路径/层序号/尺寸，原文件和载荷均未删除/内嵌，不把相同层绑定同名地点或完整几何。守卫重建全部231引用并校验守恒；旧已发表比较及历史后缀保留。本项是本包实际逐层结果的无损集成，最高NEXT仍官方ADRN129小修复包，不展开地图helper。
+
+
+## 2026-10-25 — 官方ADRN129修复包实际索引提取及全记录独立重放
+
+从fresh远端main9039121696b1eebf9b64a25b0f41689822dfc8a8/tree31fb18138a22e0a73dde61499a36e9b4f67bf487启动，571分支、0开放PR/运行中，10项同HEAD main成功；八启动文件全文原生Git核验、CURRENT完整2647162B及四历史前缀保留。最高TW-WAYI-ADRN129-OFFICIAL-RESOURCE-PATCH-PAYLOAD-05依旧官方fileid333出链实取3983427B RAR/SHA b077dcc7f1e944c33c6df4fe629d5e37abce9cb4d40f5b8d800cc69d59416e25。2005-05-18/7.5黑屏修复是列表描述，实际原包捕获2006-09-11，不混为2005同build或8.0独占。
+
+首source40139069912/job121006725898真实failed：原档SHA与有界列表已过，7zip解压SIGSEGV11，无工件；失败原史保留。改独立unar后source40139226150/job121007199214/HEAD36d05dedbd6efbfdc9f3e5f8118fc2ef8455331b实际success。取得唯一adrn_129.bin 31175840B/SHA4fb45027f87d44d70675827870a74110fb6c07f65a529bd89e6dc52c0a2b388f；没有REAL像素包，未执行原代码。源分支bot仅将三派生metadata提交692c5b36534032428465ddea090a6efe65a2dd0e/tree29df2d0f968b8abe476c96678f8bd878f194c021，原BIN/RAR不进Git/工件。
+
+完整389698物理80B记录、389670不同bitmap号、28重复号后续出现均逐位置保留，四异常尺寸不修正；389698记录SHA全部不同，不能按重号删除。MAP_ATTR非零19643不同资源号不是地图张数。TW1全部125996头字段+原attrSHA同一；CN5同号303020完全同元数据/177变/86501物理出现未见，对应86473不同未见号，均非物种/NPC数量。CN5的177变化号303020–303196，不从变化猜版本剧情/像素。缺配套REAL，声明最大地址端1492361857只是引用，原实际像素与服务器主表仍OPEN。
+
+独立下载artifact12577143886 ZIP23677146B/SHA55bbdf5d22ceaa31cc7c2ab43afd95558a4d34bd42686f00be38b466ba5ecade与API一致，恰三JSON/TSV.gz元数据成员全部与Git同字节；完整表23924728B/SHA d8049cb6ce74a2c048372aa51fc81b6921a995b6fa45b03dd5511a93509958ca/blob065ecc874adc637098dc7c8f177e478bc7b6f054永久保管。新独立守卫从全部数值重建每条80B只用于哈希（不存原BIN），389698原attr/recordSHA全通过，整个31MB成员SHA与source一致，复算28重复位置和双基线计数/字段差异。15项本地单元、9报告合同+4逐记录变异拒绝；候选/main后验另记，不提前预支。
+
+交付docs/specs/STONEAGE-WAYI-ADRN129-OFFICIAL-PATCH-PAYLOAD-R1.md、完整wayi-adrn129-patch-metadata及STONEAGE-WAYI-ADRN129-PAYLOAD-CUSTODY-R1.json/INDEPENDENT-REPLAY-R1.json。最高NEXT **TW-WAYI-ADRN129-REAL-COMPANION-QUALIFICATION-06**：以实际REAL容器按原offset/size/RD头/尺寸/块SHA做有限像素配对；先复用TW1/CN5已验metadata，若缺晚期像素确有实质依赖才一次重取已知TW8.5包并同作业导出完整配对/记录差异，禁止只复算文件哈希或按129/158文件名猜同版。保留28重号竞争记录，不无依据套last-wins。止于一项实际配对/新增内容或精确缺源。DD-028四任务档、Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、总体percent=null均不变。

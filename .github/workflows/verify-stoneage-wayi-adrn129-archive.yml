@@ -1,0 +1,25 @@
+name: Verify official ADRN129 full record replay and source custody
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'tools/stoneage_wayi_adrn129_archive.py'
+      - 'tests/test_stoneage_wayi_adrn129_archive.py'
+      - 'research/recovered/STONEAGE-WAYI-ADRN129-*.json'
+      - 'research/recovered/wayi-adrn129-patch-metadata/**'
+      - '.github/workflows/verify-stoneage-wayi-adrn129-archive.yml'
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m unittest tests.test_stoneage_wayi_adrn129_payload tests.test_stoneage_wayi_adrn129_archive -v
+      - name: Independently reconstruct all source record and whole member hashes from numeric metadata
+        run: python -m tools.stoneage_wayi_adrn129_archive
