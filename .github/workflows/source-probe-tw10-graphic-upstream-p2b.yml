@@ -1,0 +1,38 @@
+name: Probe TW1.0 native graphic-field upstream source P2B
+on:
+  push:
+    paths:
+      - 'tools/stoneage_tw10_graphic_upstream_p2b.py'
+      - 'tests/test_stoneage_tw10_graphic_upstream_p2b.py'
+      - '.github/workflows/source-probe-tw10-graphic-upstream-p2b.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original-static-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install capstone==5.0.9 pefile==2024.8.26
+      - run: python -m unittest tests.test_stoneage_tw10_graphic_upstream_p2b -v
+      - name: Obtain source and inspect only exact original bytes
+        run: |
+          set -euo pipefail
+          python -m tools.stoneage_tw10_archive_parallel_download --output /tmp/p2b-CD_DIC.rar --workers 16 --deadline 600
+          command -v 7z >/dev/null 2>&1 || (sudo apt-get update -qq && sudo apt-get install -y -qq 7zip)
+          mkdir -p /tmp/p2b-disc
+          7z x -y -o/tmp/p2b-disc /tmp/p2b-CD_DIC.rar STONEAGE.bin >/dev/null
+          python -m tools.stoneage_tw10_graphic_upstream_p2b --disc /tmp/p2b-disc/STONEAGE.bin --write /tmp/p2b-upstream-report.json
+          python -m json.tool /tmp/p2b-upstream-report.json > /dev/null
+      - name: Clear proprietary original archive
+        if: always()
+        run: rm -rf /tmp/p2b-CD_DIC.rar /tmp/p2b-disc
+      - uses: actions/upload-artifact@v4
+        with:
+          name: p2b-original-graphic-upstream-derived-only
+          path: /tmp/p2b-upstream-report.json
+          retention-days: 30
