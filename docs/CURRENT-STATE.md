@@ -18071,3 +18071,14 @@ GitHub新核main `33b953c56fec4fc9bc36d30738a83c6041d02fa6` / tree `58173bfc7077
 原Hangame医院/宠物店/巴士站三图限定请求各404，availability均429，有限CDX空，不称历史图不存在。官方首页实际pach_024/025/026和namecon_result链接在www/非www各404，标题不是正文；旧十三设施及未取图历史不改。交付SOURCE/LOCAL、中文规格、源级三页重放器、七项负向单元及专用CI，原版权HTML/图像/程序不入Git。候选/main与永久工件保管以随后真实后验验收，未提前报绿。
 
 最高NEXT `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-106` 转同官网已观察宠物技「おさんぽ」手册gameguid/manual_pet_03.html#osanpo：先查重、一页行为/条件实源止步；无新正文则转材料缺口评估，不连续扩村庄公告/猜号。Stage A7 PARTIAL+2 OPEN，B/wiki GATED，savedataR79暂停，整体百分比null。
+
+
+### R105 三页源重放、双端原报与永久保管验收 — 2026-10-24
+
+内容commit `16e408bdf4f24e16dfa9f082d4913eddbae154c6` / tree `281dc8e29d9487d4540302ac8a836f4e2152827d`，候选11/main12共23不同Actions实际completed/success。专用candidate run40043973075/job120721289244、main run40044110118/job120721730180均真实七测试＋重新取得三页、原字节SHA/严格解码/四官方日期标题链接和媒体作用域、LOCAL逐字cmp成功。新核main未变后expected_sha非force快进，compare前进1/落后0、10文件0删行；四历史原生旧/新远端blob全文复读完整前缀，远端tree等本地。
+
+真实ZIP由精确run的公开nightly.link→Actions blob取得，长度及SHA逐份等artifact API：candidate artifact12540192446/2626B/`18e16d4034c41198c7bae48ea33eae07849be033ae2e6de0bf27a7293284f547`；main artifact12539774227/2626B/`81e1617d2372f5baa62f0d4c2c4e0723d8ae9a72ab6905a27049a2d678f08474`。唯一成员r105-replay.json，双端与LOCAL原样6411B/SHA256 `eadcf263bef605372ac3be2e0eacf52cdf9845b17e90091529fde8f67398bfb1` / Git blob `f422f60159cdcd452f8caf183e37b7a9a6a8572b`。不使用已知返回元数据的connector二进制下载冒充ZIP。
+
+永久CI-CANDIDATE/CI-MAIN原报与CUSTODY（Git blob `efeb7427d37c650d32e084cb6df266326af61a68`，SHA256 `5624df1c0ffd001ca051d42d14d9b15a20d5efbfc6193bac51f694c6e37fef0f`）固定12证据pin、23运行、源HEAD/tree/job/artifact/ZIP和四历史前缀。独立验收器锁整份收据及原报、拒绝等长损坏/重算pin/错commit/错ZIP/正文或运行伪提升。新七＋保管四＋旧设施十一共22不同本地测试全部通过；源远端七测试不倒称十一，最终保管提交自身Actions按真实后验。十份本轮原HTML输入及复制件逐份验哈希删除，版权原文/像素/程序未入Git。
+
+新增成果为两运营方原页的具名卡拉村分批设施公告关联、征名计划/结果索引的时态边界，以及独立归属的同期媒体地名/巴士8人记述。四公告详情仍404、具名NPC/原地图payload/价表/实际运行未闭合，不计新恢复地图或整体百分比。最高NEXT106按上一条转已观察官方宠物「おさんぽ」行为手册，Stage A7 PARTIAL+2 OPEN，B/wiki GATED，savedataR79暂停，整体百分比null。

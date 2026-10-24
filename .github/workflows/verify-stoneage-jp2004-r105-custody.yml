@@ -1,0 +1,23 @@
+name: Verify R105 immutable named village source custody
+on:
+  push:
+    paths:
+      - 'tools/stoneage_jp2004_named_village_r105_custody.py'
+      - 'tests/test_stoneage_jp2004_named_village_r105_custody.py'
+      - 'research/recovered/STONEAGE-JP2004-NAMED-VILLAGE-CUSTODY-R105.json'
+      - 'research/recovered/STONEAGE-JP2004-NAMED-VILLAGE-CI-*-R105.json'
+      - '.github/workflows/verify-stoneage-jp2004-r105-custody.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  derived-only-custody:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest tests.test_stoneage_jp2004_named_village_r105 tests.test_stoneage_jp2004_named_village_r105_custody -v
+      - run: python -m tools.stoneage_jp2004_named_village_r105_custody
