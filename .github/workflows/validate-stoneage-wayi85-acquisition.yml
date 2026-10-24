@@ -5,7 +5,10 @@ on:
     paths:
       - 'tools/stoneage_wayi85_sixpart_acquisition.py'
       - 'tools/stoneage_wayi85_installshield_payload.py'
+      - 'tools/stoneage_wayi85_payload_review.py'
       - 'tests/test_stoneage_wayi85_sixpart_acquisition.py'
+      - 'tests/test_stoneage_wayi85_payload_review.py'
+      - 'research/recovered/STONEAGE-WAYI85-*.json'
       - '.github/workflows/validate-stoneage-wayi85-acquisition.yml'
 permissions:
   contents: read
@@ -14,7 +17,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - run: python3 -m unittest tests.test_stoneage_wayi85_sixpart_acquisition tests.test_stoneage_cross_version_file_inventory -v
+      - run: python3 -m unittest tests.test_stoneage_wayi85_sixpart_acquisition tests.test_stoneage_wayi85_payload_review tests.test_stoneage_cross_version_file_inventory -v
+      - run: python3 -m tools.stoneage_wayi85_payload_review

@@ -8688,3 +8688,7 @@ JSS R116两实际工件12547837667/12547793357 ZIP摘要分别394c0baddfc1c94083
 
 ### SRC-ORIGINAL-CLIENT-BYTE-REACQUISITION-20261024-R1
 已验TW1 Redump104630/archive.org stoneage_tw_2000_win/CD_DIC.rar及MediaFire ev7l29fw77891go/ytaa168o5jih0lx混合2.5桥接包。本次实际source run40067698285/job120794301801/HEAD2c93130f原下载与摘要校验成功，383/2302文件逐项重哈希通过；台湾原官方基线与混合桥接等级分开。独立ZIP下载977B与API/日志SHA一致，artifact12550560415原JSON永久存STONEAGE-ORIGINAL-BYTE-REACQUISITION-R1.json；STONEAGE-ORIGINAL-BYTE-CUSTODY-R1.json保管ZIP/raw/Git blob、原源workflow及四大历史前缀。原包已清理，不在Git。派生元数据验收不证明客户端执行、新官方版本或服务器内容全集。
+
+
+### SRC-TW85-MSI-CLIENT-PAYLOAD-20261024-R1
+订正前轮“sixpart仅metadata”：五个WAEI85旧真实字节报告全部钉Git blob并保留，早有wrapper971780ab与Windows MSI8f99ceb1。旧签名含WAYI身份/2007时间但本地信任链失败，来源强度不可简化为全链已认证。新source dc0f3693/run40087665571/job120853787888再次下载六卷并独立Python静态解码同SHA MSI，msitools真实解档557文件/1808555613B和五张安装数据库表；无原EXE/msiexec执行。artifact12557771421 ZIP67658B/SHA7d11424a44f5705c7b7b313f23aae05f3920e9899763849b1a44b693b8bc47db独立匹配API/日志；永久STONEAGE-WAYI85-MSI-CLIENT-PAYLOAD/REVIEW/CUSTODY-R1及外壳阶段原JSON。42数字map DAT候选、3BGM DAT；不认45全世界地图，不证明NPC/宠物server master或原服。保留2012保存载体、2007签名与MSI版本/文件名不同时间维度，零新官方发行认证。

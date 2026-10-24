@@ -1,0 +1,115 @@
+{
+  "base_main": "eeed3a5b35cd5b78b2adfdecfdb7c12d062ab56e",
+  "base_tree": "b299f196a20b5ac591b9a113fb4c1495f8efb7ba",
+  "boundaries": {
+    "all_dat_files_are_world_maps": false,
+    "all_world_maps_recovered": false,
+    "client_or_installer_executed": false,
+    "complete_signature_trust_chain_verified": false,
+    "first_acquisition_of_this_installer": false,
+    "msi_payload_inventory_new_this_turn": true,
+    "new_official_release_authentication_count": 0,
+    "original_payload_published": false,
+    "original_payload_retained_across_sessions": false
+  },
+  "current_derived_pins": {
+    ".github/workflows/acquire-stoneage-wayi85-sixpart-bytes.yml": {
+      "bytes": 1418,
+      "git_blob": "c7f3c4421d0856bfc9e60f3008428b6a991a7372",
+      "sha256": "fbf6c22016b9120a7b985febe9f2d5385cfe589a77339a613df0b79bdd263557"
+    },
+    "research/recovered/STONEAGE-WAYI85-MSI-CLIENT-PAYLOAD-R1.json": {
+      "bytes": 385776,
+      "git_blob": "18a68c9d4275763ef0ed7a347cca940cffe0fee2",
+      "sha256": "4ea7b43a7e3427ab4443afe801ae7d3e156e6193e1d42ce1b261f733e07de1d8"
+    },
+    "research/recovered/STONEAGE-WAYI85-MSI-CLIENT-REVIEW-R1.json": {
+      "bytes": 160065,
+      "git_blob": "1453e5bda489560d40969652cdf3dc77664c2bae",
+      "sha256": "ea7df9539a05f8b1b91694d7645ebdc602f34eedda03785078f5bf5cbe67f208"
+    },
+    "research/recovered/STONEAGE-WAYI85-WRAPPER-ONLY-ATTEMPT-R1.json": {
+      "bytes": 12681,
+      "git_blob": "a526aaae611b666d4bc00a672a17c3d6156809be",
+      "sha256": "b3c2691484effac222dc250085f9f5b06c9a99e05e3fb549ac6e27003a8429af"
+    },
+    "tools/stoneage_wayi85_installshield_payload.py": {
+      "bytes": 6611,
+      "git_blob": "483495cb9ba8750f7d63ad11c33ea3ac65b1b579",
+      "sha256": "d89e38470f8f54ee29ce1f29f159d8cba7b6cca6653b0204d53944e7f057d111"
+    },
+    "tools/stoneage_wayi85_sixpart_acquisition.py": {
+      "bytes": 10529,
+      "git_blob": "a036aa38751dad9c3090b78e45b9089613048edf",
+      "sha256": "052efd1b2735d097530816b3c57fb33e13f9b244b76391eeb60171d8063c0a53"
+    }
+  },
+  "earlier_same_turn_wrapper_only_attempt": {
+    "adjudication": "WRAPPER_ONLY_21_SECTIONS_NOT_NEW_CLIENT_FILES",
+    "artifact_id": 12557567372,
+    "artifact_zip_bytes": 3338,
+    "artifact_zip_sha256": "afb86684dbf517856aa7c7e3309edde29a4deee1fcc13d8cabce1a75eaecc499",
+    "conclusion": "success",
+    "head": "635d31bd158d7650a636dae57d6d55d2b9b03b6e",
+    "job_id": 120853000442,
+    "run_id": 40087390591
+  },
+  "historical_prefixes": {
+    "docs/CURRENT-STATE.md": {
+      "bytes": 2607076,
+      "git_blob": "82e7649f6ef1d49c9cf7e289d17716364944e90a"
+    },
+    "docs/HISTORICAL-TIMELINE.md": {
+      "bytes": 700100,
+      "git_blob": "a495ceda7f392393dd1b8f3743c11ac916d744cd"
+    },
+    "docs/RESTORATION-ROADMAP-R2.md": {
+      "bytes": 442220,
+      "git_blob": "72c276de303da00dd544a844cf52c0af83b210d2"
+    },
+    "docs/SOURCE-REGISTRY.md": {
+      "bytes": 998957,
+      "git_blob": "87967bdd371d531196b9aa1b5b2c8dfc0b00d9a3"
+    }
+  },
+  "legacy_source_pins": {
+    "research/recovered/STONEAGE-WAEI85-INSTALLER-ANALYSIS-R1.txt": {
+      "bytes": 6621,
+      "git_blob": "87fc5bd1cb5bf05bba3fcabe7d34af88bb71a41c",
+      "sha256": "6f8dd884e0f89723e8079823da95104806c15729669a20bf65916db86139df52"
+    },
+    "research/recovered/STONEAGE-WAEI85-INSTALLSHIELD-EXTRACT-R1.txt": {
+      "bytes": 7586,
+      "git_blob": "21af0d60098a13764cd733fd1dd366f882bd45b7",
+      "sha256": "d8be7cb1fed056fd83c11c76f8ffb0698e98dec35d6c723f729116a29da084c7"
+    },
+    "research/recovered/STONEAGE-WAEI85-ISX-WINDOWS-R1.txt": {
+      "bytes": 3265,
+      "git_blob": "94d75fee2516dbcdffa40f17746a19c82cfbf674",
+      "sha256": "14d7eebedb256f363b966d20fbe9abd40d42793acf50160d118dd6a1f520559b"
+    },
+    "research/recovered/STONEAGE-WAEI85-MEDIAFIRE-CANDIDATE-R1.txt": {
+      "bytes": 6719,
+      "git_blob": "6e86b2412ffdd2b65616097c48479091b90c243c",
+      "sha256": "d198c57d418912eb7b56f6291eb5b365c52c48fe5b493c2804c102910f7ae5f9"
+    },
+    "research/recovered/STONEAGE-WAEI85-OFFICIAL-URL-R1.txt": {
+      "bytes": 1458,
+      "git_blob": "f0806e6d628f6ac1a71639f4a5703af805ed516b",
+      "sha256": "ab97f8d5072284dcaff7519df228fb70ed5c76144ed4e190470ff25bbd29c1fe"
+    }
+  },
+  "schema": "stoneage.wayi85_msi_payload_custody_r1",
+  "source": {
+    "artifact_id": 12557771421,
+    "artifact_zip_bytes": 67658,
+    "artifact_zip_sha256": "7d11424a44f5705c7b7b313f23aae05f3920e9899763849b1a44b693b8bc47db",
+    "conclusion": "success",
+    "decoded_job_log_sha256": "d0cf5f51d3d2918d038a21e3b2597432ca1f2c0540c8e748acc4288b784d50ad",
+    "head": "dc0f3693962d5481a04b895dcde53bd013cb1c67",
+    "job_id": 120853787888,
+    "run_id": 40087665571,
+    "tests_executed": 18,
+    "zip_independently_downloaded_and_matched_api_and_log": true
+  }
+}
