@@ -1,0 +1,70 @@
+name: Export every original mainland 5.0 bitmap/animation record as metadata
+on:
+  push:
+    branches:
+      - agent/cn50-original-resource-record-catalog-r1-20261024
+    paths:
+      - tools/stoneage_cn50_original_resource_catalog.py
+      - tests/test_stoneage_cn50_original_resource_catalog.py
+      - .github/workflows/export-stoneage-cn50-original-resource-catalog.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: stoneage-cn50-full-original-metadata
+  cancel-in-progress: false
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    timeout-minutes: 65
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate source pins and existing byte-derived resource format parsers
+        run: |
+          python3 -m unittest tests.test_stoneage_tw10_resource_metadata tests.test_stoneage_cn50_original_resource_catalog -v
+      - name: Install static CAB decompressor
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq cabextract
+      - name: Reacquire actual complete cabinet and export all resource records
+        run: |
+          set -euo pipefail
+          python3 -m tools.stoneage_cn50_original_resource_catalog \
+            --output-dir /tmp/cn50-resource-catalog
+          for name in ADRN COLLISION-ATTR SPR-GROUP SPR-ANIMATION SPR-FRAME; do
+            gzip -t "/tmp/cn50-resource-catalog/$name-R1.tsv.gz"
+          done
+      - name: Upload derived compressed metadata only
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mainland50-original-resource-record-catalog-r1
+          path: /tmp/cn50-resource-catalog/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: Preserve complete content-addressed derived metadata catalog on branch
+        run: |
+          set -euo pipefail
+          SRC=/tmp/cn50-resource-catalog
+          DST=research/recovered/cn50-resource-metadata
+          mkdir -p "$DST"
+          cp "$SRC"/* "$DST"/
+          python3 - <<'PY'
+          import json, pathlib
+          p=pathlib.Path('research/recovered/cn50-resource-metadata/MANIFEST-R1.json')
+          d=json.loads(p.read_text())
+          assert d['status']=='COMPLETE_VERIFIED_5_0_BITMAP_AND_SPR_RESOURCE_METADATA'
+          assert d['metrics']['adrn']['records']==303197
+          assert d['metrics']['spr']['groups']==1185
+          assert not d['claims']['original_proprietary_payload_retained']
+          PY
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git add "$DST"
+          if ! git diff --cached --quiet; then
+            git commit -m "research: retain entire real mainland5.0 RD/SPR source record metadata"
+            git push origin HEAD:agent/cn50-original-resource-record-catalog-r1-20261024
+          fi
