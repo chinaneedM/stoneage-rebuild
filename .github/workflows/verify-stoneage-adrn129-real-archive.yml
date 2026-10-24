@@ -1,0 +1,26 @@
+name: Verify complete ADRN129 actual REAL pairing and legacy raw size policy
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'tools/stoneage_adrn129_real_*.py'
+      - 'tests/test_stoneage_adrn129_real_*.py'
+      - 'tools/stoneage_rd_codec.py'
+      - 'research/recovered/adrn129-tw85-real-pair/**'
+      - 'research/recovered/STONEAGE-ADRN129-REAL-*.json'
+      - '.github/workflows/verify-stoneage-adrn129-real-archive.yml'
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m unittest tests.test_stoneage_adrn129_real_pair tests.test_stoneage_adrn129_real_archive -v
+      - name: Replay every native and patch occurrence without any original download
+        run: python -m tools.stoneage_adrn129_real_archive

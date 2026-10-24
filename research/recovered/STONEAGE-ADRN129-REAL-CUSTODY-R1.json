@@ -1,0 +1,132 @@
+{
+  "acceptance_pin": {
+    "bytes": 17185,
+    "git_blob": "04940c6e9a0944bd756657665350c2cb7ae9d412",
+    "sha256": "8b5e82e28fccff244d4fe5b3dddf58e4b6663ae0fd3bbdb8243c47433d720b6f"
+  },
+  "artifact": {
+    "all_members_exactly_equal_git_bytes": true,
+    "api_zip_sha256": "8839d4bd38e5af92e46d732924fecaa8403272b5be51c23290ee6956764ddf14",
+    "id": 12578736519,
+    "independent_zip_sha256": "8839d4bd38e5af92e46d732924fecaa8403272b5be51c23290ee6956764ddf14",
+    "members": [
+      "NATIVE-R1.tsv.gz",
+      "PAIRS-R1.tsv.gz",
+      "REPORT-R1.json"
+    ],
+    "zip_bytes": 76621759
+  },
+  "base_main": "af6f726685101f12f9a7875b6b04569966289d62",
+  "base_tree": "4e6f1836f8dd09537366f37504543ff410b908e9",
+  "candidate_and_main_ci": "PENDING_AT_RECEIPT_CREATION",
+  "date": "2026-10-25",
+  "derived_pins": {
+    "NATIVE-R1.tsv.gz": {
+      "bytes": 43825625,
+      "git_blob": "ffb7b3340116ecaf57daa08242c1ce271e3ad86f",
+      "sha256": "495928a0a44d7c81bf1d6ef7b06d26decfc5096803fbd60b9e8e0aa9752a45ce"
+    },
+    "PAIRS-R1.tsv.gz": {
+      "bytes": 33542797,
+      "git_blob": "7f41ca49ff576914764b77f22684fbc113e1d90e",
+      "sha256": "ee41e4266b3bbab162d9271c1b86cceaa85354e60ff3e389fffccd68010b1314"
+    },
+    "REPORT-R1.json": {
+      "bytes": 5076,
+      "git_blob": "8377b3aeb2ea59f5ca23a5f8b9a0a7e8a85fb660",
+      "sha256": "ff93641e333a26e218b9b8548f987f072318b600c0b829866969a46ff4745edf"
+    }
+  },
+  "durable_derived_commit": "d82113d7a9dcd53d43f2f4c3d9113d542c746f44",
+  "durable_derived_tree": "37246c14dd35dddc69c6487e19641758d727c893",
+  "historical_prefixes": {
+    "docs/CURRENT-STATE.md": {
+      "bytes": 2651505,
+      "git_blob": "10dd71956172c95cbe84bbaacddbe0cb6c7a15f7",
+      "sha256": "e381e28590b9539db634af0adb060fd0e31cb3b1124dd05aeab7cb7a8a86aa6a"
+    },
+    "docs/HISTORICAL-TIMELINE.md": {
+      "bytes": 712126,
+      "git_blob": "a65d8d1c018e7e2ee813446b42b9dfcf84daa3a4",
+      "sha256": "fdf946518223d72639caf260dd7eb2e37dfb35fbc25c7db81496a5f9ffc9ac81"
+    },
+    "docs/RESTORATION-ROADMAP-R2.md": {
+      "bytes": 461503,
+      "git_blob": "4263e34787648c6d7476df0a31833cd1908a0729",
+      "sha256": "84f8dcb91bd894d913e1eeabc3b940e59e7681a9a0bbcc044a8a99f0433d6816"
+    },
+    "docs/SOURCE-REGISTRY.md": {
+      "bytes": 1018212,
+      "git_blob": "db9b764c425ae2ede5a4963b13b5af0fb6d9935d",
+      "sha256": "c351c0d337fbf1d4b54e8dd852e834c4cf572d5aa52e55be8919e48b7802d987"
+    }
+  },
+  "local_adjacent_unit_tests_passed": 12,
+  "main_or_archive_reacquire_large_source": false,
+  "next": "CLIENT-ORIGINAL-ARTIFACT-PRIVATE-CUSTODY-07",
+  "original_installer_containers_or_pixels_persisted": false,
+  "overall_restoration_percentage": null,
+  "patch_archive_redownloaded": false,
+  "proprietary_bytes_in_public_git_or_artifacts": false,
+  "raw_policy_negative_cases_rejected": 6,
+  "schema": "stoneage.adrn129_real_custody.r1",
+  "semantic_contract_mutations_rejected": 13,
+  "source_acquisitions_this_work_package": 1,
+  "source_run": {
+    "conclusion": "success",
+    "head": "92a739bfc12e1d19f0513e3c1fe138111d774f0d",
+    "id": 40140366886,
+    "job_id": 121010641458,
+    "original_game_executed": false
+  },
+  "source_strict_report_and_tables_unchanged": true,
+  "startup_file_pins": {
+    "README.md": {
+      "bytes": 45937,
+      "git_blob": "65cfe8de7ce8394f8eb659d8105a14f1d11753ca",
+      "sha256": "9feb9d418fe67809176c5c2970fc27498123531dd9051e131a4c3b3332cf803c"
+    },
+    "docs/CURRENT-STATE.md": {
+      "bytes": 2651505,
+      "git_blob": "10dd71956172c95cbe84bbaacddbe0cb6c7a15f7",
+      "sha256": "e381e28590b9539db634af0adb060fd0e31cb3b1124dd05aeab7cb7a8a86aa6a"
+    },
+    "docs/DESIGN-DECISIONS.md": {
+      "bytes": 49898,
+      "git_blob": "713caaecc6a43a92e5cb7f939954026b859bac20",
+      "sha256": "6d481f4eb0185ab0c8da34e697ae39f4137638d9484de4ed48d1875ec3af4f73"
+    },
+    "docs/HISTORICAL-TIMELINE.md": {
+      "bytes": 712126,
+      "git_blob": "a65d8d1c018e7e2ee813446b42b9dfcf84daa3a4",
+      "sha256": "fdf946518223d72639caf260dd7eb2e37dfb35fbc25c7db81496a5f9ffc9ac81"
+    },
+    "docs/PROJECT-CONTINUITY-PROTOCOL-R1.md": {
+      "bytes": 9762,
+      "git_blob": "ba9bbe19384589400abc61af37a360a40bf91452",
+      "sha256": "c44834eeec87f7a43e9cb4905f08377349e36d58b1fff2c5a75a6975db695e3b"
+    },
+    "docs/RESTORATION-ROADMAP-R2.md": {
+      "bytes": 461503,
+      "git_blob": "4263e34787648c6d7476df0a31833cd1908a0729",
+      "sha256": "84f8dcb91bd894d913e1eeabc3b940e59e7681a9a0bbcc044a8a99f0433d6816"
+    },
+    "docs/SOURCE-REGISTRY.md": {
+      "bytes": 1018212,
+      "git_blob": "db9b764c425ae2ede5a4963b13b5af0fb6d9935d",
+      "sha256": "c351c0d337fbf1d4b54e8dd852e834c4cf572d5aa52e55be8919e48b7802d987"
+    },
+    "research/recovered/STONEAGE-22-DOMAIN-SOURCE-READY-PORTFOLIO-R2.json": {
+      "bytes": 15948,
+      "git_blob": "088b469b3c51e689cff27f33fc3bb49de2d24b2c",
+      "sha256": "7d50de08f7855cf16dbe54b1747e258f1cc1223de88cc217172fd145f3c704ce"
+    }
+  },
+  "startup_remote": {
+    "branch_refs": 573,
+    "in_progress_runs": 0,
+    "open_prs": 0,
+    "same_head_main_success_runs": 10
+  },
+  "strict_length_predicate_corrected_by_dated_overlay": true
+}

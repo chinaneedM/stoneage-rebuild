@@ -4906,3 +4906,16 @@ source run40132510243/job120987039808/HEAD96e6963c4944f03736f0fa6d64ec6730f0e9ca
 独立下载artifact12577143886 ZIP23677146B/SHA55bbdf5d22ceaa31cc7c2ab43afd95558a4d34bd42686f00be38b466ba5ecade与API一致，恰三JSON/TSV.gz元数据成员全部与Git同字节；完整表23924728B/SHA d8049cb6ce74a2c048372aa51fc81b6921a995b6fa45b03dd5511a93509958ca/blob065ecc874adc637098dc7c8f177e478bc7b6f054永久保管。新独立守卫从全部数值重建每条80B只用于哈希（不存原BIN），389698原attr/recordSHA全通过，整个31MB成员SHA与source一致，复算28重复位置和双基线计数/字段差异。15项本地单元、9报告合同+4逐记录变异拒绝；候选/main后验另记，不提前预支。
 
 交付docs/specs/STONEAGE-WAYI-ADRN129-OFFICIAL-PATCH-PAYLOAD-R1.md、完整wayi-adrn129-patch-metadata及STONEAGE-WAYI-ADRN129-PAYLOAD-CUSTODY-R1.json/INDEPENDENT-REPLAY-R1.json。最高NEXT **TW-WAYI-ADRN129-REAL-COMPANION-QUALIFICATION-06**：以实际REAL容器按原offset/size/RD头/尺寸/块SHA做有限像素配对；先复用TW1/CN5已验metadata，若缺晚期像素确有实质依赖才一次重取已知TW8.5包并同作业导出完整配对/记录差异，禁止只复算文件哈希或按129/158文件名猜同版。保留28重号竞争记录，不无依据套last-wins。止于一项实际配对/新增内容或精确缺源。DD-028四任务档、Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、总体percent=null均不变。
+
+
+## 2026-10-25 — 官方ADRN129索引与实际TW8.5 REAL全记录配对及旧raw长度修正
+
+从fresh远端main af6f726685101f12f9a7875b6b04569966289d62/tree4e6f1836f8dd09537366f37504543ff410b908e9启动，573分支、0开放PR/运行中，10项同HEAD成功；8启动文件全文核验，CURRENT完整2651505B及四历史旧前缀保留。推进最高TW-WAYI-ADRN129-REAL-COMPANION-QUALIFICATION-06，不据旧聊天状态。
+
+source40140366886/job121010641458/HEAD92a739bfc12e1d19f0513e3c1fe138111d774f0d实际completed/success，一次实取六卷1145465184B载体并静态MSI解557文件，实际adrn_158.bin33297600B/SHA16ba4fa3825b2c4b6645bab8b4fe3152a262a4789c8bb89e3043a7d3f0d53681、real_158.bin1607321502B/SHAe0f9c0d20fd3d9daae0701d8a872c9842e27d3da1be4d449d558c9c76d1c5f5b与旧清单一致。复用官方修复包全metadata，不再下RAR。原TW8.5有416220物理记录/416192不同号/28重号出现，patch389698/389670/28；全部patch原80B记录SHA在native各有恰一个精确匹配，逐头字段+attrSHA同一，26,522 native物理记录不在patch。全部REAL原地址/长度有界且实际RD头/块SHA导出；CN5比303020块同/177块异/113023出现无号，非物种或恢复率。
+
+首版source严要求RD冗余长度=ADRN size，得native31/patch27 HEADER_MISMATCH。原report与表保留，不改写历史。独立复核31条全部flag0、宽高同、ADRN size精确16+w*h，头长度统一多8621844；既有RD解码器以ADRN长度切原始payload。首版谓词过严，不能叫损坏。新增日期overlay保留全部异常位置并按有界读/magic/hash/精确raw长度给资格：native416220/patch389698结构配对通过；没有因此宣称逐像素解码、显示/具名宠物NPC/任务/2005同build/认证纯净TW8.5压盘。保留所有28重号出现及候选，不套last-wins。
+
+bot完整派生commit d82113d7a9dcd53d43f2f4c3d9113d542c746f44/tree37246c14dd35dddc69c6487e19641758d727c893；artifact12578736519 ZIP76621759B独立下载SHA8839d4bd38e5af92e46d732924fecaa8403272b5be51c23290ee6956764ddf14与API同一，恰三metadata成员与永久Git逐字节相同。NATIVE43825625B、PAIRS33542797B全表永久保管，只含元数据/块哈希，无原像素或容器。独立离线遍历416220+389698行，重算汇总/候选/头与属性/块SHA关系/修正资格；本地12单元、13合同变异及6raw负例通过。原REAL哈希来自source实际读，不冒称本地第二次读原件。候选/main仅离线验收、无大包重复取源；各自Actions须据真实后验。
+
+交付docs/specs/STONEAGE-ADRN129-ACTUAL-REAL-PAIRING-R1.md、adrn129-tw85-real-pair三全表/报告、STONEAGE-ADRN129-REAL-ACCEPTANCE-R1.json及CUSTODY-R1.json。**最高NEXT CLIENT-ORIGINAL-ARTIFACT-PRIVATE-CUSTODY-07**：两包实质配对已止点，不扩低级helper；先核私人持久存储容量/单件限制与完整回读校验，只有可交付原件保管才一次实取必要载体，保存分卷/原SHA和全部出现位置，拒绝仅为了复算SHA反复下载。当前原安装器/容器没有私人长存，不冒称全部官方版本已收齐。能力不足就有限登记精确缺口并回22域原件/具名内容队列；公开Git继续只存派生，不公开商业原件。原任务四档DD-028、Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、总体percent=null不变。
