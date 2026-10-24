@@ -1,0 +1,134 @@
+{
+  "schema": "stoneage.quest_origin_separation.r1",
+  "date": "2026-10-24",
+  "baseline": {
+    "head": "d25080929a8839838c07aa3bcb8744d17f99278c",
+    "tree": "4771baebbb6f139b864dfa9397f53bb2cbc2e652"
+  },
+  "policy": {
+    "categories": [
+      "BASE_GAME_QUEST",
+      "PERMANENT_VERSION_QUEST",
+      "OPERATOR_EVENT_QUEST",
+      "ORIGIN_UNRESOLVED"
+    ],
+    "requirements": {
+      "BASE_GAME_QUEST": "VERSION_SCOPED_ORIGINAL_BASELINE_QUEST_SOURCE_NOT_JUST_OLD_PLAYER_GUIDE",
+      "PERMANENT_VERSION_QUEST": "EVIDENCE_PERMANENT_VERSION_ADDITION_NOT_TEMPORARY_OPERATOR_CAMPAIGN",
+      "OPERATOR_EVENT_QUEST": "EXPLICIT_OPERATOR_FESTIVAL_ANNIVERSARY_PROMOTIONAL_OR_LIMITED_EVENT_INTENT",
+      "ORIGIN_UNRESOLVED": "NO_POSITIVE_EVIDENCE_FOR_BASE_OR_PERMANENT_OR_EVENT_STATUS"
+    },
+    "separate_material_views": [
+      "game_base_quests",
+      "version_permanent_quests",
+      "operator_event_quests_and_activities",
+      "unresolved_origin"
+    ],
+    "event_archive_is_not_baseline_quest": true,
+    "source_claim_is_not_actual_server_execution": true,
+    "release_time_is_not_worldline_time": true,
+    "cross_region_name_is_not_same_entity": true,
+    "festival_theming_alone_not_sufficient_to_prove_duration": true,
+    "event_reward_may_persist_after_event_without_quest_becoming_base_game": true,
+    "not_every_operator_activity_is_a_playable_quest": true,
+    "original_history_records_preserved_without_inplace_mutation": true
+  },
+  "records": [
+    {
+      "id": "R110",
+      "title": "2004 日本圣诞 Santa Girl",
+      "record_kind": "EVENT_ACTIVITY_CLAIM",
+      "origin": "OPERATOR_EVENT_QUEST",
+      "origin_evidence": "EXPLICIT_CHRISTMAS_2004_DEC20_27_EVENT_REPORT",
+      "region": "JP",
+      "version": "JP_2004_MEDIA_REPORTED",
+      "operator": "UNKNOWN_CONFLICTING_MEDIA_OPERATOR_LABELS",
+      "event_window": "2004-12-20/2004-12-27_REPORTED",
+      "is_event_archive": true,
+      "baseline_core_admission": false,
+      "source": "research/recovered/STONEAGE-JP2004-XMAS-PARTY-COMBAT-R110.json",
+      "source_git_blob": "eb22c2c7b918088e386f5fea90104549c81a6183"
+    },
+    {
+      "id": "R111",
+      "title": "2009 日本十周年谜题迷宫",
+      "record_kind": "EVENT_QUEST_CLAIM",
+      "origin": "OPERATOR_EVENT_QUEST",
+      "origin_evidence": "ANNOUNCED_LIMITED_2009_OCT20_NOV04_MYSTERY_DUNGEON",
+      "region": "JP",
+      "version": "JP_2009_DIGIPARK_ANNOUNCEMENT",
+      "operator": "DIGIPARK_IN_MEDIA_PRESS_RELEASE",
+      "event_window": "2009-10-20/2009-11-04_ANNOUNCED",
+      "is_event_archive": true,
+      "baseline_core_admission": false,
+      "source": "research/recovered/STONEAGE-JP2009-MYSTERY-DUNGEON-R111.json",
+      "source_git_blob": "359cd848ac91430595e255b327d7fd61e6c67dcc"
+    },
+    {
+      "id": "R112",
+      "title": "2001 大陆情人节 GM 领奖",
+      "record_kind": "EVENT_ACTIVITY_CLAIM",
+      "origin": "OPERATOR_EVENT_QUEST",
+      "origin_evidence": "THIRD_PARTY_2016_REPRINT_CLAIMS_FEB14_GM_CAMPAIGN",
+      "region": "CN",
+      "version": "CN_2001_CLAIM_REPRINT_2016",
+      "operator": "CLAIMED_HUAYI_NOT_INDEPENDENTLY_AUTHENTICATED",
+      "event_window": "2001-02-14_REPRINT_CLAIM",
+      "is_event_archive": true,
+      "baseline_core_admission": false,
+      "source": "research/recovered/STONEAGE-CN2001-EARLY-SOCIAL-R112.json",
+      "source_git_blob": "77149e798d11976ccb0fa9bffdff7bc7cab1f835"
+    },
+    {
+      "id": "R115",
+      "title": "2003 大陆中秋后羿嫦娥任务",
+      "record_kind": "EVENT_QUEST_CLAIM",
+      "origin": "OPERATOR_EVENT_QUEST",
+      "origin_evidence": "MID_AUTUMN_FESTIVAL_NAMED_2003_SEPT11_MEDIA_PUBLISHER_BYLINE",
+      "region": "CN",
+      "version": "CN_2003_MEDIA_DATE_ONLY",
+      "operator": "HUAYI_BYLINE_UNAUTHENTICATED_OPERATOR_ORIGINAL",
+      "event_window": null,
+      "is_event_archive": true,
+      "baseline_core_admission": false,
+      "source": "research/recovered/STONEAGE-CN2003-MIDAUTUMN-R115.json",
+      "source_git_blob": "ba8f5caf05e00bcf57da47884c794cbec2cfa15f"
+    },
+    {
+      "id": "R114",
+      "title": "2003 大陆富商的货物",
+      "record_kind": "QUEST_CLAIM",
+      "origin": "ORIGIN_UNRESOLVED",
+      "origin_evidence": "MEDIA_TASK_GUIDE_NOT_RELEASE_OR_EVENT_PROOF",
+      "region": "CN",
+      "version": "CN_2003_MEDIA_DATE_ONLY",
+      "operator": "UNKNOWN",
+      "event_window": null,
+      "is_event_archive": false,
+      "baseline_core_admission": false,
+      "source": "research/recovered/STONEAGE-CN2003-MERCHANT-ELEPHANT-R114.json",
+      "source_git_blob": "1fb238ea9352adc2e144529b1ef5bd6d5765bb13"
+    },
+    {
+      "id": "R113",
+      "title": "大陆2.5精灵王剧情及任务报道",
+      "record_kind": "STORY_AND_QUEST_CLAIM",
+      "origin": "ORIGIN_UNRESOLVED",
+      "origin_evidence": "LATER_2_5_STORY_SYNOPSIS_AND_PLAYER_QUEST_NO_PERMANENCE_OR_INITIAL_BUILD",
+      "region": "CN",
+      "version": "CN_2_5_STORY_LABEL_UNAUTHENTICATED_BUILD",
+      "operator": "UNKNOWN",
+      "event_window": null,
+      "is_event_archive": false,
+      "baseline_core_admission": false,
+      "source": "research/recovered/STONEAGE-CN25-SPIRIT-KING-STORY-R113.json",
+      "source_git_blob": "a753fe2416d1209929d9e3e5a49c7d55a3c04ad7"
+    }
+  ],
+  "base_game_quest_entries_verified_this_overlay": 0,
+  "permanent_version_quest_entries_verified_this_overlay": 0,
+  "contains_any_new_original_runtime_quest_ids": false,
+  "current_source_reports_immutable": true,
+  "global_restoration_percent": null,
+  "next_queue": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-116"
+}

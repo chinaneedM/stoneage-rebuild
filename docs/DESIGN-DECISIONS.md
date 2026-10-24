@@ -674,3 +674,14 @@ relationship annotations rather than treating a new checklist as recovered
 content or letting planning replace material-source acquisition. Protect
 the early StoneAge emotional arc, including earning the first pet ride,
 when later joint design chooses among the collected references.
+
+
+## DD-028 — Separate base-game quests from operator events and permanent version additions (2026-10-24)
+
+**Status:** Accepted, direct owner direction. The owner explicitly requires activities created by individual operating companies for festivals or special dates to be kept separate from the game's original/core quests. This is a research/archive classification decision, not adoption of any future new-game quest.
+
+The canonical classification contract is `docs/QUEST-ORIGIN-TAXONOMY-R1.md`; source-pinned correction overlay is `research/recovered/STONEAGE-QUEST-ORIGIN-SEPARATION-R1.json`. All quest discoveries must enter exactly one of `BASE_GAME_QUEST`, `PERMANENT_VERSION_QUEST`, `OPERATOR_EVENT_QUEST`, `ORIGIN_UNRESOLVED`. Keep operator, region, original version and whether introduced at launch vs as a permanent patch separate; no named quest in an old guide is automatically part of the original game's core.
+
+Seasonal/anniversary/one-off activities (including non-quest GM reward ceremonies) are maintained in independent operator-event archives, never merged with the base-game quest list. Distinguish `EVENT_ACTIVITY_CLAIM` from an actual scripted `EVENT_QUEST_CLAIM`. Published announcement, actual server execution, event duration, recurring return and post-event permanent feature retention are independent facts. Festival identity alone does not establish exact close date. Operator identity without authenticated attribution remains explicitly qualified.
+
+Prior source records and accepted custody are immutable. R115 Mid-Autumn 2003, R110 JP Christmas 2004, R111 JP 2009 anniversary and R112 CN 2001 Valentine's GM campaign are separated into the operator-event overlay; R114 merchant-elephant and R113 Spirit King version narratives remain `ORIGIN_UNRESOLVED` until positive original/base, permanent-version or event evidence is found. No currently reviewed item is promoted to a verified original JSS1999/TW1.0 base quest. Corrections use dated overlays, not edits to original blobs or retrospective source confidence inflation.

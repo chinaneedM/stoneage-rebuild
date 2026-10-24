@@ -18234,3 +18234,12 @@ R114内容及四份历史追加已在main commit aac31addabbaf8ac23bd7df8488c867
 R115正文与四份历史记录候选最终内容 commit `0d8f6491159adc193372f4df97afae2526af4b61`/tree `d9276790bc0b7b974fd3609beafed33c46013db1` 已于原main `58387170b956205497ce959b3881a9ff50678e78` 上以 expected_sha 非强制快进。9文件/0删除；四份历史旧Git blob的每一字节均保留为新文件前缀。候选最终HEAD 10项、main同HEAD 12项不同Actions均 completed/success，共22项，R115专用content candidate run40060300925/job120772126075、main run40060550927/job120772906615 全success，30项R115测试为元数据边界验收。
 永久收据 `research/recovered/STONEAGE-CN2003-MIDAUTUMN-CUSTODY-R115.json` 固定九文件Git blob及四大历史旧blob与长度、派生JSON SHA256 `41bb39aaa43d6d112a1f3a00822875954970344d99753b322bec6a7dfcf371f3`、全部22运行ID、双专用job、原始网页/源ZIP缺失事实及禁止跨版身份提升。保管commit `da38a8bf01eed732accd25d1fecb7823e400591f` / tree `d651b4e5f482abd642b8c4c147248c6c5321ad53`；保管candidate run40060743712/job120773477987 SUCCESS，main run40060792277 completed/success。这里保管的是派生Git对象、并非2003华义原站HTML、原NPC/像素、原服任务逻辑、原变身动画或服务器奖励成功，故实证范围不升格。
 **最高NEXT `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-116`**：回到更早台湾/JSS时期同版具名真实NPC/宠物图像原件，若无有出典新材则执行有限22域缺口回顾；不继续展开R115中秋档案及其未取关联链接。Stage A仍7 PARTIAL+2 OPEN，Stage B/wiki GATED，TW1本地savedata R79继续PAUSED_NON_BLOCKING，整体恢复率仍为null。此前R1–R115所有历史均保留。
+
+
+## 2026-10-24 用户新增约束 — 原始本体任务不得与各运营商节庆活动混档
+
+用户明确指出：节日、特殊时间的活动任务通常由各个运营公司推出；必须与游戏里面本来就存在的**本体任务**分开归档。按 fresh GitHub 主线 `d25080929a8839838c07aa3bcb8744d17f99278c` / tree `4771baebbb6f139b864dfa9397f53bb2cbc2e652` 复核R115已保管完成，采用不改写历史前缀的 DD-028 新规，新增 `docs/QUEST-ORIGIN-TAXONOMY-R1.md`、六组旧归档Git blob锁定的独立覆盖表 `research/recovered/STONEAGE-QUEST-ORIGIN-SEPARATION-R1.json`、校验器、负向单测和专用 Actions。
+
+新档四类：`BASE_GAME_QUEST`（有具体发售版来源）、`PERMANENT_VERSION_QUEST`（后来正式版永久新增）、`OPERATOR_EVENT_QUEST`（运营公司节庆/特殊期活动及明确标出的人工领奖活动）、`ORIGIN_UNRESOLVED`（证据不足待考）。R115 2003中秋、R110日本2004圣诞、R111日本2009十周年、R112大陆2001情人节GM人工领奖划入独立运营活动档，但旧原服部署/身份/有效日期仍按原文源边界；R112是人工活动不是已恢复NPC脚本任务。R114《富商的货物》和R113精灵王叙事任务暂列待考，**没有确证它们是发行本体任务、正式永久加入还是其他身份**，不能因标题/年代虚升。旧R110–R115六源原样保留且新overlay对六个Git blob SHA分别锁定，原R114/R115永久保管收据不改、原游戏任务实体新增数仍0；无任何任务被假提升为JSS1999/TW1.0首发本体。
+
+这次修改仅是资料库分类、决策与验收收束，**不构成**服务端原任务/画面/掉落/永久性新事实。当前最高原任务 `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-116` 继续，但以后所有任务研究必须先判本体/版本常驻/运营活动/待考，再进入各自目录；遇新的原始版本和运营公告可根据明确证据订正。Stage A 7 PARTIAL + 2 OPEN，Stage B/wiki GATED，savedata R79 PAUSED_NON_BLOCKING，整体完成百分比 null。历史完整前缀必须保留，候选/main验收结果以远端实际后验为准。

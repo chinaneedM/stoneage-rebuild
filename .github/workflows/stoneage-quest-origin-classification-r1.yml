@@ -1,0 +1,43 @@
+name: Validate StoneAge separated quest origins and archival source blobs
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-QUEST-ORIGIN-SEPARATION-R1.json'
+      - 'tools/validate_stoneage_quest_origin_classification_r1.py'
+      - 'tests/test_stoneage_quest_origin_classification_r1.py'
+      - '.github/workflows/stoneage-quest-origin-classification-r1.yml'
+      - 'docs/QUEST-ORIGIN-TAXONOMY-R1.md'
+      - 'docs/DESIGN-DECISIONS.md'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-QUEST-ORIGIN-SEPARATION-R1.json'
+      - 'tools/validate_stoneage_quest_origin_classification_r1.py'
+      - 'tests/test_stoneage_quest_origin_classification_r1.py'
+      - '.github/workflows/stoneage-quest-origin-classification-r1.yml'
+      - 'docs/QUEST-ORIGIN-TAXONOMY-R1.md'
+      - 'docs/DESIGN-DECISIONS.md'
+  workflow_dispatch:
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python tools/validate_stoneage_quest_origin_classification_r1.py
+      - run: python tests/test_stoneage_quest_origin_classification_r1.py
+      - name: Preserve prior continuity and decisions
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import subprocess
+          for p in ('docs/CURRENT-STATE.md','docs/DESIGN-DECISIONS.md','docs/RESTORATION-ROADMAP-R2.md'):
+              before=subprocess.check_output(['git','show','HEAD^:'+p])
+              after=Path(p).read_bytes()
+              assert after.startswith(before),f"history prefix not preserved: {p}"
+              assert len(after)>len(before),f"no classification continuity append: {p}"
+          print('three long-file historical prefixes preserved')
+          PY
