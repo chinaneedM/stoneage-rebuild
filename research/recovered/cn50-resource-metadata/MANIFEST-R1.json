@@ -1,0 +1,101 @@
+{
+  "claims": {
+    "bitmap_record_count_not_pet_species_count": true,
+    "client_visual_selector_or_name_join_proven": false,
+    "original_proprietary_payload_retained": false,
+    "original_server_pet_npc_quest_master_recovered": false,
+    "sprite_group_count_not_character_species_count": true
+  },
+  "metrics": {
+    "adrn": {
+      "bitmapnos": 303197,
+      "collision_duplicate_map_numbers": 585,
+      "collision_map_numbers": 13529,
+      "contiguous_transitions": 303196,
+      "flag_counts": {
+        "0": 12,
+        "1": 303185
+      },
+      "hit_flag_counts": {
+        "0": 297869,
+        "1": 5242,
+        "2": 86
+      },
+      "priority_type_counts": {
+        "0": 301038,
+        "2": 88,
+        "3": 2071
+      },
+      "real_bytes": 1102755808,
+      "records": 303197,
+      "special_dimensions": 2
+    },
+    "spr": {
+      "animations": 96783,
+      "exact_group_spans": 1185,
+      "frames": 598455,
+      "groups": 1185,
+      "nonmonotonic_index_offset_transitions": 1,
+      "physical_offset_order_distinct_from_record_order": true,
+      "sentinel_frames": 4740,
+      "spr_bytes": 7145946
+    }
+  },
+  "schema": "stoneage.cn50.original_resource_catalog_r1",
+  "source": {
+    "archive_item": "Stoneage-5",
+    "cab_sha256": "cb414ad1ef4cc7925ec429ec088d0146892834c72667d1af82c8075d09f1683b",
+    "input_containers": {
+      "adrn": {
+        "bytes": 24255760,
+        "name": "adrn_31.bin",
+        "sha256": "0a1b600b25f4ccb181fe862970fb40298e49d5665728974587fd5e59b7f53d4c"
+      },
+      "real": {
+        "bytes": 1102755808,
+        "name": "real_31.bin",
+        "sha256": "9ecf2180170b8bb1886beba428eaf0e3ed8036332835046df0960a26fabeacc7"
+      },
+      "spr": {
+        "bytes": 7145946,
+        "name": "spr_17.bin",
+        "sha256": "1df3b732bd46ec5531806226447ac51e835db0bbfb39226c26ce34c89122f606"
+      },
+      "spradrn": {
+        "bytes": 14220,
+        "name": "spradrn_17.bin",
+        "sha256": "fec0e780fe3cdb5455e7fb7b2526cbbe9758cc5310e4b8857f0008ea31fc327b"
+      }
+    },
+    "official_clean_pressing_verified": false,
+    "source_413_files_rehashed": true
+  },
+  "status": "COMPLETE_VERIFIED_5_0_BITMAP_AND_SPR_RESOURCE_METADATA",
+  "tables": [
+    {
+      "bytes": 19745873,
+      "name": "ADRN-R1.tsv.gz",
+      "sha256": "e24afc513d28c7f25bd26bde9c69ddc0de4000147a2b11f50b5176655d8558fd"
+    },
+    {
+      "bytes": 90010,
+      "name": "COLLISION-ATTR-R1.tsv.gz",
+      "sha256": "4417afac7caffee86bf64ca36d9bfdff06fef61b9e3af200bf59b153280dc8df"
+    },
+    {
+      "bytes": 61649,
+      "name": "SPR-GROUP-R1.tsv.gz",
+      "sha256": "67660d3d8ba5e05293f61f60ab3e1bfe736d7b6bdc4159ed96fcb59f5acfa228"
+    },
+    {
+      "bytes": 852766,
+      "name": "SPR-ANIMATION-R1.tsv.gz",
+      "sha256": "63f444ac202a7a9d1d7afafbd068a78d8724a843ea8174bb4d36b83a13cfa8b7"
+    },
+    {
+      "bytes": 4223038,
+      "name": "SPR-FRAME-R1.tsv.gz",
+      "sha256": "0b5a326ddd70a5d6957b7e8c6faa2f8e0b7bed2dd70ab02bef9bb86f39f9b3ab"
+    }
+  ]
+}
