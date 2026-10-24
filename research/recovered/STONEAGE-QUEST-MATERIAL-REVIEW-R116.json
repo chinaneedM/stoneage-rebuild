@@ -1,0 +1,1507 @@
+{
+  "schema": "stoneage.quest_material_review.r116",
+  "date": "2026-10-24",
+  "baseline_head": "1a5bb8d67ab6a4e7189968f53f007c41083a1f63",
+  "baseline_tree": "a9becaebf199329327f7bd1bb985de5e61fe787f",
+  "input_manifest_sha256": "326a25a9cb43b1bba0feb04d0bc4c5e1e9bc9e03152f6cf469525b06a0701827",
+  "evidence_class": "DERIVED_ARCHIVE_ROUTING_NO_NEW_HISTORICAL_SOURCE",
+  "selection_rule": "record_id_AND_entity_type_AND_collection=quests_OR_exact_entity_type=quest",
+  "scope_exclusions": [
+    "NOT_ALL_LEGACY_SCHEMAS",
+    "NOT_ALL_EVENTS_OR_NPCS",
+    "NOT_NATIVE_QUEST_ENTITY_COUNT"
+  ],
+  "counts": {
+    "frozen_json_files": 924,
+    "selected_record_occurrences": 73,
+    "files_with_selected_records": 48,
+    "unique_research_record_ids": 49,
+    "identical_repeat_occurrences": 24,
+    "unrouted_collection_ids": 1,
+    "by_origin": {
+      "BASE_GAME_QUEST": 0,
+      "PERMANENT_VERSION_QUEST": 0,
+      "OPERATOR_EVENT_QUEST": 15,
+      "ORIGIN_UNRESOLVED": 34
+    }
+  },
+  "material_views": {
+    "BASE_GAME_QUEST": [],
+    "PERMANENT_VERSION_QUEST": [],
+    "OPERATOR_EVENT_QUEST": [
+      "JP2005-GAIAX-R69-QUEST",
+      "JP2005-R80-challenge",
+      "JP2005-R85-quest-0",
+      "JP2005-R85-quest-1",
+      "JP2008-COOP-07",
+      "JP2008-COOP-08",
+      "cn-wayi-2003-christmas:exchange",
+      "cn-wayi-tournament-2003:r107:golden-pet-claim",
+      "cn-wayi-tournament-2003:r107:semifinal-selection",
+      "jp-digipark-2009:r111:puzzle-state-machine",
+      "jp-digipark-2009:r111:wild-encounter-boundary",
+      "jp-gaiax-stoneage-2006:r108:event",
+      "jp-gaiax-stoneage-2006:r108:per-server-reward",
+      "jp2004-dec:r110:christmas-claim",
+      "jp2004-dec:r110:new-year-shrine"
+    ],
+    "ORIGIN_UNRESOLVED": [
+      "CN2003-LIULI-R73-01",
+      "CN2003-LIULI-R73-02",
+      "CN2003-R77-QUEST",
+      "CN2003-R81-quest",
+      "CN2003-R83-quest",
+      "CN2003-R88-quest",
+      "CN2003-SINA-R68-QUEST-01",
+      "CN2003-SINA-R71-01",
+      "JP2008-TIGER-02",
+      "JP2008-TIGER-03",
+      "JP2008-TIGER-04",
+      "JP2008-TIGER-05",
+      "JP2008-TIGER-06",
+      "TW75-SUMMON-01",
+      "TW75-SUMMON-05",
+      "cn-dragon-flight:r109:eden-nis-story",
+      "cn-dragon-flight:r109:flight-gate",
+      "cn-dragon-flight:r109:flight-story-chain",
+      "cn20-sina-10236724:marinas-pet-A",
+      "cn20-sina-10236724:marinas-pet-B",
+      "cn20-sina-10236724:marinas-pet-C",
+      "cn20-sina-10236724:marinas-pet-D",
+      "cn20-sina-10236724:marinas-pet-E",
+      "cn20-sina-10236724:marinas-pet-F",
+      "jp-2008-rimfy:quest",
+      "jp-digipark-2007-sekiei:quest",
+      "jp-digipark-2008:shadow:chapter-1",
+      "jp-digipark-2008:shadow:chapter-2",
+      "jp-digipark-2008:shadow:chapter-3",
+      "jp-gaiax-2005:special-map-4",
+      "jp2008-evolution:trial",
+      "sina-20030521-pirate:quest",
+      "waei-host-tw-guide:quest:hero-entry",
+      "wayi-column2003:riding-successor:02"
+    ]
+  },
+  "records": [
+    {
+      "record_id": "CN2003-LIULI-R73-01",
+      "entity_type": "documentary_main_quest",
+      "collection_as_stored": "quests",
+      "version_profile": "CN2003_SINA_LIULI_CAVE_EXACT_BUILD_UNKNOWN",
+      "record_body_sha256": "075100cac44759f5e9bb31f5bb3fcd43b09e812983fe58c33fc34f3be422838f",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "classification_basis": "NO_REVIEWED_RELEASE_BASELINE_OR_PERMANENCE_PROOF",
+      "reviewed_evidence_path": null,
+      "reviewed_evidence_git_blob": null,
+      "baseline_core_admission": false,
+      "server_execution_proven_by_this_review": false,
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-CN2003-LIULI-CAVE-CI-CANDIDATE-R1.json",
+          "pointer": "/catalog_records/0",
+          "git_blob": "d9e9768ef78c97890b98b31dd5e366cc3233ab87"
+        },
+        {
+          "path": "research/recovered/STONEAGE-CN2003-LIULI-CAVE-CI-MAIN-R1.json",
+          "pointer": "/catalog_records/0",
+          "git_blob": "d9e9768ef78c97890b98b31dd5e366cc3233ab87"
+        },
+        {
+          "path": "research/recovered/STONEAGE-CN2003-LIULI-CAVE-SOURCE-R1.json",
+          "pointer": "/catalog_records/0",
+          "git_blob": "3794f377d1e812ecac3555ce0a519883bde7a8e9"
+        }
+      ]
+    },
+    {
+      "record_id": "CN2003-LIULI-R73-02",
+      "entity_type": "documentary_optional_quest",
+      "collection_as_stored": "quests",
+      "version_profile": "CN2003_SINA_LIULI_CAVE_EXACT_BUILD_UNKNOWN",
+      "record_body_sha256": "16d1d71516009b7dec8a55d744067a06b857e208cce903504434485ee586da7c",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "classification_basis": "NO_REVIEWED_RELEASE_BASELINE_OR_PERMANENCE_PROOF",
+      "reviewed_evidence_path": null,
+      "reviewed_evidence_git_blob": null,
+      "baseline_core_admission": false,
+      "server_execution_proven_by_this_review": false,
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-CN2003-LIULI-CAVE-CI-CANDIDATE-R1.json",
+          "pointer": "/catalog_records/1",
+          "git_blob": "d9e9768ef78c97890b98b31dd5e366cc3233ab87"
+        },
+        {
+          "path": "research/recovered/STONEAGE-CN2003-LIULI-CAVE-CI-MAIN-R1.json",
+          "pointer": "/catalog_records/1",
+          "git_blob": "d9e9768ef78c97890b98b31dd5e366cc3233ab87"
+        },
+        {
+          "path": "research/recovered/STONEAGE-CN2003-LIULI-CAVE-SOURCE-R1.json",
+          "pointer": "/catalog_records/1",
+          "git_blob": "3794f377d1e812ecac3555ce0a519883bde7a8e9"
+        }
+      ]
+    },
+    {
+      "record_id": "CN2003-R77-QUEST",
+      "entity_type": "DOCUMENTARY_BRANCHING_RESCUE_QUEST",
+      "collection_as_stored": "quests",
+      "version_profile": "CN2003_LABELLED_SINA_EDEN_WATER_MONSTER_GUIDE_EXACT_BUILD_AND_AUTHORSHIP_UNKNOWN",
+      "record_body_sha256": "57ba597ee22e8d58b9e07652c963af3725f379ba655eb8fb8de5f04b87199667",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "classification_basis": "NO_REVIEWED_RELEASE_BASELINE_OR_PERMANENCE_PROOF",
+      "reviewed_evidence_path": null,
+      "reviewed_evidence_git_blob": null,
+      "baseline_core_admission": false,
+      "server_execution_proven_by_this_review": false,
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-CN2003-WATER-MONSTER-CI-CANDIDATE-R1.json",
+          "pointer": "/catalog_records/0",
+          "git_blob": "c3314e43dd714f723a10e185e13c507448a5ba4c"
+        },
+        {
+          "path": "research/recovered/STONEAGE-CN2003-WATER-MONSTER-CI-MAIN-R1.json",
+          "pointer": "/catalog_records/0",
+          "git_blob": "c3314e43dd714f723a10e185e13c507448a5ba4c"
+        },
+        {
+          "path": "research/recovered/STONEAGE-CN2003-WATER-MONSTER-SOURCE-R1.json",
+          "pointer": "/catalog_records/0",
+          "git_blob": "09b57e563786968ab00ca874d5c0db6c8aee05d5"
+        }
+      ]
+    },
+    {
+      "record_id": "CN2003-R81-quest",
+      "entity_type": "DOCUMENTARY_ORDER_SENSITIVE_RECOVERY_QUEST",
+      "collection_as_stored": "quests",
+      "version_profile": "CN_SINA_GUIDE_MENGDE_20030529_EXACT_OFFICIAL_BUILD_UNKNOWN",
+      "record_body_sha256": "5b4ee46e3e2c933111df0bb94a89c5c7beaf54e1b9c5c3ba3651f5f89d8f11ad",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "classification_basis": "NO_REVIEWED_RELEASE_BASELINE_OR_PERMANENCE_PROOF",
+      "reviewed_evidence_path": null,
+      "reviewed_evidence_git_blob": null,
+      "baseline_core_admission": false,
+      "server_execution_proven_by_this_review": false,
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-CN2003-MENGDE-CAVE-CI-CANDIDATE-R1.json",
+          "pointer": "/catalog_records/0",
+          "git_blob": "3c269e45609db3df4a76aab07279c2d6e289fd12"
+        },
+        {
+          "path": "research/recovered/STONEAGE-CN2003-MENGDE-CAVE-CI-MAIN-R1.json",
+          "pointer": "/catalog_records/0",
+          "git_blob": "3c269e45609db3df4a76aab07279c2d6e289fd12"
+        },
+        {
+          "path": "research/recovered/STONEAGE-CN2003-MENGDE-CAVE-SOURCE-R1.json",
+          "pointer": "/catalog_records/0",
+          "git_blob": "94212c72bb5edae63338293f4627994c2305769e"
+        }
+      ]
+    },
+    {
+      "record_id": "CN2003-R83-quest",
+      "entity_type": "DOCUMENTARY_FAMILY_CHOICE_QUEST",
+      "collection_as_stored": "quests",
+      "version_profile": "CN_SINA_2003_QIANG_EN_GUIDES_EXACT_OFFICIAL_BUILD_UNKNOWN",
+      "record_body_sha256": "f7cfdd4e48a05b5a9a3bd728c8c8842d8d380488a06be33f8069335b1eca3639",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "classification_basis": "NO_REVIEWED_RELEASE_BASELINE_OR_PERMANENCE_PROOF",
+      "reviewed_evidence_path": null,
+      "reviewed_evidence_git_blob": null,
+      "baseline_core_admission": false,
+      "server_execution_proven_by_this_review": false,
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-CN2003-QIANG-EN-FAMILY-CI-CANDIDATE-R1.json",
+          "pointer": "/catalog_records/0",
+          "git_blob": "fce5be0f95e9b2680c3575bf55a266ab0130eb0c"
+        },
+        {
+          "path": "research/recovered/STONEAGE-CN2003-QIANG-EN-FAMILY-CI-MAIN-R1.json",
+          "pointer": "/catalog_records/0",
+          "git_blob": "fce5be0f95e9b2680c3575bf55a266ab0130eb0c"
+        },
+        {
+          "path": "research/recovered/STONEAGE-CN2003-QIANG-EN-FAMILY-SOURCE-R1.json",
+          "pointer": "/catalog_records/0",
+          "git_blob": "70ddeac658343b6d9701abf9fa50c9f368d2f57a"
+        }
+      ]
+    },
+    {
+      "record_id": "CN2003-R88-quest",
+      "entity_type": "DOCUMENTARY_ZOO_RESCUE_FLOW",
+      "collection_as_stored": "quests",
+      "version_profile": "CN_SINA2003_EDEN_ZOO_RESCUE_EXACT_BUILD_UNKNOWN",
+      "record_body_sha256": "706fa2fe073a794538de9c5908c455b030aa2e96ee84c1c7cbca1fda1dcabbec",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "classification_basis": "NO_REVIEWED_RELEASE_BASELINE_OR_PERMANENCE_PROOF",
+      "reviewed_evidence_path": null,
+      "reviewed_evidence_git_blob": null,
+      "baseline_core_admission": false,
+      "server_execution_proven_by_this_review": false,
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-CN2003-ZOO-RESCUE-CI-CANDIDATE-R1.json",
+          "pointer": "/catalog_records/0",
+          "git_blob": "4d8e620cc87dd073ca3ac2fb3f6fdc322a2a39a9"
+        },
+        {
+          "path": "research/recovered/STONEAGE-CN2003-ZOO-RESCUE-CI-MAIN-R1.json",
+          "pointer": "/catalog_records/0",
+          "git_blob": "4d8e620cc87dd073ca3ac2fb3f6fdc322a2a39a9"
+        },
+        {
+          "path": "research/recovered/STONEAGE-CN2003-ZOO-RESCUE-SOURCE-R1.json",
+          "pointer": "/catalog_records/0",
+          "git_blob": "36c7f10f5a80a5d718d12470be4e86be990acb1b"
+        }
+      ]
+    },
+    {
+      "record_id": "CN2003-SINA-R68-QUEST-01",
+      "entity_type": "documentary_quest_description",
+      "collection_as_stored": "quests",
+      "version_profile": "CN2003_SINA_DREAM_CAVE_EXACT_BUILD_UNKNOWN",
+      "record_body_sha256": "5323eb44845f26dca1a8997f12d3b7a43f827e331f7ffb14524a37c1e4ac9833",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "classification_basis": "NO_REVIEWED_RELEASE_BASELINE_OR_PERMANENCE_PROOF",
+      "reviewed_evidence_path": null,
+      "reviewed_evidence_git_blob": null,
+      "baseline_core_admission": false,
+      "server_execution_proven_by_this_review": false,
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-CN2003-DREAM-CAVE-CI-CANDIDATE-R1.json",
+          "pointer": "/catalog_records/0",
+          "git_blob": "180ad0e60bfab78acd33513ff6ad8a09c6048428"
+        },
+        {
+          "path": "research/recovered/STONEAGE-CN2003-DREAM-CAVE-CI-MAIN-R1.json",
+          "pointer": "/catalog_records/0",
+          "git_blob": "180ad0e60bfab78acd33513ff6ad8a09c6048428"
+        },
+        {
+          "path": "research/recovered/STONEAGE-CN2003-DREAM-CAVE-SOURCE-R1.json",
+          "pointer": "/catalog_records/0",
+          "git_blob": "94cf150f0efc9cab45f4d541051bb5f2efe0ab24"
+        }
+      ]
+    },
+    {
+      "record_id": "CN2003-SINA-R71-01",
+      "entity_type": "documentary_quest_description",
+      "collection_as_stored": "quests",
+      "version_profile": "CN2003_SINA_FIVE_BROTHERS_EXACT_BUILD_UNKNOWN",
+      "record_body_sha256": "c4750355b5db680459e62f7b24e156f3df76a5b12e8b6ae1ebde667d5bd7c246",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "classification_basis": "NO_REVIEWED_RELEASE_BASELINE_OR_PERMANENCE_PROOF",
+      "reviewed_evidence_path": null,
+      "reviewed_evidence_git_blob": null,
+      "baseline_core_admission": false,
+      "server_execution_proven_by_this_review": false,
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-CN2003-FIVE-BROTHERS-CI-CANDIDATE-R1.json",
+          "pointer": "/catalog_records/0",
+          "git_blob": "5ccdb6e856362ef0641138eb3574ea236d435478"
+        },
+        {
+          "path": "research/recovered/STONEAGE-CN2003-FIVE-BROTHERS-CI-MAIN-R1.json",
+          "pointer": "/catalog_records/0",
+          "git_blob": "5ccdb6e856362ef0641138eb3574ea236d435478"
+        },
+        {
+          "path": "research/recovered/STONEAGE-CN2003-FIVE-BROTHERS-SOURCE-R1.json",
+          "pointer": "/catalog_records/0",
+          "git_blob": "195022c276bceeba864976c70b507bc458efc44a"
+        }
+      ]
+    },
+    {
+      "record_id": "JP2005-GAIAX-R69-QUEST",
+      "entity_type": "documentary_event_quest",
+      "collection_as_stored": "quests",
+      "version_profile": "LATER_OFFICIAL_JP_GAIAX_2005_RELEASE_QUOTED_BY_4GAMER_EXACT_BUILD_UNKNOWN",
+      "record_body_sha256": "2786a5dee2fe693bfd8c6ca6be0cc3147bd35e549868f35eecd14dd87b555c2d",
+      "origin_class": "OPERATOR_EVENT_QUEST",
+      "classification_basis": "TWO_PHASE_LIMITED_TREASURE_EVENT_SEPT2005",
+      "reviewed_evidence_path": "research/recovered/STONEAGE-JP2005-TREASURE-EVENT-SOURCE-R1.json",
+      "reviewed_evidence_git_blob": "94a9e9f9a8dd01ad979bdafb231b5a49d84b6cfa",
+      "baseline_core_admission": false,
+      "server_execution_proven_by_this_review": false,
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-JP2005-TREASURE-EVENT-CI-CANDIDATE-R1.json",
+          "pointer": "/catalog_records/0",
+          "git_blob": "0474f35cb4f35d450456f878fca3a889bcb1dd4a"
+        },
+        {
+          "path": "research/recovered/STONEAGE-JP2005-TREASURE-EVENT-CI-MAIN-R1.json",
+          "pointer": "/catalog_records/0",
+          "git_blob": "0474f35cb4f35d450456f878fca3a889bcb1dd4a"
+        },
+        {
+          "path": "research/recovered/STONEAGE-JP2005-TREASURE-EVENT-SOURCE-R1.json",
+          "pointer": "/catalog_records/0",
+          "git_blob": "94a9e9f9a8dd01ad979bdafb231b5a49d84b6cfa"
+        }
+      ]
+    },
+    {
+      "record_id": "JP2005-R80-challenge",
+      "entity_type": "DOCUMENTARY_NAMED_COOKING_CHALLENGE",
+      "collection_as_stored": "quests",
+      "version_profile": "JP_PC_2005_GAIAX_AUTUMN_SCHEDULE_REPORTED_20050921_EXACT_BUILD_UNKNOWN",
+      "record_body_sha256": "78e2761305696a03293cae365f2266da48719bde929bdda33729c348c78c023a",
+      "origin_class": "OPERATOR_EVENT_QUEST",
+      "classification_basis": "COOKING_EVENT_OCT04_11_2005",
+      "reviewed_evidence_path": "research/recovered/STONEAGE-JP2005-AUTUMN-COOKING-SOURCE-R1.json",
+      "reviewed_evidence_git_blob": "e3cc7b2b8924e361ebbba3c348608f978ef14fc8",
+      "baseline_core_admission": false,
+      "server_execution_proven_by_this_review": false,
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-JP2005-AUTUMN-COOKING-CI-CANDIDATE-R1.json",
+          "pointer": "/catalog_records/0",
+          "git_blob": "a1b7ad22e23dccb6dae32805131ce876ae481f08"
+        },
+        {
+          "path": "research/recovered/STONEAGE-JP2005-AUTUMN-COOKING-CI-MAIN-R1.json",
+          "pointer": "/catalog_records/0",
+          "git_blob": "a1b7ad22e23dccb6dae32805131ce876ae481f08"
+        },
+        {
+          "path": "research/recovered/STONEAGE-JP2005-AUTUMN-COOKING-SOURCE-R1.json",
+          "pointer": "/catalog_records/0",
+          "git_blob": "e3cc7b2b8924e361ebbba3c348608f978ef14fc8"
+        }
+      ]
+    },
+    {
+      "record_id": "JP2005-R85-quest-0",
+      "entity_type": "DOCUMENTARY_ORDERED_STAMP_QUEST",
+      "collection_as_stored": "quests",
+      "version_profile": "JP_PC_2005_GAIAX_GW_STAMP_RALLY_REPORTED_20050415_EXACT_BUILD_UNKNOWN",
+      "record_body_sha256": "d75b6b27e657dc7aeb73e5f34a5834eaafded925a4471a839379d63791e955c4",
+      "origin_class": "OPERATOR_EVENT_QUEST",
+      "classification_basis": "GW_STAMP_RALLY_APR28_MAY10_2005",
+      "reviewed_evidence_path": "research/recovered/STONEAGE-JP2005-GW-STAMP-RALLY-SOURCE-R1.json",
+      "reviewed_evidence_git_blob": "88bb8f65be64b61105e6e58093ee713e23278309",
+      "baseline_core_admission": false,
+      "server_execution_proven_by_this_review": false,
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-JP2005-GW-STAMP-RALLY-CI-CANDIDATE-R1.json",
+          "pointer": "/catalog_records/1",
+          "git_blob": "cae630d2e1dd4001b93af00c7224892abeb8211d"
+        },
+        {
+          "path": "research/recovered/STONEAGE-JP2005-GW-STAMP-RALLY-CI-MAIN-R1.json",
+          "pointer": "/catalog_records/1",
+          "git_blob": "cae630d2e1dd4001b93af00c7224892abeb8211d"
+        },
+        {
+          "path": "research/recovered/STONEAGE-JP2005-GW-STAMP-RALLY-SOURCE-R1.json",
+          "pointer": "/catalog_records/1",
+          "git_blob": "88bb8f65be64b61105e6e58093ee713e23278309"
+        }
+      ]
+    },
+    {
+      "record_id": "JP2005-R85-quest-1",
+      "entity_type": "DOCUMENTARY_ORDERED_STAMP_QUEST",
+      "collection_as_stored": "quests",
+      "version_profile": "JP_PC_2005_GAIAX_GW_STAMP_RALLY_REPORTED_20050415_EXACT_BUILD_UNKNOWN",
+      "record_body_sha256": "b28debc14c0f15fe7f823fc32f1da9274082fa80801a2537f592d9fbf0619dbf",
+      "origin_class": "OPERATOR_EVENT_QUEST",
+      "classification_basis": "GW_STAMP_RALLY_APR28_MAY10_2005",
+      "reviewed_evidence_path": "research/recovered/STONEAGE-JP2005-GW-STAMP-RALLY-SOURCE-R1.json",
+      "reviewed_evidence_git_blob": "88bb8f65be64b61105e6e58093ee713e23278309",
+      "baseline_core_admission": false,
+      "server_execution_proven_by_this_review": false,
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-JP2005-GW-STAMP-RALLY-CI-CANDIDATE-R1.json",
+          "pointer": "/catalog_records/2",
+          "git_blob": "cae630d2e1dd4001b93af00c7224892abeb8211d"
+        },
+        {
+          "path": "research/recovered/STONEAGE-JP2005-GW-STAMP-RALLY-CI-MAIN-R1.json",
+          "pointer": "/catalog_records/2",
+          "git_blob": "cae630d2e1dd4001b93af00c7224892abeb8211d"
+        },
+        {
+          "path": "research/recovered/STONEAGE-JP2005-GW-STAMP-RALLY-SOURCE-R1.json",
+          "pointer": "/catalog_records/2",
+          "git_blob": "88bb8f65be64b61105e6e58093ee713e23278309"
+        }
+      ]
+    },
+    {
+      "record_id": "JP2008-COOP-07",
+      "entity_type": "COOPERATIVE_EVENT",
+      "collection_as_stored": "quests",
+      "version_profile": "LATER_OFFICIAL:JP_DIGIPARK_2008_COOPERATION",
+      "record_body_sha256": "2fa0623906197c5f82e56a12f33bb832fb2f5730fe73606dcac01544f1f17bab",
+      "origin_class": "OPERATOR_EVENT_QUEST",
+      "classification_basis": "LIMITED_COLLECTION_EVENT_JUN24_JUL15_2008",
+      "reviewed_evidence_path": "research/recovered/STONEAGE-JP2008-COOPERATION-SOURCE-R1.json",
+      "reviewed_evidence_git_blob": "40848807f79ae39a3172ac45b4582b934f648d59",
+      "baseline_core_admission": false,
+      "server_execution_proven_by_this_review": false,
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-JP2008-COOPERATION-SOURCE-R1.json",
+          "pointer": "/records/6",
+          "git_blob": "40848807f79ae39a3172ac45b4582b934f648d59"
+        }
+      ]
+    },
+    {
+      "record_id": "JP2008-COOP-08",
+      "entity_type": "COOPERATIVE_EVENT",
+      "collection_as_stored": "quests",
+      "version_profile": "LATER_OFFICIAL:JP_DIGIPARK_2008_COOPERATION",
+      "record_body_sha256": "2e37ab7ca0e1bd7bef907c6c400d1322c370d416ad918ac7deb3521ee2a1d137",
+      "origin_class": "OPERATOR_EVENT_QUEST",
+      "classification_basis": "LIMITED_COLLECTION_EVENT_JUN24_JUL15_2008",
+      "reviewed_evidence_path": "research/recovered/STONEAGE-JP2008-COOPERATION-SOURCE-R1.json",
+      "reviewed_evidence_git_blob": "40848807f79ae39a3172ac45b4582b934f648d59",
+      "baseline_core_admission": false,
+      "server_execution_proven_by_this_review": false,
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-JP2008-COOPERATION-SOURCE-R1.json",
+          "pointer": "/records/7",
+          "git_blob": "40848807f79ae39a3172ac45b4582b934f648d59"
+        }
+      ]
+    },
+    {
+      "record_id": "JP2008-TIGER-02",
+      "entity_type": "NAMED_CONTENT",
+      "collection_as_stored": "quests",
+      "version_profile": "LATER_OFFICIAL:JP_DIGIPARK_2008_TIGER_QUEST_UNNUMBERED",
+      "record_body_sha256": "6a5b0987c83187c6b8886ff12c79124130d0dbea8d3e783067f67f6ad738a3f2",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "classification_basis": "NO_REVIEWED_RELEASE_BASELINE_OR_PERMANENCE_PROOF",
+      "reviewed_evidence_path": null,
+      "reviewed_evidence_git_blob": null,
+      "baseline_core_admission": false,
+      "server_execution_proven_by_this_review": false,
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-JP2008-TIGER-QUEST-SOURCE-R1.json",
+          "pointer": "/records/1",
+          "git_blob": "61113c06bea46ee062250eccdfe8181b8071b994"
+        }
+      ]
+    },
+    {
+      "record_id": "JP2008-TIGER-03",
+      "entity_type": "POEM_CONTEXT",
+      "collection_as_stored": "quests",
+      "version_profile": "LATER_OFFICIAL:JP_DIGIPARK_2008_TIGER_QUEST_UNNUMBERED",
+      "record_body_sha256": "3c6eb8cefdb0120415429a0ea69fb3fc9405aab00f366af46e4890ec9e0b611e",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "classification_basis": "NO_REVIEWED_RELEASE_BASELINE_OR_PERMANENCE_PROOF",
+      "reviewed_evidence_path": null,
+      "reviewed_evidence_git_blob": null,
+      "baseline_core_admission": false,
+      "server_execution_proven_by_this_review": false,
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-JP2008-TIGER-QUEST-SOURCE-R1.json",
+          "pointer": "/records/2",
+          "git_blob": "61113c06bea46ee062250eccdfe8181b8071b994"
+        }
+      ]
+    },
+    {
+      "record_id": "JP2008-TIGER-04",
+      "entity_type": "WORLD_STORY",
+      "collection_as_stored": "quests",
+      "version_profile": "LATER_OFFICIAL:JP_DIGIPARK_2008_TIGER_QUEST_UNNUMBERED",
+      "record_body_sha256": "de0878bb45443601858881fd4c919c82f1dd5b05d21b0a47fb004b191b327ff1",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "classification_basis": "NO_REVIEWED_RELEASE_BASELINE_OR_PERMANENCE_PROOF",
+      "reviewed_evidence_path": null,
+      "reviewed_evidence_git_blob": null,
+      "baseline_core_admission": false,
+      "server_execution_proven_by_this_review": false,
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-JP2008-TIGER-QUEST-SOURCE-R1.json",
+          "pointer": "/records/3",
+          "git_blob": "61113c06bea46ee062250eccdfe8181b8071b994"
+        }
+      ]
+    },
+    {
+      "record_id": "JP2008-TIGER-05",
+      "entity_type": "OFFICIAL_ENIGMA",
+      "collection_as_stored": "quests",
+      "version_profile": "LATER_OFFICIAL:JP_DIGIPARK_2008_TIGER_QUEST_UNNUMBERED",
+      "record_body_sha256": "479cbe42d9adaa2815abbe55f80e9d71b729a85f40163d4a83045586c6095ee5",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "classification_basis": "NO_REVIEWED_RELEASE_BASELINE_OR_PERMANENCE_PROOF",
+      "reviewed_evidence_path": null,
+      "reviewed_evidence_git_blob": null,
+      "baseline_core_admission": false,
+      "server_execution_proven_by_this_review": false,
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-JP2008-TIGER-QUEST-SOURCE-R1.json",
+          "pointer": "/records/4",
+          "git_blob": "61113c06bea46ee062250eccdfe8181b8071b994"
+        }
+      ]
+    },
+    {
+      "record_id": "JP2008-TIGER-06",
+      "entity_type": "OFFICIAL_DISCLAIMERS",
+      "collection_as_stored": "quests",
+      "version_profile": "LATER_OFFICIAL:JP_DIGIPARK_2008_TIGER_QUEST_UNNUMBERED",
+      "record_body_sha256": "366a9fabbc374f32ab973a1021448314f54b23f9274853e0a024845b42538c67",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "classification_basis": "NO_REVIEWED_RELEASE_BASELINE_OR_PERMANENCE_PROOF",
+      "reviewed_evidence_path": null,
+      "reviewed_evidence_git_blob": null,
+      "baseline_core_admission": false,
+      "server_execution_proven_by_this_review": false,
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-JP2008-TIGER-QUEST-SOURCE-R1.json",
+          "pointer": "/records/5",
+          "git_blob": "61113c06bea46ee062250eccdfe8181b8071b994"
+        }
+      ]
+    },
+    {
+      "record_id": "TW75-SUMMON-01",
+      "entity_type": "SYSTEM_PREVIEW",
+      "collection_as_stored": "quests",
+      "version_profile": "TW_WAYI_7.5_PREVIEW_INDEX_2004_BODY_CAPTURE_2005_IMAGES_2004",
+      "record_body_sha256": "db18930ccaaa66800702151e17fe91f59136f764761c9d3fbb0cbf3fd70f40aa",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "classification_basis": "NO_REVIEWED_RELEASE_BASELINE_OR_PERMANENCE_PROOF",
+      "reviewed_evidence_path": null,
+      "reviewed_evidence_git_blob": null,
+      "baseline_core_admission": false,
+      "server_execution_proven_by_this_review": false,
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-TW75-SPIRIT-SUMMON-PREVIEW-SOURCE-R1.json",
+          "pointer": "/records/0",
+          "git_blob": "ffa244f58e2f62aea3e5c509dbb35069b0102f75"
+        }
+      ]
+    },
+    {
+      "record_id": "TW75-SUMMON-05",
+      "entity_type": "SOCIAL_AND_WORLD_RATIONALE",
+      "collection_as_stored": "quests",
+      "version_profile": "TW_WAYI_7.5_PREVIEW_INDEX_2004_BODY_CAPTURE_2005_IMAGES_2004",
+      "record_body_sha256": "b5fe74f66590f3dd810fd2122ae0b674d7befa237b8b996087a6eaad31028328",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "classification_basis": "NO_REVIEWED_RELEASE_BASELINE_OR_PERMANENCE_PROOF",
+      "reviewed_evidence_path": null,
+      "reviewed_evidence_git_blob": null,
+      "baseline_core_admission": false,
+      "server_execution_proven_by_this_review": false,
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-TW75-SPIRIT-SUMMON-PREVIEW-SOURCE-R1.json",
+          "pointer": "/records/4",
+          "git_blob": "ffa244f58e2f62aea3e5c509dbb35069b0102f75"
+        }
+      ]
+    },
+    {
+      "record_id": "cn-dragon-flight:r109:eden-nis-story",
+      "entity_type": "SOURCE_DESCRIBED_WORLDLINE_LINE_NOT_CANON",
+      "collection_as_stored": "quests",
+      "version_profile": "LATER_CN_GUIDE_2003_WITH_CN8_PLAYER_COMPARISON_NO_EXACT_BUILD",
+      "record_body_sha256": "fc794f01ac930b331f9f7a66ffb874b3bf23d5eced5a546a553fefeb6ad6d7a9",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "classification_basis": "NO_REVIEWED_RELEASE_BASELINE_OR_PERMANENCE_PROOF",
+      "reviewed_evidence_path": null,
+      "reviewed_evidence_git_blob": null,
+      "baseline_core_admission": false,
+      "server_execution_proven_by_this_review": false,
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-CN2003-2006-DRAGON-FLIGHT-R109.json",
+          "pointer": "/records/9",
+          "git_blob": "37b674baca28ad238c076bcf7b50d0a3cd138385"
+        }
+      ]
+    },
+    {
+      "record_id": "cn-dragon-flight:r109:flight-gate",
+      "entity_type": "SOURCE_DESCRIBED_QUEST_GATE_WITH_CONFLICT",
+      "collection_as_stored": "quests",
+      "version_profile": "LATER_CN_GUIDE_2003_WITH_CN8_PLAYER_COMPARISON_NO_EXACT_BUILD",
+      "record_body_sha256": "b81c9ae38ef855fb302455c6dec309e5d3ae172c07b91d11b6437bdd8c63927e",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "classification_basis": "NO_REVIEWED_RELEASE_BASELINE_OR_PERMANENCE_PROOF",
+      "reviewed_evidence_path": null,
+      "reviewed_evidence_git_blob": null,
+      "baseline_core_admission": false,
+      "server_execution_proven_by_this_review": false,
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-CN2003-2006-DRAGON-FLIGHT-R109.json",
+          "pointer": "/records/6",
+          "git_blob": "37b674baca28ad238c076bcf7b50d0a3cd138385"
+        }
+      ]
+    },
+    {
+      "record_id": "cn-dragon-flight:r109:flight-story-chain",
+      "entity_type": "SOURCE_DESCRIBED_STORY_STEPS_NOT_SERVER_SCRIPT",
+      "collection_as_stored": "quests",
+      "version_profile": "LATER_CN_GUIDE_2003_WITH_CN8_PLAYER_COMPARISON_NO_EXACT_BUILD",
+      "record_body_sha256": "6a1b4009e6112b1384e6f86105a3b0a2924b4e7954daebabfa076ac12048403e",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "classification_basis": "NO_REVIEWED_RELEASE_BASELINE_OR_PERMANENCE_PROOF",
+      "reviewed_evidence_path": null,
+      "reviewed_evidence_git_blob": null,
+      "baseline_core_admission": false,
+      "server_execution_proven_by_this_review": false,
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-CN2003-2006-DRAGON-FLIGHT-R109.json",
+          "pointer": "/records/7",
+          "git_blob": "37b674baca28ad238c076bcf7b50d0a3cd138385"
+        }
+      ]
+    },
+    {
+      "record_id": "cn-wayi-2003-christmas:exchange",
+      "entity_type": "SOURCE_REPORTED_SEASONAL_EXCHANGE_NOT_SCRIPT",
+      "collection_as_stored": "quests",
+      "version_profile": "LATER_OFFICIAL:CN_WAYI_60_AND_70_SERVER_GROUPS_20031224_26_ANNOUNCEMENT_NOT_BUILD",
+      "record_body_sha256": "f434e9fd2a1e3fffc448867160b3a2c03ea5884bdf165743b7c3637832a9ed79",
+      "origin_class": "OPERATOR_EVENT_QUEST",
+      "classification_basis": "SEASONAL_EXCHANGE_20031224_26",
+      "reviewed_evidence_path": "research/recovered/STONEAGE-CN2003-CHRISTMAS-NPC-SOURCE-R1.json",
+      "reviewed_evidence_git_blob": "9b9d254d7937b61a8bb0b17633cef5b24de50520",
+      "baseline_core_admission": false,
+      "server_execution_proven_by_this_review": false,
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-CN2003-CHRISTMAS-NPC-SOURCE-R1.json",
+          "pointer": "/records/1",
+          "git_blob": "9b9d254d7937b61a8bb0b17633cef5b24de50520"
+        }
+      ]
+    },
+    {
+      "record_id": "cn-wayi-tournament-2003:r107:golden-pet-claim",
+      "entity_type": "SOURCE_REPORTED_EVENT_CLAIM_NOT_GENERAL_QUEST",
+      "collection_as_stored": "quests",
+      "version_profile": "LATER_OFFICIAL:CN_WAYI_TOURNAMENT_2003_MEDIA_HOSTED_NOT_EXACT_CLIENT_BUILD",
+      "record_body_sha256": "f5061bf1e1a29bced8c2d5ddd5ab3917de4c682cd471e97bac60db85d32c6de3",
+      "origin_class": "OPERATOR_EVENT_QUEST",
+      "classification_basis": "LIMITED_TOURNAMENT_REDEMPTION_NOT_GENERAL_QUEST",
+      "reviewed_evidence_path": "research/recovered/STONEAGE-CN2003-TOURNAMENT-REWARD-R107.json",
+      "reviewed_evidence_git_blob": "2f4f393d0858eb6c93bb3a5ed5e0d42790c85108",
+      "baseline_core_admission": false,
+      "server_execution_proven_by_this_review": false,
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-CN2003-TOURNAMENT-REWARD-R107.json",
+          "pointer": "/records/2",
+          "git_blob": "2f4f393d0858eb6c93bb3a5ed5e0d42790c85108"
+        }
+      ]
+    },
+    {
+      "record_id": "cn-wayi-tournament-2003:r107:semifinal-selection",
+      "entity_type": "SOURCE_REPORTED_TOURNAMENT_STAGE_PRIZE_APPLICATION",
+      "collection_as_stored": "quests",
+      "version_profile": "LATER_OFFICIAL:CN_WAYI_TOURNAMENT_2003_MEDIA_HOSTED_NOT_EXACT_CLIENT_BUILD",
+      "record_body_sha256": "30b60aaf1f75973b0ecc213685ab256ca917424fc5791f38841b3747f64fb268",
+      "origin_class": "OPERATOR_EVENT_QUEST",
+      "classification_basis": "TOURNAMENT_REWARD_APPLICATION_NOT_QUEST_SCRIPT",
+      "reviewed_evidence_path": "research/recovered/STONEAGE-CN2003-TOURNAMENT-REWARD-R107.json",
+      "reviewed_evidence_git_blob": "2f4f393d0858eb6c93bb3a5ed5e0d42790c85108",
+      "baseline_core_admission": false,
+      "server_execution_proven_by_this_review": false,
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-CN2003-TOURNAMENT-REWARD-R107.json",
+          "pointer": "/records/3",
+          "git_blob": "2f4f393d0858eb6c93bb3a5ed5e0d42790c85108"
+        }
+      ]
+    },
+    {
+      "record_id": "cn20-sina-10236724:marinas-pet-A",
+      "entity_type": "DOCUMENTARY_COMMISSION_NOT_SERVER_QUEST_MASTER",
+      "collection_as_stored": "quests",
+      "version_profile": "CN20_LABEL_PORTAL_UNDATED_BUILD_UNVERIFIED",
+      "record_body_sha256": "560d18754ea99946a2ac710eb75d35870f861776eb7fc5205b001932a773dbfd",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "classification_basis": "NO_REVIEWED_RELEASE_BASELINE_OR_PERMANENCE_PROOF",
+      "reviewed_evidence_path": null,
+      "reviewed_evidence_git_blob": null,
+      "baseline_core_admission": false,
+      "server_execution_proven_by_this_review": false,
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-CN20-PET-COMMISSION-HABITATS-CATALOG-R1.json",
+          "pointer": "/records/0",
+          "git_blob": "56545290e9c1412666b7a2001619c53c187aab6a"
+        }
+      ]
+    },
+    {
+      "record_id": "cn20-sina-10236724:marinas-pet-B",
+      "entity_type": "DOCUMENTARY_COMMISSION_NOT_SERVER_QUEST_MASTER",
+      "collection_as_stored": "quests",
+      "version_profile": "CN20_LABEL_PORTAL_UNDATED_BUILD_UNVERIFIED",
+      "record_body_sha256": "4cff614b3f4e8269749426c838a2177a00539ffcc19ac9c3fdf438d9d2545c3f",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "classification_basis": "NO_REVIEWED_RELEASE_BASELINE_OR_PERMANENCE_PROOF",
+      "reviewed_evidence_path": null,
+      "reviewed_evidence_git_blob": null,
+      "baseline_core_admission": false,
+      "server_execution_proven_by_this_review": false,
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-CN20-PET-COMMISSION-HABITATS-CATALOG-R1.json",
+          "pointer": "/records/5",
+          "git_blob": "56545290e9c1412666b7a2001619c53c187aab6a"
+        }
+      ]
+    },
+    {
+      "record_id": "cn20-sina-10236724:marinas-pet-C",
+      "entity_type": "DOCUMENTARY_COMMISSION_NOT_SERVER_QUEST_MASTER",
+      "collection_as_stored": "quests",
+      "version_profile": "CN20_LABEL_PORTAL_UNDATED_BUILD_UNVERIFIED",
+      "record_body_sha256": "91288904cb645cbbb77710bd96727c517315fa0af0d7104f2ebf65f69967e295",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "classification_basis": "NO_REVIEWED_RELEASE_BASELINE_OR_PERMANENCE_PROOF",
+      "reviewed_evidence_path": null,
+      "reviewed_evidence_git_blob": null,
+      "baseline_core_admission": false,
+      "server_execution_proven_by_this_review": false,
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-CN20-PET-COMMISSION-HABITATS-CATALOG-R1.json",
+          "pointer": "/records/8",
+          "git_blob": "56545290e9c1412666b7a2001619c53c187aab6a"
+        }
+      ]
+    },
+    {
+      "record_id": "cn20-sina-10236724:marinas-pet-D",
+      "entity_type": "DOCUMENTARY_COMMISSION_NOT_SERVER_QUEST_MASTER",
+      "collection_as_stored": "quests",
+      "version_profile": "CN20_LABEL_PORTAL_UNDATED_BUILD_UNVERIFIED",
+      "record_body_sha256": "65a49910c01724d3172aa96b624d0f63979f798714b69ddc3ef868dd18fd0b13",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "classification_basis": "NO_REVIEWED_RELEASE_BASELINE_OR_PERMANENCE_PROOF",
+      "reviewed_evidence_path": null,
+      "reviewed_evidence_git_blob": null,
+      "baseline_core_admission": false,
+      "server_execution_proven_by_this_review": false,
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-CN20-PET-COMMISSION-HABITATS-CATALOG-R1.json",
+          "pointer": "/records/11",
+          "git_blob": "56545290e9c1412666b7a2001619c53c187aab6a"
+        }
+      ]
+    },
+    {
+      "record_id": "cn20-sina-10236724:marinas-pet-E",
+      "entity_type": "DOCUMENTARY_COMMISSION_NOT_SERVER_QUEST_MASTER",
+      "collection_as_stored": "quests",
+      "version_profile": "CN20_LABEL_PORTAL_UNDATED_BUILD_UNVERIFIED",
+      "record_body_sha256": "f67af64f43ddd9c68b5180c20b22a45a5193381277fe16f08ac2d5391bc51571",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "classification_basis": "NO_REVIEWED_RELEASE_BASELINE_OR_PERMANENCE_PROOF",
+      "reviewed_evidence_path": null,
+      "reviewed_evidence_git_blob": null,
+      "baseline_core_admission": false,
+      "server_execution_proven_by_this_review": false,
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-CN20-PET-COMMISSION-HABITATS-CATALOG-R1.json",
+          "pointer": "/records/16",
+          "git_blob": "56545290e9c1412666b7a2001619c53c187aab6a"
+        }
+      ]
+    },
+    {
+      "record_id": "cn20-sina-10236724:marinas-pet-F",
+      "entity_type": "DOCUMENTARY_COMMISSION_NOT_SERVER_QUEST_MASTER",
+      "collection_as_stored": "quests",
+      "version_profile": "CN20_LABEL_PORTAL_UNDATED_BUILD_UNVERIFIED",
+      "record_body_sha256": "1e1fa848fbc46c47da24b4b264142c565094511caa04a33265f8ecafd6da6289",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "classification_basis": "NO_REVIEWED_RELEASE_BASELINE_OR_PERMANENCE_PROOF",
+      "reviewed_evidence_path": null,
+      "reviewed_evidence_git_blob": null,
+      "baseline_core_admission": false,
+      "server_execution_proven_by_this_review": false,
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-CN20-PET-COMMISSION-HABITATS-CATALOG-R1.json",
+          "pointer": "/records/21",
+          "git_blob": "56545290e9c1412666b7a2001619c53c187aab6a"
+        }
+      ]
+    },
+    {
+      "record_id": "jp-2008-rimfy:quest",
+      "entity_type": "SOURCE_NAMED_FAMILY_QUEST_NOT_SCRIPT",
+      "collection_as_stored": "quests",
+      "version_profile": "LATER_OFFICIAL:JP_20080708_ANNOUNCED_QUEST_NOT_EXACT_BUILD",
+      "record_body_sha256": "375e5f13a929a17a3f9d987006ef8ef8167897b94872a1da54bb9f0599291405",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "classification_basis": "NO_REVIEWED_RELEASE_BASELINE_OR_PERMANENCE_PROOF",
+      "reviewed_evidence_path": null,
+      "reviewed_evidence_git_blob": null,
+      "baseline_core_admission": false,
+      "server_execution_proven_by_this_review": false,
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-JP2008-RIMFY-FAMILY-QUEST-SOURCE-R1.json",
+          "pointer": "/records/0",
+          "git_blob": "9ff75f3d9cefec5b3d309a457237e15c1a5a181d"
+        }
+      ]
+    },
+    {
+      "record_id": "jp-digipark-2007-sekiei:quest",
+      "entity_type": "SOURCE_QUEST_INVITATION_NOT_SCRIPT",
+      "collection_as_stored": "quests",
+      "version_profile": "LATER_OFFICIAL:JP_DIGIPARK_20071120_ANNOUNCED_UPDATE_NOT_EXACT_BUILD",
+      "record_body_sha256": "56e1532419adebd47964cec70e55ff9ed50f8669a90b8149a379442df1883ad3",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "classification_basis": "NO_REVIEWED_RELEASE_BASELINE_OR_PERMANENCE_PROOF",
+      "reviewed_evidence_path": null,
+      "reviewed_evidence_git_blob": null,
+      "baseline_core_admission": false,
+      "server_execution_proven_by_this_review": false,
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-JP2007-SEKIEI-WORLD-EVENT-SOURCE-R1.json",
+          "pointer": "/records/5",
+          "git_blob": "fa0269969bf84c53a4a718804a1fafda4144a3d7"
+        }
+      ]
+    },
+    {
+      "record_id": "jp-digipark-2008:shadow:chapter-1",
+      "entity_type": "SOURCE_DESCRIBED_QUEST_CHAPTER_NOT_SERVER_ID",
+      "collection_as_stored": "quests",
+      "version_profile": "LATER_OFFICIAL:JP_DIGIPARK_2008_SHADOW_SERIES",
+      "record_body_sha256": "c00ad8d733c1a688801b9f052f1cf0075616af6944f546d7ca41ac01d5a4bafd",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "classification_basis": "NO_REVIEWED_RELEASE_BASELINE_OR_PERMANENCE_PROOF",
+      "reviewed_evidence_path": null,
+      "reviewed_evidence_git_blob": null,
+      "baseline_core_admission": false,
+      "server_execution_proven_by_this_review": false,
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-JP2008-SHADOW-CHAPTERS-SOURCE-R1.json",
+          "pointer": "/records/0",
+          "git_blob": "d2ee2dc38c487f090dbb0fd98ddbe4ab18cde358"
+        }
+      ]
+    },
+    {
+      "record_id": "jp-digipark-2008:shadow:chapter-2",
+      "entity_type": "SOURCE_DESCRIBED_QUEST_CHAPTER_NOT_SERVER_ID",
+      "collection_as_stored": "quests",
+      "version_profile": "LATER_OFFICIAL:JP_DIGIPARK_2008_SHADOW_SERIES",
+      "record_body_sha256": "9518b232f90040bafd7582dbc331b88eb9eb0e722eb367d69fbe896ad2649061",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "classification_basis": "NO_REVIEWED_RELEASE_BASELINE_OR_PERMANENCE_PROOF",
+      "reviewed_evidence_path": null,
+      "reviewed_evidence_git_blob": null,
+      "baseline_core_admission": false,
+      "server_execution_proven_by_this_review": false,
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-JP2008-SHADOW-CHAPTERS-SOURCE-R1.json",
+          "pointer": "/records/1",
+          "git_blob": "d2ee2dc38c487f090dbb0fd98ddbe4ab18cde358"
+        }
+      ]
+    },
+    {
+      "record_id": "jp-digipark-2008:shadow:chapter-3",
+      "entity_type": "SOURCE_DESCRIBED_QUEST_CHAPTER_NOT_SERVER_ID",
+      "collection_as_stored": "quests",
+      "version_profile": "LATER_OFFICIAL:JP_DIGIPARK_2008_SHADOW_SERIES",
+      "record_body_sha256": "5c406ede17c57090262c8897e42c1a937a7b2518697db5ba9302de12efa04296",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "classification_basis": "NO_REVIEWED_RELEASE_BASELINE_OR_PERMANENCE_PROOF",
+      "reviewed_evidence_path": null,
+      "reviewed_evidence_git_blob": null,
+      "baseline_core_admission": false,
+      "server_execution_proven_by_this_review": false,
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-JP2008-SHADOW-CHAPTERS-SOURCE-R1.json",
+          "pointer": "/records/2",
+          "git_blob": "d2ee2dc38c487f090dbb0fd98ddbe4ab18cde358"
+        }
+      ]
+    },
+    {
+      "record_id": "jp-digipark-2009:r111:puzzle-state-machine",
+      "entity_type": "SOURCE_DESCRIBED_PUZZLE_FLOW_NOT_SCRIPT",
+      "collection_as_stored": "quests",
+      "version_profile": "LATER_OFFICIAL:JP_DIGIPARK_2009_TENTH_ANNIVERSARY_NOT_EARLY_TW10",
+      "record_body_sha256": "9d74da715cb1bdf60de188c15a5b8636ab9ef0ac150d534de3c5b65e1ccbb15e",
+      "origin_class": "OPERATOR_EVENT_QUEST",
+      "classification_basis": "TENTH_ANNIVERSARY_OCT20_NOV04_2009",
+      "reviewed_evidence_path": "research/recovered/STONEAGE-JP2009-MYSTERY-DUNGEON-R111.json",
+      "reviewed_evidence_git_blob": "359cd848ac91430595e255b327d7fd61e6c67dcc",
+      "baseline_core_admission": false,
+      "server_execution_proven_by_this_review": false,
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-JP2009-MYSTERY-DUNGEON-R111.json",
+          "pointer": "/records/2",
+          "git_blob": "359cd848ac91430595e255b327d7fd61e6c67dcc"
+        }
+      ]
+    },
+    {
+      "record_id": "jp-digipark-2009:r111:wild-encounter-boundary",
+      "entity_type": "SOURCE_DESCRIBED_NO_DINOSAUR_ENCOUNTERS",
+      "collection_as_stored": "quests",
+      "version_profile": "LATER_OFFICIAL:JP_DIGIPARK_2009_TENTH_ANNIVERSARY_NOT_EARLY_TW10",
+      "record_body_sha256": "f483853203a25374df996ad690cb5e01e24fe44228b3f9f6b3c342733a47c1d7",
+      "origin_class": "OPERATOR_EVENT_QUEST",
+      "classification_basis": "ENCOUNTER_CONTEXT_OF_SAME_ANNIVERSARY_EVENT",
+      "reviewed_evidence_path": "research/recovered/STONEAGE-JP2009-MYSTERY-DUNGEON-R111.json",
+      "reviewed_evidence_git_blob": "359cd848ac91430595e255b327d7fd61e6c67dcc",
+      "baseline_core_admission": false,
+      "server_execution_proven_by_this_review": false,
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-JP2009-MYSTERY-DUNGEON-R111.json",
+          "pointer": "/records/3",
+          "git_blob": "359cd848ac91430595e255b327d7fd61e6c67dcc"
+        }
+      ]
+    },
+    {
+      "record_id": "jp-gaiax-2005:special-map-4",
+      "entity_type": "quest",
+      "collection_as_stored": null,
+      "version_profile": "LATER_OFFICIAL:JP_GAIAX_2005",
+      "record_body_sha256": "3f6233ab79dc61add851cb28fe0b335cc932dd7a4978c00484d3560042dee102",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "classification_basis": "NO_REVIEWED_RELEASE_BASELINE_OR_PERMANENCE_PROOF",
+      "reviewed_evidence_path": null,
+      "reviewed_evidence_git_blob": null,
+      "baseline_core_admission": false,
+      "server_execution_proven_by_this_review": false,
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-JP2005-SPECIAL-MAPS-SOURCE-R1.json",
+          "pointer": "/records/3",
+          "git_blob": "7c597038262bfa137ec89001487954e08a4a6aa8"
+        }
+      ]
+    },
+    {
+      "record_id": "jp-gaiax-stoneage-2006:r108:event",
+      "entity_type": "SOURCE_NAMED_TEMPORARY_CAPTURE_EVENT_NOT_QUEST_SCRIPT",
+      "collection_as_stored": "quests",
+      "version_profile": "LATER_OFFICIAL:JP_GAIAX_STONEAGE_2006_4GAMER_CONTEMPORANEOUS_NOT_EXACT_CLIENT_BUILD",
+      "record_body_sha256": "4d8e98cec6ea989d4077c188bd8bcf19ddd77d7370e59c0ba488513144b07059",
+      "origin_class": "OPERATOR_EVENT_QUEST",
+      "classification_basis": "DINO_GETTERS_MAY23_JUN06_2006",
+      "reviewed_evidence_path": "research/recovered/STONEAGE-JP2006-DINO-GETTERS-R108.json",
+      "reviewed_evidence_git_blob": "f8afdc84bb00c71f8fc6283522c88d17939dd530",
+      "baseline_core_admission": false,
+      "server_execution_proven_by_this_review": false,
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-JP2006-DINO-GETTERS-R108.json",
+          "pointer": "/records/0",
+          "git_blob": "f8afdc84bb00c71f8fc6283522c88d17939dd530"
+        }
+      ]
+    },
+    {
+      "record_id": "jp-gaiax-stoneage-2006:r108:per-server-reward",
+      "entity_type": "SOURCE_DESCRIBED_SERVER_AGGREGATE_EVENT_INCENTIVE_NOT_TRANSACTION",
+      "collection_as_stored": "quests",
+      "version_profile": "LATER_OFFICIAL:JP_GAIAX_STONEAGE_2006_4GAMER_CONTEMPORANEOUS_NOT_EXACT_CLIENT_BUILD",
+      "record_body_sha256": "90fe0d852a8799084c07b861894c433970991607f9292259b0b6387691731dcb",
+      "origin_class": "OPERATOR_EVENT_QUEST",
+      "classification_basis": "SERVER_AGGREGATE_EVENT_INCENTIVE_NOT_PERSONAL_QUEST",
+      "reviewed_evidence_path": "research/recovered/STONEAGE-JP2006-DINO-GETTERS-R108.json",
+      "reviewed_evidence_git_blob": "f8afdc84bb00c71f8fc6283522c88d17939dd530",
+      "baseline_core_admission": false,
+      "server_execution_proven_by_this_review": false,
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-JP2006-DINO-GETTERS-R108.json",
+          "pointer": "/records/3",
+          "git_blob": "f8afdc84bb00c71f8fc6283522c88d17939dd530"
+        }
+      ]
+    },
+    {
+      "record_id": "jp2004-dec:r110:christmas-claim",
+      "entity_type": "SOURCE_REPORTED_TEMPORARY_EVENT_NOT_REUSABLE_QUEST",
+      "collection_as_stored": "quests",
+      "version_profile": "JP_BOTHTEC_2004_DEC_MEDIA_UPDATE_NOT_EXACT_BUILD",
+      "record_body_sha256": "c0fb7152c0cd4bdfe3494514ed7010d3782510bd064532f0e12cbd52463517dd",
+      "origin_class": "OPERATOR_EVENT_QUEST",
+      "classification_basis": "CHRISTMAS_2004_EVENT_REPORT",
+      "reviewed_evidence_path": "research/recovered/STONEAGE-JP2004-XMAS-PARTY-COMBAT-R110.json",
+      "reviewed_evidence_git_blob": "eb22c2c7b918088e386f5fea90104549c81a6183",
+      "baseline_core_admission": false,
+      "server_execution_proven_by_this_review": false,
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-JP2004-XMAS-PARTY-COMBAT-R110.json",
+          "pointer": "/records/2",
+          "git_blob": "eb22c2c7b918088e386f5fea90104549c81a6183"
+        }
+      ]
+    },
+    {
+      "record_id": "jp2004-dec:r110:new-year-shrine",
+      "entity_type": "SOURCE_REPORTED_NEW_YEAR_FORTUNE_EVENT",
+      "collection_as_stored": "quests",
+      "version_profile": "JP_BOTHTEC_2004_DEC_MEDIA_UPDATE_NOT_EXACT_BUILD",
+      "record_body_sha256": "e7c4e9e9eb81487ba865477ecfe26210662eee86d471ee7d6311fd44003f6aff",
+      "origin_class": "OPERATOR_EVENT_QUEST",
+      "classification_basis": "NEW_YEAR_2005_EVENT_REPORT",
+      "reviewed_evidence_path": "research/recovered/STONEAGE-JP2004-XMAS-PARTY-COMBAT-R110.json",
+      "reviewed_evidence_git_blob": "eb22c2c7b918088e386f5fea90104549c81a6183",
+      "baseline_core_admission": false,
+      "server_execution_proven_by_this_review": false,
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-JP2004-XMAS-PARTY-COMBAT-R110.json",
+          "pointer": "/records/4",
+          "git_blob": "eb22c2c7b918088e386f5fea90104549c81a6183"
+        }
+      ]
+    },
+    {
+      "record_id": "jp2008-evolution:trial",
+      "entity_type": "REPEATABLE_TRIAL_WITH_SOURCE_REPORTED_CHANCE",
+      "collection_as_stored": "quests",
+      "version_profile": "JP_DIGIPARK_20081111_RELEASE_AND_20090217_OFFICIAL_PAGE_EXACT_BUILD_UNKNOWN",
+      "record_body_sha256": "0c77b616116bedc526d409ff8ba7f940a8cdd44da3fb5f828fb51d414b4feda4",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "classification_basis": "NO_REVIEWED_RELEASE_BASELINE_OR_PERMANENCE_PROOF",
+      "reviewed_evidence_path": null,
+      "reviewed_evidence_git_blob": null,
+      "baseline_core_admission": false,
+      "server_execution_proven_by_this_review": false,
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-JP2008-PET-EVOLUTION-SOURCE-R1.json",
+          "pointer": "/records/5",
+          "git_blob": "492cabcbd9ca9de78013340f31bdfbbf8c2391fc"
+        }
+      ]
+    },
+    {
+      "record_id": "sina-20030521-pirate:quest",
+      "entity_type": "GUIDE_QUEST_NOT_ORIGINAL_SCRIPT",
+      "collection_as_stored": "quests",
+      "version_profile": "LATER_OFFICIAL_PORTAL_SA6_LABEL_REGION_AND_BUILD_UNVERIFIED",
+      "record_body_sha256": "feacbef5dcfb8992ccdb7bca15867838a8f9c4336660fc6dc6a85bb4a6a31ba8",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "classification_basis": "NO_REVIEWED_RELEASE_BASELINE_OR_PERMANENCE_PROOF",
+      "reviewed_evidence_path": null,
+      "reviewed_evidence_git_blob": null,
+      "baseline_core_admission": false,
+      "server_execution_proven_by_this_review": false,
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-PIRATE-RELIC-GUIDE-SOURCE-R1.json",
+          "pointer": "/records/0",
+          "git_blob": "a3656e1a8655d983d5c8b111efeb58135efdc136"
+        }
+      ]
+    },
+    {
+      "record_id": "waei-host-tw-guide:quest:hero-entry",
+      "entity_type": "HOSTED_GUIDE_FLOW_NOT_SERVER_QUEST",
+      "collection_as_stored": "quests",
+      "version_profile": "CN_HOSTED_TW_OPEN_CN_NOT_OPEN_HERO_GUIDE_NOT_EXACT_BUILD",
+      "record_body_sha256": "7997da738394e9c3165138b27c7a3ecd93a1ae0d6a0ca1aa3756926576cc5dc4",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "classification_basis": "NO_REVIEWED_RELEASE_BASELINE_OR_PERMANENCE_PROOF",
+      "reviewed_evidence_path": null,
+      "reviewed_evidence_git_blob": null,
+      "baseline_core_admission": false,
+      "server_execution_proven_by_this_review": false,
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-WAEI-CN20-ISLAND-HERO-CONTENT-R1.json",
+          "pointer": "/records/5",
+          "git_blob": "8d95a7b2a64f0aea43b0c25beb8472d1fd114d94"
+        }
+      ]
+    },
+    {
+      "record_id": "wayi-column2003:riding-successor:02",
+      "entity_type": "OFFICIAL_OPERATOR_WORK_LEAD",
+      "collection_as_stored": "quests",
+      "version_profile": "TW_WAYI_2003_DATED_COLUMN_PRESERVED_2005_NOT_EXACT_BUILD",
+      "record_body_sha256": "40518fbb55d6d78efa1d56618b8cddecfcf5a7b0fac71c6e10da1a53af9ef667",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "classification_basis": "NO_REVIEWED_RELEASE_BASELINE_OR_PERMANENCE_PROOF",
+      "reviewed_evidence_path": null,
+      "reviewed_evidence_git_blob": null,
+      "baseline_core_admission": false,
+      "server_execution_proven_by_this_review": false,
+      "occurrences": [
+        {
+          "path": "research/recovered/STONEAGE-WAYI2003-RIDING-SUCCESSOR-ORE-WORK-R1.json",
+          "pointer": "/records/1",
+          "git_blob": "a2e5d0c927d1c53756146ba583532e2c0ab09ec4"
+        }
+      ]
+    }
+  ],
+  "prior_report_level_overlay": {
+    "path": "research/recovered/STONEAGE-QUEST-ORIGIN-SEPARATION-R1.json",
+    "git_blob": "34239835ed49a0600173a0342437022615e4d17b",
+    "record_count": 6,
+    "entries": [
+      {
+        "id": "R110",
+        "title": "2004 日本圣诞 Santa Girl",
+        "record_kind": "EVENT_ACTIVITY_CLAIM",
+        "origin": "OPERATOR_EVENT_QUEST",
+        "origin_evidence": "EXPLICIT_CHRISTMAS_2004_DEC20_27_EVENT_REPORT",
+        "region": "JP",
+        "version": "JP_2004_MEDIA_REPORTED",
+        "operator": "UNKNOWN_CONFLICTING_MEDIA_OPERATOR_LABELS",
+        "event_window": "2004-12-20/2004-12-27_REPORTED",
+        "is_event_archive": true,
+        "baseline_core_admission": false,
+        "source": "research/recovered/STONEAGE-JP2004-XMAS-PARTY-COMBAT-R110.json",
+        "source_git_blob": "eb22c2c7b918088e386f5fea90104549c81a6183"
+      },
+      {
+        "id": "R111",
+        "title": "2009 日本十周年谜题迷宫",
+        "record_kind": "EVENT_QUEST_CLAIM",
+        "origin": "OPERATOR_EVENT_QUEST",
+        "origin_evidence": "ANNOUNCED_LIMITED_2009_OCT20_NOV04_MYSTERY_DUNGEON",
+        "region": "JP",
+        "version": "JP_2009_DIGIPARK_ANNOUNCEMENT",
+        "operator": "DIGIPARK_IN_MEDIA_PRESS_RELEASE",
+        "event_window": "2009-10-20/2009-11-04_ANNOUNCED",
+        "is_event_archive": true,
+        "baseline_core_admission": false,
+        "source": "research/recovered/STONEAGE-JP2009-MYSTERY-DUNGEON-R111.json",
+        "source_git_blob": "359cd848ac91430595e255b327d7fd61e6c67dcc"
+      },
+      {
+        "id": "R112",
+        "title": "2001 大陆情人节 GM 领奖",
+        "record_kind": "EVENT_ACTIVITY_CLAIM",
+        "origin": "OPERATOR_EVENT_QUEST",
+        "origin_evidence": "THIRD_PARTY_2016_REPRINT_CLAIMS_FEB14_GM_CAMPAIGN",
+        "region": "CN",
+        "version": "CN_2001_CLAIM_REPRINT_2016",
+        "operator": "CLAIMED_HUAYI_NOT_INDEPENDENTLY_AUTHENTICATED",
+        "event_window": "2001-02-14_REPRINT_CLAIM",
+        "is_event_archive": true,
+        "baseline_core_admission": false,
+        "source": "research/recovered/STONEAGE-CN2001-EARLY-SOCIAL-R112.json",
+        "source_git_blob": "77149e798d11976ccb0fa9bffdff7bc7cab1f835"
+      },
+      {
+        "id": "R115",
+        "title": "2003 大陆中秋后羿嫦娥任务",
+        "record_kind": "EVENT_QUEST_CLAIM",
+        "origin": "OPERATOR_EVENT_QUEST",
+        "origin_evidence": "MID_AUTUMN_FESTIVAL_NAMED_2003_SEPT11_MEDIA_PUBLISHER_BYLINE",
+        "region": "CN",
+        "version": "CN_2003_MEDIA_DATE_ONLY",
+        "operator": "HUAYI_BYLINE_UNAUTHENTICATED_OPERATOR_ORIGINAL",
+        "event_window": null,
+        "is_event_archive": true,
+        "baseline_core_admission": false,
+        "source": "research/recovered/STONEAGE-CN2003-MIDAUTUMN-R115.json",
+        "source_git_blob": "ba8f5caf05e00bcf57da47884c794cbec2cfa15f"
+      },
+      {
+        "id": "R114",
+        "title": "2003 大陆富商的货物",
+        "record_kind": "QUEST_CLAIM",
+        "origin": "ORIGIN_UNRESOLVED",
+        "origin_evidence": "MEDIA_TASK_GUIDE_NOT_RELEASE_OR_EVENT_PROOF",
+        "region": "CN",
+        "version": "CN_2003_MEDIA_DATE_ONLY",
+        "operator": "UNKNOWN",
+        "event_window": null,
+        "is_event_archive": false,
+        "baseline_core_admission": false,
+        "source": "research/recovered/STONEAGE-CN2003-MERCHANT-ELEPHANT-R114.json",
+        "source_git_blob": "1fb238ea9352adc2e144529b1ef5bd6d5765bb13"
+      },
+      {
+        "id": "R113",
+        "title": "大陆2.5精灵王剧情及任务报道",
+        "record_kind": "STORY_AND_QUEST_CLAIM",
+        "origin": "ORIGIN_UNRESOLVED",
+        "origin_evidence": "LATER_2_5_STORY_SYNOPSIS_AND_PLAYER_QUEST_NO_PERMANENCE_OR_INITIAL_BUILD",
+        "region": "CN",
+        "version": "CN_2_5_STORY_LABEL_UNAUTHENTICATED_BUILD",
+        "operator": "UNKNOWN",
+        "event_window": null,
+        "is_event_archive": false,
+        "baseline_core_admission": false,
+        "source": "research/recovered/STONEAGE-CN25-SPIRIT-KING-STORY-R113.json",
+        "source_git_blob": "a753fe2416d1209929d9e3e5a49c7d55a3c04ad7"
+      }
+    ],
+    "report_level_classes_are_not_inherited_by_every_child_record": true,
+    "counts_must_not_be_added_to_research_record_or_game_quest_counts": true
+  },
+  "domain_review": [
+    {
+      "id": "version_lineage",
+      "order": 1,
+      "baseline_status": "PARTIAL_SOURCE",
+      "anchor": "research/recovered/STONEAGE-WAYI-OFFICIAL-WORLDLINE-R1.json",
+      "anchor_git_blob": "be6fc0ae90243f49af8366c3817ae464c5412c18",
+      "remaining_gap": "日本1999同版原客户端及服务器谱系仍缺。",
+      "original_source_complete": false
+    },
+    {
+      "id": "login_splash",
+      "order": 2,
+      "baseline_status": "OPEN_VISUAL",
+      "anchor": "research/recovered/STONEAGE-TW10-LOGIN-AVATAR-CATALOG-R1.json",
+      "anchor_git_blob": "d09ff9961f677b7e0b212fbfc8c290cc04892c14",
+      "remaining_gap": "同build登录全状态、原背景/字体/音效与真实交互仍缺。",
+      "original_source_complete": false
+    },
+    {
+      "id": "character_creation",
+      "order": 3,
+      "baseline_status": "PARTIAL_STRUCTURE",
+      "anchor": "research/recovered/STONEAGE-JP2003-CHARACTER-VISUAL-CATALOG-R1.json",
+      "anchor_git_blob": "914dd1802cff33b9a61410f63f1d1ad69fe845b4",
+      "remaining_gap": "不能转作TW1可选人物表、姓名或原生body/face ID。",
+      "original_source_complete": false
+    },
+    {
+      "id": "character_sprite_model",
+      "order": 4,
+      "baseline_status": "PARTIAL_RESOURCE",
+      "anchor": "research/recovered/STONEAGE-TW10-ANIMATION-SELECTOR-R101.json",
+      "anchor_git_blob": "4623037e3ef703ae7bf81acc9a5ba35eaa587517",
+      "remaining_gap": "人物/宠物身份→对象键→原SPR尚缺；合成执行不证完整绘制。",
+      "original_source_complete": false
+    },
+    {
+      "id": "world_map",
+      "order": 5,
+      "baseline_status": "PARTIAL_STRUCTURE",
+      "anchor": "research/recovered/STONEAGE-CN2001-WORLD-ROUTES-RECORD-SOURCE-R96.json",
+      "anchor_git_blob": "e2bc3c5e1dc3eae4ee61b9c6ab85de7cb9f82538",
+      "remaining_gap": "原TW1地图DAT、场景实体、floor及端点仍未联接。",
+      "original_source_complete": false
+    },
+    {
+      "id": "npc_identity",
+      "order": 6,
+      "baseline_status": "OPEN_CONTENT",
+      "anchor": "research/recovered/STONEAGE-TW10-NPC-STATIC-RESOURCE-JOIN-R99.json",
+      "anchor_git_blob": "21d49800a1191f87a006aaa5af4a6f7975f91bf7",
+      "remaining_gap": "NPC名/出生位置/脚本→静态图身份仍缺。",
+      "original_source_complete": false
+    },
+    {
+      "id": "npc_dialog_ui",
+      "order": 7,
+      "baseline_status": "PARTIAL_STRUCTURE",
+      "anchor": "research/recovered/STONEAGE-CN2003-KATAN-NPC-VISUAL-SOURCE-R100.json",
+      "anchor_git_blob": "9069cbc0c880971c8ebb91ffd565f81c4caf5e8f",
+      "remaining_gap": "未知准确商业build，不证原TW1 WN布局、成功交宠或确认ACK。",
+      "original_source_complete": false
+    },
+    {
+      "id": "quest_content",
+      "order": 8,
+      "baseline_status": "OPEN_CONTENT",
+      "anchor": "research/recovered/STONEAGE-CN-KATAN-QUEST-SOURCE-CONFLICTS-R98.json",
+      "anchor_git_blob": "e92c249a74582ba6f5af5b41f49540ec9d1cd1d2",
+      "remaining_gap": "服务端任务脚本、戒指回补、保存标志与真实交易仍缺。",
+      "original_source_complete": false
+    },
+    {
+      "id": "pet_species",
+      "order": 9,
+      "baseline_status": "OPEN_SAME_BUILD_ROSTER",
+      "anchor": "research/recovered/STONEAGE-WAEI-CN20-NEW-PET-FINITE-CATALOG-R1.json",
+      "anchor_git_blob": "f950aa33af0b3ec8693b2867758faf006aee546b",
+      "remaining_gap": "228跨版网页位置不是原TW1物种分母；不按译名合种。",
+      "original_source_complete": false
+    },
+    {
+      "id": "pet_visual",
+      "order": 10,
+      "baseline_status": "PARTIAL_RESOURCE",
+      "anchor": "research/recovered/STONEAGE-CN-EARLY-PIG-CATALOG-IMAGE-IDENTITY-SOURCE-R97.json",
+      "anchor_git_blob": "d182d35eaf3d803c488fbf697e757deb75ccd193",
+      "remaining_gap": "不能按文件号/相同名补原物种、bitmap或SPR。",
+      "original_source_complete": false
+    },
+    {
+      "id": "pet_stats",
+      "order": 11,
+      "baseline_status": "PARTIAL_STRUCTURE",
+      "anchor": "research/recovered/STONEAGE-PET-ASSET-GROWTH-CATALOG-MATRIX-R1.json",
+      "anchor_git_blob": "8e447f7bf928f3d56cf8711ed22102e7e1ccaf38",
+      "remaining_gap": "同构建全物种初值/个体公式/MP/AI仍缺。",
+      "original_source_complete": false
+    },
+    {
+      "id": "pet_growth",
+      "order": 12,
+      "baseline_status": "PARTIAL_DESCENDANT",
+      "anchor": "research/recovered/STONEAGE-CN2003-PET-GROWTH-PLAYER-CLAIMS-SOURCE-R1.json",
+      "anchor_git_blob": "863a773feecaa1d129789e46b966078b9e6c7b3b",
+      "remaining_gap": "不能认证原1999/TW1系数、全物种成长与取整。",
+      "original_source_complete": false
+    },
+    {
+      "id": "pet_skills",
+      "order": 13,
+      "baseline_status": "PARTIAL_STRUCTURE",
+      "anchor": "research/recovered/STONEAGE-CN2004-PET-SKILL-TRAINER-SOURCE-R1.json",
+      "anchor_git_blob": "b6f42811c23cadc8b80fabb0a53b98a6aa9e8b2f",
+      "remaining_gap": "同版全技能名单、费用条件和服务端执行仍缺。",
+      "original_source_complete": false
+    },
+    {
+      "id": "pet_encounter",
+      "order": 14,
+      "baseline_status": "PARTIAL_DESCENDANT",
+      "anchor": "research/recovered/STONEAGE-CN20-PET-COMMISSION-HABITATS-CATALOG-R1.json",
+      "anchor_git_blob": "56545290e9c1412666b7a2001619c53c187aab6a",
+      "remaining_gap": "网页地点不是原服完整生成表或捕获概率。",
+      "original_source_complete": false
+    },
+    {
+      "id": "ride_mount",
+      "order": 15,
+      "baseline_status": "PARTIAL_DESCENDANT",
+      "anchor": "research/recovered/STONEAGE-CN40-RIDING-CERTIFICATE-MANOR-SOURCE-R1.json",
+      "anchor_git_blob": "bee8fae59158f38f1167fe3b10e4ddfd7206b166",
+      "remaining_gap": "早期全骑宠资格、人物动作绑定和真实事务仍缺。",
+      "original_source_complete": false
+    },
+    {
+      "id": "battle_ui_rules",
+      "order": 16,
+      "baseline_status": "PARTIAL_STRUCTURE",
+      "anchor": "research/recovered/STONEAGE-CN20-BATTLE-COMMANDS-DEFEAT-SOURCE-R1.json",
+      "anchor_git_blob": "85c428fe0b6ea44b00a850c0e3fc49ac1360630f",
+      "remaining_gap": "完整原生战斗画面、所有指令回合和技能动作联调仍缺。",
+      "original_source_complete": false
+    },
+    {
+      "id": "item_equipment_economy",
+      "order": 17,
+      "baseline_status": "PARTIAL_STRUCTURE",
+      "anchor": "research/recovered/STONEAGE-TW10-ITEM-STATIC-BITMAP-SOURCE-R1.json",
+      "anchor_git_blob": "1210b0f910c353d58a3d6a4c458dda38f48aba86",
+      "remaining_gap": "原全物品身份/商店库存/价格/合成表与事务仍缺。",
+      "original_source_complete": false
+    },
+    {
+      "id": "audio_fx",
+      "order": 18,
+      "baseline_status": "PARTIAL_RESOURCE",
+      "anchor": "research/recovered/STONEAGE-TW10-AUDIO-EVENT-GATE-R1.json",
+      "anchor_git_blob": "67cc3707d45b6f079432b1db29b043851571b518",
+      "remaining_gap": "不把音频块数当事件覆盖；真实场景声画联合执行仍缺。",
+      "original_source_complete": false
+    },
+    {
+      "id": "helper_versions",
+      "order": 19,
+      "baseline_status": "PARTIAL_CATALOG",
+      "anchor": "research/recovered/STONEAGE-EARLY-ASSISTANT-VERSIONS-R1.json",
+      "anchor_git_blob": "7a518dff830c6a0a62add101e43a2d34aeb528c9",
+      "remaining_gap": "开发者发布谱系、全版本首见及精确客户端兼容未证。",
+      "original_source_complete": false
+    },
+    {
+      "id": "helper_capabilities",
+      "order": 20,
+      "baseline_status": "PARTIAL_CATALOG",
+      "anchor": "research/recovered/STONEAGE-LEGACY-STA252-FEATURES-R1.json",
+      "anchor_git_blob": "080404f40578521e445772dee6cf606f5cf82731",
+      "remaining_gap": "全产品逐命令/改动覆盖未齐；未运行旧工具、未决定新作采用。",
+      "original_source_complete": false
+    },
+    {
+      "id": "reference_web",
+      "order": 21,
+      "baseline_status": "PARTIAL_DISCOVERY",
+      "anchor": "research/recovered/STONEAGE-HISTORICAL-SITE-NAVIGATION-CATALOG-R1.json",
+      "anchor_git_blob": "c66fae4ad41cc410199075fbb3ce5777f79d56fa",
+      "remaining_gap": "网站目录不等于正文/像素全部取得、同年代或授权可发行。",
+      "original_source_complete": false
+    },
+    {
+      "id": "future_player_wiki",
+      "order": 22,
+      "baseline_status": "DESIGN_PREP_ONLY",
+      "anchor": "research/recovered/STONEAGE-PREPRODUCTION-CONTENT-ARCHIVE-R1.json",
+      "anchor_git_blob": "2d5b3f081d5618287f431fbded943722a820c593",
+      "remaining_gap": "26条无collection先隔离，不自动迁移；生产站及公开内容仍GATED。",
+      "original_source_complete": false
+    }
+  ],
+  "interpretation": {
+    "research_rows_are_native_quests": false,
+    "new_historical_source_acquired": false,
+    "old_source_reports_rewritten": false,
+    "base_or_permanent_origin_verified_this_review": false,
+    "unresolved_means_missing_origin_proof_not_absent_from_original_game": true,
+    "repeatability_implies_permanence": false,
+    "permanent_event_reward_changes_event_origin": false,
+    "same_name_cross_version_merge_allowed": false,
+    "public_export_approved": false,
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b": "GATED",
+    "savedata_r79": "PAUSED_NON_BLOCKING",
+    "overall_restoration_percentage": null
+  },
+  "next": {
+    "task": "EARLY-BASE-QUEST-PROVENANCE-117",
+    "target": "One early adulthood-rite or four-cave quest release-baseline attribution, before unrelated later events",
+    "required_new_evidence": "Same-region dated official release/manual/update or authenticated same-build script; old guide alone insufficient",
+    "stop": "One source-qualified attribution or exact bounded acquisition gap; no inferred permanent/base promotion or helper expansion"
+  }
+}

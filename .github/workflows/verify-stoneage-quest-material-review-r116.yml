@@ -1,0 +1,35 @@
+name: Verify R116 frozen quest archive origins and material gaps
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-QUEST-MATERIAL-*-R116.json'
+      - 'tools/stoneage_quest_material_review_r116.py'
+      - 'tests/test_stoneage_quest_material_review_r116.py'
+      - 'docs/specs/STONEAGE-QUEST-MATERIAL-REVIEW-R116.md'
+      - '.github/workflows/verify-stoneage-quest-material-review-r116.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  material-review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest tests.test_stoneage_quest_material_review_r116 -v
+      - run: python -m tools.stoneage_quest_material_review_r116
+      - name: Preserve complete historical prefixes
+        run: |
+          python - <<'PY'
+          import subprocess
+          from pathlib import Path
+          baseline='1a5bb8d67ab6a4e7189968f53f007c41083a1f63'
+          subprocess.run(['git','fetch','--depth=1','origin',baseline],check=True)
+          for p in ('docs/CURRENT-STATE.md','docs/HISTORICAL-TIMELINE.md','docs/SOURCE-REGISTRY.md','docs/RESTORATION-ROADMAP-R2.md'):
+              before=subprocess.check_output(['git','show',baseline+':'+p])
+              assert Path(p).read_bytes().startswith(before),p
+          print('All four historical prefixes preserved byte-for-byte')
+          PY

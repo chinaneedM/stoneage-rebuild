@@ -18243,3 +18243,14 @@ R115正文与四份历史记录候选最终内容 commit `0d8f6491159adc193372f4
 新档四类：`BASE_GAME_QUEST`（有具体发售版来源）、`PERMANENT_VERSION_QUEST`（后来正式版永久新增）、`OPERATOR_EVENT_QUEST`（运营公司节庆/特殊期活动及明确标出的人工领奖活动）、`ORIGIN_UNRESOLVED`（证据不足待考）。R115 2003中秋、R110日本2004圣诞、R111日本2009十周年、R112大陆2001情人节GM人工领奖划入独立运营活动档，但旧原服部署/身份/有效日期仍按原文源边界；R112是人工活动不是已恢复NPC脚本任务。R114《富商的货物》和R113精灵王叙事任务暂列待考，**没有确证它们是发行本体任务、正式永久加入还是其他身份**，不能因标题/年代虚升。旧R110–R115六源原样保留且新overlay对六个Git blob SHA分别锁定，原R114/R115永久保管收据不改、原游戏任务实体新增数仍0；无任何任务被假提升为JSS1999/TW1.0首发本体。
 
 这次修改仅是资料库分类、决策与验收收束，**不构成**服务端原任务/画面/掉落/永久性新事实。当前最高原任务 `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-116` 继续，但以后所有任务研究必须先判本体/版本常驻/运营活动/待考，再进入各自目录；遇新的原始版本和运营公告可根据明确证据订正。Stage A 7 PARTIAL + 2 OPEN，Stage B/wiki GATED，savedata R79 PAUSED_NON_BLOCKING，整体完成百分比 null。历史完整前缀必须保留，候选/main验收结果以远端实际后验为准。
+
+
+## 2026-10-24 R116 — 任务资料四档检索覆盖与22域历史缺口复核
+
+从fresh远端main `1a5bb8d67ab6a4e7189968f53f007c41083a1f63` / tree `a9becaebf199329327f7bd1bb985de5e61fe787f` 重新启动；547分支、0开放PR、0进行中，同HEAD21次Actions实际全success；旧37642417333仍queued，不改历史。README/协议/CURRENT/决策/历史/来源/路线和22域原生Git均重新读取，CURRENT完整2584027B前缀保留。最高NEXT116早期台湾/JSS限定检索未取得可提升归属的新原件，不作全网缺失证明；JSS faqquest文件名实际为旧截图问题类，档案访问失败不计任务新源。按既定止点转有界材料复核。
+
+冻结该HEAD下research/recovered顶层924个已跟踪JSON的原字节、SHA256和Git blob，选择有record_id/entity_type且collection=quests或entity_type精确quest的记录。48文件/73次出现/49不同研究ID/24完全相同重复，**不是49原生任务或恢复率分母**。15条明确运营活动记录（含赛事领奖、协力奖励条件及活动遭遇上下文）从本体候选中分离；34条起源待考；本轮新证本体/永久均0，并不证明原游戏没有它们。无collection的日本2005未名母犬收集记录保留原样，不猜迁移。六组旧R110–R115源级覆层独立保留，不能与49个记录相加，亦不能将R112迁服/名片记录因同报告而归为情人节任务。
+
+产物 `docs/specs/STONEAGE-QUEST-MATERIAL-REVIEW-R116.md`、`research/recovered/STONEAGE-QUEST-MATERIAL-INPUTS-R116.json`、`STONEAGE-QUEST-MATERIAL-REVIEW-R116.json` 及语义重放工具/13正反例/专用CI。15条归属只依据既有有界文献；不新取原HTML/像素、不证原服部署、不改旧来源正文/旧保管收据。22域历史ID/状态/源锚和缺口全保留；元数据测试不是游戏执行。候选/main运行与发布须实际后验记录，不提前称绿。
+
+**最高NEXT `EARLY-BASE-QUEST-PROVENANCE-117`**：聚焦早期成人礼或四大洞窟其中一项的发行基线归属；优先同地区有日期原官方发行说明/手册/明确更新公告或同构建脚本，旧攻略只作存在时间线索。止于一项来源明确的本体/永久/活动/待考归属或确切有界取源缺口；不继续堆后期促销、helper或重复索引。Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79 PAUSED_NON_BLOCKING、总体复原百分比null。此前全历史前缀原样保留。
