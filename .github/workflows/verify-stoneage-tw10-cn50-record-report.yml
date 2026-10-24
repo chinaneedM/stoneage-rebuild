@@ -1,0 +1,26 @@
+name: Verify Taiwan1.0 and mainland5.0 real graphics record inheritance
+on:
+  push:
+    branches:
+      - agent/cn50-tw10-record-level-resource-diff-20261024
+    paths:
+      - tools/stoneage_tw10_cn50_record_report_verify.py
+      - tests/test_stoneage_tw10_cn50_record_report_verify.py
+      - research/recovered/STONEAGE-TW10-CN50-REAL-RECORD-DIFF-R1.json
+      - .github/workflows/verify-stoneage-tw10-cn50-record-report.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Full retained source pin and adversarial semantic replay
+        run: |
+          python3 -m unittest tests.test_stoneage_tw10_cn50_record_resource_diff tests.test_stoneage_tw10_cn50_resource_acquisition tests.test_stoneage_tw10_cn50_record_report_verify -v
+          python3 -m tools.stoneage_tw10_cn50_record_report_verify
