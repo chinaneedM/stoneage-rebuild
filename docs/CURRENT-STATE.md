@@ -18396,3 +18396,7 @@ NEXT仍客户端P1取新增可验证版本。既有六分卷STONEAGE20060616.exe
 成果详docs/specs/STONEAGE-TW10-CN50-STATIC-VISUAL-P2B-R1.md；source派生research/recovered/STONEAGE-TW10-CN50-STATIC-VISUAL-LINEAGE-P2B-R1.json及research/recovered/STONEAGE-TW10-CN50-DIRECT-STATIC-VISUAL-P2B-R1.json；工作分支agent/p2b-npc-visual-physical-lineage-20261024。Actions已实测成功，主线合并和同HEAD Actions必须后验。
 
 最高NEXT继续CLIENT-RESOURCE-ENTITY-BRIDGE-P2B / NAMED-SELECTOR-SOURCE：必须取到台湾初代sa_3.exe同build中可重复审查的真正bitmap/spr选择函数，或同版官方手册有具名画面ID的原证；至少一件具名角色/宠物/静态NPC的资源关系得到证实才晋级。若没有来源明确阻断，转其他具名官方客户端素材，不重复“101”纯数量报告或无限扩helper。四档任务DD-028独立，Stage A 7 PARTIAL + 2 OPEN，B/wiki GATED，R79 PAUSED_NON_BLOCKING，总进度percent=null；全部旧历史原样保留。
+
+### 2026-10-24 P2B 101静态资源工件独立ZIP保管补证
+
+初稿来源注册写“artifact12560353388 ZIP SHA尚未独立下载验算”是当时正确边界；现新增有时间的正向补证，保留原文不覆盖。新工作流40095855124/job已completed/success，从Actions API实际读取原run40095074458的12,035B ZIP，SHA256 d903a07de29932a98056eca39778887b648e9eea54ebcc80f2e705aa964c444d；解压仅一个direct-cn50-tw10-static-r1.json，76,838B，原JSON SHA256 a58bb6bf6e785a0dbb5d859cafa2790b56765fd32e97daae6c8148cb83336c3b，与研究Git blob23d1a0fb85ac7a83f92cdfb9757618e85e36f9a9内容逐字相同；已存research/recovered/STONEAGE-TW10-CN50-STATIC-VISUAL-P2B-CUSTODY-R1.json永久保管。原任务/宠物数据库与NPC名仍未认证，原程序/版权素材未入Git。主线后验CI需据实际状态单独复核。
