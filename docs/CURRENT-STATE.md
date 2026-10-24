@@ -18526,3 +18526,13 @@ bot完整派生commit d82113d7a9dcd53d43f2f4c3d9113d542c746f44/tree37246c14dd35d
 ### 2026-10-25 — ADRN129实际REAL全配对candidate/main实际终验
 内容main781dbc8ad1cd3b4f714ae0d71628e415531acb04/tree92e4a790ebf07b77114794f1c5c1c8f13eff35bc；候选11项、主线12项Actions全部实际completed/success。主线独立离线全行验收40141077425/job121012760529亦success，未重下原客户包；本包唯一原六卷取源仍source40140366886/job121010641458。原source三个metadata成员与独立下载ZIP76621759B/SHA8839d4bd38e5af92e46d732924fecaa8403272b5be51c23290ee6956764ddf14完整一致，全部永久Git pins与运行列表写STONEAGE-ADRN129-REAL-PUBLICATION-R1.json。
 确认patch389698/native416220物理记录通过有限结构资格，28重号后续出现全保留；source严格长度诊断原样，31native/27patch旧flag0冗余长度差由有日期overlay按既有ADRN-authoritative规则补证，非损坏、非所有压缩像素解码。12本地单元、13合同变异、6raw负例通过。不晋升具名宠物/NPC/任务、2005同构建、纯净官方TW8.5压盘或完整客户原件长存。下一包仍CLIENT-ORIGINAL-ARTIFACT-PRIVATE-CUSTODY-07，先查私人容量/单件与回读能力，禁止无实质保管依赖重复大包取源；Stage A7PARTIAL+2OPEN/B/wiki GATED/R79暂停/任务四档/percent=null不变。初收据PENDING原文保留，由本条后验补证；本发布收据提交自身Actions须随后实际观察。
+
+## 2026-10-25 — CLIENT-ORIGINAL-ARTIFACT-PRIVATE-CUSTODY-07 有限保管门槛与实际缺口
+
+从本轮fresh远端main `9dbc0c5a971d48805bb220330ec5850a923850b5` / tree `bebd37ab83a5c77baf1e74d5c0bbe313795de279` 重新核验协议、主线、Actions、原生CURRENT完整Git blob及路线/谱系/来源。前一ADR129真实REAL配对已验，最高NEXT为CLIENT-ORIGINAL-ARTIFACT-PRIVATE-CUSTODY-07。本轮未复用旧聊天SHA，不为重算摘要重下任一原客户端包。
+
+真实运行环境`/mnt/data`约有30GiB临时overlay余量，git ls-remote DNS失败；不能证明跨会话私有持久保管。GitHub Actions产物限期，公开Git禁止原版权二进制。无已连接、已验证容量/单件限制/权限/跨会话回读的私人长期存储服务，故原容器/原REAL私人原件保管 **BLOCKED_PRIVATE_STORAGE_NOT_PROVISIONED**，不是已完成。过去source工件/实取哈希、ADR129和REAL配对元数据及独立验收仍有效，不推已永久持有原包、不混淆2.5混合包与官方清洁版。不得再为仅重复哈希取1.145GiB TW8.5、361MiB mixed2.5、原4MiB ADRN补丁。
+
+交付 `docs/STONEAGE-PRIVATE-ORIGINAL-ARTIFACT-CUSTODY-GATE-R1.md`、`research/recovered/STONEAGE-PRIVATE-ARTIFACT-CUSTODY-PREFLIGHT-R1.json`、`tools/stoneage_private_archive_custody.py`、`tests/test_stoneage_private_archive_custody.py`及独立workflow；候选 `71d5d1b2c66f524f682b59e8ae68badbb8098d5b` 的独立Actions run40143101226/job121018758289已实际completed/success，合成样本多件分块SHA、错误摘要/对象大小/缺失来源/损坏回读等守卫有效，未取真实原商用文件，也非耐久服务实测。归档工具仅本地拷贝/即时完整回读；未来须先验证私有可持续目标、容量/单件/权限，再回读与跨会话证明后才可称长期保管。原件不得入公开仓。
+
+协议13有限止点已触达，CUSTODY-07转 `PAUSED_EXTERNAL_PRIVATE_STORAGE_DEPENDENCY`；下一个主动材料优先 `PET-SPECIES-SAME-BUILD-PRIMARY-MASTER-08`，寻找一项可鉴真的同构建官方宠物名称→资源ID/图像连接的原主表/官方源，或者登记精确缺源并轮换NPC/本体任务，不把416220 ADRN记录当物种，不将运营活动混入本体任务。若无新原字节，不无限扩低层helper。DD-028/029、Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、overall percent=null均保留。主线提交及主线Actions后验另据实际结果补证。
