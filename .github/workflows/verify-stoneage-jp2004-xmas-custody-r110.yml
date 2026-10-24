@@ -1,0 +1,20 @@
+name: Verify R110 permanent source boundary and Git blob custody
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-JP2004-XMAS-PARTY-COMBAT-ACCEPTANCE-R110.json'
+      - 'tools/stoneage_jp2004_xmas_custody_r110.py'
+      - 'tests/test_stoneage_jp2004_xmas_custody_r110.py'
+      - '.github/workflows/verify-stoneage-jp2004-xmas-custody-r110.yml'
+  workflow_dispatch:
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: Verify permanent nine source-derived Git blobs and bounded custody
+        run: |
+          python tools/stoneage_jp2004_xmas_custody_r110.py
+          python -m unittest discover -s tests -p test_stoneage_jp2004_xmas_custody_r110.py -v

@@ -1,0 +1,104 @@
+{
+  "schema": "stoneage.jp2004.xmas_party_custody.r110",
+  "recorded_on": "2026-10-24",
+  "evidence_class": "DERIVED_METADATA_AND_GITHUB_ACTIONS_CUSTODY_NO_HISTORICAL_SOURCE_BYTES",
+  "content_main_commit": "e2d272115c0aa6b27b87b44a22f6481f3dea699a",
+  "content_git_tree": "0abd564cc7fd47ac07fee77792bf4d9e92b00850",
+  "content_candidate_branch": "agent/jp2004-xmas-party-combat-r110-20261024",
+  "content_files_git_blob_sha": {
+    ".github/workflows/verify-stoneage-jp2004-xmas-r110.yml": "351d88069d068e98803cfe4a3f03b9f5ad33ede5",
+    "docs/CURRENT-STATE.md": "52ebf1b7447be49a5f9cd9705b72ac4b7b959f2d",
+    "docs/HISTORICAL-TIMELINE.md": "1c293af9f8aa43b65c24e5dd234a277f492a6356",
+    "docs/RESTORATION-ROADMAP-R2.md": "e6faa544e07468b10ce7b9a457915789235e055d",
+    "docs/SOURCE-REGISTRY.md": "91637151358411b49519077f8d0bb7fa72b4bf89",
+    "docs/specs/STONEAGE-JP2004-XMAS-PARTY-COMBAT-R110.md": "0e91012445f246597ce441fe6db9f8d9d302c8ee",
+    "research/recovered/STONEAGE-JP2004-XMAS-PARTY-COMBAT-R110.json": "eb22c2c7b918088e386f5fea90104549c81a6183",
+    "tests/test_stoneage_jp2004_xmas_party_r110.py": "e8adfc2399609c1039a7eaea15d8a71601f7c748",
+    "tools/stoneage_jp2004_xmas_party_r110.py": "85f8722ade91d08ced0f983a100906aa438b372b"
+  },
+  "content_files_count": 9,
+  "candidate_latest_commit_suite": {
+    "branch": "agent/jp2004-xmas-party-combat-r110-20261024",
+    "head_sha": "e2d272115c0aa6b27b87b44a22f6481f3dea699a",
+    "run_ids": [
+      40050097867,
+      40050098085,
+      40050097924,
+      40050098010,
+      40050097979,
+      40050098063,
+      40050097985,
+      40050098048,
+      40050098033,
+      40050098055
+    ],
+    "run_count": 10,
+    "all_status": "completed",
+    "all_conclusion": "success"
+  },
+  "main_content_suite": {
+    "branch": "main",
+    "head_sha": "e2d272115c0aa6b27b87b44a22f6481f3dea699a",
+    "run_ids": [
+      40050164106,
+      40050164119,
+      40050164006,
+      40050163982,
+      40050163956,
+      40050163822,
+      40050164095,
+      40050164128,
+      40050164117,
+      40050163757,
+      40050164069,
+      40050163703
+    ],
+    "run_count": 12,
+    "all_status": "completed",
+    "all_conclusion": "success"
+  },
+  "bounded_source_guard": {
+    "candidate_source_run_id": 40049979655,
+    "candidate_source_job_id": 120740292094,
+    "candidate_source_head": "051186d162d40eb5fd42710a9f6b7ac352bba300",
+    "main_source_run_id": 40050164006,
+    "main_source_job_id": 120740842371,
+    "main_source_head": "e2d272115c0aa6b27b87b44a22f6481f3dea699a",
+    "observed_test_count": 21,
+    "code_status": "COMPLETED_SUCCESS_METADATA_ONLY"
+  },
+  "source_provenance": {
+    "first_media_url": "https://www.4gamer.net/news/history/2004.12/20041215210314detail.html",
+    "second_media_url": "https://game.watch.impress.co.jp/docs/20041224/on1224.htm",
+    "original_operator_page": "http://stoneage.to/event/Xmas04.html",
+    "operator_page_retrieved": false,
+    "original_html_raw_sha256": null,
+    "original_raw_bytes": null,
+    "historical_capture_sha256": null,
+    "original_image_recovered": false,
+    "source_replay_performed": false,
+    "original_server_activity_verified": false
+  },
+  "artifact_custody": {
+    "raw_source_artifact_id": null,
+    "source_artifact_zip_sha256": null,
+    "source_raw_json_sha256": null,
+    "comment": "No original source HTML/JPEG or source-replay artifact was obtained. Original media pages were read through public text rendering; only derived metadata and Git-blobs are retained. Do not invent ZIP digests."
+  },
+  "history_integrity": {
+    "four_existing_long_files_were_appended_not_replaced": true,
+    "source_main_commit_before_work": "e928f525f6c6f7a5b0aa4e0bd706405ae8d0f948",
+    "non_force_merge": true,
+    "compare_ahead": 3,
+    "compare_behind": 0,
+    "changed_paths": 9,
+    "code_pr_scope": "source_metadata_only"
+  },
+  "historical_status": {
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b_and_wiki": "GATED",
+    "savedata_r79": "PAUSED_NON_BLOCKING",
+    "restoration_percent": null
+  },
+  "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-111"
+}
