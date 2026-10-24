@@ -18283,3 +18283,12 @@ R116保管commit c6a07dc92ad3dc2f97156044f17c59e0915fb089/tree2c6ddc4348d99cda3c
 
 
 Integration preflight also preserved the c6a07dc92ad3dc2f97156044f17c59e0915fb089 R116 material-review custody receipt and its complete CURRENT prefix. Both packages remain distinct; EARLY-BASE-QUEST-PROVENANCE-117 controls the next source task.
+
+
+## 2026-10-24 R116 JSS早期原件补充：主线实际验收与永久保管
+
+新源候选3a14e943a2ad72306e7fad4245644b73818fd4a0实跑11项Actions；整合候选5576fe0ae6fb3b3b2ed45ffddb874db28695df2a实跑12项（包含原件重放与冻结任务资料复核）。保留最新b5c7352ceb2a42125724b6a33a8bdcae877c9a83全部历史及R117未认证线索后，最终候选e4f8f064678a7ef6bda59f03bf44738dd9da8a5b的10项文档变动相关Actions全部success；八个源重放文件/依赖与5576逐Git blob完全相同，未无故重复源工作流。按expected_sha非强制快进main，同HEAD/tree0f36a7a181d430a205d4469bfdd56846d058d906的12项main Actions全部completed/success。main专用run40062697253/job120779401402独立三官网原字节取源、44单元、派生JSON逐字节比较和四大历史前缀全部通过；额外包含冻结复核的57本地单元通过。
+
+永久收据research/recovered/STONEAGE-JSS-EARLY-QUEST-ORIGINS-CUSTODY-R116.json固定9个内容Git blobs、最新b5c四历史原前缀、3页源SHA、3次派生工件ZIP/JSON摘要、实际运行与job。main artifact12547793357 ZIP SHA256 8d69a40a2cbf5b5259369fe660a5ea534dc36cabed0c30141ff2be800814b6cc，raw JSON SHA256 e66a477e6096babce940abaa62d33977c1a5912f547e320db07e62c4a3f4b894，与永久派生Git blob5ddcee9183702d5e4856d0807dc29a23beef435e逐字节一致。独立40段regex/entity及11原文语义变异只声明本地审计，不冒称CI重跑。原HTML/图/商业程序不入库。
+
+本补充的两项合作运营活动单列，四项早期具名内容待考，初代/永久任务无新晋级；同轮49研究ID审查及其保管收据完整保留，不能与本包6合同相加成原任务数。最高NEXT EARLY-BASE-QUEST-PROVENANCE-117：成人礼或四大洞窟一项的早期发行基线归属；不重复索引/活动helper。Stage A7 PARTIAL+2 OPEN，Stage B/wiki GATED，R79暂停，整体复原百分比null。
