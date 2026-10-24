@@ -2433,3 +2433,9 @@ R114内容及四份历史追加已在main commit aac31addabbaf8ac23bd7df8488c867
 九文件Git Blob精确固定、CURRENT/HISTORICAL/SOURCE/ROADMAP四大历史前缀在原main与R114内容main两版Git对象逐字节保留，已由永久收据 research/recovered/STONEAGE-CN2003-MERCHANT-ELEPHANT-ACCEPTANCE-R114.json 和独立校验器/13项正反例保管。保管candidate commit fdd06159490a529f9c9974d75ab7af899f704d75/tree 1f6ea622169b28b6ffe674347546fa321ea15fc5，candidate run40056244411/job120759750884 SUCCESS；对同commit非强制快进main后，main run40056280048/job120759857346 SUCCESS，实际独立校验旧历史全部前缀和九文件精确SHA。验收比的是派生Git blobs、真实CI结果，不是原2003 HTML/截图或原商业服任务执行；无原件ZIP/HTML/图/SHA可供声称。相关R114一手原始构建和NPC、宠物、物品、地图ID及交易/忠诚/存档日志仍OPEN。
 
 最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-115：换另早期地域具名人物/宠物原像素或原运营实源，欠缺则有限22域证据缺口审查；R79 PAUSED_NON_BLOCKING、Stage A 7 PARTIAL+2 OPEN、Stage B/wiki GATED、整体复原百分比null。此前R1–R114历史前缀均保留。
+
+
+
+### 2026-10-24 R115 — 跨剧情／宠物／道具／好友关系的节令任务材料补档
+现行最高NEXT115按材料证据质量，取得17173标2003-09-11并署“华义”的同期页面文字，可为大陆节日世界线补NPC故事文本与四类奖励目的：后羿—嫦娥月饼/下界月兔捉迷藏/月宫许可；变身镜子lv1、宠物技能罐头、爱相随戒指10次、14~16级精灵装备。但**这不是可靠证明原服NPCID/剧情事件flag、任务重入、好友传送或概率结算**。网页保留“**”遮蔽词，不拼猜世界设定，华义作者栏未获得原运营站独立鉴定，相关推荐路径不可用，不能推原2003服务器已开放或6.0客户端确切build。
+分版R115资料/源码CI候选content 47c25d3b72c2df895ffd7bf53529b71297979b33，run40060300925 completed/success只测试归档内容契约；无原HTML、旧图或商业文件入库。若无新的直接原版字节/同构建画面，停止围绕一个媒体页面扩技术helper。下一包 `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-116` 切更早台湾/JSS NPC和宠物形象的实源或22域证据缺口盘点，R79仍PAUSED_NON_BLOCKING、Stage A7 PARTIAL+2 OPEN、Stage B/wiki GATED、整体完成率null；需候选/main后验才视R115完整发布。

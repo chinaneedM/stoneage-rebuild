@@ -8650,3 +8650,10 @@ S1 17173现存2004-07-02《石器时代2.5版 精灵王传说》详解 https://n
 S1所述：成人礼是条件，55级以上与福尔德/达那羽毛均为建议；沙姆岛奇努伊村「盖落比」(原文「54。76」)给「富商的货物」，去吉鲁岛「5X级小象区」抓LV60「巨大玛恩摩」，正文称抓到后货物消失，回报段写「盖洛比」并得「宠物忠诚肉片」（忠诚度+10），称可重做。HP低于100比较好抓为玩家建议，不是捕获概率原公式。两种NPC写法并存，原ID未知不能默合；原HTML字节/原始九图像素、原NPC/地图/宠物/物品主表和捕获/物品消耗/奖励/保存事务均OPEN；不反填JSS1999/TW1.0，不把文字记录算原游戏实体。
 成果 docs/specs/STONEAGE-CN2003-MERCHANT-ELEPHANT-R114.md、research/recovered/STONEAGE-CN2003-MERCHANT-ELEPHANT-R114.json、校验器、28项测试与CI。候选内容commit 0f468798056679a39324975bb6578c3f27e512cb/tree c600685e62bbb6495c5e1751a5eeedd1eed407cd，专用run40055929518 completed/success，仅证明元数据边界测试，非当年HTML重放或原服任务执行。版权所有HTML/图/商业代码不入Git。
 最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-115：轮换1999–2003另一地区真正同版具名NPC/宠物视觉原件；否则有限复核22域缺口，不扩大本任务helper。Stage A7 PARTIAL+2 OPEN，B/wiki GATED，R79暂停，整体恢复百分比null。原历史前缀全部保留。
+
+
+
+## 2026-10-24 R115 — 2003年大陆17173媒体所载「华义」署名中秋任务
+- SRC-CN-2003-17173-MIDAUTUMN-01：<https://news.17173.com/z/stoneage/content/2003-9-11/n631_547722.html>，当前页面显示2003-09-11「任务攻略:石器时代中秋任务」及「作者：华义」，正文列后羿/嫦娥/月兔的月饼—柚子—月宫情节、随机奖品四类及可反复描述。证据身份**同期媒体归档中的署名宣称**，不可未验便写成已取2003原运营站文章。当前只取得网页可检文本，没有2003源字节与SHA256、独立署名鉴定、精确CN商业build、原像素、原地图/NPC/物品/宠物/技能ID或原服务器结算实证，全部null。
+- 同页相关推荐《石器中秋任务开放及奖品追加》链接经归档结构改写后不可达，现有路径不是原稿字节或第二独立见证，不补9月11日服务器实际部署/6.0准确版本号。正文屏蔽「月兔和**」「得到**许可」不可猜；“随机得到”不推出均匀概率或必然互斥；“宠物技能罐头”与两个技能名称不推出一罐同时掌握两技；“爱相随”10次仅报道声称，不是实服持久化。
+- 源级别/缺证与负向锁定见 `docs/specs/STONEAGE-CN2003-MIDAUTUMN-R115.md` 及 `research/recovered/STONEAGE-CN2003-MIDAUTUMN-R115.json`；候选run40060300925的metadata正反验收 success，非HTTP byte-exact、原商服事务或授权图文保管。原HTML/图片/商业资产不入库；JSS1999/TW1.0、台湾2002狼人来源必须分版。Stage A 7 PARTIAL+2 OPEN，Stage B/wiki GATED，R79暂停，整体百分比null。
