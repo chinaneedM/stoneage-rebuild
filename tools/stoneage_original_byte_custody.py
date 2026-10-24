@@ -72,6 +72,19 @@ def validate(root=ROOT):
         old = subprocess.check_output(['git', 'show', receipt['base_main'] + ':' + path], cwd=root)
         require(git_blob(old) == pin['git_blob'] and len(old) == pin['bytes'], 'old prefix pin: ' + path)
         require((root / path).read_bytes().startswith(old), 'historical prefix lost: ' + path)
+    publication = root / 'research/recovered/STONEAGE-ORIGINAL-BYTE-PUBLICATION-R1.json'
+    if publication.exists():
+        pub = json.loads(publication.read_bytes())
+        main_raw = (root / pub['main_report']['path']).read_bytes()
+        require(hashlib.sha256(main_raw).hexdigest() == pub['main_report']['sha256'] and
+                git_blob(main_raw) == pub['main_report']['git_blob'], 'main artifact bytes')
+        main_report = json.loads(main_raw)
+        require(main_report['github_run_id'] == '40086814069' and
+                main_report['github_head_sha'] == '2c9d18ece78b1671c6024dc640b0f2f7fd1d9a88', 'main source identity')
+        strip = lambda r: {k: v for k, v in r.items() if k not in ('github_run_id', 'github_head_sha')}
+        require(strip(main_report) == strip(json.loads(raw)), 'independent source-run mismatch')
+        require(len(pub['completed_runs']) == 26 and all(r['status'] == 'completed' and
+                r['conclusion'] == 'success' for r in pub['completed_runs']), 'publication gates')
     return {'status': 'PASS', 'scope': 'durable derived custody; original-byte execution belongs to source run 40067698285'}
 
 
