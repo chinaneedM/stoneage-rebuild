@@ -53,8 +53,15 @@ def scan(raw):
                     "instruction":ins.mnemonic+" "+ins.op_str,
                     "nearby":[{"rva":x.address-0x400000,"instruction":x.mnemonic+" "+x.op_str} for x in seq[max(0,i-2):i+3]]})
     need(sum(s["decoded"] for s in sections)>1000,"executable code not decoded")
-    need(any(h["displacement"]==0x124 and 0x3c380<=h["rva"]<0x3c5b8 for h in hits),"known original selector anchor absent")
-    return {"sections":sections,"candidate_references":hits,"reference_count":len(hits),"candidate_direct_writes_0x124":sum(h["displacement"]==0x124 and h["operand_write"] for h in hits)}
+    # PE-wide linear decoding may lose alignment across inline data. Anchor
+    # the already authenticated original function independently at its entry.
+    anchored=list(md.disasm(raw[0x3c380:0x3c5b8],0x400000+0x3c380))
+    anchored_fields=[{"rva":i.address-0x400000,"displacement":o.mem.disp,"operand_write":bool(o.access & CS_AC_WRITE)}
+        for i in anchored for o in i.operands if o.type==X86_OP_MEM and o.mem.disp in (0x124,0x80)]
+    need(any(h["displacement"]==0x124 for h in anchored_fields),"authenticated R101 function lacks original graphic-field instruction")
+    return {"sections":sections,"candidate_references":hits,"reference_count":len(hits),
+        "anchored_selector_field_references":anchored_fields,
+        "candidate_direct_writes_0x124":sum(h["displacement"]==0x124 and h["operand_write"] for h in hits)}
 def inspect(raw):
     joined=context(); native=scan(raw)
     return {"schema":"stoneage.tw10.graphic-upstream.p2b.r1","exe_sha256":EXE,"method":"ORIGINAL_X86_DISASSEMBLY_NO_EXECUTION",
