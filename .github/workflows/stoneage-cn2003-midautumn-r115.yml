@@ -1,0 +1,25 @@
+name: Validate R115 CN2003 Mid-Autumn narrative and reward evidence boundary
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-CN2003-MIDAUTUMN-R115.json'
+      - 'tools/stoneage_cn2003_midautumn_r115.py'
+      - 'tests/test_stoneage_cn2003_midautumn_r115.py'
+      - '.github/workflows/stoneage-cn2003-midautumn-r115.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-CN2003-MIDAUTUMN-R115.json'
+      - 'tools/stoneage_cn2003_midautumn_r115.py'
+      - 'tests/test_stoneage_cn2003_midautumn_r115.py'
+      - '.github/workflows/stoneage-cn2003-midautumn-r115.yml'
+  workflow_dispatch:
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python tools/stoneage_cn2003_midautumn_r115.py
+      - run: python tests/test_stoneage_cn2003_midautumn_r115.py

@@ -1,0 +1,149 @@
+{
+  "schema": "stoneage.cn2003.midautumn_quest_notice.r115",
+  "task": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-115",
+  "date": "2026-10-24",
+  "baseline": {
+    "main_head": "58387170b956205497ce959b3881a9ff50678e78",
+    "tree": "bc35981176d66c407d4b0fa18643c5a2202c2317"
+  },
+  "content_goal": "CONTEMPORANEOUS_PUBLISHER_BYLINE_MID_AUTUMN_STORY_AND_REWARD_CATALOG_ONLY",
+  "source": {
+    "url": "https://news.17173.com/z/stoneage/content/2003-9-11/n631_547722.html",
+    "title": "任务攻略:石器时代中秋任务",
+    "page_date": "2003-09-11",
+    "page_byline": "华义",
+    "authority": "CONTEMPORANEOUS_MEDIA_ARCHIVE_WITH_PUBLISHER_BYLINE_NOT_AUTHENTICATED_ORIGINAL_OPERATOR_BYTES",
+    "currently_readable_web_text": true,
+    "original_2003_operator_site_html": null,
+    "original_2003_article_capture_html_sha256": null,
+    "current_http_raw_html_bytes": null,
+    "current_http_raw_html_sha256": null,
+    "original_game_client_build": null,
+    "original_server_build": null,
+    "current_page_2009_style_ad_or_related_link_content_not_2003_authoritative": true,
+    "byline_independently_authenticated": false,
+    "linked_related_article": {
+      "label": "石器中秋任务开放及奖品追加",
+      "relative_link_malformed_by_media_rewrite": true,
+      "corrected_historical_content_verified": false,
+      "independent_source_count_increment": 0
+    }
+  },
+  "edition": {
+    "region": "CN",
+    "era": "2003_MEDIA_DATE",
+    "exact_official_patch_version": null,
+    "claimed_game_server_deployment_verified": false,
+    "jss1999_or_tw10_same_version_proven": false,
+    "taiwan2002_werewolf_or_jp2004_christmas_identity_join": false
+  },
+  "narrative": {
+    "participants_as_text": [
+      "后羿",
+      "嫦娥",
+      "月兔"
+    ],
+    "original_server_npc_ids": null,
+    "original_dialogue_and_quest_script": null,
+    "in_world_year": null,
+    "steps_as_reported": [
+      {
+        "step": 1,
+        "claim": "后羿想把月饼送予嫦娥",
+        "runtime_trigger": null
+      },
+      {
+        "step": 2,
+        "claim": "柚子来自下界月兔，需玩捉迷藏才取得",
+        "quest_condition_id": null
+      },
+      {
+        "step": 3,
+        "claim": "月宫嫦娥需要文中被脱敏为**的许可与带路",
+        "permit_name": null,
+        "warp_map_id": null
+      },
+      {
+        "step": 4,
+        "claim": "传递后羿嫦娥心意并可领取未定随机奖",
+        "server_reward_transaction": null
+      }
+    ],
+    "unknown_double_asterisk_terms_in_2003_archive": [
+      "月兔和**",
+      "得到**许可"
+    ],
+    "redacted_terms_restored": false,
+    "repeatability": "PAGE_CLAIMS_CAN_REPEAT_NOT_VERIFIED_RUNTIME",
+    "actual_quest_replay_verified": false
+  },
+  "rewards": {
+    "distribution_label": "随机得到",
+    "random_probabilities": null,
+    "exclusive_one_reward_across_all_categories_proven": false,
+    "entries": [
+      {
+        "label": "变身镜子lv1",
+        "stated_effect": "变身成自己的宠物一分钟",
+        "item_master_id": null,
+        "actual_runtime_duration_verified": false
+      },
+      {
+        "label": "宠物技能罐头",
+        "skills_as_reported": [
+          "旅途伙伴2",
+          "狂乱暴走"
+        ],
+        "one_can_teaches_both_proven": false,
+        "item_master_id": null,
+        "skill_runtime_verified": false
+      },
+      {
+        "label": "爱相随戒指",
+        "stated_effect": "可到另一半身边，可任意设定好友",
+        "stated_uses": 10,
+        "teleport_target_formula": null,
+        "item_master_id": null,
+        "actual_server_uses_verified": false
+      },
+      {
+        "label": "14~16级精灵武器装备中的一个",
+        "level_range": [
+          14,
+          16
+        ],
+        "precise_item_list": null,
+        "random_draw_range_exactness_verified": false,
+        "item_master_id": null
+      }
+    ],
+    "original_server_item_and_pet_master_verified": false
+  },
+  "classification": {
+    "world_story": "LATER_CN_EVENT_NARRATIVE_NOT_EARLY_UNIVERSAL_CANON",
+    "documented_ui": "TEXT_DESCRIPTION_ONLY",
+    "images_in_task_article": "NO_SOURCE_VERIFIED_NPC_OR_MAP_SCREENSHOT",
+    "new_original_game_entity_identifiers": 0,
+    "research_archival_claims_only": true,
+    "version_source_boundary_preserved": true
+  },
+  "reopen_requirements": [
+    "original 2003 credited publisher/website HTML with independent provenance and byte hash",
+    "contemporaneous game quest images labelled to same build and original script/dialogue",
+    "same version NPC/map/item/skill master and reward formula",
+    "server execution trace with random prize and repeatability behavior"
+  ],
+  "hard_gates": {
+    "original_1999_or_tw10_quest_identity": false,
+    "item_or_npc_original_game_ids_populated": false,
+    "runtime_executed": false,
+    "server_rewards_redeemed": false,
+    "source_html_replayed_byte_exact": false,
+    "copyright_proprietary_html_or_images_committed": false,
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b_and_wiki": "GATED",
+    "savedata_r79": "PAUSED_NON_BLOCKING",
+    "overall_completion_percent": null,
+    "highest_next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-116"
+  }
+}
