@@ -18177,3 +18177,16 @@ S1 4Gamer 2004-12-15 21:03「石器時代MMORPG『ストーンエイジ』の年
 新建6条分版研究记录、规范 `docs/specs/STONEAGE-JP2009-MYSTERY-DUNGEON-R111.md`、永久派生 `research/recovered/STONEAGE-JP2009-MYSTERY-DUNGEON-R111.json`、仅metadata校验器/22正反例/独立CI。候选 `agent/jp2009-mystery-dungeon-r111-20261024` 的内容commit `5ee78dc02cac14b407ce099f54ccdc4a8fc6356e` / tree `0afc879b2f3aaa7bdad0106d326ffaa1fce9a56a`，专用run40051427341在此commit已实际completed/success；其它候选/main验收仍须随后真实后验，不提前报绿。6记录非6个已运行原服实体，原HTML/JPEG/程序不入Git。
 
 有限止点1篇真实运营公告转录＋1实际打开媒体缩略图，重开需2009原运营快照、原UI/对话截图认证、同build地图DAT、题库/服务端奖励真实结果；不能因后续促销复制不实物主表。**最高NEXT `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-112`** 转更早年代/不同区域的一手具名NPC/实际同版可关联场景，优先原文可重放，不连续扩猜谜/报酬。Stage A九族7 PARTIAL+2 OPEN、Stage B/wiki GATED、TW1 NPC+地图原服OPEN、savedata R79 PAUSED_NON_BLOCKING，总恢复百分比null。
+
+
+## 2026-10-24 R112 — 大陆2001社交现场：GM聊天室领奖与迁服好友名片风险（限定后世转载）
+
+新核远端main `de4b4b7a37486d34b8c84da18e893f0bd9550750` / tree `884f9e3524085cba943063852e5cbec65668b444`。主线最新R111永久保管、专用candidate/main Actions已成功；启动README、协议、CURRENT原生blob、DESIGN、HISTORICAL、SOURCE、R2与22域portfolio，0开放PR/0运行中。CURRENT新读原blob `ea98fd0b4ea031cc69a3a32cb68e108651395bef` 非空，历史前缀全部保留。最高NEXT112轮换2001中国运营期社交用户行为，不扩R111日本2009迷宫。
+
+来源 `https://www.shiqi.me/pt_25.htm` 是2016-02-12第三方转载并标称其内含北京华义2001-02-06/02-14情人节公告和02-17服务器迁移公告。**只有现网页可读文本**，2001官网原HTML、同刻捕获、原始摘要、运营GM日志、图像与实际上线状态一概未知；不把转载标成已取第一方原件。此页提示02-14公告六组服务器各十个奖名单、四奖档（玉之骨、黑玉、深翠、绿玉/青玉/蓝骨/绿骨纪念组）、10:00至20:00六聊天室依序水星/优拉纳/天府/心宿/北极星/织女，中奖者到该聊天室与GM换名片并经身份核验方领奖；这是一项有界的人工服务文献流程，非自动NPC脚本或原道具ID/已发奖记录。刻意不归档玩家账号/昵称。
+
+02-17预告将世纪互联1按原文列示等级带移往世纪互联7，选中者报告获1000石币补助，**部分好友名片可能因分服而消失**。仅保留具体列示1–10、16–20…56–60及余下11–15…51–55，不能把“依此类推”升级为所有等级准确迁移映射；无02-27执行/补偿到账/名片存储格式证据，不解锁R79保存研究。2001大陆GM活动不当TW1/JSS1999原貌，不与2009「レテ」拼接。2016转载页只作低于一手的B/C候选档案材料，非法推证原值一律null。
+
+交付 `research/recovered/STONEAGE-CN2001-EARLY-SOCIAL-R112.json`、`docs/specs/STONEAGE-CN2001-EARLY-SOCIAL-R112.md`、研究元数据校验器/17单元正反例/专用CI，候选内容commit `3722cb0535484673fbc6f9bee58e1abe0e2c5b6f`；实际Actions及主线发布必须后验核验，未提前报通过。原HTML、图像、玩家名单、商业程序不入Git。新5条来源目录不是5个已恢复原客户端NPC或服务器对象。
+
+**最高NEXT `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-113`** 继续优先JSS1999/TW1或2001–2003原运营网页/当时实体截图的具名NPC/地图/宠物真实性，若仅后世镜像不作层层拆解。Stage A九族7 PARTIAL＋2 OPEN；Stage B/百科GATED；R79 PAUSED_NON_BLOCKING；总体恢复百分比null，历史缺口未填。
