@@ -8731,3 +8731,14 @@ JSS R116两实际工件12547837667/12547793357 ZIP摘要分别394c0baddfc1c94083
 S层原程序身份沿原台湾1.0零售盘 sa_3.exe SHA256 cdab9ea049a98bbc96ce93eeaa8b63c688f0c0f0ad8b3183e79d75e47621441a；2026-10-24新source run40099299814/job120887951431 completed/success，源分支commit c333f6792fcd0720fa102f78c2fb9493220cd5f9，原exe重新真实取得但只作静态字节分析。Source ZIP artifact12562416023 2419B SHA256 aca92b0b8ee2cdf663ab65b4a1838c224cf99653e07ca73aea03c4d2b8473853，实际独立下载；派生唯一JSON18564B SHA256 9f6170001e1696b0b24be6430c71490a932ebee4aa190b7562ebe4c7b10d3dc4。独立派生收据run40099776027/job120889354297 completed/success。两份永久规格/docs/specs/STONEAGE-TW10-WRITER-IDENTITY-P2B-R1.md和docs/specs/STONEAGE-TW10-WRITER-SOURCE-CLOSURE-P2B-R1.md、简约机读研究research/recovered/STONEAGE-TW10-WRITER-SOURCE-CLOSURE-P2B-R1.json。
 
 **可证事实限于**10处位移0x124写入源原指令哈希、最近局部寄存器赋值分类7栈/2其它内存/1算术以及局部汇编语法。临近寄存器赋值不是全路径的数据流证明，不是同一对象、同版具名宠物/NPC、原服master、真实执行、世界地图坐标或成长规则。完整18KB派生报告在30天临时工件而非永久Git；商品程序/美术不入库。未来只有认证同build原始实体表或确证原动画图号到官方名字图注，才能提升身份。目前P2B通用写入调查PAUSED，优先官方具名原物料鉴定与实体连接。
+
+
+## 2026-10-25 — 原客户端地图载荷：42个真实DAT结构、稀疏值限制与原盘取源止点
+
+从fresh远端main `92b605e4a0d612a7d3a7633dab1137c800d2d856` / tree `dd0fdbe998ac697117cd9a788d92519079f42b4b` 启动；568分支、0开放PR/运行中，18项同HEAD completed/success；八启动文件全文原生Git字节核验，CURRENT完整2637603B旧前缀及另三历史文件完整保留，未把接口空响应当空档。最高CLIENT-ORIGINAL-PHYSICAL-CARRIER-RECOVERY-03有限检索JSS原盘、GameTime附盘和Inium公共原包，未取得新可鉴真下载URL/游戏载荷；既有YES24目录仍非可取镜像、无新原HTML摘要，不作全网灭失证明、不联系持有人或购买实体。按既定止点转可实际取得地图载荷。
+
+source run40131518031/job120984031027真实completed/success，从六卷重新实取1145465184B既有TW8.5保存安装器、静态解MSI与557文件；不是新发现版本，未执行原程序。42数字DAT全部逐SHA与旧MSI清单一致，共14445606B，42/42精确符合8字节宽高+三层LE uint16；21种尺寸、累计2407545格，各层非零120250/24569/134868。map/200.dat虽800×1200，第一层非零仅3581；61000/61100第二层全零。稀疏/局部缓存仅HYPOTHESIS，零值不自动当未探索、不可走或缺失比例，不能称42张完整世界图。三层只称ordinal，不冒认本build原生tile/parts/event执行；文件数字不强配具名地名/NPC/任务/传送。三件2B BGM辅助DAT排除。旧mixed2.5同路径34异/7缺/1同仅保留已有关系，不当本轮新地图语义。
+
+独立下载artifact12575356288 ZIP86498B/SHA256 b1254d6db8e581bd69db093455ce587c9d40ccb091885c05cda5c06a009be450与API相同，恰两JSON；map结构149924B/SHA aacac89c451305c59adf38cfc6c14ba8a2efb88705607206aee7f63a8e14ead5完整派生永久Git。acquisition385776B完整manifest仅30天临时工件，永久收据保存其SHA，未虚报完整原包持久仓。工具4项+相邻共22项本地通过，另档案守卫及九类绕过digest语义反例验证；候选归档/main自身Actions须据后验记录。原版权网格/图/程序不入Git。
+
+交付docs/specs/STONEAGE-TW85-MAP-PAYLOAD-STRUCTURE-R1.md、research/recovered/STONEAGE-TW85-MAP-PAYLOAD-STRUCTURE-R1.json及CUSTODY-R1.json。最高NEXT **CLIENT-MAP-CROSS-VERSION-PLANE-DIFF-04**：真正实取mixed2.5对照35同路径，分第一/二/三层差异，区分几何候选与其它层变化，停止于有限实质内容对照或精确取源缺口。禁止同名补地名或混合社区源冒认TW1/JSS原服；JSS/韩国原盘仅新可取字节/精确清单摘要触发重开，不重扫旧四死口/ISBN/十写点。DD-028四任务档、Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、总复原百分比null均保留。

@@ -2542,3 +2542,14 @@ fresh主线main `0e450712b23d61ce54bc9e7fa230bef3df186aa1` 严格源锚与101原
 ## 2026-10-24 — 原始官方客户载体接续：从历史URL转有界实体镜像
 
 根据远端CURRENT最后一次项目事实审计，本轮正式/试玩Hananet、CNET、Gagamel四真实历史URL经新CI source40102349701/job120896914256有界前缀取源均未得游戏字节（前三URLError但无HTTP码、后一HTTP441；0真实载荷）。永久派生收据 `research/recovered/STONEAGE-EARLY-OFFICIAL-PAYLOAD-PROBE-R1.json`、专用CI与反例门保留原日志，不把Actions success解释成官方版已下载；保留之前所有物理差异结果。下一个材料包 `CLIENT-ORIGINAL-PHYSICAL-CARRIER-RECOVERY-03` 应尝试取得有物理原始 provenance 的韩国GameTime 2001攻略附赠原CD/韩国Inium零售CD或日本JSS1999原游戏盘**完整镜像**，并做跨版SHA、来源污染、实体主表存在性验收；未取得实物即登记具体缺字节与有界中止，转可得地图/NPC原始素材，禁止盲重复上述URL/10个TW1原写点。DD-028四任务起源档继续分离，R79暂停，Stage A7PARTIAL+2OPEN/B及wiki GATED、总体百分比null。历史原文不删。
+
+
+## 2026-10-25 — 原客户端地图载荷：42个真实DAT结构、稀疏值限制与原盘取源止点
+
+从fresh远端main `92b605e4a0d612a7d3a7633dab1137c800d2d856` / tree `dd0fdbe998ac697117cd9a788d92519079f42b4b` 启动；568分支、0开放PR/运行中，18项同HEAD completed/success；八启动文件全文原生Git字节核验，CURRENT完整2637603B旧前缀及另三历史文件完整保留，未把接口空响应当空档。最高CLIENT-ORIGINAL-PHYSICAL-CARRIER-RECOVERY-03有限检索JSS原盘、GameTime附盘和Inium公共原包，未取得新可鉴真下载URL/游戏载荷；既有YES24目录仍非可取镜像、无新原HTML摘要，不作全网灭失证明、不联系持有人或购买实体。按既定止点转可实际取得地图载荷。
+
+source run40131518031/job120984031027真实completed/success，从六卷重新实取1145465184B既有TW8.5保存安装器、静态解MSI与557文件；不是新发现版本，未执行原程序。42数字DAT全部逐SHA与旧MSI清单一致，共14445606B，42/42精确符合8字节宽高+三层LE uint16；21种尺寸、累计2407545格，各层非零120250/24569/134868。map/200.dat虽800×1200，第一层非零仅3581；61000/61100第二层全零。稀疏/局部缓存仅HYPOTHESIS，零值不自动当未探索、不可走或缺失比例，不能称42张完整世界图。三层只称ordinal，不冒认本build原生tile/parts/event执行；文件数字不强配具名地名/NPC/任务/传送。三件2B BGM辅助DAT排除。旧mixed2.5同路径34异/7缺/1同仅保留已有关系，不当本轮新地图语义。
+
+独立下载artifact12575356288 ZIP86498B/SHA256 b1254d6db8e581bd69db093455ce587c9d40ccb091885c05cda5c06a009be450与API相同，恰两JSON；map结构149924B/SHA aacac89c451305c59adf38cfc6c14ba8a2efb88705607206aee7f63a8e14ead5完整派生永久Git。acquisition385776B完整manifest仅30天临时工件，永久收据保存其SHA，未虚报完整原包持久仓。工具4项+相邻共22项本地通过，另档案守卫及九类绕过digest语义反例验证；候选归档/main自身Actions须据后验记录。原版权网格/图/程序不入Git。
+
+交付docs/specs/STONEAGE-TW85-MAP-PAYLOAD-STRUCTURE-R1.md、research/recovered/STONEAGE-TW85-MAP-PAYLOAD-STRUCTURE-R1.json及CUSTODY-R1.json。最高NEXT **CLIENT-MAP-CROSS-VERSION-PLANE-DIFF-04**：真正实取mixed2.5对照35同路径，分第一/二/三层差异，区分几何候选与其它层变化，停止于有限实质内容对照或精确取源缺口。禁止同名补地名或混合社区源冒认TW1/JSS原服；JSS/韩国原盘仅新可取字节/精确清单摘要触发重开，不重扫旧四死口/ISBN/十写点。DD-028四任务档、Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、总复原百分比null均保留。

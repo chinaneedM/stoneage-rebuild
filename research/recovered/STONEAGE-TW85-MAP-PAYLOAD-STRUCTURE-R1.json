@@ -1,0 +1,6105 @@
+{
+  "boundaries": {
+    "filename_token_is_authenticated_floor_id": false,
+    "full_world_coverage_proven": false,
+    "grid_or_proprietary_asset_published": false,
+    "named_place_attribution_proven": false,
+    "npc_quest_spawn_tables_recovered": false,
+    "plane_semantics_proven_for_this_build": false,
+    "publisher_clean_disc_authenticated": false,
+    "runtime_or_installer_executed": false,
+    "tw10_or_jss1999_map_geometry_proven": false,
+    "walkability_or_teleports_inferred": false
+  },
+  "dimension_groups": [
+    {
+      "height": 20,
+      "paths": [
+        "map/40.dat"
+      ],
+      "width": 20
+    },
+    {
+      "height": 25,
+      "paths": [
+        "map/1215.dat",
+        "map/3020.dat",
+        "map/4020.dat"
+      ],
+      "width": 25
+    },
+    {
+      "height": 30,
+      "paths": [
+        "map/1001.dat",
+        "map/1003.dat",
+        "map/1005.dat",
+        "map/2012.dat",
+        "map/3004.dat",
+        "map/5103.dat",
+        "map/7405.dat",
+        "map/7503.dat"
+      ],
+      "width": 30
+    },
+    {
+      "height": 40,
+      "paths": [
+        "map/1006.dat",
+        "map/4006.dat"
+      ],
+      "width": 30
+    },
+    {
+      "height": 30,
+      "paths": [
+        "map/2006.dat",
+        "map/3006.dat"
+      ],
+      "width": 40
+    },
+    {
+      "height": 40,
+      "paths": [
+        "map/21308.dat",
+        "map/8216.dat"
+      ],
+      "width": 40
+    },
+    {
+      "height": 60,
+      "paths": [
+        "map/1009.dat"
+      ],
+      "width": 40
+    },
+    {
+      "height": 45,
+      "paths": [
+        "map/110.dat"
+      ],
+      "width": 46
+    },
+    {
+      "height": 50,
+      "paths": [
+        "map/1214.dat",
+        "map/141.dat",
+        "map/805.dat",
+        "map/806.dat"
+      ],
+      "width": 50
+    },
+    {
+      "height": 60,
+      "paths": [
+        "map/130.dat"
+      ],
+      "width": 60
+    },
+    {
+      "height": 80,
+      "paths": [
+        "map/1040.dat"
+      ],
+      "width": 80
+    },
+    {
+      "height": 90,
+      "paths": [
+        "map/9000.dat"
+      ],
+      "width": 90
+    },
+    {
+      "height": 100,
+      "paths": [
+        "map/10920.dat",
+        "map/30691.dat",
+        "map/32020.dat"
+      ],
+      "width": 100
+    },
+    {
+      "height": 120,
+      "paths": [
+        "map/21201.dat",
+        "map/3400.dat"
+      ],
+      "width": 120
+    },
+    {
+      "height": 150,
+      "paths": [
+        "map/2000.dat",
+        "map/3000.dat",
+        "map/4000.dat"
+      ],
+      "width": 150
+    },
+    {
+      "height": 160,
+      "paths": [
+        "map/1000.dat",
+        "map/7400.dat"
+      ],
+      "width": 160
+    },
+    {
+      "height": 200,
+      "paths": [
+        "map/122.dat"
+      ],
+      "width": 300
+    },
+    {
+      "height": 400,
+      "paths": [
+        "map/61000.dat"
+      ],
+      "width": 400
+    },
+    {
+      "height": 600,
+      "paths": [
+        "map/61100.dat"
+      ],
+      "width": 600
+    },
+    {
+      "height": 800,
+      "paths": [
+        "map/100.dat"
+      ],
+      "width": 800
+    },
+    {
+      "height": 1200,
+      "paths": [
+        "map/200.dat"
+      ],
+      "width": 800
+    }
+  ],
+  "exact_layout_matches": 42,
+  "excluded_auxiliary_dat_files": [
+    {
+      "bytes": 2,
+      "path": "map/bgm0.dat",
+      "sha256": "3d914f9348c9cc0ff8a79716700b9fcd4d2f3e711608004eb8f138bcba7f14d9"
+    },
+    {
+      "bytes": 2,
+      "path": "map/bgm1.dat",
+      "sha256": "811786ad1ae74adfdd20dd0372abaaebc6246e343aebd01da0bfc4c02bf0106c"
+    },
+    {
+      "bytes": 2,
+      "path": "map/bgm2.dat",
+      "sha256": "73475cb40a568e8da8a045ced110137e159f890ac4da883b6b17dc651b3a8049"
+    }
+  ],
+  "files": [
+    {
+      "bytes": 3840008,
+      "cells": 640000,
+      "filename_numeric_token": 100,
+      "height": 800,
+      "layout": "LE_U32_WIDTH_HEIGHT_THREE_LE_U16_PLANES_EXACT_LENGTH",
+      "original_place_name": null,
+      "path": "map/100.dat",
+      "planes": [
+        {
+          "bytes": 1280000,
+          "distinct_values": 474,
+          "maximum": 832,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 583044,
+              "value": 0
+            },
+            {
+              "cells": 1065,
+              "value": 116
+            },
+            {
+              "cells": 1031,
+              "value": 100
+            },
+            {
+              "cells": 1015,
+              "value": 107
+            },
+            {
+              "cells": 1005,
+              "value": 60
+            },
+            {
+              "cells": 1002,
+              "value": 113
+            },
+            {
+              "cells": 999,
+              "value": 106
+            },
+            {
+              "cells": 999,
+              "value": 114
+            },
+            {
+              "cells": 991,
+              "value": 101
+            },
+            {
+              "cells": 991,
+              "value": 117
+            }
+          ],
+          "nonzero_cells": 56956,
+          "ordinal": 1,
+          "sha256": "67f20f7ac6f5e0bdc425c34224f93d1e5ae967b050e80d4178a83a228874b892"
+        },
+        {
+          "bytes": 1280000,
+          "distinct_values": 192,
+          "maximum": 15999,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 636355,
+              "value": 0
+            },
+            {
+              "cells": 1754,
+              "value": 2
+            },
+            {
+              "cells": 546,
+              "value": 26
+            },
+            {
+              "cells": 117,
+              "value": 27
+            },
+            {
+              "cells": 109,
+              "value": 11025
+            },
+            {
+              "cells": 47,
+              "value": 13013
+            },
+            {
+              "cells": 46,
+              "value": 13011
+            },
+            {
+              "cells": 45,
+              "value": 29
+            },
+            {
+              "cells": 42,
+              "value": 37
+            },
+            {
+              "cells": 36,
+              "value": 11024
+            }
+          ],
+          "nonzero_cells": 3645,
+          "ordinal": 2,
+          "sha256": "17e6071de49d4efb965ceb0f31ed05cab259c73017ef7fffb3265051e5affb91"
+        },
+        {
+          "bytes": 1280000,
+          "distinct_values": 4,
+          "maximum": 49155,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 583044,
+              "value": 0
+            },
+            {
+              "cells": 56932,
+              "value": 49152
+            },
+            {
+              "cells": 21,
+              "value": 49155
+            },
+            {
+              "cells": 3,
+              "value": 49154
+            }
+          ],
+          "nonzero_cells": 56956,
+          "ordinal": 3,
+          "sha256": "8d5a9493bdbd14e9688cfcdc535ea3d84f7791948100db41cec66a74ab252f23"
+        }
+      ],
+      "sha256": "f207f578a80514e301930f18044e825a531925c7a56e2c11d78f1dc2b9ed17ba",
+      "status": "EXACT_LAYOUT_MATCH",
+      "width": 800
+    },
+    {
+      "bytes": 153608,
+      "cells": 25600,
+      "filename_numeric_token": 1000,
+      "height": 160,
+      "layout": "LE_U32_WIDTH_HEIGHT_THREE_LE_U16_PLANES_EXACT_LENGTH",
+      "original_place_name": null,
+      "path": "map/1000.dat",
+      "planes": [
+        {
+          "bytes": 51200,
+          "distinct_values": 586,
+          "maximum": 8164,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 14457,
+              "value": 0
+            },
+            {
+              "cells": 173,
+              "value": 108
+            },
+            {
+              "cells": 170,
+              "value": 104
+            },
+            {
+              "cells": 166,
+              "value": 110
+            },
+            {
+              "cells": 166,
+              "value": 112
+            },
+            {
+              "cells": 165,
+              "value": 109
+            },
+            {
+              "cells": 163,
+              "value": 113
+            },
+            {
+              "cells": 162,
+              "value": 107
+            },
+            {
+              "cells": 160,
+              "value": 103
+            },
+            {
+              "cells": 159,
+              "value": 101
+            }
+          ],
+          "nonzero_cells": 11143,
+          "ordinal": 1,
+          "sha256": "6d8bf9653c51d76ee2b59c345773b062b496ef1e773fe5db7657105fecb7118c"
+        },
+        {
+          "bytes": 51200,
+          "distinct_values": 119,
+          "maximum": 14400,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 23859,
+              "value": 0
+            },
+            {
+              "cells": 1120,
+              "value": 2
+            },
+            {
+              "cells": 130,
+              "value": 26
+            },
+            {
+              "cells": 27,
+              "value": 10025
+            },
+            {
+              "cells": 24,
+              "value": 11025
+            },
+            {
+              "cells": 21,
+              "value": 10024
+            },
+            {
+              "cells": 20,
+              "value": 28
+            },
+            {
+              "cells": 19,
+              "value": 27
+            },
+            {
+              "cells": 17,
+              "value": 11024
+            },
+            {
+              "cells": 16,
+              "value": 30
+            }
+          ],
+          "nonzero_cells": 1741,
+          "ordinal": 2,
+          "sha256": "ce61aaf13b8c3d0eeaa52cef9f6d6772411331d379380bbcfaf010f0eb916459"
+        },
+        {
+          "bytes": 51200,
+          "distinct_values": 6,
+          "maximum": 49159,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 14457,
+              "value": 0
+            },
+            {
+              "cells": 11112,
+              "value": 49152
+            },
+            {
+              "cells": 28,
+              "value": 49155
+            },
+            {
+              "cells": 1,
+              "value": 49154
+            },
+            {
+              "cells": 1,
+              "value": 49158
+            },
+            {
+              "cells": 1,
+              "value": 49159
+            }
+          ],
+          "nonzero_cells": 11143,
+          "ordinal": 3,
+          "sha256": "ee74d387987b5387a9716c153507f763d05584622d88fcc0931e84342c4d90b8"
+        }
+      ],
+      "sha256": "69d25896074d272bdd257ff35607c1b99d5c0637c9048115f1e9b23e78ec6027",
+      "status": "EXACT_LAYOUT_MATCH",
+      "width": 160
+    },
+    {
+      "bytes": 5408,
+      "cells": 900,
+      "filename_numeric_token": 1001,
+      "height": 30,
+      "layout": "LE_U32_WIDTH_HEIGHT_THREE_LE_U16_PLANES_EXACT_LENGTH",
+      "original_place_name": null,
+      "path": "map/1001.dat",
+      "planes": [
+        {
+          "bytes": 1800,
+          "distinct_values": 23,
+          "maximum": 5026,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 793,
+              "value": 0
+            },
+            {
+              "cells": 26,
+              "value": 5000
+            },
+            {
+              "cells": 18,
+              "value": 5002
+            },
+            {
+              "cells": 12,
+              "value": 5001
+            },
+            {
+              "cells": 8,
+              "value": 5010
+            },
+            {
+              "cells": 8,
+              "value": 5016
+            },
+            {
+              "cells": 5,
+              "value": 401
+            },
+            {
+              "cells": 4,
+              "value": 5008
+            },
+            {
+              "cells": 4,
+              "value": 5018
+            },
+            {
+              "cells": 4,
+              "value": 5020
+            }
+          ],
+          "nonzero_cells": 107,
+          "ordinal": 1,
+          "sha256": "bdabb534a2b075048247dda60177b1c351562e792799cbc2bfa94a5845a4de4b"
+        },
+        {
+          "bytes": 1800,
+          "distinct_values": 18,
+          "maximum": 12845,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 647,
+              "value": 2
+            },
+            {
+              "cells": 227,
+              "value": 0
+            },
+            {
+              "cells": 5,
+              "value": 12621
+            },
+            {
+              "cells": 3,
+              "value": 12020
+            },
+            {
+              "cells": 3,
+              "value": 12023
+            },
+            {
+              "cells": 2,
+              "value": 12620
+            },
+            {
+              "cells": 2,
+              "value": 12804
+            },
+            {
+              "cells": 1,
+              "value": 12019
+            },
+            {
+              "cells": 1,
+              "value": 12021
+            },
+            {
+              "cells": 1,
+              "value": 12022
+            }
+          ],
+          "nonzero_cells": 673,
+          "ordinal": 2,
+          "sha256": "f50e75d61a60041661e32943892dbda7a9712cec2e7bab0542b8358f1737583e"
+        },
+        {
+          "bytes": 1800,
+          "distinct_values": 3,
+          "maximum": 49155,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 726,
+              "value": 49152
+            },
+            {
+              "cells": 172,
+              "value": 0
+            },
+            {
+              "cells": 2,
+              "value": 49155
+            }
+          ],
+          "nonzero_cells": 728,
+          "ordinal": 3,
+          "sha256": "fdcc38d1d006aa839452269641addb16dc80dfaff842d51bd4b7114f19140e96"
+        }
+      ],
+      "sha256": "400e41b5e5db4eae926f25cfa7f6f616a8997a431a71ea507d1ab5098a9552fe",
+      "status": "EXACT_LAYOUT_MATCH",
+      "width": 30
+    },
+    {
+      "bytes": 5408,
+      "cells": 900,
+      "filename_numeric_token": 1003,
+      "height": 30,
+      "layout": "LE_U32_WIDTH_HEIGHT_THREE_LE_U16_PLANES_EXACT_LENGTH",
+      "original_place_name": null,
+      "path": "map/1003.dat",
+      "planes": [
+        {
+          "bytes": 1800,
+          "distinct_values": 23,
+          "maximum": 5026,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 793,
+              "value": 0
+            },
+            {
+              "cells": 26,
+              "value": 5000
+            },
+            {
+              "cells": 18,
+              "value": 5002
+            },
+            {
+              "cells": 12,
+              "value": 5001
+            },
+            {
+              "cells": 8,
+              "value": 5010
+            },
+            {
+              "cells": 8,
+              "value": 5016
+            },
+            {
+              "cells": 5,
+              "value": 401
+            },
+            {
+              "cells": 4,
+              "value": 5006
+            },
+            {
+              "cells": 4,
+              "value": 5018
+            },
+            {
+              "cells": 4,
+              "value": 5020
+            }
+          ],
+          "nonzero_cells": 107,
+          "ordinal": 1,
+          "sha256": "96ef9bb9dfc6ad71ef77a624e4da6f94fda5d51f93c926134f9c6d8a2fae5d48"
+        },
+        {
+          "bytes": 1800,
+          "distinct_values": 18,
+          "maximum": 12845,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 744,
+              "value": 2
+            },
+            {
+              "cells": 129,
+              "value": 0
+            },
+            {
+              "cells": 3,
+              "value": 10909
+            },
+            {
+              "cells": 3,
+              "value": 12020
+            },
+            {
+              "cells": 3,
+              "value": 12023
+            },
+            {
+              "cells": 3,
+              "value": 12618
+            },
+            {
+              "cells": 3,
+              "value": 12620
+            },
+            {
+              "cells": 2,
+              "value": 12804
+            },
+            {
+              "cells": 1,
+              "value": 10153
+            },
+            {
+              "cells": 1,
+              "value": 10154
+            }
+          ],
+          "nonzero_cells": 771,
+          "ordinal": 2,
+          "sha256": "7a34e4afb8b66f8cc2a05481b7080a143b0329bf383ca18e3cf30ebf9b4f5f4f"
+        },
+        {
+          "bytes": 1800,
+          "distinct_values": 3,
+          "maximum": 49155,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 838,
+              "value": 49152
+            },
+            {
+              "cells": 60,
+              "value": 0
+            },
+            {
+              "cells": 2,
+              "value": 49155
+            }
+          ],
+          "nonzero_cells": 840,
+          "ordinal": 3,
+          "sha256": "3d0ea381aecfb7b7ab538d79d326a2edd835a88a6db4f058a50c5a7e13e8a12a"
+        }
+      ],
+      "sha256": "3aebcd86ebbeb5b7d787c3befb2e432036ce966c61ef6fcdce9e40010c070ae6",
+      "status": "EXACT_LAYOUT_MATCH",
+      "width": 30
+    },
+    {
+      "bytes": 5408,
+      "cells": 900,
+      "filename_numeric_token": 1005,
+      "height": 30,
+      "layout": "LE_U32_WIDTH_HEIGHT_THREE_LE_U16_PLANES_EXACT_LENGTH",
+      "original_place_name": null,
+      "path": "map/1005.dat",
+      "planes": [
+        {
+          "bytes": 1800,
+          "distinct_values": 23,
+          "maximum": 5021,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 718,
+              "value": 0
+            },
+            {
+              "cells": 70,
+              "value": 5000
+            },
+            {
+              "cells": 20,
+              "value": 407
+            },
+            {
+              "cells": 17,
+              "value": 5002
+            },
+            {
+              "cells": 15,
+              "value": 5004
+            },
+            {
+              "cells": 9,
+              "value": 5008
+            },
+            {
+              "cells": 9,
+              "value": 5010
+            },
+            {
+              "cells": 5,
+              "value": 5001
+            },
+            {
+              "cells": 5,
+              "value": 5018
+            },
+            {
+              "cells": 4,
+              "value": 5006
+            }
+          ],
+          "nonzero_cells": 182,
+          "ordinal": 1,
+          "sha256": "4b5e5ea85c6e2ae2a5d37938fbfe75bb0de74c372566ae64c8ca610f66105c5c"
+        },
+        {
+          "bytes": 1800,
+          "distinct_values": 21,
+          "maximum": 12925,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 697,
+              "value": 2
+            },
+            {
+              "cells": 167,
+              "value": 0
+            },
+            {
+              "cells": 5,
+              "value": 12023
+            },
+            {
+              "cells": 4,
+              "value": 12020
+            },
+            {
+              "cells": 3,
+              "value": 12021
+            },
+            {
+              "cells": 3,
+              "value": 12618
+            },
+            {
+              "cells": 3,
+              "value": 12620
+            },
+            {
+              "cells": 2,
+              "value": 12019
+            },
+            {
+              "cells": 2,
+              "value": 12803
+            },
+            {
+              "cells": 2,
+              "value": 12828
+            }
+          ],
+          "nonzero_cells": 733,
+          "ordinal": 2,
+          "sha256": "9382f6eef2a94f40237142aaa38adba9279564b74595aeaaf902ed43d9e15561"
+        },
+        {
+          "bytes": 1800,
+          "distinct_values": 3,
+          "maximum": 49155,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 838,
+              "value": 49152
+            },
+            {
+              "cells": 60,
+              "value": 0
+            },
+            {
+              "cells": 2,
+              "value": 49155
+            }
+          ],
+          "nonzero_cells": 840,
+          "ordinal": 3,
+          "sha256": "3d0ea381aecfb7b7ab538d79d326a2edd835a88a6db4f058a50c5a7e13e8a12a"
+        }
+      ],
+      "sha256": "8ce6654892df455dc931002fe338702318c85901bc348e0e2f214dc0b3cd351f",
+      "status": "EXACT_LAYOUT_MATCH",
+      "width": 30
+    },
+    {
+      "bytes": 7208,
+      "cells": 1200,
+      "filename_numeric_token": 1006,
+      "height": 40,
+      "layout": "LE_U32_WIDTH_HEIGHT_THREE_LE_U16_PLANES_EXACT_LENGTH",
+      "original_place_name": null,
+      "path": "map/1006.dat",
+      "planes": [
+        {
+          "bytes": 2400,
+          "distinct_values": 24,
+          "maximum": 5025,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 991,
+              "value": 0
+            },
+            {
+              "cells": 103,
+              "value": 5000
+            },
+            {
+              "cells": 18,
+              "value": 5010
+            },
+            {
+              "cells": 17,
+              "value": 5001
+            },
+            {
+              "cells": 10,
+              "value": 5004
+            },
+            {
+              "cells": 9,
+              "value": 5006
+            },
+            {
+              "cells": 8,
+              "value": 145
+            },
+            {
+              "cells": 7,
+              "value": 5008
+            },
+            {
+              "cells": 5,
+              "value": 5002
+            },
+            {
+              "cells": 5,
+              "value": 5018
+            }
+          ],
+          "nonzero_cells": 209,
+          "ordinal": 1,
+          "sha256": "c58f8ec5d6517e8f305f61d937018a06420aa9c928c274b7994cf19d4cfacf8e"
+        },
+        {
+          "bytes": 2400,
+          "distinct_values": 24,
+          "maximum": 12925,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 1021,
+              "value": 2
+            },
+            {
+              "cells": 141,
+              "value": 0
+            },
+            {
+              "cells": 6,
+              "value": 12020
+            },
+            {
+              "cells": 4,
+              "value": 12023
+            },
+            {
+              "cells": 4,
+              "value": 12924
+            },
+            {
+              "cells": 2,
+              "value": 12019
+            },
+            {
+              "cells": 2,
+              "value": 12021
+            },
+            {
+              "cells": 2,
+              "value": 12022
+            },
+            {
+              "cells": 2,
+              "value": 12804
+            },
+            {
+              "cells": 2,
+              "value": 12828
+            }
+          ],
+          "nonzero_cells": 1059,
+          "ordinal": 2,
+          "sha256": "3c60d35f7add4c4feb9500aa737c9652868754afeeae417aa96a18c67225e090"
+        },
+        {
+          "bytes": 2400,
+          "distinct_values": 3,
+          "maximum": 49155,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 1182,
+              "value": 49152
+            },
+            {
+              "cells": 16,
+              "value": 0
+            },
+            {
+              "cells": 2,
+              "value": 49155
+            }
+          ],
+          "nonzero_cells": 1184,
+          "ordinal": 3,
+          "sha256": "8b8bf62bc1e9be1cd749805d5c7fcf42d566b8e06b6888448a91be84b05b4dd8"
+        }
+      ],
+      "sha256": "7b875f614e5282b78b9fa49f38da18e3d41e356135c528dadd71c1d82c844f8c",
+      "status": "EXACT_LAYOUT_MATCH",
+      "width": 30
+    },
+    {
+      "bytes": 14408,
+      "cells": 2400,
+      "filename_numeric_token": 1009,
+      "height": 60,
+      "layout": "LE_U32_WIDTH_HEIGHT_THREE_LE_U16_PLANES_EXACT_LENGTH",
+      "original_place_name": null,
+      "path": "map/1009.dat",
+      "planes": [
+        {
+          "bytes": 4800,
+          "distinct_values": 45,
+          "maximum": 5038,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 1799,
+              "value": 0
+            },
+            {
+              "cells": 167,
+              "value": 5000
+            },
+            {
+              "cells": 164,
+              "value": 5001
+            },
+            {
+              "cells": 135,
+              "value": 5002
+            },
+            {
+              "cells": 14,
+              "value": 5010
+            },
+            {
+              "cells": 11,
+              "value": 5004
+            },
+            {
+              "cells": 10,
+              "value": 5006
+            },
+            {
+              "cells": 10,
+              "value": 5030
+            },
+            {
+              "cells": 9,
+              "value": 5022
+            },
+            {
+              "cells": 7,
+              "value": 5016
+            }
+          ],
+          "nonzero_cells": 601,
+          "ordinal": 1,
+          "sha256": "76b375671e03e45f858a60accf51da6fde0de17b0a9516749fb8cddc10af78de"
+        },
+        {
+          "bytes": 4800,
+          "distinct_values": 36,
+          "maximum": 12925,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 2184,
+              "value": 0
+            },
+            {
+              "cells": 112,
+              "value": 2
+            },
+            {
+              "cells": 13,
+              "value": 12020
+            },
+            {
+              "cells": 10,
+              "value": 12619
+            },
+            {
+              "cells": 8,
+              "value": 12618
+            },
+            {
+              "cells": 6,
+              "value": 12621
+            },
+            {
+              "cells": 6,
+              "value": 12827
+            },
+            {
+              "cells": 5,
+              "value": 12022
+            },
+            {
+              "cells": 5,
+              "value": 12617
+            },
+            {
+              "cells": 5,
+              "value": 12620
+            }
+          ],
+          "nonzero_cells": 216,
+          "ordinal": 2,
+          "sha256": "5cec744723b228781587800f3131fad22ee58f948070bb1cdd872cc657492bad"
+        },
+        {
+          "bytes": 4800,
+          "distinct_values": 3,
+          "maximum": 49155,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 1338,
+              "value": 49152
+            },
+            {
+              "cells": 1060,
+              "value": 0
+            },
+            {
+              "cells": 2,
+              "value": 49155
+            }
+          ],
+          "nonzero_cells": 1340,
+          "ordinal": 3,
+          "sha256": "f0d3bf30b9469e260e2e70a7d8743b44091f4d0ac3103d0f8c03bbefb613ec3c"
+        }
+      ],
+      "sha256": "cf1031c36ee21dc1fcdc2aebe5d11625c7fc734308c44d7969519e97262796a2",
+      "status": "EXACT_LAYOUT_MATCH",
+      "width": 40
+    },
+    {
+      "bytes": 38408,
+      "cells": 6400,
+      "filename_numeric_token": 1040,
+      "height": 80,
+      "layout": "LE_U32_WIDTH_HEIGHT_THREE_LE_U16_PLANES_EXACT_LENGTH",
+      "original_place_name": null,
+      "path": "map/1040.dat",
+      "planes": [
+        {
+          "bytes": 12800,
+          "distinct_values": 139,
+          "maximum": 494,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 5644,
+              "value": 0
+            },
+            {
+              "cells": 24,
+              "value": 106
+            },
+            {
+              "cells": 18,
+              "value": 100
+            },
+            {
+              "cells": 18,
+              "value": 108
+            },
+            {
+              "cells": 17,
+              "value": 116
+            },
+            {
+              "cells": 16,
+              "value": 103
+            },
+            {
+              "cells": 15,
+              "value": 112
+            },
+            {
+              "cells": 15,
+              "value": 114
+            },
+            {
+              "cells": 15,
+              "value": 160
+            },
+            {
+              "cells": 14,
+              "value": 146
+            }
+          ],
+          "nonzero_cells": 756,
+          "ordinal": 1,
+          "sha256": "243225f6b4e6968aedebb938777bdefb0ffbdc3786add06b58bc4ff7f411e720"
+        },
+        {
+          "bytes": 12800,
+          "distinct_values": 28,
+          "maximum": 13025,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 6214,
+              "value": 0
+            },
+            {
+              "cells": 119,
+              "value": 2
+            },
+            {
+              "cells": 9,
+              "value": 13025
+            },
+            {
+              "cells": 7,
+              "value": 13016
+            },
+            {
+              "cells": 5,
+              "value": 11915
+            },
+            {
+              "cells": 4,
+              "value": 10142
+            },
+            {
+              "cells": 3,
+              "value": 10025
+            },
+            {
+              "cells": 3,
+              "value": 10027
+            },
+            {
+              "cells": 3,
+              "value": 10030
+            },
+            {
+              "cells": 3,
+              "value": 11900
+            }
+          ],
+          "nonzero_cells": 186,
+          "ordinal": 2,
+          "sha256": "c0d740070df32f6ad3f43de7adaa000d70b9f41f0cdddaffbf352212932a5e17"
+        },
+        {
+          "bytes": 12800,
+          "distinct_values": 3,
+          "maximum": 49155,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 5644,
+              "value": 0
+            },
+            {
+              "cells": 751,
+              "value": 49152
+            },
+            {
+              "cells": 5,
+              "value": 49155
+            }
+          ],
+          "nonzero_cells": 756,
+          "ordinal": 3,
+          "sha256": "cb127552405bdc0ab05973f9da58fe9e6fcf4f40d24df570c9913068879fb641"
+        }
+      ],
+      "sha256": "a102eea98d46cca56037eedb1576c451827c2f17534dd9f1bbab810917e56296",
+      "status": "EXACT_LAYOUT_MATCH",
+      "width": 80
+    },
+    {
+      "bytes": 60008,
+      "cells": 10000,
+      "filename_numeric_token": 10920,
+      "height": 100,
+      "layout": "LE_U32_WIDTH_HEIGHT_THREE_LE_U16_PLANES_EXACT_LENGTH",
+      "original_place_name": null,
+      "path": "map/10920.dat",
+      "planes": [
+        {
+          "bytes": 20000,
+          "distinct_values": 72,
+          "maximum": 832,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 8934,
+              "value": 0
+            },
+            {
+              "cells": 100,
+              "value": 67
+            },
+            {
+              "cells": 40,
+              "value": 117
+            },
+            {
+              "cells": 39,
+              "value": 423
+            },
+            {
+              "cells": 33,
+              "value": 421
+            },
+            {
+              "cells": 32,
+              "value": 100
+            },
+            {
+              "cells": 31,
+              "value": 102
+            },
+            {
+              "cells": 31,
+              "value": 430
+            },
+            {
+              "cells": 30,
+              "value": 417
+            },
+            {
+              "cells": 29,
+              "value": 424
+            }
+          ],
+          "nonzero_cells": 1066,
+          "ordinal": 1,
+          "sha256": "6297236b957a6a7f567be12825a5053280da3d30e5775c6a4cd064613ae3137f"
+        },
+        {
+          "bytes": 20000,
+          "distinct_values": 36,
+          "maximum": 14712,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 9778,
+              "value": 0
+            },
+            {
+              "cells": 52,
+              "value": 12620
+            },
+            {
+              "cells": 37,
+              "value": 2
+            },
+            {
+              "cells": 33,
+              "value": 14400
+            },
+            {
+              "cells": 24,
+              "value": 13542
+            },
+            {
+              "cells": 12,
+              "value": 13525
+            },
+            {
+              "cells": 11,
+              "value": 13521
+            },
+            {
+              "cells": 7,
+              "value": 14711
+            },
+            {
+              "cells": 5,
+              "value": 13527
+            },
+            {
+              "cells": 4,
+              "value": 13520
+            }
+          ],
+          "nonzero_cells": 222,
+          "ordinal": 2,
+          "sha256": "ab61a0c61aae171ba8ac4f441c8b5afbf6cf4558ce746a0e0d1b21d750f85e56"
+        },
+        {
+          "bytes": 20000,
+          "distinct_values": 2,
+          "maximum": 49152,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 8934,
+              "value": 0
+            },
+            {
+              "cells": 1066,
+              "value": 49152
+            }
+          ],
+          "nonzero_cells": 1066,
+          "ordinal": 3,
+          "sha256": "d8d013692927f97a4c07197277ffda73415e6d47778d487f4c98744dff5e8466"
+        }
+      ],
+      "sha256": "fce4daa6bf53b77a6cf064da780d3acd708b8683cebee210ef1a765957b98f39",
+      "status": "EXACT_LAYOUT_MATCH",
+      "width": 100
+    },
+    {
+      "bytes": 12428,
+      "cells": 2070,
+      "filename_numeric_token": 110,
+      "height": 45,
+      "layout": "LE_U32_WIDTH_HEIGHT_THREE_LE_U16_PLANES_EXACT_LENGTH",
+      "original_place_name": null,
+      "path": "map/110.dat",
+      "planes": [
+        {
+          "bytes": 4140,
+          "distinct_values": 205,
+          "maximum": 4639,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 814,
+              "value": 0
+            },
+            {
+              "cells": 52,
+              "value": 4516
+            },
+            {
+              "cells": 39,
+              "value": 4519
+            },
+            {
+              "cells": 38,
+              "value": 4518
+            },
+            {
+              "cells": 38,
+              "value": 4523
+            },
+            {
+              "cells": 38,
+              "value": 4530
+            },
+            {
+              "cells": 35,
+              "value": 4527
+            },
+            {
+              "cells": 35,
+              "value": 4529
+            },
+            {
+              "cells": 34,
+              "value": 4531
+            },
+            {
+              "cells": 31,
+              "value": 4525
+            }
+          ],
+          "nonzero_cells": 1256,
+          "ordinal": 1,
+          "sha256": "a4373fb766ac4e1a2043fd1de5ef7695dec1ab7401ad5ea3d01e1a55afa21f60"
+        },
+        {
+          "bytes": 4140,
+          "distinct_values": 41,
+          "maximum": 13027,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 1269,
+              "value": 0
+            },
+            {
+              "cells": 622,
+              "value": 2
+            },
+            {
+              "cells": 34,
+              "value": 12068
+            },
+            {
+              "cells": 16,
+              "value": 12802
+            },
+            {
+              "cells": 15,
+              "value": 10025
+            },
+            {
+              "cells": 14,
+              "value": 12065
+            },
+            {
+              "cells": 13,
+              "value": 11920
+            },
+            {
+              "cells": 11,
+              "value": 10023
+            },
+            {
+              "cells": 10,
+              "value": 12654
+            },
+            {
+              "cells": 8,
+              "value": 13014
+            }
+          ],
+          "nonzero_cells": 801,
+          "ordinal": 2,
+          "sha256": "68739edc2d5befece2d337c8ac88dc68ff1bd0ce2df0c317aa14351a1bab9d48"
+        },
+        {
+          "bytes": 4140,
+          "distinct_values": 2,
+          "maximum": 49152,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 1848,
+              "value": 49152
+            },
+            {
+              "cells": 222,
+              "value": 0
+            }
+          ],
+          "nonzero_cells": 1848,
+          "ordinal": 3,
+          "sha256": "ffee72213c56eecc030b7c1478a33ce8207a3a215ae44f96a12c81c41b5575f8"
+        }
+      ],
+      "sha256": "7c3825101a5de64cf98c9094f0e205cb929e53dedea8cf5b06f37443fe7dd698",
+      "status": "EXACT_LAYOUT_MATCH",
+      "width": 46
+    },
+    {
+      "bytes": 15008,
+      "cells": 2500,
+      "filename_numeric_token": 1214,
+      "height": 50,
+      "layout": "LE_U32_WIDTH_HEIGHT_THREE_LE_U16_PLANES_EXACT_LENGTH",
+      "original_place_name": null,
+      "path": "map/1214.dat",
+      "planes": [
+        {
+          "bytes": 5000,
+          "distinct_values": 44,
+          "maximum": 4122,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 2120,
+              "value": 0
+            },
+            {
+              "cells": 244,
+              "value": 63
+            },
+            {
+              "cells": 11,
+              "value": 4001
+            },
+            {
+              "cells": 9,
+              "value": 4002
+            },
+            {
+              "cells": 9,
+              "value": 4004
+            },
+            {
+              "cells": 8,
+              "value": 4005
+            },
+            {
+              "cells": 8,
+              "value": 4006
+            },
+            {
+              "cells": 7,
+              "value": 4007
+            },
+            {
+              "cells": 7,
+              "value": 4116
+            },
+            {
+              "cells": 5,
+              "value": 4000
+            }
+          ],
+          "nonzero_cells": 380,
+          "ordinal": 1,
+          "sha256": "f048e379827392d678d279a5e4619db0267b191751875d1dcbb8e1bf3bc1f45a"
+        },
+        {
+          "bytes": 5000,
+          "distinct_values": 16,
+          "maximum": 15024,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 2352,
+              "value": 0
+            },
+            {
+              "cells": 124,
+              "value": 2
+            },
+            {
+              "cells": 4,
+              "value": 15003
+            },
+            {
+              "cells": 2,
+              "value": 43
+            },
+            {
+              "cells": 2,
+              "value": 14711
+            },
+            {
+              "cells": 2,
+              "value": 15000
+            },
+            {
+              "cells": 2,
+              "value": 15001
+            },
+            {
+              "cells": 2,
+              "value": 15005
+            },
+            {
+              "cells": 2,
+              "value": 15010
+            },
+            {
+              "cells": 2,
+              "value": 15020
+            }
+          ],
+          "nonzero_cells": 148,
+          "ordinal": 2,
+          "sha256": "f1ea4c83b8db6be9078a36050d9be0f4a3409b7347a96718d34c62b3915fa74b"
+        },
+        {
+          "bytes": 5000,
+          "distinct_values": 2,
+          "maximum": 49152,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 2120,
+              "value": 0
+            },
+            {
+              "cells": 380,
+              "value": 49152
+            }
+          ],
+          "nonzero_cells": 380,
+          "ordinal": 3,
+          "sha256": "5fad171851e238b348204d0385ab5c33819814cc7411d6b57d65ab96583dcb31"
+        }
+      ],
+      "sha256": "c79f115baee4f5ebc8cc2be0308ef590132b16eec6902360d0ff1dca4ec61ebd",
+      "status": "EXACT_LAYOUT_MATCH",
+      "width": 50
+    },
+    {
+      "bytes": 3758,
+      "cells": 625,
+      "filename_numeric_token": 1215,
+      "height": 25,
+      "layout": "LE_U32_WIDTH_HEIGHT_THREE_LE_U16_PLANES_EXACT_LENGTH",
+      "original_place_name": null,
+      "path": "map/1215.dat",
+      "planes": [
+        {
+          "bytes": 1250,
+          "distinct_values": 169,
+          "maximum": 9936,
+          "minimum": 63,
+          "most_frequent": [
+            {
+              "cells": 310,
+              "value": 63
+            },
+            {
+              "cells": 49,
+              "value": 4000
+            },
+            {
+              "cells": 19,
+              "value": 4001
+            },
+            {
+              "cells": 17,
+              "value": 4008
+            },
+            {
+              "cells": 15,
+              "value": 4004
+            },
+            {
+              "cells": 15,
+              "value": 4005
+            },
+            {
+              "cells": 11,
+              "value": 4003
+            },
+            {
+              "cells": 10,
+              "value": 4002
+            },
+            {
+              "cells": 10,
+              "value": 4007
+            },
+            {
+              "cells": 8,
+              "value": 4006
+            }
+          ],
+          "nonzero_cells": 625,
+          "ordinal": 1,
+          "sha256": "bc0d5b934d4ed2b09e3260688aa870edd83c8955585782fbdcaf46903b423c1a"
+        },
+        {
+          "bytes": 1250,
+          "distinct_values": 15,
+          "maximum": 15011,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 478,
+              "value": 0
+            },
+            {
+              "cells": 114,
+              "value": 2
+            },
+            {
+              "cells": 7,
+              "value": 15007
+            },
+            {
+              "cells": 5,
+              "value": 15001
+            },
+            {
+              "cells": 5,
+              "value": 15003
+            },
+            {
+              "cells": 3,
+              "value": 15005
+            },
+            {
+              "cells": 2,
+              "value": 43
+            },
+            {
+              "cells": 2,
+              "value": 15009
+            },
+            {
+              "cells": 2,
+              "value": 15010
+            },
+            {
+              "cells": 2,
+              "value": 15011
+            }
+          ],
+          "nonzero_cells": 147,
+          "ordinal": 2,
+          "sha256": "9f5ae880ab7bb858685b43dddc24251e8f5103868a5754ecc1b6056195c30f83"
+        },
+        {
+          "bytes": 1250,
+          "distinct_values": 2,
+          "maximum": 49155,
+          "minimum": 49152,
+          "most_frequent": [
+            {
+              "cells": 623,
+              "value": 49152
+            },
+            {
+              "cells": 2,
+              "value": 49155
+            }
+          ],
+          "nonzero_cells": 625,
+          "ordinal": 3,
+          "sha256": "e3aa5fd18a9800c51ed780d17165db291d3c8fdf5aece809df9048bc35fdff7c"
+        }
+      ],
+      "sha256": "b1037d54c9d71da34a4eaf00b8ab0f8d86abb7d6b0a8b087b9444518a481d364",
+      "status": "EXACT_LAYOUT_MATCH",
+      "width": 25
+    },
+    {
+      "bytes": 360008,
+      "cells": 60000,
+      "filename_numeric_token": 122,
+      "height": 200,
+      "layout": "LE_U32_WIDTH_HEIGHT_THREE_LE_U16_PLANES_EXACT_LENGTH",
+      "original_place_name": null,
+      "path": "map/122.dat",
+      "planes": [
+        {
+          "bytes": 120000,
+          "distinct_values": 63,
+          "maximum": 4071,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 56178,
+              "value": 0
+            },
+            {
+              "cells": 133,
+              "value": 4049
+            },
+            {
+              "cells": 129,
+              "value": 4033
+            },
+            {
+              "cells": 127,
+              "value": 4026
+            },
+            {
+              "cells": 126,
+              "value": 4053
+            },
+            {
+              "cells": 124,
+              "value": 4041
+            },
+            {
+              "cells": 119,
+              "value": 4025
+            },
+            {
+              "cells": 112,
+              "value": 4032
+            },
+            {
+              "cells": 111,
+              "value": 4027
+            },
+            {
+              "cells": 110,
+              "value": 4037
+            }
+          ],
+          "nonzero_cells": 3822,
+          "ordinal": 1,
+          "sha256": "997653a3ebea78706d4ccf1af475c617ea2cc90faca7391751a01f383094a71e"
+        },
+        {
+          "bytes": 120000,
+          "distinct_values": 3,
+          "maximum": 15207,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 59946,
+              "value": 0
+            },
+            {
+              "cells": 45,
+              "value": 2
+            },
+            {
+              "cells": 9,
+              "value": 15207
+            }
+          ],
+          "nonzero_cells": 54,
+          "ordinal": 2,
+          "sha256": "f8910cf6fc73d2f2a5c651a607d6fed8d905e0ed82ccbeb82238ffac499e9107"
+        },
+        {
+          "bytes": 120000,
+          "distinct_values": 3,
+          "maximum": 49154,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 56178,
+              "value": 0
+            },
+            {
+              "cells": 3820,
+              "value": 49152
+            },
+            {
+              "cells": 2,
+              "value": 49154
+            }
+          ],
+          "nonzero_cells": 3822,
+          "ordinal": 3,
+          "sha256": "dfb1a5876d068f46072c366e6960802ef6ff29ad196c326310756dbd76e7caad"
+        }
+      ],
+      "sha256": "05ae8949408b2d3a83f072c1c6c853e4f4e006989f6d2706d53d74f4329e331d",
+      "status": "EXACT_LAYOUT_MATCH",
+      "width": 300
+    },
+    {
+      "bytes": 21608,
+      "cells": 3600,
+      "filename_numeric_token": 130,
+      "height": 60,
+      "layout": "LE_U32_WIDTH_HEIGHT_THREE_LE_U16_PLANES_EXACT_LENGTH",
+      "original_place_name": null,
+      "path": "map/130.dat",
+      "planes": [
+        {
+          "bytes": 7200,
+          "distinct_values": 141,
+          "maximum": 5104,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 258,
+              "value": 4526
+            },
+            {
+              "cells": 156,
+              "value": 4518
+            },
+            {
+              "cells": 156,
+              "value": 4531
+            },
+            {
+              "cells": 152,
+              "value": 4516
+            },
+            {
+              "cells": 132,
+              "value": 4523
+            },
+            {
+              "cells": 130,
+              "value": 4517
+            },
+            {
+              "cells": 128,
+              "value": 4528
+            },
+            {
+              "cells": 127,
+              "value": 4527
+            },
+            {
+              "cells": 127,
+              "value": 4529
+            },
+            {
+              "cells": 121,
+              "value": 4521
+            }
+          ],
+          "nonzero_cells": 3530,
+          "ordinal": 1,
+          "sha256": "1d9526de6cb83ef8f11473e4a254ae1287d05031683e9f289d02570e9bcad86b"
+        },
+        {
+          "bytes": 7200,
+          "distinct_values": 46,
+          "maximum": 12924,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 2857,
+              "value": 0
+            },
+            {
+              "cells": 214,
+              "value": 2
+            },
+            {
+              "cells": 93,
+              "value": 12620
+            },
+            {
+              "cells": 63,
+              "value": 12068
+            },
+            {
+              "cells": 43,
+              "value": 12065
+            },
+            {
+              "cells": 42,
+              "value": 12806
+            },
+            {
+              "cells": 32,
+              "value": 10911
+            },
+            {
+              "cells": 32,
+              "value": 10912
+            },
+            {
+              "cells": 26,
+              "value": 12654
+            },
+            {
+              "cells": 24,
+              "value": 12808
+            }
+          ],
+          "nonzero_cells": 743,
+          "ordinal": 2,
+          "sha256": "717dc0cb84d9d78c033dc0970b40ed0f612e1ea0d6b9e1f1ab5462a60eb82e0b"
+        },
+        {
+          "bytes": 7200,
+          "distinct_values": 3,
+          "maximum": 49155,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 3596,
+              "value": 49152
+            },
+            {
+              "cells": 2,
+              "value": 0
+            },
+            {
+              "cells": 2,
+              "value": 49155
+            }
+          ],
+          "nonzero_cells": 3598,
+          "ordinal": 3,
+          "sha256": "9c1e435a1980a1ee7a8d78dd64614fba6e4369a88b23d072ee43a5e7d08423eb"
+        }
+      ],
+      "sha256": "267a94fdc040f49a15d8bf8a51b956f12e6652eac020d92371cf7bc39abeffb1",
+      "status": "EXACT_LAYOUT_MATCH",
+      "width": 60
+    },
+    {
+      "bytes": 15008,
+      "cells": 2500,
+      "filename_numeric_token": 141,
+      "height": 50,
+      "layout": "LE_U32_WIDTH_HEIGHT_THREE_LE_U16_PLANES_EXACT_LENGTH",
+      "original_place_name": null,
+      "path": "map/141.dat",
+      "planes": [
+        {
+          "bytes": 5000,
+          "distinct_values": 188,
+          "maximum": 407,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 990,
+              "value": 0
+            },
+            {
+              "cells": 41,
+              "value": 161
+            },
+            {
+              "cells": 40,
+              "value": 149
+            },
+            {
+              "cells": 37,
+              "value": 146
+            },
+            {
+              "cells": 37,
+              "value": 162
+            },
+            {
+              "cells": 36,
+              "value": 147
+            },
+            {
+              "cells": 35,
+              "value": 155
+            },
+            {
+              "cells": 34,
+              "value": 145
+            },
+            {
+              "cells": 33,
+              "value": 151
+            },
+            {
+              "cells": 33,
+              "value": 158
+            }
+          ],
+          "nonzero_cells": 1510,
+          "ordinal": 1,
+          "sha256": "ba222d6f718d8a91c38f181f280d384c472badef2aa039fc5373fb871de64fac"
+        },
+        {
+          "bytes": 5000,
+          "distinct_values": 25,
+          "maximum": 13471,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 2353,
+              "value": 0
+            },
+            {
+              "cells": 36,
+              "value": 2
+            },
+            {
+              "cells": 16,
+              "value": 13466
+            },
+            {
+              "cells": 12,
+              "value": 10178
+            },
+            {
+              "cells": 12,
+              "value": 11111
+            },
+            {
+              "cells": 12,
+              "value": 12806
+            },
+            {
+              "cells": 11,
+              "value": 13467
+            },
+            {
+              "cells": 8,
+              "value": 10024
+            },
+            {
+              "cells": 8,
+              "value": 13468
+            },
+            {
+              "cells": 6,
+              "value": 13469
+            }
+          ],
+          "nonzero_cells": 147,
+          "ordinal": 2,
+          "sha256": "20a5da1426369942b12f4b32e24a53e4cf4757493ffcf4e651a11894d945ccd5"
+        },
+        {
+          "bytes": 5000,
+          "distinct_values": 3,
+          "maximum": 49155,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 1508,
+              "value": 49152
+            },
+            {
+              "cells": 990,
+              "value": 0
+            },
+            {
+              "cells": 2,
+              "value": 49155
+            }
+          ],
+          "nonzero_cells": 1510,
+          "ordinal": 3,
+          "sha256": "3b4b6ef7792c0602ed8cb6d1843588c7c900140da3712c71bf53c8c91601cf96"
+        }
+      ],
+      "sha256": "cf90a715839088de1459b1b136978d5caaa9625d69b410ed9648e51b8fb7ffe8",
+      "status": "EXACT_LAYOUT_MATCH",
+      "width": 50
+    },
+    {
+      "bytes": 5760008,
+      "cells": 960000,
+      "filename_numeric_token": 200,
+      "height": 1200,
+      "layout": "LE_U32_WIDTH_HEIGHT_THREE_LE_U16_PLANES_EXACT_LENGTH",
+      "original_place_name": null,
+      "path": "map/200.dat",
+      "planes": [
+        {
+          "bytes": 1920000,
+          "distinct_values": 223,
+          "maximum": 8482,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 956419,
+              "value": 0
+            },
+            {
+              "cells": 227,
+              "value": 2021
+            },
+            {
+              "cells": 221,
+              "value": 2023
+            },
+            {
+              "cells": 216,
+              "value": 2020
+            },
+            {
+              "cells": 214,
+              "value": 2018
+            },
+            {
+              "cells": 213,
+              "value": 2022
+            },
+            {
+              "cells": 206,
+              "value": 2025
+            },
+            {
+              "cells": 201,
+              "value": 2019
+            },
+            {
+              "cells": 194,
+              "value": 2024
+            },
+            {
+              "cells": 184,
+              "value": 2026
+            }
+          ],
+          "nonzero_cells": 3581,
+          "ordinal": 1,
+          "sha256": "f0154f7ceea9fd5d052acde0f0e613a0a5670e41fa227c67984a83e85d1f6711"
+        },
+        {
+          "bytes": 1920000,
+          "distinct_values": 62,
+          "maximum": 13225,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 959481,
+              "value": 0
+            },
+            {
+              "cells": 203,
+              "value": 2
+            },
+            {
+              "cells": 38,
+              "value": 11100
+            },
+            {
+              "cells": 27,
+              "value": 27
+            },
+            {
+              "cells": 19,
+              "value": 11102
+            },
+            {
+              "cells": 18,
+              "value": 20
+            },
+            {
+              "cells": 15,
+              "value": 13215
+            },
+            {
+              "cells": 13,
+              "value": 10081
+            },
+            {
+              "cells": 13,
+              "value": 10082
+            },
+            {
+              "cells": 12,
+              "value": 13216
+            }
+          ],
+          "nonzero_cells": 519,
+          "ordinal": 2,
+          "sha256": "eb9f6b200053ec5322f0b01a983d25fdd4beb1679832e276b2c8ef0f3d6a5c69"
+        },
+        {
+          "bytes": 1920000,
+          "distinct_values": 4,
+          "maximum": 49155,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 956419,
+              "value": 0
+            },
+            {
+              "cells": 3569,
+              "value": 49152
+            },
+            {
+              "cells": 9,
+              "value": 49155
+            },
+            {
+              "cells": 3,
+              "value": 49154
+            }
+          ],
+          "nonzero_cells": 3581,
+          "ordinal": 3,
+          "sha256": "bd802eca151c6effbb07e80266c72e89e975d0a1479af7e82eee8fb6799a130d"
+        }
+      ],
+      "sha256": "6638ed342adf087077b2fc97d481ae3b0579489bf2dc4b9c781544366911c807",
+      "status": "EXACT_LAYOUT_MATCH",
+      "width": 800
+    },
+    {
+      "bytes": 135008,
+      "cells": 22500,
+      "filename_numeric_token": 2000,
+      "height": 150,
+      "layout": "LE_U32_WIDTH_HEIGHT_THREE_LE_U16_PLANES_EXACT_LENGTH",
+      "original_place_name": null,
+      "path": "map/2000.dat",
+      "planes": [
+        {
+          "bytes": 45000,
+          "distinct_values": 290,
+          "maximum": 7396,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 20152,
+              "value": 0
+            },
+            {
+              "cells": 209,
+              "value": 196
+            },
+            {
+              "cells": 184,
+              "value": 195
+            },
+            {
+              "cells": 179,
+              "value": 194
+            },
+            {
+              "cells": 172,
+              "value": 193
+            },
+            {
+              "cells": 75,
+              "value": 6002
+            },
+            {
+              "cells": 69,
+              "value": 6003
+            },
+            {
+              "cells": 66,
+              "value": 6006
+            },
+            {
+              "cells": 62,
+              "value": 6000
+            },
+            {
+              "cells": 62,
+              "value": 6005
+            }
+          ],
+          "nonzero_cells": 2348,
+          "ordinal": 1,
+          "sha256": "58b72c3f68585cf9998f5598f99a1b463637976bb9fc9cca57369235bbb32efa"
+        },
+        {
+          "bytes": 45000,
+          "distinct_values": 47,
+          "maximum": 13469,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 22147,
+              "value": 0
+            },
+            {
+              "cells": 193,
+              "value": 2
+            },
+            {
+              "cells": 67,
+              "value": 27
+            },
+            {
+              "cells": 7,
+              "value": 10904
+            },
+            {
+              "cells": 6,
+              "value": 10134
+            },
+            {
+              "cells": 4,
+              "value": 28
+            },
+            {
+              "cells": 4,
+              "value": 10028
+            },
+            {
+              "cells": 4,
+              "value": 10125
+            },
+            {
+              "cells": 4,
+              "value": 10129
+            },
+            {
+              "cells": 4,
+              "value": 10152
+            }
+          ],
+          "nonzero_cells": 353,
+          "ordinal": 2,
+          "sha256": "a536d3129fac33257399d3d5ff10755cfa2a90654dbb70a11227c44f44351abc"
+        },
+        {
+          "bytes": 45000,
+          "distinct_values": 3,
+          "maximum": 49155,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 20152,
+              "value": 0
+            },
+            {
+              "cells": 2342,
+              "value": 49152
+            },
+            {
+              "cells": 6,
+              "value": 49155
+            }
+          ],
+          "nonzero_cells": 2348,
+          "ordinal": 3,
+          "sha256": "296e8db990a172d1af73c7f15fccd71a61eaae01580ad76b11547dfa12a0d10c"
+        }
+      ],
+      "sha256": "a5a043022b0dbf6199707ed57beb4df518715658c1df7e83da09e1c7f024b379",
+      "status": "EXACT_LAYOUT_MATCH",
+      "width": 150
+    },
+    {
+      "bytes": 7208,
+      "cells": 1200,
+      "filename_numeric_token": 2006,
+      "height": 30,
+      "layout": "LE_U32_WIDTH_HEIGHT_THREE_LE_U16_PLANES_EXACT_LENGTH",
+      "original_place_name": null,
+      "path": "map/2006.dat",
+      "planes": [
+        {
+          "bytes": 2400,
+          "distinct_values": 24,
+          "maximum": 5028,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 978,
+              "value": 0
+            },
+            {
+              "cells": 92,
+              "value": 5000
+            },
+            {
+              "cells": 29,
+              "value": 5001
+            },
+            {
+              "cells": 20,
+              "value": 402
+            },
+            {
+              "cells": 17,
+              "value": 5002
+            },
+            {
+              "cells": 11,
+              "value": 5016
+            },
+            {
+              "cells": 10,
+              "value": 5008
+            },
+            {
+              "cells": 9,
+              "value": 5006
+            },
+            {
+              "cells": 7,
+              "value": 5028
+            },
+            {
+              "cells": 6,
+              "value": 5010
+            }
+          ],
+          "nonzero_cells": 222,
+          "ordinal": 1,
+          "sha256": "1ceaf82eb65cb56aab9a06bfb295f8c521c7d11e18feb02ec1b54273d1c9c778"
+        },
+        {
+          "bytes": 2400,
+          "distinct_values": 27,
+          "maximum": 12839,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 591,
+              "value": 0
+            },
+            {
+              "cells": 575,
+              "value": 2
+            },
+            {
+              "cells": 4,
+              "value": 12802
+            },
+            {
+              "cells": 3,
+              "value": 12000
+            },
+            {
+              "cells": 3,
+              "value": 12001
+            },
+            {
+              "cells": 2,
+              "value": 12002
+            },
+            {
+              "cells": 2,
+              "value": 12011
+            },
+            {
+              "cells": 1,
+              "value": 40
+            },
+            {
+              "cells": 1,
+              "value": 12007
+            },
+            {
+              "cells": 1,
+              "value": 12008
+            }
+          ],
+          "nonzero_cells": 609,
+          "ordinal": 2,
+          "sha256": "bb59d7c4cbca9ee9fce5c112d1bcfb57903f9f148658f4bae8077f52d4b1c696"
+        },
+        {
+          "bytes": 2400,
+          "distinct_values": 3,
+          "maximum": 49155,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 754,
+              "value": 49152
+            },
+            {
+              "cells": 444,
+              "value": 0
+            },
+            {
+              "cells": 2,
+              "value": 49155
+            }
+          ],
+          "nonzero_cells": 756,
+          "ordinal": 3,
+          "sha256": "1f3f95523041c78ab6e661ae04ec69800cce4b34f1a15beae3151e46e4b896aa"
+        }
+      ],
+      "sha256": "a605acae7bd418e0250c581b4e7d9274a3c86d9f3df260d526269b31d7c879fe",
+      "status": "EXACT_LAYOUT_MATCH",
+      "width": 40
+    },
+    {
+      "bytes": 5408,
+      "cells": 900,
+      "filename_numeric_token": 2012,
+      "height": 30,
+      "layout": "LE_U32_WIDTH_HEIGHT_THREE_LE_U16_PLANES_EXACT_LENGTH",
+      "original_place_name": null,
+      "path": "map/2012.dat",
+      "planes": [
+        {
+          "bytes": 1800,
+          "distinct_values": 39,
+          "maximum": 5038,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 782,
+              "value": 0
+            },
+            {
+              "cells": 17,
+              "value": 5001
+            },
+            {
+              "cells": 16,
+              "value": 5000
+            },
+            {
+              "cells": 11,
+              "value": 5002
+            },
+            {
+              "cells": 8,
+              "value": 5010
+            },
+            {
+              "cells": 6,
+              "value": 5016
+            },
+            {
+              "cells": 5,
+              "value": 5006
+            },
+            {
+              "cells": 5,
+              "value": 5018
+            },
+            {
+              "cells": 4,
+              "value": 401
+            },
+            {
+              "cells": 4,
+              "value": 5020
+            }
+          ],
+          "nonzero_cells": 118,
+          "ordinal": 1,
+          "sha256": "4e12eac93f8a2a56361c4ef40cff6645fdd3d40d65a57f261428f82284c50dc8"
+        },
+        {
+          "bytes": 1800,
+          "distinct_values": 26,
+          "maximum": 12926,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 795,
+              "value": 2
+            },
+            {
+              "cells": 72,
+              "value": 0
+            },
+            {
+              "cells": 4,
+              "value": 12802
+            },
+            {
+              "cells": 3,
+              "value": 12001
+            },
+            {
+              "cells": 2,
+              "value": 12618
+            },
+            {
+              "cells": 2,
+              "value": 12619
+            },
+            {
+              "cells": 2,
+              "value": 12620
+            },
+            {
+              "cells": 2,
+              "value": 12621
+            },
+            {
+              "cells": 1,
+              "value": 40
+            },
+            {
+              "cells": 1,
+              "value": 10023
+            }
+          ],
+          "nonzero_cells": 828,
+          "ordinal": 2,
+          "sha256": "c9131e22926dba518d0595b82048c1c1fa8b249ff76c75dc679cc094fc29ad6b"
+        },
+        {
+          "bytes": 1800,
+          "distinct_values": 3,
+          "maximum": 49155,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 894,
+              "value": 49152
+            },
+            {
+              "cells": 4,
+              "value": 0
+            },
+            {
+              "cells": 2,
+              "value": 49155
+            }
+          ],
+          "nonzero_cells": 896,
+          "ordinal": 3,
+          "sha256": "d72c57f34f16265ee62a7ea77021bbea506f7725ea71b97c90a84d6167a95962"
+        }
+      ],
+      "sha256": "479d91c46e70d6c173e2f0c9e40756b265064dc76bcdf3c825a4b6aee2384d36",
+      "status": "EXACT_LAYOUT_MATCH",
+      "width": 30
+    },
+    {
+      "bytes": 86408,
+      "cells": 14400,
+      "filename_numeric_token": 21201,
+      "height": 120,
+      "layout": "LE_U32_WIDTH_HEIGHT_THREE_LE_U16_PLANES_EXACT_LENGTH",
+      "original_place_name": null,
+      "path": "map/21201.dat",
+      "planes": [
+        {
+          "bytes": 28800,
+          "distinct_values": 113,
+          "maximum": 4123,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 13671,
+              "value": 0
+            },
+            {
+              "cells": 18,
+              "value": 4003
+            },
+            {
+              "cells": 18,
+              "value": 4008
+            },
+            {
+              "cells": 16,
+              "value": 4002
+            },
+            {
+              "cells": 16,
+              "value": 4005
+            },
+            {
+              "cells": 14,
+              "value": 4000
+            },
+            {
+              "cells": 13,
+              "value": 4001
+            },
+            {
+              "cells": 13,
+              "value": 4024
+            },
+            {
+              "cells": 13,
+              "value": 4028
+            },
+            {
+              "cells": 13,
+              "value": 4079
+            }
+          ],
+          "nonzero_cells": 729,
+          "ordinal": 1,
+          "sha256": "73f9dbd2f380a48ce10cd436d91cb2dbd9ecb78d09a107937c7f1173978f41f9"
+        },
+        {
+          "bytes": 28800,
+          "distinct_values": 9,
+          "maximum": 15214,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 14325,
+              "value": 0
+            },
+            {
+              "cells": 64,
+              "value": 2
+            },
+            {
+              "cells": 3,
+              "value": 15203
+            },
+            {
+              "cells": 2,
+              "value": 15200
+            },
+            {
+              "cells": 2,
+              "value": 15205
+            },
+            {
+              "cells": 1,
+              "value": 44
+            },
+            {
+              "cells": 1,
+              "value": 15207
+            },
+            {
+              "cells": 1,
+              "value": 15210
+            },
+            {
+              "cells": 1,
+              "value": 15214
+            }
+          ],
+          "nonzero_cells": 75,
+          "ordinal": 2,
+          "sha256": "085c1bcdf719d4e853d494a77dbbf4e0a64460b1c509776680280cafa0a6b22d"
+        },
+        {
+          "bytes": 28800,
+          "distinct_values": 3,
+          "maximum": 49155,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 13671,
+              "value": 0
+            },
+            {
+              "cells": 728,
+              "value": 49152
+            },
+            {
+              "cells": 1,
+              "value": 49155
+            }
+          ],
+          "nonzero_cells": 729,
+          "ordinal": 3,
+          "sha256": "a7c7eb213335cec224461750bf5f8b0f246d94edb6c81bb286fc46dc73ddde6d"
+        }
+      ],
+      "sha256": "62fc0ff056f938e65e1b5804a078e5f8f8d2a752659d4704f76921b3fb954e4d",
+      "status": "EXACT_LAYOUT_MATCH",
+      "width": 120
+    },
+    {
+      "bytes": 9608,
+      "cells": 1600,
+      "filename_numeric_token": 21308,
+      "height": 40,
+      "layout": "LE_U32_WIDTH_HEIGHT_THREE_LE_U16_PLANES_EXACT_LENGTH",
+      "original_place_name": null,
+      "path": "map/21308.dat",
+      "planes": [
+        {
+          "bytes": 3200,
+          "distinct_values": 63,
+          "maximum": 4471,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 366,
+              "value": 0
+            },
+            {
+              "cells": 83,
+              "value": 70
+            },
+            {
+              "cells": 78,
+              "value": 4403
+            },
+            {
+              "cells": 76,
+              "value": 4400
+            },
+            {
+              "cells": 76,
+              "value": 4401
+            },
+            {
+              "cells": 75,
+              "value": 4406
+            },
+            {
+              "cells": 74,
+              "value": 4405
+            },
+            {
+              "cells": 72,
+              "value": 4408
+            },
+            {
+              "cells": 67,
+              "value": 4402
+            },
+            {
+              "cells": 67,
+              "value": 4407
+            }
+          ],
+          "nonzero_cells": 1234,
+          "ordinal": 1,
+          "sha256": "f1ef92041b0c3d21c4723062d5747c2ee5f025075fbfa4c32613843db3f1f45d"
+        },
+        {
+          "bytes": 3200,
+          "distinct_values": 17,
+          "maximum": 15315,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 1432,
+              "value": 0
+            },
+            {
+              "cells": 127,
+              "value": 2
+            },
+            {
+              "cells": 11,
+              "value": 12618
+            },
+            {
+              "cells": 9,
+              "value": 15301
+            },
+            {
+              "cells": 5,
+              "value": 15307
+            },
+            {
+              "cells": 2,
+              "value": 42
+            },
+            {
+              "cells": 2,
+              "value": 12623
+            },
+            {
+              "cells": 2,
+              "value": 15300
+            },
+            {
+              "cells": 2,
+              "value": 15310
+            },
+            {
+              "cells": 1,
+              "value": 12669
+            }
+          ],
+          "nonzero_cells": 168,
+          "ordinal": 2,
+          "sha256": "67aee9931e60bd998f254e49c14e43b4ba56d9f86b37a5f69c06755f4970ab11"
+        },
+        {
+          "bytes": 3200,
+          "distinct_values": 3,
+          "maximum": 49155,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 1231,
+              "value": 49152
+            },
+            {
+              "cells": 366,
+              "value": 0
+            },
+            {
+              "cells": 3,
+              "value": 49155
+            }
+          ],
+          "nonzero_cells": 1234,
+          "ordinal": 3,
+          "sha256": "2b015887507fc85b4af21082cfc3a1695a1fecac04c0e0c20c4f4f18354bb242"
+        }
+      ],
+      "sha256": "0418a8f06ca97429d9f9ede5603fce4d88e35ab6b2ce622fc109df1e76bdc22c",
+      "status": "EXACT_LAYOUT_MATCH",
+      "width": 40
+    },
+    {
+      "bytes": 135008,
+      "cells": 22500,
+      "filename_numeric_token": 3000,
+      "height": 150,
+      "layout": "LE_U32_WIDTH_HEIGHT_THREE_LE_U16_PLANES_EXACT_LENGTH",
+      "original_place_name": null,
+      "path": "map/3000.dat",
+      "planes": [
+        {
+          "bytes": 45000,
+          "distinct_values": 711,
+          "maximum": 8712,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 18174,
+              "value": 0
+            },
+            {
+              "cells": 181,
+              "value": 2018
+            },
+            {
+              "cells": 176,
+              "value": 2020
+            },
+            {
+              "cells": 167,
+              "value": 2022
+            },
+            {
+              "cells": 159,
+              "value": 2024
+            },
+            {
+              "cells": 155,
+              "value": 2019
+            },
+            {
+              "cells": 154,
+              "value": 2023
+            },
+            {
+              "cells": 143,
+              "value": 2021
+            },
+            {
+              "cells": 143,
+              "value": 2026
+            },
+            {
+              "cells": 120,
+              "value": 2025
+            }
+          ],
+          "nonzero_cells": 4326,
+          "ordinal": 1,
+          "sha256": "bff19afc5961e8a0814973ff3f127fae451c34436144ba81e738cbee24238f43"
+        },
+        {
+          "bytes": 45000,
+          "distinct_values": 96,
+          "maximum": 14410,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 21784,
+              "value": 0
+            },
+            {
+              "cells": 338,
+              "value": 2
+            },
+            {
+              "cells": 19,
+              "value": 11083
+            },
+            {
+              "cells": 16,
+              "value": 11084
+            },
+            {
+              "cells": 15,
+              "value": 20
+            },
+            {
+              "cells": 14,
+              "value": 10027
+            },
+            {
+              "cells": 11,
+              "value": 10024
+            },
+            {
+              "cells": 11,
+              "value": 11086
+            },
+            {
+              "cells": 10,
+              "value": 10026
+            },
+            {
+              "cells": 10,
+              "value": 12917
+            }
+          ],
+          "nonzero_cells": 716,
+          "ordinal": 2,
+          "sha256": "50647a121f7b7d2cb8315f6cf0fdc56cc5eddaae711bbba608759fd6a27cdf86"
+        },
+        {
+          "bytes": 45000,
+          "distinct_values": 5,
+          "maximum": 49159,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 18108,
+              "value": 0
+            },
+            {
+              "cells": 4373,
+              "value": 49152
+            },
+            {
+              "cells": 17,
+              "value": 49155
+            },
+            {
+              "cells": 1,
+              "value": 49158
+            },
+            {
+              "cells": 1,
+              "value": 49159
+            }
+          ],
+          "nonzero_cells": 4392,
+          "ordinal": 3,
+          "sha256": "01509725ce7df874c4f6164f601d650d29fad72bc8f6c47cfb5244a066f18b35"
+        }
+      ],
+      "sha256": "3e650517bfd8dfd5a34a675155cca180d223a03c12b5c7b78c76631004b9981a",
+      "status": "EXACT_LAYOUT_MATCH",
+      "width": 150
+    },
+    {
+      "bytes": 5408,
+      "cells": 900,
+      "filename_numeric_token": 3004,
+      "height": 30,
+      "layout": "LE_U32_WIDTH_HEIGHT_THREE_LE_U16_PLANES_EXACT_LENGTH",
+      "original_place_name": null,
+      "path": "map/3004.dat",
+      "planes": [
+        {
+          "bytes": 1800,
+          "distinct_values": 22,
+          "maximum": 5136,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 785,
+              "value": 0
+            },
+            {
+              "cells": 39,
+              "value": 5002
+            },
+            {
+              "cells": 16,
+              "value": 5000
+            },
+            {
+              "cells": 9,
+              "value": 5001
+            },
+            {
+              "cells": 8,
+              "value": 5106
+            },
+            {
+              "cells": 5,
+              "value": 5010
+            },
+            {
+              "cells": 4,
+              "value": 5054
+            },
+            {
+              "cells": 4,
+              "value": 5110
+            },
+            {
+              "cells": 4,
+              "value": 5134
+            },
+            {
+              "cells": 3,
+              "value": 5051
+            }
+          ],
+          "nonzero_cells": 115,
+          "ordinal": 1,
+          "sha256": "1acbd6a6554d67b67ddc6e773921990dcf5312bc29304e6556918a7f474e76ae"
+        },
+        {
+          "bytes": 1800,
+          "distinct_values": 26,
+          "maximum": 12840,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 583,
+              "value": 2
+            },
+            {
+              "cells": 284,
+              "value": 0
+            },
+            {
+              "cells": 4,
+              "value": 12802
+            },
+            {
+              "cells": 2,
+              "value": 12042
+            },
+            {
+              "cells": 2,
+              "value": 12045
+            },
+            {
+              "cells": 2,
+              "value": 12617
+            },
+            {
+              "cells": 2,
+              "value": 12618
+            },
+            {
+              "cells": 2,
+              "value": 12619
+            },
+            {
+              "cells": 2,
+              "value": 12620
+            },
+            {
+              "cells": 1,
+              "value": 12041
+            }
+          ],
+          "nonzero_cells": 616,
+          "ordinal": 2,
+          "sha256": "8f4ce12bbbf5214f89e3dce09e0f6f19912ccab115a661c4bb58026396981bb7"
+        },
+        {
+          "bytes": 1800,
+          "distinct_values": 3,
+          "maximum": 49155,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 670,
+              "value": 49152
+            },
+            {
+              "cells": 228,
+              "value": 0
+            },
+            {
+              "cells": 2,
+              "value": 49155
+            }
+          ],
+          "nonzero_cells": 672,
+          "ordinal": 3,
+          "sha256": "a3c79340501aac8cc65c5913e2393b3c5cd5e19f9047c56af23e70f2d260d477"
+        }
+      ],
+      "sha256": "401d4c46306230b419d02accd4855b3e0e77dd1d4024f1544065a69aa5f4b4c5",
+      "status": "EXACT_LAYOUT_MATCH",
+      "width": 30
+    },
+    {
+      "bytes": 7208,
+      "cells": 1200,
+      "filename_numeric_token": 3006,
+      "height": 30,
+      "layout": "LE_U32_WIDTH_HEIGHT_THREE_LE_U16_PLANES_EXACT_LENGTH",
+      "original_place_name": null,
+      "path": "map/3006.dat",
+      "planes": [
+        {
+          "bytes": 2400,
+          "distinct_values": 29,
+          "maximum": 5138,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 961,
+              "value": 0
+            },
+            {
+              "cells": 89,
+              "value": 5000
+            },
+            {
+              "cells": 28,
+              "value": 5001
+            },
+            {
+              "cells": 17,
+              "value": 5002
+            },
+            {
+              "cells": 13,
+              "value": 5118
+            },
+            {
+              "cells": 11,
+              "value": 5122
+            },
+            {
+              "cells": 9,
+              "value": 5052
+            },
+            {
+              "cells": 9,
+              "value": 5054
+            },
+            {
+              "cells": 8,
+              "value": 5051
+            },
+            {
+              "cells": 8,
+              "value": 5053
+            }
+          ],
+          "nonzero_cells": 239,
+          "ordinal": 1,
+          "sha256": "ff4d1be23f69bfb8f857e31063ad83002460a9d2f2f5c50f659942c8c10831b1"
+        },
+        {
+          "bytes": 2400,
+          "distinct_values": 31,
+          "maximum": 12925,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 624,
+              "value": 0
+            },
+            {
+              "cells": 526,
+              "value": 2
+            },
+            {
+              "cells": 6,
+              "value": 12802
+            },
+            {
+              "cells": 4,
+              "value": 12045
+            },
+            {
+              "cells": 4,
+              "value": 12803
+            },
+            {
+              "cells": 3,
+              "value": 12046
+            },
+            {
+              "cells": 3,
+              "value": 12924
+            },
+            {
+              "cells": 2,
+              "value": 12041
+            },
+            {
+              "cells": 2,
+              "value": 12042
+            },
+            {
+              "cells": 2,
+              "value": 12044
+            }
+          ],
+          "nonzero_cells": 576,
+          "ordinal": 2,
+          "sha256": "d6ca5d17d9a409824436d0020b77ae334ff21595214d870f545adae3e2d291b3"
+        },
+        {
+          "bytes": 2400,
+          "distinct_values": 3,
+          "maximum": 49155,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 727,
+              "value": 49152
+            },
+            {
+              "cells": 471,
+              "value": 0
+            },
+            {
+              "cells": 2,
+              "value": 49155
+            }
+          ],
+          "nonzero_cells": 729,
+          "ordinal": 3,
+          "sha256": "db7f0107f63d1e1582e54f439b9434ac964c551dec93511888b225fced8c53ea"
+        }
+      ],
+      "sha256": "db1638b0fb5acc9df18fd799eb99986dc40335c7afb1e89bf492a7789749a3e1",
+      "status": "EXACT_LAYOUT_MATCH",
+      "width": 40
+    },
+    {
+      "bytes": 3758,
+      "cells": 625,
+      "filename_numeric_token": 3020,
+      "height": 25,
+      "layout": "LE_U32_WIDTH_HEIGHT_THREE_LE_U16_PLANES_EXACT_LENGTH",
+      "original_place_name": null,
+      "path": "map/3020.dat",
+      "planes": [
+        {
+          "bytes": 1250,
+          "distinct_values": 25,
+          "maximum": 5046,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 463,
+              "value": 0
+            },
+            {
+              "cells": 18,
+              "value": 5046
+            },
+            {
+              "cells": 15,
+              "value": 5045
+            },
+            {
+              "cells": 12,
+              "value": 4520
+            },
+            {
+              "cells": 11,
+              "value": 4525
+            },
+            {
+              "cells": 9,
+              "value": 4519
+            },
+            {
+              "cells": 9,
+              "value": 4522
+            },
+            {
+              "cells": 8,
+              "value": 4517
+            },
+            {
+              "cells": 8,
+              "value": 4528
+            },
+            {
+              "cells": 7,
+              "value": 4521
+            }
+          ],
+          "nonzero_cells": 162,
+          "ordinal": 1,
+          "sha256": "06d1e7181997deafd858b1527090a8baf3a076145171fdf176e0fe78971f8df6"
+        },
+        {
+          "bytes": 1250,
+          "distinct_values": 17,
+          "maximum": 13012,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 482,
+              "value": 2
+            },
+            {
+              "cells": 87,
+              "value": 0
+            },
+            {
+              "cells": 26,
+              "value": 12621
+            },
+            {
+              "cells": 7,
+              "value": 12068
+            },
+            {
+              "cells": 5,
+              "value": 13012
+            },
+            {
+              "cells": 4,
+              "value": 12065
+            },
+            {
+              "cells": 2,
+              "value": 11088
+            },
+            {
+              "cells": 2,
+              "value": 12666
+            },
+            {
+              "cells": 2,
+              "value": 12804
+            },
+            {
+              "cells": 1,
+              "value": 10097
+            }
+          ],
+          "nonzero_cells": 538,
+          "ordinal": 2,
+          "sha256": "6ad38e280dcc61d33b72f2183ea2e26c4f5d85f27a4513912e84c0a3c7e14077"
+        },
+        {
+          "bytes": 1250,
+          "distinct_values": 2,
+          "maximum": 49155,
+          "minimum": 49152,
+          "most_frequent": [
+            {
+              "cells": 624,
+              "value": 49152
+            },
+            {
+              "cells": 1,
+              "value": 49155
+            }
+          ],
+          "nonzero_cells": 625,
+          "ordinal": 3,
+          "sha256": "466907271be9173207e7e5ed99dd08c0dd1a919e3df1b1eee83f0d9d1a0f85f0"
+        }
+      ],
+      "sha256": "c711951439d79adcde3088bf63be5bb9dc76489f9952b95d9fae743bb308eaac",
+      "status": "EXACT_LAYOUT_MATCH",
+      "width": 25
+    },
+    {
+      "bytes": 60008,
+      "cells": 10000,
+      "filename_numeric_token": 30691,
+      "height": 100,
+      "layout": "LE_U32_WIDTH_HEIGHT_THREE_LE_U16_PLANES_EXACT_LENGTH",
+      "original_place_name": null,
+      "path": "map/30691.dat",
+      "planes": [
+        {
+          "bytes": 20000,
+          "distinct_values": 70,
+          "maximum": 4603,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 5887,
+              "value": 0
+            },
+            {
+              "cells": 206,
+              "value": 4511
+            },
+            {
+              "cells": 190,
+              "value": 4509
+            },
+            {
+              "cells": 186,
+              "value": 4512
+            },
+            {
+              "cells": 185,
+              "value": 4500
+            },
+            {
+              "cells": 185,
+              "value": 4504
+            },
+            {
+              "cells": 182,
+              "value": 4508
+            },
+            {
+              "cells": 181,
+              "value": 4515
+            },
+            {
+              "cells": 179,
+              "value": 4514
+            },
+            {
+              "cells": 178,
+              "value": 4505
+            }
+          ],
+          "nonzero_cells": 4113,
+          "ordinal": 1,
+          "sha256": "95871e448d808a716cfed186b094b010e340a8e1ff094da821c26f80557636f4"
+        },
+        {
+          "bytes": 20000,
+          "distinct_values": 33,
+          "maximum": 15999,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 8737,
+              "value": 0
+            },
+            {
+              "cells": 562,
+              "value": 15999
+            },
+            {
+              "cells": 246,
+              "value": 2
+            },
+            {
+              "cells": 78,
+              "value": 13025
+            },
+            {
+              "cells": 52,
+              "value": 12618
+            },
+            {
+              "cells": 42,
+              "value": 11906
+            },
+            {
+              "cells": 34,
+              "value": 12654
+            },
+            {
+              "cells": 27,
+              "value": 13623
+            },
+            {
+              "cells": 27,
+              "value": 13625
+            },
+            {
+              "cells": 24,
+              "value": 13467
+            }
+          ],
+          "nonzero_cells": 1263,
+          "ordinal": 2,
+          "sha256": "a0e675d96ca647b3195e3111750d6c8c49603402a13788b3ab5dcc25fcd5b950"
+        },
+        {
+          "bytes": 20000,
+          "distinct_values": 4,
+          "maximum": 49155,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 7553,
+              "value": 49152
+            },
+            {
+              "cells": 2445,
+              "value": 0
+            },
+            {
+              "cells": 1,
+              "value": 49154
+            },
+            {
+              "cells": 1,
+              "value": 49155
+            }
+          ],
+          "nonzero_cells": 7555,
+          "ordinal": 3,
+          "sha256": "01c7d7309966515f90782847c114461d51cd2df4ebca8376c44530de100fbecd"
+        }
+      ],
+      "sha256": "d7549422e038809f35ef8b6a2f26d8a11c83535582be28c66df664eabe810359",
+      "status": "EXACT_LAYOUT_MATCH",
+      "width": 100
+    },
+    {
+      "bytes": 60008,
+      "cells": 10000,
+      "filename_numeric_token": 32020,
+      "height": 100,
+      "layout": "LE_U32_WIDTH_HEIGHT_THREE_LE_U16_PLANES_EXACT_LENGTH",
+      "original_place_name": null,
+      "path": "map/32020.dat",
+      "planes": [
+        {
+          "bytes": 20000,
+          "distinct_values": 18,
+          "maximum": 9440,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 4402,
+              "value": 9440
+            },
+            {
+              "cells": 4189,
+              "value": 0
+            },
+            {
+              "cells": 170,
+              "value": 9433
+            },
+            {
+              "cells": 103,
+              "value": 9428
+            },
+            {
+              "cells": 100,
+              "value": 9431
+            },
+            {
+              "cells": 100,
+              "value": 9432
+            },
+            {
+              "cells": 99,
+              "value": 9439
+            },
+            {
+              "cells": 98,
+              "value": 9437
+            },
+            {
+              "cells": 97,
+              "value": 9426
+            },
+            {
+              "cells": 94,
+              "value": 9427
+            }
+          ],
+          "nonzero_cells": 5811,
+          "ordinal": 1,
+          "sha256": "62f7ba7aa20ca533a2846936d9e8382b7e94547cbdf30661c207fe99e60fe9bd"
+        },
+        {
+          "bytes": 20000,
+          "distinct_values": 41,
+          "maximum": 15012,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 9628,
+              "value": 0
+            },
+            {
+              "cells": 92,
+              "value": 2
+            },
+            {
+              "cells": 41,
+              "value": 10947
+            },
+            {
+              "cells": 38,
+              "value": 10951
+            },
+            {
+              "cells": 32,
+              "value": 10944
+            },
+            {
+              "cells": 26,
+              "value": 10945
+            },
+            {
+              "cells": 19,
+              "value": 10949
+            },
+            {
+              "cells": 14,
+              "value": 10954
+            },
+            {
+              "cells": 13,
+              "value": 10952
+            },
+            {
+              "cells": 13,
+              "value": 10953
+            }
+          ],
+          "nonzero_cells": 372,
+          "ordinal": 2,
+          "sha256": "a57d78e9a2de853102074493623dfe3fa537e05391f77e8efca7484c11eeb0a9"
+        },
+        {
+          "bytes": 20000,
+          "distinct_values": 4,
+          "maximum": 49155,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 5799,
+              "value": 49152
+            },
+            {
+              "cells": 4189,
+              "value": 0
+            },
+            {
+              "cells": 11,
+              "value": 49155
+            },
+            {
+              "cells": 1,
+              "value": 49154
+            }
+          ],
+          "nonzero_cells": 5811,
+          "ordinal": 3,
+          "sha256": "cbfdfdc06be0a3f1f2d9edae2e2ca9da1756ff40610dff2530375109b6c0e3f3"
+        }
+      ],
+      "sha256": "63396f1229df8b2b469d6ad25d273c0b26847e5a221f0e2ff98202cf332efda5",
+      "status": "EXACT_LAYOUT_MATCH",
+      "width": 100
+    },
+    {
+      "bytes": 86408,
+      "cells": 14400,
+      "filename_numeric_token": 3400,
+      "height": 120,
+      "layout": "LE_U32_WIDTH_HEIGHT_THREE_LE_U16_PLANES_EXACT_LENGTH",
+      "original_place_name": null,
+      "path": "map/3400.dat",
+      "planes": [
+        {
+          "bytes": 28800,
+          "distinct_values": 171,
+          "maximum": 7387,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 12738,
+              "value": 0
+            },
+            {
+              "cells": 62,
+              "value": 400
+            },
+            {
+              "cells": 61,
+              "value": 195
+            },
+            {
+              "cells": 61,
+              "value": 405
+            },
+            {
+              "cells": 60,
+              "value": 402
+            },
+            {
+              "cells": 59,
+              "value": 194
+            },
+            {
+              "cells": 55,
+              "value": 406
+            },
+            {
+              "cells": 52,
+              "value": 408
+            },
+            {
+              "cells": 51,
+              "value": 404
+            },
+            {
+              "cells": 50,
+              "value": 196
+            }
+          ],
+          "nonzero_cells": 1662,
+          "ordinal": 1,
+          "sha256": "e2e6d432e4aa0327ffdb7d70667901f95dde056e699558c9b50437236630cc03"
+        },
+        {
+          "bytes": 28800,
+          "distinct_values": 31,
+          "maximum": 13215,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 14058,
+              "value": 0
+            },
+            {
+              "cells": 250,
+              "value": 2
+            },
+            {
+              "cells": 33,
+              "value": 27
+            },
+            {
+              "cells": 9,
+              "value": 10022
+            },
+            {
+              "cells": 8,
+              "value": 10023
+            },
+            {
+              "cells": 6,
+              "value": 10025
+            },
+            {
+              "cells": 3,
+              "value": 41
+            },
+            {
+              "cells": 3,
+              "value": 10019
+            },
+            {
+              "cells": 2,
+              "value": 10021
+            },
+            {
+              "cells": 2,
+              "value": 10082
+            }
+          ],
+          "nonzero_cells": 342,
+          "ordinal": 2,
+          "sha256": "9bc07964bf53151da5cdc71380e5af561819be7336801fdd24e4aa7622578537"
+        },
+        {
+          "bytes": 28800,
+          "distinct_values": 3,
+          "maximum": 49155,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 12738,
+              "value": 0
+            },
+            {
+              "cells": 1646,
+              "value": 49152
+            },
+            {
+              "cells": 16,
+              "value": 49155
+            }
+          ],
+          "nonzero_cells": 1662,
+          "ordinal": 3,
+          "sha256": "ccc08aaf0f8c9c7602477175baff7e5ecaa2adf7c552f98cb26726058457a2e7"
+        }
+      ],
+      "sha256": "d0862f74a78e39e2d6760d14b89c24df19f0834d8571769a7059a9f169f08a54",
+      "status": "EXACT_LAYOUT_MATCH",
+      "width": 120
+    },
+    {
+      "bytes": 2408,
+      "cells": 400,
+      "filename_numeric_token": 40,
+      "height": 20,
+      "layout": "LE_U32_WIDTH_HEIGHT_THREE_LE_U16_PLANES_EXACT_LENGTH",
+      "original_place_name": null,
+      "path": "map/40.dat",
+      "planes": [
+        {
+          "bytes": 800,
+          "distinct_values": 84,
+          "maximum": 4123,
+          "minimum": 66,
+          "most_frequent": [
+            {
+              "cells": 125,
+              "value": 66
+            },
+            {
+              "cells": 22,
+              "value": 4000
+            },
+            {
+              "cells": 16,
+              "value": 4004
+            },
+            {
+              "cells": 14,
+              "value": 4001
+            },
+            {
+              "cells": 13,
+              "value": 4003
+            },
+            {
+              "cells": 13,
+              "value": 4008
+            },
+            {
+              "cells": 12,
+              "value": 4006
+            },
+            {
+              "cells": 10,
+              "value": 4002
+            },
+            {
+              "cells": 9,
+              "value": 4073
+            },
+            {
+              "cells": 7,
+              "value": 4084
+            }
+          ],
+          "nonzero_cells": 400,
+          "ordinal": 1,
+          "sha256": "4dbbf6871e62235a11018e6827b061d890343453a4e789661b95c6a33fe29f9c"
+        },
+        {
+          "bytes": 800,
+          "distinct_values": 21,
+          "maximum": 15999,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 254,
+              "value": 0
+            },
+            {
+              "cells": 100,
+              "value": 2
+            },
+            {
+              "cells": 11,
+              "value": 30
+            },
+            {
+              "cells": 7,
+              "value": 15999
+            },
+            {
+              "cells": 4,
+              "value": 42
+            },
+            {
+              "cells": 4,
+              "value": 15207
+            },
+            {
+              "cells": 2,
+              "value": 10023
+            },
+            {
+              "cells": 2,
+              "value": 15202
+            },
+            {
+              "cells": 2,
+              "value": 15204
+            },
+            {
+              "cells": 2,
+              "value": 15216
+            }
+          ],
+          "nonzero_cells": 146,
+          "ordinal": 2,
+          "sha256": "65ea03e6b96f838e693073259a4d47648b147d16697fa79938446c1aa26cda9f"
+        },
+        {
+          "bytes": 800,
+          "distinct_values": 2,
+          "maximum": 49155,
+          "minimum": 49152,
+          "most_frequent": [
+            {
+              "cells": 399,
+              "value": 49152
+            },
+            {
+              "cells": 1,
+              "value": 49155
+            }
+          ],
+          "nonzero_cells": 400,
+          "ordinal": 3,
+          "sha256": "697dd9415e1613aea0a3c2c94e6862279a2633cbdb2f4bbad447c713f8ec4f90"
+        }
+      ],
+      "sha256": "3c62e11cba026ab27b212d7450ebdc9b73859bb7f3037657b2a6b70a8d3ec874",
+      "status": "EXACT_LAYOUT_MATCH",
+      "width": 20
+    },
+    {
+      "bytes": 135008,
+      "cells": 22500,
+      "filename_numeric_token": 4000,
+      "height": 150,
+      "layout": "LE_U32_WIDTH_HEIGHT_THREE_LE_U16_PLANES_EXACT_LENGTH",
+      "original_place_name": null,
+      "path": "map/4000.dat",
+      "planes": [
+        {
+          "bytes": 45000,
+          "distinct_values": 290,
+          "maximum": 2296,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 17822,
+              "value": 0
+            },
+            {
+              "cells": 328,
+              "value": 196
+            },
+            {
+              "cells": 316,
+              "value": 193
+            },
+            {
+              "cells": 306,
+              "value": 194
+            },
+            {
+              "cells": 305,
+              "value": 195
+            },
+            {
+              "cells": 57,
+              "value": 146
+            },
+            {
+              "cells": 56,
+              "value": 148
+            },
+            {
+              "cells": 55,
+              "value": 160
+            },
+            {
+              "cells": 53,
+              "value": 151
+            },
+            {
+              "cells": 52,
+              "value": 153
+            }
+          ],
+          "nonzero_cells": 4678,
+          "ordinal": 1,
+          "sha256": "b40f2b0f95d27ae7ca69d6a01a234ee0ae04dfab9870627e9dc38537c1e73f62"
+        },
+        {
+          "bytes": 45000,
+          "distinct_values": 109,
+          "maximum": 14010,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 21033,
+              "value": 0
+            },
+            {
+              "cells": 567,
+              "value": 27
+            },
+            {
+              "cells": 474,
+              "value": 2
+            },
+            {
+              "cells": 98,
+              "value": 4
+            },
+            {
+              "cells": 26,
+              "value": 11920
+            },
+            {
+              "cells": 22,
+              "value": 36
+            },
+            {
+              "cells": 15,
+              "value": 12620
+            },
+            {
+              "cells": 13,
+              "value": 14008
+            },
+            {
+              "cells": 11,
+              "value": 11917
+            },
+            {
+              "cells": 11,
+              "value": 12621
+            }
+          ],
+          "nonzero_cells": 1467,
+          "ordinal": 2,
+          "sha256": "6560219f7d9ca214c23395a383cfc6f4b9cf70a7d71d666677a57965896cb1c7"
+        },
+        {
+          "bytes": 45000,
+          "distinct_values": 5,
+          "maximum": 49159,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 17822,
+              "value": 0
+            },
+            {
+              "cells": 4661,
+              "value": 49152
+            },
+            {
+              "cells": 15,
+              "value": 49155
+            },
+            {
+              "cells": 1,
+              "value": 49158
+            },
+            {
+              "cells": 1,
+              "value": 49159
+            }
+          ],
+          "nonzero_cells": 4678,
+          "ordinal": 3,
+          "sha256": "4fa020e6ca7e41b0cd49b8f1048dd90c64b26feaa61f4f0ee7f44545987fd66d"
+        }
+      ],
+      "sha256": "728a89fcd46ad3a2caf491da7d129ac0acf9b7759858cc819661ea3f4e927209",
+      "status": "EXACT_LAYOUT_MATCH",
+      "width": 150
+    },
+    {
+      "bytes": 7208,
+      "cells": 1200,
+      "filename_numeric_token": 4006,
+      "height": 40,
+      "layout": "LE_U32_WIDTH_HEIGHT_THREE_LE_U16_PLANES_EXACT_LENGTH",
+      "original_place_name": null,
+      "path": "map/4006.dat",
+      "planes": [
+        {
+          "bytes": 2400,
+          "distinct_values": 24,
+          "maximum": 5025,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 991,
+              "value": 0
+            },
+            {
+              "cells": 102,
+              "value": 5000
+            },
+            {
+              "cells": 16,
+              "value": 5001
+            },
+            {
+              "cells": 15,
+              "value": 5010
+            },
+            {
+              "cells": 11,
+              "value": 5004
+            },
+            {
+              "cells": 9,
+              "value": 5006
+            },
+            {
+              "cells": 8,
+              "value": 145
+            },
+            {
+              "cells": 7,
+              "value": 5008
+            },
+            {
+              "cells": 5,
+              "value": 5002
+            },
+            {
+              "cells": 5,
+              "value": 5009
+            }
+          ],
+          "nonzero_cells": 209,
+          "ordinal": 1,
+          "sha256": "3e54a48c3b1a0e1d875a84d1e4a8ed203f0b6657f3bc6fdb68edaa29951ea0d0"
+        },
+        {
+          "bytes": 2400,
+          "distinct_values": 28,
+          "maximum": 12845,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 650,
+              "value": 2
+            },
+            {
+              "cells": 508,
+              "value": 0
+            },
+            {
+              "cells": 6,
+              "value": 12802
+            },
+            {
+              "cells": 4,
+              "value": 12833
+            },
+            {
+              "cells": 2,
+              "value": 12000
+            },
+            {
+              "cells": 2,
+              "value": 12001
+            },
+            {
+              "cells": 2,
+              "value": 12015
+            },
+            {
+              "cells": 2,
+              "value": 12040
+            },
+            {
+              "cells": 2,
+              "value": 12810
+            },
+            {
+              "cells": 2,
+              "value": 12830
+            }
+          ],
+          "nonzero_cells": 692,
+          "ordinal": 2,
+          "sha256": "be41b81c4e9d5e2fec1c72995402deeb01b7fb0518e07a5d747e6d17415087ad"
+        },
+        {
+          "bytes": 2400,
+          "distinct_values": 3,
+          "maximum": 49155,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 810,
+              "value": 49152
+            },
+            {
+              "cells": 388,
+              "value": 0
+            },
+            {
+              "cells": 2,
+              "value": 49155
+            }
+          ],
+          "nonzero_cells": 812,
+          "ordinal": 3,
+          "sha256": "8a848df0fd54d7131af6e60aa0680e9eabdf7d18f19b0dccfb9e714654a4370e"
+        }
+      ],
+      "sha256": "30f1e3b3b7afe3d56aaed8f2a965199095e7a6ed0fa992fc3dc6bd3eb9cab386",
+      "status": "EXACT_LAYOUT_MATCH",
+      "width": 30
+    },
+    {
+      "bytes": 3758,
+      "cells": 625,
+      "filename_numeric_token": 4020,
+      "height": 25,
+      "layout": "LE_U32_WIDTH_HEIGHT_THREE_LE_U16_PLANES_EXACT_LENGTH",
+      "original_place_name": null,
+      "path": "map/4020.dat",
+      "planes": [
+        {
+          "bytes": 1250,
+          "distinct_values": 51,
+          "maximum": 5046,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 463,
+              "value": 0
+            },
+            {
+              "cells": 16,
+              "value": 5046
+            },
+            {
+              "cells": 13,
+              "value": 5045
+            },
+            {
+              "cells": 9,
+              "value": 4516
+            },
+            {
+              "cells": 9,
+              "value": 4518
+            },
+            {
+              "cells": 7,
+              "value": 4520
+            },
+            {
+              "cells": 7,
+              "value": 4531
+            },
+            {
+              "cells": 6,
+              "value": 4530
+            },
+            {
+              "cells": 5,
+              "value": 4521
+            },
+            {
+              "cells": 5,
+              "value": 4523
+            }
+          ],
+          "nonzero_cells": 162,
+          "ordinal": 1,
+          "sha256": "125721c2c292655e67bfd547a46ce828e6fbe8234c424cac0687ce2f266a4923"
+        },
+        {
+          "bytes": 1250,
+          "distinct_values": 15,
+          "maximum": 13217,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 407,
+              "value": 2
+            },
+            {
+              "cells": 164,
+              "value": 0
+            },
+            {
+              "cells": 28,
+              "value": 12621
+            },
+            {
+              "cells": 7,
+              "value": 12068
+            },
+            {
+              "cells": 4,
+              "value": 12065
+            },
+            {
+              "cells": 4,
+              "value": 13012
+            },
+            {
+              "cells": 2,
+              "value": 12666
+            },
+            {
+              "cells": 2,
+              "value": 12804
+            },
+            {
+              "cells": 1,
+              "value": 10097
+            },
+            {
+              "cells": 1,
+              "value": 10172
+            }
+          ],
+          "nonzero_cells": 461,
+          "ordinal": 2,
+          "sha256": "fdb2c91de64af2214060c37d072b10ea72177e1e1c5fea6bb3ffc65156958c9e"
+        },
+        {
+          "bytes": 1250,
+          "distinct_values": 3,
+          "maximum": 49155,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 547,
+              "value": 49152
+            },
+            {
+              "cells": 75,
+              "value": 0
+            },
+            {
+              "cells": 3,
+              "value": 49155
+            }
+          ],
+          "nonzero_cells": 550,
+          "ordinal": 3,
+          "sha256": "1f92ea6d0bfad2aba736c98244d245b6e3fe9dec74724e5e65ccc549c2c10bfb"
+        }
+      ],
+      "sha256": "723ef033545c6b242f4af307d4f70a9ecbaaa61f4a47911e7dbfa08000b68ada",
+      "status": "EXACT_LAYOUT_MATCH",
+      "width": 25
+    },
+    {
+      "bytes": 5408,
+      "cells": 900,
+      "filename_numeric_token": 5103,
+      "height": 30,
+      "layout": "LE_U32_WIDTH_HEIGHT_THREE_LE_U16_PLANES_EXACT_LENGTH",
+      "original_place_name": null,
+      "path": "map/5103.dat",
+      "planes": [
+        {
+          "bytes": 1800,
+          "distinct_values": 18,
+          "maximum": 4531,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 407,
+              "value": 63
+            },
+            {
+              "cells": 255,
+              "value": 0
+            },
+            {
+              "cells": 28,
+              "value": 4516
+            },
+            {
+              "cells": 21,
+              "value": 4524
+            },
+            {
+              "cells": 20,
+              "value": 4525
+            },
+            {
+              "cells": 18,
+              "value": 4522
+            },
+            {
+              "cells": 17,
+              "value": 4520
+            },
+            {
+              "cells": 16,
+              "value": 4517
+            },
+            {
+              "cells": 15,
+              "value": 4518
+            },
+            {
+              "cells": 15,
+              "value": 4527
+            }
+          ],
+          "nonzero_cells": 645,
+          "ordinal": 1,
+          "sha256": "de1d52299c5c1cf9ef2fad44da0331bbf2cb5ad70d2515455fa781709a809aa8"
+        },
+        {
+          "bytes": 1800,
+          "distinct_values": 28,
+          "maximum": 15017,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 608,
+              "value": 0
+            },
+            {
+              "cells": 223,
+              "value": 2
+            },
+            {
+              "cells": 12,
+              "value": 12617
+            },
+            {
+              "cells": 5,
+              "value": 10912
+            },
+            {
+              "cells": 5,
+              "value": 12805
+            },
+            {
+              "cells": 3,
+              "value": 10911
+            },
+            {
+              "cells": 3,
+              "value": 15002
+            },
+            {
+              "cells": 3,
+              "value": 15003
+            },
+            {
+              "cells": 3,
+              "value": 15004
+            },
+            {
+              "cells": 3,
+              "value": 15005
+            }
+          ],
+          "nonzero_cells": 292,
+          "ordinal": 2,
+          "sha256": "1d46cc1231ca823a30ab7dc2b4a9e9157ab11cb2d1c85c75c9a9044b34e9ca5a"
+        },
+        {
+          "bytes": 1800,
+          "distinct_values": 3,
+          "maximum": 49155,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 644,
+              "value": 49152
+            },
+            {
+              "cells": 252,
+              "value": 0
+            },
+            {
+              "cells": 4,
+              "value": 49155
+            }
+          ],
+          "nonzero_cells": 648,
+          "ordinal": 3,
+          "sha256": "20eef557497de437415fe4524faa42ad4977ec88f75104e72f7664ea064ad181"
+        }
+      ],
+      "sha256": "b39fd5473fa646574d329553c5baabcf96d877352a20d0e9ab9d9f5d2b9fe34b",
+      "status": "EXACT_LAYOUT_MATCH",
+      "width": 30
+    },
+    {
+      "bytes": 960008,
+      "cells": 160000,
+      "filename_numeric_token": 61000,
+      "height": 400,
+      "layout": "LE_U32_WIDTH_HEIGHT_THREE_LE_U16_PLANES_EXACT_LENGTH",
+      "original_place_name": null,
+      "path": "map/61000.dat",
+      "planes": [
+        {
+          "bytes": 320000,
+          "distinct_values": 2,
+          "maximum": 65,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 158542,
+              "value": 0
+            },
+            {
+              "cells": 1458,
+              "value": 65
+            }
+          ],
+          "nonzero_cells": 1458,
+          "ordinal": 1,
+          "sha256": "dedf96f66ee478e3c89d3db516ca3670ded163ecc8dc5b2aefb262648c8f2096"
+        },
+        {
+          "bytes": 320000,
+          "distinct_values": 1,
+          "maximum": 0,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 160000,
+              "value": 0
+            }
+          ],
+          "nonzero_cells": 0,
+          "ordinal": 2,
+          "sha256": "ac2878215ad33205d1732578c89f25ededaad1b676911c540825bcf4baa42d9b"
+        },
+        {
+          "bytes": 320000,
+          "distinct_values": 2,
+          "maximum": 49152,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 158542,
+              "value": 0
+            },
+            {
+              "cells": 1458,
+              "value": 49152
+            }
+          ],
+          "nonzero_cells": 1458,
+          "ordinal": 3,
+          "sha256": "135979ac920ca1f71b6e8d939950d28d83a4b93cd1a8b07e40eb5978a40b31b1"
+        }
+      ],
+      "sha256": "15bba75a455f8b778be53b8eac38973f1e34664570ae14e113a56c41c422a202",
+      "status": "EXACT_LAYOUT_MATCH",
+      "width": 400
+    },
+    {
+      "bytes": 2160008,
+      "cells": 360000,
+      "filename_numeric_token": 61100,
+      "height": 600,
+      "layout": "LE_U32_WIDTH_HEIGHT_THREE_LE_U16_PLANES_EXACT_LENGTH",
+      "original_place_name": null,
+      "path": "map/61100.dat",
+      "planes": [
+        {
+          "bytes": 720000,
+          "distinct_values": 2,
+          "maximum": 60,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 357813,
+              "value": 0
+            },
+            {
+              "cells": 2187,
+              "value": 60
+            }
+          ],
+          "nonzero_cells": 2187,
+          "ordinal": 1,
+          "sha256": "c4f1aff504e951aae1d1c078f7fd75f2c034c002b3b25b3f7a37b8cb61bba516"
+        },
+        {
+          "bytes": 720000,
+          "distinct_values": 1,
+          "maximum": 0,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 360000,
+              "value": 0
+            }
+          ],
+          "nonzero_cells": 0,
+          "ordinal": 2,
+          "sha256": "943696a366338cdf1765680dd633ef600abb4a015c7c6bd3d41cd7d585bc98c8"
+        },
+        {
+          "bytes": 720000,
+          "distinct_values": 2,
+          "maximum": 49152,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 357813,
+              "value": 0
+            },
+            {
+              "cells": 2187,
+              "value": 49152
+            }
+          ],
+          "nonzero_cells": 2187,
+          "ordinal": 3,
+          "sha256": "be16a5dc79d238462f23e6fe0e1d92fa3a6661d6336186800a64ee99cc07ef39"
+        }
+      ],
+      "sha256": "f8f6bafb4f08ea7dbf67ef720d1f23d4911e0d8c35733367ce7a7298937eced6",
+      "status": "EXACT_LAYOUT_MATCH",
+      "width": 600
+    },
+    {
+      "bytes": 153608,
+      "cells": 25600,
+      "filename_numeric_token": 7400,
+      "height": 160,
+      "layout": "LE_U32_WIDTH_HEIGHT_THREE_LE_U16_PLANES_EXACT_LENGTH",
+      "original_place_name": null,
+      "path": "map/7400.dat",
+      "planes": [
+        {
+          "bytes": 51200,
+          "distinct_values": 127,
+          "maximum": 2143,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 24871,
+              "value": 0
+            },
+            {
+              "cells": 166,
+              "value": 60
+            },
+            {
+              "cells": 17,
+              "value": 170
+            },
+            {
+              "cells": 15,
+              "value": 389
+            },
+            {
+              "cells": 14,
+              "value": 404
+            },
+            {
+              "cells": 13,
+              "value": 166
+            },
+            {
+              "cells": 13,
+              "value": 400
+            },
+            {
+              "cells": 13,
+              "value": 407
+            },
+            {
+              "cells": 12,
+              "value": 401
+            },
+            {
+              "cells": 12,
+              "value": 403
+            }
+          ],
+          "nonzero_cells": 729,
+          "ordinal": 1,
+          "sha256": "453503844bf7e159b1bdf5768713eb0275184ec5bd7426a7519e892c241b1fc6"
+        },
+        {
+          "bytes": 51200,
+          "distinct_values": 17,
+          "maximum": 15999,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 25451,
+              "value": 0
+            },
+            {
+              "cells": 82,
+              "value": 15999
+            },
+            {
+              "cells": 47,
+              "value": 2
+            },
+            {
+              "cells": 5,
+              "value": 13551
+            },
+            {
+              "cells": 2,
+              "value": 11102
+            },
+            {
+              "cells": 2,
+              "value": 11311
+            },
+            {
+              "cells": 1,
+              "value": 53
+            },
+            {
+              "cells": 1,
+              "value": 10011
+            },
+            {
+              "cells": 1,
+              "value": 10876
+            },
+            {
+              "cells": 1,
+              "value": 11100
+            }
+          ],
+          "nonzero_cells": 149,
+          "ordinal": 2,
+          "sha256": "2eadcb18a6acd3ee62509eaa1e101a70776e2f8f0d29a87f0e96e8b5abf39e09"
+        },
+        {
+          "bytes": 51200,
+          "distinct_values": 3,
+          "maximum": 49155,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 24871,
+              "value": 0
+            },
+            {
+              "cells": 727,
+              "value": 49152
+            },
+            {
+              "cells": 2,
+              "value": 49155
+            }
+          ],
+          "nonzero_cells": 729,
+          "ordinal": 3,
+          "sha256": "a81f9ec91a498d965a5ec5f7c2ca1bcfd1fda9f3875b86daba0e74d9937dc879"
+        }
+      ],
+      "sha256": "3b4b35104c1c03dcc208ae2d5c50ee7e17346aecef3ab4dfe466d0cf39b0511f",
+      "status": "EXACT_LAYOUT_MATCH",
+      "width": 160
+    },
+    {
+      "bytes": 5408,
+      "cells": 900,
+      "filename_numeric_token": 7405,
+      "height": 30,
+      "layout": "LE_U32_WIDTH_HEIGHT_THREE_LE_U16_PLANES_EXACT_LENGTH",
+      "original_place_name": null,
+      "path": "map/7405.dat",
+      "planes": [
+        {
+          "bytes": 1800,
+          "distinct_values": 15,
+          "maximum": 5136,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 696,
+              "value": 0
+            },
+            {
+              "cells": 67,
+              "value": 5002
+            },
+            {
+              "cells": 62,
+              "value": 63
+            },
+            {
+              "cells": 39,
+              "value": 5000
+            },
+            {
+              "cells": 12,
+              "value": 5001
+            },
+            {
+              "cells": 5,
+              "value": 5010
+            },
+            {
+              "cells": 5,
+              "value": 5020
+            },
+            {
+              "cells": 5,
+              "value": 5032
+            },
+            {
+              "cells": 3,
+              "value": 5136
+            },
+            {
+              "cells": 1,
+              "value": 5009
+            }
+          ],
+          "nonzero_cells": 204,
+          "ordinal": 1,
+          "sha256": "e010d421257716a458fab0c793d3018e96ae248d2662ff67e3896d7233ff825e"
+        },
+        {
+          "bytes": 1800,
+          "distinct_values": 24,
+          "maximum": 12929,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 835,
+              "value": 0
+            },
+            {
+              "cells": 22,
+              "value": 2
+            },
+            {
+              "cells": 4,
+              "value": 12054
+            },
+            {
+              "cells": 4,
+              "value": 12059
+            },
+            {
+              "cells": 4,
+              "value": 12617
+            },
+            {
+              "cells": 4,
+              "value": 12802
+            },
+            {
+              "cells": 3,
+              "value": 10022
+            },
+            {
+              "cells": 3,
+              "value": 12619
+            },
+            {
+              "cells": 3,
+              "value": 12625
+            },
+            {
+              "cells": 2,
+              "value": 12060
+            }
+          ],
+          "nonzero_cells": 65,
+          "ordinal": 2,
+          "sha256": "00288fb576354b1940786fdb4b26720978cb6a8bcbcb4d97cec02030ef3e3197"
+        },
+        {
+          "bytes": 1800,
+          "distinct_values": 3,
+          "maximum": 49155,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 674,
+              "value": 49152
+            },
+            {
+              "cells": 224,
+              "value": 0
+            },
+            {
+              "cells": 2,
+              "value": 49155
+            }
+          ],
+          "nonzero_cells": 676,
+          "ordinal": 3,
+          "sha256": "ec75741995577f74159d97404a45b6519746ad5406fb43ef7b78669b5e1e4084"
+        }
+      ],
+      "sha256": "96df537d0ce9d32b747afe5971a57250eb9948a3f66ad693b1ee1b1b74ca2e2d",
+      "status": "EXACT_LAYOUT_MATCH",
+      "width": 30
+    },
+    {
+      "bytes": 5408,
+      "cells": 900,
+      "filename_numeric_token": 7503,
+      "height": 30,
+      "layout": "LE_U32_WIDTH_HEIGHT_THREE_LE_U16_PLANES_EXACT_LENGTH",
+      "original_place_name": null,
+      "path": "map/7503.dat",
+      "planes": [
+        {
+          "bytes": 1800,
+          "distinct_values": 6,
+          "maximum": 9750,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 614,
+              "value": 0
+            },
+            {
+              "cells": 272,
+              "value": 5042
+            },
+            {
+              "cells": 11,
+              "value": 9750
+            },
+            {
+              "cells": 1,
+              "value": 9645
+            },
+            {
+              "cells": 1,
+              "value": 9669
+            },
+            {
+              "cells": 1,
+              "value": 9676
+            }
+          ],
+          "nonzero_cells": 286,
+          "ordinal": 1,
+          "sha256": "d18fd0ba31a64604195c859393316b02bc47e3891f97ba65823fc148ffe48f79"
+        },
+        {
+          "bytes": 1800,
+          "distinct_values": 15,
+          "maximum": 15407,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 536,
+              "value": 0
+            },
+            {
+              "cells": 300,
+              "value": 2
+            },
+            {
+              "cells": 28,
+              "value": 12620
+            },
+            {
+              "cells": 10,
+              "value": 12618
+            },
+            {
+              "cells": 6,
+              "value": 12020
+            },
+            {
+              "cells": 4,
+              "value": 12023
+            },
+            {
+              "cells": 3,
+              "value": 10907
+            },
+            {
+              "cells": 3,
+              "value": 12021
+            },
+            {
+              "cells": 3,
+              "value": 12022
+            },
+            {
+              "cells": 2,
+              "value": 12686
+            }
+          ],
+          "nonzero_cells": 364,
+          "ordinal": 2,
+          "sha256": "2f1412fbd5a0c39663408bee79119c67c9aed8afc03e6aa7709b93d3d079b208"
+        },
+        {
+          "bytes": 1800,
+          "distinct_values": 3,
+          "maximum": 49155,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 593,
+              "value": 49152
+            },
+            {
+              "cells": 304,
+              "value": 0
+            },
+            {
+              "cells": 3,
+              "value": 49155
+            }
+          ],
+          "nonzero_cells": 596,
+          "ordinal": 3,
+          "sha256": "0b1a9890bf37cbdd9c11660217614dcc9e5ca66a88eec88ca691e4031fd283a5"
+        }
+      ],
+      "sha256": "e0b9f8b072e2477f27dd89d5cea380309ca5128624fdad5101ee663261fbaafb",
+      "status": "EXACT_LAYOUT_MATCH",
+      "width": 30
+    },
+    {
+      "bytes": 15008,
+      "cells": 2500,
+      "filename_numeric_token": 805,
+      "height": 50,
+      "layout": "LE_U32_WIDTH_HEIGHT_THREE_LE_U16_PLANES_EXACT_LENGTH",
+      "original_place_name": null,
+      "path": "map/805.dat",
+      "planes": [
+        {
+          "bytes": 5000,
+          "distinct_values": 28,
+          "maximum": 9423,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 2026,
+              "value": 0
+            },
+            {
+              "cells": 341,
+              "value": 5002
+            },
+            {
+              "cells": 16,
+              "value": 5108
+            },
+            {
+              "cells": 15,
+              "value": 5122
+            },
+            {
+              "cells": 12,
+              "value": 5106
+            },
+            {
+              "cells": 9,
+              "value": 5118
+            },
+            {
+              "cells": 8,
+              "value": 5110
+            },
+            {
+              "cells": 6,
+              "value": 5051
+            },
+            {
+              "cells": 6,
+              "value": 5052
+            },
+            {
+              "cells": 6,
+              "value": 5054
+            }
+          ],
+          "nonzero_cells": 474,
+          "ordinal": 1,
+          "sha256": "3c8889e919a5c902d5c4efbfb002b2033a58ca2e375dff976cd0ab881bb1f1a4"
+        },
+        {
+          "bytes": 5000,
+          "distinct_values": 15,
+          "maximum": 14711,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 1572,
+              "value": 0
+            },
+            {
+              "cells": 879,
+              "value": 2
+            },
+            {
+              "cells": 10,
+              "value": 12617
+            },
+            {
+              "cells": 6,
+              "value": 12047
+            },
+            {
+              "cells": 6,
+              "value": 12619
+            },
+            {
+              "cells": 4,
+              "value": 12042
+            },
+            {
+              "cells": 4,
+              "value": 12044
+            },
+            {
+              "cells": 4,
+              "value": 12618
+            },
+            {
+              "cells": 4,
+              "value": 14710
+            },
+            {
+              "cells": 3,
+              "value": 12045
+            }
+          ],
+          "nonzero_cells": 928,
+          "ordinal": 2,
+          "sha256": "34e829656799237f2cccade78bb10604a84b13cee5f8db36e68cacd2cc51ef53"
+        },
+        {
+          "bytes": 5000,
+          "distinct_values": 3,
+          "maximum": 49155,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 1323,
+              "value": 49152
+            },
+            {
+              "cells": 1173,
+              "value": 0
+            },
+            {
+              "cells": 4,
+              "value": 49155
+            }
+          ],
+          "nonzero_cells": 1327,
+          "ordinal": 3,
+          "sha256": "acb5f78d755cd45f7e84bca904890f1e77af01fb59c87ccb76a140bf108eb8c5"
+        }
+      ],
+      "sha256": "b77cbf845625d5af18d10f72934ae2925c7b53cded684d7c555108e36408088f",
+      "status": "EXACT_LAYOUT_MATCH",
+      "width": 50
+    },
+    {
+      "bytes": 15008,
+      "cells": 2500,
+      "filename_numeric_token": 806,
+      "height": 50,
+      "layout": "LE_U32_WIDTH_HEIGHT_THREE_LE_U16_PLANES_EXACT_LENGTH",
+      "original_place_name": null,
+      "path": "map/806.dat",
+      "planes": [
+        {
+          "bytes": 5000,
+          "distinct_values": 28,
+          "maximum": 9423,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 2026,
+              "value": 0
+            },
+            {
+              "cells": 336,
+              "value": 5002
+            },
+            {
+              "cells": 16,
+              "value": 5108
+            },
+            {
+              "cells": 15,
+              "value": 5122
+            },
+            {
+              "cells": 12,
+              "value": 5106
+            },
+            {
+              "cells": 9,
+              "value": 5118
+            },
+            {
+              "cells": 8,
+              "value": 5110
+            },
+            {
+              "cells": 7,
+              "value": 5109
+            },
+            {
+              "cells": 7,
+              "value": 5111
+            },
+            {
+              "cells": 7,
+              "value": 5117
+            }
+          ],
+          "nonzero_cells": 474,
+          "ordinal": 1,
+          "sha256": "f5fa8fc50e0fbccaca634648cf599800878c455d1739c4e072ec29ffa291b4ef"
+        },
+        {
+          "bytes": 5000,
+          "distinct_values": 16,
+          "maximum": 14711,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 1298,
+              "value": 2
+            },
+            {
+              "cells": 1152,
+              "value": 0
+            },
+            {
+              "cells": 10,
+              "value": 12617
+            },
+            {
+              "cells": 6,
+              "value": 12047
+            },
+            {
+              "cells": 6,
+              "value": 12619
+            },
+            {
+              "cells": 4,
+              "value": 12042
+            },
+            {
+              "cells": 4,
+              "value": 12044
+            },
+            {
+              "cells": 4,
+              "value": 12618
+            },
+            {
+              "cells": 4,
+              "value": 14710
+            },
+            {
+              "cells": 3,
+              "value": 12045
+            }
+          ],
+          "nonzero_cells": 1348,
+          "ordinal": 2,
+          "sha256": "233e6eccf3fce28ad79ba323e2065eed6b701cd78cfcef2bf15ce2c00405385f"
+        },
+        {
+          "bytes": 5000,
+          "distinct_values": 3,
+          "maximum": 49155,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 1743,
+              "value": 49152
+            },
+            {
+              "cells": 753,
+              "value": 0
+            },
+            {
+              "cells": 4,
+              "value": 49155
+            }
+          ],
+          "nonzero_cells": 1747,
+          "ordinal": 3,
+          "sha256": "21e3d5400f77d9392e3c672221da37b5175eb59162ceb8a5acc1f896b1c421cc"
+        }
+      ],
+      "sha256": "dc69947aeac98325ce96ac6ba3e42283ec9f586942b678cec8bff77b81e03d5c",
+      "status": "EXACT_LAYOUT_MATCH",
+      "width": 50
+    },
+    {
+      "bytes": 9608,
+      "cells": 1600,
+      "filename_numeric_token": 8216,
+      "height": 40,
+      "layout": "LE_U32_WIDTH_HEIGHT_THREE_LE_U16_PLANES_EXACT_LENGTH",
+      "original_place_name": null,
+      "path": "map/8216.dat",
+      "planes": [
+        {
+          "bytes": 3200,
+          "distinct_values": 7,
+          "maximum": 5300,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 1152,
+              "value": 0
+            },
+            {
+              "cells": 197,
+              "value": 4500
+            },
+            {
+              "cells": 94,
+              "value": 65
+            },
+            {
+              "cells": 59,
+              "value": 5245
+            },
+            {
+              "cells": 52,
+              "value": 4516
+            },
+            {
+              "cells": 38,
+              "value": 5300
+            },
+            {
+              "cells": 8,
+              "value": 4501
+            }
+          ],
+          "nonzero_cells": 448,
+          "ordinal": 1,
+          "sha256": "e97def4c94908c5927210c21f244f014331ca319c9f6caa8f02a62bedd96667e"
+        },
+        {
+          "bytes": 3200,
+          "distinct_values": 4,
+          "maximum": 10627,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 1574,
+              "value": 0
+            },
+            {
+              "cells": 14,
+              "value": 10627
+            },
+            {
+              "cells": 8,
+              "value": 10626
+            },
+            {
+              "cells": 4,
+              "value": 52
+            }
+          ],
+          "nonzero_cells": 26,
+          "ordinal": 2,
+          "sha256": "070e6809c6a7d95bc13e76222d7dd89a5a7dc7956c146e14f53904ef59baa3ab"
+        },
+        {
+          "bytes": 3200,
+          "distinct_values": 3,
+          "maximum": 49155,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 1152,
+              "value": 0
+            },
+            {
+              "cells": 445,
+              "value": 49152
+            },
+            {
+              "cells": 3,
+              "value": 49155
+            }
+          ],
+          "nonzero_cells": 448,
+          "ordinal": 3,
+          "sha256": "61e9727f58659f9fd4f7bcbcb94f5721b06cda7bdba49082592d30c8557d04a1"
+        }
+      ],
+      "sha256": "56015369364f5f39140c08df21e7422f4c11218320b7b03a44ad179d7476b0d8",
+      "status": "EXACT_LAYOUT_MATCH",
+      "width": 40
+    },
+    {
+      "bytes": 48608,
+      "cells": 8100,
+      "filename_numeric_token": 9000,
+      "height": 90,
+      "layout": "LE_U32_WIDTH_HEIGHT_THREE_LE_U16_PLANES_EXACT_LENGTH",
+      "original_place_name": null,
+      "path": "map/9000.dat",
+      "planes": [
+        {
+          "bytes": 16200,
+          "distinct_values": 56,
+          "maximum": 4602,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 7114,
+              "value": 0
+            },
+            {
+              "cells": 427,
+              "value": 60
+            },
+            {
+              "cells": 40,
+              "value": 4514
+            },
+            {
+              "cells": 39,
+              "value": 4506
+            },
+            {
+              "cells": 37,
+              "value": 4511
+            },
+            {
+              "cells": 32,
+              "value": 4504
+            },
+            {
+              "cells": 31,
+              "value": 4502
+            },
+            {
+              "cells": 31,
+              "value": 4503
+            },
+            {
+              "cells": 31,
+              "value": 4508
+            },
+            {
+              "cells": 29,
+              "value": 4507
+            }
+          ],
+          "nonzero_cells": 986,
+          "ordinal": 1,
+          "sha256": "07f39c2a59a0839fc3d442a4b67347cb1c3266484cadd34174e4dd36c7c62b51"
+        },
+        {
+          "bytes": 16200,
+          "distinct_values": 36,
+          "maximum": 13456,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 7730,
+              "value": 0
+            },
+            {
+              "cells": 294,
+              "value": 2
+            },
+            {
+              "cells": 12,
+              "value": 23
+            },
+            {
+              "cells": 6,
+              "value": 12619
+            },
+            {
+              "cells": 5,
+              "value": 13400
+            },
+            {
+              "cells": 5,
+              "value": 13402
+            },
+            {
+              "cells": 4,
+              "value": 13404
+            },
+            {
+              "cells": 3,
+              "value": 41
+            },
+            {
+              "cells": 3,
+              "value": 10118
+            },
+            {
+              "cells": 3,
+              "value": 13407
+            }
+          ],
+          "nonzero_cells": 370,
+          "ordinal": 2,
+          "sha256": "dbf0c458758ed2c8f9c025f77d775deb071c128528091e805303fab20f9566f1"
+        },
+        {
+          "bytes": 16200,
+          "distinct_values": 3,
+          "maximum": 49155,
+          "minimum": 0,
+          "most_frequent": [
+            {
+              "cells": 7114,
+              "value": 0
+            },
+            {
+              "cells": 982,
+              "value": 49152
+            },
+            {
+              "cells": 4,
+              "value": 49155
+            }
+          ],
+          "nonzero_cells": 986,
+          "ordinal": 3,
+          "sha256": "274413f9e204defa90f3e46a5ff51ec56a1e335eaf09b5b8cfcafe152bed75cd"
+        }
+      ],
+      "sha256": "7750791b2b1c82dc90c7ee413865ecc224970e81896d886aa2b89483c0292677",
+      "status": "EXACT_LAYOUT_MATCH",
+      "width": 90
+    }
+  ],
+  "msi_sha256": "8f99ceb13eb91fa9231bf1b6ee2c7052df97d59425171c03103732f8795a4bdc",
+  "numeric_map_files": 42,
+  "same_path_mixed25_byte_comparison": [
+    {
+      "bridge_sha256_at_same_path": "2456297e09861360f0fcfe48cf6ea18ef613b6b9d69d165c1b1844977bb6bfbf",
+      "status": "DIFFERENT_SAME_PATH_BYTES",
+      "tw85_path": "map/100.dat",
+      "tw85_sha256": "f207f578a80514e301930f18044e825a531925c7a56e2c11d78f1dc2b9ed17ba"
+    },
+    {
+      "bridge_sha256_at_same_path": "94b19cb59d72b7b48da70d2741ba68516caad970297fd48ed11ef720fa3ea97e",
+      "status": "DIFFERENT_SAME_PATH_BYTES",
+      "tw85_path": "map/1000.dat",
+      "tw85_sha256": "69d25896074d272bdd257ff35607c1b99d5c0637c9048115f1e9b23e78ec6027"
+    },
+    {
+      "bridge_sha256_at_same_path": "62dbef1614ede0ba032ca9c69cbfdc3d43938e45baba78701885790937b86b90",
+      "status": "DIFFERENT_SAME_PATH_BYTES",
+      "tw85_path": "map/1001.dat",
+      "tw85_sha256": "400e41b5e5db4eae926f25cfa7f6f616a8997a431a71ea507d1ab5098a9552fe"
+    },
+    {
+      "bridge_sha256_at_same_path": "fc3037a1850c8baf06ad5874a4cb49ca5e13e9315c020f64c019417c33b694e6",
+      "status": "DIFFERENT_SAME_PATH_BYTES",
+      "tw85_path": "map/1003.dat",
+      "tw85_sha256": "3aebcd86ebbeb5b7d787c3befb2e432036ce966c61ef6fcdce9e40010c070ae6"
+    },
+    {
+      "bridge_sha256_at_same_path": "a6c9d1e43223a8afc515e37367d58cfcc6c301909e9e060d4c80d35fcb87c7c9",
+      "status": "DIFFERENT_SAME_PATH_BYTES",
+      "tw85_path": "map/1005.dat",
+      "tw85_sha256": "8ce6654892df455dc931002fe338702318c85901bc348e0e2f214dc0b3cd351f"
+    },
+    {
+      "bridge_sha256_at_same_path": "aa2e7d2bdb138545a3efa30f9482d563b1781810a856b4a91c12ce83eb08ab4a",
+      "status": "DIFFERENT_SAME_PATH_BYTES",
+      "tw85_path": "map/1006.dat",
+      "tw85_sha256": "7b875f614e5282b78b9fa49f38da18e3d41e356135c528dadd71c1d82c844f8c"
+    },
+    {
+      "bridge_sha256_at_same_path": "0767d518c476e551b6ee71d2fe705c0499d9e978ea610911861eba80c26bf11d",
+      "status": "DIFFERENT_SAME_PATH_BYTES",
+      "tw85_path": "map/1009.dat",
+      "tw85_sha256": "cf1031c36ee21dc1fcdc2aebe5d11625c7fc734308c44d7969519e97262796a2"
+    },
+    {
+      "bridge_sha256_at_same_path": "0dc2267eb07ebe261ecbde2fb59d08216d72eac9a4f64bdd4a7bb061f89bdab8",
+      "status": "DIFFERENT_SAME_PATH_BYTES",
+      "tw85_path": "map/1040.dat",
+      "tw85_sha256": "a102eea98d46cca56037eedb1576c451827c2f17534dd9f1bbab810917e56296"
+    },
+    {
+      "bridge_sha256_at_same_path": "5286f4229796c4adc7e3b1ca6acec7e102939842b504470b624f75214485bc50",
+      "status": "DIFFERENT_SAME_PATH_BYTES",
+      "tw85_path": "map/10920.dat",
+      "tw85_sha256": "fce4daa6bf53b77a6cf064da780d3acd708b8683cebee210ef1a765957b98f39"
+    },
+    {
+      "bridge_sha256_at_same_path": "7d3e4e1dd8582268e14b3d21d0b0594c166f28062b05c8af260a6b214c41930d",
+      "status": "DIFFERENT_SAME_PATH_BYTES",
+      "tw85_path": "map/110.dat",
+      "tw85_sha256": "7c3825101a5de64cf98c9094f0e205cb929e53dedea8cf5b06f37443fe7dd698"
+    },
+    {
+      "bridge_sha256_at_same_path": null,
+      "status": "ABSENT_FROM_BRIDGE_PATH",
+      "tw85_path": "map/1214.dat",
+      "tw85_sha256": "c79f115baee4f5ebc8cc2be0308ef590132b16eec6902360d0ff1dca4ec61ebd"
+    },
+    {
+      "bridge_sha256_at_same_path": null,
+      "status": "ABSENT_FROM_BRIDGE_PATH",
+      "tw85_path": "map/1215.dat",
+      "tw85_sha256": "b1037d54c9d71da34a4eaf00b8ab0f8d86abb7d6b0a8b087b9444518a481d364"
+    },
+    {
+      "bridge_sha256_at_same_path": "64217be4a7e96959099e8872e332cfdabcbdfd71ed9420c4fe1086ba3ee35438",
+      "status": "DIFFERENT_SAME_PATH_BYTES",
+      "tw85_path": "map/122.dat",
+      "tw85_sha256": "05ae8949408b2d3a83f072c1c6c853e4f4e006989f6d2706d53d74f4329e331d"
+    },
+    {
+      "bridge_sha256_at_same_path": "85d710a270c6b945de21de53c9257ebaf38647cb54e77071db194cf5c5e203f3",
+      "status": "DIFFERENT_SAME_PATH_BYTES",
+      "tw85_path": "map/130.dat",
+      "tw85_sha256": "267a94fdc040f49a15d8bf8a51b956f12e6652eac020d92371cf7bc39abeffb1"
+    },
+    {
+      "bridge_sha256_at_same_path": "6d03ad0d1d380fd6ee97e7dd244a7062b5faa905052559556159446956b4bf5f",
+      "status": "DIFFERENT_SAME_PATH_BYTES",
+      "tw85_path": "map/141.dat",
+      "tw85_sha256": "cf90a715839088de1459b1b136978d5caaa9625d69b410ed9648e51b8fb7ffe8"
+    },
+    {
+      "bridge_sha256_at_same_path": "c578faf5cab7bc5033accdb7ec98dcf4f0e8945910f5815f25e75dcff9d83f3d",
+      "status": "DIFFERENT_SAME_PATH_BYTES",
+      "tw85_path": "map/200.dat",
+      "tw85_sha256": "6638ed342adf087077b2fc97d481ae3b0579489bf2dc4b9c781544366911c807"
+    },
+    {
+      "bridge_sha256_at_same_path": "d75231434c69118a518a8d5dd34f266264b8551fe4f2d55a20cdfa11b46584b3",
+      "status": "DIFFERENT_SAME_PATH_BYTES",
+      "tw85_path": "map/2000.dat",
+      "tw85_sha256": "a5a043022b0dbf6199707ed57beb4df518715658c1df7e83da09e1c7f024b379"
+    },
+    {
+      "bridge_sha256_at_same_path": "792c9a902170cbe1720bb6f049f6acff2664f7ce313bf924b49534ebffc817da",
+      "status": "DIFFERENT_SAME_PATH_BYTES",
+      "tw85_path": "map/2006.dat",
+      "tw85_sha256": "a605acae7bd418e0250c581b4e7d9274a3c86d9f3df260d526269b31d7c879fe"
+    },
+    {
+      "bridge_sha256_at_same_path": "8524af203ebd2cb6b0fa4736969dd964a2f6edbbf3ad1a7cef48f5a137827a98",
+      "status": "DIFFERENT_SAME_PATH_BYTES",
+      "tw85_path": "map/2012.dat",
+      "tw85_sha256": "479d91c46e70d6c173e2f0c9e40756b265064dc76bcdf3c825a4b6aee2384d36"
+    },
+    {
+      "bridge_sha256_at_same_path": "3cdecaa60f18fbfeec12dbfb895af1be5bc078e4988216c07e0b73c8eb12697d",
+      "status": "DIFFERENT_SAME_PATH_BYTES",
+      "tw85_path": "map/21201.dat",
+      "tw85_sha256": "62fc0ff056f938e65e1b5804a078e5f8f8d2a752659d4704f76921b3fb954e4d"
+    },
+    {
+      "bridge_sha256_at_same_path": "936a31717792e11cfa37b274cfe317f44e0e323affc439b1a34f7c78eb20a4c5",
+      "status": "DIFFERENT_SAME_PATH_BYTES",
+      "tw85_path": "map/21308.dat",
+      "tw85_sha256": "0418a8f06ca97429d9f9ede5603fce4d88e35ab6b2ce622fc109df1e76bdc22c"
+    },
+    {
+      "bridge_sha256_at_same_path": "3337fb536f3e0938527ac3f6a650427424c20e3a824aae0eb17192fdd177013e",
+      "status": "DIFFERENT_SAME_PATH_BYTES",
+      "tw85_path": "map/3000.dat",
+      "tw85_sha256": "3e650517bfd8dfd5a34a675155cca180d223a03c12b5c7b78c76631004b9981a"
+    },
+    {
+      "bridge_sha256_at_same_path": "c7af2a2c646522d06e4c420f36a1f9a09531cfa23067acae4bbb8b89afc28c9b",
+      "status": "DIFFERENT_SAME_PATH_BYTES",
+      "tw85_path": "map/3004.dat",
+      "tw85_sha256": "401d4c46306230b419d02accd4855b3e0e77dd1d4024f1544065a69aa5f4b4c5"
+    },
+    {
+      "bridge_sha256_at_same_path": "09db068a0aa8015744955d5f66aa805da2edd2a46d72ff33f928c1cff53c963b",
+      "status": "DIFFERENT_SAME_PATH_BYTES",
+      "tw85_path": "map/3006.dat",
+      "tw85_sha256": "db1638b0fb5acc9df18fd799eb99986dc40335c7afb1e89bf492a7789749a3e1"
+    },
+    {
+      "bridge_sha256_at_same_path": "90da7798cad403657b68e21e8df1f1061a017efa2f0b7f72be12479342adbf2b",
+      "status": "DIFFERENT_SAME_PATH_BYTES",
+      "tw85_path": "map/3020.dat",
+      "tw85_sha256": "c711951439d79adcde3088bf63be5bb9dc76489f9952b95d9fae743bb308eaac"
+    },
+    {
+      "bridge_sha256_at_same_path": "d6409098c0599812f056c14b6af6bbac62486e7480b1d7477aac5cca2e056d17",
+      "status": "DIFFERENT_SAME_PATH_BYTES",
+      "tw85_path": "map/30691.dat",
+      "tw85_sha256": "d7549422e038809f35ef8b6a2f26d8a11c83535582be28c66df664eabe810359"
+    },
+    {
+      "bridge_sha256_at_same_path": "75c4bc65fb5a71a36c13c4774376620c4a325b10433850969364a7f645bb827e",
+      "status": "DIFFERENT_SAME_PATH_BYTES",
+      "tw85_path": "map/32020.dat",
+      "tw85_sha256": "63396f1229df8b2b469d6ad25d273c0b26847e5a221f0e2ff98202cf332efda5"
+    },
+    {
+      "bridge_sha256_at_same_path": "a3c6918ba21c909e6312329c936615aa6b6d8800d7967ed85a2146d55ca263c4",
+      "status": "DIFFERENT_SAME_PATH_BYTES",
+      "tw85_path": "map/3400.dat",
+      "tw85_sha256": "d0862f74a78e39e2d6760d14b89c24df19f0834d8571769a7059a9f169f08a54"
+    },
+    {
+      "bridge_sha256_at_same_path": "3c62e11cba026ab27b212d7450ebdc9b73859bb7f3037657b2a6b70a8d3ec874",
+      "status": "EXACT_SAME_PATH_BYTES",
+      "tw85_path": "map/40.dat",
+      "tw85_sha256": "3c62e11cba026ab27b212d7450ebdc9b73859bb7f3037657b2a6b70a8d3ec874"
+    },
+    {
+      "bridge_sha256_at_same_path": "9d327505c74ccb27b62bcce7259be246c9c4a0477c6ee0fceb78f921e7a0dfa5",
+      "status": "DIFFERENT_SAME_PATH_BYTES",
+      "tw85_path": "map/4000.dat",
+      "tw85_sha256": "728a89fcd46ad3a2caf491da7d129ac0acf9b7759858cc819661ea3f4e927209"
+    },
+    {
+      "bridge_sha256_at_same_path": "a060686d0694939832a75fcb1b6e6204edf63d4ff74eea948f33b9fb75b72729",
+      "status": "DIFFERENT_SAME_PATH_BYTES",
+      "tw85_path": "map/4006.dat",
+      "tw85_sha256": "30f1e3b3b7afe3d56aaed8f2a965199095e7a6ed0fa992fc3dc6bd3eb9cab386"
+    },
+    {
+      "bridge_sha256_at_same_path": "4b887e534ef9d9647a91bcd7ee38b29d39e16d22c835ac6c36ebe0dd6eff0def",
+      "status": "DIFFERENT_SAME_PATH_BYTES",
+      "tw85_path": "map/4020.dat",
+      "tw85_sha256": "723ef033545c6b242f4af307d4f70a9ecbaaa61f4a47911e7dbfa08000b68ada"
+    },
+    {
+      "bridge_sha256_at_same_path": "1331ad20a5759a39e90bc7886a5cd593a2eaa15b47792496dc92b84577f479a4",
+      "status": "DIFFERENT_SAME_PATH_BYTES",
+      "tw85_path": "map/5103.dat",
+      "tw85_sha256": "b39fd5473fa646574d329553c5baabcf96d877352a20d0e9ab9d9f5d2b9fe34b"
+    },
+    {
+      "bridge_sha256_at_same_path": null,
+      "status": "ABSENT_FROM_BRIDGE_PATH",
+      "tw85_path": "map/61000.dat",
+      "tw85_sha256": "15bba75a455f8b778be53b8eac38973f1e34664570ae14e113a56c41c422a202"
+    },
+    {
+      "bridge_sha256_at_same_path": null,
+      "status": "ABSENT_FROM_BRIDGE_PATH",
+      "tw85_path": "map/61100.dat",
+      "tw85_sha256": "f8f6bafb4f08ea7dbf67ef720d1f23d4911e0d8c35733367ce7a7298937eced6"
+    },
+    {
+      "bridge_sha256_at_same_path": "ad960dea1cfb4ad26118516763259c0e063da6d0a9a0b84b2a63881536b0aaca",
+      "status": "DIFFERENT_SAME_PATH_BYTES",
+      "tw85_path": "map/7400.dat",
+      "tw85_sha256": "3b4b35104c1c03dcc208ae2d5c50ee7e17346aecef3ab4dfe466d0cf39b0511f"
+    },
+    {
+      "bridge_sha256_at_same_path": "152f92614143d40fe6f912123cfea5f68278ac3bd70cac2e5e61d60cf8da94cf",
+      "status": "DIFFERENT_SAME_PATH_BYTES",
+      "tw85_path": "map/7405.dat",
+      "tw85_sha256": "96df537d0ce9d32b747afe5971a57250eb9948a3f66ad693b1ee1b1b74ca2e2d"
+    },
+    {
+      "bridge_sha256_at_same_path": null,
+      "status": "ABSENT_FROM_BRIDGE_PATH",
+      "tw85_path": "map/7503.dat",
+      "tw85_sha256": "e0b9f8b072e2477f27dd89d5cea380309ca5128624fdad5101ee663261fbaafb"
+    },
+    {
+      "bridge_sha256_at_same_path": "d78db7bb62f603d3cd3f06700fb01b1f2c9ebc598b3cb6bed1f88fd7b54b04d8",
+      "status": "DIFFERENT_SAME_PATH_BYTES",
+      "tw85_path": "map/805.dat",
+      "tw85_sha256": "b77cbf845625d5af18d10f72934ae2925c7b53cded684d7c555108e36408088f"
+    },
+    {
+      "bridge_sha256_at_same_path": "b335fa29818b5c1ff9323bcd8df78bf3ed14a4dc375f951b9207c26b13460256",
+      "status": "DIFFERENT_SAME_PATH_BYTES",
+      "tw85_path": "map/806.dat",
+      "tw85_sha256": "dc69947aeac98325ce96ac6ba3e42283ec9f586942b678cec8bff77b81e03d5c"
+    },
+    {
+      "bridge_sha256_at_same_path": null,
+      "status": "ABSENT_FROM_BRIDGE_PATH",
+      "tw85_path": "map/8216.dat",
+      "tw85_sha256": "56015369364f5f39140c08df21e7422f4c11218320b7b03a44ad179d7476b0d8"
+    },
+    {
+      "bridge_sha256_at_same_path": null,
+      "status": "ABSENT_FROM_BRIDGE_PATH",
+      "tw85_path": "map/9000.dat",
+      "tw85_sha256": "7750791b2b1c82dc90c7ee413865ecc224970e81896d886aa2b89483c0292677"
+    }
+  ],
+  "schema": "stoneage.tw85_map_payload_structure.r1",
+  "source_pins": {
+    "research/recovered/STONEAGE-WAYI85-MSI-CLIENT-PAYLOAD-R1.json": {
+      "bytes": 385776,
+      "git_blob": "18a68c9d4275763ef0ed7a347cca940cffe0fee2",
+      "sha256": "4ea7b43a7e3427ab4443afe801ae7d3e156e6193e1d42ce1b261f733e07de1d8"
+    },
+    "research/recovered/STONEAGE-WAYI85-MSI-CLIENT-REVIEW-R1.json": {
+      "bytes": 160065,
+      "git_blob": "1453e5bda489560d40969652cdf3dc77664c2bae",
+      "sha256": "ea7df9539a05f8b1b91694d7645ebdc602f34eedda03785078f5bf5cbe67f208"
+    }
+  },
+  "source_scope": "COMMUNITY_PRESERVED_WAYI_MSI_8.50.0000_PAYLOAD",
+  "wrapper_sha256": "971780abc65ed29a6a7aeb1a528c7db2ef07b11a188e56deaef90a54986609f5"
+}

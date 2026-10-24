@@ -18452,3 +18452,14 @@ NEXT仍客户端P1取新增可验证版本。既有六分卷STONEAGE20060616.exe
 候选提交`b19e4234408501c2fbc33faacb740873be50b53a`实际源/收据门CI `40102647927`/job`120897783611` completed/success，含离线探测正反测试、收据三检、原地址Range、日志与元数据工件上传。旧有失败与先前资源派生不被覆盖；原版权程序/宠物画面/服务器数据未入Git；完整旧CURRENT历史作为本条前缀逐字保留。
 
 **最高NEXT CLIENT-ORIGINAL-PHYSICAL-CARRIER-RECOVERY-03**：转向已由同期资料和2001 GameTime ISBN13 9788995182123带安装器/试玩光盘目录证实存在过的韩国零售/攻略附赠原CD，及1999 JSS初回实体游戏CD原像；要有可合法取得的真实完整光盘镜像/发行安装包字节、全SHA256、完整文件目录/解包、地区/运营/版本归属和私服污染否定，才允许新增来源/跨版资源或具名实体。GameTime商品目录非当前字节或在线可取证明；既有Hananet四地址本批死口不无新线索重复查，不重做CNET十六Wayback零命中。该实体载体线若一有界工作单元仍无法取得可用原字节，依协议第13节转另一可实取地图/NPC/原服内容域，不为增加R号继续扩搜索脚手架。DD-028任务四档继续分离，Stage A7 PARTIAL+2 OPEN，Stage B/wiki GATED，R79 PAUSED_NON_BLOCKING，整体复原百分比null。
+
+
+## 2026-10-25 — 原客户端地图载荷：42个真实DAT结构、稀疏值限制与原盘取源止点
+
+从fresh远端main `92b605e4a0d612a7d3a7633dab1137c800d2d856` / tree `dd0fdbe998ac697117cd9a788d92519079f42b4b` 启动；568分支、0开放PR/运行中，18项同HEAD completed/success；八启动文件全文原生Git字节核验，CURRENT完整2637603B旧前缀及另三历史文件完整保留，未把接口空响应当空档。最高CLIENT-ORIGINAL-PHYSICAL-CARRIER-RECOVERY-03有限检索JSS原盘、GameTime附盘和Inium公共原包，未取得新可鉴真下载URL/游戏载荷；既有YES24目录仍非可取镜像、无新原HTML摘要，不作全网灭失证明、不联系持有人或购买实体。按既定止点转可实际取得地图载荷。
+
+source run40131518031/job120984031027真实completed/success，从六卷重新实取1145465184B既有TW8.5保存安装器、静态解MSI与557文件；不是新发现版本，未执行原程序。42数字DAT全部逐SHA与旧MSI清单一致，共14445606B，42/42精确符合8字节宽高+三层LE uint16；21种尺寸、累计2407545格，各层非零120250/24569/134868。map/200.dat虽800×1200，第一层非零仅3581；61000/61100第二层全零。稀疏/局部缓存仅HYPOTHESIS，零值不自动当未探索、不可走或缺失比例，不能称42张完整世界图。三层只称ordinal，不冒认本build原生tile/parts/event执行；文件数字不强配具名地名/NPC/任务/传送。三件2B BGM辅助DAT排除。旧mixed2.5同路径34异/7缺/1同仅保留已有关系，不当本轮新地图语义。
+
+独立下载artifact12575356288 ZIP86498B/SHA256 b1254d6db8e581bd69db093455ce587c9d40ccb091885c05cda5c06a009be450与API相同，恰两JSON；map结构149924B/SHA aacac89c451305c59adf38cfc6c14ba8a2efb88705607206aee7f63a8e14ead5完整派生永久Git。acquisition385776B完整manifest仅30天临时工件，永久收据保存其SHA，未虚报完整原包持久仓。工具4项+相邻共22项本地通过，另档案守卫及九类绕过digest语义反例验证；候选归档/main自身Actions须据后验记录。原版权网格/图/程序不入Git。
+
+交付docs/specs/STONEAGE-TW85-MAP-PAYLOAD-STRUCTURE-R1.md、research/recovered/STONEAGE-TW85-MAP-PAYLOAD-STRUCTURE-R1.json及CUSTODY-R1.json。最高NEXT **CLIENT-MAP-CROSS-VERSION-PLANE-DIFF-04**：真正实取mixed2.5对照35同路径，分第一/二/三层差异，区分几何候选与其它层变化，停止于有限实质内容对照或精确取源缺口。禁止同名补地名或混合社区源冒认TW1/JSS原服；JSS/韩国原盘仅新可取字节/精确清单摘要触发重开，不重扫旧四死口/ISBN/十写点。DD-028四任务档、Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、总复原百分比null均保留。
