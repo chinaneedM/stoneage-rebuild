@@ -1,0 +1,25 @@
+name: Validate R112 CN2001 early social source boundaries
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-CN2001-EARLY-SOCIAL-R112.json'
+      - 'tools/stoneage_cn2001_early_social_r112.py'
+      - 'tests/test_stoneage_cn2001_early_social_r112.py'
+      - '.github/workflows/stoneage-cn2001-early-social-r112.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-CN2001-EARLY-SOCIAL-R112.json'
+      - 'tools/stoneage_cn2001_early_social_r112.py'
+      - 'tests/test_stoneage_cn2001_early_social_r112.py'
+      - '.github/workflows/stoneage-cn2001-early-social-r112.yml'
+  workflow_dispatch:
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python tools/stoneage_cn2001_early_social_r112.py
+      - run: python tests/test_stoneage_cn2001_early_social_r112.py
