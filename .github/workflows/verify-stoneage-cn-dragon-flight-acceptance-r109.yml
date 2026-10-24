@@ -1,0 +1,18 @@
+name: Verify R109 permanent source boundary and Git blob custody
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-CN2003-2006-DRAGON-FLIGHT-ACCEPTANCE-R109.json'
+      - 'tools/stoneage_cn_dragon_flight_acceptance_r109.py'
+      - 'tests/test_stoneage_cn_dragon_flight_acceptance_r109.py'
+      - '.github/workflows/verify-stoneage-cn-dragon-flight-acceptance-r109.yml'
+  workflow_dispatch:
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify permanent Git blob pins and bounded source custody
+        run: |
+          python tools/stoneage_cn_dragon_flight_acceptance_r109.py
+          python -m unittest discover -s tests -p test_stoneage_cn_dragon_flight_acceptance_r109.py -v

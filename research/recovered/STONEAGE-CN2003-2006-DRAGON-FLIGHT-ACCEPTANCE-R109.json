@@ -1,0 +1,137 @@
+{
+  "schema": "stoneage.cn_dragon_flight.acceptance.r109",
+  "date": "2026-10-24",
+  "research": {
+    "task": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-109",
+    "content_parent_main": "559ddce8c474d8982b4ca84ec798799b3b25ed70",
+    "candidate_branch": "agent/cn-dragon-flight-r109-20261024",
+    "candidate_research_commit": "208b2af542cea42fb5f64ccab1c22e881af1c696",
+    "candidate_current_state_commit": "cbce429d652e56ecc1f4ae6d0f650310ed3818ac",
+    "candidate_accepted_commit": "458682ab04e0dcc26ec60e1c24a514165fc18c22",
+    "candidate_accepted_tree": "b1522092dff569b1dffee77db154e2f67f829066",
+    "main_fast_forward_commit": "458682ab04e0dcc26ec60e1c24a514165fc18c22",
+    "compare_ahead": 3,
+    "compare_behind": 0,
+    "changed_files": 9,
+    "total_deleted_lines": 0
+  },
+  "source_custody": {
+    "source_page_urls": [
+      "https://games.sina.com.cn/zhqu/sta/article/2003-06-03/10634.shtml",
+      "https://news.17173.com/z/stoneage/content/2006-05-14/1147617360.shtml"
+    ],
+    "source_web_text_accessible": true,
+    "original_raw_html_retrieved": false,
+    "source_html_sha256": null,
+    "original_historical_capture": null,
+    "original_image_bytes_retrieved": false,
+    "source_zip_digest": null,
+    "source_byte_replay_performed": false,
+    "source_authenticity_limit": "TWO_PUBLIC_WEB_TEXT_READS_NOT_RAW_2003_OR_2006_OPERATOR_BYTES",
+    "not_proven": [
+      "original server quest execution",
+      "actual consumed pet count 2003",
+      "S1 one-versus-three count resolved",
+      "precise original client build",
+      "same version between S1 and S2",
+      "pet species sprite or NPC IDs",
+      "Eden/Nis narrative original JSS1999 canon"
+    ]
+  },
+  "acceptance": {
+    "candidate_run_ids": [
+      40048210484,
+      40048379416,
+      40048379405,
+      40048379400,
+      40048379435,
+      40048379387,
+      40048379414,
+      40048379374,
+      40048379466,
+      40048379388,
+      40048379465
+    ],
+    "candidate_expected_completed_success": 11,
+    "candidate_dedicated_run_id": 40048210484,
+    "candidate_dedicated_job_id": 120734651861,
+    "main_run_ids": [
+      40048432039,
+      40048432029,
+      40048431998,
+      40048432054,
+      40048431968,
+      40048431964,
+      40048432045,
+      40048432069,
+      40048432094,
+      40048432043,
+      40048432027,
+      40048431999
+    ],
+    "main_expected_completed_success": 12,
+    "main_dedicated_run_id": 40048431998,
+    "main_dedicated_job_id": 120735372458,
+    "unique_runs_expected": 23,
+    "statuses_checked": "completed/success for 11 candidate runs across research+history heads and 12 main content-head runs",
+    "candidate_final_10_runners_success": true,
+    "main_12_runners_success": true,
+    "not_raw_html_replay_or_live_server_test": true
+  },
+  "file_pins": [
+    {
+      "path": ".github/workflows/verify-stoneage-cn-dragon-flight-r109.yml",
+      "git_blob_sha": "244684f6d2100fdfb94061670bc6b3d0a5602c36"
+    },
+    {
+      "path": "docs/CURRENT-STATE.md",
+      "git_blob_sha": "83e15efe38e1321e2ce5038f4ad14656e3f8aece"
+    },
+    {
+      "path": "docs/HISTORICAL-TIMELINE.md",
+      "git_blob_sha": "17dfca27198716bf423497c462687554deea87de"
+    },
+    {
+      "path": "docs/RESTORATION-ROADMAP-R2.md",
+      "git_blob_sha": "8d73e453d0359f280ebbb671a98afa8de5847393"
+    },
+    {
+      "path": "docs/SOURCE-REGISTRY.md",
+      "git_blob_sha": "2756cc735aec42dcc20c3b7585a730ba2afcc0fa"
+    },
+    {
+      "path": "docs/specs/STONEAGE-CN2003-2006-DRAGON-FLIGHT-R109.md",
+      "git_blob_sha": "d1da738523c166a3b465e4bd2205db0682551b7a"
+    },
+    {
+      "path": "research/recovered/STONEAGE-CN2003-2006-DRAGON-FLIGHT-R109.json",
+      "git_blob_sha": "37b674baca28ad238c076bcf7b50d0a3cd138385"
+    },
+    {
+      "path": "tests/test_stoneage_cn_dragon_flight_r109.py",
+      "git_blob_sha": "87c77c86e4935c1a9156c15b4ed2a9e4abdf089d"
+    },
+    {
+      "path": "tools/stoneage_cn_dragon_flight_r109.py",
+      "git_blob_sha": "a199703946e15647dc8f6645935f6ff28a5cf56a"
+    }
+  ],
+  "historical_prefix": {
+    "preserved": true,
+    "checked_by": "FULL_OLD_GIT_BLOB_CONTENT_APPENDED_THEN_REMOTE_COMPARE_ZERO_DELETION",
+    "files": [
+      "docs/CURRENT-STATE.md",
+      "docs/HISTORICAL-TIMELINE.md",
+      "docs/RESTORATION-ROADMAP-R2.md",
+      "docs/SOURCE-REGISTRY.md"
+    ]
+  },
+  "continuation": {
+    "next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-110",
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b_and_wiki": "GATED",
+    "savedata_r79": "PAUSED_NON_BLOCKING",
+    "overall_restoration_percent": null
+  },
+  "rights": "DERIVED_METADATA_ONLY_NO_ORIGINAL_COPYRIGHTED_ASSETS"
+}
