@@ -1,0 +1,21 @@
+name: Independently verify P2B original graphic-field candidate custody
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-TW10-GRAPHIC-UPSTREAM-CANDIDATES-P2B-R1.json'
+      - 'tools/stoneage_tw10_graphic_upstream_p2b.py'
+      - 'tests/test_stoneage_tw10_graphic_upstream_acceptance_p2b.py'
+      - '.github/workflows/verify-tw10-graphic-upstream-acceptance-p2b.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  immutable-derived-evidence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest tests.test_stoneage_tw10_graphic_upstream_p2b tests.test_stoneage_tw10_graphic_upstream_acceptance_p2b -v

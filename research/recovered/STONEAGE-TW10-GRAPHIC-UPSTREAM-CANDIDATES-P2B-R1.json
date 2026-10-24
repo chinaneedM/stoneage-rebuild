@@ -1,0 +1,100 @@
+{
+  "schema": "stoneage.tw10.graphic-upstream-p2b.acceptance.r1",
+  "date": "2026-10-24",
+  "original_exe_sha256": "cdab9ea049a98bbc96ce93eeaa8b63c688f0c0f0ad8b3183e79d75e47621441a",
+  "physical_refs": {
+    "r99_git_blob": "21d49800a1191f87a006aaa5af4a6f7975f91bf7",
+    "p2b_git_blob": "23d1a0fb85ac7a83f92cdfb9757618e85e36f9a9",
+    "r101_report_sha256": "b6e0dd1482a675d49d005fb947c1873b0776ba25289c1c03f3ac259fa54ddd92"
+  },
+  "source_run": {
+    "id": 40097693133,
+    "job_id": 120883285615,
+    "source_branch_commit": "65a58ccbf58b9ad0cb73c9e5f21d77c4f8a3fc1b",
+    "status": "completed",
+    "conclusion": "success",
+    "original_source_reacquired": true,
+    "artifact_id": 12561048182,
+    "artifact_name": "p2b-original-graphic-upstream-derived-only",
+    "zip_bytes": 4508,
+    "zip_sha256": "f0bc6cb2851d253168dfd85d011548e9f5515a84149d476c30782865384d60f7",
+    "raw_json_bytes": 40550,
+    "raw_json_sha256": "7ec6a7da6d915d410a839f70d9bf2bc1358253832a18da8f83050aa702818afd",
+    "zip_independently_downloaded_and_verified": true
+  },
+  "prior_failed_attempt": {
+    "id": 40097583415,
+    "job_id": 120882962808,
+    "source_bytes_verified": true,
+    "status": "completed",
+    "conclusion": "failure",
+    "reason": "PE-wide linear decoding lost original selector instruction alignment; corrected using separately authenticated selector function window",
+    "counted_as_success": false
+  },
+  "facts": {
+    "physical_bitmap_candidates": 101,
+    "named_entities_confirmed": 0,
+    "pe_executable_section_rva": 4096,
+    "pe_executable_section_decoded_instructions": 22405,
+    "lexical_memory_displacement_references": 45,
+    "lexical_0x124_references": 17,
+    "lexical_0x80_references": 28,
+    "candidate_writes_0x124": 10,
+    "anchored_selector_reads_0x124": 2,
+    "anchored_selected_bitmap_writes_0x80": 3,
+    "native_write_candidates": [
+      [
+        21707,
+        "eb9efa2ffddbcf7964e96bbe9492e21dd7d2142c36f840f3d3ace0119c85dd83"
+      ],
+      [
+        26027,
+        "eb9efa2ffddbcf7964e96bbe9492e21dd7d2142c36f840f3d3ace0119c85dd83"
+      ],
+      [
+        26411,
+        "eb9efa2ffddbcf7964e96bbe9492e21dd7d2142c36f840f3d3ace0119c85dd83"
+      ],
+      [
+        28994,
+        "b56252c7c1c60c605d05bbefcff3559aff5a3a374a54e61a114fd61cd4cb5f71"
+      ],
+      [
+        29798,
+        "bdbfd35b54e93589d1c6e25d14cefb357b9fcbff8d7ab6751f4c34ecb8f81ed9"
+      ],
+      [
+        30225,
+        "bdbfd35b54e93589d1c6e25d14cefb357b9fcbff8d7ab6751f4c34ecb8f81ed9"
+      ],
+      [
+        34157,
+        "eb9efa2ffddbcf7964e96bbe9492e21dd7d2142c36f840f3d3ace0119c85dd83"
+      ],
+      [
+        68493,
+        "bdbfd35b54e93589d1c6e25d14cefb357b9fcbff8d7ab6751f4c34ecb8f81ed9"
+      ],
+      [
+        68675,
+        "bdbfd35b54e93589d1c6e25d14cefb357b9fcbff8d7ab6751f4c34ecb8f81ed9"
+      ],
+      [
+        69285,
+        "5abfc711c2f18f99a65efd1d76582bdcffdd12ad69fe6107b52ea29cb1f716f2"
+      ]
+    ]
+  },
+  "boundaries": {
+    "direct_instruction_disp_is_proven_same_object": false,
+    "candidate_writes_all_proven_same_struct": false,
+    "packet_to_object_graphic_dataflow": false,
+    "named_npc_bitmap": false,
+    "named_pet_spr": false,
+    "source_original_executable_run": false,
+    "server_master_recovered": false,
+    "original_binary_committed": false,
+    "overall_restoration_percent": null
+  },
+  "next": "Distinguish specific native writer source/register and selector object identity; absent a same-build named object relation, stop and seek a different official source."
+}
