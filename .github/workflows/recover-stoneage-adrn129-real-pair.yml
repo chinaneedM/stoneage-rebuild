@@ -1,0 +1,43 @@
+name: Qualify actual preserved TW8.5 REAL blocks against official ADRN129 index
+on:
+  workflow_dispatch:
+  push:
+    branches: ['agent/adrn129-real-pair-source-20261025']
+    paths:
+      - 'tools/stoneage_adrn129_real_pair.py'
+      - 'tests/test_stoneage_adrn129_real_pair.py'
+      - '.github/workflows/recover-stoneage-adrn129-real-pair.yml'
+permissions:
+  contents: write
+jobs:
+  source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m unittest tests.test_stoneage_adrn129_real_pair -v
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq msitools
+      - name: Acquire once and export complete native/repair index RD qualification
+        run: python -m tools.stoneage_adrn129_real_pair --work /tmp/adrn129-real --derived research/recovered/adrn129-tw85-real-pair
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: adrn129-tw85-real-pair-derived-r1
+          path: research/recovered/adrn129-tw85-real-pair
+          if-no-files-found: warn
+          retention-days: 30
+      - name: Preserve only metadata and block hashes on isolated source branch
+        run: |
+          git config user.name stoneage-recovery-bot
+          git config user.email stoneage-recovery-bot@users.noreply.github.com
+          git add research/recovered/adrn129-tw85-real-pair
+          git diff --cached --quiet || git commit -m 'research: preserve actual native index and complete ADRN129 RD block qualification'
+          git push origin HEAD:refs/heads/agent/adrn129-real-pair-source-20261025
+      - name: Remove temporary original installer and pixel containers
+        if: always()
+        run: rm -rf /tmp/adrn129-real
