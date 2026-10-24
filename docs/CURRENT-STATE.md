@@ -18409,3 +18409,16 @@ NEXT仍客户端P1取新增可验证版本。既有六分卷STONEAGE20060616.exe
 解析原PE代码段22405条连续指令，取得0x124/0x80内存位移候选45处，其中0x124为17处（含10处词法写入），0x80为28处；单独锚定的原R101选择函数内0x124读取2处、0x80写入3处。十个原始写入候选RVA为0x54cb/0x65ab/0x672b/0x7142/0x7466/0x7611/0x856d/0x10b8d/0x10c43/0x10ea5。证据是原指令语法，不证明十处都写同种对象、不证明原服协议/建角/NPC主表→对象0x124上游数据流，也没有具名宠物/NPC与位图号的历史身份连接；本轮真实新增具名实体0。
 成功源artifact12561048182 ZIP经独立下载，4508B/SHA256 f0bc6cb2851d253168dfd85d011548e9f5515a84149d476c30782865384d60f7，唯一派生JSON 40550B/SHA256 7ec6a7da6d915d410a839f70d9bf2bc1358253832a18da8f83050aa702818afd。原版权原件不入Git；目前仓库永久保存十候选RVA与源指令SHA、来源ZIP/JSON哈希、实际运行与否定边界于research/recovered/STONEAGE-TW10-GRAPHIC-UPSTREAM-CANDIDATES-P2B-R1.json；完整40550B JSON仅临时Actions工件，未声称永久保管。独立验收run40098160214/job120884655334实际completed/success；候选完整提交及main后验必须依据真实新结果分别报告。
 **最高NEXT CLIENT-RESOURCE-ENTITY-BRIDGE-P2B/UPSTREAM-WRITE-IDENTITY**：限定核查十个0x124写入点来源寄存器、对象指针与R101同一对象实例的可重放连接；得到同版具名游戏原始数据再晋级人物/宠物/NPC，否则按协议不继续扩大低级helper，转向独立官方具名材料与真实master/手册。DD-028四档任务继续分开，Stage A 7 PARTIAL+2 OPEN、Stage B/wiki GATED、R79 PAUSED_NON_BLOCKING、总体复原百分比null。原历史全文前缀逐字保留，不因本轮二进制研究填造服务器事实。
+
+
+## 2026-10-24 — P2B原始写入来源限定复核，按协议停止通用地址扫描
+
+本轮fresh远端main d04e8f55c5bb326b5fc92c9f4522ac9ede679254/tree188c7f9202d7215b2d8c4fea9db9a926cacfacec；原生Git重读协议、README、完整CURRENT blob0975c55b5da451417c87980cc0f6e31ec8e9adf3、设计决策/历史/来源/路线，13项同HEAD main Actions均completed/success、0开放PR。未用旧聊天中SHA推断现状。依据最高CLIENT-RESOURCE-ENTITY-BRIDGE-P2B/UPSTREAM-WRITE-IDENTITY开始明确最后一项限界原程序研究。
+
+原source commit c333f6792fcd0720fa102f78c2fb9493220cd5f9/tree04127c5b20b9a8cd46ad3e69adbf0f11ed4ea793，source run40099299814/job120887951431实际completed/success，独立从原TW1.0保存盘真实重取并验证原sa_3.exe SHA256 cdab9ea049a98bbc96ce93eeaa8b63c688f0c0f0ad8b3183e79d75e47621441a；10个已验原指令SHA全部重放。原商用程序只读静态分析后从CI临时盘删除，非游戏运行。source artifact12562416023 ZIP 2419B SHA256 aca92b0b8ee2cdf663ab65b4a1838c224cf99653e07ca73aea03c4d2b8473853，独立下载并校验；唯一派生raw JSON18564B SHA256 9f6170001e1696b0b24be6430c71490a932ebee4aa190b7562ebe4c7b10d3dc4。此前P2B首次异常PE错位run40097583415仍真实失败，修复后成功与本轮不同，不合并篡改。
+
+原生写入0x124共10候选，局部向前最近的来源分为7处栈参数（0x54cb/0x65ab/0x672b/0x7142/0x7466/0x7611/0x856d）、2处其它内存（0x10b8d/0x10c43）、1处算术（0x10ea5）。这些**是词法附近赋值**，没有跨跳转的完整数据流证明；代码出现相同偏移不证明同一对象结构，不能将来源值凭猜测提升到R101已证selector的同一个对象。原程序仍没有证实一只具名宠物或一位具名NPC与资源ID的关系，新增原服实体=0，不是10个新角色。原版服务器master、实际操作、宠物成长与任务事件仍OPEN。
+
+完整新派生JSON留30天Actions，未虚报Git永久保管完整原样；永久 Git 简约成果research/recovered/STONEAGE-TW10-WRITER-SOURCE-CLOSURE-P2B-R1.json固定10项类别/原始来源SHA与ZIP/raw哈希和明确否定字段。独立保管校验run40099776027/job120889354297实际completed/success，两项单元与CLI分别成功；补档候选commit ed47668112a6d9d79b5d08a2718c327d01cf340a/tree0252ae3647bbf9464ac11ab3ead22cd4c4218786。主线整合/同HEAD Actions须以真实后验为准，不提前计success。
+
+**最高NEXT CLIENT-ARTIFACT-NAMED-ENTITY-PROVENANCE-01**：按DD-029回到具名官方客户端、原服实体master或同版图形ID来源的实物采集。优先原JSS/台湾初代/韩国早期及缺失官方原件的可取来源，提取能将至少一件具名人物/宠物/NPC与具体原图/动画ID可检证连接的实际证据；失败需命名精确缺失实物或构建差异、转其他来源。已证不符、过期链接、后代社区服务器不可冒充1999/TW1官方；不继续重复扫描同10个0x124候选或扩低级helper。任务DD-028四档仍分开，Stage A7 PARTIAL+2 OPEN，Stage B/wiki GATED，R79 PAUSED_NON_BLOCKING，总恢复百分比null。完整历史旧前缀原样保留。
