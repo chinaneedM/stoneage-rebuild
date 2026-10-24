@@ -1,0 +1,123 @@
+{
+  "schema": "stoneage.jp2006.dino_getters_acceptance.r108",
+  "task": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-108",
+  "date": "2026-10-24",
+  "source_commit": {
+    "sha": "9c0ac985a6fcd699052a2869e9b19a898254ab1e",
+    "tree_sha": "c5e23cda9cfc6d9297c30c9837122039e039ebbe",
+    "parent_sha": "e7ad36ff4862138d0f5fa82e158bf945f21846ec"
+  },
+  "candidate_branch": "agent/jp2006-dino-getters-r108-20261024",
+  "main_integration": {
+    "method": "EXPECTED_SHA_NONFORCED_FAST_FORWARD",
+    "verified_head_sha": "9c0ac985a6fcd699052a2869e9b19a898254ab1e",
+    "verified_tree_sha": "c5e23cda9cfc6d9297c30c9837122039e039ebbe"
+  },
+  "content_pins": [
+    {
+      "path": ".github/workflows/verify-stoneage-jp2006-dino-getters-r108.yml",
+      "git_blob": "74cf876da65c060e3e990a7383be92ccab02a023"
+    },
+    {
+      "path": "docs/CURRENT-STATE.md",
+      "git_blob": "7c2fc2512f616fc70d29de4eebbf8a528ce8c2d0"
+    },
+    {
+      "path": "docs/HISTORICAL-TIMELINE.md",
+      "git_blob": "c5893d846d704503caf04c14f333837373170c7f"
+    },
+    {
+      "path": "docs/RESTORATION-ROADMAP-R2.md",
+      "git_blob": "4444f0696741d5afd2531dee8f6fe3c9f7e3ea62"
+    },
+    {
+      "path": "docs/SOURCE-REGISTRY.md",
+      "git_blob": "ed3f0a4430849a8c17fecd61fe18c41ec5c27edf"
+    },
+    {
+      "path": "docs/specs/STONEAGE-JP2006-DINO-GETTERS-R108.md",
+      "git_blob": "ec695d0e88aa14625fa2162c200e2f6c2736c821"
+    },
+    {
+      "path": "research/recovered/STONEAGE-JP2006-DINO-GETTERS-R108.json",
+      "git_blob": "f8afdc84bb00c71f8fc6283522c88d17939dd530"
+    },
+    {
+      "path": "tests/test_stoneage_jp2006_dino_getters_r108.py",
+      "git_blob": "4486479b9ba6ddbed86cd8b3064dc9fbefb4de9e"
+    },
+    {
+      "path": "tools/stoneage_jp2006_dino_getters_r108.py",
+      "git_blob": "fedfcf6a1782694bc482031275a91c5bfa3d6aa3"
+    }
+  ],
+  "commit_diff": {
+    "changed_files": 9,
+    "deleted_lines": 0,
+    "prior_history_replaced": false,
+    "continuity_files_append_only": true
+  },
+  "actions": {
+    "candidate": {
+      "runs": [
+        40047068644,
+        40047068479,
+        40047068517,
+        40047068489,
+        40047068451,
+        40047068508,
+        40047068576,
+        40047068468,
+        40047068619,
+        40047068452,
+        40047068446
+      ],
+      "completed_success": 11,
+      "dedicated_run": 40047068517,
+      "dedicated_job": 120731131021
+    },
+    "main": {
+      "runs": [
+        40047274979,
+        40047274889,
+        40047274927,
+        40047275111,
+        40047275067,
+        40047274960,
+        40047274947,
+        40047275016,
+        40047274962,
+        40047275164,
+        40047275006,
+        40047274904
+      ],
+      "completed_success": 12,
+      "dedicated_run": 40047275067,
+      "dedicated_job": 120731777289
+    },
+    "distinct_runs_accepted": 23
+  },
+  "source_custody_boundaries": {
+    "url": "https://www.4gamer.net/news/history/2006.05/20060523181644detail.html",
+    "contemporaneous_press_text_available": true,
+    "original_operator_source_authenticated": false,
+    "original_2006_html_bytes_captured": false,
+    "original_html_sha256": null,
+    "historical_capture_verified": false,
+    "original_client_build_verified": false,
+    "actual_npc_handin_verified": false,
+    "actual_server_points_or_reward_delivery_verified": false,
+    "exact_pet_species_or_npc_ids_verified": false,
+    "raw_source_zip_retained": false,
+    "github_ci_validates_derived_metadata_not_live_original_html": true,
+    "derived_json_persistently_retained_in_git": true,
+    "unproven_source_claims_may_need_correction": true
+  },
+  "continuity": {
+    "highest_next": "OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-109",
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b_and_wiki": "GATED",
+    "savedata_r79": "PAUSED_NON_BLOCKING",
+    "overall_restoration_percent": null
+  }
+}

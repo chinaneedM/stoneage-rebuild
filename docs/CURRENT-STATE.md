@@ -18135,3 +18135,8 @@ GitHub重新核main `b4f5a28a09efa40bfcd60401f0885c9a6f270f5b` / tree `6df1fb27f
 新四条研究资料记录和规格 `docs/specs/STONEAGE-JP2006-DINO-GETTERS-R108.md`，派生 `research/recovered/STONEAGE-JP2006-DINO-GETTERS-R108.json`、元数据验证器、15个变异反例+1正例及专用CI。来源仅当前网页**文本层**可读，执行环境未取得原HTML字节/历史存档/官方原公告，SHA和真实运行证据保持null；新测试即使绿色也不是byte-exact网页重放或原服事务。无版权网页/图像/程序入Git。候选和main远端CI/保管需以真实后验另记，不提前报成功。
 
 有限止于一份2006媒体报道、四记录、无新增原服实体或产线；需档案官网、NPC交互图、同服积分日志或服务端实证才重开细节。**最高NEXT `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-109`** 换另一具名NPC故事或真实交互视觉，不持续挖单服活动猜阈值。Stage A7 PARTIAL+2 OPEN、Stage B/wiki GATED、TW1同构建NPC/SPR与服务端事务仍OPEN、savedataR79 PAUSED_NON_BLOCKING，整体恢复百分比null。
+
+
+### R108 日本2006「ダイノ ゲッターズ」候选/主线23项实际验收与保管 — 2026-10-24
+
+R108内容commit `9c0ac985a6fcd699052a2869e9b19a898254ab1e`、tree `c5e23cda9cfc6d9297c30c9837122039e039ebbe`，候选分支11项Actions和非强制expected_sha快进后的主线12项Actions分别全部completed/success；专用candidate run40047068517/job120731131021、main run40047275067/job120731777289两端源边界测试均成功，共23不同Actions。主线commit原生tree核验与九个精确Git blob保存在 `research/recovered/STONEAGE-JP2006-DINO-GETTERS-ACCEPTANCE-R108.json`，原四份长历史旧前缀完整保留、9文件0删行。候选11/主线12不能与16个R108单元案例混算；专用runner未取得原网页HTML字节，也未生成原来源ZIP或实际NPC交付/计分事务日志，永久仓库仅保管派生材料及其源边界；source SHA和历史捕获仍null，不得将元数据CI称为2006原服重放。保管提交本身的Actions需以后验事实为准，不提前算入23。最高NEXT仍`OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-109`轮换具名故事NPC/交互视觉；Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、整体百分比null。
