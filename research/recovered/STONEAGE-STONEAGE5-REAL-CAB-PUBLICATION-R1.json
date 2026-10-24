@@ -1,0 +1,163 @@
+{
+  "schema": "stoneage.stoneage5.real_cab_publication_receipt_r1",
+  "date": "2026-10-24",
+  "status": "SOURCE_AND_CROSSWALK_ACCEPTED_ON_MAIN",
+  "repo": "chinaneedM/stoneage-rebuild",
+  "main_content_commit": "48376e95a6eaea6bc5861e75167bdeb2de273310",
+  "main_content_tree": "4ecb95c33c90aeaa7db61c091005166ae33526c5",
+  "source_run": {
+    "id": 40089256861,
+    "job_id": 120858382831,
+    "conclusion": "success",
+    "head_sha": "846992a8547f3810b3617ccf63daa131b01af146",
+    "artifact_id": 12557474575,
+    "artifact_name": "stoneage5-real-cab-hashes-only",
+    "artifact_zip_sha256": null,
+    "zip_independently_downloaded": false
+  },
+  "crosswalk_run": {
+    "id": 40090112644,
+    "job_id": 120860900735,
+    "conclusion": "success",
+    "head_sha": "008516d7fb202a7066041f3026fc070ee092eb76",
+    "artifact_id": 12559205017,
+    "artifact_name": "stoneage5-real-cab-msi-crosswalk-r1",
+    "artifact_zip_sha256": null,
+    "zip_independently_downloaded": false
+  },
+  "main_acceptance_runs": [
+    {
+      "id": 40090688211,
+      "name": "Validate legacy StoneAge assistant history and pet content gaps",
+      "head_sha": "48376e95a6eaea6bc5861e75167bdeb2de273310",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 40090688228,
+      "name": "Validate StoneAge Stage A joint review decision",
+      "head_sha": "48376e95a6eaea6bc5861e75167bdeb2de273310",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 40090688233,
+      "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+      "head_sha": "48376e95a6eaea6bc5861e75167bdeb2de273310",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 40090688243,
+      "name": "Validate StoneAge preproduction content archive and wiki boundary",
+      "head_sha": "48376e95a6eaea6bc5861e75167bdeb2de273310",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 40090688244,
+      "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+      "head_sha": "48376e95a6eaea6bc5861e75167bdeb2de273310",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 40090688257,
+      "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+      "head_sha": "48376e95a6eaea6bc5861e75167bdeb2de273310",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 40090688269,
+      "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+      "head_sha": "48376e95a6eaea6bc5861e75167bdeb2de273310",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 40090688274,
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "head_sha": "48376e95a6eaea6bc5861e75167bdeb2de273310",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 40090688275,
+      "name": "Verify R102 frozen material portfolio and record projections",
+      "head_sha": "48376e95a6eaea6bc5861e75167bdeb2de273310",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 40090688276,
+      "name": "Validate Stage A early source gap triage",
+      "head_sha": "48376e95a6eaea6bc5861e75167bdeb2de273310",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 40090688317,
+      "name": "Independently verify TW1.0 R58 rooted helper returns and source custody",
+      "head_sha": "48376e95a6eaea6bc5861e75167bdeb2de273310",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "permanent_derived_metadata": [
+    {
+      "path": "research/recovered/STONEAGE-STONEAGE5-REAL-CAB-PAYLOAD-R1.json",
+      "git_blob": "1edbd31872386753bf9fc62a2260db316ccf84ed",
+      "raw_json_sha256": "5009750fecef5736366c763c3e23b4c5750c32cf0cbfd72ae5b6ac5c14862db0",
+      "sha256_source": "crosswalk_source_pins"
+    },
+    {
+      "path": "research/recovered/STONEAGE-STONEAGE5-REAL-CAB-MSI-PATH-JOIN-R1.json",
+      "git_blob": "b2532248355b35cd9d4ed7d15d3f59aeeb9beadf",
+      "raw_json_sha256": null,
+      "sha256_source": "not_independently_hashed"
+    }
+  ],
+  "original_data": {
+    "archived_source_identifier": "Stoneage-5",
+    "cab_bytes": 612584670,
+    "cab_sha256": "cb414ad1ef4cc7925ec429ec088d0146892834c72667d1af82c8075d09f1683b",
+    "extracted_files": 413,
+    "extracted_file_bytes": 1211040029,
+    "extracted_file_manifest_sha256": "079b961d076cebf990358b35712e3cecd8b342467eb8118c446458cea4ab5dbe",
+    "installation_paths": 413,
+    "tw10_same_path_exact": 361,
+    "tw85_same_path_exact": 407
+  },
+  "history_prefixes": [
+    {
+      "path": "docs/CURRENT-STATE.md",
+      "prior_git_blob": "0d1ffee26cb1f6d94c684a7543e4bc2b870e42d5",
+      "appended_git_blob": "29c7afcc78c7f4f0fa56ed5554adb54d0220fc1f"
+    },
+    {
+      "path": "docs/HISTORICAL-TIMELINE.md",
+      "prior_git_blob": "e1bb13fa2a3ae02ad15b0fbd2733c063ae119791",
+      "appended_git_blob": "2c859b1892c20301f3142e5b52feefe55aeef3d5"
+    },
+    {
+      "path": "docs/SOURCE-REGISTRY.md",
+      "prior_git_blob": "2ef0cdbf5ef0b6ef50339565d2894fe9afbc7c06",
+      "appended_git_blob": "a203ee14d8973e612e43e5175430f2382d07cc7d"
+    },
+    {
+      "path": "docs/RESTORATION-ROADMAP-R2.md",
+      "prior_git_blob": "8d5e3068e886fcd1c0c438542ecccc6982cbef21",
+      "appended_git_blob": "ee8adc1dca41e48e943b1f471004450d39a54bda"
+    }
+  ],
+  "boundaries": {
+    "original_client_payload_git_committed": false,
+    "original_payload_cross_session_storage": false,
+    "verified_clean_official_disc": false,
+    "full_server_quest_pet_master_proven": false,
+    "artifact_zip_bytes_independently_verified": false,
+    "complete_game_reconstruction": false
+  },
+  "next": "CLIENT-ARTIFACT-ACQUISITION-AND-CROSS-VERSION-DEDUP-01/P2 record-level REAL/ADRN/SPR differences; only reacquire large source with material new resource evidence"
+}
