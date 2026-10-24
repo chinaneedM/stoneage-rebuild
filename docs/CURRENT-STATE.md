@@ -18259,3 +18259,8 @@ R115正文与四份历史记录候选最终内容 commit `0d8f6491159adc193372f4
 ### 2026-10-24 R116 双端实际验收与永久保管
 R116内容commit `48d07c55690b0e9b5b6633f02325548381967945` / tree `68ac2c75217dde653009428d1c765751d1f5aa8b` 已从新核main1a5bb8d以expected_sha非强制快进。远端比较1commit/10文件/0删除，整tree与本地验收一致。候选11项、main12项共23次Actions全部completed/success；专用candidate run40062111097/job120777658272、main run40062148839/job120777769876日志各实际13单元、924输入完整语义重放、四大历史原前缀逐字节保留通过。另独立73位置JSON Pointer回查与49ID四视图互斥核对通过；原分类16项本地通过。
 永久收据 `research/recovered/STONEAGE-QUEST-MATERIAL-CUSTODY-R116.json` 固定十文件bytes/SHA256/Git blob、四大历史旧blob/长度、全部23运行及双专用job。无源下载或短期工件；清单和派生报告已永久入Git，不能虚造原HTML/ZIP校验或原服任务执行。15活动记录/34待考仍只是研究记录；零新证本体/永久。最高NEXT `EARLY-BASE-QUEST-PROVENANCE-117` 不变：一项早期成人礼/四洞窟的发行基线或明确更新归属。Stage A7 PARTIAL+2 OPEN，B/wiki GATED，R79暂停，总体复原百分比null。保管提交自身Actions继续按真实后验，不预报通过。
+
+
+### 2026-10-24 R117取源交接线索（未认证，不算新史实）
+R116保管commit c6a07dc92ad3dc2f97156044f17c59e0915fb089/tree2c6ddc4348d99cda3c4a85885ba77ba81b63ff5c自身候选9项/main10项Actions实际全success；专用main run40062302289/job120778227087各步骤成功。最高任务仍EARLY-BASE-QUEST-PROVENANCE-117。预检旧成人礼合同已具20011120063019新浪实际快照及六源比对，不能再算新发现或回填2000首发；应寻找更早地区/基线证据。
+定向检索出现 https://groups.google.com/g/tw.bbs.rec.mud/c/A0YUU3uzAaQ ，索引标题「SA....石器時代.....」、显示2000-06-13及成人礼目标字样；正文open失败，未取原消息头/全文/原始字节/独立日期认证。仅登记UNQUALIFIED_SEARCH_LEAD_NOT_HISTORICAL_FACT，非官方发行证据、不计独立已核见证；即便后续认证玩家当时提及，也只支持当时存在的有限线索，不自动证明4月首发或JSS1999已有。优先官方原件，若有限重试仍不可用则保留缺口，不重复旧新浪正文/转载。旧分类/边界/历史前缀不变。
