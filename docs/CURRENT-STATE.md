@@ -18164,3 +18164,16 @@ S1 4Gamer 2004-12-15 21:03「石器時代MMORPG『ストーンエイジ』の年
 二同期媒体来源角色标签不一：S1称运营ボーステック，S2称ガマニアデジタルエンターテインメント；2005-04前对运营/营销/结算合作并无本包原始合约证明，不能推断当月交接。S2链接2004旧官方 http://stoneage.to/event/Xmas04.html 当前工具无法取其历史原HTML，容器DNS不可用，原始HTML SHA/字节/原画/截图都未获得，不冒充2004原样byte replay。两媒体表述均有限事实主张，非当年服务器脚本或相互独立原服执行。
 
 交付 research/recovered/STONEAGE-JP2004-XMAS-PARTY-COMBAT-R110.json、docs/specs/STONEAGE-JP2004-XMAS-PARTY-COMBAT-R110.md、Python语义边界校验、21项测试及专用Actions；六条分版目录不是六个原服实体。内容候选 agent/jp2004-xmas-party-combat-r110-20261024 的实际SHA/专用CI/后续源保管、主线合并须以真实后验写入，不提前报绿。原网页/图像/商业程序不入Git。止于二同期来源及官网缺口，不继续猜礼物物品或扩友伤汇编。**最高NEXT OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-111**：轮换其它分版早期具名故事NPC／真实交互画面或原地图实体数据，优先可重放第一方原件。Stage A仍7 PARTIAL+2 OPEN；Stage B/百科GATED；R79 PAUSED_NON_BLOCKING；整体完成度null。
+
+
+## 2026-10-24 R111 日本2009十周年第三弹谜题迷宫与具名NPC「レテ」（来源限定）
+
+本次按 fresh GitHub main `554a0ec1ab53823496eee75ebe8f8c58ef7f4efb` / tree `682b54a754968f84d994ba866da1d6f12d39e944` 重启，R110永久保管自身Action40050348972已completed/success、开放PR0；连续性协议、README及CURRENT、路线、历史、来源、决策全部经远端原生Git核验。原有2007レン、2008影之支配者、R110日本圣诞等已有，轮换官方2009具体具名NPC与谜题交互，不重复无源服务端/后期促销。
+
+来源S1 https://www.4gamer.net/games/013/G001377/20091019025/ 2009-10-19 19:49，4Gamer标明完整转载DigiPark当时厂商发布文，属**同期媒体承载的运营方发布内容**，比普通玩家稿来源强；网页当下文字可读，未获得2009档案原HTML bytes/hash或同版服务器脚本，容器原站DNS失败，严格不称2009 byte-exact网页/部署日志。单一文章限定2009-10-20维护后至11-04维护前“第三弹”限时ミステリーダンジョン：聊天室NPC「レテ」对话转移，十个房间逐题过关；题材包括石器知识及现场案件犯人判断。**答错回聊天室并从第一房重来**；全部十题成功后奖物**未具名**。报道明确洞内无敌对恐龙遭遇，不扩“全部战斗关闭”或任意跨地图禁战。虽文案称任何人可参加，实际服务器资格谓词仍缺。10房≠10原地图DAT，原问题/答案/概率/重入/奖励消费/角色SPR/NPC ID均null，2009内容不可回填JSS1999/TW1.0。
+
+一张4Gamer原链接缩略图 `https://www.4gamer.net/games/013/G001377/20091019025/TN/002.jpg` 已通过网页图片查看，但未取得本地原始JPEG bytes/SHA或原图身份。文章同组图注提「レテ」入口，不足以认证此张图中特定像素就是NPC「レテ」，图片版权内容未入Git。
+
+新建6条分版研究记录、规范 `docs/specs/STONEAGE-JP2009-MYSTERY-DUNGEON-R111.md`、永久派生 `research/recovered/STONEAGE-JP2009-MYSTERY-DUNGEON-R111.json`、仅metadata校验器/22正反例/独立CI。候选 `agent/jp2009-mystery-dungeon-r111-20261024` 的内容commit `5ee78dc02cac14b407ce099f54ccdc4a8fc6356e` / tree `0afc879b2f3aaa7bdad0106d326ffaa1fce9a56a`，专用run40051427341在此commit已实际completed/success；其它候选/main验收仍须随后真实后验，不提前报绿。6记录非6个已运行原服实体，原HTML/JPEG/程序不入Git。
+
+有限止点1篇真实运营公告转录＋1实际打开媒体缩略图，重开需2009原运营快照、原UI/对话截图认证、同build地图DAT、题库/服务端奖励真实结果；不能因后续促销复制不实物主表。**最高NEXT `OFFICIAL-VERSION-NAMED-CONTENT-MATERIAL-REVIEW-112`** 转更早年代/不同区域的一手具名NPC/实际同版可关联场景，优先原文可重放，不连续扩猜谜/报酬。Stage A九族7 PARTIAL+2 OPEN、Stage B/wiki GATED、TW1 NPC+地图原服OPEN、savedata R79 PAUSED_NON_BLOCKING，总恢复百分比null。
