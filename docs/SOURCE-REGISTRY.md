@@ -8662,3 +8662,12 @@ S1所述：成人礼是条件，55级以上与福尔德/达那羽毛均为建议
 ### 2026-10-24 — R116已有材料的冻结归属审计（零新增历史原件）
 冻结基线main1a5bb8d67ab6a4e7189968f53f007c41083a1f63/treea9becaebf199329327f7bd1bb985de5e61fe787f，924个顶层研究JSON逐一固定bytes/SHA256/Git blob；清单SHA256326a25a9cb43b1bba0feb04d0bc4c5e1e9bc9e03152f6cf469525b06a0701827。15记录活动归属来源为既有大陆2003圣诞/R107武道、日本R110圣诞新年/R80料理/R85GW/R69寻宝/R108捕恐龙/2008协力/R111十周年报告，详STONEAGE-QUEST-MATERIAL-REVIEW-R116.json每条path/blob/JSON Pointer；不重算为15个新源或原生任务。原来源层级、历史字节及原服执行缺证不变。其余34记录起源待考，零新证首发本体/永久；旧六报告覆层独立保留。
 有限早期定向检索没有取得可晋级原件，不证明全网缺失；https://web.archive.org/web/20010417155624id_/http://www.titan.co.jp/stoneage/faqquest.html 本轮网页工具访问不可用，无原字节/摘要可报，且既有FAQ索引已认定为截图问题类，文件名不能当任务攻略。没有版权原文、原图、商业代码新增Git。R116仅派生整合，13项元数据测试不冒充原HTML或商业服重放。下一优先EARLY-BASE-QUEST-PROVENANCE-117，寻一项成人礼/四洞窟同地区发行或更新的真实起源证据。
+
+
+## 2026-10-24 R116 — JSS早期任务起源的逐句第一方限定
+
+SRC-JSS-EARLY-QUEST-ORIGINS-R116：重新取得原官网 https://web.archive.org/web/20010417162544id_/http://www.titan.co.jp/stoneage/verup.html （11239B/SHA256 ba71d859f34f31261f4293dc61583c53a8e77133898c4a8148c544a452abc3cb）与 https://web.archive.org/web/20010417155624id_/http://www.titan.co.jp/stoneage/faqmenu.html （3356B/d5ea757e563d0bf86ad96b72dc0081761b447fa3771e00a463919b89b7017f5f）；二者为已验旧源，本包新增事件用语分类合同。首次沿真菜单读取 https://web.archive.org/web/20010425044210id_/http://www.titan.co.jp/stoneage/faqquest.html （1654B/7b2006a9d9bf6297523b13d650b23c070d1901b5976a3eccda2c9a12374b4be8）。全Shift-JIS严格，原文发布日期未知，档案捕获非实服部署。
+
+源称2000-04-24寻宝是与ログイン合作的一个月活动，04-17结束SJOT、04-10修正其NPC设定；两项只作活动文献合同，不具任务全过程。转生2000-08-28追加、玄黄洞窟04-24进程修正、ウリウリ1999-10-18贝壳重复缺陷修正、クイズ道場2000-05-08台词/05-29内部通路变化，仍起源待考；无原任务/NPC/奖品/地图ID、永久性、1999首发或TW1.0同构建证明。13条泛称事件追加不算13个原任务，同日其他推广或场所期限不能跨句转移。
+
+faqquest正文只有系统兼容/截图三答，旧体验版答在注释内；F12与stoneage/screenshot目录仅运营方说明，非实际客户端执行或资产授权。永久派生 `research/recovered/STONEAGE-JSS-EARLY-QUEST-ORIGINS-R116.json` 和规格 `docs/specs/STONEAGE-JSS-EARLY-QUEST-ORIGINS-R116.md`。原HTML/图/商业资产不入Git；byte-exact源说明仍不同于原服事务。候选/main以真实CI和永久收据后验。
