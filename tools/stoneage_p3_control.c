@@ -62,8 +62,12 @@ int WINAPI WinMain(HINSTANCE instance,HINSTANCE previous,LPSTR command,int show)
     HWND w=CreateWindowW(cls.lpszClassName,L"SYNTHETIC 32-bit observation control",WS_OVERLAPPEDWINDOW|WS_VISIBLE,
                          30,30,280,190,NULL,NULL,instance,NULL);
     LPDIRECTDRAW dd=NULL;LPDIRECTDRAWSURFACE surface=NULL;LPDIRECTDRAWPALETTE pal=NULL;
-    HRESULT create=DirectDrawCreate(NULL,&dd,NULL),cooperative=E_FAIL,create_surface=E_FAIL,create_palette=E_FAIL,attach=E_FAIL;
+    HRESULT create=DirectDrawCreate(NULL,&dd,NULL),cooperative=E_FAIL,create_surface=E_FAIL,create_palette=E_FAIL,attach=E_FAIL,current_mode=E_FAIL;
+    DWORD current_bpp=0;
     if(SUCCEEDED(create)){
+        DDSURFACEDESC current={0};current.dwSize=sizeof(current);
+        current_mode=IDirectDraw_GetDisplayMode(dd,&current);
+        if(SUCCEEDED(current_mode))current_bpp=current.ddpfPixelFormat.dwRGBBitCount;
         cooperative=IDirectDraw_SetCooperativeLevel(dd,w,DDSCL_NORMAL);
         DDSURFACEDESC desc={0};desc.dwSize=sizeof(desc);desc.dwFlags=DDSD_CAPS|DDSD_WIDTH|DDSD_HEIGHT|DDSD_PIXELFORMAT;
         desc.dwWidth=64;desc.dwHeight=64;desc.ddsCaps.dwCaps=DDSCAPS_OFFSCREENPLAIN|DDSCAPS_SYSTEMMEMORY;
@@ -76,8 +80,8 @@ int WINAPI WinMain(HINSTANCE instance,HINSTANCE previous,LPSTR command,int show)
     }
     FILE *f=fopen("synthetic-control.json","wb");
     if(!f)return 2;
-    fprintf(f,"{\"schema\":\"stoneage.p3.synthetic_control.v1\",\"pointer_bytes\":%u,\"windows_acp\":%u,\"reported_windows_version\":%lu,\"window_created\":%s,\"directdraw_create\":%ld,\"cooperative\":%ld,\"surface_8bit_create\":%ld,\"palette_create\":%ld,\"palette_attach\":%ld,\"original_client_executed\":false}\n",
-            (unsigned)sizeof(void*),(unsigned)GetACP(),(unsigned long)GetVersion(),w?"true":"false",(long)create,(long)cooperative,(long)create_surface,(long)create_palette,(long)attach);
+    fprintf(f,"{\"schema\":\"stoneage.p3.synthetic_control.v1\",\"pointer_bytes\":%u,\"windows_acp\":%u,\"reported_windows_version\":%lu,\"window_created\":%s,\"directdraw_create\":%ld,\"cooperative\":%ld,\"surface_8bit_create\":%ld,\"palette_create\":%ld,\"palette_attach\":%ld,\"get_display_mode\":%ld,\"current_display_bpp\":%lu,\"original_client_executed\":false}\n",
+            (unsigned)sizeof(void*),(unsigned)GetACP(),(unsigned long)GetVersion(),w?"true":"false",(long)create,(long)cooperative,(long)create_surface,(long)create_palette,(long)attach,(long)current_mode,(unsigned long)current_bpp);
     fclose(f);UpdateWindow(w);SetTimer(w,1,12000,NULL);
     MSG msg;while(GetMessageW(&msg,NULL,0,0)>0){TranslateMessage(&msg);DispatchMessageW(&msg);}
     if(pal)IDirectDrawPalette_Release(pal);if(surface)IDirectDrawSurface_Release(surface);if(dd)IDirectDraw_Release(dd);

@@ -107,14 +107,15 @@ def inspect_windows(control,env,cwd):
     return json.loads(lines[-1]) if lines else {'windows':[],'inspection_returncode':p.returncode}
 
 
-def runtime(directory,control,output,original=False):
+def runtime(directory,control,output,original=False,depth_probe=False):
     net=network_gate();directory=directory.resolve();control=control.resolve()
     require(directory.is_dir() and directory!=ROOT and ROOT not in directory.parents,'runtime directory must be private and outside public Git')
     env=os.environ.copy();env.update(WINEARCH='win32',WINEPREFIX=str(directory/'wine-prefix'),
         WINEDLLOVERRIDES='mscoree,mshtml=',WINEDEBUG='-all',DISPLAY=':93',LIBGL_ALWAYS_SOFTWARE='1',
         LANG='zh_TW.UTF-8',LC_ALL='zh_TW.UTF-8')
     xlog=(directory/'xvfb.log').open('w')
-    display=subprocess.Popen(['Xvfb',':93','-screen','0','800x600x24','-nolisten','tcp','-ac'],stdout=xlog,stderr=xlog)
+    screen_depth=8 if original or depth_probe else 24
+    display=subprocess.Popen(['Xvfb',':93','-screen','0',f'800x600x{screen_depth}','-nolisten','tcp','-ac'],stdout=xlog,stderr=xlog)
     processes=[]
     result={'schema':'stoneage.p3.isolated_boot_observation.v1','sample':SOURCE,'network':net,
             'preflight_passed':False,'original_client_execution_attempted':False,
@@ -132,7 +133,7 @@ def runtime(directory,control,output,original=False):
         setting=command(['wine','reg','add','HKCU\\Software\\Wine','/v','Version','/d','winxp','/f'],env=env,cwd=directory,timeout=20)
         require(setting.returncode==0,'Wine version setting failed')
         result.update(environment={'wine_version':command(['wine','--version']).stdout.strip(),
-                    'winearch':'win32','windows_version_setting':'winxp','display':'800x600x24_XVFB',
+                    'winearch':'win32','windows_version_setting':'winxp','display':f'800x600x{screen_depth}_XVFB',
                     'requested_locale':'zh_TW.UTF-8','old_kernel_drivers_installed':False},audio_heard_or_recorded=False)
         if not original:
             log=(directory/'control.log').open('w')
@@ -151,8 +152,12 @@ def runtime(directory,control,output,original=False):
             shot=directory/'synthetic-control.png'
             command(['import','-window','root',str(shot)],env=env,timeout=15)
             result['capture']=frame(shot);require(result['capture']['nonuniform_pixels'],'synthetic display capture is blank')
-            require(result['capture']['synthetic_control_red_pixels']>1000 and
-                    result['capture']['synthetic_control_green_pixels']>1000,'synthetic Win32 painted pixels absent')
+            if depth_probe:
+                require(synthetic['get_display_mode']==0 and synthetic['current_display_bpp']==8,
+                        'native current display is not 8-bit despite offscreen palette support')
+            else:
+                require(result['capture']['synthetic_control_red_pixels']>1000 and
+                        result['capture']['synthetic_control_green_pixels']>1000,'synthetic Win32 painted pixels absent')
             result['preflight_passed']=True
         else:
             source=directory/'source';run=directory/'run'
@@ -208,11 +213,12 @@ def runtime(directory,control,output,original=False):
 def main():
     p=argparse.ArgumentParser();p.add_argument('--extract-disc',type=Path)
     p.add_argument('--directory',type=Path,required=True);p.add_argument('--control',type=Path)
-    p.add_argument('--output',type=Path);p.add_argument('--original',action='store_true');a=p.parse_args()
+    p.add_argument('--output',type=Path);p.add_argument('--original',action='store_true')
+    p.add_argument('--depth-probe',action='store_true');a=p.parse_args()
     if a.extract_disc:print(json.dumps(extract(a.extract_disc,a.directory)))
     else:
         require(a.control is not None and a.output is not None,'control/output required')
-        runtime(a.directory,a.control,a.output,a.original)
+        runtime(a.directory,a.control,a.output,a.original,a.depth_probe)
 
 
 if __name__=='__main__':main()
