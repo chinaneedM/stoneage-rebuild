@@ -1,0 +1,54 @@
+name: R19 authenticated TW1 original executable short text source
+on:
+  push:
+    branches: [agent/tw10-original-text-r19-20261025]
+    paths:
+      - '.github/workflows/probe-stoneage-tw10-original-text-r19.yml'
+      - 'tools/stoneage_tw10_original_text_r19.py'
+      - 'tests/test_stoneage_tw10_original_text_r19.py'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original-source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify synthetic semantics and strict identity rejection before source retrieval
+        run: |
+          set -euo pipefail
+          python -m unittest -v tests.test_stoneage_tw10_original_text_r19
+      - name: Read existing authenticated TW1 retail source once for bounded new textual evidence
+        run: |
+          set -euo pipefail
+          python -m tools.stoneage_tw10_archive_parallel_download --deadline 1500 --workers 16 --chunk 8388608 --output /tmp/CD_DIC.rar
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq 7zip
+          mkdir -p /tmp/stoneage-r19
+          7z x -y -o/tmp/stoneage-r19 /tmp/CD_DIC.rar STONEAGE.bin >/dev/null
+          test "$(stat -c %s /tmp/stoneage-r19/STONEAGE.bin)" = 523449360
+      - name: Extract only two pinned original executable members and output bounded short-label metadata
+        run: |
+          set -euo pipefail
+          python -m tools.stoneage_tw10_original_text_r19 --disc-image /tmp/stoneage-r19/STONEAGE.bin --output /tmp/stoneage-r19-derived.json
+          test "$(stat -c %s /tmp/stoneage-r19-derived.json)" -lt 50000
+          python - <<'PY'
+          import json
+          d=json.load(open('/tmp/stoneage-r19-derived.json', encoding='utf-8'))
+          assert d['original_npc_pet_quest_identity_mappings_proven'] == 0
+          assert d['early_official_server_master_acquired'] is False
+          assert all(x['original_file_length'] in (425984,409600) for x in d['executable_observations'].values())
+          assert all(len(x['candidates'])<=64 for x in d['executable_observations'].values())
+          print('R19_ORIGINAL_SOURCE_BOUNDED_PASS')
+          PY
+      - name: Always destroy temporary original copyrighted bytes
+        if: always()
+        run: rm -rf /tmp/CD_DIC.rar /tmp/stoneage-r19
+      - name: Publish derived-only small evidence
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: tw10-r19-original-executable-short-text-derived
+          path: /tmp/stoneage-r19-derived.json
+          retention-days: 7
