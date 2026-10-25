@@ -114,3 +114,18 @@ Windows兼容环境、32位执行/DirectDraw/显示截图能力，再尝试原SH
 独立内容线`EARLY-OFFICIAL-WORLD-ENTITY-SOURCE-20`仍OPEN，同版名字—实体ID—SPR
 新增0；DD-028本体/永久新增/运营活动/起源待考四档不混合。Stage A7 PARTIAL+2 OPEN、
 Stage B/wiki GATED、R79 PAUSED_NON_BLOCKING、overall percent=null。
+
+## 本轮真实主线终验
+
+内容main `d3e9c141f0fb4db652cf1630a97e82e8a18d083c`、tree
+`8ef449ed0716e53fa556a32cf7cea11a6b6e1732`已非强制快进发布。最终候选五项、同HEAD
+主线七项Actions均实际completed/success。专用候选40241783089/job121314933439及主线
+40241851198/job121315143242通过35项不同检查、原指令/像素源guard与Chrome双模式
+像素/自动换帧/暂停/零网络验证；主线P2A40241851186/job121315143054也通过旧灰度
+兼容和原P2A源保管链检查。其余R16/R17/R18、P1观察台、Stage A均成功。
+主线不重取版权源，也未执行完整客户端。本地35+30项不同测试通过。
+
+15个内容改动路径、全部远端tree与本地逐字节一致；五历史文件完整保留。
+永久[发布收据](../../research/recovered/STONEAGE-TW10-PALETTE-P2B-PUBLICATION-R1.json)
+记录三原源作业/三ZIP实下校验/三个原样派生blob、全部候选/main运行及15内容文件指纹。
+本后验收据自身CI仍需实际观察，不能预写成功；最高NEXT P3隔离启动预检与全部未知边界不变。
