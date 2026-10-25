@@ -19,6 +19,8 @@ ROOT=Path(__file__).resolve().parents[1]
 INVENTORY=ROOT/'research/recovered/STONEAGE-TW10-CLIENT-INVENTORY-R1.txt'
 INVENTORY_BLOB='564233902b10c60760d4f93b1ea65d4dd1469206'
 SOURCE='TW_WAEI_JSS_1_0_ACCEPTED_RETAIL_REDUMP_104630'
+LAUNCH_ARGS=('updated','realbin:1','adrnbin:1','sprbin:1','spradrnbin:1',
+             'soundbin:1','battlebin:1','windowmode','IP:0:127.0.0.1:9')
 
 
 def require(ok,message):
@@ -45,6 +47,8 @@ def inventory():
 
 
 def extract(disc,output):
+    output=output.resolve()
+    require(output!=ROOT and ROOT not in output.parents,'original extraction must stay outside public Git')
     require(not output.exists(),'source extraction refuses overwrite')
     from tools.stoneage_tw10_technical_probe import find_rows,extract_row
     img,rows,_,_=find_rows(disc)
@@ -105,9 +109,10 @@ def inspect_windows(control,env,cwd):
 
 def runtime(directory,control,output,original=False):
     net=network_gate();directory=directory.resolve();control=control.resolve()
-    require(directory.is_dir() and ROOT not in directory.parents,'runtime directory must be private and outside public Git')
+    require(directory.is_dir() and directory!=ROOT and ROOT not in directory.parents,'runtime directory must be private and outside public Git')
     env=os.environ.copy();env.update(WINEARCH='win32',WINEPREFIX=str(directory/'wine-prefix'),
-        WINEDLLOVERRIDES='mscoree,mshtml=',WINEDEBUG='-all',DISPLAY=':93',LIBGL_ALWAYS_SOFTWARE='1')
+        WINEDLLOVERRIDES='mscoree,mshtml=',WINEDEBUG='-all',DISPLAY=':93',LIBGL_ALWAYS_SOFTWARE='1',
+        LANG='zh_TW.UTF-8',LC_ALL='zh_TW.UTF-8')
     xlog=(directory/'xvfb.log').open('w')
     display=subprocess.Popen(['Xvfb',':93','-screen','0','800x600x24','-nolisten','tcp','-ac'],stdout=xlog,stderr=xlog)
     processes=[]
@@ -124,10 +129,11 @@ def runtime(directory,control,output,original=False):
         boot=command(['wineboot','-u'],env=env,cwd=directory,timeout=120)
         result['wineboot']={'returncode':boot.returncode,'diagnostic_lines':boot.stderr.splitlines()[-12:]}
         require(boot.returncode==0,'Wine 32-bit prefix initialization failed')
-        command(['wine','reg','add','HKCU\\Software\\Wine','/v','Version','/d','winxp','/f'],env=env,cwd=directory,timeout=20)
+        setting=command(['wine','reg','add','HKCU\\Software\\Wine','/v','Version','/d','winxp','/f'],env=env,cwd=directory,timeout=20)
+        require(setting.returncode==0,'Wine version setting failed')
         result.update(environment={'wine_version':command(['wine','--version']).stdout.strip(),
                     'winearch':'win32','windows_version_setting':'winxp','display':'800x600x24_XVFB',
-                    'old_kernel_drivers_installed':False},audio_heard_or_recorded=False)
+                    'requested_locale':'zh_TW.UTF-8','old_kernel_drivers_installed':False},audio_heard_or_recorded=False)
         if not original:
             log=(directory/'control.log').open('w')
             p=subprocess.Popen(['wine',str(control)],cwd=directory,env=env,stdout=log,stderr=log);processes.append(p)
@@ -136,10 +142,11 @@ def runtime(directory,control,output,original=False):
                 time.sleep(.1)
             else:raise ValueError('32-bit synthetic window/DirectDraw control did not report')
             synthetic=json.loads((directory/'synthetic-control.json').read_text())
+            result['synthetic_control']=synthetic
             require(synthetic['pointer_bytes']==4 and synthetic['window_created'],'synthetic Win32 control failed')
             require(all(synthetic[k]==0 for k in ['directdraw_create','cooperative','surface_8bit_create','palette_create','palette_attach']),
                     'synthetic original-era DirectDraw prerequisites failed')
-            result['synthetic_control']=synthetic
+            require(synthetic['windows_acp']==950,'Traditional Chinese original ANSI codepage unavailable')
             result['windows']=inspect_windows(control,env,directory)
             shot=directory/'synthetic-control.png'
             command(['import','-window','root',str(shot)],env=env,timeout=15)
@@ -156,7 +163,9 @@ def runtime(directory,control,output,original=False):
             shutil.copytree(source,run)
             exe=run/'sa_3.exe';result['source_executable']={'path':'StoneAge/sa_3.exe','bytes':exe.stat().st_size,'sha256':digest_file(exe)}
             log=(directory/'original-wine.log').open('w')
-            p=subprocess.Popen(['wine',str(exe)],cwd=run,env=env,stdout=log,stderr=log);processes.append(p)
+            result['original_launch_args']=list(LAUNCH_ARGS)
+            result['endpoint_is_synthetic_isolated_loopback_not_historical_server']=True
+            p=subprocess.Popen(['wine',str(exe),*LAUNCH_ARGS],cwd=run,env=env,stdout=log,stderr=log);processes.append(p)
             result['original_client_execution_attempted']=True;result['host_launcher_pid']=p.pid
             result['observations']=[]
             for delay in (3,7,10):

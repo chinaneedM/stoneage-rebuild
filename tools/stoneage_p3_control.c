@@ -76,8 +76,8 @@ int WINAPI WinMain(HINSTANCE instance,HINSTANCE previous,LPSTR command,int show)
     }
     FILE *f=fopen("synthetic-control.json","wb");
     if(!f)return 2;
-    fprintf(f,"{\"schema\":\"stoneage.p3.synthetic_control.v1\",\"pointer_bytes\":%u,\"window_created\":%s,\"directdraw_create\":%ld,\"cooperative\":%ld,\"surface_8bit_create\":%ld,\"palette_create\":%ld,\"palette_attach\":%ld,\"original_client_executed\":false}\n",
-            (unsigned)sizeof(void*),w?"true":"false",(long)create,(long)cooperative,(long)create_surface,(long)create_palette,(long)attach);
+    fprintf(f,"{\"schema\":\"stoneage.p3.synthetic_control.v1\",\"pointer_bytes\":%u,\"windows_acp\":%u,\"reported_windows_version\":%lu,\"window_created\":%s,\"directdraw_create\":%ld,\"cooperative\":%ld,\"surface_8bit_create\":%ld,\"palette_create\":%ld,\"palette_attach\":%ld,\"original_client_executed\":false}\n",
+            (unsigned)sizeof(void*),(unsigned)GetACP(),(unsigned long)GetVersion(),w?"true":"false",(long)create,(long)cooperative,(long)create_surface,(long)create_palette,(long)attach);
     fclose(f);UpdateWindow(w);SetTimer(w,1,12000,NULL);
     MSG msg;while(GetMessageW(&msg,NULL,0,0)>0){TranslateMessage(&msg);DispatchMessageW(&msg);}
     if(pal)IDirectDrawPalette_Release(pal);if(surface)IDirectDrawSurface_Release(surface);if(dd)IDirectDraw_Release(dd);

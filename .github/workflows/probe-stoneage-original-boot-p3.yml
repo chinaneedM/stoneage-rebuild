@@ -1,4 +1,4 @@
-name: Preflight isolated 32-bit Wine and observe original TW1 startup P3
+name: Preflight isolated CP950 Win32 and observe TW1 with source-backed startup arguments P3
 on:
   push:
     branches: [agent/original-boot-p3-20261026]
@@ -17,11 +17,12 @@ jobs:
           set -euo pipefail
           sudo dpkg --add-architecture i386
           sudo apt-get update -qq
-          sudo apt-get install -y -qq --no-install-recommends wine wine32:i386 wine64 xvfb x11-utils xdotool imagemagick gcc-mingw-w64-i686 python3-pil iproute2 fonts-noto-cjk
+          sudo apt-get install -y -qq --no-install-recommends wine wine32:i386 xvfb x11-utils imagemagick gcc-mingw-w64-i686-win32 python3-pil iproute2 fonts-noto-cjk libgl1-mesa-dri:i386
+          sudo locale-gen zh_TW.UTF-8
           i686-w64-mingw32-gcc -Os -mwindows tools/stoneage_p3_control.c -o /tmp/stoneage-p3-control.exe -lddraw -ldxguid -lgdi32 -luser32
           file /tmp/stoneage-p3-control.exe
           mkdir -p /tmp/stoneage-p3-preflight /tmp/stoneage-p3-original
-          dpkg-query -W wine wine32:i386 wine64 xvfb gcc-mingw-w64-i686 > /tmp/stoneage-p3-package-versions.txt
+          dpkg-query -W wine wine32:i386 xvfb gcc-mingw-w64-i686-win32 libgl1-mesa-dri:i386 > /tmp/stoneage-p3-package-versions.txt
       - name: Fail closed before any original download unless Win32, palette and isolated capture work
         run: |
           set -euo pipefail
