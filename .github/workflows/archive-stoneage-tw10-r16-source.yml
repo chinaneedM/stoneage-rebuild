@@ -1,0 +1,57 @@
+name: Preserve TW1.0 R16 original-derived metadata
+on:
+  push:
+    paths:
+      - .github/workflows/archive-stoneage-tw10-r16-source.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: read
+jobs:
+  retain:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch exact already-verified source-run artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/tw10-r16
+          gh run download 40195712866 -R "$GITHUB_REPOSITORY" -n tw10-character-creation-source-r16 -D /tmp/tw10-r16
+          echo '03be7a2c14f71c96c8114156c7189d836d99b805895510edf453ae9f706d7a59  /tmp/tw10-r16/TW10-CREATION-BODY-WINDOW-R16.json' | sha256sum -c -
+      - name: Guard original numeric evidence and all unknowns
+        run: |
+          python - <<'PY'
+          import json
+          p='/tmp/tw10-r16/TW10-CREATION-BODY-WINDOW-R16.json'
+          j=json.load(open(p))
+          assert j['schema']=='stoneage.tw10.character_creation_body_static_window.r16'
+          assert j['primary_source']['sha256']=='cdab9ea049a98bbc96ce93eeaa8b63c688f0c0f0ad8b3183e79d75e47621441a'
+          assert j['primary_source']['source_spr_group_count']==464
+          assert j['bounded_window']['window_sha256']=='0e9687f40dae13f8b700426b44b8fcd1b5b462396541b0123464034fbb755d65'
+          v=j['bounded_window']['values']
+          assert len(v)==32 and [x['dword'] for x in v[:12]]==list(range(100000,100240,20))
+          assert all(x['matches_original_spr_group_key'] for x in v[:12])
+          assert v[12]['dword']==198 and not v[12]['matches_original_spr_group_key']
+          assert j['findings']['sampled_group_key_matches']==12
+          assert j['findings']['original_character_count'] is None
+          assert not j['bounded_window']['actual_table_extent_verified']
+          assert not j['bounded_window']['index_upper_bound_verified']
+          assert not j['bounded_window']['actual_index_value_verified']
+          assert not j['findings']['original_client_executed']
+          assert not j['findings']['original_character_roster_verified']
+          assert all(not x['runtime_selected_index_verified'] and not x['same_build_role_or_portrait_verified'] for x in v)
+          PY
+      - name: Commit metadata alone, not any original copyrighted data
+        run: |
+          set -euo pipefail
+          mkdir -p research/recovered
+          cp /tmp/tw10-r16/TW10-CREATION-BODY-WINDOW-R16.json research/recovered/STONEAGE-TW10-CREATION-BODY-WINDOW-R16.json
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add research/recovered/STONEAGE-TW10-CREATION-BODY-WINDOW-R16.json
+          git diff --cached --exit-code && { echo "No changes"; exit 0; } || true
+          git commit -m "data: permanently retain authenticated TW1.0 create-body numeric window"
+          git push origin HEAD:agent/tw10-character-base-table-r16-20261025
