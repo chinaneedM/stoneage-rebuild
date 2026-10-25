@@ -8795,3 +8795,8 @@ Pinned public Git community source `librae8226/gmsv` commit `49928c291c6789013cb
 ## 2026-10-25 NPC-10 preserved carrier qualification
 
 Existing source, not newly downloaded: STONEAGE-25-PRESERVED-BUNDLE-STATIC-INVENTORY-R1.txt (blob78e8260e89928df76513799511d45c14a9e24dfc) and STONEAGE-25-GAMEPLAY-DATA-INVENTORY-R1.txt (blob47157f638cce7023727035981da11f1faecc9c78) fix three NPC script members and their shared mixed-community parent archive. Source URL, full paths, lengths, SHA256 and modern differing arg digest are in STONEAGE-NPC-ORIGINAL-SCRIPT-CARRIER-QUALIFICATION-R1.json. No original script-body read or official same-build certification this turn. See matching specification for bounded search and next material package.
+
+
+## 2026-10-25 original small sa.exe resource contents
+
+Reacquired known official-path captured program369152B/SHA4b5a059b45b589b609ca925d210d76838be1e970b805fab3df863b7d563fbb38, not a new version. Exact preserved URL, hash-verified UPX4.2.4 transform,921600B decompressed SHA4193a7e1b20b996f7902424ae05092b455c5dbbe3f133d331a4897bbc7abfe63, eight resource declarations,3 resident/5 unqualified packed payloads and8 qualified unpacked payloads are in STONEAGE-WAYI-SAEXE-RESOURCE-CONTENT-R1 report/spec. No original payload assets stored, no program execution or recovered login screen. Source listing2005 and actual capture2006 stay separate.

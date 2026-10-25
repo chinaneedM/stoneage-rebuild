@@ -18563,3 +18563,12 @@ bot完整派生commit d82113d7a9dcd53d43f2f4c3d9113d542c746f44/tree37246c14dd35d
 最高NPC-QUEST-ORIGINAL-SCRIPT-CARRIER-QUALIFICATION-10发现前轮漏接：原混合保存包早已保有npc/100/sb_kbu.arg(258B)、sb_geno.create(573B)、sb_geno.template(321B)的精确路径/SHA，static与gameplay两既有清单逐项同一，父包361255180B/SHA d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5。两清单同一次源链，不当双独立下载；本轮没重取大包或读旧脚本正文。保存包arg SHA433d17a58869147f91cacc57487795d7686b53415872f0694aba02dbc869502b与现代258B内嵌SHA961b87cebad2fd7cb7875f9433df0e301f9f64b06c46a558475fc1a0344e9eec不同，不能按同名同长当复制，更不能猜编码/剧情等价。没有官方地区/build父包认证，原服NPC/任务/奖励新增0；NPC09的原文、失败与现代2NPC/3warp订正保留。
 
 固定上游Git tree10532项完整无独立两脚本路径；有限精确名双引擎检索仅见社区目录线索，没有本轮取得的新官方原包。范围有限，不证明全网没有原件。交付STONEAGE-NPC-ORIGINAL-SCRIPT-CARRIER-QUALIFICATION-R1规格/派生JSON、离线双清单验收及8单元（含逐成员变异）。候选/main Actions必须后验记录，不预写成功。两轮NPC均证据受限，停止扩该helper，最高NEXT WAYI-OFFICIAL-SAEXE-LOGIN-RESOURCE-CONTENT-11转小型官方sa.exe PE资源中真实UI内容/缺口；须先排除既有完整覆盖，不能只重算哈希/511路径字符串。保持大包保管暂停、DD-028四档、Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停和总体percent=null。
+
+
+## 2026-10-25 — NPC10真实主线终验与小型官方sa.exe资源内容11
+
+NPC10内容main e4fc4b96e288085745884b0abdae15e1510a6d86；首候选c37b85a52ac0302575a399d243bc7c17f38f2c1d同HEAD11项Actions成功，字段名称修订候选e4fc4b96专用40160892059成功，主线同内容12项Actions全部completed/success（source40160931264，Stage A40160931400）。本地51项相关检查通过。原2.66MB CURRENT及另四文件完整历史前缀经原生Git核验后，使用Git blob写入，远端树与本地同一；保留并行到来的NPC09后验收据及覆层，没有覆盖。
+
+相邻最高WAYI-OFFICIAL-SAEXE-LOGIN-RESOURCE-CONTENT-11实际一次重取已知369152B官方路径sa.exe/SHA4b5a059b45b589b609ca925d210d76838be1e970b805fab3df863b7d563fbb38、校验UPX4.2.4工具并只解压为921600B/SHA4193a7e1b20b996f7902424ae05092b455c5dbbe3f133d331a4897bbc7abfe63，两SHA与旧出链记录同一，不当新版本。压缩目录8条中3条直接.rsrc/5条UPX1未资格化；解压后8条同路径/长度全部.rsrc可核，旧3条原载荷SHA不变。5条压缩区即使能算有界文件偏移也不给伪原载荷摘要。类型1/3/10/12/14/16，无4菜单/5对话框/6字符串表；不推程序无游戏UI。RCDATA156/2142B实际为5节i386 PE32，有PortTalk PDB/ntoskrnl标记，仅结构事实，不执行/加载/扩驱动。新增UI标签/登录画面/背景绑定均0。
+
+交付STONEAGE-WAYI-SAEXE-RESOURCE-CONTENT-R1规格与全派生JSON、双载荷资格工具及9测试；与旧PE/NPC相关共27项通过，objdump独立同8声明。原程序、解压后/内嵌程序和图标均不入Git或工件。新source CI与归档/main后验另记，不预写成功。最高NEXT OFFICIAL-CLIENT-LOGIN-SCENE-ASSET-BINDING-12：只寻找此同SHA ClientLogin明确背景/按钮/图号或同构建画面，原像素和确切引用缺则有界止；最多再一UI单元即回22域，不扩通用PE/驱动helper。大包保管暂停、NPC10官方归属OPEN、DD-028/7PARTIAL+2OPEN/B及wiki GATED/R79暂停/总体percent=null均保留。
