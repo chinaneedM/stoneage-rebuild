@@ -1,0 +1,23 @@
+name: Verify preserved mixed25 full server source conservation R18
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - research/recovered/STONEAGE-MIXED25-SERVER-FULL-SOURCE-R18.json
+      - research/recovered/STONEAGE-25-PRESERVED-BUNDLE-STATIC-INVENTORY-R1.txt
+      - research/recovered/STONEAGE-25-GAMEPLAY-DATA-INVENTORY-R1.txt
+      - tools/stoneage_mixed25_server_full_source_r18.py
+      - tests/test_stoneage_mixed25_server_full_source_r18.py
+      - .github/workflows/verify-stoneage-mixed25-full-server-source-r18.yml
+permissions:
+  contents: read
+jobs:
+  full-source-conservation:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest tests.test_stoneage_mixed25_server_full_source_r18 -v
+      - run: python -m tools.stoneage_mixed25_server_full_source_r18
