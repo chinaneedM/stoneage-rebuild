@@ -107,7 +107,7 @@ def inspect_windows(control,env,cwd):
     return json.loads(lines[-1]) if lines else {'windows':[],'inspection_returncode':p.returncode}
 
 
-def runtime(directory,control,output,original=False,depth_probe=False,colormap_helper=None):
+def runtime(directory,control,output,original=False,depth_probe=False,colormap_helper=None,fullscreen=False):
     net=network_gate();directory=directory.resolve();control=control.resolve()
     require(directory.is_dir() and directory!=ROOT and ROOT not in directory.parents,'runtime directory must be private and outside public Git')
     env=os.environ.copy();env.update(WINEARCH='win32',WINEPREFIX=str(directory/'wine-prefix'),
@@ -115,7 +115,8 @@ def runtime(directory,control,output,original=False,depth_probe=False,colormap_h
         LANG='zh_TW.UTF-8',LC_ALL='zh_TW.UTF-8')
     xlog=(directory/'xvfb.log').open('w')
     screen_depth=8 if original or depth_probe else 24
-    display=subprocess.Popen(['Xvfb',':93','-screen','0',f'800x600x{screen_depth}','-nolisten','tcp','-ac'],stdout=xlog,stderr=xlog)
+    screen_size='640x480' if original and fullscreen else '800x600'
+    display=subprocess.Popen(['Xvfb',':93','-screen','0',f'{screen_size}x{screen_depth}','-nolisten','tcp','-ac'],stdout=xlog,stderr=xlog)
     processes=[]
     result={'schema':'stoneage.p3.isolated_boot_observation.v1','sample':SOURCE,'network':net,
             'preflight_passed':False,'original_client_execution_attempted':False,
@@ -133,7 +134,7 @@ def runtime(directory,control,output,original=False,depth_probe=False,colormap_h
         setting=command(['wine','reg','add','HKCU\\Software\\Wine','/v','Version','/d','winxp','/f'],env=env,cwd=directory,timeout=20)
         require(setting.returncode==0,'Wine version setting failed')
         result.update(environment={'wine_version':command(['wine','--version']).stdout.strip(),
-                    'winearch':'win32','windows_version_setting':'winxp','display':f'800x600x{screen_depth}_XVFB',
+                    'winearch':'win32','windows_version_setting':'winxp','display':f'{screen_size}x{screen_depth}_XVFB',
                     'requested_locale':'zh_TW.UTF-8','old_kernel_drivers_installed':False},audio_heard_or_recorded=False)
         if not original:
             log=(directory/'control.log').open('w')
@@ -175,9 +176,10 @@ def runtime(directory,control,output,original=False,depth_probe=False,colormap_h
             shutil.copytree(source,run)
             exe=run/'sa_3.exe';result['source_executable']={'path':'StoneAge/sa_3.exe','bytes':exe.stat().st_size,'sha256':digest_file(exe)}
             log=(directory/'original-wine.log').open('w')
-            result['original_launch_args']=list(LAUNCH_ARGS)
+            launch_args=[x for x in LAUNCH_ARGS if not (fullscreen and x=='windowmode')]
+            result['original_launch_args']=launch_args
             result['endpoint_is_synthetic_isolated_loopback_not_historical_server']=True
-            p=subprocess.Popen(['wine',str(exe),*LAUNCH_ARGS],cwd=run,env=env,stdout=log,stderr=log);processes.append(p)
+            p=subprocess.Popen(['wine',str(exe),*launch_args],cwd=run,env=env,stdout=log,stderr=log);processes.append(p)
             result['original_client_execution_attempted']=True;result['host_launcher_pid']=p.pid
             result['observations']=[]
             for delay in (3,7,10):
@@ -206,7 +208,8 @@ def runtime(directory,control,output,original=False,depth_probe=False,colormap_h
                     'operation':'XSetInputFocus_via_xdotool_no_window_manager_no_game_patch'}
                 result['original_window_colormaps']=xcapture(colormap_helper,directory/'focused-before-input',env,seal_dir=sealed_dir)
                 # Point selected from the authenticated P3 login frame, not account fields.
-                move=command(['xdotool','mousemove','--sync','350','410'],env=env)
+                input_y=380 if fullscreen else 410
+                move=command(['xdotool','mousemove','--sync','350',str(input_y)],env=env)
                 down=command(['xdotool','mousedown','1'],env=env) if move.returncode==0 else move
                 time.sleep(.2)
                 up=command(['xdotool','mouseup','1'],env=env)
@@ -214,7 +217,8 @@ def runtime(directory,control,output,original=False,depth_probe=False,colormap_h
                 after=inspect_windows(control,env,run)
                 after_owned=[w for w in after.get('windows',[]) if w.get('image_path','').replace('\\','/').lower().endswith('/sa_3.exe')]
                 result['input_observation']={'operation':'one_held_left_click_at_previous_authenticated_QUIT_label',
-                    'screen_xy':[350,410],'coordinate_source_png_sha256':'8d7a9594292e262615c187d2fd21504b3b0f71a4d02e8c9a31811af53f460cc0',
+                    'screen_xy':[350,input_y],'fullscreen_original_path':fullscreen,
+                    'coordinate_source_png_sha256':('dd69f0a57ea38d102dc1afa4fec78d44371471140f2b7e18a5e16e3bd4d5e23f' if fullscreen else '8d7a9594292e262615c187d2fd21504b3b0f71a4d02e8c9a31811af53f460cc0'),
                     'account_or_password_entered':False,'mousemove_returncode':move.returncode,'click_returncode':down.returncode or up.returncode,
                     'mousedown_returncode':down.returncode,'mouseup_returncode':up.returncode,'hold_milliseconds':200,
                     'windows_after':after,'launcher_returncode_after':p.poll(),
@@ -262,11 +266,12 @@ def main():
     p=argparse.ArgumentParser();p.add_argument('--extract-disc',type=Path)
     p.add_argument('--directory',type=Path,required=True);p.add_argument('--control',type=Path)
     p.add_argument('--output',type=Path);p.add_argument('--original',action='store_true')
-    p.add_argument('--depth-probe',action='store_true');p.add_argument('--colormap-helper',type=Path);a=p.parse_args()
+    p.add_argument('--depth-probe',action='store_true');p.add_argument('--colormap-helper',type=Path)
+    p.add_argument('--fullscreen',action='store_true');a=p.parse_args()
     if a.extract_disc:print(json.dumps(extract(a.extract_disc,a.directory)))
     else:
         require(a.control is not None and a.output is not None,'control/output required')
-        runtime(a.directory,a.control,a.output,a.original,a.depth_probe,a.colormap_helper)
+        runtime(a.directory,a.control,a.output,a.original,a.depth_probe,a.colormap_helper,a.fullscreen)
 
 
 if __name__=='__main__':main()

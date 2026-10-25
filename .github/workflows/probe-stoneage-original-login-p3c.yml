@@ -1,4 +1,4 @@
-name: Compare focused original colormap and one held isolated QUIT input P3C
+name: Compare default original fullscreen colormap and held isolated QUIT P3C
 on:
   push:
     branches: [agent/original-login-p3c-20261026]
@@ -56,7 +56,7 @@ jobs:
           sudo --preserve-env=P3_HOST_NET_NAMESPACE unshare --net --pid --fork --mount-proc bash -c '
             set -euo pipefail
             ip link set lo up
-            exec runuser -u runner -- env P3_HOST_NET_NAMESPACE="$P3_HOST_NET_NAMESPACE" /usr/bin/python3 -m tools.stoneage_p3_boot --directory /tmp/stoneage-p3-original --control /tmp/stoneage-p3-control.exe --original --colormap-helper /tmp/stoneage-p3c-xcapture --output /tmp/stoneage-p3-original-derived.json
+            exec runuser -u runner -- env P3_HOST_NET_NAMESPACE="$P3_HOST_NET_NAMESPACE" /usr/bin/python3 -m tools.stoneage_p3_boot --directory /tmp/stoneage-p3-original --control /tmp/stoneage-p3-control.exe --original --fullscreen --colormap-helper /tmp/stoneage-p3c-xcapture --output /tmp/stoneage-p3-original-derived.json
           '
       - name: Always delete original source, run copy, prefixes and all original screenshots
         if: always()
