@@ -4937,3 +4937,14 @@ NPC10内容main e4fc4b96e288085745884b0abdae15e1510a6d86；首候选c37b85a52ac0
 相邻最高WAYI-OFFICIAL-SAEXE-LOGIN-RESOURCE-CONTENT-11实际一次重取已知369152B官方路径sa.exe/SHA4b5a059b45b589b609ca925d210d76838be1e970b805fab3df863b7d563fbb38、校验UPX4.2.4工具并只解压为921600B/SHA4193a7e1b20b996f7902424ae05092b455c5dbbe3f133d331a4897bbc7abfe63，两SHA与旧出链记录同一，不当新版本。压缩目录8条中3条直接.rsrc/5条UPX1未资格化；解压后8条同路径/长度全部.rsrc可核，旧3条原载荷SHA不变。5条压缩区即使能算有界文件偏移也不给伪原载荷摘要。类型1/3/10/12/14/16，无4菜单/5对话框/6字符串表；不推程序无游戏UI。RCDATA156/2142B实际为5节i386 PE32，有PortTalk PDB/ntoskrnl标记，仅结构事实，不执行/加载/扩驱动。新增UI标签/登录画面/背景绑定均0。
 
 交付STONEAGE-WAYI-SAEXE-RESOURCE-CONTENT-R1规格与全派生JSON、双载荷资格工具及9测试；与旧PE/NPC相关共27项通过，objdump独立同8声明。原程序、解压后/内嵌程序和图标均不入Git或工件。新source CI与归档/main后验另记，不预写成功。最高NEXT OFFICIAL-CLIENT-LOGIN-SCENE-ASSET-BINDING-12：只寻找此同SHA ClientLogin明确背景/按钮/图号或同构建画面，原像素和确切引用缺则有界止；最多再一UI单元即回22域，不扩通用PE/驱动helper。大包保管暂停、NPC10官方归属OPEN、DD-028/7PARTIAL+2OPEN/B及wiki GATED/R79暂停/总体percent=null均保留。
+
+
+## 2026-10-25 — 登录面板12：实际逻辑号到官方修复包/REAL的三项静态绑定
+
+fresh main eb086c49b7cdce29add90e2721d67b866be3f246/tree17120cf7d17052b34bb73d247273e2ec86168ab4，582远端分支、0开放PR；最新主线收据自身Action40161442295及内容主线3f697331的12项实际成功。七启动全文按原生Git当前HEAD重读校验、CURRENT2667180B完整历史前缀保留，另读路线/22域组合索引及UI11已验结果。最高OFFICIAL-CLIENT-LOGIN-SCENE-ASSET-BINDING-12按原实物推进，不依旧聊天SHA。
+
+复用并完整重哈希暂存原sa.exe369152B与解压件921600B，后者SHA4193a7e1b20b996f7902424ae05092b455c5dbbe3f133d331a4897bbc7abfe63。原登录输入面板三绘制调用RVA20e3b/20e88/20eae给逻辑26302/26303/26301、共同x/y320/240；原绘制器822b0→逻辑查表1fcd0→物理偏移getter1fab0，原loader80B/+76别名键→bitmapno表值已核。不能把逻辑号直接当物理号，也不能把旧map_number字段只当地图floor。官方ADRN129全表中三别名各唯一指向物理376059/60/61；与既有TW8.5 native/REAL配对表逐记录SHA、attrSHA、offset/size、RD头/尺寸/块SHA一致。尺寸640×480、100×130、88×143，偏移后静态起点0/0、317/224、411/231。实际按钮命中端点320/225/410/350及412/232/494/372，端点包含语义未知。原same-ID26301物理记录44×81不是背景，不作误联接。
+
+没有重拉大包、运行原程序、重读/解码/渲染原REAL像素；静态跨样本兼容联接不等于同一已部署build或完整登录画面，TW1/CN5别名快照无这三个键只限固定样本。后代四源码Git blob仅辅助命名，不从2026坐标/多套条件宏回填原构建。交付STONEAGE-WAYI-LOGIN-SCENE-ALIAS-BINDING-R1规格/全派生JSON、限定原字节工具、12项单元及13项绕过整SHA原字节语义反例拒绝。candidate/main实际源与后验另记，不提前写成功。
+
+两UI包已止点，最高NEXT ORIGINAL-RESOURCE-LOGICAL-ALIAS-CROSSVERSION-CATALOG-13回全域实物目录：把既有官方patch完整别名与TW1/CN5快照接为可查跨版底座，保留不同源位置/重复/未知角色，明确早期快照折叠局限，不造实体名称或删除证据。不得扩绘制/驱动helper或只复算哈希。DD-028四档、7PARTIAL+2OPEN、B/wiki GATED、R79暂停、大包私人保管暂停、总体percent=null不变。

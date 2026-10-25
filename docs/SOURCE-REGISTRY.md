@@ -8800,3 +8800,8 @@ Existing source, not newly downloaded: STONEAGE-25-PRESERVED-BUNDLE-STATIC-INVEN
 ## 2026-10-25 original small sa.exe resource contents
 
 Reacquired known official-path captured program369152B/SHA4b5a059b45b589b609ca925d210d76838be1e970b805fab3df863b7d563fbb38, not a new version. Exact preserved URL, hash-verified UPX4.2.4 transform,921600B decompressed SHA4193a7e1b20b996f7902424ae05092b455c5dbbe3f133d331a4897bbc7abfe63, eight resource declarations,3 resident/5 unqualified packed payloads and8 qualified unpacked payloads are in STONEAGE-WAYI-SAEXE-RESOURCE-CONTENT-R1 report/spec. No original payload assets stored, no program execution or recovered login screen. Source listing2005 and actual capture2006 stay separate.
+
+
+## 2026-10-25 Wayi original login scene alias binding12
+
+Known source reused, no new client version: accepted921600B executable SHA4193a7e1b20b996f7902424ae05092b455c5dbbe3f133d331a4897bbc7abfe63 and preserved official ADRN129 full derived table, prior TW8.5 NATIVE/PAIRS metadata. Original logical26301/26302/26303 map through attr+76 to physical376059/376060/376061; raw table columns, exact record/attr/RD SHA and all three source file pins are in STONEAGE-WAYI-LOGIN-SCENE-ALIAS-BINDING-R1.json. Separate descendant BismarckDD pinned source names/conditional definitions are corroboration only, as documented in the spec. No original program execution, artwork bytes, deployed-build authentication or early-era UI promotion.

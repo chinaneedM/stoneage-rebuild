@@ -1,0 +1,249 @@
+{
+  "compiled": {
+    "alias_field_offset": 76,
+    "alias_lookup_table_rva": 6337756,
+    "button_hit_calls": [
+      {
+        "arguments": [
+          320,
+          225,
+          410,
+          350,
+          -1
+        ],
+        "call_rva": 134676,
+        "edge_inclusion": "NOT_DETERMINED",
+        "role": "SUBMIT_OVERLAY"
+      },
+      {
+        "arguments": [
+          412,
+          232,
+          494,
+          372,
+          -1
+        ],
+        "call_rva": 134758,
+        "edge_inclusion": "NOT_DETERMINED",
+        "role": "EXIT_OVERLAY"
+      }
+    ],
+    "draw_calls": [
+      {
+        "call_rva": 134715,
+        "conditional_call_in_panel": true,
+        "hit_flag_operand": 1,
+        "logical_alias": 26302,
+        "native_execution_observed": false,
+        "priority_operand": {
+          "entry_zero_register": "ebx",
+          "runtime_value_observed": false
+        },
+        "renderer_rva": 533168,
+        "role": "SUBMIT_OVERLAY",
+        "x": 320,
+        "y": 240
+      },
+      {
+        "call_rva": 134792,
+        "conditional_call_in_panel": true,
+        "hit_flag_operand": 1,
+        "logical_alias": 26303,
+        "native_execution_observed": false,
+        "priority_operand": {
+          "entry_zero_register": "ebx",
+          "runtime_value_observed": false
+        },
+        "renderer_rva": 533168,
+        "role": "EXIT_OVERLAY",
+        "x": 320,
+        "y": 240
+      },
+      {
+        "call_rva": 134830,
+        "conditional_call_in_panel": false,
+        "hit_flag_operand": {
+          "entry_zero_register": "ebx",
+          "runtime_value_observed": false
+        },
+        "logical_alias": 26301,
+        "native_execution_observed": false,
+        "priority_operand": {
+          "entry_zero_register": "ebx",
+          "runtime_value_observed": false
+        },
+        "renderer_rva": 533168,
+        "role": "PANEL_BACKGROUND",
+        "x": 320,
+        "y": 240
+      }
+    ],
+    "physical_offset_fields": [
+      12,
+      16
+    ],
+    "physical_record_stride": 80,
+    "windows": {
+      "alias_lookup": {
+        "end_rva_exclusive": 130318,
+        "instruction_count": 18,
+        "sha256": "f601223136a5a1fe88a87c826c93274e99a6033b487554b70236077df14351c8",
+        "start_rva": 130256
+      },
+      "loader": {
+        "end_rva_exclusive": 129676,
+        "instruction_count": 56,
+        "sha256": "d659313f59b09ebd7961000ae89ab6d0f5217fbf5d1da34671ef2645de3344f8",
+        "start_rva": 129488
+      },
+      "offset_lookup": {
+        "end_rva_exclusive": 129835,
+        "instruction_count": 10,
+        "sha256": "2abe40b996063c9bd127138aef649b4f73820ba2707fb9534451f9e12cfdb1ff",
+        "start_rva": 129795
+      },
+      "panel": {
+        "end_rva_exclusive": 134847,
+        "instruction_count": 171,
+        "sha256": "01f0dfb39976bafdb391efe6b1e391d18d0a8a6fa6c1e7b5abb885d9f71bbf2f",
+        "start_rva": 134272
+      },
+      "queue": {
+        "end_rva_exclusive": 533479,
+        "instruction_count": 105,
+        "sha256": "3e9e2aa9b8d3205aaa45f582c328b3fb7068dd5b56b4ef8118db8a5194292eb6",
+        "start_rva": 533168
+      }
+    }
+  },
+  "complete_login_ui_restored": false,
+  "early_metadata_alias_hits": {
+    "CN50": [],
+    "TW10": []
+  },
+  "join_role": "STATIC_CROSS_SPECIMEN_COMPATIBILITY_NOT_DEPLOYED_BUILD_AUTHENTICATION",
+  "logical_alias_is_physical_bitmap_id": false,
+  "map_number_field_is_world_floor_id": false,
+  "metadata_pins": {
+    "research/recovered/adrn129-tw85-real-pair/NATIVE-R1.tsv.gz": {
+      "bytes": 43825625,
+      "git_blob": "ffb7b3340116ecaf57daa08242c1ce271e3ad86f",
+      "sha256": "495928a0a44d7c81bf1d6ef7b06d26decfc5096803fbd60b9e8e0aa9752a45ce"
+    },
+    "research/recovered/adrn129-tw85-real-pair/PAIRS-R1.tsv.gz": {
+      "bytes": 33542797,
+      "git_blob": "7f41ca49ff576914764b77f22684fbc113e1d90e",
+      "sha256": "ee41e4266b3bbab162d9271c1b86cceaa85354e60ff3e389fffccd68010b1314"
+    },
+    "research/recovered/cn50-resource-metadata/COLLISION-ATTR-R1.tsv.gz": {
+      "bytes": 90010,
+      "git_blob": "520bcebf0afc471cfc9a5b1d6a275e1855606d26",
+      "sha256": "4417afac7caffee86bf64ca36d9bfdff06fef61b9e3af200bf59b153280dc8df"
+    },
+    "research/recovered/tw10-resource-metadata/COLLISION-ATTR-R1.tsv.gz": {
+      "bytes": 60889,
+      "git_blob": "717345308a1c2d2d5bcd32338f2c9a016de9ab02",
+      "sha256": "d26b318ea73833bd7cc68abc8b5798a81b76ef9309cc91b137f7a55c6c8275dc"
+    },
+    "research/recovered/wayi-adrn129-patch-metadata/INDEX-1-R1.tsv.gz": {
+      "bytes": 23924728,
+      "git_blob": "065ecc874adc637098dc7c8f177e478bc7b6f054",
+      "sha256": "d8049cb6ce74a2c048372aa51fc81b6921a995b6fa45b03dd5511a93509958ca"
+    }
+  },
+  "next": "ORIGINAL-RESOURCE-LOGICAL-ALIAS-CROSSVERSION-CATALOG-13",
+  "original_executable_bytes": 921600,
+  "original_executable_sha256": "4193a7e1b20b996f7902424ae05092b455c5dbbe3f133d331a4897bbc7abfe63",
+  "original_game_executed": false,
+  "original_patch_alias_bindings": [
+    {
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "adder": 1427810915,
+          "attr_sha256": "8d2196488d0a3eb55ea2eeb6c3cdc0d25a44bdcad2693fc3fd6b1d1e44002991",
+          "bitmapno": 376059,
+          "height": 480,
+          "index": 376059,
+          "map_number": 26301,
+          "native_index": 376059,
+          "pixels_decoded_this_turn": false,
+          "rd_sha256": "be0da0b2b9905eeb7334c32a7d87cff0aa9d3b0f702af4bac5f031488e95bb32",
+          "record_sha256": "c549fd30e7d0cd75613379d0788684bb9bf2ebfb68b17536efbe828924b00099",
+          "same_deployed_executable_build_proven": false,
+          "size": 297137,
+          "static_draw_origin": [
+            0,
+            0
+          ],
+          "width": 640,
+          "xoff": -320,
+          "yoff": -240
+        }
+      ],
+      "logical_alias": 26301,
+      "selection": "UNIQUE_IN_THIS_PINNED_PATCH"
+    },
+    {
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "adder": 1428108052,
+          "attr_sha256": "fae87626301f3c7269ac91ed63e23d50eaa484bbebf6913abafb916cae688a85",
+          "bitmapno": 376060,
+          "height": 130,
+          "index": 376060,
+          "map_number": 26302,
+          "native_index": 376060,
+          "pixels_decoded_this_turn": false,
+          "rd_sha256": "3e36b6caef06176b9b79ca88a8c5b0b7435e95942a717bcdc15220121a2fa027",
+          "record_sha256": "f2cc8b483d32a8728050abf3074dc8c9276261d89216352adbfe37397fc66a83",
+          "same_deployed_executable_build_proven": false,
+          "size": 6763,
+          "static_draw_origin": [
+            317,
+            224
+          ],
+          "width": 100,
+          "xoff": -3,
+          "yoff": -16
+        }
+      ],
+      "logical_alias": 26302,
+      "selection": "UNIQUE_IN_THIS_PINNED_PATCH"
+    },
+    {
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "adder": 1428114815,
+          "attr_sha256": "9f943d4cf6eb9b59577d2d154530e24a52fde93e26b6d295818d9aeee0bc0188",
+          "bitmapno": 376061,
+          "height": 143,
+          "index": 376061,
+          "map_number": 26303,
+          "native_index": 376061,
+          "pixels_decoded_this_turn": false,
+          "rd_sha256": "3e368fcd274490423520420e005020d182ef59dd95f6622f7b59783c0eedc01b",
+          "record_sha256": "01b6ac03501fd0f4e3c3d4a00efdf7901d717982e41dcddcb43073c1b2def48b",
+          "same_deployed_executable_build_proven": false,
+          "size": 8602,
+          "static_draw_origin": [
+            411,
+            231
+          ],
+          "width": 88,
+          "xoff": 91,
+          "yoff": -9
+        }
+      ],
+      "logical_alias": 26303,
+      "selection": "UNIQUE_IN_THIS_PINNED_PATCH"
+    }
+  ],
+  "original_pixels_rendered": false,
+  "overall_restoration_percentage": null,
+  "schema": "stoneage.wayi_login_scene_alias_binding.r1",
+  "semantic_real_source_mutations_rejected": 13,
+  "task": "OFFICIAL-CLIENT-LOGIN-SCENE-ASSET-BINDING-12"
+}
