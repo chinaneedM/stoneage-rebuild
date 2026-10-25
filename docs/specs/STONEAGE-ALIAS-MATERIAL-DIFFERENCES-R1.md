@@ -57,3 +57,8 @@ python -m unittest tests.test_stoneage_alias_material_differences tests.test_sto
 最高NEXT **CROSSVERSION-AUDIO-ORIGINAL-CONTENT-15**：有限接入已有TW1.0详细音频原摘要与mixed25完整文件清单，检查“sound_1.bin相同，但散装SFX/BGM未匹配”的真实内容差异及soundaddr原索引证据。须先排除旧全文件交集/音频R1的既有结论，只推进一个尚未覆盖的索引—原音频关联或实际版本内容差异；若无新增原数据则登记精确缺件、回队列，不扩WinMM/声卡API或再次下载大包。不从文件名猜村落BGM/宠物叫声，不将混合2.5认作纯净官方发行。
 
 DD-028本体／永久新增／运营活动／起源待考四档隔离；Stage A7 PARTIAL+2 OPEN、Stage B/wiki GATED、R79 PAUSED_NON_BLOCKING、总体percent=null保持。
+
+
+## 五组差异14实际发布终验
+
+内容main58523210fb5b544627e7e5c3a9e59b05e6f35f3e/tree5be4af631e1747a66f6053848a0fbab27d1a0f3e，候选11项及主线12项Actions实际全部completed/success。专用候选40187433653/job121151095413、主线40187490604/job121151265673均通过16新测试及四完整物理表精确重放；本地70项相关检查通过。17引用/9块、独立SQL完整多重集、9相关patch原记录/属性SHA一致；10上传路径逐blob、完整远端tree及永久报告全文回读均与本地同一，CURRENT及另外四历史文件前缀完整。实际ID/源pin/派生报告SHA与Git blob见research/recovered/STONEAGE-ALIAS-MATERIAL-DIFFERENCES-PUBLICATION-R1.json。没有原件下载、短期ZIP工件或原像素；本后验收据提交自身Actions另据实际观察。下一包CROSSVERSION-AUDIO-ORIGINAL-CONTENT-15及全部证据边界不变。
