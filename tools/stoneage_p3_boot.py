@@ -107,7 +107,7 @@ def inspect_windows(control,env,cwd):
     return json.loads(lines[-1]) if lines else {'windows':[],'inspection_returncode':p.returncode}
 
 
-def runtime(directory,control,output,original=False,depth_probe=False):
+def runtime(directory,control,output,original=False,depth_probe=False,colormap_helper=None):
     net=network_gate();directory=directory.resolve();control=control.resolve()
     require(directory.is_dir() and directory!=ROOT and ROOT not in directory.parents,'runtime directory must be private and outside public Git')
     env=os.environ.copy();env.update(WINEARCH='win32',WINEPREFIX=str(directory/'wine-prefix'),
@@ -158,6 +158,13 @@ def runtime(directory,control,output,original=False,depth_probe=False):
             else:
                 require(result['capture']['synthetic_control_red_pixels']>1000 and
                         result['capture']['synthetic_control_green_pixels']>1000,'synthetic Win32 painted pixels absent')
+            if depth_probe and colormap_helper:
+                from tools.stoneage_p3c_capture import capture as xcapture
+                result['x11_known_rgb_control']=xcapture(colormap_helper,directory/'x11-known-rgb',env,selftest=True)
+                time.sleep(.5)
+                result['wine_window_colormaps']=xcapture(colormap_helper,directory/'wine-window-colormaps',env)
+                result['wine_known_rgb_preserved']=any(w['map']['synthetic_control_red_pixels']>1000 and
+                    w['map']['synthetic_control_green_pixels']>1000 for w in result['wine_window_colormaps']['windows'])
             result['preflight_passed']=True
         else:
             source=directory/'source';run=directory/'run'
@@ -185,6 +192,26 @@ def runtime(directory,control,output,original=False,depth_probe=False):
                             if w.get('image_path','').replace('\\','/').lower().endswith('/sa_3.exe')]
             result['original_client_execution_proven']=bool(native_windows)
             result['original_visible_window_occurrences']=len(native_windows)
+            if native_windows and colormap_helper:
+                from tools.stoneage_p3c_capture import capture as xcapture
+                sealed_dir=Path('/tmp/stoneage-p3c-sealed');sealed_dir.mkdir(exist_ok=False)
+                result['original_window_colormaps']=xcapture(colormap_helper,directory/'before-input',env,seal_dir=sealed_dir)
+                require(any(w['class']=='ＳｔｏｎｅＡｇｅ' for w in native_windows),'original main window unavailable before input')
+                # Point selected from the authenticated P3 login frame, not account fields.
+                move=command(['xdotool','mousemove','--sync','350','410'],env=env)
+                click=command(['xdotool','click','1'],env=env) if move.returncode==0 else move
+                time.sleep(3)
+                after=inspect_windows(control,env,run)
+                after_owned=[w for w in after.get('windows',[]) if w.get('image_path','').replace('\\','/').lower().endswith('/sa_3.exe')]
+                result['input_observation']={'operation':'one_left_click_at_previous_authenticated_QUIT_label',
+                    'screen_xy':[350,410],'coordinate_source_png_sha256':'8d7a9594292e262615c187d2fd21504b3b0f71a4d02e8c9a31811af53f460cc0',
+                    'account_or_password_entered':False,'mousemove_returncode':move.returncode,'click_returncode':click.returncode,
+                    'windows_after':after,'launcher_returncode_after':p.poll(),
+                    'original_owned_windows_remaining':len(after_owned),
+                    'exit_observed_before_cleanup':p.poll()==0 and not after_owned,
+                    'server_started_or_login_attempted':False}
+                if after_owned:
+                    result['after_input_window_colormaps']=xcapture(colormap_helper,directory/'after-input',env,seal_dir=sealed_dir)
             if native_windows:
                 from tools.stoneage_p3_private_frame import seal
                 public=ROOT/'research/recovered/STONEAGE-P3-SESSION-TRANSPORT-PUBLIC.pem'
@@ -224,11 +251,11 @@ def main():
     p=argparse.ArgumentParser();p.add_argument('--extract-disc',type=Path)
     p.add_argument('--directory',type=Path,required=True);p.add_argument('--control',type=Path)
     p.add_argument('--output',type=Path);p.add_argument('--original',action='store_true')
-    p.add_argument('--depth-probe',action='store_true');a=p.parse_args()
+    p.add_argument('--depth-probe',action='store_true');p.add_argument('--colormap-helper',type=Path);a=p.parse_args()
     if a.extract_disc:print(json.dumps(extract(a.extract_disc,a.directory)))
     else:
         require(a.control is not None and a.output is not None,'control/output required')
-        runtime(a.directory,a.control,a.output,a.original,a.depth_probe)
+        runtime(a.directory,a.control,a.output,a.original,a.depth_probe,a.colormap_helper)
 
 
 if __name__=='__main__':main()

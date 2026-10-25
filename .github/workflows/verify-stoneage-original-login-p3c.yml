@@ -1,0 +1,21 @@
+name: Validate P3C colormap color controls and private input boundaries
+on:
+  push:
+    branches: [main, agent/original-login-p3c-20261026]
+    paths:
+      - 'tools/stoneage_p3c_*'
+      - 'tools/stoneage_p3_boot.py'
+      - 'tests/test_stoneage_p3c_*.py'
+      - '.github/workflows/verify-stoneage-original-login-p3c.yml'
+      - 'research/recovered/STONEAGE-TW10-ORIGINAL-LOGIN-P3C-*.json'
+      - 'docs/continuity/STONEAGE-ORIGINAL-LOGIN-P3C-20261026.md'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  offline-contracts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python -m pip install --quiet pillow cryptography
+      - run: python -m unittest -v tests.test_stoneage_p3c_capture tests.test_stoneage_p3_boot tests.test_stoneage_p3_private_frame

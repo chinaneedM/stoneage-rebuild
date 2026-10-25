@@ -1,0 +1,77 @@
+name: Compare actual window colormaps and one isolated QUIT input P3C
+on:
+  push:
+    branches: [agent/original-login-p3c-20261026]
+    paths: ['.github/workflows/probe-stoneage-original-login-p3c.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  isolated-original-startup:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - name: Prepare a disposable 32-bit compatibility and capture environment
+        run: |
+          set -euo pipefail
+          sudo dpkg --add-architecture i386
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq --no-install-recommends wine wine32:i386 xvfb x11-utils imagemagick gcc-mingw-w64-i686-win32 python3-pil python3-cryptography iproute2 fonts-noto-cjk libgl1-mesa-dri:i386 libx11-dev xdotool
+          sudo locale-gen zh_TW.UTF-8
+          i686-w64-mingw32-gcc -Os -mwindows tools/stoneage_p3_control.c -o /tmp/stoneage-p3-control.exe -lddraw -ldxguid -lgdi32 -luser32
+          gcc -std=c11 -O2 -Wall -Wextra tools/stoneage_p3c_xcapture.c -o /tmp/stoneage-p3c-xcapture -lX11
+          file /tmp/stoneage-p3-control.exe
+          mkdir -p /tmp/stoneage-p3-preflight /tmp/stoneage-p3-original /tmp/stoneage-p3-depth8
+          dpkg-query -W wine wine32:i386 xvfb gcc-mingw-w64-i686-win32 libgl1-mesa-dri:i386 > /tmp/stoneage-p3-package-versions.txt
+      - name: Fail closed before any original download unless Win32, palette and isolated capture work
+        run: |
+          set -euo pipefail
+          export P3_HOST_NET_NAMESPACE="$(readlink /proc/self/ns/net)"
+          sudo --preserve-env=P3_HOST_NET_NAMESPACE unshare --net --pid --fork --mount-proc bash -c '
+            set -euo pipefail
+            ip link set lo up
+            exec runuser -u runner -- env P3_HOST_NET_NAMESPACE="$P3_HOST_NET_NAMESPACE" /usr/bin/python3 -m tools.stoneage_p3_boot --directory /tmp/stoneage-p3-preflight --control /tmp/stoneage-p3-control.exe --output /tmp/stoneage-p3-preflight-derived.json
+          '
+      - name: Verify actual 8-bit display mode after the original 256-color requirement was observed
+        run: |
+          set -euo pipefail
+          export P3_HOST_NET_NAMESPACE="$(readlink /proc/self/ns/net)"
+          sudo --preserve-env=P3_HOST_NET_NAMESPACE unshare --net --pid --fork --mount-proc bash -c '
+            set -euo pipefail
+            ip link set lo up
+            exec runuser -u runner -- env P3_HOST_NET_NAMESPACE="$P3_HOST_NET_NAMESPACE" /usr/bin/python3 -m tools.stoneage_p3_boot --directory /tmp/stoneage-p3-depth8 --control /tmp/stoneage-p3-control.exe --depth-probe --colormap-helper /tmp/stoneage-p3c-xcapture --output /tmp/stoneage-p3-depth8-derived.json
+          '
+      - name: Retrieve original ONLY after synthetic isolated preflight success
+        run: |
+          set -euo pipefail
+          python -m tools.stoneage_tw10_archive_parallel_download --deadline 1500 --workers 16 --chunk 8388608 --output /tmp/CD_DIC.rar
+          sudo apt-get install -y -qq 7zip
+          7z x -y -o/tmp/stoneage-p3-original /tmp/CD_DIC.rar STONEAGE.bin >/dev/null
+          python -m tools.stoneage_p3_boot --extract-disc /tmp/stoneage-p3-original/STONEAGE.bin --directory /tmp/stoneage-p3-original/source
+      - name: Attempt authenticated original in a fresh route-free process tree
+        run: |
+          set -euo pipefail
+          export P3_HOST_NET_NAMESPACE="$(readlink /proc/self/ns/net)"
+          sudo --preserve-env=P3_HOST_NET_NAMESPACE unshare --net --pid --fork --mount-proc bash -c '
+            set -euo pipefail
+            ip link set lo up
+            exec runuser -u runner -- env P3_HOST_NET_NAMESPACE="$P3_HOST_NET_NAMESPACE" /usr/bin/python3 -m tools.stoneage_p3_boot --directory /tmp/stoneage-p3-original --control /tmp/stoneage-p3-control.exe --original --colormap-helper /tmp/stoneage-p3c-xcapture --output /tmp/stoneage-p3-original-derived.json
+          '
+      - name: Always delete original source, run copy, prefixes and all original screenshots
+        if: always()
+        run: rm -rf /tmp/CD_DIC.rar /tmp/stoneage-p3-original /tmp/stoneage-p3-preflight /tmp/stoneage-p3-depth8 /tmp/stoneage-p3-control.exe /tmp/stoneage-p3c-xcapture
+      - name: Retain derived metadata, versions and private ciphertext envelopes
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: stoneage-p3c-window-colormap-derived-and-private-ciphertext
+          path: |
+            /tmp/stoneage-p3-preflight-derived.json
+            /tmp/stoneage-p3-depth8-derived.json
+            /tmp/stoneage-p3-original-derived.json
+            /tmp/stoneage-p3-package-versions.txt
+            /tmp/stoneage-p3-private-frame-sealed.json
+            /tmp/stoneage-p3c-sealed/*.json
+          if-no-files-found: error
+          retention-days: 7
