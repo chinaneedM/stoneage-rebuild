@@ -44,3 +44,8 @@ TW1及CN5既有完整非零别名快照都没有这三个逻辑别名。本事�
 ### 下一目录包的已核范围
 
 原表复核：TW1唯一别名快照9286条，旧原件报告另记3次重复别名写入；CN5快照13529条，原件报告另记585次重复写入。快照中没有那些已折叠的源位置，不能假称早期全出现表。官方patch保留20229次非零别名出现、19643个不同键、117组重复键/586次额外出现。别名数、出现数和28个重复物理bitmap号是不同指标，不是宠物或地图数量。已将范围、manifest摘要和缺失记录写入STONEAGE-LOGICAL-ALIAS-CATALOG-PREFLIGHT-R1.json，目录13直接接此已验范围，不必再作同一预检。
+
+
+## 发布实际终验
+
+内容main657d665d2961f8d8b08e1840c33bc6c0c6906dbc/tree7207690dc02055e4ac4faecaa1e0739b692a37b3，首候选12项、补强候选11项、主线13项Actions分别全部completed/success。source首40162231322/job121076003511、补强40162401191/job121076512877、main40162447294/job121076647178均实际取固定小原件、校验工具、解压、执行源级语义/反例并cmp永久JSON成功。报告7931B/SHAa5cf9e071d34076b5108949b127a5b615ca2453b2fe7010757d27142e244aa52/blob0670d03099e6557657efd2ff0ed7d071abed2b62与远端文本及本地完全一致。没有ZIP工件，原代码/像素未上传；完整后验见research/recovered/STONEAGE-WAYI-LOGIN-SCENE-ALIAS-BINDING-PUBLICATION-R1.json，收据自身Actions另据实际结果，不预先声明。NEXT13和所有未知边界保持。
