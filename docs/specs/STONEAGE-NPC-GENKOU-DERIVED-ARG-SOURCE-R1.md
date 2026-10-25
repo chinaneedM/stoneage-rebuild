@@ -4,7 +4,7 @@
 
 ## 新实证：现代派生文件中存在可核的NPC配置字节
 
-现代社区项目 https://github.com/75912001/sa.desktop 在提交 e9b3f0cfd63b93c11fc77ca5331173dd6c5d2fc8 的 map/maps/11208/map.entity.yaml（Git blob 6e066821bedd0bbef7e59cc3f020cad7783e51c5）内标示 map_id 11208、五条现代NPC记录。两条名「风的守护兽」，当代配置对象 id=4，坐标(26,40)及id=5，坐标(42,38)，均使用NPCEnemy模板 sb_kbu，引用现代文件注记100/sb_geno.create块0/1、行3/14。两处均内嵌同一份文件内容100/sb_kbu.arg；经过独立Base64解码、GB18030严格解码与本地SHA256计算，真实内嵌载荷258B、SHA256 961b87cebad2fd7cb7875f9433df0e301f9f64b06c46a558475fc1a0344e9eec，与两条注记完全相同。
+现代社区项目 https://github.com/75912001/sa.desktop 在提交 e9b3f0cfd63b93c11fc77ca5331173dd6c5d2fc8 的 map/maps/11208/map.entity.yaml（Git blob 6e066821bedd0bbef7e59cc3f020cad7783e51c5）内标示 map_id 11208、两条NPC记录及三条传送点记录。两条名「风的守护兽」，当代配置对象 id=4，坐标(26,40)及id=5，坐标(42,38)，均使用NPCEnemy模板 sb_kbu，引用现代文件注记100/sb_geno.create块0/1、行3/14。两处均内嵌同一份文件内容100/sb_kbu.arg；经过独立Base64解码、GB18030严格解码与本地SHA256计算，真实内嵌载荷258B、SHA256 961b87cebad2fd7cb7875f9433df0e301f9f64b06c46a558475fc1a0344e9eec，与两条注记完全相同。
 
 该内容有 entype、askbattlemsg1、startmsg、dieact、end msg、enemyno、deniedmsg、onebattle、time 九字段。十次敌号出现为1272/1277/1277/1280/1280/1278/1273/1273/1275/1275，只有六种不同整数。time=180、entype=2是静态参数，不是原版运行时秒数或十个已恢复敌人。
 
@@ -19,3 +19,7 @@ DD-028四档继续判 ORIGIN_UNRESOLVED。新认证JSS/TW1.0 NPC=0，原服任�
 ## 接续
 
 本次已将**实际解码字节摘要与记录位置**保存成派生JSON，不入库有版权疑义的原对白、原游戏文件或图像。下一最高任务 NPC-QUEST-ORIGINAL-SCRIPT-CARRIER-QUALIFICATION-10：只尝试有来源链的原始100/sb_kbu.arg/100/sb_geno.create或同地区同构建一手NPC事件记录；若一个有界取源单元仍没有独立原字节，转其它22域可得原始实物内容，拒绝继续重复现代目录或无源helper。
+
+## 2026-10-25 首次真实CI失败与订正
+
+首次source Action 40160123544/job121069733890 **completed/failure**：13项合成测试全部成功，但对真正的固定上游YAML执行时，过严解析器把 warps 段三条传送点也视为NPC行，触发 InvalidEvidence: source entry layout changed；不能称该轮全验收成功。按原源码 section 将2个 NPC 与3个 warps 分开重放，源Git blob不变，修正机器报告的 modern_npc_rows=2、modern_warp_rows=3；真实后续CI必须单独观察。此订正不改变258B内嵌参数SHA、两处具名实体和历史归属OPEN，不增加JSS/TW1官方原NPC。
