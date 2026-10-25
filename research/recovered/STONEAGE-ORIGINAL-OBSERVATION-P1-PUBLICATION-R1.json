@@ -1,0 +1,87 @@
+{
+  "schema": "stoneage.original_observation_lab.p1_publication_receipt.v1",
+  "date": "2026-10-25",
+  "repository": "chinaneedM/stoneage-rebuild",
+  "fresh_preflight_main_head": "21b14d6b0c50245f1dd607a48113563cef61a243",
+  "fresh_preflight_main_tree": "5b0e47521d8efd82078922ff5a859a067729d20d",
+  "content_main_head": "67bce14192b7346ff8fa6db5b8a010f96c95a99b",
+  "content_main_tree": "168082635e6edd52542a138a97cfc3f313fd4578",
+  "current_state_original_git_blob": "031c76a5a8e431f646853909bb2f2e11e6328cd2",
+  "source_real_observation_run": {
+    "id": 40206034214,
+    "job_id": 121207050316,
+    "head_sha": "898dfea3cd33ca3f99afc94f4c23f29b80daf203",
+    "conclusion": "success",
+    "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40206034214"
+  },
+  "source_report_path": "research/recovered/STONEAGE-TW10-ORIGINAL-OBSERVATION-P1-SOURCE-R1.json",
+  "source_report_git_blob": "0d37e14340b277384f27a357e3537f7604687e56",
+  "main_ci": [
+    {
+      "id": 40206429322,
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "conclusion": "success",
+      "head_sha": "67bce14192b7346ff8fa6db5b8a010f96c95a99b",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40206429322"
+    },
+    {
+      "id": 40206429394,
+      "name": "Accept real TW1 bitmap and WAV observation source custody",
+      "conclusion": "success",
+      "head_sha": "67bce14192b7346ff8fa6db5b8a010f96c95a99b",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40206429394"
+    },
+    {
+      "id": 40206429432,
+      "name": "Test offline original-client observation lab",
+      "conclusion": "success",
+      "head_sha": "67bce14192b7346ff8fa6db5b8a010f96c95a99b",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40206429432"
+    },
+    {
+      "id": 40206429457,
+      "name": "Verify preserved mixed25 full server source conservation R18",
+      "conclusion": "success",
+      "head_sha": "67bce14192b7346ff8fa6db5b8a010f96c95a99b",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40206429457"
+    },
+    {
+      "id": 40206429482,
+      "name": "Accept primary-source TW1.0 character creation numeric join R16",
+      "conclusion": "success",
+      "head_sha": "67bce14192b7346ff8fa6db5b8a010f96c95a99b",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40206429482"
+    },
+    {
+      "id": 40206429505,
+      "name": "Verify StoneAge R17 original battle SAB crossversion occurrence conservation",
+      "conclusion": "success",
+      "head_sha": "67bce14192b7346ff8fa6db5b8a010f96c95a99b",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40206429505"
+    }
+  ],
+  "result": {
+    "authentic_original_tw10_bitmap_ids_decoded_to_palette_indices": [
+      5846,
+      5847
+    ],
+    "source_wav_structure_verified": [
+      "StoneAge/data/se/sas_20.wav"
+    ],
+    "output_local_gray_png_generated": true,
+    "original_pixels_published_to_git": false,
+    "original_wav_published_to_git": false,
+    "source_audio_heard": false,
+    "original_palette_and_color_verified": false,
+    "original_client_boot_verified": false,
+    "server_world_entered": false,
+    "original_same_build_npc_pet_quest_entity_joins_restored": 0
+  },
+  "next_observation": "ORIGINAL-PALETTE-SPR-ANIMATION-VISUAL-QUALIFICATION-P2",
+  "parallel_main_content": "EARLY-OFFICIAL-WORLD-ENTITY-SOURCE-20",
+  "source_storage": "PRIVATE_PERSISTENT_SOURCE_STORAGE_UNPROVISIONED",
+  "stage_a": "7 PARTIAL + 2 OPEN",
+  "stage_b_and_wiki": "GATED",
+  "savedata_r79": "PAUSED_NON_BLOCKING",
+  "overall_restoration_percent": null
+}
