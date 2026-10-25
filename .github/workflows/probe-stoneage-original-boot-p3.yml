@@ -1,4 +1,4 @@
-name: Qualify actual 8-bit display mode before isolated original TW1 startup P3
+name: Observe actual 8-bit original TW1 and seal one frame for private visual inspection P3
 on:
   push:
     branches: [agent/original-boot-p3-20261026]
@@ -17,7 +17,7 @@ jobs:
           set -euo pipefail
           sudo dpkg --add-architecture i386
           sudo apt-get update -qq
-          sudo apt-get install -y -qq --no-install-recommends wine wine32:i386 xvfb x11-utils imagemagick gcc-mingw-w64-i686-win32 python3-pil iproute2 fonts-noto-cjk libgl1-mesa-dri:i386
+          sudo apt-get install -y -qq --no-install-recommends wine wine32:i386 xvfb x11-utils imagemagick gcc-mingw-w64-i686-win32 python3-pil python3-cryptography iproute2 fonts-noto-cjk libgl1-mesa-dri:i386
           sudo locale-gen zh_TW.UTF-8
           i686-w64-mingw32-gcc -Os -mwindows tools/stoneage_p3_control.c -o /tmp/stoneage-p3-control.exe -lddraw -ldxguid -lgdi32 -luser32
           file /tmp/stoneage-p3-control.exe
@@ -70,5 +70,6 @@ jobs:
             /tmp/stoneage-p3-depth8-derived.json
             /tmp/stoneage-p3-original-derived.json
             /tmp/stoneage-p3-package-versions.txt
+            /tmp/stoneage-p3-private-frame-sealed.json
           if-no-files-found: error
           retention-days: 7

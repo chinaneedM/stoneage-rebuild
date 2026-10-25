@@ -185,6 +185,16 @@ def runtime(directory,control,output,original=False,depth_probe=False):
                             if w.get('image_path','').replace('\\','/').lower().endswith('/sa_3.exe')]
             result['original_client_execution_proven']=bool(native_windows)
             result['original_visible_window_occurrences']=len(native_windows)
+            if native_windows:
+                from tools.stoneage_p3_private_frame import seal
+                public=ROOT/'research/recovered/STONEAGE-P3-SESSION-TRANSPORT-PUBLIC.pem'
+                if public.exists():
+                    image=directory/'original-frame-1.png'
+                    sealed=seal(image.read_bytes(),public.read_bytes())
+                    path=Path('/tmp/stoneage-p3-private-frame-sealed.json')
+                    path.write_text(json.dumps(sealed,sort_keys=True))
+                    result['sealed_private_frame']={k:sealed[k] for k in ('schema','plaintext_sha256','plaintext_bytes','recipient_key_sha256')}
+                    result['sealed_private_frame']['ciphertext_envelope_sha256']=digest_file(path)
             log.flush();text=(directory/'original-wine.log').read_text(errors='replace')
             result['wine_log_sha256']=hashlib.sha256(text.encode()).hexdigest()
             result['wine_diagnostic_lines']=[line[:400] for line in text.splitlines() if
