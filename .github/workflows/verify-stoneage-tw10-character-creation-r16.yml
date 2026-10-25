@@ -1,0 +1,25 @@
+name: Verify bounded TW1.0 character creation source crosswalk R16
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_tw10_character_creation_r16_join.py
+      - tests/test_stoneage_tw10_character_creation_r16_join.py
+      - research/recovered/STONEAGE-TW10-CREATION-STATIC-JOIN-R16.json
+      - .github/workflows/verify-stoneage-tw10-character-creation-r16.yml
+permissions:
+  contents: read
+jobs:
+  bounded-join:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest tests.test_stoneage_tw10_character_creation_r16_join -v
+      - run: |
+          python -m tools.stoneage_tw10_character_creation_r16_join --output /tmp/creation-r16.json
+          if [ -e research/recovered/STONEAGE-TW10-CREATION-STATIC-JOIN-R16.json ]; then
+            cmp /tmp/creation-r16.json research/recovered/STONEAGE-TW10-CREATION-STATIC-JOIN-R16.json
+          fi
