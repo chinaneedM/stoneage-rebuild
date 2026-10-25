@@ -42,6 +42,6 @@ python -m tools.stoneage_battle_sab_crossversion_r17
 
 执行重新读取两原 source Git blob、逐位置重建438条、检查218/220全覆盖、436块和重复145/146、全部差异和未变证据字段。原源/运行时文件未重新下载，未提交原SAB/程序/声音/图像。
 
-新增的真实材料关联到此止点。按协议§13停止战斗资源重复索引helper，转 `EARLY-OFFICIAL-SERVER-MASTER-DATA-SOURCE-18_OR_EXACT_DOWNLOAD_PAYLOAD_CARRIER`：优先只确认一个新可取得、确属某正式版的NPC/任务/宠物主表原载体，或2001同版原战斗地图更新实物；没有精确可取URL、编译/发行链与原数据就登记OPEN并回全22域轮转。没有完整官方版本收齐；私人长存容量限制保持。Stage A = 7 PARTIAL + 2 OPEN、Stage B/wiki GATED、savedata R79 PAUSED_NON_BLOCKING、overall percent=null。
+新增的真实材料关联到此止点。按协议§13停止战斗资源重复索引helper，转 `EARLY-OFFICIAL-SERVER-MASTER-DATA-SOURCE-18_OR_EXACT_DOWNLOAD_PAYLOAD_CARRIER`：优先只确认一个新可取得、确属某正式版的NPC/任务/宠物主表原载体，或2001同版原战斗地图更新实物；没有精确可取URL、编译/发行链与原数据就登记OPEN并回全22域轮转。同构建归属尚未确认，未完整收齐官方版本；私人长存容量限制保持。Stage A = 7 PARTIAL + 2 OPEN、Stage B/wiki GATED、savedata R79 PAUSED_NON_BLOCKING、overall percent=null。
 
 源分支 CI 需要真实观察，未预先声明成功；正式main可复验后补独立发布收据。
