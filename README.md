@@ -539,3 +539,8 @@ The 2.66 MB historical `docs/CURRENT-STATE.md` is still preserved byte-for-byte.
 ### 2026-10-25 — R18原文件主表全源守恒
 
 本轮发现2.5混合保存包的旧筛选清单比实际服务器 `gmsv/data` **少选18个真实原文件（731424B）**，包括遇敌组合 `group.txt` / `group1.txt`、骑宠 `ride.txt`。已从旧静态ALL-FILE SHA256原清单补齐全部2245路径，核得10465523B、2121唯一内容SHA、53组/124个重复出现引用且0原件删除。来源只是旧社区混合包，不能证明任何TW1.0原服NPC/任务/宠物；没有重新下载商业载荷。参见[源保管规格](docs/specs/STONEAGE-MIXED25-SERVER-FULL-CONSERVATION-R18.md)、[2245路径原SHA机器档](research/recovered/STONEAGE-MIXED25-SERVER-FULL-SOURCE-R18.json)、[独立日期记录](docs/continuity/MIXED25-SERVER-R18-MATERIAL-20261025.md)。最高NEXT19回早期官方原件具名内容。原2.68MB CURRENT不变，Stage A7 PARTIAL/2 OPEN，B/wiki GATED、R79暂停、总体百分比未知。
+
+
+### 2026-10-25 — TW1.0原程序短文本实物 R19
+
+已通过真实源Action `40203596474` 对官方台湾1.0原版 `sa_3.exe` / `StoneAge.exe` 的尺寸及SHA逐一鉴真，并在非执行PE数据段检得带原文件偏移和原字节哈希的繁体短文本（例如“戰場地圖錯誤”“沒有參戰的寵物”“下載失敗”）；独立Guard核原清单及源文本的cp950回算。原始文本实例不是宠物/任务实体、不是原版界面实际显示证明。首跑大小上限失败、第二跑机器码乱码、第三跑校正成功均在[完整R19连续性记录](docs/continuity/TW10-ORIGINAL-TEXT-R19-MATERIAL-20261025.md)，[来源限定派生JSON](research/recovered/STONEAGE-TW10-ORIGINAL-EXE-TEXT-CANDIDATES-R19.json)。NEXT `EARLY-OFFICIAL-WORLD-ENTITY-SOURCE-20`：同版原商业NPC/宠物/本体任务名字-实体ID-原图SPR的真实来源联接。全文CURRENT原样保留；Stage A7 PARTIAL+2 OPEN，B/wiki GATED，R79暂停，总体进度比例未知。
