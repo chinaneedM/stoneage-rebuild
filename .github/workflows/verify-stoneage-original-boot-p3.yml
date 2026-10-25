@@ -1,0 +1,41 @@
+name: Validate isolated original-client observation boundaries P3
+on:
+  push:
+    branches: [main, agent/original-boot-p3-20261026]
+    paths:
+      - 'tools/stoneage_p3_*.py'
+      - 'tools/stoneage_p3_control.c'
+      - 'tests/test_stoneage_p3_*.py'
+      - '.github/workflows/verify-stoneage-original-boot-p3.yml'
+      - 'research/recovered/STONEAGE-TW10-ORIGINAL-BOOT-P3-*.json'
+      - 'docs/continuity/STONEAGE-ORIGINAL-BOOT-P3-20261026.md'
+  workflow_dispatch:
+jobs:
+  retire-obsolete-preflight:
+    if: github.ref_name == 'agent/original-boot-p3-20261026'
+    permissions:
+      actions: write
+    runs-on: ubuntu-latest
+    steps:
+      - name: Retire ONLY this work package's superseded heavyweight environment attempt
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          repo='chinaneedM/stoneage-rebuild'
+          run=40242697734
+          test "$(gh api repos/$repo/actions/runs/$run --jq '.head_sha + "|" + .head_branch')" = '305504fcb5736b90b0a3212dc4af3b7885200454|agent/original-boot-p3-20261026'
+          status="$(gh api repos/$repo/actions/runs/$run --jq .status)"
+          if [ "$status" = 'in_progress' ] || [ "$status" = 'queued' ]; then
+            gh api --method POST repos/$repo/actions/runs/$run/cancel
+            echo 'SUPERSEDED_INITIAL_P3_ENVIRONMENT_CANCEL_REQUESTED; NO_SUCCESS_PROMOTION'
+          fi
+  offline-boundaries:
+    permissions:
+      contents: read
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python -m pip install --quiet pillow
+      - name: Pure source-inventory, network fail-closed, private-path and capture metadata checks
+        run: python -m unittest -v tests.test_stoneage_p3_boot
