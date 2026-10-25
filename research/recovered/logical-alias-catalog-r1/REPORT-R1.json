@@ -1,0 +1,236 @@
+{
+  "annotations": [
+    {
+      "evidence": "UI12_STATIC_CROSS_SPECIMEN_CANDIDATE_NOT_RUNTIME",
+      "game_entity_id": null,
+      "logical_alias": 26301,
+      "profile": "PATCH129",
+      "role": "PANEL_BACKGROUND",
+      "source_index": 376059
+    },
+    {
+      "evidence": "UI12_STATIC_CROSS_SPECIMEN_CANDIDATE_NOT_RUNTIME",
+      "game_entity_id": null,
+      "logical_alias": 26302,
+      "profile": "PATCH129",
+      "role": "SUBMIT_OVERLAY",
+      "source_index": 376060
+    },
+    {
+      "evidence": "UI12_STATIC_CROSS_SPECIMEN_CANDIDATE_NOT_RUNTIME",
+      "game_entity_id": null,
+      "logical_alias": 26303,
+      "profile": "PATCH129",
+      "role": "EXIT_OVERLAY",
+      "source_index": 376061
+    }
+  ],
+  "attribute_field_recovery": {
+    "dictionary_fingerprints": 19659,
+    "hash_qualified_extra_references": 588,
+    "historical_snapshot_references": 43044,
+    "numeric_patch_attributes_reconstructed_and_sha_verified": 389698,
+    "original_snapshots_modified": false,
+    "uses_same_number_guessing": false,
+    "witness_index_is_an_attribute_preimage_example_not_runtime_selection": true
+  },
+  "boundaries": {
+    "content_ids_are_catalog_local": true,
+    "early_overwritten_alias_occurrences_reconstructed_by_exact_attribute_sha": true,
+    "full_tw85_alias_profile_available": false,
+    "overall_restoration_percentage": null,
+    "pixel_equivalence_from_block_hash_inferred": false,
+    "raw_original_payloads_in_catalog": false,
+    "same_alias_means_same_game_entity": false,
+    "same_deployed_official_build_authenticated": false,
+    "stage_b_wiki": "GATED",
+    "tw85_native_records_outside_patch_without_full_numeric_alias_metadata": 26522,
+    "world_floor_or_species_count_inferred": false
+  },
+  "byte_reference_budget": {
+    "actual_original_disk_bytes_deleted": 0,
+    "distinct_block_bytes": 143169643,
+    "logical_referenced_bytes": 256992868,
+    "repeated_reference_bytes": 113823225
+  },
+  "content_reference_counts": {
+    "all": 43632,
+    "cross_profile_blocks": 13579,
+    "distinct_blocks": 19236,
+    "reused_references": 24396
+  },
+  "datasets": {
+    "CONTENTS-R1.tsv.gz": {
+      "columns": [
+        "content_id",
+        "rd_sha256",
+        "bytes",
+        "rd_flag",
+        "rd_width",
+        "rd_height",
+        "rd_size_field",
+        "reference_count",
+        "profiles"
+      ],
+      "rows": 19236,
+      "uncompressed_bytes": 2029873,
+      "uncompressed_sha256": "54a148e114866de50a71e1aff844ea1419c8aadfb642be95235e53b922fc9232"
+    },
+    "REFERENCES-R1.tsv.gz": {
+      "columns": [
+        "profile",
+        "logical_alias",
+        "source_index",
+        "physical_bitmapno",
+        "adrn_offset",
+        "adrn_size",
+        "xoff",
+        "yoff",
+        "width",
+        "height",
+        "attr_sha256",
+        "record_sha256",
+        "content_id",
+        "alias_evidence",
+        "alias_witness_patch_index",
+        "source_rd_status",
+        "catalog_rd_qualification",
+        "physical_record_multiplicity"
+      ],
+      "rows": 43632,
+      "uncompressed_bytes": 10052054,
+      "uncompressed_sha256": "ac934efa8d2876aff2e97b4db9be95e7c537f35f5bc1eac52263235c57183adf"
+    }
+  },
+  "default_unannotated_role": "UNKNOWN_RESOURCE_ALIAS",
+  "distinct_logical_aliases_across_profiles": 19645,
+  "finite_next_review_aliases": [
+    26089,
+    26204
+  ],
+  "next": "RESOURCE-LOGICAL-ALIAS-MATERIAL-DIFFERENCES-14",
+  "profile_membership_counts": {
+    "CN50": 2,
+    "CN50|PATCH129": 4241,
+    "CN50|PATCH129|TW10": 9286,
+    "PATCH129": 6116
+  },
+  "profiles": {
+    "CN50": {
+      "alias_occurrence_view_complete_for_pinned_parent_metadata": true,
+      "attribute_fingerprint_known_rows": 303195,
+      "distinct_aliases": 13529,
+      "distinct_physical_ids_in_parent": 303197,
+      "duplicate_alias_keys_in_view": 246,
+      "extra_occurrences_in_view": 585,
+      "hash_qualified_extra_occurrences": 585,
+      "hash_qualified_recovered_occurrences": 585,
+      "original_snapshot_overwritten_positions_available": false,
+      "original_snapshot_refs": 13529,
+      "physical_records_in_parent": 303197,
+      "provenance": "PRESERVED_CN50_NOT_AUTHENTICATED_CLEAN_PRESSING",
+      "raw_length_exception_refs": 0,
+      "reported_extra_alias_writes": 585,
+      "retained_refs": 14114,
+      "snapshot_only_attribute_rows": 2,
+      "unresolved_original_alias_fields": 0,
+      "view": "ORIGINAL_SNAPSHOT_PLUS_EXACT_ATTR_SHA_FIELD_RECOVERY"
+    },
+    "PATCH129": {
+      "alias_occurrence_view_complete_for_pinned_parent_metadata": true,
+      "distinct_aliases": 19643,
+      "distinct_physical_ids_in_parent": 389670,
+      "duplicate_alias_keys_in_view": 117,
+      "extra_occurrences_in_view": 586,
+      "original_table_all_occurrence_positions_available": true,
+      "physical_records_in_parent": 389698,
+      "provenance": "OFFICIAL_PATCH_CAPTURE_20060911_NOT_FULL_CLIENT",
+      "raw_length_exception_refs": 24,
+      "reported_extra_alias_writes": 586,
+      "retained_refs": 20229,
+      "view": "FULL_NONZERO_ALIAS_OCCURRENCES"
+    },
+    "TW10": {
+      "alias_occurrence_view_complete_for_pinned_parent_metadata": true,
+      "attribute_fingerprint_known_rows": 125996,
+      "distinct_aliases": 9286,
+      "distinct_physical_ids_in_parent": 125996,
+      "duplicate_alias_keys_in_view": 3,
+      "extra_occurrences_in_view": 3,
+      "hash_qualified_extra_occurrences": 3,
+      "hash_qualified_recovered_occurrences": 3,
+      "original_snapshot_overwritten_positions_available": false,
+      "original_snapshot_refs": 9286,
+      "physical_records_in_parent": 125996,
+      "provenance": "ACCEPTED_EARLY_RETAIL_BASELINE_METADATA",
+      "raw_length_exception_refs": 0,
+      "reported_extra_alias_writes": 3,
+      "retained_refs": 9289,
+      "snapshot_only_attribute_rows": 0,
+      "unresolved_original_alias_fields": 0,
+      "view": "ORIGINAL_SNAPSHOT_PLUS_EXACT_ATTR_SHA_FIELD_RECOVERY"
+    }
+  },
+  "schema": "stoneage.crossversion_logical_alias_catalog.r1",
+  "shared_aliases_across_profiles": 13527,
+  "shared_aliases_with_differing_or_multiple_contents": 171,
+  "shared_aliases_with_single_identical_content": 13356,
+  "source_pins": {
+    "research/recovered/STONEAGE-ADRN129-REAL-ACCEPTANCE-R1.json": {
+      "bytes": 17185,
+      "git_blob": "04940c6e9a0944bd756657665350c2cb7ae9d412",
+      "sha256": "8b5e82e28fccff244d4fe5b3dddf58e4b6663ae0fd3bbdb8243c47433d720b6f"
+    },
+    "research/recovered/STONEAGE-WAYI-LOGIN-SCENE-ALIAS-BINDING-R1.json": {
+      "bytes": 7931,
+      "git_blob": "0670d03099e6557657efd2ff0ed7d071abed2b62",
+      "sha256": "a5cf9e071d34076b5108949b127a5b615ca2453b2fe7010757d27142e244aa52"
+    },
+    "research/recovered/adrn129-tw85-real-pair/NATIVE-R1.tsv.gz": {
+      "bytes": 43825625,
+      "git_blob": "ffb7b3340116ecaf57daa08242c1ce271e3ad86f",
+      "sha256": "495928a0a44d7c81bf1d6ef7b06d26decfc5096803fbd60b9e8e0aa9752a45ce"
+    },
+    "research/recovered/adrn129-tw85-real-pair/PAIRS-R1.tsv.gz": {
+      "bytes": 33542797,
+      "git_blob": "7f41ca49ff576914764b77f22684fbc113e1d90e",
+      "sha256": "ee41e4266b3bbab162d9271c1b86cceaa85354e60ff3e389fffccd68010b1314"
+    },
+    "research/recovered/cn50-resource-metadata/ADRN-R1.tsv.gz": {
+      "bytes": 19745873,
+      "git_blob": "127670eaf2bc19ba9d15776d090a8307058f729d",
+      "sha256": "e24afc513d28c7f25bd26bde9c69ddc0de4000147a2b11f50b5176655d8558fd"
+    },
+    "research/recovered/cn50-resource-metadata/COLLISION-ATTR-R1.tsv.gz": {
+      "bytes": 90010,
+      "git_blob": "520bcebf0afc471cfc9a5b1d6a275e1855606d26",
+      "sha256": "4417afac7caffee86bf64ca36d9bfdff06fef61b9e3af200bf59b153280dc8df"
+    },
+    "research/recovered/cn50-resource-metadata/MANIFEST-R1.json": {
+      "bytes": 3001,
+      "git_blob": "5063cf2fade4e0739ac35c38a90dfff1a43db960",
+      "sha256": "73181d1de1efadc971eaea254891103bd69fd7d3121fc450ec3b148ca8d06fa8"
+    },
+    "research/recovered/tw10-resource-metadata/ADRN-R1.tsv.gz": {
+      "bytes": 8238749,
+      "git_blob": "e389540f9962d1868c42b1edfe2acc7c83387ff1",
+      "sha256": "c8669789de1cc6e3575c2412ed86354a49c2b3e90cd2854c1e7b2fc71b0fe9ea"
+    },
+    "research/recovered/tw10-resource-metadata/COLLISION-ATTR-R1.tsv.gz": {
+      "bytes": 60889,
+      "git_blob": "717345308a1c2d2d5bcd32338f2c9a016de9ab02",
+      "sha256": "d26b318ea73833bd7cc68abc8b5798a81b76ef9309cc91b137f7a55c6c8275dc"
+    },
+    "research/recovered/tw10-resource-metadata/MANIFEST-R1.txt": {
+      "bytes": 1928,
+      "git_blob": "6154dcf806163b82cb96af344e6a644143d15f56",
+      "sha256": "fb9b2dbe52a305f5ff2934cc1dcdf275be1215e2a89b326dd76fd7f80b6d9743"
+    },
+    "research/recovered/wayi-adrn129-patch-metadata/INDEX-1-R1.tsv.gz": {
+      "bytes": 23924728,
+      "git_blob": "065ecc874adc637098dc7c8f177e478bc7b6f054",
+      "sha256": "d8049cb6ce74a2c048372aa51fc81b6921a995b6fa45b03dd5511a93509958ca"
+    }
+  },
+  "task": "ORIGINAL-RESOURCE-LOGICAL-ALIAS-CROSSVERSION-CATALOG-13"
+}

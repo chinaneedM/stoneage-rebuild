@@ -1,0 +1,26 @@
+name: Verify complete cross-version alias references and non-destructive content reuse
+on:
+  push:
+    paths:
+      - 'tools/stoneage_logical_alias_catalog.py'
+      - 'tests/test_stoneage_logical_alias_catalog.py'
+      - 'research/recovered/logical-alias-catalog-r1/**'
+      - '.github/workflows/verify-stoneage-logical-alias-catalog.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  complete-metadata-replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test occurrence preservation, namespace separation and raw-length exceptions
+        run: python -m unittest tests.test_stoneage_logical_alias_catalog -v
+      - name: Rebuild every reference and content group from pinned original-derived inputs
+        run: python -m tools.stoneage_logical_alias_catalog verify
+      - name: Exercise exact UI binding as one bounded query, no pixels or programs
+        run: python -m tools.stoneage_logical_alias_catalog query --alias 26301 --profile PATCH129

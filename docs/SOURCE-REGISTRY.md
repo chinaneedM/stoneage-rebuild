@@ -8805,3 +8805,8 @@ Reacquired known official-path captured program369152B/SHA4b5a059b45b589b609ca92
 ## 2026-10-25 Wayi original login scene alias binding12
 
 Known source reused, no new client version: accepted921600B executable SHA4193a7e1b20b996f7902424ae05092b455c5dbbe3f133d331a4897bbc7abfe63 and preserved official ADRN129 full derived table, prior TW8.5 NATIVE/PAIRS metadata. Original logical26301/26302/26303 map through attr+76 to physical376059/376060/376061; raw table columns, exact record/attr/RD SHA and all three source file pins are in STONEAGE-WAYI-LOGIN-SCENE-ALIAS-BINDING-R1.json. Separate descendant BismarckDD pinned source names/conditional definitions are corroboration only, as documented in the spec. No original program execution, artwork bytes, deployed-build authentication or early-era UI promotion.
+
+
+## 2026-10-25 cross-version logical alias catalog13
+
+All11 original-derived inputs pinned in logical-alias-catalog-r1/REPORT-R1.json. Re-encode every one of389698 official patch numeric attribute blocks and match its52B SHA;19659 attribute fingerprints identify logical fields. Exact original attribute hashes plus existing early physical indices recover588 omitted alias references (TW1:3/CN5:585); the two unmatched CN5 attributes retain original snapshot projections. Original snapshots/preflight remain unchanged. Final43632 references/19236 RD-content definitions preserve positions, raw-length anomalies and namespace separation. No new original carrier, pixel, executable or same-deployed-build authentication. See matching specification and bounded material-difference NEXT14.

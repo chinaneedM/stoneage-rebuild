@@ -4948,3 +4948,16 @@ fresh main eb086c49b7cdce29add90e2721d67b866be3f246/tree17120cf7d17052b34bb73d24
 没有重拉大包、运行原程序、重读/解码/渲染原REAL像素；静态跨样本兼容联接不等于同一已部署build或完整登录画面，TW1/CN5别名快照无这三个键只限固定样本。后代四源码Git blob仅辅助命名，不从2026坐标/多套条件宏回填原构建。交付STONEAGE-WAYI-LOGIN-SCENE-ALIAS-BINDING-R1规格/全派生JSON、限定原字节工具、13项单元及13项绕过整SHA原字节语义反例拒绝。candidate/main实际源与后验另记，不提前写成功。
 
 两UI包已止点，最高NEXT ORIGINAL-RESOURCE-LOGICAL-ALIAS-CROSSVERSION-CATALOG-13回全域实物目录：把既有官方patch完整别名与TW1/CN5快照接为可查跨版底座，保留不同源位置/重复/未知角色，明确早期快照折叠局限，不造实体名称或删除证据。不得扩绘制/驱动helper或只复算哈希。DD-028四档、7PARTIAL+2OPEN、B/wiki GATED、R79暂停、大包私人保管暂停、总体percent=null不变。
+
+
+## 2026-10-25 — 跨版本逻辑别名目录13：43632来源引用、588条旧关联恢复
+
+fresh main53a45e1f8b51253f21cdfecc2936cda6f29d736d/treea2aab7d9727db0a53fce5d5acca66314bc2defe7，583分支、0开放PR；最新主线收据自身两项Actions成功，协议/七启动全文按原生Git重新核验、CURRENT2669580B全部历史前缀保留。最高ORIGINAL-RESOURCE-LOGICAL-ALIAS-CROSSVERSION-CATALOG-13直接接已有原元数据，无原大包重拉或UI/驱动helper扩展。
+
+交付logical-alias-catalog-r1三件永久派生目录与显式alias/physical/content-SHA查询。重要补充：旧快照缺少被覆盖关联，但完整旧ADRN表仍有原index/属性SHA；本轮将官方patch389698数值属性重编码为52B全部逐SHA验证，19659个属性指纹逻辑值无冲突。TW1全部125996原记录属性SHA可匹配；CN5有303195匹配，另303117/303161两位置由原快照独立保存逻辑26089/26204，未假设为0。与旧快照逐项一致后，有据补回TW1的3条、CN5的585条关联，各带属性SHA见证与EXACT_ORIGINAL_ATTR_SHA_FIELD_RECOVERY标签，不按同号猜，不改旧快照/预检。两旧样本逻辑字段未解决记录0，但非新原包/像素或原服主表恢复。
+
+最终TW1有9289位置/9286键，CN5有14114位置/13529键，官方patch有20229位置/19643键，共43632引用、并集19645键；它们不是实体数量。按实际(size,RD SHA)登记19236内容定义，24396重复引用保留全部可得源位置/属性，13579块跨样本复用。逻辑引用256992868B/不同块143169643B，重复引用113823225B不是原盘回收量，实际删除0B。早期完整80B记录SHA未直接保存者仍留空，不伪称本轮从原件实读。
+
+patch117组重复键/586额外出现、旧样本新补3/585出现均保留，不替原服选last-wins。24条patch逻辑引用沿用已验flag0/ADRN实际长度规则，同时保留旧HEADER_MISMATCH与错误冗余长度，未当坏图丢弃；完整TW8.5 patch外26522记录缺数值别名，未冒作第四完整profile。共有13527键中13356全部现存引用为一内容、171不同或多候选，不当171次游戏改版。两个CN5独有键仅当前视图事实，未证官方删除；UI12角色只注释PATCH129准确index，其他UNKNOWN。
+
+规范TSV/summary从11份原派生输入全量重放，24单元含属性52B数值证据、原投影冲突/未知不归零、588关联、去重守恒、异常/命名空间/查询/档案损坏。候选/main及后验须据实际另记，不预支成功。最高NEXT RESOURCE-LOGICAL-ALIAS-MATERIAL-DIFFERENCES-14：直接用目录核26089/26204及至多三组具体差异，分清改号/块变化/覆盖或精确缺源；不得重复本预检、扩通用目录helper或回网页替代可用数据。DD-028四档、Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、大包私人保管暂停、总体percent=null不变。
