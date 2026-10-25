@@ -7,3 +7,7 @@
 2015资料站转载称北京华义2001更新时让用户下载 `battlemap218.sab` 和 `battlemap219.sab`，但本样本实际 `battle218.sab`/`battle219.sab`；原始官方HTML、同期原下载程序、SHAs和同构建归属没有获得，关联仅为UNQUALIFIED候选。游戏本体任务/常驻更新/限时运营活动归属严格按DD-028；零新增同版具名NPC/任务/宠物主表。源报告/可验证工具和规格见 `docs/specs/STONEAGE-BATTLE-SAB-CROSSVERSION-R17.md`；后续source/main Actions另据实际记录，旧历史失败不重写。
 
 下一优先 `EARLY-OFFICIAL-SERVER-MASTER-DATA-SOURCE-18_OR_EXACT_DOWNLOAD_PAYLOAD_CARRIER`：只要取得一个确切可访问、发行归属可辨的原版实体主表或2001补丁载体才重开实际名字/任务/遭遇绑定；否则精确缺源转22域。Stage A7 PARTIAL+2 OPEN；B/wiki GATED、R79暂停、总体百分比unknown、禁止重复大型原客户端下载。
+
+## R17 候选验收纠错历史
+
+首次含文档门禁的候选 Actions `40198986497/job121185894377` 为 completed/failure：13个测试仅一项失败，原因是规格没有出现守卫要求的精确字面“同构建”，尽管原文已经说明2.5混合保存包的发行build无法鉴真。修订规格后，候选 Actions `40199112279/job121186270112` 已实际 completed/success；原始两份索引、438条出现、436个哈希、218项差异、2001公告转载证据等级均未改变。首轮失败保留可追溯，不追写成success。此次连续性补记提交本身的Actions需后验核实。
