@@ -158,3 +158,8 @@ do not use repetition, irrelevant checks or artificial waiting to fill time.
 Current supersession: PET-STATE-01 is highest. TW1.0 client-local savedata R79 is
 PAUSED_NON_BLOCKING pending a named material game-rule/state dependency.
 Historical R1–R78 and R79 preflight are retained, not revoked or called complete.
+
+
+## 14. Dated additive work overlays when large CURRENT cannot be safely written — 2026-10-25
+
+The complete CURRENT remains authoritative historical evidence. If the native-Git full blob (currently >2MB) can be verified but a GitHub file-write request fails due to transport or size, NEVER truncate, reconstruct from an old chat, or replace it with only a tail. Instead create an explicit versioned addendum under `docs/continuity/`, update README with a pointer, and include the exact source HEAD/tree, preserved prior CURRENT blob, work outcome, raw-source evidence limits, CI observations, and next package. Treat it as an **additive checkpoint**, never a substitute for retrieving CURRENT or for a newer portfolio-level supersession. Preserve failed and corrected CI history. At this writing, after reading CURRENT and the roadmap, also inspect `docs/continuity/NPC09-MATERIAL-DELTA-20261025.md` unless a newer remote record already supersedes its NEXT. A future full-CURRENT append may transcribe this checkpoint only after exact historical-prefix verification; retain the original overlay and failure record.
