@@ -1,0 +1,30 @@
+name: Verify five original alias material difference cases
+on:
+  push:
+    paths:
+      - 'tools/stoneage_alias_material_differences.py'
+      - 'tools/stoneage_logical_alias_catalog.py'
+      - 'tests/test_stoneage_alias_material_differences.py'
+      - 'research/recovered/STONEAGE-ALIAS-MATERIAL-DIFFERENCES-R1.json'
+      - 'research/recovered/logical-alias-catalog-r1/**'
+      - 'research/recovered/wayi-adrn129-patch-metadata/INDEX-1-R1.tsv.gz'
+      - 'research/recovered/adrn129-tw85-real-pair/NATIVE-R1.tsv.gz'
+      - 'research/recovered/tw10-resource-metadata/ADRN-R1.tsv.gz'
+      - 'research/recovered/cn50-resource-metadata/ADRN-R1.tsv.gz'
+      - '.github/workflows/verify-stoneage-alias-material-differences.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  fixed-source-cases:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Guard absent alias, physical ID reuse and all retained candidate blocks
+        run: python -m unittest tests.test_stoneage_alias_material_differences -v
+      - name: Replay fixed cases from complete physical tables without original downloads
+        run: python -m tools.stoneage_alias_material_differences --verify

@@ -8810,3 +8810,8 @@ Known source reused, no new client version: accepted921600B executable SHA4193a7
 ## 2026-10-25 cross-version logical alias catalog13
 
 All11 original-derived inputs pinned in logical-alias-catalog-r1/REPORT-R1.json. Re-encode every one of389698 official patch numeric attribute blocks and match its52B SHA;19659 attribute fingerprints identify logical fields. Exact original attribute hashes plus existing early physical indices recover588 omitted alias references (TW1:3/CN5:585); the two unmatched CN5 attributes retain original snapshot projections. Original snapshots/preflight remain unchanged. Final43632 references/19236 RD-content definitions preserve positions, raw-length anomalies and namespace separation. No new original carrier, pixel, executable or same-deployed-build authentication. See matching specification and bounded material-difference NEXT14.
+
+
+## SRC-ALIAS-MATERIAL-DIFFERENCES-20261025 — 五组完整物理资源差异
+
+永久派生research/recovered/STONEAGE-ALIAS-MATERIAL-DIFFERENCES-R1.json及docs/specs/STONEAGE-ALIAS-MATERIAL-DIFFERENCES-R1.md。输入由目录三表/原源pins和TW1、CN5、TW8.5 native、官方patch完整物理表构成，全部SHA/Git blob固定；未新取原件。17引用/9原RD块，五组全部位置和同号异内容保留。两个CN5-only块在完整TW1/TW8.5索引块中没有精确(size,SHA)命中，不推出所有版本无该图/官方删除；同号TW8.5资源与原CN5不同且patch别名0，native数值别名不可默认。三追加组证明旧块保留与多候选，包括26100尺寸变化；字节异不直接证画面异，29000尺寸不够具名登录。16新测试/既有24共40通过，独立SQL全表多重集、9相关原记录及属性SHA重建同一。商业原包/程序/RD像素未进Git，无实际运行时有效覆盖、服务器master或具名宠物/NPC新增。完整旧史保留，实际CI另记；下一有限音频原内容15。
