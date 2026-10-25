@@ -529,3 +529,8 @@ The 2.66 MB historical `docs/CURRENT-STATE.md` is still preserved byte-for-byte.
 ### 2026-10-25 — TW1.0原版人物创建数值材料16
 
 本轮最高 `ORIGINAL-CHARACTER-CREATION-CONTENT-16` 的一项原始数值—同版SPR组号联接已通过来源及独立报告验收：原始程序 `sa_3.exe` 静态indexed body来源连续十二值 `100000..100220`（步长20），均在TW1.0原464组SPR表；紧随其后值198。**只有候选源表相交，没有原生表长/实际选角人数/人物姓名/原画面认证。** 详情见 [R16材质规格](docs/specs/STONEAGE-TW10-CHARACTER-CREATION-BODY-SOURCE-R16.md)、[永久原始派生数值](research/recovered/STONEAGE-TW10-CREATION-BODY-WINDOW-R16.json)、[日期连续性补记](docs/continuity/CHARACTER-CREATION-R16-MATERIAL-20261025.md)。未修改原巨大CURRENT正文，继续依其最新真实状态和路线优先级。下一有限目标返回22域同版官方具名内容原件轮换，Stage A7 PARTIAL+2 OPEN，B/wiki GATED，R79暂停，百分比未知。
+
+
+### 2026-10-25 — 战斗场景SAB资源跨样本无损索引 R17
+
+已按[原文件清单与完整SHA的交叉规格](docs/specs/STONEAGE-BATTLE-SAB-CROSSVERSION-R17.md)及[438出现位置机器档案](research/recovered/STONEAGE-BATTLE-SAB-CROSSVERSION-R17.json)直接比较早期台湾1.0的218个战斗SAB和混合2.5保存包220个SAB：共享0–217编号的文件内容SHA均不同，后期保存包另有218/219两编号，436不同块/438原参照（重复145/146各一对）不执行原件删除。2015二次转载的2001华义补丁文件名与现存包文件名不全相同，未认证原补丁或原服内容。历史全量CURRENT原样保留，[独立R17连续性记录](docs/continuity/BATTLE-SAB-R17-MATERIAL-20261025.md)说明下一优先源载体；Stage A、B/wiki、R79和总体百分比状态不变。
