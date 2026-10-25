@@ -1,0 +1,31 @@
+name: Verify original Taiwan 1.0 executable short text R19
+on:
+  push:
+    branches: [main, agent/tw10-original-text-r19-20261025]
+    paths:
+      - '.github/workflows/verify-stoneage-tw10-original-text-r19.yml'
+      - 'tools/stoneage_tw10_original_text_r19_guard.py'
+      - 'tests/test_stoneage_tw10_original_text_r19_guard.py'
+      - 'research/recovered/STONEAGE-TW10-ORIGINAL-EXE-TEXT-CANDIDATES-R19.json'
+      - 'docs/continuity/TW10-ORIGINAL-TEXT-R19-MATERIAL-20261025.md'
+permissions:
+  contents: read
+  actions: read
+jobs:
+  verify-original:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Authenticate source job's immutable GitHub workflow identity
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          actual="$(gh api repos/chinaneedM/stoneage-rebuild/actions/runs/40203596474 --jq '[.status,.conclusion,.head_sha,.head_branch] | join("|")')"
+          test "$actual" = 'completed|success|03572bbec4b80660a244dcc9fe4f2ad7370ccf57|agent/tw10-original-text-r19-20261025'
+      - name: Recheck R19 actual original text and negative world entity joins
+        run: |
+          set -euo pipefail
+          python -m unittest -v tests.test_stoneage_tw10_original_text_r19 tests.test_stoneage_tw10_original_text_r19_guard
+          python -m tools.stoneage_tw10_original_text_r19_guard
