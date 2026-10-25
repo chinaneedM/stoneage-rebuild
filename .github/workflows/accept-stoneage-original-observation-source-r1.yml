@@ -1,0 +1,31 @@
+name: Accept real TW1 bitmap and WAV observation source custody
+on:
+  push:
+    branches: [main, agent/original-observation-lab-p0-20261025]
+    paths:
+      - ".github/workflows/accept-stoneage-original-observation-source-r1.yml"
+      - "tools/stoneage_original_observation_source_guard.py"
+      - "tests/test_stoneage_original_observation_source_guard.py"
+      - "research/recovered/STONEAGE-TW10-ORIGINAL-OBSERVATION-P1-SOURCE-R1.json"
+      - "docs/continuity/STONEAGE-ORIGINAL-OBSERVATION-P1-20261025.md"
+permissions:
+  contents: read
+  actions: read
+jobs:
+  source-custody:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Prove actual SHA-qualified original-byte job successful, not historical executable run
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          actual="$(gh api repos/chinaneedM/stoneage-rebuild/actions/runs/40206034214 --jq '[.status,.conclusion,.head_sha,.head_branch] | join("|")')"
+          test "$actual" = 'completed|success|898dfea3cd33ca3f99afc94f4c23f29b80daf203|agent/original-observation-lab-p0-20261025'
+      - name: Independently check old R99 bytes, original WAV and negative game claims
+        run: |
+          set -euo pipefail
+          python -m unittest -v tests.test_stoneage_original_observation_lab tests.test_stoneage_original_observation_source_guard
+          python -m tools.stoneage_original_observation_source_guard

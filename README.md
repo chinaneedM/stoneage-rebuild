@@ -549,3 +549,6 @@ The 2.66 MB historical `docs/CURRENT-STATE.md` is still preserved byte-for-byte.
 ### 2026-10-25 — 原版运行与直接观察实验台 P1 开始
 
 用户明确决定将亲自看/听/操作原版游戏纳入复原关键路径，现已建立[原版观察实验台路线及否定证据门槛](docs/STONEAGE-ORIGINAL-OBSERVATION-LAB-R1.md)。初次交付为本机[只读ADRN/REAL原字节灰度PNG/音频源校验工具](tools/stoneage_original_observation_lab.py)＋[本地离线图/声查看页](tools/original-observation-viewer.html)与合成守卫，绝不把色彩索引灰度当原游戏真实颜色、动画/场景/角色身份、亲自运行体验；也不把原版权PNG/WAV发布到公开仓库。官方原版客户端真实启动及本地模拟服务器属于后续独立门槛；原内容NEXT `EARLY-OFFICIAL-WORLD-ENTITY-SOURCE-20` 仍单独推进。私人原件长期存储仍受限，Stage A7 PARTIAL/2 OPEN、B/wiki GATED、R79暂停、overall percent未知均未改变。
+
+
+- 原版观察台P1[两张原台湾1.0 RD图像真实字节解码+单WAV原版结构](research/recovered/STONEAGE-TW10-ORIGINAL-OBSERVATION-P1-SOURCE-R1.json)已在源Actions `40206034214` verified success（原程序未执行）。bitmap5846/5847各输出只存在Actions暂存的**灰度索引PNG**，原图/声音/商业程序已清理；音频`sas_20.wav`实际原文件验证成功但未播放。来源、原SHA及既存R99逐块交叉验收见[日期连续性](docs/continuity/STONEAGE-ORIGINAL-OBSERVATION-P1-20261025.md)。仍未真实观看原色、登入游戏或复原具名实体，P2先恢复真正颜色和SPR时序，原R20具名内容任务与Stage A等边界不变。
