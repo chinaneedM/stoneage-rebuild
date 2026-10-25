@@ -4974,3 +4974,16 @@ fresh远端main822e1890cd4b54b25138c2cc8f3187d4dce10313/treed0be5079bd1747c7e749
 交付STONEAGE-ALIAS-MATERIAL-DIFFERENCES-R1规格/完整派生JSON、固定范围离线重放及16新增测试，连同目录24项共40项通过；独立SQLite全表比五组块/同号多重集逐项同，另独立数值重建9条相关patch80B记录/52B属性SHA全部相符，仅用于摘要不存BIN。无原大包下载、原程序执行、像素解码或原件删除，旧快照/目录及历史失败不改。候选/main仅据实际后验，尚不预支成功。
 
 目录13与差异14两包已得实质结果，按协议13止点回22域。最高NEXT **CROSSVERSION-AUDIO-ORIGINAL-CONTENT-15**：先查既有音频R1和全文件交集已覆盖内容，再有限接TW1详细音频元数据与mixed25完整文件清单，推进一个尚未覆盖的soundaddr索引—原音频关系或实际版本内容差异；没有新原数据就精确缺件止点，不只重算sound_1.bin哈希，不扩WinMM/驱动helper，不为重复哈希下载大包。文件名不能猜村落BGM/宠物叫声，混合2.5不认证纯净发行。私人大包保管暂停、DD-028四档、Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、总体percent=null不变。
+
+
+## 2026-10-25 — 原音频15：114旧分段继承与sound3真实三重重复
+
+fresh远端main9854762ef8163dd86f67982379414e9d339f8dcb/tree4482253ef2563da0ffdc41c8c9a3ed8469c97aee，585分支、0开放PR、同HEAD17项Actions成功，无运行中；一条10-07旧分支历史queued保留。七启动/路线/22域索引完整Git字节核验，CURRENT2676050B及另四历史前缀保留。最高CROSSVERSION-AUDIO-ORIGINAL-CONTENT-15先排除音频R1和全文件交集旧结果，不把旧114/116/11或整容器SHA当新发现。
+
+原sound_1.bin完整3695418B/SHA c3398c5d9edc116c64eac35794b05274f731f07adf66ba0ef568d877f6bce270相同，实际将TW1全部114有界连续分段接入mixed25同字节文件；113不同WAV块、109/113重复位置保留。原116散装SFX对所有分段得到109完整WAV/1仅PCM+全部格式相同/6无匹配；11 BGM仍独立。mixed25实际2302子树无原散装匹配/原soundaddr_1路径，不等于声音已删除；旧114编号/名称不提升后期运行选择。原两样本228次分段引用逻辑7390836B/不同3691390B，重复预算3699446B不是原盘回收，原件删除0B。
+
+实质新源：复用已知Stoneage-5 CAB早期位置，只读8MiB逻辑前缀（HTTP206原扇区9633792B，非733MB光盘/612MB CAB全包），取得soundaddr_3.txt691B/SHA5afc6a80352d5254c926129e4acdd023cabdc9e67e5f8cf5bf824520ea2be5e7和sound_3.bin2696934B/SHAf5c0b5b0bf3dc7e010c3cde867536929b1f51d81a7ace5ff30d143ccff33b148，原成员与旧实取摘要相符。原表27行连续至898978；原容器在0/898978/1797956逐字节三份相同段，全部段SHA32906404a97609aab90f5c22ae57e0619aeac820cac1f965ca2bf1d631c3ec94恰同mixed25小容器全文件，不按文件名猜配或称音质升级。81物理WAV位置≠81新音效，表只直接寻址首段；27表项/26不同块，saam_15/16完整同字节仍保留两个位置。原采样率含5564/22000/22255等不规范化。27行对TW1全部三音频表面无完整WAV/格式一致PCM匹配，未推版本首发/物种/事件。
+
+本地libarchive3.7.2解压，独立标准库wave逐核81物理位置PCM/帧格式/SHA。独立原源Actions40188767159/job121155060294/HEADef49fef9540b8a332df55be94bbabd69065bc168实际success，另用cabextract有界重取，两原成员/派生JSON逐字节cmp同一。原派生21230B/SHAed5d9387a6f8e70da5ad269fc9fa46f8ad5d0b6e0aaf25e3b6d969fe2e1934d0/blob4339a0229176c88628a17af64da816c927cc1ce0永久保管；无临时ZIP工件/原WAV/原表正文/程序入Git，未播放/执行。固定7源的综合报告、sound3原派生/CUSTODY及规格STONEAGE-CROSSVERSION-AUDIO-CONTENT-R1已接三保存样本CN5/TW85/mixed25，各27/27/27表项、81/81/27物理出现；未认证纯净官方build或运行时读尾段。64本地相关检查通过，内容候选/main仅离线重放，须据实际后验另记，不预支。
+
+本包新原表/内容和跨版集成已止点，不扩音频/声卡API链。最高NEXT **ORIGINAL-CHARACTER-CREATION-CONTENT-16**：优先同版TW1人物创建body基表与已存CreateNewChar输入/464SPR的真实值联接，先排除旧登录/选角及R101已有覆盖；只取必要原exe（可有界则不下整盘），至多一条有表界限/数值的外观关联或精确缺源即止，不扩所有writer/helper树。JSS2001十二类48外观不直接回填TW1人物数/名字/原画面。大包私人保管仍暂停，DD-028四档、Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、总体percent=null不变。

@@ -8815,3 +8815,10 @@ All11 original-derived inputs pinned in logical-alias-catalog-r1/REPORT-R1.json.
 ## SRC-ALIAS-MATERIAL-DIFFERENCES-20261025 — 五组完整物理资源差异
 
 永久派生research/recovered/STONEAGE-ALIAS-MATERIAL-DIFFERENCES-R1.json及docs/specs/STONEAGE-ALIAS-MATERIAL-DIFFERENCES-R1.md。输入由目录三表/原源pins和TW1、CN5、TW8.5 native、官方patch完整物理表构成，全部SHA/Git blob固定；未新取原件。17引用/9原RD块，五组全部位置和同号异内容保留。两个CN5-only块在完整TW1/TW8.5索引块中没有精确(size,SHA)命中，不推出所有版本无该图/官方删除；同号TW8.5资源与原CN5不同且patch别名0，native数值别名不可默认。三追加组证明旧块保留与多候选，包括26100尺寸变化；字节异不直接证画面异，29000尺寸不够具名登录。16新测试/既有24共40通过，独立SQL全表多重集、9相关原记录及属性SHA重建同一。商业原包/程序/RD像素未进Git，无实际运行时有效覆盖、服务器master或具名宠物/NPC新增。完整旧史保留，实际CI另记；下一有限音频原内容15。
+
+
+## SRC-CROSSVERSION-AUDIO-CONTENT-20261025 — sound3真实地址表/三重重复与旧分段继承
+
+规格docs/specs/STONEAGE-CROSSVERSION-AUDIO-CONTENT-R1.md，永久派生STONEAGE-SOUND3-ORIGINAL-CONTENT-R1.json21230B/SHAed5d9387a6f8e70da5ad269fc9fa46f8ad5d0b6e0aaf25e3b6d969fe2e1934d0/blob4339a0229176c88628a17af64da816c927cc1ce0及CUSTODY-R1.json，综合STONEAGE-CROSSVERSION-AUDIO-CONTENT-R1.json钉7源。实际有界CAB8MiB逻辑前缀来自Stoneage-5，原扇区HTTP206范围65856–9699647/733057248，原载体/安装器未经纯净官方发行鉴真；原全文SHA1没有复算。新实际soundaddr_3表27行连续至898978B，2.7MB原sound_3为三份相同898978B，段SHA与mixed25较小同名文件全SHA相同，非81新声音。26不同WAV块、81原物理位置全保留，表仅直接指首段；原名/采样率、实际PCM摘要/格式保留，不按相同后缀判配、修采样率或命名游戏事件。
+
+本地libarchive3.7.2＋标准库wave81逐位置独立验；原源Action40188767159/job121155060294/HEADef49fef9540b8a332df55be94bbabd69065bc168另用cabextract真正有界重取，成员SHA与完整派生cmp相同。永久Git只存派生，无原声音/原表正文/程序、无ZIP工件、未播放执行；主线仅离线重放以免重复取源。旧TW1 114/116/11以及sound_1整SHA原事实不算新，新增114分段跨样本字节位置关系和实际sound3表/三重重复/三载体联接。后期实际声音选择、具名场景/宠物/战斗、同一部署build仍OPEN。NEXT同版人物创建外观键材料16；DD-028/Stage A/B/wiki/R79/私人保管边界不变。

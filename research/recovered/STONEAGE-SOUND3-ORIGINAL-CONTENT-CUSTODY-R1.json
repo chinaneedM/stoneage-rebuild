@@ -1,0 +1,146 @@
+{
+  "schema": "stoneage.sound3_original_content_custody.r1",
+  "date": "2026-10-25",
+  "baseline_main": "9854762ef8163dd86f67982379414e9d339f8dcb",
+  "baseline_tree": "4482253ef2563da0ffdc41c8c9a3ed8469c97aee",
+  "source_branch": "agent/audio-sound3-source-20261025",
+  "source_head": "ef49fef9540b8a332df55be94bbabd69065bc168",
+  "source_tree": "6f8b5eee8168c97f0b200294e8bd4a345f7eb048",
+  "source_run": {
+    "id": 40188767159,
+    "status": "completed",
+    "conclusion": "success",
+    "job_id": 121155060294,
+    "jobs": [
+      {
+        "id": 121155060294,
+        "name": "actual-source-replay",
+        "status": "completed",
+        "conclusion": "success",
+        "run_id": 40188767159,
+        "logs_url": null,
+        "steps": [
+          {
+            "name": "Set up job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 1
+          },
+          {
+            "name": "Run actions/checkout@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 2
+          },
+          {
+            "name": "Run actions/setup-python@v5",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 3
+          },
+          {
+            "name": "Run python -m unittest tests.test_stoneage_sound3_original_content -v",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 4
+          },
+          {
+            "name": "Install independent bounded CAB decoder",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 5
+          },
+          {
+            "name": "Fetch 8 MiB logical prefix, never full CAB or disc",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 6
+          },
+          {
+            "name": "Extract exactly the two early audio members",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 7
+          },
+          {
+            "name": "Exact original hashes and complete derived report replay",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 8
+          },
+          {
+            "name": "Remove all transient original payloads",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 9
+          },
+          {
+            "name": "Post Run actions/setup-python@v5",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 17
+          },
+          {
+            "name": "Post Run actions/checkout@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 18
+          },
+          {
+            "name": "Complete job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 19
+          }
+        ]
+      }
+    ]
+  },
+  "local_source_decoder": "libarchive 3.7.2",
+  "ci_source_decoder": "cabextract via Ubuntu package",
+  "independent_decoders_produce_exact_same_two_member_hashes_and_derived_report": true,
+  "local_independent_stdlib_wave_verified_all_81_physical_spans": true,
+  "derived_report": {
+    "path": "research/recovered/STONEAGE-SOUND3-ORIGINAL-CONTENT-R1.json",
+    "bytes": 21230,
+    "sha256": "ed5d9387a6f8e70da5ad269fc9fa46f8ad5d0b6e0aaf25e3b6d969fe2e1934d0",
+    "git_blob": "4339a0229176c88628a17af64da816c927cc1ce0"
+  },
+  "source_prefix": {
+    "logical_bytes": 8388608,
+    "logical_sha256": "87973df39afea068021d64a71fc9fb4f290cc0d7447fd3fae6beeea2bdb3c937",
+    "actual_raw_sector_range": "bytes 65856-9699647/733057248",
+    "raw_sector_range_bytes": 9633792,
+    "full_cab_or_disc_reacquired": false,
+    "full_carrier_sha1_rehashed": false
+  },
+  "members": {
+    "soundaddr_3.txt": {
+      "bytes": 691,
+      "sha256": "5afc6a80352d5254c926129e4acdd023cabdc9e67e5f8cf5bf824520ea2be5e7"
+    },
+    "sound_3.bin": {
+      "bytes": 2696934,
+      "sha256": "f5c0b5b0bf3dc7e010c3cde867536929b1f51d81a7ace5ff30d143ccff33b148"
+    }
+  },
+  "table_rows": 27,
+  "distinct_wave_blocks": 26,
+  "physical_wave_positions": 81,
+  "copy_offsets": [
+    0,
+    898978,
+    1797956
+  ],
+  "all_three_exact_copy_sha256": "32906404a97609aab90f5c22ae57e0619aeac820cac1f965ca2bf1d631c3ec94",
+  "original_waveform_in_git": false,
+  "original_table_raw_text_in_git": false,
+  "original_executable_executed": false,
+  "original_audio_played": false,
+  "new_official_clean_release_authenticated": false,
+  "temporary_actions_artifact_created": false,
+  "artifact_zip_sha256": null,
+  "permanent_derived_git_metadata": true,
+  "runtime_gameplay_trigger_or_effective_tail_selection_proven": false,
+  "overall_restoration_percentage": null
+}

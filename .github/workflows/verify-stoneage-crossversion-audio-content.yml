@@ -1,0 +1,31 @@
+name: Verify cross-version original audio byte spans and selector limits
+on:
+  push:
+    paths:
+      - 'tools/stoneage_crossversion_audio_content.py'
+      - 'tests/test_stoneage_crossversion_audio_content.py'
+      - 'research/recovered/STONEAGE-CROSSVERSION-AUDIO-CONTENT-R1.json'
+      - 'research/recovered/STONEAGE-TW10-AUDIO-DATASET-R1.txt'
+      - 'research/recovered/STONEAGE-TW10-CLIENT-INVENTORY-R1.txt'
+      - 'research/recovered/STONEAGE-25-PRESERVED-BUNDLE-STATIC-INVENTORY-R1.txt'
+      - 'research/recovered/STONEAGE-TW10-PRESERVED25-FILE-SHA-INTERSECTION-R1.json'
+      - 'research/recovered/STONEAGE-SOUND3-ORIGINAL-CONTENT-R1.json'
+      - 'research/recovered/STONEAGE-STONEAGE5-REAL-CAB-MSI-PATH-JOIN-R1.json'
+      - 'research/recovered/STONEAGE-WAYI85-MSI-CLIENT-PAYLOAD-R1.json'
+      - '.github/workflows/verify-stoneage-crossversion-audio-content.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  byte-span-inheritance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test equal-container transfer without inventing later selectors
+        run: python -m unittest tests.test_stoneage_crossversion_audio_content -v
+      - name: Replay every audio byte span and exact missing-evidence boundary
+        run: python -m tools.stoneage_crossversion_audio_content --verify
