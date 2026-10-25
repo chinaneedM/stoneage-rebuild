@@ -38,4 +38,6 @@ jobs:
       - uses: actions/checkout@v4
       - run: python -m pip install --quiet pillow cryptography
       - name: Pure source-inventory, network fail-closed, private-path and capture metadata checks
-        run: python -m unittest -v tests.test_stoneage_p3_boot tests.test_stoneage_p3_private_frame
+        run: |
+          python -m unittest -v tests.test_stoneage_p3_boot tests.test_stoneage_p3_private_frame tests.test_stoneage_p3_evidence_guard
+          python -m tools.stoneage_p3_evidence_guard

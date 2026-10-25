@@ -1,0 +1,211 @@
+{
+  "schema": "stoneage.p3.isolated_boot_observation.v1",
+  "sample": "TW_WAEI_JSS_1_0_ACCEPTED_RETAIL_REDUMP_104630",
+  "network": {
+    "host_net_namespace": "net:[4026531833]",
+    "child_net_namespace": "net:[4026532316]",
+    "interfaces": [
+      "lo"
+    ],
+    "ipv4_routes": [],
+    "ipv6_default_routes": [],
+    "external_documentation_address_connect_errno": 101,
+    "outbound_namespace_isolation_verified": true
+  },
+  "preflight_passed": false,
+  "original_client_execution_attempted": true,
+  "original_client_execution_proven": true,
+  "game_world_entered": false,
+  "authentic_game_display_visually_verified": false,
+  "assistant_viewed_original": false,
+  "original_assets_published": false,
+  "wineboot": {
+    "returncode": 0,
+    "diagnostic_lines": [
+      "wine: created the configuration directory '/tmp/stoneage-p3-original/wine-prefix'",
+      "wine: configuration in L\"/tmp/stoneage-p3-original/wine-prefix\" has been updated.",
+      "wine: configuration in L\"/tmp/stoneage-p3-original/wine-prefix\" has been updated."
+    ]
+  },
+  "environment": {
+    "wine_version": "wine-9.0 (Ubuntu 9.0~repack-4build3)",
+    "winearch": "win32",
+    "windows_version_setting": "winxp",
+    "display": "800x600x8_XVFB",
+    "requested_locale": "zh_TW.UTF-8",
+    "old_kernel_drivers_installed": false
+  },
+  "audio_heard_or_recorded": false,
+  "source_executable": {
+    "path": "StoneAge/sa_3.exe",
+    "bytes": 425984,
+    "sha256": "cdab9ea049a98bbc96ce93eeaa8b63c688f0c0f0ad8b3183e79d75e47621441a"
+  },
+  "original_launch_args": [
+    "updated",
+    "realbin:1",
+    "adrnbin:1",
+    "sprbin:1",
+    "spradrnbin:1",
+    "soundbin:1",
+    "battlebin:1",
+    "windowmode",
+    "IP:0:127.0.0.1:9"
+  ],
+  "endpoint_is_synthetic_isolated_loopback_not_historical_server": true,
+  "host_launcher_pid": 177,
+  "observations": [
+    {
+      "launcher_returncode": null,
+      "windows": {
+        "schema": "stoneage.p3.win32_window_inspection.v1",
+        "windows": [
+          {
+            "pid": 32,
+            "class": "ＳｔｏｎｅＡｇｅ",
+            "title": "ＳｔｏｎｅＡｇｅ",
+            "image_path": "Z:\\tmp\\stoneage-p3-original\\run\\sa_3.exe",
+            "rect": [
+              0,
+              0,
+              646,
+              512
+            ],
+            "children": []
+          }
+        ]
+      },
+      "capture": {
+        "width": 800,
+        "height": 600,
+        "rgb_sha256": "c785bb21e4f037bb5c76226fabc8b1c1560d18d84d2291b1c00a6861e80dd724",
+        "png_sha256": "0e1ef7c6a020da89fa5544e9521f3692ecf7b6cf5f4385b048bc6175e76dc087",
+        "channel_extrema": [
+          [
+            0,
+            255
+          ],
+          [
+            0,
+            255
+          ],
+          [
+            0,
+            255
+          ]
+        ],
+        "nonuniform_pixels": true,
+        "synthetic_control_red_pixels": 0,
+        "synthetic_control_green_pixels": 0,
+        "assistant_viewed_original": false,
+        "image_published": false
+      }
+    },
+    {
+      "launcher_returncode": null,
+      "windows": {
+        "schema": "stoneage.p3.win32_window_inspection.v1",
+        "windows": [
+          {
+            "pid": 32,
+            "class": "ＳｔｏｎｅＡｇｅ",
+            "title": "ＳｔｏｎｅＡｇｅ",
+            "image_path": "Z:\\tmp\\stoneage-p3-original\\run\\sa_3.exe",
+            "rect": [
+              0,
+              0,
+              646,
+              512
+            ],
+            "children": []
+          }
+        ]
+      },
+      "capture": {
+        "width": 800,
+        "height": 600,
+        "rgb_sha256": "80af99c48cb3c7c3010446da6d95f9d14e176a8a7784a79afb1e51dd1eece190",
+        "png_sha256": "8d7a9594292e262615c187d2fd21504b3b0f71a4d02e8c9a31811af53f460cc0",
+        "channel_extrema": [
+          [
+            0,
+            255
+          ],
+          [
+            0,
+            255
+          ],
+          [
+            0,
+            255
+          ]
+        ],
+        "nonuniform_pixels": true,
+        "synthetic_control_red_pixels": 0,
+        "synthetic_control_green_pixels": 0,
+        "assistant_viewed_original": false,
+        "image_published": false
+      }
+    },
+    {
+      "launcher_returncode": null,
+      "windows": {
+        "schema": "stoneage.p3.win32_window_inspection.v1",
+        "windows": [
+          {
+            "pid": 32,
+            "class": "ＳｔｏｎｅＡｇｅ",
+            "title": "ＳｔｏｎｅＡｇｅ",
+            "image_path": "Z:\\tmp\\stoneage-p3-original\\run\\sa_3.exe",
+            "rect": [
+              0,
+              0,
+              646,
+              512
+            ],
+            "children": []
+          }
+        ]
+      },
+      "capture": {
+        "width": 800,
+        "height": 600,
+        "rgb_sha256": "c785bb21e4f037bb5c76226fabc8b1c1560d18d84d2291b1c00a6861e80dd724",
+        "png_sha256": "0e1ef7c6a020da89fa5544e9521f3692ecf7b6cf5f4385b048bc6175e76dc087",
+        "channel_extrema": [
+          [
+            0,
+            255
+          ],
+          [
+            0,
+            255
+          ],
+          [
+            0,
+            255
+          ]
+        ],
+        "nonuniform_pixels": true,
+        "synthetic_control_red_pixels": 0,
+        "synthetic_control_green_pixels": 0,
+        "assistant_viewed_original": false,
+        "image_published": false
+      }
+    }
+  ],
+  "launcher_returncode_before_cleanup": null,
+  "original_visible_window_occurrences": 3,
+  "sealed_private_frame": {
+    "schema": "stoneage.p3.private_frame.x25519_aesgcm.v1",
+    "plaintext_sha256": "8d7a9594292e262615c187d2fd21504b3b0f71a4d02e8c9a31811af53f460cc0",
+    "plaintext_bytes": 15972,
+    "recipient_key_sha256": "934844b6c9cbf8acb6b515e373cfa8bdeef3d3dc6083693a447650c0fdb611eb",
+    "ciphertext_envelope_sha256": "d7d323207dd1f66a68122b9c4f03932bd0024e10f21d2aeae10db3684d3eaebb"
+  },
+  "wine_log_sha256": "33515efc38767dd5dbf9583cfb2161174c3e9e7409da9bb7f159674231bc81da",
+  "wine_diagnostic_lines": [],
+  "original_input_baseline_unchanged": true,
+  "runtime_copy_changed_paths": [],
+  "runtime_status": "ORIGINAL_PROCESS_ATTEMPT_RECORDED_NO_WORLD_OR_VISUAL_CLASSIFICATION"
+}

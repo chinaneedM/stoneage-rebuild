@@ -562,3 +562,8 @@ The 2.66 MB historical `docs/CURRENT-STATE.md` is still preserved byte-for-byte.
 ### 2026-10-26 — 原初始化调色板与彩色动画 P2B
 
 [本轮续接记录](docs/continuity/STONEAGE-ORIGINAL-PALETTE-P2B-20261026.md)通过原TW1路径指针表、原初始化指令限定执行和实际像素导出，恢复Palet_0的BGR读取、32保留色及168号强制黑规则；25帧位置/16位图已导出私人彩色动画。它是同版初始化色预览，尚未证明某地图/时间/战斗的实际选色，也未启动完整客户端。原源40241350181真实success、原样派生保管及独立guard见记录；原图/完整SAP/商业程序不入公开Git。最高观察NEXT转原客户端隔离启动环境与第一屏验证P3；R20内容缺口和Stage A/B/R79边界保持。
+
+
+### 2026-10-26 — 原客户端真实启动与私人登录画面取证 P3
+
+[本轮续接记录](docs/continuity/STONEAGE-ORIGINAL-BOOT-P3-20261026.md)已通过原TW1程序和375运行文件鉴真，在无外部接口/路由的Wine32环境真实启动。24bit的原256色提示、改为实际8bpp后无该提示及取消的初环境尝试均原样保留。最终源40244430667真实success；助手已目视经加密私人传回的原登录面板（JSS/石器时代、账号/密码、OK/QUIT），**当前色彩明显失真，未登录、未听音、未进入世界**。11个原样派生文件及[来源保管链](research/recovered/STONEAGE-TW10-ORIGINAL-BOOT-P3-CUSTODY-R1.json)永久入Git，原图/原程序/私钥不公开。最高观察NEXT为P3C登录色彩与有限输入验证；R20和Stage A/B/R79等边界不变，完整CURRENT原样保留。

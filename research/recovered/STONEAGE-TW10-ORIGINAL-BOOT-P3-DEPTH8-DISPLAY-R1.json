@@ -1,0 +1,97 @@
+{
+  "schema": "stoneage.p3.isolated_boot_observation.v1",
+  "sample": "TW_WAEI_JSS_1_0_ACCEPTED_RETAIL_REDUMP_104630",
+  "network": {
+    "host_net_namespace": "net:[4026531833]",
+    "child_net_namespace": "net:[4026532271]",
+    "interfaces": [
+      "lo"
+    ],
+    "ipv4_routes": [],
+    "ipv6_default_routes": [],
+    "external_documentation_address_connect_errno": 101,
+    "outbound_namespace_isolation_verified": true
+  },
+  "preflight_passed": true,
+  "original_client_execution_attempted": false,
+  "original_client_execution_proven": false,
+  "game_world_entered": false,
+  "authentic_game_display_visually_verified": false,
+  "assistant_viewed_original": false,
+  "original_assets_published": false,
+  "wineboot": {
+    "returncode": 0,
+    "diagnostic_lines": [
+      "wine: created the configuration directory '/tmp/stoneage-p3-depth8/wine-prefix'",
+      "wine: configuration in L\"/tmp/stoneage-p3-depth8/wine-prefix\" has been updated.",
+      "wine: configuration in L\"/tmp/stoneage-p3-depth8/wine-prefix\" has been updated."
+    ]
+  },
+  "environment": {
+    "wine_version": "wine-9.0 (Ubuntu 9.0~repack-4build3)",
+    "winearch": "win32",
+    "windows_version_setting": "winxp",
+    "display": "800x600x8_XVFB",
+    "requested_locale": "zh_TW.UTF-8",
+    "old_kernel_drivers_installed": false
+  },
+  "audio_heard_or_recorded": false,
+  "synthetic_control": {
+    "schema": "stoneage.p3.synthetic_control.v1",
+    "pointer_bytes": 4,
+    "windows_acp": 950,
+    "reported_windows_version": 170393861,
+    "window_created": true,
+    "directdraw_create": 0,
+    "cooperative": 0,
+    "surface_8bit_create": 0,
+    "palette_create": 0,
+    "palette_attach": 0,
+    "get_display_mode": 0,
+    "current_display_bpp": 8,
+    "original_client_executed": false
+  },
+  "windows": {
+    "schema": "stoneage.p3.win32_window_inspection.v1",
+    "windows": [
+      {
+        "pid": 32,
+        "class": "StoneAgeP3Synthetic",
+        "title": "SYNTHETIC 32-bit observation control",
+        "image_path": "Z:\\tmp\\stoneage-p3-control.exe",
+        "rect": [
+          30,
+          30,
+          310,
+          220
+        ],
+        "children": []
+      }
+    ]
+  },
+  "capture": {
+    "width": 800,
+    "height": 600,
+    "rgb_sha256": "ebd2410ceaed27fa408e21124a960c0f9ae2a545cc15285fbd2d7cd5dd1c6895",
+    "png_sha256": "fbe9f5134fd66b2f1e5f052d336b609cc1bba4b6802f10eae4491b79f71b4d07",
+    "channel_extrema": [
+      [
+        0,
+        255
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ]
+    ],
+    "nonuniform_pixels": true,
+    "synthetic_control_red_pixels": 0,
+    "synthetic_control_green_pixels": 0,
+    "assistant_viewed_original": false,
+    "image_published": false
+  }
+}

@@ -1,0 +1,164 @@
+{
+  "schema": "stoneage.p3.original_boot_custody.v1",
+  "source_baseline_main": "8e98189f4bf6f0bbc4f55225c8c766b5b27e121b",
+  "source_baseline_tree": "4ac70628eee1f43452c33fb4eb084298973ed0d2",
+  "original_inventory_git_blob": "564233902b10c60760d4f93b1ea65d4dd1469206",
+  "source_member_files": 375,
+  "source_member_bytes": 372529095,
+  "derived_files": [
+    {
+      "file": "STONEAGE-TW10-ORIGINAL-BOOT-P3-DEPTH24-ORIGINAL-R1.json",
+      "bytes": 7786,
+      "sha256": "cbed8513bcffafdb537ef4e2f1950c99ca272969ac3fd39e8ffd81c292a7f531",
+      "git_blob": "ebd36c9d6e69109c7575795a9425d9abc62937cf",
+      "role": "depth24_original"
+    },
+    {
+      "file": "STONEAGE-TW10-ORIGINAL-BOOT-P3-DEPTH24-PACKAGES-R1.txt",
+      "bytes": 172,
+      "sha256": "ee2da8d49414c6eb2331895c849bf96070a1b14f3641fbe50a2fb29a1bcda96c",
+      "git_blob": "a17e9b71ef775dfd38bf63d0f95ac4d7667c0c2f",
+      "role": "depth24_packages"
+    },
+    {
+      "file": "STONEAGE-TW10-ORIGINAL-BOOT-P3-DEPTH24-PREFLIGHT-R1.json",
+      "bytes": 2698,
+      "sha256": "19d2b3ffdd4357b5232ed79e8f8875bb16598b55b4d833cb764d639774b0666d",
+      "git_blob": "666a0f7a0ea0d06aa8e844a554a3da75b96746d0",
+      "role": "depth24_preflight"
+    },
+    {
+      "file": "STONEAGE-TW10-ORIGINAL-BOOT-P3-DEPTH8-DISPLAY-R1.json",
+      "bytes": 2734,
+      "sha256": "33fa4faef8d196cd03272254447f6dc0598a9a010b8af3ead3ac528664d95441",
+      "git_blob": "df4aa3a30a2d94e6a113aabbd28b9473187aee7e",
+      "role": "depth8_display"
+    },
+    {
+      "file": "STONEAGE-TW10-ORIGINAL-BOOT-P3-DEPTH8-ORIGINAL-R1.json",
+      "bytes": 5769,
+      "sha256": "3218704d8dc24ecff2a1c43a2feb4dfa8f61fab122f6d10a7156750d2ad51fd6",
+      "git_blob": "f5b2a83b71ce3853833b3fe61dc7e9ea17860736",
+      "role": "depth8_original"
+    },
+    {
+      "file": "STONEAGE-TW10-ORIGINAL-BOOT-P3-DEPTH8-PACKAGES-R1.txt",
+      "bytes": 172,
+      "sha256": "ee2da8d49414c6eb2331895c849bf96070a1b14f3641fbe50a2fb29a1bcda96c",
+      "git_blob": "a17e9b71ef775dfd38bf63d0f95ac4d7667c0c2f",
+      "role": "depth8_packages"
+    },
+    {
+      "file": "STONEAGE-TW10-ORIGINAL-BOOT-P3-DEPTH8-PREFLIGHT-R1.json",
+      "bytes": 2756,
+      "sha256": "120a55605683501bebf94e06b0223bd5f0c2665cd529fe08d31d7030f71a215d",
+      "git_blob": "c43856efa83b5ccc94202676560db0104ef8d0a5",
+      "role": "depth8_preflight"
+    },
+    {
+      "file": "STONEAGE-TW10-ORIGINAL-BOOT-P3-PRIVATE-DISPLAY-R1.json",
+      "bytes": 2734,
+      "sha256": "fc236c12e0d216d7a663bc00d207bbce592bd1d0a53302865b656b51e9b0a9f4",
+      "git_blob": "e19537b3bc5d1a1ed579e8571cecf0271d767389",
+      "role": "private_display"
+    },
+    {
+      "file": "STONEAGE-TW10-ORIGINAL-BOOT-P3-PRIVATE-ORIGINAL-R1.json",
+      "bytes": 6181,
+      "sha256": "cbaf461e0b8b0be5765064a03c8a8709f067368d4663d33e783773c4e93709ef",
+      "git_blob": "39f16b4b15cf4c304ff5b7f3e55e8bf66c4a3b29",
+      "role": "private_original"
+    },
+    {
+      "file": "STONEAGE-TW10-ORIGINAL-BOOT-P3-PRIVATE-PACKAGES-R1.txt",
+      "bytes": 172,
+      "sha256": "ee2da8d49414c6eb2331895c849bf96070a1b14f3641fbe50a2fb29a1bcda96c",
+      "git_blob": "a17e9b71ef775dfd38bf63d0f95ac4d7667c0c2f",
+      "role": "private_packages"
+    },
+    {
+      "file": "STONEAGE-TW10-ORIGINAL-BOOT-P3-PRIVATE-PREFLIGHT-R1.json",
+      "bytes": 2756,
+      "sha256": "ed7413480740811a175e35e2bb6f236575ed49ae03fdfc613d23962161696724",
+      "git_blob": "1eb35fdde454ae29e61121fd48890327bee78d9c",
+      "role": "private_preflight"
+    }
+  ],
+  "source_runs": [
+    {
+      "role": "depth24",
+      "head": "d4d06d68d4dd00af50deaaaac2c665c849913ab8",
+      "run": 40243539952,
+      "job": 121320241275,
+      "conclusion": "success",
+      "artifact": 12618081973,
+      "zip_bytes": 3432,
+      "zip_sha256": "5334e61281ab2d5ced45dcd63ade97edacb447e4e9bc35d8c73ab936517660c0",
+      "zip_digest_independently_checked": true
+    },
+    {
+      "role": "depth8",
+      "head": "b7b7bc1dcc41283e4b0b5f4c8792b0696264a6f1",
+      "run": 40243866398,
+      "job": 121321234490,
+      "conclusion": "success",
+      "artifact": 12617523932,
+      "zip_bytes": 4530,
+      "zip_sha256": "10b0b6ecfb7be821a7c1dd8a901aafde8f3f267e3626a2373f3e758c5f22602c",
+      "zip_digest_independently_checked": true
+    },
+    {
+      "role": "private",
+      "head": "893a96a903169e94d2f882f4af9d58259ae4e1d2",
+      "run": 40244430667,
+      "job": 121322896143,
+      "conclusion": "success",
+      "artifact": 12618127255,
+      "zip_bytes": 21364,
+      "zip_sha256": "15e1d0006adf134c3c1274dcfeac35d5a117f8ffc600941a999da598ed15845a",
+      "zip_digest_independently_checked": true,
+      "contains_only_derived_metadata_package_versions_and_encrypted_frame": true
+    }
+  ],
+  "initial_cancelled_attempt": {
+    "head": "305504fcb5736b90b0a3212dc4af3b7885200454",
+    "run": 40242697734,
+    "job": 121317724459,
+    "conclusion": "cancelled",
+    "original_execution_steps": "skipped",
+    "artifact_upload": "failure_due_to_missing_report",
+    "cancellation_scope": "exact_run_head_branch_only"
+  },
+  "private_visual_observation": {
+    "source_run": 40244430667,
+    "observation_index_zero_based": 1,
+    "png_sha256": "8d7a9594292e262615c187d2fd21504b3b0f71a4d02e8c9a31811af53f460cc0",
+    "png_bytes": 15972,
+    "rgb_sha256": "80af99c48cb3c7c3010446da6d95f9d14e176a8a7784a79afb1e51dd1eece190",
+    "width": 800,
+    "height": 600,
+    "authenticated_decryption": true,
+    "assistant_viewed_original": true,
+    "actual_original_login_panel_visible": true,
+    "observed_labels": [
+      "Presented by",
+      "JAPAN SYSTEM SUPPLY",
+      "石器時代",
+      "會員帳號",
+      "會員密碼",
+      "OK!",
+      "QUIT"
+    ],
+    "observation": "原客户端登录面板可辨，背景和角色主要呈黑白/抖点，少量黄红色；尚未确认颜色正确。",
+    "correct_color_rendering_verified": false,
+    "account_or_password_entered": false,
+    "input_interaction_recorded": false,
+    "private_png_preserved": true,
+    "plaintext_png_or_private_key_in_public_git": false
+  },
+  "game_world_entered": false,
+  "audio_heard_or_recorded": false,
+  "historical_server_restored": false,
+  "overall_restoration_percent": null,
+  "highest_next": "ORIGINAL-GAME-OBSERVATION-P3C-LOGIN-COLOR-AND-INPUT"
+}

@@ -47,3 +47,17 @@ python -m tools.stoneage_original_animation_lab --original-dir /private/TW1/Ston
 ## 2026-10-26 P2B：初始化色已通过原指令与真实像素联接
 
 源40241350181实际成功：原TW1初始化代码的限定执行与重建RGB逐字节相等，三原动画已导出Palet_0初始化色的私人HTML。32保留色、224 BGR项、强制黑168号及非零缓存跳过条件均有原源；16位图原解码索引与P2A相同。见`docs/continuity/STONEAGE-ORIGINAL-PALETTE-P2B-20261026.md`及`tools/stoneage_tw10_palette.py`命令。页面显示初始化色来源、场景选色未知；不把它当原客户端截图/完整运行。下一有限包转P3隔离兼容环境和真实第一屏，昼夜/渐变/全场景选色仍独立OPEN，不继续低级渲染helper。独立内容线R20与全部历史/生产边界保持。
+
+## 2026-10-26 P3：原程序实跑、登录面板可见，色彩仍未合格
+
+原SHA `sa_3.exe` 已在仅lo/无路由的新网络namespace、Wine32/ACP950中真实运行，375个
+原运行文件逐一鉴真。首次24bit显示出现原256色要求；纠正为GetDisplayMode实际8bpp后，
+三采样无该提示框。最终源40244430667实际success，一张原帧经会话公钥密文传回、
+本地认证解密并由助手目视：原JSS/石器时代登录面板和账号/密码、OK/QUIT可辨。
+画面主要黑白抖点、少量黄红色，**正确颜色未验收**；未输入账号、未听音、未进入世界。
+不是现代页面或P2离线预览冒充原游戏。原截图仅私人保存，公开Git保留原样派生证据和
+哈希，11文件保管链及旧取消/纠正历史详见
+`docs/continuity/STONEAGE-ORIGINAL-BOOT-P3-20261026.md`。
+
+最高观察NEXT P3C：有限定位8bit原显示/截图的palette或colormap差异，取合格原登录颜色
+并记录一次隔离输入响应；不以窗口/测试通过宣布整段P3或原世界完成。P4与R20仍独立OPEN。
