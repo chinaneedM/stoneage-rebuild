@@ -15,3 +15,10 @@ Actions：原源40195712866、独立旧源交叉40196161564、永久归档401964
 ### R16文档断言订正（2026-10-25）
 
 首次含注册/文档门槛的候选Actions `40197075154`，20项中19项通过、1项失败：文档守卫要求在连续性覆层出现字面最高组号`100220`，覆层原写了等价公式`100000+20*i（i=0..11）`，未显写末项；实际原源 JSON、128B SHA、12组关联及其它校验均不变。本补正保留失败历史、显示最高号并重新跑CI，不把原先失败改写为成功。
+
+## CHARACTER16 真实主线发布后验（2026-10-25）
+
+- 候选初次全档文档Actions `40197075154/job121180125331` 为 **completed/failure**：20项中19项通过，仅因连续性覆层仅用 `100000+20*i` 未显写末项 `100220`；此失败事实完整保留。修订后同source元数据/原SHA的候选 `40197164435/job121180390998` 为 **completed/success**；原始源Actions `40195712866`、静态关联 `40196161564`、永久归档 `40196456122`、早期候选主验 `40196651280` 均真实success。
+- 候选经过非强制快进已推至主线内容 HEAD `e1525884fb22967930143273da1cf39e4b8c8b1f`、tree `4c57a727c68bf78d877edc55d29711704f85b175`。正式 **同HEAD主线** 人物16来源/20项门槛 `40197210813/job121180530245` `completed/success`；相邻Stage A接受门槛 `40197210836/job121180530495` `completed/success`，不能将CI合格解释为原游戏屏幕或原商业服人物实际创建成功。
+- 主线原生Git全部5761树项 `truncated=false`；旧 `docs/CURRENT-STATE.md` 仍blob `031c76a5a8e431f646853909bb2f2e11e6328cd2` / 2680510B；原 `RESTORATION-ROADMAP-R2.md` blob `c11eff237a8aaa1cc34488a6c3c7fcdd596f9ce2`、主 `SOURCE-REGISTRY.md` blob `ee3b2d70dabedfe02e3761b3fdb25476a79e147c`、协议blob `a064174339b7a4656efe00b4446a066fd7abf304` 均原样。原派生永久blob `4e0d8bddf6ee9e9de372b0b484d3489796007726`、12876B。所有原版权源/索引/完整档案无删除，旧R15与NPC09覆盖层未改写。
+- 发布后验收据：`research/recovered/STONEAGE-TW10-CREATION-BODY-R16-PUBLICATION.json`，只记真实已完成的前一内容主线；本条后验提交本身的Actions必须以后续实际状态判断，不在此预写success。最高NEXT17与四类本体/活动任务隔离、Stage A7 PARTIAL/2 OPEN、B/wiki GATED、R79暂停、复原率未知全部保持。

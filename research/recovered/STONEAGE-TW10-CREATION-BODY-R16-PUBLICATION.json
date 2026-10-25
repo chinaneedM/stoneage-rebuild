@@ -1,0 +1,113 @@
+{
+  "schema": "stoneage.tw10.character_creation.r16.main_publication.v1",
+  "dated": "2026-10-25",
+  "authoritative_content_main": {
+    "head": "e1525884fb22967930143273da1cf39e4b8c8b1f",
+    "tree": "4c57a727c68bf78d877edc55d29711704f85b175",
+    "fast_forward_from": "fa97b026893e8285f619ee907af60c55aaaff85a",
+    "files_changed": 14,
+    "tree_entries": 5761,
+    "truncated": false
+  },
+  "original_unmodified": {
+    "current_blob": "031c76a5a8e431f646853909bb2f2e11e6328cd2",
+    "current_bytes": 2680510,
+    "roadmap_blob": "c11eff237a8aaa1cc34488a6c3c7fcdd596f9ce2",
+    "source_registry_blob": "ee3b2d70dabedfe02e3761b3fdb25476a79e147c",
+    "protocol_blob": "a064174339b7a4656efe00b4446a066fd7abf304"
+  },
+  "derived": {
+    "archived_blob": "4e0d8bddf6ee9e9de372b0b484d3489796007726",
+    "source_member_sha256": "03be7a2c14f71c96c8114156c7189d836d99b805895510edf453ae9f706d7a59",
+    "archived_bytes": 12876,
+    "original_window_sha256": "0e9687f40dae13f8b700426b44b8fcd1b5b462396541b0123464034fbb755d65",
+    "twelve_group_candidates": [
+      100000,
+      100020,
+      100040,
+      100060,
+      100080,
+      100100,
+      100120,
+      100140,
+      100160,
+      100180,
+      100200,
+      100220
+    ],
+    "next_value": 198
+  },
+  "validated_jobs": [
+    {
+      "run_id": 40195712866,
+      "job_id": 121175972333,
+      "head": "9261195a0252225c8dca5d7331d748b9219fe3e6",
+      "conclusion": "success",
+      "role": "source_authentic_bytes"
+    },
+    {
+      "run_id": 40196161564,
+      "job_id": 121177324054,
+      "head": "6cebdacc801b5b75d49c3a1fcc36bff4f8731f66",
+      "conclusion": "success",
+      "role": "independent_old_source_join"
+    },
+    {
+      "run_id": 40196456122,
+      "job_id": 121178213798,
+      "head": "bec337dcb9c4400b3803eb9635d06f7421c3f2fe",
+      "conclusion": "success",
+      "role": "permanent_source_metadata_archive"
+    },
+    {
+      "run_id": 40196651280,
+      "job_id": 121178810069,
+      "head": "9a0c8bcaf49f218d0e14858075f3d2d62bd5afa2",
+      "conclusion": "success",
+      "role": "source_negative_semantics"
+    },
+    {
+      "run_id": 40197075154,
+      "job_id": 121180125331,
+      "head": "b85762e320ba2591a7db988508695480a7840f75",
+      "conclusion": "failure",
+      "role": "candidate_docs_assertion_literal_endpoint_missing"
+    },
+    {
+      "run_id": 40197164435,
+      "job_id": 121180390998,
+      "head": "e1525884fb22967930143273da1cf39e4b8c8b1f",
+      "conclusion": "success",
+      "role": "corrected_candidate"
+    },
+    {
+      "run_id": 40197210813,
+      "job_id": 121180530245,
+      "head": "e1525884fb22967930143273da1cf39e4b8c8b1f",
+      "conclusion": "success",
+      "role": "content_main_acceptance"
+    },
+    {
+      "run_id": 40197210836,
+      "job_id": 121180530495,
+      "head": "e1525884fb22967930143273da1cf39e4b8c8b1f",
+      "conclusion": "success",
+      "role": "stage_a_gate"
+    }
+  ],
+  "proof_boundary": {
+    "original_character_count": null,
+    "original_selected_avatar_id": null,
+    "original_avatar_identity_certified": false,
+    "original_game_executed": false,
+    "server_character_creation_certified": false,
+    "all_official_clients_recovered": false,
+    "stage_a": "7 PARTIAL / 2 OPEN",
+    "stage_b": "GATED",
+    "wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING",
+    "recovery_percent": null
+  },
+  "next": "OFFICIAL-NAMED-CONTENT-MATERIAL-ROTATION-17",
+  "after_receipt_self_actions": "NOT_YET_OBSERVED"
+}
