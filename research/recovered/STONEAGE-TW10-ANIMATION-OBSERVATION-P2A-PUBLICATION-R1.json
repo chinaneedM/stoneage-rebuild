@@ -1,0 +1,272 @@
+{
+  "schema": "stoneage.original_animation_observation.p2a_publication_v1",
+  "date": "2026-10-26",
+  "timezone": "Asia/Shanghai",
+  "startup_main": {
+    "sha": "21d7bc30f925df4642baa5c777340cd66ccce8ad",
+    "tree": "12970a6fad602215126e0c442ff193d49dc2f4a0"
+  },
+  "content_main": {
+    "sha": "96bc698b5eab4c301492936f5a098d7944ecb145",
+    "tree": "d953808fd20791d72ec7a22eebc13a4c972dec7b",
+    "integration": "NON_FORCE_FAST_FORWARD_WITH_FRESH_MAIN_CHECK"
+  },
+  "source_run": {
+    "run_id": 40237734461,
+    "job_id": 121302798494,
+    "head_sha": "4e420d5f10327004813a2cb2e1353eae28c7d6b9",
+    "branch": "agent/original-animation-p2a-20261026",
+    "status": "completed",
+    "conclusion": "success",
+    "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40237734461"
+  },
+  "source_artifact": {
+    "artifact_id": 12615597850,
+    "zip_bytes": 3271,
+    "zip_sha256": "066c58a7b5580396f7085a5a05f59aae7fd0de31ac3dd96a5c8418c86809be1b",
+    "zip_downloaded_and_digest_checked": true,
+    "sole_member": "stoneage-p2a-derived-only.json",
+    "raw_bytes": 9161,
+    "raw_sha256": "6840e79c5e237222884c03760c3c832987a133d22783bc3cb684e9d9c04b85bf",
+    "archived_git_blob": "d74a0b91768ac6574f27609c3cab24315084d06e",
+    "log_json_equal_to_downloaded_artifact": true,
+    "original_assets_in_artifact": false
+  },
+  "initial_offline_run": {
+    "run_id": 40237734462,
+    "job_id": 121302798428,
+    "conclusion": "success"
+  },
+  "candidate_runs": [
+    {
+      "run_id": 40237995742,
+      "name": "Verify StoneAge R17 original battle SAB crossversion occurrence conservation",
+      "head_sha": "96bc698b5eab4c301492936f5a098d7944ecb145",
+      "branch": "agent/original-animation-p2a-20261026",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40237995742"
+    },
+    {
+      "run_id": 40237995775,
+      "name": "Verify preserved mixed25 full server source conservation R18",
+      "head_sha": "96bc698b5eab4c301492936f5a098d7944ecb145",
+      "branch": "agent/original-animation-p2a-20261026",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40237995775"
+    },
+    {
+      "run_id": 40237995639,
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "head_sha": "96bc698b5eab4c301492936f5a098d7944ecb145",
+      "branch": "agent/original-animation-p2a-20261026",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40237995639"
+    },
+    {
+      "run_id": 40237995683,
+      "name": "Accept primary-source TW1.0 character creation numeric join R16",
+      "head_sha": "96bc698b5eab4c301492936f5a098d7944ecb145",
+      "branch": "agent/original-animation-p2a-20261026",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40237995683"
+    },
+    {
+      "run_id": 40237995789,
+      "name": "Verify original TW1 animation timelines and private preview contracts P2A",
+      "head_sha": "96bc698b5eab4c301492936f5a098d7944ecb145",
+      "branch": "agent/original-animation-p2a-20261026",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40237995789"
+    }
+  ],
+  "main_runs": [
+    {
+      "run_id": 40238056965,
+      "name": "Accept primary-source TW1.0 character creation numeric join R16",
+      "head_sha": "96bc698b5eab4c301492936f5a098d7944ecb145",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40238056965"
+    },
+    {
+      "run_id": 40238056958,
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "head_sha": "96bc698b5eab4c301492936f5a098d7944ecb145",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40238056958"
+    },
+    {
+      "run_id": 40238056955,
+      "name": "Test offline original-client observation lab",
+      "head_sha": "96bc698b5eab4c301492936f5a098d7944ecb145",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40238056955"
+    },
+    {
+      "run_id": 40238056970,
+      "name": "Verify preserved mixed25 full server source conservation R18",
+      "head_sha": "96bc698b5eab4c301492936f5a098d7944ecb145",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40238056970"
+    },
+    {
+      "run_id": 40238057013,
+      "name": "Verify StoneAge R17 original battle SAB crossversion occurrence conservation",
+      "head_sha": "96bc698b5eab4c301492936f5a098d7944ecb145",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40238057013"
+    },
+    {
+      "run_id": 40238056954,
+      "name": "Verify original TW1 animation timelines and private preview contracts P2A",
+      "head_sha": "96bc698b5eab4c301492936f5a098d7944ecb145",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40238056954"
+    }
+  ],
+  "real_browser_acceptance": {
+    "candidate_run": 40237995789,
+    "candidate_job": 121303604234,
+    "main_run": 40238056954,
+    "main_job": 121303788480,
+    "scope": "SYNTHETIC_IMAGES_ONLY_CHROME_FRAME_STEPPING_WRAP_PLAY_PAUSE_CANVAS_NO_EXTERNAL_REQUESTS",
+    "conclusion": "success",
+    "local_chromium_attempt": "NOT_RUN_EXECUTABLE_MISSING; CI_CHROME_SUCCESS_DOES_NOT_REWRITE_LOCAL_FAILURE"
+  },
+  "local_validation": {
+    "animation_source_p1_rd_tests": 26,
+    "stage_a_tests": 30,
+    "independent_sqlite": {
+      "animation_rows": 39065,
+      "frame_rows": 242085,
+      "adrn_rows": 125996,
+      "case_frame_counts": [
+        12,
+        7,
+        6
+      ],
+      "exact_block_offset_and_countdown_join": true
+    }
+  },
+  "preserved_current": {
+    "bytes": 2680510,
+    "git_blob": "031c76a5a8e431f646853909bb2f2e11e6328cd2",
+    "sha256": "f02f85b837fc09973cb2eca33f7daf4db547a77cb35a81a9576c6308f70142c0",
+    "whole_blob_equal_to_startup": true
+  },
+  "five_history_files_unchanged": true,
+  "remote_content_tree_equal_to_local_index": true,
+  "remote_twelve_changed_files_equal_to_local": true,
+  "content_file_manifest": [
+    {
+      "path": ".github/workflows/probe-stoneage-original-animation-p2a.yml",
+      "bytes": 4142,
+      "sha256": "086d9e799f94362b3e9b98e4227bb4364c3e7b579c9f25e46fad8083a4d301b1",
+      "git_blob": "395ebafbd6513d961a700b5b0eba3fe5b67c5ffb"
+    },
+    {
+      "path": ".github/workflows/verify-stoneage-original-animation-p2a.yml",
+      "bytes": 4786,
+      "sha256": "37b4fd8e464c10f90ff142f206efdcbffcfd44484acb9e251b0919085c5e3311",
+      "git_blob": "1cbcb07bb93c827f49b0c0f6fa1d4a684837406e"
+    },
+    {
+      "path": "README.md",
+      "bytes": 56744,
+      "sha256": "a27d6976e982ebef6ad5ad3c7e251a7740572a1dd13ff0ca30c945d10cf002fd",
+      "git_blob": "a2d45fbe45e1360f3dbeabc876e079e3dfd1bee2"
+    },
+    {
+      "path": "docs/STONEAGE-ORIGINAL-OBSERVATION-LAB-R1.md",
+      "bytes": 7193,
+      "sha256": "8d4ac1f380a126c25812c9a3ed41cd616e0015ef2a2952717fb4b077d0a0d591",
+      "git_blob": "af112f342e60877f950e8cc7a7345da8544110be"
+    },
+    {
+      "path": "docs/continuity/STONEAGE-ORIGINAL-ANIMATION-P2A-20261026.md",
+      "bytes": 6607,
+      "sha256": "84687e17ecd795050d015c47d9ec0d04a1bd52e94547d1132d7a48d31b107980",
+      "git_blob": "aec83b4cf78cbed27bd11a16b2051370d5f39391"
+    },
+    {
+      "path": "research/recovered/STONEAGE-TW10-ANIMATION-OBSERVATION-P2A-ACTUAL-SOURCE-R1.json",
+      "bytes": 9161,
+      "sha256": "6840e79c5e237222884c03760c3c832987a133d22783bc3cb684e9d9c04b85bf",
+      "git_blob": "d74a0b91768ac6574f27609c3cab24315084d06e"
+    },
+    {
+      "path": "research/recovered/STONEAGE-TW10-ANIMATION-OBSERVATION-P2A-R1.json",
+      "bytes": 29974,
+      "sha256": "32bbe3e687eb731531293e6906ee1e37b6b2f055b1434f4450cc30a436376e8b",
+      "git_blob": "817460b04c57e3ce5cd93075cbafda299e838da3"
+    },
+    {
+      "path": "tests/test_stoneage_original_animation_lab.py",
+      "bytes": 6691,
+      "sha256": "b2dece3e17977a9db197e863a05c5bd9908c67fbc89ccf8454be24733269709a",
+      "git_blob": "1ee0059081731758694c629326d7dff557a30696"
+    },
+    {
+      "path": "tests/test_stoneage_original_animation_source_guard.py",
+      "bytes": 1815,
+      "sha256": "e006bb98e04e74c85eb8894f90acd6b0c190538a287a0ce2d34da5f10eb9ac20",
+      "git_blob": "3fa1b1becc1d5443050e7919b8b17249db26cb5c"
+    },
+    {
+      "path": "tools/original-animation-viewer.html",
+      "bytes": 5312,
+      "sha256": "cc11508ff741053db8b15cc8e41cc15186e021224fd35df7666b95f85f5e342b",
+      "git_blob": "959669691d033bdbfa45bd240b24f49a48f871ed"
+    },
+    {
+      "path": "tools/stoneage_original_animation_lab.py",
+      "bytes": 12660,
+      "sha256": "b27e54334195478a755af492003516bc2e2682de2240cb33e05a93fc7167b227",
+      "git_blob": "b762b3aaf6c073112b674dcdf95e5eb3bf3be99f"
+    },
+    {
+      "path": "tools/stoneage_original_animation_source_guard.py",
+      "bytes": 2546,
+      "sha256": "3821619685307950245f8e94b543ce573ca5500f2e7e9c6d740910843d9e8002",
+      "git_blob": "7954bdafa956e36197823b44fc19a7e23f122aca"
+    }
+  ],
+  "results": {
+    "animation_samples": 3,
+    "source_frame_positions": 25,
+    "distinct_bitmaps": 16,
+    "private_original_html_exports": 3,
+    "original_assets_committed": false,
+    "original_client_executed": false,
+    "original_palette_verified": false,
+    "original_colors_reproduced": false,
+    "historical_fps_proven": false,
+    "assistant_viewed_or_heard_original": false,
+    "named_entity_mappings_added": 0,
+    "source_sound_event_mapping_proven": false,
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b": "GATED",
+    "wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "next": "ORIGINAL-GAME-OBSERVATION-P2B-PALETTE-SOURCE",
+  "parallel_content_gap": "EARLY-OFFICIAL-WORLD-ENTITY-SOURCE-20",
+  "receipt_commit_ci": "NOT_PRECLAIMED"
+}

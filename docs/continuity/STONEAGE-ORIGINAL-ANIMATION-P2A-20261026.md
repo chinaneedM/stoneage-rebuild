@@ -91,3 +91,19 @@ P1旧日期记录5847 RD手写摘要含复制错误及`??`，原文保留；正�
 名字—实体ID—SPR关系未新增。私人原大包长期保管未配备，不能声称已永久存有全部官方客户端。
 DD-028本体/永久新增/运营活动/起源待考四档保持独立。Stage A7 PARTIAL+2 OPEN，
 Stage B/wiki GATED、R79 PAUSED_NON_BLOCKING、overall percent=null。
+
+## 本轮实际主线终验
+
+内容main `96bc698b5eab4c301492936f5a098d7944ecb145` / tree
+`d953808fd20791d72ec7a22eebc13a4c972dec7b` 已非强制快进发布。最终候选五项Actions、
+同HEAD主线六项Actions均实际completed/success。专用候选40237995789/job121303604234、
+主线40238056954/job121303788480均通过26项来源/边界检查、三序列全表重放及真实Chrome
+合成图交互检查；其余主线R16/R17/R18、P1观察台、Stage A均实过。源取样40237734461
+是独立原字节任务，后续主线没有重取版权载荷。
+
+另用独立SQLite完整装入39065动画/242085帧/125996 ADRN记录，三序列25位置的源偏移、
+位图、合成偏移、声音字段、RD摘要与整数节拍逐项同报告。26项工具测试+30项Stage A本地
+测试通过。12改动路径的远端原字节及完整tree与本地完全相等，五份历史大文件逐字节保持。
+永久[发布收据](../../research/recovered/STONEAGE-TW10-ANIMATION-OBSERVATION-P2A-PUBLICATION-R1.json)
+保存源/候选/main运行、ZIP实下校验、原样派生Git blob和12文件指纹；本后验收据自身CI不预填。
+最高NEXT调色板P2B、独立R20内容缺口及全部历史/生产边界保持。
