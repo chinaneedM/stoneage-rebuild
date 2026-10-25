@@ -1,0 +1,51 @@
+name: Qualify original TW1 palette reader source P2B
+on:
+  push:
+    branches: [agent/original-palette-p2b-20261026]
+    paths: ['.github/workflows/probe-stoneage-tw10-palette-p2b.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  palette-original-source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install static decoding tools
+        run: pip install --quiet capstone pefile
+      - name: Retrieve accepted source for NEW original palette reader qualification
+        run: |
+          set -euo pipefail
+          python -m tools.stoneage_tw10_archive_parallel_download --deadline 1500 --workers 16 --chunk 8388608 --output /tmp/CD_DIC.rar
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq 7zip
+          mkdir -p /tmp/stoneage-p2b-private
+          7z x -y -o/tmp/stoneage-p2b-private /tmp/CD_DIC.rar STONEAGE.bin >/dev/null
+      - name: Extract only original executable and one palette for bounded static proof
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          from tools.stoneage_tw10_technical_probe import find_rows,extract_row
+          from tools.stoneage_tw10_palette_source_probe import authenticate
+          root=Path('/tmp/stoneage-p2b-private');img,rows,_,_=find_rows(root/'STONEAGE.bin')
+          try:
+              for name in ['StoneAge/sa_3.exe','StoneAge/data/pal/Palet_0.sap']:
+                  selected=[r for r in rows if r['path']==name and not r['is_dir']]
+                  if len(selected)!=1:raise ValueError('original path not unique')
+                  extract_row(img,selected[0],root/Path(name).name)
+          finally:img.close()
+          authenticate((root/'sa_3.exe').read_bytes(),(root/'Palet_0.sap').read_bytes())
+          PY
+          python -m tools.stoneage_tw10_palette_source_probe --exe /tmp/stoneage-p2b-private/sa_3.exe --palette /tmp/stoneage-p2b-private/Palet_0.sap --output /tmp/stoneage-p2b-palette-derived.json
+      - name: Always purge original commercial bytes
+        if: always()
+        run: rm -rf /tmp/CD_DIC.rar /tmp/stoneage-p2b-private
+      - name: Upload bounded DERIVED instruction metadata only
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: stoneage-p2b-original-palette-derived-only
+          path: /tmp/stoneage-p2b-palette-derived.json
+          retention-days: 7
