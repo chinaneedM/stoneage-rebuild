@@ -1,0 +1,70 @@
+{
+  "boundaries": {
+    "R79": "PAUSED_NON_BLOCKING",
+    "origin_class": "ORIGIN_UNRESOLVED",
+    "original_base_quests_added": 0,
+    "original_game_npc_count_added": 0,
+    "original_jss_tw10_same_build": false,
+    "overall_restoration_percent": null,
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b_wiki": "GATED"
+  },
+  "content_main_head": "90470f1c2cc4501ceb372bda5b7e3d026d428b6a",
+  "content_main_tree": "36b2a75a0c774fcd371b36d74595e5cca4b06efe",
+  "continuity": "docs/continuity/NPC09-MATERIAL-DELTA-20261025.md",
+  "date": "2026-10-25",
+  "historical_current_blob_unchanged": "e83a8b8f226fcecb60342a6b96ca1c36d5335065",
+  "historical_current_size": 2663132,
+  "next": "NPC-QUEST-ORIGINAL-SCRIPT-CARRIER-QUALIFICATION-10",
+  "permanent_report": {
+    "blob": "c48c8b8055abd91a01541223e1be10920210c742",
+    "path": "research/recovered/STONEAGE-NPC-GENKOU-DERIVED-ARG-R1.json"
+  },
+  "runs": {
+    "candidate": {
+      "artifact": 12585847219,
+      "conclusion": "success",
+      "job": 121070289230,
+      "reported_zip_sha256": "a941e3f04284e4e296e26b8708f769d0413b5dc5b72645ae39c4555a27da8bc8",
+      "run": 40160313465,
+      "sha": "43db8793958424b36e10286fac9d0ee186fad8e5"
+    },
+    "failed_correction_runs": [
+      40160261174,
+      40160280061
+    ],
+    "initial_failure": {
+      "cause": "Source section parser classified three warp entries as NPCs; 13 synthetic tests passed, actual pinned source replay failed",
+      "conclusion": "failure",
+      "job": 121069733890,
+      "run": 40160123544
+    },
+    "main": {
+      "artifact": 12585812496,
+      "conclusion": "success",
+      "job": 121070720327,
+      "reported_zip_sha256": "75f1291d712b7163a54497a74b2675d12ef403b061291d804f1d241c8c2cc70c",
+      "run": 40160456170,
+      "sha": "90470f1c2cc4501ceb372bda5b7e3d026d428b6a"
+    },
+    "main_stage": {
+      "conclusion": "success",
+      "job": 121070720338,
+      "run": 40160456137
+    },
+    "source_replay_and_report_cmp": "success_candidate_and_main",
+    "zip_independently_downloaded": false
+  },
+  "schema": "stoneage.npc09.publication.r1",
+  "upstream": {
+    "authentic_original_build": false,
+    "blob": "6e066821bedd0bbef7e59cc3f020cad7783e51c5",
+    "commit": "e9b3f0cfd63b93c11fc77ca5331173dd6c5d2fc8",
+    "embedded_bytes": 258,
+    "embedded_sha256": "961b87cebad2fd7cb7875f9433df0e301f9f64b06c46a558475fc1a0344e9eec",
+    "npc_rows": 2,
+    "path": "map/maps/11208/map.entity.yaml",
+    "repo": "75912001/sa.desktop",
+    "warp_rows": 3
+  }
+}
