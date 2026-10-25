@@ -145,10 +145,12 @@ def join(selected,native,pairs):
     for logical,rows in selected.items():
         candidates=[]
         for r in rows:
+            need(r['map_number']==logical,'alias group/record key mismatch')
             key=r['bitmapno'];matches=[n for n in native if int(n['bitmapno'])==key and n['record_sha256']==r['record_sha256']]
             links=[p for p in pairs if int(p['patch_index'])==r['index'] and p['patch_record_sha256']==r['record_sha256']]
             need(len(matches)==1 and len(links)==1,'ambiguous or absent exact native record/patch link')
             n,p=matches[0],links[0]
+            need(int(p['bitmapno'])==key,'pair physical identifier mismatch')
             need(p['qualification']=='EXACT_NATIVE_RECORD_AND_RD_STRUCTURE' and p['native_exact_indices']==n['index'], 'native index qualification drift')
             need(n['rd_status']==p['rd_status']=='HEADER_MATCH' and n['rd_sha256']==p['rd_sha256'],'RD pairing mismatch')
             for field in ('adder','size','xoff','yoff','width','height'):

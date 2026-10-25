@@ -32,10 +32,15 @@ TW1及CN5既有完整非零别名快照都没有这三个逻辑别名。本事�
 
 另实际读取BismarckDD/Stoneage固定提交2f736808ff4361f5429ee919b718c88fabb60346的四个后代源码：anim_tbl.h blob72e35cf020c4e2e67c04fedc60deba4f3b6027e5、sprdisp.cpp blob666eb344f5a5c07265f7bfd4f8c8058bac66c157、loadrealbin.cpp blob883e653191357bea6bbc779464139f183a9dc0e4、loadrealbin.h blobc25bffe12d22ff5a1b437aec929e4aa390e30f38。它们帮助对照StockDispBuffer、realGetNo与attr.bmpnumber命名。头文件有多套条件定义，不能选择其中一套就认证原编译宏；本包绑定以原程序数值和原元数据为主，不编译此后代代码。
 
-工具从原机器码恢复调用参数与五个限定窗口摘要；13个真实原字节变异（图号、坐标、调用目标、别名表地址、记录尺寸/字段等）绕过整文件SHA门仍全部拒绝。12项单元覆盖逻辑/物理同号误联接、多候选保留、原记录/配对/头字段/REAL摘要失配、假原程序。多候选不得仅留最后一条；这不替代实际loader执行。完整清单与派生Git pins见 `research/recovered/STONEAGE-WAYI-LOGIN-SCENE-ALIAS-BINDING-R1.json`。没有原代码/反汇编全文或像素载荷入Git。
+工具从原机器码恢复调用参数与五个限定窗口摘要；13个真实原字节变异（图号、坐标、调用目标、别名表地址、记录尺寸/字段等）绕过整文件SHA门仍全部拒绝。13项单元覆盖逻辑/物理同号误联接、多候选保留、原记录/配对/头字段/REAL摘要失配、假原程序。多候选不得仅留最后一条；这不替代实际loader执行。完整清单与派生Git pins见 `research/recovered/STONEAGE-WAYI-LOGIN-SCENE-ALIAS-BINDING-R1.json`。没有原代码/反汇编全文或像素载荷入Git。
 
 ## 止点与下一项
 
 本包关闭三项有限静态绑定取证，登录UI系统仍PARTIAL。两次UI材料单元到此止，不继续追绘制器、驱动、抗锯齿或任意helper。
 
 最高NEXT **ORIGINAL-RESOURCE-LOGICAL-ALIAS-CROSSVERSION-CATALOG-13**：将已经永久保管的官方修复包完整逻辑别名→物理记录，和TW1/CN5已有别名快照形成可查询的跨版目录；保留全部源出现位置/重复与未具名角色，明确早期快照已折叠的重复信息，不能补造缺失出现位置。统一数据底座须区分逻辑号、物理号、内容块SHA与游戏实体ID；目录去重按内容引用，不能删除不同出现记录或把UI资源当地图/NPC。先复用已验全表，不因统计再次下载原大包。本包不改变任务四档、原宠物/NPC主表未知、大包私人保管暂停、Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停或总体percent=null。
+
+
+### 下一目录包的已核范围
+
+原表复核：TW1唯一别名快照9286条，旧原件报告另记3次重复别名写入；CN5快照13529条，原件报告另记585次重复写入。快照中没有那些已折叠的源位置，不能假称早期全出现表。官方patch保留20229次非零别名出现、19643个不同键、117组重复键/586次额外出现。别名数、出现数和28个重复物理bitmap号是不同指标，不是宠物或地图数量。已将范围、manifest摘要和缺失记录写入STONEAGE-LOGICAL-ALIAS-CATALOG-PREFLIGHT-R1.json，目录13直接接此已验范围，不必再作同一预检。

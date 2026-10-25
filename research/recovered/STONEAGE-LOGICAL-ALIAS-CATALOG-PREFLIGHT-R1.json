@@ -1,0 +1,47 @@
+{
+  "schema": "stoneage.logical_alias_catalog_preflight.r1",
+  "date": "2026-10-25",
+  "task": "ORIGINAL-RESOURCE-LOGICAL-ALIAS-CROSSVERSION-CATALOG-13",
+  "original_carriers_reacquired": false,
+  "inputs_are_existing_derived_metadata": true,
+  "profiles": {
+    "TW10": {
+      "retained_unique_alias_rows": 9286,
+      "original_extra_alias_writes_reported": 3,
+      "overwritten_occurrence_positions_available": false
+    },
+    "CN50": {
+      "retained_unique_alias_rows": 13529,
+      "original_extra_alias_writes_reported": 585,
+      "overwritten_occurrence_positions_available": false,
+      "official_clean_pressing_authenticated": false
+    },
+    "OFFICIAL_PATCH129": {
+      "retained_nonzero_occurrences": 20229,
+      "distinct_aliases": 19643,
+      "duplicate_alias_keys": 117,
+      "extra_occurrences": 586,
+      "source_occurrences_preserved": true
+    }
+  },
+  "parent_manifest_pins": {
+    "research/recovered/tw10-resource-metadata/MANIFEST-R1.txt": {
+      "bytes": 1928,
+      "sha256": "fb9b2dbe52a305f5ff2934cc1dcdf275be1215e2a89b326dd76fd7f80b6d9743",
+      "git_blob": "6154dcf806163b82cb96af344e6a644143d15f56"
+    },
+    "research/recovered/cn50-resource-metadata/MANIFEST-R1.json": {
+      "bytes": 3001,
+      "sha256": "73181d1de1efadc971eaea254891103bd69fd7d3121fc450ec3b148ca8d06fa8",
+      "git_blob": "5063cf2fade4e0739ac35c38a90dfff1a43db960"
+    }
+  },
+  "prohibited_promotions": [
+    "logical_alias_to_world_floor_id",
+    "logical_alias_to_same_number_physical_record",
+    "resource_count_to_game_entity_count",
+    "collapsed_early_snapshot_to_complete_occurrence_ledger",
+    "alias_match_to_same_deployed_game_build"
+  ],
+  "next_deliverable": "Cross-version queryable alias->physical-record view preserving every available source occurrence, content SHA and the stated early snapshot gaps; no new UI helper or original large carrier download."
+}

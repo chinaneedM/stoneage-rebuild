@@ -2632,6 +2632,6 @@ fresh main eb086c49b7cdce29add90e2721d67b866be3f246/tree17120cf7d17052b34bb73d24
 
 复用并完整重哈希暂存原sa.exe369152B与解压件921600B，后者SHA4193a7e1b20b996f7902424ae05092b455c5dbbe3f133d331a4897bbc7abfe63。原登录输入面板三绘制调用RVA20e3b/20e88/20eae给逻辑26302/26303/26301、共同x/y320/240；原绘制器822b0→逻辑查表1fcd0→物理偏移getter1fab0，原loader80B/+76别名键→bitmapno表值已核。不能把逻辑号直接当物理号，也不能把旧map_number字段只当地图floor。官方ADRN129全表中三别名各唯一指向物理376059/60/61；与既有TW8.5 native/REAL配对表逐记录SHA、attrSHA、offset/size、RD头/尺寸/块SHA一致。尺寸640×480、100×130、88×143，偏移后静态起点0/0、317/224、411/231。实际按钮命中端点320/225/410/350及412/232/494/372，端点包含语义未知。原same-ID26301物理记录44×81不是背景，不作误联接。
 
-没有重拉大包、运行原程序、重读/解码/渲染原REAL像素；静态跨样本兼容联接不等于同一已部署build或完整登录画面，TW1/CN5别名快照无这三个键只限固定样本。后代四源码Git blob仅辅助命名，不从2026坐标/多套条件宏回填原构建。交付STONEAGE-WAYI-LOGIN-SCENE-ALIAS-BINDING-R1规格/全派生JSON、限定原字节工具、12项单元及13项绕过整SHA原字节语义反例拒绝。candidate/main实际源与后验另记，不提前写成功。
+没有重拉大包、运行原程序、重读/解码/渲染原REAL像素；静态跨样本兼容联接不等于同一已部署build或完整登录画面，TW1/CN5别名快照无这三个键只限固定样本。后代四源码Git blob仅辅助命名，不从2026坐标/多套条件宏回填原构建。交付STONEAGE-WAYI-LOGIN-SCENE-ALIAS-BINDING-R1规格/全派生JSON、限定原字节工具、13项单元及13项绕过整SHA原字节语义反例拒绝。candidate/main实际源与后验另记，不提前写成功。
 
 两UI包已止点，最高NEXT ORIGINAL-RESOURCE-LOGICAL-ALIAS-CROSSVERSION-CATALOG-13回全域实物目录：把既有官方patch完整别名与TW1/CN5快照接为可查跨版底座，保留不同源位置/重复/未知角色，明确早期快照折叠局限，不造实体名称或删除证据。不得扩绘制/驱动helper或只复算哈希。DD-028四档、7PARTIAL+2OPEN、B/wiki GATED、R79暂停、大包私人保管暂停、总体percent=null不变。

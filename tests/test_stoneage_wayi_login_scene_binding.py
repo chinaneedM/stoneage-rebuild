@@ -45,6 +45,10 @@ class LoginSceneBinding(unittest.TestCase):
         r,n,p=fixture();p['patch_index']='1'
         with self.assertRaises(ValueError):m.join(m.select_aliases([r]),[n],[p])
 
+    def test_wrong_pair_physical_identifier(self):
+        r,n,p=fixture();p['bitmapno']='26301'
+        with self.assertRaises(ValueError):m.join(m.select_aliases([r]),[n],[p])
+
     def test_native_header_changes(self):
         for field in ('adder','size','xoff','yoff','width','height'):
             with self.subTest(field=field):
