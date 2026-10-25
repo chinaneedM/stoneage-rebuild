@@ -1,0 +1,40 @@
+name: Recover bounded original sound3 table and repeated waveform metadata
+on:
+  push:
+    branches:
+      - 'agent/audio-sound3-source-*'
+    paths:
+      - 'tools/stoneage_sound3_original_content.py'
+      - 'tests/test_stoneage_sound3_original_content.py'
+      - 'research/recovered/STONEAGE-SOUND3-ORIGINAL-CONTENT-R1.json'
+      - '.github/workflows/recover-stoneage-sound3-content.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  actual-source-replay:
+    if: startsWith(github.ref, 'refs/heads/agent/audio-sound3-source-')
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest tests.test_stoneage_sound3_original_content -v
+      - name: Install independent bounded CAB decoder
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq cabextract
+      - name: Fetch 8 MiB logical prefix, never full CAB or disc
+        run: python -m tools.stoneage_stoneage5_battle_extract_probe --output-cab /tmp/sound3.cab --prefix-bytes 8388608
+      - name: Extract exactly the two early audio members
+        run: |
+          mkdir -p /tmp/sound3-members
+          cabextract -q -F soundaddr_3.txt -d /tmp/sound3-members /tmp/sound3.cab
+          cabextract -q -F sound_3.bin -d /tmp/sound3-members /tmp/sound3.cab
+      - name: Exact original hashes and complete derived report replay
+        run: |
+          python -m tools.stoneage_sound3_original_content --directory /tmp/sound3-members --cab /tmp/sound3.cab --output /tmp/sound3-derived.json
+          cmp /tmp/sound3-derived.json research/recovered/STONEAGE-SOUND3-ORIGINAL-CONTENT-R1.json
+      - name: Remove all transient original payloads
+        if: always()
+        run: rm -rf /tmp/sound3-members /tmp/sound3.cab /tmp/sound3-derived.json

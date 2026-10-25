@@ -1,0 +1,753 @@
+{
+  "boundaries": {
+    "named_scene_pet_or_battle_event": null,
+    "original_code_executed": false,
+    "same_deployed_build_proven": false,
+    "same_file_suffix_proves_runtime_selection": false,
+    "tail_copies_are_new_sounds": false,
+    "waveform_payload_or_original_table_text_in_git": false,
+    "waveform_played": false
+  },
+  "copies": [
+    {
+      "bytes": 898978,
+      "directly_addressed_by_retained_table": true,
+      "offset": 0,
+      "sha256": "32906404a97609aab90f5c22ae57e0619aeac820cac1f965ca2bf1d631c3ec94"
+    },
+    {
+      "bytes": 898978,
+      "directly_addressed_by_retained_table": false,
+      "offset": 898978,
+      "sha256": "32906404a97609aab90f5c22ae57e0619aeac820cac1f965ca2bf1d631c3ec94"
+    },
+    {
+      "bytes": 898978,
+      "directly_addressed_by_retained_table": false,
+      "offset": 1797956,
+      "sha256": "32906404a97609aab90f5c22ae57e0619aeac820cac1f965ca2bf1d631c3ec94"
+    }
+  ],
+  "distinct_full_wave_blocks": 26,
+  "duplicate_table_wave_groups": [
+    {
+      "bytes": 5362,
+      "sha256": "c6d9f503ae5b118dcfc28d21e6731cfc342429e2d8ea949f6913683ce53480de",
+      "table_indices": [
+        14,
+        15
+      ]
+    }
+  ],
+  "effective_runtime_table_or_tail_selection": null,
+  "members": {
+    "sound_3.bin": {
+      "bytes": 2696934,
+      "sha256": "f5c0b5b0bf3dc7e010c3cde867536929b1f51d81a7ace5ff30d143ccff33b148"
+    },
+    "soundaddr_3.txt": {
+      "bytes": 691,
+      "sha256": "5afc6a80352d5254c926129e4acdd023cabdc9e67e5f8cf5bf824520ea2be5e7"
+    }
+  },
+  "physical_record_occurrences": 81,
+  "sample_rate_counts": {
+    "11025": 1,
+    "22000": 13,
+    "22050": 9,
+    "22255": 2,
+    "5564": 2
+  },
+  "schema": "stoneage.sound3_original_content.r1",
+  "source": {
+    "archive_identifier": "Stoneage-5",
+    "cab_logical_bytes": 612584670,
+    "cab_prefix_bytes": 8388608,
+    "cab_prefix_sha256": "87973df39afea068021d64a71fc9fb4f290cc0d7447fd3fae6beeea2bdb3c937",
+    "carrier": "CD [STA5].bin",
+    "carrier_bytes": 733057248,
+    "carrier_catalogue_sha1_not_full_rehashed": "6053dce3df2723250ddb52a98b3e8cf2552cd791",
+    "full_disc_or_full_cab_downloaded": false,
+    "http_raw_range": "bytes 65856-9699647/733057248",
+    "logical_prefix_reconstructed_from_sector_payloads": true,
+    "official_clean_build_proven": false
+  },
+  "table_declared_end": 898978,
+  "table_records": [
+    {
+      "bytes": 27180,
+      "offset": 0,
+      "physical_offsets_in_full_container": [
+        0,
+        898978,
+        1797956
+      ],
+      "sha256": "58b036717914ad27682dde9c5e797d8a043381a9000154ac4bcbf6b84fd09454",
+      "table_index": 0,
+      "table_name": "saam_01.wav",
+      "wave": {
+        "audio_format": 1,
+        "bits_per_sample": 8,
+        "block_align": 1,
+        "byte_rate": 22050,
+        "channels": 1,
+        "chunk_signature": "fmt :16,data:27136",
+        "data_sha256": "afa24f1f1b94806a6717962d7cfedf64de7985fb2c672f5437eb3e0ccfbab0e3",
+        "data_size": 27136,
+        "riff": 1,
+        "sample_rate": 22050,
+        "wave": 1
+      }
+    },
+    {
+      "bytes": 11760,
+      "offset": 27180,
+      "physical_offsets_in_full_container": [
+        27180,
+        926158,
+        1825136
+      ],
+      "sha256": "a196f9630415af0468a49863c68816250393b7405546ba7323f933a55eb70297",
+      "table_index": 1,
+      "table_name": "saam_02.wav",
+      "wave": {
+        "audio_format": 1,
+        "bits_per_sample": 8,
+        "block_align": 1,
+        "byte_rate": 11025,
+        "channels": 1,
+        "chunk_signature": "fmt :16,data:11632,LIST:76",
+        "data_sha256": "73020142e330b0181982502f9bc2ead91a238ea8fc6d08507b6d78833bdd6558",
+        "data_size": 11632,
+        "riff": 1,
+        "sample_rate": 11025,
+        "wave": 1
+      }
+    },
+    {
+      "bytes": 20136,
+      "offset": 38940,
+      "physical_offsets_in_full_container": [
+        38940,
+        937918,
+        1836896
+      ],
+      "sha256": "32fe8a0af9b1fa03b128c1cc4e2c5b830ab9300c9e52e264d90696e1414e3142",
+      "table_index": 2,
+      "table_name": "saam_03.wav",
+      "wave": {
+        "audio_format": 1,
+        "bits_per_sample": 8,
+        "block_align": 1,
+        "byte_rate": 22050,
+        "channels": 1,
+        "chunk_signature": "fmt :16,data:20092",
+        "data_sha256": "65d1b3a9279deaeb8a1b206f84f9c6cbe4833b76944a1be2fec3c0711b91c052",
+        "data_size": 20092,
+        "riff": 1,
+        "sample_rate": 22050,
+        "wave": 1
+      }
+    },
+    {
+      "bytes": 37736,
+      "offset": 59076,
+      "physical_offsets_in_full_container": [
+        59076,
+        958054,
+        1857032
+      ],
+      "sha256": "93bfaff27bbfe2b8f42af3684935792aa3317fc4c20849a2b0e70ba05d0d0fa6",
+      "table_index": 3,
+      "table_name": "saam_04.wav",
+      "wave": {
+        "audio_format": 1,
+        "bits_per_sample": 8,
+        "block_align": 1,
+        "byte_rate": 22050,
+        "channels": 1,
+        "chunk_signature": "fmt :16,data:37692",
+        "data_sha256": "806dba5fa7a067f54cc6e410ba96751d4cb4f2fc9cbbc1f62dd2ac02f30cb6cd",
+        "data_size": 37692,
+        "riff": 1,
+        "sample_rate": 22050,
+        "wave": 1
+      }
+    },
+    {
+      "bytes": 33610,
+      "offset": 96812,
+      "physical_offsets_in_full_container": [
+        96812,
+        995790,
+        1894768
+      ],
+      "sha256": "49ec6b55fbbfbb174083c8754dbfc6bdacd820e40c566a5e4e26bdc0194dd3a4",
+      "table_index": 4,
+      "table_name": "saam_05.wav",
+      "wave": {
+        "audio_format": 1,
+        "bits_per_sample": 8,
+        "block_align": 1,
+        "byte_rate": 22050,
+        "channels": 1,
+        "chunk_signature": "fmt :16,data:33566",
+        "data_sha256": "c6e166d03fca246d9dbe80eaba1bd57fde9397146637b84957230aebbbeae10d",
+        "data_size": 33566,
+        "riff": 1,
+        "sample_rate": 22050,
+        "wave": 1
+      }
+    },
+    {
+      "bytes": 21764,
+      "offset": 130422,
+      "physical_offsets_in_full_container": [
+        130422,
+        1029400,
+        1928378
+      ],
+      "sha256": "106214e40c013222c531f4ab54ac649abd488f029f1060c90306850915c1e20c",
+      "table_index": 5,
+      "table_name": "saam_06.wav",
+      "wave": {
+        "audio_format": 1,
+        "bits_per_sample": 8,
+        "block_align": 1,
+        "byte_rate": 22050,
+        "channels": 1,
+        "chunk_signature": "fmt :16,data:21720",
+        "data_sha256": "80d9690942c5b3f1cd5cf771a2feb611aa820e228019f9cc7539bb95f3be96f7",
+        "data_size": 21720,
+        "riff": 1,
+        "sample_rate": 22050,
+        "wave": 1
+      }
+    },
+    {
+      "bytes": 47916,
+      "offset": 152186,
+      "physical_offsets_in_full_container": [
+        152186,
+        1051164,
+        1950142
+      ],
+      "sha256": "da609915af9e5ccb3fa5fbeca4ba0c2daa7133269d5594e065b21a3d1732befa",
+      "table_index": 6,
+      "table_name": "saam_07.wav",
+      "wave": {
+        "audio_format": 1,
+        "bits_per_sample": 8,
+        "block_align": 1,
+        "byte_rate": 22050,
+        "channels": 1,
+        "chunk_signature": "fmt :16,data:47872",
+        "data_sha256": "abe16277f6432b6bdc240facea12747cc60487928138257d1b310de5ce9bf2f3",
+        "data_size": 47872,
+        "riff": 1,
+        "sample_rate": 22050,
+        "wave": 1
+      }
+    },
+    {
+      "bytes": 35140,
+      "offset": 200102,
+      "physical_offsets_in_full_container": [
+        200102,
+        1099080,
+        1998058
+      ],
+      "sha256": "3af355406aae897461dd584f88c9adbbeddbdd458ee536fdf20580ea09126d51",
+      "table_index": 7,
+      "table_name": "saam_08.wav",
+      "wave": {
+        "audio_format": 1,
+        "bits_per_sample": 8,
+        "block_align": 1,
+        "byte_rate": 22050,
+        "channels": 1,
+        "chunk_signature": "fmt :16,data:35096",
+        "data_sha256": "5caa7c32217bba0b68acf86f0bf6ed2b8df4a11d7f0e74171db7d8ab5bda10da",
+        "data_size": 35096,
+        "riff": 1,
+        "sample_rate": 22050,
+        "wave": 1
+      }
+    },
+    {
+      "bytes": 25580,
+      "offset": 235242,
+      "physical_offsets_in_full_container": [
+        235242,
+        1134220,
+        2033198
+      ],
+      "sha256": "060287e04e70f0d0058418966ff2ed55dc2263e4d94246cb8321b224f1000eb7",
+      "table_index": 8,
+      "table_name": "saam_09.wav",
+      "wave": {
+        "audio_format": 1,
+        "bits_per_sample": 8,
+        "block_align": 1,
+        "byte_rate": 22000,
+        "channels": 1,
+        "chunk_signature": "fmt :16,data:25536",
+        "data_sha256": "263542da186e8ea5b9e16c20002692be35f3805e8a3d5777a96f8dd7bd5684e6",
+        "data_size": 25536,
+        "riff": 1,
+        "sample_rate": 22000,
+        "wave": 1
+      }
+    },
+    {
+      "bytes": 27108,
+      "offset": 260822,
+      "physical_offsets_in_full_container": [
+        260822,
+        1159800,
+        2058778
+      ],
+      "sha256": "9f10f10b99a097fb9955d1712eef38c7a6e32897204abb119d6f08878f65ee20",
+      "table_index": 9,
+      "table_name": "saam_10.wav",
+      "wave": {
+        "audio_format": 1,
+        "bits_per_sample": 8,
+        "block_align": 1,
+        "byte_rate": 22000,
+        "channels": 1,
+        "chunk_signature": "fmt :16,data:27063",
+        "data_sha256": "4276839662c01d8731a5dd963ef06c3499c6bceb8617e27c58bed386658da8a2",
+        "data_size": 27063,
+        "riff": 1,
+        "sample_rate": 22000,
+        "wave": 1
+      }
+    },
+    {
+      "bytes": 38444,
+      "offset": 287930,
+      "physical_offsets_in_full_container": [
+        287930,
+        1186908,
+        2085886
+      ],
+      "sha256": "a7c3fe3febe2084c77b8d26fd337c37cf19427f79dddc63f7eb8a5f7097bbc01",
+      "table_index": 10,
+      "table_name": "saam_11.wav",
+      "wave": {
+        "audio_format": 1,
+        "bits_per_sample": 8,
+        "block_align": 1,
+        "byte_rate": 22050,
+        "channels": 1,
+        "chunk_signature": "fmt :16,data:38400",
+        "data_sha256": "deb6b4c30fdd40d2adbc268ab54d29566c9fb1c17119eba8bec7e13017e4543f",
+        "data_size": 38400,
+        "riff": 1,
+        "sample_rate": 22050,
+        "wave": 1
+      }
+    },
+    {
+      "bytes": 23852,
+      "offset": 326374,
+      "physical_offsets_in_full_container": [
+        326374,
+        1225352,
+        2124330
+      ],
+      "sha256": "a47b95e79a59792d98d1e2bb1370feca34a18d87de7264e145edb4e0a5d8dc79",
+      "table_index": 11,
+      "table_name": "saam_12.wav",
+      "wave": {
+        "audio_format": 1,
+        "bits_per_sample": 8,
+        "block_align": 1,
+        "byte_rate": 22000,
+        "channels": 1,
+        "chunk_signature": "fmt :16,data:23808",
+        "data_sha256": "d5d44f312b9c88d6f72a7787946116488a421a8b454c6957565d7b615a30d829",
+        "data_size": 23808,
+        "riff": 1,
+        "sample_rate": 22000,
+        "wave": 1
+      }
+    },
+    {
+      "bytes": 24172,
+      "offset": 350226,
+      "physical_offsets_in_full_container": [
+        350226,
+        1249204,
+        2148182
+      ],
+      "sha256": "31b16886d8bfd818cd76201f8cf1f90b2e39b6f57ffed34bc88942dbae73e8b9",
+      "table_index": 12,
+      "table_name": "saam_13.wav",
+      "wave": {
+        "audio_format": 1,
+        "bits_per_sample": 8,
+        "block_align": 1,
+        "byte_rate": 22050,
+        "channels": 1,
+        "chunk_signature": "fmt :16,data:24128",
+        "data_sha256": "2770d8946020b95701aeb40bb529eb69789cc6d52d59ed42e9439001ec092784",
+        "data_size": 24128,
+        "riff": 1,
+        "sample_rate": 22050,
+        "wave": 1
+      }
+    },
+    {
+      "bytes": 35436,
+      "offset": 374398,
+      "physical_offsets_in_full_container": [
+        374398,
+        1273376,
+        2172354
+      ],
+      "sha256": "aef27afdbde45d8a72f196fda3f67ff8d1a803f0f087be6b4c1e2598d3821493",
+      "table_index": 13,
+      "table_name": "saam_14.wav",
+      "wave": {
+        "audio_format": 1,
+        "bits_per_sample": 8,
+        "block_align": 1,
+        "byte_rate": 22000,
+        "channels": 1,
+        "chunk_signature": "fmt :16,data:35392",
+        "data_sha256": "102aa84ed6f370a7372c471cab49f56e707ecbfef1799641b70ae0bcd40316d7",
+        "data_size": 35392,
+        "riff": 1,
+        "sample_rate": 22000,
+        "wave": 1
+      }
+    },
+    {
+      "bytes": 5362,
+      "offset": 409834,
+      "physical_offsets_in_full_container": [
+        409834,
+        1308812,
+        2207790
+      ],
+      "sha256": "c6d9f503ae5b118dcfc28d21e6731cfc342429e2d8ea949f6913683ce53480de",
+      "table_index": 14,
+      "table_name": "saam_15.wav",
+      "wave": {
+        "audio_format": 1,
+        "bits_per_sample": 8,
+        "block_align": 1,
+        "byte_rate": 5564,
+        "channels": 1,
+        "chunk_signature": "fmt :16,data:5318",
+        "data_sha256": "0f3ba8c4fe7388eb2e8377af3ad56b1f55d201438c3a5ab74383344951e43950",
+        "data_size": 5318,
+        "riff": 1,
+        "sample_rate": 5564,
+        "wave": 1
+      }
+    },
+    {
+      "bytes": 5362,
+      "offset": 415196,
+      "physical_offsets_in_full_container": [
+        415196,
+        1314174,
+        2213152
+      ],
+      "sha256": "c6d9f503ae5b118dcfc28d21e6731cfc342429e2d8ea949f6913683ce53480de",
+      "table_index": 15,
+      "table_name": "saam_16.wav",
+      "wave": {
+        "audio_format": 1,
+        "bits_per_sample": 8,
+        "block_align": 1,
+        "byte_rate": 5564,
+        "channels": 1,
+        "chunk_signature": "fmt :16,data:5318",
+        "data_sha256": "0f3ba8c4fe7388eb2e8377af3ad56b1f55d201438c3a5ab74383344951e43950",
+        "data_size": 5318,
+        "riff": 1,
+        "sample_rate": 5564,
+        "wave": 1
+      }
+    },
+    {
+      "bytes": 33838,
+      "offset": 420558,
+      "physical_offsets_in_full_container": [
+        420558,
+        1319536,
+        2218514
+      ],
+      "sha256": "f3acd4c5ebb49a6a79c9fba86bec3d8c3f3eb099b15be738bd5bc1f8eb636ca8",
+      "table_index": 16,
+      "table_name": "saam_17.wav",
+      "wave": {
+        "audio_format": 1,
+        "bits_per_sample": 8,
+        "block_align": 1,
+        "byte_rate": 22000,
+        "channels": 1,
+        "chunk_signature": "fmt :16,data:33793",
+        "data_sha256": "42220042d800696ea0d3034f9076350659d0993ad09ff71b13005d61a79dc59d",
+        "data_size": 33793,
+        "riff": 1,
+        "sample_rate": 22000,
+        "wave": 1
+      }
+    },
+    {
+      "bytes": 35108,
+      "offset": 454396,
+      "physical_offsets_in_full_container": [
+        454396,
+        1353374,
+        2252352
+      ],
+      "sha256": "d19b02f21fb1a6724db6d30ec6b1ca91411532ce1fffeb43e17e92f2a93b303b",
+      "table_index": 17,
+      "table_name": "saam_18.wav",
+      "wave": {
+        "audio_format": 1,
+        "bits_per_sample": 8,
+        "block_align": 1,
+        "byte_rate": 22000,
+        "channels": 1,
+        "chunk_signature": "fmt :16,data:35064",
+        "data_sha256": "500330b05e9ec4599076a5c8237614c644f627805311925aa9ed058ac9e8d7fc",
+        "data_size": 35064,
+        "riff": 1,
+        "sample_rate": 22000,
+        "wave": 1
+      }
+    },
+    {
+      "bytes": 38508,
+      "offset": 489504,
+      "physical_offsets_in_full_container": [
+        489504,
+        1388482,
+        2287460
+      ],
+      "sha256": "ea0241978e07114844f93a0fd13d6227a1340d9aa6cf9471765de6bfc7eff247",
+      "table_index": 18,
+      "table_name": "saam_19.wav",
+      "wave": {
+        "audio_format": 1,
+        "bits_per_sample": 8,
+        "block_align": 1,
+        "byte_rate": 22000,
+        "channels": 1,
+        "chunk_signature": "fmt :16,data:38464",
+        "data_sha256": "10048a0056e11496861a56ef470dacbf81e762a13131059bab4aa31743d26f6f",
+        "data_size": 38464,
+        "riff": 1,
+        "sample_rate": 22000,
+        "wave": 1
+      }
+    },
+    {
+      "bytes": 56940,
+      "offset": 528012,
+      "physical_offsets_in_full_container": [
+        528012,
+        1426990,
+        2325968
+      ],
+      "sha256": "308f73938018d2fe0c6c2044d38e6a788358a95f983d81befeb5926015ffa684",
+      "table_index": 19,
+      "table_name": "saam_20.wav",
+      "wave": {
+        "audio_format": 1,
+        "bits_per_sample": 8,
+        "block_align": 1,
+        "byte_rate": 22000,
+        "channels": 1,
+        "chunk_signature": "fmt :16,data:56896",
+        "data_sha256": "2ba7b6909e163febe52b20cd31fe970ccaceff75c8bea1fe637e744b5d32a1a2",
+        "data_size": 56896,
+        "riff": 1,
+        "sample_rate": 22000,
+        "wave": 1
+      }
+    },
+    {
+      "bytes": 32492,
+      "offset": 584952,
+      "physical_offsets_in_full_container": [
+        584952,
+        1483930,
+        2382908
+      ],
+      "sha256": "18e12b2dcb1cd76f7615968cf7657c9a86143e37dab58cc057497e2b2ef270ae",
+      "table_index": 20,
+      "table_name": "saam_21.wav",
+      "wave": {
+        "audio_format": 1,
+        "bits_per_sample": 8,
+        "block_align": 1,
+        "byte_rate": 22000,
+        "channels": 1,
+        "chunk_signature": "fmt :16,data:32448",
+        "data_sha256": "1f81c54108be23c21a5f9f3be604dd7817137ab76896fe137ee196a79806388c",
+        "data_size": 32448,
+        "riff": 1,
+        "sample_rate": 22000,
+        "wave": 1
+      }
+    },
+    {
+      "bytes": 31340,
+      "offset": 617444,
+      "physical_offsets_in_full_container": [
+        617444,
+        1516422,
+        2415400
+      ],
+      "sha256": "6910722624d744e3bcd85b67971c12c5cde6d4f08b2e5590f11b0cff84896523",
+      "table_index": 21,
+      "table_name": "saam_22.wav",
+      "wave": {
+        "audio_format": 1,
+        "bits_per_sample": 8,
+        "block_align": 1,
+        "byte_rate": 22000,
+        "channels": 1,
+        "chunk_signature": "fmt :16,data:31296",
+        "data_sha256": "0b4947c08acb59abb982045446517f230baf8a42cbcceecbb8050b9ce1da089e",
+        "data_size": 31296,
+        "riff": 1,
+        "sample_rate": 22000,
+        "wave": 1
+      }
+    },
+    {
+      "bytes": 42092,
+      "offset": 648784,
+      "physical_offsets_in_full_container": [
+        648784,
+        1547762,
+        2446740
+      ],
+      "sha256": "7fedd880057110b8594416d987dab793478d9caa312958d5213824d7db083fc0",
+      "table_index": 22,
+      "table_name": "saam_23.wav",
+      "wave": {
+        "audio_format": 1,
+        "bits_per_sample": 8,
+        "block_align": 1,
+        "byte_rate": 22000,
+        "channels": 1,
+        "chunk_signature": "fmt :16,data:42048",
+        "data_sha256": "f6b3a8345bf016877e2b0bb8bce04280a221c38beebeee8d19b64732facd7016",
+        "data_size": 42048,
+        "riff": 1,
+        "sample_rate": 22000,
+        "wave": 1
+      }
+    },
+    {
+      "bytes": 41452,
+      "offset": 690876,
+      "physical_offsets_in_full_container": [
+        690876,
+        1589854,
+        2488832
+      ],
+      "sha256": "b61d741a569e0a38d15250647703866dd7dcc1eedeaf220ac067723d5300e0bf",
+      "table_index": 23,
+      "table_name": "saam_24.wav",
+      "wave": {
+        "audio_format": 1,
+        "bits_per_sample": 8,
+        "block_align": 1,
+        "byte_rate": 22000,
+        "channels": 1,
+        "chunk_signature": "fmt :16,data:41408",
+        "data_sha256": "ed08d03e4b4a30e8e3a39544bf30e941a6cca186537a9e33c480d24d56643c84",
+        "data_size": 41408,
+        "riff": 1,
+        "sample_rate": 22000,
+        "wave": 1
+      }
+    },
+    {
+      "bytes": 42156,
+      "offset": 732328,
+      "physical_offsets_in_full_container": [
+        732328,
+        1631306,
+        2530284
+      ],
+      "sha256": "99d0037971af0ce9034c89fd779e50a1d4829bdeb6e50f845120d2877472db8d",
+      "table_index": 24,
+      "table_name": "saam_25.wav",
+      "wave": {
+        "audio_format": 1,
+        "bits_per_sample": 8,
+        "block_align": 1,
+        "byte_rate": 22000,
+        "channels": 1,
+        "chunk_signature": "fmt :16,data:42112",
+        "data_sha256": "44e0974dee0da9eafb54d03114c65edc0f7cb89b623197561858584273ff23b8",
+        "data_size": 42112,
+        "riff": 1,
+        "sample_rate": 22000,
+        "wave": 1
+      }
+    },
+    {
+      "bytes": 86818,
+      "offset": 774484,
+      "physical_offsets_in_full_container": [
+        774484,
+        1673462,
+        2572440
+      ],
+      "sha256": "81351b77b9fdae02ca14c222870092cdc915de398b621119435d35fcd691df36",
+      "table_index": 25,
+      "table_name": "saam_26.wav",
+      "wave": {
+        "audio_format": 1,
+        "bits_per_sample": 8,
+        "block_align": 1,
+        "byte_rate": 22255,
+        "channels": 1,
+        "chunk_signature": "fmt :16,data:86774",
+        "data_sha256": "2f43c02c4f3fea5e818a19c9361a35c3dd18c001b8c396f1ea211c55d3f7c163",
+        "data_size": 86774,
+        "riff": 1,
+        "sample_rate": 22255,
+        "wave": 1
+      }
+    },
+    {
+      "bytes": 37676,
+      "offset": 861302,
+      "physical_offsets_in_full_container": [
+        861302,
+        1760280,
+        2659258
+      ],
+      "sha256": "3990b7ae90315c9acf48b7599dd117037b8d6cf4de9abc36de754c589f2b1706",
+      "table_index": 26,
+      "table_name": "saam_27.wav",
+      "wave": {
+        "audio_format": 1,
+        "bits_per_sample": 8,
+        "block_align": 1,
+        "byte_rate": 22255,
+        "channels": 1,
+        "chunk_signature": "fmt :16,data:37632",
+        "data_sha256": "ab0ff70a25c713879701598b979ad968ea8c360ec92c17899880aab81ce15382",
+        "data_size": 37632,
+        "riff": 1,
+        "sample_rate": 22255,
+        "wave": 1
+      }
+    }
+  ]
+}
