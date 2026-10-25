@@ -18627,3 +18627,8 @@ fresh远端main9854762ef8163dd86f67982379414e9d339f8dcb/tree4482253ef2563da0ffdc
 本地libarchive3.7.2解压，独立标准库wave逐核81物理位置PCM/帧格式/SHA。独立原源Actions40188767159/job121155060294/HEADef49fef9540b8a332df55be94bbabd69065bc168实际success，另用cabextract有界重取，两原成员/派生JSON逐字节cmp同一。原派生21230B/SHAed5d9387a6f8e70da5ad269fc9fa46f8ad5d0b6e0aaf25e3b6d969fe2e1934d0/blob4339a0229176c88628a17af64da816c927cc1ce0永久保管；无临时ZIP工件/原WAV/原表正文/程序入Git，未播放/执行。固定7源的综合报告、sound3原派生/CUSTODY及规格STONEAGE-CROSSVERSION-AUDIO-CONTENT-R1已接三保存样本CN5/TW85/mixed25，各27/27/27表项、81/81/27物理出现；未认证纯净官方build或运行时读尾段。64本地相关检查通过，内容候选/main仅离线重放，须据实际后验另记，不预支。
 
 本包新原表/内容和跨版集成已止点，不扩音频/声卡API链。最高NEXT **ORIGINAL-CHARACTER-CREATION-CONTENT-16**：优先同版TW1人物创建body基表与已存CreateNewChar输入/464SPR的真实值联接，先排除旧登录/选角及R101已有覆盖；只取必要原exe（可有界则不下整盘），至多一条有表界限/数值的外观关联或精确缺源即止，不扩所有writer/helper树。JSS2001十二类48外观不直接回填TW1人物数/名字/原画面。大包私人保管仍暂停，DD-028四档、Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、总体percent=null不变。
+
+
+## 音频15实际内容主线终验
+
+内容main3049018051f858e7bc218d9ccde71882ba3ee7c4/tree70a30042e3e65463e203b755e583852506226db1，候选11项、主线12项Actions实际全部completed/success。原件源40188767159/job121155060294独立有界复取/cabextract与本地libarchive结果同字节；内容候选离线40189279082/job121156600160及主线40189337392均通过22项集成测试、7源全表精确重放。主线未重取原载荷。本地64相关检查、标准库wave81物理位置、独立SQL417跨样本引用/139不同块全部成立；13683682B逻辑引用/4585006B不同块只是无损分析预算，原件删除0B。15上传路径逐blob、远端tree、报告/源收据全文回读同本地，五份历史完整前缀保留。源/主线实际作业和所有派生SHA/blob见STONEAGE-CROSSVERSION-AUDIO-CONTENT-PUBLICATION-R1.json，无原声音或ZIP工件。该后验提交自身Actions另据实际观察；最高NEXT人物创建同版body表/SPR关联16和全部边界不变。

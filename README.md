@@ -521,3 +521,6 @@ The 2.66 MB historical `docs/CURRENT-STATE.md` is still preserved byte-for-byte.
 ### 2026-10-25 — 原音频内容15与实际sound3三重重复
 
 [原音频材料报告](docs/specs/STONEAGE-CROSSVERSION-AUDIO-CONTENT-R1.md)将114旧分段接入同字节后期载体，并实际有界读取soundaddr_3/sound_3：27表项、26不同WAV块，2.7MB容器是三份相同898978B段，81物理位置不作81新声音。独立源Action40188767159真实通过，原声音/原表正文不进Git；没有播放事件/物种绑定。NEXT转同版人物创建body基表与SPR实际关联16，停音频helper；完整CURRENT/路线末条与实际发布收据为准。
+
+
+音频15内容主线30490180已获独立有界源验收、候选11/main12项实际成功；[永久发布收据](research/recovered/STONEAGE-CROSSVERSION-AUDIO-CONTENT-PUBLICATION-R1.json)保留全部源/离线作业及派生blob。下一包人物创建同版body表与SPR材料16；不把音频块数/测试数当整体复原率。

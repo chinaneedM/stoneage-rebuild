@@ -61,3 +61,8 @@ python -m unittest tests.test_stoneage_crossversion_audio_content tests.test_sto
 最高NEXT **ORIGINAL-CHARACTER-CREATION-CONTENT-16**：优先原TW1人物创建body选择基表与已存CreateNewChar输入/464组SPR的同版关联。先排除旧登录/选角及R101动画规格已覆盖项；只取必要原exe字节（可用有界读则不下整盘），最多交付一个有真实表界限/值的外观键联接，或精确缺源即止。JSS2001的12类48外观不直接回填TW1角色数，不扩所有写入者/通用helper树，不造名字或宣称实际画面运行。
 
 DD-028四任务档、Stage A7 PARTIAL+2 OPEN、Stage B/wiki GATED、R79 PAUSED_NON_BLOCKING、总体percent=null保留。
+
+
+## 音频15实际内容主线终验
+
+内容main3049018051f858e7bc218d9ccde71882ba3ee7c4/tree70a30042e3e65463e203b755e583852506226db1，候选11项、主线12项Actions实际全部completed/success。原件源40188767159/job121155060294独立有界复取/cabextract与本地libarchive结果同字节；内容候选离线40189279082/job121156600160及主线40189337392均通过22项集成测试、7源全表精确重放。主线未重取原载荷。本地64相关检查、标准库wave81物理位置、独立SQL417跨样本引用/139不同块全部成立；13683682B逻辑引用/4585006B不同块只是无损分析预算，原件删除0B。15上传路径逐blob、远端tree、报告/源收据全文回读同本地，五份历史完整前缀保留。源/主线实际作业和所有派生SHA/blob见STONEAGE-CROSSVERSION-AUDIO-CONTENT-PUBLICATION-R1.json，无原声音或ZIP工件。该后验提交自身Actions另据实际观察；最高NEXT人物创建同版body表/SPR关联16和全部边界不变。
