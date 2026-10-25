@@ -1,4 +1,4 @@
-name: Qualify original TW1 palette reader source P2B via actual path-pointer slots
+name: Execute bounded original TW1 palette initialization and export private color previews P2B
 on:
   push:
     branches: [agent/original-palette-p2b-20261026]
@@ -13,7 +13,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Install static decoding tools
-        run: pip install --quiet capstone pefile
+        run: |
+          pip install --quiet capstone pefile unicorn
+          python -m unittest -v tests.test_stoneage_tw10_palette
       - name: Retrieve accepted source for NEW original palette reader qualification
         run: |
           set -euo pipefail
@@ -22,23 +24,53 @@ jobs:
           sudo apt-get install -y -qq 7zip
           mkdir -p /tmp/stoneage-p2b-private
           7z x -y -o/tmp/stoneage-p2b-private /tmp/CD_DIC.rar STONEAGE.bin >/dev/null
-      - name: Extract only original executable and one palette for bounded static proof
+      - name: Extract source-qualified palette, executable and selected animation resources
         run: |
           set -euo pipefail
           python - <<'PY'
           from pathlib import Path
           from tools.stoneage_tw10_technical_probe import find_rows,extract_row
           from tools.stoneage_tw10_palette_source_probe import authenticate
+          from tools.stoneage_original_animation_lab import ORIGINALS
+          from tools.stoneage_original_observation_lab import check_original
           root=Path('/tmp/stoneage-p2b-private');img,rows,_,_=find_rows(root/'STONEAGE.bin')
           try:
-              for name in ['StoneAge/sa_3.exe','StoneAge/data/pal/Palet_0.sap']:
+              targets=['StoneAge/sa_3.exe','StoneAge/data/pal/Palet_0.sap']+['StoneAge/data/'+n for n in ORIGINALS]
+              for name in targets:
                   selected=[r for r in rows if r['path']==name and not r['is_dir']]
                   if len(selected)!=1:raise ValueError('original path not unique')
                   extract_row(img,selected[0],root/Path(name).name)
           finally:img.close()
           authenticate((root/'sa_3.exe').read_bytes(),(root/'Palet_0.sap').read_bytes())
+          for name,pin in ORIGINALS.items():check_original(root/name,pin)
           PY
-          python -m tools.stoneage_tw10_palette_source_probe --exe /tmp/stoneage-p2b-private/sa_3.exe --palette /tmp/stoneage-p2b-private/Palet_0.sap --output /tmp/stoneage-p2b-palette-derived.json
+      - name: Compare bounded original initialization instructions with RGB reference, then export private colors
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from tools.stoneage_tw10_palette import native_report,color_preview
+          from tools.stoneage_original_animation_lab import CASES,ORIGINALS,timeline,write_private
+          root=Path('/tmp/stoneage-p2b-private')
+          report=native_report((root/'sa_3.exe').read_bytes(),(root/'Palet_0.sap').read_bytes())
+          report['color_animation_previews']=[]
+          for case in CASES:
+              t=timeline(*case)
+              html,custody=color_preview(t,{n:root/n for n in ORIGINALS},root/'Palet_0.sap')
+              write_private(root/('color-'+'-'.join(map(str,case))+'.html'),html,custody)
+              assert custody['rendered_rgb_table_sha256']==report['original_actual_palette']['rgb_sha256']
+              report['color_animation_previews'].append({'selectors':list(case),'frames':len(t['frames']),
+                  'preview_mode':custody['timeline']['preview_mode'],
+                  'bitmap_witnesses':custody['bitmap_witnesses'],
+                  'source_palette_rgb_mapping_verified':True,'actual_scene_palette_selection_proven':False,
+                  'original_client_executed':False,'assistant_viewed_or_heard_original':False})
+          data=json.dumps(report,ensure_ascii=False,indent=2)+'\n'
+          assert len(data.encode())<20000
+          Path('/tmp/stoneage-p2b-palette-derived.json').write_text(data)
+          print('P2B_NATIVE_COLOR_SOURCE='+json.dumps(report,separators=(',',':')))
+          print('BOUNDED_ORIGINAL_PALETTE_AND_PRIVATE_COLOR_EXPORT=PASS; GAME_CLIENT_AND_SCENE_SELECTION=OPEN')
+          PY
       - name: Always purge original commercial bytes
         if: always()
         run: rm -rf /tmp/CD_DIC.rar /tmp/stoneage-p2b-private

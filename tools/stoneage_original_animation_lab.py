@@ -151,7 +151,7 @@ def sample_report():
             'next': 'ORIGINAL-GAME-OBSERVATION-P2B-PALETTE-SOURCE'}
 
 
-def preview(t, paths, expected=None):
+def preview(t, paths, expected=None, *, color_table=None):
     expected = ORIGINALS if expected is None else expected
     require(set(paths) == set(ORIGINALS), 'all four original source inputs required')
     for name, path in paths.items():
@@ -181,16 +181,22 @@ def preview(t, paths, expected=None):
             require(digest(block) == b['rd_block_sha256'], 'actual original RD block mismatch')
             header, pixels = decode_rd_block(block, authoritative_block_size=b['size'])
             require((header['width_s'],header['height_s']) == (b['width'],b['height']), 'RD geometry mismatch')
-            png = gray_png(pixels,b['width'],b['height'])
+            if color_table is None:
+                png = gray_png(pixels,b['width'],b['height'])
+            else:
+                from tools.stoneage_tw10_palette import indexed_png
+                png = indexed_png(pixels,b['width'],b['height'],color_table)
             images[key] = 'data:image/png;base64,' + base64.b64encode(png).decode('ascii')
             witnesses.append({'bitmapno':b['bitmapno'], 'adrn_record_sha256':actual['source_adrn_record_sha256'],
                               'rd_block_sha256':digest(block), 'palette_index_sha256':digest(pixels),
-                              'private_grayscale_png_sha256':digest(png)})
+                              ('private_grayscale_png_sha256' if color_table is None else 'private_indexed_color_png_sha256'):digest(png)})
     custody = {'schema':'stoneage.original_animation_preview_source.p2a_v1',
                'timeline': t, 'original_files': {n:{'bytes':v[0],'sha256':v[1]} for n,v in expected.items()},
                'source_status':'FOUR_ORIGINAL_FILES_AND_SELECTED_RD_PIXELS_VERIFIED',
                'bitmap_witnesses':witnesses, 'original_assets_committed':False,
                'assistant_viewed_or_heard_original':False}
+    if color_table is not None:
+        custody['rendered_rgb_table_sha256']=digest(color_table)
     packed = json.dumps({'timeline':t,'images':images},ensure_ascii=False,separators=(',',':')).replace('<','\\u003c')
     template = TEMPLATE.read_text(encoding='utf-8')
     require(template.count('__PACK_JSON__') == 1, 'invalid preview template')
