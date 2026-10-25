@@ -8,6 +8,7 @@ import hashlib
 import json
 from pathlib import Path
 import re
+import struct
 
 EXE_SHA='cdab9ea049a98bbc96ce93eeaa8b63c688f0c0f0ad8b3183e79d75e47621441a'
 PAL_SHA='89709d906bbd9cd9f5c2b8e0bd993e2897a1c9136ada2e211109983bb3b06cbf'
@@ -39,6 +40,12 @@ def inspect(raw,palette):
     if not 1<=len(strings)<=32:raise ValueError('palette literal census outside finite scope')
     starts=sorted({i.operands[0].imm for i in instructions if i.mnemonic=='call' and i.operands and i.operands[0].type==X86_OP_IMM})
     rows={i.address:i for i in instructions}
+    pointer_slots=[]
+    for s in strings:
+        address=base+s['rva']
+        for offset in range(0,len(raw)-3,4):
+            if struct.unpack_from('<I',raw,offset)[0]==address:
+                pointer_slots.append({'slot_rva':pe.get_rva_from_offset(offset),'literal_rva':s['rva']})
     refs=[]
     for s in strings:
         address=base+s['rva']
@@ -46,8 +53,16 @@ def inspect(raw,palette):
             if any((op.type==X86_OP_IMM and op.imm==address) or
                    (op.type==X86_OP_MEM and op.mem.base==0 and op.mem.index==0 and op.mem.disp==address)
                    for op in i.operands):
-                refs.append({'literal_rva':s['rva'],'instruction_rva':i.address-base})
-    if len(refs)>24:raise ValueError('palette xref scope exceeded')
+                refs.append({'literal_rva':s['rva'],'instruction_rva':i.address-base,
+                             'kind':'LITERAL_ADDRESS_CANDIDATE_MAY_BE_BOUNDARY_CONSTANT'})
+    for slot in pointer_slots:
+        address=base+slot['slot_rva']
+        for i in instructions:
+            if any((op.type==X86_OP_IMM and op.imm==address) or
+                   (op.type==X86_OP_MEM and op.mem.disp==address) for op in i.operands):
+                refs.append({'literal_rva':slot['literal_rva'],'slot_rva':slot['slot_rva'],
+                             'instruction_rva':i.address-base,'kind':'STATIC_PATH_POINTER_SLOT_REFERENCE'})
+    if len(refs)>48:raise ValueError('palette xref scope exceeded')
     windows={}
     def window(start,end,reason):
         start=max(base,start);end=min(base+len(raw),end)
@@ -71,10 +86,14 @@ def inspect(raw,palette):
             i=rows[base+row['rva']]
             if i.mnemonic=='call' and i.operands and i.operands[0].type==X86_OP_IMM:
                 target=i.operands[0].imm
-                if base<=target<base+0x50000 and len(windows)<16:
+                if base<=target<base+0x50000 and len(windows)<20:
                     later=[s for s in starts if s>target]
                     end=min(later[0] if later else target+1024,target+1024)
                     window(target,end,'ONE_LEVEL_DIRECT_CALLEE_WINDOW_NOT_EXECUTED')
+    root_starts={base+w['start_rva'] for w in initial}
+    callers=[i for i in instructions if i.mnemonic=='call' and i.operands and
+             i.operands[0].type==X86_OP_IMM and i.operands[0].imm in root_starts]
+    for i in callers[:8]:window(i.address-96,i.address+160,'DIRECT_CALLER_CONTEXT_FOR_ROOT_WINDOW')
     imports=[]
     for dll in pe.DIRECTORY_ENTRY_IMPORT:
         for symbol in dll.imports:
@@ -85,7 +104,8 @@ def inspect(raw,palette):
             'original_palette':{'path':'StoneAge/data/pal/Palet_0.sap','bytes':len(palette),'sha256':PAL_SHA,
                 'first_672_sha256':hashlib.sha256(palette[:672]).hexdigest(),
                 'last_36_sha256':hashlib.sha256(palette[672:]).hexdigest()},
-            'image_base':base,'palette_literals':strings,'direct_literal_xrefs':refs,
+            'image_base':base,'palette_literals':strings,'static_literal_pointer_slots':pointer_slots,
+            'direct_literal_xrefs':refs,
             'windows':list(windows.values()),'selected_imports':imports,
             'original_client_executed':False,'historical_color_proven':False,
             'original_palette_bytes_published':False,'actual_scene_palette_selection_proven':False}
