@@ -10,6 +10,12 @@ on:
       - tests/test_stoneage_tw10_character_creation_r16_join.py
       - tests/test_stoneage_tw10_character_creation_r16_acceptance.py
       - research/recovered/STONEAGE-TW10-CREATION-BODY-WINDOW-R16.json
+      - research/recovered/STONEAGE-TW10-CREATION-BODY-SOURCE-CUSTODY-R16.json
+      - docs/specs/STONEAGE-TW10-CHARACTER-CREATION-BODY-SOURCE-R16.md
+      - docs/continuity/CHARACTER-CREATION-R16-MATERIAL-20261025.md
+      - docs/SOURCE-REGISTRY-CLIENT-RECOVERY-R1.md
+      - tests/test_stoneage_tw10_character_creation_r16_docs.py
+      - README.md
       - .github/workflows/accept-stoneage-tw10-character-creation-r16.yml
 permissions:
   contents: read
@@ -24,5 +30,5 @@ jobs:
           python-version: '3.12'
       - name: Replay authenticated original derived source metadata and negative cases
         run: |
-          python -m unittest tests.test_stoneage_tw10_character_creation_body_window_r16 tests.test_stoneage_tw10_character_creation_r16_join tests.test_stoneage_tw10_character_creation_r16_acceptance -v
+          python -m unittest tests.test_stoneage_tw10_character_creation_body_window_r16 tests.test_stoneage_tw10_character_creation_r16_join tests.test_stoneage_tw10_character_creation_r16_acceptance tests.test_stoneage_tw10_character_creation_r16_docs -v
           python -m tools.stoneage_tw10_character_creation_r16_acceptance
