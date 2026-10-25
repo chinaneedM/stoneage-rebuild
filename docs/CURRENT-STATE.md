@@ -18554,3 +18554,12 @@ bot完整派生commit d82113d7a9dcd53d43f2f4c3d9113d542c746f44/tree37246c14dd35d
 ### 2026-10-25 — PET-08具名源码缺口 candidate/main Actions 实际终验
 
 内容 main `a50d577f6be93178c8071970bbdc9ff71dd3c0da` / tree `affc0e1bccac7bb04a6369c28d9f89ca85a0cbae` 为非强制快进发布，候选分支 `agent/pet-master-code-boundary-r1-20261025` 同内容10项 Actions、主线同HEAD11项 Actions 已分别实际 `completed/success`（实际运行ID与名称逐项钉入 `research/recovered/STONEAGE-PET-SPECIES-SAME-BUILD-PRIMARY-MASTER-08-PUBLICATION-R1.json`）。内容差异仅5个预期文档/元数据文件；旧CURRENT原生Git blob历史全文是新版本原样前缀，没有截断覆盖。新社区源码静态 `TEMPNO→IMGNUMBER→BASEIMAGENUMBER` 路径、教程样本与老 Gavin 执行/ TW1.0 原图索引严格分源，未新增TW1.0/JSS1999物种鉴真、图片原像素或原服务器master。10+11 Actions只是内容门槛通过，不是原版运行验收；本后验收据提交自身 Actions 另据实观察。最高NEXT仍 `NPC-QUEST-SAME-BUILD-PRIMARY-EVENT-09`；CUSTODY-07暂停、Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、总体percent=null均不变。
+
+
+## 2026-10-25 — NPC-10既有独立保存包线索补正及同长异SHA边界
+
+从fresh远端main90470f1c2cc4501ceb372bda5b7e3d026d428b6a/tree36b2a75a0c774fcd371b36d74595e5cca4b06efe启动；同HEAD2项Actions实际completed/success，无开放PR，原生Git完整读取七启动文件，CURRENT2663132B/blob e83a8b8f226fcecb60342a6b96ca1c36d5335065保留全文前缀，另读NPC09追加覆层及22域索引；未依据旧聊天SHA。
+
+最高NPC-QUEST-ORIGINAL-SCRIPT-CARRIER-QUALIFICATION-10发现前轮漏接：原混合保存包早已保有npc/100/sb_kbu.arg(258B)、sb_geno.create(573B)、sb_geno.template(321B)的精确路径/SHA，static与gameplay两既有清单逐项同一，父包361255180B/SHA d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5。两清单同一次源链，不当双独立下载；本轮没重取大包或读旧脚本正文。保存包arg SHA433d17a58869147f91cacc57487795d7686b53415872f0694aba02dbc869502b与现代258B内嵌SHA961b87cebad2fd7cb7875f9433df0e301f9f64b06c46a558475fc1a0344e9eec不同，不能按同名同长当复制，更不能猜编码/剧情等价。没有官方地区/build父包认证，原服NPC/任务/奖励新增0；NPC09的原文、失败与现代2NPC/3warp订正保留。
+
+固定上游Git tree10532项完整无独立两脚本路径；有限精确名双引擎检索仅见社区目录线索，没有本轮取得的新官方原包。范围有限，不证明全网没有原件。交付STONEAGE-NPC-ORIGINAL-SCRIPT-CARRIER-QUALIFICATION-R1规格/派生JSON、离线双清单验收及8单元（含逐成员变异）。候选/main Actions必须后验记录，不预写成功。两轮NPC均证据受限，停止扩该helper，最高NEXT WAYI-OFFICIAL-SAEXE-LOGIN-RESOURCE-CONTENT-11转小型官方sa.exe PE资源中真实UI内容/缺口；须先排除既有完整覆盖，不能只重算哈希/511路径字符串。保持大包保管暂停、DD-028四档、Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停和总体percent=null。

@@ -1,0 +1,23 @@
+name: Qualify preserved NPC script carrier without official promotion
+on:
+  push:
+    paths:
+      - 'tools/stoneage_npc_carrier_qualification.py'
+      - 'tests/test_stoneage_npc_carrier_qualification.py'
+      - 'research/recovered/STONEAGE-NPC-ORIGINAL-SCRIPT-CARRIER-QUALIFICATION-R1.json'
+      - 'docs/specs/STONEAGE-NPC-ORIGINAL-SCRIPT-CARRIER-QUALIFICATION-R1.md'
+      - '.github/workflows/verify-stoneage-npc-script-carrier.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  manifest-qualification:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest tests.test_stoneage_npc_carrier_qualification -v
+      - run: python -m tools.stoneage_npc_carrier_qualification

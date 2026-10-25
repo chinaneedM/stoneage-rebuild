@@ -1,0 +1,65 @@
+{
+  "evidence_role": "EXISTING_PRESERVED_MIXED_BUNDLE_MANIFEST_JOIN",
+  "members": [
+    {
+      "archive_member_path": "石器2.5客戶端+服務端+登入器/SA2.5服務端/gmsv/data/npc/100/sb_kbu.arg",
+      "bytes": 258,
+      "path": "npc/100/sb_kbu.arg",
+      "sha256": "433d17a58869147f91cacc57487795d7686b53415872f0694aba02dbc869502b",
+      "two_existing_manifests_agree": true
+    },
+    {
+      "archive_member_path": "石器2.5客戶端+服務端+登入器/SA2.5服務端/gmsv/data/npc/100/sb_geno.create",
+      "bytes": 573,
+      "path": "npc/100/sb_geno.create",
+      "sha256": "5aec44349ae3a6071b0882fd40d693f3bf1e7bdaf9ba489ac3ffbc89e26331f1",
+      "two_existing_manifests_agree": true
+    },
+    {
+      "archive_member_path": "石器2.5客戶端+服務端+登入器/SA2.5服務端/gmsv/data/npc/100/sb_geno.template",
+      "bytes": 321,
+      "path": "npc/100/sb_geno.template",
+      "sha256": "76a826f1022276dfa9590e5ad51c6a96e9c88146a2fc39790c2cc60cbed60e2d",
+      "two_existing_manifests_agree": true
+    }
+  ],
+  "modern_arg_comparison": {
+    "bytes_equal": true,
+    "modern_sha256": "961b87cebad2fd7cb7875f9433df0e301f9f64b06c46a558475fc1a0344e9eec",
+    "semantic_equivalence": "UNKNOWN_NO_PRESERVED_BODY_READ_THIS_TURN",
+    "sha256_equal": false
+  },
+  "new_official_npcs_or_quests": 0,
+  "next": "WAYI-OFFICIAL-SAEXE-LOGIN-RESOURCE-CONTENT-11",
+  "origin_class": "ORIGIN_UNRESOLVED",
+  "original_server_execution": false,
+  "overall_restoration_percentage": null,
+  "parent_archive": {
+    "bytes": 361255180,
+    "classification": "MIXED_COMMUNITY_BRIDGE_NOT_AUTHENTICATED_OFFICIAL",
+    "sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+    "source_page": "https://www.lab.welovesa.com/viewthread.php?extra=&page=1&tid=219"
+  },
+  "preserved_script_bodies_read_this_turn": false,
+  "raw_archive_reacquired_this_turn": false,
+  "same_official_build_certified": false,
+  "schema": "stoneage.npc_script_carrier_qualification.r1",
+  "source_pins": {
+    "research/recovered/STONEAGE-25-GAMEPLAY-DATA-INVENTORY-R1.txt": {
+      "bytes": 453664,
+      "git_blob": "47157f638cce7023727035981da11f1faecc9c78",
+      "sha256": "83f81dec76ce22ee91d965d66080cf2085bfcd02e2598e139183b2e8ff1f63e5"
+    },
+    "research/recovered/STONEAGE-25-PRESERVED-BUNDLE-STATIC-INVENTORY-R1.txt": {
+      "bytes": 3283845,
+      "git_blob": "78e8260e89928df76513799511d45c14a9e24dfc",
+      "sha256": "48feb98aa977c88dcc236b530e0428ab665032ec923787eac0c293d5960159b0"
+    },
+    "research/recovered/STONEAGE-NPC-GENKOU-DERIVED-ARG-R1.json": {
+      "bytes": 1486,
+      "git_blob": "c48c8b8055abd91a01541223e1be10920210c742",
+      "sha256": "6b25033c5a0b4f4b93f4f65abdf6d1c829a7da1e1bf158fa8adefd875dc4021a"
+    }
+  },
+  "task": "NPC-QUEST-ORIGINAL-SCRIPT-CARRIER-QUALIFICATION-10"
+}
