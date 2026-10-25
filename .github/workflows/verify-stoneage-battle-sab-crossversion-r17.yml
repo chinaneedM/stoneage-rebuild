@@ -1,0 +1,23 @@
+name: Verify StoneAge R17 original battle SAB crossversion occurrence conservation
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - research/recovered/STONEAGE-BATTLE-SAB-CROSSVERSION-R17.json
+      - research/recovered/STONEAGE-TW10-CLIENT-INVENTORY-R1.txt
+      - research/recovered/STONEAGE-25-GAMEPLAY-DATA-INVENTORY-R1.txt
+      - tools/stoneage_battle_sab_crossversion_r17.py
+      - tests/test_stoneage_battle_sab_crossversion_r17.py
+      - .github/workflows/verify-stoneage-battle-sab-crossversion-r17.yml
+permissions:
+  contents: read
+jobs:
+  exact-source-report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest tests.test_stoneage_battle_sab_crossversion_r17 -v
+      - run: python -m tools.stoneage_battle_sab_crossversion_r17
