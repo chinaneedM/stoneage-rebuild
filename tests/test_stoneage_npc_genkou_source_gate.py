@@ -21,12 +21,14 @@ def fixture():
                       "templateLine":3,"matchConfidence":"exact"},
             "templateName":"sb_kbu","functionset":"NPCEnemy",
             "enemy":"sb_kbu|file:100/sb_kbu.arg","arguments":[dict(arg)]}}}]})
-    rows.extend({"id":i,"name":"placeholder"} for i in (1,2,3))
     return rows,dig
 
 def dump(rows):
     return ("format: sa-map-entity-v2\nmap_id: 11208\nnpcs:\n"+
-            "".join("  - "+json.dumps(r,ensure_ascii=False,separators=(",",":"))+"\n" for r in rows)).encode()
+            "".join("  - "+json.dumps(r,ensure_ascii=False,separators=(",",":"))+"\n" for r in rows)+
+            "warps:\n"+
+            "".join("  - "+json.dumps({"id":i,"trigger":"step"},ensure_ascii=False,separators=(",",":"))+"\n" for i in (1,2,3))+
+            "interactives: []\n").encode()
 
 class NegativeCases(unittest.TestCase):
     def setUp(self):self.rows,self.sha=fixture()
