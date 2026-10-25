@@ -1,0 +1,28 @@
+name: Accept primary-source TW1.0 character creation numeric join R16
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - tools/stoneage_tw10_character_creation_body_window_r16.py
+      - tools/stoneage_tw10_character_creation_r16_join.py
+      - tools/stoneage_tw10_character_creation_r16_acceptance.py
+      - tests/test_stoneage_tw10_character_creation_body_window_r16.py
+      - tests/test_stoneage_tw10_character_creation_r16_join.py
+      - tests/test_stoneage_tw10_character_creation_r16_acceptance.py
+      - research/recovered/STONEAGE-TW10-CREATION-BODY-WINDOW-R16.json
+      - .github/workflows/accept-stoneage-tw10-character-creation-r16.yml
+permissions:
+  contents: read
+jobs:
+  acceptance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Replay authenticated original derived source metadata and negative cases
+        run: |
+          python -m unittest tests.test_stoneage_tw10_character_creation_body_window_r16 tests.test_stoneage_tw10_character_creation_r16_join tests.test_stoneage_tw10_character_creation_r16_acceptance -v
+          python -m tools.stoneage_tw10_character_creation_r16_acceptance
