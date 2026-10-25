@@ -1,0 +1,82 @@
+name: Source TW1 SPR animation frames transiently without publishing original images P2A
+on:
+  push:
+    branches: [agent/original-animation-p2a-20261026]
+    paths:
+      - '.github/workflows/probe-stoneage-original-animation-p2a.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original-frame-source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - name: Test synthetic and pinned metadata before fetching original
+        run: python -m unittest -v tests.test_stoneage_original_animation_lab
+      - name: Retrieve accepted original source for NEW animation pixel export
+        run: |
+          set -euo pipefail
+          python -m tools.stoneage_tw10_archive_parallel_download --deadline 1500 --workers 16 --chunk 8388608 --output /tmp/CD_DIC.rar
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq 7zip
+          mkdir -p /tmp/stoneage-p2a-private
+          7z x -y -o/tmp/stoneage-p2a-private /tmp/CD_DIC.rar STONEAGE.bin >/dev/null
+      - name: Extract four source-pinned original files for private offline preview
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          from tools.stoneage_tw10_technical_probe import find_rows,extract_row
+          from tools.stoneage_original_animation_lab import ORIGINALS
+          from tools.stoneage_original_observation_lab import check_original
+          root=Path('/tmp/stoneage-p2a-private')
+          img,rows,_,_=find_rows(root/'STONEAGE.bin')
+          try:
+              for name,pin in ORIGINALS.items():
+                  found=[r for r in rows if r['path']=='StoneAge/data/'+name and not r['is_dir']]
+                  if len(found)!=1:raise ValueError('original member not unique: '+name)
+                  extract_row(img,found[0],root/name)
+                  check_original(root/name,pin)
+          finally:img.close()
+          print('FOUR_AUTHENTICATED_TW1_FILES=PASS')
+          PY
+      - name: Actually decode three original animation sequences privately
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from tools.stoneage_original_animation_lab import CASES,ORIGINALS,timeline,preview,write_private,digest
+          root=Path('/tmp/stoneage-p2a-private')
+          paths={n:root/n for n in ORIGINALS}
+          results=[]
+          for case in CASES:
+              t=timeline(*case)
+              html,custody=preview(t,paths)
+              write_private(root/('animation-'+'-'.join(map(str,case))+'.html'),html,custody)
+              results.append({'selectors':list(case),'frames':len(t['frames']),
+                              'cycle_ticks':t['cycle_ticks'],'group_sha256':t['group']['segment_sha256'],
+                              'bitmap_witnesses':custody['bitmap_witnesses'],
+                              'original_client_executed':False,'original_colors_reproduced':False,
+                              'assistant_viewed_or_heard_original':False})
+          report={'schema':'stoneage.original_animation_actual_source.p2a_v1',
+                  'original_files':{n:{'bytes':v[0],'sha256':v[1]} for n,v in ORIGINALS.items()},
+                  'cases':results,'raw_assets_uploaded':False}
+          out=Path('/tmp/stoneage-p2a-derived-only.json')
+          out.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
+          assert out.stat().st_size<16000
+          print('P2A_ORIGINAL_ANIMATION_SOURCE='+json.dumps(report,separators=(',',':')))
+          print('ACTUAL_PRIVATE_ANIMATION_EXPORT=PASS; AUTHENTIC_COLOR_AND_GAME_CLIENT_BOOT=OPEN')
+          PY
+      - name: Always remove original carrier, all original files and embedded private images
+        if: always()
+        run: rm -rf /tmp/CD_DIC.rar /tmp/stoneage-p2a-private
+      - name: Retain ONLY derived hashes and numeric custody
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: stoneage-original-animation-p2a-derived-only
+          path: /tmp/stoneage-p2a-derived-only.json
+          retention-days: 7

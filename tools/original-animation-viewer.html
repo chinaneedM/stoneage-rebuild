@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src data:; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>石器时代 · 私人原帧观察</title>
+<style>
+body{font:16px/1.6 system-ui,sans-serif;background:#171c20;color:#edf0f1;max-width:960px;margin:24px auto;padding:0 18px}
+section{background:#222b30;padding:18px;border-radius:10px;margin:16px 0}h1{font-size:24px}
+canvas{max-width:100%;image-rendering:pixelated;background:#354047;border:1px solid #64767f}
+button,input{font:inherit;margin:5px;padding:5px}button{cursor:pointer}pre{white-space:pre-wrap;font-size:14px}
+.note{color:#ffcd89}label{display:block}small{color:#c1c8cc}
+</style></head><body>
+<h1>原 SPR 帧观察 · 灰度索引</h1>
+<p class="note">灰度不是原色。本页按原帧序与数值偏移预览；方向、动作编号没有命名，不能据此确认人物或宠物身份。</p>
+<section><canvas id="screen" width="640" height="480" aria-label="原始索引帧预览"></canvas>
+<p id="state" role="status">正在读取本地内嵌帧…</p>
+<button id="play" disabled>播放</button><button id="prev" disabled>上一帧</button><button id="next" disabled>下一帧</button>
+<label>帧位置 <input id="frame" type="range" min="0" max="0" value="0" disabled></label>
+<label>人为设定的预览节拍/秒 <input id="rate" type="number" min="1" max="120" step="1" value="30"></label>
+<small>每帧保持原倒计时对应的节拍数。30是观察工具默认值，原游戏每秒更新次数未知。声音字段只显示，不播放或推定事件。</small>
+</section><section><h2>来源与当前帧</h2><pre id="detail"></pre>
+<p>坐标原点显示为十字；使用帧偏移加 ADRN 偏移。行方向与透明色尚未验证，图块按存储行序、完整不透明灰度矩形展示。</p></section>
+<small>本页完全离线，不连接原服务器，不运行历史游戏程序。原图仅在私人本机保存。</small>
+<script id="pack" type="application/json">__PACK_JSON__</script>
+<script>
+(() => {
+  const el=id=>document.getElementById(id);
+  let pack;
+  try{pack=JSON.parse(el('pack').textContent);}catch(e){el('state').textContent='这是源模板，请先使用 Python 工具生成私人预览。';return;}
+  const t=pack.timeline, frames=t.frames, cache=new Map(), canvas=el('screen'), ctx=canvas.getContext('2d');
+  let pos=0, playing=false, last=null, acc=0;
+  const minX=Math.min(0,...frames.map(f=>f.composed_x)), minY=Math.min(0,...frames.map(f=>f.composed_y));
+  const maxX=Math.max(0,...frames.map(f=>f.composed_x+f.bitmap.width)), maxY=Math.max(0,...frames.map(f=>f.composed_y+f.bitmap.height));
+  const scale=Math.min(3,600/(maxX-minX+32),420/(maxY-minY+32));
+  const ox=20-minX*scale, oy=20-minY*scale;
+  function draw(){
+    const f=frames[pos];ctx.clearRect(0,0,640,480);ctx.imageSmoothingEnabled=false;
+    ctx.strokeStyle='#9baab3';ctx.beginPath();ctx.moveTo(ox-8,oy);ctx.lineTo(ox+8,oy);ctx.moveTo(ox,oy-8);ctx.lineTo(ox,oy+8);ctx.stroke();
+    const img=cache.get(String(f.bmp_no));
+    ctx.drawImage(img,ox+f.composed_x*scale,oy+f.composed_y*scale,f.bitmap.width*scale,f.bitmap.height*scale);
+    el('frame').value=pos;
+    el('state').textContent=`SPR ${t.requested.spr_no} · 方向 ${t.animation.direction} · 动作号 ${t.animation.anim_no} · 帧 ${pos+1}/${frames.length}`;
+    el('detail').textContent=JSON.stringify({requested:t.requested,fallback_to_first:t.fallback_to_first,
+      frame_index:f.frame_index,bitmapno:f.bmp_no,spr_file_offset:f.offset,
+      pos_x:f.pos_x,pos_y:f.pos_y,adrn_xoff:f.bitmap.xoff,adrn_yoff:f.bitmap.yoff,
+      hold_ticks:f.hold_ticks,sound_no:f.sound_no,rd_block_sha256:f.bitmap.rd_block_sha256,
+      source_tick_rate_hz:null,original_palette_verified:false,original_client_executed:false},null,2);
+  }
+  function pause(){playing=false;acc=0;last=null;el('play').textContent='播放';}
+  function manual(n){pause();pos=(n+frames.length)%frames.length;draw();}
+  el('play').onclick=()=>{playing=!playing;last=null;acc=0;el('play').textContent=playing?'暂停':'播放';};
+  el('prev').onclick=()=>manual(pos-1);el('next').onclick=()=>manual(pos+1);
+  el('frame').oninput=e=>manual(Number(e.target.value));
+  document.addEventListener('visibilitychange',()=>{if(document.hidden)pause();});
+  function tick(now){
+    if(playing){
+      const rate=Math.max(1,Math.min(120,Number(el('rate').value)||30));
+      if(last!==null)acc+=Math.min(now-last,250)*rate/1000;
+      last=now;
+      let changed=false;
+      while(acc>=frames[pos].hold_ticks){acc-=frames[pos].hold_ticks;pos=(pos+1)%frames.length;changed=true;}
+      if(changed)draw();
+    }
+    requestAnimationFrame(tick);
+  }
+  Promise.all(Object.entries(pack.images).map(([key,url])=>new Promise((resolve,reject)=>{
+    const image=new Image();image.onload=()=>{cache.set(key,image);resolve();};image.onerror=reject;image.src=url;
+  }))).then(()=>{
+    el('frame').max=frames.length-1;
+    ['play','prev','next','frame'].forEach(id=>el(id).disabled=false);draw();requestAnimationFrame(tick);
+  }).catch(()=>{pause();el('state').textContent='帧图解码失败，未开始播放。';});
+})();
+</script></body></html>

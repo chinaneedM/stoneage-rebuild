@@ -1,0 +1,25 @@
+name: Verify original TW1 animation timelines and private preview contracts P2A
+on:
+  push:
+    branches: [main, agent/original-animation-p2a-20261026]
+    paths:
+      - 'tools/stoneage_original_animation_lab.py'
+      - 'tools/original-animation-viewer.html'
+      - 'tests/test_stoneage_original_animation_lab.py'
+      - 'research/recovered/STONEAGE-TW10-ANIMATION-OBSERVATION-P2A-R1.json'
+      - '.github/workflows/verify-stoneage-original-animation-p2a.yml'
+      - 'docs/continuity/STONEAGE-ORIGINAL-ANIMATION-P2A-20261026.md'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  timeline-and-preview:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Replay original metadata and synthetic private exports
+        run: |
+          set -euo pipefail
+          python -m unittest -v tests.test_stoneage_original_animation_lab tests.test_stoneage_original_observation_lab tests.test_stoneage_rd_codec
+          python -m tools.stoneage_original_animation_lab --check-report
