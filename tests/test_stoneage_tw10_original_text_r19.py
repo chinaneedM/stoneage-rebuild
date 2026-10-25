@@ -1,6 +1,6 @@
 """Synthetic R19 source boundary tests: no game binary needed in the repository."""
 import unittest
-from tools.stoneage_tw10_original_text_r19 import bounded_candidates, analyze_executables, EXPECTED
+from tools.stoneage_tw10_original_text_r19 import bounded_candidates, analyze_executables, EXPECTED, pe_nonexec_data_sections, strict_short_han
 
 class R19Contract(unittest.TestCase):
     def test_big5_nul_label_is_candidate_not_quest(self):
@@ -30,6 +30,14 @@ class R19Contract(unittest.TestCase):
             analyze_executables({"StoneAge/sa_3.exe": b"fake"})
         with self.assertRaises(ValueError):
             analyze_executables({key: b"fake" for key in EXPECTED})
+
+    def test_pe_scope_and_junk_filter(self):
+        with self.assertRaises(ValueError):
+            pe_nonexec_data_sections(b"not an authentic PE")
+        self.assertFalse(strict_short_han("寵物!"))
+        self.assertFalse(strict_short_han("A寵物"))
+        self.assertTrue(strict_short_han("寵物"))
+        self.assertEqual(bounded_candidates("寵物!".encode("cp950")+b"\x00")["candidate_decode_occurrences"],0)
 
     def test_sample_bound_rejected(self):
         for bound in [0, 25]:

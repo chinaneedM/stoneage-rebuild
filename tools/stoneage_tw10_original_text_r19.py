@@ -7,6 +7,7 @@ import argparse
 import hashlib
 import json
 import re
+import struct
 import tempfile
 from pathlib import Path
 
@@ -24,7 +25,36 @@ def digest(b: bytes) -> str:
 def han_count(s: str) -> int:
     return sum(0x3400 <= ord(c) <= 0x9fff for c in s)
 
-def bounded_candidates(data: bytes, max_samples: int = MAX_SAMPLES):
+def pe_nonexec_data_sections(exe: bytes):
+    """Only authenticated, file-backed, non-executable .rdata/.data PE sections.
+    This deliberately omits code, icons/images, and unvalidated .rsrc payloads.
+    """
+    if len(exe) < 256 or exe[:2] != b"MZ":
+        raise ValueError("not a PE DOS image")
+    off = struct.unpack_from("<I", exe, 0x3c)[0]
+    if off + 24 > len(exe) or exe[off:off + 4] != b"PE\x00\x00":
+        raise ValueError("no PE signature")
+    n = struct.unpack_from("<H", exe, off + 6)[0]
+    opt_len = struct.unpack_from("<H", exe, off + 20)[0]
+    base = off + 24 + opt_len
+    if not 1 <= n <= 32 or base + n * 40 > len(exe):
+        raise ValueError("malformed bounded PE section table")
+    sections = []
+    for i in range(n):
+        ptr = base + 40 * i
+        name = exe[ptr:ptr + 8].split(b"\x00", 1)[0].decode("ascii", "replace")
+        length, file_off, characteristics = struct.unpack_from("<II", exe, ptr + 16)[0], struct.unpack_from("<I", exe, ptr + 20)[0], struct.unpack_from("<I", exe, ptr + 36)[0]
+        if name not in (".rdata", ".data") or characteristics & 0x20000000:
+            continue
+        if length <= 0 or file_off < 0 or file_off + length > len(exe):
+            raise ValueError("invalid source-backed nonexec section")
+        sections.append((name, file_off, length))
+    return sections
+
+def strict_short_han(text: str) -> bool:
+    return 2 <= len(text) <= 12 and all(0x3400 <= ord(c) <= 0x9fff for c in text)
+
+def bounded_candidates(data: bytes, max_samples: int = MAX_SAMPLES, file_offset: int = 0, section_name: str = ""):
     if max_samples < 1 or max_samples > MAX_SAMPLES:
         raise ValueError("invalid bounded limit")
     rows = []
@@ -42,11 +72,7 @@ def bounded_candidates(data: bytes, max_samples: int = MAX_SAMPLES):
                 val = raw.decode(enc, "strict")
             except (UnicodeError, LookupError):
                 continue
-            if not (2 <= len(val) <= 32 and han_count(val) >= 2):
-                continue
-            if any((not c.isprintable()) for c in val):
-                continue
-            if han_count(val) / len(val) < 0.36:
+            if not strict_short_han(val):
                 continue
             key = (m.start(), enc)
             if key in seen:
@@ -56,11 +82,12 @@ def bounded_candidates(data: bytes, max_samples: int = MAX_SAMPLES):
             per_encoding[enc] += 1
             if len(rows) < max_samples:
                 rows.append({
-                    "source_file_offset": m.start(),
+                    "source_file_offset": file_offset + m.start(),
+                    "source_pe_data_section": section_name,
                     "byte_count": len(raw),
                     "source_bytes_sha256": digest(raw),
                     "source_candidate_codec": enc,
-                    "decoded_short_label": val if len(val) <= 12 else None,
+                    "decoded_short_label": val,
                     "source_nul_terminated": True,
                     "entity_id": None, "bitmap_id": None, "spr_group_id": None,
                     "npc_quest_pet_identity_qualified": False,
@@ -75,6 +102,31 @@ def bounded_candidates(data: bytes, max_samples: int = MAX_SAMPLES):
         "candidates": rows,
     }
 
+def scan_verified_pe_data(raw: bytes):
+    sections = pe_nonexec_data_sections(raw)
+    summary = {
+        "pe_section_scopes": [],
+        "nul_terminated_ascii_or_highbyte_windows": 0,
+        "candidate_decode_occurrences": 0,
+        "candidate_by_codec": {x: 0 for x in ENCODINGS},
+        "sampling_limit": MAX_SAMPLES,
+        "sampled_candidate_count": 0,
+        "sampling_truncated": False,
+        "candidates": [],
+    }
+    for name, offset, size in sections:
+        d = bounded_candidates(raw[offset:offset + size], max_samples=MAX_SAMPLES, file_offset=offset, section_name=name)
+        summary["pe_section_scopes"].append({"name":name,"file_offset":offset,"source_bytes":size,"candidate_count":d["candidate_decode_occurrences"]})
+        summary["nul_terminated_ascii_or_highbyte_windows"] += d["nul_terminated_ascii_or_highbyte_windows"]
+        summary["candidate_decode_occurrences"] += d["candidate_decode_occurrences"]
+        for enc in ENCODINGS:
+            summary["candidate_by_codec"][enc] += d["candidate_by_codec"][enc]
+        free = MAX_SAMPLES - len(summary["candidates"])
+        summary["candidates"].extend(d["candidates"][:free])
+    summary["sampled_candidate_count"] = len(summary["candidates"])
+    summary["sampling_truncated"] = summary["candidate_decode_occurrences"] > MAX_SAMPLES
+    return summary
+
 def analyze_executables(named: dict[str, bytes]):
     if set(named) != set(EXPECTED):
         raise ValueError("both authenticated original executable paths required")
@@ -83,12 +135,12 @@ def analyze_executables(named: dict[str, bytes]):
         raw = named[path]
         if len(raw) != length or digest(raw) != sha:
             raise ValueError("original executable identity mismatch for " + path)
-        out[path] = {"original_file_length": length, "original_sha256": sha, **bounded_candidates(raw)}
+        out[path] = {"original_file_length": length, "original_sha256": sha, **scan_verified_pe_data(raw)}
     return {
         "schema": "stoneage.tw10.original_executable_text_candidate.r19",
         "task": "EARLY-OFFICIAL-NAMED-CONTENT-SOURCE-19",
         "source_region_version": "TW_WAEI_JSS_RETAIL_1_0_REDUMP_104630",
-        "method": "NUL_TERMINATED_CP950_GB18030_CP932_HEURISTIC_NOT_GAME_CONTENT_PROOF",
+        "method": "NONEXEC_PE_DATA_NUL_TERMINATED_STRICT_HAN_CP950_GB18030_CP932_HEURISTIC",
         "executable_observations": out,
         "original_executable_executed": False,
         "source_bytes_or_full_strings_embedded": False,
