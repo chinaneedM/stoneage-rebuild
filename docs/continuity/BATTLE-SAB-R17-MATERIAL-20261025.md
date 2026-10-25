@@ -11,3 +11,11 @@
 ## R17 候选验收纠错历史
 
 首次含文档门禁的候选 Actions `40198986497/job121185894377` 为 completed/failure：13个测试仅一项失败，原因是规格没有出现守卫要求的精确字面“同构建”，尽管原文已经说明2.5混合保存包的发行build无法鉴真。修订规格后，候选 Actions `40199112279/job121186270112` 已实际 completed/success；原始两份索引、438条出现、436个哈希、218项差异、2001公告转载证据等级均未改变。首轮失败保留可追溯，不追写成success。此次连续性补记提交本身的Actions需后验核实。
+
+## R17候选／主线实际成功与失败后验（2026-10-25）
+
+已从远端**实际检查**候选源报告、纠错记录及主线Actions，不是预填的成功声明。候选源索引校验 `40198686693` completed/success；首次加入文档门槛的 `40198986497/job121185894377` completed/failure（13项1项因没有字面“同构建”，来源档案无误）；订正后候选 `40199112279/job121186270112` completed/success；最终候选 `40199182374/job121186488104` completed/success，旧失败记录永久保留。
+
+内容通过非强制快进从main `7691014ba336445ea5864d9e455e77d6447736c4` 发布至 `2d9565f96f101de2d3738cc473c2cb12cacaeeca` / tree `e52cc739f5b6aab29ec6428d5546bf8de01a7cd0`，9路径diff，Git原生全树5769条/truncated=false。同HEAD主线 R17 `40199244812/job121186678119`、旧R16 `40199244818/job121186677927`、StageA `40199244821/job121186677939` 三项均 completed/success。派生报告Git blob `215654d2a35bbd6add2a0316075c882fb7d83b69` /93155B，本包不依赖短期ZIP工件，Git直接保管438项已有来源归档的SHA/路径而非版权原载荷。原 `docs/CURRENT-STATE.md` blob仍 `031c76a5a8e431f646853909bb2f2e11e6328cd2` / 2680510B，路线 `c11eff237a8aaa1cc34488a6c3c7fcdd596f9ce2` 完整保存。主来源和所有旧失败原记录未删。
+
+后验收据 `research/recovered/STONEAGE-BATTLE-SAB-R17-PUBLICATION.json` 固定这些**实际已发生**的来源与运行记录；本次后验提交自身Action结果继续以后续真实查询为准。下一项仍是获得确属同一早期地区发行版的正式NPC／宠物／本体任务主表，或认证2001编号218/219补丁原下载字节及文件名同一性；无源不造身份或运行历史。DD-028任务四档、Stage A7PARTIAL/2OPEN、Stage B/wiki GATED、R79暂停、总体百分比null不变。

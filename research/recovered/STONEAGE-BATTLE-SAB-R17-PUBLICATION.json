@@ -1,0 +1,98 @@
+{
+  "schema": "stoneage.battle_sab.crossversion.r17.publication.v1",
+  "date": "2026-10-25",
+  "baseline_main": "7691014ba336445ea5864d9e455e77d6447736c4",
+  "published_content_main": "2d9565f96f101de2d3738cc473c2cb12cacaeeca",
+  "content_main_tree": "e52cc739f5b6aab29ec6428d5546bf8de01a7cd0",
+  "non_force_fast_forward": true,
+  "changed_paths": 9,
+  "remote_tree_entries": 5769,
+  "tree_truncated": false,
+  "unmodified_history": {
+    "current_blob": "031c76a5a8e431f646853909bb2f2e11e6328cd2",
+    "current_bytes": 2680510,
+    "roadmap_blob": "c11eff237a8aaa1cc34488a6c3c7fcdd596f9ce2"
+  },
+  "permanent_derived_report": {
+    "path": "research/recovered/STONEAGE-BATTLE-SAB-CROSSVERSION-R17.json",
+    "git_blob": "215654d2a35bbd6add2a0316075c882fb7d83b69",
+    "bytes": 93155,
+    "original_tw10_inventory_git_blob": "564233902b10c60760d4f93b1ea65d4dd1469206",
+    "mixed25_inventory_git_blob": "47157f638cce7023727035981da11f1faecc9c78",
+    "source_original_payload_committed": false
+  },
+  "results": {
+    "tw10_sab": 218,
+    "mixed25_sab": 220,
+    "shared_numeric_paths": 218,
+    "same_sha_on_shared_paths": 0,
+    "mixed_only_indices": [
+      218,
+      219
+    ],
+    "logical_occurrences": 438,
+    "unique_contents": 436,
+    "intra_source_duplicate_index_pair": [
+      145,
+      146
+    ],
+    "actual_original_bytes_deleted": 0,
+    "verified_original_pets": 0,
+    "verified_original_npc_scripts": 0,
+    "verified_original_core_quests": 0,
+    "original_2001_download_files_identified": false,
+    "clean_mixed25_official_build_verified": false
+  },
+  "observed_runs": [
+    {
+      "id": 40198686693,
+      "result": "completed/success",
+      "scope": "initial_full_source_candidate"
+    },
+    {
+      "id": 40198986497,
+      "job": 121185894377,
+      "result": "completed/failure",
+      "scope": "first_doc_assertion_lacks_explicit_same_build_string"
+    },
+    {
+      "id": 40199112279,
+      "job": 121186270112,
+      "result": "completed/success",
+      "scope": "corrected_candidate"
+    },
+    {
+      "id": 40199182374,
+      "job": 121186488104,
+      "result": "completed/success",
+      "scope": "final_candidate"
+    },
+    {
+      "id": 40199244812,
+      "job": 121186678119,
+      "result": "completed/success",
+      "scope": "main_exact_source_index"
+    },
+    {
+      "id": 40199244818,
+      "job": 121186677927,
+      "result": "completed/success",
+      "scope": "main_R16_compat"
+    },
+    {
+      "id": 40199244821,
+      "job": 121186677939,
+      "result": "completed/success",
+      "scope": "main_StageA_boundary"
+    }
+  ],
+  "next": "EARLY-OFFICIAL-SERVER-MASTER-DATA-SOURCE-18_OR_EXACT_DOWNLOAD_PAYLOAD_CARRIER",
+  "project": {
+    "stage_a": "7 PARTIAL / 2 OPEN",
+    "stage_b": "GATED",
+    "wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "recovery_percent": null
+  },
+  "receipt_commit_self_validation": "NOT_YET_OBSERVED"
+}
