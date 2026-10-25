@@ -524,3 +524,8 @@ The 2.66 MB historical `docs/CURRENT-STATE.md` is still preserved byte-for-byte.
 
 
 音频15内容主线30490180已获独立有界源验收、候选11/main12项实际成功；[永久发布收据](research/recovered/STONEAGE-CROSSVERSION-AUDIO-CONTENT-PUBLICATION-R1.json)保留全部源/离线作业及派生blob。下一包人物创建同版body表与SPR材料16；不把音频块数/测试数当整体复原率。
+
+
+### 2026-10-25 — TW1.0原版人物创建数值材料16
+
+本轮最高 `ORIGINAL-CHARACTER-CREATION-CONTENT-16` 的一项原始数值—同版SPR组号联接已通过来源及独立报告验收：原始程序 `sa_3.exe` 静态indexed body来源连续十二值 `100000..100220`（步长20），均在TW1.0原464组SPR表；紧随其后值198。**只有候选源表相交，没有原生表长/实际选角人数/人物姓名/原画面认证。** 详情见 [R16材质规格](docs/specs/STONEAGE-TW10-CHARACTER-CREATION-BODY-SOURCE-R16.md)、[永久原始派生数值](research/recovered/STONEAGE-TW10-CREATION-BODY-WINDOW-R16.json)、[日期连续性补记](docs/continuity/CHARACTER-CREATION-R16-MATERIAL-20261025.md)。未修改原巨大CURRENT正文，继续依其最新真实状态和路线优先级。下一有限目标返回22域同版官方具名内容原件轮换，Stage A7 PARTIAL+2 OPEN，B/wiki GATED，R79暂停，百分比未知。
