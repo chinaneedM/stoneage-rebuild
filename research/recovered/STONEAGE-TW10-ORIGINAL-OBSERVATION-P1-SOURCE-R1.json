@@ -1,0 +1,120 @@
+{
+  "schema": "stoneage.original_observation_lab.tw10_actual_source_r1",
+  "date": "2026-10-25",
+  "work_package": "ORIGINAL-GAME-OBSERVATION-LAB-P1",
+  "source_qualification": "VERIFIED_ACCEPTED_TW10_RETAIL_ORIGINAL_BYTES",
+  "source_job": {
+    "run_id": 40206034214,
+    "job_id": 121207050316,
+    "head_sha": "898dfea3cd33ca3f99afc94f4c23f29b80daf203",
+    "branch": "agent/original-observation-lab-p0-20261025",
+    "conclusion": "success",
+    "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40206034214"
+  },
+  "original_image_preview_records": [
+    {
+      "decoded_palette_index_sha256": "701a3bb13ec61eadc2531e770d90b1b8744abb682327396eb98e6b351ac0769e",
+      "file_id": {
+        "adrn_path": "StoneAge/data/adrn_1.bin",
+        "real_path": "StoneAge/data/real_1.bin"
+      },
+      "historical_gameplay_screenshot": false,
+      "npc_name": null,
+      "original_client_executed": false,
+      "original_colors_reproduced": false,
+      "original_palette_verified": false,
+      "original_rd_block_sha256": "f4880a27d5aa6fb617a308703ea81bd6db3b67fa7a77436183e0b24667ce1911",
+      "pet_species": null,
+      "preview_mode": "SOURCE_PALETTE_INDEX_AS_GRAYSCALE_NOT_HISTORICAL_COLOR",
+      "preview_png_sha256": "14378bfb36388dd4c96b173966126e9f7dcb285b5d82199fcbbd5458e42a763c",
+      "quest_origin": "ORIGIN_UNRESOLVED",
+      "rd_flag": 1,
+      "record": {
+        "adder": 24936233,
+        "bitmapno": 5846,
+        "height": 72,
+        "index": 5846,
+        "size": 2241,
+        "source_adrn_record_sha256": "23f8e9fc9af0bf5cf54ca460d682c41ff295156f473ccb23247ce61428db3e34",
+        "width": 52,
+        "xoff": -37,
+        "yoff": -71
+      },
+      "sample": "TW_WAEI_JSS_1_0_ACCEPTED_RETAIL_REDUMP_104630",
+      "schema": "stoneage.original_observation_lab.bitmap_v1",
+      "server_entity_binding_verified": false,
+      "source_claim": "ORIGINAL_TW10_RD_BYTES_DECODED_TO_PALETTE_INDICES_ONLY",
+      "source_sha256": {
+        "adrn_1.bin": "47254c0ff904d363fb5c3c5297edf553c8eaf24cd933f346d8ce7aabed4155c8",
+        "real_1.bin": "408e6ee05c83354349691937da2ad8f7488ac10f65f07e6681b7d92cb1c9ed13"
+      }
+    },
+    {
+      "decoded_palette_index_sha256": "e4efb9a660aa96ba266a6d6229e156511d6287b476e8b84fd267fedd537c0bc1",
+      "file_id": {
+        "adrn_path": "StoneAge/data/adrn_1.bin",
+        "real_path": "StoneAge/data/real_1.bin"
+      },
+      "historical_gameplay_screenshot": false,
+      "npc_name": null,
+      "original_client_executed": false,
+      "original_colors_reproduced": false,
+      "original_palette_verified": false,
+      "original_rd_block_sha256": "9575da7cf85d7324def2e7502493d229f50bd07514f2933d3352029e1ea7101f",
+      "pet_species": null,
+      "preview_mode": "SOURCE_PALETTE_INDEX_AS_GRAYSCALE_NOT_HISTORICAL_COLOR",
+      "preview_png_sha256": "056bf10474ca155bd7ae6c032795b21ae71107176247fc8e1b4e9e85e8e9b8ac",
+      "quest_origin": "ORIGIN_UNRESOLVED",
+      "rd_flag": 1,
+      "record": {
+        "adder": 24938474,
+        "bitmapno": 5847,
+        "height": 72,
+        "index": 5847,
+        "size": 1853,
+        "source_adrn_record_sha256": "539fb7bacba5642ba841bc554009be48b0a7bf4d5413a4e1c888f9c3e1ee96c8",
+        "width": 40,
+        "xoff": -15,
+        "yoff": -71
+      },
+      "sample": "TW_WAEI_JSS_1_0_ACCEPTED_RETAIL_REDUMP_104630",
+      "schema": "stoneage.original_observation_lab.bitmap_v1",
+      "server_entity_binding_verified": false,
+      "source_claim": "ORIGINAL_TW10_RD_BYTES_DECODED_TO_PALETTE_INDICES_ONLY",
+      "source_sha256": {
+        "adrn_1.bin": "47254c0ff904d363fb5c3c5297edf553c8eaf24cd933f346d8ce7aabed4155c8",
+        "real_1.bin": "408e6ee05c83354349691937da2ad8f7488ac10f65f07e6681b7d92cb1c9ed13"
+      }
+    }
+  ],
+  "original_audio_structural_record": {
+    "audio_played_or_heard_by_assistant": false,
+    "format": {
+      "channels": 1,
+      "compression": "NONE",
+      "duration_seconds": 0.17587302,
+      "frames": 1939,
+      "sample_rate_hz": 11025,
+      "sample_width_bytes": 2
+    },
+    "in_game_sound_event_verified": false,
+    "npc_pet_battle_sound_identity": null,
+    "original_audio_bytes_written": false,
+    "original_path": "StoneAge/data/se/sas_20.wav",
+    "original_sha256": "6e8e7b6fcfb0409583b471866b7f3e5b8b9d698afa16d888ace5af38722e6e00",
+    "sample": "TW_WAEI_JSS_1_0_ACCEPTED_RETAIL_REDUMP_104630",
+    "schema": "stoneage.original_observation_lab.wav_v1"
+  },
+  "original_executable_run_observed": false,
+  "actual_game_frame_captured": false,
+  "preview_is_original_color": false,
+  "images_actually_previewed_by_assistant": false,
+  "audio_actually_listened_by_assistant": false,
+  "temporary_original_files_cleaned": true,
+  "original_commercial_pixels_or_audio_committed_to_public_git": false,
+  "verified_link_to_original_named_npc_pet_quest": 0,
+  "next_observation": "ORIGINAL-PALETTE-SPR-ANIMATION-VISUAL-QUALIFICATION-P2",
+  "parallel_game_content_next": "EARLY-OFFICIAL-WORLD-ENTITY-SOURCE-20",
+  "original_server_world_entered": false,
+  "overall_restoration_percent": null
+}
