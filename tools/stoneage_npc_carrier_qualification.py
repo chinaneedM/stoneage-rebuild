@@ -55,7 +55,7 @@ def qualify(static, gameplay, modern):
             'source_page': 'https://www.lab.welovesa.com/viewthread.php?extra=&page=1&tid=219',
             'classification': 'MIXED_COMMUNITY_BRIDGE_NOT_AUTHENTICATED_OFFICIAL'},
         'members': rows,
-        'modern_arg_comparison': {'bytes_equal': True, 'sha256_equal': False,
+        'modern_arg_comparison': {'byte_length_equal': True, 'sha256_equal': False,
             'modern_sha256': modern['embedded_sha256'],
             'semantic_equivalence': 'UNKNOWN_NO_PRESERVED_BODY_READ_THIS_TURN'},
         'raw_archive_reacquired_this_turn': False,
