@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src blob:; media-src blob:; style-src 'unsafe-inline'; script-src 'unsafe-inline';">
+<title>石器时代｜本地原始资源观察台</title>
+<style>
+body{font-family:system-ui,"Noto Sans SC",sans-serif;max-width:900px;margin:2rem auto;padding:0 1rem;background:#151719;color:#ecf0ef;line-height:1.6}
+section{border:1px solid #414a4d;border-radius:12px;padding:1.3rem;margin:1rem 0}h1,h2{margin:.2em 0 .7em}
+input{display:block;margin:.5rem 0 1rem;max-width:100%}img{image-rendering:pixelated;max-width:100%;border:1px solid #555;background:#888}
+audio{width:100%}small,p{color:#bec6c7}code{color:#dbdad1}strong{color:#fff}
+</style></head>
+<body>
+<h1>原始资源观察台（本地研究）</h1>
+<p>打开此 HTML 无需网络。选择本地源文件生成的灰度 PNG，或经 SHA 验证的原 WAV 文件。浏览器只读取本机选择的文件，不自动上传、下载或连接服务器。</p>
+<section><h2>图像 · 结构预览</h2>
+<p><strong>注意：灰度只是索引值可视化，不是原游戏颜色、场景截图或已鉴真的宠物/NPC 身份。</strong></p>
+<label for="img">选择观察工具生成的 PNG</label><input id="img" type="file" accept=".png,image/png">
+<img id="display" alt="尚未选择私人本地图像" hidden></section>
+<section><h2>音频 · 原 WAV 播放</h2>
+<p>先使用 Python 命令校验文件 SHA；播放器不会证明声音对应哪个宠物或哪种游戏事件。</p>
+<label for="wav">选择已校验的原始 WAV</label><input id="wav" type="file" accept=".wav,audio/wav">
+<audio id="player" controls preload="none"></audio></section>
+<small>原始素材不得自动提交公开 Git；来源身份、文件偏移和 SHA 在本地 JSON 审计记录。没有历史客户端执行或服务器登录。</small>
+<script>
+(() => {
+  let imgUrl=null, wavUrl=null;
+  document.getElementById("img").addEventListener("change",(e)=>{
+    if(imgUrl) URL.revokeObjectURL(imgUrl);
+    const file=e.target.files?.[0], target=document.getElementById("display");
+    if(!file){target.hidden=true;target.removeAttribute("src");return;}
+    if(file.type!=="image/png" && !file.name.toLowerCase().endsWith(".png"))return;
+    imgUrl=URL.createObjectURL(file);target.src=imgUrl;target.hidden=false;
+  });
+  document.getElementById("wav").addEventListener("change",(e)=>{
+    if(wavUrl) URL.revokeObjectURL(wavUrl);
+    const file=e.target.files?.[0], target=document.getElementById("player");
+    target.pause();target.removeAttribute("src");target.load();
+    if(!file || !(file.type.includes("wav") || file.name.toLowerCase().endsWith(".wav")))return;
+    wavUrl=URL.createObjectURL(file);target.src=wavUrl;target.load();
+  });
+})();
+</script>
+</body></html>

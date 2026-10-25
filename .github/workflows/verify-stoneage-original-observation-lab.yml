@@ -1,0 +1,26 @@
+name: Test offline original-client observation lab
+on:
+  push:
+    branches: [main, agent/original-observation-lab-p0-20261025]
+    paths:
+      - "tools/stoneage_original_observation_lab.py"
+      - "tools/original-observation-viewer.html"
+      - "tests/test_stoneage_original_observation_lab.py"
+      - ".github/workflows/verify-stoneage-original-observation-lab.yml"
+      - "docs/STONEAGE-ORIGINAL-OBSERVATION-LAB-R1.md"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  offline-contracts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Pure-stdlib synthetic visual and original file custody regression
+        run: |
+          set -euo pipefail
+          python -m unittest -v tests.test_stoneage_original_observation_lab
+          python -m unittest -v tests.test_stoneage_rd_codec
+          echo 'ORIGINAL_OBSERVATION_LAB_SYNTHETIC_ONLY=PASS'
+          echo 'HISTORICAL_CLIENT_BOOT_AND_AUTHENTIC_COLOR=OPEN'
