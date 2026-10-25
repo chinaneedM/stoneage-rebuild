@@ -195,17 +195,28 @@ def runtime(directory,control,output,original=False,depth_probe=False,colormap_h
             if native_windows and colormap_helper:
                 from tools.stoneage_p3c_capture import capture as xcapture
                 sealed_dir=Path('/tmp/stoneage-p3c-sealed');sealed_dir.mkdir(exist_ok=False)
-                result['original_window_colormaps']=xcapture(colormap_helper,directory/'before-input',env,seal_dir=sealed_dir)
                 require(any(w['class']=='ＳｔｏｎｅＡｇｅ' for w in native_windows),'original main window unavailable before input')
+                result['before_focus_window_colormaps']=xcapture(colormap_helper,directory/'before-focus',env)
+                client=[w for w in result['before_focus_window_colormaps']['windows'] if (w['width'],w['height'])==(640,480)]
+                require(len(client)==1,'ambiguous native 640x480 client drawable')
+                focus=command(['xdotool','windowfocus','--sync',str(client[0]['window'])],env=env)
+                require(focus.returncode==0,'X11 input focus dispatch failed')
+                time.sleep(2)
+                result['focus_observation']={'x11_window':client[0]['window'],'returncode':focus.returncode,
+                    'operation':'XSetInputFocus_via_xdotool_no_window_manager_no_game_patch'}
+                result['original_window_colormaps']=xcapture(colormap_helper,directory/'focused-before-input',env,seal_dir=sealed_dir)
                 # Point selected from the authenticated P3 login frame, not account fields.
                 move=command(['xdotool','mousemove','--sync','350','410'],env=env)
-                click=command(['xdotool','click','1'],env=env) if move.returncode==0 else move
+                down=command(['xdotool','mousedown','1'],env=env) if move.returncode==0 else move
+                time.sleep(.2)
+                up=command(['xdotool','mouseup','1'],env=env)
                 time.sleep(3)
                 after=inspect_windows(control,env,run)
                 after_owned=[w for w in after.get('windows',[]) if w.get('image_path','').replace('\\','/').lower().endswith('/sa_3.exe')]
-                result['input_observation']={'operation':'one_left_click_at_previous_authenticated_QUIT_label',
+                result['input_observation']={'operation':'one_held_left_click_at_previous_authenticated_QUIT_label',
                     'screen_xy':[350,410],'coordinate_source_png_sha256':'8d7a9594292e262615c187d2fd21504b3b0f71a4d02e8c9a31811af53f460cc0',
-                    'account_or_password_entered':False,'mousemove_returncode':move.returncode,'click_returncode':click.returncode,
+                    'account_or_password_entered':False,'mousemove_returncode':move.returncode,'click_returncode':down.returncode or up.returncode,
+                    'mousedown_returncode':down.returncode,'mouseup_returncode':up.returncode,'hold_milliseconds':200,
                     'windows_after':after,'launcher_returncode_after':p.poll(),
                     'original_owned_windows_remaining':len(after_owned),
                     'exit_observed_before_cleanup':p.poll()==0 and not after_owned,
