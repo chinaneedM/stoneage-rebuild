@@ -1,0 +1,131 @@
+{
+  "schema": "stoneage.tw10.r19.publication_receipt.v1",
+  "date": "2026-10-25",
+  "repository": "chinaneedM/stoneage-rebuild",
+  "base_main_head": "33931b2b9dc9b02f2cba4a6dd6499141bf24c7fd",
+  "base_main_tree": "2858c6a4b4ba945b383e4d645c342682976c9a22",
+  "content_main_head": "fc832431014ea90ef857ad1cb60c7e5d592a5af2",
+  "content_main_tree": "fe7c7ab030736a7054576dc0637d7ec13c1c2e0a",
+  "preserved_current_state_blob": "031c76a5a8e431f646853909bb2f2e11e6328cd2",
+  "observed_current_state_blob": "031c76a5a8e431f646853909bb2f2e11e6328cd2",
+  "original_source_run": {
+    "id": 40203596474,
+    "head_sha": "03572bbec4b80660a244dcc9fe4f2ad7370ccf57",
+    "conclusion": "success",
+    "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40203596474"
+  },
+  "failed_source_run": {
+    "id": 40203057866,
+    "conclusion": "failure",
+    "reason": "derived size bound",
+    "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40203057866"
+  },
+  "intermediary_source_run": {
+    "id": 40203254181,
+    "conclusion": "success",
+    "qualification": "discard machine-code-decoded false-positive names",
+    "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40203254181"
+  },
+  "source_canonical_derived_report_sha256": "66bef73e28bfc8c2cda25d8a1b3a48c62dc1d90a7dc20be452931e03ab7d161c",
+  "source_derived_report_git_blob_sha": "c573421726c6161fe580a80dcb32ca55c0908ea0",
+  "source_derived_report_path": "research/recovered/STONEAGE-TW10-ORIGINAL-EXE-TEXT-CANDIDATES-R19.json",
+  "candidate_branch": "agent/tw10-original-text-r19-20261025",
+  "candidate_ci": [
+    {
+      "id": 40204490782,
+      "name": "Accept primary-source TW1.0 character creation numeric join R16",
+      "sha": "fc832431014ea90ef857ad1cb60c7e5d592a5af2",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40204490782"
+    },
+    {
+      "id": 40204490775,
+      "name": "Verify original Taiwan 1.0 executable short text R19",
+      "sha": "fc832431014ea90ef857ad1cb60c7e5d592a5af2",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40204490775"
+    },
+    {
+      "id": 40204490796,
+      "name": "Verify StoneAge R17 original battle SAB crossversion occurrence conservation",
+      "sha": "fc832431014ea90ef857ad1cb60c7e5d592a5af2",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40204490796"
+    },
+    {
+      "id": 40204490799,
+      "name": "Verify preserved mixed25 full server source conservation R18",
+      "sha": "fc832431014ea90ef857ad1cb60c7e5d592a5af2",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40204490799"
+    },
+    {
+      "id": 40204490764,
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "sha": "fc832431014ea90ef857ad1cb60c7e5d592a5af2",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40204490764"
+    }
+  ],
+  "main_ci": [
+    {
+      "id": 40204553633,
+      "name": "Accept primary-source TW1.0 character creation numeric join R16",
+      "sha": "fc832431014ea90ef857ad1cb60c7e5d592a5af2",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40204553633"
+    },
+    {
+      "id": 40204553623,
+      "name": "Verify original Taiwan 1.0 executable short text R19",
+      "sha": "fc832431014ea90ef857ad1cb60c7e5d592a5af2",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40204553623"
+    },
+    {
+      "id": 40204553701,
+      "name": "Verify StoneAge R17 original battle SAB crossversion occurrence conservation",
+      "sha": "fc832431014ea90ef857ad1cb60c7e5d592a5af2",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40204553701"
+    },
+    {
+      "id": 40204553713,
+      "name": "Verify preserved mixed25 full server source conservation R18",
+      "sha": "fc832431014ea90ef857ad1cb60c7e5d592a5af2",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40204553713"
+    },
+    {
+      "id": 40204553597,
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "sha": "fc832431014ea90ef857ad1cb60c7e5d592a5af2",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40204553597"
+    }
+  ],
+  "original_executables": {
+    "StoneAge/StoneAge.exe": {
+      "bytes": 409600,
+      "sha256": "9b280068063b4398e5c8901b881daa1f13576201e475efede3127b59cdad2867",
+      "strict_decode_candidates": 13,
+      "stored_samples": 13
+    },
+    "StoneAge/sa_3.exe": {
+      "bytes": 425984,
+      "sha256": "cdab9ea049a98bbc96ce93eeaa8b63c688f0c0f0ad8b3183e79d75e47621441a",
+      "strict_decode_candidates": 181,
+      "stored_samples": 24
+    }
+  },
+  "original_same_build_short_chinese_pe_text_evidence": true,
+  "original_same_build_game_runtime_selection_proven": false,
+  "original_same_build_npc_pet_quest_name_id_sprite_joins_proven": 0,
+  "original_copyrighted_executable_or_disc_bytes_committed": false,
+  "stage_a": "7 PARTIAL + 2 OPEN",
+  "stage_b_and_wiki": "GATED",
+  "savedata_r79": "PAUSED_NON_BLOCKING",
+  "overall_restoration_percent": null,
+  "next": "EARLY-OFFICIAL-WORLD-ENTITY-SOURCE-20",
+  "continuity_record": "docs/continuity/TW10-ORIGINAL-TEXT-R19-MATERIAL-20261025.md"
+}
