@@ -1,0 +1,708 @@
+{
+  "schema": "stoneage.p3.publication_acceptance.v1",
+  "date_asia_shanghai": "2026-10-26",
+  "source_baseline_main": "8e98189f4bf6f0bbc4f55225c8c766b5b27e121b",
+  "source_baseline_tree": "4ac70628eee1f43452c33fb4eb084298973ed0d2",
+  "content_head": "d9ca4e65bb82001a6027d2cfe74c1a01b4847967",
+  "content_tree": "f3a6e3df3a3f0ce24c648fc33e774c56fd9cdfae",
+  "integration": "non_forced_fast_forward_after_five_successful_candidate_runs",
+  "candidate_acceptance": [
+    {
+      "run": 40244819747,
+      "name": "Verify preserved mixed25 full server source conservation R18",
+      "head": "d9ca4e65bb82001a6027d2cfe74c1a01b4847967",
+      "branch": "agent/original-boot-p3-20261026",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "id": 121324049294,
+          "name": "full-source-conservation",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python -m unittest tests.test_stoneage_mixed25_server_full_source_r18 tests.test_stoneage_mixed25_server_r18_docs -v",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python -m tools.stoneage_mixed25_server_full_source_r18",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "run": 40244819763,
+      "name": "Verify StoneAge R17 original battle SAB crossversion occurrence conservation",
+      "head": "d9ca4e65bb82001a6027d2cfe74c1a01b4847967",
+      "branch": "agent/original-boot-p3-20261026",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "id": 121324049185,
+          "name": "exact-source-report",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python -m unittest tests.test_stoneage_battle_sab_crossversion_r17 tests.test_stoneage_battle_sab_docs_r17 -v",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python -m tools.stoneage_battle_sab_crossversion_r17",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "run": 40244819748,
+      "name": "Accept primary-source TW1.0 character creation numeric join R16",
+      "head": "d9ca4e65bb82001a6027d2cfe74c1a01b4847967",
+      "branch": "agent/original-boot-p3-20261026",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "id": 121324049424,
+          "name": "acceptance",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Replay authenticated original derived source metadata and negative cases",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "run": 40244819800,
+      "name": "Validate isolated original-client observation boundaries P3",
+      "head": "d9ca4e65bb82001a6027d2cfe74c1a01b4847967",
+      "branch": "agent/original-boot-p3-20261026",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "id": 121324049512,
+          "name": "retire-obsolete-preflight",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Retire ONLY this work package's superseded heavyweight environment attempt",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        },
+        {
+          "id": 121324049584,
+          "name": "offline-boundaries",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python -m pip install --quiet pillow cryptography",
+              "conclusion": "success"
+            },
+            {
+              "name": "Pure source-inventory, network fail-closed, private-path and capture metadata checks",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "run": 40244819777,
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "head": "d9ca4e65bb82001a6027d2cfe74c1a01b4847967",
+      "branch": "agent/original-boot-p3-20261026",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "id": 121324049258,
+          "name": "bounded-research-review",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Validate delegated decision, immutable history and no premature production",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "main_acceptance": [
+    {
+      "run": 40244867282,
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "head": "d9ca4e65bb82001a6027d2cfe74c1a01b4847967",
+      "branch": "main",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "id": 121324191661,
+          "name": "bounded-research-review",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Validate delegated decision, immutable history and no premature production",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "run": 40244867279,
+      "name": "Accept primary-source TW1.0 character creation numeric join R16",
+      "head": "d9ca4e65bb82001a6027d2cfe74c1a01b4847967",
+      "branch": "main",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "id": 121324191581,
+          "name": "acceptance",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Replay authenticated original derived source metadata and negative cases",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "run": 40244867325,
+      "name": "Test offline original-client observation lab",
+      "head": "d9ca4e65bb82001a6027d2cfe74c1a01b4847967",
+      "branch": "main",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "id": 121324191627,
+          "name": "offline-contracts",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Pure-stdlib synthetic visual and original file custody regression",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "run": 40244867311,
+      "name": "Verify preserved mixed25 full server source conservation R18",
+      "head": "d9ca4e65bb82001a6027d2cfe74c1a01b4847967",
+      "branch": "main",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "id": 121324191636,
+          "name": "full-source-conservation",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python -m unittest tests.test_stoneage_mixed25_server_full_source_r18 tests.test_stoneage_mixed25_server_r18_docs -v",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python -m tools.stoneage_mixed25_server_full_source_r18",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "run": 40244867372,
+      "name": "Validate isolated original-client observation boundaries P3",
+      "head": "d9ca4e65bb82001a6027d2cfe74c1a01b4847967",
+      "branch": "main",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "id": 121324191790,
+          "name": "offline-boundaries",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python -m pip install --quiet pillow cryptography",
+              "conclusion": "success"
+            },
+            {
+              "name": "Pure source-inventory, network fail-closed, private-path and capture metadata checks",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        },
+        {
+          "id": 121324193113,
+          "name": "retire-obsolete-preflight",
+          "conclusion": "skipped",
+          "steps": []
+        }
+      ]
+    },
+    {
+      "run": 40244867274,
+      "name": "Verify StoneAge R17 original battle SAB crossversion occurrence conservation",
+      "head": "d9ca4e65bb82001a6027d2cfe74c1a01b4847967",
+      "branch": "main",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "id": 121324191610,
+          "name": "exact-source-report",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python -m unittest tests.test_stoneage_battle_sab_crossversion_r17 tests.test_stoneage_battle_sab_docs_r17 -v",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python -m tools.stoneage_battle_sab_crossversion_r17",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "local_distinct_unit_tests": 15,
+  "independent_archived_source_guard": "PASS",
+  "all_25_content_paths_exact_remote_bytes_verified": true,
+  "content_files": [
+    {
+      "path": ".github/workflows/probe-stoneage-original-boot-p3.yml",
+      "bytes": 4533,
+      "sha256": "8355c1ca5884ca8f11329a72822cbf39000f716c22d59f42a3773001fb06fb01",
+      "git_blob": "5ebdcc3e43e7cca72a384fa6e49e1bde2b2c894c"
+    },
+    {
+      "path": ".github/workflows/verify-stoneage-original-boot-p3.yml",
+      "bytes": 1890,
+      "sha256": "99f231344354132cafa3f90a2d700170756a7e020e9f6f3acd8286f277df645e",
+      "git_blob": "b51d966e56c349bc26fc46b32b5830ebdc0b05e0"
+    },
+    {
+      "path": "README.md",
+      "bytes": 58300,
+      "sha256": "d6684f2d35c40a6f6b62db601a6e23ebac51f554e8fad573da3c6f5a61d34090",
+      "git_blob": "b88049d17e24586d50e0646b307d658da7a8d91b"
+    },
+    {
+      "path": "docs/STONEAGE-ORIGINAL-OBSERVATION-LAB-R1.md",
+      "bytes": 9027,
+      "sha256": "ffbbe029cd4135361637b5b162a251e31c6a2214ca4a81bfb3c6057c4a041144",
+      "git_blob": "636dadd51e6a5ae93cd1f0062949c747dda8344c"
+    },
+    {
+      "path": "docs/continuity/STONEAGE-ORIGINAL-BOOT-P3-20261026.md",
+      "bytes": 10087,
+      "sha256": "7b490be32c28544f3706441f2e897d5add679dedf0781212be46e2f20220f384",
+      "git_blob": "8a08ebc6689068682cf6944f928d47d2b25dffdd"
+    },
+    {
+      "path": "research/recovered/STONEAGE-P3-SESSION-TRANSPORT-PUBLIC.pem",
+      "bytes": 113,
+      "sha256": "934844b6c9cbf8acb6b515e373cfa8bdeef3d3dc6083693a447650c0fdb611eb",
+      "git_blob": "b89d634fb58b49900c9c1f469c96e385133976ba"
+    },
+    {
+      "path": "research/recovered/STONEAGE-TW10-ORIGINAL-BOOT-P3-CUSTODY-R1.json",
+      "bytes": 6267,
+      "sha256": "67e471985d074227e6c17d7087398ea7c55b31f69f5901d3d9136258f9bc53c3",
+      "git_blob": "23ca3d2999c831f5bb12a2b40cb7b30bac732f16"
+    },
+    {
+      "path": "research/recovered/STONEAGE-TW10-ORIGINAL-BOOT-P3-DEPTH24-ORIGINAL-R1.json",
+      "bytes": 7786,
+      "sha256": "cbed8513bcffafdb537ef4e2f1950c99ca272969ac3fd39e8ffd81c292a7f531",
+      "git_blob": "ebd36c9d6e69109c7575795a9425d9abc62937cf"
+    },
+    {
+      "path": "research/recovered/STONEAGE-TW10-ORIGINAL-BOOT-P3-DEPTH24-PACKAGES-R1.txt",
+      "bytes": 172,
+      "sha256": "ee2da8d49414c6eb2331895c849bf96070a1b14f3641fbe50a2fb29a1bcda96c",
+      "git_blob": "a17e9b71ef775dfd38bf63d0f95ac4d7667c0c2f"
+    },
+    {
+      "path": "research/recovered/STONEAGE-TW10-ORIGINAL-BOOT-P3-DEPTH24-PREFLIGHT-R1.json",
+      "bytes": 2698,
+      "sha256": "19d2b3ffdd4357b5232ed79e8f8875bb16598b55b4d833cb764d639774b0666d",
+      "git_blob": "666a0f7a0ea0d06aa8e844a554a3da75b96746d0"
+    },
+    {
+      "path": "research/recovered/STONEAGE-TW10-ORIGINAL-BOOT-P3-DEPTH8-DISPLAY-R1.json",
+      "bytes": 2734,
+      "sha256": "33fa4faef8d196cd03272254447f6dc0598a9a010b8af3ead3ac528664d95441",
+      "git_blob": "df4aa3a30a2d94e6a113aabbd28b9473187aee7e"
+    },
+    {
+      "path": "research/recovered/STONEAGE-TW10-ORIGINAL-BOOT-P3-DEPTH8-ORIGINAL-R1.json",
+      "bytes": 5769,
+      "sha256": "3218704d8dc24ecff2a1c43a2feb4dfa8f61fab122f6d10a7156750d2ad51fd6",
+      "git_blob": "f5b2a83b71ce3853833b3fe61dc7e9ea17860736"
+    },
+    {
+      "path": "research/recovered/STONEAGE-TW10-ORIGINAL-BOOT-P3-DEPTH8-PACKAGES-R1.txt",
+      "bytes": 172,
+      "sha256": "ee2da8d49414c6eb2331895c849bf96070a1b14f3641fbe50a2fb29a1bcda96c",
+      "git_blob": "a17e9b71ef775dfd38bf63d0f95ac4d7667c0c2f"
+    },
+    {
+      "path": "research/recovered/STONEAGE-TW10-ORIGINAL-BOOT-P3-DEPTH8-PREFLIGHT-R1.json",
+      "bytes": 2756,
+      "sha256": "120a55605683501bebf94e06b0223bd5f0c2665cd529fe08d31d7030f71a215d",
+      "git_blob": "c43856efa83b5ccc94202676560db0104ef8d0a5"
+    },
+    {
+      "path": "research/recovered/STONEAGE-TW10-ORIGINAL-BOOT-P3-PRIVATE-DISPLAY-R1.json",
+      "bytes": 2734,
+      "sha256": "fc236c12e0d216d7a663bc00d207bbce592bd1d0a53302865b656b51e9b0a9f4",
+      "git_blob": "e19537b3bc5d1a1ed579e8571cecf0271d767389"
+    },
+    {
+      "path": "research/recovered/STONEAGE-TW10-ORIGINAL-BOOT-P3-PRIVATE-ORIGINAL-R1.json",
+      "bytes": 6181,
+      "sha256": "cbaf461e0b8b0be5765064a03c8a8709f067368d4663d33e783773c4e93709ef",
+      "git_blob": "39f16b4b15cf4c304ff5b7f3e55e8bf66c4a3b29"
+    },
+    {
+      "path": "research/recovered/STONEAGE-TW10-ORIGINAL-BOOT-P3-PRIVATE-PACKAGES-R1.txt",
+      "bytes": 172,
+      "sha256": "ee2da8d49414c6eb2331895c849bf96070a1b14f3641fbe50a2fb29a1bcda96c",
+      "git_blob": "a17e9b71ef775dfd38bf63d0f95ac4d7667c0c2f"
+    },
+    {
+      "path": "research/recovered/STONEAGE-TW10-ORIGINAL-BOOT-P3-PRIVATE-PREFLIGHT-R1.json",
+      "bytes": 2756,
+      "sha256": "ed7413480740811a175e35e2bb6f236575ed49ae03fdfc613d23962161696724",
+      "git_blob": "1eb35fdde454ae29e61121fd48890327bee78d9c"
+    },
+    {
+      "path": "tests/test_stoneage_p3_boot.py",
+      "bytes": 4025,
+      "sha256": "7fc19ec9558375272cf7292f74f305c0117141b97360c090737fb9f1b0c20a9b",
+      "git_blob": "a286fd5086558bf5968a591b4e9c98afe47ef13e"
+    },
+    {
+      "path": "tests/test_stoneage_p3_evidence_guard.py",
+      "bytes": 2241,
+      "sha256": "76acd370ab40baf367d9ac2f7a0e7ee48927d620705c0e9883c84fa4414380b2",
+      "git_blob": "df293ea5e7d7fbb8b3604825f04896317eb2aceb"
+    },
+    {
+      "path": "tests/test_stoneage_p3_private_frame.py",
+      "bytes": 1830,
+      "sha256": "90957e8647ac6a58afa42254265096dcd6f86f72f05402610f398edd29a12c2f",
+      "git_blob": "bba822606ca45c488a6cd26819af2748dc9ccca8"
+    },
+    {
+      "path": "tools/stoneage_p3_boot.py",
+      "bytes": 13965,
+      "sha256": "c0854990a3106fb54aa1b3f5327cd0e80542d3af1f311d168729b0784f42e0a7",
+      "git_blob": "b3dac167e80add440330b2163def62aa923e8c41"
+    },
+    {
+      "path": "tools/stoneage_p3_control.c",
+      "bytes": 5312,
+      "sha256": "4d87a400613e6417fd8884b911a23b5cfc0390154a23c07eb1a959b15feb925e",
+      "git_blob": "454149339ec06f945ad4b0f6ca90c5ff255d2ef7"
+    },
+    {
+      "path": "tools/stoneage_p3_evidence_guard.py",
+      "bytes": 5593,
+      "sha256": "28caa31d698264e933ccf7f1f4fbedd28025b3bd7a53ca065e96109237ee5795",
+      "git_blob": "a379e2fad6e788c401433b9a6c3d3bedf04db31c"
+    },
+    {
+      "path": "tools/stoneage_p3_private_frame.py",
+      "bytes": 4759,
+      "sha256": "6e08f4003d09f3a83f6114bd3aa192b3add33b55c3db7ee859d7605004d0289d",
+      "git_blob": "229077599f27b42347317ef6743f073393fa4cb1"
+    }
+  ],
+  "custody_manifest": "research/recovered/STONEAGE-TW10-ORIGINAL-BOOT-P3-CUSTODY-R1.json",
+  "preserved_current": {
+    "bytes": 2680510,
+    "git_blob": "031c76a5a8e431f646853909bb2f2e11e6328cd2",
+    "sha256": "f02f85b837fc09973cb2eca33f7daf4db547a77cb35a81a9576c6308f70142c0"
+  },
+  "other_complete_historical_files_preserved": [
+    "docs/DESIGN-DECISIONS.md",
+    "docs/HISTORICAL-TIMELINE.md",
+    "docs/SOURCE-REGISTRY.md",
+    "docs/RESTORATION-ROADMAP-R2.md"
+  ],
+  "observation": {
+    "original_executable_actually_executed": true,
+    "assistant_viewed_authenticated_original_login_frame": true,
+    "correct_color_rendering_verified": false,
+    "button_input_recorded": false,
+    "game_world_entered": false,
+    "audio_heard_or_recorded": false,
+    "historical_server_restored": false,
+    "plaintext_screenshot_or_private_key_published_to_git": false,
+    "private_frame_saved": true,
+    "original_full_disc_durable_private_storage": "BLOCKED_PRIVATE_STORAGE_NOT_PROVISIONED"
+  },
+  "highest_next": "ORIGINAL-GAME-OBSERVATION-P3C-LOGIN-COLOR-AND-INPUT",
+  "independent_content_next": "EARLY-OFFICIAL-WORLD-ENTITY-SOURCE-20",
+  "stage_a": "7_PARTIAL_2_OPEN",
+  "stage_b_and_wiki": "GATED",
+  "r79": "PAUSED_NON_BLOCKING",
+  "overall_restoration_percent": null,
+  "receipt_self_ci": "must_be_observed_after_publication_not_preclaimed"
+}
