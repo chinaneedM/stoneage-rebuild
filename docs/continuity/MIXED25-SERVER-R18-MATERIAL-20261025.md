@@ -9,3 +9,11 @@
 未下载旧361MB包/没有版权脚本正文/没有原始商业服务器运行，不假借文件名猜任务源属性、宠物成长或者1.0同版，原件删除0B。四档DD-028/Stage A7PARTIAL+2OPEN/Stage B/wiki GATED/R79暂停/百分比null不动。专用离线CI见R18 workflow，候选与main结果均按真实后验填报，不能预写成功。
 
 **NEXT `EARLY-OFFICIAL-NAMED-CONTENT-SOURCE-19`**：回已认证TW1.0原程序/资源一个能具名的实物映射，或有确实可读、可鉴真原官方主表/补丁来源；无源就精确止点，禁止继续只列社区名字或扩大通用代码helper。不要启动新的游戏设计/网站。
+
+## R18内容主线后验及完整源守恒终验（2026-10-25）
+
+实测候选来源测试 `40201401534/job121193146600` completed/success。全规格源＋文档验收 `40201696462/job121194037156`、R17兼容 `40201696440/job121194036905`、Stage A `40201696508/job121194037231`、R16兼容 `40201696486/job121194037056` 全部实际completed/success。非强制fast-forward至内容main HEAD `d1d9a98d416f11ce14b015485d995bb8506b0e7a` / tree `d7be4acf4db7b049a781da867924d5b1ec051fa5`，仅9条路径改动。**相同HEAD的正式主线**R18 `40201866567/job121194543998`、R17 `40201866571/job121194544015`、R16 `40201866510/job121194544004`、Stage A `40201866523/job121194544068` 全部completed/success。
+
+完整原生Git tree5777条/truncated=false、原 `docs/CURRENT-STATE.md`2680510B/blob `031c76a5a8e431f646853909bb2f2e11e6328cd2`、roadmap482245B/blob `c11eff237a8aaa1cc34488a6c3c7fcdd596f9ce2`、年表/source主簿/protocol未改。永久报告 `research/recovered/STONEAGE-MIXED25-SERVER-FULL-SOURCE-R18.json` Git blob `f4ac9b805724bcd847c9632cad3c35bc4309a526`/665112B，可由既存两原生Git来源报告逐行重建，**没有短期ZIP依赖/新原件下载**。正式后验摘要登记 `research/recovered/STONEAGE-MIXED25-SERVER-R18-PUBLICATION.json`；本次仅收据提交本身的Actions不预填success，后续需要依据真实验收结果判断。
+
+下一任务 `EARLY-OFFICIAL-NAMED-CONTENT-SOURCE-19` 要从**已鉴定官方早期原客户端的实物**或直接新可取的原服务器主表/补丁原件推进同构建实体，而不是再增后代社区文件行或以测试数计恢复率。无早期官方本体NPC/任务/宠物晋级，Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、总体百分比null、DD-028任务四档均保持。

@@ -1,0 +1,116 @@
+{
+  "schema": "stoneage.mixed25.server_full_source.r18.publication.v1",
+  "date": "2026-10-25",
+  "original_start_main": "3505996708019d15d76fc50eafebe42fdf7ad79b",
+  "original_start_tree": "48f18fecddbaa6830ce48accdd99e761bb40f07a",
+  "content_main": "d1d9a98d416f11ce14b015485d995bb8506b0e7a",
+  "content_main_tree": "d7be4acf4db7b049a781da867924d5b1ec051fa5",
+  "non_forced_fast_forward": true,
+  "files_changed": 9,
+  "original_tree_truncated": false,
+  "original_tree_entries": 5777,
+  "source_original_sha_chain": {
+    "static_inventory": "research/recovered/STONEAGE-25-PRESERVED-BUNDLE-STATIC-INVENTORY-R1.txt",
+    "static_inventory_git_blob": "78e8260e89928df76513799511d45c14a9e24dfc",
+    "gameplay_inventory": "research/recovered/STONEAGE-25-GAMEPLAY-DATA-INVENTORY-R1.txt",
+    "gameplay_inventory_git_blob": "47157f638cce7023727035981da11f1faecc9c78",
+    "parent_mixed_archive_size": 361255180,
+    "parent_mixed_archive_sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+    "separate_independent_source_downloads": false,
+    "new_payload_bytes_downloaded": 0
+  },
+  "report": {
+    "path": "research/recovered/STONEAGE-MIXED25-SERVER-FULL-SOURCE-R18.json",
+    "git_blob": "f4ac9b805724bcd847c9632cad3c35bc4309a526",
+    "bytes": 665112,
+    "short_lived_ci_artifact_dependency": false
+  },
+  "observed_values": {
+    "all_server_source_files": 2245,
+    "source_file_bytes": 10465523,
+    "prior_candidates": 2227,
+    "formerly_unselected_source_files": 18,
+    "formerly_unselected_bytes": 731424,
+    "all_sha_present": 2245,
+    "candidate_SHA_crosscheck_matches": 2227,
+    "unique_file_sha256": 2121,
+    "sha_duplicate_groups": 53,
+    "duplicate_file_occurrences_preserved": 124,
+    "original_data_files_deleted": 0,
+    "previously_lost_original_game_bytes_reacquired": 0,
+    "authenticated_early_official_npc_species_quests_new": 0
+  },
+  "runs": [
+    {
+      "id": 40201401534,
+      "job": 121193146600,
+      "result": "completed/success",
+      "scope": "candidate initial source"
+    },
+    {
+      "id": 40201696462,
+      "job": 121194037156,
+      "result": "completed/success",
+      "scope": "candidate full R18 source and docs"
+    },
+    {
+      "id": 40201696440,
+      "job": 121194036905,
+      "result": "completed/success",
+      "scope": "candidate R17 regression"
+    },
+    {
+      "id": 40201696508,
+      "job": 121194037231,
+      "result": "completed/success",
+      "scope": "candidate Stage A evidence limits"
+    },
+    {
+      "id": 40201696486,
+      "job": 121194037056,
+      "result": "completed/success",
+      "scope": "candidate R16 regression"
+    },
+    {
+      "id": 40201866567,
+      "job": 121194543998,
+      "result": "completed/success",
+      "scope": "main full R18"
+    },
+    {
+      "id": 40201866571,
+      "job": 121194544015,
+      "result": "completed/success",
+      "scope": "main R17"
+    },
+    {
+      "id": 40201866510,
+      "job": 121194544004,
+      "result": "completed/success",
+      "scope": "main R16"
+    },
+    {
+      "id": 40201866523,
+      "job": 121194544068,
+      "result": "completed/success",
+      "scope": "main StageA"
+    }
+  ],
+  "preserved_git_blobs": {
+    "current_state": "031c76a5a8e431f646853909bb2f2e11e6328cd2",
+    "roadmap": "c11eff237a8aaa1cc34488a6c3c7fcdd596f9ce2",
+    "timeline": "91ca73105f26bf96aaa928519ae04942182e7b9b",
+    "source_registry": "ee3b2d70dabedfe02e3761b3fdb25476a79e147c",
+    "continuity_protocol": "a064174339b7a4656efe00b4446a066fd7abf304"
+  },
+  "source_grade_boundary": "MIXED_COMMUNITY_PRESERVATION_NOT_OFFICIAL_ORIGINAL_TW10",
+  "next": "EARLY-OFFICIAL-NAMED-CONTENT-SOURCE-19",
+  "stage": {
+    "A": "7 PARTIAL / 2 OPEN",
+    "B": "GATED",
+    "wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_restoration_percentage": null
+  },
+  "receipt_commit_self_CI": "NOT_YET_CHECKED"
+}
