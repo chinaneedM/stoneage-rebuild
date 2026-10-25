@@ -552,3 +552,8 @@ The 2.66 MB historical `docs/CURRENT-STATE.md` is still preserved byte-for-byte.
 
 
 - 原版观察台P1[两张原台湾1.0 RD图像真实字节解码+单WAV原版结构](research/recovered/STONEAGE-TW10-ORIGINAL-OBSERVATION-P1-SOURCE-R1.json)已在源Actions `40206034214` verified success（原程序未执行）。bitmap5846/5847各输出只存在Actions暂存的**灰度索引PNG**，原图/声音/商业程序已清理；音频`sas_20.wav`实际原文件验证成功但未播放。来源、原SHA及既存R99逐块交叉验收见[日期连续性](docs/continuity/STONEAGE-ORIGINAL-OBSERVATION-P1-20261025.md)。仍未真实观看原色、登入游戏或复原具名实体，P2先恢复真正颜色和SPR时序，原R20具名内容任务与Stage A等边界不变。
+
+
+### 2026-10-26 — 原SPR多帧私人观察 P2A
+
+[本轮续接记录](docs/continuity/STONEAGE-ORIGINAL-ANIMATION-P2A-20261026.md)接原TW1 SPR组100000的三序列：25帧位置、16不同位图、原倒计时与偏移。真实原源Action40237734461已通过四原文件鉴真、16原RD解码及三份私人灰度动画导出；[原样永久源收据](research/recovered/STONEAGE-TW10-ANIMATION-OBSERVATION-P2A-ACTUAL-SOURCE-R1.json)只存派生指纹。可逐帧/循环查看的HTML由本地工具生成，原图不进公开Git。仍无原色、原帧率、人物/宠物身份或真实原游戏启动。观察NEXT是有限同版调色板资格P2B；内容R20、Stage A/B、R79等边界保留。CURRENT全文未覆盖。

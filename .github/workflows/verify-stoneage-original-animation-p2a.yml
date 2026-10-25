@@ -6,12 +6,16 @@ on:
       - 'tools/stoneage_original_animation_lab.py'
       - 'tools/original-animation-viewer.html'
       - 'tests/test_stoneage_original_animation_lab.py'
+      - 'tools/stoneage_original_animation_source_guard.py'
+      - 'tests/test_stoneage_original_animation_source_guard.py'
       - 'research/recovered/STONEAGE-TW10-ANIMATION-OBSERVATION-P2A-R1.json'
+      - 'research/recovered/STONEAGE-TW10-ANIMATION-OBSERVATION-P2A-ACTUAL-SOURCE-R1.json'
       - '.github/workflows/verify-stoneage-original-animation-p2a.yml'
       - 'docs/continuity/STONEAGE-ORIGINAL-ANIMATION-P2A-20261026.md'
   workflow_dispatch:
 permissions:
   contents: read
+  actions: read
 jobs:
   timeline-and-preview:
     runs-on: ubuntu-latest
@@ -21,5 +25,57 @@ jobs:
       - name: Replay original metadata and synthetic private exports
         run: |
           set -euo pipefail
-          python -m unittest -v tests.test_stoneage_original_animation_lab tests.test_stoneage_original_observation_lab tests.test_stoneage_rd_codec
+          python -m unittest -v tests.test_stoneage_original_animation_lab tests.test_stoneage_original_animation_source_guard tests.test_stoneage_original_observation_lab tests.test_stoneage_rd_codec
           python -m tools.stoneage_original_animation_lab --check-report
+          python -m tools.stoneage_original_animation_source_guard
+      - name: Check actual original-source run identity and success
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          actual="$(gh api repos/chinaneedM/stoneage-rebuild/actions/runs/40237734461 --jq '[.status,.conclusion,.head_sha,.head_branch] | join("|")')"
+          test "$actual" = 'completed|success|4e420d5f10327004813a2cb2e1353eae28c7d6b9|agent/original-animation-p2a-20261026'
+      - name: Inspect the offline viewer in a real browser using ONLY synthetic images
+        run: |
+          set -euo pipefail
+          command -v google-chrome
+          npm install --ignore-scripts --no-audit --no-fund --prefix /tmp/stoneage-p2a-browser playwright@1.62.1
+          python - <<'PY'
+          from pathlib import Path
+          from tests.test_stoneage_original_animation_lab import AnimationObservationTests
+          from tools import stoneage_original_animation_lab as lab
+          root=Path('/tmp/stoneage-p2a-synthetic');root.mkdir()
+          case=AnimationObservationTests();case.report=lab.sample_report()
+          _,_,_,t,paths,pins=case.fixture(root)
+          html,custody=lab.preview(t,paths,pins)
+          (root/'preview.html').write_text(html)
+          PY
+          NODE_PATH=/tmp/stoneage-p2a-browser/node_modules node - <<'JS'
+          const {chromium}=require('playwright');
+          (async()=>{
+            const browser=await chromium.launch({executablePath:'/usr/bin/google-chrome',headless:true,args:['--no-sandbox']});
+            const page=await browser.newPage({viewport:{width:1000,height:1100}});
+            const errors=[],network=[];
+            page.on('pageerror',e=>errors.push(e.message));
+            page.on('request',r=>{if(/^https?:/.test(r.url()))network.push(r.url());});
+            await page.goto('file:///tmp/stoneage-p2a-synthetic/preview.html');
+            await page.waitForFunction(()=>!document.getElementById('play').disabled);
+            if(!(await page.locator('#state').innerText()).includes('1/2'))throw Error('initial frame');
+            await page.locator('#next').click();
+            if(!(await page.locator('#state').innerText()).includes('2/2'))throw Error('next frame');
+            await page.locator('#next').click();
+            if(!(await page.locator('#state').innerText()).includes('1/2'))throw Error('loop frame');
+            await page.locator('#prev').click();
+            if(!(await page.locator('#state').innerText()).includes('2/2'))throw Error('previous frame');
+            await page.locator('#play').click();
+            if(await page.locator('#play').innerText()!=='暂停')throw Error('play control');
+            await page.locator('#play').click();
+            if(await page.locator('#play').innerText()!=='播放')throw Error('pause control');
+            const nonempty=await page.locator('canvas').evaluate(e=>e.getContext('2d').getImageData(21,21,1,1).data[3]>0);
+            if(!nonempty)throw Error('canvas pixels missing');
+            if(errors.length||network.length)throw Error(JSON.stringify({errors,network}));
+            await page.screenshot({path:'/tmp/stoneage-p2a-synthetic/browser.png',fullPage:true});
+            console.log('REAL_BROWSER_SYNTHETIC_PRIVATE_ANIMATION=PASS; ORIGINAL_GAME_EXECUTED=FALSE');
+            await browser.close();
+          })().catch(e=>{console.error(e);process.exit(1)});
+          JS

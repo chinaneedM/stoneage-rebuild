@@ -29,3 +29,17 @@
 先让P1原盘真实索引PNG私有目录可看/音频可听；再验证帧动画与真实调色板，再进行隔离原版程序启动。不以“写了查看器”代替已经亲眼看到原画。每个观察样本需要版别、路径、原SHA、bitmap/spr/file-offset、截图/音效观察与人工确认标签；观察主观猜测单列HYPOTHESIS。同步推进 `EARLY-OFFICIAL-WORLD-ENTITY-SOURCE-20` 真正同版名字—实体ID—SPR联接，维持DD-028活动与本体任务四档独立。
 
 状态：P1工具可进入远端自动化验收，**原版程序未运行、原色/原画面未还原、原服世界未进入**。Stage A7 PARTIAL+2 OPEN，B/wiki GATED，R79 PAUSED_NON_BLOCKING，总体完成率null。
+
+## 2026-10-26 P2A：原动画帧序已接到私人播放器
+
+P2拆为P2A帧序/像素与P2B真实调色板。P2A原源Actions40237734461实际成功，四完整原文件SHA、原SPR全组段、原ADRN/RD逐块与旧源表相同；25帧出现位置/16不同位图实际解码并导出三私人HTML。原素材及嵌图HTML只在临时私人目录，工件/公开Git仅保留派生JSON。无原程序运行/原色/历史FPS或助手亲自观看原版体验。见`docs/continuity/STONEAGE-ORIGINAL-ANIMATION-P2A-20261026.md`。
+
+在仓库根目录，提供同一已认证TW1 `data`目录，运行：
+
+```bash
+python -m tools.stoneage_original_animation_lab --original-dir /private/TW1/StoneAge/data --spr-no 100000 --direction 0 --action 6 --output /private/observations/tw1-animation.html
+```
+
+输出目录须先存在、位于公开仓库外，文件须尚不存在。生成HTML包含本地灰度PNG，无需服务器，支持前后帧、循环、帧位置、可调人为预览节拍和源偏移/声音字段。原SPR倒计时被保留；预览每秒节拍不是已证原游戏帧率。索引0不擅自抠透明、不命名动作/物种。缺任一四原文件或SHA不符则拒绝，不能用现代资源混替。`--check-report`仅重放派生元数据，不要求下载原件，也不声称完成原像素读取。
+
+下一P2B须验证同版SAP实际解释和保留索引颜色，不能仅用后代读取器或16个旧文件名给原图着色。P3真实启动仍独立OPEN。原内容任务R20和Stage A/B边界不变。
