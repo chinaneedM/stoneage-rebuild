@@ -32,7 +32,7 @@ class R19Contract(unittest.TestCase):
             analyze_executables({key: b"fake" for key in EXPECTED})
 
     def test_sample_bound_rejected(self):
-        for bound in [0, 65]:
+        for bound in [0, 25]:
             with self.assertRaises(ValueError):
                 bounded_candidates(b"something", bound)
 

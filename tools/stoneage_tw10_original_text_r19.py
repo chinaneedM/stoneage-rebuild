@@ -16,7 +16,7 @@ EXPECTED = {
 }
 CSTRING = re.compile(rb"[\x20-\x7e\x80-\xff]{4,96}\x00")
 ENCODINGS = ("cp950", "gb18030", "cp932")
-MAX_SAMPLES = 64
+MAX_SAMPLES = 24
 
 def digest(b: bytes) -> str:
     return hashlib.sha256(b).hexdigest()

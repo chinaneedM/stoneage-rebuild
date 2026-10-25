@@ -39,8 +39,9 @@ jobs:
           assert d['original_npc_pet_quest_identity_mappings_proven'] == 0
           assert d['early_official_server_master_acquired'] is False
           assert all(x['original_file_length'] in (425984,409600) for x in d['executable_observations'].values())
-          assert all(len(x['candidates'])<=64 for x in d['executable_observations'].values())
+          assert all(len(x['candidates'])<=24 for x in d['executable_observations'].values())
           print('R19_ORIGINAL_SOURCE_BOUNDED_PASS')
+          print('R19_DERIVED_JSON=' + json.dumps(d, ensure_ascii=True, sort_keys=True, separators=(',', ':')))
           PY
       - name: Always destroy temporary original copyrighted bytes
         if: always()
