@@ -9,7 +9,7 @@ import zlib
 
 from tools import stoneage_tw10_palette as p
 from tools.stoneage_original_animation_lab import preview,sample_report
-from tests.test_stoneage_original_animation_lab import AnimationObservationTests
+from tests import test_stoneage_original_animation_lab as animation_tests
 
 
 class PaletteInitialTests(unittest.TestCase):
@@ -54,7 +54,7 @@ class PaletteInitialTests(unittest.TestCase):
 
     def test_color_preview_does_not_change_source_frames_or_claim_game_display(self):
         with tempfile.TemporaryDirectory() as d:
-            helper=AnimationObservationTests();helper.report=sample_report()
+            helper=animation_tests.AnimationObservationTests();helper.report=sample_report()
             _,_,_,timeline,paths,pins=helper.fixture(Path(d))
             t=copy.deepcopy(timeline);t.update(preview_mode=p.MODE,original_palette_verified=True,
                                              source_palette_rgb_mapping_verified=True)

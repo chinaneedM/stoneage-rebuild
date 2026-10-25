@@ -1,0 +1,85 @@
+name: Accept original TW1 initialization palette and private color observation P2B
+on:
+  push:
+    branches: [main, agent/original-palette-p2b-20261026]
+    paths:
+      - 'tools/stoneage_tw10_palette*.py'
+      - 'tools/stoneage_original_animation_lab.py'
+      - 'tools/original-animation-viewer.html'
+      - 'tests/test_stoneage_tw10_palette*.py'
+      - 'research/recovered/STONEAGE-TW10-PALETTE-P2B-*.json'
+      - '.github/workflows/verify-stoneage-tw10-palette-p2b.yml'
+      - 'docs/continuity/STONEAGE-ORIGINAL-PALETTE-P2B-20261026.md'
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  palette-source-and-browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check actual bounded original source execution and successful color export
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          actual="$(gh api repos/chinaneedM/stoneage-rebuild/actions/runs/40241350181 --jq '[.status,.conclusion,.head_sha,.head_branch] | join("|")')"
+          test "$actual" = 'completed|success|b0e17c99df96d60c0301f505eac2e06743ff46ed|agent/original-palette-p2b-20261026'
+      - name: Run source semantic negatives, original-pixel conservation and grayscale compatibility
+        run: |
+          set -euo pipefail
+          python -m unittest -v tests.test_stoneage_tw10_palette tests.test_stoneage_tw10_palette_guard tests.test_stoneage_original_animation_lab tests.test_stoneage_original_animation_source_guard tests.test_stoneage_original_observation_lab tests.test_stoneage_rd_codec
+          python -m tools.stoneage_tw10_palette_guard
+          python -m tools.stoneage_original_animation_lab --check-report
+      - name: Check actual rendered RGB, animation advance and pause in Chrome with SYNTHETIC data only
+        run: |
+          set -euo pipefail
+          command -v google-chrome
+          npm install --ignore-scripts --no-audit --no-fund --prefix /tmp/stoneage-p2b-browser playwright@1.62.1
+          python - <<'PY'
+          from pathlib import Path
+          from tests.test_stoneage_original_animation_lab import AnimationObservationTests
+          from tools import stoneage_original_animation_lab as lab
+          from tools.stoneage_tw10_palette import initial_rgb,MODE
+          root=Path('/tmp/stoneage-p2b-synthetic');root.mkdir()
+          case=AnimationObservationTests();case.report=lab.sample_report()
+          _,_,_,t,paths,pins=case.fixture(root)
+          html,_=lab.preview(t,paths,pins);(root/'gray.html').write_text(html)
+          t=dict(t,preview_mode=MODE,original_palette_verified=True,source_palette_rgb_mapping_verified=True,
+                 source_palette={'path':'SYNTHETIC_INPUT_TEST_ONLY'})
+          rgb=initial_rgb(bytes((i*17+3)%256 for i in range(708)))
+          html,_=lab.preview(t,paths,pins,color_table=rgb);(root/'color.html').write_text(html)
+          PY
+          NODE_PATH=/tmp/stoneage-p2b-browser/node_modules node - <<'JS'
+          const {chromium}=require('playwright');
+          (async()=>{
+            const browser=await chromium.launch({executablePath:'/usr/bin/google-chrome',headless:true,args:['--no-sandbox']});
+            for(const mode of ['gray','color']){
+              const page=await browser.newPage({viewport:{width:1000,height:1100}});
+              const errors=[],network=[];
+              page.on('pageerror',e=>errors.push(e.message));
+              page.on('request',r=>{if(/^https?:/.test(r.url()))network.push(r.url());});
+              await page.clock.install();
+              await page.goto('file:///tmp/stoneage-p2b-synthetic/'+mode+'.html');
+              await page.waitForFunction(()=>!document.getElementById('play').disabled);
+              await page.clock.pauseAt(new Date(await page.evaluate(()=>Date.now())+100));
+              const pixel=await page.locator('canvas').evaluate(e=>Array.from(e.getContext('2d').getImageData(21,21,1,1).data));
+              const expected=mode==='color'?[222,0,0,255]:[10,10,10,255];
+              if(JSON.stringify(pixel)!==JSON.stringify(expected))throw Error('wrong '+mode+' canvas RGB '+pixel);
+              if(!(await page.locator('#state').innerText()).includes('1/2'))throw Error('initial frame');
+              await page.locator('#next').click();
+              if(!(await page.locator('#state').innerText()).includes('2/2'))throw Error('next frame');
+              await page.locator('#play').click();await page.clock.runFor(100);
+              if(!(await page.locator('#state').innerText()).includes('1/2'))throw Error('animation did not advance');
+              await page.locator('#play').click();await page.clock.runFor(250);
+              if(!(await page.locator('#state').innerText()).includes('1/2'))throw Error('paused animation advanced');
+              if(mode==='color'&&!(await page.locator('#color-note').innerText()).includes('尚未证明'))throw Error('color evidence note');
+              if(errors.length||network.length)throw Error(JSON.stringify({errors,network}));
+              console.log('P2B_REAL_BROWSER_SYNTHETIC_'+mode.toUpperCase()+'_RGB_AND_PLAYBACK=PASS');
+              await page.close();
+            }
+            await browser.close();
+          })().catch(e=>{console.error(e);process.exit(1)});
+          JS
