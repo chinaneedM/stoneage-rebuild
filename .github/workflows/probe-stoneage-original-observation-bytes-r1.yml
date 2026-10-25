@@ -1,0 +1,69 @@
+name: Probe authenticated TW1 original bitmap and WAV without publishing game assets
+on:
+  push:
+    branches: [agent/original-observation-lab-p0-20261025]
+    paths:
+      - ".github/workflows/probe-stoneage-original-observation-bytes-r1.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original-byte-readonly:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify synthetic and existing original-data decoder boundaries
+        run: |
+          set -euo pipefail
+          python -m unittest -v tests.test_stoneage_original_observation_lab tests.test_stoneage_rd_codec
+      - name: Obtain authenticated TW retail original carrier for NEW pixel and WAV inspection
+        run: |
+          set -euo pipefail
+          python -m tools.stoneage_tw10_archive_parallel_download --deadline 1500 --workers 16 --chunk 8388608 --output /tmp/CD_DIC.rar
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq 7zip
+          mkdir -p /tmp/stoneage-lab-private
+          7z x -y -o/tmp/stoneage-lab-private /tmp/CD_DIC.rar STONEAGE.bin >/dev/null
+          test "$(stat -c %s /tmp/stoneage-lab-private/STONEAGE.bin)" = 523449360
+      - name: Isolate original only for read-only side-effect-free inspection
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          from tools.stoneage_tw10_technical_probe import find_rows,extract_row
+          root=Path('/tmp/stoneage-lab-private')
+          img,rows,_,_=find_rows(root/'STONEAGE.bin')
+          targets=['StoneAge/data/adrn_1.bin','StoneAge/data/real_1.bin','StoneAge/data/se/sas_20.wav']
+          try:
+              for name in targets:
+                  found=[x for x in rows if x['path']==name and not x['is_dir']]
+                  if len(found)!=1: raise RuntimeError('cannot authenticate unique original member '+name)
+                  output=root/Path(name).name
+                  extract_row(img,found[0],output)
+                  print('EXTRACT_ORIGINAL_MEMBER',name,output.stat().st_size)
+          finally:
+              img.close()
+          PY
+      - name: Actually decode two original RD bitmap indices and audit a source WAV
+        run: |
+          set -euo pipefail
+          python -m tools.stoneage_original_observation_lab bitmap --adrn /tmp/stoneage-lab-private/adrn_1.bin --real /tmp/stoneage-lab-private/real_1.bin --bitmapno 5846 --output /tmp/stoneage-lab-private/bitmap5846.png
+          python -m tools.stoneage_original_observation_lab bitmap --adrn /tmp/stoneage-lab-private/adrn_1.bin --real /tmp/stoneage-lab-private/real_1.bin --bitmapno 5847 --output /tmp/stoneage-lab-private/bitmap5847.png
+          python -m tools.stoneage_original_observation_lab wav --file /tmp/stoneage-lab-private/sas_20.wav --original-path StoneAge/data/se/sas_20.wav
+          python - <<'PY'
+          from pathlib import Path
+          import json
+          d=Path('/tmp/stoneage-lab-private')
+          records=[json.loads((d / f'bitmap{n}.json').read_text()) for n in (5846,5847)]
+          assert len({r['original_rd_block_sha256'] for r in records})==2
+          assert all(r['original_colors_reproduced'] is False for r in records)
+          assert all(r['original_client_executed'] is False for r in records)
+          assert all(r['pet_species'] is None and r['npc_name'] is None for r in records)
+          print('TW1_ORIGINAL_RD_PIXELS_AUTHENTICATED_AND_DECODED=PASS')
+          print('TW1_ORIGINAL_VIEWED_COLOR_OR_GAME_RUNTIME=NOT_PROVEN')
+          PY
+      - name: Always delete original commercial carrier, images, and WAV
+        if: always()
+        run: |
+          rm -rf /tmp/CD_DIC.rar /tmp/stoneage-lab-private
