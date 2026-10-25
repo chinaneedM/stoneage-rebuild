@@ -55,3 +55,8 @@ python -m tools.stoneage_logical_alias_catalog verify
 最高NEXT **RESOURCE-LOGICAL-ALIAS-MATERIAL-DIFFERENCES-14**：以现成目录直接核CN5独有别名26089/26204及至多三组有差异/多候选的具体别名，区分改号、字节变化、重复覆盖与具体缺失；证据只到元数据就保留未知，不能以目录缺键推游戏删掉内容。不得重跑本预检或扩通用目录helper。先原始数据、后具名内容绑定；不转回网页逆推替代可用原件。
 
 任务四档、原版宠物/NPC服务器主表缺口、大包私人保管暂停、Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、总体percent=null全部保留。本包是统一资料底座的有限实物集成，不是新作设计或原游戏完成证书。
+
+
+## 实际发布终验
+
+内容main3dd64ff0e983941f0b3e26973eb5d3cf24cbb4a6/tree1d05ea4678a972bb7cc41585b4d0a2178df85332，候选11项、主线12项Actions实际全部completed/success。候选目录重放40186214426/job121147436404、主线40186285819/job121147655827均通过24测试、全部源属性块哈希重建、规范表/摘要精确比较及实际UI查询。本地94相关检查、独立SQL守恒与43632条源投影多重集逐项一致。实际gzip原文件SHA/Git blob与解压后规范内容SHA分别保存在STONEAGE-CROSSVERSION-LOGICAL-ALIAS-CATALOG-PUBLICATION-R1.json；原文件上载逐Git blob和完整远端tree与本地同一，没有ZIP工件或原资产。原历史前缀及旧快照全保留。该收据提交自身Actions须按实际另验；NEXT14及所有边界不变。
