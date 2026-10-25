@@ -1,0 +1,37 @@
+name: Verify Genkou NPC derived bytes and original-build exclusion
+
+on:
+  push:
+    paths:
+      - 'tools/stoneage_npc_genkou_source_gate.py'
+      - 'tests/test_stoneage_npc_genkou_source_gate.py'
+      - 'research/recovered/STONEAGE-NPC-GENKOU-DERIVED-ARG-R1.json'
+      - 'docs/specs/STONEAGE-NPC-GENKOU-DERIVED-ARG-SOURCE-R1.md'
+      - '.github/workflows/verify-stoneage-npc-genkou-derived-arg.yml'
+  workflow_dispatch:
+
+jobs:
+  bounded-source-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify synthetic mutation guards
+        run: python -m unittest tests.test_stoneage_npc_genkou_source_gate -v
+      - name: Read pinned small public modern derived YAML only
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl -fLsS --max-time 40 --retry 1 --retry-delay 2 \
+            'https://raw.githubusercontent.com/75912001/sa.desktop/e9b3f0cfd63b93c11fc77ca5331173dd6c5d2fc8/map/maps/11208/map.entity.yaml' \
+            -o /tmp/derived-modern-map.yaml
+          python -m tools.stoneage_npc_genkou_source_gate --source /tmp/derived-modern-map.yaml --output /tmp/derived-npc-metadata.json
+          cmp -s /tmp/derived-npc-metadata.json research/recovered/STONEAGE-NPC-GENKOU-DERIVED-ARG-R1.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: genkou-derived-metadata-only
+          path: /tmp/derived-npc-metadata.json
+          retention-days: 7
