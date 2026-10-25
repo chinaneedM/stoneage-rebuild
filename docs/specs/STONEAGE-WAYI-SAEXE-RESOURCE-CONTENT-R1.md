@@ -34,3 +34,8 @@ RCDATA156并非已恢复的登录窗口：其2142B原载荷SHA `0055f1abb78fa42b
 有界解析拒绝循环、越界、错误层深、重复键、零长/保留字段、来源错SHA、打包目录及压缩区伪载荷摘要；9项新测试，含既有PE和NPC验收共27项。另以GNU objdump独立比对8组目录声明与长度；其扫描目录长度之外尾数据的告警不当原件损坏证明。源CI仅下载370KB原程序和590KB工具，重放解压/双报告并cmp永久JSON，原程序不上传工件。Actions结果必须按实际后验记录。
 
 最高NEXT **OFFICIAL-CLIENT-LOGIN-SCENE-ASSET-BINDING-12**：只找这个已定SHA程序中ClientLogin所用的明确背景/按钮/图像ID或同构建原始画面证据，复用既有真实资源索引；缺原像素或确切引用就记录缺口，不能从Win32资源目录无菜单推导无UI。最多再一个有界UI单元，之后回22域队列，不展开通用PE/驱动helper。原大包私人保管仍暂停，NPC10官方同构建缺口仍OPEN，DD-028四档、Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、总体百分比null不变。
+
+
+## 实际发布终验
+
+内容主线3f69733196ed5dad255eed5069c51e4dc02b7aa2/tree384769b51691b20eaa1363f7ee73ee8b6da77082，候选11项、主线12项Actions全部completed/success。候选source40161301931/job121073247479及主线source40161334845/job121073349069均实际下载固定小样本、验工具、解压、解析与cmp永久报告成功；不是只跑合成测试。本地57项相关测试、GNU objdump双输入8声明及所有有资格载荷哈希独立一致。完整报告8094B/SHA1b58005f0d87069ede9469f65fa87ec26a571d704adf990f1e575485e82a39e1/Git blob7f2b154ec95e298508344f56d4edcb9908b8bbe2。未创建原件或ZIP工件，不伪报ZIP摘要；原程序删除，永久Git仅派生元数据。逐运行后验见research/recovered/STONEAGE-NPC10-UI11-PUBLICATION-R1.json；此后验收据提交自身Actions另据实观察。NEXT12及全部未知边界不变。
