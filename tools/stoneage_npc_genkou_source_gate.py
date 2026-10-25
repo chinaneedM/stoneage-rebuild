@@ -19,12 +19,20 @@ def analyze(raw,source_sha=SOURCE_SHA,arg_sha=ARG_SHA):
         lines=raw.decode("utf-8").splitlines()
         if lines[:3]!=["format: sa-map-entity-v2","map_id: 11208","npcs:"]:
             raise InvalidEvidence("source schema changed")
-        if any(x and not x.startswith("  - {") for x in lines[3:]):
-            raise InvalidEvidence("source entry layout changed")
-        npc=[json.loads(x[4:]) for x in lines[3:] if x.startswith("  - {")]
+        if "warps:" not in lines or "interactives: []" not in lines:
+            raise InvalidEvidence("modern map sections missing")
+        cut=lines.index("warps:")
+        nlines=lines[3:cut]
+        if any(not x.startswith("  - {") for x in nlines):
+            raise InvalidEvidence("non-entity in NPC section")
+        npc=[json.loads(x[4:]) for x in nlines]
+        warps=[json.loads(x[4:]) for x in lines[cut+1:lines.index("interactives: []")]
+               if x.startswith("  - {")]
+        if len(warps)!=3 or any(x.get("trigger")!="step" for x in warps):
+            raise InvalidEvidence("unexpected warp section")
     except (UnicodeDecodeError,json.JSONDecodeError) as e:
         raise InvalidEvidence("unparseable modern export") from e
-    if len(npc)!=5 or len({x["id"] for x in npc})!=5:
+    if len(npc)!=2 or len({x["id"] for x in npc})!=2:
         raise InvalidEvidence("unexpected npc count or duplicate id")
     hits=[x for x in npc if x.get("name")=="风的守护兽"]
     if len(hits)!=2:raise InvalidEvidence("guardian count changed")
@@ -73,7 +81,7 @@ def analyze(raw,source_sha=SOURCE_SHA,arg_sha=ARG_SHA):
       "upstream_commit":"e9b3f0cfd63b93c11fc77ca5331173dd6c5d2fc8",
       "upstream_file":"map/maps/11208/map.entity.yaml",
       "upstream_blob":source_sha,
-      "modern_map":11208,"modern_npc_rows":5,
+      "modern_map":11208,"modern_npc_rows":2,"modern_warp_rows":3,
       "modern_npc_occurrences":[{"id":i,"x":x,"y":y,"create_block_index":b,"create_line":ln}
                                 for i,x,y,b,ln in POINTS],
       "embedded_path":"100/sb_kbu.arg",
