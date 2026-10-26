@@ -51,8 +51,14 @@ jobs:
             dst=root/label;dst.mkdir()
             proc=subprocess.run(['7z','x','-y',f'-o{dst}',str(raw),'map/110.DAT'],capture_output=True,text=True)
             if proc.returncode:
-              raise SystemExit(label+' original 110.DAT extraction failed: '+proc.stderr[-1200:])
-            print(label+' actual_archive_full_hash=PASS')
+              # The December SFX is handled by the proven unar fallback; never execute the wrapper.
+              alt=subprocess.run(['unar','-f','-o',str(dst),str(raw)],capture_output=True,text=True)
+              if alt.returncode:
+                raise SystemExit(label+' original 110.DAT static extract failed: 7z '+proc.stdout[-300:]+' unar '+alt.stderr[-500:])
+            matches=[p for p in dst.rglob('*') if p.is_file() and p.name.lower()=='110.dat' and p.parent.name.lower()=='map']
+            if len(matches)!=1:
+              raise SystemExit(label+' qualified map/110.DAT not found uniquely after static extraction')
+            print(label+' actual_archive_full_hash=PASS original_map_file_found=PASS')
           PY
       - name: Derive precisely three actual changed cells and print metadata only
         run: python -m tools.stoneage_map110_actual_cells_r32 --source-maps /tmp/r32-map --output /tmp/r32-map110-derived.json
