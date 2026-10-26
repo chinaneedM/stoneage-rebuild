@@ -1,0 +1,38 @@
+name: Source exactly two original saved-client programs with sparse RAR reads R36
+on:
+  push:
+    branches: [agent/native-album-sparse-source-r36-20261027]
+    paths: ['.github/workflows/source-stoneage-native-album-r36.yml','tools/stoneage_native_album_source_r36.py','tests/test_stoneage_native_album_source_r36.py']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  bounded-original-program-source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Source range and independent compressed member guards
+        run: python -m unittest -v tests.test_stoneage_native_album_source_r36
+      - name: Install pinned metadata parser and static archive reader
+        run: |
+          python -m pip install --quiet rarfile==4.2
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq 7zip
+      - name: Locate two exact members and read at most16MiB of original archive ranges
+        run: python -m tools.stoneage_native_album_source_r36 --work /tmp/r36-private --output /tmp/r36-derived.json --sealed /tmp/r36-sealed.der
+      - name: Remove all original compressed or program bytes before artifact upload
+        if: always()
+        run: rm -rf /tmp/r36-private
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: r36-two-program-derived-and-private-ciphertext
+          path: |
+            /tmp/r36-derived.json
+            /tmp/r36-sealed.der
+          retention-days: 7
+          if-no-files-found: error
