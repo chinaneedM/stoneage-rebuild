@@ -108,3 +108,15 @@ CI须发布后据实际结果另记，不预写成功。
 
 本轮R20新增具名原实体0，Stage A7 PARTIAL+2 OPEN，B/wiki GATED，R79暂停，原大包私人
 保管仍受限，overall percent=null；测试数和控制路径数不是复原比例。
+
+
+## 实际主线终验
+
+内容main `0bf2c043aff206bbbd32416b98eb409e73c6a651`、tree
+`be5928931b0706779b65f3addac22b1623cf5827` 已非强制快进发布。候选五项与同HEAD主线
+六项Actions实际completed/success；主线专用40275478187/job121417202571日志确认28项
+测试、P3E归档及P3D回归重放通过，另外Stage A、R16/R17/R18、P1兼容成功。11个内容
+路径与远端逐字节相等，两既有文件保留精确前缀，五大历史文件及协议均原样保留。
+[永久发布收据](../../research/recovered/STONEAGE-P3E-WINDOWS-PUBLICATION-R1.json)登记
+全部候选/main作业步骤、内容blob和源链；收据自身CI发布后另实际核查，不预写通过。
+最高NEXT仍R20材料队列；8位合成通过、ACP/原隔离受限及原游戏未修复的边界不变。

@@ -1,0 +1,949 @@
+{
+  "schema": "stoneage.p3e.windows_publication.v1",
+  "content_head": "0bf2c043aff206bbbd32416b98eb409e73c6a651",
+  "content_tree": "be5928931b0706779b65f3addac22b1623cf5827",
+  "candidate_branch": "agent/available-windows-p3e-20261026",
+  "integration": "non-forced fast-forward after five candidate successes; fresh main lease checked",
+  "candidate_acceptance": [
+    {
+      "id": 40275413842,
+      "name": "Accept primary-source TW1.0 character creation numeric join R16",
+      "head_sha": "0bf2c043aff206bbbd32416b98eb409e73c6a651",
+      "head_branch": "agent/available-windows-p3e-20261026",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40275413842",
+      "jobs": [
+        {
+          "id": 121417016449,
+          "name": "acceptance",
+          "status": "completed",
+          "conclusion": "success",
+          "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40275413842/job/121417016449",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1,
+              "started_at": "2026-10-26T05:39:43Z",
+              "completed_at": "2026-10-26T05:39:43Z"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2,
+              "started_at": "2026-10-26T05:39:43Z",
+              "completed_at": "2026-10-26T05:39:49Z"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3,
+              "started_at": "2026-10-26T05:39:49Z",
+              "completed_at": "2026-10-26T05:39:49Z"
+            },
+            {
+              "name": "Replay authenticated original derived source metadata and negative cases",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4,
+              "started_at": "2026-10-26T05:39:49Z",
+              "completed_at": "2026-10-26T05:39:49Z"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 7,
+              "started_at": "2026-10-26T05:39:49Z",
+              "completed_at": "2026-10-26T05:39:50Z"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 8,
+              "started_at": "2026-10-26T05:39:50Z",
+              "completed_at": "2026-10-26T05:39:50Z"
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 9,
+              "started_at": "2026-10-26T05:39:50Z",
+              "completed_at": "2026-10-26T05:39:50Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 40275413879,
+      "name": "Validate bounded P3E Windows qualification and custody",
+      "head_sha": "0bf2c043aff206bbbd32416b98eb409e73c6a651",
+      "head_branch": "agent/available-windows-p3e-20261026",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40275413879",
+      "jobs": [
+        {
+          "id": 121417016767,
+          "name": "replay",
+          "status": "completed",
+          "conclusion": "success",
+          "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40275413879/job/121417016767",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1,
+              "started_at": "2026-10-26T05:39:43Z",
+              "completed_at": "2026-10-26T05:39:43Z"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2,
+              "started_at": "2026-10-26T05:39:43Z",
+              "completed_at": "2026-10-26T05:39:49Z"
+            },
+            {
+              "name": "Run python -m unittest -v tests.test_stoneage_p3e_windows tests.test_stoneage_p3d_bench tests.test_stoneage_p3d_evidence_guard",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3,
+              "started_at": "2026-10-26T05:39:49Z",
+              "completed_at": "2026-10-26T05:39:49Z"
+            },
+            {
+              "name": "Run python -m tools.stoneage_p3e_evidence_guard",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4,
+              "started_at": "2026-10-26T05:39:49Z",
+              "completed_at": "2026-10-26T05:39:49Z"
+            },
+            {
+              "name": "Run python -m tools.stoneage_p3d_evidence_guard",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 5,
+              "started_at": "2026-10-26T05:39:49Z",
+              "completed_at": "2026-10-26T05:39:50Z"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 10,
+              "started_at": "2026-10-26T05:39:50Z",
+              "completed_at": "2026-10-26T05:39:50Z"
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 11,
+              "started_at": "2026-10-26T05:39:50Z",
+              "completed_at": "2026-10-26T05:39:50Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 40275413966,
+      "name": "Verify preserved mixed25 full server source conservation R18",
+      "head_sha": "0bf2c043aff206bbbd32416b98eb409e73c6a651",
+      "head_branch": "agent/available-windows-p3e-20261026",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40275413966",
+      "jobs": [
+        {
+          "id": 121417016918,
+          "name": "full-source-conservation",
+          "status": "completed",
+          "conclusion": "success",
+          "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40275413966/job/121417016918",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1,
+              "started_at": "2026-10-26T05:39:44Z",
+              "completed_at": "2026-10-26T05:39:45Z"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2,
+              "started_at": "2026-10-26T05:39:45Z",
+              "completed_at": "2026-10-26T05:39:50Z"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3,
+              "started_at": "2026-10-26T05:39:50Z",
+              "completed_at": "2026-10-26T05:39:50Z"
+            },
+            {
+              "name": "Run python -m unittest tests.test_stoneage_mixed25_server_full_source_r18 tests.test_stoneage_mixed25_server_r18_docs -v",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4,
+              "started_at": "2026-10-26T05:39:50Z",
+              "completed_at": "2026-10-26T05:39:53Z"
+            },
+            {
+              "name": "Run python -m tools.stoneage_mixed25_server_full_source_r18",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 5,
+              "started_at": "2026-10-26T05:39:53Z",
+              "completed_at": "2026-10-26T05:39:53Z"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 9,
+              "started_at": "2026-10-26T05:39:53Z",
+              "completed_at": "2026-10-26T05:39:53Z"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 10,
+              "started_at": "2026-10-26T05:39:53Z",
+              "completed_at": "2026-10-26T05:39:53Z"
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 11,
+              "started_at": "2026-10-26T05:39:53Z",
+              "completed_at": "2026-10-26T05:39:54Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 40275413883,
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "head_sha": "0bf2c043aff206bbbd32416b98eb409e73c6a651",
+      "head_branch": "agent/available-windows-p3e-20261026",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40275413883",
+      "jobs": [
+        {
+          "id": 121417016727,
+          "name": "bounded-research-review",
+          "status": "completed",
+          "conclusion": "success",
+          "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40275413883/job/121417016727",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1,
+              "started_at": "2026-10-26T05:39:43Z",
+              "completed_at": "2026-10-26T05:39:44Z"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2,
+              "started_at": "2026-10-26T05:39:44Z",
+              "completed_at": "2026-10-26T05:39:51Z"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3,
+              "started_at": "2026-10-26T05:39:51Z",
+              "completed_at": "2026-10-26T05:39:51Z"
+            },
+            {
+              "name": "Validate delegated decision, immutable history and no premature production",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4,
+              "started_at": "2026-10-26T05:39:51Z",
+              "completed_at": "2026-10-26T05:39:52Z"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 7,
+              "started_at": "2026-10-26T05:39:52Z",
+              "completed_at": "2026-10-26T05:39:52Z"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 8,
+              "started_at": "2026-10-26T05:39:52Z",
+              "completed_at": "2026-10-26T05:39:52Z"
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 9,
+              "started_at": "2026-10-26T05:39:52Z",
+              "completed_at": "2026-10-26T05:39:52Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 40275413827,
+      "name": "Verify StoneAge R17 original battle SAB crossversion occurrence conservation",
+      "head_sha": "0bf2c043aff206bbbd32416b98eb409e73c6a651",
+      "head_branch": "agent/available-windows-p3e-20261026",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40275413827",
+      "jobs": [
+        {
+          "id": 121417016473,
+          "name": "exact-source-report",
+          "status": "completed",
+          "conclusion": "success",
+          "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40275413827/job/121417016473",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1,
+              "started_at": "2026-10-26T05:39:43Z",
+              "completed_at": "2026-10-26T05:39:43Z"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2,
+              "started_at": "2026-10-26T05:39:43Z",
+              "completed_at": "2026-10-26T05:39:49Z"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3,
+              "started_at": "2026-10-26T05:39:49Z",
+              "completed_at": "2026-10-26T05:39:49Z"
+            },
+            {
+              "name": "Run python -m unittest tests.test_stoneage_battle_sab_crossversion_r17 tests.test_stoneage_battle_sab_docs_r17 -v",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4,
+              "started_at": "2026-10-26T05:39:49Z",
+              "completed_at": "2026-10-26T05:39:50Z"
+            },
+            {
+              "name": "Run python -m tools.stoneage_battle_sab_crossversion_r17",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 5,
+              "started_at": "2026-10-26T05:39:50Z",
+              "completed_at": "2026-10-26T05:39:50Z"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 9,
+              "started_at": "2026-10-26T05:39:50Z",
+              "completed_at": "2026-10-26T05:39:50Z"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 10,
+              "started_at": "2026-10-26T05:39:50Z",
+              "completed_at": "2026-10-26T05:39:50Z"
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 11,
+              "started_at": "2026-10-26T05:39:50Z",
+              "completed_at": "2026-10-26T05:39:50Z"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "main_acceptance": [
+    {
+      "id": 40275478215,
+      "name": "Test offline original-client observation lab",
+      "head_sha": "0bf2c043aff206bbbd32416b98eb409e73c6a651",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40275478215",
+      "jobs": [
+        {
+          "id": 121417202547,
+          "name": "offline-contracts",
+          "status": "completed",
+          "conclusion": "success",
+          "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40275478215/job/121417202547",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1,
+              "started_at": "2026-10-26T05:40:24Z",
+              "completed_at": "2026-10-26T05:40:24Z"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2,
+              "started_at": "2026-10-26T05:40:24Z",
+              "completed_at": "2026-10-26T05:40:30Z"
+            },
+            {
+              "name": "Pure-stdlib synthetic visual and original file custody regression",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3,
+              "started_at": "2026-10-26T05:40:30Z",
+              "completed_at": "2026-10-26T05:40:30Z"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 6,
+              "started_at": "2026-10-26T05:40:30Z",
+              "completed_at": "2026-10-26T05:40:30Z"
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 7,
+              "started_at": "2026-10-26T05:40:30Z",
+              "completed_at": "2026-10-26T05:40:30Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 40275478187,
+      "name": "Validate bounded P3E Windows qualification and custody",
+      "head_sha": "0bf2c043aff206bbbd32416b98eb409e73c6a651",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40275478187",
+      "jobs": [
+        {
+          "id": 121417202571,
+          "name": "replay",
+          "status": "completed",
+          "conclusion": "success",
+          "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40275478187/job/121417202571",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1,
+              "started_at": "2026-10-26T05:40:24Z",
+              "completed_at": "2026-10-26T05:40:25Z"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2,
+              "started_at": "2026-10-26T05:40:25Z",
+              "completed_at": "2026-10-26T05:40:31Z"
+            },
+            {
+              "name": "Run python -m unittest -v tests.test_stoneage_p3e_windows tests.test_stoneage_p3d_bench tests.test_stoneage_p3d_evidence_guard",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3,
+              "started_at": "2026-10-26T05:40:31Z",
+              "completed_at": "2026-10-26T05:40:31Z"
+            },
+            {
+              "name": "Run python -m tools.stoneage_p3e_evidence_guard",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4,
+              "started_at": "2026-10-26T05:40:31Z",
+              "completed_at": "2026-10-26T05:40:31Z"
+            },
+            {
+              "name": "Run python -m tools.stoneage_p3d_evidence_guard",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 5,
+              "started_at": "2026-10-26T05:40:31Z",
+              "completed_at": "2026-10-26T05:40:31Z"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 10,
+              "started_at": "2026-10-26T05:40:31Z",
+              "completed_at": "2026-10-26T05:40:31Z"
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 11,
+              "started_at": "2026-10-26T05:40:31Z",
+              "completed_at": "2026-10-26T05:40:31Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 40275478184,
+      "name": "Verify preserved mixed25 full server source conservation R18",
+      "head_sha": "0bf2c043aff206bbbd32416b98eb409e73c6a651",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40275478184",
+      "jobs": [
+        {
+          "id": 121417202377,
+          "name": "full-source-conservation",
+          "status": "completed",
+          "conclusion": "success",
+          "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40275478184/job/121417202377",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1,
+              "started_at": "2026-10-26T05:40:24Z",
+              "completed_at": "2026-10-26T05:40:25Z"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2,
+              "started_at": "2026-10-26T05:40:25Z",
+              "completed_at": "2026-10-26T05:40:31Z"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3,
+              "started_at": "2026-10-26T05:40:31Z",
+              "completed_at": "2026-10-26T05:40:31Z"
+            },
+            {
+              "name": "Run python -m unittest tests.test_stoneage_mixed25_server_full_source_r18 tests.test_stoneage_mixed25_server_r18_docs -v",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4,
+              "started_at": "2026-10-26T05:40:31Z",
+              "completed_at": "2026-10-26T05:40:32Z"
+            },
+            {
+              "name": "Run python -m tools.stoneage_mixed25_server_full_source_r18",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 5,
+              "started_at": "2026-10-26T05:40:32Z",
+              "completed_at": "2026-10-26T05:40:32Z"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 9,
+              "started_at": "2026-10-26T05:40:32Z",
+              "completed_at": "2026-10-26T05:40:33Z"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 10,
+              "started_at": "2026-10-26T05:40:33Z",
+              "completed_at": "2026-10-26T05:40:33Z"
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 11,
+              "started_at": "2026-10-26T05:40:33Z",
+              "completed_at": "2026-10-26T05:40:33Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 40275478203,
+      "name": "Verify StoneAge R17 original battle SAB crossversion occurrence conservation",
+      "head_sha": "0bf2c043aff206bbbd32416b98eb409e73c6a651",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40275478203",
+      "jobs": [
+        {
+          "id": 121417202562,
+          "name": "exact-source-report",
+          "status": "completed",
+          "conclusion": "success",
+          "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40275478203/job/121417202562",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1,
+              "started_at": "2026-10-26T05:40:24Z",
+              "completed_at": "2026-10-26T05:40:25Z"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2,
+              "started_at": "2026-10-26T05:40:25Z",
+              "completed_at": "2026-10-26T05:40:32Z"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3,
+              "started_at": "2026-10-26T05:40:32Z",
+              "completed_at": "2026-10-26T05:40:32Z"
+            },
+            {
+              "name": "Run python -m unittest tests.test_stoneage_battle_sab_crossversion_r17 tests.test_stoneage_battle_sab_docs_r17 -v",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4,
+              "started_at": "2026-10-26T05:40:32Z",
+              "completed_at": "2026-10-26T05:40:32Z"
+            },
+            {
+              "name": "Run python -m tools.stoneage_battle_sab_crossversion_r17",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 5,
+              "started_at": "2026-10-26T05:40:32Z",
+              "completed_at": "2026-10-26T05:40:32Z"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 9,
+              "started_at": "2026-10-26T05:40:32Z",
+              "completed_at": "2026-10-26T05:40:32Z"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 10,
+              "started_at": "2026-10-26T05:40:32Z",
+              "completed_at": "2026-10-26T05:40:32Z"
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 11,
+              "started_at": "2026-10-26T05:40:32Z",
+              "completed_at": "2026-10-26T05:40:32Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 40275478232,
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "head_sha": "0bf2c043aff206bbbd32416b98eb409e73c6a651",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40275478232",
+      "jobs": [
+        {
+          "id": 121417202529,
+          "name": "bounded-research-review",
+          "status": "completed",
+          "conclusion": "success",
+          "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40275478232/job/121417202529",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1,
+              "started_at": "2026-10-26T05:40:24Z",
+              "completed_at": "2026-10-26T05:40:24Z"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2,
+              "started_at": "2026-10-26T05:40:24Z",
+              "completed_at": "2026-10-26T05:40:30Z"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3,
+              "started_at": "2026-10-26T05:40:30Z",
+              "completed_at": "2026-10-26T05:40:30Z"
+            },
+            {
+              "name": "Validate delegated decision, immutable history and no premature production",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4,
+              "started_at": "2026-10-26T05:40:30Z",
+              "completed_at": "2026-10-26T05:40:31Z"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 7,
+              "started_at": "2026-10-26T05:40:31Z",
+              "completed_at": "2026-10-26T05:40:31Z"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 8,
+              "started_at": "2026-10-26T05:40:31Z",
+              "completed_at": "2026-10-26T05:40:32Z"
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 9,
+              "started_at": "2026-10-26T05:40:32Z",
+              "completed_at": "2026-10-26T05:40:32Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 40275478188,
+      "name": "Accept primary-source TW1.0 character creation numeric join R16",
+      "head_sha": "0bf2c043aff206bbbd32416b98eb409e73c6a651",
+      "head_branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40275478188",
+      "jobs": [
+        {
+          "id": 121417202581,
+          "name": "acceptance",
+          "status": "completed",
+          "conclusion": "success",
+          "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40275478188/job/121417202581",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1,
+              "started_at": "2026-10-26T05:40:25Z",
+              "completed_at": "2026-10-26T05:40:25Z"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2,
+              "started_at": "2026-10-26T05:40:25Z",
+              "completed_at": "2026-10-26T05:40:30Z"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3,
+              "started_at": "2026-10-26T05:40:30Z",
+              "completed_at": "2026-10-26T05:40:30Z"
+            },
+            {
+              "name": "Replay authenticated original derived source metadata and negative cases",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4,
+              "started_at": "2026-10-26T05:40:30Z",
+              "completed_at": "2026-10-26T05:40:30Z"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 7,
+              "started_at": "2026-10-26T05:40:30Z",
+              "completed_at": "2026-10-26T05:40:30Z"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 8,
+              "started_at": "2026-10-26T05:40:30Z",
+              "completed_at": "2026-10-26T05:40:30Z"
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 9,
+              "started_at": "2026-10-26T05:40:30Z",
+              "completed_at": "2026-10-26T05:40:30Z"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "content_files": [
+    {
+      "path": ".github/workflows/probe-stoneage-available-windows-p3e.yml",
+      "bytes": 2121,
+      "sha256": "30ba0c1f3ed5abcf9e9f5d25078b8889e52f29b81df5d66dca4c3881028b5b61",
+      "git_blob": "cbba306c476cbf36fdc86aaca25cf4311ce7cacc"
+    },
+    {
+      "path": ".github/workflows/verify-stoneage-available-windows-p3e.yml",
+      "bytes": 777,
+      "sha256": "438d15026b371c837b6670cfa503e07e5d5fd2320ddedd805554f33acbabb7f2",
+      "git_blob": "392d345637018f148eb03ffaa08cb7ce18c47689"
+    },
+    {
+      "path": "README.md",
+      "bytes": 60733,
+      "sha256": "9a1061253e4353ad3ab96bd0f1cf9d78904bacebf8072d53b931bc16638e89fb",
+      "git_blob": "6ce9e38c751740df21a886ca36a8e2cbbfe201de"
+    },
+    {
+      "path": "docs/STONEAGE-ORIGINAL-OBSERVATION-LAB-R1.md",
+      "bytes": 11586,
+      "sha256": "a0f39de03be8563ab14ccf64851303a037fcb215c05c53adaa417eef2c7ec674",
+      "git_blob": "e79cad612d0549301a1634d1b03af925c69d18f6"
+    },
+    {
+      "path": "docs/continuity/STONEAGE-WINDOWS-P3E-20261026.md",
+      "bytes": 7871,
+      "sha256": "0a5e9b94a022c256916b24f0c8e536d25dbd1a2ac3f42392e707918bdd41168d",
+      "git_blob": "81273ee248e8de26c2187aa8bc567f5bc7d7d382"
+    },
+    {
+      "path": "research/recovered/STONEAGE-P3E-WINDOWS-ACTUAL-R1.json",
+      "bytes": 98928,
+      "sha256": "5cf118f9520a3c868c3dd48e1341eed327889a6b30f440b735b61512978f0069",
+      "git_blob": "349db3db1159792c9af6a19b5c961bcb3f8d022a"
+    },
+    {
+      "path": "research/recovered/STONEAGE-P3E-WINDOWS-CUSTODY-R1.json",
+      "bytes": 10232,
+      "sha256": "f9539e74919525e05932bf70265a37ad86d37060e2b27b3fa9fa20a1758ed701",
+      "git_blob": "d72af176f4f9b3ac31f1534f28a1cc05e3d9f105"
+    },
+    {
+      "path": "tests/test_stoneage_p3e_windows.py",
+      "bytes": 4278,
+      "sha256": "7bac3078e8aba3de0bcc45a98f51ef1b7ea419f08305ccda0bbb2951a736cc5b",
+      "git_blob": "a4c554cd7442b497c04107befebb9e00185a302c"
+    },
+    {
+      "path": "tools/stoneage_p3e_environment.c",
+      "bytes": 4275,
+      "sha256": "2b7b0d283d5c06308c0b2e383f94e9af31e2d13c5cd806a8c6b4c9c943e5addf",
+      "git_blob": "1ea9a92a7b56188e044a9d49c096d1c3c2249f17"
+    },
+    {
+      "path": "tools/stoneage_p3e_evidence_guard.py",
+      "bytes": 3601,
+      "sha256": "3e4aef49ed82ac6b227ee8694efcd4c84949c38cf666224a076bd04d315ab333",
+      "git_blob": "2e806630f2ae55850eead53e9ae2e7dd17ef568c"
+    },
+    {
+      "path": "tools/stoneage_p3e_windows.py",
+      "bytes": 5973,
+      "sha256": "7beb98394542e90602938a47ade753278b0d8451e6c61a533b623a5c8606e1a0",
+      "git_blob": "e8cb9b63ed5968703451345b99a4e078c562b3c1"
+    }
+  ],
+  "source_custody_path": "research/recovered/STONEAGE-P3E-WINDOWS-CUSTODY-R1.json",
+  "source_run": 40274977916,
+  "source_job": 121415693950,
+  "source_artifact": 12629299095,
+  "archive_exact_bytes_preserved": true,
+  "original_executed": false,
+  "original_environment_qualified": false,
+  "verdict": "BLOCKED_AVAILABLE_WINDOWS_ENVIRONMENT",
+  "stage_a": {
+    "partial": 7,
+    "open": 2
+  },
+  "stage_b": "GATED",
+  "wiki_production": "GATED",
+  "r79": "PAUSED_NON_BLOCKING",
+  "overall_restoration_percent": null,
+  "next": "EARLY-OFFICIAL-WORLD-ENTITY-SOURCE-20",
+  "receipt_self_ci": "Observe after publication; do not preclaim success or recursively append receipts."
+}
