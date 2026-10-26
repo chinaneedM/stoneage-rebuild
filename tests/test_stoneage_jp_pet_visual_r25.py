@@ -79,4 +79,61 @@ class SourceTests(unittest.TestCase):
         self.assertTrue(all(x['attempt_count']==1 and x['image'] is None for x in report['entries']))
 
 
+class MaterialJoinTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        from tools import stoneage_jp_pet_visual_r25 as material
+        cls.material=material
+        cls.doc=json.loads(material.REPORT.read_bytes())
+        cls.source=json.loads(material.SOURCE.read_bytes())
+        cls.observations=json.loads(material.OBSERVATIONS.read_bytes())
+
+    def test_actual_permanent_source_join_and_custody(self):
+        self.material.validate(self.doc)
+        self.assertEqual(self.doc['counts']['qualified_reference_total'],23)
+        self.assertEqual(self.doc['new_image_capture_year_counts'],{'2003':2,'2006':8})
+
+    def test_seven_required_record_fields_and_unproven_client_identity(self):
+        for row in self.doc['records']:
+            self.assertTrue({'record_id','record_revision','entity_type','version_profile',
+                             'source_refs','verification_status','rights_status'} <= row.keys())
+            self.assertIsNone(row['client_species_graphic_ids'])
+            self.assertIsNone(row['cross_region_aliases'])
+            self.assertIsNone(row['stats_growth_habitat_skills'])
+
+    def test_name_reassignment_to_visually_similar_image_rejected(self):
+        source=copy.deepcopy(self.source);source['entries'][0]['name_as_written']='invented'
+        with self.assertRaises(ValueError):self.material.build(source,self.observations)
+
+    def test_capture_era_not_promoted_to_parent_page(self):
+        source=copy.deepcopy(self.source)
+        source['entries'][1]['image']['actual_capture']='20031214055443'
+        with self.assertRaises(ValueError):self.material.build(source,self.observations)
+
+    def test_unseen_or_mismatched_decoded_pixels_rejected(self):
+        for key,value in [('assistant_viewed',False),('decoded_png_sha256','0'*64),
+                          ('identity_or_taxonomy_inferred',True)]:
+            observations=copy.deepcopy(self.observations);observations['entries']['3'][key]=value
+            with self.subTest(key=key),self.assertRaises(ValueError):self.material.build(self.source,observations)
+
+    def test_failed_14_15_have_no_image_or_invented_review(self):
+        rows={r['web_ordinal']:r for r in self.doc['records']}
+        for n in [14,15]:
+            self.assertFalse(rows[n]['image']['pixels_acquired'])
+            self.assertIsNone(rows[n]['visual_review'])
+            self.assertIn('Connection refused',rows[n]['failure_this_attempt'])
+        observations=copy.deepcopy(self.observations);observations['entries']['14']=observations['entries']['3']
+        with self.assertRaises(ValueError):self.material.build(self.source,observations)
+
+    def test_false_game_coverage_and_durable_delivery_refused(self):
+        for key in ['original_world_entered','tw10_or_cross_region_species_identity_proven',
+                    'source_pngs_durably_delivered_to_user']:
+            doc=copy.deepcopy(self.doc);doc['boundaries'][key]=True
+            with self.subTest(key=key),self.assertRaises(ValueError):self.material.validate(doc)
+
+    def test_prior_sample_not_double_counted(self):
+        doc=copy.deepcopy(self.doc);doc['counts']['qualified_reference_total']=25
+        with self.assertRaises(ValueError):self.material.validate(doc)
+
+
 if __name__=='__main__':unittest.main()

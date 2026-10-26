@@ -1,0 +1,28 @@
+name: Verify R25 named pet source custody and bounded image material join
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'tools/stoneage_jp_pet_visual_r25.py'
+      - 'tools/stoneage_jp_pet_visual_r25_source.py'
+      - 'tests/test_stoneage_jp_pet_visual_r25.py'
+      - 'research/recovered/STONEAGE-JP-PET-VISUAL-R25-*'
+      - 'research/recovered/STONEAGE-JP-OFFICIAL-PET-CATALOG-R1.json'
+      - 'research/recovered/STONEAGE-JP-OFFICIAL-PET-VISUAL-SAMPLE-R1.json'
+      - 'docs/specs/STONEAGE-JP-PET-VISUAL-R25.md'
+      - 'docs/continuity/STONEAGE-JP-PET-VISUAL-R25-20261026.md'
+      - '.github/workflows/verify-stoneage-jp-pet-visual-r25.yml'
+permissions:
+  contents: read
+jobs:
+  archived-material-replay:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install Pillow==12.3.0 cryptography
+      - run: python -m unittest -v tests.test_stoneage_jp_pet_visual_r25
+      - name: Replay permanent derived source and actual private visual observations
+        run: python -m tools.stoneage_jp_pet_visual_r25

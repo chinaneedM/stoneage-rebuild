@@ -1,0 +1,41 @@
+{
+  "schema": "stoneage.jp_pet_visual_r25.source_custody.v1",
+  "source_head": "48cb16d272c57c43bb47ac4cb8e1e72af5709d18",
+  "source_run": 40313523035,
+  "source_job": 121540306670,
+  "source_conclusion": "success",
+  "artifact_id": 12646430311,
+  "artifact_zip_bytes": 88848,
+  "artifact_zip_sha256": "5bd2a5b1bc16e206e23202324fae5848fbee20a4bf3a6c1d51f63c3f5a1f3820",
+  "artifact_member_allowlist": [
+    "private-png-envelopes.json",
+    "source-derived.json"
+  ],
+  "source_report": {
+    "bytes": 22998,
+    "sha256": "ffa2bcfcb49aca7335d393c1f5bb680c76b05f61149ce8be72ee59778f565494",
+    "git_blob": "04b042c63ed2f03982a0c0f1d3b5c829738fa4d1"
+  },
+  "input_reports": {
+    "research/recovered/STONEAGE-JP-OFFICIAL-PET-CATALOG-R1.json": {
+      "bytes": 182129,
+      "sha256": "edf50ec2fe9915db1904992ee2871def9b719fa05e40619019229be21dca413f",
+      "git_blob": "85e99d6fd6a7ca27eeaa3987510a6bcc1d701708"
+    },
+    "research/recovered/STONEAGE-JP-OFFICIAL-PET-VISUAL-SAMPLE-R1.json": {
+      "bytes": 35129,
+      "sha256": "fce2492fc51abfae360d189eb6a86319bcabec482cb5f151c5a68250dbd8640e",
+      "git_blob": "069280bf3fa61be0e08e979672af6864f2b7c616"
+    }
+  },
+  "encrypted_private_png_count": 10,
+  "all_png_decryptions_and_source_rgba_hashes_independently_verified": true,
+  "original_gif_local_rehash_performed": false,
+  "original_assets_committed": false,
+  "private_key_committed": false,
+  "original_pngs_durable_user_delivery": false,
+  "single_failed_attempts_retained": [
+    14,
+    15
+  ]
+}
