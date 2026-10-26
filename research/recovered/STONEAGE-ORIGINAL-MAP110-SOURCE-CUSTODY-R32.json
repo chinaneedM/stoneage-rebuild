@@ -1,0 +1,49 @@
+{
+  "schema": "stoneage.archived_map110_actual_r32.source_custody.v1",
+  "original_start_head": "05eb85bb59b2abcaba13b9614dedb37a27f3ca16",
+  "original_start_tree": "227a49182878cffac54f1120f11be6dceaf2aed0",
+  "current_full_state_blob": "031c76a5a8e431f646853909bb2f2e11e6328cd2",
+  "source_attempt_history": [
+    {
+      "head": "f1978221c7c7ed541f48ac07d1f52d144a876a6a",
+      "run": 40335438563,
+      "job": 121615630195,
+      "result": "failure",
+      "boundary": "June SHA qualified; December carrier SHA qualified, 7z exact extraction failed, no cell report; artifacts absent"
+    },
+    {
+      "head": "b6eb278ac15833fa346ba1907edb145b1154a3e1",
+      "run": 40335682973,
+      "job": 121616477087,
+      "result": "success",
+      "boundary": "June 7z plus December unar static extraction, original files exact SHA, three-cell report, temporary binary cleaned"
+    }
+  ],
+  "artifact": {
+    "id": 12656672965,
+    "name": "r32-map110-derived-no-original-map",
+    "downloaded_zip_bytes": 1209,
+    "actual_download_zip_sha256": "580bef79d991ebf35fb826d3718d87a5864ccab1b1119fdf2a6b5005857bb92f",
+    "matches_actions_api_sha256": true,
+    "members": [
+      "r32-map110-derived.json"
+    ]
+  },
+  "derived": {
+    "raw_bytes": 2832,
+    "raw_sha256": "b7fcd1f5d134ddcdbe11303e95c8fda78d3d431a14b3018dda19adb2f7ea40f0",
+    "raw_git_blob": "a3fac4f5c08d1b0660f302f95901a7d7fb2bee18",
+    "source_file": "research/recovered/STONEAGE-ORIGINAL-MAP110-CELL-DELTA-R32.json"
+  },
+  "scope": {
+    "june_capture": "20030623234451",
+    "dec_capture": "20031210092426",
+    "file": "map/110.DAT",
+    "original_archive_exe_committed": false,
+    "original_map_DAT_committed": false,
+    "third_plane_semantics_proven": false,
+    "taiwan_1_membership_proven": false
+  },
+  "candidate_and_main_ci": "PENDING_REAL_OBSERVATION",
+  "next": "ORIGINAL_SPR_RD_PALETTE_SAME_CARRIER_33"
+}

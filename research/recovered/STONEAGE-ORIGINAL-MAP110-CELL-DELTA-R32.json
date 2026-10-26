@@ -1,0 +1,81 @@
+{
+  "event_plane_runtime_semantics_unverified": true,
+  "june_equals_preserved25_by_whole_file_prior_witness_only": true,
+  "map_original_path": "map/110.DAT",
+  "map_token": 110,
+  "no_map_grid_released": true,
+  "no_named_map_or_quest_role": true,
+  "result": {
+    "height": 45,
+    "plane_diffs": [
+      {
+        "changed_cell_count": 0,
+        "changes": [],
+        "dec_plane_sha256": "17345f1fb0847c6ed849777f0a31cd9835c67529b0e15cfd8c61ba99ae5fc082",
+        "june_plane_sha256": "17345f1fb0847c6ed849777f0a31cd9835c67529b0e15cfd8c61ba99ae5fc082",
+        "new_nonzero_count": 1416,
+        "old_nonzero_count": 1416,
+        "ordinal": 1
+      },
+      {
+        "changed_cell_count": 0,
+        "changes": [],
+        "dec_plane_sha256": "eeeba192bccfd84c8ce93e7a45fb91d6a7fdc7d52d1f9b880913d0438b346b01",
+        "june_plane_sha256": "eeeba192bccfd84c8ce93e7a45fb91d6a7fdc7d52d1f9b880913d0438b346b01",
+        "new_nonzero_count": 934,
+        "old_nonzero_count": 934,
+        "ordinal": 2
+      },
+      {
+        "changed_cell_count": 3,
+        "changes": [
+          {
+            "dec_u16": 49152,
+            "index": 1,
+            "june_u16": 16384,
+            "x_rowmajor_candidate": 1,
+            "y_rowmajor_candidate": 0
+          },
+          {
+            "dec_u16": 49152,
+            "index": 2,
+            "june_u16": 16384,
+            "x_rowmajor_candidate": 2,
+            "y_rowmajor_candidate": 0
+          },
+          {
+            "dec_u16": 49152,
+            "index": 3,
+            "june_u16": 16384,
+            "x_rowmajor_candidate": 3,
+            "y_rowmajor_candidate": 0
+          }
+        ],
+        "dec_plane_sha256": "3aea662f23ccd0ba298743e9e67eba481909ae1ed7ed7a02b9610553fe4cecfa",
+        "june_plane_sha256": "a678eb37a26d028b05a507e8ab88c0247d0a495328ddeaecbeb81f49e0d08e88",
+        "new_nonzero_count": 2070,
+        "old_nonzero_count": 2070,
+        "ordinal": 3
+      }
+    ],
+    "total_actual_cells_compared": 6210,
+    "total_cells_per_plane": 2070,
+    "width": 46
+  },
+  "schema": "stoneage.map110_archived_2003_original_cell_delta.r32",
+  "source_packages": {
+    "dec": {
+      "capture": "20031210092426",
+      "container_sha256": "5f7f58e0d26d596e926a7d551d7c24e8a9a27824d5bdc53be3955b19b0e13abc",
+      "original_dat_sha256": "c2890121aa58447941b45c3e5041b444f22648bcef4403cb9ab18f6adbf41b7a"
+    },
+    "june": {
+      "capture": "20030623234451",
+      "container_sha256": "372426e46765a1cf479041bdafc1d3e58fb019117d00d0b43d6a5f796620776e",
+      "original_dat_sha256": "7d3e4e1dd8582268e14b3d21d0b0594c166f28062b05c8af260a6b214c41930d"
+    }
+  },
+  "source_scope": "ARCHIVED_THIRD_PARTY_MAP_EXE_TWO_DATED_SAMPLES_NOT_OFFICIAL_TW10",
+  "timeline_git_blob": "50a86ac87a193b683b1455f0e3ec8b74b82bdb96",
+  "world_coordinates_not_authenticated": true
+}
