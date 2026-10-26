@@ -5,10 +5,24 @@ import json
 import os
 from pathlib import Path
 import platform
+import re
 import subprocess
 import time
 
 from tools.stoneage_p3_boot import ROOT, command, frame, network_gate, require
+
+
+def living_wine_servers(proc=Path('/proc')):
+    servers=[]
+    for entry in proc.iterdir():
+        if not entry.name.isdigit():continue
+        try:
+            name=(entry/'comm').read_text().strip()
+            status=(entry/'status').read_text()
+            state=next(x for x in status.splitlines() if x.startswith('State:'))
+            if name.startswith('wineserver') and not re.match(r'State:\s+Z\b',state):servers.append(int(entry.name))
+        except (OSError,StopIteration):continue
+    return servers
 
 
 def read_live(path, predicate=lambda x:True, timeout=15):
@@ -138,9 +152,15 @@ def main():
                 setting=command(['wine','reg','add','HKCU\\Software\\Wine\\X11 Driver','/v','PrivateColorMap','/t','REG_SZ','/d','Y','/f'],env=env,cwd=base)
                 require(setting.returncode==0,'PrivateColorMap registry write failed')
                 query=command(['wine','reg','query','HKCU\\Software\\Wine\\X11 Driver','/v','PrivateColorMap'],env=env,cwd=base)
-                require(query.returncode==0 and 'PrivateColorMap' in query.stdout and 'Y' in query.stdout,'PrivateColorMap readback failed')
+                require(query.returncode==0 and re.search(r'PrivateColorMap\s+REG_SZ\s+Y(?:\s|$)',query.stdout),'PrivateColorMap readback failed')
                 stop=command(['wineserver','-k'],env=env);wait=command(['wineserver','-w'],env=env)
-                require(stop.returncode==0 and wait.returncode==0,'old Wine graphics processes not retired')
+                for _ in range(100):
+                    servers=living_wine_servers()
+                    if not servers:break
+                    time.sleep(.05)
+                report['wine_restart_observation']={'kill_returncode':stop.returncode,'wait_returncode':wait.returncode,
+                    'living_server_pids_after_wait':servers,'server_absence_verified':not servers}
+                require(not servers,'old Wine server remains alive before new graphics control')
                 report['wine_x11_configuration']={'PrivateColorMap':'Y','registry_write_and_readback_passed':True,
                     'wineserver_restarted_before_control':True,'upstream_source_scope':'wine-9.0; Ubuntu repack measured independently'}
         for mode in ('gdi','ddraw'):
