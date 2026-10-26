@@ -657,3 +657,8 @@ The 2.66 MB historical `docs/CURRENT-STATE.md` is still preserved byte-for-byte.
 ### 2026-10-27 — R36原程序281行相册表与224槽名称/图号
 
 [原材料规格](docs/specs/STONEAGE-NATIVE-ALBUM-MATERIAL-R36.md)及[续接记录](docs/continuity/STONEAGE-NATIVE-ALBUM-R36-20261027.md)：仅稀疏读取既有混合2.5包7995392B，实取两份旧完整SHA匹配的原exe，不运行、不公开原程序。原指令定界281行/28B表，其中224有效槽、57内部空位；R35相册148次名称/76槽全部按槽匹配。乌力→表内28001等关联直接来自原程序，遇见flag1与拍照flag2写图号区别亦有原指令支持；尚未联到物理bitmap/SPR、不认证官方构建或原服物种主表。首次取件失败及7-Zip崩溃均保留，unar成功后逐全SHA/CRC验收。最高NEXT37仅有限核同源逻辑图号→原资源关系，否则轮转22域；Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、总体百分比未知。
+
+
+### 2026-10-27 — R37 原相册表内图号到同保存客户端 ADRN 物理资源的静态关联
+
+[原材料规格](docs/specs/STONEAGE-PRESERVED-ALBUM-ALIAS-R37.md) / [连续性追加记录](docs/continuity/STONEAGE-ALBUM-ADRN-R37-20261027.md) / [实际主线验收收据](research/recovered/STONEAGE-PRESERVED-ALBUM-R37-PUBLICATION.json)：从社区混合2.5保存客户端同子树原 `adrn_15.bin` 完整18,765,120B/234,564条80B记录取得来源校验。R36原程序相册表内乌力face28001→原ADRN物理bitmap7246、乌力乌力28002→7247、乌力斯坦28003→7248；同号物理28001–28003实际是逻辑字段0的另外三条记录，不可混作相册真实绑定。首次源run40419864727虽然作业绿色，实际原件`NOT_ACQUIRED`；修正源run40420077051才有完整SHA/CRC匹配。R37内容候选run40422114956与主线run40422191047实际`completed/success`，按非强制快进合入主线。全部原程序/原REAL/密文私钥不入Git。**未取得**同源原REAL像素验证、运行时绘制、相同部署构建证明或官方早期物种master，认证纯净官方新客户端仍0。下一有界包`PRESERVED_CLIENT_ALBUM_RENDER_REAL_CONFIRMATION_38_OR_FINITE_EVIDENCE_GAP`只可取有界三图实物offset/size/RD，证据缺失则记录后回22域；Stage A 7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、整体完成比例仍未知。
