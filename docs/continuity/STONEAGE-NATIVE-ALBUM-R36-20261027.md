@@ -19,3 +19,9 @@
 本包原表和相册状态交付到止点，停止RAR/helper扩展。最高 `PRESERVED_CLIENT_ALBUM_LOGICAL_RESOURCE_BINDING_37`：先用已有混合2.5原资源派生，仅核至多乌力等三项的原绘制/逻辑别名→原ADRN物理记录关系；若需取件，只补可有界独立提取的原ADRN元数据，不重取763MB REAL或整个保存包。无同源可验元数据就记录精确缺口、轮转22域。表内图号暂不等于物理bitmap或SPR，不能用TW1/TW85同号替代同源绑定。
 
 新可认证官方客户端0；TW1原服master、纯净官方版本、完整物种/实体分母仍OPEN。Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79 PAUSED_NON_BLOCKING、P3E阻塞、DD-028四分类及总体percent=null保持。候选/main检查须发布后实际观察，另附后验，不能提前写success。
+
+## 已观察的候选/主线验收
+
+内容候选/主线同HEAD63f0526ba05c1d21abd7da073c37237328f47602，tree19014b4b2bbe5e41007df0ba43dff7cd5052ec44。候选10项及同内容主线10项Actions逐run/job/step实际全部completed/success：R36专用候选40418518108、主线40418597485；现行Stage A主线40418597574。13路径与远端原生Git逐字节同一，本地/远端树完全一致，八份完整历史文件或README原前缀保留。fresh main仍a5a829后非强制带expected SHA快进，没有覆盖并发改动。
+
+完整20项真实检查、原内容13路径blob/摘要、非强制主线集成与源链引用永久保存于`research/recovered/STONEAGE-NATIVE-ALBUM-PUBLICATION-R36.json`。本收据提交自身CI仍须发布后观察，不提前写其HEAD成功。实物成果是原程序281行/224槽与148次名称联接；新官方客户端仍0，图像物理绑定与NEXT37保持OPEN。

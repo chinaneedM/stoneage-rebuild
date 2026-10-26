@@ -1,0 +1,1566 @@
+{
+  "schema": "stoneage.native_album_publication.r36",
+  "content_commit": "63f0526ba05c1d21abd7da073c37237328f47602",
+  "content_tree": "19014b4b2bbe5e41007df0ba43dff7cd5052ec44",
+  "source_custody": "research/recovered/STONEAGE-NATIVE-ALBUM-CUSTODY-R36.json",
+  "content_pins": {
+    ".github/workflows/source-stoneage-native-album-r36.yml": {
+      "bytes": 1623,
+      "git_blob": "7fd345946a1c13307dff7bd0e3f500081f2da52b",
+      "sha256": "8cef654fed74ee4ac0c5684e03319a641fc955376854aba2e2166acfdbdc3124"
+    },
+    ".github/workflows/verify-stoneage-native-album-r36.yml": {
+      "bytes": 1688,
+      "git_blob": "e69980c225ca01a4f09c927b30cd7980a0babe8e",
+      "sha256": "e894ab2c30e4c50fa59b78216d9ac4034dc1586cf8a6e0140423b852f1ca2f67"
+    },
+    "README.md": {
+      "bytes": 74526,
+      "git_blob": "63d28b7ab1a97a45332c57f90314563facc4f261",
+      "sha256": "09e44249f34cd9dcfe8bd469e992fb24459350e8fb62190e4166992e344d2dec"
+    },
+    "docs/continuity/STONEAGE-NATIVE-ALBUM-R36-20261027.md": {
+      "bytes": 4050,
+      "git_blob": "7f33343735c1c89efe5b483234e9bd081bab95d2",
+      "sha256": "f1bbfb81b3a36db3528b62b4afa25c36d3332d1a17be58f04adb23a4371a4fc7"
+    },
+    "docs/specs/STONEAGE-NATIVE-ALBUM-MATERIAL-R36.md": {
+      "bytes": 5215,
+      "git_blob": "7a8e62ac7b90de0a4767a5dfea5cca01598fcc09",
+      "sha256": "b1af972e23d0f998af727bba30e9963abc41f5d5860c82a7dbeba3881a1d4a40"
+    },
+    "research/recovered/STONEAGE-NATIVE-ALBUM-CUSTODY-R36.json": {
+      "bytes": 5411,
+      "git_blob": "20ee9dc38c31721089aabeb0b4cb13dec6d469ff",
+      "sha256": "2db83a99ba888c8d3c607e5e5d8855b00af17005966ef4f24fcaa93cc688431d"
+    },
+    "research/recovered/STONEAGE-NATIVE-ALBUM-MATERIAL-R36.json": {
+      "bytes": 168189,
+      "git_blob": "d642cfd50ed714e23a752bce5f284db3f74f53d6",
+      "sha256": "1a79802705c88d94fb755903ddee3a3da5985e302f822e9ba0064af8034595e0"
+    },
+    "research/recovered/STONEAGE-NATIVE-ALBUM-PROGRAM-SOURCE-R36.json": {
+      "bytes": 30903,
+      "git_blob": "cebdc17463ffacee44e8854adf0bd1ca1c4b05f0",
+      "sha256": "e10d966b4d45d691dd59020f88d87ebc553e303d20f8044bb9e9cc83d76c9237"
+    },
+    "research/recovered/STONEAGE-NATIVE-ALBUM-SOURCE-ATTEMPT1-R36.json": {
+      "bytes": 456,
+      "git_blob": "46d442cb163eef963b1ae58353634ad80a669bd4",
+      "sha256": "76cf7bcab5ea0b6d1631b956ad78eb9f9a947b510c678e7c1c8b03cd4d5730a6"
+    },
+    "tests/test_stoneage_native_album_material_r36.py": {
+      "bytes": 2841,
+      "git_blob": "b386b346ca843053d4dfc88f7ecec7f85d793bb2",
+      "sha256": "9f5dbd2ccdeb1e54767ed5bf184dd69f6b04010f87e70a47001ca5056e534a50"
+    },
+    "tests/test_stoneage_native_album_source_r36.py": {
+      "bytes": 2119,
+      "git_blob": "6c6bd8388c856b7410c6eed1fdc95e5966bc1f2f",
+      "sha256": "30556107cf19037fdc74c49e3dd4fd9551a7a2bf76d495e4a5570f32edf828cf"
+    },
+    "tools/stoneage_native_album_material_r36.py": {
+      "bytes": 13364,
+      "git_blob": "801fc70c6e9f91be88aadeb59b19e5d60e2873ff",
+      "sha256": "b7a20a039fe982171688cf9292f959cf8614ccee006fec14806d57f6d4c09c60"
+    },
+    "tools/stoneage_native_album_source_r36.py": {
+      "bytes": 10961,
+      "git_blob": "056dea2ef2069504b89e123fe9b197fb4ae0b8f2",
+      "sha256": "d7bfa7ade8e02c9441bdc4cadff7e460f3cf7c856b89e41cb1512db37d9c742d"
+    }
+  },
+  "remote_native_git_all13_paths_exact": true,
+  "all8_historical_full_files_or_readme_prefix_preserved": true,
+  "local_remote_content_tree_equal": true,
+  "main_integration": {
+    "fresh_previous_main": "a5a829346dd68a68e9eab4b1b7d7ac3b07b19e3b",
+    "new_main": "63f0526ba05c1d21abd7da073c37237328f47602",
+    "force": false,
+    "expected_sha_lease": true
+  },
+  "candidate_actions": [
+    {
+      "id": 40418518108,
+      "head_sha": "63f0526ba05c1d21abd7da073c37237328f47602",
+      "head_branch": "agent/native-album-material-r36-20261027",
+      "name": "Verify original native album table and saved-name joins R36",
+      "status": "completed",
+      "conclusion": "success",
+      "event": "push",
+      "created_at": "2026-10-26T23:15:43Z",
+      "updated_at": "2026-10-26T23:16:00Z",
+      "jobs": [
+        {
+          "id": 121906753704,
+          "name": "original-native-table-boundaries",
+          "status": "completed",
+          "conclusion": "success",
+          "run_id": 40418518108,
+          "logs_url": null,
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3
+            },
+            {
+              "name": "Sparse source and original namespace negative tests",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4
+            },
+            {
+              "name": "Replay all281 native rows and148 saved names without original program download",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 5
+            },
+            {
+              "name": "Keep original programs, ciphertext and private keys outside Git",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 6
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 11
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 12
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 13
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 40418517712,
+      "head_sha": "63f0526ba05c1d21abd7da073c37237328f47602",
+      "head_branch": "agent/native-album-material-r36-20261027",
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "status": "completed",
+      "conclusion": "success",
+      "event": "push",
+      "created_at": "2026-10-26T23:15:42Z",
+      "updated_at": "2026-10-26T23:15:55Z",
+      "jobs": [
+        {
+          "id": 121906751757,
+          "name": "bounded-research-review",
+          "status": "completed",
+          "conclusion": "success",
+          "run_id": 40418517712,
+          "logs_url": null,
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3
+            },
+            {
+              "name": "Validate delegated decision, immutable history and no premature production",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 7
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 8
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 9
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 40418517756,
+      "head_sha": "63f0526ba05c1d21abd7da073c37237328f47602",
+      "head_branch": "agent/native-album-material-r36-20261027",
+      "name": "Verify preserved mixed25 full server source conservation R18",
+      "status": "completed",
+      "conclusion": "success",
+      "event": "push",
+      "created_at": "2026-10-26T23:15:42Z",
+      "updated_at": "2026-10-26T23:15:57Z",
+      "jobs": [
+        {
+          "id": 121906752198,
+          "name": "full-source-conservation",
+          "status": "completed",
+          "conclusion": "success",
+          "run_id": 40418517756,
+          "logs_url": null,
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3
+            },
+            {
+              "name": "Run python -m unittest tests.test_stoneage_mixed25_server_full_source_r18 tests.test_stoneage_mixed25_server_r18_docs -v",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4
+            },
+            {
+              "name": "Run python -m tools.stoneage_mixed25_server_full_source_r18",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 5
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 9
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 10
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 11
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 40418517977,
+      "head_sha": "63f0526ba05c1d21abd7da073c37237328f47602",
+      "head_branch": "agent/native-album-material-r36-20261027",
+      "name": "Verify original same-build named-entity source gate R31",
+      "status": "completed",
+      "conclusion": "success",
+      "event": "push",
+      "created_at": "2026-10-26T23:15:42Z",
+      "updated_at": "2026-10-26T23:15:57Z",
+      "jobs": [
+        {
+          "id": 121906752500,
+          "name": "exact-original-source-negative-gate",
+          "status": "completed",
+          "conclusion": "success",
+          "run_id": 40418517977,
+          "logs_url": null,
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3
+            },
+            {
+              "name": "Eleven tests including nine negative controls and raw-source replay",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4
+            },
+            {
+              "name": "Exact original source Git blobs and all 557 entries plus 8 original frames",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 5
+            },
+            {
+              "name": "No commercial original artwork, executable or cache in R31 release",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 6
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 11
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 12
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 13
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 40418517468,
+      "head_sha": "63f0526ba05c1d21abd7da073c37237328f47602",
+      "head_branch": "agent/native-album-material-r36-20261027",
+      "name": "Verify original local album name material and no master promotion R35",
+      "status": "completed",
+      "conclusion": "success",
+      "event": "push",
+      "created_at": "2026-10-26T23:15:42Z",
+      "updated_at": "2026-10-26T23:15:58Z",
+      "jobs": [
+        {
+          "id": 121906750718,
+          "name": "immutable-source-and-name-boundaries",
+          "status": "completed",
+          "conclusion": "success",
+          "run_id": 40418517468,
+          "logs_url": null,
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3
+            },
+            {
+              "name": "Hash, namespace, encoding and random-field negative tests",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4
+            },
+            {
+              "name": "Replay complete archived named-slot metadata without original data download",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 5
+            },
+            {
+              "name": "Reject plaintext original member and private key in R35 public files",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 6
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 11
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 12
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 13
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 40418517813,
+      "head_sha": "63f0526ba05c1d21abd7da073c37237328f47602",
+      "head_branch": "agent/native-album-material-r36-20261027",
+      "name": "Verify StoneAge R17 original battle SAB crossversion occurrence conservation",
+      "status": "completed",
+      "conclusion": "success",
+      "event": "push",
+      "created_at": "2026-10-26T23:15:42Z",
+      "updated_at": "2026-10-26T23:15:58Z",
+      "jobs": [
+        {
+          "id": 121906752455,
+          "name": "exact-source-report",
+          "status": "completed",
+          "conclusion": "success",
+          "run_id": 40418517813,
+          "logs_url": null,
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3
+            },
+            {
+              "name": "Run python -m unittest tests.test_stoneage_battle_sab_crossversion_r17 tests.test_stoneage_battle_sab_docs_r17 -v",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4
+            },
+            {
+              "name": "Run python -m tools.stoneage_battle_sab_crossversion_r17",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 5
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 9
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 10
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 11
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 40418517755,
+      "head_sha": "63f0526ba05c1d21abd7da073c37237328f47602",
+      "head_branch": "agent/native-album-material-r36-20261027",
+      "name": "Accept primary-source TW1.0 character creation numeric join R16",
+      "status": "completed",
+      "conclusion": "success",
+      "event": "push",
+      "created_at": "2026-10-26T23:15:42Z",
+      "updated_at": "2026-10-26T23:15:58Z",
+      "jobs": [
+        {
+          "id": 121906752174,
+          "name": "acceptance",
+          "status": "completed",
+          "conclusion": "success",
+          "run_id": 40418517755,
+          "logs_url": null,
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3
+            },
+            {
+              "name": "Replay authenticated original derived source metadata and negative cases",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 7
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 8
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 9
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 40418517593,
+      "head_sha": "63f0526ba05c1d21abd7da073c37237328f47602",
+      "head_branch": "agent/native-album-material-r36-20261027",
+      "name": "Verify original four village interior materials R34",
+      "status": "completed",
+      "conclusion": "success",
+      "event": "push",
+      "created_at": "2026-10-26T23:15:42Z",
+      "updated_at": "2026-10-26T23:16:00Z",
+      "jobs": [
+        {
+          "id": 121906750813,
+          "name": "original-source-and-boundaries",
+          "status": "completed",
+          "conclusion": "success",
+          "run_id": 40418517593,
+          "logs_url": null,
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3
+            },
+            {
+              "name": "Original geometry and historical source negative tests",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4
+            },
+            {
+              "name": "Replay permanently archived source and candidate conservation without original download",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 5
+            },
+            {
+              "name": "Reject proprietary room maps and executable or picture leakage",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 6
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 11
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 12
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 13
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 40418517592,
+      "head_sha": "63f0526ba05c1d21abd7da073c37237328f47602",
+      "head_branch": "agent/native-album-material-r36-20261027",
+      "name": "Verify original dated map110 three actual cell values R32",
+      "status": "completed",
+      "conclusion": "success",
+      "event": "push",
+      "created_at": "2026-10-26T23:15:42Z",
+      "updated_at": "2026-10-26T23:15:57Z",
+      "jobs": [
+        {
+          "id": 121906751173,
+          "name": "bounded-original-map-delta",
+          "status": "completed",
+          "conclusion": "success",
+          "run_id": 40418517592,
+          "logs_url": null,
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3
+            },
+            {
+              "name": "Source parser and offline report negative semantics",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4
+            },
+            {
+              "name": "Independent derived-metadata replay with original historical timeline pin",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 5
+            },
+            {
+              "name": "Reject commercial DAT, EXE and copyright image leakage",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 6
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 11
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 12
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 13
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 40418517628,
+      "head_sha": "63f0526ba05c1d21abd7da073c37237328f47602",
+      "head_branch": "agent/native-album-material-r36-20261027",
+      "name": "Accept preserved original TW85 SPR137 full animation material R28",
+      "status": "completed",
+      "conclusion": "success",
+      "event": "push",
+      "created_at": "2026-10-26T23:15:42Z",
+      "updated_at": "2026-10-26T23:16:03Z",
+      "jobs": [
+        {
+          "id": 121906752044,
+          "name": "independent-original-derived",
+          "status": "completed",
+          "conclusion": "success",
+          "run_id": 40418517628,
+          "logs_url": null,
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3
+            },
+            {
+              "name": "Negative semantics and synthetic format guards",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4
+            },
+            {
+              "name": "Replay and independently attest all 1739 original indexed groups and 735666 frames",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 5
+            },
+            {
+              "name": "Ensure exact derived-only repository custody",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 6
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 11
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 12
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 13
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "main_actions": [
+    {
+      "id": 40418597574,
+      "head_sha": "63f0526ba05c1d21abd7da073c37237328f47602",
+      "head_branch": "main",
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "status": "completed",
+      "conclusion": "success",
+      "event": "push",
+      "created_at": "2026-10-26T23:16:23Z",
+      "updated_at": "2026-10-26T23:16:38Z",
+      "jobs": [
+        {
+          "id": 121907014433,
+          "name": "bounded-research-review",
+          "status": "completed",
+          "conclusion": "success",
+          "run_id": 40418597574,
+          "logs_url": null,
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3
+            },
+            {
+              "name": "Validate delegated decision, immutable history and no premature production",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 7
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 8
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 9
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 40418597521,
+      "head_sha": "63f0526ba05c1d21abd7da073c37237328f47602",
+      "head_branch": "main",
+      "name": "Accept preserved original TW85 SPR137 full animation material R28",
+      "status": "completed",
+      "conclusion": "success",
+      "event": "push",
+      "created_at": "2026-10-26T23:16:23Z",
+      "updated_at": "2026-10-26T23:16:39Z",
+      "jobs": [
+        {
+          "id": 121907013889,
+          "name": "independent-original-derived",
+          "status": "completed",
+          "conclusion": "success",
+          "run_id": 40418597521,
+          "logs_url": null,
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3
+            },
+            {
+              "name": "Negative semantics and synthetic format guards",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4
+            },
+            {
+              "name": "Replay and independently attest all 1739 original indexed groups and 735666 frames",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 5
+            },
+            {
+              "name": "Ensure exact derived-only repository custody",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 6
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 11
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 12
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 13
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 40418597785,
+      "head_sha": "63f0526ba05c1d21abd7da073c37237328f47602",
+      "head_branch": "main",
+      "name": "Verify original local album name material and no master promotion R35",
+      "status": "completed",
+      "conclusion": "success",
+      "event": "push",
+      "created_at": "2026-10-26T23:16:23Z",
+      "updated_at": "2026-10-26T23:16:37Z",
+      "jobs": [
+        {
+          "id": 121907015436,
+          "name": "immutable-source-and-name-boundaries",
+          "status": "completed",
+          "conclusion": "success",
+          "run_id": 40418597785,
+          "logs_url": null,
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3
+            },
+            {
+              "name": "Hash, namespace, encoding and random-field negative tests",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4
+            },
+            {
+              "name": "Replay complete archived named-slot metadata without original data download",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 5
+            },
+            {
+              "name": "Reject plaintext original member and private key in R35 public files",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 6
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 11
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 12
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 13
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 40418597766,
+      "head_sha": "63f0526ba05c1d21abd7da073c37237328f47602",
+      "head_branch": "main",
+      "name": "Verify StoneAge R17 original battle SAB crossversion occurrence conservation",
+      "status": "completed",
+      "conclusion": "success",
+      "event": "push",
+      "created_at": "2026-10-26T23:16:23Z",
+      "updated_at": "2026-10-26T23:16:37Z",
+      "jobs": [
+        {
+          "id": 121907018630,
+          "name": "exact-source-report",
+          "status": "completed",
+          "conclusion": "success",
+          "run_id": 40418597766,
+          "logs_url": null,
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3
+            },
+            {
+              "name": "Run python -m unittest tests.test_stoneage_battle_sab_crossversion_r17 tests.test_stoneage_battle_sab_docs_r17 -v",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4
+            },
+            {
+              "name": "Run python -m tools.stoneage_battle_sab_crossversion_r17",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 5
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 9
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 10
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 11
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 40418597539,
+      "head_sha": "63f0526ba05c1d21abd7da073c37237328f47602",
+      "head_branch": "main",
+      "name": "Accept primary-source TW1.0 character creation numeric join R16",
+      "status": "completed",
+      "conclusion": "success",
+      "event": "push",
+      "created_at": "2026-10-26T23:16:23Z",
+      "updated_at": "2026-10-26T23:16:36Z",
+      "jobs": [
+        {
+          "id": 121907014434,
+          "name": "acceptance",
+          "status": "completed",
+          "conclusion": "success",
+          "run_id": 40418597539,
+          "logs_url": null,
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3
+            },
+            {
+              "name": "Replay authenticated original derived source metadata and negative cases",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 7
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 8
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 9
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 40418597719,
+      "head_sha": "63f0526ba05c1d21abd7da073c37237328f47602",
+      "head_branch": "main",
+      "name": "Verify preserved mixed25 full server source conservation R18",
+      "status": "completed",
+      "conclusion": "success",
+      "event": "push",
+      "created_at": "2026-10-26T23:16:23Z",
+      "updated_at": "2026-10-26T23:16:35Z",
+      "jobs": [
+        {
+          "id": 121907014938,
+          "name": "full-source-conservation",
+          "status": "completed",
+          "conclusion": "success",
+          "run_id": 40418597719,
+          "logs_url": null,
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3
+            },
+            {
+              "name": "Run python -m unittest tests.test_stoneage_mixed25_server_full_source_r18 tests.test_stoneage_mixed25_server_r18_docs -v",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4
+            },
+            {
+              "name": "Run python -m tools.stoneage_mixed25_server_full_source_r18",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 5
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 9
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 10
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 11
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 40418597527,
+      "head_sha": "63f0526ba05c1d21abd7da073c37237328f47602",
+      "head_branch": "main",
+      "name": "Verify original same-build named-entity source gate R31",
+      "status": "completed",
+      "conclusion": "success",
+      "event": "push",
+      "created_at": "2026-10-26T23:16:23Z",
+      "updated_at": "2026-10-26T23:16:42Z",
+      "jobs": [
+        {
+          "id": 121907015228,
+          "name": "exact-original-source-negative-gate",
+          "status": "completed",
+          "conclusion": "success",
+          "run_id": 40418597527,
+          "logs_url": null,
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3
+            },
+            {
+              "name": "Eleven tests including nine negative controls and raw-source replay",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4
+            },
+            {
+              "name": "Exact original source Git blobs and all 557 entries plus 8 original frames",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 5
+            },
+            {
+              "name": "No commercial original artwork, executable or cache in R31 release",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 6
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 11
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 12
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 13
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 40418597847,
+      "head_sha": "63f0526ba05c1d21abd7da073c37237328f47602",
+      "head_branch": "main",
+      "name": "Verify original dated map110 three actual cell values R32",
+      "status": "completed",
+      "conclusion": "success",
+      "event": "push",
+      "created_at": "2026-10-26T23:16:23Z",
+      "updated_at": "2026-10-26T23:16:35Z",
+      "jobs": [
+        {
+          "id": 121907015997,
+          "name": "bounded-original-map-delta",
+          "status": "completed",
+          "conclusion": "success",
+          "run_id": 40418597847,
+          "logs_url": null,
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3
+            },
+            {
+              "name": "Source parser and offline report negative semantics",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4
+            },
+            {
+              "name": "Independent derived-metadata replay with original historical timeline pin",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 5
+            },
+            {
+              "name": "Reject commercial DAT, EXE and copyright image leakage",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 6
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 11
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 12
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 13
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 40418597901,
+      "head_sha": "63f0526ba05c1d21abd7da073c37237328f47602",
+      "head_branch": "main",
+      "name": "Verify original four village interior materials R34",
+      "status": "completed",
+      "conclusion": "success",
+      "event": "push",
+      "created_at": "2026-10-26T23:16:23Z",
+      "updated_at": "2026-10-26T23:16:35Z",
+      "jobs": [
+        {
+          "id": 121907015673,
+          "name": "original-source-and-boundaries",
+          "status": "completed",
+          "conclusion": "success",
+          "run_id": 40418597901,
+          "logs_url": null,
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3
+            },
+            {
+              "name": "Original geometry and historical source negative tests",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4
+            },
+            {
+              "name": "Replay permanently archived source and candidate conservation without original download",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 5
+            },
+            {
+              "name": "Reject proprietary room maps and executable or picture leakage",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 6
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 11
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 12
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 13
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 40418597485,
+      "head_sha": "63f0526ba05c1d21abd7da073c37237328f47602",
+      "head_branch": "main",
+      "name": "Verify original native album table and saved-name joins R36",
+      "status": "completed",
+      "conclusion": "success",
+      "event": "push",
+      "created_at": "2026-10-26T23:16:23Z",
+      "updated_at": "2026-10-26T23:16:35Z",
+      "jobs": [
+        {
+          "id": 121907013888,
+          "name": "original-native-table-boundaries",
+          "status": "completed",
+          "conclusion": "success",
+          "run_id": 40418597485,
+          "logs_url": null,
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3
+            },
+            {
+              "name": "Sparse source and original namespace negative tests",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4
+            },
+            {
+              "name": "Replay all281 native rows and148 saved names without original program download",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 5
+            },
+            {
+              "name": "Keep original programs, ciphertext and private keys outside Git",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 6
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 11
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 12
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 13
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "post_source_independent_decoder": "Local objdump independently confirms movl $0x119,0x2aff9bc at VA0x42df13; original programs not executed",
+  "material_summary": {
+    "native_lookup_rows": 281,
+    "populated_album_slots": 224,
+    "internal_placeholder_rows": 57,
+    "saved_name_occurrence_matches": 148,
+    "saved_named_slots": 76,
+    "new_authenticated_official_clients": 0,
+    "physical_bitmap_or_spr_binding_proven": false
+  },
+  "next": "PRESERVED_CLIENT_ALBUM_LOGICAL_RESOURCE_BINDING_37",
+  "receipt_commit_own_ci": "Not preclaimed; observe after publication"
+}
