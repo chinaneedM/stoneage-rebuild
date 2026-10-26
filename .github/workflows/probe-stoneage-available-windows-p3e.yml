@@ -1,0 +1,40 @@
+name: Qualify available Windows display encoding and synthetic firewall P3E
+on:
+  push:
+    branches: [agent/available-windows-p3e-20261026]
+    paths: ['.github/workflows/probe-stoneage-available-windows-p3e.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  finite-native-qualification:
+    runs-on: windows-2022
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ilammy/msvc-dev-cmd@v1
+        with:
+          arch: x86
+      - name: Build only two self-authored x86 programs with no modern OS manifest
+        shell: cmd
+        run: |
+          cl /nologo /std:c11 /W3 /O2 /Fe:"%RUNNER_TEMP%\p3e-environment.exe" tools\stoneage_p3e_environment.c user32.lib gdi32.lib ddraw.lib dxguid.lib ws2_32.lib /link /SUBSYSTEM:CONSOLE /MANIFEST:NO
+          cl /nologo /std:c11 /W3 /O2 /Fe:"%RUNNER_TEMP%\p3e-control.exe" tools\stoneage_p3d_control.c user32.lib gdi32.lib ddraw.lib dxguid.lib /link /SUBSYSTEM:WINDOWS /MANIFEST:NO
+      - run: python -m pip install --quiet pillow
+      - name: Measure three finite compatibility cases and exact-path firewall canary
+        shell: pwsh
+        run: python -m tools.stoneage_p3e_windows --environment-exe "$env:RUNNER_TEMP/p3e-environment.exe" --control-exe "$env:RUNNER_TEMP/p3e-control.exe" --directory "$env:RUNNER_TEMP/p3e-scratch" --output "$env:RUNNER_TEMP/p3e-derived.json"
+      - name: Remove only our own firewall rule and synthetic scratch
+        if: always()
+        shell: pwsh
+        run: |
+          Remove-NetFirewallRule -Name StoneAgeP3ESyntheticOnly -ErrorAction SilentlyContinue
+          Remove-Item -Recurse -Force "$env:RUNNER_TEMP/p3e-scratch" -ErrorAction SilentlyContinue
+          Remove-Item -Force "$env:RUNNER_TEMP/p3e-environment.exe","$env:RUNNER_TEMP/p3e-control.exe","stoneage_p3e_environment.obj","stoneage_p3d_control.obj" -ErrorAction SilentlyContinue
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: p3e-native-qualification-derived
+          path: ${{ runner.temp }}/p3e-derived.json
+          if-no-files-found: error
+          retention-days: 7
