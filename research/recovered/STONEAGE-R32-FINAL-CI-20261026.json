@@ -1,0 +1,65 @@
+{
+  "schema": "stoneage.r32.original_map110_final_ci_observed.v1",
+  "base_HEAD": "05eb85bb59b2abcaba13b9614dedb37a27f3ca16",
+  "accepted_R32_content_HEAD": "cffeea30c25f6b33d3c465fe7ce457edf8437a76",
+  "first_publication_receipt_HEAD": "bdb95b2c322964a63d4054362d6779ea28f535b5",
+  "guard_corrected_main_HEAD": "086da782e1c7733b2d9cda88d99c4021eacb5a13",
+  "guard_corrected_tree": "f2b0c6a0cb2817621d76e4e2476b3df0f778e911",
+  "actual_last_run": {
+    "id": 40337713382,
+    "job_id": 121623660847,
+    "status": "completed",
+    "conclusion": "success",
+    "head_sha": "086da782e1c7733b2d9cda88d99c4021eacb5a13",
+    "steps": [
+      {
+        "name": "Set up job",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run actions/checkout@v4",
+        "conclusion": "success"
+      },
+      {
+        "name": "Run actions/setup-python@v5",
+        "conclusion": "success"
+      },
+      {
+        "name": "Source parser and offline report negative semantics",
+        "conclusion": "success"
+      },
+      {
+        "name": "Independent derived-metadata replay with original historical timeline pin",
+        "conclusion": "success"
+      },
+      {
+        "name": "Reject commercial DAT, EXE and copyright image leakage",
+        "conclusion": "success"
+      },
+      {
+        "name": "Post Run actions/setup-python@v5",
+        "conclusion": "success"
+      },
+      {
+        "name": "Post Run actions/checkout@v4",
+        "conclusion": "success"
+      },
+      {
+        "name": "Complete job",
+        "conclusion": "success"
+      }
+    ]
+  },
+  "prior_correction_run": {
+    "id": 40337484100,
+    "job_id": 121622844296,
+    "result": "failure",
+    "reason": "metadata count <=2 too strict after third lawful publication receipt"
+  },
+  "raw_report_git_blob": "a3fac4f5c08d1b0660f302f95901a7d7fb2bee18",
+  "raw_source_report_sha256": "b7fcd1f5d134ddcdbe11303e95c8fda78d3d431a14b3018dda19adb2f7ea40f0",
+  "original_full_current_state_blob": "031c76a5a8e431f646853909bb2f2e11e6328cd2",
+  "next": "ORIGINAL_SPR_RD_PALETTE_SAME_CARRIER_33",
+  "no_claim_of_original_tw10_or_game_execution": true,
+  "overall_restoration_percent": null
+}
