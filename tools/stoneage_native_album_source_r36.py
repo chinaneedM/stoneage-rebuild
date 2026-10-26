@@ -95,8 +95,9 @@ def fetcher_factory():
    raw=r.read(end-start+2);need(len(raw)==end-start+1,'source range extent');return raw
  return fetch,pages
 
-def acquire(work):
+def acquire(work,context=None):
  import rarfile
+ context=context if context is not None else {}
  fetch,pages=fetcher_factory();reader=SparseParts(fetch);selected={};header_count=0;main_flags=None
  class SelectedComplete(Exception):pass
  def callback(info):
@@ -115,17 +116,25 @@ def acquire(work):
  try:rarfile.RarFile(reader,info_callback=callback,errors='strict')
  except SelectedComplete:pass
  need(set(selected)==set(TARGETS),'two exact original program members not located within budget')
+ context.update(headers_visited=header_count,original_main_flags=main_flags,selected_headers=list(selected.values()),
+   range_receipts=reader.receipts,public_pages=pages,extractor_attempts=[])
  members={};rows=[]
  for number,(leaf,info) in enumerate(selected.items()):
   header=reader.at(info['header_offset'],info['data_offset']-info['header_offset']);packed=reader.at(info['data_offset'],info['compressed_bytes'])
   carrier=work/f'selected-{number}.rar';carrier.write_bytes(isolated_rar(header,packed,info['flags']));dst=work/f'out-{number}';dst.mkdir()
   proc=subprocess.run(['7z','x','-y',f'-o{dst}',str(carrier)],stdout=subprocess.PIPE,stderr=subprocess.PIPE,timeout=120)
-  need(proc.returncode==0,'isolated original member static extraction failed')
+  attempts=[{'tool':'7z','return_code':proc.returncode,'diagnostic':(proc.stdout+proc.stderr).decode('utf-8','replace')[-1400:] if proc.returncode else ''}]
+  context['extractor_attempts'].append({'name':leaf,'attempts':attempts})
+  if proc.returncode:
+   dst=work/f'fallback-{number}';dst.mkdir()
+   proc=subprocess.run(['unar','-f','-o',str(dst),str(carrier)],stdout=subprocess.PIPE,stderr=subprocess.PIPE,timeout=120)
+   attempts.append({'tool':'unar','return_code':proc.returncode,'diagnostic':(proc.stdout+proc.stderr).decode('utf-8','replace')[-1400:] if proc.returncode else ''})
+  need(proc.returncode==0,'isolated original member static extraction failed under both bounded readers')
   matches=[p for p in dst.rglob('*') if p.is_file() and p.as_posix().endswith(info['filename'])]
   need(len(matches)==1,'one exact extracted original program path');raw=matches[0].read_bytes()
   need((len(raw),sha(raw))==TARGETS[leaf] and zlib.crc32(raw)&0xffffffff==info['original_crc32'],'original complete program hash/CRC mismatch')
   members[leaf]=raw;rows.append({**info,'name':leaf,'bytes':len(raw),'sha256':sha(raw),
-    'original_file_header_sha256':sha(header),'compressed_payload_sha256':sha(packed),'pe':pe_summary(raw)})
+    'original_file_header_sha256':sha(header),'compressed_payload_sha256':sha(packed),'extractor_attempts':attempts,'pe':pe_summary(raw)})
  return members,{'headers_visited':header_count,'original_main_flags':main_flags,'range_requests':len(reader.receipts),'actual_range_bytes':reader.fetched,
    'range_receipts':reader.receipts,'public_pages':pages,'whole_original_archive_or_part_rehashed':False,'two_original_members':rows}
 
@@ -134,8 +143,9 @@ def main():
  a.work.mkdir(parents=True,exist_ok=False)
  d={'schema':'stoneage.native_album_program_sparse_source.r36','status':'NOT_ACQUIRED','source_scope':'EXISTING_MIXED25_SAVED_CLIENT_NOT_AUTHENTICATED_OFFICIAL_BUILD',
   'new_official_clients':0,'original_program_executed':False,'whole_bundle_reacquired':False,'original_binary_published':False,'selected_members':[]}
+ context={}
  try:
-  members,receipt=acquire(a.work);d['receipt']=receipt;stream=io.BytesIO()
+  members,receipt=acquire(a.work,context);d['receipt']=receipt;stream=io.BytesIO()
   with zipfile.ZipFile(stream,'w',zipfile.ZIP_DEFLATED) as z:
    for name,raw in members.items():z.writestr(name,raw)
   plaintext=stream.getvalue();plain=a.work/'selected.zip';plain.write_bytes(plaintext)
@@ -144,7 +154,10 @@ def main():
   d.update(status='TWO_ORIGINAL_COMPLETE_PROGRAM_HASHES_MATCH',selected_members=list(members),
     private_transfer={'plaintext_zip_bytes':len(plaintext),'plaintext_zip_sha256':sha(plaintext),'ciphertext_bytes':a.sealed.stat().st_size,
       'ciphertext_sha256':sha(a.sealed.read_bytes()),'recipient_certificate_sha256':sha(cert.read_bytes())})
- except Exception as e:d['error']={'type':type(e).__name__,'message':str(e)[:400]}
+ except Exception as e:
+  d['error']={'type':type(e).__name__,'message':str(e)[:400]}
+  if context:
+   context['actual_range_bytes']=sum(x['bytes'] for x in context['range_receipts']);context['range_requests']=len(context['range_receipts']);d['partial_receipt']=context
  raw=(json.dumps(d,ensure_ascii=False,indent=2,sort_keys=True)+'\n').encode();a.output.write_bytes(raw)
  print('R36_SOURCE_METADATA_BEGIN');print(raw.decode(),end='');print('R36_SOURCE_METADATA_END')
 
