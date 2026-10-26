@@ -189,8 +189,9 @@ def build(out):
          "mapped+missing nonsentinel row conservation failed")
     need(sum(mappings.values())==sum(by_id.values()),"classification conservation failed")
     need(sources["R28_UNMATCHED_CN50_SPR_SEGMENT"]==554,"unmatched group category drift")
-    need(all(row["frame_occurrences"]==int(groups[row["group_index"]]["anim_count"]) or True for row in group_stats),
-         "group ordering mismatch")
+    need(all(row["group_index"]==index and row["spr_no"]==int(groups[index]["spr_no"])
+             for index,row in enumerate(group_stats)),
+         "per-group original identity/order drift")
     links=out/"BITMAP-BINDINGS-R29.tsv.gz"
     with DeterministicGzipTsv(links) as stream:
         stream.write("\t".join(FIELDS)+"\n")
