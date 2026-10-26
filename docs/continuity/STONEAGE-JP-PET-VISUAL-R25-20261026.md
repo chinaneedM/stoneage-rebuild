@@ -11,3 +11,9 @@
 最高NEXT **CN5-ADDITIONAL-ANIMATION-MATERIAL-26**：回直接客户端材料，使用已取得并永久保管的TW1/CN5原派生表，有限联接额外动画原顺序前3组100700/100701/100702的完整动作/方向/帧/时序→位图/ADRN/RD内容，区分旧内容继承与新引用。旧464/721全局统计不计新结果，缺层精确止步，不猜原角色名字/物种/实际帧率，不做新管理索引或扩大原源下载/运行helper。
 
 R25图包止于10实得/2失败，不继续图批次或重试。R20原同版具名实体缺源、P3E环境阻塞门槛、Stage A7 PARTIAL+2 OPEN、Stage B/wiki GATED、R79暂停、DD-028四档和overall percent=null保持。
+
+## 已观察的主线终验
+
+内容main `8121207d64c68dd9604e0e54dcbcd093f0813376` / tree `091be3075c5fa3472856179b0ded2d15c3db8730` 已非强制快进。候选五项、同HEAD主线五项均实际completed/success；主线专用40314640834/job121544053739日志确认17项测试和10实得/2失败、合计23/仍缺101的永久联接通过。14路径与远端逐字节同一，原CURRENT及五大历史/协议、父目录及旧12图样本完整保留，README旧历史前缀保留。
+
+[永久发布收据](../../research/recovered/STONEAGE-JP-PET-VISUAL-R25-PUBLICATION-R1.json)保存源run/job/ZIP/raw链、候选/main所有作业步骤及14路径指纹。收据自身CI发布后实际观察，不预先写成功。下一包仍回CN5三组原动画帧内容联接26，停止网页图批次；原游戏世界与TW1具名实体不因本包验收通过而关闭。

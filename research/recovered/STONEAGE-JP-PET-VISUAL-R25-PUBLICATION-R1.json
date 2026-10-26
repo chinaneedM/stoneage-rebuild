@@ -1,0 +1,695 @@
+{
+  "schema": "stoneage.jp_pet_visual_r25.publication.v1",
+  "date": "2026-10-26",
+  "startup_head": "49ee3e01927ec684a8aa3cf3d21aedbfc1f7fffe",
+  "startup_tree": "aa0446a36150b8026084236986986e6bccda21c5",
+  "source": {
+    "id": 40313523035,
+    "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40313523035",
+    "head": "48cb16d272c57c43bb47ac4cb8e1e72af5709d18",
+    "branch": "agent/jp-pet-visual-source-r25-20261026",
+    "name": "Acquire twelve missing Japanese named pet GIF references R25",
+    "status": "completed",
+    "conclusion": "success",
+    "jobs": [
+      {
+        "id": 121540306670,
+        "name": "actual-twelve-reference-source",
+        "conclusion": "success",
+        "steps": [
+          {
+            "name": "Set up job",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/checkout@v4",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/setup-python@v5",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run python -m pip install Pillow==12.3.0 cryptography",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run python -m unittest -v tests.test_stoneage_jp_pet_visual_r25",
+            "conclusion": "success"
+          },
+          {
+            "name": "One bounded fetch per selected reference and encrypted private PNG",
+            "conclusion": "success"
+          },
+          {
+            "name": "Enforce metadata and encrypted output allowlist",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/upload-artifact@v4",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/setup-python@v5",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/checkout@v4",
+            "conclusion": "success"
+          },
+          {
+            "name": "Complete job",
+            "conclusion": "success"
+          }
+        ]
+      }
+    ]
+  },
+  "content_head": "8121207d64c68dd9604e0e54dcbcd093f0813376",
+  "content_tree": "091be3075c5fa3472856179b0ded2d15c3db8730",
+  "publication": "NON_FORCED_MAIN_FAST_FORWARD_AFTER_FIVE_CANDIDATE_SUCCESSES",
+  "candidate": [
+    {
+      "id": 40314278840,
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40314278840",
+      "head": "8121207d64c68dd9604e0e54dcbcd093f0813376",
+      "branch": "agent/jp-pet-visual-r25-20261026",
+      "name": "Verify StoneAge R17 original battle SAB crossversion occurrence conservation",
+      "status": "completed",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "id": 121542840055,
+          "name": "exact-source-report",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python -m unittest tests.test_stoneage_battle_sab_crossversion_r17 tests.test_stoneage_battle_sab_docs_r17 -v",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python -m tools.stoneage_battle_sab_crossversion_r17",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 40314278682,
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40314278682",
+      "head": "8121207d64c68dd9604e0e54dcbcd093f0813376",
+      "branch": "agent/jp-pet-visual-r25-20261026",
+      "name": "Verify R25 named pet source custody and bounded image material join",
+      "status": "completed",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "id": 121542839348,
+          "name": "archived-material-replay",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python -m pip install Pillow==12.3.0 cryptography",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python -m unittest -v tests.test_stoneage_jp_pet_visual_r25",
+              "conclusion": "success"
+            },
+            {
+              "name": "Replay permanent derived source and actual private visual observations",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 40314278763,
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40314278763",
+      "head": "8121207d64c68dd9604e0e54dcbcd093f0813376",
+      "branch": "agent/jp-pet-visual-r25-20261026",
+      "name": "Accept primary-source TW1.0 character creation numeric join R16",
+      "status": "completed",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "id": 121542839487,
+          "name": "acceptance",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Replay authenticated original derived source metadata and negative cases",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 40314278651,
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40314278651",
+      "head": "8121207d64c68dd9604e0e54dcbcd093f0813376",
+      "branch": "agent/jp-pet-visual-r25-20261026",
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "status": "completed",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "id": 121542839323,
+          "name": "bounded-research-review",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Validate delegated decision, immutable history and no premature production",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 40314278863,
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40314278863",
+      "head": "8121207d64c68dd9604e0e54dcbcd093f0813376",
+      "branch": "agent/jp-pet-visual-r25-20261026",
+      "name": "Verify preserved mixed25 full server source conservation R18",
+      "status": "completed",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "id": 121542840640,
+          "name": "full-source-conservation",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python -m unittest tests.test_stoneage_mixed25_server_full_source_r18 tests.test_stoneage_mixed25_server_r18_docs -v",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python -m tools.stoneage_mixed25_server_full_source_r18",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "main": [
+    {
+      "id": 40314640859,
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40314640859",
+      "head": "8121207d64c68dd9604e0e54dcbcd093f0813376",
+      "branch": "main",
+      "name": "Verify StoneAge R17 original battle SAB crossversion occurrence conservation",
+      "status": "completed",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "id": 121544054162,
+          "name": "exact-source-report",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python -m unittest tests.test_stoneage_battle_sab_crossversion_r17 tests.test_stoneage_battle_sab_docs_r17 -v",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python -m tools.stoneage_battle_sab_crossversion_r17",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 40314640796,
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40314640796",
+      "head": "8121207d64c68dd9604e0e54dcbcd093f0813376",
+      "branch": "main",
+      "name": "Accept primary-source TW1.0 character creation numeric join R16",
+      "status": "completed",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "id": 121544053525,
+          "name": "acceptance",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Replay authenticated original derived source metadata and negative cases",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 40314640868,
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40314640868",
+      "head": "8121207d64c68dd9604e0e54dcbcd093f0813376",
+      "branch": "main",
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "status": "completed",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "id": 121544054172,
+          "name": "bounded-research-review",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Validate delegated decision, immutable history and no premature production",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 40314640823,
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40314640823",
+      "head": "8121207d64c68dd9604e0e54dcbcd093f0813376",
+      "branch": "main",
+      "name": "Verify preserved mixed25 full server source conservation R18",
+      "status": "completed",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "id": 121544053647,
+          "name": "full-source-conservation",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python -m unittest tests.test_stoneage_mixed25_server_full_source_r18 tests.test_stoneage_mixed25_server_r18_docs -v",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python -m tools.stoneage_mixed25_server_full_source_r18",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 40314640834,
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40314640834",
+      "head": "8121207d64c68dd9604e0e54dcbcd093f0813376",
+      "branch": "main",
+      "name": "Verify R25 named pet source custody and bounded image material join",
+      "status": "completed",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "id": 121544053739,
+          "name": "archived-material-replay",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python -m pip install Pillow==12.3.0 cryptography",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python -m unittest -v tests.test_stoneage_jp_pet_visual_r25",
+              "conclusion": "success"
+            },
+            {
+              "name": "Replay permanent derived source and actual private visual observations",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "main_job_observation": {
+    "job": 121544053739,
+    "tests": 17,
+    "tests_result": "OK",
+    "replay_status": "PASS",
+    "attempted": 12,
+    "qualified": 10,
+    "unavailable": 2,
+    "previously_qualified": 13,
+    "qualified_total": 23,
+    "unacquired": 101
+  },
+  "source_artifact": {
+    "id": 12646430311,
+    "zip_bytes": 88848,
+    "zip_sha256": "5bd2a5b1bc16e206e23202324fae5848fbee20a4bf3a6c1d51f63c3f5a1f3820",
+    "members": [
+      "private-png-envelopes.json",
+      "source-derived.json"
+    ],
+    "raw_report_bytes": 22998,
+    "raw_report_sha256": "ffa2bcfcb49aca7335d393c1f5bb680c76b05f61149ce8be72ee59778f565494",
+    "permanent_source": "research/recovered/STONEAGE-JP-PET-VISUAL-R25-ACTUAL-SOURCE-R1.json",
+    "authenticated_decoded_pngs_viewed": 10,
+    "source_tests": 9,
+    "failed_single_attempt_web_positions": [
+      14,
+      15
+    ],
+    "failure": "URLError Connection refused; no retry and no historical disappearance claim"
+  },
+  "exact_remote_content_paths": {
+    ".github/workflows/acquire-stoneage-jp-pet-visual-r25.yml": {
+      "bytes": 1869,
+      "sha256": "71488c7a3a870ff9beeb116f71b065af1f7f8f1a07dcbbd57b2cca6b53a5525e",
+      "git_blob": "49abd4daab4c58fd41656409301aa3c02dbef2ea"
+    },
+    ".github/workflows/verify-stoneage-jp-pet-visual-r25.yml": {
+      "bytes": 1152,
+      "sha256": "0ddeb20ee63fabdd193d4ce3c8d823cb557e6fb7c1bf1f4f1146a6df4d4422fa",
+      "git_blob": "a5f291e5c348fb88698d0029f3e19e7d0cd3762a"
+    },
+    "README.md": {
+      "bytes": 63850,
+      "sha256": "85ecde582a0351c6f05e94ffaab35cb071beadf4e9dc117457b38209289c963c",
+      "git_blob": "49eca09bff2d5105230c6c97054680920d431cde"
+    },
+    "docs/continuity/STONEAGE-JP-PET-VISUAL-R25-20261026.md": {
+      "bytes": 2790,
+      "sha256": "6b0c1d0aa94eb3ad7d568e8ba12c534b670283a7e6bab3f6dbfa19e4f1e316f6",
+      "git_blob": "a92900ad3107d597c368cd7b5ba754cfc615e473"
+    },
+    "docs/specs/STONEAGE-JP-PET-VISUAL-R25.md": {
+      "bytes": 5790,
+      "sha256": "31d44944338468abcebadd3aee775854d56b3b1c63c6362c75c7b46a17f5637b",
+      "git_blob": "b2762e7a42a1e84facc80cacee4bcdd2c1553842"
+    },
+    "research/recovered/STONEAGE-JP-PET-VISUAL-R25-ACTUAL-SOURCE-R1.json": {
+      "bytes": 22998,
+      "sha256": "ffa2bcfcb49aca7335d393c1f5bb680c76b05f61149ce8be72ee59778f565494",
+      "git_blob": "04b042c63ed2f03982a0c0f1d3b5c829738fa4d1"
+    },
+    "research/recovered/STONEAGE-JP-PET-VISUAL-R25-CUSTODY-R1.json": {
+      "bytes": 1515,
+      "sha256": "126884199e4e58299bf78949805e5558c32da694a0a1c388a0757da7cd93aa10",
+      "git_blob": "a2851606a2210e41eafd7f4c467c523ae2bb9de4"
+    },
+    "research/recovered/STONEAGE-JP-PET-VISUAL-R25-OBSERVATIONS-R1.json": {
+      "bytes": 5210,
+      "sha256": "9864ce3b83f9eee5e1d359865408106e0e68fc818c8d312378f5b3f500d784f9",
+      "git_blob": "6fcdb9dd53a7a895882e6facbd0876ce74ff36e7"
+    },
+    "research/recovered/STONEAGE-JP-PET-VISUAL-R25-PUBLIC.pem": {
+      "bytes": 113,
+      "sha256": "de32648b50a5c1d4dfc32830d8952d21d6317ecb1fc7bfd42c1705bd55f7e219",
+      "git_blob": "570697c2314ef5f0d34f93787be8a7bfb667ac1e"
+    },
+    "research/recovered/STONEAGE-JP-PET-VISUAL-R25-R1.json": {
+      "bytes": 33753,
+      "sha256": "f44922f47e1a7ac36ac999579a89f8451ddde6c7b147000bf8bd8af446e76bfb",
+      "git_blob": "afb8574444e837e65d2c434da16f6b5901970532"
+    },
+    "research/recovered/STONEAGE-JP-PET-VISUAL-R25-STARTUP-R1.json": {
+      "bytes": 6587,
+      "sha256": "c4f1377ccd1470c13deff2e03248801e47bdc60082a0a5670d414c089e790923",
+      "git_blob": "e6ba5e4792bcaddd1c73084dec7fe4cf9844373c"
+    },
+    "tests/test_stoneage_jp_pet_visual_r25.py": {
+      "bytes": 8029,
+      "sha256": "b9aeea9cea51aae0f7f366d4019cd0a2297e4956bb34aacb9884bdc4ea486034",
+      "git_blob": "3a0d75647aedbfb3ce036b4e991922254fa7ef67"
+    },
+    "tools/stoneage_jp_pet_visual_r25.py": {
+      "bytes": 8434,
+      "sha256": "c0cb033089012d874e32d9029c3277b9a0107729f157105e5a6e1626db5c6a30",
+      "git_blob": "23dc84b879b3b830c1db9c3bd3ba6d58d35786df"
+    },
+    "tools/stoneage_jp_pet_visual_r25_source.py": {
+      "bytes": 7204,
+      "sha256": "8c105f50961ad1cab1451d9b25c0de38ba23e3a81f430bb1423bb5948e088498",
+      "git_blob": "6ea5d91b0c021b1658ea635fc95f73d0462d67cf"
+    }
+  },
+  "historical_preservation": {
+    "entire_current_bytes": 2680510,
+    "entire_current_git_blob": "031c76a5a8e431f646853909bb2f2e11e6328cd2",
+    "full_design_history_source_roadmap_protocol_unchanged": true,
+    "full_parent_catalog_and_prior_twelve_sample_unchanged": true,
+    "readme_exact_historical_prefix_preserved": true,
+    "existing_unrelated_edit_sha256": "eb6139d390ba8a196d6cc634a90bfd23f825595af9b7003b360e95054ec69e1b"
+  },
+  "boundaries": {
+    "original_gif_bytes_independently_rehashed_locally": false,
+    "decoded_png_rgba_independently_rehashed_locally": true,
+    "original_pixels_or_private_keys_or_ciphertext_committed": false,
+    "original_gifs_or_plain_png_in_public_artifact": false,
+    "durable_original_picture_delivery_to_user": false,
+    "tw10_or_cross_region_species_identity_proven": false,
+    "original_game_executed_this_package": false,
+    "original_world_entered": false,
+    "complete_species_catalog": false,
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b_wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING",
+    "overall_completion_percent": null
+  },
+  "next": "CN5-ADDITIONAL-ANIMATION-MATERIAL-26",
+  "receipt_own_ci": "Observe after publication; not presupposed by this content receipt"
+}
