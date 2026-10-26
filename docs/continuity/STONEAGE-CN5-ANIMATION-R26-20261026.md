@@ -13,3 +13,9 @@
 最高NEXT **KR-NETMARBLE120-CLIENT-SOURCE-27**：按DD-029回尚未取得的已知原客户端载体。读取现登记公开thread2117精确`NetmarbleStoneAge120`线索，仅该来源及明确一份下载载体，优先取得包/原路径/来源/大小/完整SHA与声明版本，再决定静态抽取。不是已证韩国1.74或干净官方包；无公开可取链接、需登录/积分、链接死或包不符就精确缺源止点，不广爬论坛、不运行旧软件、不以标题猜内容。原大包持久保管限制保持，不预写已下载/保存。
 
 停止顺延721动画组或渲染/音效helper。R20同版身份源与P3E环境重开条件、Stage A7 PARTIAL+2 OPEN、Stage B/wiki GATED、R79暂停、DD-028四档及overall percent=null不变。
+
+## 已观察的主线终验
+
+内容main `64a909ad86f841b6e97388c168df60558239bdbc` / tree `d0e68d3d9edfa09d90d087b7a474e347ac85e9e7` 已非强制快进。候选五项、同HEAD主线五项Actions全部实际completed/success；主线专用40316731164/job121551089411确认14项测试、三段原SHA重编码、312动画/1464帧/936RD内容和独立全表SQL均通过。11改动路径与远端逐字节一致，9输入blob/字节长度逐项匹配本轮新远端完整树。
+
+[永久发布收据](../../research/recovered/STONEAGE-CN5-ANIMATION-R26-PUBLICATION-R1.json)保存候选/main全部作业步骤、11内容路径与9源指纹。完整XZ71436B/SHA `bdcfc48a18501e63d55c34ee83e7825468c4ae5f49676ba7fd89d9d1e4ed0d5e` / Git blob `f503e3479ead905d021aa407dfc95e4532fc4112`永久保留；解压原派生JSON905177B/SHA `1eff74c2728b2e64c11369751aeadaf48d5d8c71723042aeffe3c152440895f1`逐字节可重建，不依赖新短期源工件。收据自身CI发布后观察，不提前写成功。最高NEXT仍韩国Netmarble120单载体来源27；动画材料验收不关闭原世界/具名身份/原声播放。

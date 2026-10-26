@@ -1,0 +1,671 @@
+{
+  "schema": "stoneage.cn5_three_animation_material_r26.publication.v1",
+  "date": "2026-10-26",
+  "startup_head": "0db5d096a567f62e88ac36796766c3e37cc3b060",
+  "startup_tree": "254d116f73a4d3b5a3fd86c4d59c60373dd0911d",
+  "content_head": "64a909ad86f841b6e97388c168df60558239bdbc",
+  "content_tree": "d0e68d3d9edfa09d90d087b7a474e347ac85e9e7",
+  "publication": "NON_FORCED_MAIN_FAST_FORWARD_AFTER_FIVE_CANDIDATE_SUCCESSES",
+  "candidate": [
+    {
+      "id": 40316540434,
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40316540434",
+      "head": "64a909ad86f841b6e97388c168df60558239bdbc",
+      "branch": "agent/cn5-animation-material-r26-20261026",
+      "name": "Verify preserved mixed25 full server source conservation R18",
+      "status": "completed",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "id": 121550442944,
+          "name": "full-source-conservation",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python -m unittest tests.test_stoneage_mixed25_server_full_source_r18 tests.test_stoneage_mixed25_server_r18_docs -v",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python -m tools.stoneage_mixed25_server_full_source_r18",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 40316533805,
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40316533805",
+      "head": "64a909ad86f841b6e97388c168df60558239bdbc",
+      "branch": "agent/cn5-animation-material-r26-20261026",
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "status": "completed",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "id": 121550420097,
+          "name": "bounded-research-review",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Validate delegated decision, immutable history and no premature production",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 40316533718,
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40316533718",
+      "head": "64a909ad86f841b6e97388c168df60558239bdbc",
+      "branch": "agent/cn5-animation-material-r26-20261026",
+      "name": "Verify StoneAge R17 original battle SAB crossversion occurrence conservation",
+      "status": "completed",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "id": 121550420124,
+          "name": "exact-source-report",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python -m unittest tests.test_stoneage_battle_sab_crossversion_r17 tests.test_stoneage_battle_sab_docs_r17 -v",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python -m tools.stoneage_battle_sab_crossversion_r17",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 40316533654,
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40316533654",
+      "head": "64a909ad86f841b6e97388c168df60558239bdbc",
+      "branch": "agent/cn5-animation-material-r26-20261026",
+      "name": "Accept primary-source TW1.0 character creation numeric join R16",
+      "status": "completed",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "id": 121550419365,
+          "name": "acceptance",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Replay authenticated original derived source metadata and negative cases",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 40316533724,
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40316533724",
+      "head": "64a909ad86f841b6e97388c168df60558239bdbc",
+      "branch": "agent/cn5-animation-material-r26-20261026",
+      "name": "Verify three CN5 native animation groups and exact RD material R26",
+      "status": "completed",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "id": 121550420429,
+          "name": "native-material-and-independent-sql",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python -m unittest -v tests.test_stoneage_cn5_animation_material_r26",
+              "conclusion": "success"
+            },
+            {
+              "name": "Replay all selected raw frames and complete SPR segment digests",
+              "conclusion": "success"
+            },
+            {
+              "name": "Independently join complete source tables through SQLite",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "main": [
+    {
+      "id": 40316730983,
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40316730983",
+      "head": "64a909ad86f841b6e97388c168df60558239bdbc",
+      "branch": "main",
+      "name": "Verify StoneAge R17 original battle SAB crossversion occurrence conservation",
+      "status": "completed",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "id": 121551088486,
+          "name": "exact-source-report",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python -m unittest tests.test_stoneage_battle_sab_crossversion_r17 tests.test_stoneage_battle_sab_docs_r17 -v",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python -m tools.stoneage_battle_sab_crossversion_r17",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 40316730999,
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40316730999",
+      "head": "64a909ad86f841b6e97388c168df60558239bdbc",
+      "branch": "main",
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "status": "completed",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "id": 121551088479,
+          "name": "bounded-research-review",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Validate delegated decision, immutable history and no premature production",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 40316731007,
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40316731007",
+      "head": "64a909ad86f841b6e97388c168df60558239bdbc",
+      "branch": "main",
+      "name": "Verify preserved mixed25 full server source conservation R18",
+      "status": "completed",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "id": 121551088439,
+          "name": "full-source-conservation",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python -m unittest tests.test_stoneage_mixed25_server_full_source_r18 tests.test_stoneage_mixed25_server_r18_docs -v",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python -m tools.stoneage_mixed25_server_full_source_r18",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 40316730956,
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40316730956",
+      "head": "64a909ad86f841b6e97388c168df60558239bdbc",
+      "branch": "main",
+      "name": "Accept primary-source TW1.0 character creation numeric join R16",
+      "status": "completed",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "id": 121551088211,
+          "name": "acceptance",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Replay authenticated original derived source metadata and negative cases",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 40316731164,
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40316731164",
+      "head": "64a909ad86f841b6e97388c168df60558239bdbc",
+      "branch": "main",
+      "name": "Verify three CN5 native animation groups and exact RD material R26",
+      "status": "completed",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "id": 121551089411,
+          "name": "native-material-and-independent-sql",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python -m unittest -v tests.test_stoneage_cn5_animation_material_r26",
+              "conclusion": "success"
+            },
+            {
+              "name": "Replay all selected raw frames and complete SPR segment digests",
+              "conclusion": "success"
+            },
+            {
+              "name": "Independently join complete source tables through SQLite",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "main_independent_log_observation": {
+    "run": 40316731164,
+    "job": 121551089411,
+    "tests": 14,
+    "result": "OK",
+    "full_replay": "PASS",
+    "complete_spr_segment_reencodings": 3,
+    "frames": 1464,
+    "rd_contents": 936,
+    "independent_sql_join_rows": 1464,
+    "sql_cn5_full_adrn_rows": 303197,
+    "sql_tw10_full_adrn_rows": 125996,
+    "sql_tw10_exact_rd_matches": 0,
+    "sql_joined_row_sha256": "fd42796452dea38301a2cb038e08f527c1ad0bd57573768d746fa7f29e378315"
+  },
+  "exact_remote_content_paths": {
+    ".github/workflows/verify-stoneage-cn5-animation-material-r26.yml": {
+      "bytes": 1308,
+      "sha256": "4e854b966888a85842ef11902b840a3694442f100fd636d82de785407f534e86",
+      "git_blob": "55dec6d7d14bd4413db6876dd4759995036d290b"
+    },
+    "README.md": {
+      "bytes": 64710,
+      "sha256": "407ded35d0e7a6bee4d21a9e12f3547e3b30093f1bdbe370d19f2d7d31ec1794",
+      "git_blob": "80a0c98d624e4a297dd17c81428b3f2863365eb6"
+    },
+    "docs/continuity/STONEAGE-CN5-ANIMATION-R26-20261026.md": {
+      "bytes": 3043,
+      "sha256": "4637d8406ace4d15dda7c236f73131a0e91d9fd0e93831a02c075f40dc1ccc2f",
+      "git_blob": "2cee1d3eea7e82eb49d99bb406c45e901747387e"
+    },
+    "docs/specs/STONEAGE-CN5-ANIMATION-MATERIAL-R26.md": {
+      "bytes": 7310,
+      "sha256": "d9b924338cdcc6acc6d772c7a8ae12a598864ddc84fb6891337344ff7bf09c19",
+      "git_blob": "d46b95edfaeab36a6ae411af9c8b0c258f138f68"
+    },
+    "research/recovered/STONEAGE-CN5-ANIMATION-MATERIAL-R26-INDEPENDENT.json": {
+      "bytes": 364,
+      "sha256": "11c3694319efea0165d37dfd297c7131faa2fd6e81198badc859fc381df55eae",
+      "git_blob": "7e78b81815474ec6e5a818a3435043cb7401215a"
+    },
+    "research/recovered/STONEAGE-CN5-ANIMATION-MATERIAL-R26-SUMMARY.json": {
+      "bytes": 7497,
+      "sha256": "5c3e3eb2a285352fda2b485b904eba8d8b0a909bc24db998827b291a4089d987",
+      "git_blob": "d9564976bec7fd5cde89c00948888355b08f19f9"
+    },
+    "research/recovered/STONEAGE-CN5-ANIMATION-MATERIAL-R26.json.xz": {
+      "bytes": 71436,
+      "sha256": "bdcfc48a18501e63d55c34ee83e7825468c4ae5f49676ba7fd89d9d1e4ed0d5e",
+      "git_blob": "f503e3479ead905d021aa407dfc95e4532fc4112"
+    },
+    "research/recovered/STONEAGE-CN5-ANIMATION-R26-STARTUP-R1.json": {
+      "bytes": 5554,
+      "sha256": "ebf7d8ce03b4e9c6b8bef5992e7d8888bf42e0a0029147b65b386296e4263d08",
+      "git_blob": "563a950985472a01f23fac3c87ae2ada5d5e4821"
+    },
+    "tests/test_stoneage_cn5_animation_material_r26.py": {
+      "bytes": 5501,
+      "sha256": "6362a8882efc53be19768b190f27e488d67a78ec176df42b623132cceb46b775",
+      "git_blob": "ef1784c8a7c174937a3cb3ca07a32e57dc45abad"
+    },
+    "tools/stoneage_cn5_animation_material_r26.py": {
+      "bytes": 12790,
+      "sha256": "d110d098fe2d1f63b9bdc91dc94d0814935982cb00a5574a77736f9db5f01fcc",
+      "git_blob": "abdc4b69346c832cba7e887ad5aa3f87990a0f0e"
+    },
+    "tools/stoneage_cn5_animation_r26_sql.py": {
+      "bytes": 5469,
+      "sha256": "13b8ccbc18c88488b63d77b005ec187d4cbef80032e07e23e02f3bbcd02a9466",
+      "git_blob": "f269e03292a85c4677ab3e3a03de0349912b973f"
+    }
+  },
+  "source_pins_verified_against_fresh_remote_tree": {
+    "research/recovered/cn50-resource-metadata/SPR-GROUP-R1.tsv.gz": {
+      "bytes": 61649,
+      "sha256": "67660d3d8ba5e05293f61f60ab3e1bfe736d7b6bdc4159ed96fcb59f5acfa228",
+      "git_blob": "f4a41ba999167185b55a42c89ece9e24d456e637"
+    },
+    "research/recovered/cn50-resource-metadata/SPR-ANIMATION-R1.tsv.gz": {
+      "bytes": 852766,
+      "sha256": "63f444ac202a7a9d1d7afafbd068a78d8724a843ea8174bb4d36b83a13cfa8b7",
+      "git_blob": "0da62abce6aecd476ca95f6fc2a8679105d0b09d"
+    },
+    "research/recovered/cn50-resource-metadata/SPR-FRAME-R1.tsv.gz": {
+      "bytes": 4223038,
+      "sha256": "0b5a326ddd70a5d6957b7e8c6faa2f8e0b7bed2dd70ab02bef9bb86f39f9b3ab",
+      "git_blob": "6e98e5fea26a69aa5c7042bab1707c7a330c6bf7"
+    },
+    "research/recovered/cn50-resource-metadata/ADRN-R1.tsv.gz": {
+      "bytes": 19745873,
+      "sha256": "e24afc513d28c7f25bd26bde9c69ddc0de4000147a2b11f50b5176655d8558fd",
+      "git_blob": "127670eaf2bc19ba9d15776d090a8307058f729d"
+    },
+    "research/recovered/cn50-resource-metadata/MANIFEST-R1.json": {
+      "bytes": 3001,
+      "sha256": "73181d1de1efadc971eaea254891103bd69fd7d3121fc450ec3b148ca8d06fa8",
+      "git_blob": "5063cf2fade4e0739ac35c38a90dfff1a43db960"
+    },
+    "research/recovered/tw10-resource-metadata/SPR-GROUP-R1.tsv.gz": {
+      "bytes": 23827,
+      "sha256": "4db7809de4197eb90cca6dc04bda8550025e022c8232e2ebb902db0e9faf0175",
+      "git_blob": "5ec65f043848fb3260bc04c94847b45fb1706d36"
+    },
+    "research/recovered/tw10-resource-metadata/ADRN-R1.tsv.gz": {
+      "bytes": 8238749,
+      "sha256": "c8669789de1cc6e3575c2412ed86354a49c2b3e90cd2854c1e7b2fc71b0fe9ea",
+      "git_blob": "e389540f9962d1868c42b1edfe2acc7c83387ff1"
+    },
+    "research/recovered/tw10-resource-metadata/MANIFEST-R1.txt": {
+      "bytes": 1928,
+      "sha256": "fb9b2dbe52a305f5ff2934cc1dcdf275be1215e2a89b326dd76fd7f80b6d9743",
+      "git_blob": "6154dcf806163b82cb96af344e6a644143d15f56"
+    },
+    "research/recovered/STONEAGE-TW10-CN50-REAL-RESOURCE-CUSTODY-R1.json": {
+      "bytes": 969,
+      "sha256": "9eeab87743c4ee65e7fcafb605eb7f12cafd2fb68c1afee962128ade7318c8de",
+      "git_blob": "6a285c96f3580f4034d6b84fef08f479c1aa6e03"
+    }
+  },
+  "permanent_derived_archive": {
+    "path": "research/recovered/STONEAGE-CN5-ANIMATION-MATERIAL-R26.json.xz",
+    "bytes": 71436,
+    "sha256": "bdcfc48a18501e63d55c34ee83e7825468c4ae5f49676ba7fd89d9d1e4ed0d5e",
+    "git_blob": "f503e3479ead905d021aa407dfc95e4532fc4112",
+    "decompressed_json_bytes": 905177,
+    "decompressed_json_sha256": "1eff74c2728b2e64c11369751aeadaf48d5d8c71723042aeffe3c152440895f1",
+    "new_original_source_acquisition_or_temporary_ci_artifact": false
+  },
+  "material_result": {
+    "groups": [
+      100700,
+      100701,
+      100702
+    ],
+    "animations": 312,
+    "frame_occurrences": 1464,
+    "physical_bitmaps": 936,
+    "unique_complete_rd_contents": 936,
+    "shared_three_group_bitmaps": 48,
+    "shared_bitmap_frame_occurrences": 144,
+    "raw_nonzero_sound_word_occurrences": 64,
+    "original_spr_segment_bytes_reencoded_in_memory_only": 18384
+  },
+  "historical_preservation": {
+    "full_current_bytes": 2680510,
+    "full_current_git_blob": "031c76a5a8e431f646853909bb2f2e11e6328cd2",
+    "full_design_history_source_roadmap_protocol_and_prior_overlay_unchanged": true,
+    "readme_historical_prefix_preserved": true,
+    "existing_unrelated_edit_sha256": "eb6139d390ba8a196d6cc634a90bfd23f825595af9b7003b360e95054ec69e1b"
+  },
+  "boundaries": {
+    "original_pixels_viewed_or_rendered": false,
+    "original_game_executed_this_package": false,
+    "actual_game_fps_or_cn5_duration_unit_proven": false,
+    "named_character_pet_or_npc_identity_proven": false,
+    "sound_words_bound_to_audio_or_heard": false,
+    "all_versions_lack_selected_rd_assets_proven": false,
+    "original_asset_bytes_published": 0,
+    "original_asset_bytes_deleted": 0,
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b_wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING",
+    "overall_completion_percent": null
+  },
+  "next": "KR-NETMARBLE120-CLIENT-SOURCE-27",
+  "receipt_own_ci": "Observe after publication; not presupposed by this receipt"
+}
