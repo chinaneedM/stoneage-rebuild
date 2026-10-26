@@ -25,3 +25,9 @@ Stage A7 PARTIAL+2 OPEN、Stage B/wiki GATED、R79暂停、P3E阻塞、总体per
 ## 额外旧回放诊断（不改历史证据）
 
 扩大执行旧Stage A `--replay` 时，历史 blocker-triage 测试对 `docs/RESTORATION-PHASE-GATE-R1.md` 的整文件长度要求74172B，现远端启动基线和工作副本都是75620B，本轮未改。其原74172B前缀Git blob与旧报告 `9e51c1d33abbaa27cee3a5a070f59639fd16b7f5` 精确相同，失败来自将追加后的文档当旧整文件。尝试把旧测试改为前缀后，整包保管检查又正确拒绝测试源自身哈希变化；该临时修改已经撤回，原测试与原报告均逐字节保留，不宣称旧整包回放通过。39项本包/相邻测试及Stage A清单验证通过，现行Stage A Actions须后验观察。后续若修复该旧回放，需用经过完整源/前缀校验的隔离历史输入快照；不得截断当前文档或重写旧哈希。此诊断不升级/降级历史玩法事实，R34材料专项不依赖旧整包回放成功。
+
+## 实际候选与主线终验
+
+原内容候选 `d271652f9adfa37185f2c3cacf5a76e586e603b5` 的8项Actions全部completed/success；R34专用40409003063。加入旧整包回放诊断且保持历史测试未改后，候选 `e573e00852cf8f9770c576a11dca7bdce2e3a180` 的R34专用40409302631再次success。fresh主线仍为启动b5155a2后，非强制快进至e573e008/tree6a2769ac0b6f3b30eea75e0ec9bd1b63d14c0002；本地待发布树与远端完全相同。
+
+同内容主线8项Actions实际全部completed/success：40409400973、40409400766、40409400714、40409400703、40409400584（现行Stage A）、40409400792（R34）、40409400716、40409400812。逐job/step后验及11条内容路径blob保存在 `research/recovered/STONEAGE-VILLAGE-INTERIORS-PUBLICATION-R34.json`。源Actions成功、专项通过和现行门禁成功，不等于前述旧完整回放成功，也不等于原游戏场景/第三层语义已认证。收据提交自身CI不得提前称成功；最高NEXT35及全部历史边界不变。

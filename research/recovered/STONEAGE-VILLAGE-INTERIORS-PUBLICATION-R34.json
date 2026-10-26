@@ -1,0 +1,1262 @@
+{
+  "schema": "stoneage.village_interiors_publication.r34",
+  "date": "2026-10-27",
+  "source": {
+    "head": "dc6a5c74857034748b2d27c204b48fc2154ade2b",
+    "tree": "c58cfc30db4e9585460150d9630e3e813e835ec4",
+    "run": 40407952047,
+    "job": 121870469085,
+    "conclusion": "success",
+    "artifact_id": 12691703633,
+    "zip_sha256": "60917b2c906e29fe9f2132f990c16107d478586e80605d1f26c0c6b4af957789",
+    "raw_sha256": "59f1c445e3902e15d0acfd113ea97adf59ef44f3201ba8ba5bdc1de3da407a05"
+  },
+  "candidate_content_head": "d271652f9adfa37185f2c3cacf5a76e586e603b5",
+  "candidate_runs": [
+    {
+      "id": 40409003063,
+      "name": "Verify original four village interior materials R34",
+      "head_sha": "d271652f9adfa37185f2c3cacf5a76e586e603b5",
+      "branch": "agent/village-interiors-r34-archive-20261027",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40409003063",
+      "jobs": [
+        {
+          "id": 121874174922,
+          "name": "original-source-and-boundaries",
+          "status": "completed",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3
+            },
+            {
+              "name": "Original geometry and historical source negative tests",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4
+            },
+            {
+              "name": "Replay permanently archived source and candidate conservation without original download",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 5
+            },
+            {
+              "name": "Reject proprietary room maps and executable or picture leakage",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 6
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 11
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 12
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 13
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 40409002835,
+      "name": "Verify original dated map110 three actual cell values R32",
+      "head_sha": "d271652f9adfa37185f2c3cacf5a76e586e603b5",
+      "branch": "agent/village-interiors-r34-archive-20261027",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40409002835",
+      "jobs": [
+        {
+          "id": 121874174928,
+          "name": "bounded-original-map-delta",
+          "status": "completed",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3
+            },
+            {
+              "name": "Source parser and offline report negative semantics",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4
+            },
+            {
+              "name": "Independent derived-metadata replay with original historical timeline pin",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 5
+            },
+            {
+              "name": "Reject commercial DAT, EXE and copyright image leakage",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 6
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 11
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 12
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 13
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 40409002640,
+      "name": "Verify StoneAge R17 original battle SAB crossversion occurrence conservation",
+      "head_sha": "d271652f9adfa37185f2c3cacf5a76e586e603b5",
+      "branch": "agent/village-interiors-r34-archive-20261027",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40409002640",
+      "jobs": [
+        {
+          "id": 121874174192,
+          "name": "exact-source-report",
+          "status": "completed",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3
+            },
+            {
+              "name": "Run python -m unittest tests.test_stoneage_battle_sab_crossversion_r17 tests.test_stoneage_battle_sab_docs_r17 -v",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4
+            },
+            {
+              "name": "Run python -m tools.stoneage_battle_sab_crossversion_r17",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 5
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 9
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 10
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 11
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 40409002895,
+      "name": "Verify original same-build named-entity source gate R31",
+      "head_sha": "d271652f9adfa37185f2c3cacf5a76e586e603b5",
+      "branch": "agent/village-interiors-r34-archive-20261027",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40409002895",
+      "jobs": [
+        {
+          "id": 121874174985,
+          "name": "exact-original-source-negative-gate",
+          "status": "completed",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3
+            },
+            {
+              "name": "Eleven tests including nine negative controls and raw-source replay",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4
+            },
+            {
+              "name": "Exact original source Git blobs and all 557 entries plus 8 original frames",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 5
+            },
+            {
+              "name": "No commercial original artwork, executable or cache in R31 release",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 6
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 11
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 12
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 13
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 40409002633,
+      "name": "Verify preserved mixed25 full server source conservation R18",
+      "head_sha": "d271652f9adfa37185f2c3cacf5a76e586e603b5",
+      "branch": "agent/village-interiors-r34-archive-20261027",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40409002633",
+      "jobs": [
+        {
+          "id": 121874174008,
+          "name": "full-source-conservation",
+          "status": "completed",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3
+            },
+            {
+              "name": "Run python -m unittest tests.test_stoneage_mixed25_server_full_source_r18 tests.test_stoneage_mixed25_server_r18_docs -v",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4
+            },
+            {
+              "name": "Run python -m tools.stoneage_mixed25_server_full_source_r18",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 5
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 9
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 10
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 11
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 40409002963,
+      "name": "Accept preserved original TW85 SPR137 full animation material R28",
+      "head_sha": "d271652f9adfa37185f2c3cacf5a76e586e603b5",
+      "branch": "agent/village-interiors-r34-archive-20261027",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40409002963",
+      "jobs": [
+        {
+          "id": 121874174822,
+          "name": "independent-original-derived",
+          "status": "completed",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3
+            },
+            {
+              "name": "Negative semantics and synthetic format guards",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4
+            },
+            {
+              "name": "Replay and independently attest all 1739 original indexed groups and 735666 frames",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 5
+            },
+            {
+              "name": "Ensure exact derived-only repository custody",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 6
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 11
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 12
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 13
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 40409002718,
+      "name": "Accept primary-source TW1.0 character creation numeric join R16",
+      "head_sha": "d271652f9adfa37185f2c3cacf5a76e586e603b5",
+      "branch": "agent/village-interiors-r34-archive-20261027",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40409002718",
+      "jobs": [
+        {
+          "id": 121874174388,
+          "name": "acceptance",
+          "status": "completed",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3
+            },
+            {
+              "name": "Replay authenticated original derived source metadata and negative cases",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 7
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 8
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 9
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 40409002702,
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "head_sha": "d271652f9adfa37185f2c3cacf5a76e586e603b5",
+      "branch": "agent/village-interiors-r34-archive-20261027",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40409002702",
+      "jobs": [
+        {
+          "id": 121874174231,
+          "name": "bounded-research-review",
+          "status": "completed",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3
+            },
+            {
+              "name": "Validate delegated decision, immutable history and no premature production",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 7
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 8
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 9
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "diagnostic_followup_head": "e573e00852cf8f9770c576a11dca7bdce2e3a180",
+  "diagnostic_candidate_run": {
+    "id": 40409302631,
+    "head": "e573e00852cf8f9770c576a11dca7bdce2e3a180",
+    "conclusion": "success",
+    "jobs": [
+      {
+        "id": 121875324766,
+        "name": "original-source-and-boundaries",
+        "status": "completed",
+        "conclusion": "success",
+        "run_id": 40409302631,
+        "logs_url": null,
+        "steps": [
+          {
+            "name": "Set up job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 1
+          },
+          {
+            "name": "Run actions/checkout@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 2
+          },
+          {
+            "name": "Run actions/setup-python@v5",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 3
+          },
+          {
+            "name": "Original geometry and historical source negative tests",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 4
+          },
+          {
+            "name": "Replay permanently archived source and candidate conservation without original download",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 5
+          },
+          {
+            "name": "Reject proprietary room maps and executable or picture leakage",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 6
+          },
+          {
+            "name": "Post Run actions/setup-python@v5",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 11
+          },
+          {
+            "name": "Post Run actions/checkout@v4",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 12
+          },
+          {
+            "name": "Complete job",
+            "status": "completed",
+            "conclusion": "success",
+            "number": 13
+          }
+        ]
+      }
+    ]
+  },
+  "main_content_head": "e573e00852cf8f9770c576a11dca7bdce2e3a180",
+  "main_content_tree": "6a2769ac0b6f3b30eea75e0ec9bd1b63d14c0002",
+  "main_runs": [
+    {
+      "id": 40409400973,
+      "name": "Verify original same-build named-entity source gate R31",
+      "head_sha": "e573e00852cf8f9770c576a11dca7bdce2e3a180",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40409400973",
+      "jobs": [
+        {
+          "id": 121875689596,
+          "name": "exact-original-source-negative-gate",
+          "status": "completed",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3
+            },
+            {
+              "name": "Eleven tests including nine negative controls and raw-source replay",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4
+            },
+            {
+              "name": "Exact original source Git blobs and all 557 entries plus 8 original frames",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 5
+            },
+            {
+              "name": "No commercial original artwork, executable or cache in R31 release",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 6
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 11
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 12
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 13
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 40409400766,
+      "name": "Verify StoneAge R17 original battle SAB crossversion occurrence conservation",
+      "head_sha": "e573e00852cf8f9770c576a11dca7bdce2e3a180",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40409400766",
+      "jobs": [
+        {
+          "id": 121875690003,
+          "name": "exact-source-report",
+          "status": "completed",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3
+            },
+            {
+              "name": "Run python -m unittest tests.test_stoneage_battle_sab_crossversion_r17 tests.test_stoneage_battle_sab_docs_r17 -v",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4
+            },
+            {
+              "name": "Run python -m tools.stoneage_battle_sab_crossversion_r17",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 5
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 9
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 10
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 11
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 40409400714,
+      "name": "Accept primary-source TW1.0 character creation numeric join R16",
+      "head_sha": "e573e00852cf8f9770c576a11dca7bdce2e3a180",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40409400714",
+      "jobs": [
+        {
+          "id": 121875688663,
+          "name": "acceptance",
+          "status": "completed",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3
+            },
+            {
+              "name": "Replay authenticated original derived source metadata and negative cases",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 7
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 8
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 9
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 40409400703,
+      "name": "Verify original dated map110 three actual cell values R32",
+      "head_sha": "e573e00852cf8f9770c576a11dca7bdce2e3a180",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40409400703",
+      "jobs": [
+        {
+          "id": 121875688575,
+          "name": "bounded-original-map-delta",
+          "status": "completed",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3
+            },
+            {
+              "name": "Source parser and offline report negative semantics",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4
+            },
+            {
+              "name": "Independent derived-metadata replay with original historical timeline pin",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 5
+            },
+            {
+              "name": "Reject commercial DAT, EXE and copyright image leakage",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 6
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 11
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 12
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 13
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 40409400584,
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "head_sha": "e573e00852cf8f9770c576a11dca7bdce2e3a180",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40409400584",
+      "jobs": [
+        {
+          "id": 121875688782,
+          "name": "bounded-research-review",
+          "status": "completed",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3
+            },
+            {
+              "name": "Validate delegated decision, immutable history and no premature production",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 7
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 8
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 9
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 40409400792,
+      "name": "Verify original four village interior materials R34",
+      "head_sha": "e573e00852cf8f9770c576a11dca7bdce2e3a180",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40409400792",
+      "jobs": [
+        {
+          "id": 121875689059,
+          "name": "original-source-and-boundaries",
+          "status": "completed",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3
+            },
+            {
+              "name": "Original geometry and historical source negative tests",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4
+            },
+            {
+              "name": "Replay permanently archived source and candidate conservation without original download",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 5
+            },
+            {
+              "name": "Reject proprietary room maps and executable or picture leakage",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 6
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 11
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 12
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 13
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 40409400716,
+      "name": "Verify preserved mixed25 full server source conservation R18",
+      "head_sha": "e573e00852cf8f9770c576a11dca7bdce2e3a180",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40409400716",
+      "jobs": [
+        {
+          "id": 121875688868,
+          "name": "full-source-conservation",
+          "status": "completed",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3
+            },
+            {
+              "name": "Run python -m unittest tests.test_stoneage_mixed25_server_full_source_r18 tests.test_stoneage_mixed25_server_r18_docs -v",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4
+            },
+            {
+              "name": "Run python -m tools.stoneage_mixed25_server_full_source_r18",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 5
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 9
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 10
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 11
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 40409400812,
+      "name": "Accept preserved original TW85 SPR137 full animation material R28",
+      "head_sha": "e573e00852cf8f9770c576a11dca7bdce2e3a180",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40409400812",
+      "jobs": [
+        {
+          "id": 121875689123,
+          "name": "independent-original-derived",
+          "status": "completed",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3
+            },
+            {
+              "name": "Negative semantics and synthetic format guards",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4
+            },
+            {
+              "name": "Replay and independently attest all 1739 original indexed groups and 735666 frames",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 5
+            },
+            {
+              "name": "Ensure exact derived-only repository custody",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 6
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 11
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 12
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 13
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "content_paths": {
+    ".github/workflows/source-stoneage-village-interiors-r34.yml": {
+      "bytes": 3704,
+      "sha256": "bacaceb40fcf84458e9d4e65906b4394692ea1ff1acaa2120b11122aafe8fd5e",
+      "git_blob": "aed54dfcb2e65024ab72a6647e068df07c063497"
+    },
+    ".github/workflows/verify-stoneage-village-interiors-r34.yml": {
+      "bytes": 1690,
+      "sha256": "009cab29b1b99db5975a7aa55ddbc1da451e699f5934f37602c5d4fbdc312ec3",
+      "git_blob": "21d05a243d0e8e4706929c95e1584109446ca19e"
+    },
+    "README.md": {
+      "bytes": 72751,
+      "sha256": "d0b3d3fc8ae09febaa90344ffaed37066d2d9da44fb92912bf6cb7d60e53953c",
+      "git_blob": "8b9260614eeecbaf614d411bdb0eccfa79a9298b"
+    },
+    "docs/continuity/STONEAGE-VILLAGE-INTERIORS-R34-20261027.md": {
+      "bytes": 4461,
+      "sha256": "a208d3e275ff7922621c7787e42a3f552c297bc0135e0ec4c4a4598961785327",
+      "git_blob": "7b093968b768e12001ec548a4117298e01eac96e"
+    },
+    "docs/specs/STONEAGE-VILLAGE-INTERIORS-MATERIAL-R34.md": {
+      "bytes": 5831,
+      "sha256": "da9b9e19488a21bacd4af7cd7502a568df81fa6e0f8eff03e54d23f5ff1bec31",
+      "git_blob": "3fc9c510967d4443adaf82bb09d623991302c743"
+    },
+    "research/recovered/STONEAGE-VILLAGE-INTERIORS-CUSTODY-R34.json": {
+      "bytes": 6175,
+      "sha256": "aec28814f481015eb77c86cb463161d47c3829be0dce3bbbbef50732c47a0ae3",
+      "git_blob": "712c7cc153baf2fb3ee6eb10906315ce52f5c6e8"
+    },
+    "research/recovered/STONEAGE-VILLAGE-INTERIORS-MATERIAL-R34.json": {
+      "bytes": 12804,
+      "sha256": "8eb460375c94f74535e938488954b96db2b264a8df821289187f8169a32c9372",
+      "git_blob": "4bf1586652831736ad2e255bd11b428de035c8bc"
+    },
+    "research/recovered/STONEAGE-VILLAGE-INTERIORS-SOURCE-R34.json": {
+      "bytes": 11388,
+      "sha256": "59f1c445e3902e15d0acfd113ea97adf59ef44f3201ba8ba5bdc1de3da407a05",
+      "git_blob": "9b12c461f80d9178c834aa7c9ae1c83c95227f45"
+    },
+    "tests/test_stoneage_village_interiors_r34.py": {
+      "bytes": 3332,
+      "sha256": "7f286f0add34360e295a4b9cc0e8b994dbf0650fdff79187779c449271e997f9",
+      "git_blob": "e4a0e7374fb0cc6d668dc6617157b5a3bdc7c0bc"
+    },
+    "tools/stoneage_village_interiors_archive_r34.py": {
+      "bytes": 7647,
+      "sha256": "51ddf2b1f831757124a5603ef7ef1b5186f32e88fa665a3b438b3e779866a852",
+      "git_blob": "b4f347408924cfe43805641e01fc5e77af843f95"
+    },
+    "tools/stoneage_village_interiors_r34.py": {
+      "bytes": 6963,
+      "sha256": "093f9ebdd6aa060d87a6f2f5342fc21777f51f284f9d6a43bcfe1ee0a78173b9",
+      "git_blob": "3867ae3707f2aa3ddbf0819e0971ef437e520595"
+    }
+  },
+  "local_checks": {
+    "r34_and_adjacent_tests": 39,
+    "all_passed": true,
+    "independent_original_field_pairs": 11700,
+    "full_original_report_byte_replay_equal": true,
+    "stage_a_manifest": "PASS",
+    "legacy_full_stage_a_replay": "FAIL_PREEXISTING_PHASE_GATE_WHOLE_FILE_LENGTH_CHECK_RECORDED_NOT_REWRITTEN"
+  },
+  "preserved_current_blob": "031c76a5a8e431f646853909bb2f2e11e6328cd2",
+  "no_original_payloads_in_git": true,
+  "stage_a": "7_PARTIAL_2_OPEN",
+  "stage_b_wiki": "GATED",
+  "r79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null,
+  "next": "ORIGINAL_CLIENT_ACQUISITION_AND_MATERIAL_ROTATION_35",
+  "this_receipt_commit_ci": "NOT_PRECLAIMED_OBSERVE_AFTER_COMMIT"
+}
