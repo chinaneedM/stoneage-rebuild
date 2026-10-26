@@ -11,3 +11,9 @@
 最高NEXT **TW85-SPR137-ORIGINAL-MATERIAL-28**：回直接原数据，已有557文件清单固定`data/spradrn_137.bin`20868B/SHA `f31c00789321c948cde8c60769023567d8f89657231860e6ba730bc4a719206d`及`data/spr_137.bin`8721504B/SHA `cf046548a0ed73ebbdd7d148400fcba3a0ff8d57d835d7b67ed90864d4975ce9`。复用既有六分卷/包装数据/MSI静态解析，不执行原安装器；先有限取源可行性/实取资格，再完整导出这对原件的组/动作/帧与TW1/CN5联接。不能按文件长度猜组数/物种，不能把保存包升为干净官方，原大包持久保管限制保持。
 
 韩国R27仅有新的明确公开原包链接或合法可访问原件才重开，不重复权限探测。R20同版身份源、P3E环境、Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、DD-028四档与overall percent=null不变。本轮没有新增客户端材料，如实保存缺源而不以测试数冲抵。
+
+## 已观察的主线终验
+
+内容main `2935c7a8d21f565c8e084ec7348cc476407e9337` / tree `7b7e768a07f16aa9a755cd3ba38b2ff94e44411d` 已非强制快进。候选五项、同HEAD主线五项均实际completed/success；主线专用40318987858/job121558754428日志确认14项测试及`OPEN_PUBLIC_SOURCE_ACCESS_GATED_NO_PACKAGE_OBTAINED`/新样本0/包字节0重放通过。13改动路径与远端逐字节一致；完整CURRENT、其他五大历史/协议与前层不改，README和客户端来源登记的完整历史前缀保留，旧四样本底座未扩充。
+
+[永久发布收据](../../research/recovered/STONEAGE-KR-NETMARBLE120-R27-PUBLICATION-R1.json)保存源/候选/main全部作业步骤、ZIP/raw/Git链与13内容路径指纹。收据自身CI发布后观察，不预写成功。工作流通过仍不是韩国客户端下载成功；权限阻塞和新客户端材料0完整保留。最高NEXT为TW85 SPR137两原件材料28。
