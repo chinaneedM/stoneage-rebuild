@@ -27,3 +27,11 @@
 最高 `PRESERVED_CLIENT_NATIVE_PET_ALBUM_TABLE_SOURCE_36`：原保存同一client子树的sa_2903.exe与网通变体均561152B，原SHA分别ec678517f76564ebc9ab00cf3f66853ed9975ef6290eb48168b78909a68a5d16 / 79554dd8526cf30afc50575d178461338afd3c299bd959987390496f106cde50。只在不无收益重取大包的实际原来源可得时，核一条原相册表边界/名称槽→原图号，否则精确缺源止点并轮转22域；不从后代头像回填、不任选变体认证官方2.5，不解局部账号键或继续猜auto.dat。
 
 Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、P3E阻塞、原TW1同构建server/master OPEN、总体percent=null保持。DD-028本体/永久新增/运营活动/起源未明四档不混。
+
+## 实际候选/主线最终验收
+
+内容候选/主线同HEAD be181ab15e377b407c877be7ae935b4a2fa9bd65，tree1aaa22ac7c109c386f80d5be25814cfb3ccca4e2。本地树与GitHub原树完全相同，14条内容路径从远端原生Git逐字节读取一致；八份原历史完整文件/README原前缀均保留。经fresh主线仍a920823后非强制快进集成，没有覆盖并发内容。
+
+候选9项Actions真实全部completed/success（R35专用40415306130）；同内容主线9项真实全部completed/success：40415446500（R35）、40415446554、40415446401（现行Stage A）、40415446329、40415446323、40415446463、40415446482、40415446360、40415446542。逐run/job/step、14内容路径blob及源ZIP/原JSON/公开投影区别保存在 `research/recovered/STONEAGE-MIXED25-ALBUM-PUBLICATION-R35.json`。
+
+本收据提交自身CI仍须发布后观察，不能提前称该HEAD成功。R35的实取三数据/148名称字段与76槽候选已完成有限交付；新官方客户端0、早期原服主表/原图绑定、旧完整Stage A回放长度问题及最高NEXT36均未被检查成功掩盖或升级。
