@@ -1,0 +1,27 @@
+name: Qualify preserved original R37 REAL header without downloading pixels R38
+on:
+  push:
+    branches: ['agent/album-real-header-r38-20261027']
+permissions:
+  contents: read
+jobs:
+  original-header-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned header reader without extraction tools
+        run: python -m pip install rarfile==4.2
+      - name: Strict finite R37 material and R38 header tests
+        run: python -m unittest -v tests.test_stoneage_album_real_header_r38 tests.test_stoneage_album_adrn_material_r37
+      - name: Only scan RAR4 headers with 16MiB total finite source budget
+        run: python -m tools.stoneage_album_real_header_r38 --output /tmp/r38-original-real-header.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: r38-original-real-header-derived-metadata-only
+          path: /tmp/r38-original-real-header.json
+          retention-days: 7
+          if-no-files-found: error
