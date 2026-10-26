@@ -1,0 +1,43 @@
+name: Acquire twelve missing Japanese named pet GIF references R25
+on:
+  workflow_dispatch:
+  push:
+    branches: [agent/jp-pet-visual-source-r25-20261026]
+    paths:
+      - 'tools/stoneage_jp_pet_visual_r25_source.py'
+      - 'tests/test_stoneage_jp_pet_visual_r25.py'
+      - 'research/recovered/STONEAGE-JP-PET-VISUAL-R25-PUBLIC.pem'
+      - '.github/workflows/acquire-stoneage-jp-pet-visual-r25.yml'
+permissions:
+  contents: read
+jobs:
+  actual-twelve-reference-source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install Pillow==12.3.0 cryptography
+      - run: python -m unittest -v tests.test_stoneage_jp_pet_visual_r25
+      - name: One bounded fetch per selected reference and encrypted private PNG
+        run: python -m tools.stoneage_jp_pet_visual_r25_source --output-dir output/r25
+      - name: Enforce metadata and encrypted output allowlist
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json
+          p=Path('output/r25')
+          assert sorted(x.name for x in p.iterdir())==['private-png-envelopes.json','source-derived.json']
+          report=json.loads((p/'source-derived.json').read_bytes())
+          envelopes=json.loads((p/'private-png-envelopes.json').read_bytes())
+          assert len(report['entries'])==12 and all(x['attempt_count']==1 for x in report['entries'])
+          assert len(envelopes)==report['counts']['qualified_gifs']
+          assert all('ciphertext_b64' in x and 'recipient_key_sha256' in x for x in envelopes.values())
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: jp-pet-r25-derived-and-encrypted-private-png
+          path: output/r25/*.json
+          retention-days: 30
