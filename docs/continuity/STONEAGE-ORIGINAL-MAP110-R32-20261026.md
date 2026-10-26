@@ -9,3 +9,12 @@
 源工件12656672965 ZIP1209B/SHA256 580bef79d991ebf35fb826d3718d87a5864ccab1b1119fdf2a6b5005857bb92f，**实际独立下载**与API一致；只有衍生JSON2832B/SHA b7fcd1f5d134ddcdbe11303e95c8fda78d3d431a14b3018dda19adb2f7ea40f0/Git blob `a3fac4f5c08d1b0660f302f95901a7d7fb2bee18`，原件不入Git。完整来源/负例见[实际规格](../specs/STONEAGE-ORIGINAL-MAP110-MATERIAL-R32.md)、[派生JSON](../../research/recovered/STONEAGE-ORIGINAL-MAP110-CELL-DELTA-R32.json)与[原件保管链](../../research/recovered/STONEAGE-ORIGINAL-MAP110-SOURCE-CUSTODY-R32.json)。候选与main验收须据实际完成后另记，不伪造绿灯。
 
 **NEXT `ORIGINAL_SPR_RD_PALETTE_SAME_CARRIER_33`**，按协议§13回到玩家可感知的画面内容：先明确已有R30真RD索引图是否能由同保存构建的调色板资料恢复史实RGB，不能就止点，不能只是反复做声卡/显卡helper或猜物种。任务四档、Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79/P3E、私人载体长存不足、整体percent=null不变。
+
+
+## R32实际候选/主线双重验收与位级限定（2026-10-26）
+
+已用未变main HEAD租约非强制快进合入内容 `cffeea30c25f6b33d3c465fe7ce457edf8437a76` / tree `5c7472c159f15e3100d39bb4df84cb363c681a79`。候选和内容主线各七项Actions经实际查询均completed/success，其中主线专用R32 run `40337093816` / job `121621478096` 完成19项源解析与离线负面合同测试及原历史文本pin核验；候选对应run `40336922384` / job `121620870049` 亦success。R31、Stage A、R16、R17、R18、R28等兼容检查分别成功，具体十四项运行编号和状态记录在[本轮实际验收凭证](../../research/recovered/STONEAGE-ORIGINAL-MAP110-PUBLICATION-R32.json)。
+
+源第一次`40335438563`因12月7z失败、修正版`40335682973`成功；中间`40336190397`把报告入库前就启动离线验收，因缺派生报告失败，全部原样记载。旧成功/失败不是同一HEAD，不能混作一次通行。原工件实际单独下载ZIP1209B，摘要与Actions API精确一致，只有合法的派生JSON2832B/Git blob `a3fac4f5c08d1b0660f302f95901a7d7fb2bee18`，报告内容与source stdout JSON相同且独立逐摘要核。主线从旧tree到内容tree恰11文件路径新/改，无旧文件删除；旧CURRENT和其它历史主簿Git blob未改。
+
+数值上三个`0x4000→0xC000` 的XOR都恰为`0x8000`，这是位级**算术FACT**，但此位是否表示事件/通行/遮挡/动态状态完全OPEN，不能命名格子任务。地图来源为2003两批归档的第三方镜像，非TW1.0、非原服坐标；原地图原格网不存公开Git。下一优先原图片调色板同源实物包33；Stage A7 PARTIAL+2 OPEN、B/wiki GATED、P3E/R79和私人原件持久保存边界仍在，总百分比null。后验收据自身提交的Actions须另依事实检查。

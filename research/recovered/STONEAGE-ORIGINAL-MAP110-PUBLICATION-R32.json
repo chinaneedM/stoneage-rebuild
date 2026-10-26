@@ -1,0 +1,241 @@
+{
+  "schema": "stoneage.archived_map110_actual_r32.publication_verified.v1",
+  "source_baseline": {
+    "main_head": "05eb85bb59b2abcaba13b9614dedb37a27f3ca16",
+    "main_tree": "227a49182878cffac54f1120f11be6dceaf2aed0",
+    "current_state_git_blob": "031c76a5a8e431f646853909bb2f2e11e6328cd2"
+  },
+  "first_source_failure": {
+    "run_id": 40335438563,
+    "job_id": 121615630195,
+    "source_head": "f1978221c7c7ed541f48ac07d1f52d144a876a6a",
+    "status": "failure",
+    "reason": "December 7z SFX map extraction; original archive SHA verified, no actual three-cell report"
+  },
+  "corrected_source": {
+    "run_id": 40335682973,
+    "job_id": 121616477087,
+    "source_head": "b6eb278ac15833fa346ba1907edb145b1154a3e1",
+    "status": "completed/success",
+    "artifact_id": 12656672965,
+    "zip_bytes": 1209,
+    "zip_sha256": "580bef79d991ebf35fb826d3718d87a5864ccab1b1119fdf2a6b5005857bb92f",
+    "raw_json_bytes": 2832,
+    "raw_sha256": "b7fcd1f5d134ddcdbe11303e95c8fda78d3d431a14b3018dda19adb2f7ea40f0",
+    "raw_git_blob": "a3fac4f5c08d1b0660f302f95901a7d7fb2bee18",
+    "zip_download_independently_verified": true,
+    "source_original_hashes_verified": true
+  },
+  "pre_report_workflow_failure": {
+    "run_id": 40336190397,
+    "job_id": 121618287377,
+    "reason": "Offline verifier was introduced before public derived source report was committed; not a failed original extraction, retained for audit"
+  },
+  "accepted_content": {
+    "head_sha": "cffeea30c25f6b33d3c465fe7ce457edf8437a76",
+    "tree_sha": "5c7472c159f15e3100d39bb4df84cb363c681a79",
+    "changed_paths": [
+      {
+        "path": ".github/workflows/source-stoneage-map110-actual-r32.yml",
+        "new_git_blob": "f1db15856e133b9cf8ea74e2f186c9fdb08df27e",
+        "old_git_blob": null
+      },
+      {
+        "path": ".github/workflows/verify-stoneage-map110-original-r32.yml",
+        "new_git_blob": "5d6cfe59175b4390eea84803444ef2ff234e6e8c",
+        "old_git_blob": null
+      },
+      {
+        "path": "README.md",
+        "new_git_blob": "3fde4980a82287eddaa11517a48b941244ff78e9",
+        "old_git_blob": "4c89eb5d54879bcedfde62227826499283a9193f"
+      },
+      {
+        "path": "docs/continuity/STONEAGE-ORIGINAL-MAP110-R32-20261026.md",
+        "new_git_blob": "661a80bdab7900b1b8ae51fbdb9a934a158abf4d",
+        "old_git_blob": null
+      },
+      {
+        "path": "docs/specs/STONEAGE-ORIGINAL-MAP110-MATERIAL-R32.md",
+        "new_git_blob": "267d2d6cc4f40849168d314b246549684ec76a21",
+        "old_git_blob": null
+      },
+      {
+        "path": "research/recovered/STONEAGE-ORIGINAL-MAP110-CELL-DELTA-R32.json",
+        "new_git_blob": "a3fac4f5c08d1b0660f302f95901a7d7fb2bee18",
+        "old_git_blob": null
+      },
+      {
+        "path": "research/recovered/STONEAGE-ORIGINAL-MAP110-SOURCE-CUSTODY-R32.json",
+        "new_git_blob": "84340937e4fdd5eca095d2d1320d0f6e23019585",
+        "old_git_blob": null
+      },
+      {
+        "path": "tests/test_stoneage_map110_actual_cells_r32.py",
+        "new_git_blob": "efa2fe0ae2873e1cef41ba654c727a31380f5479",
+        "old_git_blob": null
+      },
+      {
+        "path": "tests/test_stoneage_map110_original_archive_r32.py",
+        "new_git_blob": "aff28c12845cd8e82c71b71d621f3552c92eeb99",
+        "old_git_blob": null
+      },
+      {
+        "path": "tools/stoneage_map110_actual_cells_r32.py",
+        "new_git_blob": "928c1739a48d86ab44598228b034bc327853fae9",
+        "old_git_blob": null
+      },
+      {
+        "path": "tools/stoneage_map110_original_archive_r32.py",
+        "new_git_blob": "720b05da3a6e38d352dcadbc6078728493825e28",
+        "old_git_blob": null
+      }
+    ],
+    "removed_paths": [],
+    "old_current_full_content_preserved": true
+  },
+  "candidate_ci": [
+    {
+      "run_id": 40336922144,
+      "head_sha": "cffeea30c25f6b33d3c465fe7ce457edf8437a76",
+      "branch": "agent/original-world-map110-r32-20261026",
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40336922144"
+    },
+    {
+      "run_id": 40336922248,
+      "head_sha": "cffeea30c25f6b33d3c465fe7ce457edf8437a76",
+      "branch": "agent/original-world-map110-r32-20261026",
+      "name": "Verify StoneAge R17 original battle SAB crossversion occurrence conservation",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40336922248"
+    },
+    {
+      "run_id": 40336922272,
+      "head_sha": "cffeea30c25f6b33d3c465fe7ce457edf8437a76",
+      "branch": "agent/original-world-map110-r32-20261026",
+      "name": "Verify original same-build named-entity source gate R31",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40336922272"
+    },
+    {
+      "run_id": 40336922370,
+      "head_sha": "cffeea30c25f6b33d3c465fe7ce457edf8437a76",
+      "branch": "agent/original-world-map110-r32-20261026",
+      "name": "Accept preserved original TW85 SPR137 full animation material R28",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40336922370"
+    },
+    {
+      "run_id": 40336922384,
+      "head_sha": "cffeea30c25f6b33d3c465fe7ce457edf8437a76",
+      "branch": "agent/original-world-map110-r32-20261026",
+      "name": "Verify original dated map110 three actual cell values R32",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40336922384"
+    },
+    {
+      "run_id": 40336922420,
+      "head_sha": "cffeea30c25f6b33d3c465fe7ce457edf8437a76",
+      "branch": "agent/original-world-map110-r32-20261026",
+      "name": "Accept primary-source TW1.0 character creation numeric join R16",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40336922420"
+    },
+    {
+      "run_id": 40336922441,
+      "head_sha": "cffeea30c25f6b33d3c465fe7ce457edf8437a76",
+      "branch": "agent/original-world-map110-r32-20261026",
+      "name": "Verify preserved mixed25 full server source conservation R18",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40336922441"
+    }
+  ],
+  "main_ci": [
+    {
+      "run_id": 40337093816,
+      "head_sha": "cffeea30c25f6b33d3c465fe7ce457edf8437a76",
+      "branch": "main",
+      "name": "Verify original dated map110 three actual cell values R32",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40337093816"
+    },
+    {
+      "run_id": 40337093842,
+      "head_sha": "cffeea30c25f6b33d3c465fe7ce457edf8437a76",
+      "branch": "main",
+      "name": "Accept preserved original TW85 SPR137 full animation material R28",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40337093842"
+    },
+    {
+      "run_id": 40337093877,
+      "head_sha": "cffeea30c25f6b33d3c465fe7ce457edf8437a76",
+      "branch": "main",
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40337093877"
+    },
+    {
+      "run_id": 40337093880,
+      "head_sha": "cffeea30c25f6b33d3c465fe7ce457edf8437a76",
+      "branch": "main",
+      "name": "Verify StoneAge R17 original battle SAB crossversion occurrence conservation",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40337093880"
+    },
+    {
+      "run_id": 40337093970,
+      "head_sha": "cffeea30c25f6b33d3c465fe7ce457edf8437a76",
+      "branch": "main",
+      "name": "Verify preserved mixed25 full server source conservation R18",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40337093970"
+    },
+    {
+      "run_id": 40337094058,
+      "head_sha": "cffeea30c25f6b33d3c465fe7ce457edf8437a76",
+      "branch": "main",
+      "name": "Verify original same-build named-entity source gate R31",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40337094058"
+    },
+    {
+      "run_id": 40337110667,
+      "head_sha": "cffeea30c25f6b33d3c465fe7ce457edf8437a76",
+      "branch": "main",
+      "name": "Accept primary-source TW1.0 character creation numeric join R16",
+      "conclusion": "success",
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40337110667"
+    }
+  ],
+  "meaning": {
+    "map": 110,
+    "cell_count": 2070,
+    "actual_third_plane_changed_flat_indices": [
+      1,
+      2,
+      3
+    ],
+    "old_values": [
+      16384,
+      16384,
+      16384
+    ],
+    "new_values": [
+      49152,
+      49152,
+      49152
+    ],
+    "new_bit_mask": "0x8000",
+    "original_map_runtime_coordinate_semantics_verified": false,
+    "named_npc_quest_or_teleport_verified": false,
+    "version_relation_proven": "THIRD_PARTY_2003_ARCHIVE_TWO_CAPTURES_NOT_EARLY_TW10_DEPLOYMENT"
+  },
+  "stage_a_system_families_closed": 0,
+  "stage_b_started": false,
+  "overall_progress_percent": null,
+  "next": "ORIGINAL_SPR_RD_PALETTE_SAME_CARRIER_33",
+  "receipt_own_ci": "NOT_YET_OBSERVED"
+}
