@@ -1,0 +1,35 @@
+name: Recover four actual historical map resource-value comparisons R21
+on:
+  push:
+    branches: [agent/world-source-r20-map-content-r21-20261026]
+    paths: ['.github/workflows/probe-stoneage-map-resource-content-r21.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  bounded-original-map-source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Retrieve the small known map carrier once without execution
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq 7zip
+          python -m tools.stoneage_mapexe_full_probe --recover /tmp/r21-map.exe
+          echo '372426e46765a1cf479041bdafc1d3e58fb019117d00d0b43d6a5f796620776e  /tmp/r21-map.exe' | sha256sum -c -
+          7z x -y -o/tmp/r21-maps /tmp/r21-map.exe 'map/1000.DAT' 'map/2000.DAT' 'map/3000.DAT' 'map/4000.DAT' >/dev/null
+      - name: Join actual four map histograms to three separately qualified resource profiles
+        run: |
+          python -m tools.stoneage_map_resource_content_r21 --maps /tmp/r21-maps/map --output /tmp/r21-derived.json
+          python -m tools.stoneage_map_resource_content_r21 --verify /tmp/r21-derived.json
+      - name: Remove carrier and all extracted proprietary maps
+        if: always()
+        run: rm -rf /tmp/r21-map.exe /tmp/r21-maps
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: r21-four-map-derived-metadata
+          path: /tmp/r21-derived.json
+          retention-days: 7
+          if-no-files-found: error
