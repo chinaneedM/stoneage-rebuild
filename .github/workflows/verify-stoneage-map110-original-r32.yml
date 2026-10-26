@@ -31,5 +31,14 @@ jobs:
         shell: bash
         run: |
           test -s research/recovered/STONEAGE-ORIGINAL-MAP110-CELL-DELTA-R32.json
-          test "$(find research/recovered -maxdepth 1 -name '*MAP110*' -type f | wc -l)" -le 2
+          python - <<'PY'
+          from pathlib import Path
+          actual={p.name for p in Path("research/recovered").glob("*MAP110*") if p.is_file()}
+          allowed={
+              "STONEAGE-ORIGINAL-MAP110-CELL-DELTA-R32.json",
+              "STONEAGE-ORIGINAL-MAP110-SOURCE-CUSTODY-R32.json",
+              "STONEAGE-ORIGINAL-MAP110-PUBLICATION-R32.json",
+          }
+          if actual != allowed: raise SystemExit("R32 source metadata allowlist mismatch: "+repr(actual))
+          PY
           echo 'R32_METADATA_ONLY=PASS'
