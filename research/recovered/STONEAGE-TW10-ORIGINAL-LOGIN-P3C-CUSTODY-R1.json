@@ -1,0 +1,159 @@
+{
+  "schema": "stoneage.p3c.colormap_input_custody.v1",
+  "baseline_main": "512a7b5399b7236befad9a512f1a56e8ebc5bf04",
+  "baseline_tree": "63b79b03ff75b941c81f0e2fde30c6ba0978d90f",
+  "source_runs": [
+    {
+      "role": "initial",
+      "head": "5f0f44d57b6018fca7730ca6ff43591bd3f12ea8",
+      "run": 40246202271,
+      "job": 121328176262,
+      "conclusion": "success",
+      "functional_status": "WINDOWED_15_RGB_HOVER_OBSERVED_QUIT_NOT_ACCEPTED",
+      "artifact": 12618348824,
+      "zip_bytes": 243444,
+      "zip_sha256": "58ef498127a4e939fd2c702f48e77a5a3afbaa10176e75002c49525b3e464586",
+      "zip_digest_independently_checked": true
+    },
+    {
+      "role": "focused",
+      "head": "0e5ab68a3bf145d3ccaa862b469d0a8ea8f41f30",
+      "run": 40246551708,
+      "job": 121329227817,
+      "conclusion": "success",
+      "functional_status": "WINDOWED_FOCUS_AND_200MS_CLICK_STILL_PARTIAL",
+      "artifact": 12618912936,
+      "zip_bytes": 243567,
+      "zip_sha256": "c191ced0260069dbe5b8a3b152344966fea39f7028d60bce447ed6d26aa2a671",
+      "zip_digest_independently_checked": true
+    },
+    {
+      "role": "fullscreen",
+      "head": "b88318a4724a2898f067b10652d8219df2660dc2",
+      "run": 40246852113,
+      "job": 121330123334,
+      "conclusion": "success",
+      "functional_status": "CRASH_BEFORE_INPUT_NOT_QUIT_ACCEPTANCE",
+      "artifact": 12619049977,
+      "zip_bytes": 44378,
+      "zip_sha256": "e011d4ea3c92af6c5b7b9936a92fc55beb8b62165768d045b7054616f3f3a7fd",
+      "zip_digest_independently_checked": true
+    }
+  ],
+  "derived_files": [
+    {
+      "file": "STONEAGE-TW10-ORIGINAL-LOGIN-P3C-DISPLAY-R1.json",
+      "bytes": 6874,
+      "sha256": "daa411b56fa42fa043cd08ad524ecfec118d96faebf097f008d0e8097a972b6a",
+      "git_blob": "47e8aa61599c46d48ae1c731a1bcf0c973584547",
+      "role": "display"
+    },
+    {
+      "file": "STONEAGE-TW10-ORIGINAL-LOGIN-P3C-FOCUSED-DISPLAY-R1.json",
+      "bytes": 6875,
+      "sha256": "d2ecddfdaa7a8e94c191d2e8e00a98d63d9a5478cd1ce625b7b06dcb991ca3b3",
+      "git_blob": "216b9b02da35dc1073dc4a977a73602d42d2afc7",
+      "role": "focused_display"
+    },
+    {
+      "file": "STONEAGE-TW10-ORIGINAL-LOGIN-P3C-FOCUSED-ORIGINAL-R1.json",
+      "bytes": 14489,
+      "sha256": "88a12f3a7bc6f1690602c57e2d15862396c0c789ba1c6365374d18e01162e667",
+      "git_blob": "5dfed893c62e20581bd70d72abdd689a80cc493d",
+      "role": "focused_original"
+    },
+    {
+      "file": "STONEAGE-TW10-ORIGINAL-LOGIN-P3C-FOCUSED-PACKAGES-R1.txt",
+      "bytes": 172,
+      "sha256": "ee2da8d49414c6eb2331895c849bf96070a1b14f3641fbe50a2fb29a1bcda96c",
+      "git_blob": "a17e9b71ef775dfd38bf63d0f95ac4d7667c0c2f",
+      "role": "focused_packages"
+    },
+    {
+      "file": "STONEAGE-TW10-ORIGINAL-LOGIN-P3C-FOCUSED-PREFLIGHT-R1.json",
+      "bytes": 2756,
+      "sha256": "120a55605683501bebf94e06b0223bd5f0c2665cd529fe08d31d7030f71a215d",
+      "git_blob": "c43856efa83b5ccc94202676560db0104ef8d0a5",
+      "role": "focused_preflight"
+    },
+    {
+      "file": "STONEAGE-TW10-ORIGINAL-LOGIN-P3C-INITIAL-DISPLAY-R1.json",
+      "bytes": 6874,
+      "sha256": "81ff4cf509afc5409bf3b6b3cb6c458979d35fb4f3cc75f66cb53465d3efb30c",
+      "git_blob": "f82a829a81b6ba702d29e3da38e20bf770be3a02",
+      "role": "initial_display"
+    },
+    {
+      "file": "STONEAGE-TW10-ORIGINAL-LOGIN-P3C-INITIAL-ORIGINAL-R1.json",
+      "bytes": 12211,
+      "sha256": "00251cedd843653b81f3c011bdf50ffc44c15e0dac7724500e6d37adf2a1d546",
+      "git_blob": "98355f09a09292b659ee19294942588c8edf8c09",
+      "role": "initial_original"
+    },
+    {
+      "file": "STONEAGE-TW10-ORIGINAL-LOGIN-P3C-INITIAL-PACKAGES-R1.txt",
+      "bytes": 172,
+      "sha256": "ee2da8d49414c6eb2331895c849bf96070a1b14f3641fbe50a2fb29a1bcda96c",
+      "git_blob": "a17e9b71ef775dfd38bf63d0f95ac4d7667c0c2f",
+      "role": "initial_packages"
+    },
+    {
+      "file": "STONEAGE-TW10-ORIGINAL-LOGIN-P3C-INITIAL-PREFLIGHT-R1.json",
+      "bytes": 2756,
+      "sha256": "ed7413480740811a175e35e2bb6f236575ed49ae03fdfc613d23962161696724",
+      "git_blob": "1eb35fdde454ae29e61121fd48890327bee78d9c",
+      "role": "initial_preflight"
+    },
+    {
+      "file": "STONEAGE-TW10-ORIGINAL-LOGIN-P3C-ORIGINAL-R1.json",
+      "bytes": 33362,
+      "sha256": "2e76666734e4402bc53169039651ff47d08253db001157aba343b3b85d183c0c",
+      "git_blob": "db44bd99a3eeaac121d212a4b0a58cdec42b35a3",
+      "role": "original"
+    },
+    {
+      "file": "STONEAGE-TW10-ORIGINAL-LOGIN-P3C-PACKAGES-R1.txt",
+      "bytes": 172,
+      "sha256": "ee2da8d49414c6eb2331895c849bf96070a1b14f3641fbe50a2fb29a1bcda96c",
+      "git_blob": "a17e9b71ef775dfd38bf63d0f95ac4d7667c0c2f",
+      "role": "packages"
+    },
+    {
+      "file": "STONEAGE-TW10-ORIGINAL-LOGIN-P3C-PREFLIGHT-R1.json",
+      "bytes": 2756,
+      "sha256": "120a55605683501bebf94e06b0223bd5f0c2665cd529fe08d31d7030f71a215d",
+      "git_blob": "c43856efa83b5ccc94202676560db0104ef8d0a5",
+      "role": "preflight"
+    }
+  ],
+  "source_member_files": 375,
+  "source_member_bytes": 372529095,
+  "private_visual_observation": {
+    "source_run": 40246551708,
+    "source_job": 121329227817,
+    "source_report_role": "focused_original",
+    "x11_window": 8388609,
+    "png_sha256": "0aebcba5b0f75102e1c9dcde63bc22526387f5527c35749c3d44aaab97607811",
+    "png_bytes": 108700,
+    "rgb_sha256": "1b30216800d701f61e9a85794ac0cc9819f70841eab90b415ad608364c4c512a",
+    "width": 640,
+    "height": 480,
+    "assistant_viewed_original": true,
+    "authenticated_decryption": true,
+    "actual_original_login_panel_visible": true,
+    "correct_color_rendering_verified": false,
+    "observation": "原JSS/石器时代/WGS登录画面可辨；窗口colormap取色比旧root清楚，但仍浅色/抖点，只有15种RGB。",
+    "private_png_saved": true,
+    "plaintext_screenshot_in_public_git": false
+  },
+  "hover_visual_response_observed": true,
+  "quit_click_accepted": false,
+  "fullscreen_crashed_before_coordinate_input": true,
+  "fullscreen_coordinate_input_is_qualified_quit_test": false,
+  "future_coordinate_input_blocks_debugger_or_unexpected_dialog": true,
+  "game_world_entered": false,
+  "audio_heard_or_recorded": false,
+  "historical_server_restored": false,
+  "overall_restoration_percent": null,
+  "highest_next": "ORIGINAL-GAME-OBSERVATION-P3D-WIN32-ACTIVATION-AND-PALETTE-GATE"
+}

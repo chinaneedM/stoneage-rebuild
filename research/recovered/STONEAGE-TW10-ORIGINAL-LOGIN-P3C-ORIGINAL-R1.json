@@ -1,0 +1,1059 @@
+{
+  "schema": "stoneage.p3.isolated_boot_observation.v1",
+  "sample": "TW_WAEI_JSS_1_0_ACCEPTED_RETAIL_REDUMP_104630",
+  "network": {
+    "host_net_namespace": "net:[4026531833]",
+    "child_net_namespace": "net:[4026532270]",
+    "interfaces": [
+      "lo"
+    ],
+    "ipv4_routes": [],
+    "ipv6_default_routes": [],
+    "external_documentation_address_connect_errno": 101,
+    "outbound_namespace_isolation_verified": true
+  },
+  "preflight_passed": false,
+  "original_client_execution_attempted": true,
+  "original_client_execution_proven": true,
+  "game_world_entered": false,
+  "authentic_game_display_visually_verified": false,
+  "assistant_viewed_original": false,
+  "original_assets_published": false,
+  "wineboot": {
+    "returncode": 0,
+    "diagnostic_lines": [
+      "wine: created the configuration directory '/tmp/stoneage-p3-original/wine-prefix'",
+      "wine: configuration in L\"/tmp/stoneage-p3-original/wine-prefix\" has been updated.",
+      "wine: configuration in L\"/tmp/stoneage-p3-original/wine-prefix\" has been updated."
+    ]
+  },
+  "environment": {
+    "wine_version": "wine-9.0 (Ubuntu 9.0~repack-4build3)",
+    "winearch": "win32",
+    "windows_version_setting": "winxp",
+    "display": "640x480x8_XVFB",
+    "requested_locale": "zh_TW.UTF-8",
+    "old_kernel_drivers_installed": false
+  },
+  "audio_heard_or_recorded": false,
+  "source_executable": {
+    "path": "StoneAge/sa_3.exe",
+    "bytes": 425984,
+    "sha256": "cdab9ea049a98bbc96ce93eeaa8b63c688f0c0f0ad8b3183e79d75e47621441a"
+  },
+  "original_launch_args": [
+    "updated",
+    "realbin:1",
+    "adrnbin:1",
+    "sprbin:1",
+    "spradrnbin:1",
+    "soundbin:1",
+    "battlebin:1",
+    "IP:0:127.0.0.1:9"
+  ],
+  "endpoint_is_synthetic_isolated_loopback_not_historical_server": true,
+  "host_launcher_pid": 174,
+  "observations": [
+    {
+      "launcher_returncode": null,
+      "windows": {
+        "schema": "stoneage.p3.win32_window_inspection.v1",
+        "windows": [
+          {
+            "pid": 32,
+            "class": "ＳｔｏｎｅＡｇｅ",
+            "title": "ＳｔｏｎｅＡｇｅ",
+            "image_path": "Z:\\tmp\\stoneage-p3-original\\run\\sa_3.exe",
+            "rect": [
+              0,
+              0,
+              640,
+              480
+            ],
+            "children": []
+          },
+          {
+            "pid": 276,
+            "class": "#32770",
+            "title": "程式錯誤",
+            "image_path": "C:\\windows\\system32\\winedbg.exe",
+            "rect": [
+              153,
+              73,
+              637,
+              477
+            ],
+            "children": [
+              {
+                "class": "Static",
+                "text": "程式 sa_3.exe 遇到了嚴重問題而需要關閉。我們對於造成的不便感到抱歉。"
+              },
+              {
+                "class": "SysLink",
+                "text": "這個可能是由 Wine 中的程式問題或缺失所造成。您可能要檢查<a href=\"https://appdb.winehq.org\">應用程式資料庫</a>以取得關於執行這個應用程式的提示。"
+              },
+              {
+                "class": "Button",
+                "text": "關閉"
+              },
+              {
+                "class": "Button",
+                "text": "顯示詳細資訊(&D)"
+              }
+            ]
+          },
+          {
+            "pid": 284,
+            "class": "WineConsoleClass",
+            "title": "Wine Debugger",
+            "image_path": "C:\\windows\\system32\\conhost.exe",
+            "rect": [
+              0,
+              0,
+              637,
+              451
+            ],
+            "children": []
+          }
+        ]
+      },
+      "capture": {
+        "width": 640,
+        "height": 480,
+        "rgb_sha256": "10976d4f669a36e3958c5e921c700d34e5a6401def380a06c76306adf8851afd",
+        "png_sha256": "b3c153253baee385b1a6a23ad73ee454ca7c5c91b35d4eefab5f03f8252f6830",
+        "channel_extrema": [
+          [
+            0,
+            255
+          ],
+          [
+            0,
+            255
+          ],
+          [
+            0,
+            255
+          ]
+        ],
+        "nonuniform_pixels": true,
+        "synthetic_control_red_pixels": 0,
+        "synthetic_control_green_pixels": 0,
+        "assistant_viewed_original": false,
+        "image_published": false
+      }
+    },
+    {
+      "launcher_returncode": null,
+      "windows": {
+        "schema": "stoneage.p3.win32_window_inspection.v1",
+        "windows": [
+          {
+            "pid": 32,
+            "class": "ＳｔｏｎｅＡｇｅ",
+            "title": "ＳｔｏｎｅＡｇｅ",
+            "image_path": "Z:\\tmp\\stoneage-p3-original\\run\\sa_3.exe",
+            "rect": [
+              0,
+              0,
+              640,
+              480
+            ],
+            "children": []
+          },
+          {
+            "pid": 276,
+            "class": "#32770",
+            "title": "程式錯誤",
+            "image_path": "C:\\windows\\system32\\winedbg.exe",
+            "rect": [
+              153,
+              73,
+              637,
+              477
+            ],
+            "children": [
+              {
+                "class": "Static",
+                "text": "程式 sa_3.exe 遇到了嚴重問題而需要關閉。我們對於造成的不便感到抱歉。"
+              },
+              {
+                "class": "SysLink",
+                "text": "這個可能是由 Wine 中的程式問題或缺失所造成。您可能要檢查<a href=\"https://appdb.winehq.org\">應用程式資料庫</a>以取得關於執行這個應用程式的提示。"
+              },
+              {
+                "class": "Button",
+                "text": "關閉"
+              },
+              {
+                "class": "Button",
+                "text": "顯示詳細資訊(&D)"
+              }
+            ]
+          },
+          {
+            "pid": 284,
+            "class": "WineConsoleClass",
+            "title": "Wine Debugger",
+            "image_path": "C:\\windows\\system32\\conhost.exe",
+            "rect": [
+              0,
+              0,
+              637,
+              451
+            ],
+            "children": []
+          }
+        ]
+      },
+      "capture": {
+        "width": 640,
+        "height": 480,
+        "rgb_sha256": "10976d4f669a36e3958c5e921c700d34e5a6401def380a06c76306adf8851afd",
+        "png_sha256": "b3c153253baee385b1a6a23ad73ee454ca7c5c91b35d4eefab5f03f8252f6830",
+        "channel_extrema": [
+          [
+            0,
+            255
+          ],
+          [
+            0,
+            255
+          ],
+          [
+            0,
+            255
+          ]
+        ],
+        "nonuniform_pixels": true,
+        "synthetic_control_red_pixels": 0,
+        "synthetic_control_green_pixels": 0,
+        "assistant_viewed_original": false,
+        "image_published": false
+      }
+    },
+    {
+      "launcher_returncode": null,
+      "windows": {
+        "schema": "stoneage.p3.win32_window_inspection.v1",
+        "windows": [
+          {
+            "pid": 32,
+            "class": "ＳｔｏｎｅＡｇｅ",
+            "title": "ＳｔｏｎｅＡｇｅ",
+            "image_path": "Z:\\tmp\\stoneage-p3-original\\run\\sa_3.exe",
+            "rect": [
+              0,
+              0,
+              640,
+              480
+            ],
+            "children": []
+          },
+          {
+            "pid": 276,
+            "class": "#32770",
+            "title": "程式錯誤",
+            "image_path": "C:\\windows\\system32\\winedbg.exe",
+            "rect": [
+              153,
+              73,
+              637,
+              477
+            ],
+            "children": [
+              {
+                "class": "Static",
+                "text": "程式 sa_3.exe 遇到了嚴重問題而需要關閉。我們對於造成的不便感到抱歉。"
+              },
+              {
+                "class": "SysLink",
+                "text": "這個可能是由 Wine 中的程式問題或缺失所造成。您可能要檢查<a href=\"https://appdb.winehq.org\">應用程式資料庫</a>以取得關於執行這個應用程式的提示。"
+              },
+              {
+                "class": "Button",
+                "text": "關閉"
+              },
+              {
+                "class": "Button",
+                "text": "顯示詳細資訊(&D)"
+              }
+            ]
+          },
+          {
+            "pid": 284,
+            "class": "WineConsoleClass",
+            "title": "Wine Debugger",
+            "image_path": "C:\\windows\\system32\\conhost.exe",
+            "rect": [
+              0,
+              0,
+              637,
+              451
+            ],
+            "children": []
+          }
+        ]
+      },
+      "capture": {
+        "width": 640,
+        "height": 480,
+        "rgb_sha256": "10976d4f669a36e3958c5e921c700d34e5a6401def380a06c76306adf8851afd",
+        "png_sha256": "b3c153253baee385b1a6a23ad73ee454ca7c5c91b35d4eefab5f03f8252f6830",
+        "channel_extrema": [
+          [
+            0,
+            255
+          ],
+          [
+            0,
+            255
+          ],
+          [
+            0,
+            255
+          ]
+        ],
+        "nonuniform_pixels": true,
+        "synthetic_control_red_pixels": 0,
+        "synthetic_control_green_pixels": 0,
+        "assistant_viewed_original": false,
+        "image_published": false
+      }
+    }
+  ],
+  "launcher_returncode_before_cleanup": null,
+  "original_visible_window_occurrences": 3,
+  "before_focus_window_colormaps": {
+    "schema": "stoneage.p3c.x11_own_colormap.v1",
+    "windows": [
+      {
+        "window": 8388609,
+        "colormap": 10485761,
+        "default_colormap": 32,
+        "map_installed": false,
+        "depth": 8,
+        "visual_class": 3,
+        "width": 640,
+        "height": 480,
+        "map": {
+          "width": 640,
+          "height": 480,
+          "rgb_sha256": "97fbbc916cebd99761c742c38623908edd342a81a46997badb80ae20a49878e7",
+          "png_sha256": "0b7e5efa614fd0ab1a1d06b61859eda1e48fba52c9f7bcedfcf26d713b9ac596",
+          "channel_extrema": [
+            [
+              0,
+              255
+            ],
+            [
+              0,
+              255
+            ],
+            [
+              0,
+              255
+            ]
+          ],
+          "nonuniform_pixels": true,
+          "synthetic_control_red_pixels": 0,
+          "synthetic_control_green_pixels": 0,
+          "assistant_viewed_original": false,
+          "image_published": false
+        },
+        "rootmap": {
+          "width": 640,
+          "height": 480,
+          "rgb_sha256": "6925fb98473c85162faff52e77bd1f276f974e8fb22edb49ba1b74fd95dabc4f",
+          "png_sha256": "d72fe0c8745eb2c7524edf904cc2ce3c8f010d777ffff8970f34e2f50a76c525",
+          "channel_extrema": [
+            [
+              0,
+              255
+            ],
+            [
+              0,
+              255
+            ],
+            [
+              0,
+              255
+            ]
+          ],
+          "nonuniform_pixels": true,
+          "synthetic_control_red_pixels": 0,
+          "synthetic_control_green_pixels": 0,
+          "assistant_viewed_original": false,
+          "image_published": false
+        },
+        "indices_sha256": "2e3666d72224e41271aebb815d2d405f2cf59b59a74612c746f0bc5872bb7f0b",
+        "palette_sha256": "c21c2c6723dcf829af3b83725556fd689a1e024d0b116c4089b88f93f47809cb",
+        "same_indices_different_colormap_rgb": true
+      },
+      {
+        "window": 14680065,
+        "colormap": 12582913,
+        "default_colormap": 32,
+        "map_installed": false,
+        "depth": 8,
+        "visual_class": 3,
+        "width": 629,
+        "height": 417,
+        "map": {
+          "width": 629,
+          "height": 417,
+          "rgb_sha256": "6d310d32d1870931340acbcaeca9bba7235933acc91fb09d2916cc56ddf92f04",
+          "png_sha256": "3c2a11f03d580ec5ed5e57f67ec7006ab295bfe1483ac9b10f0d7ad9ea39bd45",
+          "channel_extrema": [
+            [
+              0,
+              255
+            ],
+            [
+              0,
+              255
+            ],
+            [
+              0,
+              255
+            ]
+          ],
+          "nonuniform_pixels": true,
+          "synthetic_control_red_pixels": 0,
+          "synthetic_control_green_pixels": 0,
+          "assistant_viewed_original": false,
+          "image_published": false
+        },
+        "rootmap": {
+          "width": 629,
+          "height": 417,
+          "rgb_sha256": "19d30f29f0218e84b1751e47fb7d49473c99e6d59cfbbfebd671c8417854eb5e",
+          "png_sha256": "b3387df3a1d9561402c77cdef6b86213f521a52a3c16cf303cb93d990b469cb1",
+          "channel_extrema": [
+            [
+              0,
+              255
+            ],
+            [
+              0,
+              255
+            ],
+            [
+              0,
+              255
+            ]
+          ],
+          "nonuniform_pixels": true,
+          "synthetic_control_red_pixels": 0,
+          "synthetic_control_green_pixels": 0,
+          "assistant_viewed_original": false,
+          "image_published": false
+        },
+        "indices_sha256": "2d03cabe20799b67b08b4b4d4f718ee2eba239b191b47e2510160e2179df4991",
+        "palette_sha256": "c21c2c6723dcf829af3b83725556fd689a1e024d0b116c4089b88f93f47809cb",
+        "same_indices_different_colormap_rgb": true
+      },
+      {
+        "window": 18874369,
+        "colormap": 16777217,
+        "default_colormap": 32,
+        "map_installed": false,
+        "depth": 8,
+        "visual_class": 3,
+        "width": 478,
+        "height": 372,
+        "map": {
+          "width": 478,
+          "height": 372,
+          "rgb_sha256": "9cf84cd1676af66f28486afc4ec998763a332056efe3d78aa9cc7efa33d07a32",
+          "png_sha256": "09c2d128779c6ee058744278370f2718103528c950c01bc2c172297870a73ddf",
+          "channel_extrema": [
+            [
+              0,
+              255
+            ],
+            [
+              0,
+              255
+            ],
+            [
+              0,
+              255
+            ]
+          ],
+          "nonuniform_pixels": true,
+          "synthetic_control_red_pixels": 0,
+          "synthetic_control_green_pixels": 0,
+          "assistant_viewed_original": false,
+          "image_published": false
+        },
+        "rootmap": {
+          "width": 478,
+          "height": 372,
+          "rgb_sha256": "2bcca849ada781b33503068ec998ffc27b277a27ebbd533bb106b8066c3f1bd2",
+          "png_sha256": "4c4214c9fb8eae7de163ab40fd90de20311610d78ae647c0b8052f5f27f1fe42",
+          "channel_extrema": [
+            [
+              0,
+              255
+            ],
+            [
+              0,
+              255
+            ],
+            [
+              0,
+              255
+            ]
+          ],
+          "nonuniform_pixels": true,
+          "synthetic_control_red_pixels": 0,
+          "synthetic_control_green_pixels": 0,
+          "assistant_viewed_original": false,
+          "image_published": false
+        },
+        "indices_sha256": "bf5ed055becc331b08e1643fcbce8f008b296ffcbdb973cc63cf659d5e35fb66",
+        "palette_sha256": "c21c2c6723dcf829af3b83725556fd689a1e024d0b116c4089b88f93f47809cb",
+        "same_indices_different_colormap_rgb": true
+      }
+    ],
+    "x_errors": 0
+  },
+  "focus_observation": {
+    "x11_window": 8388609,
+    "returncode": 0,
+    "operation": "XSetInputFocus_via_xdotool_no_window_manager_no_game_patch"
+  },
+  "original_window_colormaps": {
+    "schema": "stoneage.p3c.x11_own_colormap.v1",
+    "windows": [
+      {
+        "window": 8388609,
+        "colormap": 10485761,
+        "default_colormap": 32,
+        "map_installed": false,
+        "depth": 8,
+        "visual_class": 3,
+        "width": 640,
+        "height": 480,
+        "map": {
+          "width": 640,
+          "height": 480,
+          "rgb_sha256": "97fbbc916cebd99761c742c38623908edd342a81a46997badb80ae20a49878e7",
+          "png_sha256": "0b7e5efa614fd0ab1a1d06b61859eda1e48fba52c9f7bcedfcf26d713b9ac596",
+          "channel_extrema": [
+            [
+              0,
+              255
+            ],
+            [
+              0,
+              255
+            ],
+            [
+              0,
+              255
+            ]
+          ],
+          "nonuniform_pixels": true,
+          "synthetic_control_red_pixels": 0,
+          "synthetic_control_green_pixels": 0,
+          "assistant_viewed_original": false,
+          "image_published": false
+        },
+        "rootmap": {
+          "width": 640,
+          "height": 480,
+          "rgb_sha256": "6925fb98473c85162faff52e77bd1f276f974e8fb22edb49ba1b74fd95dabc4f",
+          "png_sha256": "d72fe0c8745eb2c7524edf904cc2ce3c8f010d777ffff8970f34e2f50a76c525",
+          "channel_extrema": [
+            [
+              0,
+              255
+            ],
+            [
+              0,
+              255
+            ],
+            [
+              0,
+              255
+            ]
+          ],
+          "nonuniform_pixels": true,
+          "synthetic_control_red_pixels": 0,
+          "synthetic_control_green_pixels": 0,
+          "assistant_viewed_original": false,
+          "image_published": false
+        },
+        "indices_sha256": "2e3666d72224e41271aebb815d2d405f2cf59b59a74612c746f0bc5872bb7f0b",
+        "palette_sha256": "c21c2c6723dcf829af3b83725556fd689a1e024d0b116c4089b88f93f47809cb",
+        "same_indices_different_colormap_rgb": true,
+        "sealed_private_frame": {
+          "schema": "stoneage.p3.private_frame.x25519_aesgcm.v1",
+          "plaintext_sha256": "0b7e5efa614fd0ab1a1d06b61859eda1e48fba52c9f7bcedfcf26d713b9ac596",
+          "plaintext_bytes": 4936,
+          "recipient_key_sha256": "5c211e46da2a6122b64fb27adc83e05871f1e4ea1c6cfcdb50408087da5cf3eb",
+          "ciphertext_envelope_sha256": "d0760535af09934340c95ae1b9e7cce6c9a5cb2cf2490eb645dd5f09a8394c0e",
+          "file": "frame-focused-before-input-8388609-sealed.json"
+        }
+      },
+      {
+        "window": 14680065,
+        "colormap": 12582913,
+        "default_colormap": 32,
+        "map_installed": false,
+        "depth": 8,
+        "visual_class": 3,
+        "width": 629,
+        "height": 417,
+        "map": {
+          "width": 629,
+          "height": 417,
+          "rgb_sha256": "6d310d32d1870931340acbcaeca9bba7235933acc91fb09d2916cc56ddf92f04",
+          "png_sha256": "3c2a11f03d580ec5ed5e57f67ec7006ab295bfe1483ac9b10f0d7ad9ea39bd45",
+          "channel_extrema": [
+            [
+              0,
+              255
+            ],
+            [
+              0,
+              255
+            ],
+            [
+              0,
+              255
+            ]
+          ],
+          "nonuniform_pixels": true,
+          "synthetic_control_red_pixels": 0,
+          "synthetic_control_green_pixels": 0,
+          "assistant_viewed_original": false,
+          "image_published": false
+        },
+        "rootmap": {
+          "width": 629,
+          "height": 417,
+          "rgb_sha256": "19d30f29f0218e84b1751e47fb7d49473c99e6d59cfbbfebd671c8417854eb5e",
+          "png_sha256": "b3387df3a1d9561402c77cdef6b86213f521a52a3c16cf303cb93d990b469cb1",
+          "channel_extrema": [
+            [
+              0,
+              255
+            ],
+            [
+              0,
+              255
+            ],
+            [
+              0,
+              255
+            ]
+          ],
+          "nonuniform_pixels": true,
+          "synthetic_control_red_pixels": 0,
+          "synthetic_control_green_pixels": 0,
+          "assistant_viewed_original": false,
+          "image_published": false
+        },
+        "indices_sha256": "2d03cabe20799b67b08b4b4d4f718ee2eba239b191b47e2510160e2179df4991",
+        "palette_sha256": "c21c2c6723dcf829af3b83725556fd689a1e024d0b116c4089b88f93f47809cb",
+        "same_indices_different_colormap_rgb": true,
+        "sealed_private_frame": {
+          "schema": "stoneage.p3.private_frame.x25519_aesgcm.v1",
+          "plaintext_sha256": "3c2a11f03d580ec5ed5e57f67ec7006ab295bfe1483ac9b10f0d7ad9ea39bd45",
+          "plaintext_bytes": 1347,
+          "recipient_key_sha256": "5c211e46da2a6122b64fb27adc83e05871f1e4ea1c6cfcdb50408087da5cf3eb",
+          "ciphertext_envelope_sha256": "159b7a4261ee56048edbaddc8eadc1796b438019995aa49ed0ed7734978f383a",
+          "file": "frame-focused-before-input-14680065-sealed.json"
+        }
+      },
+      {
+        "window": 18874369,
+        "colormap": 16777217,
+        "default_colormap": 32,
+        "map_installed": false,
+        "depth": 8,
+        "visual_class": 3,
+        "width": 478,
+        "height": 372,
+        "map": {
+          "width": 478,
+          "height": 372,
+          "rgb_sha256": "9cf84cd1676af66f28486afc4ec998763a332056efe3d78aa9cc7efa33d07a32",
+          "png_sha256": "09c2d128779c6ee058744278370f2718103528c950c01bc2c172297870a73ddf",
+          "channel_extrema": [
+            [
+              0,
+              255
+            ],
+            [
+              0,
+              255
+            ],
+            [
+              0,
+              255
+            ]
+          ],
+          "nonuniform_pixels": true,
+          "synthetic_control_red_pixels": 0,
+          "synthetic_control_green_pixels": 0,
+          "assistant_viewed_original": false,
+          "image_published": false
+        },
+        "rootmap": {
+          "width": 478,
+          "height": 372,
+          "rgb_sha256": "2bcca849ada781b33503068ec998ffc27b277a27ebbd533bb106b8066c3f1bd2",
+          "png_sha256": "4c4214c9fb8eae7de163ab40fd90de20311610d78ae647c0b8052f5f27f1fe42",
+          "channel_extrema": [
+            [
+              0,
+              255
+            ],
+            [
+              0,
+              255
+            ],
+            [
+              0,
+              255
+            ]
+          ],
+          "nonuniform_pixels": true,
+          "synthetic_control_red_pixels": 0,
+          "synthetic_control_green_pixels": 0,
+          "assistant_viewed_original": false,
+          "image_published": false
+        },
+        "indices_sha256": "bf5ed055becc331b08e1643fcbce8f008b296ffcbdb973cc63cf659d5e35fb66",
+        "palette_sha256": "c21c2c6723dcf829af3b83725556fd689a1e024d0b116c4089b88f93f47809cb",
+        "same_indices_different_colormap_rgb": true,
+        "sealed_private_frame": {
+          "schema": "stoneage.p3.private_frame.x25519_aesgcm.v1",
+          "plaintext_sha256": "09c2d128779c6ee058744278370f2718103528c950c01bc2c172297870a73ddf",
+          "plaintext_bytes": 7106,
+          "recipient_key_sha256": "5c211e46da2a6122b64fb27adc83e05871f1e4ea1c6cfcdb50408087da5cf3eb",
+          "ciphertext_envelope_sha256": "d620e9fca9d9d9241416b8aeb0634c140662d9a1f9256fd85e544d483d62b9a0",
+          "file": "frame-focused-before-input-18874369-sealed.json"
+        }
+      }
+    ],
+    "x_errors": 0
+  },
+  "input_observation": {
+    "operation": "one_held_left_click_at_previous_authenticated_QUIT_label",
+    "screen_xy": [
+      350,
+      380
+    ],
+    "fullscreen_original_path": true,
+    "coordinate_source_png_sha256": "dd69f0a57ea38d102dc1afa4fec78d44371471140f2b7e18a5e16e3bd4d5e23f",
+    "account_or_password_entered": false,
+    "mousemove_returncode": 0,
+    "click_returncode": 0,
+    "mousedown_returncode": 0,
+    "mouseup_returncode": 0,
+    "hold_milliseconds": 200,
+    "windows_after": {
+      "schema": "stoneage.p3.win32_window_inspection.v1",
+      "windows": [
+        {
+          "pid": 32,
+          "class": "ＳｔｏｎｅＡｇｅ",
+          "title": "ＳｔｏｎｅＡｇｅ",
+          "image_path": "Z:\\tmp\\stoneage-p3-original\\run\\sa_3.exe",
+          "rect": [
+            0,
+            0,
+            640,
+            480
+          ],
+          "children": []
+        },
+        {
+          "pid": 276,
+          "class": "#32770",
+          "title": "程式錯誤",
+          "image_path": "C:\\windows\\system32\\winedbg.exe",
+          "rect": [
+            153,
+            73,
+            637,
+            477
+          ],
+          "children": [
+            {
+              "class": "Static",
+              "text": "程式 sa_3.exe 遇到了嚴重問題而需要關閉。我們對於造成的不便感到抱歉。"
+            },
+            {
+              "class": "SysLink",
+              "text": "這個可能是由 Wine 中的程式問題或缺失所造成。您可能要檢查<a href=\"https://appdb.winehq.org\">應用程式資料庫</a>以取得關於執行這個應用程式的提示。"
+            },
+            {
+              "class": "Button",
+              "text": "關閉"
+            },
+            {
+              "class": "Button",
+              "text": "顯示詳細資訊(&D)"
+            }
+          ]
+        },
+        {
+          "pid": 284,
+          "class": "WineConsoleClass",
+          "title": "Wine Debugger",
+          "image_path": "C:\\windows\\system32\\conhost.exe",
+          "rect": [
+            0,
+            0,
+            637,
+            451
+          ],
+          "children": []
+        }
+      ]
+    },
+    "launcher_returncode_after": null,
+    "original_owned_windows_remaining": 1,
+    "exit_observed_before_cleanup": false,
+    "server_started_or_login_attempted": false
+  },
+  "after_input_window_colormaps": {
+    "schema": "stoneage.p3c.x11_own_colormap.v1",
+    "windows": [
+      {
+        "window": 8388609,
+        "colormap": 10485761,
+        "default_colormap": 32,
+        "map_installed": false,
+        "depth": 8,
+        "visual_class": 3,
+        "width": 640,
+        "height": 480,
+        "map": {
+          "width": 640,
+          "height": 480,
+          "rgb_sha256": "97fbbc916cebd99761c742c38623908edd342a81a46997badb80ae20a49878e7",
+          "png_sha256": "0b7e5efa614fd0ab1a1d06b61859eda1e48fba52c9f7bcedfcf26d713b9ac596",
+          "channel_extrema": [
+            [
+              0,
+              255
+            ],
+            [
+              0,
+              255
+            ],
+            [
+              0,
+              255
+            ]
+          ],
+          "nonuniform_pixels": true,
+          "synthetic_control_red_pixels": 0,
+          "synthetic_control_green_pixels": 0,
+          "assistant_viewed_original": false,
+          "image_published": false
+        },
+        "rootmap": {
+          "width": 640,
+          "height": 480,
+          "rgb_sha256": "6925fb98473c85162faff52e77bd1f276f974e8fb22edb49ba1b74fd95dabc4f",
+          "png_sha256": "d72fe0c8745eb2c7524edf904cc2ce3c8f010d777ffff8970f34e2f50a76c525",
+          "channel_extrema": [
+            [
+              0,
+              255
+            ],
+            [
+              0,
+              255
+            ],
+            [
+              0,
+              255
+            ]
+          ],
+          "nonuniform_pixels": true,
+          "synthetic_control_red_pixels": 0,
+          "synthetic_control_green_pixels": 0,
+          "assistant_viewed_original": false,
+          "image_published": false
+        },
+        "indices_sha256": "2e3666d72224e41271aebb815d2d405f2cf59b59a74612c746f0bc5872bb7f0b",
+        "palette_sha256": "c21c2c6723dcf829af3b83725556fd689a1e024d0b116c4089b88f93f47809cb",
+        "same_indices_different_colormap_rgb": true,
+        "sealed_private_frame": {
+          "schema": "stoneage.p3.private_frame.x25519_aesgcm.v1",
+          "plaintext_sha256": "0b7e5efa614fd0ab1a1d06b61859eda1e48fba52c9f7bcedfcf26d713b9ac596",
+          "plaintext_bytes": 4936,
+          "recipient_key_sha256": "5c211e46da2a6122b64fb27adc83e05871f1e4ea1c6cfcdb50408087da5cf3eb",
+          "ciphertext_envelope_sha256": "049868367b38132a7dd9df30995e931f27924c02541bf69430a50b317cb748e6",
+          "file": "frame-after-input-8388609-sealed.json"
+        }
+      },
+      {
+        "window": 14680065,
+        "colormap": 12582913,
+        "default_colormap": 32,
+        "map_installed": false,
+        "depth": 8,
+        "visual_class": 3,
+        "width": 629,
+        "height": 417,
+        "map": {
+          "width": 629,
+          "height": 417,
+          "rgb_sha256": "6d310d32d1870931340acbcaeca9bba7235933acc91fb09d2916cc56ddf92f04",
+          "png_sha256": "3c2a11f03d580ec5ed5e57f67ec7006ab295bfe1483ac9b10f0d7ad9ea39bd45",
+          "channel_extrema": [
+            [
+              0,
+              255
+            ],
+            [
+              0,
+              255
+            ],
+            [
+              0,
+              255
+            ]
+          ],
+          "nonuniform_pixels": true,
+          "synthetic_control_red_pixels": 0,
+          "synthetic_control_green_pixels": 0,
+          "assistant_viewed_original": false,
+          "image_published": false
+        },
+        "rootmap": {
+          "width": 629,
+          "height": 417,
+          "rgb_sha256": "19d30f29f0218e84b1751e47fb7d49473c99e6d59cfbbfebd671c8417854eb5e",
+          "png_sha256": "b3387df3a1d9561402c77cdef6b86213f521a52a3c16cf303cb93d990b469cb1",
+          "channel_extrema": [
+            [
+              0,
+              255
+            ],
+            [
+              0,
+              255
+            ],
+            [
+              0,
+              255
+            ]
+          ],
+          "nonuniform_pixels": true,
+          "synthetic_control_red_pixels": 0,
+          "synthetic_control_green_pixels": 0,
+          "assistant_viewed_original": false,
+          "image_published": false
+        },
+        "indices_sha256": "2d03cabe20799b67b08b4b4d4f718ee2eba239b191b47e2510160e2179df4991",
+        "palette_sha256": "c21c2c6723dcf829af3b83725556fd689a1e024d0b116c4089b88f93f47809cb",
+        "same_indices_different_colormap_rgb": true,
+        "sealed_private_frame": {
+          "schema": "stoneage.p3.private_frame.x25519_aesgcm.v1",
+          "plaintext_sha256": "3c2a11f03d580ec5ed5e57f67ec7006ab295bfe1483ac9b10f0d7ad9ea39bd45",
+          "plaintext_bytes": 1347,
+          "recipient_key_sha256": "5c211e46da2a6122b64fb27adc83e05871f1e4ea1c6cfcdb50408087da5cf3eb",
+          "ciphertext_envelope_sha256": "d7d39740a1df5f01169e530b2f830c9eac6af107912f1c70b5975d4cc45e810e",
+          "file": "frame-after-input-14680065-sealed.json"
+        }
+      },
+      {
+        "window": 18874369,
+        "colormap": 16777217,
+        "default_colormap": 32,
+        "map_installed": false,
+        "depth": 8,
+        "visual_class": 3,
+        "width": 478,
+        "height": 372,
+        "map": {
+          "width": 478,
+          "height": 372,
+          "rgb_sha256": "9cf84cd1676af66f28486afc4ec998763a332056efe3d78aa9cc7efa33d07a32",
+          "png_sha256": "09c2d128779c6ee058744278370f2718103528c950c01bc2c172297870a73ddf",
+          "channel_extrema": [
+            [
+              0,
+              255
+            ],
+            [
+              0,
+              255
+            ],
+            [
+              0,
+              255
+            ]
+          ],
+          "nonuniform_pixels": true,
+          "synthetic_control_red_pixels": 0,
+          "synthetic_control_green_pixels": 0,
+          "assistant_viewed_original": false,
+          "image_published": false
+        },
+        "rootmap": {
+          "width": 478,
+          "height": 372,
+          "rgb_sha256": "2bcca849ada781b33503068ec998ffc27b277a27ebbd533bb106b8066c3f1bd2",
+          "png_sha256": "4c4214c9fb8eae7de163ab40fd90de20311610d78ae647c0b8052f5f27f1fe42",
+          "channel_extrema": [
+            [
+              0,
+              255
+            ],
+            [
+              0,
+              255
+            ],
+            [
+              0,
+              255
+            ]
+          ],
+          "nonuniform_pixels": true,
+          "synthetic_control_red_pixels": 0,
+          "synthetic_control_green_pixels": 0,
+          "assistant_viewed_original": false,
+          "image_published": false
+        },
+        "indices_sha256": "bf5ed055becc331b08e1643fcbce8f008b296ffcbdb973cc63cf659d5e35fb66",
+        "palette_sha256": "c21c2c6723dcf829af3b83725556fd689a1e024d0b116c4089b88f93f47809cb",
+        "same_indices_different_colormap_rgb": true,
+        "sealed_private_frame": {
+          "schema": "stoneage.p3.private_frame.x25519_aesgcm.v1",
+          "plaintext_sha256": "09c2d128779c6ee058744278370f2718103528c950c01bc2c172297870a73ddf",
+          "plaintext_bytes": 7106,
+          "recipient_key_sha256": "5c211e46da2a6122b64fb27adc83e05871f1e4ea1c6cfcdb50408087da5cf3eb",
+          "ciphertext_envelope_sha256": "fa37c524e30d9a388a2172e0e3d0292e1fa5b26354f6aa2495b7256c8e0a1a43",
+          "file": "frame-after-input-18874369-sealed.json"
+        }
+      }
+    ],
+    "x_errors": 0
+  },
+  "sealed_private_frame": {
+    "schema": "stoneage.p3.private_frame.x25519_aesgcm.v1",
+    "plaintext_sha256": "b3c153253baee385b1a6a23ad73ee454ca7c5c91b35d4eefab5f03f8252f6830",
+    "plaintext_bytes": 5225,
+    "recipient_key_sha256": "934844b6c9cbf8acb6b515e373cfa8bdeef3d3dc6083693a447650c0fdb611eb",
+    "ciphertext_envelope_sha256": "13b4f5bbc0e41550dba16d3d866f37ed90fd735f29d29b49c5e87ad4203a5475"
+  },
+  "wine_log_sha256": "302099cbe11a6ecc69d349cb334ee24ec53166889e62df80cdea3016ac80f7f3",
+  "wine_diagnostic_lines": [
+    "wine: Unhandled page fault on write access to 02DC0000 at address 7AF3E6D3 (thread 0024), starting debugger..."
+  ],
+  "original_input_baseline_unchanged": true,
+  "runtime_copy_changed_paths": [],
+  "runtime_status": "ORIGINAL_PROCESS_ATTEMPT_RECORDED_NO_WORLD_OR_VISUAL_CLASSIFICATION"
+}

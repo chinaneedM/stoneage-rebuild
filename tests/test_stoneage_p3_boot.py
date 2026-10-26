@@ -9,6 +9,16 @@ from tools import stoneage_p3_boot as p
 
 
 class P3BootTests(unittest.TestCase):
+    def test_only_original_main_is_qualified_for_login_coordinate_input(self):
+        p.require_login_input_surface({'windows':[{'class':'ＳｔｏｎｅＡｇｅ','image_path':'Z:\\private\\sa_3.exe'}]})
+
+    def test_crash_debugger_original_modal_or_fake_title_blocks_coordinate_input(self):
+        main={'class':'ＳｔｏｎｅＡｇｅ','image_path':'Z:\\private\\sa_3.exe'}
+        bad=[[],[dict(main,image_path='Z:\\fake.exe')],[main,{'class':'#32770','image_path':'C:\\windows\\system32\\winedbg.exe'}],
+             [main,{'class':'#32770','image_path':'Z:\\private\\sa_3.exe'}]]
+        for windows in bad:
+            with self.subTest(windows=windows),self.assertRaises(ValueError):p.require_login_input_surface({'windows':windows})
+
     def test_source_backed_resource_flags_and_only_isolated_loopback_endpoint(self):
         self.assertIn('updated',p.LAUNCH_ARGS)
         for name in ('realbin','adrnbin','sprbin','spradrnbin','soundbin','battlebin'):

@@ -107,6 +107,15 @@ def inspect_windows(control,env,cwd):
     return json.loads(lines[-1]) if lines else {'windows':[],'inspection_returncode':p.returncode}
 
 
+def require_login_input_surface(inspection):
+    windows=inspection.get('windows',[])
+    require(len(windows)==1,'input blocked: unexpected dialog/debugger or missing exclusive login window')
+    w=windows[0]
+    require(w.get('class')=='ＳｔｏｎｅＡｇｅ' and
+            w.get('image_path','').replace('\\','/').lower().endswith('/sa_3.exe'),
+            'input blocked: visible window is not original main image')
+
+
 def runtime(directory,control,output,original=False,depth_probe=False,colormap_helper=None,fullscreen=False):
     net=network_gate();directory=directory.resolve();control=control.resolve()
     require(directory.is_dir() and directory!=ROOT and ROOT not in directory.parents,'runtime directory must be private and outside public Git')
@@ -197,6 +206,8 @@ def runtime(directory,control,output,original=False,depth_probe=False,colormap_h
             if native_windows and colormap_helper:
                 from tools.stoneage_p3c_capture import capture as xcapture
                 sealed_dir=Path('/tmp/stoneage-p3c-sealed');sealed_dir.mkdir(exist_ok=False)
+                result['input_observation']={'input_skipped':True,'reason':'login input surface not yet qualified'}
+                require_login_input_surface(result['observations'][-1]['windows'])
                 require(any(w['class']=='ＳｔｏｎｅＡｇｅ' for w in native_windows),'original main window unavailable before input')
                 result['before_focus_window_colormaps']=xcapture(colormap_helper,directory/'before-focus',env)
                 client=[w for w in result['before_focus_window_colormaps']['windows'] if (w['width'],w['height'])==(640,480)]
@@ -207,6 +218,7 @@ def runtime(directory,control,output,original=False,depth_probe=False,colormap_h
                 result['focus_observation']={'x11_window':client[0]['window'],'returncode':focus.returncode,
                     'operation':'XSetInputFocus_via_xdotool_no_window_manager_no_game_patch'}
                 result['original_window_colormaps']=xcapture(colormap_helper,directory/'focused-before-input',env,seal_dir=sealed_dir)
+                require_login_input_surface(inspect_windows(control,env,run))
                 # Point selected from the authenticated P3 login frame, not account fields.
                 input_y=380 if fullscreen else 410
                 move=command(['xdotool','mousemove','--sync','350',str(input_y)],env=env)

@@ -567,3 +567,8 @@ The 2.66 MB historical `docs/CURRENT-STATE.md` is still preserved byte-for-byte.
 ### 2026-10-26 — 原客户端真实启动与私人登录画面取证 P3
 
 [本轮续接记录](docs/continuity/STONEAGE-ORIGINAL-BOOT-P3-20261026.md)已通过原TW1程序和375运行文件鉴真，在无外部接口/路由的Wine32环境真实启动。24bit的原256色提示、改为实际8bpp后无该提示及取消的初环境尝试均原样保留。最终源40244430667真实success；助手已目视经加密私人传回的原登录面板（JSS/石器时代、账号/密码、OK/QUIT），**当前色彩明显失真，未登录、未听音、未进入世界**。11个原样派生文件及[来源保管链](research/recovered/STONEAGE-TW10-ORIGINAL-BOOT-P3-CUSTODY-R1.json)永久入Git，原图/原程序/私钥不公开。最高观察NEXT为P3C登录色彩与有限输入验证；R20和Stage A/B/R79等边界不变，完整CURRENT原样保留。
+
+
+### 2026-10-26 — 原登录窗口取色与输入边界 P3C
+
+[三次真实对照记录](docs/continuity/STONEAGE-ORIGINAL-LOGIN-P3C-20261026.md)已用已知红绿块验证窗口colormap捕获，原登录图比旧桌面截图清楚，并实际观察到QUIT悬停高亮；**窗口模式仍只有15种RGB，短按及200ms按住均未退出，颜色/点击未通过**。原默认全屏路径在输入前即出现Wine错误/调试器，不认证QUIT；已增加异常窗口阻断输入的守卫。12份原样派生及[来源链](research/recovered/STONEAGE-TW10-ORIGINAL-LOGIN-P3C-CUSTODY-R1.json)保管三源run/job/ZIP/blob；原图仍私人保存。NEXT P3D先以合成Win32验证真实激活、palette和接收输入门槛，再决定原环境路线；不继续在同一失败环境盲目重拉原盘。未登录、未听音、未进入世界，完整CURRENT及R20/Stage A等边界保持。

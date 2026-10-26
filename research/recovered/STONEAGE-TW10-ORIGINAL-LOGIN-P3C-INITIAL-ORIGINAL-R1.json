@@ -1,0 +1,398 @@
+{
+  "schema": "stoneage.p3.isolated_boot_observation.v1",
+  "sample": "TW_WAEI_JSS_1_0_ACCEPTED_RETAIL_REDUMP_104630",
+  "network": {
+    "host_net_namespace": "net:[4026531833]",
+    "child_net_namespace": "net:[4026532317]",
+    "interfaces": [
+      "lo"
+    ],
+    "ipv4_routes": [],
+    "ipv6_default_routes": [],
+    "external_documentation_address_connect_errno": 101,
+    "outbound_namespace_isolation_verified": true
+  },
+  "preflight_passed": false,
+  "original_client_execution_attempted": true,
+  "original_client_execution_proven": true,
+  "game_world_entered": false,
+  "authentic_game_display_visually_verified": false,
+  "assistant_viewed_original": false,
+  "original_assets_published": false,
+  "wineboot": {
+    "returncode": 0,
+    "diagnostic_lines": [
+      "wine: created the configuration directory '/tmp/stoneage-p3-original/wine-prefix'",
+      "wine: configuration in L\"/tmp/stoneage-p3-original/wine-prefix\" has been updated.",
+      "wine: configuration in L\"/tmp/stoneage-p3-original/wine-prefix\" has been updated."
+    ]
+  },
+  "environment": {
+    "wine_version": "wine-9.0 (Ubuntu 9.0~repack-4build3)",
+    "winearch": "win32",
+    "windows_version_setting": "winxp",
+    "display": "800x600x8_XVFB",
+    "requested_locale": "zh_TW.UTF-8",
+    "old_kernel_drivers_installed": false
+  },
+  "audio_heard_or_recorded": false,
+  "source_executable": {
+    "path": "StoneAge/sa_3.exe",
+    "bytes": 425984,
+    "sha256": "cdab9ea049a98bbc96ce93eeaa8b63c688f0c0f0ad8b3183e79d75e47621441a"
+  },
+  "original_launch_args": [
+    "updated",
+    "realbin:1",
+    "adrnbin:1",
+    "sprbin:1",
+    "spradrnbin:1",
+    "soundbin:1",
+    "battlebin:1",
+    "windowmode",
+    "IP:0:127.0.0.1:9"
+  ],
+  "endpoint_is_synthetic_isolated_loopback_not_historical_server": true,
+  "host_launcher_pid": 175,
+  "observations": [
+    {
+      "launcher_returncode": null,
+      "windows": {
+        "schema": "stoneage.p3.win32_window_inspection.v1",
+        "windows": [
+          {
+            "pid": 32,
+            "class": "ＳｔｏｎｅＡｇｅ",
+            "title": "ＳｔｏｎｅＡｇｅ",
+            "image_path": "Z:\\tmp\\stoneage-p3-original\\run\\sa_3.exe",
+            "rect": [
+              0,
+              0,
+              646,
+              512
+            ],
+            "children": []
+          }
+        ]
+      },
+      "capture": {
+        "width": 800,
+        "height": 600,
+        "rgb_sha256": "c785bb21e4f037bb5c76226fabc8b1c1560d18d84d2291b1c00a6861e80dd724",
+        "png_sha256": "0e1ef7c6a020da89fa5544e9521f3692ecf7b6cf5f4385b048bc6175e76dc087",
+        "channel_extrema": [
+          [
+            0,
+            255
+          ],
+          [
+            0,
+            255
+          ],
+          [
+            0,
+            255
+          ]
+        ],
+        "nonuniform_pixels": true,
+        "synthetic_control_red_pixels": 0,
+        "synthetic_control_green_pixels": 0,
+        "assistant_viewed_original": false,
+        "image_published": false
+      }
+    },
+    {
+      "launcher_returncode": null,
+      "windows": {
+        "schema": "stoneage.p3.win32_window_inspection.v1",
+        "windows": [
+          {
+            "pid": 32,
+            "class": "ＳｔｏｎｅＡｇｅ",
+            "title": "ＳｔｏｎｅＡｇｅ",
+            "image_path": "Z:\\tmp\\stoneage-p3-original\\run\\sa_3.exe",
+            "rect": [
+              0,
+              0,
+              646,
+              512
+            ],
+            "children": []
+          }
+        ]
+      },
+      "capture": {
+        "width": 800,
+        "height": 600,
+        "rgb_sha256": "c785bb21e4f037bb5c76226fabc8b1c1560d18d84d2291b1c00a6861e80dd724",
+        "png_sha256": "0e1ef7c6a020da89fa5544e9521f3692ecf7b6cf5f4385b048bc6175e76dc087",
+        "channel_extrema": [
+          [
+            0,
+            255
+          ],
+          [
+            0,
+            255
+          ],
+          [
+            0,
+            255
+          ]
+        ],
+        "nonuniform_pixels": true,
+        "synthetic_control_red_pixels": 0,
+        "synthetic_control_green_pixels": 0,
+        "assistant_viewed_original": false,
+        "image_published": false
+      }
+    },
+    {
+      "launcher_returncode": null,
+      "windows": {
+        "schema": "stoneage.p3.win32_window_inspection.v1",
+        "windows": [
+          {
+            "pid": 32,
+            "class": "ＳｔｏｎｅＡｇｅ",
+            "title": "ＳｔｏｎｅＡｇｅ",
+            "image_path": "Z:\\tmp\\stoneage-p3-original\\run\\sa_3.exe",
+            "rect": [
+              0,
+              0,
+              646,
+              512
+            ],
+            "children": []
+          }
+        ]
+      },
+      "capture": {
+        "width": 800,
+        "height": 600,
+        "rgb_sha256": "c785bb21e4f037bb5c76226fabc8b1c1560d18d84d2291b1c00a6861e80dd724",
+        "png_sha256": "0e1ef7c6a020da89fa5544e9521f3692ecf7b6cf5f4385b048bc6175e76dc087",
+        "channel_extrema": [
+          [
+            0,
+            255
+          ],
+          [
+            0,
+            255
+          ],
+          [
+            0,
+            255
+          ]
+        ],
+        "nonuniform_pixels": true,
+        "synthetic_control_red_pixels": 0,
+        "synthetic_control_green_pixels": 0,
+        "assistant_viewed_original": false,
+        "image_published": false
+      }
+    }
+  ],
+  "launcher_returncode_before_cleanup": null,
+  "original_visible_window_occurrences": 3,
+  "original_window_colormaps": {
+    "schema": "stoneage.p3c.x11_own_colormap.v1",
+    "windows": [
+      {
+        "window": 8388609,
+        "colormap": 10485761,
+        "default_colormap": 32,
+        "map_installed": false,
+        "depth": 8,
+        "visual_class": 3,
+        "width": 640,
+        "height": 480,
+        "map": {
+          "width": 640,
+          "height": 480,
+          "rgb_sha256": "492bb90698518fa79e8a14677b26ef6717a483f12bdfdbed1914886d1b6a4fc1",
+          "png_sha256": "dd69f0a57ea38d102dc1afa4fec78d44371471140f2b7e18a5e16e3bd4d5e23f",
+          "channel_extrema": [
+            [
+              0,
+              255
+            ],
+            [
+              0,
+              255
+            ],
+            [
+              0,
+              255
+            ]
+          ],
+          "nonuniform_pixels": true,
+          "synthetic_control_red_pixels": 0,
+          "synthetic_control_green_pixels": 0,
+          "assistant_viewed_original": false,
+          "image_published": false
+        },
+        "rootmap": {
+          "width": 640,
+          "height": 480,
+          "rgb_sha256": "a73bb766fadf30c8a34fc5035fdb852cb340b42ab71a3496b04c2a5c8e6f8d96",
+          "png_sha256": "e0a865cd30f33b5a7a4670ee3f07b52826c3151900bda7ae3c7f3d4ef1238239",
+          "channel_extrema": [
+            [
+              0,
+              255
+            ],
+            [
+              0,
+              255
+            ],
+            [
+              0,
+              255
+            ]
+          ],
+          "nonuniform_pixels": true,
+          "synthetic_control_red_pixels": 0,
+          "synthetic_control_green_pixels": 0,
+          "assistant_viewed_original": false,
+          "image_published": false
+        },
+        "indices_sha256": "7cbcb73d00d99ad61ab87fc1ff176c48f3ae7ab915cd1fad6cf3d8ca82af8921",
+        "palette_sha256": "c21c2c6723dcf829af3b83725556fd689a1e024d0b116c4089b88f93f47809cb",
+        "same_indices_different_colormap_rgb": true,
+        "sealed_private_frame": {
+          "schema": "stoneage.p3.private_frame.x25519_aesgcm.v1",
+          "plaintext_sha256": "dd69f0a57ea38d102dc1afa4fec78d44371471140f2b7e18a5e16e3bd4d5e23f",
+          "plaintext_bytes": 108680,
+          "recipient_key_sha256": "5c211e46da2a6122b64fb27adc83e05871f1e4ea1c6cfcdb50408087da5cf3eb",
+          "ciphertext_envelope_sha256": "3df2ebd586799c70745f91e73e493586b99574d10bfa501bb744c7b278926a90",
+          "file": "frame-before-input-8388609-sealed.json"
+        }
+      }
+    ],
+    "x_errors": 0
+  },
+  "input_observation": {
+    "operation": "one_left_click_at_previous_authenticated_QUIT_label",
+    "screen_xy": [
+      350,
+      410
+    ],
+    "coordinate_source_png_sha256": "8d7a9594292e262615c187d2fd21504b3b0f71a4d02e8c9a31811af53f460cc0",
+    "account_or_password_entered": false,
+    "mousemove_returncode": 0,
+    "click_returncode": 0,
+    "windows_after": {
+      "schema": "stoneage.p3.win32_window_inspection.v1",
+      "windows": [
+        {
+          "pid": 32,
+          "class": "ＳｔｏｎｅＡｇｅ",
+          "title": "ＳｔｏｎｅＡｇｅ",
+          "image_path": "Z:\\tmp\\stoneage-p3-original\\run\\sa_3.exe",
+          "rect": [
+            0,
+            0,
+            646,
+            512
+          ],
+          "children": []
+        }
+      ]
+    },
+    "launcher_returncode_after": null,
+    "original_owned_windows_remaining": 1,
+    "exit_observed_before_cleanup": false,
+    "server_started_or_login_attempted": false
+  },
+  "after_input_window_colormaps": {
+    "schema": "stoneage.p3c.x11_own_colormap.v1",
+    "windows": [
+      {
+        "window": 8388609,
+        "colormap": 10485761,
+        "default_colormap": 32,
+        "map_installed": false,
+        "depth": 8,
+        "visual_class": 3,
+        "width": 640,
+        "height": 480,
+        "map": {
+          "width": 640,
+          "height": 480,
+          "rgb_sha256": "5bf07ce0fe28e1a1a00bf24f1ff4318e2849a89db897135765af8185e91eebc3",
+          "png_sha256": "4086660780c159cfdbe9ea6bd03390eb88887a84affdcd5bda6b75e3aa761395",
+          "channel_extrema": [
+            [
+              0,
+              255
+            ],
+            [
+              0,
+              255
+            ],
+            [
+              0,
+              255
+            ]
+          ],
+          "nonuniform_pixels": true,
+          "synthetic_control_red_pixels": 0,
+          "synthetic_control_green_pixels": 0,
+          "assistant_viewed_original": false,
+          "image_published": false
+        },
+        "rootmap": {
+          "width": 640,
+          "height": 480,
+          "rgb_sha256": "4b7c2916a68fd8e7e8fa2842af546faa3d9a4899484dbe69ccfc94ab30103c3b",
+          "png_sha256": "f41f83847cfea7b4369aafec4ef1059413492412e5b79b9a82328248f862f9d4",
+          "channel_extrema": [
+            [
+              0,
+              255
+            ],
+            [
+              0,
+              255
+            ],
+            [
+              0,
+              255
+            ]
+          ],
+          "nonuniform_pixels": true,
+          "synthetic_control_red_pixels": 0,
+          "synthetic_control_green_pixels": 0,
+          "assistant_viewed_original": false,
+          "image_published": false
+        },
+        "indices_sha256": "cf0b981ae80c362dc3f837d95ce3fe9d0a14bff140933b107a353ce40b72f247",
+        "palette_sha256": "c21c2c6723dcf829af3b83725556fd689a1e024d0b116c4089b88f93f47809cb",
+        "same_indices_different_colormap_rgb": true,
+        "sealed_private_frame": {
+          "schema": "stoneage.p3.private_frame.x25519_aesgcm.v1",
+          "plaintext_sha256": "4086660780c159cfdbe9ea6bd03390eb88887a84affdcd5bda6b75e3aa761395",
+          "plaintext_bytes": 109378,
+          "recipient_key_sha256": "5c211e46da2a6122b64fb27adc83e05871f1e4ea1c6cfcdb50408087da5cf3eb",
+          "ciphertext_envelope_sha256": "9e7989fd9772a1050d243a9a444edde5b93d18f7cfba00876422023410a411f0",
+          "file": "frame-after-input-8388609-sealed.json"
+        }
+      }
+    ],
+    "x_errors": 0
+  },
+  "sealed_private_frame": {
+    "schema": "stoneage.p3.private_frame.x25519_aesgcm.v1",
+    "plaintext_sha256": "0e1ef7c6a020da89fa5544e9521f3692ecf7b6cf5f4385b048bc6175e76dc087",
+    "plaintext_bytes": 15976,
+    "recipient_key_sha256": "934844b6c9cbf8acb6b515e373cfa8bdeef3d3dc6083693a447650c0fdb611eb",
+    "ciphertext_envelope_sha256": "901dbbc1b614f42d40e34131482fdef84c21d2fcb56ec2258e20cce094b035d4"
+  },
+  "wine_log_sha256": "33515efc38767dd5dbf9583cfb2161174c3e9e7409da9bb7f159674231bc81da",
+  "wine_diagnostic_lines": [],
+  "original_input_baseline_unchanged": true,
+  "runtime_copy_changed_paths": [],
+  "runtime_status": "ORIGINAL_PROCESS_ATTEMPT_RECORDED_NO_WORLD_OR_VISUAL_CLASSIFICATION"
+}

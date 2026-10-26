@@ -61,3 +61,15 @@ python -m tools.stoneage_original_animation_lab --original-dir /private/TW1/Ston
 
 最高观察NEXT P3C：有限定位8bit原显示/截图的palette或colormap差异，取合格原登录颜色
 并记录一次隔离输入响应；不以窗口/测试通过宣布整段P3或原世界完成。P4与R20仍独立OPEN。
+
+## 2026-10-26 P3C：窗口取色已区分，颜色及点击仍PARTIAL
+
+原生X11已知红绿块/错误colormap负控通过，原窗口自身colormap取色比root清楚；正常
+窗口的原登录图已私人保存，仍只有15种RGB，未验原色。实际QUIT悬停高亮可见，但两轮
+窗口模式短按/200ms按住均未退出；原默认全屏在输入前已出现Wine崩溃/调试器，不能把
+该次坐标派发称为QUIT响应。三源Actions取证作业success不等于原功能通过。
+
+见 `docs/continuity/STONEAGE-ORIGINAL-LOGIN-P3C-20261026.md` 和12份原样派生保管链。
+已补输入前后异常/调试器窗口守卫，原exe/资源未修改。NEXT P3D先让合成Win32实际颜色、
+激活和接收输入通过，再决定可用的32位兼容环境；不继续同环境重复原盘下载。原声、
+回环服务端和世界仍未观察；R20与Stage A/B/R79边界不变。

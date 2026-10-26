@@ -18,4 +18,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: python -m pip install --quiet pillow cryptography
-      - run: python -m unittest -v tests.test_stoneage_p3c_capture tests.test_stoneage_p3_boot tests.test_stoneage_p3_private_frame
+      - run: |
+          python -m unittest -v tests.test_stoneage_p3c_capture tests.test_stoneage_p3c_evidence_guard tests.test_stoneage_p3_boot tests.test_stoneage_p3_private_frame
+          python -m tools.stoneage_p3c_evidence_guard
