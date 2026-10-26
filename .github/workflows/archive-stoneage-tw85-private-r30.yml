@@ -1,0 +1,60 @@
+name: Archive R30 verified private original RD source metadata
+on:
+  push:
+    paths:
+      - '.github/workflows/archive-stoneage-tw85-private-r30.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: read
+jobs:
+  source-custody:
+    if: github.ref == 'refs/heads/agent/tw85-rd-pixel-private-r30-20261026'
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Retrieve previously validated numeric plan and session-key encrypted original pixels
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/plan" "$RUNNER_TEMP/actual"
+          gh run download 40329157425 --repo chinaneedM/stoneage-rebuild --name tw85-r30-qualified-numeric-plan-only --dir "$RUNNER_TEMP/plan"
+          gh run download 40329157425 --repo chinaneedM/stoneage-rebuild --name tw85-r30-session-key-encrypted-private-only --dir "$RUNNER_TEMP/actual"
+          test "$(find "$RUNNER_TEMP/plan" -type f | wc -l)" -eq 1
+          test "$(find "$RUNNER_TEMP/actual" -type f | wc -l)" -eq 3
+      - name: Independently replay all 8 RD sources, same sample identity, and encrypted custody
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m tools.stoneage_tw85_r30_archive \
+            --plan "$RUNNER_TEMP/plan/PLAN-R30.json" \
+            --source "$RUNNER_TEMP/actual/SOURCE-R30.json" \
+            --cipher "$RUNNER_TEMP/actual/PRIVATE-CAPSULE-R30.enc" \
+            --envelope "$RUNNER_TEMP/actual/ENVELOPE-R30.json" \
+            --receipt "$RUNNER_TEMP/R30-PUBLIC-CUSTODY.json"
+      - name: Permanently retain only derivation and custody without commercial pixels
+        shell: bash
+        run: |
+          set -euo pipefail
+          target=research/recovered/tw85-rd-private-r30
+          mkdir -p "$target"
+          cp "$RUNNER_TEMP/plan/PLAN-R30.json" "$target/"
+          cp "$RUNNER_TEMP/actual/SOURCE-R30.json" "$target/"
+          cp "$RUNNER_TEMP/R30-PUBLIC-CUSTODY.json" "$target/"
+          test "$(find "$target" -type f | wc -l)" -eq 3
+          test "$(find "$target" -name '*.png' -o -name '*.gif' -o -name '*.enc' | wc -l)" -eq 0
+          git add "$target"
+          git diff --cached --check
+          git -c user.name=stoneage-evidence-bot -c user.email=evidence-bot@users.noreply.github.com commit -m 'research: archive exact R30 original RD pixel derived evidence only'
+          git push origin HEAD:refs/heads/agent/tw85-rd-pixel-private-r30-20261026
+      - name: Delete working source artifact after use
+        if: always()
+        run: rm -rf "$RUNNER_TEMP/plan" "$RUNNER_TEMP/actual"
