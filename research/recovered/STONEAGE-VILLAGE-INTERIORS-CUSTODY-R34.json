@@ -1,0 +1,122 @@
+{
+  "schema": "stoneage.village_interiors_source_custody.r34",
+  "date": "2026-10-27",
+  "startup": {
+    "head": "b5155a2d28c3bdf0432f48fe24725056a8296720",
+    "tree": "eb02f94e9d1b73c17053af944626ec6e013e5cc0",
+    "branches_read": 612,
+    "open_prs": 0,
+    "in_progress_runs": 0,
+    "retained_old_queued_run": 37642417333,
+    "full_startup_file_pins": {
+      "README.md": {
+        "bytes": 71900,
+        "sha256": "238f9ace10863457faf4225333ba98ffcd151d82a6d93d689696d4ca61635d52",
+        "git_blob": "956dd8777ee1fffe365837838a59cccacc0b2878"
+      },
+      "docs/PROJECT-CONTINUITY-PROTOCOL-R1.md": {
+        "bytes": 10880,
+        "sha256": "c3a10d3a9dacf8b61c97a52d294582a2984b13b549f4f10d1375a6fffb53ff65",
+        "git_blob": "a064174339b7a4656efe00b4446a066fd7abf304"
+      },
+      "docs/CURRENT-STATE.md": {
+        "bytes": 2680510,
+        "sha256": "f02f85b837fc09973cb2eca33f7daf4db547a77cb35a81a9576c6308f70142c0",
+        "git_blob": "031c76a5a8e431f646853909bb2f2e11e6328cd2"
+      },
+      "docs/DESIGN-DECISIONS.md": {
+        "bytes": 49898,
+        "sha256": "6d481f4eb0185ab0c8da34e697ae39f4137638d9484de4ed48d1875ec3af4f73",
+        "git_blob": "713caaecc6a43a92e5cb7f939954026b859bac20"
+      },
+      "docs/HISTORICAL-TIMELINE.md": {
+        "bytes": 730950,
+        "sha256": "7bc3fb586c23ff3c5fd0add689157c45e9e1b1cca001df84ad1dad9f850fc13c",
+        "git_blob": "91ca73105f26bf96aaa928519ae04942182e7b9b"
+      },
+      "docs/SOURCE-REGISTRY.md": {
+        "bytes": 1028196,
+        "sha256": "cddea82e5b51143e4107e9ed285f2acc04725a69dc929f0c432c1ceaebe20e7c",
+        "git_blob": "ee3b2d70dabedfe02e3761b3fdb25476a79e147c"
+      },
+      "docs/RESTORATION-ROADMAP-R2.md": {
+        "bytes": 482245,
+        "sha256": "830495a89612ceb54c0d8ebacd8710ceb28d7c1bfdecfc735239db76b6a1e5f8",
+        "git_blob": "c11eff237a8aaa1cc34488a6c3c7fcdd596f9ce2"
+      },
+      "docs/continuity/NPC09-MATERIAL-DELTA-20261025.md": {
+        "bytes": 4506,
+        "sha256": "703a2382326b6f5223843b99147da7d35aed61480e1dbd77e06e73c152f3ddc9",
+        "git_blob": "6209ae919716818b3fd9da2eb435ab3f4ffde796"
+      },
+      "research/recovered/STONEAGE-22-DOMAIN-SOURCE-READY-PORTFOLIO-R2.json": {
+        "bytes": 15948,
+        "sha256": "7d50de08f7855cf16dbe54b1747e258f1cc1223de88cc217172fd145f3c704ce",
+        "git_blob": "088b469b3c51e689cff27f33fc3bb49de2d24b2c"
+      }
+    }
+  },
+  "source": {
+    "head": "dc6a5c74857034748b2d27c204b48fc2154ade2b",
+    "tree": "c58cfc30db4e9585460150d9630e3e813e835ec4",
+    "run": 40407952047,
+    "job": 121870469085,
+    "conclusion": "success",
+    "artifact_id": 12691703633,
+    "downloaded_zip": {
+      "bytes": 3108,
+      "sha256": "60917b2c906e29fe9f2132f990c16107d478586e80605d1f26c0c6b4af957789",
+      "git_blob": "c45f5bcb72d50f5d8d22564bf0ae546eb0bc3d17"
+    },
+    "artifact_api_sha256": "60917b2c906e29fe9f2132f990c16107d478586e80605d1f26c0c6b4af957789",
+    "zip_members": [
+      "r34-rooms-derived.json"
+    ],
+    "raw_report": {
+      "bytes": 11388,
+      "sha256": "59f1c445e3902e15d0acfd113ea97adf59ef44f3201ba8ba5bdc1de3da407a05",
+      "git_blob": "9b12c461f80d9178c834aa7c9ae1c83c95227f45"
+    }
+  },
+  "independent_local_original_verification": {
+    "separate_actual_source_download": true,
+    "june_container_bytes": 4223728,
+    "dec_container_bytes": 4800717,
+    "both_full_container_sha_matched": true,
+    "extractor": "7-Zip25.01 Linux x64, static extraction only",
+    "extractor_download": "https://www.7-zip.org/a/7z2501-linux-x64.tar.xz",
+    "extractor_executable_sha256": "a1860fdf0d6ec395e0e277e5222e9aa488747db4aa5c87d1ec879a0916ba0b2f",
+    "prior_local_libarchive_attempt": "RAR header CRC error; no conclusions drawn; corrected with 7zz then complete member SHA verification",
+    "independent_parser": "int.from_bytes in tools.stoneage_village_interiors_archive_r34.verify_original; does not call primary DAT/delta parser",
+    "original_file_occurrences": 8,
+    "original_plane_hash_checks": 24,
+    "same_position_u16_field_pairs": 11700,
+    "source_report_full_byte_replay_identical": true,
+    "original_program_execution": false
+  },
+  "durable_derived": {
+    "research/recovered/STONEAGE-VILLAGE-INTERIORS-SOURCE-R34.json": {
+      "bytes": 11388,
+      "sha256": "59f1c445e3902e15d0acfd113ea97adf59ef44f3201ba8ba5bdc1de3da407a05",
+      "git_blob": "9b12c461f80d9178c834aa7c9ae1c83c95227f45"
+    },
+    "research/recovered/STONEAGE-VILLAGE-INTERIORS-MATERIAL-R34.json": {
+      "bytes": 12804,
+      "sha256": "8eb460375c94f74535e938488954b96db2b264a8df821289187f8169a32c9372",
+      "git_blob": "4bf1586652831736ad2e255bd11b428de035c8bc"
+    }
+  },
+  "boundary": {
+    "original_proprietary_payloads_in_git": false,
+    "name_source": "LATER_RECOVERED; floor and dimension matching only",
+    "original_2003_deployed_build_or_tw10_entities_proven": false,
+    "third_plane_semantics": "OPEN",
+    "full_CURRENT_preserved": true,
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b_wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "candidate_main_ci": "PENDING_ACTUAL_OBSERVATION",
+  "next": "ORIGINAL_CLIENT_ACQUISITION_AND_MATERIAL_ROTATION_35"
+}

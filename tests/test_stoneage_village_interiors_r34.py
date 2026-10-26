@@ -1,6 +1,9 @@
 import struct
 import unittest
+import copy
+import json
 from tools import stoneage_village_interiors_r34 as r
+from tools import stoneage_village_interiors_archive_r34 as archive
 
 def dat(w,h,planes):
     return struct.pack('<II',w,h)+b''.join(struct.pack('<'+'H'*len(p),*p) for p in planes)
@@ -34,5 +37,31 @@ class Rooms(unittest.TestCase):
         self.assertEqual(len(rows),4)
         self.assertTrue(all(x['name_scope'].startswith('LATER_RECOVERED') for x in rows.values()))
         self.assertTrue(rows[1003]['recovered25_name_escaped'].endswith('%7C0'))
+
+class ArchiveBoundaries(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        path=r.ROOT/archive.RAW
+        if not path.exists():raise unittest.SkipTest('source-only commit before archival report')
+        cls.source=json.loads(path.read_bytes())
+
+    def test_actual_source_acceptance(self):
+        archive.validate_source(self.source)
+
+    def test_forged_bit_meaning_name_or_game_execution(self):
+        for key in ('original_game_executed','same_build_name_or_npc_binding_proven','rendered_scene_proven','plane3_event_or_walkability_semantics_proven','room_name_from_dat'):
+            d=copy.deepcopy(self.source);d['boundaries'][key]=True
+            with self.subTest(key=key),self.assertRaises(ValueError):archive.validate_source(d)
+
+    def test_transition_direction_and_unsigned_value(self):
+        for key,value in [('june_u16',49152),('dec_u16',-16384),('cells',79),('xor_mask',16384)]:
+            d=copy.deepcopy(self.source);d['rooms'][0]['planes'][2]['transitions'][0][key]=value
+            with self.subTest(key=key),self.assertRaises(ValueError):archive.validate_source(d)
+
+    def test_repeated_room_or_invented_name(self):
+        d=copy.deepcopy(self.source);d['rooms'][1]=copy.deepcopy(d['rooms'][0])
+        with self.assertRaises(ValueError):archive.validate_source(d)
+        d=copy.deepcopy(self.source);d['rooms'][0]['name_reference']['name_scope']='AUTHENTICATED_TW10'
+        with self.assertRaises(ValueError):archive.validate_source(d)
 
 if __name__=='__main__':unittest.main()

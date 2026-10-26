@@ -1,0 +1,36 @@
+name: Verify original four village interior materials R34
+on:
+  push:
+    paths:
+      - '.github/workflows/verify-stoneage-village-interiors-r34.yml'
+      - 'tools/stoneage_village_interiors*r34.py'
+      - 'tests/test_stoneage_village_interiors_r34.py'
+      - 'research/recovered/STONEAGE-VILLAGE-INTERIORS-*R34.json'
+      - 'docs/specs/STONEAGE-VILLAGE-INTERIORS-MATERIAL-R34.md'
+      - 'docs/continuity/STONEAGE-VILLAGE-INTERIORS-R34-20261027.md'
+      - 'README.md'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original-source-and-boundaries:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Original geometry and historical source negative tests
+        run: python -m unittest -v tests.test_stoneage_village_interiors_r34
+      - name: Replay permanently archived source and candidate conservation without original download
+        run: python -m tools.stoneage_village_interiors_archive_r34
+      - name: Reject proprietary room maps and executable or picture leakage
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          actual={p.name for p in Path('research/recovered').glob('*VILLAGE-INTERIORS*') if p.is_file()}
+          allowed={f'STONEAGE-VILLAGE-INTERIORS-{name}-R34.json' for name in ('SOURCE','MATERIAL','CUSTODY','PUBLICATION')}
+          if not actual.issubset(allowed) or not {f'STONEAGE-VILLAGE-INTERIORS-{name}-R34.json' for name in ('SOURCE','MATERIAL','CUSTODY')}.issubset(actual):
+            raise SystemExit('R34 metadata-only source allowlist failed')
+          PY

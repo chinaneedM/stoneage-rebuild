@@ -1,0 +1,319 @@
+{
+  "boundaries": {
+    "new_authenticated_tw10_entities": 0,
+    "original_game_executed": false,
+    "original_map_grid_published": false,
+    "overall_percent": null,
+    "plane3_event_or_walkability_semantics_proven": false,
+    "r79": "PAUSED_NON_BLOCKING",
+    "rendered_scene_proven": false,
+    "room_name_from_dat": false,
+    "same_build_name_or_npc_binding_proven": false,
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b_wiki": "GATED"
+  },
+  "rooms": [
+    {
+      "height": 30,
+      "map_token": 1001,
+      "name_reference": {
+        "name_scope": "LATER_RECOVERED_SERVER_FLOOR_AND_DIMENSION_CONSENSUS_NOT_SAME_GRID_OR_TW10",
+        "npc_count_scope": "PRIOR_MIXED25_CONFIGURATION_NOT_OBSERVED_POPULATION",
+        "raw_name_sha256": "6ce40636da23aea7611ccb75b68d7b2486f7e1d6977d7e31d08c03d75da1daff",
+        "recovered25_name_escaped": "薩姆吉爾的武器店%7C0",
+        "reference_client_sha256": "62dbef1614ede0ba032ca9c69cbfdc3d43938e45baba78701885790937b86b90",
+        "reference_npc_create_count": 4
+      },
+      "original_files": {
+        "dec": {
+          "bytes": 5408,
+          "git_blob": "47220af2c6c5b90c02eb03eefa73bc1e3983a639",
+          "sha256": "4665e4621be1d36a9dfb82c87d69d9ba5d9eaa3088599648a54f2655db105568"
+        },
+        "june": {
+          "bytes": 5408,
+          "git_blob": "3618a0fd14798740cc22faf8834dbb3950c75737",
+          "sha256": "62dbef1614ede0ba032ca9c69cbfdc3d43938e45baba78701885790937b86b90"
+        }
+      },
+      "planes": [
+        {
+          "cells": 900,
+          "changed_cells": 0,
+          "dec_sha256": "bdabb534a2b075048247dda60177b1c351562e792799cbc2bfa94a5845a4de4b",
+          "june_sha256": "bdabb534a2b075048247dda60177b1c351562e792799cbc2bfa94a5845a4de4b",
+          "ordinal": 1,
+          "transitions": [],
+          "xor_counts": []
+        },
+        {
+          "cells": 900,
+          "changed_cells": 4,
+          "dec_sha256": "3674054a505cdcb91a60a297fd9fd301653a61b6d52854a45a7d140935632d34",
+          "june_sha256": "513fad859bed0b27c132fb561db60169a6ae6438da198932ef7048db313e9a3b",
+          "ordinal": 2,
+          "transitions": [
+            {
+              "cells": 4,
+              "dec_u16": 2,
+              "june_u16": 0,
+              "xor_mask": 2
+            }
+          ],
+          "xor_counts": [
+            [
+              2,
+              4
+            ]
+          ]
+        },
+        {
+          "cells": 900,
+          "changed_cells": 80,
+          "dec_sha256": "8596b1250fcebf09dce9d7d712aca8796cf6e247ee99c9ef50c924301fafe95d",
+          "june_sha256": "f50877ba2da6e37aea7826380358e3d01e4306afefd83fe1d195c23e64450043",
+          "ordinal": 3,
+          "transitions": [
+            {
+              "cells": 80,
+              "dec_u16": 49152,
+              "june_u16": 16384,
+              "xor_mask": 32768
+            }
+          ],
+          "xor_counts": [
+            [
+              32768,
+              80
+            ]
+          ]
+        }
+      ],
+      "source_path": "map/1001.DAT",
+      "width": 30
+    },
+    {
+      "height": 30,
+      "map_token": 1003,
+      "name_reference": {
+        "name_scope": "LATER_RECOVERED_SERVER_FLOOR_AND_DIMENSION_CONSENSUS_NOT_SAME_GRID_OR_TW10",
+        "npc_count_scope": "PRIOR_MIXED25_CONFIGURATION_NOT_OBSERVED_POPULATION",
+        "raw_name_sha256": "c63c24e2f99f8df6172d6fa2219fd3630d35ceaacc3debc56675e3bb5c1e0a75",
+        "recovered25_name_escaped": "薩姆吉爾的寵物店%7C0",
+        "reference_client_sha256": "fc3037a1850c8baf06ad5874a4cb49ca5e13e9315c020f64c019417c33b694e6",
+        "reference_npc_create_count": 8
+      },
+      "original_files": {
+        "dec": {
+          "bytes": 5408,
+          "git_blob": "4cf906ef84977ad5d4ccf918d3303a22fdf72cf1",
+          "sha256": "fc3037a1850c8baf06ad5874a4cb49ca5e13e9315c020f64c019417c33b694e6"
+        },
+        "june": {
+          "bytes": 5408,
+          "git_blob": "4cf906ef84977ad5d4ccf918d3303a22fdf72cf1",
+          "sha256": "fc3037a1850c8baf06ad5874a4cb49ca5e13e9315c020f64c019417c33b694e6"
+        }
+      },
+      "planes": [
+        {
+          "cells": 900,
+          "changed_cells": 0,
+          "dec_sha256": "96ef9bb9dfc6ad71ef77a624e4da6f94fda5d51f93c926134f9c6d8a2fae5d48",
+          "june_sha256": "96ef9bb9dfc6ad71ef77a624e4da6f94fda5d51f93c926134f9c6d8a2fae5d48",
+          "ordinal": 1,
+          "transitions": [],
+          "xor_counts": []
+        },
+        {
+          "cells": 900,
+          "changed_cells": 0,
+          "dec_sha256": "31971585bde257ba51c1aa3e5b9e21c2e43187bc2212cefa6aea296ca90c7011",
+          "june_sha256": "31971585bde257ba51c1aa3e5b9e21c2e43187bc2212cefa6aea296ca90c7011",
+          "ordinal": 2,
+          "transitions": [],
+          "xor_counts": []
+        },
+        {
+          "cells": 900,
+          "changed_cells": 0,
+          "dec_sha256": "a556251c5a689df355bde89c0863a86caddf4520909b9492693480dab612110a",
+          "june_sha256": "a556251c5a689df355bde89c0863a86caddf4520909b9492693480dab612110a",
+          "ordinal": 3,
+          "transitions": [],
+          "xor_counts": []
+        }
+      ],
+      "source_path": "map/1003.DAT",
+      "width": 30
+    },
+    {
+      "height": 30,
+      "map_token": 1005,
+      "name_reference": {
+        "name_scope": "LATER_RECOVERED_SERVER_FLOOR_AND_DIMENSION_CONSENSUS_NOT_SAME_GRID_OR_TW10",
+        "npc_count_scope": "PRIOR_MIXED25_CONFIGURATION_NOT_OBSERVED_POPULATION",
+        "raw_name_sha256": "fdd004d43610c2e6fd2e6a1a9cd84dbb0d05d394ff945061b60944d346f84c81",
+        "recovered25_name_escaped": "薩姆吉爾的醫院%7C0",
+        "reference_client_sha256": "a6c9d1e43223a8afc515e37367d58cfcc6c301909e9e060d4c80d35fcb87c7c9",
+        "reference_npc_create_count": 6
+      },
+      "original_files": {
+        "dec": {
+          "bytes": 5408,
+          "git_blob": "a90b1109d9a29fc31493984f586af520ffa0f66b",
+          "sha256": "71bb2a4a72991b8420128dbaf1cb8885eee71bd8c0302579fee7eb5afbfddd76"
+        },
+        "june": {
+          "bytes": 5408,
+          "git_blob": "e4b5e98f8247db3c8aed39c6e7e92f329329d8c0",
+          "sha256": "a6c9d1e43223a8afc515e37367d58cfcc6c301909e9e060d4c80d35fcb87c7c9"
+        }
+      },
+      "planes": [
+        {
+          "cells": 900,
+          "changed_cells": 0,
+          "dec_sha256": "4b5e5ea85c6e2ae2a5d37938fbfe75bb0de74c372566ae64c8ca610f66105c5c",
+          "june_sha256": "4b5e5ea85c6e2ae2a5d37938fbfe75bb0de74c372566ae64c8ca610f66105c5c",
+          "ordinal": 1,
+          "transitions": [],
+          "xor_counts": []
+        },
+        {
+          "cells": 900,
+          "changed_cells": 0,
+          "dec_sha256": "80fbedc6ff97469691b3e9c1bc1f26fa1f4e52a120c609960226f58ec851decc",
+          "june_sha256": "80fbedc6ff97469691b3e9c1bc1f26fa1f4e52a120c609960226f58ec851decc",
+          "ordinal": 2,
+          "transitions": [],
+          "xor_counts": []
+        },
+        {
+          "cells": 900,
+          "changed_cells": 52,
+          "dec_sha256": "a556251c5a689df355bde89c0863a86caddf4520909b9492693480dab612110a",
+          "june_sha256": "4a16d7d49a999df843c14cd5a76e5fc5b0a2f4698eac50683ee3731d39db1c1d",
+          "ordinal": 3,
+          "transitions": [
+            {
+              "cells": 52,
+              "dec_u16": 49152,
+              "june_u16": 16384,
+              "xor_mask": 32768
+            }
+          ],
+          "xor_counts": [
+            [
+              32768,
+              52
+            ]
+          ]
+        }
+      ],
+      "source_path": "map/1005.DAT",
+      "width": 30
+    },
+    {
+      "height": 40,
+      "map_token": 1006,
+      "name_reference": {
+        "name_scope": "LATER_RECOVERED_SERVER_FLOOR_AND_DIMENSION_CONSENSUS_NOT_SAME_GRID_OR_TW10",
+        "npc_count_scope": "PRIOR_MIXED25_CONFIGURATION_NOT_OBSERVED_POPULATION",
+        "raw_name_sha256": "f2d7bfc2b20788ff5c1a96615e54eed3ac5bc177a44bf079476f8adbf1788517",
+        "recovered25_name_escaped": "薩姆吉爾的村長家%7C0",
+        "reference_client_sha256": "aa2e7d2bdb138545a3efa30f9482d563b1781810a856b4a91c12ce83eb08ab4a",
+        "reference_npc_create_count": 8
+      },
+      "original_files": {
+        "dec": {
+          "bytes": 7208,
+          "git_blob": "03c9eb64546c622c1e48203acec54efae5a13fc8",
+          "sha256": "caee33ec3b20630949725900f217a2868c05984fe2f7e8f13fdd94250be6e3a7"
+        },
+        "june": {
+          "bytes": 7208,
+          "git_blob": "6a5e811b246dabc474732d8f0b1c0148270b4d02",
+          "sha256": "aa2e7d2bdb138545a3efa30f9482d563b1781810a856b4a91c12ce83eb08ab4a"
+        }
+      },
+      "planes": [
+        {
+          "cells": 1200,
+          "changed_cells": 0,
+          "dec_sha256": "c58f8ec5d6517e8f305f61d937018a06420aa9c928c274b7994cf19d4cfacf8e",
+          "june_sha256": "c58f8ec5d6517e8f305f61d937018a06420aa9c928c274b7994cf19d4cfacf8e",
+          "ordinal": 1,
+          "transitions": [],
+          "xor_counts": []
+        },
+        {
+          "cells": 1200,
+          "changed_cells": 0,
+          "dec_sha256": "d74d5994b514d128db7c85a6d804193f02f092dc2e15bedc9a43e909e0920d79",
+          "june_sha256": "d74d5994b514d128db7c85a6d804193f02f092dc2e15bedc9a43e909e0920d79",
+          "ordinal": 2,
+          "transitions": [],
+          "xor_counts": []
+        },
+        {
+          "cells": 1200,
+          "changed_cells": 67,
+          "dec_sha256": "1367de0624cfaf4aea9c2bca3a66a7aace1fc40b595189c1db6d5f906d480863",
+          "june_sha256": "d83eb276f7b94409f03eea1df2fd98eb0bb0ae7674066ec786d0eb07baf13d07",
+          "ordinal": 3,
+          "transitions": [
+            {
+              "cells": 67,
+              "dec_u16": 49152,
+              "june_u16": 16384,
+              "xor_mask": 32768
+            }
+          ],
+          "xor_counts": [
+            [
+              32768,
+              67
+            ]
+          ]
+        }
+      ],
+      "source_path": "map/1006.DAT",
+      "width": 30
+    }
+  ],
+  "schema": "stoneage.original_village_room_material.r34",
+  "source_packages": {
+    "dec": {
+      "capture": "20031210092426",
+      "sha256": "5f7f58e0d26d596e926a7d551d7c24e8a9a27824d5bdc53be3955b19b0e13abc"
+    },
+    "june": {
+      "capture": "20030623234451",
+      "sha256": "372426e46765a1cf479041bdafc1d3e58fb019117d00d0b43d6a5f796620776e"
+    }
+  },
+  "source_pins": {
+    "research/recovered/STONEAGE-2003-MAP-TIMELINE-R1.txt": {
+      "bytes": 151231,
+      "git_blob": "50a86ac87a193b683b1455f0e3ec8b74b82bdb96",
+      "sha256": "ead6e360a01b981b2829f00ed8b4d3bb024b5e47974269c92974b7e204fe236b"
+    },
+    "research/recovered/STONEAGE-25-STABLE-MAP-NAMES-R1.txt": {
+      "bytes": 104105,
+      "git_blob": "8c9e3a73cbf9a8054d5a0ad82d57582d8535b6e3",
+      "sha256": "5e67b1e67b519e70b8de4fc57fa6398c2834459e4b4be6ab6457c40fda395686"
+    },
+    "research/recovered/STONEAGE-25-STABLE-WORLD-CONTENT-COVERAGE-R1.txt": {
+      "bytes": 166591,
+      "git_blob": "455fa7abef06ffefec6b7e46f87ac12c9ee83972",
+      "sha256": "a02abdd675b09d7656aa93b3598b27bb484e8ebd1baa14541f38944376324ad3"
+    },
+    "research/recovered/STONEAGE-HISTORICAL-MAPEXE-SA25-LINEAGE-R1.txt": {
+      "bytes": 14821,
+      "git_blob": "169fe78c88316b83b5da8f7fba0c7f92959627dc",
+      "sha256": "4ad822dbb427ede171cfec5fd863243e0253fd37b843ec9387c6280ec5c01ac1"
+    }
+  },
+  "source_scope": "TWO_DATED_2003_THIRD_PARTY_MAP_CAPTURES_NOT_AUTHENTICATED_OFFICIAL_BUILD"
+}

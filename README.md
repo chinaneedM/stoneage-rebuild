@@ -642,3 +642,8 @@ The 2.66 MB historical `docs/CURRENT-STATE.md` is still preserved byte-for-byte.
 ### 2026-10-26 — R33 原SPR/RD调色板同载体全16字节匹配
 
 [材料记录](docs/continuity/STONEAGE-PALETTE-SAME-CARRIER-R33-20261026.md)与[实际主线验收记录](docs/continuity/STONEAGE-R33-CI-FINAL-20261026.md)保留TW1.0与台8.5保存样本的16/16原SAP逐路径同SHA、R30八原索引帧同保存载体见证，以及仅TW1原代码验证的Palet_0初始化RGB规则。候选/main原内容Actions均真实SUCCESS。台8.5真实运行选色、纯净官方归属、宠物/NPC身份和原游戏世界仍未认证；下一主动最高为原世界玩家可见内容R34，Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、总体百分比未知。
+
+
+### 2026-10-27 — R34四间村落室内地图的实际数值变化
+
+[原实物规格](docs/specs/STONEAGE-VILLAGE-INTERIORS-MATERIAL-R34.md)和[续接记录](docs/continuity/STONEAGE-VILLAGE-INTERIORS-R34-20261027.md)核两份2003历史小地图包中的1001/1003/1005/1006八个原成员：第一层均不变，1001第二层4格0→2，三张第三层共199格0x4000→0xC000，1003全层相同。本地另取原件/独立解码11700对字段与源Actions40407952047一致；原报告永久保管，原网格/程序未公开。萨姆吉尔武器店/宠物店/医院/村长家只作后期服务器头名称参考，不升级为初代同服场景或任务/碰撞规则。下一优先回DD-029原客户端实物与22域具名原数据队列35，停止扩本地图支线。Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、总体百分比未知。
