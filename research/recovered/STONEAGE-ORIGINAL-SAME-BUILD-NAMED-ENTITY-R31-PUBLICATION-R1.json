@@ -1,0 +1,110 @@
+{
+  "schema": "stoneage.original_same_build_named_entity.r31.publication_receipt.v1",
+  "observed_at_utc": "2026-10-26T13:50:29Z",
+  "original_main_head": "8dc3e729dfca18bb6d2c6874405c33dc321e010f",
+  "accepted_main_head": "6e7aaef3206012a5ce7790eac0831cea57e8b94c",
+  "accepted_main_tree": "59fc31152fba935aac7ffc556bb1d11cd1e842aa",
+  "candidate": {
+    "content_sha": "43247e62b5fb01a4c3a29ee37b1870ed6753b580",
+    "content_run_ids": [
+      40333532117,
+      40333532148,
+      40333532135,
+      40333532142,
+      40333532224,
+      40333532172
+    ],
+    "corrected_final_sha": "6e7aaef3206012a5ce7790eac0831cea57e8b94c",
+    "corrected_final_run_id": 40333752213
+  },
+  "main_actions": [
+    {
+      "run_id": 40333890828,
+      "name": "Accept primary-source TW1.0 character creation numeric join R16",
+      "head_sha": "6e7aaef3206012a5ce7790eac0831cea57e8b94c",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40333890828"
+    },
+    {
+      "run_id": 40333890860,
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "head_sha": "6e7aaef3206012a5ce7790eac0831cea57e8b94c",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40333890860"
+    },
+    {
+      "run_id": 40333890879,
+      "name": "Verify original same-build named-entity source gate R31",
+      "head_sha": "6e7aaef3206012a5ce7790eac0831cea57e8b94c",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40333890879"
+    },
+    {
+      "run_id": 40333890915,
+      "name": "Verify StoneAge R17 original battle SAB crossversion occurrence conservation",
+      "head_sha": "6e7aaef3206012a5ce7790eac0831cea57e8b94c",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40333890915"
+    },
+    {
+      "run_id": 40333890942,
+      "name": "Accept preserved original TW85 SPR137 full animation material R28",
+      "head_sha": "6e7aaef3206012a5ce7790eac0831cea57e8b94c",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40333890942"
+    },
+    {
+      "run_id": 40333890991,
+      "name": "Verify preserved mixed25 full server source conservation R18",
+      "head_sha": "6e7aaef3206012a5ce7790eac0831cea57e8b94c",
+      "conclusion": "success",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40333890991"
+    }
+  ],
+  "tree_diff": [
+    {
+      "path": ".github/workflows/verify-stoneage-original-named-entity-r31.yml",
+      "blob": "112a6669f555864beaf560189a39c94ca3bb1aaf",
+      "previous_blob": null
+    },
+    {
+      "path": "docs/continuity/STONEAGE-ORIGINAL-NAMED-ENTITY-R31-20261026.md",
+      "blob": "ab74c2de1e0a684d6476f422a2b709b81cbd5d30",
+      "previous_blob": null
+    },
+    {
+      "path": "docs/specs/STONEAGE-ORIGINAL-SAME-BUILD-NAMED-ENTITY-R31.md",
+      "blob": "dd0f6af9c5f459cd63cc1db438223db225798a69",
+      "previous_blob": null
+    },
+    {
+      "path": "README.md",
+      "blob": "4c89eb5d54879bcedfde62227826499283a9193f",
+      "previous_blob": "41fdd9f87ecbf1cc8012683b05744501c8c51abf"
+    },
+    {
+      "path": "research/recovered/STONEAGE-ORIGINAL-SAME-BUILD-NAMED-ENTITY-R31.json",
+      "blob": "a3c4919f058e817fe00c91edb6efa8ffaa3e101b",
+      "previous_blob": null
+    },
+    {
+      "path": "tests/test_stoneage_original_named_entity_r31.py",
+      "blob": "1f5646f07dc5f9ace981dfdf4487e02c62c1a9d8",
+      "previous_blob": null
+    },
+    {
+      "path": "tools/stoneage_original_named_entity_r31.py",
+      "blob": "9c7a763d7fa5a322fe18a188acac866cf4a7223a",
+      "previous_blob": null
+    }
+  ],
+  "no_paths_removed": true,
+  "current_state_unchanged_blob": "031c76a5a8e431f646853909bb2f2e11e6328cd2",
+  "actual_candidate_final_r31_success": true,
+  "actual_main_six_success": true,
+  "source_private_original_payload_not_published": true,
+  "original_master_acquired": false,
+  "limit": "Only validates original 557-file filename inventory and 8 RD record provenance; does not verify same-build server masters or original exe execution",
+  "receipt_own_ci": "NOT_OBSERVED_AT_PUBLICATION",
+  "next": "ORIGINAL_WORLD_MAP_CONTENT_MATERIAL_32"
+}
