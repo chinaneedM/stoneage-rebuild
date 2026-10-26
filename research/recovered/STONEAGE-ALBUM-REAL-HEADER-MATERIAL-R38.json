@@ -1,0 +1,84 @@
+{
+  "schema": "stoneage.album_real_header_material.r38",
+  "date": "2026-10-27",
+  "evidence": "ORIGINAL_PRESERVED_MIXED25_RAR4_HEADER_ONLY_NOT_PAYLOAD",
+  "source": {
+    "run": 40422947999,
+    "job": 121921573780,
+    "head": "1c58edffe3a299466373f1c5d4e3713a4ac751ac",
+    "workflow_conclusion": "success",
+    "source_status": "SINGLE_REAL_HEADER_PRESENT_PIXELS_NOT_ACQUIRED",
+    "artifact_id": 12698850951,
+    "artifact_zip_api_sha256": "ac7219fbe8daf04978ee7e5b66258dd858343fedb21d80ce6ef0904a9e6fb956",
+    "artifact_independent_zip_download": false,
+    "raw_source_report": "research/recovered/STONEAGE-ALBUM-REAL-HEADER-SOURCE-R38.json"
+  },
+  "archive_header_survey": {
+    "headers_visited": 7954,
+    "full_header_walk_completed": true,
+    "range_requests": 184,
+    "actual_range_bytes": 12013836,
+    "reader_budget_bytes": 16777216,
+    "source_member_candidates": [
+      {
+        "all_selected_offsets_fit_file_size": true,
+        "bitmap_ranges_covered_if_same_resource_layout": true,
+        "bytes": 763908374,
+        "compressed_bytes": 338458942,
+        "compressed_data_offset": 5108046,
+        "compression_method": 53,
+        "exact_expected_member_name": true,
+        "flags": 33472,
+        "header_offset": 5107864,
+        "is_independent_member": true,
+        "name": "石器2.5客戶端+服務端+登入器/SA2.5主程式/stoneage2.5/data/real_15.bin",
+        "original_crc32": 3180047245
+      }
+    ]
+  },
+  "three_adrn_byte_ranges": [
+    {
+      "adrn_record_sha256": "662ee16a7a6fdf1a36f9f84ed4caa0acca9ea8346af62707cfe063179ffcf980",
+      "end_exclusive": 26129258,
+      "logical_alias": 28001,
+      "offset": 26119737,
+      "physical_bitmapno": 7246,
+      "size": 9521
+    },
+    {
+      "adrn_record_sha256": "fe2522078e956d12f77c8244ec2f1475d9d315706df5723d118d2e2fcb2e1714",
+      "end_exclusive": 26138936,
+      "logical_alias": 28002,
+      "offset": 26129258,
+      "physical_bitmapno": 7247,
+      "size": 9678
+    },
+    {
+      "adrn_record_sha256": "d2756142d8125d9ba8fe9a4b2a8ec174a6bf661b173cdc0582f373bda8232f27",
+      "end_exclusive": 26148240,
+      "logical_alias": 28003,
+      "offset": 26138936,
+      "physical_bitmapno": 7248,
+      "size": 9304
+    }
+  ],
+  "qualification": {
+    "original_same_preserved_subtree_adrn_and_real_member_paths": true,
+    "exact_one_real_member_header": true,
+    "all_three_offsets_fit_declared_uncompressed_real_size": true,
+    "real_member_compressed_rar4_method": 53,
+    "compressed_member_bytes": 338458942,
+    "small_range_http_cannot_directly_read_uncompressed_images": true,
+    "real_payload_read": false,
+    "actual_RD_headers_verified": false,
+    "actual_pixels_or_palette_decoded": false,
+    "actual_image_equality_to_album_proven": false,
+    "original_executable_ran": false,
+    "official_same_build_authentication": false,
+    "new_official_clients": 0,
+    "overall_percent": null
+  },
+  "stop": "FINITE_HEADER_ONLY; full 338,458,942B compressed member outside 16MiB budget. No safe random-access decompression checkpoint/copyright-safe persistent custody demonstrated. Do not infer actual pixels or screenshot.",
+  "next": "RETURN_22_DOMAIN_NAMED_PRIMARY_CONTENT_EVIDENCE_QUEUE_AFTER_R38_HEADER_LIMIT; reopen actual REAL pair only with bounded verifiable decompressed slices or private durable custody",
+  "unchanged": "DD-028 four task classes, Stage A seven PARTIAL/two OPEN, Stage B/wiki gated, R79 paused"
+}

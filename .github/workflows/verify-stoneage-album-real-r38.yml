@@ -1,0 +1,31 @@
+name: Verify original preserved REAL header-only material R38
+on:
+  push:
+    branches: ['agent/album-real-material-r38-20261027']
+permissions:
+  contents: read
+jobs:
+  offline-original-header:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Pinned reader for synthetic parser regressions only
+        run: python -m pip install rarfile==4.2
+      - name: Verify all R38 archived header metadata and nine adversarial cases
+        run: python -m unittest -v tests.test_stoneage_album_real_header_material_r38 tests.test_stoneage_album_real_header_r38 tests.test_stoneage_album_adrn_material_r37
+      - name: Verify R38 exact source report against R37 original ADRN offsets
+        run: python -m tools.stoneage_album_real_header_material_r38
+      - name: Ensure proprietary original program/REAL not published
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import subprocess
+          forbidden={'real_15.bin','adrn_15.bin','selected.rar','selected.zip','r38-private.der','recipient-key.pem'}
+          for name in subprocess.check_output(['git','ls-files','-z']).decode().split('\0'):
+              if name and Path(name).name in forbidden:
+                  raise SystemExit('Original/private payload forbidden: '+name)
+          PY
