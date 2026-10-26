@@ -1,0 +1,114 @@
+name: Private-source TW85 real RD pixel visual sample R30
+on:
+  push:
+    paths:
+      - '.github/workflows/source-stoneage-tw85-original-private-r30.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  offline-preflight:
+    if: github.ref == 'refs/heads/agent/tw85-rd-pixel-private-r30-20261026'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install cryptographic-only library; no game software execution
+        run: python -m pip install cryptography==46.0.4
+      - name: Adversarial exact-original input and private encryption guards
+        run: python -m unittest -v tests.test_stoneage_tw85_r30_preview
+      - name: Select bounded R28 unmatched-group frames using all pinned original metadata
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m tools.stoneage_tw85_r30_preview plan --out "$RUNNER_TEMP/PLAN-R30.json"
+          python - <<'PY'
+          import json,os
+          from pathlib import Path
+          p=json.loads((Path(os.environ['RUNNER_TEMP'])/'PLAN-R30.json').read_text())
+          assert len(p['sample']['sample_frames'])<=8
+          assert p['original_full_frames_checked']==735666
+          print('BOUNDED_ORIGINAL_PIXEL_REQUEST_QUALIFIED=PASS')
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: tw85-r30-qualified-numeric-plan-only
+          path: ${{ runner.temp }}/PLAN-R30.json
+          if-no-files-found: error
+          retention-days: 5
+  source-actual-rd-private:
+    if: github.ref == 'refs/heads/agent/tw85-rd-pixel-private-r30-20261026'
+    needs: offline-preflight
+    runs-on: ubuntu-latest
+    timeout-minutes: 65
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Static installer extraction only; no original exe execution
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -qq -y msitools p7zip-full
+          python -m pip install cryptography==46.0.4
+      - uses: actions/download-artifact@v4
+        with:
+          name: tw85-r30-qualified-numeric-plan-only
+          path: ${{ runner.temp }}/r30-preflight
+      - name: Stage session RSA public key only; private key exists only outside GitHub
+        shell: bash
+        run: |
+          cat > "$RUNNER_TEMP/r30-session-pubkey.pem" <<'R30_PUBLIC_KEY'
+          -----BEGIN PUBLIC KEY-----
+          MIIBojANBgkqhkiG9w0BAQEFAAOCAY8AMIIBigKCAYEAtpZQImITDzqYix5IkGHj
+          KfBpuIHHQMOfYyt6iYnT6ml8jTZjXzZLXdHrxoEqm7YHP3djFWJN/fh0ALIaZz2K
+          LhA3Sa5FzHIh1bpqsEY9w8nz7GDx7pyimLb4COIROr/7u5D6oKAcp3X4A0mOVTgX
+          tewVDG+SOh8OVtj8LyRSRoITzOMfWqlUv7sp2sJFMIrzWZ4jABaNoucXIWhL7FAt
+          wB4SyVuhNn0ILTGHGJ2ItVO14GanjgJ3YABxu9dfViHVtY4Z6Itwx9ZxRPde5pLB
+          KD4vTZA05ed35FZSnFuHNNlTjhIYm6KutmkuDqJY9AYUnbdIC3TodyD79vRo5uH/
+          D2DSAtdIAbvQxRhNPAE2lyZ2QZneMGvZ+e5vMdLFb764ThDPVgOwpK7rIbiDu8f+
+          viq0R+WC0pBug68HfLnl6rPqqM4/JjfVHcqAY6OevOLMzosZEv4NJQlf0dzimU8m
+          qeJrf54GVPfChWNxaoqq/OYqGS3wO0XPzcIxTnW7sT5FAgMBAAE=
+          -----END PUBLIC KEY-----
+          R30_PUBLIC_KEY
+      - name: One source acquisition to actually decode and SHA-validate small original RD pixel evidence
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/r30-private" "$RUNNER_TEMP/r30-derivation"
+          python -m tools.stoneage_tw85_r30_preview material \
+            --source-work "$RUNNER_TEMP/tw85-actual" \
+            --plan "$RUNNER_TEMP/r30-preflight/PLAN-R30.json" \
+            --private-dir "$RUNNER_TEMP/r30-private" \
+            --public-key "$RUNNER_TEMP/r30-session-pubkey.pem" \
+            --cipher "$RUNNER_TEMP/r30-derivation/PRIVATE-CAPSULE-R30.enc" \
+            --envelope "$RUNNER_TEMP/r30-derivation/ENVELOPE-R30.json"
+          cp "$RUNNER_TEMP/r30-private/PRIVATE-R30.json" "$RUNNER_TEMP/r30-derivation/SOURCE-R30.json"
+          python - <<'PY'
+          import os,json
+          from pathlib import Path
+          root=Path(os.environ['RUNNER_TEMP'])/'r30-derivation'
+          source=json.loads((root/'SOURCE-R30.json').read_text())
+          assert len(source['frames'])<=8 and not source['historical_palette_rgb_verified']
+          assert len(list(root.iterdir()))==3
+          print('ACTUAL_RD_BLOCKS_DECODED_AND_ENCRYPTED=PASS')
+          PY
+      - name: Upload encrypted private PNGs only; source metadata may be openly derived
+        uses: actions/upload-artifact@v4
+        with:
+          name: tw85-r30-session-key-encrypted-private-only
+          path: |
+            ${{ runner.temp }}/r30-derivation/PRIVATE-CAPSULE-R30.enc
+            ${{ runner.temp }}/r30-derivation/ENVELOPE-R30.json
+            ${{ runner.temp }}/r30-derivation/SOURCE-R30.json
+          if-no-files-found: error
+          retention-days: 5
+      - name: Delete transient commercial originals and unencrypted working preview
+        if: always()
+        shell: bash
+        run: |
+          rm -rf "$RUNNER_TEMP/tw85-actual" "$RUNNER_TEMP/r30-private" \
+            "$RUNNER_TEMP/r30-session-pubkey.pem"

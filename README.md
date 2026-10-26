@@ -622,3 +622,8 @@ The 2.66 MB historical `docs/CURRENT-STATE.md` is still preserved byte-for-byte.
 ### 2026-10-26 — R29同保存包原动画帧→ADRN/REAL图像内容完整数值联接
 
 [本轮完整来源规格](docs/specs/STONEAGE-TW85-FRAME-BITMAP-R29.md)和[日期连续性](docs/continuity/STONEAGE-TW85-FRAME-BITMAP-R29-20261026.md)保留事实边界。R28已实得735666原帧（4759哨兵），本轮不用重下大型原包即全部联接剩余730907帧到**同557文件保存样本**的唯一ADRN/REAL原索引，共397443不同图像编号/392083不同完整RD(size,SHA)内容；无本样本缺索引、同号多候选。原R28新增差异554组的137192非哨兵帧全部有唯一原图内容来源。全量原派生表、独立SQLite和合成守卫永久验收，保留原顺序/重复/所有缺项，不猜新物种。此为原帧到真实资源块的元数据联接，非原彩色画面或具名宠物、原游戏实际运行。R30有限原图私人预览资格或有界缺源止点，拒绝无收益再下1.145GB原客户端；Stage A7 PARTIAL/2 OPEN、B/wiki GATED、R79暂停、总体复原百分比仍未知，旧CURRENT全文未替换。
+
+
+### 2026-10-26 — R30实取8帧原RD像素、私人灰度动画
+
+按[原实物观察规格](docs/specs/STONEAGE-TW85-ORIGINAL-RD-PRIVATE-R30.md)及[本轮连续性记录](docs/continuity/STONEAGE-TW85-ORIGINAL-RD-PRIVATE-R30-20261026.md)，不再只靠帧号和哈希推断：复用R29同保存包真实绑定，预选原 `spr_no=101501`、group index1185的动作数值2/方向0的八个帧bitmap 303039–303046；已从六分卷原样实际再取**1,145,465,184B**、静态解包并严格逐SHA验证 `adrn_158.bin` + `real_158.bin`，八原ADRN80B行/整RD块SHA一致后，实际解码八幅调色板索引图（flag1），产生私人灰度PNG与人为节拍GIF，并经加密传回/独立解密核8幅原SHA后目视连续轮廓。原商用图/音/程序及私钥不公开，Git只保留 `research/recovered/tw85-rd-private-r30/` 的计划/原块SHA/像素SHA与加密保管链元数据。source Actions 40329157425、归档40330184123真实success，前两次无作业YAML错误原样保留。**灰度不是历史RGB；未命名宠物/人物或动作，无原游戏程序运行，也未认证社区保存包为官方纯净build。** R30有限交付已够，最高NEXT改回同版具名宠物/NPC/本体任务master实物31，不连续扩RD helper；Stage A7 PARTIAL/2 OPEN、B/wiki GATED、R79暂停、整体百分比未知。原2.68MB CURRENT全文与各主簿没有修改。

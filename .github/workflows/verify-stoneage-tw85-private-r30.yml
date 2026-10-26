@@ -1,0 +1,39 @@
+name: Verify original private TW85 R30 RD visual material and full custody
+on:
+  push:
+    paths:
+      - '.github/workflows/verify-stoneage-tw85-private-r30.yml'
+      - 'tools/stoneage_tw85_r30_preview.py'
+      - 'tools/stoneage_tw85_r30_archive.py'
+      - 'tools/stoneage_tw85_r30_verify.py'
+      - 'tests/test_stoneage_tw85_r30_preview.py'
+      - 'research/recovered/tw85-rd-private-r30/**'
+      - 'docs/specs/STONEAGE-TW85-ORIGINAL-RD-PRIVATE-R30.md'
+      - 'docs/continuity/STONEAGE-TW85-ORIGINAL-RD-PRIVATE-R30-20261026.md'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  immutable-source-and-anti-promotion:
+    runs-on: ubuntu-latest
+    timeout-minutes: 16
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test bounded actual RD source selection and session key capsule integrity
+        run: |
+          python -m pip install cryptography==46.0.4
+          python -m unittest -v tests.test_stoneage_tw85_r30_preview
+      - name: Independently replay complete original R28/R06/R29 to R30 index sample
+        run: python -m tools.stoneage_tw85_r30_verify
+      - name: Regress entire original R29 sample bitmap identity
+        run: python -m tools.stoneage_tw85_frame_bitmap_r29_sql
+      - name: Gate any copyright-pixel, original executable or false color promotion
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(find research/recovered/tw85-rd-private-r30 -type f | wc -l)" -eq 3
+          test "$(find research/recovered/tw85-rd-private-r30 -type f \( -name '*.png' -o -name '*.gif' -o -name '*.enc' -o -name '*.bin' -o -name '*.exe' \) | wc -l)" -eq 0
+          echo 'R30_PRIVATE_PIXEL_BYTES_NOT_IN_PUBLIC_GIT=PASS'
