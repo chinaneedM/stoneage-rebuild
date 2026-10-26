@@ -109,7 +109,8 @@ def main():
     a=argparse.ArgumentParser();a.add_argument('--directory',type=Path,required=True)
     a.add_argument('--exe',type=Path,required=True);a.add_argument('--output',type=Path,required=True)
     a.add_argument('--depth',type=int,choices=[8,24],default=24);a.add_argument('--helper',type=Path)
-    a.add_argument('--native',action='store_true');args=a.parse_args()
+    a.add_argument('--native',action='store_true');a.add_argument('--private-colormap',action='store_true');args=a.parse_args()
+    require(not args.private_colormap or (not args.native and args.depth==8),'private-colormap comparison is Wine8 only')
     base=args.directory.resolve();exe=args.exe.resolve()
     require(base!=ROOT and ROOT not in base.parents and not base.exists(),'new synthetic work directory outside Git required')
     base.mkdir();env=os.environ.copy();display=None
@@ -133,6 +134,15 @@ def main():
             boot=command(['wineboot','-u'],env=env,cwd=base,timeout=120);require(boot.returncode==0,'synthetic Wine prefix failed')
             command(['wine','reg','add','HKCU\\Software\\Wine','/v','Version','/d','winxp','/f'],env=env,cwd=base)
             report['wine_version']=command(['wine','--version']).stdout.strip()
+            if args.private_colormap:
+                setting=command(['wine','reg','add','HKCU\\Software\\Wine\\X11 Driver','/v','PrivateColorMap','/t','REG_SZ','/d','Y','/f'],env=env,cwd=base)
+                require(setting.returncode==0,'PrivateColorMap registry write failed')
+                query=command(['wine','reg','query','HKCU\\Software\\Wine\\X11 Driver','/v','PrivateColorMap'],env=env,cwd=base)
+                require(query.returncode==0 and 'PrivateColorMap' in query.stdout and 'Y' in query.stdout,'PrivateColorMap readback failed')
+                stop=command(['wineserver','-k'],env=env);wait=command(['wineserver','-w'],env=env)
+                require(stop.returncode==0 and wait.returncode==0,'old Wine graphics processes not retired')
+                report['wine_x11_configuration']={'PrivateColorMap':'Y','registry_write_and_readback_passed':True,
+                    'wineserver_restarted_before_control':True,'upstream_source_scope':'wine-9.0; Ubuntu repack measured independently'}
         for mode in ('gdi','ddraw'):
             case=run_case(base/mode,exe,env,mode,args.helper if args.depth==8 else None,args.native)
             report['cases'].append(case)

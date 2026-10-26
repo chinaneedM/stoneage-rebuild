@@ -1,0 +1,48 @@
+name: Measure Wine9 PrivateColorMap synthetic control P3D without original assets
+on:
+  push:
+    branches: [agent/synthetic-win32-p3d-20261026]
+    paths: ['.github/workflows/probe-stoneage-synthetic-private-colormap-p3d.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  wine-8-private-colormap:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build ONLY our synthetic x86 controller and indexed capture helper
+        run: |
+          set -euo pipefail
+          sudo dpkg --add-architecture i386
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq --no-install-recommends wine wine32:i386 xvfb x11-utils imagemagick gcc-mingw-w64-i686-win32 python3-pil iproute2 libx11-dev xdotool libgl1-mesa-dri:i386
+          sudo locale-gen zh_TW.UTF-8
+          i686-w64-mingw32-gcc -std=c11 -O2 -mwindows tools/stoneage_p3d_control.c -o /tmp/p3d-control.exe -lddraw -ldxguid -lgdi32 -luser32
+          gcc -std=c11 -O2 tools/stoneage_p3c_xcapture.c -o /tmp/p3d-xcapture -lX11
+          file /tmp/p3d-control.exe
+          dpkg-query -W wine wine32:i386 xvfb libx11-6 xdotool libgl1-mesa-dri:i386 > /tmp/p3d-wine-packages.txt
+      - name: Observe two synthetic render paths with ONLY PrivateColorMap changed
+        run: |
+          set -euo pipefail
+          for depth in 8; do
+            export P3_HOST_NET_NAMESPACE="$(readlink /proc/self/ns/net)"
+            sudo --preserve-env=P3_HOST_NET_NAMESPACE unshare --net --pid --fork --mount-proc bash -c '
+              set -euo pipefail
+              ip link set lo up
+              exec runuser -u runner -- env P3_HOST_NET_NAMESPACE="$P3_HOST_NET_NAMESPACE" /usr/bin/python3 -m tools.stoneage_p3d_bench --directory /tmp/p3d-depth'"$depth"' --exe /tmp/p3d-control.exe --private-colormap --depth '"$depth"' --helper /tmp/p3d-xcapture --output /tmp/p3d-wine'"$depth"'.json
+            '
+          done
+      - name: Delete all synthetic executable/prefix/frame scratch
+        if: always()
+        run: rm -rf /tmp/p3d-depth8 /tmp/p3d-depth24 /tmp/p3d-control.exe /tmp/p3d-xcapture
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: p3d-synthetic-private-colormap-derived
+          path: |
+            /tmp/p3d-wine8.json
+            /tmp/p3d-wine-packages.txt
+          if-no-files-found: error
+          retention-days: 7
