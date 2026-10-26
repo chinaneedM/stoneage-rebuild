@@ -1,0 +1,255 @@
+{
+  "schema": "stoneage.p3e.windows_custody.v1",
+  "startup": {
+    "head": "71889eaba2835ee70f7ffeafcdb15151fcb3e6bc",
+    "tree": "a6e72c5497862c4fb2489d39e5418d1058e105b9",
+    "branches": 597,
+    "tree_entries": 5890,
+    "tree_truncated": false,
+    "open_prs": 0,
+    "in_progress": 0,
+    "unrelated_historical_queued_run": 37642417333,
+    "full_startup_files": {
+      "README.md": {
+        "bytes": 60114,
+        "sha256": "c517c0544deb76399e65f695c003c1100e1fdaac1549bdbd5c179601c0dc506c",
+        "git_blob": "20e3ea4317eb37b2c4ec5da31f30aa9537da2653"
+      },
+      "docs/PROJECT-CONTINUITY-PROTOCOL-R1.md": {
+        "bytes": 10880,
+        "sha256": "c3a10d3a9dacf8b61c97a52d294582a2984b13b549f4f10d1375a6fffb53ff65",
+        "git_blob": "a064174339b7a4656efe00b4446a066fd7abf304"
+      },
+      "docs/CURRENT-STATE.md": {
+        "bytes": 2680510,
+        "sha256": "f02f85b837fc09973cb2eca33f7daf4db547a77cb35a81a9576c6308f70142c0",
+        "git_blob": "031c76a5a8e431f646853909bb2f2e11e6328cd2"
+      },
+      "docs/DESIGN-DECISIONS.md": {
+        "bytes": 49898,
+        "sha256": "6d481f4eb0185ab0c8da34e697ae39f4137638d9484de4ed48d1875ec3af4f73",
+        "git_blob": "713caaecc6a43a92e5cb7f939954026b859bac20"
+      },
+      "docs/HISTORICAL-TIMELINE.md": {
+        "bytes": 730950,
+        "sha256": "7bc3fb586c23ff3c5fd0add689157c45e9e1b1cca001df84ad1dad9f850fc13c",
+        "git_blob": "91ca73105f26bf96aaa928519ae04942182e7b9b"
+      },
+      "docs/SOURCE-REGISTRY.md": {
+        "bytes": 1028196,
+        "sha256": "cddea82e5b51143e4107e9ed285f2acc04725a69dc929f0c432c1ceaebe20e7c",
+        "git_blob": "ee3b2d70dabedfe02e3761b3fdb25476a79e147c"
+      },
+      "docs/RESTORATION-ROADMAP-R2.md": {
+        "bytes": 482245,
+        "sha256": "830495a89612ceb54c0d8ebacd8710ceb28d7c1bfdecfc735239db76b6a1e5f8",
+        "git_blob": "c11eff237a8aaa1cc34488a6c3c7fcdd596f9ce2"
+      }
+    }
+  },
+  "source_head": "47269aba3620d85f83d785b39fba74c38c069a9f",
+  "source_tree": "fa147aabd271e5e572e4efa748ef825bf629bfb1",
+  "source_run": {
+    "id": 40274977916,
+    "head_sha": "47269aba3620d85f83d785b39fba74c38c069a9f",
+    "status": "completed",
+    "conclusion": "success",
+    "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40274977916",
+    "path": ".github/workflows/probe-stoneage-available-windows-p3e.yml",
+    "created_at": "2026-10-26T05:34:47Z",
+    "updated_at": "2026-10-26T05:35:48Z"
+  },
+  "source_job": {
+    "id": 121415693950,
+    "run_id": 40274977916,
+    "workflow_name": "Qualify available Windows display encoding and synthetic firewall P3E",
+    "head_branch": "agent/available-windows-p3e-20261026",
+    "run_url": "https://api.github.com/repos/chinaneedM/stoneage-rebuild/actions/runs/40274977916",
+    "run_attempt": 1,
+    "node_id": "CR_kwDOUfE1tc8AAAAcRPB2fg",
+    "head_sha": "47269aba3620d85f83d785b39fba74c38c069a9f",
+    "url": "https://api.github.com/repos/chinaneedM/stoneage-rebuild/actions/jobs/121415693950",
+    "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40274977916/job/121415693950",
+    "status": "completed",
+    "conclusion": "success",
+    "created_at": "2026-10-26T05:34:48Z",
+    "started_at": "2026-10-26T05:34:50Z",
+    "completed_at": "2026-10-26T05:35:47Z",
+    "name": "finite-native-qualification",
+    "steps": [
+      {
+        "name": "Set up job",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 1,
+        "started_at": "2026-10-26T05:34:50Z",
+        "completed_at": "2026-10-26T05:34:51Z"
+      },
+      {
+        "name": "Run actions/checkout@v4",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 2,
+        "started_at": "2026-10-26T05:34:51Z",
+        "completed_at": "2026-10-26T05:35:02Z"
+      },
+      {
+        "name": "Run ilammy/msvc-dev-cmd@v1",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 3,
+        "started_at": "2026-10-26T05:35:02Z",
+        "completed_at": "2026-10-26T05:35:08Z"
+      },
+      {
+        "name": "Build only two self-authored x86 programs with no modern OS manifest",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 4,
+        "started_at": "2026-10-26T05:35:08Z",
+        "completed_at": "2026-10-26T05:35:16Z"
+      },
+      {
+        "name": "Run python -m pip install --quiet pillow",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 5,
+        "started_at": "2026-10-26T05:35:16Z",
+        "completed_at": "2026-10-26T05:35:25Z"
+      },
+      {
+        "name": "Measure three finite compatibility cases and exact-path firewall canary",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 6,
+        "started_at": "2026-10-26T05:35:25Z",
+        "completed_at": "2026-10-26T05:35:42Z"
+      },
+      {
+        "name": "Remove only our own firewall rule and synthetic scratch",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 7,
+        "started_at": "2026-10-26T05:35:42Z",
+        "completed_at": "2026-10-26T05:35:43Z"
+      },
+      {
+        "name": "Run actions/upload-artifact@v4",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 8,
+        "started_at": "2026-10-26T05:35:43Z",
+        "completed_at": "2026-10-26T05:35:44Z"
+      },
+      {
+        "name": "Post Run actions/checkout@v4",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 16,
+        "started_at": "2026-10-26T05:35:44Z",
+        "completed_at": "2026-10-26T05:35:46Z"
+      },
+      {
+        "name": "Complete job",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 17,
+        "started_at": "2026-10-26T05:35:46Z",
+        "completed_at": "2026-10-26T05:35:46Z"
+      }
+    ],
+    "check_run_url": "https://api.github.com/repos/chinaneedM/stoneage-rebuild/check-runs/121415693950",
+    "labels": [
+      "windows-2022"
+    ],
+    "runner_id": 1000141388,
+    "runner_name": "GitHub Actions 1000141388",
+    "runner_group_id": 0,
+    "runner_group_name": "GitHub Actions"
+  },
+  "artifact": {
+    "id": 12629299095,
+    "node_id": "MDg6QXJ0aWZhY3QxMjYyOTI5OTA5NQ==",
+    "name": "p3e-native-qualification-derived",
+    "size_in_bytes": 4220,
+    "url": "https://api.github.com/repos/chinaneedM/stoneage-rebuild/actions/artifacts/12629299095",
+    "archive_download_url": "https://api.github.com/repos/chinaneedM/stoneage-rebuild/actions/artifacts/12629299095/zip",
+    "expired": false,
+    "digest": "sha256:de929bd18c8765b31aa549268d884aaa93335ffa7bb0122eb76226ac51d04486",
+    "created_at": "2026-10-26T05:35:44Z",
+    "updated_at": "2026-10-26T05:35:44Z",
+    "expires_at": "2026-11-02T05:35:43Z",
+    "workflow_run": {
+      "id": 40274977916,
+      "repository_id": 1374762421,
+      "head_repository_id": 1374762421,
+      "head_branch": "agent/available-windows-p3e-20261026",
+      "head_sha": "47269aba3620d85f83d785b39fba74c38c069a9f"
+    }
+  },
+  "zip_bytes": 4220,
+  "zip_sha256": "de929bd18c8765b31aa549268d884aaa93335ffa7bb0122eb76226ac51d04486",
+  "zip_members": [
+    "p3e-derived.json"
+  ],
+  "derived_file": {
+    "path": "STONEAGE-P3E-WINDOWS-ACTUAL-R1.json",
+    "bytes": 98928,
+    "sha256": "5cf118f9520a3c868c3dd48e1341eed327889a6b30f440b735b61512978f0069",
+    "git_blob": "349db3db1159792c9af6a19b5c961bcb3f8d022a"
+  },
+  "exact_control_sources": {
+    "tools/stoneage_p3e_environment.c": {
+      "bytes": 4275,
+      "sha256": "2b7b0d283d5c06308c0b2e383f94e9af31e2d13c5cd806a8c6b4c9c943e5addf",
+      "git_blob": "1ea9a92a7b56188e044a9d49c096d1c3c2249f17",
+      "native_checkout_crlf_sha256": "d551211147c50c3ee27b3e5ee198e07103251d1f9ac1394045279dfbd3738524"
+    },
+    "tools/stoneage_p3e_windows.py": {
+      "bytes": 5973,
+      "sha256": "7beb98394542e90602938a47ade753278b0d8451e6c61a533b623a5c8606e1a0",
+      "git_blob": "e8cb9b63ed5968703451345b99a4e078c562b3c1",
+      "native_checkout_crlf_sha256": "e69fb78ff3a987efc76db618d557c65144943a13683a5919ed11e6ae2ef25738"
+    },
+    "tools/stoneage_p3d_control.c": {
+      "bytes": 9582,
+      "sha256": "809599c49cad9c0790aac3fcf508a13e63f2e8cf454fa352420fe5321c709663",
+      "git_blob": "5b6c6585fd00104966e496a5b90d16616b274c19",
+      "native_checkout_crlf_sha256": "ef4d1367250b3af6638c709e7acd34735f229d99bd98e5c82ce6de00d5e7f602"
+    },
+    "tools/stoneage_p3d_bench.py": {
+      "bytes": 11432,
+      "sha256": "cccaa692f67f4a61b255d4456e0c855d8680c2ce4790511c70d03256059e6c63",
+      "git_blob": "d653d1f350d328030becc3ade24a6c247463da68",
+      "native_checkout_crlf_sha256": "13e44e352ff370909a9b5d17eb173aac1c65860640ad95307880c5348f888a77"
+    }
+  },
+  "independent_replay": "stdlib original-report values and counters, without measurement assessment helpers; 6 paths; display enumeration and console/ACP distinction; firewall before/deny/control/after",
+  "primary_documentation": [
+    {
+      "url": "https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-enumdisplaysettingsa",
+      "scope": "Legacy desktop modes may be emulated while host runs 32bpp; enumeration/CDS_TEST is not active mode proof."
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/windows/win32/api/winnls/nf-winnls-getacp",
+      "scope": "Windows ANSI code page API."
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/windows/console/setconsolecp",
+      "scope": "Console input code page; not Windows ACP."
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/configure-international-settings-in-windows?view=windows-11",
+      "scope": "Most system locale changes require restart. No system-locale mutation/reboot attempted in this package."
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/powershell/module/netsecurity/new-netfirewallrule?view=windowsserver2025-ps",
+      "scope": "Program-specific rules; actual canary separately measured."
+    }
+  ],
+  "verdict": "BLOCKED_AVAILABLE_WINDOWS_ENVIRONMENT",
+  "original_executed": false,
+  "original_isolation_qualified": false,
+  "overall_restoration_percent": null,
+  "next": "EARLY-OFFICIAL-WORLD-ENTITY-SOURCE-20"
+}

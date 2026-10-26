@@ -86,3 +86,8 @@ python -m tools.stoneage_original_animation_lab --original-dir /private/TW1/Ston
 Windows8位/编码/网络隔离资格方案并用同一合成门槛验收；不得把console codepage、
 兼容选项或成功注入等同实际ACP/色深/接收。未通过就记录环境阻塞、返回22域材料队列，
 不连扩Wine9低层helper。原游戏颜色/QUIT、声音、服务器及世界仍独立OPEN。
+
+
+## 2026-10-26 P3E：8位兼容颜色可用，完整环境仍阻塞
+
+见 `docs/continuity/STONEAGE-WINDOWS-P3E-20261026.md`。当前Windows2022的256COLOR与XP+256COLOR实际使自编GDI/DirectDraw程序报告8bpp并正确显示/接收输入；三设置ACP均1252，控制台950不改变它。单路径防火墙canary通过仅限一TCP/IPv4目标，未资格化原程序/后代。当前BLOCKED_AVAILABLE_WINDOWS_ENVIRONMENT，未重拉/运行原件；有限包结束，最高NEXT返回R20早期同版名字—实体ID—SPR材料，停止Wine/显示参数树。仅当有新的ACP950开机环境与完整同程序显示/输入/隔离证据才重开观察；原游戏颜色/QUIT/声音/世界仍OPEN。

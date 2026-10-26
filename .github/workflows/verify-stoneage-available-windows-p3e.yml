@@ -1,0 +1,21 @@
+name: Validate bounded P3E Windows qualification and custody
+on:
+  push:
+    branches: [main, agent/available-windows-p3e-20261026]
+    paths:
+      - 'tools/stoneage_p3e_*'
+      - 'tests/test_stoneage_p3e_*'
+      - 'research/recovered/STONEAGE-P3E-*.json'
+      - 'docs/continuity/STONEAGE-WINDOWS-P3E-20261026.md'
+      - '.github/workflows/verify-stoneage-available-windows-p3e.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python -m unittest -v tests.test_stoneage_p3e_windows tests.test_stoneage_p3d_bench tests.test_stoneage_p3d_evidence_guard
+      - run: python -m tools.stoneage_p3e_evidence_guard
+      - run: python -m tools.stoneage_p3d_evidence_guard
