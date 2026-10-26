@@ -50,7 +50,11 @@ def acquire(work,context):
  except Found:pass
  need(bool(selected),'original ADRN not found within finite budget')
  context.update(headers_visited=visited,selected_header=selected,range_receipts=reader.receipts,public_pages=pages)
- header=reader.at(selected['header_offset'],selected['data_offset']-selected['header_offset']);packed=reader.at(selected['data_offset'],selected['compressed_bytes'])
+ header=reader.at(selected['header_offset'],selected['data_offset']-selected['header_offset'])
+ # Retain the existing2MiB per-read guard; selected payloads are read as finite
+ # 1MiB pieces within the unchanged total source budget.
+ packed=b''.join(reader.at(selected['data_offset']+i,min(1024*1024,selected['compressed_bytes']-i))
+  for i in range(0,selected['compressed_bytes'],1024*1024))
  carrier=work/'selected.rar';carrier.write_bytes(isolated_rar(header,packed,selected['flags']))
  out=work/'out';out.mkdir();p=subprocess.run(['unar','-f','-o',str(out),str(carrier)],stdout=subprocess.PIPE,stderr=subprocess.PIPE,timeout=180)
  context['extractor']={'name':'unar','return_code':p.returncode,'diagnostic':(p.stdout+p.stderr).decode('utf-8','replace')[-1200:] if p.returncode else ''}
