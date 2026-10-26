@@ -1,0 +1,308 @@
+{
+  "schema": "stoneage.cn5_three_animation_material_summary.r26",
+  "task": "CN5-ADDITIONAL-ANIMATION-MATERIAL-26",
+  "source_head": "0db5d096a567f62e88ac36796766c3e37cc3b060",
+  "selection": [
+    100700,
+    100701,
+    100702
+  ],
+  "source_pins": {
+    "research/recovered/cn50-resource-metadata/SPR-GROUP-R1.tsv.gz": {
+      "bytes": 61649,
+      "sha256": "67660d3d8ba5e05293f61f60ab3e1bfe736d7b6bdc4159ed96fcb59f5acfa228",
+      "git_blob": "f4a41ba999167185b55a42c89ece9e24d456e637"
+    },
+    "research/recovered/cn50-resource-metadata/SPR-ANIMATION-R1.tsv.gz": {
+      "bytes": 852766,
+      "sha256": "63f444ac202a7a9d1d7afafbd068a78d8724a843ea8174bb4d36b83a13cfa8b7",
+      "git_blob": "0da62abce6aecd476ca95f6fc2a8679105d0b09d"
+    },
+    "research/recovered/cn50-resource-metadata/SPR-FRAME-R1.tsv.gz": {
+      "bytes": 4223038,
+      "sha256": "0b5a326ddd70a5d6957b7e8c6faa2f8e0b7bed2dd70ab02bef9bb86f39f9b3ab",
+      "git_blob": "6e98e5fea26a69aa5c7042bab1707c7a330c6bf7"
+    },
+    "research/recovered/cn50-resource-metadata/ADRN-R1.tsv.gz": {
+      "bytes": 19745873,
+      "sha256": "e24afc513d28c7f25bd26bde9c69ddc0de4000147a2b11f50b5176655d8558fd",
+      "git_blob": "127670eaf2bc19ba9d15776d090a8307058f729d"
+    },
+    "research/recovered/cn50-resource-metadata/MANIFEST-R1.json": {
+      "bytes": 3001,
+      "sha256": "73181d1de1efadc971eaea254891103bd69fd7d3121fc450ec3b148ca8d06fa8",
+      "git_blob": "5063cf2fade4e0739ac35c38a90dfff1a43db960"
+    },
+    "research/recovered/tw10-resource-metadata/SPR-GROUP-R1.tsv.gz": {
+      "bytes": 23827,
+      "sha256": "4db7809de4197eb90cca6dc04bda8550025e022c8232e2ebb902db0e9faf0175",
+      "git_blob": "5ec65f043848fb3260bc04c94847b45fb1706d36"
+    },
+    "research/recovered/tw10-resource-metadata/ADRN-R1.tsv.gz": {
+      "bytes": 8238749,
+      "sha256": "c8669789de1cc6e3575c2412ed86354a49c2b3e90cd2854c1e7b2fc71b0fe9ea",
+      "git_blob": "e389540f9962d1868c42b1edfe2acc7c83387ff1"
+    },
+    "research/recovered/tw10-resource-metadata/MANIFEST-R1.txt": {
+      "bytes": 1928,
+      "sha256": "fb9b2dbe52a305f5ff2934cc1dcdf275be1215e2a89b326dd76fd7f80b6d9743",
+      "git_blob": "6154dcf806163b82cb96af344e6a644143d15f56"
+    },
+    "research/recovered/STONEAGE-TW10-CN50-REAL-RESOURCE-CUSTODY-R1.json": {
+      "bytes": 969,
+      "sha256": "9eeab87743c4ee65e7fcafb605eb7f12cafd2fb68c1afee962128ade7318c8de",
+      "git_blob": "6a285c96f3580f4034d6b84fef08f479c1aa6e03"
+    }
+  },
+  "source_profile": "PRESERVED_CN5_CAB_MSI_5_00_0000_NOT_INDEPENDENTLY_AUTHENTICATED_CLEAN_PRESSING",
+  "source_containers": {
+    "adrn": {
+      "bytes": 24255760,
+      "name": "adrn_31.bin",
+      "sha256": "0a1b600b25f4ccb181fe862970fb40298e49d5665728974587fd5e59b7f53d4c"
+    },
+    "real": {
+      "bytes": 1102755808,
+      "name": "real_31.bin",
+      "sha256": "9ecf2180170b8bb1886beba428eaf0e3ed8036332835046df0960a26fabeacc7"
+    },
+    "spr": {
+      "bytes": 7145946,
+      "name": "spr_17.bin",
+      "sha256": "1df3b732bd46ec5531806226447ac51e835db0bbfb39226c26ce34c89122f606"
+    },
+    "spradrn": {
+      "bytes": 14220,
+      "name": "spradrn_17.bin",
+      "sha256": "fec0e780fe3cdb5455e7fb7b2526cbbe9758cc5310e4b8857f0008ea31fc327b"
+    }
+  },
+  "per_group": {
+    "100700": {
+      "animations": 104,
+      "frame_occurrences": 488,
+      "unique_bitmap_numbers": 344,
+      "directions": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "raw_action_codes": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "raw_duration_histogram": {
+        "100": 8,
+        "1000": 40,
+        "600": 32,
+        "800": 24
+      },
+      "raw_sound_word_histogram": {
+        "0": 472,
+        "10000": 8,
+        "10006": 8
+      },
+      "sentinel_frame_occurrences": 0
+    },
+    "100701": {
+      "animations": 104,
+      "frame_occurrences": 488,
+      "unique_bitmap_numbers": 344,
+      "directions": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "raw_action_codes": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "raw_duration_histogram": {
+        "100": 8,
+        "1000": 40,
+        "600": 32,
+        "800": 24
+      },
+      "raw_sound_word_histogram": {
+        "0": 464,
+        "10002": 8,
+        "10006": 8,
+        "3": 8
+      },
+      "sentinel_frame_occurrences": 0
+    },
+    "100702": {
+      "animations": 104,
+      "frame_occurrences": 488,
+      "unique_bitmap_numbers": 344,
+      "directions": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "raw_action_codes": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "raw_duration_histogram": {
+        "100": 8,
+        "1000": 40,
+        "600": 32,
+        "800": 24
+      },
+      "raw_sound_word_histogram": {
+        "0": 464,
+        "10003": 8,
+        "10006": 8,
+        "2": 8
+      },
+      "sentinel_frame_occurrences": 0
+    }
+  },
+  "animation_occurrences": 312,
+  "frame_occurrences": 1464,
+  "physical_bitmaps": 936,
+  "unique_complete_rd_contents": 936,
+  "bitmap_group_membership": {
+    "100700": 296,
+    "100700+100701+100702": 48,
+    "100701": 296,
+    "100702": 296
+  },
+  "tw10_full_bitmap_records_searched": 125996,
+  "selected_physical_ids_present_in_tw10": 0,
+  "selected_rd_contents_found_in_tw10": 0,
+  "three_numeric_sequence_shapes_equal_excluding_bitmap_and_sound_words": true,
+  "common_three_group_bitmaps": [
+    127292,
+    127293,
+    127294,
+    127295,
+    127296,
+    127297,
+    127335,
+    127336,
+    127337,
+    127338,
+    127339,
+    127340,
+    127378,
+    127379,
+    127380,
+    127381,
+    127382,
+    127383,
+    127421,
+    127422,
+    127423,
+    127424,
+    127425,
+    127426,
+    127464,
+    127465,
+    127466,
+    127467,
+    127468,
+    127469,
+    127507,
+    127508,
+    127509,
+    127510,
+    127511,
+    127512,
+    127550,
+    127551,
+    127552,
+    127553,
+    127554,
+    127555,
+    127593,
+    127594,
+    127595,
+    127596,
+    127597,
+    127598
+  ],
+  "common_bitmap_frame_occurrences": 144,
+  "common_bitmap_raw_action_codes": [
+    12
+  ],
+  "nonzero_raw_sound_word_occurrences": 64,
+  "nonzero_raw_sound_words": [
+    2,
+    3,
+    10000,
+    10002,
+    10003,
+    10006
+  ],
+  "complete_spr_segments_reencoded": 3,
+  "boundaries": {
+    "new_original_bytes_downloaded": false,
+    "original_program_executed": false,
+    "original_asset_bytes_published": 0,
+    "original_file_bytes_deleted": 0,
+    "actual_pixels_viewed_or_rendered": false,
+    "sound_words_linked_to_audio_files": false,
+    "sound_heard_or_played": false,
+    "named_character_pet_or_npc_identity_proven": false,
+    "raw_direction_codes_named_as_compass_directions": false,
+    "raw_action_codes_named_as_gameplay_actions": false,
+    "cn5_duration_unit_or_game_fps_proven": false,
+    "tw10_loader_timing_formula_promoted_to_cn5": false,
+    "all_versions_contain_or_lack_these_assets_proven": false,
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b_wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING",
+    "overall_completion_percent": null
+  },
+  "next": "KR-NETMARBLE120-CLIENT-SOURCE-27"
+}

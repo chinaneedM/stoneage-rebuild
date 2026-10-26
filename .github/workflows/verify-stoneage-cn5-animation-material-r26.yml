@@ -1,0 +1,31 @@
+name: Verify three CN5 native animation groups and exact RD material R26
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'tools/stoneage_cn5_animation_material_r26.py'
+      - 'tools/stoneage_cn5_animation_r26_sql.py'
+      - 'tools/stoneage_original_animation_lab.py'
+      - 'tests/test_stoneage_cn5_animation_material_r26.py'
+      - 'research/recovered/STONEAGE-CN5-ANIMATION-*'
+      - 'research/recovered/cn50-resource-metadata/**'
+      - 'research/recovered/tw10-resource-metadata/**'
+      - 'docs/specs/STONEAGE-CN5-ANIMATION-MATERIAL-R26.md'
+      - 'docs/continuity/STONEAGE-CN5-ANIMATION-R26-20261026.md'
+      - '.github/workflows/verify-stoneage-cn5-animation-material-r26.yml'
+permissions:
+  contents: read
+jobs:
+  native-material-and-independent-sql:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest -v tests.test_stoneage_cn5_animation_material_r26
+      - name: Replay all selected raw frames and complete SPR segment digests
+        run: python -m tools.stoneage_cn5_animation_material_r26
+      - name: Independently join complete source tables through SQLite
+        run: python -m tools.stoneage_cn5_animation_r26_sql
