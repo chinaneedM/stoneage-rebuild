@@ -1,0 +1,746 @@
+{
+  "schema": "stoneage.post_original_observation.material_portfolio.r23",
+  "date": "2026-10-26",
+  "task": "POST-ORIGINAL-OBSERVATION-MATERIAL-PORTFOLIO-23",
+  "source_head": "f9fae070ca0dcc132f5fcca3e11baf492b1c5dd1",
+  "source_tree": "c7f089953d7e04bcbe01ed3468024cd9ca93301a",
+  "prior_current_git_blob": "031c76a5a8e431f646853909bb2f2e11e6328cd2",
+  "baseline": {
+    "path": "research/recovered/STONEAGE-MATERIAL-PORTFOLIO-REVIEW-R102.json",
+    "sha256": "e555451cf5f214547a44413ac66645cfd1130913d70e3df7c11755eb481017fe"
+  },
+  "source_pins": {
+    "research/recovered/STONEAGE-WAYI-OFFICIAL-WORLDLINE-R1.json": {
+      "bytes": 11952,
+      "sha256": "619c2b931174058b87eb97631beb11a995c41fedb26010a94c42e9cc54aa785b",
+      "git_blob": "be6fc0ae90243f49af8366c3817ae464c5412c18"
+    },
+    "research/recovered/STONEAGE-FOUR-CLIENT-CONTENT-SUMMARY-R24.json": {
+      "bytes": 4871,
+      "sha256": "93b37f0e6709493e240874f23a56edb44f727f24e2dafb35f1414eea424520d3",
+      "git_blob": "9525d6baadf80e4ee4f5d2aaf6c566cfc09d8156"
+    },
+    "research/recovered/STONEAGE-TW10-LOGIN-AVATAR-CATALOG-R1.json": {
+      "bytes": 21450,
+      "sha256": "ca177dd642f3b539a8aa4bfa27edfe1694dc813fa28f294973f5613fba575682",
+      "git_blob": "d09ff9961f677b7e0b212fbfc8c290cc04892c14"
+    },
+    "research/recovered/STONEAGE-TW10-ORIGINAL-BOOT-P3-CUSTODY-R1.json": {
+      "bytes": 6267,
+      "sha256": "67e471985d074227e6c17d7087398ea7c55b31f69f5901d3d9136258f9bc53c3",
+      "git_blob": "23ca3d2999c831f5bb12a2b40cb7b30bac732f16"
+    },
+    "research/recovered/STONEAGE-TW10-ORIGINAL-LOGIN-P3C-CUSTODY-R1.json": {
+      "bytes": 6329,
+      "sha256": "468a0679f66ecc62adde20d087997282c11076a29b4e42464261f944cdf953fa",
+      "git_blob": "d55cd238a723ebf903f7896cd325e7eb82d4126b"
+    },
+    "research/recovered/STONEAGE-P3E-WINDOWS-ACTUAL-R1.json": {
+      "bytes": 98928,
+      "sha256": "5cf118f9520a3c868c3dd48e1341eed327889a6b30f440b735b61512978f0069",
+      "git_blob": "349db3db1159792c9af6a19b5c961bcb3f8d022a"
+    },
+    "research/recovered/STONEAGE-JP2003-CHARACTER-VISUAL-CATALOG-R1.json": {
+      "bytes": 21849,
+      "sha256": "5948e728b0a872f537c868d7690dfaf14caae7787c4ce290a8a97a6af2b46ba9",
+      "git_blob": "914dd1802cff33b9a61410f63f1d1ad69fe845b4"
+    },
+    "research/recovered/STONEAGE-TW10-CREATION-BODY-WINDOW-R16.json": {
+      "bytes": 12876,
+      "sha256": "03be7a2c14f71c96c8114156c7189d836d99b805895510edf453ae9f706d7a59",
+      "git_blob": "4e0d8bddf6ee9e9de372b0b484d3489796007726"
+    },
+    "research/recovered/STONEAGE-TW10-ANIMATION-SELECTOR-R101.json": {
+      "bytes": 15620,
+      "sha256": "b6e0dd1482a675d49d005fb947c1873b0776ba25289c1c03f3ac259fa54ddd92",
+      "git_blob": "4623037e3ef703ae7bf81acc9a5ba35eaa587517"
+    },
+    "research/recovered/STONEAGE-TW10-ANIMATION-OBSERVATION-P2A-ACTUAL-SOURCE-R1.json": {
+      "bytes": 9161,
+      "sha256": "6840e79c5e237222884c03760c3c832987a133d22783bc3cb684e9d9c04b85bf",
+      "git_blob": "d74a0b91768ac6574f27609c3cab24315084d06e"
+    },
+    "research/recovered/STONEAGE-TW10-PALETTE-P2B-ACTUAL-COLOR-SOURCE-R1.json": {
+      "bytes": 10821,
+      "sha256": "3521274ecb0cc861623c9a8ccc43ec95c2b7c7719f2949e5e611be80a36a4977",
+      "git_blob": "4569af739f7a54e4a5c0241c894ea5e26cb421fc"
+    },
+    "research/recovered/STONEAGE-CN2001-WORLD-ROUTES-RECORD-SOURCE-R96.json": {
+      "bytes": 5406,
+      "sha256": "aed78aab99f6db38ec10577dde61b1999717b422705485625e2f6a55323d82fc",
+      "git_blob": "e2bc3c5e1dc3eae4ee61b9c6ab85de7cb9f82538"
+    },
+    "research/recovered/STONEAGE-EARLY-WORLD-ENTITY-SOURCE-R20.json": {
+      "bytes": 4539,
+      "sha256": "b454a45b186f7f90bb7f35886c75048ef01cc1493453072606922efb7d56df91",
+      "git_blob": "3c3e3fb9d99be95315714ae538164a9d67242188"
+    },
+    "research/recovered/STONEAGE-FOUR-MAP-RESOURCE-CONTENT-R21.json.xz": {
+      "bytes": 179692,
+      "sha256": "9aec80e3a5291998f058bd873e3f9508f7179c54badad27d43701af8dfc8f0a5",
+      "git_blob": "9a55d5217d3145f4f9434e24be28767641a74dea"
+    },
+    "research/recovered/STONEAGE-TW10-NPC-STATIC-RESOURCE-JOIN-R99.json": {
+      "bytes": 54728,
+      "sha256": "9b73469fef2ebe27a4369ecc76e8cb57d0ef853ffb4f87d2228609c7a8b52ee1",
+      "git_blob": "21d49800a1191f87a006aaa5af4a6f7975f91bf7"
+    },
+    "research/recovered/STONEAGE-TW10-ORIGINAL-EXE-TEXT-CANDIDATES-R19.json": {
+      "bytes": 21776,
+      "sha256": "66bef73e28bfc8c2cda25d8a1b3a48c62dc1d90a7dc20be452931e03ab7d161c",
+      "git_blob": "c573421726c6161fe580a80dcb32ca55c0908ea0"
+    },
+    "research/recovered/STONEAGE-MIXED25-SERVER-FULL-SOURCE-R18.json": {
+      "bytes": 665112,
+      "sha256": "c7e2623fca1da65dee858782f6f1d14c82914d60f14a1643fa852532c5a6fb29",
+      "git_blob": "f4ac9b805724bcd847c9632cad3c35bc4309a526"
+    },
+    "research/recovered/STONEAGE-CN2003-KATAN-NPC-VISUAL-SOURCE-R100.json": {
+      "bytes": 5564,
+      "sha256": "04494355d31ac97e26f6ce275ca6c10eb05a5b50da0998bece67439a0a7c6cdf",
+      "git_blob": "9069cbc0c880971c8ebb91ffd565f81c4caf5e8f"
+    },
+    "research/recovered/STONEAGE-CN-KATAN-QUEST-SOURCE-CONFLICTS-R98.json": {
+      "bytes": 7341,
+      "sha256": "551a397d3a339d6444b03f7121e02bf47aef15ae1071f042f6ef04ca737d0eef",
+      "git_blob": "e92c249a74582ba6f5af5b41f49540ec9d1cd1d2"
+    },
+    "research/recovered/STONEAGE-WAEI-CN20-NEW-PET-FINITE-CATALOG-R1.json": {
+      "bytes": 173510,
+      "sha256": "8bcda48e9e8e298efe446b02f0039146fa4a81e509ca4d08c4989e6448f59fdb",
+      "git_blob": "f950aa33af0b3ec8693b2867758faf006aee546b"
+    },
+    "research/recovered/logical-alias-catalog-r1/REPORT-R1.json": {
+      "bytes": 8945,
+      "sha256": "e5dc7249b20a60b13fc4bf12b299d4a6f386fcb928d5d8843017ded58f9c1951",
+      "git_blob": "3a694c3e6dc2f8bef291381674c53667c9a60507"
+    },
+    "research/recovered/STONEAGE-CN-EARLY-PIG-CATALOG-IMAGE-IDENTITY-SOURCE-R97.json": {
+      "bytes": 8511,
+      "sha256": "8d5c6a407a36465d1435b433efd7742aeb67fec9d52b729e02eea592d1bae370",
+      "git_blob": "d182d35eaf3d803c488fbf697e757deb75ccd193"
+    },
+    "research/recovered/STONEAGE-PET-ASSET-GROWTH-CATALOG-MATRIX-R1.json": {
+      "bytes": 11286,
+      "sha256": "5e12fb04e408a5f7a452cee634ed14b7618b32fe44dc758ba0a17b0207926678",
+      "git_blob": "8e447f7bf928f3d56cf8711ed22102e7e1ccaf38"
+    },
+    "research/recovered/STONEAGE-CN2003-PET-GROWTH-PLAYER-CLAIMS-SOURCE-R1.json": {
+      "bytes": 7119,
+      "sha256": "fc190956ea16bfe96f41d334382e754c385bf2af45904e4fc61f854d4543f7cf",
+      "git_blob": "863a773feecaa1d129789e46b966078b9e6c7b3b"
+    },
+    "research/recovered/STONEAGE-CN2004-PET-SKILL-TRAINER-SOURCE-R1.json": {
+      "bytes": 14778,
+      "sha256": "90bc79a7c824ffae88f2e974de692252fb37345eacafa9db26f87bb62bbc9a70",
+      "git_blob": "b6f42811c23cadc8b80fabb0a53b98a6aa9e8b2f"
+    },
+    "research/recovered/STONEAGE-CN20-PET-COMMISSION-HABITATS-CATALOG-R1.json": {
+      "bytes": 19183,
+      "sha256": "cc2b740d77b9451474a572f092d8cc1a115ef22fe3e7e0ec76a1daf78d084a00",
+      "git_blob": "56545290e9c1412666b7a2001619c53c187aab6a"
+    },
+    "research/recovered/STONEAGE-CN40-RIDING-CERTIFICATE-MANOR-SOURCE-R1.json": {
+      "bytes": 29266,
+      "sha256": "3c0f771e0547ed753b38359ccf61023f54c82b4ba4ba2dc1684a1ac8b6f7aae8",
+      "git_blob": "bee8fae59158f38f1167fe3b10e4ddfd7206b166"
+    },
+    "research/recovered/STONEAGE-CN20-BATTLE-COMMANDS-DEFEAT-SOURCE-R1.json": {
+      "bytes": 17776,
+      "sha256": "881145f56f5f279cc05afb9595e71314f74090a51f4b14307dae3cc2be67f6f9",
+      "git_blob": "85c428fe0b6ea44b00a850c0e3fc49ac1360630f"
+    },
+    "research/recovered/STONEAGE-BATTLE-SAB-CROSSVERSION-R17-CORRECTED-R24.json": {
+      "bytes": 151568,
+      "sha256": "f7abf6a5f14d9bcf1c472d3926b98fe6b874724c55e393aede7fa51a727b25bc",
+      "git_blob": "68a11b83c289720c110c3ea2fcf489f6701bd427"
+    },
+    "research/recovered/STONEAGE-TW10-ITEM-STATIC-BITMAP-SOURCE-R1.json": {
+      "bytes": 21307,
+      "sha256": "9916bab4e8b94188e8b4dc9c0e5f6cd2537464311f3c3409a6a04d72fffec2b8",
+      "git_blob": "1210b0f910c353d58a3d6a4c458dda38f48aba86"
+    },
+    "research/recovered/STONEAGE-TW10-AUDIO-EVENT-GATE-R1.json": {
+      "bytes": 11013,
+      "sha256": "ce1cd5738dac1a571999eea9ea6ee5ead86341f30bff4f0c4e4610a80f917047",
+      "git_blob": "67cc3707d45b6f079432b1db29b043851571b518"
+    },
+    "research/recovered/STONEAGE-CROSSVERSION-AUDIO-CONTENT-R1.json": {
+      "bytes": 208619,
+      "sha256": "a1be31e228dc64c75b22fdcbd50979e02a85ce0ee01bbe261d7c36477be977c9",
+      "git_blob": "c5c3fa85626d493ba134bcacda7a60d5df30ffd5"
+    },
+    "research/recovered/STONEAGE-PRIVATE-AUDIO-R22-DELIVERY-R1.json": {
+      "bytes": 1309,
+      "sha256": "93d3a783527260925e3c83b50322d5bfdeb84f526f0f7c3921c60825f9e05ade",
+      "git_blob": "3008b363569fd4f046fd101ffaa3856c734de364"
+    },
+    "research/recovered/STONEAGE-EARLY-ASSISTANT-VERSIONS-R1.json": {
+      "bytes": 6662,
+      "sha256": "69e79885e2c032b99f17666b131d1abf7f3f81fe33699b702103d055fc399667",
+      "git_blob": "7a518dff830c6a0a62add101e43a2d34aeb528c9"
+    },
+    "research/recovered/STONEAGE-LEGACY-STA252-FEATURES-R1.json": {
+      "bytes": 2898,
+      "sha256": "b11d89574fcfbfc9631295a4e692e9dcbf7306c61d8c2188d3fd3f6123ea8e62",
+      "git_blob": "080404f40578521e445772dee6cf606f5cf82731"
+    },
+    "research/recovered/STONEAGE-HISTORICAL-SITE-NAVIGATION-CATALOG-R1.json": {
+      "bytes": 40201,
+      "sha256": "8d028a8d596f855aad436356bae2d57866a2e058748cc5d34bdfa6ac83fc4fba",
+      "git_blob": "c66fae4ad41cc410199075fbb3ce5777f79d56fa"
+    },
+    "research/recovered/STONEAGE-PREPRODUCTION-CONTENT-ARCHIVE-R1.json": {
+      "bytes": 24489,
+      "sha256": "e87afebc8c9590142c7cc8831b578455b3427bf7c1d10520ae02a3e8082fbddb",
+      "git_blob": "2d5b3f081d5618287f431fbded943722a820c593"
+    }
+  },
+  "domains": [
+    {
+      "baseline": {
+        "id": "version_lineage",
+        "order": 1,
+        "label": "版本谱系",
+        "baseline_status": "PARTIAL_SOURCE",
+        "anchor": "research/recovered/STONEAGE-WAYI-OFFICIAL-WORLDLINE-R1.json",
+        "available": "分地区版本与运营叙事已有；不能以页脚年份认证客户端构建。",
+        "remaining_gap": "日本1999同版原客户端及服务器谱系仍缺。",
+        "complete": false
+      },
+      "new_material_evidence": true,
+      "incremental_sources": [
+        "research/recovered/STONEAGE-FOUR-CLIENT-CONTENT-SUMMARY-R24.json"
+      ],
+      "layers": {
+        "material": "四份实际取得样本3655条完整文件引用，2488内容；TW1认证、mixed25/CN5/声称TW85分级保留。",
+        "visible_or_audible_delivery": "仅派生目录公开，无商业客户端交付。",
+        "original_execution": "P3仅TW1原进程曾实际启动；后期样本不因此认证可运行。",
+        "identity_and_missing_source": "日本1999原版、更多完整官方样本与早期服务器仍缺。"
+      },
+      "complete": false
+    },
+    {
+      "baseline": {
+        "id": "login_splash",
+        "order": 2,
+        "label": "登录、选服、角色列表",
+        "baseline_status": "OPEN_VISUAL",
+        "anchor": "research/recovered/STONEAGE-TW10-LOGIN-AVATAR-CATALOG-R1.json",
+        "available": "原TW1传输/选角字段已有，台湾2000报刊照片另有边界。",
+        "remaining_gap": "同build登录全状态、原背景/字体/音效与真实交互仍缺。",
+        "complete": false
+      },
+      "new_material_evidence": true,
+      "incremental_sources": [
+        "research/recovered/STONEAGE-TW10-ORIGINAL-BOOT-P3-CUSTODY-R1.json",
+        "research/recovered/STONEAGE-TW10-ORIGINAL-LOGIN-P3C-CUSTODY-R1.json",
+        "research/recovered/STONEAGE-P3E-WINDOWS-ACTUAL-R1.json"
+      ],
+      "layers": {
+        "material": "TW1原375运行文件曾在隔离Wine32/ACP950/8bpp启动。",
+        "visible_or_audible_delivery": "私人原登录画面确见；颜色异常，非完整正确登录/世界交付。",
+        "original_execution": "原进程启动、登录屏可见；QUIT点击未证退出，全屏在输入前崩溃。P3E仅合成Windows控件通过部分测试。",
+        "identity_and_missing_source": "系统ACP1252且原进程及后代隔离未合格；原完整交互/进入世界仍缺。"
+      },
+      "complete": false
+    },
+    {
+      "baseline": {
+        "id": "character_creation",
+        "order": 3,
+        "label": "人物创建和选角",
+        "baseline_status": "PARTIAL_STRUCTURE",
+        "anchor": "research/recovered/STONEAGE-JP2003-CHARACTER-VISUAL-CATALOG-R1.json",
+        "available": "日服2003官方网页12个未命名位置，补充像素来自2006另一时点。",
+        "remaining_gap": "不能转作TW1可选人物表、姓名或原生body/face ID。",
+        "complete": false
+      },
+      "new_material_evidence": true,
+      "incremental_sources": [
+        "research/recovered/STONEAGE-TW10-CREATION-BODY-WINDOW-R16.json"
+      ],
+      "layers": {
+        "material": "原EXE有界窗口前12个100000至100220值匹配原SPR组键。",
+        "visible_or_audible_delivery": "未取得原角色创建界面实际交互画面。",
+        "original_execution": "静态窗口不是运行时选择索引或全表边界。",
+        "identity_and_missing_source": "具名人物、body/face绑定和实际创建状态未证。"
+      },
+      "complete": false
+    },
+    {
+      "baseline": {
+        "id": "character_sprite_model",
+        "order": 4,
+        "label": "人物二维模型/动作/外观",
+        "baseline_status": "PARTIAL_RESOURCE",
+        "anchor": "research/recovered/STONEAGE-TW10-ANIMATION-SELECTOR-R101.json",
+        "available": "同版原指令补方向/动作首匹配、回退及帧倒计时。",
+        "remaining_gap": "人物/宠物身份→对象键→原SPR尚缺；合成执行不证完整绘制。",
+        "complete": false
+      },
+      "new_material_evidence": true,
+      "incremental_sources": [
+        "research/recovered/STONEAGE-TW10-ANIMATION-OBSERVATION-P2A-ACTUAL-SOURCE-R1.json",
+        "research/recovered/STONEAGE-TW10-PALETTE-P2B-ACTUAL-COLOR-SOURCE-R1.json"
+      ],
+      "layers": {
+        "material": "原SPR组100000三序列25帧位/16位图已源端处理；初始化色表原读取规则已复核。",
+        "visible_or_audible_delivery": "源端确实生成三份初始化色预览，随后清理；未取得持久原彩色HTML/像素用户交付，不把合成HTML冒充原图。",
+        "original_execution": "解析/预览不是原引擎场景、历史截图或实际场景色表选择。",
+        "identity_and_missing_source": "人物/宠物姓名至资源键和完整场景色彩仍缺。"
+      },
+      "complete": false
+    },
+    {
+      "baseline": {
+        "id": "world_map",
+        "order": 5,
+        "label": "原野地图、村落、坐标、道路",
+        "baseline_status": "PARTIAL_STRUCTURE",
+        "anchor": "research/recovered/STONEAGE-CN2001-WORLD-ROUTES-RECORD-SOURCE-R96.json",
+        "available": "2001玩家稿保存四岛、路线与记录点叙述。",
+        "remaining_gap": "原TW1地图DAT、场景实体、floor及端点仍未联接。",
+        "complete": false
+      },
+      "new_material_evidence": true,
+      "incremental_sources": [
+        "research/recovered/STONEAGE-EARLY-WORLD-ENTITY-SOURCE-R20.json",
+        "research/recovered/STONEAGE-FOUR-MAP-RESOURCE-CONTENT-R21.json.xz"
+      ],
+      "layers": {
+        "material": "四份2003第三方地图已数值资源内容联接；4000第二平面值4的133格缺TW1别名。",
+        "visible_or_audible_delivery": "资源数值联接没有原地图完整画面交付。",
+        "original_execution": "未进入原世界；不同年代地图不认证TW1原场景。",
+        "identity_and_missing_source": "R20无新同版具名实体源，仅新认证同构建源重开。"
+      },
+      "complete": false
+    },
+    {
+      "baseline": {
+        "id": "npc_identity",
+        "order": 6,
+        "label": "NPC及商店服务人员",
+        "baseline_status": "OPEN_CONTENT",
+        "anchor": "research/recovered/STONEAGE-TW10-NPC-STATIC-RESOURCE-JOIN-R99.json",
+        "available": "101条同版静态图号→资源map_number已固定；不是101具名NPC。",
+        "remaining_gap": "NPC名/出生位置/脚本→静态图身份仍缺。",
+        "complete": false
+      },
+      "new_material_evidence": true,
+      "incremental_sources": [
+        "research/recovered/STONEAGE-TW10-ORIGINAL-EXE-TEXT-CANDIDATES-R19.json",
+        "research/recovered/STONEAGE-EARLY-WORLD-ENTITY-SOURCE-R20.json",
+        "research/recovered/STONEAGE-MIXED25-SERVER-FULL-SOURCE-R18.json"
+      ],
+      "layers": {
+        "material": "TW1 CP950短字串候选保留；mixed25实有2245服务端文件，2121内容，补回18文件。",
+        "visible_or_audible_delivery": "没有新增原版具名NPC画面。",
+        "original_execution": "2205个NPC目录文件位置不是原版NPC人数，原TW1 NPC执行未证。",
+        "identity_and_missing_source": "姓名/坐标/脚本/图像的同构建身份仍缺，不以社区数据冒充原服。"
+      },
+      "complete": false
+    },
+    {
+      "baseline": {
+        "id": "npc_dialog_ui",
+        "order": 7,
+        "label": "NPC对话窗口与选项",
+        "baseline_status": "PARTIAL_STRUCTURE",
+        "anchor": "research/recovered/STONEAGE-CN2003-KATAN-NPC-VISUAL-SOURCE-R100.json",
+        "available": "当前新浪指南两张全图支持卡坦目标名/四鱼请求窗口。",
+        "remaining_gap": "未知准确商业build，不证原TW1 WN布局、成功交宠或确认ACK。",
+        "complete": false
+      },
+      "new_material_evidence": true,
+      "incremental_sources": [
+        "research/recovered/STONEAGE-TW10-ORIGINAL-EXE-TEXT-CANDIDATES-R19.json"
+      ],
+      "layers": {
+        "material": "原EXE短文本候选与后期原服务端文件分层。",
+        "visible_or_audible_delivery": "未新增原TW1对话窗口交付。",
+        "original_execution": "静态字符串未证明实际被显示/选中。",
+        "identity_and_missing_source": "同版NPC对话、选项分支与事务ACK仍缺。"
+      },
+      "complete": false
+    },
+    {
+      "baseline": {
+        "id": "quest_content",
+        "order": 8,
+        "label": "任务与奖励",
+        "baseline_status": "OPEN_CONTENT",
+        "anchor": "research/recovered/STONEAGE-CN-KATAN-QUEST-SOURCE-CONFLICTS-R98.json",
+        "available": "两代卡坦玩家稿保存分阶段交付及五项冲突。",
+        "remaining_gap": "服务端任务脚本、戒指回补、保存标志与真实交易仍缺。",
+        "complete": false
+      },
+      "new_material_evidence": true,
+      "incremental_sources": [
+        "research/recovered/STONEAGE-MIXED25-SERVER-FULL-SOURCE-R18.json",
+        "research/recovered/STONEAGE-EARLY-WORLD-ENTITY-SOURCE-R20.json"
+      ],
+      "layers": {
+        "material": "社区服务端全文件覆盖已纠正，非原TW1任务主表。",
+        "visible_or_audible_delivery": "无新增原TW1任务声画交付。",
+        "original_execution": "未执行原TW1任务/奖励/存档事务。",
+        "identity_and_missing_source": "DD-028四类任务来源隔离；缺同版任务身份和服务端脚本。"
+      },
+      "complete": false
+    },
+    {
+      "baseline": {
+        "id": "pet_species",
+        "order": 9,
+        "label": "宠物物种/变体/名称",
+        "baseline_status": "OPEN_SAME_BUILD_ROSTER",
+        "anchor": "research/recovered/STONEAGE-WAEI-CN20-NEW-PET-FINITE-CATALOG-R1.json",
+        "available": "CN2.0网页104位置包含原首批40；JP目录124位置另版独立。",
+        "remaining_gap": "228跨版网页位置不是原TW1物种分母；不按译名合种。",
+        "complete": false
+      },
+      "new_material_evidence": true,
+      "incremental_sources": [
+        "research/recovered/logical-alias-catalog-r1/REPORT-R1.json",
+        "research/recovered/STONEAGE-EARLY-WORLD-ENTITY-SOURCE-R20.json"
+      ],
+      "layers": {
+        "material": "原逻辑别名和后期资源重复保留；完整文件同哈希仅是字节关系。",
+        "visible_or_audible_delivery": "本阶段未新增具名宠物可见交付。",
+        "original_execution": "未在原游戏中观测物种实体。",
+        "identity_and_missing_source": "资源图号/文件哈希/译名不能补同版宠物主表或跨区物种身份。"
+      },
+      "complete": false
+    },
+    {
+      "baseline": {
+        "id": "pet_visual",
+        "order": 10,
+        "label": "宠物图像、动画、动作",
+        "baseline_status": "PARTIAL_RESOURCE",
+        "anchor": "research/recovered/STONEAGE-CN-EARLY-PIG-CATALOG-IMAGE-IDENTITY-SOURCE-R97.json",
+        "available": "乌力系8行仅7不同详情名，007/008图片链接倒序。",
+        "remaining_gap": "不能按文件号/相同名补原物种、bitmap或SPR。",
+        "complete": false
+      },
+      "new_material_evidence": true,
+      "incremental_sources": [
+        "research/recovered/STONEAGE-TW10-ANIMATION-OBSERVATION-P2A-ACTUAL-SOURCE-R1.json",
+        "research/recovered/STONEAGE-TW10-PALETTE-P2B-ACTUAL-COLOR-SOURCE-R1.json"
+      ],
+      "layers": {
+        "material": "三份原SPR初始化色预览是匿名资源样本，非具名宠物证据。",
+        "visible_or_audible_delivery": "源端生成后清理，未持久交付原彩色预览；已有网页具名图仍分年代。",
+        "original_execution": "没有原游戏宠物实例动作执行。",
+        "identity_and_missing_source": "具名物种至原SPR/位图仍缺；下一材料轮换选官方日服未取GIF。"
+      },
+      "complete": false
+    },
+    {
+      "baseline": {
+        "id": "pet_stats",
+        "order": 11,
+        "label": "宠物等级/属性与个体差异",
+        "baseline_status": "PARTIAL_STRUCTURE",
+        "anchor": "research/recovered/STONEAGE-PET-ASSET-GROWTH-CATALOG-MATRIX-R1.json",
+        "available": "已有S:K状态结构与版本边界，界面数值不是物种master。",
+        "remaining_gap": "同构建全物种初值/个体公式/MP/AI仍缺。",
+        "complete": false
+      },
+      "new_material_evidence": false,
+      "incremental_sources": [],
+      "layers": {
+        "material": "已有S:K状态结构与版本边界，界面数值不是物种master。",
+        "visible_or_audible_delivery": "本阶段无新增交付；不从既有文献或测试推定原画面/播放。",
+        "original_execution": "本阶段无新增原版执行证据。",
+        "identity_and_missing_source": "同构建全物种初值/个体公式/MP/AI仍缺。"
+      },
+      "complete": false
+    },
+    {
+      "baseline": {
+        "id": "pet_growth",
+        "order": 12,
+        "label": "宠物成长、经验与升级",
+        "baseline_status": "PARTIAL_DESCENDANT",
+        "anchor": "research/recovered/STONEAGE-CN2003-PET-GROWTH-PLAYER-CLAIMS-SOURCE-R1.json",
+        "available": "2003玩家成长算法说法独立保存，与后裔公式分开。",
+        "remaining_gap": "不能认证原1999/TW1系数、全物种成长与取整。",
+        "complete": false
+      },
+      "new_material_evidence": false,
+      "incremental_sources": [],
+      "layers": {
+        "material": "2003玩家成长算法说法独立保存，与后裔公式分开。",
+        "visible_or_audible_delivery": "本阶段无新增交付；不从既有文献或测试推定原画面/播放。",
+        "original_execution": "本阶段无新增原版执行证据。",
+        "identity_and_missing_source": "不能认证原1999/TW1系数、全物种成长与取整。"
+      },
+      "complete": false
+    },
+    {
+      "baseline": {
+        "id": "pet_skills",
+        "order": 13,
+        "label": "宠物技能/学习/条件",
+        "baseline_status": "PARTIAL_STRUCTURE",
+        "anchor": "research/recovered/STONEAGE-CN2004-PET-SKILL-TRAINER-SOURCE-R1.json",
+        "available": "具名训练师/技能资料按地区年代保存。",
+        "remaining_gap": "同版全技能名单、费用条件和服务端执行仍缺。",
+        "complete": false
+      },
+      "new_material_evidence": false,
+      "incremental_sources": [],
+      "layers": {
+        "material": "具名训练师/技能资料按地区年代保存。",
+        "visible_or_audible_delivery": "本阶段无新增交付；不从既有文献或测试推定原画面/播放。",
+        "original_execution": "本阶段无新增原版执行证据。",
+        "identity_and_missing_source": "同版全技能名单、费用条件和服务端执行仍缺。"
+      },
+      "complete": false
+    },
+    {
+      "baseline": {
+        "id": "pet_encounter",
+        "order": 14,
+        "label": "宠物出现地点/捕获",
+        "baseline_status": "PARTIAL_DESCENDANT",
+        "anchor": "research/recovered/STONEAGE-CN20-PET-COMMISSION-HABITATS-CATALOG-R1.json",
+        "available": "27条寄养/出现地资料行已有独立来源。",
+        "remaining_gap": "网页地点不是原服完整生成表或捕获概率。",
+        "complete": false
+      },
+      "new_material_evidence": false,
+      "incremental_sources": [],
+      "layers": {
+        "material": "27条寄养/出现地资料行已有独立来源。",
+        "visible_or_audible_delivery": "本阶段无新增交付；不从既有文献或测试推定原画面/播放。",
+        "original_execution": "本阶段无新增原版执行证据。",
+        "identity_and_missing_source": "网页地点不是原服完整生成表或捕获概率。"
+      },
+      "complete": false
+    },
+    {
+      "baseline": {
+        "id": "ride_mount",
+        "order": 15,
+        "label": "骑宠界面、资格与动作",
+        "baseline_status": "PARTIAL_DESCENDANT",
+        "anchor": "research/recovered/STONEAGE-CN40-RIDING-CERTIFICATE-MANOR-SOURCE-R1.json",
+        "available": "CN4.0骑证庄园叙事与CN2.0、台湾8.0保持分版。",
+        "remaining_gap": "早期全骑宠资格、人物动作绑定和真实事务仍缺。",
+        "complete": false
+      },
+      "new_material_evidence": false,
+      "incremental_sources": [],
+      "layers": {
+        "material": "CN4.0骑证庄园叙事与CN2.0、台湾8.0保持分版。",
+        "visible_or_audible_delivery": "本阶段无新增交付；不从既有文献或测试推定原画面/播放。",
+        "original_execution": "本阶段无新增原版执行证据。",
+        "identity_and_missing_source": "早期全骑宠资格、人物动作绑定和真实事务仍缺。"
+      },
+      "complete": false
+    },
+    {
+      "baseline": {
+        "id": "battle_ui_rules",
+        "order": 16,
+        "label": "战斗界面/指令/表现",
+        "baseline_status": "PARTIAL_STRUCTURE",
+        "anchor": "research/recovered/STONEAGE-CN20-BATTLE-COMMANDS-DEFEAT-SOURCE-R1.json",
+        "available": "CN2.0战斗指令/战败文献已有，原TW1结构另存。",
+        "remaining_gap": "完整原生战斗画面、所有指令回合和技能动作联调仍缺。",
+        "complete": false
+      },
+      "new_material_evidence": true,
+      "incremental_sources": [
+        "research/recovered/STONEAGE-BATTLE-SAB-CROSSVERSION-R17-CORRECTED-R24.json"
+      ],
+      "layers": {
+        "material": "R17混用800字节payload与804字节完整文件哈希；同域纠正后218同号全部相同，438引用219内容。",
+        "visible_or_audible_delivery": "仅背景文件关系，不是原战斗画面交付。",
+        "original_execution": "没有原战斗回合/技能与背景加载运行验证。",
+        "identity_and_missing_source": "撤回旧218不同/436内容结论；2001后转载公告和218/219具体身份仍未认证。"
+      },
+      "complete": false
+    },
+    {
+      "baseline": {
+        "id": "item_equipment_economy",
+        "order": 17,
+        "label": "物品/装备/商店/料理",
+        "baseline_status": "PARTIAL_STRUCTURE",
+        "anchor": "research/recovered/STONEAGE-TW10-ITEM-STATIC-BITMAP-SOURCE-R1.json",
+        "available": "原TW1物品静态位图选择规格已有，后期物品配方分版。",
+        "remaining_gap": "原全物品身份/商店库存/价格/合成表与事务仍缺。",
+        "complete": false
+      },
+      "new_material_evidence": true,
+      "incremental_sources": [
+        "research/recovered/STONEAGE-MIXED25-SERVER-FULL-SOURCE-R18.json"
+      ],
+      "layers": {
+        "material": "社区服务端文件覆盖新增18遗漏文件，不认证原1.0物品/商店主表。",
+        "visible_or_audible_delivery": "无新增原物品交易画面交付。",
+        "original_execution": "未执行原版库存/交易/料理事务。",
+        "identity_and_missing_source": "原同版完整物品名、价格、商店库存和事务仍缺。"
+      },
+      "complete": false
+    },
+    {
+      "baseline": {
+        "id": "audio_fx",
+        "order": 18,
+        "label": "音效/配乐与事件触发",
+        "baseline_status": "PARTIAL_RESOURCE",
+        "anchor": "research/recovered/STONEAGE-TW10-AUDIO-EVENT-GATE-R1.json",
+        "available": "原资源与声音事件门控报告已有。",
+        "remaining_gap": "不把音频块数当事件覆盖；真实场景声画联合执行仍缺。",
+        "complete": false
+      },
+      "new_material_evidence": true,
+      "incremental_sources": [
+        "research/recovered/STONEAGE-CROSSVERSION-AUDIO-CONTENT-R1.json",
+        "research/recovered/STONEAGE-PRIVATE-AUDIO-R22-DELIVERY-R1.json"
+      ],
+      "layers": {
+        "material": "CN5原saam_01.wav为27180B/约1.23秒；全量私人回读与双解码逐样本相等。sound3是27位置/26内容的三次同段。",
+        "visible_or_audible_delivery": "私人原WAV持久下载可用；模型音频输入实际不支持，助手未听，用户播放未确认。",
+        "original_execution": "原游戏音频设备/事件/场景联合播放未证。",
+        "identity_and_missing_source": "文件名不是具体声音事件身份；停止扩音频低层helper。"
+      },
+      "complete": false
+    },
+    {
+      "baseline": {
+        "id": "helper_versions",
+        "order": 19,
+        "label": "历代外挂产品与版本",
+        "baseline_status": "PARTIAL_CATALOG",
+        "anchor": "research/recovered/STONEAGE-EARLY-ASSISTANT-VERSIONS-R1.json",
+        "available": "SACH/STA/SADE玩家使用文献与确切/未给版本区别已有。",
+        "remaining_gap": "开发者发布谱系、全版本首见及精确客户端兼容未证。",
+        "complete": false
+      },
+      "new_material_evidence": false,
+      "incremental_sources": [],
+      "layers": {
+        "material": "SACH/STA/SADE玩家使用文献与确切/未给版本区别已有。",
+        "visible_or_audible_delivery": "本阶段无新增交付；不从既有文献或测试推定原画面/播放。",
+        "original_execution": "本阶段无新增原版执行证据。",
+        "identity_and_missing_source": "开发者发布谱系、全版本首见及精确客户端兼容未证。"
+      },
+      "complete": false
+    },
+    {
+      "baseline": {
+        "id": "helper_capabilities",
+        "order": 20,
+        "label": "全部外挂功能/变动",
+        "baseline_status": "PARTIAL_CATALOG",
+        "anchor": "research/recovered/STONEAGE-LEGACY-STA252-FEATURES-R1.json",
+        "available": "STA2.52玩家功能说明按版本独立保存。",
+        "remaining_gap": "全产品逐命令/改动覆盖未齐；未运行旧工具、未决定新作采用。",
+        "complete": false
+      },
+      "new_material_evidence": false,
+      "incremental_sources": [],
+      "layers": {
+        "material": "STA2.52玩家功能说明按版本独立保存。",
+        "visible_or_audible_delivery": "本阶段无新增交付；不从既有文献或测试推定原画面/播放。",
+        "original_execution": "本阶段无新增原版执行证据。",
+        "identity_and_missing_source": "全产品逐命令/改动覆盖未齐；未运行旧工具、未决定新作采用。"
+      },
+      "complete": false
+    },
+    {
+      "baseline": {
+        "id": "reference_web",
+        "order": 21,
+        "label": "原官方/社区资料网站内容",
+        "baseline_status": "PARTIAL_DISCOVERY",
+        "anchor": "research/recovered/STONEAGE-HISTORICAL-SITE-NAVIGATION-CATALOG-R1.json",
+        "available": "运营/社区导航与页面、像素实际抓取时间分层保存。",
+        "remaining_gap": "网站目录不等于正文/像素全部取得、同年代或授权可发行。",
+        "complete": false
+      },
+      "new_material_evidence": false,
+      "incremental_sources": [],
+      "layers": {
+        "material": "运营/社区导航与页面、像素实际抓取时间分层保存。",
+        "visible_or_audible_delivery": "本阶段无新增交付；不从既有文献或测试推定原画面/播放。",
+        "original_execution": "本阶段无新增原版执行证据。",
+        "identity_and_missing_source": "网站目录不等于正文/像素全部取得、同年代或授权可发行。"
+      },
+      "complete": false
+    },
+    {
+      "baseline": {
+        "id": "future_player_wiki",
+        "order": 22,
+        "label": "未来游戏玩家资料站",
+        "baseline_status": "DESIGN_PREP_ONLY",
+        "anchor": "research/recovered/STONEAGE-PREPRODUCTION-CONTENT-ARCHIVE-R1.json",
+        "available": "七字段/19集合研究规范已有，本轮增加去重/投影审计。",
+        "remaining_gap": "26条无collection先隔离，不自动迁移；生产站及公开内容仍GATED。",
+        "complete": false
+      },
+      "new_material_evidence": true,
+      "incremental_sources": [
+        "research/recovered/STONEAGE-FOUR-CLIENT-CONTENT-SUMMARY-R24.json"
+      ],
+      "layers": {
+        "material": "仅研究派生索引增量；未重复审计旧880 JSON，未动26个无collection待定记录。",
+        "visible_or_audible_delivery": "无生产资料站交付。",
+        "original_execution": "研究解析和CI不是游戏或网站生产运行。",
+        "identity_and_missing_source": "Stage B/wiki GATED；研究记录不能直接生产发布。"
+      },
+      "complete": false
+    }
+  ],
+  "review_scope": "Only 22 baseline anchors plus explicit incremental source reports; no recursive 880-file audit",
+  "facts": {
+    "domain_count": 22,
+    "old_880_file_audit_repeated": false,
+    "r17_hash_domain_error_corrected": true,
+    "original_client_ever_executed": true,
+    "original_world_entered": false,
+    "p2b_source_generated_color_previews": 3,
+    "p2b_original_color_previews_durable_user_delivery": false,
+    "r22_private_original_wav_durable": true,
+    "assistant_heard_audio": false,
+    "user_playback_confirmed": false,
+    "named_tw10_entities_added": 0,
+    "original_npc_pet_quest_identity_closed": false,
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b_wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING",
+    "overall_completion_percent": null,
+    "dd028": [
+      "BASE_GAME_QUEST",
+      "PERMANENT_VERSION_QUEST",
+      "OPERATOR_EVENT_QUEST",
+      "ORIGIN_UNRESOLVED"
+    ]
+  },
+  "selected_material_package": {
+    "id": "ACQUIRED-FOUR-CLIENT-COMPLETE-FILE-INTEGRATION-24",
+    "status": "MATERIAL_INTEGRATION_COMPLETE_REMOTE_ACCEPTANCE_RECORDED_SEPARATELY",
+    "deliverable": "research/recovered/STONEAGE-FOUR-CLIENT-CONTENT-SUMMARY-R24.json",
+    "reason": "Whole specimen SHA integration absent across four acquired clients; actual source review exposed erroneous R17 hash extent comparison",
+    "stop": "All3655 references partitioned without deleting paths, correcting R17 without overwriting historical source report"
+  },
+  "next": {
+    "id": "JP-OFFICIAL-NAMED-PET-VISUAL-BATCH-25",
+    "goal": "Acquire first12 still-unacquired image references in existing124-position official Japanese pet catalog, excluding parent plus12 qualified sample references",
+    "sources": [
+      "research/recovered/STONEAGE-JP-OFFICIAL-PET-CATALOG-R1.json",
+      "research/recovered/STONEAGE-JP-OFFICIAL-PET-VISUAL-SAMPLE-R1.json"
+    ],
+    "deliverable": "One finite named web-entry to actual archived GIF package, with actual capture dates, hashes, image dimensions and direct visual review; no original pixels in Git",
+    "scope": "Japanese operator website captures, not TW1/client species IDs; at most12 new references",
+    "stop": "At most12 references attempted once in this package; unavailable/HTML-placeholder responses remain unacquired; do not expand archive crawling or low-level runtime helpers",
+    "reopen_r20_only": "New authenticated same-build server master/entity/graphic identity source",
+    "reopen_p3e_only": "New environment with full system codepage, display/input and original-process descendant isolation qualification"
+  }
+}

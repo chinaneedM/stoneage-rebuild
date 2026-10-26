@@ -45,3 +45,6 @@ python -m tools.stoneage_battle_sab_crossversion_r17
 新增的真实材料关联到此止点。按协议§13停止战斗资源重复索引helper，转 `EARLY-OFFICIAL-SERVER-MASTER-DATA-SOURCE-18_OR_EXACT_DOWNLOAD_PAYLOAD_CARRIER`：优先只确认一个新可取得、确属某正式版的NPC/任务/宠物主表原载体，或2001同版原战斗地图更新实物；没有精确可取URL、编译/发行链与原数据就登记OPEN并回全22域轮转。同构建归属尚未确认，未完整收齐官方版本；私人长存容量限制保持。Stage A = 7 PARTIAL + 2 OPEN、Stage B/wiki GATED、savedata R79 PAUSED_NON_BLOCKING、overall percent=null。
 
 源分支 CI 需要真实观察，未预先声明成功；正式main可复验后补独立发布收据。
+
+
+> **2026-10-26 R24勘误：本节旧R17的218同号不同/436内容结论已撤回。旧工具混用了TW1去4字节头payload哈希与mixed804字节完整文件哈希；同域纠正为218同号全部相同、438引用219内容。原文和旧原报告保留作历史，现行事实见[四样本整合与勘误](../specs/STONEAGE-FOUR-CLIENT-CONTENT-R24.md)及`STONEAGE-BATTLE-SAB-CROSSVERSION-R17-CORRECTED-R24.json`。**

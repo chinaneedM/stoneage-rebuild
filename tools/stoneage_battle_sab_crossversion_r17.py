@@ -11,7 +11,8 @@ from collections import defaultdict
 from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[1]
-REPORT=ROOT/'research/recovered/STONEAGE-BATTLE-SAB-CROSSVERSION-R17.json'
+LEGACY_REPORT=ROOT/'research/recovered/STONEAGE-BATTLE-SAB-CROSSVERSION-R17.json'
+REPORT=ROOT/'research/recovered/STONEAGE-BATTLE-SAB-CROSSVERSION-R17-CORRECTED-R24.json'
 SOURCES={
  'tw':{'path':'research/recovered/STONEAGE-TW10-CLIENT-INVENTORY-R1.txt','git_blob':'564233902b10c60760d4f93b1ea65d4dd1469206','profile':'TW10_AUTHENTICATED_RETAIL'},
  'mixed':{'path':'research/recovered/STONEAGE-25-GAMEPLAY-DATA-INVENTORY-R1.txt','git_blob':'47157f638cce7023727035981da11f1faecc9c78','profile':'MIXED25_UNVERIFIED_COMMUNITY_PRESERVATION'}
@@ -45,11 +46,11 @@ def parse(lines,key):
     out=[]
     for line in lines:
         if key=='tw':
-            if not line.startswith('BATTLE_SAB_RECORD|'):continue
+            if not line.startswith('CORE_FILE|'):continue
             parts=dict(x.split('=',1) for x in line.split('|')[1:])
             path=parts['path'];size=int(parts['size'])
-            digest=parts['payload_sha256']
-            need(parts['header_hex']=='53414220' and int(parts['tile_count'])==400, 'original TW10 SAB header marker changed')
+            if not re.fullmatch(r'StoneAge/data/battlemap/battle[0-9]+\.sab',path):continue
+            digest=parts['sha256']
         else:
             if not line.startswith('CANDIDATE|client|battle_progression|battleMap/'):continue
             words=line.split('|')
@@ -75,7 +76,12 @@ def build():
             groups[x['sha256']].append(dict(profile=name,id=x['id']))
     duplicated=[dict(sha256=key,occurrences=value) for key,value in sorted(groups.items()) if len(value)>1]
     return {
-      'schema':'stoneage.crossversion.battle_sab_source_records.r17',
+      'schema':'stoneage.crossversion.battle_sab_source_records.r17.corrected_r24',
+      'digest_domain':'SHA256_COMPLETE_FILE_OFFSET_0_LENGTH_804',
+      'supersedes':{'path':str(LEGACY_REPORT.relative_to(ROOT)),
+        'sha256':'9983f4a52d3174ec2e2c7f198a04b7896d10c617aff7e9691a7694df01fc231c',
+        'error':'TW10 data[4:] payload digest was compared to mixed25 complete-file digest; old 218-different/436-unique claims are withdrawn',
+        'historical_original_preserved':True},
       'material_task':'OFFICIAL-NAMED-CONTENT-MATERIAL-ROTATION-17',
       'source_profiles':SOURCES,
       'source_scope':'TW10 actual authenticated retail-derived SAB records + a later mixed2.5 preserved community client folder; NOT two authenticated official builds',
@@ -93,7 +99,7 @@ def build():
       'no_original_deployment_or_runtime_proven':True,
       'notice_context':NOTICE,
       'findings':{
-        'inventory_membership_verified':True,'cross_version_same_content_proven':False,
+        'inventory_membership_verified':True,'cross_version_same_content_proven':True,
         'all_official_versions_recovered':False,
         'original_npc_ids_recovered':0,'original_quest_server_records_recovered':0,
         'original_pet_names_recovered':0,
@@ -105,16 +111,14 @@ def build():
 
 def validate(doc):
     need(doc==build(), 'permanent cross-version archive not equal to exact original source manifests')
-    need(doc['all_occurrence_count']==438 and doc['all_unique_sha256_count']==436,'lossless dedup invariant')
-    need(doc['same_index_sha256_equal_count']==0 and doc['same_index_sha256_diff_count']==218,'the matched IDs are NOT identical bytes')
+    need(doc['all_occurrence_count']==438 and doc['all_unique_sha256_count']==219,'lossless full-file dedup invariant')
+    need(doc['same_index_sha256_equal_count']==218 and doc['same_index_sha256_diff_count']==0,'full-file domains must agree')
     need(doc['mixed25_only_numeric_ids']==[218,219], 'mixed-only suffix')
-    need(doc['duplicate_content_groups']==[
-      {'sha256':'a328637919ac10ae6a977efcd0b272913b4d7b0c34e31af2fa84cf867dd8e1d6','occurrences':[{'profile':'tw10','id':145},{'profile':'tw10','id':146}]},
-      {'sha256':'b3e6c9a3c3dd7375d4898ab4f8e1a5e2c684f60a0ab9c045e95fcd4c20b33476','occurrences':[{'profile':'mixed25','id':145},{'profile':'mixed25','id':146}]}
-    ], 'repeated entries cannot be collapsed by numeric ID or source profile')
+    need(len(doc['duplicate_content_groups'])==217, 'all shared file groups retained')
+    need(hashlib.sha256(LEGACY_REPORT.read_bytes()).hexdigest()==doc['supersedes']['sha256'], 'historical erroneous report changed')
     context=doc['notice_context']
     need(context['attributed_download_names']!=context['actual_preserved_mixed_names'] and not context['same_file_proven'], '2001 reprint falsely upgraded to file identity')
-    for flag in ['cross_version_same_content_proven','all_official_versions_recovered']:
+    for flag in ['all_official_versions_recovered']:
         need(doc['findings'][flag] is False, 'unproven claim promoted '+flag)
     for name in ['original_npc_ids_recovered','original_quest_server_records_recovered','original_pet_names_recovered']:
         need(doc['findings'][name]==0, 'unproven historical identity')
@@ -127,6 +131,7 @@ if __name__=='__main__':
     print(json.dumps({'schema':x['schema'],
      'original_tw10_file_count':x['original_tw10_file_count'],
      'mixed25_file_count':x['mixed25_file_count'],
-     'same_index_sha256_diff_count':x['same_index_sha256_diff_count'],
+     'same_index_sha256_equal_count':x['same_index_sha256_equal_count'],
+     'digest_domain':x['digest_domain'],
      'unique_sha256_count':x['all_unique_sha256_count'],
      'source_byte_deletions':x['original_source_files_deleted']},sort_keys=True))

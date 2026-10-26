@@ -1,0 +1,126 @@
+{
+  "schema": "stoneage.four_client.complete_file_content_summary.r24",
+  "source_head": "f9fae070ca0dcc132f5fcca3e11baf492b1c5dd1",
+  "scope": "Four acquired specimens, not four authenticated official versions or all clients",
+  "source_pins": {
+    "research/recovered/STONEAGE-STONEAGE5-REAL-CAB-MSI-PATH-JOIN-R1.json": {
+      "bytes": 145517,
+      "sha256": "69b19fc3ea988a6e3ed3047291082096a2d955f8ca24423d4280a37487fc8a92",
+      "git_blob": "b2532248355b35cd9d4ed7d15d3f59aeeb9beadf"
+    },
+    "research/recovered/STONEAGE-TW10-CLIENT-INVENTORY-R1.txt": {
+      "bytes": 210632,
+      "sha256": "413d197d19ea405490bfffc2bdbf021089177671445ca567533b2eb2576dae7b",
+      "git_blob": "564233902b10c60760d4f93b1ea65d4dd1469206"
+    },
+    "research/recovered/STONEAGE-25-PRESERVED-BUNDLE-STATIC-INVENTORY-R1.txt": {
+      "bytes": 3283845,
+      "sha256": "48feb98aa977c88dcc236b530e0428ab665032ec923787eac0c293d5960159b0",
+      "git_blob": "78e8260e89928df76513799511d45c14a9e24dfc"
+    },
+    "research/recovered/STONEAGE-WAYI85-MSI-CLIENT-PAYLOAD-R1.json": {
+      "bytes": 385776,
+      "sha256": "4ea7b43a7e3427ab4443afe801ae7d3e156e6193e1d42ce1b261f733e07de1d8",
+      "git_blob": "18a68c9d4275763ef0ed7a347cca940cffe0fee2"
+    }
+  },
+  "profiles": {
+    "CN5": {
+      "source": "research/recovered/STONEAGE-STONEAGE5-REAL-CAB-MSI-PATH-JOIN-R1.json",
+      "expected_files": 413,
+      "qualification": "PRESERVED_CN5_DISC_CAB_FILES_JOINED_TO_MSI_PATHS_NOT_CLEAN_OFFICIAL_AUTHENTICATION",
+      "official_clean_client_authenticated": false
+    },
+    "TW10": {
+      "source": "research/recovered/STONEAGE-TW10-CLIENT-INVENTORY-R1.txt",
+      "expected_files": 383,
+      "qualification": "ACCEPTED_TW10_RETAIL_CORE_INCLUDES_8_INSTALLER_SUPPORT_FILES",
+      "official_clean_client_authenticated": true
+    },
+    "MIXED25": {
+      "source": "research/recovered/STONEAGE-25-PRESERVED-BUNDLE-STATIC-INVENTORY-R1.txt",
+      "expected_files": 2302,
+      "qualification": "MIXED_COMMUNITY_CLIENT_SUBTREE_NOT_OFFICIAL_CLEAN_BUILD",
+      "official_clean_client_authenticated": false
+    },
+    "CLAIMED_TW85": {
+      "source": "research/recovered/STONEAGE-WAYI85-MSI-CLIENT-PAYLOAD-R1.json",
+      "expected_files": 557,
+      "qualification": "PROVENANCE_SUPPORTED_CANDIDATE_COMMUNITY_PRESERVED_CLAIMED_WAYI85",
+      "official_clean_client_authenticated": false
+    }
+  },
+  "per_sample": {
+    "CN5": {
+      "file_occurrences": 413,
+      "unique_contents": 410,
+      "logical_bytes": 1211040029
+    },
+    "TW10": {
+      "file_occurrences": 383,
+      "unique_contents": 381,
+      "logical_bytes": 373564663
+    },
+    "MIXED25": {
+      "file_occurrences": 2302,
+      "unique_contents": 2156,
+      "logical_bytes": 863480809
+    },
+    "CLAIMED_TW85": {
+      "file_occurrences": 557,
+      "unique_contents": 546,
+      "logical_bytes": 1808555613
+    }
+  },
+  "occurrences": 3655,
+  "unique_complete_file_contents": 2488,
+  "duplicate_reference_occurrences": 1167,
+  "logical_file_bytes": 4256641114,
+  "unique_content_byte_budget": 4137684324,
+  "potential_duplicate_bytes": 118956790,
+  "content_membership": {
+    "CLAIMED_TW85": 140,
+    "CLAIMED_TW85+CN5": 39,
+    "CLAIMED_TW85+CN5+MIXED25": 6,
+    "CLAIMED_TW85+CN5+MIXED25+TW10": 233,
+    "CLAIMED_TW85+CN5+TW10": 126,
+    "CLAIMED_TW85+MIXED25": 2,
+    "CN5": 6,
+    "MIXED25": 1914,
+    "MIXED25+TW10": 1,
+    "TW10": 21
+  },
+  "r17_correction": {
+    "schema": "stoneage.crossversion.battle_sab_source_records.r17.corrected_r24",
+    "digest_domain": "SHA256_COMPLETE_FILE_OFFSET_0_LENGTH_804",
+    "supersedes": {
+      "path": "research/recovered/STONEAGE-BATTLE-SAB-CROSSVERSION-R17.json",
+      "sha256": "9983f4a52d3174ec2e2c7f198a04b7896d10c617aff7e9691a7694df01fc231c",
+      "error": "TW10 data[4:] payload digest was compared to mixed25 complete-file digest; old 218-different/436-unique claims are withdrawn",
+      "historical_original_preserved": true
+    },
+    "original_tw10_file_count": 218,
+    "mixed25_file_count": 220,
+    "same_index_sha256_equal_count": 218,
+    "same_index_sha256_diff_count": 0,
+    "all_occurrence_count": 438,
+    "all_unique_sha256_count": 219
+  },
+  "boundaries": {
+    "original_source_files_deleted": 0,
+    "actual_bytes_saved": 0,
+    "original_asset_bytes_published": 0,
+    "new_original_bytes_acquired": false,
+    "all_clients_acquired": false,
+    "source_payloads_durably_custodied": false,
+    "same_content_proves_official_version": false,
+    "npc_pet_quest_identity_proven": false,
+    "original_game_world_entered": false,
+    "cn5_complete_file_digest_corpus_included": true,
+    "resource_subfile_aliases_collapsed_into_file_identity": false
+  },
+  "omissions": [
+    "Official patch129 is a patch/resource subset, not a fourth full client",
+    "Loose files and packed resource spans are distinct identity domains"
+  ]
+}

@@ -19,3 +19,6 @@
 内容通过非强制快进从main `7691014ba336445ea5864d9e455e77d6447736c4` 发布至 `2d9565f96f101de2d3738cc473c2cb12cacaeeca` / tree `e52cc739f5b6aab29ec6428d5546bf8de01a7cd0`，9路径diff，Git原生全树5769条/truncated=false。同HEAD主线 R17 `40199244812/job121186678119`、旧R16 `40199244818/job121186677927`、StageA `40199244821/job121186677939` 三项均 completed/success。派生报告Git blob `215654d2a35bbd6add2a0316075c882fb7d83b69` /93155B，本包不依赖短期ZIP工件，Git直接保管438项已有来源归档的SHA/路径而非版权原载荷。原 `docs/CURRENT-STATE.md` blob仍 `031c76a5a8e431f646853909bb2f2e11e6328cd2` / 2680510B，路线 `c11eff237a8aaa1cc34488a6c3c7fcdd596f9ce2` 完整保存。主来源和所有旧失败原记录未删。
 
 后验收据 `research/recovered/STONEAGE-BATTLE-SAB-R17-PUBLICATION.json` 固定这些**实际已发生**的来源与运行记录；本次后验提交自身Action结果继续以后续真实查询为准。下一项仍是获得确属同一早期地区发行版的正式NPC／宠物／本体任务主表，或认证2001编号218/219补丁原下载字节及文件名同一性；无源不造身份或运行历史。DD-028任务四档、Stage A7PARTIAL/2OPEN、Stage B/wiki GATED、R79暂停、总体百分比null不变。
+
+
+> **2026-10-26 R24勘误：本节旧R17的218同号不同/436内容结论已撤回。旧工具混用了TW1去4字节头payload哈希与mixed804字节完整文件哈希；同域纠正为218同号全部相同、438引用219内容。原文和旧原报告保留作历史，现行事实见[四样本整合与勘误](../specs/STONEAGE-FOUR-CLIENT-CONTENT-R24.md)及`STONEAGE-BATTLE-SAB-CROSSVERSION-R17-CORRECTED-R24.json`。**

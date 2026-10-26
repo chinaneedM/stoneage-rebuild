@@ -1,0 +1,35 @@
+name: Verify four client content R24 and post observation material R23
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'tools/stoneage_client_content_catalog_r24.py'
+      - 'tools/stoneage_material_review_r23_guard.py'
+      - 'tools/stoneage_crossversion_audio_content.py'
+      - 'research/recovered/STONEAGE-TW10-CLIENT-INVENTORY-R1.txt'
+      - 'research/recovered/STONEAGE-25-PRESERVED-BUNDLE-STATIC-INVENTORY-R1.txt'
+      - 'research/recovered/STONEAGE-STONEAGE5-REAL-CAB-MSI-PATH-JOIN-R1.json'
+      - 'research/recovered/STONEAGE-WAYI85-MSI-CLIENT-PAYLOAD-R1.json'
+      - 'research/recovered/STONEAGE-MATERIAL-PORTFOLIO-REVIEW-R102.json'
+      - 'tools/stoneage_battle_sab_crossversion_r17.py'
+      - 'tests/test_stoneage_client_content_catalog_r24.py'
+      - 'research/recovered/STONEAGE-FOUR-CLIENT-CONTENT-*'
+      - 'research/recovered/STONEAGE-MATERIAL-PORTFOLIO-REVIEW-R23.json'
+      - 'research/recovered/STONEAGE-MATERIAL-REVIEW-R23-*'
+      - 'research/recovered/STONEAGE-BATTLE-SAB-CROSSVERSION-R17-CORRECTED-R24.json'
+      - 'docs/continuity/STONEAGE-MATERIAL-R23-CLIENT-CONTENT-R24-20261026.md'
+      - 'docs/specs/STONEAGE-FOUR-CLIENT-CONTENT-R24.md'
+      - '.github/workflows/verify-stoneage-material-r23-client-content-r24.yml'
+permissions:
+  contents: read
+jobs:
+  complete-file-source-replay:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest -v tests.test_stoneage_client_content_catalog_r24 tests.test_stoneage_battle_sab_crossversion_r17 tests.test_stoneage_battle_sab_docs_r17
+      - run: python -m tools.stoneage_client_content_catalog_r24
+      - run: python -m tools.stoneage_material_review_r23_guard

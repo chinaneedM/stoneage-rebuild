@@ -15,18 +15,18 @@ class BattleSABSourceTests(unittest.TestCase):
         rows=self.data['occurrences']
         self.assertEqual(len(rows),438)
         self.assertEqual((rows[0]['id'],rows[217]['id'],rows[218]['id'],rows[-1]['id']),(0,217,0,219))
-        self.assertEqual(self.data['all_unique_sha256_count'],436)
-    def test_no_cross_release_hash_alias(self):
+        self.assertEqual(self.data['all_unique_sha256_count'],219)
+    def test_exact_complete_file_cross_release_hash_alias(self):
         a={x['sha256'] for x in self.data['occurrences'] if x['profile']=='tw10'}
         b={x['sha256'] for x in self.data['occurrences'] if x['profile']=='mixed25'}
-        self.assertFalse(a&b)
+        self.assertEqual(len(a&b),217)
     def test_source_provenance(self):
         for key in SOURCES:
             rows=parse(source_lines(key),key)
             self.assertEqual(len(rows),218 if key=='tw' else 220)
     def test_false_original_match_refused(self):
         x=copy.deepcopy(self.data)
-        x['same_index_sha256_equal_count']=1
+        x['same_index_sha256_equal_count']=0
         with self.assertRaises(ValueError): validate(x)
     def test_lost_duplicate_occurrence_refused(self):
         x=copy.deepcopy(self.data)
