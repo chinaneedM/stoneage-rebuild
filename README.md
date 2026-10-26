@@ -652,3 +652,8 @@ The 2.66 MB historical `docs/CURRENT-STATE.md` is still preserved byte-for-byte.
 ### 2026-10-27 — R35原客户端相册的148条名称字段、76个名称位置候选
 
 [本轮原材料规格](docs/specs/STONEAGE-CLIENT-ALBUM-MATERIAL-R35.md)和[连续性记录](docs/continuity/STONEAGE-CLIENT-ALBUM-R35-20261027.md)按R35先完成有限原客户端回收止点（新增可认证官方客户端0），再仅从既有混合2.5包前16MiB实际取三数据文件并逐完整SHA复核。相册161424B中148条flag1名称字段覆盖76槽/76名，严格GBK及同槽后代文本对照一致；原字段可见乌力、乌力斯坦、黑乌力等，但**不是物种全集/原服master**。已排除随机初始化图号/属性，不解账号键或发表昵称；原载荷私人核验不入Git。下一目标36仅在有实际同源exe字节时补原相册表/原图号，否则有界止点轮转。Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、总体百分比未知。
+
+
+### 2026-10-27 — R36原程序281行相册表与224槽名称/图号
+
+[原材料规格](docs/specs/STONEAGE-NATIVE-ALBUM-MATERIAL-R36.md)及[续接记录](docs/continuity/STONEAGE-NATIVE-ALBUM-R36-20261027.md)：仅稀疏读取既有混合2.5包7995392B，实取两份旧完整SHA匹配的原exe，不运行、不公开原程序。原指令定界281行/28B表，其中224有效槽、57内部空位；R35相册148次名称/76槽全部按槽匹配。乌力→表内28001等关联直接来自原程序，遇见flag1与拍照flag2写图号区别亦有原指令支持；尚未联到物理bitmap/SPR、不认证官方构建或原服物种主表。首次取件失败及7-Zip崩溃均保留，unar成功后逐全SHA/CRC验收。最高NEXT37仅有限核同源逻辑图号→原资源关系，否则轮转22域；Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、总体百分比未知。

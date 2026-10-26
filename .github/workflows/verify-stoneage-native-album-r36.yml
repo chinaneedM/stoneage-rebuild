@@ -1,0 +1,37 @@
+name: Verify original native album table and saved-name joins R36
+on:
+  push:
+    paths:
+      - '.github/workflows/verify-stoneage-native-album-r36.yml'
+      - '.github/workflows/source-stoneage-native-album-r36.yml'
+      - 'tools/stoneage_native_album_*r36.py'
+      - 'tests/test_stoneage_native_album_*r36.py'
+      - 'research/recovered/STONEAGE-NATIVE-ALBUM-*R36.json'
+      - 'docs/specs/STONEAGE-NATIVE-ALBUM-MATERIAL-R36.md'
+      - 'docs/continuity/STONEAGE-NATIVE-ALBUM-R36-20261027.md'
+      - 'README.md'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original-native-table-boundaries:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Sparse source and original namespace negative tests
+        run: python -m unittest -v tests.test_stoneage_native_album_source_r36 tests.test_stoneage_native_album_material_r36 tests.test_stoneage_album_material_r35
+      - name: Replay all281 native rows and148 saved names without original program download
+        run: python -m tools.stoneage_native_album_material_r36
+      - name: Keep original programs, ciphertext and private keys outside Git
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import subprocess
+          forbidden={'sa_2903.exe','sa_2903网通.exe','selected.zip','r36-sealed.der','recipient-key.pem'}
+          for name in subprocess.check_output(['git','ls-files','-z']).decode().split('\0'):
+            if name and Path(name).name in forbidden:raise SystemExit('private/original payload in Git: '+name)
+          PY
