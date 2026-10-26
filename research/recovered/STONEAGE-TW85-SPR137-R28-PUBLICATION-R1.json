@@ -1,0 +1,203 @@
+{
+  "schema": "stoneage.tw85_spr137_r28.publication.v1",
+  "recorded_date": "2026-10-26",
+  "task": "TW85-SPR137-ORIGINAL-MATERIAL-28",
+  "fresh_start_main": {
+    "head": "6b2d77e9300f63edf87e4b9dc265ce5331b75325",
+    "tree": "a8f7b833fa242cdd4c92cbd5beef2070958fae8a"
+  },
+  "exact_original": {
+    "source_grade": "TW85-INSTALLER-MSI-CLIENT_UNVERIFIED_COMMUNITY_PRESERVED",
+    "source_six_parts_actual_download_and_static_msi_extract": true,
+    "source_script_job": {
+      "run": 40321448446,
+      "job": 121567221678,
+      "status": "completed",
+      "conclusion": "success"
+    },
+    "original_file_paths_and_full_sha": {
+      "data/spradrn_137.bin": {
+        "bytes": 20868,
+        "sha256": "f31c00789321c948cde8c60769023567d8f89657231860e6ba730bc4a719206d"
+      },
+      "data/spr_137.bin": {
+        "bytes": 8721504,
+        "sha256": "cf046548a0ed73ebbdd7d148400fcba3a0ff8d57d835d7b67ed90864d4975ce9"
+      }
+    },
+    "original_binaries_retained_in_public_git": false,
+    "original_client_executed": false,
+    "clean_official_publisher_authenticated": false
+  },
+  "actual_content": {
+    "indexed_original_groups": 1739,
+    "animations": 113737,
+    "frame_occurrences": 735666,
+    "sentinel_frame_occurrences": 4759,
+    "exact_full_spr_bytes_reconstructed_independently": 8721504,
+    "original_index_order_vs_physical_order_inversions": 1,
+    "duplicate_numeric_keys": {
+      "101866": 3,
+      "101990": 2,
+      "101991": 2
+    },
+    "tw10_exact_same_key_and_segment_sha_group_rows": 464,
+    "cn50_exact_same_key_and_segment_sha_group_rows": 1185,
+    "tw10_within_cn50_original_group_overlap": 464,
+    "original_group_occurrences_unmatched_to_these_fixed_sources": 554,
+    "unmatched_occurrence_animations": 16954,
+    "unmatched_occurrence_frames": 137211,
+    "source_limited_not_named_pets_or_first_release_proof": true
+  },
+  "source_only_artifact": {
+    "run": 40321448446,
+    "artifact_id": 12648799786,
+    "zip_bytes": 5740254,
+    "independent_zip_sha256": "6123e489e7fefa4a8914a7973ba37f103285289ad20e12c80f4985b4202853b8",
+    "content": "four derived files only; original bin, PNG, WAV, EXE, MSI absent",
+    "ephemeral_retention_days": 5
+  },
+  "permanent_archive": {
+    "run": 40322474289,
+    "job": 121570609771,
+    "status": "completed",
+    "conclusion": "success",
+    "branch_commit": "9572dc944b189d885e0ae77f170f01dc9ffc253d",
+    "path": "research/recovered/tw85-spr137-r28/",
+    "members": [
+      {
+        "file": "R28-INDEPENDENT-CUSTODY.json",
+        "bytes": 1637,
+        "git_blob": "dd7f6de8ead8bee7e58beffff1f3f99332d3e200"
+      },
+      {
+        "file": "SOURCE-DERIVED-R28.json",
+        "bytes": 284271,
+        "git_blob": "df6ca18070f1c5cf5371a340698be90d51318507"
+      },
+      {
+        "file": "SPR-ANIMATION-R28.tsv.gz",
+        "bytes": 1007113,
+        "git_blob": "240a4d034842f7732261d88109e8534cae018822"
+      },
+      {
+        "file": "SPR-FRAME-R28.tsv.gz",
+        "bytes": 5262729,
+        "git_blob": "831fa633adc5bb1f401ee17fca186d476d146196"
+      },
+      {
+        "file": "SPR-GROUP-R28.tsv.gz",
+        "bytes": 90388,
+        "git_blob": "f201f85ced4a55d59d38ef774711406c59cddbd4"
+      }
+    ],
+    "all_five_remote_entries_independently_read_back": true
+  },
+  "candidate_acceptance": {
+    "run": 40323181817,
+    "job": 121573056220,
+    "head": "abb0cb5e39f3a31b5ae6c0acbc951dac0d3e79b6",
+    "status": "completed",
+    "conclusion": "success",
+    "checks": "all GROUP/ANIMATION/FRAME rows and complete exact full-segment digest replay, exact derived source report hashes, anti-promotion synthetic suite, derived-only files"
+  },
+  "integration": {
+    "pr_number": 10,
+    "pr_url": "https://github.com/chinaneedM/stoneage-rebuild/pull/10",
+    "merged": true,
+    "merged_at": "2026-10-26T12:32:19Z",
+    "merge_sha": "6dc3955f7ee2b117154ab04e3d3a1d604347e984",
+    "tree": "2e78bea8fece451c7d73ffd5ac76bf34438f7ae5"
+  },
+  "main_acceptance": [
+    {
+      "name": "full-R28-source-derived",
+      "run": 40323309380,
+      "job": 121573492802,
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "R28-format-synthetic",
+      "run": 40323309504,
+      "job": 121573493766,
+      "status": "completed",
+      "conclusion": "success",
+      "original_source_job": "skipped_as_intended_no_second_1_1GB_fetch"
+    },
+    {
+      "name": "StageA",
+      "run": 40323309627,
+      "job": 121573493770,
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "R16",
+      "run": 40323309565,
+      "job": 121573493290,
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "R17",
+      "run": 40323309425,
+      "job": 121573493117,
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "R18",
+      "run": 40323309401,
+      "job": 121573493002,
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "R28-archive-trigger-on-main",
+      "run": 40323309441,
+      "status": "completed",
+      "conclusion": "skipped",
+      "reason": "source archiver only runs on designated isolated source branch"
+    }
+  ],
+  "unchanged_major_history": {
+    "docs/CURRENT-STATE.md": {
+      "bytes": 2680510,
+      "git_blob": "031c76a5a8e431f646853909bb2f2e11e6328cd2"
+    },
+    "docs/PROJECT-CONTINUITY-PROTOCOL-R1.md": {
+      "bytes": 10880,
+      "git_blob": "a064174339b7a4656efe00b4446a066fd7abf304"
+    },
+    "docs/DESIGN-DECISIONS.md": {
+      "bytes": 49898,
+      "git_blob": "713caaecc6a43a92e5cb7f939954026b859bac20"
+    },
+    "docs/HISTORICAL-TIMELINE.md": {
+      "bytes": 730950,
+      "git_blob": "91ca73105f26bf96aaa928519ae04942182e7b9b"
+    },
+    "docs/SOURCE-REGISTRY.md": {
+      "bytes": 1028196,
+      "git_blob": "ee3b2d70dabedfe02e3761b3fdb25476a79e147c"
+    },
+    "docs/RESTORATION-ROADMAP-R2.md": {
+      "bytes": 482245,
+      "git_blob": "c11eff237a8aaa1cc34488a6c3c7fcdd596f9ce2"
+    }
+  },
+  "still_open": [
+    "R20 same build official pet/NPC/quest entity identities",
+    "P3E source client real-game-world boot environment",
+    "permanent private original large carriers",
+    "name/visual/action/audio link for unmatched R28 groups"
+  ],
+  "boundary": {
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b_wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING",
+    "overall_completion_percent": null
+  },
+  "next": "REVIEW_22_DOMAIN_MATERIAL_PRIORITY_AND_SAME_SAMPLE_ADRN_REAL_BINDING_GATES_29"
+}
