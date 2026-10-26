@@ -1,0 +1,38 @@
+name: Verify original same-carrier album alias-to-ADRN R37
+on:
+  push:
+    paths:
+      - '.github/workflows/verify-stoneage-album-adrn-r37.yml'
+      - 'tools/stoneage_album_adrn_material_r37.py'
+      - 'tools/stoneage_album_adrn_source_r37.py'
+      - 'tests/test_stoneage_album_adrn_material_r37.py'
+      - 'research/recovered/STONEAGE-PRESERVED-ALBUM-ALIAS-R37.json'
+      - 'research/recovered/STONEAGE-ALBUM-ADRN-*R37.json'
+      - 'docs/specs/STONEAGE-PRESERVED-ALBUM-ALIAS-R37.md'
+      - 'docs/continuity/STONEAGE-ALBUM-ADRN-R37-20261027.md'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  bounded-derived-verification:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check original saved table against bounded original ADRN metadata
+        run: python -m tools.stoneage_album_adrn_material_r37
+      - name: Original names and collision negative regression tests
+        run: python -m unittest -v tests.test_stoneage_album_adrn_material_r37 tests.test_stoneage_album_adrn_source_r37 tests.test_stoneage_native_album_material_r36
+      - name: Refuse original proprietary asset / private transfer publication
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import subprocess
+          blocked={'adrn_15.bin','selected.rar','selected.zip','r37-sealed.der','recipient-key.pem','sa_2903.exe','sa_2903网通.exe'}
+          for name in subprocess.check_output(['git','ls-files','-z']).decode().split('\0'):
+              if name and Path(name).name in blocked:
+                  raise SystemExit('Forbidden original/private artifact: '+name)
+          PY

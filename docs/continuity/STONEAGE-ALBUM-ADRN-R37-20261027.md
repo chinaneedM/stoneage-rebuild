@@ -1,0 +1,7 @@
+# R37 同源相册ADRN物理索引附加续接记录
+
+日期：2026-10-27（Asia/Shanghai）。启动fresh main `09365ecf99f1fe0c1eb51cf096b71b6b74042454`/tree `067b914a807e5a4c82955423afee5fdc30be57b7`，原`docs/CURRENT-STATE.md` 2680510B/Git blob`031c76a5a8e431f646853909bb2f2e11e6328cd2` 全文恢复核对。普通fetch_file返回空不是文件为空；完整CURRENT未删改，按协议§14仅新增覆层。R36/source/路线和两次Actions已重新读远端。
+
+本包最高`PRESERVED_CLIENT_ALBUM_LOGICAL_RESOURCE_BINDING_37`有界完成三条同源静态资料连接：乌力28001→原ADRN物理7246、乌力乌力28002→7247、乌力斯坦28003→7248。注意物理28001/28002/28003也是独立存在、逻辑字段=0的非命中反例。原成员18765120B/234564条，原完整SHA及RAR CRC匹配；首次源码CI成功但原件NOT_ACQUIRED失败事实永久记录，修正源码第二次才ORIGINAL_ADRN_FULL_HASH_MATCH。R37来源分支`1ef700e60d42beedc5eb71e35c87a41b7b22a1c9`，真实成功run40420077051/job121912033214，失败run40419864727/job121911312484；两源原样持久派生JSON/受控验证均已纳入本包，短暂zip未独立下载重验。
+
+不存在REAL像素实际可见性/执行原程序/同运行build/初代官方宠物master证明；仅恢复索引元数据。没有发布原程序或原资产，没有新增鉴真官方客户端，实际去重只为分析不删除源记录。下一优先级`PRESERVED_CLIENT_ALBUM_RENDER_REAL_CONFIRMATION_38_OR_FINITE_EVIDENCE_GAP`：有界寻同保存包REAL，仅核3幅真实像素资源的原offset/size/头/块SHA，否则记录不可获取/长期私人保管缺口并回22域内容任务。Stage A 7PARTIAL+2OPEN，B/wiki gated，R79暂停、DD-028四档不变，恢复百分比null。候选/main Actions必须实际完成后验，不预先声明。

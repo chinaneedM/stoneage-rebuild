@@ -1,0 +1,187 @@
+{
+  "schema": "stoneage.preserved_album_adrn_material.r37",
+  "date": "2026-10-27",
+  "scope": "COMMUNITY_MIXED25_PRESERVED_CLIENT_SUBTREE_NOT_OFFICIAL_BUILD",
+  "baseline_main": {
+    "head": "09365ecf99f1fe0c1eb51cf096b71b6b74042454",
+    "tree": "067b914a807e5a4c82955423afee5fdc30be57b7",
+    "current_blob": "031c76a5a8e431f646853909bb2f2e11e6328cd2"
+  },
+  "source_branch": {
+    "head": "1ef700e60d42beedc5eb71e35c87a41b7b22a1c9",
+    "tree": "0a9e51196a2b2680b042baf6d00bb7af4f589566"
+  },
+  "attempts": [
+    {
+      "run": 40419864727,
+      "job": 121911312484,
+      "head": "f961a1450bd3bd7cb70642ec24f6c4c8e35ed976",
+      "actions_conclusion": "success",
+      "source_status": "NOT_ACQUIRED",
+      "artifact_id": 12696622235,
+      "artifact_zip_api_sha256": "6a5b9e52cfec50dad17c21a36bb41b089a0b0f703f0f0328a727c9840ca4c768"
+    },
+    {
+      "run": 40420077051,
+      "job": 121912033214,
+      "head": "1ef700e60d42beedc5eb71e35c87a41b7b22a1c9",
+      "actions_conclusion": "success",
+      "source_status": "ORIGINAL_ADRN_FULL_HASH_MATCH",
+      "artifact_id": 12697782146,
+      "artifact_zip_api_sha256": "7bc5dd1267160ac7e07034eafc55a9c75aa79891542a09b2253bbffb662e420b"
+    }
+  ],
+  "full_member": {
+    "bytes": 18765120,
+    "path": "石器2.5客戶端+服務端+登入器/SA2.5主程式/stoneage2.5/data/adrn_15.bin",
+    "sha256": "92d0137590d35a7a1f4fb11af3ad13bbc585813a4b0e1e3f933c397007fbff74"
+  },
+  "records": 234564,
+  "record_bytes": 80,
+  "nonzero_duplicate_alias_occurrences": 514,
+  "range_requests": 71,
+  "range_bytes": 4653056,
+  "original_crc32": 823378952,
+  "source_metadata_original": "research/recovered/STONEAGE-ALBUM-ADRN-SOURCE-R37.json",
+  "source_metadata_failed": "research/recovered/STONEAGE-ALBUM-ADRN-SOURCE-ATTEMPT1-R37.json",
+  "album_joins": {
+    "28001": {
+      "program": {
+        "name": "乌力",
+        "slot": 0,
+        "face": 28001,
+        "r36_table_row_sha256": "e25544262259fa58a0518b66d7951a37bccc80aed17d2d489fc7306128dc5eae",
+        "r36_table_index": 0
+      },
+      "adrn_alias_rows": [
+        {
+          "adder": 26119737,
+          "attr_sha256": "16407d8250d217d75fc4507252ec16b10e09b76ce9ebf405079f0a0113b35d09",
+          "bitmapno": 7246,
+          "height": 104,
+          "index": 7246,
+          "logical_alias": 28001,
+          "record_sha256": "662ee16a7a6fdf1a36f9f84ed4caa0acca9ea8346af62707cfe063179ffcf980",
+          "size": 9521,
+          "source_offset": 579680,
+          "width": 96,
+          "xoff": -48,
+          "yoff": -52
+        }
+      ],
+      "physical_same_number_counterexamples": [
+        {
+          "adder": 69416113,
+          "attr_sha256": "9ae8218551d6456cc9403a462ff674c619808336cca379767dc6208a3a7a7049",
+          "bitmapno": 28001,
+          "height": 79,
+          "index": 28001,
+          "logical_alias": 0,
+          "record_sha256": "95167dd45532373b0168404aa0c30759fd802574a5773ef22ec3b0d1ee683f08",
+          "size": 1652,
+          "source_offset": 2240080,
+          "width": 36,
+          "xoff": -25,
+          "yoff": -69
+        }
+      ]
+    },
+    "28002": {
+      "program": {
+        "name": "乌力乌力",
+        "slot": 1,
+        "face": 28002,
+        "r36_table_row_sha256": "fdfae022a4a9bba9ff95712c06c1d45fc17ac04cf02b82e301a9bd9dae61cefb",
+        "r36_table_index": 1
+      },
+      "adrn_alias_rows": [
+        {
+          "adder": 26129258,
+          "attr_sha256": "722381dedd70482ce3f8d433e3a568da2e33bf189a7f921f3188a069cf9cfb9e",
+          "bitmapno": 7247,
+          "height": 104,
+          "index": 7247,
+          "logical_alias": 28002,
+          "record_sha256": "fe2522078e956d12f77c8244ec2f1475d9d315706df5723d118d2e2fcb2e1714",
+          "size": 9678,
+          "source_offset": 579760,
+          "width": 96,
+          "xoff": -48,
+          "yoff": -52
+        }
+      ],
+      "physical_same_number_counterexamples": [
+        {
+          "adder": 69417765,
+          "attr_sha256": "9ae8218551d6456cc9403a462ff674c619808336cca379767dc6208a3a7a7049",
+          "bitmapno": 28002,
+          "height": 77,
+          "index": 28002,
+          "logical_alias": 0,
+          "record_sha256": "3e51c0ca1f85c336bd5e97397b45a79222635667105abebb05baa0a9b3e3f88b",
+          "size": 1673,
+          "source_offset": 2240160,
+          "width": 36,
+          "xoff": -25,
+          "yoff": -67
+        }
+      ]
+    },
+    "28003": {
+      "program": {
+        "name": "乌力斯坦",
+        "slot": 2,
+        "face": 28003,
+        "r36_table_row_sha256": "6f7e718819679e1eb8ffbab696a6554969d05c392e0bb4964896ee392f9ba62d",
+        "r36_table_index": 2
+      },
+      "adrn_alias_rows": [
+        {
+          "adder": 26138936,
+          "attr_sha256": "79edbd3b9409ded278c969e309227734f6778bb2e1a55c8e85b5202ca79d107e",
+          "bitmapno": 7248,
+          "height": 104,
+          "index": 7248,
+          "logical_alias": 28003,
+          "record_sha256": "d2756142d8125d9ba8fe9a4b2a8ec174a6bf661b173cdc0582f373bda8232f27",
+          "size": 9304,
+          "source_offset": 579840,
+          "width": 96,
+          "xoff": -48,
+          "yoff": -52
+        }
+      ],
+      "physical_same_number_counterexamples": [
+        {
+          "adder": 69419438,
+          "attr_sha256": "9ae8218551d6456cc9403a462ff674c619808336cca379767dc6208a3a7a7049",
+          "bitmapno": 28003,
+          "height": 77,
+          "index": 28003,
+          "logical_alias": 0,
+          "record_sha256": "3e969f0cfdefb3ccca60335952399271b0273ebeaca59f1b39270c6f98433f4b",
+          "size": 1687,
+          "source_offset": 2240240,
+          "width": 48,
+          "xoff": -33,
+          "yoff": -68
+        }
+      ]
+    }
+  },
+  "unproven": {
+    "original_real_pixel_payload_read": false,
+    "actual_drawpath_executed": false,
+    "official_build_authenticated": false,
+    "original_server_species_master": false,
+    "original_program_executed": false,
+    "new_official_clients": 0,
+    "artifact_zip_independently_downloaded": false,
+    "full_client_archived_permanently": false,
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b_wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "next": "PRESERVED_CLIENT_ALBUM_RENDER_REAL_CONFIRMATION_38_OR_FINITE_EVIDENCE_GAP"
+}
