@@ -1,0 +1,74 @@
+name: Source four historical village interior maps R34
+on:
+  push:
+    branches:
+      - agent/village-interiors-r34-20261027
+    paths:
+      - '.github/workflows/source-stoneage-village-interiors-r34.yml'
+      - 'tools/stoneage_village_interiors_r34.py'
+      - 'tests/test_stoneage_village_interiors_r34.py'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  bounded-actual-map-source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 17
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Adversarial synthetic three-plane guards
+        run: python -m unittest -v tests.test_stoneage_village_interiors_r34
+      - name: Install archive extractor
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq 7zip unar
+      - name: Retrieve exactly two dated archived small map packages without executing them
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib,urllib.request,subprocess
+          from pathlib import Path
+          sources={
+            'june':('20030623234451','372426e46765a1cf479041bdafc1d3e58fb019117d00d0b43d6a5f796620776e'),
+            'dec':('20031210092426','5f7f58e0d26d596e926a7d551d7c24e8a9a27824d5bdc53be3955b19b0e13abc')
+          }
+          root=Path('/tmp/r34-map');root.mkdir(parents=True,exist_ok=True)
+          for label,(ts,expected) in sources.items():
+            url=f'https://web.archive.org/web/{ts}id_/http://www.wuxitianlong.com:80/sa/map.exe'
+            request=urllib.request.Request(url,headers={'User-Agent':'stoneage-rebuild-research/1.0'})
+            raw=root/(label+'.exe')
+            with urllib.request.urlopen(request,timeout=120) as response,raw.open('wb') as dest:
+              while True:
+                chunk=response.read(1024*1024)
+                if not chunk:break
+                dest.write(chunk)
+            if hashlib.sha256(raw.read_bytes()).hexdigest()!=expected:
+              raise SystemExit(label+' carrier full original SHA mismatch')
+            dst=root/label;dst.mkdir()
+            proc=subprocess.run(['7z','x','-y',f'-o{dst}',str(raw),'map/1001.DAT','map/1003.DAT','map/1005.DAT','map/1006.DAT'],capture_output=True,text=True)
+            if proc.returncode:
+              # The December SFX is handled by the proven unar fallback; never execute the wrapper.
+              alt=subprocess.run(['unar','-f','-o',str(dst),str(raw)],capture_output=True,text=True)
+              if alt.returncode:
+                raise SystemExit(label+' original four room DATs static extract failed: 7z '+proc.stdout[-300:]+' unar '+alt.stderr[-500:])
+            matches=[p for p in dst.rglob('*') if p.is_file() and p.name.lower() in {'1001.dat','1003.dat','1005.dat','1006.dat'} and p.parent.name.lower()=='map']
+            if len(matches)!=4:
+              raise SystemExit(label+' qualified map/four room DATs not found uniquely after static extraction')
+            print(label+' actual_archive_full_hash=PASS original_map_file_found=PASS')
+          PY
+      - name: Derive precisely four actual room value transition histograms and print metadata only
+        run: python -m tools.stoneage_village_interiors_r34 --maps /tmp/r34-map --output /tmp/r34-rooms-derived.json
+      - name: Remove downloaded original executables and proprietary map DATs
+        if: always()
+        run: rm -rf /tmp/r34-map
+      - uses: actions/upload-artifact@v4
+        if: success()
+        with:
+          name: r34-rooms-derived-no-original-map
+          path: /tmp/r34-rooms-derived.json
+          retention-days: 7
+          if-no-files-found: error
