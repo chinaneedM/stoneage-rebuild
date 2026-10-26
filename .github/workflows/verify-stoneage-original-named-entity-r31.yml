@@ -21,7 +21,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Eleven negative controls and independent raw input replay
+      - name: Eleven tests including nine negative controls and raw-source replay
         run: python -m unittest -v tests.test_stoneage_original_named_entity_r31
       - name: Exact original source Git blobs and all 557 entries plus 8 original frames
         run: python -m tools.stoneage_original_named_entity_r31

@@ -2,7 +2,6 @@
 import copy
 import json
 import unittest
-from pathlib import Path
 
 from tools.stoneage_original_named_entity_r31 import ROOT, INPUTS, evaluate, verify
 
@@ -51,7 +50,6 @@ class OriginalNamedEntityR31Tests(unittest.TestCase):
         self.mutate(3, lambda x: x["identity_fields"].__setitem__("original_pet_master_id", 123))
 
     def test_reject_taiwan_v1_range_fabrication(self):
-        self.mutate(4, lambda _: None) if False else None
         changed = list(self.source)
         changed[4] = changed[4].replace("METRIC|adrn_records|125996", "METRIC|adrn_records|303047")
         with self.assertRaises(ValueError):
