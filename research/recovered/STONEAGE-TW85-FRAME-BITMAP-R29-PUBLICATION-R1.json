@@ -1,0 +1,178 @@
+{
+  "schema": "stoneage.tw85_frame_bitmap_r29.publication.r1",
+  "date": "2026-10-26",
+  "source_start": {
+    "main_head": "dc8fd3a13739c5a8d0341cc87d6f57fd280e7aa6",
+    "tree": "a2bb64ee81e267aa3978a7b1f64331338b0f7c4d",
+    "fresh_remote_and_full_current_blob_read": true
+  },
+  "source_same_saved_carrier": {
+    "claimed_grade": "UNVERIFIED_COMMUNITY_PRESERVED_CLAIMED_TW85_SAME_INSTALLER_CARRIER",
+    "common_inventory": "research/recovered/STONEAGE-WAYI85-MSI-CLIENT-PAYLOAD-R1.json",
+    "native_original_verified_sources": [
+      "data/spradrn_137.bin",
+      "data/spr_137.bin",
+      "data/adrn_158.bin",
+      "data/real_158.bin"
+    ],
+    "all_members_sha_and_lengths_agree_to_same_557_file_inventory": true,
+    "new_original_bytes_downloaded_this_round": false
+  },
+  "verified": {
+    "frames": 735666,
+    "sentinel_frames": 4759,
+    "uniquely_matched_frame_occurrences": 730907,
+    "unmatched_frame_occurrences": 0,
+    "ambiguous_matched_frame_occurrences": 0,
+    "used_distinct_physical_bitmap_ids": 397443,
+    "used_distinct_complete_rd_contents_by_size_sha256": 392083,
+    "native_adrn_physical_records": 416220,
+    "native_distinct_bitmap_ids": 416192,
+    "native_distinct_ids_not_referenced_by_this_spr": 18749,
+    "r28_unmatched_CN50_spr_groups": 554,
+    "r28_unmatched_CN50_frame_occurrences": 137211,
+    "r28_unmatched_CN50_sentinel_frames": 19,
+    "r28_unmatched_CN50_uniquely_mapped_frames": 137192,
+    "other_1185_groups_mapped_frames": 593715,
+    "certified_original_clean_release": false,
+    "actual_pixels_rendered_or_historical_avatar_species_identified": false,
+    "original_program_executed": false
+  },
+  "permanent_material": {
+    "directory": "research/recovered/tw85-frame-bitmap-r29/",
+    "blobs": [
+      {
+        "file": "BITMAP-BINDINGS-R29.tsv.gz",
+        "bytes": 20567984,
+        "git_blob": "fd024d9b30ed478ece7810a0207b157fd627a629",
+        "sha256": "7afa7d1274cddd4006640f7326056f0e4b96cdb5400048a6a4cd39e944b1013d"
+      },
+      {
+        "file": "GROUP-MATERIAL-R29.tsv.gz",
+        "bytes": 13069,
+        "git_blob": "273e0c00ab1e1f7aee40815679b00631cd302231",
+        "sha256": "bbd7588d473143ff2c4918f988e48f4f524907afee7623abfaf1d043f6c025bf"
+      },
+      {
+        "file": "REPORT-R29.json",
+        "bytes": 4302,
+        "git_blob": "c02e3a513f95995767efc9172aafef48ab653099"
+      }
+    ],
+    "exact_remote_main_blobs_and_sizes_checked": true
+  },
+  "actions": {
+    "source": {
+      "run": 40325228050,
+      "job": 121580080644,
+      "status": "completed",
+      "conclusion": "success",
+      "branch": "agent/tw85-frame-bitmap-r29-20261026",
+      "permanent_archive_push_sha": "814adc830d741987081305c895547d5b0ccf04c7"
+    },
+    "failed_trials": [
+      {
+        "run": 40325621997,
+        "conclusion": "failure",
+        "reason": "independent SQL script missing argparse import"
+      },
+      {
+        "run": 40325664769,
+        "conclusion": "failure",
+        "reason": "pre-correction independent SQL invocation"
+      }
+    ],
+    "corrected_candidate": {
+      "run": 40325726592,
+      "job": 121581784596,
+      "status": "completed",
+      "conclusion": "success"
+    },
+    "candidate_full_acceptance": {
+      "run": 40326181555,
+      "job": 121583349668,
+      "status": "completed",
+      "conclusion": "success"
+    },
+    "pull_request": {
+      "number": 11,
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/pull/11",
+      "merged": true,
+      "merge_sha": "498714f5a398adf9d203b2b30d22b0479cab50cb",
+      "tree": "4f9827bf3fae1881e40d278cca1a6cf6130e38af"
+    },
+    "main_acceptance": [
+      {
+        "run": 40326438533,
+        "kind": "R29_independent_sql_and_rebuild",
+        "result": "completed/success"
+      },
+      {
+        "run": 40326438586,
+        "kind": "R28_original_animation",
+        "result": "completed/success"
+      },
+      {
+        "run": 40326438495,
+        "kind": "R18_original_source_conservation",
+        "result": "completed/success"
+      },
+      {
+        "run": 40326438493,
+        "kind": "R17_battle_scene_correction",
+        "result": "completed/success"
+      },
+      {
+        "run": 40326438475,
+        "kind": "Stage_A_limited_acceptance",
+        "result": "completed/success"
+      },
+      {
+        "run": 40326438474,
+        "kind": "R16_character_creation_original",
+        "result": "completed/success"
+      },
+      {
+        "run": 40326438460,
+        "kind": "R29_source_archiver",
+        "result": "completed/skipped",
+        "reason": "source branch only, no re-fetch on main"
+      }
+    ]
+  },
+  "original_history_preserved": {
+    "docs/CURRENT-STATE.md": {
+      "bytes": 2680510,
+      "git_blob": "031c76a5a8e431f646853909bb2f2e11e6328cd2"
+    },
+    "docs/PROJECT-CONTINUITY-PROTOCOL-R1.md": {
+      "bytes": 10880,
+      "git_blob": "a064174339b7a4656efe00b4446a066fd7abf304"
+    },
+    "docs/DESIGN-DECISIONS.md": {
+      "bytes": 49898,
+      "git_blob": "713caaecc6a43a92e5cb7f939954026b859bac20"
+    },
+    "docs/HISTORICAL-TIMELINE.md": {
+      "bytes": 730950,
+      "git_blob": "91ca73105f26bf96aaa928519ae04942182e7b9b"
+    },
+    "docs/SOURCE-REGISTRY.md": {
+      "bytes": 1028196,
+      "git_blob": "ee3b2d70dabedfe02e3761b3fdb25476a79e147c"
+    },
+    "docs/RESTORATION-ROADMAP-R2.md": {
+      "bytes": 482245,
+      "git_blob": "c11eff237a8aaa1cc34488a6c3c7fcdd596f9ce2"
+    }
+  },
+  "next": "TW85-FRAME-ORIGINAL-RD-PIXEL-PREVIEW-30_BOUNDED_PRIVATE_VISUAL_MATERIAL_OR_EXACT_SOURCE_GAP",
+  "boundaries": {
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b_wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING",
+    "overall_completion_percent": null,
+    "original_client_world_visited": false,
+    "named_pet_npc_quest_identity_proven": false
+  }
+}
