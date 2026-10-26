@@ -116,3 +116,16 @@ R20仍OPEN，仅新同版原master/原包或实例数据可重开。R21四图止
 P3E原运行环境阻塞仍在，原登录颜色/QUIT、声音场景、原服务器与游戏世界未验收。
 Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、大包私人保管受限、总体percent=null。
 本包测试数/8403行比较不是总复原率，DD-028四类任务继续严格区分。
+
+
+## 实际主线终验
+
+内容main `8c86d321737735cf19ac9d9b5e5323cd28a9757a` / tree
+`bd38fcc250c01ee871d2309a67555e775c16b1d8` 已非强制快进发布。候选五项、同HEAD主线
+五项Actions实际completed/success；主线专用40276994932/job121421731303日志确认11项
+测试与R20止点/R21无损XZ保管重放通过，另Stage A/R16/R17/R18兼容成功。11内容路径
+包括二进制XZ与远端逐字节相等；五大历史文件/协议原样、README精确历史前缀保留。
+[永久发布收据](../../research/recovered/STONEAGE-FOUR-MAP-RESOURCE-PUBLICATION-R21.json)
+保存全部候选/main作业步骤、源HEAD/run/job/ZIP及内容blob。收据自身CI发布后实际观察，
+不提前写成功。R20仍缺同构建原实体源，最高NEXT仍单WAV私人试听资格22；原游戏世界、
+原场景渲染和具名实体边界均不因本包通过而晋级。
