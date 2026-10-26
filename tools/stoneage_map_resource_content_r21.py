@@ -3,6 +3,7 @@ import argparse
 from collections import Counter,defaultdict
 import hashlib
 import json
+import lzma
 from pathlib import Path
 import struct
 from tools.stoneage_logical_alias_catalog import ROOT,DEST,load_catalog
@@ -101,7 +102,10 @@ def replay(report):
 
 def main():
     a=argparse.ArgumentParser();a.add_argument('--maps',type=Path);a.add_argument('--output',type=Path);a.add_argument('--verify',type=Path);args=a.parse_args()
-    if args.verify:replay(json.loads(args.verify.read_bytes()));print('R21_FOUR_MAP_RESOURCE_CONTENT_REPLAY=PASS; SAME_BUILD_AND_NAMES_OPEN')
+    if args.verify:
+        raw=args.verify.read_bytes()
+        if args.verify.suffix=='.xz':raw=lzma.decompress(raw)
+        replay(json.loads(raw));print('R21_FOUR_MAP_RESOURCE_CONTENT_REPLAY=PASS; SAME_BUILD_AND_NAMES_OPEN')
     else:
         report=build(args.maps);replay(report);args.output.write_bytes((json.dumps(report,ensure_ascii=False,indent=2)+'\n').encode())
 

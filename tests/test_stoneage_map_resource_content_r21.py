@@ -1,5 +1,6 @@
 import copy
 import json
+import lzma
 import struct
 import unittest
 from tools import stoneage_map_resource_content_r21 as m
@@ -29,7 +30,7 @@ class ParserTests(unittest.TestCase):
 
 class EvidenceTests(unittest.TestCase):
     def setUp(self):
-        self.r=json.loads((m.ROOT/'research/recovered/STONEAGE-FOUR-MAP-RESOURCE-CONTENT-R21.json').read_bytes())
+        self.r=json.loads(lzma.decompress((m.ROOT/'research/recovered/STONEAGE-FOUR-MAP-RESOURCE-CONTENT-R21.json.xz').read_bytes()))
     def test_actual_metadata_replays(self):m.replay(self.r)
     def test_wrong_same_build_name_or_runtime_claim_rejected(self):
         for k in ('same_build_render_selection_proven','map_names_or_npcs_inferred','original_client_executed'):
@@ -40,7 +41,7 @@ class EvidenceTests(unittest.TestCase):
             for p in mp['planes'][:2]:
                 for profile in m.PROFILES:
                     for row in p['resource_value_comparisons'][profile]['rows']:
-                        if row['candidate_count']:
+                        if row['candidate_count']>1:
                             row['candidates'].pop()
                             with self.assertRaises(ValueError):m.replay(self.r)
                             return

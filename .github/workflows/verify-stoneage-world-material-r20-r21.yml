@@ -1,0 +1,22 @@
+name: Validate R20 source stop and four-map R21 original resource content
+on:
+  push:
+    branches: [main, agent/world-source-r20-map-content-r21-20261026]
+    paths:
+      - 'tools/stoneage_map_resource_content_r21.py'
+      - 'tools/stoneage_world_material_r20_r21_guard.py'
+      - 'tests/test_stoneage_map_resource_content_r21.py'
+      - 'research/recovered/STONEAGE-FOUR-MAP-RESOURCE-*'
+      - 'research/recovered/STONEAGE-EARLY-WORLD-ENTITY-SOURCE-R20.json'
+      - 'docs/continuity/STONEAGE-WORLD-MATERIAL-R20-R21-20261026.md'
+      - '.github/workflows/verify-stoneage-world-material-r20-r21.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  metadata-replay:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python -m unittest -v tests.test_stoneage_map_resource_content_r21
+      - run: python -m tools.stoneage_world_material_r20_r21_guard

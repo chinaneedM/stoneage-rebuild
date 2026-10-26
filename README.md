@@ -582,3 +582,8 @@ The 2.66 MB historical `docs/CURRENT-STATE.md` is still preserved byte-for-byte.
 ### 2026-10-26 — Windows资格P3E有界止点
 
 [实测续接记录](docs/continuity/STONEAGE-WINDOWS-P3E-20261026.md)确认256COLOR及XP+256COLOR下，自编程序实际报告8bpp、正确RGB并收到输入；三组ACP仍1252，即使console已950。单自编exe路径防火墙四时点对照通过，但原程序/后代完整隔离未资格化。当前环境明确BLOCKED，原件下载/执行0；停止显示参数扩展，最高NEXT回R20同版原具名实体材料队列。原登录颜色/QUIT、原声与世界未验收；完整CURRENT/历史文件原样保留，Stage A/B/R79及百分比未知边界不变。
+
+
+### 2026-10-26 — R20缺源止点与四图原资源材料R21
+
+[续接记录](docs/continuity/STONEAGE-WORLD-MATERIAL-R20-R21-20261026.md)记录R20本轮没有取得新同版具名实体源；已停止重复字符串/端点扩展，转从2003历史小地图包实际读取四图。新增前两层数值—TW1/CN5/官方补丁原资源候选联接：4000第二层值4的133格在TW1无别名匹配，后期多内容候选不能任选；3000的三组同内容重复则保留来源。完整原样派生以无损XZ永久保管，无原地图网格/像素/程序公开。最高NEXT转单WAV私人真实试听资格22，不把数值匹配当同build渲染或具名NPC；P3E运行阻塞、Stage A/B/wiki/R79和百分比未知边界不变，CURRENT历史全文原样保留。

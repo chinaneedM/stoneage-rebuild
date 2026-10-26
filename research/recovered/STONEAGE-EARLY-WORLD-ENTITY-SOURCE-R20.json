@@ -1,0 +1,87 @@
+{
+  "schema": "stoneage.early_world_entity_source_r20.v1",
+  "startup_head": "256204d59cab065f4993c02bbdd5b4eaa9978b6c",
+  "startup_tree": "0c6b13a565d3e573a4cbe4d74dc33760efd8d74f",
+  "task": "EARLY-OFFICIAL-WORLD-ENTITY-SOURCE-20",
+  "source_pins": {
+    "research/recovered/STONEAGE-CLIENT-NAMED-ENTITY-PRIMARY-SOURCE-GAP-R1.json": {
+      "bytes": 5828,
+      "sha256": "3a777cc5132a3608b3faf552efb9669d3e18ae2ffd62fc2d8ed8562c00cc1fbe",
+      "git_blob": "9175c18568a7ee5213613ef5573cf44d5fb5e3c7"
+    },
+    "research/recovered/STONEAGE-PET-SPECIES-SAME-BUILD-PRIMARY-MASTER-08.json": {
+      "bytes": 4198,
+      "sha256": "973e239e6ea8c13b510fc64171a4fd88b9058ffb9dc9cc87c871871dfef77520",
+      "git_blob": "3f3d4adb27512026b039c23c07bc7bf858e34cf4"
+    },
+    "research/recovered/STONEAGE-NPC-ORIGINAL-SCRIPT-CARRIER-QUALIFICATION-R1.json": {
+      "bytes": 2833,
+      "sha256": "274d34ef4695b0bdd14df0891ae6c4894ef087dd343d835f30fe474f3fdf8576",
+      "git_blob": "a76323d9871dd511926c4185004dc1ea2af5a506"
+    },
+    "research/recovered/STONEAGE-TW10-CLIENT-INVENTORY-R1.txt": {
+      "bytes": 210632,
+      "sha256": "413d197d19ea405490bfffc2bdbf021089177671445ca567533b2eb2576dae7b",
+      "git_blob": "564233902b10c60760d4f93b1ea65d4dd1469206"
+    },
+    "research/recovered/STONEAGE-WAYI85-MSI-CLIENT-PAYLOAD-R1.json": {
+      "bytes": 385776,
+      "sha256": "4ea7b43a7e3427ab4443afe801ae7d3e156e6193e1d42ce1b261f733e07de1d8",
+      "git_blob": "18a68c9d4275763ef0ed7a347cca940cffe0fee2"
+    }
+  },
+  "bounded_outcome": "OPEN_NO_NEW_AUTHENTICATED_SAME_BUILD_ENTITY_SOURCE",
+  "new_original_named_entity_mappings": 0,
+  "original_client_executed": false,
+  "new_large_client_downloads": 0,
+  "checks": [
+    {
+      "kind": "PREEXISTING_ORIGINAL_EVIDENCE",
+      "scope": "TW1 disc metadata and original short text; no ordinary field map cache or name/entity/SPR master authenticated; not a new discovery"
+    },
+    {
+      "kind": "PREEXISTING_MIXED_SERVER",
+      "scope": "NPC10 and pet08 already distinguish unverified mixed server data and later community code from official TW1; no repeat big bundle retrieval"
+    },
+    {
+      "kind": "CURRENT_HTTP_RETRIEVAL",
+      "url": "https://itest.5ch.net/medaka/test/read.cgi/mmominor/1360616745/817-n",
+      "final_url": "https://itest.5ch.io/medaka/test/read.cgi/mmominor/1360616745/817-n",
+      "http_status": 200,
+      "bytes": 69786,
+      "sha256": "aca48d9a6fe2c2d37d8e76a387c4e5d5e3086b6f2c0a18821674955cc134a699",
+      "original_filename_present_in_this_response": false,
+      "qualification": "CURRENT_RENDERING_SHELL_NOT_VERIFIED_CLIENT_PAYLOAD; old search-index excerpt remains separate; no absence claim about historical posts or files"
+    },
+    {
+      "kind": "CURRENT_HTTP_RETRIEVAL",
+      "url": "https://blog.csdn.net/2301_81926447/article/details/145845858",
+      "http_status": 521,
+      "bytes": null,
+      "sha256": null,
+      "qualification": "DIRECT_HTML_RETRIEVAL_NOT_SUCCESSFUL; web search/open separately renders tutorial text, not original binary"
+    },
+    {
+      "kind": "SEARCH_SERVICE_RENDERED_PAGE",
+      "url": "https://blog.csdn.net/2301_81926447/article/details/145845858",
+      "article_identifier": "145845858",
+      "title_claim": "1.0_to_9.0_all_version_collection",
+      "observed_demo_claim": "8.0_one_click_server_and_STW_activation",
+      "default_all_accounts_GM_claim": true,
+      "claim_scope": "MODERN_AUTHOR_TUTORIAL_NOT_AUTHENTICATED_OFFICIAL_CLIENT_CATALOG",
+      "actual_bundle_obtained": false,
+      "raw_html_digest": null,
+      "source_build_mapping_proven": false,
+      "note": "Do not use recommended article timestamp as original publication date; no full-version completeness or official provenance inferred from title."
+    }
+  ],
+  "stop": "Do not repeat text/writer/endpoint/helper expansion without new authentic carrier/master or actual same-build payload. R20 stays OPEN with precise reopening evidence.",
+  "reopening": [
+    "public complete original carrier with stable digest and build provenance",
+    "same-build entity name/id and graphic/SPR mapping or authentic server payload",
+    "a retained original instance that reproduces the resource selection"
+  ],
+  "portfolio_rotation": "R21 four-map resource-value content package, a different material integration; map geometry/graphics does not substitute named entities",
+  "quest_origin": "DD-028 four classes remain distinct; no modern GM/ride instruction promoted to base quest",
+  "overall_restoration_percent": null
+}
