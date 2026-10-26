@@ -1,0 +1,1493 @@
+{
+  "schema": "stoneage.p3d.synthetic_environment_gate.v1",
+  "original_client_downloaded": false,
+  "original_client_executed": false,
+  "original_game_world_entered": false,
+  "cases": [
+    {
+      "mode": "gdi",
+      "original_client_executed": false,
+      "baseline_state": {
+        "schema": "stoneage.p3d.synthetic_win32.v1",
+        "original_client_executed": false,
+        "pointer_bytes": 4,
+        "windows_acp": 950,
+        "mode": "gdi",
+        "phase": 0,
+        "done": false,
+        "display_bpp": 8,
+        "raster_palette_capability": true,
+        "foreground_matches": true,
+        "active_matches": true,
+        "focus_matches": true,
+        "client_origin": [
+          30,
+          30
+        ],
+        "client_size": [
+          320,
+          200
+        ],
+        "moves": 0,
+        "downs": 0,
+        "ups": 0,
+        "async_down_polls": 0,
+        "painted": 1,
+        "palette_created": true,
+        "realized_entries_last": 0,
+        "system_palette_previous": 0,
+        "red_getpixel": [
+          128,
+          0,
+          0
+        ],
+        "green_getpixel": [
+          0,
+          128,
+          0
+        ],
+        "getpixel_valid": true,
+        "ddraw": {
+          "create": -2147467259,
+          "cooperative": -2147467259,
+          "primary": -2147467259,
+          "offscreen_8bit": -2147467259,
+          "palette": -2147467259,
+          "offscreen_attach": -2147467259,
+          "primary_attach": -2147467259,
+          "blt": -2147467259
+        }
+      },
+      "baseline_capture": {
+        "method": "X11_each_window_colormap",
+        "frames": [
+          {
+            "width": 320,
+            "height": 200,
+            "rgb_sha256": "bf54d0517395bb2041c1f550b364fcc2109d487f7c943d1b40753d3f85c835cf",
+            "png_sha256": "a1c45777d1d380cd366b163cc09a799512b60a75b4277b5e1dba8429fadf8326",
+            "channel_extrema": [
+              [
+                0,
+                255
+              ],
+              [
+                0,
+                255
+              ],
+              [
+                0,
+                255
+              ]
+            ],
+            "nonuniform_pixels": true,
+            "synthetic_control_red_pixels": 0,
+            "synthetic_control_green_pixels": 0,
+            "assistant_viewed_original": false,
+            "image_published": false
+          }
+        ],
+        "x11": {
+          "schema": "stoneage.p3c.x11_own_colormap.v1",
+          "windows": [
+            {
+              "window": 12582913,
+              "colormap": 10485762,
+              "default_colormap": 32,
+              "map_installed": false,
+              "depth": 8,
+              "visual_class": 3,
+              "width": 320,
+              "height": 200,
+              "map": {
+                "width": 320,
+                "height": 200,
+                "rgb_sha256": "bf54d0517395bb2041c1f550b364fcc2109d487f7c943d1b40753d3f85c835cf",
+                "png_sha256": "a1c45777d1d380cd366b163cc09a799512b60a75b4277b5e1dba8429fadf8326",
+                "channel_extrema": [
+                  [
+                    0,
+                    255
+                  ],
+                  [
+                    0,
+                    255
+                  ],
+                  [
+                    0,
+                    255
+                  ]
+                ],
+                "nonuniform_pixels": true,
+                "synthetic_control_red_pixels": 0,
+                "synthetic_control_green_pixels": 0,
+                "assistant_viewed_original": false,
+                "image_published": false
+              },
+              "rootmap": {
+                "width": 320,
+                "height": 200,
+                "rgb_sha256": "d6ab54104fff2724d057182c572d5a0ec9af8b5f56c1684b4c5116502c714708",
+                "png_sha256": "058a18b0656f02c936ccb0800cccb7e56cac1fc9f76e5bc911abe5706c8e5092",
+                "channel_extrema": [
+                  [
+                    0,
+                    255
+                  ],
+                  [
+                    0,
+                    255
+                  ],
+                  [
+                    0,
+                    255
+                  ]
+                ],
+                "nonuniform_pixels": true,
+                "synthetic_control_red_pixels": 0,
+                "synthetic_control_green_pixels": 0,
+                "assistant_viewed_original": false,
+                "image_published": false
+              },
+              "indices_sha256": "44b442118fb0707cceb29bde37d3bc64cd755c7b78162e32729c161deb68985e",
+              "palette_sha256": "cf107f2c4355de46cd546505558d8fa994b599e7277f93a2848d7d07731b35eb",
+              "same_indices_different_colormap_rgb": true
+            }
+          ],
+          "x_errors": 0
+        }
+      },
+      "activation_command": {
+        "returncode": 0,
+        "report": {
+          "controller_only_own_synthetic_class": true,
+          "attach_thread_input": true,
+          "set_foreground_return": true,
+          "foreground_matches": true,
+          "sendinput_down": 0,
+          "sendinput_up": 0
+        }
+      },
+      "palette_command": {
+        "returncode": 0,
+        "report": {
+          "controller_only_own_synthetic_class": true,
+          "attach_thread_input": true,
+          "set_foreground_return": true,
+          "foreground_matches": true,
+          "sendinput_down": 0,
+          "sendinput_up": 0
+        }
+      },
+      "palette_state": {
+        "schema": "stoneage.p3d.synthetic_win32.v1",
+        "original_client_executed": false,
+        "pointer_bytes": 4,
+        "windows_acp": 950,
+        "mode": "gdi",
+        "phase": 1,
+        "done": false,
+        "display_bpp": 8,
+        "raster_palette_capability": true,
+        "foreground_matches": true,
+        "active_matches": true,
+        "focus_matches": true,
+        "client_origin": [
+          30,
+          30
+        ],
+        "client_size": [
+          320,
+          200
+        ],
+        "moves": 0,
+        "downs": 0,
+        "ups": 0,
+        "async_down_polls": 0,
+        "painted": 2,
+        "palette_created": true,
+        "realized_entries_last": 0,
+        "system_palette_previous": 1,
+        "red_getpixel": [
+          128,
+          0,
+          0
+        ],
+        "green_getpixel": [
+          0,
+          128,
+          0
+        ],
+        "getpixel_valid": true,
+        "ddraw": {
+          "create": -2147467259,
+          "cooperative": -2147467259,
+          "primary": -2147467259,
+          "offscreen_8bit": -2147467259,
+          "palette": -2147467259,
+          "offscreen_attach": -2147467259,
+          "primary_attach": -2147467259,
+          "blt": -2147467259
+        }
+      },
+      "palette_capture": {
+        "method": "X11_each_window_colormap",
+        "frames": [
+          {
+            "width": 320,
+            "height": 200,
+            "rgb_sha256": "cafb012ca7f4bddcb00b5d9cefbd7a74ac28ad6f38146bb14c2f9bf1d5634851",
+            "png_sha256": "730d81f94c66b3d816c36ba1005ea706660dc43a5b11a24a4c3d3fdef7edc759",
+            "channel_extrema": [
+              [
+                0,
+                255
+              ],
+              [
+                0,
+                255
+              ],
+              [
+                0,
+                255
+              ]
+            ],
+            "nonuniform_pixels": true,
+            "synthetic_control_red_pixels": 0,
+            "synthetic_control_green_pixels": 0,
+            "assistant_viewed_original": false,
+            "image_published": false
+          }
+        ],
+        "x11": {
+          "schema": "stoneage.p3c.x11_own_colormap.v1",
+          "windows": [
+            {
+              "window": 12582913,
+              "colormap": 10485762,
+              "default_colormap": 32,
+              "map_installed": false,
+              "depth": 8,
+              "visual_class": 3,
+              "width": 320,
+              "height": 200,
+              "map": {
+                "width": 320,
+                "height": 200,
+                "rgb_sha256": "cafb012ca7f4bddcb00b5d9cefbd7a74ac28ad6f38146bb14c2f9bf1d5634851",
+                "png_sha256": "730d81f94c66b3d816c36ba1005ea706660dc43a5b11a24a4c3d3fdef7edc759",
+                "channel_extrema": [
+                  [
+                    0,
+                    255
+                  ],
+                  [
+                    0,
+                    255
+                  ],
+                  [
+                    0,
+                    255
+                  ]
+                ],
+                "nonuniform_pixels": true,
+                "synthetic_control_red_pixels": 0,
+                "synthetic_control_green_pixels": 0,
+                "assistant_viewed_original": false,
+                "image_published": false
+              },
+              "rootmap": {
+                "width": 320,
+                "height": 200,
+                "rgb_sha256": "e2ccd1edc38ea7e8651e7536eecdc3ea5a0e22619db2afc6fa6e71733d5ae155",
+                "png_sha256": "80eb9db08d4effd8a184230fc967349f6935e1d3031cb3616dbebdf87c653a12",
+                "channel_extrema": [
+                  [
+                    0,
+                    255
+                  ],
+                  [
+                    0,
+                    255
+                  ],
+                  [
+                    0,
+                    255
+                  ]
+                ],
+                "nonuniform_pixels": true,
+                "synthetic_control_red_pixels": 0,
+                "synthetic_control_green_pixels": 0,
+                "assistant_viewed_original": false,
+                "image_published": false
+              },
+              "indices_sha256": "94bad743eb35ef4f58d23220cf23b47acbdf89c2dbbd4da7c1ba037422d9b350",
+              "palette_sha256": "3b87f309ee2c84dd91f06a181cf78d7792dd5a9af25f30d640e7dd9aa0ce8a1f",
+              "same_indices_different_colormap_rgb": true
+            }
+          ],
+          "x_errors": 0
+        }
+      },
+      "x11_input": {
+        "dispatch_returncodes": [
+          0,
+          0,
+          0
+        ],
+        "before": {
+          "schema": "stoneage.p3d.synthetic_win32.v1",
+          "original_client_executed": false,
+          "pointer_bytes": 4,
+          "windows_acp": 950,
+          "mode": "gdi",
+          "phase": 1,
+          "done": false,
+          "display_bpp": 8,
+          "raster_palette_capability": true,
+          "foreground_matches": true,
+          "active_matches": true,
+          "focus_matches": true,
+          "client_origin": [
+            30,
+            30
+          ],
+          "client_size": [
+            320,
+            200
+          ],
+          "moves": 0,
+          "downs": 0,
+          "ups": 0,
+          "async_down_polls": 0,
+          "painted": 2,
+          "palette_created": true,
+          "realized_entries_last": 0,
+          "system_palette_previous": 1,
+          "red_getpixel": [
+            128,
+            0,
+            0
+          ],
+          "green_getpixel": [
+            0,
+            128,
+            0
+          ],
+          "getpixel_valid": true,
+          "ddraw": {
+            "create": -2147467259,
+            "cooperative": -2147467259,
+            "primary": -2147467259,
+            "offscreen_8bit": -2147467259,
+            "palette": -2147467259,
+            "offscreen_attach": -2147467259,
+            "primary_attach": -2147467259,
+            "blt": -2147467259
+          }
+        },
+        "after": {
+          "schema": "stoneage.p3d.synthetic_win32.v1",
+          "original_client_executed": false,
+          "pointer_bytes": 4,
+          "windows_acp": 950,
+          "mode": "gdi",
+          "phase": 1,
+          "done": false,
+          "display_bpp": 8,
+          "raster_palette_capability": true,
+          "foreground_matches": true,
+          "active_matches": true,
+          "focus_matches": true,
+          "client_origin": [
+            30,
+            30
+          ],
+          "client_size": [
+            320,
+            200
+          ],
+          "moves": 1,
+          "downs": 1,
+          "ups": 1,
+          "async_down_polls": 13,
+          "painted": 3,
+          "palette_created": true,
+          "realized_entries_last": 0,
+          "system_palette_previous": 1,
+          "red_getpixel": [
+            128,
+            0,
+            0
+          ],
+          "green_getpixel": [
+            0,
+            128,
+            0
+          ],
+          "getpixel_valid": true,
+          "ddraw": {
+            "create": -2147467259,
+            "cooperative": -2147467259,
+            "primary": -2147467259,
+            "offscreen_8bit": -2147467259,
+            "palette": -2147467259,
+            "offscreen_attach": -2147467259,
+            "primary_attach": -2147467259,
+            "blt": -2147467259
+          }
+        },
+        "delta": {
+          "downs": 1,
+          "ups": 1,
+          "async_down_polls": 13,
+          "program_received_down_up_and_async": true
+        }
+      },
+      "before_sendinput": {
+        "schema": "stoneage.p3d.synthetic_win32.v1",
+        "original_client_executed": false,
+        "pointer_bytes": 4,
+        "windows_acp": 950,
+        "mode": "gdi",
+        "phase": 1,
+        "done": false,
+        "display_bpp": 8,
+        "raster_palette_capability": true,
+        "foreground_matches": true,
+        "active_matches": true,
+        "focus_matches": true,
+        "client_origin": [
+          30,
+          30
+        ],
+        "client_size": [
+          320,
+          200
+        ],
+        "moves": 1,
+        "downs": 1,
+        "ups": 1,
+        "async_down_polls": 13,
+        "painted": 3,
+        "palette_created": true,
+        "realized_entries_last": 0,
+        "system_palette_previous": 1,
+        "red_getpixel": [
+          128,
+          0,
+          0
+        ],
+        "green_getpixel": [
+          0,
+          128,
+          0
+        ],
+        "getpixel_valid": true,
+        "ddraw": {
+          "create": -2147467259,
+          "cooperative": -2147467259,
+          "primary": -2147467259,
+          "offscreen_8bit": -2147467259,
+          "palette": -2147467259,
+          "offscreen_attach": -2147467259,
+          "primary_attach": -2147467259,
+          "blt": -2147467259
+        }
+      },
+      "sendinput_command": {
+        "returncode": 0,
+        "report": {
+          "controller_only_own_synthetic_class": true,
+          "attach_thread_input": true,
+          "set_foreground_return": true,
+          "foreground_matches": true,
+          "sendinput_down": 1,
+          "sendinput_up": 1
+        }
+      },
+      "after_sendinput": {
+        "schema": "stoneage.p3d.synthetic_win32.v1",
+        "original_client_executed": false,
+        "pointer_bytes": 4,
+        "windows_acp": 950,
+        "mode": "gdi",
+        "phase": 1,
+        "done": false,
+        "display_bpp": 8,
+        "raster_palette_capability": true,
+        "foreground_matches": true,
+        "active_matches": true,
+        "focus_matches": true,
+        "client_origin": [
+          30,
+          30
+        ],
+        "client_size": [
+          320,
+          200
+        ],
+        "moves": 2,
+        "downs": 2,
+        "ups": 2,
+        "async_down_polls": 23,
+        "painted": 4,
+        "palette_created": true,
+        "realized_entries_last": 0,
+        "system_palette_previous": 1,
+        "red_getpixel": [
+          128,
+          0,
+          0
+        ],
+        "green_getpixel": [
+          0,
+          128,
+          0
+        ],
+        "getpixel_valid": true,
+        "ddraw": {
+          "create": -2147467259,
+          "cooperative": -2147467259,
+          "primary": -2147467259,
+          "offscreen_8bit": -2147467259,
+          "palette": -2147467259,
+          "offscreen_attach": -2147467259,
+          "primary_attach": -2147467259,
+          "blt": -2147467259
+        }
+      },
+      "after_input_capture": {
+        "method": "X11_each_window_colormap",
+        "frames": [
+          {
+            "width": 320,
+            "height": 200,
+            "rgb_sha256": "2db300edffb96562c906b60ff146691fce732a9b687ea71896651ea48a9d4958",
+            "png_sha256": "0306cfb7c53790368114bf03b0ffb7904e832af9aa25bf9bb32a8d593beaa6ed",
+            "channel_extrema": [
+              [
+                0,
+                255
+              ],
+              [
+                0,
+                255
+              ],
+              [
+                0,
+                255
+              ]
+            ],
+            "nonuniform_pixels": true,
+            "synthetic_control_red_pixels": 0,
+            "synthetic_control_green_pixels": 0,
+            "assistant_viewed_original": false,
+            "image_published": false
+          }
+        ],
+        "x11": {
+          "schema": "stoneage.p3c.x11_own_colormap.v1",
+          "windows": [
+            {
+              "window": 12582913,
+              "colormap": 10485762,
+              "default_colormap": 32,
+              "map_installed": false,
+              "depth": 8,
+              "visual_class": 3,
+              "width": 320,
+              "height": 200,
+              "map": {
+                "width": 320,
+                "height": 200,
+                "rgb_sha256": "2db300edffb96562c906b60ff146691fce732a9b687ea71896651ea48a9d4958",
+                "png_sha256": "0306cfb7c53790368114bf03b0ffb7904e832af9aa25bf9bb32a8d593beaa6ed",
+                "channel_extrema": [
+                  [
+                    0,
+                    255
+                  ],
+                  [
+                    0,
+                    255
+                  ],
+                  [
+                    0,
+                    255
+                  ]
+                ],
+                "nonuniform_pixels": true,
+                "synthetic_control_red_pixels": 0,
+                "synthetic_control_green_pixels": 0,
+                "assistant_viewed_original": false,
+                "image_published": false
+              },
+              "rootmap": {
+                "width": 320,
+                "height": 200,
+                "rgb_sha256": "07c9a0681b4c52d872e39923a1f9ae958ae41ac5e25ec50a19992ef49e7ea9a7",
+                "png_sha256": "39c060e4c5e236208072cec098659e4b54bd265c4ff1682da317198df43880c6",
+                "channel_extrema": [
+                  [
+                    0,
+                    255
+                  ],
+                  [
+                    0,
+                    255
+                  ],
+                  [
+                    0,
+                    255
+                  ]
+                ],
+                "nonuniform_pixels": true,
+                "synthetic_control_red_pixels": 0,
+                "synthetic_control_green_pixels": 0,
+                "assistant_viewed_original": false,
+                "image_published": false
+              },
+              "indices_sha256": "d4550798429f07718c0f6919dc8f6ef24f82fa4220dc67b1a8de15a8e355a50d",
+              "palette_sha256": "3b87f309ee2c84dd91f06a181cf78d7792dd5a9af25f30d640e7dd9aa0ce8a1f",
+              "same_indices_different_colormap_rgb": true
+            }
+          ],
+          "x_errors": 0
+        }
+      },
+      "finish_command": {
+        "returncode": 0,
+        "report": {
+          "controller_only_own_synthetic_class": true,
+          "attach_thread_input": true,
+          "set_foreground_return": true,
+          "foreground_matches": true,
+          "sendinput_down": 0,
+          "sendinput_up": 0
+        }
+      },
+      "final_state": {
+        "schema": "stoneage.p3d.synthetic_win32.v1",
+        "original_client_executed": false,
+        "pointer_bytes": 4,
+        "windows_acp": 950,
+        "mode": "gdi",
+        "phase": 1,
+        "done": true,
+        "display_bpp": 8,
+        "raster_palette_capability": true,
+        "foreground_matches": true,
+        "active_matches": true,
+        "focus_matches": true,
+        "client_origin": [
+          30,
+          30
+        ],
+        "client_size": [
+          320,
+          200
+        ],
+        "moves": 2,
+        "downs": 2,
+        "ups": 2,
+        "async_down_polls": 23,
+        "painted": 4,
+        "palette_created": true,
+        "realized_entries_last": 0,
+        "system_palette_previous": 1,
+        "red_getpixel": [
+          128,
+          0,
+          0
+        ],
+        "green_getpixel": [
+          0,
+          128,
+          0
+        ],
+        "getpixel_valid": true,
+        "ddraw": {
+          "create": -2147467259,
+          "cooperative": -2147467259,
+          "primary": -2147467259,
+          "offscreen_8bit": -2147467259,
+          "palette": -2147467259,
+          "offscreen_attach": -2147467259,
+          "primary_attach": -2147467259,
+          "blt": -2147467259
+        }
+      },
+      "process_exit_before_cleanup": 0,
+      "assessment": {
+        "known_rgb_getpixel": false,
+        "known_rgb_external_capture": false,
+        "render_path_passed": true,
+        "color_gate_passed": false,
+        "sendinput_dispatch_only": true,
+        "sendinput_received": true,
+        "sendinput_gate_passed": true,
+        "foreground_gate_passed": true,
+        "original_client_executed": false,
+        "original_game_input_or_color_proven": false
+      }
+    },
+    {
+      "mode": "ddraw",
+      "original_client_executed": false,
+      "baseline_state": {
+        "schema": "stoneage.p3d.synthetic_win32.v1",
+        "original_client_executed": false,
+        "pointer_bytes": 4,
+        "windows_acp": 950,
+        "mode": "ddraw",
+        "phase": 0,
+        "done": false,
+        "display_bpp": 8,
+        "raster_palette_capability": true,
+        "foreground_matches": true,
+        "active_matches": true,
+        "focus_matches": true,
+        "client_origin": [
+          30,
+          30
+        ],
+        "client_size": [
+          320,
+          200
+        ],
+        "moves": 1,
+        "downs": 0,
+        "ups": 0,
+        "async_down_polls": 0,
+        "painted": 1,
+        "palette_created": true,
+        "realized_entries_last": 0,
+        "system_palette_previous": 0,
+        "red_getpixel": [
+          128,
+          0,
+          0
+        ],
+        "green_getpixel": [
+          0,
+          128,
+          0
+        ],
+        "getpixel_valid": true,
+        "ddraw": {
+          "create": -2147467259,
+          "cooperative": -2147467259,
+          "primary": -2147467259,
+          "offscreen_8bit": -2147467259,
+          "palette": -2147467259,
+          "offscreen_attach": -2147467259,
+          "primary_attach": -2147467259,
+          "blt": -2147467259
+        }
+      },
+      "baseline_capture": {
+        "method": "X11_each_window_colormap",
+        "frames": [
+          {
+            "width": 320,
+            "height": 200,
+            "rgb_sha256": "bf54d0517395bb2041c1f550b364fcc2109d487f7c943d1b40753d3f85c835cf",
+            "png_sha256": "a1c45777d1d380cd366b163cc09a799512b60a75b4277b5e1dba8429fadf8326",
+            "channel_extrema": [
+              [
+                0,
+                255
+              ],
+              [
+                0,
+                255
+              ],
+              [
+                0,
+                255
+              ]
+            ],
+            "nonuniform_pixels": true,
+            "synthetic_control_red_pixels": 0,
+            "synthetic_control_green_pixels": 0,
+            "assistant_viewed_original": false,
+            "image_published": false
+          }
+        ],
+        "x11": {
+          "schema": "stoneage.p3c.x11_own_colormap.v1",
+          "windows": [
+            {
+              "window": 10485761,
+              "colormap": 8388610,
+              "default_colormap": 32,
+              "map_installed": false,
+              "depth": 8,
+              "visual_class": 3,
+              "width": 320,
+              "height": 200,
+              "map": {
+                "width": 320,
+                "height": 200,
+                "rgb_sha256": "bf54d0517395bb2041c1f550b364fcc2109d487f7c943d1b40753d3f85c835cf",
+                "png_sha256": "a1c45777d1d380cd366b163cc09a799512b60a75b4277b5e1dba8429fadf8326",
+                "channel_extrema": [
+                  [
+                    0,
+                    255
+                  ],
+                  [
+                    0,
+                    255
+                  ],
+                  [
+                    0,
+                    255
+                  ]
+                ],
+                "nonuniform_pixels": true,
+                "synthetic_control_red_pixels": 0,
+                "synthetic_control_green_pixels": 0,
+                "assistant_viewed_original": false,
+                "image_published": false
+              },
+              "rootmap": {
+                "width": 320,
+                "height": 200,
+                "rgb_sha256": "d6ab54104fff2724d057182c572d5a0ec9af8b5f56c1684b4c5116502c714708",
+                "png_sha256": "058a18b0656f02c936ccb0800cccb7e56cac1fc9f76e5bc911abe5706c8e5092",
+                "channel_extrema": [
+                  [
+                    0,
+                    255
+                  ],
+                  [
+                    0,
+                    255
+                  ],
+                  [
+                    0,
+                    255
+                  ]
+                ],
+                "nonuniform_pixels": true,
+                "synthetic_control_red_pixels": 0,
+                "synthetic_control_green_pixels": 0,
+                "assistant_viewed_original": false,
+                "image_published": false
+              },
+              "indices_sha256": "44b442118fb0707cceb29bde37d3bc64cd755c7b78162e32729c161deb68985e",
+              "palette_sha256": "cf107f2c4355de46cd546505558d8fa994b599e7277f93a2848d7d07731b35eb",
+              "same_indices_different_colormap_rgb": true
+            }
+          ],
+          "x_errors": 0
+        }
+      },
+      "activation_command": {
+        "returncode": 0,
+        "report": {
+          "controller_only_own_synthetic_class": true,
+          "attach_thread_input": true,
+          "set_foreground_return": true,
+          "foreground_matches": true,
+          "sendinput_down": 0,
+          "sendinput_up": 0
+        }
+      },
+      "palette_command": {
+        "returncode": 0,
+        "report": {
+          "controller_only_own_synthetic_class": true,
+          "attach_thread_input": true,
+          "set_foreground_return": true,
+          "foreground_matches": true,
+          "sendinput_down": 0,
+          "sendinput_up": 0
+        }
+      },
+      "palette_state": {
+        "schema": "stoneage.p3d.synthetic_win32.v1",
+        "original_client_executed": false,
+        "pointer_bytes": 4,
+        "windows_acp": 950,
+        "mode": "ddraw",
+        "phase": 1,
+        "done": false,
+        "display_bpp": 8,
+        "raster_palette_capability": true,
+        "foreground_matches": true,
+        "active_matches": true,
+        "focus_matches": true,
+        "client_origin": [
+          30,
+          30
+        ],
+        "client_size": [
+          320,
+          200
+        ],
+        "moves": 1,
+        "downs": 0,
+        "ups": 0,
+        "async_down_polls": 0,
+        "painted": 2,
+        "palette_created": true,
+        "realized_entries_last": 0,
+        "system_palette_previous": 0,
+        "red_getpixel": [
+          224,
+          32,
+          0
+        ],
+        "green_getpixel": [
+          0,
+          192,
+          64
+        ],
+        "getpixel_valid": true,
+        "ddraw": {
+          "create": 0,
+          "cooperative": 0,
+          "primary": 0,
+          "offscreen_8bit": 0,
+          "palette": 0,
+          "offscreen_attach": 0,
+          "primary_attach": 0,
+          "blt": 0
+        }
+      },
+      "palette_capture": {
+        "method": "X11_each_window_colormap",
+        "frames": [
+          {
+            "width": 320,
+            "height": 200,
+            "rgb_sha256": "b4739c3c8b9ee084ea428a1f0173603044418b40e4599eebf28363d0b1f65d61",
+            "png_sha256": "7a29f2a249192d55e366fc048195bb12b449e89424fd8e0d93d37a4d0a6df3fd",
+            "channel_extrema": [
+              [
+                0,
+                255
+              ],
+              [
+                0,
+                255
+              ],
+              [
+                0,
+                255
+              ]
+            ],
+            "nonuniform_pixels": true,
+            "synthetic_control_red_pixels": 0,
+            "synthetic_control_green_pixels": 0,
+            "assistant_viewed_original": false,
+            "image_published": false
+          }
+        ],
+        "x11": {
+          "schema": "stoneage.p3c.x11_own_colormap.v1",
+          "windows": [
+            {
+              "window": 10485761,
+              "colormap": 8388610,
+              "default_colormap": 32,
+              "map_installed": false,
+              "depth": 8,
+              "visual_class": 3,
+              "width": 320,
+              "height": 200,
+              "map": {
+                "width": 320,
+                "height": 200,
+                "rgb_sha256": "b4739c3c8b9ee084ea428a1f0173603044418b40e4599eebf28363d0b1f65d61",
+                "png_sha256": "7a29f2a249192d55e366fc048195bb12b449e89424fd8e0d93d37a4d0a6df3fd",
+                "channel_extrema": [
+                  [
+                    0,
+                    255
+                  ],
+                  [
+                    0,
+                    255
+                  ],
+                  [
+                    0,
+                    255
+                  ]
+                ],
+                "nonuniform_pixels": true,
+                "synthetic_control_red_pixels": 0,
+                "synthetic_control_green_pixels": 0,
+                "assistant_viewed_original": false,
+                "image_published": false
+              },
+              "rootmap": {
+                "width": 320,
+                "height": 200,
+                "rgb_sha256": "21dc8ec5f68b37dd01c6c620c48907505eba7ef39ea74286ea1cd19132544282",
+                "png_sha256": "6c7903399de3dfc598791cd7ff257cd36e08b0fce032d935f83a8ff57a9db802",
+                "channel_extrema": [
+                  [
+                    0,
+                    255
+                  ],
+                  [
+                    0,
+                    255
+                  ],
+                  [
+                    0,
+                    255
+                  ]
+                ],
+                "nonuniform_pixels": true,
+                "synthetic_control_red_pixels": 0,
+                "synthetic_control_green_pixels": 0,
+                "assistant_viewed_original": false,
+                "image_published": false
+              },
+              "indices_sha256": "2c6c48499f9823d95a7c0b0f6a09b8d739d612db60fe105d7470322b65f86c80",
+              "palette_sha256": "cf107f2c4355de46cd546505558d8fa994b599e7277f93a2848d7d07731b35eb",
+              "same_indices_different_colormap_rgb": true
+            }
+          ],
+          "x_errors": 0
+        }
+      },
+      "x11_input": {
+        "dispatch_returncodes": [
+          0,
+          0,
+          0
+        ],
+        "before": {
+          "schema": "stoneage.p3d.synthetic_win32.v1",
+          "original_client_executed": false,
+          "pointer_bytes": 4,
+          "windows_acp": 950,
+          "mode": "ddraw",
+          "phase": 1,
+          "done": false,
+          "display_bpp": 8,
+          "raster_palette_capability": true,
+          "foreground_matches": true,
+          "active_matches": true,
+          "focus_matches": true,
+          "client_origin": [
+            30,
+            30
+          ],
+          "client_size": [
+            320,
+            200
+          ],
+          "moves": 1,
+          "downs": 0,
+          "ups": 0,
+          "async_down_polls": 0,
+          "painted": 2,
+          "palette_created": true,
+          "realized_entries_last": 0,
+          "system_palette_previous": 0,
+          "red_getpixel": [
+            224,
+            32,
+            0
+          ],
+          "green_getpixel": [
+            0,
+            192,
+            64
+          ],
+          "getpixel_valid": true,
+          "ddraw": {
+            "create": 0,
+            "cooperative": 0,
+            "primary": 0,
+            "offscreen_8bit": 0,
+            "palette": 0,
+            "offscreen_attach": 0,
+            "primary_attach": 0,
+            "blt": 0
+          }
+        },
+        "after": {
+          "schema": "stoneage.p3d.synthetic_win32.v1",
+          "original_client_executed": false,
+          "pointer_bytes": 4,
+          "windows_acp": 950,
+          "mode": "ddraw",
+          "phase": 1,
+          "done": false,
+          "display_bpp": 8,
+          "raster_palette_capability": true,
+          "foreground_matches": true,
+          "active_matches": true,
+          "focus_matches": true,
+          "client_origin": [
+            30,
+            30
+          ],
+          "client_size": [
+            320,
+            200
+          ],
+          "moves": 1,
+          "downs": 1,
+          "ups": 1,
+          "async_down_polls": 13,
+          "painted": 3,
+          "palette_created": true,
+          "realized_entries_last": 0,
+          "system_palette_previous": 0,
+          "red_getpixel": [
+            224,
+            32,
+            0
+          ],
+          "green_getpixel": [
+            0,
+            192,
+            64
+          ],
+          "getpixel_valid": true,
+          "ddraw": {
+            "create": 0,
+            "cooperative": 0,
+            "primary": 0,
+            "offscreen_8bit": 0,
+            "palette": 0,
+            "offscreen_attach": 0,
+            "primary_attach": 0,
+            "blt": 0
+          }
+        },
+        "delta": {
+          "downs": 1,
+          "ups": 1,
+          "async_down_polls": 13,
+          "program_received_down_up_and_async": true
+        }
+      },
+      "before_sendinput": {
+        "schema": "stoneage.p3d.synthetic_win32.v1",
+        "original_client_executed": false,
+        "pointer_bytes": 4,
+        "windows_acp": 950,
+        "mode": "ddraw",
+        "phase": 1,
+        "done": false,
+        "display_bpp": 8,
+        "raster_palette_capability": true,
+        "foreground_matches": true,
+        "active_matches": true,
+        "focus_matches": true,
+        "client_origin": [
+          30,
+          30
+        ],
+        "client_size": [
+          320,
+          200
+        ],
+        "moves": 1,
+        "downs": 1,
+        "ups": 1,
+        "async_down_polls": 13,
+        "painted": 3,
+        "palette_created": true,
+        "realized_entries_last": 0,
+        "system_palette_previous": 0,
+        "red_getpixel": [
+          224,
+          32,
+          0
+        ],
+        "green_getpixel": [
+          0,
+          192,
+          64
+        ],
+        "getpixel_valid": true,
+        "ddraw": {
+          "create": 0,
+          "cooperative": 0,
+          "primary": 0,
+          "offscreen_8bit": 0,
+          "palette": 0,
+          "offscreen_attach": 0,
+          "primary_attach": 0,
+          "blt": 0
+        }
+      },
+      "sendinput_command": {
+        "returncode": 0,
+        "report": {
+          "controller_only_own_synthetic_class": true,
+          "attach_thread_input": true,
+          "set_foreground_return": true,
+          "foreground_matches": true,
+          "sendinput_down": 1,
+          "sendinput_up": 1
+        }
+      },
+      "after_sendinput": {
+        "schema": "stoneage.p3d.synthetic_win32.v1",
+        "original_client_executed": false,
+        "pointer_bytes": 4,
+        "windows_acp": 950,
+        "mode": "ddraw",
+        "phase": 1,
+        "done": false,
+        "display_bpp": 8,
+        "raster_palette_capability": true,
+        "foreground_matches": true,
+        "active_matches": true,
+        "focus_matches": true,
+        "client_origin": [
+          30,
+          30
+        ],
+        "client_size": [
+          320,
+          200
+        ],
+        "moves": 2,
+        "downs": 2,
+        "ups": 2,
+        "async_down_polls": 24,
+        "painted": 4,
+        "palette_created": true,
+        "realized_entries_last": 0,
+        "system_palette_previous": 0,
+        "red_getpixel": [
+          224,
+          32,
+          0
+        ],
+        "green_getpixel": [
+          0,
+          192,
+          64
+        ],
+        "getpixel_valid": true,
+        "ddraw": {
+          "create": 0,
+          "cooperative": 0,
+          "primary": 0,
+          "offscreen_8bit": 0,
+          "palette": 0,
+          "offscreen_attach": 0,
+          "primary_attach": 0,
+          "blt": 0
+        }
+      },
+      "after_input_capture": {
+        "method": "X11_each_window_colormap",
+        "frames": [
+          {
+            "width": 320,
+            "height": 200,
+            "rgb_sha256": "4b5c7009c085a064e9f6973dd06fa8ead8cad5219acf25ba5b8cce6e9867a5e8",
+            "png_sha256": "d90e851939fdec2f4c53764e945fc794bc2b35d8800af5998e66dfbbe81e3218",
+            "channel_extrema": [
+              [
+                0,
+                255
+              ],
+              [
+                0,
+                255
+              ],
+              [
+                0,
+                255
+              ]
+            ],
+            "nonuniform_pixels": true,
+            "synthetic_control_red_pixels": 0,
+            "synthetic_control_green_pixels": 0,
+            "assistant_viewed_original": false,
+            "image_published": false
+          }
+        ],
+        "x11": {
+          "schema": "stoneage.p3c.x11_own_colormap.v1",
+          "windows": [
+            {
+              "window": 10485761,
+              "colormap": 8388610,
+              "default_colormap": 32,
+              "map_installed": false,
+              "depth": 8,
+              "visual_class": 3,
+              "width": 320,
+              "height": 200,
+              "map": {
+                "width": 320,
+                "height": 200,
+                "rgb_sha256": "4b5c7009c085a064e9f6973dd06fa8ead8cad5219acf25ba5b8cce6e9867a5e8",
+                "png_sha256": "d90e851939fdec2f4c53764e945fc794bc2b35d8800af5998e66dfbbe81e3218",
+                "channel_extrema": [
+                  [
+                    0,
+                    255
+                  ],
+                  [
+                    0,
+                    255
+                  ],
+                  [
+                    0,
+                    255
+                  ]
+                ],
+                "nonuniform_pixels": true,
+                "synthetic_control_red_pixels": 0,
+                "synthetic_control_green_pixels": 0,
+                "assistant_viewed_original": false,
+                "image_published": false
+              },
+              "rootmap": {
+                "width": 320,
+                "height": 200,
+                "rgb_sha256": "c5edf1a535125e91eb5359dcbaad144fc466e599c184769522d13b5c4ce7742e",
+                "png_sha256": "94ea9e3b2dcaff63c06c16e649198f48509ba5a390fb9ac9b5ef890140f47c20",
+                "channel_extrema": [
+                  [
+                    0,
+                    255
+                  ],
+                  [
+                    0,
+                    255
+                  ],
+                  [
+                    0,
+                    255
+                  ]
+                ],
+                "nonuniform_pixels": true,
+                "synthetic_control_red_pixels": 0,
+                "synthetic_control_green_pixels": 0,
+                "assistant_viewed_original": false,
+                "image_published": false
+              },
+              "indices_sha256": "f7215a0e8eaa4b89eed35096eb0eb768a21076a5ecd2039fa1a7559ec02ceb93",
+              "palette_sha256": "cf107f2c4355de46cd546505558d8fa994b599e7277f93a2848d7d07731b35eb",
+              "same_indices_different_colormap_rgb": true
+            }
+          ],
+          "x_errors": 0
+        }
+      },
+      "finish_command": {
+        "returncode": 0,
+        "report": {
+          "controller_only_own_synthetic_class": true,
+          "attach_thread_input": true,
+          "set_foreground_return": true,
+          "foreground_matches": true,
+          "sendinput_down": 0,
+          "sendinput_up": 0
+        }
+      },
+      "final_state": {
+        "schema": "stoneage.p3d.synthetic_win32.v1",
+        "original_client_executed": false,
+        "pointer_bytes": 4,
+        "windows_acp": 950,
+        "mode": "ddraw",
+        "phase": 1,
+        "done": true,
+        "display_bpp": 8,
+        "raster_palette_capability": true,
+        "foreground_matches": true,
+        "active_matches": true,
+        "focus_matches": true,
+        "client_origin": [
+          30,
+          30
+        ],
+        "client_size": [
+          320,
+          200
+        ],
+        "moves": 2,
+        "downs": 2,
+        "ups": 2,
+        "async_down_polls": 24,
+        "painted": 4,
+        "palette_created": true,
+        "realized_entries_last": 0,
+        "system_palette_previous": 0,
+        "red_getpixel": [
+          224,
+          32,
+          0
+        ],
+        "green_getpixel": [
+          0,
+          192,
+          64
+        ],
+        "getpixel_valid": true,
+        "ddraw": {
+          "create": 0,
+          "cooperative": 0,
+          "primary": 0,
+          "offscreen_8bit": 0,
+          "palette": 0,
+          "offscreen_attach": 0,
+          "primary_attach": 0,
+          "blt": 0
+        }
+      },
+      "process_exit_before_cleanup": 0,
+      "assessment": {
+        "known_rgb_getpixel": false,
+        "known_rgb_external_capture": false,
+        "render_path_passed": true,
+        "color_gate_passed": false,
+        "sendinput_dispatch_only": true,
+        "sendinput_received": true,
+        "sendinput_gate_passed": true,
+        "foreground_gate_passed": true,
+        "original_client_executed": false,
+        "original_game_input_or_color_proven": false
+      }
+    }
+  ],
+  "host_platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+  "bench_binary_sha256": "dded776439b9ff10e55ee1f0c3da4b957906824b00dff394ac043de177f57bf8",
+  "control_source_sha256": "809599c49cad9c0790aac3fcf508a13e63f2e8cf454fa352420fe5321c709663",
+  "network": {
+    "host_net_namespace": "net:[4026531833]",
+    "child_net_namespace": "net:[4026532270]",
+    "interfaces": [
+      "lo"
+    ],
+    "ipv4_routes": [],
+    "ipv6_default_routes": [],
+    "external_documentation_address_connect_errno": 101,
+    "outbound_namespace_isolation_verified": true
+  },
+  "environment": "wine32_xvfb_800x600x8",
+  "wine_version": "wine-9.0 (Ubuntu 9.0~repack-4build3)",
+  "wine_restart_observation": {
+    "kill_returncode": 1,
+    "wait_returncode": 0,
+    "living_server_pids_after_wait": [],
+    "server_absence_verified": true
+  },
+  "wine_x11_configuration": {
+    "PrivateColorMap": "Y",
+    "registry_write_and_readback_passed": true,
+    "wineserver_restarted_before_control": true,
+    "upstream_source_scope": "wine-9.0; Ubuntu repack measured independently"
+  },
+  "original_rerun_prerequisite_synthetic_8bit_passed": false
+}

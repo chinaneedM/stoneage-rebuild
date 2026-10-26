@@ -73,3 +73,16 @@ python -m tools.stoneage_original_animation_lab --original-dir /private/TW1/Ston
 已补输入前后异常/调试器窗口守卫，原exe/资源未修改。NEXT P3D先让合成Win32实际颜色、
 激活和接收输入通过，再决定可用的32位兼容环境；不继续同环境重复原盘下载。原声、
 回环服务端和世界仍未观察；R20与Stage A/B/R79边界不变。
+
+## 2026-10-26 P3D：合成环境资格已有实际判定
+
+自编Win32 GDI/DirectDraw在四环境/配置共8路径实际完成颜色、前台/active/focus、消息
+及异步按下接收；8例SendInput接收成立，但只有3例颜色通过。原生Windows2022的32位
+程序可以正确显示和收输入，却报告32bpp/ACP1252；Wine8报告8bpp/CP950但颜色量化，
+基于Wine9上游原始代码的PrivateColorMap单项复测也未改善。重启守卫首败及修订实际
+记录均保留，本轮未下载/执行原客户端。
+
+见 `docs/continuity/STONEAGE-SYNTHETIC-WIN32-P3D-20261026.md`。NEXT P3E只查一种可用
+Windows8位/编码/网络隔离资格方案并用同一合成门槛验收；不得把console codepage、
+兼容选项或成功注入等同实际ACP/色深/接收。未通过就记录环境阻塞、返回22域材料队列，
+不连扩Wine9低层helper。原游戏颜色/QUIT、声音、服务器及世界仍独立OPEN。

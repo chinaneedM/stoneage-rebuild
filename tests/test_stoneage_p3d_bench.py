@@ -1,9 +1,17 @@
 import copy
 import unittest
-from tools.stoneage_p3d_bench import evaluate_case,input_delta
+from pathlib import Path
+import tempfile
+from tools.stoneage_p3d_bench import evaluate_case,input_delta,living_wine_servers
 
 
 class BenchAssessmentTests(unittest.TestCase):
+    def test_actual_live_server_is_distinguished_from_zombie_and_unrelated_process(self):
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)
+            for pid,name,state in [(10,'wineserver','S (sleeping)'),(11,'wineserver','Z (zombie)'),(12,'python3','S (sleeping)')]:
+                p=root/str(pid);p.mkdir();(p/'comm').write_text(name+'\n');(p/'status').write_text('State:\t'+state+'\n')
+            self.assertEqual(living_wine_servers(root),[10])
     def good(self):
         return {'mode':'gdi','palette_state':{'phase':1,'palette_created':True,'getpixel_valid':True,'red_getpixel':[222,0,0],'green_getpixel':[0,200,80],
                                 'foreground_matches':True,'active_matches':True,'focus_matches':True},

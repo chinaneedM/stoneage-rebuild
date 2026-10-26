@@ -1,0 +1,1073 @@
+{
+  "schema": "stoneage.p3d.synthetic_environment_gate.v1",
+  "original_client_downloaded": false,
+  "original_client_executed": false,
+  "original_game_world_entered": false,
+  "cases": [
+    {
+      "mode": "gdi",
+      "original_client_executed": false,
+      "baseline_state": {
+        "schema": "stoneage.p3d.synthetic_win32.v1",
+        "original_client_executed": false,
+        "pointer_bytes": 4,
+        "windows_acp": 950,
+        "mode": "gdi",
+        "phase": 0,
+        "done": false,
+        "display_bpp": 32,
+        "raster_palette_capability": false,
+        "foreground_matches": true,
+        "active_matches": true,
+        "focus_matches": true,
+        "client_origin": [
+          30,
+          30
+        ],
+        "client_size": [
+          320,
+          200
+        ],
+        "moves": 0,
+        "downs": 0,
+        "ups": 0,
+        "async_down_polls": 0,
+        "painted": 1,
+        "palette_created": true,
+        "realized_entries_last": 0,
+        "system_palette_previous": 0,
+        "red_getpixel": [
+          222,
+          0,
+          0
+        ],
+        "green_getpixel": [
+          0,
+          200,
+          80
+        ],
+        "getpixel_valid": true,
+        "ddraw": {
+          "create": -2147467259,
+          "cooperative": -2147467259,
+          "primary": -2147467259,
+          "offscreen_8bit": -2147467259,
+          "palette": -2147467259,
+          "offscreen_attach": -2147467259,
+          "primary_attach": -2147467259,
+          "blt": -2147467259
+        }
+      },
+      "baseline_capture": {
+        "method": "ImageMagick_24bit_root",
+        "frames": [
+          {
+            "width": 800,
+            "height": 600,
+            "rgb_sha256": "c1a93435aa3e715c409f7e9f09e7fc5c91de0c6126bfd370a995378c832aeeae",
+            "png_sha256": "352be4efcf37181bd00b809915c629c1f137bd163045580b96a2701ecc4211eb",
+            "channel_extrema": [
+              [
+                0,
+                255
+              ],
+              [
+                0,
+                255
+              ],
+              [
+                0,
+                255
+              ]
+            ],
+            "nonuniform_pixels": true,
+            "synthetic_control_red_pixels": 19300,
+            "synthetic_control_green_pixels": 19300,
+            "assistant_viewed_original": false,
+            "image_published": false
+          }
+        ],
+        "returncode": 0
+      },
+      "activation_command": {
+        "returncode": 0,
+        "report": {
+          "controller_only_own_synthetic_class": true,
+          "attach_thread_input": true,
+          "set_foreground_return": true,
+          "foreground_matches": true,
+          "sendinput_down": 0,
+          "sendinput_up": 0
+        }
+      },
+      "palette_command": {
+        "returncode": 0,
+        "report": {
+          "controller_only_own_synthetic_class": true,
+          "attach_thread_input": true,
+          "set_foreground_return": true,
+          "foreground_matches": true,
+          "sendinput_down": 0,
+          "sendinput_up": 0
+        }
+      },
+      "palette_state": {
+        "schema": "stoneage.p3d.synthetic_win32.v1",
+        "original_client_executed": false,
+        "pointer_bytes": 4,
+        "windows_acp": 950,
+        "mode": "gdi",
+        "phase": 1,
+        "done": false,
+        "display_bpp": 32,
+        "raster_palette_capability": false,
+        "foreground_matches": true,
+        "active_matches": true,
+        "focus_matches": true,
+        "client_origin": [
+          30,
+          30
+        ],
+        "client_size": [
+          320,
+          200
+        ],
+        "moves": 0,
+        "downs": 0,
+        "ups": 0,
+        "async_down_polls": 0,
+        "painted": 2,
+        "palette_created": true,
+        "realized_entries_last": 0,
+        "system_palette_previous": 0,
+        "red_getpixel": [
+          222,
+          0,
+          0
+        ],
+        "green_getpixel": [
+          0,
+          200,
+          80
+        ],
+        "getpixel_valid": true,
+        "ddraw": {
+          "create": -2147467259,
+          "cooperative": -2147467259,
+          "primary": -2147467259,
+          "offscreen_8bit": -2147467259,
+          "palette": -2147467259,
+          "offscreen_attach": -2147467259,
+          "primary_attach": -2147467259,
+          "blt": -2147467259
+        }
+      },
+      "palette_capture": {
+        "method": "ImageMagick_24bit_root",
+        "frames": [
+          {
+            "width": 800,
+            "height": 600,
+            "rgb_sha256": "c1a93435aa3e715c409f7e9f09e7fc5c91de0c6126bfd370a995378c832aeeae",
+            "png_sha256": "352be4efcf37181bd00b809915c629c1f137bd163045580b96a2701ecc4211eb",
+            "channel_extrema": [
+              [
+                0,
+                255
+              ],
+              [
+                0,
+                255
+              ],
+              [
+                0,
+                255
+              ]
+            ],
+            "nonuniform_pixels": true,
+            "synthetic_control_red_pixels": 19300,
+            "synthetic_control_green_pixels": 19300,
+            "assistant_viewed_original": false,
+            "image_published": false
+          }
+        ],
+        "returncode": 0
+      },
+      "x11_input": {
+        "dispatch_returncodes": [
+          0,
+          0,
+          0
+        ],
+        "before": {
+          "schema": "stoneage.p3d.synthetic_win32.v1",
+          "original_client_executed": false,
+          "pointer_bytes": 4,
+          "windows_acp": 950,
+          "mode": "gdi",
+          "phase": 1,
+          "done": false,
+          "display_bpp": 32,
+          "raster_palette_capability": false,
+          "foreground_matches": true,
+          "active_matches": true,
+          "focus_matches": true,
+          "client_origin": [
+            30,
+            30
+          ],
+          "client_size": [
+            320,
+            200
+          ],
+          "moves": 0,
+          "downs": 0,
+          "ups": 0,
+          "async_down_polls": 0,
+          "painted": 2,
+          "palette_created": true,
+          "realized_entries_last": 0,
+          "system_palette_previous": 0,
+          "red_getpixel": [
+            222,
+            0,
+            0
+          ],
+          "green_getpixel": [
+            0,
+            200,
+            80
+          ],
+          "getpixel_valid": true,
+          "ddraw": {
+            "create": -2147467259,
+            "cooperative": -2147467259,
+            "primary": -2147467259,
+            "offscreen_8bit": -2147467259,
+            "palette": -2147467259,
+            "offscreen_attach": -2147467259,
+            "primary_attach": -2147467259,
+            "blt": -2147467259
+          }
+        },
+        "after": {
+          "schema": "stoneage.p3d.synthetic_win32.v1",
+          "original_client_executed": false,
+          "pointer_bytes": 4,
+          "windows_acp": 950,
+          "mode": "gdi",
+          "phase": 1,
+          "done": false,
+          "display_bpp": 32,
+          "raster_palette_capability": false,
+          "foreground_matches": true,
+          "active_matches": true,
+          "focus_matches": true,
+          "client_origin": [
+            30,
+            30
+          ],
+          "client_size": [
+            320,
+            200
+          ],
+          "moves": 1,
+          "downs": 1,
+          "ups": 1,
+          "async_down_polls": 12,
+          "painted": 3,
+          "palette_created": true,
+          "realized_entries_last": 0,
+          "system_palette_previous": 0,
+          "red_getpixel": [
+            222,
+            0,
+            0
+          ],
+          "green_getpixel": [
+            0,
+            200,
+            80
+          ],
+          "getpixel_valid": true,
+          "ddraw": {
+            "create": -2147467259,
+            "cooperative": -2147467259,
+            "primary": -2147467259,
+            "offscreen_8bit": -2147467259,
+            "palette": -2147467259,
+            "offscreen_attach": -2147467259,
+            "primary_attach": -2147467259,
+            "blt": -2147467259
+          }
+        },
+        "delta": {
+          "downs": 1,
+          "ups": 1,
+          "async_down_polls": 12,
+          "program_received_down_up_and_async": true
+        }
+      },
+      "before_sendinput": {
+        "schema": "stoneage.p3d.synthetic_win32.v1",
+        "original_client_executed": false,
+        "pointer_bytes": 4,
+        "windows_acp": 950,
+        "mode": "gdi",
+        "phase": 1,
+        "done": false,
+        "display_bpp": 32,
+        "raster_palette_capability": false,
+        "foreground_matches": true,
+        "active_matches": true,
+        "focus_matches": true,
+        "client_origin": [
+          30,
+          30
+        ],
+        "client_size": [
+          320,
+          200
+        ],
+        "moves": 1,
+        "downs": 1,
+        "ups": 1,
+        "async_down_polls": 12,
+        "painted": 3,
+        "palette_created": true,
+        "realized_entries_last": 0,
+        "system_palette_previous": 0,
+        "red_getpixel": [
+          222,
+          0,
+          0
+        ],
+        "green_getpixel": [
+          0,
+          200,
+          80
+        ],
+        "getpixel_valid": true,
+        "ddraw": {
+          "create": -2147467259,
+          "cooperative": -2147467259,
+          "primary": -2147467259,
+          "offscreen_8bit": -2147467259,
+          "palette": -2147467259,
+          "offscreen_attach": -2147467259,
+          "primary_attach": -2147467259,
+          "blt": -2147467259
+        }
+      },
+      "sendinput_command": {
+        "returncode": 0,
+        "report": {
+          "controller_only_own_synthetic_class": true,
+          "attach_thread_input": true,
+          "set_foreground_return": true,
+          "foreground_matches": true,
+          "sendinput_down": 1,
+          "sendinput_up": 1
+        }
+      },
+      "after_sendinput": {
+        "schema": "stoneage.p3d.synthetic_win32.v1",
+        "original_client_executed": false,
+        "pointer_bytes": 4,
+        "windows_acp": 950,
+        "mode": "gdi",
+        "phase": 1,
+        "done": false,
+        "display_bpp": 32,
+        "raster_palette_capability": false,
+        "foreground_matches": true,
+        "active_matches": true,
+        "focus_matches": true,
+        "client_origin": [
+          30,
+          30
+        ],
+        "client_size": [
+          320,
+          200
+        ],
+        "moves": 2,
+        "downs": 2,
+        "ups": 2,
+        "async_down_polls": 22,
+        "painted": 4,
+        "palette_created": true,
+        "realized_entries_last": 0,
+        "system_palette_previous": 0,
+        "red_getpixel": [
+          222,
+          0,
+          0
+        ],
+        "green_getpixel": [
+          0,
+          200,
+          80
+        ],
+        "getpixel_valid": true,
+        "ddraw": {
+          "create": -2147467259,
+          "cooperative": -2147467259,
+          "primary": -2147467259,
+          "offscreen_8bit": -2147467259,
+          "palette": -2147467259,
+          "offscreen_attach": -2147467259,
+          "primary_attach": -2147467259,
+          "blt": -2147467259
+        }
+      },
+      "after_input_capture": {
+        "method": "ImageMagick_24bit_root",
+        "frames": [
+          {
+            "width": 800,
+            "height": 600,
+            "rgb_sha256": "6e4fa1df520dece424ceb979b494e43b21caf5e3ec0c5cd851557bb8de149e1e",
+            "png_sha256": "cd054f5210580684da2b1bc598c91dd36bff69b0da92a53bf32429c8a153e809",
+            "channel_extrema": [
+              [
+                0,
+                255
+              ],
+              [
+                0,
+                255
+              ],
+              [
+                0,
+                255
+              ]
+            ],
+            "nonuniform_pixels": true,
+            "synthetic_control_red_pixels": 19300,
+            "synthetic_control_green_pixels": 19300,
+            "assistant_viewed_original": false,
+            "image_published": false
+          }
+        ],
+        "returncode": 0
+      },
+      "finish_command": {
+        "returncode": 0,
+        "report": {
+          "controller_only_own_synthetic_class": true,
+          "attach_thread_input": true,
+          "set_foreground_return": true,
+          "foreground_matches": true,
+          "sendinput_down": 0,
+          "sendinput_up": 0
+        }
+      },
+      "final_state": {
+        "schema": "stoneage.p3d.synthetic_win32.v1",
+        "original_client_executed": false,
+        "pointer_bytes": 4,
+        "windows_acp": 950,
+        "mode": "gdi",
+        "phase": 1,
+        "done": true,
+        "display_bpp": 32,
+        "raster_palette_capability": false,
+        "foreground_matches": true,
+        "active_matches": true,
+        "focus_matches": true,
+        "client_origin": [
+          30,
+          30
+        ],
+        "client_size": [
+          320,
+          200
+        ],
+        "moves": 2,
+        "downs": 2,
+        "ups": 2,
+        "async_down_polls": 22,
+        "painted": 4,
+        "palette_created": true,
+        "realized_entries_last": 0,
+        "system_palette_previous": 0,
+        "red_getpixel": [
+          222,
+          0,
+          0
+        ],
+        "green_getpixel": [
+          0,
+          200,
+          80
+        ],
+        "getpixel_valid": true,
+        "ddraw": {
+          "create": -2147467259,
+          "cooperative": -2147467259,
+          "primary": -2147467259,
+          "offscreen_8bit": -2147467259,
+          "palette": -2147467259,
+          "offscreen_attach": -2147467259,
+          "primary_attach": -2147467259,
+          "blt": -2147467259
+        }
+      },
+      "process_exit_before_cleanup": 0,
+      "assessment": {
+        "known_rgb_getpixel": true,
+        "known_rgb_external_capture": true,
+        "render_path_passed": true,
+        "color_gate_passed": true,
+        "sendinput_dispatch_only": true,
+        "sendinput_received": true,
+        "sendinput_gate_passed": true,
+        "foreground_gate_passed": true,
+        "original_client_executed": false,
+        "original_game_input_or_color_proven": false
+      }
+    },
+    {
+      "mode": "ddraw",
+      "original_client_executed": false,
+      "baseline_state": {
+        "schema": "stoneage.p3d.synthetic_win32.v1",
+        "original_client_executed": false,
+        "pointer_bytes": 4,
+        "windows_acp": 950,
+        "mode": "ddraw",
+        "phase": 0,
+        "done": false,
+        "display_bpp": 32,
+        "raster_palette_capability": false,
+        "foreground_matches": true,
+        "active_matches": true,
+        "focus_matches": true,
+        "client_origin": [
+          30,
+          30
+        ],
+        "client_size": [
+          320,
+          200
+        ],
+        "moves": 0,
+        "downs": 0,
+        "ups": 0,
+        "async_down_polls": 0,
+        "painted": 1,
+        "palette_created": true,
+        "realized_entries_last": 0,
+        "system_palette_previous": 0,
+        "red_getpixel": [
+          222,
+          0,
+          0
+        ],
+        "green_getpixel": [
+          0,
+          200,
+          80
+        ],
+        "getpixel_valid": true,
+        "ddraw": {
+          "create": -2147467259,
+          "cooperative": -2147467259,
+          "primary": -2147467259,
+          "offscreen_8bit": -2147467259,
+          "palette": -2147467259,
+          "offscreen_attach": -2147467259,
+          "primary_attach": -2147467259,
+          "blt": -2147467259
+        }
+      },
+      "baseline_capture": {
+        "method": "ImageMagick_24bit_root",
+        "frames": [
+          {
+            "width": 800,
+            "height": 600,
+            "rgb_sha256": "c1a93435aa3e715c409f7e9f09e7fc5c91de0c6126bfd370a995378c832aeeae",
+            "png_sha256": "352be4efcf37181bd00b809915c629c1f137bd163045580b96a2701ecc4211eb",
+            "channel_extrema": [
+              [
+                0,
+                255
+              ],
+              [
+                0,
+                255
+              ],
+              [
+                0,
+                255
+              ]
+            ],
+            "nonuniform_pixels": true,
+            "synthetic_control_red_pixels": 19300,
+            "synthetic_control_green_pixels": 19300,
+            "assistant_viewed_original": false,
+            "image_published": false
+          }
+        ],
+        "returncode": 0
+      },
+      "activation_command": {
+        "returncode": 0,
+        "report": {
+          "controller_only_own_synthetic_class": true,
+          "attach_thread_input": true,
+          "set_foreground_return": true,
+          "foreground_matches": true,
+          "sendinput_down": 0,
+          "sendinput_up": 0
+        }
+      },
+      "palette_command": {
+        "returncode": 0,
+        "report": {
+          "controller_only_own_synthetic_class": true,
+          "attach_thread_input": true,
+          "set_foreground_return": true,
+          "foreground_matches": true,
+          "sendinput_down": 0,
+          "sendinput_up": 0
+        }
+      },
+      "palette_state": {
+        "schema": "stoneage.p3d.synthetic_win32.v1",
+        "original_client_executed": false,
+        "pointer_bytes": 4,
+        "windows_acp": 950,
+        "mode": "ddraw",
+        "phase": 1,
+        "done": false,
+        "display_bpp": 32,
+        "raster_palette_capability": false,
+        "foreground_matches": true,
+        "active_matches": true,
+        "focus_matches": true,
+        "client_origin": [
+          30,
+          30
+        ],
+        "client_size": [
+          320,
+          200
+        ],
+        "moves": 1,
+        "downs": 0,
+        "ups": 0,
+        "async_down_polls": 0,
+        "painted": 2,
+        "palette_created": true,
+        "realized_entries_last": 0,
+        "system_palette_previous": 0,
+        "red_getpixel": [
+          0,
+          0,
+          0
+        ],
+        "green_getpixel": [
+          0,
+          0,
+          0
+        ],
+        "getpixel_valid": true,
+        "ddraw": {
+          "create": 0,
+          "cooperative": 0,
+          "primary": 0,
+          "offscreen_8bit": 0,
+          "palette": 0,
+          "offscreen_attach": 0,
+          "primary_attach": -2005532527,
+          "blt": 0
+        }
+      },
+      "palette_capture": {
+        "method": "ImageMagick_24bit_root",
+        "frames": [
+          {
+            "width": 800,
+            "height": 600,
+            "rgb_sha256": "eda525bab6d74d439bd683b578242e87fd3146fc4d631b7c81d9f76dd4d47a2d",
+            "png_sha256": "cd975fd11dc7339db705135800c5bdf20578a0502673041ff7a07afaa51742b0",
+            "channel_extrema": [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                0
+              ]
+            ],
+            "nonuniform_pixels": false,
+            "synthetic_control_red_pixels": 0,
+            "synthetic_control_green_pixels": 0,
+            "assistant_viewed_original": false,
+            "image_published": false
+          }
+        ],
+        "returncode": 0
+      },
+      "x11_input": {
+        "dispatch_returncodes": [
+          0,
+          0,
+          0
+        ],
+        "before": {
+          "schema": "stoneage.p3d.synthetic_win32.v1",
+          "original_client_executed": false,
+          "pointer_bytes": 4,
+          "windows_acp": 950,
+          "mode": "ddraw",
+          "phase": 1,
+          "done": false,
+          "display_bpp": 32,
+          "raster_palette_capability": false,
+          "foreground_matches": true,
+          "active_matches": true,
+          "focus_matches": true,
+          "client_origin": [
+            30,
+            30
+          ],
+          "client_size": [
+            320,
+            200
+          ],
+          "moves": 1,
+          "downs": 0,
+          "ups": 0,
+          "async_down_polls": 0,
+          "painted": 2,
+          "palette_created": true,
+          "realized_entries_last": 0,
+          "system_palette_previous": 0,
+          "red_getpixel": [
+            0,
+            0,
+            0
+          ],
+          "green_getpixel": [
+            0,
+            0,
+            0
+          ],
+          "getpixel_valid": true,
+          "ddraw": {
+            "create": 0,
+            "cooperative": 0,
+            "primary": 0,
+            "offscreen_8bit": 0,
+            "palette": 0,
+            "offscreen_attach": 0,
+            "primary_attach": -2005532527,
+            "blt": 0
+          }
+        },
+        "after": {
+          "schema": "stoneage.p3d.synthetic_win32.v1",
+          "original_client_executed": false,
+          "pointer_bytes": 4,
+          "windows_acp": 950,
+          "mode": "ddraw",
+          "phase": 1,
+          "done": false,
+          "display_bpp": 32,
+          "raster_palette_capability": false,
+          "foreground_matches": true,
+          "active_matches": true,
+          "focus_matches": true,
+          "client_origin": [
+            30,
+            30
+          ],
+          "client_size": [
+            320,
+            200
+          ],
+          "moves": 1,
+          "downs": 1,
+          "ups": 1,
+          "async_down_polls": 13,
+          "painted": 3,
+          "palette_created": true,
+          "realized_entries_last": 0,
+          "system_palette_previous": 0,
+          "red_getpixel": [
+            0,
+            0,
+            0
+          ],
+          "green_getpixel": [
+            0,
+            0,
+            0
+          ],
+          "getpixel_valid": true,
+          "ddraw": {
+            "create": 0,
+            "cooperative": 0,
+            "primary": 0,
+            "offscreen_8bit": 0,
+            "palette": 0,
+            "offscreen_attach": 0,
+            "primary_attach": -2005532527,
+            "blt": 0
+          }
+        },
+        "delta": {
+          "downs": 1,
+          "ups": 1,
+          "async_down_polls": 13,
+          "program_received_down_up_and_async": true
+        }
+      },
+      "before_sendinput": {
+        "schema": "stoneage.p3d.synthetic_win32.v1",
+        "original_client_executed": false,
+        "pointer_bytes": 4,
+        "windows_acp": 950,
+        "mode": "ddraw",
+        "phase": 1,
+        "done": false,
+        "display_bpp": 32,
+        "raster_palette_capability": false,
+        "foreground_matches": true,
+        "active_matches": true,
+        "focus_matches": true,
+        "client_origin": [
+          30,
+          30
+        ],
+        "client_size": [
+          320,
+          200
+        ],
+        "moves": 1,
+        "downs": 1,
+        "ups": 1,
+        "async_down_polls": 13,
+        "painted": 3,
+        "palette_created": true,
+        "realized_entries_last": 0,
+        "system_palette_previous": 0,
+        "red_getpixel": [
+          0,
+          0,
+          0
+        ],
+        "green_getpixel": [
+          0,
+          0,
+          0
+        ],
+        "getpixel_valid": true,
+        "ddraw": {
+          "create": 0,
+          "cooperative": 0,
+          "primary": 0,
+          "offscreen_8bit": 0,
+          "palette": 0,
+          "offscreen_attach": 0,
+          "primary_attach": -2005532527,
+          "blt": 0
+        }
+      },
+      "sendinput_command": {
+        "returncode": 0,
+        "report": {
+          "controller_only_own_synthetic_class": true,
+          "attach_thread_input": true,
+          "set_foreground_return": true,
+          "foreground_matches": true,
+          "sendinput_down": 1,
+          "sendinput_up": 1
+        }
+      },
+      "after_sendinput": {
+        "schema": "stoneage.p3d.synthetic_win32.v1",
+        "original_client_executed": false,
+        "pointer_bytes": 4,
+        "windows_acp": 950,
+        "mode": "ddraw",
+        "phase": 1,
+        "done": false,
+        "display_bpp": 32,
+        "raster_palette_capability": false,
+        "foreground_matches": true,
+        "active_matches": true,
+        "focus_matches": true,
+        "client_origin": [
+          30,
+          30
+        ],
+        "client_size": [
+          320,
+          200
+        ],
+        "moves": 2,
+        "downs": 2,
+        "ups": 2,
+        "async_down_polls": 22,
+        "painted": 4,
+        "palette_created": true,
+        "realized_entries_last": 0,
+        "system_palette_previous": 0,
+        "red_getpixel": [
+          0,
+          0,
+          0
+        ],
+        "green_getpixel": [
+          0,
+          0,
+          0
+        ],
+        "getpixel_valid": true,
+        "ddraw": {
+          "create": 0,
+          "cooperative": 0,
+          "primary": 0,
+          "offscreen_8bit": 0,
+          "palette": 0,
+          "offscreen_attach": 0,
+          "primary_attach": -2005532527,
+          "blt": 0
+        }
+      },
+      "after_input_capture": {
+        "method": "ImageMagick_24bit_root",
+        "frames": [
+          {
+            "width": 800,
+            "height": 600,
+            "rgb_sha256": "eda525bab6d74d439bd683b578242e87fd3146fc4d631b7c81d9f76dd4d47a2d",
+            "png_sha256": "cd975fd11dc7339db705135800c5bdf20578a0502673041ff7a07afaa51742b0",
+            "channel_extrema": [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                0
+              ]
+            ],
+            "nonuniform_pixels": false,
+            "synthetic_control_red_pixels": 0,
+            "synthetic_control_green_pixels": 0,
+            "assistant_viewed_original": false,
+            "image_published": false
+          }
+        ],
+        "returncode": 0
+      },
+      "finish_command": {
+        "returncode": 0,
+        "report": {
+          "controller_only_own_synthetic_class": true,
+          "attach_thread_input": true,
+          "set_foreground_return": true,
+          "foreground_matches": true,
+          "sendinput_down": 0,
+          "sendinput_up": 0
+        }
+      },
+      "final_state": {
+        "schema": "stoneage.p3d.synthetic_win32.v1",
+        "original_client_executed": false,
+        "pointer_bytes": 4,
+        "windows_acp": 950,
+        "mode": "ddraw",
+        "phase": 1,
+        "done": true,
+        "display_bpp": 32,
+        "raster_palette_capability": false,
+        "foreground_matches": true,
+        "active_matches": true,
+        "focus_matches": true,
+        "client_origin": [
+          30,
+          30
+        ],
+        "client_size": [
+          320,
+          200
+        ],
+        "moves": 2,
+        "downs": 2,
+        "ups": 2,
+        "async_down_polls": 22,
+        "painted": 4,
+        "palette_created": true,
+        "realized_entries_last": 0,
+        "system_palette_previous": 0,
+        "red_getpixel": [
+          0,
+          0,
+          0
+        ],
+        "green_getpixel": [
+          0,
+          0,
+          0
+        ],
+        "getpixel_valid": true,
+        "ddraw": {
+          "create": 0,
+          "cooperative": 0,
+          "primary": 0,
+          "offscreen_8bit": 0,
+          "palette": 0,
+          "offscreen_attach": 0,
+          "primary_attach": -2005532527,
+          "blt": 0
+        }
+      },
+      "process_exit_before_cleanup": 0,
+      "assessment": {
+        "known_rgb_getpixel": false,
+        "known_rgb_external_capture": false,
+        "render_path_passed": true,
+        "color_gate_passed": false,
+        "sendinput_dispatch_only": true,
+        "sendinput_received": true,
+        "sendinput_gate_passed": true,
+        "foreground_gate_passed": true,
+        "original_client_executed": false,
+        "original_game_input_or_color_proven": false
+      }
+    }
+  ],
+  "host_platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+  "bench_binary_sha256": "77b6fed6c50291408787e1d0604f8fd004b0b1ba520a770d82514f82ee5ff13a",
+  "control_source_sha256": "809599c49cad9c0790aac3fcf508a13e63f2e8cf454fa352420fe5321c709663",
+  "network": {
+    "host_net_namespace": "net:[4026531833]",
+    "child_net_namespace": "net:[4026532375]",
+    "interfaces": [
+      "lo"
+    ],
+    "ipv4_routes": [],
+    "ipv6_default_routes": [],
+    "external_documentation_address_connect_errno": 101,
+    "outbound_namespace_isolation_verified": true
+  },
+  "environment": "wine32_xvfb_800x600x24",
+  "wine_version": "wine-9.0 (Ubuntu 9.0~repack-4build3)",
+  "original_rerun_prerequisite_synthetic_8bit_passed": false
+}

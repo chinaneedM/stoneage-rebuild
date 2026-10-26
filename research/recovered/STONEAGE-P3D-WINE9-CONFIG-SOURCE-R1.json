@@ -1,0 +1,38 @@
+{
+  "schema": "stoneage.p3d.wine9_upstream_configuration_source.v1",
+  "repository": "wine-mirror/wine",
+  "tag": "wine-9.0",
+  "immutable_commit": "fd1153552d779e1ac14b0b1c48fbd1cde894eb0a",
+  "files": [
+    {
+      "path": "dlls/winex11.drv/palette.c",
+      "bytes": 52541,
+      "git_blob": "43974fe88963ca70901af879a101b1f08f45d707",
+      "sha256": "96ca5c44a8344d1907c2b12b3fcad6af3c48bc71901eaa8ff53c58047b79983c",
+      "content_retrieved_and_git_blob_verified": true
+    },
+    {
+      "path": "dlls/winex11.drv/x11drv_main.c",
+      "bytes": 45132,
+      "git_blob": "d1f31081b09de9ee2168997398a2979111c33851",
+      "sha256": "d166854ab05fdb805602a7228fb42762717fdff985dd591d651c5edd36f897bb",
+      "content_retrieved_and_git_blob_verified": true
+    }
+  ],
+  "config": {
+    "name": "PrivateColorMap",
+    "default_boolean": false,
+    "registry_subkey": "HKCU/Software/Wine/X11 Driver",
+    "requested_reg_sz": "Y",
+    "driver_read_lines": [
+      515,
+      516
+    ],
+    "palette_private_branch_lines": [
+      293,
+      314
+    ],
+    "intended_effect": "PseudoColor branch allocates its private colormap with AllocAll; synthetic validation still required"
+  },
+  "scope": "Upstream Wine9 source; not a claim that Ubuntu repack has no downstream patches. No source code copied into this repository."
+}

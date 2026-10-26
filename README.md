@@ -572,3 +572,8 @@ The 2.66 MB historical `docs/CURRENT-STATE.md` is still preserved byte-for-byte.
 ### 2026-10-26 — 原登录窗口取色与输入边界 P3C
 
 [三次真实对照记录](docs/continuity/STONEAGE-ORIGINAL-LOGIN-P3C-20261026.md)已用已知红绿块验证窗口colormap捕获，原登录图比旧桌面截图清楚，并实际观察到QUIT悬停高亮；**窗口模式仍只有15种RGB，短按及200ms按住均未退出，颜色/点击未通过**。原默认全屏路径在输入前即出现Wine错误/调试器，不认证QUIT；已增加异常窗口阻断输入的守卫。12份原样派生及[来源链](research/recovered/STONEAGE-TW10-ORIGINAL-LOGIN-P3C-CUSTODY-R1.json)保管三源run/job/ZIP/blob；原图仍私人保存。NEXT P3D先以合成Win32验证真实激活、palette和接收输入门槛，再决定原环境路线；不继续在同一失败环境盲目重拉原盘。未登录、未听音、未进入世界，完整CURRENT及R20/Stage A等边界保持。
+
+
+### 2026-10-26 — 兼容环境实际颜色与输入资格 P3D
+
+[本轮环境判定](docs/continuity/STONEAGE-SYNTHETIC-WIN32-P3D-20261026.md)实际比较自编x86程序的GDI/DirectDraw路径：Windows2022、Wine8、Wine24和来源固定的PrivateColorMap单项对照，共8条完整测量。目标程序均收到SendInput按下/释放及轮询状态；3条颜色通过、5条未通过。原生Windows正确显示但仍32bpp/ACP1252；Wine8仍量化，PrivateColorMap单项未改善，**尚无满足原客户端全部前提的环境**。8份原样派生、四ZIP和一次重启守卫失败均在[永久保管链](research/recovered/STONEAGE-P3D-SYNTHETIC-CUSTODY-R1.json)，本轮原件下载/执行均0。NEXT P3E限一次可用Windows8bit/CP950/隔离资格包，失败则明确环境阻塞并回22域R20材料，不继续Wine9参数树。P3C原画/点击、原声与世界仍未验收，历史CURRENT原样保留。

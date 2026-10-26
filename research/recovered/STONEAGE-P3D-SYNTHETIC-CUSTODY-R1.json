@@ -1,0 +1,352 @@
+{
+  "schema": "stoneage.p3d.synthetic_measurement_custody.v1",
+  "baseline_main": "a665c26676faf63848bc7b15ced8b9444471fb72",
+  "baseline_tree": "7f7eee7afed0a7cf96613347e39c4e3fe9472b56",
+  "source_artifacts": [
+    {
+      "run": 40270327324,
+      "job": 121401553060,
+      "head": "21f9b608bfb886fe2c3a8ee36c15a0e6ff658ac8",
+      "conclusion": "success",
+      "role": "native",
+      "artifact": 12628725347,
+      "zip_bytes": 1911,
+      "zip_sha256": "843931cc7084e93912487a92b4cca179825ed18792f412ecfb151134ce2c8724",
+      "zip_digest_independently_checked": true
+    },
+    {
+      "run": 40270327324,
+      "job": 121401553306,
+      "head": "21f9b608bfb886fe2c3a8ee36c15a0e6ff658ac8",
+      "conclusion": "success",
+      "role": "wine8_and_24",
+      "artifact": 12628171401,
+      "zip_bytes": 6468,
+      "zip_sha256": "4198b6bc8fe30b5a411c4a1d800a70066f1d24786e9ff8a96bf0cb1b8524db08",
+      "zip_digest_independently_checked": true
+    },
+    {
+      "run": 40270852795,
+      "job": 121403129834,
+      "head": "41b4cab201190e268b1c4093ad2f90c2da5e4697",
+      "conclusion": "failure",
+      "role": "private_restart_guard_stopped_before_cases",
+      "artifact": 12628232004,
+      "zip_bytes": 959,
+      "zip_sha256": "94dbd96cd205a7b29e3e2964b8913dc38abde634b79d807a177f62943debe39d",
+      "zip_digest_independently_checked": true
+    },
+    {
+      "run": 40271128536,
+      "job": 121403967818,
+      "head": "d83d792362166c55f8620135719cfb333520d953",
+      "conclusion": "success",
+      "role": "private_colormap_corrected",
+      "artifact": 12628522174,
+      "zip_bytes": 4227,
+      "zip_sha256": "1db9c5328703dfb41dcf8e489c405e56c461e55c8e2fb41819ee905a54e96262",
+      "zip_digest_independently_checked": true
+    }
+  ],
+  "derived_files": [
+    {
+      "file": "STONEAGE-P3D-SYNTHETIC-FAILED-PRIVATE-COLORMAP-R1.json",
+      "role": "failed_private_restart",
+      "bytes": 956,
+      "sha256": "c2d459ecf384ac4574c12e0c6ca925de408e4d7e94c370c3f152a9ef83a7419d",
+      "git_blob": "ad5cfffc5e87fe957b9419dc8d44f8e13ec0e5ce"
+    },
+    {
+      "file": "STONEAGE-P3D-SYNTHETIC-FAILED-PRIVATE-PACKAGES-R1.txt",
+      "role": "STONEAGE-P3D-SYNTHETIC-FAILED-PRIVATE-PACKAGES-R1",
+      "bytes": 224,
+      "sha256": "6780282c1b3190b0d50e5e8ab6af117231e2b99862d9175445746db287e49a57",
+      "git_blob": "4aaf859d5c31b131deb645b635c91480eb48b24a"
+    },
+    {
+      "file": "STONEAGE-P3D-SYNTHETIC-NATIVE-R1.json",
+      "role": "STONEAGE-P3D-SYNTHETIC-NATIVE-R1",
+      "bytes": 23105,
+      "sha256": "5fefbb534a95bcc2df6e33ceb1f4668a0cb6688091fcc44354cad1161f3897f4",
+      "git_blob": "991c9db18332bb483a248227928611dc6752c1e3"
+    },
+    {
+      "file": "STONEAGE-P3D-SYNTHETIC-PRIVATE-COLORMAP-R1.json",
+      "role": "STONEAGE-P3D-SYNTHETIC-PRIVATE-COLORMAP-R1",
+      "bytes": 43011,
+      "sha256": "a52718d789847c961a19a9e665972598c925a057d2f9d4f2a6b1643d1fbd19d8",
+      "git_blob": "835ae428b73d14c552eb58d09271bc42f2f233ae"
+    },
+    {
+      "file": "STONEAGE-P3D-SYNTHETIC-PRIVATE-PACKAGES-R1.txt",
+      "role": "STONEAGE-P3D-SYNTHETIC-PRIVATE-PACKAGES-R1",
+      "bytes": 224,
+      "sha256": "6780282c1b3190b0d50e5e8ab6af117231e2b99862d9175445746db287e49a57",
+      "git_blob": "4aaf859d5c31b131deb645b635c91480eb48b24a"
+    },
+    {
+      "file": "STONEAGE-P3D-SYNTHETIC-WINE-PACKAGES-R1.txt",
+      "role": "STONEAGE-P3D-SYNTHETIC-WINE-PACKAGES-R1",
+      "bytes": 224,
+      "sha256": "6780282c1b3190b0d50e5e8ab6af117231e2b99862d9175445746db287e49a57",
+      "git_blob": "4aaf859d5c31b131deb645b635c91480eb48b24a"
+    },
+    {
+      "file": "STONEAGE-P3D-SYNTHETIC-WINE24-R1.json",
+      "role": "STONEAGE-P3D-SYNTHETIC-WINE24-R1",
+      "bytes": 28380,
+      "sha256": "4baf610c660fdec7217a04de00670fd7f30abbe6e791c2933d1f106a722d0880",
+      "git_blob": "6a7990e14da940696ab04e019022fddf2140829e"
+    },
+    {
+      "file": "STONEAGE-P3D-SYNTHETIC-WINE8-R1.json",
+      "role": "STONEAGE-P3D-SYNTHETIC-WINE8-R1",
+      "bytes": 42607,
+      "sha256": "b82531b00797aefbe730deb21cab68fb6d51400f9c8638a24aa64056109fa352",
+      "git_blob": "f5079886b269117aa2c8c15ba080b1d948d170ad"
+    }
+  ],
+  "control_source_sha256": "809599c49cad9c0790aac3fcf508a13e63f2e8cf454fa352420fe5321c709663",
+  "control_source_git_blob": "5b6c6585fd00104966e496a5b90d16616b274c19",
+  "configuration_source": "research/recovered/STONEAGE-P3D-WINE9-CONFIG-SOURCE-R1.json",
+  "environment_matrix": [
+    {
+      "report": "NATIVE",
+      "mode": "gdi",
+      "display_bpp": 32,
+      "windows_acp": 1252,
+      "red_getpixel": [
+        222,
+        0,
+        0
+      ],
+      "green_getpixel": [
+        0,
+        200,
+        80
+      ],
+      "assessment": {
+        "known_rgb_getpixel": true,
+        "known_rgb_external_capture": true,
+        "render_path_passed": true,
+        "color_gate_passed": true,
+        "sendinput_dispatch_only": true,
+        "sendinput_received": true,
+        "sendinput_gate_passed": true,
+        "foreground_gate_passed": true,
+        "original_client_executed": false,
+        "original_game_input_or_color_proven": false
+      }
+    },
+    {
+      "report": "NATIVE",
+      "mode": "ddraw",
+      "display_bpp": 32,
+      "windows_acp": 1252,
+      "red_getpixel": [
+        222,
+        0,
+        0
+      ],
+      "green_getpixel": [
+        0,
+        200,
+        80
+      ],
+      "assessment": {
+        "known_rgb_getpixel": true,
+        "known_rgb_external_capture": true,
+        "render_path_passed": true,
+        "color_gate_passed": true,
+        "sendinput_dispatch_only": true,
+        "sendinput_received": true,
+        "sendinput_gate_passed": true,
+        "foreground_gate_passed": true,
+        "original_client_executed": false,
+        "original_game_input_or_color_proven": false
+      }
+    },
+    {
+      "report": "WINE8",
+      "mode": "gdi",
+      "display_bpp": 8,
+      "windows_acp": 950,
+      "red_getpixel": [
+        128,
+        0,
+        0
+      ],
+      "green_getpixel": [
+        0,
+        128,
+        0
+      ],
+      "assessment": {
+        "known_rgb_getpixel": false,
+        "known_rgb_external_capture": false,
+        "render_path_passed": true,
+        "color_gate_passed": false,
+        "sendinput_dispatch_only": true,
+        "sendinput_received": true,
+        "sendinput_gate_passed": true,
+        "foreground_gate_passed": true,
+        "original_client_executed": false,
+        "original_game_input_or_color_proven": false
+      }
+    },
+    {
+      "report": "WINE8",
+      "mode": "ddraw",
+      "display_bpp": 8,
+      "windows_acp": 950,
+      "red_getpixel": [
+        224,
+        32,
+        0
+      ],
+      "green_getpixel": [
+        0,
+        192,
+        64
+      ],
+      "assessment": {
+        "known_rgb_getpixel": false,
+        "known_rgb_external_capture": false,
+        "render_path_passed": true,
+        "color_gate_passed": false,
+        "sendinput_dispatch_only": true,
+        "sendinput_received": true,
+        "sendinput_gate_passed": true,
+        "foreground_gate_passed": true,
+        "original_client_executed": false,
+        "original_game_input_or_color_proven": false
+      }
+    },
+    {
+      "report": "WINE24",
+      "mode": "gdi",
+      "display_bpp": 32,
+      "windows_acp": 950,
+      "red_getpixel": [
+        222,
+        0,
+        0
+      ],
+      "green_getpixel": [
+        0,
+        200,
+        80
+      ],
+      "assessment": {
+        "known_rgb_getpixel": true,
+        "known_rgb_external_capture": true,
+        "render_path_passed": true,
+        "color_gate_passed": true,
+        "sendinput_dispatch_only": true,
+        "sendinput_received": true,
+        "sendinput_gate_passed": true,
+        "foreground_gate_passed": true,
+        "original_client_executed": false,
+        "original_game_input_or_color_proven": false
+      }
+    },
+    {
+      "report": "WINE24",
+      "mode": "ddraw",
+      "display_bpp": 32,
+      "windows_acp": 950,
+      "red_getpixel": [
+        0,
+        0,
+        0
+      ],
+      "green_getpixel": [
+        0,
+        0,
+        0
+      ],
+      "assessment": {
+        "known_rgb_getpixel": false,
+        "known_rgb_external_capture": false,
+        "render_path_passed": true,
+        "color_gate_passed": false,
+        "sendinput_dispatch_only": true,
+        "sendinput_received": true,
+        "sendinput_gate_passed": true,
+        "foreground_gate_passed": true,
+        "original_client_executed": false,
+        "original_game_input_or_color_proven": false
+      }
+    },
+    {
+      "report": "PRIVATE-COLORMAP",
+      "mode": "gdi",
+      "display_bpp": 8,
+      "windows_acp": 950,
+      "red_getpixel": [
+        128,
+        0,
+        0
+      ],
+      "green_getpixel": [
+        0,
+        128,
+        0
+      ],
+      "assessment": {
+        "known_rgb_getpixel": false,
+        "known_rgb_external_capture": false,
+        "render_path_passed": true,
+        "color_gate_passed": false,
+        "sendinput_dispatch_only": true,
+        "sendinput_received": true,
+        "sendinput_gate_passed": true,
+        "foreground_gate_passed": true,
+        "original_client_executed": false,
+        "original_game_input_or_color_proven": false
+      }
+    },
+    {
+      "report": "PRIVATE-COLORMAP",
+      "mode": "ddraw",
+      "display_bpp": 8,
+      "windows_acp": 950,
+      "red_getpixel": [
+        224,
+        32,
+        0
+      ],
+      "green_getpixel": [
+        0,
+        192,
+        64
+      ],
+      "assessment": {
+        "known_rgb_getpixel": false,
+        "known_rgb_external_capture": false,
+        "render_path_passed": true,
+        "color_gate_passed": false,
+        "sendinput_dispatch_only": true,
+        "sendinput_received": true,
+        "sendinput_gate_passed": true,
+        "foreground_gate_passed": true,
+        "original_client_executed": false,
+        "original_game_input_or_color_proven": false
+      }
+    }
+  ],
+  "complete_environment_measurements": 4,
+  "complete_synthetic_render_cases": 8,
+  "failed_restart_guard_attempts": 1,
+  "usable_original_8bit_environment_found": false,
+  "original_client_downloaded": false,
+  "original_client_executed": false,
+  "game_world_entered": false,
+  "overall_restoration_percent": null,
+  "highest_next": "ORIGINAL-GAME-OBSERVATION-P3E-AVAILABLE-WINDOWS-8BIT-QUALIFICATION",
+  "control_windows_crlf_source_sha256": "ef4d1367250b3af6638c709e7acd34735f229d99bd98e5c82ce6de00d5e7f602",
+  "source_checkout_line_endings": "Canonical Git/Linux LF and native Windows checkout CRLF digests separately verified; raw reports unchanged.",
+  "incomplete_case_records": 0,
+  "color_gate_failed_cases": 5,
+  "input_gate_failed_cases": 0
+}
