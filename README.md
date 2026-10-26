@@ -627,3 +627,8 @@ The 2.66 MB historical `docs/CURRENT-STATE.md` is still preserved byte-for-byte.
 ### 2026-10-26 — R30实取8帧原RD像素、私人灰度动画
 
 按[原实物观察规格](docs/specs/STONEAGE-TW85-ORIGINAL-RD-PRIVATE-R30.md)及[本轮连续性记录](docs/continuity/STONEAGE-TW85-ORIGINAL-RD-PRIVATE-R30-20261026.md)，不再只靠帧号和哈希推断：复用R29同保存包真实绑定，预选原 `spr_no=101501`、group index1185的动作数值2/方向0的八个帧bitmap 303039–303046；已从六分卷原样实际再取**1,145,465,184B**、静态解包并严格逐SHA验证 `adrn_158.bin` + `real_158.bin`，八原ADRN80B行/整RD块SHA一致后，实际解码八幅调色板索引图（flag1），产生私人灰度PNG与人为节拍GIF，并经加密传回/独立解密核8幅原SHA后目视连续轮廓。原商用图/音/程序及私钥不公开，Git只保留 `research/recovered/tw85-rd-private-r30/` 的计划/原块SHA/像素SHA与加密保管链元数据。source Actions 40329157425、归档40330184123真实success，前两次无作业YAML错误原样保留。**灰度不是历史RGB；未命名宠物/人物或动作，无原游戏程序运行，也未认证社区保存包为官方纯净build。** R30有限交付已够，最高NEXT改回同版具名宠物/NPC/本体任务master实物31，不连续扩RD helper；Stage A7 PARTIAL/2 OPEN、B/wiki GATED、R79暂停、整体百分比未知。原2.68MB CURRENT全文与各主簿没有修改。
+
+
+### 2026-10-26 — R31同构建具名实体主表有限取证：真实八帧仍无可认证物种名
+
+[规格](docs/specs/STONEAGE-ORIGINAL-SAME-BUILD-NAMED-ENTITY-R31.md)和[连续性补记](docs/continuity/STONEAGE-ORIGINAL-NAMED-ENTITY-R31-20261026.md)按新远端R30终态，逐核557条原保存客户端文件路径/原SHA、8帧SPR→ADRN/REAL完整原SHA和TW1.0原索引范围。557唯一文件路径、546不同文件SHA，显式pet/npc/quest/master**文件叶名**0，不等于exe/auto.dat内部不存在数据；8帧与源R30逐SHA一致，但物理号303039–303046不是TW1.0同号，不能猜宠物身份。新增同构建原服具名主表与实体ID→SPR绑定**0**；未知保持OPEN、没有重下载原1.145GB或发原美术。五原Git blob固定、离线严审脚本和否证测试可复核。最高NEXT转 `ORIGINAL_WORLD_MAP_CONTENT_MATERIAL_32` 做有界已得原地图具体内容验证；同构建原NPC/宠物/本体任务主表有真实来源才重开。Stage A7 PARTIAL+2 OPEN、B/wiki GATED、P3E/R79/私人长存边界和未知总百分比不变。

@@ -1,0 +1,35 @@
+name: Verify original same-build named-entity source gate R31
+on:
+  push:
+    paths:
+      - '.github/workflows/verify-stoneage-original-named-entity-r31.yml'
+      - 'tools/stoneage_original_named_entity_r31.py'
+      - 'tests/test_stoneage_original_named_entity_r31.py'
+      - 'research/recovered/STONEAGE-ORIGINAL-SAME-BUILD-NAMED-ENTITY-R31.json'
+      - 'docs/specs/STONEAGE-ORIGINAL-SAME-BUILD-NAMED-ENTITY-R31.md'
+      - 'docs/continuity/STONEAGE-ORIGINAL-NAMED-ENTITY-R31-20261026.md'
+      - 'README.md'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exact-original-source-negative-gate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Eleven negative controls and independent raw input replay
+        run: python -m unittest -v tests.test_stoneage_original_named_entity_r31
+      - name: Exact original source Git blobs and all 557 entries plus 8 original frames
+        run: python -m tools.stoneage_original_named_entity_r31
+      - name: No commercial original artwork, executable or cache in R31 release
+        shell: bash
+        run: |
+          set -euo pipefail
+          for file in research/recovered/STONEAGE-ORIGINAL-SAME-BUILD-NAMED-ENTITY-R31.json docs/specs/STONEAGE-ORIGINAL-SAME-BUILD-NAMED-ENTITY-R31.md docs/continuity/STONEAGE-ORIGINAL-NAMED-ENTITY-R31-20261026.md; do
+            test -s "$file"
+          done
+          echo 'R31_DERIVED_METADATA_ONLY=PASS'

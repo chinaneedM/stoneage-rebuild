@@ -1,0 +1,71 @@
+{
+  "schema": "stoneage.original_same_build_named_entity_source_gate.r31",
+  "date": "2026-10-26",
+  "remote_base_head": "8dc3e729dfca18bb6d2c6874405c33dc321e010f",
+  "remote_base_tree": "0d493fa51c12a8a436f300769d1f52c794ebf4f0",
+  "source_git_blobs": {
+    "research/recovered/STONEAGE-WAYI85-MSI-CLIENT-PAYLOAD-R1.json": "18a68c9d4275763ef0ed7a347cca940cffe0fee2",
+    "research/recovered/tw85-rd-private-r30/PLAN-R30.json": "59bbb09d55c33076e1616499a2710c8de588dcee",
+    "research/recovered/tw85-rd-private-r30/SOURCE-R30.json": "9fb54267a59561ce8b1dfaa387b857f17a94a896",
+    "research/recovered/STONEAGE-PET-IDENTITY-SAME-BUILD-TRIAGE-R1.json": "b338e67768c404f11f4813d2fc946fea52342816",
+    "research/recovered/tw10-resource-metadata/MANIFEST-R1.txt": "6154dcf806163b82cb96af344e6a644143d15f56"
+  },
+  "result": {
+    "inventory": {
+      "declared_files": 557,
+      "unique_paths": 557,
+      "unique_sha256": 546,
+      "extension_counts": {
+        "ani": 24,
+        "bin": 9,
+        "bmp": 5,
+        "dat": 52,
+        "exe": 6,
+        "ico": 1,
+        "sab": 220,
+        "sap": 16,
+        "txt": 4,
+        "wav": 220
+      },
+      "explicit_named_master_leaf_hits": []
+    },
+    "sample": {
+      "spr_no": 101501,
+      "group_index": 1185,
+      "frame_bitmapnos": [
+        303039,
+        303040,
+        303041,
+        303042,
+        303043,
+        303044,
+        303045,
+        303046
+      ],
+      "matched_original_RD_sha256_count": 8,
+      "matched_original_ADRN_record_sha256_count": 8,
+      "named_original_entity_id": null
+    },
+    "tw10_scope": {
+      "original_adrn_records": 125996,
+      "all_sample_bitmap_numbers_outside_tw10_id_range": true
+    },
+    "evidence": {
+      "tw85_clean_official_build_proven": false,
+      "original_server_quest_pet_master_data_proven": false,
+      "same_build_pet_identity_proven": false
+    },
+    "status": "OPEN_EVIDENCE_LIMITED_FIVE_PINNED_INPUTS",
+    "next": "ORIGINAL_WORLD_MAP_CONTENT_MATERIAL_32"
+  },
+  "limits": [
+    "FILE_PATH_SCAN_NOT_BINARY_CONTENT_INSPECTION",
+    "TW85_PRESERVED_MSI_NOT_OFFICIAL_CLEAN_BUILD",
+    "TW10_AND_TW85_BITMAP_IDS_ARE_VERSION_LOCAL",
+    "R30_GREYSCALE_PREVIEW_NOT_NAMED_OR_HISTORICAL_RGB",
+    "SERVER_ONLY_MASTER_OR_SCRIPT_MAY_EXIST_ELSEWHERE",
+    "QUEST_ORIGIN_FOUR_CLASSES_REMAIN_SEPARATE",
+    "NO_NEW_ORIGINAL_CLIENT_PAYLOAD_DOWNLOADED",
+    "NO_HISTORICAL_COMPLETION_PERCENTAGE"
+  ]
+}
