@@ -1,0 +1,55 @@
+name: Archive R28 complete source-derived SPR137 animation data without proprietary assets
+on:
+  push:
+    paths:
+      - '.github/workflows/archive-stoneage-tw85-spr137-r28.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  independent-archive:
+    if: github.ref == 'refs/heads/agent/tw85-spr137-source-r28-20261026'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Download prior validated derived-only source artifact (no original game binaries)
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/r28-artifact"
+          gh run download 40321448446 --repo chinaneedM/stoneage-rebuild \
+            --name tw85-spr137-r28-derived-only --dir "$RUNNER_TEMP/r28-artifact"
+          test "$(find "$RUNNER_TEMP/r28-artifact" -type f | wc -l)" -eq 4
+      - name: Re-encode every original segment and verify all 735666 decoded frames independently
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m tools.stoneage_tw85_spr137_archive_r28 \
+            --dir "$RUNNER_TEMP/r28-artifact" \
+            --receipt "$RUNNER_TEMP/R28-INDEPENDENT-CUSTODY.json"
+      - name: Commit only four derived files and independent source-custody receipt to branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          target="research/recovered/tw85-spr137-r28"
+          mkdir -p "$target"
+          cp "$RUNNER_TEMP/r28-artifact"/SPR-{GROUP,ANIMATION,FRAME}-R28.tsv.gz "$target/"
+          cp "$RUNNER_TEMP/r28-artifact/SOURCE-DERIVED-R28.json" "$target/"
+          cp "$RUNNER_TEMP/R28-INDEPENDENT-CUSTODY.json" "$target/"
+          test "$(find "$target" -type f | wc -l)" -eq 5
+          git add "$target"
+          git diff --cached --check
+          git -c user.name="stoneage-evidence-bot" -c user.email="evidence-bot@users.noreply.github.com" \
+            commit -m "research: preserve complete exact TW85 SPR137 R28 derived source and custody"
+          git push origin HEAD:refs/heads/agent/tw85-spr137-source-r28-20261026
