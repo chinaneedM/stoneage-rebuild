@@ -1,0 +1,117 @@
+{
+  "boundaries": {
+    "actual_RD_pixels_reacquired_or_rendered_this_run": false,
+    "all_frames_joined_without_collapsing_duplicate_positions": true,
+    "clean_official_pressing_authenticated": false,
+    "duplicate_bitmapno_runtime_winner_identified": false,
+    "missing_id_equates_to_no_image_in_all_versions": false,
+    "named_pet_avatar_npc_or_action_identified": false,
+    "new_original_package_bytes_downloaded": false,
+    "original_client_executed": false,
+    "original_proprietary_asset_bytes_published": 0,
+    "overall_completion_percent": null,
+    "r79": "PAUSED_NON_BLOCKING",
+    "same_saved_carrier_verified_against_full_file_inventory": true,
+    "source_original_RD_headers_and_block_SHA_verified_in_prior_source_run": true,
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b_wiki": "GATED",
+    "unmatched_R28_group_count_equates_to_new_species": false
+  },
+  "distinct_referenced_bitmap_ids": 397443,
+  "frame_mapping_classifications": {
+    "SINGLE_ORIGINAL_RD_RECORD": 730907
+  },
+  "native_multiple_number_extra_occurrences": 28,
+  "native_records": 416220,
+  "native_unique_ids": 416192,
+  "next": "REVIEW_R29_BOUND_MISSING_FRAME_IDS_AND_RESOLVE_ONLY_MATERIAL_GAME_VISIBLE_GAP_30",
+  "original_frame_occurrences": 735666,
+  "original_group_occurrences": 1739,
+  "original_paired_members": [
+    "spradrn_137.bin",
+    "spr_137.bin",
+    "adrn_158.bin",
+    "real_158.bin"
+  ],
+  "original_sentinel_frame_occurrences": 4759,
+  "referenced_number_classes": {
+    "SINGLE_ORIGINAL_RD_RECORD": 397443
+  },
+  "sample_missing_positions": [],
+  "schema": "stoneage.tw85_frame_to_bitmap_same_saved_carrier.r29",
+  "scope_buckets": {
+    "EXACT_CN50_SPR_SEGMENT": {
+      "frame_occurrences": 598455,
+      "group_distinct_bitmap_sum_not_global_unique": 344315,
+      "groups": 1185,
+      "groups_with_missing_ids": 0,
+      "mapped_frames": 593715,
+      "missing_frames": 0,
+      "multiple_different_rd_frames": 0,
+      "multiple_same_rd_frames": 0,
+      "raw_sound_word_occurrences": 35169,
+      "sentinel_frames": 4740,
+      "single_frames": 593715
+    },
+    "R28_UNMATCHED_CN50_SPR_SEGMENT": {
+      "frame_occurrences": 137211,
+      "group_distinct_bitmap_sum_not_global_unique": 111960,
+      "groups": 554,
+      "groups_with_missing_ids": 0,
+      "mapped_frames": 137192,
+      "missing_frames": 0,
+      "multiple_different_rd_frames": 0,
+      "multiple_same_rd_frames": 0,
+      "raw_sound_word_occurrences": 7683,
+      "sentinel_frames": 19,
+      "single_frames": 137192
+    }
+  },
+  "source_grade": "UNVERIFIED_COMMUNITY_PRESERVED_CLAIMED_TW85_SAME_INSTALLER_CARRIER",
+  "source_pins": {
+    "CARRIER": {
+      "bytes": 385776,
+      "path": "research/recovered/STONEAGE-WAYI85-MSI-CLIENT-PAYLOAD-R1.json",
+      "sha256": "4ea7b43a7e3427ab4443afe801ae7d3e156e6193e1d42ce1b261f733e07de1d8"
+    },
+    "R06_NATIVE": {
+      "bytes": 43825625,
+      "path": "research/recovered/adrn129-tw85-real-pair/NATIVE-R1.tsv.gz",
+      "sha256": "495928a0a44d7c81bf1d6ef7b06d26decfc5096803fbd60b9e8e0aa9752a45ce"
+    },
+    "R06_REPORT": {
+      "bytes": 5076,
+      "path": "research/recovered/adrn129-tw85-real-pair/REPORT-R1.json",
+      "sha256": "ff93641e333a26e218b9b8548f987f072318b600c0b829866969a46ff4745edf"
+    },
+    "R28_FRAME": {
+      "bytes": 5262729,
+      "path": "research/recovered/tw85-spr137-r28/SPR-FRAME-R28.tsv.gz",
+      "sha256": "d5e026801e743fed481847fe69da4a235c14d8019d3824d64182bc2821645142"
+    },
+    "R28_GROUP": {
+      "bytes": 90388,
+      "path": "research/recovered/tw85-spr137-r28/SPR-GROUP-R28.tsv.gz",
+      "sha256": "bba57495fb4df36bd41e967033e799ea021cde3c7d11e982c50a1fdd5f9b1c18"
+    },
+    "R28_SOURCE": {
+      "bytes": 284271,
+      "path": "research/recovered/tw85-spr137-r28/SOURCE-DERIVED-R28.json",
+      "sha256": "1726d1220102532d6c4bfa59ea36a6048c0623a2838394338bff5496de504af9"
+    }
+  },
+  "source_structural_qualification": {
+    "VALID_FLAG0_ADRN_SIZE": 31,
+    "VALID_HEADER": 416189
+  },
+  "tables": {
+    "BITMAP-BINDINGS-R29.tsv.gz": {
+      "bytes": 20567984,
+      "sha256": "7afa7d1274cddd4006640f7326056f0e4b96cdb5400048a6a4cd39e944b1013d"
+    },
+    "GROUP-MATERIAL-R29.tsv.gz": {
+      "bytes": 13069,
+      "sha256": "bbd7588d473143ff2c4918f988e48f4f524907afee7623abfaf1d043f6c025bf"
+    }
+  }
+}

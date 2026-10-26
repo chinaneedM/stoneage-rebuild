@@ -1,0 +1,39 @@
+name: Build R29 same-carrier original frame and RD metadata binding
+on:
+  push:
+    paths:
+      - '.github/workflows/source-stoneage-tw85-frame-bitmap-r29.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  material-and-permanent-custody:
+    if: github.ref == 'refs/heads/agent/tw85-frame-bitmap-r29-20261026'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: R29 semantic and RD header negative tests
+        run: python -m unittest -v tests.test_stoneage_tw85_frame_bitmap_r29
+      - name: Join all authentic derived original frame keys to same preserved MSI ADRN/REAL
+        run: |
+          python -m tools.stoneage_tw85_frame_bitmap_r29 --out "$RUNNER_TEMP/r29-derived"
+      - name: Permanently retain only lossless derived group/bitmap metadata and provenance
+        shell: bash
+        run: |
+          set -euo pipefail
+          target="research/recovered/tw85-frame-bitmap-r29"
+          mkdir -p "$target"
+          cp "$RUNNER_TEMP/r29-derived/"*.gz "$target/"
+          cp "$RUNNER_TEMP/r29-derived/REPORT-R29.json" "$target/"
+          test "$(find "$target" -type f | wc -l)" -eq 3
+          git add "$target"
+          git diff --cached --check
+          git -c user.name=stoneage-evidence-bot -c user.email=evidence-bot@users.noreply.github.com \
+            commit -m "research: preserve complete same-carrier TW85 frame to REAL index material R29"
+          git push origin HEAD:refs/heads/agent/tw85-frame-bitmap-r29-20261026

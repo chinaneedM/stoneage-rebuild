@@ -1,0 +1,42 @@
+name: Verify R29 all same-saved-client original SPR to RD joins
+on:
+  push:
+    paths:
+      - '.github/workflows/verify-stoneage-tw85-frame-bitmap-r29.yml'
+      - 'tools/stoneage_tw85_frame_bitmap_r29.py'
+      - 'tools/stoneage_tw85_frame_bitmap_r29_sql.py'
+      - 'tests/test_stoneage_tw85_frame_bitmap_r29.py'
+      - 'research/recovered/tw85-frame-bitmap-r29/**'
+      - 'docs/specs/STONEAGE-TW85-FRAME-BITMAP-R29.md'
+      - 'docs/continuity/STONEAGE-TW85-FRAME-BITMAP-R29-20261026.md'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  full-independent-sql:
+    runs-on: ubuntu-latest
+    timeout-minutes: 13
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Synthetic invalid RD source and ambiguous-ID rejection
+        run: python -m unittest -v tests.test_stoneage_tw85_frame_bitmap_r29
+      - name: Independently SQL-join original frame-position and same-carrier native RD metadata
+        run: python -m tools.stoneage_tw85_frame_bitmap_r29_sql
+      - name: Rebuild original index joins from pinned full source and compare all derived bytes
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m tools.stoneage_tw85_frame_bitmap_r29 --out "$RUNNER_TEMP/r29-check"
+          cmp "$RUNNER_TEMP/r29-check/REPORT-R29.json" research/recovered/tw85-frame-bitmap-r29/REPORT-R29.json
+          cmp "$RUNNER_TEMP/r29-check/GROUP-MATERIAL-R29.tsv.gz" research/recovered/tw85-frame-bitmap-r29/GROUP-MATERIAL-R29.tsv.gz
+          cmp "$RUNNER_TEMP/r29-check/BITMAP-BINDINGS-R29.tsv.gz" research/recovered/tw85-frame-bitmap-r29/BITMAP-BINDINGS-R29.tsv.gz
+      - name: Enforce no old copyrighted images or executable binaries shipped
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(find research/recovered/tw85-frame-bitmap-r29 -type f | wc -l)" -eq 3
+          ! find research/recovered/tw85-frame-bitmap-r29 -type f | grep -Ei '\.(exe|bin|msi|png|gif|wav)$'
+          echo "R29_FULL_SOURCE_DERIVED_METADATA_ONLY=PASS"
