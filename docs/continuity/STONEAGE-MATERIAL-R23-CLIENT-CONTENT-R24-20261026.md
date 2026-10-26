@@ -23,3 +23,9 @@ README→协议→完整CURRENT→设计→历史→来源→路线均从同一�
 **JP-OFFICIAL-NAMED-PET-VISUAL-BATCH-25**：用已存日服官方124位置目录，扣除已取得父样本与12图，按原位置取前12个仍未取得的GIF引用；实际获取后检查图像、保留名称/父网页/实际图片捕获年代，产出一个有限具名视觉材料包。最多12引用，不可得或HTML占位不算取得，不能投射TW1物种/资源ID，不公开商业像素。不再接管理复核包或扩Wine/音频helper。
 
 R20同构建具名实体源OPEN仅新认证实源重开；P3E环境BLOCKED仅新完整合格环境重开。Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79 PAUSED_NON_BLOCKING、DD-028四类与overall percent=null不变。
+
+## 已观察的主线终验
+
+内容main `13f44b1278d9af56b35f803c032a0b19b5a0c11a` / tree `c7e9ef7cb3555c991f030ef12256453720f78561` 已非强制快进。候选五项与同HEAD主线五项均实际completed/success；主线新包40312557232日志确认28项验证、3655→2488和22域/37源重放通过，R17主线40312557542确认13项及804字节同域纠正218相同/219内容。18改动路径与远端逐字节一致；旧R17原报告、六份大历史/协议完整字节及四处旧文档前缀保留。
+
+[永久发布收据](../../research/recovered/STONEAGE-MATERIAL-REVIEW-R23-PUBLICATION-R1.json)保存所有候选/main运行、作业步骤和18路径原字节指纹。收据自身CI在发布后实际观察，不预先写入成功。NEXT仍具名日服宠物GIF有限材料25；不把本轮文件整合或错误纠正当原NPC/宠物/任务身份恢复。
