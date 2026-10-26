@@ -1,0 +1,42 @@
+name: Accept preserved original TW85 SPR137 full animation material R28
+
+on:
+  push:
+    paths:
+      - '.github/workflows/verify-stoneage-tw85-spr137-r28.yml'
+      - 'tools/stoneage_tw85_spr137_material_r28.py'
+      - 'tools/stoneage_tw85_spr137_archive_r28.py'
+      - 'tests/test_stoneage_tw85_spr137_material_r28.py'
+      - 'research/recovered/tw85-spr137-r28/**'
+      - 'docs/specs/STONEAGE-TW85-SPR137-MATERIAL-R28.md'
+      - 'docs/continuity/STONEAGE-TW85-SPR137-R28-20261026.md'
+      - 'README.md'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  independent-original-derived:
+    runs-on: ubuntu-latest
+    timeout-minutes: 13
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Negative semantics and synthetic format guards
+        run: python -m unittest -v tests.test_stoneage_tw85_spr137_material_r28
+      - name: Replay and independently attest all 1739 original indexed groups and 735666 frames
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m tools.stoneage_tw85_spr137_archive_r28             --dir research/recovered/tw85-spr137-r28             --receipt "$RUNNER_TEMP/R28-INDEPENDENT-CUSTODY.json"
+          cmp "$RUNNER_TEMP/R28-INDEPENDENT-CUSTODY.json"             research/recovered/tw85-spr137-r28/R28-INDEPENDENT-CUSTODY.json
+      - name: Ensure exact derived-only repository custody
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(find research/recovered/tw85-spr137-r28 -type f | wc -l)" -eq 5
+          ! find research/recovered/tw85-spr137-r28 -type f | grep -Ei '\.(bin|exe|msi|wav|png|gif)$'
+          echo "R28_FULL_DERIVED_ONLY_ARCHIVE=PASS"
