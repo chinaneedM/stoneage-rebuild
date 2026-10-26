@@ -1,0 +1,29 @@
+# R35：有限原客户端回收止点与实际相册名称字段
+
+日期2026-10-27（Asia/Shanghai）。协议§14追加记录，不替换巨大CURRENT。fresh main a920823d6320a33be39f7bbd8c4b565729d5d8e9 / tree f4fbc98e4aa111ce68a9c27e9b8cbcf23a174ee4；七页614分支、0开放PR/进行中，旧queued37642417333不动。最新R34收据40409590586实际success。八份启动文件/七主簿及路线/22域组合索引按精确Git完整字节读取，CURRENT2680510B/blob031c76a5a8e431f646853909bb2f2e11e6328cd2全保留。启动指纹在R35 CUSTODY，不依赖旧聊天推SHA。
+
+## 原客户端实物最高R35的有限结果
+
+11条早期地区/精确客户端token检索未取得新的可认证官方原客户端，已知日服附件与韩服权限线不重复探测，现代一键端不冒作官方版。原取得四样本/早期缺件/原大包长期保管限制均保留；搜索无新载体不证明全网不存在。按既定止点转现有客户端内部实际数据，避免继续网页逆推。
+
+实际从混合2.5保存包001分卷只读前16MiB（HTTP206精确0–16777215/209715200，prefix SHA a4bcaf14b8fbcdd75e07cd2833c2560f07f75184d8eef6f343502716db4c197d），静态取得AISetting.dat612B、album_4.dat161424B、auto.dat250010B共412046B。三个完整SHA与原全包实取清单全部同一；未重取361255180B全包、不声称重算整包SHA或新官方构建。截断RAR的7z返回2被原样记录，只在三成员全部完整全SHA通过时接受所选文件，不写成完整RAR解包成功。
+
+源bb433474a2eead583c26c45be6a93b20e7f16282/tree dbc30121dd36da4554f5440bf03dffa5663ceca1、run40413547320/job121890037983实际success且report状态THREE_ORIGINAL_MEMBER_FULL_HASHES_MATCH。ZIP137387B/SHA fcca52c347dd9016d79fd287818f6c702536ddc4f46dcd93b66159098d0ef001已独立下载核API；CMS私人解密ZIP135332B和全部三个成员再次逐SHA同一。原数据、私钥、密文不入Git；不宣称原件已长期私人持久保存。
+
+## 新的玩家可见名称材料及必须排除的假值
+
+相册实字节严格符合9×(16+224×80)=161424B的候选布局：2016槽、1868个flag0、148个flag1，无本样本flag2/3。148条原名称字段严格GBK全部可解、覆盖76个槽/76个不同名称，同槽冲突0；Big5只有139条可严格解，且没有一条与GBK相同。与fresh固定后代BismarckDD/stoneage@2f736808ff4361f5429ee919b718c88fabb60346的原pet_name.h按槽号/名称比较，148条全部恰一对应。原文本23210B局部副本重算Git blob d42c67f76ca453a778a8f49e51220a265c1eeb06。名称如乌力、乌力斯坦、黑乌力、乌宝宝、威威均来自实际字段；不是网页补填，不把76当新增物种或224当官方完整物种分母。
+
+后代源码明确区分：初始记录可随机填名字/昵称/图号/能力；flag1“遇见”路径只填名称，flag2拍照路径才填头像和能力。因此这份全为0/1的相册不能拿随机图号/属性去连SPR或成长。源码只是机制对照，不认证原exe同编译宏/同官方build。机器档只保留148次名称位置、字段/token SHA与原flag，账号键不解码、昵称不发表、未选择字段不解释。AISetting为9×68B用户局部配置候选；auto.dat业务含义仍OPEN，不扩通用helper。
+
+本地另一套ctypes C布局独立逐核2016槽及148名称字段，与主解析器一致。14本包正反例、连R34/Stage A清单29项通过，现行Stage A清单54source pins/8历史前缀仍通过；旧Stage A完整回放长度问题未重复运行或改写。
+
+源原样2648B JSON的哈希c153203be67ece90a50a00e97819ebf4b1d03dc8492f925fc991066c2e049837保留。因初次报告含不需公开的局部键头数字，永久Git明确存2721B公开投影（d9daeb4305a0f246586eb5b6716139b75caecf2ebba161de29bcd4b3356c3baf），去掉该字段并固定原报告/ZIP/源链；不称投影与原样JSON相同。旧源commit/日志不重写，后续工具不再输出局部键头。
+
+## 交付、最高NEXT与未完成边界
+
+规格 `docs/specs/STONEAGE-CLIENT-ALBUM-MATERIAL-R35.md`；永久派生为三数据源投影、原客户端回收止点、相册148条名称材料及CUSTODY。候选/main实际运行须后验另记，不预写成功。完整CURRENT、旧来源、旧失败及所有历史主簿原样保留，README只追加。
+
+最高 `PRESERVED_CLIENT_NATIVE_PET_ALBUM_TABLE_SOURCE_36`：原保存同一client子树的sa_2903.exe与网通变体均561152B，原SHA分别ec678517f76564ebc9ab00cf3f66853ed9975ef6290eb48168b78909a68a5d16 / 79554dd8526cf30afc50575d178461338afd3c299bd959987390496f106cde50。只在不无收益重取大包的实际原来源可得时，核一条原相册表边界/名称槽→原图号，否则精确缺源止点并轮转22域；不从后代头像回填、不任选变体认证官方2.5，不解局部账号键或继续猜auto.dat。
+
+Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、P3E阻塞、原TW1同构建server/master OPEN、总体percent=null保持。DD-028本体/永久新增/运营活动/起源未明四档不混。

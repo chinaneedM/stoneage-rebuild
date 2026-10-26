@@ -1,0 +1,150 @@
+{
+  "schema": "stoneage.mixed25_album_material_custody.r35",
+  "date": "2026-10-27",
+  "startup": {
+    "head": "a920823d6320a33be39f7bbd8c4b565729d5d8e9",
+    "tree": "f4fbc98e4aa111ce68a9c27e9b8cbcf23a174ee4",
+    "remote_branch_pages": 7,
+    "remote_branch_count": 614,
+    "open_prs": 0,
+    "in_progress_actions": 0,
+    "old_queued_action_retained": 37642417333,
+    "full_file_pins": {
+      "README.md": {
+        "bytes": 72751,
+        "sha256": "d0b3d3fc8ae09febaa90344ffaed37066d2d9da44fb92912bf6cb7d60e53953c",
+        "git_blob": "8b9260614eeecbaf614d411bdb0eccfa79a9298b"
+      },
+      "docs/PROJECT-CONTINUITY-PROTOCOL-R1.md": {
+        "bytes": 10880,
+        "sha256": "c3a10d3a9dacf8b61c97a52d294582a2984b13b549f4f10d1375a6fffb53ff65",
+        "git_blob": "a064174339b7a4656efe00b4446a066fd7abf304"
+      },
+      "docs/CURRENT-STATE.md": {
+        "bytes": 2680510,
+        "sha256": "f02f85b837fc09973cb2eca33f7daf4db547a77cb35a81a9576c6308f70142c0",
+        "git_blob": "031c76a5a8e431f646853909bb2f2e11e6328cd2"
+      },
+      "docs/DESIGN-DECISIONS.md": {
+        "bytes": 49898,
+        "sha256": "6d481f4eb0185ab0c8da34e697ae39f4137638d9484de4ed48d1875ec3af4f73",
+        "git_blob": "713caaecc6a43a92e5cb7f939954026b859bac20"
+      },
+      "docs/HISTORICAL-TIMELINE.md": {
+        "bytes": 730950,
+        "sha256": "7bc3fb586c23ff3c5fd0add689157c45e9e1b1cca001df84ad1dad9f850fc13c",
+        "git_blob": "91ca73105f26bf96aaa928519ae04942182e7b9b"
+      },
+      "docs/SOURCE-REGISTRY.md": {
+        "bytes": 1028196,
+        "sha256": "cddea82e5b51143e4107e9ed285f2acc04725a69dc929f0c432c1ceaebe20e7c",
+        "git_blob": "ee3b2d70dabedfe02e3761b3fdb25476a79e147c"
+      },
+      "docs/RESTORATION-ROADMAP-R2.md": {
+        "bytes": 482245,
+        "sha256": "830495a89612ceb54c0d8ebacd8710ceb28d7c1bfdecfc735239db76b6a1e5f8",
+        "git_blob": "c11eff237a8aaa1cc34488a6c3c7fcdd596f9ce2"
+      },
+      "research/recovered/STONEAGE-22-DOMAIN-SOURCE-READY-PORTFOLIO-R2.json": {
+        "bytes": 15948,
+        "sha256": "7d50de08f7855cf16dbe54b1747e258f1cc1223de88cc217172fd145f3c704ce",
+        "git_blob": "088b469b3c51e689cff27f33fc3bb49de2d24b2c"
+      }
+    }
+  },
+  "actual_source": {
+    "head": "bb433474a2eead583c26c45be6a93b20e7f16282",
+    "tree": "dbc30121dd36da4554f5440bf03dffa5663ceca1",
+    "run": 40413547320,
+    "job": 121890037983,
+    "conclusion": "success",
+    "actual_result": "THREE_ORIGINAL_MEMBER_FULL_HASHES_MATCH",
+    "artifact_id": 12693953902,
+    "downloaded_zip": {
+      "bytes": 137387,
+      "sha256": "fcca52c347dd9016d79fd287818f6c702536ddc4f46dcd93b66159098d0ef001",
+      "git_blob": "576ee9adbabbc5588ac74b3b01e1bcb3088d977a"
+    },
+    "api_zip_sha256": "fcca52c347dd9016d79fd287818f6c702536ddc4f46dcd93b66159098d0ef001",
+    "members": [
+      "r35-derived.json",
+      "r35-sealed.der"
+    ],
+    "raw_metadata_report_fingerprint": {
+      "bytes": 2648,
+      "sha256": "c153203be67ece90a50a00e97819ebf4b1d03dc8492f925fc991066c2e049837",
+      "git_blob": "2d720a200ccad91a04e98ee17537aab992f9e59e"
+    },
+    "raw_metadata_report_retained_in_public_git": false,
+    "raw_metadata_not_retained_reason": "Initial numeric header window may represent opaque local account keys; retain explicit public projection plus exact raw hash/ZIP/source lineage.",
+    "actual_prefix_fetch": {
+      "content_range": "bytes 0-16777215/209715200",
+      "normal_download": "https://www.mediafire.com/file/ev7l29fw77891go/",
+      "prefix_bytes": 16777216,
+      "prefix_sha256": "a4bcaf14b8fbcdd75e07cd2833c2560f07f75184d8eef6f343502716db4c197d",
+      "public_page_bytes": 336301,
+      "public_page_sha256": "ee45ee1f3a7f2b5525a1021d424de2e6acc460def16ab04d66c794cf994e13cb",
+      "public_page_status": 200,
+      "range_status": 206,
+      "sevenzip_return_code": 2,
+      "truncated_archive_is_not_failure_if_all_selected_original_members_match_exact_full_sha": true,
+      "whole_part_or_whole_archive_rehashed": false
+    }
+  },
+  "private_readback": {
+    "ciphertext_bytes": 135773,
+    "ciphertext_sha256": "3d2209f5bb99440fb6042f6668f786dbcf8ef582820dcb17d11621381136293c",
+    "actual_plaintext_zip_bytes": 135332,
+    "actual_plaintext_zip_sha256": "f353d335104c2d831f906dc7835f414fd899c9de00cb7e68af5e819a6bde2c0e",
+    "all_three_complete_member_sha_match_source_and_prior_inventory": true,
+    "full_archive_reacquired": false,
+    "original_client_executed": false,
+    "originals_or_private_key_or_ciphertext_committed": false,
+    "originals_durably_stored_with_independent_later_readback": false
+  },
+  "derived_metadata": {
+    "research/recovered/STONEAGE-MIXED25-THREE-DATA-SOURCE-R35.json": {
+      "bytes": 2721,
+      "sha256": "d9daeb4305a0f246586eb5b6716139b75caecf2ebba161de29bcd4b3356c3baf",
+      "git_blob": "a10922481b528f9943249a7f7269cb906fe0285d"
+    },
+    "research/recovered/STONEAGE-ALBUM-OBSERVED-NAMES-MATERIAL-R35.json": {
+      "bytes": 86862,
+      "sha256": "54c02c1dfd987cd9f2774a5be45de1a3bdfd4f68d40bd3a369526d0a8d998034",
+      "git_blob": "2c388d598783fdcd586df9bf26b4ea2aab6fc5c1"
+    },
+    "research/recovered/STONEAGE-ORIGINAL-CLIENT-ACQUISITION-TRIAGE-R35.json": {
+      "bytes": 4109,
+      "sha256": "204c4d2c5b4bff0e3d61e4a9d97d16aca159850baa8cd552fdc9306c4767f488",
+      "git_blob": "bf5c8b934269845a58d0588d85351bd99154cbe2"
+    }
+  },
+  "independent_original_analysis": {
+    "method": "ctypes LittleEndianStructure with explicit signed32 fields; independently checks sizeof80, face offset36, flag offset76 and all2016 source slots/148 GBK name fields",
+    "all_matched": true,
+    "upstream_pet_name_h_git_blob_locally_recomputed": "d42c67f76ca453a778a8f49e51220a265c1eeb06",
+    "same_slot_descendant_name_occurrences_equal": 148,
+    "same_build_descendant_source_proven": false
+  },
+  "local_validation": {
+    "r35_tests": 14,
+    "with_adjacent_r34_and_stage_a_manifest_tests": 29,
+    "stage_a_manifest": "PASS",
+    "old_full_stage_a_replay": "NOT_REPEATED; preexisting length issue preserved under R34"
+  },
+  "source_limits": {
+    "new_official_clients": 0,
+    "new_authenticated_tw10_entities": 0,
+    "album_name_slots": 76,
+    "full_species_count": null,
+    "face_stat_fields_from_flag1_used": false,
+    "opaque_account_keys_decoded_or_published": false,
+    "native_pet_nicknames_published": false
+  },
+  "candidate_main_ci": "PENDING_ACTUAL_OBSERVATION",
+  "next": "PRESERVED_CLIENT_NATIVE_PET_ALBUM_TABLE_SOURCE_36",
+  "stage_a": "7_PARTIAL_2_OPEN",
+  "stage_b_wiki": "GATED",
+  "r79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null
+}

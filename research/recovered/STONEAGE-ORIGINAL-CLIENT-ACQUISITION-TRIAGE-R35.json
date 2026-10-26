@@ -1,0 +1,94 @@
+{
+  "schema": "stoneage.original_client_acquisition_triage.r35",
+  "date": "2026-10-27",
+  "startup_head": "a920823d6320a33be39f7bbd8c4b565729d5d8e9",
+  "startup_tree": "f4fbc98e4aa111ce68a9c27e9b8cbcf23a174ee4",
+  "result": "NO_NEW_AUTHENTICATED_EARLY_OFFICIAL_CLIENT_CARRIER_QUALIFIED_IN_FINITE_SEARCH",
+  "new_official_clients": 0,
+  "source_pins": {
+    "docs/SOURCE-REGISTRY-CLIENT-RECOVERY-R1.md": {
+      "bytes": 71758,
+      "sha256": "9fa27367a24d399d340635a29c67853ed3df78e902a9fc000c91d8206aff103e",
+      "git_blob": "a198c48d4296d013764b321ee404a5eeb4a05855"
+    },
+    "docs/STONEAGE-CLIENT-FIRST-CROSS-VERSION-ACQUISITION-R1.md": {
+      "bytes": 5163,
+      "sha256": "8f9a6c32921425aa0dd0e377c7b4ea8f57c5011507e7d40aee794b0a9d6ce34d",
+      "git_blob": "07b30d32634c5a1f147d33a319bbabae6a5c7e8d"
+    },
+    "research/recovered/STONEAGE-EARLY-OFFICIAL-PAYLOAD-PROBE-R1.json": {
+      "bytes": 6235,
+      "sha256": "f901de595885203e9e7cd0740574bd5984220820056049b791882dfa5df591a3",
+      "git_blob": "86c208c0f4aa18db7c899b223e86c600cd66175a"
+    },
+    "research/recovered/STONEAGE-KR-NETMARBLE120-R27-CUSTODY-R1.json": {
+      "bytes": 1007,
+      "sha256": "e311084b941c4165f5d7f3e7b55e09aea3ca083aac4b0bb37fdcaac9cb5be4b5",
+      "git_blob": "e42b427a74c84610ace2fb670d820b9b5b040edf"
+    },
+    "research/recovered/STONEAGE-FOUR-CLIENT-CONTENT-SUMMARY-R24.json": {
+      "bytes": 4871,
+      "sha256": "93b37f0e6709493e240874f23a56edb44f727f24e2dafb35f1414eea424520d3",
+      "git_blob": "9525d6baadf80e4ee4f5d2aaf6c566cfc09d8156"
+    },
+    "research/recovered/STONEAGE-25-PRESERVED-BUNDLE-STATIC-INVENTORY-R1.txt": {
+      "bytes": 3283845,
+      "sha256": "48feb98aa977c88dcc236b530e0428ab665032ec923787eac0c293d5960159b0",
+      "git_blob": "78e8260e89928df76513799511d45c14a9e24dfc"
+    }
+  },
+  "queries": [
+    "stoneage sa174 download",
+    "스톤에이지 클라이언트 2000 다운로드",
+    "石器時代 日本 クライアント ダウンロード 1.74",
+    "\"sa174gm.exe\"",
+    "\"sa174hg.exe\"",
+    "\"스톤에이지\" \"클라이언트\" \"다운로드\" \"이니엄\"",
+    "site:archive.org \"stoneage\" \"software\"",
+    "\"石器時代\" \"archive.org\"",
+    "\"스톤에이지\" \"NetmarbleStoneAge\" download",
+    "\"石器时代\" \"官方客户端\" \"2003\" 下载",
+    "\"sa174gm\" -site:shiqi.la -site:shiqila.com"
+  ],
+  "observed_candidate_disposition": [
+    {
+      "candidate": "Japanese sa174gm old shiqi.la index",
+      "status": "KNOWN_ATTACHMENT_LINEAGE_NOT_NEW_PUBLIC_PAYLOAD",
+      "payload_not_obtained": true
+    },
+    {
+      "candidate": "Korean2024 lost-media post",
+      "status": "PLAYER_MISSING_CLIENT_CLAIM_NOT_PAYLOAD_OR_PROOF_OF_GLOBAL_ABSENCE",
+      "url": "https://gall.dcinside.com/mgallery/board/view/?id=lostmedia&no=20605",
+      "payload_not_obtained": true
+    },
+    {
+      "candidate": "2026 classic server how-to and recent one-click source packages",
+      "status": "UNQUALIFIED_MODERN_DESCENDANTS_NOT_ORIGINAL_OFFICIAL_BUILDS",
+      "payload_not_obtained": true
+    }
+  ],
+  "old_permission_walls_or_dead_urls_retried": false,
+  "result_is_global_absence_proof": false,
+  "all_official_clients_collected": false,
+  "stop": "No recursive broad search, no repeated attachment permission probing. Rotate to substantive source members in existing samples.",
+  "selected_member_rotation": {
+    "source": "existing mixed25 preservation; not new official sample",
+    "members": [
+      "data/AISetting.dat",
+      "data/album_4.dat",
+      "data/auto.dat"
+    ],
+    "reason": "R31 basename-only absence check does not resolve internal data; old full source hashes exist and format/identity content is unverified.",
+    "max_new_payload_read_bytes": 16777216,
+    "whole_361255180B_bundle_reacquisition": false,
+    "status": "THREE_ORIGINAL_MEMBERS_ACTUALLY_RECOVERED_FULL_SHA_MATCH_WITH_BOUNDED_PREFIX"
+  },
+  "boundaries": {
+    "new_authenticated_tw10_named_entities": 0,
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b_wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  }
+}

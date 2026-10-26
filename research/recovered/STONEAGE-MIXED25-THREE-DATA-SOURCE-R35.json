@@ -1,0 +1,62 @@
+{
+  "fetch": {
+    "content_range": "bytes 0-16777215/209715200",
+    "normal_download": "https://www.mediafire.com/file/ev7l29fw77891go/",
+    "prefix_bytes": 16777216,
+    "prefix_sha256": "a4bcaf14b8fbcdd75e07cd2833c2560f07f75184d8eef6f343502716db4c197d",
+    "public_page_bytes": 336301,
+    "public_page_sha256": "ee45ee1f3a7f2b5525a1021d424de2e6acc460def16ab04d66c794cf994e13cb",
+    "public_page_status": 200,
+    "range_status": 206,
+    "sevenzip_return_code": 2,
+    "truncated_archive_is_not_failure_if_all_selected_original_members_match_exact_full_sha": true,
+    "whole_part_or_whole_archive_rehashed": false
+  },
+  "members": [
+    {
+      "bytes": 612,
+      "name": "AISetting.dat",
+      "nonzero_bytes": 253,
+      "path": "石器2.5客戶端+服務端+登入器/SA2.5主程式/stoneage2.5/data/AISetting.dat",
+      "sha256": "0914e844e391f9ae51d255dee83b504198cdd9a3700085bd7fea715200ac4558"
+    },
+    {
+      "bytes": 161424,
+      "name": "album_4.dat",
+      "nonzero_bytes": 108598,
+      "path": "石器2.5客戶端+服務端+登入器/SA2.5主程式/stoneage2.5/data/album_4.dat",
+      "sha256": "0b6427ec8a38a5d203ddd3b3c47fc3c0eba8daa68ff8c848a64bbf364812e59f"
+    },
+    {
+      "bytes": 250010,
+      "name": "auto.dat",
+      "nonzero_bytes": 6186,
+      "path": "石器2.5客戶端+服務端+登入器/SA2.5主程式/stoneage2.5/data/auto.dat",
+      "sha256": "2f8c858ed4ef2bdeb960d302682bffad4f534e595f2e9ad0e0ca8485f79746a3"
+    }
+  ],
+  "named_species_or_auto_data_semantics_proven": false,
+  "new_official_clients": 0,
+  "original_client_executed": false,
+  "private_transfer": {
+    "ciphertext_bytes": 135773,
+    "ciphertext_sha256": "3d2209f5bb99440fb6042f6668f786dbcf8ef582820dcb17d11621381136293c",
+    "plaintext_zip_bytes": 135332,
+    "plaintext_zip_sha256": "f353d335104c2d831f906dc7835f414fd899c9de00cb7e68af5e819a6bde2c0e",
+    "recipient_certificate_sha256": "f4975ae7879cb1509c4394d9aebced753f5a642cda37f9bb740a2c0263b6d179"
+  },
+  "projection": {
+    "omitted_fields": [
+      "members[*].first_four_le_u32"
+    ],
+    "reason": "Opaque first16 bytes may be local account record keys; no account identity bytes retained in public derived projection. Original source receipt is not rewritten.",
+    "source_raw_bytes": 2648,
+    "source_raw_sha256": "c153203be67ece90a50a00e97819ebf4b1d03dc8492f925fc991066c2e049837"
+  },
+  "quick_key": "ev7l29fw77891go",
+  "raw_original_data_published": false,
+  "schema": "stoneage.mixed25_three_data_public_projection.r35",
+  "source_scope": "EXISTING_MIXED_COMMUNITY_PRESERVATION_NOT_OFFICIAL_CLEAN_BUILD",
+  "status": "THREE_ORIGINAL_MEMBER_FULL_HASHES_MATCH",
+  "task": "ORIGINAL_CLIENT_ACQUISITION_AND_MATERIAL_ROTATION_35"
+}

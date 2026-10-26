@@ -68,7 +68,7 @@ def main():
    for name,raw in members.items():
     z.writestr(name,raw)
     result['members'].append({'path':PREFIX+name,'name':name,'bytes':len(raw),'sha256':sha(raw),
-     'nonzero_bytes':sum(v!=0 for v in raw),'first_four_le_u32':[int.from_bytes(raw[i:i+4],'little') for i in range(0,16,4)]})
+     'nonzero_bytes':sum(v!=0 for v in raw)})
   bundle=stream.getvalue();plain=args.work/'selected.zip';plain.write_bytes(bundle)
   cert=ROOT/'research/recovered/STONEAGE-R35-DATA-RECIPIENT-CERT.pem'
   subprocess.run(['openssl','cms','-encrypt','-binary','-aes-256-cbc','-in',str(plain),'-out',str(args.sealed),'-outform','DER',str(cert)],check=True,stdout=subprocess.DEVNULL,stderr=subprocess.PIPE)

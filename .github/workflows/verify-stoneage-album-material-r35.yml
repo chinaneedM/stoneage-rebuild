@@ -1,0 +1,43 @@
+name: Verify original local album name material and no master promotion R35
+on:
+  push:
+    paths:
+      - '.github/workflows/verify-stoneage-album-material-r35.yml'
+      - 'tools/stoneage_mixed25_data_prefix_r35.py'
+      - 'tools/stoneage_album_material_r35.py'
+      - 'tests/test_stoneage_mixed25_data_prefix_r35.py'
+      - 'tests/test_stoneage_album_material_r35.py'
+      - 'research/recovered/STONEAGE-MIXED25-*R35.json'
+      - 'research/recovered/STONEAGE-ALBUM-*R35.json'
+      - 'research/recovered/STONEAGE-ORIGINAL-CLIENT-ACQUISITION-TRIAGE-R35.json'
+      - 'docs/specs/STONEAGE-CLIENT-ALBUM-MATERIAL-R35.md'
+      - 'docs/continuity/STONEAGE-CLIENT-ALBUM-R35-20261027.md'
+      - 'README.md'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  immutable-source-and-name-boundaries:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Hash, namespace, encoding and random-field negative tests
+        run: python -m unittest -v tests.test_stoneage_mixed25_data_prefix_r35 tests.test_stoneage_album_material_r35
+      - name: Replay complete archived named-slot metadata without original data download
+        run: python -m tools.stoneage_album_material_r35
+      - name: Reject plaintext original member and private key in R35 public files
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          names={'AISetting.dat','album_4.dat','auto.dat','selected.zip','prefix.rar','sealed.der','recipient-key.pem'}
+          for p in Path('research/recovered').rglob('*'):
+            if p.is_file() and p.name in names:
+              raise SystemExit('original/private payload found in public data: '+str(p))
+          source=Path('research/recovered/STONEAGE-MIXED25-THREE-DATA-SOURCE-R35.json').read_text()
+          if 'first_four_le_u32"' in source.replace('members[*].first_four_le_u32','OMITTED_HEADER_FIELD'):
+            raise SystemExit('opaque identity header retained')
+          PY
