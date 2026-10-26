@@ -118,5 +118,19 @@
     "overall_percent": null
   },
   "candidate_main_ci": "PENDING_ACTUAL_OBSERVATION",
-  "next": "ORIGINAL_CLIENT_ACQUISITION_AND_MATERIAL_ROTATION_35"
+  "next": "ORIGINAL_CLIENT_ACQUISITION_AND_MATERIAL_ROTATION_35",
+  "broader_legacy_replay_observation": {
+    "command": "python tools/stoneage_stage_a_review_packet.py --replay",
+    "status": "FAIL_PREEXISTING_IMMUTABLE_PHASE_GATE_WHOLE_LENGTH_CHECK",
+    "test": "tests.test_stoneage_stage_a_blocker_triage.StageABlockerTriageTests.test_source_bytes_and_git_blob_exact",
+    "source": "docs/RESTORATION-PHASE-GATE-R1.md",
+    "current_baseline_and_working_bytes": 75620,
+    "historical_pinned_bytes": 74172,
+    "historical_prefix_git_blob_matches": true,
+    "source_unchanged_from_fresh_start": true,
+    "resolution": "Do not mutate immutable source report or its hash-pinned historical test; record bounded existing replay mismatch. A future replay adapter must materialize a verified historical input snapshot rather than truncate the live continuity file.",
+    "r34_specific_and_adjacent_39_tests": "PASS",
+    "stage_a_manifest_validation": "PASS",
+    "current_stage_a_ci_gate": "OBSERVE_REMOTE_AFTER_PUBLICATION"
+  }
 }
