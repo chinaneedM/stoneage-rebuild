@@ -1,0 +1,38 @@
+name: Recover one bounded original WAV for encrypted private audition R22
+on:
+  push:
+    branches: [agent/private-audio-audition-r22-20261026]
+    paths: ['.github/workflows/recover-stoneage-private-audio-r22.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  one-original-sample:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - run: python -m pip install --quiet cryptography
+      - run: python -m unittest -v tests.test_stoneage_private_audio_r22
+      - name: Fetch only known 8 MiB CAB prefix and decode two audio members
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq cabextract
+          python -m tools.stoneage_stoneage5_battle_extract_probe --output-cab /tmp/r22-sound3.cab --prefix-bytes 8388608
+          mkdir -p /tmp/r22-members
+          cabextract -q -F soundaddr_3.txt -d /tmp/r22-members /tmp/r22-sound3.cab
+          cabextract -q -F sound_3.bin -d /tmp/r22-members /tmp/r22-sound3.cab
+      - name: Pin complete original members and seal exactly one original WAV
+        run: python -m tools.stoneage_audio_sample_r22 --directory /tmp/r22-members --cab /tmp/r22-sound3.cab --public-key research/recovered/STONEAGE-R22-AUDIO-RECIPIENT-PUBLIC.pem --output /tmp/r22-audio-derived.json --sealed /tmp/r22-audio-sealed.json
+      - name: Delete original members and sparse CAB before artifact upload
+        if: always()
+        run: rm -rf /tmp/r22-members /tmp/r22-sound3.cab
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: r22-one-audio-derived-and-private-ciphertext
+          path: |
+            /tmp/r22-audio-derived.json
+            /tmp/r22-audio-sealed.json
+          if-no-files-found: error
+          retention-days: 7
