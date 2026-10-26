@@ -1,0 +1,41 @@
+{
+  "schema": "stoneage.original_palette_r33_remote_publication_observed.v1",
+  "content_commit": "8f5dd90839c6c866bcd82943f37be00edcd75ecc",
+  "content_tree": "36a50a1fd16dcddb44736f99485ca36f9cf3eb31",
+  "original_current_state_git_blob_preserved": "031c76a5a8e431f646853909bb2f2e11e6328cd2",
+  "original_pre_r33_commit": "3205e8da8ab01df049a0a72922a2f988b875f0af",
+  "candidate": {
+    "branch": "agent/r33-palette-same-carrier-20261026",
+    "run_id": 40341126302,
+    "job_id": 121635791250,
+    "head_sha": "8f5dd90839c6c866bcd82943f37be00edcd75ecc",
+    "status": "completed",
+    "conclusion": "success"
+  },
+  "main": {
+    "run_id": 40341261031,
+    "job_id": 121636266619,
+    "head_sha": "8f5dd90839c6c866bcd82943f37be00edcd75ecc",
+    "status": "completed",
+    "conclusion": "success"
+  },
+  "gates": [
+    "five_input_git_blob_hashes",
+    "sixteen_original_palette_path_size_and_sha256_pairs",
+    "eight_r30_indexed_rd_and_adrn_witnesses",
+    "prior_tw10_palette_initial_rgb_evidence_consistency",
+    "mutated_source_semantics_rejected",
+    "no_original_commercial_palette_or_pixel_outputs"
+  ],
+  "report_path": "research/recovered/STONEAGE-TW85-PALETTE-SAME-CARRIER-R33.json",
+  "report_git_blob": "4b36a32fe52e9361e972904590816bf91a7d60fe",
+  "source_original_client_re_downloaded_this_package": false,
+  "original_tw85_color_rendered_verified": false,
+  "official_clean_tw85_build_verified": false,
+  "stage_a": "7_PARTIAL_PLUS_2_OPEN",
+  "stage_b": "GATED",
+  "R79": "PAUSED_NON_BLOCKING",
+  "overall_restoration_percent": null,
+  "next": "ORIGINAL_WORLD_PLAYER_VISIBLE_CONTENT_PRIMARY_MATERIAL_34",
+  "own_receipt_commit_ci_claimed": false
+}

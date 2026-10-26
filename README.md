@@ -637,3 +637,8 @@ The 2.66 MB historical `docs/CURRENT-STATE.md` is still preserved byte-for-byte.
 ### 2026-10-26 — R32历史原地图110的三处实际字段变化
 
 [逐格规格](docs/specs/STONEAGE-ORIGINAL-MAP110-MATERIAL-R32.md) / [源链覆层](docs/continuity/STONEAGE-ORIGINAL-MAP110-R32-20261026.md)按新远端最高NEXT直接实取两份2003历史map.exe并逐SHA静态取map/110.DAT，46×45三原u16平面6210位置全比对：第一/第二原平面不变，第三平面仅原flat索引1/2/3由16384(0x4000)改49152(0xC000)，rowmajor坐标是候选而非原运行证明。第一次7z失效run仍保留，修正unar后源run40335682973实成功。唯一原派生2,832B经ZIP独立下载、SHA与Git blob永久入库；不存原地图、无原服/官方1.0/事件语义晋升。新任务优先原保存样本R30真实RD索引与同版调色板RGB来源33；Stage A7 PARTIAL/2 OPEN、B/wiki GATED、P3E/R79暂停、总体百分比未知。
+
+
+### 2026-10-26 — R33 原SPR/RD调色板同载体全16字节匹配
+
+[材料记录](docs/continuity/STONEAGE-PALETTE-SAME-CARRIER-R33-20261026.md)与[实际主线验收记录](docs/continuity/STONEAGE-R33-CI-FINAL-20261026.md)保留TW1.0与台8.5保存样本的16/16原SAP逐路径同SHA、R30八原索引帧同保存载体见证，以及仅TW1原代码验证的Palet_0初始化RGB规则。候选/main原内容Actions均真实SUCCESS。台8.5真实运行选色、纯净官方归属、宠物/NPC身份和原游戏世界仍未认证；下一主动最高为原世界玩家可见内容R34，Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、总体百分比未知。
