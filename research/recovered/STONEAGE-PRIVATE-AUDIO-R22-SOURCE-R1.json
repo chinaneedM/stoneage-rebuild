@@ -1,0 +1,64 @@
+{
+  "assistant_listening_confirmed": false,
+  "encrypted_transport": {
+    "envelope_bytes": 36741,
+    "envelope_sha256": "30f63a0323d2e7571aac1ce0fba06ff7ce073023ff015eed45e57b8eb8e37f39",
+    "media_type": "audio/wav",
+    "plaintext_bytes": 27180,
+    "plaintext_sha256": "58b036717914ad27682dde9c5e797d8a043381a9000154ac4bcbf6b84fd09454",
+    "recipient_key_sha256": "a3d27b7bb614c552af6c9abad93b25f6eaadd59dd1a09d642cfb6af0da83a48f",
+    "schema": "stoneage.r22.private_wave.x25519_aesgcm.v1"
+  },
+  "full_original_report_replayed": true,
+  "members": {
+    "sound_3.bin": {
+      "bytes": 2696934,
+      "sha256": "f5c0b5b0bf3dc7e010c3cde867536929b1f51d81a7ace5ff30d143ccff33b148"
+    },
+    "soundaddr_3.txt": {
+      "bytes": 691,
+      "sha256": "5afc6a80352d5254c926129e4acdd023cabdc9e67e5f8cf5bf824520ea2be5e7"
+    }
+  },
+  "named_scene_pet_or_battle_event": null,
+  "original_client_executed": false,
+  "original_game_audio_device_played": false,
+  "prior_report_path": "research/recovered/STONEAGE-SOUND3-ORIGINAL-CONTENT-R1.json",
+  "prior_report_sha256": "ed5d9387a6f8e70da5ad269fc9fa46f8ad5d0b6e0aaf25e3b6d969fe2e1934d0",
+  "private_persistent_storage_verified": false,
+  "public_artifact_plaintext_audio": false,
+  "same_deployed_build_proven": false,
+  "sample": {
+    "bytes": 27180,
+    "channels": 1,
+    "duration_seconds": 1.230657596371882,
+    "frames": 27136,
+    "non_midpoint_samples": 22752,
+    "pcm_bytes": 27136,
+    "pcm_sha256": "afa24f1f1b94806a6717962d7cfedf64de7985fb2c672f5437eb3e0ccfbab0e3",
+    "sample_rate": 22050,
+    "sample_unsigned_maximum": 190,
+    "sample_unsigned_minimum": 73,
+    "sample_width_bytes": 1,
+    "sha256": "58b036717914ad27682dde9c5e797d8a043381a9000154ac4bcbf6b84fd09454"
+  },
+  "sample_offset": 0,
+  "sample_table_index": 0,
+  "sample_table_name": "saam_01.wav",
+  "schema": "stoneage.private_original_audio_sample_r22.v1",
+  "source": {
+    "archive_identifier": "Stoneage-5",
+    "cab_logical_bytes": 612584670,
+    "cab_prefix_bytes": 8388608,
+    "cab_prefix_sha256": "87973df39afea068021d64a71fc9fb4f290cc0d7447fd3fae6beeea2bdb3c937",
+    "carrier": "CD [STA5].bin",
+    "carrier_bytes": 733057248,
+    "carrier_catalogue_sha1_not_full_rehashed": "6053dce3df2723250ddb52a98b3e8cf2552cd791",
+    "full_disc_or_full_cab_downloaded": false,
+    "http_raw_range": "bytes 65856-9699647/733057248",
+    "logical_prefix_reconstructed_from_sector_payloads": true,
+    "official_clean_build_proven": false
+  },
+  "user_playback_confirmed": false,
+  "waveform_or_private_key_in_git": false
+}

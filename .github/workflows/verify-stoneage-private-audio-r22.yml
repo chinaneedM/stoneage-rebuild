@@ -1,0 +1,24 @@
+name: Validate private original WAV R22 custody without hearing overclaims
+on:
+  push:
+    branches: [main, agent/private-audio-audition-r22-20261026]
+    paths:
+      - 'tools/stoneage_private_audio_r22.py'
+      - 'tools/stoneage_audio_sample_r22.py'
+      - 'tools/stoneage_audio_r22_evidence_guard.py'
+      - 'tests/test_stoneage_private_audio_r22.py'
+      - 'tests/test_stoneage_audio_r22_evidence_guard.py'
+      - 'research/recovered/STONEAGE-PRIVATE-AUDIO-R22-*.json'
+      - 'docs/continuity/STONEAGE-PRIVATE-AUDIO-R22-20261026.md'
+      - '.github/workflows/verify-stoneage-private-audio-r22.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exact-metadata-replay:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python -m pip install --quiet cryptography
+      - run: python -m unittest -v tests.test_stoneage_private_audio_r22 tests.test_stoneage_audio_r22_evidence_guard
+      - run: python -m tools.stoneage_audio_r22_evidence_guard

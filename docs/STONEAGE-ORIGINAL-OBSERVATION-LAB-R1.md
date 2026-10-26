@@ -91,3 +91,8 @@ Windows8位/编码/网络隔离资格方案并用同一合成门槛验收；不�
 ## 2026-10-26 P3E：8位兼容颜色可用，完整环境仍阻塞
 
 见 `docs/continuity/STONEAGE-WINDOWS-P3E-20261026.md`。当前Windows2022的256COLOR与XP+256COLOR实际使自编GDI/DirectDraw程序报告8bpp并正确显示/接收输入；三设置ACP均1252，控制台950不改变它。单路径防火墙canary通过仅限一TCP/IPv4目标，未资格化原程序/后代。当前BLOCKED_AVAILABLE_WINDOWS_ENVIRONMENT，未重拉/运行原件；有限包结束，最高NEXT返回R20早期同版名字—实体ID—SPR材料，停止Wine/显示参数树。仅当有新的ACP950开机环境与完整同程序显示/输入/隔离证据才重开观察；原游戏颜色/QUIT/声音/世界仍OPEN。
+
+
+## 2026-10-26 R22：私人原样WAV已交付，助手音频输入受限
+
+见 `docs/continuity/STONEAGE-PRIVATE-AUDIO-R22-20261026.md`。单段CN5保存样本`saam_01.wav`完整27180B/1.230657596秒已加密传回、私人保存及独立全量回读，WAV/PCM与既验原报告一致，FFmpeg解码全部样本另核。会话音频接口实际返回不支持模型音频输入，故不把文件可解码当助手已听；用户播放和原游戏内事件/声画联动仍未确认。原音频/私钥未入公开Git/工件；仅有派生收据。NEXT为22域增量材料复核23，停止音频底层扩展，P3E原运行环境及R20名字—实体—SPR仍独立阻塞/OPEN。

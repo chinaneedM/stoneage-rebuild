@@ -1,0 +1,231 @@
+{
+  "schema": "stoneage.private_audio_r22_custody.v1",
+  "startup_head": "e44754afab9054383debb992ee6b83c7b62a9454",
+  "startup_tree": "8ca806b0bd54211f4354874e9b056a4f75880a46",
+  "branches": 599,
+  "tree_entries": 5911,
+  "tree_truncated": false,
+  "open_prs": 0,
+  "in_progress": 0,
+  "historical_queued_unrelated": 37642417333,
+  "full_startup_files": {
+    "README.md": {
+      "bytes": 61503,
+      "sha256": "eef68c31017d3e4cabe52062824110b363354d2b19dca14ad5e1c0efc0ab7c47",
+      "git_blob": "3a31e6dc0bc2e31665b993d51602711f9aec0c07"
+    },
+    "docs/PROJECT-CONTINUITY-PROTOCOL-R1.md": {
+      "bytes": 10880,
+      "sha256": "c3a10d3a9dacf8b61c97a52d294582a2984b13b549f4f10d1375a6fffb53ff65",
+      "git_blob": "a064174339b7a4656efe00b4446a066fd7abf304"
+    },
+    "docs/CURRENT-STATE.md": {
+      "bytes": 2680510,
+      "sha256": "f02f85b837fc09973cb2eca33f7daf4db547a77cb35a81a9576c6308f70142c0",
+      "git_blob": "031c76a5a8e431f646853909bb2f2e11e6328cd2"
+    },
+    "docs/DESIGN-DECISIONS.md": {
+      "bytes": 49898,
+      "sha256": "6d481f4eb0185ab0c8da34e697ae39f4137638d9484de4ed48d1875ec3af4f73",
+      "git_blob": "713caaecc6a43a92e5cb7f939954026b859bac20"
+    },
+    "docs/HISTORICAL-TIMELINE.md": {
+      "bytes": 730950,
+      "sha256": "7bc3fb586c23ff3c5fd0add689157c45e9e1b1cca001df84ad1dad9f850fc13c",
+      "git_blob": "91ca73105f26bf96aaa928519ae04942182e7b9b"
+    },
+    "docs/SOURCE-REGISTRY.md": {
+      "bytes": 1028196,
+      "sha256": "cddea82e5b51143e4107e9ed285f2acc04725a69dc929f0c432c1ceaebe20e7c",
+      "git_blob": "ee3b2d70dabedfe02e3761b3fdb25476a79e147c"
+    },
+    "docs/RESTORATION-ROADMAP-R2.md": {
+      "bytes": 482245,
+      "sha256": "830495a89612ceb54c0d8ebacd8710ceb28d7c1bfdecfc735239db76b6a1e5f8",
+      "git_blob": "c11eff237a8aaa1cc34488a6c3c7fcdd596f9ce2"
+    }
+  },
+  "source_head": "17be8ff3b712b9f4c0c6d4c2bb4a46abd4d796fe",
+  "source_tree": "a87bf2cee5dd3962b02ea550a92a178bbdb78abe",
+  "source_run": {
+    "id": 40309396706,
+    "head_sha": "17be8ff3b712b9f4c0c6d4c2bb4a46abd4d796fe",
+    "status": "completed",
+    "conclusion": "success",
+    "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40309396706",
+    "path": ".github/workflows/recover-stoneage-private-audio-r22.yml"
+  },
+  "source_jobs": [
+    {
+      "id": 121526494995,
+      "run_id": 40309396706,
+      "workflow_name": "Recover one bounded original WAV for encrypted private audition R22",
+      "head_branch": "agent/private-audio-audition-r22-20261026",
+      "run_url": "https://api.github.com/repos/chinaneedM/stoneage-rebuild/actions/runs/40309396706",
+      "run_attempt": 1,
+      "node_id": "CR_kwDOUfE1tc8AAAAcS4snEw",
+      "head_sha": "17be8ff3b712b9f4c0c6d4c2bb4a46abd4d796fe",
+      "url": "https://api.github.com/repos/chinaneedM/stoneage-rebuild/actions/jobs/121526494995",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40309396706/job/121526494995",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-26T10:41:43Z",
+      "started_at": "2026-10-26T10:41:45Z",
+      "completed_at": "2026-10-26T10:42:20Z",
+      "name": "one-original-sample",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1,
+          "started_at": "2026-10-26T10:41:45Z",
+          "completed_at": "2026-10-26T10:41:46Z"
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2,
+          "started_at": "2026-10-26T10:41:46Z",
+          "completed_at": "2026-10-26T10:41:52Z"
+        },
+        {
+          "name": "Run python -m pip install --quiet cryptography",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3,
+          "started_at": "2026-10-26T10:41:52Z",
+          "completed_at": "2026-10-26T10:41:54Z"
+        },
+        {
+          "name": "Run python -m unittest -v tests.test_stoneage_private_audio_r22",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4,
+          "started_at": "2026-10-26T10:41:54Z",
+          "completed_at": "2026-10-26T10:41:55Z"
+        },
+        {
+          "name": "Fetch only known 8 MiB CAB prefix and decode two audio members",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5,
+          "started_at": "2026-10-26T10:41:55Z",
+          "completed_at": "2026-10-26T10:42:17Z"
+        },
+        {
+          "name": "Pin complete original members and seal exactly one original WAV",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6,
+          "started_at": "2026-10-26T10:42:17Z",
+          "completed_at": "2026-10-26T10:42:17Z"
+        },
+        {
+          "name": "Delete original members and sparse CAB before artifact upload",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7,
+          "started_at": "2026-10-26T10:42:17Z",
+          "completed_at": "2026-10-26T10:42:17Z"
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 8,
+          "started_at": "2026-10-26T10:42:17Z",
+          "completed_at": "2026-10-26T10:42:18Z"
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 16,
+          "started_at": "2026-10-26T10:42:18Z",
+          "completed_at": "2026-10-26T10:42:19Z"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 17,
+          "started_at": "2026-10-26T10:42:19Z",
+          "completed_at": "2026-10-26T10:42:19Z"
+        }
+      ],
+      "check_run_url": "https://api.github.com/repos/chinaneedM/stoneage-rebuild/check-runs/121526494995",
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "runner_id": 1000141820,
+      "runner_name": "GitHub Actions 1000141820",
+      "runner_group_id": 0,
+      "runner_group_name": "GitHub Actions"
+    }
+  ],
+  "source_artifact": {
+    "id": 12643539813,
+    "node_id": "MDg6QXJ0aWZhY3QxMjY0MzUzOTgxMw==",
+    "name": "r22-one-audio-derived-and-private-ciphertext",
+    "size_in_bytes": 29221,
+    "url": "https://api.github.com/repos/chinaneedM/stoneage-rebuild/actions/artifacts/12643539813",
+    "archive_download_url": "https://api.github.com/repos/chinaneedM/stoneage-rebuild/actions/artifacts/12643539813/zip",
+    "expired": false,
+    "digest": "sha256:89b2cebf90956b7bb159c84fa812183227e7eaea6a8724e8ed97bae51fee5952",
+    "created_at": "2026-10-26T10:42:18Z",
+    "updated_at": "2026-10-26T10:42:18Z",
+    "expires_at": "2026-11-02T10:42:18Z",
+    "workflow_run": {
+      "id": 40309396706,
+      "repository_id": 1374762421,
+      "head_repository_id": 1374762421,
+      "head_branch": "agent/private-audio-audition-r22-20261026",
+      "head_sha": "17be8ff3b712b9f4c0c6d4c2bb4a46abd4d796fe"
+    }
+  },
+  "artifact_zip_bytes": 29221,
+  "artifact_zip_sha256": "89b2cebf90956b7bb159c84fa812183227e7eaea6a8724e8ed97bae51fee5952",
+  "artifact_members": [
+    "r22-audio-derived.json",
+    "r22-audio-sealed.json"
+  ],
+  "derived_files": [
+    {
+      "path": "research/recovered/STONEAGE-PRIVATE-AUDIO-R22-SOURCE-R1.json",
+      "bytes": 2555,
+      "sha256": "453f473aa366e2fce4be1fa841d0d19e5d5ed19f7e50fbe19a7ff3e0c7147482",
+      "git_blob": "2cbe529e0f33ebdaddfe78bba0ce4e95bf71b524"
+    },
+    {
+      "path": "research/recovered/STONEAGE-PRIVATE-AUDIO-R22-DELIVERY-R1.json",
+      "bytes": 1309,
+      "sha256": "93d3a783527260925e3c83b50322d5bfdeb84f526f0f7c3921c60825f9e05ade",
+      "git_blob": "3008b363569fd4f046fd101ffaa3856c734de364"
+    }
+  ],
+  "ciphertext_envelope": {
+    "path_in_zip": "r22-audio-sealed.json",
+    "bytes": 36741,
+    "sha256": "30f63a0323d2e7571aac1ce0fba06ff7ce073023ff015eed45e57b8eb8e37f39",
+    "git_blob": "3d25c3f0577bca6be8ab0ae0063eff347de689e5"
+  },
+  "recipient_public_key": {
+    "path": "research/recovered/STONEAGE-R22-AUDIO-RECIPIENT-PUBLIC.pem",
+    "bytes": 113,
+    "sha256": "a3d27b7bb614c552af6c9abad93b25f6eaadd59dd1a09d642cfb6af0da83a48f",
+    "git_blob": "467dbc181e09d37ebcf7de03c2a73485c0f5cb96"
+  },
+  "private_persistent_readback_verified": true,
+  "private_file_id_and_key_kept_outside_public_git": true,
+  "public_artifact_plaintext_audio": false,
+  "private_key_in_git": false,
+  "original_client_executed": false,
+  "assistant_listening_confirmed": false,
+  "user_playback_confirmed": false,
+  "original_game_audio_device_played": false,
+  "original_event_name": null,
+  "overall_restoration_percent": null,
+  "next": "POST-ORIGINAL-OBSERVATION-MATERIAL-PORTFOLIO-23"
+}
