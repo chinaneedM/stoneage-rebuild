@@ -1,0 +1,33 @@
+name: Source bounded mixed25 album and automation data R35
+on:
+  push:
+    branches: [agent/mixed25-data-prefix-r35-source-20261027]
+    paths: ['.github/workflows/source-stoneage-mixed25-data-prefix-r35.yml','tools/stoneage_mixed25_data_prefix_r35.py','research/recovered/STONEAGE-R35-DATA-RECIPIENT-CERT.pem']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  bounded-data-source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install static archive reader
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq 7zip
+      - name: Retrieve at most16MiB and qualify exactly three prehashed data members
+        run: python -m tools.stoneage_mixed25_data_prefix_r35 --work /tmp/r35-private --output /tmp/r35-derived.json --sealed /tmp/r35-sealed.der
+      - name: Remove proprietary prefix and original selected data
+        if: always()
+        run: rm -rf /tmp/r35-private
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: r35-derived-and-private-ciphertext
+          path: |
+            /tmp/r35-derived.json
+            /tmp/r35-sealed.der
+          if-no-files-found: error
+          retention-days: 7
