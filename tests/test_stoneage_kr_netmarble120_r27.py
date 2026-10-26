@@ -55,4 +55,43 @@ class PublicSourceTests(unittest.TestCase):
         with self.assertRaises(ValueError):self.inspect(b'x'*(source.MAX_HTML_BYTES+1))
 
 
+class SourceStopTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        import json
+        from tools import stoneage_kr_netmarble120_r27 as material
+        cls.material=material;cls.source=json.loads(material.SOURCE.read_bytes())
+        cls.custody=json.loads(material.CUSTODY.read_bytes());cls.doc=json.loads(material.REPORT.read_bytes())
+
+    def test_actual_raw_report_custody_and_bounded_outcome(self):self.material.validate(self.doc)
+
+    def test_http200_and_title_are_not_post_or_package_access(self):
+        import copy
+        for key,value in [('target_token_in_post',True),('public_package_links',[{'url':'invented'}])]:
+            source=copy.deepcopy(self.source);source['observation'][key]=value
+            with self.subTest(key=key),self.assertRaises(ValueError):self.material.build(source,self.custody)
+
+    def test_false_download_version_or_official_identity_refused(self):
+        import copy
+        for key,value in [('downloaded',True),('bytes',1),('sha256','0'*64),
+                          ('declared_version','1.74'),('official_clean_authenticated',True)]:
+            source=copy.deepcopy(self.source);source['package'][key]=value
+            with self.subTest(key=key),self.assertRaises(ValueError):self.material.build(source,self.custody)
+
+    def test_gate_does_not_prove_absence_or_specific_login_payment_mechanism(self):
+        import copy
+        for key in ['historical_client_or_website_does_not_exist_proven',
+                    'source_requires_specific_account_or_payment_mechanism_proven',
+                    'source_workflow_success_means_download_success']:
+            doc=copy.deepcopy(self.doc);doc['boundaries'][key]=True
+            with self.subTest(key=key),self.assertRaises(ValueError):self.material.validate(doc)
+
+    def test_wrong_source_custody_or_extra_artifact_member_refused(self):
+        import copy
+        custody=copy.deepcopy(self.custody);custody['source_job']=0
+        with self.assertRaises(ValueError):self.material.build(self.source,custody)
+        custody=copy.deepcopy(self.custody);custody['artifact_member_allowlist'].append('installer.exe')
+        with self.assertRaises(ValueError):self.material.build(self.source,custody)
+
+
 if __name__=='__main__':unittest.main()

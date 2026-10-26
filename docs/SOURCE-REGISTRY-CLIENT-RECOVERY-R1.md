@@ -753,3 +753,8 @@ Purpose: track **actual client-byte recovery targets** under DD-009. This ledger
 
 
 > **2026-10-26 R24勘误：本节旧R17的218同号不同/436内容结论已撤回。旧工具混用了TW1去4字节头payload哈希与mixed804字节完整文件哈希；同域纠正为218同号全部相同、438引用219内容。原文和旧原报告保留作历史，现行事实见[四样本整合与勘误](specs/STONEAGE-FOUR-CLIENT-CONTENT-R24.md)及`STONEAGE-BATTLE-SAB-CROSSVERSION-R17-CORRECTED-R24.json`。**
+
+
+## 2026-10-26 — NetmarbleStoneAge120精确公开来源R27权限边界
+
+原CONTROL-B及2012索引全文保留。对已登记`https://lab.welovesa.com/viewthread.php?tid=2117`真实一次读取，HTTP200/10543B/UTF8、标题含token，但出现“您無權進行當前操作”，原帖正文和明确包链接未取得。原响应SHA256 `586ce9a4f2b8eb4d0e4f9b21b8e5e87a66f48d50fada01063da844e0610c8f3f`，原样永久派生1615B/SHA `4e1ca148ec2571f13983e3d3d125116404ed3d6c57eb2d73b9110c2ab919b2f1`，源run40317910236/job121555053832与ZIP/raw/Git链见`STONEAGE-KR-NETMARBLE120-R27-CUSTODY-R1.json`和对应日期续接。此处是精确公开访问阻塞，不是原包不存在、韩国1.74/120版本或干净官方认证。新客户端样本/原包字节/抽取文件0，停止该来源链；仅新的明确公开载体或合法可访问原件重开。下一有限原材料为已固定TW85 SPR137两文件，原大包持久保管限制保持。

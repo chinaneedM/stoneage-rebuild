@@ -1,0 +1,25 @@
+name: Verify R27 Korean client public source stop without acquisition overclaim
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'tools/stoneage_kr_netmarble120_r27.py'
+      - 'tools/stoneage_kr_netmarble120_r27_source.py'
+      - 'tests/test_stoneage_kr_netmarble120_r27.py'
+      - 'research/recovered/STONEAGE-KR-NETMARBLE120-R27-*'
+      - 'docs/specs/STONEAGE-KR-NETMARBLE120-R27.md'
+      - 'docs/continuity/STONEAGE-KR-NETMARBLE120-R27-20261026.md'
+      - '.github/workflows/verify-stoneage-kr-netmarble120-r27.yml'
+permissions:
+  contents: read
+jobs:
+  permanent-source-stop-replay:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest -v tests.test_stoneage_kr_netmarble120_r27
+      - name: Replay permanent source and custody only without querying gated site
+        run: python -m tools.stoneage_kr_netmarble120_r27

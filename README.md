@@ -607,3 +607,8 @@ The 2.66 MB historical `docs/CURRENT-STATE.md` is still preserved byte-for-byte.
 ### 2026-10-26 — CN5三组完整原动画材料R26
 
 [最新续接](docs/continuity/STONEAGE-CN5-ANIMATION-R26-20261026.md)直接联接已取得原CN5动画组100700/100701/100702，共312原动画、1464帧位置、936完整RD内容；三段SPR内存重编码SHA均匹配。三组共享48个位图、144位置均在原动作码12；完整TW1索引没有这936内容的相同size/SHA匹配。9源固定，独立SQLite完整源联接和14项验证保留重复帧、声音word与证据边界，不猜具名角色/动作/音效、不把duration叫FPS或声明原画面执行。原数据/大历史不改，无新大包下载或原二进制公开。最高NEXT按DD-029回已登记韩国NetmarbleStoneAge120的一份公开客户端载体27，来源/版本待资格，不扩动画/helper或网页图批次；Stage A/B/wiki/R79、R20/P3E及百分比未知保持。
+
+
+### 2026-10-26 — 韩国Netmarble120原源R27：权限阻塞，未取得新客户端
+
+[最新续接](docs/continuity/STONEAGE-KR-NETMARBLE120-R27-20261026.md)对已登记thread2117作一次真实公开读取，原标题可见但页面显示“您無權進行當前操作”，正文/下载链接未取得。原样报告、HTTP指纹、run/job/ZIP/raw/Git链永久保存；新增客户端/包字节/抽取文件均0，检查工作流成功不等于客户端下载成功，不猜韩国1.74或120版本含义，也不证明包不存在。未登录/回复/购买积分，不重复权限探测。最高NEXT回声称台版8.5已固定SPR137两原件的完整动画材料28，复用现有取源路径，不新增空样本、不把保存包认证官方；原世界/身份及Stage A/B/wiki/R79边界保持。
