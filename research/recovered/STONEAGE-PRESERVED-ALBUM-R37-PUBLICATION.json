@@ -1,0 +1,159 @@
+{
+  "schema": "stoneage.original_album_adrn_publication.r37",
+  "date": "2026-10-27",
+  "content_main_commit": "76c605493cb2505c64f8e01a1b63caf49dfbabd7",
+  "content_tree": "4a0da0a03c3ac21134747a1a6d795df56020af5e",
+  "previous_main": "09365ecf99f1fe0c1eb51cf096b71b6b74042454",
+  "fast_forward": true,
+  "force": false,
+  "expected_head_lease": true,
+  "source_real_result": {
+    "original_failure_run": 40419864727,
+    "original_success_run": 40420077051,
+    "source_report": "research/recovered/STONEAGE-ALBUM-ADRN-SOURCE-R37.json",
+    "failed_attempt": "research/recovered/STONEAGE-ALBUM-ADRN-SOURCE-ATTEMPT1-R37.json",
+    "full_member_sha256": "92d0137590d35a7a1f4fb11af3ad13bbc585813a4b0e1e3f933c397007fbff74",
+    "source_original_run_logs_verified": true,
+    "artifact_zip_sha_reported_by_api_not_independently_downloaded": true
+  },
+  "candidate_and_main_ci": [
+    {
+      "id": 40422114956,
+      "head_branch": "agent/native-album-binding-r37-20261027",
+      "head_sha": "76c605493cb2505c64f8e01a1b63caf49dfbabd7",
+      "status": "completed",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "id": 121918815339,
+          "status": "completed",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Check original saved table against bounded original ADRN metadata",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Original names and collision negative regression tests",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Refuse original proprietary asset / private transfer publication",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 40422191047,
+      "head_branch": "main",
+      "head_sha": "76c605493cb2505c64f8e01a1b63caf49dfbabd7",
+      "status": "completed",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "id": 121919068644,
+          "status": "completed",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Check original saved table against bounded original ADRN metadata",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Original names and collision negative regression tests",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Refuse original proprietary asset / private transfer publication",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "files_created": 11,
+  "original_current_state_preserved": {
+    "size": 2680510,
+    "blob_sha": "031c76a5a8e431f646853909bb2f2e11e6328cd2",
+    "empty_fetch_file_result_did_not_replace_large_history": true
+  },
+  "r37_material": "research/recovered/STONEAGE-PRESERVED-ALBUM-ALIAS-R37.json",
+  "scope_boundaries": {
+    "new_official_clients": 0,
+    "original_executable_executed": false,
+    "original_REAL_read": false,
+    "official_build_authenticated": false,
+    "overall_percent": null
+  },
+  "next": "PRESERVED_CLIENT_ALBUM_RENDER_REAL_CONFIRMATION_38_OR_FINITE_EVIDENCE_GAP",
+  "this_publication_receipt_own_ci": "NOT_PRECLAIMED"
+}
