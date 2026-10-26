@@ -1,0 +1,185 @@
+{
+  "schema": "stoneage.tw85_original_private_R30.main_publication_receipt.r1",
+  "date": "2026-10-26",
+  "startup": {
+    "fresh_base_main_head": "67818af4d80ea22d9d353b97892e882fb214689c",
+    "fresh_base_main_tree": "11823eb2ec367fb35be1fbd9fa326a69c5397b07",
+    "full_current_read_from_exact_native_blob": true,
+    "no_earlier_chat_progress_used_as_current_fact": true
+  },
+  "source_result": {
+    "artifact_carrier": "UNVERIFIED_COMMUNITY_PRESERVED_CLAIMED_TW85_SAME_557_FILE_MSI_CARRIER",
+    "exact_downloaded_saved_client_parts": 6,
+    "exact_downloaded_bytes": 1145465184,
+    "actual_installer_executed": false,
+    "original_adrn_complete_file_sha256": "16ba4fa3825b2c4b6645bab8b4fe3152a262a4789c8bb89e3043a7d3f0d53681",
+    "original_real_complete_file_sha256": "e0f9c0d20fd3d9daae0701d8a872c9842e27d3da1be4d449d558c9c76d1c5f5b",
+    "original_group_index": 1185,
+    "original_spr_no": 101501,
+    "original_animation_index": 1,
+    "original_direction": 0,
+    "original_action_numeric": 2,
+    "original_duration_word": 1000,
+    "actual_original_source_RD_blocks_SHA_verified": 8,
+    "source_bitmapnos": [
+      303039,
+      303040,
+      303041,
+      303042,
+      303043,
+      303044,
+      303045,
+      303046
+    ],
+    "actual_original_palette_indices_decoded_to_private_grayscale_images": 8,
+    "private_full_zip_sha256": "1713abc369bb00d59d77d27f27397daebe9d051f40c46f0521c50180c85383c0",
+    "private_frames_decrypted_and_sha_verified_in_current_session": true,
+    "assistant_saw_private_grayscale_contact_sheet": true,
+    "private_animation_preview_timing_is_only_demonstrative": true,
+    "original_rgb_palette_or_gameplay_fps_verified": false,
+    "clean_official_release_identity_verified": false,
+    "actual_original_gameplay_program_executed": false,
+    "named_pet_npc_world_entity_identified": false
+  },
+  "material": {
+    "permanent_derived_directory": "research/recovered/tw85-rd-private-r30/",
+    "files": [
+      {
+        "name": "PLAN-R30.json",
+        "bytes": 5744,
+        "sha256": "805e6f1ef0039f48f40c7c6cc46296d1297b8e629617e3ddfdf629e8e1204a09",
+        "git_blob": "59bbb09d55c33076e1616499a2710c8de588dcee"
+      },
+      {
+        "name": "SOURCE-R30.json",
+        "bytes": 10602,
+        "sha256": "f70b5ce996e2fbf4acb8dfa5103d8729bdbf6d2779df86c2a35bc71768f253e6",
+        "git_blob": "9fb54267a59561ce8b1dfaa387b857f17a94a896"
+      },
+      {
+        "name": "R30-PUBLIC-CUSTODY.json",
+        "bytes": 3773,
+        "git_blob": "58f2c64cb795a7ef7c418f8b7733585bc0217dc0"
+      }
+    ],
+    "primary_original_executable_audio_or_images_committed": false,
+    "encrypted_private_artifact_not_committed": true,
+    "source_manifest_sha256": "f70b5ce996e2fbf4acb8dfa5103d8729bdbf6d2779df86c2a35bc71768f253e6"
+  },
+  "actions": {
+    "initial_yaml_failures_retained": [
+      40329053102,
+      40329130269
+    ],
+    "qualified_real_source": {
+      "run": 40329157425,
+      "preflight_job": 121593631715,
+      "actual_job": 121594000184,
+      "result": "completed/success",
+      "plan_artifact": 12653666487,
+      "private_encrypted_artifact": 12654905609,
+      "private_artifact_zip_sha256": "265dffe92a7ed89370f9d45ecb3f97ab0241652c9168e175e5852c8fd19bb554",
+      "private_cipher_sha256": "c689e21a7b1e699951ec6b3014fcb5934670254dcff739a66e0d5bbd652bb02f"
+    },
+    "source_derived_archive": {
+      "run": 40330184123,
+      "job": 121597232482,
+      "result": "completed/success",
+      "source_branch_evidence_commit": "1aa739bf7b1edaf80ee90507a88e4569cb133961"
+    },
+    "candidate": {
+      "branch": "agent/tw85-rd-pixel-private-r30-20261026",
+      "accepted_head": "a4934ee91af96bc4e2728416c62227eccb6cd397",
+      "offline_runs": [
+        40330475337,
+        40330720284,
+        40330843889
+      ],
+      "R16_R17_R18_R28_StageA_all_succeeded_at_candidate_head": true
+    },
+    "pr": {
+      "number": 12,
+      "url": "https://github.com/chinaneedM/stoneage-rebuild/pull/12",
+      "merged": true,
+      "merge_sha": "b71fe59284fb490490e17398851e9cc8b3b854a1",
+      "merge_tree": "62db003742fd05bb80994f3de53cd9e1e15f4472"
+    },
+    "main": [
+      {
+        "run": 40331089907,
+        "name": "R30 source full offline acceptance",
+        "result": "completed/success"
+      },
+      {
+        "run": 40331089885,
+        "name": "R28 original SPR animation full replay",
+        "result": "completed/success"
+      },
+      {
+        "run": 40331090185,
+        "name": "R16 original TW1 character creation",
+        "result": "completed/success"
+      },
+      {
+        "run": 40331090046,
+        "name": "R18 full server source conservation",
+        "result": "completed/success"
+      },
+      {
+        "run": 40331089977,
+        "name": "R17 battle original asset correction",
+        "result": "completed/success"
+      },
+      {
+        "run": 40331089883,
+        "name": "Stage A limited audit",
+        "result": "completed/success"
+      },
+      {
+        "run": 40331089758,
+        "name": "R30 giant original source only on working branch",
+        "result": "completed/skipped"
+      },
+      {
+        "run": 40331089757,
+        "name": "R30 archived source only on working branch",
+        "result": "completed/skipped"
+      }
+    ]
+  },
+  "preserved_history_remote_main_tree": {
+    "docs/CURRENT-STATE.md": {
+      "sha": "031c76a5a8e431f646853909bb2f2e11e6328cd2",
+      "bytes": 2680510
+    },
+    "docs/PROJECT-CONTINUITY-PROTOCOL-R1.md": {
+      "sha": "a064174339b7a4656efe00b4446a066fd7abf304",
+      "bytes": 10880
+    },
+    "docs/DESIGN-DECISIONS.md": {
+      "sha": "713caaecc6a43a92e5cb7f939954026b859bac20",
+      "bytes": 49898
+    },
+    "docs/HISTORICAL-TIMELINE.md": {
+      "sha": "91ca73105f26bf96aaa928519ae04942182e7b9b",
+      "bytes": 730950
+    },
+    "docs/SOURCE-REGISTRY.md": {
+      "sha": "ee3b2d70dabedfe02e3761b3fdb25476a79e147c",
+      "bytes": 1028196
+    },
+    "docs/RESTORATION-ROADMAP-R2.md": {
+      "sha": "c11eff237a8aaa1cc34488a6c3c7fcdd596f9ce2",
+      "bytes": 482245
+    }
+  },
+  "next": "ORIGINAL_SAME_BUILD_NAMED_WORLD_ENTITY_MASTER_31",
+  "statuses": {
+    "Stage_A": "7_PARTIAL_2_OPEN",
+    "Stage_B_wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "P3E_original_game_launch": "BLOCKED_ENVIRONMENT",
+    "overall_completion_percent": null
+  },
+  "note": "Last receipt commit is post-merge; inspect newest remote HEAD, tree, actions and full current-state again next continuation. Do not claim last receipt's own untriggered Actions verified."
+}
