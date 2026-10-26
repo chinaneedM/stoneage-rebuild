@@ -1,0 +1,28 @@
+name: Verify R33 original palette same carrier
+on:
+  push:
+    branches:
+      - main
+      - agent/r33-palette-same-carrier-20261026
+    paths:
+      - research/recovered/STONEAGE-TW85-PALETTE-SAME-CARRIER-R33.json
+      - tools/stoneage_tw85_palette_r33.py
+      - tests/test_stoneage_tw85_palette_r33.py
+      - docs/continuity/STONEAGE-PALETTE-SAME-CARRIER-R33-20261026.md
+      - .github/workflows/verify-stoneage-r33-palette.yml
+  workflow_dispatch:
+jobs:
+  exact-metadata-source-replay:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify all five prior original-derived Git blobs and report
+        run: python -m tools.stoneage_tw85_palette_r33
+      - name: Reject source-value mutations
+        run: python -m unittest tests.test_stoneage_tw85_palette_r33 -v
+      - name: No commercial source asset R33 outputs
+        run: |
+          ! git ls-files | grep -E 'STONEAGE-TW85-PALETTE-SAME-CARRIER-R33\.(sap|bin|exe|png|gif|zip)$'
