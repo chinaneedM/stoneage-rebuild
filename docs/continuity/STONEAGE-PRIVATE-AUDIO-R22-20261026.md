@@ -105,3 +105,16 @@ source/私人文件回读与离线CI是不同证据，不把测试数当复原�
 
 原版完整登录/QUIT/声画联动与世界仍未验收；具名NPC/宠物/本体任务身份没有因此增加。
 Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、DD-028四类任务、overall percent=null不变。
+
+
+## 实际主线终验
+
+内容main `0639801ea6ca79204d642233cb5ab4cf31a2490a` / tree
+`570397a8a07fbc5a160c77d55ac2272a8ed91b51` 已非强制快进发布。候选五项、同HEAD主线
+六项Actions实际completed/success。主线专用40310312185日志确认16项测试及原样来源/
+私人回读/解码与听觉边界重放通过；另P1、Stage A、R16/R17/R18兼容成功。14内容路径
+与远端逐字节相等；五大历史文件和协议原样、两既有文档精确历史前缀保留。
+[永久发布收据](../../research/recovered/STONEAGE-PRIVATE-AUDIO-R22-PUBLICATION-R1.json)
+保存所有候选/main运行作业步骤、源链及内容blob；收据自身CI发布后实际观察，不预写
+成功。单段私人文件不公开；模型无法接收音频、用户/游戏播放未确认、事件身份未知等
+限制完整保留。最高NEXT仍增量材料复核23，不因验收通过而称助手已听到原游戏。
