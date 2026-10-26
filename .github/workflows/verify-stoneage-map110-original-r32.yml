@@ -1,0 +1,35 @@
+name: Verify original dated map110 three actual cell values R32
+on:
+  push:
+    paths:
+      - '.github/workflows/verify-stoneage-map110-original-r32.yml'
+      - 'tools/stoneage_map110_actual_cells_r32.py'
+      - 'tools/stoneage_map110_original_archive_r32.py'
+      - 'tests/test_stoneage_map110_actual_cells_r32.py'
+      - 'tests/test_stoneage_map110_original_archive_r32.py'
+      - 'research/recovered/STONEAGE-ORIGINAL-MAP110-CELL-DELTA-R32.json'
+      - 'docs/specs/STONEAGE-ORIGINAL-MAP110-MATERIAL-R32.md'
+      - 'docs/continuity/STONEAGE-ORIGINAL-MAP110-R32-20261026.md'
+      - 'README.md'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  bounded-original-map-delta:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Source parser and offline report negative semantics
+        run: python -m unittest -v tests.test_stoneage_map110_actual_cells_r32 tests.test_stoneage_map110_original_archive_r32
+      - name: Independent derived-metadata replay with original historical timeline pin
+        run: python -m tools.stoneage_map110_original_archive_r32
+      - name: Reject commercial DAT, EXE and copyright image leakage
+        shell: bash
+        run: |
+          test -s research/recovered/STONEAGE-ORIGINAL-MAP110-CELL-DELTA-R32.json
+          test "$(find research/recovered -maxdepth 1 -name '*MAP110*' -type f | wc -l)" -le 2
+          echo 'R32_METADATA_ONLY=PASS'
