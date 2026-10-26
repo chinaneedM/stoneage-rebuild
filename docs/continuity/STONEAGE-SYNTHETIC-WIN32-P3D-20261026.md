@@ -143,3 +143,17 @@ CP950可用条件，再用同一合成颜色/实际输入门槛验证。当前Wi
 不在相同Wine9组合中连扩PrivateColorMap/所有GDI/DirectDraw辅助树，不以通过测试、
 累计R号或耗时计算复原百分比。本包止点是**可复核的兼容环境判定**，不是原画/原
 点击/原游戏世界验收。
+
+## 实际主线终验
+
+内容main `d7fc426a2dea00ee65f705762bc36231a5ce816f`、tree
+`3d2afffb297270a156c06638574bf4c263aff2c2` 已非强制快进发布。候选五项及同HEAD主线
+六项Actions均completed/success。专用P3D候选40271727303、主线40271806839实际执行
+17项不同测试与8份原样派生/失败边界精确重放；主线另有P1、R16/R17/R18和Stage A
+兼容成功。离线CI不再运行源控制器，更没有运行原客户端。
+
+21内容路径与远端逐字节一致，包括原生JSON原样CRLF；完整CURRENT及另外四大历史
+文件原样保留。[永久发布收据](../../research/recovered/STONEAGE-P3D-SYNTHETIC-PUBLICATION-R1.json)
+保存全部候选/main运行作业、内容SHA/blob、三源/四ZIP链接及未解决状态。源失败与本地
+跨平台行尾校验修订均未抹去；收据自身CI须发布后实际查看，不预写成功。最高NEXT仍
+P3E有限Windows资格检查，未通过则按上节止点返回R20材料；原游戏边界不变。

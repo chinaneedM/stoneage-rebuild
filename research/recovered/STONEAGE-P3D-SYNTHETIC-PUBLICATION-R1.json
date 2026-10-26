@@ -1,0 +1,677 @@
+{
+  "schema": "stoneage.p3d.publication_acceptance.v1",
+  "date_asia_shanghai": "2026-10-26",
+  "baseline_main": "a665c26676faf63848bc7b15ced8b9444471fb72",
+  "baseline_tree": "7f7eee7afed0a7cf96613347e39c4e3fe9472b56",
+  "content_head": "d7fc426a2dea00ee65f705762bc36231a5ce816f",
+  "content_tree": "3d2afffb297270a156c06638574bf4c263aff2c2",
+  "integration": "non_forced_fast_forward_after_five_successful_candidate_runs",
+  "candidate_acceptance": [
+    {
+      "run": 40271727298,
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "head": "d7fc426a2dea00ee65f705762bc36231a5ce816f",
+      "branch": "agent/synthetic-win32-p3d-20261026",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "id": 121405793088,
+          "name": "bounded-research-review",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Validate delegated decision, immutable history and no premature production",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "run": 40271727231,
+      "name": "Accept primary-source TW1.0 character creation numeric join R16",
+      "head": "d7fc426a2dea00ee65f705762bc36231a5ce816f",
+      "branch": "agent/synthetic-win32-p3d-20261026",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "id": 121405793048,
+          "name": "acceptance",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Replay authenticated original derived source metadata and negative cases",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "run": 40271727192,
+      "name": "Verify preserved mixed25 full server source conservation R18",
+      "head": "d7fc426a2dea00ee65f705762bc36231a5ce816f",
+      "branch": "agent/synthetic-win32-p3d-20261026",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "id": 121405792952,
+          "name": "full-source-conservation",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python -m unittest tests.test_stoneage_mixed25_server_full_source_r18 tests.test_stoneage_mixed25_server_r18_docs -v",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python -m tools.stoneage_mixed25_server_full_source_r18",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "run": 40271727190,
+      "name": "Verify StoneAge R17 original battle SAB crossversion occurrence conservation",
+      "head": "d7fc426a2dea00ee65f705762bc36231a5ce816f",
+      "branch": "agent/synthetic-win32-p3d-20261026",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "id": 121405793054,
+          "name": "exact-source-report",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python -m unittest tests.test_stoneage_battle_sab_crossversion_r17 tests.test_stoneage_battle_sab_docs_r17 -v",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python -m tools.stoneage_battle_sab_crossversion_r17",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "run": 40271727303,
+      "name": "Validate P3D actual RGB and received-input evidence boundaries",
+      "head": "d7fc426a2dea00ee65f705762bc36231a5ce816f",
+      "branch": "agent/synthetic-win32-p3d-20261026",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "id": 121405793110,
+          "name": "exact-measurement-replay",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python -m unittest -v tests.test_stoneage_p3d_bench tests.test_stoneage_p3d_evidence_guard",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python -m tools.stoneage_p3d_evidence_guard",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "main_acceptance": [
+    {
+      "run": 40271806831,
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "head": "d7fc426a2dea00ee65f705762bc36231a5ce816f",
+      "branch": "main",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "id": 121406035027,
+          "name": "bounded-research-review",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Validate delegated decision, immutable history and no premature production",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "run": 40271806860,
+      "name": "Verify StoneAge R17 original battle SAB crossversion occurrence conservation",
+      "head": "d7fc426a2dea00ee65f705762bc36231a5ce816f",
+      "branch": "main",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "id": 121406035306,
+          "name": "exact-source-report",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python -m unittest tests.test_stoneage_battle_sab_crossversion_r17 tests.test_stoneage_battle_sab_docs_r17 -v",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python -m tools.stoneage_battle_sab_crossversion_r17",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "run": 40271806839,
+      "name": "Validate P3D actual RGB and received-input evidence boundaries",
+      "head": "d7fc426a2dea00ee65f705762bc36231a5ce816f",
+      "branch": "main",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "id": 121406035283,
+          "name": "exact-measurement-replay",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python -m unittest -v tests.test_stoneage_p3d_bench tests.test_stoneage_p3d_evidence_guard",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python -m tools.stoneage_p3d_evidence_guard",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "run": 40271806883,
+      "name": "Accept primary-source TW1.0 character creation numeric join R16",
+      "head": "d7fc426a2dea00ee65f705762bc36231a5ce816f",
+      "branch": "main",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "id": 121406035464,
+          "name": "acceptance",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Replay authenticated original derived source metadata and negative cases",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "run": 40271806893,
+      "name": "Verify preserved mixed25 full server source conservation R18",
+      "head": "d7fc426a2dea00ee65f705762bc36231a5ce816f",
+      "branch": "main",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "id": 121406035555,
+          "name": "full-source-conservation",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python -m unittest tests.test_stoneage_mixed25_server_full_source_r18 tests.test_stoneage_mixed25_server_r18_docs -v",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python -m tools.stoneage_mixed25_server_full_source_r18",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-python@v5",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "run": 40271806942,
+      "name": "Test offline original-client observation lab",
+      "head": "d7fc426a2dea00ee65f705762bc36231a5ce816f",
+      "branch": "main",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "id": 121406035762,
+          "name": "offline-contracts",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Pure-stdlib synthetic visual and original file custody regression",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "distinct_local_and_dedicated_ci_tests": 17,
+  "all_21_content_paths_exact_remote_bytes_verified": true,
+  "content_files": [
+    {
+      "path": ".github/workflows/probe-stoneage-synthetic-private-colormap-p3d.yml",
+      "bytes": 2398,
+      "sha256": "b975c5a509649ea36127e602d7e7fa470583d2f07da19bc2f67fddeabf224347",
+      "git_blob": "075aa2fce02239f6a50af76b159ce52d274c4309"
+    },
+    {
+      "path": ".github/workflows/probe-stoneage-synthetic-win32-p3d.yml",
+      "bytes": 3785,
+      "sha256": "fa565ddf029426c0bed6d0bb6ad471e211e354b07b1d33026410e272e9a7e831",
+      "git_blob": "c8c14ebcb533a17c69e44a84bb1d3752b1a9eb9a"
+    },
+    {
+      "path": ".github/workflows/verify-stoneage-synthetic-win32-p3d.yml",
+      "bytes": 728,
+      "sha256": "3b2c940abd7412ccb368fe83a27f940cf35fc91b5d0fd1500ce3182a72ce0cc2",
+      "git_blob": "1e2a27749208d1674933335e1157e2691e829f00"
+    },
+    {
+      "path": "README.md",
+      "bytes": 60114,
+      "sha256": "c517c0544deb76399e65f695c003c1100e1fdaac1549bdbd5c179601c0dc506c",
+      "git_blob": "20e3ea4317eb37b2c4ec5da31f30aa9537da2653"
+    },
+    {
+      "path": "docs/STONEAGE-ORIGINAL-OBSERVATION-LAB-R1.md",
+      "bytes": 10884,
+      "sha256": "ee17f4380e3d8f53a3752725eb91f3b6436f15326a2e333be800ccbd2b9d4f6d",
+      "git_blob": "bccd56e05fd82c1b0d705c16b7c73fce0a94cfaa"
+    },
+    {
+      "path": "docs/continuity/STONEAGE-SYNTHETIC-WIN32-P3D-20261026.md",
+      "bytes": 10869,
+      "sha256": "2135892db5f945a78d50c495462b18de34427d7d87ceb584bb110428f630289f",
+      "git_blob": "3524f957a6cad53024b616c61ba9290dee121221"
+    },
+    {
+      "path": "research/recovered/STONEAGE-P3D-SYNTHETIC-CUSTODY-R1.json",
+      "bytes": 10669,
+      "sha256": "e49b0d1c91240fb52834e5fcc63cac569910b75ae516f340fad379947100db26",
+      "git_blob": "f8d980bed27bfd6a696285b96b5bbed5ffe44280"
+    },
+    {
+      "path": "research/recovered/STONEAGE-P3D-SYNTHETIC-FAILED-PRIVATE-COLORMAP-R1.json",
+      "bytes": 956,
+      "sha256": "c2d459ecf384ac4574c12e0c6ca925de408e4d7e94c370c3f152a9ef83a7419d",
+      "git_blob": "ad5cfffc5e87fe957b9419dc8d44f8e13ec0e5ce"
+    },
+    {
+      "path": "research/recovered/STONEAGE-P3D-SYNTHETIC-FAILED-PRIVATE-PACKAGES-R1.txt",
+      "bytes": 224,
+      "sha256": "6780282c1b3190b0d50e5e8ab6af117231e2b99862d9175445746db287e49a57",
+      "git_blob": "4aaf859d5c31b131deb645b635c91480eb48b24a"
+    },
+    {
+      "path": "research/recovered/STONEAGE-P3D-SYNTHETIC-NATIVE-R1.json",
+      "bytes": 23105,
+      "sha256": "5fefbb534a95bcc2df6e33ceb1f4668a0cb6688091fcc44354cad1161f3897f4",
+      "git_blob": "991c9db18332bb483a248227928611dc6752c1e3"
+    },
+    {
+      "path": "research/recovered/STONEAGE-P3D-SYNTHETIC-PRIVATE-COLORMAP-R1.json",
+      "bytes": 43011,
+      "sha256": "a52718d789847c961a19a9e665972598c925a057d2f9d4f2a6b1643d1fbd19d8",
+      "git_blob": "835ae428b73d14c552eb58d09271bc42f2f233ae"
+    },
+    {
+      "path": "research/recovered/STONEAGE-P3D-SYNTHETIC-PRIVATE-PACKAGES-R1.txt",
+      "bytes": 224,
+      "sha256": "6780282c1b3190b0d50e5e8ab6af117231e2b99862d9175445746db287e49a57",
+      "git_blob": "4aaf859d5c31b131deb645b635c91480eb48b24a"
+    },
+    {
+      "path": "research/recovered/STONEAGE-P3D-SYNTHETIC-WINE-PACKAGES-R1.txt",
+      "bytes": 224,
+      "sha256": "6780282c1b3190b0d50e5e8ab6af117231e2b99862d9175445746db287e49a57",
+      "git_blob": "4aaf859d5c31b131deb645b635c91480eb48b24a"
+    },
+    {
+      "path": "research/recovered/STONEAGE-P3D-SYNTHETIC-WINE24-R1.json",
+      "bytes": 28380,
+      "sha256": "4baf610c660fdec7217a04de00670fd7f30abbe6e791c2933d1f106a722d0880",
+      "git_blob": "6a7990e14da940696ab04e019022fddf2140829e"
+    },
+    {
+      "path": "research/recovered/STONEAGE-P3D-SYNTHETIC-WINE8-R1.json",
+      "bytes": 42607,
+      "sha256": "b82531b00797aefbe730deb21cab68fb6d51400f9c8638a24aa64056109fa352",
+      "git_blob": "f5079886b269117aa2c8c15ba080b1d948d170ad"
+    },
+    {
+      "path": "research/recovered/STONEAGE-P3D-WINE9-CONFIG-SOURCE-R1.json",
+      "bytes": 1323,
+      "sha256": "fc9100432e16f6e1640ae31eee4dc504bee3c2fa66fd461cd60be82c137ccc09",
+      "git_blob": "7d4aad7adfd7aedde08eb077929ce699828b80ff"
+    },
+    {
+      "path": "tests/test_stoneage_p3d_bench.py",
+      "bytes": 3492,
+      "sha256": "335425303c62a115f9802fd13e6141f5c46a5c5982a558ccd4367da2aa83692d",
+      "git_blob": "3cc6291a3085bc75fddbf9ca1911f9e34f80f52a"
+    },
+    {
+      "path": "tests/test_stoneage_p3d_evidence_guard.py",
+      "bytes": 3119,
+      "sha256": "681ff70395b44c5bd415c8a572eba2d5cfb6c4aaa08c9bd313d8afbe25eb12bb",
+      "git_blob": "6f49dbc8def1a9610ab3ae4f7177bcad4f89c4a6"
+    },
+    {
+      "path": "tools/stoneage_p3d_bench.py",
+      "bytes": 11432,
+      "sha256": "cccaa692f67f4a61b255d4456e0c855d8680c2ce4790511c70d03256059e6c63",
+      "git_blob": "d653d1f350d328030becc3ade24a6c247463da68"
+    },
+    {
+      "path": "tools/stoneage_p3d_control.c",
+      "bytes": 9582,
+      "sha256": "809599c49cad9c0790aac3fcf508a13e63f2e8cf454fa352420fe5321c709663",
+      "git_blob": "5b6c6585fd00104966e496a5b90d16616b274c19"
+    },
+    {
+      "path": "tools/stoneage_p3d_evidence_guard.py",
+      "bytes": 4586,
+      "sha256": "930ec175ce95d916f05cc7ac78475e2e3bf533c05bd701678a570866a0fffa29",
+      "git_blob": "235aac98838f69e8e4083ce1cf21eb09c67470b6"
+    }
+  ],
+  "custody_manifest": "research/recovered/STONEAGE-P3D-SYNTHETIC-CUSTODY-R1.json",
+  "source_custody": {
+    "source_runs": 3,
+    "artifact_zips": 4,
+    "archived_raw_derived_files": 8,
+    "all_zip_digests_independently_checked": true,
+    "failed_initial_restart_guard_preserved": true,
+    "original_native_json_crlf_bytes_preserved": true,
+    "canonical_control_lf_and_windows_crlf_checkout_digests_separately_verified": true
+  },
+  "upstream_configuration_source": {
+    "repository": "wine-mirror/wine",
+    "immutable_commit": "fd1153552d779e1ac14b0b1c48fbd1cde894eb0a",
+    "metadata": "research/recovered/STONEAGE-P3D-WINE9-CONFIG-SOURCE-R1.json",
+    "both_file_git_blobs_independently_verified": true,
+    "no_upstream_source_code_copied_into_repository": true
+  },
+  "preserved_current": {
+    "bytes": 2680510,
+    "git_blob": "031c76a5a8e431f646853909bb2f2e11e6328cd2",
+    "sha256": "f02f85b837fc09973cb2eca33f7daf4db547a77cb35a81a9576c6308f70142c0"
+  },
+  "other_historical_files_preserved": [
+    "docs/DESIGN-DECISIONS.md",
+    "docs/HISTORICAL-TIMELINE.md",
+    "docs/SOURCE-REGISTRY.md",
+    "docs/RESTORATION-ROADMAP-R2.md"
+  ],
+  "outcome": {
+    "synthetic_environment_measurements": 4,
+    "complete_synthetic_render_cases": 8,
+    "known_rgb_gate_passed_cases": 3,
+    "known_rgb_gate_failed_cases": 5,
+    "sendinput_received_cases": 8,
+    "private_colormap_alone_improved_wine8_colors": false,
+    "usable_original_8bit_cp950_color_input_environment_found": false,
+    "original_client_downloaded": false,
+    "original_client_executed": false,
+    "original_login_color_or_click_restored": false,
+    "game_world_entered": false,
+    "native_windows_ci_host_network_isolated": false
+  },
+  "highest_next": "ORIGINAL-GAME-OBSERVATION-P3E-AVAILABLE-WINDOWS-8BIT-QUALIFICATION",
+  "next_stop_rule": "one available Windows8bit/CP950/isolation qualification package; if unavailable, record environment blocker and return to 22-domain R20 content sources",
+  "independent_content_next": "EARLY-OFFICIAL-WORLD-ENTITY-SOURCE-20",
+  "stage_a": "7_PARTIAL_2_OPEN",
+  "stage_b_and_wiki": "GATED",
+  "r79": "PAUSED_NON_BLOCKING",
+  "overall_restoration_percent": null,
+  "receipt_self_ci": "must_be_observed_after_publication_not_preclaimed"
+}
