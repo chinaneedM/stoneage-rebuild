@@ -1,0 +1,28 @@
+name: Check exact public Korean Netmarble120 client source R27
+on:
+  workflow_dispatch:
+  push:
+    branches: [agent/kr-netmarble120-source-r27-20261026]
+    paths:
+      - 'tools/stoneage_kr_netmarble120_r27_source.py'
+      - 'tests/test_stoneage_kr_netmarble120_r27.py'
+      - '.github/workflows/acquire-stoneage-kr-netmarble120-r27.yml'
+permissions:
+  contents: read
+jobs:
+  exact-public-source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest -v tests.test_stoneage_kr_netmarble120_r27
+      - name: Inspect only the registered public source without login or package guesses
+        run: python -m tools.stoneage_kr_netmarble120_r27_source --output output/source-derived.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kr-netmarble120-r27-source-derived-only
+          path: output/source-derived.json
+          retention-days: 30
