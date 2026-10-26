@@ -1,0 +1,62 @@
+name: Qualify original TW85 SPR137 pair and bound full animation material R28
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/qualify-stoneage-tw85-spr137-r28.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  synthetic-format-and-provenance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Strict synthetic extraction and anti-promotion regression gates
+        run: python -m unittest -v tests.test_stoneage_tw85_spr137_material_r28
+
+  exact-original-source:
+    if: github.ref == 'refs/heads/agent/tw85-spr137-source-r28-20261026'
+    needs: synthetic-format-and-provenance
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install static-only MSI extractors (never execute the installer)
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq msitools p7zip-full
+      - name: One bounded acquisition of six already-registered parts
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m tools.stoneage_wayi85_sixpart_acquisition \
+            --work "$RUNNER_TEMP/tw85" --output "$RUNNER_TEMP/tw85-acquisition.json"
+      - name: Qualify the two SHA-pinned original SPR files and export every indexed frame
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m tools.stoneage_tw85_spr137_material_r28 \
+            --payload-root "$RUNNER_TEMP/tw85/msi-client" \
+            --output "$RUNNER_TEMP/tw85-spr137-derived"
+      - name: Upload ONLY derived tables and custody summary, not binaries or installer
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: tw85-spr137-r28-derived-only
+          path: |
+            ${{ runner.temp }}/tw85-spr137-derived/SPR-GROUP-R28.tsv.gz
+            ${{ runner.temp }}/tw85-spr137-derived/SPR-ANIMATION-R28.tsv.gz
+            ${{ runner.temp }}/tw85-spr137-derived/SPR-FRAME-R28.tsv.gz
+            ${{ runner.temp }}/tw85-spr137-derived/SOURCE-DERIVED-R28.json
+          if-no-files-found: ignore
+          retention-days: 5
