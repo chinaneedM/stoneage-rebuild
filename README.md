@@ -617,3 +617,8 @@ The 2.66 MB historical `docs/CURRENT-STATE.md` is still preserved byte-for-byte.
 ### 2026-10-26 — 台湾8.5保存样本SPR137完整原动画材料 R28
 
 依据本轮重新读取的远端最高NEXT，从六分卷保存载体实际取得原`spradrn_137.bin`和`spr_137.bin`并严格验证原哈希；全量解出**1,739个动画组、113,737动画和735,666帧**，保留4,759 sentinel帧及原重复键。与已固定TW1/CN5完整组段精确比对：464组命中TW1，1,185组命中CN5（TW1命中包含于CN5），另**554个动画组位置**没有与这两份现存表形成同ID同SHA匹配——不等于554个新物种。所有原SPR物理区间经独立逐帧重编码SHA完整覆盖。源Actions40321448446与独立归档40322474289均已实际success；全量压缩**派生元数据与独立来源链**永久保存在`research/recovered/tw85-spr137-r28/`，原安装器/图像/声音/程序均不入Git。详见[完整限定规格](docs/specs/STONEAGE-TW85-SPR137-MATERIAL-R28.md)和[日期连续性](docs/continuity/STONEAGE-TW85-SPR137-R28-20261026.md)。保存包尚非独立认证的官方纯净build，具名人物/宠物/NPC、真实原画面、运行世界仍未认证；最高后续回22域具体同构建可见内容与同源ADRN/REAL关联来源，避免无收益重复下载。Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、总体百分比未知及完整CURRENT历史均未改。
+
+
+### 2026-10-26 — R29同保存包原动画帧→ADRN/REAL图像内容完整数值联接
+
+[本轮完整来源规格](docs/specs/STONEAGE-TW85-FRAME-BITMAP-R29.md)和[日期连续性](docs/continuity/STONEAGE-TW85-FRAME-BITMAP-R29-20261026.md)保留事实边界。R28已实得735666原帧（4759哨兵），本轮不用重下大型原包即全部联接剩余730907帧到**同557文件保存样本**的唯一ADRN/REAL原索引，共397443不同图像编号/392083不同完整RD(size,SHA)内容；无本样本缺索引、同号多候选。原R28新增差异554组的137192非哨兵帧全部有唯一原图内容来源。全量原派生表、独立SQLite和合成守卫永久验收，保留原顺序/重复/所有缺项，不猜新物种。此为原帧到真实资源块的元数据联接，非原彩色画面或具名宠物、原游戏实际运行。R30有限原图私人预览资格或有界缺源止点，拒绝无收益再下1.145GB原客户端；Stage A7 PARTIAL/2 OPEN、B/wiki GATED、R79暂停、总体复原百分比仍未知，旧CURRENT全文未替换。
