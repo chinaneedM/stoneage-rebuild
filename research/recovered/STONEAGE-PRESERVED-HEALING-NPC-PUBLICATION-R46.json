@@ -1,0 +1,314 @@
+{
+  "acceptance_counts": {
+    "candidate_failures": 1,
+    "candidate_parallel_runs": 11,
+    "candidate_passes": 10,
+    "main_failures": 0,
+    "main_parallel_runs": 11,
+    "main_passes": 11
+  },
+  "content_main_head": "add6c45c96377863d3ebb25d260c2b205250f870",
+  "content_main_tree": "f4b839340dabb94d32f5c018180b2b8791ee94ec",
+  "corrected_candidate": {
+    "conclusion": "success",
+    "dedicated_job_id": 122189005753,
+    "dedicated_run_id": 40504135804,
+    "head_sha": "80890fdc6813a68945717602045d644946fd4662",
+    "original_source_not_reacquired": true,
+    "related_tests_passed": 39,
+    "status": "completed"
+  },
+  "first_content_candidate": {
+    "dedicated_conclusion": "failure",
+    "dedicated_run_id": 40503974101,
+    "dedicated_status": "completed",
+    "errors": [
+      "UTF8_CODEPOINT_COUNT_USED_AS_BYTES",
+      "THIRD_BLOCK_DELETION_GUARD_MISSING",
+      "ORIGINAL_HTTP_RANGE_MUTATION_GUARD_MISSING"
+    ],
+    "head_sha": "d0656bd7d4a56e1680156320fcaa9d52e0218c31",
+    "parallel_runs": [
+      {
+        "conclusion": "success",
+        "id": 40503973375,
+        "name": "Verify original same-build named-entity source gate R31",
+        "status": "completed"
+      },
+      {
+        "conclusion": "success",
+        "id": 40503973387,
+        "name": "Verify original dated map110 three actual cell values R32",
+        "status": "completed"
+      },
+      {
+        "conclusion": "success",
+        "id": 40503973431,
+        "name": "Accept primary-source TW1.0 character creation numeric join R16",
+        "status": "completed"
+      },
+      {
+        "conclusion": "success",
+        "id": 40503973512,
+        "name": "Verify original native album table and saved-name joins R36",
+        "status": "completed"
+      },
+      {
+        "conclusion": "success",
+        "id": 40503973717,
+        "name": "Verify preserved mixed25 full server source conservation R18",
+        "status": "completed"
+      },
+      {
+        "conclusion": "success",
+        "id": 40503973782,
+        "name": "Verify original local album name material and no master promotion R35",
+        "status": "completed"
+      },
+      {
+        "conclusion": "success",
+        "id": 40503973790,
+        "name": "Verify original four village interior materials R34",
+        "status": "completed"
+      },
+      {
+        "conclusion": "success",
+        "id": 40503973815,
+        "name": "Accept preserved original TW85 SPR137 full animation material R28",
+        "status": "completed"
+      },
+      {
+        "conclusion": "success",
+        "id": 40503973878,
+        "name": "Validate Stage A evidence-limited review acceptance",
+        "status": "completed"
+      },
+      {
+        "conclusion": "success",
+        "id": 40503973936,
+        "name": "Verify StoneAge R17 original battle SAB crossversion occurrence conservation",
+        "status": "completed"
+      },
+      {
+        "conclusion": "failure",
+        "id": 40503974101,
+        "name": "Verify preserved named family healer NPC material R46",
+        "status": "completed"
+      }
+    ],
+    "source_retrieval_failed": false
+  },
+  "historical_current_document_unchanged": true,
+  "main_observed_actions": [
+    {
+      "conclusion": "success",
+      "head_sha": "add6c45c96377863d3ebb25d260c2b205250f870",
+      "name": "Verify StoneAge R17 original battle SAB crossversion occurrence conservation",
+      "run_id": 40504439775,
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "head_sha": "add6c45c96377863d3ebb25d260c2b205250f870",
+      "name": "Verify original four village interior materials R34",
+      "run_id": 40504439776,
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "head_sha": "add6c45c96377863d3ebb25d260c2b205250f870",
+      "name": "Verify original same-build named-entity source gate R31",
+      "run_id": 40504439779,
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "head_sha": "add6c45c96377863d3ebb25d260c2b205250f870",
+      "name": "Verify original local album name material and no master promotion R35",
+      "run_id": 40504439781,
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "head_sha": "add6c45c96377863d3ebb25d260c2b205250f870",
+      "name": "Verify original dated map110 three actual cell values R32",
+      "run_id": 40504439786,
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "head_sha": "add6c45c96377863d3ebb25d260c2b205250f870",
+      "name": "Verify preserved named family healer NPC material R46",
+      "run_id": 40504439792,
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "head_sha": "add6c45c96377863d3ebb25d260c2b205250f870",
+      "name": "Verify preserved mixed25 full server source conservation R18",
+      "run_id": 40504439797,
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "head_sha": "add6c45c96377863d3ebb25d260c2b205250f870",
+      "name": "Verify original native album table and saved-name joins R36",
+      "run_id": 40504439821,
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "head_sha": "add6c45c96377863d3ebb25d260c2b205250f870",
+      "name": "Accept preserved original TW85 SPR137 full animation material R28",
+      "run_id": 40504439842,
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "head_sha": "add6c45c96377863d3ebb25d260c2b205250f870",
+      "name": "Accept primary-source TW1.0 character creation numeric join R16",
+      "run_id": 40504439906,
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "head_sha": "add6c45c96377863d3ebb25d260c2b205250f870",
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "run_id": 40504439945,
+      "status": "completed"
+    }
+  ],
+  "main_ref_verified_sha": "add6c45c96377863d3ebb25d260c2b205250f870",
+  "material_scope": {
+    "borncorner_fields": [
+      [
+        4,
+        8,
+        4,
+        8
+      ],
+      [
+        13,
+        8,
+        13,
+        8
+      ],
+      [
+        2,
+        9,
+        2,
+        9
+      ]
+    ],
+    "enemy_declared_token": "npcgen_fmhealer|1",
+    "floors": [
+      1041,
+      2031,
+      3031
+    ],
+    "graphicname_value": 16023,
+    "name_first_three": "家族小護士",
+    "official_same_build_proven": false,
+    "original_create_blocks": 4,
+    "original_npc_service_executed": false,
+    "projected_first_three": 3
+  },
+  "next": "22_DOMAIN_SOURCE_QUEUE_NEW_NAMED_ENTITY_OR_CORE_QUEST_PRIMARY_CARRIER",
+  "observed_date": "2026-10-27",
+  "original_member_bytes": 649,
+  "original_member_sha256": "1d7d71960958cc60c5e6ba686fede736b5d66ec15f5d58300041a8a2de893847",
+  "overall_restoration_percent": null,
+  "publication_receipt_commit_self_actions_not_preclaimed": true,
+  "raw_original_script_or_dialogue_in_public_git": false,
+  "readme_historical_prefix_preserved": true,
+  "schema": "stoneage.preserved_healing_npc_publication.r46",
+  "source_branch_name": "agent/healing-npc-source-r46-20261027",
+  "source_only_api_digest_not_independently_downloaded": true,
+  "source_report": {
+    "git_blob": "a0e5391ab70d5636fe55e196ec5b6081d4825ddc",
+    "sha256": "c14788fe3bbe854b4de0e84aa1abbb6f81a6189ef6aca7c77701cac8cc2a036a",
+    "utf8_bytes": 52955
+  },
+  "source_run": {
+    "artifact_id": 12732389728,
+    "artifact_sha256_api_only": "1962baed3c42e7dbf23afe15b0caa11b42caeb6a1e970f2d1847024ee3e31416",
+    "conclusion": "success",
+    "head_sha": "0cea990336ff52699b4faa3212bb59fb3dbd8a3f",
+    "id": 40502401619,
+    "job_id": 122183066222,
+    "status": "completed"
+  },
+  "tracked_file_blobs": [
+    {
+      "bytes": 84215,
+      "git_blob": "0a9fff2d17e7b7686163ac1bd6dfaa52614ce522",
+      "path": "README.md"
+    },
+    {
+      "bytes": 2680510,
+      "git_blob": "031c76a5a8e431f646853909bb2f2e11e6328cd2",
+      "path": "docs/CURRENT-STATE.md"
+    },
+    {
+      "bytes": 10880,
+      "git_blob": "a064174339b7a4656efe00b4446a066fd7abf304",
+      "path": "docs/PROJECT-CONTINUITY-PROTOCOL-R1.md"
+    },
+    {
+      "bytes": 3166,
+      "git_blob": "704c1a34e055a4574e562076b4cf428d70bab377",
+      "path": "docs/continuity/STONEAGE-HEALING-NPC-R46-20261027.md"
+    },
+    {
+      "bytes": 4149,
+      "git_blob": "518eba5d5228913902408d8121324e942568594f",
+      "path": "docs/specs/STONEAGE-PRESERVED-HEALING-NPC-MATERIAL-R46.md"
+    },
+    {
+      "bytes": 10614,
+      "git_blob": "02d120c72ec06c6fe6f1b4603a740e52ff4ab260",
+      "path": "tools/stoneage_preserved_healing_npc_r46.py"
+    },
+    {
+      "bytes": 11472,
+      "git_blob": "4c4912c2bb518c40a1ec3df3a5f1cf50ade06e6a",
+      "path": "tools/stoneage_healing_npc_material_r46.py"
+    },
+    {
+      "bytes": 3041,
+      "git_blob": "c83faccfe70a553cebde5bee12c1656bf14d3d87",
+      "path": "tests/test_stoneage_preserved_healing_npc_r46.py"
+    },
+    {
+      "bytes": 3660,
+      "git_blob": "5b9f164de4883aa0ad64bcb499752e1ab7ef09fb",
+      "path": "tests/test_stoneage_healing_npc_material_r46.py"
+    },
+    {
+      "bytes": 52955,
+      "git_blob": "a0e5391ab70d5636fe55e196ec5b6081d4825ddc",
+      "path": "research/recovered/STONEAGE-PRESERVED-HEALING-NPC-SOURCE-R46.json"
+    },
+    {
+      "bytes": 3287,
+      "git_blob": "7f153a94360158bfa3ddb6569fab68f6533e4c49",
+      "path": "research/recovered/STONEAGE-PRESERVED-HEALING-NPC-MATERIAL-R46.json"
+    },
+    {
+      "bytes": 1679,
+      "git_blob": "7819dc694bdbe979e3a4cdfc07294e3490dd15c5",
+      "path": "research/recovered/STONEAGE-PRESERVED-HEALING-NPC-CUSTODY-R46.json"
+    },
+    {
+      "bytes": 895,
+      "git_blob": "11409cbebdc8f368a25ea5e075cec050b0519441",
+      "path": ".github/workflows/source-stoneage-healing-npc-r46.yml"
+    },
+    {
+      "bytes": 1711,
+      "git_blob": "fa144c24656a0a1f48fb86571c8f1b411587c47e",
+      "path": ".github/workflows/verify-stoneage-healing-npc-r46.yml"
+    }
+  ],
+  "verified_base_game_quest_additions": 0
+}
