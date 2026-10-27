@@ -13,6 +13,8 @@ on:
       - "tests/test_stoneage_private_region_diagnostic_r1.py"
       - "tools/stoneage_private_scene_graphic_join_r1.py"
       - "tests/test_stoneage_private_scene_graphic_join_r1.py"
+      - "tools/scene-original-graphic-contact-sheet.html"
+      - "tests/test_stoneage_scene_original_contact_sheet_r1.cjs"
       - "docs/continuity/STONEAGE-MODERN-OBSERVATION-ZHCN-20261027.md"
       - "docs/DESIGN-DECISIONS.md"
 permissions:
@@ -27,6 +29,8 @@ jobs:
         run: |
           set -euo pipefail
           python -m unittest -v tests.test_stoneage_modern_observation_r1 tests.test_stoneage_private_sprite_frame_export_r1 tests.test_stoneage_private_region_diagnostic_r1 tests.test_stoneage_private_scene_graphic_join_r1
+      - name: Validate offline recovered25 image contact sheet in synthetic browser
+        run: node tests/test_stoneage_scene_original_contact_sheet_r1.cjs
       - name: Reject bundled commercial artwork/audio and direct external network references
         run: |
           set -euo pipefail
