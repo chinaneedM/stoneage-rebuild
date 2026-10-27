@@ -15,6 +15,10 @@ The development goal is to:
 5. Reimplement the resulting specifications as a private/local-first single-player game with MMORPG-style depth, modern rendering/input/save architecture, and independently created/recreated production assets.
 6. Preserve the emotional milestones and core StoneAge design DNA while deliberately redesigning pacing, systems and content where the modern project requires it.
 
+## Highest active priority — Original-world observation (2026-10-27)
+
+The user explicitly elevated **actually entering and experiencing the original StoneAge game world** above further unconstrained material search. The original authenticated Taiwan-v1 `sa_3.exe` was **already executed**, and the genuine login screen was captured and visually inspected; **the playable world, combat and audio in that client have NOT been observed**. Earlier synthetic 8-bit Windows checks did not jointly satisfy ACP950, direct RGB and input qualification. The next bounded attempt is the Windows Server 2022 process `zh-TW` manifest preflight P3F, followed by strict same-process palette/input/isolation qualification before any original client rerun. A successful synthetic job must never be called original gameplay. See [dated priority and acceptance gates](docs/continuity/STONEAGE-ORIGINAL-WORLD-OBSERVATION-PRIORITY-20261027.md) and [P3/P3E historical records](docs/STONEAGE-ORIGINAL-OBSERVATION-LAB-R1.md).
+
 ## Current phase
 
 **Phase 1 — Foundation Baseline Technical Reconstruction & Specification**

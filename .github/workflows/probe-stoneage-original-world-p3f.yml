@@ -1,0 +1,45 @@
+name: Probe original-world prerequisite P3F - own x86 zh-TW manifest only
+on:
+  push:
+    branches: [agent/original-world-observation-p3f-20261027]
+    paths:
+      - ".github/workflows/probe-stoneage-original-world-p3f.yml"
+      - "tools/stoneage_p3f_zh_tw.manifest"
+      - "tools/stoneage_p3f_manifest_probe.py"
+      - "tests/test_stoneage_p3f_manifest.py"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  finite-process-acp:
+    runs-on: windows-2022
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ilammy/msvc-dev-cmd@v1
+        with:
+          arch: x86
+      - name: Build two identical own x86 executable images before one receives zh-TW manifest
+        shell: cmd
+        run: |
+          cl /nologo /std:c11 /W3 /O2 /Fe:"%RUNNER_TEMP%\p3f-baseline.exe" tools\stoneage_p3e_environment.c user32.lib gdi32.lib ddraw.lib dxguid.lib ws2_32.lib /link /SUBSYSTEM:CONSOLE /MANIFEST:NO
+          copy /Y "%RUNNER_TEMP%\p3f-baseline.exe" "%RUNNER_TEMP%\p3f-zh-tw.exe"
+          mt.exe -manifest tools\stoneage_p3f_zh_tw.manifest "-outputresource:%RUNNER_TEMP%\p3f-zh-tw.exe;#1"
+      - name: Run negative/positive semantic guards without original client
+        run: python -m unittest -v tests.test_stoneage_p3f_manifest
+      - name: Probe GetACP and current GDI and DirectDraw depth in the same synthetic process
+        shell: pwsh
+        run: |
+          python -m tools.stoneage_p3f_manifest_probe --baseline "$env:RUNNER_TEMP/p3f-baseline.exe" --manifested "$env:RUNNER_TEMP/p3f-zh-tw.exe" --output "$env:RUNNER_TEMP/p3f-derived.json"
+          python -m tools.stoneage_p3f_manifest_probe --check "$env:RUNNER_TEMP/p3f-derived.json"
+      - name: Delete both temporary own test executables
+        if: always()
+        shell: pwsh
+        run: Remove-Item -Force "$env:RUNNER_TEMP/p3f-baseline.exe","$env:RUNNER_TEMP/p3f-zh-tw.exe" -ErrorAction SilentlyContinue
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: p3f-synthetic-zh-tw-process-qualification-only
+          path: ${{ runner.temp }}/p3f-derived.json
+          if-no-files-found: warn
+          retention-days: 7
