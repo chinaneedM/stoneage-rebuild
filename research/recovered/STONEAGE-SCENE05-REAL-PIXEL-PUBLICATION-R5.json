@@ -1,0 +1,99 @@
+{
+  "schema": "stoneage.scene05.real_source_pixel_publication.r5",
+  "source_role": "PRESERVED_COMMUNITY_MIXED25_NOT_OFFICIAL_TW1",
+  "source": {
+    "branch": "agent/scene-room-real-pixels-r5-20261028",
+    "commit": "bc0eef94eefda3cda7e17ab11dbf20254230f6fa",
+    "action_run": 40604115589,
+    "action_status": "completed",
+    "action_conclusion": "success",
+    "job_id": 122539233946,
+    "artifact_id": 12779831795,
+    "artifact_zip_sha256": "01aad845e4a2afe17728084dea2a3e68bd8d91ef744c4005aa7dd9e4c15a7131",
+    "artifact_safe_json_sha256": "38d870513edebf93edb0d7df6119f4473353b3d2b0bc3a64641bbc57915e42c8",
+    "source_original_carrier_bytes": 361255180,
+    "source_original_carrier_sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+    "source_original_real_bytes": 763908374,
+    "source_original_real_sha256": "c7640643804d550bc07e33661103fb7b5f557ee01e68a5a5d92382c5305c2b0d",
+    "private_encrypted_der_bytes": 6052,
+    "private_encrypted_der_sha256": "4a9e839acb33a17ab0b0d6121c9e27f72c5cd44dd9fdccd96aaf9f7ab6a55e2a",
+    "private_decrypted_zip_bytes": 5600,
+    "private_decrypted_zip_sha256": "3934006fb667cc57c95c5b21b05c0af0cc1f83d430acd2d1e8824ded7dc2bb38"
+  },
+  "rows": [
+    {
+      "map_id": 5009,
+      "adrn_record_index": 1624,
+      "adrn_record_sha256": "3cf451aafd8c99141768a6e4a2997ae134f6d516cf597b52d1314c72c47d183a",
+      "real_offset": 2381236,
+      "RD_length": 1698,
+      "RD_flag": 1,
+      "RD_sha256": "3ade98b2ff9d081eb8b315a220623be22bfd47206e3e34f609fd3ecd638c9e95",
+      "source_indices_sha256": "bcc88fcc979a76a282709dab132fbc5c36151030f8b922deb3582fd1c00bf54b",
+      "candidate_rgba_sha256": "6e9417f3b44d8d4c5d81a66da4792b287fb25a272af8344a8ca1e9c2b503f9ff",
+      "dimension": [
+        64,
+        47
+      ],
+      "source_reserved_palette_slots": []
+    },
+    {
+      "map_id": 5015,
+      "adrn_record_index": 1630,
+      "adrn_record_sha256": "eb4eed3611e893c4c53cd100891f1a946c28ef3ee31702c8c9ee24c96f086238",
+      "real_offset": 2389112,
+      "RD_length": 1656,
+      "RD_flag": 1,
+      "RD_sha256": "4c65fd86cb1b783914c7e2d3a26623a619d0945f0ac0baa08bd16fede599daa2",
+      "source_indices_sha256": "de3951ed4365de7803fce81fd05fc8980e817c0ba24cd65649dea99c83841dca",
+      "candidate_rgba_sha256": "af59d1ff26b02029268dbdbec82577fd8dfa0a27eaa35118a5bfa95535130016",
+      "dimension": [
+        64,
+        47
+      ],
+      "source_reserved_palette_slots": []
+    }
+  ],
+  "replay": {
+    "source_original_8_images_independent_RD_pixel_exact": true,
+    "new_two_independent_RD_pixel_exact": true,
+    "all_10_images_source_palette_candidate": true,
+    "actual_source_image_count": 10,
+    "actual_map_1001_viewport": [
+      13,
+      13,
+      17,
+      17
+    ],
+    "actual_DAT_reference_count": 30,
+    "missing_image_ids": [],
+    "source_real_pixel_slot_range_known": true,
+    "original_deployed_palette_or_occlusion_proven": false,
+    "private_observer_html_bytes": 71685,
+    "private_observer_html_sha256": "ff9c99fa3df6ccbc162ea87e87f5cd8e4a980e3b0f9877309f99d30776dae298",
+    "actual_chromium_version": "144.0.7559.96",
+    "browser_images_loaded": 10,
+    "browser_refs_seen": 30,
+    "browser_pan_zoom_layers_reset": true,
+    "browser_javascript_errors": 0,
+    "private_browser_png_bytes": 242121,
+    "private_browser_png_sha256": "a26e66bcf3e73be65704c3d2a961e80867f775a130eb13ef699fdd29dedf18dd",
+    "private_bundle_bytes": 299375,
+    "private_bundle_sha256": "88cb122f3f14aadb1bf70bfcdccfe5911a43813d5f47aef0dd341cada25b9c88",
+    "private_library_upload_and_full_independent_readback": true
+  },
+  "limits": {
+    "commercial_original_client_executed": false,
+    "original_playable_world_entered": false,
+    "server_npc_or_quests_recovered": false,
+    "historical_same_build_qualified": false,
+    "original_palette_runtime_qualified": false,
+    "original_full_occlusion_qualified": false,
+    "stage_A": "7_PARTIAL_2_OPEN",
+    "stage_B": "GATED",
+    "wiki": "GATED",
+    "savedata_R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "next": "SCENE-ORIGINAL-RUNTIME-SAME-BUILD-OCCLUSION-06_OR_ISOLATED_TW1_WORLD_ENTRY"
+}
