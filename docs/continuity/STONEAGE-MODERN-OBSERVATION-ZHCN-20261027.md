@@ -39,3 +39,17 @@ python -m tools.stoneage_modern_observation_manifest \
 ```
 
 **本轮验收**：CLI/Python合成边界单测与CI、HTML本地控制和简体UI静态安全检查。GitHub runner没有私人可用的全部原版图资源；如仅通过合成测试，应如实说明“**现代观察台代码就绪，尚无真实原游戏世界场景画面/声音可认证**”。不因本轮UI本地化或现代技术选型而提高 Stage A7 PARTIAL+2 OPEN、Stage B GATED、savedata R79 PAUSED或整体百分比。高优先级NEXT是**用同构建已验证地图原图块+SPR+Palet_0实际导出的私人素材组合出第一组可观察、来源限定场景**；地图坐标及原游戏完整玩法仍单独OPEN。若私有持久原料依赖缺失，则先完整记录阻塞/只读导出路径，再以有限资源规格组装，不返回无限NPC表小取证。
+
+## 已连接已证原SPR帧 -> 私人PNG源序列导出接缝
+
+除手动本地图之外，新增`tools/stoneage_private_sprite_frame_export_r1.py`：直接调用已验收`tools.stoneage_original_animation_lab.timeline/preview`，要求四个原TW1文件完整哈希、SPRADRN/SPR分组与RD逐块哈希全部通过；再从**已认证原帧包的内存JSON**逐帧导出私有PNG和纯元数据清单。可传入同原盘的`Palet_0.sap`来显示程序初始化色，但这仍非游戏场景真实调色板。原素材只写到**仓库外事先建好的空私人文件夹**，默认无网络、不自动提交仓库；动图帧文件按`frame-000.png`等排序，可直接通过观察台人物/宠物帧多选框载入。没有原盘实体时工具不会假生成实际动画，测试只用合成PNG。
+
+```bash
+mkdir -p /private/observations/character
+python -m tools.stoneage_private_sprite_frame_export_r1 \
+  --original-dir /private/TW1/StoneAge/data \
+  --spr-no 100000 --direction 0 --action 6 \
+  --output-dir /private/observations/character
+```
+
+选择目录中的`frame-*.png`载入现代观察台。源校验生成的`source-manifest.json`保留时序及逐帧哈希；本地显示界面人工播放节拍180毫秒，**不会认作源真实FPS、角色身份、场景或游戏服务端事件**。下一步接同版已验证的地图原图块布局，而非随意将外来照片标注为当年村庄。
