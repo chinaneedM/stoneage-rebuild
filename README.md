@@ -756,3 +756,18 @@ hash verification. NEXT: only two source-backed missing bitmap companions from
 the already-preserved carrier, followed by original runtime camera/occlusion
 and playable-world entry as independently gated work. Stage A, Stage B and R79
 boundaries remain unchanged; overall restoration completion percentage is null.
+
+
+### Source-bound SCENE04 two missing bitmap ADRN entries — 2026-10-28
+
+Following actual R4 source replay and [PR #16](https://github.com/chinaneedM/stoneage-rebuild/pull/16)
+main merge `176ff4d92d1aeca6c940d50c23a5824417016dd5` (10/10 main workflows successful), the two
+missing 5×5 image IDs 5009/5015 were each found **once** at the original
+preserved same-carrier ADRN record field offset 76. This now pins real bitmap
+indexes 1624/1630 and private REAL decompressed file offsets/sizes, but not
+decoded RD pixels or a verified original-world screenshot. Exact evidence and
+remaining extraction gate are appended to the
+[SCENE04 dated checkpoint](docs/continuity/STONEAGE-SCENE04-ROOM-VIEWPORT-20261028.md)
+and [source-safe bitmap bound report](research/recovered/STONEAGE-SCENE04-TWO-IMAGE-ADRN-BOUND-R1.json).
+The next task stays narrowly limited to these two existing private-source
+ranges, not a new whole-client download or arbitrary program reverse engineering.
