@@ -65,3 +65,22 @@ python -m tools.stoneage_private_sprite_frame_export_r1 \
 ## 追补：第一张真实可见场景为何不能只靠TW1原盘
 
 现已重新核对`docs/STONEAGE-TW10-MAP-CONTENT-COLLISION-R1.md`及完整地图来源：**TW1零售盘的原服field场景文件为0**，它由早年商业服M/MC下发，不能指望现代观察台从该零售盘直接导出`台湾1.0完整村庄`。后代826层可物化地图为`LATER_RECOVERED`，可成为现代观察的实物参考，但必须在同来源、来源实有的tile/parts图形联接成立后显示，并保持与台湾1.0/大陆玩家体验的不同证据等级。具体单场景源/图号/图层/私人可看验收见`docs/specs/STONEAGE-SCENE-OBSERVATION-CARRIER-PRIORITY-R1.md`。此记录不冒充本轮已取得整张地图、已运行后代客户端或已观察到真实战斗。
+
+## 地图单元编号→私人可视诊断（非历史像素）
+
+新增 `tools/stoneage_private_region_diagnostic_r1.py`，**真正接通之前已完成的`Recovered25RegionPayloadSource.materialize_region`认证链**。它在用户已有后代版本 DAT/LS2MAP 私人原字节与目录的前提下，根据经仓库权威拓扑清单与原文件SHA校验的指定floor/局部矩形，导出最多64×64单元的PNG诊断图和逐格ID、事件层是否存在、地图来源SHA、裁剪范围的本地JSON。客户端DAT需要tile/object/event三层，LS2MAP只有tile/object且event明确`null`，不准伪造全零事件层。
+
+**画面警戒**：PNG只是原始地图`tile_id`经合成哈希分配的颜色，黄色表示非零object_id、粉色表示客户端真实存在的非零event_id；像素中嵌有`NOT ORIGINAL STONEAGE GAME PIXELS`声明。地图坐标、编号、源指纹可供下一轮准确索取对应图像，**纹理、地形、场景摆放、宠物战斗、台版首发归属、原版实际游戏画面全部尚未复现**。此类图不能作为原版村庄证据，但能在取得真实私人DAT/LS2MAP时减少盲查ID。
+
+使用方式（需要在持有相应原源目录的隔离本机运行，文件路径和地板编号是使用者真实输入）：
+
+```bash
+mkdir -p /private/observations/map-cells
+python -m tools.stoneage_private_region_diagnostic_r1 \\
+  --client-dat-dir /private/recovered25/client-map \\
+  --server-map-root /private/recovered25/server-maps \\
+  --floor "\u0024{FLOOR_ID}" --x1 0 --y1 0 --x2 15 --y2 15 \\
+  --output-dir /private/observations/map-cells
+```
+
+将私人生成的`tile-id-diagnostic.png`载入现代观察台地图输入框，只能作为**真实map单元数据的编号和对象/事件分布诊断**。GitHub本身并无当前轮持久挂载的完整商业地图载体，本轮9项独立合成负例测试不等于已经利用真实私有地图作出首张原场景图。下一阶段仍必须建立逻辑ID→同版原位图原图像及真实绘制规则的SHA级联接（见`docs/specs/STONEAGE-SCENE-OBSERVATION-CARRIER-PRIORITY-R1.md`）。
