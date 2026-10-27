@@ -29,3 +29,13 @@
 5. **设计借鉴单独列账**：本次任务是原版观察，不开始生产新游戏；未来体验拆解保留「实际原版观察」「后来版本补充」「设计构想」三种标签，避免将推断写成童年原版事实。
 
 当前阻断：不存在已验证的可用8bpp+ACP950+完整网络隔离、输入与颜色同环境，以及原TW1历史商业登录服务不可用；私人原盘持久保存也未配置。无可靠总体恢复百分比，Stage A7 PARTIAL+2 OPEN、Stage B/wiki GATED、R79 PAUSED_NON_BLOCKING、DD-028本体/运营活动任务分立均不因用户重排而假称已关闭。**下一最高：P3F实际源Actions评估；通过则P3G；失败则集中建立可启动ACP950的隔离虚拟机，不返回低收益任意NPC/宠物资料轮转。**
+
+## P3F 三次实际源测试与停止条件（2026-10-27）
+
+**测试作业成功 ≠ 可启动原游戏的环境合格**。分支源Actions [40506686153](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40506686153)、[40506927284](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40506927284)、[40507158101](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40507158101) 的Windows Job全部`completed/success`；仅意味着自编x86程序编译、测量和11项反例测试通过。三次`PROCESS_ACP950_8BPP_NOT_YET_OBSERVED`，始终没有真实原客户端运行或世界进入。
+
+第二轮完整逐环境数值：DEFAULT裸/manifest均ACP1252+32bpp；256COLOR与WINXPSP3 256COLOR两进程均ACP1252+8bpp，DirectDraw亦8bpp。第三轮按Microsoft Windows Server2022 `supportedOS` GUID补入清单后，DEFAULT仍ACP1252/32bpp，两种256COLOR情况下**裸程序1252/8bpp**，嵌清单程序却**1252/32bpp**（DirectDraw也32）。这批合成数字足以否定「为exe增加zh-TW manifest就能在当前runner同时满足950+8位」这一具体路径；没有独立证据确认是manifest忽略、系统locale不支持还是兼容模式交互，故不强加故障归因。
+
+永久有限事实表：`research/recovered/STONEAGE-P3F-ORIGINAL-WORLD-ENVIRONMENT-R1.json`。三源ZIP哈希仅是GitHub Actions上传日志给出的值，**没有私下下载ZIP逐字节独立验证**，不应编造完整Artifact Custody已完成。商业原客户端下载/执行本包均0次，11项合成单测通过。
+
+**现在停止此manifest支线。新的最高NEXT为建立可管理、持久的隔离Windows虚拟机，实际繁体中文系统区域（重启后`GetACP()==950`）、真实8bpp RGB与按钮输入、全外网阻断/本地回环同环境资格，随后才复用源哈希一致的原TW1客户端再试原色登录和真实进入世界。**不要再为了补几个NPC表而搁置这件事；但也不得用无法获得的虚拟机假装已经运行。VM许可证、持久存储和实际Windows桌面若不可用，应按外部环境依赖诚实标明，而不是回收Wine9杂项或反复取原0.84GB包。

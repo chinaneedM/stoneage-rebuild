@@ -1,0 +1,102 @@
+{
+  "schema": "stoneage.original_world_observation.p3f_remote_result.v1",
+  "date": "2026-10-27",
+  "source": "GitHub Actions job logs; derived artifact ZIP digests were logged by upload-artifact, not independently downloaded",
+  "scope": "SYNTHETIC_WIN32_ONLY",
+  "original_client_executed": false,
+  "original_world_entered": false,
+  "commercial_assets_acquired": false,
+  "priority": "ACTUAL_ORIGINAL_WORLD_OBSERVATION_FIRST",
+  "tested_environment": "GitHub-hosted windows-2022, two own x86 clones of tools/stoneage_p3e_environment.c, original EXE never used",
+  "runs": [
+    {
+      "run_id": 40506686153,
+      "head_sha": "6e37ae14080e590c41fc62ed49890799ef20084a",
+      "job_id": 122197666862,
+      "conclusion": "success",
+      "source_output": "PROCESS_ACP950_8BPP_NOT_YET_OBSERVED",
+      "artifact_id": 12735391829,
+      "artifact_zip_sha256_api_log": "e044816baa731885ffec22754c382ff939f356dee2e35e6a051eaf70c7facc3e",
+      "note": "initial manifest; report qualified gate false; no detailed case log"
+    },
+    {
+      "run_id": 40506927284,
+      "head_sha": "8f1c9d15ff64346083e8fafffb6c7eee836771b6",
+      "job_id": 122198485332,
+      "conclusion": "success",
+      "source_output": "PROCESS_ACP950_8BPP_NOT_YET_OBSERVED",
+      "artifact_id": 12735286981,
+      "artifact_zip_sha256_api_log": "e6b5cd99c064618a950617007a79126a03ac1ecf624e9e6e0888ea7931d3749e",
+      "with_supportedOS": false,
+      "observed_cases": [
+        {
+          "layer": "DEFAULT",
+          "baseline_acp": 1252,
+          "manifest_acp": 1252,
+          "baseline_gdi_bpp": 32,
+          "manifest_gdi_bpp": 32,
+          "manifest_ddraw_bpp": 32
+        },
+        {
+          "layer": "256COLOR",
+          "baseline_acp": 1252,
+          "manifest_acp": 1252,
+          "baseline_gdi_bpp": 8,
+          "manifest_gdi_bpp": 8,
+          "manifest_ddraw_bpp": 8
+        },
+        {
+          "layer": "WINXPSP3 256COLOR",
+          "baseline_acp": 1252,
+          "manifest_acp": 1252,
+          "baseline_gdi_bpp": 8,
+          "manifest_gdi_bpp": 8,
+          "manifest_ddraw_bpp": 8
+        }
+      ]
+    },
+    {
+      "run_id": 40507158101,
+      "head_sha": "12997526bb12148526d16df635c9094ee0c300d1",
+      "job_id": 122199277137,
+      "conclusion": "success",
+      "source_output": "PROCESS_ACP950_8BPP_NOT_YET_OBSERVED",
+      "artifact_id": 12735851086,
+      "artifact_zip_sha256_api_log": "b33c226229bdcd3560dfe17abe672c47570821fa4476e7cc77df73e0d0998da6",
+      "with_supportedOS": true,
+      "observed_cases": [
+        {
+          "layer": "DEFAULT",
+          "baseline_acp": 1252,
+          "manifest_acp": 1252,
+          "baseline_gdi_bpp": 32,
+          "manifest_gdi_bpp": 32,
+          "manifest_ddraw_bpp": 32
+        },
+        {
+          "layer": "256COLOR",
+          "baseline_acp": 1252,
+          "manifest_acp": 1252,
+          "baseline_gdi_bpp": 8,
+          "manifest_gdi_bpp": 32,
+          "manifest_ddraw_bpp": 32
+        },
+        {
+          "layer": "WINXPSP3 256COLOR",
+          "baseline_acp": 1252,
+          "manifest_acp": 1252,
+          "baseline_gdi_bpp": 8,
+          "manifest_gdi_bpp": 32,
+          "manifest_ddraw_bpp": 32
+        }
+      ]
+    }
+  ],
+  "semantic_adversarial_tests": 11,
+  "tested_executable_identity": "Only the two self-authored x86 C programs, no original sa_3.exe",
+  "interpretation": "All three Actions jobs passed as measurement/test collection, NOT environment qualification. zh-TW fusion manifest yielded GetACP1252; adding supportedOS explicitly also removed earlier observed 8bpp compatibility depth in manifested clone. A true same-process ACP950+8bpp prerequisite was never observed.",
+  "actual_game_login_prior_evidence": "Authentic TW1 sa_3.exe Wine32 login screenshot observed in P3, no world entry",
+  "next": "QUALIFY_PERSISTENT_ISOLATED_WINDOWS_SYSTEM_LOCALE_ZH_TW_ACP950_BOOT_WITH_8BIT_COLOR_INPUT",
+  "status": "BLOCKED_AVAILABLE_COMPATIBLE_NATIVE_WINDOWS_GUEST",
+  "overall_restoration_percent": null
+}
