@@ -139,6 +139,24 @@ class ModernObservationR1(unittest.TestCase):
         self.assertIn('mapDiagnostic&&selectedCell', html)
         self.assertNotIn('fetch(', html)
 
+    def test_sprite_frame_export_manifest_binding_is_bounded_and_cross_version_safe(self):
+        html = VIEWER.read_text(encoding="utf-8")
+        self.assertIn('id="actormeta"', html)
+        self.assertIn('id="petmeta"', html)
+        self.assertIn('stoneage.private_original_sprite_observer_frames.r1', html)
+        self.assertIn('m.source!=="TW_WAEI_1_0"', html)
+        self.assertIn('m.synthetic_preview_only!==true', html)
+        self.assertIn('m.scene_palette_selection_verified!==false', html)
+        self.assertIn('m.original_game_world_entered!==false', html)
+        self.assertIn('m.file_count!==selected.length', html)
+        self.assertIn('e.byte_length!==f.size', html)
+        self.assertIn('hex!==e.sha256', html)
+        self.assertIn('selectedFrameFiles[slot]!==selected', html)
+        self.assertIn('frameBindings.character', html)
+        self.assertIn('frameBindings.pet', html)
+        self.assertIn('后代地图与TW1帧人工拼合', html)
+        self.assertNotIn('fetch(', html)
+
     def test_report_zero_files_rejected(self):
         with self.assertRaises(ValueError): report("TW_WAEI_1_0", [])
 
