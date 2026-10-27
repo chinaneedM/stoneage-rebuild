@@ -52,7 +52,7 @@ class PrivateSceneGraphicJoinTests(unittest.TestCase):
         self.assertEqual(r["map_ids_required"],[60,79,100])
         self.assertEqual(r["preview_count"],3)
         self.assertFalse(r["authentic_scene_rendered"])
-        self.assertFalse(r["source_pins_are_project_official"])
+        self.assertFalse(r["source_pins_match_preserved_bundle"])
         self.assertTrue(r["collision_lookup_not_draw_selection"])
         self.assertIn(b"NOT ORIGINAL SCENE COLORS",files[0][1])
         out=self.root/"private";out.mkdir()
