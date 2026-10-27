@@ -34,6 +34,11 @@ def requires_mapping(n:int)->bool:
     # Established recovered collision coverage domain; NOT a verified draw selector.
     return type(n) is int and (n>99 or 60<=n<=79)
 
+def is_later_draw_candidate(n:int)->bool:
+    # Source-lineage map.cpp draws tile/parts > CG_INVISIBLE=99.
+    # This is NOT proven identical to the recovered25 compiled executable.
+    return type(n) is int and n>99
+
 def resolve_ids(adrn:bytes,ids:set[int],real_length:int)->dict[int,list[dict]]:
     if len(adrn)%80: raise ValueError("ADRN 80-byte alignment failed")
     if not ids or len(ids)>MAX_SOURCE_IDS or any(not requires_mapping(n) or n>65535 for n in ids):
@@ -98,7 +103,9 @@ def join(materialized,adrn_bytes:bytes,real_path:Path,*,decode=None,
     for values in (area.tile_ids,area.object_ids,area.event_ids or ()):
         if any(type(n) is not int or not 0<=n<=65535 for n in values):
             raise ValueError("invalid uint16 map-plane ID")
-    ids=set(n for n in (*area.tile_ids,*area.object_ids) if requires_mapping(n))
+    # Do not mistake collision/special ID 60-79 for directly rendered artwork.
+    special_ids=sorted({n for n in (*area.tile_ids,*area.object_ids) if requires_mapping(n) and not is_later_draw_candidate(n)})
+    ids=set(n for n in (*area.tile_ids,*area.object_ids) if is_later_draw_candidate(n))
     if not ids or len(ids)>MAX_SOURCE_IDS:
         raise ValueError("region has no map ID or too many source image IDs; reduce viewport")
     candidates=resolve_ids(adrn_bytes,ids,real_path.stat().st_size)
@@ -138,6 +145,8 @@ def join(materialized,adrn_bytes:bytes,real_path:Path,*,decode=None,
         "authentic_scene_rendered":False,"scene_projection_verified":False,
         "palette_selection_verified":False,"alpha_semantics_verified":False,
         "collision_lookup_not_draw_selection":True,
+        "draw_rule_grade":"DESCENDANT_SOURCE_LINEAGE_NOT_RECOVERED25_SAME_BUILD",
+        "special_collision_ids_not_drawn":special_ids,
         "source_adrn_sha256":expected_adrn[1],"source_real_sha256":expected_real[1],
         "source_pins_match_preserved_bundle":(
             expected_adrn==(ADRN_SIZE,ADRN_SHA) and expected_real==(REAL_SIZE,REAL_SHA)),
