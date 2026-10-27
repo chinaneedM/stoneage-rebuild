@@ -53,3 +53,11 @@
 `SCENE-PALETTE-PROJECTION-03` 是下一最高：直接复用已保管载体，有限取得同载体SAP色板与可追溯绘制来源，验证这片实际素材的一套**来源限定候选颜色/排列**，形成可目视的小片段。候选与原构建认证分开，缺同建选择、透明、遮挡、投影即明确OPEN；不得用图号或后代代码冒充TW1官方实拍。不要继续扩下载、哈希或通用目录helper。原EXE在隔离ACP950/8bpp/输入资格环境中的可操作世界进入仍是最终目标，环境依赖未因本次素材观察而消失。
 
 DD-030未来新作简体中文UTF-8、DD-028本体/活动任务分档、Stage A7 PARTIAL+2 OPEN、Stage B/wiki GATED、R79暂停和整体percent=null全部维持。候选/main后验CI仅据真正完成的运行填写，不预支成功。
+
+## 实际候选及主线终验（本轮后验追加）
+
+候选 `c543254f29de8d85391d09a0d61413bba3dbc95e` 的11项Actions全部实际completed/success；现代观察专用run40592238965/job122499148826日志明确50 Python tests/OK、Node合成浏览器与离线边界PASS。通过 [PR #14](https://github.com/chinaneedM/stoneage-rebuild/pull/14) 合入内容main `647230e29b7e7a0fe152c34f5673f64dfb0cc2b5`，父提交分别为原main72863e76和候选c543254f，tree3626e3e9258aa18833c27944606aa26092270463与候选逐项相同。
+
+内容主线11项Actions亦全部实际completed/success；现代观察run40592362860/job122499571661、Stage A40592362715均成功。22个实际运行的ID/名称/HEAD/状态逐项写入PUBLICATION收据。其余五份大历史文件未改，README的88653字节旧全文仍是新版本完整前缀；13条新增/修改路径无商业原件、像素、音乐或私钥。公开报告与本地验收字节一致。
+
+本段与PUBLICATION的后验补记提交不修改代码，其自身CI结果不预支。原临时CMS私钥仅服务本轮回传；已保管的解密原载体/观察包不依赖它，新远端回传应另备接收证书和私钥。下一最高仍SCENE-PALETTE-PROJECTION-03；游戏原色/场景、可操作世界、Stage A/B/R79与percent=null没有因22个CI通过而被宣告恢复。
