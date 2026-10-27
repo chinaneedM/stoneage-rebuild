@@ -61,3 +61,7 @@ python -m tools.stoneage_private_sprite_frame_export_r1 \
 候选观察台只读本地PNG/WAV；帧源工具实际调用已存在的四原文件和每个RD/SPR摘要检查接口，输出始终在非公共的本机目录。观察网格、移动、默认动画节拍、自动缩放与Palet_0初始色皆为**研究演示，不证明原游戏真实场景、坐标、FPS或声音事件**。只有兼具同来源图块布局／场景调色板与原客户端画面校验才可进一步晋升历史场景证据。
 
 候选 Actions [40510803375](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40510803375) 在检查时仍 queued（网页展示地址中的仓库用户名若有变动，以实际GitHub作业ID为准）；候选尚未获得完整主线验收。本节点仍不算原图场景已目视、用户已实际进入原游戏。下一优先为同构建原图的私人地图装配及独立可视观察证据，非漫无边际扩NPC表。
+
+## 追补：第一张真实可见场景为何不能只靠TW1原盘
+
+现已重新核对`docs/STONEAGE-TW10-MAP-CONTENT-COLLISION-R1.md`及完整地图来源：**TW1零售盘的原服field场景文件为0**，它由早年商业服M/MC下发，不能指望现代观察台从该零售盘直接导出`台湾1.0完整村庄`。后代826层可物化地图为`LATER_RECOVERED`，可成为现代观察的实物参考，但必须在同来源、来源实有的tile/parts图形联接成立后显示，并保持与台湾1.0/大陆玩家体验的不同证据等级。具体单场景源/图号/图层/私人可看验收见`docs/specs/STONEAGE-SCENE-OBSERVATION-CARRIER-PRIORITY-R1.md`。此记录不冒充本轮已取得整张地图、已运行后代客户端或已观察到真实战斗。
