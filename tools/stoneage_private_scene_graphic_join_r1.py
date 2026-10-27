@@ -139,7 +139,7 @@ def join(materialized,adrn_bytes:bytes,real_path:Path,*,decode=None,
         "palette_selection_verified":False,"alpha_semantics_verified":False,
         "collision_lookup_not_draw_selection":True,
         "source_adrn_sha256":expected_adrn[1],"source_real_sha256":expected_real[1],
-        "source_pins_are_project_official":(
+        "source_pins_match_preserved_bundle":(
             expected_adrn==(ADRN_SIZE,ADRN_SHA) and expected_real==(REAL_SIZE,REAL_SHA)),
         "source_map_payload_sha256":area.payload_sha256,
         "source_kind":area.source_kind,"event_plane_status":area.event_plane_status,
