@@ -1,0 +1,31 @@
+name: Observe authenticated preserved map artwork with encrypted private carrier R2
+on:
+  push:
+    branches: [agent/private-scene-observation-r2-20261028]
+permissions:
+  contents: read
+jobs:
+  real-source-observation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install libarchive-c==5.3
+      - name: Test source boundaries before network acquisition
+        run: python -m unittest -v tests.test_stoneage_private_scene_source_r2 tests.test_stoneage_private_scene_graphic_join_r1
+      - name: Source SHA qualification and actual RD decoding without running original programs
+        run: >-
+          python -m tools.stoneage_private_scene_source_r2
+          --work /tmp/scene02-private-work --output-dir /tmp/scene02-output
+          --certificate research/recovered/STONEAGE-SCENE02-TRANSFER-CERT.pem
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: scene02-metadata-and-encrypted-private-sources
+          path: /tmp/scene02-output
+          if-no-files-found: error
+          retention-days: 7
+          compression-level: 0
