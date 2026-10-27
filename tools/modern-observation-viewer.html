@@ -70,8 +70,13 @@ audio{width:100%}
 <p class="small">仅当本地图的SHA256与清单匹配后，可点击图中单元读取tile、object和event数值。清单不会使合成色块变成原版画面。</p>
 <label for="actor">本地人物帧 PNG（可多选）</label>
 <input id="actor" type="file" accept=".png,image/png" multiple>
+<label for="actormeta">人物帧源清单（与 frame-*.png 配套，选填）</label>
+<input id="actormeta" type="file" accept=".json,application/json">
 <label for="pet">本地宠物帧 PNG（可多选）</label>
 <input id="pet" type="file" accept=".png,image/png" multiple>
+<label for="petmeta">宠物帧源清单（与 frame-*.png 配套，选填）</label>
+<input id="petmeta" type="file" accept=".json,application/json">
+<p class="small">人物和宠物清单分别校验选中PNG的逐文件SHA256与导出顺序。校验成功只代表本地PNG和清单一致，原盘真伪仍需导出工具的独立源SHA鉴真；不同版本素材同时展示是研究拼接，不是原生场景。</p>
 <p class="small">不内置任何原游戏图片、音频或服务器数据；所有文件仅在当前浏览器会话内读取，不上传。</p>
 </section>
 <section>
@@ -88,6 +93,8 @@ const byId=id=>document.getElementById(id);
 const canvas=byId("scene"), ctx=canvas.getContext("2d");
 let map=null,character=[],pet=[],sounds=null, urls=[];
 let mapFile=null,mapDiagnostic=null,selectedCell=null;
+const selectedFrameFiles={character:[],pet:[]};
+const frameBindings={character:null,pet:null};
 let x=400,y=320,frames=0,lastTick=0,playing=true;
 const dimensions={w:800,h:600};
 function revokeAll(){
@@ -105,6 +112,10 @@ function status(){
     地图编号证据:mapDiagnostic?"本地诊断清单SHA256已匹配，来源仍为LATER_RECOVERED":"未绑定经验证的诊断清单",
     选中单元:selectedCell,
     人物帧数:character.length,宠物帧数:pet.length,
+    人物帧清单:frameBindings.character?"逐PNG SHA256与TW1导出清单匹配；原始载体仍需外部认证":"未绑定帧源清单",
+    宠物帧清单:frameBindings.pet?"逐PNG SHA256与TW1导出清单匹配；原始载体仍需外部认证":"未绑定帧源清单",
+    场景版本混用:!!(mapDiagnostic&&(frameBindings.character||frameBindings.pet)),
+    版本混合说明:mapDiagnostic&&(frameBindings.character||frameBindings.pet)?"后代地图与TW1帧人工拼合，非同版历史游戏场景":"各层仍按自己的来源证明",
     动作时序:"180毫秒/帧，研究工具默认，不代表原始游戏",
     声音事件绑定:"未知",文字区域版本:"未自动转换"
   },null,2);
@@ -116,13 +127,13 @@ function readImage(file){
   });
 }
 async function images(event,slot){
-  const chosen=Array.from(event.target.files||[]);
+  const chosen=Array.from(event.target.files||[]).sort((a,b)=>a.name<b.name?-1:a.name>b.name?1:0);
   if(chosen.length>32){alert("单组最多读取32帧");return;}
   try{
     const src=await Promise.all(chosen.map(readImage));
     if(slot==="map"){map=src[0]||null;mapFile=chosen[0]||null;mapDiagnostic=null;selectedCell=null;byId("mapmeta").value="";}
-    else if(slot==="character")character=src;
-    else pet=src;
+    else if(slot==="character"){character=src;selectedFrameFiles.character=chosen;frameBindings.character=null;byId("actormeta").value="";}
+    else {pet=src;selectedFrameFiles.pet=chosen;frameBindings.pet=null;byId("petmeta").value="";}
   }catch(error){alert(error.message);}
   status();draw();
 }
@@ -212,6 +223,50 @@ async function loadMapDiagnostic(event){
   }catch(error){alert("清单无法认证："+error.message);}
   status();draw();
 }
+async function loadFrameManifest(event,slot){
+  frameBindings[slot]=null;
+  const file=event.target.files&&event.target.files[0];
+  if(!file){status();return;}
+  const selected=selectedFrameFiles[slot];
+  try{
+    if(!selected.length)throw Error("请先选择当前槽位对应的frame-*.png。");
+    if(file.size>1000000)throw Error("帧源清单超过1MB限制。");
+    const m=JSON.parse(await file.text());
+    if(m.schema!=="stoneage.private_original_sprite_observer_frames.r1"||
+       m.source!=="TW_WAEI_1_0"||m.interface_language!=="zh-CN"||
+       m.original_game_world_entered!==false||m.original_game_client_launched!==false||
+       m.synthetic_preview_only!==true||m.scene_palette_selection_verified!==false||
+       m.sprite_entity_name_verified!==false||m.fps_original_verified!==false)
+      throw Error("帧源清单角色/版本/历史声明不合格。");
+    if(!m.source_timeline||!Array.isArray(m.source_timeline.frames)||
+       !Array.isArray(m.files)||m.files.length!==selected.length||
+       m.file_count!==selected.length||m.source_timeline.frames.length!==selected.length)
+      throw Error("清单的帧序/数量与选择不符。");
+    if(!m.original_source_files||typeof m.original_source_files!=="object"||
+       Object.keys(m.original_source_files).length<4)
+      throw Error("缺少TW1四个原资源文件指纹记录。");
+    if(!globalThis.crypto?.subtle)throw Error("浏览器不支持本地WebCrypto SHA256。");
+    const seen=new Set();
+    const expected=m.files;
+    for(let i=0;i<expected.length;i++){
+      const e=expected[i],f=selected[i];
+      if(!e||!/^frame-[0-9]{3}\\.png$/.test(e.path)||seen.has(e.path)||
+         e.path!==f.name||!/^[0-9a-f]{64}$/.test(e.sha256)||
+         !Number.isSafeInteger(e.byte_length)||e.byte_length!==f.size)
+        throw Error("帧文件路径、顺序或字节长度不匹配："+f.name);
+      seen.add(e.path);
+      const hash=await crypto.subtle.digest("SHA-256",await f.arrayBuffer());
+      const hex=Array.from(new Uint8Array(hash),b=>b.toString(16).padStart(2,"0")).join("");
+      if(hex!==e.sha256)throw Error("帧SHA256不匹配："+f.name);
+    }
+    // A file replacement during async hashing must not validate an obsolete selection.
+    if(selectedFrameFiles[slot]!==selected)throw Error("校验期间所选帧已更换，请重新加载清单。");
+    frameBindings[slot]=m;
+  }catch(error){alert("帧清单无法绑定："+error.message);}
+  status();draw();
+}
+byId("actormeta").onchange=e=>loadFrameManifest(e,"character");
+byId("petmeta").onchange=e=>loadFrameManifest(e,"pet");
 byId("mapmeta").onchange=loadMapDiagnostic;
 canvas.addEventListener("click",event=>{
   if(!mapDiagnostic)return;
@@ -227,7 +282,9 @@ canvas.addEventListener("click",event=>{
 byId("floor").onchange=e=>images(e,"map");
 byId("actor").onchange=e=>images(e,"character");
 byId("pet").onchange=e=>images(e,"pet");
-byId("profile").onchange=()=>{if(mapDiagnostic&&byId("profile").value!=="LATER_RECOVERED"){mapDiagnostic=null;selectedCell=null;byId("mapmeta").value="";}status();};
+byId("profile").onchange=()=>{if(mapDiagnostic&&byId("profile").value!=="LATER_RECOVERED"){mapDiagnostic=null;selectedCell=null;byId("mapmeta").value="";}
+  if(byId("profile").value!=="TW_WAEI_1_0"){frameBindings.character=null;frameBindings.pet=null;byId("actormeta").value="";byId("petmeta").value="";}
+  status();draw();};
 byId("wav").onchange=event=>{
   if(sounds)URL.revokeObjectURL(sounds);
   byId("audio").pause();byId("audio").removeAttribute("src");byId("audio").load();
