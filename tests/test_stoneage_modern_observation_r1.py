@@ -147,6 +147,11 @@ class ModernObservationR1(unittest.TestCase):
         self.assertIn('m.source!=="TW_WAEI_1_0"', html)
         self.assertIn('m.synthetic_preview_only!==true', html)
         self.assertIn('m.scene_palette_selection_verified!==false', html)
+        self.assertIn('m.original_source_status!=="FOUR_ORIGINAL_FILES_AND_SELECTED_RD_PIXELS_VERIFIED"', html)
+        self.assertIn('Object.keys(m.original_source_files).length!==4', html)
+        for name in ("adrn_1.bin", "real_1.bin", "spr_1.bin", "spradrn_1.bin"):
+            self.assertIn(name, html)
+        self.assertIn('v.bytes!==bytes||v.sha256!==sha', html)
         self.assertIn('m.original_game_world_entered!==false', html)
         self.assertIn('m.file_count!==selected.length', html)
         self.assertIn('e.byte_length!==f.size', html)
