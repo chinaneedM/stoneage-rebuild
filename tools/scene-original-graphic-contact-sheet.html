@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src blob:; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>石器时代｜后代原图索引私人观察册</title>
+<style>
+:root{color-scheme:dark}body{margin:0;padding:24px;background:#171d21;color:#e4e8e5;font:15px/1.6 system-ui,"Microsoft YaHei","Noto Sans SC",sans-serif}
+main{max-width:1100px;margin:auto}h1{font-size:23px}h2{font-size:18px}
+section{margin:14px 0;border:1px solid #41505b;border-radius:8px;padding:16px;background:#222a30}
+label{display:block;margin:10px 0 4px}input{max-width:100%}
+.notice{border-left:4px solid #dfb375;padding:12px;background:#36332d}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px}
+figure{margin:0;border:1px solid #4c5a60;background:#151a1d;padding:12px;min-width:0}
+figure img{display:block;max-width:100%;height:175px;object-fit:contain;margin:auto;image-rendering:pixelated;background:#111}
+figcaption{font-size:12px;overflow-wrap:anywhere}pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:12px}
+.small{font-size:13px;color:#b3bec4}input[type=file]{width:100%}
+</style>
+</head><body>
+<main>
+<h1>石器时代 · 私人源图索引观察册</h1>
+<p class="notice"><strong>这不是原版游戏地图，也没有进入原版世界。</strong>仅并列展示后代保存素材中可验证的RD调色板索引灰度PNG。每张图对应来源 map_number，不代表场景中实际绘制的图块、透明度、颜色、顺序或NPC身份。禁止把本页面截屏标为历史游戏实拍。</p>
+<section>
+<h2>加载离线来源图片</h2>
+<label for="files">选择同一私人导出目录中全部 map-id-*.png（最多16张）</label>
+<input id="files" type="file" accept=".png,image/png" multiple>
+<label for="manifest">选择同目录 source-manifest.json（必选）</label>
+<input id="manifest" type="file" accept=".json,application/json">
+<p class="small">先导入PNG，再导入清单。页面会核对导出器的来源固定哈希、地图范围、图号、逐图SHA256和PNG结构。源文件鉴真需要导出器独立执行；仅靠JSON自述不能证明持有原版素材。全程本地，无文件上传。</p>
+</section>
+<section>
+<h2>验证状态</h2>
+<pre id="status" role="status">尚未选择私人素材</pre>
+</section>
+<section>
+<h2>按来源编号排列的图片（不是场景拼接）</h2>
+<div id="gallery" class="gallery"></div>
+</section>
+</main>
+<script>
+(() => {
+"use strict";
+const el=id=>document.getElementById(id);
+const pins={
+  adrn:"92d0137590d35a7a1f4fb11af3ad13bbc585813a4b0e1e3f933c397007fbff74",
+  real:"c7640643804d550bc07e33661103fb7b5f557ee01e68a5a5d92382c5305c2b0d"
+};
+const maxImages=16,hex=/^[0-9a-f]{64}$/,name=/^map-id-[0-9]{5}\.png$/;
+let selected=[],revision=0,objectUrls=[];
+const status=message=>el("status").textContent=message;
+function clear(){
+  for(const u of objectUrls)URL.revokeObjectURL(u);
+  objectUrls=[];
+  el("gallery").replaceChildren();
+}
+function require(condition,message){if(!condition)throw Error(message);}
+function validManifest(m){
+  require(m&&m.schema==="stoneage.private_recovered25_scene_graphic_join.r1"&&
+    m.source_profile==="LATER_RECOVERED"&&
+    m.source_bundle_role==="RECOVERED25_PRESERVED_UNVERIFIED_OFFICIAL_RELEASE"&&
+    m.source_pins_match_preserved_bundle===true&&
+    m.source_adrn_sha256===pins.adrn&&m.source_real_sha256===pins.real,
+    "来源标识与项目固定ADRN/REAL摘要不匹配");
+  require(m.original_client_executed===false&&m.original_world_entered===false&&
+    m.authentic_scene_rendered===false&&m.scene_projection_verified===false&&
+    m.palette_selection_verified===false&&m.alpha_semantics_verified===false&&
+    m.collision_lookup_not_draw_selection===true&&
+    m.private_pngs_are_original_index_data_not_original_game_capture===true&&
+    m.draw_rule_grade==="DESCENDANT_SOURCE_LINEAGE_NOT_RECOVERED25_SAME_BUILD",
+    "历史绘制资格声明不合格");
+  require(hex.test(m.source_map_payload_sha256)&&
+    Number.isSafeInteger(m.floor_id)&&m.floor_id>=0&&
+    Array.isArray(m.viewport_inclusive)&&m.viewport_inclusive.length===4&&
+    m.viewport_inclusive.every(n=>Number.isSafeInteger(n)&&n>=0),
+    "地图来源或视口坐标不合格");
+  const [x1,y1,x2,y2]=m.viewport_inclusive;
+  require(x2>=x1&&y2>=y1&&x2-x1<64&&y2-y1<64&&
+    m.map_plane_cell_count===(x2-x1+1)*(y2-y1+1),
+    "视口与源地图单元计数不符");
+  const client=m.source_kind==="CLIENT_DAT_THREE_PLANE"&&m.event_plane_status==="RECOVERED_CLIENT_DAT";
+  const server=m.source_kind==="SERVER_LS2MAP_TWO_PLANE"&&
+    m.event_plane_status==="ABSENT_IN_LS2MAP_WORLD_EVENT_LAYER_SEPARATE";
+  require(client||server,"DAT/LS2MAP事件层来源不合格");
+  require(Array.isArray(m.map_ids_required)&&m.map_ids_required.length>0&&m.map_ids_required.length<=maxImages&&
+    m.map_ids_required.every((n,i,a)=>Number.isSafeInteger(n)&&n>99&&n<=65535&&(i===0||n>a[i-1])),
+    "候选图号域、去重或顺序不合格");
+  require(Array.isArray(m.resources)&&m.resources.length===m.map_ids_required.length&&
+    m.resources.every((r,i)=>r.map_id===m.map_ids_required[i]&&Array.isArray(r.occurrences)),
+    "资源记录与候选图号不符");
+  require(Number.isSafeInteger(m.preview_count)&&m.preview_count>0&&
+    m.preview_count<=maxImages&&m.preview_count===selected.length,
+    "文件数量与源清单不符");
+  const images=m.resources.filter(r=>r.rendered_artwork===true);
+  require(images.length===m.preview_count&&
+    images.every(r=>r.status==="PRIVATE_INDEXED_PIXEL_PREVIEW_ONLY"&&
+      r.occurrences.length===1&&
+      r.filename==="map-id-"+String(r.map_id).padStart(5,"0")+".png"&&
+      hex.test(r.private_grayscale_png_sha256)&&hex.test(r.rd_block_sha256)&&
+      hex.test(r.decoded_palette_indices_sha256)&&
+      hex.test(r.occurrences[0].source_record_sha256)&&
+      r.occurrences[0].map_number===r.map_id&&
+      Number.isSafeInteger(r.occurrences[0].bitmapno)),
+    "可视图像缺少单一原ADRN/RD证据");
+  const ids=new Set();
+  for(const r of m.resources){
+    require(!ids.has(r.map_id),"重复图号");
+    ids.add(r.map_id);
+    if(!r.rendered_artwork)
+      require(!r.filename&&r.status!=="PRIVATE_INDEXED_PIXEL_PREVIEW_ONLY",
+        "未绘制资源不能包含伪造PNG");
+  }
+  return images;
+}
+async function verify(){
+  const epoch=++revision;
+  clear();
+  const sourceFile=el("manifest").files?.[0];
+  if(!sourceFile){status("请选择导出清单");return;}
+  try{
+    require(selected.length>0&&selected.length<=maxImages,"请先选择1至16张PNG");
+    require(sourceFile.size>0&&sourceFile.size<=256000,"JSON清单超出256KB限制");
+    require(!!crypto?.subtle,"当前浏览器缺少离线WebCrypto SHA256");
+    const m=JSON.parse(await sourceFile.text());
+    const images=validManifest(m);
+    const expected=new Map(images.map(r=>[r.filename,r]));
+    require(expected.size===selected.length,"重复PNG路径");
+    const staged=[];
+    for(const f of selected){
+      require(name.test(f.name)&&expected.has(f.name),"所选PNG文件名不在证据清单");
+      require(f.size>32&&f.size<=32000000,"源图PNG大小不合格");
+      const bytes=await f.arrayBuffer(),view=new DataView(bytes);
+      require(view.getUint32(0)===0x89504e47&&view.getUint32(4)===0x0d0a1a0a&&
+        view.getUint32(8)===13&&view.getUint32(12)===0x49484452,
+        "PNG魔术字与IHDR不符");
+      const w=view.getUint32(16),h=view.getUint32(20);
+      require(w>0&&h>0&&w<=8192&&h<=8192&&w*h<=8000000&&
+        view.getUint8(24)===8&&view.getUint8(25)===0,
+        "仅允许导出器的有界8位灰度PNG");
+      const digest=await crypto.subtle.digest("SHA-256",bytes);
+      const sha=Array.from(new Uint8Array(digest),b=>b.toString(16).padStart(2,"0")).join("");
+      require(sha===expected.get(f.name).private_grayscale_png_sha256,
+        "PNG SHA256不匹配："+f.name);
+      staged.push([f,expected.get(f.name),w,h]);
+    }
+    require(epoch===revision,"校验期间已替换源文件或清单");
+    staged.sort((a,b)=>a[1].map_id-b[1].map_id);
+    // Do not announce success until the actual browser image decoder confirms
+    // every SHA-matched PNG can be displayed. No image enters the gallery early.
+    const cards=[];
+    for(const [f,r,w,h] of staged){
+      require(epoch===revision,"图像解码期间已替换文件");
+      const u=URL.createObjectURL(f);objectUrls.push(u);
+      const img=document.createElement("img");
+      await new Promise((resolve,reject)=>{
+        img.onload=resolve;
+        img.onerror=()=>reject(Error("浏览器无法解码PNG："+f.name));
+        img.src=u;
+      });
+      require(epoch===revision,"图像解码期间已替换文件");
+      require(img.naturalWidth===w&&img.naturalHeight===h,
+        "PNG宣称尺寸与浏览器解码结果不同："+f.name);
+      img.alt="来源编号"+r.map_id+"灰度索引图片，不是原游戏画面";
+      img.width=Math.min(w,200);
+      const figure=document.createElement("figure");
+      const caption=document.createElement("figcaption");
+      caption.textContent="map_number="+r.map_id+
+        " / bitmapno="+r.occurrences[0].bitmapno+
+        " / "+w+"×"+h+" / RD "+r.rd_block_sha256.slice(0,12)+"…";
+      figure.append(img,caption);cards.push(figure);
+    }
+    require(epoch===revision,"校验完成前来源改变");
+    el("gallery").append(...cards);
+    status("逐PNG SHA256与来源清单匹配："+staged.length+"张。"+
+      "地图floor="+m.floor_id+"；来源后代保存包；灰度调色板索引，仅资源并列展示。"+
+      "未进入原版游戏；场景绘制、颜色及透明关系均未认证。");
+  }catch(error){
+    if(epoch===revision){clear();status("拒绝显示："+error.message);}
+  }
+}
+el("files").onchange=event=>{
+  ++revision;clear();el("manifest").value="";
+  selected=Array.from(event.target.files||[]).sort((a,b)=>a.name.localeCompare(b.name));
+  status("已选择"+selected.length+"个PNG；请选择对应的source-manifest.json");
+};
+el("manifest").onchange=verify;
+window.addEventListener("beforeunload",clear);
+})();
+</script>
+</body></html>

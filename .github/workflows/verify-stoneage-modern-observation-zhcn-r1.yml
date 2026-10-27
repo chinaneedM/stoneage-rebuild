@@ -1,0 +1,46 @@
+name: Verify modern offline observation and Simplified Chinese default R1
+on:
+  push:
+    branches: [main, agent/modern-observation-zhcn-r1-20261027]
+    paths:
+      - ".github/workflows/verify-stoneage-modern-observation-zhcn-r1.yml"
+      - "tools/stoneage_modern_observation_manifest.py"
+      - "tools/modern-observation-viewer.html"
+      - "tests/test_stoneage_modern_observation_r1.py"
+      - "tools/stoneage_private_sprite_frame_export_r1.py"
+      - "tests/test_stoneage_private_sprite_frame_export_r1.py"
+      - "tools/stoneage_private_region_diagnostic_r1.py"
+      - "tests/test_stoneage_private_region_diagnostic_r1.py"
+      - "tools/stoneage_private_scene_graphic_join_r1.py"
+      - "tests/test_stoneage_private_scene_graphic_join_r1.py"
+      - "tools/scene-original-graphic-contact-sheet.html"
+      - "tests/test_stoneage_scene_original_contact_sheet_r1.cjs"
+      - "docs/continuity/STONEAGE-MODERN-OBSERVATION-ZHCN-20261027.md"
+      - "docs/DESIGN-DECISIONS.md"
+permissions:
+  contents: read
+jobs:
+  offline-observer:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify source-version isolation and original-client-claim boundaries
+        run: |
+          set -euo pipefail
+          python -m unittest -v tests.test_stoneage_modern_observation_r1 tests.test_stoneage_private_sprite_frame_export_r1 tests.test_stoneage_private_region_diagnostic_r1 tests.test_stoneage_private_scene_graphic_join_r1
+      - name: Validate offline recovered25 image contact sheet in synthetic browser
+        run: node tests/test_stoneage_scene_original_contact_sheet_r1.cjs
+      - name: Reject bundled commercial artwork/audio and direct external network references
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          html=Path("tools/modern-observation-viewer.html").read_text(encoding="utf-8")
+          assert "<meta http-equiv=\"Content-Security-Policy\"" in html
+          assert "default-src 'none'" in html
+          assert "原版游戏" in html and "简体中文" in html
+          assert "http://" not in html and "https://" not in html
+          assert "fetch(" not in html and "data:image/" not in html
+          print("ZHCN_OFFLINE_OBSERVER_SECURITY_BOUNDARY=PASS; ORIGINAL_WORLD_ENTERED=FALSE")
+          PY

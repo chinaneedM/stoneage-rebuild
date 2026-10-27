@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src blob:; media-src blob:; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>石器时代｜现代系统原始素材观察台</title>
+<style>
+:root{color-scheme:dark}
+body{background:#15191c;color:#e5e9e5;font:15px/1.6 system-ui,"Microsoft YaHei","Noto Sans SC",sans-serif;margin:0;padding:20px}
+main{max-width:1160px;margin:auto}
+h1{font-size:23px;margin:0 0 6px}
+h2{font-size:16px;margin:0 0 12px}
+p{margin:8px 0}
+.small{color:#b0bbc0;font-size:13px}
+.notice{background:#303a40;border-left:3px solid #f5b76d;padding:10px 14px;margin:12px 0}
+.layout{display:grid;grid-template-columns:minmax(0,800px) 300px;gap:18px}
+@media(max-width:900px){.layout{grid-template-columns:1fr}}
+section{background:#20282c;border:1px solid #344148;border-radius:10px;padding:14px;margin-bottom:12px}
+canvas{display:block;width:100%;max-width:800px;aspect-ratio:4/3;image-rendering:pixelated;background:#18252d;border:1px solid #5a6870}
+label{display:block;margin:9px 0 3px}
+input,select,button{font:inherit;color:inherit}
+input[type=file],select{max-width:100%;width:100%;box-sizing:border-box}
+button{background:#334449;border:1px solid #84969a;padding:5px 13px;border-radius:6px;cursor:pointer}
+button:focus-visible{outline:2px solid #e3ac65}
+.buttons{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:12px;line-height:1.45}
+audio{width:100%}
+</style>
+</head>
+<body>
+<main>
+<h1>石器时代 · 现代系统观察台</h1>
+<p class="notice"><strong>研究工具，不是原版游戏。</strong>这里的移动、人物位置和帧速是人工演示；只有你在本机选择并独立校验的资源才可能属于原始客户端。未进入历史服务器、未复现原战斗或任务。</p>
+<div class="layout">
+<div>
+<section>
+<canvas id="scene" width="800" height="600" aria-label="本地资源观察区域"></canvas>
+<div class="buttons">
+<button id="up" type="button">↑ 上移</button><button id="left" type="button">← 左移</button>
+<button id="down" type="button">↓ 下移</button><button id="right" type="button">→ 右移</button>
+<button id="center" type="button">居中</button><button id="pause" type="button">暂停动画</button>
+</div>
+<p class="small">方向键或 WASD 可移动观察标记。位置不代表原地图坐标；没有地图资源时仅显示合成网格。</p>
+</section>
+<section>
+<h2>音效观察（用户本机文件）</h2>
+<input id="wav" type="file" accept=".wav,audio/wav" aria-label="选择已校验的本地 WAV">
+<audio id="audio" controls preload="none"></audio>
+<p class="small">声音由你手动播放，不自动推断村庄、战斗、宠物等触发事件。</p>
+</section>
+</div>
+<div>
+<section>
+<h2>来源与语言</h2>
+<label for="profile">资源归属（手动声明，未自动认证）</label>
+<select id="profile">
+<option value="TW_WAEI_1_0">台湾 Waei/JSS 1.0</option>
+<option value="CN_MAINLAND">大陆版本（需标具体构建）</option>
+<option value="JP_JSS">日本版本（需标具体构建）</option>
+<option value="KR_KOREA">韩国版本（需标具体构建）</option>
+<option value="LATER_RECOVERED">后期社区保存材料</option>
+</select>
+<p class="small">观察工具界面固定简体中文（zh-CN）。原资源中的繁体、日文、韩文或旧编码不在此自动翻译，原文字节须保留。</p>
+<label for="floor">本地地图 PNG（可选）</label>
+<p class="small">若导入 tile-id-diagnostic.png：这是已校验地图编号生成的人工颜色诊断图，不是原始地形贴图、原场景投影或当年游玩截图。</p>
+<input id="floor" type="file" accept=".png,image/png">
+<label for="mapmeta">地图编号诊断清单 JSON（可选，仅适用于后期保存载体）</label>
+<input id="mapmeta" type="file" accept=".json,application/json">
+<p class="small">仅当本地图的SHA256与清单匹配后，可点击图中单元读取tile、object和event数值。清单不会使合成色块变成原版画面。</p>
+<label for="actor">本地人物帧 PNG（可多选）</label>
+<input id="actor" type="file" accept=".png,image/png" multiple>
+<label for="actormeta">人物帧源清单（与 frame-*.png 配套，选填）</label>
+<input id="actormeta" type="file" accept=".json,application/json">
+<label for="pet">本地宠物帧 PNG（可多选）</label>
+<input id="pet" type="file" accept=".png,image/png" multiple>
+<label for="petmeta">宠物帧源清单（与 frame-*.png 配套，选填）</label>
+<input id="petmeta" type="file" accept=".json,application/json">
+<p class="small">人物和宠物清单分别校验选中PNG的逐文件SHA256与导出顺序。校验成功只代表本地PNG和清单一致，原盘真伪仍需导出工具的独立源SHA鉴真；不同版本素材同时展示是研究拼接，不是原生场景。</p>
+<p class="small">如果已经通过后代 map-ID→ADRN→REAL 私人工具导出来源灰度图，可打开 <a href="./scene-original-graphic-contact-sheet.html">离线原图索引观察册</a>，逐张核对真实源图像与清单。这不是历史场景拼接，不会把灰度图说成游戏实拍。</p>
+<p class="small">不内置任何原游戏图片、音频或服务器数据；所有文件仅在当前浏览器会话内读取，不上传。</p>
+</section>
+<section>
+<h2>观察状态与边界</h2>
+<pre id="status" role="status"></pre>
+</section>
+</div>
+</div>
+</main>
+<script>
+(() => {
+"use strict";
+const byId=id=>document.getElementById(id);
+const canvas=byId("scene"), ctx=canvas.getContext("2d");
+let map=null,character=[],pet=[],sounds=null, urls=[];
+let mapFile=null,mapDiagnostic=null,selectedCell=null;
+const selectedFrameFiles={character:[],pet:[]};
+const frameBindings={character:null,pet:null};
+let x=400,y=320,frames=0,lastTick=0,playing=true;
+let sourceRevision=0; // Invalidates asynchronous SHA binds on file or source changes.
+const dimensions={w:800,h:600};
+function revokeAll(){
+  for(const u of urls)URL.revokeObjectURL(u);
+  urls=[];
+}
+function status(){
+  byId("status").textContent=JSON.stringify({
+    界面语言:"简体中文（zh-CN）",
+    来源标签:byId("profile").selectedOptions[0].textContent,
+    原版游戏已启动:false,已进入原版世界:false,
+    场景坐标:"人工研究演示，非游戏真实坐标",
+    原始文件版本鉴真:"仅手动选择；须外部 SHA 和原盘来源核验",
+    地图:map?"本地 PNG 预览":"合成网格",
+    地图编号证据:mapDiagnostic?"本地诊断清单SHA256已匹配，来源仍为LATER_RECOVERED":"未绑定经验证的诊断清单",
+    选中单元:selectedCell,
+    人物帧数:character.length,宠物帧数:pet.length,
+    人物帧清单:frameBindings.character?"逐PNG SHA256与TW1导出清单匹配；原始载体仍需外部认证":"未绑定帧源清单",
+    宠物帧清单:frameBindings.pet?"逐PNG SHA256与TW1导出清单匹配；原始载体仍需外部认证":"未绑定帧源清单",
+    场景版本混用:!!(mapDiagnostic&&(frameBindings.character||frameBindings.pet)),
+    版本混合说明:mapDiagnostic&&(frameBindings.character||frameBindings.pet)?"后代地图与TW1帧人工拼合，非同版历史游戏场景":"各层仍按自己的来源证明",
+    动作时序:"180毫秒/帧，研究工具默认，不代表原始游戏",
+    声音事件绑定:"未知",文字区域版本:"未自动转换"
+  },null,2);
+}
+function readImage(file){
+  return new Promise((resolve,reject)=>{
+    const u=URL.createObjectURL(file); urls.push(u); const img=new Image();
+    img.onload=()=>resolve(img);img.onerror=()=>reject(new Error("无法解码 PNG："+file.name));img.src=u;
+  });
+}
+async function images(event,slot){
+  const revision=++sourceRevision;
+  const chosen=Array.from(event.target.files||[]).sort((a,b)=>a.name<b.name?-1:a.name>b.name?1:0);
+  if(chosen.length>32){alert("单组最多读取32帧");return;}
+  try{
+    const src=await Promise.all(chosen.map(readImage));
+    if(revision!==sourceRevision)return; // Later file selection superseded this decode.
+    if(slot==="map"){map=src[0]||null;mapFile=chosen[0]||null;mapDiagnostic=null;selectedCell=null;byId("mapmeta").value="";}
+    else if(slot==="character"){character=src;selectedFrameFiles.character=chosen;frameBindings.character=null;byId("actormeta").value="";}
+    else {pet=src;selectedFrameFiles.pet=chosen;frameBindings.pet=null;byId("petmeta").value="";}
+  }catch(error){alert(error.message);}
+  status();draw();
+}
+function tileGrid(){
+  ctx.fillStyle="#20353a";ctx.fillRect(0,0,800,600);
+  ctx.strokeStyle="#3d5558";ctx.lineWidth=1;ctx.beginPath();
+  for(let i=0;i<=800;i+=40){ctx.moveTo(i+.5,0);ctx.lineTo(i+.5,600);}
+  for(let j=0;j<=600;j+=40){ctx.moveTo(0,j+.5);ctx.lineTo(800,j+.5);}
+  ctx.stroke();
+}
+function sprite(img,px,py,size,symbol){
+  if(img){const ratio=Math.min(size/img.width,size/img.height,2);
+    ctx.drawImage(img,Math.round(px-img.width*ratio/2),Math.round(py-img.height*ratio),
+                  Math.round(img.width*ratio),Math.round(img.height*ratio));}
+  else {ctx.fillStyle=symbol==="人"?"#e6c88f":"#acc6a6";ctx.fillRect(px-12,py-28,24,28);
+    ctx.fillStyle="#1e3031";ctx.textAlign="center";ctx.font="16px sans-serif";ctx.fillText(symbol,px,py-9);}
+}
+function draw(){
+  ctx.imageSmoothingEnabled=false;
+  if(map){ctx.clearRect(0,0,800,600);ctx.drawImage(map,0,0,800,600);}
+  else tileGrid();
+  const a=character.length?character[frames%character.length]:null;
+  const p=pet.length?pet[frames%pet.length]:null;
+  sprite(p,Math.min(775,x+72),Math.min(583,y+28),100,"宠");
+  sprite(a,x,y,114,"人");
+  if(mapDiagnostic&&selectedCell){
+    const [w,z]=mapDiagnostic.viewport_dimensions;
+    const [x1,y1]=mapDiagnostic.viewport_inclusive;
+    ctx.strokeStyle="#ffffff";ctx.lineWidth=3;
+    ctx.strokeRect((selectedCell.x-x1)*800/w+1,(selectedCell.y-y1)*600/z+1,
+                   800/w-2,600/z-2);
+  }
+  ctx.fillStyle="rgba(13,21,25,.83)";ctx.fillRect(0,0,800,34);
+  ctx.fillStyle="#fff";ctx.textAlign="left";ctx.font="15px sans-serif";
+  ctx.fillText("离线素材观察 · 非原版游戏运行 · 移动为人工示意",15,23);
+}
+function move(dx,dy){x=Math.max(20,Math.min(780,x+dx));y=Math.max(50,Math.min(580,y+dy));draw();}
+const direction={up:[0,-24],down:[0,24],left:[-24,0],right:[24,0]};
+for(const [name,[dx,dy]] of Object.entries(direction))byId(name).onclick=()=>move(dx,dy);
+byId("center").onclick=()=>{x=400;y=320;draw();};
+byId("pause").onclick=()=>{playing=!playing;byId("pause").textContent=playing?"暂停动画":"播放动画";};
+const keys={ArrowUp:"up",ArrowDown:"down",ArrowLeft:"left",ArrowRight:"right",w:"up",a:"left",s:"down",d:"right"};
+window.addEventListener("keydown",event=>{
+  if(["SELECT","INPUT","TEXTAREA"].includes(document.activeElement.tagName))return;
+  const name=keys[event.key];if(name){event.preventDefault();move(...direction[name]);}
+});
+async function loadMapDiagnostic(event){
+  const revision=++sourceRevision;
+  mapDiagnostic=null;selectedCell=null;
+  const file=event.target.files&&event.target.files[0];
+  if(!file){status();return;}
+  try{
+    if(!mapFile||!map)throw Error("请先选择相应的诊断PNG。");
+    if(file.size>800000)throw Error("诊断清单过大。");
+    const m=JSON.parse(await file.text());
+    if(m.schema!=="stoneage.private_recovered25_map_cell_diagnostic.r1"||
+       m.source_version_role!=="LATER_RECOVERED"||m.world_profile!=="recovered25"||
+       m.source_artwork_rendered!==false||m.original_game_world_entered!==false)
+      throw Error("仅接受已声明为非原版像素的后期保存地图诊断清单。");
+    if(!/^[0-9a-f]{64}$/.test(m.source_payload_sha256)|| !/^[0-9a-f]{64}$/.test(m.diagnostic_png_sha256))
+      throw Error("SHA256字段无效。");
+    const [w,z]=m.viewport_dimensions||[];
+    if(!Number.isInteger(w)||!Number.isInteger(z)||w<1||z<1||w>64||z>64||
+       !Array.isArray(m.cells)||m.cells.length!==w*z)
+      throw Error("诊断网格尺寸或单元数量不符。");
+    const [x1,y1,x2,y2]=m.viewport_inclusive||[];
+    if(![x1,y1,x2,y2].every(Number.isInteger)||x2-x1+1!==w||y2-y1+1!==z)
+      throw Error("源地图裁剪坐标不符。");
+    const server=m.source_kind==="SERVER_LS2MAP_TWO_PLANE"&&
+                 m.event_plane_status==="ABSENT_IN_LS2MAP_WORLD_EVENT_LAYER_SEPARATE";
+    const client=m.source_kind==="CLIENT_DAT_THREE_PLANE"&&
+                 m.event_plane_status==="RECOVERED_CLIENT_DAT";
+    if(!server&&!client)throw Error("地图来源类型/事件层证据不符。");
+    const validId=n=>Number.isInteger(n)&&n>=0&&n<=65535;
+    for(let i=0;i<m.cells.length;i++){
+      const c=m.cells[i];
+      if(!c||c.x!==x1+i%w||c.y!==y1+Math.floor(i/w)||
+         !validId(c.tile_id)||!validId(c.object_id)||
+         (server?c.event_id!==null:!validId(c.event_id)))
+        throw Error("逐格编号或缺失事件层的含义不符。");
+    }
+    if(!globalThis.crypto?.subtle)throw Error("当前浏览器无法离线验证SHA256，请使用具备WebCrypto的浏览器。");
+    const hash=await crypto.subtle.digest("SHA-256",await mapFile.arrayBuffer());
+    const actual=Array.from(new Uint8Array(hash),b=>b.toString(16).padStart(2,"0")).join("");
+    if(actual!==m.diagnostic_png_sha256)throw Error("所选地图PNG与清单摘要不一致。");
+    if(revision!==sourceRevision)throw Error("源文件或版本在地图校验期间发生更换。");
+    mapDiagnostic=m;
+    byId("profile").value="LATER_RECOVERED";
+  }catch(error){alert("清单无法认证："+error.message);}
+  status();draw();
+}
+async function loadFrameManifest(event,slot){
+  const revision=sourceRevision;
+  frameBindings[slot]=null;
+  const file=event.target.files&&event.target.files[0];
+  if(!file){status();return;}
+  const selected=selectedFrameFiles[slot];
+  try{
+    if(!selected.length)throw Error("请先选择当前槽位对应的frame-*.png。");
+    if(file.size>1000000)throw Error("帧源清单超过1MB限制。");
+    const m=JSON.parse(await file.text());
+    if(m.schema!=="stoneage.private_original_sprite_observer_frames.r1"||
+       m.source!=="TW_WAEI_1_0"||m.interface_language!=="zh-CN"||
+       m.original_game_world_entered!==false||m.original_game_client_launched!==false||
+       m.synthetic_preview_only!==true||m.scene_palette_selection_verified!==false||
+       m.sprite_entity_name_verified!==false||m.fps_original_verified!==false)
+      throw Error("帧源清单角色/版本/历史声明不合格。");
+    if(!m.source_timeline||!Array.isArray(m.source_timeline.frames)||
+       !Array.isArray(m.files)||m.files.length!==selected.length||
+       m.file_count!==selected.length||m.source_timeline.frames.length!==selected.length)
+      throw Error("清单的帧序/数量与选择不符。");
+    // Immutable TW1 retail-data pins; reported hashes are metadata, not proof of possessed originals.
+    const originalPins={
+      "adrn_1.bin":[10079680,"47254c0ff904d363fb5c3c5297edf553c8eaf24cd933f346d8ce7aabed4155c8"],
+      "real_1.bin":[315842228,"408e6ee05c83354349691937da2ad8f7488ac10f65f07e6681b7d92cb1c9ed13"],
+      "spr_1.bin":[2889630,"53d5b2d40453a30fd1569637ebf0db7b3010542b00970ec83af0295a3b3ae31a"],
+      "spradrn_1.bin":[5568,"275b64ff55667aec633a7e82e09d65c84141380521f0f2e64c9a28e0d3aa6c25"]
+    };
+    if(m.original_source_status!=="FOUR_ORIGINAL_FILES_AND_SELECTED_RD_PIXELS_VERIFIED"||
+       !m.original_source_files||typeof m.original_source_files!=="object"||
+       Object.keys(m.original_source_files).length!==4||
+       Object.entries(originalPins).some(([name,[bytes,sha]])=>{
+         const v=m.original_source_files[name];
+         return !v||v.bytes!==bytes||v.sha256!==sha;
+       }))
+      throw Error("TW1源文件指纹或原位图见证等级与已验零售盘不符。");
+    if(!globalThis.crypto?.subtle)throw Error("浏览器不支持本地WebCrypto SHA256。");
+    const seen=new Set();
+    const expected=m.files;
+    for(let i=0;i<expected.length;i++){
+      const e=expected[i],f=selected[i];
+      if(!e||!/^frame-[0-9]{3}\.png$/.test(e.path)||seen.has(e.path)||
+         e.path!==f.name||!/^[0-9a-f]{64}$/.test(e.sha256)||
+         !Number.isSafeInteger(e.byte_length)||e.byte_length!==f.size)
+        throw Error("帧文件路径、顺序或字节长度不匹配："+f.name);
+      seen.add(e.path);
+      const hash=await crypto.subtle.digest("SHA-256",await f.arrayBuffer());
+      const hex=Array.from(new Uint8Array(hash),b=>b.toString(16).padStart(2,"0")).join("");
+      if(hex!==e.sha256)throw Error("帧SHA256不匹配："+f.name);
+    }
+    // A file replacement during async hashing must not validate an obsolete selection.
+    if(revision!==sourceRevision||selectedFrameFiles[slot]!==selected)
+      throw Error("校验期间源文件或版本已更换，请重新加载清单。");
+    frameBindings[slot]=m;
+    if(!mapDiagnostic)byId("profile").value="TW_WAEI_1_0";
+  }catch(error){alert("帧清单无法绑定："+error.message);}
+  status();draw();
+}
+byId("actormeta").onchange=e=>loadFrameManifest(e,"character");
+byId("petmeta").onchange=e=>loadFrameManifest(e,"pet");
+byId("mapmeta").onchange=loadMapDiagnostic;
+canvas.addEventListener("click",event=>{
+  if(!mapDiagnostic)return;
+  const rect=canvas.getBoundingClientRect();
+  const px=(event.clientX-rect.left)*canvas.width/rect.width;
+  const py=(event.clientY-rect.top)*canvas.height/rect.height;
+  const [w,z]=mapDiagnostic.viewport_dimensions;
+  const x=Math.min(w-1,Math.max(0,Math.floor(px/canvas.width*w)));
+  const y=Math.min(z-1,Math.max(0,Math.floor(py/canvas.height*z)));
+  selectedCell=mapDiagnostic.cells[y*w+x];
+  status();draw();
+});
+byId("floor").onchange=e=>images(e,"map");
+byId("actor").onchange=e=>images(e,"character");
+byId("pet").onchange=e=>images(e,"pet");
+byId("profile").onchange=()=>{sourceRevision++;if(mapDiagnostic&&byId("profile").value!=="LATER_RECOVERED"){mapDiagnostic=null;selectedCell=null;byId("mapmeta").value="";}
+  if(byId("profile").value!=="TW_WAEI_1_0"){frameBindings.character=null;frameBindings.pet=null;byId("actormeta").value="";byId("petmeta").value="";}
+  status();draw();};
+byId("wav").onchange=event=>{
+  if(sounds)URL.revokeObjectURL(sounds);
+  byId("audio").pause();byId("audio").removeAttribute("src");byId("audio").load();
+  const file=event.target.files&&event.target.files[0];
+  sounds=file?URL.createObjectURL(file):null;if(sounds)byId("audio").src=sounds;
+  byId("audio").load();status();
+};
+window.addEventListener("beforeunload",()=>{revokeAll();if(sounds)URL.revokeObjectURL(sounds);});
+function loop(now){if(!lastTick)lastTick=now;if(playing&&now-lastTick>=180){frames++;lastTick=now;draw();}
+  requestAnimationFrame(loop);}
+status();draw();requestAnimationFrame(loop);
+})();
+</script>
+</body></html>
