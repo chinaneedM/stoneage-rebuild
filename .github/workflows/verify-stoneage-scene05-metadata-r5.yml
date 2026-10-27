@@ -1,0 +1,19 @@
+name: Verify bounded source-qualified room R5 metadata and no original-world promotion
+on:
+  push:
+    branches: [main, agent/scene-room-real-pixels-r5-20261028]
+    paths:
+      - research/recovered/STONEAGE-SCENE05-REAL-PIXEL-PUBLICATION-R5.json
+      - tools/stoneage_scene05_metadata_guard_r5.py
+      - .github/workflows/verify-stoneage-scene05-metadata-r5.yml
+permissions:
+  contents: read
+jobs:
+  replay-safety:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest -v tools.stoneage_scene05_metadata_guard_r5

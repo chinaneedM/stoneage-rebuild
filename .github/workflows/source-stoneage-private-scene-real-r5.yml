@@ -1,0 +1,38 @@
+name: Observe exact two original preserved REAL bitmaps R5 (private encrypted)
+on:
+  push:
+    branches: [agent/scene-room-real-pixels-r5-20261028]
+    paths:
+      - .github/workflows/source-stoneage-private-scene-real-r5.yml
+      - tools/stoneage_private_scene_missing_real_r5.py
+      - tests/test_stoneage_private_scene_missing_real_r5.py
+      - research/recovered/STONEAGE-SCENE05-TRANSFER-CERT.pem
+permissions:
+  contents: read
+jobs:
+  source-original-two-real:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install rarfile==4.2 pillow==11.3.0
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq unar
+      - name: Source-bound negative and synthetic contracts
+        run: python -m unittest -v tests.test_stoneage_private_scene_missing_real_r5 tests.test_stoneage_private_scene_source_r2
+      - name: Acquire verified preserved carrier and extract two exact real RD blocks
+        run: >-
+          python -m tools.stoneage_private_scene_missing_real_r5
+          --work /tmp/stoneage-room-r5-private
+          --output-dir /tmp/stoneage-room-r5-encrypted
+          --certificate research/recovered/STONEAGE-SCENE05-TRANSFER-CERT.pem
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: stoneage-r5-exact-two-real-encrypted
+          path: /tmp/stoneage-room-r5-encrypted
+          if-no-files-found: error
+          compression-level: 0
+          retention-days: 7
