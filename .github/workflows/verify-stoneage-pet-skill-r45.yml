@@ -1,0 +1,35 @@
+name: Verify bounded original pet skill name integration R45
+on:
+  push:
+    branches: ['agent/pet-skill-material-r45-20261027', main]
+    paths:
+      - tools/stoneage_preserved_pet_skill_r45.py
+      - tools/stoneage_pet_skill_material_r45.py
+      - tests/test_stoneage_preserved_pet_skill_r45.py
+      - tests/test_stoneage_pet_skill_material_r45.py
+      - research/recovered/STONEAGE-PRESERVED-PET-SKILL-SOURCE-R45.json
+      - research/recovered/STONEAGE-PRESERVED-PET-SKILL-SOURCE-ATTEMPT1-R45.json
+      - research/recovered/STONEAGE-PET-SKILL-NAME-MODEL-CROSSWALK-R45.json
+      - .github/workflows/verify-stoneage-pet-skill-r45.yml
+permissions:
+  contents: read
+jobs:
+  replay-source-qualified-integration:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest -v tests.test_stoneage_preserved_pet_skill_r45 tests.test_stoneage_pet_skill_material_r45 tests.test_stoneage_recovered25_petskill_runtime tests.test_stoneage_petskill_probe tests.test_stoneage_petskill_round_bridge
+      - run: python -m tools.stoneage_pet_skill_material_r45
+      - name: Refuse protected original source members in public Git
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import subprocess
+          denied={'petskill.txt','setup.cf'}
+          for p in subprocess.check_output(['git','ls-files','-z']).decode().split('\0'):
+              if p and Path(p).name in denied:
+                  raise SystemExit('Protected original member in Git: '+p)
+          PY

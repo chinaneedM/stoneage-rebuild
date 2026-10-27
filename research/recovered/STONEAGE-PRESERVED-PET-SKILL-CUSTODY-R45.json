@@ -1,0 +1,117 @@
+{
+  "schema": "stoneage.preserved_pet_skill_custody.r45",
+  "date": "2026-10-27",
+  "startup_head": "0de7729dd0e285ea9ee76d5494c2991442e42a66",
+  "startup_tree": "c8d351f55d1ffdae745e7aaac6ed27c53959870d",
+  "source_attempts": [
+    {
+      "run": 40499420515,
+      "job": 122173053693,
+      "head": "360284b3252f24002a72e8f5576f3421fac666d6",
+      "workflow_status": "completed/success",
+      "report_status": "ORIGINAL_MEMBERS_ACQUIRED_DERIVATION_PENDING",
+      "derivation_error": {
+        "message": "unqualified skill callback token",
+        "type": "ValueError"
+      },
+      "artifact": 12732395397,
+      "zip_bytes": 10698,
+      "zip_sha256": "390ce6cde642134245e27d94c78802ec322223c0cecf7cde98082853a9ea8f21",
+      "independent_zip_download_verified": true,
+      "raw_report": {
+        "path": "research/recovered/STONEAGE-PRESERVED-PET-SKILL-SOURCE-ATTEMPT1-R45.json",
+        "bytes": 39087,
+        "sha256": "b12f052b4776504c72e37373b33829ddd950375b0cbc1a9d77f3b9c1e0f5e14f",
+        "git_blob": "f3a32b2cdad238ef75ccdc9bdf7c5207b95a866d"
+      }
+    },
+    {
+      "run": 40499885826,
+      "job": 122174615200,
+      "head": "1a210bd7dc3c8da674c6e70fae349ba843d47cbc",
+      "workflow_status": "completed/success",
+      "report_status": "TWO_ORIGINAL_MEMBERS_DUAL_DECODE_SHA_CRC_AND_SIX_NAMES_QUALIFIED",
+      "artifact": 12732705325,
+      "zip_bytes": 12954,
+      "zip_sha256": "ad34021a28bda2f160e6670bec2a42c47f5c90579104827a1fefca9de352c536",
+      "independent_zip_download_verified": true
+    }
+  ],
+  "raw_source_report": {
+    "path": "research/recovered/STONEAGE-PRESERVED-PET-SKILL-SOURCE-R45.json",
+    "bytes": 49019,
+    "sha256": "8cb12a7f5dd4ec0ffd39a9112446f82b1583f8cbeb8ced75b8c87c9d7421e914",
+    "git_blob": "dd3baaf7e8edda43ef2e136d35f09d1da6717571"
+  },
+  "raw_report_equal_to_timestamp_stripped_source_log": true,
+  "cross_attempt_verification": {
+    "all184_ranges_and_two_original_member_metadata_equal": true,
+    "bytes_per_attempt": 12013836,
+    "total_original_range_bytes_two_attempts": 24027672,
+    "both_runs_unar_and_libarchive_decoded_identical_original_member_bytes": true,
+    "same_ranges_two_decoders_not_independent_official_source": true
+  },
+  "prior_coverage": "147 rows/69callbacks and source-derived runtime previously covered; no prior raw display names retained. New six-name join only.",
+  "source_extractor_and_dependencies": {
+    "tools/stoneage_preserved_pet_skill_r45.py": {
+      "bytes": 8129,
+      "sha256": "b5512a63fe40fa226da305f680f59a6b51fff5aac31a191b73ba88f190f60cbc",
+      "git_blob": "848edce714b41f9a4f2214c83784c279d5d2292b"
+    },
+    "tools/stoneage_native_album_source_r36.py": {
+      "bytes": 10961,
+      "sha256": "d7bfa7ade8e02c9441bdc4cadff7e460f3cf7c856b89e41cb1512db37d9c742d",
+      "git_blob": "056dea2ef2069504b89e123fe9b197fb4ae0b8f2"
+    },
+    "tools/stoneage_wayi85_sixpart_acquisition.py": {
+      "bytes": 10529,
+      "sha256": "052efd1b2735d097530816b3c57fb33e13f9b244b76391eeb60171d8063c0a53",
+      "git_blob": "a036aa38751dad9c3090b78e45b9089613048edf"
+    },
+    "research/recovered/STONEAGE-25-PETSKILL-PROBE-R1.txt": {
+      "bytes": 11336,
+      "sha256": "62be29281c9409c70242206c806bab7edfbabb71aaf5e166beafa8e28dddd19f",
+      "git_blob": "bfeed977d7f6913d5fd599f4bea0bd5f9e00ccce"
+    },
+    "research/recovered/STONEAGE-25-PETSKILL-PRESSURE-R1.txt": {
+      "bytes": 5794,
+      "sha256": "2e1d9b57ef9d88696ae0e0db7ad5120ecca3d48fc01d0ccc5f77281cfd448994",
+      "git_blob": "4023473c0954d7e55fd9b551d7e89158f7b044d0"
+    }
+  },
+  "preserved_history": {
+    "docs/CURRENT-STATE.md": {
+      "bytes": 2680510,
+      "sha256": "f02f85b837fc09973cb2eca33f7daf4db547a77cb35a81a9576c6308f70142c0",
+      "git_blob": "031c76a5a8e431f646853909bb2f2e11e6328cd2"
+    },
+    "docs/PROJECT-CONTINUITY-PROTOCOL-R1.md": {
+      "bytes": 10880,
+      "sha256": "c3a10d3a9dacf8b61c97a52d294582a2984b13b549f4f10d1375a6fffb53ff65",
+      "git_blob": "a064174339b7a4656efe00b4446a066fd7abf304"
+    },
+    "docs/DESIGN-DECISIONS.md": {
+      "bytes": 49898,
+      "sha256": "6d481f4eb0185ab0c8da34e697ae39f4137638d9484de4ed48d1875ec3af4f73",
+      "git_blob": "713caaecc6a43a92e5cb7f939954026b859bac20"
+    },
+    "docs/HISTORICAL-TIMELINE.md": {
+      "bytes": 730950,
+      "sha256": "7bc3fb586c23ff3c5fd0add689157c45e9e1b1cca001df84ad1dad9f850fc13c",
+      "git_blob": "91ca73105f26bf96aaa928519ae04942182e7b9b"
+    },
+    "docs/SOURCE-REGISTRY.md": {
+      "bytes": 1028196,
+      "sha256": "cddea82e5b51143e4107e9ed285f2acc04725a69dc929f0c432c1ceaebe20e7c",
+      "git_blob": "ee3b2d70dabedfe02e3761b3fdb25476a79e147c"
+    },
+    "docs/RESTORATION-ROADMAP-R2.md": {
+      "bytes": 482245,
+      "sha256": "830495a89612ceb54c0d8ebacd8710ceb28d7c1bfdecfc735239db76b6a1e5f8",
+      "git_blob": "c11eff237a8aaa1cc34488a6c3c7fcdd596f9ce2"
+    }
+  },
+  "original_binary_table_option_or_comment_published": false,
+  "original_private_long_term_custody_claimed": false,
+  "new_official_clients": 0
+}

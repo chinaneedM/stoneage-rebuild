@@ -697,3 +697,8 @@ The 2.66 MB historical `docs/CURRENT-STATE.md` is still preserved byte-for-byte.
 ### 2026-10-27 — R44 原商店参数的34个ID与6条具名物品模板
 
 [原材料规格](docs/specs/STONEAGE-PRESERVED-ITEM-SHOP-MATERIAL-R44.md) / [连续性](docs/continuity/STONEAGE-ITEM-SHOP-R44-20261027.md)：三件原文件全SHA/CRC吻合，原库存34编号全在同保存样本实际配置物品表；前6条含5个同名“合成兜 10”不同模板和一条“合成鎧 10”，全部原行位置/摘要保留。后代代码33条上限模拟会截断末项20905，但原服务器显示/交易未证。首轮路径断言错误、三件已取却派生未验的绿色run原样保留，修正source40495285257才内容成功；51本地检查及两独立下载ZIP来源链已核。不是官方初代物品/同部署认证，无原master/对白/程序公开。NEXT转宠物技能小原表45，Stage A/B/wiki/R79及整体百分比未知不变。
+
+
+### 2026-10-27 — R45 六条原技能名称、字段及模型关联
+
+[原材料规格](docs/specs/STONEAGE-PRESERVED-PET-SKILL-MATERIAL-R45.md) / [连续性](docs/continuity/STONEAGE-PET-SKILL-R45-20261027.md)：实际取同保存包原配置和技能表，全SHA/CRC及unar/libarchive双解码字节一致；原名称“待機/攻擊/防禦/破除防禦/連續攻擊/三段攻擊”接ID0/1/2/3/10/11与既有复原模型。两个1字节OPTION的精确数值见证2/3接既有命令桥验证，不把COST2当MP/学费，不把147条混合表当147可学技能；首过窄前缀校验失败原样保留，修正source40499885826才内容成功。48本地检查及双ZIP永久源链已核，无原表/描述/程序公开或原服执行。NEXT转一份有界治疗NPC创建材料46，Stage A/B/wiki/R79和未知总体完成率不变。

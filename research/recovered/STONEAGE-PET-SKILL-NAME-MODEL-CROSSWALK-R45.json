@@ -1,0 +1,165 @@
+{
+  "id_zero_absence_from_positive_enemy_report_does_not_mean_missing_skill": true,
+  "new_original_runtime_or_training_rules_added": 0,
+  "official_tw10_skills_authenticated": 0,
+  "overall_restoration_percent": null,
+  "prior_family_slot_use_counts_are_not_per_skill_or_new_execution": true,
+  "prior_positive_enemy_referenced_rows": 5,
+  "prior_source_pins": {
+    "research/recovered/STONEAGE-25-PETSKILL-PRESSURE-R1.txt": {
+      "bytes": 5794,
+      "git_blob": "4023473c0954d7e55fd9b551d7e89158f7b044d0",
+      "sha256": "2e1d9b57ef9d88696ae0e0db7ad5120ecca3d48fc01d0ccc5f77281cfd448994"
+    },
+    "tools/stoneage_recovered25_petskill_runtime.py": {
+      "bytes": 8655,
+      "git_blob": "839a1fadaf2d8a3af5c22f0764aa51b5d6f9426b",
+      "sha256": "3816d984de08b3bae1a4b8a4880ede71e29ab786064e62f9fb3245cf081c63dc"
+    }
+  },
+  "rows": [
+    {
+      "option_decimal_witness": {
+        "integer": null,
+        "kind": "EMPTY_ORIGINAL_OPTION"
+      },
+      "original_declared_callback": "PETSKILL_None",
+      "original_display_name": "待機",
+      "original_execution_or_learning_eligibility_inferred": false,
+      "original_skill_id": 0,
+      "prior_positive_enemy_reference": null,
+      "source_order": 0,
+      "source_row_sha256": "d86133b57ac16a80e7359f0d2861b49da01117336a95fc5b89f93f7d243e9ff3",
+      "stable_common_reference_model_available": true
+    },
+    {
+      "option_decimal_witness": {
+        "integer": null,
+        "kind": "EMPTY_ORIGINAL_OPTION"
+      },
+      "original_declared_callback": "PETSKILL_NormalAttack",
+      "original_display_name": "攻擊",
+      "original_execution_or_learning_eligibility_inferred": false,
+      "original_skill_id": 1,
+      "prior_positive_enemy_reference": {
+        "callback_family_positive_slot_uses": 729,
+        "declared_callback": "PETSKILL_NormalAttack",
+        "family_skill_ids": [
+          1
+        ],
+        "line_sha256": "85612d27230ec0de690e1010af7ec5798c7aadcd792d3b9b2fb460ebe71ddef2",
+        "prior_model_status": "closed_runtime",
+        "prior_report_line": 5
+      },
+      "source_order": 1,
+      "source_row_sha256": "5f3f5a5c745c2a7da871cadf560a4c94abde106596faaed0c8b9f6a10b305004",
+      "stable_common_reference_model_available": true
+    },
+    {
+      "option_decimal_witness": {
+        "integer": null,
+        "kind": "EMPTY_ORIGINAL_OPTION"
+      },
+      "original_declared_callback": "PETSKILL_NormalGuard",
+      "original_display_name": "防禦",
+      "original_execution_or_learning_eligibility_inferred": false,
+      "original_skill_id": 2,
+      "prior_positive_enemy_reference": {
+        "callback_family_positive_slot_uses": 626,
+        "declared_callback": "PETSKILL_NormalGuard",
+        "family_skill_ids": [
+          2
+        ],
+        "line_sha256": "c49dbad6321abd6adb2f456a3128bff0a4491d5a642dfcf4d08ab0921c104891",
+        "prior_model_status": "closed_runtime",
+        "prior_report_line": 6
+      },
+      "source_order": 2,
+      "source_row_sha256": "901cfac114237e99e380a5358a983bd567a5de0fd3f5bb30b78eea7f1c519dd8",
+      "stable_common_reference_model_available": true
+    },
+    {
+      "option_decimal_witness": {
+        "integer": null,
+        "kind": "EMPTY_ORIGINAL_OPTION"
+      },
+      "original_declared_callback": "PETSKILL_GuardBreak",
+      "original_display_name": "破除防禦",
+      "original_execution_or_learning_eligibility_inferred": false,
+      "original_skill_id": 3,
+      "prior_positive_enemy_reference": {
+        "callback_family_positive_slot_uses": 60,
+        "declared_callback": "PETSKILL_GuardBreak",
+        "family_skill_ids": [
+          3
+        ],
+        "line_sha256": "f069e7f82c3d1d650f0647ba3b4d8b67f993767c5dfa7972d8337264bfadff59",
+        "prior_model_status": "closed_runtime",
+        "prior_report_line": 14
+      },
+      "source_order": 3,
+      "source_row_sha256": "f4b694b14cbffc53b889d772c1b800402b1a939fcfd21d2b9bd8ca664a1ea283",
+      "stable_common_reference_model_available": true
+    },
+    {
+      "option_decimal_witness": {
+        "integer": 2,
+        "kind": "EXACT_ONE_BYTE_DECIMAL_LENGTH_AND_SHA_WITNESS"
+      },
+      "original_declared_callback": "PETSKILL_ContinuationAttack",
+      "original_display_name": "連續攻擊",
+      "original_execution_or_learning_eligibility_inferred": false,
+      "original_skill_id": 10,
+      "prior_positive_enemy_reference": {
+        "callback_family_positive_slot_uses": 139,
+        "declared_callback": "PETSKILL_ContinuationAttack",
+        "family_skill_ids": [
+          10,
+          11,
+          12,
+          13
+        ],
+        "line_sha256": "0b77ab86981c2a080edffced07233e0b1b47d4aa969268546ea0cdc103cbeb1b",
+        "prior_model_status": "closed_runtime",
+        "prior_report_line": 8
+      },
+      "source_order": 4,
+      "source_row_sha256": "13566b0b35e502d96a17ca6e27a1ca24739aeaece6d761fbe31c61001dd3c41a",
+      "stable_common_reference_model_available": true
+    },
+    {
+      "option_decimal_witness": {
+        "integer": 3,
+        "kind": "EXACT_ONE_BYTE_DECIMAL_LENGTH_AND_SHA_WITNESS"
+      },
+      "original_declared_callback": "PETSKILL_ContinuationAttack",
+      "original_display_name": "三段攻擊",
+      "original_execution_or_learning_eligibility_inferred": false,
+      "original_skill_id": 11,
+      "prior_positive_enemy_reference": {
+        "callback_family_positive_slot_uses": 139,
+        "declared_callback": "PETSKILL_ContinuationAttack",
+        "family_skill_ids": [
+          10,
+          11,
+          12,
+          13
+        ],
+        "line_sha256": "0b77ab86981c2a080edffced07233e0b1b47d4aa969268546ea0cdc103cbeb1b",
+        "prior_model_status": "closed_runtime",
+        "prior_report_line": 8
+      },
+      "source_order": 5,
+      "source_row_sha256": "da3bd3b71232fa597368d954dfc89d5e1c29b9e7686e57f140361aff9feabd8b",
+      "stable_common_reference_model_available": true
+    }
+  ],
+  "schema": "stoneage.pet_skill_name_model_crosswalk.r45",
+  "selected_row_count": 6,
+  "source_report": {
+    "bytes": 49019,
+    "git_blob": "dd3baaf7e8edda43ef2e136d35f09d1da6717571",
+    "sha256": "8cb12a7f5dd4ec0ffd39a9112446f82b1583f8cbeb8ced75b8c87c9d7421e914"
+  },
+  "stable_common_model_rows": 6
+}
