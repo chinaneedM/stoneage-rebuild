@@ -8,7 +8,7 @@ from types import SimpleNamespace
 import tempfile
 import unittest
 from tools.stoneage_private_scene_graphic_join_r1 import (
-    resolve_ids, join, export_private, requires_mapping, authenticate, SCHEMA
+    resolve_ids, join, export_private, requires_mapping, is_later_draw_candidate, authenticate, SCHEMA
 )
 
 def record(map_number, bitmapno, offset, size=18, width=1, height=2):
@@ -49,8 +49,9 @@ class PrivateSceneGraphicJoinTests(unittest.TestCase):
     def test_source_bytes_and_private_indexed_preview(self):
         r,files=self.checked(region(),record(100,8,0)+record(60,9,18)+record(79,10,36))
         self.assertEqual(r["schema"],SCHEMA)
-        self.assertEqual(r["map_ids_required"],[60,79,100])
-        self.assertEqual(r["preview_count"],3)
+        self.assertEqual(r["map_ids_required"],[100])
+        self.assertEqual(r["special_collision_ids_not_drawn"],[60,79])
+        self.assertEqual(r["preview_count"],1)
         self.assertFalse(r["authentic_scene_rendered"])
         self.assertFalse(r["source_pins_match_preserved_bundle"])
         self.assertTrue(r["collision_lookup_not_draw_selection"])
@@ -69,12 +70,12 @@ class PrivateSceneGraphicJoinTests(unittest.TestCase):
         ambiguous=next(x for x in r["resources"] if x["map_id"]==100)
         self.assertEqual(ambiguous["status"],"DUPLICATE_ADRN_MAP_NUMBER_SELECT_RULE_OPEN")
         self.assertEqual(len(ambiguous["occurrences"]),2)
-        self.assertEqual(len(files),2)
+        self.assertEqual(len(files),0)
 
     def test_missing_mapping_is_never_filled_with_fake_art(self):
-        r,files=self.checked(region(),record(100,9,0))
+        r,files=self.checked(region(tile=(100,101)),record(100,9,0))
         self.assertEqual(len(files),1)
-        self.assertEqual(sum(x["status"]=="SOURCE_ADRN_MAPPING_MISSING" for x in r["resources"]),2)
+        self.assertEqual(sum(x["status"]=="SOURCE_ADRN_MAPPING_MISSING" for x in r["resources"]),1)
 
     def test_server_event_layer_absent_not_zero(self):
         a=region(events=None,kind="SERVER_LS2MAP_TWO_PLANE")
@@ -106,6 +107,8 @@ class PrivateSceneGraphicJoinTests(unittest.TestCase):
         self.assertFalse(requires_mapping(80))
         self.assertFalse(requires_mapping(99))
         self.assertTrue(requires_mapping(100))
+        self.assertFalse(is_later_draw_candidate(60))
+        self.assertTrue(is_later_draw_candidate(100))
         with self.assertRaises(ValueError):resolve_ids(b"",set(range(100,117)),72)
 
     def test_private_output_refuses_existing_destination(self):
