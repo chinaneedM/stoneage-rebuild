@@ -61,3 +61,11 @@ Palet_1原SHA为 `32870080c47537a59beaf770b6df7bd79820fd52a23825058460900494f0b4
 DD-030新作简体中文、DD-028本体/活动任务四档、Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、整体percent=null全部维持。停止本轮色板/投影helper扩展，不回退无限文本资料轮转。
 
 本轮私人PNG与ZIP均已成功持久保存，原路径本地身份已应用。PNG69799B/SHA `0ca76269389f2429ab0d910b8352dfb95fafefef18b4d36465e2d8535489707f`，ZIP3356562B/SHA `fa296ad8e5afb9065fd8a7894fed4f783ad6f393901509f8491383c56a9ee285`。本轮没有对这两个新交付再次完整回读，不冒称新一轮Artifact/Library回读验收；SCENE02原载体的既有持久副本完整回读仍保留为已验事实。私人文件ID不写公开Git。
+
+## 候选/内容主线的实际后验验收
+
+候选 `53f2e0455802458c902f90f3a330c4626b14b90a` / tree `5f164c343f595d2a40b6a7fc63355ceaa87d8410` 的11项Actions全部实际completed/success。专用观察器run40597073136/job122515578628日志明确59 Python tests/OK、Node合成浏览器和离线安全PASS。通过 [PR #15](https://github.com/chinaneedM/stoneage-rebuild/pull/15) 合入main `9d1b077a4cbc893b01e333ecaa72a4c49683fc41`，父提交是原main9cdac173与候选53f2e045，tree与候选相同。
+
+该内容主线11项Actions也全部实际completed/success；专用观察器run40597200252亦明确59项通过，Stage A run40597200448成功。22个运行的真实ID、名称、HEAD和状态全部固定进PUBLICATION。仅9个预期代码/测试/文档/派生路径变化；五份大历史文件原样，README89682B旧全文前缀完整。公开源码/原样源报告与本地验收字节一致，没有原商业载荷或私钥。
+
+本追加回执与PUBLICATION补记不改代码，其自身CI不预支成功；父内容门槛与本轮真实像素/目视是分别核实的事实。SCENE-ROOM-OBSERVATION-04仍为下一最高，原运行时调色板/同建遮挡/可操作世界和整体percent=null不变。
