@@ -667,3 +667,8 @@ The 2.66 MB historical `docs/CURRENT-STATE.md` is still preserved byte-for-byte.
 ### 2026-10-27 — R38原同包REAL文件头与三图偏移容量验证
 
 [文件头规格](docs/specs/STONEAGE-ALBUM-REAL-HEADER-R38.md)与[连续性补记](docs/continuity/STONEAGE-ALBUM-REAL-R38-20261027.md)：原RAR4目录7954头全走、184个HTTP206范围/12,013,836B无损有限源，确认已有社区混合2.5同目录唯一`real_15.bin`文件头声明763,908,374B解压、338,458,942B压缩、RAR4 method53。R37三图物理7246/7247/7248对应ADRN解压地址26119737起的三个连续有界区间，全部落入该文件头声明大小。**只验证索引容量关系，尚未读取任何该REAL文件内RD头、图像块或像素**，不能将压缩RAR物理Range直接当图像偏移，也不认证官方同部署构建。R38原source Actions40422947999实际成功，原源报告和负面限制永久入库；未额外下载338MB压缩源。止于证据边界后回22域具名实体/NPC/本体任务主源队列，只有可验证有限REAL解压/私人保管条件才重开像素配对。Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、官方原客户端新增0，整体完成率仍未知。
+
+
+### 2026-10-27 — R39 原服务器三种名称的七条模板记录
+
+[原材料规格](docs/specs/STONEAGE-PRESERVED-PET-TEMPLATE-MATERIAL-R39.md) / [续接记录](docs/continuity/STONEAGE-PET-TEMPLATE-R39-20261027.md)：从同社区混合保存包有限实取原配置与宠物模板，完整SHA/CRC吻合；“烏力/烏力烏力/烏力斯坦”对应7条原位置，图形字段分别100250/100251/100252。烏力斯坦4模板中一条标志0、其余1，不能按名称合并或任选标准模板。此为社区原始文件的有限字段事实，不是官方初代物种主表、原服务器运行或客户端同部署认证；相册头像字段与动画图形字段分别保留。source40449204618真实成功，原样派生JSON与独立ZIP来源链永久保存，原整表/商业载荷不公开。NEXT有限同保存包三图形字段→原SPR内容40；取源受限即回22域NPC/本体任务，不扩大REAL下载。Stage A/B/wiki/R79及未知整体百分比保持，完整CURRENT历史不变。

@@ -1,0 +1,22 @@
+name: Verify preserved original three-name server template material R39
+on:
+  push:
+    branches: ['agent/preserved-pet-template-material-r39-20261027', main]
+    paths:
+      - tools/stoneage*pet_template*r39.py
+      - tests/test_stoneage*pet_template*r39.py
+      - research/recovered/STONEAGE-PRESERVED-PET-TEMPLATE*R39.json
+      - .github/workflows/verify-stoneage-pet-template-r39.yml
+permissions:
+  contents: read
+jobs:
+  original-template-offline:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install rarfile==4.2
+      - run: python -m unittest -v tests.test_stoneage_preserved_pet_template_r39 tests.test_stoneage_pet_template_material_r39
+      - run: python -m tools.stoneage_pet_template_material_r39
