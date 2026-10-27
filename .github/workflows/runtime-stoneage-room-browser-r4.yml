@@ -1,0 +1,45 @@
+name: Prepare pinned Chromium runtime for private room observation R4
+on:
+  push:
+    branches: [agent/scene-room-browser-runtime-r4-20261028]
+permissions:
+  contents: read
+jobs:
+  browser-runtime:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm install --prefix /tmp/stoneage-browser playwright@1.62.1
+      - run: /tmp/stoneage-browser/node_modules/.bin/playwright install --only-shell chromium
+      - name: Qualify runtime without original game content
+        run: |
+          node - <<'JS'
+          const fs=require('fs');
+          const {chromium}=require('/tmp/stoneage-browser/node_modules/playwright');
+          (async()=>{
+            const b=await chromium.launch({headless:true,args:['--no-sandbox']});
+            const p=await b.newPage();
+            await p.setContent('<button id="b">runtime probe</button>');
+            await p.click('#b');
+            fs.writeFileSync('/tmp/stoneage-browser-runtime-r4.json',JSON.stringify({
+              schema:'stoneage.browser_runtime.r4',playwright:'1.62.1',
+              chromium:b.version(),synthetic_button_click:true,
+              original_game_content_loaded:false,original_world_entered:false
+            },null,2));
+            await b.close();
+          })().catch(e=>{console.error(e);process.exitCode=1});
+          JS
+      - run: tar -C "$HOME/.cache" -czf /tmp/stoneage-browser-runtime-r4.tar.gz ms-playwright
+      - run: sha256sum /tmp/stoneage-browser-runtime-r4.tar.gz /tmp/stoneage-browser-runtime-r4.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: stoneage-private-observation-browser-runtime-r4
+          path: |
+            /tmp/stoneage-browser-runtime-r4.tar.gz
+            /tmp/stoneage-browser-runtime-r4.json
+          compression-level: 0
+          retention-days: 7
+          if-no-files-found: error
