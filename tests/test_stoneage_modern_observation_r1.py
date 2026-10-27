@@ -128,6 +128,17 @@ class ModernObservationR1(unittest.TestCase):
         self.assertIn("JP_JSS", html)
         self.assertIn("KR_KOREA", html)
 
+    def test_source_bound_diagnostic_click_and_sha_guard_are_present(self):
+        html = VIEWER.read_text(encoding="utf-8")
+        self.assertIn('id="mapmeta"', html)
+        self.assertIn('crypto.subtle.digest("SHA-256"', html)
+        self.assertIn('m.source_version_role!=="LATER_RECOVERED"', html)
+        self.assertIn('m.original_game_world_entered!==false', html)
+        self.assertIn('server?c.event_id!==null', html)
+        self.assertIn('mapDiagnostic.cells[y*w+x]', html)
+        self.assertIn('mapDiagnostic&&selectedCell', html)
+        self.assertNotIn('fetch(', html)
+
     def test_report_zero_files_rejected(self):
         with self.assertRaises(ValueError): report("TW_WAEI_1_0", [])
 

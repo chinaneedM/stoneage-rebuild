@@ -84,3 +84,9 @@ python -m tools.stoneage_private_region_diagnostic_r1 \\
 ```
 
 将私人生成的`tile-id-diagnostic.png`载入现代观察台地图输入框，只能作为**真实map单元数据的编号和对象/事件分布诊断**。GitHub本身并无当前轮持久挂载的完整商业地图载体，本轮9项独立合成负例测试不等于已经利用真实私有地图作出首张原场景图。下一阶段仍必须建立逻辑ID→同版原位图原图像及真实绘制规则的SHA级联接（见`docs/specs/STONEAGE-SCENE-OBSERVATION-CARRIER-PRIORITY-R1.md`）。
+
+## 私人地图诊断图可点击查询（PNG与JSON必须同源）
+
+本地浏览器选择`tile-id-diagnostic.png`作为地图，再选择它同目录的`source-manifest.json`作为地图诊断清单；代码校验schema、`LATER_RECOVERED`、窗口坐标、逐格 uint16 地形/物件/事件编号以及LS2MAP事件层确实为`null`，并使用浏览器 WebCrypto 校验**选择的PNG字节SHA256**与清单一致，失败直接拒绝绑定。验证通过后，点击画布显示所指单元`x/y/tile_id/object_id/event_id`并画出框选位置。更改地图文件或手工改地区标签会取消绑定。
+
+这里的本地SHA一致只说明 **PNG 与其诊断清单匹配**，不是SHA单独证明商业原载体来源；真实地图源资格来自CLI上一阶段的`Recovered25RegionPayloadSource`全源SHA校验。用户本机未加载原盘与地图时，只能测试合成数据及PNG/元数据检查，不能声称完成原本场景实拍或真实客户端操控。

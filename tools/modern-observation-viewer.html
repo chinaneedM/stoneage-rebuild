@@ -65,6 +65,9 @@ audio{width:100%}
 <label for="floor">本地地图 PNG（可选）</label>
 <p class="small">若导入 tile-id-diagnostic.png：这是已校验地图编号生成的人工颜色诊断图，不是原始地形贴图、原场景投影或当年游玩截图。</p>
 <input id="floor" type="file" accept=".png,image/png">
+<label for="mapmeta">地图编号诊断清单 JSON（可选，仅适用于后期保存载体）</label>
+<input id="mapmeta" type="file" accept=".json,application/json">
+<p class="small">仅当本地图的SHA256与清单匹配后，可点击图中单元读取tile、object和event数值。清单不会使合成色块变成原版画面。</p>
 <label for="actor">本地人物帧 PNG（可多选）</label>
 <input id="actor" type="file" accept=".png,image/png" multiple>
 <label for="pet">本地宠物帧 PNG（可多选）</label>
@@ -84,6 +87,7 @@ audio{width:100%}
 const byId=id=>document.getElementById(id);
 const canvas=byId("scene"), ctx=canvas.getContext("2d");
 let map=null,character=[],pet=[],sounds=null, urls=[];
+let mapFile=null,mapDiagnostic=null,selectedCell=null;
 let x=400,y=320,frames=0,lastTick=0,playing=true;
 const dimensions={w:800,h:600};
 function revokeAll(){
@@ -98,6 +102,8 @@ function status(){
     场景坐标:"人工研究演示，非游戏真实坐标",
     原始文件版本鉴真:"仅手动选择；须外部 SHA 和原盘来源核验",
     地图:map?"本地 PNG 预览":"合成网格",
+    地图编号证据:mapDiagnostic?"本地诊断清单SHA256已匹配，来源仍为LATER_RECOVERED":"未绑定经验证的诊断清单",
+    选中单元:selectedCell,
     人物帧数:character.length,宠物帧数:pet.length,
     动作时序:"180毫秒/帧，研究工具默认，不代表原始游戏",
     声音事件绑定:"未知",文字区域版本:"未自动转换"
@@ -114,7 +120,7 @@ async function images(event,slot){
   if(chosen.length>32){alert("单组最多读取32帧");return;}
   try{
     const src=await Promise.all(chosen.map(readImage));
-    if(slot==="map")map=src[0]||null;
+    if(slot==="map"){map=src[0]||null;mapFile=chosen[0]||null;mapDiagnostic=null;selectedCell=null;byId("mapmeta").value="";}
     else if(slot==="character")character=src;
     else pet=src;
   }catch(error){alert(error.message);}
@@ -142,6 +148,13 @@ function draw(){
   const p=pet.length?pet[frames%pet.length]:null;
   sprite(p,Math.min(775,x+72),Math.min(583,y+28),100,"宠");
   sprite(a,x,y,114,"人");
+  if(mapDiagnostic&&selectedCell){
+    const [w,z]=mapDiagnostic.viewport_dimensions;
+    const [x1,y1]=mapDiagnostic.viewport_inclusive;
+    ctx.strokeStyle="#ffffff";ctx.lineWidth=3;
+    ctx.strokeRect((selectedCell.x-x1)*800/w+1,(selectedCell.y-y1)*600/z+1,
+                   800/w-2,600/z-2);
+  }
   ctx.fillStyle="rgba(13,21,25,.83)";ctx.fillRect(0,0,800,34);
   ctx.fillStyle="#fff";ctx.textAlign="left";ctx.font="15px sans-serif";
   ctx.fillText("离线素材观察 · 非原版游戏运行 · 移动为人工示意",15,23);
@@ -156,10 +169,65 @@ window.addEventListener("keydown",event=>{
   if(["SELECT","INPUT","TEXTAREA"].includes(document.activeElement.tagName))return;
   const name=keys[event.key];if(name){event.preventDefault();move(...direction[name]);}
 });
+async function loadMapDiagnostic(event){
+  mapDiagnostic=null;selectedCell=null;
+  const file=event.target.files&&event.target.files[0];
+  if(!file){status();return;}
+  try{
+    if(!mapFile||!map)throw Error("请先选择相应的诊断PNG。");
+    if(file.size>800000)throw Error("诊断清单过大。");
+    const m=JSON.parse(await file.text());
+    if(m.schema!=="stoneage.private_recovered25_map_cell_diagnostic.r1"||
+       m.source_version_role!=="LATER_RECOVERED"||m.world_profile!=="recovered25"||
+       m.source_artwork_rendered!==false||m.original_game_world_entered!==false)
+      throw Error("仅接受已声明为非原版像素的后期保存地图诊断清单。");
+    if(!/^[0-9a-f]{64}$/.test(m.source_payload_sha256)|| !/^[0-9a-f]{64}$/.test(m.diagnostic_png_sha256))
+      throw Error("SHA256字段无效。");
+    const [w,z]=m.viewport_dimensions||[];
+    if(!Number.isInteger(w)||!Number.isInteger(z)||w<1||z<1||w>64||z>64||
+       !Array.isArray(m.cells)||m.cells.length!==w*z)
+      throw Error("诊断网格尺寸或单元数量不符。");
+    const [x1,y1,x2,y2]=m.viewport_inclusive||[];
+    if(![x1,y1,x2,y2].every(Number.isInteger)||x2-x1+1!==w||y2-y1+1!==z)
+      throw Error("源地图裁剪坐标不符。");
+    const server=m.source_kind==="SERVER_LS2MAP_TWO_PLANE"&&
+                 m.event_plane_status==="ABSENT_IN_LS2MAP_WORLD_EVENT_LAYER_SEPARATE";
+    const client=m.source_kind==="CLIENT_DAT_THREE_PLANE"&&
+                 m.event_plane_status==="RECOVERED_CLIENT_DAT";
+    if(!server&&!client)throw Error("地图来源类型/事件层证据不符。");
+    const validId=n=>Number.isInteger(n)&&n>=0&&n<=65535;
+    for(let i=0;i<m.cells.length;i++){
+      const c=m.cells[i];
+      if(!c||c.x!==x1+i%w||c.y!==y1+Math.floor(i/w)||
+         !validId(c.tile_id)||!validId(c.object_id)||
+         (server?c.event_id!==null:!validId(c.event_id)))
+        throw Error("逐格编号或缺失事件层的含义不符。");
+    }
+    if(!globalThis.crypto?.subtle)throw Error("当前浏览器无法离线验证SHA256，请使用具备WebCrypto的浏览器。");
+    const hash=await crypto.subtle.digest("SHA-256",await mapFile.arrayBuffer());
+    const actual=Array.from(new Uint8Array(hash),b=>b.toString(16).padStart(2,"0")).join("");
+    if(actual!==m.diagnostic_png_sha256)throw Error("所选地图PNG与清单摘要不一致。");
+    mapDiagnostic=m;
+    byId("profile").value="LATER_RECOVERED";
+  }catch(error){alert("清单无法认证："+error.message);}
+  status();draw();
+}
+byId("mapmeta").onchange=loadMapDiagnostic;
+canvas.addEventListener("click",event=>{
+  if(!mapDiagnostic)return;
+  const rect=canvas.getBoundingClientRect();
+  const px=(event.clientX-rect.left)*canvas.width/rect.width;
+  const py=(event.clientY-rect.top)*canvas.height/rect.height;
+  const [w,z]=mapDiagnostic.viewport_dimensions;
+  const x=Math.min(w-1,Math.max(0,Math.floor(px/canvas.width*w)));
+  const y=Math.min(z-1,Math.max(0,Math.floor(py/canvas.height*z)));
+  selectedCell=mapDiagnostic.cells[y*w+x];
+  status();draw();
+});
 byId("floor").onchange=e=>images(e,"map");
 byId("actor").onchange=e=>images(e,"character");
 byId("pet").onchange=e=>images(e,"pet");
-byId("profile").onchange=status;
+byId("profile").onchange=()=>{if(mapDiagnostic&&byId("profile").value!=="LATER_RECOVERED"){mapDiagnostic=null;selectedCell=null;byId("mapmeta").value="";}status();};
 byId("wav").onchange=event=>{
   if(sounds)URL.revokeObjectURL(sounds);
   byId("audio").pause();byId("audio").removeAttribute("src");byId("audio").load();
