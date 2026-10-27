@@ -29,3 +29,14 @@
 `SCENE-RESOURCE-OBSERVATION-02`：取得可持久访问的已SHA固定后代地图和ADRN/REAL真实字节，在私有目录实际生成**一个**小视口的候选原图并由观察者真正查看；若缺持久原载体、同版绘图选择、调色板与透明语义，分别标OPEN，不得让合成清单代替源事实。同时不放弃原版客户端在独立ACP950/8bpp/输入/无外网+回环虚拟机中实现可操作原画面的最终目标。不得回退无限制搜集NPC文章，也不将地图号码覆盖看作已恢复826张原图场景。
 
 保持Stage A7 PARTIAL+2 OPEN、Stage B/wiki GATED、R79 PAUSED_NON_BLOCKING、DD-028本体/活动任务分离、DD-030默认简体，以及整体复原百分比null。
+
+
+## 主线Stage A前缀回归、失败和修复后验（同日追加，不改旧记录）
+
+PR #13初次合并后的主线 `573046d14597c6b127b0a529fc66d4e8737169c9` 触发 Stage A历史验收 [40522528060](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40522528060)/job `122253159246` **failure**。其时测试41项以外的Stage A检查明确报 `historical prefix corrupted: README.md`；并非现代观察器源解析失败。后续更新主线README的 `fa4672afc1576c8d06aed4a3f3f8126b3547eb40` 再次触发 [40522914066](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40522914066)/job `122254546803` **failure**，报告 README原始固定前缀Git blob错配，并导致其余约束负控提前抛错。两次失败全部保留，绝不改成成功记录。
+
+独立查询历史锁定源Git blob `d362e5a1cc591158b049056b2bd438f2a64dabf5`，其UTF-8原始长度为**7369字节**。该原始文本在后续README的“最高优先级2026-10-27”插入后被提前打断，破坏Stage A日期保全验收。修复不是放宽锁或修改测试，而是**恢复精确原前缀，保留紧随其后的全部既有历史追加，再把本轮现代观察优先级、DD-030与已接受主线状态移动到文件末尾的同日补记**。修复主线HEAD `92763d50277614c78de11ca3b77512208340e8b6`、README blob `9f9d31e10e614c1b46a64f6311ff268b9a7837e2`。修复后独立回读确认 README从头精确匹配上述历史锁定文本。
+
+远端 [40523317171](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40523317171) Stage A **completed/success**。该同一修复HEAD所触发的另外9个历史回归（四村内景R34、相册R35/R36、战斗R17、TW85 SPR R28、TW1角色创建R16、混合保存全服R18、map110 R32、原具名实体R31）全部 `completed/success`。现代观察专用工作流在合并HEAD `573046d14597c6b127b0a529fc66d4e8737169c9` 的run [40522528120](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40522528120)实际通过；后续README前缀移位不改其源码与测试。
+
+本修复验证的是**历史证据不可覆写和CI保全**；不是原EXE选角/世界进入，也不是后期REAL像素在本机已实际看到。本回执仍是加法记录，不更改历史 CURRENT 大文件，也不提高Stage A七PARTIAL两OPEN/Stage B GATED/总体percent=null。
