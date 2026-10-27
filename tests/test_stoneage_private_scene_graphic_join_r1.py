@@ -125,7 +125,7 @@ class PrivateSceneGraphicJoinTests(unittest.TestCase):
         with self.assertRaises(ValueError):authenticate(self.real,4,original)
 
     def test_wrong_adnr_record_alignment(self):
-        with self.assertRaises(ValueError):resolve_ids(b"\\0"*79,{100},72)
+        with self.assertRaises(ValueError):resolve_ids(b"\0"*79,{100},72)
 
 if __name__=="__main__":
     unittest.main()
