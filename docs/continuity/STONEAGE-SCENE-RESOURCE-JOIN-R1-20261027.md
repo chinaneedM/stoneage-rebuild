@@ -12,7 +12,7 @@
 - tools/stoneage_dat_probe.py::load_adrn 证明 map_number 在80字节记录第76字节（little-endian uint32）；记录起始 bitmapno 与这个值不等价。同名编号必须保留所有出现，不能把碰撞代码中可能存在的末条规则擅自升级为图像显示规则。
 
 ## 本次代码与独立回归
-新增 tools/stoneage_private_scene_graphic_join_r1.py 和 tests/test_stoneage_private_scene_graphic_join_r1.py，更新现代观察器原有CI工作流。CLI先复用已鉴真的后期区域载荷物化功能，再对同保存来源的 AD RN/REAL **整文件尺寸+SHA256**进行严格检查；最多64×64地图格、最多16个候选图号，超出拒绝。来源为后代 LATER_RECOVERED，不得写成TW1_DIRECT。DAT必须保留事件层，LS2MAP事件层不能用零补造。
+新增 tools/stoneage_private_scene_graphic_join_r1.py 和 tests/test_stoneage_private_scene_graphic_join_r1.py，更新现代观察器原有CI工作流。CLI先复用已鉴真的后期区域载荷物化功能，再对同保存来源的 ADRN/REAL **整文件尺寸+SHA256**进行严格检查；最多64×64地图格、最多16个候选图号，超出拒绝。来源为后代 LATER_RECOVERED，不得写成TW1_DIRECT。DAT必须保留事件层，LS2MAP事件层不能用零补造。
 
 每个来源ID将按真实ADRN第76字节map_number查表；仅单一记录、图像尺寸正常、REAL区间有效、RD像素可解码时，向仓库外空的私人目录生成编号PNG。所出图像是**索引像素灰度预览**，没有原场景调色板、透明规则、等距地图坐标投影或真实绘制顺序。重复编号、无映射、特殊尺寸分别显式登记不擅选取、不虚构图像；目录已有文件拒绝写入。公开Git只保留源码、合成测试及有界文档，不上传商业PNG、REAL、声音或游戏原件。
 
@@ -36,3 +36,21 @@
 - 目前是“地图来源实际值 -> 图像容器来源记录 -> 可解码索引像素”的**研究工具接缝**，并非“实际游戏tile渲染”。碰撞属性的map_number分类不能当成历史draw选择规则。
 - NEXT SCENE-RESOURCE-OBSERVATION-02：从已保存的**同构建**绘制调用/原程序源证据中，验证一个tile/parts图号如何选择绘制的bitmap、图层、屏幕投影/透明/颜色；若缺同建证据就保留UNKNOWN，不从后代混包回填TW1。然后才在私人原盘可访问环境中实际生成一小片有真实图像的可视观察样本。
 - 本聊天公共容器没有已持续保管的0.76GB REAL原件，也没有运行中的原客户端或真实原服务；不得宣称已进入游戏。早先P3只目视原登录面板。Stage A7 PARTIAL+2 OPEN、Stage B/wiki GATED、R79暂停、DD-028任务本体/运营活动四档与整体恢复百分比null都未改变。
+
+
+## 2026-10-27｜后代源码独立审查：绘制候选与碰撞候选不能合并
+
+独立复核另一个早已在项目 SOURCE-REGISTRY-RESOURCE-CONTAINERS-R1.md 登记为 C/LINEAGE 的后代公开源码存档：BismarckDD/stoneage Git commit 999ffdf1d220ec6666eb65339180689c9caf1876（并不是台湾1.0实际程序的同SHA源代码，也未证明为本次mixed25二进制对应build）。
+
+- client/stoneage/system/map.cpp 行约916–984的 drawMap 分支：tile和parts只有在编号大于 CG_INVISIBLE 时才进入图像显示路径；较小的20–39以及40–59分别落在环境音与BGM触发逻辑，而非普通地形PNG。
+- client/stoneage/system/map.cpp 行约894–895及917起：使用 SURFACE_WIDTH/SURFACE_HEIGHT 的斜向坐标与对角顺序推进，parts通过 realGetNo 取物理图号，再查图尺寸、偏移并走 setPartsPrio。不足以证明现代视口里的具体投影、遮挡或透明像素复现。
+- client/stoneage/system/loadrealbin.cpp 行约188–209及336–354：在该源码配置中ADRN属性 bmpnumber（与恢复的map_number字段同型）映射到物理 bitmapno；映射表赋值可能遇到同键更新，也存在特定后期宏/编号例外。因此仅是**后代源代码中的候选选图语义**，不能将本包514次重复图号全部按末条规则自动认证。
+
+据此已把新增探针收紧：**只对大于99的tile/parts编号实际导出索引图像**；碰撞属性另含60–79，但专列 special_collision_ids_not_drawn，不再将其误作已经被原地图绘制的贴图。报告的draw_rule_grade为 DESCENDANT_SOURCE_LINEAGE_NOT_RECOVERED25_SAME_BUILD，物理draw选择、原版色板/透明/景深依然OPEN。新增反例测试断言60/79不能作为直接绘制候选，同时保留此前map number覆盖与重复记录事实。
+
+来源指针：
+- https://github.com/BismarckDD/stoneage/blob/999ffdf1d220ec6666eb65339180689c9caf1876/client/stoneage/system/map.cpp
+- https://github.com/BismarckDD/stoneage/blob/999ffdf1d220ec6666eb65339180689c9caf1876/client/stoneage/system/loadrealbin.cpp
+- https://github.com/BismarckDD/stoneage/blob/999ffdf1d220ec6666eb65339180689c9caf1876/client/stoneage/systeminc/map.h
+
+本次新版等价合成单测再次13项通过；真实保存包来源像素、实际浏览器观察和GitHub Actions完成状态仍按实际单独标注，不预报成功。
