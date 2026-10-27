@@ -62,6 +62,9 @@ def validate(d):
     require(len(ranges)==184 and
             sum(v["bytes"] for v in ranges)==r["actual_range_bytes"]<=16*1024*1024,
             "original source range conservation")
+    require(ranges[0]=={"part":1,"start":0,"end":65535,"bytes":65536,
+            "sha256":"f745aa227fe796fa38c1257879c67ed72e2d0d308e0ea7ee462dd57667be9b22"},
+            "known original first HTTP206 range SHA differs")
     seen=set()
     for q in ranges:
         require(set(q)=={"part","start","end","bytes","sha256"} and
@@ -101,6 +104,7 @@ def validate(d):
                  "original_dialogue_or_script_body_published"):
         require(mat[flag] is False,"source-to-gameplay or script publication promotion: "+flag)
     require(mat["verified_base_game_quests_added"]==0,"unknown quest origin promoted")
+    require(len(mat["selected_creation_occurrences"])==MAX_SELECTED,"all first three original create slots conserved")
     entries=[]
     for i,rec in enumerate(mat["selected_creation_occurrences"]):
         require(rec["source_block_order"]==i and rec["original_service_executed"] is False and
