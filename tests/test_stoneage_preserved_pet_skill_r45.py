@@ -27,8 +27,11 @@ class OriginalPetSkillParser(unittest.TestCase):
  def test_exact12_fields_required(self):
   with self.assertRaises(ValueError):parse_table(row(1)+b',extra')
  def test_bad_callback_and_number_rejected(self):
-  with self.assertRaises(ValueError):parse_table(row(1,callback='unverified'))
+  with self.assertRaises(ValueError):parse_table(row(1,callback='invalid callback'))
   with self.assertRaises(ValueError):parse_table(row(1,cost='x'))
+ def test_enemy_callback_in_same_table_is_not_rejected(self):
+  rows=parse_table(row(500,callback='ENEMYSKILL_ReLife')+b'\n'+row(501,callback='ENEMYSKILL_ReHP'))
+  self.assertEqual([r['callback'] for r in rows],['ENEMYSKILL_ReLife','ENEMYSKILL_ReHP'])
  def test_original_physical_line_offset(self):
   prefix=b'# comment\r\n\r\n';r=parse_table(prefix+row(5)+b'\r\n')[0]
   self.assertEqual((r['line'],r['offset'],r['body']),(3,len(prefix),row(5)))

@@ -47,7 +47,7 @@ def parse_table(raw):
    numbers={k:int(fields[6+i]) for i,k in enumerate(INT_NAMES)}
    need(0<=numbers['ID']<=1000000 and numbers['ID'] not in ids,'duplicate or invalid original skill ID')
    ids.add(numbers['ID']);callback=fields[2].decode('ascii','strict')
-   need(re.fullmatch(r'PETSKILL_[A-Za-z_0-9]+',callback) is not None,'unqualified skill callback token')
+   need(re.fullmatch(r'[A-Za-z_][A-Za-z_0-9]*',callback) is not None,'unqualified skill callback token')
    rows.append({'line':line_no,'offset':offset,'body':body,'fields':fields,'numbers':numbers,'callback':callback})
   offset+=len(line)
  return rows
