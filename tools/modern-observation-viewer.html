@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src blob:; media-src blob:; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>石器时代｜现代系统原始素材观察台</title>
+<style>
+:root{color-scheme:dark}
+body{background:#15191c;color:#e5e9e5;font:15px/1.6 system-ui,"Microsoft YaHei","Noto Sans SC",sans-serif;margin:0;padding:20px}
+main{max-width:1160px;margin:auto}
+h1{font-size:23px;margin:0 0 6px}
+h2{font-size:16px;margin:0 0 12px}
+p{margin:8px 0}
+.small{color:#b0bbc0;font-size:13px}
+.notice{background:#303a40;border-left:3px solid #f5b76d;padding:10px 14px;margin:12px 0}
+.layout{display:grid;grid-template-columns:minmax(0,800px) 300px;gap:18px}
+@media(max-width:900px){.layout{grid-template-columns:1fr}}
+section{background:#20282c;border:1px solid #344148;border-radius:10px;padding:14px;margin-bottom:12px}
+canvas{display:block;width:100%;max-width:800px;aspect-ratio:4/3;image-rendering:pixelated;background:#18252d;border:1px solid #5a6870}
+label{display:block;margin:9px 0 3px}
+input,select,button{font:inherit;color:inherit}
+input[type=file],select{max-width:100%;width:100%;box-sizing:border-box}
+button{background:#334449;border:1px solid #84969a;padding:5px 13px;border-radius:6px;cursor:pointer}
+button:focus-visible{outline:2px solid #e3ac65}
+.buttons{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:12px;line-height:1.45}
+audio{width:100%}
+</style>
+</head>
+<body>
+<main>
+<h1>石器时代 · 现代系统观察台</h1>
+<p class="notice"><strong>研究工具，不是原版游戏。</strong>这里的移动、人物位置和帧速是人工演示；只有你在本机选择并独立校验的资源才可能属于原始客户端。未进入历史服务器、未复现原战斗或任务。</p>
+<div class="layout">
+<div>
+<section>
+<canvas id="scene" width="800" height="600" aria-label="本地资源观察区域"></canvas>
+<div class="buttons">
+<button id="up" type="button">↑ 上移</button><button id="left" type="button">← 左移</button>
+<button id="down" type="button">↓ 下移</button><button id="right" type="button">→ 右移</button>
+<button id="center" type="button">居中</button><button id="pause" type="button">暂停动画</button>
+</div>
+<p class="small">方向键或 WASD 可移动观察标记。位置不代表原地图坐标；没有地图资源时仅显示合成网格。</p>
+</section>
+<section>
+<h2>音效观察（用户本机文件）</h2>
+<input id="wav" type="file" accept=".wav,audio/wav" aria-label="选择已校验的本地 WAV">
+<audio id="audio" controls preload="none"></audio>
+<p class="small">声音由你手动播放，不自动推断村庄、战斗、宠物等触发事件。</p>
+</section>
+</div>
+<div>
+<section>
+<h2>来源与语言</h2>
+<label for="profile">资源归属（手动声明，未自动认证）</label>
+<select id="profile">
+<option value="TW_WAEI_1_0">台湾 Waei/JSS 1.0</option>
+<option value="CN_MAINLAND">大陆版本（需标具体构建）</option>
+<option value="JP_JSS">日本版本（需标具体构建）</option>
+<option value="KR_KOREA">韩国版本（需标具体构建）</option>
+<option value="LATER_RECOVERED">后期社区保存材料</option>
+</select>
+<p class="small">观察工具界面固定简体中文（zh-CN）。原资源中的繁体、日文、韩文或旧编码不在此自动翻译，原文字节须保留。</p>
+<label for="floor">本地地图 PNG（可选）</label>
+<input id="floor" type="file" accept=".png,image/png">
+<label for="actor">本地人物帧 PNG（可多选）</label>
+<input id="actor" type="file" accept=".png,image/png" multiple>
+<label for="pet">本地宠物帧 PNG（可多选）</label>
+<input id="pet" type="file" accept=".png,image/png" multiple>
+<p class="small">不内置任何原游戏图片、音频或服务器数据；所有文件仅在当前浏览器会话内读取，不上传。</p>
+</section>
+<section>
+<h2>观察状态与边界</h2>
+<pre id="status" role="status"></pre>
+</section>
+</div>
+</div>
+</main>
+<script>
+(() => {
+"use strict";
+const byId=id=>document.getElementById(id);
+const canvas=byId("scene"), ctx=canvas.getContext("2d");
+let map=null,character=[],pet=[],sounds=null, urls=[];
+let x=400,y=320,frames=0,lastTick=0,playing=true;
+const dimensions={w:800,h:600};
+function revokeAll(){
+  for(const u of urls)URL.revokeObjectURL(u);
+  urls=[];
+}
+function status(){
+  byId("status").textContent=JSON.stringify({
+    界面语言:"简体中文（zh-CN）",
+    来源标签:byId("profile").selectedOptions[0].textContent,
+    原版游戏已启动:false,已进入原版世界:false,
+    场景坐标:"人工研究演示，非游戏真实坐标",
+    原始文件版本鉴真:"仅手动选择；须外部 SHA 和原盘来源核验",
+    地图:map?"本地 PNG 预览":"合成网格",
+    人物帧数:character.length,宠物帧数:pet.length,
+    动作时序:"180毫秒/帧，研究工具默认，不代表原始游戏",
+    声音事件绑定:"未知",文字区域版本:"未自动转换"
+  },null,2);
+}
+function readImage(file){
+  return new Promise((resolve,reject)=>{
+    const u=URL.createObjectURL(file); urls.push(u); const img=new Image();
+    img.onload=()=>resolve(img);img.onerror=()=>reject(new Error("无法解码 PNG："+file.name));img.src=u;
+  });
+}
+async function images(event,slot){
+  const chosen=Array.from(event.target.files||[]);
+  if(chosen.length>32){alert("单组最多读取32帧");return;}
+  try{
+    const src=await Promise.all(chosen.map(readImage));
+    if(slot==="map")map=src[0]||null;
+    else if(slot==="character")character=src;
+    else pet=src;
+  }catch(error){alert(error.message);}
+  status();draw();
+}
+function tileGrid(){
+  ctx.fillStyle="#20353a";ctx.fillRect(0,0,800,600);
+  ctx.strokeStyle="#3d5558";ctx.lineWidth=1;ctx.beginPath();
+  for(let i=0;i<=800;i+=40){ctx.moveTo(i+.5,0);ctx.lineTo(i+.5,600);}
+  for(let j=0;j<=600;j+=40){ctx.moveTo(0,j+.5);ctx.lineTo(800,j+.5);}
+  ctx.stroke();
+}
+function sprite(img,px,py,size,symbol){
+  if(img){const ratio=Math.min(size/img.width,size/img.height,2);
+    ctx.drawImage(img,Math.round(px-img.width*ratio/2),Math.round(py-img.height*ratio),
+                  Math.round(img.width*ratio),Math.round(img.height*ratio));}
+  else {ctx.fillStyle=symbol==="人"?"#e6c88f":"#acc6a6";ctx.fillRect(px-12,py-28,24,28);
+    ctx.fillStyle="#1e3031";ctx.textAlign="center";ctx.font="16px sans-serif";ctx.fillText(symbol,px,py-9);}
+}
+function draw(){
+  ctx.imageSmoothingEnabled=false;
+  if(map){ctx.clearRect(0,0,800,600);ctx.drawImage(map,0,0,800,600);}
+  else tileGrid();
+  const a=character.length?character[frames%character.length]:null;
+  const p=pet.length?pet[frames%pet.length]:null;
+  sprite(p,Math.min(775,x+72),Math.min(583,y+28),100,"宠");
+  sprite(a,x,y,114,"人");
+  ctx.fillStyle="rgba(13,21,25,.83)";ctx.fillRect(0,0,800,34);
+  ctx.fillStyle="#fff";ctx.textAlign="left";ctx.font="15px sans-serif";
+  ctx.fillText("离线素材观察 · 非原版游戏运行 · 移动为人工示意",15,23);
+}
+function move(dx,dy){x=Math.max(20,Math.min(780,x+dx));y=Math.max(50,Math.min(580,y+dy));draw();}
+const direction={up:[0,-24],down:[0,24],left:[-24,0],right:[24,0]};
+for(const [name,[dx,dy]] of Object.entries(direction))byId(name).onclick=()=>move(dx,dy);
+byId("center").onclick=()=>{x=400;y=320;draw();};
+byId("pause").onclick=()=>{playing=!playing;byId("pause").textContent=playing?"暂停动画":"播放动画";};
+const keys={ArrowUp:"up",ArrowDown:"down",ArrowLeft:"left",ArrowRight:"right",w:"up",a:"left",s:"down",d:"right"};
+window.addEventListener("keydown",event=>{
+  if(["SELECT","INPUT","TEXTAREA"].includes(document.activeElement.tagName))return;
+  const name=keys[event.key];if(name){event.preventDefault();move(...direction[name]);}
+});
+byId("floor").onchange=e=>images(e,"map");
+byId("actor").onchange=e=>images(e,"character");
+byId("pet").onchange=e=>images(e,"pet");
+byId("profile").onchange=status;
+byId("wav").onchange=event=>{
+  if(sounds)URL.revokeObjectURL(sounds);
+  byId("audio").pause();byId("audio").removeAttribute("src");byId("audio").load();
+  const file=event.target.files&&event.target.files[0];
+  sounds=file?URL.createObjectURL(file):null;if(sounds)byId("audio").src=sounds;
+  byId("audio").load();status();
+};
+window.addEventListener("beforeunload",()=>{revokeAll();if(sounds)URL.revokeObjectURL(sounds);});
+function loop(now){if(!lastTick)lastTick=now;if(playing&&now-lastTick>=180){frames++;lastTick=now;draw();}
+  requestAnimationFrame(loop);}
+status();draw();requestAnimationFrame(loop);
+})();
+</script>
+</body></html>

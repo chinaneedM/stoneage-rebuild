@@ -48,3 +48,8 @@ Local runtime session coordinator:
 The coordinator is the intended engine-facing application boundary for new game, continue/save, current-region materialization, ordinary one-cell movement, classic overlap Warp and recovered state-gated dialogue transitions. Ordinary movement still requires an explicit verdict from a validated collision provider; raw recovered map IDs are never treated as self-describing collision metadata.
 
 Current implementation seam: audit and then bind provenance-safe recovered25 collision verdict coverage for the 826-floor materializable runtime world. Rendering-engine selection remains deferred.
+
+
+## Research observer, not production engine (2026-10-27)
+
+The cross-region research viewer lives at `../tools/modern-observation-viewer.html` and targets modern browsers, not Win32 8-bit displays or a particular Asian ANSI codepage. Its default interface and the **future production game** language are Simplified Chinese (`zh-CN`), while the original evidence keeps regional source encodings and build provenance. The viewer's controllable mark and locally chosen frames are reference visualization only, not original StoneAge world entry or final game production. See DD-030 and `../docs/continuity/STONEAGE-MODERN-OBSERVATION-ZHCN-20261027.md`.
