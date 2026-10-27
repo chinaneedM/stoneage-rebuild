@@ -7,3 +7,7 @@ R38已按止点结束，最高回22域实体源。本轮交付是社区保存包
 详见`docs/specs/STONEAGE-PRESERVED-PET-TEMPLATE-MATERIAL-R39.md`与永久原样派生/来源收据。原artifact ZIP独立拉取并核SHA，原原件临时清理、不公开；没有整包重取、新官方客户端认证、原程序执行或同部署身份晋级。原相册face28001等、物理bitmap7246等、本轮服务器图形字段100250等分别保留，不互换。
 
 NEXT `PRESERVED_SERVER_GRAPHIC_TO_CLIENT_SPR_MATERIAL_40`：有界同包原spradrn_5.bin/spr_4.bin三图形整数→完整SPR帧材料；16MiB内不能完整原SHA验证则止点回22域NPC/本体任务源。不以相同名称/数字认证官方初代，不重开338MB REAL或显示驱动支线。Stage A7 PARTIAL+2 OPEN、B/wiki GATED、DD-028四档、R79暂停、P3E阻塞、总体百分比未知。候选/main Actions后验单独记录，未提前称成功。
+
+## 实际发布后验
+
+内容main `13d7d5c5f3701ad418067b9e0143a91d3b1638de` / tree `d6348e103f23f284eeb35df0d4893e37708a593f`已非强制快进合入。候选11项、主线11项Actions全部实际completed/success；专用候选40449640238/job122009080110、主线40449702510实际通过8项新检查及永久原样报告校验。本地28项相关回归通过。11发布路径逐字节/全部tree与本地一致，五历史文件完整原样、README完整前缀不变。实际run列表及全部派生SHA/Git blob见`research/recovered/STONEAGE-PRESERVED-PET-TEMPLATE-PUBLICATION-R39.json`。后验收据自身CI不提前声明；最高NEXT40及全部身份/运行边界保持。
