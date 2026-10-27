@@ -1,0 +1,93 @@
+{
+  "schema": "stoneage.scene03.publication.r3",
+  "date": "2026-10-28",
+  "timezone": "Asia/Shanghai",
+  "baseline": {
+    "main": "9cdac173493015e024fa1d36693394dcd0cc9863",
+    "tree": "a246adbb0ed38a18d66ff97fc69f542ee4a0bf4e",
+    "CURRENT_blob": "031c76a5a8e431f646853909bb2f2e11e6328cd2",
+    "CURRENT_bytes": 2680510,
+    "CURRENT_full_bytes_preserved": true,
+    "README_baseline_full_prefix_bytes": 89682
+  },
+  "derived_reports": [
+    {
+      "path": "research/recovered/STONEAGE-SCENE03-ACTUAL-PALETTE-LAYOUT-SOURCE-R3.json",
+      "bytes": 15402,
+      "sha256": "0e8858f5d8b417a664995b4270864324694d2a4e36bb17da09a7412b76d232dc",
+      "git_blob": "cdab701e693a3425072cf842f0386c8e49eb71b5"
+    },
+    {
+      "path": "research/recovered/STONEAGE-SCENE03-INDEPENDENT-PROJECTION-TRACE-R3.json",
+      "bytes": 2421,
+      "sha256": "8419fd7a022dcf1309757b4bd734e85c96bdb2141954950df060474a5739a2bc",
+      "git_blob": "532de5f1a4663290d4f793af1ea0fe3d43d275a5"
+    },
+    {
+      "path": "research/recovered/STONEAGE-SCENE03-INDEPENDENT-PIXEL-REPLAY-R3.json",
+      "bytes": 1446,
+      "sha256": "9879e5ed53ce12f13dd17eec4d1c062bd1d5bc725d092227abc2fa927e9e4ab0",
+      "git_blob": "e36ec8cba1cf230797e9cf58ad3451a04181735e"
+    }
+  ],
+  "private_deliverables": [
+    {
+      "basename": "stoneage-scene03-color-layout-candidate.png",
+      "bytes": 69799,
+      "sha256": "0ca76269389f2429ab0d910b8352dfb95fafefef18b4d36465e2d8535489707f",
+      "private_persistent_save_succeeded": true,
+      "local_metadata_applied": true,
+      "private_owner_file_ids_omitted_from_public_Git": true,
+      "independent_persistent_readback_this_unit": false
+    },
+    {
+      "basename": "stoneage-scene03-private-observation.zip",
+      "bytes": 3356562,
+      "sha256": "fa296ad8e5afb9065fd8a7894fed4f783ad6f393901509f8491383c56a9ee285",
+      "private_persistent_save_succeeded": true,
+      "local_metadata_applied": true,
+      "private_owner_file_ids_omitted_from_public_Git": true,
+      "independent_persistent_readback_this_unit": false
+    }
+  ],
+  "actual_outcomes": {
+    "new_original_carrier_network_download_bytes": 0,
+    "same_preserved_program_static_palette_table_selector_0_SAP_1": true,
+    "actual_same_carrier_SAP_files_verified": 16,
+    "source_unique_images": 8,
+    "original_map_cells": 9,
+    "tile_placements": 9,
+    "parts_placements": 3,
+    "RGBA_canvas_size": [
+      199,
+      166
+    ],
+    "candidate_visual_inspected": true,
+    "independent_compiled_lineage_anchor_trace_matches": true,
+    "independent_SAP_and_three_layer_RGBA_pixels_match": true,
+    "original_program_executed": false,
+    "original_world_entered": false,
+    "same_deployed_build_authenticated": false,
+    "actual_runtime_palette_observed": false,
+    "original_software_rendering_authenticated": false,
+    "public_proprietary_payload_added": false
+  },
+  "source_program_static_scope": "COMMUNITY_MIXED25_SAME_PRESERVED_CLIENT_SUBTREE_NOT_AUTHENTICATED_OFFICIAL_OR_RUNTIME_BUILD",
+  "source_geometry_scope": "BismarckDD/stoneage 999ffdf1d220ec6666eb65339180689c9caf1876 DESCENDANT_LINEAGE_CANDIDATE_NOT_RECOVERED25_BINARY",
+  "local_verification": {
+    "observer_python_tests": 59,
+    "Node_synthetic_browser": "PASS",
+    "Stage_A_tests": 30,
+    "actual_private_pixel_replay": "PASS",
+    "source_lineage_fragment_gpp_13_3_trace": "PASS"
+  },
+  "ci_observations": [],
+  "next": "SCENE-ROOM-OBSERVATION-04",
+  "stage": {
+    "A": "7_PARTIAL_2_OPEN",
+    "B": "GATED",
+    "wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  }
+}

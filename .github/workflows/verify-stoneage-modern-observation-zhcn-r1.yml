@@ -1,7 +1,7 @@
 name: Verify modern offline observation and Simplified Chinese default R1
 on:
   push:
-    branches: [main, agent/modern-observation-zhcn-r1-20261027, agent/private-scene-acceptance-r2-20261028]
+    branches: [main, agent/modern-observation-zhcn-r1-20261027, agent/private-scene-acceptance-r2-20261028, agent/scene-palette-projection-r3-20261028]
     paths:
       - ".github/workflows/verify-stoneage-modern-observation-zhcn-r1.yml"
       - "tools/stoneage_modern_observation_manifest.py"
@@ -18,6 +18,8 @@ on:
       - "tools/stoneage_private_scene_source_r2.py"
       - "tools/stoneage_private_scene_pixel_replay_r2.py"
       - "tests/test_stoneage_private_scene_source_r2.py"
+      - "tools/stoneage_private_scene_palette_r3.py"
+      - "tests/test_stoneage_private_scene_palette_r3.py"
       - "docs/continuity/STONEAGE-MODERN-OBSERVATION-ZHCN-20261027.md"
       - "docs/DESIGN-DECISIONS.md"
 permissions:
@@ -31,7 +33,7 @@ jobs:
       - name: Verify source-version isolation and original-client-claim boundaries
         run: |
           set -euo pipefail
-          python -m unittest -v tests.test_stoneage_modern_observation_r1 tests.test_stoneage_private_sprite_frame_export_r1 tests.test_stoneage_private_region_diagnostic_r1 tests.test_stoneage_private_scene_graphic_join_r1 tests.test_stoneage_private_scene_source_r2
+          python -m unittest -v tests.test_stoneage_modern_observation_r1 tests.test_stoneage_private_sprite_frame_export_r1 tests.test_stoneage_private_region_diagnostic_r1 tests.test_stoneage_private_scene_graphic_join_r1 tests.test_stoneage_private_scene_source_r2 tests.test_stoneage_private_scene_palette_r3
           python -m py_compile tools/stoneage_private_scene_pixel_replay_r2.py
       - name: Validate offline recovered25 image contact sheet in synthetic browser
         run: node tests/test_stoneage_scene_original_contact_sheet_r1.cjs
