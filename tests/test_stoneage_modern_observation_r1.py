@@ -93,7 +93,7 @@ class ModernObservationR1(unittest.TestCase):
         f = self.root / "broken.png"
         f.write_bytes(b"BAD!" + b"\x00" * 30)
         with self.assertRaises(ValueError): file_fingerprint(f, "map_png")
-        f.write_bytes(b"\\x89PNG\\r\\n\\x1a\\n" + b"\\x00\\x00\\x00\\x0dIHDR" + struct.pack(">II", 9000, 9000) + b"\\x08\\x00\\x00\\x00\\x00" + b"\\0" * 16)
+        f.write_bytes(b"\x89PNG\r\n\x1a\n" + b"\x00\x00\x00\x0dIHDR" + struct.pack(">II", 9000, 9000) + b"\x08\x00\x00\x00\x00" + b"\0" * 16)
         with self.assertRaises(ValueError): file_fingerprint(f, "map_png")
 
     def test_unsupported_suffix(self):
