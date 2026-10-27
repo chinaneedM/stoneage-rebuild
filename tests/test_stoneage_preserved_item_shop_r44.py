@@ -1,5 +1,7 @@
 import unittest
-from tools.stoneage_preserved_item_shop_r44 import arg_fields, inventory_tokens, expand_inventory, parse_items
+import hashlib
+from unittest.mock import patch
+from tools.stoneage_preserved_item_shop_r44 import arg_fields, inventory_tokens, expand_inventory, parse_items, derive
 from tools.stoneage_itemset_schema_probe import INDEX
 
 
@@ -49,5 +51,27 @@ class BoundedOriginalShop(unittest.TestCase):
   rows,count=parse_items(raw)
   self.assertEqual(count,1);self.assertEqual(rows[7][:2],(3,len(prefix)))
   self.assertEqual(rows[7][2],item(7))
+
+class FullSyntheticDerivation(unittest.TestCase):
+ def test_exact_preserved_relative_config_path_and_first_six_names(self):
+  # Synthetic source explicitly bypasses only the full-source SHA constants.
+  # It exercises the complete13252-row decoder and the path that failed in CI.
+  rows=[]
+  for i in range(1,13253):
+   fields=[b'0']*94
+   fields[0]=fields[1]='測試石'.encode('cp950')
+   fields[INDEX['id']]=str(i).encode()
+   rows.append(b','.join(fields))
+  members={'setup.cf':b'\n'.join(k+b'=data/itemset.txt' for k in
+     (b'itemset3file',b'itemset4file',b'itemset5file',b'itemset6file')),
+   'data/itemset.txt':b'\n'.join(rows),
+   'data/npc/my/shop/ACCESSORY1.arg':b'ItemList:1-8\nbuy_rate:2.5\n'}
+  pins={k:(len(v),hashlib.sha256(v).hexdigest()) for k,v in members.items()}
+  with patch('tools.stoneage_preserved_item_shop_r44.EXPECTED',pins):
+   result=derive(members)
+  self.assertEqual([r['item_id'] for r in result['selected_items']],[1,2,3,4,5,6])
+  self.assertEqual(result['rate_fields']['buy_rate']['raw_decimal'],'2.5')
+  self.assertIsNone(result['computed_runtime_prices'])
+  self.assertEqual(result['configured_itemset_keys']['itemset3file'],'data/itemset.txt')
 
 if __name__=='__main__':unittest.main()

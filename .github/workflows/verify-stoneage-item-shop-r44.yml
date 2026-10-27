@@ -1,0 +1,34 @@
+name: Verify bounded original item shop material R44
+on:
+  push:
+    branches: ['agent/item-material-r44-20261027', main]
+    paths:
+      - tools/stoneage_preserved_item_shop_r44.py
+      - tools/stoneage_item_shop_material_r44.py
+      - tests/test_stoneage_preserved_item_shop_r44.py
+      - tests/test_stoneage_item_shop_material_r44.py
+      - research/recovered/STONEAGE-PRESERVED-ITEM-SHOP-SOURCE-R44.json
+      - research/recovered/STONEAGE-PRESERVED-ITEM-SHOP-SOURCE-ATTEMPT1-R44.json
+      - .github/workflows/verify-stoneage-item-shop-r44.yml
+permissions:
+  contents: read
+jobs:
+  replay-source-qualified-metadata:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest -v tests.test_stoneage_preserved_item_shop_r44 tests.test_stoneage_item_shop_material_r44 tests.test_stoneage_quest_item_identity_probe tests.test_stoneage_itemset_schema_probe tests.test_stoneage_item_shop_model
+      - run: python -m tools.stoneage_item_shop_material_r44
+      - name: Refuse protected raw members in public Git
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import subprocess
+          denied={'ACCESSORY1.arg','itemset.txt','setup.cf'}
+          for p in subprocess.check_output(['git','ls-files','-z']).decode().split('\0'):
+              if p and Path(p).name in denied:
+                  raise SystemExit('Protected original member in Git: '+p)
+          PY

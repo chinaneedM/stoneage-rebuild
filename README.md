@@ -692,3 +692,8 @@ The 2.66 MB historical `docs/CURRENT-STATE.md` is still preserved byte-for-byte.
 ### 2026-10-27 — R43 相册224具名槽跨样本原资源整合
 
 [材料规格](docs/specs/STONEAGE-ALBUM-CROSSVERSION-MATERIAL-R43.md) / [连续性](docs/continuity/STONEAGE-ALBUM-CROSSVERSION-R43-20261027.md)：有限官方来源核查未取得新同构建主表后，直接联接既有原程序224相册名称槽与三份原资源目录，保留57内部空位。TW1命中120槽、与后两样本相同完整RD内容；CN5及patch各224槽/228引用，4逻辑键各两不同内容完整保留。576引用经独立SQLite全字段联接相同，未把后期名称回填为TW1原版物种认证，没有原像素/大包新下载。NEXT轮转一份有界物品/商店具名原数据44，Stage A/B/wiki/R79与未知整体完成率不变。
+
+
+### 2026-10-27 — R44 原商店参数的34个ID与6条具名物品模板
+
+[原材料规格](docs/specs/STONEAGE-PRESERVED-ITEM-SHOP-MATERIAL-R44.md) / [连续性](docs/continuity/STONEAGE-ITEM-SHOP-R44-20261027.md)：三件原文件全SHA/CRC吻合，原库存34编号全在同保存样本实际配置物品表；前6条含5个同名“合成兜 10”不同模板和一条“合成鎧 10”，全部原行位置/摘要保留。后代代码33条上限模拟会截断末项20905，但原服务器显示/交易未证。首轮路径断言错误、三件已取却派生未验的绿色run原样保留，修正source40495285257才内容成功；51本地检查及两独立下载ZIP来源链已核。不是官方初代物品/同部署认证，无原master/对白/程序公开。NEXT转宠物技能小原表45，Stage A/B/wiki/R79及整体百分比未知不变。

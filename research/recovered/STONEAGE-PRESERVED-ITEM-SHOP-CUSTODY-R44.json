@@ -1,0 +1,132 @@
+{
+  "schema": "stoneage.preserved_item_shop_custody.r44",
+  "date": "2026-10-27",
+  "startup_head": "31c8ad8ac413b347d40c8c8cc6edf418927a9374",
+  "startup_tree": "018f9328abf88d1c7d546e6e069f19c0213afebd",
+  "source_attempts": [
+    {
+      "run_id": 40494927383,
+      "job_id": 122157853861,
+      "head": "78de1b017984fa14f150cd36acdc8faa854eb550",
+      "workflow_job_observed": "completed/success",
+      "material_status": "NOT_ACQUIRED",
+      "actual_source_members_sha_crc_qualified": 3,
+      "derivation_error": {
+        "message": "actual configured itemset path",
+        "type": "ValueError"
+      },
+      "artifact_id": 12729663153,
+      "zip_bytes": 10811,
+      "zip_sha256": "99b609f252a849f7ee8ea2d9d4648ffe4a2a82507e87c93db964bd49c14570dd",
+      "independently_downloaded_zip_and_all_members_verified": true,
+      "raw_report": {
+        "path": "research/recovered/STONEAGE-PRESERVED-ITEM-SHOP-SOURCE-ATTEMPT1-R44.json",
+        "bytes": 40002,
+        "sha256": "e45275e8b20e499377d1a28aad80d79bf1e1533a5d9332ca76dbf81c36445172",
+        "git_blob": "d0f02c801cd4bc3a375409c2d92b1517a8839a68"
+      }
+    },
+    {
+      "run_id": 40495285257,
+      "job_id": 122159073826,
+      "head": "6b587550b806919ecfdcb55f82a11b67e8912eb4",
+      "workflow_job_observed": "completed/success",
+      "material_status": "THREE_ORIGINAL_MEMBERS_SHA_CRC_AND_FINITE_NAMED_INVENTORY_QUALIFIED",
+      "actual_source_members_sha_crc_qualified": 3,
+      "artifact_id": 12729803556,
+      "zip_bytes": 13825,
+      "zip_sha256": "b688b88b64eeefc0495b323bce506253bfd2b317b933def8b4a774a996da4e48",
+      "independently_downloaded_zip_and_all_members_verified": true,
+      "raw_report": {
+        "path": "research/recovered/STONEAGE-PRESERVED-ITEM-SHOP-SOURCE-R44.json",
+        "bytes": 57228,
+        "sha256": "1d825c30192b088f0b1f14aba1b2a306644b618be5a6d60bf5fa2e78595dab0e",
+        "git_blob": "4a11455885f4a6556349169732d02ec09f0f9925"
+      }
+    }
+  ],
+  "successful_raw_report_exactly_equal_to_timestamp_stripped_source_log": true,
+  "cross_attempt_consistency": {
+    "all186_range_identities_and_hashes_equal": true,
+    "all_three_original_member_pins_crc_and_compressed_hashes_equal": true,
+    "both_decompressors": "unar",
+    "independent_decompressor_claimed": false,
+    "each_attempt_range_bytes": 12144908,
+    "total_two_ci_attempt_bytes": 24289816
+  },
+  "local_attempt": {
+    "status": "PUBLIC_DOWNLOAD_LINK_UNAVAILABLE_IN_LOCAL_RENDERING",
+    "archive_range_bytes": 0,
+    "original_members_acquired": 0,
+    "global_absence_inferred": false
+  },
+  "raw_source_private_persistence": false,
+  "source_binary_or_full_master_in_public_git": false,
+  "new_official_clients": 0,
+  "old_master_and_configuration_evidence": {
+    "research/recovered/STONEAGE-QUEST-ITEM-CI-DERIVED-R1.json": {
+      "bytes": 16378,
+      "sha256": "9ee594a8f9871a675c320f30c3ea727bd6eb92e5fa34584a0078bc0d42480618",
+      "git_blob": "d0ac9e5f5d26db5afcee07119295fd05803011b9"
+    },
+    "research/recovered/STONEAGE-MIXED25-SERVER-FULL-SOURCE-R18.json": {
+      "bytes": 665112,
+      "sha256": "c7e2623fca1da65dee858782f6f1d14c82914d60f14a1643fa852532c5a6fb29",
+      "git_blob": "f4ac9b805724bcd847c9632cad3c35bc4309a526"
+    }
+  },
+  "preserved_history": {
+    "docs/CURRENT-STATE.md": {
+      "bytes": 2680510,
+      "sha256": "f02f85b837fc09973cb2eca33f7daf4db547a77cb35a81a9576c6308f70142c0",
+      "git_blob": "031c76a5a8e431f646853909bb2f2e11e6328cd2"
+    },
+    "docs/PROJECT-CONTINUITY-PROTOCOL-R1.md": {
+      "bytes": 10880,
+      "sha256": "c3a10d3a9dacf8b61c97a52d294582a2984b13b549f4f10d1375a6fffb53ff65",
+      "git_blob": "a064174339b7a4656efe00b4446a066fd7abf304"
+    },
+    "docs/DESIGN-DECISIONS.md": {
+      "bytes": 49898,
+      "sha256": "6d481f4eb0185ab0c8da34e697ae39f4137638d9484de4ed48d1875ec3af4f73",
+      "git_blob": "713caaecc6a43a92e5cb7f939954026b859bac20"
+    },
+    "docs/HISTORICAL-TIMELINE.md": {
+      "bytes": 730950,
+      "sha256": "7bc3fb586c23ff3c5fd0add689157c45e9e1b1cca001df84ad1dad9f850fc13c",
+      "git_blob": "91ca73105f26bf96aaa928519ae04942182e7b9b"
+    },
+    "docs/SOURCE-REGISTRY.md": {
+      "bytes": 1028196,
+      "sha256": "cddea82e5b51143e4107e9ed285f2acc04725a69dc929f0c432c1ceaebe20e7c",
+      "git_blob": "ee3b2d70dabedfe02e3761b3fdb25476a79e147c"
+    },
+    "docs/RESTORATION-ROADMAP-R2.md": {
+      "bytes": 482245,
+      "sha256": "830495a89612ceb54c0d8ebacd8710ceb28d7c1bfdecfc735239db76b6a1e5f8",
+      "git_blob": "c11eff237a8aaa1cc34488a6c3c7fcdd596f9ce2"
+    }
+  },
+  "source_extractor_and_schema_pins": {
+    "tools/stoneage_preserved_item_shop_r44.py": {
+      "bytes": 10003,
+      "sha256": "062b2c2efee37b59be0082ef81f09a348412e0d56b646bbcf2d26f5f0c3d7009",
+      "git_blob": "038bada86eb4ec8b6c8064d37e298d4d790635b8"
+    },
+    "tools/stoneage_native_album_source_r36.py": {
+      "bytes": 10961,
+      "sha256": "d7bfa7ade8e02c9441bdc4cadff7e460f3cf7c856b89e41cb1512db37d9c742d",
+      "git_blob": "056dea2ef2069504b89e123fe9b197fb4ae0b8f2"
+    },
+    "tools/stoneage_itemset_schema_probe.py": {
+      "bytes": 9033,
+      "sha256": "b4d7e53b7f1a56ce00b973723f0909e6e874ad95d94f978aee65e5479a560b6d",
+      "git_blob": "7a0e41c409d3f2dc18953cc79947612f5d9ed5d4"
+    },
+    "tools/stoneage_wayi85_sixpart_acquisition.py": {
+      "bytes": 10529,
+      "sha256": "052efd1b2735d097530816b3c57fb33e13f9b244b76391eeb60171d8063c0a53",
+      "git_blob": "a036aa38751dad9c3090b78e45b9089613048edf"
+    }
+  }
+}
