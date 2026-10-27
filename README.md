@@ -734,3 +734,25 @@ The merged observer provides a bounded **private** recovered25 map-ID → ADRN/R
 ### 2026-10-28｜SCENE03同保存原程序选色与真实彩色地图片段候选
 
 [颜色/排列回执](docs/continuity/STONEAGE-SCENE03-COLOR-LAYOUT-20261028.md)：直接复用已保管原载体，实际取16份SAP及同子树原EXE，发现程序表第0项静态引用指向Palet_1.sap，不能按编号猜Palet_0。原3×3的8张源图按有来源的自下向上行序、32/24锚点、有符号ADRN偏移和key0生成连续地面/三立体构件候选并已目视；独立源码坐标片段编译得到12个引用，独立SAP/RGBA实现重建三层像素完全相同。新增商业原包网络下载0B。**这是同保存源颜色和后代源码排列候选，尚非原版实拍、同建遮挡认证或可操作原世界。** 原SAP/程序/图像不入公开Git；NEXT为同一地图房间视口的实际镜头/图层观察04，Stage A/B/R79与整体百分比未知保持。
+
+
+### Current original-artwork room observer — SCENE04 (2026-10-28)
+
+The bounded 5×5 private room viewport for recovered map 1001 has been created,
+actually opened and interacted with in headless Chromium, and stored in the
+owner's private persistent Library. The source-verified 30 map placements
+include 28 supplied real-original image references and two clearly marked
+missing bitmap IDs (5009/5015); all eight existing source sprites and the
+previous SCENE03 3-layer image pixels were revalidated. Camera pan/zoom and
+layer toggles are *modern offline viewer* functions; no playable original world
+or original client in-world interaction was observed. The source is a community
+preserved mixed-2.5 specimen, **not** an authenticated original Taiwan-v1 build.
+
+See [source-safe dated SCENE04 checkpoint](docs/continuity/STONEAGE-SCENE04-ROOM-VIEWPORT-20261028.md)
+and [replay metadata](research/recovered/STONEAGE-SCENE04-ROOM-ACCEPTANCE-R4.json).
+Private archive, standalone HTML and real Chromium screenshot are retained
+outside the public Git repository, with complete post-upload Library readback
+hash verification. NEXT: only two source-backed missing bitmap companions from
+the already-preserved carrier, followed by original runtime camera/occlusion
+and playable-world entry as independently gated work. Stage A, Stage B and R79
+boundaries remain unchanged; overall restoration completion percentage is null.
