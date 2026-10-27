@@ -152,6 +152,8 @@ class ModernObservationR1(unittest.TestCase):
         self.assertIn('e.byte_length!==f.size', html)
         self.assertIn('hex!==e.sha256', html)
         self.assertIn('selectedFrameFiles[slot]!==selected', html)
+        self.assertIn('revision!==sourceRevision', html)
+        self.assertIn('byId("profile").onchange=()=>{sourceRevision++', html)
         self.assertIn('frameBindings.character', html)
         self.assertIn('frameBindings.pet', html)
         self.assertIn('后代地图与TW1帧人工拼合', html)
