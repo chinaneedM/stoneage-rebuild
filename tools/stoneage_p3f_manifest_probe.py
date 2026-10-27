@@ -126,6 +126,15 @@ def main() -> None:
         args.output.write_text(
             json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True) + "\n", encoding="utf-8"
         )
+        for row in result["cases"]:
+            print("P3F_CASE", json.dumps({
+                "layer": row["layer"],
+                "plain_acp": row["plain_x86"]["acp_before"],
+                "manifest_acp": row["embedded_zh_tw_manifest"]["acp_before"],
+                "plain_gdi_bpp": row["plain_x86"]["display_bpp"],
+                "manifest_gdi_bpp": row["embedded_zh_tw_manifest"]["display_bpp"],
+                "manifest_ddraw_bpp": row["embedded_zh_tw_manifest"]["ddraw_current"][2],
+            }, sort_keys=True))
         print("P3F_SYNTHETIC_MANIFEST_PROBE=", result["status"])
 
 
