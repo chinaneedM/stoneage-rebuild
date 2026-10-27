@@ -128,7 +128,7 @@ def derive(members):
   if key in ('itemset3file','itemset4file','itemset5file','itemset6file'):
    need(key not in config,'duplicate configured table key');config[key]=val.strip().decode('ascii','strict')
  need(set(config)=={'itemset3file','itemset4file','itemset5file','itemset6file'} and
-      set(config.values())=={'./data/itemset.txt'},'actual configured itemset path')
+      set(config.values())=={'data/itemset.txt'},'actual configured itemset path')
  fields=arg_fields(members['data/npc/my/shop/ACCESSORY1.arg'])
  need('itemlist' in fields,'actual shop inventory list absent')
  tokens=inventory_tokens(fields['itemlist']);rows,count=parse_items(members['data/itemset.txt'])
@@ -170,7 +170,9 @@ def main():
   'original_payload_or_dialogue_published':False,'receipt':{}}
  try:
   with tempfile.TemporaryDirectory(prefix='r44-private-') as temp:
-   members=acquire(Path(temp),report['receipt'],args.extractor);report['material']=derive(members)
+   members=acquire(Path(temp),report['receipt'],args.extractor)
+   report['status']='THREE_ORIGINAL_MEMBERS_ACQUIRED_DERIVATION_PENDING'
+   report['material']=derive(members)
    report['status']='THREE_ORIGINAL_MEMBERS_SHA_CRC_AND_FINITE_NAMED_INVENTORY_QUALIFIED'
  except Exception as exc:report['error']={'type':type(exc).__name__,'message':str(exc)[:300]}
  args.output.write_text(json.dumps(report,ensure_ascii=False,indent=2,sort_keys=True)+'\n')
