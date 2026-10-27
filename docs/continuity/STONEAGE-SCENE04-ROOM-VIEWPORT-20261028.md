@@ -28,7 +28,7 @@
 
 ZIP保存离线页面、截图、校验收据、私人重建脚本及实际浏览器交互测试源码，不包含整份361MB RAR。原图和用于播放的嵌入式版权像素只存在**私有**HTML/ZIP，公开Git只存本连续性文字和安全派生metadata，不发布原游戏图片、EXE、音频、真实原图PNG、RD、SAP或原DAT。
 
-新增离线源门槛 `stoneage_room_source_gate_r4.py` 在本轮本地从真正的SCENE03私有包执行：6项合成测试通过，8源图身份、R3旧12位置及R4新30位置全量重放一致；派生 `STONEAGE-SCENE04-ROOM-ACCEPTANCE-R4.json` 只保留可公开来源摘要。该源门槛完整源码随私人ZIP留存；公开Git不要求CI具备版权私件。它的成功不能证明新的5009/5015原RD数据已取得。
+新增离线源门槛 `stoneage_room_source_gate_r4.py` 在本轮本地从真正的SCENE03私有包执行：6项合成测试通过，8源图身份、R3旧12位置及R4新30位置全量重放一致；派生 `STONEAGE-SCENE04-ROOM-ACCEPTANCE-R4.json` 只保留可公开来源摘要。源门槛脚本、6项合成测试和纯元数据回执另保存为私人Library `stoneage-room-r4-source-gate-private.zip`（4639B/SHA256 `c8a1a5440874b37203fc66b060edc7855e1a901be1cbc8e4e342882812da702b`），并已独立整件下载回读比对通过；它**不是**旧的289096B观察包的成员。旧观察ZIP保存的是HTML/截图/观察重建脚本/浏览器交互测试等。公开Git不要求CI具备版权私件。该源门槛成功不能证明新的5009/5015原RD数据已取得。
 
 ## 诚实记录的止点与下一NEXT
 
