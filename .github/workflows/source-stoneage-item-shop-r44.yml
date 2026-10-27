@@ -1,0 +1,25 @@
+name: Source bounded original item shop members R44
+on:
+  push:
+    branches: ['agent/item-shop-source-r44-20261027']
+permissions:
+  contents: read
+jobs:
+  original-source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install rarfile==4.2
+      - run: sudo apt-get update -qq && sudo apt-get install -y unar
+      - run: python -m unittest -v tests.test_stoneage_preserved_item_shop_r44
+      - run: python -m tools.stoneage_preserved_item_shop_r44 --output /tmp/r44-source.json --extractor unar
+      - uses: actions/upload-artifact@v4
+        with:
+          name: r44-derived-source-report-only
+          path: /tmp/r44-source.json
+          retention-days: 7
+          if-no-files-found: error
