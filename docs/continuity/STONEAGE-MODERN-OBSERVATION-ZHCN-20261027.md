@@ -137,3 +137,17 @@ tile/object ID→**同版**真正原图形内容与选图语义、必要的局�
 同时保留真实原EXE在持久隔离ACP950/8bpp/输入/无外连来宾的独立路径。
 DD-028、DD-030、Stage A7 PARTIAL+2 OPEN、Stage B GATED、R79暂停及
 总体恢复百分比未知均保持。
+
+### 补强：四文件零售盘不可变指纹与浏览器动态篡改负控
+
+后续同一候选把浏览器原来仅核“四个来源键存在”的弱条件提升到
+`adrn_1.bin`、`real_1.bin`、`spr_1.bin`、`spradrn_1.bin` 四个实际
+TW1零售盘文件的**确切长度和SHA256**逐项匹配，并限定源等级为
+`FOUR_ORIGINAL_FILES_AND_SELECTED_RD_PIXELS_VERIFIED`。键多一项、少一项、
+换掉文件、伪写尺寸、错误原始源级别均不能接受。测试代码加入固定签名守卫。
+
+对最新远端HTML实际JavaScript进行V8语法解析，并通过模拟浏览器DOM、
+模拟PNG File及模拟WebCrypto异步摘要，完成三项**动态**检查：完整来源四哈希 +
+匹配帧SHA的正向绑定通过；将`adrn_1.bin`源SHA更改后的绑定被拒绝；将PNG帧SHA
+更改后的绑定被拒绝。该环境属于可执行合成测试，不是实际Chromium/Safari渲染，
+更不是收到/目视商业客户端像素。GitHub Actions仍需源作业真实完成后才能宣称CI验收。
