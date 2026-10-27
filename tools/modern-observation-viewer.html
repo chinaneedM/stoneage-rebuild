@@ -96,6 +96,7 @@ let mapFile=null,mapDiagnostic=null,selectedCell=null;
 const selectedFrameFiles={character:[],pet:[]};
 const frameBindings={character:null,pet:null};
 let x=400,y=320,frames=0,lastTick=0,playing=true;
+let sourceRevision=0; // Invalidates asynchronous SHA binds on file or source changes.
 const dimensions={w:800,h:600};
 function revokeAll(){
   for(const u of urls)URL.revokeObjectURL(u);
@@ -127,10 +128,12 @@ function readImage(file){
   });
 }
 async function images(event,slot){
+  const revision=++sourceRevision;
   const chosen=Array.from(event.target.files||[]).sort((a,b)=>a.name<b.name?-1:a.name>b.name?1:0);
   if(chosen.length>32){alert("单组最多读取32帧");return;}
   try{
     const src=await Promise.all(chosen.map(readImage));
+    if(revision!==sourceRevision)return; // Later file selection superseded this decode.
     if(slot==="map"){map=src[0]||null;mapFile=chosen[0]||null;mapDiagnostic=null;selectedCell=null;byId("mapmeta").value="";}
     else if(slot==="character"){character=src;selectedFrameFiles.character=chosen;frameBindings.character=null;byId("actormeta").value="";}
     else {pet=src;selectedFrameFiles.pet=chosen;frameBindings.pet=null;byId("petmeta").value="";}
@@ -181,6 +184,7 @@ window.addEventListener("keydown",event=>{
   const name=keys[event.key];if(name){event.preventDefault();move(...direction[name]);}
 });
 async function loadMapDiagnostic(event){
+  const revision=++sourceRevision;
   mapDiagnostic=null;selectedCell=null;
   const file=event.target.files&&event.target.files[0];
   if(!file){status();return;}
@@ -218,12 +222,14 @@ async function loadMapDiagnostic(event){
     const hash=await crypto.subtle.digest("SHA-256",await mapFile.arrayBuffer());
     const actual=Array.from(new Uint8Array(hash),b=>b.toString(16).padStart(2,"0")).join("");
     if(actual!==m.diagnostic_png_sha256)throw Error("所选地图PNG与清单摘要不一致。");
+    if(revision!==sourceRevision)throw Error("源文件或版本在地图校验期间发生更换。");
     mapDiagnostic=m;
     byId("profile").value="LATER_RECOVERED";
   }catch(error){alert("清单无法认证："+error.message);}
   status();draw();
 }
 async function loadFrameManifest(event,slot){
+  const revision=sourceRevision;
   frameBindings[slot]=null;
   const file=event.target.files&&event.target.files[0];
   if(!file){status();return;}
@@ -260,7 +266,8 @@ async function loadFrameManifest(event,slot){
       if(hex!==e.sha256)throw Error("帧SHA256不匹配："+f.name);
     }
     // A file replacement during async hashing must not validate an obsolete selection.
-    if(selectedFrameFiles[slot]!==selected)throw Error("校验期间所选帧已更换，请重新加载清单。");
+    if(revision!==sourceRevision||selectedFrameFiles[slot]!==selected)
+      throw Error("校验期间源文件或版本已更换，请重新加载清单。");
     frameBindings[slot]=m;
     if(!mapDiagnostic)byId("profile").value="TW_WAEI_1_0";
   }catch(error){alert("帧清单无法绑定："+error.message);}
@@ -283,7 +290,7 @@ canvas.addEventListener("click",event=>{
 byId("floor").onchange=e=>images(e,"map");
 byId("actor").onchange=e=>images(e,"character");
 byId("pet").onchange=e=>images(e,"pet");
-byId("profile").onchange=()=>{if(mapDiagnostic&&byId("profile").value!=="LATER_RECOVERED"){mapDiagnostic=null;selectedCell=null;byId("mapmeta").value="";}
+byId("profile").onchange=()=>{sourceRevision++;if(mapDiagnostic&&byId("profile").value!=="LATER_RECOVERED"){mapDiagnostic=null;selectedCell=null;byId("mapmeta").value="";}
   if(byId("profile").value!=="TW_WAEI_1_0"){frameBindings.character=null;frameBindings.pet=null;byId("actormeta").value="";byId("petmeta").value="";}
   status();draw();};
 byId("wav").onchange=event=>{
