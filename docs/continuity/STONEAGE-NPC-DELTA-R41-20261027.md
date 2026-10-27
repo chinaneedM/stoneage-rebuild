@@ -11,3 +11,7 @@
 规格`docs/specs/STONEAGE-PRESERVED-NPC-DELTA-MATERIAL-R41.md`及SOURCE/LOCAL-COMPARISON/MATERIAL/CUSTODY-R41记录来源与字段。ZIP/raw独立下载哈希、CMS解密后三原全SHA、本地完整字符转换、全部45条配置赋值独立核验后持久保存派生；原件只临时私人保管，不宣称长存。
 
 NEXT `PRESERVED_GENKOU_THIRD_GUARD_ARGUMENT_42`：实际取已观察到的第三条所引sb_kgi.arg281B/SHA61c2aefca26c9d84db061f34c66c74b980006cac915fe732394f753daddbd586，与已得sb_kbu精确比较。有限16MiB/原SHA，取得材料或精确缺口即停止本NPC支线，回其它22域。DD-028 ORIGIN_UNRESOLVED、本体认证新增0、Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、P3E阻塞、整体percent=null不变。候选/main Actions后验另记，未提前称成功。
+
+## 实际发布后验
+
+内容main `5f75afbf7d1dbd7bc589d905efed8d7f63c891d8` / tree `b458f34f68baaf9f1b2339c9c80d61ae26ee5a8d`已非强制快进合入；候选11项、主线11项Actions全部实际completed/success。专用候选40452722575/job122018941708、主线40452794075通过14项新守卫及原样派生重放、原脚本/密文/私钥入Git阻断。本地51项相关检查通过。14发布路径全部逐字节和tree与本地一致，五大历史文件全文原样、README历史前缀完整。私人原件45赋值的另一解析器、完整258B转换与源ZIP/raw/Git链均有据；实际run/job与14内容blob见STONEAGE-PRESERVED-NPC-DELTA-PUBLICATION-R41.json。收据自身CI不提前称成功，NEXT42与全部官方/运行/任务起源边界保持。
