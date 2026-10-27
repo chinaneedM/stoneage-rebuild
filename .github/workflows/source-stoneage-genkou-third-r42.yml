@@ -1,0 +1,27 @@
+name: Source preserved Genkou third guard argument R42
+on:
+  push:
+    branches: ['agent/preserved-genkou-third-guard-source-r42-20261027']
+permissions:
+  contents: read
+jobs:
+  original-genkou-third-argument:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install rarfile==4.2
+      - run: sudo apt-get update -qq && sudo apt-get install -y unar
+      - run: python -m unittest -v tests.test_stoneage_preserved_genkou_third_r42
+      - run: python -m tools.stoneage_preserved_genkou_third_r42 --output /tmp/r42-source.json --sealed /tmp/r42-private.der
+      - uses: actions/upload-artifact@v4
+        with:
+          name: r42-derived-report-and-private-ciphertext
+          path: |
+            /tmp/r42-source.json
+            /tmp/r42-private.der
+          retention-days: 7
+          if-no-files-found: error
