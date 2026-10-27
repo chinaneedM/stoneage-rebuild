@@ -7,7 +7,7 @@
 - 原保存父包：社区混合2.5保留材料，声称父包361255180B；已有 R18 父包SHA 与静态成员目录为索引依据，未将社区“2.5”标题当官方build。
 - 精确成员 `gmsv/data/npc/family/fmhealer.create`，649B，原完整 SHA256 `1d7d71960958cc60c5e6ba686fede736b5d66ec15f5d58300041a8a2de893847`，RAR CRC `3313982981`。两种解码器（unar/libarchive）对同一次HTTP源的完整原字节一致；两种编码(CP950/Big5)严格解析相同。
 - 真正源 GitHub Actions [run40502401619](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40502401619) / job122183066222 / HEAD `0cea990336ff52699b4faa3212bb59fb3dbd8a3f` completed/success；遍历7954个RAR头，184次严格HTTP206范围、合计12013836B。未拉361MB整包、未运行商用服务端。
-- 源报告52867字节/SHA256 `c14788fe3bbe854b4de0e84aa1abbb6f81a6189ef6aca7c77701cac8cc2a036a`/Git blob `a0e5391ab70d5636fe55e196ec5b6081d4825ddc` 原样永久入库；短期工件ZIP artifact12732389728 的 `1962baed3c42e7dbf23afe15b0caa11b42caeb6a1e970f2d1847024ee3e31416` 是GitHub API所报SHA，**未独立下载校验ZIP**，不能声称二次取源。原脚本、对话文本、其它未选块正文不入公开Git。
+- 源报告52955字节（原日志文本52867字符，UTF-8长度不同）/SHA256 `c14788fe3bbe854b4de0e84aa1abbb6f81a6189ef6aca7c77701cac8cc2a036a`/Git blob `a0e5391ab70d5636fe55e196ec5b6081d4825ddc` 原样永久入库；短期工件ZIP artifact12732389728 的 `1962baed3c42e7dbf23afe15b0caa11b42caeb6a1e970f2d1847024ee3e31416` 是GitHub API所报SHA，**未独立下载校验ZIP**，不能声称二次取源。原脚本、对话文本、其它未选块正文不入公开Git。
 
 ## 原配置实际见证（仅前三条）
 
