@@ -1,0 +1,35 @@
+name: Verify preserved named family healer NPC material R46
+on:
+  push:
+    branches: ['agent/healing-npc-material-r46-20261027', main]
+    paths:
+      - 'tools/stoneage_preserved_healing_npc_r46.py'
+      - 'tools/stoneage_healing_npc_material_r46.py'
+      - 'tests/test_stoneage_preserved_healing_npc_r46.py'
+      - 'tests/test_stoneage_healing_npc_material_r46.py'
+      - 'research/recovered/STONEAGE-PRESERVED-HEALING-NPC-SOURCE-R46.json'
+      - 'research/recovered/STONEAGE-PRESERVED-HEALING-NPC-MATERIAL-R46.json'
+      - 'research/recovered/STONEAGE-PRESERVED-HEALING-NPC-CUSTODY-R46.json'
+      - '.github/workflows/verify-stoneage-healing-npc-r46.yml'
+permissions:
+  contents: read
+jobs:
+  offline-custody-and-source-projection:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest -v tests.test_stoneage_preserved_healing_npc_r46 tests.test_stoneage_healing_npc_material_r46 tests.test_stoneage_healer_recovery_model tests.test_stoneage_world01_four_hometown_review
+      - run: python -m tools.stoneage_healing_npc_material_r46
+      - name: Guard copyrighted source and raw scripts against accidental publication
+        run: |
+          python - <<'PY'
+          import subprocess
+          forbidden = {'fmhealer.create','fmhealer.template','fmhealer.arg'}
+          paths = subprocess.check_output(['git','ls-files','-z']).decode().split('\0')
+          for path in paths:
+              if path and path.rsplit('/',1)[-1].lower() in forbidden:
+                  raise SystemExit('Protected original named healer member in public Git: '+path)
+          PY

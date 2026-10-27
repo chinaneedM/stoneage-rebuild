@@ -702,3 +702,8 @@ The 2.66 MB historical `docs/CURRENT-STATE.md` is still preserved byte-for-byte.
 ### 2026-10-27 — R45 六条原技能名称、字段及模型关联
 
 [原材料规格](docs/specs/STONEAGE-PRESERVED-PET-SKILL-MATERIAL-R45.md) / [连续性](docs/continuity/STONEAGE-PET-SKILL-R45-20261027.md)：实际取同保存包原配置和技能表，全SHA/CRC及unar/libarchive双解码字节一致；原名称“待機/攻擊/防禦/破除防禦/連續攻擊/三段攻擊”接ID0/1/2/3/10/11与既有复原模型。两个1字节OPTION的精确数值见证2/3接既有命令桥验证，不把COST2当MP/学费，不把147条混合表当147可学技能；首过窄前缀校验失败原样保留，修正source40499885826才内容成功。48本地检查及双ZIP永久源链已核，无原表/描述/程序公开或原服执行。NEXT转一份有界治疗NPC创建材料46，Stage A/B/wiki/R79和未知总体完成率不变。
+
+
+### 2026-10-27 — R46 原社区家族护士三条命名NPC原配置
+
+[材料规格](docs/specs/STONEAGE-PRESERVED-HEALING-NPC-MATERIAL-R46.md) / [连续性覆层](docs/continuity/STONEAGE-HEALING-NPC-R46-20261027.md)：按上一轮NEXT实际有限获取源混合保存包`npc/family/fmhealer.create`649B，原完整SHA/CRC与既有清单相同，184个严格HTTP206范围、unar/libarchive独立同字节解码、Big5/CP950严格文本一致；原配置共4块，本轮限前三条均“家族小護士”，floorid1041/2031/3031、不同borncorner、相同图形16023与服务声明`npcgen_fmhealer|1`。第四块仅计总数，无拓展解释。source40502401619真实success，派生原始报告和审计只入安全元数据，不公开原脚本/对话/包。**不认证台湾1.0同构建、实际NPC服务/后代Healer函数绑定或本体任务**；仍`ORIGIN_UNRESOLVED`。NEXT回22域可追溯原具名实体/本体任务材料，不扩治疗helper。Stage A/B/wiki/R79及总体恢复率未知边界不变。
