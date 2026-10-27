@@ -25,6 +25,10 @@ The user explicitly elevated **actually entering and experiencing the original S
 
 A modern offline resource-viewing route now takes priority alongside authentic original-client research. Old 256-color/ANSI Windows compatibility is not a blocker for building the modern observation environment. The research viewer and source-verified private SPR frame export code are on the `agent/modern-observation-zhcn-r1-20261027` candidate branch pending its dedicated CI gate; **no original game-world entry or accepted production game is implied**. See [modern observation viewer](tools/modern-observation-viewer.html), [private frame exporter](tools/stoneage_private_sprite_frame_export_r1.py) and [qualification notes](docs/continuity/STONEAGE-MODERN-OBSERVATION-ZHCN-20261027.md). Full decision: [DD-030](docs/DESIGN-DECISIONS.md).
 
+### Source-bound map artwork contact probe — candidate, 2026-10-27
+
+The modern observer work branch now also contains a bounded **private** recovered25 map-ID → ADRN/REAL image-data probe. It only admits the whole-file SHA-qualified preserved recovered25 sources and map plane payloads, retains duplicate-ID ambiguity, and exports up to 16 indexed grayscale image previews **outside Git**. The linked resource/visual-selection semantics, original scene palette, isometric layout and authentic gameplay remain OPEN. This is not an original-world screenshot and has not been executed against the private 763 MB REAL file this turn. The workflow is queued, not accepted into main. See [SCENE-RESOURCE-JOIN-01 continuity and source limits](docs/continuity/STONEAGE-SCENE-RESOURCE-JOIN-R1-20261027.md).
+
 ## Current phase
 
 **Phase 1 — Foundation Baseline Technical Reconstruction & Specification**
