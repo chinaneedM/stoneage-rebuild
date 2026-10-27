@@ -1,0 +1,27 @@
+name: Source original preserved NPC files and modern byte delta R41
+on:
+  push:
+    branches: ['agent/preserved-npc-delta-source-r41-20261027']
+permissions:
+  contents: read
+jobs:
+  original-npc-delta:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install rarfile==4.2
+      - run: sudo apt-get update -qq && sudo apt-get install -y unar
+      - run: python -m unittest -v tests.test_stoneage_preserved_npc_delta_r41
+      - run: python -m tools.stoneage_preserved_npc_delta_r41 --output /tmp/r41-source.json --sealed /tmp/r41-private.der
+      - uses: actions/upload-artifact@v4
+        with:
+          name: r41-derived-metadata-and-private-ciphertext
+          path: |
+            /tmp/r41-source.json
+            /tmp/r41-private.der
+          retention-days: 7
+          if-no-files-found: error
