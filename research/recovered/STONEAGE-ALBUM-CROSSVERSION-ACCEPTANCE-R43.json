@@ -1,0 +1,63 @@
+{
+  "schema": "stoneage.album_crossversion_acceptance.r43",
+  "startup_head": "b9b63f47580e188ef3c7b5ce4c3bdbdaa50620cd",
+  "startup_tree": "42eebb855cb954ab1b32099b82d508cd8687e33c",
+  "startup_branches": 631,
+  "startup_open_prs": 0,
+  "startup_in_progress_runs": 0,
+  "startup_head_workflow_runs": [],
+  "report": {
+    "bytes": 57776,
+    "sha256": "be8135686a9640a5cf1b08479e56f56b7a6a41d5ac7fb3970c8e2401a672c8b8",
+    "git_blob": "dbc1b46fe14f105898757d1199ac338e9971c330",
+    "compression": "lossless XZ, full JSON replay, no original assets"
+  },
+  "local_tests_passed": 53,
+  "independent_sql": {
+    "method": "Independent SQLite joins of all43632 catalog references and all281 native album rows; every projected field, RD SHA and size compared as full occurrence multiset",
+    "joined_occurrences": 576,
+    "unique_named_slots": 224,
+    "full_projection_equal": true,
+    "original_sources_reacquired": false
+  },
+  "source_acquisition": "NO_NEW_ORIGINAL_PAYLOAD; EXISTING_PINNED_DERIVED_SOURCES_REPLAYED",
+  "official_source_check": {
+    "url": "https://www.cite.com.tw/book?id=557",
+    "reader": "search_service_rendered_primary_publisher_page",
+    "raw_html_acquired": false,
+    "direct_local_http_status": 403,
+    "book_body_or_disc_acquired": false,
+    "new_authenticated_same_build_entity_mappings": 0
+  },
+  "preserved_history": {
+    "docs/CURRENT-STATE.md": {
+      "bytes": 2680510,
+      "git_blob": "031c76a5a8e431f646853909bb2f2e11e6328cd2"
+    },
+    "docs/PROJECT-CONTINUITY-PROTOCOL-R1.md": {
+      "bytes": 10880,
+      "git_blob": "a064174339b7a4656efe00b4446a066fd7abf304"
+    },
+    "docs/DESIGN-DECISIONS.md": {
+      "bytes": 49898,
+      "git_blob": "713caaecc6a43a92e5cb7f939954026b859bac20"
+    },
+    "docs/HISTORICAL-TIMELINE.md": {
+      "bytes": 730950,
+      "git_blob": "91ca73105f26bf96aaa928519ae04942182e7b9b"
+    },
+    "docs/SOURCE-REGISTRY.md": {
+      "bytes": 1028196,
+      "git_blob": "ee3b2d70dabedfe02e3761b3fdb25476a79e147c"
+    },
+    "docs/RESTORATION-ROADMAP-R2.md": {
+      "bytes": 482245,
+      "git_blob": "c11eff237a8aaa1cc34488a6c3c7fcdd596f9ce2"
+    }
+  },
+  "report_uncompressed": {
+    "bytes": 763726,
+    "sha256": "ace99bc945e7b3062aca49ea03498e312447c20761bb0af9470245e07ea16380",
+    "git_blob": "ac70266d06de8f5997bc9d6434f77f675ac68e44"
+  }
+}

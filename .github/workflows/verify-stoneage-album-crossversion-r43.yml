@@ -1,0 +1,21 @@
+name: Verify retrospective album resource compatibility R43
+on:
+  push:
+    branches: ['agent/early-entity-source-r43-20261027', main]
+    paths:
+      - tools/stoneage_album_crossversion_r43.py
+      - tests/test_stoneage_album_crossversion_r43.py
+      - research/recovered/STONEAGE-ALBUM-CROSSVERSION-MATERIAL-R43.json.xz
+      - .github/workflows/verify-stoneage-album-crossversion-r43.yml
+permissions:
+  contents: read
+jobs:
+  offline-material-replay:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest -v tests.test_stoneage_album_crossversion_r43 tests.test_stoneage_native_album_material_r36 tests.test_stoneage_album_adrn_material_r37 tests.test_stoneage_logical_alias_catalog
+      - run: python -m tools.stoneage_album_crossversion_r43
