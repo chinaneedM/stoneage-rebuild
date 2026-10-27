@@ -1,0 +1,22 @@
+name: Verify original three-key pet SPR source integration R40
+on:
+  push:
+    branches: ['agent/preserved-pet-spr-material-r40-20261027', main]
+    paths:
+      - tools/stoneage*pet_spr*r40.py
+      - tests/test_stoneage*pet_spr*r40.py
+      - research/recovered/STONEAGE-PRESERVED-PET-SPR*R40.json
+      - .github/workflows/verify-stoneage-pet-spr-r40.yml
+permissions:
+  contents: read
+jobs:
+  independent-original-frame-reencoding:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install rarfile==4.2
+      - run: python -m unittest -v tests.test_stoneage_preserved_pet_spr_r40 tests.test_stoneage_pet_spr_material_r40 tests.test_stoneage_pet_template_material_r39
+      - run: python -m tools.stoneage_pet_spr_material_r40

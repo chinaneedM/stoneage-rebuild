@@ -672,3 +672,8 @@ The 2.66 MB historical `docs/CURRENT-STATE.md` is still preserved byte-for-byte.
 ### 2026-10-27 — R39 原服务器三种名称的七条模板记录
 
 [原材料规格](docs/specs/STONEAGE-PRESERVED-PET-TEMPLATE-MATERIAL-R39.md) / [续接记录](docs/continuity/STONEAGE-PET-TEMPLATE-R39-20261027.md)：从同社区混合保存包有限实取原配置与宠物模板，完整SHA/CRC吻合；“烏力/烏力烏力/烏力斯坦”对应7条原位置，图形字段分别100250/100251/100252。烏力斯坦4模板中一条标志0、其余1，不能按名称合并或任选标准模板。此为社区原始文件的有限字段事实，不是官方初代物种主表、原服务器运行或客户端同部署认证；相册头像字段与动画图形字段分别保留。source40449204618真实成功，原样派生JSON与独立ZIP来源链永久保存，原整表/商业载荷不公开。NEXT有限同保存包三图形字段→原SPR内容40；取源受限即回22域NPC/本体任务，不扩大REAL下载。Stage A/B/wiki/R79及未知整体百分比保持，完整CURRENT历史不变。
+
+
+### 2026-10-27 — R40 三个宠物图形字段到原客户端完整动画
+
+[原材料规格](docs/specs/STONEAGE-PRESERVED-PET-SPR-MATERIAL-R40.md) / [续接记录](docs/continuity/STONEAGE-PET-SPR-R40-20261027.md)：实际有界取同保存包原SPR两文件并核全SHA/CRC，R39七服务器模板的三个图形整数100250/100251/100252均唯一命中同包原客户端动画，完整168序列/1144帧；三段与TW1.0/CN5同号完整段SHA全部相同。847索引与三段全帧独立重编码原SHA一致，重复位置、声音word和非零保留字段均保留。只证明来源限定数值/动画内容关系，不认证官方初代名称、同部署、原画面/原声或捕获规则；没有下载大REAL。source40450507347真实成功，原样派生与独立ZIP来源链永久保存。最高NEXT41回原NPC洞窟三小文件的真实字节差异，停止扩宠物资源支线；完整CURRENT与Stage A/B/wiki/R79等边界不变。
