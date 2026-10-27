@@ -1,0 +1,25 @@
+name: Source original preserved three-key pet SPR material R40
+on:
+  push:
+    branches: ['agent/preserved-pet-spr-source-r40-20261027']
+permissions:
+  contents: read
+jobs:
+  original-spr:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install rarfile==4.2
+      - run: sudo apt-get update -qq && sudo apt-get install -y unar
+      - run: python -m unittest -v tests.test_stoneage_preserved_pet_spr_r40
+      - run: python -m tools.stoneage_preserved_pet_spr_r40 --output /tmp/r40-source.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: r40-original-spr-derived-metadata-only
+          path: /tmp/r40-source.json
+          retention-days: 7
+          if-no-files-found: error
