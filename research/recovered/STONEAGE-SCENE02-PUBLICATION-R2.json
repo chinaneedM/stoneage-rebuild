@@ -1,0 +1,102 @@
+{
+  "schema": "stoneage.scene02.publication.r2",
+  "date": "2026-10-28",
+  "timezone": "Asia/Shanghai",
+  "baseline": {
+    "main": "72863e76cbdb74b26f65dd2877965d07b04e8676",
+    "tree": "ca5509c88991e96fc3174078189d16e2fad3beb8",
+    "CURRENT_blob": "031c76a5a8e431f646853909bb2f2e11e6328cd2",
+    "CURRENT_bytes": 2680510,
+    "CURRENT_full_bytes_preserved": true,
+    "README_complete_baseline_is_prefix": true
+  },
+  "source_attempts": [
+    {
+      "commit": "f08ff265df95c92edd7674d3bcd44fba92ff3224",
+      "run": 40591003447,
+      "job": 122494918112,
+      "conclusion": "failure",
+      "reason": "libarchive REAL RAR VM filters unsupported after whole carrier hash qualification",
+      "artifact": 12774510664,
+      "artifact_zip_bytes": 1244,
+      "artifact_zip_sha256": "1dc1a9824cb57a807d8dce5dd9489007fafb24f61e48610d13efa8a952642e2c",
+      "independently_downloaded_zip_and_raw_report": true
+    },
+    {
+      "commit": "0abdcc1e3c0995533650369b1f04d42983478d81",
+      "tree": "99c3806c6e933a8133d40b0d3b0f9cdac6de276b",
+      "run": 40591156280,
+      "job": 122495447587,
+      "conclusion": "success",
+      "tests": 21,
+      "artifact": 12773632029,
+      "artifact_zip_bytes": 364471220,
+      "artifact_zip_sha256": "a80a56d09715702319f94b8bd859ae32c5471fb0de8f97bb8fd0564296ec1d7e",
+      "independently_downloaded_full_zip_and_decrypted_source_hashes": true
+    }
+  ],
+  "derived_reports": [
+    {
+      "path": "research/recovered/STONEAGE-SCENE02-SOURCE-FIRST-FAILED-R2.json",
+      "bytes": 1094,
+      "sha256": "7b79c7c938916509d337b1e98f080359ff82a48d9b54c8d15d632b410b55942e",
+      "git_blob": "77fb36f6e96f82b704076ea7d4a50a8fd10d06d8"
+    },
+    {
+      "path": "research/recovered/STONEAGE-SCENE02-SOURCE-REAL-PIXELS-R2.json",
+      "bytes": 10709,
+      "sha256": "da869a0921fe71970d547210f2d110c4fc643a950fb12a27273580660c7895c9",
+      "git_blob": "477c5d6fd2605b935420cca91243964ce1204929"
+    },
+    {
+      "path": "research/recovered/STONEAGE-SCENE02-INDEPENDENT-PIXEL-REPLAY-R2.json",
+      "bytes": 2520,
+      "sha256": "64bcde536c89aaa236d87f0910c2d37f2da0e6d58215fdc09d1fc0f9ff2163d5",
+      "git_blob": "805f6f7a19bb8e700b3514f55fb6e62e2c91b3f2"
+    },
+    {
+      "path": "research/recovered/STONEAGE-SCENE02-PRIVATE-CUSTODY-R2.json",
+      "bytes": 889,
+      "sha256": "fa84f5fbdbbafd44e67a8565ca01a2b56789509e9f8ff7b8b90a6e5d1c40c4a5",
+      "git_blob": "1aa4c729f99209a43715caac98c9a50c55ab20fa"
+    }
+  ],
+  "actual_outcomes": {
+    "qualified_ADRN_bytes": 18765120,
+    "qualified_REAL_bytes": 763908374,
+    "floor_id": 1001,
+    "viewport_inclusive": [
+      14,
+      14,
+      16,
+      16
+    ],
+    "source_images_actually_decoded_and_visually_inspected": 8,
+    "independent_decoded_indices_equal_Pillow_PNG": true,
+    "private_whole_carrier_and_observation_persisted": true,
+    "private_persistent_whole_file_readback_SHA_verified": true,
+    "public_original_artwork_or_source_payload_added": false,
+    "original_program_executed_this_unit": false,
+    "original_world_entered": false,
+    "authentic_scene_rendered": false,
+    "original_palette_projection_alpha_certified": false,
+    "real_browser_contact_sheet_interaction_tested": false,
+    "new_official_clients": 0
+  },
+  "local_regression": {
+    "Python_tests": 50,
+    "Node_synthetic_browser": "PASS",
+    "actual_private_pixel_replay": "PASS",
+    "README_full_prefix": "PASS",
+    "CURRENT_full_bytes_unchanged": "PASS"
+  },
+  "ci_observations": [],
+  "next": "SCENE-PALETTE-PROJECTION-03",
+  "stage": {
+    "A": "7_PARTIAL_2_OPEN",
+    "B": "GATED",
+    "wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  }
+}

@@ -2,6 +2,11 @@ name: Observe authenticated preserved map artwork with encrypted private carrier
 on:
   push:
     branches: [agent/private-scene-observation-r2-20261028]
+    paths:
+      - .github/workflows/source-stoneage-private-scene02.yml
+      - tools/stoneage_private_scene_source_r2.py
+      - tests/test_stoneage_private_scene_source_r2.py
+      - research/recovered/STONEAGE-SCENE02-TRANSFER-CERT.pem
 permissions:
   contents: read
 jobs:

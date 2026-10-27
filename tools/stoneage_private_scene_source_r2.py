@@ -37,6 +37,11 @@ def require(ok, message):
 def fingerprint(path):
     return {"bytes": path.stat().st_size, "sha256": sha_file(path)}
 
+def qualify_carrier(path):
+    require(path.is_file() and fingerprint(path) == {"bytes": BUNDLE_SIZE, "sha256": BUNDLE_SHA},
+            "whole preserved carrier identity conflict")
+    return fingerprint(path)
+
 def bounded_copy(source, target, expected_size, expected_sha=None):
     """Never accept HTML, truncation, or a stream exceeding its declared size."""
     digest = hashlib.sha256()
@@ -67,9 +72,7 @@ def acquire_bundle(work, report):
             with urllib.request.urlopen(payload, timeout=180) as response:
                 info = bounded_copy(response, output, size)
             report["parts"].append({"public_download_page": public_url, **info})
-    require(fingerprint(bundle) == {"bytes": BUNDLE_SIZE, "sha256": BUNDLE_SHA},
-            "whole preserved carrier identity conflict")
-    report["bundle"] = fingerprint(bundle)
+    report["bundle"] = qualify_carrier(bundle)
     return bundle
 
 def select_headers(entries):
@@ -170,6 +173,8 @@ def main():
     p.add_argument("--work", type=Path, required=True)
     p.add_argument("--output-dir", type=Path, required=True)
     p.add_argument("--certificate", type=Path, required=True)
+    p.add_argument("--carrier", type=Path,
+                   help="reuse a privately retained whole-SHA-qualified carrier; no network")
     a = p.parse_args()
     work = a.work.resolve()
     output = a.output_dir.resolve()
@@ -183,7 +188,13 @@ def main():
         "authentic_scene_rendered": False, "raw_originals_published": False,
         "private_durable_custody_confirmed": False, "actual_visual_inspection_completed": False}
     try:
-        bundle = acquire_bundle(work, report)
+        if a.carrier is not None:
+            bundle = a.carrier.resolve()
+            report["bundle"] = qualify_carrier(bundle)
+            report["verified_private_carrier_reused_without_network"] = True
+        else:
+            bundle = acquire_bundle(work, report)
+            report["verified_private_carrier_reused_without_network"] = False
         report["status"] = "CARRIER_HASH_VERIFIED"
         selected = extract_selected(bundle, work)
         report["selected_members"] = {key: fingerprint(path) for key, path in selected.items()}
