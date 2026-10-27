@@ -1,0 +1,125 @@
+{
+  "character_differences": [
+    {
+      "character_index_0": 2,
+      "field": "askbattlemsg1",
+      "modern_character": "继",
+      "old_character": "繼"
+    },
+    {
+      "character_index_0": 3,
+      "field": "askbattlemsg1",
+      "modern_character": "续",
+      "old_character": "續"
+    },
+    {
+      "character_index_0": 5,
+      "field": "askbattlemsg1",
+      "modern_character": "进",
+      "old_character": "進"
+    },
+    {
+      "character_index_0": 7,
+      "field": "askbattlemsg1",
+      "modern_character": "话",
+      "old_character": "話"
+    },
+    {
+      "character_index_0": 8,
+      "field": "startmsg",
+      "modern_character": "话",
+      "old_character": "話"
+    },
+    {
+      "character_index_0": 12,
+      "field": "startmsg",
+      "modern_character": "许",
+      "old_character": "許"
+    },
+    {
+      "character_index_0": 14,
+      "field": "startmsg",
+      "modern_character": "继",
+      "old_character": "繼"
+    },
+    {
+      "character_index_0": 15,
+      "field": "startmsg",
+      "modern_character": "续",
+      "old_character": "續"
+    },
+    {
+      "character_index_0": 17,
+      "field": "startmsg",
+      "modern_character": "进",
+      "old_character": "進"
+    },
+    {
+      "character_index_0": 1,
+      "field": "deniedmsg",
+      "modern_character": "来",
+      "old_character": "來"
+    },
+    {
+      "character_index_0": 5,
+      "field": "deniedmsg",
+      "modern_character": "没",
+      "old_character": "沒"
+    },
+    {
+      "character_index_0": 11,
+      "field": "deniedmsg",
+      "modern_character": "并",
+      "old_character": "並"
+    },
+    {
+      "character_index_0": 15,
+      "field": "deniedmsg",
+      "modern_character": "进",
+      "old_character": "進"
+    },
+    {
+      "character_index_0": 17,
+      "field": "deniedmsg",
+      "modern_character": "资",
+      "old_character": "資"
+    }
+  ],
+  "classification": "ENCODING_CHANGE_AND_OBSERVED_CHARACTER_REPLACEMENTS_NUMERIC_FIELDS_IDENTICAL",
+  "exact_modern_bytes_reproduced_after_observed_map_and_gb18030": true,
+  "modern_argument_sha256": "961b87cebad2fd7cb7875f9433df0e301f9f64b06c46a558475fc1a0344e9eec",
+  "modern_yaml_git_blob": "6e066821bedd0bbef7e59cc3f020cad7783e51c5",
+  "observed_character_map": {
+    "並": "并",
+    "來": "来",
+    "沒": "没",
+    "繼": "继",
+    "續": "续",
+    "許": "许",
+    "話": "话",
+    "資": "资",
+    "進": "进"
+  },
+  "official_same_build_authenticated": false,
+  "original_big5_roundtrip_equal": true,
+  "original_cp950_roundtrip_equal": true,
+  "original_file_pins": {
+    "sb_geno.create": {
+      "bytes": 573,
+      "sha256": "5aec44349ae3a6071b0882fd40d693f3bf1e7bdaf9ba489ac3ffbc89e26331f1"
+    },
+    "sb_geno.template": {
+      "bytes": 321,
+      "sha256": "76a826f1022276dfa9590e5ad51c6a96e9c88146a2fc39790c2cc60cbed60e2d"
+    },
+    "sb_kbu.arg": {
+      "bytes": 258,
+      "sha256": "433d17a58869147f91cacc57487795d7686b53415872f0694aba02dbc869502b"
+    }
+  },
+  "raw_byte_difference_count": 114,
+  "schema": "stoneage.npc_private_original_comparison.r41",
+  "source_unicode_cp950_big5_equal": true,
+  "whole_script_or_dialogue_published": false,
+  "whole_unicode_text_equal_before_replacement": false
+}

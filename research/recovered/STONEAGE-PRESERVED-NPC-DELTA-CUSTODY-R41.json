@@ -1,0 +1,81 @@
+{
+  "schema": "stoneage.preserved_npc_delta_custody.r41",
+  "date": "2026-10-27",
+  "baseline_head": "38b7670613ec94f1d9133c229bed0bf84a4eef9f",
+  "baseline_tree": "cfae99c217d4bd4066a19d2589dd8589fc12b390",
+  "preserved_current_blob": "031c76a5a8e431f646853909bb2f2e11e6328cd2",
+  "source_head": "ea7baa5f58b496611664990854b2e4163f074c65",
+  "source_run": 40451830173,
+  "source_job": 122016102981,
+  "source_conclusion": "success",
+  "artifact_id": 12710817519,
+  "artifact_zip_bytes": 18766,
+  "artifact_zip_sha256_independently_downloaded": "cf0f71c52732f9aebaedd003200484c0753a3f4df0a169cb8190333092038605",
+  "artifact_members": [
+    "r41-source.json",
+    "r41-private.der"
+  ],
+  "source_report_archived_without_reserialization": true,
+  "private_transfer": {
+    "ciphertext_bytes": 1352,
+    "ciphertext_sha256": "869b94bfaff50fc4c8b1a70fc1f8d93daa9a5cd8facece4ead2b3e2e85064e38",
+    "plaintext_zip_bytes": 927,
+    "plaintext_zip_sha256": "462ef782d75e24ba849b00594bbec0f468409754259632fee92b05b857b7eea7",
+    "private_payload_in_public_git": false,
+    "recipient_certificate_sha256": "f4975ae7879cb1509c4394d9aebced753f5a642cda37f9bb740a2c0263b6d179"
+  },
+  "all_three_decrypted_original_full_sha_verified": true,
+  "fresh_modern_yaml_blob_verified_independently": "6e066821bedd0bbef7e59cc3f020cad7783e51c5",
+  "independent_actual_text_comparison": {
+    "raw_argument_changed_byte_positions": 114,
+    "changed_dialogue_character_positions": 14,
+    "observed_character_pairs": 9,
+    "whole_modern_258_bytes_reproduced": true,
+    "pure_transcode_proven": false
+  },
+  "independent_original_configuration_audit": {
+    "independent_regex_block_counts": {
+      "sb_geno.create": 3,
+      "sb_geno.template": 2
+    },
+    "all_assignments_verified_against_actual_originals": 45,
+    "cp950_big5_unicode_identical": true,
+    "raw_script_or_dialogue_published": false
+  },
+  "pins": {
+    "research/recovered/STONEAGE-PRESERVED-NPC-DELTA-SOURCE-R41.json": {
+      "bytes": 99960,
+      "sha256": "b51bbe6ecff9f2763b5f3725ca98d20a0fec2db9cab4085c0dc687fb62ea707d",
+      "git_blob": "e35243761e3d1ded28858f54e9b5e2093304414d"
+    },
+    "research/recovered/STONEAGE-PRESERVED-NPC-LOCAL-COMPARISON-R41.json": {
+      "bytes": 3251,
+      "sha256": "ecfd9198c93b0e60a8c9f8c734d216b1c237c66b40b1d309b51459564169ed24",
+      "git_blob": "eaa12a6d137fcaac7b1980eb535930a8aada2849"
+    },
+    "research/recovered/STONEAGE-PRESERVED-NPC-DELTA-MATERIAL-R41.json": {
+      "bytes": 28771,
+      "sha256": "ef3217848fe93dd6e4fedeaf5f7cdcc8776a07305721c9525539698dd42a9a35",
+      "git_blob": "d9b4d529a1f1bcf4b12b337c759c4b0b5deba2ef"
+    },
+    "research/recovered/STONEAGE-NPC-ORIGINAL-SCRIPT-CARRIER-QUALIFICATION-R1.json": {
+      "bytes": 2833,
+      "sha256": "274d34ef4695b0bdd14df0891ae6c4894ef087dd343d835f30fe474f3fdf8576",
+      "git_blob": "a76323d9871dd511926c4185004dc1ea2af5a506"
+    },
+    "research/recovered/STONEAGE-NPC-GENKOU-DERIVED-ARG-R1.json": {
+      "bytes": 1486,
+      "sha256": "6b25033c5a0b4f4b93f4f65abdf6d1c829a7da1e1bf158fa8adefd875dc4021a",
+      "git_blob": "c48c8b8055abd91a01541223e1be10920210c742"
+    }
+  },
+  "original_plaintext_ciphertext_or_key_in_git": false,
+  "durable_private_original_storage_authenticated": false,
+  "official_same_build_authenticated": false,
+  "original_server_executed": false,
+  "origin_class": "ORIGIN_UNRESOLVED",
+  "verified_base_quests_added": 0,
+  "candidate_main_ci": "TO_BE_OBSERVED_SEPARATELY",
+  "next": "PRESERVED_GENKOU_THIRD_GUARD_ARGUMENT_42",
+  "overall_restoration_percent": null
+}

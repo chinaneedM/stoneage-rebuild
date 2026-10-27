@@ -1,0 +1,31 @@
+name: Verify original Genkou NPC byte and configuration delta R41
+on:
+  push:
+    branches: ['agent/preserved-npc-delta-material-r41-20261027', main]
+    paths:
+      - tools/stoneage*npc*_*r41.py
+      - tests/test_stoneage*npc*_*r41.py
+      - research/recovered/STONEAGE-PRESERVED-NPC*R41.json
+      - .github/workflows/verify-stoneage-npc-delta-r41.yml
+permissions:
+  contents: read
+jobs:
+  original-npc-material:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install rarfile==4.2
+      - run: python -m unittest -v tests.test_stoneage_preserved_npc_delta_r41 tests.test_stoneage_npc_delta_material_r41
+      - run: python -m tools.stoneage_npc_delta_material_r41
+      - name: Verify only source-derived reports were published
+        run: |
+          python - <<'PY'
+          import subprocess
+          from pathlib import Path
+          blocked={'sb_kbu.arg','sb_geno.create','sb_geno.template','r41-private.der','recipient-key.pem','selected.zip'}
+          for p in subprocess.check_output(['git','ls-files','-z']).decode().split('\0'):
+              if p and Path(p).name in blocked:raise SystemExit('Original/private payload present: '+p)
+          PY
