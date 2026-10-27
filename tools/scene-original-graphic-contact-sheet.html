@@ -145,18 +145,32 @@ async function verify(){
     }
     require(epoch===revision,"校验期间已替换源文件或清单");
     staged.sort((a,b)=>a[1].map_id-b[1].map_id);
+    // Do not announce success until the actual browser image decoder confirms
+    // every SHA-matched PNG can be displayed. No image enters the gallery early.
+    const cards=[];
     for(const [f,r,w,h] of staged){
-      const figure=document.createElement("figure");
-      const img=document.createElement("img");
+      require(epoch===revision,"图像解码期间已替换文件");
       const u=URL.createObjectURL(f);objectUrls.push(u);
-      img.src=u;img.alt="来源编号"+r.map_id+"灰度索引图片，不是原游戏画面";
+      const img=document.createElement("img");
+      await new Promise((resolve,reject)=>{
+        img.onload=resolve;
+        img.onerror=()=>reject(Error("浏览器无法解码PNG："+f.name));
+        img.src=u;
+      });
+      require(epoch===revision,"图像解码期间已替换文件");
+      require(img.naturalWidth===w&&img.naturalHeight===h,
+        "PNG宣称尺寸与浏览器解码结果不同："+f.name);
+      img.alt="来源编号"+r.map_id+"灰度索引图片，不是原游戏画面";
       img.width=Math.min(w,200);
+      const figure=document.createElement("figure");
       const caption=document.createElement("figcaption");
       caption.textContent="map_number="+r.map_id+
         " / bitmapno="+r.occurrences[0].bitmapno+
         " / "+w+"×"+h+" / RD "+r.rd_block_sha256.slice(0,12)+"…";
-      figure.append(img,caption);el("gallery").append(figure);
+      figure.append(img,caption);cards.push(figure);
     }
+    require(epoch===revision,"校验完成前来源改变");
+    el("gallery").append(...cards);
     status("逐PNG SHA256与来源清单匹配："+staged.length+"张。"+
       "地图floor="+m.floor_id+"；来源后代保存包；灰度调色板索引，仅资源并列展示。"+
       "未进入原版游戏；场景绘制、颜色及透明关系均未认证。");
