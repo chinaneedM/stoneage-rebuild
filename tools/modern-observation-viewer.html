@@ -250,7 +250,7 @@ async function loadFrameManifest(event,slot){
     const expected=m.files;
     for(let i=0;i<expected.length;i++){
       const e=expected[i],f=selected[i];
-      if(!e||!/^frame-[0-9]{3}\\.png$/.test(e.path)||seen.has(e.path)||
+      if(!e||!/^frame-[0-9]{3}\.png$/.test(e.path)||seen.has(e.path)||
          e.path!==f.name||!/^[0-9a-f]{64}$/.test(e.sha256)||
          !Number.isSafeInteger(e.byte_length)||e.byte_length!==f.size)
         throw Error("帧文件路径、顺序或字节长度不匹配："+f.name);
@@ -262,6 +262,7 @@ async function loadFrameManifest(event,slot){
     // A file replacement during async hashing must not validate an obsolete selection.
     if(selectedFrameFiles[slot]!==selected)throw Error("校验期间所选帧已更换，请重新加载清单。");
     frameBindings[slot]=m;
+    if(!mapDiagnostic)byId("profile").value="TW_WAEI_1_0";
   }catch(error){alert("帧清单无法绑定："+error.message);}
   status();draw();
 }
