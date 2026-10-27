@@ -1,6 +1,7 @@
 import io
 import unittest
-from tools.stoneage_private_scene_source_r2 import bounded_copy
+from types import SimpleNamespace
+from tools.stoneage_private_scene_source_r2 import bounded_copy, select_headers, SELECTED, PREFIX
 
 class SourceStreamTests(unittest.TestCase):
     def test_exact_stream(self):
@@ -23,6 +24,37 @@ class SourceStreamTests(unittest.TestCase):
     def test_same_size_wrong_source(self):
         with self.assertRaisesRegex(ValueError, "SHA256"):
             bounded_copy(io.BytesIO(b"abc"), io.BytesIO(), 3, "0" * 64)
+
+    def headers(self):
+        return [SimpleNamespace(filename=PREFIX+name, file_size=pin[0], flags=0)
+                for name, pin in SELECTED.items()]
+
+    def test_case_preserves_exact_archive_name(self):
+        entries = self.headers()
+        entries[-1].filename = PREFIX + "map/1001.DAT"
+        self.assertEqual(select_headers(entries)["map/1001.dat"], PREFIX + "map/1001.DAT")
+
+    def test_duplicate_original_refused(self):
+        entries = self.headers()
+        with self.assertRaisesRegex(ValueError, "duplicate"):
+            select_headers(entries + entries[:1])
+
+    def test_solid_or_encrypted_refused(self):
+        for flag in (1, 2, 4, 16):
+            entries = self.headers()
+            entries[0].flags = flag
+            with self.assertRaisesRegex(ValueError, "split/encrypted/solid"):
+                select_headers(entries)
+
+    def test_missing_member_refused(self):
+        with self.assertRaisesRegex(ValueError, "absent"):
+            select_headers(self.headers()[:-1])
+
+    def test_wrong_extent_refused(self):
+        entries = self.headers()
+        entries[0].file_size += 1
+        with self.assertRaisesRegex(ValueError, "extent"):
+            select_headers(entries)
 
 if __name__ == "__main__":
     unittest.main()

@@ -72,33 +72,44 @@ def acquire_bundle(work, report):
     report["bundle"] = fingerprint(bundle)
     return bundle
 
+def select_headers(entries):
+    selected = {}
+    for entry in entries:
+        name = entry.filename.replace("\\", "/")
+        if not name.startswith(PREFIX):
+            continue
+        relative = name[len(PREFIX):].lower()
+        if relative not in SELECTED:
+            continue
+        require(relative not in selected, "duplicate selected archive path")
+        require(entry.file_size == SELECTED[relative][0] and
+                entry.flags & (1 | 2 | 4 | 16) == 0,
+                "selected member split/encrypted/solid or extent drift")
+        selected[relative] = name
+    require(set(selected) == set(SELECTED), "fixed original source member absent")
+    return selected
+
 def extract_selected(bundle, work):
-    import libarchive
+    import rarfile
+    with rarfile.RarFile(bundle) as archive:
+        selected = select_headers(archive.infolist())
+    destination = work / "selected-originals"
+    # libarchive cannot decode this REAL's RAR VM filter. unar supports it.
+    # Exact prevalidated names only; do not extract the rest of the mixed bundle.
+    proc = subprocess.run(["unar", "-f", "-o", str(destination), str(bundle),
+        *selected.values()], stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=300)
+    require(proc.returncode == 0, "static selected unar decompression failed")
     found = {}
-    with libarchive.file_reader(str(bundle)) as archive:
-        for entry in archive:
-            name = entry.pathname.replace("\\", "/")
-            if not name.startswith(PREFIX):
-                continue
-            relative = name[len(PREFIX):].lower()
-            if relative not in SELECTED:
-                continue
-            require(relative not in found, "duplicate selected archive path")
-            expected_size, expected_sha = SELECTED[relative]
-            require(entry.isfile and entry.size == expected_size, "selected archive type/extent drift")
-            target = work / Path(relative).name
-            digest = hashlib.sha256()
-            total = 0
-            with target.open("xb") as out:
-                for block in entry.get_blocks():
-                    total += len(block)
-                    require(total <= expected_size, "decompressed source extent exceeded")
-                    digest.update(block)
-                    out.write(block)
-            require(total == expected_size and digest.hexdigest() == expected_sha,
-                    "selected full member SHA256 mismatch")
-            found[relative] = target
-    require(set(found) == set(SELECTED), "fixed original source member absent")
+    for relative, name in selected.items():
+        matches = [p for p in destination.rglob("*") if p.is_file() and p.as_posix().endswith("/" + name)]
+        require(len(matches) == 1 and not matches[0].is_symlink(), "ambiguous selected original path")
+        source = matches[0]
+        expected_size, expected_sha = SELECTED[relative]
+        require(fingerprint(source) == {"bytes": expected_size, "sha256": expected_sha},
+                "selected full member SHA256 mismatch")
+        target = work / Path(relative).name
+        shutil.move(source, target)
+        found[relative] = target
     return found
 
 def observe(selected, work):
