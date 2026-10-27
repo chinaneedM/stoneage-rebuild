@@ -682,3 +682,8 @@ The 2.66 MB historical `docs/CURRENT-STATE.md` is still preserved byte-for-byte.
 ### 2026-10-27 — R41 原NPC参数异SHA原因与三条创建配置
 
 [原材料规格](docs/specs/STONEAGE-PRESERVED-NPC-DELTA-MATERIAL-R41.md) / [续接记录](docs/continuity/STONEAGE-NPC-DELTA-R41-20261027.md)：实取旧sb_kbu.arg与两份原创建/模板文件，全SHA/CRC吻合。旧/现代258B参数114字节位置不同，原因是编码转换加三个对白字段14处繁简替换；数字和键相同，不能只叫纯转码或宣称运行逻辑等价。原创建文件实际3条風的守護獸配置：11208两条、11214一条，现代11208单地图仅覆盖前两，3warp另类、不报第三条删除。source40451830173真实成功，原样派生、独立私人原字节比较与ZIP链永久保存，原对白/脚本明文和密钥不公开。NEXT42仅取第三条所引sb_kgi.arg作有界材料比较，随后轮转；官方同build、任务起源/运行仍未认证，完整CURRENT与Stage A/B/wiki/R79边界不变。
+
+
+### 2026-10-27 — R42 原保存第三守护兽参数实物
+
+[R42 第三 ARG 原件差异规格](docs/specs/STONEAGE-PRESERVED-GENKOU-THIRD-R42.md)及[连续性增量](docs/continuity/STONEAGE-GENKOU-THIRD-R42-20261027.md)记录原 `sb_kgi.arg` 281B 全 SHA/CRC、同 R41 三原件联合取证：第三创建配置所引参数有 `warpfl=11215`、`warpx=9`、`warpy=16`，`dieact=1` 与另一组10次敌号；旧 `sb_kbu.arg` 的 `time=180` 在第三参数不存在。R42 source run40456016963实际 success；原工件不进公开仓。来源只是社区混合包，原服务器触发／任务起源与官方初代同构建未证。最高NEXT按协议13回22域，优先有可追溯来源的早期官方具名宠物/NPC/本体任务实体表及事件，不扩该NPC helper；Stage A/B/wiki/R79、原客户端P3E与整体完成率边界不变。

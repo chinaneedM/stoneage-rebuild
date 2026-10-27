@@ -1,0 +1,32 @@
+name: Verify preserved Genkou third guard source R42
+on:
+  push:
+    branches: ['agent/preserved-genkou-third-guard-material-r42-20261027', main]
+    paths:
+      - tools/stoneage_genkou_third_material_r42.py
+      - tests/test_stoneage_genkou_third_material_r42.py
+      - research/recovered/STONEAGE-PRESERVED-GENKOU-THIRD-SOURCE-R42.json
+      - .github/workflows/verify-stoneage-genkou-third-r42.yml
+permissions:
+  contents: read
+jobs:
+  bound-original-npc-r42:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest -v tests.test_stoneage_genkou_third_material_r42
+      - run: python -m tools.stoneage_genkou_third_material_r42
+      - name: Refuse original data, key, ciphertext or commercial binaries in Git
+        run: |
+          python - <<'PY'
+          import subprocess
+          from pathlib import Path
+          denied={'sb_kbu.arg','sb_kgi.arg','sb_geno.create','sb_geno.template',
+                  'r42-private.der','recipient-key.pem','r42-source.zip'}
+          for p in subprocess.check_output(['git','ls-files','-z']).decode().split('\0'):
+              if p and Path(p).name in denied:
+                  raise SystemExit('Protected source/private data in public repository: '+p)
+          PY
