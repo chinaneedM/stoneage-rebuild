@@ -7,3 +7,9 @@
 10新增/53相关本地检查通过，独立SQLite全43632引用×281行得到576引用的完整字段多重集与报告相同。原派生SHA/blob永久钉入，新报告可完全离线重放，未生成新的短期源工件。没有大包下载、原像素/程序/私钥公开或运行原程序。候选/main验收须后验记录，不预写SUCCESS。
 
 最高NEXT `PRESERVED_ITEM_SHOP_NAMED_MATERIAL_44`：轮转物品商店原实物，先排旧代码/协议覆盖，仅一份有实际来源、可有界取得/旧SHA验证的小原表，限定少量具名物品或库存数值；不得冒充官方初代，缺源即止并回22域。DD-028四档、Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、P3E阻塞、私人原件长存暂停、总体percent=null均保留。
+
+## 实际远端终验
+
+内容main `0977a02762fe5ea969ce47f6d2d557bbb1cc41c8` / tree `9612c87a1816569d92432a08e01d44ddd515dfb7` 已在候选11项完成成功后，使用expected main SHA保护非强制快进；同内容主线11项也均实际completed/success。专用候选40493119828/job122151731546、主线40493215294，53项检查及全量离线报告重放均通过；实际主线job和22条运行完整记录见 `STONEAGE-ALBUM-CROSSVERSION-PUBLICATION-R43.json`。上传8路径逐blob及整tree与本地一致，完整CURRENT blob未改变，无新短期源工件。
+
+独立补核旧TW1物理照片候选7246—7366共121引用：120进入本次名称槽匹配，唯一余项为原index/physical7366、logical28999，不在后期相册224有效face表；不是把旧121订正为120，也不据该差额猜身份或用途。原目录、R36/R37及旧失败保留。收据自身Actions另据后验，不套父提交成功；最高NEXT及所有事实边界不变。
