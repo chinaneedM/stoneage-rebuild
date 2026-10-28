@@ -1,0 +1,33 @@
+name: Verify source-qualified pet observer R8 without original assets
+on:
+  push:
+    paths:
+      - tools/stoneage_private_scene_pet_r8.py
+      - tools/scene-room-pet-viewer-r8.html
+      - tools/stoneage_scene08_*.py
+      - tools/stoneage_scene08_*.cjs
+      - tools/stoneage_private_scene_actor_r7.py
+      - tests/test_stoneage_scene08_*.py
+      - research/recovered/STONEAGE-SCENE08-*.json
+      - .github/workflows/verify-stoneage-scene08-pet.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-safe-metadata-and-synthetic-browser:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: python -m pip install Pillow
+      - run: python -m tools.stoneage_scene08_evidence_guard
+      - run: python -m unittest -v tests.test_stoneage_scene08_pet tests.test_stoneage_scene07_actor tests.test_stoneage_scene07_evidence tests.test_stoneage_scene06_evidence
+      - run: npm install --no-save playwright@1.58.2
+      - run: npx playwright install --with-deps chromium
+      - run: python -m tools.stoneage_scene08_synthetic_fixture /tmp/scene08-synthetic.html
+      - run: node tools/stoneage_scene08_browser_check.cjs /tmp/scene08-synthetic.html /tmp/scene08-browser
