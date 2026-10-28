@@ -26,6 +26,12 @@ RULE='StoneAgeP3HGuestOutbound';TASK='StoneAgeP3HGuestRestore'
 
 def fingerprint(p):return dict(bytes=p.stat().st_size,sha256=digest_file(p))
 
+def certificate_identity(path):
+    # checkout on Windows may expand LF to CRLF; pin identical PEM content.
+    canonical=path.read_bytes().replace(b'\r\n',b'\n')
+    require(hashlib.sha256(canonical).hexdigest()==CERT_SHA,'private transfer recipient pin')
+    return CERT_SHA
+
 def portable_acquire(output):
     from tools.stoneage_tw10_archive_parallel_download import ranges,_allowed_source
     from tools.stoneage_tw10_archive_chunk_download import approved_source,_verify_response,ARCHIVE_SIZE,ARCHIVE_MD5,ARCHIVE_SHA1,USER_AGENT
@@ -172,7 +178,7 @@ def run(a):
     require(os.name=='nt' and os.environ.get('GITHUB_ACTIONS')=='true' and os.environ.get('RUNNER_ENVIRONMENT')=='github-hosted','disposable hosted Windows only')
     work=a.work.resolve();out=a.output.resolve()
     require(ROOT not in work.parents and not work.exists() and ROOT not in out.parents and not out.exists(),'new private external directories')
-    require(digest_file(a.certificate)==CERT_SHA,'private transfer recipient pin')
+    certificate_identity(a.certificate)
     require(shutil.which('7z') or shutil.which('7z.exe'),'static RAR extractor unavailable')
     work.mkdir();out.mkdir();report={'schema':'stoneage.p3h.original_windows_login.v1','original_downloaded':False,
         'original_client_executed':False,'original_world_entered':False,'original_server_contacted':False,
@@ -205,7 +211,7 @@ def run(a):
         subprocess.run([str(a.openssl),'cms','-encrypt','-binary','-aes-256-cbc','-in',str(private),'-out',str(sealed),'-outform','DER',str(a.certificate.resolve())],check=True,capture_output=True)
         report['encrypted_private_runtime']=fingerprint(sealed)
         report['transfer_certificate_sha256']=CERT_SHA
-        print('P3H_ORIGINAL_WINDOWS_RESULT',json.dumps(dict(main=report['runtime'].get('original_visible_main_observed'),quit=report['runtime']['quit_exit_before_cleanup'],world_entered=False)),flush=True)
+        print('P3H_ORIGINAL_WINDOWS_RESULT',json.dumps(dict(main=report['runtime'].get('original_visible_main_observed',False),quit=report['runtime'].get('quit_exit_before_cleanup',False),world_entered=False)),flush=True)
     except Exception as e:
         report.update(error_type=type(e).__name__,error=str(e)[:300]);raise
     finally:
