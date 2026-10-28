@@ -74,7 +74,7 @@ def source():
    f=selected[TARGET];need(0<f["packed_size"]<=24*1024*1024,"ADRN compressed member download budget")
    need(f["flags"]&(1|2|4|16)==0,"ADRN solid/split/encrypted not independently extractable")
    h=reader.at(f["header_offset"],f["data_offset"]-f["header_offset"])
-   p=reader.at(f["data_offset"],f["packed_size"])
+   p=b"".join(reader.at(f["data_offset"]+i,min(1048576,f["packed_size"]-i)) for i in range(0,f["packed_size"],1048576))
    isolated=isolated_rar(h,p,f["flags"])
    archive=pathlib.Path(directory)/"one-adrn.rar";archive.write_bytes(isolated)
    d=pathlib.Path(directory)/"out";d.mkdir()
