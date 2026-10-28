@@ -48,3 +48,11 @@ R5按后代扫描顺序直接合成，同层编号递增；原排后顺序是地
 `ORIGINAL-TW10-ISOLATED-WORLD-ENTRY-P3G`：按用户的“实际进入原世界”最高目标，有限核对可用的隔离zh-TW Windows来宾，必须同一环境同时满足ACP950、8bpp、RGB、真实输入和原程序/后代进程的出站隔离。原登录和世界/服务器交接仍是不同门槛。若当前没有可用资格环境，记录精确外部依赖即停，不再扩Wine/显示参数树；不得用本页切换、实验marker或合成服务消息冒称登录/走动/战斗。只有具名实质新依赖才重开本包的人物遮挡分支。
 
 Stage A仍7 PARTIAL+2 OPEN；Stage B/wiki GATED；R79 PAUSED_NON_BLOCKING；总体完成率null。DD-028任务四档和DD-030未来新作简体中文/UTF-8不变。
+
+## 候选、合入和主线实际验收后记
+
+候选 `7b76bab8932fc362394673a34cdc68426f1468f2` / tree `62485b118d9f6e85140e83bf32c538b2b462b879` 的11项Actions全部实际completed/success。专用元数据run40632936074/job122633278965的源守卫、6测试和Node语法检查全部成功。经重新读取远端main、确认PR clean/mergeable及精确候选HEAD后，通过PR#19非强制merge进入 `e05f24e1333f486bb1b014f08cd8918faae47d7d`，其tree与候选逐一相同。
+
+内容主线11项Actions也全部实际completed/success，专用run40633036049成功；真实运行列表、job和8项源Git blob固定在 `research/recovered/STONEAGE-SCENE06-PUBLICATION-R6.json`。这些是安全元数据CI，原代码私有有界重放、原载体/交付全文回读分别有证据，不混作远端原件执行。没有原件Source Actions/短期源工件，故相关字段明确null，不伪造ZIP/run链。
+
+远端完整tree再核CURRENT原blob不变，六份启动/历史大文件全文未改，README原92959B完整前缀保留。此验收后记只附加文档/收据；它自身CI不预支为成功。下一最高仍P3G，原世界/原生绘图/人物遮挡及所有阶段边界不变。
