@@ -1,0 +1,224 @@
+{
+  "schema": "stoneage.scene10.private_numeric_callsite_candidate.r1",
+  "private_viewer_sha256": "00e7565587e009c3e44bcffa1523ab4018886d637aaef1e04749dc01637628d4",
+  "private_viewer_bytes": 1150992,
+  "source_exe_sha256_claim": "ec678517f76564ebc9ab00cf3f66853ed9975ef6290eb48168b78909a68a5d16",
+  "provenance": "PRIVATE_VIEWER_NUMERIC_METADATA_UNVERIFIED_AGAINST_ORIGINAL_EXE",
+  "key_targets": [
+    4368676,
+    4198711,
+    4508177,
+    4356772,
+    4506787
+  ],
+  "paths": [
+    {
+      "path_index": 0,
+      "start_va": 4494410,
+      "end_va_exclusive": 4494501,
+      "direct_calls": [
+        {
+          "call_va": 4494410,
+          "target_va": 4368676
+        },
+        {
+          "call_va": 4494415,
+          "target_va": 4198711
+        },
+        {
+          "call_va": 4494420,
+          "target_va": 4508177
+        },
+        {
+          "call_va": 4494425,
+          "target_va": 4521342
+        },
+        {
+          "call_va": 4494430,
+          "target_va": 4362106
+        },
+        {
+          "call_va": 4494435,
+          "target_va": 4359174
+        },
+        {
+          "call_va": 4494440,
+          "target_va": 4356772
+        },
+        {
+          "call_va": 4494464,
+          "target_va": 4522945
+        },
+        {
+          "call_va": 4494476,
+          "target_va": 4385231
+        },
+        {
+          "call_va": 4494481,
+          "target_va": 4235988
+        },
+        {
+          "call_va": 4494486,
+          "target_va": 4238381
+        },
+        {
+          "call_va": 4494491,
+          "target_va": 4263335
+        },
+        {
+          "call_va": 4494496,
+          "target_va": 4506787
+        }
+      ],
+      "full_outer_path_executed": false
+    },
+    {
+      "path_index": 1,
+      "start_va": 4495313,
+      "end_va_exclusive": 4495363,
+      "direct_calls": [
+        {
+          "call_va": 4495313,
+          "target_va": 4368676
+        },
+        {
+          "call_va": 4495318,
+          "target_va": 4198711
+        },
+        {
+          "call_va": 4495323,
+          "target_va": 4508177
+        },
+        {
+          "call_va": 4495328,
+          "target_va": 4521342
+        },
+        {
+          "call_va": 4495333,
+          "target_va": 4356772
+        },
+        {
+          "call_va": 4495338,
+          "target_va": 4385231
+        },
+        {
+          "call_va": 4495343,
+          "target_va": 4235988
+        },
+        {
+          "call_va": 4495348,
+          "target_va": 4238381
+        },
+        {
+          "call_va": 4495353,
+          "target_va": 4263335
+        },
+        {
+          "call_va": 4495358,
+          "target_va": 4506787
+        }
+      ],
+      "full_outer_path_executed": false
+    },
+    {
+      "path_index": 2,
+      "start_va": 4495615,
+      "end_va_exclusive": 4495696,
+      "direct_calls": [
+        {
+          "call_va": 4495615,
+          "target_va": 4368676
+        },
+        {
+          "call_va": 4495620,
+          "target_va": 4198711
+        },
+        {
+          "call_va": 4495625,
+          "target_va": 4508177
+        },
+        {
+          "call_va": 4495630,
+          "target_va": 4359174
+        },
+        {
+          "call_va": 4495635,
+          "target_va": 4356772
+        },
+        {
+          "call_va": 4495676,
+          "target_va": 4370477
+        },
+        {
+          "call_va": 4495681,
+          "target_va": 4235988
+        },
+        {
+          "call_va": 4495686,
+          "target_va": 4238381
+        },
+        {
+          "call_va": 4495691,
+          "target_va": 4506787
+        }
+      ],
+      "full_outer_path_executed": false
+    },
+    {
+      "path_index": 3,
+      "start_va": 4495953,
+      "end_va_exclusive": 4496015,
+      "direct_calls": [
+        {
+          "call_va": 4495953,
+          "target_va": 4368676
+        },
+        {
+          "call_va": 4495958,
+          "target_va": 4281548
+        },
+        {
+          "call_va": 4495970,
+          "target_va": 4254374
+        },
+        {
+          "call_va": 4495975,
+          "target_va": 4198711
+        },
+        {
+          "call_va": 4495980,
+          "target_va": 4508177
+        },
+        {
+          "call_va": 4495985,
+          "target_va": 4370874
+        },
+        {
+          "call_va": 4495990,
+          "target_va": 4359174
+        },
+        {
+          "call_va": 4495995,
+          "target_va": 4356772
+        },
+        {
+          "call_va": 4496000,
+          "target_va": 4235988
+        },
+        {
+          "call_va": 4496005,
+          "target_va": 4238381
+        },
+        {
+          "call_va": 4496010,
+          "target_va": 4506787
+        }
+      ],
+      "full_outer_path_executed": false
+    }
+  ],
+  "total_calls": 43,
+  "unreplayed_intervening_calls": 23,
+  "original_exe_independently_qualified": false,
+  "original_world_entered": false
+}
