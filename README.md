@@ -828,3 +828,8 @@ ranges, not a new whole-client download or arbitrary program reverse engineering
 ### 2026-10-28 | SCENE11 原宠物真实图像轮廓、动作重复与非全局换色负例
 
 [完整SCENE11日期续接](docs/continuity/STONEAGE-SCENE11-PET-VISUAL-20261028.md)与[PR #27](https://github.com/chinaneedM/stoneage-rebuild/pull/27)：私人R10观察页原SHA全检并解码208幅来源PNG（宠物160/人物48），同保存包R40原SPR完整段100250/251/252与早期TW1/CN5三段SHA完全相符。原动作码2的八方向对应画面100250与100251各48出现/48不同图，100252有160帧出现但只64不同图，**96重复帧位不可丢**；每方向相同20位置图号模式保留。48个100250/251对应原像素帧38对alpha轮廓完全相同，剩余十对合计仅12 alpha像素不等，全部48对可见RGBA共43069位置不一致；140种源RGBA中125种映射不唯一，不得假设一个固定换色表可再生所有帧。只提交数值/哈希/程序和负例测试，原PNG与private HTML不公开。候选源安全Action40705927012与主线40706155057均已实际completed/success（15测试）；**专用CI不读取私有原图，不等于原版程序实际运行或官方宠物身份**。下一移交新增有实物的其他动作图/场景交互，若无原像素则有限止点回材料轮换，停止R10原EXE分卷空转；旧CURRENT全文2680510B原blob不改，Stage A7 PARTIAL+2 OPEN，B/wiki GATED，R79暂停，总百分比null。
+
+
+### 2026-10-28 | SCENE12 私人场景观察器受控来源证据范围修复
+
+[SCENE12 日期记录](docs/continuity/STONEAGE-SCENE12-OBSERVER-WITNESS-SCOPE-20261028.md)及[PR #28](https://github.com/chinaneedM/stoneage-rebuild/pull/28)：重新读取SHA认证的私人R10观察页，发现观察器将 R9 100250/方向0受控排序误用于其他选中宠物、方向和帧。48个原R9受控样例对应6400个现代观察可选状态中**仅56个两图号同时吻合**，6344个必须明确显示为现代回退绘制而非原插序事实；加入SHA限定私有HTML修复工具、源安全数值记录及反例测试。私人修正版浏览器实际解码218张图，错误0、外部请求0，原图/HTML未入Git。候选Actions [40709304608](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40709304608)已实际completed/success，PR #28已合并，主线合并提交 e4603d62986ac7ca35174aedd297b6010be25825。此成功**并非原游戏运行或官方宠物身份恢复**，仍是后代混合来源的受控参考；Stage A 7 PARTIAL + 2 OPEN，Stage B/wiki GATED，R79暂停，总完成率未定义。下一最高：材料优先恢复有实际原图的新动作或有同版输入的NPC/地图交互，缺实物则有界停止，不扩大原EXE分卷与泛用渲染helper。
