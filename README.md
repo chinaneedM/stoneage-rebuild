@@ -796,3 +796,8 @@ ranges, not a new whole-client download or arbitrary program reverse engineering
 ### 2026-10-28 | P3I 原运行 + 原生主表面已实测，原游戏仍未显示
 
 [P3I 实际运行、已核小工件和原生帧采样受限验收](docs/continuity/STONEAGE-WINDOWS-P3I-20261028.md)：原 TW1 本次进程/退出又获认证；Windows source job `40640162726` completed/success，独立主表面 1024×768/32bpp Lock 与客户区像素摘要实得。**它不是原客户端私有绘图缓冲区，也没有找到可见的原游戏图或世界**。小 source-report artifact 4,412B 已独立下载核SHA，45,308B 原报告完整回读；大密文仅证 GitHub CI 上传，不宣称本轮耐久保管。后验只保留永久派生摘要和准确否证状态。P3I 受限排障止点已到；下一回同源现代离线场景观察器，待真正新证才重开原本体世界入口。CURRENT、DD-028/030、Stage A/B/wiki、R79边界及未知百分比不变。
+
+
+### 2026-10-28 | P3I独立复测仍未出现原游戏画面
+
+[同一P3I日期记录](docs/continuity/STONEAGE-WINDOWS-P3I-20261028.md)追加第二次实际隔离源Run40640619774成功，另一个来宾全局primary 1024×768/32bpp、窗口区域SHA与首轮**完全相同**，原程序仍可在坐标点击后正常退出，但GDI截图仍只见黑底/输入法。两份短期源小ZIP与原报告均独立哈希；大密文只记录Actions来源。外部探针的32bpp不能回填原进程8bpp调色板。这是有限止点而非原游戏画面或世界验收；下一改回现有真实地图/人物/宠物原素材的现代离线观察，直到新同源原生证据出现。Stage A/B/wiki/R79与总体未知不变。

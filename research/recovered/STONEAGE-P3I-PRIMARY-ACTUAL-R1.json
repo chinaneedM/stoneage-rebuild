@@ -80,5 +80,32 @@
   "stage_b": "GATED",
   "wiki": "GATED",
   "savedata_r79": "PAUSED_NON_BLOCKING",
-  "overall_restoration_percent": null
+  "overall_restoration_percent": null,
+  "independent_replication": {
+    "trigger": "candidate source-evidence-guard change matched source workflow push.paths; repeated original acquisition occurred and is not portrayed as necessary for metadata-only archiving",
+    "run_id": 40640619774,
+    "job_id": 122657646996,
+    "head": "f0c6c9ae96d0f54187a2f1302c0f5386ff9fba87",
+    "conclusion": "success",
+    "artifact_source_report_id": 12794718955,
+    "artifact_zip_sha256": "13c38daa6f36e4cb30c2c2943ea5c87f3747c69eeb8f5c84700b656ca8ffb836",
+    "raw_report_bytes": 45306,
+    "raw_report_sha256": "62b8fa915cb2920460b14439ec8c24290923ff43eaaa6ec82d8bdcf347adb58b",
+    "artifact_independently_downloaded_and_hashed": true,
+    "original_process_executed": true,
+    "exit_before_cleanup": true,
+    "global_primary_pixel_sha256_same": "e76e2132c541303e27bf4653104b7eedf60c393524e6847ed9bcd257c61ce98b",
+    "global_primary_geometry_same": [
+      1024,
+      768,
+      32,
+      4096
+    ],
+    "primary_surface_lock_success": true,
+    "three_gdi_frames_same_two_black_ime_digest_variants_different_order": true,
+    "visual_original_game_unverified": true,
+    "encrypted_artifact_id": 12795476155,
+    "encrypted_zip_sha256": "f28d2444d56c927a7f06bc9f35ff111ed1a6117d46c0a0485b71f3088c437543",
+    "large_encrypted_artifact_independently_downloaded": false
+  }
 }
