@@ -44,3 +44,9 @@
 这次独立下载第二小ZIP artifact `12794718955`，完整 SHA256 `13c38daa6f36e4cb30c2c2943ea5c87f3747c69eeb8f5c84700b656ca8ffb836`；解开原报告45306B/SHA256 `62b8fa915cb2920460b14439ec8c24290923ff43eaaa6ec82d8bdcf347adb58b`。加密大工件 `12795476155` 只从API得到摘要，未独立下载/持久回读。全部复测源号与两个报告SHA追加至永久机读回执。
 
 **归因警戒**：原P3H旧EXE通过专设`__COMPAT_LAYER=256COLOR`运行，但P3I外部只读探针没有继承这一专设环境；其32bpp是**独立全局桌面主表面**观察，不能当作原进程8bpp设备色板/私人缓冲。即便两次主表面SHA完全稳定也不能证明游戏已经实际绘出美术。至此停止本分支重复原包下载及驱动探测，返回已有同保存源现代离线可视观察与人物/宠物真实图像关联。原版可操作登录、地图/战斗仍需新的独立证据。
+
+## 主线非强制快进发布及同HEAD实际验收
+
+从本轮启动时实际 main `7ff9179f5a8eb489e09966117345e007abcd18a4` 非强制快进到内容主线 `97911d54ba68f64c6a7b9c7d66afe3b7f9f5b8eb` / tree `60c72514f8b29adc517d03a0ec1c1b91d6e5f61c`，实际 Git 比较 ahead4 / behind0，原 README 历史前缀追加、完整 CURRENT Git blob `031c76a5a8e431f646853909bb2f2e11e6328cd2` 未变、原2,680,510B未截断。注意候选验收分两阶段：P3I原代码提交的两 CI job及 source 真执行均 success、归档提交候选12项success、最新仅覆层内容候选10项success。主线内容同HEAD 12项独立 Actions **全部实际 completed/success**，具体 ID/名称/SHA 永久固定在 `research/recovered/STONEAGE-P3I-MAIN-ACCEPTANCE-R1.json`。以上验收是代码、源实测和保管链，不是原人物地图、原菜单或进入世界。
+
+本段是发布后加法验收覆层，验收收据提交自身Actions尚未执行不能预支绿色。下一主动仍是已有真实原图/地图资源的现代离线场景观察；原客户端世界与其自己的8bpp调色板/私人帧只在有新实物证明时重开。原Stage A七PARTIAL+二OPEN、Stage B/wiki GATED、R79 PAUSED_NON_BLOCKING、总体百分比null原样保持。
