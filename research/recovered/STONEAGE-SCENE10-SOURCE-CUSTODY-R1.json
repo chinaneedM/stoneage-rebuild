@@ -1,0 +1,49 @@
+{
+  "schema": "stoneage.scene10.source_range_custody.r1",
+  "as_of": "2026-10-28",
+  "source_baseline_main": "634c25b1111573537e57de089419f9f78c1c0973",
+  "source_workflow_commit": "a754425c5bafb27907e8b304da94379371b33641",
+  "first_failed_ci": {
+    "run_id": 40701404571,
+    "job_id": 122861897447,
+    "head_sha": "ca6831e282fa01861ce6841c169ec5a7ebc238d3",
+    "conclusion": "failure",
+    "exact_failure": "synthetic test_direct_relative_call used double-escaped byte literal, rejected by native opcode guard",
+    "not_a_source_verification": true
+  },
+  "corrected_source_run": {
+    "run_id": 40701484420,
+    "job_id": 122862183864,
+    "status": "completed",
+    "conclusion": "success",
+    "synthetic_tests": 10,
+    "source_result_status": "PREFIX_DOES_NOT_PROVE_EXE_AVAILABILITY",
+    "native_exe_source_verified": false
+  },
+  "artifact": {
+    "id": 12820924896,
+    "name": "scene10-source-range-metadata-only",
+    "zip_bytes": 710,
+    "zip_sha256": "6d0dfe2d9291781f066db1fb990a7599a22b82a9dc6438fb82f5bb20890f38c8",
+    "member": "stoneage-scene10-source-derived.json",
+    "member_bytes": 868,
+    "member_sha256": "27c33025b1a1c4465655393d4f2e6923e5a6a72d13d4d14bfa13bbd97dba27f0",
+    "zip_independently_downloaded_and_sha_verified": true,
+    "exact_single_member_readback": true
+  },
+  "source_prefix": {
+    "http_status": 206,
+    "expected_total_bytes": 209715200,
+    "range_bytes": 16777216,
+    "range_sha256": "a4bcaf14b8fbcdd75e07cd2833c2560f07f75184d8eef6f343502716db4c197d",
+    "rar_listing_return_code": 2,
+    "matching_exe_paths_in_prefix": 0,
+    "whole_original_exe_not_obtained": true
+  },
+  "interpretation": "16MiB first-part prefix does not establish full archive membership or absence; no original EXE code site verified",
+  "original_world_entered": false,
+  "original_frame_certified": false,
+  "original_client_direct_runtime": false,
+  "source_private_binaries_published": false,
+  "source_result_raw_sha256": "27c33025b1a1c4465655393d4f2e6923e5a6a72d13d4d14bfa13bbd97dba27f0"
+}
