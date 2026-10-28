@@ -781,3 +781,8 @@ ranges, not a new whole-client download or arbitrary program reverse engineering
 ### 2026-10-28 | P3G Windows2025原件运行前提取得实测候选
 
 [三次源实测与续接](docs/continuity/STONEAGE-WINDOWS-P3G-20261028.md)：Windows2022修正命名空间后UTF-8生效但zh-TW仍ACP1252；Windows2025正确清单下同一自编x86接收器实得ACP950/8bpp、真实红绿像素及鼠标接收。另一一次性来宾实验在约5.28秒全程序出站阻断期间仍通过颜色/输入，两程序路径TCP实得WSAEACCES，清理后恢复；没有冒称已遍测IPv6/UDP/loopback或原进程。三个源JSON及完整ZIP/run/job/Git链永久保管，旧失败与CURRENT全文不改。最高NEXT转原TW1真实Windows登录/QUIT有限观察P3H，先验证未改EXE的外置清单和隔离/保管；原程序本轮下载/执行0，世界仍未进入，Stage A/B/wiki/R79及总体百分比未知保持。
+
+
+### 2026-10-28 | P3H原TW1实际Windows运行/退出，原画面仍黑
+
+[原件有限观察与完整续接](docs/continuity/STONEAGE-WINDOWS-P3H-20261028.md)：未改EXE的外置清单自编前提通过，认证TW1原375文件逐SHA匹配后在临时出站阻断来宾真实运行，已知退出坐标点击后清理前正常退出0。**独立目视三帧的两种图像仅见黑底/IME/光标，游戏画面、原调色板和繁体UI仍未认证，世界没有进入。** 三次失败和修正均保留，原样报告/完整工件保管链永久记录；375原件与观察包已私人持久保存并完整回读核SHA，公开Git不含原件/图像/私钥。最高NEXT为限定只读原生帧读出P3I，判别实际未出图与屏幕抓取路径缺口；不展开参数树。CURRENT完整历史字节与Stage A/B/wiki/R79/总体未知边界不变。
