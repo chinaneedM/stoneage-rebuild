@@ -47,3 +47,9 @@ Chromium153.0.8010.0实际解码218源图，24宠物/方向组合和256帧位置
 `SCENE10-SAME-CARRIER-FRAME-PHASE-ORDER`：只定位同SHA原程序中清空该链表、演员调用、地图扫描/构件插入的帧内先后顺序，核本轮“演员先入队”的条件是否为一个有来源的正常路径，或留下确切缺失的回调/状态字段即止。不扩大完整渲染器/WinXP/Wine/驱动树，不把当前受控插序宣称完整原帧顺序。只有新的同源原生画面/服务端证据才重开原世界入口。
 
 完整CURRENT和协议、设计、历史、来源、路线字节保持，README只追加日期入口。DD-028任务四档、DD-030简体中文/UTF-8、Stage A7 PARTIAL+2 OPEN、Stage B/wiki GATED、R79暂停和总体百分比null均保持。
+
+## 远端后验验收与永久收据
+
+PR #24候选`7d7a79e0692d7224f102f48b10312ec753f8f0c3`的11项真实Actions全部completed/success，其中R9合成浏览器run40693436448/job122833845620。按精确候选HEAD与未移动main校验后常规合并为`7e1cb73d66a128ed109eb2fa7aa75c7df1adba0b`，主线11项同样全部completed/success，其中R9 run40693874419/job122835374077；两者tree均为`fff41e475fad937abb2d1497fb4f2b3dd6e0d17c`。远端Chromium145的16幅人工图、24组合/256帧/12重复位以及新旧插序可见性均实际通过，候选和主线浏览器收据逐项相同。它们不替代本地218源图与原指令执行验收。
+
+STONEAGE-SCENE09-PUBLICATION-R9.json永久保留两组11项run状态、真实浏览器日志提取结果、五份派生报告完整SHA/长度/Git blob，以及原CURRENT指纹、私人交付回读和明确未证边界。本轮没有源Actions或短期原源工件，故源run与artifact均为null。收据提交自身Actions在写入时仍为NOT_PRE_CREDITED，须待真实完成再报给用户，不预先认证后续成功。下一事项仍为SCENE10-SAME-CARRIER-FRAME-PHASE-ORDER。
