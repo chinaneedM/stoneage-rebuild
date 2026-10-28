@@ -21,3 +21,17 @@
 优先执行一次有界 P3I Windows 实测及独立证据检验。若无法得到有意义的独立原生读出，登记具体失败后停止扩大 WinXP/Wine/驱动/参数树，返回已有同源地图/角色/宠物的现代离线观察者，保留原运行画面与世界入口 OPEN。原 Stage A 九域 7 PARTIAL+2 OPEN、Stage B/wiki GATED、R79 PAUSED_NON_BLOCKING，整体完成比例未知。
 
 初始状态：P3I_IMPLEMENTED_SOURCE_ACTION_PENDING；没有声称本包曾实际运行原程序。
+
+## 真实源执行及后验验收（2026-10-28）
+
+原 P3I 专项 Windows source run `40640162726` / job `122656198136` 已实际 completed/success。P3H 的未改原 TW1 程序、三个本次 640×480 GDI 截图、已知退出坐标输入后自然退出 0 以及原件期间出站 TCP WSAEACCES 10013 均有源报告，**不含帐号/密码，未进入世界**。同时独立 Windows C 编译和 Ubuntu 否证 job `40640162911` 均 completed/success。这里“原件执行成功”和“原游戏画面成功显示”严格分开。
+
+实测同一原窗口（PID/类名/640×480 双重校验）第一次采样后的独立只读 DirectDraw 主表面探测返回：DirectDrawCreate、DDSCL_NORMAL、CreateSurface(PRIMARY)、Lock(READONLY) 的 HRESULT 均 `0x00000000`；全局显示表面 **1024×768 / 32bpp / stride 4096**，窗口屏幕起点 (3,26)，限定 640×480 的原生像素摘要 `e76e2132c541303e27bf4653104b7eedf60c393524e6847ed9bcd257c61ce98b`。GetPalette 返回 `0x8876023c`，未获取调色板；32bpp 试验不含不同 RGB 总数或颜色空间分类，不能猜 primary 是彩色游戏图还是黑底/输入法/合成器。三个相邻 GDI 帧的 RGB 摘要依次为 `fce460...a114f0a`、相同、`a469dd...9067d`，均未建立原美术画面。本只读实验**没有读取原客户端私有 DirectDraw backbuffer**。
+
+独立从 GitHub Actions 下载原短期ZIP artifact `12795396156` (4412B)、本地完整SHA256 `d523e095168538938a6229cb81fc954e21a1034e325a07e8d6612f750f3344b8` 与 API digest 相符；解开其唯一 source-report.json 45308B，独立哈希 `be1cc255e05059518d90807f308ee4641700b176545a86ea262406e97ecdf534`，核对上述全部数值与安全状态。另一密封私人包 artifact `12795341341` / 上传工件ZIP digest `ff9c4b71d3fe5c23f923f3c4aa1de689f04270281b497a762ca4d70f84b6de2c` 只记录 CI 上传，**未在本轮声称独立下载大密文或持久私人Library回读**；该CI artifact 7天有效，不应把它当永久原件保管。此前 P3H 原375文件保管记录另独立存在。
+
+上述实测摘要、源/工件哈希、全部证据限制已永久记录为 `research/recovered/STONEAGE-P3I-PRIMARY-ACTUAL-R1.json`；其专用否证检查拒绝假造世界进入、原调色板、原画面或原私有缓冲区资格。Source 通过不是“进入原版世界”。
+
+**P3I 本轮结论**：原程序在原生 Windows 正常创建窗口/退出；另一个只读 DirectDraw 路径可以读到**全局主表面**，但因为没有原游戏私有 backbuffer 读取/身份、没有对应像素的独立视觉鉴真、原版 GDI 图片仍为黑底，本研究无法判定原游戏是否实际绘制，也不能恢复登录菜单/世界。达成有限探测止点，不继续无界扩 WinXP/模拟器/显示驱动。
+
+**下一有效工作**：优先返回已取得并可解释同载体地图真实像素的现代离线场景观察器，补源色板、原SPR/人物及可交互的具名源锚；仅在有新的原生取帧或服务端同源见证时重新打开原游戏真实进入门。保持 Stage A 7 PARTIAL+2 OPEN、Stage B/wiki GATED、R79暂停、overall percent=null。此记录为 CURRENT 的日期覆层；其 2680510B 字节整部旧史原样保留。

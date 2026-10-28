@@ -791,3 +791,8 @@ ranges, not a new whole-client download or arbitrary program reverse engineering
 ### 2026-10-28 | P3I 只读原生帧分辨实验（源运行待验）
 
 [P3I 受限 DirectDraw primary 读出方案](docs/continuity/STONEAGE-WINDOWS-P3I-20261028.md)：承接 P3H 原 TW1 黑屏/可退出实证，增加不修改原 EXE、不开原进程内存的原生全局 primary 只读索引观察及独立采样证明。其成功读取不等于读取原程序私有 backbuffer，也不等于恢复原画面/世界。优先验证一轮真正 Windows source Action；无实质差异则按协议13回同源现代场景观察，禁止泛化扩 WinXP/驱动助手。完整 CURRENT 2680510B 原文保持不变；Stage A/B/wiki/R79 与总体进度未知保持。
+
+
+### 2026-10-28 | P3I 原运行 + 原生主表面已实测，原游戏仍未显示
+
+[P3I 实际运行、已核小工件和原生帧采样受限验收](docs/continuity/STONEAGE-WINDOWS-P3I-20261028.md)：原 TW1 本次进程/退出又获认证；Windows source job `40640162726` completed/success，独立主表面 1024×768/32bpp Lock 与客户区像素摘要实得。**它不是原客户端私有绘图缓冲区，也没有找到可见的原游戏图或世界**。小 source-report artifact 4,412B 已独立下载核SHA，45,308B 原报告完整回读；大密文仅证 GitHub CI 上传，不宣称本轮耐久保管。后验只保留永久派生摘要和准确否证状态。P3I 受限排障止点已到；下一回同源现代离线场景观察器，待真正新证才重开原本体世界入口。CURRENT、DD-028/030、Stage A/B/wiki、R79边界及未知百分比不变。

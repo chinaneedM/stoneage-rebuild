@@ -1,0 +1,84 @@
+{
+  "schema": "stoneage.p3i.actual_primary_observation.r1",
+  "recorded_on": "2026-10-28",
+  "source_branch": "agent/original-native-framebuffer-p3i-20261028",
+  "source_commit": "fae170f8bf86502b660264458f4924525bd3641d",
+  "source_tree": "5df53beb80b0fa6bbfff2a57eadb3a8f03c3b7eb",
+  "source_run": {
+    "id": 40640162726,
+    "job_id": 122656198136,
+    "conclusion": "success",
+    "original_source_report_artifact_id": 12795396156,
+    "artifact_zip_bytes": 4412,
+    "artifact_zip_sha256": "d523e095168538938a6229cb81fc954e21a1034e325a07e8d6612f750f3344b8",
+    "raw_source_report_bytes": 45308,
+    "raw_source_report_sha256": "be1cc255e05059518d90807f308ee4641700b176545a86ea262406e97ecdf534",
+    "artifact_download_independently_verified": true,
+    "raw_source_report_extracted_and_hashed": true
+  },
+  "original_run": {
+    "version": "TW1.0 Waei/JSS original",
+    "executable_sha256": "cdab9ea049a98bbc96ce93eeaa8b63c688f0c0f0ad8b3183e79d75e47621441a",
+    "original_client_executed": true,
+    "original_executable_modified": false,
+    "real_original_640x480_window": true,
+    "actual_quit_exit_before_cleanup": true,
+    "actual_isolation_outbound_denial_wsaeacces": 10013,
+    "account_or_password_entered": false,
+    "original_world_entered": false,
+    "original_server_contacted": false,
+    "original_GetACP_directly_measured": false
+  },
+  "probe": {
+    "observed": true,
+    "returncode": 0,
+    "window_id_qualified": true,
+    "independent_process_global_primary_only": true,
+    "original_private_surface_read": false,
+    "ddraw_create_hr": "0x00000000",
+    "cooperative_hr": "0x00000000",
+    "primary_create_hr": "0x00000000",
+    "primary_lock_hr": "0x00000000",
+    "palette_query_hr": "0x8876023c",
+    "palette_read": false,
+    "surface_width": 1024,
+    "surface_height": 768,
+    "surface_pitch": 4096,
+    "surface_bpp": 32,
+    "original_client_origin": [
+      3,
+      26
+    ],
+    "sample_region": [
+      640,
+      480
+    ],
+    "pixel_sha256": "e76e2132c541303e27bf4653104b7eedf60c393524e6847ed9bcd257c61ce98b",
+    "native_pixel_color_classification_not_recorded": true
+  },
+  "screen_capture": {
+    "frames": 3,
+    "all_original_art_unverified": true,
+    "rgb_sha256": [
+      "fce46019884e3ef78d595f072e1f20c7e6d71ddbbf19c78f802d0e7caa114f0a",
+      "fce46019884e3ef78d595f072e1f20c7e6d71ddbbf19c78f802d0e7caa114f0a",
+      "a469dd64a8f325e33e3bfcd51de9e922dd1609ea7999a1f7cc8a67ac09ee967d"
+    ],
+    "image_published": false
+  },
+  "retention": {
+    "encrypted_private_artifact_id": 12795341341,
+    "encrypted_artifact_zip_bytes": 372628078,
+    "encrypted_artifact_zip_sha256": "ff9c4b71d3fe5c23f923f3c4aa1de689f04270281b497a762ca4d70f84b6de2c",
+    "source_claim": "encrypted data delivered as 7-day CI artifact, not independently verified long-term permanent Library custody",
+    "plaintext_original_published": false
+  },
+  "assessment": "PRIMARY_SURFACE_BYTES_READ_GAME_CONTENT_UNATTRIBUTED",
+  "stop_condition": "P3I_FINITE_PRIMARY_READ_OBTAINED_NO_AUTHENTIC_GAME_PICTURE",
+  "next": "RETURN_TO_SOURCE_BOUND_MODERN_OFFLINE_WORLD_OBSERVER_OR_MATERIAL_ORIGINAL_CLIENT_WORLD_ENTRY_ONLY_WHEN_NEW_EVIDENCE",
+  "stage_a": "7_PARTIAL_2_OPEN",
+  "stage_b": "GATED",
+  "wiki": "GATED",
+  "savedata_r79": "PAUSED_NON_BLOCKING",
+  "overall_restoration_percent": null
+}

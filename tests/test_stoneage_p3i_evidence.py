@@ -36,4 +36,27 @@ class Evidence(unittest.TestCase):
             s=copy.deepcopy(sample());change(s)
             with self.subTest(change=repr(change)),self.assertRaises(ValueError):
                 qualify_p3i(s)
+
+class ActualDerivedEvidence(unittest.TestCase):
+    def summary(self):
+        from pathlib import Path
+        import json
+        root=Path(__file__).resolve().parents[1]
+        return json.loads((root/'research/recovered/STONEAGE-P3I-PRIMARY-ACTUAL-R1.json').read_text())
+    def test_actual_source_limited_receipt(self):
+        from tools.stoneage_p3i_evidence_guard import verify_actual_summary
+        self.assertEqual(verify_actual_summary(self.summary()),'PRIMARY_SURFACE_BYTES_READ_GAME_CONTENT_UNATTRIBUTED')
+    def test_false_source_promotion_rejected(self):
+        from tools.stoneage_p3i_evidence_guard import verify_actual_summary
+        for change in (lambda r:r['original_run'].update(original_world_entered=True),
+                       lambda r:r['original_run'].update(original_GetACP_directly_measured=True),
+                       lambda r:r['probe'].update(original_private_surface_read=True),
+                       lambda r:r['probe'].update(pixel_sha256='0'*64),
+                       lambda r:r['source_run'].update(raw_source_report_sha256='0'*64),
+                       lambda r:r['screen_capture'].update(all_original_art_unverified=False),
+                       lambda r:r['retention'].update(plaintext_original_published=True),
+                       lambda r:r.update(overall_restoration_percent=99)):
+            r=copy.deepcopy(self.summary());change(r)
+            with self.assertRaises(ValueError):verify_actual_summary(r)
+
 if __name__=='__main__':unittest.main()
