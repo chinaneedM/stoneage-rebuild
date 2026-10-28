@@ -40,3 +40,10 @@
 `SCENE08-SAME-CARRIER-QUALIFIED-PET-PREVIEW`：有限接R39/R40已有保存模板的图形键100250/100251/100252之一，完成一个宠物外观候选与既有房间的实际原RD/SPR观察。标签必须显示原保存模板名称与 `SAME_CARRIER_EQUAL_NUMERIC_KEY_ONLY_NOT_DEPLOYMENT_PROOF`；同包数值相等不是原服同一部署或官方初代物种认证。优先复用已保管原载体与小型派生，不再下载公网整包或扩所有动作/helper。若源字段/调色板/帧不足，记录精确缺口即止；原客户端世界入口仅在新的同源原生画面/服务器证据出现时重开。
 
 Stage A仍7 PARTIAL+2 OPEN；Stage B/wiki GATED；R79 PAUSED_NON_BLOCKING；总体百分比null。DD-028任务四档、DD-030简体中文/UTF-8及原历史全文均保持。
+
+
+## 候选、主线实际验收与完整历史保留
+
+候选a09745efd3b8c57a55d49956da60d5d19ec2ff80的11项Actions全部实际completed/success；R7专用40673378331/job122765519312完成20项Python检查及真正Chromium145.0.7632.6合成页面运行。重新核远端main未变、PR22 mergeable且候选HEAD精确一致后，以非强制merge合入主线732096b3be145f6e5e314c658b2ae1c04b573da5，tree d23b3d9acd401f734025d18a6e0cc2dd792312d3与本地验证/候选逐一相同。内容主线11项Actions也已全部实际completed/success；R7专用40673634407/job122766384856通过。两端各6张合成矩形PNG的浏览器结果逐项同一，不能当作原源138图的远端执行。原源138图另有本地实际Chromium153和独立像素收据。
+
+完整原CURRENT及协议、设计、历史、来源、路线六份历史文件原字节均保持，README完整历史前缀保留。原派生报告121285B/SHA d2b38cba3b4722308ceaf3f39a6208b7b6f2298385e23b8eb4113fec53d8533b / Git blob3e7b22a6e423292e30b3a34293ca23c2d5432dc2永久保存；本轮原源是已保管载体的本地实读，没有原源Actions或短期ZIP，相关字段明确null，不伪造源run。完整11+11真实运行ID、精确内容SHA、两端合成浏览器原日志摘要和私人页完整回读结果见STONEAGE-SCENE07-PUBLICATION-R7.json。此追加收据提交自身Actions不预支绿色；下一有限宠物候选及全部原世界/阶段边界不变。
