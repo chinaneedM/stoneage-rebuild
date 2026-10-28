@@ -17,7 +17,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Preserve exact Git bytes of the authenticated runtime inventory
         shell: cmd
-        run: git -c core.autocrlf=false checkout-index --force -- research/recovered/STONEAGE-TW10-CLIENT-INVENTORY-R1.txt
+        run: python -c "import hashlib,subprocess; from pathlib import Path; p=Path('research/recovered/STONEAGE-TW10-CLIENT-INVENTORY-R1.txt'); b=subprocess.check_output(['git','show','HEAD:'+p.as_posix()]); h=hashlib.sha1(b'blob '+str(len(b)).encode()+b'\0'+b).hexdigest(); assert h=='564233902b10c60760d4f93b1ea65d4dd1469206'; p.write_bytes(b); print('P3H_INVENTORY_EXACT_GIT_BLOB',h,'BYTES',len(b))"
       - uses: ilammy/msvc-dev-cmd@v1
         with:
           arch: x86
