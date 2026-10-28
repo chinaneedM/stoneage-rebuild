@@ -44,8 +44,10 @@ def authenticate(path, pin):
         need(hashlib.file_digest(f, 'sha256').hexdigest() == pin[1],
              'original full-file SHA mismatch: '+path.name)
 
-def select_animations(index, spr, selected=GROUPS):
+def select_animations(index, spr, selected=GROUPS, actions=ACTIONS):
     """Retain duplicate source selector occurrences; never silently use last-wins."""
+    need(actions and len(set(actions)) == len(actions) and
+         all(type(a) is int and 0 <= a <= 65535 for a in actions), 'explicit unique action selectors')
     need(len(index) % 12 == 0 and 0 < len(index) <= 120000, 'index extent')
     rows = [struct.unpack_from('<IIHH', index, p) for p in range(0, len(index), 12)]
     offsets = sorted({r[1] for r in rows})
@@ -67,16 +69,16 @@ def select_animations(index, spr, selected=GROUPS):
             need(0 < n <= 112 and cursor+n*10 <= ends[start], 'frame source range')
             frames = [list(struct.unpack_from('<IhhH', spr, cursor+j*10)) for j in range(n)]
             cursor += n*10
-            if direction in range(8) and action in ACTIONS:
+            if direction in range(8) and action in actions:
                 need(all(f[0] != 0xffffffff for f in frames), 'sentinel needs separate semantics')
                 animations.append({'source_animation_index': ai, 'header_offset': header_offset,
                     'direction': direction, 'action': action, 'duration_word': duration,
                     'frames': frames, 'end_offset': cursor,
                     'source_animation_span_sha256': sha(spr[header_offset:cursor])})
         need(cursor == ends[start], 'whole original group boundary mismatch')
-        need(len(animations) == 16 and
+        need(len(animations) == 8*len(actions) and
              {(a['direction'], a['action']) for a in animations} ==
-             {(d,a) for d in range(8) for a in ACTIONS}, 'missing/ambiguous selected animation')
+             {(d,a) for d in range(8) for a in actions}, 'missing/ambiguous selected animation')
         groups.append({'spr_no': no, 'source_group_index': gi, 'offset': start,
             'end_offset': cursor, 'source_animation_count': count, 'reserved_word': reserved,
             'index_record_sha256': sha(index[gi*12:gi*12+12]),
