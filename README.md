@@ -771,3 +771,8 @@ remaining extraction gate are appended to the
 and [source-safe bitmap bound report](research/recovered/STONEAGE-SCENE04-TWO-IMAGE-ADRN-BOUND-R1.json).
 The next task stays narrowly limited to these two existing private-source
 ranges, not a new whole-client download or arbitrary program reverse engineering.
+
+
+### 2026-10-28 | SCENE06 native display order, bounded no-actor observation
+
+[原程序有限重放与续接记录](docs/continuity/STONEAGE-SCENE06-NATIVE-ORDER-20261028.md)：同混合保存客户端原扫描、ADRN查询、构件链表、原比较器/CRT排序器及消费请求顺序已在隔离指令解释器中有界重放；25地面+5构件按同层反向编号绘制，候选合成3549像素改变。私人R6页可切新旧顺序并已保存/完整回读。180边界用例和后代源码独立编译同一；41项本地检查及DOM模拟通过。本轮未取得Chromium，不认真实浏览器验收；LoadBmp返回失败桩、原生绘图/人物遮挡/原客户端世界进入仍OPEN。NEXT为有限隔离TW1运行环境/世界入口资格P3G，不扩显示helper。原CURRENT全字节不改，Stage A/B/wiki/R79及未知总体百分比保持。

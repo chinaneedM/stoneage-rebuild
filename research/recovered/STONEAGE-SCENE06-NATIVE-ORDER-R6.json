@@ -1,0 +1,1819 @@
+{
+  "schema": "stoneage.scene06.native_display_order.r6",
+  "program_bytes": 561152,
+  "program_sha256": "ec678517f76564ebc9ab00cf3f66853ed9975ef6290eb48168b78909a68a5d16",
+  "adrn_sha256": "92d0137590d35a7a1f4fb11af3ad13bbc585813a4b0e1e3f933c397007fbff74",
+  "source_r5_html_sha256": "ff9c99fa3df6ccbc162ea87e87f5cd8e4a980e3b0f9877309f99d30776dae298",
+  "source_map_sha256": "62dbef1614ede0ba032ca9c69cbfdc3d43938e45baba78701885790937b86b90",
+  "native_scan_crop": [
+    13,
+    13,
+    17,
+    17
+  ],
+  "injected_viewport_translation": [
+    100,
+    200
+  ],
+  "native_map_sweep_executed": true,
+  "native_getters_and_alias_lookup_not_stubbed": true,
+  "runtime_alias_table_injected_from_unique_original_adrn": true,
+  "source_spans": {
+    "sort_dispatch": {
+      "va_start": 4506787,
+      "va_end_exclusive": 4506816,
+      "sha256": "42925a299346a1ed3f7fecd50b98d0901c16ac54c05c2bb7f0b31afea97161d1"
+    },
+    "comparator": {
+      "va_start": 4508692,
+      "va_end_exclusive": 4508743,
+      "sha256": "af698b4153058bf1b2d847425a1f6b1401769bd5bfcd806e5ff4d3695bbeba02"
+    },
+    "queue_writer": {
+      "va_start": 4507846,
+      "va_end_exclusive": 4508020,
+      "sha256": "8d3b50ae9e83e8154c6faed8390ae54ef0ae30ab7a7e9c6df583c6a5120a7d1e"
+    },
+    "physical_queue_writer": {
+      "va_start": 4508020,
+      "va_end_exclusive": 4508177,
+      "sha256": "4e6350a72854a650ce948ad3c60c5dfc2775ac69e5828f2fc51b8f273f6cb8a2"
+    },
+    "parts_list": {
+      "va_start": 4368694,
+      "va_end_exclusive": 4368938,
+      "sha256": "874d1b624b847bef1e59414d2d850bfe5b9a55ed3885a19ff19eaed2275464cd"
+    },
+    "list_append": {
+      "va_start": 4369372,
+      "va_end_exclusive": 4369411,
+      "sha256": "020a4a953b7fc3159f82625f17ae03a05d0f4d02427f00724ce0c593787b04e1"
+    },
+    "parts_queue": {
+      "va_start": 4369411,
+      "va_end_exclusive": 4369480,
+      "sha256": "e24b453155f417b4e3bd7463e65454ca1e7343b9d04682f8275c6cd16c13036c"
+    },
+    "map_scan": {
+      "va_start": 4357175,
+      "va_end_exclusive": 4357700,
+      "sha256": "d5844d4ccce27ff2c4bfa16e9da51b2f18902ed152904daaa0b356f5442843de"
+    },
+    "forward_consumer": {
+      "va_start": 4507433,
+      "va_end_exclusive": 4507797,
+      "sha256": "29b681c237bb5103d56beb343c70e3abe41514c9a30ea501e5a7bf394b89bab8"
+    }
+  },
+  "comparator_cases": [
+    [
+      0,
+      0,
+      1,
+      0,
+      1
+    ],
+    [
+      29,
+      0,
+      0,
+      0,
+      -1
+    ],
+    [
+      32767,
+      0,
+      0,
+      0,
+      -1
+    ],
+    [
+      0,
+      0,
+      32767,
+      0,
+      1
+    ],
+    [
+      3,
+      0,
+      3,
+      0,
+      1
+    ],
+    [
+      0,
+      0,
+      1,
+      1,
+      -1
+    ],
+    [
+      29,
+      0,
+      0,
+      1,
+      -1
+    ],
+    [
+      32767,
+      0,
+      0,
+      1,
+      -1
+    ],
+    [
+      0,
+      0,
+      32767,
+      1,
+      -1
+    ],
+    [
+      3,
+      0,
+      3,
+      1,
+      -1
+    ],
+    [
+      0,
+      0,
+      1,
+      10,
+      -1
+    ],
+    [
+      29,
+      0,
+      0,
+      10,
+      -1
+    ],
+    [
+      32767,
+      0,
+      0,
+      10,
+      -1
+    ],
+    [
+      0,
+      0,
+      32767,
+      10,
+      -1
+    ],
+    [
+      3,
+      0,
+      3,
+      10,
+      -1
+    ],
+    [
+      0,
+      0,
+      1,
+      127,
+      -1
+    ],
+    [
+      29,
+      0,
+      0,
+      127,
+      -1
+    ],
+    [
+      32767,
+      0,
+      0,
+      127,
+      -1
+    ],
+    [
+      0,
+      0,
+      32767,
+      127,
+      -1
+    ],
+    [
+      3,
+      0,
+      3,
+      127,
+      -1
+    ],
+    [
+      0,
+      0,
+      1,
+      128,
+      -1
+    ],
+    [
+      29,
+      0,
+      0,
+      128,
+      -1
+    ],
+    [
+      32767,
+      0,
+      0,
+      128,
+      -1
+    ],
+    [
+      0,
+      0,
+      32767,
+      128,
+      -1
+    ],
+    [
+      3,
+      0,
+      3,
+      128,
+      -1
+    ],
+    [
+      0,
+      0,
+      1,
+      255,
+      -1
+    ],
+    [
+      29,
+      0,
+      0,
+      255,
+      -1
+    ],
+    [
+      32767,
+      0,
+      0,
+      255,
+      -1
+    ],
+    [
+      0,
+      0,
+      32767,
+      255,
+      -1
+    ],
+    [
+      3,
+      0,
+      3,
+      255,
+      -1
+    ],
+    [
+      0,
+      1,
+      1,
+      0,
+      1
+    ],
+    [
+      29,
+      1,
+      0,
+      0,
+      1
+    ],
+    [
+      32767,
+      1,
+      0,
+      0,
+      1
+    ],
+    [
+      0,
+      1,
+      32767,
+      0,
+      1
+    ],
+    [
+      3,
+      1,
+      3,
+      0,
+      1
+    ],
+    [
+      0,
+      1,
+      1,
+      1,
+      1
+    ],
+    [
+      29,
+      1,
+      0,
+      1,
+      -1
+    ],
+    [
+      32767,
+      1,
+      0,
+      1,
+      -1
+    ],
+    [
+      0,
+      1,
+      32767,
+      1,
+      1
+    ],
+    [
+      3,
+      1,
+      3,
+      1,
+      1
+    ],
+    [
+      0,
+      1,
+      1,
+      10,
+      -1
+    ],
+    [
+      29,
+      1,
+      0,
+      10,
+      -1
+    ],
+    [
+      32767,
+      1,
+      0,
+      10,
+      -1
+    ],
+    [
+      0,
+      1,
+      32767,
+      10,
+      -1
+    ],
+    [
+      3,
+      1,
+      3,
+      10,
+      -1
+    ],
+    [
+      0,
+      1,
+      1,
+      127,
+      -1
+    ],
+    [
+      29,
+      1,
+      0,
+      127,
+      -1
+    ],
+    [
+      32767,
+      1,
+      0,
+      127,
+      -1
+    ],
+    [
+      0,
+      1,
+      32767,
+      127,
+      -1
+    ],
+    [
+      3,
+      1,
+      3,
+      127,
+      -1
+    ],
+    [
+      0,
+      1,
+      1,
+      128,
+      -1
+    ],
+    [
+      29,
+      1,
+      0,
+      128,
+      -1
+    ],
+    [
+      32767,
+      1,
+      0,
+      128,
+      -1
+    ],
+    [
+      0,
+      1,
+      32767,
+      128,
+      -1
+    ],
+    [
+      3,
+      1,
+      3,
+      128,
+      -1
+    ],
+    [
+      0,
+      1,
+      1,
+      255,
+      -1
+    ],
+    [
+      29,
+      1,
+      0,
+      255,
+      -1
+    ],
+    [
+      32767,
+      1,
+      0,
+      255,
+      -1
+    ],
+    [
+      0,
+      1,
+      32767,
+      255,
+      -1
+    ],
+    [
+      3,
+      1,
+      3,
+      255,
+      -1
+    ],
+    [
+      0,
+      10,
+      1,
+      0,
+      1
+    ],
+    [
+      29,
+      10,
+      0,
+      0,
+      1
+    ],
+    [
+      32767,
+      10,
+      0,
+      0,
+      1
+    ],
+    [
+      0,
+      10,
+      32767,
+      0,
+      1
+    ],
+    [
+      3,
+      10,
+      3,
+      0,
+      1
+    ],
+    [
+      0,
+      10,
+      1,
+      1,
+      1
+    ],
+    [
+      29,
+      10,
+      0,
+      1,
+      1
+    ],
+    [
+      32767,
+      10,
+      0,
+      1,
+      1
+    ],
+    [
+      0,
+      10,
+      32767,
+      1,
+      1
+    ],
+    [
+      3,
+      10,
+      3,
+      1,
+      1
+    ],
+    [
+      0,
+      10,
+      1,
+      10,
+      1
+    ],
+    [
+      29,
+      10,
+      0,
+      10,
+      -1
+    ],
+    [
+      32767,
+      10,
+      0,
+      10,
+      -1
+    ],
+    [
+      0,
+      10,
+      32767,
+      10,
+      1
+    ],
+    [
+      3,
+      10,
+      3,
+      10,
+      1
+    ],
+    [
+      0,
+      10,
+      1,
+      127,
+      -1
+    ],
+    [
+      29,
+      10,
+      0,
+      127,
+      -1
+    ],
+    [
+      32767,
+      10,
+      0,
+      127,
+      -1
+    ],
+    [
+      0,
+      10,
+      32767,
+      127,
+      -1
+    ],
+    [
+      3,
+      10,
+      3,
+      127,
+      -1
+    ],
+    [
+      0,
+      10,
+      1,
+      128,
+      -1
+    ],
+    [
+      29,
+      10,
+      0,
+      128,
+      -1
+    ],
+    [
+      32767,
+      10,
+      0,
+      128,
+      -1
+    ],
+    [
+      0,
+      10,
+      32767,
+      128,
+      -1
+    ],
+    [
+      3,
+      10,
+      3,
+      128,
+      -1
+    ],
+    [
+      0,
+      10,
+      1,
+      255,
+      -1
+    ],
+    [
+      29,
+      10,
+      0,
+      255,
+      -1
+    ],
+    [
+      32767,
+      10,
+      0,
+      255,
+      -1
+    ],
+    [
+      0,
+      10,
+      32767,
+      255,
+      -1
+    ],
+    [
+      3,
+      10,
+      3,
+      255,
+      -1
+    ],
+    [
+      0,
+      127,
+      1,
+      0,
+      1
+    ],
+    [
+      29,
+      127,
+      0,
+      0,
+      1
+    ],
+    [
+      32767,
+      127,
+      0,
+      0,
+      1
+    ],
+    [
+      0,
+      127,
+      32767,
+      0,
+      1
+    ],
+    [
+      3,
+      127,
+      3,
+      0,
+      1
+    ],
+    [
+      0,
+      127,
+      1,
+      1,
+      1
+    ],
+    [
+      29,
+      127,
+      0,
+      1,
+      1
+    ],
+    [
+      32767,
+      127,
+      0,
+      1,
+      1
+    ],
+    [
+      0,
+      127,
+      32767,
+      1,
+      1
+    ],
+    [
+      3,
+      127,
+      3,
+      1,
+      1
+    ],
+    [
+      0,
+      127,
+      1,
+      10,
+      1
+    ],
+    [
+      29,
+      127,
+      0,
+      10,
+      1
+    ],
+    [
+      32767,
+      127,
+      0,
+      10,
+      1
+    ],
+    [
+      0,
+      127,
+      32767,
+      10,
+      1
+    ],
+    [
+      3,
+      127,
+      3,
+      10,
+      1
+    ],
+    [
+      0,
+      127,
+      1,
+      127,
+      1
+    ],
+    [
+      29,
+      127,
+      0,
+      127,
+      -1
+    ],
+    [
+      32767,
+      127,
+      0,
+      127,
+      -1
+    ],
+    [
+      0,
+      127,
+      32767,
+      127,
+      1
+    ],
+    [
+      3,
+      127,
+      3,
+      127,
+      1
+    ],
+    [
+      0,
+      127,
+      1,
+      128,
+      -1
+    ],
+    [
+      29,
+      127,
+      0,
+      128,
+      -1
+    ],
+    [
+      32767,
+      127,
+      0,
+      128,
+      -1
+    ],
+    [
+      0,
+      127,
+      32767,
+      128,
+      -1
+    ],
+    [
+      3,
+      127,
+      3,
+      128,
+      -1
+    ],
+    [
+      0,
+      127,
+      1,
+      255,
+      -1
+    ],
+    [
+      29,
+      127,
+      0,
+      255,
+      -1
+    ],
+    [
+      32767,
+      127,
+      0,
+      255,
+      -1
+    ],
+    [
+      0,
+      127,
+      32767,
+      255,
+      -1
+    ],
+    [
+      3,
+      127,
+      3,
+      255,
+      -1
+    ],
+    [
+      0,
+      128,
+      1,
+      0,
+      1
+    ],
+    [
+      29,
+      128,
+      0,
+      0,
+      1
+    ],
+    [
+      32767,
+      128,
+      0,
+      0,
+      1
+    ],
+    [
+      0,
+      128,
+      32767,
+      0,
+      1
+    ],
+    [
+      3,
+      128,
+      3,
+      0,
+      1
+    ],
+    [
+      0,
+      128,
+      1,
+      1,
+      1
+    ],
+    [
+      29,
+      128,
+      0,
+      1,
+      1
+    ],
+    [
+      32767,
+      128,
+      0,
+      1,
+      1
+    ],
+    [
+      0,
+      128,
+      32767,
+      1,
+      1
+    ],
+    [
+      3,
+      128,
+      3,
+      1,
+      1
+    ],
+    [
+      0,
+      128,
+      1,
+      10,
+      1
+    ],
+    [
+      29,
+      128,
+      0,
+      10,
+      1
+    ],
+    [
+      32767,
+      128,
+      0,
+      10,
+      1
+    ],
+    [
+      0,
+      128,
+      32767,
+      10,
+      1
+    ],
+    [
+      3,
+      128,
+      3,
+      10,
+      1
+    ],
+    [
+      0,
+      128,
+      1,
+      127,
+      1
+    ],
+    [
+      29,
+      128,
+      0,
+      127,
+      1
+    ],
+    [
+      32767,
+      128,
+      0,
+      127,
+      1
+    ],
+    [
+      0,
+      128,
+      32767,
+      127,
+      1
+    ],
+    [
+      3,
+      128,
+      3,
+      127,
+      1
+    ],
+    [
+      0,
+      128,
+      1,
+      128,
+      1
+    ],
+    [
+      29,
+      128,
+      0,
+      128,
+      -1
+    ],
+    [
+      32767,
+      128,
+      0,
+      128,
+      -1
+    ],
+    [
+      0,
+      128,
+      32767,
+      128,
+      1
+    ],
+    [
+      3,
+      128,
+      3,
+      128,
+      1
+    ],
+    [
+      0,
+      128,
+      1,
+      255,
+      -1
+    ],
+    [
+      29,
+      128,
+      0,
+      255,
+      -1
+    ],
+    [
+      32767,
+      128,
+      0,
+      255,
+      -1
+    ],
+    [
+      0,
+      128,
+      32767,
+      255,
+      -1
+    ],
+    [
+      3,
+      128,
+      3,
+      255,
+      -1
+    ],
+    [
+      0,
+      255,
+      1,
+      0,
+      1
+    ],
+    [
+      29,
+      255,
+      0,
+      0,
+      1
+    ],
+    [
+      32767,
+      255,
+      0,
+      0,
+      1
+    ],
+    [
+      0,
+      255,
+      32767,
+      0,
+      1
+    ],
+    [
+      3,
+      255,
+      3,
+      0,
+      1
+    ],
+    [
+      0,
+      255,
+      1,
+      1,
+      1
+    ],
+    [
+      29,
+      255,
+      0,
+      1,
+      1
+    ],
+    [
+      32767,
+      255,
+      0,
+      1,
+      1
+    ],
+    [
+      0,
+      255,
+      32767,
+      1,
+      1
+    ],
+    [
+      3,
+      255,
+      3,
+      1,
+      1
+    ],
+    [
+      0,
+      255,
+      1,
+      10,
+      1
+    ],
+    [
+      29,
+      255,
+      0,
+      10,
+      1
+    ],
+    [
+      32767,
+      255,
+      0,
+      10,
+      1
+    ],
+    [
+      0,
+      255,
+      32767,
+      10,
+      1
+    ],
+    [
+      3,
+      255,
+      3,
+      10,
+      1
+    ],
+    [
+      0,
+      255,
+      1,
+      127,
+      1
+    ],
+    [
+      29,
+      255,
+      0,
+      127,
+      1
+    ],
+    [
+      32767,
+      255,
+      0,
+      127,
+      1
+    ],
+    [
+      0,
+      255,
+      32767,
+      127,
+      1
+    ],
+    [
+      3,
+      255,
+      3,
+      127,
+      1
+    ],
+    [
+      0,
+      255,
+      1,
+      128,
+      1
+    ],
+    [
+      29,
+      255,
+      0,
+      128,
+      1
+    ],
+    [
+      32767,
+      255,
+      0,
+      128,
+      1
+    ],
+    [
+      0,
+      255,
+      32767,
+      128,
+      1
+    ],
+    [
+      3,
+      255,
+      3,
+      128,
+      1
+    ],
+    [
+      0,
+      255,
+      1,
+      255,
+      1
+    ],
+    [
+      29,
+      255,
+      0,
+      255,
+      -1
+    ],
+    [
+      32767,
+      255,
+      0,
+      255,
+      -1
+    ],
+    [
+      0,
+      255,
+      32767,
+      255,
+      1
+    ],
+    [
+      3,
+      255,
+      3,
+      255,
+      1
+    ]
+  ],
+  "comparator_case_count": 180,
+  "original_sorter_executed_in_unicorn": true,
+  "sorter_not_stubbed": true,
+  "controlled_queue": [
+    {
+      "layer": "tile",
+      "x": 13,
+      "y": 17,
+      "map_id": 5002,
+      "draw_x": 96,
+      "draw_y": 72,
+      "qualified": true,
+      "bitmapno": 1617,
+      "queue_no": 0,
+      "priority": 0
+    },
+    {
+      "layer": "tile",
+      "x": 14,
+      "y": 17,
+      "map_id": 5002,
+      "draw_x": 128,
+      "draw_y": 48,
+      "qualified": true,
+      "bitmapno": 1617,
+      "queue_no": 1,
+      "priority": 0
+    },
+    {
+      "layer": "tile",
+      "x": 13,
+      "y": 16,
+      "map_id": 5015,
+      "draw_x": 64,
+      "draw_y": 48,
+      "qualified": true,
+      "bitmapno": 1630,
+      "queue_no": 2,
+      "priority": 0
+    },
+    {
+      "layer": "tile",
+      "x": 15,
+      "y": 17,
+      "map_id": 5001,
+      "draw_x": 160,
+      "draw_y": 24,
+      "qualified": true,
+      "bitmapno": 1616,
+      "queue_no": 3,
+      "priority": 0
+    },
+    {
+      "layer": "tile",
+      "x": 14,
+      "y": 16,
+      "map_id": 5005,
+      "draw_x": 96,
+      "draw_y": 24,
+      "qualified": true,
+      "bitmapno": 1620,
+      "queue_no": 4,
+      "priority": 0
+    },
+    {
+      "layer": "tile",
+      "x": 13,
+      "y": 15,
+      "map_id": 5009,
+      "draw_x": 32,
+      "draw_y": 24,
+      "qualified": true,
+      "bitmapno": 1624,
+      "queue_no": 5,
+      "priority": 0
+    },
+    {
+      "layer": "tile",
+      "x": 16,
+      "y": 17,
+      "map_id": 5002,
+      "draw_x": 192,
+      "draw_y": 0,
+      "qualified": true,
+      "bitmapno": 1617,
+      "queue_no": 6,
+      "priority": 0
+    },
+    {
+      "layer": "tile",
+      "x": 15,
+      "y": 16,
+      "map_id": 5001,
+      "draw_x": 128,
+      "draw_y": 0,
+      "qualified": true,
+      "bitmapno": 1616,
+      "queue_no": 7,
+      "priority": 0
+    },
+    {
+      "layer": "tile",
+      "x": 14,
+      "y": 15,
+      "map_id": 5007,
+      "draw_x": 64,
+      "draw_y": 0,
+      "qualified": true,
+      "bitmapno": 1622,
+      "queue_no": 8,
+      "priority": 0
+    },
+    {
+      "layer": "tile",
+      "x": 13,
+      "y": 14,
+      "map_id": 5000,
+      "draw_x": 0,
+      "draw_y": 0,
+      "qualified": true,
+      "bitmapno": 1615,
+      "queue_no": 9,
+      "priority": 0
+    },
+    {
+      "layer": "tile",
+      "x": 17,
+      "y": 17,
+      "map_id": 5002,
+      "draw_x": 224,
+      "draw_y": -24,
+      "qualified": true,
+      "bitmapno": 1617,
+      "queue_no": 10,
+      "priority": 0
+    },
+    {
+      "layer": "tile",
+      "x": 16,
+      "y": 16,
+      "map_id": 5001,
+      "draw_x": 160,
+      "draw_y": -24,
+      "qualified": true,
+      "bitmapno": 1616,
+      "queue_no": 11,
+      "priority": 0
+    },
+    {
+      "layer": "tile",
+      "x": 15,
+      "y": 15,
+      "map_id": 5000,
+      "draw_x": 96,
+      "draw_y": -24,
+      "qualified": true,
+      "bitmapno": 1615,
+      "queue_no": 12,
+      "priority": 0
+    },
+    {
+      "layer": "tile",
+      "x": 14,
+      "y": 14,
+      "map_id": 5001,
+      "draw_x": 32,
+      "draw_y": -24,
+      "qualified": true,
+      "bitmapno": 1616,
+      "queue_no": 13,
+      "priority": 0
+    },
+    {
+      "layer": "tile",
+      "x": 13,
+      "y": 13,
+      "map_id": 5002,
+      "draw_x": -32,
+      "draw_y": -24,
+      "qualified": true,
+      "bitmapno": 1617,
+      "queue_no": 14,
+      "priority": 0
+    },
+    {
+      "layer": "tile",
+      "x": 17,
+      "y": 16,
+      "map_id": 5002,
+      "draw_x": 192,
+      "draw_y": -48,
+      "qualified": true,
+      "bitmapno": 1617,
+      "queue_no": 15,
+      "priority": 0
+    },
+    {
+      "layer": "tile",
+      "x": 16,
+      "y": 15,
+      "map_id": 5000,
+      "draw_x": 128,
+      "draw_y": -48,
+      "qualified": true,
+      "bitmapno": 1615,
+      "queue_no": 16,
+      "priority": 0
+    },
+    {
+      "layer": "tile",
+      "x": 15,
+      "y": 14,
+      "map_id": 5002,
+      "draw_x": 64,
+      "draw_y": -48,
+      "qualified": true,
+      "bitmapno": 1617,
+      "queue_no": 17,
+      "priority": 0
+    },
+    {
+      "layer": "tile",
+      "x": 14,
+      "y": 13,
+      "map_id": 5002,
+      "draw_x": 0,
+      "draw_y": -48,
+      "qualified": true,
+      "bitmapno": 1617,
+      "queue_no": 18,
+      "priority": 0
+    },
+    {
+      "layer": "tile",
+      "x": 17,
+      "y": 15,
+      "map_id": 5000,
+      "draw_x": 160,
+      "draw_y": -72,
+      "qualified": true,
+      "bitmapno": 1615,
+      "queue_no": 19,
+      "priority": 0
+    },
+    {
+      "layer": "tile",
+      "x": 16,
+      "y": 14,
+      "map_id": 5002,
+      "draw_x": 96,
+      "draw_y": -72,
+      "qualified": true,
+      "bitmapno": 1617,
+      "queue_no": 20,
+      "priority": 0
+    },
+    {
+      "layer": "tile",
+      "x": 15,
+      "y": 13,
+      "map_id": 5001,
+      "draw_x": 32,
+      "draw_y": -72,
+      "qualified": true,
+      "bitmapno": 1616,
+      "queue_no": 21,
+      "priority": 0
+    },
+    {
+      "layer": "tile",
+      "x": 17,
+      "y": 14,
+      "map_id": 5000,
+      "draw_x": 128,
+      "draw_y": -96,
+      "qualified": true,
+      "bitmapno": 1615,
+      "queue_no": 22,
+      "priority": 0
+    },
+    {
+      "layer": "tile",
+      "x": 16,
+      "y": 13,
+      "map_id": 5000,
+      "draw_x": 64,
+      "draw_y": -96,
+      "qualified": true,
+      "bitmapno": 1615,
+      "queue_no": 23,
+      "priority": 0
+    },
+    {
+      "layer": "tile",
+      "x": 17,
+      "y": 13,
+      "map_id": 5001,
+      "draw_x": 96,
+      "draw_y": -120,
+      "qualified": true,
+      "bitmapno": 1616,
+      "queue_no": 24,
+      "priority": 0
+    },
+    {
+      "layer": "parts",
+      "x": 16,
+      "y": 16,
+      "map_id": 12621,
+      "draw_x": 159,
+      "draw_y": -45,
+      "qualified": true,
+      "bitmapno": 5098,
+      "queue_no": 25,
+      "priority": 10
+    },
+    {
+      "layer": "parts",
+      "x": 17,
+      "y": 16,
+      "map_id": 12621,
+      "draw_x": 191,
+      "draw_y": -69,
+      "qualified": true,
+      "bitmapno": 5098,
+      "queue_no": 26,
+      "priority": 10
+    },
+    {
+      "layer": "parts",
+      "x": 16,
+      "y": 15,
+      "map_id": 12620,
+      "draw_x": 128,
+      "draw_y": -72,
+      "qualified": true,
+      "bitmapno": 5097,
+      "queue_no": 27,
+      "priority": 10
+    },
+    {
+      "layer": "parts",
+      "x": 16,
+      "y": 14,
+      "map_id": 12619,
+      "draw_x": 96,
+      "draw_y": -95,
+      "qualified": true,
+      "bitmapno": 5096,
+      "queue_no": 28,
+      "priority": 10
+    },
+    {
+      "layer": "parts",
+      "x": 16,
+      "y": 13,
+      "map_id": 12620,
+      "draw_x": 64,
+      "draw_y": -120,
+      "qualified": true,
+      "bitmapno": 5097,
+      "queue_no": 29,
+      "priority": 10
+    }
+  ],
+  "original_sorted_queue_numbers": [
+    24,
+    23,
+    22,
+    21,
+    20,
+    19,
+    18,
+    17,
+    16,
+    15,
+    14,
+    13,
+    12,
+    11,
+    10,
+    9,
+    8,
+    7,
+    6,
+    5,
+    4,
+    3,
+    2,
+    1,
+    0,
+    29,
+    28,
+    27,
+    26,
+    25
+  ],
+  "native_consumer_requested_bitmap_order": [
+    1616,
+    1615,
+    1615,
+    1616,
+    1617,
+    1615,
+    1617,
+    1617,
+    1615,
+    1617,
+    1617,
+    1616,
+    1615,
+    1616,
+    1617,
+    1615,
+    1622,
+    1616,
+    1617,
+    1624,
+    1620,
+    1616,
+    1630,
+    1617,
+    1617,
+    5097,
+    5096,
+    5097,
+    5098,
+    5098
+  ],
+  "consumer_LoadBmp_stubbed_to_failure": true,
+  "directdraw_executed": false,
+  "no_actor_parts_append_then_reverse_verified": true,
+  "native_tile_priority": 0,
+  "descendant_header_tile_priority": 1,
+  "scope": "PRESERVED_MIXED25_NO_ACTORS_CONTROLLED_QUEUE_NOT_ORIGINAL_GAME",
+  "unverified": [
+    "native_map_and_alias_loader",
+    "live_original_palette",
+    "native_camera",
+    "characters_parts_occlusion",
+    "same_deployed_official_build",
+    "playable_world_entry"
+  ],
+  "original_client_launched": false,
+  "original_world_entered": false,
+  "stage_a": "7_PARTIAL_2_OPEN",
+  "stage_b": "GATED",
+  "r79": "PAUSED_NON_BLOCKING",
+  "overall_completion_percent": null,
+  "pixel_impact": {
+    "canvas": [
+      400,
+      350
+    ],
+    "translation": [
+      70,
+      170
+    ],
+    "old_rgba_sha256": "4eb034a327ee2a40a97b5bf889719d447307b883b735b3f19db34bc87a0e34a3",
+    "native_queue_order_rgba_sha256": "ab476862ce65943835e56897f1770fb65721b464b4e04ce637506897a7822bba",
+    "changed_pixels": 3549,
+    "actual_native_screenshot": false
+  },
+  "private_observer": {
+    "bytes": 72279,
+    "sha256": "e21c913af9cf80fc7d717fef67f6528f018bd8e57bb1629e1d1510ee184832f7",
+    "new_source_images": 0,
+    "contains_source_images": true,
+    "full_persistent_readback_verified": true,
+    "DOM_simulation_passed": true,
+    "actual_chromium_this_session": false,
+    "browser_install_attempts": "Playwright 1.61/1.58 downloads truncated; no browser run claimed"
+  },
+  "independent_source_comparator": {
+    "repository": "BismarckDD/stoneage",
+    "commit": "999ffdf1d220ec6666eb65339180689c9caf1876",
+    "path": "client/stoneage/system/sprdisp.cpp",
+    "git_blob": "666eb344f5a5c07265f7bfd4f8c8058bac66c157",
+    "fragment_sha256": "5d35a8493bd95dc098ab78b0b8b77cbe62b743ae1154c4eab38b8974eec95fea",
+    "compiled_cases_equal_native": 180,
+    "same_build_source_authenticated": false
+  },
+  "private_replay_environment": {
+    "unicorn": "2.1.4",
+    "python": "3.12",
+    "carrier_bytes": 361255180,
+    "carrier_sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+    "new_original_carrier_acquisition_bytes": 0
+  }
+}
