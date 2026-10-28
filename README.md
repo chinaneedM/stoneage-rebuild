@@ -801,3 +801,8 @@ ranges, not a new whole-client download or arbitrary program reverse engineering
 ### 2026-10-28 | P3I独立复测仍未出现原游戏画面
 
 [同一P3I日期记录](docs/continuity/STONEAGE-WINDOWS-P3I-20261028.md)追加第二次实际隔离源Run40640619774成功，另一个来宾全局primary 1024×768/32bpp、窗口区域SHA与首轮**完全相同**，原程序仍可在坐标点击后正常退出，但GDI截图仍只见黑底/输入法。两份短期源小ZIP与原报告均独立哈希；大密文只记录Actions来源。外部探针的32bpp不能回填原进程8bpp调色板。这是有限止点而非原游戏画面或世界验收；下一改回现有真实地图/人物/宠物原素材的现代离线观察，直到新同源原生证据出现。Stage A/B/wiki/R79与总体未知不变。
+
+
+### 2026-10-28 | SCENE07 同载体地图与两组原动画已实际共同观察
+
+[本轮材料、实际浏览器及连续性记录](docs/continuity/STONEAGE-SCENE07-ACTOR-OBSERVATION-20261028.md)：复用已保管混合2.5原载体，完整SHA验证同子树SPR/SPRADRN/ADRN/REAL/SAP，实取100000与100700两组八方向/动作码2和6，共32原动画、208帧出现、128原图；独立解码/RGBA/PNG全部同一。私有R7页真正Chromium解码138图并完成暂停/单步/切换/人工位移、图层与镜头检查；独立Pillow对浏览器691200像素逐字节一致。页面已私人保存且完整回读同SHA。**两个可见人形的名称、原游戏遮挡/碰撞/节拍仍未认证，未进入原世界。** 下一有限接R39/R40同包模板图形键100250/251/252之一的宠物候选；禁止把同包等号当同服官方身份。CURRENT2680510B历史原文、Stage A/B/wiki/R79及总体未知边界不改。

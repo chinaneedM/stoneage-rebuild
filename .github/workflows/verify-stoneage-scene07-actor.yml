@@ -1,0 +1,32 @@
+name: Verify same-carrier actor observer R7 without proprietary assets
+on:
+  push:
+    paths:
+      - tools/stoneage_private_scene_actor_r7.py
+      - tools/scene-room-actor-viewer-r7.html
+      - tools/stoneage_scene07_*.py
+      - tools/stoneage_scene07_*.cjs
+      - tests/test_stoneage_scene07_*.py
+      - research/recovered/STONEAGE-SCENE07-*.json
+      - .github/workflows/verify-stoneage-scene07-actor.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-safe-metadata-and-browser:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: python -m pip install Pillow
+      - run: python -m tools.stoneage_scene07_evidence_guard
+      - run: python -m unittest -v tests.test_stoneage_scene07_actor tests.test_stoneage_scene07_evidence tests.test_stoneage_scene06_evidence
+      - run: npm install --no-save playwright@1.58.2
+      - run: npx playwright install --with-deps chromium
+      - run: python -m tools.stoneage_scene07_synthetic_fixture /tmp/scene07-synthetic.html
+      - run: node tools/stoneage_scene07_browser_check.cjs /tmp/scene07-synthetic.html /tmp/scene07-synthetic-browser
