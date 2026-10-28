@@ -1,0 +1,52 @@
+name: Measure corrected manifest namespace and same-process Windows prerequisites P3G
+on:
+  push:
+    branches: [agent/original-world-p3g-20261028]
+    paths:
+      - tools/stoneage_p3g_manifest_environment.py
+      - .github/workflows/probe-stoneage-p3g-manifest-environment.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  finite-own-x86:
+    runs-on: windows-2022
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ilammy/msvc-dev-cmd@v1
+        with:
+          arch: x86
+      - name: Prepare three finite self-authored manifests, no supportedOS variable
+        shell: pwsh
+        run: python -m tools.stoneage_p3g_manifest_environment --prepare "$env:RUNNER_TEMP/p3g"
+      - name: Compile own x86 source and independently read back every embedded manifest
+        shell: cmd
+        run: |
+          cl /nologo /std:c11 /O2 /Fe:"%RUNNER_TEMP%\p3g\plain.exe" tools\stoneage_p3e_environment.c user32.lib gdi32.lib ddraw.lib dxguid.lib ws2_32.lib /link /SUBSYSTEM:CONSOLE /MANIFEST:NO
+          for %%v in (wrong_namespace_zh_tw correct_zh_tw correct_utf8) do (
+            copy /Y "%RUNNER_TEMP%\p3g\plain.exe" "%RUNNER_TEMP%\p3g\%%v.exe"
+            mt.exe -manifest "%RUNNER_TEMP%\p3g\%%v.manifest" "-outputresource:%RUNNER_TEMP%\p3g\%%v.exe;#1"
+            mt.exe "-inputresource:%RUNNER_TEMP%\p3g\%%v.exe;#1" -out:"%RUNNER_TEMP%\p3g\%%v-readback.manifest"
+          )
+          cl /nologo /std:c11 /O2 /Fe:"%RUNNER_TEMP%\p3g\control-zh-tw.exe" tools\stoneage_p3d_control.c user32.lib gdi32.lib ddraw.lib dxguid.lib /link /SUBSYSTEM:WINDOWS /MANIFEST:NO
+          mt.exe -manifest "%RUNNER_TEMP%\p3g\correct_zh_tw.manifest" "-outputresource:%RUNNER_TEMP%\p3g\control-zh-tw.exe;#1"
+      - run: python -m pip install --quiet pillow
+      - name: Measure exact namespace contrast then gated original-free RGB and input controls
+        shell: pwsh
+        run: |
+          python -m tools.stoneage_p3g_manifest_environment --directory "$env:RUNNER_TEMP/p3g" --output "$env:RUNNER_TEMP/p3g-derived.json"
+          python -m tools.stoneage_p3g_manifest_environment --check "$env:RUNNER_TEMP/p3g-derived.json"
+      - name: Remove only synthetic programs and screenshots
+        if: always()
+        shell: pwsh
+        run: |
+          Remove-Item -Recurse -Force "$env:RUNNER_TEMP/p3g" -ErrorAction SilentlyContinue
+          Remove-Item -Force stoneage_p3e_environment.obj,stoneage_p3d_control.obj -ErrorAction SilentlyContinue
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: p3g-synthetic-namespace-derived-only
+          path: ${{ runner.temp }}/p3g-derived.json
+          if-no-files-found: error
+          retention-days: 7
