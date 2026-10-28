@@ -24,6 +24,7 @@ def qualifies(r):
         all(not r[k]['connected'] and r[k]['wsa_error']==10013 for k in
             ('blocked','alternate_blocked','after_controls_blocked')) and
         r['after_restore']['connected'] and r['cleanup']['remaining']==0 and
+        len(r['profiles'])==3 and {p['Name'] for p in r['profiles']}=={'Domain','Private','Public'} and
         all(p['Enabled'] for p in r['profiles']) and
         all(v['action']=='Block' and v['direction']=='Outbound' and v['profile']=='Any' and
             v['enabled']=='True' and v['protocol']=='Any' and v['program']=='Any' and

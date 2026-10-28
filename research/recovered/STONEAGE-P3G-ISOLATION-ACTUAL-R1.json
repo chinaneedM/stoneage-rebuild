@@ -1,0 +1,979 @@
+{
+  "schema": "stoneage.p3g.disposable_host_egress.v1",
+  "original_client_downloaded": false,
+  "original_client_executed": false,
+  "original_world_entered": false,
+  "original_process_isolation_qualified": false,
+  "original_ANSI_GDI_text_qualified": false,
+  "usable_original_environment": false,
+  "target_host": "api.github.com",
+  "target_ipv4": "140.82.114.6",
+  "target_port": 443,
+  "policy_scope": "temporary_all_programs_all_protocols_all_remote_addresses_guest_rule",
+  "empirical_network_scope": "two_self_authored_program_paths_one_external_TCP_IPv4_destination",
+  "loopback_server_qualified": false,
+  "IPv6_and_UDP_empirically_tested": false,
+  "host_image_os": "win25-vs2026",
+  "host_image_version": "20261021.278.1",
+  "controls_during_block": [
+    {
+      "mode": "ddraw",
+      "original_client_executed": false,
+      "baseline_state": {
+        "schema": "stoneage.p3d.synthetic_win32.v1",
+        "original_client_executed": false,
+        "pointer_bytes": 4,
+        "windows_acp": 950,
+        "mode": "ddraw",
+        "phase": 0,
+        "done": false,
+        "display_bpp": 8,
+        "raster_palette_capability": true,
+        "foreground_matches": true,
+        "active_matches": true,
+        "focus_matches": true,
+        "client_origin": [
+          30,
+          30
+        ],
+        "client_size": [
+          320,
+          200
+        ],
+        "moves": 0,
+        "downs": 0,
+        "ups": 0,
+        "async_down_polls": 0,
+        "painted": 1,
+        "palette_created": true,
+        "realized_entries_last": 0,
+        "system_palette_previous": 0,
+        "red_getpixel": [
+          222,
+          0,
+          0
+        ],
+        "green_getpixel": [
+          0,
+          200,
+          80
+        ],
+        "getpixel_valid": true,
+        "ddraw": {
+          "create": -2147467259,
+          "cooperative": -2147467259,
+          "primary": -2147467259,
+          "offscreen_8bit": -2147467259,
+          "palette": -2147467259,
+          "offscreen_attach": -2147467259,
+          "primary_attach": -2147467259,
+          "blt": -2147467259
+        }
+      },
+      "baseline_capture": {
+        "method": "native_ImageGrab_own_synthetic_client_rectangle",
+        "frames": [
+          {
+            "width": 320,
+            "height": 200,
+            "rgb_sha256": "4ae1c0cfc3cfbeeb4cb91e14d1221932e8be270733499ac61fbac82986127d0d",
+            "png_sha256": "843e445cae451c2ad2b3e21196664e0c36f4727ea337cd32030a53f1332780c6",
+            "channel_extrema": [
+              [
+                0,
+                255
+              ],
+              [
+                0,
+                255
+              ],
+              [
+                0,
+                255
+              ]
+            ],
+            "nonuniform_pixels": true,
+            "synthetic_control_red_pixels": 19300,
+            "synthetic_control_green_pixels": 19300,
+            "assistant_viewed_original": false,
+            "image_published": false
+          }
+        ]
+      },
+      "activation_command": {
+        "returncode": 0,
+        "report": {
+          "controller_only_own_synthetic_class": true,
+          "attach_thread_input": true,
+          "set_foreground_return": true,
+          "foreground_matches": true,
+          "sendinput_down": 0,
+          "sendinput_up": 0
+        }
+      },
+      "palette_command": {
+        "returncode": 0,
+        "report": {
+          "controller_only_own_synthetic_class": true,
+          "attach_thread_input": true,
+          "set_foreground_return": true,
+          "foreground_matches": true,
+          "sendinput_down": 0,
+          "sendinput_up": 0
+        }
+      },
+      "palette_state": {
+        "schema": "stoneage.p3d.synthetic_win32.v1",
+        "original_client_executed": false,
+        "pointer_bytes": 4,
+        "windows_acp": 950,
+        "mode": "ddraw",
+        "phase": 1,
+        "done": false,
+        "display_bpp": 8,
+        "raster_palette_capability": true,
+        "foreground_matches": true,
+        "active_matches": true,
+        "focus_matches": true,
+        "client_origin": [
+          30,
+          30
+        ],
+        "client_size": [
+          320,
+          200
+        ],
+        "moves": 0,
+        "downs": 0,
+        "ups": 0,
+        "async_down_polls": 0,
+        "painted": 2,
+        "palette_created": true,
+        "realized_entries_last": 0,
+        "system_palette_previous": 0,
+        "red_getpixel": [
+          222,
+          0,
+          0
+        ],
+        "green_getpixel": [
+          0,
+          200,
+          80
+        ],
+        "getpixel_valid": true,
+        "ddraw": {
+          "create": 0,
+          "cooperative": 0,
+          "primary": 0,
+          "offscreen_8bit": 0,
+          "palette": 0,
+          "offscreen_attach": 0,
+          "primary_attach": 0,
+          "blt": 0
+        }
+      },
+      "palette_capture": {
+        "method": "native_ImageGrab_own_synthetic_client_rectangle",
+        "frames": [
+          {
+            "width": 320,
+            "height": 200,
+            "rgb_sha256": "4ae1c0cfc3cfbeeb4cb91e14d1221932e8be270733499ac61fbac82986127d0d",
+            "png_sha256": "843e445cae451c2ad2b3e21196664e0c36f4727ea337cd32030a53f1332780c6",
+            "channel_extrema": [
+              [
+                0,
+                255
+              ],
+              [
+                0,
+                255
+              ],
+              [
+                0,
+                255
+              ]
+            ],
+            "nonuniform_pixels": true,
+            "synthetic_control_red_pixels": 19300,
+            "synthetic_control_green_pixels": 19300,
+            "assistant_viewed_original": false,
+            "image_published": false
+          }
+        ]
+      },
+      "before_sendinput": {
+        "schema": "stoneage.p3d.synthetic_win32.v1",
+        "original_client_executed": false,
+        "pointer_bytes": 4,
+        "windows_acp": 950,
+        "mode": "ddraw",
+        "phase": 1,
+        "done": false,
+        "display_bpp": 8,
+        "raster_palette_capability": true,
+        "foreground_matches": true,
+        "active_matches": true,
+        "focus_matches": true,
+        "client_origin": [
+          30,
+          30
+        ],
+        "client_size": [
+          320,
+          200
+        ],
+        "moves": 0,
+        "downs": 0,
+        "ups": 0,
+        "async_down_polls": 0,
+        "painted": 2,
+        "palette_created": true,
+        "realized_entries_last": 0,
+        "system_palette_previous": 0,
+        "red_getpixel": [
+          222,
+          0,
+          0
+        ],
+        "green_getpixel": [
+          0,
+          200,
+          80
+        ],
+        "getpixel_valid": true,
+        "ddraw": {
+          "create": 0,
+          "cooperative": 0,
+          "primary": 0,
+          "offscreen_8bit": 0,
+          "palette": 0,
+          "offscreen_attach": 0,
+          "primary_attach": 0,
+          "blt": 0
+        }
+      },
+      "sendinput_command": {
+        "returncode": 0,
+        "report": {
+          "controller_only_own_synthetic_class": true,
+          "attach_thread_input": true,
+          "set_foreground_return": true,
+          "foreground_matches": true,
+          "sendinput_down": 1,
+          "sendinput_up": 1
+        }
+      },
+      "after_sendinput": {
+        "schema": "stoneage.p3d.synthetic_win32.v1",
+        "original_client_executed": false,
+        "pointer_bytes": 4,
+        "windows_acp": 950,
+        "mode": "ddraw",
+        "phase": 1,
+        "done": false,
+        "display_bpp": 8,
+        "raster_palette_capability": true,
+        "foreground_matches": true,
+        "active_matches": true,
+        "focus_matches": true,
+        "client_origin": [
+          30,
+          30
+        ],
+        "client_size": [
+          320,
+          200
+        ],
+        "moves": 2,
+        "downs": 1,
+        "ups": 1,
+        "async_down_polls": 8,
+        "painted": 3,
+        "palette_created": true,
+        "realized_entries_last": 0,
+        "system_palette_previous": 0,
+        "red_getpixel": [
+          222,
+          0,
+          0
+        ],
+        "green_getpixel": [
+          0,
+          200,
+          80
+        ],
+        "getpixel_valid": true,
+        "ddraw": {
+          "create": 0,
+          "cooperative": 0,
+          "primary": 0,
+          "offscreen_8bit": 0,
+          "palette": 0,
+          "offscreen_attach": 0,
+          "primary_attach": 0,
+          "blt": 0
+        }
+      },
+      "after_input_capture": {
+        "method": "native_ImageGrab_own_synthetic_client_rectangle",
+        "frames": [
+          {
+            "width": 320,
+            "height": 200,
+            "rgb_sha256": "941bacda4906dc16e10bec7c3245e4434a28e8b8ecd21750c8bd65fc5226af53",
+            "png_sha256": "9434a282c61c2ff505038461a89f343136d8f14509395e2f2462e4d42c032dea",
+            "channel_extrema": [
+              [
+                0,
+                255
+              ],
+              [
+                0,
+                255
+              ],
+              [
+                0,
+                255
+              ]
+            ],
+            "nonuniform_pixels": true,
+            "synthetic_control_red_pixels": 19300,
+            "synthetic_control_green_pixels": 19300,
+            "assistant_viewed_original": false,
+            "image_published": false
+          }
+        ]
+      },
+      "finish_command": {
+        "returncode": 0,
+        "report": {
+          "controller_only_own_synthetic_class": true,
+          "attach_thread_input": true,
+          "set_foreground_return": true,
+          "foreground_matches": true,
+          "sendinput_down": 0,
+          "sendinput_up": 0
+        }
+      },
+      "final_state": {
+        "schema": "stoneage.p3d.synthetic_win32.v1",
+        "original_client_executed": false,
+        "pointer_bytes": 4,
+        "windows_acp": 950,
+        "mode": "ddraw",
+        "phase": 1,
+        "done": true,
+        "display_bpp": 8,
+        "raster_palette_capability": true,
+        "foreground_matches": true,
+        "active_matches": true,
+        "focus_matches": true,
+        "client_origin": [
+          30,
+          30
+        ],
+        "client_size": [
+          320,
+          200
+        ],
+        "moves": 3,
+        "downs": 1,
+        "ups": 1,
+        "async_down_polls": 8,
+        "painted": 3,
+        "palette_created": true,
+        "realized_entries_last": 0,
+        "system_palette_previous": 0,
+        "red_getpixel": [
+          222,
+          0,
+          0
+        ],
+        "green_getpixel": [
+          0,
+          200,
+          80
+        ],
+        "getpixel_valid": true,
+        "ddraw": {
+          "create": 0,
+          "cooperative": 0,
+          "primary": 0,
+          "offscreen_8bit": 0,
+          "palette": 0,
+          "offscreen_attach": 0,
+          "primary_attach": 0,
+          "blt": 0
+        }
+      },
+      "process_exit_before_cleanup": 0,
+      "assessment": {
+        "known_rgb_getpixel": true,
+        "known_rgb_external_capture": true,
+        "render_path_passed": true,
+        "color_gate_passed": true,
+        "sendinput_dispatch_only": true,
+        "sendinput_received": true,
+        "sendinput_gate_passed": true,
+        "foreground_gate_passed": true,
+        "original_client_executed": false,
+        "original_game_input_or_color_proven": false
+      }
+    }
+  ],
+  "source_sha256": "26d17aa91561228d7bf48758b81eaa2079bfd9624154e82de88a8be080a3a426",
+  "before": {
+    "connected": true,
+    "wsa_error": 0,
+    "startup_error": 0
+  },
+  "alternate_before": {
+    "connected": true,
+    "wsa_error": 0,
+    "startup_error": 0
+  },
+  "watchdog": {
+    "registered": true,
+    "user": "SYSTEM",
+    "restore_delay_seconds": 120
+  },
+  "profiles": [
+    {
+      "Name": "Domain",
+      "Enabled": 1
+    },
+    {
+      "Name": "Private",
+      "Enabled": 1
+    },
+    {
+      "Name": "Public",
+      "Enabled": 1
+    }
+  ],
+  "rule": {
+    "action": "Block",
+    "direction": "Outbound",
+    "enabled": "True",
+    "profile": "Any",
+    "protocol": "Any",
+    "program": "Any",
+    "remote_address": [
+      "Any"
+    ],
+    "local_address": [
+      "Any"
+    ]
+  },
+  "blocked": {
+    "connected": false,
+    "wsa_error": 10013,
+    "startup_error": 0
+  },
+  "alternate_blocked": {
+    "connected": false,
+    "wsa_error": 10013,
+    "startup_error": 0
+  },
+  "probe_during_block": {
+    "pointer_bytes": 4,
+    "display_bpp": 8,
+    "acp_before": 950,
+    "acp_after_console950": 950,
+    "console_before": [
+      65001,
+      65001
+    ],
+    "console_set_return": [
+      true,
+      true
+    ],
+    "console_after": [
+      950,
+      950
+    ],
+    "cp950_installed": true,
+    "cp950_sample_bytes": [
+      165,
+      219,
+      190,
+      185
+    ],
+    "cp950_sample_fallback": false,
+    "display_modes": [
+      [
+        640,
+        480,
+        32,
+        64
+      ],
+      [
+        800,
+        600,
+        32,
+        64
+      ],
+      [
+        1024,
+        768,
+        32,
+        64
+      ],
+      [
+        1152,
+        864,
+        32,
+        64
+      ],
+      [
+        1280,
+        720,
+        32,
+        64
+      ],
+      [
+        1280,
+        800,
+        32,
+        64
+      ],
+      [
+        1280,
+        1024,
+        32,
+        64
+      ],
+      [
+        1366,
+        768,
+        32,
+        64
+      ],
+      [
+        1440,
+        900,
+        32,
+        64
+      ],
+      [
+        1600,
+        900,
+        32,
+        64
+      ],
+      [
+        1600,
+        1200,
+        32,
+        64
+      ],
+      [
+        1680,
+        1050,
+        32,
+        64
+      ],
+      [
+        1920,
+        1080,
+        32,
+        64
+      ],
+      [
+        640,
+        480,
+        16,
+        64
+      ],
+      [
+        800,
+        600,
+        16,
+        64
+      ],
+      [
+        1024,
+        768,
+        16,
+        64
+      ],
+      [
+        1152,
+        864,
+        16,
+        64
+      ],
+      [
+        1280,
+        720,
+        16,
+        64
+      ],
+      [
+        1280,
+        800,
+        16,
+        64
+      ],
+      [
+        1280,
+        1024,
+        16,
+        64
+      ],
+      [
+        1366,
+        768,
+        16,
+        64
+      ],
+      [
+        1440,
+        900,
+        16,
+        64
+      ],
+      [
+        1600,
+        900,
+        16,
+        64
+      ],
+      [
+        1600,
+        1200,
+        16,
+        64
+      ],
+      [
+        1680,
+        1050,
+        16,
+        64
+      ],
+      [
+        1920,
+        1080,
+        16,
+        64
+      ],
+      [
+        640,
+        480,
+        8,
+        64
+      ],
+      [
+        800,
+        600,
+        8,
+        64
+      ],
+      [
+        1024,
+        768,
+        8,
+        64
+      ],
+      [
+        1152,
+        864,
+        8,
+        64
+      ],
+      [
+        1280,
+        720,
+        8,
+        64
+      ],
+      [
+        1280,
+        800,
+        8,
+        64
+      ],
+      [
+        1280,
+        1024,
+        8,
+        64
+      ],
+      [
+        1366,
+        768,
+        8,
+        64
+      ],
+      [
+        1440,
+        900,
+        8,
+        64
+      ],
+      [
+        1600,
+        900,
+        8,
+        64
+      ],
+      [
+        1600,
+        1200,
+        8,
+        64
+      ],
+      [
+        1680,
+        1050,
+        8,
+        64
+      ],
+      [
+        1920,
+        1080,
+        8,
+        64
+      ]
+    ],
+    "cds_test_640_480_8": 0,
+    "desktop_mode_changed": false,
+    "ddraw_modes": [
+      [
+        640,
+        480,
+        32
+      ],
+      [
+        800,
+        600,
+        32
+      ],
+      [
+        1024,
+        768,
+        32
+      ],
+      [
+        1152,
+        864,
+        32
+      ],
+      [
+        1280,
+        720,
+        32
+      ],
+      [
+        1280,
+        800,
+        32
+      ],
+      [
+        1280,
+        1024,
+        32
+      ],
+      [
+        1366,
+        768,
+        32
+      ],
+      [
+        1440,
+        900,
+        32
+      ],
+      [
+        1600,
+        900,
+        32
+      ],
+      [
+        1600,
+        1200,
+        32
+      ],
+      [
+        1680,
+        1050,
+        32
+      ],
+      [
+        1920,
+        1080,
+        32
+      ],
+      [
+        640,
+        480,
+        16
+      ],
+      [
+        800,
+        600,
+        16
+      ],
+      [
+        1024,
+        768,
+        16
+      ],
+      [
+        1152,
+        864,
+        16
+      ],
+      [
+        1280,
+        720,
+        16
+      ],
+      [
+        1280,
+        800,
+        16
+      ],
+      [
+        1280,
+        1024,
+        16
+      ],
+      [
+        1366,
+        768,
+        16
+      ],
+      [
+        1440,
+        900,
+        16
+      ],
+      [
+        1600,
+        900,
+        16
+      ],
+      [
+        1600,
+        1200,
+        16
+      ],
+      [
+        1680,
+        1050,
+        16
+      ],
+      [
+        1920,
+        1080,
+        16
+      ],
+      [
+        640,
+        480,
+        8
+      ],
+      [
+        800,
+        600,
+        8
+      ],
+      [
+        1024,
+        768,
+        8
+      ],
+      [
+        1152,
+        864,
+        8
+      ],
+      [
+        1280,
+        720,
+        8
+      ],
+      [
+        1280,
+        800,
+        8
+      ],
+      [
+        1280,
+        1024,
+        8
+      ],
+      [
+        1366,
+        768,
+        8
+      ],
+      [
+        1440,
+        900,
+        8
+      ],
+      [
+        1600,
+        900,
+        8
+      ],
+      [
+        1600,
+        1200,
+        8
+      ],
+      [
+        1680,
+        1050,
+        8
+      ],
+      [
+        1920,
+        1080,
+        8
+      ]
+    ],
+    "ddraw_create": 0,
+    "ddraw_enum": 0,
+    "ddraw_current_result": 0,
+    "ddraw_current": [
+      1024,
+      768,
+      8
+    ],
+    "original_executed": false
+  },
+  "after_controls_rule": {
+    "action": "Block",
+    "direction": "Outbound",
+    "enabled": "True",
+    "profile": "Any",
+    "protocol": "Any",
+    "program": "Any",
+    "remote_address": [
+      "Any"
+    ],
+    "local_address": [
+      "Any"
+    ]
+  },
+  "after_controls_blocked": {
+    "connected": false,
+    "wsa_error": 10013,
+    "startup_error": 0
+  },
+  "measured_block_window_seconds": 5.281999999999982,
+  "cleanup": {
+    "remaining": 0
+  },
+  "after_restore": {
+    "connected": true,
+    "wsa_error": 0,
+    "startup_error": 0
+  },
+  "bounded_synthetic_egress_display_input_candidate": true
+}

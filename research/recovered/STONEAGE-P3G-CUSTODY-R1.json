@@ -1,0 +1,96 @@
+{
+  "schema": "stoneage.p3g.actual_source_custody.r1",
+  "recorded_on": "2026-10-28",
+  "startup_main": "beb4bcb361248afcb8757fd46ffa497f2c4be3d2",
+  "startup_tree": "529eb0cb559baba454d50158dea98c1eb972cc5e",
+  "preserved_current_blob": "031c76a5a8e431f646853909bb2f2e11e6328cd2",
+  "source_runs": [
+    {
+      "label": "windows2022",
+      "path": "research/recovered/STONEAGE-P3G-WINDOWS2022-ACTUAL-R1.json",
+      "run": 40633664224,
+      "job": 122635585777,
+      "head": "75a9541f46e58c886042a05260e8608ce0773060",
+      "tree": "b448c77b3814a30e8684338626a3c3d9e3fd4689",
+      "artifact": 12792787192,
+      "zip_bytes": 2448,
+      "zip_sha256": "62ddb594074a38be33a706355449a2581270bc63ff0a1c190b1213c2c259c52d",
+      "run_status": "completed",
+      "conclusion": "success",
+      "raw": {
+        "bytes": 64571,
+        "sha256": "bd0b3f43ad6191255d628ca915769a027f45ded7e7b8b612a690190092889d12",
+        "git_blob": "da3da4b3cafc98df95b12fb689c001c4757f5738"
+      },
+      "artifact_independently_downloaded": true,
+      "zip_api_digest_matched": true,
+      "raw_report_preserved_byte_exact": true
+    },
+    {
+      "label": "windows2025",
+      "path": "research/recovered/STONEAGE-P3G-WINDOWS2025-ACTUAL-R1.json",
+      "run": 40633836213,
+      "job": 122636128243,
+      "head": "93e3ec784a12e8bac6d3dca74e32744bfec30cc2",
+      "tree": "74bff1b25f338054f3ad2f6793c680c858503fa4",
+      "artifact": 12792249088,
+      "zip_bytes": 3840,
+      "zip_sha256": "a2df3444169ffc9818b6a3c1d44ff53d7fce581a1baf4e69eda476d4ae01f468",
+      "run_status": "completed",
+      "conclusion": "success",
+      "raw": {
+        "bytes": 86930,
+        "sha256": "6df251ec1cead92a96b32ee9f9ad094fd391d7af513a5e4ff9cabe8c785d2d7e",
+        "git_blob": "6db1e27b9b31ca5966aa74859de71163ad67832b"
+      },
+      "artifact_independently_downloaded": true,
+      "zip_api_digest_matched": true,
+      "raw_report_preserved_byte_exact": true
+    },
+    {
+      "label": "isolation",
+      "path": "research/recovered/STONEAGE-P3G-ISOLATION-ACTUAL-R1.json",
+      "run": 40634200624,
+      "job": 122637279605,
+      "head": "3e99f965941f4a4c2981cb8ecca661419be6f639",
+      "tree": "d70a8893ace34dc1fa0a8fe70085937b0fc064e8",
+      "artifact": 12792254654,
+      "zip_bytes": 2719,
+      "zip_sha256": "40c4b13b09f107a784ba2004fad12052555620ef6272be77fc066598fb142b6e",
+      "run_status": "completed",
+      "conclusion": "success",
+      "raw": {
+        "bytes": 19435,
+        "sha256": "a1e381b68ec56c3d2cc644cd0ed7017ad7220870c7db63a5d7dc7cb1c073305f",
+        "git_blob": "2b5edb995d1bc0be97be0890df25369a1d5855e9"
+      },
+      "artifact_independently_downloaded": true,
+      "zip_api_digest_matched": true,
+      "raw_report_preserved_byte_exact": true
+    }
+  ],
+  "source_line_endings": "All four platform probe source SHA256 values exactly match canonical Git LF converted to Windows CRLF; original reports unchanged.",
+  "isolation_source_revision": {
+    "executed_sha256_windows_crlf": "26d17aa91561228d7bf48758b81eaa2079bfd9624154e82de88a8be080a3a426",
+    "executed_sha256_lf": "09b508da7e5132d2f87f6cade4d074d654bd7facfd31aa068ef488a47e36906f",
+    "final_offline_guard_change": "Require exactly Domain/Private/Public enabled profiles; actual source already recorded all three. No historical source report rewritten."
+  },
+  "scope": {
+    "self_authored_x86_only": true,
+    "commercial_client_downloaded": false,
+    "commercial_client_executed": false,
+    "world_entered": false,
+    "ANSI_GDI_text_qualified": false,
+    "loopback_service_qualified": false,
+    "adversarial_malware_sandbox_qualified": false,
+    "all_UDP_IPv6_empirically_tested": false
+  },
+  "result": "WINDOWS2025_BOUNDED_SYNTHETIC_ACP950_8BIT_RGB_INPUT_AND_GUEST_EGRESS_DENIAL_CANDIDATE",
+  "stage_a": "7_PARTIAL_2_OPEN",
+  "stage_b": "GATED",
+  "wiki": "GATED",
+  "r79": "PAUSED_NON_BLOCKING",
+  "overall_completion_percent": null,
+  "next": "ORIGINAL-TW10-WINDOWS-LOGIN-P3H",
+  "publication_ci": "NOT_PRE_CREDITED"
+}
