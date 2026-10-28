@@ -853,3 +853,8 @@ ranges, not a new whole-client download or arbitrary program reverse engineering
 ### 2026-10-29 | SCENE16 室外 NPC 原成员资格门槛（原件正文仍未取得）
 
 承接 [SCENE15 成对原门实际两侧观察](docs/continuity/STONEAGE-SCENE15-DOORWAY-20261029.md)，已在已有完整 R18 原服务器成员清单定位 `npc/genout/1000npc_m.create` 为4,413B/完整SHA绑定，但 Git 仅含文件级清单，不含原 NPC 创建脚本文本；(63,103) 是下一调查坐标，**不是本轮已认证 NPC 出生位置**。增加 [SCENE16 来源资格/停止记录](docs/continuity/STONEAGE-SCENE16-NEARBY-NPC-GATE-20261029.md) 与只读原成员整SHA校验、有限目标筛选和模板精确名联接程序；无私有原文件时明确 `SOURCE_NOT_SUPPLIED`、`matched_count=null`，不能报原 NPC 名字/任务/互动或像素恢复。候选独立 [Actions 40787873232](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40787873232) 实际 completed/success，专用15测试通过；只证明程序与原目录/旧门派生守卫，**不证明原版运行或 63,103 NPC 存在**。保留完整 CURRENT、Stage A/B、R79、总体百分比 null。下一限有同SHA原件时真实联接，否则按22域材料优先轮换。
+
+
+### 2026-10-29 | SCENE17 真实原件：室外出口邻近 NPC 创建配置
+
+[SCENE17 来源报告及日期续接](docs/continuity/STONEAGE-SCENE17-ORIGINAL-NPC-SOURCE-20261029.md)：从既存混合2.5保管分卷通过184次HTTP206/12,013,836B定点取得并双解包全SHA认证 `npc/genout/1000npc_m.create`(4413B) 与 `npcgen.template`(4950B)，原25/41块中有**恰好一条**地图1000、固定坐标(63,103)、图形16048、创建数量1、方向4的NPC创建块，唯一连接模板`npcgen_man`→`TownPeople`。完整源派生文件、原压缩header/range hashes及15条新增反例永久存于[研究JSON](research/recovered/STONEAGE-SCENE17-ORIGINAL-NPC-SOURCE-R1.json)，源Action [40789416440](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40789416440) completed/success，候选校验[40789787160](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40789787160)实测35项通过。所用是混合社区保管，不认证台湾1.0官方同服；原客户端世界仍未进入，NPC姓名、原对白、真实可交互性及原像素未新认证。NEXT限图形16048同载体原图或具名缺件，随后回22域轮换；Stage A/B/wiki/R79边界及总体百分比null不变。
