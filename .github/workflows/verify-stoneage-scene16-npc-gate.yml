@@ -1,0 +1,28 @@
+name: Verify SCENE16 nearby NPC original-source gate
+on:
+  push:
+    branches: [main, agent/scene16-town1000-npc-source-gate-20261029]
+    paths:
+      - tools/stoneage_scene16_nearby_npc.py
+      - tests/test_stoneage_scene16_nearby_npc.py
+      - research/recovered/STONEAGE-MIXED25-SERVER-FULL-SOURCE-R18.json
+      - research/recovered/STONEAGE-SCENE15-DOORWAY-SOURCE-R1.json
+      - .github/workflows/verify-stoneage-scene16-npc-gate.yml
+  pull_request:
+    paths:
+      - tools/stoneage_scene16_nearby_npc.py
+      - tests/test_stoneage_scene16_nearby_npc.py
+      - .github/workflows/verify-stoneage-scene16-npc-gate.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  bounded-npc-source-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m tools.stoneage_scene16_nearby_npc
+      - run: python -m unittest -v tests.test_stoneage_scene16_nearby_npc
