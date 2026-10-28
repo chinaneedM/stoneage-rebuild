@@ -2674,3 +2674,8 @@ fresh远端main9854762ef8163dd86f67982379414e9d339f8dcb/tree4482253ef2563da0ffdc
 本地libarchive3.7.2解压，独立标准库wave逐核81物理位置PCM/帧格式/SHA。独立原源Actions40188767159/job121155060294/HEADef49fef9540b8a332df55be94bbabd69065bc168实际success，另用cabextract有界重取，两原成员/派生JSON逐字节cmp同一。原派生21230B/SHAed5d9387a6f8e70da5ad269fc9fa46f8ad5d0b6e0aaf25e3b6d969fe2e1934d0/blob4339a0229176c88628a17af64da816c927cc1ce0永久保管；无临时ZIP工件/原WAV/原表正文/程序入Git，未播放/执行。固定7源的综合报告、sound3原派生/CUSTODY及规格STONEAGE-CROSSVERSION-AUDIO-CONTENT-R1已接三保存样本CN5/TW85/mixed25，各27/27/27表项、81/81/27物理出现；未认证纯净官方build或运行时读尾段。64本地相关检查通过，内容候选/main仅离线重放，须据实际后验另记，不预支。
 
 本包新原表/内容和跨版集成已止点，不扩音频/声卡API链。最高NEXT **ORIGINAL-CHARACTER-CREATION-CONTENT-16**：优先同版TW1人物创建body基表与已存CreateNewChar输入/464SPR的真实值联接，先排除旧登录/选角及R101已有覆盖；只取必要原exe（可有界则不下整盘），至多一条有表界限/数值的外观关联或精确缺源即止，不扩所有writer/helper树。JSS2001十二类48外观不直接回填TW1人物数/名字/原画面。大包私人保管仍暂停，DD-028四档、Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、总体percent=null不变。
+
+
+## 2026-10-29 — SCENE13实物后材料轮换
+
+最新SCENE12日期覆层的动作/NPC材料NEXT由SCENE13实质承接：208新动作0原图、352帧位置/144重复位置与完整浏览器独立像素验收，详见日期续接。最高NEXT WORLD-INTERACTION-SAME-CARRIER-14：只取同保存载体一条NPC脚本/位置到地图的实际输入链接，先排除NPC09/10与R44/R46旧覆盖；无同版输入则精确缺口止点回22域，不连续穷举SPR动作/EXE/驱动助手。官方物种、原服同部署、动作名/速度/原生遮挡及完整原世界仍不认证。全部旧路线、CURRENT前缀、Stage A/B/wiki/R79和percent=null保留。

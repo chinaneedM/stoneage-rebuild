@@ -833,3 +833,8 @@ ranges, not a new whole-client download or arbitrary program reverse engineering
 ### 2026-10-28 | SCENE12 私人场景观察器受控来源证据范围修复
 
 [SCENE12 日期记录](docs/continuity/STONEAGE-SCENE12-OBSERVER-WITNESS-SCOPE-20261028.md)及[PR #28](https://github.com/chinaneedM/stoneage-rebuild/pull/28)：重新读取SHA认证的私人R10观察页，发现观察器将 R9 100250/方向0受控排序误用于其他选中宠物、方向和帧。48个原R9受控样例对应6400个现代观察可选状态中**仅56个两图号同时吻合**，6344个必须明确显示为现代回退绘制而非原插序事实；加入SHA限定私有HTML修复工具、源安全数值记录及反例测试。私人修正版浏览器实际解码218张图，错误0、外部请求0，原图/HTML未入Git。候选Actions [40709304608](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40709304608)已实际completed/success，PR #28已合并，主线合并提交 e4603d62986ac7ca35174aedd297b6010be25825。此成功**并非原游戏运行或官方宠物身份恢复**，仍是后代混合来源的受控参考；Stage A 7 PARTIAL + 2 OPEN，Stage B/wiki GATED，R79暂停，总完成率未定义。下一最高：材料优先恢复有实际原图的新动作或有同版输入的NPC/地图交互，缺实物则有界停止，不扩大原EXE分卷与泛用渲染helper。
+
+
+### 2026-10-29 | SCENE13 三组宠物动作码0真实原图与完整逐帧观察
+
+[SCENE13实物与验收](docs/continuity/STONEAGE-SCENE13-PET-ACTION0-20261029.md)：复用已保存原载体并完整认证五成员，实际新解码208原图、24段动作0、352帧位置，144重复帧位置全部保留；真实Chromium266图，全部352画布与独立Pillow逐像素一致。原素材只私人保存，公开Git仅程序/数值/哈希。动作名、原FPS、原生遮挡与官方物种不晋升，仍未进入原世界；最高下一同源NPC/地图交互14，Stage A/B/wiki/R79与总体未知保持。

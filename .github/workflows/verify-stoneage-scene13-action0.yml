@@ -1,0 +1,33 @@
+name: Verify SCENE13 source-safe pet action0 material
+on:
+  push:
+    branches: [main, agent/scene13-pet-action0-20261029]
+    paths:
+      - tools/stoneage_scene13_pet_action0.py
+      - tools/stoneage_scene13_independent_replay.py
+      - tools/scene-room-action0-viewer-r13.html
+      - tests/test_stoneage_scene13_pet_action0.py
+      - research/recovered/STONEAGE-SCENE13-PET-ACTION0-R1.json
+      - research/recovered/STONEAGE-SCENE13-PIXEL-ACCEPTANCE-R1.json
+      - .github/workflows/verify-stoneage-scene13-action0.yml
+  pull_request:
+    paths:
+      - tools/stoneage_scene13_pet_action0.py
+      - tools/stoneage_scene13_independent_replay.py
+      - tools/scene-room-action0-viewer-r13.html
+      - tests/test_stoneage_scene13_pet_action0.py
+      - research/recovered/STONEAGE-SCENE13-PET-ACTION0-R1.json
+      - research/recovered/STONEAGE-SCENE13-PIXEL-ACCEPTANCE-R1.json
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-safe-action0-replay:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m tools.stoneage_scene13_pet_action0
+      - run: python -m unittest -v tests.test_stoneage_scene13_pet_action0 tests.test_stoneage_scene12_witness_scope tests.test_stoneage_scene11_pet_visual

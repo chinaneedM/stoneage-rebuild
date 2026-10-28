@@ -4987,3 +4987,8 @@ fresh远端main9854762ef8163dd86f67982379414e9d339f8dcb/tree4482253ef2563da0ffdc
 本地libarchive3.7.2解压，独立标准库wave逐核81物理位置PCM/帧格式/SHA。独立原源Actions40188767159/job121155060294/HEADef49fef9540b8a332df55be94bbabd69065bc168实际success，另用cabextract有界重取，两原成员/派生JSON逐字节cmp同一。原派生21230B/SHAed5d9387a6f8e70da5ad269fc9fa46f8ad5d0b6e0aaf25e3b6d969fe2e1934d0/blob4339a0229176c88628a17af64da816c927cc1ce0永久保管；无临时ZIP工件/原WAV/原表正文/程序入Git，未播放/执行。固定7源的综合报告、sound3原派生/CUSTODY及规格STONEAGE-CROSSVERSION-AUDIO-CONTENT-R1已接三保存样本CN5/TW85/mixed25，各27/27/27表项、81/81/27物理出现；未认证纯净官方build或运行时读尾段。64本地相关检查通过，内容候选/main仅离线重放，须据实际后验另记，不预支。
 
 本包新原表/内容和跨版集成已止点，不扩音频/声卡API链。最高NEXT **ORIGINAL-CHARACTER-CREATION-CONTENT-16**：优先同版TW1人物创建body基表与已存CreateNewChar输入/464SPR的真实值联接，先排除旧登录/选角及R101已有覆盖；只取必要原exe（可有界则不下整盘），至多一条有表界限/数值的外观关联或精确缺源即止，不扩所有writer/helper树。JSS2001十二类48外观不直接回填TW1人物数/名字/原画面。大包私人保管仍暂停，DD-028四档、Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、总体percent=null不变。
+
+
+### 2026-10-29 — 保存混合2.5的宠物动作码0像素事实（非原服运行）
+
+SCENE13认证同保管RAR与五成员，三原SPR组100250/251/252动作0八方向：72/72/208帧位置，64/64/80不同图，共144重复位置；原duration1000/1000/1400单位未认证。原208RD独立解码与候选RGBA/PNG全同，352现代合成画布经真实浏览器与独立Pillow全同。不能将保存模板名称/数值链接晋升为初代官方物种、动作含义、原帧率或原服同部署。原程序与原世界未运行。见SCENE13日期续接，保留首次独立参考漏人工锚点标记的111不符及修正历史。
