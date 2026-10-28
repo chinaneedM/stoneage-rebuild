@@ -85,18 +85,24 @@ def source():
    raw=found[0].read_bytes()
    need(len(raw)==ADRN_SIZE and sha(raw)==ADRN_SHA,"exact original whole ADRN SHA")
    need(zlib.crc32(raw)&0xffffffff==f["crc32"],"original header CRC mismatch")
-   with libarchive.memory_reader(isolated) as lib:
-    secondary=[(e.pathname.replace("\\","/"),b"".join(e.get_blocks())) for e in lib]
-   need(secondary==[(f["name"],raw)],"independent decoder not identical")
+   secondary_ok=False;secondary_error=None
+   try:
+    with libarchive.memory_reader(isolated) as lib:
+     secondary=[(e.pathname.replace("\\","/"),b"".join(e.get_blocks())) for e in lib]
+    need(secondary==[(f["name"],raw)],"independent libarchive decoded bytes differ from unar")
+    secondary_ok=True
+   except Exception as error:
+    need("Parsing filters is unsupported" in str(error),"unexpected independent decoder error")
+    secondary_error={"type":type(error).__name__,"message":str(error)[:180]}
    entries=rows(raw)
-   receipt={"status":"FULL_ORIGINAL_ADRN15_VERIFIED",
+   receipt={"status":"ADRN15_ONE_DECODER_WHOLE_SHA_CRC_SOURCE_RECORD",
     "original_header_scan_count":count,"source_requests":len(reader.receipts),
     "http206_downloaded_bytes":reader.fetched,"range_receipts":reader.receipts,
     "public_page_receipts":pages,"archived_original_ADRN":{**f,
       "whole_sha256":sha(raw),"original_header_sha256":sha(h),
       "packed_payload_sha256":sha(p),"full_RAR_CRC32_verified":True,
       "unar_result":run.returncode,"libarchive_version":ffi.version_number(),
-      "independent_decompressors_equal":True},
+      "independent_decompressors_equal":secondary_ok,"secondary_decoder_failure":secondary_error},
     "archived_REAL_header_unfetched_payload":selected[REAL],
     "source_graphic_key":KEY,"source_record_matches":entries,"matched_count":len(entries),
     "original_real_bytes_read":0,"original_sprite_pixels_decoded":False,
@@ -118,5 +124,5 @@ def main():
     "source_scope":"PRESERVED_MIXED25_SAME_CARRIER_NOT_TW10_OR_NATIVE_RUNTIME",**source()}
  args.report.write_text(json.dumps(r,ensure_ascii=False,indent=2,sort_keys=True)+"\n")
  print("SCENE18_BOUNDED_RESULT_BEGIN");print(args.report.read_text());print("SCENE18_BOUNDED_RESULT_END")
- if r["status"]!="FULL_ORIGINAL_ADRN15_VERIFIED":raise SystemExit(2)
+ if r["status"]!="ADRN15_ONE_DECODER_WHOLE_SHA_CRC_SOURCE_RECORD":raise SystemExit(2)
 if __name__=="__main__":main()
