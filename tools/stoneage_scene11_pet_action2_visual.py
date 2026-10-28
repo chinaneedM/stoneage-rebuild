@@ -40,6 +40,14 @@ def validate(report,source):
  need(p['aligned_source_frames']==48 and p['exact_alpha_masks']==38 and p['total_alpha_mask_pixel_differences']==12 and p['total_rgba_pixel_differences']==43069 and p['rgba_identical_frames']==0,'pixel pair totals')
  need(p['per_direction_exact_alpha_masks']==[5,3,5,4,5,6,5,5] and sum(p['per_direction_visible_pixel_differences'])==43069,'paired direction totals')
  need(report['graphic_100252_direction_frame_pattern']==PATTERN,'20-position source repetition pattern')
+ color=report['fixed_global_color_remap_negative']
+ need(color['source_rgba_colors_at_both_visible_pixels']==140 and color['source_rgba_colors_unique_target']==15 and color['source_rgba_colors_multiple_targets']==125,'color mapping ambiguity count')
+ need(color['source_rgba_colors_unique_target']+color['source_rgba_colors_multiple_targets']==color['source_rgba_colors_at_both_visible_pixels'],'color conservation')
+ need(color['both_alpha_nonzero']==61943 and color['same_RGBA_both_visible']==18886 and color['different_RGBA_both_visible']==43057,'visible source colors')
+ need(color['A_only_visible']==8 and color['B_only_visible']==4,'visible silhouette residuals')
+ need(color['different_RGBA_both_visible']+color['A_only_visible']+color['B_only_visible']==p['total_rgba_pixel_differences'],'pixel difference conservation')
+ need(color['majority_target_matches_if_one_fixed_target_per_source_color']==35819,'fixed palette mapping upper bound')
+ need(color['a_single_source_RGBA_to_target_RGBA_mapping_can_reproduce_all_visible_pairs'] is False and color['official_global_palette_recolor_proven'] is False,'no palette/official interpretation')
  for flag in ['original_game_world_entered','original_native_client_render_verified','official_species_identity_proven','same_deployed_build_proven','original_frame_rate_authenticated','private_proprietary_png_published']:
   need(report[flag] is False,'unsafe historical status: '+flag)
  need(report['percent_restored'] is None,'no invented restoration percent')
@@ -100,6 +108,24 @@ def real_private_pixel_replay(path,report):
    dif_rgba=sum(any(v!=0 for v in pixel) for pixel in ImageChops.difference(p,q).getdata())
    eq+=int(dif_mask==0);changed_mask+=dif_mask;rgba_count+=dif_rgba
   per_equal.append(eq);per_rgba.append(rgba_count);mask_equal+=eq;changed_rgba+=rgba_count
+ color_map={}
+ stats={'both_alpha_nonzero':0,'different_RGBA_both_visible':0,'same_RGBA_both_visible':0,'A_only_visible':0,'B_only_visible':0}
+ for direction in range(8):
+  for fa,fb in zip(a[direction]['frames'],c[direction]['frames']):
+   for p_color,q_color in zip(im[fa[0]].getdata(),im[fb[0]].getdata()):
+    if p_color[3]>0 and q_color[3]>0:
+     colors=color_map.setdefault(p_color,{})
+     colors[q_color]=colors.get(q_color,0)+1
+     stats['both_alpha_nonzero']+=1
+     stats['same_RGBA_both_visible' if p_color==q_color else 'different_RGBA_both_visible']+=1
+    elif p_color[3]>0:stats['A_only_visible']+=1
+    elif q_color[3]>0:stats['B_only_visible']+=1
+ negative=report['fixed_global_color_remap_negative']
+ need(negative['source_rgba_colors_at_both_visible_pixels']==len(color_map),'original-source color count')
+ need(negative['source_rgba_colors_unique_target']==sum(len(v)==1 for v in color_map.values()),'fixed mapping colors')
+ need(negative['source_rgba_colors_multiple_targets']==sum(len(v)>1 for v in color_map.values()),'ambiguous mapping colors')
+ need(negative['majority_target_matches_if_one_fixed_target_per_source_color']==sum(max(v.values()) for v in color_map.values()),'optimal global fixed one-way remap')
+ need(all(negative[k]==v for k,v in stats.items()),'visible-pixel source pairs')
  p=report['pair_100250_100251']
  need(mask_equal==p['exact_alpha_masks'] and changed_mask==p['total_alpha_mask_pixel_differences'],'source pair alpha delta')
  need(changed_rgba==p['total_rgba_pixel_differences'],'actual RGBA difference')
