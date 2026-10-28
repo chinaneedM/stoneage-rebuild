@@ -1,0 +1,24 @@
+name: Validate SCENE11 source-safe pet action2 silhouette and repeat evidence
+on:
+  push:
+    branches: [agent/scene11-pet-actual-pixel-shapes-20261028, main]
+    paths:
+      - tools/stoneage_scene11_pet_action2_visual.py
+      - tests/test_stoneage_scene11_pet_visual.py
+      - research/recovered/STONEAGE-SCENE11-PET-ACTION2-VISUAL-R1.json
+      - .github/workflows/verify-stoneage-scene11-pet-visual.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate-numerical-source-claims:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Replay SHA-qualified R40 group references and bounded R11 statements
+        run: python -m tools.stoneage_scene11_pet_action2_visual
+      - name: Run source-independent negative tests (no private PNGs)
+        run: python -m unittest -v tests.test_stoneage_scene11_pet_visual
