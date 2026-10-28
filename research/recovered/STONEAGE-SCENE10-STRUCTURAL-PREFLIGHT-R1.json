@@ -1,0 +1,141 @@
+{
+  "schema": "stoneage.scene10.structural_preflight.r1",
+  "source_head": "3b79a2aed14b7922e8f4d2284029a1313763c428",
+  "source_tree": "2d85430e5ab8dab6f7f7261ac5e94cc6caf15002",
+  "source_current_state_blob": "031c76a5a8e431f646853909bb2f2e11e6328cd2",
+  "source_current_state_bytes": 2680510,
+  "original_exe_claimed_sha256": "ec678517f76564ebc9ab00cf3f66853ed9975ef6290eb48168b78909a68a5d16",
+  "private_viewer_sha256": "00e7565587e009c3e44bcffa1523ab4018886d637aaef1e04749dc01637628d4",
+  "private_viewer_bytes": 1150992,
+  "evidence_class": "PRIVATE_VIEWER_RECORDED_CALLS_NOT_INDEPENDENT_EXE_EXECUTION",
+  "original_exe_bytes_available_for_this_preflight": false,
+  "source_callsite_bytes_independently_verified": false,
+  "four_candidate_paths": [
+    {
+      "start_va": 4494410,
+      "end_va_exclusive": 4494501,
+      "key_calls": [
+        {
+          "call_va": 4494410,
+          "target_va": 4368676
+        },
+        {
+          "call_va": 4494415,
+          "target_va": 4198711
+        },
+        {
+          "call_va": 4494420,
+          "target_va": 4508177
+        },
+        {
+          "call_va": 4494440,
+          "target_va": 4356772
+        },
+        {
+          "call_va": 4494496,
+          "target_va": 4506787
+        }
+      ],
+      "unreplayed_intervening_count": 8,
+      "outer_path_executed_as_whole": false
+    },
+    {
+      "start_va": 4495313,
+      "end_va_exclusive": 4495363,
+      "key_calls": [
+        {
+          "call_va": 4495313,
+          "target_va": 4368676
+        },
+        {
+          "call_va": 4495318,
+          "target_va": 4198711
+        },
+        {
+          "call_va": 4495323,
+          "target_va": 4508177
+        },
+        {
+          "call_va": 4495333,
+          "target_va": 4356772
+        },
+        {
+          "call_va": 4495358,
+          "target_va": 4506787
+        }
+      ],
+      "unreplayed_intervening_count": 5,
+      "outer_path_executed_as_whole": false
+    },
+    {
+      "start_va": 4495615,
+      "end_va_exclusive": 4495696,
+      "key_calls": [
+        {
+          "call_va": 4495615,
+          "target_va": 4368676
+        },
+        {
+          "call_va": 4495620,
+          "target_va": 4198711
+        },
+        {
+          "call_va": 4495625,
+          "target_va": 4508177
+        },
+        {
+          "call_va": 4495635,
+          "target_va": 4356772
+        },
+        {
+          "call_va": 4495691,
+          "target_va": 4506787
+        }
+      ],
+      "unreplayed_intervening_count": 4,
+      "outer_path_executed_as_whole": false
+    },
+    {
+      "start_va": 4495953,
+      "end_va_exclusive": 4496015,
+      "key_calls": [
+        {
+          "call_va": 4495953,
+          "target_va": 4368676
+        },
+        {
+          "call_va": 4495975,
+          "target_va": 4198711
+        },
+        {
+          "call_va": 4495980,
+          "target_va": 4508177
+        },
+        {
+          "call_va": 4495995,
+          "target_va": 4356772
+        },
+        {
+          "call_va": 4496010,
+          "target_va": 4506787
+        }
+      ],
+      "unreplayed_intervening_count": 6,
+      "outer_path_executed_as_whole": false
+    }
+  ],
+  "unreplayed_intervening_calls_total": 23,
+  "candidate_unverified_96_case_claim": 96,
+  "R9_referenced_48_cases": 48,
+  "source_private_images": 218,
+  "map_placements": 30,
+  "original_world_entered": false,
+  "full_original_frame_proven": false,
+  "native_GPU_actor_occlusion_verified": false,
+  "public_proprietary_assets_included": false,
+  "stage_a": "7_PARTIAL_2_OPEN",
+  "stage_b": "GATED",
+  "r79": "PAUSED_NON_BLOCKING",
+  "overall_completion_percent": null,
+  "next": "SCENE10-SAME-CARRIER-ORIGINAL-EXE-CALLSITE-REPLAY-GATE"
+}
