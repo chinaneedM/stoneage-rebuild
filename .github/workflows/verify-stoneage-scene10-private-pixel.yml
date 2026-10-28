@@ -1,0 +1,22 @@
+name: Accept R10 source-bound pixel material without original bytes
+on:
+  push:
+    branches: [agent/scene10-original-exe-bounded-source-gate-20261028]
+    paths:
+      - research/recovered/STONEAGE-SCENE10-SOURCE-RANGE-RESULT-R1.json
+      - research/recovered/STONEAGE-SCENE10-SOURCE-CUSTODY-R1.json
+      - research/recovered/STONEAGE-SCENE10-PRIVATE-PIXEL-ACCEPTANCE-R1.json
+      - tests/test_stoneage_scene10_private_pixel_acceptance.py
+      - .github/workflows/verify-stoneage-scene10-private-pixel.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  derived-numbers-and-negative-boundaries:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest -v tests.test_stoneage_scene10_private_pixel_acceptance

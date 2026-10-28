@@ -1,0 +1,108 @@
+{
+  "schema": "stoneage.scene10.private_pixel_projection_acceptance.r1",
+  "date": "2026-10-28",
+  "private_viewer_sha256": "00e7565587e009c3e44bcffa1523ab4018886d637aaef1e04749dc01637628d4",
+  "private_viewer_bytes": 1150992,
+  "private_source_png_total": 218,
+  "private_source_room_png": 10,
+  "private_source_actor_png": 208,
+  "source_sha256_per_png_verified": true,
+  "room_map_placements": 30,
+  "comparison": "PRIVATE_OBSERVER_CANDIDATE_MAP_X_PLUS_ONE_VS_SAME_SOURCE_UNSHIFTED",
+  "per_axis_x": [
+    13,
+    14,
+    15,
+    16,
+    17
+  ],
+  "per_axis_y": [
+    13,
+    14,
+    15,
+    16,
+    17
+  ],
+  "pixels_changed_by_row_y13_to_y17": [
+    [
+      286047,
+      286128,
+      285831,
+      288981,
+      292509
+    ],
+    [
+      278181,
+      278514,
+      278784,
+      286524,
+      290223
+    ],
+    [
+      280593,
+      278172,
+      278784,
+      285345,
+      290187
+    ],
+    [
+      282546,
+      278559,
+      278793,
+      282402,
+      292410
+    ],
+    [
+      286317,
+      284697,
+      285516,
+      287361,
+      294480
+    ]
+  ],
+  "position_count": 25,
+  "all_positions_changed": 25,
+  "total_changed_RGBA_pixel_positions": 7117884,
+  "canvas": [
+    960,
+    720
+  ],
+  "private_full_25_case_report_sha256": "5ff31c48c0daeb2af3c7323d32ed134ddd23036fc394001fb2a1aaece50c827d",
+  "private_full_25_case_report_bytes": 7709,
+  "real_browser_version": "144.0.7559.96",
+  "private_real_browser_observation_sha256": "c82346d6731e5795da22d7a5a1380c3541dd6e912edf2e40a1d4ba80a4c0c78f",
+  "private_real_browser_observation_bytes": 791,
+  "real_browser_pngs_loaded": 218,
+  "real_browser_and_independent_pillow_pixels_identical": true,
+  "real_browser_js_errors": 0,
+  "real_browser_samples": [
+    {
+      "case": "default_15_15_unshifted",
+      "RGBA_sha256": "6a7a4680c8a63b018738f863ebff7f549d43172687e3152ab7289beb8cfaf177",
+      "matches_independent_pillow": true
+    },
+    {
+      "case": "default_15_15_shift_plus_one",
+      "RGBA_sha256": "654d66ee08ab3655648e89f60e8253cb78f6da142720158de8f9b0d784975381",
+      "matches_independent_pillow": true
+    },
+    {
+      "case": "example_17_13_shift_plus_one",
+      "RGBA_sha256": "305c03246d454569a67653a430ca9de582d9e4fa9a42f43c009d03f4e69f4a61",
+      "matches_independent_pillow": true
+    }
+  ],
+  "r9_crosscheck_anchor": [
+    15,
+    15
+  ],
+  "r9_unshifted_sha256": "046e9057d51f7c85380bdeebf96b954926eeaadde1cbe9ddcf703d9737c69a36",
+  "r10_shifted_independent_sha256": "fc65fd4ccaf9a771ede58496886ec27e705b65e4bba19440012517788847c134",
+  "original_exe_bytes_verified_this_work_unit": false,
+  "original_map_x_offset_native_authenticated": false,
+  "original_world_entered": false,
+  "original_GPU_occlusion_authenticated": false,
+  "original_species_identity_authenticated": false,
+  "private_assets_in_public_git": false,
+  "overall_restoration_percent": null
+}
