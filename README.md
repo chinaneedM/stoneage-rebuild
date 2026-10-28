@@ -820,3 +820,7 @@ ranges, not a new whole-client download or arbitrary program reverse engineering
 ### 2026-10-28 | SCENE10 私人候选帧阶段独立预检（不是原EXE认证）
 
 [日期续接与负例门槛](docs/continuity/STONEAGE-SCENE10-PRIVATE-PREFLIGHT-20261028.md)：私人 R10 观察页保管副本经完整 SHA 验证，结构记录四条候选帧路径各五个关键调用，另有23个中间调用与所有完整外层路径均未独立重放；96次用例只属于候选自述。公开预检守卫及10项正反测试在 [PR #25](https://github.com/chinaneedM/stoneage-rebuild/pull/25) 的候选/主线专用 Actions 实际通过。**本轮未取得/独立核验同 SHA 原 EXE 的 callsite 原字节，不能据私人观察页自报推原帧调度成立，更未进入可操作原世界。** NEXT为原件可得时有限复核四条路径/缺失回调，遇无证据止点转其他已有真实材料；原版权内容不入公开Git。CURRENT 全部历史原字节不变，DD-028/030、Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停及总体百分比null保持。
+
+### 2026-10-28 | SCENE10 受限原件取证与现代地图真实像素验收（严守证据边界）
+
+[主线研究与连续性回执](docs/continuity/STONEAGE-SCENE10-SOURCE-AND-PIXEL-ACCEPTANCE-20261028.md)：[PR #26](https://github.com/chinaneedM/stoneage-rebuild/pull/26)独立取到原混合保存第一分卷的16MiB HTTP206片段并校验来源SHA，但因RAR仅前缀，未能提取同SHA原EXE，43原调用点仍未独立认证。首次synthetic测试失败原样保留，修正后源门槛成功但业务状态仍为SOURCE_UNQUALIFIED。现代私人R10观察页218幅实际来源图与25处5×5镜头独立Pillow比较，原素材x+1候选画面25/25改变，真实Chromium144三帧每帧691200 RGBA与独立合成完全相同；并不证实原游戏X偏移/完整帧/世界。源工件ZIP/报告逐SHA及失败/成功CI证据永久归档。停止缺源循环，下一转22域可取实物/场景/宠物/交互材料。原CURRENT 2680510B全文、DD-028/030、Stage A/B/wiki、R79及总体百分比null不变。

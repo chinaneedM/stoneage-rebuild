@@ -17,3 +17,11 @@ Actual local Chromium 144.0.7559.96 decoded all original-source PNGs with HTTP0 
 Public Git includes only typed numeric summaries, original filename/SHA metadata and negative tests; original RAR/EXE/bitmap/PIL input/HTML/browser screenshot and private file IDs remain outside Git. The separate synthetic CI checks numeric consistency and R9 source report crosswalk, NOT actual original pixels in CI.
 
 SCENE10 source helper has reached a finite stop. Reopen the 43 original EXE callsites only on **full source executable bytes matching** `ec678517f76564ebc9ab00cf3f66853ed9975ef6290eb48168b78909a68a5d16`, without bulk archival repetition. Next portfolio choice: material-first named world/pet/interaction observation where available; do not expand WinXP, DirectDraw or incomplete RAR probing solely for a green CI. Stage A7PARTIAL+2OPEN, Stage B/wiki GATED, R79 paused, DD-028 task classes, DD-030 zh-CN, overall percent null unchanged.
+
+## 2026-10-28 | PR #26 主线后验与下一止点
+
+源门槛初次 run 40701404571 / job 122861897447 的合成E8测试失败保留。修正原源门槛 run 40701484420 / job 122862183864 为 completed/success，但实际报告状态 PREFIX_DOES_NOT_PROVE_EXE_AVAILABILITY，不是原exe成功下载。全ZIP 710B SHA256 6d0dfe2d9291781f066db1fb990a7599a22b82a9dc6438fb82f5bb20890f38c8、唯一868B JSON SHA256 27c33025b1a1c4465655393d4f2e6923e5a6a72d13d4d14bfa13bbd97dba27f0，原子项和短期载体独立完整回读验证，仅派生报告入Git。R10私人源图片25处独立对比及Chromium/Pillow三帧实际一致，公开数值负例Action 40702431879 / job 122865541685 completed/success；它仅证实派生数字和边界，未在CI上传原图。
+
+PR #26 候选 02eb63886a15a35512fac88aea60239d68e2d0bb / tree e384483068c00f8a4bbdb7b1671d7db51b0e94f0，clean且ahead3/behind0，常规合并后main e6384720d25540a01605db5263c4907b68ba1bdb / 同tree，完整6353项非截断。旧CURRENT blob 031c76a5a8e431f646853909bb2f2e11e6328cd2 / 2680510B未动；原R9/R10叠加不动。主线合并并未触发仅绑定agent分支的两个R10专用工作流，不能虚报对应main的专用通过。本日期加法入口与永久收据参见 research/recovered/STONEAGE-SCENE10-PUBLICATION-R2.json。
+
+缺少561152B原EXE的独立原字节门槛仍OPEN，已在16MiB已知分卷范围取证止点，除非取得完整匹配SHA的可回读原件不继续下载/扩大原渲染器。最高下一应改选22域有原素材的具名/实体交互观察最小包。原世界进入=false，Stage A 7PARTIAL+2OPEN，Stage B/wiki GATED，R79 PAUSED_NON_BLOCKING，总完成率null。
