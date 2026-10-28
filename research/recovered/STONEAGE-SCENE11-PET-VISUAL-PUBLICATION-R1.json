@@ -1,0 +1,81 @@
+{
+  "schema": "stoneage.scene11.pet_action2_material_publication.r1",
+  "date": "2026-10-28",
+  "repo": "chinaneedM/stoneage-rebuild",
+  "prework_main": "fc54facb312c79d090e5d7ea845a9bed89a766e3",
+  "prework_tree": "0ff160cf34e4f3e4675e4c5d67b7db58b10b283b",
+  "pull_request": 27,
+  "initial_candidate": "332bfd858a5674db8a618a00ab1a9f261f8da0b3",
+  "initial_pass_run": 40705486314,
+  "accepted_candidate": "8dfa7421c1d867d72e4ad9b4b05a020afbfb761c",
+  "accepted_candidate_tree": "da0b1735cbed1166b31e5a05c63005ba915166ef",
+  "accepted_candidate_run": {
+    "id": 40705927012,
+    "job": 122877903794,
+    "status": "completed",
+    "conclusion": "success",
+    "tests": 15,
+    "source": "SOURCE_SAFE_DERIVED_ONLY"
+  },
+  "main_merged": "47e504ef4c11f4cc098654f010bc56a42f0d6e9f",
+  "main_tree": "da0b1735cbed1166b31e5a05c63005ba915166ef",
+  "main_run": {
+    "id": 40706155057,
+    "job": 122878705521,
+    "status": "completed",
+    "conclusion": "success",
+    "scope": "PUBLIC_NUMERIC_SOURCE_SAFE_NO_ORIGINAL_PNG"
+  },
+  "previous_readme_blob": "3d015b988ae95cf1063d4a06ee9d6edb8608ba89",
+  "previous_dated_note_blob": "7a2535ec2c59e97c2869589e357a6ce2ef1dbc86",
+  "old_current_blob": "031c76a5a8e431f646853909bb2f2e11e6328cd2",
+  "old_current_bytes": 2680510,
+  "source_html_bytes": 1150992,
+  "source_html_sha256": "00e7565587e009c3e44bcffa1523ab4018886d637aaef1e04749dc01637628d4",
+  "private_pillow_full_numeric_bytes": 101761,
+  "private_pillow_full_numeric_sha256": "063c044702464ea137f446a119e810f6f7b9953f369a4e616536a3a87c2ef69a",
+  "private_fixed_recolor_negative_bytes": 745,
+  "private_fixed_recolor_negative_sha256": "2248c25183300a722ef038c897928ba1fd98b72714f092c10b6d1eb6a4d51fc9",
+  "original_source_pngs_SHA_checked": 208,
+  "source_pet_pngs": 160,
+  "source_action2_frame_occurrences": 256,
+  "source_distinct_pet_pngs": 160,
+  "source_repeated_occurrences_in_100252": 96,
+  "paired_original_source_png_frames": 48,
+  "aligned_same_alpha_mask_pairs": 38,
+  "aligned_difference_RGBA_visible_pixel_positions": 43069,
+  "original_client_exe_bytes_read_this_turn": false,
+  "original_client_launched": false,
+  "original_world_entered": false,
+  "official_species_confirmed": false,
+  "raw_proprietary_assets_published": false,
+  "stage_a": "7_PARTIAL_2_OPEN",
+  "stage_b": "GATED",
+  "wiki": "GATED",
+  "r79": "PAUSED_NON_BLOCKING",
+  "overall_restoration_percentage": null,
+  "files": {
+    "derived": {
+      "path": "research/recovered/STONEAGE-SCENE11-PET-ACTION2-VISUAL-R1.json",
+      "blob": "09cac937274a3ef4f4ac8ebb077438365e0f03b6"
+    },
+    "tool": {
+      "path": "tools/stoneage_scene11_pet_action2_visual.py",
+      "blob": "ee24531aeda4e3c2fa0bf305de60653038a7d3d5"
+    },
+    "tests": {
+      "path": "tests/test_stoneage_scene11_pet_visual.py",
+      "blob": "0e8926417294909ac64f242039404a53c67efe30"
+    },
+    "workflow": {
+      "path": ".github/workflows/verify-stoneage-scene11-pet-visual.yml",
+      "blob": "d4d844baecf7403bf10d7e139962e2adfe698ac2"
+    },
+    "note": {
+      "path": "docs/continuity/STONEAGE-SCENE11-PET-VISUAL-20261028.md",
+      "blob": "7a2535ec2c59e97c2869589e357a6ce2ef1dbc86"
+    }
+  },
+  "next": "MATERIAL_FIRST_SOURCE_BACKED_ADDITIONAL_PET_ACTION_OR_ACTUAL_WORLD_INTERACTION",
+  "receipt_commit_actions": "NOT_PRE_CREDITED"
+}

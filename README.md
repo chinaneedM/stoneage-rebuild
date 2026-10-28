@@ -824,3 +824,7 @@ ranges, not a new whole-client download or arbitrary program reverse engineering
 ### 2026-10-28 | SCENE10 受限原件取证与现代地图真实像素验收（严守证据边界）
 
 [主线研究与连续性回执](docs/continuity/STONEAGE-SCENE10-SOURCE-AND-PIXEL-ACCEPTANCE-20261028.md)：[PR #26](https://github.com/chinaneedM/stoneage-rebuild/pull/26)独立取到原混合保存第一分卷的16MiB HTTP206片段并校验来源SHA，但因RAR仅前缀，未能提取同SHA原EXE，43原调用点仍未独立认证。首次synthetic测试失败原样保留，修正后源门槛成功但业务状态仍为SOURCE_UNQUALIFIED。现代私人R10观察页218幅实际来源图与25处5×5镜头独立Pillow比较，原素材x+1候选画面25/25改变，真实Chromium144三帧每帧691200 RGBA与独立合成完全相同；并不证实原游戏X偏移/完整帧/世界。源工件ZIP/报告逐SHA及失败/成功CI证据永久归档。停止缺源循环，下一转22域可取实物/场景/宠物/交互材料。原CURRENT 2680510B全文、DD-028/030、Stage A/B/wiki、R79及总体百分比null不变。
+
+### 2026-10-28 | SCENE11 原宠物真实图像轮廓、动作重复与非全局换色负例
+
+[完整SCENE11日期续接](docs/continuity/STONEAGE-SCENE11-PET-VISUAL-20261028.md)与[PR #27](https://github.com/chinaneedM/stoneage-rebuild/pull/27)：私人R10观察页原SHA全检并解码208幅来源PNG（宠物160/人物48），同保存包R40原SPR完整段100250/251/252与早期TW1/CN5三段SHA完全相符。原动作码2的八方向对应画面100250与100251各48出现/48不同图，100252有160帧出现但只64不同图，**96重复帧位不可丢**；每方向相同20位置图号模式保留。48个100250/251对应原像素帧38对alpha轮廓完全相同，剩余十对合计仅12 alpha像素不等，全部48对可见RGBA共43069位置不一致；140种源RGBA中125种映射不唯一，不得假设一个固定换色表可再生所有帧。只提交数值/哈希/程序和负例测试，原PNG与private HTML不公开。候选源安全Action40705927012与主线40706155057均已实际completed/success（15测试）；**专用CI不读取私有原图，不等于原版程序实际运行或官方宠物身份**。下一移交新增有实物的其他动作图/场景交互，若无原像素则有限止点回材料轮换，停止R10原EXE分卷空转；旧CURRENT全文2680510B原blob不改，Stage A7 PARTIAL+2 OPEN，B/wiki GATED，R79暂停，总百分比null。

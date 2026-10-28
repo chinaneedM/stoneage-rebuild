@@ -18,3 +18,9 @@
 ## 同形候选不得退化为自动单一换色表
 
 两组对应48帧的61943处双方非透明位置中，18886处RGBA同值，43057处RGBA不同；另有A独有8像素/B独有4像素，故可见RGBA总差异恰43069（与初验吻合）。在两组可见对应像素中，A共有140种RGBA：15种只对应1种B颜色，125种分别对应多种B颜色。即使每一种A颜色只挑最高频B色，全局映射最多匹配35819/61943处。因此**单一确定的RGBA→RGBA颜色表无法复现本候选解码的全部B帧**。这不证明两个宠物为官方同系、特定重染管线或原程序运行时调色规则。补充私人纯数值报告745B/SHA256 `2248c25183300a722ef038c897928ba1fd98b72714f092c10b6d1eb6a4d51fc9`，原图仍不公开。
+
+## 远端最终合并后验与来源保全（2026-10-28）
+
+候选首次commit 332bfd858a5674db8a618a00ab1a9f261f8da0b3 的run40705486314 completed/success；后来纳入独立原像素单一全局换色负例的候选HEAD 8dfa7421c1d867d72e4ad9b4b05a020afbfb761c / tree da0b1735cbed1166b31e5a05c63005ba915166ef 的专用run40705927012/job122877903794 completed/success，实际日志15项unittest通过。PR #27 可合并状态clean、同起始main fc54facb312c79d090e5d7ea845a9bed89a766e3 比较ahead2/behind0，常规合并后main 47e504ef4c11f4cc098654f010bc56a42f0d6e9f / 同tree；正式main source-safe R11 run40706155057已实际completed/success（job122878705521）。均只是公开派生正反数据守卫，无私有源PNG加载；本地真实Pillow逐帧的独立重算在私人历史来源哈希固定条件下完成，实际源图片原SHA208/208、独立pair48/48。没有将本地原源运行伪造成GitHub Actions run，也没有新的原EXE原source字节取证。
+
+与原main基线比较，本PR只新增5项源码安全文件，原CURRENT Git blob 031c76a5a8e431f646853909bb2f2e11e6328cd2、原R40及R9/R10日期覆层均原样保留。原主线tree完整6359条，truncated=false。发布README/本日期覆层作为历史前缀完全保留的加法导航；本加法收据提交本身的后续Actions必须后验观察，不提前算成功。永久索引 research/recovered/STONEAGE-SCENE11-PET-VISUAL-PUBLICATION-R1.json，私人101761B实算记录与745B否证补充各SHA已标记，不上传原图/私人页。
