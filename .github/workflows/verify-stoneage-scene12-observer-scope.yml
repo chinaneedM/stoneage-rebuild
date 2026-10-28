@@ -1,0 +1,23 @@
+name: Verify SCENE12 controlled observer witness scope
+on:
+  push:
+    branches: [main, agent/scene12-controlled-witness-scope-20261028]
+    paths:
+      - tools/stoneage_scene12_witness_scope.py
+      - tools/stoneage_scene12_patch_private_observer.py
+      - tests/test_stoneage_scene12_witness_scope.py
+      - research/recovered/STONEAGE-SCENE12-CONTROLLED-OBSERVER-COVERAGE-R1.json
+      - .github/workflows/verify-stoneage-scene12-observer-scope.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  check-control-case-boundaries:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m tools.stoneage_scene12_witness_scope
+      - run: python -m unittest -v tests.test_stoneage_scene12_witness_scope
