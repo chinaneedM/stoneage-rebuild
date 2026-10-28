@@ -8827,3 +8827,8 @@ All11 original-derived inputs pinned in logical-alias-catalog-r1/REPORT-R1.json.
 ### 2026-10-29 — SCENE13 私人原载体动作0的有限像素源
 
 来源仍是已保管混合2.5 RAR361255180B/SHA256 d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5；无新官方build认证或公网载体获取。五原成员全SHA与原R40完整SPR段一致。新208RD及PNG像素、352浏览器状态的数字/摘要见research/recovered/STONEAGE-SCENE13-PET-ACTION0-R1.json与STONEAGE-SCENE13-PIXEL-ACCEPTANCE-R1.json。私人原图/观察HTML不公开，公开CI仅元数据守卫；source_ci_run_id=null明确为本地来源认证/第二解码器执行，不能冒作GitHub实源run。完整界限与保管见docs/continuity/STONEAGE-SCENE13-PET-ACTION0-20261029.md。
+
+
+### 2026-10-29 — SCENE14 一个原房间武器店的有限依赖
+
+既有混合2.5原RAR361255180B/SHA d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5完整重核，无新公网载体下载。shop_m.create20491B、npcgen.template4950B、ss_1001_17_13（543B）、itemset3392473B与客户端1001.DAT5408B分别经unar/libarchive原字节一致；这是同来源双实现，不是双历史来源。四服务端原SHA与R18各唯一样本同一，原表亦与R44同SHA。新目标块111..278/模板1006..1112、17库存ID和原ADRN候选5863/RD哈希详见STONEAGE-SCENE14-ROOM-SHOP-SOURCE-R1.json；浏览器/第二解码器事实见STONEAGE-SCENE14-ACCEPTANCE-R1.json。本地真源检查不伪作GitHub source run，原脚本/对白/表格/图像不公开，官方与原生交易边界均不晋升。

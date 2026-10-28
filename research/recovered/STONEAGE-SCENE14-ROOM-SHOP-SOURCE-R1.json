@@ -1,0 +1,340 @@
+{
+  "schema": "stoneage.scene14.room_shop_actual_source.r1",
+  "scope": "PRESERVED_MIXED25_SAME_CARRIER_STATIC_LINKS_NOT_AUTHENTICATED_OFFICIAL_DEPLOYMENT",
+  "source_members": {
+    "npc/genout/shop_m.create": {
+      "bytes": 20491,
+      "sha256": "d540e9a1354a0f82839cd30ab315a6dee4a3b0299744a0f63ae5ee461c5b587b",
+      "crc32": 1693508509
+    },
+    "npc/genout/npcgen.template": {
+      "bytes": 4950,
+      "sha256": "0c5a58d5e31cafd3b58ccc1fa88fee7d1f95d12c0b87b04db9f06fea3b2a4df3",
+      "crc32": 1448375672
+    },
+    "npc/genout/ss_1001_17_13": {
+      "bytes": 543,
+      "sha256": "f907e77774bc66151465f47e000852a598b935890f2b3334b6a8552f189b279a",
+      "crc32": 439361472
+    },
+    "itemset.txt": {
+      "bytes": 3392473,
+      "sha256": "a415e78f9aab2e5ea5ca92ecb7430253f7be1ba7c876d6b0bb6d067b1b466688",
+      "crc32": 2520348968
+    },
+    "client-map/1001.dat": {
+      "bytes": 5408,
+      "sha256": "62dbef1614ede0ba032ca9c69cbfdc3d43938e45baba78701885790937b86b90",
+      "crc32": 3705883864
+    }
+  },
+  "create_blocks_in_original_file": 119,
+  "template_blocks_in_original_file": 41,
+  "selected_create": {
+    "ordinal": 0,
+    "byte_start": 111,
+    "byte_end": 278,
+    "block_sha256": "d7110d91749ba08917f3e76b7c9772e67dcc99d32bffe2384d438931cb0959c6",
+    "field_fingerprints": [
+      {
+        "key": "floorid",
+        "value_bytes": 4,
+        "value_sha256": "fe675fe7aaee830b6fed09b64e034f84dcbdaeb429d9cccd4ebb90e15af8dd71"
+      },
+      {
+        "key": "borncorner",
+        "value_bytes": 11,
+        "value_sha256": "f3761a5747c2a52fc34b4823c0aba52b51a3092a704278a49c793006b001192a"
+      },
+      {
+        "key": "time",
+        "value_bytes": 1,
+        "value_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+      },
+      {
+        "key": "createnum",
+        "value_bytes": 1,
+        "value_sha256": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b"
+      },
+      {
+        "key": "dir",
+        "value_bytes": 1,
+        "value_sha256": "e7f6c011776e8db7cd330b54174fd76f7d0216b612387a5ffcfb81e6f0919683"
+      },
+      {
+        "key": "ignoreinvincible",
+        "value_bytes": 1,
+        "value_sha256": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b"
+      },
+      {
+        "key": "graphicname",
+        "value_bytes": 5,
+        "value_sha256": "43ac8d2bd9cabd309100fc9b23e94d534ffb39f542bf39172bf9047509fb9df8"
+      },
+      {
+        "key": "name",
+        "value_bytes": 16,
+        "value_sha256": "8a7b569f102f4c01a106d74c10c834adc8f9afd8ec8edb7f9199e0062d8d1302"
+      },
+      {
+        "key": "enemy",
+        "value_bytes": 37,
+        "value_sha256": "a7eac4f28f4ee1c7cf0c75a29b8d9630f5c0d167af3152813d53e89224c7ee3d"
+      }
+    ]
+  },
+  "selected_template": {
+    "ordinal": 8,
+    "byte_start": 1006,
+    "byte_end": 1112,
+    "block_sha256": "6e11fc6660531910ac9bf3b3e4b14de474b1f394d2f86c5c45f041d07b36aa5d",
+    "field_fingerprints": [
+      {
+        "key": "templatename",
+        "value_bytes": 11,
+        "value_sha256": "0c24482340388a4fa8c86937399969e65603ab92f655177bc5d7031bde0affb5"
+      },
+      {
+        "key": "makeatnobody",
+        "value_bytes": 1,
+        "value_sha256": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b"
+      },
+      {
+        "key": "name",
+        "value_bytes": 0,
+        "value_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "key": "makeatnosee",
+        "value_bytes": 1,
+        "value_sha256": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b"
+      },
+      {
+        "key": "graphicname",
+        "value_bytes": 9,
+        "value_sha256": "37bbfa1e9e3dbe506d61e0124a42fad0ecd2bdfffbf4b98e765c4366f80bb74e"
+      },
+      {
+        "key": "functionset",
+        "value_bytes": 8,
+        "value_sha256": "6062af010df162570652a1795446ef66defe2327a9a8c245c25b14c0d91a1b55"
+      }
+    ]
+  },
+  "npc": {
+    "original_name": "薩姆吉爾的武器店",
+    "name_raw_sha256": "8a7b569f102f4c01a106d74c10c834adc8f9afd8ec8edb7f9199e0062d8d1302",
+    "floor": 1001,
+    "borncorner": [
+      17,
+      13,
+      17,
+      13
+    ],
+    "direction": 6,
+    "graphicname": 16017,
+    "createnum": 1,
+    "time": 0,
+    "template": "npcgen_shop",
+    "functionset": "ItemShop",
+    "argument_file": "genout/ss_1001_17_13"
+  },
+  "arg_field_fingerprints": {
+    "buy_rate": {
+      "bytes": 3,
+      "sha256": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6"
+    },
+    "sell_rate": {
+      "bytes": 3,
+      "sha256": "44896b09365746b5f7167ee4d64988a38f7f4628803cbf86224e74eeb7c69e9d"
+    },
+    "buy_msg": {
+      "bytes": 39,
+      "sha256": "37aef549090eb987a1c3a846d06ce5862b777e5650850bfaa8696ddf5c897066"
+    },
+    "sell_msg": {
+      "bytes": 18,
+      "sha256": "8781664da0fb788bc1543448d4d3d6045d1d3746b3b97d4cd8f1eef686bdf25a"
+    },
+    "other_msg": {
+      "bytes": 10,
+      "sha256": "7757a94d2b25467dbd548dab91a64de22c4578f940bac02c6a243000eaf5585a"
+    },
+    "hint_msg": {
+      "bytes": 36,
+      "sha256": "f8a964722e6771cd70be60a114d16ce0498757dc18bcf0c3f20b56b8e5d96622"
+    },
+    "sellonly_msg": {
+      "bytes": 14,
+      "sha256": "7ca748c1aa6ab7b40bd6547986883660522b03f4c240b516645614721a15d5a6"
+    },
+    "main_msg": {
+      "bytes": 8,
+      "sha256": "d2abd62d721024b9e415d695709797deb79248f378640122974c3d5208495dcb"
+    },
+    "buy_main": {
+      "bytes": 18,
+      "sha256": "663158c4aacbc367ef9ca2428770eff55aa65eb50e04ad289db78fb5dc8f6574"
+    },
+    "sell_main": {
+      "bytes": 12,
+      "sha256": "843ee29a990d05821cd5d5f6f2efd1edc9d53b9f2d55442cc19cbefb0bf84a2e"
+    },
+    "what_msg": {
+      "bytes": 8,
+      "sha256": "00df18c39ef3e5ec2a9fb33e0eca2f042dc2e95c5bd0b0e480aff8097c2047c8"
+    },
+    "stone_msg": {
+      "bytes": 16,
+      "sha256": "c342fa542a846658bf00eb744c72a8df39cd01f29a17f28a67dc92e6d2f22b8c"
+    },
+    "level_msg": {
+      "bytes": 24,
+      "sha256": "77b40ee0f1c9e97b7d3076310c9683c67ef9336fbc9700107b546786083c2a05"
+    },
+    "realy_msg": {
+      "bytes": 12,
+      "sha256": "3fb4d1c228338894f679b92387b7a87fead0380583a7173e6cd5ca0ee3d11c9a"
+    },
+    "itemfull_msg": {
+      "bytes": 20,
+      "sha256": "33c5d84435c854d939a4329c8189939f38a4fb920c883ba8edd90af6a87b833e"
+    },
+    "itemlist": {
+      "bytes": 60,
+      "sha256": "2efded5293cff110350c15c593af44f2215871757a3379a475f46b986ef374b0"
+    },
+    "limititemtype": {
+      "bytes": 7,
+      "sha256": "545872a44641d00b59206bef1474e799986db3a52fd16649631a4fd06ce15b25"
+    },
+    "limititemno": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "special_rate": {
+      "bytes": 3,
+      "sha256": "9f29a130438b81170b92a42650f9a94291ecad60bd47af2a3886e75f7f728725"
+    },
+    "special_item": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "listed_item_ids": [
+    0,
+    4,
+    10,
+    20,
+    40,
+    100,
+    110,
+    130,
+    200,
+    210,
+    220,
+    240,
+    300,
+    310,
+    330,
+    600,
+    620
+  ],
+  "listed_defined_count": 17,
+  "item_table_rows": 13252,
+  "first_three_selection": "ORIGINAL_ARGUMENT_ORDER_BEFORE_NAME_DECODING",
+  "selected_items": [
+    {
+      "id": 0,
+      "physical_line": 1,
+      "byte_offset": 0,
+      "row_sha256": "c366ec66b8dd03656d7ddbe538cd0cd9cb38116d1d72ed60cb1ed8f958a851e3",
+      "name_original": "小斧頭",
+      "name_raw_sha256": "9e55849bf62df9f757e5993c096a55011111473eab3193abdb8fd2838f9168cf",
+      "numeric_fields": {
+        "imagenumber": 20033,
+        "cost": 65,
+        "level": 0,
+        "type": 1
+      }
+    },
+    {
+      "id": 4,
+      "physical_line": 5,
+      "byte_offset": 1070,
+      "row_sha256": "745fec01f05263a6421a3281a2e36a2abbdb371e32f6ae1c59bdbb3c13a04215",
+      "name_original": "萊伊卡Lv1斧頭",
+      "name_raw_sha256": "66beac6addc891c8617c9b54898455b2bc0064e9c7914fa763eeb92e12f0d971",
+      "numeric_fields": {
+        "imagenumber": 20032,
+        "cost": 105,
+        "level": 0,
+        "type": 1
+      }
+    },
+    {
+      "id": 10,
+      "physical_line": 11,
+      "byte_offset": 2700,
+      "row_sha256": "7d68cfad604124b38d4c280bbad368eddfa7aa1adf53c1bb4dd3e8dd56e55831",
+      "name_original": "普通普通的斧頭",
+      "name_raw_sha256": "626cc33d2c7fe433632aeb80648554467cbd10608162b0dc89851a7abba8b264",
+      "numeric_fields": {
+        "imagenumber": 20013,
+        "cost": 260,
+        "level": 10,
+        "type": 1
+      }
+    }
+  ],
+  "rates_raw": {
+    "buy_rate": "1.0",
+    "sell_rate": "0.2",
+    "special_rate": "1.5"
+  },
+  "limit_item_type_raw": "OFFENCE",
+  "limit_item_no_empty": true,
+  "map": {
+    "width": 30,
+    "height": 30,
+    "npc_cell_xy": [
+      17,
+      13
+    ],
+    "original_three_u16_at_cell": [
+      5001,
+      0,
+      49152
+    ],
+    "third_plane_semantics": "NOT_ASSUMED_WALKABILITY_OR_SHOP_TRIGGER"
+  },
+  "computed_runtime_prices": null,
+  "original_welcome_or_dialogue_published": false,
+  "same_deployed_build_authenticated": false,
+  "official_tw10_npc_authenticated": false,
+  "original_server_executed": false,
+  "original_world_entered": false,
+  "original_transaction_verified": false,
+  "original_native_occlusion_verified": false,
+  "script_dialogue_published": false,
+  "original_frame_or_camera_verified": false,
+  "overall_completion_percent": null,
+  "candidate_graphic": {
+    "index": 5863,
+    "map_number": 16017,
+    "bitmapno": 5863,
+    "offset": 24964096,
+    "size": 1784,
+    "xoff": -15,
+    "yoff": -70,
+    "width": 36,
+    "height": 79,
+    "source_record_sha256": "1abe654adfcebc5e6fa7ceb81f9e2ec6f74a5b776371a2084acefa9b10b40f46",
+    "RD_sha256": "ebb0e6be3a4f266e943e8a4d3e6363e6004fb95a0f08d0ec0af0abc2ce806c18",
+    "index_pixels_sha256": "c05f687b9898fa1c89b1cd9af3ff6b172ef6b2f1b7b853fce67b6b6b55b62ec7",
+    "candidate_RGBA_sha256": "8561be3f9b72366cf6a1f3219a8cf098b82c0ca427b1bef4697e16f0bd565112",
+    "PNG_sha256": "b1ef1f5f0ba489197bc7c82518ff5e32cf8b5750207d283b3a7ecd618b6d3c0f",
+    "binding": "SAME_CARRIER_EQUAL_NUMERIC_GRAPHIC_KEY_NOT_NATIVE_RENDER_PROOF"
+  },
+  "private_prior_html_sha256": "ae82aa61120b08a14c9e1b3f3b939a36a9649dba97af555ed1a0ed274f36d99f"
+}
