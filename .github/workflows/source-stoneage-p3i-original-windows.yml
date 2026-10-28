@@ -1,0 +1,65 @@
+name: Probe original TW1 DirectDraw primary read-only P3I (isolated)
+on:
+  push:
+    branches: [agent/original-native-framebuffer-p3i-20261028]
+    paths:
+      - tools/stoneage_p3i_native.c
+      - tools/stoneage_p3h_windows_original.py
+      - tools/stoneage_p3i_evidence_guard.py
+      - .github/workflows/source-stoneage-p3i-original-windows.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  finite-p3i-original:
+    runs-on: windows-2025
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - name: Recover exact Git inventory bytes before original transfer
+        shell: cmd
+        run: python -c "import hashlib,subprocess;from pathlib import Path;p=Path('research/recovered/STONEAGE-TW10-CLIENT-INVENTORY-R1.txt');b=subprocess.check_output(['git','show','HEAD:'+p.as_posix()]);h=hashlib.sha1(b'blob '+str(len(b)).encode()+b'\0'+b).hexdigest();assert h=='564233902b10c60760d4f93b1ea65d4dd1469206';p.write_bytes(b);print('INVENTORY_GIT_BLOB',h,len(b))"
+      - uses: ilammy/msvc-dev-cmd@v1
+        with:
+          arch: x86
+      - name: Compile only own checks and independent read-only primary observer
+        shell: cmd
+        run: |
+          cl /nologo /std:c11 /utf-8 /O2 /Fe:"%RUNNER_TEMP%\p3i-checker.exe" tools\stoneage_p3e_environment.c user32.lib gdi32.lib ddraw.lib dxguid.lib ws2_32.lib /link /SUBSYSTEM:CONSOLE /MANIFEST:NO
+          if errorlevel 1 exit /b 1
+          cl /nologo /std:c11 /utf-8 /O2 /Fe:"%RUNNER_TEMP%\p3i-control.exe" tools\stoneage_p3d_control.c user32.lib gdi32.lib ddraw.lib dxguid.lib /link /SUBSYSTEM:WINDOWS /MANIFEST:NO
+          if errorlevel 1 exit /b 1
+          cl /nologo /std:c11 /utf-8 /O2 /Fe:"%RUNNER_TEMP%\p3i-primary.exe" tools\stoneage_p3i_native.c ddraw.lib dxguid.lib advapi32.lib user32.lib /link /SUBSYSTEM:CONSOLE /MANIFEST:NO
+          if errorlevel 1 exit /b 1
+      - run: python -m pip install --quiet pillow
+      - name: Original window in isolated guest; query global primary, never target-private surfaces
+        shell: pwsh
+        run: |
+          $ssl=(Get-Command openssl.exe -ErrorAction SilentlyContinue).Source
+          if(-not $ssl){$ssl='C:/Program Files/Git/usr/bin/openssl.exe'}
+          if(-not(Test-Path $ssl)){throw 'OpenSSL unavailable before source acquisition'}
+          python -m tools.stoneage_p3h_windows_original --work "$env:RUNNER_TEMP/p3h-private" --output "$env:RUNNER_TEMP/p3h-encrypted" --checker "$env:RUNNER_TEMP/p3i-checker.exe" --control "$env:RUNNER_TEMP/p3i-control.exe" --native-probe "$env:RUNNER_TEMP/p3i-primary.exe" --certificate research/recovered/STONEAGE-P3H-TRANSFER-CERT.pem --openssl "$ssl"
+      - name: End owned process and restore original guest firewall
+        if: always()
+        shell: pwsh
+        run: |
+          Get-CimInstance Win32_Process | Where-Object { $_.ExecutablePath -like "$env:RUNNER_TEMP\p3h-private\run\*" } | ForEach-Object {Stop-Process -Id $_.ProcessId -Force -ErrorAction SilentlyContinue}
+          Remove-NetFirewallRule -Name StoneAgeP3HGuestOutbound -ErrorAction SilentlyContinue
+          Unregister-ScheduledTask -TaskName StoneAgeP3HGuestRestore -Confirm:$false -ErrorAction SilentlyContinue
+          Remove-Item -Recurse -Force "$env:RUNNER_TEMP/p3h-private" -ErrorAction SilentlyContinue
+          Remove-Item -Force "$env:RUNNER_TEMP/p3i-checker.exe","$env:RUNNER_TEMP/p3i-control.exe","$env:RUNNER_TEMP/p3i-primary.exe",stoneage_p3i_native.obj,stoneage_p3e_environment.obj,stoneage_p3d_control.obj -ErrorAction SilentlyContinue
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: p3i-source-report
+          path: ${{ runner.temp }}/p3h-encrypted/source-report.json
+          if-no-files-found: warn
+          retention-days: 7
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: p3i-private-runtime-encrypted
+          path: ${{ runner.temp }}/p3h-encrypted/private-runtime-and-observation.der
+          if-no-files-found: warn
+          compression-level: 0
+          retention-days: 7

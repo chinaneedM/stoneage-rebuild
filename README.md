@@ -786,3 +786,8 @@ ranges, not a new whole-client download or arbitrary program reverse engineering
 ### 2026-10-28 | P3H原TW1实际Windows运行/退出，原画面仍黑
 
 [原件有限观察与完整续接](docs/continuity/STONEAGE-WINDOWS-P3H-20261028.md)：未改EXE的外置清单自编前提通过，认证TW1原375文件逐SHA匹配后在临时出站阻断来宾真实运行，已知退出坐标点击后清理前正常退出0。**独立目视三帧的两种图像仅见黑底/IME/光标，游戏画面、原调色板和繁体UI仍未认证，世界没有进入。** 三次失败和修正均保留，原样报告/完整工件保管链永久记录；375原件与观察包已私人持久保存并完整回读核SHA，公开Git不含原件/图像/私钥。最高NEXT为限定只读原生帧读出P3I，判别实际未出图与屏幕抓取路径缺口；不展开参数树。CURRENT完整历史字节与Stage A/B/wiki/R79/总体未知边界不变。
+
+
+### 2026-10-28 | P3I 只读原生帧分辨实验（源运行待验）
+
+[P3I 受限 DirectDraw primary 读出方案](docs/continuity/STONEAGE-WINDOWS-P3I-20261028.md)：承接 P3H 原 TW1 黑屏/可退出实证，增加不修改原 EXE、不开原进程内存的原生全局 primary 只读索引观察及独立采样证明。其成功读取不等于读取原程序私有 backbuffer，也不等于恢复原画面/世界。优先验证一轮真正 Windows source Action；无实质差异则按协议13回同源现代场景观察，禁止泛化扩 WinXP/驱动助手。完整 CURRENT 2680510B 原文保持不变；Stage A/B/wiki/R79 与总体进度未知保持。

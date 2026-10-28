@@ -1,0 +1,30 @@
+name: Verify P3I native primary-display provenance bounds
+on:
+  push:
+    paths:
+      - tools/stoneage_p3i_native.c
+      - tools/stoneage_p3i_evidence_guard.py
+      - tools/stoneage_p3h_windows_original.py
+      - tests/test_stoneage_p3i_evidence.py
+      - .github/workflows/verify-stoneage-p3i-evidence.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  p3i-guard:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest -v tests.test_stoneage_p3i_evidence tests.test_stoneage_p3h_evidence
+  p3i-compile:
+    runs-on: windows-2025
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ilammy/msvc-dev-cmd@v1
+        with:
+          arch: x86
+      - shell: cmd
+        run: cl /nologo /std:c11 /utf-8 /W4 /O2 /Fe:"%RUNNER_TEMP%\p3i-primary.exe" tools\stoneage_p3i_native.c ddraw.lib dxguid.lib advapi32.lib user32.lib /link /SUBSYSTEM:CONSOLE /MANIFEST:NO

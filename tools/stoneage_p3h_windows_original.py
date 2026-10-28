@@ -116,7 +116,7 @@ def surface(windows,exe):
             Path(w['image']).resolve()==exe.resolve(),'input surface is not exact original main image')
     return w
 
-def original_runtime(work,checker,receiver,result):
+def original_runtime(work,checker,receiver,result,native_probe=None):
     import socket
     from PIL import ImageGrab
     run=work/'run';shutil.copytree(work/'source',run);exe=run/'sa_3.exe'
@@ -153,6 +153,19 @@ def original_runtime(work,checker,receiver,result):
                 if 0<ww<=1024 and 0<hh<=768:
                     p=frames/f'original-frame-{len(result["observations"])}.png'
                     ImageGrab.grab(bbox=(x,y,x+ww,y+hh)).save(p);entry['frame']=frame(p)
+                    if native_probe is not None and not result.get('native_probe_attempted'):
+                        # This separate process reads its own global DirectDraw primary,
+                        # never the original's private surfaces or address space.
+                        qualified=surface(windows,exe)
+                        result['native_probe_attempted']=True
+                        try:
+                            call=subprocess.run([str(native_probe),str(qualified['hwnd']),str(process.pid)],
+                                                text=True,capture_output=True,timeout=8,check=False)
+                            result['native_probe']={'returncode':call.returncode,
+                                'stdout':json.loads(call.stdout) if call.returncode==0 else None,
+                                'stderr_tail':call.stderr[-240:]}
+                        except Exception as problem:
+                            result['native_probe']={'error':type(problem).__name__+': '+str(problem)[:240]}
             result['observations'].append(entry)
         result['original_visible_main_observed']=any(w['klass']=='ＳｔｏｎｅＡｇｅ' for e in result['observations'] for w in e['windows'])
         try:
@@ -179,6 +192,8 @@ def run(a):
     work=a.work.resolve();out=a.output.resolve()
     require(ROOT not in work.parents and not work.exists() and ROOT not in out.parents and not out.exists(),'new private external directories')
     certificate_identity(a.certificate)
+    if a.native_probe is not None:
+        require(a.native_probe.is_file(),'compile independent native reader before original acquisition')
     require(shutil.which('7z') or shutil.which('7z.exe'),'static RAR extractor unavailable')
     work.mkdir();out.mkdir();report={'schema':'stoneage.p3h.original_windows_login.v1','original_downloaded':False,
         'original_client_executed':False,'original_world_entered':False,'original_server_contacted':False,
@@ -196,9 +211,11 @@ def run(a):
         subprocess.run(['7z','x','-y','-o'+str(work),str(work/'CD_DIC.rar'),'STONEAGE.bin'],check=True,stdout=subprocess.DEVNULL)
         report['extraction']=extract(work/'STONEAGE.bin',work/'source')
         report['runtime']={}
-        try:original_runtime(work,work/'sidecar/sa_3.exe',work/'sidecar/control.exe',report['runtime'])
+        try:original_runtime(work,work/'sidecar/sa_3.exe',work/'sidecar/control.exe',report['runtime'],a.native_probe)
         except Exception as e:report['runtime_error']=type(e).__name__+': '+str(e)[:240]
         report['original_client_executed']=report['runtime'].get('original_client_execution_attempted',False)
+        if a.native_probe is not None:
+            require(report['runtime'].get('native_probe_attempted') is True,'no original owned-window P3I probe')
         # Keep only the immutable authenticated original tree plus private captures.
         private=work/'private-runtime-and-observation.zip'
         with zipfile.ZipFile(private,'w',compression=zipfile.ZIP_STORED) as z:
@@ -226,4 +243,5 @@ def run(a):
 if __name__=='__main__':
     p=argparse.ArgumentParser()
     for key in ('work','output','checker','control','certificate','openssl'):p.add_argument('--'+key,type=Path,required=True)
+    p.add_argument('--native-probe',type=Path,default=None)
     run(p.parse_args())
