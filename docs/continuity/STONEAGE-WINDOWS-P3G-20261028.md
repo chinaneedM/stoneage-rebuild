@@ -56,3 +56,11 @@ CURRENT完整2680510B、Git blob `031c76a5a8e431f646853909bb2f2e11e6328cd2` / SH
 本包环境前提取得实质结果后止点。下一包只做**原TW1真实登录屏幕与可退出输入**的有限Windows观察：先核原程序/最低运行文件全SHA及既有私人保管；验证外置正确清单能作用于未修改的程序，不能把本包自编嵌清单结果直接迁移。仅在临时来宾隔离与回读门槛实际就绪时启动认证原件，原EXE字节不改；私有画面须有完整来源/加密保管。原文字、颜色、菜单/QUIT分别观察，任何条件失败即留下精确止点，不再展开参数树。若缺实际原件保管，不为摘要重复下整盘。
 
 该登录验收不等于世界进入；真正选角/行走/战斗还需要单独的loopback通路与来源限定服务器消息，不能用现代观察器、伪人物或编造的官方状态替代。Stage A7 PARTIAL+2 OPEN、Stage B/wiki GATED、R79暂停、整体完成率null，DD-028/030及全部历史失败不变。
+
+## 内容候选及主线的真实后验验收
+
+归档候选 `20862d8d9a16730cab51ed4734b13f3470335948` / tree `daaa29e402a92bee7993bb4af8c1958de2ed8741` 的11项Actions全部实际completed/success；专用run40634805494/job122639193496通过39项测试和完整离线源重放。重新核对main与PR clean/mergeable及精确HEAD后，经PR#20非强制merge进入 `5e05ab7ab3b451fe1346e94d1123e26a6e5d1e8f`，合入tree与本地已验全树相同。
+
+内容主线的11项Actions也全部实际completed/success；专用run40634887467的真实日志再次确认39测试与P3G_ACTUAL_SOURCE_OFFLINE_ACCEPTANCE。全部候选/主线run、job、13路径Git blob及历史前缀资格永久固定于 `research/recovered/STONEAGE-P3G-PUBLICATION-R1.json`。这22项是离线验收，不冒称重新执行原程序或重复断网；三个真正Windows源作业另有完整保管链。
+
+三个原样报告的CRLF完整保留；diff whitespace按cr-at-eol核验，不为消除行尾提示改写源证据。六份启动/历史文件全文原样，README原93817B完整前缀保留。该后验收据自身的后续CI不预支成功。P3H与原客户端/文字/回环/世界边界不变。
