@@ -1,0 +1,147 @@
+{
+  "schema": "stoneage.scene16.publication.candidate_and_main_ci.r1",
+  "date": "2026-10-29",
+  "repository": "chinaneedM/stoneage-rebuild",
+  "source_truth_at_acceptance": {
+    "main_head": "c242a1a809ecebb1ae17b6de405057174f4f9fc1",
+    "main_tree": "2b69573ac4ecea3050b7269de306216bb12fd08d"
+  },
+  "initial_candidate": {
+    "head": "631983ff1b303de375c261ac623cd394ccf2d1ee",
+    "tree": "004d94edff9a5b48183c4ca61af9e1fbeee72201",
+    "first_source_safe_run": 40787873232,
+    "first_source_safe_job": 123165507879,
+    "result": "completed/success",
+    "tests": 15
+  },
+  "final_candidate": {
+    "head": "22e4922227032906a7ad66136f2e55be04b3bd84",
+    "candidate_actions_total": 11,
+    "candidate_actions_all_completed_success": true
+  },
+  "pr": {
+    "number": 32,
+    "merged": true,
+    "merge_commit": "c242a1a809ecebb1ae17b6de405057174f4f9fc1",
+    "merge_tree": "2b69573ac4ecea3050b7269de306216bb12fd08d",
+    "changed_paths": 5
+  },
+  "main_actions": {
+    "total": 11,
+    "all_completed_success": true,
+    "runs": [
+      {
+        "run_id": 40788029655,
+        "workflow": "Verify preserved mixed25 full server source conservation R18",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "c242a1a809ecebb1ae17b6de405057174f4f9fc1"
+      },
+      {
+        "run_id": 40788029665,
+        "workflow": "Accept preserved original TW85 SPR137 full animation material R28",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "c242a1a809ecebb1ae17b6de405057174f4f9fc1"
+      },
+      {
+        "run_id": 40788029715,
+        "workflow": "Verify StoneAge R17 original battle SAB crossversion occurrence conservation",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "c242a1a809ecebb1ae17b6de405057174f4f9fc1"
+      },
+      {
+        "run_id": 40788029726,
+        "workflow": "Validate Stage A evidence-limited review acceptance",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "c242a1a809ecebb1ae17b6de405057174f4f9fc1"
+      },
+      {
+        "run_id": 40788029753,
+        "workflow": "Verify original dated map110 three actual cell values R32",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "c242a1a809ecebb1ae17b6de405057174f4f9fc1"
+      },
+      {
+        "run_id": 40788029784,
+        "workflow": "Verify original four village interior materials R34",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "c242a1a809ecebb1ae17b6de405057174f4f9fc1"
+      },
+      {
+        "run_id": 40788029804,
+        "workflow": "Verify SCENE16 nearby NPC original-source gate",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "c242a1a809ecebb1ae17b6de405057174f4f9fc1"
+      },
+      {
+        "run_id": 40788029805,
+        "workflow": "Verify original local album name material and no master promotion R35",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "c242a1a809ecebb1ae17b6de405057174f4f9fc1"
+      },
+      {
+        "run_id": 40788029809,
+        "workflow": "Verify original native album table and saved-name joins R36",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "c242a1a809ecebb1ae17b6de405057174f4f9fc1"
+      },
+      {
+        "run_id": 40788029828,
+        "workflow": "Accept primary-source TW1.0 character creation numeric join R16",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "c242a1a809ecebb1ae17b6de405057174f4f9fc1"
+      },
+      {
+        "run_id": 40788029908,
+        "workflow": "Verify original same-build named-entity source gate R31",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "c242a1a809ecebb1ae17b6de405057174f4f9fc1"
+      }
+    ]
+  },
+  "main_specialized": {
+    "run_id": 40788029804,
+    "job_id": 123166019603,
+    "result": "completed/success",
+    "unittest_tests": 15,
+    "unittest_result": "OK",
+    "printed_source_status": "SOURCE_NOT_SUPPLIED"
+  },
+  "preserved_historical_blobs": {
+    "docs/CURRENT-STATE.md": "14d3af1db16394241c29b03f3253e09800e1ca11",
+    "docs/PROJECT-CONTINUITY-PROTOCOL-R1.md": "a064174339b7a4656efe00b4446a066fd7abf304",
+    "docs/DESIGN-DECISIONS.md": "63f681be337782430e6525eb7bb3afcb8aafd95f",
+    "docs/HISTORICAL-TIMELINE.md": "4d02486431a2da5384a23ba7b548a1a36229b5ce",
+    "docs/SOURCE-REGISTRY.md": "c86a446b2b794b0467dfc9b9ebf57464a01a05b3"
+  },
+  "original_required": {
+    "path": "npc/genout/1000npc_m.create",
+    "bytes": 4413,
+    "sha256": "c9b000a836b0aae3d88358097039f1beea020d92ba84f6ccc338bb54bc478240",
+    "raw_source_read_in_this_session": false,
+    "original_npccreate_target_63_103_authenticated": false
+  },
+  "historical_boundaries": {
+    "original_game_world_entered": false,
+    "original_NPC_interaction_verified": false,
+    "official_TW10_same_build_authenticated": false,
+    "original_NPC_dialogue_or_pixels_acquired": false,
+    "stage_a": "7 PARTIAL + 2 OPEN",
+    "stage_b": "GATED",
+    "wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_completion_percent": null
+  },
+  "next": "PRIVATE_ORIGINAL_1000NPC_M_SOURCE_IF_AVAILABLE_ELSE_ROTATE_MATERIAL_22_DOMAINS",
+  "publication_receipt_own_actions_status": null
+}

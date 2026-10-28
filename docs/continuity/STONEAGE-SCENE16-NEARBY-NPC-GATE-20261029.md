@@ -25,3 +25,9 @@ python -m tools.stoneage_scene16_nearby_npc --create /private/npc/genout/1000npc
 这是一轮有界取证资格与来源复核，不是新增已恢复 NPC；故本包不递增具名 NPC、任务或可见地图数量，亦不增加总体完成百分比。原 CURRENT 完整历史全文、DD-028四档、Stage A7 PARTIAL+2 OPEN、Stage B/wiki GATED、R79 PAUSED_NON_BLOCKING、总体进度 null 均不改。
 
 **下一优先任务**：若能取得保管中与 R18 SHA 精确相符的 4,413B 原成员，进行一名近邻 NPC 的原块—模板—图号/实际可见互动最小联接；若继续不可得，按协议13的有界止点轮换到22域其他真实材料，不把源资格工具虚报为场景复原。
+
+## 2026-10-29 — SCENE16 实际 GitHub 合并后验（追加，不覆盖前文）
+
+候选源门槛 commit `631983ff1b303de375c261ac623cd394ccf2d1ee`/tree `004d94edff9a5b48183c4ca61af9e1fbeee72201`；其首次 [专用源安全 Action 40787873232](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40787873232) 实际 completed/success，15个负例及公共目录/出口守卫 `OK`。README加法续接后，候选最终 commit `22e4922227032906a7ad66136f2e55be04b3bd84` 的11个实际 Actions 全 completed/success。PR [#32](https://github.com/chinaneedM/stoneage-rebuild/pull/32)正常合并 `main` `c242a1a809ecebb1ae17b6de405057174f4f9fc1`/tree `2b69573ac4ecea3050b7269de306216bb12fd08d`；同 SHA 主线11个相关 Actions 也均 completed/success，其中[专用运行40788029804/job123166019603](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40788029804)日志真实显示 `Ran 15 tests`、`OK` 和 `SOURCE_NOT_SUPPLIED`。这是**真实程序/CI验收而不是原件实测**；并未取得4,413B原NPC脚本正文，原NPC身份/出生位置/对白/运行/官方归属仍开放。
+
+远端 tree 逐路径再次检查：原 `CURRENT-STATE.md` blob `14d3af1db16394241c29b03f3253e09800e1ca11`（2,685,765B）及连续性协议、历史时间线、SOURCE-REGISTRY、DESIGN-DECISIONS 的全部原blob **完全不变**。README只新增5行指向本日期记录，历史前缀保留。该后验受限收据保存于 `research/recovered/STONEAGE-SCENE16-PUBLICATION-R1.json`，本后验新提交自身检查绝不预先宣称成功；若没有私有原件，下一回按22域有实物成果轮换，而不是扩大 NPC 猜测。
