@@ -10,7 +10,7 @@ from tools.stoneage_native_album_source_r36 import SparseParts,fetcher_factory,i
 from tools.stoneage_private_scene_graphic_join_r1 import ADRN_SIZE,ADRN_SHA,REAL_SIZE,REAL_SHA
 from tools.stoneage_scene17_derived_acceptance import validate,REPORT
 
-PREFIX="石器2.5客戶端+服務端+登入器/SA2.5主程式/stoneage2.5/"
+PREFIX="石器2.5客戶端+服務端+登入器/SA2.5主程式/stoneage2.5/data/"
 TARGET="adrn_15.bin"
 REAL="real_15.bin"
 KEY=16048
