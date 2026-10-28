@@ -1,0 +1,48 @@
+{
+  "schema": "stoneage.scene10.publication.r1",
+  "date": "2026-10-28",
+  "scope": "PRIVATE_CANDIDATE_STRUCTURAL_ONLY_NOT_ORIGINAL_EXE",
+  "pr": 25,
+  "candidate_commit": "da3d1f8f866da2d77efab8475ab67af7cc835f43",
+  "candidate_tree": "782b36243caf62b18f46bda627588d8143f0946b",
+  "merge_commit": "3b151393e5e526b804940b0aff4a0e9225a9abe5",
+  "main_before_receipt": "3b151393e5e526b804940b0aff4a0e9225a9abe5",
+  "main_tree_before_receipt": "782b36243caf62b18f46bda627588d8143f0946b",
+  "candidate_run": {
+    "id": 40698221165,
+    "job_id": 122850615823,
+    "head_sha": "da3d1f8f866da2d77efab8475ab67af7cc835f43",
+    "status": "completed",
+    "conclusion": "success",
+    "tests": 10
+  },
+  "main_run": {
+    "id": 40698543024,
+    "job_id": 122851748824,
+    "head_sha": "3b151393e5e526b804940b0aff4a0e9225a9abe5",
+    "status": "completed",
+    "conclusion": "success",
+    "tests": 10
+  },
+  "source_safe_files": {
+    "docs/continuity/STONEAGE-SCENE10-PRIVATE-PREFLIGHT-20261028.md": "3eba7aab467969e7014ea6647e117f0124c3b688",
+    "research/recovered/STONEAGE-SCENE10-STRUCTURAL-PREFLIGHT-R1.json": "92b3bd5be2406b4b661160152e579a97aa8a9517",
+    "tools/stoneage_scene10_preflight_guard.py": "d42c1409b1062abd0470ac3ab18621f39b646963",
+    "tests/test_stoneage_scene10_preflight.py": "5e62bc65e53ca7d26a4a3a6f6434a6177e3b96f8",
+    ".github/workflows/verify-stoneage-scene10-preflight.yml": "4e9ac4add6726e2d85259941b71f97a15d50c257"
+  },
+  "preserved_current_state_git_blob": "031c76a5a8e431f646853909bb2f2e11e6328cd2",
+  "preserved_current_state_bytes": 2680510,
+  "readme_prefix_git_blob": "314f2118bb10a6bee6a757b9e5a010868aceec7a",
+  "continuity_prefix_git_blob": "3eba7aab467969e7014ea6647e117f0124c3b688",
+  "source_exe_independently_read": false,
+  "full_original_frame_authenticated": false,
+  "original_world_entered": false,
+  "stage_a": "7_PARTIAL_2_OPEN",
+  "stage_b": "GATED",
+  "wiki": "GATED",
+  "r79": "PAUSED_NON_BLOCKING",
+  "overall_completion_percent": null,
+  "next": "SCENE10-SAME-CARRIER-ORIGINAL-EXE-CALLSITE-REPLAY-GATE",
+  "receipt_commit_actions": "NOT_PRE_CREDITED"
+}

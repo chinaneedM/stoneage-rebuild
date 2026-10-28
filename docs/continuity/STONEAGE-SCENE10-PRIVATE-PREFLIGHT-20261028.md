@@ -20,3 +20,9 @@
 `SCENE10-SAME-CARRIER-ORIGINAL-EXE-CALLSITE-REPLAY-GATE`：当可独立取得与所声明 SHA 完整一致的原 `sa_2903.exe` 时，限四处外层调用、逐指令字节/分支/内存依赖、clear→actor→map→sort 的因果资格；有未知回调则列精确 VA/触发条件后停止，不补造真实原帧。不重拉整客户端、不扩通用 WinXP/渲染器/服务端。若原件无法在本轮独立保管，停止对同一候选空转，回更有材料结果的现代观察域。DD-028任务四档、DD-030简体UTF8、Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、总体 percent=null 不变。
 
 此为协议14允许的加法 checkpoint；不替代 CURRENT，也不改任何历史失败或已验 R9 事实。
+
+## 主线验收后验（2026-10-28，同次候选证据，不晋升历史事实）
+
+候选 `da3d1f8f866da2d77efab8475ab67af7cc835f43`/tree `782b36243caf62b18f46bda627588d8143f0946b` 专用 Action `40698221165` / job `122850615823` `completed/success`，实际日志显示 `python -m tools.stoneage_scene10_preflight_guard`通过及10/10 unittest成功。主线PR #25常规合并 `3b151393e5e526b804940b0aff4a0e9225a9abe5`，专用 Action `40698543024` / job `122851748824` 同样 `completed/success`，两边只验公开数值/否证门槛，没有读取原EXE、原像素或私有文件。
+
+5件预检新增文件与旧 `CURRENT` blob `031c76a5a8e431f646853909bb2f2e11e6328cd2` 在主线 tree 完整核对；README和本日期覆层保留原完整内容并在此加法后验记录。报告来源层级仍为私人候选，不能伪造原source run。收据：`research/recovered/STONEAGE-SCENE10-PUBLICATION-R1.json`。本收据提交的自身CI不预先记为成功，下一轮单独核对。
