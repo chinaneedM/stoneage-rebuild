@@ -1,0 +1,21 @@
+name: Verify actual finite P3G platform evidence without original gameplay promotion
+on:
+  push:
+    paths:
+      - tools/stoneage_p3g_*.py
+      - tests/test_stoneage_p3g_*.py
+      - research/recovered/STONEAGE-P3G-*.json
+      - .github/workflows/verify-stoneage-p3g-evidence.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  archived-source-acceptance:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest -v tests.test_stoneage_p3g_manifest_environment tests.test_stoneage_p3f_manifest tests.test_stoneage_p3e_windows
+      - run: python -m tools.stoneage_p3g_evidence_guard

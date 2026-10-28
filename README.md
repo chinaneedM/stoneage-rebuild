@@ -776,3 +776,8 @@ ranges, not a new whole-client download or arbitrary program reverse engineering
 ### 2026-10-28 | SCENE06 native display order, bounded no-actor observation
 
 [原程序有限重放与续接记录](docs/continuity/STONEAGE-SCENE06-NATIVE-ORDER-20261028.md)：同混合保存客户端原扫描、ADRN查询、构件链表、原比较器/CRT排序器及消费请求顺序已在隔离指令解释器中有界重放；25地面+5构件按同层反向编号绘制，候选合成3549像素改变。私人R6页可切新旧顺序并已保存/完整回读。180边界用例和后代源码独立编译同一；41项本地检查及DOM模拟通过。本轮未取得Chromium，不认真实浏览器验收；LoadBmp返回失败桩、原生绘图/人物遮挡/原客户端世界进入仍OPEN。NEXT为有限隔离TW1运行环境/世界入口资格P3G，不扩显示helper。原CURRENT全字节不改，Stage A/B/wiki/R79及未知总体百分比保持。
+
+
+### 2026-10-28 | P3G Windows2025原件运行前提取得实测候选
+
+[三次源实测与续接](docs/continuity/STONEAGE-WINDOWS-P3G-20261028.md)：Windows2022修正命名空间后UTF-8生效但zh-TW仍ACP1252；Windows2025正确清单下同一自编x86接收器实得ACP950/8bpp、真实红绿像素及鼠标接收。另一一次性来宾实验在约5.28秒全程序出站阻断期间仍通过颜色/输入，两程序路径TCP实得WSAEACCES，清理后恢复；没有冒称已遍测IPv6/UDP/loopback或原进程。三个源JSON及完整ZIP/run/job/Git链永久保管，旧失败与CURRENT全文不改。最高NEXT转原TW1真实Windows登录/QUIT有限观察P3H，先验证未改EXE的外置清单和隔离/保管；原程序本轮下载/执行0，世界仍未进入，Stage A/B/wiki/R79及总体百分比未知保持。
