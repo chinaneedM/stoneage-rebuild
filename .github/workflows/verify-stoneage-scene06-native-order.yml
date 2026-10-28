@@ -1,0 +1,24 @@
+name: Verify bounded preserved-program scene order R6 metadata
+on:
+  push:
+    paths:
+      - tools/stoneage_private_scene_order_r6.py
+      - tools/stoneage_scene06_evidence_guard.py
+      - tools/stoneage_private_room_order_dom_check.cjs
+      - tests/test_stoneage_scene06_evidence.py
+      - research/recovered/STONEAGE-SCENE06-NATIVE-ORDER-R6.json
+      - .github/workflows/verify-stoneage-scene06-native-order.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-safe-metadata:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m tools.stoneage_scene06_evidence_guard
+      - run: python -m unittest -v tests.test_stoneage_scene06_evidence
+      - run: node --check tools/stoneage_private_room_order_dom_check.cjs
