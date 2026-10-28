@@ -185,6 +185,9 @@ def run(a):
         'private_original_data_published':False,'host_image_os':os.environ.get('ImageOS'),
         'host_image_version':os.environ.get('ImageVersion'),'runtime':None}
     try:
+        # Qualify the complete immutable inventory before any original transfer.
+        rows=inventory()
+        report['runtime_inventory']={'files':len(rows),'bytes':sum(int(r['size']) for r in rows)}
         report['preflight']=sidecar_preflight(work,a.checker.resolve(),a.control.resolve())
         print('P3H_UNCHANGED_SIDECAR_AND_JOB_PREFLIGHT=PASS',flush=True)
         report['original_carrier_acquisition_attempted']=True

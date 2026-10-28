@@ -15,6 +15,9 @@ jobs:
     timeout-minutes: 35
     steps:
       - uses: actions/checkout@v4
+      - name: Preserve exact Git bytes of the authenticated runtime inventory
+        shell: cmd
+        run: git -c core.autocrlf=false checkout-index --force -- research/recovered/STONEAGE-TW10-CLIENT-INVENTORY-R1.txt
       - uses: ilammy/msvc-dev-cmd@v1
         with:
           arch: x86
