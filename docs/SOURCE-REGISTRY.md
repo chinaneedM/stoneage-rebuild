@@ -8832,3 +8832,8 @@ All11 original-derived inputs pinned in logical-alias-catalog-r1/REPORT-R1.json.
 ### 2026-10-29 — SCENE14 一个原房间武器店的有限依赖
 
 既有混合2.5原RAR361255180B/SHA d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5完整重核，无新公网载体下载。shop_m.create20491B、npcgen.template4950B、ss_1001_17_13（543B）、itemset3392473B与客户端1001.DAT5408B分别经unar/libarchive原字节一致；这是同来源双实现，不是双历史来源。四服务端原SHA与R18各唯一样本同一，原表亦与R44同SHA。新目标块111..278/模板1006..1112、17库存ID和原ADRN候选5863/RD哈希详见STONEAGE-SCENE14-ROOM-SHOP-SOURCE-R1.json；浏览器/第二解码器事实见STONEAGE-SCENE14-ACCEPTANCE-R1.json。本地真源检查不伪作GitHub source run，原脚本/对白/表格/图像不公开，官方与原生交易边界均不晋升。
+
+
+### 2026-10-29 — SCENE15 现存同载体的一组成对出口及原像素
+
+仍为已保存RAR361255180B/SHA d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5，无新公网载体下载。warp_y.create24588B/SHA859ff2ed23baadb20382508874cd3a63e603b84c7205c6f5d8998229f4f4c8b1、模板4950B及1001.DAT5408B/1000.DAT153608B皆原长度/SHA/CRC认证；目标地图SHA94b19cb59d72b7b48da70d2741ba68516caad970297fd48ed11ef720fa3ea97e匹配旧完整清单。仅前三件有第二libarchive成功，目标DAT的libarchive/7zip失败不改写。原图51RD/候选RGBA/PNG及11实际画布有独立重算；全源字节范围/旧匿名合同复用/失败原链见STONEAGE-SCENE15-DOORWAY-SOURCE-R1.json与STONEAGE-SCENE15-ACCEPTANCE-R1.json。原地图/脚本/PNG/HTML只私人保管，公开CI不读原件，本地真源执行不伪造source Action。

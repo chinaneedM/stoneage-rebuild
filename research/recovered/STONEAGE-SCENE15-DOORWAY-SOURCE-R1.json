@@ -1,0 +1,2389 @@
+{
+  "schema": "stoneage.scene15.authored_doorway_source_observer.r1",
+  "scope": "PRESERVED_MIXED25_STATIC_DOORWAY_PLUS_MODERN_OFFLINE_OBSERVER_NOT_ORIGINAL_GAME",
+  "source_warp": {
+    "bytes": 24588,
+    "sha256": "859ff2ed23baadb20382508874cd3a63e603b84c7205c6f5d8998229f4f4c8b1"
+  },
+  "source_template": {
+    "bytes": 4950,
+    "sha256": "0c5a58d5e31cafd3b58ccc1fa88fee7d1f95d12c0b87b04db9f06fea3b2a4df3"
+  },
+  "doorway_pair": [
+    {
+      "source_floor": 1001,
+      "source_xy": [
+        10,
+        15
+      ],
+      "destination_floor": 1000,
+      "destination_xy": [
+        63,
+        99
+      ],
+      "raw_time": 0,
+      "source_block": {
+        "ordinal": 1,
+        "byte_start": 229,
+        "byte_end": 335,
+        "block_sha256": "d35da32a65e7794acf619c4c959c81dcefc0a433c7d78a0c838b9d0c278c3085",
+        "field_fingerprints": [
+          {
+            "key": "floorid",
+            "value_bytes": 4,
+            "value_sha256": "fe675fe7aaee830b6fed09b64e034f84dcbdaeb429d9cccd4ebb90e15af8dd71"
+          },
+          {
+            "key": "borncorner",
+            "value_bytes": 11,
+            "value_sha256": "9d3c8fe459e383f34aa38b465ad9b0996db1492770f265e7f5f734bd4ad87538"
+          },
+          {
+            "key": "time",
+            "value_bytes": 1,
+            "value_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+          },
+          {
+            "key": "ignoreinvincible",
+            "value_bytes": 1,
+            "value_sha256": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b"
+          },
+          {
+            "key": "createnum",
+            "value_bytes": 1,
+            "value_sha256": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b"
+          },
+          {
+            "key": "enemy",
+            "value_bytes": 22,
+            "value_sha256": "d30752497bb0569db438588690c799dce9ac5feb6a75203284a04fc9d70c21e6"
+          }
+        ]
+      }
+    },
+    {
+      "source_floor": 1000,
+      "source_xy": [
+        63,
+        99
+      ],
+      "destination_floor": 1001,
+      "destination_xy": [
+        10,
+        15
+      ],
+      "raw_time": 0,
+      "source_block": {
+        "ordinal": 0,
+        "byte_start": 112,
+        "byte_end": 218,
+        "block_sha256": "d0b4f955cc6afe909579a3bdb555f549a5fc00e23f5e3555d6041f2dd2028f79",
+        "field_fingerprints": [
+          {
+            "key": "floorid",
+            "value_bytes": 4,
+            "value_sha256": "40510175845988f13f6162ed8526f0b09f73384467fa855e1e79b44a56562a58"
+          },
+          {
+            "key": "borncorner",
+            "value_bytes": 11,
+            "value_sha256": "78763e3aa5f64a4b01a9fda77f7cb1f88c0f2160826ab8c2fb5dcaeefb4cf31c"
+          },
+          {
+            "key": "time",
+            "value_bytes": 1,
+            "value_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+          },
+          {
+            "key": "ignoreinvincible",
+            "value_bytes": 1,
+            "value_sha256": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b"
+          },
+          {
+            "key": "createnum",
+            "value_bytes": 1,
+            "value_sha256": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b"
+          },
+          {
+            "key": "enemy",
+            "value_bytes": 22,
+            "value_sha256": "e1f86e462449175726d2b4dd98577a07d8a9a199b89bcca2d3758a9f082cfeb4"
+          }
+        ]
+      }
+    }
+  ],
+  "template_block": {
+    "ordinal": 21,
+    "byte_start": 2678,
+    "byte_end": 2758,
+    "block_sha256": "90fb41954b3e7fc8f168a649163348fb91c3a0f9b9589eb6ffad5391e208a56d",
+    "field_fingerprints": [
+      {
+        "key": "templatename",
+        "value_bytes": 11,
+        "value_sha256": "15b186faf65f23a0567a58bc28b95b7f00bce648bb6559e9fd6a5ecfc2999235"
+      },
+      {
+        "key": "makeatnobody",
+        "value_bytes": 1,
+        "value_sha256": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b"
+      },
+      {
+        "key": "name",
+        "value_bytes": 0,
+        "value_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "key": "makeatnosee",
+        "value_bytes": 1,
+        "value_sha256": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b"
+      },
+      {
+        "key": "functionset",
+        "value_bytes": 4,
+        "value_sha256": "3db7c958dfdf5ab8d6e5874200dba26597b825229e0ae2e1ba3fd74632f54aa8"
+      }
+    ]
+  },
+  "functionset": "Warp",
+  "original_create_blocks": 209,
+  "views": [
+    {
+      "floor": 1001,
+      "width": 30,
+      "height": 30,
+      "source_DAT_sha256": "62dbef1614ede0ba032ca9c69cbfdc3d43938e45baba78701885790937b86b90",
+      "center_xy": [
+        10,
+        15
+      ],
+      "inclusive_viewport": [
+        7,
+        12,
+        13,
+        18
+      ],
+      "tile_occurrences": 23,
+      "parts_occurrences": 4,
+      "placements": [
+        {
+          "layer": "tile",
+          "source_xy": [
+            11,
+            18
+          ],
+          "map_id": 5018,
+          "anchor_relative": [
+            128,
+            48
+          ],
+          "draw_relative": [
+            96,
+            24
+          ]
+        },
+        {
+          "layer": "tile",
+          "source_xy": [
+            12,
+            18
+          ],
+          "map_id": 5000,
+          "anchor_relative": [
+            160,
+            24
+          ],
+          "draw_relative": [
+            128,
+            0
+          ]
+        },
+        {
+          "layer": "tile",
+          "source_xy": [
+            11,
+            17
+          ],
+          "map_id": 5006,
+          "anchor_relative": [
+            96,
+            24
+          ],
+          "draw_relative": [
+            64,
+            0
+          ]
+        },
+        {
+          "layer": "tile",
+          "source_xy": [
+            10,
+            16
+          ],
+          "map_id": 5013,
+          "anchor_relative": [
+            32,
+            24
+          ],
+          "draw_relative": [
+            0,
+            0
+          ]
+        },
+        {
+          "layer": "tile",
+          "source_xy": [
+            13,
+            18
+          ],
+          "map_id": 5002,
+          "anchor_relative": [
+            192,
+            0
+          ],
+          "draw_relative": [
+            160,
+            -24
+          ]
+        },
+        {
+          "layer": "tile",
+          "source_xy": [
+            12,
+            17
+          ],
+          "map_id": 5000,
+          "anchor_relative": [
+            128,
+            0
+          ],
+          "draw_relative": [
+            96,
+            -24
+          ]
+        },
+        {
+          "layer": "tile",
+          "source_xy": [
+            11,
+            16
+          ],
+          "map_id": 5007,
+          "anchor_relative": [
+            64,
+            0
+          ],
+          "draw_relative": [
+            32,
+            -24
+          ]
+        },
+        {
+          "layer": "tile",
+          "source_xy": [
+            10,
+            15
+          ],
+          "map_id": 5024,
+          "anchor_relative": [
+            0,
+            0
+          ],
+          "draw_relative": [
+            -32,
+            -24
+          ]
+        },
+        {
+          "layer": "tile",
+          "source_xy": [
+            13,
+            17
+          ],
+          "map_id": 5002,
+          "anchor_relative": [
+            160,
+            -24
+          ],
+          "draw_relative": [
+            128,
+            -48
+          ]
+        },
+        {
+          "layer": "tile",
+          "source_xy": [
+            12,
+            16
+          ],
+          "map_id": 5000,
+          "anchor_relative": [
+            96,
+            -24
+          ],
+          "draw_relative": [
+            64,
+            -48
+          ]
+        },
+        {
+          "layer": "tile",
+          "source_xy": [
+            11,
+            15
+          ],
+          "map_id": 5005,
+          "anchor_relative": [
+            32,
+            -24
+          ],
+          "draw_relative": [
+            0,
+            -48
+          ]
+        },
+        {
+          "layer": "tile",
+          "source_xy": [
+            13,
+            16
+          ],
+          "map_id": 5015,
+          "anchor_relative": [
+            128,
+            -48
+          ],
+          "draw_relative": [
+            96,
+            -72
+          ]
+        },
+        {
+          "layer": "tile",
+          "source_xy": [
+            12,
+            15
+          ],
+          "map_id": 5000,
+          "anchor_relative": [
+            64,
+            -48
+          ],
+          "draw_relative": [
+            32,
+            -72
+          ]
+        },
+        {
+          "layer": "tile",
+          "source_xy": [
+            11,
+            14
+          ],
+          "map_id": 5018,
+          "anchor_relative": [
+            0,
+            -48
+          ],
+          "draw_relative": [
+            -32,
+            -72
+          ]
+        },
+        {
+          "layer": "tile",
+          "source_xy": [
+            13,
+            15
+          ],
+          "map_id": 5009,
+          "anchor_relative": [
+            96,
+            -72
+          ],
+          "draw_relative": [
+            64,
+            -96
+          ]
+        },
+        {
+          "layer": "tile",
+          "source_xy": [
+            12,
+            14
+          ],
+          "map_id": 5000,
+          "anchor_relative": [
+            32,
+            -72
+          ],
+          "draw_relative": [
+            0,
+            -96
+          ]
+        },
+        {
+          "layer": "tile",
+          "source_xy": [
+            11,
+            13
+          ],
+          "map_id": 5018,
+          "anchor_relative": [
+            -32,
+            -72
+          ],
+          "draw_relative": [
+            -64,
+            -96
+          ]
+        },
+        {
+          "layer": "tile",
+          "source_xy": [
+            13,
+            14
+          ],
+          "map_id": 5000,
+          "anchor_relative": [
+            64,
+            -96
+          ],
+          "draw_relative": [
+            32,
+            -120
+          ]
+        },
+        {
+          "layer": "tile",
+          "source_xy": [
+            12,
+            13
+          ],
+          "map_id": 5001,
+          "anchor_relative": [
+            0,
+            -96
+          ],
+          "draw_relative": [
+            -32,
+            -120
+          ]
+        },
+        {
+          "layer": "tile",
+          "source_xy": [
+            11,
+            12
+          ],
+          "map_id": 5006,
+          "anchor_relative": [
+            -64,
+            -96
+          ],
+          "draw_relative": [
+            -96,
+            -120
+          ]
+        },
+        {
+          "layer": "tile",
+          "source_xy": [
+            13,
+            13
+          ],
+          "map_id": 5002,
+          "anchor_relative": [
+            32,
+            -120
+          ],
+          "draw_relative": [
+            0,
+            -144
+          ]
+        },
+        {
+          "layer": "tile",
+          "source_xy": [
+            12,
+            12
+          ],
+          "map_id": 5000,
+          "anchor_relative": [
+            -32,
+            -120
+          ],
+          "draw_relative": [
+            -64,
+            -144
+          ]
+        },
+        {
+          "layer": "tile",
+          "source_xy": [
+            13,
+            12
+          ],
+          "map_id": 5002,
+          "anchor_relative": [
+            0,
+            -144
+          ],
+          "draw_relative": [
+            -32,
+            -168
+          ]
+        },
+        {
+          "layer": "parts",
+          "source_xy": [
+            12,
+            18
+          ],
+          "map_id": 12804,
+          "anchor_relative": [
+            160,
+            24
+          ],
+          "draw_relative": [
+            145,
+            5
+          ]
+        },
+        {
+          "layer": "parts",
+          "source_xy": [
+            13,
+            18
+          ],
+          "map_id": 12815,
+          "anchor_relative": [
+            192,
+            0
+          ],
+          "draw_relative": [
+            160,
+            -50
+          ]
+        },
+        {
+          "layer": "parts",
+          "source_xy": [
+            12,
+            13
+          ],
+          "map_id": 12613,
+          "anchor_relative": [
+            0,
+            -96
+          ],
+          "draw_relative": [
+            -45,
+            -273
+          ]
+        },
+        {
+          "layer": "parts",
+          "source_xy": [
+            11,
+            12
+          ],
+          "map_id": 12656,
+          "anchor_relative": [
+            -64,
+            -96
+          ],
+          "draw_relative": [
+            -99,
+            -275
+          ]
+        }
+      ],
+      "original_three_u16_at_door_cell": [
+        5024,
+        0,
+        49155
+      ],
+      "source_art_bounds": [
+        -99,
+        -275,
+        228,
+        71
+      ]
+    },
+    {
+      "floor": 1000,
+      "width": 160,
+      "height": 160,
+      "source_DAT_sha256": "94b19cb59d72b7b48da70d2741ba68516caad970297fd48ed11ef720fa3ea97e",
+      "center_xy": [
+        63,
+        99
+      ],
+      "inclusive_viewport": [
+        60,
+        96,
+        66,
+        102
+      ],
+      "tile_occurrences": 49,
+      "parts_occurrences": 5,
+      "placements": [
+        {
+          "layer": "tile",
+          "source_xy": [
+            60,
+            102
+          ],
+          "map_id": 101,
+          "anchor_relative": [
+            0,
+            144
+          ],
+          "draw_relative": [
+            -32,
+            120
+          ]
+        },
+        {
+          "layer": "tile",
+          "source_xy": [
+            61,
+            102
+          ],
+          "map_id": 108,
+          "anchor_relative": [
+            32,
+            120
+          ],
+          "draw_relative": [
+            0,
+            96
+          ]
+        },
+        {
+          "layer": "tile",
+          "source_xy": [
+            60,
+            101
+          ],
+          "map_id": 115,
+          "anchor_relative": [
+            -32,
+            120
+          ],
+          "draw_relative": [
+            -64,
+            96
+          ]
+        },
+        {
+          "layer": "tile",
+          "source_xy": [
+            62,
+            102
+          ],
+          "map_id": 113,
+          "anchor_relative": [
+            64,
+            96
+          ],
+          "draw_relative": [
+            32,
+            72
+          ]
+        },
+        {
+          "layer": "tile",
+          "source_xy": [
+            61,
+            101
+          ],
+          "map_id": 105,
+          "anchor_relative": [
+            0,
+            96
+          ],
+          "draw_relative": [
+            -32,
+            72
+          ]
+        },
+        {
+          "layer": "tile",
+          "source_xy": [
+            60,
+            100
+          ],
+          "map_id": 183,
+          "anchor_relative": [
+            -64,
+            96
+          ],
+          "draw_relative": [
+            -96,
+            72
+          ]
+        },
+        {
+          "layer": "tile",
+          "source_xy": [
+            63,
+            102
+          ],
+          "map_id": 103,
+          "anchor_relative": [
+            96,
+            72
+          ],
+          "draw_relative": [
+            64,
+            48
+          ]
+        },
+        {
+          "layer": "tile",
+          "source_xy": [
+            62,
+            101
+          ],
+          "map_id": 101,
+          "anchor_relative": [
+            32,
+            72
+          ],
+          "draw_relative": [
+            0,
+            48
+          ]
+        },
+        {
+          "layer": "tile",
+          "source_xy": [
+            61,
+            100
+          ],
+          "map_id": 108,
+          "anchor_relative": [
+            -32,
+            72
+          ],
+          "draw_relative": [
+            -64,
+            48
+          ]
+        },
+        {
+          "layer": "tile",
+          "source_xy": [
+            60,
+            99
+          ],
+          "map_id": 184,
+          "anchor_relative": [
+            -96,
+            72
+          ],
+          "draw_relative": [
+            -128,
+            48
+          ]
+        },
+        {
+          "layer": "tile",
+          "source_xy": [
+            64,
+            102
+          ],
+          "map_id": 218,
+          "anchor_relative": [
+            128,
+            48
+          ],
+          "draw_relative": [
+            96,
+            24
+          ]
+        },
+        {
+          "layer": "tile",
+          "source_xy": [
+            63,
+            101
+          ],
+          "map_id": 108,
+          "anchor_relative": [
+            64,
+            48
+          ],
+          "draw_relative": [
+            32,
+            24
+          ]
+        },
+        {
+          "layer": "tile",
+          "source_xy": [
+            62,
+            100
+          ],
+          "map_id": 106,
+          "anchor_relative": [
+            0,
+            48
+          ],
+          "draw_relative": [
+            -32,
+            24
+          ]
+        },
+        {
+          "layer": "tile",
+          "source_xy": [
+            61,
+            99
+          ],
+          "map_id": 113,
+          "anchor_relative": [
+            -64,
+            48
+          ],
+          "draw_relative": [
+            -96,
+            24
+          ]
+        },
+        {
+          "layer": "tile",
+          "source_xy": [
+            60,
+            98
+          ],
+          "map_id": 215,
+          "anchor_relative": [
+            -128,
+            48
+          ],
+          "draw_relative": [
+            -160,
+            24
+          ]
+        },
+        {
+          "layer": "tile",
+          "source_xy": [
+            65,
+            102
+          ],
+          "map_id": 186,
+          "anchor_relative": [
+            160,
+            24
+          ],
+          "draw_relative": [
+            128,
+            0
+          ]
+        },
+        {
+          "layer": "tile",
+          "source_xy": [
+            64,
+            101
+          ],
+          "map_id": 101,
+          "anchor_relative": [
+            96,
+            24
+          ],
+          "draw_relative": [
+            64,
+            0
+          ]
+        },
+        {
+          "layer": "tile",
+          "source_xy": [
+            63,
+            100
+          ],
+          "map_id": 117,
+          "anchor_relative": [
+            32,
+            24
+          ],
+          "draw_relative": [
+            0,
+            0
+          ]
+        },
+        {
+          "layer": "tile",
+          "source_xy": [
+            62,
+            99
+          ],
+          "map_id": 108,
+          "anchor_relative": [
+            -32,
+            24
+          ],
+          "draw_relative": [
+            -64,
+            0
+          ]
+        },
+        {
+          "layer": "tile",
+          "source_xy": [
+            61,
+            98
+          ],
+          "map_id": 112,
+          "anchor_relative": [
+            -96,
+            24
+          ],
+          "draw_relative": [
+            -128,
+            0
+          ]
+        },
+        {
+          "layer": "tile",
+          "source_xy": [
+            60,
+            97
+          ],
+          "map_id": 184,
+          "anchor_relative": [
+            -160,
+            24
+          ],
+          "draw_relative": [
+            -192,
+            0
+          ]
+        },
+        {
+          "layer": "tile",
+          "source_xy": [
+            66,
+            102
+          ],
+          "map_id": 185,
+          "anchor_relative": [
+            192,
+            0
+          ],
+          "draw_relative": [
+            160,
+            -24
+          ]
+        },
+        {
+          "layer": "tile",
+          "source_xy": [
+            65,
+            101
+          ],
+          "map_id": 107,
+          "anchor_relative": [
+            128,
+            0
+          ],
+          "draw_relative": [
+            96,
+            -24
+          ]
+        },
+        {
+          "layer": "tile",
+          "source_xy": [
+            64,
+            100
+          ],
+          "map_id": 809,
+          "anchor_relative": [
+            64,
+            0
+          ],
+          "draw_relative": [
+            32,
+            -24
+          ]
+        },
+        {
+          "layer": "tile",
+          "source_xy": [
+            63,
+            99
+          ],
+          "map_id": 102,
+          "anchor_relative": [
+            0,
+            0
+          ],
+          "draw_relative": [
+            -32,
+            -24
+          ]
+        },
+        {
+          "layer": "tile",
+          "source_xy": [
+            62,
+            98
+          ],
+          "map_id": 103,
+          "anchor_relative": [
+            -64,
+            0
+          ],
+          "draw_relative": [
+            -96,
+            -24
+          ]
+        },
+        {
+          "layer": "tile",
+          "source_xy": [
+            61,
+            97
+          ],
+          "map_id": 113,
+          "anchor_relative": [
+            -128,
+            0
+          ],
+          "draw_relative": [
+            -160,
+            -24
+          ]
+        },
+        {
+          "layer": "tile",
+          "source_xy": [
+            60,
+            96
+          ],
+          "map_id": 215,
+          "anchor_relative": [
+            -192,
+            0
+          ],
+          "draw_relative": [
+            -224,
+            -24
+          ]
+        },
+        {
+          "layer": "tile",
+          "source_xy": [
+            66,
+            101
+          ],
+          "map_id": 107,
+          "anchor_relative": [
+            160,
+            -24
+          ],
+          "draw_relative": [
+            128,
+            -48
+          ]
+        },
+        {
+          "layer": "tile",
+          "source_xy": [
+            65,
+            100
+          ],
+          "map_id": 798,
+          "anchor_relative": [
+            96,
+            -24
+          ],
+          "draw_relative": [
+            64,
+            -48
+          ]
+        },
+        {
+          "layer": "tile",
+          "source_xy": [
+            64,
+            99
+          ],
+          "map_id": 804,
+          "anchor_relative": [
+            32,
+            -24
+          ],
+          "draw_relative": [
+            0,
+            -48
+          ]
+        },
+        {
+          "layer": "tile",
+          "source_xy": [
+            63,
+            98
+          ],
+          "map_id": 104,
+          "anchor_relative": [
+            -32,
+            -24
+          ],
+          "draw_relative": [
+            -64,
+            -48
+          ]
+        },
+        {
+          "layer": "tile",
+          "source_xy": [
+            62,
+            97
+          ],
+          "map_id": 105,
+          "anchor_relative": [
+            -96,
+            -24
+          ],
+          "draw_relative": [
+            -128,
+            -48
+          ]
+        },
+        {
+          "layer": "tile",
+          "source_xy": [
+            61,
+            96
+          ],
+          "map_id": 109,
+          "anchor_relative": [
+            -160,
+            -24
+          ],
+          "draw_relative": [
+            -192,
+            -48
+          ]
+        },
+        {
+          "layer": "tile",
+          "source_xy": [
+            66,
+            100
+          ],
+          "map_id": 811,
+          "anchor_relative": [
+            128,
+            -48
+          ],
+          "draw_relative": [
+            96,
+            -72
+          ]
+        },
+        {
+          "layer": "tile",
+          "source_xy": [
+            65,
+            99
+          ],
+          "map_id": 414,
+          "anchor_relative": [
+            64,
+            -48
+          ],
+          "draw_relative": [
+            32,
+            -72
+          ]
+        },
+        {
+          "layer": "tile",
+          "source_xy": [
+            64,
+            98
+          ],
+          "map_id": 828,
+          "anchor_relative": [
+            0,
+            -48
+          ],
+          "draw_relative": [
+            -32,
+            -72
+          ]
+        },
+        {
+          "layer": "tile",
+          "source_xy": [
+            63,
+            97
+          ],
+          "map_id": 102,
+          "anchor_relative": [
+            -64,
+            -48
+          ],
+          "draw_relative": [
+            -96,
+            -72
+          ]
+        },
+        {
+          "layer": "tile",
+          "source_xy": [
+            62,
+            96
+          ],
+          "map_id": 110,
+          "anchor_relative": [
+            -128,
+            -48
+          ],
+          "draw_relative": [
+            -160,
+            -72
+          ]
+        },
+        {
+          "layer": "tile",
+          "source_xy": [
+            66,
+            99
+          ],
+          "map_id": 830,
+          "anchor_relative": [
+            96,
+            -72
+          ],
+          "draw_relative": [
+            64,
+            -96
+          ]
+        },
+        {
+          "layer": "tile",
+          "source_xy": [
+            65,
+            98
+          ],
+          "map_id": 418,
+          "anchor_relative": [
+            32,
+            -72
+          ],
+          "draw_relative": [
+            0,
+            -96
+          ]
+        },
+        {
+          "layer": "tile",
+          "source_xy": [
+            64,
+            97
+          ],
+          "map_id": 827,
+          "anchor_relative": [
+            -32,
+            -72
+          ],
+          "draw_relative": [
+            -64,
+            -96
+          ]
+        },
+        {
+          "layer": "tile",
+          "source_xy": [
+            63,
+            96
+          ],
+          "map_id": 114,
+          "anchor_relative": [
+            -96,
+            -72
+          ],
+          "draw_relative": [
+            -128,
+            -96
+          ]
+        },
+        {
+          "layer": "tile",
+          "source_xy": [
+            66,
+            98
+          ],
+          "map_id": 416,
+          "anchor_relative": [
+            64,
+            -96
+          ],
+          "draw_relative": [
+            32,
+            -120
+          ]
+        },
+        {
+          "layer": "tile",
+          "source_xy": [
+            65,
+            97
+          ],
+          "map_id": 820,
+          "anchor_relative": [
+            0,
+            -96
+          ],
+          "draw_relative": [
+            -32,
+            -120
+          ]
+        },
+        {
+          "layer": "tile",
+          "source_xy": [
+            64,
+            96
+          ],
+          "map_id": 117,
+          "anchor_relative": [
+            -64,
+            -96
+          ],
+          "draw_relative": [
+            -96,
+            -120
+          ]
+        },
+        {
+          "layer": "tile",
+          "source_xy": [
+            66,
+            97
+          ],
+          "map_id": 414,
+          "anchor_relative": [
+            32,
+            -120
+          ],
+          "draw_relative": [
+            0,
+            -144
+          ]
+        },
+        {
+          "layer": "tile",
+          "source_xy": [
+            65,
+            96
+          ],
+          "map_id": 804,
+          "anchor_relative": [
+            -32,
+            -120
+          ],
+          "draw_relative": [
+            -64,
+            -144
+          ]
+        },
+        {
+          "layer": "tile",
+          "source_xy": [
+            66,
+            96
+          ],
+          "map_id": 414,
+          "anchor_relative": [
+            0,
+            -144
+          ],
+          "draw_relative": [
+            -32,
+            -168
+          ]
+        },
+        {
+          "layer": "parts",
+          "source_xy": [
+            62,
+            102
+          ],
+          "map_id": 10204,
+          "anchor_relative": [
+            64,
+            96
+          ],
+          "draw_relative": [
+            39,
+            -15
+          ]
+        },
+        {
+          "layer": "parts",
+          "source_xy": [
+            63,
+            102
+          ],
+          "map_id": 10214,
+          "anchor_relative": [
+            96,
+            72
+          ],
+          "draw_relative": [
+            27,
+            -41
+          ]
+        },
+        {
+          "layer": "parts",
+          "source_xy": [
+            64,
+            102
+          ],
+          "map_id": 10139,
+          "anchor_relative": [
+            128,
+            48
+          ],
+          "draw_relative": [
+            -58,
+            -452
+          ]
+        },
+        {
+          "layer": "parts",
+          "source_xy": [
+            62,
+            97
+          ],
+          "map_id": 10130,
+          "anchor_relative": [
+            -96,
+            -24
+          ],
+          "draw_relative": [
+            -116,
+            -60
+          ]
+        },
+        {
+          "layer": "parts",
+          "source_xy": [
+            63,
+            97
+          ],
+          "map_id": 10214,
+          "anchor_relative": [
+            -64,
+            -48
+          ],
+          "draw_relative": [
+            -133,
+            -161
+          ]
+        }
+      ],
+      "original_three_u16_at_door_cell": [
+        102,
+        0,
+        49155
+      ],
+      "source_art_bounds": [
+        -224,
+        -452,
+        334,
+        167
+      ]
+    }
+  ],
+  "resources": {
+    "101": {
+      "index": 518,
+      "map_number": 101,
+      "bitmapno": 518,
+      "offset": 746358,
+      "size": 1624,
+      "xoff": -32,
+      "yoff": -24,
+      "width": 64,
+      "height": 47,
+      "source_record_sha256": "4d7c47d8bb061061acd810bd25791c31da3f3a35834a44c920886347f7abc3e8",
+      "RD_sha256": "d40617fea5f7abd1196498de2aa5c9cc83ebe826002b8b0b615a45495143c8c5",
+      "index_pixels_sha256": "28b51f3343599fa6fd39ca77308e812824be86067b28f90adaf1a67b084b7661",
+      "RGBA_candidate_sha256": "369f63862def910ad5c813c5583cdee8bbea9a7113cab71f8a5b98135f1e9a2c",
+      "PNG_sha256": "23a08eeaa24b13c779cdc67a04d59c1d5f3e5952f5b0cc6f431c5411a30c4a0a"
+    },
+    "102": {
+      "index": 519,
+      "map_number": 102,
+      "bitmapno": 519,
+      "offset": 747982,
+      "size": 1637,
+      "xoff": -32,
+      "yoff": -24,
+      "width": 64,
+      "height": 47,
+      "source_record_sha256": "aafcf2bd3ded48eb18eea736f859bae2d3cbb2c156f8c06a6bf97badb5c446d7",
+      "RD_sha256": "52cf1a966fd34bd20cd085ce7e6da31e6211ce3369632b21c2a8cbff25b882b4",
+      "index_pixels_sha256": "918c1189b8eb1a6c1a1ab2643c5d3456c02c45edd3c4e67898af13298a5389e4",
+      "RGBA_candidate_sha256": "ebec4e653c9c14415c5abf3a7a22027e42684a33db2a5aaf134c51d65b932e53",
+      "PNG_sha256": "b901098352623258edd1873c67e1e65204b3d6bb20efd16d6dd612a049565810"
+    },
+    "103": {
+      "index": 520,
+      "map_number": 103,
+      "bitmapno": 520,
+      "offset": 749619,
+      "size": 1665,
+      "xoff": -32,
+      "yoff": -24,
+      "width": 64,
+      "height": 47,
+      "source_record_sha256": "37f58ac8930014503baed13bd5fb2e945d543fdcd912d70c203d7a9ae1024319",
+      "RD_sha256": "4f3c71d10b122352da26ba49da40705c13853c6418944ad632c17c64507a7098",
+      "index_pixels_sha256": "dcadf7543b22cd497794e612d7d5bc9519268ac620ab1ff33e0a31633e499df2",
+      "RGBA_candidate_sha256": "df1ecbb581944a26e35308e48d1ba0fae5ad4c8b765d576b08e9caeee529b6d2",
+      "PNG_sha256": "2a98412566d8ffbe686391f6519ba77528ed20c264e205c167bcb04fcef32621"
+    },
+    "104": {
+      "index": 521,
+      "map_number": 104,
+      "bitmapno": 521,
+      "offset": 751284,
+      "size": 1697,
+      "xoff": -32,
+      "yoff": -24,
+      "width": 64,
+      "height": 47,
+      "source_record_sha256": "f5b5eb192226fef4b5ee5f2c7d21f23b0ec792e08d01199f3ba70c8dd40a17f7",
+      "RD_sha256": "862b7e95b9d2864fba1177fd68b553eadc0b2ad8c5103597b97783dc9743bb9b",
+      "index_pixels_sha256": "cd15033175efd84faf287145fb29e646ec1722211372aa2996baeee2534b254a",
+      "RGBA_candidate_sha256": "bc19f68a1614bb272bb24b7dfcb0b256a6cc9a3200036401d437e4932703dbee",
+      "PNG_sha256": "12eb53ef4fd3f4f9fee3a77d4242a99d7c5cb185f9e4aaab27321333a5406ff2"
+    },
+    "105": {
+      "index": 522,
+      "map_number": 105,
+      "bitmapno": 522,
+      "offset": 752981,
+      "size": 1578,
+      "xoff": -32,
+      "yoff": -24,
+      "width": 64,
+      "height": 47,
+      "source_record_sha256": "b11ec5b2e365d00ff0d79536f8e5ff3fe878e50ce7a5d89527b477a8361088d6",
+      "RD_sha256": "a53cb0ab1268e1813f60f66c5c1e7fc917479d26cc4cb621c45155a26bdda72b",
+      "index_pixels_sha256": "164a95afa8200731e9918098c83f9523012f6d0ba6c5b273b049201f65788661",
+      "RGBA_candidate_sha256": "222b65f8253cc2e3af289f6083ce2fe62dfb2fe69d464bbaf0a2bf180448af64",
+      "PNG_sha256": "e4cd8de16b497bc3ade11a6de504d6744ffd51a61617007144b2de813bbe85ed"
+    },
+    "106": {
+      "index": 523,
+      "map_number": 106,
+      "bitmapno": 523,
+      "offset": 754559,
+      "size": 1645,
+      "xoff": -32,
+      "yoff": -24,
+      "width": 64,
+      "height": 47,
+      "source_record_sha256": "8ebdcdee90e8a20ca4dddac07ac50331549ef7c168db2d4ea1c2cd2025f7b3e1",
+      "RD_sha256": "d24fb5c07fbc24bd62c4eb2326eb85be76d6b26ad36db9a8e9fe5dc27fa77005",
+      "index_pixels_sha256": "473c6e17b4ed211a55f64b4c373129959288dbf1c16fd222ee967a979e1e4f4e",
+      "RGBA_candidate_sha256": "a6efa5459c81e9afb49aff8101c4d87748a6778ed44dad486bf1a4ca79f3e64c",
+      "PNG_sha256": "507b467c62bbbbc51cfc87ff3c03bee114ec0ee0acee2468786fd16394920be6"
+    },
+    "107": {
+      "index": 524,
+      "map_number": 107,
+      "bitmapno": 524,
+      "offset": 756204,
+      "size": 1689,
+      "xoff": -32,
+      "yoff": -24,
+      "width": 64,
+      "height": 47,
+      "source_record_sha256": "6016a88a8c893a5b5cf627716d3a388c3b7198079761c52fa594f11c85babe88",
+      "RD_sha256": "f6ae55ca473709bbb9fc727ae319f3f19c66f8b3f63da5bd592a0a34c0c7605a",
+      "index_pixels_sha256": "88896b07119a7c824d0f752e62fc369ba6ac44e2f18e7d9d3db8b563fccd9a1b",
+      "RGBA_candidate_sha256": "08ce668d0df7929b04cd295e234ff7914739de49453676bbcea451bf398ba5fe",
+      "PNG_sha256": "968496aaa75ac36997e5ad952503d845b17927961df5cf359e92e7007afa568f"
+    },
+    "108": {
+      "index": 525,
+      "map_number": 108,
+      "bitmapno": 525,
+      "offset": 757893,
+      "size": 1654,
+      "xoff": -32,
+      "yoff": -24,
+      "width": 64,
+      "height": 47,
+      "source_record_sha256": "eb125de4a8b985ba6b7cbc768bbae221ca5f9491306cfa970d4449ef51f9569f",
+      "RD_sha256": "feb51a38c13401e08a7d50138e9fb6b1056692864f9ecf5f7b1d6d7ef5e4d3f4",
+      "index_pixels_sha256": "128f8b443ac51633d700e7f7a5c030cdd9dd3c82d7a0bca171a6b93fad800c9a",
+      "RGBA_candidate_sha256": "eceba6a5e590126c6eb7f980f86aa782bbadb84645a9e702ad6d7e8619871e0b",
+      "PNG_sha256": "b08a6649c80cf67a2aab895f436e0bb32cf2f174b70f458f79750bc861db82bc"
+    },
+    "109": {
+      "index": 526,
+      "map_number": 109,
+      "bitmapno": 526,
+      "offset": 759547,
+      "size": 1596,
+      "xoff": -32,
+      "yoff": -24,
+      "width": 64,
+      "height": 47,
+      "source_record_sha256": "4d49b84370b86ed9b3b7a46d6019c023f75611e552f85dd3775c3d72a0ba8099",
+      "RD_sha256": "8091caa8eb367057b305cea8083f284f216bf0ec1699807b6eaa85c1da472c9d",
+      "index_pixels_sha256": "26c5b1b9ad111f6f0b9fd47e16f30c3da960cf0bb42767474dfce3b905d5a524",
+      "RGBA_candidate_sha256": "1fde682796dab1e55e64635999eee92db087cba9e4cef4cbc5109d0f2d5cc8d3",
+      "PNG_sha256": "8ac59099919385fcd58c8a12cb64b36869625d5148213db7b3c31e0266bef84a"
+    },
+    "110": {
+      "index": 527,
+      "map_number": 110,
+      "bitmapno": 527,
+      "offset": 761143,
+      "size": 1676,
+      "xoff": -32,
+      "yoff": -24,
+      "width": 64,
+      "height": 47,
+      "source_record_sha256": "5c522d194d5e89cb402428240f5643343a910e9be2b5ce046b959d29c0d30762",
+      "RD_sha256": "23913292a11e20fc4d37c780d439e64b965fd2eda97f0f653b115449aa508b1f",
+      "index_pixels_sha256": "48b9a74af2a8db27520f89d10a1968c507a77a075e3662767226f71107c48d06",
+      "RGBA_candidate_sha256": "b897e3ce53628a5ab1051590eb66ce22f4356a9eef48e51f73eaacb6ccda28dc",
+      "PNG_sha256": "c69f053768359dbdd0359b6e55e16335920df982a506fd6e36475ac9ddf8bcf3"
+    },
+    "112": {
+      "index": 529,
+      "map_number": 112,
+      "bitmapno": 529,
+      "offset": 764441,
+      "size": 1685,
+      "xoff": -32,
+      "yoff": -24,
+      "width": 64,
+      "height": 47,
+      "source_record_sha256": "a3d8970e4c1543098085160926bbaacd4c6a1b6d40d491f2f602cdf033bd26f9",
+      "RD_sha256": "dd03918242fe4f3550d543ebbb73fd22675dd72e3958bb399efc1266f1e94175",
+      "index_pixels_sha256": "7e847928896a7338a081c953339ac6e31e5d1c3cf4d15b0955bf2d5f2afe68e4",
+      "RGBA_candidate_sha256": "f67b8e010ac9bd41dd5a47816295158251cb6f7e78e3378df91ffe19775ae4b4",
+      "PNG_sha256": "9d9abbe7918485f80c4e7909f2cb0e6bb4daab8581747a711f3f63059fa8aab2"
+    },
+    "113": {
+      "index": 530,
+      "map_number": 113,
+      "bitmapno": 530,
+      "offset": 766126,
+      "size": 1666,
+      "xoff": -32,
+      "yoff": -24,
+      "width": 64,
+      "height": 47,
+      "source_record_sha256": "ef311735ed9b7b4f5a20dab1433d7b16511df2190effc4d6b647d3425adba6d4",
+      "RD_sha256": "e0cc683a6bf5f8db81d07bb3d751b8df84001e9e049ab981cc929edee6e6e9c3",
+      "index_pixels_sha256": "048142b6f9bd2a57e6741822f75cee83d65d028929408ede6a53b3cfad2ba8f9",
+      "RGBA_candidate_sha256": "a2342c70d0c37cc90b981c1dbfde5bbf7e97a6b88eb127010d2a778a44360224",
+      "PNG_sha256": "7793b401a341cf2ee6c06a250f75a461bd2406aa2b773101e0cf9bef018969de"
+    },
+    "114": {
+      "index": 531,
+      "map_number": 114,
+      "bitmapno": 531,
+      "offset": 767792,
+      "size": 1643,
+      "xoff": -32,
+      "yoff": -24,
+      "width": 64,
+      "height": 47,
+      "source_record_sha256": "1313178b91e20d12e7938b27c456569b5884ff82be82ec79b30e68a98dbbe3f3",
+      "RD_sha256": "98bea25535e11f54af1a793ee06e7042ad2a40d7c4b1b49549094530bbf69757",
+      "index_pixels_sha256": "11cfdadc6e0cdcc2efa9d1382c4212455b55ed4234a3985b79a599a7e9e6bb25",
+      "RGBA_candidate_sha256": "b4e15d28d4218a3fbb72788b3dab390c910c099db60ae9871d909ec2e0c072f1",
+      "PNG_sha256": "dc25e9d4e95cf90fd343e63e8900cc30f27c043256816e452e70ab8f2edd9b9b"
+    },
+    "115": {
+      "index": 532,
+      "map_number": 115,
+      "bitmapno": 532,
+      "offset": 769435,
+      "size": 1628,
+      "xoff": -32,
+      "yoff": -24,
+      "width": 64,
+      "height": 47,
+      "source_record_sha256": "7cc2949d497b637102c1254014b5486f35a72a92381730f892f1af16d8e7c538",
+      "RD_sha256": "c9c4837f8de3cf4ade638d113297e9cf775ec5c13c0405515258893433588074",
+      "index_pixels_sha256": "3b6b2ecc070c22d67ce90a6bcfcf9a04209d162c1e32f2c035a348221c704201",
+      "RGBA_candidate_sha256": "7e913f62e8f37d22c68fb969017c2f62350e89fe768d589090f0b9b46bc14613",
+      "PNG_sha256": "ac7cc0cf698dc3ac4be10459f8a3f2ceb04fd27f5c4884d38b1085126a808c12"
+    },
+    "117": {
+      "index": 534,
+      "map_number": 117,
+      "bitmapno": 534,
+      "offset": 772693,
+      "size": 1656,
+      "xoff": -32,
+      "yoff": -24,
+      "width": 64,
+      "height": 47,
+      "source_record_sha256": "7446cea600a320ec4024b341ccf3ab9419a28d083ee0f67d6f9c8a34c270ef7e",
+      "RD_sha256": "04fe4ff407d7596a428e37d22c78909eafadce17e59ef74b0a53b36653f0e64d",
+      "index_pixels_sha256": "c7c3bb89a614b97ac07d079aa64d35d96ffe2da6b44f22a93ab60b4f1b804ee9",
+      "RGBA_candidate_sha256": "e6d2f2eaf66f16b1b75699dd6d567eb581c4381543778d6519c3216d8e210a45",
+      "PNG_sha256": "cc252b081e263ba44bce920ff395fee1a6b220a9e2453d4b6c845cb801a9e7af"
+    },
+    "183": {
+      "index": 15,
+      "map_number": 183,
+      "bitmapno": 15,
+      "offset": 7795,
+      "size": 1544,
+      "xoff": -32,
+      "yoff": -24,
+      "width": 64,
+      "height": 47,
+      "source_record_sha256": "73fa9a1a37237ddbe205de094c13b5f6715e3bbad928117693e30525474064f8",
+      "RD_sha256": "8680388d29ed102516cf6dd723ff326942f6c8ae6a18e7f4c804b04bdb6207e0",
+      "index_pixels_sha256": "cbbaf027954cb0bbded56f22a9d2337c24b5b85eb6a4d4fd8bc7ee8480f60859",
+      "RGBA_candidate_sha256": "f86c3e64cf4d5cdcc3af5d07a1cf7f67787cf8fe47affda7739e640e24d4f70e",
+      "PNG_sha256": "1ee473d91b95d26c1aaf7285491d28721919a10c3000e13bd15abe8f7b6ffe12"
+    },
+    "184": {
+      "index": 16,
+      "map_number": 184,
+      "bitmapno": 16,
+      "offset": 9339,
+      "size": 1432,
+      "xoff": -32,
+      "yoff": -24,
+      "width": 64,
+      "height": 47,
+      "source_record_sha256": "3597d0c8a376b4c42c827270c17c83b97d5fe0752a5f0d4daacb1868a45c3ca3",
+      "RD_sha256": "ce2697faaf578ac65dbbd9bacd47d712a97227357491f532b4538e6cba76227b",
+      "index_pixels_sha256": "d1c07f0a31c829390b8ec89e97757f102986bee520b0c7f491ff47f0a0805c48",
+      "RGBA_candidate_sha256": "0e45dda86be92dcd2d0102b06c9af83f3c35eae54aec150b88b9f25f9bd7aa15",
+      "PNG_sha256": "91ec5f7499868e6d1903d7f218e12c404919a971314f9f713f3b906396dbfdad"
+    },
+    "185": {
+      "index": 17,
+      "map_number": 185,
+      "bitmapno": 17,
+      "offset": 10771,
+      "size": 1558,
+      "xoff": -32,
+      "yoff": -24,
+      "width": 64,
+      "height": 47,
+      "source_record_sha256": "27b76d8c9822d0514b1e59d14d0c7e7da59c9e38e6c1019612981f779efe11aa",
+      "RD_sha256": "7bcbc60b1038aed3804702e43e0bedc85d8a4b5ad3d75fed8edd6a6c1a21659b",
+      "index_pixels_sha256": "b1bb371584bfd6bc83bd0dbaf327a53c689d9ec5bb95efef34a2189c10bcbfd2",
+      "RGBA_candidate_sha256": "ab1bde9c984702e080ca5124073ea004067e90a200ff10581891a7b3ea83281e",
+      "PNG_sha256": "179cac45e5417920b9f7187d8d377dda61fc7f0239130f6de1a48f4a3e8eb11b"
+    },
+    "186": {
+      "index": 18,
+      "map_number": 186,
+      "bitmapno": 18,
+      "offset": 12329,
+      "size": 1432,
+      "xoff": -32,
+      "yoff": -24,
+      "width": 64,
+      "height": 47,
+      "source_record_sha256": "d00ada008861c5cbedcfaa510c0e1d69cca0c4e35b7d44514e41a552510ebe22",
+      "RD_sha256": "ae915838025b26c57178f1f2d8924dd29a792b7925201e67cb59882fa74950d5",
+      "index_pixels_sha256": "ec02a0544d209a7ec1d097b835cb53b284b350f38efefbea58355c937f620566",
+      "RGBA_candidate_sha256": "8f6e4228d18cd61397ff009bb1fe22792e91720df89854a65688614f3f5b7641",
+      "PNG_sha256": "185478b07a6c5679268fe863534a412ce31d25e83203c7285a6e6af742d058ab"
+    },
+    "215": {
+      "index": 76,
+      "map_number": 215,
+      "bitmapno": 76,
+      "offset": 96641,
+      "size": 1548,
+      "xoff": -32,
+      "yoff": -24,
+      "width": 64,
+      "height": 47,
+      "source_record_sha256": "7c9b9dd4edf02bee1749340abca7020ae55638f91ab6eed95a072d6d410433f0",
+      "RD_sha256": "e4e345568646ba698b30b317d59cef764067dc872360dc9290d0162f0e268de9",
+      "index_pixels_sha256": "af26c3632b4069bf96620b88aa3c80c67c38760526d47ed2e659d826bde89281",
+      "RGBA_candidate_sha256": "8fc1b2802e1943ea6e5908fd9de5df8e8ad3507fa8338fbb169fbd1f8a9be053",
+      "PNG_sha256": "a9390ce80ee6f39569d7c24b837236a48edec402c7b2638984df5dbecbd5d856"
+    },
+    "218": {
+      "index": 79,
+      "map_number": 218,
+      "bitmapno": 79,
+      "offset": 101219,
+      "size": 1566,
+      "xoff": -32,
+      "yoff": -24,
+      "width": 64,
+      "height": 47,
+      "source_record_sha256": "458e7037b2dc570d43cd26ba9232d77a346800dd7d075f955a0d7878a62a6844",
+      "RD_sha256": "82d4cd62259c6a6dfb886db5f6408cd655080bf38d63d84fd57fdec05d931843",
+      "index_pixels_sha256": "e2bc772b3296f2a3e63e65c0636b17fd7f223eb8cbd7358c10554fe8fb4189ad",
+      "RGBA_candidate_sha256": "002f5625513fc4b563e9e568c63695158958a6d7649cab036c1f9409e1216af7",
+      "PNG_sha256": "329bbf453af170ef6cfcc9080b13c98c54a979db9ad8622e55c630876c1a2799"
+    },
+    "414": {
+      "index": 608,
+      "map_number": 414,
+      "bitmapno": 608,
+      "offset": 876191,
+      "size": 1656,
+      "xoff": -32,
+      "yoff": -24,
+      "width": 64,
+      "height": 47,
+      "source_record_sha256": "a4cf932b1756b086e5c5591f59b8dab5cd8552ed514c1537b1cc60976a2ecbd3",
+      "RD_sha256": "f6555aebf7c78a20c0767c8634adec629d4dbc91cd8ca9b3bf34a83080aeea9f",
+      "index_pixels_sha256": "c343e502f51b1bab8dbed86d2b261500379dbf72993b463766958b98bd87a755",
+      "RGBA_candidate_sha256": "1baf007f216e7a5115d913dc1365be4186692c4780ae9595327f3405cf5fac81",
+      "PNG_sha256": "d6f8bb41506b6ddd0567e34fbb93a026ae86cf89a87cdc07694167fb8359f71a"
+    },
+    "416": {
+      "index": 610,
+      "map_number": 416,
+      "bitmapno": 610,
+      "offset": 879507,
+      "size": 1675,
+      "xoff": -32,
+      "yoff": -24,
+      "width": 64,
+      "height": 47,
+      "source_record_sha256": "8c3023b24dea49d09b0b5755b6966b9e2a8cb022e6adf4d8bc7d8bbf7e24e33a",
+      "RD_sha256": "67356cdb7e949c28164d29d021566d486e769506c1835272c81aa298309eb186",
+      "index_pixels_sha256": "12e037e12ebe88600527cbcaefa495f61c926d0b882ddd6fe2b4c06b06c6afc1",
+      "RGBA_candidate_sha256": "c38f696d18afaf41e85616677543531ee55d834bda762b16867aae8bf9fecde4",
+      "PNG_sha256": "64b5c902cd12f90e05ea92ad187fc05bf131c8afbb217da4e87e4c4631262daa"
+    },
+    "418": {
+      "index": 612,
+      "map_number": 418,
+      "bitmapno": 612,
+      "offset": 882869,
+      "size": 1637,
+      "xoff": -32,
+      "yoff": -24,
+      "width": 64,
+      "height": 47,
+      "source_record_sha256": "a3ac576fad3a687ff640e367b13228cc09fd9eaee620a0f622fdd6f8e0387c6d",
+      "RD_sha256": "e0cd61e29f47d2e26979acbc6ab618202a247c56a1ab1ed6c0f8732de22d4a34",
+      "index_pixels_sha256": "152d4fd0aa55936c77183bae81331596007ddd07fb87e4ef6e41ad1295f8b9a6",
+      "RGBA_candidate_sha256": "835558e580e09164ba07262e4e58f8fffd4f3a1e323b7f53789f32068fe95f9f",
+      "PNG_sha256": "c2346e01e5c33f307810892441c187d23f6f121755673e6562235398bcf3ca80"
+    },
+    "798": {
+      "index": 446,
+      "map_number": 798,
+      "bitmapno": 446,
+      "offset": 642496,
+      "size": 1661,
+      "xoff": -32,
+      "yoff": -24,
+      "width": 64,
+      "height": 47,
+      "source_record_sha256": "539c921c5f233c70f741a9fdedbd9838c65fa59fd348079bad5cf746dfd4a5e8",
+      "RD_sha256": "6cdd9c7271bbf79bf7764233ace5f9ea7bc5babe25c2ac5a577b282b94516fdc",
+      "index_pixels_sha256": "436ae2cebecc9c73459d08faebdf9a53699b64923a14378794f806c0a33b0863",
+      "RGBA_candidate_sha256": "f8ad5cb4a996f337a9b0daa6957533d14351ad138eda99d9f8ccced6d45ac479",
+      "PNG_sha256": "5e60a3fa5b3bc855bb0b9cd7da5cc15230b8c1ea377e1ff431c3c52a58541914"
+    },
+    "804": {
+      "index": 452,
+      "map_number": 804,
+      "bitmapno": 452,
+      "offset": 652413,
+      "size": 1609,
+      "xoff": -32,
+      "yoff": -24,
+      "width": 64,
+      "height": 47,
+      "source_record_sha256": "03bc7c5bf5e9537a7d593aca4d46468a7da196f81dc7078ab60202f5fbed041c",
+      "RD_sha256": "9f3357eba5b968aafa0f1d137a3a77fdd2306e8f0da240df26d26c80ae6fb6c7",
+      "index_pixels_sha256": "740f940976acec2076a3f0da837a79c421e41a5e625ad91c4a20a76fd33218c6",
+      "RGBA_candidate_sha256": "88316dba9ad35af4c453eebf5c56f76798e02efa6975060a26b2240ce640dcbf",
+      "PNG_sha256": "fefb6c65ba9d32abc2ad9f5101266e3ff46d8314fe0562af71a266298f53ac00"
+    },
+    "809": {
+      "index": 457,
+      "map_number": 809,
+      "bitmapno": 457,
+      "offset": 660706,
+      "size": 1684,
+      "xoff": -32,
+      "yoff": -24,
+      "width": 64,
+      "height": 47,
+      "source_record_sha256": "4bfeadc0be51f06b5c6ed73715d5fbb4dc99680704d79ad83b95e0ea1be4b7d9",
+      "RD_sha256": "34660a69683816406426d5248c8281eb3bce9b9ac44578478dd24eca4a8f309c",
+      "index_pixels_sha256": "8479baa7b7bd7b9f87859661279b3d0148b1649469221442087daf48456e4408",
+      "RGBA_candidate_sha256": "13158673eafb954833a4437e783f076cfb979ff95c2b2db5132415bdcd3e6c7e",
+      "PNG_sha256": "1fa112ac99004047988459e7c4eb3490478464f3608a01ecaf2b4c220e4d5334"
+    },
+    "811": {
+      "index": 459,
+      "map_number": 811,
+      "bitmapno": 459,
+      "offset": 664072,
+      "size": 1626,
+      "xoff": -32,
+      "yoff": -24,
+      "width": 64,
+      "height": 47,
+      "source_record_sha256": "1c07c86d02df34e4a98b45c862160ad03f0d42701ece73d394c8ebfdf58cecbc",
+      "RD_sha256": "b108ae383484d4002acbea744fedc14d3ffaa9d16f21da8b41ea90d38e3ef9bc",
+      "index_pixels_sha256": "6214bb5694c287f6ff2cfcfffea476d91d54bbb8f7a1fa655ba9a09719a1deff",
+      "RGBA_candidate_sha256": "5638aaeff4a895dd5b400009e99f7659c5fa1f80a9c92133a56be08ce5bb3d90",
+      "PNG_sha256": "1d8377489c69db1d43e82e50dcf5b3df16b755610ca787bf9172ed2e1bc64ea3"
+    },
+    "820": {
+      "index": 468,
+      "map_number": 820,
+      "bitmapno": 468,
+      "offset": 678999,
+      "size": 1682,
+      "xoff": -32,
+      "yoff": -24,
+      "width": 64,
+      "height": 47,
+      "source_record_sha256": "7efc9166b52414e9cec8a99bfd0c3628027348176fa2897a0050a37fe93133ca",
+      "RD_sha256": "dc1bfb3652756a1ec0ce60c4b25215eb6af1769159b37ee52082f76187e53724",
+      "index_pixels_sha256": "1405289d6698a75a0a02ec955d61ff7d14404f85147b68f041a163c1f6a99293",
+      "RGBA_candidate_sha256": "42c8a0572e7bd36403bce0472ff9cd6fae9ff9216a25559cb960ba56f39ec58d",
+      "PNG_sha256": "a04dee7e2409702db32f55dbf4c35822e2a268fd9bccdafd6cf6509ca330092d"
+    },
+    "827": {
+      "index": 475,
+      "map_number": 827,
+      "bitmapno": 475,
+      "offset": 690618,
+      "size": 1686,
+      "xoff": -32,
+      "yoff": -24,
+      "width": 64,
+      "height": 47,
+      "source_record_sha256": "906205d9d7f3952f33a954ce4c4d86fb5fb854c885681fa728f6982941129c1b",
+      "RD_sha256": "1b252af195dea1fa370e618e79007a3f7c8593401a5d9711edebc96bcfc62b4b",
+      "index_pixels_sha256": "970c026df00719e8ef88c5f6468aa6107be0ca8985666ab385af0b402214848b",
+      "RGBA_candidate_sha256": "6efd8b8028077fa1a1830255d590d8c0fa7a05eeb5dc0c1e323e4b4f0c78153f",
+      "PNG_sha256": "66313635ef19410f00f31237ace892df564108a1a0ca2b640d107f728ec8fb11"
+    },
+    "828": {
+      "index": 476,
+      "map_number": 828,
+      "bitmapno": 476,
+      "offset": 692304,
+      "size": 1576,
+      "xoff": -32,
+      "yoff": -24,
+      "width": 64,
+      "height": 47,
+      "source_record_sha256": "f15b913e7eff6fbeb9616f701eef8ea3202a9cb49a9b944ee81caca8b3d04635",
+      "RD_sha256": "6bcc7ef1f8b90bf04100892cf583d8bd1bc327713a30f2ec20633acc3da292f9",
+      "index_pixels_sha256": "41d2a2d23e223faf909604959c888aa3f218ce7c678cca30a85e2132b05b272b",
+      "RGBA_candidate_sha256": "90002f8776cc38f204a1e8ca20789d7081e84bac1cdee4b49027d8c6c0c762ca",
+      "PNG_sha256": "707437787e034b3d401ccd598f56ccb3adac8073797e6c20b0467290371c9504"
+    },
+    "830": {
+      "index": 478,
+      "map_number": 830,
+      "bitmapno": 478,
+      "offset": 695535,
+      "size": 1648,
+      "xoff": -32,
+      "yoff": -24,
+      "width": 64,
+      "height": 47,
+      "source_record_sha256": "48eddfb1e13225d45d6b0e9956ac45ce1052b040239653db64c1175ca6b5d07d",
+      "RD_sha256": "167dfb55972b81c245c8a82210b43e07b7a71320d5b0d406c9fedd96311dae37",
+      "index_pixels_sha256": "ec99a0ad5dcc098dedc02756bceb77a2f0ce375054dc0fcc134646d7accef848",
+      "RGBA_candidate_sha256": "af1fa2b7f42df1a8458c840d6a8e79053ffe2ffed3a737641f8e9f2f3f1be69d",
+      "PNG_sha256": "afe28c78eee7f6eb95b0b31935c93c4e14b9ee1e2fb1a1fedbb6c9a4a0ff3339"
+    },
+    "5000": {
+      "index": 1615,
+      "map_number": 5000,
+      "bitmapno": 1615,
+      "offset": 2367218,
+      "size": 1716,
+      "xoff": -32,
+      "yoff": -24,
+      "width": 64,
+      "height": 47,
+      "source_record_sha256": "cbbf5887205e947f79cfc7c2d591a451475d5b85568ab670d8a4fad30b4689a3",
+      "RD_sha256": "06d9244b926adfb58a004385b9b3acb51dedf8e6596d7fce84ed9dc308cf8f42",
+      "index_pixels_sha256": "9ecf3beec539530a6a3ffc6972b2d84b648d313a118b79cf5247725bdaea0b3a",
+      "RGBA_candidate_sha256": "a3cc36f44ebd804225f6788fbd31c08f63d6ca50f733b4245b2bae6a21096650",
+      "PNG_sha256": "8039bdc50d26aa982eb704c52579e08bd4f5fd812c01e5a88db06ca7f0c85de6"
+    },
+    "5001": {
+      "index": 1616,
+      "map_number": 5001,
+      "bitmapno": 1616,
+      "offset": 2368934,
+      "size": 1717,
+      "xoff": -32,
+      "yoff": -24,
+      "width": 64,
+      "height": 47,
+      "source_record_sha256": "7a84d2466298c51777e926d1d79a403e5ac4d9622b729170d79a310e0efea7f8",
+      "RD_sha256": "19af66ee4fd64e4056ecc0ad95e20107483170743907bfab8afc6366a5f7d676",
+      "index_pixels_sha256": "e69e2b66adafcad60e0509908730714296b81eec6386b37ef6273a863bfae391",
+      "RGBA_candidate_sha256": "efe4989c91a7ab101028205e19292397a529d980a7d4e98b4660cd334bc7b5e4",
+      "PNG_sha256": "3e76711987a284141695f92c39e1a4b9c3e42b52a95782f9205879a1839c7bd1"
+    },
+    "5002": {
+      "index": 1617,
+      "map_number": 5002,
+      "bitmapno": 1617,
+      "offset": 2370651,
+      "size": 1717,
+      "xoff": -32,
+      "yoff": -24,
+      "width": 64,
+      "height": 47,
+      "source_record_sha256": "c1155b6759ea95596ebbd037173b384804ca6fe7a641fc60a2115dc8b553a88d",
+      "RD_sha256": "3880a6acc23fc1d0f3a785227e51362d7090a05193b36c4cc8e4c11abb93a382",
+      "index_pixels_sha256": "1f2b3271184e73999ee76eb9ad7d96e9982a5f5733f905bca0743d6c69208450",
+      "RGBA_candidate_sha256": "e6e0e79873a39dc6a39f3eb61ae075770829ac4348bb79305c9c4299fcf13d6a",
+      "PNG_sha256": "0951ed531c496fa38d5eb6f686c57cf612f23392ec1166d364f561eb66f37746"
+    },
+    "5005": {
+      "index": 1620,
+      "map_number": 5005,
+      "bitmapno": 1620,
+      "offset": 2375425,
+      "size": 1646,
+      "xoff": -32,
+      "yoff": -24,
+      "width": 64,
+      "height": 47,
+      "source_record_sha256": "af446d24e210f67ca59a9386747d593288b3c184b06f11d7d7a4a7bea845a520",
+      "RD_sha256": "ae1bbf3df7600897c92104cecd76efca0034f1ab3384494f436aeb4f9b8856fc",
+      "index_pixels_sha256": "1d4350fecd30a2493f615c5f6c24d129afe91ff85fe7b7a79185edd7c2b97f65",
+      "RGBA_candidate_sha256": "f1ba5a0e731de470201fe7b0e0e0d9e788704a13f9384507d4ca26d7f0d6387f",
+      "PNG_sha256": "f2226153b85dcf46101f808fbf50fd17a86178b9852e97681b8375f89176d623"
+    },
+    "5006": {
+      "index": 1621,
+      "map_number": 5006,
+      "bitmapno": 1621,
+      "offset": 2377071,
+      "size": 1347,
+      "xoff": -32,
+      "yoff": -24,
+      "width": 64,
+      "height": 47,
+      "source_record_sha256": "1c5ee9e8bbbd134143316ab53c760631f23921b5bdae7ab3ccc61ab8ab9df942",
+      "RD_sha256": "3b84256c01e09bcb4983638da952d78a3b740d01174bead157b2ef271d8dfead",
+      "index_pixels_sha256": "b9ce13e63869870473ebce848b30a9692bca8f674c5646eff8a5a2958fa21c25",
+      "RGBA_candidate_sha256": "e319e8d4b815deb43580427bc5530dd99857de1097833e0aa141a1a36d67b1ff",
+      "PNG_sha256": "5bd4ad62b364e9930b5f55a27e3167253c850b4b669877346da71cabd239126b"
+    },
+    "5007": {
+      "index": 1622,
+      "map_number": 5007,
+      "bitmapno": 1622,
+      "offset": 2378418,
+      "size": 1574,
+      "xoff": -32,
+      "yoff": -24,
+      "width": 64,
+      "height": 47,
+      "source_record_sha256": "05c7006f4e88fbf1c1ce0ff78ab2da57d1af9cec7a0c03295d1e7abbb79fb47d",
+      "RD_sha256": "64641453cb1cf9687d80dd0b74d0c27e3ab431fc4f23b6eb12518f8ab10d2fdd",
+      "index_pixels_sha256": "d7456632a06fabbb2bd5cb66a68bb391bb047321936b3295f53356f69e310cc0",
+      "RGBA_candidate_sha256": "e7d582d11ed21e3e6fccdeb5e0474b5239d5a0adb0ae41ab5d46b195d6dc7ca9",
+      "PNG_sha256": "6c0d5ab1bd13c9ae9518a47005655252128c8d24fb523bc99be07f6893228cf0"
+    },
+    "5009": {
+      "index": 1624,
+      "map_number": 5009,
+      "bitmapno": 1624,
+      "offset": 2381236,
+      "size": 1698,
+      "xoff": -32,
+      "yoff": -24,
+      "width": 64,
+      "height": 47,
+      "source_record_sha256": "3cf451aafd8c99141768a6e4a2997ae134f6d516cf597b52d1314c72c47d183a",
+      "RD_sha256": "3ade98b2ff9d081eb8b315a220623be22bfd47206e3e34f609fd3ecd638c9e95",
+      "index_pixels_sha256": "bcc88fcc979a76a282709dab132fbc5c36151030f8b922deb3582fd1c00bf54b",
+      "RGBA_candidate_sha256": "6e9417f3b44d8d4c5d81a66da4792b287fb25a272af8344a8ca1e9c2b503f9ff",
+      "PNG_sha256": "65d38fddfd36ebc338d6e46c5fab2a54d2484846bc59e35bf8fa346db584fa93"
+    },
+    "5013": {
+      "index": 1628,
+      "map_number": 5013,
+      "bitmapno": 1628,
+      "offset": 2386897,
+      "size": 1069,
+      "xoff": -32,
+      "yoff": -24,
+      "width": 64,
+      "height": 47,
+      "source_record_sha256": "4834c7bd6f9541e4d6cbc317e37bcbdeaa995e9f823e05544157b5dc2fcdbd1d",
+      "RD_sha256": "0667207c37153dcae55565830623411f012433f4a888deb1356b24f9cb26805c",
+      "index_pixels_sha256": "f5f2c38f20aa1dbedd5c4acc1209fcdf638e8a1cafd3c264ae8c27105b0cb596",
+      "RGBA_candidate_sha256": "4eb66f288023de7e5926223a595525280b5b035b9e97ac0d8880b543f7cbd4b4",
+      "PNG_sha256": "327cf166db25be4f6e61625b69c69abd52424745b04e4dd9100ce8cca7b7ff9c"
+    },
+    "5015": {
+      "index": 1630,
+      "map_number": 5015,
+      "bitmapno": 1630,
+      "offset": 2389112,
+      "size": 1656,
+      "xoff": -32,
+      "yoff": -24,
+      "width": 64,
+      "height": 47,
+      "source_record_sha256": "eb4eed3611e893c4c53cd100891f1a946c28ef3ee31702c8c9ee24c96f086238",
+      "RD_sha256": "4c65fd86cb1b783914c7e2d3a26623a619d0945f0ac0baa08bd16fede599daa2",
+      "index_pixels_sha256": "de3951ed4365de7803fce81fd05fc8980e817c0ba24cd65649dea99c83841dca",
+      "RGBA_candidate_sha256": "af59d1ff26b02029268dbdbec82577fd8dfa0a27eaa35118a5bfa95535130016",
+      "PNG_sha256": "4e5b9fea71f1e9e974a1d58efa7fc7fc4a7591da344e34e294a6de0e043eccaa"
+    },
+    "5018": {
+      "index": 1633,
+      "map_number": 5018,
+      "bitmapno": 1633,
+      "offset": 2393784,
+      "size": 1503,
+      "xoff": -32,
+      "yoff": -24,
+      "width": 64,
+      "height": 47,
+      "source_record_sha256": "7a7fc58fb7723d13bff928295e5a8486cff3342ab7188ed6c8d15665df1d867a",
+      "RD_sha256": "cafec0e8f4f1604ecbc050a074b574fd72bbc07e5ecee6fce462ec5ba35f3e33",
+      "index_pixels_sha256": "b7783bdbb8e6e995c1f78fcfe2461be0e313f288cf63f381660c686b36f10316",
+      "RGBA_candidate_sha256": "33abc34274f9500b47c9c65d52231726154b47b0679df9c9ac9081e7cb57257e",
+      "PNG_sha256": "b02b9ca2072a6e02181bda543d1fa8ff6d79b10683809db43c9a6852ab9cfb1f"
+    },
+    "5024": {
+      "index": 1639,
+      "map_number": 5024,
+      "bitmapno": 1639,
+      "offset": 2403080,
+      "size": 1281,
+      "xoff": -32,
+      "yoff": -24,
+      "width": 64,
+      "height": 47,
+      "source_record_sha256": "0c587a375492e0cfb98542aad8b289065eb7eb954429f1f646af82ff32f7d4c5",
+      "RD_sha256": "c33f1524224f1f1ae6f9c98f1a0f19c37b8ed0c5d7966e5eec94b3e1145bfc0b",
+      "index_pixels_sha256": "d8b95ad696306169d79cbc711da756eb70837aeb33a949c8c65a32d0adc9001c",
+      "RGBA_candidate_sha256": "d6e6d05ccf658b74105de45e5053e9a630eb56b3291360f71456e536ba1f6f55",
+      "PNG_sha256": "5e92ba324a664964f1039c8dd5672637b5107e39f5e28fae6f86a15f6096c7d1"
+    },
+    "10130": {
+      "index": 4641,
+      "map_number": 10130,
+      "bitmapno": 4641,
+      "offset": 9051781,
+      "size": 1445,
+      "xoff": -20,
+      "yoff": -36,
+      "width": 44,
+      "height": 50,
+      "source_record_sha256": "c113e1172e3afe0ccc7c6c0185b6a8410b6b692fc8248ad2817acd4714cd4e2a",
+      "RD_sha256": "f16128162341fffd2c0cb588e55c1c0e0a11579803ea326382ba80bf98c4f487",
+      "index_pixels_sha256": "25dff3564ad5fbdd7dfa8fcaaa17766d623b475bc7da01d4561b61eaa047ba3f",
+      "RGBA_candidate_sha256": "e43d4bae6a9b4fdb609b1d7f6348f9921461bad13a5084b2ca71a79f5dc1772e",
+      "PNG_sha256": "55fe1c7348208c680b0e3c55f816d8e8c880d38ae713292b21f019b3c6251193"
+    },
+    "10139": {
+      "index": 4650,
+      "map_number": 10139,
+      "bitmapno": 4650,
+      "offset": 9171029,
+      "size": 107656,
+      "xoff": -186,
+      "yoff": -500,
+      "width": 392,
+      "height": 506,
+      "source_record_sha256": "a7c2d82f3623db02eb816d60b9fe61823d36689e7481d273180fcf3e02c14d2f",
+      "RD_sha256": "07998a31436dfa245d2b5c6340cdd9dc3d4200697c807c8ad2554c63e31161da",
+      "index_pixels_sha256": "ef12eeb2a1c046606698bc3cc92824077a8ff91c2120272aa7e2d588561fa9c0",
+      "RGBA_candidate_sha256": "7b095ce9ad3f5997124db52d6c102a7f3a41cb044d96776c67dbb11e2668bacf",
+      "PNG_sha256": "0c0ac008bfd9ca8959274a867bc5a066e081a295f5bf30812aa6bcdce16a0c56"
+    },
+    "10204": {
+      "index": 4594,
+      "map_number": 10204,
+      "bitmapno": 4594,
+      "offset": 7333948,
+      "size": 3208,
+      "xoff": -25,
+      "yoff": -111,
+      "width": 48,
+      "height": 126,
+      "source_record_sha256": "8290c190a3bcd2fe740ee26b16f75f14fa0d58e75c11dc2b77d99e0f7ac0abdc",
+      "RD_sha256": "f7916f5a93ec9ea4ca58df6a1ae0d447dbe4e4897b22e83f6586b26cfb5dcd51",
+      "index_pixels_sha256": "5dbf49740b1eb1024272cc58490792f37f6ab769b838dd957bc0f76eaa30a8b6",
+      "RGBA_candidate_sha256": "3bddd4d2bd0b379df43b05df4a84e66060be0c095bda2dcd7015b0ba9274eb7f",
+      "PNG_sha256": "fdeae503c939d7bf6e75292beb83859b83e87c71448920ad7acc0126ad292597"
+    },
+    "10214": {
+      "index": 4604,
+      "map_number": 10214,
+      "bitmapno": 4604,
+      "offset": 7613326,
+      "size": 7656,
+      "xoff": -69,
+      "yoff": -113,
+      "width": 100,
+      "height": 133,
+      "source_record_sha256": "522f939cd22206e872195adecda5fbda445d9834321826a6890c298d8c6862fa",
+      "RD_sha256": "045aa2d94392a0e1fa36c5a2fe0f5b7b89a3c8905e0d34814064303433e90e37",
+      "index_pixels_sha256": "737be8717e517f46d274a4a920c579ff741a2dee78e86f4465b41bce63496931",
+      "RGBA_candidate_sha256": "b70a11152604583541a214411d341efaf357e9cd1f2877bb09a625aa903aaf57",
+      "PNG_sha256": "d4eed448d0babab93b67e7d51a46e5bc0a8fa15235003568680df7b302901033"
+    },
+    "12613": {
+      "index": 5248,
+      "map_number": 12613,
+      "bitmapno": 5248,
+      "offset": 19932311,
+      "size": 12446,
+      "xoff": -45,
+      "yoff": -177,
+      "width": 120,
+      "height": 185,
+      "source_record_sha256": "dbfd2d5a869f99f7efc99cf988467b2c48fa88c0757a238c808f2d8b77e3dea7",
+      "RD_sha256": "cd6d9e18c7ac3ade96d252282da29d97e7beed6583f7798abdb5d23f64fa77ae",
+      "index_pixels_sha256": "c3889aff1e5e684457adfba7aeae011f8e656ea827333999d07e780d45f82d3d",
+      "RGBA_candidate_sha256": "d2748415a600d2324c018917ddeb09a78840ceef28eb7e7e2e921878421041cf",
+      "PNG_sha256": "f3d764e17f158800d9841f67404bebadc46765a9743230319e7079a1ea2c2be6"
+    },
+    "12656": {
+      "index": 5012,
+      "map_number": 12656,
+      "bitmapno": 5012,
+      "offset": 17282076,
+      "size": 10115,
+      "xoff": -35,
+      "yoff": -179,
+      "width": 72,
+      "height": 205,
+      "source_record_sha256": "c8a3c4a9ab859c97a13d43a236e2cdb0f586972a55210b16c050a2ceb195f026",
+      "RD_sha256": "4ccd1a9d5c3746be469270e903d3f10cfe2758dd17925d93685f35f988d403d7",
+      "index_pixels_sha256": "8f6d1f2365ae4da26e05e46ffc423bd29c1afce2ed96e74abd3c3b75a010fece",
+      "RGBA_candidate_sha256": "8b943b2876bbc857a1fe36dcd519f338f382871cc003e728405fef2f62088540",
+      "PNG_sha256": "dd7ae4e7b4ba94d76efbbd391d19c5b3d9ed13e82b4c892f0d07860b2bcf1a1a"
+    },
+    "12804": {
+      "index": 5107,
+      "map_number": 12804,
+      "bitmapno": 5107,
+      "offset": 18438231,
+      "size": 954,
+      "xoff": -15,
+      "yoff": -19,
+      "width": 36,
+      "height": 33,
+      "source_record_sha256": "f87f5fcd390ccb07d592b7098d662cf023e14418f5d6e48fa7f8d54abf777619",
+      "RD_sha256": "e5fb40af53446a811aed8142c3fceb8825315d43d695667c98e3beb0546bb6d8",
+      "index_pixels_sha256": "2b238778005bf238d847c3f93ce3910222cb3f3ebfa77e68d2b2c894be08e6d9",
+      "RGBA_candidate_sha256": "9e33558455647903920dd5b0e06cef0fe5660682ce3201eb250600f1ac999c62",
+      "PNG_sha256": "daad85f3ad4d178be7d3b5e409f99efaddad3dbb670c28023dcc871af94d580d"
+    },
+    "12815": {
+      "index": 5118,
+      "map_number": 12815,
+      "bitmapno": 5118,
+      "offset": 18474320,
+      "size": 4220,
+      "xoff": -32,
+      "yoff": -50,
+      "width": 68,
+      "height": 76,
+      "source_record_sha256": "1038e62a22019a0d7a8129e29ca5fdff78c2698d3e99eda4de6ff96117962f48",
+      "RD_sha256": "b6bbe4e19331fb4466f4035a910f06b163e7ff38fc2048c264a3a2555d330ee1",
+      "index_pixels_sha256": "cfa9c523c8569af0a2caea481440e4f9574d98392e9812bbfa02ef2e99ae7375",
+      "RGBA_candidate_sha256": "3947bc35301363c3da5ec651e9ff16c79c0808fb49f8061c8b1f366cf0c86649",
+      "PNG_sha256": "35fe26c989e8722c9d0ff0868d316ddcd4735fb155486186aadffd741c0dc552"
+    }
+  },
+  "source_art_files": {
+    "adrn_15.bin": {
+      "bytes": 18765120,
+      "sha256": "92d0137590d35a7a1f4fb11af3ad13bbc585813a4b0e1e3f933c397007fbff74"
+    },
+    "real_15.bin": {
+      "bytes": 763908374,
+      "sha256": "c7640643804d550bc07e33661103fb7b5f557ee01e68a5a5d92382c5305c2b0d"
+    },
+    "Palet_1.sap": {
+      "bytes": 708,
+      "sha256": "32870080c47537a59beaf770b6df7bd79820fd52a23825058460900494f0b4b0"
+    }
+  },
+  "human_reference": {
+    "spr": 100000,
+    "direction": 6,
+    "action": 2,
+    "source_frame": [
+      10445,
+      0,
+      0,
+      0
+    ],
+    "bitmap": {
+      "bitmapno": 10445,
+      "source_adrn_index": 10445,
+      "record_sha256": "4d954007f6ffadb4e45f3960d52982e76cd4778060ab29febbeaa5f5148a1445",
+      "offset": 39003382,
+      "size": 1225,
+      "xoff": -24,
+      "yoff": -47,
+      "width": 36,
+      "height": 59,
+      "RD_sha256": "0d55857ccd56267a4356778e26f592eaf88fe82323ce5b0874322a298bbfc786",
+      "index_pixels_sha256": "60a11cfcc9e3e2ebb8e855679ed63e4c8059ddd7491084270a4b210207e8ff70",
+      "candidate_RGBA_sha256": "94283cb7291468fecb95df3c8cba1c14b6612c70660c96789a98102307237fb7",
+      "PNG_sha256": "8b4acc585c4992a73be41eb3560bf87cfe1b3725a0a255f48ccb78d050c9475d",
+      "RD_flag": 1
+    },
+    "scope": "STATIC_ORIGINAL_SOURCE_IMAGE_MODERN_MANUAL_CURSOR_NOT_NATIVE_PLAYER_IDENTITY"
+  },
+  "scene_order": "MODERN_TILE_THEN_PARTS_SOURCE_SWEEP_NO_NATIVE_R6_R9_PROMOTION",
+  "modern_observation_start": {
+    "floor": 1001,
+    "x": 11,
+    "y": 15
+  },
+  "map_third_plane_interpreted_as_collision": false,
+  "time_field_interpreted_as_warp_schedule": false,
+  "original_client_executed": false,
+  "original_server_executed": false,
+  "original_world_entered": false,
+  "original_warp_runtime_verified": false,
+  "same_deployed_build_authenticated": false,
+  "official_tw10_identity_authenticated": false,
+  "native_occlusion_or_camera_verified": false,
+  "native_player_movement_or_collision_verified": false,
+  "original_assets_in_public_git": false,
+  "overall_completion_percent": null
+}

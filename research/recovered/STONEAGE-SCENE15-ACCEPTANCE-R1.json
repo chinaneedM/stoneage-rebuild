@@ -1,0 +1,554 @@
+{
+  "schema": "stoneage.scene15.actual_source_and_browser_acceptance.r1",
+  "scope": "LOCAL_AUTHENTICATED_STATIC_INPUTS_AND_MODERN_OFFLINE_MAP_SWITCH_NOT_NATIVE_WARP",
+  "source_report_sha256": "04a03d15f4e41be7f368237ce806572a09e152dfd5176a6cf20a49c63737b21a",
+  "carrier": {
+    "bytes": 361255180,
+    "sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+    "complete_SHA_verified": true,
+    "new_public_carrier_download_bytes": 0
+  },
+  "reused_prior_world_contract": {
+    "path": "research/recovered/STONEAGE-25-MATERIALIZABLE-WORLD-WARP-GEOMETRY-R1.txt",
+    "bytes": 270348,
+    "sha256": "def48e141da3db5ba58bfad0b32fcabf320f6e258f73c076fe2423c5d1de57a6",
+    "exact_existing_rows": [
+      "MATERIALIZABLE_WARP|source=1000,63,99|placement=4031|destination=1001,10,15|conditional_time=0",
+      "MATERIALIZABLE_WARP|source=1001,10,15|placement=4032|destination=1000,63,99|conditional_time=0"
+    ],
+    "world_closure_count_not_changed": 826
+  },
+  "unar_primary_all_four_source_dependencies_full_SHA_CRC_verified": true,
+  "libarchive_independent_matches": {
+    "npc/genout/warp_y.create": {
+      "bytes": 24588,
+      "sha256": "859ff2ed23baadb20382508874cd3a63e603b84c7205c6f5d8998229f4f4c8b1",
+      "crc32": 1746362797,
+      "source_implementation_matches_unar": true
+    },
+    "npc/genout/npcgen.template": {
+      "bytes": 4950,
+      "sha256": "0c5a58d5e31cafd3b58ccc1fa88fee7d1f95d12c0b87b04db9f06fea3b2a4df3",
+      "crc32": 1448375672,
+      "source_implementation_matches_unar": true
+    },
+    "client/map/1001.DAT": {
+      "bytes": 5408,
+      "sha256": "62dbef1614ede0ba032ca9c69cbfdc3d43938e45baba78701885790937b86b90",
+      "crc32": 3705883864,
+      "source_implementation_matches_unar": true
+    }
+  },
+  "libarchive_DAT1000_secondary_failure": {
+    "type": "ArchiveError",
+    "reason": "File CRC error",
+    "errno": 84,
+    "retcode": -30,
+    "raw_private_failure_report_sha256": "7a86ea1398d75745a896ca438a618ddc069b35e75c4764a8e60a561f407fe953"
+  },
+  "sevenzip_secondary_DAT1000_failure": {
+    "extractor": "7zip23.01+RAR-plugin",
+    "input": "EXACT_ORIGINAL_ISOLATED_MEMBER_HEADER_AND_PACKED_BYTES",
+    "returncode": -11,
+    "header_sha256": "1db27529dd57c99768a896d5344ab1291bae040f95e9c86dab7da536c2449b95",
+    "compressed_payload_sha256": "b22ca52137c794bfbee448f6b5ca6951e5ae21705d1b616ce07c3dc6efffc027",
+    "full_archive_attempt_failed": true,
+    "libarchive_original_map_crc_failure_preserved": true
+  },
+  "independent_secondary_DAT1000_success": false,
+  "original_DAT1000_corrupt_claimed": false,
+  "primary_DAT1000_matches_previously_preserved_sha256": true,
+  "independent_pixel_replay": {
+    "schema": "stoneage.scene15.independent_private_replay.r1",
+    "source_config_spans_verified": 3,
+    "independent_original_RD_index_RGBA_PNGs": 51,
+    "human_reference_PNG_verified": 1,
+    "all_integer_scale_full_canvas_matches": 11,
+    "canvas_pixels": 691200,
+    "frames": [
+      {
+        "label": "room_start",
+        "canvas_sha256": "7209fa076e800db2abf8464d7a27a9936725e2fe4689f89940b5d8f88a05ba33"
+      },
+      {
+        "label": "neighbor_door_refused",
+        "canvas_sha256": "330e9618711ac1dca96e4f681d6fc3160bbe30cc3c52065fbe22d32eb06d3347"
+      },
+      {
+        "label": "room_door",
+        "canvas_sha256": "693bcb646f465b9152eeaacc385c2bd96d0359fc59bfe73dc713883f79649086"
+      },
+      {
+        "label": "outside_arrival",
+        "canvas_sha256": "60f58197baedaf6d93bb95b5bc9270b17a5b877b8a8b7298e4a9ae1911d0692f"
+      },
+      {
+        "label": "outside_no_parts",
+        "canvas_sha256": "7c286d774c1c748bc58d60115abfc815c9c650e379102de586446ce201306449"
+      },
+      {
+        "label": "outside_no_human",
+        "canvas_sha256": "c23ee0ad4bae6f821ba8fdeb8773d60ef609f0d30c0d32b21d0d38bd456d2646"
+      },
+      {
+        "label": "outside_scale2",
+        "canvas_sha256": "2c464240fd62e505e979b6a3ad101da1bf3fad8ddeebe9f22c59e5f0dc30c612"
+      },
+      {
+        "label": "outside_no_marker",
+        "canvas_sha256": "60f58197baedaf6d93bb95b5bc9270b17a5b877b8a8b7298e4a9ae1911d0692f"
+      },
+      {
+        "label": "returned_room",
+        "canvas_sha256": "693bcb646f465b9152eeaacc385c2bd96d0359fc59bfe73dc713883f79649086"
+      },
+      {
+        "label": "modern_window_boundary",
+        "canvas_sha256": "f4fb16861c54f8d44de39e945aabc0acecec523baaf94876eb8b2a80af1c7808"
+      },
+      {
+        "label": "reset_keeps_log",
+        "canvas_sha256": "7209fa076e800db2abf8464d7a27a9936725e2fe4689f89940b5d8f88a05ba33"
+      }
+    ],
+    "original_world_entered": false
+  },
+  "browser": {
+    "browser": "144.0.7559.96",
+    "errors": [],
+    "external_requests": [],
+    "actual_decoded_images": 52,
+    "neighbor_door_refused": true,
+    "exact_forward_and_return_observed": true,
+    "no_automatic_bounce": true,
+    "modern_boundary_refusal_observed": true,
+    "reset_preserves_journal": true,
+    "frames": [
+      {
+        "label": "room_start",
+        "state": {
+          "floor": 1001,
+          "x": 11,
+          "y": 15,
+          "scale": 1,
+          "dx": 0,
+          "dy": 0,
+          "loaded": 52,
+          "ready": true,
+          "dragging": false,
+          "px": 0,
+          "py": 0,
+          "journal": [],
+          "originalWorldEntered": false
+        },
+        "showHuman": true,
+        "showParts": true,
+        "showMarker": true,
+        "canvas_sha256": "7209fa076e800db2abf8464d7a27a9936725e2fe4689f89940b5d8f88a05ba33"
+      },
+      {
+        "label": "neighbor_door_refused",
+        "state": {
+          "floor": 1001,
+          "x": 10,
+          "y": 16,
+          "scale": 1,
+          "dx": 0,
+          "dy": 0,
+          "loaded": 52,
+          "ready": true,
+          "dragging": false,
+          "px": 0,
+          "py": 0,
+          "journal": [],
+          "originalWorldEntered": false
+        },
+        "showHuman": true,
+        "showParts": true,
+        "showMarker": true,
+        "canvas_sha256": "330e9618711ac1dca96e4f681d6fc3160bbe30cc3c52065fbe22d32eb06d3347"
+      },
+      {
+        "label": "room_door",
+        "state": {
+          "floor": 1001,
+          "x": 10,
+          "y": 15,
+          "scale": 1,
+          "dx": 0,
+          "dy": 0,
+          "loaded": 52,
+          "ready": true,
+          "dragging": false,
+          "px": 0,
+          "py": 0,
+          "journal": [],
+          "originalWorldEntered": false
+        },
+        "showHuman": true,
+        "showParts": true,
+        "showMarker": true,
+        "canvas_sha256": "693bcb646f465b9152eeaacc385c2bd96d0359fc59bfe73dc713883f79649086"
+      },
+      {
+        "label": "outside_arrival",
+        "state": {
+          "floor": 1000,
+          "x": 63,
+          "y": 99,
+          "scale": 1,
+          "dx": 0,
+          "dy": 0,
+          "loaded": 52,
+          "ready": true,
+          "dragging": false,
+          "px": 0,
+          "py": 0,
+          "journal": [
+            {
+              "kind": "MODERN_OBSERVATION_APPLY_ORIGINAL_TARGET_TUPLE",
+              "source": [
+                1001,
+                10,
+                15
+              ],
+              "destination": [
+                1000,
+                63,
+                99
+              ],
+              "source_block_sha256": "d35da32a65e7794acf619c4c959c81dcefc0a433c7d78a0c838b9d0c278c3085",
+              "original_runtime_executed": false
+            }
+          ],
+          "originalWorldEntered": false
+        },
+        "showHuman": true,
+        "showParts": true,
+        "showMarker": true,
+        "canvas_sha256": "60f58197baedaf6d93bb95b5bc9270b17a5b877b8a8b7298e4a9ae1911d0692f"
+      },
+      {
+        "label": "outside_no_parts",
+        "state": {
+          "floor": 1000,
+          "x": 63,
+          "y": 99,
+          "scale": 1,
+          "dx": 0,
+          "dy": 0,
+          "loaded": 52,
+          "ready": true,
+          "dragging": false,
+          "px": 0,
+          "py": 0,
+          "journal": [
+            {
+              "kind": "MODERN_OBSERVATION_APPLY_ORIGINAL_TARGET_TUPLE",
+              "source": [
+                1001,
+                10,
+                15
+              ],
+              "destination": [
+                1000,
+                63,
+                99
+              ],
+              "source_block_sha256": "d35da32a65e7794acf619c4c959c81dcefc0a433c7d78a0c838b9d0c278c3085",
+              "original_runtime_executed": false
+            }
+          ],
+          "originalWorldEntered": false
+        },
+        "showHuman": true,
+        "showParts": false,
+        "showMarker": true,
+        "canvas_sha256": "7c286d774c1c748bc58d60115abfc815c9c650e379102de586446ce201306449"
+      },
+      {
+        "label": "outside_no_human",
+        "state": {
+          "floor": 1000,
+          "x": 63,
+          "y": 99,
+          "scale": 1,
+          "dx": 0,
+          "dy": 0,
+          "loaded": 52,
+          "ready": true,
+          "dragging": false,
+          "px": 0,
+          "py": 0,
+          "journal": [
+            {
+              "kind": "MODERN_OBSERVATION_APPLY_ORIGINAL_TARGET_TUPLE",
+              "source": [
+                1001,
+                10,
+                15
+              ],
+              "destination": [
+                1000,
+                63,
+                99
+              ],
+              "source_block_sha256": "d35da32a65e7794acf619c4c959c81dcefc0a433c7d78a0c838b9d0c278c3085",
+              "original_runtime_executed": false
+            }
+          ],
+          "originalWorldEntered": false
+        },
+        "showHuman": false,
+        "showParts": true,
+        "showMarker": true,
+        "canvas_sha256": "c23ee0ad4bae6f821ba8fdeb8773d60ef609f0d30c0d32b21d0d38bd456d2646"
+      },
+      {
+        "label": "outside_scale2",
+        "state": {
+          "floor": 1000,
+          "x": 63,
+          "y": 99,
+          "scale": 2,
+          "dx": 0,
+          "dy": 0,
+          "loaded": 52,
+          "ready": true,
+          "dragging": false,
+          "px": 0,
+          "py": 0,
+          "journal": [
+            {
+              "kind": "MODERN_OBSERVATION_APPLY_ORIGINAL_TARGET_TUPLE",
+              "source": [
+                1001,
+                10,
+                15
+              ],
+              "destination": [
+                1000,
+                63,
+                99
+              ],
+              "source_block_sha256": "d35da32a65e7794acf619c4c959c81dcefc0a433c7d78a0c838b9d0c278c3085",
+              "original_runtime_executed": false
+            }
+          ],
+          "originalWorldEntered": false
+        },
+        "showHuman": true,
+        "showParts": true,
+        "showMarker": true,
+        "canvas_sha256": "2c464240fd62e505e979b6a3ad101da1bf3fad8ddeebe9f22c59e5f0dc30c612"
+      },
+      {
+        "label": "outside_no_marker",
+        "state": {
+          "floor": 1000,
+          "x": 63,
+          "y": 99,
+          "scale": 1,
+          "dx": 0,
+          "dy": 0,
+          "loaded": 52,
+          "ready": true,
+          "dragging": false,
+          "px": 0,
+          "py": 0,
+          "journal": [
+            {
+              "kind": "MODERN_OBSERVATION_APPLY_ORIGINAL_TARGET_TUPLE",
+              "source": [
+                1001,
+                10,
+                15
+              ],
+              "destination": [
+                1000,
+                63,
+                99
+              ],
+              "source_block_sha256": "d35da32a65e7794acf619c4c959c81dcefc0a433c7d78a0c838b9d0c278c3085",
+              "original_runtime_executed": false
+            }
+          ],
+          "originalWorldEntered": false
+        },
+        "showHuman": true,
+        "showParts": true,
+        "showMarker": false,
+        "canvas_sha256": "60f58197baedaf6d93bb95b5bc9270b17a5b877b8a8b7298e4a9ae1911d0692f"
+      },
+      {
+        "label": "returned_room",
+        "state": {
+          "floor": 1001,
+          "x": 10,
+          "y": 15,
+          "scale": 1,
+          "dx": 0,
+          "dy": 0,
+          "loaded": 52,
+          "ready": true,
+          "dragging": false,
+          "px": 0,
+          "py": 0,
+          "journal": [
+            {
+              "kind": "MODERN_OBSERVATION_APPLY_ORIGINAL_TARGET_TUPLE",
+              "source": [
+                1001,
+                10,
+                15
+              ],
+              "destination": [
+                1000,
+                63,
+                99
+              ],
+              "source_block_sha256": "d35da32a65e7794acf619c4c959c81dcefc0a433c7d78a0c838b9d0c278c3085",
+              "original_runtime_executed": false
+            },
+            {
+              "kind": "MODERN_OBSERVATION_APPLY_ORIGINAL_TARGET_TUPLE",
+              "source": [
+                1000,
+                63,
+                99
+              ],
+              "destination": [
+                1001,
+                10,
+                15
+              ],
+              "source_block_sha256": "d0b4f955cc6afe909579a3bdb555f549a5fc00e23f5e3555d6041f2dd2028f79",
+              "original_runtime_executed": false
+            }
+          ],
+          "originalWorldEntered": false
+        },
+        "showHuman": true,
+        "showParts": true,
+        "showMarker": true,
+        "canvas_sha256": "693bcb646f465b9152eeaacc385c2bd96d0359fc59bfe73dc713883f79649086"
+      },
+      {
+        "label": "modern_window_boundary",
+        "state": {
+          "floor": 1001,
+          "x": 7,
+          "y": 15,
+          "scale": 1,
+          "dx": 0,
+          "dy": 0,
+          "loaded": 52,
+          "ready": true,
+          "dragging": false,
+          "px": 0,
+          "py": 0,
+          "journal": [
+            {
+              "kind": "MODERN_OBSERVATION_APPLY_ORIGINAL_TARGET_TUPLE",
+              "source": [
+                1001,
+                10,
+                15
+              ],
+              "destination": [
+                1000,
+                63,
+                99
+              ],
+              "source_block_sha256": "d35da32a65e7794acf619c4c959c81dcefc0a433c7d78a0c838b9d0c278c3085",
+              "original_runtime_executed": false
+            },
+            {
+              "kind": "MODERN_OBSERVATION_APPLY_ORIGINAL_TARGET_TUPLE",
+              "source": [
+                1000,
+                63,
+                99
+              ],
+              "destination": [
+                1001,
+                10,
+                15
+              ],
+              "source_block_sha256": "d0b4f955cc6afe909579a3bdb555f549a5fc00e23f5e3555d6041f2dd2028f79",
+              "original_runtime_executed": false
+            }
+          ],
+          "originalWorldEntered": false
+        },
+        "showHuman": true,
+        "showParts": true,
+        "showMarker": true,
+        "canvas_sha256": "f4fb16861c54f8d44de39e945aabc0acecec523baaf94876eb8b2a80af1c7808"
+      },
+      {
+        "label": "reset_keeps_log",
+        "state": {
+          "floor": 1001,
+          "x": 11,
+          "y": 15,
+          "scale": 1,
+          "dx": 0,
+          "dy": 0,
+          "loaded": 52,
+          "ready": true,
+          "dragging": false,
+          "px": 0,
+          "py": 0,
+          "journal": [
+            {
+              "kind": "MODERN_OBSERVATION_APPLY_ORIGINAL_TARGET_TUPLE",
+              "source": [
+                1001,
+                10,
+                15
+              ],
+              "destination": [
+                1000,
+                63,
+                99
+              ],
+              "source_block_sha256": "d35da32a65e7794acf619c4c959c81dcefc0a433c7d78a0c838b9d0c278c3085",
+              "original_runtime_executed": false
+            },
+            {
+              "kind": "MODERN_OBSERVATION_APPLY_ORIGINAL_TARGET_TUPLE",
+              "source": [
+                1000,
+                63,
+                99
+              ],
+              "destination": [
+                1001,
+                10,
+                15
+              ],
+              "source_block_sha256": "d0b4f955cc6afe909579a3bdb555f549a5fc00e23f5e3555d6041f2dd2028f79",
+              "original_runtime_executed": false
+            }
+          ],
+          "originalWorldEntered": false
+        },
+        "showHuman": true,
+        "showParts": true,
+        "showMarker": true,
+        "canvas_sha256": "7209fa076e800db2abf8464d7a27a9936725e2fe4689f89940b5d8f88a05ba33"
+      }
+    ]
+  },
+  "private_html": {
+    "bytes": 495680,
+    "sha256": "014a57814503452c2dd7ec38e2128097cae14ea8880d86aeca0e2e6c58504694"
+  },
+  "private_original_source_run_id": null,
+  "public_CI_reads_private_original_files": false,
+  "same_deployed_build_authenticated": false,
+  "original_world_entered": false,
+  "original_warp_runtime_verified": false,
+  "overall_completion_percent": null
+}
