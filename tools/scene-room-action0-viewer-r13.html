@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src data:; style-src 'unsafe-inline'; script-src 'unsafe-inline'; connect-src 'none'">
+<title>石器时代｜同源地图与宠物动作码0观察 R13</title>
+<style>
+:root{color-scheme:dark}*{box-sizing:border-box}body{margin:0;background:#141b20;color:#e5edf2;font:14px/1.6 system-ui,"Microsoft YaHei",sans-serif}main{max-width:1320px;margin:auto;padding:18px}h1{font-size:23px;margin:0 0 8px}h2{font-size:16px;margin:0 0 10px}.notice{background:#302e27;border:1px solid #78643e;padding:12px;border-radius:8px}.layout{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:16px}section{border:1px solid #3e515b;background:#1c282f;border-radius:9px;padding:12px}canvas{width:100%;height:auto;image-rendering:pixelated;background:#11232a;border:1px solid #60717a;touch-action:none}.controls{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:10px 0}button,select{font:inherit;background:#344854;color:inherit;border:1px solid #718994;border-radius:5px;padding:5px 10px}button{cursor:pointer}label{display:inline-flex;align-items:center;gap:5px}pre{font:12px/1.6 ui-monospace,monospace;white-space:pre-wrap;overflow-wrap:anywhere}.fine{color:#b5c7ce;font-size:12px}button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid #e8b35f}@media(max-width:960px){.layout{grid-template-columns:1fr}}
+</style></head><body><main>
+<h1>石器时代 · 同源地图与宠物动作码0观察 R13</h1>
+<p class="notice">地图1001、人物SPR100000与宠物候选SPR100250／100251／100252来自同一社区保存包。下拉框名称保留保存模板原文；同包数值相等尚不能证明原服同一部署或官方初代物种身份。<strong>这是现代离线素材观察，不是原版游戏运行。</strong>位置、跟随、播放节拍及人物盖在构件上方均为观察操作；原服角色身份、碰撞、遮挡和动作含义待证。</p>
+<div class="layout"><section>
+<canvas id="world" width="960" height="720" aria-label="同保存源地图与动画观察"></canvas>
+<div class="controls"><button id="zoomIn">放大 ＋</button><button id="zoomOut">缩小 −</button><button id="reset">复位</button><label><input id="tiles" type="checkbox" checked>地面</label><label><input id="parts" type="checkbox" checked>构件</label><label><input id="actors" type="checkbox" checked>动画叠加</label><label><input id="showHuman" type="checkbox" checked>人物动作码2参照</label></div>
+<div class="controls"><button id="moveUp">观察位移 ↑</button><button id="moveLeft">←</button><button id="moveDown">↓</button><button id="moveRight">→</button></div>
+<p class="fine">拖动、滚轮或方向键调整镜头；WASD或按钮移动人工观察锚点。没有历史服务器、地图碰撞或真实人物移动。</p>
+</section><section>
+<h2>保存模板与原数值动画</h2><label>保存模板原文名 <select id="pet"></select></label><p id="identity" class="fine"></p>
+<div class="controls"><label>方向码 <select id="direction"></select></label><label>动作码 <select id="action"><option value="0">0</option></select></label></div>
+<div class="controls"><button id="pause">暂停</button><button id="step">单步</button></div>
+<label>观察节拍 <select id="rate"><option value="180">180毫秒/帧</option><option value="100">100毫秒/帧</option><option value="300">300毫秒/帧</option></select></label>
+<p class="fine">展示本轮实读的宠物动作码0；人物独立保持动作码2作为对照；原组没有动作码6，不套用人物动作、不回退首项。原duration字与重复帧原样保留，未当作毫秒或FPS；声音字段不播放、不绑定事件。</p>
+<h2>来源与当前状态</h2><pre id="status" role="status"></pre>
+</section></div></main>
+<script id="evidence" type="application/json">"PRIVATE_PACK_PLACEHOLDER"</script>
+<script>
+(()=>{'use strict';
+const pack=JSON.parse(document.getElementById('evidence').textContent);
+if(!pack.room||!pack.actors||!pack.actor_images){document.getElementById('status').textContent='这是不含原素材的公开模板；请使用私有导出器生成观察页。';return;}
+const by=id=>document.getElementById(id),c=by('world'),cx=c.getContext('2d'),room=pack.room;
+const state={scale:3,dx:0,dy:0,x:15,y:15,direction:0,action:0,petNo:100250,frame:0,playing:true,rate:180,loaded:0,ready:false,drag:false,px:0,py:0};
+const maps={},sprites={},errors=[];let last=0;
+for(let i=0;i<8;i++){const o=document.createElement('option');o.value=i;o.textContent=i;by('direction').appendChild(o)}
+function sequence(group){return group.animations.find(a=>a.direction===state.direction&&a.action===(group.spr_no===100000?2:state.action))}
+function petGroup(){return pack.actors.groups.find(g=>g.spr_no===state.petNo)}
+function visibleGroups(){return [...(by('showHuman').checked?[pack.actors.groups[0]]:[]),petGroup()]}
+for(const g of pack.actors.groups.slice(1)){const o=document.createElement('option');o.value=g.spr_no;o.textContent=g.preserved_template_name+' · '+g.spr_no;by('pet').appendChild(o)}
+function status(){const g=petGroup(),a=sequence(g),f=a.frames[state.frame%a.frames.length];by('identity').textContent='「'+g.preserved_template_name+'」是保存模板原文名，仅按同包图形键关联；原服部署及官方物种身份未认证。';by('status').textContent=JSON.stringify({来源:pack.actors.source_scope,地图号:room.floor,原图加载:state.loaded,人物参照:by('showHuman').checked,保存模板原文名:g.preserved_template_name,原图形键:g.spr_no,原模板出现:g.template_links.map(r=>({原行:r.server_original_line,模板号:r.server_template_column_7,原flag:r.server_flag_column_38})),方向码:state.direction,动作码:state.action,本组原动作码:g.available_source_action_codes,缺少动作码6不回退:true,人工锚点:[state.x,state.y],帧位置:state.frame%a.frames.length,本段原帧数:a.frames.length,原bitmap:f[0],原duration字:a.duration_word,原声word:f[3],观察毫秒每帧:state.rate,暂停:!state.playing,镜头倍率:state.scale,人物宠物遮挡:'人工最后叠加；原游戏遮挡未验证',颜色:'同载体Palet_1静态初始化候选',已进入原版世界:false,原服同部署证明:false,官方初代物种身份认证:false,加载错误:errors},null,2)}
+function draw(){cx.setTransform(1,0,0,1,0,0);cx.clearRect(0,0,c.width,c.height);cx.fillStyle='#11232a';cx.fillRect(0,0,c.width,c.height);cx.imageSmoothingEnabled=false;cx.save();cx.translate(c.width/2+state.dx,c.height/2+state.dy);cx.scale(state.scale,state.scale);cx.translate(-90,20);
+for(const no of room.R6_native_sorted_queue_numbers){const p=room.placements[no];if((p.layer==='tile'&&!by('tiles').checked)||(p.layer==='parts'&&!by('parts').checked))continue;const im=maps[p.map_id];if(im)cx.drawImage(im,p.draw_x,p.draw_y)}
+if(by('actors').checked){const ax=(state.x+state.y-26)*32,ay=(state.y-state.x)*24;cx.fillStyle='#e0b66e';cx.fillRect(ax-4,ay,9,1);cx.fillRect(ax,ay-4,1,9);visibleGroups().forEach(g=>{const i=g.spr_no===100000?0:1,a=sequence(g),f=a.frames[state.frame%a.frames.length],r=pack.actors.bitmaps.find(b=>b.bitmapno===f[0]),im=sprites[f[0]];if(im)cx.drawImage(im,ax+i*32+f[1]+r.xoff,ay+i*24+f[2]+r.yoff)})}
+cx.restore();status()}
+function move(dx,dy){state.x=Math.max(13,Math.min(17,state.x+dx));state.y=Math.max(13,Math.min(17,state.y+dy));draw()}
+function reset(){Object.assign(state,{scale:3,dx:0,dy:0,x:15,y:15,frame:0});last=0;draw()}
+function step(){state.frame++;draw()}
+function zoom(k){state.scale=Math.max(1,Math.min(8,state.scale*k));draw()}
+by('zoomIn').onclick=()=>zoom(1.25);by('zoomOut').onclick=()=>zoom(.8);by('reset').onclick=reset;
+by('pause').onclick=()=>{state.playing=!state.playing;by('pause').textContent=state.playing?'暂停':'播放';last=0;draw()};
+by('step').onclick=()=>{state.playing=false;by('pause').textContent='播放';step()};
+by('direction').onchange=()=>{state.direction=Number(by('direction').value);state.frame=0;last=0;draw()};
+by('action').onchange=()=>{state.action=Number(by('action').value);state.frame=0;last=0;draw()};
+by('rate').onchange=()=>{state.rate=Number(by('rate').value);last=0;draw()};
+for(const id of ['tiles','parts','actors','showHuman'])by(id).onchange=draw;
+by('pet').onchange=()=>{state.petNo=Number(by('pet').value);state.frame=0;last=0;draw()};
+by('moveUp').onclick=()=>move(0,-1);by('moveDown').onclick=()=>move(0,1);by('moveLeft').onclick=()=>move(-1,0);by('moveRight').onclick=()=>move(1,0);
+addEventListener('keydown',e=>{if(['INPUT','SELECT','BUTTON','TEXTAREA'].includes(e.target.tagName))return;const key=e.key.toLowerCase(),m={w:[0,-1],s:[0,1],a:[-1,0],d:[1,0]},v={ArrowLeft:[25,0],ArrowRight:[-25,0],ArrowUp:[0,25],ArrowDown:[0,-25]};if(m[key]){move(...m[key]);e.preventDefault()}else if(v[e.key]){state.dx+=v[e.key][0];state.dy+=v[e.key][1];draw();e.preventDefault()}});
+c.addEventListener('pointerdown',e=>{c.setPointerCapture(e.pointerId);state.drag=true;state.px=e.clientX;state.py=e.clientY});
+c.addEventListener('pointermove',e=>{if(!state.drag)return;const b=c.getBoundingClientRect();state.dx+=(e.clientX-state.px)*c.width/b.width;state.dy+=(e.clientY-state.py)*c.height/b.height;state.px=e.clientX;state.py=e.clientY;draw()});
+for(const n of ['pointerup','pointercancel'])c.addEventListener(n,()=>state.drag=false);
+c.addEventListener('wheel',e=>{e.preventDefault();zoom(e.deltaY<0?1.15:1/1.15)},{passive:false});
+function load(images,target){return Promise.all(Object.entries(images).map(([id,b64])=>new Promise((resolve,reject)=>{const im=new Image();im.onload=()=>{target[id]=im;state.loaded++;resolve()};im.onerror=()=>{errors.push('图像解码失败 '+id);reject(Error('PNG decode '+id))};im.src='data:image/png;base64,'+b64})))}
+window.__stoneageR13={getState:()=>({...state,petFrameIndex:state.frame%sequence(petGroup()).frames.length,petBitmap:sequence(petGroup()).frames[state.frame%sequence(petGroup()).frames.length][0],originalWorldEntered:false}),getPack:()=>pack,draw};
+function tick(t){if(state.ready&&state.playing&&(!last||t-last>=state.rate)){step();last=t}requestAnimationFrame(tick)}
+Promise.all([load(room.sprites,maps),load(pack.actor_images,sprites)]).then(()=>{state.ready=true;draw();requestAnimationFrame(tick)}).catch(e=>{errors.push(e.message);status()});draw();
+})();
+</script></body></html>

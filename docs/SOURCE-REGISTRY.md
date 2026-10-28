@@ -8822,3 +8822,8 @@ All11 original-derived inputs pinned in logical-alias-catalog-r1/REPORT-R1.json.
 规格docs/specs/STONEAGE-CROSSVERSION-AUDIO-CONTENT-R1.md，永久派生STONEAGE-SOUND3-ORIGINAL-CONTENT-R1.json21230B/SHAed5d9387a6f8e70da5ad269fc9fa46f8ad5d0b6e0aaf25e3b6d969fe2e1934d0/blob4339a0229176c88628a17af64da816c927cc1ce0及CUSTODY-R1.json，综合STONEAGE-CROSSVERSION-AUDIO-CONTENT-R1.json钉7源。实际有界CAB8MiB逻辑前缀来自Stoneage-5，原扇区HTTP206范围65856–9699647/733057248，原载体/安装器未经纯净官方发行鉴真；原全文SHA1没有复算。新实际soundaddr_3表27行连续至898978B，2.7MB原sound_3为三份相同898978B，段SHA与mixed25较小同名文件全SHA相同，非81新声音。26不同WAV块、81原物理位置全保留，表仅直接指首段；原名/采样率、实际PCM摘要/格式保留，不按相同后缀判配、修采样率或命名游戏事件。
 
 本地libarchive3.7.2＋标准库wave81逐位置独立验；原源Action40188767159/job121155060294/HEADef49fef9540b8a332df55be94bbabd69065bc168另用cabextract真正有界重取，成员SHA与完整派生cmp相同。永久Git只存派生，无原声音/原表正文/程序、无ZIP工件、未播放执行；主线仅离线重放以免重复取源。旧TW1 114/116/11以及sound_1整SHA原事实不算新，新增114分段跨样本字节位置关系和实际sound3表/三重重复/三载体联接。后期实际声音选择、具名场景/宠物/战斗、同一部署build仍OPEN。NEXT同版人物创建外观键材料16；DD-028/Stage A/B/wiki/R79/私人保管边界不变。
+
+
+### 2026-10-29 — SCENE13 私人原载体动作0的有限像素源
+
+来源仍是已保管混合2.5 RAR361255180B/SHA256 d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5；无新官方build认证或公网载体获取。五原成员全SHA与原R40完整SPR段一致。新208RD及PNG像素、352浏览器状态的数字/摘要见research/recovered/STONEAGE-SCENE13-PET-ACTION0-R1.json与STONEAGE-SCENE13-PIXEL-ACCEPTANCE-R1.json。私人原图/观察HTML不公开，公开CI仅元数据守卫；source_ci_run_id=null明确为本地来源认证/第二解码器执行，不能冒作GitHub实源run。完整界限与保管见docs/continuity/STONEAGE-SCENE13-PET-ACTION0-20261029.md。

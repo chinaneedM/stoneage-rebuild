@@ -18632,3 +18632,12 @@ fresh远端main9854762ef8163dd86f67982379414e9d339f8dcb/tree4482253ef2563da0ffdc
 ## 音频15实际内容主线终验
 
 内容main3049018051f858e7bc218d9ccde71882ba3ee7c4/tree70a30042e3e65463e203b755e583852506226db1，候选11项、主线12项Actions实际全部completed/success。原件源40188767159/job121155060294独立有界复取/cabextract与本地libarchive结果同字节；内容候选离线40189279082/job121156600160及主线40189337392均通过22项集成测试、7源全表精确重放。主线未重取原载荷。本地64相关检查、标准库wave81物理位置、独立SQL417跨样本引用/139不同块全部成立；13683682B逻辑引用/4585006B不同块只是无损分析预算，原件删除0B。15上传路径逐blob、远端tree、报告/源收据全文回读同本地，五份历史完整前缀保留。源/主线实际作业和所有派生SHA/blob见STONEAGE-CROSSVERSION-AUDIO-CONTENT-PUBLICATION-R1.json，无原声音或ZIP工件。该后验提交自身Actions另据实际观察；最高NEXT人物创建同版body表/SPR关联16和全部边界不变。
+
+
+## 2026-10-29 — SCENE13 动作码0实物恢复及跨会话续接
+
+从fresh远端main312db980465ad1e90fcdb1cec59058058ec1e54c/tree1e1f1153484806d49fa929d439824939321dd544读取完整树/660分支/最新提交/Actions与七启动文件，原CURRENT2680510B全文作为本版本原样前缀。此前README的SCENE01–12日期覆层均作为加法历史保留，最新SCENE12最高NEXT由本轮承接；不能重新从本文件旧10-25 NEXT启动。完整材料见docs/continuity/STONEAGE-SCENE13-PET-ACTION0-20261029.md。
+
+同已保存混合2.5原RAR完整SHA及五成员完整SHA认证后，原图形100250/251/252的动作码0新增实际208原PNG、24段/八方向、352帧出现；144重复位置保留。原duration1000/1000/1400不当毫秒/FPS，208图号与旧动作2完全不重叠。独立RD/索引/SAP/RGBA/PNG208/208同；Chromium144加载266图，全352幅960×720画布与独立Pillow一致，0错误/0外部请求。第一次独立合成漏现代锚点十字而111状态不同，补齐后全同，历史不改写。源像素在本地验证，公开CI不读私人原图。原件/HTML仅私人交付，公开派生元数据固定SHA；新动作绝不套R9旧插序见证，全部演员叠加明确现代人工顺序。没有认证原服部署、官方物种、动作名、原palette/遮挡或进入原世界。
+
+最高NEXT WORLD-INTERACTION-SAME-CARRIER-14：有限核同载体一条原NPC脚本/出生位置与地图的实物链接，先排除NPC09/10和R44/R46旧覆盖；缺同版输入则精确止点回22域，不穷举所有动作或扩EXE/驱动。DD-028、Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、总体percent=null保持。candidate/main实际后验随日期覆层/收据追加。
