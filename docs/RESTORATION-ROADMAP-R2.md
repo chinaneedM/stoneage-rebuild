@@ -2679,3 +2679,12 @@ fresh远端main9854762ef8163dd86f67982379414e9d339f8dcb/tree4482253ef2563da0ffdc
 ## 2026-10-29 — SCENE13实物后材料轮换
 
 最新SCENE12日期覆层的动作/NPC材料NEXT由SCENE13实质承接：208新动作0原图、352帧位置/144重复位置与完整浏览器独立像素验收，详见日期续接。最高NEXT WORLD-INTERACTION-SAME-CARRIER-14：只取同保存载体一条NPC脚本/位置到地图的实际输入链接，先排除NPC09/10与R44/R46旧覆盖；无同版输入则精确缺口止点回22域，不连续穷举SPR动作/EXE/驱动助手。官方物种、原服同部署、动作名/速度/原生遮挡及完整原世界仍不认证。全部旧路线、CURRENT前缀、Stage A/B/wiki/R79和percent=null保留。
+
+
+## 2026-10-29 — SCENE14 地图1001武器店原配置与候选原图
+
+从fresh main78089321974a0e1bf7eccbfe09e664fcef215be0/tree8df3ea842dfec8b1954e7c9531c0d94280e49301按协议核远端树/分支/提交/Actions和完整启动文档，承接SCENE13最高NPC交互材料14。旧CURRENT2682226B及各历史全文作为原样前缀保留。详见docs/continuity/STONEAGE-SCENE14-ROOM-SHOP-20261029.md。
+
+同已保存RAR五依赖原件分别由unar/libarchive独立解出并逐完整SHA/CRC/字节一致，原创建目标块明确地图1001的(17,13)、“薩姆吉爾的武器店”、图形16017，引用npcgen_shop→ItemShop→原参数17商品ID；ID0为有效小斧頭，不作空值丢弃。前三原顺序物品ID0/4/10名、cost65/105/260与level0/0/10只作原字段，不当成交/准入规则。旧R18匿名来源与R44另一库存不重复算新发现。原map1001同SHA；图形键16017恰一同载体候选36×79原图，独立RD/索引/RGBA/PNG同。私人页实际加载11图，按钮/点图可查原配置；四个2倍画布状态全RGBA与独立Pillow同。2.5倍边缘取整不等明确未认证，未改源图/冒称全过。公开CI不读原像素，原代码和对白不公开，仍未进入原世界/执行交易/认证同部署。25新反例及70相关本地测试通过；远端CI后验另记。
+
+最高NEXT ROOM1001-EXIT-SOURCE-15：先复用既有Warp世界合同，只在有实际原输入或可见交互增量时有限核一出口→目标地图；不重复826图闭合或只重跑匿名两Warp。无新材料则精确止点回22域。DD-028/Stage A7PARTIAL+2OPEN/B与wiki GATED/R79暂停/percent=null保持。
