@@ -1,0 +1,31 @@
+name: Source SCENE17 original mixed25 town1000 NPC creation and template
+on:
+  push:
+    branches: [agent/scene17-original-town-npc-source-20261029]
+    paths:
+      - tools/stoneage_scene17_original_npc_source.py
+      - tests/test_stoneage_scene17_original_npc_source.py
+      - .github/workflows/source-stoneage-scene17-npc.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  two-original-members:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install rarfile==4.2 libarchive-c==5.3
+      - run: sudo apt-get update -qq && sudo apt-get install -y unar libarchive-tools
+      - run: python -m unittest -v tests.test_stoneage_scene17_original_npc_source tests.test_stoneage_scene16_nearby_npc
+      - run: python -m tools.stoneage_scene17_original_npc_source --report /tmp/scene17-source-report.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: scene17-derived-original-source-only
+          path: /tmp/scene17-source-report.json
+          if-no-files-found: warn
+          retention-days: 7

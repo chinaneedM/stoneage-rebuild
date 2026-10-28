@@ -1,0 +1,26 @@
+name: Verify SCENE17 actual archived NPC source and evidence boundaries
+on:
+  push:
+    branches: [main, agent/scene17-original-town-npc-source-20261029]
+    paths:
+      - tools/stoneage_scene17_derived_acceptance.py
+      - tests/test_stoneage_scene17_derived_acceptance.py
+      - research/recovered/STONEAGE-SCENE17-ORIGINAL-NPC-SOURCE-R1.json
+      - .github/workflows/verify-stoneage-scene17-source.yml
+  pull_request:
+    paths:
+      - tools/stoneage_scene17_derived_acceptance.py
+      - tests/test_stoneage_scene17_derived_acceptance.py
+      - research/recovered/STONEAGE-SCENE17-ORIGINAL-NPC-SOURCE-R1.json
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  complete-source-replay:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: python -m tools.stoneage_scene17_derived_acceptance
+      - run: python -m unittest -v tests.test_stoneage_scene17_derived_acceptance tests.test_stoneage_scene16_nearby_npc tests.test_stoneage_scene17_original_npc_source
