@@ -1,0 +1,67 @@
+{
+  "schema": "stoneage.p3h.independent_visual_review.v1",
+  "recorded_on": "2026-10-28",
+  "source_report": "research/recovered/STONEAGE-P3H-WINDOWS-ACTUAL-R1.json",
+  "assistant_directly_viewed_frame_indices": [
+    0,
+    1
+  ],
+  "third_frame_identical_to_directly_viewed_first": true,
+  "visible_game_picture_verified": false,
+  "original_palette_correct_verified": false,
+  "original_ANSI_GDI_text_qualified": false,
+  "original_GetACP_directly_measured": false,
+  "original_input_event_counters_measured": false,
+  "credentials_entered": false,
+  "authenticated_login": false,
+  "original_world_entered": false,
+  "view_description": "Both distinct owned-client screen captures show a black 640x480 background with only the lower-right 半形 indicator and an occasional small caret. No game logo, background artwork or readable START/QUIT menu was visually established.",
+  "exit_observation": "After the original process remained alive across three observations, foreground SendInput at the previously documented client coordinate (350,380) was followed by natural exit 0 and no owned visible windows, before any job cleanup. This is an exit-coordinate response, not visual verification of a QUIT label or direct original handler counters.",
+  "capture_limit": "Pillow/GDI screen observations do not determine whether the original DirectDraw surfaces rendered elsewhere or never rendered. No parameter-tree expansion, hook, injection, original binary patch or fabricated server response was used.",
+  "status": "ORIGINAL_PROCESS_EXIT_COORDINATE_OBSERVED_VISUAL_DISPLAY_OPEN",
+  "frames": [
+    {
+      "index": 0,
+      "png_sha256": "8d96c6a83c522040008cf9697641fd3cda76cad2283ab43aaf3fa2e9c4fbec45",
+      "rgb_sha256": "a469dd64a8f325e33e3bfcd51de9e922dd1609ea7999a1f7cc8a67ac09ee967d",
+      "black_pixels": 307103,
+      "nonblack_pixels": 97,
+      "nonblack_bbox": [
+        593,
+        460,
+        620,
+        473
+      ],
+      "colors": 2
+    },
+    {
+      "index": 1,
+      "png_sha256": "e2b64be9da9ab219e2cc039fd33a01b54f13cc86c961cebc5bb8bbf9adf05001",
+      "rgb_sha256": "fce46019884e3ef78d595f072e1f20c7e6d71ddbbf19c78f802d0e7caa114f0a",
+      "black_pixels": 307096,
+      "nonblack_pixels": 104,
+      "nonblack_bbox": [
+        320,
+        196,
+        620,
+        473
+      ],
+      "colors": 2
+    },
+    {
+      "index": 2,
+      "png_sha256": "8d96c6a83c522040008cf9697641fd3cda76cad2283ab43aaf3fa2e9c4fbec45",
+      "rgb_sha256": "a469dd64a8f325e33e3bfcd51de9e922dd1609ea7999a1f7cc8a67ac09ee967d",
+      "black_pixels": 307103,
+      "nonblack_pixels": 97,
+      "nonblack_bbox": [
+        593,
+        460,
+        620,
+        473
+      ],
+      "colors": 2
+    }
+  ],
+  "source_report_sha256": "d4417e3b4f415ff18fc816bcd556311da4ca44885e62ab03746c027c6c5615ea"
+}

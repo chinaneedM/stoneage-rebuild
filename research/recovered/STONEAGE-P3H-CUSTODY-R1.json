@@ -1,0 +1,122 @@
+{
+  "schema": "stoneage.p3h.original_windows_custody.r1",
+  "recorded_on": "2026-10-28",
+  "startup_main": "29f9ad13130f311a1080ef537d7638cd5e7a2315",
+  "startup_tree": "aeffec524dfcc6c1e7f3f8e24614e6311f9bda6f",
+  "preserved_current_blob": "031c76a5a8e431f646853909bb2f2e11e6328cd2",
+  "source": {
+    "run": 40636932361,
+    "job": 122645935038,
+    "head": "d3f426505909ce47d07a21e86083dd73d7cd8bce",
+    "tree": "ed7fbccb1084dc589961d82a80e0eb9e8e7e6a70",
+    "run_status": "completed",
+    "conclusion": "success",
+    "artifact": 12793698659,
+    "zip_bytes": 372671446,
+    "zip_sha256": "2d71b0a5f99f8e4171ce0b84920860fcaa7366864020d32f116272d1bd296eba",
+    "path": "research/recovered/STONEAGE-P3H-WINDOWS-ACTUAL-R1.json",
+    "artifact_members": [
+      "source-report.json",
+      "private-runtime-and-observation.der"
+    ],
+    "artifact_independently_downloaded": true,
+    "zip_api_digest_matched": true,
+    "raw_report_preserved_byte_exact": true,
+    "raw": {
+      "bytes": 44264,
+      "sha256": "d4417e3b4f415ff18fc816bcd556311da4ca44885e62ab03746c027c6c5615ea",
+      "git_blob": "d8cf6c3a71c74696a9769e482e2c78d023865275"
+    }
+  },
+  "failed_runs": [
+    {
+      "run": 40636052597,
+      "job": 122643158994,
+      "head": "906804c4df70537d71f9b7130219b54abe643262",
+      "tree": "3d45864684c83af8497b0566265aebd7c5f47f54",
+      "conclusion": "failure",
+      "error": "private transfer recipient pin",
+      "original_downloaded": false,
+      "original_client_executed": false,
+      "artifact": null,
+      "reason": "Windows checkout expanded PEM LF to CRLF. Stopped before private work/output initialization, preflight, original transfer or execution; no report artifact.",
+      "correction": "Pin canonical PEM bytes after CRLF-to-LF normalization; altered recipient contents still rejected."
+    },
+    {
+      "run": 40636474207,
+      "job": 122644488781,
+      "head": "5683d2d8b018ce72ef0c3380a21e561d289c0521",
+      "tree": "6a62f4605f56a8ec86582b93841e251c87e6fecc",
+      "conclusion": "failure",
+      "error": "original inventory changed",
+      "original_downloaded": true,
+      "original_client_executed": false,
+      "path": "research/recovered/STONEAGE-P3H-INVENTORY-FAILURE-ACTUAL-R1.json",
+      "artifact": 12793722929,
+      "zip_bytes": 26057,
+      "zip_sha256": "790893949edd361ffcd1ccbc180fa613319c3b1795f9d3316f3f9cd4be686002",
+      "reason": "Full carrier and unchanged sidecar preflight qualified. Exact inventory Git-blob guard rejected checkout line-ending conversion before extraction/execution. Private full runtime retention was not produced.",
+      "correction": "Validate exact full inventory before transfer; recover its exact Git bytes.",
+      "raw": {
+        "bytes": 25907,
+        "sha256": "33d12a02be0f6a6a29b7b8100bffa6662c5855bad4a10baca3739abaa987df95",
+        "git_blob": "212ab2f5bedf2e7d7cdd2575cfbd77b7f656cc9c"
+      }
+    },
+    {
+      "run": 40636750207,
+      "job": 122645368520,
+      "head": "e6f226bcd5a3e5fdc63e0ebf1719e939debfae79",
+      "tree": "5b235cfee907c7d805855e1943de47a332f66fe2",
+      "conclusion": "failure",
+      "error": "original inventory changed",
+      "original_downloaded": false,
+      "original_client_executed": false,
+      "path": "research/recovered/STONEAGE-P3H-INVENTORY-PREFLIGHT-FAILURE-ACTUAL-R1.json",
+      "artifact": 12793813243,
+      "zip_bytes": 573,
+      "zip_sha256": "17c3d703e51962fc3f819ba43a4e99374918cb9c9e9eec6ff57f71dcac5f1bed",
+      "reason": "checkout-index attempt did not produce the pinned inventory bytes in this runner. Early guard stopped before preflight/transfer; no original execution.",
+      "correction": "Use byte-returning subprocess git show HEAD:path, verify Git blob, then write exact bytes; actual corrected log records 210632 bytes and blob564233902b10c60760d4f93b1ea65d4dd1469206.",
+      "raw": {
+        "bytes": 423,
+        "sha256": "df50b44ab42ef27e1e5ed5c1284416ab13e10ef8446bbb456770222807c23e32",
+        "git_blob": "8ce155676ce5f1abf51c53d741aa7d38293453a6"
+      }
+    }
+  ],
+  "empirical_network_scope": "one self-authored checker path, one external TCP IPv4:443 endpoint; before/after successful controls and WSAEACCES10013 before/after original observation",
+  "original_network_limit": "No packet-level measurement of original outbound attempts, all-UDP/all-IPv6 testing or qualified loopback service; guest policy blocks all programs/protocols and original job closes before restore.",
+  "result": "ORIGINAL_PROCESS_EXIT_COORDINATE_OBSERVED_VISUAL_DISPLAY_OPEN",
+  "stage_a": "7_PARTIAL_2_OPEN",
+  "stage_b": "GATED",
+  "wiki": "GATED",
+  "r79": "PAUSED_NON_BLOCKING",
+  "overall_completion_percent": null,
+  "next": "ORIGINAL-TW10-NATIVE-FRAMEBUFFER-P3I",
+  "publication_ci": "NOT_PRE_CREDITED",
+  "private_retention": {
+    "archive_name": "StoneAge-TW1-original-runtime-and-native-observation-P3H.zip",
+    "bytes": 372626292,
+    "sha256": "3a4854adaebef056332cdbd7b1dc1c130c571b11704e3f199f53d03aa31cba24",
+    "all_375_original_members_independently_rehashed": true,
+    "immutable_original_runtime_bytes": 372529095,
+    "original_files": 375,
+    "captured_frames": 3,
+    "private_report_matches_public_runtime_subset": true,
+    "private_upload_succeeded": true,
+    "full_persistent_readback_sha256": "3a4854adaebef056332cdbd7b1dc1c130c571b11704e3f199f53d03aa31cba24",
+    "private_image_name": "tw1-native-window-black-observation-p3h.png",
+    "private_image_sha256": "e2b64be9da9ab219e2cc039fd33a01b54f13cc86c961cebc5bb8bbf9adf05001",
+    "private_image_full_persistent_readback_match": true,
+    "encrypted_artifact_sha256": "dc5b69ba898101514d4b122e9284ec4e5a06abdc80a0433c4a78f6b4c6ebce65",
+    "commercial_bytes_or_frames_committed_to_public_git": false,
+    "private_key_published": false
+  },
+  "visual_review": {
+    "path": "research/recovered/STONEAGE-P3H-VISUAL-REVIEW-R1.json",
+    "bytes": 2806,
+    "sha256": "5f279c2d4b931e2caa02beab87c31fa85bdb420e3554e89876895ecf9bcea050",
+    "git_blob": "a10d57310f489d511cf467f719ccc267f47a7a8f"
+  }
+}
