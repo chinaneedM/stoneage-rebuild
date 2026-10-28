@@ -1,0 +1,206 @@
+{
+  "schema": "stoneage.scene17.permanent_original_source_main_acceptance_r1",
+  "date": "2026-10-29",
+  "repo": "chinaneedM/stoneage-rebuild",
+  "source_run": {
+    "id": 40789416440,
+    "job": 123170623106,
+    "head": "b642458499d45784b9d0d09f0a52123e6e620888",
+    "status": "completed",
+    "conclusion": "success",
+    "derived_artifact_id": 12861201262,
+    "artifact_zip_bytes_api_only": 11979,
+    "artifact_zip_sha256_api_only": "81af6d0d12d816bf39630516d84dc96050927c4077325130d25d100b2dd966db",
+    "independent_artifact_zip_download_verified": false
+  },
+  "source_report": {
+    "path": "research/recovered/STONEAGE-SCENE17-ORIGINAL-NPC-SOURCE-R1.json",
+    "git_blob": "1b8b82f4f0df5b69c2af14f538164399efc7b473",
+    "bytes": 42298,
+    "structurally_identical_to_source_job_stdout": true
+  },
+  "candidate": {
+    "initial_source_commit": "b642458499d45784b9d0d09f0a52123e6e620888",
+    "actual_derived_report_commit": "2ec11085af190008a15e6ea9fe9a8989c35c7502",
+    "final_candidate_head": "8f3a8a344ab98ce994dab4573834162a4cbab2aa",
+    "actions": [
+      {
+        "id": 40789875605,
+        "name": "Accept primary-source TW1.0 character creation numeric join R16",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 40789875612,
+        "name": "Verify original dated map110 three actual cell values R32",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 40789875628,
+        "name": "Verify original four village interior materials R34",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 40789875631,
+        "name": "Verify original local album name material and no master promotion R35",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 40789875646,
+        "name": "Accept preserved original TW85 SPR137 full animation material R28",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 40789875675,
+        "name": "Validate Stage A evidence-limited review acceptance",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 40789875712,
+        "name": "Verify StoneAge R17 original battle SAB crossversion occurrence conservation",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 40789875750,
+        "name": "Verify original native album table and saved-name joins R36",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 40789875761,
+        "name": "Verify original same-build named-entity source gate R31",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 40789875813,
+        "name": "Verify preserved mixed25 full server source conservation R18",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 40789877804,
+        "name": "Verify SCENE17 actual archived NPC source and evidence boundaries",
+        "status": "completed",
+        "conclusion": "success"
+      }
+    ],
+    "actions_total": 11
+  },
+  "main": {
+    "pr": 33,
+    "merge_sha": "e418e15e459192f64216539d642f774f3febe670",
+    "tree": "e5483a0e8ea547f8a31c542ae79966d65961a73b",
+    "actions": [
+      {
+        "id": 40789937157,
+        "name": "Accept primary-source TW1.0 character creation numeric join R16",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 40789937165,
+        "name": "Verify original native album table and saved-name joins R36",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 40789937166,
+        "name": "Validate Stage A evidence-limited review acceptance",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 40789937167,
+        "name": "Verify original four village interior materials R34",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 40789937186,
+        "name": "Verify original same-build named-entity source gate R31",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 40789937189,
+        "name": "Verify SCENE17 actual archived NPC source and evidence boundaries",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 40789937197,
+        "name": "Verify preserved mixed25 full server source conservation R18",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 40789937222,
+        "name": "Verify original local album name material and no master promotion R35",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 40789937260,
+        "name": "Accept preserved original TW85 SPR137 full animation material R28",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 40789937269,
+        "name": "Verify original dated map110 three actual cell values R32",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 40789937308,
+        "name": "Verify StoneAge R17 original battle SAB crossversion occurrence conservation",
+        "status": "completed",
+        "conclusion": "success"
+      }
+    ],
+    "actions_total": 11
+  },
+  "facts": {
+    "actual_original_members_sha_crc_dual_decoders_passed": 2,
+    "authored_NPC_at_1000_63_103": 1,
+    "source_create_blocks": 25,
+    "template_blocks": 41,
+    "source_graphicname": 16048,
+    "source_direction_field": 4,
+    "functionset": "TownPeople",
+    "source_template": "npcgen_man",
+    "source_bytes_acquired_http206": 12013836,
+    "source_http_requests": 184
+  },
+  "preserved_history": {
+    "docs/CURRENT-STATE.md": "14d3af1db16394241c29b03f3253e09800e1ca11",
+    "docs/PROJECT-CONTINUITY-PROTOCOL-R1.md": "a064174339b7a4656efe00b4446a066fd7abf304",
+    "docs/DESIGN-DECISIONS.md": "63f681be337782430e6525eb7bb3afcb8aafd95f",
+    "docs/HISTORICAL-TIMELINE.md": "4d02486431a2da5384a23ba7b548a1a36229b5ce",
+    "docs/SOURCE-REGISTRY.md": "c86a446b2b794b0467dfc9b9ebf57464a01a05b3"
+  },
+  "historical_limits": {
+    "mixed25_community_archive_not_official_taiwan_v1": true,
+    "full_archive_sha_reverified_this_round": false,
+    "original_npc_name_decoded": false,
+    "original_npc_dialogue_verified": false,
+    "original_sprite_pixels_recovered_this_round": false,
+    "original_client_game_world_entered": false,
+    "original_server_behavior_executed": false,
+    "original_NPC_interaction_verified": false,
+    "overall_restoration_percentage": null
+  },
+  "stage_a": "7 PARTIAL + 2 OPEN",
+  "stage_b": "GATED",
+  "wiki": "GATED",
+  "R79": "PAUSED_NON_BLOCKING",
+  "next": "SOURCE_GRAPHIC16048_ORIGINAL_SAME_CARRIER_PIXELS_IF_AVAILABLE_ELSE_ROTATE_22_DOMAIN_MATERIAL",
+  "receipt_own_CI_success": null
+}
