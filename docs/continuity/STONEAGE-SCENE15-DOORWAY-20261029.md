@@ -46,3 +46,11 @@ fresh main `28e44bb3ef9549e2761b96497a7fcaca21bf3c10` / tree `43f49704ff6f154190
 最高NEXT **TOWN1000-NEARBY-NPC-SOURCE-16**：回22域材料视图查重后，限核室外落点附近一名原NPC的创建/参数/图形或确切缺口，优先利用已保存1000npc_m.create中(63,103)及其显式引用；只有可见交互或具名原内容增量才展开，不重跑826图合同、不穷举其他门/全NPC或扩原EXE/驱动。没有新原输入就精确止点轮换其他领域。
 
 原游戏/服务器未启动，原世界未进入，原版传送未实证。DD-028四档、Stage A7 PARTIAL+2 OPEN、Stage B/wiki GATED、R79 PAUSED_NON_BLOCKING、overall percent=null全部保持。所有历史原文与失败保留。
+
+## PR合并、主线与私人交付的实际后验
+
+内容候选b44e328b2df8aa5fd177da2c7ab89484337fe7a9/tree95a5ac30ff2ce472b6dc1667d8d10097dc2a64dc的21项Actions实际全部completed/success，专用push40784548755/job123154346648、PR40784550834/job123154354358。PR #31常规合并main f350e16cf89234955253dad39592123d3f652ce1/tree完全同一，主线21项Actions也已全部success，专用40784753725/job123155032188。专用78测试与31新增反例、本地86相关检查各自按真实范围记录，不当整体复原率。原解包器失败仍失败，CI通过未认证原服传送或双DAT解包成功。
+
+私人包529126B/SHA256cfe5d60d64188ea15fb5758af0220cf47f3234be7bd896cebddb2936fe6bb21d永久保存后，独立目标完整回读与12成员逐项全字节相同；只保留最终四原依赖与必要原RD/SAP/私人HTML及检查副本，没有将前查的错误候选文件混入交付，截图没有保存为交付。公开Git不含这些商业原件。
+
+13个内容路径逐blob和完整远端树与本地一致；原生Git重新取得五大连续性文件完整全文，均以起点旧全文为原样前缀。所有42次候选/主线实际运行、内容blob、原源限制、私人全回读与下一材料16保存在research/recovered/STONEAGE-SCENE15-PUBLICATION-R1.json。本后验提交自身的检查不得预先报成功；完整历史/Stage A/B/wiki/R79/总体未知与原版世界未进入边界保持。
