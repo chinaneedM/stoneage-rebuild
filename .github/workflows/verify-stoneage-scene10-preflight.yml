@@ -1,0 +1,21 @@
+name: Verify R10 structural preflight with no original assets
+on:
+  push:
+    paths:
+      - tools/stoneage_scene10_preflight_guard.py
+      - tests/test_stoneage_scene10_preflight.py
+      - research/recovered/STONEAGE-SCENE10-STRUCTURAL-PREFLIGHT-R1.json
+      - .github/workflows/verify-stoneage-scene10-preflight.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-safe-preflight:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m tools.stoneage_scene10_preflight_guard
+      - run: python -m unittest -v tests.test_stoneage_scene10_preflight
