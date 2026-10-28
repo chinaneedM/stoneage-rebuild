@@ -848,3 +848,8 @@ ranges, not a new whole-client download or arbitrary program reverse engineering
 ### 2026-10-29 | SCENE15 按原出口输入观察室内与室外原图
 
 [一组成对出口与真实像素验收](docs/continuity/STONEAGE-SCENE15-DOORWAY-20261029.md)：定位原创建块和Warp模板，把已有1001(10,15)↔1000(63,99)接入实际两侧7×7原图观察。51原图/81引用，真实浏览器52图、11整数画布与独立像素合成全同；邻门不误用，显式往返，不冒称原服传送/碰撞或进入原世界。主原DAT全SHA/CRC成立，室外地图第二解包复核失败如实保留。下一一名室外落点附近NPC原输入16，完整历史与生产边界保持。
+
+
+### 2026-10-29 | SCENE16 室外 NPC 原成员资格门槛（原件正文仍未取得）
+
+承接 [SCENE15 成对原门实际两侧观察](docs/continuity/STONEAGE-SCENE15-DOORWAY-20261029.md)，已在已有完整 R18 原服务器成员清单定位 `npc/genout/1000npc_m.create` 为4,413B/完整SHA绑定，但 Git 仅含文件级清单，不含原 NPC 创建脚本文本；(63,103) 是下一调查坐标，**不是本轮已认证 NPC 出生位置**。增加 [SCENE16 来源资格/停止记录](docs/continuity/STONEAGE-SCENE16-NEARBY-NPC-GATE-20261029.md) 与只读原成员整SHA校验、有限目标筛选和模板精确名联接程序；无私有原文件时明确 `SOURCE_NOT_SUPPLIED`、`matched_count=null`，不能报原 NPC 名字/任务/互动或像素恢复。候选独立 [Actions 40787873232](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40787873232) 实际 completed/success，专用15测试通过；只证明程序与原目录/旧门派生守卫，**不证明原版运行或 63,103 NPC 存在**。保留完整 CURRENT、Stage A/B、R79、总体百分比 null。下一限有同SHA原件时真实联接，否则按22域材料优先轮换。
