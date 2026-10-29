@@ -48,10 +48,10 @@ def existing_gallery_refs():
 def jpeg(raw):
     with Image.open(io.BytesIO(raw)) as im:
         im.load()
-        ensure(im.format == "JPEG" and im.mode == "RGB" and im.n_frames == 1, "unexpected original-image container")
+        ensure(im.format == "JPEG" and im.mode == "RGB" and getattr(im, "n_frames", 1) == 1, "unexpected original-image container")
         ensure((im.width, im.height) == (640, 480), "gallery JPEG dimension changed; revise source scope")
         return {"bytes": len(raw), "sha256": sha(raw), "format": im.format,
-                "width": im.width, "height": im.height, "mode": im.mode, "frames": im.n_frames,
+                "width": im.width, "height": im.height, "mode": im.mode, "frames": getattr(im, "n_frames", 1),
                 "complete_decode": True}
 
 
@@ -111,12 +111,13 @@ def main():
     ensure(args.fetch != bool(args.inputs), "provide exactly one input method")
     raws = [get_bounded(url) for url in URLS] if args.fetch else [path.read_bytes() for path in args.inputs]
     result = derive(raws)
-    # Strong negative control: even a valid pair of JPEGs cannot be silently swapped between positions.
+    # Distinct-image guard. HTTPS fetched URL equality, not JPEG internal metadata, binds each remote response to its slot.
     swapped = [raws[0], raws[1], raws[3], raws[2]]
     reversed_result = derive(swapped)
     ensure([r["original_jpeg"]["sha256"] for r in reversed_result["source_rows"]]
            != [r["original_jpeg"]["sha256"] for r in result["source_rows"]],
            "two image responses identical; paired slot identity unresolved")
+    result["http_response_url_binding_verified"] = bool(args.fetch)
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(json.dumps({"source": "JP2003_R63_GALLERY_TWO_NEW_SLOTS", "success": True,
