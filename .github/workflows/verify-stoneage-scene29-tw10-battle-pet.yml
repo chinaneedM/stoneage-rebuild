@@ -20,7 +20,7 @@ jobs:
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
-      - name: Re-encode all original tile grids and compare exact 804B SAB digests
+      - name: Verify pinned original SAB digests and redacted source-derived bitmap identities
         run: python3 -m tools.stoneage_scene29_tw10_battle_pet --check-public
       - name: Negative identity/scene native-semantic tests
         run: python3 -m unittest tests.test_stoneage_scene29_tw10_battle_pet -v
