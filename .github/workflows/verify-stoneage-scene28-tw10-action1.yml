@@ -1,0 +1,26 @@
+name: Verify SCENE28 original TW1 source-derived action1 pixel receipts
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-SCENE28-TW10-ACTION1-PIXELS-R1.json'
+      - 'tools/stoneage_scene28_tw10_action1_verify.py'
+      - 'tests/test_stoneage_scene28_tw10_action1_verify.py'
+      - '.github/workflows/verify-stoneage-scene28-tw10-action1.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-SCENE28-TW10-ACTION1-PIXELS-R1.json'
+      - 'tools/stoneage_scene28_tw10_action1_verify.py'
+      - 'tests/test_stoneage_scene28_tw10_action1_verify.py'
+      - '.github/workflows/verify-stoneage-scene28-tw10-action1.yml'
+permissions:
+  contents: read
+jobs:
+  source-receipts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Recheck public source and 48 original-pixel receipts against immutable SCENE26
+        run: python3 tools/stoneage_scene28_tw10_action1_verify.py --check
+      - name: Semantic integrity and mutation rejection tests
+        run: python3 -m unittest discover -s tests -p 'test_stoneage_scene28_tw10_action1_verify.py' -v
