@@ -18730,3 +18730,14 @@ fresh main e86f838833323c331c4c3657eab0f7a129582127/treef97cd6b31b2042d990ec8bef
 私人观察页新增显式原文查阅并定位该配置点，原繁体完整保留、简体只作编辑释义；原8图/model完全不变，独立HTMLParser可见文字等于源解码、JS语法通过。本地Chromium缺失，原图浏览器/原服/世界无新增执行；公开远端UI只用合成文本/色块，CI后验另记。53本地相关测试通过。私人交付ZIP1321290B/SHA7c6d717de639937f3fc0482907cf501afe52ed600f70683b43a70920178110df已成功保存，身份元数据已写，未再次回读，不冒称二次耐久SHA。原脚本/对白/原图/HTML不公开，source_action_run_id=null。
 
 最高NEXT **SCENE23-MATERIAL-ROTATION-REVIEW**：此一NPC静态内容已有限闭合，回22域/R102查重并排序其他已有实物的人物创建/宠物/场景交互；有可观察内容增量才开展，无精确原件则止点，不扩所有NPC/RAR/驱动/帧调度helper。原客户端可操作世界未进入，官方同服/原生对白/碰撞/音频事件仍OPEN，Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、overall_percent=null保持。
+
+
+## 2026-10-29 — SCENE23：十二原身体数值候选的96方向首帧实际观察
+
+fresh main056931f/tree3291dd9及6433树项/七启动文件/完整CURRENT2702146B/路线与22域/R102重核，最新SCENE22收据40860210551实际success。按SCENE23有限轮换，停止NPC/RAR/驱动helper，接旧R16未实绘的候选数值→原像素。详见docs/continuity/STONEAGE-SCENE23-BODY-VISUALS-20261029.md。
+
+已保存P3H原件包整SHA3a4854ad…和七原成员完整SHA与旧库存匹配；原sa_3.exe的128B body窗口SHA0e9687f4…重核。12组100000至100220每20递增，动作2/原方向0—7各第0帧，实际96不同RD。源96动画共728帧位置、帧数6/9/11/14，不算728帧全部观察，也不以12候选数认定建角可选总数。R7仅8原RD重合并同SHA，余88只相对此旧观察新加入。
+
+两原SAP Palet_0/1仅配色候选；192RGBA/PNG及192完整现代卡片被第二解码和独立合成核同，原图已目视，原浏览器/客户端未执行。首次240×220画框越界被拒，改240×260锚点(120,200)后全部96完整显示，未改原像素。私人页可同时查12组，切八方向/两候选配色、查原记录/重置；35本地相关测试通过，远端合成UI和主线后验另记。私人ZIP1211498B/SHA536240d6…已保存并应用身份，无保存后二次回读宣称。原资产不公开；source Action null。
+
+最高NEXT **SCENE24-SHOP-FIRST-THREE-ITEM-IMAGE-INPUTS**：复用已有SCENE14商店原参数顺序前三ID0/4/10及imagenumber20033/20032/20013，先核命名空间和准确索引，最多3项实物链接/原图或精确止点；不直接当bitmapno、不扩大交易helper。原世界未进入、官方运行身份与建角人数/名字/头像/真实配色/FPS仍待证；Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、overall_percent=null不变。旧CURRENT2702146B及全部历史为完整原样前缀。

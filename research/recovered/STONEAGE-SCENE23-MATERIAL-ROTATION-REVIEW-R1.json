@@ -1,0 +1,255 @@
+{
+  "R79": "PAUSED_NON_BLOCKING",
+  "anchors": [
+    {
+      "bytes": 15948,
+      "git_blob": "088b469b3c51e689cff27f33fc3bb49de2d24b2c",
+      "path": "research/recovered/STONEAGE-22-DOMAIN-SOURCE-READY-PORTFOLIO-R2.json",
+      "sha256": "7d50de08f7855cf16dbe54b1747e258f1cc1223de88cc217172fd145f3c704ce"
+    },
+    {
+      "bytes": 11482,
+      "git_blob": "4c5b3da314fe6cc13863323ba78eb8adbc583d95",
+      "path": "research/recovered/STONEAGE-MATERIAL-PORTFOLIO-REVIEW-R102.json",
+      "sha256": "e555451cf5f214547a44413ac66645cfd1130913d70e3df7c11755eb481017fe"
+    },
+    {
+      "bytes": 121285,
+      "git_blob": "3e7b22a6e423292e30b3a34293ca23c2d5432dc2",
+      "path": "research/recovered/STONEAGE-SCENE07-ACTOR-SOURCE-R7.json",
+      "sha256": "d2b38cba3b4722308ceaf3f39a6208b7b6f2298385e23b8eb4113fec53d8533b"
+    },
+    {
+      "bytes": 194270,
+      "git_blob": "85b20adf2af267fb0433c50f4172fec554cf0aa5",
+      "path": "research/recovered/STONEAGE-SCENE13-PET-ACTION0-R1.json",
+      "sha256": "1f635831ea094a4a3ee04832bd626f5ed85736cef0ce2b7e0e9c1e11e743a1e7"
+    },
+    {
+      "bytes": 10317,
+      "git_blob": "96b52242c07562f285dfce2e0ad95577aafbc9a5",
+      "path": "research/recovered/STONEAGE-SCENE14-ROOM-SHOP-SOURCE-R1.json",
+      "sha256": "b6311a35777501f6cc0cfaf360ad82ed6077d388a6fd0b6ddc39ef57628ac985"
+    },
+    {
+      "bytes": 9372,
+      "git_blob": "cd367d2d2e01f53d1f18d6f964e6eeacde5f1223",
+      "path": "research/recovered/STONEAGE-SCENE20-MATERIAL-ROTATION-REVIEW-R1.json",
+      "sha256": "9f88485913ab73be98b658c6432c14a06bab1e793dbb42662e729d7f84edc4dd"
+    },
+    {
+      "bytes": 5425,
+      "git_blob": "4683e55fd5bd3558e40562aa70e6520c6183f45e",
+      "path": "research/recovered/STONEAGE-SCENE22-NPC-ARGUMENT-R1.json",
+      "sha256": "ec2eca62f4d0bebefd5df1d3e1af63f3c5f1ba70245e42502c24d61e9284c1e1"
+    },
+    {
+      "bytes": 12876,
+      "git_blob": "4e0d8bddf6ee9e9de372b0b484d3489796007726",
+      "path": "research/recovered/STONEAGE-TW10-CREATION-BODY-WINDOW-R16.json",
+      "sha256": "03be7a2c14f71c96c8114156c7189d836d99b805895510edf453ae9f706d7a59"
+    }
+  ],
+  "baseline_head": "056931f762b2ca60c680af129e187f90180aa1ea",
+  "baseline_tree": "3291dd90b235ede99584e7652f43a1aa44f10822",
+  "domain_rows": [
+    {
+      "historical_complete": false,
+      "id": "version_lineage",
+      "order": 1,
+      "preserved_status": "PARTIAL_SOURCE",
+      "selected": false
+    },
+    {
+      "historical_complete": false,
+      "id": "login_splash",
+      "order": 2,
+      "preserved_status": "OPEN_VISUAL",
+      "selected": false
+    },
+    {
+      "historical_complete": false,
+      "id": "character_creation",
+      "order": 3,
+      "preserved_status": "PARTIAL_STRUCTURE",
+      "selected": true
+    },
+    {
+      "historical_complete": false,
+      "id": "character_sprite_model",
+      "order": 4,
+      "preserved_status": "PARTIAL_RESOURCE",
+      "selected": true
+    },
+    {
+      "historical_complete": false,
+      "id": "world_map",
+      "order": 5,
+      "preserved_status": "PARTIAL_STRUCTURE",
+      "selected": false
+    },
+    {
+      "historical_complete": false,
+      "id": "npc_identity",
+      "order": 6,
+      "preserved_status": "OPEN_CONTENT",
+      "selected": false
+    },
+    {
+      "historical_complete": false,
+      "id": "npc_dialog_ui",
+      "order": 7,
+      "preserved_status": "PARTIAL_STRUCTURE",
+      "selected": false
+    },
+    {
+      "historical_complete": false,
+      "id": "quest_content",
+      "order": 8,
+      "preserved_status": "OPEN_CONTENT",
+      "selected": false
+    },
+    {
+      "historical_complete": false,
+      "id": "pet_species",
+      "order": 9,
+      "preserved_status": "OPEN_SAME_BUILD_ROSTER",
+      "selected": false
+    },
+    {
+      "historical_complete": false,
+      "id": "pet_visual",
+      "order": 10,
+      "preserved_status": "PARTIAL_RESOURCE",
+      "selected": false
+    },
+    {
+      "historical_complete": false,
+      "id": "pet_stats",
+      "order": 11,
+      "preserved_status": "PARTIAL_STRUCTURE",
+      "selected": false
+    },
+    {
+      "historical_complete": false,
+      "id": "pet_growth",
+      "order": 12,
+      "preserved_status": "PARTIAL_DESCENDANT",
+      "selected": false
+    },
+    {
+      "historical_complete": false,
+      "id": "pet_skills",
+      "order": 13,
+      "preserved_status": "PARTIAL_STRUCTURE",
+      "selected": false
+    },
+    {
+      "historical_complete": false,
+      "id": "pet_encounter",
+      "order": 14,
+      "preserved_status": "PARTIAL_DESCENDANT",
+      "selected": false
+    },
+    {
+      "historical_complete": false,
+      "id": "ride_mount",
+      "order": 15,
+      "preserved_status": "PARTIAL_DESCENDANT",
+      "selected": false
+    },
+    {
+      "historical_complete": false,
+      "id": "battle_ui_rules",
+      "order": 16,
+      "preserved_status": "PARTIAL_STRUCTURE",
+      "selected": false
+    },
+    {
+      "historical_complete": false,
+      "id": "item_equipment_economy",
+      "order": 17,
+      "preserved_status": "PARTIAL_STRUCTURE",
+      "selected": false
+    },
+    {
+      "historical_complete": false,
+      "id": "audio_fx",
+      "order": 18,
+      "preserved_status": "PARTIAL_RESOURCE",
+      "selected": false
+    },
+    {
+      "historical_complete": false,
+      "id": "helper_versions",
+      "order": 19,
+      "preserved_status": "PARTIAL_CATALOG",
+      "selected": false
+    },
+    {
+      "historical_complete": false,
+      "id": "helper_capabilities",
+      "order": 20,
+      "preserved_status": "PARTIAL_CATALOG",
+      "selected": false
+    },
+    {
+      "historical_complete": false,
+      "id": "reference_web",
+      "order": 21,
+      "preserved_status": "PARTIAL_DISCOVERY",
+      "selected": false
+    },
+    {
+      "historical_complete": false,
+      "id": "future_player_wiki",
+      "order": 22,
+      "preserved_status": "DESIGN_PREP_ONLY",
+      "selected": false
+    }
+  ],
+  "next": {
+    "id": "SCENE24-SHOP-FIRST-THREE-ITEM-IMAGE-INPUTS",
+    "scope": "At most three exact original numeric image-field-to-resource namespace joins, source bytes and private visual comparison if qualified",
+    "source": "Existing SCENE14 original ordered item IDs0/4/10 and imagenumber20033/20032/20013",
+    "stop_condition": "One finite three-item contract or precise namespace/source gap; no original buying/selling runtime claim or full item/helper enumeration"
+  },
+  "novelty": {
+    "new_historical_characters_discovered": false,
+    "new_original_carrier": false,
+    "new_original_roster": false,
+    "not_a_global_novelty_census": true,
+    "prior_R7_matching_count": 8,
+    "prior_R7_overlapping_RD_first_frames": [
+      10273,
+      10316,
+      10359,
+      10402,
+      10445,
+      10488,
+      10187,
+      10230
+    ],
+    "remaining_first_frames_relative_to_R7_only": 88
+  },
+  "original_selectable_character_count": null,
+  "original_world_entered": false,
+  "overall_completion_percent": null,
+  "schema": "stoneage.scene23.material_rotation_review.r1",
+  "scope": "22_DOMAIN_FROZEN_STATUSES_WITH_FINITE_NEW_VISUAL_OBSERVATION",
+  "selection": {
+    "deliverable": "96 original first-frame references and two explicitly candidate original palettes in a private direction-switching gallery",
+    "evidence_gap": "R16 had source numbers, no side-by-side twelve-group actual-pixel inspection",
+    "rejected_repetition": [
+      "Further SCENE22 NPC enumeration",
+      "More original Windows black-screen or RAR probes",
+      "Repeated pet action0/2 frame exports already covered",
+      "Repeating R16 numeric table intersection without actual pixels"
+    ],
+    "restored_behavior": "Inspect the actual original first-frame figures behind twelve R16 candidate body numbers in eight source directions",
+    "source_scope": "TW10_ACCEPTED_RETAIL_RESOURCE_BYTES",
+    "stop_condition": "96 exact first-frame numeric/bitmap joins, independent source pixel verification and finite gallery UI acceptance; no selector/helper expansion"
+  },
+  "stage_a": "7_PARTIAL_2_OPEN",
+  "stage_b_and_wiki": "GATED"
+}

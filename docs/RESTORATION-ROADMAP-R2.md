@@ -2733,3 +2733,8 @@ fresh main e86f838833323c331c4c3657eab0f7a129582127/treef97cd6b31b2042d990ec8bef
 真实浏览器只运行合成色块：source run40822824028/HEADbd4a2fd/job123278943884实际success，39项当时测试及8画面像素/控件通过，NPC在旧窗外不叠加、定位扩窗、原格检视、2倍缩放、扩展24/旧0补图标记、0JS错误/0外部请求成立。工件12875013431 ZIP972B已独立下载核API/本地SHA3ec4a50361796aacef3700341f9856e16bc9d841ffd4897578ad43ea2f0fd5bc；原2260B JSON/SHA72e89f17dec6cf3d1f335464584af51fa8a1ad8dccf4040ac2eb501a1c68fb98永久归档。加入原件/合成/浏览器证据范围负例后，本地42相关测试通过；最终候选/主线CI须按实际后验记录。
 
 最高NEXT **SCENE22-NPC63-103-ORIGINAL-ARGUMENT**：只针对已取证的这一NPC，复用已保存mixed25载体的原创建块/完整template，有限核enemy参数尾部或其精确指向的一份TownPeople对白/行为输入；有原字节才把显示候选推进为一条可观察内容合同。原脚本/对白只私人保管，公开留来源/语义/哈希；若原参数不含可恢复内容或缺件，则记录具体止点回22域，不扩所有NPC、RAR/驱动/帧调度或无证动作。用户所要的原版可操作世界仍未进入，原生碰撞、实际对白执行、音频事件待证；Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、overall_percent=null保持。
+
+
+## 2026-10-29 — SCENE23 原身体数值候选可见材料止点
+
+22域有限轮换后，R16十二原值的96方向首帧已实际同版取图；两原SAP配色候选的192RGBA/PNG/现代卡片独立一致，不声称十二个可选人物、原色/建角界面或全728源帧位置已恢复。详见SCENE23日期续接；旧所有域状态不变。下一最高SCENE24-SHOP-FIRST-THREE-ITEM-IMAGE-INPUTS，限已有商店ID0/4/10的imagenumber命名空间与三原图实物输入，有准确来源才联接，不重复角色/驱动helper。
