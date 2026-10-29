@@ -11,3 +11,11 @@ TW1 ADRN10079680B全前缀本轮逐字节核同；六原记录/整RD范围全在
 私人交付ZIP375924B/SHA194d93d6f21dcfd906384b23ca122c3aa42d57067d92ea6a0e171b874ef422c7已保存成功并应用版本身份，保存后未再次回读；不冒称二次耐久SHA。原CSV全文/脚本/SAP/RD/PNG/HTML不进公开Git，公开仅旧已有原名/数值摘要、源范围与反例工具。
 
 最高NEXT **SCENE25-ROOM-SHOP-OBSERVATION-INTEGRATION**：只把已存SCENE14房间1001/NPC16017和这三件商品候选整合为一次场景内资料查阅；显式开关资料，不伪造原服买卖/原UI或改金币库存、不扩17物品/交易helper。一个有据整合完成后回22域。原世界未进入、同服/原selector/实际交易/原palette待证；DD-028四档、Stage A7PARTIAL+2OPEN/B与wiki GATED/R79暂停/overall_percent=null保持。完整CURRENT及所有旧历史原样作为追加前缀保留。
+
+## 最终候选/主线验收与永久派生保管
+
+最终候选1ee341fbcf36a8be9512ccb0bb2519ee9901ea5b的21项（20 push+1 PR）Actions全部实际completed/success；PR39合并主线bd593a855ef59baf39aeccf6965a5c8b65533b29，完整tree8970662faaf32383c31e9bc4f86290ac392681af与本地相同。主线21项亦全部completed/success，专用40866263488的真实日志确认51项通过。17个完整上传blob和整tree逐SHA一致，CURRENT等五历史文件完整旧前缀保留。
+
+真实合成浏览器run40866117605/job123421213135为success，Chrome156读取12合成图像、24完整画布逐RGBA相同，命名空间反例标记、ID0/末物品选取、候选配色/倍率/重置和0JS错误0外部请求通过。独立下载工件12894186136：ZIP1568B/SHAb81180d64b7cc6ee30ac38890467f39410ffa53a25cada409ea0f2e1ed2a44ce与API同；原JSON4895B/SHAc828b1a9c246009f0130c07c29d04fc3dd4b235e13d750549a1f414efe336b0f全部永久存储。它不读取原图，更不等于原游戏买卖。
+
+实际原源报告11936B/SHA9edbd464…/blob4dc0b2fc…和独立原行/两命名空间/原像素完整报告4908B/SHAe728dcc3…/blob6ebddf0b…均已永久入主线；源四成员/CRC、旧整前缀引用、六RD/12RGBA/24画面和全部候选/main运行链见STONEAGE-SCENE24-CUSTODY-R1.json。私人交付已保存且身份元数据已写，不虚报保存后二次下载。本后验提交自身CI需据后续真实状态判断，不预支。最高NEXT25与原世界/官方同服/原selector/交易待证边界不变。
