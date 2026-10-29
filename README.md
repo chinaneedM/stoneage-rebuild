@@ -868,3 +868,8 @@ ranges, not a new whole-client download or arbitrary program reverse engineering
 ### 2026-10-29 | SCENE18主线全过，SCENE19已从保存TW1原件取得人物候选图
 
 [最终验收与新续接](docs/continuity/STONEAGE-SCENE18-GRAPHIC16048-ADRN-20261029.md)：PR34主线21项Actions与候选21项全部通过，51测试真实日志已核。复用已保存TW1原件实读bitmap5894，双解码器一致取得36×79/2844原索引及私人候选PNG；Palet0颜色仍候选，mixed25对应REAL未读，不能认定同源NPC或原世界运行。原图包已私人保存，公开仅派生JSON。最高下一SCENE20先回22域材料复核与有实物内容轮换，停止原RAR/驱动/同摘要空转。
+
+
+### 2026-10-29 | SCENE20 原TW1全127散装WAV私人离线试听
+
+[材料轮换/实物/真实验收与续接](docs/continuity/STONEAGE-SCENE20-TW10-AUDIO-20261029.md)：复用已保存原件，把116音效目录和11配乐目录原WAV完整接入检索/手动试听页；全127原文件/33587115声道样本独立FFmpeg一致，重复路径保留。远端浏览器只用127合成音频实测，修正浮点归一化假设后逐整数PCM及界面控制通过；本地原声浏览器/助手听觉/游戏事件仍未认证。私人34MB包已保存，原声音不公开。下一只用已有1000.DAT/51RD核NPC坐标附近原图覆盖21，原世界与生产边界保持。

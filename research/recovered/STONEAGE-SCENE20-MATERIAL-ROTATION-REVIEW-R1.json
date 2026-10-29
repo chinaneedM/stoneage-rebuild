@@ -1,0 +1,201 @@
+{
+  "anchors": [
+    {
+      "bytes": 15948,
+      "git_blob": "088b469b3c51e689cff27f33fc3bb49de2d24b2c",
+      "path": "research/recovered/STONEAGE-22-DOMAIN-SOURCE-READY-PORTFOLIO-R2.json",
+      "sha256": "7d50de08f7855cf16dbe54b1747e258f1cc1223de88cc217172fd145f3c704ce"
+    },
+    {
+      "bytes": 8428,
+      "git_blob": "749c26100f2da6a939ae3b0ff8f81addd55d6820",
+      "path": "docs/specs/STONEAGE-MATERIAL-PORTFOLIO-REVIEW-R102.md",
+      "sha256": "2f26218aeb25ac657cf796d0df8e32a47fb2fff6e01c172ad25590bfe1d34041"
+    },
+    {
+      "bytes": 7949,
+      "git_blob": "df0a570efcfa270ca9d6517c56890bda5dc9e71f",
+      "path": "docs/continuity/STONEAGE-SCENE18-GRAPHIC16048-ADRN-20261029.md",
+      "sha256": "9b38ec7b862ff14fc7cf0dbb60d74bc35f41986c710df4f4b2bab27c55731b09"
+    },
+    {
+      "bytes": 2249,
+      "git_blob": "011839390e7e333b9d3ea99f1deaf5fb79016878",
+      "path": "research/recovered/STONEAGE-SCENE19-TW10-BITMAP-CANDIDATE-R1.json",
+      "sha256": "0619af968a8f35b225e58d81e085edd3f7d89a896fec89ec3dbcaba60d9d75aa"
+    },
+    {
+      "bytes": 8128,
+      "git_blob": "ee743a714868c219ca097dfe42b0d72d81f4c097",
+      "path": "docs/continuity/STONEAGE-PRIVATE-AUDIO-R22-20261026.md",
+      "sha256": "aac58bfa7c486ea22242fefbf5518ed7b78983d8e16805a4e7b078115af8f06e"
+    },
+    {
+      "bytes": 115643,
+      "git_blob": "094becbc92397ee8abf72a014deffffabc97a316",
+      "path": "research/recovered/STONEAGE-TW10-AUDIO-DATASET-R1.txt",
+      "sha256": "f5e5826967da197bafb05f092da620edff91e85d6ac8cda89e29ad11f280bf02"
+    }
+  ],
+  "browser_QA_history": {
+    "corrected_success": 40819002124,
+    "diagnostic_failure": 40818540969,
+    "first_failure": 40818287520,
+    "observed_difference": "Chromium156 synthetic signed-positive normalization differs from FFmpeg canonical float32; exact recovered integer PCM remains identical for127 synthetic streams.",
+    "original_WAVs_modified": false
+  },
+  "domain_count": 22,
+  "domains": [
+    {
+      "baseline_evidence_status_retained": "PARTIAL_SOURCE",
+      "domain_id": "version_lineage",
+      "historical_completion_promoted": false,
+      "work_decision": "RETAIN_PRIOR_BOUNDARIES_AND_AVOID_DUPLICATE_HELPER_EXPANSION"
+    },
+    {
+      "baseline_evidence_status_retained": "OPEN_VISUAL",
+      "domain_id": "login_splash",
+      "historical_completion_promoted": false,
+      "work_decision": "RETAIN_PRIOR_BOUNDARIES_AND_AVOID_DUPLICATE_HELPER_EXPANSION"
+    },
+    {
+      "baseline_evidence_status_retained": "PARTIAL_STRUCTURE",
+      "domain_id": "character_creation",
+      "historical_completion_promoted": false,
+      "work_decision": "RETAIN_PRIOR_BOUNDARIES_AND_AVOID_DUPLICATE_HELPER_EXPANSION"
+    },
+    {
+      "baseline_evidence_status_retained": "PARTIAL_RESOURCE",
+      "domain_id": "character_sprite_model",
+      "historical_completion_promoted": false,
+      "work_decision": "RETAIN_PRIOR_BOUNDARIES_AND_AVOID_DUPLICATE_HELPER_EXPANSION"
+    },
+    {
+      "baseline_evidence_status_retained": "PARTIAL_STRUCTURE",
+      "domain_id": "world_map",
+      "historical_completion_promoted": false,
+      "work_decision": "RETAIN_PRIOR_BOUNDARIES_AND_AVOID_DUPLICATE_HELPER_EXPANSION"
+    },
+    {
+      "baseline_evidence_status_retained": "OPEN_CONTENT",
+      "domain_id": "npc_identity",
+      "historical_completion_promoted": false,
+      "work_decision": "RETAIN_PRIOR_BOUNDARIES_AND_AVOID_DUPLICATE_HELPER_EXPANSION"
+    },
+    {
+      "baseline_evidence_status_retained": "PARTIAL_STRUCTURE",
+      "domain_id": "npc_dialog_ui",
+      "historical_completion_promoted": false,
+      "work_decision": "RETAIN_PRIOR_BOUNDARIES_AND_AVOID_DUPLICATE_HELPER_EXPANSION"
+    },
+    {
+      "baseline_evidence_status_retained": "OPEN_CONTENT",
+      "domain_id": "quest_content",
+      "historical_completion_promoted": false,
+      "work_decision": "RETAIN_PRIOR_BOUNDARIES_AND_AVOID_DUPLICATE_HELPER_EXPANSION"
+    },
+    {
+      "baseline_evidence_status_retained": "OPEN_SAME_BUILD_ROSTER",
+      "domain_id": "pet_species",
+      "historical_completion_promoted": false,
+      "work_decision": "RETAIN_PRIOR_BOUNDARIES_AND_AVOID_DUPLICATE_HELPER_EXPANSION"
+    },
+    {
+      "baseline_evidence_status_retained": "PARTIAL_RESOURCE",
+      "domain_id": "pet_visual",
+      "historical_completion_promoted": false,
+      "work_decision": "RETAIN_PRIOR_BOUNDARIES_AND_AVOID_DUPLICATE_HELPER_EXPANSION"
+    },
+    {
+      "baseline_evidence_status_retained": "PARTIAL_STRUCTURE",
+      "domain_id": "pet_stats",
+      "historical_completion_promoted": false,
+      "work_decision": "RETAIN_PRIOR_BOUNDARIES_AND_AVOID_DUPLICATE_HELPER_EXPANSION"
+    },
+    {
+      "baseline_evidence_status_retained": "PARTIAL_DESCENDANT",
+      "domain_id": "pet_growth",
+      "historical_completion_promoted": false,
+      "work_decision": "RETAIN_PRIOR_BOUNDARIES_AND_AVOID_DUPLICATE_HELPER_EXPANSION"
+    },
+    {
+      "baseline_evidence_status_retained": "PARTIAL_STRUCTURE",
+      "domain_id": "pet_skills",
+      "historical_completion_promoted": false,
+      "work_decision": "RETAIN_PRIOR_BOUNDARIES_AND_AVOID_DUPLICATE_HELPER_EXPANSION"
+    },
+    {
+      "baseline_evidence_status_retained": "PARTIAL_DESCENDANT",
+      "domain_id": "pet_encounter",
+      "historical_completion_promoted": false,
+      "work_decision": "RETAIN_PRIOR_BOUNDARIES_AND_AVOID_DUPLICATE_HELPER_EXPANSION"
+    },
+    {
+      "baseline_evidence_status_retained": "PARTIAL_DESCENDANT",
+      "domain_id": "ride_mount",
+      "historical_completion_promoted": false,
+      "work_decision": "RETAIN_PRIOR_BOUNDARIES_AND_AVOID_DUPLICATE_HELPER_EXPANSION"
+    },
+    {
+      "baseline_evidence_status_retained": "PARTIAL_STRUCTURE",
+      "domain_id": "battle_ui_rules",
+      "historical_completion_promoted": false,
+      "work_decision": "RETAIN_PRIOR_BOUNDARIES_AND_AVOID_DUPLICATE_HELPER_EXPANSION"
+    },
+    {
+      "baseline_evidence_status_retained": "PARTIAL_STRUCTURE",
+      "domain_id": "item_equipment_economy",
+      "historical_completion_promoted": false,
+      "work_decision": "RETAIN_PRIOR_BOUNDARIES_AND_AVOID_DUPLICATE_HELPER_EXPANSION"
+    },
+    {
+      "baseline_evidence_status_retained": "PARTIAL_RESOURCE",
+      "domain_id": "audio_fx",
+      "historical_completion_promoted": false,
+      "work_decision": "SELECT_PRIVATE_ACTUAL_SOURCE_AUDIO_OBSERVATION"
+    },
+    {
+      "baseline_evidence_status_retained": "PARTIAL_CATALOG",
+      "domain_id": "helper_versions",
+      "historical_completion_promoted": false,
+      "work_decision": "RETAIN_PRIOR_BOUNDARIES_AND_AVOID_DUPLICATE_HELPER_EXPANSION"
+    },
+    {
+      "baseline_evidence_status_retained": "PARTIAL_CATALOG",
+      "domain_id": "helper_capabilities",
+      "historical_completion_promoted": false,
+      "work_decision": "RETAIN_PRIOR_BOUNDARIES_AND_AVOID_DUPLICATE_HELPER_EXPANSION"
+    },
+    {
+      "baseline_evidence_status_retained": "PARTIAL_DISCOVERY",
+      "domain_id": "reference_web",
+      "historical_completion_promoted": false,
+      "work_decision": "RETAIN_PRIOR_BOUNDARIES_AND_AVOID_DUPLICATE_HELPER_EXPANSION"
+    },
+    {
+      "baseline_evidence_status_retained": "DESIGN_PREP_ONLY",
+      "domain_id": "future_player_wiki",
+      "historical_completion_promoted": false,
+      "work_decision": "RETAIN_PRIOR_BOUNDARIES_AND_AVOID_DUPLICATE_HELPER_EXPANSION"
+    }
+  ],
+  "highest_next": "SCENE21-TOWN1000-NPC-AREA-COVERAGE",
+  "local_browser_dependency_failure": "Playwright CDN download ended in invalid/empty ZIP; apt dependency installation failed setgroups/setegid/seteuid. No bypass or false local browser claim.",
+  "new_historical_audio_discoveries": 0,
+  "new_material_integration": "All 127 authenticated original loose WAVs embedded intact in private self-contained HTML, exact independent full-PCM FFmpeg replay; browser QA uses synthetic fixtures only.",
+  "next_scope": "Use already retained original mixed25 1000.DAT and the 51 private RD subset to qualify a finite viewport including63,103; list exact new map-ID coverage or missing source art, no new large archive and no collision inference. TW1 candidate bitmap5894 remains explicitly cross-sample reference.",
+  "original_world_entered": false,
+  "overall_completion_percent": null,
+  "preserved_local_export_correction": "First export used old audio inventory helper with BIN/TXT entries; exact loose-WAV filtering fixes the finite source set to 127, retaining old helper unchanged.",
+  "reason": "Existing images/maps/pet animation viewers already delivered; R22 only a CN5 single WAV. Original TW1 127 loose WAVs now accessible in existing private P3H package, but not yet integrated as one source-labelled listening surface.",
+  "savedata_R79": "PAUSED_NON_BLOCKING",
+  "schema": "stoneage.scene20.finite_22_domain_material_rotation.r1",
+  "selected_package": "SCENE20-TW10-AUDIO-OBSERVATION",
+  "source_bytes_access": "EXISTING_PRIVATE_P3H_PACKAGE_NOT_NEW_DISC_DOWNLOAD",
+  "source_official_event_bindings_verified": 0,
+  "stage_a": "7_PARTIAL_2_OPEN",
+  "stage_b_production_started": false,
+  "startup_main": "a77dd94a985efd4e7703133966a115d93d19cbb7",
+  "startup_tree": "2da1a34e947ffd82b579e96e6d4e778094ed28ac",
+  "stop_condition": "127 source identity and whole-PCM hashes, private offline UI, synthetic browser controls and durable derived provenance; no event naming or new WinMM/driver chain."
+}

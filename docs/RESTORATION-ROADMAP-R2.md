@@ -2699,3 +2699,18 @@ fresh远端main9854762ef8163dd86f67982379414e9d339f8dcb/tree4482253ef2563da0ffdc
 原RAR及最终四依赖主unar完整SHA/CRC通过，三个原件libarchive字节同；1000.DAT的libarchive CRC失败，7zip独立原成员尝试-11，失败完整保留，不称双实现全过，也不把与旧SHA/CRC精确相同的主解包地图叫损坏。原素材/脚本/私人HTML不公开，公开CI仅派生；31新反例/78专用相关/86本地相关测试通过，候选/main须按真实后验记。
 
 最高NEXT TOWN1000-NEARBY-NPC-SOURCE-16：先回22域查重，限落点附近一名原NPC的原创建/参数/图形可见交互增量，优先已存1000npc_m.create的63,103显式引用；无新原输入则止点轮换，不重跑826图闭合、不扩所有门/NPC或EXE/驱动。原版世界未进入、官方同部署未知、DD-028/Stage A7PARTIAL+2OPEN/B及wiki GATED/R79暂停/总体percent=null均不变。
+
+
+## 2026-10-29 — SCENE20：22域材料轮换，127原WAV离线试听交付
+
+fresh main a77dd94a985efd4e7703133966a115d93d19cbb7/tree2da1a34e947ffd82b579e96e6d4e778094ed28ac，19项Actions实际success；完整七启动文件/最新CURRENT2691112B和22域索引/R102/SCENE18–19/R22原声交付已重新核验。22域历史状态逐项保留，选audio_fx的现存原实物观察增量，不重算5894/RAR、WinMM或驱动helper。完整锚点与选择见STONEAGE-SCENE20-MATERIAL-ROTATION-REVIEW-R1.json。
+
+原127散装WAV是旧TW1已知材料，**新增历史声音发现0**。复用此前已保存P3H原件包完整SHA，不新下光盘；116个音效目录+11个配乐目录/38009578B逐完整原库存SHA匹配，127路径/126不同整文件摘要，sas_17.wav和sas_21.wav两个相同字节位置不删。两种原采样率11025/22050与8/16bit、声道/所有RIFF块完整保留，不从b/d/f/s/t文件名猜战斗/地牢/村落。Python wave与独立RIFF解析一致；实际原127WAV被另一FFmpeg实现解成33587115个声道样本，全部float32逐声道SHA与原PCM数值参考相同。不是助手已听、扬声器输出或原游戏事件证明。
+
+新私人自包含HTML50766462B可按原名检索、11/116目录筛选、手动播放/暂停及现代试听循环，默认音量25%、静默起始、不自动连播。原38MB声音原样嵌入，无外部依赖。私人ZIP34291520B/SHA9d454b99623b06823f50bcb5d49dcc1e679be0fa1752505501616b6f7fbe5554已保存成功；保存后未再次下载回读，不虚报保管二次SHA。原音频和私人HTML未入公开Git，公开仅模板/工具/元数据与哈希。原声本地浏览器未获认证：Playwright CDN自动尝试返回无效ZIP，APT依赖因setgroups等权限失败；受限止点不绕过权限，不虚报本地播放或助手听觉。
+
+真实远端浏览器只读合成PCM。前两运行40818287520/40818540969实际failure：把浏览器浮点表示预设为FFmpeg形式，诊断发现正值归一化不同。未改原WAV；修正为从浏览器浮点还原原整数PCM后逐全样本SHA比较。第三运行40819002124/HEADbb25049/job123266778291实际completed/success：Chrome156.0.8078.47的127合成流全部整数PCM同一，原始float32与参考相同数为0，127条皆ASYMMETRIC_POSITIVE_MAX；检索/11+116筛选、静默起始、播放时间推进、暂停、切源停播/重置现代循环、0JS错误/0外部请求均真实通过。原Float字段改名reference_float32，旧失败/原报告/原提交完整保留，不追认浮点逐字节一致或真实原声浏览器运行。
+
+成功浏览器工件12873149784 ZIP13483B已独立下载并核API/本地SHA1767a6b7a86949df5a93bdcaf501ac5c23af3bfb1fa2127aa53be6f381f1bb04；原66784B JSON/SHA91c6aec846e59b985a7ae43e9b5059e160079a13001c215a53c0193f3aac932c全部永久归档。新的合成/原件边界负例加入后本地37项相关测试通过；候选/主线最终CI另据真实后验，不能提前称通过。本地首次导出曾把旧audio清单helper的BIN/TXT一起拿来解析，后显式过滤为127独立WAV，旧helper不改、回归测试保留；失败不是原文件损坏。
+
+最高NEXT **SCENE21-TOWN1000-NPC-AREA-COVERAGE**：仅复用已有R15完整1000.DAT及51原RD子集，有限核包含(63,103)的新视窗原图覆盖，给出实际新增格/图号或精确缺件；可实际扩窗则做现代离线观察，否则留缺口停止，不重新下载巨大REAL/扩碰撞、驱动或播放helper。TW1人物5894仍只作明确跨样本候选，不能冒充mixed25同源NPC实际像素。原世界仍未进入，NPC身份/对白与音频事件待证，Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、overall_percent=null保持。
