@@ -18719,3 +18719,14 @@ fresh main e86f838833323c331c4c3657eab0f7a129582127/treef97cd6b31b2042d990ec8bef
 真实浏览器只运行合成色块：source run40822824028/HEADbd4a2fd/job123278943884实际success，39项当时测试及8画面像素/控件通过，NPC在旧窗外不叠加、定位扩窗、原格检视、2倍缩放、扩展24/旧0补图标记、0JS错误/0外部请求成立。工件12875013431 ZIP972B已独立下载核API/本地SHA3ec4a50361796aacef3700341f9856e16bc9d841ffd4897578ad43ea2f0fd5bc；原2260B JSON/SHA72e89f17dec6cf3d1f335464584af51fa8a1ad8dccf4040ac2eb501a1c68fb98永久归档。加入原件/合成/浏览器证据范围负例后，本地42相关测试通过；最终候选/主线CI须按实际后验记录。
 
 最高NEXT **SCENE22-NPC63-103-ORIGINAL-ARGUMENT**：只针对已取证的这一NPC，复用已保存mixed25载体的原创建块/完整template，有限核enemy参数尾部或其精确指向的一份TownPeople对白/行为输入；有原字节才把显示候选推进为一条可观察内容合同。原脚本/对白只私人保管，公开留来源/语义/哈希；若原参数不含可恢复内容或缺件，则记录具体止点回22域，不扩所有NPC、RAR/驱动/帧调度或无证动作。用户所要的原版可操作世界仍未进入，原生碰撞、实际对白执行、音频事件待证；Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、overall_percent=null保持。
+
+
+## 2026-10-29 — SCENE22：一名NPC的精确原参数和静态对白已接入查阅
+
+从fresh main c2f672fe50ffcb880cf0290f77c3a4dac660d15b/tree d33a883ecdda6c891bc23f1153f608a47c5cca6e按协议重核669分支/6422树项/0开放PR/七启动文件与22域索引；此前CURRENT2699905B完整字节为本版原样前缀。SCENE21最后收据专用Action40824032802实际success，05f38e4主线21项success。详见docs/continuity/STONEAGE-SCENE22-NPC-ARGUMENT-20261029.md。
+
+已保存mixed25原RAR361255180B整SHA与SCENE21包2745658B整SHA真正回读相同；单libarchive取出创建4413B/模板4950B/msg_1000_63_103原143B，三成员逐全SHA匹配R18唯一原清单。独立RAR4解析器验7952文件头CRC、三成员CRC/压缩段摘要，不冒称双解包器。原创建块1000/(63,103)明确enemy尾部file:genout/msg_1000_63_103，唯一npcgen_man→TownPeople联接成立。原文为村民信息及商店买卖口令的新手提示，一行末LF、四句号、0 ASCII逗号/0竖线；CP950往返、Big5同解和独立iconv214B UTF8全部同一。文字提及多种消息不证明此NPC多分支，买卖提示不证明实际交易或把村民变为商店。
+
+私人观察页新增显式原文查阅并定位该配置点，原繁体完整保留、简体只作编辑释义；原8图/model完全不变，独立HTMLParser可见文字等于源解码、JS语法通过。本地Chromium缺失，原图浏览器/原服/世界无新增执行；公开远端UI只用合成文本/色块，CI后验另记。53本地相关测试通过。私人交付ZIP1321290B/SHA7c6d717de639937f3fc0482907cf501afe52ed600f70683b43a70920178110df已成功保存，身份元数据已写，未再次回读，不冒称二次耐久SHA。原脚本/对白/原图/HTML不公开，source_action_run_id=null。
+
+最高NEXT **SCENE23-MATERIAL-ROTATION-REVIEW**：此一NPC静态内容已有限闭合，回22域/R102查重并排序其他已有实物的人物创建/宠物/场景交互；有可观察内容增量才开展，无精确原件则止点，不扩所有NPC/RAR/驱动/帧调度helper。原客户端可操作世界未进入，官方同服/原生对白/碰撞/音频事件仍OPEN，Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、overall_percent=null保持。
