@@ -1,0 +1,375 @@
+{
+  "schema": "stoneage.scene23.durable_source_and_UI_custody.r1",
+  "date": "2026-10-29",
+  "baseline": {
+    "HEAD": "056931f762b2ca60c680af129e187f90180aa1ea",
+    "tree": "3291dd90b235ede99584e7652f43a1aa44f10822",
+    "CURRENT_bytes": 2702146,
+    "CURRENT_sha256": "1a180ce8338e48cdf02456b570444e1b4f375adc64dccbaaec62fc78b61e83cb",
+    "startup_tree_entries": 6433,
+    "latest_receipt_run": 40860210551,
+    "latest_receipt_actual_result": "completed/success"
+  },
+  "actual_source": {
+    "scope": "TW10_ACCEPTED_RETAIL_RESOURCE_BYTES_R16_CANDIDATE_NUMBERS_ONLY",
+    "parent_bytes": 372626292,
+    "parent_sha256": "3a4854adaebef056332cdbd7b1dc1c130c571b11704e3f199f53d03aa31cba24",
+    "retrieved_existing_private_copy_and_rehashed": true,
+    "new_client_release_acquired": false,
+    "source_file_count": 7,
+    "all7_full_SHA_match_original_inventory": true,
+    "body_window_bytes": 128,
+    "body_window_actual_SHA_reverified": "0e9687f40dae13f8b700426b44b8fcd1b5b462396541b0123464034fbb755d65",
+    "first_frame_occurrences": 96,
+    "distinct_RD_blocks": 96,
+    "RGBA_PNG_and_complete_canvas_comparisons": 192,
+    "independent_raw_SPR_SPRADRN_selector_reader_verified": true,
+    "full728_frames_visually_observed": false,
+    "original_character_total": null,
+    "original_world_entered": false,
+    "actual_source_browser_verified": false,
+    "source_action_run_id": null
+  },
+  "immutable_reports": [
+    {
+      "path": "research/recovered/STONEAGE-SCENE23-BODY-VISUALS-R1.json",
+      "bytes": 137998,
+      "sha256": "27eb95b68fb31b5515abf1a26fbb4b7a8721554f07687e2f29a734dae094854d",
+      "git_blob": "69bc6438e23402e31356e80aa3a7ca6a7b5990ed"
+    },
+    {
+      "path": "research/recovered/STONEAGE-SCENE23-ACTUAL-PIXEL-REPLAY-R1.json",
+      "bytes": 32672,
+      "sha256": "7faa67c4452404327116ae94bef440ba74cb0d52e80a8f72a9ed491d088ffdc9",
+      "git_blob": "1486cb6988297ba3870f16d0b241b0cb50574f15"
+    }
+  ],
+  "synthetic_UI": {
+    "scope": "SYNTHETIC_PIXELS_ONLY",
+    "run_id": 40863417560,
+    "job_id": 123412063069,
+    "head": "2b115ba1a32dfa03b362d8c2b317c7fd4bfb621c",
+    "result": "completed/success",
+    "test_count_in_actual_job_log": 35,
+    "artifact_id": 12892039275,
+    "artifact_ZIP_bytes": 8503,
+    "artifact_ZIP_sha256": "a23b69645d0687bff54b9ee8101d4d02b22a90add6996eb4a18626a429c986e4",
+    "artifact_independently_downloaded_and_digest_matches_API": true,
+    "raw_JSON_bytes": 32707,
+    "raw_JSON_sha256": "dd1d3b4c5778f2f54fd92bc50586161f66d3e82d7fe6f73c1356f038185fd5bb",
+    "all192_canvas_RGBA_hashes_equal": true,
+    "original_source_browser_verified": false,
+    "raw_JSON_git_blob": "ab96dbe89b992d18dd6faaa42007d48e2b45a502"
+  },
+  "publication": {
+    "PR": 38,
+    "candidate": "2b115ba1a32dfa03b362d8c2b317c7fd4bfb621c",
+    "candidate_tree": "e3b64369fa4ce0f71098159180ceed3496870ec4",
+    "main_merge": "0c7832474fc10d0263f4c81cfc9d2eeca8844ec9",
+    "merged_tree": "e3b64369fa4ce0f71098159180ceed3496870ec4",
+    "all17_uploaded_full_blobs_match_local": true,
+    "all5_history_prefixes_preserved": true,
+    "candidate_runs": [
+      {
+        "id": 40863455425,
+        "name": "Verify SCENE23 original body candidate metadata and synthetic gallery",
+        "event": "pull_request",
+        "status": "completed",
+        "result": "success"
+      },
+      {
+        "id": 40863417143,
+        "name": "Validate legacy StoneAge assistant history and pet content gaps",
+        "event": "push",
+        "status": "completed",
+        "result": "success"
+      },
+      {
+        "id": 40863417184,
+        "name": "Verify original four village interior materials R34",
+        "event": "push",
+        "status": "completed",
+        "result": "success"
+      },
+      {
+        "id": 40863417125,
+        "name": "Validate StoneAge preproduction content archive and wiki boundary",
+        "event": "push",
+        "status": "completed",
+        "result": "success"
+      },
+      {
+        "id": 40863417406,
+        "name": "Verify original same-build named-entity source gate R31",
+        "event": "push",
+        "status": "completed",
+        "result": "success"
+      },
+      {
+        "id": 40863417325,
+        "name": "Accept primary-source TW1.0 character creation numeric join R16",
+        "event": "push",
+        "status": "completed",
+        "result": "success"
+      },
+      {
+        "id": 40863417424,
+        "name": "Validate Stage A early source gap triage",
+        "event": "push",
+        "status": "completed",
+        "result": "success"
+      },
+      {
+        "id": 40863417109,
+        "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+        "event": "push",
+        "status": "completed",
+        "result": "success"
+      },
+      {
+        "id": 40863417217,
+        "name": "Verify original local album name material and no master promotion R35",
+        "event": "push",
+        "status": "completed",
+        "result": "success"
+      },
+      {
+        "id": 40863417153,
+        "name": "Verify original dated map110 three actual cell values R32",
+        "event": "push",
+        "status": "completed",
+        "result": "success"
+      },
+      {
+        "id": 40863417310,
+        "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+        "event": "push",
+        "status": "completed",
+        "result": "success"
+      },
+      {
+        "id": 40863417339,
+        "name": "Verify original native album table and saved-name joins R36",
+        "event": "push",
+        "status": "completed",
+        "result": "success"
+      },
+      {
+        "id": 40863417158,
+        "name": "Verify R102 frozen material portfolio and record projections",
+        "event": "push",
+        "status": "completed",
+        "result": "success"
+      },
+      {
+        "id": 40863417197,
+        "name": "Accept preserved original TW85 SPR137 full animation material R28",
+        "event": "push",
+        "status": "completed",
+        "result": "success"
+      },
+      {
+        "id": 40863417270,
+        "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+        "event": "push",
+        "status": "completed",
+        "result": "success"
+      },
+      {
+        "id": 40863417356,
+        "name": "Validate StoneAge Stage A joint review decision",
+        "event": "push",
+        "status": "completed",
+        "result": "success"
+      },
+      {
+        "id": 40863417342,
+        "name": "Validate Stage A evidence-limited review acceptance",
+        "event": "push",
+        "status": "completed",
+        "result": "success"
+      },
+      {
+        "id": 40863417560,
+        "name": "Verify SCENE23 original body candidate metadata and synthetic gallery",
+        "event": "push",
+        "status": "completed",
+        "result": "success"
+      },
+      {
+        "id": 40863417195,
+        "name": "Verify StoneAge R17 original battle SAB crossversion occurrence conservation",
+        "event": "push",
+        "status": "completed",
+        "result": "success"
+      },
+      {
+        "id": 40863417232,
+        "name": "Verify preserved mixed25 full server source conservation R18",
+        "event": "push",
+        "status": "completed",
+        "result": "success"
+      },
+      {
+        "id": 40863417139,
+        "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+        "event": "push",
+        "status": "completed",
+        "result": "success"
+      }
+    ],
+    "main_runs": [
+      {
+        "id": 40863799632,
+        "name": "Validate StoneAge Stage A joint review decision",
+        "status": "completed",
+        "result": "success"
+      },
+      {
+        "id": 40863799571,
+        "name": "Verify original same-build named-entity source gate R31",
+        "status": "completed",
+        "result": "success"
+      },
+      {
+        "id": 40863799422,
+        "name": "Accept primary-source TW1.0 character creation numeric join R16",
+        "status": "completed",
+        "result": "success"
+      },
+      {
+        "id": 40863799382,
+        "name": "Verify StoneAge R17 original battle SAB crossversion occurrence conservation",
+        "status": "completed",
+        "result": "success"
+      },
+      {
+        "id": 40863799555,
+        "name": "Verify original dated map110 three actual cell values R32",
+        "status": "completed",
+        "result": "success"
+      },
+      {
+        "id": 40863799451,
+        "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+        "status": "completed",
+        "result": "success"
+      },
+      {
+        "id": 40863799392,
+        "name": "Validate Stage A early source gap triage",
+        "status": "completed",
+        "result": "success"
+      },
+      {
+        "id": 40863799501,
+        "name": "Verify original local album name material and no master promotion R35",
+        "status": "completed",
+        "result": "success"
+      },
+      {
+        "id": 40863799294,
+        "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+        "status": "completed",
+        "result": "success"
+      },
+      {
+        "id": 40863799378,
+        "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+        "status": "completed",
+        "result": "success"
+      },
+      {
+        "id": 40863799523,
+        "name": "Verify preserved mixed25 full server source conservation R18",
+        "status": "completed",
+        "result": "success"
+      },
+      {
+        "id": 40863799327,
+        "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+        "status": "completed",
+        "result": "success"
+      },
+      {
+        "id": 40863799349,
+        "name": "Accept preserved original TW85 SPR137 full animation material R28",
+        "status": "completed",
+        "result": "success"
+      },
+      {
+        "id": 40863799680,
+        "name": "Validate legacy StoneAge assistant history and pet content gaps",
+        "status": "completed",
+        "result": "success"
+      },
+      {
+        "id": 40863799282,
+        "name": "Verify original native album table and saved-name joins R36",
+        "status": "completed",
+        "result": "success"
+      },
+      {
+        "id": 40863799400,
+        "name": "Verify R102 frozen material portfolio and record projections",
+        "status": "completed",
+        "result": "success"
+      },
+      {
+        "id": 40863799466,
+        "name": "Validate StoneAge preproduction content archive and wiki boundary",
+        "status": "completed",
+        "result": "success"
+      },
+      {
+        "id": 40863799464,
+        "name": "Verify original four village interior materials R34",
+        "status": "completed",
+        "result": "success"
+      },
+      {
+        "id": 40863799534,
+        "name": "Independently verify TW1.0 R58 rooted helper returns and source custody",
+        "status": "completed",
+        "result": "success"
+      },
+      {
+        "id": 40863799286,
+        "name": "Verify SCENE23 original body candidate metadata and synthetic gallery",
+        "status": "completed",
+        "result": "success"
+      },
+      {
+        "id": 40863799457,
+        "name": "Validate Stage A evidence-limited review acceptance",
+        "status": "completed",
+        "result": "success"
+      }
+    ],
+    "main_special_job_id": 123413339340,
+    "main_35test_log_confirmed": true
+  },
+  "private_deliverable": {
+    "bytes": 1211498,
+    "sha256": "536240d64be1fa05a3e9957d66ff75a9cab2ab31c485911942cf2dc858f05eb0",
+    "save_succeeded": true,
+    "version_identity_applied": true,
+    "second_download_after_save": false,
+    "original_assets_published_to_Git": false
+  },
+  "first_local_failure": {
+    "reason": "MODERN_CANVAS_EXTENTS_OUTSIDE_240x220_REFUSED",
+    "corrected_size": [
+      240,
+      260
+    ],
+    "corrected_anchor": [
+      120,
+      200
+    ],
+    "original_pixels_unchanged": true
+  },
+  "next": "SCENE24-SHOP-FIRST-THREE-ITEM-IMAGE-INPUTS",
+  "original_world_entered": false,
+  "overall_completion_percent": null
+}

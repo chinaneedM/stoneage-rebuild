@@ -9,3 +9,13 @@
 私人交付ZIP1211498B/SHA536240d64be1fa05a3e9957d66ff75a9cab2ab31c485911942cf2dc858f05eb0已保存成功并应用版本身份，保存后未再次回读，不虚报二次耐久SHA。原RD/PNG/SAP/HTML只私人保管；公开Git仅程序、数值/摘要、规格和合成fixture；原世界/建角成功/名称/头像/FPS未认证，source_action_run_id=null。
 
 最高NEXT **SCENE24-SHOP-FIRST-THREE-ITEM-IMAGE-INPUTS**：按SCENE14已有原参数顺序，最多三项ID0/4/10及imagenumber20033/20032/20013先查准确命名空间；已有原件可定位才读取和独立核图，不猜imagenumber等于bitmapno、不扩大所有物品/服务器交易helper。失败即留精确来源止点。完整CURRENT和历史前缀保存；DD-028四档、Stage A7PARTIAL+2OPEN/B与wiki GATED/R79暂停/overall_percent=null保持。
+
+## 最终主线验收与耐久派生保管
+
+候选2b115ba1a32dfa03b362d8c2b317c7fd4bfb621c的21项（20 push+1 PR）Actions全实际completed/success；PR38合并主线0c7832474fc10d0263f4c81cfc9d2eeca8844ec9，完整tree e3b64369fa4ce0f71098159180ceed3496870ec4与本地一致，主线21项也全部completed/success。主线专用40863799286实际日志确认35项。17个完整上传blob/整tree逐SHA匹配；CURRENT等五历史文件完整原字节为追加前缀，未改写旧失败/边界。
+
+独立下载源合成浏览器工件12892039275，ZIP8503B/SHA a23b69645d0687bff54b9ee8101d4d02b22a90add6996eb4a18626a429c986e4与API同；原JSON32707B/SHA dd1d3b4c5778f2f54fd92bc50586161f66d3e82d7fe6f73c1356f038185fd5bb全部永久存储。真实Chrome156的192个合成卡片RGBA、12组选择/双配色/方向正反环绕/重置、0JS错误0外部请求成立；不冒作原图浏览器或原程序执行。
+
+原首帧源报告137998B/SHA27eb95b6…/blob69bc6438…已在主线；本地独立原像素完整回执32672B/SHA7faa67c4…/blob1486cb69…及其192卡片哈希也永久存储，补充已保存私人ZIP的来源链。实际原源仍是本地七成员完整SHA、独立原SPR/SPRADRN读出、RD索引/两SAP像素比较；source Action null。所有run/job/ZIP/raw/Git blob精确链见STONEAGE-SCENE23-CUSTODY-R1.json。私人交付成功且版本身份已写，不虚报保存后二次下载。
+
+此后验提交自身CI仅按后续真实观察判断，不预支。最高NEXT24、原世界未进入、非完整建角身份和全部Stage A/B/wiki/R79/总体未知边界保持。
