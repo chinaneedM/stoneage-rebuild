@@ -1,0 +1,357 @@
+{
+  "schema": "stoneage.scene22.source_and_publication_custody.r1",
+  "date": "2026-10-29",
+  "baseline": {
+    "head": "c2f672fe50ffcb880cf0290f77c3a4dac660d15b",
+    "tree": "d33a883ecdda6c891bc23f1153f608a47c5cca6e",
+    "branches": 669,
+    "tree_entries": 6422,
+    "open_PRs": 0,
+    "CURRENT_bytes": 2699905,
+    "CURRENT_sha256": "0af9803bc725dac33ca532bc7659214b1ff113b59ef803ba11f480cc8262c997",
+    "CURRENT_blob": "d8e58368093116a7f8737361d4dfd17dd43b212e"
+  },
+  "private_source": {
+    "parent_RAR_bytes": 361255180,
+    "parent_RAR_sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+    "prior_scene21_zip_bytes": 2745658,
+    "prior_scene21_zip_sha256": "4d35351e6db222cac889abcce2fdbe97c498abc252d24a3000968a58c9d2605a",
+    "both_private_files_retrieved_and_full_sha_verified": true,
+    "new_public_client_download": false,
+    "libarchive_version": "3.7.2",
+    "second_decompressor_used": false,
+    "independent_header_parser_and_prior_R18_SHA_agree": true,
+    "independent_sequential_create_parser_exact_target_and_range": true,
+    "iconv_BIG5_UTF8_matches_CP950": true,
+    "original_world_entered": false,
+    "original_server_executed": false,
+    "source_action_run_id": null
+  },
+  "local_source_report": {
+    "path": "research/recovered/STONEAGE-SCENE22-NPC-ARGUMENT-R1.json",
+    "bytes": 5425,
+    "sha256": "ec2eca62f4d0bebefd5df1d3e1af63f3c5f1ba70245e42502c24d61e9284c1e1",
+    "git_blob": "4683e55fd5bd3558e40562aa70e6520c6183f45e"
+  },
+  "synthetic_UI": {
+    "scope": "SYNTHETIC_TEXT_AND_SYNTHETIC_PIXELS_ONLY",
+    "run_id": 40859530058,
+    "job_id": 123398922902,
+    "HEAD": "9a1b4bae5261d4f8577d96a01e9320abe3b0823a",
+    "result": "completed/success",
+    "tests_in_actual_job_log": 53,
+    "artifact_id": 12890508111,
+    "ZIP_bytes": 411,
+    "ZIP_sha256": "f94bc25cae9197f5f578eb8a79a71e62e267b3b804e11891484e4a63831e0de1",
+    "ZIP_independently_downloaded_and_sha_matched_API": true,
+    "raw_JSON_bytes": 403,
+    "raw_JSON_sha256": "5cff587f2e5c88ae2616ee8de6a5315af2a1bef35093fefc67ac6c26a5215571",
+    "raw_JSON_git_blob": "10b95bcbad819fbe1dbe9e4cd9a0c2a214ef7438",
+    "original_source_browser_verified": false
+  },
+  "publication": {
+    "candidate_head": "9a1b4bae5261d4f8577d96a01e9320abe3b0823a",
+    "candidate_tree": "eb39f7048223c64b3bba4b01ee36ec9b09198c3b",
+    "PR": 37,
+    "merged_head": "6510de13e3ca89f37bdb32c4a3c1b402b743ace5",
+    "merged_tree": "eb39f7048223c64b3bba4b01ee36ec9b09198c3b",
+    "all13_uploaded_blobs_and_complete_tree_matched_local": true,
+    "changed_historical_files_full_old_prefix_preserved": [
+      "README.md",
+      "docs/CURRENT-STATE.md",
+      "docs/HISTORICAL-TIMELINE.md",
+      "docs/SOURCE-REGISTRY.md"
+    ],
+    "native_git_push_failed_missing_credentials": true,
+    "authorized_Git_data_API_succeeded": true,
+    "candidate_runs": [
+      {
+        "id": 40859562017,
+        "name": "Verify SCENE22 original NPC content metadata and synthetic text reader",
+        "event": "pull_request",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 40859529924,
+        "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+        "event": "push",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 40859530074,
+        "name": "Verify original native album table and saved-name joins R36",
+        "event": "push",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 40859530033,
+        "name": "Verify preserved mixed25 full server source conservation R18",
+        "event": "push",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 40859529951,
+        "name": "Validate StoneAge preproduction content archive and wiki boundary",
+        "event": "push",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 40859530058,
+        "name": "Verify SCENE22 original NPC content metadata and synthetic text reader",
+        "event": "push",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 40859529958,
+        "name": "Verify StoneAge R17 original battle SAB crossversion occurrence conservation",
+        "event": "push",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 40859530071,
+        "name": "Verify original same-build named-entity source gate R31",
+        "event": "push",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 40859530204,
+        "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+        "event": "push",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 40859530093,
+        "name": "Accept preserved original TW85 SPR137 full animation material R28",
+        "event": "push",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 40859530015,
+        "name": "Verify original dated map110 three actual cell values R32",
+        "event": "push",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 40859529790,
+        "name": "Validate legacy StoneAge assistant history and pet content gaps",
+        "event": "push",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 40859529752,
+        "name": "Verify original local album name material and no master promotion R35",
+        "event": "push",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 40859530026,
+        "name": "Verify original four village interior materials R34",
+        "event": "push",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 40859530050,
+        "name": "Validate Stage A evidence-limited review acceptance",
+        "event": "push",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 40859530032,
+        "name": "Validate Stage A early source gap triage",
+        "event": "push",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 40859529716,
+        "name": "Validate StoneAge Stage A joint review decision",
+        "event": "push",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 40859529724,
+        "name": "Verify R102 frozen material portfolio and record projections",
+        "event": "push",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 40859529697,
+        "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+        "event": "push",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 40859529755,
+        "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+        "event": "push",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 40859530013,
+        "name": "Accept primary-source TW1.0 character creation numeric join R16",
+        "event": "push",
+        "status": "completed",
+        "conclusion": "success"
+      }
+    ],
+    "main_runs": [
+      {
+        "id": 40859924297,
+        "name": "Verify original dated map110 three actual cell values R32",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 40859924191,
+        "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 40859924232,
+        "name": "Verify original four village interior materials R34",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 40859924347,
+        "name": "Verify SCENE22 original NPC content metadata and synthetic text reader",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 40859924589,
+        "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 40859924341,
+        "name": "Verify original native album table and saved-name joins R36",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 40859924595,
+        "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 40859924422,
+        "name": "Validate Stage A early source gap triage",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 40859924533,
+        "name": "Independently verify TW1.0 R58 rooted helper returns and source custody",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 40859924339,
+        "name": "Accept primary-source TW1.0 character creation numeric join R16",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 40859924223,
+        "name": "Verify R102 frozen material portfolio and record projections",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 40859924261,
+        "name": "Validate StoneAge preproduction content archive and wiki boundary",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 40859924395,
+        "name": "Validate Stage A evidence-limited review acceptance",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 40859924337,
+        "name": "Validate StoneAge Stage A joint review decision",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 40859924391,
+        "name": "Verify original same-build named-entity source gate R31",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 40859924446,
+        "name": "Verify original local album name material and no master promotion R35",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 40859924479,
+        "name": "Verify StoneAge R17 original battle SAB crossversion occurrence conservation",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 40859924534,
+        "name": "Verify preserved mixed25 full server source conservation R18",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 40859924357,
+        "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 40859924460,
+        "name": "Validate legacy StoneAge assistant history and pet content gaps",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 40859924227,
+        "name": "Accept preserved original TW85 SPR137 full animation material R28",
+        "status": "completed",
+        "conclusion": "success"
+      }
+    ],
+    "main_special_job_id": 123400270493,
+    "main_job_log_53tests_verified": true
+  },
+  "private_deliverable": {
+    "bytes": 1321290,
+    "sha256": "7c6d717de639937f3fc0482907cf501afe52ed600f70683b43a70920178110df",
+    "save_succeeded": true,
+    "version_identity_applied": true,
+    "second_download_after_save": false,
+    "original_scripts_and_dialogue_published_to_Git": false
+  },
+  "overall_completion_percent": null,
+  "next": "SCENE23-MATERIAL-ROTATION-REVIEW"
+}

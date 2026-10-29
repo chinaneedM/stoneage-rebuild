@@ -11,3 +11,11 @@
 私人交付ZIP1321290B/SHA256 7c6d717de639937f3fc0482907cf501afe52ed600f70683b43a70920178110df包含观察页及三精确原输入；已成功保存为私人交付并写回版本身份，未二次回读不冒称耐久二次SHA。local source action为0，不能把公开合成CI当取源/原图浏览器。
 
 最高NEXT **SCENE23-MATERIAL-ROTATION-REVIEW**：完成这一个NPC的静态内容闭合后回22域/R102，有限查重和重新排序；优先其他已有真实材料的人物创建/宠物/场景交互，必须有可观察内容增量，不扩大所有NPC、RAR、驱动/帧调度helper。原客户端可操作世界仍未进入，原生对白、碰撞、官方同服和音频事件仍待证；Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、overall_percent=null均不变。
+
+## 最终候选/主线验收与永久保管
+
+最终候选9a1b4bae5261d4f8577d96a01e9320abe3b0823a共21项（20 push+1 PR）Actions实际completed/success；PR37已正常合并为6510de13e3ca89f37bdb32c4a3c1b402b743ace5，完整tree eb39f7048223c64b3bba4b01ee36ec9b09198c3b与本地一致。该主线21项Actions亦全completed/success；专用40859924347真实日志再次确认53项通过。原生git push无凭证失败后，用已连接Git数据接口上传13个完整blob，逐SHA和完整树与本地全部相同；CURRENT2702146B及其他历史文件完整旧前缀保留，不是后缀覆盖。
+
+合成浏览器成功run40859530058/job123398922902：Chrome156，初始收起、显式打开和NPC定位、原样文本/HTML转义、重复打开不重复、0JS错误/0外部请求均实际通过。工件12890508111 ZIP411B独立下载SHA f94bc25cae9197f5f578eb8a79a71e62e267b3b804e11891484e4a63831e0de1与API相同；原JSON403B/SHA 5cff587f2e5c88ae2616ee8de6a5315af2a1bef35093fefc67ac6c26a5215571/blob10b95bcbad819fbe1dbe9e4cd9a0c2a214ef7438完整永久存储。两份公开源/本地验收JSON、全部候选/main run IDs、ZIP与raw/Git blob链见STONEAGE-SCENE22-CUSTODY-R1.json。公开CI不读原对白/原图，原源验证仍是本地libarchive3.7.2＋全SHA/CRC/独立iconv，source Action保持null。
+
+私人交付已成功保存并应用版本身份；不虚报保存后二次回读。该后验提交自身CI只按随后真实观察追加，不预支。本包有限闭合；SCENE23材料轮换、原世界未进入及所有生产/版本/总体未知边界不变。
