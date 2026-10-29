@@ -77,6 +77,39 @@ class TestSourceQualifiedImagePair(unittest.TestCase):
         self.assertNotIn("JFIF", text)
         self.assertFalse(d["raw_http_original_bytes_published"])
 
+    def test_replay_published_exact_source_identities(self):
+        import json
+        report = json.loads(s.PUBLISHED.read_text(encoding="utf-8"))
+        self.assertTrue(s.verify_published(report))
+        self.assertEqual([x["ordinal"] for x in report["source_rows"]], [2, 3])
+        self.assertTrue(report["http_response_url_binding_verified"])
+
+    def test_altered_publication_image_digest_rejected(self):
+        import json
+        d = json.loads(s.PUBLISHED.read_text(encoding="utf-8"))
+        d["source_rows"][1]["original_jpeg"]["sha256"] = "0" * 64
+        with self.assertRaisesRegex(ValueError, "JPEG identity"):
+            s.verify_published(d)
+
+    def test_false_visual_or_original_client_claim_rejected(self):
+        import json
+        d = json.loads(s.PUBLISHED.read_text(encoding="utf-8"))
+        d["original_game_client_executed"] = True
+        with self.assertRaisesRegex(ValueError, "status promoted"):
+            s.verify_published(d)
+        d["original_game_client_executed"] = False
+        d["source_rows"][0]["visual_description"] = "Unverified pet name"
+        with self.assertRaisesRegex(ValueError, "interpretation promoted"):
+            s.verify_published(d)
+
+    def test_source_image_swap_rejected_by_pinned_publication(self):
+        import json
+        d = json.loads(s.PUBLISHED.read_text(encoding="utf-8"))
+        a, b = d["source_rows"]
+        a["original_jpeg"], b["original_jpeg"] = b["original_jpeg"], a["original_jpeg"]
+        with self.assertRaisesRegex(ValueError, "JPEG identity"):
+            s.verify_published(d)
+
 
 if __name__ == "__main__":
     unittest.main()
