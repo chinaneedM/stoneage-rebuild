@@ -863,3 +863,8 @@ ranges, not a new whole-client download or arbitrary program reverse engineering
 ### 2026-10-29 | SCENE18 室外NPC原图索引与真实源工件耐久验收
 
 [SCENE18来源/验收与下一步](docs/continuity/STONEAGE-SCENE18-GRAPHIC16048-ADRN-20261029.md)：独立下载核验成功源工件并永久归档，原图形16048唯一对应bitmap5894、36×79、REAL偏移25018537/1668B。原ADRN全SHA/CRC由unar通过，libarchive不支持压缩过滤器的失败保留；跨版完整记录同SHA提供取图候选，未读mixed25原像素不能称已见NPC。51本地相关测试通过，远端CI后验另记。最高NEXT先查现有私人原图5894，缺件则回22域，不扩解包/驱动链；原世界仍未进入，生产/总体未知边界保持。
+
+
+### 2026-10-29 | SCENE18主线全过，SCENE19已从保存TW1原件取得人物候选图
+
+[最终验收与新续接](docs/continuity/STONEAGE-SCENE18-GRAPHIC16048-ADRN-20261029.md)：PR34主线21项Actions与候选21项全部通过，51测试真实日志已核。复用已保存TW1原件实读bitmap5894，双解码器一致取得36×79/2844原索引及私人候选PNG；Palet0颜色仍候选，mixed25对应REAL未读，不能认定同源NPC或原世界运行。原图包已私人保存，公开仅派生JSON。最高下一SCENE20先回22域材料复核与有实物内容轮换，停止原RAR/驱动/同摘要空转。

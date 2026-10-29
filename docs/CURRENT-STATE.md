@@ -18674,3 +18674,14 @@ fresh远端main9854762ef8163dd86f67982379414e9d339f8dcb/tree4482253ef2563da0ffdc
 源报告、完整range链、跨版候选、ZIP/JSON/Git blob保管收据以及17条新正反测试永久入Git；与既有门槛合计51测试本地通过。候选/主线CI按后验另记，不能以公开元数据CI冒作原图解码或源重跑。原数据/图像/程序未公开。
 
 **最高NEXT：SCENE19-EXISTING-PRIVATE-NPC-BITMAP-OR-CONTENT-ROTATION**。先在已有私人TW1/mixed25保管包或图像子集中找准确原RD(5894/1668B)；完整原成员SHA或既已认证的块SHA成立才解码，并独立核索引/像素再接现代观察器。若只能取得索引或需要重拉338MB压缩REAL，有限缺件止点回22域材料队列，不再扩大RAR/解包/驱动辅助链。NPC63,103位于R15旧7×7窗口之外（y最大102），不得为显示NPC把旧画布伪称已覆盖；新观察须显式扩窗/重取地图范围或单独候选图检视。原版世界仍未进入，Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、总体percent=null保持。
+
+
+## SCENE18 主线终验及相邻SCENE19真实原图复用（2026-10-29）
+
+PR34已合并为40542736b9db3b20aa9525e093bf7aa183063ce9，完整tree1904874d025ee1d1eae9febf71699660a4e4f8ce与本地已验tree相同；候选66adf209的21项、主线21项Actions全部实际completed/success。主线专用40815745599/job123256252294原日志确认51测试，公开CI仅读元数据，未读原图。全21运行ID/源工件/原报告blob在STONEAGE-SCENE18-PUBLICATION-R1.json永久保存。原生git push无凭证失败，曾有head不存在的PR422失败；随后使用已连接GitHub Git数据接口上传11完整blob并逐SHA匹配，远端整tree一致后正常PR合并，未截断大CURRENT。
+
+相邻SCENE19不是重拉原盘：实取已保存P3H原件包372626292B并核SHA3a4854adaebef056332cdbd7b1dc1c130c571b11704e3f199f53d03aa31cba24，完整TW1 ADRN10079680B/SHA47254c0ff904d363fb5c3c5297edf553c8eaf24cd933f346d8ce7aabed4155c8及REAL315842228B/SHA408e6ee05c83354349691937da2ad8f7488ac10f65f07e6681b7d92cb1c9ed13重新认证。原5894整80B记录SHA与SCENE18完全相同，实际1668B RD/SHAce21e49856dde81b79afa5854f400df31393b1d87a08e6357b0eb8fd2e5ad252解得36×79/2844索引；两个不同实现全部索引同一，索引SHA d5d2cc7806f814d64bf5c27f0b557c7846c71c08e2dd87af1f2078af3548c119，Pillow PNG回读RGBA及整数4x全部精确相同，并实际目视一幅有帽饰的人形候选。原灰度只是索引数值，Palet0配色/倒行/透明仍候选，不能称真实游戏当时颜色或原屏幕截图。
+
+小私人候选包16155B已保存成功（保存后未再次回读，不伪称耐久二次SHA）。公开Git只有2249B派生元数据，原RD/SAP/PNG未公开；source_ci_run_id=null明确本地复用与双解码器，不虚构GitHub source任务。mixed25 REAL仍读0B，未证明它与TW1该块相同；台湾1.0中该图存在也不证明TW1官方服有1000(63,103)的NPC、同名对白/交互或纯净2.5发行身份。浏览器场景/原客户端世界都没有新认证。
+
+最高NEXT改为 **SCENE20-MATERIAL-ROTATION-REVIEW**：先按22域已有材料作一次有限查重/重新排序，再选择有原实物的交互/音频/场景集成结果；不要继续RAR过滤器、原EXE或相同5894摘要空转。若选择现有R15观察器，只能将已取得TW1候选图作为明确跨样本参考，不能冒充同源NPC实际像素；NPC坐标y103在旧7×7窗外，扩窗须原DAT/每个原图来源单独资格。保持原世界未进入、Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停和总体百分比null。该后验提交自身CI另据实际记录，不能追认成已运行。
