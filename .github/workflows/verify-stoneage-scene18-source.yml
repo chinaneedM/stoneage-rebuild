@@ -1,0 +1,27 @@
+name: Verify SCENE18 source custody and bounded crossversion NPC image candidate
+on:
+  push:
+    branches: [main, agent/scene18-acceptance-20261029]
+    paths:
+      - tools/stoneage_scene18_*.py
+      - tests/test_stoneage_scene18_*.py
+      - research/recovered/STONEAGE-SCENE18-*.json
+      - .github/workflows/verify-stoneage-scene18-source.yml
+  pull_request:
+    paths:
+      - tools/stoneage_scene18_*.py
+      - tests/test_stoneage_scene18_*.py
+      - research/recovered/STONEAGE-SCENE18-*.json
+      - .github/workflows/verify-stoneage-scene18-source.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  archived-metadata-only:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: python -m tools.stoneage_scene18_derived_acceptance
+      - run: python -m unittest -v tests.test_stoneage_scene18_derived_acceptance tests.test_stoneage_scene18_graphic16048_adrn tests.test_stoneage_scene17_derived_acceptance tests.test_stoneage_scene16_nearby_npc

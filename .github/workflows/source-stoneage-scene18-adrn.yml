@@ -1,0 +1,30 @@
+name: Source SCENE18 same-carrier original graphic16048 ADRN index
+on:
+  push:
+    branches: [agent/scene18-graphic16048-adrn-source-20261029]
+    paths:
+      - tools/stoneage_scene18_graphic16048_adrn.py
+      - tests/test_stoneage_scene18_graphic16048_adrn.py
+      - .github/workflows/source-stoneage-scene18-adrn.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original-adrn-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: python -m pip install rarfile==4.2 libarchive-c==5.3
+      - run: sudo apt-get update -qq && sudo apt-get install -y unar libarchive-tools
+      - run: python -m unittest -v tests.test_stoneage_scene18_graphic16048_adrn tests.test_stoneage_scene17_derived_acceptance
+      - run: python -m tools.stoneage_scene18_graphic16048_adrn --report /tmp/scene18-report.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: scene18-original-adrn-derived-metadata-only
+          path: /tmp/scene18-report.json
+          if-no-files-found: warn
+          retention-days: 7
