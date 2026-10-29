@@ -1,0 +1,24 @@
+name: Verify SCENE26 bounded pet action1 source metadata
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-SCENE26-PET-ACTION1-DERIVED-R1.json'
+      - 'tools/stoneage_scene26_pet_action1.py'
+      - 'tests/test_stoneage_scene26_pet_action1.py'
+      - '.github/workflows/verify-stoneage-scene26-pet-action1.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-SCENE26-PET-ACTION1-DERIVED-R1.json'
+      - 'tools/stoneage_scene26_pet_action1.py'
+      - 'tests/test_stoneage_scene26_pet_action1.py'
+      - '.github/workflows/verify-stoneage-scene26-pet-action1.yml'
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+      - name: Recompute derived report from pinned R40 source blobs
+        run: python3 tools/stoneage_scene26_pet_action1.py --check
+      - name: Mutation and provenance tests
+        run: python3 -m unittest discover -s tests -p 'test_stoneage_scene26_pet_action1.py' -v
