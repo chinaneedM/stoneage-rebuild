@@ -16,7 +16,7 @@ const [html,output]=process.argv.slice(2);if(!html||!output)throw Error('HTML pa
    const b=Uint8Array.from(atob(f.dataURI.split(',')[1]),c=>c.charCodeAt(0));
    const context=new OfflineAudioContext(f.channels,1,f.sample_rate),audio=await context.decodeAudioData(b.buffer),hashes=[];
    for(let c=0;c<audio.numberOfChannels;c++)hashes.push(hex(await crypto.subtle.digest('SHA-256',audio.getChannelData(c).buffer)));
-   if(audio.numberOfChannels!==f.channels||audio.sampleRate!==f.sample_rate||audio.length!==f.frames||JSON.stringify(hashes)!==JSON.stringify(f.expected_browser_float32_channel_sha256))throw Error('decoded PCM mismatch: '+f.original_path);
+   if(audio.numberOfChannels!==f.channels||audio.sampleRate!==f.sample_rate||audio.length!==f.frames||JSON.stringify(hashes)!==JSON.stringify(f.expected_browser_float32_channel_sha256))throw Error('decoded PCM mismatch: '+JSON.stringify({path:f.original_path,actual:{channels:audio.numberOfChannels,rate:audio.sampleRate,frames:audio.length,hashes},expected:{channels:f.channels,rate:f.sample_rate,frames:f.frames,hashes:f.expected_browser_float32_channel_sha256},channel_view:{offset:audio.getChannelData(0).byteOffset,bytes:audio.getChannelData(0).byteLength,buffer_bytes:audio.getChannelData(0).buffer.byteLength},synthetic_samples:f.original_path.startsWith('SYNTHETIC_NOT_ORIGINAL/')?Array.from(audio.getChannelData(0).slice(0,16)):null}));
    out.push({path:f.original_path,frames:audio.length,channels:audio.numberOfChannels,sample_rate:audio.sampleRate,channel_sha256:hashes});
   }return out;
  });
