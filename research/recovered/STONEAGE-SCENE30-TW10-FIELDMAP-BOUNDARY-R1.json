@@ -1,0 +1,182 @@
+{
+  "schema": "stoneage.scene30.tw10_fieldmap_boundary.r1",
+  "scope": "REVIEW_OF_EXISTING_PINNED_EVIDENCE_NOT_NEW_DISC_EXTRACTION",
+  "sources": [
+    {
+      "path": "research/recovered/STONEAGE-TW10-CLIENT-INVENTORY-R1.txt",
+      "sha256": "413d197d19ea405490bfffc2bdbf021089177671445ca567533b2eb2576dae7b"
+    },
+    {
+      "path": "research/recovered/STONEAGE-TW10-INSTALLSHIELD-R1.txt",
+      "sha256": "f54136b5ddd67c01e7ce93f6bfc67169e1eb3b05b7bee8e289f9f854b7fc697b"
+    },
+    {
+      "path": "research/recovered/STONEAGE-TW10-RECEIVE-MAP-JOIN-R1.txt",
+      "sha256": "f9989640efa9ee50379d294e284bc96a1f5223d92e688d27464b4a6a0d12d65e"
+    }
+  ],
+  "archived_local_original_audit": {
+    "path": "research/recovered/STONEAGE-SCENE30-PRIVATE-SOURCE-AUDIT-R1.json",
+    "sha256": "d84ebae2680e544d7bfb3611e2e3d1add95136795b55488580f44385a076755e",
+    "public_ci_reexecutes_private_source": false
+  },
+  "retail": {
+    "namespace": "Joliet",
+    "disc_files": 411,
+    "core_files": 383,
+    "core_bytes": 373564663,
+    "only_core_dat": [
+      "StoneAge/data/savedata.dat"
+    ],
+    "field_map_files": 0,
+    "battle_sab_files": 218
+  },
+  "installer": {
+    "core_support_files": [
+      {
+        "category": "installer_support",
+        "path": "StoneAge/data1.cab",
+        "size": "560323",
+        "sha256": "4fa32c9bedba85d6a4f550367b1746f7526540ef4d76048afccb1f0dbddbf586"
+      },
+      {
+        "category": "installer_support",
+        "path": "StoneAge/data1.hdr",
+        "size": "49940",
+        "sha256": "a1fc14c10d553a0eaff103bc14d206f0c7e21d2324077a48d2fe814b6decbb2e"
+      },
+      {
+        "category": "installer_support",
+        "path": "StoneAge/data2.cab",
+        "size": "512",
+        "sha256": "0f067a0961c9a6aae77f099d3fb95e3f3fede5a467812ace1d7289b60092e049"
+      },
+      {
+        "category": "installer_support",
+        "path": "StoneAge/ikernel.ex_",
+        "size": "256259",
+        "sha256": "929a2f50579e401ca1642ba89274a7dcb0d39dff8a484a4bfae6f412dffaef27"
+      },
+      {
+        "category": "installer_support",
+        "path": "StoneAge/layout.bin",
+        "size": "440",
+        "sha256": "f64ebca34387a8159a5ea119fd138eb93936bac8d34f5bf5ad8c150b5f66622c"
+      },
+      {
+        "category": "installer_support",
+        "path": "StoneAge/Setup.exe",
+        "size": "35840",
+        "sha256": "380d6d28b7cfb2c6f4b964ec5d1f5b04c932a370272ca96190178717448913cb"
+      },
+      {
+        "category": "installer_support",
+        "path": "StoneAge/Setup.ini",
+        "size": "142",
+        "sha256": "fc925b2817a881af2dddce77272c0a12c16e9d71cd9a6423a96599cd9a425bbc"
+      },
+      {
+        "category": "installer_support",
+        "path": "StoneAge/setup.inx",
+        "size": "132112",
+        "sha256": "eff8dff893378792118d63ad335dbff0be4b0d09f7c67b4361e99c25900d0e10"
+      }
+    ],
+    "source_targets_crosschecked": 7,
+    "historical_extracted_files": 13,
+    "historical_extracted_bytes": 1374113,
+    "historical_map_like_files": 0,
+    "new_installer_execution": false,
+    "script_dynamic_behavior_fully_proven": false
+  },
+  "map_delivery": {
+    "evidence": "ORIGINAL_BINARY_STATIC_PATH_NOT_LIVE_SERVER_CAPTURE",
+    "joins": [
+      {
+        "name": "MC",
+        "node_rva": "0x1dd90",
+        "depth": "4",
+        "map_xref_rva": "0x1dda0"
+      },
+      {
+        "name": "M",
+        "node_rva": "0x1da40",
+        "depth": "3",
+        "map_xref_rva": "0x1da50"
+      }
+    ],
+    "file_mode_sequences": {
+      "MC": [
+        "rb",
+        "wb",
+        "rb"
+      ],
+      "M": [
+        "rb+",
+        "wb",
+        "rb+"
+      ]
+    },
+    "six_file_path_signatures": [
+      {
+        "rva": "0x1d846",
+        "instructions": "73",
+        "direct_targets": "6",
+        "modes": "rb,wb",
+        "apis": "",
+        "end_reason": "ret"
+      },
+      {
+        "rva": "0x1da50",
+        "instructions": "30",
+        "direct_targets": "4",
+        "modes": "rb+,wb,rb+",
+        "apis": "",
+        "end_reason": "ret"
+      },
+      {
+        "rva": "0x1dda0",
+        "instructions": "30",
+        "direct_targets": "4",
+        "modes": "rb,wb,rb",
+        "apis": "",
+        "end_reason": "ret"
+      },
+      {
+        "rva": "0x21306",
+        "instructions": "31",
+        "direct_targets": "4",
+        "modes": "rb,wb,rb",
+        "apis": "",
+        "end_reason": "ret"
+      },
+      {
+        "rva": "0x21721",
+        "instructions": "139",
+        "direct_targets": "5",
+        "modes": "rb",
+        "apis": "",
+        "end_reason": "ret"
+      },
+      {
+        "rva": "0x218fe",
+        "instructions": "121",
+        "direct_targets": "6",
+        "modes": "rb+",
+        "apis": "",
+        "end_reason": "ret"
+      }
+    ],
+    "live_server_payload_obtained": false
+  },
+  "decision": "STOP_REDOWNLOADING_IDENTICAL_RETAIL_DISC_FOR_PREINSTALLED_FIELD_DAT",
+  "reopen_only_with": [
+    "source-qualified same-build installed map cache or captured M payload",
+    "authenticated same-build server map data",
+    "different explicitly qualified carrier with actual map bytes"
+  ],
+  "original_world_entered": false,
+  "new_historical_map_payloads": 0,
+  "later_mixed25_map_is_tw10_official_world": false,
+  "overall_percent": null
+}

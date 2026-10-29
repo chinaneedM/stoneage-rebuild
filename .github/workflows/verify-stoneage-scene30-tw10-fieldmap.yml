@@ -1,0 +1,26 @@
+name: Verify SCENE30 retail installer and fieldmap evidence boundary
+on:
+  push:
+    paths:
+      - 'tools/stoneage_scene30_tw10_fieldmap_boundary.py'
+      - 'tests/test_stoneage_scene30_tw10_fieldmap_boundary.py'
+      - 'research/recovered/STONEAGE-SCENE30-*'
+      - '.github/workflows/verify-stoneage-scene30-tw10-fieldmap.yml'
+  pull_request:
+    paths:
+      - 'tools/stoneage_scene30_tw10_fieldmap_boundary.py'
+      - 'tests/test_stoneage_scene30_tw10_fieldmap_boundary.py'
+      - 'research/recovered/STONEAGE-SCENE30-*'
+      - '.github/workflows/verify-stoneage-scene30-tw10-fieldmap.yml'
+permissions:
+  contents: read
+jobs:
+  source-safe-review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Replay existing derived evidence only (no original assets)
+        run: python3 -m tools.stoneage_scene30_tw10_fieldmap_boundary
+      - name: Reject incomplete inventories and unsupported negative claims
+        run: python3 -m unittest tests.test_stoneage_scene30_tw10_fieldmap_boundary -v
