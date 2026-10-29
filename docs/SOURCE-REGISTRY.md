@@ -8847,3 +8847,8 @@ All11 original-derived inputs pinned in logical-alias-catalog-r1/REPORT-R1.json.
 ### SRC-SCENE20-20261029 — 原TW1散装127WAV实物观察与合成浏览器独立链
 
 来源是此前已保存P3H原件包，完整SHA3a4854adaebef056332cdbd7b1dc1c130c571b11704e3f199f53d03aa31cba24；127散装WAV与原库存blob564233902b10c60760d4f93b1ea65d4dd1469206逐文件全SHA同，旧声音数据blob094becbc92397ee8abf72a014deffffabc97a316完整格式/PCM同；非新增声音发现。全原127WAV独立FFmpeg逐33587115声道样本同一，公开SOURCE/LOCAL-FFMPEG两JSON不含原声。合成浏览器源40819002124/job123266778291、工件12873149784及独立ZIP/raw/Git blob链见STONEAGE-SCENE20-CUSTODY-R1.json；前两failure/正数归一化差异保留，不将合成播放器成功等同原声听觉/原游戏事件。私人自包含试听页及原音频只私人保存。
+
+
+### SRC-SCENE21-20261029 — 原地图1000/原索引与已验完整公共REAL前缀
+
+重新使用2026-09-19资源比较报告1431B/SHA3b47bebc704e8a2245b6bb9ec366f3d76d797b54378142bf1618fe5058ff9b4c/blob b86de21a9c1dc28af1b533f20ebd4b37428517a6。旧whole315842228B REAL及125996 ADRN记录的完整前缀证明限定到同SHA父文件，不泛推其他版本/服务器。SCENE03私人3356562B包重新提供完整mixed ADRN18765120B，当前与TW ADRN10079680B整前缀实际相同；TW REAL315842228B全SHA重核，mixed REAL本轮仍0B。56目标键全表唯一、36已存mixed RD逐字节同，19地图图及NPC实际再解码，两实现/8场景逐像素同。原件/图像只私人保管，公开SOURCE/ACTUAL-PIXEL/CUSTODY及合成浏览器报告；原浏览器/原客户端世界/官方NPC身份不晋升。SCENE19/20原始回执不改，以日期加法补齐之前遗漏的像素身份依据。

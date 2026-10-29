@@ -1,0 +1,85 @@
+{
+  "actual_original_pixel_browser_execution_verified": false,
+  "actual_pixel_replay": {
+    "bytes": 1345,
+    "git_blob": "f557ac419f152a3b046644230efc55cfca326f57",
+    "sha256": "5e410b641d14d4907c111aa445b1c6d67c30eecc67a96e4d9ca077dfe4b5a78d"
+  },
+  "archived_complete_REAL_prefix_evidence": {
+    "bytes": 1431,
+    "current_mixed_REAL_full_recomparison": false,
+    "git_blob": "b86de21a9c1dc28af1b533f20ebd4b37428517a6",
+    "path": "research/recovered/STONEAGE-TW10-VS-25-RESOURCE-DIFF-R1.txt",
+    "sha256": "3b47bebc704e8a2245b6bb9ec366f3d76d797b54378142bf1618fe5058ff9b4c",
+    "whole_prefix_bytes": 315842228
+  },
+  "current_qualified_source_reads": {
+    "ADRN_full_prefix_directly_recompared": true,
+    "TW_ADRN_bytes": 10079680,
+    "TW_REAL_bytes": 315842228,
+    "full_mixed_ADRN_unique_target_aliases": 56,
+    "mixed_ADRN_bytes": 18765120,
+    "mixed_REAL_bytes": 0,
+    "retained_mixed_RD_blocks_equal_to_TW_bytes": 36
+  },
+  "native_collision_or_occlusion_verified": false,
+  "official_NPC_identity_authenticated": false,
+  "original_world_entered": false,
+  "overall_completion_percent": null,
+  "private_deliveries": [
+    {
+      "bytes": 2745658,
+      "filename": "StoneAge-SCENE21-private-town1000-observer.zip",
+      "local_metadata_applied": true,
+      "post_save_download_readback_performed": false,
+      "saved_successfully": true,
+      "sha256": "4d35351e6db222cac889abcce2fdbe97c498abc252d24a3000968a58c9d2605a"
+    },
+    {
+      "bytes": 294938,
+      "filename": "StoneAge-SCENE21-town1000-candidate.png",
+      "local_metadata_applied": true,
+      "post_save_download_readback_performed": false,
+      "saved_successfully": true,
+      "sha256": "f6906d5052a54316ebf64de2c2673e70523b4870f61b510495cf8c623c77ee70"
+    }
+  ],
+  "recovered_material": {
+    "NPC_image_candidates": 1,
+    "actual_candidate_image_viewed": true,
+    "all8_independent_canvas_pixel_hashes_equal": true,
+    "map_cells": 77,
+    "new_map_images": 19,
+    "new_map_occurrences": 24,
+    "source_image_count": 56,
+    "source_map_occurrences": 85
+  },
+  "schema": "stoneage.scene21.source_prefix_material_custody.r1",
+  "scope_correction": "SCENE19/20 full mixed REAL read count remains0; newly consulted old accepted full-prefix proof now qualifies the same-parent original RD byte identity. Prior raw reports are unchanged.",
+  "source_CI_run_id": null,
+  "source_derived_report": {
+    "bytes": 67794,
+    "git_blob": "8c1502a7da247b408cb4379442be593ee94985cf",
+    "sha256": "ae2e81eea3ebf3af7316b74dec12d8b9a993a4ad6d2fc912008bc27ca0e3c791"
+  },
+  "startup_main": "e86f838833323c331c4c3657eab0f7a129582127",
+  "startup_tree": "f97cd6b31b2042d990ec8bef4716c4df59416ded",
+  "synthetic_browser_artifact": {
+    "ZIP_bytes": 972,
+    "api_sha256": "3ec4a50361796aacef3700341f9856e16bc9d841ffd4897578ad43ea2f0fd5bc",
+    "git_blob": "fdfa493e9e4de6fb2f3c11cfea0d33cc79aef10f",
+    "id": 12875013431,
+    "local_download_sha256": "3ec4a50361796aacef3700341f9856e16bc9d841ffd4897578ad43ea2f0fd5bc",
+    "raw_report_bytes": 2260,
+    "raw_report_sha256": "72e89f17dec6cf3d1f335464584af51fa8a1ad8dccf4040ac2eb501a1c68fb98"
+  },
+  "synthetic_browser_source_run": {
+    "conclusion": "success",
+    "head": "bd4a2fd746e327453d553c3274417833da161e29",
+    "id": 40822824028,
+    "job_id": 123278943884,
+    "original_source_pixels_read": false,
+    "status": "completed",
+    "tests_in_that_run": 39
+  }
+}

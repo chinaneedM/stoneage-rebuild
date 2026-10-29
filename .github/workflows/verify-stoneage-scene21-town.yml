@@ -1,0 +1,43 @@
+name: Verify SCENE21 source-prefix town pixels and synthetic UI boundaries
+on:
+  push:
+    branches: [main, agent/scene21-town1000-area-20261029]
+    paths:
+      - tools/stoneage_scene21_*
+      - tests/test_stoneage_scene21_*
+      - research/recovered/STONEAGE-SCENE21-*.json
+      - .github/workflows/verify-stoneage-scene21-town.yml
+  pull_request:
+    paths:
+      - tools/stoneage_scene21_*
+      - tests/test_stoneage_scene21_*
+      - research/recovered/STONEAGE-SCENE21-*.json
+      - .github/workflows/verify-stoneage-scene21-town.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-metadata-and-synthetic-browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+      - run: python -m pip install pillow==11.3.0
+      - run: python -m tools.stoneage_scene21_town1000
+      - run: python -m unittest -v tests.test_stoneage_scene21_town1000 tests.test_stoneage_tw10_vs_25_resource_diff tests.test_stoneage_scene17_derived_acceptance
+      - run: npm install --prefix /tmp/scene21-browser playwright@1.55.1
+      - name: Browser uses synthetic PNG fixtures, never private original pixels
+        run: |
+          python -m tools.stoneage_scene21_fixture --output /tmp/scene21-fixture.html
+          CHROME_PATH="$(command -v google-chrome)" PLAYWRIGHT_MODULE=/tmp/scene21-browser/node_modules/playwright node tools/stoneage_scene21_browser.cjs /tmp/scene21-fixture.html /tmp/scene21-browser-synthetic.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: scene21-SYNTHETIC-browser-metadata-only
+          path: /tmp/scene21-browser-synthetic.json
+          if-no-files-found: warn
+          retention-days: 7
