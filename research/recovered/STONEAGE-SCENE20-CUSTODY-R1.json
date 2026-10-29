@@ -1,0 +1,58 @@
+{
+  "FFmpeg_report": {
+    "bytes": 27605,
+    "git_blob": "bf8fe688f4d0d42887de4d91d0948964c5fa1a72",
+    "sha256": "37943a127173fa580d4b244c0de8e8e4a0a57ac3c7dc5e058e4ee10390313705"
+  },
+  "FFmpeg_report_path": "research/recovered/STONEAGE-SCENE20-LOCAL-FFMPEG-ACCEPTANCE-R1.json",
+  "actual_browser_original_audio_verified": false,
+  "assistant_heard_audio": false,
+  "audio_output_to_speaker_verified": false,
+  "browser_artifact": {
+    "ZIP_bytes": 13483,
+    "api_sha256": "1767a6b7a86949df5a93bdcaf501ac5c23af3bfb1fa2127aa53be6f381f1bb04",
+    "derived_git_blob": "521b8131bab0296efbc13fdcaffc66e377dea4af",
+    "id": 12873149784,
+    "local_download_sha256": "1767a6b7a86949df5a93bdcaf501ac5c23af3bfb1fa2127aa53be6f381f1bb04",
+    "raw_report_bytes": 66784,
+    "raw_report_sha256": "91c6aec846e59b985a7ae43e9b5059e160079a13001c215a53c0193f3aac932c"
+  },
+  "original_WAV_bytes": 38009578,
+  "original_WAVs": 127,
+  "original_audio_source": "EXISTING_PRIVATE_TW10_P3H_PACKAGE_LOCAL_EXECUTION_NOT_CI",
+  "original_channel_samples_verified": 33587115,
+  "original_game_event_mapping": null,
+  "original_world_entered": false,
+  "overall_completion_percent": null,
+  "preserved_failed_browser_runs": [
+    40818287520,
+    40818540969
+  ],
+  "private_delivery": {
+    "HTML_bytes": 50766462,
+    "HTML_sha256": "46d7f766efec55fac78d64ab1d5954a96c86052c8550629e24f79871c1e6733b",
+    "bytes": 34291520,
+    "filename": "StoneAge-SCENE20-private-TW10-audio-observer.zip",
+    "post_save_download_readback_performed": false,
+    "saved_successfully": true,
+    "sha256": "9d454b99623b06823f50bcb5d49dcc1e679be0fa1752505501616b6f7fbe5554"
+  },
+  "schema": "stoneage.scene20.audio_source_and_browser_custody.r1",
+  "source_metadata": {
+    "bytes": 95520,
+    "git_blob": "bb00a466506e5422644ed6b362f01aeb456a0a96",
+    "sha256": "37fb371d596f1e1634f294591681728db02f7016d9401799fef894b87fb3b0c3"
+  },
+  "source_metadata_path": "research/recovered/STONEAGE-SCENE20-TW10-AUDIO-MATERIAL-R1.json",
+  "startup_main": "a77dd94a985efd4e7703133966a115d93d19cbb7",
+  "startup_tree": "2da1a34e947ffd82b579e96e6d4e778094ed28ac",
+  "synthetic_browser_source_run": {
+    "conclusion": "success",
+    "head": "bb25049c24d2cc6484a8425c03efc09939d544f1",
+    "id": 40819002124,
+    "job_id": 123266778291,
+    "original_audio_read": false,
+    "status": "completed",
+    "tests_in_that_source_run": 34
+  }
+}

@@ -8842,3 +8842,8 @@ All11 original-derived inputs pinned in logical-alias-catalog-r1/REPORT-R1.json.
 ### SRC-SCENE18-20261029 — 原ADRN单解包器整SHA/CRC与永久派生工件
 
 原源Action40790680489/81578679/job123174841510；工件12860514878 ZIP12508B由本轮独立下载核SHA0cea2baa749a483798099ab5899f2e6c14871f150417bec8ed01e340448023b4；原JSON42747B/SHAf53d3630ed49dd06c3822972a2620001d1781bf232b1c9e8db21c3ab1b7c4213完整存STONEAGE-SCENE18-ORIGINAL-ADRN-SOURCE-R1.json。unar成功+预定整SHA/CRC；libarchive不支持过滤器明确失败，不称双实现。四份完整旧资源元数据的独立数值/摘要对照见CROSSVERSION-CANDIDATE-R1.json；mixed25 REAL未读，不能据同索引复制原图。ZIP/原报告/Git blob及旧史pin见CUSTODY-R1.json，前三失败保留，商业原件不公开。
+
+
+### SRC-SCENE20-20261029 — 原TW1散装127WAV实物观察与合成浏览器独立链
+
+来源是此前已保存P3H原件包，完整SHA3a4854adaebef056332cdbd7b1dc1c130c571b11704e3f199f53d03aa31cba24；127散装WAV与原库存blob564233902b10c60760d4f93b1ea65d4dd1469206逐文件全SHA同，旧声音数据blob094becbc92397ee8abf72a014deffffabc97a316完整格式/PCM同；非新增声音发现。全原127WAV独立FFmpeg逐33587115声道样本同一，公开SOURCE/LOCAL-FFMPEG两JSON不含原声。合成浏览器源40819002124/job123266778291、工件12873149784及独立ZIP/raw/Git blob链见STONEAGE-SCENE20-CUSTODY-R1.json；前两failure/正数归一化差异保留，不将合成播放器成功等同原声听觉/原游戏事件。私人自包含试听页及原音频只私人保存。

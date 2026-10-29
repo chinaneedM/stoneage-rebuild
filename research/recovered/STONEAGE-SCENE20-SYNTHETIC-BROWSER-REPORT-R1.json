@@ -1,0 +1,1612 @@
+{
+  "schema": "stoneage.scene20.browser_audio_QA.r1",
+  "scope": "SYNTHETIC_FIXTURE_ONLY_NO_ORIGINAL_AUDIO_READ",
+  "chromium": "156.0.8078.47",
+  "decoded_files": 127,
+  "all_recovered_integer_PCM_hashes_equal": true,
+  "raw_float32_reference_match_count": 0,
+  "initially_silent": true,
+  "directory_filter_counts": [
+    11,
+    116
+  ],
+  "exact_name_search": true,
+  "media_time_advanced": true,
+  "pause_verified": true,
+  "selection_stops_playback_and_resets_modern_loop": true,
+  "JS_errors": [],
+  "external_requests": [],
+  "original_audio_verified": false,
+  "assistant_heard_audio": false,
+  "audio_output_to_speaker_verified": false,
+  "original_game_world_entered": false,
+  "decoded": [
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/bgm/fixture_000.wav",
+      "frames": 11025,
+      "channels": 1,
+      "sample_rate": 22050,
+      "raw_float32_channel_sha256": [
+        "bb2d43927ab34c759e3f4f47564c309dc733514ba0c2b0ac8092e108cfc757b3"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "2ee4b68c181980e0e29bfa34b53a0bb61850806bf19999a97cd1f354d2bfdfe8",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/bgm/fixture_001.wav",
+      "frames": 5512,
+      "channels": 2,
+      "sample_rate": 11025,
+      "raw_float32_channel_sha256": [
+        "67dd0d83d48a530be5f47aaa583b1a011ab43c0681ebb7fef13b7ddbde12ea32",
+        "1b685362def7da46076aa320dd8fdc1442202105b0a31d985835f3cce42e1b4d"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "66c6514dac7c81546a735afec0fca119109a28a18f92a2274d5b37911499784b",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/bgm/fixture_002.wav",
+      "frames": 11025,
+      "channels": 1,
+      "sample_rate": 22050,
+      "raw_float32_channel_sha256": [
+        "d59a3079475e9bc5593bc0027bab9b169658baf54669c85d5f2f71126ae5ee88"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "3487464914e30194b10f106bda104ff3968f1a9ab1337b445a8b1a91f91009c6",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/bgm/fixture_003.wav",
+      "frames": 5512,
+      "channels": 2,
+      "sample_rate": 11025,
+      "raw_float32_channel_sha256": [
+        "7b146d98704c36e86be43bc1f849ccd0808a489accee0bb34fd9f90415b49208",
+        "8aaa5f4118f32a145ea9a10b8eb4fd8ebf2da19d13915d80496ff014c1288661"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "55cf556a45b2cd37469fc0745fc7d43de1a6f464d0cd99705b9b0f1f6e1b313c",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/bgm/fixture_004.wav",
+      "frames": 11025,
+      "channels": 1,
+      "sample_rate": 22050,
+      "raw_float32_channel_sha256": [
+        "2fb48b3fe1a06032be05b156cb7b0c9021d487d1bfc569c57fc059a7fec8fc84"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "1f5bf41d0b652afb696bfcc9c3831bef5746841160ca92346c63be210acdfed6",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/bgm/fixture_005.wav",
+      "frames": 5512,
+      "channels": 2,
+      "sample_rate": 11025,
+      "raw_float32_channel_sha256": [
+        "294290164fc746e92994bb3eb6ee9bbab84b6007675e905fb66adba130854436",
+        "95cad52930c4b19a887b3251bf9e286abc3500bbccfc2eed535f825066de1332"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "19570cfb54cc70d507624624ee98b19936abba2759c9b6d597fbbe9ad1d637e6",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/bgm/fixture_006.wav",
+      "frames": 11025,
+      "channels": 1,
+      "sample_rate": 22050,
+      "raw_float32_channel_sha256": [
+        "5547a7a6cd27c5bbc7a6276b1b90807cf5609ec134962b258a7f55c6882ed794"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "9e3157717863c2ba1fb41cbcbccd786ee6ec88a746d2d46da5104f64d00273f6",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/bgm/fixture_007.wav",
+      "frames": 5512,
+      "channels": 2,
+      "sample_rate": 11025,
+      "raw_float32_channel_sha256": [
+        "f13034c31376b8410a97c73dd1011e901aff552d18303e9a5fa905bff87faebb",
+        "797e47b82e563f5b2b7d9e33409fc1dd31b755ebea076dc81c60a7de17a723dd"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "84d1cd85aa60d6eeb059f73afa3751be7374150c7a2105bb01d50b564119ecec",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/bgm/fixture_008.wav",
+      "frames": 11025,
+      "channels": 1,
+      "sample_rate": 22050,
+      "raw_float32_channel_sha256": [
+        "139d97162d7246b742c5563d177b77568d1e565dcc10397bb98bc1a63cd5e9cd"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "6f510fcb4b6a4153edfb0e6a18ddbdb24823e865458f0d349007fb002b1daf34",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/bgm/fixture_009.wav",
+      "frames": 5512,
+      "channels": 2,
+      "sample_rate": 11025,
+      "raw_float32_channel_sha256": [
+        "cf9d46d1dc51c5f2f71e398d5cc977ffd333f930a7df5d42ee0cad4ba1d555c4",
+        "a0f2c77229a1424ca6f7607086bf453a367d79066f1d9adf2f6485bfff72a317"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "20597100ac28bd792f82513af214630b30c2bfad86e9bd44ab7cda9369709052",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/bgm/fixture_010.wav",
+      "frames": 11025,
+      "channels": 1,
+      "sample_rate": 22050,
+      "raw_float32_channel_sha256": [
+        "ced4d6f24addf0e88f3c2d68c6f867be8bf239440c3d57ac1c6ad561f07c8d6e"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "b21d047adb5b0a62c62aa97e7a705339e4045c99e9c68d01f9078f23fef317ca",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_011.wav",
+      "frames": 5512,
+      "channels": 2,
+      "sample_rate": 11025,
+      "raw_float32_channel_sha256": [
+        "84e18be3d4896c776789a70c25ce1811bd9b55e090733ad73eeebe06931707a9",
+        "1fb2ee87be4692b452b086643ec5705feecb8fb2f616e4f6cff1408caea11e85"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "b8263766dc2832ecd3d0b8faf5553aa917dd7771b326cbf7e100ac4804a28e8f",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_012.wav",
+      "frames": 11025,
+      "channels": 1,
+      "sample_rate": 22050,
+      "raw_float32_channel_sha256": [
+        "d9efbb3a79a3a8a7a5b6be5b8390d89c55cf0bd1b1afdbc23f60a8c66d88c366"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "ff9cc5412a982063a37036587cbfa10ec116750cfe4897c8e4d92cfa271581e7",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_013.wav",
+      "frames": 5512,
+      "channels": 2,
+      "sample_rate": 11025,
+      "raw_float32_channel_sha256": [
+        "966680476c31ad29b3f2f824a15344e570d5972029cb54fe173c918f9fa5cf95",
+        "3cf4c162f1b0c71e15e51b304a25c1fee8ddbe22779ff077f138f2a22bd4f388"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "fd617515c1501c0756e720171ef6d21faab70219b9c67814d376078f5d687fe6",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_014.wav",
+      "frames": 11025,
+      "channels": 1,
+      "sample_rate": 22050,
+      "raw_float32_channel_sha256": [
+        "83501e51b747c60da94ac2fc6b07066874c96bb6899ae04e86ca1be881d63e5e"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "eaefba85249b037e9791111cf51217312e426588d07cd429b7d9e003489846ff",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_015.wav",
+      "frames": 5512,
+      "channels": 2,
+      "sample_rate": 11025,
+      "raw_float32_channel_sha256": [
+        "453c1a16a330d54aee52ac03374415af49c9527ec1d63634c6ebc35ec928b323",
+        "35b85b22be18f61fb72a2ffeb14cf9c6d1fec9ad77270f1a0b83c0c476012a86"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "31cb9b6391d51fa5b2511bee8f95f20b080a6c32f4724bcb6c88299084bbaff8",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_016.wav",
+      "frames": 11025,
+      "channels": 1,
+      "sample_rate": 22050,
+      "raw_float32_channel_sha256": [
+        "58741d2d01d9116ecdea71eb889f4c45d3c0c982a3dc63fb4a591c47047f45cc"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "9a307b64e27fe226e1505bb8ea1e9801bab680d8fbbff8d617f55359a985cf67",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_017.wav",
+      "frames": 5512,
+      "channels": 2,
+      "sample_rate": 11025,
+      "raw_float32_channel_sha256": [
+        "b5ba7846b247b47505f36bb5aae29f8bb7b1f3f760425f61070b3d7dea8737db",
+        "de90819fdef858b78025a30d625f7dab45d5e74818d95cc28c96db461c0fd932"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "4fd4d64fff49376717840e902fbad06cd3660cd670fc7f368b332e6836e3d55d",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_018.wav",
+      "frames": 11025,
+      "channels": 1,
+      "sample_rate": 22050,
+      "raw_float32_channel_sha256": [
+        "4c4cb52800aa35752af3c95ff56655a6269fce85f47639dc16383458bc28e676"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "16231cae9b532f92c5e58ad2eadeae7274cf2b296342ffbc90a89b1f1ec63022",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_019.wav",
+      "frames": 5512,
+      "channels": 2,
+      "sample_rate": 11025,
+      "raw_float32_channel_sha256": [
+        "5ccd9911d7beaa6d9b463755c93a1e62ccd777589cdeb7bf2a2f6e3dcc75bf85",
+        "104ae94344a5db9df84e0bb8ad23163d3dd169c25f5bfd396bf5c723ee60ffbf"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "7a5e6ae9f4b4af3292af0ad00dee6970cbd117c7b606d80aefd8056682fd5dc2",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_020.wav",
+      "frames": 11025,
+      "channels": 1,
+      "sample_rate": 22050,
+      "raw_float32_channel_sha256": [
+        "0daf6f8401c81889ffe200b6e7e544742a7b84784b93b091eccd3271964da27c"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "45fabaab1be621c5a4974767215f0b669d1946fd0eddb8ee353ec0dc6b62fc0f",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_021.wav",
+      "frames": 5512,
+      "channels": 2,
+      "sample_rate": 11025,
+      "raw_float32_channel_sha256": [
+        "e30a25daf29febc21aa631dcf00b85dae2d46221a4bfd57c3f8851139545bf57",
+        "31515c7d29291e2ca2e38fd8aa579a75261cb5ee833336bf08e44f297640cb14"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "2a0f383457fe0f809c85704ec0ef1490ec8282a0b62a9e5884a0953195b07bff",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_022.wav",
+      "frames": 11025,
+      "channels": 1,
+      "sample_rate": 22050,
+      "raw_float32_channel_sha256": [
+        "d123a6d8d433bd1fc08fed773e51410224b21dfbde16ff3e86ff814b84ddf6dc"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "7d28208739b0981f1f70f9f1a3c8e96fad7ecd54342861b5b2f315515aae08b7",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_023.wav",
+      "frames": 5512,
+      "channels": 2,
+      "sample_rate": 11025,
+      "raw_float32_channel_sha256": [
+        "8772393c9dedee4350e6b801b3e4d4eb69453edd1364b50d50e7c7efa57b29d5",
+        "5c45b8845e145dba95d20f0498d649ce41535a2bf574420b89c1f5f5c9a6b73d"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "79e7cc348080bbf812dba7e70f28ba9fd64326c0e4c04adfe1f6438f4fa601b6",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_024.wav",
+      "frames": 11025,
+      "channels": 1,
+      "sample_rate": 22050,
+      "raw_float32_channel_sha256": [
+        "0090c5f39cbcda0bda804a82b96b897450fe3d2e90d44db262aeb18ebcb030f6"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "1547b68dc898d4dc2e6ab9aa2395820f5ce6a8aea1e7828c565f8ead3d038cd1",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_025.wav",
+      "frames": 5512,
+      "channels": 2,
+      "sample_rate": 11025,
+      "raw_float32_channel_sha256": [
+        "b6587d47dbf480f633c8a6682bcfed7cc2b699ac00ad79e7da43e96f10399e7b",
+        "c0e669f5e1c4f188efa992bd6cd08b4b89a864e73fb2176c5f74530f9c52c6f1"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "59a17c149eb1028f517dfe955893260c9597ee9e56e747689afe1cf4df78fd99",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_026.wav",
+      "frames": 11025,
+      "channels": 1,
+      "sample_rate": 22050,
+      "raw_float32_channel_sha256": [
+        "63d9a3959bd6b0c3ac12023e7c1c1db9ebac6ba328c7d4203150584732936a4e"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "4e61059d2618500c30885098347ad00519dcecbde4aca4e1e8288146981d8bde",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_027.wav",
+      "frames": 5512,
+      "channels": 2,
+      "sample_rate": 11025,
+      "raw_float32_channel_sha256": [
+        "2bd05c6069ca1ee545c8a74510de4741cc1b61bd024964e36cec75fe170249ad",
+        "534261569de0ccaa2b7683ed99e0b51179ebcd03845d8495db95cb4306e97559"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "d4e133bd3cdf42ed9dbb1f02188966664727685ca526fb9b6e86c9900583dec8",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_028.wav",
+      "frames": 11025,
+      "channels": 1,
+      "sample_rate": 22050,
+      "raw_float32_channel_sha256": [
+        "236f3ebc9ae9bcd0f05dffef90cc955af85e79f4b3430464aeb669b86672e47d"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "abfce2ebed7923c197065b9a90654042a990450d1e6e11b120e39a91193fb95f",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_029.wav",
+      "frames": 5512,
+      "channels": 2,
+      "sample_rate": 11025,
+      "raw_float32_channel_sha256": [
+        "9d561ecc21b0960dc206e9c935f820f6496388c2debd8e8a5215d80a8e4f004b",
+        "b663a2b7b00f0a24da2c78b4343425d940b4f9fa18861657f6f99dc00e16f770"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "d0d3a5b25a5a19979f7b7881243e8c068d1bc671177a96af04f66263ceff0cde",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_030.wav",
+      "frames": 11025,
+      "channels": 1,
+      "sample_rate": 22050,
+      "raw_float32_channel_sha256": [
+        "97548ba99228bd4e964a3c2dcaddf9a79ab29980b20ab05c4e6d3ed93054cf36"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "aa3442b44648746cd317fdf236509d7736b86882028532e1b3ce105dc7083cc8",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_031.wav",
+      "frames": 5512,
+      "channels": 2,
+      "sample_rate": 11025,
+      "raw_float32_channel_sha256": [
+        "02a763b4efd6bb2f2c6d16e6771afddf43675f16aeab58134f9bac9bd3a8d804",
+        "a85634ae4b2d85bd4e5aa80a1bbc3535918ec21db966cdd99f86601ef81420ec"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "3b7c1c92144d246ede3d800f8b0f030f1334c95d0fa8f21585b22b47fca64546",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_032.wav",
+      "frames": 11025,
+      "channels": 1,
+      "sample_rate": 22050,
+      "raw_float32_channel_sha256": [
+        "b0c11f48b38d54054b3bd7bcb3342af488b3c35a5a7795597579829b5e2c868e"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "a4954fc3c5aebd5c14d8f6d4fdcdf7bb5effa375b13ae76380f313869c742eb2",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_033.wav",
+      "frames": 5512,
+      "channels": 2,
+      "sample_rate": 11025,
+      "raw_float32_channel_sha256": [
+        "57dedc2de185edf996510070510f5cdcbd47ba9db02341f77be4b83e6ab771d5",
+        "9245b1093de6e685ae4154a71c3395cae5297fc8f47e82487b9b3be5fab0afbe"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "4e9cfb9895e2831640c376406c85ff9bba42b66d4d2713858e309aeb995c52d9",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_034.wav",
+      "frames": 11025,
+      "channels": 1,
+      "sample_rate": 22050,
+      "raw_float32_channel_sha256": [
+        "83880aadd63ef616085c8e10bcef309d3bee9023bfd3ffc05007a4590389b10d"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "f56bdd2f0f3be4601301f6871a23cbf2e6b406b4cb1e5fe32d948a5965336bcc",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_035.wav",
+      "frames": 5512,
+      "channels": 2,
+      "sample_rate": 11025,
+      "raw_float32_channel_sha256": [
+        "41e46ae1bcc2563d981a9bd207f8fc009cdd590617415e23682d63acca859064",
+        "1a6d3516624831bd3d852f6bcffa8ae6d6a8861dbd2307c1396fcf9be5d021a8"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "76d1da290ab86224a09caabf5de71a5ebee05df55778958ef217cc71177acee8",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_036.wav",
+      "frames": 11025,
+      "channels": 1,
+      "sample_rate": 22050,
+      "raw_float32_channel_sha256": [
+        "f4acfab3d7b24cdbe6ce377dd4bc92d50fc361cef9a4096a32088fbb0d295c64"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "60267c944a55b2bff96e445b52e68643428636e7c3d98b51f9e6e9a6d3a78d56",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_037.wav",
+      "frames": 5512,
+      "channels": 2,
+      "sample_rate": 11025,
+      "raw_float32_channel_sha256": [
+        "53c7fd25e9a526543418160c1e9aac966e206034464efd94cf045813a8693607",
+        "0a7fea3a2fafbb4f7d7a0d71296358fa9a802fe31a90c7f99c96eeac082eab22"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "053a51e8b7fa3514bf71fab0c3ecf32d6edbfc0e9972c6a0aec50d5ea1d5862e",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_038.wav",
+      "frames": 11025,
+      "channels": 1,
+      "sample_rate": 22050,
+      "raw_float32_channel_sha256": [
+        "64e253a83a2d44fc32c9408a2c1ad4eb998ad5350fca4b57c899fa64086a3825"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "b23cba4cb107078f4b2d16ac9e841d26dae096b4fcf5969ea58dc1e5a56a3448",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_039.wav",
+      "frames": 5512,
+      "channels": 2,
+      "sample_rate": 11025,
+      "raw_float32_channel_sha256": [
+        "324a04c250e4230dee2ecef417368a372284a66105f3c60abd845d845218455c",
+        "6e4e6a0ac2d52d1e15be923634ae2a2234059fc0260ed67b2edf3ae03d18045e"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "b93a9b13191b991402eebcb4141beebc06bcd546d9e21a43db9084ac5e5ebf89",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_040.wav",
+      "frames": 11025,
+      "channels": 1,
+      "sample_rate": 22050,
+      "raw_float32_channel_sha256": [
+        "1801bb0f5511bba48f6e767870ee60b5863f45ec585def3a95559cceb4510924"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "21d648574825d0c040ffe64dea4efe9add7392f304fca872faf4a1e263d5394a",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_041.wav",
+      "frames": 5512,
+      "channels": 2,
+      "sample_rate": 11025,
+      "raw_float32_channel_sha256": [
+        "b2d9d9eb8d3ce74e9f8df2723f5dc449dd71acb0d9942314c138b34fdc36075e",
+        "46ae8902d2d5073f52687f5da9103b5645a631474a1c6a9aa9a07fe03259fb9a"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "5e3e6cf968cd64c6241dcbbdd378c826ccca2250f8aca2a7f111bf1d6a039d26",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_042.wav",
+      "frames": 11025,
+      "channels": 1,
+      "sample_rate": 22050,
+      "raw_float32_channel_sha256": [
+        "644334472ef9a179964028b4ae9fbf685f9e788147afe5e20a1fd1efcad10b27"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "27b8ae158b8e47f3e394f281166da10e28a952a22d333309801fac59645751f3",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_043.wav",
+      "frames": 5512,
+      "channels": 2,
+      "sample_rate": 11025,
+      "raw_float32_channel_sha256": [
+        "7fb7e2fbb186a3bc4c6651f2ff15eca1a7f9126ce52fbcc89be8f1f17d0ba61e",
+        "90f2f194081e8231900c9634a203b55d5800af6ee7bc967563b37a8cf5bffd0c"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "d10fb66fe9fe6cfd918bbcf28d9d0e4e42300c4c0290bd66a72955ae8352c03b",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_044.wav",
+      "frames": 11025,
+      "channels": 1,
+      "sample_rate": 22050,
+      "raw_float32_channel_sha256": [
+        "c2171e10172d73d50bad052a9dd0cab7bacf7878e8c9e0c85e3f06235ee088e6"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "a87bb19194ea9c26680bdcb07679f8f2c2a0810299bfa2ed50221bb183eca767",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_045.wav",
+      "frames": 5512,
+      "channels": 2,
+      "sample_rate": 11025,
+      "raw_float32_channel_sha256": [
+        "393e03bdcb610c8e53754b73fdd08db3b57955f7db440f53fc1c20c8232e1870",
+        "3e00c29fd2473bf9f916cf79a8b92a55297aac7b982f2957dd093b7c2eda2fc8"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "a86eff8ea0e44979116d0dc644dd88c41629b7129d59b3b5206e0cc0999ec7d8",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_046.wav",
+      "frames": 11025,
+      "channels": 1,
+      "sample_rate": 22050,
+      "raw_float32_channel_sha256": [
+        "4991ffd50cbd69e0f1a4b887e8418db7cc3755743098ea2fe1c2fa0129354f44"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "85e787549009cde089abfe7df541d29c3c8a9f0d54d6cb294f41956f59f298ae",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_047.wav",
+      "frames": 5512,
+      "channels": 2,
+      "sample_rate": 11025,
+      "raw_float32_channel_sha256": [
+        "f6f12c7bca814015981744dfeb88576b1807968d3bb4de3a73c764ecf230e884",
+        "94268e0ed6f740f2b8b5056a9e76825d6e645f7d30f9d929cd0f28c6caf9acb9"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "8656fac51982e19b7dd503140615075d886c4e72c8e7ae33b2bebce820648282",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_048.wav",
+      "frames": 11025,
+      "channels": 1,
+      "sample_rate": 22050,
+      "raw_float32_channel_sha256": [
+        "e4b3e8bf746e852afb47b44707b65f19f6620d2f6c0215cfb90256eee798db36"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "6bca563d800fc765e2f49f1b93ac01f684909ffb02746bf5ea672cde14071724",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_049.wav",
+      "frames": 5512,
+      "channels": 2,
+      "sample_rate": 11025,
+      "raw_float32_channel_sha256": [
+        "89237e920e3b3aa14d5708e6496161fe272aa7575c3a458ac115306c9bd88f25",
+        "558dea3a9cdad7928584b1281fef02dc5829f8697947b624a28a4a0962aff1fb"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "4d89ab8e963f5e9e2568bd34ffc93299039ecf22f512f07f9f9ceef739f272a6",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_050.wav",
+      "frames": 11025,
+      "channels": 1,
+      "sample_rate": 22050,
+      "raw_float32_channel_sha256": [
+        "43bef39ae1df80219b85ea3f717bccb5908b50085e8dc7302b4d3b43aa4ef236"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "5627c7ee2ed7f6ce0ddfa76e4a4afcc3ca1719b26eb9579b5d0bdb3f513fcb87",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_051.wav",
+      "frames": 5512,
+      "channels": 2,
+      "sample_rate": 11025,
+      "raw_float32_channel_sha256": [
+        "023abfc97f0304bf2980cfa3a92a1d0840e52bc62baa4beb4b79c0139e31563c",
+        "cabb77c5da141b590a6b8e5840bc60aa6e9780f2de9da30fac605f1bbe614ab3"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "fec9b2ae6b7053b9e86f220cdc079f4e3f64235edf2995176a47372acb42e174",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_052.wav",
+      "frames": 11025,
+      "channels": 1,
+      "sample_rate": 22050,
+      "raw_float32_channel_sha256": [
+        "c5ea2c1eaee5324b9f10ff8cce31f1d8bb415da4b3edc6a7345eb991cee0ab84"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "f23656761afec17edfa943c67f911351cd738d14f9787e3b94705c0589b99a6e",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_053.wav",
+      "frames": 5512,
+      "channels": 2,
+      "sample_rate": 11025,
+      "raw_float32_channel_sha256": [
+        "282bdc3289ffc79f390f424a4b7788a7bc55333ddf25ca75a93edba70656740a",
+        "24f684c4ab984d4e3fc9539c92536e14651198fe8c9bc06818ed59bb0c002485"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "c830a5d54de486278a180178440406fad7db507ac0dcac7f3135755ed0cb7779",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_054.wav",
+      "frames": 11025,
+      "channels": 1,
+      "sample_rate": 22050,
+      "raw_float32_channel_sha256": [
+        "8e292300964555f68a7812816b272e6dc0503aecf498a4bf4b20cc57a2409d8d"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "c11098c778dadd4ff3e4416b8d0c816215a61470e4c510693b327347e2069a70",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_055.wav",
+      "frames": 5512,
+      "channels": 2,
+      "sample_rate": 11025,
+      "raw_float32_channel_sha256": [
+        "123c200af3bea69040851394e20b15d27c10747100bec5b7ce85a85c4bb0f265",
+        "2bb543cd8942f500252b1ec10d4b2de6df52e2e8213886b98976e0cf01bd8225"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "1fcf5fe718c7ff79422b51768f5990e0085514d53134613a052692f9e65cf749",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_056.wav",
+      "frames": 11025,
+      "channels": 1,
+      "sample_rate": 22050,
+      "raw_float32_channel_sha256": [
+        "e08bbbc206f2b483f27c5d466e7f8e0dd1ee3ca282690a19041f61f6280a2827"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "457bae241171f4d6bffcec1f3374cfbb596f89fa603420044db0977fa2478ea4",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_057.wav",
+      "frames": 5512,
+      "channels": 2,
+      "sample_rate": 11025,
+      "raw_float32_channel_sha256": [
+        "f2b19a7c790556b425d3def6566dfc86bd778c8b3cd1449243ea07f22261529f",
+        "49d9a9816a27b1c643fdfbc04a08966d091d68c0a122b3bc17747f2f4b396c4d"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "6db0b4f9937c1d6f7109438cbf6a8b683ab101201fb304dbcf43a666b17ccfa5",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_058.wav",
+      "frames": 11025,
+      "channels": 1,
+      "sample_rate": 22050,
+      "raw_float32_channel_sha256": [
+        "e4373231a51125c13448ee3eceed0a3250d75e102db245620b073f68b5424554"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "cafee9051ec358eb1205b1e5e00f95f2e474d04260247c0c30ab7a9f557d4bb2",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_059.wav",
+      "frames": 5512,
+      "channels": 2,
+      "sample_rate": 11025,
+      "raw_float32_channel_sha256": [
+        "496e664bcad4af1512a1e40138f8fae9e3e344528f916edb31fb57e34486b20e",
+        "a3331c2a790bd7a13b87c653d9e642293d7a151f0d6dccfd01d3fd1bbf58df73"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "8f0c096d575255e25fb98f49c030680df7cd0b08e33d18b8f733f7970316a9bc",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_060.wav",
+      "frames": 11025,
+      "channels": 1,
+      "sample_rate": 22050,
+      "raw_float32_channel_sha256": [
+        "2e6bd18676a7f1083944c726482f3234c884040332dea9eafc71cd376134438a"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "cdf9d4b4165e08bccf4805e94abbb5ec9ceb48c9a50a9e1def4689a61e98ef4a",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_061.wav",
+      "frames": 5512,
+      "channels": 2,
+      "sample_rate": 11025,
+      "raw_float32_channel_sha256": [
+        "fa12832ebb12cdc85b82ca01cd6116e9e9f57f94e22b43ce8c87d3cd3ecb3b24",
+        "ed466e1f19f12a8d8d5c258255643f09b464934954b97e19153a3e47a53f6714"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "d64ef7b5d2aa560a4f40abd7181f9a5ded92939e0d02efc87b365bb2312bf63e",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_062.wav",
+      "frames": 11025,
+      "channels": 1,
+      "sample_rate": 22050,
+      "raw_float32_channel_sha256": [
+        "0149cc2526a58df81abb7ad198ebcf20330116875c43d13995a9f63208d579ef"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "9924198387904a78fd727f0c410748fc96867459e485aa31528c368bb6b62e8f",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_063.wav",
+      "frames": 5512,
+      "channels": 2,
+      "sample_rate": 11025,
+      "raw_float32_channel_sha256": [
+        "4a298cd4566506af9cea27f102dc08c1bcd8b29120c60d7567fd682a118930bf",
+        "aac92c3fc4024479ae6ccec08101daac33dc797cb2a347ad08b8b5540b507121"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "98fc59f46ffb256580d9d2927ba2a1ae1cd9adc40aa50fd3ef01e55d342029b2",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_064.wav",
+      "frames": 11025,
+      "channels": 1,
+      "sample_rate": 22050,
+      "raw_float32_channel_sha256": [
+        "55f6591a359116df60ec9564fda3cd16d5914bff16fa4e8f8e12a7867bc84421"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "7a013e6e08e94a0caacb36dca6bf6a1ed8860c7ece26d907ac12ef927c08e103",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_065.wav",
+      "frames": 5512,
+      "channels": 2,
+      "sample_rate": 11025,
+      "raw_float32_channel_sha256": [
+        "3c3617b018ac2c3a154af37bebf4da2d98a0617b3e691cdef4a81259202192eb",
+        "9036b65ca153b2e3f8ebd3fd8eab3843f8bc24b8f57f4af554ca86ca7a204a58"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "eee1ca8134f85fd7ab52b689f64879b6c620067da26151f3835f17a91402e09f",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_066.wav",
+      "frames": 11025,
+      "channels": 1,
+      "sample_rate": 22050,
+      "raw_float32_channel_sha256": [
+        "292be3d1d30d4bb2a07f08647f8dbf5f5cd4bf1d5f3dd48355dc84c4d107f348"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "59770d8cd2943133f3d669c4212ddfdfdb21b5ce0464233f315319a92504eeba",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_067.wav",
+      "frames": 5512,
+      "channels": 2,
+      "sample_rate": 11025,
+      "raw_float32_channel_sha256": [
+        "866f5b0010772fb900a41fcb6371d604731b5978e8f21eaad8441e38f54cf6a6",
+        "dad90f8ec9a2339cb6c431c005551a5d396fd55eeab98c83d070fa22c59f14d6"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "f4188cbfc114485ca13b3500f49feaf2e2924a1f3f8bdd8d7468879b8988c46f",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_068.wav",
+      "frames": 11025,
+      "channels": 1,
+      "sample_rate": 22050,
+      "raw_float32_channel_sha256": [
+        "421cff98d19d3594e5a7d76c26249bc2d5a040c95fef24847dcb9e879e47ba03"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "a0f0c1cf4f0a76fb991a0f062dc6ef2079b475ff8a7c4cd36ab098ecdb0c5eed",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_069.wav",
+      "frames": 5512,
+      "channels": 2,
+      "sample_rate": 11025,
+      "raw_float32_channel_sha256": [
+        "ad884dd438009bf4c02b9abfef6398da2c54e08233ae93b66f94eb55be46f06f",
+        "5a5aa720c3e494d8922cf48b65851506684c363d38d9fc4934df596e2e674502"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "ee005c23f40888c990277ba68c5a1e2c673e105d8bc33b5e95700731c1c30175",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_070.wav",
+      "frames": 11025,
+      "channels": 1,
+      "sample_rate": 22050,
+      "raw_float32_channel_sha256": [
+        "1316357203902b8c3d13b2e67c43f45c742ad6e6745ede621494230e33f7d32f"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "6b0aa79e23d393c53e8c25146c251150704de2f435cfbba801308b1e650546f6",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_071.wav",
+      "frames": 5512,
+      "channels": 2,
+      "sample_rate": 11025,
+      "raw_float32_channel_sha256": [
+        "42f81942a1ef8dfb924f585e4c87a20e1476bed8709b3e2b2865c0b23e57484f",
+        "2d56207e9793e669281a667958c657c147ff8afcf5f1b67fc39eb29125b04c48"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "f383af31613222617f69795eb48bfd8f5a0eecf1ef9d54a7b63b922c8325e2c9",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_072.wav",
+      "frames": 11025,
+      "channels": 1,
+      "sample_rate": 22050,
+      "raw_float32_channel_sha256": [
+        "ea15321160774e15319b1b6165ad6a013e1572ed9a64dd527301c18d0583c6b0"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "f22b79e3a5676a477945343a05f4b9bc2edcdef03a6bbb030b655932859af2e3",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_073.wav",
+      "frames": 5512,
+      "channels": 2,
+      "sample_rate": 11025,
+      "raw_float32_channel_sha256": [
+        "9e96f3dee6aa825efc2ed546b4d0cd664d72f61cfac8233f6dfa07c31857257d",
+        "432378b0fabce83632cf77b9ba9690394f8ea72f077a1a593ee04f435f1bf0ad"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "0f437abf1f339a9af3cbf4df84f5f8cae49857f6d0890ac84a797ea12167a60d",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_074.wav",
+      "frames": 11025,
+      "channels": 1,
+      "sample_rate": 22050,
+      "raw_float32_channel_sha256": [
+        "12762f649da23dae873f25f467c67765d320fc77e017d5314fc19c43c3729d9e"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "a6c039fa9f1e7b9a0b89aeeb67f8e752a6b48d949239f4cc249f0a9d14ae9abd",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_075.wav",
+      "frames": 5512,
+      "channels": 2,
+      "sample_rate": 11025,
+      "raw_float32_channel_sha256": [
+        "24629e5a5401443ba484fc340631a59b29ff5333c76676e23f628185554ae78c",
+        "ebf02f59adad9799d471c9c582816143e6338838112e934c3dd7a1dac8ba3e9a"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "ce9d44ac9bdafaebbf2c4b279b19ffd846c5919d3bb3e698f3de02482d20b872",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_076.wav",
+      "frames": 11025,
+      "channels": 1,
+      "sample_rate": 22050,
+      "raw_float32_channel_sha256": [
+        "6e120302ab534b8f6985f3abc1446d5fd1aeab8f401bc1da743e2b492887f05d"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "bfc9bc99fa4ca9c706d745a5d68e92397ea10870e27c3ab48f6d818f4ed66d63",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_077.wav",
+      "frames": 5512,
+      "channels": 2,
+      "sample_rate": 11025,
+      "raw_float32_channel_sha256": [
+        "15edc193f34512238471fda4d4358380b84a9f5fc6a64b9625989d81a340f177",
+        "daf3bcffab675007e8fb90ad50ecba3552bd313a30e942e4a18b93dc01478587"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "88bda72935694dcbba7e4029dae4fc7a56a576139bacffca0740cb64752a8756",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_078.wav",
+      "frames": 11025,
+      "channels": 1,
+      "sample_rate": 22050,
+      "raw_float32_channel_sha256": [
+        "23bb85742d66f1a8d68b35a71106c72b98ca5e26d86774a65f6f4b4519961f9b"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "bcbc4874b2507846faf0407cbb22d6b01bcb20a1d0b4dbab55554db78db46814",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_079.wav",
+      "frames": 5512,
+      "channels": 2,
+      "sample_rate": 11025,
+      "raw_float32_channel_sha256": [
+        "a571f7dc5da58e46b78d2443b812f817e02fe241992c8fe82193214d87c1ad38",
+        "c934b7f233d4e8fd20b35edef8c537e9898cd23aff81ba1ebd1d0e995122789b"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "50a5858736e248cb5b812cae55c361dce38c285a084efdfe3c8e0be543fb2afa",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_080.wav",
+      "frames": 11025,
+      "channels": 1,
+      "sample_rate": 22050,
+      "raw_float32_channel_sha256": [
+        "39e758c70967aac64af112ac33333e10ac213730a01bdbf9cc56263e5acd0312"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "6f56e4475f607777b3e5b0731fd81410dc646e15e153da988c3a605708da8651",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_081.wav",
+      "frames": 5512,
+      "channels": 2,
+      "sample_rate": 11025,
+      "raw_float32_channel_sha256": [
+        "f60b938ccd7fe4a278290eb4d283d19454a3a01eb53dffb2ae907701f4b618ce",
+        "b5e0be2138df22c285472dae14121a1833bee4a1799ef81cc2f1b6b6a3680877"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "83a7b2afd3696703c1dae9800f118cec1c82e0581cdbade967a181d0aa8dad96",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_082.wav",
+      "frames": 11025,
+      "channels": 1,
+      "sample_rate": 22050,
+      "raw_float32_channel_sha256": [
+        "671d3b34ba94f4e30e4bebc1fea0a11aaf4fa14a35d06c5c10e9e242e8d5078e"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "62bdaea2b62ca9da0d9b172673113b046b65a0067f5f742c6108f74c00bb9af4",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_083.wav",
+      "frames": 5512,
+      "channels": 2,
+      "sample_rate": 11025,
+      "raw_float32_channel_sha256": [
+        "a53554f405a6cb75212e3a11482f83090b07d7c0b2205c4f0db6f6841c7d39bd",
+        "a5281ad322f3c91cb505a8aeec1e45947d856546f4960aea9f3925ba36061ab9"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "2f06a711be2e8598c8d4d0431a6693cf3bebcb89cbe7be0a4b5d8b278e0ef9bc",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_084.wav",
+      "frames": 11025,
+      "channels": 1,
+      "sample_rate": 22050,
+      "raw_float32_channel_sha256": [
+        "1a3d20150bfe7d5c7d9a86956d7b4f145e767167bf4df8590770c56dac651483"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "899c5e16812e2059d8f4c03983f8ff429cd3ec206d9b39749b3723e8fb382a7f",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_085.wav",
+      "frames": 5512,
+      "channels": 2,
+      "sample_rate": 11025,
+      "raw_float32_channel_sha256": [
+        "a98ab9fed134ebda690fc847aa611f3d5e472eec4c957f140e54b86197b447c3",
+        "c0f8c4de271f47d649b9737fb09ef18fa03e6d16e432a2ac121c50800d703c02"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "3dbebc6faf9ef65514246220a7182d4cb3745c0bbf436e2bb6369ede6ab70f29",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_086.wav",
+      "frames": 11025,
+      "channels": 1,
+      "sample_rate": 22050,
+      "raw_float32_channel_sha256": [
+        "a54d313ab39cec23866c8c7706e973d1fb9f1f493267a019f3babf3ee805ea3c"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "e21bba7d2128ea98321a7bd0cf37d2c272673e4bf381344b5e242ac9bf0d356f",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_087.wav",
+      "frames": 5512,
+      "channels": 2,
+      "sample_rate": 11025,
+      "raw_float32_channel_sha256": [
+        "f1a51f5f385951b3fe6b76814e2de2f8c73362e8d67c5600bc251d8e46db57e8",
+        "3abda1320ebf65017f05a42686958e348adb529a4e0da5f36bfb14dd7bd8167c"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "778b7238f1f3c2a52cd7d217b8028eff033f797411c9d14ca53041075b5a1fb2",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_088.wav",
+      "frames": 11025,
+      "channels": 1,
+      "sample_rate": 22050,
+      "raw_float32_channel_sha256": [
+        "47f3e55e28e1a3cc5d0f2e594e14660a0bcc541adc56f6e7f2b2cafcdcd9da47"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "207f6c633dd87d4c575e9888ffd93fb1120ced6b965635b0ff80c30c84bdf96f",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_089.wav",
+      "frames": 5512,
+      "channels": 2,
+      "sample_rate": 11025,
+      "raw_float32_channel_sha256": [
+        "e9d5551665b5558f8058204c9fe3da6783b802a9b726be958f5a3182e9156db0",
+        "998c3351ebc836dc14b1f44805506addf2b4c76192063e932225c20166da24c5"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "6c50e0d32a1080a613f3d1dccb30edafd964a70ad9ee9f75c384b51cbbff29ba",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_090.wav",
+      "frames": 11025,
+      "channels": 1,
+      "sample_rate": 22050,
+      "raw_float32_channel_sha256": [
+        "4712eff830f05b1b4c86c84241b95edb481403ab86d03639acccf8cedf39ebe2"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "55478b1f96e3846335394cb7fdc1cde88c302aa93782c250ef3844ce2ef6cc20",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_091.wav",
+      "frames": 5512,
+      "channels": 2,
+      "sample_rate": 11025,
+      "raw_float32_channel_sha256": [
+        "7b5a01831ab2929a8ca33411b35fb1d572491e8f7391c0b6393d562a5d81c323",
+        "27d6c239245fb072d9e8895686b8ce363b61b55f6352ce413b0344d4d1cd6529"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "1c4529a0b576c4585d0aea0b88521227ecec071aa318d811650cdb2593f069b0",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_092.wav",
+      "frames": 11025,
+      "channels": 1,
+      "sample_rate": 22050,
+      "raw_float32_channel_sha256": [
+        "8d8be4369b31db2f26e47af5fec99df2e74194c58cef9f8c85cb8319ec0bb77b"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "3a4ab2bd172c8d5857c66b9b98a253b22a24771ce972c769048b108c360b379b",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_093.wav",
+      "frames": 5512,
+      "channels": 2,
+      "sample_rate": 11025,
+      "raw_float32_channel_sha256": [
+        "05bb25f7aa54d1b52a75364361f699d1c0a6adfa07cc8f64baa718e9eedd5dec",
+        "4e0f283d7b5286d82653320fd6feb7383a8a8c0259071e029d7e7a373486efa1"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "f43057dd7861f4f125cdf3f187f8417abd053de98a75159e405ac79fef4ca987",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_094.wav",
+      "frames": 11025,
+      "channels": 1,
+      "sample_rate": 22050,
+      "raw_float32_channel_sha256": [
+        "c73e40c1dbf870deb4d0039b514c3e34d8f00bb45f44ab251405356ac23a2e44"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "16d775de434354bfe2e73ddffcbeab0b7e2ef9b1653291f3477aad2ccf4f0862",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_095.wav",
+      "frames": 5512,
+      "channels": 2,
+      "sample_rate": 11025,
+      "raw_float32_channel_sha256": [
+        "98ec13e0c42ed29c1fd2fef8eb33f6378e6c6c8b679595cbf8b36c15f3c1009d",
+        "013901efb1485e6fd688a56da4910b120aed8a5479a88f1123a9cfffe1874efb"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "11fd73ea1cc49cccd87ef2f9513d5aa44000f577ddb0fba93ee4a00f47efd2c9",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_096.wav",
+      "frames": 11025,
+      "channels": 1,
+      "sample_rate": 22050,
+      "raw_float32_channel_sha256": [
+        "300ce1d701104004dad76f576f8ddb864939bc3453292d4682069d455d8ec99e"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "36861391843c425c4e966fb03685e6ae85983e9f544cd204db95c4607625aebf",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_097.wav",
+      "frames": 5512,
+      "channels": 2,
+      "sample_rate": 11025,
+      "raw_float32_channel_sha256": [
+        "77eb7f155ec2e9351d950864747aa237155a40b9296fa89be50f8b61e6158a28",
+        "e96c37570dca6ebb716bf668b94b533b3dfb3f918af5771ad1e4b33a7a67a39f"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "591f831f949ed77569a8b2f8a5f66de590afa99f326f7c10d4da0719197a132e",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_098.wav",
+      "frames": 11025,
+      "channels": 1,
+      "sample_rate": 22050,
+      "raw_float32_channel_sha256": [
+        "69e3952e8c594f9cc4ab65b415e18b569b3bcade749ee1e5456b3c5087f2bb48"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "8e01e4cba655327111b202c78d6a76328b176fcd08241263abb41bd48372a8de",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_099.wav",
+      "frames": 5512,
+      "channels": 2,
+      "sample_rate": 11025,
+      "raw_float32_channel_sha256": [
+        "51fc29264576cd0082817747be14c6ed58de520ec3c75280c4bf147c848c999a",
+        "f60c850dd3dba7810b623d3f701aa8dd18496ce8c68faa45e2c1f13bda4df821"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "778ebd71dc91254405a401d9140b14c25e8765da1ebf54b6a394c7b1f6f9db6d",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_100.wav",
+      "frames": 11025,
+      "channels": 1,
+      "sample_rate": 22050,
+      "raw_float32_channel_sha256": [
+        "d3bf535caa193a662ea18cb40695f81e4be761a6d80e1e537f3619d0e7ebf636"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "37af3608acc890a57d5ef210ce513bd41553b5609a10ef5a7b1d877cb5cc1c13",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_101.wav",
+      "frames": 5512,
+      "channels": 2,
+      "sample_rate": 11025,
+      "raw_float32_channel_sha256": [
+        "2149990f1c14a8d8b2f163413190efd9eb519a8d8cff82bbc4eb737d61a0f96a",
+        "0b46d11dc43e7608b5949b20089051eaf3c07526f9101a238c6a67bb774f65a7"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "b7865a0d2f4e6506a9aca7a1c79e72cb7ba9e1730d009d7b4a9e09572a686e66",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_102.wav",
+      "frames": 11025,
+      "channels": 1,
+      "sample_rate": 22050,
+      "raw_float32_channel_sha256": [
+        "62b3c8cdff47b4b16b7577d8c28cff6712e8d03260137bf11ee66fcd4267aab2"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "82968cd3a3a99fd7c078675cf129f056b345248ff0f3dffdd0011deb55a6c7b4",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_103.wav",
+      "frames": 5512,
+      "channels": 2,
+      "sample_rate": 11025,
+      "raw_float32_channel_sha256": [
+        "2e023a0263ef401da3eec43d7894d97bf2d6ffeef63a13a99a699da5e7934274",
+        "e7c7c9680d1215fd5ebc8d1665d06ae65b9fb112e0ea3a09feb4db6213b768ad"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "1349d6b2b84690317f50625f8eb934ba850237014cc18dce129bdd691393524c",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_104.wav",
+      "frames": 11025,
+      "channels": 1,
+      "sample_rate": 22050,
+      "raw_float32_channel_sha256": [
+        "fc03888ce227ddd1ebb75b884dd1f28d940a6485f6293f081b9fa3cf785c3d89"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "c47ca44c1ad1c7b3e58f18a6ab9140ea1258af271efed09e0a493eca3d8499cc",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_105.wav",
+      "frames": 5512,
+      "channels": 2,
+      "sample_rate": 11025,
+      "raw_float32_channel_sha256": [
+        "3a43d8bfffa90b1a37ef4f2a3670606b586566c24d2b701f6a5b586e3c61217a",
+        "8a1dccf70dfec88bc920f100bc0dd658b0552f5d6aa166ec25f0cb1f124c732e"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "39b50ecf4b86dcaaac78b5c58dc3220d6d935bab71dcf981afd194ed37941282",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_106.wav",
+      "frames": 11025,
+      "channels": 1,
+      "sample_rate": 22050,
+      "raw_float32_channel_sha256": [
+        "8586429440ab041ecda29222e234ab3177217799752077d0b28087e57374e1d7"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "9244b9a4b38ed01f28c0e3f2bea4af2d658174d4908a323945031a026b6414fe",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_107.wav",
+      "frames": 5512,
+      "channels": 2,
+      "sample_rate": 11025,
+      "raw_float32_channel_sha256": [
+        "0b7edd4d71f73240a105039e5a4d67eb9823263ded603adc0de98f189aea49ec",
+        "e0b6d24996b28e3d7cf84079330e79a17f16f9d58c15c325d969e7796ec95001"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "e211e90c17075f811023901e63ef7b5c2e9ab1db39cfa5b13fd76c239d5a4bc8",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_108.wav",
+      "frames": 11025,
+      "channels": 1,
+      "sample_rate": 22050,
+      "raw_float32_channel_sha256": [
+        "20ea8e2c8ff8e11abd1379cf9e7e4958cf3cdd30a98bfa58d5c1989aea98b578"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "65f1eeba62360ec776c7c5f1a3b8c65e3827656273eb9b2114bb3ba1727783cb",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_109.wav",
+      "frames": 5512,
+      "channels": 2,
+      "sample_rate": 11025,
+      "raw_float32_channel_sha256": [
+        "e40de4e258e146cbf4b7cea02d5fb8a67e2303b81a7fd4d5de38a8e56eed8eef",
+        "ed6adcade300b519bd0696675e37911b5d05af532fde66a44d7ff11c109a4551"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "c5faa1bd25caacfcbcc5db4da89b6ed89f101e9158fe6c2f9ac1b1d1cb84372d",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_110.wav",
+      "frames": 11025,
+      "channels": 1,
+      "sample_rate": 22050,
+      "raw_float32_channel_sha256": [
+        "e4c50a1f7fc332a95bf976c1cbf18b670e1f35180df803a0a418e71810ce2ab9"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "0680aa11e34466ed35db1779fcbfe1d39ecf141e97e52c6c8fee42588ae9cd1a",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_111.wav",
+      "frames": 5512,
+      "channels": 2,
+      "sample_rate": 11025,
+      "raw_float32_channel_sha256": [
+        "8a9d96131a0c5d2642df2c6c8a3ab4ec1852088c87fe875e23c87446db51cb8d",
+        "b98c9ab896dd7f66a2dffc36ecc8c793fac8b9422e7093e989b08f9293f79b28"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "e1ff52fd26a1db40ccc2151f471dfb51a27c29f0bf41cd7972513a8742065d8c",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_112.wav",
+      "frames": 11025,
+      "channels": 1,
+      "sample_rate": 22050,
+      "raw_float32_channel_sha256": [
+        "aa76a9f6aa7a5e78dac7fa4536a065ade6ba39d72dce4ff0b1aef4dc7d467299"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "4c956432d1ae1e4e734e6e9548be6d87509dbd49a24ef06a3a5b001e955cd5a2",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_113.wav",
+      "frames": 5512,
+      "channels": 2,
+      "sample_rate": 11025,
+      "raw_float32_channel_sha256": [
+        "01d0e303e6edbc7e90d6ddabdfcafbe9587d0609b6f298c6cc09e1220ea2ec56",
+        "fc3409d4acf72997dbcd7553ba934eecc316fc75a5383f2fec9ba155a797f2bd"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "e3f691cc0891434ade35c30f7a892eaa26cc11c2da313c117fd56a0ae0677b14",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_114.wav",
+      "frames": 11025,
+      "channels": 1,
+      "sample_rate": 22050,
+      "raw_float32_channel_sha256": [
+        "d4605c5f27b1e2b43a707caa1752e823213a1d54511dea24d1df1fba29c8b087"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "f4f2447a833994c7ea19bc79aa3488b56dd65535ff70086933dacd59e0f3a60c",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_115.wav",
+      "frames": 5512,
+      "channels": 2,
+      "sample_rate": 11025,
+      "raw_float32_channel_sha256": [
+        "6c1029893292f6a64eda827ae6ae05ce1336f7fa9e6a430ec0c18bd26b74c07d",
+        "bed6b244a4a9b818684e6c608c3e590239f26a422c04e3e41a9cb37490881ede"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "a01181c048e092adb1e1d9db05524dafa2d062dc793e606784d5cd3ac84571a7",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_116.wav",
+      "frames": 11025,
+      "channels": 1,
+      "sample_rate": 22050,
+      "raw_float32_channel_sha256": [
+        "badb9288dc7ce4995e01616e9c7e201112de67aa617c12c78489e1c7b9faf4ce"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "2f207e7fb35996dc9c5dc11b1b4641a2111c7ebafebd7810a4b9e4c493568634",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_117.wav",
+      "frames": 5512,
+      "channels": 2,
+      "sample_rate": 11025,
+      "raw_float32_channel_sha256": [
+        "8250d359b581ff2ab08ecd0f0f3fab3bf4ce24b04a44d5a4487637a5c1970e96",
+        "5549508682c1782ccf388ee3885c3d6a01ff8968f9f73e7186472ec8dd6bcbdf"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "66fea545737380fec20035c675044f882f4ebb4f4ed742b59866e48bc176db37",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_118.wav",
+      "frames": 11025,
+      "channels": 1,
+      "sample_rate": 22050,
+      "raw_float32_channel_sha256": [
+        "e2caab49f83c65fd1087f9c7e9accb89ccf8cb6125ffd948b18968dbd1474ae4"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "882fabcb7460fa7190ffa0b88dc494f9974ff7864e54c32167364b8491e4247e",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_119.wav",
+      "frames": 5512,
+      "channels": 2,
+      "sample_rate": 11025,
+      "raw_float32_channel_sha256": [
+        "0e3891059d6b6f38e29501c80cb764ae741c74b1dd6b507b1fa848da7f547d54",
+        "2ef3c301049e258e690990505092a9a2728eac4513d02b87e3c012dfe2984439"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "a137750280e0286b23758e009577e4fd9abfbd292d541b9805411ef9ef32d7dd",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_120.wav",
+      "frames": 11025,
+      "channels": 1,
+      "sample_rate": 22050,
+      "raw_float32_channel_sha256": [
+        "5aa4a489114a88ad8d2e2645be8b312b4b9ed16bc5f349bbe5659b771f432d18"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "7d133c39a4c0d6390f49af5f71053f6b33ec5df9e885a4411d141009e4a5e934",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_121.wav",
+      "frames": 5512,
+      "channels": 2,
+      "sample_rate": 11025,
+      "raw_float32_channel_sha256": [
+        "9f4c70a8046a7581b6e69e6883674330d61722d1a3e637dfd69a90f0023c8d61",
+        "e3f9d80e5bcb259a15b821f5e8fb82395a1065225e08d7dbdd36b0f6820d7747"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "5ec745ff9550ea63f52f5bd02407de260a05ec8917ed4bf012947f9309bfb819",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_122.wav",
+      "frames": 11025,
+      "channels": 1,
+      "sample_rate": 22050,
+      "raw_float32_channel_sha256": [
+        "af79fffc816ea4f42706f4351e707f05edfb1f4abb2219dba23411060278642a"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "2837da426ddb3c9e6323547eb8f83f6ed62d453d752ec3ba1fe3595c9cc8cc9a",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_123.wav",
+      "frames": 5512,
+      "channels": 2,
+      "sample_rate": 11025,
+      "raw_float32_channel_sha256": [
+        "c9b1d99e9f240123489579fb8f45f667c07dd536f84779337b649503d6ca35cf",
+        "1534f854a024cc4630d20c2ffebbd83dddda3c3c09cd17931a6ffcfe0520c669"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "3709f4a33ce27a89546a5f55c4db76aab7045e66db2006d34383cbcb5f262341",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_124.wav",
+      "frames": 11025,
+      "channels": 1,
+      "sample_rate": 22050,
+      "raw_float32_channel_sha256": [
+        "483068ac669bf53ef96b168d3a4e0bf957e8b910ba28aea4b3bac101af674feb"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "87209e1caafd3a6c0d6658e348e53ee60bbbd7f3d8ff8d74154b895a0fcaa441",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_125.wav",
+      "frames": 5512,
+      "channels": 2,
+      "sample_rate": 11025,
+      "raw_float32_channel_sha256": [
+        "c1799c632b067046da67d80c528ac69de7f25bcaab9cba45aacfc17065eb5b59",
+        "4c032aa198ce1f5971fa70690081d2230aab2edccfd8a4f59422332441ca514c"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "ece9d613cae04e0b5046b624c5a881900619c691590c5f15c246e2e1f39053c4",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    },
+    {
+      "path": "SYNTHETIC_NOT_ORIGINAL/se/fixture_126.wav",
+      "frames": 11025,
+      "channels": 1,
+      "sample_rate": 22050,
+      "raw_float32_channel_sha256": [
+        "08a0f5276e0bcfe7b0aad066216f737d9bbf1b7d737af8c90587023b7b2ff45a"
+      ],
+      "raw_float32_matches_reference": false,
+      "recovered_original_PCM_sha256": "159ab2dde1ba06220a982b62aa86473fb95f34171f90a8680a366c5a416fb028",
+      "recovery_normalization_model": "ASYMMETRIC_POSITIVE_MAX"
+    }
+  ]
+}

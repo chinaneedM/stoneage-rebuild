@@ -160,6 +160,27 @@ def validate_replay(a, r):
     return {'actual_original_WAVs_independently_decoded':127, 'browser_original_audio_verified':False}
 
 
+def validate_browser_qa(a):
+    from tools.stoneage_scene20_audio_fixture import fixtures
+    need(a['schema']=='stoneage.scene20.browser_audio_QA.r1' and
+         a['scope']=='SYNTHETIC_FIXTURE_ONLY_NO_ORIGINAL_AUDIO_READ', 'synthetic browser scope')
+    need(a['original_audio_verified'] is False and a['assistant_heard_audio'] is False and
+         a['audio_output_to_speaker_verified'] is False and a['original_game_world_entered'] is False,
+         'synthetic browser cannot promote original audio or speaker/game evidence')
+    need(a['decoded_files']==127 and a['all_recovered_integer_PCM_hashes_equal'] is True and
+         a['raw_float32_reference_match_count']==0 and len(a['decoded'])==127, 'actual synthetic PCM recovery counts')
+    need(all(a[k] is True for k in ('initially_silent','exact_name_search','media_time_advanced',
+         'pause_verified','selection_stops_playback_and_resets_modern_loop')) and
+         a['directory_filter_counts']==[11,116] and a['JS_errors']==[] and a['external_requests']==[], 'actual browser controls')
+    for row, fixture in zip(a['decoded'], fixtures()):
+        need(row['path']==fixture['original_path'] and row['frames']==fixture['frames'] and
+             row['channels']==fixture['channels'] and row['sample_rate']==fixture['sample_rate'] and
+             row['recovered_original_PCM_sha256']==fixture['PCM_sha256'] and
+             row['recovery_normalization_model']=='ASYMMETRIC_POSITIVE_MAX' and
+             row['raw_float32_matches_reference'] is False, 'all synthetic sample streams and normalization')
+    return {'synthetic_browser_decoded_files':127, 'original_browser_audio_verified':False}
+
+
 def main():
     p = argparse.ArgumentParser(description=__doc__); p.add_argument('--package', type=Path); p.add_argument('--private-output', type=Path)
     a = p.parse_args()
@@ -170,6 +191,7 @@ def main():
     result=validate(r)
     if not a.package:
         result.update(validate_replay(json.loads((REPORT.parent/'STONEAGE-SCENE20-LOCAL-FFMPEG-ACCEPTANCE-R1.json').read_bytes()),r))
+        result.update(validate_browser_qa(json.loads((REPORT.parent/'STONEAGE-SCENE20-SYNTHETIC-BROWSER-REPORT-R1.json').read_bytes())))
     print(json.dumps(result, sort_keys=True))
 
 

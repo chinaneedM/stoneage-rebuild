@@ -3,7 +3,7 @@ import json
 import unittest
 from pathlib import Path
 
-from tools.stoneage_scene20_tw10_audio import REPORT, FALSE, loose_inventory, validate, validate_replay, inspect
+from tools.stoneage_scene20_tw10_audio import REPORT, FALSE, loose_inventory, validate, validate_replay, validate_browser_qa, inspect
 from tools.stoneage_scene20_audio_fixture import fixtures
 
 
@@ -96,6 +96,18 @@ class Scene20OriginalAudio(unittest.TestCase):
     def test_one_changed_float_channel_refused(self):
         a=json.loads((REPORT.parent/'STONEAGE-SCENE20-LOCAL-FFMPEG-ACCEPTANCE-R1.json').read_bytes());a['files'][0]['float32_channel_sha256'][0]='0'*64
         with self.assertRaises(ValueError):validate_replay(a,self.report)
+
+    def test_real_browser_synthetic_report_replayed(self):
+        a=json.loads((REPORT.parent/'STONEAGE-SCENE20-SYNTHETIC-BROWSER-REPORT-R1.json').read_bytes())
+        self.assertEqual(validate_browser_qa(a)['synthetic_browser_decoded_files'],127)
+
+    def test_browser_synthetic_cannot_promote_originals(self):
+        a=json.loads((REPORT.parent/'STONEAGE-SCENE20-SYNTHETIC-BROWSER-REPORT-R1.json').read_bytes());a['original_audio_verified']=True
+        with self.assertRaises(ValueError):validate_browser_qa(a)
+
+    def test_browser_wrong_recovered_PCM_rejected(self):
+        a=json.loads((REPORT.parent/'STONEAGE-SCENE20-SYNTHETIC-BROWSER-REPORT-R1.json').read_bytes());a['decoded'][0]['recovered_original_PCM_sha256']='0'*64
+        with self.assertRaises(ValueError):validate_browser_qa(a)
 
 
 if __name__=='__main__':unittest.main()
