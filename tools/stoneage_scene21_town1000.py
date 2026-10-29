@@ -165,6 +165,16 @@ def validate_actual_replay(a,r):
  need(a['actual_source_browser_verified'] is False and a['original_world_entered'] is False,'source image view not browser/native game')
  return {'independent_original_RD_images':56,'full_canvas_states':8,'actual_candidate_image_viewed':True}
 
+def validate_browser_report(a,r):
+ need(a['schema']=='stoneage.scene21.browser_UI_QA.r1' and a['scope']=='SYNTHETIC_UI_NO_ORIGINAL_PIXELS','synthetic-only browser scope')
+ need(a['actual_source_browser_verified'] is False and a['original_world_entered'] is False,'synthetic UI cannot certify original image/native world execution')
+ need(all(a[k] is True for k in ('all8_frame_RGBA_hashes_equal','NPC_outside_old_view_refused','NPC_focus_expands_window','door_focus_verified','raw_NPC_cell_inspected','integer_zoom_verified')) and a['recovered_markers_expanded']==24 and a['recovered_markers_old']==0 and a['JS_errors']==a['external_requests']==[],'actual synthetic control observations')
+ need(len(a['full_frame_states'])==8 and {f['key'] for f in a['full_frame_states']}==set(r['frames']),'all8 bounded synthetic states')
+ for f in a['full_frame_states']:
+  i=list(r['frames']).index(f['key']);pixel=bytes(((i*37+11)%256,(i*61+20)%256,(i*23+90)%256,255));expected=sha(pixel*(r['canvas_size'][0]*r['canvas_size'][1]))
+  need(f['RGBA_sha256']==expected and [f['width'],f['height']]==r['canvas_size'] and f['NPC_candidate_drawn']==r['frames'][f['key']]['NPC_candidate_actually_drawn'],'synthetic frame pixels/geometry, never original image pixels')
+ return {'synthetic_browser_UI_states':8,'actual_source_browser_verified':False}
+
 if __name__=='__main__':
  p=argparse.ArgumentParser(description=__doc__)
  for name in ('r3','r15','tw','private-output'):p.add_argument('--'+name,type=Path)
@@ -173,5 +183,7 @@ if __name__=='__main__':
   need(a.r3 and a.r15 and a.tw,'three original private packages required');r=export(a.r3,a.r15,a.tw,a.private_output)
  else:r=json.loads(REPORT.read_bytes())
  result=validate(r)
- if not a.private_output:result.update(validate_actual_replay(json.loads((REPORT.parent/'STONEAGE-SCENE21-ACTUAL-PIXEL-ACCEPTANCE-R1.json').read_bytes()),r))
+ if not a.private_output:
+  result.update(validate_actual_replay(json.loads((REPORT.parent/'STONEAGE-SCENE21-ACTUAL-PIXEL-ACCEPTANCE-R1.json').read_bytes()),r))
+  result.update(validate_browser_report(json.loads((REPORT.parent/'STONEAGE-SCENE21-SYNTHETIC-BROWSER-REPORT-R1.json').read_bytes()),r))
  print(json.dumps(result,sort_keys=True))

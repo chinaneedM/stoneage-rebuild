@@ -873,3 +873,8 @@ ranges, not a new whole-client download or arbitrary program reverse engineering
 ### 2026-10-29 | SCENE20 原TW1全127散装WAV私人离线试听
 
 [材料轮换/实物/真实验收与续接](docs/continuity/STONEAGE-SCENE20-TW10-AUDIO-20261029.md)：复用已保存原件，把116音效目录和11配乐目录原WAV完整接入检索/手动试听页；全127原文件/33587115声道样本独立FFmpeg一致，重复路径保留。远端浏览器只用127合成音频实测，修正浮点归一化假设后逐整数PCM及界面控制通过；本地原声浏览器/助手听觉/游戏事件仍未认证。私人34MB包已保存，原声音不公开。下一只用已有1000.DAT/51RD核NPC坐标附近原图覆盖21，原世界与生产边界保持。
+
+
+### 2026-10-29 | SCENE21 补齐19地图原图并实际合成NPC附近场景
+
+[实际像素、整前缀订正与下一步](docs/continuity/STONEAGE-SCENE21-TOWN1000-AND-PREFIX-CORRECTION-20261029.md)：复用旧已验整资源前缀证明及已保存原件，重新核完整mixed ADRN/TW ADRN前缀，补齐19地图原图和NPC16048候选。扩展至77格/85地图图像出现，56RD与8完整画面经独立重算同一并实际目视；原图只私人交付。此前只核同索引遗漏整REAL前缀依据，现日期订正，过去0B mixed REAL执行记录不改。42本地测试，合成浏览器源成功；原生绘制/原世界未认证。下一只核这一NPC的精确原参数/对白输入22，不扩helper。

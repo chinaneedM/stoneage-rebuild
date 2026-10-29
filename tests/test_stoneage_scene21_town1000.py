@@ -1,6 +1,6 @@
 import copy,json,unittest
 from pathlib import Path
-from tools.stoneage_scene21_town1000 import REPORT,FALSE,validate,validate_actual_replay,prefix_evidence,map_cells,query
+from tools.stoneage_scene21_town1000 import REPORT,FALSE,validate,validate_actual_replay,validate_browser_report,prefix_evidence,map_cells,query
 
 class Scene21Source(unittest.TestCase):
  @classmethod
@@ -42,4 +42,12 @@ class Scene21Source(unittest.TestCase):
   for parts in (0,1):self.assertEqual(self.r['frames'][f'old_parts{parts}_npc0']['RGBA_sha256'],self.r['frames'][f'old_parts{parts}_npc1']['RGBA_sha256'])
  def test_public_template_contains_no_original_image(self):
   text=Path(__file__).resolve().parents[1].joinpath('tools/stoneage_scene21_observer.html').read_text();self.assertEqual(text.count('__PRIVATE_SCENE_JSON__'),1);self.assertNotIn('iVBORw0KGgo',text)
+ def test_actual_synthetic_browser_report(self):
+  a=json.loads((REPORT.parent/'STONEAGE-SCENE21-SYNTHETIC-BROWSER-REPORT-R1.json').read_bytes());self.assertEqual(validate_browser_report(a,self.r)['synthetic_browser_UI_states'],8)
+ def test_synthetic_report_cannot_certify_original_images(self):
+  a=json.loads((REPORT.parent/'STONEAGE-SCENE21-SYNTHETIC-BROWSER-REPORT-R1.json').read_bytes());a['actual_source_browser_verified']=True
+  with self.assertRaises(ValueError):validate_browser_report(a,self.r)
+ def test_missing_browser_state_rejected(self):
+  a=json.loads((REPORT.parent/'STONEAGE-SCENE21-SYNTHETIC-BROWSER-REPORT-R1.json').read_bytes());a['full_frame_states'].pop()
+  with self.assertRaises(ValueError):validate_browser_report(a,self.r)
 if __name__=='__main__':unittest.main()
