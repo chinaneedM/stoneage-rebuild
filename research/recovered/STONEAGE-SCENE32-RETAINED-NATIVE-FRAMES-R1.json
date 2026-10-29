@@ -1,0 +1,97 @@
+{
+  "schema": "stoneage.scene32.retained_native_frame_review.r1",
+  "source_evidence": [
+    {
+      "path": "research/recovered/STONEAGE-P3H-WINDOWS-ACTUAL-R1.json",
+      "sha256": "d4417e3b4f415ff18fc816bcd556311da4ca44885e62ab03746c027c6c5615ea"
+    },
+    {
+      "path": "research/recovered/STONEAGE-P3H-VISUAL-REVIEW-R1.json",
+      "sha256": "5f279c2d4b931e2caa02beab87c31fa85bdb420e3554e89876895ecf9bcea050"
+    },
+    {
+      "path": "research/recovered/STONEAGE-P3I-PRIMARY-ACTUAL-R1.json",
+      "sha256": "1272e5639907ab5687475ed8a57082737d1aa2d2f5fac459b0f93e9a01fe7bd8"
+    }
+  ],
+  "raw_report_viewed_flags": [
+    false,
+    false,
+    false
+  ],
+  "prior_visual_witness_frame_indices": [
+    0,
+    1
+  ],
+  "prior_review_date": "2026-10-28",
+  "frame_occurrences": [
+    {
+      "index": 0,
+      "png_sha256": "8d96c6a83c522040008cf9697641fd3cda76cad2283ab43aaf3fa2e9c4fbec45",
+      "rgb_sha256": "a469dd64a8f325e33e3bfcd51de9e922dd1609ea7999a1f7cc8a67ac09ee967d",
+      "black_pixels": 307103,
+      "nonblack_pixels": 97,
+      "nonblack_bbox": [
+        593,
+        460,
+        620,
+        473
+      ],
+      "colors": 2
+    },
+    {
+      "index": 1,
+      "png_sha256": "e2b64be9da9ab219e2cc039fd33a01b54f13cc86c961cebc5bb8bbf9adf05001",
+      "rgb_sha256": "fce46019884e3ef78d595f072e1f20c7e6d71ddbbf19c78f802d0e7caa114f0a",
+      "black_pixels": 307096,
+      "nonblack_pixels": 104,
+      "nonblack_bbox": [
+        320,
+        196,
+        620,
+        473
+      ],
+      "colors": 2
+    },
+    {
+      "index": 2,
+      "png_sha256": "8d96c6a83c522040008cf9697641fd3cda76cad2283ab43aaf3fa2e9c4fbec45",
+      "rgb_sha256": "a469dd64a8f325e33e3bfcd51de9e922dd1609ea7999a1f7cc8a67ac09ee967d",
+      "black_pixels": 307103,
+      "nonblack_pixels": 97,
+      "nonblack_bbox": [
+        593,
+        460,
+        620,
+        473
+      ],
+      "colors": 2
+    }
+  ],
+  "distinct_original_pngs": 2,
+  "duplicate_original_frame_groups": [
+    [
+      0,
+      2
+    ],
+    [
+      1
+    ]
+  ],
+  "raw_false_does_not_override_later_review": true,
+  "scene31_next_assumed_unseen_in_error": true,
+  "previous_visual_task_already_satisfied": true,
+  "new_original_images_discovered": 0,
+  "new_original_process_executions": 0,
+  "new_historical_world_content": 0,
+  "old_primary_surface": {
+    "assessment": "PRIMARY_SURFACE_BYTES_READ_GAME_CONTENT_UNATTRIBUTED",
+    "bpp": 32,
+    "original_private_surface_read": false,
+    "game_pixels_attributed": false
+  },
+  "p3i_reopening_authorized_by_these_same_images": false,
+  "original_world_entered": false,
+  "overall_percent": null,
+  "next": "SCENE33-WORLD-ENTRY-SOURCE-PAIR-FEASIBILITY"
+}

@@ -928,3 +928,8 @@ ranges, not a new whole-client download or arbitrary program reverse engineering
 ### 2026-10-30 — SCENE31：一组原人物八方向完整连续帧
 
 [原件、实图与下一包](docs/continuity/STONEAGE-SCENE31-ORIGINAL-ACTOR-SEQUENCE-20261030.md)：同一已验TW1原件的body候选100000/动作码2，八方向各6帧、48原RD/125612索引像素，新增观察40个后续位置。两候选配色96PNG与96完整画面独立逐像素核同，已实际目视；私人离线观察包已保存，公开仅程序/数值/摘要。原图页浏览器被本地文件URL策略拒绝，未绕过；公开浏览器仅合成像素，按实际后验记录。38项本地检查通过，原动作名/FPS/身份及原世界未认证。下一SCENE32只取已有P3H三张原运行保留画面，核身份并真正目视其内容，不扩人物全动作/驱动/搜盘。CURRENT及Stage A/B/wiki/R79/总体未知保持。
+
+
+### 2026-10-30 — SCENE32：纠正已阅原生黑屏被重列为未阅的待办
+
+[旧证据联接、实际校核及进入世界下一步](docs/continuity/STONEAGE-SCENE32-NATIVE-FRAME-CONTINUITY-CORRECTION-20261030.md)：SCENE31把原source的false误作尚未阅图，遗漏2026-10-28独立目视后记。本轮同SHA原包三帧/两不同PNG经标准库PNG与Pillow完整RGB复核，仍为黑底/半形/光标，统计与旧97/104/97非黑像素全同；新增图像/原件执行0。P3I全局primary不认证原私有游戏图，P3C曾见有限登录布局但正确色彩/输入/世界仍未过，旧事实均保留。15项新检查通过，公开仅派生；最高下一SCENE33限定既有客户端—服务端配对资格核查，查现存mixed25顶层启动配置/两服务器程序，严格保留修改版与TW1官方的区别，不自动运行或重开驱动链。CURRENT/Stage A/B/wiki/R79/总体未知保持。
