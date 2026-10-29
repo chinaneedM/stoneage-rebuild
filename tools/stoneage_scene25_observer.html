@@ -1,0 +1,56 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src data:; style-src 'unsafe-inline'; script-src 'unsafe-inline'; connect-src 'none'">
+<title>石器时代｜房间1001与三件商品资料观察 R25</title>
+<style>*{box-sizing:border-box}body{background:#142127;color:#e4edf0;margin:0;font:15px/1.7 system-ui,"Microsoft YaHei",sans-serif}main{max-width:1280px;margin:auto;padding:24px}h1{font-size:25px;margin:0}h2{font-size:18px}p{margin:8px 0}.notice{padding:12px;background:#343027;border:1px solid #7d6b42;border-radius:7px}.grid{display:grid;grid-template-columns:minmax(0,2fr) minmax(300px,1fr);gap:18px;margin-top:18px}section{background:#1c2e36;padding:14px;border:1px solid #405a65;border-radius:8px}canvas{width:100%;height:auto;image-rendering:pixelated;touch-action:none;border:1px solid #57727c}button,label{font:inherit}button{padding:7px 12px;background:#38535e;color:inherit;border:1px solid #718b94;border-radius:5px;cursor:pointer}button:focus-visible{outline:3px solid #efd18e}.controls{display:flex;flex-wrap:wrap;gap:9px;align-items:center;margin-top:10px}.fine{font-size:12px;color:#adc2c9}pre{font:12px/1.7 ui-monospace,monospace;white-space:pre-wrap;overflow-wrap:anywhere}table{border-collapse:collapse;width:100%;font-size:13px}td,th{border-bottom:1px solid #4c646c;padding:5px;text-align:left}#details[hidden]{display:none}.itemCard{margin:12px 0;padding:10px;border:1px solid #57727c}.itemCard canvas{width:100%;max-width:320px;border:0}.itemCard[aria-current="true"]{border:2px solid #efd18e}@media(max-width:900px){.grid{grid-template-columns:1fr}}</style></head>
+<body><main><h1>石器时代 · 武器店房间与三件商品资料</h1>
+<p class="notice">保存包中的创建文件明确指定武器店在地图1001的 <strong>(17,13)</strong>，引用商店模板与17个商品编号。画面使用同载体图形键16017的唯一候选原图。<strong>这是离线原材料观察，尚未进入原版世界。</strong></p>
+<div class="grid"><section><canvas id="world" width="960" height="720" aria-label="同来源房间与武器店候选原图"></canvas>
+<div class="controls"><button id="zoomIn">放大 ＋</button><button id="zoomOut">缩小 −</button><button id="reset">复位</button><label><input id="showNPC" type="checkbox" checked>显示武器店候选图</label><label><input id="showAnchor" type="checkbox" checked>原配置坐标标记</label></div>
+<p class="fine">拖动调整镜头。点击图中的候选人物或右侧按钮可查看原配置；没有移动、碰撞、购买或出售事务。</p></section>
+<section><h2>原始配置的连接</h2><p>地图1001 → 坐标(17,13) → npcgen_shop → ItemShop → 原库存参数</p>
+<button id="inspect" aria-expanded="false" aria-controls="details">打开武器店资料</button><button id="close" hidden>关闭资料</button>
+<div id="details" hidden><h2 id="shopName"></h2><p id="welcome"></p><p class="fine">上方问候只读取保存参数，不执行原NPC对话。下表按库存原顺序取前三项；cost是原物品表字段，实际成交价未验证。</p><table><thead><tr><th>编号</th><th>原物品名</th><th>cost字段</th><th>level字段</th></tr></thead><tbody id="items"></tbody></table><h2>三件商品的原图候选</h2><p class="fine">本区为现代资料查阅：原表 imagenumber → ADRN+76 唯一同值别名。采用 Palet_1 候选配色、整数4倍；原游戏图号选择与实际配色未认证。cost/level/type只保留字段，不计算成交价或资格。原名保留繁体。</p><div id="candidateCards"></div><pre id="itemFacts" aria-live="polite"></pre><p id="stock"></p><p id="rates"></p></div>
+<p class="fine">原名称保留繁体字；操作说明为简体。相同保存包与数值键不能证明原服同一部署。人物固定最后叠加，地图投影、镜头、图层顺序与点击查看均属现代观察；原遮挡、图形选择和商店事务未认证。</p><h2>当前观察状态</h2><pre id="status" role="status"></pre></section></div>
+<script id="evidence" type="application/json">"PRIVATE_PACK_PLACEHOLDER"</script>
+<script>(()=>{'use strict';const pack=JSON.parse(document.getElementById('evidence').textContent),by=id=>document.getElementById(id);
+if(!pack.room){by('status').textContent='这是不含原素材的公开模板。请使用私人导出页。';return;}
+const c=by('world'),cx=c.getContext('2d'),room=pack.room,source=pack.source,r=source.candidate_graphic;
+const state={scale:2,dx:0,dy:0,loaded:0,ready:false,inspecting:false,drag:false,px:0,py:0},maps={};let npc;const errors=[];
+const anchor={x:(17+13-26)*32,y:(13-17)*24};
+function status(){by('status').textContent=JSON.stringify({原文件地图号:source.npc.floor,原出生区域:source.npc.borncorner,原方向码:source.npc.direction,原图形键:source.npc.graphicname,候选物理图号:r.bitmapno,原图加载:state.loaded,资料窗口已开:state.inspecting,原库存位置数:source.listed_item_ids.length,原服实际成交认证:false,原版世界已进入:false,图层:'现代人工最后叠加',加载错误:errors},null,2)}
+function draw(){cx.setTransform(1,0,0,1,0,0);cx.fillStyle='#11232a';cx.fillRect(0,0,960,720);cx.imageSmoothingEnabled=false;cx.save();cx.translate(480+state.dx,360+state.dy);cx.scale(state.scale,state.scale);cx.translate(-128,80);
+for(const no of room.R6_native_sorted_queue_numbers){const p=room.placements[no];if(maps[p.map_id])cx.drawImage(maps[p.map_id],p.draw_x,p.draw_y)}
+if(by('showAnchor').checked){cx.fillStyle='#f0c979';cx.fillRect(anchor.x-4,anchor.y,9,1);cx.fillRect(anchor.x,anchor.y-4,1,9)}
+if(by('showNPC').checked&&npc)cx.drawImage(npc,anchor.x+r.xoff,anchor.y+r.yoff);cx.restore();status()}
+function inspect(){state.inspecting=true;by('details').hidden=false;by('close').hidden=false;by('inspect').setAttribute('aria-expanded','true');status()}
+function close(){state.inspecting=false;by('details').hidden=true;by('close').hidden=true;by('inspect').setAttribute('aria-expanded','false');status()}
+by('inspect').onclick=inspect;by('close').onclick=()=>{close();by('inspect').focus()};
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&state.inspecting){close();by('inspect').focus();e.preventDefault()}});
+by('shopName').textContent=source.npc.original_name;by('welcome').textContent='原参数 main_msg：'+pack.welcome_original_parameter;
+for(const item of source.selected_items){const tr=document.createElement('tr');for(const value of [item.id,item.name_original,item.numeric_fields.cost,item.numeric_fields.level]){const td=document.createElement('td');td.textContent=value;tr.appendChild(td)}by('items').appendChild(tr)}
+by('stock').textContent='全部17个原库存编号：'+source.listed_item_ids.join('、');by('rates').textContent='原参数字面值：buy_rate '+source.rates_raw.buy_rate+'；sell_rate '+source.rates_raw.sell_rate+'；special_rate '+source.rates_raw.special_rate+'。没有计算实际买卖价。';
+function zoom(k){state.scale=Math.max(1,Math.min(5,state.scale*k));draw()}
+by('zoomIn').onclick=()=>zoom(1.25);by('zoomOut').onclick=()=>zoom(.8);by('reset').onclick=()=>{Object.assign(state,{scale:2,dx:0,dy:0});draw()};
+by('showNPC').onchange=draw;by('showAnchor').onchange=draw;
+c.addEventListener('pointerdown',e=>{c.setPointerCapture(e.pointerId);state.drag=false;state.px=e.clientX;state.py=e.clientY});
+c.addEventListener('pointermove',e=>{if(!c.hasPointerCapture(e.pointerId)||!e.buttons)return;const b=c.getBoundingClientRect();const dx=e.clientX-state.px,dy=e.clientY-state.py;state.dx+=dx*960/b.width;state.dy+=dy*720/b.height;state.drag=state.drag||Math.abs(dx)+Math.abs(dy)>1;state.px=e.clientX;state.py=e.clientY;draw()});
+c.addEventListener('pointerup',e=>{if(state.drag||!by('showNPC').checked)return;const b=c.getBoundingClientRect();const x=((e.clientX-b.left)*960/b.width-480-state.dx)/state.scale+128,y=((e.clientY-b.top)*720/b.height-360-state.dy)/state.scale-80;if(x>=anchor.x+r.xoff&&x<anchor.x+r.xoff+r.width&&y>=anchor.y+r.yoff&&y<anchor.y+r.yoff+r.height)inspect()});
+function load(b64){return new Promise((resolve,reject)=>{const im=new Image();im.onload=()=>{state.loaded++;resolve(im)};im.onerror=()=>reject(Error('原PNG解码失败'));im.src='data:image/png;base64,'+b64})}
+window.__stoneageR14={getState:()=>({...state,originalWorldEntered:false}),getPack:()=>pack,draw,close};
+Promise.all([...Object.entries(room.sprites).map(async([n,b])=>{maps[n]=await load(b)}),load(pack.npc_image).then(im=>npc=im)]).then(()=>{state.ready=true;draw()}).catch(e=>{errors.push(e.message);status()});draw();})();</script>
+<script>(()=>{'use strict';const by=id=>document.getElementById(id),base=window.__stoneageR14;if(!base)return;
+const pack=base.getPack(),ob=pack.item_observation;if(!ob)return;
+const state={selected:0,loaded:0},ims={},cards={};
+function select(id){if(!ob.report.items.some(x=>x.id===id))throw Error('未列入本次三件原资料');state.selected=id;
+for(const [key,card]of Object.entries(cards))card.setAttribute('aria-current',String(Number(key)===id));
+const item=pack.source.selected_items.find(x=>x.id===id),ref=ob.report.items.find(x=>x.id===id);
+by('itemFacts').textContent=JSON.stringify({原编号:id,原名:item.name_original,原表字段:item.numeric_fields,候选物理图号:ref.candidate_bitmap,原行SHA256:ref.source_row_sha256,原PNG_SHA256:ref.PNG_sha256,原成交价已验证:false},null,2)}
+const ready=Promise.all(ob.report.items.map(item=>new Promise((resolve,reject)=>{const im=new Image();im.onload=()=>{ims[item.id]=im;state.loaded++;
+const card=document.createElement('article');card.className='itemCard';card.dataset.item=item.id;cards[item.id]=card;
+const label=document.createElement('button');label.textContent=item.id+' · '+item.name_original;label.onclick=()=>select(item.id);
+const c=document.createElement('canvas');c.width=320;c.height=240;c.setAttribute('aria-label','物品'+item.id+'候选原图，现代整数4倍卡片');
+const cx=c.getContext('2d');cx.imageSmoothingEnabled=false;cx.fillStyle='#142129';cx.fillRect(0,0,320,240);cx.drawImage(im,Math.floor((320-im.width*4)/2),Math.floor((240-im.height*4)/2),im.width*4,im.height*4);
+card.append(label,c);resolve(card)};im.onerror=()=>reject(Error('商品候选PNG解码失败'));im.src='data:image/png;base64,'+ob.images[item.id]}))).then(rows=>{for(const card of rows)by('candidateCards').appendChild(card);select(0);return true});
+const oldReset=by('reset').onclick;by('reset').onclick=()=>{by('showNPC').checked=true;by('showAnchor').checked=true;oldReset();base.close();select(0)};
+window.scene25={ready,state,select,getPack:()=>pack,getState:()=>({...base.getState(),selected:state.selected,itemImages:state.loaded}),cards};
+ready.catch(e=>{by('itemFacts').textContent=e.message;throw e});})();</script></main></body></html>
