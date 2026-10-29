@@ -1,0 +1,282 @@
+{
+  "schema": "stoneage.scene29.tw10_battlemap_source_pixel_integration.publication_r1",
+  "date": "2026-10-29",
+  "start_authoritative_main": "8db533ed5c3955b6c5fc4e10625c6e1739fbd912",
+  "initial_tree": "10b1722d2df3c52ba89da44d0a998afbcdb9c274",
+  "pull_request": 44,
+  "initial_candidate": "5cf34522d12aab6ab627e6fb561279e88c47cacd",
+  "revised_candidate": "16e06167de3edcc0d3f23304f13f32b562a2ba44",
+  "merged_main_commit": "46639be34f92bf755552b0c87a385c953e0d83b0",
+  "merged_tree": "ec33d6d5787550f3dc5c91bd56b995fec94f711e",
+  "tests": {
+    "local_public_unit_count": 15,
+    "actual_private_chromium_controls": 13,
+    "actual_chromium_page_errors": 0,
+    "actual_browser_network_requests": 0,
+    "original_tw10_full_zip_rehashed": true,
+    "original_three_standalone_sab_804B_equal_original_battle_1_slices": true,
+    "original_same_source_ADRN_REAL_RD_redecoded_count": 158,
+    "independent_RD_decoder_pixels_equal_count": 158,
+    "original_pet_bitmap_source_SCENE28_original_same_zip_qualified_count": 48,
+    "pixel_observation_is_original_executable": false,
+    "github_ci_uses_private_pixels": false
+  },
+  "source": {
+    "sample": "ACCEPTED_TW_WAEI_JSS_1_0_RETAIL_REDUMP_104630",
+    "original_private_source_zip": {
+      "bytes": 372626292,
+      "sha256": "3a4854adaebef056332cdbd7b1dc1c130c571b11704e3f199f53d03aa31cba24"
+    },
+    "scene28_private_pet_source_zip": {
+      "bytes": 347996,
+      "sha256": "f707d196acb6c449e2b6b11345a02db36ac6726131ce51f9a93587b32c3ad492"
+    },
+    "original_battle_1_sha256": "d99be6475982cf6098b90ff5dfd81ab275ec8c9271fa83daceb95e3fd4bb8859",
+    "original_sab_ids": [
+      0,
+      100,
+      145
+    ],
+    "source_sab_files": 3,
+    "original_cells_by_source_size": 1200,
+    "source_bitmap_unique_ids": 158,
+    "actual_RD_encoded_bytes_sum": 602427,
+    "actual_decoded_pixel_index_bytes_sum": 1009272,
+    "source_qualifications": "original complete private SAB and RLE pixels tested locally with authenticated source bytes; PUBLIC Git does not store full 400-cell map layout or pixel payload"
+  },
+  "private_deliverable": {
+    "archive_name": "SCENE29-private-original-TW10-battle-pet-observer.zip",
+    "library_folder": "/石器时代/",
+    "bytes": 4717435,
+    "sha256": "3ef57be01c80bf5d3babf54d3f7b1051f2038104a1088bac08c30560d843971c",
+    "screenshot_name": "SCENE29-private-browser-observation.png",
+    "screenshot_bytes": 604730,
+    "screenshot_sha256": "094c33b171e19cd06318db1171e12aee4bbc7d113d2894022fe7125518e9c1db",
+    "image_bytes_published_to_Git": false,
+    "private_original_map_positions_published_to_git": false,
+    "original_binary_published_to_git": false,
+    "library_upload_confirmed": true
+  },
+  "git_files": {
+    "source_report": {
+      "path": "research/recovered/STONEAGE-SCENE29-TW10-BATTLE-PET-ACTUAL-R1.json",
+      "blob": "3236e665dea1df503bf9bbf047cb3a9d3588ba17",
+      "bytes": 108901
+    },
+    "tool": {
+      "path": "tools/stoneage_scene29_tw10_battle_pet.py",
+      "blob": "f72ed4718424d231b553029020ffc18b6cb98f4f"
+    },
+    "tests": {
+      "path": "tests/test_stoneage_scene29_tw10_battle_pet.py",
+      "blob": "fcd1b08d9303c38cce5da6bb8a16377e83a75b50"
+    },
+    "workflow": {
+      "path": ".github/workflows/verify-stoneage-scene29-tw10-battle-pet.yml",
+      "blob": "fde4df547a4713008fe8c5dc86afd1551811ae2a"
+    },
+    "spec": "docs/specs/STONEAGE-SCENE29-TW10-ORIGINAL-BATTLE-PET-OBSERVATION-R1.md",
+    "continuity": "docs/continuity/STONEAGE-SCENE29-TW10-BATTLE-PET-20261029.md"
+  },
+  "candidate_ci": [
+    {
+      "id": 40893681656,
+      "name": "Verify SCENE29 original TW10 SAB 3-map and pet source integration",
+      "sha": "5cf34522d12aab6ab627e6fb561279e88c47cacd",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 40893659276,
+      "name": "Accept preserved original TW85 SPR137 full animation material R28",
+      "sha": "5cf34522d12aab6ab627e6fb561279e88c47cacd",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 40893659257,
+      "name": "Verify original four village interior materials R34",
+      "sha": "5cf34522d12aab6ab627e6fb561279e88c47cacd",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 40893659215,
+      "name": "Verify original dated map110 three actual cell values R32",
+      "sha": "5cf34522d12aab6ab627e6fb561279e88c47cacd",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 40893659241,
+      "name": "Verify StoneAge R17 original battle SAB crossversion occurrence conservation",
+      "sha": "5cf34522d12aab6ab627e6fb561279e88c47cacd",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 40893659210,
+      "name": "Accept primary-source TW1.0 character creation numeric join R16",
+      "sha": "5cf34522d12aab6ab627e6fb561279e88c47cacd",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 40893659209,
+      "name": "Verify original native album table and saved-name joins R36",
+      "sha": "5cf34522d12aab6ab627e6fb561279e88c47cacd",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 40893659205,
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "sha": "5cf34522d12aab6ab627e6fb561279e88c47cacd",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 40893659243,
+      "name": "Verify original local album name material and no master promotion R35",
+      "sha": "5cf34522d12aab6ab627e6fb561279e88c47cacd",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 40893659394,
+      "name": "Verify SCENE29 original TW10 SAB 3-map and pet source integration",
+      "sha": "5cf34522d12aab6ab627e6fb561279e88c47cacd",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 40893659204,
+      "name": "Verify original same-build named-entity source gate R31",
+      "sha": "5cf34522d12aab6ab627e6fb561279e88c47cacd",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 40893659208,
+      "name": "Verify preserved mixed25 full server source conservation R18",
+      "sha": "5cf34522d12aab6ab627e6fb561279e88c47cacd",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "revision_ci": [
+    {
+      "id": 40893792057,
+      "name": "Verify SCENE29 original TW10 SAB 3-map and pet source integration",
+      "sha": "16e06167de3edcc0d3f23304f13f32b562a2ba44",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 40893785570,
+      "name": "Verify SCENE29 original TW10 SAB 3-map and pet source integration",
+      "sha": "16e06167de3edcc0d3f23304f13f32b562a2ba44",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "merged_main_ci": [
+    {
+      "id": 40894009464,
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "sha": "46639be34f92bf755552b0c87a385c953e0d83b0",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 40894009525,
+      "name": "Verify preserved mixed25 full server source conservation R18",
+      "sha": "46639be34f92bf755552b0c87a385c953e0d83b0",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 40894009545,
+      "name": "Verify original same-build named-entity source gate R31",
+      "sha": "46639be34f92bf755552b0c87a385c953e0d83b0",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 40894009385,
+      "name": "Verify original dated map110 three actual cell values R32",
+      "sha": "46639be34f92bf755552b0c87a385c953e0d83b0",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 40894009414,
+      "name": "Verify original native album table and saved-name joins R36",
+      "sha": "46639be34f92bf755552b0c87a385c953e0d83b0",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 40894009413,
+      "name": "Verify original four village interior materials R34",
+      "sha": "46639be34f92bf755552b0c87a385c953e0d83b0",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 40894009307,
+      "name": "Verify original local album name material and no master promotion R35",
+      "sha": "46639be34f92bf755552b0c87a385c953e0d83b0",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 40894009620,
+      "name": "Verify StoneAge R17 original battle SAB crossversion occurrence conservation",
+      "sha": "46639be34f92bf755552b0c87a385c953e0d83b0",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 40894009450,
+      "name": "Accept preserved original TW85 SPR137 full animation material R28",
+      "sha": "46639be34f92bf755552b0c87a385c953e0d83b0",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 40894009499,
+      "name": "Accept primary-source TW1.0 character creation numeric join R16",
+      "sha": "46639be34f92bf755552b0c87a385c953e0d83b0",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 40894009616,
+      "name": "Verify SCENE29 original TW10 SAB 3-map and pet source integration",
+      "sha": "46639be34f92bf755552b0c87a385c953e0d83b0",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "preserve_exact": {
+    "docs/CURRENT-STATE.md": "20050acf279a01555ab06a381dfcdc936bd381a6",
+    "docs/PROJECT-CONTINUITY-PROTOCOL-R1.md": "a064174339b7a4656efe00b4446a066fd7abf304"
+  },
+  "negatives": {
+    "native_game_world_entered": false,
+    "original_program_ran_in_scene29": false,
+    "original_battle_draw_algorithm_authenticated": false,
+    "original_battle_runtime_selected_sab": false,
+    "original_palette_selected": false,
+    "source_pet_species_identified": false,
+    "original_server_encounter_mapping": false,
+    "original_1999_JSS_build_authentication": false,
+    "Stage_A": "7_PARTIAL_2_OPEN",
+    "Stage_B_wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_percentage": null
+  },
+  "next": "SCENE30 examine exact provenance of optional original TW10 world map component or DAT bytes only with authentic original data; if unavailable register bounded gap then rotate 22 material domains",
+  "receipt_commit_own_actions_not_preclaimed": true
+}
