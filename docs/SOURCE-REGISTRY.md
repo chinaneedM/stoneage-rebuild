@@ -8837,3 +8837,8 @@ All11 original-derived inputs pinned in logical-alias-catalog-r1/REPORT-R1.json.
 ### 2026-10-29 — SCENE15 现存同载体的一组成对出口及原像素
 
 仍为已保存RAR361255180B/SHA d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5，无新公网载体下载。warp_y.create24588B/SHA859ff2ed23baadb20382508874cd3a63e603b84c7205c6f5d8998229f4f4c8b1、模板4950B及1001.DAT5408B/1000.DAT153608B皆原长度/SHA/CRC认证；目标地图SHA94b19cb59d72b7b48da70d2741ba68516caad970297fd48ed11ef720fa3ea97e匹配旧完整清单。仅前三件有第二libarchive成功，目标DAT的libarchive/7zip失败不改写。原图51RD/候选RGBA/PNG及11实际画布有独立重算；全源字节范围/旧匿名合同复用/失败原链见STONEAGE-SCENE15-DOORWAY-SOURCE-R1.json与STONEAGE-SCENE15-ACCEPTANCE-R1.json。原地图/脚本/PNG/HTML只私人保管，公开CI不读原件，本地真源执行不伪造source Action。
+
+
+### SRC-SCENE18-20261029 — 原ADRN单解包器整SHA/CRC与永久派生工件
+
+原源Action40790680489/81578679/job123174841510；工件12860514878 ZIP12508B由本轮独立下载核SHA0cea2baa749a483798099ab5899f2e6c14871f150417bec8ed01e340448023b4；原JSON42747B/SHAf53d3630ed49dd06c3822972a2620001d1781bf232b1c9e8db21c3ab1b7c4213完整存STONEAGE-SCENE18-ORIGINAL-ADRN-SOURCE-R1.json。unar成功+预定整SHA/CRC；libarchive不支持过滤器明确失败，不称双实现。四份完整旧资源元数据的独立数值/摘要对照见CROSSVERSION-CANDIDATE-R1.json；mixed25 REAL未读，不能据同索引复制原图。ZIP/原报告/Git blob及旧史pin见CUSTODY-R1.json，前三失败保留，商业原件不公开。

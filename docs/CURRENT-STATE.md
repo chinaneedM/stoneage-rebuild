@@ -18661,3 +18661,16 @@ fresh远端main9854762ef8163dd86f67982379414e9d339f8dcb/tree4482253ef2563da0ffdc
 原RAR及最终四依赖主unar完整SHA/CRC通过，三个原件libarchive字节同；1000.DAT的libarchive CRC失败，7zip独立原成员尝试-11，失败完整保留，不称双实现全过，也不把与旧SHA/CRC精确相同的主解包地图叫损坏。原素材/脚本/私人HTML不公开，公开CI仅派生；31新反例/78专用相关/86本地相关测试通过，候选/main须按真实后验记。
 
 最高NEXT TOWN1000-NEARBY-NPC-SOURCE-16：先回22域查重，限落点附近一名原NPC的原创建/参数/图形可见交互增量，优先已存1000npc_m.create的63,103显式引用；无新原输入则止点轮换，不重跑826图闭合、不扩所有门/NPC或EXE/驱动。原版世界未进入、官方同部署未知、DD-028/Stage A7PARTIAL+2OPEN/B及wiki GATED/R79暂停/总体percent=null均不变。
+
+
+## SCENE18 实际来源验收与跨版本取图候选（2026-10-29）
+
+本轮从远端主线 bfd6394cbc4b998a6cedfd732b8048da82360501/tree92dd8a649e8045138b95fd77ebd4c02fed4697f2启动；666远端分支、0开放PR、七启动文件及完整CURRENT 2685765B已核。续接既有未合并SCENE18分支c571fc2，未重跑或虚构源执行。成功source run40790680489/HEAD81578679/job123174841510已实际completed/success；工件12860514878 ZIP12508B独立下载SHA256 0cea2baa749a483798099ab5899f2e6c14871f150417bec8ed01e340448023b4与API相同，原JSON42747B/SHA f53d3630ed49dd06c3822972a2620001d1781bf232b1c9e8db21c3ab1b7c4213永久归档。
+
+**FACT（原创建配置→同载体索引）**：218次HTTP206/14242060B、7954原头；unar整ADRN18765120B SHA/CRC通过后，原图形键16048恰一80B记录：index/bitmap5894、REAL偏移25018537/长度1668、尺寸36×79、原偏移-18/-70，记录SHA2273a098fa5e5f701c44ead12757cbb159570c43ceb5cf0120d32b1a71e5f524。libarchive3.7.2明确Parsing filters is unsupported；不能称双解包器成功，前三次failure保持不变。上文原双实现要求由这个有界单解包器+既定整SHA/CRC结果明确降级，不追认成双实现。
+
+**新增跨版取图候选**：独立从已有官方patch数值属性重建整80B记录，其SHA与本次混合2.5索引完全一致；TW8.5 native完整记录也同SHA，TW1/CN5已有完整表的头部/属性SHA一致。后三个历史样本原RD摘要均ce21e49856dde81b79afa5854f400df31393b1d87a08e6357b0eb8fd2e5ad252。这只给后续读取旧已保管原图的准确候选；本次mixed25 REAL读出0B，其RD摘要仍null，**相同索引不能证明未读像素相同**，也不证明初代官方NPC身份/同服/对白/原图渲染。
+
+源报告、完整range链、跨版候选、ZIP/JSON/Git blob保管收据以及17条新正反测试永久入Git；与既有门槛合计51测试本地通过。候选/主线CI按后验另记，不能以公开元数据CI冒作原图解码或源重跑。原数据/图像/程序未公开。
+
+**最高NEXT：SCENE19-EXISTING-PRIVATE-NPC-BITMAP-OR-CONTENT-ROTATION**。先在已有私人TW1/mixed25保管包或图像子集中找准确原RD(5894/1668B)；完整原成员SHA或既已认证的块SHA成立才解码，并独立核索引/像素再接现代观察器。若只能取得索引或需要重拉338MB压缩REAL，有限缺件止点回22域材料队列，不再扩大RAR/解包/驱动辅助链。NPC63,103位于R15旧7×7窗口之外（y最大102），不得为显示NPC把旧画布伪称已覆盖；新观察须显式扩窗/重取地图范围或单独候选图检视。原版世界仍未进入，Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、总体percent=null保持。

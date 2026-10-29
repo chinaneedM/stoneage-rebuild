@@ -858,3 +858,8 @@ ranges, not a new whole-client download or arbitrary program reverse engineering
 ### 2026-10-29 | SCENE17 真实原件：室外出口邻近 NPC 创建配置
 
 [SCENE17 来源报告及日期续接](docs/continuity/STONEAGE-SCENE17-ORIGINAL-NPC-SOURCE-20261029.md)：从既存混合2.5保管分卷通过184次HTTP206/12,013,836B定点取得并双解包全SHA认证 `npc/genout/1000npc_m.create`(4413B) 与 `npcgen.template`(4950B)，原25/41块中有**恰好一条**地图1000、固定坐标(63,103)、图形16048、创建数量1、方向4的NPC创建块，唯一连接模板`npcgen_man`→`TownPeople`。完整源派生文件、原压缩header/range hashes及15条新增反例永久存于[研究JSON](research/recovered/STONEAGE-SCENE17-ORIGINAL-NPC-SOURCE-R1.json)，源Action [40789416440](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40789416440) completed/success，候选校验[40789787160](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40789787160)实测35项通过。所用是混合社区保管，不认证台湾1.0官方同服；原客户端世界仍未进入，NPC姓名、原对白、真实可交互性及原像素未新认证。NEXT限图形16048同载体原图或具名缺件，随后回22域轮换；Stage A/B/wiki/R79边界及总体百分比null不变。
+
+
+### 2026-10-29 | SCENE18 室外NPC原图索引与真实源工件耐久验收
+
+[SCENE18来源/验收与下一步](docs/continuity/STONEAGE-SCENE18-GRAPHIC16048-ADRN-20261029.md)：独立下载核验成功源工件并永久归档，原图形16048唯一对应bitmap5894、36×79、REAL偏移25018537/1668B。原ADRN全SHA/CRC由unar通过，libarchive不支持压缩过滤器的失败保留；跨版完整记录同SHA提供取图候选，未读mixed25原像素不能称已见NPC。51本地相关测试通过，远端CI后验另记。最高NEXT先查现有私人原图5894，缺件则回22域，不扩解包/驱动链；原世界仍未进入，生产/总体未知边界保持。
