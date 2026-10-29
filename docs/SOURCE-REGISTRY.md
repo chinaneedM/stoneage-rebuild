@@ -8852,3 +8852,8 @@ All11 original-derived inputs pinned in logical-alias-catalog-r1/REPORT-R1.json.
 ### SRC-SCENE21-20261029 — 原地图1000/原索引与已验完整公共REAL前缀
 
 重新使用2026-09-19资源比较报告1431B/SHA3b47bebc704e8a2245b6bb9ec366f3d76d797b54378142bf1618fe5058ff9b4c/blob b86de21a9c1dc28af1b533f20ebd4b37428517a6。旧whole315842228B REAL及125996 ADRN记录的完整前缀证明限定到同SHA父文件，不泛推其他版本/服务器。SCENE03私人3356562B包重新提供完整mixed ADRN18765120B，当前与TW ADRN10079680B整前缀实际相同；TW REAL315842228B全SHA重核，mixed REAL本轮仍0B。56目标键全表唯一、36已存mixed RD逐字节同，19地图图及NPC实际再解码，两实现/8场景逐像素同。原件/图像只私人保管，公开SOURCE/ACTUAL-PIXEL/CUSTODY及合成浏览器报告；原浏览器/原客户端世界/官方NPC身份不晋升。SCENE19/20原始回执不改，以日期加法补齐之前遗漏的像素身份依据。
+
+
+### 2026-10-29 — SRC-SCENE22-20261029 — 精确原参数指向的143B正文
+
+父RAR361255180B/SHA d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5从既存私人保管回读认证；原npc/genout/msg_1000_63_103的143B/SHA d1138b040fb31d0dc85cfdf4917f1c92facc67323c3a12544a8487039d0492ca与R18唯一库存相同，创建/模板亦全SHA同。单libarchive解包＋独立RAR4头7952文件CRC/三成员CRC；CP950与Big5/iconv214B UTF8同。非新发现整个系统，原对白/脚本只私人，公开派生STONEAGE-SCENE22-NPC-ARGUMENT-R1.json；source Action null、不认证原服执行或台湾1.0同服。
