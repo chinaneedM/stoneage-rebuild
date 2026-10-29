@@ -18741,3 +18741,14 @@ fresh main056931f/tree3291dd9及6433树项/七启动文件/完整CURRENT2702146B
 两原SAP Palet_0/1仅配色候选；192RGBA/PNG及192完整现代卡片被第二解码和独立合成核同，原图已目视，原浏览器/客户端未执行。首次240×220画框越界被拒，改240×260锚点(120,200)后全部96完整显示，未改原像素。私人页可同时查12组，切八方向/两候选配色、查原记录/重置；35本地相关测试通过，远端合成UI和主线后验另记。私人ZIP1211498B/SHA536240d6…已保存并应用身份，无保存后二次回读宣称。原资产不公开；source Action null。
 
 最高NEXT **SCENE24-SHOP-FIRST-THREE-ITEM-IMAGE-INPUTS**：复用已有SCENE14商店原参数顺序前三ID0/4/10及imagenumber20033/20032/20013，先核命名空间和准确索引，最多3项实物链接/原图或精确止点；不直接当bitmapno、不扩大交易helper。原世界未进入、官方运行身份与建角人数/名字/头像/真实配色/FPS仍待证；Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、overall_percent=null不变。旧CURRENT2702146B及全部历史为完整原样前缀。
+
+
+## 2026-10-29 — SCENE24：原商店前三条物品行与别名候选像素
+
+fresh main394d016/treeccdfb5b及最新SCENE23回执40864052716 actual success，七启动文件与完整CURRENT2704038B逐Git原件核同，续最高NEXT24。详见docs/continuity/STONEAGE-SCENE24-SHOP-ITEM-IMAGES-20261029.md。
+
+原保存RAR361255180B全SHA d71e2e67…重新核，四原服务端文件由libarchive3.7.2解出，与R14/R18逐完整SHA相同；独立RAR4头7952文件CRC/四成员CRC同，不能称双解包器。原商店17库存位置、13252行表，准确原顺序前三ID0/4/10（0不是空）。三行imagenumber20033/20032/20013在全18765120B混合ADRN的+76各唯一，映射物理6006/6005/5986；同值物理20033/20032/20013则为另外三个不同RD。两命名空间均全表查唯一，不因同数字静默混用。
+
+完整TW1 ADRN10079680B前缀本轮逐字节核同；六原记录和整RD全在已验公共前缀，TW1 REAL315842228B全SHA后实际读六RD。mixed REAL本轮0B，像素身份依赖旧整REAL前缀报告而非新763MB全比。实际目视三斧头候选/三人物动作对照，但只升格静态数值候选，不认证原生selector、TW1物品master或同服交易。第二实现独立原行/索引/六RD解码，12候选配色RGBA/PNG及24整数卡片全同，原图浏览器未执行。预导出Python else390语法错误在首导出前修正，原件未变。51本地相关测试通过，远端后验另记。私人ZIP375924B/SHA194d93d6…保存成功并写身份，未保存后二次回读；原资产/正文不公开，source Action null。
+
+最高NEXT **SCENE25-ROOM-SHOP-OBSERVATION-INTEGRATION**：仅把既有SCENE14房间1001/NPC16017与三商品候选接入同一离线资料观察，显式开关，不做原UI仿真/实际买卖/价格计算或库存金币修改，不扩17商品/交易helper；一个有据整合后回22域。原客户端可操作世界未进入，Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、overall_percent=null保持。旧CURRENT2704038B及全部历史完整原样前缀保留。

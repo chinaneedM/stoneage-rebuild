@@ -1,0 +1,43 @@
+name: Verify SCENE24 three original shop rows and bounded image namespace candidates
+on:
+  push:
+    branches: [main, agent/scene24-shop-item-image-candidates-20261029]
+    paths:
+      - tools/stoneage_scene24_*
+      - tests/test_stoneage_scene24_*
+      - research/recovered/STONEAGE-SCENE24-*.json
+      - .github/workflows/verify-stoneage-scene24-shop-images.yml
+  pull_request:
+    paths:
+      - tools/stoneage_scene24_*
+      - tests/test_stoneage_scene24_*
+      - research/recovered/STONEAGE-SCENE24-*.json
+      - .github/workflows/verify-stoneage-scene24-shop-images.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original-metadata-and-synthetic-shop-reader:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+      - run: python -m pip install pillow==11.3.0
+      - run: python -m tools.stoneage_scene24_shop_images
+      - run: python -m unittest -v tests.test_stoneage_scene24_shop_images tests.test_stoneage_scene14_room_shop tests.test_stoneage_tw10_vs_25_resource_diff
+      - run: npm install --prefix /tmp/scene24-browser playwright@1.55.1
+      - name: Browser sees synthetic pixels only, not private original art
+        run: |
+          python -m tools.stoneage_scene24_fixture --output /tmp/scene24-fixture.html
+          CHROME_PATH="$(command -v google-chrome)" PLAYWRIGHT_MODULE=/tmp/scene24-browser/node_modules/playwright node tools/stoneage_scene24_browser.cjs /tmp/scene24-fixture.html /tmp/scene24-browser.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: scene24-synthetic-shop-reader-only
+          path: /tmp/scene24-browser.json
+          if-no-files-found: warn
+          retention-days: 7

@@ -2738,3 +2738,8 @@ fresh main e86f838833323c331c4c3657eab0f7a129582127/treef97cd6b31b2042d990ec8bef
 ## 2026-10-29 — SCENE23 原身体数值候选可见材料止点
 
 22域有限轮换后，R16十二原值的96方向首帧已实际同版取图；两原SAP配色候选的192RGBA/PNG/现代卡片独立一致，不声称十二个可选人物、原色/建角界面或全728源帧位置已恢复。详见SCENE23日期续接；旧所有域状态不变。下一最高SCENE24-SHOP-FIRST-THREE-ITEM-IMAGE-INPUTS，限已有商店ID0/4/10的imagenumber命名空间与三原图实物输入，有准确来源才联接，不重复角色/驱动helper。
+
+
+## 2026-10-29 — SCENE24 三商品候选图与命名空间反例止点
+
+原商店前三ID0/4/10和imagenumber20033/20032/20013已真实核原字节，唯一+76别名分别6006/6005/5986；同值物理号是另外图块。六RD/两候选配色与24现代卡片独立一致，静态候选不升级原selector/买卖。详见SCENE24日期续接；下一最高SCENE25-ROOM-SHOP-OBSERVATION-INTEGRATION，限已有房间/NPC/三商品资料整合和显式开关，结束回22域，不扩全库存/交易helper。原世界/Stage A/B/wiki/R79与总体未知保持。
