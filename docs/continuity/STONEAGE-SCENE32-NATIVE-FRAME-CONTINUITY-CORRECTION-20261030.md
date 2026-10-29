@@ -58,3 +58,7 @@ P3C的取色/输入/崩溃限制来自 `docs/continuity/STONEAGE-ORIGINAL-LOGIN-
 15项新原报告/后记/P3I联接和合成PNG反例本地通过；公开CI不读原私人图、不重跑原EXE。本地源核对收据永久记录为 `STONEAGE-SCENE32-ACTUAL-PRIVATE-FRAME-AUDIT-R1.json`，联接与纠错为 `STONEAGE-SCENE32-RETAINED-NATIVE-FRAMES-R1.json`，均仅派生数值/哈希。真实候选/主线Actions另据后验记录，不能把旧success算作新执行。
 
 原版世界仍未进入；Stage A 7 PARTIAL + 2 OPEN、Stage B/wiki GATED、R79暂停、overall_percent=null保持。本轮无新增历史内容；实质结果是排除重复工作及防止错误的画面/运行晋升。
+
+## 远端最终验收
+
+PR [47](https://github.com/chinaneedM/stoneage-rebuild/pull/47) 已合并。内容候选 `a85e8ae3aa19f445d718dd725943e2fbfaa4cd6f` 的12项Actions、主线合并 `a1c045b766034035483c2a4a807d9b3d04de603c` 的11项全部实际completed/success；合并整tree `f23e420014a9bac365a5491919550f5521ab3613` 与本地已验tree完全一致。专用40974105887/job123797774176原日志核到continuity_join PASS与15测试OK，公开CI没有读取私人原图或执行原件。33项本地/23项远端运行、七内容文件SHA/Git blob、原包/私有报告身份和纠错范围永久固定于 `research/recovered/STONEAGE-SCENE32-PUBLICATION-R1.json`。本后验记录自身提交不属于前述23项成功，不能预报其CI结果。最高下一SCENE33及全部历史边界不变。
