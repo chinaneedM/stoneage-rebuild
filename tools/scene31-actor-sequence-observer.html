@@ -1,0 +1,49 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src data:; script-src 'unsafe-inline'; style-src 'unsafe-inline'; connect-src 'none'">
+<title>SCENE31 · 原版人物连续帧观察</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#142129;color:#e5e8df;font:15px/1.65 system-ui,sans-serif}
+main{max-width:1050px;margin:auto;padding:26px}h1{font-size:27px;line-height:1.3;margin:0 0 10px;color:#e6ce9b}.note{color:#bdc7c6}.badge{font-size:12px;letter-spacing:2px;color:#cdaa72}
+.workspace{display:grid;grid-template-columns:290px 1fr;gap:24px;margin-top:23px}.panel{background:#1d3039;border:1px solid #385059;border-radius:9px;padding:18px}canvas{image-rendering:pixelated;max-width:100%;display:block}#actor{margin:auto;background:#142129;border:1px solid #49636a}
+label{display:block;margin:12px 0}select,button{background:#29424a;color:#f4ead5;border:1px solid #59757c;border-radius:5px;padding:8px 11px;font:inherit}button{cursor:pointer}button:hover{background:#39565c}.buttons{display:flex;gap:7px;flex-wrap:wrap;margin:16px 0}.frame{text-align:center;color:#e6ce9b;font-variant-numeric:tabular-nums}.strip{display:grid;grid-template-columns:repeat(6,1fr);gap:5px}.thumb{padding:3px}.thumb[aria-pressed=true]{border:2px solid #efcc8b}.thumb canvas{width:100%;height:auto}pre{white-space:pre-wrap;font-size:12px;color:#becbca}.status{font-size:13px;color:#a5bdb6}footer{margin-top:20px;border-top:1px solid #385059;padding-top:12px;font-size:13px;color:#b3bdb9}
+@media(max-width:740px){.workspace{grid-template-columns:1fr}.strip{grid-template-columns:repeat(3,1fr)}}
+</style>
+<main><div class="badge">石器时代 · 原始资源观察 / SCENE31</div>
+<h1>同一人物，八方向完整连续帧</h1>
+<div class="note">台湾 Waei/JSS 1.0 原资源候选 100000 · 动作码 2。每方向 6 帧，保留全部原顺序。此页是现代离线研究控件，未运行原游戏。</div>
+<div class="workspace"><section class="panel"><canvas id="actor" width="240" height="260" aria-label="当前原图候选画布"></canvas><div class="frame" id="position" aria-live="polite"></div>
+<label>原方向值 <select id="direction" aria-label="原方向值"></select></label>
+<label>候选色表 <select id="palette" aria-label="候选色表"><option value="1">Palet_1 · 配色候选</option><option value="0">Palet_0 · 配色候选</option></select></label>
+<div class="buttons"><button id="previous">上一帧</button><button id="next">下一帧</button><button id="play" aria-pressed="false">播放预览</button><button id="reset">复位</button></div>
+<p class="status">现代预览间隔 180 毫秒；源 duration=600 的单位及原 FPS 未认证。音频不播放。</p></section>
+<section class="panel"><h2 style="margin:0;font-size:18px">当前方向 · 六个原帧位置</h2><p class="note">点击下列帧可逐一检查；方向改变从第 0 帧开始。</p><div id="strip" class="strip"></div><pre id="record"></pre><p id="loaded" class="status">正在解码原图候选…</p></section></div>
+<footer>原姓名、动作名称、运行时配色及角色选择器均未认证。观察控件与播放速度为现代设计；不构成原版可操作世界、原生行为或全部人物动画已恢复的证据。</footer></main>
+<script id="evidence" type="application/json">PRIVATE_DATA_PLACEHOLDER</script>
+<script>
+'use strict';
+const pack=JSON.parse(document.getElementById('evidence').textContent), report=pack.report;
+const byId=new Map(report.bitmaps.map(b=>[b.bitmapno,b]));
+const direction=document.getElementById('direction'),palette=document.getElementById('palette');
+const canvas=document.getElementById('actor'),ctx=canvas.getContext('2d');
+const decoded={'0':{},'1':{}}; let frame=0,timer=null,draws=0;
+const selectFrame=i=>{frame=i;draw();};
+function stop(){if(timer!==null)clearInterval(timer);timer=null;document.getElementById('play').textContent='播放预览';document.getElementById('play').setAttribute('aria-pressed','false');}
+function render(target,b,image,scale){const c=target.getContext('2d');c.imageSmoothingEnabled=false;c.fillStyle='#142129';c.fillRect(0,0,target.width,target.height);const ax=target.width/2,ay=target.height===260?200:100;c.drawImage(image,ax+b.xoff*scale,ay+b.yoff*scale,b.width*scale,b.height*scale);}
+function draw(){const a=report.sequences[Number(direction.value)],f=a.frames[frame],b=byId.get(f[0]);render(canvas,b,decoded[palette.value][f[0]],2);draws++;
+ document.getElementById('position').textContent=`方向 ${a.direction} · 原帧 ${frame} / ${a.frames.length-1} · 图号 ${f[0]}`;
+ document.getElementById('record').textContent=JSON.stringify({body_candidate:100000,action_code:2,direction:a.direction,frame_index:frame,bitmap:f[0],source_frame:f,source_duration_word:a.duration_word,original_RD_sha256:b.RD_sha256,candidate_palette:palette.value,native_FPS:'未知'},null,2);
+ document.querySelectorAll('.thumb').forEach((button,i)=>button.setAttribute('aria-pressed',String(i===frame)));
+ canvas.dataset.direction=String(a.direction);canvas.dataset.frame=String(frame);canvas.dataset.palette=palette.value;canvas.dataset.bitmap=String(f[0]);canvas.dataset.draws=String(draws);
+}
+function strip(){const holder=document.getElementById('strip');holder.replaceChildren();const a=report.sequences[Number(direction.value)];a.frames.forEach((f,i)=>{const button=document.createElement('button');button.className='thumb';button.setAttribute('aria-label',`原帧 ${i}`);const c=document.createElement('canvas');c.width=120;c.height=130;render(c,byId.get(f[0]),decoded[palette.value][f[0]],1);button.append(c,document.createTextNode(String(i)));button.onclick=()=>{stop();selectFrame(i);};holder.append(button);});}
+async function init(){for(let d=0;d<8;d++){const o=document.createElement('option');o.value=String(d);o.textContent=String(d);direction.append(o);}
+ await Promise.all(Object.entries(pack.images).flatMap(([p,images])=>Object.entries(images).map(([id,src])=>new Promise((resolve,reject)=>{const im=new Image();im.onload=()=>{decoded[p][id]=im;resolve();};im.onerror=reject;im.src='data:image/png;base64,'+src;}))));
+ direction.onchange=()=>{stop();frame=0;strip();draw();};palette.onchange=()=>{stop();strip();draw();};
+ document.getElementById('previous').onclick=()=>{stop();selectFrame((frame+5)%6);};document.getElementById('next').onclick=()=>{stop();selectFrame((frame+1)%6);};
+ document.getElementById('play').onclick=()=>{if(timer!==null){stop();return;}document.getElementById('play').textContent='暂停预览';document.getElementById('play').setAttribute('aria-pressed','true');timer=setInterval(()=>selectFrame((frame+1)%6),180);};
+ document.getElementById('reset').onclick=()=>{stop();direction.value='0';palette.value='1';frame=0;strip();draw();};
+ strip();draw();document.getElementById('loaded').textContent='96 幅候选配色图已解码 · 原位图 48 · 完整帧位置 48 · 原程序未执行';
+}
+init().catch(error=>{document.getElementById('loaded').textContent='原图候选解码失败：'+String(error);});
+</script></html>

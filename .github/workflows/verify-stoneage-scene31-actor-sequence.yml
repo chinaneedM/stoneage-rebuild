@@ -1,0 +1,40 @@
+name: Verify SCENE31 one original actor sequence and synthetic controls
+on:
+  push:
+    paths:
+      - 'tools/stoneage_scene31*'
+      - 'tools/scene31-actor-sequence-observer.html'
+      - 'tests/test_stoneage_scene31_actor_sequence.py'
+      - 'research/recovered/STONEAGE-SCENE31-*'
+      - '.github/workflows/verify-stoneage-scene31-actor-sequence.yml'
+  pull_request:
+    paths:
+      - 'tools/stoneage_scene31*'
+      - 'tools/scene31-actor-sequence-observer.html'
+      - 'tests/test_stoneage_scene31_actor_sequence.py'
+      - 'research/recovered/STONEAGE-SCENE31-*'
+      - '.github/workflows/verify-stoneage-scene31-actor-sequence.yml'
+permissions:
+  contents: read
+jobs:
+  source-safe-review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest tests.test_stoneage_scene31_actor_sequence -v
+      - run: python -m tools.stoneage_scene31_actor_sequence
+      - run: pip install Pillow
+      - run: npm install --prefix /tmp/scene31-browser playwright@1.55.1
+      - name: Synthetic-only browser controls, never private original images
+        run: |
+          python -m tools.stoneage_scene31_fixture --output /tmp/scene31-synthetic.html
+          CHROME_PATH="$(command -v google-chrome)" PLAYWRIGHT_MODULE=/tmp/scene31-browser/node_modules/playwright node tools/stoneage_scene31_browser.cjs /tmp/scene31-synthetic.html /tmp/scene31-synthetic-browser.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: scene31-synthetic-browser-metadata
+          path: /tmp/scene31-synthetic-browser.json
+          retention-days: 30
