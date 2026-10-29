@@ -16,8 +16,21 @@ const [html,output]=process.argv.slice(2);if(!html||!output)throw Error('HTML pa
    const b=Uint8Array.from(atob(f.dataURI.split(',')[1]),c=>c.charCodeAt(0));
    const context=new OfflineAudioContext(f.channels,1,f.sample_rate),audio=await context.decodeAudioData(b.buffer),hashes=[];
    for(let c=0;c<audio.numberOfChannels;c++)hashes.push(hex(await crypto.subtle.digest('SHA-256',audio.getChannelData(c).buffer)));
-   if(audio.numberOfChannels!==f.channels||audio.sampleRate!==f.sample_rate||audio.length!==f.frames||JSON.stringify(hashes)!==JSON.stringify(f.expected_browser_float32_channel_sha256))throw Error('decoded PCM mismatch: '+JSON.stringify({path:f.original_path,actual:{channels:audio.numberOfChannels,rate:audio.sampleRate,frames:audio.length,hashes},expected:{channels:f.channels,rate:f.sample_rate,frames:f.frames,hashes:f.expected_browser_float32_channel_sha256},channel_view:{offset:audio.getChannelData(0).byteOffset,bytes:audio.getChannelData(0).byteLength,buffer_bytes:audio.getChannelData(0).buffer.byteLength},synthetic_samples:f.original_path.startsWith('SYNTHETIC_NOT_ORIGINAL/')?Array.from(audio.getChannelData(0).slice(0,16)):null}));
-   out.push({path:f.original_path,frames:audio.length,channels:audio.numberOfChannels,sample_rate:audio.sampleRate,channel_sha256:hashes});
+   if(audio.numberOfChannels!==f.channels||audio.sampleRate!==f.sample_rate||audio.length!==f.frames)throw Error('decoded format/frame mismatch: '+f.original_path);
+   // Chromium can map positive U8 samples by /127 rather than /128.
+   // Verify the exact recovered ORIGINAL integer PCM, without rewriting audio.
+   const negativeScale=f.sample_width_bytes===1?128:32768;let recovered=null;
+   for(const model of ['SYMMETRIC_POWER_OF_TWO','ASYMMETRIC_POSITIVE_MAX']){
+    const raw=new Uint8Array(f.frames*f.channels*f.sample_width_bytes),view=new DataView(raw.buffer);let withinRange=true;
+    for(let i=0;i<f.frames;i++)for(let c=0;c<f.channels;c++){
+     const v=audio.getChannelData(c)[i],scale=model==='ASYMMETRIC_POSITIVE_MAX'&&v>0?negativeScale-1:negativeScale,n=Math.round(v*scale),at=(i*f.channels+c)*f.sample_width_bytes;
+     if(!Number.isFinite(v)||n< -negativeScale||n>negativeScale-1){withinRange=false;continue;}
+     if(f.sample_width_bytes===1)raw[at]=n+128;else view.setInt16(at,n,true);
+    }
+    if(withinRange&&hex(await crypto.subtle.digest('SHA-256',raw.buffer))===f.PCM_sha256){recovered=model;break;}
+   }
+   if(recovered===null)throw Error('decoded integer PCM mismatch: '+f.original_path);
+   out.push({path:f.original_path,frames:audio.length,channels:audio.numberOfChannels,sample_rate:audio.sampleRate,raw_float32_channel_sha256:hashes,raw_float32_matches_reference:JSON.stringify(hashes)===JSON.stringify(f.reference_float32_channel_sha256),recovered_original_PCM_sha256:f.PCM_sha256,recovery_normalization_model:recovered});
   }return out;
  });
  await page.locator('#category').selectOption('BGM_DIRECTORY');if(await page.locator('#list button').count()!==11)throw Error('BGM filtering');
@@ -31,6 +44,6 @@ const [html,output]=process.argv.slice(2);if(!html||!output)throw Error('HTML pa
  if(!await page.evaluate(()=>document.getElementById('player').paused&&!document.getElementById('player').loop))throw Error('selection must stop/reset loop');
  if(errors.length||requests.length)throw Error(JSON.stringify({errors,requests}));
  const synthetic=decoded.every(x=>x.path.startsWith('SYNTHETIC_NOT_ORIGINAL/'));
- fs.writeFileSync(output,JSON.stringify({schema:'stoneage.scene20.browser_audio_QA.r1',scope:synthetic?'SYNTHETIC_FIXTURE_ONLY_NO_ORIGINAL_AUDIO_READ':'ACTUAL_PRIVATE_ORIGINAL_AUDIO',chromium:browser.version(),decoded_files:decoded.length,all_float32_channel_hashes_equal:true,initially_silent:true,directory_filter_counts:[11,116],exact_name_search:true,media_time_advanced:true,pause_verified:true,selection_stops_playback_and_resets_modern_loop:true,JS_errors:errors,external_requests:requests,original_audio_verified:!synthetic,assistant_heard_audio:false,audio_output_to_speaker_verified:false,original_game_world_entered:false,decoded},null,2)+'\n');
+ fs.writeFileSync(output,JSON.stringify({schema:'stoneage.scene20.browser_audio_QA.r1',scope:synthetic?'SYNTHETIC_FIXTURE_ONLY_NO_ORIGINAL_AUDIO_READ':'ACTUAL_PRIVATE_ORIGINAL_AUDIO',chromium:browser.version(),decoded_files:decoded.length,all_recovered_integer_PCM_hashes_equal:true,raw_float32_reference_match_count:decoded.filter(x=>x.raw_float32_matches_reference).length,initially_silent:true,directory_filter_counts:[11,116],exact_name_search:true,media_time_advanced:true,pause_verified:true,selection_stops_playback_and_resets_modern_loop:true,JS_errors:errors,external_requests:requests,original_audio_verified:!synthetic,assistant_heard_audio:false,audio_output_to_speaker_verified:false,original_game_world_entered:false,decoded},null,2)+'\n');
  }finally{await browser.close()}
 })().catch(e=>{console.error(e);process.exit(1)});

@@ -25,14 +25,14 @@ def fixtures():
         rows.append(dict(original_path='SYNTHETIC_NOT_ORIGINAL/'+('bgm/' if i<11 else 'se/')+name,filename=name,
                          category=cat,bytes=len(raw),WAV_sha256=hashlib.sha256(raw).hexdigest(),PCM_sha256=hashlib.sha256(pcm).hexdigest(),
                          frames=frames,channels=channels,sample_width_bytes=width,sample_rate=rate,duration_seconds=frames/rate,
-                         chunk_signature='SYNTHETIC_PCM',expected_browser_float32_channel_sha256=hashes,
+                         chunk_signature='SYNTHETIC_PCM',reference_float32_channel_sha256=hashes,
                          dataURI='data:audio/wav;base64,'+base64.b64encode(raw).decode()))
     return rows
 
 
 if __name__=='__main__':
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--output',type=Path,required=True);a=p.parse_args()
-    template=(Path(__file__).with_name('stoneage_scene20_audio_observer.html')).read_text()
+    template=(Path(__file__).with_name('stoneage_scene20_audio_observer.html')).read_text(encoding='utf-8')
     html=template.replace('__PRIVATE_AUDIO_JSON__',json.dumps(fixtures(),separators=(',',':')))
     html=html.replace('<h1>','<h1>合成CI测试｜',1).replace('<p class="notice">','<p class="notice">本页全部声音为程序生成的合成测试，不含历史原WAV。',1)
-    a.output.write_text(html)
+    a.output.write_text(html, encoding='utf-8')

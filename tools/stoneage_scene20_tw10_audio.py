@@ -89,7 +89,7 @@ def inspect(raw, path, expected):
                 channels=channels, sample_rate=rate, sample_width_bytes=width,
                 frames=frames, duration_seconds=frames/rate,
                 chunk_signature=m['chunk_signature'],
-                expected_browser_float32_channel_sha256=floats,
+                reference_float32_channel_sha256=floats,
                 in_game_event=None, original_loop_points_applied=False)
 
 
@@ -111,9 +111,9 @@ def validate(r):
              v['original_loop_points_applied'] is False, 'no semantic renaming or historical loop adoption')
         need(v['channels'] in (1, 2) and v['sample_width_bytes'] in (1, 2) and v['sample_rate'] > 0 and
              v['frames'] > 0 and v['duration_seconds'] == v['frames']/v['sample_rate'] and
-             len(v['expected_browser_float32_channel_sha256']) == v['channels'], 'original format/frame bounds')
+             len(v['reference_float32_channel_sha256']) == v['channels'], 'original format/frame bounds')
         need(all(len(h) == 64 and set(h) <= set('0123456789abcdef') for h in
-                 [v['PCM_sha256'], *v['expected_browser_float32_channel_sha256']]), 'derived PCM/channel hashes')
+                 [v['PCM_sha256'], *v['reference_float32_channel_sha256']]), 'derived PCM/channel hashes')
         old = formats[v['original_path']]
         need(all(v[k] == old[k] for k in ('channels', 'sample_rate', 'sample_width_bytes', 'PCM_sha256', 'chunk_signature')) and
              v['frames']*v['channels']*v['sample_width_bytes'] == old['data_bytes'], 'original prior PCM/format crosswalk')
@@ -138,12 +138,12 @@ def export(package, destination):
                   original_WAV_bytes=sum(v['bytes'] for v in rows), files=rows,
                   source_CI_run_id=None, **{k:False for k in FALSE}, overall_completion_percent=None)
     validate(report)
-    template = (ROOT/'tools/stoneage_scene20_audio_observer.html').read_text()
+    template = (ROOT/'tools/stoneage_scene20_audio_observer.html').read_text(encoding='utf-8')
     html = template.replace('__PRIVATE_AUDIO_JSON__', json.dumps(private, separators=(',', ':')))
     need('__PRIVATE_AUDIO_JSON__' not in html, 'private audio embedded once')
     destination.mkdir(mode=0o700)
-    (destination/'stoneage-tw10-audio-observer.html').write_text(html)
-    (destination/'source-derived-report.json').write_text(json.dumps(report, ensure_ascii=False, indent=2, sort_keys=True)+'\n')
+    (destination/'stoneage-tw10-audio-observer.html').write_text(html, encoding='utf-8')
+    (destination/'source-derived-report.json').write_text(json.dumps(report, ensure_ascii=False, indent=2, sort_keys=True)+'\n', encoding='utf-8')
     return report
 
 
@@ -156,7 +156,7 @@ def validate_replay(a, r):
     need(len(a['files']) == 127, 'complete independent original replay')
     for x, v in zip(a['files'], r['files']):
         need(x == dict(original_path=v['original_path'], frames=v['frames'],
-                       float32_channel_sha256=v['expected_browser_float32_channel_sha256']), 'independent FFmpeg full-channel samples')
+                       float32_channel_sha256=v['reference_float32_channel_sha256']), 'independent FFmpeg full-channel samples')
     return {'actual_original_WAVs_independently_decoded':127, 'browser_original_audio_verified':False}
 
 

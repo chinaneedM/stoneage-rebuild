@@ -31,7 +31,7 @@ def replay(folder):
         floats = np.frombuffer(run.stdout, dtype='<f4').reshape((-1, expected['channels']))
         assert len(floats) == expected['frames']
         hashes = [hashlib.sha256(floats[:, c].copy().tobytes()).hexdigest() for c in range(expected['channels'])]
-        assert hashes == expected['expected_browser_float32_channel_sha256'], expected['original_path']
+        assert hashes == expected['reference_float32_channel_sha256'], expected['original_path']
         result.append(dict(original_path=expected['original_path'], frames=len(floats), float32_channel_sha256=hashes))
     out = dict(schema='stoneage.scene20.actual_private_FFmpeg_audio_replay.r1',
                source_report_sha256=hashlib.sha256((folder/'source-derived-report.json').read_bytes()).hexdigest(),
@@ -39,7 +39,7 @@ def replay(folder):
                original_WAV_bytes=38009578, files=result,
                actual_browser_original_audio_verified=False, assistant_heard_audio=False,
                original_world_entered=False)
-    (folder/'independent-ffmpeg-replay.json').write_text(json.dumps(out, indent=2, sort_keys=True)+'\n')
+    (folder/'independent-ffmpeg-replay.json').write_text(json.dumps(out, indent=2, sort_keys=True)+'\n', encoding='utf-8')
     return out
 
 
