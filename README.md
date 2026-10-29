@@ -903,3 +903,8 @@ ranges, not a new whole-client download or arbitrary program reverse engineering
 ### SCENE26 — original pet action=1 bounded sprite-source rotation (2026-10-29)
 
 [SCENE26 evidence and continuation](docs/continuity/STONEAGE-SCENE26-MATERIAL-ROTATION-20261029.md) and [finite source contract](docs/specs/STONEAGE-SCENE26-PET-ACTION1-R1.md): independently rederive 24 direction-sequences/80 frame positions/48 bitmap numbers from exact pinned R40 reports (zero newly obtained raw original material). Original source pixels/action meaning/identity/runtime/world remain unproven; no copyright assets included. Highest next is original-private-byte-qualified action=1 pixel observation only when pinned source material is actually available, otherwise rotate to a new source-qualified 22-domain game-content package. Stage A/B/wiki/R79/overall boundaries unchanged.
+
+
+### SCENE27 — two further historical publisher screenshots (2026-10-29)
+
+[SCENE27 continuation](docs/continuity/STONEAGE-SCENE27-GALLERY-SOURCES-20261029.md) and [historical screenshot custody](docs/specs/STONEAGE-SCENE27-JP2003-DEVELOPMENT-VISUAL-PROVENANCE-R1.md): two previously unverified 2003 Japanese development-gallery positions now have exact currently retrievable 640×480 JPEG identity, size, SHA256 and wrapper provenance from real GitHub Actions; no original images in Git. This is real historical screenshot **metadata**, not original client/world execution, certified game build, game-rule identity or visual interpretation. Return to source-qualified original-world material after bounded source observation; Stage A/B/wiki/R79 statuses unchanged.
