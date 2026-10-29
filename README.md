@@ -888,3 +888,8 @@ ranges, not a new whole-client download or arbitrary program reverse engineering
 ### 2026-10-29 | SCENE23 十二身体图形候选已有八方向原首帧
 
 [同版原图、两候选配色和完整续接](docs/continuity/STONEAGE-SCENE23-BODY-VISUALS-20261029.md)：原R16数值与原SPR/ADRN/REAL实取96首帧，双解码/192候选配色及卡片独立全同，私人页可按方向/候选配色比较并查原记录。不是已证十二可选人物或全角色/全动画；只观察源728帧位置中的96首帧。35本地测试通过，远端后验另记。原世界未进入，下一限SCENE14原商店前三物品的图号命名空间/原图输入24。
+
+
+### 2026-10-29 | SCENE24 三件商品原行→别名候选图及错误命名空间对照
+
+[三原行、完整别名扫描与续接](docs/continuity/STONEAGE-SCENE24-SHOP-ITEM-IMAGES-20261029.md)：原ID0/4/10的imagenumber20033/20032/20013对应唯一+76别名物理6006/6005/5986；同值直接物理号读到另一批原图。六RD/两配色12PNG与24现代卡片独立一致；51本地检查通过，原图和源正文只私人保存。仍是候选数值关联，未认证原selector、官方同服或买卖。下一限原房间/NPC和三商品资料的离线整合25；原世界/Stage A/B/wiki/R79/总体未知边界保持。

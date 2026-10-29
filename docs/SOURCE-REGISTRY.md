@@ -8862,3 +8862,8 @@ All11 original-derived inputs pinned in logical-alias-catalog-r1/REPORT-R1.json.
 ### SRC-SCENE23-20261029 — 同版原body候选→SPR→96首帧像素
 
 来源为已保管P3H原件372626292B/SHA3a4854adaebef056332cdbd7b1dc1c130c571b11704e3f199f53d03aa31cba24，本轮重新核其全SHA及原exe/SPR/SPRADRN/ADRN/REAL/两SAP七成员完整SHA并逐库存一致；没有新版本发现。原R16 128B窗口与已存原SHA相同。原RD96、两候选配色192RGBA及现代卡片由第二实现核同，公开仅SOURCE/LOCAL-ACCEPTANCE数值摘要和工具；source Action null、原图浏览器未执行。首次现代画框越界与修正保留，原图原文/程序不入Git；不认证建角选择人数/名字/头像或原世界。
+
+
+### SRC-SCENE24-20261029 — 四原商店依赖/全ADRN两命名空间与六RD
+
+复用并完整重核RAR361255180B/SHA d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5；四原成员逐SHA同R14/R18、独立RAR4头/成员CRC。SCENE03包3356562B/SHAfa296ad8…重新取完整ADRN18765120B/SHA92d01375…，全234564行扫描别名与物理号，三候选与三对照皆唯一。TW1 ADRN全前缀本轮重核、REAL315842228B全SHA；六RD据旧同父文件完整REAL前缀报告取图，本轮mixed REAL0B。独立三原行、六索引/12RGBA/PNG/24画面数值摘要存SCENE24源/ACTUAL-PIXEL/LOCAL报告。原文/图像私人保存，source Action null、原绘制选择器和交易不认证。
