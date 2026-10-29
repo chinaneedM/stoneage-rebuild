@@ -11,3 +11,11 @@ R14私人包重新取回，351231B/SHA7684267a…及原页85928B/SHA4c564b41…�
 私人ZIP883862B/SHA5adf2c4ef0d8bd770bb0d0311da80976371dc00246601f055c47264a90f94663，7成员（含两个原父包），已保存成功并写身份元数据；未再次回读，不声称保存后二次耐久SHA。公开仅派生报告/哈希/模板/有限反例，原图、原脚本/问候和完整私人HTML不进Git。
 
 最高NEXT **SCENE26-MATERIAL-ROTATION-REVIEW**：这一个房间/商店资料整合闭合后回22域/R102与最新组合索引，查重SCENE20—25的实际内容，按有精确原件且能产生可见游戏内容的缺口择一有限材料包（人物/宠物/任务/战斗等），没有同版原件则记录具名止点并轮换。不要扩全17商品/交易helper、反复场景/驱动/帧调度；旧官方内容/版本区别和各域OPEN不能抹平。原版可操作世界未进入，Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、overall_percent=null保持。完整CURRENT与全部历史追加前缀保留。
+
+## 最终候选/主线验收及永久工件归档
+
+候选fac157296e57f785bb83880341363e4cc56d5e55的21项（20 push+1 PR）全部实际completed/success。PR40合并main9ad40ce375e4d39c7c10368f7a43feb3c1c66c43，完整treec8c0ee6216c3790c81a60d4aaec4ca2ca74f0b39与本地逐SHA一致；主线21项亦全部actual success，专用40868736047/job123430029593真实日志确认79测试通过。16完整blob和五历史文件完整旧前缀保留。
+
+真实合成浏览器source run40868575278/job123429481136为success，Chrome156：14合成PNG、4房间/3卡片完整RGBA逐摘要同；资料开关/Esc焦点/复位/有效ID0和末行/未选库存拒绝/图外与隐藏NPC误点/源模型不改/查资料不改房间，以及0JS错误0外部请求全部通过。其工件12894856764独立下载ZIP906B/SHA3e19f930eb715d6b89abeb99c9aff616a9cbc11b736b17c5cbd0a2f85c0c1a0d与API同，原JSON1642B/SHA69890fc6cae1ae7db937d80802c0dce10c46df695a1b7191dfe0973b20242dbe/blobf426b64617607c1b54e6d41a8d9467ed682cac07永久归档；完整语义与合成fixture重算同。
+
+实际整合报告3463B/SHA95c133bc…/blob33df72a2…、独立原件/14PNG/3原行/4旧整数画布/3卡片报告4550B/SHA86bda989…/blob75b5655d…和全运行保管链存SCENE25三个派生报告/CUSTODY。只有旧R14原图浏览器参考，本轮原图浏览器未执行；无新历史来源、原UI/同服/selector/原世界或交易晋升。私人7成员ZIP已保存并写身份，无保存后二次回读宣称。本收据自身CI须据后续实际运行判断，不预支；下一最高SCENE26材料轮换与所有边界保持。

@@ -1,0 +1,639 @@
+{
+  "PR": 40,
+  "R79": "PAUSED_NON_BLOCKING",
+  "Stage_A": "7_PARTIAL_2_OPEN",
+  "Stage_B_and_wiki": "GATED",
+  "accepted_private_parents": {
+    "items_archive": {
+      "bytes": 375924,
+      "sha256": "194d93d6f21dcfd906384b23ca122c3aa42d57067d92ea6a0e171b874ef422c7"
+    },
+    "items_report": {
+      "bytes": 11936,
+      "sha256": "9edbd464e100c536c2814a1ae69d16546f59fc8352e4f015eb5336a5994e6a2c"
+    },
+    "room_archive": {
+      "bytes": 351231,
+      "sha256": "7684267ab528d13ceecb23a25632543ae839225607cbda702a32736e4c4d366a"
+    },
+    "room_html": {
+      "bytes": 85928,
+      "sha256": "4c564b41a4daea15a6a3a6760e87b336062d7c1ec4589ebdaedea78e7bdcc105"
+    },
+    "room_report": {
+      "bytes": 10317,
+      "sha256": "b6311a35777501f6cc0cfaf360ad82ed6077d388a6fd0b6ddc39ef57628ac985"
+    }
+  },
+  "all_16_uploaded_blobs_and_complete_tree_match_local": true,
+  "all_candidate_21_actual_success": true,
+  "all_main_21_actual_success": true,
+  "baseline_main": "50da1fc498f99af512b7e080e4b010c1031e9657",
+  "baseline_tree": "dc9c4827951067de87ce962db43eac05a5cf4ce5",
+  "candidate": "fac157296e57f785bb83880341363e4cc56d5e55",
+  "candidate_runs": [
+    {
+      "conclusion": "success",
+      "event": "pull_request",
+      "head_sha": "fac157296e57f785bb83880341363e4cc56d5e55",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40868578610",
+      "id": 40868578610,
+      "name": "Verify SCENE25 bounded room shop observation integration",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "event": "push",
+      "head_sha": "fac157296e57f785bb83880341363e4cc56d5e55",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40868575528",
+      "id": 40868575528,
+      "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "event": "push",
+      "head_sha": "fac157296e57f785bb83880341363e4cc56d5e55",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40868575216",
+      "id": 40868575216,
+      "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "event": "push",
+      "head_sha": "fac157296e57f785bb83880341363e4cc56d5e55",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40868575283",
+      "id": 40868575283,
+      "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "event": "push",
+      "head_sha": "fac157296e57f785bb83880341363e4cc56d5e55",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40868575258",
+      "id": 40868575258,
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "event": "push",
+      "head_sha": "fac157296e57f785bb83880341363e4cc56d5e55",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40868575205",
+      "id": 40868575205,
+      "name": "Verify original local album name material and no master promotion R35",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "event": "push",
+      "head_sha": "fac157296e57f785bb83880341363e4cc56d5e55",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40868575306",
+      "id": 40868575306,
+      "name": "Accept primary-source TW1.0 character creation numeric join R16",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "event": "push",
+      "head_sha": "fac157296e57f785bb83880341363e4cc56d5e55",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40868575193",
+      "id": 40868575193,
+      "name": "Verify original same-build named-entity source gate R31",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "event": "push",
+      "head_sha": "fac157296e57f785bb83880341363e4cc56d5e55",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40868575204",
+      "id": 40868575204,
+      "name": "Verify original four village interior materials R34",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "event": "push",
+      "head_sha": "fac157296e57f785bb83880341363e4cc56d5e55",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40868575198",
+      "id": 40868575198,
+      "name": "Validate Stage A early source gap triage",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "event": "push",
+      "head_sha": "fac157296e57f785bb83880341363e4cc56d5e55",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40868575340",
+      "id": 40868575340,
+      "name": "Validate legacy StoneAge assistant history and pet content gaps",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "event": "push",
+      "head_sha": "fac157296e57f785bb83880341363e4cc56d5e55",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40868575280",
+      "id": 40868575280,
+      "name": "Verify original dated map110 three actual cell values R32",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "event": "push",
+      "head_sha": "fac157296e57f785bb83880341363e4cc56d5e55",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40868575190",
+      "id": 40868575190,
+      "name": "Verify preserved mixed25 full server source conservation R18",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "event": "push",
+      "head_sha": "fac157296e57f785bb83880341363e4cc56d5e55",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40868575250",
+      "id": 40868575250,
+      "name": "Verify R102 frozen material portfolio and record projections",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "event": "push",
+      "head_sha": "fac157296e57f785bb83880341363e4cc56d5e55",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40868575328",
+      "id": 40868575328,
+      "name": "Accept preserved original TW85 SPR137 full animation material R28",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "event": "push",
+      "head_sha": "fac157296e57f785bb83880341363e4cc56d5e55",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40868575358",
+      "id": 40868575358,
+      "name": "Verify original native album table and saved-name joins R36",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "event": "push",
+      "head_sha": "fac157296e57f785bb83880341363e4cc56d5e55",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40868575383",
+      "id": 40868575383,
+      "name": "Validate StoneAge preproduction content archive and wiki boundary",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "event": "push",
+      "head_sha": "fac157296e57f785bb83880341363e4cc56d5e55",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40868575241",
+      "id": 40868575241,
+      "name": "Validate StoneAge Stage A joint review decision",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "event": "push",
+      "head_sha": "fac157296e57f785bb83880341363e4cc56d5e55",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40868575203",
+      "id": 40868575203,
+      "name": "Verify StoneAge R17 original battle SAB crossversion occurrence conservation",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "event": "push",
+      "head_sha": "fac157296e57f785bb83880341363e4cc56d5e55",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40868575249",
+      "id": 40868575249,
+      "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "event": "push",
+      "head_sha": "fac157296e57f785bb83880341363e4cc56d5e55",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40868575278",
+      "id": 40868575278,
+      "name": "Verify SCENE25 bounded room shop observation integration",
+      "status": "completed"
+    }
+  ],
+  "candidate_tree": "c8c0ee6216c3790c81a60d4aaec4ca2ca74f0b39",
+  "complete_historical_prefixes": [
+    {
+      "complete_prefix_preserved": true,
+      "path": "README.md",
+      "prior_blob": "0913e2d695eab79bce591f9aa52657354e6d642e",
+      "prior_bytes": 114192,
+      "prior_sha256": "0bc2df1fc66d04d7a1b7758a81801fc95d9da054b6aa17a4f2547d247c20c2fd"
+    },
+    {
+      "complete_prefix_preserved": true,
+      "path": "docs/CURRENT-STATE.md",
+      "prior_blob": "015790fcab7598c18fb87a8bda46f33e257a4d5e",
+      "prior_bytes": 2706093,
+      "prior_sha256": "5aca5f3f1579dd99e4e190d10f37d85f7cbab55dc2f85b0f4472f11170557b05"
+    },
+    {
+      "complete_prefix_preserved": true,
+      "path": "docs/HISTORICAL-TIMELINE.md",
+      "prior_blob": "1dcfa3a5536539d207aa53f9eaac26a90d1742be",
+      "prior_bytes": 735716,
+      "prior_sha256": "056e67cd30f1ba2d38df884f911cc307643fd6dc8507a2e06e2c90cf7a8debdb"
+    },
+    {
+      "complete_prefix_preserved": true,
+      "path": "docs/SOURCE-REGISTRY.md",
+      "prior_blob": "8bef152a70636563a772c513794d6f436ed81bed",
+      "prior_bytes": 1035012,
+      "prior_sha256": "64a495db9d1a55500aeac69f7bc186ae759add186d7d35c89e1876fb9e46f277"
+    },
+    {
+      "complete_prefix_preserved": true,
+      "path": "docs/RESTORATION-ROADMAP-R2.md",
+      "prior_blob": "8bbee992879fc97d019553f979820d1f9bb9bf7d",
+      "prior_bytes": 496341,
+      "prior_sha256": "0e3128411fa3984a4776481934f7d4bb90dda2bb49cbac02481a05af66a08300"
+    }
+  ],
+  "computed_runtime_prices": null,
+  "date_Asia_Shanghai": "2026-10-29",
+  "independent_actual_scope": {
+    "accepted_parent_ZIP_whole_hashes_reverified": true,
+    "item_candidate_PNG_and_RGBA_reverified": 3,
+    "new_RD_extraction_claimed": false,
+    "new_card_canvas_references": 3,
+    "old_integer_room_canvas_hashes_equal": 4,
+    "original_item_rows_reparsed": 3,
+    "original_source_browser_executed": false,
+    "room_model_and_draw_and_11_PNG_bytes_unchanged": true
+  },
+  "inventory_or_gold_modified": false,
+  "local_browser_failure": "CHROMIUM_EXECUTABLE_MISSING_BEFORE_PAGE_LAUNCH_NO_ORIGINAL_IMAGE_BROWSER_EXECUTION",
+  "main_actual_tests_logged": 79,
+  "main_dedicated_job": 123430029593,
+  "main_dedicated_run": 40868736047,
+  "main_runs": [
+    {
+      "conclusion": "success",
+      "event": "push",
+      "head_sha": "9ad40ce375e4d39c7c10368f7a43feb3c1c66c43",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40868736095",
+      "id": 40868736095,
+      "name": "Verify preserved mixed25 full server source conservation R18",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "event": "push",
+      "head_sha": "9ad40ce375e4d39c7c10368f7a43feb3c1c66c43",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40868735809",
+      "id": 40868735809,
+      "name": "Independently verify TW1.0 R58 rooted helper returns and source custody",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "event": "push",
+      "head_sha": "9ad40ce375e4d39c7c10368f7a43feb3c1c66c43",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40868736004",
+      "id": 40868736004,
+      "name": "Validate StoneAge 8.0 PET contemporary evidence boundaries",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "event": "push",
+      "head_sha": "9ad40ce375e4d39c7c10368f7a43feb3c1c66c43",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40868735748",
+      "id": 40868735748,
+      "name": "Verify 2001 bitmap category claims vs original TW1.0 image indexes",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "event": "push",
+      "head_sha": "9ad40ce375e4d39c7c10368f7a43feb3c1c66c43",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40868735786",
+      "id": 40868735786,
+      "name": "Accept preserved original TW85 SPR137 full animation material R28",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "event": "push",
+      "head_sha": "9ad40ce375e4d39c7c10368f7a43feb3c1c66c43",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40868736058",
+      "id": 40868736058,
+      "name": "Validate StoneAge late client region/version provenance and non-executing archive probe",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "event": "push",
+      "head_sha": "9ad40ce375e4d39c7c10368f7a43feb3c1c66c43",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40868735654",
+      "id": 40868735654,
+      "name": "Accept primary-source TW1.0 character creation numeric join R16",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "event": "push",
+      "head_sha": "9ad40ce375e4d39c7c10368f7a43feb3c1c66c43",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40868735762",
+      "id": 40868735762,
+      "name": "Verify R102 frozen material portfolio and record projections",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "event": "push",
+      "head_sha": "9ad40ce375e4d39c7c10368f7a43feb3c1c66c43",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40868736047",
+      "id": 40868736047,
+      "name": "Verify SCENE25 bounded room shop observation integration",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "event": "push",
+      "head_sha": "9ad40ce375e4d39c7c10368f7a43feb3c1c66c43",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40868735678",
+      "id": 40868735678,
+      "name": "Verify original local album name material and no master promotion R35",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "event": "push",
+      "head_sha": "9ad40ce375e4d39c7c10368f7a43feb3c1c66c43",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40868735736",
+      "id": 40868735736,
+      "name": "Validate StoneAge preproduction content archive and wiki boundary",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "event": "push",
+      "head_sha": "9ad40ce375e4d39c7c10368f7a43feb3c1c66c43",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40868736280",
+      "id": 40868736280,
+      "name": "Verify original native album table and saved-name joins R36",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "event": "push",
+      "head_sha": "9ad40ce375e4d39c7c10368f7a43feb3c1c66c43",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40868736423",
+      "id": 40868736423,
+      "name": "Verify original dated map110 three actual cell values R32",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "event": "push",
+      "head_sha": "9ad40ce375e4d39c7c10368f7a43feb3c1c66c43",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40868736048",
+      "id": 40868736048,
+      "name": "Validate Stage A early source gap triage",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "event": "push",
+      "head_sha": "9ad40ce375e4d39c7c10368f7a43feb3c1c66c43",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40868735927",
+      "id": 40868735927,
+      "name": "Verify original four village interior materials R34",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "event": "push",
+      "head_sha": "9ad40ce375e4d39c7c10368f7a43feb3c1c66c43",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40868735952",
+      "id": 40868735952,
+      "name": "Verify StoneAge R17 original battle SAB crossversion occurrence conservation",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "event": "push",
+      "head_sha": "9ad40ce375e4d39c7c10368f7a43feb3c1c66c43",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40868735662",
+      "id": 40868735662,
+      "name": "Validate StoneAge Stage A joint review decision",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "event": "push",
+      "head_sha": "9ad40ce375e4d39c7c10368f7a43feb3c1c66c43",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40868735943",
+      "id": 40868735943,
+      "name": "Verify original same-build named-entity source gate R31",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "event": "push",
+      "head_sha": "9ad40ce375e4d39c7c10368f7a43feb3c1c66c43",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40868736293",
+      "id": 40868736293,
+      "name": "Validate legacy StoneAge assistant history and pet content gaps",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "event": "push",
+      "head_sha": "9ad40ce375e4d39c7c10368f7a43feb3c1c66c43",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40868736251",
+      "id": 40868736251,
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "status": "completed"
+    },
+    {
+      "conclusion": "success",
+      "event": "push",
+      "head_sha": "9ad40ce375e4d39c7c10368f7a43feb3c1c66c43",
+      "html_url": "https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40868736030",
+      "id": 40868736030,
+      "name": "Validate direct TW1.0 sprite-to-ADRN source joins",
+      "status": "completed"
+    }
+  ],
+  "merged_main": "9ad40ce375e4d39c7c10368f7a43feb3c1c66c43",
+  "merged_tree": "c8c0ee6216c3790c81a60d4aaec4ca2ca74f0b39",
+  "native_imagenumber_namespace_verified": false,
+  "next": "SCENE26-MATERIAL-ROTATION-REVIEW",
+  "original_shop_UI_authenticated": false,
+  "original_source_browser_executed_this_unit": false,
+  "original_transaction_verified": false,
+  "original_world_entered": false,
+  "overall_completion_percent": null,
+  "permanent_derived_reports": [
+    {
+      "blob": "33df72a204f406e59de7bd621c1a13cf2f88a639",
+      "bytes": 3463,
+      "path": "research/recovered/STONEAGE-SCENE25-ROOM-SHOP-INTEGRATION-R1.json",
+      "sha256": "95c133bc92af9a67eaefd3822a6f3cf1f3fb43099a5f4ee95baacb9f93d4e5e1"
+    },
+    {
+      "blob": "75b5655d4ec237a43e26ef4a7c2641cad2d2fac1",
+      "bytes": 4550,
+      "path": "research/recovered/STONEAGE-SCENE25-ACTUAL-PIXEL-REPLAY-R1.json",
+      "sha256": "86bda98964d170f1d65cdfb13ffcc97e5852aed0b32d74721bd071fb171a0e34"
+    },
+    {
+      "blob": "f426b64617607c1b54e6d41a8d9467ed682cac07",
+      "bytes": 1642,
+      "path": "research/recovered/STONEAGE-SCENE25-SYNTHETIC-BROWSER-R1.json",
+      "sha256": "69890fc6cae1ae7db937d80802c0dce10c46df695a1b7191dfe0973b20242dbe"
+    }
+  ],
+  "prior_R14_fractional_2_5_pixel_mismatch_preserved": true,
+  "prior_room_integer_browser_acceptance_reused_not_new_source_browser": true,
+  "private_delivery": {
+    "bytes": 883862,
+    "identity_metadata_applied": true,
+    "library_save_succeeded": true,
+    "members": 7,
+    "name": "StoneAge-SCENE25-private-room-shop-observer.zip",
+    "post_save_second_download_performed": false,
+    "sha256": "5adf2c4ef0d8bd770bb0d0311da80976371dc00246601f055c47264a90f94663"
+  },
+  "receipt_own_CI_status": "MUST_OBSERVE_AFTER_PUBLICATION_NOT_PRECLAIMED",
+  "same_deployed_build_authenticated": false,
+  "schema": "stoneage.scene25.custody_and_publication.r1",
+  "source_Action_run_id": null,
+  "source_acquisition": "REUSED_TWO_ACCEPTED_PRIVATE_OBSERVATIONS_NO_NEW_HISTORICAL_SOURCE",
+  "source_browser_claim": "NOT_EXECUTED_THIS_UNIT_PRIOR_R14_BROWSER_REUSED_FOR_PIXEL_REFERENCE",
+  "synthetic_browser": {
+    "JS_errors": [],
+    "PNG_images": 14,
+    "actual_success": true,
+    "actual_tests_logged": 79,
+    "artifact_API_and_independent_download_digest_equal": true,
+    "artifact_ZIP_bytes": 906,
+    "artifact_ZIP_sha256": "3e19f930eb715d6b89abeb99c9aff616a9cbc11b736b17c5cbd0a2f85c0c1a0d",
+    "artifact_id": 12894856764,
+    "browser": "156.0.8078.47",
+    "complete_canvas_frames": 7,
+    "external_requests": [],
+    "head": "fac157296e57f785bb83880341363e4cc56d5e55",
+    "job": 123429481136,
+    "raw_JSON_Git_blob": "f426b64617607c1b54e6d41a8d9467ed682cac07",
+    "raw_JSON_bytes": 1642,
+    "raw_JSON_sha256": "69890fc6cae1ae7db937d80802c0dce10c46df695a1b7191dfe0973b20242dbe",
+    "reader_does_not_change_room_pixels": true,
+    "run": 40868575278,
+    "scope": "SYNTHETIC_PIXELS_AND_TEXT_ONLY",
+    "semantic_replay_equal_synthetic_fixture": true,
+    "source_model_unchanged": true
+  },
+  "unrelated_old_queued_run_preserved": 37642417333,
+  "uploaded_blobs": [
+    {
+      "blob": "7aeb0d50a6fe89f363f75417843fb1c69e9c6f74",
+      "characters": 75817,
+      "path": "README.md",
+      "prior_blob": "0913e2d695eab79bce591f9aa52657354e6d642e"
+    },
+    {
+      "blob": "20050acf279a01555ab06a381dfcdc936bd381a6",
+      "characters": 2317179,
+      "path": "docs/CURRENT-STATE.md",
+      "prior_blob": "015790fcab7598c18fb87a8bda46f33e257a4d5e"
+    },
+    {
+      "blob": "2567f280126c8ce5898f92008b0980ad4bb5575f",
+      "characters": 594617,
+      "path": "docs/HISTORICAL-TIMELINE.md",
+      "prior_blob": "1dcfa3a5536539d207aa53f9eaac26a90d1742be"
+    },
+    {
+      "blob": "953ce8739a23001070dd2c7851c0550d3bad8fcb",
+      "characters": 892215,
+      "path": "docs/SOURCE-REGISTRY.md",
+      "prior_blob": "8bef152a70636563a772c513794d6f436ed81bed"
+    },
+    {
+      "blob": "630db45dc10b5a399a40d6e8cf1741ec7ea6db1f",
+      "characters": 273563,
+      "path": "docs/RESTORATION-ROADMAP-R2.md",
+      "prior_blob": "8bbee992879fc97d019553f979820d1f9bb9bf7d"
+    },
+    {
+      "blob": "06e1fe9443f6d1241b5aa55dcf98847b17f56080",
+      "characters": 1885,
+      "path": ".github/workflows/verify-stoneage-scene25-room-shop.yml",
+      "prior_blob": null
+    },
+    {
+      "blob": "081046690b2c1cf96d7d0b198431a48d688fd87b",
+      "characters": 1448,
+      "path": "docs/continuity/STONEAGE-SCENE25-ROOM-SHOP-INTEGRATION-20261029.md",
+      "prior_blob": null
+    },
+    {
+      "blob": "50d4975d548253c4d6c17b91cf34f3dc6cb69712",
+      "characters": 1348,
+      "path": "docs/specs/STONEAGE-SCENE25-ROOM-SHOP-INTEGRATION-R1.md",
+      "prior_blob": null
+    },
+    {
+      "blob": "75b5655d4ec237a43e26ef4a7c2641cad2d2fac1",
+      "characters": 4550,
+      "path": "research/recovered/STONEAGE-SCENE25-ACTUAL-PIXEL-REPLAY-R1.json",
+      "prior_blob": null
+    },
+    {
+      "blob": "33df72a204f406e59de7bd621c1a13cf2f88a639",
+      "characters": 3433,
+      "path": "research/recovered/STONEAGE-SCENE25-ROOM-SHOP-INTEGRATION-R1.json",
+      "prior_blob": null
+    },
+    {
+      "blob": "800a36c2ade2ff51ad2ea338ccbb2a7491cc33d0",
+      "characters": 3938,
+      "path": "tests/test_stoneage_scene25_room_shop.py",
+      "prior_blob": null
+    },
+    {
+      "blob": "fa533e8fd1b634ed6743888d3b623333942469c4",
+      "characters": 5510,
+      "path": "tools/stoneage_scene25_browser.cjs",
+      "prior_blob": null
+    },
+    {
+      "blob": "d72a33baf66d3cb5b27f46bb147bd2fdc031aa6d",
+      "characters": 1527,
+      "path": "tools/stoneage_scene25_fixture.py",
+      "prior_blob": null
+    },
+    {
+      "blob": "e87d40227b02afade87892a1391fa3e5e55606c0",
+      "characters": 5855,
+      "path": "tools/stoneage_scene25_independent_replay.py",
+      "prior_blob": null
+    },
+    {
+      "blob": "eaf1ff3d8d9f4215203bd8cd9d36142f00a5bde5",
+      "characters": 9689,
+      "path": "tools/stoneage_scene25_observer.html",
+      "prior_blob": null
+    },
+    {
+      "blob": "2f7ee6a84e31768826ed872c72d7131794df87ad",
+      "characters": 11731,
+      "path": "tools/stoneage_scene25_room_shop.py",
+      "prior_blob": null
+    }
+  ]
+}
