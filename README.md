@@ -898,3 +898,8 @@ ranges, not a new whole-client download or arbitrary program reverse engineering
 ### 2026-10-29 | SCENE25 房间、武器店与三件商品资料已有限整合
 
 [来源合同和验收续接](docs/continuity/STONEAGE-SCENE25-ROOM-SHOP-INTEGRATION-20261029.md)：原房间/NPC的11PNG及完整模型不变，接入三件既存商品候选原图；资料显式开关、Esc、复位和ID0选择，未增加买卖/价格/金币库存。14原PNG、3原行与四旧整数画布独立核同，79本地相关测试通过；远端仅合成浏览器，后验另记。仍未进入原世界或认证原UI/同服。下一最高SCENE26回22域材料轮换；Stage A/B/wiki/R79与总体未知保持。
+
+
+### SCENE26 — original pet action=1 bounded sprite-source rotation (2026-10-29)
+
+[SCENE26 evidence and continuation](docs/continuity/STONEAGE-SCENE26-MATERIAL-ROTATION-20261029.md) and [finite source contract](docs/specs/STONEAGE-SCENE26-PET-ACTION1-R1.md): independently rederive 24 direction-sequences/80 frame positions/48 bitmap numbers from exact pinned R40 reports (zero newly obtained raw original material). Original source pixels/action meaning/identity/runtime/world remain unproven; no copyright assets included. Highest next is original-private-byte-qualified action=1 pixel observation only when pinned source material is actually available, otherwise rotate to a new source-qualified 22-domain game-content package. Stage A/B/wiki/R79/overall boundaries unchanged.
