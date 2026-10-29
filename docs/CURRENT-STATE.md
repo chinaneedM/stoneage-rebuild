@@ -18752,3 +18752,14 @@ fresh main394d016/treeccdfb5b及最新SCENE23回执40864052716 actual success，
 完整TW1 ADRN10079680B前缀本轮逐字节核同；六原记录和整RD全在已验公共前缀，TW1 REAL315842228B全SHA后实际读六RD。mixed REAL本轮0B，像素身份依赖旧整REAL前缀报告而非新763MB全比。实际目视三斧头候选/三人物动作对照，但只升格静态数值候选，不认证原生selector、TW1物品master或同服交易。第二实现独立原行/索引/六RD解码，12候选配色RGBA/PNG及24整数卡片全同，原图浏览器未执行。预导出Python else390语法错误在首导出前修正，原件未变。51本地相关测试通过，远端后验另记。私人ZIP375924B/SHA194d93d6…保存成功并写身份，未保存后二次回读；原资产/正文不公开，source Action null。
 
 最高NEXT **SCENE25-ROOM-SHOP-OBSERVATION-INTEGRATION**：仅把既有SCENE14房间1001/NPC16017与三商品候选接入同一离线资料观察，显式开关，不做原UI仿真/实际买卖/价格计算或库存金币修改，不扩17商品/交易helper；一个有据整合后回22域。原客户端可操作世界未进入，Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、overall_percent=null保持。旧CURRENT2704038B及全部历史完整原样前缀保留。
+
+
+## 2026-10-29 — SCENE25：原房间与三件商品资料的有据整合
+
+fresh main50da1fc/treedc9c482与6462树项、最新回执40866559849 success，七启动文件和完整CURRENT2706093B/SHA5aca5f3f1579dd99e4e190d10f37d85f7cbab55dc2f85b0f4472f11170557b05逐Git原件核同，续最高NEXT25。详见docs/continuity/STONEAGE-SCENE25-ROOM-SHOP-INTEGRATION-20261029.md。
+
+原R14包351231B/SHA7684267a…及原页85928B/SHA4c564b41…重新认证，R24包375924B/SHA194d93d6…与两报告全SHA同。原完整room模型/10PNG、NPC5863 PNG、问候与draw函数原字节不变；仅接既存前三原顺序ID0/4/10的Palet_1别名候选图6006/6005/5986，仍非原selector/原商店UI/官方同服。独立重扫三原行、14PNG/RGBA、四旧整数房间画布与三现代卡片全部同，实际参考预览已目视。无新历史来源、买卖/价格计算/资格/金币背包状态。
+
+私人页资料初始关闭，显式按钮/候选人物范围可开，关闭/Esc/复位，保留有效ID0和原文，简体操作说明。79本地相关检查与内联JS编译通过。本地Chromium缺失，原图浏览器未执行；远端仅14合成PNG/合成问候及7画布交互按真实后验另记。旧R14原图整数通过/小数2.5未匹配记录保留。私人ZIP883862B/SHA5adf2c4e…成功保存并写身份，未保存后二次回读；原图/脚本/完整私人HTML不公开，source Action null。
+
+最高NEXT **SCENE26-MATERIAL-ROTATION-REVIEW**：一个商店资料整合已有限闭合，回22域/R102与最新组合索引，查重SCENE20—25已实绘/实听/具名内容，按精确原件和可见游戏内容增量择一有限材料包；缺原件则明确止点并轮换。不扩全17商品、交易helper或反复场景/驱动/帧调度。原可操作世界未进入，Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、overall_percent=null保持。旧完整CURRENT及全部历史作为原样追加前缀保留。

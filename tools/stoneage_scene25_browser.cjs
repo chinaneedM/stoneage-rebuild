@@ -1,0 +1,27 @@
+const fs=require('fs'),path=require('path'),{pathToFileURL}=require('url'),{chromium}=require(process.env.PLAYWRIGHT_MODULE||process.env.CODEX_PRIMARY_RUNTIME_NODE_MODULES+'/playwright');
+(async()=>{const[file,out]=process.argv.slice(2),browser=await chromium.launch({headless:true,...(process.env.CHROME_PATH?{executablePath:process.env.CHROME_PATH}:{}),args:['--no-sandbox']});
+try{const page=await browser.newPage({viewport:{width:1280,height:1100}}),errors=[],external=[];page.on('pageerror',e=>errors.push(String(e)));page.on('request',r=>{if(!/^(file:|data:)/.test(r.url()))external.push(r.url())});await page.goto(pathToFileURL(path.resolve(file)).href);await page.evaluate(()=>scene25.ready);await page.waitForFunction(()=>scene25.getState().ready);
+if(!await page.evaluate(()=>scene25.getPack().item_observation.synthetic_fixture===true))throw Error('public browser must use synthetic art');
+const initialModel=await page.evaluate(()=>JSON.stringify(scene25.getPack()));
+const hashCanvas=selector=>page.locator(selector).evaluate(async c=>Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',c.getContext('2d').getImageData(0,0,c.width,c.height).data)),x=>x.toString(16).padStart(2,'0')).join(''));
+const ref=await page.evaluate(()=>scene25.getPack().item_observation.synthetic_references),frames=[];
+async function unchanged(){if(await hashCanvas('#world')!==ref.room[0].RGBA_sha256)throw Error('reader changed room pixels')}
+async function closed(){if(!await page.locator('#details').isHidden()||await page.locator('#inspect').getAttribute('aria-expanded')!=='false'||await page.evaluate(()=>scene25.getState().inspecting))throw Error('reader not closed')}
+async function opened(){if(!await page.locator('#details').isVisible()||await page.locator('#inspect').getAttribute('aria-expanded')!=='true'||!await page.evaluate(()=>scene25.getState().inspecting))throw Error('reader not open');await unchanged()}
+await closed();await unchanged();
+for(const[label,npc,anchor]of[['default',true,true],['npc_hidden',false,true],['anchor_hidden',true,false],['map_only',false,false]]){await page.locator('#showNPC').setChecked(npc);await page.locator('#showAnchor').setChecked(anchor);const h=await hashCanvas('#world');if(h!==ref.room.find(x=>x.label===label).RGBA_sha256)throw Error('room pixels '+label);frames.push({label,RGBA_sha256:h})}
+await page.locator('#reset').click();await closed();await unchanged();
+await page.locator('#world').click({position:{x:50,y:50}});await closed();
+await page.locator('#inspect').click();await opened();
+for(const row of ref.cards){const h=await hashCanvas('.itemCard[data-item="'+row.id+'"] canvas');if(h!==row.RGBA_sha256)throw Error('card pixels '+row.id);frames.push({id:row.id,RGBA_sha256:h})}
+await page.locator('.itemCard[data-item="10"] button').click();if(!await page.evaluate(()=>scene25.state.selected===10&&document.getElementById('itemFacts').textContent.includes('20013')))throw Error('last source row');await unchanged();
+await page.locator('.itemCard[data-item="0"] button').click();if(!await page.evaluate(()=>scene25.state.selected===0&&document.getElementById('itemFacts').textContent.includes('20033')))throw Error('ID0 validity');
+if(!await page.evaluate(()=>{try{scene25.select(620);return false}catch{return scene25.state.selected===0}}))throw Error('unselected stock ID must be refused');
+await page.keyboard.press('Escape');await closed();if(!await page.locator('#inspect').evaluate(e=>e===document.activeElement))throw Error('Escape focus return');await unchanged();
+const box=await page.locator('#world').boundingBox();await page.locator('#world').click({position:{x:486*box.width/960,y:267*box.height/720}});await opened();await page.locator('#close').click();await closed();await unchanged();
+await page.locator('#showNPC').setChecked(false);await page.locator('#world').click({position:{x:486*box.width/960,y:267*box.height/720}});await closed();await page.locator('#reset').click();
+await page.locator('#inspect').click();await page.locator('.itemCard[data-item="10"] button').click();await page.locator('#reset').click();await closed();await unchanged();if(!await page.evaluate(()=>scene25.getState().selected===0&&scene25.getState().scale===2&&scene25.getState().dx===0&&scene25.getState().dy===0&&document.getElementById('showNPC').checked&&document.getElementById('showAnchor').checked))throw Error('reset full observation state');
+if(initialModel!==await page.evaluate(()=>JSON.stringify(scene25.getPack())))throw Error('source model mutated');
+const state=await page.evaluate(()=>scene25.getState());if(state.loaded!==11||state.itemImages!==3||errors.length||external.length)throw Error(JSON.stringify({state,errors,external}));
+fs.writeFileSync(out,JSON.stringify({schema:'stoneage.scene25.synthetic_room_shop_browser.r1',scope:'SYNTHETIC_PIXELS_AND_TEXT_ONLY',browser:browser.version(),loaded_images:14,room_frames:4,item_card_frames:3,all7_complete_canvas_hashes_equal:true,reader_open_close_Escape_reset_verified:true,explicit_button_and_candidate_image_click_verified:true,outside_and_hidden_NPC_click_do_not_open:true,ID0_and_last_source_row_verified:true,other_stock_ID_refused:true,room_pixels_unchanged_during_reader_operations:true,source_model_unchanged:true,JS_errors:errors,external_requests:external,original_source_browser_verified:false,original_world_entered:false,original_transaction_verified:false,frames},null,2)+'\n');
+}finally{await browser.close()}})().catch(e=>{console.error(e);process.exit(1)});

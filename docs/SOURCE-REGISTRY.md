@@ -8867,3 +8867,8 @@ All11 original-derived inputs pinned in logical-alias-catalog-r1/REPORT-R1.json.
 ### SRC-SCENE24-20261029 — 四原商店依赖/全ADRN两命名空间与六RD
 
 复用并完整重核RAR361255180B/SHA d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5；四原成员逐SHA同R14/R18、独立RAR4头/成员CRC。SCENE03包3356562B/SHAfa296ad8…重新取完整ADRN18765120B/SHA92d01375…，全234564行扫描别名与物理号，三候选与三对照皆唯一。TW1 ADRN全前缀本轮重核、REAL315842228B全SHA；六RD据旧同父文件完整REAL前缀报告取图，本轮mixed REAL0B。独立三原行、六索引/12RGBA/PNG/24画面数值摘要存SCENE24源/ACTUAL-PIXEL/LOCAL报告。原文/图像私人保存，source Action null、原绘制选择器和交易不认证。
+
+
+### SRC-SCENE25-20261029 — 两既存观察父包的有限整合，无新增历史来源
+
+R14包351231B/SHA7684267ab528d13ceecb23a25632543ae839225607cbda702a32736e4c4d366a、原页85928B/SHA4c564b41a4daea15a6a3a6760e87b336062d7c1ec4589ebdaedea78e7bdcc105与旧PUBLICATION/ACCEPTANCE全同；R24包375924B/SHA194d93d6f21dcfd906384b23ca122c3aa42d57067d92ea6a0e171b874ef422c7及两原报告全同。新增仅集成元数据与独立14PNG/3原行/4旧画布/3卡片报告；没有新原图/同版master/交易执行。原像素和正文私人保管；source Action null，原图浏览器未执行。
