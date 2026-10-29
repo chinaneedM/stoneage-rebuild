@@ -39,3 +39,11 @@
 **SCENE32-RETAINED-NATIVE-FRAME-QUALIFICATION**：停止继续扩此人物动作。按22域优先复用已有P3H包内的三张**原EXE运行窗口保留画面** `frames/original-frame-0.png`（1122B）、`original-frame-1.png`（1135B）、`original-frame-2.png`（1122B），及private-source-report.json41836B。旧P3H实际运行记录说明原EXE曾在隔离Windows启动、出现640×480窗口并退出，但 `assistant_viewed_original=false`；原图已经保存而其可见内容仍缺实际阅图归属。
 
 下一只核这三张既存原图与原P3H运行记录的完整SHA/原成员身份，实际目视是否为有意义的原界面、空白/异常或无法归属内容；重复画面保留，不能把非均匀像素当作已进入游戏。若有可辨内容，记录其精确可见范围；没有则具名止点回22域，不继续模拟登录、驱动或无限窗口helper。不得把现代SCENE观察器当作原运行截图，也不将这些启动阶段画面称为进入原世界。不重新下载零售盘、不联系已停服历史服务器或使用真实账号。
+
+## 远端终验与工件永久保管
+
+PR [46](https://github.com/chinaneedM/stoneage-rebuild/pull/46) 已合并。候选 `a564762f2c420ade7f0465d0e3d0a96f7f089bd3` 的12项运行、主线合并 `38974821900d52c8b9150a9a014a628cc737ec53` 的11项均实际completed/success；合并整tree `90029bd91cffcbafd1a9c7a57adbf85edce565df` 与本地已验tree同一。
+
+公开合成浏览器源 [40968884032](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40968884032)/job123780288201的工件12940010545，ZIP4715B，独立下载SHA256 `910d7d4a0ecf03b546172d53c16594f5e956182e919e8b41be7e6ca6c1c25cef` 与API相同；其中19083B原JSON/SHA `49e3e9d1e31c9b9fc7f5f7c513caae7d548a7fa35f388367b8dcec15fe79e4f1`、Git blob `841240b39f81a99c4f1e7e4316ddeb7a753f2c07` 全文永久保存为 `STONEAGE-SCENE31-SYNTHETIC-BROWSER-R1.json`。独立本地Pillow合成夹具与真实Chrome156.0.8078.47的全部96画面摘要逐项相同，逐帧/双向回绕、播放暂停、切方向停播复位、默认复位、0JS错误/0外部请求通过。主线专用40969335396/job123781821726日志也已核。所有成功仅为**合成素材**的控件验收，原图浏览器仍被策略阻断，不追认实际原页运行。
+
+`STONEAGE-SCENE31-PUBLICATION-R1.json` 保存全23运行、源/独立/本地/合成四份报告的大小/SHA/Git blob、原素材私下保存状态、浏览器拒绝及未绕过事实。此收据提交不属于前述23运行；其自身CI另据真实状态，不提前称成功。最高下一SCENE32及原世界/Stage A/B/wiki/R79/总体未知边界保持。
