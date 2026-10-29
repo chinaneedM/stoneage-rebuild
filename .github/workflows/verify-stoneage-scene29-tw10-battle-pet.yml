@@ -1,0 +1,26 @@
+name: Verify SCENE29 original TW10 SAB 3-map and pet source integration
+on:
+  push:
+    paths:
+      - 'tools/stoneage_scene29_tw10_battle_pet.py'
+      - 'tests/test_stoneage_scene29_tw10_battle_pet.py'
+      - 'research/recovered/STONEAGE-SCENE29-TW10-BATTLE-PET-ACTUAL-R1.json'
+      - '.github/workflows/verify-stoneage-scene29-tw10-battle-pet.yml'
+  pull_request:
+    paths:
+      - 'tools/stoneage_scene29_tw10_battle_pet.py'
+      - 'tests/test_stoneage_scene29_tw10_battle_pet.py'
+      - 'research/recovered/STONEAGE-SCENE29-TW10-BATTLE-PET-ACTUAL-R1.json'
+      - '.github/workflows/verify-stoneage-scene29-tw10-battle-pet.yml'
+permissions:
+  contents: read
+jobs:
+  independent-derived-metadata:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Re-encode all original tile grids and compare exact 804B SAB digests
+        run: python3 -m tools.stoneage_scene29_tw10_battle_pet --check-public
+      - name: Negative identity/scene native-semantic tests
+        run: python3 -m unittest tests.test_stoneage_scene29_tw10_battle_pet -v
