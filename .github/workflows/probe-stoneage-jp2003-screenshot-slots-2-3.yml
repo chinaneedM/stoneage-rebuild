@@ -1,0 +1,35 @@
+name: Probe JP2003 development gallery next two original screenshots
+on:
+  push:
+    paths:
+      - 'tools/stoneage_jp2003_screenshot_slots_2_3.py'
+      - 'tests/test_stoneage_jp2003_screenshot_slots_2_3.py'
+      - '.github/workflows/probe-stoneage-jp2003-screenshot-slots-2-3.yml'
+  pull_request:
+    paths:
+      - 'tools/stoneage_jp2003_screenshot_slots_2_3.py'
+      - 'tests/test_stoneage_jp2003_screenshot_slots_2_3.py'
+      - '.github/workflows/probe-stoneage-jp2003-screenshot-slots-2-3.yml'
+permissions:
+  contents: read
+jobs:
+  bounded-source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install Pillow
+      - name: Strict synthetic provenance and mutation checks
+        run: python -m unittest tests.test_stoneage_jp2003_screenshot_slots_2_3 -v
+      - name: Retrieve two independent original screenshot JPEGs via first-party gallery links
+        run: python -m tools.stoneage_jp2003_screenshot_slots_2_3 --fetch --output "$RUNNER_TEMP/scene27/gallery.json"
+      - name: Store derived metadata only
+        uses: actions/upload-artifact@v4
+        with:
+          name: scene27-jp2003-two-original-screenshots-derived
+          path: ${{ runner.temp }}/scene27/gallery.json
+          retention-days: 14
+          if-no-files-found: error
