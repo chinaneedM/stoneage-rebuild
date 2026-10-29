@@ -33,3 +33,7 @@
 **SCENE31-MATERIAL-ROTATION-ONE-ORIGINAL-ACTOR-SEQUENCE**：回22域，优先已有原实物的单个人物连续动作观察。具体限TW1同包body候选100000、动作码2、八方向的有序原帧；SCENE23只观察这些方向的第0帧，本次应给完整序列/重复位置、同源原图资格和实际逐帧观察，不能擅称走路、原FPS或官方角色姓名。以一组完整动画及可核验私人观察为止点，不扩十二组全动作或泛用渲染引擎。若原序列没有新可视材料，记录准确重复/缺件并改选另一域，不重开相同零售地图/安装器链。
 
 世界DAT路线只在以下新实物到达时重开：准确同版、可认证的玩家安装缓存；真实M包/地图载荷；同版服务器地图，或另一个明确来源且确含地图字节的载体。现代自造世界、后代混合2.5地图不能满足此条件。
+
+## 远端内容终验
+
+PR [45](https://github.com/chinaneedM/stoneage-rebuild/pull/45) 已合并，内容提交 `889f210e93192610a21807fc244d1fb69b60a67d` 的12项Actions及主线合并 `e4def71acb639a099e69281d30d9ef575fd97396` 的11项全部实际 completed/success。合并整tree `05ca6a79ea02c35980d346bffea8fc38535ea579` 与本地已验tree完全相同。专用 [40966769136](https://github.com/chinaneedM/stoneage-rebuild/actions/runs/40966769136)/job123773141467原日志核到派生重放PASS及10测试，**不读取私人原件**。完整运行清单、报告SHA/原Git blob及本地源核验边界保存在 `research/recovered/STONEAGE-SCENE30-PUBLICATION-R1.json`。此后验记录自身提交不属于前述23项运行，不能把历史成功转述为后验提交已跑。最高下一SCENE31及所有历史边界不变。
