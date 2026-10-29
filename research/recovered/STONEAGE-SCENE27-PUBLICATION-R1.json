@@ -1,0 +1,294 @@
+{
+  "schema": "stoneage.scene27.jp2003_gallery_new_source.publication.r1",
+  "checkpoint_date": "2026-10-29",
+  "initial_source_main": "c85119c9737f13c56816d3fbd92c538820d065e7",
+  "initial_source_tree": "69f1d0091c36f7052427ff77b7a45f3892cb1b70",
+  "candidate_commit": "ecff1789884e6d5e6e284ea11772a777a44caa82",
+  "merged_main_commit": "13cad630eab725829d20d64e4251eb11c4f29b5a",
+  "merged_tree": "c7fd915ecd4fe418c0810c794d638e136664e11f",
+  "pull_request": 42,
+  "successful_source_runs": [
+    {
+      "run_id": 40884309567,
+      "job_id": 123483803151,
+      "result": "success",
+      "artifact_id": 12900968940,
+      "api_zip_digest": "sha256:4971a5d79aacdd2f900e236d6252a1daa3983f09926dd430565125a0c8bcef11"
+    },
+    {
+      "run_id": 40884459116,
+      "job_id": 123484326397,
+      "result": "success",
+      "artifact_id": 12901433507,
+      "api_zip_digest": "sha256:81fb04efcdc05b64a6511b70fbf25f8f24d61070504a2b43d6fb510233879299"
+    },
+    {
+      "run_id": 40884921703,
+      "job_id": 123485939387,
+      "result": "success",
+      "artifact_id": 12902725653,
+      "api_zip_digest": "sha256:d3ec990ed20da455b6c882a911200e7c8679c33c9157e6f8a733d9b3226e4b1d"
+    }
+  ],
+  "earlier_failure": {
+    "run_id": 40883950720,
+    "job_id": 123482542529,
+    "status": "failure",
+    "reason": "Optional PIL JPEG n_frames property assumed present; 4 of 8 synthetic tests errored; original HTTP acquisition skipped. Fixed with getattr(n_frames,1); failure preserved."
+  },
+  "acceptance_candidate": [
+    {
+      "id": 40885127385,
+      "name": "Probe JP2003 development gallery next two original screenshots",
+      "status": "completed",
+      "conclusion": "success",
+      "event": "pull_request",
+      "sha": "ecff1789884e6d5e6e284ea11772a777a44caa82"
+    },
+    {
+      "id": 40885123945,
+      "name": "Verify original native album table and saved-name joins R36",
+      "status": "completed",
+      "conclusion": "success",
+      "event": "push",
+      "sha": "ecff1789884e6d5e6e284ea11772a777a44caa82"
+    },
+    {
+      "id": 40885123925,
+      "name": "Verify original four village interior materials R34",
+      "status": "completed",
+      "conclusion": "success",
+      "event": "push",
+      "sha": "ecff1789884e6d5e6e284ea11772a777a44caa82"
+    },
+    {
+      "id": 40885123872,
+      "name": "Verify StoneAge R17 original battle SAB crossversion occurrence conservation",
+      "status": "completed",
+      "conclusion": "success",
+      "event": "push",
+      "sha": "ecff1789884e6d5e6e284ea11772a777a44caa82"
+    },
+    {
+      "id": 40885123896,
+      "name": "Verify preserved mixed25 full server source conservation R18",
+      "status": "completed",
+      "conclusion": "success",
+      "event": "push",
+      "sha": "ecff1789884e6d5e6e284ea11772a777a44caa82"
+    },
+    {
+      "id": 40885123956,
+      "name": "Accept primary-source TW1.0 character creation numeric join R16",
+      "status": "completed",
+      "conclusion": "success",
+      "event": "push",
+      "sha": "ecff1789884e6d5e6e284ea11772a777a44caa82"
+    },
+    {
+      "id": 40885123863,
+      "name": "Accept preserved original TW85 SPR137 full animation material R28",
+      "status": "completed",
+      "conclusion": "success",
+      "event": "push",
+      "sha": "ecff1789884e6d5e6e284ea11772a777a44caa82"
+    },
+    {
+      "id": 40885123764,
+      "name": "Verify original dated map110 three actual cell values R32",
+      "status": "completed",
+      "conclusion": "success",
+      "event": "push",
+      "sha": "ecff1789884e6d5e6e284ea11772a777a44caa82"
+    },
+    {
+      "id": 40885123921,
+      "name": "Verify original same-build named-entity source gate R31",
+      "status": "completed",
+      "conclusion": "success",
+      "event": "push",
+      "sha": "ecff1789884e6d5e6e284ea11772a777a44caa82"
+    },
+    {
+      "id": 40885123870,
+      "name": "Verify original local album name material and no master promotion R35",
+      "status": "completed",
+      "conclusion": "success",
+      "event": "push",
+      "sha": "ecff1789884e6d5e6e284ea11772a777a44caa82"
+    },
+    {
+      "id": 40885123750,
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "status": "completed",
+      "conclusion": "success",
+      "event": "push",
+      "sha": "ecff1789884e6d5e6e284ea11772a777a44caa82"
+    }
+  ],
+  "acceptance_main": [
+    {
+      "id": 40885710395,
+      "name": "Verify preserved mixed25 full server source conservation R18",
+      "status": "completed",
+      "conclusion": "success",
+      "event": "push",
+      "sha": "13cad630eab725829d20d64e4251eb11c4f29b5a"
+    },
+    {
+      "id": 40885710374,
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "status": "completed",
+      "conclusion": "success",
+      "event": "push",
+      "sha": "13cad630eab725829d20d64e4251eb11c4f29b5a"
+    },
+    {
+      "id": 40885710538,
+      "name": "Accept preserved original TW85 SPR137 full animation material R28",
+      "status": "completed",
+      "conclusion": "success",
+      "event": "push",
+      "sha": "13cad630eab725829d20d64e4251eb11c4f29b5a"
+    },
+    {
+      "id": 40885710371,
+      "name": "Verify original four village interior materials R34",
+      "status": "completed",
+      "conclusion": "success",
+      "event": "push",
+      "sha": "13cad630eab725829d20d64e4251eb11c4f29b5a"
+    },
+    {
+      "id": 40885710311,
+      "name": "Verify StoneAge R17 original battle SAB crossversion occurrence conservation",
+      "status": "completed",
+      "conclusion": "success",
+      "event": "push",
+      "sha": "13cad630eab725829d20d64e4251eb11c4f29b5a"
+    },
+    {
+      "id": 40885710132,
+      "name": "Verify original native album table and saved-name joins R36",
+      "status": "completed",
+      "conclusion": "success",
+      "event": "push",
+      "sha": "13cad630eab725829d20d64e4251eb11c4f29b5a"
+    },
+    {
+      "id": 40885710135,
+      "name": "Probe JP2003 development gallery next two original screenshots",
+      "status": "completed",
+      "conclusion": "success",
+      "event": "push",
+      "sha": "13cad630eab725829d20d64e4251eb11c4f29b5a"
+    },
+    {
+      "id": 40885710250,
+      "name": "Verify original same-build named-entity source gate R31",
+      "status": "completed",
+      "conclusion": "success",
+      "event": "push",
+      "sha": "13cad630eab725829d20d64e4251eb11c4f29b5a"
+    },
+    {
+      "id": 40885709978,
+      "name": "Verify original local album name material and no master promotion R35",
+      "status": "completed",
+      "conclusion": "success",
+      "event": "push",
+      "sha": "13cad630eab725829d20d64e4251eb11c4f29b5a"
+    },
+    {
+      "id": 40885710251,
+      "name": "Verify original dated map110 three actual cell values R32",
+      "status": "completed",
+      "conclusion": "success",
+      "event": "push",
+      "sha": "13cad630eab725829d20d64e4251eb11c4f29b5a"
+    },
+    {
+      "id": 40885710172,
+      "name": "Accept primary-source TW1.0 character creation numeric join R16",
+      "status": "completed",
+      "conclusion": "success",
+      "event": "push",
+      "sha": "13cad630eab725829d20d64e4251eb11c4f29b5a"
+    }
+  ],
+  "dedicated_candidate": {
+    "run_id": 40885127385,
+    "job_id": 123486663962,
+    "status": "completed",
+    "conclusion": "success",
+    "test_count": 12,
+    "source_report_check_passed": true,
+    "real_http_source_passed": true,
+    "artifact_id": 12902452350,
+    "api_zip_digest": "sha256:b20a44696153cc8a5fa87f4499f8bcbddf92f0c997f3f603b9d41310892143a0"
+  },
+  "dedicated_main": {
+    "run_id": 40885710135,
+    "job_id": 123488720246,
+    "status": "completed",
+    "conclusion": "success",
+    "test_count": 12,
+    "source_report_check_passed": true,
+    "real_http_source_passed": true,
+    "artifact_id": 12902517341,
+    "api_zip_digest": "sha256:2f524d8b07dbbec701ced415bb43b7c5517ef76df4768ca517008eb5b5d47eaf"
+  },
+  "permanent_source_report": {
+    "path": "research/recovered/STONEAGE-JP2003-GALLERY-SLOTS-02-03-SOURCE-R1.json",
+    "git_blob": "13167bbfd3f30fe78c0653ec21604a04b064663e",
+    "bytes": 3290,
+    "R63_parent_git_blob": "e84da9c7db1b8792a643d18b191761efa0d73e88"
+  },
+  "copyrighted_input_metadata": [
+    {
+      "ordinal": 2,
+      "jpeg_url": "https://www.4gamer.net/store/shots/stoneage/images/image0002.jpg",
+      "bytes": 185950,
+      "sha256": "8f5c642bcdfffb75fd2f1bb4851db09be2016a97a2acb339cf6a4c2fd773d10a",
+      "dimensions": [
+        640,
+        480
+      ],
+      "manual_visual_review": false
+    },
+    {
+      "ordinal": 3,
+      "jpeg_url": "https://www.4gamer.net/store/shots/stoneage/images/image0003.jpg",
+      "bytes": 185778,
+      "sha256": "2e681e3a93a763f6b78ef4325d9b5f939438c5c57fbc93684df5a960f36a6384",
+      "dimensions": [
+        640,
+        480
+      ],
+      "manual_visual_review": false
+    }
+  ],
+  "legal_custody": {
+    "original_html_or_jpeg_committed_to_public_git": false,
+    "report_derived_metadata_only": true,
+    "artifact_zips_independently_downloaded": false,
+    "artifact_digest_api_reported_only": true
+  },
+  "exact_preserved_blobs": {
+    "docs/CURRENT-STATE.md": "20050acf279a01555ab06a381dfcdc936bd381a6",
+    "docs/PROJECT-CONTINUITY-PROTOCOL-R1.md": "a064174339b7a4656efe00b4446a066fd7abf304"
+  },
+  "bound_unknowns": {
+    "original_jss1999_or_tw1_or_cn_build_authenticated": false,
+    "original_client_or_server_executed": false,
+    "manual_visual_interpretation": false,
+    "live_game_world_entered": false,
+    "original_native_game_resolution_authenticated": false,
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b_and_wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_restoration_percentage": null
+  },
+  "own_receipt_commit_ci_not_preclaimed": true,
+  "next": "IF_ACTUAL_ORIGINAL_IMAGE_BYTES_AVAILABLE_PERFORM_STRICT_SHA_QUALIFIED_MANUAL_VISUAL_OBSERVATION_OF_ONLY_TWO_JP2003_SCREENS_ELSE_ROTATE_TO_ORIGINAL_WORLD_OR_BATTLE_CONTENT_NOT_HELPER_OR_GALLERY_SCRAPING"
+}
