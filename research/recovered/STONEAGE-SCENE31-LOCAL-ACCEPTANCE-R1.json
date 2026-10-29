@@ -1,0 +1,95 @@
+{
+  "schema": "stoneage.scene31.local_acceptance.r1",
+  "source_scope": "ACCEPTED_TW1_RETAIL_BODY100000_ACTION2_ONLY",
+  "original_source_action_run_id": null,
+  "source_parent_zip": {
+    "bytes": 372626292,
+    "sha256": "3a4854adaebef056332cdbd7b1dc1c130c571b11704e3f199f53d03aa31cba24"
+  },
+  "complete_source_members_reauthenticated": 7,
+  "original_source_RD_blocks": 48,
+  "original_index_pixels": 125612,
+  "independent_original_SPR_sequences": 8,
+  "source_frame_positions": 48,
+  "original_frames_per_direction": [
+    6,
+    6,
+    6,
+    6,
+    6,
+    6,
+    6,
+    6
+  ],
+  "previous_first_frames": 8,
+  "further_frame_positions_observed": 40,
+  "duplicate_bitmap_positions": 0,
+  "independent_original_RGBA_PNG_checks": 96,
+  "independent_complete_canvas_checks": 96,
+  "actual_source_contact_sheets_visually_inspected": true,
+  "visual_description": "Candidate-color red-haired human figure, eight directions, six poses each; later poses lean/lie horizontally. This is visual description, not native action identity.",
+  "actual_original_browser": {
+    "verified": false,
+    "attempted": true,
+    "status": "BLOCKED_BY_CLOUD_BROWSER_LOCAL_FILE_URL_POLICY",
+    "reason": "Requested file: protocol is not allowed; browser permits http: and https:. No alternate URL, server, raw CDP or private-page browser workaround attempted.",
+    "materially_safer_alternative": "Independent static original pixel/canvas verification; separate public synthetic-only UI tests."
+  },
+  "private_deliverable": {
+    "filename": "SCENE31-private-original-TW1-actor-sequence.zip",
+    "bytes": 739204,
+    "sha256": "fdb992cf892c77e57ae88179ddf21a5c0daea5af275a2c99843d8cefa21f7642",
+    "private_save_succeeded": true,
+    "identity_metadata_applied": true,
+    "post_save_library_redownload_performed": false,
+    "original_asset_bytes_published_in_git": false
+  },
+  "private_files_derived_identity_only": [
+    {
+      "filename": "SCENE31-48-original-frames-Palet0-candidate.png",
+      "bytes": 169836,
+      "sha256": "8da7e3de3254cedbb0455ccb72d6ea3f8117e4a80f7a661ede26af34927ad7cb"
+    },
+    {
+      "filename": "SCENE31-48-original-frames-Palet1-candidate.png",
+      "bytes": 173371,
+      "sha256": "96784158415bd5bb95f5a5d9df1a2dd30db23c6aad93cc287c83086089a871da"
+    },
+    {
+      "filename": "SCENE31-original-TW1-actor-observer.html",
+      "bytes": 461723,
+      "sha256": "99e6b68b8bca6530d904bfbf1de35c5aac699c22dc7096746118e69303eb8717"
+    },
+    {
+      "filename": "independent-original-replay.json",
+      "bytes": 19209,
+      "sha256": "361850670fbd3588f5af057aadef38e55780b16686bda813440016b0dc7ffeb3"
+    },
+    {
+      "filename": "private-original-RD-and-palettes.zip",
+      "bytes": 60675,
+      "sha256": "d9eb510c7f7b174cf711fa7300f1140062e09974577c95bdfbfe58f78dc5fe97"
+    },
+    {
+      "filename": "source-derived-report.json",
+      "bytes": 52391,
+      "sha256": "b410371d979c1763e933c5a398087f806777534955e7796e1ac387acef7056e9"
+    },
+    {
+      "filename": "如何打开.txt",
+      "bytes": 1265,
+      "sha256": "5f6bfa3a75aaac60591c09d968b328bf2d4cbeb6ea543a303e951c6f6e2fc051"
+    }
+  ],
+  "local_test_count": 38,
+  "local_tests_scope": [
+    "SCENE31 source identity/order/interpretation tamper guards",
+    "SCENE23 existing first-frame reference regressions"
+  ],
+  "native_action_name_verified": false,
+  "native_fps_verified": false,
+  "native_palette_selection_verified": false,
+  "original_game_process_executed": false,
+  "original_world_entered": false,
+  "overall_percent": null
+}
