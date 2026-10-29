@@ -102,12 +102,66 @@ def get_bounded(url):
         return raw
 
 
+
+PUBLISHED = ROOT / "research/recovered/STONEAGE-JP2003-GALLERY-SLOTS-02-03-SOURCE-R1.json"
+EXPECTED_SOURCE = (
+    (2, 185950, "8f5c642bcdfffb75fd2f1bb4851db09be2016a97a2acb339cf6a4c2fd773d10a",
+     "eb81231f5aa623dc17be46bc4915d92439bc542ab86275cb439589c17b5a33da"),
+    (3, 185778, "2e681e3a93a763f6b78ef4325d9b5f939438c5c57fbc93684df5a960f36a6384",
+     "5ece5743d1573ea331fd4007f0b170d16d9d16c81a3cc373e25efc3c9a2c3ab2"),
+)
+
+
+def verify_published(report):
+    refs = existing_gallery_refs()
+    ensure(report["schema"] == "stoneage.jp2003_gallery_slots_2_3.source_r1", "wrong archived schema")
+    ensure(report["scope"] == MATERIAL_SCOPE and report["baseline_source_R63_git_blob"] == R63_BLOB,
+           "source lineage altered")
+    ensure(report["reference_gallery_label"] == "12th Dec. 2003"
+           and report["reference_gallery_development_build_notice"] is True, "development date or scope altered")
+    ensure(report["source_count"] == 2 and len(report["source_rows"]) == 2
+           and report["http_response_url_binding_verified"] is True, "original remote-source verification missing")
+    for k, (ordinal, length, file_sha, html_sha) in enumerate(EXPECTED_SOURCE):
+        row = report["source_rows"][k]
+        ensure(row["ordinal"] == ordinal and row["gallery_reference"] == refs[ordinal], "gallery identity altered")
+        ensure(row["wrapper_url"] == URLS[k] and row["original_jpeg_url"] == URLS[k + 2], "source URL altered")
+        ensure(row["wrapper_bytes"] == 1914 and row["wrapper_sha256"] == html_sha
+               and row["wrapper"]["ordinal"] == ordinal
+               and row["wrapper"]["image_src_as_written"] == "../images/image%04d.jpg" % ordinal,
+               "wrapper evidence altered")
+        ensure(row["original_jpeg"] == {
+            "bytes": length, "sha256": file_sha, "format": "JPEG",
+            "width": 640, "height": 480, "mode": "RGB",
+            "frames": 1, "complete_decode": True
+        }, "JPEG identity or decoded pixel structure altered")
+        for key in ("visual_description", "historical_capture_date",
+                    "original_native_resolution", "original_build_hash_or_id", "original_pet_name_or_id"):
+            ensure(row[key] is None, "unproven original identity or visual interpretation promoted")
+        ensure(row["visual_description_reviewed"] is False, "unperformed visual judgment claimed")
+    for key in ("raw_http_original_bytes_published", "original_game_client_executed",
+                "original_server_interaction_verified", "picture_visual_content_reviewed_by_human",
+                "official_early1999_or_tw1_build_authenticated"):
+        ensure(report[key] is False, "unproven game-world/rights status promoted: " + key)
+    ensure(report["overall_restoration_percentage"] is None
+           and report["stage_a"] == "7_PARTIAL_2_OPEN"
+           and report["stage_b_and_wiki"] == "GATED"
+           and report["R79"] == "PAUSED_NON_BLOCKING", "historical project status was silently upgraded")
+    return True
+
+
 def main():
     p = argparse.ArgumentParser()
     p.add_argument("--fetch", action="store_true")
     p.add_argument("--inputs", type=Path, nargs=4)
-    p.add_argument("--output", required=True, type=Path)
+    p.add_argument("--output", type=Path)
+    p.add_argument("--check-published", action="store_true")
     args = p.parse_args()
+    if args.check_published:
+        ensure(not args.fetch and not args.inputs and not args.output, "check-published is isolated")
+        verify_published(json.loads(PUBLISHED.read_text(encoding="utf-8")))
+        print("SCENE27 published current-source identities validated: 2 JPEG, 640x480, no original runtime claim")
+        return
+    ensure(args.output is not None, "--output required for source acquisition")
     ensure(args.fetch != bool(args.inputs), "provide exactly one input method")
     raws = [get_bounded(url) for url in URLS] if args.fetch else [path.read_bytes() for path in args.inputs]
     result = derive(raws)
