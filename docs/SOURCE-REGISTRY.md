@@ -8857,3 +8857,8 @@ All11 original-derived inputs pinned in logical-alias-catalog-r1/REPORT-R1.json.
 ### 2026-10-29 — SRC-SCENE22-20261029 — 精确原参数指向的143B正文
 
 父RAR361255180B/SHA d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5从既存私人保管回读认证；原npc/genout/msg_1000_63_103的143B/SHA d1138b040fb31d0dc85cfdf4917f1c92facc67323c3a12544a8487039d0492ca与R18唯一库存相同，创建/模板亦全SHA同。单libarchive解包＋独立RAR4头7952文件CRC/三成员CRC；CP950与Big5/iconv214B UTF8同。非新发现整个系统，原对白/脚本只私人，公开派生STONEAGE-SCENE22-NPC-ARGUMENT-R1.json；source Action null、不认证原服执行或台湾1.0同服。
+
+
+### SRC-SCENE23-20261029 — 同版原body候选→SPR→96首帧像素
+
+来源为已保管P3H原件372626292B/SHA3a4854adaebef056332cdbd7b1dc1c130c571b11704e3f199f53d03aa31cba24，本轮重新核其全SHA及原exe/SPR/SPRADRN/ADRN/REAL/两SAP七成员完整SHA并逐库存一致；没有新版本发现。原R16 128B窗口与已存原SHA相同。原RD96、两候选配色192RGBA及现代卡片由第二实现核同，公开仅SOURCE/LOCAL-ACCEPTANCE数值摘要和工具；source Action null、原图浏览器未执行。首次现代画框越界与修正保留，原图原文/程序不入Git；不认证建角选择人数/名字/头像或原世界。

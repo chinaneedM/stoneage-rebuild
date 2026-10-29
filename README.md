@@ -883,3 +883,8 @@ ranges, not a new whole-client download or arbitrary program reverse engineering
 ### 2026-10-29 | SCENE22 一名原NPC的精确对白文件已接入离线查阅
 
 [原输入、有限内容合同与续接](docs/continuity/STONEAGE-SCENE22-NPC-ARGUMENT-20261029.md)：原创建块明确指向143B原对白，三份原文件全SHA匹配旧R18，整保管RAR、独立头CRC/原成员CRC均核。它是村民信息/商店买卖口令的新手提示，一行无ASCII逗号，不能由文案推此NPC多分支或交易运行。私人页保留原文与简体释义，原8场景值不变；53本地相关测试通过，远端验收按实际后验另记。**仍未进入原客户端世界**，同服/原生交互不晋升。完整CURRENT原字节作为追加前缀保留；最高下一SCENE23回22域材料轮换，Stage A/B/wiki/R79与总体未知保持。
+
+
+### 2026-10-29 | SCENE23 十二身体图形候选已有八方向原首帧
+
+[同版原图、两候选配色和完整续接](docs/continuity/STONEAGE-SCENE23-BODY-VISUALS-20261029.md)：原R16数值与原SPR/ADRN/REAL实取96首帧，双解码/192候选配色及卡片独立全同，私人页可按方向/候选配色比较并查原记录。不是已证十二可选人物或全角色/全动画；只观察源728帧位置中的96首帧。35本地测试通过，远端后验另记。原世界未进入，下一限SCENE14原商店前三物品的图号命名空间/原图输入24。
