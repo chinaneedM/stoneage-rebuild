@@ -1,0 +1,26 @@
+name: Verify SCENE32 retained frame continuity and source limits
+on:
+  push:
+    paths:
+      - 'tools/stoneage_scene32_retained_native_frames.py'
+      - 'tests/test_stoneage_scene32_retained_native_frames.py'
+      - 'research/recovered/STONEAGE-SCENE32-*'
+      - '.github/workflows/verify-stoneage-scene32-retained-native-frames.yml'
+  pull_request:
+    paths:
+      - 'tools/stoneage_scene32_retained_native_frames.py'
+      - 'tests/test_stoneage_scene32_retained_native_frames.py'
+      - 'research/recovered/STONEAGE-SCENE32-*'
+      - '.github/workflows/verify-stoneage-scene32-retained-native-frames.yml'
+permissions:
+  contents: read
+jobs:
+  derived-evidence-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Preserve raw reports, later witness and native primary boundaries
+        run: python3 -m tools.stoneage_scene32_retained_native_frames
+      - name: Continuity and synthetic PNG adversarial checks (no original captures)
+        run: python3 -m unittest tests.test_stoneage_scene32_retained_native_frames -v
