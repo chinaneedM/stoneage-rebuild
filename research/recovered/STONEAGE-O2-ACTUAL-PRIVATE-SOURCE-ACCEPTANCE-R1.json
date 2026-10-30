@@ -1,0 +1,111 @@
+{
+  "schema": "stoneage.o2_actual_private_source_and_browser_acceptance.r1",
+  "date": "2026-10-30",
+  "base_main_sha": "aeafb5e134609312a9298db827a5207cabf2adce",
+  "base_main_tree": "5b68c08624522d24a25fcb4ad154372357903159",
+  "preserve_current_blob_sha": "20050acf279a01555ab06a381dfcdc936bd381a6",
+  "source_material_1": {
+    "private_library_name": "StoneAge-SCENE21-private-town1000-observer.zip",
+    "private_archive_bytes": 2745658,
+    "private_archive_sha256": "4d35351e6db222cac889abcce2fdbe97c498abc252d24a3000968a58c9d2605a",
+    "original_source_report_git_blob_sha1": "8c1502a7da247b408cb4379442be593ee94985cf",
+    "report_sha256": "ae2e81eea3ebf3af7316b74dec12d8b9a993a4ad6d2fc912008bc27ca0e3c791",
+    "private_source_subset_zip_sha256": "a62a98c2629ccac88b6e83c7d8742430b4274bf008e5794e40edf1e2ffc96303",
+    "map_1000_dat_sha256": "94b19cb59d72b7b48da70d2741ba68516caad970297fd48ed11ef720fa3ea97e",
+    "palette1_sap_sha256": "32870080c47537a59beaf770b6df7bd79820fd52a23825058460900494f0b4b0",
+    "source_scope": "PRESERVED_MIXED25_MAP_WITH_TW1_GRAPHIC_PREFIX_BYTE_IDENTITY_NOT_TW1_OFFICIAL_MAP"
+  },
+  "source_material_2": {
+    "private_library_name": "StoneAge-TW1-original-runtime-and-native-observation-P3H.zip",
+    "private_archive_bytes": 372626292,
+    "private_archive_sha256": "3a4854adaebef056332cdbd7b1dc1c130c571b11704e3f199f53d03aa31cba24",
+    "member_sha256": {
+      "spr_1_bin": "53d5b2d40453a30fd1569637ebf0db7b3010542b00970ec83af0295a3b3ae31a",
+      "spradrn_1_bin": "275b64ff55667aec633a7e82e09d65c84141380521f0f2e64c9a28e0d3aa6c25",
+      "adrn_1_bin": "47254c0ff904d363fb5c3c5297edf553c8eaf24cd933f346d8ce7aabed4155c8",
+      "real_1_bin": "408e6ee05c83354349691937da2ad8f7488ac10f65f07e6681b7d92cb1c9ed13"
+    },
+    "palette0_sap_sha256": "89709d906bbd9cd9f5c2b8e0bd993e2897a1c9136ada2e211109983bb3b06cbf"
+  },
+  "executed_replay": {
+    "source_private_archive_retrieved_and_whole_sha_verified": true,
+    "private_original_map_cells_verified": 77,
+    "private_original_map_placements_verified": 85,
+    "original_rd_source_payloads_independently_decoded": 56,
+    "original_rgba_full_candidate_scenes_recomposed": 8,
+    "original_private_html_embedded_images_verified": 8,
+    "source_decoding_report_sha256": "aede22747fa44f5fb2950e857e41b82ad265b2d8b7a90dc73579aa3922209e0a",
+    "original_html_sha256": "078a0d2cb5d7af08b98d9ad8f3768303403017a82574e1f23b12e4d56a68fc0e",
+    "source_html_browser_test_states": 8,
+    "source_html_browser_report_sha256": "d7fe75e9644e48031da4f1057de03eae0262782ea709111f10760bc575eba4b0",
+    "source_browser_render_screenshot_sha256": "7c6ee15cf6ace0c62d6e1f05751bbfba64b92d955cfe78aba345afa8a9237e48"
+  },
+  "original_tw1_animation_sample": {
+    "spr_no": 100000,
+    "direction": 0,
+    "action_code": 6,
+    "source_frame_positions": 7,
+    "unique_bitmap_numbers": [
+      10185,
+      10186
+    ],
+    "source_animated_group_raw_sha256": "14755bb80693c1b22d6f394714d2166da8150f467223bc8595f49456b851fceb",
+    "preview_canvas_pixels": [
+      60,
+      64
+    ],
+    "source_frame_png_sha256_ordered": [
+      "926ac84baae799f1c518b8669e625108d66d17dcf71d96e068ac1c783e33480b",
+      "981a3cdd37b13155de35a1b81db8565e8c0b65a1274f35793b1c33bc181afd51",
+      "926ac84baae799f1c518b8669e625108d66d17dcf71d96e068ac1c783e33480b",
+      "926ac84baae799f1c518b8669e625108d66d17dcf71d96e068ac1c783e33480b",
+      "926ac84baae799f1c518b8669e625108d66d17dcf71d96e068ac1c783e33480b",
+      "926ac84baae799f1c518b8669e625108d66d17dcf71d96e068ac1c783e33480b",
+      "981a3cdd37b13155de35a1b81db8565e8c0b65a1274f35793b1c33bc181afd51"
+    ],
+    "private_source_receipt_sha256": "be53aa1e29411c969678a5dc72ddd67d12182e807e7762e1ef6cdc8e83b5ed7b"
+  },
+  "browser_private_combined": {
+    "chromium_version": "144.0.7559.96",
+    "original_png_map_states_verified": 8,
+    "tw1_sprite_original_frame_rendered": true,
+    "manual_keyboard_and_button_movement_verified": true,
+    "actor_visibility_toggle_verified": true,
+    "integer_zoom_verified": true,
+    "pause_and_reset_verified": true,
+    "external_requests": 0,
+    "js_errors": 0,
+    "combined_private_html_sha256": "b16813fa49409a375361e3daa6ce44270efff79834959143d2e12e0f6958e6cc",
+    "browser_report_sha256": "b763b4104827c6092366f18f0e3ac7398714b5a3261ed4fee7dcfe8e343d8c6f",
+    "screenshot_sha256": "689a697903d45d1c67ad17c281734a8fbc580da99f6d721b415ada435ddf2942",
+    "browser_file_url_navigation_blocked_by_administrator": true,
+    "actual_in_memory_same_html_bytes_rendered": true
+  },
+  "private_output": {
+    "private_library_path": "/石器时代/StoneAge-O2-actual-original-private-20261030.zip",
+    "private_zip_bytes": 2078427,
+    "private_zip_sha256": "daf750b05a25d668403e7836ffe8436c404c1179de29a3730c3f1b3999056573",
+    "private_archive_file_count": 15,
+    "original_images_or_html_committed_public": false
+  },
+  "evidence_limits": {
+    "original_client_executable_launched_this_turn": false,
+    "historical_client_server_handshake": false,
+    "original_world_entered": false,
+    "mixed25_map_deployed_with_TW1_character": false,
+    "official_TW1_same_source_map_proven": false,
+    "original_map_render_layer_and_palette_selection_verified": false,
+    "original_movement_collision_npc_quest_battle_verified": false,
+    "actor_species_or_character_name_verified": false,
+    "source_duration_native_fps_verified": false,
+    "production_asset_license_granted": false
+  },
+  "project_state": {
+    "stage_a": "7 PARTIAL + 2 OPEN",
+    "stage_b": "GATED",
+    "wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "highest_next": "O2_TW1_SAME_BUILD_MAP_SOURCE_IF_FOUND_OR_ELSE_GROUNDED_SINGLE_PLAYER_SCENE_INTERACTION_SPEC_NOT_CLAIMED_HISTORICAL"
+}
