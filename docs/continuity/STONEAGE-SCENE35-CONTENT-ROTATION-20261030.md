@@ -52,3 +52,9 @@
 **最高下一：SCENE36-RIDE-MATERIAL-DELTA-REVIEW。** 回22域第15域，先重读已保存的大陆4.0骑证/庄园、台湾8.0骑宠及其来源目录，查是否还有版本/地区明确、未实际交付的一项骑宠资格或界面内容。只取官方原文/客户端实物有据的一小条内容；已完整交付则具名去重并轮换，不重写旧目录计数、不默认1999/TW1已有骑宠、不把运营活动与常驻资格混为一类。用户“第一次骑上宠物”的体验诉求留待后续设计，不提前生产新游戏。没有新实物/正文就停止这一候选，不扩骑宠helper。
 
 SCENE34原SAAC/GMSV启动仍 `BLOCKED_PRIVATE_INPUT_CHANNEL`，没有新传递能力，不重开隔离链。原世界未进入；Stage A7 PARTIAL+2 OPEN、Stage B/wiki GATED、R79暂停、overall_percent=null保持。
+
+## 远端最终验收
+
+PR [50](https://github.com/chinaneedM/stoneage-rebuild/pull/50) 已合并。候选 `5311dadaf50bcc0614f6ec28bb2b7ae5708687c3` 的12项Actions、主线合并 `0c59d65dd2da070c9063c12332865e5edc50f421` 的11项全部实际completed/success；整tree `5e69012f690087b3d672be382c4db880e1f5f752` 与本地已验tree及PR临时merge tree完全相同。专用候选41006411855/job123902207021、主线41006531717/job123902576706原日志各核28测试OK与遇敌未建/世界未进入的冻结范围。七内容文件SHA/Git blob、23项验收、私人卡摘要及保存/未回读边界固定于 `research/recovered/STONEAGE-SCENE35-PUBLICATION-R1.json`。本后验收据自身提交不冒领前述23项成功；没有新原源Actions或私人原文CI执行。
+
+下一SCENE36的现存输入已具名：`STONEAGE-CN20-RIDING-TRAINER-COMBAT-SOURCE-R1.md`、`STONEAGE-CN40-RIDING-CERTIFICATE-MANOR-SOURCE-R1.md`、`STONEAGE-WAYI2003-NEWBIE-RIDING-PLAN-R1.md`、`STONEAGE-WAYI2003-RIDING-SUCCESSOR-ORE-WORK-R1.md`（均在docs/specs），及 `research/recovered/STONEAGE-TW80-MOUNT-CERTIFICATE-EQUIPMENT-SOURCE-R1.json`。先实际读取这些旧正文和来源再判断增量，文件名/版本数不算新材料；不重开本NPC或运行helper。
