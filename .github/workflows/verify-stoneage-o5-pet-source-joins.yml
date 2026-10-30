@@ -1,0 +1,36 @@
+name: Verify original same-carrier pet observation O5
+on:
+  push:
+    paths:
+      - '.github/workflows/verify-stoneage-o5-pet-source-joins.yml'
+      - 'tools/stoneage_o5_source_contract.py'
+      - 'tests/test_stoneage_o5_source_contract.py'
+      - 'research/recovered/STONEAGE-O5-SAME-CARRIER-PET-PRIVATE-ACCEPTANCE-R1.json'
+      - 'research/recovered/STONEAGE-SCENE13-PET-ACTION0-R1.json'
+      - 'research/recovered/STONEAGE-SCENE15-DOORWAY-SOURCE-R1.json'
+      - 'research/recovered/STONEAGE-O4-TWO-SCENE-PRIVATE-ACTUAL-ACCEPTANCE-R1.json'
+  pull_request:
+    paths:
+      - '.github/workflows/verify-stoneage-o5-pet-source-joins.yml'
+      - 'tools/stoneage_o5_source_contract.py'
+      - 'tests/test_stoneage_o5_source_contract.py'
+      - 'research/recovered/STONEAGE-O5-SAME-CARRIER-PET-PRIVATE-ACCEPTANCE-R1.json'
+      - 'research/recovered/STONEAGE-SCENE13-PET-ACTION0-R1.json'
+      - 'research/recovered/STONEAGE-SCENE15-DOORWAY-SOURCE-R1.json'
+      - 'research/recovered/STONEAGE-O4-TWO-SCENE-PRIVATE-ACTUAL-ACCEPTANCE-R1.json'
+  workflow_dispatch:
+jobs:
+  derived-public-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Reject false original runtime / verify preserved map and pet source receipts
+        run: |
+          python -m unittest tests.test_stoneage_o5_source_contract -v
+          python -m tools.stoneage_o5_source_contract
