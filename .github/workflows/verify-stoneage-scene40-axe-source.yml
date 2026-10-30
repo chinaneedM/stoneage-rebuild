@@ -23,7 +23,9 @@ jobs:
               raw = resp.read(1000000)
               status = resp.status
           assert status == 200 and final == source and 2000 < len(raw) < 1000000, (status, final, len(raw))
-          decoded = raw.decode('gb18030', errors='strict')
+          decoded = raw.decode('gb18030', errors='surrogateescape')
+          invalid_codepoints = sum(0xDC80 <= ord(ch) <= 0xDCFF for ch in decoded)
+          assert invalid_codepoints <= 256, ('too_many_invalid_original_bytes', invalid_codepoints)
           class P(html.parser.HTMLParser):
               def __init__(self):
                   super().__init__(convert_charrefs=True)
@@ -44,16 +46,17 @@ jobs:
               hits = list(re.finditer(re.escape(name), flat, re.I))
               assert len(hits) == 1, (name, len(hits))
               seg = flat[hits[0].start():hits[0].start()+145]
+              assert not any(0xDC80 <= ord(ch) <= 0xDCFF for ch in seg), ('invalid_original_byte_in_selected_row', name)
               for attr in attrs:
                   assert re.search(re.escape(attr),seg,re.I), (name,attr,seg)
               assert re.search(r'(?<!\d)'+str(cost)+r'(?!\d)',seg), (name,cost,seg)
               for v in villages:
                   assert v in seg, (name,v,seg)
               rows.append({'player_guide_name':name,'player_guide_price':cost,'player_guide_attrs':attrs,'player_guide_places':villages,'preserved_mixed25_item_id_for_comparison':item_id,'original_client_same_build_proven':False,'commercial_trade_executed':False})
-          report={'schema':'stoneage.scene40.sina_one_axe_page_source_replay.r1','url_requested':source,'url_final':final,'status':status,'raw_bytes':len(raw),'raw_sha256':hashlib.sha256(raw).hexdigest(),'raw_decoding':'gb18030_strict','genre':'USER_CONTRIBUTED_GAME_GUIDE','author_as_stated':'本田太郎','verified_original_publication_date':None,'historical_exact_build_id':None,'source_rows':rows,'source_row_count':len(rows),'new_official_rules':0,'native_game_executed':False,'original_html_in_public_git':False}
+          report={'schema':'stoneage.scene40.sina_one_axe_page_source_replay.r1','url_requested':source,'url_final':final,'status':status,'raw_bytes':len(raw),'raw_sha256':hashlib.sha256(raw).hexdigest(),'raw_decoding':'gb18030_surrogateescape_lossless','invalid_decoding_original_bytes':invalid_codepoints,'genre':'USER_CONTRIBUTED_GAME_GUIDE','author_as_stated':'本田太郎','verified_original_publication_date':None,'historical_exact_build_id':None,'source_rows':rows,'source_row_count':len(rows),'new_official_rules':0,'native_game_executed':False,'original_html_in_public_git':False}
           output=json.dumps(report, ensure_ascii=False, indent=2)+'\n'
           Path('scene40-source-replay.json').write_text(output,encoding='utf-8')
-          print('SCENE40_SOURCE_REPLAY '+json.dumps({'bytes':len(raw),'sha256':report['raw_sha256'],'rows':len(rows),'source_date':None,'official':False},ensure_ascii=False))
+          print('SCENE40_SOURCE_REPLAY '+json.dumps({'bytes':len(raw),'sha256':report['raw_sha256'],'rows':len(rows),'invalid_original_bytes':invalid_codepoints,'source_date':None,'official':False},ensure_ascii=False))
           PY
       - uses: actions/upload-artifact@v4
         with:
