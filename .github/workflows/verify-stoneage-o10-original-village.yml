@@ -1,0 +1,30 @@
+name: Verify StoneAge O10 bounded expanded village original source (no private assets)
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/verify-stoneage-o10-original-village.yml'
+      - 'tools/stoneage_o10_source_contract.py'
+      - 'tests/test_stoneage_o10_source_contract.py'
+      - 'research/recovered/STONEAGE-O10-VILLAGE-EXPANDED-SOURCE-ACCEPTANCE-R1.json'
+  push:
+    paths:
+      - '.github/workflows/verify-stoneage-o10-original-village.yml'
+      - 'tools/stoneage_o10_source_contract.py'
+      - 'tests/test_stoneage_o10_source_contract.py'
+      - 'research/recovered/STONEAGE-O10-VILLAGE-EXPANDED-SOURCE-ACCEPTANCE-R1.json'
+  workflow_dispatch:
+jobs:
+  verify-frozen-derived-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check exact source material, fail false runtime, and guard private custody
+        run: |
+          python -m unittest tests.test_stoneage_o10_source_contract -v
+          python -m tools.stoneage_o10_source_contract

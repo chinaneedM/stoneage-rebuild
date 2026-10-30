@@ -1027,3 +1027,8 @@ ranges, not a new whole-client download or arbitrary program reverse engineering
 ### 2026-10-30 — O9：从原客户端资源恢复1001室内完整30×30可见场景
 
 [完整原字节与独立像素验收](docs/continuity/STONEAGE-O9-FULL-ROOM-OBSERVATION-20261030.md)：原保存版1001.DAT两来源逐字节相同，初代TW1原ADRN/REAL/SAP重新整SHA鉴定，完整30×30含**107原地块+26原构件=133次源图引用、38幅不同RD**，O8局部30元组完整一致，新增103处原可见放置，38RD全部解码、独立NumPy双层/全景逐像素一致，O8原10PNG字节同；新20 PNG只私人。现代候选全景647×617实际目视，非原游戏画面/原生遮挡。私人O9 ZIP328成员/3969208B，旧O8 297成员未动，Library上传后全包SHA回读一致。Chromium原图内存页面检验定位/缩放与0HTTP，file://被管理员阻止，未声称用户本机直开或进入原客户端地图。公开仅派生原源收据及负例。O9到此止点，下一 **O10回22域查新原地图/宠物/音频/任务内容**；Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、percent=null不变。
+
+
+### 2026-10-31 — O10：原保存版村庄1000扩大到19×25格的真实图块候选全景
+
+[O10新地图原字节恢复与数字证据](docs/continuity/STONEAGE-O10-ORIGINAL-VILLAGE-EXTENDED-20261031.md)：完整已保存原1000.DAT(160×160)源位x55—73/y89—113共475格；实有**492原地面/构件布置、183种原图形RD**，相对旧O4局部窗口新增407次图块布置与128种此前该窗未见图号。183个图号在已认证TW1原ADRN均唯一，183原RD实际字节经双实现索引/图色解码、PNG回读与独立NumPy完整1408×1055三层RG​BA一致；现代等角候选画面已目视，不冒称历史原游戏截图。源NPC点1000(63,103)及出口1000(63,99)与O9的1001室内可静态对照；不能推同版官方部署、碰撞、真实行走/交易。私人O10 ZIP888成员/7764347B，O9原328成员全部字节不变，183RD/原80B记录与原DAT仅私人，整ZIP CRC/全源/图像回读通过。**本轮Library自动上传因container session expired未成功**，只提供当前会话已验附件，不能写为Library已归档。Chromium使用等字节原图内存页面8项实际成功，file://受管理员阻止保留失败。公开只留源哈希、O10反例及专用Actions；O11转实体/动作/音频事件及任务交互，停止无界扩画图。Stage A7 PARTIAL+2 OPEN，B/wiki GATED、R79暂停、percent=null不变。
