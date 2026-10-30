@@ -14,3 +14,10 @@
 实际下载唯一派生工件artifact12972795452：ZIP922B/SHA `9ad3e6b5e56ba8d05475e638f21be5773b4f3e860fe87094b05649da425d74ce`，独立CRC通过，JSON1980B/SHA `7b011d43ffde2a3104fe1e219b1d5312c296493ec8d7434706ea3fa1676c0f86`。详情见[新内容合同](../specs/STONEAGE-SCENE40-SINA-AXE-PLAYER-CROSSSOURCE-R1.md)、`research/recovered/STONEAGE-SCENE40-SINA-AXE-PLAYER-REPLAY-R1.json`与`STONEAGE-SCENE40-SOURCE-CUSTODY-R1.json`。原HTML与商业保存原行不在公开Git。
 
 新源是当前可取的**玩家投稿**，不是当年官站/同构建服务器证据。三个旧物品和旧成本没有“再次发现”，新增只为该玩家文献当前正文及其购买地点说法的有界归属。没有实物买卖、战斗、登录或原世界。下一`SCENE41-AUDIO-EVENT-SOURCE-DELTA-REVIEW`，22域18；仅查未保存的真实声音→事件绑定，不继续扩全商店与声卡helper。保留Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、overall_percent=null、原boot具名阻塞。新候选CI与最终主线合并须后验确认，不预填成功。
+
+
+## 最终远端源与主线后验（2026-10-30）
+
+PR [#54](https://github.com/chinaneedM/stoneage-rebuild/pull/54) 已实际合并。最终候选`f372e5908b2c88826b29595b940cbe6ffef17c7e`与主线merge`ea71946ca75ae47999d08c4043a290cc44188857` tree **同为 `8b679f35ef911bbc2bae2881162bcb6e54cb6bac`**。候选共12项相关 Actions（含PR一次独立源重放）全部观察到completed/success；合并主线11项全success。专项PR41046067303/job124030348371已实际运行4项来源边界测试通过、独立再取原URL且与冻结JSON原字节完全一致；主线41046177928仅执行保存报告的4项本地反例，不冒称又取了当前网页。
+
+PR最终原派生ZIP再次单独下载并验全部CRC，922B/SHA **`eb696693896e39b67479e4bd832b59fc5d045bc963f6daf20f309eb77ba44088`**；内部原JSON1980B/SHA **`7b011d43ffde2a3104fe1e219b1d5312c296493ec8d7434706ea3fa1676c0f86`**，与先前成功run41045626824内部JSON完全相同。两个ZIP外壳SHA不同而原JSON同一，不能拿外壳不同说成网页内容变化。7项文件的精确Git blob、23个run结果、源工件/异常编码及下一项永久固定于`research/recovered/STONEAGE-SCENE40-PUBLICATION-R1.json`。该后验收据自身新提交的Actions不提前预告成功。原文字节仍未入Git，台湾1.0原商店交易与世界运行0，下一SCENE41不变。

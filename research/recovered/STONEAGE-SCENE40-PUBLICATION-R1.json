@@ -1,0 +1,240 @@
+{
+  "schema": "stoneage.scene40.publication.r1",
+  "date": "2026-10-30",
+  "repository": "chinaneedM/stoneage-rebuild",
+  "baseline_head": "4ee5d2dc992a120cf4837060ac8d4c30c4338e6e",
+  "pr": {
+    "number": 54,
+    "candidate_head": "f372e5908b2c88826b29595b940cbe6ffef17c7e",
+    "candidate_tree": "8b679f35ef911bbc2bae2881162bcb6e54cb6bac",
+    "merged": true,
+    "merge_commit": "ea71946ca75ae47999d08c4043a290cc44188857",
+    "merged_main_tree": "8b679f35ef911bbc2bae2881162bcb6e54cb6bac"
+  },
+  "unchanged_current_state_blob": "20050acf279a01555ab06a381dfcdc936bd381a6",
+  "published_file_git_blobs": {
+    ".github/workflows/verify-stoneage-scene40-axe-source.yml": "fb8a40adb5f6290c11893581cb53aab20591752b",
+    "README.md": "8bf0ccc20a9ed42a2d2b34152f30ae118331ba08",
+    "docs/continuity/STONEAGE-SCENE40-SINA-AXE-SOURCE-GATE-20261030.md": "d58ff2e9e34cafc4260c4d848e9960deae17849e",
+    "docs/specs/STONEAGE-SCENE40-SINA-AXE-PLAYER-CROSSSOURCE-R1.md": "68989fcaad8f9a1a4bae4a275699bdf69777a037",
+    "research/recovered/STONEAGE-SCENE40-SINA-AXE-PLAYER-REPLAY-R1.json": "55cc0e8086f8647cb1c5e6cbfdde14c1453136b1",
+    "research/recovered/STONEAGE-SCENE40-SOURCE-CUSTODY-R1.json": "574a78474bd6963d41db49761416b6ab59602a1e",
+    "tests/test_stoneage_scene40_source.py": "c3fbbf6cf042a08c06e8e7d5da890c7a6417bbab"
+  },
+  "source_original_html": {
+    "url": "https://games.sina.com.cn/handbook/0101/01186086_c1.shtml",
+    "bytes": 36312,
+    "sha256": "d1fbdacdb50b9b31c0068e270d7026550ea6764f577cc9df3641d20df3432bfb",
+    "invalid_decoding_byte_count": 10,
+    "stored_in_public_git": false
+  },
+  "source_first_failure": {
+    "run_id": 41045491149,
+    "reason": "GB18030_STRICT_DECODE_FAILURE_OFFSET_24995"
+  },
+  "source_replay_first_success": {
+    "run_id": 41045626824,
+    "artifact_id": 12972795452,
+    "zip_bytes": 922,
+    "zip_sha256": "9ad3e6b5e56ba8d05475e638f21be5773b4f3e860fe87094b05649da425d74ce"
+  },
+  "source_replay_final_pr": {
+    "run_id": 41046067303,
+    "job_id": 124030348371,
+    "artifact_id": 12972895534,
+    "zip_bytes": 922,
+    "zip_sha256": "eb696693896e39b67479e4bd832b59fc5d045bc963f6daf20f309eb77ba44088",
+    "inner_json_bytes": 1980,
+    "inner_json_sha256": "7b011d43ffde2a3104fe1e219b1d5312c296493ec8d7434706ea3fa1676c0f86",
+    "zip_crc_ok": true,
+    "original_text_replayed": true,
+    "live_vs_git_frozen_exact": true,
+    "unit_tests_4_ok": true
+  },
+  "candidate_observed_runs": [
+    {
+      "id": 41046067303,
+      "event": "pull_request",
+      "name": "Source-qualify SCENE40 one user-contributed axe catalogue page",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41046061876,
+      "event": "push",
+      "name": "Accept preserved original TW85 SPR137 full animation material R28",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41046061696,
+      "event": "push",
+      "name": "Verify original same-build named-entity source gate R31",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41046061871,
+      "event": "push",
+      "name": "Verify original dated map110 three actual cell values R32",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41046061909,
+      "event": "push",
+      "name": "Verify StoneAge R17 original battle SAB crossversion occurrence conservation",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41046062049,
+      "event": "push",
+      "name": "Verify original four village interior materials R34",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41046062099,
+      "event": "push",
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41046061728,
+      "event": "push",
+      "name": "Verify original native album table and saved-name joins R36",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41046061551,
+      "event": "push",
+      "name": "Verify original local album name material and no master promotion R35",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41046061592,
+      "event": "push",
+      "name": "Accept primary-source TW1.0 character creation numeric join R16",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41046061793,
+      "event": "push",
+      "name": "Source-qualify SCENE40 one user-contributed axe catalogue page",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41046061676,
+      "event": "push",
+      "name": "Verify preserved mixed25 full server source conservation R18",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "merged_main_observed_runs": [
+    {
+      "id": 41046177708,
+      "event": "push",
+      "name": "Verify StoneAge R17 original battle SAB crossversion occurrence conservation",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41046177682,
+      "event": "push",
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41046177928,
+      "event": "push",
+      "name": "Source-qualify SCENE40 one user-contributed axe catalogue page",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41046177536,
+      "event": "push",
+      "name": "Accept primary-source TW1.0 character creation numeric join R16",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41046177758,
+      "event": "push",
+      "name": "Verify original local album name material and no master promotion R35",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41046177875,
+      "event": "push",
+      "name": "Verify preserved mixed25 full server source conservation R18",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41046177677,
+      "event": "push",
+      "name": "Accept preserved original TW85 SPR137 full animation material R28",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41046177751,
+      "event": "push",
+      "name": "Verify original native album table and saved-name joins R36",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41046177629,
+      "event": "push",
+      "name": "Verify original dated map110 three actual cell values R32",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41046177619,
+      "event": "push",
+      "name": "Verify original same-build named-entity source gate R31",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41046177906,
+      "event": "push",
+      "name": "Verify original four village interior materials R34",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "acceptance": {
+    "pr_all_12_success": true,
+    "main_all_11_success": true,
+    "main_tree_equals_candidate_tree": true,
+    "source_anomalies_preserved": true,
+    "source_entity_match_count": 3,
+    "new_official_item_rules": 0,
+    "new_original_client_runtime_events": 0,
+    "original_world_entered": false,
+    "same_build_client_shop_proven": false
+  },
+  "boundaries": {
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b": "GATED",
+    "wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING",
+    "native_boot": "BLOCKED_PRIVATE_INPUT_CHANNEL",
+    "overall_percent": null
+  },
+  "next": "SCENE41-AUDIO-EVENT-SOURCE-DELTA-REVIEW",
+  "receipt_commit_actions_claimed_success": false
+}
