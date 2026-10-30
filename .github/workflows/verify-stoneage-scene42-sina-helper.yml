@@ -1,0 +1,33 @@
+name: Source gate SCENE42 historical Sina helper download listing
+on:
+  push:
+    paths:
+      - tools/stoneage_scene42_sina_helper_listing.py
+      - tests/test_stoneage_scene42_sina_helper_listing.py
+      - research/recovered/STONEAGE-SCENE42-*
+      - .github/workflows/verify-stoneage-scene42-sina-helper.yml
+  pull_request:
+    paths:
+      - tools/stoneage_scene42_sina_helper_listing.py
+      - tests/test_stoneage_scene42_sina_helper_listing.py
+      - research/recovered/STONEAGE-SCENE42-*
+      - .github/workflows/verify-stoneage-scene42-sina-helper.yml
+permissions:
+  contents: read
+jobs:
+  bounded-original-listing:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify documented earlier SACHMX version and source boundary negatives
+        run: python3 -m unittest tests.test_stoneage_scene42_sina_helper_listing -v
+      - name: Acquire one historical archive index and publish only derived labels/hrefs
+        if: github.event_name == 'pull_request'
+        run: python3 -m tools.stoneage_scene42_sina_helper_listing --source-live --write scene42-listing-derived.json
+      - uses: actions/upload-artifact@v4
+        if: github.event_name == 'pull_request'
+        with:
+          name: scene42-bounded-listing-derived
+          path: scene42-listing-derived.json
+          retention-days: 14
