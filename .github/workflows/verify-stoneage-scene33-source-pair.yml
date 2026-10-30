@@ -1,0 +1,26 @@
+name: Verify SCENE33 static source pair and runtime limits
+on:
+  push:
+    paths:
+      - 'tools/stoneage_scene33_source_pair.py'
+      - 'tests/test_stoneage_scene33_source_pair.py'
+      - 'research/recovered/STONEAGE-SCENE33-*'
+      - '.github/workflows/verify-stoneage-scene33-source-pair.yml'
+  pull_request:
+    paths:
+      - 'tools/stoneage_scene33_source_pair.py'
+      - 'tests/test_stoneage_scene33_source_pair.py'
+      - 'research/recovered/STONEAGE-SCENE33-*'
+      - '.github/workflows/verify-stoneage-scene33-source-pair.yml'
+permissions:
+  contents: read
+jobs:
+  derived-evidence-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check frozen actual source facts and keep runtime pairing open
+        run: python3 -m tools.stoneage_scene33_source_pair
+      - name: Source, version and malformed input counterexamples (no original programs)
+        run: python3 -m unittest tests.test_stoneage_scene33_source_pair -v

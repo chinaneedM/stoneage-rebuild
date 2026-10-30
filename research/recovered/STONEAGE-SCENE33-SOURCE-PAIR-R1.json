@@ -1,0 +1,587 @@
+{
+  "schema": "stoneage.scene33.static_source_pair.r1",
+  "source_scope": "MIXED_MODIFIED_COMMUNITY_PRESERVATION_NOT_OFFICIAL_TW1",
+  "parent_archive": {
+    "bytes": 361255180,
+    "sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5"
+  },
+  "source_inputs": [
+    {
+      "path": "gmsv/gmsv.exe",
+      "bytes": 1897867,
+      "sha256": "d5b08dbcbf9e8736ba8598e38e5901f123d2bff544a9cae53a9ff88ce1971e00"
+    },
+    {
+      "path": "saac/saac.exe",
+      "bytes": 178353,
+      "sha256": "299910efe3d04ccf83a224a6f670c9fabe379440df36d6e0bf6514d76c834615"
+    },
+    {
+      "path": "gmsv/setup.cf",
+      "bytes": 9715,
+      "sha256": "b4936c103efb7b3cad359e5c85c7965187306883a68c0be712ece6c374e3b12d"
+    },
+    {
+      "path": "saac/acserv.cf",
+      "bytes": 807,
+      "sha256": "95d3414597dfb2617ea3fc6fd8bcf134652908661d55b03e04c4fe3e76979045"
+    },
+    {
+      "path": "SA2.5服務端/readme.txt",
+      "bytes": 1345,
+      "sha256": "c1140aebf9d08a90f1eec62fd27c766b8a4efa4355a6673179b59782ff657b8f"
+    },
+    {
+      "path": "stoneage2.5/sa_2903.exe",
+      "bytes": 561152,
+      "sha256": "ec678517f76564ebc9ab00cf3f66853ed9975ef6290eb48168b78909a68a5d16"
+    },
+    {
+      "path": "gmsv/cygwin1.dll",
+      "bytes": 1295582,
+      "sha256": "c0e27ae6a7b7106da5db889980a17fe55ea515ebfb3d4c03ce1e26d51bf9c73e"
+    },
+    {
+      "path": "saac/cygwin1.dll",
+      "bytes": 1295582,
+      "sha256": "c0e27ae6a7b7106da5db889980a17fe55ea515ebfb3d4c03ce1e26d51bf9c73e"
+    }
+  ],
+  "original_RAR_witness": {
+    "all_file_headers_scanned": 7952,
+    "all_header_CRCs_verified": true,
+    "selected_member_CRCs_verified": true,
+    "header_parser_is_not_second_decompressor": true,
+    "members": [
+      {
+        "target": "stoneage2.5/sa_2903.exe",
+        "header_offset": 352822544,
+        "header_bytes": 177,
+        "packed_bytes": 219049,
+        "unpacked_bytes": 561152,
+        "header_sha256": "144a087ea48b1a32f7c240eb0c3020f8d61a4b10b4f8e237605adb152b01af07",
+        "packed_sha256": "311d63d7f2314efaeefa45a769e9da0ed2a3ecbad3f94ebee7ea1119e7b406b4",
+        "member_crc32": 1312253662,
+        "member_sha256": "ec678517f76564ebc9ab00cf3f66853ed9975ef6290eb48168b78909a68a5d16"
+      },
+      {
+        "target": "gmsv/cygwin1.dll",
+        "header_offset": 354041891,
+        "header_bytes": 161,
+        "packed_bytes": 472708,
+        "unpacked_bytes": 1295582,
+        "header_sha256": "7d264df8fd39cd239f295c51886766e505c1a4a1ea362136aff47eaa3a1dd879",
+        "packed_sha256": "0b17b6815457134a1752d062699c1eb9dbf5290bdef045d66f5fe0112c77e5d9",
+        "member_crc32": 2147503702,
+        "member_sha256": "c0e27ae6a7b7106da5db889980a17fe55ea515ebfb3d4c03ce1e26d51bf9c73e"
+      },
+      {
+        "target": "gmsv/gmsv.exe",
+        "header_offset": 359906866,
+        "header_bytes": 154,
+        "packed_bytes": 605893,
+        "unpacked_bytes": 1897867,
+        "header_sha256": "8b8d28fb487f54d93d335caeb385bfb7239b467288087ceca434ffcf29716dea",
+        "packed_sha256": "330634f8ca453ba7c60ba2df0c474a6fc6aa95d2c126586e1b61a1206d79ce05",
+        "member_crc32": 1848751674,
+        "member_sha256": "d5b08dbcbf9e8736ba8598e38e5901f123d2bff544a9cae53a9ff88ce1971e00"
+      },
+      {
+        "target": "gmsv/setup.cf",
+        "header_offset": 360516773,
+        "header_bytes": 154,
+        "packed_bytes": 4172,
+        "unpacked_bytes": 9715,
+        "header_sha256": "c953d11775fa19c279f71ef4380f11a6c40de5eb296e6caf785a12bc1b6d8730",
+        "packed_sha256": "1ba77f491e170a41407062159d72c184f02b240b794cedb6ba90d3832fab0918",
+        "member_crc32": 914480129,
+        "member_sha256": "b4936c103efb7b3cad359e5c85c7965187306883a68c0be712ece6c374e3b12d"
+      },
+      {
+        "target": "SA2.5服務端/readme.txt",
+        "header_offset": 360525435,
+        "header_bytes": 147,
+        "packed_bytes": 359,
+        "unpacked_bytes": 1345,
+        "header_sha256": "c4055b42d1372fab88a195c47741c38077f6d16ac2794edecf7ec8f079dcfd0d",
+        "packed_sha256": "e1ec9eea620c84289aad8a6d4f38ef2b330fe91bb6ddc9f4482ef480e8dcade7",
+        "member_crc32": 2334313833,
+        "member_sha256": "c1140aebf9d08a90f1eec62fd27c766b8a4efa4355a6673179b59782ff657b8f"
+      },
+      {
+        "target": "saac/acserv.cf",
+        "header_offset": 360525941,
+        "header_bytes": 156,
+        "packed_bytes": 499,
+        "unpacked_bytes": 807,
+        "header_sha256": "6de208b2746eb6ec401899acc07ddf5c00eb98d6ba2660859f0ba823d27de349",
+        "packed_sha256": "4520fb67ee3d7589d5ded071d9800ef2756e2781f33a35048721330dcce26406",
+        "member_crc32": 1689258951,
+        "member_sha256": "95d3414597dfb2617ea3fc6fd8bcf134652908661d55b03e04c4fe3e76979045"
+      },
+      {
+        "target": "saac/cygwin1.dll",
+        "header_offset": 360526596,
+        "header_bytes": 161,
+        "packed_bytes": 472712,
+        "unpacked_bytes": 1295582,
+        "header_sha256": "bacafefc740316ff32b38b2658088cd3b5e2369e3665c55fc7d1a6c819bcc969",
+        "packed_sha256": "3484ce656db6f6e2de98b0d5230182ad9be49a2626628bc232cfd0cbfa0b63eb",
+        "member_crc32": 2147503702,
+        "member_sha256": "c0e27ae6a7b7106da5db889980a17fe55ea515ebfb3d4c03ce1e26d51bf9c73e"
+      },
+      {
+        "target": "saac/saac.exe",
+        "header_offset": 361001603,
+        "header_bytes": 154,
+        "packed_bytes": 61267,
+        "unpacked_bytes": 178353,
+        "header_sha256": "25b3094341c497cc2ba3ed997ccfa3c16de4cfba9a0117aed1aa288c8d7944ac",
+        "packed_sha256": "4cfb6a6391eb858e8401eafc6b61486a8c7cef58a126e7b7a0987807a9e6b809",
+        "member_crc32": 3798556598,
+        "member_sha256": "299910efe3d04ccf83a224a6f670c9fabe379440df36d6e0bf6514d76c834615"
+      }
+    ]
+  },
+  "config_pair": {
+    "gmsv_active_key_occurrences": 188,
+    "saac_active_key_occurrences": 18,
+    "gmsv_opaque_line_numbers": [
+      250,
+      251,
+      262,
+      284,
+      285,
+      293,
+      343,
+      344,
+      358,
+      494,
+      511
+    ],
+    "saac_opaque_line_numbers": [],
+    "acserv_host": "localhost",
+    "gmsv_acserv_port": 9200,
+    "saac_listen_port": 9200,
+    "gmsv_player_port": 9065,
+    "static_auth_token_bytes_equal": true,
+    "auth_values_published": false,
+    "mapdir": "data/map",
+    "npcdir": "data/npc",
+    "blank_startup_values": [
+      "apport",
+      "looptime",
+      "enableservice"
+    ],
+    "saac_USEMSSQL_value": "1",
+    "saac_AUTOREG_value": "1",
+    "config_switch_is_not_runtime_database_proof": true
+  },
+  "binaries": {
+    "gmsv/gmsv.exe": {
+      "machine": 332,
+      "optional_magic": 267,
+      "subsystem": 3,
+      "is_DLL": false,
+      "COFF_timestamp_raw": 1232466399,
+      "timestamp_is_not_release_authentication": true,
+      "import_descriptors": [
+        {
+          "descriptor_index": 0,
+          "dll": "cygwin1.dll",
+          "import_symbol_count": 97,
+          "dynamic_library_loader_imported": false,
+          "sql_named_import_symbols": 0
+        },
+        {
+          "descriptor_index": 1,
+          "dll": "cygwin1.dll",
+          "import_symbol_count": 4,
+          "dynamic_library_loader_imported": false,
+          "sql_named_import_symbols": 0
+        },
+        {
+          "descriptor_index": 2,
+          "dll": "cygwin1.dll",
+          "import_symbol_count": 3,
+          "dynamic_library_loader_imported": false,
+          "sql_named_import_symbols": 0
+        },
+        {
+          "descriptor_index": 3,
+          "dll": "KERNEL32.dll",
+          "import_symbol_count": 1,
+          "dynamic_library_loader_imported": false,
+          "sql_named_import_symbols": 0
+        },
+        {
+          "descriptor_index": 4,
+          "dll": "cygwin1.dll",
+          "import_symbol_count": 1,
+          "dynamic_library_loader_imported": false,
+          "sql_named_import_symbols": 0
+        },
+        {
+          "descriptor_index": 5,
+          "dll": "cygwin1.dll",
+          "import_symbol_count": 1,
+          "dynamic_library_loader_imported": false,
+          "sql_named_import_symbols": 0
+        }
+      ],
+      "import_DLL_occurrences": [
+        "cygwin1.dll",
+        "cygwin1.dll",
+        "cygwin1.dll",
+        "KERNEL32.dll",
+        "cygwin1.dll",
+        "cygwin1.dll"
+      ],
+      "dynamic_loads_and_transitive_runtime_dependencies_fully_resolved": false
+    },
+    "saac/saac.exe": {
+      "machine": 332,
+      "optional_magic": 267,
+      "subsystem": 3,
+      "is_DLL": false,
+      "COFF_timestamp_raw": 1232416491,
+      "timestamp_is_not_release_authentication": true,
+      "import_descriptors": [
+        {
+          "descriptor_index": 0,
+          "dll": "cygwin1.dll",
+          "import_symbol_count": 75,
+          "dynamic_library_loader_imported": false,
+          "sql_named_import_symbols": 0
+        },
+        {
+          "descriptor_index": 1,
+          "dll": "KERNEL32.dll",
+          "import_symbol_count": 1,
+          "dynamic_library_loader_imported": false,
+          "sql_named_import_symbols": 0
+        }
+      ],
+      "import_DLL_occurrences": [
+        "cygwin1.dll",
+        "KERNEL32.dll"
+      ],
+      "dynamic_loads_and_transitive_runtime_dependencies_fully_resolved": false
+    },
+    "stoneage2.5/sa_2903.exe": {
+      "machine": 332,
+      "optional_magic": 267,
+      "subsystem": 2,
+      "is_DLL": false,
+      "COFF_timestamp_raw": 1018433560,
+      "timestamp_is_not_release_authentication": true,
+      "import_descriptors": [
+        {
+          "descriptor_index": 0,
+          "dll": "KERNEL32.dll",
+          "import_symbol_count": 95,
+          "dynamic_library_loader_imported": true,
+          "sql_named_import_symbols": 0
+        },
+        {
+          "descriptor_index": 1,
+          "dll": "USER32.dll",
+          "import_symbol_count": 30,
+          "dynamic_library_loader_imported": false,
+          "sql_named_import_symbols": 0
+        },
+        {
+          "descriptor_index": 2,
+          "dll": "GDI32.dll",
+          "import_symbol_count": 7,
+          "dynamic_library_loader_imported": false,
+          "sql_named_import_symbols": 0
+        },
+        {
+          "descriptor_index": 3,
+          "dll": "DDRAW.dll",
+          "import_symbol_count": 1,
+          "dynamic_library_loader_imported": false,
+          "sql_named_import_symbols": 0
+        },
+        {
+          "descriptor_index": 4,
+          "dll": "DSOUND.dll",
+          "import_symbol_count": 1,
+          "dynamic_library_loader_imported": false,
+          "sql_named_import_symbols": 0
+        },
+        {
+          "descriptor_index": 5,
+          "dll": "WINMM.dll",
+          "import_symbol_count": 7,
+          "dynamic_library_loader_imported": false,
+          "sql_named_import_symbols": 0
+        },
+        {
+          "descriptor_index": 6,
+          "dll": "DINPUT.dll",
+          "import_symbol_count": 1,
+          "dynamic_library_loader_imported": false,
+          "sql_named_import_symbols": 0
+        },
+        {
+          "descriptor_index": 7,
+          "dll": "WSOCK32.dll",
+          "import_symbol_count": 17,
+          "dynamic_library_loader_imported": false,
+          "sql_named_import_symbols": 0
+        },
+        {
+          "descriptor_index": 8,
+          "dll": "IMM32.dll",
+          "import_symbol_count": 11,
+          "dynamic_library_loader_imported": false,
+          "sql_named_import_symbols": 0
+        }
+      ],
+      "import_DLL_occurrences": [
+        "KERNEL32.dll",
+        "USER32.dll",
+        "GDI32.dll",
+        "DDRAW.dll",
+        "DSOUND.dll",
+        "WINMM.dll",
+        "DINPUT.dll",
+        "WSOCK32.dll",
+        "IMM32.dll"
+      ],
+      "dynamic_loads_and_transitive_runtime_dependencies_fully_resolved": false
+    },
+    "gmsv/cygwin1.dll": {
+      "machine": 332,
+      "optional_magic": 267,
+      "subsystem": 3,
+      "is_DLL": true,
+      "COFF_timestamp_raw": 1120350652,
+      "timestamp_is_not_release_authentication": true,
+      "import_descriptors": [
+        {
+          "descriptor_index": 0,
+          "dll": "ADVAPI32.DLL",
+          "import_symbol_count": 1,
+          "dynamic_library_loader_imported": false,
+          "sql_named_import_symbols": 0
+        },
+        {
+          "descriptor_index": 1,
+          "dll": "KERNEL32.dll",
+          "import_symbol_count": 195,
+          "dynamic_library_loader_imported": true,
+          "sql_named_import_symbols": 0
+        }
+      ],
+      "import_DLL_occurrences": [
+        "ADVAPI32.DLL",
+        "KERNEL32.dll"
+      ],
+      "dynamic_loads_and_transitive_runtime_dependencies_fully_resolved": false
+    },
+    "saac/cygwin1.dll": {
+      "machine": 332,
+      "optional_magic": 267,
+      "subsystem": 3,
+      "is_DLL": true,
+      "COFF_timestamp_raw": 1120350652,
+      "timestamp_is_not_release_authentication": true,
+      "import_descriptors": [
+        {
+          "descriptor_index": 0,
+          "dll": "ADVAPI32.DLL",
+          "import_symbol_count": 1,
+          "dynamic_library_loader_imported": false,
+          "sql_named_import_symbols": 0
+        },
+        {
+          "descriptor_index": 1,
+          "dll": "KERNEL32.dll",
+          "import_symbol_count": 195,
+          "dynamic_library_loader_imported": true,
+          "sql_named_import_symbols": 0
+        }
+      ],
+      "import_DLL_occurrences": [
+        "ADVAPI32.DLL",
+        "KERNEL32.dll"
+      ],
+      "dynamic_loads_and_transitive_runtime_dependencies_fully_resolved": false
+    }
+  },
+  "startup_file_references": [
+    {
+      "config_key": "LOCKIP",
+      "relative_path": "lockip.txt",
+      "archive_occurrences": 0,
+      "required_at_startup_proven": false
+    },
+    {
+      "config_key": "USEREXP",
+      "relative_path": "data/exp.txt",
+      "archive_occurrences": 1,
+      "required_at_startup_proven": false
+    },
+    {
+      "config_key": "maptilefile",
+      "relative_path": "data/map/mapset.txt",
+      "archive_occurrences": 1,
+      "required_at_startup_proven": false
+    },
+    {
+      "config_key": "battlemapfile",
+      "relative_path": "data/map/battlemap.txt",
+      "archive_occurrences": 1,
+      "required_at_startup_proven": false
+    },
+    {
+      "config_key": "itemset6file",
+      "relative_path": "data/itemset.txt",
+      "archive_occurrences": 1,
+      "required_at_startup_proven": false
+    },
+    {
+      "config_key": "itemset5file",
+      "relative_path": "data/itemset.txt",
+      "archive_occurrences": 1,
+      "required_at_startup_proven": false
+    },
+    {
+      "config_key": "itemset4file",
+      "relative_path": "data/itemset.txt",
+      "archive_occurrences": 1,
+      "required_at_startup_proven": false
+    },
+    {
+      "config_key": "itemset3file",
+      "relative_path": "data/itemset.txt",
+      "archive_occurrences": 1,
+      "required_at_startup_proven": false
+    },
+    {
+      "config_key": "invinciblefile",
+      "relative_path": "data/inv.txt",
+      "archive_occurrences": 1,
+      "required_at_startup_proven": false
+    },
+    {
+      "config_key": "appearpositionfile",
+      "relative_path": "data/appear.txt",
+      "archive_occurrences": 1,
+      "required_at_startup_proven": false
+    },
+    {
+      "config_key": "titlenamefile",
+      "relative_path": "data/titlename.txt",
+      "archive_occurrences": 1,
+      "required_at_startup_proven": false
+    },
+    {
+      "config_key": "titleconfigfile",
+      "relative_path": "./data/titleconfig.txt",
+      "archive_occurrences": 1,
+      "required_at_startup_proven": false
+    },
+    {
+      "config_key": "encountfile",
+      "relative_path": "./data/encount.txt",
+      "archive_occurrences": 1,
+      "required_at_startup_proven": false
+    },
+    {
+      "config_key": "enemyfile",
+      "relative_path": "./data/enemy.txt",
+      "archive_occurrences": 1,
+      "required_at_startup_proven": false
+    },
+    {
+      "config_key": "enemybasefile",
+      "relative_path": "./data/enemybase.txt",
+      "archive_occurrences": 1,
+      "required_at_startup_proven": false
+    },
+    {
+      "config_key": "groupfile",
+      "relative_path": "./data/group1.txt",
+      "archive_occurrences": 1,
+      "required_at_startup_proven": false
+    },
+    {
+      "config_key": "magicfile",
+      "relative_path": "./data/magic.txt",
+      "archive_occurrences": 1,
+      "required_at_startup_proven": false
+    },
+    {
+      "config_key": "attmagicfile",
+      "relative_path": "./data/attmagic.bin",
+      "archive_occurrences": 1,
+      "required_at_startup_proven": false
+    },
+    {
+      "config_key": "petskillfile2",
+      "relative_path": "./data/petskill.txt",
+      "archive_occurrences": 1,
+      "required_at_startup_proven": false
+    },
+    {
+      "config_key": "petskillfile1",
+      "relative_path": "./data/petskill.txt",
+      "archive_occurrences": 1,
+      "required_at_startup_proven": false
+    },
+    {
+      "config_key": "itematomfile",
+      "relative_path": "./data/itematom.txt",
+      "archive_occurrences": 1,
+      "required_at_startup_proven": false
+    },
+    {
+      "config_key": "effectfile",
+      "relative_path": "data/effect.txt",
+      "archive_occurrences": 1,
+      "required_at_startup_proven": false
+    },
+    {
+      "config_key": "quizfile",
+      "relative_path": "data/question.txt",
+      "archive_occurrences": 1,
+      "required_at_startup_proven": false
+    },
+    {
+      "config_key": "gmsetfile",
+      "relative_path": "./data/gmset.txt",
+      "archive_occurrences": 1,
+      "required_at_startup_proven": false
+    }
+  ],
+  "source_readme_says_saac_before_gmsv": true,
+  "readme_document_date_token_2009_01_20_present": true,
+  "startup_config_comment_8_0_present": true,
+  "client_literal_IP_colon_marker_occurrences": 0,
+  "static_candidate_status": "STATIC_SERVER_CONFIG_AND_X86_DEPENDENCIES_QUALIFIED_RUNTIME_PAIR_OPEN",
+  "extraction_witness": {
+    "successful_decompressor": "RARLab official-source local UnRAR 7.30 beta 2",
+    "successful_second_decompressor_for_all_eight": false,
+    "prior_system_libarchive_failure": "Parsing filters is unsupported (cygwin1.dll)",
+    "header_CRC_is_not_second_decompression": true
+  },
+  "original_world_entry_minimum_next": "ISOLATED_SAAC_GMSV_LOOPBACK_BOOT_BEFORE_ANY_CLIENT_OR_REAL_ACCOUNT",
+  "source_action_run_id": null,
+  "overall_percent": null,
+  "historical_programs_executed": false,
+  "SAAC_GMSV_handshake_observed": false,
+  "server_ports_bound_observed": false,
+  "client_loopback_endpoint_control_verified": false,
+  "client_server_protocol_compatibility_verified": false,
+  "original_world_entered": false,
+  "same_deployed_build_authenticated": false,
+  "official_TW10_pair_authenticated": false,
+  "clean_25_runtime_authenticated": false,
+  "database_requirement_resolved": false,
+  "historical_credentials_published": false,
+  "original_binaries_or_config_text_published": false
+}
