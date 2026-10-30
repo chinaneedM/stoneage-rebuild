@@ -59,18 +59,24 @@ def parse_page(raw:bytes, final_url:str):
     assert (u.scheme,u.hostname,u.path)==(orig.scheme,orig.hostname,orig.path),"unqualified destination"
     assert u.query in ("","_platform=PC"),"unverified query variant"
     assert 2000<len(raw)<500000,"source payload bounds"
-    decoded=raw.decode("gb18030","surrogateescape")
-    invalid=sum(0xDC80<=ord(c)<=0xDCFF for c in decoded)
-    assert invalid<=512,"too many invalid source bytes"
-    p=ExtractText();p.feed(decoded)
-    t=re.sub(r"\s+"," "," ".join(p.text))
     start_phrase="我可以更改石器时代的音乐吗"
     end_phrase="在北岛守桥的愿藏很烦"
-    assert t.count(start_phrase)==1 and t.count(end_phrase)==1,"FAQ bounded heading missing or doubled"
+    candidates=[]
+    for charset in ("utf-8","gb18030"):
+        decoded=raw.decode(charset,"surrogateescape")
+        p=ExtractText();p.feed(decoded)
+        text=re.sub(r"\s+"," "," ".join(p.text))
+        if (text.count(start_phrase)==1 and text.count(end_phrase)==1
+            and "作者：未知" in text and "2001-06-14" in text
+            and "石器时代之全问答集" in text):
+            candidates.append((charset,decoded,text))
+    assert len(candidates)==1,"source encoding/content not unambiguously qualified"
+    charset,decoded,t=candidates[0]
+    invalid=sum(0xDC80<=ord(c)<=0xDCFF for c in decoded)
+    assert invalid<=512,"too many invalid source bytes"
     start=t.index(start_phrase)
     end=t.index(end_phrase,start)
     section=t[start:end]
-    assert "作者：未知" in t and "2001-06-14" in t and "石器时代之全问答集" in t,"source header or date missing"
     assert not any(0xDC80<=ord(c)<=0xDCFF for c in section),"bad byte within music FAQ"
     matches=list(re.finditer(r"(?<![A-Za-z0-9_])sabgm_[bdfst][0-9]+(?![A-Za-z0-9_])",section,re.I))
     keys=[x.group().lower() for x in matches]
@@ -86,7 +92,7 @@ def parse_page(raw:bytes, final_url:str):
                      "historical_bgm_event_traced":False,"source_grade":"CONTEMPORARY_LABELLED_PLAYER_FAQ"})
     return {"schema":"stoneage.scene41.2001_player_bgm_filename_claims.r1",
         "requested_url":SOURCE_URL,"resolved_url":final_url,"current_http_bytes":len(raw),
-        "current_http_sha256":hashlib.sha256(raw).hexdigest(),"original_bytes_invalid_gb18030":invalid,
+        "current_http_sha256":hashlib.sha256(raw).hexdigest(),"original_bytes_invalid_decoding":invalid,"selected_decoding":charset,
         "source_title_as_rendered":"石器时代之全问答集","source_date_label":"2001-06-14","source_author_label":"未知",
         "historical_published_bytes_authentic":False,"original_article_first_publication_time_verified":False,
         "source_scope":"CURRENTLY_RETRIEVED_17173_PLAYER_FAQ_WITH_2001_DATE_LABEL",
@@ -120,7 +126,7 @@ def main():
     report=parse_page(raw,url)
     s=json.dumps(report,ensure_ascii=False,sort_keys=True,indent=2)+"\n"
     if args.output: Path(args.output).write_text(s,encoding="utf-8")
-    print("SCENE41_SOURCE "+json.dumps({k:report[k] for k in ("resolved_url","current_http_bytes","current_http_sha256","original_bytes_invalid_gb18030","row_count","cross_reference_exact_file_name_count")},ensure_ascii=False))
+    print("SCENE41_SOURCE "+json.dumps({k:report[k] for k in ("resolved_url","current_http_bytes","current_http_sha256","original_bytes_invalid_decoding","selected_decoding","row_count","cross_reference_exact_file_name_count")},ensure_ascii=False))
 
 if __name__=="__main__":
     main()
