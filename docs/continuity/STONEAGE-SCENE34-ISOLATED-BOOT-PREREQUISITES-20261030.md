@@ -54,3 +54,9 @@ SCENE33/34已经连续两包解决运行前提而没有新增游戏内容；按�
 **最高下一：SCENE35-ONE-MIXED25-ENCOUNTER-CONTENT-CARD。** 先读取前述旧链、WORLD01四出生地及内容/来源文件，确认是否确有原名资料的观察增量。若有，复用已保管父RAR与既有 `encount.txt → group1.txt → enemy.txt → enemybase.txt` 桥，限一条有原文件字段说明支撑的原名/数值资料卡，私下保存原行/文字，公开只派生身份/范围；不重审660行全表、不新增通用遇敌模拟器或重跑四路线。只在同包命名空间内说明一个候选区域/一组敌人及版本未知边界；字段缺少依据、键不唯一、或旧材料已完整交付同一卡就具名停止并轮换领域，不猜列含义、不批量建全物种表、不制造历史地图分布。保持社区修改版范围，绝不转作TW1官方遭遇表或运行观察。新的内容卡是否有实际增量尚未预支。
 
 仍在历史恢复阶段；Stage A 7 PARTIAL + 2 OPEN、Stage B/wiki GATED、R79暂停、overall_percent=null不变，原世界尚未进入。
+
+## 远端最终验收
+
+PR [49](https://github.com/chinaneedM/stoneage-rebuild/pull/49) 已合并。最终候选 `6198ed91647364f9da522d3b8fe54762195fad48` 的12项Actions、主线合并 `d56da957c5c0e40f7db4550de255d795f1fdeb9d` 的11项全部实际completed/success；整tree `4a59630b074548897b332b13923dc4e0330e2d76` 与本地已验tree、PR临时merge tree完全相同。专用候选41003796545/job123893980833、主线41003927226/job123894395201原日志各核29测试OK及historical_server_runs=0。它们只重放派生记录；实际自编Windows运行仍是先前两次，不计作新的原程序实验。
+
+十一内容文件完整SHA/Git blob、两源执行、首轮失败边界、最终23项验收及NEXT去重修订永久固定于 `research/recovered/STONEAGE-SCENE34-PUBLICATION-R1.json`。本后验收据自身提交不冒领前述23项成功。API读法另核微软原文：[select / exceptfds / SO_ERROR](https://learn.microsoft.com/en-us/windows/win32/api/winsock2/nf-winsock2-select)，只支撑非阻塞错误读取规则，不代替上述两次实测。最高下一仍为SCENE35内容卡查重/有增量才交付；原服务端boot保持具名阻塞。
