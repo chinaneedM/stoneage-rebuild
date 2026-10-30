@@ -1,0 +1,26 @@
+name: Verify SCENE35 content rotation and static NPC source boundaries
+on:
+  push:
+    paths:
+      - tools/stoneage_scene35_content_card.py
+      - tests/test_stoneage_scene35_content_card.py
+      - research/recovered/STONEAGE-SCENE35-*
+      - .github/workflows/verify-stoneage-scene35-content-card.yml
+  pull_request:
+    paths:
+      - tools/stoneage_scene35_content_card.py
+      - tests/test_stoneage_scene35_content_card.py
+      - research/recovered/STONEAGE-SCENE35-*
+      - .github/workflows/verify-stoneage-scene35-content-card.yml
+permissions:
+  contents: read
+jobs:
+  derived-and-synthetic-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Replay stopped encounter proposal and one actual static NPC argument
+        run: python3 -m tools.stoneage_scene35_content_card
+      - name: Source, semantic and text escaping counterexamples (no original text)
+        run: python3 -m unittest tests.test_stoneage_scene35_content_card -v
