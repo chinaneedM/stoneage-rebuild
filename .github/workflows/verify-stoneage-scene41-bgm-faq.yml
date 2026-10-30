@@ -1,0 +1,35 @@
+name: Qualify SCENE41 dated player BGM filename claims
+on:
+  pull_request:
+    paths:
+      - tools/stoneage_scene41_bgm_faq.py
+      - tests/test_stoneage_scene41_bgm_faq.py
+      - research/recovered/STONEAGE-SCENE41-*
+      - .github/workflows/verify-stoneage-scene41-bgm-faq.yml
+  push:
+    paths:
+      - tools/stoneage_scene41_bgm_faq.py
+      - tests/test_stoneage_scene41_bgm_faq.py
+      - research/recovered/STONEAGE-SCENE41-*
+      - .github/workflows/verify-stoneage-scene41-bgm-faq.yml
+permissions:
+  contents: read
+jobs:
+  pinned-player-audio-source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - name: Original TW1 filename and synthetic rejection tests
+        run: |
+          python3 -m tools.stoneage_scene41_bgm_faq
+          python3 -m unittest tests.test_stoneage_scene41_bgm_faq -v
+      - name: Fetch one dated player FAQ and derive only permitted metadata
+        if: github.event_name == 'pull_request'
+        run: python3 -m tools.stoneage_scene41_bgm_faq --replay-live --output scene41-faq-source.json
+      - uses: actions/upload-artifact@v4
+        if: github.event_name == 'pull_request'
+        with:
+          name: scene41-dated-bgm-faq-source
+          path: scene41-faq-source.json
+          retention-days: 14
