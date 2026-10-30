@@ -1,0 +1,26 @@
+name: Verify SCENE36 operator image reference and riding evidence limits
+on:
+  push:
+    paths:
+      - tools/stoneage_scene36_riding_image.py
+      - tests/test_stoneage_scene36_riding_image.py
+      - research/recovered/STONEAGE-SCENE36-*
+      - .github/workflows/verify-stoneage-scene36-riding-image.yml
+  pull_request:
+    paths:
+      - tools/stoneage_scene36_riding_image.py
+      - tests/test_stoneage_scene36_riding_image.py
+      - research/recovered/STONEAGE-SCENE36-*
+      - .github/workflows/verify-stoneage-scene36-riding-image.yml
+permissions:
+  contents: read
+jobs:
+  derived-and-synthetic-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Keep five prior sources, one reference and two captures distinct
+        run: python3 -m tools.stoneage_scene36_riding_image
+      - name: Semantic, URL, JPEG header and viewer counterexamples (no original pixels)
+        run: python3 -m unittest tests.test_stoneage_scene36_riding_image -v

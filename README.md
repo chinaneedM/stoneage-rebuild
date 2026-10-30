@@ -948,3 +948,8 @@ ranges, not a new whole-client download or arbitrary program reverse engineering
 ### 2026-10-30 — SCENE35：遇敌候选止步，轮换交付一条原NPC对白内容卡
 
 [原件、止点与下一材料包](docs/continuity/STONEAGE-SCENE35-CONTENT-ROTATION-20261030.md)：已有遇敌全表链/WORLD01模型不重做；实际四表0注释但缺同二进制字段布局，未建立原服遇敌卡。转同mixed包一条显式NPC创建→唯一TownPeople模板→76B原对白；一个ASCII逗号所分两片段按22/52B保留，不能冒称运行分支或任务。原名/原文与三原文件已做成11122B私人静态卡并保存；公开仅摘要/释义/范围，源字节经CP950/Big5/iconv及RAR CRC核同，无JS/外部资源。28新+29回归通过，原世界未进入。下一SCENE36先对第15域既有骑宠资格/界面资料查重，有版本明确的新原文内容才交付，不扩同村NPC/遇敌/运行helper。CURRENT/Stage A/B/wiki/R79与总体未知保持，Actions按后验记录。
+
+
+### 2026-10-30 — SCENE36：骑宠资料查重，一处官方页面图像引用实际取得
+
+[原图来源、分时捕获与止点](docs/continuity/STONEAGE-SCENE36-RIDING-IMAGE-DELTA-20261030.md)：五份旧骑宠规则/计划不重算；核同Wayi计划原页19964B，实际取得其一处a/img关系中的两JPEG。页内300×225为2004捕获，目标640×480为2006捕获，不能倒称2003同构建。已实际目视室内NPC对话窗/確定取消，未认证赠虎实施或骑宠资格UI，新增骑乘规则0。两原JPEG和静态查阅页已私人保存，公开仅摘要/范围；原图无重绘，旧未取得标记按当时历史保留。29新+28回归通过；下一SCENE37先核既有成人礼/货运/卡坦任务材料，有原文增量才交付，不继续图像/骑宠helper。原世界未进入，CURRENT/Stage A/B/wiki/R79与总体未知保持，Actions按后验记录。
