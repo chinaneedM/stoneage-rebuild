@@ -1,0 +1,172 @@
+{
+  "schema": "stoneage.scene38.poison_skill_source.r1",
+  "scope": "ONE_DATED_ROW_ATTRIBUTION_FROM_PREVIOUSLY_ACQUIRED_CN20_OPERATOR_HOSTED_PAGE",
+  "prior_materials": [
+    {
+      "path": "research/recovered/STONEAGE-CN2004-PET-SKILL-TRAINER-SOURCE-R1.json",
+      "bytes": 14778,
+      "sha256": "90bc79a7c824ffae88f2e974de692252fb37345eacafa9db26f87bb62bbc9a70"
+    },
+    {
+      "path": "research/recovered/STONEAGE-JSS2001-PET-MANUAL-CONTRACT-R1.json",
+      "bytes": 5830,
+      "sha256": "ec4c1602472fb5daa2d458e455f06df3318011e560be053abd460d7d5fba5a13"
+    },
+    {
+      "path": "research/recovered/STONEAGE-CN20-PET-CRAFTING-SOURCE-R1.json",
+      "bytes": 26300,
+      "sha256": "ea9cf8f54aaf5996289007d2c543b7ca7dccd64b457d296694dada99361cb31f"
+    },
+    {
+      "path": "research/recovered/STONEAGE-WAEI-CN20-PUBLIC-FACILITIES-R1.json",
+      "bytes": 26065,
+      "sha256": "49e48c23b2fc97f5ac64b03ce0b4f2848d04fe722005c5392e778941b33e887b"
+    },
+    {
+      "path": "research/recovered/STONEAGE-CN30-SPECIAL-PET-SKILLS-SOURCE-R1.json",
+      "bytes": 26728,
+      "sha256": "7511ab03d30db97964976b5db8b283a42a59834a7f63c95339362bf22699dd12"
+    },
+    {
+      "path": "research/recovered/STONEAGE-PET-SKILL-NAME-MODEL-CROSSWALK-R45.json",
+      "bytes": 6227,
+      "sha256": "ab376e921c0867d2ff4fe361443723601abcb1fb3308050bcd5dc89eecf7afce"
+    }
+  ],
+  "source_projection": {
+    "entry": {
+      "label": "宠物技能",
+      "href": "/ZHUANQU/stoneage2/pet/skill.asp"
+    },
+    "skill": {
+      "name_as_written": "猛毒攻击",
+      "attack_reduction_percent_as_text": 50,
+      "poison_turns_as_text": 5,
+      "listed_price": 4000,
+      "header_verified": [
+        "技能名称",
+        "技能说明",
+        "技能价格"
+      ],
+      "normalized_row_sha256": "e6ab2c6aa7047e19aed11f04971106ce029554fd1939438a03f1134b04282d30",
+      "original_selected_header_and_row_sha256": "4cd53b0c941217439403c91552c7092a74dfd40bf07145bd8d8548e964eef3e7",
+      "price_currency": null,
+      "trainer_location": null,
+      "native_skill_id": null,
+      "price_is_actual_training_debit_proven": false,
+      "damage_tick_formula": null
+    }
+  },
+  "local_HTTP": [
+    {
+      "requested": "https://web.archive.org/web/20011204213609id_/http://www.waei.com.cn/ZHUANQU/stoneage2/sw/facility.asp",
+      "resolved": "https://web.archive.org/web/20011204213609id_/http://www.waei.com.cn/ZHUANQU/stoneage2/sw/facility.asp",
+      "bytes": 73356,
+      "status": 200,
+      "sha256": "e18f0bced4935358e3be28e328d50a49a6dfbb8c26476a98c211892974e7ba16"
+    },
+    {
+      "requested": "https://web.archive.org/web/20011204213609id_/http://www.waei.com.cn/ZHUANQU/stoneage2/pet/skill.asp",
+      "resolved": "https://web.archive.org/web/20011204201517id_/http://www.waei.com.cn/ZHUANQU/stoneage2/pet/skill.asp",
+      "status": 200,
+      "bytes": 78022,
+      "sha256": "3056d727903c56000cdfcd877924efa244967eb8b6407db08c08e60ec7a9b0ee",
+      "content_type": "text/html"
+    }
+  ],
+  "historical_source": {
+    "original_url": "http://www.waei.com.cn/ZHUANQU/stoneage2/pet/skill.asp",
+    "actual_capture": "20011204201517",
+    "edition_label": "石器时代2.0",
+    "qualification": "OPERATOR_HOSTED_AUTHOR_UNATTRIBUTED_DOCUMENTARY_ROW",
+    "body_bytes_already_in_R29": true,
+    "body_same_SHA_as_prior_R29": true,
+    "prior_full_core_utf8_bytes": 2481,
+    "prior_full_core_sha256": "8a6a792cc2e30d956849d0aea0e440cd7b5869ef33dc41901d08c3f6a65c5f98",
+    "prior_structured_skill_rows": [
+      "加工",
+      "料理"
+    ],
+    "earliest_capture_exhaustively_searched": false,
+    "first_publication_date": null,
+    "exact_game_build": null
+  },
+  "comparison_to_existing_R56_only_not_reacquired_portal_HTML": {
+    "dated_2004_guide_row_as_previously_stored": {
+      "source_id": "S1",
+      "row_index": 7,
+      "name_as_page": "猛毒攻击",
+      "effect_as_page": "攻击力扣30%,敌人三回合中毒损血",
+      "trainer_location_as_page": "霍特村",
+      "listed_price": 4400,
+      "original_skill_id": null,
+      "source_client_build": null,
+      "source_execution_verified": false
+    },
+    "undated_compilation_row_as_previously_stored": {
+      "source_id": "S2",
+      "selected_row": 1,
+      "name_as_page": "猛毒攻击",
+      "effect_as_page": "攻击力降低50%，造成敌方5回合中毒状态",
+      "listed_price": 4000,
+      "trainer_location_as_page": "SBC",
+      "confirmed_same_exact_version_as_S1": false,
+      "original_skill_id": null
+    },
+    "same_numeric_claims_and_normalized_description_as_undated_row": true,
+    "independent_authorship_or_rule_witnesses_authenticated": false,
+    "chronology_proves_balance_patch": false,
+    "old_conflict_is_resolved": false,
+    "undated_S2_publication_date_inherited_from_S0": null,
+    "R56_raw_HTTP_was_acquired_this_unit": false
+  },
+  "novelty": {
+    "new_webpages_discovered": 0,
+    "new_skill_names": 0,
+    "new_dated_row_attribution_contracts": 1,
+    "new_training_predicates": 0,
+    "previous_page_recounted_as_new_source": false
+  },
+  "material_limits": {
+    "price_role": "SKILL_PRICE_COLUMN_NOT_VERIFIED_DEBIT_OR_COMBAT_MP_COST",
+    "attack_percentage_role": "SOURCE_SAYS_ATTACK_STRENGTH_REDUCTION_NOT_PROVEN_DAMAGE_TICK_FORMULA",
+    "per_turn_poison_damage": null,
+    "training_location_not_filled_from_S2": true,
+    "all_pet_species_eligibility": null,
+    "slot_requirement": null,
+    "same_skill_ID_or_R45_callback": null,
+    "R45_COST_or_ILLEGAL_fields_reinterpreted": false
+  },
+  "catalog_record": {
+    "record_id": "cn20-20011204:scene38:poison-row",
+    "entity_type": "DATED_DOCUMENTARY_PET_SKILL_ROW",
+    "collection": "skills",
+    "version_profile": "CN_WAEI_20_PAGE_CAPTURE_20011204_NOT_AUTHENTICATED_CLIENT_BUILD",
+    "source_refs": [
+      "http://www.waei.com.cn/ZHUANQU/stoneage2/pet/skill.asp@20011204201517"
+    ],
+    "verification_status": "OPERATOR_HOSTED_DESCRIPTION_NOT_NATIVE_EXECUTION",
+    "rights_status": "DERIVED_RESEARCH_METADATA_ONLY_NOT_RELEASE_APPROVED",
+    "record_revision": 1,
+    "native_ID": null
+  },
+  "unproven": {
+    "operator_authorship_authenticated": false,
+    "source_price_currency_known": false,
+    "price_verified_as_training_debit": false,
+    "price_verified_as_combat_MP_cost": false,
+    "training_NPC_or_location_authenticated": false,
+    "species_eligibility_recovered": false,
+    "damage_tick_formula_recovered": false,
+    "same_skill_ID_across_sources": false,
+    "balance_patch_history_recovered": false,
+    "S2_date_authenticated": false,
+    "same_build_as_TW10_or_JSS1999": false,
+    "original_client_executed": false,
+    "original_server_executed": false,
+    "original_world_entered": false,
+    "original_HTML_images_or_programs_in_Git": false,
+    "new_game_design_adopted": false
+  },
+  "overall_percent": null
+}
