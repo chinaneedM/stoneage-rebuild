@@ -1,0 +1,289 @@
+{
+  "schema": "stoneage.scene37.newbie_quest_player_source.r1",
+  "scope": "ONE_PLAYER_DOCUMENTED_NEWBIE_COURIER_QUEST_CHAIN_NOT_ORIGINAL_GAME_EXECUTION",
+  "prior_materials": [
+    {
+      "path": "research/recovered/STONEAGE-ADULT-CEREMONY-CI-DERIVED-R1.json",
+      "bytes": 6978,
+      "sha256": "27403615ac8f4f826db6926fb6c2fb9a60608fcc5dfd4c4d2a3d585ddd613b8b"
+    },
+    {
+      "path": "research/recovered/STONEAGE-ADULT-QUEST-ORIGIN-QUALIFICATION-R117.json",
+      "bytes": 6767,
+      "sha256": "64b7737fa8c4ecab10fe82bf6b463c93654fe3c7348d6a7977763edd9e8429d0"
+    },
+    {
+      "path": "research/recovered/STONEAGE-CN-KATAN-QUEST-SOURCE-CONFLICTS-R98.json",
+      "bytes": 7341,
+      "sha256": "551a397d3a339d6444b03f7121e02bf47aef15ae1071f042f6ef04ca737d0eef"
+    },
+    {
+      "path": "research/recovered/STONEAGE-EARLY-CONTENT-GUIDE-MANUAL-R1.json",
+      "bytes": 6911,
+      "sha256": "02c854ace5ff8364fc141dc4ee58e6c518b91af126b89b8c0ee2d4b112c9ae5b"
+    },
+    {
+      "path": "research/recovered/STONEAGE-WAEI-CN20-PUBLIC-FACILITIES-R1.json",
+      "bytes": 26065,
+      "sha256": "49e48c23b2fc97f5ac64b03ce0b4f2848d04fe722005c5392e778941b33e887b"
+    },
+    {
+      "path": "research/recovered/STONEAGE-WAYI2003-NEWBIE-RIDING-PLAN-R1.json",
+      "bytes": 11911,
+      "sha256": "b23c0220c58840ddb14ee9eea835687924cc16b42afe091af127f67472580fcd"
+    },
+    {
+      "path": "research/recovered/STONEAGE-WAYI2003-RIDING-SUCCESSOR-ORE-WORK-R1.json",
+      "bytes": 7384,
+      "sha256": "d2c18a33dd56c5aa5ba886ec591b619b3e6b32fcb67385db1e09db8b900b9125"
+    },
+    {
+      "path": "research/recovered/STONEAGE-SCENE36-RIDING-IMAGE-REFERENCE-R1.json",
+      "bytes": 5772,
+      "sha256": "808f5d71f629b82dd98b97fb594d69e18fe62093b25ced78c44573fabe978b74"
+    }
+  ],
+  "sources": [
+    {
+      "key": "player2004",
+      "requested": "https://news.17173.com/z/stoneage/content/2004-9-21/n78_994850.html",
+      "resolved": "https://news.17173.com/z/stoneage/content/2004-9-21/n78_994850.html",
+      "status": 200,
+      "content_type": "text/html;charset=UTF-8",
+      "bytes": 46088,
+      "sha256": "fb9ab26975f724be5b67d46d0ead256aaf09c10a7e761a33a70a1724eab03e2c"
+    },
+    {
+      "key": "player2006",
+      "requested": "https://news.17173.com/z/stoneage/content/2006-05-12/1147416247.shtml",
+      "resolved": "https://news.17173.com/z/stoneage/content/2006-05-12/1147416247.shtml",
+      "status": 200,
+      "content_type": "text/html;charset=UTF-8",
+      "bytes": 52365,
+      "sha256": "3e3b6ffff43ef751ade01791146a119c6a39be6f20921f009d12574d2b77cddd"
+    }
+  ],
+  "source_projection": {
+    "player2004": {
+      "heading_as_written": "手骑宠跳级任务",
+      "condition_as_written": "任务条件:30级以下新人",
+      "selected_raw_sha256": "e44630798956e864752c8cb76219b41ef53119e663000c29ccfc19d3a6ccf677",
+      "table_rows": 12,
+      "table_columns": 4,
+      "normalized_step_sha256": [
+        "926e10909c038517ad32a16597d535bd3be571d9a7cb0623d877a7aef7577e33",
+        "5f7305ce71334e9c6996dd47c3a1381099db5be8dd997bcb672f62e446af2bb2",
+        "fb6785acbde711f7963cbf110a66b382862df25a540ac01d2751f46bd0a366b4",
+        "c0f108187850977688b952b8cd7bd422c988172291485e4a023482ed54dae166",
+        "4dbde52e45cd8f4fca68626f0453b4bdbb73cda2be7da2641e425fd1a94727eb",
+        "6dbe91751ea99b7bfa18999714ab93a18da3516571ded145a10f6674ead2d2b3",
+        "9d5e7f4dcf00b5e9366fbc812966d82fb6f6842cfdc171b3c57f489e8df9d51b",
+        "c770650b70afa1a8d31b60f22d7928f935c8c946766eb0c46a03e725791c71b6",
+        "0f75684d7d8153d65d571b6262eb140148a1f8e944f03daeb84ef7e5dee85fdf",
+        "dad20a57127406750cecc42fbab1f4386d3659f6a4c16f5218e20b07e5e3dfd0"
+      ],
+      "normalized_section_sha256": "5c60aa8ec8fb04d67f6341c5327ecde3c613495a8e7474dc4dd140ddce6f1f12",
+      "normalized_step_chars": [
+        44,
+        54,
+        57,
+        33,
+        37,
+        54,
+        44,
+        12,
+        59,
+        39
+      ],
+      "normalization": "NFKC_AND_WHITESPACE_ONLY_NOT_TEXT_REPAIR",
+      "original_publication_bytes_verified": false
+    },
+    "player2006": {
+      "condition_as_written": "任务条件:刚出生的1级人",
+      "identical_selected_section_occurrences": 2,
+      "normalized_step_sha256": [
+        "926e10909c038517ad32a16597d535bd3be571d9a7cb0623d877a7aef7577e33",
+        "5f7305ce71334e9c6996dd47c3a1381099db5be8dd997bcb672f62e446af2bb2",
+        "fb6785acbde711f7963cbf110a66b382862df25a540ac01d2751f46bd0a366b4",
+        "c0f108187850977688b952b8cd7bd422c988172291485e4a023482ed54dae166",
+        "4dbde52e45cd8f4fca68626f0453b4bdbb73cda2be7da2641e425fd1a94727eb",
+        "6dbe91751ea99b7bfa18999714ab93a18da3516571ded145a10f6674ead2d2b3",
+        "9d5e7f4dcf00b5e9366fbc812966d82fb6f6842cfdc171b3c57f489e8df9d51b",
+        "c770650b70afa1a8d31b60f22d7928f935c8c946766eb0c46a03e725791c71b6",
+        "1ef7b80ded9f42adfad20cc295098d8f3c762b8cf98b97993f89ffb6cc7b8c76",
+        "dad20a57127406750cecc42fbab1f4386d3659f6a4c16f5218e20b07e5e3dfd0"
+      ],
+      "normalized_section_sha256": "1d0732d1f693ae00c4618dd1b5458e81a1223982a1c5884d6cee3f0a560c4730",
+      "normalized_step_chars": [
+        44,
+        54,
+        57,
+        33,
+        37,
+        54,
+        44,
+        12,
+        73,
+        39
+      ],
+      "normalization": "NFKC_AND_WHITESPACE_ONLY_NOT_TEXT_REPAIR",
+      "original_publication_bytes_verified": false
+    },
+    "equal_numbered_steps_after_declared_normalization": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      10
+    ],
+    "two_independent_runtime_witnesses": false
+  },
+  "attribution": {
+    "player2004": {
+      "title": "新增一些任务的攻略",
+      "byline": "疾风精灵〈武汉1〉",
+      "display_date": "2004-09-21",
+      "game_region_build": "NOT_AUTHENTICATED_BY_BYLINE_OR_URL",
+      "source_class": "MIGRATED_NAMED_PLAYER_SUBMISSION"
+    },
+    "player2006": {
+      "title": "8.0经验心得(更新)",
+      "byline": "神之舞-狼狼",
+      "display_date": "2006-05-12",
+      "game_region_build": "8.0_ARTICLE_LABEL_NOT_AUTHENTICATED_BUILD",
+      "source_class": "MIGRATED_NAMED_PLAYER_SUBMISSION"
+    }
+  },
+  "quest": {
+    "editorial_label": "新手骑宠跳级任务",
+    "source_heading_2004_as_written": "手骑宠跳级任务",
+    "editorial_label_is_original_heading": false,
+    "origin_class": "ORIGIN_UNRESOLVED",
+    "reported_level_targets": [
+      10,
+      20,
+      31
+    ],
+    "server_XP_amounts": null,
+    "native_NPC_item_quest_ids": null,
+    "flow": [
+      {
+        "stage": "RUBY_DELIVERY",
+        "from": "萨村长毛象货运店员",
+        "to": "鱼村长毛象货运老板",
+        "source_item_label": "红宝石",
+        "reported_level_target": 10
+      },
+      {
+        "stage": "COOK_AND_RETURN",
+        "from": "鱼村长毛象货运店员",
+        "to": "萨村长毛象货运老板",
+        "source_item_label": "樱桃酱汁牛排",
+        "recipe_tokens_as_written": [
+          "肉3",
+          "樱桃3",
+          "炭3"
+        ],
+        "recipe_numbers_are_quantities_or_grades": null,
+        "reported_level_target": 20
+      },
+      {
+        "stage": "SHOW_LEVEL_ONE_PET",
+        "requested_near": "霍特尔村",
+        "source_pet_label": "布依",
+        "pet_level_as_written": 1,
+        "pet_retained_according_to_players": true,
+        "pet_consumption_runtime_verified": false,
+        "reported_level_target": 31
+      },
+      {
+        "stage": "ADULTHOOD_THEN_MANOR_TRAINER",
+        "prerequisite_label": "成人仪式",
+        "source_reward_example": "新手的格鲁西斯",
+        "reward_example_is_exhaustive_list": false,
+        "once_only_scope_character_or_account": null,
+        "reported_weakness": "APPROXIMATELY_HALF_WILD_UNSPECIFIED_STATS_NOT_A_FORMULA"
+      }
+    ],
+    "qualification_disagreement": {
+      "2004": "30级以下新人",
+      "2006_beginning": "刚出生的1级人",
+      "2006_step10": "30级以下新手",
+      "level30_inclusive": null,
+      "resolved": false
+    },
+    "official_plan_relation": "QUALITATIVE_SIMILARITY_ONLY_NOT_SAME_REGION_BUILD_OR_DEPLOYMENT_BRIDGE"
+  },
+  "novelty": {
+    "new_documentary_quest_chains": 1,
+    "new_source_pages": 2,
+    "independent_server_witnesses": 0,
+    "old_official_plan_recounted_as_new": false,
+    "same_chain_2006_internal_occurrences": 2,
+    "extra_2006_personal_try_sentence_authenticates_server_transaction": false
+  },
+  "catalog_record": {
+    "record_id": "scene37:player-newbie-courier-chain",
+    "entity_type": "DOCUMENTARY_PLAYER_QUEST_CHAIN",
+    "collection": "quests",
+    "version_profile": "CN_LANGUAGE_17173_2004_2006_MIGRATED_PLAYER_GUIDES_EXACT_BUILD_UNKNOWN",
+    "source_refs": [
+      "player2004",
+      "player2006"
+    ],
+    "verification_status": "PLAYER_DESCRIBED_NOT_OFFICIAL_OR_RUNTIME_VERIFIED",
+    "rights_status": "DERIVED_RESEARCH_METADATA_ONLY",
+    "record_revision": 1
+  },
+  "unproven": {
+    "original_publication_bytes_verified": false,
+    "operator_authorship_authenticated": false,
+    "independent_rule_witnesses": false,
+    "same_build_as_Wayi_plan": false,
+    "official_plan_deployment_proven": false,
+    "quest_is_base_game": false,
+    "quest_is_permanent_version_task": false,
+    "quest_is_operator_event": false,
+    "recipe_number_semantics_verified": false,
+    "level_targets_are_XP_amounts": false,
+    "pet_name_is_native_species_ID": false,
+    "once_only_account_scope_proven": false,
+    "raw_HTML_or_assets_in_Git": false,
+    "original_server_executed": false,
+    "original_client_executed": false,
+    "original_world_entered": false,
+    "stage_b_started": false
+  },
+  "overall_percent": null,
+  "bounded_availability_requests": [
+    {
+      "key": "player2004",
+      "requested": "https://archive.org/wayback/available?url=http%3A%2F%2Fwww.17173.com%2Fz%2Fstoneage%2Fcontent%2F2004-9-21%2Fn78_994850.html&timestamp=20041231",
+      "status": 200,
+      "bytes": 127,
+      "sha256": "09382bd87056f36476e4a3679d7cb59acd341b8e22a8dfd13353d2c694b65b25",
+      "availability_response": {
+        "url": "http://www.17173.com/z/stoneage/content/2004-9-21/n78_994850.html",
+        "archived_snapshots": {},
+        "timestamp": "20041231"
+      }
+    },
+    {
+      "key": "player2006",
+      "requested": "https://archive.org/wayback/available?url=http%3A%2F%2Fwww.17173.com%2Fz%2Fstoneage%2Fcontent%2F2006-05-12%2F1147416247.shtml&timestamp=20061231",
+      "status": 200,
+      "bytes": 129,
+      "sha256": "af51c0c572f611781e2d458eb13df2346ec8ae83717224271472cb6553c90ae2",
+      "availability_response": {
+        "url": "http://www.17173.com/z/stoneage/content/2006-05-12/1147416247.shtml",
+        "archived_snapshots": {},
+        "timestamp": "20061231"
+      }
+    }
+  ],
+  "availability_empty_is_archive_absence_proof": false
+}
