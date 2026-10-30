@@ -1,0 +1,30 @@
+name: Verify StoneAge O8 original source shop crop and exact tile seam
+on:
+  push:
+    paths:
+      - '.github/workflows/verify-stoneage-o8-shop-crop.yml'
+      - 'tools/stoneage_o8_source_contract.py'
+      - 'tests/test_stoneage_o8_source_contract.py'
+      - 'research/recovered/STONEAGE-O8-ORIGINAL-SHOP-CROP-ACCEPTANCE-R1.json'
+  pull_request:
+    paths:
+      - '.github/workflows/verify-stoneage-o8-shop-crop.yml'
+      - 'tools/stoneage_o8_source_contract.py'
+      - 'tests/test_stoneage_o8_source_contract.py'
+      - 'research/recovered/STONEAGE-O8-ORIGINAL-SHOP-CROP-ACCEPTANCE-R1.json'
+  workflow_dispatch:
+jobs:
+  derived-original-source-contract-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Refuse false TW1 map, old-game runtime, spurious shop collision and inferred NPC trade
+        run: |
+          python -m unittest tests.test_stoneage_o8_source_contract -v
+          python -m tools.stoneage_o8_source_contract
