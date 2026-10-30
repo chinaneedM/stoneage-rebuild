@@ -1,0 +1,35 @@
+name: Verify SCENE38 dated poison row attribution and price boundaries
+on:
+  push:
+    paths:
+      - tools/stoneage_scene38_poison_source.py
+      - tests/test_stoneage_scene38_poison_source.py
+      - research/recovered/STONEAGE-SCENE38-*
+      - .github/workflows/verify-stoneage-scene38-poison-source.yml
+  pull_request:
+    paths:
+      - tools/stoneage_scene38_poison_source.py
+      - tests/test_stoneage_scene38_poison_source.py
+      - research/recovered/STONEAGE-SCENE38-*
+      - .github/workflows/verify-stoneage-scene38-poison-source.yml
+permissions:
+  contents: read
+jobs:
+  documentary-source-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: One dated row, no new page or runtime promotion
+        run: |
+          python3 -m tools.stoneage_scene38_poison_source
+          python3 -m unittest tests.test_stoneage_scene38_poison_source -v
+      - name: Independently re-read exact preserved entry and skill page
+        if: github.event_name == 'pull_request'
+        run: python3 -m tools.stoneage_scene38_poison_source --replay-live --output scene38-source-replay.json
+      - uses: actions/upload-artifact@v4
+        if: github.event_name == 'pull_request'
+        with:
+          name: scene38-derived-source-replay
+          path: scene38-source-replay.json
+          retention-days: 14
