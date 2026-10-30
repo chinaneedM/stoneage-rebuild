@@ -21,3 +21,13 @@
 到此停止该文剩余任务、跨稿扩大检索和骑宠／奖励helper。重开条件见合同；未取原字段不阻挡轮换其他有实源的可感知内容。
 
 **最高下一 `SCENE38-PET-SKILL-MATERIAL-DELTA-REVIEW`**：回22域第13域，先读既有CN2004具名训练师／技能、JSS手册与宠物学技文献／后代费用模型，查重已有名称、等级、费用、资格与替换规则。只选一条有新来源的具体技能或训练服务条件，优先同期官方；玩家稿明确标级，不把后期费用或同名技能填回TW1。交付一份具名内容增量或具体缺源止点后轮换，不扩全技能脚本／驱动／原件传递helper。若出现实际可用私有输入能力，先重新评估原程序启动阻塞，不能凭新计划声称已进入世界。
+
+## 实际GitHub后验及源工件永久保管
+
+[PR #52](https://github.com/chinaneedM/stoneage-rebuild/pull/52)候选`e890a1e6951fca90db252f81d5ac431c1f48db5b`的12项Actions全部completed/success；临时合并`e56097391a5ec7c9cd0a3e69ffad551c8d211b6c`及实际合并`5ed3986521fca472143beffb1a8531464ce9e404`均tree=`722ece688f008766b5b2f3c649f41cf6f251cf9e`，与本地核验tree同一，合并前main新鲜检查未变。实际合并后11项主线Actions也全部success。
+
+源PR run41039453306/job124008346073日志见28tests成功及两当前页真实读取，artifact12969811770下载ZIP1512B，SHA `d7e02624c0f2bcb2d2c8fa3882a06004b2ca38f2b3e67a84f5cfd9656e3b6d5f`与API摘要一致；唯一内部JSON3822B／SHA `5ddd491d2be62db4ddc7632644f3e791727818f5e44194c3bea6453367dd1eb4`经ZIP CRC、限定段语义及两页全SHA复核，均与本地同一。永久归档原派生JSON为`STONEAGE-SCENE37-PR-SOURCE-REPLAY-R1.json`，Git blob `cb368e6a754086a3af0c2dc373b943928b3bca8b`，不包含原HTML或完整任务文案。
+
+主线专用run41039621824/job124008917340实际28tests通过，网络步骤按push设计跳过，不能冒称主线再取两页。另一个本地正则转置／独立标签提取与HTMLParser核同12行及两重复段。本轮工具清单没有工作流dispatch／私有输入接口，原程序传递阻塞无新能力可重开；这不是断言其他环境永远不能启动。
+
+完整23项run、七文件身份、源工件ZIP／raw／Git及证据边界见`STONEAGE-SCENE37-PUBLICATION-R1.json`。收据提交自己的后续CI不在此提前认定；NEXT38不变。
