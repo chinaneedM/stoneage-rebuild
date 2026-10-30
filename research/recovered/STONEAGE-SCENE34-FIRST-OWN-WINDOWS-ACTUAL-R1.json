@@ -1,0 +1,176 @@
+{
+  "schema": "stoneage.scene34.own_windows_prerequisite.r1",
+  "scope": "OWN_X86_TWO_PROCESS_TCP_IPV4_LOOPBACK_AND_ONE_EXTERNAL_CANARY",
+  "input_probe_sha256": "d44675bbcfcc9a30b7dbd6a4a759bc20f244f804e846b0ea93b0533f15f64ab4",
+  "pointer_bytes": 4,
+  "own_probe_compiled_x86": true,
+  "source_sha256": {
+    "tools/stoneage_scene34_loopback.c": "53d9173276308bc3320289bcf1eea3074dc03ef48a64880dc11878c0edc8a883",
+    "tools/stoneage_scene34_windows_gate.py": "c050a8e938011cc6a3c5d378f49401755e2769aae3fbd06dd284abd72f1c4e35",
+    "tools/stoneage_p3h_native.py": "2a7d40872f7ec628be0bce0338b3e5bdc77ef66717e77f4002c4eb69370a244b"
+  },
+  "runner_image": "20261021.278.1",
+  "source_action_run_id": "41002704873",
+  "execution_HEAD": "1e1976a425d3921c1b63cabd19684f1508197f8f",
+  "error": "ValueError: blocked external canary",
+  "historical_programs_executed": false,
+  "original_inputs_received_in_Windows": false,
+  "original_server_boot_attempted": false,
+  "SAAC_GMSV_handshake_observed": false,
+  "original_world_entered": false,
+  "client_executed": false,
+  "account_entered": false,
+  "private_source_transport_available": false,
+  "original_execution_admitted": false,
+  "all_network_paths_experimentally_tested": false,
+  "external_canary": {
+    "host": "api.github.com",
+    "IPv4": "140.82.113.5",
+    "port": 443
+  },
+  "canary_before": {
+    "connected": true,
+    "wsa_error": 0,
+    "echo_exact": false,
+    "pid": 7728
+  },
+  "loopback_before": {
+    "server_pid": 6236,
+    "client_pid": 6660,
+    "ready": {
+      "ready": true,
+      "bind_address": "127.0.0.1",
+      "port": 19200,
+      "pid": 6236,
+      "pointer_bytes": 4
+    },
+    "server_exit": 0,
+    "client_exit": 0,
+    "server": {
+      "connected": true,
+      "wsa_error": 0,
+      "echo_exact": true,
+      "pid": 6236
+    },
+    "client": {
+      "connected": true,
+      "wsa_error": 0,
+      "echo_exact": true,
+      "pid": 6660
+    },
+    "jobs": [
+      {
+        "limit_flags": 8200,
+        "active_process_limit": 1,
+        "created_suspended": true,
+        "assigned_before_resume": true
+      },
+      {
+        "limit_flags": 8200,
+        "active_process_limit": 1,
+        "created_suspended": true,
+        "assigned_before_resume": true
+      }
+    ],
+    "image_identity_verified": true
+  },
+  "hold_cleanup_observed": true,
+  "isolation": {
+    "watchdog": {
+      "registered": true,
+      "user": "SYSTEM"
+    },
+    "profiles": [
+      {
+        "Name": "Domain",
+        "Enabled": 1
+      },
+      {
+        "Name": "Private",
+        "Enabled": 1
+      },
+      {
+        "Name": "Public",
+        "Enabled": 1
+      }
+    ],
+    "rules": [
+      {
+        "name": "StoneAgeSCENE34Outbound",
+        "direction": "Outbound",
+        "action": "Block",
+        "enabled": "True",
+        "profile": "Any",
+        "program": "Any",
+        "protocol": "Any"
+      },
+      {
+        "name": "StoneAgeSCENE34Inbound",
+        "direction": "Inbound",
+        "action": "Block",
+        "enabled": "True",
+        "profile": "Any",
+        "program": "Any",
+        "protocol": "Any"
+      }
+    ]
+  },
+  "canary_blocked_before": {
+    "connected": false,
+    "wsa_error": 10060,
+    "echo_exact": false,
+    "pid": 5000
+  },
+  "jobs_closed_before_network_restore": true,
+  "cleanup": {
+    "remaining": 0
+  },
+  "canary_after": {
+    "connected": true,
+    "wsa_error": 0,
+    "echo_exact": false,
+    "pid": 6248
+  },
+  "loopback_after": {
+    "server_pid": 9352,
+    "client_pid": 4144,
+    "ready": {
+      "ready": true,
+      "bind_address": "127.0.0.1",
+      "port": 19200,
+      "pid": 9352,
+      "pointer_bytes": 4
+    },
+    "server_exit": 0,
+    "client_exit": 0,
+    "server": {
+      "connected": true,
+      "wsa_error": 0,
+      "echo_exact": true,
+      "pid": 9352
+    },
+    "client": {
+      "connected": true,
+      "wsa_error": 0,
+      "echo_exact": true,
+      "pid": 4144
+    },
+    "jobs": [
+      {
+        "limit_flags": 8200,
+        "active_process_limit": 1,
+        "created_suspended": true,
+        "assigned_before_resume": true
+      },
+      {
+        "limit_flags": 8200,
+        "active_process_limit": 1,
+        "created_suspended": true,
+        "assigned_before_resume": true
+      }
+    ],
+    "image_identity_verified": true
+  },
+  "finite_tcp_ipv4_gate_passed": false,
+  "stop": "ISOLATION_QUALIFICATION_FAILED"
+}

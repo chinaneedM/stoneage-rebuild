@@ -938,3 +938,8 @@ ranges, not a new whole-client download or arbitrary program reverse engineering
 ### 2026-10-30 — SCENE33：已有客户端／SAAC／GMSV静态配对资格
 
 [原件、依赖、缺件与下一最小启动试验](docs/continuity/STONEAGE-SCENE33-WORLD-ENTRY-SOURCE-PAIR-20261030.md)：复用已保管mixed25父RAR，八目标原件5240403B逐SHA与旧清单相同；两服务端认证端口9200及认证值相合，五PE的有序DLL导入与独立objdump核同。程序／原配置／认证值未入公开Git，也未执行历史程序。说明2009日期、配置8.0及既有C/MIXED-MODIFIED客户端限定版本；三个空配置值、lockip缺引用、SQL后端和客户端本地路由仍OPEN。25项检查通过；原世界未进入。最高下一SCENE34先证明隔离环境回环／对外阻断，再仅限SAAC→GMSV启动和真实错误观测，不启动固定公网客户端，不扩驱动或补库链。CURRENT/Stage A/B/wiki/R79/总体未知保持，Actions按后验记录。
+
+
+### 2026-10-30 — SCENE34：自编Windows回环实测通过，原服务端启动仍缺私有输入通道
+
+[真实两次观察、失败保留与下一内容包](docs/continuity/STONEAGE-SCENE34-ISOLATED-BOOT-PREREQUISITES-20261030.md)：一次性Windows2025中，自编32位两进程在入/出站Block规则期间完成8字节回环；两次外部TCP canary为10013，清理后外部与回环恢复。首次10060不合格现场原样保留；修正Winsock异常就绪处理后独立重跑，实测规则中仅1.75秒，不冒称120秒。两原报告及ZIP来源摘要永久入Git。当前无私有原件传入runner的接口，因此SAAC/GMSV/客户端执行0、原握手/世界未建立，原boot仍BLOCKED。29新+25回归检查通过，最终CI按后验。按两包前提研究止点回22域，下一SCENE35先与已审遇敌链和WORLD01路线去重，仅交付有原文增量的一张modified包遇敌内容卡，不再扩隔离/传递/驱动helper。CURRENT/Stage A/B/wiki/R79/总体未知保持。

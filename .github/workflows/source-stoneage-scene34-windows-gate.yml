@@ -1,0 +1,46 @@
+name: Observe SCENE34 own Windows loopback and external block prerequisites
+on:
+  push:
+    branches: [agent/scene34-isolated-server-boot-20261030]
+    paths:
+      - tools/stoneage_scene34_loopback.c
+      - tools/stoneage_scene34_windows_gate.py
+      - .github/workflows/source-stoneage-scene34-windows-gate.yml
+permissions:
+  contents: read
+jobs:
+  own-programs-only:
+    runs-on: windows-2025
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: Keep exact own Python/C and reused Job helper bytes
+        shell: cmd
+        run: python -c "import subprocess;from pathlib import Path;ps=['tools/stoneage_scene34_loopback.c','tools/stoneage_scene34_windows_gate.py','tools/stoneage_p3h_native.py'];[Path(p).write_bytes(subprocess.check_output(['git','show','HEAD:'+p])) for p in ps]"
+      - uses: ilammy/msvc-dev-cmd@v1
+        with:
+          arch: x86
+      - name: Compile only our own x86 TCP prerequisite probe
+        shell: cmd
+        run: cl /nologo /std:c11 /W4 /O2 /Fe:"%RUNNER_TEMP%\scene34-own.exe" tools\stoneage_scene34_loopback.c ws2_32.lib /link /SUBSYSTEM:CONSOLE /MANIFEST:NO
+      - name: Observe finite two-process loopback during inbound/outbound block; no original inputs
+        shell: pwsh
+        run: python -m tools.stoneage_scene34_windows_gate --probe "$env:RUNNER_TEMP/scene34-own.exe" --work "$env:RUNNER_TEMP/scene34-own" --output "$env:RUNNER_TEMP/scene34-derived/source-report.json"
+      - name: Always remove only task-owned rules, task and own files
+        if: always()
+        shell: pwsh
+        run: |
+          Get-CimInstance Win32_Process | Where-Object { $_.ExecutablePath -eq "$env:RUNNER_TEMP\scene34-own.exe" } | ForEach-Object {Stop-Process -Id $_.ProcessId -Force -ErrorAction SilentlyContinue}
+          Remove-NetFirewallRule -Name StoneAgeSCENE34Outbound,StoneAgeSCENE34Inbound -ErrorAction SilentlyContinue
+          Unregister-ScheduledTask -TaskName StoneAgeSCENE34Restore -Confirm:$false -ErrorAction SilentlyContinue
+          Remove-Item -Recurse -Force "$env:RUNNER_TEMP/scene34-own" -ErrorAction SilentlyContinue
+          Remove-Item -Force "$env:RUNNER_TEMP/scene34-own.exe",stoneage_scene34_loopback.obj -ErrorAction SilentlyContinue
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: scene34-own-prerequisite-observation
+          path: ${{ runner.temp }}/scene34-derived/source-report.json
+          if-no-files-found: error
+          retention-days: 7
