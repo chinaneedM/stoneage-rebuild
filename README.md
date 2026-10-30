@@ -975,3 +975,7 @@ ranges, not a new whole-client download or arbitrary program reverse engineering
 ### 2026-10-30 — SCENE41：2001标签玩家稿的11条BGM名字与TW1原音源核同
 
 [SCENE41来源范围、实际音频字节身份与历史差异](docs/continuity/STONEAGE-SCENE41-AUDIO-PLAYER-FAQ-20261030.md)：17173玩家问答当前原UTF-8 HTML **50771B**／SHA `3c9af2d5456e52b184580ffa05b7039b7473bac475b32bace3b17caf810a63de`；页面标2001-06-14但无当年原始网页字节证明。11个`sabgm_*`名称/玩家用途标签准确对应原TW1 11份散装BGM文件名，新增原音源0、同版事件实参/世界执行0。2004玩家资料同名音轨用途有冲突，仅作为下一次原字节取证线索。首次编码/正则失败均保留，正确源CI/可重放派生JSON永久归档，原HTML/声音不公开。下一转第19域具名经典辅助工具版本能力，Stage A/B/wiki/R79/原boot及percent=null不变。
+
+### 2026-10-30 — SCENE42：新浪早期辅助工具四行与八原下载href
+
+[版本来源、原表、真实验收及边界](docs/continuity/STONEAGE-SCENE42-HELPER-LIST-20261030.md)：重读旧已归档的2003署期新浪5.0下载页**新增表级资料**：`SACHXP++5042`/`SACHMX5.00B8`/`SACHMX5.00FREEB1`/小明蓝暴自动猜谜器四行、每行各历史FTP+HTTP两href。原页69464B/SHA`812b32be4c9e9df45b956826c5a2a566d644ee8ef9acff5cfb69ab962a1b6a1d`已从网页原字节独立验证；4月3日署期与正文4月6日场次并列，**不据页签认软件发布日期**，不把新B8和旧R103的六月B9直接连成有证发布链。游戏本体/外挂实际运行0，原程序未下载。下一SCENE43转具名官方宠物图像；Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、percent null不变。

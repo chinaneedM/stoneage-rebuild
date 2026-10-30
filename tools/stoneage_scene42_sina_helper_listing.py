@@ -119,6 +119,8 @@ def main():
         must(FROZEN.exists()==True,"frozen result not present")
         d=json.loads(FROZEN.read_text(encoding="utf-8"))
         must(d["entry_count"]==4 and [e["archive_listing_label"] for e in d["entries"]]==list(NAMES),"frozen names altered")
+        must(len([u for e in d["entries"] for u in e["download_links_in_same_table_row"]])==8,"frozen eight real hrefs missing")
+        must(d["page_bytes"]==69464 and d["page_sha256"]=="812b32be4c9e9df45b956826c5a2a566d644ee8ef9acff5cfb69ab962a1b6a1d","frozen source identity drift")
         must(d["source_url_previously_in_repo"] and d["date_label_does_not_establish_exact_contemporary_page_snapshot"],"evidence boundary altered")
         must(d["sachmx_b8_and_june_b9_are_same_binary_verified"] is False and d["original_game_started"] is False,"unsupported upgrade")
         print("SCENE42 preserved names/source/boundary PASS; no network fetch")
