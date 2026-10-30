@@ -1,0 +1,22 @@
+name: Verify StoneAge O12 original compiled sound-number namespace (derived only)
+on:
+  push:
+    paths:
+      - 'tools/stoneage_o12_native_sound_namespace.py'
+      - 'tests/test_stoneage_o12_native_audio_namespace.py'
+      - 'research/recovered/STONEAGE-O12-NATIVE-SOUND-NAMESPACE-R1.json'
+      - '.github/workflows/verify-stoneage-o12-native-sound-namespace.yml'
+  pull_request:
+  workflow_dispatch:
+jobs:
+  verify-o12-native-compiled-audio-numbers:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate O12 exact native source-derived ID and filename boundaries
+        run: python -m tools.stoneage_o12_native_sound_namespace --verify
+      - name: Reject false gameplay selectors, wrong audio ID namespace and missing provenance
+        run: python -m unittest tests.test_stoneage_o12_native_audio_namespace -v
