@@ -1,0 +1,36 @@
+name: Source qualify SCENE43 two official CN20 pet image links
+on:
+  push:
+    paths:
+      - tools/stoneage_scene43_cn20_named_pet_images.py
+      - tests/test_stoneage_scene43_cn20_named_pet_images.py
+      - research/recovered/STONEAGE-SCENE43-*
+      - .github/workflows/verify-stoneage-scene43-pet-image.yml
+  pull_request:
+    paths:
+      - tools/stoneage_scene43_cn20_named_pet_images.py
+      - tests/test_stoneage_scene43_cn20_named_pet_images.py
+      - research/recovered/STONEAGE-SCENE43-*
+      - .github/workflows/verify-stoneage-scene43-pet-image.yml
+permissions:
+  contents: read
+jobs:
+  source-bound-two-jpegs:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m pip install --quiet Pillow
+      - name: Same original catalog exact name/image boundaries
+        run: |
+          python3 -m tools.stoneage_scene43_cn20_named_pet_images
+          python3 -m unittest tests.test_stoneage_scene43_cn20_named_pet_images -v
+      - name: Verify one 2001 original operator page and two precisely linked images
+        if: github.event_name == 'pull_request'
+        run: python3 -m tools.stoneage_scene43_cn20_named_pet_images --source-live --write scene43-derived-source.json
+      - uses: actions/upload-artifact@v4
+        if: github.event_name == 'pull_request'
+        with:
+          name: scene43-only-derived-pet-image-metadata
+          path: scene43-derived-source.json
+          retention-days: 14
