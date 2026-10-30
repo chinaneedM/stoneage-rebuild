@@ -1037,3 +1037,8 @@ ranges, not a new whole-client download or arbitrary program reverse engineering
 ### 2026-10-31 — O11：台湾1.0原SPR动画字段与两种声音索引候选
 
 [O11原源动画与声音的有限关联](docs/continuity/STONEAGE-O11-NATIVE-PET-FRAME-AUDIO-20261031.md)：从原TW1 SPR完整记录中取证三个数字组的24条动画/352原帧位置；对旧保存版208幅数字图重新用台湾1.0 ADRN/REAL源RD独立解码并逐RGBA同一。原帧末尾16-bit数值73/10000保留，73对应原声音地址表零基/一基两种**尚未确认的候选索引**，不称已经确认的宠物叫声、技能或事件；浏览器只是私人手动逐帧/手动试听，并不是旧客户端执行。208原图和两段原WAV仅私人Library保存，公开仓库只有来源派生数字、SHA、24项反例与Actions。原世界未进入，Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、percent=null。下一O12回22域寻找能够证明同版事件触发/实体名称的原始主表或编译调用路径，缺件有界停止。
+
+
+### 2026-10-31 — O12：同版原客户端编译声音编号与资源表不同
+
+[O12原原件声音编号静态取证](docs/continuity/STONEAGE-O12-NATIVE-SOUND-NAMESPACE-20261031.md)：认证TW1原`sa_3.exe`与`data/soundaddr_1.txt`实物，113个原EXE明文SFX、11 BGM、114地址表，102组编号→路径原机器指令三联+独立objdump同一；另11原文件路径使用其它赋值形式未补号。原编译期编号73→`sae_23.wav`，但声音地址表零基73→`sam_18.wav`／一基73→`sam_17.wav`。三个命名空间不等价，O11宠物帧字段73→真正播放编号/事件**仍未证**；源原件未运行、旧世界未进入，Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、总体percent=null。源字节仅私人，公开保留102完整派生地址/路径和22负例。下一O13回实体NPC/任务/技能有据材料，不无限扩静态声卡/音频解析。
