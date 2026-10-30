@@ -1,0 +1,33 @@
+name: Validate SCENE44 original-game screenshot index source boundaries
+on:
+  push:
+    paths:
+      - tools/stoneage_scene44_sina_screenshot_index.py
+      - tests/test_stoneage_scene44_sina_screenshot_index.py
+      - research/recovered/STONEAGE-SCENE44-*
+      - .github/workflows/verify-stoneage-scene44-screenshot-index.yml
+  pull_request:
+    paths:
+      - tools/stoneage_scene44_sina_screenshot_index.py
+      - tests/test_stoneage_scene44_sina_screenshot_index.py
+      - research/recovered/STONEAGE-SCENE44-*
+      - .github/workflows/verify-stoneage-scene44-screenshot-index.yml
+permissions:
+  contents: read
+jobs:
+  screenshot-source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify archive text and no game runtime promotion
+        run: python3 -m unittest tests.test_stoneage_scene44_sina_screenshot_index -v
+      - name: Request only original public screenshot index and preserve derived links
+        if: github.event_name == 'pull_request'
+        run: python3 -m tools.stoneage_scene44_sina_screenshot_index --source-live --write scene44-derived.json
+      - uses: actions/upload-artifact@v4
+        if: github.event_name == 'pull_request'
+        with:
+          name: scene44-screenshot-index-derived-only
+          path: scene44-derived.json
+          retention-days: 14
