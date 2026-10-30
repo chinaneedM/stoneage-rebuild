@@ -37,10 +37,10 @@ def safe_directories(original:Path,output:Path):
     require(SOURCE_VIEWER.is_file(),"existing modern offline observer missing")
     return src,dest
 
-def landing_html(sprite_no:int,direction:int,action:int,count:int)->str:
+def landing_html(sprite_no:int,direction:int,action:int,count:int,scene21:bool=False)->str:
     require(0<count<=MAX_FRAMES and 0<=sprite_no<=10000000 and 0<=direction<=32 and 0<=action<=256,
             "invalid finite original sprite source selection")
-    return ("""<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+    html = ("""<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'">
 <title>石器时代｜本机原客户端资源观察</title>
 <style>body{background:#152126;color:#e6eff1;font:16px/1.75 system-ui,"Microsoft YaHei",sans-serif;
@@ -63,9 +63,20 @@ border-radius:10px;margin:14px 0}small{color:#bacbd1}</style></head><body>
 <small>仅私人研究：非原游戏可操作世界。人工移动、背景网格及帧速不能推断原服务器规则；
 未证明游戏内调色板、实体ID、NPC/任务、碰撞或客户端实际选择器。原版权素材勿公开分发。</small>
 </body></html>""")
+    if scene21:
+        html=html.replace("</body>", """<section><h2>4. 已验后期地图原图观察（跨版限定）</h2>
+<p>后期mixed25地图1000.DAT、共前缀TW1图形字节；并非已认证TW1官方部署地图，
+也不是原版可操作世界。全量图块验证通过才会加入此入口。</p>
+<a href="scene-o2/index.html">打开有版本隔离的原图场景</a></section></body>""")
+    return html
 
-def emit_kit(original:Path,output:Path,spr_no:int,direction:int,action:int)->dict:
+def emit_kit(original:Path,output:Path,spr_no:int,direction:int,action:int,
+             scene21_private:Path|None=None)->dict:
     src,dest=safe_directories(original,output)
+    if scene21_private is not None:
+        from tools import stoneage_offline_original_map_o2 as map_o2
+        # Sources and destination must be disjoint, existing, and private.
+        map_o2.safe_directories(scene21_private,dest)
     require(isinstance(spr_no,int) and 0<=spr_no<=10000000 and 0<=direction<=32 and 0<=action<=256,
             "out-of-range original numeric selection")
     # The original parser validates four exact full-file hashes and real
@@ -76,7 +87,7 @@ def emit_kit(original:Path,output:Path,spr_no:int,direction:int,action:int)->dic
     frames=unpack(html,custody)
     require(len(frames)>0 and len(frames)<=MAX_FRAMES,"original animation yielded no bounded frames")
     # Compute plan and immutable provenance before writing anything.
-    landing=landing_html(spr_no,direction,action,len(frames))
+    landing=landing_html(spr_no,direction,action,len(frames),scene21_private is not None)
     viewer=SOURCE_VIEWER.read_bytes()
     require(b"default-src 'none'" in viewer and b"img-src blob:" in viewer,
             "local observation viewer network policy has changed")
@@ -101,10 +112,15 @@ def emit_kit(original:Path,output:Path,spr_no:int,direction:int,action:int)->dic
         "new_game_engine_selected":False,
         "original_copyright_content_committed_to_public_git":False,
         "research_offline_overlay_not_original_game":True,
-        "explicit_next":"PRIVATE_SINGLE_SOURCE_MAP_TILES_SCENE_COMPOSITION"
+        "optional_cross_version_original_map_scene":scene21_private is not None,
+        "official_TW1_map_deployment_authenticated":False,
+        "explicit_next":"PRIVATE_TW1_MAP_SOURCE_QUALIFICATION_IF_AVAILABLE"
     }
     (dest/"frames").mkdir()
     try:
+        if scene21_private is not None:
+            (dest/"scene-o2").mkdir()
+            receipt["cross_version_map_o2_receipt"]=map_o2.emit(scene21_private,dest/"scene-o2")
         export_private(dest/"frames",frames,custody)
         write_private(dest/"animation-original.html",html,custody)
         (dest/"modern-observation-viewer.html").write_bytes(viewer)
@@ -114,6 +130,7 @@ def emit_kit(original:Path,output:Path,spr_no:int,direction:int,action:int)->dic
     except BaseException:
         # This directory was required empty; remove only our own output on failure.
         shutil.rmtree(dest/"frames",ignore_errors=True)
+        shutil.rmtree(dest/"scene-o2",ignore_errors=True)
         for n in ("animation-original.html","animation-original.json",
                   "modern-observation-viewer.html","index.html","kit-receipt.json"):
             (dest/n).unlink(missing_ok=True)
@@ -127,8 +144,10 @@ def main():
     p.add_argument("--spr-no",type=int,default=100000)
     p.add_argument("--direction",type=int,default=0)
     p.add_argument("--action",type=int,default=6)
+    p.add_argument("--scene21-private-dir",type=Path,default=None,
+                   help="optional verified SCENE21 mixed25 private map; not a TW1 deployed map")
     a=p.parse_args()
-    report=emit_kit(a.original_dir,a.output_dir,a.spr_no,a.direction,a.action)
+    report=emit_kit(a.original_dir,a.output_dir,a.spr_no,a.direction,a.action,a.scene21_private_dir)
     print("PRIVATE_OFFLINE_ORIGINAL_RESOURCE_KIT_CREATED="+str(a.output_dir/"index.html"))
     print("SOURCE_VERIFIED_FRAMES="+str(report["derived_source_frame_positions"]))
     print("NO_HISTORICAL_SERVER_OR_ORIGINAL_GAME_WORLD_EXECUTION")

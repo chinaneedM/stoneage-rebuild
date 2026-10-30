@@ -4,14 +4,20 @@ on:
     paths:
       - tools/stoneage_singleplayer_observation_kit.py
       - tests/test_stoneage_singleplayer_observation_kit.py
+      - tools/stoneage_offline_original_map_o2.py
+      - tests/test_stoneage_offline_original_map_o2.py
       - .github/workflows/verify-stoneage-offline-asset-first-r1.yml
       - docs/continuity/STONEAGE-SINGLEPLAYER-ASSET-FIRST-20261030.md
+      - docs/continuity/STONEAGE-OFFLINE-MAP-O2-20261030.md
   pull_request:
     paths:
       - tools/stoneage_singleplayer_observation_kit.py
       - tests/test_stoneage_singleplayer_observation_kit.py
+      - tools/stoneage_offline_original_map_o2.py
+      - tests/test_stoneage_offline_original_map_o2.py
       - .github/workflows/verify-stoneage-offline-asset-first-r1.yml
       - docs/continuity/STONEAGE-SINGLEPLAYER-ASSET-FIRST-20261030.md
+      - docs/continuity/STONEAGE-OFFLINE-MAP-O2-20261030.md
 permissions:
   contents: read
 jobs:
@@ -20,7 +26,11 @@ jobs:
     timeout-minutes: 8
     steps:
       - uses: actions/checkout@v4
-      - name: Run source-preserving synthetic regression tests
-        run: python3 -m unittest tests.test_stoneage_singleplayer_observation_kit -v
+      - name: Install image decoder for bounded original-format negative gates
+        run: python3 -m pip install "Pillow>=10,<13"
+      - name: Run source-preserving synthetic regression tests and public O2 contract
+        run: python3 -m unittest tests.test_stoneage_singleplayer_observation_kit tests.test_stoneage_offline_original_map_o2 -v
+      - name: Recheck archived bounded source-derived map contract
+        run: python3 -m tools.stoneage_scene21_town1000
       - name: Recheck original pinned animation catalog without proprietary source bytes
         run: python3 -m tools.stoneage_original_animation_lab --check-report

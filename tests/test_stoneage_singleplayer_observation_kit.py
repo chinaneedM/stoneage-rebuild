@@ -79,4 +79,42 @@ class OfflineKit(unittest.TestCase):
         self.assertNotIn("subprocess",src)
         self.assertNotIn("socket.",src)
 
+    def test_optional_map_o2_version_isolation(self):
+        from tools import stoneage_offline_original_map_o2 as o2
+        html=kit.landing_html(100000,0,6,3,True)
+        self.assertIn("scene-o2/index.html",html)
+        self.assertIn("并非已认证TW1官方部署地图",html)
+        self.assertNotIn("scene-o2/index.html",kit.landing_html(100000,0,6,3))
+        with tempfile.TemporaryDirectory() as origin, tempfile.TemporaryDirectory() as target, tempfile.TemporaryDirectory() as scene:
+            def fake_export(folder,frames,c):
+                (folder/"frame-000.png").write_bytes(b"synthetic")
+            def fake_write(path,html,c):
+                path.write_text(html)
+                path.with_suffix(".json").write_text("{}")
+            with patch.object(kit,"timeline",return_value={}), \
+                 patch.object(kit,"preview",return_value=("<html>test</html>",{"original_files":{},"source_status":"TEST"})), \
+                 patch.object(kit,"unpack",return_value=[("frame-000.png",b"synthetic")]), \
+                 patch.object(kit,"export_private",side_effect=fake_export), \
+                 patch.object(kit,"write_private",side_effect=fake_write), \
+                 patch.object(o2,"safe_directories",return_value=(pathlib.Path(scene),pathlib.Path(target))), \
+                 patch.object(o2,"emit",return_value={"original_game_world_entered":False}) as actual_map:
+                result=kit.emit_kit(pathlib.Path(origin),pathlib.Path(target),100000,0,6,pathlib.Path(scene))
+            self.assertTrue(result["optional_cross_version_original_map_scene"])
+            self.assertFalse(result["official_TW1_map_deployment_authenticated"])
+            self.assertFalse(result["original_game_world_entered"])
+            self.assertEqual(result["cross_version_map_o2_receipt"]["original_game_world_entered"],False)
+            actual_map.assert_called_once()
+
+    def test_map_import_failure_cleans_partial_output(self):
+        from tools import stoneage_offline_original_map_o2 as o2
+        with tempfile.TemporaryDirectory() as origin, tempfile.TemporaryDirectory() as target, tempfile.TemporaryDirectory() as scene:
+            with patch.object(kit,"timeline",return_value={}), \
+                 patch.object(kit,"preview",return_value=("<html>test</html>",{"original_files":{},"source_status":"TEST"})), \
+                 patch.object(kit,"unpack",return_value=[("frame-000.png",b"synthetic")]), \
+                 patch.object(o2,"safe_directories",return_value=(pathlib.Path(scene),pathlib.Path(target))), \
+                 patch.object(o2,"emit",side_effect=ValueError("synthetic source authentication failure")):
+                with self.assertRaisesRegex(ValueError,"synthetic source authentication failure"):
+                    kit.emit_kit(pathlib.Path(origin),pathlib.Path(target),100000,0,6,pathlib.Path(scene))
+            self.assertEqual(list(pathlib.Path(target).iterdir()),[])
+
 if __name__=="__main__":unittest.main()
