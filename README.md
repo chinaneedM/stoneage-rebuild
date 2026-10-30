@@ -987,3 +987,8 @@ ranges, not a new whole-client download or arbitrary program reverse engineering
 ### 2026-10-30 — 用户确认单机原客户端素材优先（DD-OFFLINE-20261030）
 
 现阶段**不再将联网、原SAAC/GMSV启动或原服登录当作还原地图/人物/宠物的前提**；改以已认证原客户端文件及现有SPR/ADRN/RD解码器，先形成可看的离线私人原帧、再一张真实拼图地图与人物宠物动作。新增`tools/stoneage_singleplayer_observation_kit.py`和[详细实施次序](docs/continuity/STONEAGE-SINGLEPLAYER-ASSET-FIRST-20261030.md)，不内置商业素材、不需要网络。未来新《石器时代》保持简体、单机、可保留网游式玩法深度，但单机自用不是原商业美术/音乐的版权许可。SCENE44外部截图[PR#58](https://github.com/chinaneedM/stoneage-rebuild/pull/58)已按新方向关闭、留分支作旁证；下一优先`OFFLINE-CLIENT-SAME-SOURCE-MAP-SCENE-O2`。原世界未进入、Stage A7 PARTIAL+2OPEN、B/wiki GATED、R79暂停、overall_percent null保持。
+
+
+### 2026-10-30 — Offline original-pixel map O2 source gate (private)
+
+[O2 bounded map observation continuity](docs/continuity/STONEAGE-OFFLINE-MAP-O2-20261030.md): an optional privately sourced scene21 map observer is now available alongside the TW1 original-animation offline kit. It verifies a preserved **mixed25** `1000.DAT`, 56 original candidate RD images and eight source-pixel-complete composites before producing a private scene viewer; the verified TW1 graphical byte-prefix relation does **not** certify a Taiwan 1.0 world map or native runtime. No original assets in this public repo. Same-source official TW1 O2 verification, client world execution, historical collisions/NPC interactions and overall percent remain OPEN; all old CURRENT history is retained.
