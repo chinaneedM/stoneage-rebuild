@@ -1007,3 +1007,8 @@ ranges, not a new whole-client download or arbitrary program reverse engineering
 ### 2026-10-30 — O5：原室内地图与同保存版宠物数字帧的可操作观察
 
 [O5 真正同源原材与私人浏览器验收](docs/continuity/STONEAGE-O5-ORIGINAL-MAP-PET-SOURCE-JOIN-20261030.md)：独立从私人 Library 重取 O4 双场景与 SCENE13 动作0资料，两原保存版 1001.DAT SHA 一致、七个共同室内原 PNG 逐字节 SHA **7/7 相同**。在原 O4 离线研究页面追加**单独的源宠物数字帧栏**，mixed25 数字组100250/251/252 共24方向动画、352帧位置/208原PNG，Chromium 208实际解码与352逐位置操作成功；O4 双向1001↔1000/NPC原静态文档路线仍可操作，0网络与JS错误。私人研究包已保存至 Library；公开仅[派生验收收据](research/recovered/STONEAGE-O5-SAME-CARRIER-PET-PRIVATE-ACCEPTANCE-R1.json)、源-only验证与CI。**未证**官方物种名/实体绑定、台湾1.0地图同版部署、原游戏帧速/原生碰撞/原服世界；O4之前1,442,557像素独立比对没有冒称本轮重跑。下一有限核同源 entity→graphic/SPR 字节；没有原资料则止点回22域。Stage A7 PARTIAL+2 OPEN/B、wiki GATED/R79暂停/总体percent=null不变。
+
+
+### 2026-10-30 — O6：已验证原素材的私人引擎无关导出
+
+[O6 原图独立目录与范围](docs/continuity/STONEAGE-O6-PRIVATE-ENGINE-NEUTRAL-RESOURCE-PACK-20261030.md)：O5 已归档的私人原图被本轮真正读回并导为 **275 个 PNG + 4 个版本化 JSON/私人说明**：保存版1001的51原 tile/构件图及27次源位置，保存版1000的8张有界合成候选、mixed25的208宠物原图/24方向动画/352源帧位置、另隔离的TW1参考人物7帧与mixed25参考1图。全部原 PNG 逐完整SHA与Pillow尺寸/解码核验；私人ZIP280成员/2,146,298B保存于用户Library，不进入公开Git。新增[公开哈希/边界收据](research/recovered/STONEAGE-O6-PRIVATE-ASSET-EXPORT-ACCEPTANCE-R1.json)、只读私人SHA绑定导出工具及16项全合成否证测试；不能把保存版地图1000的8张 composite 冒称完整 tile 主表，不能把数字SPR当宠物物种、客户端原世界或官方TW1部署。官方同构建宠物实体master仍缺；暂不扩大同一图形helper，下一转有原始材料的22域重要业务包。Stage A7 PARTIAL+2 OPEN/B、wiki GATED/R79暂停/总体percent=null不变。
