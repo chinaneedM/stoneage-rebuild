@@ -1,0 +1,195 @@
+{
+  "schema": "stoneage.o7_preserved_shop_item_description_numeric_crosssource.r1",
+  "date": "2026-10-30",
+  "source_main_sha": "34c479e86c6301b80268ae62330fb964ddc82a23",
+  "source_main_tree": "84ae676a31e252020236d029d958b843e04a3a80",
+  "full_previous_current_state_blob_sha": "20050acf279a01555ab06a381dfcdc936bd381a6",
+  "provenance": "PRESERVED_COMMUNITY_MIXED25_NOT_OFFICIAL_TW1",
+  "private_original_input_zip_sha256": {
+    "o6": "c64376b4a018cc444f2e2d51b871db75ca7e25106777b2a4475ebf2bfffd0bd5",
+    "scene24": "194d93d6f21dcfd906384b23ca122c3aa42d57067d92ea6a0e171b874ef422c7",
+    "scene25": "5adf2c4ef0d8bd770bb0d0311da80976371dc00246601f055c47264a90f94663"
+  },
+  "original_itemset_source_sha256": "a415e78f9aab2e5ea5ca92ecb7430253f7be1ba7c876d6b0bb6d067b1b466688",
+  "original_shop_argument_source_sha256": "f907e77774bc66151465f47e000852a598b935890f2b3334b6a8552f189b279a",
+  "room_source_map_dat_sha256": "62dbef1614ede0ba032ca9c69cbfdc3d43938e45baba78701885790937b86b90",
+  "shop": {
+    "floor": 1001,
+    "xy": [
+      17,
+      13
+    ],
+    "functionset": "ItemShop",
+    "original_stock_count": 17,
+    "displayed_first_3_item_ids": [
+      0,
+      4,
+      10
+    ],
+    "o6_room_sample_bounds": [
+      7,
+      12,
+      13,
+      18
+    ],
+    "shop_inside_o6_sample": false,
+    "buy_rate_original_text": "1.0",
+    "sell_rate_original_text": "0.2",
+    "native_runtime_prices_verified": false
+  },
+  "items": [
+    {
+      "id": 0,
+      "name": "小斧頭",
+      "original_line_1based": 1,
+      "row_sha256": "c366ec66b8dd03656d7ddbe538cd0cd9cb38116d1d72ed60cb1ed8f958a851e3",
+      "imagenumber": 20033,
+      "candidate_bitmap": 6006,
+      "source_cost": 65,
+      "source_level": 0,
+      "description_modifiers": {
+        "attack": 9,
+        "defense": -3,
+        "agility": -3
+      },
+      "raw_duplicate_numeric_columns_0based": [
+        37,
+        38,
+        39,
+        40,
+        41,
+        42
+      ],
+      "raw_numeric_values": [
+        9,
+        9,
+        -3,
+        -3,
+        -3,
+        -3
+      ],
+      "source_candidate_png_sha256": "da89fced5ed91d4aac829d7453b33cf8bb3d657a945148ff77b79e89e2b61e5f",
+      "png_wh": [
+        36,
+        30
+      ]
+    },
+    {
+      "id": 4,
+      "name": "萊伊卡Lv1斧頭",
+      "original_line_1based": 5,
+      "row_sha256": "745fec01f05263a6421a3281a2e36a2abbdb371e32f6ae1c59bdbb3c13a04215",
+      "imagenumber": 20032,
+      "candidate_bitmap": 6005,
+      "source_cost": 105,
+      "source_level": 0,
+      "description_modifiers": {
+        "attack": 7,
+        "defense": -2,
+        "agility": -2
+      },
+      "raw_duplicate_numeric_columns_0based": [
+        37,
+        38,
+        39,
+        40,
+        41,
+        42
+      ],
+      "raw_numeric_values": [
+        7,
+        7,
+        -2,
+        -2,
+        -2,
+        -2
+      ],
+      "source_candidate_png_sha256": "162fd24966025b343127669dbad5ab133fab130a1b479f54f810308c528cc7cf",
+      "png_wh": [
+        32,
+        28
+      ]
+    },
+    {
+      "id": 10,
+      "name": "普通普通的斧頭",
+      "original_line_1based": 11,
+      "row_sha256": "7d68cfad604124b38d4c280bbad368eddfa7aa1adf53c1bb4dd3e8dd56e55831",
+      "imagenumber": 20013,
+      "candidate_bitmap": 5986,
+      "source_cost": 260,
+      "source_level": 10,
+      "description_modifiers": {
+        "attack": 14,
+        "defense": -5,
+        "agility": -5
+      },
+      "raw_duplicate_numeric_columns_0based": [
+        37,
+        38,
+        39,
+        40,
+        41,
+        42
+      ],
+      "raw_numeric_values": [
+        14,
+        14,
+        -5,
+        -5,
+        -5,
+        -5
+      ],
+      "source_candidate_png_sha256": "7e44049286dcc4566f09e17251f8b7395fa6d0cd99ca2d570180dcc6b3faa03b",
+      "png_wh": [
+        44,
+        38
+      ]
+    }
+  ],
+  "private_O7": {
+    "library_path": "/石器时代/StoneAge-O7-private-scene-shop-pet-20261030.zip",
+    "zip_bytes": 2179790,
+    "zip_sha256": "41369ba6edaf9beb9b71d2c2436794660b4adce2a2ac4ccc08b2f8fe7527a5ec",
+    "zip_members": 287,
+    "inherited_O6_original_files_unchanged": 280,
+    "added_3_original_png_candidates": 3,
+    "total_original_PNGs": 278,
+    "original_item_source_description_to_numeric_rows_independently_reparsed": 3,
+    "shop_readonly_json_sha256": "fa73a013d1d9750be03f020bae6c115e94802278708233589ef35a104e48082b",
+    "browser_html_sha256": "28875ae828ba1ad602924927bf5ded0c19c61ab0756f641546ea6592e91b2c70",
+    "private_zip_library_retrieved_and_byte_equal": true,
+    "zip_CRC_zero_errors": true,
+    "chromium_browser_in_memory_original_png_data_url": true,
+    "admin_blocked_file_url_navigation": true,
+    "source_png_paths_loaded_for_browser": 270,
+    "pet_frame_positions_visited_in_real_browser": 352,
+    "unique_pet_bitmaps_decoded_in_real_browser": 208,
+    "shop_candidate_PNGs_decoded_in_real_browser": 3,
+    "original_1000_town_composite_loaded": true,
+    "two_way_manual_door_route_success": true,
+    "incorrect_source_warp_rejected": true,
+    "external_network_requests": 0,
+    "javascript_errors": 0,
+    "original_game_exe_executed": false,
+    "shop_source_item_cards": 3,
+    "original_O7_html_file_url_navigation_verified": false
+  },
+  "historical_limits": {
+    "official_TW1_same_deployed_build_authenticated": false,
+    "original_shop_character_in_O6_room_observation_window": false,
+    "original_equip_stats_application_authenticated": false,
+    "original_shop_NPC_interaction_or_buying_authenticated": false,
+    "original_native_palette_selector_authenticated": false,
+    "original_pet_name_or_spawn_authenticated": false,
+    "original_legacy_world_entered": false,
+    "original_asset_public_redistribution_rights_authenticated": false
+  },
+  "new_original_primary_source_bytes_acquired": 0,
+  "stage_a": "7 PARTIAL + 2 OPEN",
+  "stage_b": "GATED",
+  "wiki": "GATED",
+  "r79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null,
+  "next": "RETURN_22_DOMAIN_SOURCE_QUEUE; EXPAND_SHOP_VISUAL_BOUNDS_ONLY_WITH_ACTUAL_ADDITIONAL_SOURCE_TILES"
+}

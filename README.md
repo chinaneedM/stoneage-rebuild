@@ -1012,3 +1012,8 @@ ranges, not a new whole-client download or arbitrary program reverse engineering
 ### 2026-10-30 — O6：已验证原素材的私人引擎无关导出
 
 [O6 原图独立目录与范围](docs/continuity/STONEAGE-O6-PRIVATE-ENGINE-NEUTRAL-RESOURCE-PACK-20261030.md)：O5 已归档的私人原图被本轮真正读回并导为 **275 个 PNG + 4 个版本化 JSON/私人说明**：保存版1001的51原 tile/构件图及27次源位置，保存版1000的8张有界合成候选、mixed25的208宠物原图/24方向动画/352源帧位置、另隔离的TW1参考人物7帧与mixed25参考1图。全部原 PNG 逐完整SHA与Pillow尺寸/解码核验；私人ZIP280成员/2,146,298B保存于用户Library，不进入公开Git。新增[公开哈希/边界收据](research/recovered/STONEAGE-O6-PRIVATE-ASSET-EXPORT-ACCEPTANCE-R1.json)、只读私人SHA绑定导出工具及16项全合成否证测试；不能把保存版地图1000的8张 composite 冒称完整 tile 主表，不能把数字SPR当宠物物种、客户端原世界或官方TW1部署。官方同构建宠物实体master仍缺；暂不扩大同一图形helper，下一转有原始材料的22域重要业务包。Stage A7 PARTIAL+2 OPEN/B、wiki GATED/R79暂停/总体percent=null不变。
+
+
+### 2026-10-30 — O7：武器店三件原物品的说明属性与原字段互证
+
+[O7 原保存版1001武器店源资料联接](docs/continuity/STONEAGE-O7-SHOP-ATTRIBUTES-AND-SOURCE-BOUNDS-20261030.md)：重读私有O6/SCENE24/25三个全哈希来源，原`itemset.txt`前三商店ID0/4/10与原描述中的攻/防/敏数值分别为`+9/-3/-3`、`+7/-2/-2`、`+14/-5/-5`，且都与原第37—42列各双份值精确一致；原价数值字段65/105/260，非已执行交易价格。三原Palet1候选PNG 3/3逐SHA相同，原 imagenumber 与+76别名物理图号仍**只是静态候选**。关键坐标反例：真实保存版店员1001(17,13)在O6室内取样 x7—13 **以外**，不能冒称已走到店员或执行原商店。私人O7 ZIP287成员（承袭O6原280成员+3PNG+4资料）、278PNG/2179790B已保存并二次回读；Chomium内存同原图测试352源帧/208不同原图和三商品实绘/两出口人工路线成功，管理员拒绝file://导航，未声称原版EXE或用户本机文件直开。公开仅[来源数字收据](research/recovered/STONEAGE-O7-SHOP-ITEM-STATS-AND-SCENE-ACCEPTANCE-R1.json)、审计代码和负例；官方同版地图/原交易/宠物身份仍未证。下一转22域新原实物，勿继续无来源交互helper；Stage A7 PARTIAL+2 OPEN、Stage B/wiki GATED、R79暂停、percent=null不变。
