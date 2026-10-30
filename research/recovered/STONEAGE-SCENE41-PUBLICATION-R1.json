@@ -1,0 +1,275 @@
+{
+  "schema": "stoneage.scene41.bgm_player_faq.publication.r1",
+  "date": "2026-10-30",
+  "repository": "chinaneedM/stoneage-rebuild",
+  "baseline_main_head": "54abfc8dd477d370418d4f76ad87fab36f876dea",
+  "baseline_main_tree": "3f3f2937231778909a30b45eacdfb4de1c75526b",
+  "candidate": {
+    "branch": "agent/scene41-2001-bgm-faq-source-20261030",
+    "head": "7c1787050e72db8e85e794dcf8d9b6b22e3064aa",
+    "tree": "76a0ac684b88e5e82ada5750f490b8d556e37570"
+  },
+  "publication": {
+    "pr": 55,
+    "merge_sha": "982360f52f7aa76a19809e7bf9e9ba7db18aeaab",
+    "merge_tree": "76a0ac684b88e5e82ada5750f490b8d556e37570",
+    "merge_parents": [
+      "54abfc8dd477d370418d4f76ad87fab36f876dea",
+      "7c1787050e72db8e85e794dcf8d9b6b22e3064aa"
+    ],
+    "same_tree_as_candidate": true
+  },
+  "preserved_full_current_state_blob": "20050acf279a01555ab06a381dfcdc936bd381a6",
+  "published_source": {
+    "new_source_url": "https://news.17173.com/z/stoneage/content/2001-6-14/n775_691475.html",
+    "current_source_bytes": 50771,
+    "current_source_sha256": "3c9af2d5456e52b184580ffa05b7039b7473bac475b32bace3b17caf810a63de",
+    "date_label": "2001-06-14",
+    "author_label": "未知",
+    "contemporaneous_original_html_certified": false
+  },
+  "source_runs": {
+    "first_regex_failure": 41047348999,
+    "second_encoding_failure": 41047427650,
+    "first_success": 41047566005,
+    "final_pr_replay_success": 41048118009,
+    "final_pr_job_id": 124037153346
+  },
+  "source_artifacts": {
+    "first": {
+      "id": 12972349401,
+      "zip_bytes": 1212,
+      "zip_sha256": "403560d16a8d7e31c0c4a7e1ae486a159869eb39744faae2adef8cc8cbb988f8",
+      "derived_json_bytes": 4387,
+      "derived_json_sha256": "c13c27f22753168ad4da071372f1b20d0219d7290f0dad132cca07215d1b8611"
+    },
+    "final": {
+      "id": 12972878750,
+      "zip_bytes": 1212,
+      "zip_sha256": "c308c817679a3852fa4d06a14f9dde31dede7a18cd4100caf3d2ee515a989e37",
+      "derived_json_bytes": 4387,
+      "derived_json_sha256": "c13c27f22753168ad4da071372f1b20d0219d7290f0dad132cca07215d1b8611",
+      "zip_crc_ok": true
+    }
+  },
+  "derived_json_blob": "138f1edd5b9416a761ab0c49d6f774e539a11bcb",
+  "same_source_json_in_both_zips": true,
+  "published_content_blobs": {
+    ".github/workflows/verify-stoneage-scene41-bgm-faq.yml": "f29d92d65244547e98d4f3218538e5829b8fb601",
+    "README.md": "3746341ba1c6b411b757fb8734b9b4833c180a10",
+    "docs/continuity/STONEAGE-SCENE41-AUDIO-PLAYER-FAQ-20261030.md": "bfb0855e3a274eb1b170795577e884aa1715de92",
+    "docs/specs/STONEAGE-SCENE41-2001-PLAYER-BGM-CLAIMS-R1.md": "428087e051c611fb86ef7d4461aaac1e722a79d2",
+    "research/recovered/STONEAGE-SCENE41-17173-BGM-PLAYER-CLAIMS-R1.json": "138f1edd5b9416a761ab0c49d6f774e539a11bcb",
+    "research/recovered/STONEAGE-SCENE41-SOURCE-CUSTODY-R1.json": "bd02d831bd84914c6ff35bd43a324d16d3e7ae14",
+    "tests/test_stoneage_scene41_bgm_faq.py": "e9cc50a26b0d83952caf0e11413e7f533f78ee80",
+    "tools/stoneage_scene41_bgm_faq.py": "c2c58c192cb8b86a76ccd1d1f4af14f67feb5341"
+  },
+  "observed_candidate_runs": [
+    {
+      "id": 41048118009,
+      "name": "Qualify SCENE41 dated player BGM filename claims",
+      "event": "pull_request",
+      "head": "7c1787050e72db8e85e794dcf8d9b6b22e3064aa",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41048110187,
+      "name": "Verify original four village interior materials R34",
+      "event": "push",
+      "head": "7c1787050e72db8e85e794dcf8d9b6b22e3064aa",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41048110230,
+      "name": "Verify original dated map110 three actual cell values R32",
+      "event": "push",
+      "head": "7c1787050e72db8e85e794dcf8d9b6b22e3064aa",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41048110238,
+      "name": "Verify original same-build named-entity source gate R31",
+      "event": "push",
+      "head": "7c1787050e72db8e85e794dcf8d9b6b22e3064aa",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41048110181,
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "event": "push",
+      "head": "7c1787050e72db8e85e794dcf8d9b6b22e3064aa",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41048110393,
+      "name": "Accept primary-source TW1.0 character creation numeric join R16",
+      "event": "push",
+      "head": "7c1787050e72db8e85e794dcf8d9b6b22e3064aa",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41048110315,
+      "name": "Qualify SCENE41 dated player BGM filename claims",
+      "event": "push",
+      "head": "7c1787050e72db8e85e794dcf8d9b6b22e3064aa",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41048110367,
+      "name": "Verify preserved mixed25 full server source conservation R18",
+      "event": "push",
+      "head": "7c1787050e72db8e85e794dcf8d9b6b22e3064aa",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41048110309,
+      "name": "Verify original local album name material and no master promotion R35",
+      "event": "push",
+      "head": "7c1787050e72db8e85e794dcf8d9b6b22e3064aa",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41048110341,
+      "name": "Verify original native album table and saved-name joins R36",
+      "event": "push",
+      "head": "7c1787050e72db8e85e794dcf8d9b6b22e3064aa",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41048110200,
+      "name": "Verify StoneAge R17 original battle SAB crossversion occurrence conservation",
+      "event": "push",
+      "head": "7c1787050e72db8e85e794dcf8d9b6b22e3064aa",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41048110325,
+      "name": "Accept preserved original TW85 SPR137 full animation material R28",
+      "event": "push",
+      "head": "7c1787050e72db8e85e794dcf8d9b6b22e3064aa",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "observed_main_runs": [
+    {
+      "id": 41048276337,
+      "name": "Verify preserved mixed25 full server source conservation R18",
+      "event": "push",
+      "head": "982360f52f7aa76a19809e7bf9e9ba7db18aeaab",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41048276353,
+      "name": "Verify original native album table and saved-name joins R36",
+      "event": "push",
+      "head": "982360f52f7aa76a19809e7bf9e9ba7db18aeaab",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41048276061,
+      "name": "Verify original same-build named-entity source gate R31",
+      "event": "push",
+      "head": "982360f52f7aa76a19809e7bf9e9ba7db18aeaab",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41048276333,
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "event": "push",
+      "head": "982360f52f7aa76a19809e7bf9e9ba7db18aeaab",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41048276278,
+      "name": "Verify original local album name material and no master promotion R35",
+      "event": "push",
+      "head": "982360f52f7aa76a19809e7bf9e9ba7db18aeaab",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41048276187,
+      "name": "Verify original dated map110 three actual cell values R32",
+      "event": "push",
+      "head": "982360f52f7aa76a19809e7bf9e9ba7db18aeaab",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41048276202,
+      "name": "Verify StoneAge R17 original battle SAB crossversion occurrence conservation",
+      "event": "push",
+      "head": "982360f52f7aa76a19809e7bf9e9ba7db18aeaab",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41048276129,
+      "name": "Verify original four village interior materials R34",
+      "event": "push",
+      "head": "982360f52f7aa76a19809e7bf9e9ba7db18aeaab",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41048276242,
+      "name": "Accept preserved original TW85 SPR137 full animation material R28",
+      "event": "push",
+      "head": "982360f52f7aa76a19809e7bf9e9ba7db18aeaab",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41048276263,
+      "name": "Qualify SCENE41 dated player BGM filename claims",
+      "event": "push",
+      "head": "982360f52f7aa76a19809e7bf9e9ba7db18aeaab",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41048276206,
+      "name": "Accept primary-source TW1.0 character creation numeric join R16",
+      "event": "push",
+      "head": "982360f52f7aa76a19809e7bf9e9ba7db18aeaab",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "acceptance": {
+    "candidate_actions_success": 12,
+    "main_actions_success": 11,
+    "source_replay_final_tests_passed": 11,
+    "cross_source_bgm_names": 11,
+    "proven_original_track_event_bindings": 0,
+    "original_game_executed": false,
+    "original_world_entered": false,
+    "html_or_audio_in_public_git": false
+  },
+  "bounds": {
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b": "GATED",
+    "wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING",
+    "native_boot": "BLOCKED_PRIVATE_INPUT_CHANNEL",
+    "overall_percent": null
+  },
+  "next": "SCENE42-HELPER-VERSION-NAMED-RELEASE-MATERIAL-REVIEW",
+  "receipt_commit_self_actions_predicted_success": false
+}

@@ -19,3 +19,11 @@
 ZIP artifact12972349401/1212B/SHA `403560d16a8d7e31c0c4a7e1ae486a159869eb39744faae2adef8cc8cbb988f8` 已实际下载、ZIP所有成员CRC成功；唯一derived JSON4387B/SHA `c13c27f22753168ad4da071372f1b20d0219d7290f0dad132cca07215d1b8611`。正式合同[SCENE41音频对照](../specs/STONEAGE-SCENE41-2001-PLAYER-BGM-CLAIMS-R1.md)和机器记录`research/recovered/STONEAGE-SCENE41-17173-BGM-PLAYER-CLAIMS-R1.json`仅保存派生内容，原HTML与原WAV不入Git。候选/main Actions需在发布后实际检查并另记，不提前称本次主线已通过。
 
 **最高下一 `SCENE42-HELPER-VERSION-NAMED-RELEASE-MATERIAL-REVIEW`**：转22域19，优先有确切2000–2004版本与作者/功能页的经典辅助工具发布信息，先与R102及SACH/STA/SADE、STA2.52旧档查重。只保存一项原始版别/玩家可见辅助功能证据或精确缺源止点，不运行外挂，不提前设计内挂。原可操作世界仍未进入，Stage A7 PARTIAL+2 OPEN/B/wiki GATED/R79暂停、`overall_percent=null`。
+
+## 实际候选／主线Actions后验与永久收据
+
+[PR #55](https://github.com/chinaneedM/stoneage-rebuild/pull/55) 已合并。最终候选 `7c1787050e72db8e85e794dcf8d9b6b22e3064aa` 与主线合并提交 `982360f52f7aa76a19809e7bf9e9ba7db18aeaab` 的 tree 精确同为 `76a0ac684b88e5e82ada5750f490b8d556e37570`。候选12项 Actions、合并主线11项 Actions 均从GitHub远端再次观察为 completed/success。专用PR run41048118009/job124037153346的**11项反例测试**及原HTML当次完整50,771B/SHA/11个名称重复获取全部通过，冻结派生JSON**原字节同一**；主线run41048276263只有保存来源/反例的离线核验，不能冒称又实时取源。
+
+最终独立下载候选工件artifact12972878750，ZIP1212B/SHA `c308c817679a3852fa4d06a14f9dde31dede7a18cd4100caf3d2ee515a989e37`，CRC无错误；原派生JSON4387B/SHA `c13c27f22753168ad4da071372f1b20d0219d7290f0dad132cca07215d1b8611`，与首次成功artifact12972349401原派生JSON逐字节相同。ZIP容器SHA彼此不同，不说明网页内容变化。永久原JSON Git blob `138f1edd5b9416a761ab0c49d6f774e539a11bcb`，实际远端回读与原首次来源产物相符。先前正则/编码失败及所有旧SRC仍原样保留。
+
+完整23个实际候选/主线run与8个已发布文件Git blob、源ZIP/原JSON摘要保管于 `research/recovered/STONEAGE-SCENE41-PUBLICATION-R1.json`。此后验收据提交自己的Actions需要另行观察，不预报成功。原声音/网页/程序没有公开，原可操作世界未进入、原客户端声音事件仍无原生实参见证。最高下一 `SCENE42-HELPER-VERSION-NAMED-RELEASE-MATERIAL-REVIEW` 与 Stage A7 PARTIAL+2 OPEN／Stage B/wiki GATED／R79暂停／原boot受阻／总体percent=null全部保持。
