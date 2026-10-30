@@ -1,0 +1,35 @@
+name: Verify SCENE37 player quest source and textual dependence
+on:
+  push:
+    paths:
+      - tools/stoneage_scene37_newbie_quest.py
+      - tests/test_stoneage_scene37_newbie_quest.py
+      - research/recovered/STONEAGE-SCENE37-*
+      - .github/workflows/verify-stoneage-scene37-newbie-quest.yml
+  pull_request:
+    paths:
+      - tools/stoneage_scene37_newbie_quest.py
+      - tests/test_stoneage_scene37_newbie_quest.py
+      - research/recovered/STONEAGE-SCENE37-*
+      - .github/workflows/verify-stoneage-scene37-newbie-quest.yml
+permissions:
+  contents: read
+jobs:
+  source-and-negative-gates:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Derived report and synthetic layout counterexamples
+        run: |
+          python3 -m tools.stoneage_scene37_newbie_quest
+          python3 -m unittest tests.test_stoneage_scene37_newbie_quest -v
+      - name: Independently read two current migrated player pages (not original-year bytes)
+        if: github.event_name == 'pull_request'
+        run: python3 -m tools.stoneage_scene37_newbie_quest --replay-live --output scene37-source-replay.json
+      - uses: actions/upload-artifact@v4
+        if: github.event_name == 'pull_request'
+        with:
+          name: scene37-derived-source-replay
+          path: scene37-source-replay.json
+          retention-days: 14
