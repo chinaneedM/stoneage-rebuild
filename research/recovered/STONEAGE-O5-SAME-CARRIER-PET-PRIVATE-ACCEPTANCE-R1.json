@@ -1,0 +1,106 @@
+{
+  "schema": "stoneage.o5_same_carrier_original_pet_observation.r1",
+  "source_main_sha": "0df899784d141c389b7769e2a3c0266fed780257",
+  "source_main_tree": "21f9c4de925f2438d0d812d61271f9f6d910c282",
+  "preserved_full_current_state_blob_sha": "20050acf279a01555ab06a381dfcdc936bd381a6",
+  "public_sources": {
+    "o4": "research/recovered/STONEAGE-O4-TWO-SCENE-PRIVATE-ACTUAL-ACCEPTANCE-R1.json",
+    "scene13": "research/recovered/STONEAGE-SCENE13-PET-ACTION0-R1.json",
+    "scene15": "research/recovered/STONEAGE-SCENE15-DOORWAY-SOURCE-R1.json"
+  },
+  "private_archives": [
+    {
+      "name": "StoneAge-O4-original-two-scene-private-20261030.zip",
+      "bytes": 2666980,
+      "sha256": "bd3eed1e348b4359596300bcec3ceeb0f91a6d6ec5c6cbcdf6abfd48bc779a34"
+    },
+    {
+      "name": "StoneAge-SCENE13-private-action0-observer.zip",
+      "bytes": 975186,
+      "sha256": "21b56fe9a49357f0d7815698bd1db67f72076759a2528348888fe06444868238"
+    }
+  ],
+  "source_join": {
+    "scope": "PRESERVED_MIXED25_COMMUNITY_MODIFIED_NOT_OFFICIAL_TW1",
+    "floor_1001_map_DAT_sha256": "62dbef1614ede0ba032ca9c69cbfdc3d43938e45baba78701885790937b86b90",
+    "original_identical_png_keys": [
+      5000,
+      5001,
+      5002,
+      5005,
+      5007,
+      5009,
+      5015
+    ],
+    "identical_png_sha256_count": 7,
+    "all_seven_original_png_sha256_equal": true,
+    "matching_original_map_DAT_sha256": true,
+    "not_authenticated_same_retail_game_world": true
+  },
+  "pet_source": {
+    "action_code": 0,
+    "original_spr_numeric_groups": [
+      100250,
+      100251,
+      100252
+    ],
+    "source_animations": 24,
+    "directions_each": 8,
+    "frame_positions_by_group": {
+      "100250": 72,
+      "100251": 72,
+      "100252": 208
+    },
+    "frame_occurrences_total": 352,
+    "unique_original_bitmap_pngs": 208,
+    "repeated_original_frame_positions": 144,
+    "duration_words_original_not_ms": {
+      "100250": 1000,
+      "100251": 1000,
+      "100252": 1400
+    },
+    "original_png_sha256_verified_in_private": 208
+  },
+  "actual_private_browser": {
+    "chromium_version": "144.0.7559.96",
+    "original_scene_png_subresources_loaded": 67,
+    "original_pet_distinct_pngs_decode_success": 208,
+    "source_pet_frame_positions_visited": 352,
+    "original_O4_two_way_door_and_static_npc_tour_retained": true,
+    "modern_pet_panel_changes_map_state": false,
+    "js_errors": 0,
+    "external_http_requests": 0,
+    "new_O5_full_map_pixel_comparison_run": false,
+    "preserved_O4_independent_map_pixels": 1442557,
+    "preserved_O4_independent_map_pixel_differences": 0
+  },
+  "private_output": {
+    "library_path": "/石器时代/StoneAge-O5-original-two-scene-and-pet-private-20261030.zip",
+    "saved_to_private_library": true,
+    "zip_bytes": 2905474,
+    "zip_sha256": "e2f6beb8789f1d755fe44bf6d3ba70f7bf6baf7cd713eb34cf47d18062aa5bc6",
+    "html_bytes": 2897821,
+    "html_sha256": "2637ac0594ab3922b32fe3b6dd8819a173344933981feb7f5ffa6dc0d6816be7",
+    "zip_members": 6,
+    "raw_original_png_DAT_RD_NPC_HTML_in_public_git": false
+  },
+  "historical_limits": {
+    "original_game_world_entered": false,
+    "original_client_executable_launched": false,
+    "official_TW1_map_deployment_authenticated": false,
+    "native_pet_spawn_authenticated": false,
+    "official_pet_species_names_authenticated": false,
+    "original_pet_sprite_to_world_entity_relation_authenticated": false,
+    "original_collision_or_quest_runtime_authenticated": false,
+    "original_frame_timing_ms_or_fps_authenticated": false,
+    "original_palette_or_occlusion_authenticated": false,
+    "original_asset_distribution_license_authenticated": false
+  },
+  "public_ci_reads_only_derived_metadata": true,
+  "stage_a": "7 PARTIAL + 2 OPEN",
+  "stage_b": "GATED",
+  "wiki": "GATED",
+  "r79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null,
+  "highest_next": "SAME_BUILD_ORIGINAL_PET_ENTITY_TO_GRAPHIC_PRIMARY_SOURCE_IF_AVAILABLE_ELSE_BOUNDED_SOURCE_ONLY_INTERACTION_SPEC"
+}
