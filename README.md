@@ -983,3 +983,7 @@ ranges, not a new whole-client download or arbitrary program reverse engineering
 ### 2026-10-30 — SCENE43：2001华义2.0宠物网页两格的真实图片字节
 
 [来源/限制及后验](docs/continuity/STONEAGE-SCENE43-CN20-PET-PIXEL-SOURCE-20261030.md)：旧已验官方网页第85格“瑞德宝”与第86格“瑞里西尔”分别引用原`84.JPG`、`85.JPG`，两原JPEG历史2001-10-26档案字节已真实取证，3753B/SHA`ba7b663a9445a0e32117eb768db33e991c566ddfac8ad1ae5d93bb7cf6372e31`及4494B/SHA`9951490cc47de15342fd88e671a8e54d1c6c33c7786655af4ffe4b93300f16b2`，RGB83×90单帧全解码，原HTML与JPEG不入公开Git。新独立视觉参考2、原客户端宠物/SPR对应0、真实运行0；首次页面2001-10-23与图像2001-10-26并非同刻。这是网页参考覆盖，下一SCENE44转22域/原世界真实可操作性材料；Stage A/B/wiki/R79、overall=null保持。
+
+### 2026-10-30 — 用户确认单机原客户端素材优先（DD-OFFLINE-20261030）
+
+现阶段**不再将联网、原SAAC/GMSV启动或原服登录当作还原地图/人物/宠物的前提**；改以已认证原客户端文件及现有SPR/ADRN/RD解码器，先形成可看的离线私人原帧、再一张真实拼图地图与人物宠物动作。新增`tools/stoneage_singleplayer_observation_kit.py`和[详细实施次序](docs/continuity/STONEAGE-SINGLEPLAYER-ASSET-FIRST-20261030.md)，不内置商业素材、不需要网络。未来新《石器时代》保持简体、单机、可保留网游式玩法深度，但单机自用不是原商业美术/音乐的版权许可。SCENE44外部截图[PR#58](https://github.com/chinaneedM/stoneage-rebuild/pull/58)已按新方向关闭、留分支作旁证；下一优先`OFFLINE-CLIENT-SAME-SOURCE-MAP-SCENE-O2`。原世界未进入、Stage A7 PARTIAL+2OPEN、B/wiki GATED、R79暂停、overall_percent null保持。
