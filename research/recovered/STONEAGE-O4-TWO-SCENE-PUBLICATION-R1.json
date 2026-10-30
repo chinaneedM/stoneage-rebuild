@@ -1,0 +1,93 @@
+{
+  "schema": "stoneage.o4_two_scene_original_source_publication.r1",
+  "repository": "chinaneedM/stoneage-rebuild",
+  "date": "2026-10-30",
+  "start_main_head": "75fccf8cf01eeafadb06688f8a680a7e1f5fc77b",
+  "start_main_tree": "be093eb9f7637a191cda8e3c267a612b1d95341a",
+  "pr_number": 62,
+  "pr_url": "https://github.com/chinaneedM/stoneage-rebuild/pull/62",
+  "candidate_head": "37beeba569a35d191b509cbe90c60632a381c55d",
+  "merge_main_head": "52a5f7d9cc7c7667e1d34ee4d66058619d5dc5ec",
+  "merge_tree": "ee65ecfeee132d3ee15e9bb56cd638213438e60f",
+  "parents": [
+    "75fccf8cf01eeafadb06688f8a680a7e1f5fc77b",
+    "37beeba569a35d191b509cbe90c60632a381c55d"
+  ],
+  "current_state_preserved_blob_sha": "20050acf279a01555ab06a381dfcdc936bd381a6",
+  "current_state_preserved_bytes": 2708031,
+  "public_actual_private_source_report": "research/recovered/STONEAGE-O4-TWO-SCENE-PRIVATE-ACTUAL-ACCEPTANCE-R1.json",
+  "public_actual_private_source_report_git_blob": "c928b9b5d1bd9a505cc35293aff747304809ea45",
+  "public_source_contract_code": "tools/stoneage_o4_source_contract.py",
+  "public_source_contract_code_git_blob": "0d7e8f23c35b2bed89cd18c5a66dd8bf9b0a22b9",
+  "public_source_contract_test": "tests/test_stoneage_o4_source_contract.py",
+  "public_source_contract_test_git_blob": "0ff5fafea2e9c57f93b2344db3c9218ed20d3e25",
+  "public_continuity": "docs/continuity/STONEAGE-O4-TWO-SCENE-ORIGINAL-OBSERVATION-20261030.md",
+  "public_workflow": ".github/workflows/verify-stoneage-o4-source-tour-r1.yml",
+  "ci": {
+    "candidate_source_contract_push": {
+      "run_id": 41065067073,
+      "conclusion": "success"
+    },
+    "candidate_continuity_push": {
+      "run_id": 41065293146,
+      "conclusion": "success"
+    },
+    "pull_request": {
+      "run_id": 41065369987,
+      "conclusion": "success",
+      "job_id": 124095111909
+    },
+    "merged_main": {
+      "run_id": 41065609405,
+      "conclusion": "success",
+      "job_id": 124096045430,
+      "unittests_run": 13,
+      "unittests_result": "OK",
+      "source_gate": "O4_PUBLIC_ORIGINAL_DERIVED_CROSSSOURCE_GATE=PASS"
+    },
+    "main_all_workflows": {
+      "runs": 11,
+      "completed": 11,
+      "success": 11,
+      "failed": 0
+    }
+  },
+  "true_private_source_results": {
+    "parent_original_source_zip_archives_full_sha_verified": 4,
+    "r15_r21_floor1000_source_image_positions_equal": 54,
+    "r15_r21_common_original_png_sha_equal": 36,
+    "bidirectional_source_exact_warps_exercised": 2,
+    "original_NPC_message_sha_verified_bytes": 143,
+    "private_original_png_images_loaded_in_real_Chromium": 67,
+    "original_RGBAPixels_compared_Chromium_against_independent_Pillow": 1442557,
+    "pixels_differing": 0,
+    "modern_sampled_inbounds_step_and_exact_warp_and_original_NPC_viewer_tested": true,
+    "external_requests": 0,
+    "JS_errors": 0,
+    "original_exe_started": false
+  },
+  "private_delivery": {
+    "saved_to_personal_library": "/石器时代/StoneAge-O4-original-two-scene-private-20261030.zip",
+    "zip_bytes": 2666980,
+    "zip_sha256": "bd3eed1e348b4359596300bcec3ceeb0f91a6d6ec5c6cbcdf6abfd48bc779a34",
+    "zip_members": 12,
+    "private_HTML_bytes": 2266617,
+    "private_HTML_sha256": "f2d7faf0eb25f39ce01c20048cc2c7e9a24cc2887fabec609929a28ba34fa0ad",
+    "copyrighted_originals_in_public_git": false
+  },
+  "evidence_boundary": {
+    "ci_public_did_not_retrieve_any_private_original_png_or_client_source": true,
+    "ci_compares_public_derived_hashes_and_synthetic_manual_state_only": true,
+    "original_native_game_world_entered": false,
+    "TW1_official_same_deployed_map_identity_proven": false,
+    "original_collision_or_npc_dialogue_runtime_proven": false,
+    "source_created_warp_runtime_proven": false,
+    "license_for_original_art_in_future_distributed_game_granted": false,
+    "overall_percent": null,
+    "stage_a": "7 PARTIAL + 2 OPEN",
+    "stage_b": "GATED",
+    "wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING"
+  },
+  "next": "TW1_SAME_SOURCE_MAP_IF_ACQUIRED_OR_BOUNDED_SOURCE_IDENTIFIED_PET_NPC_SEMANTIC_LINK; NO_UNBOUNDED_LEGACY_RUNTIME_HELPERS"
+}
