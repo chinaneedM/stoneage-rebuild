@@ -714,3 +714,10 @@ This is a **future-game design choice**, not a claim that JSS Japan 1999, Taiwan
 Order: connect verified same-source PNG/timeline and map/locale assets to the modern observer and collect reproducible observation/coverage gaps; continue authentic legacy client startup only when a qualified isolated environment becomes available. If source art cannot be accessed, show a clearly marked synthetic grid rather than fabricate original screenshots. No proprietary images/audio/binaries in public Git or automatic upload.
 
 Original world entry, battle, riding, audio-to-event mapping, official NPC/quest identities and overall restoration percentage remain unproven until individually accepted. The priority changes; no earlier R1–R46 result is erased.
+
+
+## DD-OFFLINE-20261030 — 单机原素材观察成为当前最高执行优先级
+
+用户于2026-10-30明确复申：原客户端不需要联网/重建原网服，未来新石器单机，项目侧自主决定原素材还原步骤。**阶段一仍是原资料复原，现代离线工具只是观察手段而不是新游戏上线。** 强制优先从已经校验的官方客户端原始地图/图像/SPR/WAV出发，做可重复的本地观察与有限场景拼合；旧服务器运行、账号、数据库、网络兼容变为非阻塞研究支线，只在能直接解决素材/场景认证缺口时重开。网页、玩家截图、各版图库仅作为版本对照和缺件旁证，不得取代能解码的已拥有客户端原资源。
+
+实现止点、首个私人一键原帧工具及O1—O5次序见 `docs/continuity/STONEAGE-SINGLEPLAYER-ASSET-FIRST-20261030.md`。只读原件/private output、源SHA、无客户端/服务端执行、不过度宣称实体ID/原世界已进入是硬门槛。用户的版权动机不构成免许可：未获明确授权时原商业素材不得从私有研究包转入公开仓库或未来游戏分发。此条决策不回写原CURRENT旧事实、不同地区/年代不可混号、任务活动/常驻不可混类、Stage A/B/wiki/R79以及总体未知均维持。
