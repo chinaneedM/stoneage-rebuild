@@ -971,3 +971,7 @@ ranges, not a new whole-client download or arbitrary program reverse engineering
 ### 2026-10-30 — SCENE40 玩家斧头目录的三原行交叉校核
 
 [一个具名玩家资料源的取证、编码异常和界限](docs/continuity/STONEAGE-SCENE40-SINA-AXE-SOURCE-GATE-20261030.md)：Sina玩家投稿网页当前源36312B/SHA `d1fbdacdb50b9b31c0068e270d7026550ea6764f577cc9df3641d20df3432bfb` 已独立回放，10个异常GB18030原字节完整保留，目标三条无异常。小斧头65／莱伊卡Lv1斧头105／普普通通斧头260与旧mixed2.5保存商店ID0/4/10名称价格相合，玩家稿另列购买地；新增官方物品或同版交易事实0。首次失败和修正后run、ZIP/raw摘要及派生JSON均可追溯，原HTML不在Git。下一SCENE41转声音事件绑定查缺；原世界、Stage A/B/wiki/R79及总体未知保持。
+
+### 2026-10-30 — SCENE41：2001标签玩家稿的11条BGM名字与TW1原音源核同
+
+[SCENE41来源范围、实际音频字节身份与历史差异](docs/continuity/STONEAGE-SCENE41-AUDIO-PLAYER-FAQ-20261030.md)：17173玩家问答当前原UTF-8 HTML **50771B**／SHA `3c9af2d5456e52b184580ffa05b7039b7473bac475b32bace3b17caf810a63de`；页面标2001-06-14但无当年原始网页字节证明。11个`sabgm_*`名称/玩家用途标签准确对应原TW1 11份散装BGM文件名，新增原音源0、同版事件实参/世界执行0。2004玩家资料同名音轨用途有冲突，仅作为下一次原字节取证线索。首次编码/正则失败均保留，正确源CI/可重放派生JSON永久归档，原HTML/声音不公开。下一转第19域具名经典辅助工具版本能力，Stage A/B/wiki/R79/原boot及percent=null不变。
