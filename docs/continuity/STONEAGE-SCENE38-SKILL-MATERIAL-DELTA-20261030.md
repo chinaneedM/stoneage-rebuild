@@ -17,3 +17,11 @@
 本包一行到此停止；不能因为大表仍可读便自动展开其余技能、重做收费或战斗helper。重新晋级本行须有确切构建ID、官方署名勘误、原学习／战斗日志或同构建菜单／配置。Stage A7 PARTIAL+2 OPEN、Stage B/wiki GATED、R79 PAUSED_NON_BLOCKING、原启动`BLOCKED_PRIVATE_INPUT_CHANNEL`、overall_percent=null全部保持。
 
 **最高下一 `SCENE39-BATTLE-CONTENT-MATERIAL-DELTA-REVIEW`**：回22域第16域，先查重CN2.0既有战斗指令／战败文献、JSS手册、TW1协议／原SAB及SCENE29观察。只选一条尚未保存、版本来源可限定的战斗指令、目标选择或结束条件正文增量，优先同期官方；不能把静态战场图、模型测试或玩家译名当实际回合执行。有实源交付一份具名合同，缺源则具体止点并轮换，不延长SAB／驱动／技能费用helper。若工具实际出现可用私有输入能力，先评估原客户端／服务端启动阻塞，仍以真正进入并观察世界为目标。
+
+## 实际GitHub后验和派生工件保管
+
+[PR #53](https://github.com/chinaneedM/stoneage-rebuild/pull/53)候选`2b6d64d9785e7cfeb9b09f114b40e4d5bde62432`的12项Actions全部completed/success；临时merge `e7793226a7e4ff4f30495e01f46889003e3d7615`与本地tree `11f55853c5157a9dd96e02c35b6a7f40a5891d86`一致。合并前fresh main未变，按既有授权合并为`182725e22eb6a5d7f89aa489dbd65dccfcfb096c`，实际合并tree亦同；其11项主线Actions全部success。
+
+源PR run41042572833/job124018702837日志实际27tests成功、两个固定归档对象读取成功，分别与原73356B／78022B及旧全SHA相同。源artifact12970951517下载ZIP935B／SHA `6bb2f38c5c524646793b2fd54567f64503e6a2634c9556a6c89c1bd0ac8654f5`与API一致，CRC通过；唯一原派生JSON1737B／SHA `09aac4673c8a12be2b54303ca46016c0f49fefca46dd24407729974a57990ba1`，投影语义与本地相同，永久归档为`STONEAGE-SCENE38-PR-SOURCE-REPLAY-R1.json`／Git blob `892b271ef98ac6012417c475a76ca22fd3d66d66`。原HTML、图标、完整表内容不在工件或Git。
+
+主线专用run41042721141/job124019197795实际27tests成功；网络步骤按push设计跳过，不称又一次主线取源。完整23run、七内容文件身份、本地独立行／旧核心核对、ZIP/raw/Git保管见`STONEAGE-SCENE38-PUBLICATION-R1.json`。本收据提交自己的后续CI不提前认定；NEXT39、旧冲突与所有运行边界不变。
