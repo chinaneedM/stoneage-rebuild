@@ -13,3 +13,13 @@
 2026-10-30，PR`#56`最初专用源Action `41050466902/job124044938887` 已完成SUCCESS。Sina页面实际GB18030严格解码69464B/SHA`812b32be4c9e9df45b956826c5a2a566d644ee8ef9acff5cfb69ab962a1b6a1d`，四标签确实在**一张原HTML table的四行**，各两条原链接（历史FTP+HTTP镜像），未访问任一程序。9项语义边界单测成功；派生JSON3153B/SHA`6b5b9a3f9b91a17ee8546936e588db81de8c09248040a3fafeaa09e7150539c3`，独立下载ZIP1221B/SHA`c06d533adfbda783aefde830fcf6e17641ce73407fc18f6f163ad925f9650767` CRC全过；下载项原字面包括`%2B%2B`不可改写成其他命名。
 
 [正式来源合同](../specs/STONEAGE-SCENE42-2003-HELPER-DOWNLOAD-LABELS-R1.md)及`research/recovered/STONEAGE-SCENE42-SINA-HELPER-DOWNLOAD-LIST-R1.json`按精确报告冻结。待合并main的PR新源重取、候选+主线Actions及最终收据必须以实际结果为准，当前不预报全部成功。下一`SCENE43-OFFICIAL-PET-NAMED-IMAGE-SOURCE-REVIEW`；Stage A/B/wiki/R79及原boot事实不变。
+
+## PR #56 主线终验与来源永久保管（2026-10-30）
+
+[PR #56](https://github.com/chinaneedM/stoneage-rebuild/pull/56) 已经合并；最终候选`140c721f6c6beeab44c806b63cadeab503e2ace2`和主线merge`e00bc5a22f15dda67d32d99d8ad52390ed098057`的tree完全相同`a4ff6be3354c72eafad545ebaca05f3f57dce322`。候选12项相关Actions全 completed/success，主线11项全部success。首次真实源`41050466902/job124044938887` 9项验收通过；最终PR源重跑`41050958313`的12项负例和源HTML完整SHA、四原表行/8同排href通过；主线只验证保存派生/反例，不冒称当时又实时访问可执行文件。
+
+首包与最终包ZIP皆1221B，分别 SHA `c06d533adfbda783aefde830fcf6e17641ce73407fc18f6f163ad925f9650767`（artifact12973893129）与 `315f2a5dd39ac835f6d7ac8407837d988c937dd7626df17e3bc3d4f0d04b37bc`（artifact12973873600）。两个工件均独立下载验全部CRC：内部3153B派生JSON/SHA `6b5b9a3f9b91a17ee8546936e588db81de8c09248040a3fafeaa09e7150539c3`，逐字节一致，Git blob `b270c9106e4ded5e236e68f12301e03c5fc403e2` 与已发布远端文件完全同一。ZIP壳摘要变化不意味着原网页/派生JSON内容变化。
+
+[完整23项主线+候选验收、8条文件blob和原来源保管](../../research/recovered/STONEAGE-SCENE42-PUBLICATION-R1.json)永久入库，原HTML及任何外部可执行程序0B入Git、exe未请求/未运行、原游戏没有进入。后验收据自身提交的Actions不可提前预言，另据后续实际状态。新增4行8址/不同版号旁证，绝非原已发布时间或作弊功能真实可用的确认。
+
+下一最高`SCENE43-OFFICIAL-PET-NAMED-IMAGE-SOURCE-REVIEW`，回官方宠物名称→来源图像证据；Stage A7PARTIAL+2OPEN、B/wiki GATED、R79 PAUSED_NON_BLOCKING、原boot blocked、总体percent=null原样保留。

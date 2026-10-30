@@ -1,0 +1,283 @@
+{
+  "schema": "stoneage.scene42.sina.helper_listing.publication_acceptance.r1",
+  "date": "2026-10-30",
+  "repository": "chinaneedM/stoneage-rebuild",
+  "initial_remote": {
+    "head": "3863ab795454505337235ff3907e1dc00097ade7",
+    "tree": "2c774d0c8ae17ac4af7e4c70a457b78ca7eeac10"
+  },
+  "candidate": {
+    "head": "140c721f6c6beeab44c806b63cadeab503e2ace2",
+    "tree": "a4ff6be3354c72eafad545ebaca05f3f57dce322",
+    "branch": "agent/scene42-sina-2003-helper-list-20261030"
+  },
+  "publication": {
+    "pr_number": 56,
+    "merge_commit": "e00bc5a22f15dda67d32d99d8ad52390ed098057",
+    "merge_tree": "a4ff6be3354c72eafad545ebaca05f3f57dce322",
+    "parents": [
+      "3863ab795454505337235ff3907e1dc00097ade7",
+      "140c721f6c6beeab44c806b63cadeab503e2ace2"
+    ],
+    "same_tree_as_candidate": true
+  },
+  "historical_prefix_current_state_blob": "20050acf279a01555ab06a381dfcdc936bd381a6",
+  "preexisting_source_registry_id": "SRC-CN-2003-SINA-SA-DOWNLOAD-HUB-01",
+  "now_qualified_source": {
+    "url": "https://games.sina.com.cn/zhqu/sta/ltxs/sqxz.shtml",
+    "bytes": 69464,
+    "sha256": "812b32be4c9e9df45b956826c5a2a566d644ee8ef9acff5cfb69ab962a1b6a1d",
+    "encoding": "gb18030",
+    "display_date": "2003-04-03 15:38",
+    "later_tournament_label": "4月6日",
+    "original_html_first_published_date_verified": false
+  },
+  "old_june_edition_source_blob": "57fe1ede0f8ca421ac2c07b64f99fb79dc52b686",
+  "actual_first_source_run": {
+    "run_id": 41050466902,
+    "job_id": 124044938887,
+    "tests": 9,
+    "result": "success",
+    "artifact_id": 12973893129,
+    "zip_bytes": 1221,
+    "zip_sha256": "c06d533adfbda783aefde830fcf6e17641ce73407fc18f6f163ad925f9650767"
+  },
+  "actual_final_source_run": {
+    "run_id": 41050958313,
+    "tests": 12,
+    "result": "success",
+    "artifact_id": 12973873600,
+    "zip_bytes": 1221,
+    "zip_sha256": "315f2a5dd39ac835f6d7ac8407837d988c937dd7626df17e3bc3d4f0d04b37bc"
+  },
+  "derived_report": {
+    "path": "research/recovered/STONEAGE-SCENE42-SINA-HELPER-DOWNLOAD-LIST-R1.json",
+    "git_blob": "b270c9106e4ded5e236e68f12301e03c5fc403e2",
+    "raw_bytes": 3153,
+    "raw_sha256": "6b5b9a3f9b91a17ee8546936e588db81de8c09248040a3fafeaa09e7150539c3",
+    "zip_crc_ok_both": true,
+    "source_json_identical_in_both_source_artifacts": true
+  },
+  "published_files": {
+    ".github/workflows/verify-stoneage-scene42-sina-helper.yml": "2fc897e864ba5761afcc6afeca66f5490ac05b96",
+    "README.md": "6b44340c05af4a696fb8aca0611137029b3c188e",
+    "docs/continuity/STONEAGE-SCENE42-HELPER-LIST-20261030.md": "2d831a9d0d23e430da4bb2d4e9a7a6a2da0591b8",
+    "docs/specs/STONEAGE-SCENE42-2003-HELPER-DOWNLOAD-LABELS-R1.md": "f0530987b722115c662b0c6acfa74b2df464af69",
+    "research/recovered/STONEAGE-SCENE42-SINA-HELPER-DOWNLOAD-LIST-R1.json": "b270c9106e4ded5e236e68f12301e03c5fc403e2",
+    "research/recovered/STONEAGE-SCENE42-SOURCE-CUSTODY-R1.json": "9511879d6bd8ee027adaf5fd877a7f72648c66a0",
+    "tests/test_stoneage_scene42_sina_helper_listing.py": "59a9d76ed12537a9f364950bac73177c9e73d48e",
+    "tools/stoneage_scene42_sina_helper_listing.py": "b1a7b95bcc362a0699c5b96af41d6a9d87187571"
+  },
+  "candidate_observed_runs": [
+    {
+      "id": 41050958313,
+      "event": "pull_request",
+      "name": "Source gate SCENE42 historical Sina helper download listing",
+      "sha": "140c721f6c6beeab44c806b63cadeab503e2ace2",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41050954374,
+      "event": "push",
+      "name": "Verify original dated map110 three actual cell values R32",
+      "sha": "140c721f6c6beeab44c806b63cadeab503e2ace2",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41050954084,
+      "event": "push",
+      "name": "Verify StoneAge R17 original battle SAB crossversion occurrence conservation",
+      "sha": "140c721f6c6beeab44c806b63cadeab503e2ace2",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41050954165,
+      "event": "push",
+      "name": "Verify original four village interior materials R34",
+      "sha": "140c721f6c6beeab44c806b63cadeab503e2ace2",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41050954093,
+      "event": "push",
+      "name": "Verify original native album table and saved-name joins R36",
+      "sha": "140c721f6c6beeab44c806b63cadeab503e2ace2",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41050954213,
+      "event": "push",
+      "name": "Accept primary-source TW1.0 character creation numeric join R16",
+      "sha": "140c721f6c6beeab44c806b63cadeab503e2ace2",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41050954512,
+      "event": "push",
+      "name": "Source gate SCENE42 historical Sina helper download listing",
+      "sha": "140c721f6c6beeab44c806b63cadeab503e2ace2",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41050954016,
+      "event": "push",
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "sha": "140c721f6c6beeab44c806b63cadeab503e2ace2",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41050954040,
+      "event": "push",
+      "name": "Verify original local album name material and no master promotion R35",
+      "sha": "140c721f6c6beeab44c806b63cadeab503e2ace2",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41050954191,
+      "event": "push",
+      "name": "Verify preserved mixed25 full server source conservation R18",
+      "sha": "140c721f6c6beeab44c806b63cadeab503e2ace2",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41050954205,
+      "event": "push",
+      "name": "Accept preserved original TW85 SPR137 full animation material R28",
+      "sha": "140c721f6c6beeab44c806b63cadeab503e2ace2",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41050954198,
+      "event": "push",
+      "name": "Verify original same-build named-entity source gate R31",
+      "sha": "140c721f6c6beeab44c806b63cadeab503e2ace2",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "main_observed_runs": [
+    {
+      "id": 41051105652,
+      "event": "push",
+      "name": "Accept primary-source TW1.0 character creation numeric join R16",
+      "sha": "e00bc5a22f15dda67d32d99d8ad52390ed098057",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41051105682,
+      "event": "push",
+      "name": "Source gate SCENE42 historical Sina helper download listing",
+      "sha": "e00bc5a22f15dda67d32d99d8ad52390ed098057",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41051105783,
+      "event": "push",
+      "name": "Verify original dated map110 three actual cell values R32",
+      "sha": "e00bc5a22f15dda67d32d99d8ad52390ed098057",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41051105693,
+      "event": "push",
+      "name": "Verify preserved mixed25 full server source conservation R18",
+      "sha": "e00bc5a22f15dda67d32d99d8ad52390ed098057",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41051105681,
+      "event": "push",
+      "name": "Verify original native album table and saved-name joins R36",
+      "sha": "e00bc5a22f15dda67d32d99d8ad52390ed098057",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41051105737,
+      "event": "push",
+      "name": "Verify original local album name material and no master promotion R35",
+      "sha": "e00bc5a22f15dda67d32d99d8ad52390ed098057",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41051105910,
+      "event": "push",
+      "name": "Verify original four village interior materials R34",
+      "sha": "e00bc5a22f15dda67d32d99d8ad52390ed098057",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41051105724,
+      "event": "push",
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "sha": "e00bc5a22f15dda67d32d99d8ad52390ed098057",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41051105612,
+      "event": "push",
+      "name": "Accept preserved original TW85 SPR137 full animation material R28",
+      "sha": "e00bc5a22f15dda67d32d99d8ad52390ed098057",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41051105598,
+      "event": "push",
+      "name": "Verify original same-build named-entity source gate R31",
+      "sha": "e00bc5a22f15dda67d32d99d8ad52390ed098057",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41051105582,
+      "event": "push",
+      "name": "Verify StoneAge R17 original battle SAB crossversion occurrence conservation",
+      "sha": "e00bc5a22f15dda67d32d99d8ad52390ed098057",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "bounded_acceptance": {
+    "candidate_success": 12,
+    "main_success": 11,
+    "helper_labels": 4,
+    "original_hrefs": 8,
+    "new_source_page_urls": 0,
+    "program_binaries_downloaded": 0,
+    "first_release_date_certified": false,
+    "program_execution_verified": false,
+    "program_behaviors_verified": false,
+    "native_game_executed": false,
+    "original_world_entered": false,
+    "original_html_or_program_in_git": false
+  },
+  "invariant_stage": {
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b": "GATED",
+    "wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING",
+    "original_boot": "BLOCKED_PRIVATE_INPUT_CHANNEL",
+    "overall_percent": null
+  },
+  "next": "SCENE43-OFFICIAL-PET-NAMED-IMAGE-SOURCE-REVIEW",
+  "receipt_commit_self_action_success_not_predicted": true
+}
