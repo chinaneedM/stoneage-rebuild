@@ -121,15 +121,23 @@ def verify_private(source: Path) -> dict:
         frames[name] = raw
     require(len(frames) == 8 and len(images) == 56 and len(placements) == 85,
             "bounded original image coverage is incomplete")
-    model = {"report": r, "frames": {
-        k: __import__("base64").b64encode(v).decode("ascii") for k, v in frames.items()
-    }}
+    import base64
+    source_html = require_real_file(source / SCENE_HTML)
+    marker = b'<script id="evidence" type="application/json">'
+    require(source_html.count(marker) == 1 and source_html.count(b'</script>') >= 1,
+            "original offline viewer's evidence payload missing")
+    payload = source_html.split(marker, 1)[1].split(b'</script>', 1)[0]
+    model = json.loads(payload)
+    require(set(model) == {"report", "frames"} and model["report"] == r and
+            set(model["frames"]) == set(frames), "original scene viewer evidence mismatch")
+    for name, data in frames.items():
+        require(base64.b64decode(model["frames"][name], validate=True) == data,
+                "original scene viewer embeds differing image " + name)
     template = VIEW_TEMPLATE.read_text(encoding="utf-8")
     require(template.count("__PRIVATE_SCENE_JSON__") == 1,
             "historical observer injection boundary changed")
     expected_html = template.replace("__PRIVATE_SCENE_JSON__",
                                      json.dumps(model, separators=(",", ":")))
-    source_html = require_real_file(source / SCENE_HTML)
     require(source_html == expected_html.encode("utf-8"),
             "private observer HTML no longer matches audited in-repository template")
     receipt = {
