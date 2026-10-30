@@ -1,0 +1,72 @@
+{
+  "schema": "stoneage.o5_after_merge_private_library_public_source_publication.r1",
+  "receipt_written_after_verified_main": "563287a915b9278314b97b8cf593f3a3390a041d",
+  "published_main_tree": "56afacbf7c1d2aa11572d9a1fea2fd33d9d5a367",
+  "source_main_at_start": "0df899784d141c389b7769e2a3c0266fed780257",
+  "preserved_full_current_state_blob": "20050acf279a01555ab06a381dfcdc936bd381a6",
+  "candidate_branch": "agent/o5-original-map-pet-same-carrier-20261030",
+  "candidate_head": "9007f52abbcfacca7cacc62009078269a04f4293",
+  "merged_pr": 63,
+  "merge_commit_sha": "563287a915b9278314b97b8cf593f3a3390a041d",
+  "actual_candidate_actions": {
+    "head_sha": "9007f52abbcfacca7cacc62009078269a04f4293",
+    "completed_success_count": 11,
+    "run_ids": [
+      41068131681,
+      41068103558,
+      41068103409,
+      41068103446,
+      41068103573,
+      41068103317,
+      41068103421,
+      41068103373,
+      41068103364,
+      41068103423,
+      41068103382
+    ],
+    "all_completed_success": true
+  },
+  "actual_merged_main_actions": {
+    "head_sha": "563287a915b9278314b97b8cf593f3a3390a041d",
+    "completed_success_count": 11,
+    "run_ids": [
+      41068228837,
+      41068228977,
+      41068228978,
+      41068229005,
+      41068228862,
+      41068229035,
+      41068229173,
+      41068228812,
+      41068229025,
+      41068229066,
+      41068229024
+    ],
+    "all_completed_success": true
+  },
+  "new_public_git_blobs": {
+    ".github/workflows/verify-stoneage-o5-pet-source-joins.yml": "4eb208bdfa841b3bc98517fb45a5b0d02f68cb76",
+    "docs/continuity/STONEAGE-O5-ORIGINAL-MAP-PET-SOURCE-JOIN-20261030.md": "565c5a1b26885ad001042808927d987a5244f9e6",
+    "research/recovered/STONEAGE-O5-SAME-CARRIER-PET-PRIVATE-ACCEPTANCE-R1.json": "90137a1df8b522e940c978343c76166d09b33eff",
+    "tests/test_stoneage_o5_source_contract.py": "56ad52f8007d7d77089d9959546ab4d3c20c4311",
+    "tools/stoneage_o5_source_contract.py": "9111668cc4ad2e8ceb86c233e3863552207d9b61",
+    "README.md": "35a0021a8ab7586452fa28aa386f86f052e5e2fb"
+  },
+  "actual_library_readback": {
+    "path": "/石器时代/StoneAge-O5-original-two-scene-and-pet-private-20261030.zip",
+    "uploaded": true,
+    "re_materialized_from_library": true,
+    "full_sha256_same_as_pre_upload": true,
+    "byte_for_byte_cmp_identical": true,
+    "archive_crc_errors": 0,
+    "zip_members": 6,
+    "bytes": 2905474,
+    "sha256": "e2f6beb8789f1d755fe44bf6d3ba70f7bf6baf7cd713eb34cf47d18062aa5bc6",
+    "original_private_assets_not_published": true
+  },
+  "this_postpublication_receipt_main_actions": "PENDING_AT_WRITING_DO_NOT_PRECLAIM",
+  "original_client_world_entered": false,
+  "original_same_version_entity_to_sprite_relation_authenticated": false,
+  "overall_percent": null,
+  "highest_next": "SAME_BUILD_ORIGINAL_PET_ENTITY_TO_GRAPHIC_PRIMARY_SOURCE_IF_AVAILABLE_ELSE_BOUNDED_SOURCE_ONLY_INTERACTION_SPEC"
+}
