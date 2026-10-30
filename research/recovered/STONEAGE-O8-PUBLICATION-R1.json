@@ -1,0 +1,101 @@
+{
+  "schema": "stoneage.o8_private_original_shop_viewport_main_publication.r1",
+  "date": "2026-10-30",
+  "base_main_sha": "d7593c8bf9b5b6eb0746266ec04c6f928a07aecf",
+  "preserved_existing_full_current_state_blob": "20050acf279a01555ab06a381dfcdc936bd381a6",
+  "candidate_branch": "agent/o8-shop-original-crop-verified-seam-20261030",
+  "candidate_final_head": "0b77527f1eacdda30fe79bd20231459aa8ad488f",
+  "merged_pr": 66,
+  "merge_commit": "005002f647a4bf8656be055862c251bf2884aad0",
+  "verified_merge_tree": "d75d8260a8641f96300dba0a2a6fc9def877bf3a",
+  "remote_blobs": {
+    ".github/workflows/verify-stoneage-o8-shop-crop.yml": "0945b0dd076d8ab0f715cb5a5bf645a67ea422a6",
+    "docs/continuity/STONEAGE-O8-1001-SHOP-ORIGINAL-CROP-OVERLAP-20261030.md": "8193834c7a0bc63ae764b53132746b06589bbca1",
+    "research/recovered/STONEAGE-O8-ORIGINAL-SHOP-CROP-ACCEPTANCE-R1.json": "641e2906b5b0fc3dee68c888685e717bd0d5f371",
+    "tests/test_stoneage_o8_source_contract.py": "d827ce0411e13867d105412a866a84dd1e3dcf75",
+    "tools/stoneage_o8_source_contract.py": "e89fe2ebafc8557389cf11111b91c8fceb01343d"
+  },
+  "preserved_previous_README_historical_prefix": true,
+  "private_original_source": {
+    "parents": {
+      "O7_zip_sha256": "41369ba6edaf9beb9b71d2c2436794660b4adce2a2ac4ccc08b2f8fe7527a5ec",
+      "SCENE14_zip_sha256": "7684267ab528d13ceecb23a25632543ae839225607cbda702a32736e4c4d366a",
+      "original_DAT_sha256": "62dbef1614ede0ba032ca9c69cbfdc3d43938e45baba78701885790937b86b90"
+    },
+    "shop_5x5_source_occurrences": 30,
+    "source_overlap_cell_layer_id_tuples": 5,
+    "private_original_common_png_equal": 7,
+    "unique_source_two_view_placements": 52,
+    "original_npc_source_xy": [
+      17,
+      13
+    ],
+    "npc_5863_original_png_sha256": "b1ef1f5f0ba489197bc7c82518ff5e32cf8b5750207d283b3a7ecd618b6d3c0f",
+    "original_world_entered": false
+  },
+  "private_library": {
+    "path": "/石器时代/StoneAge-O8-private-original-shop-viewport-20261030.zip",
+    "zip_sha256": "092c970f94458d31c5fd933d5db40eb9d3eac705ea6d6e105b812655398accd2",
+    "bytes": 2523649,
+    "zip_members": 297,
+    "total_original_pngs": 282,
+    "preserved_o7_previous_members_equal": 287,
+    "uploaded": true,
+    "returned_from_library": true,
+    "byte_for_byte_cmp_equal": true,
+    "zip_crc_errors": 0,
+    "private_browser_original_screenshot_png_sha256": "c1483636488b4882689e1e8d75cfc879d4f8826fbfcfb1538c749b3be79841c4",
+    "private_browser_source_pngs_decoded": 10,
+    "private_browser_pet_frame_occurrences_decoded": 352,
+    "private_browser_external_requests": 0,
+    "private_browser_js_errors": 0
+  },
+  "failed_runs_retained": {
+    "run_ids": [
+      41075586544,
+      41075829000,
+      41075883077
+    ],
+    "reason": "Public source-only gate used +8 rather than +10 added private ZIP members and did not initially declare original native executable false in browser receipt; corrections additive, private original input and ZIP unchanged",
+    "reported_success": false
+  },
+  "actual_candidate_success": {
+    "final_head_sha": "0b77527f1eacdda30fe79bd20231459aa8ad488f",
+    "run_ids": [
+      41075980601,
+      41075978589
+    ],
+    "both_completed_success": true,
+    "synthetic_tests_confirmed_by_job_log": 25
+  },
+  "actual_main_workflow_success": {
+    "merged_head_sha": "005002f647a4bf8656be055862c251bf2884aad0",
+    "run_ids": [
+      41076097364,
+      41076097171,
+      41076097154,
+      41076097270,
+      41076097252,
+      41076097253,
+      41076097280,
+      41076097208,
+      41076097190,
+      41076097174,
+      41076097230
+    ],
+    "total": 11,
+    "completed_success": 11,
+    "failures": 0
+  },
+  "source_only_public_ci_cannot_access_original_commercial_PNGs": true,
+  "original_TW1_official_map_deployment_proven": false,
+  "original_native_shop_interaction_proven": false,
+  "original_client_exe_world_entered": false,
+  "stage_a": "7 PARTIAL + 2 OPEN",
+  "stage_b": "GATED",
+  "wiki": "GATED",
+  "r79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null,
+  "postpublication_receipt_own_actions": "NOT_CLAIMED",
+  "next": "RETURN_22_DOMAIN_CONTENT_AND_PRIMARY_SOURCE_PRIORITY; only extend other original source-qualified location rather than repeating closed shop/asset work"
+}
