@@ -55,7 +55,7 @@ class O8SourceGate(unittest.TestCase):
  def test_browser_legacy_execution_cannot_be_assumed(self):
   self.check_failure("o8",lambda x:x["private_browser"].__setitem__("historic_original_game_executable_entered",True),"false original client")
  def test_private_library_sha_guard(self):
-  self.check_failure("o8",lambda x:x["private_archive"].__setitem__("sha256","0"*64),"archive SHA")
+  self.check_failure("o8",lambda x:x["private_archive"].__setitem__("sha256","0"*64),"archived SHA")
  def test_completion_percent_unknown(self):
   self.check_failure("o8",lambda x:x.__setitem__("overall_percent",89),"false restoration progress")
  def test_private_commercial_pngs_never_in_public_repository(self):
