@@ -50,7 +50,7 @@ def validate(v):
  pv=a["private_archive"]
  require(pv["inherited_O7_files_byte_unchanged"]==b["private_O7"]["zip_members"]==287,"O7 existing private archive changed")
  require(pv["additional_original_PNGs"]==4 and pv["total_private_original_PNGs"]==b["private_O7"]["total_original_PNGs"]+4==282,"original private bitmap conservation")
- require(pv["members"]==pv["inherited_O7_files_byte_unchanged"]+8==297,"private archive member count changed")
+ require(pv["members"]==pv["inherited_O7_files_byte_unchanged"]+10==297,"private archive member count changed")
  require(pv["bytes"]==2523649 and pv["sha256"]=="092c970f94458d31c5fd933d5db40eb9d3eac705ea6d6e105b812655398accd2","private archived SHA changed")
  require(pv["saved_in_private_Library"] is True and pv["downloaded_again_full_byte_compare_equal"] is True and pv["zip_CRC_errors"]==0,"private source custody incomplete")
  browser=a["private_browser"]
