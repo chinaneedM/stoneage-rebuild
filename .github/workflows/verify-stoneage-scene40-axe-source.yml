@@ -3,6 +3,13 @@ on:
   pull_request:
     paths:
       - .github/workflows/verify-stoneage-scene40-axe-source.yml
+      - research/recovered/STONEAGE-SCENE40-*
+      - tests/test_stoneage_scene40_source.py
+  push:
+    paths:
+      - .github/workflows/verify-stoneage-scene40-axe-source.yml
+      - research/recovered/STONEAGE-SCENE40-*
+      - tests/test_stoneage_scene40_source.py
 permissions:
   contents: read
 jobs:
@@ -10,7 +17,11 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
+      - uses: actions/checkout@v4
+      - name: Frozen scope and no build promotion
+        run: python3 -m unittest tests.test_stoneage_scene40_source -v
       - name: Acquire one exact public page and derive three rows
+        if: github.event_name == 'pull_request'
         shell: bash
         run: |
           python3 - <<'PY'
@@ -55,10 +66,13 @@ jobs:
               rows.append({'player_guide_name':name,'player_guide_price':cost,'player_guide_attrs':attrs,'player_guide_places':villages,'preserved_mixed25_item_id_for_comparison':item_id,'original_client_same_build_proven':False,'commercial_trade_executed':False})
           report={'schema':'stoneage.scene40.sina_one_axe_page_source_replay.r1','url_requested':source,'url_final':final,'status':status,'raw_bytes':len(raw),'raw_sha256':hashlib.sha256(raw).hexdigest(),'raw_decoding':'gb18030_surrogateescape_lossless','invalid_decoding_original_bytes':invalid_codepoints,'genre':'USER_CONTRIBUTED_GAME_GUIDE','author_as_stated':'本田太郎','verified_original_publication_date':None,'historical_exact_build_id':None,'source_rows':rows,'source_row_count':len(rows),'new_official_rules':0,'native_game_executed':False,'original_html_in_public_git':False}
           output=json.dumps(report, ensure_ascii=False, indent=2)+'\n'
+          frozen=Path('research/recovered/STONEAGE-SCENE40-SINA-AXE-PLAYER-REPLAY-R1.json').read_text(encoding='utf-8')
+          assert output == frozen, 'live_source_and_fixed_source_record_drift'
           Path('scene40-source-replay.json').write_text(output,encoding='utf-8')
           print('SCENE40_SOURCE_REPLAY '+json.dumps({'bytes':len(raw),'sha256':report['raw_sha256'],'rows':len(rows),'invalid_original_bytes':invalid_codepoints,'source_date':None,'official':False},ensure_ascii=False))
           PY
       - uses: actions/upload-artifact@v4
+        if: github.event_name == 'pull_request'
         with:
           name: scene40-derived-sina-axe-source
           path: scene40-source-replay.json
