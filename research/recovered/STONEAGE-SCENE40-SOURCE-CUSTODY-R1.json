@@ -1,0 +1,56 @@
+{
+  "schema": "stoneage.scene40.source_custody.r1",
+  "task": "SCENE40-ITEM-ECONOMY-ORIGINAL-MATERIAL-DELTA-REVIEW",
+  "date": "2026-10-30",
+  "scoped_user_guide_url": "https://games.sina.com.cn/handbook/0101/01186086_c1.shtml",
+  "previous_preserved_shop": {
+    "path": "docs/specs/STONEAGE-SCENE24-SHOP-ITEM-IMAGES-R1.md",
+    "blob": "evidence_in_existing_tree_not_same_build_reverified",
+    "scope": "MIXED25_MODIFIED",
+    "item_ids": [
+      0,
+      4,
+      10
+    ],
+    "historical_prices": [
+      65,
+      105,
+      260
+    ]
+  },
+  "first_source_attempt": {
+    "run_id": 41045491149,
+    "job_id": 124028435974,
+    "conclusion": "failure",
+    "precise_error": "GB18030_STRICT_INVALID_BYTE_0XA0_AT_24995"
+  },
+  "corrected_source_attempt": {
+    "run_id": 41045626824,
+    "job_id": 124028879852,
+    "conclusion": "success",
+    "source_commit": "66f32d215a9819c2de6e07a8f1bb874a16dad9f6",
+    "artifact_id": 12972795452,
+    "artifact_zip_bytes": 922,
+    "artifact_zip_sha256": "9ad3e6b5e56ba8d05475e638f21be5773b4f3e860fe87094b05649da425d74ce",
+    "artifact_raw_json_bytes": 1980,
+    "artifact_raw_json_sha256": "7b011d43ffde2a3104fe1e219b1d5312c296493ec8d7434706ea3fa1676c0f86",
+    "artifact_zip_crc_verified": true,
+    "source_html_bytes": 36312,
+    "source_html_sha256": "d1fbdacdb50b9b31c0068e270d7026550ea6764f577cc9df3641d20df3432bfb",
+    "original_encoding_anomaly_count": 10,
+    "selected_source_rows_encoding_anomalies": 0
+  },
+  "parsed_player_contribution": {
+    "writer_named_as": "本田太郎",
+    "official": false,
+    "first_publication_date": null,
+    "source_snapshot_original_period_proven": false,
+    "three_row_price_and_name_match_with_old_modified_store": true,
+    "unverified_extra_player_claims": "guide-listed village availability and stat effects",
+    "same_build_identity": false
+  },
+  "source_payload_committed": false,
+  "artifact_only_derived": true,
+  "publication_outcome": "NEW_PLAYER_DOCUMENT_REFERENCE_AND_CONSTRAINED_CROSS_SOURCE_LINK_NOT_OFFICIAL_BUILD",
+  "next": "SCENE41-AUDIO-EVENT-SOURCE-DELTA-REVIEW"
+}
