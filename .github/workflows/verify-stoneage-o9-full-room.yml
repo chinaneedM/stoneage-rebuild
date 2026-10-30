@@ -1,0 +1,30 @@
+name: Verify StoneAge O9 full original room metadata (private pixels excluded)
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/verify-stoneage-o9-full-room.yml'
+      - 'tools/stoneage_o9_source_contract.py'
+      - 'tests/test_stoneage_o9_source_contract.py'
+      - 'research/recovered/STONEAGE-O9-ORIGINAL-FULL-ROOM1001-ACCEPTANCE-R1.json'
+  push:
+    paths:
+      - '.github/workflows/verify-stoneage-o9-full-room.yml'
+      - 'tools/stoneage_o9_source_contract.py'
+      - 'tests/test_stoneage_o9_source_contract.py'
+      - 'research/recovered/STONEAGE-O9-ORIGINAL-FULL-ROOM1001-ACCEPTANCE-R1.json'
+  workflow_dispatch:
+jobs:
+  bounded-derived-source-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Preserve original byte provenance and prevent native gameplay claims
+        run: |
+          python -m unittest tests.test_stoneage_o9_source_contract -v
+          python -m tools.stoneage_o9_source_contract
