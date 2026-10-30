@@ -1,0 +1,28 @@
+name: Verify original two-scene offline observation O4 source contract
+on:
+  push:
+    paths:
+      - tools/stoneage_o4_source_contract.py
+      - tests/test_stoneage_o4_source_contract.py
+      - research/recovered/STONEAGE-O4-TWO-SCENE-PRIVATE-ACTUAL-ACCEPTANCE-R1.json
+      - docs/continuity/STONEAGE-O4-TWO-SCENE-ORIGINAL-OBSERVATION-20261030.md
+      - .github/workflows/verify-stoneage-o4-source-tour-r1.yml
+  pull_request:
+    paths:
+      - tools/stoneage_o4_source_contract.py
+      - tests/test_stoneage_o4_source_contract.py
+      - research/recovered/STONEAGE-O4-TWO-SCENE-PRIVATE-ACTUAL-ACCEPTANCE-R1.json
+      - docs/continuity/STONEAGE-O4-TWO-SCENE-ORIGINAL-OBSERVATION-20261030.md
+      - .github/workflows/verify-stoneage-o4-source-tour-r1.yml
+permissions:
+  contents: read
+jobs:
+  source-only-synthetic-negative-and-receipt:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify original-preserved public source metadata and disallow historical overclaim
+        run: python3 -m unittest tests.test_stoneage_o4_source_contract -v
+      - name: Replay bounded modern observation path from original create tuples
+        run: python3 -m tools.stoneage_o4_source_contract
