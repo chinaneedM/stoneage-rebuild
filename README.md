@@ -963,3 +963,7 @@ ranges, not a new whole-client download or arbitrary program reverse engineering
 ### 2026-10-30 — SCENE38：猛毒攻击的一条2001来源归属
 
 [行来源、价目差异与下一包](docs/continuity/STONEAGE-SCENE38-SKILL-MATERIAL-DELTA-20261030.md)：既存CN2.0官方站托管技能页过去仅结构化加工／料理，本轮核同入口与正文151378B，从20011204捕获补猛毒行50%／5回合／4000的来源合同；新网页／技能名／学习资格均0。与旧未定年S2相同、和2004标签S1的30%／3／4400不同，保留冲突，不推补丁、作者／构建或S2日期。币种、实际扣款、MP、教学地点和毒损公式未证；不把R45字段改作学费。27新＋28回归通过，远端源重放／保管按后验。下一SCENE39查重战斗内容，只推进一条原文增量。CURRENT／Stage A/B/wiki/R79／原世界未进入／总体未知不变。
+
+### 2026-10-30 — SCENE39 战斗来源查重与止点（无新增原战斗规则）
+
+[有界来源对照、战败条件分层与下轮](docs/continuity/STONEAGE-SCENE39-BATTLE-MATERIAL-BOUNDARY-20261030.md)：已核大陆2.0的八指令/气绝和JSS2001战后HP1/条件性SP以及TW1原SAB静态可视资料，全部已由旧合同覆盖；没有新战斗来源/原程序执行。新增可审计的**禁止跨版推结算规则**矩阵；旧文献冲突不抹平，不能将台湾1.0候选战场图冒充真实回合。下一转22域17的`SCENE40-ITEM-ECONOMY-ORIGINAL-MATERIAL-DELTA-REVIEW`。原启动仍缺私有输入，Stage A/B/wiki/R79及总体未知状态不变。

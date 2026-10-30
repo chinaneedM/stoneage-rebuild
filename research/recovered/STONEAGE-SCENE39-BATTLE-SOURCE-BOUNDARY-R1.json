@@ -1,0 +1,153 @@
+{
+  "schema": "stoneage.scene39.battle_source_boundary.r1",
+  "date": "2026-10-30",
+  "task": "SCENE39-BATTLE-CONTENT-MATERIAL-DELTA-REVIEW",
+  "baseline": {
+    "repository": "chinaneedM/stoneage-rebuild",
+    "branch": "main",
+    "head": "fe75635da15ac6c9bfb4e76811cd27ff6b3f5809",
+    "tree": "bc180c2ab8b08dfe93ccd29606df72a82cd6f536",
+    "current_state": {
+      "path": "docs/CURRENT-STATE.md",
+      "blob": "20050acf279a01555ab06a381dfcdc936bd381a6",
+      "bytes": 2708031
+    },
+    "preceding_overlay": {
+      "path": "docs/continuity/STONEAGE-SCENE38-SKILL-MATERIAL-DELTA-20261030.md",
+      "blob": "7210e543ce5cefeff02e8618bdd0dabc9d39b665"
+    }
+  },
+  "existing_pinned_sources": [
+    {
+      "source_id": "CN20_COMBAT_2001_ARCHIVE",
+      "scope": "CN2.0_OPERATOR_HOSTED_UNSIGNED",
+      "path": "research/recovered/STONEAGE-CN20-BATTLE-COMMANDS-DEFEAT-SOURCE-R1.json",
+      "git_blob": "85c428fe0b6ea44b00a850c0e3fc49ac1360630f",
+      "source_document_sha256": "944d26d035afc11a6f1af4fd135491a7ef516c20970085b68c84e1c4f7069d83",
+      "capture": "20011201043456",
+      "documented": "eight commands, command loop, pet choice, escape, separate defeat cases"
+    },
+    {
+      "source_id": "JSS_MANUAL_2001_KNOCKOUT",
+      "scope": "JSS_JP_2001_MANUAL",
+      "path": "research/recovered/STONEAGE-JSS2001-PLAYER-STATUS-LEVELUP-KNOCKOUT-R1.json",
+      "git_blob": "4b44c6d022265c62cf2cca1d599deb85e31e1418",
+      "source_document_sha256": "50b9771ec501067136629c8e083a190e979e53dd9ba141903f78b76d43b602cc",
+      "capture": "20010418083149",
+      "documented": "post-battle revival value 1, conditional SP return, charm and loyalty loss"
+    },
+    {
+      "source_id": "JSS_MANUAL_2001_PET_COMMAND",
+      "scope": "JSS_JP_2001_MANUAL",
+      "path": "docs/specs/STONEAGE-JSS2001-PET-INTERACTION-AND-VISUAL-R1.md",
+      "git_blob": "02bb441405b0316cc624eade04104afb8a2f21f7",
+      "source_document_sha256": "50b9771ec501067136629c8e083a190e979e53dd9ba141903f78b76d43b602cc",
+      "capture": "20010418083149",
+      "documented": "player command then pet command; HELP and leader escape/party disband; not an independent document"
+    },
+    {
+      "source_id": "TW10_SAB_SCENE29",
+      "scope": "ACCEPTED_TW10_CLIENT_STATIC_RESOURCE",
+      "path": "docs/specs/STONEAGE-SCENE29-TW10-ORIGINAL-BATTLE-PET-OBSERVATION-R1.md",
+      "git_blob": "f99027ac23b25271c154aea2e9c4d670f25bc2e1",
+      "source_document_sha256": null,
+      "capture": null,
+      "documented": "three 804-byte original SAB files and source pixel reconstructions; no native command trace"
+    },
+    {
+      "source_id": "CN20_OPERATION_RIGHT_CLICK",
+      "scope": "CN2.0_OPERATOR_HOSTED_UNSIGNED",
+      "path": "docs/specs/STONEAGE-CN20-OPERATION-UI-SOURCE-R1.md",
+      "git_blob": null,
+      "source_document_sha256": "9be8b3ea0d48ebc17639e1114cba6606eba1a135a181ed5ad8f192392e554809",
+      "capture": "20011204000349",
+      "documented": "right click cancels battle instruction; not escape or confirmed runtime"
+    }
+  ],
+  "evidence_rows": [
+    {
+      "id": "CN20-INPUTS",
+      "scope": "CN2.0_OPERATOR_HOSTED_UNSIGNED",
+      "known": "eight battle commands and player/pet input sequence",
+      "native_command_ids": null,
+      "game_rule_runtime_verified": false
+    },
+    {
+      "id": "CN20-SOLO-ZERO",
+      "scope": "CN2.0_OPERATOR_HOSTED_UNSIGNED",
+      "known": "solo HP reaches 0; after failure return to scene with HP 1",
+      "return_floor_id": null,
+      "save_transaction_verified": false
+    },
+    {
+      "id": "CN20-OVERDAMAGE",
+      "scope": "CN2.0_OPERATOR_HOSTED_UNSIGNED",
+      "known": "severe excess damage described as flying to record point",
+      "numeric_threshold": null,
+      "applies_to_all_knockouts": false
+    },
+    {
+      "id": "JSS-POST-BATTLE-ONE",
+      "scope": "JSS_JP_2001_MANUAL",
+      "known": "player and pet revive with value 1 after battle ends",
+      "exact_wire_state_field": null,
+      "client_server_transaction_verified": false
+    },
+    {
+      "id": "JSS-SP-CONDITIONAL",
+      "scope": "JSS_JP_2001_MANUAL",
+      "known": "return to SP can occur depending on knockout damage",
+      "numeric_threshold": null,
+      "return_is_unconditional": false
+    },
+    {
+      "id": "JSS-CHARM-LOYALTY",
+      "scope": "JSS_JP_2001_MANUAL",
+      "known": "player charm decreases and pet loyalty decreases",
+      "charm_loss_amount": null,
+      "loyalty_loss_amount": null
+    },
+    {
+      "id": "TW10-STATIC-SAB",
+      "scope": "ACCEPTED_TW10_CLIENT_STATIC_RESOURCE",
+      "known": "three original SAB+pet bitmap candidate displays",
+      "native_battle_target_selection_verified": false,
+      "original_world_entered": false
+    }
+  ],
+  "comparison": {
+    "shared_descriptive_motif": "revival at numeric 1 appears in distinct documents",
+    "independent_gameplay_confirmation": false,
+    "identical_build_confirmed": false,
+    "equivalent_target_state_confirmed": false,
+    "reconciled_defeat_algorithm": null,
+    "merged_record_point_rule": null
+  },
+  "bounded_outcome": {
+    "new_original_battle_source_documents": 0,
+    "new_original_battle_content_claims": 0,
+    "new_original_runtime_traces": 0,
+    "new_source_qualified_cross_version_runtime_join": 0,
+    "source_delta_found": false,
+    "status": "STOP_SCOPED_SOURCES_ALREADY_COVERED",
+    "not_a_global_nonexistence_claim": true
+  },
+  "reopen_only_if": [
+    "historical official article with previously unarchived specific battle command/condition text and attributable date",
+    "source-identified exact-build original client menu/callsite or actual network input-output trace",
+    "same-deployment game server logs/config binding battle outcome to original state/return point",
+    "separately dated contemporary battle text with exact provenance and demonstrably new material"
+  ],
+  "boundaries": {
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b": "GATED",
+    "wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING",
+    "native_server_boot": "BLOCKED_PRIVATE_INPUT_CHANNEL",
+    "native_world_entered": false,
+    "overall_percent": null,
+    "new_game_production_started": false,
+    "proprietary_payload_in_git": false
+  },
+  "next": "SCENE40-ITEM-ECONOMY-ORIGINAL-MATERIAL-DELTA-REVIEW"
+}
