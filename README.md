@@ -943,3 +943,8 @@ ranges, not a new whole-client download or arbitrary program reverse engineering
 ### 2026-10-30 — SCENE34：自编Windows回环实测通过，原服务端启动仍缺私有输入通道
 
 [真实两次观察、失败保留与下一内容包](docs/continuity/STONEAGE-SCENE34-ISOLATED-BOOT-PREREQUISITES-20261030.md)：一次性Windows2025中，自编32位两进程在入/出站Block规则期间完成8字节回环；两次外部TCP canary为10013，清理后外部与回环恢复。首次10060不合格现场原样保留；修正Winsock异常就绪处理后独立重跑，实测规则中仅1.75秒，不冒称120秒。两原报告及ZIP来源摘要永久入Git。当前无私有原件传入runner的接口，因此SAAC/GMSV/客户端执行0、原握手/世界未建立，原boot仍BLOCKED。29新+25回归检查通过，最终CI按后验。按两包前提研究止点回22域，下一SCENE35先与已审遇敌链和WORLD01路线去重，仅交付有原文增量的一张modified包遇敌内容卡，不再扩隔离/传递/驱动helper。CURRENT/Stage A/B/wiki/R79/总体未知保持。
+
+
+### 2026-10-30 — SCENE35：遇敌候选止步，轮换交付一条原NPC对白内容卡
+
+[原件、止点与下一材料包](docs/continuity/STONEAGE-SCENE35-CONTENT-ROTATION-20261030.md)：已有遇敌全表链/WORLD01模型不重做；实际四表0注释但缺同二进制字段布局，未建立原服遇敌卡。转同mixed包一条显式NPC创建→唯一TownPeople模板→76B原对白；一个ASCII逗号所分两片段按22/52B保留，不能冒称运行分支或任务。原名/原文与三原文件已做成11122B私人静态卡并保存；公开仅摘要/释义/范围，源字节经CP950/Big5/iconv及RAR CRC核同，无JS/外部资源。28新+29回归通过，原世界未进入。下一SCENE36先对第15域既有骑宠资格/界面资料查重，有版本明确的新原文内容才交付，不扩同村NPC/遇敌/运行helper。CURRENT/Stage A/B/wiki/R79与总体未知保持，Actions按后验记录。
