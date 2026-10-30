@@ -42,7 +42,7 @@ def original_names():
     for row in rows:
         d=dict(v.split("=",1) for v in row[1:] if "=" in v)
         assert d["path"]=="StoneAge/data/bgm/"+d["name"]
-        assert re.fullmatch(r"sabgm_[bdfst][0-9]+\\.wav",d["name"])
+        assert re.fullmatch(r"sabgm_[bdfst][0-9]+\.wav",d["name"])
         names.append(d["name"].removesuffix(".wav"))
     assert len(names)==11 and len(set(names))==11
     assert set(names)==set(EXPECTED_NAMES)
@@ -63,7 +63,7 @@ def parse_page(raw:bytes, final_url:str):
     invalid=sum(0xDC80<=ord(c)<=0xDCFF for c in decoded)
     assert invalid<=512,"too many invalid source bytes"
     p=ExtractText();p.feed(decoded)
-    t=re.sub(r"\\s+"," "," ".join(p.text))
+    t=re.sub(r"\s+"," "," ".join(p.text))
     start_phrase="我可以更改石器时代的音乐吗"
     end_phrase="在北岛守桥的愿藏很烦"
     assert t.count(start_phrase)==1 and t.count(end_phrase)==1,"FAQ bounded heading missing or doubled"
@@ -78,7 +78,7 @@ def parse_page(raw:bytes, final_url:str):
     rows=[]
     for i,m in enumerate(matches):
         field=section[m.end():(matches[i+1].start() if i+1<len(matches) else len(section))]
-        label=re.sub(r"\\s+"," ",field).strip()
+        label=re.sub(r"\s+"," ",field).strip()
         # The labels are prose descriptions, not verified original software event calls.
         want=DESCRIPTORS[i]
         assert label==want,("wrong original player label",keys[i],label,want)
@@ -118,7 +118,7 @@ def main():
         return
     raw,url=acquire()
     report=parse_page(raw,url)
-    s=json.dumps(report,ensure_ascii=False,sort_keys=True,indent=2)+"\\n"
+    s=json.dumps(report,ensure_ascii=False,sort_keys=True,indent=2)+"\n"
     if args.output: Path(args.output).write_text(s,encoding="utf-8")
     print("SCENE41_SOURCE "+json.dumps({k:report[k] for k in ("resolved_url","current_http_bytes","current_http_sha256","original_bytes_invalid_gb18030","row_count","cross_reference_exact_file_name_count")},ensure_ascii=False))
 

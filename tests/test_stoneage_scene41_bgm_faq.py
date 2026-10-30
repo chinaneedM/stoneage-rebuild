@@ -29,6 +29,6 @@ class Scene41SourceBoundary(unittest.TestCase):
         with self.assertRaises(AssertionError):parse_page(self.example(),"https://example.com/stoneage")
     def test_encoding_break_inside_section_rejected(self):
         b=self.example();needle="魔王战斗音乐".encode("gb18030");p=b.index(needle)
-        b=b[:p]+b"\\xff"+b[p:]
+        b=b[:p]+b"\xff"+b[p:]
         with self.assertRaises(AssertionError):parse_page(b,SOURCE_URL)
 if __name__=="__main__": unittest.main()
