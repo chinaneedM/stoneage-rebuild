@@ -1,0 +1,349 @@
+{
+  "schema": "stoneage.offline_asset_first_observation.pr59.publication_acceptance.r1",
+  "date": "2026-10-30",
+  "repository": "chinaneedM/stoneage-rebuild",
+  "initial_main": {
+    "head": "a4684af21a4c357263832e1dbba978c4b9ed9b3a",
+    "tree": "8d9c33a010b891bafea9be7fa42c0f644b031a7e"
+  },
+  "user_confirmed_policy": "NO_HISTORICAL_ONLINE_DEPENDENCY_MODERN_SINGLEPLAYER_ORIGINAL_CLIENT_ASSETS_FIRST",
+  "old_external_screenshot_pr": {
+    "number": 58,
+    "state": "closed_unmerged",
+    "candidate_branch_retained": true,
+    "source_gate_ci_passed": true
+  },
+  "candidate": {
+    "head": "43f99fddf2bbc3bbdf6c54ea69bc5d3f02433a2a",
+    "tree": "870d5be2a4ae7a9d740affafe31763aa451f0d19",
+    "branch": "agent/offline-asset-first-observation-r1-20261030"
+  },
+  "merge": {
+    "pr": 59,
+    "main_commit": "9ac2de6d9bc0370f6fe62aee254dd7883666ca52",
+    "tree": "870d5be2a4ae7a9d740affafe31763aa451f0d19",
+    "parents": [
+      "a4684af21a4c357263832e1dbba978c4b9ed9b3a",
+      "43f99fddf2bbc3bbdf6c54ea69bc5d3f02433a2a"
+    ],
+    "same_tree_as_candidate": true
+  },
+  "source_contracts": {
+    "original_witnessed_resource_decoders_reused": [
+      "tools/stoneage_original_animation_lab.py",
+      "tools/stoneage_private_sprite_frame_export_r1.py",
+      "tools/modern-observation-viewer.html"
+    ],
+    "real_historical_client_executed_in_this_work": false,
+    "raw_original_resource_files_read_in_this_work": false,
+    "original_sprite_frames_materialized_in_this_work": false,
+    "synthetic_tests_ran": 9,
+    "prior_pinned_metadata_check_passed": true,
+    "copyrighted_assets_in_public_git": false,
+    "offline_kit_only_writes_outside_public_repo": true,
+    "actual_original_sprite_export_requires_private_known_sha_client_files": true,
+    "native_original_game_world_entered": false,
+    "historical_login_or_server_required": false,
+    "claim_original_ride_or_scene_composition_completed": false
+  },
+  "published_paths": {
+    ".github/workflows/verify-stoneage-offline-asset-first-r1.yml": "2658b804d62c92aa14813c48b935ff35d20dbcd1",
+    "README.md": "3d1fa067e324f4b9a47aab789b875fc7d37a9b01",
+    "docs/DESIGN-DECISIONS.md": "25677917be0c83d1efef70afe5060a2def657714",
+    "docs/continuity/STONEAGE-SINGLEPLAYER-ASSET-FIRST-20261030.md": "7d8c85c3065328558b7693e50792586931b72b60",
+    "tests/test_stoneage_singleplayer_observation_kit.py": "c1843791785fb8e572087dd6093ea29b779a657e",
+    "tools/stoneage_singleplayer_observation_kit.py": "b33d6c5800c3f8e77086d4640b1b7af4364201c6"
+  },
+  "observed_candidate_actions": [
+    {
+      "id": 41056724434,
+      "name": "Validate StoneAge separated quest origins and archival source blobs",
+      "event": "pull_request",
+      "head_sha": "43f99fddf2bbc3bbdf6c54ea69bc5d3f02433a2a",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41056724406,
+      "name": "Validate single-player original-resource offline observation kit",
+      "event": "pull_request",
+      "head_sha": "43f99fddf2bbc3bbdf6c54ea69bc5d3f02433a2a",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41056717693,
+      "name": "Verify original four village interior materials R34",
+      "event": "push",
+      "head_sha": "43f99fddf2bbc3bbdf6c54ea69bc5d3f02433a2a",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41056717894,
+      "name": "Verify StoneAge R17 original battle SAB crossversion occurrence conservation",
+      "event": "push",
+      "head_sha": "43f99fddf2bbc3bbdf6c54ea69bc5d3f02433a2a",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41056718329,
+      "name": "Verify preserved mixed25 full server source conservation R18",
+      "event": "push",
+      "head_sha": "43f99fddf2bbc3bbdf6c54ea69bc5d3f02433a2a",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41056717907,
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "event": "push",
+      "head_sha": "43f99fddf2bbc3bbdf6c54ea69bc5d3f02433a2a",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41056717880,
+      "name": "Accept primary-source TW1.0 character creation numeric join R16",
+      "event": "push",
+      "head_sha": "43f99fddf2bbc3bbdf6c54ea69bc5d3f02433a2a",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41056718074,
+      "name": "Verify original local album name material and no master promotion R35",
+      "event": "push",
+      "head_sha": "43f99fddf2bbc3bbdf6c54ea69bc5d3f02433a2a",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41056717445,
+      "name": "Validate StoneAge preproduction content archive and wiki boundary",
+      "event": "push",
+      "head_sha": "43f99fddf2bbc3bbdf6c54ea69bc5d3f02433a2a",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41056718277,
+      "name": "Validate StoneAge separated quest origins and archival source blobs",
+      "event": "push",
+      "head_sha": "43f99fddf2bbc3bbdf6c54ea69bc5d3f02433a2a",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41056717462,
+      "name": "Validate legacy StoneAge assistant history and pet content gaps",
+      "event": "push",
+      "head_sha": "43f99fddf2bbc3bbdf6c54ea69bc5d3f02433a2a",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41056717762,
+      "name": "Verify original same-build named-entity source gate R31",
+      "event": "push",
+      "head_sha": "43f99fddf2bbc3bbdf6c54ea69bc5d3f02433a2a",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41056717985,
+      "name": "Validate single-player original-resource offline observation kit",
+      "event": "push",
+      "head_sha": "43f99fddf2bbc3bbdf6c54ea69bc5d3f02433a2a",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41056717837,
+      "name": "Validate StoneAge runtime bootstrap contract",
+      "event": "push",
+      "head_sha": "43f99fddf2bbc3bbdf6c54ea69bc5d3f02433a2a",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41056717728,
+      "name": "Verify original native album table and saved-name joins R36",
+      "event": "push",
+      "head_sha": "43f99fddf2bbc3bbdf6c54ea69bc5d3f02433a2a",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41056717757,
+      "name": "Verify original dated map110 three actual cell values R32",
+      "event": "push",
+      "head_sha": "43f99fddf2bbc3bbdf6c54ea69bc5d3f02433a2a",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41056718019,
+      "name": "Accept preserved original TW85 SPR137 full animation material R28",
+      "event": "push",
+      "head_sha": "43f99fddf2bbc3bbdf6c54ea69bc5d3f02433a2a",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "observed_main_actions": [
+    {
+      "id": 41056840635,
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "event": "push",
+      "head_sha": "9ac2de6d9bc0370f6fe62aee254dd7883666ca52",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41056840782,
+      "name": "Accept preserved original TW85 SPR137 full animation material R28",
+      "event": "push",
+      "head_sha": "9ac2de6d9bc0370f6fe62aee254dd7883666ca52",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41056840649,
+      "name": "Validate single-player original-resource offline observation kit",
+      "event": "push",
+      "head_sha": "9ac2de6d9bc0370f6fe62aee254dd7883666ca52",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41056840571,
+      "name": "Verify original native album table and saved-name joins R36",
+      "event": "push",
+      "head_sha": "9ac2de6d9bc0370f6fe62aee254dd7883666ca52",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41056840812,
+      "name": "Verify original same-build named-entity source gate R31",
+      "event": "push",
+      "head_sha": "9ac2de6d9bc0370f6fe62aee254dd7883666ca52",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41056840766,
+      "name": "Verify original four village interior materials R34",
+      "event": "push",
+      "head_sha": "9ac2de6d9bc0370f6fe62aee254dd7883666ca52",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41056840679,
+      "name": "Verify original dated map110 three actual cell values R32",
+      "event": "push",
+      "head_sha": "9ac2de6d9bc0370f6fe62aee254dd7883666ca52",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41056840593,
+      "name": "Validate legacy StoneAge assistant history and pet content gaps",
+      "event": "push",
+      "head_sha": "9ac2de6d9bc0370f6fe62aee254dd7883666ca52",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41056840518,
+      "name": "Verify modern offline observation and Simplified Chinese default R1",
+      "event": "push",
+      "head_sha": "9ac2de6d9bc0370f6fe62aee254dd7883666ca52",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41056840643,
+      "name": "Verify preserved mixed25 full server source conservation R18",
+      "event": "push",
+      "head_sha": "9ac2de6d9bc0370f6fe62aee254dd7883666ca52",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41056840519,
+      "name": "Accept primary-source TW1.0 character creation numeric join R16",
+      "event": "push",
+      "head_sha": "9ac2de6d9bc0370f6fe62aee254dd7883666ca52",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41056840630,
+      "name": "Verify original local album name material and no master promotion R35",
+      "event": "push",
+      "head_sha": "9ac2de6d9bc0370f6fe62aee254dd7883666ca52",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41056840633,
+      "name": "Validate StoneAge preproduction content archive and wiki boundary",
+      "event": "push",
+      "head_sha": "9ac2de6d9bc0370f6fe62aee254dd7883666ca52",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41056840693,
+      "name": "Verify StoneAge R17 original battle SAB crossversion occurrence conservation",
+      "event": "push",
+      "head_sha": "9ac2de6d9bc0370f6fe62aee254dd7883666ca52",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41056840727,
+      "name": "Validate StoneAge runtime bootstrap contract",
+      "event": "push",
+      "head_sha": "9ac2de6d9bc0370f6fe62aee254dd7883666ca52",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41056840653,
+      "name": "Validate StoneAge separated quest origins and archival source blobs",
+      "event": "push",
+      "head_sha": "9ac2de6d9bc0370f6fe62aee254dd7883666ca52",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "specific_verified_job_logs": [
+    {
+      "run_id": 41056724406,
+      "job_id": 124066001869,
+      "test_count": 9,
+      "output": "TW1_ANIMATION_TIMELINE_EXACT_REPLAY=PASS; ORIGINAL_COLOR_AND_GAME_RUNTIME=OPEN"
+    },
+    {
+      "run_id": 41056840649,
+      "job_id": 124066398315,
+      "test_count": 9,
+      "output": "TW1_ANIMATION_TIMELINE_EXACT_REPLAY=PASS; ORIGINAL_COLOR_AND_GAME_RUNTIME=OPEN"
+    }
+  ],
+  "unchanged": {
+    "full_current_blob": "20050acf279a01555ab06a381dfcdc936bd381a6",
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b": "GATED",
+    "wiki": "GATED",
+    "savedata_r79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "next": "OFFLINE-CLIENT-SAME-SOURCE-MAP-SCENE-O2",
+  "self_receipt_actions_result_preclaimed": false
+}

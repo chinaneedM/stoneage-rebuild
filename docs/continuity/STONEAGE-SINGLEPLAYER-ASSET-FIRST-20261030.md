@@ -50,3 +50,11 @@ python3 -m tools.stoneage_singleplayer_observation_kit \
 **当前最高NEXT：`OFFLINE-CLIENT-SAME-SOURCE-MAP-SCENE-O2`**，在有限一张地图内解决原map→tile→原图→本地可视组合。除非O2缺确切同版原图或实体来源，才去历史官方网页有限查证；不要再按SCENE44网页截图目录的路子继续扩大。O1工具完成只意味着一键入口具备代码、不是原始场景已生成。
 
 状态不作无证晋升：Stage A 7 PARTIAL + 2 OPEN；Stage B及公开百科生产GATED；savedata R79 PAUSED_NON_BLOCKING；original playable world=OPEN；overall_percent=null。关闭PR#58是**优先级取舍**，并不是否认网页截图历史价值，其分支及CI可备后证据交叉核验。
+
+## PR #59 主线真实验收（2026-10-30）
+
+源已核PR #59 merge SHA `9ac2de6d9bc0370f6fe62aee254dd7883666ca52` / tree `870d5be2a4ae7a9d740affafe31763aa451f0d19`，候选`43f99fddf2bbc3bbdf6c54ea69bc5d3f02433a2a`同tree。**候选17项Actions与合并主线16项**经逐项remote检查全部 `completed/success`，专用runner `41056724406`/job`124066001869` 与主线 `41056840649`/job`124066398315` 原日志各实见9项否证测试OK以及旧TW1原SPR历史元数据 `TW1_ANIMATION_TIMELINE_EXACT_REPLAY=PASS; ORIGINAL_COLOR_AND_GAME_RUNTIME=OPEN`。这仅为**代码+旧冻结资料的合成验证**，没有再取TW1完整原客户端，没有生成/打开本轮新真实原图，不冒称实现了原地图/客户端真实世界。期间外部图片索引PR#58基于用户最新优先权实际关闭未合并，保留其源证据分支。
+
+全部33次候选/主线Action ID、文件Git blob、认证与测试边界永久收据位于`research/recovered/STONEAGE-SINGLEPLAYER-ASSET-FIRST-PUBLICATION-R1.json`。原完整CURRENT Git blob `20050acf279a01555ab06a381dfcdc936bd381a6` 保持原样。此收据提交自己的新CI不提前预记成功。
+
+下一O2必须优先从已认证客户端的**同一源地图数据与真实瓦片**做可浏览场景，若缺同版本图块和正确坐标证据则明确停，不准拿合成彩色网格直接说成原版村庄。未来单机游戏设计和公开版权授权审查独立于此离线研究工具。
