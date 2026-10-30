@@ -979,3 +979,7 @@ ranges, not a new whole-client download or arbitrary program reverse engineering
 ### 2026-10-30 — SCENE42：新浪早期辅助工具四行与八原下载href
 
 [版本来源、原表、真实验收及边界](docs/continuity/STONEAGE-SCENE42-HELPER-LIST-20261030.md)：重读旧已归档的2003署期新浪5.0下载页**新增表级资料**：`SACHXP++5042`/`SACHMX5.00B8`/`SACHMX5.00FREEB1`/小明蓝暴自动猜谜器四行、每行各历史FTP+HTTP两href。原页69464B/SHA`812b32be4c9e9df45b956826c5a2a566d644ee8ef9acff5cfb69ab962a1b6a1d`已从网页原字节独立验证；4月3日署期与正文4月6日场次并列，**不据页签认软件发布日期**，不把新B8和旧R103的六月B9直接连成有证发布链。游戏本体/外挂实际运行0，原程序未下载。下一SCENE43转具名官方宠物图像；Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、percent null不变。
+
+### 2026-10-30 — SCENE43：2001华义2.0宠物网页两格的真实图片字节
+
+[来源/限制及后验](docs/continuity/STONEAGE-SCENE43-CN20-PET-PIXEL-SOURCE-20261030.md)：旧已验官方网页第85格“瑞德宝”与第86格“瑞里西尔”分别引用原`84.JPG`、`85.JPG`，两原JPEG历史2001-10-26档案字节已真实取证，3753B/SHA`ba7b663a9445a0e32117eb768db33e991c566ddfac8ad1ae5d93bb7cf6372e31`及4494B/SHA`9951490cc47de15342fd88e671a8e54d1c6c33c7786655af4ffe4b93300f16b2`，RGB83×90单帧全解码，原HTML与JPEG不入公开Git。新独立视觉参考2、原客户端宠物/SPR对应0、真实运行0；首次页面2001-10-23与图像2001-10-26并非同刻。这是网页参考覆盖，下一SCENE44转22域/原世界真实可操作性材料；Stage A/B/wiki/R79、overall=null保持。
