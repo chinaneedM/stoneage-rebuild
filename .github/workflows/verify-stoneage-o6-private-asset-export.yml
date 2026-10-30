@@ -1,0 +1,30 @@
+name: Verify StoneAge O6 bounded private original asset export
+on:
+  push:
+    paths:
+      - '.github/workflows/verify-stoneage-o6-private-asset-export.yml'
+      - 'tools/stoneage_o6_private_export.py'
+      - 'tests/test_stoneage_o6_private_export.py'
+      - 'research/recovered/STONEAGE-O6-PRIVATE-ASSET-EXPORT-ACCEPTANCE-R1.json'
+  pull_request:
+    paths:
+      - '.github/workflows/verify-stoneage-o6-private-asset-export.yml'
+      - 'tools/stoneage_o6_private_export.py'
+      - 'tests/test_stoneage_o6_private_export.py'
+      - 'research/recovered/STONEAGE-O6-PRIVATE-ASSET-EXPORT-ACCEPTANCE-R1.json'
+  workflow_dispatch:
+jobs:
+  no-proprietary-source-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify synthetic source rejection and 275 fake PNG export
+        run: |
+          python -m unittest tests.test_stoneage_o6_private_export -v
+          python -m py_compile tools/stoneage_o6_private_export.py
