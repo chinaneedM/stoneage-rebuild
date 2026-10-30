@@ -1,0 +1,82 @@
+{
+  "schema": "stoneage.o6_private_engine_neutral_asset_export_acceptance.r1",
+  "base_main_sha": "db615f4d88c4c6eac24809e2056549255b5f1a94",
+  "base_main_tree": "6bdc327b7e7fb1cb1905fc92ad39318bed50a690",
+  "preserved_full_current_state_blob_sha": "20050acf279a01555ab06a381dfcdc936bd381a6",
+  "reused_private_o5": {
+    "name": "StoneAge-O5-original-two-scene-and-pet-private-20261030.zip",
+    "bytes": 2905474,
+    "sha256": "e2f6beb8789f1d755fe44bf6d3ba70f7bf6baf7cd713eb34cf47d18062aa5bc6",
+    "html_sha256": "2637ac0594ab3922b32fe3b6dd8819a173344933981feb7f5ffa6dc0d6816be7",
+    "source_qualified_and_current_session_rehashed": true
+  },
+  "result": {
+    "status": "PRIVATE_ORIGINAL_RESOURCE_EXPORTED_AND_INDEPENDENTLY_DECODED",
+    "file_count": 280,
+    "private_png_count": 275,
+    "room_1001_original_tile_pngs": 51,
+    "room_1001_original_placements": 27,
+    "town_1000_original_composite_pngs": 8,
+    "town_1000_has_exact_tile_level_runtime_source": false,
+    "pet_numeric_original_pngs": 208,
+    "pet_groups": [
+      100250,
+      100251,
+      100252
+    ],
+    "original_pet_direction_segments": 24,
+    "pet_ordered_frame_occurrences": 352,
+    "original_repeated_frame_positions": 144,
+    "tw1_crossversion_actor_reference_png_positions": 7,
+    "mixed25_actor_reference_pngs": 1,
+    "all_exported_png_sha256_roundtrip": true,
+    "all_275_pngs_Pillow_loaded_and_dimensions_confirmed": true,
+    "input_source_raw_map_DAT_sha256_1001": "62dbef1614ede0ba032ca9c69cbfdc3d43938e45baba78701885790937b86b90",
+    "input_source_raw_map_DAT_sha256_1000": "94b19cb59d72b7b48da70d2741ba68516caad970297fd48ed11ef720fa3ea97e",
+    "verified_source_manual_warp_coordinates": [
+      "1001(10,15)->1000(63,99)",
+      "1000(63,99)->1001(10,15)"
+    ],
+    "static_document_source_1000_npc_xy": [
+      63,
+      103
+    ],
+    "gameplay_or_original_executable_executed": false
+  },
+  "private_output": {
+    "library_path": "/石器时代/StoneAge-O6-private-engine-neutral-assets-20261030.zip",
+    "saved_to_private_library": true,
+    "zip_bytes": 2146298,
+    "zip_sha256": "c64376b4a018cc444f2e2d51b871db75ca7e25106777b2a4475ebf2bfffd0bd5",
+    "zip_entries": 280,
+    "zip_crc_good": true,
+    "all_members_equal_pre_zip_source_bytes": true,
+    "manifest_sha256": "ab66660223f310586e38fad3b9893967f0fc1005f4f1037ed1160c2500005432",
+    "scene_1001_json_sha256": "cc9f2ca2b3ed84b781460f65ea5de980c58cabed1e0d8e7ed03a3858d447ca74",
+    "scene_1000_json_sha256": "cb8c34f736396b8f5b25abb995c3199530c02f3a1fd0252062cf42191548e808",
+    "pet_numeric_timeline_json_sha256": "7b0105614275777baa2e6a9e2ef89ccc3edc5b5eec1e7ee93bf61828a35f9bc9"
+  },
+  "code": {
+    "exporter_path": "tools/stoneage_o6_private_export.py",
+    "exporter_local_sha256": "0f001663bb24d34e6a2f88e037e1e0084df6286b6f2476913e5a6310acf2c21e",
+    "synthetic_tests_path": "tests/test_stoneage_o6_private_export.py",
+    "local_synthetic_tests_passed": 16,
+    "real_private_png_count": 275,
+    "public_CI_never_reads_private_originals": true
+  },
+  "historical_boundaries": {
+    "named_pet_to_server_entity_to_SPR_same_build_source_authenticated": false,
+    "original_TW1_official_world_map_deployment_authenticated": false,
+    "original_native_world_entered": false,
+    "original_collision_quest_spawn_or_battle_executed": false,
+    "original_animation_fps_confirmed": false,
+    "original_palette_and_occlusion_confirmed": false,
+    "production_distribution_rights_authenticated": false
+  },
+  "stage_a": "7 PARTIAL + 2 OPEN",
+  "stage_b": "GATED",
+  "wiki": "GATED",
+  "r79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null,
+  "next": "O6_FINITE_SOURCE_PACK_TO_BE_USED_FOR_PORTABLE_OFFLINE_VIEWER_OR_NEXT_22_DOMAIN_MATERIAL_WITH_NEW_PRIMARY_SOURCE;NO_MORE_PET_MASTER_HELPERS_WITHOUT_NEW_PRIMARY_BYTES"
+}
