@@ -1,0 +1,51 @@
+{
+  "schema": "stoneage.scene41.source_custody.r1",
+  "current_source": {
+    "url": "https://news.17173.com/z/stoneage/content/2001-6-14/n775_691475.html",
+    "body_bytes": 50771,
+    "body_sha256": "3c9af2d5456e52b184580ffa05b7039b7473bac475b32bace3b17caf810a63de",
+    "decoding": "utf-8",
+    "invalid_bytes": 0,
+    "labelled_date": "2001-06-14",
+    "historical_original_bytes_certified": false
+  },
+  "prior_source_input": {
+    "original_audio_manifest_blob": "094becbc92397ee8abf72a014deffffabc97a316",
+    "compiled_audio_gate_blob": "67cc3707d45b6f079432b1db29b043851571b518"
+  },
+  "source_run": {
+    "run_id": 41047566005,
+    "job_id": 124035306481,
+    "head": "31ea0e4814c722342bdaba1424158d65319d833b",
+    "conclusion": "success",
+    "tests": 8,
+    "artifact_id": 12972349401,
+    "zip_bytes": 1212,
+    "zip_sha256": "403560d16a8d7e31c0c4a7e1ae486a159869eb39744faae2adef8cc8cbb988f8",
+    "internal_json_bytes": 4387,
+    "internal_json_sha256": "c13c27f22753168ad4da071372f1b20d0219d7290f0dad132cca07215d1b8611",
+    "zip_crc_ok": true
+  },
+  "historical_failed_runs": [
+    {
+      "run_id": 41047348999,
+      "kind": "regex_escape_in_source_preflight",
+      "conclusion": "failure"
+    },
+    {
+      "run_id": 41047427650,
+      "kind": "GB18030_ASSUMPTION_UNQUALIFIED_FOR_UTF8_PAGE",
+      "conclusion": "failure"
+    }
+  ],
+  "derived_rows": 11,
+  "old_taiwan1_bgm_files_used": 11,
+  "new_audio_files": 0,
+  "original_client_runtime_executed": false,
+  "new_original_game_event_bindings": 0,
+  "original_source_html_in_public_git": false,
+  "original_audio_in_public_git": false,
+  "secondary_2004_player_guide_byte_verified": false,
+  "date": "2026-10-30",
+  "next": "SCENE42-HELPER-VERSION-NAMED-RELEASE-MATERIAL-REVIEW"
+}

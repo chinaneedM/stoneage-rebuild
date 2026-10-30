@@ -1,5 +1,6 @@
 import unittest
-from tools.stoneage_scene41_bgm_faq import EXPECTED_NAMES, DESCRIPTORS, parse_page, original_names, SOURCE_URL
+from tools.stoneage_scene41_bgm_faq import EXPECTED_NAMES, DESCRIPTORS, parse_page, original_names, SOURCE_URL, ROOT
+import json
 class Scene41SourceBoundary(unittest.TestCase):
     def test_exact_original_names(self):
         self.assertEqual(set(original_names()),set(EXPECTED_NAMES))
@@ -31,4 +32,22 @@ class Scene41SourceBoundary(unittest.TestCase):
         b=self.example();needle="魔王战斗音乐".encode("gb18030");p=b.index(needle)
         b=b[:p]+b"\xff"+b[p:]
         with self.assertRaises(AssertionError):parse_page(b,SOURCE_URL)
+    def test_frozen_actual_original_source_identity(self):
+        p=ROOT/"research/recovered/STONEAGE-SCENE41-17173-BGM-PLAYER-CLAIMS-R1.json"
+        d=json.loads(p.read_text(encoding="utf-8"))
+        self.assertEqual((d["current_http_bytes"],d["current_http_sha256"],d["selected_decoding"]),
+                         (50771,"3c9af2d5456e52b184580ffa05b7039b7473bac475b32bace3b17caf810a63de","utf-8"))
+        self.assertEqual(tuple(x["basename"] for x in d["rows"]),EXPECTED_NAMES)
+        self.assertEqual(tuple(x["faq_player_label"] for x in d["rows"]),DESCRIPTORS)
+    def test_source_not_native_playback_or_official_build(self):
+        p=ROOT/"research/recovered/STONEAGE-SCENE41-17173-BGM-PLAYER-CLAIMS-R1.json"
+        d=json.loads(p.read_text(encoding="utf-8"))
+        for k in ("game_sound_event_playback_observed","original_taiwan_v1_event_selector_verified","historical_published_bytes_authentic","original_article_first_publication_time_verified"):
+            self.assertIs(d[k],False,k)
+        self.assertEqual(d["new_original_source_client_audio_files"],0)
+    def test_all_historical_names_but_no_extra_wav(self):
+        s=original_names()
+        self.assertEqual(len(s),11)
+        self.assertNotIn("sabgm_b2",s)
+        self.assertNotIn("sabgm_t2",s)
 if __name__=="__main__": unittest.main()

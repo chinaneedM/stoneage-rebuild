@@ -119,12 +119,23 @@ def main():
     p.add_argument("--output",default=None)
     args=p.parse_args()
     original_names()
+    frozen_path=ROOT/"research/recovered/STONEAGE-SCENE41-17173-BGM-PLAYER-CLAIMS-R1.json"
+    frozen=frozen_path.read_text(encoding="utf-8") if frozen_path.exists() else None
+    if frozen is not None:
+        j=json.loads(frozen)
+        assert j["current_http_bytes"]==50771 and j["current_http_sha256"]=="3c9af2d5456e52b184580ffa05b7039b7473bac475b32bace3b17caf810a63de"
+        assert tuple(r["basename"] for r in j["rows"])==EXPECTED_NAMES
+        assert tuple(r["faq_player_label"] for r in j["rows"])==DESCRIPTORS
+        assert not j["original_taiwan_v1_event_selector_verified"]
+        assert not j["game_sound_event_playback_observed"]
+        assert not j["historical_published_bytes_authentic"]
     if not args.replay_live:
-        print("SCENE41_FIXED_TW10_AUDIO_MANIFEST_OK; no source replay")
+        print("SCENE41_FIXED_TW10_AUDIO_MANIFEST_AND_SOURCE_GUARD_OK; no source replay")
         return
     raw,url=acquire()
     report=parse_page(raw,url)
     s=json.dumps(report,ensure_ascii=False,sort_keys=True,indent=2)+"\n"
+    if frozen is not None: assert s==frozen,"frozen and live current source text drift"
     if args.output: Path(args.output).write_text(s,encoding="utf-8")
     print("SCENE41_SOURCE "+json.dumps({k:report[k] for k in ("resolved_url","current_http_bytes","current_http_sha256","original_bytes_invalid_decoding","selected_decoding","row_count","cross_reference_exact_file_name_count")},ensure_ascii=False))
 

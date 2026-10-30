@@ -11,3 +11,11 @@
 2004标签玩家稿另有`sabgm_b1`“PK”、`sabgm_s0`“捕宠”之说，与本2001标签稿`b1`“魔王战斗”、`s0`“战斗胜利”不同；尚未原字节独立取源，暂仅作阅读线索。即使成功核同2001说明，也仅保留跨资料的玩家用语差异，不能以投稿数量投票选台湾1.0真实音频用途。真正恢复时须原exe事件→声音路径实参和运行捕获，或同build官方说明。
 
 私有原件输入阻塞`BLOCKED_PRIVATE_INPUT_CHANNEL`、Stage A7 PARTIAL+2 OPEN、Stage B/wiki GATED、R79 PAUSED_NON_BLOCKING、overall_percent=null、原可操作世界未进入均保持。新候选CI与主线结果待真实后验，不预填SUCCESS。
+
+## 原网页实际重放与源工件
+
+本轮有独立PR Actions `41047566005/job124035306481` completed/success，8个合成语义反例及11个已有真实TW1 BGM名字完整核同。原URL读取响应50,771B/SHA `3c9af2d5456e52b184580ffa05b7039b7473bac475b32bace3b17caf810a63de`；该正文为UTF-8且0异常字节。先前 `41047348999` 因正则转义双写失败，`41047427650` 因假定全页GB18030而失败，两结果完整保留；失败均不说明音频数据损坏或原网页不存在。改为页面题名/日期/问答头尾独立判定唯一正确UTF8/GB18030后成功。
+
+ZIP artifact12972349401/1212B/SHA `403560d16a8d7e31c0c4a7e1ae486a159869eb39744faae2adef8cc8cbb988f8` 已实际下载、ZIP所有成员CRC成功；唯一derived JSON4387B/SHA `c13c27f22753168ad4da071372f1b20d0219d7290f0dad132cca07215d1b8611`。正式合同[SCENE41音频对照](../specs/STONEAGE-SCENE41-2001-PLAYER-BGM-CLAIMS-R1.md)和机器记录`research/recovered/STONEAGE-SCENE41-17173-BGM-PLAYER-CLAIMS-R1.json`仅保存派生内容，原HTML与原WAV不入Git。候选/main Actions需在发布后实际检查并另记，不提前称本次主线已通过。
+
+**最高下一 `SCENE42-HELPER-VERSION-NAMED-RELEASE-MATERIAL-REVIEW`**：转22域19，优先有确切2000–2004版本与作者/功能页的经典辅助工具发布信息，先与R102及SACH/STA/SADE、STA2.52旧档查重。只保存一项原始版别/玩家可见辅助功能证据或精确缺源止点，不运行外挂，不提前设计内挂。原可操作世界仍未进入，Stage A7 PARTIAL+2 OPEN/B/wiki GATED/R79暂停、`overall_percent=null`。
