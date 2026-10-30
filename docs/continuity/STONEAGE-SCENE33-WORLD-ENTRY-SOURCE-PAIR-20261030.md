@@ -67,3 +67,9 @@
 `research/recovered/STONEAGE-SCENE33-SOURCE-PAIR-R1.json` 冻结实际原字节派生事实；`STONEAGE-SCENE33-ACTUAL-PRIVATE-STATIC-AUDIT-R1.json` 固定独立objdump、两CP950、全原件旧清单联接、解包方法与失败。新22项反例后来增加3项audit联接，共25项检查，覆盖官方/运行晋升、错父包/同名换件、丢重复DLL、配对端口/认证值、空配置、缺件/SQL未知及CRC冒领第二解压。公开CI只核派生/合成输入，不取得RAR/原配置、不执行历史程序，source_action_run_id=null。远端Actions待实际后验记录。
 
 本轮新增可运行性知识，不新增官方历史世界内容。Stage A 7 PARTIAL + 2 OPEN、Stage B/wiki GATED、R79暂停、overall_percent=null保持；原世界仍未进入。
+
+## 远端实际验收
+
+PR [48](https://github.com/chinaneedM/stoneage-rebuild/pull/48) 已合并。内容候选 `ed9b2718492c06f71a64e424fab01378f3ef5739` 的12项Actions、主线合并 `e33429dba51e73477f125c982d7b1c8397c6eea6` 的11项全部实际completed/success。整tree `1536bf54ded1ac5d7b159aefc36fdf2cc517a7ea` 与本地已验tree完全相同；PR临时merge tree亦同。专用候选40976914701/job123807101083、主线40977019880/job123807456419原日志各核到冻结原事实校验通过及25 tests OK。私人源解包/objdump并不发生于这些公开CI；历史程序执行仍为0。七内容文件完整SHA/Git blob、全部23项运行和边界保存在 `research/recovered/STONEAGE-SCENE33-PUBLICATION-R1.json`，本后验收据自身提交不冒领前述23项成功。
+
+下一最高仍为SCENE34，运行副本分别以saac/与gmsv/为工作目录并独立核定相对路径；若需要额外数据、数据库或网络资格，先据原件和实际错误确认，不能将本静态验收写成已经可玩。
