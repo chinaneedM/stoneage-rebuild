@@ -11,3 +11,13 @@
 ## 首次真实源任务后验（2026-10-30）
 
 CI 专项PR `41053616995/job124055513362` 成功，8个合成源错误用例真实通过；原页64,382B完整SHA不变，两幅原JPEG各成功获取、完整解码。来源派生工件artifact `12975293536` 独立ZIP下载，ZIP1560B/SHA `7c3c7e0fdfc0414f44754000858bff60841c7c0d789f29c5c87531957c90b34b`，所有CRC通过；派生JSON4252B/SHA `88cd240e6fa707ebde61c857caf84f3704c95848950200dc1918b2df87536a24`，已另核源页、捕获时间、URL和图像元数据。该zip仅有派生JSON，无原HTML/JPEG。原网页/原图片的视觉人工观察、同版ID和游戏真正运行仍未完成。后续PR主线Actions和最终收据仅按真实结果写入，不提前宣称成功。
+
+## 最终 GitHub PR / 主线验收（2026-10-30）
+
+[PR #57](https://github.com/chinaneedM/stoneage-rebuild/pull/57) 已实际合并；候选HEAD `216a94987e3dbca8a7303a41d2a13bd68a90b7c0` 与主线合并SHA `baf227d63bbef306072bac1b7432277c03ccb06f` tree 均为 `410cc62bc5d782be5d6996366ce72acc8d7454e3`。候选共12项（含一PR独立真实原页与两张JPEG字节重取）、主线11项，远端各次核实全部 `completed/success`；主线SCENE43仅本地已冻结来源与11项负例，不能说主线又实时取原JPEG。
+
+首次专用source run41053616995/job124055513362：8项测试、原页64,382B SHA和两份JPEG实际完整取得/解码。第二次PR run41054000185/job124056809214：11项回归与完全相同原网页SHA/两图片SHA再次成功；第85/86格最终仍为3753B/4494B、实际取档时间20011026013455与20011026013052（两张均不同于页存档20011023181629）。
+
+两份实际下载CI派生ZIP大小皆1560B，artifact12975293536 ZIP SHA `7c3c7e0fdfc0414f44754000858bff60841c7c0d789f29c5c87531957c90b34b`；artifact12975507343 ZIP SHA `9356bbd323d5b3c3b973ff7b4689da2b863b420f43eeb6f32966cd783459302b`。两ZIP CRC全部通过，内部唯一派生JSON均4252B/SHA `88cd240e6fa707ebde61c857caf84f3704c95848950200dc1918b2df87536a24` 原字节逐一相等，永久Git blob `a1d76135462d1fad58e612caea48e3e99bec175f`。ZIP封装变化不代表来源变化。真正原HTML/JPEG依然未入Git。
+
+每个Git文件SHA与23个候选/主线实际Action后验、两个原图片/解码摘要和两source ZIP都永久归档于`research/recovered/STONEAGE-SCENE43-PUBLICATION-R1.json`。本收据自身的Actions需另后验，不在提交前预报通过。NEXT `SCENE44-CROSS-DOMAIN-MATERIAL-ROTATION`，不再连续追查大批网页图片，转可实际理解/进入游戏的上游材料及具名游戏内容来源。Stage A7 PARTIAL+2 OPEN/B/wiki GATED/R79暂停、original world OPEN、percent null 保持。

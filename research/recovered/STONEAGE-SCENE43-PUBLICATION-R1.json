@@ -1,0 +1,315 @@
+{
+  "schema": "stoneage.scene43.2001_cn20_named_pet_image.publication_acceptance.r1",
+  "date": "2026-10-30",
+  "repository": "chinaneedM/stoneage-rebuild",
+  "start_remote": {
+    "head": "46c3421e21764c83c4a9eaa1e2c703b7fbac0d51",
+    "tree": "fc4c32675358289602152917b901e862c00e1cea"
+  },
+  "candidate": {
+    "head": "216a94987e3dbca8a7303a41d2a13bd68a90b7c0",
+    "tree": "410cc62bc5d782be5d6996366ce72acc8d7454e3",
+    "branch": "agent/scene43-waei-cn20-pet-reference-20261030"
+  },
+  "publication": {
+    "pr_number": 57,
+    "merge_sha": "baf227d63bbef306072bac1b7432277c03ccb06f",
+    "merge_tree": "410cc62bc5d782be5d6996366ce72acc8d7454e3",
+    "merge_parents": [
+      "46c3421e21764c83c4a9eaa1e2c703b7fbac0d51",
+      "216a94987e3dbca8a7303a41d2a13bd68a90b7c0"
+    ],
+    "same_tree_as_candidate": true
+  },
+  "preserved_full_current_state_blob": "20050acf279a01555ab06a381dfcdc936bd381a6",
+  "original_official_page": {
+    "url": "https://web.archive.org/web/20011023181629id_/http://www.waei.com.cn/ZHUANQU/stoneage2/pet/new_pet2.asp",
+    "bytes": 64382,
+    "sha256": "2c7aea8d0319c2070d5c7590a95bfc892c2463deb76c5b95fca8c281549c76f0",
+    "capture": "20011023181629",
+    "reused_previously_catalogued": true
+  },
+  "new_jpegs": [
+    {
+      "ordinal": 85,
+      "name": "瑞德宝",
+      "original_ref": "img/newpet/84.JPG",
+      "actual_archive_url": "https://web.archive.org/web/20011026013455id_/http://www.waei.com.cn/ZHUANQU/stoneage2/pet/img/newpet/84.JPG",
+      "archive_capture": "20011026013455",
+      "bytes": 3753,
+      "sha256": "ba7b663a9445a0e32117eb768db33e991c566ddfac8ad1ae5d93bb7cf6372e31",
+      "rgba_sha256": "d39eb166aed630499bf6546a17167f222fac003cb2547f1340e3c64d1c1a539e",
+      "decoded_size": [
+        83,
+        90
+      ],
+      "visual_review_by_assistant": false
+    },
+    {
+      "ordinal": 86,
+      "name": "瑞里西尔",
+      "original_ref": "img/newpet/85.JPG",
+      "actual_archive_url": "https://web.archive.org/web/20011026013052id_/http://www.waei.com.cn/ZHUANQU/stoneage2/pet/img/newpet/85.JPG",
+      "archive_capture": "20011026013052",
+      "bytes": 4494,
+      "sha256": "9951490cc47de15342fd88e671a8e54d1c6c33c7786655af4ffe4b93300f16b2",
+      "rgba_sha256": "903ade0c83934326a388acfe00413393426cf60d0c5c8e0307f2a5b31a0af99c",
+      "decoded_size": [
+        83,
+        90
+      ],
+      "visual_review_by_assistant": false
+    }
+  ],
+  "source_runs": {
+    "first_run": 41053616995,
+    "first_job": 124055513362,
+    "first_boundary_tests_passed": 8,
+    "final_pr_run": 41054000185,
+    "final_pr_job": 124056809214,
+    "final_boundary_tests_passed": 11,
+    "first_artifact": {
+      "id": 12975293536,
+      "zip_bytes": 1560,
+      "zip_sha256": "7c3c7e0fdfc0414f44754000858bff60841c7c0d789f29c5c87531957c90b34b"
+    },
+    "final_artifact": {
+      "id": 12975507343,
+      "zip_bytes": 1560,
+      "zip_sha256": "9356bbd323d5b3c3b973ff7b4689da2b863b420f43eeb6f32966cd783459302b"
+    },
+    "same_original_derived_json_in_both": true,
+    "derived_bytes": 4252,
+    "derived_sha256": "88cd240e6fa707ebde61c857caf84f3704c95848950200dc1918b2df87536a24",
+    "zip_crc_both_valid": true
+  },
+  "published_derived_source": {
+    "path": "research/recovered/STONEAGE-SCENE43-CN20-TWO-NAMED-PET-WEB-IMAGES-R1.json",
+    "git_blob": "a1d76135462d1fad58e612caea48e3e99bec175f"
+  },
+  "published_research_records": {
+    "path": "research/recovered/STONEAGE-SCENE43-CN20-NAMED-PET-VISUAL-RECORDS-R1.json",
+    "git_blob": "8a0a0a080cdefe7ed7a3bee8b06a80cd8394ec8e"
+  },
+  "published_paths": {
+    ".github/workflows/verify-stoneage-scene43-pet-image.yml": "32130b324df738da259894e51c9d74e3b3f3deb9",
+    "README.md": "b39a3a9429af9ab798cfaa1214f157ac32b2da27",
+    "docs/continuity/STONEAGE-SCENE43-CN20-PET-PIXEL-SOURCE-20261030.md": "209b6f8a1b1ffa5d0b016489eec9d22a7f3342a5",
+    "docs/specs/STONEAGE-SCENE43-CN20-2001-NAMED-PET-IMAGE-SOURCE-R1.md": "852859534eb52edce7bfa7406f7d5511012c70ae",
+    "research/recovered/STONEAGE-SCENE43-CN20-NAMED-PET-VISUAL-RECORDS-R1.json": "8a0a0a080cdefe7ed7a3bee8b06a80cd8394ec8e",
+    "research/recovered/STONEAGE-SCENE43-CN20-TWO-NAMED-PET-WEB-IMAGES-R1.json": "a1d76135462d1fad58e612caea48e3e99bec175f",
+    "tests/test_stoneage_scene43_cn20_named_pet_images.py": "00823b0b08bdacea8828425cae8ae84e86b14fae",
+    "tools/stoneage_scene43_cn20_named_pet_images.py": "7c66846087bc574107db9a96ffd5091b3505dab7"
+  },
+  "observed_candidate_runs": [
+    {
+      "id": 41054000185,
+      "name": "Source qualify SCENE43 two official CN20 pet image links",
+      "event": "pull_request",
+      "sha": "216a94987e3dbca8a7303a41d2a13bd68a90b7c0",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41053992832,
+      "name": "Verify original four village interior materials R34",
+      "event": "push",
+      "sha": "216a94987e3dbca8a7303a41d2a13bd68a90b7c0",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41053992811,
+      "name": "Verify original local album name material and no master promotion R35",
+      "event": "push",
+      "sha": "216a94987e3dbca8a7303a41d2a13bd68a90b7c0",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41053992778,
+      "name": "Verify StoneAge R17 original battle SAB crossversion occurrence conservation",
+      "event": "push",
+      "sha": "216a94987e3dbca8a7303a41d2a13bd68a90b7c0",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41053992884,
+      "name": "Verify original native album table and saved-name joins R36",
+      "event": "push",
+      "sha": "216a94987e3dbca8a7303a41d2a13bd68a90b7c0",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41053992774,
+      "name": "Source qualify SCENE43 two official CN20 pet image links",
+      "event": "push",
+      "sha": "216a94987e3dbca8a7303a41d2a13bd68a90b7c0",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41053992836,
+      "name": "Verify preserved mixed25 full server source conservation R18",
+      "event": "push",
+      "sha": "216a94987e3dbca8a7303a41d2a13bd68a90b7c0",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41053992808,
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "event": "push",
+      "sha": "216a94987e3dbca8a7303a41d2a13bd68a90b7c0",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41053992819,
+      "name": "Accept preserved original TW85 SPR137 full animation material R28",
+      "event": "push",
+      "sha": "216a94987e3dbca8a7303a41d2a13bd68a90b7c0",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41053992979,
+      "name": "Verify original dated map110 three actual cell values R32",
+      "event": "push",
+      "sha": "216a94987e3dbca8a7303a41d2a13bd68a90b7c0",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41053992822,
+      "name": "Accept primary-source TW1.0 character creation numeric join R16",
+      "event": "push",
+      "sha": "216a94987e3dbca8a7303a41d2a13bd68a90b7c0",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41053992965,
+      "name": "Verify original same-build named-entity source gate R31",
+      "event": "push",
+      "sha": "216a94987e3dbca8a7303a41d2a13bd68a90b7c0",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "observed_main_runs": [
+    {
+      "id": 41054172902,
+      "name": "Verify StoneAge R17 original battle SAB crossversion occurrence conservation",
+      "event": "push",
+      "sha": "baf227d63bbef306072bac1b7432277c03ccb06f",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41054172750,
+      "name": "Verify original dated map110 three actual cell values R32",
+      "event": "push",
+      "sha": "baf227d63bbef306072bac1b7432277c03ccb06f",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41054172699,
+      "name": "Verify original four village interior materials R34",
+      "event": "push",
+      "sha": "baf227d63bbef306072bac1b7432277c03ccb06f",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41054172985,
+      "name": "Verify preserved mixed25 full server source conservation R18",
+      "event": "push",
+      "sha": "baf227d63bbef306072bac1b7432277c03ccb06f",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41054172616,
+      "name": "Verify original same-build named-entity source gate R31",
+      "event": "push",
+      "sha": "baf227d63bbef306072bac1b7432277c03ccb06f",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41054172836,
+      "name": "Accept preserved original TW85 SPR137 full animation material R28",
+      "event": "push",
+      "sha": "baf227d63bbef306072bac1b7432277c03ccb06f",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41054172562,
+      "name": "Accept primary-source TW1.0 character creation numeric join R16",
+      "event": "push",
+      "sha": "baf227d63bbef306072bac1b7432277c03ccb06f",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41054172586,
+      "name": "Verify original native album table and saved-name joins R36",
+      "event": "push",
+      "sha": "baf227d63bbef306072bac1b7432277c03ccb06f",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41054172712,
+      "name": "Validate Stage A evidence-limited review acceptance",
+      "event": "push",
+      "sha": "baf227d63bbef306072bac1b7432277c03ccb06f",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41054172602,
+      "name": "Source qualify SCENE43 two official CN20 pet image links",
+      "event": "push",
+      "sha": "baf227d63bbef306072bac1b7432277c03ccb06f",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 41054172714,
+      "name": "Verify original local album name material and no master promotion R35",
+      "event": "push",
+      "sha": "baf227d63bbef306072bac1b7432277c03ccb06f",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "acceptance": {
+    "candidate_actions_success": 12,
+    "main_actions_success": 11,
+    "new_cn20_web_image_refs": 2,
+    "cn20_web_positions_total": 104,
+    "now_qualified_cn20_web_image_ref_total": 9,
+    "still_unacquired_cn20_web_image_ref_count": 95,
+    "new_original_game_species_ids": 0,
+    "original_client_runtime_executed": false,
+    "original_world_entered": false,
+    "assistant_visual_inspection_performed": false,
+    "original_html_or_image_bytes_in_public_git": false
+  },
+  "unchanged_bounds": {
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b": "GATED",
+    "wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING",
+    "original_boot": "BLOCKED_PRIVATE_INPUT_CHANNEL",
+    "overall_percent": null
+  },
+  "next": "SCENE44-CROSS-DOMAIN-MATERIAL-ROTATION",
+  "receipt_commit_own_actions_success_not_preclaimed": true
+}
