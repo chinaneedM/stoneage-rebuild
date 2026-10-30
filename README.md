@@ -1032,3 +1032,8 @@ ranges, not a new whole-client download or arbitrary program reverse engineering
 ### 2026-10-31 — O10：原保存版村庄1000扩大到19×25格的真实图块候选全景
 
 [O10新地图原字节恢复与数字证据](docs/continuity/STONEAGE-O10-ORIGINAL-VILLAGE-EXTENDED-20261031.md)：完整已保存原1000.DAT(160×160)源位x55—73/y89—113共475格；实有**492原地面/构件布置、183种原图形RD**，相对旧O4局部窗口新增407次图块布置与128种此前该窗未见图号。183个图号在已认证TW1原ADRN均唯一，183原RD实际字节经双实现索引/图色解码、PNG回读与独立NumPy完整1408×1055三层RG​BA一致；现代等角候选画面已目视，不冒称历史原游戏截图。源NPC点1000(63,103)及出口1000(63,99)与O9的1001室内可静态对照；不能推同版官方部署、碰撞、真实行走/交易。私人O10 ZIP888成员/7764347B，O9原328成员全部字节不变，183RD/原80B记录与原DAT仅私人，整ZIP CRC/全源/图像回读通过。**本轮Library自动上传因container session expired未成功**，只提供当前会话已验附件，不能写为Library已归档。Chromium使用等字节原图内存页面8项实际成功，file://受管理员阻止保留失败。公开只留源哈希、O10反例及专用Actions；O11转实体/动作/音频事件及任务交互，停止无界扩画图。Stage A7 PARTIAL+2 OPEN，B/wiki GATED、R79暂停、percent=null不变。
+
+
+### 2026-10-31 — O11：台湾1.0原SPR动画字段与两种声音索引候选
+
+[O11原源动画与声音的有限关联](docs/continuity/STONEAGE-O11-NATIVE-PET-FRAME-AUDIO-20261031.md)：从原TW1 SPR完整记录中取证三个数字组的24条动画/352原帧位置；对旧保存版208幅数字图重新用台湾1.0 ADRN/REAL源RD独立解码并逐RGBA同一。原帧末尾16-bit数值73/10000保留，73对应原声音地址表零基/一基两种**尚未确认的候选索引**，不称已经确认的宠物叫声、技能或事件；浏览器只是私人手动逐帧/手动试听，并不是旧客户端执行。208原图和两段原WAV仅私人Library保存，公开仓库只有来源派生数字、SHA、24项反例与Actions。原世界未进入，Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、percent=null。下一O12回22域寻找能够证明同版事件触发/实体名称的原始主表或编译调用路径，缺件有界停止。

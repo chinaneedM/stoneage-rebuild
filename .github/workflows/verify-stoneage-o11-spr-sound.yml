@@ -1,0 +1,23 @@
+name: Verify StoneAge O11 native source animation and bounded sound-word candidates
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-O11-NATIVE-FRAME-SOUND-SOURCE-R1.json'
+      - 'research/recovered/STONEAGE-O11-TW1-208RD-PIXEL-AUDIT-R1.json'
+      - 'tools/stoneage_o11_native_frame_sound_contract.py'
+      - 'tests/test_stoneage_o11_native_frame_sound_contract.py'
+      - '.github/workflows/verify-stoneage-o11-spr-sound.yml'
+  pull_request:
+  workflow_dispatch:
+jobs:
+  source-contract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify frozen original-source-derived frame and audio boundaries
+        run: |
+          python -m tools.stoneage_o11_native_frame_sound_contract
+          python -m unittest tests.test_stoneage_o11_native_frame_sound_contract -v
