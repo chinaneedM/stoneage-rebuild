@@ -1,0 +1,70 @@
+{
+  "schema": "stoneage.offline_client_map_o2_publication.r1",
+  "status": "MERGED_MAIN_AND_DEDICATED_CI_VERIFIED_WITH_SYNTHETIC_SOURCE_ONLY",
+  "project": "chinaneedM/stoneage-rebuild",
+  "start_main_sha": "0a715fedb94223d2e223ba5cdf16fec744678718",
+  "start_main_tree": "ae1dd87bf525c0e70e072098d2c874ba6856e5b9",
+  "candidate_head": "80069d21e23f2c9e54f4b0de33eb28ee89f7c3b0",
+  "pr_number": 60,
+  "pr_url": "https://github.com/chinaneedM/stoneage-rebuild/pull/60",
+  "merge_main_sha": "6df795c2e3ea7465a1e5fffa3c413d1aaed271af",
+  "merge_main_tree": "c6bd6aef420a57659038f949cccbfc85196482f3",
+  "merge_parents": [
+    "0a715fedb94223d2e223ba5cdf16fec744678718",
+    "80069d21e23f2c9e54f4b0de33eb28ee89f7c3b0"
+  ],
+  "preserved_current_state_blob_sha": "20050acf279a01555ab06a381dfcdc936bd381a6",
+  "preserved_current_state_bytes": 2708031,
+  "o2_workflow_path": ".github/workflows/verify-stoneage-offline-asset-first-r1.yml",
+  "acceptance_runs": [
+    {
+      "id": 41058728473,
+      "ref": "candidate",
+      "conclusion": "success"
+    },
+    {
+      "id": 41058733335,
+      "ref": "pull_request",
+      "conclusion": "success",
+      "job_id": 124072764794
+    },
+    {
+      "id": 41058877569,
+      "ref": "main_merge",
+      "conclusion": "success",
+      "job_id": 124073253488
+    }
+  ],
+  "preserved_correction": {
+    "run_id": 41058366208,
+    "conclusion": "failure",
+    "cause": "Pillow was not installed in earlier runner before the workflow dependency step",
+    "new_workflow_dependency": "Pillow>=10,<13"
+  },
+  "main_job_observations": {
+    "unittest_count": 18,
+    "unittest_result": "OK",
+    "scene21_original_source_derived_map_cells": 77,
+    "scene21_original_source_derived_occurrences": 85,
+    "scene21_original_source_derived_distinct_RD_images": 56,
+    "scene21_original_full_rgba_composites": 8,
+    "tw1_original_animation_timeline": "PASS",
+    "actual_new_private_original_source_in_runner": false,
+    "actual_original_game_entered": false
+  },
+  "scope": {
+    "map_input": "PRESERVED_MIXED25_MAP_DAT",
+    "graphics_identity": "PREVIOUSLY_VERIFIED_TW1_COMMON_GRAPHIC_BYTE_PREFIX_NOT_SAME_DEPLOYED_GAME",
+    "exact_tw1_same_source_original_map_qualified": false,
+    "new_private_source_pack_executed": false,
+    "original_runtime_executed": false,
+    "original_game_world_entered": false,
+    "original_assets_in_public_git": false,
+    "overall_percent": null,
+    "stage_a": "7 PARTIAL + 2 OPEN",
+    "stage_b": "GATED",
+    "wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING"
+  },
+  "highest_next": "REAL_PRIVATE_O2_ARTIFACT_EXECUTION_AND_READBACK_WHEN_SOURCE_AVAILABLE; OTHERWISE_TW1_MAP_SOURCE_AUTHENTICATION"
+}
