@@ -57,3 +57,9 @@
 **最高下一：SCENE37-QUEST-MATERIAL-DELTA-REVIEW。** 回22域第8域，先读已有 `STONEAGE-ADULT-CEREMONY-SOURCE-CONTRACT-R1.md`、`STONEAGE-ADULT-QUEST-ORIGIN-QUALIFICATION-R117.md`、`STONEAGE-CN-KATAN-QUEST-SOURCE-CONFLICTS-R98.md` 及其源记录，并查长毛象货运/入门任务资料是否已有相同交付。只选一条具名任务中尚未保存的资格/步骤/奖励原文增量，优先同期官方；若使用同期署名玩家稿，必须单列其等级与冲突，不升级为官方原服事实。明确区分本体任务、永久版本任务、运营活动与来源未定；源不足则具名止步并轮换，不从截图补脚本/ID/奖励，不重跑出生地模型或R79。
 
 原SAAC/GMSV启动仍 `BLOCKED_PRIVATE_INPUT_CHANNEL`，没有新私有输入能力；原世界未进入。Stage A7 PARTIAL+2 OPEN、Stage B/wiki GATED、R79暂停、overall_percent=null全部保持。
+
+## GitHub实际后验验收
+
+[PR #51](https://github.com/chinaneedM/stoneage-rebuild/pull/51)候选`e516c1c377256d430d2d47455dd92648985c6836`的12项Actions全部completed/success；临时合并`8d3e30fb379bdea40eeaff17f54a472574f176a1`的tree与本地`cdc88b70cba0c12804a69050b34ed1dad550b61e`相同。fresh main仍原启动HEAD后，按协议既有授权合并为`4eba384481de6a9d1a856e04d418456de1fb7916`，实际merge tree再次相同；其11项主线Actions也全部completed/success。专用PR run41010540896/job123915173793和main run41010656600/job123915531634日志均实际见29tests及new_riding_rules=0/original_world_entered=false，不能拿CI派生报告测试充当原图HTTP/像素取得或游戏运行见证。
+
+完整23run、7文件整SHA/Git blob、原网页/两原图分时摘要和248813B私人包身份见`research/recovered/STONEAGE-SCENE36-PUBLICATION-R1.json`。额外一次本地回归复跑误写不存在的模块名而import失败；改用实际SCENE35模块后57项全过，未改源/用例，失败不冒写成功。本收据提交自己的后续CI尚未在此预先认定；NEXT37与所有证据边界不变。
