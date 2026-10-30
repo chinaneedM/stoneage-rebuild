@@ -1,0 +1,71 @@
+{
+  "schema": "stoneage.scene33.actual_private_static_acceptance.r1",
+  "source_report_sha256": "e85c749440566f64db0b4572b73d3fb42007c8bba15ba332478b2ab4e7eb008d",
+  "canonical_source_report_sha256": "d584790cda271b41c736bc932b8386d39a53f18ec422ebec5a61e1b58a597657",
+  "parent_archive": {
+    "bytes": 361255180,
+    "sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5"
+  },
+  "actual_source_members": 8,
+  "actual_source_member_bytes": 5240403,
+  "historical_programs_executed": false,
+  "source_action_run_id": null,
+  "public_CI_does_not_read_originals": true,
+  "independent_comparison_tool": "GNU objdump (GNU Binutils for Ubuntu) 2.42",
+  "five_actual_PE_import_comparisons": [
+    {
+      "path": "gmsv/gmsv.exe",
+      "sha256": "d5b08dbcbf9e8736ba8598e38e5901f123d2bff544a9cae53a9ff88ce1971e00",
+      "ordered_import_DLL_descriptors_match": true,
+      "descriptor_occurrences": 6
+    },
+    {
+      "path": "saac/saac.exe",
+      "sha256": "299910efe3d04ccf83a224a6f670c9fabe379440df36d6e0bf6514d76c834615",
+      "ordered_import_DLL_descriptors_match": true,
+      "descriptor_occurrences": 2
+    },
+    {
+      "path": "stoneage2.5/sa_2903.exe",
+      "sha256": "ec678517f76564ebc9ab00cf3f66853ed9975ef6290eb48168b78909a68a5d16",
+      "ordered_import_DLL_descriptors_match": true,
+      "descriptor_occurrences": 9
+    },
+    {
+      "path": "gmsv/cygwin1.dll",
+      "sha256": "c0e27ae6a7b7106da5db889980a17fe55ea515ebfb3d4c03ce1e26d51bf9c73e",
+      "ordered_import_DLL_descriptors_match": true,
+      "descriptor_occurrences": 2
+    },
+    {
+      "path": "saac/cygwin1.dll",
+      "sha256": "c0e27ae6a7b7106da5db889980a17fe55ea515ebfb3d4c03ce1e26d51bf9c73e",
+      "ordered_import_DLL_descriptors_match": true,
+      "descriptor_occurrences": 2
+    }
+  ],
+  "actual_CP950_config_roundtrips": 2,
+  "original_config_auth_values_equal": true,
+  "original_config_auth_values_published": false,
+  "original_inventory_sha256": "48feb98aa977c88dcc236b530e0428ab665032ec923787eac0c293d5960159b0",
+  "all_eight_input_hashes_present_in_prior_inventory": true,
+  "original_RAR_header_CRC_member_CRC_and_payload_SHA_verified": true,
+  "header_walk_is_not_independent_decompression": true,
+  "successful_second_decompressor_for_all_eight": false,
+  "extractor_provenance": {
+    "official_source_url": "https://www.rarlab.com/rar/unrarsrc-7.3.2.tar.gz",
+    "source_archive_bytes": 281897,
+    "source_archive_sha256": "f61a1160d6e2ebbda2ad353c8e82f62ab4312f97fde23c6c2c982d25e0014f99",
+    "observed_version": "UNRAR 7.30 beta 2",
+    "workspace_build_only": true,
+    "system_install_performed": false
+  },
+  "retained_failures": [
+    "System libarchive could decode client but failed cygwin1.dll: Parsing filters is unsupported",
+    "apt-get download unar: package unavailable; apt-get update: setgroups/seteuid not permitted; no escalation; official source built in scratch",
+    "Initial source-probe Counter(mapping) compared data values instead of member-key counts; corrected to Counter(mapping.keys()) and full probe rerun",
+    "Reusing partial private output rejected; successful probe used a fresh directory"
+  ],
+  "runtime_pair_still_open": true,
+  "original_world_entered": false
+}
