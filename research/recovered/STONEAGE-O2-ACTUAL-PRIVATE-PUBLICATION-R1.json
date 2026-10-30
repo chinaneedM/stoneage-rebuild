@@ -1,0 +1,63 @@
+{
+  "schema": "stoneage.o2_actual_private_source_publication.r1",
+  "date": "2026-10-30",
+  "repository": "chinaneedM/stoneage-rebuild",
+  "base_head": "aeafb5e134609312a9298db827a5207cabf2adce",
+  "pr": 61,
+  "pr_url": "https://github.com/chinaneedM/stoneage-rebuild/pull/61",
+  "candidate_head": "c8f94b6f1fa91bf1bed9db45a7370c55c0daccec",
+  "merge_main_head": "718d2b666a200dec2eb9c9a41b2525d51ab31926",
+  "merge_main_tree": "c1e0f61a43c6e769d6f6bbea6aca4e0df0e6cdb8",
+  "merged_parent_sha": [
+    "aeafb5e134609312a9298db827a5207cabf2adce",
+    "c8f94b6f1fa91bf1bed9db45a7370c55c0daccec"
+  ],
+  "continued_current_state_blob_sha": "20050acf279a01555ab06a381dfcdc936bd381a6",
+  "current_state_bytes": 2708031,
+  "source_actual_replay_evidence": "research/recovered/STONEAGE-O2-ACTUAL-PRIVATE-SOURCE-ACCEPTANCE-R1.json",
+  "source_public_evidence_git_blob_sha": "31312df1d2ef59daa5887f3e0961c5cd3895d569",
+  "continuation": "docs/continuity/STONEAGE-O2-ACTUAL-PRIVATE-SOURCE-20261030.md",
+  "private_library_delivery": "/石器时代/StoneAge-O2-actual-original-private-20261030.zip",
+  "private_delivery_zip_sha256": "daf750b05a25d668403e7836ffe8436c404c1179de29a3730c3f1b3999056573",
+  "private_delivery_bytes": 2078427,
+  "private_actual_source_material_retrieved": true,
+  "private_compatibility_browser_executed": true,
+  "historical_original_executable_started": false,
+  "old_mixed25_map_certified_tw1_official": false,
+  "original_world_entered": false,
+  "ci": {
+    "candidate_push": {
+      "run_id": 41060923914,
+      "conclusion": "success",
+      "job_id": 124080151401
+    },
+    "candidate_pr": {
+      "run_id": 41060995204,
+      "conclusion": "success",
+      "job_id": 124080392267
+    },
+    "merge_main": {
+      "run_id": 41061116054,
+      "conclusion": "success",
+      "job_id": 124080792254
+    },
+    "main_public_regression_unit_tests": 22,
+    "main_public_regression_unit_tests_result": "OK",
+    "main_archived_source_map_contract": "PASS",
+    "main_tw1_archived_timeline": "TW1_ANIMATION_TIMELINE_EXACT_REPLAY=PASS; ORIGINAL_COLOR_AND_GAME_RUNTIME=OPEN",
+    "main_action_runs_for_merge": {
+      "count": 11,
+      "success": 11,
+      "failure": 0,
+      "pending": 0
+    },
+    "distinction": "Github Actions used public source-derived receipts and synthetic gates, not actual private original images; genuine original materials were validated separately in private current environment"
+  },
+  "original_privacy_policy": "No original PNG, sprite payload, map DAT, PAL, WAV, proprietary client or combined original-pixel HTML included in GitHub",
+  "stage_a": "7 PARTIAL + 2 OPEN",
+  "stage_b": "GATED",
+  "wiki": "GATED",
+  "r79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null,
+  "next": "O2_TW1_SAME_SOURCE_OFFICIAL_MAP_PROVENANCE_IF_AVAILABLE_OR_BOUNDED_SINGLEPLAYER_VISIBLE_CONTENT_SPEC"
+}
