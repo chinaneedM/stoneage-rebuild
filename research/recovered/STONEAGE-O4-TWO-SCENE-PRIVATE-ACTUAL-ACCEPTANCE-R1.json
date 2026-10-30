@@ -1,0 +1,155 @@
+{
+  "schema": "stoneage.o4_actual_private_two_scene_interaction_acceptance.r1",
+  "repository": "chinaneedM/stoneage-rebuild",
+  "base_main_sha": "75fccf8cf01eeafadb06688f8a680a7e1f5fc77b",
+  "base_main_tree": "be093eb9f7637a191cda8e3c267a612b1d95341a",
+  "current_state_historical_prefix_sha": "20050acf279a01555ab06a381dfcdc936bd381a6",
+  "input_original_private_archives": [
+    {
+      "scope": "mixed25 source paired warp and two raw DAT + RD subset",
+      "name": "StoneAge-SCENE15-private-doorway-observer.zip",
+      "size": 529126,
+      "sha256": "cfe5d60d64188ea15fb5758af0220cf47f3234be7bd896cebddb2936fe6bb21d"
+    },
+    {
+      "scope": "mixed25 original town 1000 full pixel candidate",
+      "name": "StoneAge-SCENE21-private-town1000-observer.zip",
+      "size": 2745658,
+      "sha256": "4d35351e6db222cac889abcce2fdbe97c498abc252d24a3000968a58c9d2605a"
+    },
+    {
+      "scope": "mixed25 saved NPC 63 103 original source text",
+      "name": "StoneAge-SCENE22-private-NPC-content.zip",
+      "size": 1321290,
+      "sha256": "7c6d717de639937f3fc0482907cf501afe52ed600f70683b43a70920178110df"
+    },
+    {
+      "scope": "retail TW1 numeric sprite animation optional crossversion reference",
+      "name": "StoneAge-O2-actual-original-private-20261030.zip",
+      "size": 2078427,
+      "sha256": "daf750b05a25d668403e7836ffe8436c404c1179de29a3730c3f1b3999056573"
+    }
+  ],
+  "sources_public": {
+    "scene15_path": "research/recovered/STONEAGE-SCENE15-DOORWAY-SOURCE-R1.json",
+    "scene21_path": "research/recovered/STONEAGE-SCENE21-TOWN1000-SOURCE-R1.json",
+    "scene22_path": "research/recovered/STONEAGE-SCENE22-NPC-ARGUMENT-R1.json"
+  },
+  "original_map_dat_sha256": {
+    "floor_1001": "62dbef1614ede0ba032ca9c69cbfdc3d43938e45baba78701885790937b86b90",
+    "floor_1000": "94b19cb59d72b7b48da70d2741ba68516caad970297fd48ed11ef720fa3ea97e"
+  },
+  "exact_legacy_original_map_source_overlap": {
+    "scene15_town_7x7_original_tile_and_parts_placements": 54,
+    "source21_matching_old_window_tile_and_parts_placements": 54,
+    "exact_placement_triples_equal": true,
+    "common_source_image_keys": 36,
+    "all_common_source_image_png_sha256_equal": true,
+    "scene15_room_1001_source_tile_and_parts_occurrences": 27,
+    "scene21_town_1000_7x11_source_tile_and_parts_occurrences": 85,
+    "source21_original_image_payload_candidates": 56,
+    "third_plane_used_as_original_collision": false
+  },
+  "source_create_blocks": [
+    {
+      "from": [
+        1001,
+        10,
+        15
+      ],
+      "to": [
+        1000,
+        63,
+        99
+      ],
+      "byte_sha256": "d35da32a65e7794acf619c4c959c81dcefc0a433c7d78a0c838b9d0c278c3085"
+    },
+    {
+      "from": [
+        1000,
+        63,
+        99
+      ],
+      "to": [
+        1001,
+        10,
+        15
+      ],
+      "byte_sha256": "d0b4f955cc6afe909579a3bdb555f549a5fc00e23f5e3555d6041f2dd2028f79"
+    }
+  ],
+  "original_npc_static": {
+    "floor": 1000,
+    "xy": [
+      63,
+      103
+    ],
+    "graphic_key": 16048,
+    "template_function": "TownPeople",
+    "source_message_bytes": 143,
+    "source_message_sha256": "d1138b040fb31d0dc85cfdf4917f1c92facc67323c3a12544a8487039d0492ca",
+    "original_message_published_publicly": false,
+    "dialogue_game_runtime_executed": false
+  },
+  "optional_TW1_sprite": {
+    "spr": 100000,
+    "direction": 0,
+    "action_code": 6,
+    "source_frame_positions": 7,
+    "unique_source_bitmap_images": 2,
+    "map_1000_original_actor_identity_authenticated": false
+  },
+  "source_actual_replay": {
+    "private_original_archives_retrieved_and_rehashed": 4,
+    "original_image_subresources_loaded_in_Chromium": 67,
+    "room_renderer_27_original_tile_parts_from_raw_source": true,
+    "town_renderer_85_placements_composed_source_png": true,
+    "original_forward_warp_accepted_only_exact_source_xy": true,
+    "original_return_warp_accepted_only_exact_source_xy": true,
+    "original_npc_document_inspected_at_exact_cell": true,
+    "wrong_exit_and_out_of_window_move_rejected": true,
+    "modern_controls_tested": true,
+    "js_errors": 0,
+    "external_http_requests": 0,
+    "Chromium_version": "144.0.7559.96"
+  },
+  "independent_actual_pixel_replay": {
+    "method": "Pillow independent raw source PNG layering vs real Chromium canvas excluding original sprite and modern coordinate overlays",
+    "floor_1001_compared_pixel_count": 726455,
+    "floor_1001_pixels_diff_gt1": 0,
+    "floor_1001_original_source_composite_rgba_sha256": "1958a0c8d5f84cd7f29f33b0ed96fd3c5bf3f37ec0cfa046c0525a10a6dc2d06",
+    "floor_1000_compared_pixel_count": 716102,
+    "floor_1000_pixels_diff_gt1": 0,
+    "floor_1000_original_source_composite_rgba_sha256": "0938dc4f5ef9c6e5897cb7ae792474f5cb45111e75cc0b58f97ccda2d24f7f50",
+    "total_pixels_compared": 1442557,
+    "pixels_diff_gt1": 0
+  },
+  "private_output": {
+    "saved_private_library_path": "/石器时代/StoneAge-O4-original-two-scene-private-20261030.zip",
+    "zip_sha256": "bd3eed1e348b4359596300bcec3ceeb0f91a6d6ec5c6cbcdf6abfd48bc779a34",
+    "zip_bytes": 2666980,
+    "zip_files": 12,
+    "html_sha256": "f2d7faf0eb25f39ce01c20048cc2c7e9a24cc2887fabec609929a28ba34fa0ad",
+    "html_bytes": 2266617,
+    "screenshot_sha256": "fe9b6a84cd40f6bdb8e001d1b4f8c109f26ea724035d55c9cda989c85c8e0d72",
+    "original_png_dat_rd_or_script_text_in_git": false
+  },
+  "historical_limits": {
+    "original_client_binary_executed": false,
+    "original_game_world_entered": false,
+    "official_TW1_deployed_1000_dat_authenticated": false,
+    "original_NPC_talk_or_shop_runtime_authenticated": false,
+    "original_map_collision_authenticated": false,
+    "original_legacy_warp_trigger_authenticated": false,
+    "original_actor_frame_rate_authenticated": false,
+    "original_actor_same_build_world_member_authenticated": false,
+    "official_original_assets_redistribution_license_authenticated": false
+  },
+  "ci_public_gate_never_reads_private_originals": true,
+  "stage_a": "7 PARTIAL + 2 OPEN",
+  "stage_b": "GATED",
+  "wiki": "GATED",
+  "r79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null,
+  "highest_next": "O4_SOURCE_SCOPED_NPC_QUEST_AND_PET_LINK_GAP_OR_TW1_SAME_SOURCE_MAP_IF_FOUND; NO_FALSE_NATIVE_GAME_RUNTIME"
+}
