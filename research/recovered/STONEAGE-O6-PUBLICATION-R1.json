@@ -1,0 +1,69 @@
+{
+  "schema": "stoneage.o6_private_export_main_publication_r1",
+  "source_main_sha_at_start": "db615f4d88c4c6eac24809e2056549255b5f1a94",
+  "candidate_branch": "agent/o6-private-engine-neutral-asset-export-20261030",
+  "candidate_final_sha": "7d4819690b38adfd5a61f5c0f621dfe596db1343",
+  "pull_request_number": 64,
+  "merge_commit_sha": "d573c618b70b4104fb2f53768eba7701bdf1abc9",
+  "merged_main_tree_sha": "67969ed2eeae4fe0cdffcb5c38b3b55abc6f23b3",
+  "preserved_current_state_blob_sha": "20050acf279a01555ab06a381dfcdc936bd381a6",
+  "remote_exact_git_blobs": {
+    "tools/stoneage_o6_private_export.py": "bf47d51adc40d60903a757288c077a7d80c9b20b",
+    "tests/test_stoneage_o6_private_export.py": "240a5fd092c8cf94fe748c6a23c708906b8dc0d2",
+    ".github/workflows/verify-stoneage-o6-private-asset-export.yml": "aefe29a246b99addf1fad92d845e29d74d5c399d",
+    "docs/continuity/STONEAGE-O6-PRIVATE-ENGINE-NEUTRAL-RESOURCE-PACK-20261030.md": "30f1878d8bd33684954afdc2617666178f9e4719",
+    "research/recovered/STONEAGE-O6-PRIVATE-ASSET-EXPORT-ACCEPTANCE-R1.json": "c84f55ccb2041727956154946e974ecd30f9edda",
+    "README.md": "160afddd6eae5458510fe350007c73b24aff3031"
+  },
+  "actual_ci": {
+    "candidate_head_sha": "7d4819690b38adfd5a61f5c0f621dfe596db1343",
+    "dedicated_candidate_runs": [
+      41070546142,
+      41070536156
+    ],
+    "dedicated_candidate_runs_completed_success": true,
+    "real_candidate_job_log_id": 124113153637,
+    "real_job_log_synthetic_unittests": 16,
+    "real_job_log_test_result": "Ran 16 tests in 0.054s; OK",
+    "merged_main_sha": "d573c618b70b4104fb2f53768eba7701bdf1abc9",
+    "main_workflow_runs": [
+      41070657417,
+      41070657067,
+      41070657052,
+      41070657201,
+      41070657120,
+      41070656975,
+      41070657103,
+      41070656960,
+      41070657197,
+      41070657269,
+      41070657096
+    ],
+    "main_completed_success": 11,
+    "main_failed": 0,
+    "private_original_PNGs_read_by_public_GitHub_CI": 0,
+    "real_source_PNGs_public_CI_executed": false
+  },
+  "private_custody": {
+    "library_path": "/石器时代/StoneAge-O6-private-engine-neutral-assets-20261030.zip",
+    "library_upload_completed": true,
+    "library_re_materialize_and_full_byte_comparison_equal": true,
+    "archive_sha256": "c64376b4a018cc444f2e2d51b871db75ca7e25106777b2a4475ebf2bfffd0bd5",
+    "archive_bytes": 2146298,
+    "zip_files": 280,
+    "source_png_files": 275,
+    "zip_crc_errors": 0,
+    "real_private_PNG_full_SHA_independent_decoder_verified": 275,
+    "original_commercial_art_published_to_public_Git": false
+  },
+  "official_TW1_same_deployed_world": false,
+  "pet_species_entity_graphic_runtime_link_proven": false,
+  "historical_original_game_world_entered": false,
+  "stage_a": "7 PARTIAL + 2 OPEN",
+  "stage_b": "GATED",
+  "wiki": "GATED",
+  "r79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null,
+  "this_postpublication_receipt_own_Actions": "NOT_PRECLAIMED",
+  "highest_next": "RETURN_TO_22_DOMAIN_SOURCE_QUALIFIED_CONTENT_QUEUE_OR_NEW_SAME_BUILD_PRIMARY_PET_MASTER_IF_ACTUALLY_OBTAINED"
+}
