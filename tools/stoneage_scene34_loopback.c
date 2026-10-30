@@ -23,9 +23,12 @@ static int ready(const char *path, int port) {
 }
 
 static int wait_socket(SOCKET s, int writing, int seconds) {
-    fd_set f; struct timeval timeout;
-    FD_ZERO(&f); FD_SET(s, &f); timeout.tv_sec=seconds; timeout.tv_usec=0;
-    return select(0, writing ? NULL : &f, writing ? &f : NULL, NULL, &timeout);
+    fd_set f, errors; struct timeval timeout;
+    FD_ZERO(&f); FD_SET(s, &f); FD_ZERO(&errors); FD_SET(s, &errors);
+    timeout.tv_sec=seconds; timeout.tv_usec=0;
+    /* Failed nonblocking connects signal exceptfds on Winsock. Read SO_ERROR
+       after either write or exception readiness; timeout is not policy proof. */
+    return select(0, writing ? NULL : &f, writing ? &f : NULL, writing ? &errors : NULL, &timeout);
 }
 
 static int client(const char *ip, int port, const char *path, int echo) {
