@@ -1,0 +1,26 @@
+name: Verify SCENE34 actual own prerequisite evidence and blocked original boot
+on:
+  push:
+    paths:
+      - tools/stoneage_scene34_evidence_guard.py
+      - tests/test_stoneage_scene34_windows_gate.py
+      - research/recovered/STONEAGE-SCENE34-*
+      - .github/workflows/verify-stoneage-scene34-evidence.yml
+  pull_request:
+    paths:
+      - tools/stoneage_scene34_evidence_guard.py
+      - tests/test_stoneage_scene34_windows_gate.py
+      - research/recovered/STONEAGE-SCENE34-*
+      - .github/workflows/verify-stoneage-scene34-evidence.yml
+permissions:
+  contents: read
+jobs:
+  derived-actual-records-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Preserve failed attempt and finite actual result; no original execution
+        run: python3 -m tools.stoneage_scene34_evidence_guard
+      - name: Admission and actual source counterexamples (no live network)
+        run: python3 -m unittest tests.test_stoneage_scene34_windows_gate -v

@@ -1,0 +1,79 @@
+{
+  "schema": "stoneage.scene34.actual_own_windows_custody.r1",
+  "source_main": "d5aeee9399a1398b574f8dacadb0af66c41c64c3",
+  "source_tree": "9667fca0312691f4bcff3056fe258a41ac15fd6c",
+  "private_mixed25_archive_materialized_and_full_SHA_verified_locally": {
+    "bytes": 361255180,
+    "sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+    "original_programs_executed": false,
+    "original_payload_sent_to_GitHub": false
+  },
+  "local_execution_capabilities": {
+    "OS": "Linux",
+    "architecture": "x86_64",
+    "available_Windows_native_runtime": false,
+    "wine": false,
+    "VM_executable_available": false,
+    "gh_CLI": false,
+    "pwsh": false,
+    "Windows_C_compiler": false
+  },
+  "current_GitHub_connector": {
+    "GitData_push_and_Actions_observation_available": true,
+    "private_workflow_input_or_secret_injection_exposed": false,
+    "artifact_download_available": true,
+    "private_original_file_upload_to_runner_exposed": false,
+    "scope": "observed current tool capabilities only, not a claim about all GitHub APIs"
+  },
+  "source_observations": [
+    {
+      "HEAD": "1e1976a425d3921c1b63cabd19684f1508197f8f",
+      "run_id": 41002704873,
+      "job_id": 123890540715,
+      "artifact_id": 12954430279,
+      "artifact_ZIP_bytes": 1500,
+      "artifact_API_digest": "sha256:c88074774069feeace33c6d6104cf82d70367a414923f868423c79236ca81c1d",
+      "verified_local_ZIP_sha256": "c88074774069feeace33c6d6104cf82d70367a414923f868423c79236ca81c1d",
+      "raw_report": "STONEAGE-SCENE34-FIRST-OWN-WINDOWS-ACTUAL-R1.json",
+      "raw_bytes": 4549,
+      "raw_sha256": "f9e12d411d1c6d66c1fd2b5738bb2c1662e778b210c645a2acba825d85224c60",
+      "workflow_completed_success_is_not_network_gate_pass": true,
+      "finite_gate_passed": false,
+      "observed_blocked_canary_error": 10060,
+      "notes": "First timeout remains unqualified. Missing Winsock exception-set handling corrected in own probe; no original received/executed."
+    },
+    {
+      "HEAD": "bff50fef46d3effeb57c5626876b30cd8e62dda0",
+      "run_id": 41002914495,
+      "job_id": 123891199286,
+      "artifact_id": 12954117931,
+      "artifact_ZIP_bytes": 1621,
+      "artifact_API_digest": "sha256:bab3c695438ab0e555d92336030b8e4a93a8da2290b96c236943fc6942218379",
+      "verified_local_ZIP_sha256": "bab3c695438ab0e555d92336030b8e4a93a8da2290b96c236943fc6942218379",
+      "raw_report": "STONEAGE-SCENE34-CORRECTED-OWN-WINDOWS-ACTUAL-R1.json",
+      "raw_bytes": 6051,
+      "raw_sha256": "f01c0c1508fc66fe3bc1f3d4f6a441629110cdf0497a8d68df379a1af3801638",
+      "finite_gate_passed": true,
+      "observed_blocked_canary_errors": [
+        10013,
+        10013
+      ],
+      "seconds_under_rules": 1.75,
+      "notes": "Own x86 two-process exact 8-byte echo before/during/after; inbound/outbound all-program block configured; source input transport still absent."
+    }
+  ],
+  "both_ZIPs_independently_downloaded_and_API_digest_verified": true,
+  "both_raw_reports_preserved_without_normalizing_original_bytes": true,
+  "source_code_hashes_verified_from_exact_each_execution_HEAD": true,
+  "first_and_second_are_different_guests_and_resolved_IPv4_not_controlled_same_guest_AB": true,
+  "empirical_scope": "one external TCP/IPv4 endpoint in each guest and own loopback; UDP/IPv6 and external inbound paths not experimentally tested",
+  "historical_server_runs": 0,
+  "client_runs": 0,
+  "accounts_entered": 0,
+  "original_world_entered": false,
+  "minimum_original_boot_not_completed": true,
+  "stop": "PRIVATE_SOURCE_TO_WINDOWS_CHANNEL_UNAVAILABLE",
+  "no_more_isolation_or_transfer_helper_expansion_without_new_private_input_capability": true,
+  "next": "SCENE35-ONE-MIXED25-ENCOUNTER-CONTENT-JOIN",
+  "overall_percent": null
+}

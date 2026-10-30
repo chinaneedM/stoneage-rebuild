@@ -1,0 +1,243 @@
+{
+  "schema": "stoneage.scene34.own_windows_prerequisite.r1",
+  "scope": "OWN_X86_TWO_PROCESS_TCP_IPV4_LOOPBACK_AND_ONE_EXTERNAL_CANARY",
+  "input_probe_sha256": "277e9c5a161c44d265b5b7aee86c1b2b210211fd63e3f003fa161790b0118042",
+  "pointer_bytes": 4,
+  "own_probe_compiled_x86": true,
+  "source_sha256": {
+    "tools/stoneage_scene34_loopback.c": "426be251fb0995380bc1381532f3ebe6d00fe4983078bc22fc7d2af4e9452f18",
+    "tools/stoneage_scene34_windows_gate.py": "c050a8e938011cc6a3c5d378f49401755e2769aae3fbd06dd284abd72f1c4e35",
+    "tools/stoneage_p3h_native.py": "2a7d40872f7ec628be0bce0338b3e5bdc77ef66717e77f4002c4eb69370a244b"
+  },
+  "runner_image": "20261021.278.1",
+  "source_action_run_id": "41002914495",
+  "execution_HEAD": "bff50fef46d3effeb57c5626876b30cd8e62dda0",
+  "error": null,
+  "historical_programs_executed": false,
+  "original_inputs_received_in_Windows": false,
+  "original_server_boot_attempted": false,
+  "SAAC_GMSV_handshake_observed": false,
+  "original_world_entered": false,
+  "client_executed": false,
+  "account_entered": false,
+  "private_source_transport_available": false,
+  "original_execution_admitted": false,
+  "all_network_paths_experimentally_tested": false,
+  "external_canary": {
+    "host": "api.github.com",
+    "IPv4": "20.29.134.17",
+    "port": 443
+  },
+  "canary_before": {
+    "connected": true,
+    "wsa_error": 0,
+    "echo_exact": false,
+    "pid": 8776
+  },
+  "loopback_before": {
+    "server_pid": 6600,
+    "client_pid": 9644,
+    "ready": {
+      "ready": true,
+      "bind_address": "127.0.0.1",
+      "port": 19200,
+      "pid": 6600,
+      "pointer_bytes": 4
+    },
+    "server_exit": 0,
+    "client_exit": 0,
+    "server": {
+      "connected": true,
+      "wsa_error": 0,
+      "echo_exact": true,
+      "pid": 6600
+    },
+    "client": {
+      "connected": true,
+      "wsa_error": 0,
+      "echo_exact": true,
+      "pid": 9644
+    },
+    "jobs": [
+      {
+        "limit_flags": 8200,
+        "active_process_limit": 1,
+        "created_suspended": true,
+        "assigned_before_resume": true
+      },
+      {
+        "limit_flags": 8200,
+        "active_process_limit": 1,
+        "created_suspended": true,
+        "assigned_before_resume": true
+      }
+    ],
+    "image_identity_verified": true
+  },
+  "hold_cleanup_observed": true,
+  "isolation": {
+    "watchdog": {
+      "registered": true,
+      "user": "SYSTEM"
+    },
+    "profiles": [
+      {
+        "Name": "Domain",
+        "Enabled": 1
+      },
+      {
+        "Name": "Private",
+        "Enabled": 1
+      },
+      {
+        "Name": "Public",
+        "Enabled": 1
+      }
+    ],
+    "rules": [
+      {
+        "name": "StoneAgeSCENE34Outbound",
+        "direction": "Outbound",
+        "action": "Block",
+        "enabled": "True",
+        "profile": "Any",
+        "program": "Any",
+        "protocol": "Any"
+      },
+      {
+        "name": "StoneAgeSCENE34Inbound",
+        "direction": "Inbound",
+        "action": "Block",
+        "enabled": "True",
+        "profile": "Any",
+        "program": "Any",
+        "protocol": "Any"
+      }
+    ]
+  },
+  "canary_blocked_before": {
+    "connected": false,
+    "wsa_error": 10013,
+    "echo_exact": false,
+    "pid": 1416
+  },
+  "loopback_during": {
+    "server_pid": 1440,
+    "client_pid": 5720,
+    "ready": {
+      "ready": true,
+      "bind_address": "127.0.0.1",
+      "port": 19200,
+      "pid": 1440,
+      "pointer_bytes": 4
+    },
+    "server_exit": 0,
+    "client_exit": 0,
+    "server": {
+      "connected": true,
+      "wsa_error": 0,
+      "echo_exact": true,
+      "pid": 1440
+    },
+    "client": {
+      "connected": true,
+      "wsa_error": 0,
+      "echo_exact": true,
+      "pid": 5720
+    },
+    "jobs": [
+      {
+        "limit_flags": 8200,
+        "active_process_limit": 1,
+        "created_suspended": true,
+        "assigned_before_resume": true
+      },
+      {
+        "limit_flags": 8200,
+        "active_process_limit": 1,
+        "created_suspended": true,
+        "assigned_before_resume": true
+      }
+    ],
+    "image_identity_verified": true
+  },
+  "canary_blocked_after": {
+    "connected": false,
+    "wsa_error": 10013,
+    "echo_exact": false,
+    "pid": 7392
+  },
+  "rules_before_restore": [
+    {
+      "name": "StoneAgeSCENE34Outbound",
+      "direction": "Outbound",
+      "action": "Block",
+      "enabled": "True",
+      "profile": "Any",
+      "program": "Any",
+      "protocol": "Any"
+    },
+    {
+      "name": "StoneAgeSCENE34Inbound",
+      "direction": "Inbound",
+      "action": "Block",
+      "enabled": "True",
+      "profile": "Any",
+      "program": "Any",
+      "protocol": "Any"
+    }
+  ],
+  "seconds_under_rules": 1.75,
+  "jobs_closed_before_network_restore": true,
+  "cleanup": {
+    "remaining": 0
+  },
+  "canary_after": {
+    "connected": true,
+    "wsa_error": 0,
+    "echo_exact": false,
+    "pid": 7592
+  },
+  "loopback_after": {
+    "server_pid": 7556,
+    "client_pid": 8116,
+    "ready": {
+      "ready": true,
+      "bind_address": "127.0.0.1",
+      "port": 19200,
+      "pid": 7556,
+      "pointer_bytes": 4
+    },
+    "server_exit": 0,
+    "client_exit": 0,
+    "server": {
+      "connected": true,
+      "wsa_error": 0,
+      "echo_exact": true,
+      "pid": 7556
+    },
+    "client": {
+      "connected": true,
+      "wsa_error": 0,
+      "echo_exact": true,
+      "pid": 8116
+    },
+    "jobs": [
+      {
+        "limit_flags": 8200,
+        "active_process_limit": 1,
+        "created_suspended": true,
+        "assigned_before_resume": true
+      },
+      {
+        "limit_flags": 8200,
+        "active_process_limit": 1,
+        "created_suspended": true,
+        "assigned_before_resume": true
+      }
+    ],
+    "image_identity_verified": true
+  },
+  "finite_tcp_ipv4_gate_passed": true,
+  "stop": "PRIVATE_SOURCE_TO_WINDOWS_CHANNEL_UNAVAILABLE"
+}
