@@ -1017,3 +1017,8 @@ ranges, not a new whole-client download or arbitrary program reverse engineering
 ### 2026-10-30 — O7：武器店三件原物品的说明属性与原字段互证
 
 [O7 原保存版1001武器店源资料联接](docs/continuity/STONEAGE-O7-SHOP-ATTRIBUTES-AND-SOURCE-BOUNDS-20261030.md)：重读私有O6/SCENE24/25三个全哈希来源，原`itemset.txt`前三商店ID0/4/10与原描述中的攻/防/敏数值分别为`+9/-3/-3`、`+7/-2/-2`、`+14/-5/-5`，且都与原第37—42列各双份值精确一致；原价数值字段65/105/260，非已执行交易价格。三原Palet1候选PNG 3/3逐SHA相同，原 imagenumber 与+76别名物理图号仍**只是静态候选**。关键坐标反例：真实保存版店员1001(17,13)在O6室内取样 x7—13 **以外**，不能冒称已走到店员或执行原商店。私人O7 ZIP287成员（承袭O6原280成员+3PNG+4资料）、278PNG/2179790B已保存并二次回读；Chomium内存同原图测试352源帧/208不同原图和三商品实绘/两出口人工路线成功，管理员拒绝file://导航，未声称原版EXE或用户本机文件直开。公开仅[来源数字收据](research/recovered/STONEAGE-O7-SHOP-ITEM-STATS-AND-SCENE-ACCEPTANCE-R1.json)、审计代码和负例；官方同版地图/原交易/宠物身份仍未证。下一转22域新原实物，勿继续无来源交互helper；Stage A7 PARTIAL+2 OPEN、Stage B/wiki GATED、R79暂停、percent=null不变。
+
+
+### 2026-10-30 — O8：保存版武器店柜台5×5有据原图已补入离线双窗口
+
+[原图范围、五格重叠和私人浏览器验收](docs/continuity/STONEAGE-O8-1001-SHOP-ORIGINAL-CROP-OVERLAP-20261030.md)：从已存私人SCENE14原件重新读原`1001.dat`及R14原图，逐源格核(13…17,13…17) **25地块+5构件=30出现/0缺图**，与O7出口窗口原DAT全SHA同；**7/7同号原PNG完整SHA/字节相等**、x13/y13…17 **5条(cell,layer,map_id)重复**，去重后共52条实际原保存版图块布置。新增只需3幅原构件PNG及1幅原店员5863候选PNG；在原NPC坐标1001(17,13)可实际目视有来源的柜台场景，店员原候选图默认关闭、只手动叠加，不伪称原NPC渲染/买卖/碰撞。O8私人ZIP297成员/282原PNG、原O7 287成员逐字节不变，上传用户Library并二次原样回读；Chromium在内存以同SHA原图测试柜台10图片/店员1/商品3、两窗口源坐标人工跨越、两向原出口手动参数、352宠物源帧/208不同原图，JS错误与外部请求0；一次过大data页面导航ERR_ABORTED已保留、改set_content验收，`file://`用户机直开未证。公开仅[源-only收据](research/recovered/STONEAGE-O8-ORIGINAL-SHOP-CROP-ACCEPTANCE-R1.json)与数字变异测试，原美术不公开。下一回22域找新内容/新原始来源，不扩不必要商店helper。官方台湾1.0地图部署、原版游戏世界/原生碰撞、物种与真实交易仍OPEN；Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、percent=null不变。
