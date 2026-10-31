@@ -1,0 +1,27 @@
+name: Verify O18 preserved source map1003 name and NPC content boundaries
+
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-O18-MAP1003-SAME-CARRIER-NAMED-CONTENT-R1.json'
+      - 'tools/stoneage_o18_map1003_named_content.py'
+      - 'tests/test_stoneage_o18_map1003_named_content.py'
+      - '.github/workflows/verify-stoneage-o18-map1003.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-O18-MAP1003-SAME-CARRIER-NAMED-CONTENT-R1.json'
+      - 'tools/stoneage_o18_map1003_named_content.py'
+      - 'tests/test_stoneage_o18_map1003_named_content.py'
+      - '.github/workflows/verify-stoneage-o18-map1003.yml'
+jobs:
+  metadata-only:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify source receipts and reject unsupported interpretation
+        run: |
+          python -m tools.stoneage_o18_map1003_named_content
+          python -m unittest discover -s tests -p 'test_stoneage_o18_map1003_named_content.py' -v
