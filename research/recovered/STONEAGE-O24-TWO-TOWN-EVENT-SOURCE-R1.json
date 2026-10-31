@@ -1,0 +1,227 @@
+{
+  "schema": "stoneage.o24.two_town_exchange_source.r1",
+  "date": "2026-10-31",
+  "baseline": {
+    "main_head": "1b3c91d970d8096784ed27e521aba2798d41805d",
+    "tree": "fad53f40dd44261a434d9a2d2dcae368262276b8",
+    "current_state_blob": "20050acf279a01555ab06a381dfcdc936bd381a6"
+  },
+  "era": "LATER_PRESERVED_MIXED25_STATIC_SOURCE_NOT_TW10_OR_JSS1999_PROOF",
+  "original_archive": {
+    "bytes": 361255180,
+    "sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+    "member_count": 7952
+  },
+  "source_files": [
+    {
+      "name": "event02.create",
+      "ordinal": 6598,
+      "bytes": 534,
+      "sha256": "2b15884736a19d06caffa32e335c3604e5f8593c8ea051d2040f0c5d3b52e1e4",
+      "crc32": "7d30152c",
+      "verification": "RAR_DIRECT_SHA_CRC"
+    },
+    {
+      "name": "event02_1",
+      "ordinal": 6599,
+      "bytes": 1185,
+      "sha256": "6f4d04e6be5c34ce989bb4cba8adb1e87ef7d852835583adeaf569cc8ec6c49c",
+      "crc32": "1f8535ba",
+      "verification": "RAR_DIRECT_SHA_CRC"
+    },
+    {
+      "name": "event02_2",
+      "ordinal": 6600,
+      "bytes": 1131,
+      "sha256": "eb3f9a9c9bbf1776de7533f57c529c1948c2cc8c1fb22945c49d61950f153e9b",
+      "crc32": "745d963a",
+      "verification": "RAR_DIRECT_SHA_CRC"
+    },
+    {
+      "name": "itemset.txt",
+      "ordinal": 3741,
+      "bytes": 3392473,
+      "sha256": "a415e78f9aab2e5ea5ca92ecb7430253f7be1ba7c876d6b0bb6d067b1b466688",
+      "crc32": "96397928",
+      "verification": "RAR_DIRECT_SHA_CRC"
+    },
+    {
+      "name": "2000.DAT",
+      "ordinal": 2010,
+      "bytes": 135008,
+      "sha256": "d75231434c69118a518a8d5dd34f266264b8551fe4f2d55a20cdfa11b46584b3",
+      "crc32": "35bf728a",
+      "verification": "RAR_DIRECT_SHA_CRC"
+    },
+    {
+      "name": "1000.DAT",
+      "ordinal": 1664,
+      "bytes": 153608,
+      "sha256": "94b19cb59d72b7b48da70d2741ba68516caad970297fd48ed11ef720fa3ea97e",
+      "crc32": "cd608784",
+      "verification": "SCENE21_VERIFIED_NESTED_ZIP_NOT_FRESH_RAR"
+    }
+  ],
+  "scene21_private_zip": {
+    "bytes": 2745658,
+    "sha256": "4d35351e6db222cac889abcce2fdbe97c498abc252d24a3000968a58c9d2605a",
+    "crc_verified": true
+  },
+  "actors": [
+    {
+      "floor": 2000,
+      "xy": [
+        55,
+        92
+      ],
+      "name": "彌生",
+      "graphicname": 16027,
+      "dir_raw": 4,
+      "script": "event02_1",
+      "create_block_sha256": "adcca18ff35c3689c2f482becb27f73d60f19e36531efb693f3d925384d7c7c9",
+      "map_size": [
+        150,
+        150
+      ],
+      "raw_cell_u16": [
+        6014,
+        0,
+        49152
+      ]
+    },
+    {
+      "floor": 1000,
+      "xy": [
+        57,
+        124
+      ],
+      "name": "日美子",
+      "graphicname": 16030,
+      "dir_raw": 6,
+      "script": "event02_2",
+      "create_block_sha256": "411f63d767286823af1bf7aa78b834c167caa210ddaf9fa7b4e1a5ab9fa92888",
+      "map_size": [
+        160,
+        160
+      ],
+      "raw_cell_u16": [
+        373,
+        0,
+        49152
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": 2414,
+      "name": "不可思議的貝殼",
+      "line": 1997,
+      "offset": 506658,
+      "length": 214,
+      "image_number": 24130,
+      "source_row_sha256": "84a495deef3afe7c0dbeffee8c49ca8a211b83afc555b7f2f8af2e64ce07d741"
+    },
+    {
+      "id": 2415,
+      "name": "仙尼亞的花",
+      "line": 1998,
+      "offset": 506872,
+      "length": 206,
+      "image_number": 24173,
+      "source_row_sha256": "bdfd3a3632918f936f94e877e0cbbea49af424dd9abc0cb79ee1c782f8009e91"
+    }
+  ],
+  "event_branches": {
+    "event02_1": [
+      [
+        -1,
+        "CLEAN",
+        "ENDEV=2&ITEM!=2414&SP=0,ENDEV=2&ITEM!=2414&SP=3",
+        null,
+        null,
+        null,
+        2,
+        "f480cc1cd88b288ed0103a64e61bb49cf7ebe4b6bf3962d4984a3348b852d49d"
+      ],
+      [
+        2,
+        "ACCEPT",
+        "NOWEV=2&ITEM=2415",
+        2414,
+        2415,
+        2,
+        null,
+        "93646a5c26065f5dedd83a5bf1d05a35199046e7cf96f101ce8bcbb6d8aa8a07"
+      ],
+      [
+        2,
+        "REQUEST",
+        "LV>0&SP=1,LV>0&SP=2",
+        2414,
+        null,
+        null,
+        null,
+        "360364ce7236abeb35598173a8a5c84173e8c4d67d81010b39543707953ed736"
+      ]
+    ],
+    "event02_2": [
+      [
+        -1,
+        "CLEAN",
+        "ENDEV=2&ITEM!=2415&SP=1,ENDEV=2&ITEM!=2415&SP=2",
+        null,
+        null,
+        null,
+        2,
+        "d4b1850128f721c93ab1d92de444a3b6fc93e0b54a2de3395313cb903ce1da3f"
+      ],
+      [
+        2,
+        "ACCEPT",
+        "NOWEV=2&ITEM=2414",
+        2415,
+        2414,
+        2,
+        null,
+        "b6f307876c78c04e231e739adfae5c54826e16b9eaaefd58049ad020e7fa8427"
+      ],
+      [
+        2,
+        "REQUEST",
+        "LV>0&SP=0,LV>0&SP=3",
+        2415,
+        null,
+        null,
+        null,
+        "be0fbcd17b31489b2ef6045816627504f12dcdfd35d62dd894cdc564e83b85ed"
+      ]
+    ]
+  },
+  "branch_field_order": [
+    "event_no",
+    "TYPE",
+    "EVENT",
+    "GetItem",
+    "DelItem",
+    "EndSetFlg",
+    "CleanFlg",
+    "branch_sha256"
+  ],
+  "read_limits": {
+    "all_six_original_source_members_validated_in_one_library_archive": false,
+    "five_current_rar_members_fully_extracted_and_sha_crc_verified": true,
+    "source_1000_rar_libarchive_crc_error": true,
+    "source_1000_byte_identity_from_prior_scene21_zip_crc_and_sha": true,
+    "two_named_static_NPC_create_references": true,
+    "tw10_same_deployed_build": false,
+    "jss1999_identity": false,
+    "original_client_world_entered": false,
+    "original_server_script_executed": false,
+    "original_item_grant_or_removal_executed": false,
+    "original_graphic_frames_rendered_this_unit": false,
+    "raw_plane_3_game_semantics_confirmed": false,
+    "source_event_is_limited_time_activity": false,
+    "overall_completion_percent": null
+  },
+  "next": "O25_BOUNDED_ACTOR_GRAPHIC_VISIBLE_MATERIAL_OR_22_DOMAIN_ROTATION"
+}
