@@ -21,3 +21,12 @@
 这份已保存**研究包**379个成员仅一个`.dat`：`source/data/savedata.dat`。这是包范围目录事实，不能推出原完整零售光盘、安装包、原EXE内嵌资料、其他缓存或服务器不存在世界地图；也不能把savedata当世界地形。这与22域world_map已存“客户端地图传输结构已知、原服务器世界数据缺失”相容。后代mixed25的1000/1001地图仍单独标版，不能改名为台湾1.0官方地图。
 
 **最高NEXT保持O17早期世界/具名实体**：先对原完整发行载体、已存逐文件库存及真正原地图保管链作有限查重，优先新增早期地图/NPC任务原字节；只有研究子包无地图不算查遍发行版。若缺件则记录确切载体与来源范围后轮换22域，不能回头穷尽SAB/SAP/压缩helper；已有原图不得因缺服务器而停止离线观察。原世界未进入、原生配色/遇敌选择未证；Stage A 7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、overall_percent=null不变。原CURRENT全文及所有原来源JSON保持原样。
+
+
+## 本轮实际主线终验及O17载体查重
+
+PR #74候选9219629b的14/14 Checks实际成功，合并为main `a5709c76500fc8d77ba13893c9b6bc84b7c1afdd`；11/11 main Actions实际completed/success，专用run41193087533。整个远端tree `e5fbb21b3b293a2f4d5bb8d811a80a1eff079ef2`与本地验收树同一，CURRENT完整原blob不变。运行/check ID与证据范围在 `STONEAGE-O16-POSTMERGE-ACCEPTANCE-R1.json`；收据自身提交不预支Actions成功。
+
+相邻O17有限载体查重取得一个实质范围结论：原客户端完整光盘库存（Git blob `564233902b10c60760d4f93b1ea65d4dd1469206`）记411文件、383客户端核心文件。**本轮真正重读保存包全部375个原成员/372,529,095B**，逐件SHA与完整库存一致；未保存的8件均installer_support（data1.cab/data1.hdr/data2.cab/ikernel.ex_/layout.bin/Setup.exe/Setup.ini/setup.inx），不是已列世界地图被漏保存。完整既存库存本身的普通field-map计数已是0、核心DAT仅savedata.dat。因此不能把重复获取同一光盘当新地图恢复，也不将8个安装支持文件想当然叫新增地图。
+
+完整结果及8件元数据见 `STONEAGE-O17-ORIGINAL-INVENTORY-SCOPE-REVIEW-R1.json`。本次未重新下载842MB原载体、未重新穷举安装容器内嵌文件/EXE/服务器、未取得新的早期地图或具名实体；缺件限定在已核来源，不推全世界无资源。NEXT仍O17，但优先**真正新增的早期地图/缓存/服务器载体**或有准确年代的已有地图原件，不再重复子包/同盘无地图结论。继续离线可见素材复原，原服务器不是阻塞；不进入新游戏设计。

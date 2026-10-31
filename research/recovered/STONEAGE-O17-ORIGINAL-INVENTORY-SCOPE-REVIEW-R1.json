@@ -1,0 +1,70 @@
+{
+  "schema": "stoneage.o17.original_carrier_inventory_scope_review.r1",
+  "date": "2026-10-31",
+  "full_inventory_git_blob": "564233902b10c60760d4f93b1ea65d4dd1469206",
+  "existing_disc_inventory_files": 411,
+  "existing_disc_core_files": 383,
+  "saved_private_source_members_rehashed_this_turn": 375,
+  "saved_private_source_bytes_rehashed_this_turn": 372529095,
+  "all_375_original_member_sha256_match_full_inventory": true,
+  "saved_package_vs_core_omissions": [
+    {
+      "category": "installer_support",
+      "path": "StoneAge/data1.cab",
+      "size": "560323",
+      "sha256": "4fa32c9bedba85d6a4f550367b1746f7526540ef4d76048afccb1f0dbddbf586"
+    },
+    {
+      "category": "installer_support",
+      "path": "StoneAge/data1.hdr",
+      "size": "49940",
+      "sha256": "a1fc14c10d553a0eaff103bc14d206f0c7e21d2324077a48d2fe814b6decbb2e"
+    },
+    {
+      "category": "installer_support",
+      "path": "StoneAge/data2.cab",
+      "size": "512",
+      "sha256": "0f067a0961c9a6aae77f099d3fb95e3f3fede5a467812ace1d7289b60092e049"
+    },
+    {
+      "category": "installer_support",
+      "path": "StoneAge/ikernel.ex_",
+      "size": "256259",
+      "sha256": "929a2f50579e401ca1642ba89274a7dcb0d39dff8a484a4bfae6f412dffaef27"
+    },
+    {
+      "category": "installer_support",
+      "path": "StoneAge/layout.bin",
+      "size": "440",
+      "sha256": "f64ebca34387a8159a5ea119fd138eb93936bac8d34f5bf5ad8c150b5f66622c"
+    },
+    {
+      "category": "installer_support",
+      "path": "StoneAge/Setup.exe",
+      "size": "35840",
+      "sha256": "380d6d28b7cfb2c6f4b964ec5d1f5b04c932a370272ca96190178717448913cb"
+    },
+    {
+      "category": "installer_support",
+      "path": "StoneAge/Setup.ini",
+      "size": "142",
+      "sha256": "fc925b2817a881af2dddce77272c0a12c16e9d71cd9a6423a96599cd9a425bbc"
+    },
+    {
+      "category": "installer_support",
+      "path": "StoneAge/setup.inx",
+      "size": "132112",
+      "sha256": "eff8dff893378792118d63ad335dbff0be4b0d09f7c67b4361e99c25900d0e10"
+    }
+  ],
+  "core_dat_member_names": [
+    "StoneAge/data/savedata.dat"
+  ],
+  "existing_inventory_field_map_disc_files": 0,
+  "new_complete_disc_download_or_rehash_this_turn": false,
+  "installer_container_internals_reinspected_this_turn": false,
+  "embedded_executable_world_map_search_exhausted": false,
+  "original_server_world_map_files_recovered": false,
+  "interpretation": "Saved package omissions are eight installer-support files; full previously authenticated disc inventory already has zero ordinary field-map files. This does not exclude embedded/container/server-delivered world data. Do not redownload the same whole disc solely to repeat this inventory.",
+  "next": "O17: inspect genuinely new early same-build map/cache/server carrier or dated existing map source with explicit version; preserve mixed25 world data as separate source. Stop absence-only loops."
+}

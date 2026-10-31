@@ -1072,3 +1072,8 @@ ranges, not a new whole-client download or arbitrary program reverse engineering
 ### 2026-10-31 — O16 独立原件复验与证据守卫修复
 
 [复验和续接记录](docs/continuity/STONEAGE-O16-INDEPENDENT-ACCEPTANCE-20261031.md)：重新读取372626292B既存原包，233/233封装切片与散装原件同一；2295图块两算法像素一致，6729在battle181仍溢出一像素，保留为OPEN。修复原校验放过缺失边界、REAL/ADRN身份、后续调色板SHA及缺预览收据的问题，新增只读全源复验入口。原379成员研究包仅有savedata.dat，不据此推断完整零售载体/服务器不存在地图。CURRENT完整原blob不变，未重跑原图浏览器或原游戏。NEXT O17优先从已认证完整载体/实际地图来源寻找新增早期世界数据，禁止把无地图的研究子包当原发行全包。
+
+
+### 2026-10-31 — O16主线通过，O17完整载体库存查重
+
+[主线终验及地图取证止点](docs/continuity/STONEAGE-O16-INDEPENDENT-ACCEPTANCE-20261031.md)：PR74候选14/14 Checks、main a5709c76的11/11 Actions实际成功，原CURRENT完整blob不变。本轮把375个保存原成员逐SHA对完整383核心文件库存，8个省略件全是安装支持文件，既存完整光盘库存普通世界地图为0。下一O17查真正新增早期地图/缓存/实体原件，不重复下载同盘、不把savedata当世界图。未进入原世界，Stage A/B/wiki/R79及overall_percent=null不变；收据自身CI另据实际观察。
