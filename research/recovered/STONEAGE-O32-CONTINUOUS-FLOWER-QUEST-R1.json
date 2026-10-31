@@ -1,0 +1,141 @@
+{
+  "schema": "stoneage.o32.original_source_quest_continuous_viewer_derived.r1",
+  "date": "2026-10-31",
+  "starting_main_head": "01af2f6f9c394532b1fb5be82697f1c779326792",
+  "starting_main_tree": "e7e7460f16c56718b40919a1854c8afb0e4e618b",
+  "full_current_state_verified_blob": "20050acf279a01555ab06a381dfcdc936bd381a6",
+  "full_current_state_original_bytes": 2708031,
+  "full_current_untouched": true,
+  "material_increment": "O24 original static NPC flower/shell task source and O26 original images/dialogue become interactable inside existing O31 continuous-world observer, retaining original O31 five Warp source-coordinate candidates and shop/keyboard controls.",
+  "reused_source_documents": [
+    "docs/continuity/STONEAGE-O24-TWO-TOWN-ORIGINAL-EVENT-SOURCE-20261031.md",
+    "docs/continuity/STONEAGE-O26-TWO-TOWN-OFFLINE-OBSERVER-20261031.md",
+    "docs/continuity/STONEAGE-O31-FIVE-DOORWAY-SOURCE-20261031.md"
+  ],
+  "source_sha256": {
+    "map1000_DAT": "94b19cb59d72b7b48da70d2741ba68516caad970297fd48ed11ef720fa3ea97e",
+    "map2000_DAT": "d75231434c69118a518a8d5dd34f266264b8551fe4f2d55a20cdfa11b46584b3",
+    "script_npc1000_event02_2": "eb3f9a9c9bbf1776de7533f57c529c1948c2cc8c1fb22945c49d61950f153e9b",
+    "script_npc2000_event02_1": "6f4d04e6be5c34ce989bb4cba8adb1e87ef7d852835583adeaf569cc8ec6c49c",
+    "parent_o31_private_zip": "f14ee7c362e74bb82fabb867bee08729b41f9744208642fd689bf2730d10548f",
+    "parent_o26_private_zip": "6a7bdc7cfa162df9ec5cd4be241b9222d2a701d8e272f9ab98ae47581775e02c"
+  },
+  "source_static_branch_contract": [
+    {
+      "npc": "日美子",
+      "floor": 1000,
+      "coordinate": [
+        57,
+        124
+      ],
+      "branch": "REQUEST",
+      "source_GetItem": 2415,
+      "source_item_name": "仙尼亞的花",
+      "interaction": "modern accept if no quest started"
+    },
+    {
+      "npc": "彌生",
+      "floor": 2000,
+      "coordinate": [
+        55,
+        92
+      ],
+      "branch": "ACCEPT",
+      "source_DelItem": 2415,
+      "source_GetItem": 2414,
+      "source_item_name": "不可思議的貝殼",
+      "interaction": "modern one-time exchange if stage1"
+    },
+    {
+      "npc": "日美子",
+      "floor": 1000,
+      "coordinate": [
+        57,
+        124
+      ],
+      "branch": "ACCEPT",
+      "source_DelItem": 2414,
+      "source_GetItem": 2415,
+      "interaction": "modern one-time exchange if stage2"
+    }
+  ],
+  "source_metadata": {
+    "item_2414": {
+      "original_name": "不可思議的貝殼",
+      "image_alias": 24130
+    },
+    "item_2415": {
+      "original_name": "仙尼亞的花",
+      "image_alias": 24173
+    },
+    "original_event_number": 2,
+    "original_script_branches_per_npc": [
+      "CLEAN",
+      "ACCEPT",
+      "REQUEST"
+    ],
+    "original_conditions_not_executed": [
+      "SP",
+      "LV",
+      "NOWEV",
+      "ENDEV",
+      "ITEM"
+    ],
+    "historical_quest_type": "CONTINUOUS_EVENT_STATIC_CANDIDATE_NOT_CERTIFIED_LAUNCH_DAY"
+  },
+  "reused_original_assets": {
+    "o31_1000_1001_scenes_byte_equal": true,
+    "o31_257_original_TW1_RD_PNG_alias_payloads_equal": true,
+    "o31_5_original_mixed25_source_warp_edges_equal": true,
+    "o26_2000_map_original_composite_PNG_byte_equal": true,
+    "o26_2000_NPC_original_TW1_candidate_PNG_byte_equal": true,
+    "o26_2000_script_dialogue_exact": true
+  },
+  "modern_observer": {
+    "source_html_sha256": "b0b19c2fd76adb4d1613e16f2495836e7f81636c04bf9df271883f33fc16f86b",
+    "source_html_bytes": 2732647,
+    "source_version_distinction": "MIXED25_MAP_NPC_EVENTS_AND_TW1_ORIGINAL_PIXELS_CROSS_SAMPLE",
+    "three_step_one_cycle_guard_not_native": true,
+    "scene2000_entry": "EXPLICIT_ARCHIVE_VIEW_BUTTON_NOT_ORIGINAL_TRAVEL",
+    "resume_exact_world_position_on_return": true,
+    "original_warp_gate_unchanged": true,
+    "shop_source_row_ID0_still_accessible": true
+  },
+  "browser_acceptance": {
+    "browser": "actual Chromium headless using Playwright page.set_content",
+    "passed": 33,
+    "total": 33,
+    "js_errors": 0,
+    "external_http_requests": 0,
+    "original_pixels_screenshots": 2,
+    "source_1000_world_visible": true,
+    "source_2000_world_visible": true,
+    "original_native_client_or_server_launched": false,
+    "local_file_scheme_tested_for_O32": false
+  },
+  "private_custody": {
+    "library_path": "/石器时代/StoneAge-O32-private-continuous-flower-quest.zip",
+    "zip_bytes": 2919651,
+    "zip_sha256": "03c7e4f5a091efe3ffe84e77e47b0af1f763223b1fc0562256a3926a587de3ce",
+    "zip_members": 6,
+    "download_roundtrip_whole_sha_and_zip_crc_verified": true,
+    "original_proprietary_bytes_committed_to_public_git": false
+  },
+  "not_proven": {
+    "historical_quest_conditions_native_run": false,
+    "original_item_inventory_sp_transactions": false,
+    "real_1000_to_2000_walking_route": false,
+    "original_native_collision": false,
+    "original_TW1_same_deployment": false,
+    "original_exe_started": false,
+    "original_server_started": false,
+    "unlimited_repeating_rewards": false,
+    "original_graphics_selector_same_build": false
+  },
+  "stage_a": "7_PARTIAL_2_OPEN",
+  "stage_b": "GATED",
+  "wiki": "GATED",
+  "savedata_R79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null,
+  "next": "O33 rotate to one new source-qualified original gameplay domain that is not already exhausted by O27/O28, prioritizing a preserved pet-world interaction if exact source bytes and visible outcome exist; otherwise stop with explicit missing artifact and choose another 22-domain source. Avoid adding quest-engine/helper frameworks."
+}
