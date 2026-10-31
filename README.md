@@ -1042,3 +1042,8 @@ ranges, not a new whole-client download or arbitrary program reverse engineering
 ### 2026-10-31 — O12：同版原客户端编译声音编号与资源表不同
 
 [O12原原件声音编号静态取证](docs/continuity/STONEAGE-O12-NATIVE-SOUND-NAMESPACE-20261031.md)：认证TW1原`sa_3.exe`与`data/soundaddr_1.txt`实物，113个原EXE明文SFX、11 BGM、114地址表，102组编号→路径原机器指令三联+独立objdump同一；另11原文件路径使用其它赋值形式未补号。原编译期编号73→`sae_23.wav`，但声音地址表零基73→`sam_18.wav`／一基73→`sam_17.wav`。三个命名空间不等价，O11宠物帧字段73→真正播放编号/事件**仍未证**；源原件未运行、旧世界未进入，Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、总体percent=null。源字节仅私人，公开保留102完整派生地址/路径和22负例。下一O13回实体NPC/任务/技能有据材料，不无限扩静态声卡/音频解析。
+
+
+### 2026-10-31 — O13：原TW1像素与另版本宠物名称的来源分隔
+
+[O13 有界来源审计](docs/continuity/STONEAGE-O13-SOURCE-SEPARATED-NAMED-SPRITE-20261031.md)：私有初代原盘及O11原像素完整SHA再核，三原数字组100250/251/252的动作0共24序列、352有序帧、208原PNG与后期mixed25保存版七条具名模板分版并列；原名烏力／烏力烏力／烏力斯坦仅属后期社区保存版，不认证官方台湾1.0物种身份。私人简体离线观察HTML真实Chromium逐帧、方向、原模板位置开关通过，浏览器0 JS错误/0外部网络；原HTML及原图不公开。O12帧73与三种声音编号命名空间不擅联。公开仅源派生O13收据和来源隔离验证；原TW1同构建具名宠物主表仍缺，原客户端世界仍未进入。下一回22域寻找真正新增具名原件，Stage A 7 PARTIAL+2 OPEN、Stage B/wiki GATED、R79暂停、overall百分比null不变。
