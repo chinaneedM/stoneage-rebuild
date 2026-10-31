@@ -1,0 +1,26 @@
+name: Verify O21 bounded encounter named sprite source-only evidence
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-O21-ENCOUNTER-TWO-NAMED-PET-SOURCE-R1.json'
+      - 'tools/stoneage_o21_encounter_two_named_pets.py'
+      - 'tests/test_stoneage_o21_encounter_two_named_pets.py'
+      - '.github/workflows/verify-stoneage-o21-encounter-pets.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-O21-ENCOUNTER-TWO-NAMED-PET-SOURCE-R1.json'
+      - 'tools/stoneage_o21_encounter_two_named_pets.py'
+      - 'tests/test_stoneage_o21_encounter_two_named_pets.py'
+      - '.github/workflows/verify-stoneage-o21-encounter-pets.yml'
+jobs:
+  derived-only:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate original-source numeric provenance and negative guards
+        run: |
+          python -m tools.stoneage_o21_encounter_two_named_pets
+          python -m unittest discover -s tests -p 'test_stoneage_o21_encounter_two_named_pets.py' -v
