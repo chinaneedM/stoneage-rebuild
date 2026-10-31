@@ -1,0 +1,26 @@
+name: Verify O24 original two-town map event source-only contract
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-O24-TWO-TOWN-EVENT-SOURCE-R1.json'
+      - 'tools/stoneage_o24_two_town_event.py'
+      - 'tests/test_stoneage_o24_two_town_event.py'
+      - '.github/workflows/verify-stoneage-o24-two-town-event.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-O24-TWO-TOWN-EVENT-SOURCE-R1.json'
+      - 'tools/stoneage_o24_two_town_event.py'
+      - 'tests/test_stoneage_o24_two_town_event.py'
+      - '.github/workflows/verify-stoneage-o24-two-town-event.yml'
+jobs:
+  derived-only:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Replay source-only static pointer guards and adversarial mutations
+        run: |
+          python -m tools.stoneage_o24_two_town_event
+          python -m unittest discover -s tests -p 'test_stoneage_o24_two_town_event.py' -v
