@@ -1,0 +1,84 @@
+{
+  "schema": "stoneage.o28.descendant_capture_with_original_pixel_private_observer.r1",
+  "date": "2026-10-31",
+  "source_main_head": "6c2500df05dfe29f76f9f1cb09a11c1014edd659",
+  "source_tree": "4bc51ec519e4f365efbdc012e45a7fe6ddfbf95b",
+  "untouched_current_blob": "20050acf279a01555ab06a381dfcdc936bd381a6",
+  "source": {
+    "TW1_P3H_sha256": "3a4854adaebef056332cdbd7b1dc1c130c571b11704e3f199f53d03aa31cba24",
+    "O27_private_original_pixel_HTML_sha256": "a9497eb66a04b88db0238c8d1bca8885c525cc9bff8de439d405c7bc2c3a7cfa",
+    "TW1_battle00_SAB_sha256": "881850de822d7d5e44578dd11d309e9b2c3ae3455cfa71380199212cb368dec2",
+    "capture_model_path": "tools/stoneage_pet_capture_model.py",
+    "capture_model_git_blob": "e0b0c32b364ec4ae13f582f9e245224b21b1302a",
+    "capture_mechanics_spec": "research/mechanics/STONEAGE-PET-CAPTURE-CORE-R1.md",
+    "three_fixed_descendant_commits": [
+      "BismarckDD/stoneage@999ffdf1d220ec6666eb65339180689c9caf1876",
+      "gavinlinasd/StoneAge@1f90cb6cb57c1df70f39cde77a5a8ccd98b66c56",
+      "iriselia/StoneAge@9e6c8ce2cd8ed532a7157773acd1c61582c178b5"
+    ]
+  },
+  "actual_output": "source-original-image modern Chromium private HTML: later descendant capture score, gate, 5-slot and simulation",
+  "original_TW1_visual": {
+    "SAB0_cells": 400,
+    "unique_original_tile_bitmaps": 73,
+    "original_sprite_numbers": [
+      100297,
+      100298
+    ],
+    "source_images_reused_from_O27": true
+  },
+  "capture_model": {
+    "score": "(10-HP^2/MAXHP + (AL-DL)/2 + (AD-DD)/15 + G + LUCK)*CHARM/50 + TEMP + (sleep?15:0)",
+    "max_HP_nonpositive_replaced_with_one": true,
+    "upper_cap": 99,
+    "lower_clamp": false,
+    "strict_integer_roll_1_to_100_less_than_score": true,
+    "max_success_integer_outcomes": 98,
+    "required_items_versioned_not_inferred": true,
+    "five_pet_slots_first_empty": true,
+    "slot_creation_after_successful_probability_roll": true,
+    "all_demo_pet_stats_invented": true,
+    "pet_skills_growth_save_not_implemented": true
+  },
+  "actual_browser": {
+    "chromium": "144.0.7559.96",
+    "real_original_scene_dimensions": [
+      1350,
+      1220
+    ],
+    "source_pixel_frames_both_read": true,
+    "Python_Javascript_score_parity_fixtures": 125,
+    "gate_boundary_cases": 7,
+    "interactive_case_count": 11,
+    "JS_errors": 0,
+    "network_requests": 0,
+    "screenshot_bytes": 975892,
+    "screenshot_sha256": "8b93e903dae5506b0e68c345aa0bfe31b0363232090dfd9df52f2f36264ee55c",
+    "local_file_navigation_verified": false
+  },
+  "private": {
+    "library_path": "/石器时代/StoneAge-O28-private-original-pet-capture-lab.zip",
+    "zip_bytes": 1780782,
+    "zip_sha256": "2169cd77e9f9ad36327542ab2218d2d950325b916236c755cb0e67849f71168c",
+    "members": 5,
+    "CRC_all_valid": true,
+    "post_library_download_whole_sha_equal": true,
+    "self_contained_viewer_bytes": 1140306,
+    "self_contained_viewer_sha256": "ee4e182639ab0201b71bbc01be110e1595492838c7827f57ac70a131c9077b93"
+  },
+  "boundaries": {
+    "TW1_1999_native_capture_rule_proven": false,
+    "same_build_named_pet_identity_proven": false,
+    "original_client_or_server_executed": false,
+    "natural_encounter_and_combat_executed": false,
+    "original_capture_state_exp_skills_growth_or_save_proven": false,
+    "original_game_world_entered": false,
+    "any_copyrighted_private_art_in_public_Git": false,
+    "stage_A": "7_PARTIAL_2_OPEN",
+    "stage_B": "GATED",
+    "wiki": "GATED",
+    "R79": "PAUSED",
+    "overall_percent": null
+  },
+  "next": "O29 direct source-backed original-world navigable behavior before more observation-utility extensions"
+}
