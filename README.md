@@ -1057,3 +1057,8 @@ ranges, not a new whole-client download or arbitrary program reverse engineering
 ### 2026-10-31 — O15：SOT旧玩家稿与2021二次转载的坐标及结束点差异
 
 [两套不可合并的来源证据](docs/continuity/STONEAGE-O15-SOT-REPOST-DIVERGENCE-20261031.md)：对O14已归档的2003新浪两条SOT玩家稿逐24检查点和2021转载对比，观察到20处坐标文本、6处答案文本不同；C领取地“萨姆吉尔／卡鲁它那”不一致、2021“目前并不能解”不能倒写成2003原版运行事实。旧O14原JSON和CURRENT全文保持不变，原本体/同版服务器/限时活动身份仍未证。下一轮停止SOT同源循环，转新增原资料或受控场景。Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、overall_percent null不变。
+
+
+### 2026-10-31 — O14–O15 主线验收与来源异文止点
+
+[真实三阶段Actions及下一包](docs/continuity/STONEAGE-O14-O15-POSTMERGE-ACCEPTANCE-20261031.md)：O13/O14/O15各自已观测主线11/11成功；O14、O15各候选13/13通过。O14保存2003网友投稿的SOT C/D 24项路线，O15另存2021转载20处坐标与6处答案文本差异及C领奖村矛盾。不将转载覆盖旧文本，不把“活动”冒称限时，也不推原TW1同服规则。完整CURRENT及所有原证据保留；下一O16转22域增量内容，整体percent null。

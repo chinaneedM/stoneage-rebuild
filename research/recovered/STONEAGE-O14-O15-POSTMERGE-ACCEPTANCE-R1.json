@@ -1,0 +1,112 @@
+{
+  "schema": "stoneage.o13_o15.postmerge_actual_main_acceptance.r1",
+  "observation_date": "2026-10-31",
+  "canonical_repository": "chinaneedM/stoneage-rebuild",
+  "verified_before_publication": {
+    "main_head": "a9ac82be86926031328be7788e6afbe773a86113",
+    "main_tree": "636573182bca9cbd4b39f8eadfebeced8406bc8f",
+    "nontruncated_tree_entries": 6722,
+    "open_prs": 0,
+    "prior_current_state_blob": "20050acf279a01555ab06a381dfcdc936bd381a6",
+    "prior_current_state_bytes": 2708031
+  },
+  "observed_milestones": [
+    {
+      "id": "O13",
+      "main_sha": "e2b18573b423e69ed91f5967e56a9fd12be66902",
+      "main_tree": "702856c6f8eb159c3bdf5a88ba23c202437c44e7",
+      "direct_source_derived_check_run": 41190155131,
+      "observed_successful_main_actions": 11,
+      "main_run_ids": [
+        41190155078,
+        41190155108,
+        41190155035,
+        41190155122,
+        41190155134,
+        41190155018,
+        41190155131,
+        41190155135,
+        41190155013,
+        41190155103,
+        41190155028
+      ],
+      "source_limit": "TW1 original sprites and community names are separate; no species native master"
+    },
+    {
+      "id": "O14",
+      "main_sha": "426829be608fd103428e056c81f87e05cdded42e",
+      "main_tree": "d592fb219e179b2e9d058e735d0c667e27a7daf0",
+      "candidate_sha": "39a6496eb0c6f37e515c0973a31d6f4799c6a93b",
+      "candidate_checks_success": 13,
+      "pr": 72,
+      "direct_source_derived_check_run": 41190755340,
+      "observed_successful_main_actions": 11,
+      "main_run_ids": [
+        41190755324,
+        41190755334,
+        41190755339,
+        41190755321,
+        41190755340,
+        41190755327,
+        41190755292,
+        41190755298,
+        41190755309,
+        41190755315,
+        41190755385
+      ],
+      "original_guide_data_blob": "eed187b68b5f14a6bb67e9fcac983b4ceab45f27",
+      "guide_source_scope": "2003 Sina reader submissions C/D: 24 ordered checkpoints, NOT original game server"
+    },
+    {
+      "id": "O15",
+      "main_sha": "a9ac82be86926031328be7788e6afbe773a86113",
+      "main_tree": "636573182bca9cbd4b39f8eadfebeced8406bc8f",
+      "candidate_sha": "7d7f251823ec034334778c64daac65bc7be1cf46",
+      "candidate_checks_success": 13,
+      "pr": 73,
+      "direct_source_derived_check_run": 41191066699,
+      "observed_successful_main_actions": 11,
+      "main_run_ids": [
+        41191066744,
+        41191066675,
+        41191066727,
+        41191066697,
+        41191066671,
+        41191066699,
+        41191066652,
+        41191066723,
+        41191066775,
+        41191066696,
+        41191066667
+      ],
+      "source_variant_data_blob": "49c58fd42a1f0fc9fef0c9c7935508dcbc6bdd6e",
+      "coordinate_text_disagreements": 20,
+      "answer_text_disagreements": 6,
+      "source_limit": "2021 fansite repost vs 2003 player guides; no build, official script, or patch authenticated"
+    }
+  ],
+  "data_preservation": {
+    "historic_current_git_blob_unchanged": true,
+    "historic_current_bytes_unchanged": true,
+    "o14_original_guide_blob_unchanged": true,
+    "o15_source_variant_blob_retained": true,
+    "commercial_original_binaries_art_audio_published": false,
+    "historical_game_executable_or_server_executed_by_o14_o15": false,
+    "source_html_raw_sha_authenticated_for_o14_o15": false
+  },
+  "work_package_close": "O14/O15 SOT material provenance closed at reader/repost level; later conflicting narratives coexist, not merged into TW1 original fact",
+  "reopen_only_with": [
+    "independent contemporaneous authoritative capture",
+    "original version-attributed NPC/task scripts or map server fields",
+    "authenticated native gameplay execution for same build"
+  ],
+  "next_work_package": "O16-22-DOMAIN-ORIGINAL-MATERIAL-REPRIORITIZATION: stop SOT repetition, seek one new early original map/NPC/quest material or clearly bounded absence; source-first, game content over helper expansion",
+  "stage_A_partial": 7,
+  "stage_A_open": 2,
+  "stage_B_gated": true,
+  "wiki_gated": true,
+  "R79_paused_nonblocking": true,
+  "overall_restoration_percent": null,
+  "new_game_development_started": false,
+  "receipt_itself_ci_observed_success": false
+}
