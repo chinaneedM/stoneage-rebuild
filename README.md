@@ -1077,3 +1077,8 @@ ranges, not a new whole-client download or arbitrary program reverse engineering
 ### 2026-10-31 — O16主线通过，O17完整载体库存查重
 
 [主线终验及地图取证止点](docs/continuity/STONEAGE-O16-INDEPENDENT-ACCEPTANCE-20261031.md)：PR74候选14/14 Checks、main a5709c76的11/11 Actions实际成功，原CURRENT完整blob不变。本轮把375个保存原成员逐SHA对完整383核心文件库存，8个省略件全是安装支持文件，既存完整光盘库存普通世界地图为0。下一O17查真正新增早期地图/缓存/实体原件，不重复下载同盘、不把savedata当世界图。未进入原世界，Stage A/B/wiki/R79及overall_percent=null不变；收据自身CI另据实际观察。
+
+
+### O17 已明确下一原素材：1003地图候选
+
+[有界地图载体排序](docs/continuity/STONEAGE-O16-INDEPENDENT-ACCEPTANCE-20261031.md)：四已存样本的原目录并非均无世界DAT；TW1/CN5为0，claimed8.5有45条、mixed25有1011条文件名，其中空/微小文件不能算有效图。最高NEXT具体为已有2003双时点和mixed25整SHA一致的1003.DAT：先取精确原成员、核同源图块覆盖，最多一份30×30现代候选场景。后代宠物店名不晋升初代官方身份；缺源有界停止。该场景尚未新绘，Stage A/B/wiki/R79/percent未知不变。

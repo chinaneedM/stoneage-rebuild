@@ -1,0 +1,64 @@
+{
+  "schema": "stoneage.o17.bounded_map_carrier_queue.r1",
+  "date": "2026-10-31",
+  "catalog_path": "research/recovered/STONEAGE-FOUR-CLIENT-CONTENT-CATALOG-R24.json.gz",
+  "catalog_git_blob": "205c803de451dbdaa75df77b886e99fe0df7d18f",
+  "catalog_sha256": "655563d1f4fbeeefc1d1ce8a563f1cd4c53c8f677c94199666001260ac2757a8",
+  "existing_catalog_only_no_new_carriers": true,
+  "samples": [
+    {
+      "sample": "CLAIMED_TW85",
+      "official_clean_authenticated": false,
+      "map_dat_filename_occurrences": 45,
+      "empty_files": 0,
+      "nonempty_under_8_bytes": 3,
+      "files_at_least_8_bytes": 42,
+      "all_are_valid_maps": false
+    },
+    {
+      "sample": "CN5",
+      "official_clean_authenticated": false,
+      "map_dat_filename_occurrences": 0,
+      "empty_files": 0,
+      "nonempty_under_8_bytes": 0,
+      "files_at_least_8_bytes": 0,
+      "all_are_valid_maps": false
+    },
+    {
+      "sample": "MIXED25",
+      "official_clean_authenticated": false,
+      "map_dat_filename_occurrences": 1011,
+      "empty_files": 13,
+      "nonempty_under_8_bytes": 3,
+      "files_at_least_8_bytes": 995,
+      "all_are_valid_maps": false
+    },
+    {
+      "sample": "TW10",
+      "official_clean_authenticated": true,
+      "map_dat_filename_occurrences": 0,
+      "empty_files": 0,
+      "nonempty_under_8_bytes": 0,
+      "files_at_least_8_bytes": 0,
+      "all_are_valid_maps": false
+    }
+  ],
+  "bounded_next_candidate": {
+    "path": "map/1003.DAT",
+    "dimensions": [
+      30,
+      30
+    ],
+    "dated_june_and_december_2003_sha256": "fc3037a1850c8baf06ad5874a4cb49ca5e13e9315c020f64c019417c33b694e6",
+    "june_equals_december": true,
+    "also_matches_existing_mixed25_complete_file_catalog": true,
+    "later_source_name_only": "薩姆吉爾的寵物店%7C0",
+    "name_proven_for_2003_or_tw1": false,
+    "new_raw_map_read_this_turn": false,
+    "new_scene_pixels_rendered_this_turn": false,
+    "target": "Read existing exact private member, source-qualified bitmap coverage, then at most one 30x30 modern candidate scene; stop on missing original or need for huge REAL re-download."
+  },
+  "boundary": "Filename totals include empty and tiny files, are not validated map/floor counts or overall restoration percent. Preserved claimed8.5 and mixed2.5 are not authenticated clean official builds.",
+  "original_game_world_entered": false,
+  "overall_percent": null
+}
