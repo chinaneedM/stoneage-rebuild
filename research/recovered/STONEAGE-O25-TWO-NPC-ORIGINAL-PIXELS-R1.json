@@ -1,0 +1,139 @@
+{
+  "schema": "stoneage.o25.two_npc_original_pixel_aliases.r1",
+  "date": "2026-10-31",
+  "source_main_head": "8dd983686e253bda2f2579e673222b824c68f56a",
+  "full_current_original_blob": "20050acf279a01555ab06a381dfcdc936bd381a6",
+  "source_crossversion": "LATER_MIXED25_STATIC_NPC_GRAPHICNAME_TO_SEPARATE_AUTHENTICATED_TW10_ORIGINAL_ADRN_REAL_PHYSICAL_PIXEL_CANDIDATES",
+  "originals": {
+    "TW10_P3H_zip": {
+      "bytes": 372626292,
+      "sha256": "3a4854adaebef056332cdbd7b1dc1c130c571b11704e3f199f53d03aa31cba24",
+      "members": 379
+    },
+    "TW10_ADRN": {
+      "bytes": 10079680,
+      "sha256": "47254c0ff904d363fb5c3c5297edf553c8eaf24cd933f346d8ce7aabed4155c8",
+      "records": 125996
+    },
+    "TW10_REAL": {
+      "bytes": 315842228,
+      "sha256": "408e6ee05c83354349691937da2ad8f7488ac10f65f07e6681b7d92cb1c9ed13"
+    },
+    "TW10_Palet1": {
+      "bytes": 708,
+      "sha256": "32870080c47537a59beaf770b6df7bd79820fd52a23825058460900494f0b4b0"
+    },
+    "R3_observation_zip": {
+      "bytes": 3356562,
+      "sha256": "fa296ad8e5afb9065fd8a7894fed4f783ad6f393901509f8491383c56a9ee285"
+    },
+    "mixed25_ADRN": {
+      "bytes": 18765120,
+      "sha256": "92d0137590d35a7a1f4fb11af3ad13bbc585813a4b0e1e3f933c397007fbff74",
+      "records": 234564
+    }
+  },
+  "two_source_NPCs": [
+    {
+      "floor": 2000,
+      "position": [
+        55,
+        92
+      ],
+      "original_later_name": "彌生",
+      "original_graphicname": 16027
+    },
+    {
+      "floor": 1000,
+      "position": [
+        57,
+        124
+      ],
+      "original_later_name": "日美子",
+      "original_graphicname": 16030
+    }
+  ],
+  "two_aliases": [
+    {
+      "alias": 16027,
+      "physical": 5873,
+      "offset": 24981183,
+      "rd_bytes": 1771,
+      "width": 40,
+      "height": 81,
+      "xoff": -24,
+      "yoff": -72,
+      "record_sha": "ca040cc6bd9eb7cfa0b843c54c2ccff1b059af962f12bab7205a60e3e3dc9371",
+      "rd_sha": "e0959846a4ee9ab183da4da9bd53e18f487b17e8e77d0fdeaba263215ef1ffc0",
+      "index_sha": "0ba6a59f821827497e44497831adb52092173b81935e53c7b5fe8fe42a55eba4",
+      "rgba_sha": "8e13ae03f41790b3527a2038c9c09c82d306f5e4e545002be2adccdd5dc59c0d",
+      "png_sha": "e34de42727fc74dc9267b175fdbf5404820b1fbcbee4f212707b81f8bfe6d5cc",
+      "zeros": 1676,
+      "control_physical": 16027,
+      "control_record_sha": "4256b4cece2abc14dda9c1a96648d3e13be121bd2b767c797e2a2bfdf59a116a",
+      "control_rd_sha": "f235ac26b65c1d62e4533156a82533dc56befa51b7af8a71da51e4cfd418a97a",
+      "control_index_sha": "902a36f339156063dc179878c4547b4c4a0433e1c7e5aff26ae83f9b47a09661",
+      "control_rgba_sha": "1f66d89e72b1a9e474d9bca363cf7db56741d52d5d1a88f1ab4e605edf0497c5",
+      "control_png_sha": "41bd548f3d6c28543b7c15fa8fae272f485dca28e742f102a230869d0daedfd2",
+      "control_wh": [
+        52,
+        78
+      ]
+    },
+    {
+      "alias": 16030,
+      "physical": 5876,
+      "offset": 24985914,
+      "rd_bytes": 2113,
+      "width": 40,
+      "height": 83,
+      "xoff": -19,
+      "yoff": -75,
+      "record_sha": "f5c515614a224df5aaa1c59fb462ffdeda152621afbcd832a96bda7b9fb60a21",
+      "rd_sha": "ae3ceca2f3e0d8412588e9cb900dcac1e31f80014651a900deae1f21d2374de4",
+      "index_sha": "873f3344eacefcb5fad7dd57121b54fe2b747298595c94ca84239d6c1410d09f",
+      "rgba_sha": "60e1d27b9f27175782e36242df4702642c192b2a0dcf88eab826c28985667c10",
+      "png_sha": "3bf81f70bc5970d28c874ed483ae6d8a56ea35b5697bb98c650957b3cc343abc",
+      "zeros": 1423,
+      "control_physical": 16030,
+      "control_record_sha": "484004fa4ca357f1276d543b4dedbd1fc9907eb9ce3c9d5e9d28a3fe1ad87436",
+      "control_rd_sha": "db683ea1e0ce5d71804029cdd7f4fd7915f9865c97e9702d24a0512be3981ef0",
+      "control_index_sha": "c2689cce7af0a04655348e0d5bac347bd89af6f5b59d3fc17c18af84c584683a",
+      "control_rgba_sha": "5aa333ef4b7af711014137d7e8596b1d208f8a67ddf0650aeea2fffe575fb25f",
+      "control_png_sha": "8f7f6a8c29d7f76c0d2911e58382bb3f747d89b8c903db6015fe3af4c279281c",
+      "control_wh": [
+        40,
+        81
+      ]
+    }
+  ],
+  "proofs": {
+    "TW10_ADRN_entire_prefix_byte_identical_to_saved_mixed25_ADRN": true,
+    "alias_unique_within_all_TW10_125996_records": true,
+    "alias_unique_within_all_mixed25_234564_records": true,
+    "four_original_TW10_RD_bytes_actually_extracted": true,
+    "full_TW10_REAL_SHA256_and_ZIP_CRC_read": true,
+    "four_legacy_RD_flag1": true,
+    "two_independent_RD_RLE_decoders_equal_all_four_indices": true,
+    "four_RGBA_modern_Palet1_candidates_png_roundtrip_equal": true,
+    "four_original_source_images_actually_viewed_locally": true,
+    "mixed25_REAL_full_bytes_read_this_unit": false,
+    "same_deployed_build_or_official_npc_identity_proven": false,
+    "original_NPC_graphic_selector_proven": false,
+    "original_scene_palette_selected": false,
+    "original_client_executed": false,
+    "original_world_entered": false,
+    "original_renderer_or_NPC_spawn_executed": false,
+    "original_source_images_or_png_publicly_uploaded": false,
+    "original_source_browser_canvas_executed_this_unit": false,
+    "overall_percent": null
+  },
+  "private_archive": {
+    "library_path": "/石器时代/StoneAge-O25-private-two-NPC-original-pixel-aliases.zip",
+    "bytes": 51705,
+    "sha256": "3d62b525b87fa6ce4c91d06525de7c701c8fe7396594c3ba1367a0e0d2d77fdd",
+    "members": 15,
+    "retrieved_again_after_library_upload_and_SHA_CRC_verified": true
+  },
+  "next": "O26_22_DOMAIN_ROTATION_ONE_NEW_GAME_CONTENT_OR_CONTROLLED_INTERACTION_WITH_ACTUAL_SOURCE"
+}

@@ -1,0 +1,26 @@
+name: Verify O25 original two NPC graphic alias pixel evidence
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-O25-TWO-NPC-ORIGINAL-PIXELS-R1.json'
+      - 'tools/stoneage_o25_two_npc_pixels.py'
+      - 'tests/test_stoneage_o25_two_npc_pixels.py'
+      - '.github/workflows/verify-stoneage-o25-two-npc-pixels.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-O25-TWO-NPC-ORIGINAL-PIXELS-R1.json'
+      - 'tools/stoneage_o25_two_npc_pixels.py'
+      - 'tests/test_stoneage_o25_two_npc_pixels.py'
+      - '.github/workflows/verify-stoneage-o25-two-npc-pixels.yml'
+jobs:
+  derived-only:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Replay derived four original pixels and negative claim mutations
+        run: |
+          python -m tools.stoneage_o25_two_npc_pixels
+          python -m unittest discover -s tests -p 'test_stoneage_o25_two_npc_pixels.py' -v
