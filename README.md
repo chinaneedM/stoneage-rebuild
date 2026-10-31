@@ -1052,3 +1052,8 @@ ranges, not a new whole-client download or arbitrary program reverse engineering
 ### 2026-10-31 — O14：2003玩家投稿中的SOT C/D双路线及“活动”归类边界
 
 [来源隔离的任务合同](docs/continuity/STONEAGE-O14-SOT-CD-2003-PLAYER-QUEST-20261031.md)：现存新浪2003-05-29两篇玩家投稿分别记载萨伊那斯环岛C/D资格、各12个顺序检查点、答题与检查石、完成位置及候选奖励。内容新增为**玩家攻略层**24项可追溯数据，未证明TW1或原服务器同版运行。原文“环岛活动”同时写可重复解，不能归作已证限时节日活动；原HTML字节/源SHA未知，不伪称已取得。原游戏世界未进入，Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、overall_percent null不变。
+
+
+### 2026-10-31 — O15：SOT旧玩家稿与2021二次转载的坐标及结束点差异
+
+[两套不可合并的来源证据](docs/continuity/STONEAGE-O15-SOT-REPOST-DIVERGENCE-20261031.md)：对O14已归档的2003新浪两条SOT玩家稿逐24检查点和2021转载对比，观察到20处坐标文本、6处答案文本不同；C领取地“萨姆吉尔／卡鲁它那”不一致、2021“目前并不能解”不能倒写成2003原版运行事实。旧O14原JSON和CURRENT全文保持不变，原本体/同版服务器/限时活动身份仍未证。下一轮停止SOT同源循环，转新增原资料或受控场景。Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、overall_percent null不变。
