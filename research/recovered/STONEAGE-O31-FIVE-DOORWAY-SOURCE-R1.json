@@ -1,0 +1,183 @@
+{
+  "schema": "stoneage.o31.original_five_warp_source_plus_observer.r1",
+  "date": "2026-10-31",
+  "base_remote_main_head": "f60e80854e91142ddcddd5286fbe94e05a473af2",
+  "base_remote_main_tree": "1c504a81ee7dfdd3de1e6a7e3980e5ed33f135ae",
+  "full_current_state_blob": "20050acf279a01555ab06a381dfcdc936bd381a6",
+  "full_current_state_preserved": true,
+  "material_goal": "source-qualified original later-preserved village/shop doorway entry/return behavior; O31 collision review bounded and stopped when private per-cell LS2MAP/mapset raw unavailable",
+  "provenance": {
+    "warp_create_sha256": "859ff2ed23baadb20382508874cd3a63e603b84c7205c6f5d8998229f4f4c8b1",
+    "map1000_dat_sha256": "94b19cb59d72b7b48da70d2741ba68516caad970297fd48ed11ef720fa3ea97e",
+    "map1001_dat_sha256": "62dbef1614ede0ba032ca9c69cbfdc3d43938e45baba78701885790937b86b90",
+    "o30_private_parent_zip_sha256": "84e883cd57f2b77100ad7a82ecbf5957b5199ff10ed6b0dbdf9141be882d09fa",
+    "source_version": "LATER_PRESERVED_MIXED25_ORIGINAL_FILES",
+    "art_source_version": "TAIWAN_V1_0_CLIENT_ORIGINAL_PIXELS_SEPARATE"
+  },
+  "source_order_edges": [
+    {
+      "source": [
+        1000,
+        63,
+        99
+      ],
+      "target": [
+        1001,
+        10,
+        15
+      ],
+      "source_byte_half_open_range": [
+        112,
+        218
+      ],
+      "source_block_sha256": "d0b4f955cc6afe909579a3bdb555f549a5fc00e23f5e3555d6041f2dd2028f79",
+      "original_DAT_tile_parts_event": [
+        102,
+        0,
+        49155
+      ]
+    },
+    {
+      "source": [
+        1001,
+        10,
+        15
+      ],
+      "target": [
+        1000,
+        63,
+        99
+      ],
+      "source_byte_half_open_range": [
+        229,
+        335
+      ],
+      "source_block_sha256": "d35da32a65e7794acf619c4c959c81dcefc0a433c7d78a0c838b9d0c278c3085",
+      "original_DAT_tile_parts_event": [
+        5024,
+        0,
+        49155
+      ]
+    },
+    {
+      "source": [
+        1000,
+        63,
+        100
+      ],
+      "target": [
+        1001,
+        10,
+        16
+      ],
+      "source_byte_half_open_range": [
+        345,
+        453
+      ],
+      "source_block_sha256": "90fcb819603c93761bc5fe3cabbf6fe2a23df03c88e2b4ba95d09cb96ba748b5",
+      "original_DAT_tile_parts_event": [
+        117,
+        0,
+        49155
+      ]
+    },
+    {
+      "source": [
+        1001,
+        10,
+        16
+      ],
+      "target": [
+        1000,
+        63,
+        100
+      ],
+      "source_byte_half_open_range": [
+        464,
+        571
+      ],
+      "source_block_sha256": "ec5ab79042d430f0d4f4ac17877b8a3847c892ee6bcb181f4ecabfcd9a3610f1",
+      "original_DAT_tile_parts_event": [
+        5013,
+        0,
+        49155
+      ]
+    },
+    {
+      "source": [
+        1000,
+        63,
+        98
+      ],
+      "target": [
+        1001,
+        10,
+        15
+      ],
+      "source_byte_half_open_range": [
+        581,
+        687
+      ],
+      "source_block_sha256": "b18fb4a577c58d1c62b379f9e81e0a2b1f5c85af2f4bfb382bafda28e5ece236",
+      "original_DAT_tile_parts_event": [
+        104,
+        0,
+        49155
+      ]
+    }
+  ],
+  "doorway_counts": {
+    "map1000_entry_cells": 3,
+    "map1001_return_cells": 2,
+    "total_directed_edges": 5
+  },
+  "non_bijective_source": true,
+  "collision_review": {
+    "server_collision_coverage_report": "research/recovered/STONEAGE-25-SERVER-COLLISION-COVERAGE-R1.txt",
+    "server_closed_floors_aggregate": 635,
+    "server_uncovered_floors_aggregate": 191,
+    "reported_no_server_map_floor_ids_include_1000_or_1001": false,
+    "not_an_actual_source_cell_collision_verdict": true,
+    "missing_raw_inputs": [
+      "same-carrier floor1000 LS2MAP",
+      "same-carrier floor1001 LS2MAP",
+      "same-carrier mapset WALKABLE/HAVEHEIGHT data"
+    ],
+    "reopen_only_when": "all three original same-carrier raw inputs are independently verified and can establish exact route-cell verdicts; do not substitute TW1 collision profile"
+  },
+  "viewer": {
+    "source_html_sha256": "36a2bf85b7472821980d4a19387358692f29faf9010b517555eb01fd20d1ecef",
+    "browser": "Chromium 144.0.7559.96",
+    "page_set_content_checked": true,
+    "passed": 28,
+    "total": 28,
+    "js_errors": 0,
+    "external_http_requests": 0,
+    "file_scheme_navigation_verified": false,
+    "file_scheme_blocked_by_administrator": true,
+    "original_client_started": false,
+    "original_server_executed": false,
+    "original_collision_used": false
+  },
+  "private_custody": {
+    "library_path": "/石器时代/StoneAge-O31-private-verified-five-warp-cells.zip",
+    "zip_bytes": 2295528,
+    "zip_sha256": "13072fd2af9b6fa350dad8cbaffd8c3f386ae2cdd8ad881ebaaf5b7ceff280db",
+    "zip_members": 8,
+    "library_roundtrip_full_sha256_verified": true,
+    "raw_assets_in_public_git": false
+  },
+  "historical_claim_limits": {
+    "source_event_49155_unique_to_warp": false,
+    "raw_source_coordinates_verified": true,
+    "all_source_warp_edges_executed_in_historical_game": false,
+    "tw1_original_world_same_deployment": false,
+    "collision_pathfinding_verified": false,
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b": "GATED",
+    "wiki": "GATED",
+    "savedata_R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "next": "O32 one bounded original-data NPC/task interaction on already visible world, preserving static-source versus simulated execution; no collision helper expansion without raw per-cell inputs"
+}
