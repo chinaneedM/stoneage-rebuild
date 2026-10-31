@@ -1,0 +1,27 @@
+name: Verify StoneAge O16 original TW1 battle manifest and pixel coverage
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-O16-TW10-BATTLE-NATIVE-PALETTE-INTERLEAVE-R1.json'
+      - 'tools/stoneage_o16_battle_source_boundary.py'
+      - 'tests/test_stoneage_o16_battle_source_boundary.py'
+      - '.github/workflows/verify-stoneage-o16-battle-source.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-O16-TW10-BATTLE-NATIVE-PALETTE-INTERLEAVE-R1.json'
+      - 'tools/stoneage_o16_battle_source_boundary.py'
+      - 'tests/test_stoneage_o16_battle_source_boundary.py'
+      - '.github/workflows/verify-stoneage-o16-battle-source.yml'
+  workflow_dispatch:
+jobs:
+  source-only:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Replay public source-derived report without proprietary content
+        run: |
+          python -m tools.stoneage_o16_battle_source_boundary
+          python -m unittest tests.test_stoneage_o16_battle_source_boundary -v

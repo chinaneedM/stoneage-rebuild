@@ -1062,3 +1062,4 @@ ranges, not a new whole-client download or arbitrary program reverse engineering
 ### 2026-10-31 — O14–O15 主线验收与来源异文止点
 
 [真实三阶段Actions及下一包](docs/continuity/STONEAGE-O14-O15-POSTMERGE-ACCEPTANCE-20261031.md)：O13/O14/O15各自已观测主线11/11成功；O14、O15各候选13/13通过。O14保存2003网友投稿的SOT C/D 24项路线，O15另存2021转载20处坐标与6处答案文本差异及C领奖村矛盾。不将转载覆盖旧文本，不把“活动”冒称限时，也不推原TW1同服规则。完整CURRENT及所有原证据保留；下一O16转22域增量内容，整体percent null。
+\n\n### 2026-10-31 — O16：台湾1.0原战斗资源233段混排和2296原图号实物检验\n\n[O16源实物解析与私人可见像素](docs/continuity/STONEAGE-O16-TW10-BATTLE-SAB-PALETTE-INTERLEAVE-20261031.md)：从保留的原台湾1.0 P3H完整原件整SHA复核：battle_1.bin / battletxt_1.txt 的233段中包含218张SAB战斗图及插在200/201之间的15张SAP调色板，错误固定步长会偏移10620B。218×400格共87200引用、2296原bitmapID同版ADRN唯一；2295 RD双算法一致，bitmap6729一个解码边界使battle181像素不完整，严格217张全部源RD可解，未认定原本体世界/实际运行颜色。12场景真实原PNG在私人离线页可切换，原图不公开。O17优先真实原大世界DAT或具名NPC/任务同代文件，不扩无界SAB helper；Stage A7PARTIAL+2OPEN、Stage B/wiki GATED、R79暂停、overall_percent=null。\n
