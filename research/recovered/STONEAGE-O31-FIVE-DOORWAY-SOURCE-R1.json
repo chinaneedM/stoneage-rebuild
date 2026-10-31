@@ -143,7 +143,20 @@
       "same-carrier floor1001 LS2MAP",
       "same-carrier mapset WALKABLE/HAVEHEIGHT data"
     ],
-    "reopen_only_when": "all three original same-carrier raw inputs are independently verified and can establish exact route-cell verdicts; do not substitute TW1 collision profile"
+    "reopen_only_when": "all three original same-carrier raw inputs are independently verified and can establish exact route-cell verdicts; do not substitute TW1 collision profile",
+    "existing_event_marker_49155_proves_warp_exclusivity": null,
+    "O30_wrong_non_warp_controls_corrected": true,
+    "exact_full_DAT_event_49155_counts": {
+      "map1000": 30,
+      "map1001": 2
+    },
+    "warp_y_create_source_floor_counts": {
+      "map1000": 22,
+      "map1001": 2
+    },
+    "map1000_event_49155_cells_not_in_this_warp_y_create": 10,
+    "unmatched_cells_require_other_source_investigation": true,
+    "map_event_49155_not_a_native_collision_verdict": true
   },
   "viewer": {
     "source_html_sha256": "36a2bf85b7472821980d4a19387358692f29faf9010b517555eb01fd20d1ecef",
@@ -161,14 +174,14 @@
   },
   "private_custody": {
     "library_path": "/石器时代/StoneAge-O31-private-verified-five-warp-cells.zip",
-    "zip_bytes": 2295528,
-    "zip_sha256": "13072fd2af9b6fa350dad8cbaffd8c3f386ae2cdd8ad881ebaaf5b7ceff280db",
+    "zip_bytes": 2295731,
+    "zip_sha256": "f14ee7c362e74bb82fabb867bee08729b41f9744208642fd689bf2730d10548f",
     "zip_members": 8,
     "library_roundtrip_full_sha256_verified": true,
     "raw_assets_in_public_git": false
   },
   "historical_claim_limits": {
-    "source_event_49155_unique_to_warp": false,
+    "source_event_49155_unique_to_warp": null,
     "raw_source_coordinates_verified": true,
     "all_source_warp_edges_executed_in_historical_game": false,
     "tw1_original_world_same_deployment": false,
@@ -177,7 +190,13 @@
     "stage_b": "GATED",
     "wiki": "GATED",
     "savedata_R79": "PAUSED_NON_BLOCKING",
-    "overall_percent": null
+    "overall_percent": null,
+    "previous_O30_adjacent_cells_labeled_nonwarp_are_actually_warp": true
   },
-  "next": "O32 one bounded original-data NPC/task interaction on already visible world, preserving static-source versus simulated execution; no collision helper expansion without raw per-cell inputs"
+  "next": "O32 one bounded original-data NPC/task interaction on already visible world, preserving static-source versus simulated execution; no collision helper expansion without raw per-cell inputs",
+  "correction_record": {
+    "reason": "O30 assumed source-adjacent 1000(63,100) and 1001(10,16) were non-warp negative controls; verified warp_y.create records prove they are real warp source cells; exclusive marker inference now OPEN",
+    "old_private_zip_sha256_before_correction": "13072fd2af9b6fa350dad8cbaffd8c3f386ae2cdd8ad881ebaaf5b7ceff280db",
+    "old_public_O30_record_preserved": true
+  }
 }
