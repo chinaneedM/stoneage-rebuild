@@ -1,0 +1,150 @@
+{
+  "schema": "stoneage.o23.three_consumable_source_pixels.r1",
+  "date": "2026-10-31",
+  "source_main_head": "05cfce6cfeda9d0a8b4e014241d53140a3a33efe",
+  "source_main_tree": "77de03ce1ca3f36f54b3c2866b84e47d330b5f63",
+  "full_current_original_blob": "20050acf279a01555ab06a381dfcdc936bd381a6",
+  "evidence_scope": "PRESERVED_MIXED25_ITEMSET_TO_SEPARATE_TW10_ORIGINAL_ADRN_REAL_NUMERIC_ALIAS_CANDIDATES_NOT_SAME_DEPLOYED_BUILD",
+  "source_files": {
+    "preserved_mixed25_rar": {
+      "bytes": 361255180,
+      "sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5"
+    },
+    "original_itemset.txt": {
+      "bytes": 3392473,
+      "sha256": "a415e78f9aab2e5ea5ca92ecb7430253f7be1ba7c876d6b0bb6d067b1b466688",
+      "parsed_item_rows": 13252
+    },
+    "TW10_ADRN": {
+      "bytes": 10079680,
+      "sha256": "47254c0ff904d363fb5c3c5297edf553c8eaf24cd933f346d8ce7aabed4155c8",
+      "record_count": 125996
+    },
+    "TW10_REAL": {
+      "bytes": 315842228,
+      "sha256": "408e6ee05c83354349691937da2ad8f7488ac10f65f07e6681b7d92cb1c9ed13"
+    },
+    "TW10_Palet1": {
+      "bytes": 708,
+      "sha256": "32870080c47537a59beaf770b6df7bd79820fd52a23825058460900494f0b4b0"
+    }
+  },
+  "items": [
+    {
+      "item_id": 1234,
+      "source_physical_line": 1229,
+      "source_byte_offset": 328408,
+      "source_original_row_bytes": 212,
+      "source_row_sha256": "409ffc21456e7b73abf5f635afdd4de6049099655b21d9ec807cb1b066be1dee",
+      "source_original_name": "小塊肉",
+      "original_effect_note": "耐久力20前後回復",
+      "original_callback_string": "ITEM_useRecovery",
+      "original_cost_raw": 20,
+      "original_imagenumber": 24008,
+      "tw10_unique_alias_target_bitmap": 6926,
+      "actual_alias_RD_sha256": "79f434e8885c63025f5a50b1a4e77f21487669e6881cbc6b6f5fe621234e0acb",
+      "alias_RD_bytes": 525,
+      "alias_original_dimensions": [
+        36,
+        26
+      ],
+      "alias_candidate_canvas_RGBA_sha256": "918d36e49cea3c18a9f0af5bd6cd3d1f9dae9941afe500aebaf31d7f4418de6f",
+      "literal_physical_control_bitmap": 24008,
+      "literal_physical_RD_sha256": "75df3bcf7a37aaaf01f3c6c6b4a017fb9d0ce44b6fe03f4c32ab8ed673b6ac89",
+      "literal_canvas_RGBA_sha256": "68d2b989e84fabdd9e02a225311b8c05fb34ddae6aef158fb32a91a957dd2acd"
+    },
+    {
+      "item_id": 1247,
+      "source_physical_line": 1242,
+      "source_byte_offset": 331271,
+      "source_original_row_bytes": 224,
+      "source_row_sha256": "2ac2ff5a87a3845216abef579de0c62a11eb769974916860e4d808f5f0c55f5d",
+      "source_original_name": "治療中毒的肉",
+      "original_effect_note": "毒狀態回復",
+      "original_callback_string": "ITEM_useStatusRecovery",
+      "original_cost_raw": 120,
+      "original_imagenumber": 24043,
+      "tw10_unique_alias_target_bitmap": 6961,
+      "actual_alias_RD_sha256": "df055db71bbd048b5fabf5e59e64f5e156145e38101c2882e832f22f7574ad87",
+      "alias_RD_bytes": 1629,
+      "alias_original_dimensions": [
+        44,
+        47
+      ],
+      "alias_candidate_canvas_RGBA_sha256": "7c310ba3b0cb218fbd167f953cfa0b32b6b7a9f13c94153786dfe51033c4f80f",
+      "literal_physical_control_bitmap": 24043,
+      "literal_physical_RD_sha256": "8ff619dd140ac10726b9c1f76dc78f1e6eface469b4fb823ded9e30b803c9b43",
+      "literal_canvas_RGBA_sha256": "cb4f4095f4a081673b1859736bfa360066185e49e984f1fa8b11891008cbaaa5"
+    },
+    {
+      "item_id": 1530,
+      "source_physical_line": 1505,
+      "source_byte_offset": 395774,
+      "source_original_row_bytes": 223,
+      "source_row_sha256": "b0f0732e5f136853f70594d90e82237b3cd4d898981ac908f0467337c3305fc9",
+      "source_original_name": "復活藥(100)",
+      "original_effect_note": "氣絕回復成耐力100",
+      "original_callback_string": "ITEM_useRessurect",
+      "original_cost_raw": 100,
+      "original_imagenumber": 23021,
+      "tw10_unique_alias_target_bitmap": 6557,
+      "actual_alias_RD_sha256": "ad6db3666ca609d2ea4add83d08380e043e0ffc439862795543fb3159594d044",
+      "alias_RD_bytes": 303,
+      "alias_original_dimensions": [
+        20,
+        22
+      ],
+      "alias_candidate_canvas_RGBA_sha256": "46b4ee8e8266b8dd85bb79e8457c22cdc38f11a3c59227f412481b5cf7f06183",
+      "literal_physical_control_bitmap": 23021,
+      "literal_physical_RD_sha256": "63913bfa7c61f2282f07923764fa20939d91e02d6d331510adad3fa6c4272479",
+      "literal_canvas_RGBA_sha256": "68fb75042f7fbbf3446539a53252530c073d38390bbe68b0a6d9d51166d272e8"
+    }
+  ],
+  "identity_controls": {
+    "three_item_ids_selected_before_picture_interpretation": true,
+    "each_alias_unique_over_full_TW10_ADRN": true,
+    "each_literal_physical_id_unique_over_full_TW10_ADRN": true,
+    "three_alias_and_three_literal_bitmaps_all_different": true,
+    "all_six_original_RD_blocks_actually_read": true,
+    "six_RD_flags_are_one": true,
+    "all_six_original_pixels_two_independent_decoders_equal": true,
+    "all_six_original_image_RGBA_and_PNG_roundtrip_verified": true,
+    "all_six_modern_canvas_full_RGBA_independently_equal": true
+  },
+  "actual_private_browser": {
+    "Chromium": "144.0.7559.96",
+    "real_original_pixel_PNG_canvas_states_verified": 6,
+    "canvas_size": [
+      160,
+      160
+    ],
+    "all_six_full_RGBA_equal_independent_Python": true,
+    "all_three_alias_literal_toggle_zoom_reset_verified": true,
+    "JS_errors": 0,
+    "external_HTTP_requests": 0,
+    "user_file_open_on_local_machine_verified": false,
+    "screenshot_png_sha256": "6d1bbe9470f42bf92426c3bff3300978cfc925cc18af5964c33cf6d0eaaf8da3",
+    "observer_HTML_sha256": "bc48cfaf5a860581ee19d70c5d1e63cd3db31c376c32f98a67d67c837931bf9b"
+  },
+  "private_archive": {
+    "filename": "StoneAge-O23-private-three-consumable-original-item-pixels.zip",
+    "bytes": 193578,
+    "sha256": "63092c83c4688fe3f451239013844bfc34709e87de51e375007525e92307798b",
+    "member_count": 25,
+    "all_zip_member_CRC_verified": true,
+    "original_client_binary_text_image_publicly_committed": false
+  },
+  "limits": {
+    "same_deployed_official_item_master_proven": false,
+    "native_item_selector_proven": false,
+    "mixed25_original_REAL_directly_extracted_this_turn": false,
+    "original_treatment_healing_poison_cure_or_resurrection_executed": false,
+    "runtime_price_or_inventory_change_proven": false,
+    "original_client_world_entered": false,
+    "official_TW10_or_1999_item_names_authenticated": false,
+    "native_palette_and_occlusion_verified": false,
+    "copyrighted_original_payloads_in_public_repo": false,
+    "overall_percent": null
+  },
+  "next": "O24_ONE_NEW_ORIGINAL_BATTLE_OR_MAP_EVENT_VISIBLE_MATERIAL_OR_ROTATE_22_DOMAINS"
+}

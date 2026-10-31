@@ -1,0 +1,26 @@
+name: Verify O23 original three consumable item pixel evidence
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-O23-THREE-CONSUMABLE-SOURCE-PIXELS-R1.json'
+      - 'tools/stoneage_o23_three_consumables.py'
+      - 'tests/test_stoneage_o23_three_consumables.py'
+      - '.github/workflows/verify-stoneage-o23-consumables.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-O23-THREE-CONSUMABLE-SOURCE-PIXELS-R1.json'
+      - 'tools/stoneage_o23_three_consumables.py'
+      - 'tests/test_stoneage_o23_three_consumables.py'
+      - '.github/workflows/verify-stoneage-o23-consumables.yml'
+jobs:
+  derived-only:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Replay public derived six original RD candidate boundaries and mutations
+        run: |
+          python -m tools.stoneage_o23_three_consumables
+          python -m unittest discover -s tests -p 'test_stoneage_o23_three_consumables.py' -v
