@@ -1,0 +1,545 @@
+{
+  "schema": "stoneage.o14.sot_cd_2003_reader_submission_route_material.r1",
+  "evidence_class": "PLAYER_GUIDE_VISIBLE_2003_NOT_ORIGINAL_GAME_RUNTIME",
+  "source_review_date": "2026-10-31",
+  "remote_baseline": {
+    "head": "e2b18573b423e69ed91f5967e56a9fd12be66902",
+    "tree": "702856c6f8eb159c3bdf5a88ba23c202437c44e7",
+    "preserved_current_state_blob": "20050acf279a01555ab06a381dfcdc936bd381a6",
+    "preserved_current_state_bytes": 2708031
+  },
+  "sources": {
+    "C": {
+      "url": "https://games.sina.com.cn/zhqu/sta/rwgl1_12.shtml",
+      "title": "萨伊那斯环岛活动（SOT）C路线",
+      "page_label_date": "2003-05-29 17:27",
+      "publisher": "新浪游戏",
+      "byline": "网友投稿",
+      "source_lines": [
+        27,
+        78
+      ],
+      "raw_http_bytes_acquired": false,
+      "raw_source_sha256": null
+    },
+    "D": {
+      "url": "https://games.sina.com.cn/zhqu/sta/rwgl1_13.shtml",
+      "title": "萨伊那斯环岛活动（SOT）D路线",
+      "page_label_date": "2003-05-29 17:55",
+      "publisher": "新浪游戏",
+      "byline": "网友投稿",
+      "source_lines": [
+        27,
+        73
+      ],
+      "raw_http_bytes_acquired": false,
+      "raw_source_sha256": null
+    },
+    "index": {
+      "url": "https://games.sina.com.cn/zhqu/sta/rwgl.shtml",
+      "source_lines": [
+        52,
+        65
+      ],
+      "site_category_label": "1.82 / 沙姆岛",
+      "original_server_build_verified": false
+    }
+  },
+  "route_choice": {
+    "location": "萨姆吉尔村 SOT 报名柜台",
+    "local_coordinate": {
+      "east": 33,
+      "south": 56
+    },
+    "branch_condition_field": "南岛龙洞任务是否已完成（玩家攻略陈述）",
+    "C": "completed",
+    "D": "not_completed",
+    "recommended_level": 60,
+    "required_level_from_code": null,
+    "route_count": 2
+  },
+  "source_task_classification": {
+    "source_uses_word_activity": true,
+    "reader_submission_claims_repeatable": true,
+    "repeatability_is_native_verified": false,
+    "limited_time_event_verified": false,
+    "classification_candidate": "REPEATABLE_NON_DATE_SCOPED_TASK_REFERENCE_NOT_PROVEN_SEASONAL_EVENT",
+    "item_named": "检查石",
+    "item_drop_disappearance_reader_claim": true,
+    "actual_item_id": null,
+    "server_flag_unknown": true
+  },
+  "checkpoints": {
+    "C": [
+      {
+        "sequence": 1,
+        "checkpoint": "C-1",
+        "place": "萨姆吉尔村便利店后",
+        "local_coordinate": {
+          "east": 126,
+          "south": 99
+        },
+        "floor_or_scope": "野外",
+        "player_guide_answer": "贝洛洛克",
+        "source_line_range": [
+          39,
+          40
+        ],
+        "historical_map_floor_id": null,
+        "original_npc_script_id": null
+      },
+      {
+        "sequence": 2,
+        "checkpoint": "C-2",
+        "place": "柯奥村医院上方",
+        "local_coordinate": {
+          "east": 98,
+          "south": 76
+        },
+        "floor_or_scope": "村内",
+        "player_guide_answer": "喝酒",
+        "source_line_range": [
+          40,
+          41
+        ],
+        "historical_map_floor_id": null,
+        "original_npc_script_id": null
+      },
+      {
+        "sequence": 3,
+        "checkpoint": "C-3",
+        "place": "柯奥山小洞窟",
+        "local_coordinate": {
+          "east": 27,
+          "south": 42
+        },
+        "floor_or_scope": "四楼",
+        "player_guide_answer": "42",
+        "source_line_range": [
+          42,
+          43
+        ],
+        "historical_map_floor_id": null,
+        "original_npc_script_id": null
+      },
+      {
+        "sequence": 4,
+        "checkpoint": "C-4",
+        "place": "玛丽娜丝渔村便利店右",
+        "local_coordinate": {
+          "east": 80,
+          "south": 115
+        },
+        "floor_or_scope": "村内",
+        "player_guide_answer": "特级柯尔克石",
+        "source_line_range": [
+          47,
+          48
+        ],
+        "historical_map_floor_id": null,
+        "original_npc_script_id": null
+      },
+      {
+        "sequence": 5,
+        "checkpoint": "C-5",
+        "place": "盗贼的洞窟",
+        "local_coordinate": {
+          "east": 41,
+          "south": 45
+        },
+        "floor_or_scope": "地下三楼",
+        "player_guide_answer": "为了健康而推荐的温青菜",
+        "source_line_range": [
+          49,
+          50
+        ],
+        "historical_map_floor_id": null,
+        "original_npc_script_id": null
+      },
+      {
+        "sequence": 6,
+        "checkpoint": "C-6",
+        "place": "阿布的洞窟",
+        "local_coordinate": {
+          "east": 23,
+          "south": 9
+        },
+        "floor_or_scope": "地下七楼",
+        "player_guide_answer": "半年前",
+        "source_line_range": [
+          50,
+          51
+        ],
+        "historical_map_floor_id": null,
+        "original_npc_script_id": null
+      },
+      {
+        "sequence": 7,
+        "checkpoint": "C-7",
+        "place": "柯尔克的大坑道",
+        "local_coordinate": {
+          "east": 54,
+          "south": 10
+        },
+        "floor_or_scope": "五楼",
+        "player_guide_answer": "ＢＡＲ　Ｓｉｌｋｙ　ＣＬＵＢ",
+        "source_line_range": [
+          55,
+          57
+        ],
+        "historical_map_floor_id": null,
+        "original_npc_script_id": null
+      },
+      {
+        "sequence": 8,
+        "checkpoint": "C-8",
+        "place": "柯尔克村坑道事务所旁",
+        "local_coordinate": {
+          "east": 86,
+          "south": 96
+        },
+        "floor_or_scope": "村内",
+        "player_guide_answer": "头盔",
+        "source_line_range": [
+          58,
+          59
+        ],
+        "historical_map_floor_id": null,
+        "original_npc_script_id": null
+      },
+      {
+        "sequence": 9,
+        "checkpoint": "C-9",
+        "place": "霍特尔村肉店后",
+        "local_coordinate": {
+          "east": 65,
+          "south": 26
+        },
+        "floor_or_scope": "村内",
+        "player_guide_answer": "携带方便的三明治",
+        "source_line_range": [
+          59,
+          60
+        ],
+        "historical_map_floor_id": null,
+        "original_npc_script_id": null
+      },
+      {
+        "sequence": 10,
+        "checkpoint": "C-10",
+        "place": "盗贼的基地",
+        "local_coordinate": {
+          "east": 11,
+          "south": 41
+        },
+        "floor_or_scope": "地下四楼",
+        "player_guide_answer": "鲍尔",
+        "source_line_range": [
+          61,
+          62
+        ],
+        "historical_map_floor_id": null,
+        "original_npc_script_id": null
+      },
+      {
+        "sequence": 11,
+        "checkpoint": "C-11",
+        "place": "卡坦村迷幻洞窟",
+        "local_coordinate": {
+          "east": 37,
+          "south": 6
+        },
+        "floor_or_scope": "洞窟",
+        "player_guide_answer": "哥亚山",
+        "source_line_range": [
+          63,
+          64
+        ],
+        "historical_map_floor_id": null,
+        "original_npc_script_id": null
+      },
+      {
+        "sequence": 12,
+        "checkpoint": "C-12",
+        "place": "卡坦村道具店东北",
+        "local_coordinate": {
+          "east": 110,
+          "south": 81
+        },
+        "floor_or_scope": "村内",
+        "player_guide_answer": "83岁",
+        "source_line_range": [
+          68,
+          69
+        ],
+        "historical_map_floor_id": null,
+        "original_npc_script_id": null
+      }
+    ],
+    "D": [
+      {
+        "sequence": 1,
+        "checkpoint": "D-1",
+        "place": "萨伊那斯靠海原野",
+        "local_coordinate": {
+          "east": 727,
+          "south": 500
+        },
+        "floor_or_scope": "野外",
+        "player_guide_answer": "千穗",
+        "source_line_range": [
+          36,
+          37
+        ],
+        "historical_map_floor_id": null,
+        "original_npc_script_id": null
+      },
+      {
+        "sequence": 2,
+        "checkpoint": "D-2",
+        "place": "霍特尔东南沿岸",
+        "local_coordinate": {
+          "east": 669,
+          "south": 244
+        },
+        "floor_or_scope": "野外",
+        "player_guide_answer": "ＢＡＲ　Ｓｉｌｋｙ　ＣＬＵＢ",
+        "source_line_range": [
+          37,
+          39
+        ],
+        "historical_map_floor_id": null,
+        "original_npc_script_id": null
+      },
+      {
+        "sequence": 3,
+        "checkpoint": "D-3",
+        "place": "盗贼的基地",
+        "local_coordinate": {
+          "east": 44,
+          "south": 16
+        },
+        "floor_or_scope": "地下三楼",
+        "player_guide_answer": "岩石炖肉",
+        "source_line_range": [
+          43,
+          44
+        ],
+        "historical_map_floor_id": null,
+        "original_npc_script_id": null
+      },
+      {
+        "sequence": 4,
+        "checkpoint": "D-4",
+        "place": "卡坦村迷幻洞窟",
+        "local_coordinate": {
+          "east": 36,
+          "south": 7
+        },
+        "floor_or_scope": "洞窟",
+        "player_guide_answer": "西扎卡",
+        "source_line_range": [
+          45,
+          46
+        ],
+        "historical_map_floor_id": null,
+        "original_npc_script_id": null
+      },
+      {
+        "sequence": 5,
+        "checkpoint": "D-5",
+        "place": "卡坦村东部沙漠",
+        "local_coordinate": {
+          "east": 290,
+          "south": 97
+        },
+        "floor_or_scope": "野外",
+        "player_guide_answer": "妮尔",
+        "source_line_range": [
+          46,
+          47
+        ],
+        "historical_map_floor_id": null,
+        "original_npc_script_id": null
+      },
+      {
+        "sequence": 6,
+        "checkpoint": "D-6",
+        "place": "东柯尔克坑道",
+        "local_coordinate": {
+          "east": 39,
+          "south": 3
+        },
+        "floor_or_scope": "二楼",
+        "player_guide_answer": "17",
+        "source_line_range": [
+          51,
+          52
+        ],
+        "historical_map_floor_id": null,
+        "original_npc_script_id": null
+      },
+      {
+        "sequence": 7,
+        "checkpoint": "D-7",
+        "place": "钢锁桥附近",
+        "local_coordinate": {
+          "east": 428,
+          "south": 543
+        },
+        "floor_or_scope": "野外",
+        "player_guide_answer": "强恩一族",
+        "source_line_range": [
+          53,
+          54
+        ],
+        "historical_map_floor_id": null,
+        "original_npc_script_id": null
+      },
+      {
+        "sequence": 8,
+        "checkpoint": "D-8",
+        "place": "柯奥山小洞窟",
+        "local_coordinate": {
+          "east": 27,
+          "south": 42
+        },
+        "floor_or_scope": "二楼",
+        "player_guide_answer": "达克尔",
+        "source_line_range": [
+          55,
+          56
+        ],
+        "historical_map_floor_id": null,
+        "original_npc_script_id": null
+      },
+      {
+        "sequence": 9,
+        "checkpoint": "D-9",
+        "place": "柯尔克大坑道",
+        "local_coordinate": {
+          "east": 35,
+          "south": 4
+        },
+        "floor_or_scope": "二楼",
+        "player_guide_answer": "查罕吉鲁兄弟",
+        "source_line_range": [
+          56,
+          57
+        ],
+        "historical_map_floor_id": null,
+        "original_npc_script_id": null
+      },
+      {
+        "sequence": 10,
+        "checkpoint": "D-10",
+        "place": "阿布的洞窟",
+        "local_coordinate": {
+          "east": 8,
+          "south": 86
+        },
+        "floor_or_scope": "地下六楼",
+        "player_guide_answer": "邦洛洛克斯",
+        "source_line_range": [
+          61,
+          62
+        ],
+        "historical_map_floor_id": null,
+        "original_npc_script_id": null
+      },
+      {
+        "sequence": 11,
+        "checkpoint": "D-11",
+        "place": "盗贼的洞窟",
+        "local_coordinate": {
+          "east": 58,
+          "south": 26
+        },
+        "floor_or_scope": "地下三楼",
+        "player_guide_answer": "携带方便的三明治",
+        "source_line_range": [
+          63,
+          64
+        ],
+        "historical_map_floor_id": null,
+        "original_npc_script_id": null
+      },
+      {
+        "sequence": 12,
+        "checkpoint": "D-12",
+        "place": "玛丽娜丝渔村外",
+        "local_coordinate": {
+          "east": 74,
+          "south": 489
+        },
+        "floor_or_scope": "野外",
+        "player_guide_answer": "83岁",
+        "source_line_range": [
+          64,
+          65
+        ],
+        "historical_map_floor_id": null,
+        "original_npc_script_id": null
+      }
+    ]
+  },
+  "completion": {
+    "C": {
+      "location": "萨姆吉尔村",
+      "local_coordinate": {
+        "east": 108,
+        "south": 29
+      },
+      "source_lines": [
+        70,
+        76
+      ]
+    },
+    "D": {
+      "location": "玛丽娜丝渔村",
+      "local_coordinate": {
+        "east": 88,
+        "south": 116
+      },
+      "source_lines": [
+        67,
+        71
+      ]
+    },
+    "random_item_claim": true,
+    "pet_rewards_guide_C": [
+      "多萨金格",
+      "卡拉宝斯",
+      "奥卡洛斯",
+      "布鲁宝"
+    ],
+    "pet_rewards_guide_D": [
+      "格鲁西斯",
+      "多洛加",
+      "达伊诺洛斯",
+      "奇拉顿"
+    ],
+    "reward_probability": null,
+    "gameplay_transaction_verified": false
+  },
+  "unknowns": {
+    "original_tw1_server_or_1999_jss_task_presence": true,
+    "original_1_82_actual_server_build": true,
+    "all_24_NPC_runtime_spawn": true,
+    "checkpoint_dialogue_exact_text_and_acceptance_logic": true,
+    "original_map_floor_id": true,
+    "same_build_reward_tables": true,
+    "quest_event_timing_and_reset": true,
+    "world_entered": true
+  },
+  "status_gates": {
+    "stage_A_partial": 7,
+    "stage_A_open": 2,
+    "stage_B_gated": true,
+    "wiki_gated": true,
+    "R79_paused_nonblocking": true,
+    "overall_percent": null,
+    "new_game_development_started": false
+  },
+  "next": "O15: seek exact dated first-party or original server/runtime evidence for SOT persistence and reward identity; absent it, rotate to another materially new original content domain."
+}

@@ -1,0 +1,21 @@
+name: Verify StoneAge O14 source-separated SOT C/D quest routes
+on:
+  push:
+    paths:
+      - "research/recovered/STONEAGE-O14-SOT-CD-2003-PLAYER-SOURCE-R1.json"
+      - "tools/stoneage_o14_sot_cd_source.py"
+      - "tests/test_stoneage_o14_sot_cd_source.py"
+      - ".github/workflows/verify-stoneage-o14-sot-cd.yml"
+  workflow_dispatch:
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Verify only derived 2003 guide facts, not original runtime
+        run: |
+          python -m tools.stoneage_o14_sot_cd_source
+          python -m unittest tests.test_stoneage_o14_sot_cd_source -v

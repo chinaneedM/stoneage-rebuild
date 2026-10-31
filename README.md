@@ -1047,3 +1047,8 @@ ranges, not a new whole-client download or arbitrary program reverse engineering
 ### 2026-10-31 — O13：原TW1像素与另版本宠物名称的来源分隔
 
 [O13 有界来源审计](docs/continuity/STONEAGE-O13-SOURCE-SEPARATED-NAMED-SPRITE-20261031.md)：私有初代原盘及O11原像素完整SHA再核，三原数字组100250/251/252的动作0共24序列、352有序帧、208原PNG与后期mixed25保存版七条具名模板分版并列；原名烏力／烏力烏力／烏力斯坦仅属后期社区保存版，不认证官方台湾1.0物种身份。私人简体离线观察HTML真实Chromium逐帧、方向、原模板位置开关通过，浏览器0 JS错误/0外部网络；原HTML及原图不公开。O12帧73与三种声音编号命名空间不擅联。公开仅源派生O13收据和来源隔离验证；原TW1同构建具名宠物主表仍缺，原客户端世界仍未进入。下一回22域寻找真正新增具名原件，Stage A 7 PARTIAL+2 OPEN、Stage B/wiki GATED、R79暂停、overall百分比null不变。
+
+
+### 2026-10-31 — O14：2003玩家投稿中的SOT C/D双路线及“活动”归类边界
+
+[来源隔离的任务合同](docs/continuity/STONEAGE-O14-SOT-CD-2003-PLAYER-QUEST-20261031.md)：现存新浪2003-05-29两篇玩家投稿分别记载萨伊那斯环岛C/D资格、各12个顺序检查点、答题与检查石、完成位置及候选奖励。内容新增为**玩家攻略层**24项可追溯数据，未证明TW1或原服务器同版运行。原文“环岛活动”同时写可重复解，不能归作已证限时节日活动；原HTML字节/源SHA未知，不伪称已取得。原游戏世界未进入，Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、overall_percent null不变。
