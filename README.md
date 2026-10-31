@@ -1082,3 +1082,8 @@ ranges, not a new whole-client download or arbitrary program reverse engineering
 ### O17 已明确下一原素材：1003地图候选
 
 [有界地图载体排序](docs/continuity/STONEAGE-O16-INDEPENDENT-ACCEPTANCE-20261031.md)：四已存样本的原目录并非均无世界DAT；TW1/CN5为0，claimed8.5有45条、mixed25有1011条文件名，其中空/微小文件不能算有效图。最高NEXT具体为已有2003双时点和mixed25整SHA一致的1003.DAT：先取精确原成员、核同源图块覆盖，最多一份30×30现代候选场景。后代宠物店名不晋升初代官方身份；缺源有界停止。该场景尚未新绘，Stage A/B/wiki/R79/percent未知不变。
+
+
+### 2026-10-31 — O17 actual map1003 file + TW1 original graphics observation
+
+[O17 bounded original-source observation](docs/continuity/STONEAGE-O17-MAP1003-SOURCE-PIXEL-20261031.md): actually re-read the private mixed25 RAR and exact 5408-byte map1003.DAT SHA. Of 900 cells there are 107+27 actual visual placements and 38 distinct numeric aliases; all 38 are unique in the actually rehashed TW1 original ADRN, and 38 real TW1 RD source pixels were independently decoded. A **695×665 modern visual candidate** has independently equal full RGBA. Actual original map bytes and 38 TW1 RD and PNG remain private; source-only derived receipt/tests in Git. **The mixed25 ADRN/REAL companion extraction is blocked** by a RAR filter and was not freshly read, so crossversion pixel identity is not newly independently qualified. Historical original-client world, runtime palette, collision, official map name and same deployed build remain OPEN. Next finite **O18 same-period map1003 named NPC/quest/content source** from 22-domain queue if actual original member exists; otherwise stop and rotate. Stage A/B/wiki/R79 and total percent unknown unchanged.

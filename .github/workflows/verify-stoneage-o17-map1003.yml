@@ -1,0 +1,28 @@
+name: Verify O17 original map1003 source-only boundary
+
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-O17-MAP1003-ACTUAL-PIXEL-CANDIDATE-R1.json'
+      - 'tools/stoneage_o17_map1003_source_contract.py'
+      - 'tests/test_stoneage_o17_map1003_contract.py'
+      - '.github/workflows/verify-stoneage-o17-map1003.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-O17-MAP1003-ACTUAL-PIXEL-CANDIDATE-R1.json'
+      - 'tools/stoneage_o17_map1003_source_contract.py'
+      - 'tests/test_stoneage_o17_map1003_contract.py'
+      - '.github/workflows/verify-stoneage-o17-map1003.yml'
+
+jobs:
+  source-only:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Check all frozen O17 metadata boundaries
+        run: |
+          python -m tools.stoneage_o17_map1003_source_contract
+          python -m unittest discover -s tests -p 'test_stoneage_o17_map1003_contract.py' -v
