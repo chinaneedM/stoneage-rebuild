@@ -1,0 +1,71 @@
+{
+  "schema": "stoneage.o26.private_offline_two_town_observer.r1",
+  "date": "2026-10-31",
+  "source_main_head": "c8f71c9f55aba0e84c845cbbfecebfc24307bd6b",
+  "full_current_blob": "20050acf279a01555ab06a381dfcdc936bd381a6",
+  "scope": "SOURCE_BACKED_MODERN_PRIVATE_OFFLINE_INTERACTIVE_OBSERVER_NOT_ORIGINAL_GAME",
+  "source": {
+    "TW10_original_P3H_sha256": "3a4854adaebef056332cdbd7b1dc1c130c571b11704e3f199f53d03aa31cba24",
+    "TW10_ADRN_sha256": "47254c0ff904d363fb5c3c5297edf553c8eaf24cd933f346d8ce7aabed4155c8",
+    "TW10_REAL_sha256": "408e6ee05c83354349691937da2ad8f7488ac10f65f07e6681b7d92cb1c9ed13",
+    "TW10_Palet1_sha256": "32870080c47537a59beaf770b6df7bd79820fd52a23825058460900494f0b4b0",
+    "map1000_sha256": "94b19cb59d72b7b48da70d2741ba68516caad970297fd48ed11ef720fa3ea97e",
+    "map2000_sha256": "d75231434c69118a518a8d5dd34f266264b8551fe4f2d55a20cdfa11b46584b3",
+    "NPC_scripts_source": "O24 later mixed25 source, two static event scripts, not same TW10 build"
+  },
+  "scene_windows": [
+    {
+      "floor": 1000,
+      "npc_xy": [
+        57,
+        124
+      ],
+      "width": 13,
+      "height": 13,
+      "map_image_references": 176,
+      "unique_image_aliases": 101,
+      "modern_candidate_RGBA_sha256": "15ceadfc5c59c7928c476c343d8fe49dd3240c0eca601a4a1af9c13fe2eea712"
+    },
+    {
+      "floor": 2000,
+      "npc_xy": [
+        55,
+        92
+      ],
+      "width": 13,
+      "height": 13,
+      "map_image_references": 171,
+      "unique_image_aliases": 56,
+      "modern_candidate_RGBA_sha256": "b6d4fbf948254bd5266ca8e0a2c508941979cda83698b8e2fde97c0a4b24339e"
+    }
+  ],
+  "all_157_unique_source_RD_resolved_and_rendered": true,
+  "private": {
+    "library_path": "/石器时代/StoneAge-O26-private-interactive-two-town-source.zip",
+    "member_count": 8,
+    "bytes": 1494863,
+    "sha256": "6a7bdc7cfa162df9ec5cd4be241b9222d2a701d8e272f9ab98ae47581775e02c",
+    "post_library_reread_sha_crc_verified": true,
+    "self_contained_html_sha256": "5b37ed6f76a74aa20cbf7751fe99c13d6c2a42c36e3a981e9f25871e53fe9c4d"
+  },
+  "real_browser_test": {
+    "Chromium_via_Playwright_set_content": true,
+    "actual_original_sprite_images_loaded": true,
+    "move_npc_dialogue_receive_2415_exchange_2414_exchange_back_reset": "PASS",
+    "JS_errors": 0,
+    "external_requests": 0,
+    "file_url_tested_successfully": false,
+    "localhost_tested_successfully": false
+  },
+  "boundaries": {
+    "original_client_world_entered": false,
+    "original_commercial_server_executed": false,
+    "original_move_collision_verified": false,
+    "original_quest_event_executed": false,
+    "original_live_palette_and_draw_order_proven": false,
+    "same_deployed_TW1_original_NPC_script_verified": false,
+    "original_proprietary_assets_in_public_git": false,
+    "overall_restoration_percent": null
+  },
+  "next": "O27_22_DOMAIN_NEW_SOURCE_CONTENT_OR_GAME_SYSTEM_DIRECT_VALUE_NO_HELPER_EXPANSION"
+}
