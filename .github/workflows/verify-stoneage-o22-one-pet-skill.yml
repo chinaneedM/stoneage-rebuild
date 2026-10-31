@@ -1,0 +1,26 @@
+name: Verify O22 one preserved original pet skill source link
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-O22-ONE-PET-SKILL-SOURCE-R1.json'
+      - 'tools/stoneage_o22_one_pet_skill.py'
+      - 'tests/test_stoneage_o22_one_pet_skill.py'
+      - '.github/workflows/verify-stoneage-o22-one-pet-skill.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-O22-ONE-PET-SKILL-SOURCE-R1.json'
+      - 'tools/stoneage_o22_one_pet_skill.py'
+      - 'tests/test_stoneage_o22_one_pet_skill.py'
+      - '.github/workflows/verify-stoneage-o22-one-pet-skill.yml'
+jobs:
+  derived-only:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate original source boundaries and negative mutations
+        run: |
+          python -m tools.stoneage_o22_one_pet_skill
+          python -m unittest discover -s tests -p 'test_stoneage_o22_one_pet_skill.py' -v
