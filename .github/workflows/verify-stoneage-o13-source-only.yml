@@ -1,0 +1,31 @@
+name: O13 source-separated named sprite boundary
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-O13-SOURCE-SEPARATED-NAMED-SPRITE-R1.json'
+      - 'docs/continuity/STONEAGE-O13-SOURCE-SEPARATED-NAMED-SPRITE-20261031.md'
+      - 'tools/stoneage_o13_named_sprite_boundary.py'
+      - 'tools/stoneage_o13_cross_source_observer.py'
+      - 'tests/test_stoneage_o13_named_sprite_boundary.py'
+      - '.github/workflows/verify-stoneage-o13-source-only.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-O13-SOURCE-SEPARATED-NAMED-SPRITE-R1.json'
+      - 'tools/stoneage_o13_named_sprite_boundary.py'
+      - 'tools/stoneage_o13_cross_source_observer.py'
+      - 'tests/test_stoneage_o13_named_sprite_boundary.py'
+      - '.github/workflows/verify-stoneage-o13-source-only.yml'
+  workflow_dispatch:
+jobs:
+  verify-source-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify permanent derived public reports only, never private originals
+        run: |
+          python -m tools.stoneage_o13_named_sprite_boundary
+          python -m unittest tests.test_stoneage_o13_named_sprite_boundary -v
