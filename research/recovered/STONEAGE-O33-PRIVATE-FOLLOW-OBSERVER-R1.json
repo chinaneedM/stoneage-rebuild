@@ -1,0 +1,116 @@
+{
+  "schema": "stoneage.o33.original_pet_frame_descendant_follow_observer.r1",
+  "date": "2026-10-31",
+  "source_main_head": "89337d3d728edb95caec7d1527c60a0e05fc3165",
+  "source_main_tree": "3518cf8f68f01637e9de7a56586ff4e412b308fa",
+  "full_current_state_blob": "20050acf279a01555ab06a381dfcdc936bd381a6",
+  "full_current_state_bytes": 2708031,
+  "full_current_state_read_native_and_preserved": true,
+  "deliverable": "One source-separated original TW1 pet frame shown alongside player in existing O32 offline source-art walking map, with descendant ITEM_petFollow source eligibility and explicitly modern previous-cell movement and post-warp placement.",
+  "source_input_files": [
+    {
+      "class": "PRIVATE_O32_PARENT",
+      "name": "StoneAge-O32-private-continuous-flower-quest.zip",
+      "sha256": "03c7e4f5a091efe3ffe84e77e47b0af1f763223b1fc0562256a3926a587de3ce",
+      "bytes": 2919651,
+      "zip_crc_verified": true
+    },
+    {
+      "class": "PRIVATE_O27_SOURCE_PET_ART",
+      "name": "StoneAge-O27-private-original-battle-observer.zip",
+      "sha256": "b56ac08f39f7e937e682ba60025583cb430eb43536e1c42c71395a7dc5c31ed0",
+      "bytes": 2408329,
+      "zip_crc_verified": true
+    },
+    {
+      "class": "PUBLIC_MODEL_LATER_DESCENDANT",
+      "path": "tools/stoneage_item_effect_model.py",
+      "git_blob": "5188ed74300fddd6090efe9fcdf83a7109e30e08",
+      "function": "pet_follow_item_transition"
+    }
+  ],
+  "original_art": {
+    "original_client": "TAIWAN_V1_0_TW1_ARCHIVED_P3H",
+    "sprite_group": 100297,
+    "direction_number": 0,
+    "source_animation_number": 0,
+    "source_frame_index": 0,
+    "frame_png_size": [
+      60,
+      42
+    ],
+    "frame_png_sha256": "950b6b65dea3df43610c012fc874677dbfae26dc17cfe63aef2710d29cde9cb2",
+    "source_name_in_mixed25": "昆伊",
+    "same_build_species_identity_verified": false,
+    "original_animation_direction_or_motion_semantics_verified": false
+  },
+  "source_rule_ref": {
+    "rule_source_version": "DESCENDANT_CONVERGENT_ITEM_petFollow_not_native_TW1",
+    "rejection_order": [
+      "existing_follow",
+      "invalid_target",
+      "invalid_item",
+      "level_too_high",
+      "not_owned_slot",
+      "drop_follow_failed"
+    ],
+    "success": "follow_started",
+    "consume_item": false,
+    "commented_loyalty_under_80_rejection_not_active": true,
+    "source_level_limit_assigned_from_hypothetical_input": true,
+    "original_item_id_qualified": false,
+    "owned_pet_inventory_verified": false
+  },
+  "modern_interaction": {
+    "only_one_pet_sprite": true,
+    "estimated_position_rule": "sprite drawn at previous player grid coordinate; warp resynchronizes to destination x-1,y",
+    "archive_map2000_is_explicit_non_original_switch": true,
+    "archive_follower_hidden_but_reinstated_on_return": true,
+    "modern_unfollow_button_not_historical_command": true,
+    "all_257_TW1_source_alias_bytes_preserved": true,
+    "all_O32_scenes_npcs_warp_quest_JSON_objects_exactly_preserved": true,
+    "old_5_source_warp_edges_preserved": true,
+    "original_quest_stage_3_retained": true,
+    "source_shop_ID0_retained": true,
+    "original_native_collision_or_pet_follow_path_verified": false
+  },
+  "private_browser": {
+    "engine": "Chromium browser via Playwright set_content",
+    "checks_passed": 34,
+    "checks_total": 34,
+    "source_gate_cases": 7,
+    "all_success": true,
+    "errors": 0,
+    "external_requests": 0,
+    "original_pet_png_decoded_browser": true,
+    "source_map_1000_and_1001_displayed": true,
+    "actual_source_game_client_or_server_started": false,
+    "file_scheme_directly_verified": false,
+    "screenshot_count": 2
+  },
+  "private_custody": {
+    "library_path": "/石器时代/StoneAge-O33-private-pet-follow-source-viewer.zip",
+    "bytes": 3089489,
+    "sha256": "c6454cf90cc3f803e353583b0c557d45e5e988967dfa5cbd5c7c239cc69ad74f",
+    "members": 7,
+    "library_roundtrip_sha256_crc_verified": true,
+    "source_html_sha256": "525ebecad705f73318ad7c0f56dc8a5c7930747e908e719c093b95e1bf689b25",
+    "source_html_bytes": 2738963,
+    "original_proprietary_payload_committed": false
+  },
+  "boundaries": {
+    "taiwan_v1_native_pet_follow": false,
+    "original_riding_or_mount": false,
+    "original_training_or_loyalty": false,
+    "original_capture_item_or_pet_ownership": false,
+    "native_source_collision": false,
+    "original_game_client_executed": false,
+    "original_game_server_executed": false,
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b": "GATED",
+    "wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING",
+    "overall_completion_percent": null
+  },
+  "next": "O34: return to higher-value original source-material gaps: bounded same-version pet species identity / ownership-source joins or another novel recovered gameplay domain; do not keep increasing follower animation, NPC UI or modern movement helpers without same-carrier original evidence."
+}
