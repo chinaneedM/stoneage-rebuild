@@ -1,0 +1,137 @@
+{
+  "schema": "stoneage.o27.direct_original_tw10_battle_pixel_observer.public_derived.r1",
+  "date": "2026-10-31",
+  "base_head": "8ad261d352853f19b744ce16fb9131356e43514c",
+  "base_tree": "53e147078ca2da3f68d748bbb96c172b782167d4",
+  "current_history_blob_kept": "20050acf279a01555ab06a381dfcdc936bd381a6",
+  "sources": {
+    "TW10_P3H_ZIP_SHA256": "3a4854adaebef056332cdbd7b1dc1c130c571b11704e3f199f53d03aa31cba24",
+    "original_TW10_ADRN_SHA256": "47254c0ff904d363fb5c3c5297edf553c8eaf24cd933f346d8ce7aabed4155c8",
+    "original_TW10_REAL_SHA256": "408e6ee05c83354349691937da2ad8f7488ac10f65f07e6681b7d92cb1c9ed13",
+    "original_TW10_SPR_SHA256": "53d5b2d40453a30fd1569637ebf0db7b3010542b00970ec83af0295a3b3ae31a",
+    "original_TW10_SPRADRN_SHA256": "275b64ff55667aec633a7e82e09d65c84141380521f0f2e64c9a28e0d3aa6c25",
+    "original_TW10_Palet1_SHA256": "32870080c47537a59beaf770b6df7bd79820fd52a23825058460900494f0b4b0",
+    "original_TW10_battle00_SAB_SHA256": "881850de822d7d5e44578dd11d309e9b2c3ae3455cfa71380199212cb368dec2"
+  },
+  "original_battle_source": {
+    "SAB_index": 0,
+    "grid_width": 20,
+    "grid_height": 20,
+    "cells": 400,
+    "unique_original_RD_tile_bitmaps": 73,
+    "original_TW10_renderer_palette1_modern_candidate_rgba_sha256": "5772b854a5fe19210a4c7542b4e776544c1dba65a6286da2bc8ba52a5ae7989c",
+    "matches_prior_SCENE29_independent_rgba": true,
+    "updated_PNG_SHA256": "901239a7257ce82c5dac895c3e76f8a3f384f0d7646622ee128b5f1a16584188"
+  },
+  "original_animation_source": {
+    "source_group_numbers": [
+      100297,
+      100298
+    ],
+    "original_TW10_SPR_group_indices": [
+      287,
+      288
+    ],
+    "original_direction_code": 0,
+    "original_action_codes": [
+      0,
+      1,
+      2
+    ],
+    "per_group_frame_counts": {
+      "100297": {
+        "0": 8,
+        "1": 8,
+        "2": 6
+      },
+      "100298": {
+        "0": 16,
+        "1": 8,
+        "2": 6
+      }
+    },
+    "selected_original_frame_positions": 52,
+    "unique_original_pet_frame_bitmaps": 39,
+    "total_unique_source_RD_including_SAB": 112,
+    "full_spr_source_segment_SHA256": {
+      "100297": "0be2deee9bc390903efc8e6f5f600b4aaf3cac2f0ee140cdd4d590e2300d3ec9",
+      "100298": "1f3dec860eff8133c9afcb8ed1d85d7ca0c659722b5b4d5d4cf008a4edcf651b"
+    }
+  },
+  "later_mixed25_NAMED_CANDIDATE_ONLY": {
+    "100297": {
+      "later_name": "昆伊",
+      "later_group": 88,
+      "later_enemy_id": 119,
+      "later_template": 113
+    },
+    "100298": {
+      "later_name": "凱比特",
+      "later_group": 91,
+      "later_enemy_id": 122,
+      "later_template": 114
+    }
+  },
+  "private_delivery": {
+    "path": "/石器时代/StoneAge-O27-private-original-battle-observer.zip",
+    "bytes": 2408329,
+    "SHA256": "b56ac08f39f7e937e682ba60025583cb430eb43536e1c42c71395a7dc5c31ed0",
+    "member_count": 58,
+    "all_CRC_valid": true,
+    "library_upload_re_materialized_whole_SHA_equal": true,
+    "self_contained_original_source_HTML_bytes": 1127596,
+    "self_contained_original_source_HTML_SHA256": "a9497eb66a04b88db0238c8d1bca8885c525cc9bff8de439d405c7bc2c3a7cfa"
+  },
+  "modern_browser_observation": {
+    "browser": "Chromium 144.0.7559.96",
+    "source_images_ACTUALLY_loaded": true,
+    "background_natural_dimensions": [
+      1350,
+      1220
+    ],
+    "two_pet_frame_natural_dimensions": [
+      [
+        60,
+        42
+      ],
+      [
+        60,
+        42
+      ]
+    ],
+    "verified_controls": [
+      "real_frame_next",
+      "real_frame_previous",
+      "original_action_0_1_2",
+      "switch_two_original_SPR_groups",
+      "modern_manual_play",
+      "pause",
+      "two_original_action1_parallel_modern_demo",
+      "reset"
+    ],
+    "page_errors": 0,
+    "external_network_requests": 0,
+    "screenshot_actual": true,
+    "local_file_url_execution_verified": false,
+    "modern_animation_interval_ms": 160,
+    "source_duration_unit_proven": false
+  },
+  "boundaries": {
+    "original_game_or_server_executed": false,
+    "original_battle_turn_or_damage_executed": false,
+    "original_player_or_pet_HPorXP_observed": false,
+    "original_battlemap_selection_verified": false,
+    "original_palette_selection_verified": false,
+    "original_action_names_interpreted": false,
+    "original_event_trigger_executed": false,
+    "TW10_pets_names_same_build_verified": false,
+    "original_game_world_entered": false,
+    "proprietary_images_published_to_public_Git": false,
+    "stage_A_partial": 7,
+    "stage_A_open": 2,
+    "stage_B_and_wiki_gated": true,
+    "R79_paused": true,
+    "overall_completion_percent": null
+  },
+  "next": "O28_ONE_ACTUAL_SOURCE_SUPPORTED_DIFFERENT_PLAYER_EXPERIENCE_NO_REPEAT_BATTLE_INDEX_SCAFFOLDING"
+}
