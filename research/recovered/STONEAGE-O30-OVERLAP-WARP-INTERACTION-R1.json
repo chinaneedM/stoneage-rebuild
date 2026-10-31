@@ -1,0 +1,99 @@
+{
+  "schema": "stoneage.o30.original_map_warp_source_derived_boundary.r1",
+  "date": "2026-10-31",
+  "source_main_head": "8d8629c2c92d14667c8b5b25bdf6fa7361295cec",
+  "source_main_tree": "4ecfb1efdaa23ea7534ccea1759c7d074c58234c",
+  "parent_public_checkpoint": "docs/continuity/STONEAGE-O29-SOURCE-WARP-CONTINUOUS-WALK-20261031.md",
+  "historical_source_classes": {
+    "pixels": "TAIWAN_V1_0_CLIENT_ORIGINAL_RESOURCE_CROSS_VERSION",
+    "floor_dat_and_warp": "LATER_PRESERVED_MIXED25_ORIGINAL_SOURCE",
+    "trigger_rule": "LATER_DESCENDANT_STATIC_OVERLAP_WARP_SOURCE"
+  },
+  "source_file_sha256": {
+    "map1000_dat": "94b19cb59d72b7b48da70d2741ba68516caad970297fd48ed11ef720fa3ea97e",
+    "map1001_dat": "62dbef1614ede0ba032ca9c69cbfdc3d43938e45baba78701885790937b86b90"
+  },
+  "warp_static_source_blocks_sha256": [
+    "d0b4f955cc6afe909579a3bdb555f549a5fc00e23f5e3555d6041f2dd2028f79",
+    "d35da32a65e7794acf619c4c959c81dcefc0a433c7d78a0c838b9d0c278c3085"
+  ],
+  "warp_pair": [
+    {
+      "source": [
+        1000,
+        63,
+        99
+      ],
+      "target": [
+        1001,
+        10,
+        15
+      ]
+    },
+    {
+      "source": [
+        1001,
+        10,
+        15
+      ],
+      "target": [
+        1000,
+        63,
+        99
+      ]
+    }
+  ],
+  "event_field_crosscheck": {
+    "map1000_warp_source": 49155,
+    "map1000_neighbor_y_plus_one": 49155,
+    "map1001_warp_source": 49155,
+    "map1001_neighbor_y_plus_one": 49155,
+    "value_49155_is_exclusive_warp_indicator": false,
+    "bitmask_0x0fff_result": 3,
+    "map_event_value_is_native_collision_decision": false
+  },
+  "interaction_candidate": {
+    "trigger_rule": "source-pair coordinate reached by ordinary grid walk; require actual new cell entry",
+    "autowarp_at_load": false,
+    "autowarp_upon_arrival_without_step": false,
+    "manual_W_check_remains": true,
+    "show_shop_source_items_without_purchase": true,
+    "implemented_in": "PRIVATE_SINGLEFILE_MODERN_BROWSER_OBSERVER"
+  },
+  "private_browser_execution": {
+    "engine": "Chromium 144.0.7559.96",
+    "real_original_image_bytes_embedded": true,
+    "execution_surface": "playwright page.set_content",
+    "checks_passed": 18,
+    "checks_total": 18,
+    "console_errors": 0,
+    "external_requests": 0,
+    "original_HTML_sha256": "27a0d41817a14dc0027250d2e3d5b5a118fa769f55d79d1468eca3c585a4e722",
+    "private_browser_receipt_sha256": "e162d2f413e3bcf65cc1d61245f9c758db1edfec40091b13cd983bc33efd6a0d"
+  },
+  "private_custody": {
+    "library_path": "/石器时代/StoneAge-O30-private-source-overlap-warp.zip",
+    "zip_bytes": 2668881,
+    "zip_sha256": "84e883cd57f2b77100ad7a82ecbf5957b5199ff10ed6b0dbdf9141be882d09fa",
+    "zip_members": 10,
+    "roundtrip_readback_sha256_verified": true,
+    "private_acceptance_json_sha256": "f09e9f8a4413f29a4b989d93a5d4c8425db2a59be394e83665cfb88ff7f2a780"
+  },
+  "claims_not_proven": {
+    "native_client_executable_started": false,
+    "original_server_executed": false,
+    "original_runtime_warp_observed": false,
+    "native_collision_or_pathfinding": false,
+    "tw1_same_deployment_NPC_DAT_warp_identity": false,
+    "walkable_source_route_verified": false,
+    "native_palette_ui_FPS": false,
+    "native_shop_purchase": false
+  },
+  "public_git_original_proprietary_bytes_included": false,
+  "stage_a": "7_PARTIAL_2_OPEN",
+  "stage_b": "GATED",
+  "wiki": "GATED",
+  "savedata_r79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null,
+  "next": "O31 bounded original-source collision feasibility for the O29 route only if same-carrier mapset/LS2MAP can be verified; otherwise rotate to a different material gameplay interaction. Never equate DAT event 49155 with collision or native warp trigger."
+}

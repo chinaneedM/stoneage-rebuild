@@ -1,0 +1,22 @@
+name: Verify O30 original-source overlap warp boundary
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-O30-OVERLAP-WARP-INTERACTION-R1.json'
+      - 'tests/test_stoneage_o30_overlap_warp_contract.py'
+      - '.github/workflows/verify-stoneage-o30-overlap-warp.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-O30-OVERLAP-WARP-INTERACTION-R1.json'
+      - 'tests/test_stoneage_o30_overlap_warp_contract.py'
+      - '.github/workflows/verify-stoneage-o30-overlap-warp.yml'
+jobs:
+  derived-only:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate source-coordinate, overlap trigger and nonclaims
+        run: python -m unittest discover -s tests -p 'test_stoneage_o30_overlap_warp_contract.py' -v
