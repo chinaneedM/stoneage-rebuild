@@ -1,0 +1,26 @@
+name: Verify O20 original NPC source-only pixels boundary
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-O20-MAP1003-NPC16038-ORIGINAL-PIXEL-OBSERVER-R1.json'
+      - 'tools/stoneage_o20_source_guard.py'
+      - 'tests/test_stoneage_o20_source_guard.py'
+      - '.github/workflows/verify-stoneage-o20-one-npc.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-O20-MAP1003-NPC16038-ORIGINAL-PIXEL-OBSERVER-R1.json'
+      - 'tools/stoneage_o20_source_guard.py'
+      - 'tests/test_stoneage_o20_source_guard.py'
+      - '.github/workflows/verify-stoneage-o20-one-npc.yml'
+jobs:
+  source-only:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate derived evidence and 24 source-only negative cases
+        run: |
+          python -m tools.stoneage_o20_source_guard
+          python -m unittest discover -s tests -p 'test_stoneage_o20_source_guard.py' -v
