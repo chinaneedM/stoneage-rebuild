@@ -1,0 +1,140 @@
+{
+  "schema": "stoneage.o13.cross_source_original_sprite_named_observer.r1",
+  "status": "SOURCE_SEPARATED_NAMED_ANIMATION_REFERENCE_NOT_TW1_ORIGINAL_PET_MASTER",
+  "remote_baseline_head": "c21782e9b4f248ec9f71297e4c7f8399619c01ef",
+  "remote_baseline_tree": "99277c814899019cda141a26dd2af9e6c5a9ae26",
+  "source_git_blob_pins": {
+    "R39_mixed25_server_template": "e32b4dcb2fade31eafee4787ccdae0645dc6ac83",
+    "R40_mixed25_client_spr_and_tw1_segment_comparison": "cdcfc9fb9a07c60a3320528fdddcdfecdeb6b14d",
+    "O11_original_TW1_SPR_and_pixel_material": "bf8d55ed2805641a0b1357abf914de2da6eadbb3",
+    "O12_original_TW1_sound_namespace": "1d0df7df7fa9d3527407b5282f9304fe507e7f5d"
+  },
+  "tw1_original_archive_sha256": "3a4854adaebef056332cdbd7b1dc1c130c571b11704e3f199f53d03aa31cba24",
+  "o11_private_archive_sha256": "a972f91257bef896a07e436727072d8341940c570386b6e9282b4e8d2892f811",
+  "original_tw1_member_sha256": {
+    "source/data/spr_1.bin": "53d5b2d40453a30fd1569637ebf0db7b3010542b00970ec83af0295a3b3ae31a",
+    "source/data/spradrn_1.bin": "275b64ff55667aec633a7e82e09d65c84141380521f0f2e64c9a28e0d3aa6c25",
+    "source/sa_3.exe": "cdab9ea049a98bbc96ce93eeaa8b63c688f0c0f0ad8b3183e79d75e47621441a",
+    "source/data/soundaddr_1.txt": "d8d2bee5e424be75b35cc4b8a1ac10d398f7fd53e98035ba6980e9e4dc9b389f"
+  },
+  "tw1_private_archive_inventory_actual": {
+    "zip_members": 379,
+    "scope": "P3H_PRIVATE_SOURCE_BUNDLE_NOT_ALL_ORIGINAL_DEPLOYMENTS",
+    "pet_entity_master_named_file_present": false,
+    "original_server_npc_quest_script_named_file_present": false,
+    "presence_not_proven_absent_embedded_resources": true,
+    "source_battlemap_sab_files_are_battle_assets_not_original_world_map_proof": true
+  },
+  "same_numeric_group_original_spr_full_segment_sha": {
+    "100250": "eb1a87cd4cc8e3b409990783c7bcc3bc463acab4cac7d2d961127d899da047ef",
+    "100251": "073278ba6ae1e623eea969deef11f99fd9be8b995af332506e830bd046c86764",
+    "100252": "eeb2ec4546277c2acdf1b43fff7967c4c0fe5ac5c019bb7d68a901e134691b0a"
+  },
+  "server_occurrences": [
+    {
+      "original_server_line": 1,
+      "name_zh_Hant": "烏力",
+      "template_column_7": 1,
+      "graphic_column_37": 100250,
+      "flag_column_38": 1,
+      "original_row_sha256": "5f3b4e824a0e85221f470e43f3dc3528103a7060f4927108c072287f79c506bd"
+    },
+    {
+      "original_server_line": 2,
+      "name_zh_Hant": "烏力烏力",
+      "template_column_7": 2,
+      "graphic_column_37": 100251,
+      "flag_column_38": 1,
+      "original_row_sha256": "f899e3c726eefc1f078b8a01bc179f997064a8337ceea90025f9322246272123"
+    },
+    {
+      "original_server_line": 3,
+      "name_zh_Hant": "烏力斯坦",
+      "template_column_7": 3,
+      "graphic_column_37": 100252,
+      "flag_column_38": 1,
+      "original_row_sha256": "3b3d929e08d01e641dd9a53cb2b0e371cd115928b43cf1e4b6d1c0710b06c9d7"
+    },
+    {
+      "original_server_line": 6,
+      "name_zh_Hant": "烏力斯坦",
+      "template_column_7": 6,
+      "graphic_column_37": 100252,
+      "flag_column_38": 1,
+      "original_row_sha256": "aa824f47b432d6201b055596cd85bd90a66c34365f7ac87b339d3ec68c1f8a97"
+    },
+    {
+      "original_server_line": 407,
+      "name_zh_Hant": "烏力斯坦",
+      "template_column_7": 586,
+      "graphic_column_37": 100252,
+      "flag_column_38": 1,
+      "original_row_sha256": "e5404d03d1f9a2b854ef06ec091cf4241e38bb89d1304f048adf6a6e2c3138bd"
+    },
+    {
+      "original_server_line": 479,
+      "name_zh_Hant": "烏力斯坦",
+      "template_column_7": 678,
+      "graphic_column_37": 100252,
+      "flag_column_38": 0,
+      "original_row_sha256": "7b9cfe4b46968aff6009a6a099c6ee6d74a991d2f712d63a632b5fdca943a9ce"
+    },
+    {
+      "original_server_line": 858,
+      "name_zh_Hant": "烏力烏力",
+      "template_column_7": 1061,
+      "graphic_column_37": 100251,
+      "flag_column_38": 1,
+      "original_row_sha256": "876fcf45af6fd1c9f6a33015b9d13452e9e0d5a254ccb4412acc53e5cfdf2215"
+    }
+  ],
+  "source_separated_crosswalk": [
+    {
+      "community_graphic_column_37": 100250,
+      "community_potential_name": "烏力",
+      "tw1_original_spr_no": 100250,
+      "original_source_animation_action": 0,
+      "directions": 8,
+      "full_spr_segment_sha256": "eb1a87cd4cc8e3b409990783c7bcc3bc463acab4cac7d2d961127d899da047ef",
+      "qualified_relation": "ORIGINAL_ANIMATION_NUMERIC_CONTENT_IDENTITY__NOT_ORIGINAL_OFFICIAL_SPECIES"
+    },
+    {
+      "community_graphic_column_37": 100251,
+      "community_potential_name": "烏力烏力",
+      "tw1_original_spr_no": 100251,
+      "original_source_animation_action": 0,
+      "directions": 8,
+      "full_spr_segment_sha256": "073278ba6ae1e623eea969deef11f99fd9be8b995af332506e830bd046c86764",
+      "qualified_relation": "ORIGINAL_ANIMATION_NUMERIC_CONTENT_IDENTITY__NOT_ORIGINAL_OFFICIAL_SPECIES"
+    },
+    {
+      "community_graphic_column_37": 100252,
+      "community_potential_name": "烏力斯坦",
+      "tw1_original_spr_no": 100252,
+      "original_source_animation_action": 0,
+      "directions": 8,
+      "full_spr_segment_sha256": "eeb2ec4546277c2acdf1b43fff7967c4c0fe5ac5c019bb7d68a901e134691b0a",
+      "qualified_relation": "ORIGINAL_ANIMATION_NUMERIC_CONTENT_IDENTITY__NOT_ORIGINAL_OFFICIAL_SPECIES"
+    }
+  ],
+  "prior_O11_original_animation_sequences": 24,
+  "prior_O11_ordered_frame_positions": 352,
+  "prior_O11_original_distinct_bitmaps": 208,
+  "source_word_73_meaning_open": true,
+  "source_word_10000_meaning_open": true,
+  "o12_compiled_sound_number_73": "sae_23.wav",
+  "o12_soundaddr_zero_based_73": "sam_18.wav",
+  "o12_soundaddr_one_based_73": "sam_17.wav",
+  "actual_sound_event_selected": false,
+  "official_tw1_species_join_proven": false,
+  "original_pet_master_restored": false,
+  "actual_original_palette_choice_confirmed": false,
+  "historical_game_runtime_executed": false,
+  "commercial_art_publicly_embedded": false,
+  "stage_a": "7_PARTIAL_2_OPEN",
+  "stage_b": "GATED",
+  "wiki": "GATED",
+  "savedata_R79": "PAUSED_NONBLOCKING",
+  "overall_restoration_percent": null,
+  "bounded_next": "O13_SOURCE_GATE_CLOSED__ROTATE_TO_ONE_NEW_GAME_CONTENT_MATERIAL_WITH_PRIMARY_SOURCE_OR_STOP"
+}
