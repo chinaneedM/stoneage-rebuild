@@ -6,6 +6,8 @@ on:
       - research/mechanics/STONEAGE-SAVE-LOGOUT-PERSISTENCE-CORE-R1.md
       - tools/stoneage_save_logout_model.py
       - tests/test_stoneage_save_logout_model.py
+      - tools/stoneage_singleplayer_persistence.py
+      - tests/test_stoneage_singleplayer_persistence.py
       - .github/workflows/validate-stoneage-save-logout.yml
 permissions:
   contents: read
@@ -14,4 +16,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: python3 -m unittest tests.test_stoneage_save_logout_model -v
+      - run: python3 -m unittest tests.test_stoneage_save_logout_model tests.test_stoneage_singleplayer_persistence -v
