@@ -5,9 +5,9 @@ from pathlib import Path
 from tools.stoneage_stage_a_review_packet import validate as validate_review
 from tools.stoneage_stage_a_early_source_gap_triage import validate as validate_gap
 ROOT=Path(__file__).resolve().parents[1]
-DEFAULT=ROOT/"research/recovered/STONEAGE-STAGE-A-JOINT-REVIEW-DECISION-R1.json"
+DEFAULT=ROOT/"research/recovered/STONEAGE-STAGE-A-JOINT-REVIEW-DECISION-R2.json"
 SOURCE_PINS={
-"review":("research/recovered/STONEAGE-STAGE-A-CONSOLIDATED-REVIEW-R1.json","1a31c094bdd1c4b64b2f6510270c111be2c9415c"),
+"review":("research/recovered/STONEAGE-STAGE-A-CONSOLIDATED-REVIEW-R2.json","72f3bbee8de2728db7955001f2c9567ad165a3fc"),
 "gap":("research/recovered/STONEAGE-STAGE-A-EARLY-SOURCE-GAP-TRIAGE-R1.json","927293c09bc04097e013bb96ad1ead5d654ce82d"),
 "gap_acceptance":("research/recovered/STONEAGE-STAGE-A-EARLY-SOURCE-GAP-ACCEPTANCE-R1.json","ec25c68367f5135976c642287801d44cb958a5f5"),
 "roadmap":("docs/RESTORATION-ROADMAP-R2.md","b7f035623b450ed2b4eb516841978f2f1e7490d8"),

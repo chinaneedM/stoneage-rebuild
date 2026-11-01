@@ -1,0 +1,186 @@
+{
+  "schema": "stoneage.stage_a_joint_review_decision.r1",
+  "date": "2026-10-17",
+  "base_main_head": "5939b90bfff514501d0cb17caefa9a8886d7d319",
+  "base_main_tree": "a0c641a2afbf8dcfa10e2311269a3969875deff2",
+  "task": "STAGE-A-JOINT-REVIEW-DECISION-01",
+  "source_pins": {
+    "review": {
+      "path": "research/recovered/STONEAGE-STAGE-A-CONSOLIDATED-REVIEW-R2.json",
+      "git_blob": "72f3bbee8de2728db7955001f2c9567ad165a3fc"
+    },
+    "gap": {
+      "path": "research/recovered/STONEAGE-STAGE-A-EARLY-SOURCE-GAP-TRIAGE-R1.json",
+      "git_blob": "927293c09bc04097e013bb96ad1ead5d654ce82d"
+    },
+    "gap_acceptance": {
+      "path": "research/recovered/STONEAGE-STAGE-A-EARLY-SOURCE-GAP-ACCEPTANCE-R1.json",
+      "git_blob": "ec25c68367f5135976c642287801d44cb958a5f5"
+    },
+    "roadmap": {
+      "path": "docs/RESTORATION-ROADMAP-R2.md",
+      "git_blob": "b7f035623b450ed2b4eb516841978f2f1e7490d8"
+    },
+    "review_document": {
+      "path": "docs/STAGE-A-CONSOLIDATED-REVIEW-R1.md",
+      "git_blob": "07c9950a40d110d4dabb80b11412db8b4ea64ba9"
+    }
+  },
+  "crosswalk_kind": "DERIVED_REVIEW_CAUSAL_LINKS_NOT_NEW_HISTORICAL_EVIDENCE",
+  "family_count": 9,
+  "family_gate_counts": {
+    "PARTIAL": 7,
+    "OPEN": 2
+  },
+  "playflow_count": 7,
+  "blocker_count": 5,
+  "early_service_count": 5,
+  "flow_to_blockers": [
+    {
+      "id": "ORIGINAL_TW10_CLIENT_ENTRY",
+      "blockers": [
+        "B0_ORIGINAL_SERVER_CONTENT",
+        "B3_ORIGINAL_UI_VISUAL_BINDING"
+      ],
+      "result": "原版字段/消息可复核，初代商服登录后世界及实际屏幕未验证"
+    },
+    {
+      "id": "RECOVERED25_HOMETOWN_FOUR",
+      "blockers": [
+        "B0_ORIGINAL_SERVER_CONTENT"
+      ],
+      "result": "四条路线是后代来源条件/存在性见证，并非原版1.0地图成员"
+    },
+    {
+      "id": "CAPTURE_OWNED_PET_REENTRY_GROWTH",
+      "blockers": [
+        "B1_ORIGINAL_PLAYER_PET_AND_EXP",
+        "B2_ORIGINAL_QUEST_ITEM_DURABILITY"
+      ],
+      "result": "显式完整宠物输入下现代捕获/入栏/本地重读可测，初代宠物当前态及商服保存未认证"
+    },
+    {
+      "id": "BATTLE_EXP_SETTLEMENT",
+      "blockers": [
+        "B1_ORIGINAL_PLAYER_PET_AND_EXP",
+        "B0_ORIGINAL_SERVER_CONTENT"
+      ],
+      "result": "模型回合/收益可校核，初代天然遇敌、奖励和具体阈值制度待源证"
+    },
+    {
+      "id": "SHOP_OWNED_ITEM_WARPMAN_LOCAL_RELOAD",
+      "blockers": [
+        "B0_ORIGINAL_SERVER_CONTENT",
+        "B2_ORIGINAL_QUEST_ITEM_DURABILITY"
+      ],
+      "result": "后代/合成采购→门槛→本地重读参考链可跑，原商服商品/奖励及存档未证"
+    },
+    {
+      "id": "V1_UI_GRAPHICS_RESOURCE_SELECTION",
+      "blockers": [
+        "B3_ORIGINAL_UI_VISUAL_BINDING"
+      ],
+      "result": "原客户端消息/资源编号与候选解释可复核，真实画面/调色板选用待认证"
+    },
+    {
+      "id": "ORIGINAL_QUEST_AND_RELOGIN",
+      "blockers": [
+        "B0_ORIGINAL_SERVER_CONTENT",
+        "B2_ORIGINAL_QUEST_ITEM_DURABILITY"
+      ],
+      "result": "有后代NPC及保存模型而无初代任务/存盘的完整可玩链"
+    }
+  ],
+  "service_to_blockers": [
+    {
+      "id": "SAVE_POINT",
+      "blockers": [
+        "B0_ORIGINAL_SERVER_CONTENT",
+        "B2_ORIGINAL_QUEST_ITEM_DURABILITY"
+      ],
+      "decision": "原供品、服务NPC及持久化ACK均OPEN"
+    },
+    {
+      "id": "MAMMOTH_BUS",
+      "blockers": [
+        "B0_ORIGINAL_SERVER_CONTENT"
+      ],
+      "decision": "三村分组有第一方文字，票价和实际站点边OPEN"
+    },
+    {
+      "id": "VILLAGE_CARE_TRAINING",
+      "blockers": [
+        "B0_ORIGINAL_SERVER_CONTENT",
+        "B1_ORIGINAL_PLAYER_PET_AND_EXP"
+      ],
+      "decision": "服务类型有据，原NPC价目、宠物技能与状态事务OPEN"
+    },
+    {
+      "id": "VILLAGE_WORK",
+      "blockers": [
+        "B0_ORIGINAL_SERVER_CONTENT",
+        "B2_ORIGINAL_QUEST_ITEM_DURABILITY"
+      ],
+      "decision": "送货/矿石工作种类有据，原物品、奖励/任务flag OPEN"
+    },
+    {
+      "id": "GROUND_ITEM_EXPIRY",
+      "blockers": [
+        "B2_ORIGINAL_QUEST_ITEM_DURABILITY"
+      ],
+      "decision": "普通地面物消失有第一方文字，时钟、秒数、例外OPEN"
+    }
+  ],
+  "decision_options": [
+    {
+      "id": "CONTINUE_STAGE_A_NAMED_EVIDENCE",
+      "meaning": "仅有可命名的新初代/同代证据时继续对应有限复原，保留当前Stage A门禁"
+    },
+    {
+      "id": "ACCEPT_EVIDENCE_LIMITED_STAGE_A_REVIEW",
+      "meaning": "用户可明确认可历史研究成果和不能恢复的空白作为有界阶段记录；不等于历史游戏已100%复原，也不自动批准Stage B或生产"
+    },
+    {
+      "id": "PAUSE_PENDING_PRIMARY_SOURCE",
+      "meaning": "停止没有新资料的支线，等有版本身份可靠的一手资料再重开，不将停止误记为历史已复原"
+    }
+  ],
+  "approval_state": {
+    "user_explicit_decision_received": false,
+    "selected_option": null,
+    "stage_a_user_review_completed": false,
+    "stage_a_accepted": false,
+    "stage_b_gate": "GATED",
+    "stage_b_started": false,
+    "production_engine_started": false
+  },
+  "evidence_guard": {
+    "original_1999_exact_build_covered": false,
+    "original_early_server_world_npc_quest_recovered": false,
+    "complete_v1_original_playthrough_certified": false,
+    "original_saac_durable_write_relogin_verified": false,
+    "original_ui_rendering_verified": false,
+    "restoration_total_percent": null,
+    "client_local_savedata_r79": "PAUSED_NON_BLOCKING",
+    "no_new_original_game_binary_or_server_payload": true
+  },
+  "next": "AWAIT_EXPLICIT_USER_STAGE_A_REVIEW_DECISION",
+  "default_on_ordinary_continue": "REMAIN_STAGE_A_NOT_STAGE_B",
+  "only_resume_specific_evidence_when": "NEW_AUTHENTICATED_MATCHING_BUILD_SOURCE_OR_CONCRETE_GAMEPLAY_CONTRADICTION",
+  "review_document_path": "docs/STAGE-A-JOINT-REVIEW-DECISION-R1.md",
+  "no_duplicate_research_claim": true,
+  "snapshot_refresh": {
+    "date": "2026-11-01",
+    "kind": "PIN_REFRESH_ONLY",
+    "supersedes": "research/recovered/STONEAGE-STAGE-A-JOINT-REVIEW-DECISION-R1.json",
+    "previous_review_pin": {
+      "path": "research/recovered/STONEAGE-STAGE-A-CONSOLIDATED-REVIEW-R2.json",
+      "git_blob": "fa0cfd4a1a484f85912e0155bf339916d6751c52"
+    },
+    "updated_review_pin": {
+      "path": "research/recovered/STONEAGE-STAGE-A-CONSOLIDATED-REVIEW-R2.json",
+      "git_blob": "72f3bbee8de2728db7955001f2c9567ad165a3fc"
+    },
+    "stage_a_accepted": false
+  }
+}

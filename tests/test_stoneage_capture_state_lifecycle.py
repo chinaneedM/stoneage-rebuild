@@ -137,6 +137,30 @@ class CaptureStateLifecycleTests(unittest.TestCase):
         self.assertEqual((grown_pet.state['mp'], grown_pet.state['max_mp']), (17, 31))
         self.assertEqual(grown_pet.skills, pet.skills)
 
+    def test_six_caller_owned_capture_fields_are_mandatory_and_atomic(self):
+        # Source gaps are genuinely unknown. Do not create fabricated MP,
+        # EXP, rename or free-name values at the persistent owner boundary.
+        for field in ('mp', 'max_mp', 'exp', 'max_exp', 'rename_flag', 'free_name'):
+            with self.subTest(missing=field):
+                incomplete = dict(self.pet.state)
+                incomplete.pop(field)
+                with self.assertRaisesRegex(ValueError, 'missing explicit caller state: ' + field):
+                    self.capture(replace(self.pet, state=incomplete))
+                self.assert_atomic()
+
+        with self.assertRaisesRegex(ValueError, 'missing explicit caller state: mp'):
+            self.capture(replace(self.pet, state={**self.pet.state, 'mp': None}))
+        self.assert_atomic()
+
+    def test_explicit_caller_owned_fields_survive_capture_and_disk(self):
+        captured, _ = self.capture(self.pet)
+        settled = self.coordinator.settle_persistent_group_battle_without_level_crossing(captured)
+        self.coordinator.save_game('owner-fields', settled)
+        restored = self.coordinator.continue_game('owner-fields').player_state.pets[PetSlot(0)]
+        for field in ('mp', 'max_mp', 'exp', 'max_exp', 'rename_flag', 'free_name'):
+            self.assertEqual(restored.state[field], self.pet.state[field])
+        self.assert_atomic()
+
     def test_wrong_name_round_rejects_atomically(self):
         with self.assertRaisesRegex(ValueError, 'copied name drift'):
             self.capture(replace(self.pet, state={**self.pet.state, 'name': 'Wrong'}))

@@ -1,0 +1,46 @@
+{
+  "schema": "stoneage.o36.pet_state_01_explicit_caller_capture_owner_gate.r1",
+  "date": "2026-11-01",
+  "base_main": "44bf4a7cc85ee4bd5eeb6fa7c305cc3f2c3c250f",
+  "base_tree": "910c8e2ebcc70df417e106821f66b69d67c50fb7",
+  "full_historical_current_blob": "20050acf279a01555ab06a381dfcdc936bd381a6",
+  "original_current_unchanged": true,
+  "source_priority": "docs/PROJECT-CONTINUITY-PROTOCOL-R1.md section13 + research/recovered/STONEAGE-RESTORATION-PORTFOLIO-R1.json work_queue PET-STATE-01",
+  "real_problem": "The current reconstructed persistent capture path accepts a caller-supplied PetActor missing six fields; later saved owned-pet state can be semantically incomplete. These six cannot be derived from historical source fields.",
+  "solution": "Validate six required caller-provided fields (and non-None values) at the existing coordinator's persistent capture interface, before any battle round or working state mutation; reuse existing persistence machinery; do not generate missing defaults.",
+  "required_explicit_fields": [
+    "mp",
+    "max_mp",
+    "exp",
+    "max_exp",
+    "rename_flag",
+    "free_name"
+  ],
+  "changed_runtime_file": "tools/stoneage_local_runtime_session_coordinator.py",
+  "change_scope": "coordinator persistent capture API only; legacy low-level direct runtime capture intentionally left compatible with partial PetActor fixtures",
+  "changed_test_files": [
+    "tests/test_stoneage_capture_state_lifecycle.py",
+    "tests/test_stoneage_local_runtime_session_coordinator.py"
+  ],
+  "tests_added": [
+    "six separate missing-field rejection subtests",
+    "None MP rejection",
+    "full explicit fields persist after capture, settlement, on-disk save and load"
+  ],
+  "updated_existing_fixture": "One source-neutral synthetic coordinator test explicitly supplies four previously omitted fields; no authentic TW10 data claimed",
+  "unknowns": [
+    "Original TW1 pet MP derivation",
+    "original level EXP threshold",
+    "rename flag transitions",
+    "free-name original source",
+    "actual TW1 commercial pet capture native runtime"
+  ],
+  "no_original_client_executed": true,
+  "no_original_owned_pet_authentication": true,
+  "stage_a": "7_PARTIAL_2_OPEN",
+  "stage_b": "GATED",
+  "wiki": "GATED",
+  "r79": "PAUSED_NON_BLOCKING",
+  "overall_completion_percent": null,
+  "next": "O37 source-qualified original game world content, ideally same-preserved-client/server pet shop 1003 physical source material with original visible frame if available, otherwise rotate other original sourced gameplay; do not invent map1003 and do not extend extra modern capture state helpers"
+}

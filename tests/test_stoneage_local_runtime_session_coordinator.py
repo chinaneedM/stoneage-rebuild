@@ -1523,6 +1523,11 @@ class LocalRuntimeSessionCoordinatorTests(unittest.TestCase):
                     "max_hp": 100,
                     "exp": 0,
                     "max_exp": 500,
+                    # Explicit synthetic fixture inputs, not recovered TW1 values.
+                    "mp": 17,
+                    "max_mp": 31,
+                    "rename_flag": 0,
+                    "free_name": "Fixture supplied",
                     "attack": enemy.attack,
                     "defense": enemy.defense,
                     "quick": enemy.quick,

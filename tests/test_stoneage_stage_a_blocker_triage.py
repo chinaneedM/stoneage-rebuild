@@ -23,6 +23,11 @@ class StageABlockerTriageTests(unittest.TestCase):
         for key, pin in self.audit["source_pins"].items():
             with self.subTest(key=key):
                 body = self.sources[key]
+                # The phase gate is an append-only living document. Keep the
+                # historical pinned prefix exact while allowing dated additions.
+                if key == "phase_gate":
+                    self.assertGreaterEqual(len(body), pin["bytes"])
+                    body = body[:pin["bytes"]]
                 self.assertEqual(len(body), pin["bytes"])
                 preamble = b"blob " + str(len(body)).encode("ascii") + bytes([0])
                 self.assertEqual(hashlib.sha1(preamble + body).hexdigest(), pin["git_blob"])
