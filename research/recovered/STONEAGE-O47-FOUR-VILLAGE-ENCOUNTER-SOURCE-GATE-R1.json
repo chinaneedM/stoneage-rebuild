@@ -1,0 +1,154 @@
+{
+  "schema": "stoneage.o47.four_village_original_encount_source_rows.r1",
+  "date": "2026-11-01",
+  "base_head": "33c3a062ab085aeed916435735dde934033a0873",
+  "base_tree": "e2b35defa37b9384d43b7eaa241fb417d3ce8538",
+  "source_scope": "PRESERVED_LATER_MIXED25_SERVER_ENCOUNTER_TABLE_NOT_AUTHENTICATED_ORIGINAL_TW1_JSS1999",
+  "source": {
+    "private_original_rar_path": "/stoneage-preserved-mixed25-original.rar",
+    "rar_bytes": 361255180,
+    "rar_sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+    "raw_member_path_suffix": "gmsv/data/encount.txt",
+    "raw_member_bytes": 43420,
+    "raw_member_sha256": "70bbd997d98508a0587df183b5bdd48222ff42db91bf21bea632e0ed6f2fea87",
+    "rar_header_crc32": "d58f5903"
+  },
+  "method": "Fresh whole original private RAR verified and four source members extracted; encounter table full 43420 bytes matches R18 historic inventory; independent CP950 split and standard csv.reader parse agree on all 660 rows of 33 columns; original RAR header size and CRC match; four exact original row SHA256 include source line terminators",
+  "total_rows": 660,
+  "all_rows_33_columns": true,
+  "independent_csv_parsing_equal": true,
+  "selected_four_village_rows_count": 4,
+  "four_village_rows": [
+    {
+      "original_line_1based": 37,
+      "record_id": 59,
+      "floor_id": 1000,
+      "rectangle_inclusive": [
+        1,
+        1,
+        159,
+        159
+      ],
+      "original_column_6_9_values": [
+        0,
+        0,
+        5,
+        1
+      ],
+      "source_group_columns_10_through_19": [],
+      "source_weights_columns_20_through_29_nonempty": [],
+      "raw_record_bytes_including_newline": 51,
+      "raw_record_sha256_including_newline": "5c8ddc00998cd84f161a577ec63b5394ec2d522bf30b774e8ebe0ea27b31867c"
+    },
+    {
+      "original_line_1based": 39,
+      "record_id": 61,
+      "floor_id": 2000,
+      "rectangle_inclusive": [
+        1,
+        1,
+        149,
+        149
+      ],
+      "original_column_6_9_values": [
+        0,
+        0,
+        5,
+        1
+      ],
+      "source_group_columns_10_through_19": [],
+      "source_weights_columns_20_through_29_nonempty": [],
+      "raw_record_bytes_including_newline": 51,
+      "raw_record_sha256_including_newline": "c94ee166e230946a50e1b08140f530cf6f0fe1c086fd84b7196c0667cce12b51"
+    },
+    {
+      "original_line_1based": 94,
+      "record_id": 120,
+      "floor_id": 3000,
+      "rectangle_inclusive": [
+        1,
+        1,
+        149,
+        149
+      ],
+      "original_column_6_9_values": [
+        0,
+        0,
+        5,
+        1
+      ],
+      "source_group_columns_10_through_19": [],
+      "source_weights_columns_20_through_29_nonempty": [],
+      "raw_record_bytes_including_newline": 52,
+      "raw_record_sha256_including_newline": "e5b08f1de539f6b798a7fa8f7ec47e284f7fd5b367d8852f0fce7f3b8464883b"
+    },
+    {
+      "original_line_1based": 95,
+      "record_id": 121,
+      "floor_id": 4000,
+      "rectangle_inclusive": [
+        1,
+        1,
+        149,
+        149
+      ],
+      "original_column_6_9_values": [
+        0,
+        0,
+        5,
+        1
+      ],
+      "source_group_columns_10_through_19": [],
+      "source_weights_columns_20_through_29_nonempty": [
+        [
+          20,
+          50
+        ],
+        [
+          21,
+          40
+        ],
+        [
+          22,
+          30
+        ],
+        [
+          23,
+          20
+        ],
+        [
+          24,
+          30
+        ]
+      ],
+      "raw_record_bytes_including_newline": 62,
+      "raw_record_sha256_including_newline": "6f17327c38ad261f07cc9a8e1cbb55628cc521d09166078823642af6909c54cf"
+    }
+  ],
+  "other_table_control": {
+    "floor100_record_has_positive_group_ids_and_weights": true,
+    "records_with_weights_but_empty_group_columns_all_table": 6
+  },
+  "negative_boundaries": {
+    "encounter_zero_probability_proven": false,
+    "source_4000_weights_valid_without_group_id_proven": false,
+    "original_server_runtime_parser_or_fallback_executed": false,
+    "map_collision_and_walking_executed": false,
+    "original_TW10_or_JSS1999_same_live_config": false,
+    "actual_world_entered": false,
+    "original_table_raw_bytes_published": false,
+    "overall_completion_percent": null
+  },
+  "full_current_preserved": {
+    "sha": "20050acf279a01555ab06a381dfcdc936bd381a6",
+    "bytes": 2708031,
+    "modified": false
+  },
+  "phase": {
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b": "GATED",
+    "wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING"
+  },
+  "next": "O48 rotate to material positive behavior or original full interaction input; never treat blank encounter-group columns as native zero-encounter execution and do not build encounter frameworks just for four rows"
+}
