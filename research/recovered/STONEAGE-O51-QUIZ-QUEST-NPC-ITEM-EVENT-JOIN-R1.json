@@ -1,0 +1,305 @@
+{
+  "schema": "stoneage.o51.original_mixed25_three_brothers_quest_event_npc_item_crosswalk.r1",
+  "date": "2026-11-01",
+  "baseline": {
+    "main": "1533b7d0b29ffb0e06511c6d22177a52d7372a24",
+    "tree": "444915e7131507a6771bc49a841103abe4e5858c",
+    "preserved_current_state_blob": "20050acf279a01555ab06a381dfcdc936bd381a6",
+    "current_bytes": 2708031
+  },
+  "source_version": "LATER_MIXED25_COMMUNITY_PRESERVED_NOT_AUTHENTICATED_JSS1999_OR_TW10_OFFICIAL",
+  "private_original_carrier": {
+    "size_bytes": 361255180,
+    "sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+    "whole_sha_rechecked_this_turn": true
+  },
+  "source_R18_manifest": "research/recovered/STONEAGE-MIXED25-SERVER-FULL-SOURCE-R18.json",
+  "core_original_members": [
+    {
+      "path": "jobdaily.txt",
+      "bytes": 7929,
+      "sha256": "5a1cb35c35b09ce78f83934a3ec5782918f2dc5cb5c9fa572618b2ecb36613bd",
+      "rar_header_crc32": "04a63e31"
+    },
+    {
+      "path": "itemset.txt",
+      "bytes": 3392473,
+      "sha256": "a415e78f9aab2e5ea5ca92ecb7430253f7be1ba7c876d6b0bb6d067b1b466688",
+      "rar_header_crc32": "96397928"
+    },
+    {
+      "path": "npc/genout/npcgen.template",
+      "bytes": 4950,
+      "sha256": "0c5a58d5e31cafd3b58ccc1fa88fee7d1f95d12c0b87b04db9f06fea3b2a4df3",
+      "rar_header_crc32": "56547578"
+    },
+    {
+      "path": "npc/genout/quizman.create",
+      "bytes": 3945,
+      "sha256": "a5220981807077db21a180b88b0be725f390d007ebb8869f11a9f5f6b9a4aa32",
+      "rar_header_crc32": "5faf0f98"
+    },
+    {
+      "path": "npc/genout/quz_800_29_19",
+      "bytes": 486,
+      "sha256": "969a31995dcc4a144d90785af64d54247d86984ed4a2fb5d5c9b44d683ec89c1",
+      "rar_header_crc32": "6d0e0bf4"
+    },
+    {
+      "path": "npc/quiz/quiz.create",
+      "bytes": 1705,
+      "sha256": "364951c326a4d4dac81e2d1162ddc06af91ced0b01992a3234d052fabb355eb6",
+      "rar_header_crc32": "2a75e524"
+    },
+    {
+      "path": "npc/quiz/equiz_01",
+      "bytes": 1211,
+      "sha256": "248157ddc2b3d061d8acaa6b084c7ec5a69fa69a14ea5c01d95c2fcb165fcdb9",
+      "rar_header_crc32": "d4749f59"
+    },
+    {
+      "path": "npc/quiz/equiz_02",
+      "bytes": 1716,
+      "sha256": "c5b9ff6e85d8f392cc2a668c70de7f3c0a3adcbb0d1e5688006d7a153e999818",
+      "rar_header_crc32": "df7c459a"
+    },
+    {
+      "path": "npc/quiz/equiz_03",
+      "bytes": 1760,
+      "sha256": "0145c8ecf3fab4136fbd1814991291b2586b0b2c5c1a1be585033394b4d623b9",
+      "rar_header_crc32": "0d3d183d"
+    },
+    {
+      "path": "npc/quiz/equiz_04",
+      "bytes": 755,
+      "sha256": "786a787c285ecd3821aa72cbb7262defe7d9156556dec2d8d9f9eea73b011bea",
+      "rar_header_crc32": "2b1c636b"
+    }
+  ],
+  "all_ten_original_member_sha_equal_R18": true,
+  "all_ten_member_crc_headers_equal_actual_extracted_bytes": true,
+  "cp950_lossless_byte_roundtrip": true,
+  "source_journal": {
+    "records_total": 220,
+    "numbered_entry_44": {
+      "journal_id": 2,
+      "source_row_lines": [
+        3,
+        4
+      ],
+      "original_row_sha256": [
+        "4a741ef32cc180f6f0c094953b59313b6393956a56c83434c1cee2cee9f11627",
+        "b8d4c2345585b0abb5a19118b829fdfaee53fb431e615f6d14ce2477e3c11091"
+      ],
+      "source_values": [
+        "ENDEV=44",
+        "NOWEV=44"
+      ],
+      "brief_title": "猜谜三兄弟"
+    },
+    "numbered_entry_47": {
+      "journal_id": 3,
+      "source_row_lines": [
+        5,
+        6
+      ],
+      "original_row_sha256": [
+        "219871b4c5122b4bba931f318c9119618d16a4da225a964b6d0baf09f2fd8532",
+        "2643ad5bf00a112a11a1e5ada6efba7b50b491126d4cb550cf9b555dc2d61adc"
+      ],
+      "source_values": [
+        "ENDEV=47",
+        "NOWEV=47"
+      ],
+      "brief_title": "猜谜三兄弟后续"
+    }
+  },
+  "original_itemset": {
+    "rows": 13254,
+    "columns_each": 94,
+    "source_item_id_column_zero_based": 16,
+    "all_ids_unique": true,
+    "exact_linked_items": [
+      {
+        "id": 2752,
+        "source_line": 2263,
+        "original_name": "猜謎的參加票",
+        "row_sha256": "34f666bacb68e2faee14010fae19a407b629e9eff185a670db6d099868ed40c2"
+      },
+      {
+        "id": 2753,
+        "source_line": 2264,
+        "original_name": "猜謎專家的會員證",
+        "row_sha256": "2ba654080f84ea5067f1476def69e3f1913e76a64f266039ce927a87232e98ef"
+      },
+      {
+        "id": 2754,
+        "source_line": 2265,
+        "original_name": "道具交換卷",
+        "row_sha256": "4784fe39af0bf05be1c871fbc2a014cb7d64d57f33047a250eef78cea12f8455"
+      },
+      {
+        "id": 2759,
+        "source_line": 2270,
+        "original_name": "謎之箱子",
+        "row_sha256": "024e4347ddbf678094c63cfc6db5b02528e3ceac9a29b7905d636f0865f2946d"
+      }
+    ]
+  },
+  "qualified_original_spawn_records": [
+    {
+      "floor": 800,
+      "x": 29,
+      "y": 19,
+      "script": "genout/quz_800_29_19",
+      "source": "npc/genout/quizman.create",
+      "sha256": "89eaf4e1b4e5d5776e526eef4af24320fcee71ef8375dcbbf3f9f05f80ccb816"
+    },
+    {
+      "floor": 812,
+      "x": 32,
+      "y": 24,
+      "script": "quiz/equiz_04",
+      "source": "npc/quiz/quiz.create",
+      "sha256": "781a303686f18c1d774c745f2ad70d0e7aeb52d35198fb078735e25c6a7189b8"
+    },
+    {
+      "floor": 810,
+      "x": 29,
+      "y": 16,
+      "script": "quiz/equiz_01",
+      "source": "npc/quiz/quiz.create",
+      "sha256": "1343e1aaecbe87c33b0d84be931e94ec534f0d31ab84cea5c6d075e04a412477"
+    },
+    {
+      "floor": 810,
+      "x": 28,
+      "y": 16,
+      "script": "quiz/equiz_02",
+      "source": "npc/quiz/quiz.create",
+      "sha256": "3cb05e4bcd9e3f9f6ac3662227e16681394828a27214c1c9f62deae6cca51c6c"
+    },
+    {
+      "floor": 810,
+      "x": 27,
+      "y": 16,
+      "script": "quiz/equiz_03",
+      "source": "npc/quiz/quiz.create",
+      "sha256": "74c84e0678a81a612ef01b4d31ebe62112611b2b454de321c0c55f99531cf10c"
+    },
+    {
+      "floor": 850,
+      "x": 29,
+      "y": 16,
+      "script": "quiz/equiz_01",
+      "source": "npc/quiz/quiz.create",
+      "sha256": "7feabc6c3188d5bacffbad73d88e016554ae3de7dbe4bcd1c435daad99b767a5"
+    },
+    {
+      "floor": 850,
+      "x": 28,
+      "y": 16,
+      "script": "quiz/equiz_02",
+      "source": "npc/quiz/quiz.create",
+      "sha256": "e8d47b958886e771438f83dc7011f3cb32ae2a7d8707460c8fb8e5bfc97ce2b3"
+    },
+    {
+      "floor": 850,
+      "x": 27,
+      "y": 16,
+      "script": "quiz/equiz_03",
+      "source": "npc/quiz/quiz.create",
+      "sha256": "e5be6aaf5148c8274bbbcf2a6952d4ea8aa1688751236b76ee7038a75fc1993d"
+    }
+  ],
+  "script_to_spawn_counts": {
+    "genout/quz_800_29_19": 1,
+    "quiz/equiz_01": 2,
+    "quiz/equiz_02": 2,
+    "quiz/equiz_03": 2,
+    "quiz/equiz_04": 1
+  },
+  "quiz_template": {
+    "template": "npcgen_quiz",
+    "functionset": "Quiz",
+    "source_block_sha256": "550df54ed34a8dad1900e89c38867cc1097ff28d82b97429b1cc4a7c20f7559c"
+  },
+  "source_configuration_limited": {
+    "floor800_quest_npc": {
+      "literal_EntryItem": "2752*1",
+      "literal_GetItem": "1,2754",
+      "literal_Warp": "1,800.29.15",
+      "literal_Quiznum": "1",
+      "literal_Answer": "7",
+      "literal_Level": "16"
+    },
+    "npc_equiz_01": {
+      "event_number": 44,
+      "event_type": "REQUEST",
+      "condition": "LV>0",
+      "literal_GetItem": "2753"
+    },
+    "npc_equiz_02": {
+      "event_number": 44,
+      "event_type": "ACCEPT",
+      "condition": "NOWEV=44&ITEM=2753",
+      "literal_GetPet": "14",
+      "literal_DelItem": "2753",
+      "literal_EndSetFlg": "44",
+      "secondary_event_number": 47,
+      "secondary_condition": "LV>0&ENDEV=44&PET=77-12&ITEM!=2759&ITEM!=2753",
+      "secondary_GetItem": "2753"
+    },
+    "npc_equiz_03": {
+      "source_conditions": [
+        "LV>69&ITEM=2754",
+        "LV>49&ITEM=2754",
+        "LV>29&ITEM=2754"
+      ],
+      "reward_branch_nonempty_item_counts": [
+        12,
+        20,
+        17
+      ],
+      "original_highest_branch_empty_token_count": 1,
+      "total_nonempty_reward_ID_occurrences": 49,
+      "all_49_ID_occurrences_present_in_original_itemset": true,
+      "literal_DelItem": "2754"
+    },
+    "npc_equiz_04": {
+      "event_number": 47,
+      "event_type": "ACCEPT",
+      "condition": "ENDEV=44&NOWEV=47&ITEM=2759",
+      "literal_GetPet": "351",
+      "literal_DelItem": "2759",
+      "literal_EndSetFlg": "47"
+    }
+  },
+  "separate_unjoined_source": {
+    "path": "racequiz.txt",
+    "bytes": 3803,
+    "sha256": "429bc0b38fbb464dbcdcf6cb36fb74f3df59fe4be55c20f3598795cb15c95ddf",
+    "rar_crc32": "293ddc5f",
+    "question_answer_rows": 82,
+    "exact_direct_source_reference_in_inspected_quest_files": false,
+    "not_automatically_joined_to_quiz_master_chain": true
+  },
+  "limits": {
+    "original_runtime_gameplay_executed": false,
+    "pet14_or351_original_species_proven": false,
+    "original_GetPet_or_EndSetFlg_transaction_completion_proven": false,
+    "native_question_selection_and_reward_probability_proven": false,
+    "original_reward_empty_token_parser_behavior_proven": false,
+    "same_build_as_JSS1999_or_official_TW1_proven": false,
+    "quest_classified_permanent_or_timed_event_proven": false,
+    "original_world_entered": false,
+    "overall_progress_percent": null
+  },
+  "phase": {
+    "stage_A": "7_PARTIAL_2_OPEN",
+    "stage_B": "GATED",
+    "wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING"
+  },
+  "next": "O52 prioritize original visible world interaction or pet state with materially different source-complete evidence; stop quiz expansion until original runtime/parser or same-era official deployment evidence arrives."
+}
