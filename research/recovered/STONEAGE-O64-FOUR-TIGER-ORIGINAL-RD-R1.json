@@ -1,0 +1,142 @@
+{
+  "schema": "stoneage.o64.four_tiger_actual_original_pixel_source_receipt.r1",
+  "date": "2026-11-01",
+  "source_main_head": "4070400e93f714b64f977876e91378f822f09b19",
+  "source_main_tree": "0cb1a978d27fed13eb856c6c96f59a1059707564",
+  "untouched_current_blob": "20050acf279a01555ab06a381dfcdc936bd381a6",
+  "source_scope": "TW1_RETAIL_ORIGINAL_SPR_ADRN_REAL_SAP_PIXEL_MATERIAL_WITH_LATER_MIXED25_NAMED_TEMPLATE_JOIN_SOURCE_SEPARATED",
+  "private_source_bundle": {
+    "library_path": "/石器时代/StoneAge-TW1-original-runtime-and-native-observation-P3H.zip",
+    "bytes": 372626292,
+    "sha256": "3a4854adaebef056332cdbd7b1dc1c130c571b11704e3f199f53d03aa31cba24",
+    "zip_members": 379
+  },
+  "source_member_sha256": {
+    "adrn_1.bin": "47254c0ff904d363fb5c3c5297edf553c8eaf24cd933f346d8ce7aabed4155c8",
+    "real_1.bin": "408e6ee05c83354349691937da2ad8f7488ac10f65f07e6681b7d92cb1c9ed13",
+    "spr_1.bin": "53d5b2d40453a30fd1569637ebf0db7b3010542b00970ec83af0295a3b3ae31a",
+    "spradrn_1.bin": "275b64ff55667aec633a7e82e09d65c84141380521f0f2e64c9a28e0d3aa6c25",
+    "Palet_0.sap": "89709d906bbd9cd9f5c2b8e0bd993e2897a1c9136ada2e211109983bb3b06cbf",
+    "Palet_1.sap": "32870080c47537a59beaf770b6df7bd79820fd52a23825058460900494f0b4b0"
+  },
+  "source_validation": {
+    "whole_zip_sha256_verified": true,
+    "each_selected_member_sha256_verified": true,
+    "full_original_real_1_bin_byte_count_verified": 315842228,
+    "original_spr_adrn_group_to_frame_to_rd_directly_read": true,
+    "all_four_RD_decoded": true,
+    "rd_legacy_flag": 1,
+    "each_original_rd_dimension": [
+      48,
+      87
+    ],
+    "palette_candidate_init_original_SAP_source": true,
+    "private_pngs_created": 8,
+    "private_contact_sheet_visually_inspected": true,
+    "initial_decoder_regression_detected": "repeat count field read before value in first local attempt; corrected byte order to existing repository codec; rerun passed",
+    "original_runtime_palette_selection_verified": false
+  },
+  "original_resources": [
+    {
+      "original_spr_no": 100327,
+      "later_mixed25_name_literal": "新手貝魯卡",
+      "original_first_frame_bitmapno": 113019,
+      "original_real_offset": 269018810,
+      "original_rd_length": 2259,
+      "source_offset_xy": [
+        -23,
+        -58
+      ],
+      "dimensions": [
+        48,
+        87
+      ],
+      "rd_sha256": "8355f4a72272d7dec4f4f610b0a350432238b74f5a22c0d6514cd153b39ea580",
+      "decoded_indices_sha256": "0dd237c068c3eadf63d33017f78bc609d38aa8243b6e6408b36a7d9d77e5e372",
+      "original_palette_candidate_P0_png_sha256": "2299053cd9ddb038a32a5eff798473445b9059109b028deca64a22fee424b08e",
+      "original_palette_candidate_P1_png_sha256": "f68044d07fffc6b6e5e015d98dd840912efa2e741d51c2cd759c7437153d"
+    },
+    {
+      "original_spr_no": 100328,
+      "later_mixed25_name_literal": "新手貝魯伊卡",
+      "original_first_frame_bitmapno": 113267,
+      "original_real_offset": 269854399,
+      "original_rd_length": 2376,
+      "source_offset_xy": [
+        -23,
+        -58
+      ],
+      "dimensions": [
+        48,
+        87
+      ],
+      "rd_sha256": "0a13c7855a026d2c88dcee148a664d5b8575c1ca4c89b695485df2e55b7aa182",
+      "decoded_indices_sha256": "459ddddacf7c4cfed80e39570b51ad9fc17ff1ce93e7b301b930feb11e6b4d49",
+      "original_palette_candidate_P0_png_sha256": "165e8f8f12c141f1998634a21521459003d5013b41ac7ebcdfc7f526c3807e32",
+      "original_palette_candidate_P1_png_sha256": "1e96f8e89947422753bffa1d51618388c3228e81f85e4af43cde8cd96bc7b5cb"
+    },
+    {
+      "original_spr_no": 100329,
+      "later_mixed25_name_literal": "新手格魯西斯",
+      "original_first_frame_bitmapno": 113515,
+      "original_real_offset": 270713790,
+      "original_rd_length": 2264,
+      "source_offset_xy": [
+        -23,
+        -58
+      ],
+      "dimensions": [
+        48,
+        87
+      ],
+      "rd_sha256": "a979a7be63cc2639c51ad821e8c372e9cdd4f102365932b40bcd37632af5bb9a",
+      "decoded_indices_sha256": "388d90ecd8d9062ca48b4db8bfdaf82c490de8ded9d9df35dd5060f5ebf56d74",
+      "original_palette_candidate_P0_png_sha256": "6ce7f81a1dfe7818164a3c970e6d169bc8f90b344e0451a73b06da9db5e5ec10",
+      "original_palette_candidate_P1_png_sha256": "ee4de0cb5b87caa77b19e700519ab90e5edb360d30d20bccb2386200c7077743"
+    },
+    {
+      "original_spr_no": 100330,
+      "later_mixed25_name_literal": "新手金格薩貝魯",
+      "original_first_frame_bitmapno": 113763,
+      "original_real_offset": 271542300,
+      "original_rd_length": 2166,
+      "source_offset_xy": [
+        -23,
+        -58
+      ],
+      "dimensions": [
+        48,
+        87
+      ],
+      "rd_sha256": "3bf0001d61282211caf4c24204b3ae0183077301c6cedcd802a4cce319e29706",
+      "decoded_indices_sha256": "8f67b644fc733db68ac297a269cf90e8725e114c93dc87791aba41ad8aed5a39",
+      "original_palette_candidate_P0_png_sha256": "7b6610745a053c289a2fae986de14962d4bce94fb175c5c160527e0abb323248",
+      "original_palette_candidate_P1_png_sha256": "012b5564ed6b4dae83729db770f580e98107d5e7ab6817ae5f48795fdfd9038f"
+    }
+  ],
+  "private_output": {
+    "library_path": "/石器时代/StoneAge-O64-private-four-original-tiger-RD.zip",
+    "bytes": 99064,
+    "sha256": "fcd001785c53fe231e44190661d0948fba9d4fe90561fe8e62d7b2219d52ed7a",
+    "zip_members": 16,
+    "zip_member_crc_all_valid": true,
+    "post_library_download_same_sha256": true,
+    "original_pngs_in_public_git": false,
+    "contact_sheet_sha256": "b4638f86e7e789e650e3401d398065764ba06861dbf8f10f965a22edf21f7243"
+  },
+  "observed_visual_candidate_P1": [
+    "green",
+    "pale yellow",
+    "red",
+    "gold-yellow"
+  ],
+  "original_server_pet_persistence_proven": false,
+  "original_riding_unlocked": false,
+  "original_world_entered": false,
+  "stage_a": "7_PARTIAL_2_OPEN",
+  "stage_b": "GATED",
+  "wiki": "GATED",
+  "R79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null,
+  "next": "O65 bounded actual original pet animation motion visual inspection or another material gameplay-world seam; do not rework full decode helper"
+}
