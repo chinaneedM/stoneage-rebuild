@@ -63,7 +63,7 @@ class O75TeacherChefSourceBoundTests(unittest.TestCase):
                     "actual_original_same_build_deployment_confirmed", "earliest_JSS1999_or_TW10_gameplay_confirmed"):
             self.assertIs(r["limits"][key], False)
         self.assertIsNone(r["limits"]["overall_percent"])
-        self.assertEqual(r["limits"]["r79"], "PAUSED_NON_BLOCKING")
+        self.assertEqual(r["limits"]["R79"], "PAUSED_NON_BLOCKING")
 
 
 if __name__ == "__main__":
