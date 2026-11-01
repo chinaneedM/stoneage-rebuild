@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src blob:; style-src 'unsafe-inline'; script-src 'unsafe-inline'">
+<title>石器时代 · 原素材双场景观察 O55</title>
+<style>
+:root{color-scheme:dark;font-family:system-ui,-apple-system,"Noto Sans SC","Microsoft YaHei",sans-serif}
+*{box-sizing:border-box}body{margin:0;background:#111c23;color:#eef3f7}
+header{padding:18px clamp(16px,3vw,32px);border-bottom:1px solid #39505c}
+h1{font-size:1.3rem;margin:0 0 5px}header p,.subtle{color:#b6cad5;font-size:.91rem;line-height:1.55;margin:0}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:16px;max-width:1650px;margin:auto;padding:16px}
+.stage{min-height:420px;max-height:calc(100vh - 186px);overflow:auto;background:#0b141a;display:flex;align-items:flex-start;justify-content:center;border:1px solid #36505e;border-radius:8px}
+.stage img{display:block;max-width:none;height:auto;flex:none}
+.empty{padding:110px 25px;max-width:650px;text-align:center;line-height:1.8;color:#b6cad5}
+[hidden]{display:none!important}
+aside{border:1px solid #36505e;background:#192932;border-radius:8px;padding:16px;align-self:start}
+fieldset{border:0;padding:0;margin:0 0 18px}legend{font-weight:650;margin-bottom:8px}
+label.file{display:block;font-size:.88rem;margin-bottom:12px}input[type=file]{display:block;margin-top:6px;width:100%;font-size:.83rem;color:#cfe0ea}
+.status{font-size:.83rem;line-height:1.5;color:#aec5d2;margin:5px 0;overflow-wrap:anywhere}
+.status.ok{color:#90e7bd}.status.error{color:#ffb8ae}
+.controls{display:grid;gap:9px;grid-template-columns:1fr 1fr}
+button{padding:10px 5px;background:#2c5365;color:white;border:1px solid #5b8498;border-radius:6px;cursor:pointer;font:inherit;font-size:.9rem}
+button:disabled{opacity:.38;cursor:not-allowed}button[aria-pressed=true]{border-color:#a8eeef;background:#266976}
+.zoom{display:flex;align-items:center;gap:8px;margin:15px 0}.zoom label{white-space:nowrap}.zoom input{width:100%;accent-color:#91dae0}
+#scene-detail{font-size:.9rem;line-height:1.7;color:#d4e6ef;min-height:100px}
+.notice{border-top:1px solid #36505e;padding-top:13px;font-size:.81rem;line-height:1.6;color:#b9ced8}
+@media(max-width:800px){.layout{grid-template-columns:1fr}.stage{min-height:300px;max-height:62vh}aside{order:-1}}
+</style>
+</head>
+<body>
+<header>
+<h1>石器时代 · 原素材双场景观察 O55</h1>
+<p>只读原图候选 · 离线 SHA-256 验证 · 人工切换地图 · 不执行原游戏、不模拟原生传送</p>
+</header>
+<div class="layout">
+<main class="stage" id="stage" aria-label="原素材候选画面">
+<div class="empty" id="empty">从右侧选择保存的两张原图 PNG。验证通过后，直接观察村庄走廊和宠物店内部的真实来源图形像素。这里不推断原版人物移动或碰撞。</div>
+<img id="scene-image" alt="" hidden>
+</main>
+<aside>
+<fieldset><legend>1. 选择本地原图（不会上传）</legend>
+<label class="file">地图 1000 · 村庄走廊
+<input id="file-1000" type="file" accept="image/png,.png" aria-describedby="status-1000"></label>
+<p class="status" id="status-1000" role="status">等待 O54-world.png（1744 × 1507）</p>
+<label class="file">地图 1003 · 宠物店内部
+<input id="file-1003" type="file" accept="image/png,.png" aria-describedby="status-1003"></label>
+<p class="status" id="status-1003" role="status">等待 map1003-combined-palette1-candidate.png（695 × 665）</p>
+</fieldset>
+<fieldset><legend>2. 查看场景</legend>
+<div class="controls">
+<button id="show-1000" disabled aria-pressed="false">村庄走廊 1000</button>
+<button id="show-1003" disabled aria-pressed="false">店内候选 1003</button>
+</div>
+<div class="zoom"><label for="zoom">缩放</label><input type="range" id="zoom" min="35" max="175" value="75" step="5"><output id="zoom-value" for="zoom">75%</output></div>
+<div id="scene-detail">尚未选择已验证的来源画面。</div>
+</fieldset>
+<div class="notice"><strong>来源与证据边界</strong><p>村庄画面由 mixed25 保存版地图1000与经 TW1 资源前缀见证的真实原图构成；室内画面由 mixed25 保存版1003地图与 TW1 真实图像候选构成，现代配色及绘制次序尚非原生认证。保存版中两入口静态配置为 1000(68,72)↔1003(15,21)、1000(69,72)↔1003(16,21)，本页切换按钮仅为现代观察器操作，<strong>不是</strong>传送或原地图事件格验证。官方同部署、原生碰撞、宠物托管、原始运行时 UI 仍未认证。</p><p>图片只存在于用户设备内存；页面无网络请求、第三方依赖或对外上传。原商业素材不随本工具公开分发。</p></div>
+</aside>
+</div>
+<script>
+'use strict';
+// Snapshot SHA-256 values are copied from existing public O54/O17 derived receipts.
+// Only these exact private candidate PNG bytes are admitted; a matching filename alone is insufficient.
+const sources = {
+  '1000': {
+    sha256: '01fa9248c3bce1f9a6fa5fb9edd541c8228d6abad7106d89342d2c2d15d91a67',
+    width: 1744, height: 1507,
+    description: '地图1000：保存版村庄走廊的原来源像素候选；已核窗口 [60,69]—[73,106]，含宠物店入口 (68,72)/(69,72)，但本图不含村民候选叠加。'
+  },
+  '1003': {
+    sha256: 'ae1511c3d68cd9335a66d9c91392bde767cd4629ff605c60f557b7f3d5bcc487',
+    width: 695, height: 665,
+    description: '地图1003：既有 O17 的 30×30 保存版室内地图与 TW1 原图候选合成。原配置的返回点 (15,21)/(16,21) 尚未在本轮以原 DAT 二次实读证明。'
+  }
+};
+const held = {'1000': null, '1003': null};
+const revisions = {'1000': 0, '1003': 0};
+let active = null;
+const $ = id => document.getElementById(id);
+const image = $('scene-image');
+const empty = $('empty');
+
+function hex(bytes) {
+  return [...new Uint8Array(bytes)].map(x => x.toString(16).padStart(2, '0')).join('');
+}
+function status(id, message, kind) {
+  const element = $('status-' + id);
+  element.textContent = message;
+  element.className = 'status' + (kind ? ' ' + kind : '');
+}
+function zoomImage() {
+  const percent = Number($('zoom').value);
+  $('zoom-value').textContent = percent + '%';
+  if (active && held[active]) image.style.width = Math.round(sources[active].width * percent / 100) + 'px';
+}
+function showScene(id) {
+  if (!held[id]) return;
+  active = id;
+  image.src = held[id];
+  image.alt = '地图' + id + ' 来源限定的原图候选';
+  image.hidden = false;
+  empty.hidden = true;
+  $('scene-detail').textContent = sources[id].description;
+  for (const k of Object.keys(sources)) $('show-' + k).setAttribute('aria-pressed', String(k === id));
+  zoomImage();
+}
+function clearScene(id) {
+  if (held[id]) URL.revokeObjectURL(held[id]);
+  held[id] = null;
+  $('show-' + id).disabled = true;
+  $('show-' + id).setAttribute('aria-pressed', 'false');
+  if (active === id) {
+    active = null;
+    image.removeAttribute('src');
+    image.hidden = true;
+    empty.hidden = false;
+    $('scene-detail').textContent = '该场景尚未通过校验，请选择保存的准确来源 PNG。';
+  }
+}
+async function admitFile(id, file) {
+  const revision = ++revisions[id];
+  clearScene(id);
+  if (!file) { status(id, '未选择文件', ''); return; }
+  status(id, '正在本机核验文件 SHA-256…', '');
+  try {
+    if (!globalThis.crypto || !crypto.subtle) throw new Error('当前环境未提供 SHA-256 校验，请使用支持 Web Crypto 的现代浏览器');
+    const buffer = await file.arrayBuffer();
+    const bytes = new Uint8Array(buffer);
+    const signature = [137,80,78,71,13,10,26,10];
+    if (bytes.length < 24 || signature.some((n,i) => bytes[i] !== n)) throw new Error('不是有效 PNG 文件头');
+    const view = new DataView(buffer);
+    if (view.getUint32(16) !== sources[id].width || view.getUint32(20) !== sources[id].height) throw new Error('PNG 尺寸与归档来源不符');
+    const actual = hex(await crypto.subtle.digest('SHA-256', buffer));
+    if (revisions[id] !== revision) return; // A newer file selection superseded this async read.
+    if (actual !== sources[id].sha256) throw new Error('文件 SHA-256 与 O17/O54 归档凭证不同，拒绝显示');
+    // No proprietary bytes leave memory or get committed to the repository.
+    held[id] = URL.createObjectURL(file);
+    $('show-' + id).disabled = false;
+    status(id, '通过：来源 PNG 的完整 SHA-256 与尺寸均吻合', 'ok');
+    if (active === null) showScene(id);
+  } catch (error) {
+    if (revisions[id] === revision) status(id, '拒绝：' + String(error.message || error), 'error');
+  }
+}
+for (const id of Object.keys(sources)) {
+  $('file-' + id).addEventListener('change', e => admitFile(id, e.target.files[0]));
+  $('show-' + id).addEventListener('click', () => showScene(id));
+}
+$('zoom').addEventListener('input', zoomImage);
+window.addEventListener('pagehide', () => { for (const id of Object.keys(sources)) clearScene(id); });
+</script>
+</body>
+</html>
