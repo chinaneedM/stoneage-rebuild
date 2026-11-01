@@ -1359,3 +1359,8 @@ The previously unconfirmed O43 private ZIP **was subsequently uploaded** to user
 ### 2026-11-01 — O70 四地区原委托、宠物提交与捕捉来源级联接
 
 [O70 任务管理 NPC → 47条未注释宠物/料理委托 → 原奖励配置 → O59两宠捕捉候选](docs/continuity/STONEAGE-O70-FOUR-VILLAGE-COMMISSION-20261101.md)：从同份原 mixed25 RAR 整SHA复核实际7原文件（四脚本、NPC创建、完整itemset与jobdaily），原CRC/SHA均同。四 NPC 静态在 floor1009/2009/3009/4009 的(18,12)，对应 **47条未注释委托=23宠物+24料理**，另有**注释停用块20064**与**条件×1/扣除×2不一致20025**。47委托书/料理材料/13候选随机道具数值ID在完整13254行×94列itemset中唯一；奖赏45条石币、2条随机道具列表。源同保存档 O59 的模板113/114正好匹配委托书20001的2+2只宠物与400石币配置，形成静态捕宠→交付来源链；不代表实战捕捉/交付/奖励成功。原活动/常驻分类、官方初代同服和实际地图路线均 OPEN。完整47条数字与哈希在[O70公共派生回执](research/recovered/STONEAGE-O70-FOUR-VILLAGE-COMMISSION-R1.json)，**原脚本/对白/道具表不入公开Git**。旧CURRENT字节不动，Stage A7PARTIAL+2OPEN、B/wiki gated、R79暂停、percent=null。**NEXT O71**：仅有合格同版地图/NPC素材时重建一条真实素材任务观察，否则转其他有实物游戏内容，不造无证任务模拟器。
+
+
+### 2026-11-01 — O71 floor1009 原地图/NPC/双入口静态路线与私人离线观察
+
+[O71 原1009.DAT、独立MAP、服务端LS2MAP与两份碰撞源的实物核验](docs/continuity/STONEAGE-O71-FLOOR1009-SOURCE-ROUTE-20261101.md)：同旧保存后代mixed25 RAR重新整SHA并取5源原字节（各CRC/SHA同），确认40×60地图、DAT与server地面图形2400/2400同、**物件层右边界x39有12格不同**，故静态可走DAT候选2141、server候选2153。O70委托NPC位于(18,12)，原warp_y.create证两处1009侧入口(10,25)/(10,26)；避免另一入口的源静态路线到NPC邻格分别20/21步。原完整mixed ADRN中的86张图块别名+NPC16200都在旧已证TW1公共前缀，**但本轮REAL原像素提取失败，不能称1009原画已恢复**。已制作**非原图的现代数据格网**、实际Chromium键盘路线/阻挡/切源验证，0JS/0网络，私人ZIP155868B上传Library并回下载完全同SHA。公开仅[数值与SHA回执](research/recovered/STONEAGE-O71-FLOOR1009-SOURCE-ROUTE-R1.json)，原商业资源未进Git；历史CURRENT原Blob未动，Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79 PAUSED、percent=null。**NEXT O72**仅在原图像资源全字节可校时补真实场景，否则轮换新领域，不扩泛用模拟器。
