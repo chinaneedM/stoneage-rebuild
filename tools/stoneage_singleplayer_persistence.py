@@ -51,6 +51,10 @@ def _plain_mapping(value: Mapping[str, Any], *, label: str) -> dict[str, Any]:
 def dump_persistent_state(
     state: PersistentPlayerState,
 ) -> dict[str, Any]:
+    # A default battle pet is a selection of an owned pet, never a free slot.
+    if state.default_pet_slot is not None and state.default_pet_slot not in state.pets:
+        raise ValueError("default pet slot must reference an owned pet")
+
     character = None
     if state.character is not None:
         character = _plain_mapping(state.character.fields, label="character")
@@ -270,6 +274,10 @@ def load_persistent_state(payload: Mapping[str, Any]) -> PersistentPlayerState:
             growth=growth,
         )
         state.pets[slot] = pet
+
+    # Reject a selection pointing at an empty roster slot before battle use.
+    if state.default_pet_slot is not None and state.default_pet_slot not in state.pets:
+        raise ValueError("default pet slot must reference an owned pet")
 
     return state
 

@@ -209,6 +209,33 @@ class SinglePlayerPersistenceTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "pet slot"):
             load_persistent_state(payload)
 
+    def test_default_pet_selection_cannot_point_to_an_empty_owned_slot(self):
+        # Slot 1 is in the legal 0..4 range, but this roster owns only slot 2.
+        state = make_state()
+        state.default_pet_slot = PetSlot(1)
+        with self.assertRaisesRegex(
+            ValueError, "default pet slot must reference an owned pet"
+        ):
+            dump_persistent_state(state)
+        with self.assertRaisesRegex(
+            ValueError, "default pet slot must reference an owned pet"
+        ):
+            encode_persistent_state(state)
+
+        payload = dump_persistent_state(make_state())
+        payload["default_pet_slot"] = 1
+        with self.assertRaisesRegex(
+            ValueError, "default pet slot must reference an owned pet"
+        ):
+            load_persistent_state(payload)
+
+        payload["pets"] = []
+        payload["default_pet_slot"] = 2
+        with self.assertRaisesRegex(
+            ValueError, "default pet slot must reference an owned pet"
+        ):
+            decode_persistent_state(__import__("json").dumps(payload))
+
     def test_duplicate_slots_are_rejected(self):
         payload = dump_persistent_state(make_state())
         payload["inventory"] = payload["inventory"] * 2
