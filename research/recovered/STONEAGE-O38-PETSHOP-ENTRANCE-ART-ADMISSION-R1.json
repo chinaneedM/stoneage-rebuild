@@ -1,0 +1,166 @@
+{
+  "schema": "stoneage.o38.source_qualified_petshop_entrance_two_tile_readiness.r1",
+  "date": "2026-11-01",
+  "base_main": "2bafef387dab832fc45047ef5b5c83c75e232ca9",
+  "preserved_current_blob": "20050acf279a01555ab06a381dfcdc936bd381a6",
+  "original_source_scope": "PRESERVED_MIXED25_ORIGINAL_MAP1000_AND_WARP_WITH_SEPARATELY_VERIFIED_TW10_SOURCE_ART_IN_EXISTING_PRIVATE_O35_OBSERVER",
+  "source": {
+    "original_O31_private_zip": {
+      "bytes": 2295731,
+      "sha256": "f14ee7c362e74bb82fabb867bee08729b41f9744208642fd689bf2730d10548f",
+      "full_archive_sha_verified": true,
+      "zip_CRC_verified": true
+    },
+    "original_O35_private_zip": {
+      "bytes": 2724452,
+      "sha256": "14fc7e1b344144bb513eb4feb8c95146de275a6188e1409174e190230ffb8cc6",
+      "full_archive_sha_verified": true,
+      "zip_CRC_verified": true
+    },
+    "original_map1000_DAT": {
+      "bytes": 153608,
+      "sha256": "94b19cb59d72b7b48da70d2741ba68516caad970297fd48ed11ef720fa3ea97e",
+      "dimensions": [
+        160,
+        160
+      ]
+    },
+    "original_warp_y_create": {
+      "bytes": 24588,
+      "sha256": "859ff2ed23baadb20382508874cd3a63e603b84c7205c6f5d8998229f4f4c8b1",
+      "O37_four_original_block_SHA_verified": true
+    },
+    "existing_O35_TW10_source_art_alias_count": 257,
+    "existing_O35_map1000_rendered_source_rect": [
+      48,
+      92,
+      72,
+      132
+    ]
+  },
+  "two_entrance_cells": [
+    {
+      "map": 1000,
+      "xy": [
+        68,
+        72
+      ],
+      "three_planes_u16": [
+        429,
+        0,
+        49155
+      ],
+      "source_graphic_alias": 429,
+      "TW10_observer_original_PNG_sha256": "06c23cb410dc63809f0b1e5e778d07b445420ad19f5722430757c263a751e784",
+      "PNG_natural_wh": [
+        64,
+        47
+      ],
+      "to_map": 1003,
+      "to_xy": [
+        15,
+        21
+      ]
+    },
+    {
+      "map": 1000,
+      "xy": [
+        69,
+        72
+      ],
+      "three_planes_u16": [
+        424,
+        0,
+        49155
+      ],
+      "source_graphic_alias": 424,
+      "TW10_observer_original_PNG_sha256": "e4fefd0f3d898d63c3b6fb60872582f3902ac196830e9672b19efabce3d3a587",
+      "PNG_natural_wh": [
+        64,
+        47
+      ],
+      "to_map": 1003,
+      "to_xy": [
+        16,
+        21
+      ]
+    }
+  ],
+  "source_warp_four_blocks": "research/recovered/STONEAGE-O37-PETSHOP-FOUR-WARP-SOURCE-R1.json",
+  "map1000_neighborhood_7x7": {
+    "bounds_inclusive": [
+      65,
+      69,
+      71,
+      75
+    ],
+    "cells": 49,
+    "nontrivial_original_graphic_occurrences": 52,
+    "existing_observer_graphic_occurrences": 23,
+    "missing_graphic_occurrences": 29,
+    "missing_distinct_aliases": 24,
+    "third_plane_counts": {
+      "49152": 47,
+      "49155": 2
+    }
+  },
+  "map1000_neighborhood_11x11": {
+    "bounds_inclusive": [
+      63,
+      67,
+      73,
+      77
+    ],
+    "cells": 121,
+    "nontrivial_original_graphic_occurrences": 129,
+    "existing_observer_graphic_occurrences": 90,
+    "missing_graphic_occurrences": 39,
+    "missing_distinct_aliases": 32,
+    "third_plane_counts": {
+      "49152": 119,
+      "49155": 2
+    }
+  },
+  "map1003_inventory_comparison": {
+    "previous_O17_source_graphic_aliases": 38,
+    "existing_O35_aliases_available": 31,
+    "missing_aliases": [
+      5014,
+      10153,
+      10154,
+      10909,
+      10910,
+      12618,
+      12834
+    ],
+    "original_map1003_DAT_reread_this_turn": false,
+    "source_1003_exit_cells_actual_u16_reread_this_turn": false
+  },
+  "private_delivery": {
+    "library_path": "/石器时代/StoneAge-O38-private-petshop-entrance-two-source-tiles.zip",
+    "bytes": 140106,
+    "sha256": "6c2b158e109379b5911bc95d5a4393b402abb6cf2164925be3e359a04c5f0f6f",
+    "roundtrip_full_archive_sha256_equal": true,
+    "three_member_CRC_pass": true,
+    "private_html_sha256": "ece10cdceb2ff53b5c7618460f5926620a2e5f86d079b37ea358dfcb39a9eff2",
+    "modern_Chromium_set_content_two_actual_source_images_loaded": true,
+    "modern_browser_JS_errors": 0,
+    "modern_browser_HTTP_requests": 0,
+    "file_URI_browser_navigation_test_success": false,
+    "actual_game_client_run": false,
+    "proprietary_original_asset_published_in_public_git": false
+  },
+  "evidence_limits": [
+    "The two isolated PNG source tiles are independently observed historical pixel assets in a modern page, not an original screenshot or full scene.",
+    "O35 modern rendered 1000 rect does not include either entrance y72; cannot silently extend display without more source art.",
+    "Original O17/O20 private bundles were listed but could not be raw-byte-materialized in this session; not proof the historical files are absent.",
+    "O17 prior report establishes 1003.DAT digest and 38 alias names; this unit did not read the complete original 1003.DAT or its two exit cells.",
+    "No original native collision/path, actual 1003 door transition, original client, mixed25 official deployment, or TW10 map membership has been proven."
+  ],
+  "stage_a": "7_PARTIAL_2_OPEN",
+  "stage_b": "GATED",
+  "wiki": "GATED",
+  "savedata_r79": "PAUSED_NON_BLOCKING",
+  "overall_completion_percent": null,
+  "next": "Rotate from petshop until exact O17 original 1003.DAT and missing source art are accessible as full SHA-qualified bytes; avoid rebuilding original scene with missing pixels or inventing native warp/collision."
+}
