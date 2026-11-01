@@ -1,0 +1,185 @@
+{
+  "schema": "stoneage.o69.original_riding_config_variant_crosscheck.r1",
+  "date": "2026-11-01",
+  "source_main_head": "52e74c002212f9b7d0891071f3236b6844334849",
+  "source_main_tree": "b3121098d3bd77d4d9812e9254ed453e05c1de48",
+  "preserved_historical_current_sha": "20050acf279a01555ab06a381dfcdc936bd381a6",
+  "preserved_historical_current_size_bytes": 2708031,
+  "source_class": "LATER_COMMUNITY_MIXED25_STATIC_SOURCE_NO_ORIGINAL_RUNTIME_NO_TW1_DEPLOYMENT",
+  "original_parent": {
+    "personal_library_path": "/stoneage-preserved-mixed25-original.rar",
+    "total_bytes": 361255180,
+    "sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+    "whole_sha256_checked_on_this_turn": true,
+    "archive_members": 7952
+  },
+  "files": [
+    {
+      "path": "data/npc/family/rider.arg",
+      "size_bytes": 554,
+      "sha256": "59386ccc0231c2e9ac837d092cbe5c407cf982284160beb2ed14335cdcde6831",
+      "rar_header_crc32": "068eef8b",
+      "rar_index": 4949,
+      "byte_sha_and_header_crc_matched": true
+    },
+    {
+      "path": "data/npc/family/rider.create",
+      "size_bytes": 188,
+      "sha256": "283dc39ecd58c8ba94b38e1ff911f44aeb6b5112825f464f9f020d1d16798933",
+      "rar_header_crc32": "50b72f20",
+      "rar_index": 4950,
+      "byte_sha_and_header_crc_matched": true
+    },
+    {
+      "path": "data/npc/family/riderman.conf",
+      "size_bytes": 3237,
+      "sha256": "1316fed9ee6af4dfe04ee519b3c98f399fe78ec880ecd7ad2af65bd7d99e6029",
+      "rar_header_crc32": "cf9c8f21",
+      "rar_index": 4951,
+      "byte_sha_and_header_crc_matched": true
+    },
+    {
+      "path": "data/npc/family/riderman2.conf",
+      "size_bytes": 2308,
+      "sha256": "e0972515cf96ebb0eb663811b6d84160c15ef91b99d000ad9c01e127e085f1fc",
+      "rar_header_crc32": "d183cf63",
+      "rar_index": 4954,
+      "byte_sha_and_header_crc_matched": true
+    },
+    {
+      "path": "data/npc/sa60/rider.arg",
+      "size_bytes": 464,
+      "sha256": "78992a712e11d29d6f366f9be59f4c27c8e85842dec0322adf26afddcd56d4e4",
+      "rar_header_crc32": "c9b7d365",
+      "rar_index": 6585,
+      "byte_sha_and_header_crc_matched": true
+    },
+    {
+      "path": "data/npc/sa60/rider.arg.bak",
+      "size_bytes": 554,
+      "sha256": "59386ccc0231c2e9ac837d092cbe5c407cf982284160beb2ed14335cdcde6831",
+      "rar_header_crc32": "068eef8b",
+      "rar_index": 6586,
+      "byte_sha_and_header_crc_matched": true
+    },
+    {
+      "path": "data/npc/sa60/rider.create",
+      "size_bytes": 186,
+      "sha256": "8f6a8e110aee852455a15e86e21c542872d1663a387d8941c8b5a5f4e5956846",
+      "rar_header_crc32": "23a648ee",
+      "rar_index": 6587,
+      "byte_sha_and_header_crc_matched": true
+    },
+    {
+      "path": "data/ride.txt",
+      "size_bytes": 287,
+      "sha256": "e737f79d22b040b64ef344df451126782d03c1206cc091d22e712a141695a808",
+      "rar_header_crc32": "f46647b0",
+      "rar_index": 6682,
+      "byte_sha_and_header_crc_matched": true
+    }
+  ],
+  "full_extracted_byte_count": 7778,
+  "cp950_round_trip_eight_files": true,
+  "static_ride_table": {
+    "number_of_rows": 13,
+    "fields_per_row": 6,
+    "nonnegative_second_column_values_first_two": [
+      100373,
+      100700
+    ],
+    "remaining_eleven_rows_have_minus_one_for_last_five_columns": true,
+    "minus_one_semantics": "OPEN"
+  },
+  "rider_menu_files": [
+    {
+      "file": "data/npc/family/riderman.conf",
+      "course_count": 4,
+      "displayed_pet_level_limits": [
+        40,
+        80,
+        120,
+        null
+      ],
+      "displayed_fees": [
+        5000,
+        10000,
+        15000,
+        20000
+      ],
+      "takegold_values": [
+        5000,
+        10000,
+        15000,
+        20000
+      ],
+      "letter_values": [
+        19005,
+        19006,
+        19007,
+        19008
+      ],
+      "unresolved_local_gotowin_targets": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "loyalty_requirement_display": 100
+    },
+    {
+      "file": "data/npc/family/riderman2.conf",
+      "course_count": 1,
+      "displayed_pet_level_limits": [
+        null
+      ],
+      "displayed_fees": [
+        20000
+      ],
+      "takegold_values": [
+        20000
+      ],
+      "unresolved_local_gotowin_targets": [
+        5,
+        9
+      ],
+      "loyalty_requirement_display": 100
+    }
+  ],
+  "rider_npc": {
+    "family_arg_byte_equal_to_sa60_arg_bak": true,
+    "family_npcpoint_count": 17,
+    "sa60_arg_npcpoint_count": 9,
+    "both_create_floorid": 1040,
+    "both_borncenter": [
+      23,
+      20
+    ],
+    "both_graphicname": 100374,
+    "both_creation_template": "npcgen_warpman",
+    "distinct_from_o67_shop_doors_template": "npcgen_warp",
+    "condition_trans_values": [
+      5,
+      6
+    ],
+    "item_literal_id": 20296,
+    "actual_additem_execution_confirmed": false
+  },
+  "evidence_boundaries": {
+    "source_file_already_in_R18_inventory": true,
+    "which_variant_loaded": "OPEN",
+    "runtime_fee_debit_proven": false,
+    "riding_course_applied_in_server": false,
+    "pet_eligibility_computed": false,
+    "commercial_same_deployment_proven": false,
+    "taiwan_1_0_original_behavior_proven": false,
+    "original_world_entered": false
+  },
+  "stage_A": "7_PARTIAL_2_OPEN",
+  "stage_B": "GATED",
+  "wiki": "GATED",
+  "R79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null,
+  "next": "O70: only reopen trainer loading and interaction with matching runtime evidence; otherwise rotate to source-backed concrete quest or capture observer, without building speculative rider simulator"
+}
