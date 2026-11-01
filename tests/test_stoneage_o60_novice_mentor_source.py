@@ -41,6 +41,8 @@ def check(d,r18):
         must(x["source_create_count"]==4 and x["window_line_keys"]==keys and x["window_line_count"]==9 and x["main_message_count"]==1)
         must(x["event_number"]==-1 and x["type"]=="MESSAGE" and x["event_condition_literal"]=="LV>0" and x["event_end_literal_present"] is True and x["static_transaction_action_present"] is False)
         must(len(x["source_window_line_sha256"])==9 and len(set(x["source_window_line_sha256"]))==9 and all(len(y)==64 and all(z in "0123456789abcdef" for z in y) for y in x["source_window_line_sha256"]))
+        if name=="battle":must(x["source_window_line_sha256"][6]=="6df118a98acba3bdc31d4561117aab093687489d1a1ac4fa4070ae2569d4b8cd")
+        if name=="pet":must(x["source_window_line_sha256"][3]=="fb0f59148f39c9e4c80ffd598cfdfdd3fe344f795b3886bdf2bc8ed865ddcb56")
         must(len(x["topic_summary_derived_from_script"])>=5)
     maps=d["map_cell_source_anchors"];must(len(maps)==2)
     must((maps[0]["floor"],maps[0]["npc_xy"],maps[0]["raw_three_planes"],maps[0]["original_map_dat_sha256"])==(1000,[48,62],[243,0,49152],"94b19cb59d72b7b48da70d2741ba68516caad970297fd48ed11ef720fa3ea97e"))
