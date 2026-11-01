@@ -8,6 +8,9 @@ class TestO63(unittest.TestCase):
   self.assertEqual(sum(x["original_tw10_animation_count"] for x in r["groups"]),224)
   self.assertEqual(sum(x["original_tw10_frame_positions"] for x in r["groups"]),r["sum_original_tw10_frame_positions"])
   self.assertTrue(all(x["original_tw10_distinct_nonzero_bitmap_keys"]>0 for x in r["groups"]))
+  self.assertEqual(r["original_tw10_distinct_four_group_bitmap_ids_indexed"],992)
+  self.assertTrue(r["original_tw10_all_four_group_bitmap_references_have_ADRN_metadata"])
+  self.assertTrue(all("original_tw10_first_bitmap_index" in x for g in r["groups"] for x in g["original_tw10_first_frame_direction0_by_action"]))
   self.assertEqual([x["saved_mixed25_index"] for x in r["groups"]],[301,302,303,304])
   self.assertTrue(all(len(x["original_tw10_first_frame_direction0_by_action"])>=1 for x in r["groups"]))
   for k in ("original_game_world_entered","original_sprites_published",

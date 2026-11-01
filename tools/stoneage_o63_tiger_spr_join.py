@@ -12,6 +12,7 @@ META=ROOT/"research/recovered/tw10-resource-metadata"
 O61=ROOT/"research/recovered/STONEAGE-O61-FOUR-TIGER-TRAINERS-SOURCE-R1.json"
 R40=ROOT/"research/recovered/STONEAGE-PRESERVED-PET-SPR-SOURCE-R40.json"
 PINS={
+ "ADRN-R1.tsv.gz":"c8669789de1cc6e3575c2412ed86354a49c2b3e90cd2854c1e7b2fc71b0fe9ea",
  "SPR-GROUP-R1.tsv.gz":"4db7809de4197eb90cca6dc04bda8550025e022c8232e2ebb902db0e9faf0175",
  "SPR-ANIMATION-R1.tsv.gz":"25f8039e6c6ca47d94289b269d5ff74a67fde999c6b6d4dbb08af297ddcaa567",
  "SPR-FRAME-R1.tsv.gz":"2bbfb2db4a866445085d98934fd475cbd72e034fe1155b2e17ae802ffdc5fe80",
@@ -40,7 +41,7 @@ def derive():
  gg=rows("SPR-GROUP-R1.tsv.gz")
  aa=rows("SPR-ANIMATION-R1.tsv.gz")
  ff=rows("SPR-FRAME-R1.tsv.gz")
- outputs=[]
+ outputs=[];all_bitmap_keys=set()
  for key in KEYS:
   picks=[(i,row) for i,row in enumerate(br) if row[1]==key]
   need(len(picks)==1,"unique same-archive spr index")
@@ -63,7 +64,9 @@ def derive():
    for f in fs:
     bitmap=int(f["bmp_no"])
     binary+=struct.pack("<IhhH",bitmap,int(f["pos_x"]),int(f["pos_y"]),int(f["sound_no"]))
-    if bitmap:distinct.add(bitmap)
+    if bitmap:
+     distinct.add(bitmap)
+     all_bitmap_keys.add(bitmap)
    need(len(binary)==int(row["end_offset"])-int(row["offset"]),"original animation range")
    seq.append(binary);n+=cnt
    if int(row["direction"])==0:
@@ -81,6 +84,23 @@ def derive():
     "original_tw10_animation_count":len(anim),"original_tw10_frame_positions":n,
     "original_tw10_distinct_nonzero_bitmap_keys":len(distinct),
     "original_tw10_first_frame_direction0_by_action":sorted(first,key=lambda x:x["action_code"])})
+ adr_raw=(META/"ADRN-R1.tsv.gz").read_bytes()
+ need(hashlib.sha256(adr_raw).hexdigest()==PINS["ADRN-R1.tsv.gz"],"original bitmap-index checksum")
+ with gzip.open(META/"ADRN-R1.tsv.gz","rt",newline="") as f:
+  found=[row for row in csv.DictReader(f,delimiter="\t") if int(row["bitmapno"]) in all_bitmap_keys]
+ need(len(found)==len(all_bitmap_keys),"all original bitmap IDs have unique ADRN records")
+ maps={int(z["bitmapno"]):z for z in found}
+ for group in outputs:
+  for act in group["original_tw10_first_frame_direction0_by_action"]:
+   n=act["first_bitmap_no"];need(n in maps and n>0,"first frame original RD reference")
+   z=maps[n]
+   act["original_tw10_first_bitmap_index"]={
+    "source_adrn_index":int(z["index"]),"real_offset":int(z["adder"]),
+    "real_length":int(z["size"]),"width":int(z["width"]),
+    "height":int(z["height"]),"xoff":int(z["xoff"]),"yoff":int(z["yoff"])
+   }
+   need(act["original_tw10_first_bitmap_index"]["real_length"]>0,"nonempty original RD record")
+  group["original_tw10_distinct_bitmap_metadata_in_index"]=group["original_tw10_distinct_nonzero_bitmap_keys"]
  total=sum(x["original_tw10_frame_positions"] for x in outputs)
  return {"schema":"stoneage.o63.four_tiger_source_spr_animation_join.r1",
   "source_scope":"MIXED25_SAME_PRESERVATION_SERVER_TO_SPR_INDEX_PLUS_TW10_INDEPENDENT_ORIGINAL_METADATA_REENCODE",
@@ -88,6 +108,8 @@ def derive():
   "source_git_blob_sha":{"o61":"e1b131962b9a830cabb672ea1d76d1bad817c960",
                          "r40":"5b49d54d7cff2d79d3610db7ca4a37108f1f9e03"},
   "archived_tw10_tsv_sha256":PINS,"groups":outputs,"sum_original_tw10_frame_positions":total,
+  "original_tw10_distinct_four_group_bitmap_ids_indexed":len(all_bitmap_keys),
+  "original_tw10_all_four_group_bitmap_references_have_ADRN_metadata":True,
   "same_archive_animation_index_membership_proven":True,
   "saved_mixed25_actual_four_spr_segment_content_read":False,
   "tw10_actual_original_spr_raw_files_read_this_run":False,
