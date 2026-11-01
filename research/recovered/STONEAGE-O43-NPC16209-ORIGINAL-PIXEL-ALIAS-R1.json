@@ -1,0 +1,118 @@
+{
+  "schema": "stoneage.o43.original_npc_16209_tw10_numeric_alias_pixel.r1",
+  "source_main_head_at_start": "a66a9bcaf6b2e7bc9f09f4a6d097cf6a6ddee641",
+  "source_main_tree_at_start": "6bbe43ff08b28dba9a6ace84e998a2f0a656be3c",
+  "source_scope": "TW1_VERIFIED_RETAIL_CLIENT_STATIC_BITMAP_NUMERIC_CANDIDATE_CROSS_SOURCE_O42_MIXED25_CONFIG",
+  "source_parent_zip": {
+    "bytes": 372626292,
+    "sha256": "3a4854adaebef056332cdbd7b1dc1c130c571b11704e3f199f53d03aa31cba24"
+  },
+  "source_files": {
+    "adrn_1.bin": {
+      "bytes": 10079680,
+      "sha256": "47254c0ff904d363fb5c3c5297edf553c8eaf24cd933f346d8ce7aabed4155c8"
+    },
+    "real_1.bin": {
+      "bytes": 315842228,
+      "sha256": "408e6ee05c83354349691937da2ad8f7488ac10f65f07e6681b7d92cb1c9ed13"
+    },
+    "Palet_0.sap": {
+      "bytes": 708,
+      "sha256": "89709d906bbd9cd9f5c2b8e0bd993e2897a1c9136ada2e211109983bb3b06cbf"
+    },
+    "Palet_1.sap": {
+      "bytes": 708,
+      "sha256": "32870080c47537a59beaf770b6df7bd79820fd52a23825058460900494f0b4b0"
+    }
+  },
+  "npc_config": {
+    "floor": 1000,
+    "xy": [
+      62,
+      115
+    ],
+    "graphicname": 16209,
+    "source_block_sha256": "6bf5f87189bacab77dec567444bf1c3efd51217e96dd4d07550ffb69f2734245",
+    "source": "later preserved mixed25 O42"
+  },
+  "tw1_adrn": {
+    "record_width": 80,
+    "records_scanned": 125996,
+    "alias_column_offset": 76,
+    "key": 16209,
+    "alias_matches": [
+      5929
+    ],
+    "all_matches_scanned": true
+  },
+  "alias_candidate": {
+    "bitmapno": 5929,
+    "index": 5929,
+    "source_record_sha256": "72c6b9bb151e01034ee53d4ee1662b1582dbf5260b3850791b9c6782ffd65f24",
+    "real_offset": 25099083,
+    "rd_bytes": 1937,
+    "rd_sha256": "48f1f20adc4a55fd17c4c1a6038567cbab8d5df8583dab33cd54bd8e5ce2dc23",
+    "width": 36,
+    "height": 84,
+    "xoff": -17,
+    "yoff": -74,
+    "indices_sha256": "b5f31818d3a04f34767db376ec0460569fb134ffff2862b7a8bfc08283773058",
+    "palet1_preview_png_sha256": "110f0b166908fe21bb9b3bdaf59da992ab257ba2df31e2aa278958e42dfe5bcb"
+  },
+  "literal_physical_control": {
+    "bitmapno": 16209,
+    "index": 16209,
+    "record_alias_value": 0,
+    "source_record_sha256": "62078de62ae945ef6d0921a289659f63f591cba96b5db1682f760b9d08451f03",
+    "real_offset": 48404388,
+    "rd_bytes": 1848,
+    "rd_sha256": "ac7348aa10552354c8afe99fc0bcf11756d0b156085306dc839e79e69e7d8093",
+    "width": 40,
+    "height": 88,
+    "xoff": -16,
+    "yoff": -71,
+    "indices_sha256": "488c767c7e2a2e76141718f0c46f3306102c2f56deb6a7e24ef157e3c93fd214",
+    "palet1_preview_png_sha256": "8d9fd782a096a69884d3e666e5f350aab904711ea771ebb27be91888c094c279"
+  },
+  "prior_mixed25_source_bridge": {
+    "derived_path": "research/recovered/STONEAGE-TW10-VS-25-RESOURCE-DIFF-R1.txt",
+    "sha256": "3b47bebc704e8a2245b6bb9ec366f3d76d797b54378142bf1618fe5058ff9b4c",
+    "adrn_common_prefix_records": 125996,
+    "real_common_prefix_bytes": 315842228,
+    "source_rehashed_mixed25_complete_this_unit": false,
+    "same_official_deployment_proven": false,
+    "native_bitmap_selector_proven": false
+  },
+  "independent_rd_decoder_match": true,
+  "private_observer": {
+    "html_bytes": 3950843,
+    "html_sha256": "1aded5f63f204803d0082435908a3c92ad709776cb624ed248290e418dd58034",
+    "actual_browser_checks": 14,
+    "browser_checks_total": 14,
+    "js_errors": 0,
+    "external_http": 0,
+    "file_scheme_navigation_certified": false,
+    "private_zip_name": "StoneAge-O43-original-NPC16209-actual-art-final.zip",
+    "private_zip_bytes": 3452831,
+    "private_zip_sha256": "644ed6a0085a7253093624d787476c6b460b47a11b8581f891aaff39031d9d4a",
+    "private_zip_members": 8,
+    "crc_all_pass": true,
+    "saved_to_user_library": true,
+    "library_path": "/石器时代/StoneAge-O43-original-NPC16209-actual-art-final.zip",
+    "library_download_roundtrip_sha_equal": true,
+    "library_download_zip_crc_pass": true,
+    "library_download_member_count": 8,
+    "earlier_O42_library_upload_remains_failed": true
+  },
+  "copyrighted_original_bytes_committed": false,
+  "original_executable_or_server_run": false,
+  "original_world_entered": false,
+  "actual_palette_choice_proven": false,
+  "original_npc_identity_proven": false,
+  "stage_a": "7_PARTIAL_2_OPEN",
+  "stage_b": "GATED",
+  "wiki": "GATED",
+  "r79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null,
+  "next": "O44 rotate to one sourced material NPC, pet, gameplay rule or map gap; do not iterate O43 static observer; native selector and same deployed build reopen on execution-grade evidence."
+}
