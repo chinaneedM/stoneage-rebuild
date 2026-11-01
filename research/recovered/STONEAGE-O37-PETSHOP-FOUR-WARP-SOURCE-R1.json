@@ -1,0 +1,120 @@
+{
+  "schema": "stoneage.o37.original_petshop_1003_warp_y_four_source_blocks.r1",
+  "date": "2026-11-01",
+  "base_main_head": "ecf150217d147a2595a8f98e220a7136f0218361",
+  "original_world_execution": false,
+  "source_qualification": "PRESERVED_MIXED25_PRIVATE_ARCHIVE_NOT_OFFICIAL_LIVE_DEPLOYMENT",
+  "source_zip": {
+    "relative_library_path": "/石器时代/StoneAge-O31-private-verified-five-warp-cells.zip",
+    "bytes": 2295731,
+    "sha256": "f14ee7c362e74bb82fabb867bee08729b41f9744208642fd689bf2730d10548f"
+  },
+  "original_warp_y_create": {
+    "bytes": 24588,
+    "sha256": "859ff2ed23baadb20382508874cd3a63e603b84c7205c6f5d8998229f4f4c8b1",
+    "parsed_all_npcgen_warp_blocks": 209
+  },
+  "original_map1000_dat": {
+    "bytes": 153608,
+    "sha256": "94b19cb59d72b7b48da70d2741ba68516caad970297fd48ed11ef720fa3ea97e",
+    "width": 160,
+    "height": 160
+  },
+  "four_petshop_original_warp_create_blocks": [
+    {
+      "source_map": 1000,
+      "source_corner": [
+        69,
+        72,
+        69,
+        72
+      ],
+      "destination_map": 1003,
+      "destination_xy": [
+        16,
+        21
+      ],
+      "source_byte_range_half_open": [
+        1287,
+        1393
+      ],
+      "block_sha256": "96fbd411857bf3b514779d52e67e9de7b778bdd9b0c18baae79de8408bc3a70b",
+      "source_1000_dat_original_u16": [
+        424,
+        0,
+        49155
+      ]
+    },
+    {
+      "source_map": 1003,
+      "source_corner": [
+        16,
+        21,
+        16,
+        21
+      ],
+      "destination_map": 1000,
+      "destination_xy": [
+        69,
+        72
+      ],
+      "source_byte_range_half_open": [
+        1404,
+        1510
+      ],
+      "block_sha256": "67582182bb8489775aa565e1592fc296d3df98cd8b07d1b2067a0c077708713a"
+    },
+    {
+      "source_map": 1000,
+      "source_corner": [
+        68,
+        72,
+        68,
+        72
+      ],
+      "destination_map": 1003,
+      "destination_xy": [
+        15,
+        21
+      ],
+      "source_byte_range_half_open": [
+        1520,
+        1626
+      ],
+      "block_sha256": "373966b0d4132402a60285a0f40c2354ce27cc3e644a280ea23432e7ad5fbceb",
+      "source_1000_dat_original_u16": [
+        429,
+        0,
+        49155
+      ]
+    },
+    {
+      "source_map": 1003,
+      "source_corner": [
+        15,
+        21,
+        15,
+        21
+      ],
+      "destination_map": 1000,
+      "destination_xy": [
+        68,
+        72
+      ],
+      "source_byte_range_half_open": [
+        1637,
+        1743
+      ],
+      "block_sha256": "043c291da15d0d0bc2ff1cd712454bd41f5dc9d3266a3b01cb73bf1f7a187d33"
+    }
+  ],
+  "evidence_limits": [
+    "Original 1003.DAT not independently reread in this work-unit; source-map1003 cells not DAT-correlated",
+    "No same-source map1003 collision proof or native walkability tested",
+    "No original client/server transition executed",
+    "Source group preserved mixed25; not proof of retail official mixed25/TW1 deployed identity",
+    "Static directional records do not prove actual native spawn or player reachability",
+    "No changes to previous O17-O20 source-qualified pet shop pixel and NPC studies"
+  ],
+  "next": "Only if original O17 1003.DAT becomes available and SHA-verified, inspect (15,21)/(16,21) event cells and optionally integrate these exact four gates into the existing private continuous world observer; otherwise rotate to another source-proven playable content gap."
+}
