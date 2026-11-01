@@ -1,0 +1,83 @@
+{
+  "schema": "stoneage.o39.original_tw1_battle_private_continuous_world_integration.r1",
+  "date": "2026-11-01",
+  "base_main_head": "a352da096b1a460cee82cff6c7579858900b5c33",
+  "base_main_tree": "484640aaa889542e8fe33c2e3c03b1127120b163",
+  "preserved_historical_current_blob": "20050acf279a01555ab06a381dfcdc936bd381a6",
+  "source_qualification": "REUSE_SEPARATELY_VERIFIED_TW10_SPR_SAB_AND_LATER_MIXED25_WORLD_STATIC_DATA_NOT_SAME_DEPLOYED_BUILD",
+  "source_O35_private_package": {
+    "bytes": 2724452,
+    "sha256": "14fc7e1b344144bb513eb4feb8c95146de275a6188e1409174e190230ffb8cc6",
+    "full_SHA_reverified": true,
+    "full_zip_crc_pass": true,
+    "original_observer_HTML_sha256": "ebe8d26dccfc0b03c4bbdaffe1f49b07b1f0d01545afc784d9619b1c20239466"
+  },
+  "source_O27_private_package": {
+    "bytes": 2408329,
+    "sha256": "b56ac08f39f7e937e682ba60025583cb430eb43536e1c42c71395a7dc5c31ed0",
+    "full_SHA_reverified": true,
+    "full_zip_crc_pass": true,
+    "original_battle_HTML_sha256": "a9497eb66a04b88db0238c8d1bca8885c525cc9bff8de439d405c7bc2c3a7cfa",
+    "previously_verified_TW10_SAB0_20x20_source_grid": true,
+    "previously_verified_two_SPR_groups": [
+      100297,
+      100298
+    ],
+    "original_source_durations_not_native_timing": true
+  },
+  "integrated_private_HTML": {
+    "bytes": 3943572,
+    "sha256": "b6cf28fb6de820e95900ff96f004cc5da377701d897bf8544fce400632e2e392",
+    "integration": "O35 world remains same; original complete O27 HTML bytes inserted as escaped srcdoc payload in a sandboxed opt-in iframe shown by native dialog",
+    "zero_new_server_emulation": true,
+    "source_battle_not_loaded_until_explicit_click": true,
+    "return_preserves_original_world_state": true,
+    "closing_deactivates_source_iframe": true
+  },
+  "actual_modern_Chromium": {
+    "tests_pass": 26,
+    "tests_total": 26,
+    "original_battle_image_loaded_native_dimensions": [
+      1350,
+      1220
+    ],
+    "both_original_SPR_candidate_frames_loaded": true,
+    "action2_and_frame_step_pass": true,
+    "both_pets_modern_action1_preview_pass": true,
+    "world_control_and_audio_preserved": true,
+    "world_map_1000_position_before_and_after_return": "(57,125)",
+    "modern_step_after_return": "(58,125)",
+    "escape_returns_without_reset": true,
+    "js_errors": 0,
+    "external_http_requests": 0,
+    "test_method": "Playwright Chromium with page.set_content of real private original-pixel integrated HTML",
+    "file_URI_double_click_proven": false,
+    "actual_original_client_executed": false,
+    "actual_original_battle_encounter_executed": false
+  },
+  "private_custody": {
+    "library_path": "/石器时代/StoneAge-O39-private-continuous-world-and-original-battle.zip",
+    "zip_bytes": 3221128,
+    "zip_sha256": "f21dc10903243aca4968cb3bdc646b3f3b7218632d597db358dafc52c145522e",
+    "member_count": 5,
+    "full_zip_member_crc_pass": true,
+    "library_uploaded_and_downloaded_back": true,
+    "roundtrip_full_zip_SHA_equal": true,
+    "private_integrated_HTML_and_PNG_not_committed_to_public_git": true,
+    "screenshot_sha256": "11a30670490ca68ee87ce0b35adccb338c58b24def1c6b59416efcfcbe73237a"
+  },
+  "limits": [
+    "The integrated O35 world is a modern source-pixel observation, not the native TW1 client game world.",
+    "Battle is opened only through an explicitly optional research button; original native random encounter rate and game map-to-battle transition are not sourced or executed.",
+    "Modern 160ms source animation preview is not native duration semantics or native turn order.",
+    "O27 original actors 100297/100298 are TW10 source graphics; later conserved enemy names do not certify matching retail deployment.",
+    "No damage, HP, EXP, owned-pet change, real map collision or server execution is claimed.",
+    "No further integration helpers or duplicate engines were added."
+  ],
+  "stage_a": "7_PARTIAL_2_OPEN",
+  "stage_b": "GATED",
+  "wiki": "GATED",
+  "TW10_R79": "PAUSED_NON_BLOCKING",
+  "overall_completion_percent": null,
+  "next": "O40: rotate to a new source-proven original game-world content/rule seam rather than continuing cosmetic integration of already observed laboratories; require specific original bytes before accepting native runtime conclusions."
+}
