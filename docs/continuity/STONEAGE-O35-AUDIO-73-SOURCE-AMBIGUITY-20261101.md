@@ -12,7 +12,7 @@
 
 三者完整SHA**互异**；原本已有的 O11、O12 报告**不算新发现**，本轮真正新增的是原声三实物重读、直接用户可试听的现代原图世界集成及实际浏览器播放验收。原字 `10000` 是否音效类未定，原声响应宠物／战斗／村庄／NPC事件**全部 OPEN**；没有原生态运行／撞墙／客户端声音回放证书，绝不声称`sae_23`就是“烏力”的声音。
 
-**版权/保管：** 私人4成员 ZIP `StoneAge-O35-private-original-sfx-candidate-witness.zip`，2724452B/SHA256 `14fc7e1b344144bb513eb4feb8c95146de275a6188e1409174e190230ffb8cc6`，本地 ZIP CRC 通过。上传个人 Library **两次返回 `container_session_expired`**，故目前不能声称已完成 Library 永久托管；本轮用户会话文件可以自行下载备份。仅公开这份派生元数据与[机器收据](../../research/recovered/STONEAGE-O35-ORIGINAL-SFX-73-AMBIGUITY-R1.json)，不存储原WAV、图像、完整 HTML、原游戏解码载荷。
+**版权/保管：** 私人4成员 ZIP `StoneAge-O35-private-original-sfx-candidate-witness.zip`，2724452B/SHA256 `14fc7e1b344144bb513eb4feb8c95146de275a6188e1409174e190230ffb8cc6`，本地 ZIP CRC 通过。上传个人 Library **起初两次返回 `container_session_expired`**；随后改用本轮已校验文件快照 ID `file_000000006e108207a6275a452fd28748` 提交，实际成功保存至 `/石器时代/StoneAge-O35-private-original-sfx-candidate-witness.zip`（Library ID `libfile_812687cc6f088191a552dade7d1ac827`）。本轮又从资料库完整下载 2724452B，整包 SHA256 与原始文件 `14fc7e1b344144bb513eb4feb8c95146de275a6188e1409174e190230ffb8cc6` 完全一致，ZIP **4个成员CRC全部通过**。保留早先错误，不将它们改写为成功。仅公开这份派生元数据与[机器收据](../../research/recovered/STONEAGE-O35-ORIGINAL-SFX-73-AMBIGUITY-R1.json)，不存储原WAV、图像、完整 HTML、原游戏解码载荷。
 
 本轮基于新核 `main` `f8fa09893e372c4254d5ac4821c29c46a6761c94` / tree `7161e6217fdb1e146660b7722fc786611038dc0d`，完整历史 `docs/CURRENT-STATE.md` Git blob `20050acf279a01555ab06a381dfcdc936bd381a6` / 2708031B 已读取，保持原文件，故此为专用追加记录。Stage A 7PARTIAL+2OPEN、Stage B/wiki GATED、R79暂停、总体复原百分比 null 不变。
 
