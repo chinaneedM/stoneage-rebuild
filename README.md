@@ -1364,3 +1364,8 @@ The previously unconfirmed O43 private ZIP **was subsequently uploaded** to user
 ### 2026-11-01 — O71 floor1009 原地图/NPC/双入口静态路线与私人离线观察
 
 [O71 原1009.DAT、独立MAP、服务端LS2MAP与两份碰撞源的实物核验](docs/continuity/STONEAGE-O71-FLOOR1009-SOURCE-ROUTE-20261101.md)：同旧保存后代mixed25 RAR重新整SHA并取5源原字节（各CRC/SHA同），确认40×60地图、DAT与server地面图形2400/2400同、**物件层右边界x39有12格不同**，故静态可走DAT候选2141、server候选2153。O70委托NPC位于(18,12)，原warp_y.create证两处1009侧入口(10,25)/(10,26)；避免另一入口的源静态路线到NPC邻格分别20/21步。原完整mixed ADRN中的86张图块别名+NPC16200都在旧已证TW1公共前缀，**但本轮REAL原像素提取失败，不能称1009原画已恢复**。已制作**非原图的现代数据格网**、实际Chromium键盘路线/阻挡/切源验证，0JS/0网络，私人ZIP155868B上传Library并回下载完全同SHA。公开仅[数值与SHA回执](research/recovered/STONEAGE-O71-FLOOR1009-SOURCE-ROUTE-R1.json)，原商业资源未进Git；历史CURRENT原Blob未动，Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79 PAUSED、percent=null。**NEXT O72**仅在原图像资源全字节可校时补真实场景，否则轮换新领域，不扩泛用模拟器。
+
+
+### 2026-11-02 — O72 委托房间1009实际原图像素成功恢复（现代静态观察候选）
+
+[O72 从已存台湾1.0完整REAL重建floor1009原图块](docs/continuity/STONEAGE-O72-FLOOR1009-ORIGINAL-PIXELS-20261102.md)：实取 mixed25 的1009.DAT（40×60）及私人 P3H 台湾1.0的完整ADRN/REAL/Palet_1，全文件SHA分别重新认证；当前再证全部125996条完整ADRN前缀与mixed25原ADRN逐字节相同，完整REAL前缀沿用此前已验来源报告，**未重跑后代763MB REAL比较**。地图85种图形+NPC16200一图，**86/86原RD真实图块**被两套独立解码器逐像素重放一致，总386898B源RD，地图**1034次原图块放置**（861地面+173物件），产生2071×1705的现代候选画面及原NPC邻域画面，已经本地实际目视。私人ZIP **11754955B/SHA256 4bc6c2ae8431d1563f3c4b9ac07e344e1e7d9c7b005e388c832ae07b0ecf4b45**、8成员CRC验证通过；尚未上传个人Library。公开仅[派生数值与哈希](research/recovered/STONEAGE-O72-FLOOR1009-ORIGINAL-PIXELS-R1.json)，原图/HTML/DAT/商业资源不入Git。**现代图像色表、绘制顺序、NPC叠加绝非原版截图/同部署鉴真或原客户端运行。** CURRENT原历史大文件字节不变，Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、overall_percent=null。**NEXT O73**：限实物原字节和可见内容差异，对其他2009/3009/4009委托房间作一次有界原画比较；若只有重复或缺件则立即转真实玩家交互/任务缺口，不扩泛用模拟工具。

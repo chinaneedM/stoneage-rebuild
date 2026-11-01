@@ -1,0 +1,120 @@
+{
+  "schema": "stoneage.o72.original_floor1009_source_pixel_candidate.r1",
+  "date": "2026-11-02",
+  "source_main_head": "a2dc1485de51897dd80e1a04294e9a2233397efa",
+  "source_main_tree": "b9cb5320caff2c3cd677a12e8bfb4f74a6c019f6",
+  "historical_current_blob_unchanged": "20050acf279a01555ab06a381dfcdc936bd381a6",
+  "source_scope": "MIXED25_SAVED_MAP_WITH_TW10_PREFIX_QUALIFIED_REAL_PIXEL_BYTES_NOT_SAME_DEPLOYED_GAME",
+  "qualified_originals": {
+    "preserved_mixed25_rar": {
+      "bytes": 361255180,
+      "sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+      "whole_file_reverified": true
+    },
+    "floor1009_client_dat": {
+      "bytes": 14408,
+      "sha256": "0767d518c476e551b6ee71d2fe705c0499d9e978ea610911861eba80c26bf11d",
+      "extracted_this_unit": true
+    },
+    "saved_scene03_source_archive": {
+      "bytes": 3356562,
+      "sha256": "fa296ad8e5afb9065fd8a7894fed4f783ad6f393901509f8491383c56a9ee285",
+      "whole_file_reverified": true
+    },
+    "saved_mixed25_adrn": {
+      "bytes": 18765120,
+      "sha256": "92d0137590d35a7a1f4fb11af3ad13bbc585813a4b0e1e3f933c397007fbff74",
+      "full_byte_prefix_against_tw1_reverified": true
+    },
+    "saved_tw10_p3h": {
+      "bytes": 372626292,
+      "sha256": "3a4854adaebef056332cdbd7b1dc1c130c571b11704e3f199f53d03aa31cba24",
+      "whole_file_reverified": true
+    },
+    "tw10_adrn": {
+      "bytes": 10079680,
+      "sha256": "47254c0ff904d363fb5c3c5297edf553c8eaf24cd933f346d8ce7aabed4155c8",
+      "full_file_reverified": true
+    },
+    "tw10_real": {
+      "bytes": 315842228,
+      "sha256": "408e6ee05c83354349691937da2ad8f7488ac10f65f07e6681b7d92cb1c9ed13",
+      "full_file_reverified": true
+    },
+    "tw10_palette_1": {
+      "bytes": 708,
+      "sha256": "32870080c47537a59beaf770b6df7bd79820fd52a23825058460900494f0b4b0",
+      "full_file_reverified": true
+    },
+    "prior_complete_real_prefix_report": {
+      "path": "research/recovered/STONEAGE-TW10-VS-25-RESOURCE-DIFF-R1.txt",
+      "sha256": "3b47bebc704e8a2245b6bb9ec366f3d76d797b54378142bf1618fe5058ff9b4c",
+      "prior_verified_mixed25_real_prefix_bytes": 315842228,
+      "reran_full_mixed25_real_comparison_this_unit": false
+    }
+  },
+  "original_floor1009": {
+    "dimensions": [
+      40,
+      60
+    ],
+    "cells": 2400,
+    "distinct_map_aliases_with_nonzero_resource_id": 85,
+    "original_creation_npc_alias": 16200,
+    "source_qualified_RD_blocks_read": 86,
+    "independent_legacy_RD_decoders_agreed": 86,
+    "original_RD_total_bytes": 386898,
+    "all_86_records_unique_within_early_shared_index_prefix": true,
+    "all_86_resource_spans_inside_verified_tw10_real": true,
+    "map_graphic_placements": 1034,
+    "placements_by_plane": {
+      "terrain": 861,
+      "objects": 173
+    },
+    "scene_candidate_pixel_size": [
+      2071,
+      1705
+    ],
+    "source_pixel_palette_indices_nontransparent": 221,
+    "reserved_palette_indexes_other_than_zero_observed": 0,
+    "composition": "MODERN_DIAGONAL_TERRAIN_THEN_OBJECTS_WITH_OPTIONAL_NPC_NO_NATIVE_RENDER_CLAIM",
+    "candidate_color": "TW10_PALETTE_1_BGR_WITH_ZERO_TRANSPARENCY_NOT_NATIVE_RUNTIME_SELECTION",
+    "npc_position_source_from_o70": [
+      18,
+      12
+    ],
+    "two_entry_static_routes_source_from_o71": [
+      20,
+      21
+    ]
+  },
+  "private_research_output": {
+    "filename": "StoneAge-O72-private-original-floor1009-pixel-observer.zip",
+    "size_bytes": 11754955,
+    "sha256": "4bc6c2ae8431d1563f3c4b9ac07e344e1e7d9c7b005e388c832ae07b0ecf4b45",
+    "members": 8,
+    "all_member_CRC_pass": true,
+    "full_86_rd_derived_manifest_sha256": "156eb702282140e47ba5ab3a2ec1b26175a76cbf0ec085940d288e1c47ed22de",
+    "candidate_full_map_png_sha256": "78326ca5aaf84878ec5629c82c151d636c2f33c766be62798140296246bdbb3d",
+    "candidate_full_map_with_npc_png_sha256": "66632f7bd84e3d87cdc79f906312b435653ba12784d68cbeb44ac8683136ded1",
+    "observed_original_pixels_locally": true,
+    "commercial_raw_pixels_publicly_published": false,
+    "library_uploaded": false
+  },
+  "evidence_limits": {
+    "original_client_process_executed": false,
+    "original_server_executed": false,
+    "native_palette_runtime_selection_confirmed": false,
+    "native_occlusion_and_draw_order_confirmed": false,
+    "native_npc_identity_and_interaction_confirmed": false,
+    "same_commercial_deployment_confirmed": false,
+    "original_client_screenshot_recovered": false,
+    "original_floor1009_art_pixels_recovered_in_modern_candidate": true,
+    "completion_percent": null,
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b": "GATED",
+    "wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING"
+  },
+  "next": "O73: bounded source-qualified visual comparison of other commission-room floors 2009/3009/4009 only for distinct new content, using already-preserved DAT/ADRN/REAL; otherwise rotate to a material player-action/quest gap. No general scene engine or native game claim."
+}
