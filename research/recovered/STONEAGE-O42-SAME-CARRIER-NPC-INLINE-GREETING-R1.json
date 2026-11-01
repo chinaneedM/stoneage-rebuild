@@ -1,0 +1,101 @@
+{
+  "schema": "stoneage.o42.one_original_inline_npc_same_carrier_map_source.r1",
+  "source_scope": "LATER_PRESERVED_MIXED25_NOT_TW1_OR_JSS1999_DEPLOYED_PROOF",
+  "original_parent_claim_from_prior_custody": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+  "actual_private_retrievals": {
+    "O31_zip_sha256": "f14ee7c362e74bb82fabb867bee08729b41f9744208642fd689bf2730d10548f",
+    "SCENE22_zip_sha256": "7c6d717de639937f3fc0482907cf501afe52ed600f70683b43a70920178110df",
+    "O41_zip_sha256": "7305a97d366ae154bcbbaefe92bdab7624148194359fe219e8f19900f00bbf99"
+  },
+  "original_file_pins": {
+    "1000.DAT": {
+      "bytes": 153608,
+      "sha256": "94b19cb59d72b7b48da70d2741ba68516caad970297fd48ed11ef720fa3ea97e"
+    },
+    "1000npc_m.create": {
+      "bytes": 4413,
+      "sha256": "c9b000a836b0aae3d88358097039f1beea020d92ba84f6ccc338bb54bc478240"
+    },
+    "npcgen.template": {
+      "bytes": 4950,
+      "sha256": "0c5a58d5e31cafd3b58ccc1fa88fee7d1f95d12c0b87b04db9f06fea3b2a4df3"
+    }
+  },
+  "original_npc": {
+    "floor": 1000,
+    "x": 62,
+    "y": 115,
+    "source_block_half_open_bytes": [
+      123,
+      278
+    ],
+    "source_block_sha256": "6bf5f87189bacab77dec567444bf1c3efd51217e96dd4d07550ffb69f2734245",
+    "raw_dat_plane_values": [
+      117,
+      0,
+      49152
+    ],
+    "raw_fields": {
+      "createnum": 1,
+      "time": 0,
+      "dir": 6,
+      "graphicname": 16209,
+      "ignoreinvincible": 1,
+      "template": "npcgen_man"
+    },
+    "template_functionset": "TownPeople",
+    "template_block_sha256": "5f24ae6f815471af9439ed4b824ae494006a8ba6fb7e4bac43b44b8ae5a89b29",
+    "name_cp950_sha256": "b66523220d17805c9e6b91cff10209eef1b1a4161fa2c3c17c09c6efa7a89959",
+    "name_characters": 4,
+    "inline_greeting_cp950_sha256": "b2bce68055b9c1c57a66ab778e9c24688d3cac57dd37cce393b224b473685808",
+    "greeting_characters": 10
+  },
+  "prior_O41_source_only_gates": [
+    [
+      63,
+      117,
+      49158
+    ],
+    [
+      63,
+      118,
+      49159
+    ]
+  ],
+  "modern_observer": {
+    "existing_map_bounds": [
+      54,
+      98,
+      66,
+      126
+    ],
+    "modern_only_proximity_manhattan_le": 1,
+    "private_html_bytes": 3945808,
+    "private_html_sha256": "5ecb6d4cdaca786b6dbe3b36ea7691ee5d6c8613fb144b4862880870c04265c6",
+    "local_Chromium_Playwright_set_content": {
+      "checks_passed": 14,
+      "checks_total": 14,
+      "js_errors": 0,
+      "external_http": 0
+    },
+    "file_url_direct_navigation": "BLOCKED_BY_ADMINISTRATOR_not_certified",
+    "private_zip_bytes": 3418600,
+    "private_zip_sha256": "b53fc9c70e151a39ed65c520d8596cae2475c061813dd142ae1f0f1e7430f82a",
+    "private_zip_library_upload": "FAILED_container_session_unavailable"
+  },
+  "strict_nonclaims": [
+    "The source creation and inline message are historical static configuration, not runtime execution or official deployed evidence.",
+    "Event 49152 is an unclassified original map word, not a proven universal NPC flag or collision semantics.",
+    "No original bitmap/SPR/animation selection for graphic 16209 was proven.",
+    "Original preserved mixed25 server configuration and TW1 visual assets are not authenticated as the same deployed build.",
+    "The one-tile greeting lookup is a modern private observer, not actual native NPC dialogue execution.",
+    "The large 361MB original parent RAR was NOT rehashed this turn; private derived source bundles were independently hashed and verified.",
+    "No original protected text/PNG/HTML was committed to the public repository."
+  ],
+  "stage_a": "7_PARTIAL_2_OPEN",
+  "stage_b": "GATED",
+  "wiki": "GATED",
+  "r79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null,
+  "next": "O43: qualify one materially complete original NPC bitmap/graphic binding or sourced gameplay input; avoid adding another marker without source bytes. For 16209 require actual same-carrier graphic chain; 1011/1014 interiors still require original DAT/collision."
+}
