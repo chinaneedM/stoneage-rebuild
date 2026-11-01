@@ -1,0 +1,293 @@
+{
+  "schema": "stoneage.o60.four_village_two_novice_teaching_scripts_and_map_cell_anchor.r1",
+  "date": "2026-11-01",
+  "source_scope": "PRESERVED_MIXED25_SA60_SUBTREE_STATIC_CONTENT_LATER_PERIOD_NOT_JSS1999_TW10_OFFICIAL_DEPLOYMENT",
+  "remote_base": {
+    "head": "fd060b0a683f6b369866f634f6ab9deae06ac892",
+    "tree": "3f577e1482c5fc87f3dfaba773fd8061570f4318",
+    "current_blob": "20050acf279a01555ab06a381dfcdc936bd381a6",
+    "current_file_size_bytes": 2708031,
+    "preserved_unchanged": true
+  },
+  "private_archive": {
+    "bytes": 361255180,
+    "sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+    "read_whole_sha_verified_this_round": true
+  },
+  "private_original_file_receipts": {
+    "npc/sa60/newbie/newbie.create": {
+      "rar_index_zero_based": 6575,
+      "bytes": 1548,
+      "sha256": "761dc3d1ed885fb76b22af446331e5a0db6cf3e59a27cf2ab136a62a88d81d0b",
+      "rar_crc32": "3f411954"
+    },
+    "npc/sa60/newbie/fighter": {
+      "rar_index_zero_based": 6573,
+      "bytes": 1432,
+      "sha256": "5cba22d6c22387b1b28576ab09d59989c3068d44c82e964da753caf4f9252289",
+      "rar_crc32": "20da5958"
+    },
+    "npc/sa60/newbie/petmaster": {
+      "rar_index_zero_based": 6578,
+      "bytes": 1365,
+      "sha256": "04ba49ba514eb469b4c12085c6733cd73c281c6ca682c813c2e35748ab6ac1db",
+      "rar_crc32": "e63fc8d8"
+    }
+  },
+  "exact_creator_block_count": 8,
+  "all_creator_blocks_cp950_roundtrip": true,
+  "all_source_files_crc_sha_and_prior_R18_manifest_match": true,
+  "teacher_creations": [
+    {
+      "floor": 1000,
+      "xy": [
+        48,
+        62
+      ],
+      "graphicname": 16496,
+      "teacher": "battle",
+      "block_byte_range": [
+        47,
+        198
+      ],
+      "block_sha256": "26dafa17564a49647b6b06e5a0450c077cdfa858d985436e619dd67c483f595f"
+    },
+    {
+      "floor": 2000,
+      "xy": [
+        89,
+        79
+      ],
+      "graphicname": 16496,
+      "teacher": "battle",
+      "block_byte_range": [
+        236,
+        387
+      ],
+      "block_sha256": "a21686cd55acc659cfe6d5e8786221a0f654fccfbcbf2eb7c00d87fc81456942"
+    },
+    {
+      "floor": 3000,
+      "xy": [
+        97,
+        86
+      ],
+      "graphicname": 16496,
+      "teacher": "battle",
+      "block_byte_range": [
+        429,
+        580
+      ],
+      "block_sha256": "48fa8830df9e15c40f9ad543e0a77609915106cc228ca57afefbbcd7d1d1f16c"
+    },
+    {
+      "floor": 4000,
+      "xy": [
+        86,
+        61
+      ],
+      "graphicname": 16496,
+      "teacher": "battle",
+      "block_byte_range": [
+        622,
+        773
+      ],
+      "block_sha256": "3f5f1a1fa5f83dd743c8b1ba2a093a7d2f869f0a6b03aaafcdc4cf8baad4ccf1"
+    },
+    {
+      "floor": 1003,
+      "xy": [
+        19,
+        15
+      ],
+      "graphicname": 16122,
+      "teacher": "pet",
+      "block_byte_range": [
+        813,
+        966
+      ],
+      "block_sha256": "ed11e2add570813fe5109a3fd28102ab0e9a2922ce59e18aceff76daa001308b"
+    },
+    {
+      "floor": 2003,
+      "xy": [
+        11,
+        12
+      ],
+      "graphicname": 16127,
+      "teacher": "pet",
+      "block_byte_range": [
+        1006,
+        1159
+      ],
+      "block_sha256": "ede74e6f3a9a0e39a87d97f3666a1ce304a44420e8594dfdaaf847702e1fc73b"
+    },
+    {
+      "floor": 3003,
+      "xy": [
+        16,
+        19
+      ],
+      "graphicname": 16122,
+      "teacher": "pet",
+      "block_byte_range": [
+        1199,
+        1352
+      ],
+      "block_sha256": "8304e3dc90d2cb67f645ceafbb63ffb2e09461bb7b3e6e69e3ba62c9aa4de81d"
+    },
+    {
+      "floor": 4003,
+      "xy": [
+        14,
+        17
+      ],
+      "graphicname": 16122,
+      "teacher": "pet",
+      "block_byte_range": [
+        1394,
+        1547
+      ],
+      "block_sha256": "e045a67dc9e1b6353be66b7293a11e8719099c2c4865b1ca31a476519c38b6bb"
+    }
+  ],
+  "teacher_source_contracts": {
+    "battle": {
+      "path": "npc/sa60/newbie/fighter",
+      "source_template_pointer": "changeevent|file:sa60/newbie/fighter",
+      "source_create_count": 4,
+      "window_line_keys": [
+        "NomalWindowMsg",
+        "NomalWindowMsg1",
+        "NomalWindowMsg2",
+        "NomalWindowMsg3",
+        "NomalWindowMsg4",
+        "NomalWindowMsg5",
+        "NomalWindowMsg6",
+        "NomalWindowMsg7",
+        "NomalWindowMsg8"
+      ],
+      "window_line_count": 9,
+      "main_message_count": 1,
+      "event_number": -1,
+      "type": "MESSAGE",
+      "event_condition_literal": "LV>0",
+      "event_end_literal_present": true,
+      "source_window_line_sha256": [
+        "d6e6127924e81f1516f2327ea6f33041faa7c135e0c54b2f2cd12bc4f29c69d1",
+        "1336b7d65bef91e377beb8590f081caace5c3ec867f5bde2f82bd1367fe3d1ac",
+        "f7a494f25b37d4e2c4b505df1a95ebaef31f915bf2064be01a2511b1c4f3f946",
+        "3d1dac3a9914b683553f2b760ad0050c1970b72e8cefe009933e361e22c289b7",
+        "7dd9e8c1df40b52d9d3de461d75f502c7318ac83de728891ee71ea8b767a5ec1",
+        "ee023193fbf6b142d988b758bbecb542a5932451090611a93a2911054b0f84e3",
+        "6df118a98acba3bdc31d4561117aab093687489d1",
+        "bfd2c3d8ffcbc02e33282656e3def936904fb1eff9af03ca6dddcb8b930e0d79",
+        "2bfebc317b7ae7570c9dd0ca6404e75a20305fe5ef18aebc9f0960db24dc5303"
+      ],
+      "topic_summary_derived_from_script": [
+        "entering battle and inspecting enemy level",
+        "choosing to catch level-one wild pets",
+        "escaping stronger enemies and speed",
+        "pet cooperation in battle",
+        "elemental spirits via equipment",
+        "four elemental relationships and source-claimed stat tendencies"
+      ],
+      "static_transaction_action_present": false
+    },
+    "pet": {
+      "path": "npc/sa60/newbie/petmaster",
+      "source_template_pointer": "changeevent|file:sa60/newbie/petmaster",
+      "source_create_count": 4,
+      "window_line_keys": [
+        "NomalWindowMsg",
+        "NomalWindowMsg1",
+        "NomalWindowMsg2",
+        "NomalWindowMsg3",
+        "NomalWindowMsg4",
+        "NomalWindowMsg5",
+        "NomalWindowMsg6",
+        "NomalWindowMsg7",
+        "NomalWindowMsg8"
+      ],
+      "window_line_count": 9,
+      "main_message_count": 1,
+      "event_number": -1,
+      "type": "MESSAGE",
+      "event_condition_literal": "LV>0",
+      "event_end_literal_present": true,
+      "source_window_line_sha256": [
+        "0e127ef1bc67b78e75bcfaf1d833a9fc8e458c1b445753ebea3cf0ea030a824d",
+        "20f06a92302dc60b6053272128e4fb41e8eebfa2aff13561e78c5af051946ec3",
+        "2b953ee40001da45a47b8fe0453af43faa77e8dd7f99e0ed1cbf69c2095e2532",
+        "fb0f59148f39c9e4c80ffd598cfdfdd3fe344f795b3886bdf4bc2abd58a8639",
+        "ba9c55ab552b81292cd9e5e86f6b694b26772f80b31a9b9fda673e7159f4d6e5",
+        "f3d63d4f6971d8f54baf1966509785d57778411f8520e060c7f8a8ad61321a4c",
+        "d5deba36d77e34994a7956e6de63d2443ed3039fd4564444a8eb101b7b0580be",
+        "0ce7330d053ab8b4772e7ba29f2bd0ca0cb2558293301ead3c629588624735db",
+        "14df0ce0e6e6c841b6d15a863064bbb490fcdf290ae9a9f4d3d066c02293f97c"
+      ],
+      "topic_summary_derived_from_script": [
+        "pets as combat partners",
+        "low loyalty may make pets disobey or flee",
+        "death may reduce loyalty",
+        "leveling and pet-consumed items as reported loyalty recovery",
+        "cooking processing and repair abilities",
+        "pet shop trainers differ in skill lists and some skills are pet-specific",
+        "recommendation to raise captured level-one pet"
+      ],
+      "static_transaction_action_present": false
+    }
+  },
+  "map_cell_source_anchors": [
+    {
+      "floor": 1000,
+      "npc_xy": [
+        48,
+        62
+      ],
+      "raw_three_planes": [
+        243,
+        0,
+        49152
+      ],
+      "original_map_dat_bytes": 153608,
+      "original_map_dat_sha256": "94b19cb59d72b7b48da70d2741ba68516caad970297fd48ed11ef720fa3ea97e",
+      "origin": "O45_PRIVATE_WHOLE_SOURCE_1000_DAT_REVERIFIED_FULL_SHA_THIS_ROUND"
+    },
+    {
+      "floor": 1003,
+      "npc_xy": [
+        19,
+        15
+      ],
+      "raw_three_planes": [
+        5000,
+        0,
+        49152
+      ],
+      "original_map_dat_bytes": 5408,
+      "original_map_dat_sha256": "fc3037a1850c8baf06ad5874a4cb49ca5e13e9315c020f64c019417c33b694e6",
+      "origin": "O58_PRIVATE_MIXED25_1003_DAT_VERIFIED_PRIOR_AND_REREAD_THIS_ROUND"
+    }
+  ],
+  "boundaries": {
+    "script_file_presence_does_not_prove_setup_loaded": true,
+    "all_eight_npcs_appeared_in_original_game_unproven": true,
+    "display_window_order_or_ui_unproven": true,
+    "loyalty_threshold_or_growth_behavior_executed_unproven": true,
+    "battle_elemental_formula_executed_unproven": true,
+    "specific_training_shop_inventory_unproven": true,
+    "early_jss1999_or_tw10_source_proven": false,
+    "original_server_or_client_executed": false,
+    "original_game_world_entered": false,
+    "copyright_original_dialogue_or_map_published": false,
+    "overall_completion_percent": null
+  },
+  "phase": {
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b": "GATED",
+    "wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING"
+  },
+  "next": "O61 rotate to genuinely observed/qualified pet status transaction or new world content; do not reimplement mentor dialogue panels or invent loyalty thresholds."
+}

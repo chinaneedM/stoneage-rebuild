@@ -5,12 +5,16 @@ on:
       - 'research/recovered/STONEAGE-O24-TWO-TOWN-EVENT-SOURCE-R1.json'
       - 'tools/stoneage_o24_two_town_event.py'
       - 'tests/test_stoneage_o24_two_town_event.py'
+      - 'tests/test_stoneage_o60_novice_mentor_source.py'
+      - 'research/recovered/STONEAGE-O60-FOUR-VILLAGE-NOVICE-MENTORS-SOURCE-R1.json'
       - '.github/workflows/verify-stoneage-o24-two-town-event.yml'
   pull_request:
     paths:
       - 'research/recovered/STONEAGE-O24-TWO-TOWN-EVENT-SOURCE-R1.json'
       - 'tools/stoneage_o24_two_town_event.py'
       - 'tests/test_stoneage_o24_two_town_event.py'
+      - 'tests/test_stoneage_o60_novice_mentor_source.py'
+      - 'research/recovered/STONEAGE-O60-FOUR-VILLAGE-NOVICE-MENTORS-SOURCE-R1.json'
       - '.github/workflows/verify-stoneage-o24-two-town-event.yml'
 jobs:
   derived-only:
@@ -24,3 +28,4 @@ jobs:
         run: |
           python -m tools.stoneage_o24_two_town_event
           python -m unittest discover -s tests -p 'test_stoneage_o24_two_town_event.py' -v
+          python -m unittest discover -s tests -p 'test_stoneage_o60_novice_mentor_source.py' -v
