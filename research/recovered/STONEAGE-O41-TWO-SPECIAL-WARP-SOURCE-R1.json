@@ -1,0 +1,225 @@
+{
+  "schema": "stoneage.o41.two_special_event_original_warp_source_and_bounded_private_view.r1",
+  "date": "2026-11-01",
+  "base_main_head": "214704475c4d12e5636ad0c49cd084b71a1fbe3d",
+  "base_main_tree": "68dcd1223c714aa37fc7222da9bb20798feaeffc",
+  "preserved_current_git_blob": "20050acf279a01555ab06a381dfcdc936bd381a6",
+  "source_scope": "PRESERVED_MIXED25_WARP_CREATE_AND_1000_DAT_NOT_EARLY_OFFICIAL_TW10_WORLD_DEPLOYMENT",
+  "private_origins": {
+    "O31": {
+      "library": "/石器时代/StoneAge-O31-private-verified-five-warp-cells.zip",
+      "bytes": 2295731,
+      "sha256": "f14ee7c362e74bb82fabb867bee08729b41f9744208642fd689bf2730d10548f",
+      "crc_pass": true
+    },
+    "O39": {
+      "library": "/石器时代/StoneAge-O39-private-continuous-world-and-original-battle.zip",
+      "bytes": 3221128,
+      "sha256": "f21dc10903243aca4968cb3bdc646b3f3b7218632d597db358dafc52c145522e",
+      "crc_pass": true
+    }
+  },
+  "original_warp_y_create": {
+    "bytes": 24588,
+    "sha256": "859ff2ed23baadb20382508874cd3a63e603b84c7205c6f5d8998229f4f4c8b1",
+    "total_npcgen_warp_source_blocks": 209,
+    "original_floor1000_blocks": 22,
+    "old_O31_special_event_source_blocks_known": 2
+  },
+  "original_map1000_dat": {
+    "bytes": 153608,
+    "sha256": "94b19cb59d72b7b48da70d2741ba68516caad970297fd48ed11ef720fa3ea97e",
+    "size": [
+      160,
+      160
+    ],
+    "planes": 3,
+    "u16": "little_endian",
+    "offset_header_bytes": 8
+  },
+  "six_newly_source_qualified_special_door_blocks": [
+    {
+      "floor": 1000,
+      "from": [
+        63,
+        117
+      ],
+      "to": [
+        1011,
+        10,
+        15
+      ],
+      "bytes": [
+        4774,
+        4884
+      ],
+      "sha": "92eac4eae8a23826f8d37d0a500a7cb9fc3acba8374f1bbf9155df576c611725",
+      "original_map1000_planes": [
+        103,
+        0,
+        49158
+      ]
+    },
+    {
+      "floor": 1011,
+      "from": [
+        10,
+        15
+      ],
+      "to": [
+        1000,
+        63,
+        117
+      ],
+      "bytes": [
+        4895,
+        5002
+      ],
+      "sha": "e06b34dd7238417e59cf1243cbf1be185442a6085bd31c3a18dac77f39987207"
+    },
+    {
+      "floor": 1011,
+      "from": [
+        10,
+        16
+      ],
+      "to": [
+        1000,
+        63,
+        117
+      ],
+      "bytes": [
+        5012,
+        5119
+      ],
+      "sha": "8a44df3809f569a0bfd7076ec2428f2fc925461010e32c3c59ec85e917ebd4b3"
+    },
+    {
+      "floor": 1000,
+      "from": [
+        63,
+        118
+      ],
+      "to": [
+        1014,
+        10,
+        16
+      ],
+      "bytes": [
+        5129,
+        5239
+      ],
+      "sha": "542677fe88ed6aed482e1f865bd1f40c616d583ddfd66ee99df6d545a5e4da41",
+      "original_map1000_planes": [
+        103,
+        0,
+        49159
+      ]
+    },
+    {
+      "floor": 1014,
+      "from": [
+        10,
+        16
+      ],
+      "to": [
+        1000,
+        63,
+        118
+      ],
+      "bytes": [
+        5250,
+        5357
+      ],
+      "sha": "a361084fdb0822c1bc5ea9e7a1ca9af53717b879f0f8ae27ca46d14c914a889e"
+    },
+    {
+      "floor": 1014,
+      "from": [
+        10,
+        15
+      ],
+      "to": [
+        1000,
+        63,
+        118
+      ],
+      "bytes": [
+        5367,
+        5474
+      ],
+      "sha": "1a8335945fcb6c0d00f29f3769dcab1018371ea574ebb18854cf8132bf8be73e"
+    }
+  ],
+  "new_value": "Two previously unscoped original floor1000 door source cells with events 49158 and 49159, plus four same-parent return source blocks; O31 only previously stated aggregate two non-49155 blocks without locations, destinations, or modern observable stop.",
+  "previously_rendered_actual_source_tile": {
+    "id": 103,
+    "available_in_O39": true,
+    "source_map_1000_tile_parts_at_both": [
+      [
+        103,
+        0
+      ],
+      [
+        103,
+        0
+      ]
+    ],
+    "original_map_dat_clip": [
+      48,
+      92,
+      72,
+      132
+    ],
+    "modern_walk_bounds": [
+      54,
+      98,
+      66,
+      126
+    ],
+    "new_graphics_decoded_this_unit": 0
+  },
+  "private_observer": {
+    "library": "/石器时代/StoneAge-O41-private-two-special-warp-source-only-world.zip",
+    "zip_bytes": 3518188,
+    "sha256": "7305a97d366ae154bcbbaefe92bdab7624148194359fe219e8f19900f00bbf99",
+    "member_count": 5,
+    "zip_crc_pass": true,
+    "library_download_roundtrip_sha_equal": true,
+    "original_O39_page_preserved": true,
+    "one_small_explicit_source_only_lookup_without_new_engine": true,
+    "two_special_source_cells_walk_in_modern_view": true,
+    "existing_warp_data_unchanged": true,
+    "missing_targets_1011_1014_never_switched": true,
+    "browser": {
+      "type": "Chromium Playwright page.set_content with original embedded images",
+      "chromium": "144.0.7559.96",
+      "passed": 25,
+      "total": 25,
+      "js_errors": 0,
+      "external_http_requests": 0,
+      "observed_first_event": 49158,
+      "observed_second_event": 49159,
+      "original_battle_panel_regression_pass": true,
+      "original_shop_warp_roundtrip_regression_pass": true,
+      "original_audio_elements_preserved": true
+    },
+    "html_bytes": 3945049,
+    "html_sha256": "e0bdbe39a0b94687bbe516bad83c52d31f44f74061d083ea96f2832f2896ef41"
+  },
+  "strict_nonclaims": [
+    "Original source creation text is not native event execution or proof the server was actually deployed.",
+    "Events 49158/49159 at two cells do not authenticate a general event-code classification, only these two exact cells have source blocks.",
+    "Destination 1011 and 1014 original map DAT/LS2MAP and collisions not independently verified; no interior was drawn or entered.",
+    "Existing TW1 original pixels and later mixed25 source geometry have no established common same-release origin.",
+    "No game client, game engine, original server, original navigation/trigger, gameplay damage, task or inventory change executed.",
+    "O31 earlier aggregated two atypical event cells; do not count them again as two newly found source blocks, only the fully qualified 6-block joins and safe map observability are new.",
+    "No proprietary original game bytes, sprite PNG, dialogue, EXE or full private HTML committed to public Git."
+  ],
+  "stage_a": "7_PARTIAL_2_OPEN",
+  "stage_b": "GATED",
+  "wiki": "GATED",
+  "savedata_r79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null,
+  "next": "O42 rotate to other concrete original NPC/content/rule source when a complete verifiable material dependency exists; 1011/1014 actual destination pixels/collision reopen ONLY on original same-carrier DAT/LS2MAP/mapset bytes. Do not add more source-only UI without real gameplay content."
+}
