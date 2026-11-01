@@ -1354,3 +1354,8 @@ The previously unconfirmed O43 private ZIP **was subsequently uploaded** to user
 ### 2026-11-01 — O69 骑宠菜单与训练 NPC 原配置双候选来源界线
 
 [O69 从原混合保存包完整核验的八项静态骑宠来源](docs/continuity/STONEAGE-O69-RIDING-STATIC-SOURCE-20261101.md)：用户私人 RAR 再读整文件 SHA（361,255,180B），并实取已被 R18 库存包含的 8 个原配置/共 7,778B，各 CRC/SHA 全等。两份骑师菜单对照为 **4 档（Lv40/80/120/不限；5000/10000/15000/20000）** 与 **1 档特级/20000**；`ride.txt` 13 行六字段，另有 17/9 `NPCPOINT` 分歧、`.bak` 与另一个参数全字节一致。两 `rider.create` 引用 `npcgen_warpman`，不可等同 O67 `npcgen_warp`。课程文案、`takegold`、`AddItem` 都**不能当作已执行扣金、发奖或学骑宠的事实**，也没有确认哪份配置上线。 [公开哈希与字段数字回执](research/recovered/STONEAGE-O69-RIDING-STATIC-SOURCE-R1.json)；原文件未入公开 Git。历史 CURRENT 全文未改，Stage A7PARTIAL+2OPEN，B/wiki gated，R79 paused，percent=null。**NEXT O70**：有同构建运行证据才追骑师链，否则转有实物的任务/捕获场景，不建无证骑宠模拟器。
+
+
+### 2026-11-01 — O70 四地区原委托、宠物提交与捕捉来源级联接
+
+[O70 任务管理 NPC → 47条未注释宠物/料理委托 → 原奖励配置 → O59两宠捕捉候选](docs/continuity/STONEAGE-O70-FOUR-VILLAGE-COMMISSION-20261101.md)：从同份原 mixed25 RAR 整SHA复核实际7原文件（四脚本、NPC创建、完整itemset与jobdaily），原CRC/SHA均同。四 NPC 静态在 floor1009/2009/3009/4009 的(18,12)，对应 **47条未注释委托=23宠物+24料理**，另有**注释停用块20064**与**条件×1/扣除×2不一致20025**。47委托书/料理材料/13候选随机道具数值ID在完整13254行×94列itemset中唯一；奖赏45条石币、2条随机道具列表。源同保存档 O59 的模板113/114正好匹配委托书20001的2+2只宠物与400石币配置，形成静态捕宠→交付来源链；不代表实战捕捉/交付/奖励成功。原活动/常驻分类、官方初代同服和实际地图路线均 OPEN。完整47条数字与哈希在[O70公共派生回执](research/recovered/STONEAGE-O70-FOUR-VILLAGE-COMMISSION-R1.json)，**原脚本/对白/道具表不入公开Git**。旧CURRENT字节不动，Stage A7PARTIAL+2OPEN、B/wiki gated、R79暂停、percent=null。**NEXT O71**：仅有合格同版地图/NPC素材时重建一条真实素材任务观察，否则转其他有实物游戏内容，不造无证任务模拟器。

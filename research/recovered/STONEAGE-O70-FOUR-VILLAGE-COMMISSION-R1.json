@@ -1,0 +1,1483 @@
+{
+  "schema": "stoneage.o70.four_areas_original_commission_content.r1",
+  "date": "2026-11-01",
+  "evidence_class": "LATER_COMMUNITY_MIXED25_ARCHIVED_STATIC_SOURCE_NOT_TW1_JSS1999_OR_RUNNING_GAME",
+  "remote_base_main": "71c2d9535d4e8235bf244ce9e615e3d3c8d45632",
+  "remote_base_tree": "88cfb2598a4c7870a6be99d291a1143790b9fdb4",
+  "preserved_current": {
+    "size_bytes": 2708031,
+    "git_blob_sha": "20050acf279a01555ab06a381dfcdc936bd381a6",
+    "untouched": true
+  },
+  "original_archive": {
+    "private_library_path": "/stoneage-preserved-mixed25-original.rar",
+    "size_bytes": 361255180,
+    "sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+    "complete_bytes_SHA_reverified_in_this_unit": true
+  },
+  "sources": {
+    "mission.create": {
+      "bytes": 654,
+      "sha256": "a6b9ab5490f40ceabacf3f4328d01b7a24a9665ecd9bbfc694906ae9d3388c75",
+      "rar_crc32": "8010bae4"
+    },
+    "M_1000": {
+      "bytes": 3454,
+      "sha256": "e562e1ef3cf56031c49af5b5bc5b6a1a4e79947c867f687d3594be7a32e775d4",
+      "rar_crc32": "5b1b3d6e"
+    },
+    "M_2000": {
+      "bytes": 3377,
+      "sha256": "0497b452f1691814024d0a86bb5b892d9cf6b781a9a6d5ec0b2470bf33afd341",
+      "rar_crc32": "9937e447"
+    },
+    "M_3000": {
+      "bytes": 3255,
+      "sha256": "8628dce161b39632f93661db12ea135b86773c1ffaf932aa4b75508a347fe261",
+      "rar_crc32": "73394469"
+    },
+    "M_4000": {
+      "bytes": 3408,
+      "sha256": "1e47c21ad152af44c4f90b85e13b85a98dadbec845457d7b4de9d8a4cb471f1b",
+      "rar_crc32": "1e492086"
+    },
+    "itemset.txt": {
+      "bytes": 3392473,
+      "sha256": "a415e78f9aab2e5ea5ca92ecb7430253f7be1ba7c876d6b0bb6d067b1b466688",
+      "rar_crc32": "96397928"
+    },
+    "jobdaily.txt": {
+      "bytes": 7929,
+      "sha256": "5a1cb35c35b09ce78f83934a3ec5782918f2dc5cb5c9fa572618b2ecb36613bd",
+      "rar_crc32": "04a63e31"
+    }
+  },
+  "original_source_validation": {
+    "all_seven_members_fully_read": true,
+    "all_seven_crc32_equal_archive_header": true,
+    "cp950_roundtrip_all_seven": true,
+    "itemset_rows": 13254,
+    "itemset_cols_each": 94,
+    "item_id_zero_based_column": 16,
+    "all_47_source_ticket_ids_unique_in_itemset": true,
+    "all_sourced_recipe_material_ids_unique_in_itemset": true,
+    "all_sourced_random_item_ids_unique_in_itemset": true,
+    "event_block_counts_crosschecked_independent_regex": true
+  },
+  "manager_creations": [
+    {
+      "script": "M_1000",
+      "floor": 1009,
+      "npc_x": 18,
+      "npc_y": 12,
+      "graphic_name": 16200,
+      "script_role": "changeevent",
+      "source_creator": "data/npc/extra/event/mission.create"
+    },
+    {
+      "script": "M_2000",
+      "floor": 2009,
+      "npc_x": 18,
+      "npc_y": 12,
+      "graphic_name": 16200,
+      "script_role": "changeevent",
+      "source_creator": "data/npc/extra/event/mission.create"
+    },
+    {
+      "script": "M_3000",
+      "floor": 3009,
+      "npc_x": 18,
+      "npc_y": 12,
+      "graphic_name": 16200,
+      "script_role": "changeevent",
+      "source_creator": "data/npc/extra/event/mission.create"
+    },
+    {
+      "script": "M_4000",
+      "floor": 4009,
+      "npc_x": 18,
+      "npc_y": 12,
+      "graphic_name": 16200,
+      "script_role": "changeevent",
+      "source_creator": "data/npc/extra/event/mission.create"
+    }
+  ],
+  "totals": {
+    "commission_rows": 47,
+    "pet_rows": 23,
+    "cooking_rows": 24,
+    "random_item_reward_rows": 2,
+    "stone_config_reward_rows": 45,
+    "commented_out_records": 1
+  },
+  "area_totals": {
+    "1000": {
+      "floor": 1009,
+      "pet": 6,
+      "cooking": 6,
+      "total": 12
+    },
+    "2000": {
+      "floor": 2009,
+      "pet": 6,
+      "cooking": 6,
+      "total": 12
+    },
+    "3000": {
+      "floor": 3009,
+      "pet": 5,
+      "cooking": 6,
+      "total": 11
+    },
+    "4000": {
+      "floor": 4009,
+      "pet": 6,
+      "cooking": 6,
+      "total": 12
+    }
+  },
+  "exceptional_records": [
+    {
+      "script": "M_3000",
+      "ticket_id": 20064,
+      "state": "whole_event_block_source_comments_only",
+      "itemset_master_row": 12611,
+      "not_claimed_unavailable_in_other_files": true
+    },
+    {
+      "script": "M_1000",
+      "ticket_id": 20025,
+      "gate_ticket_required_count": 1,
+      "delitem_ticket_config_count": 2,
+      "do_not_auto_correct": true
+    }
+  ],
+  "o59_source_pair_join": {
+    "same_archived_source_parent": true,
+    "prior_public_o59_report_git_blob": "fa9a6f64e889d4ad4ac932f9ce1aa42d084847c5",
+    "encounter_floor": 100,
+    "encounter_area_xyxy": [
+      582,
+      399,
+      783,
+      560
+    ],
+    "wild_group_ids": [
+      88,
+      91
+    ],
+    "wild_enemy_ids": [
+      119,
+      122
+    ],
+    "wild_pet_template_ids": [
+      113,
+      114
+    ],
+    "enemy_petflags": [
+      1,
+      1
+    ],
+    "template_get_capture_modifiers_not_probabilities": [
+      11,
+      9
+    ],
+    "quest_manager_floor": 1009,
+    "quest_manager_coordinate": [
+      18,
+      12
+    ],
+    "pet_commission_ticket_id": 20001,
+    "pet_commission_master_row": 12548,
+    "required_pets": [
+      [
+        113,
+        2
+      ],
+      [
+        114,
+        2
+      ]
+    ],
+    "config_reward_stone": 400,
+    "pet_roster_max_five_slots_from_existing_model": true,
+    "four_needed_if_empty_slots": true,
+    "world_route_to_manager_confirmed": false,
+    "actual_battle_capture_confirmed": false,
+    "actual_pet_handover_confirmed": false
+  },
+  "source_quest_record_rows": [
+    {
+      "script": "M_1000",
+      "manager_floor": 1009,
+      "ticket_id": 20001,
+      "ticket_master_source_row": 12548,
+      "task_kind": "pet_handover",
+      "required_pets": [
+        [
+          113,
+          2
+        ],
+        [
+          114,
+          2
+        ]
+      ],
+      "required_cooking_items": [],
+      "ticket_count_in_gate": 1,
+      "ticket_count_in_delitem": 1,
+      "output": {
+        "type": "stone_source_value",
+        "amount": 400
+      },
+      "conditional_qty_mismatch": false
+    },
+    {
+      "script": "M_1000",
+      "manager_floor": 1009,
+      "ticket_id": 20002,
+      "ticket_master_source_row": 12549,
+      "task_kind": "pet_handover",
+      "required_pets": [
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "required_cooking_items": [],
+      "ticket_count_in_gate": 1,
+      "ticket_count_in_delitem": 1,
+      "output": {
+        "type": "stone_source_value",
+        "amount": 800
+      },
+      "conditional_qty_mismatch": false
+    },
+    {
+      "script": "M_1000",
+      "manager_floor": 1009,
+      "ticket_id": 20003,
+      "ticket_master_source_row": 12550,
+      "task_kind": "pet_handover",
+      "required_pets": [
+        [
+          72,
+          1
+        ],
+        [
+          74,
+          1
+        ]
+      ],
+      "required_cooking_items": [],
+      "ticket_count_in_gate": 1,
+      "ticket_count_in_delitem": 1,
+      "output": {
+        "type": "stone_source_value",
+        "amount": 1500
+      },
+      "conditional_qty_mismatch": false
+    },
+    {
+      "script": "M_1000",
+      "manager_floor": 1009,
+      "ticket_id": 20004,
+      "ticket_master_source_row": 12551,
+      "task_kind": "pet_handover",
+      "required_pets": [
+        [
+          63,
+          2
+        ],
+        [
+          64,
+          2
+        ]
+      ],
+      "required_cooking_items": [],
+      "ticket_count_in_gate": 1,
+      "ticket_count_in_delitem": 1,
+      "output": {
+        "type": "stone_source_value",
+        "amount": 3200
+      },
+      "conditional_qty_mismatch": false
+    },
+    {
+      "script": "M_1000",
+      "manager_floor": 1009,
+      "ticket_id": 20005,
+      "ticket_master_source_row": 12552,
+      "task_kind": "pet_handover",
+      "required_pets": [
+        [
+          51,
+          1
+        ],
+        [
+          52,
+          1
+        ],
+        [
+          53,
+          1
+        ],
+        [
+          54,
+          1
+        ]
+      ],
+      "required_cooking_items": [],
+      "ticket_count_in_gate": 1,
+      "ticket_count_in_delitem": 1,
+      "output": {
+        "type": "random_item_source_candidates",
+        "item_ids": [
+          13061,
+          13062,
+          13063,
+          13064,
+          13065,
+          13066,
+          13067,
+          13068,
+          13069,
+          13070,
+          13071,
+          13072,
+          13073
+        ]
+      },
+      "conditional_qty_mismatch": false
+    },
+    {
+      "script": "M_1000",
+      "manager_floor": 1009,
+      "ticket_id": 20006,
+      "ticket_master_source_row": 12553,
+      "task_kind": "pet_handover",
+      "required_pets": [
+        [
+          82,
+          1
+        ],
+        [
+          83,
+          1
+        ],
+        [
+          174,
+          1
+        ],
+        [
+          222,
+          1
+        ],
+        [
+          243,
+          1
+        ]
+      ],
+      "required_cooking_items": [],
+      "ticket_count_in_gate": 1,
+      "ticket_count_in_delitem": 1,
+      "output": {
+        "type": "stone_source_value",
+        "amount": 15000
+      },
+      "conditional_qty_mismatch": false
+    },
+    {
+      "script": "M_1000",
+      "manager_floor": 1009,
+      "ticket_id": 20021,
+      "ticket_master_source_row": 12568,
+      "task_kind": "cooking_handover",
+      "required_pets": [],
+      "required_cooking_items": [
+        [
+          12583,
+          5
+        ]
+      ],
+      "ticket_count_in_gate": 1,
+      "ticket_count_in_delitem": 1,
+      "output": {
+        "type": "stone_source_value",
+        "amount": 350
+      },
+      "conditional_qty_mismatch": false
+    },
+    {
+      "script": "M_1000",
+      "manager_floor": 1009,
+      "ticket_id": 20022,
+      "ticket_master_source_row": 12569,
+      "task_kind": "cooking_handover",
+      "required_pets": [],
+      "required_cooking_items": [
+        [
+          12636,
+          12
+        ]
+      ],
+      "ticket_count_in_gate": 1,
+      "ticket_count_in_delitem": 1,
+      "output": {
+        "type": "stone_source_value",
+        "amount": 800
+      },
+      "conditional_qty_mismatch": false
+    },
+    {
+      "script": "M_1000",
+      "manager_floor": 1009,
+      "ticket_id": 20023,
+      "ticket_master_source_row": 12570,
+      "task_kind": "cooking_handover",
+      "required_pets": [],
+      "required_cooking_items": [
+        [
+          12874,
+          1
+        ],
+        [
+          12875,
+          1
+        ],
+        [
+          12876,
+          1
+        ],
+        [
+          12877,
+          1
+        ],
+        [
+          12878,
+          1
+        ],
+        [
+          12879,
+          1
+        ]
+      ],
+      "ticket_count_in_gate": 1,
+      "ticket_count_in_delitem": 1,
+      "output": {
+        "type": "stone_source_value",
+        "amount": 1200
+      },
+      "conditional_qty_mismatch": false
+    },
+    {
+      "script": "M_1000",
+      "manager_floor": 1009,
+      "ticket_id": 20024,
+      "ticket_master_source_row": 12571,
+      "task_kind": "cooking_handover",
+      "required_pets": [],
+      "required_cooking_items": [
+        [
+          12643,
+          6
+        ]
+      ],
+      "ticket_count_in_gate": 1,
+      "ticket_count_in_delitem": 1,
+      "output": {
+        "type": "stone_source_value",
+        "amount": 2000
+      },
+      "conditional_qty_mismatch": false
+    },
+    {
+      "script": "M_1000",
+      "manager_floor": 1009,
+      "ticket_id": 20025,
+      "ticket_master_source_row": 12572,
+      "task_kind": "cooking_handover",
+      "required_pets": [],
+      "required_cooking_items": [
+        [
+          12667,
+          2
+        ],
+        [
+          12507,
+          2
+        ],
+        [
+          12849,
+          2
+        ]
+      ],
+      "ticket_count_in_gate": 1,
+      "ticket_count_in_delitem": 2,
+      "output": {
+        "type": "stone_source_value",
+        "amount": 2500
+      },
+      "conditional_qty_mismatch": true
+    },
+    {
+      "script": "M_1000",
+      "manager_floor": 1009,
+      "ticket_id": 20026,
+      "ticket_master_source_row": 12573,
+      "task_kind": "cooking_handover",
+      "required_pets": [],
+      "required_cooking_items": [
+        [
+          12927,
+          5
+        ]
+      ],
+      "ticket_count_in_gate": 1,
+      "ticket_count_in_delitem": 1,
+      "output": {
+        "type": "stone_source_value",
+        "amount": 4800
+      },
+      "conditional_qty_mismatch": false
+    },
+    {
+      "script": "M_2000",
+      "manager_floor": 2009,
+      "ticket_id": 20031,
+      "ticket_master_source_row": 12578,
+      "task_kind": "pet_handover",
+      "required_pets": [
+        [
+          1,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          212,
+          1
+        ],
+        [
+          213,
+          1
+        ]
+      ],
+      "required_cooking_items": [],
+      "ticket_count_in_gate": 1,
+      "ticket_count_in_delitem": 1,
+      "output": {
+        "type": "stone_source_value",
+        "amount": 500
+      },
+      "conditional_qty_mismatch": false
+    },
+    {
+      "script": "M_2000",
+      "manager_floor": 2009,
+      "ticket_id": 20032,
+      "ticket_master_source_row": 12579,
+      "task_kind": "pet_handover",
+      "required_pets": [
+        [
+          113,
+          2
+        ],
+        [
+          114,
+          2
+        ]
+      ],
+      "required_cooking_items": [],
+      "ticket_count_in_gate": 1,
+      "ticket_count_in_delitem": 1,
+      "output": {
+        "type": "stone_source_value",
+        "amount": 800
+      },
+      "conditional_qty_mismatch": false
+    },
+    {
+      "script": "M_2000",
+      "manager_floor": 2009,
+      "ticket_id": 20033,
+      "ticket_master_source_row": 12580,
+      "task_kind": "pet_handover",
+      "required_pets": [
+        [
+          41,
+          1
+        ],
+        [
+          42,
+          1
+        ]
+      ],
+      "required_cooking_items": [],
+      "ticket_count_in_gate": 1,
+      "ticket_count_in_delitem": 1,
+      "output": {
+        "type": "stone_source_value",
+        "amount": 1500
+      },
+      "conditional_qty_mismatch": false
+    },
+    {
+      "script": "M_2000",
+      "manager_floor": 2009,
+      "ticket_id": 20034,
+      "ticket_master_source_row": 12581,
+      "task_kind": "pet_handover",
+      "required_pets": [
+        [
+          11,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          291,
+          1
+        ],
+        [
+          294,
+          1
+        ]
+      ],
+      "required_cooking_items": [],
+      "ticket_count_in_gate": 1,
+      "ticket_count_in_delitem": 1,
+      "output": {
+        "type": "stone_source_value",
+        "amount": 3200
+      },
+      "conditional_qty_mismatch": false
+    },
+    {
+      "script": "M_2000",
+      "manager_floor": 2009,
+      "ticket_id": 20035,
+      "ticket_master_source_row": 12582,
+      "task_kind": "pet_handover",
+      "required_pets": [
+        [
+          111,
+          1
+        ],
+        [
+          112,
+          1
+        ],
+        [
+          113,
+          1
+        ],
+        [
+          114,
+          1
+        ]
+      ],
+      "required_cooking_items": [],
+      "ticket_count_in_gate": 1,
+      "ticket_count_in_delitem": 1,
+      "output": {
+        "type": "stone_source_value",
+        "amount": 4000
+      },
+      "conditional_qty_mismatch": false
+    },
+    {
+      "script": "M_2000",
+      "manager_floor": 2009,
+      "ticket_id": 20036,
+      "ticket_master_source_row": 12583,
+      "task_kind": "pet_handover",
+      "required_pets": [
+        [
+          81,
+          1
+        ],
+        [
+          332,
+          1
+        ],
+        [
+          44,
+          1
+        ],
+        [
+          223,
+          1
+        ],
+        [
+          242,
+          1
+        ]
+      ],
+      "required_cooking_items": [],
+      "ticket_count_in_gate": 1,
+      "ticket_count_in_delitem": 1,
+      "output": {
+        "type": "stone_source_value",
+        "amount": 15000
+      },
+      "conditional_qty_mismatch": false
+    },
+    {
+      "script": "M_2000",
+      "manager_floor": 2009,
+      "ticket_id": 20051,
+      "ticket_master_source_row": 12598,
+      "task_kind": "cooking_handover",
+      "required_pets": [],
+      "required_cooking_items": [
+        [
+          12582,
+          5
+        ]
+      ],
+      "ticket_count_in_gate": 1,
+      "ticket_count_in_delitem": 1,
+      "output": {
+        "type": "stone_source_value",
+        "amount": 350
+      },
+      "conditional_qty_mismatch": false
+    },
+    {
+      "script": "M_2000",
+      "manager_floor": 2009,
+      "ticket_id": 20052,
+      "ticket_master_source_row": 12599,
+      "task_kind": "cooking_handover",
+      "required_pets": [],
+      "required_cooking_items": [
+        [
+          12807,
+          1
+        ]
+      ],
+      "ticket_count_in_gate": 1,
+      "ticket_count_in_delitem": 1,
+      "output": {
+        "type": "stone_source_value",
+        "amount": 1000
+      },
+      "conditional_qty_mismatch": false
+    },
+    {
+      "script": "M_2000",
+      "manager_floor": 2009,
+      "ticket_id": 20053,
+      "ticket_master_source_row": 12600,
+      "task_kind": "cooking_handover",
+      "required_pets": [],
+      "required_cooking_items": [
+        [
+          12644,
+          5
+        ]
+      ],
+      "ticket_count_in_gate": 1,
+      "ticket_count_in_delitem": 1,
+      "output": {
+        "type": "stone_source_value",
+        "amount": 1300
+      },
+      "conditional_qty_mismatch": false
+    },
+    {
+      "script": "M_2000",
+      "manager_floor": 2009,
+      "ticket_id": 20054,
+      "ticket_master_source_row": 12601,
+      "task_kind": "cooking_handover",
+      "required_pets": [],
+      "required_cooking_items": [
+        [
+          12596,
+          1
+        ]
+      ],
+      "ticket_count_in_gate": 1,
+      "ticket_count_in_delitem": 1,
+      "output": {
+        "type": "stone_source_value",
+        "amount": 2400
+      },
+      "conditional_qty_mismatch": false
+    },
+    {
+      "script": "M_2000",
+      "manager_floor": 2009,
+      "ticket_id": 20055,
+      "ticket_master_source_row": 12602,
+      "task_kind": "cooking_handover",
+      "required_pets": [],
+      "required_cooking_items": [
+        [
+          12872,
+          4
+        ],
+        [
+          12884,
+          4
+        ],
+        [
+          12925,
+          4
+        ]
+      ],
+      "ticket_count_in_gate": 1,
+      "ticket_count_in_delitem": 1,
+      "output": {
+        "type": "stone_source_value",
+        "amount": 2500
+      },
+      "conditional_qty_mismatch": false
+    },
+    {
+      "script": "M_2000",
+      "manager_floor": 2009,
+      "ticket_id": 20056,
+      "ticket_master_source_row": 12603,
+      "task_kind": "cooking_handover",
+      "required_pets": [],
+      "required_cooking_items": [
+        [
+          12926,
+          4
+        ]
+      ],
+      "ticket_count_in_gate": 1,
+      "ticket_count_in_delitem": 1,
+      "output": {
+        "type": "stone_source_value",
+        "amount": 4800
+      },
+      "conditional_qty_mismatch": false
+    },
+    {
+      "script": "M_3000",
+      "manager_floor": 3009,
+      "ticket_id": 20061,
+      "ticket_master_source_row": 12608,
+      "task_kind": "pet_handover",
+      "required_pets": [
+        [
+          31,
+          2
+        ],
+        [
+          32,
+          2
+        ]
+      ],
+      "required_cooking_items": [],
+      "ticket_count_in_gate": 1,
+      "ticket_count_in_delitem": 1,
+      "output": {
+        "type": "stone_source_value",
+        "amount": 400
+      },
+      "conditional_qty_mismatch": false
+    },
+    {
+      "script": "M_3000",
+      "manager_floor": 3009,
+      "ticket_id": 20062,
+      "ticket_master_source_row": 12609,
+      "task_kind": "pet_handover",
+      "required_pets": [
+        [
+          62,
+          2
+        ],
+        [
+          33,
+          2
+        ]
+      ],
+      "required_cooking_items": [],
+      "ticket_count_in_gate": 1,
+      "ticket_count_in_delitem": 1,
+      "output": {
+        "type": "stone_source_value",
+        "amount": 800
+      },
+      "conditional_qty_mismatch": false
+    },
+    {
+      "script": "M_3000",
+      "manager_floor": 3009,
+      "ticket_id": 20063,
+      "ticket_master_source_row": 12610,
+      "task_kind": "pet_handover",
+      "required_pets": [
+        [
+          292,
+          2
+        ],
+        [
+          293,
+          2
+        ]
+      ],
+      "required_cooking_items": [],
+      "ticket_count_in_gate": 1,
+      "ticket_count_in_delitem": 1,
+      "output": {
+        "type": "stone_source_value",
+        "amount": 1500
+      },
+      "conditional_qty_mismatch": false
+    },
+    {
+      "script": "M_3000",
+      "manager_floor": 3009,
+      "ticket_id": 20065,
+      "ticket_master_source_row": 12612,
+      "task_kind": "pet_handover",
+      "required_pets": [
+        [
+          21,
+          1
+        ],
+        [
+          22,
+          1
+        ],
+        [
+          23,
+          1
+        ],
+        [
+          24,
+          1
+        ]
+      ],
+      "required_cooking_items": [],
+      "ticket_count_in_gate": 1,
+      "ticket_count_in_delitem": 1,
+      "output": {
+        "type": "stone_source_value",
+        "amount": 6000
+      },
+      "conditional_qty_mismatch": false
+    },
+    {
+      "script": "M_3000",
+      "manager_floor": 3009,
+      "ticket_id": 20066,
+      "ticket_master_source_row": 12613,
+      "task_kind": "pet_handover",
+      "required_pets": [
+        [
+          331,
+          1
+        ],
+        [
+          184,
+          1
+        ],
+        [
+          172,
+          1
+        ],
+        [
+          243,
+          1
+        ],
+        [
+          22,
+          1
+        ]
+      ],
+      "required_cooking_items": [],
+      "ticket_count_in_gate": 1,
+      "ticket_count_in_delitem": 1,
+      "output": {
+        "type": "stone_source_value",
+        "amount": 18000
+      },
+      "conditional_qty_mismatch": false
+    },
+    {
+      "script": "M_3000",
+      "manager_floor": 3009,
+      "ticket_id": 20081,
+      "ticket_master_source_row": 12628,
+      "task_kind": "cooking_handover",
+      "required_pets": [],
+      "required_cooking_items": [
+        [
+          12581,
+          5
+        ]
+      ],
+      "ticket_count_in_gate": 1,
+      "ticket_count_in_delitem": 1,
+      "output": {
+        "type": "stone_source_value",
+        "amount": 350
+      },
+      "conditional_qty_mismatch": false
+    },
+    {
+      "script": "M_3000",
+      "manager_floor": 3009,
+      "ticket_id": 20082,
+      "ticket_master_source_row": 12629,
+      "task_kind": "cooking_handover",
+      "required_pets": [],
+      "required_cooking_items": [
+        [
+          12646,
+          6
+        ]
+      ],
+      "ticket_count_in_gate": 1,
+      "ticket_count_in_delitem": 1,
+      "output": {
+        "type": "stone_source_value",
+        "amount": 800
+      },
+      "conditional_qty_mismatch": false
+    },
+    {
+      "script": "M_3000",
+      "manager_floor": 3009,
+      "ticket_id": 20083,
+      "ticket_master_source_row": 12630,
+      "task_kind": "cooking_handover",
+      "required_pets": [],
+      "required_cooking_items": [
+        [
+          12928,
+          10
+        ]
+      ],
+      "ticket_count_in_gate": 1,
+      "ticket_count_in_delitem": 1,
+      "output": {
+        "type": "stone_source_value",
+        "amount": 1300
+      },
+      "conditional_qty_mismatch": false
+    },
+    {
+      "script": "M_3000",
+      "manager_floor": 3009,
+      "ticket_id": 20084,
+      "ticket_master_source_row": 12631,
+      "task_kind": "cooking_handover",
+      "required_pets": [],
+      "required_cooking_items": [
+        [
+          12630,
+          12
+        ]
+      ],
+      "ticket_count_in_gate": 1,
+      "ticket_count_in_delitem": 1,
+      "output": {
+        "type": "stone_source_value",
+        "amount": 2200
+      },
+      "conditional_qty_mismatch": false
+    },
+    {
+      "script": "M_3000",
+      "manager_floor": 3009,
+      "ticket_id": 20085,
+      "ticket_master_source_row": 12632,
+      "task_kind": "cooking_handover",
+      "required_pets": [],
+      "required_cooking_items": [
+        [
+          12799,
+          2
+        ]
+      ],
+      "ticket_count_in_gate": 1,
+      "ticket_count_in_delitem": 1,
+      "output": {
+        "type": "stone_source_value",
+        "amount": 3000
+      },
+      "conditional_qty_mismatch": false
+    },
+    {
+      "script": "M_3000",
+      "manager_floor": 3009,
+      "ticket_id": 20086,
+      "ticket_master_source_row": 12633,
+      "task_kind": "cooking_handover",
+      "required_pets": [],
+      "required_cooking_items": [
+        [
+          12808,
+          3
+        ]
+      ],
+      "ticket_count_in_gate": 1,
+      "ticket_count_in_delitem": 1,
+      "output": {
+        "type": "stone_source_value",
+        "amount": 4800
+      },
+      "conditional_qty_mismatch": false
+    },
+    {
+      "script": "M_4000",
+      "manager_floor": 4009,
+      "ticket_id": 20091,
+      "ticket_master_source_row": 12638,
+      "task_kind": "pet_handover",
+      "required_pets": [
+        [
+          101,
+          2
+        ],
+        [
+          104,
+          2
+        ]
+      ],
+      "required_cooking_items": [],
+      "ticket_count_in_gate": 1,
+      "ticket_count_in_delitem": 1,
+      "output": {
+        "type": "stone_source_value",
+        "amount": 400
+      },
+      "conditional_qty_mismatch": false
+    },
+    {
+      "script": "M_4000",
+      "manager_floor": 4009,
+      "ticket_id": 20092,
+      "ticket_master_source_row": 12639,
+      "task_kind": "pet_handover",
+      "required_pets": [
+        [
+          31,
+          2
+        ],
+        [
+          32,
+          2
+        ]
+      ],
+      "required_cooking_items": [],
+      "ticket_count_in_gate": 1,
+      "ticket_count_in_delitem": 1,
+      "output": {
+        "type": "stone_source_value",
+        "amount": 800
+      },
+      "conditional_qty_mismatch": false
+    },
+    {
+      "script": "M_4000",
+      "manager_floor": 4009,
+      "ticket_id": 20093,
+      "ticket_master_source_row": 12640,
+      "task_kind": "pet_handover",
+      "required_pets": [
+        [
+          14,
+          2
+        ],
+        [
+          211,
+          2
+        ]
+      ],
+      "required_cooking_items": [],
+      "ticket_count_in_gate": 1,
+      "ticket_count_in_delitem": 1,
+      "output": {
+        "type": "stone_source_value",
+        "amount": 1500
+      },
+      "conditional_qty_mismatch": false
+    },
+    {
+      "script": "M_4000",
+      "manager_floor": 4009,
+      "ticket_id": 20094,
+      "ticket_master_source_row": 12641,
+      "task_kind": "pet_handover",
+      "required_pets": [
+        [
+          21,
+          2
+        ],
+        [
+          22,
+          2
+        ]
+      ],
+      "required_cooking_items": [],
+      "ticket_count_in_gate": 1,
+      "ticket_count_in_delitem": 1,
+      "output": {
+        "type": "stone_source_value",
+        "amount": 3500
+      },
+      "conditional_qty_mismatch": false
+    },
+    {
+      "script": "M_4000",
+      "manager_floor": 4009,
+      "ticket_id": 20095,
+      "ticket_master_source_row": 12642,
+      "task_kind": "pet_handover",
+      "required_pets": [
+        [
+          181,
+          1
+        ],
+        [
+          182,
+          1
+        ],
+        [
+          183,
+          1
+        ],
+        [
+          184,
+          1
+        ]
+      ],
+      "required_cooking_items": [],
+      "ticket_count_in_gate": 1,
+      "ticket_count_in_delitem": 1,
+      "output": {
+        "type": "random_item_source_candidates",
+        "item_ids": [
+          13061,
+          13062,
+          13063,
+          13064,
+          13065,
+          13066,
+          13067,
+          13068,
+          13069,
+          13070,
+          13071,
+          13072,
+          13073
+        ]
+      },
+      "conditional_qty_mismatch": false
+    },
+    {
+      "script": "M_4000",
+      "manager_floor": 4009,
+      "ticket_id": 20096,
+      "ticket_master_source_row": 12643,
+      "task_kind": "pet_handover",
+      "required_pets": [
+        [
+          332,
+          1
+        ],
+        [
+          43,
+          1
+        ],
+        [
+          172,
+          1
+        ],
+        [
+          242,
+          1
+        ],
+        [
+          183,
+          1
+        ]
+      ],
+      "required_cooking_items": [],
+      "ticket_count_in_gate": 1,
+      "ticket_count_in_delitem": 1,
+      "output": {
+        "type": "stone_source_value",
+        "amount": 18000
+      },
+      "conditional_qty_mismatch": false
+    },
+    {
+      "script": "M_4000",
+      "manager_floor": 4009,
+      "ticket_id": 20111,
+      "ticket_master_source_row": 12658,
+      "task_kind": "cooking_handover",
+      "required_pets": [],
+      "required_cooking_items": [
+        [
+          12580,
+          5
+        ]
+      ],
+      "ticket_count_in_gate": 1,
+      "ticket_count_in_delitem": 1,
+      "output": {
+        "type": "stone_source_value",
+        "amount": 350
+      },
+      "conditional_qty_mismatch": false
+    },
+    {
+      "script": "M_4000",
+      "manager_floor": 4009,
+      "ticket_id": 20112,
+      "ticket_master_source_row": 12659,
+      "task_kind": "cooking_handover",
+      "required_pets": [],
+      "required_cooking_items": [
+        [
+          12929,
+          5
+        ]
+      ],
+      "ticket_count_in_gate": 1,
+      "ticket_count_in_delitem": 1,
+      "output": {
+        "type": "stone_source_value",
+        "amount": 1000
+      },
+      "conditional_qty_mismatch": false
+    },
+    {
+      "script": "M_4000",
+      "manager_floor": 4009,
+      "ticket_id": 20113,
+      "ticket_master_source_row": 12660,
+      "task_kind": "cooking_handover",
+      "required_pets": [],
+      "required_cooking_items": [
+        [
+          12648,
+          6
+        ]
+      ],
+      "ticket_count_in_gate": 1,
+      "ticket_count_in_delitem": 1,
+      "output": {
+        "type": "stone_source_value",
+        "amount": 1400
+      },
+      "conditional_qty_mismatch": false
+    },
+    {
+      "script": "M_4000",
+      "manager_floor": 4009,
+      "ticket_id": 20114,
+      "ticket_master_source_row": 12661,
+      "task_kind": "cooking_handover",
+      "required_pets": [],
+      "required_cooking_items": [
+        [
+          12831,
+          2
+        ],
+        [
+          12833,
+          2
+        ],
+        [
+          12836,
+          2
+        ]
+      ],
+      "ticket_count_in_gate": 1,
+      "ticket_count_in_delitem": 1,
+      "output": {
+        "type": "stone_source_value",
+        "amount": 1600
+      },
+      "conditional_qty_mismatch": false
+    },
+    {
+      "script": "M_4000",
+      "manager_floor": 4009,
+      "ticket_id": 20115,
+      "ticket_master_source_row": 12662,
+      "task_kind": "cooking_handover",
+      "required_pets": [],
+      "required_cooking_items": [
+        [
+          12817,
+          5
+        ]
+      ],
+      "ticket_count_in_gate": 1,
+      "ticket_count_in_delitem": 1,
+      "output": {
+        "type": "stone_source_value",
+        "amount": 2500
+      },
+      "conditional_qty_mismatch": false
+    },
+    {
+      "script": "M_4000",
+      "manager_floor": 4009,
+      "ticket_id": 20116,
+      "ticket_master_source_row": 12663,
+      "task_kind": "cooking_handover",
+      "required_pets": [],
+      "required_cooking_items": [
+        [
+          12550,
+          3
+        ],
+        [
+          12562,
+          3
+        ],
+        [
+          12836,
+          3
+        ]
+      ],
+      "ticket_count_in_gate": 1,
+      "ticket_count_in_delitem": 1,
+      "output": {
+        "type": "stone_source_value",
+        "amount": 4800
+      },
+      "conditional_qty_mismatch": false
+    }
+  ],
+  "status_limits": {
+    "recovered_static_configuration_only": true,
+    "no_original_client_or_server_executed": true,
+    "no_original_world_entry": true,
+    "active_service_deployment_unproven": true,
+    "pet_handover_atomicity_unproven": true,
+    "random_reward_weights_unproven": true,
+    "commented_event_not_promoted_to_active": true,
+    "quantity_mismatch_kept_as_source": true,
+    "permanent_vs_activity_quest_kind": "OPEN",
+    "stage_A": "7_PARTIAL_2_OPEN",
+    "stage_B": "GATED",
+    "wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "next": "O71: only if qualified original map/NPC visual and player interaction evidence exists, observe one bounded manager hand-in route; otherwise rotate from this complete static quest matrix to other concrete domain."
+}
