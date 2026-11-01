@@ -1,0 +1,110 @@
+{
+  "schema": "stoneage.o40.original_tw10_native_battle_resource_path_static_join.r1",
+  "date": "2026-11-01",
+  "base_remote_head": "413c775740c682c4d4a43a42f30082b071a5640b",
+  "base_remote_tree": "95e4cd150bce69e08fe6b30a6f30bb136ad71701",
+  "preserved_current_blob": "20050acf279a01555ab06a381dfcdc936bd381a6",
+  "work_category": "NATIVE_CLIENT_EXECUTABLE_STATIC_RESOURCE_REFERENCES_NOT_NATIVE_BATTLE_EXECUTION",
+  "original_carrier": {
+    "library_path": "/石器时代/StoneAge-TW1-original-runtime-and-native-observation-P3H.zip",
+    "bytes": 372626292,
+    "sha256": "3a4854adaebef056332cdbd7b1dc1c130c571b11704e3f199f53d03aa31cba24",
+    "actual_full_SHA_verified_this_unit": true,
+    "all_379_archive_zip_CRC_members_valid": true,
+    "retail_scope": "PRESERVED_TW10_SOURCE_NOT_JSS1999_OR_CN182"
+  },
+  "native_game_executable": {
+    "path": "source/sa_3.exe",
+    "bytes": 425984,
+    "sha256": "cdab9ea049a98bbc96ce93eeaa8b63c688f0c0f0ad8b3183e79d75e47621441a",
+    "path_pattern": "data\\battleMap\\battleNNN.sab",
+    "matching_literals": 218,
+    "distinct_numeric_indices": 218,
+    "number_range_inclusive": [
+      0,
+      217
+    ],
+    "literal_numeric_order": "descending 217..0",
+    "first_occurrence_byte_offset": 345304,
+    "first_literal_number": 217,
+    "last_occurrence_byte_offset": 351852,
+    "last_literal_number": 0,
+    "matched_literal_sequence_joined_by_NUL_sha256": "6efee84317662c5b7381ccf9cb257f026c98ec2ba04b320262733b8faba84bcf",
+    "all_expected_original_sab_paths_matched": true,
+    "actual_open_file_call_for_each_literal_traced": false
+  },
+  "original_second_executable": {
+    "path": "source/StoneAge.exe",
+    "bytes": 409600,
+    "sha256": "9b280068063b4398e5c8901b881daa1f13576201e475efede3127b59cdad2867",
+    "relevant_static_occurrences": [
+      {
+        "label": "divideBattleFiles",
+        "byte_offset": 205407
+      },
+      {
+        "label": "data\\battletxt_*.txt",
+        "byte_offset": 206164
+      },
+      {
+        "label": "data\\battle_*.bin",
+        "byte_offset": 206188
+      },
+      {
+        "label": "BATTLETXT",
+        "byte_offset": 205788
+      },
+      {
+        "label": "BATTLEBIN",
+        "byte_offset": 205800
+      }
+    ],
+    "actual_updater_divide_routine_executed_this_turn": false,
+    "actual_call_site_resolved": false
+  },
+  "original_metadata": {
+    "path": "source/data/battletxt_1.txt",
+    "bytes": 5792,
+    "sha256": "5c4a38cc7c1f039e232611b5eac33514f67c4d8badbaf638ae9b852440237fc4",
+    "row_count": 233,
+    "sab_entries": 218,
+    "source_palette_entries": 15
+  },
+  "original_packed": {
+    "path": "source/data/battle_1.bin",
+    "bytes": 185892,
+    "sha256": "d99be6475982cf6098b90ff5dfd81ab275ec8c9271fa83daceb95e3fd4bb8859",
+    "all_233_indexed_SAB_SAP_records_exact_against_separately_bundled_original_files": true,
+    "battle_200_pack_offset": 160800,
+    "Palet_1_offset": 161604,
+    "Palet_15_offset": 171516,
+    "battle_201_pack_offset": 172224,
+    "palette_interleave_bytes": 10620,
+    "interleave_is_not_unclassified_data": true,
+    "previous_source": "docs/continuity/STONEAGE-O16-TW10-BATTLE-SAB-PALETTE-INTERLEAVE-20261031.md",
+    "already_known_no_new_map_count": true
+  },
+  "qualified_new_static_join": {
+    "compiled_game_literal_set_covers_exact_extracted_sab_set": true,
+    "secondary_executable_literal_patterns_name_packed_and_txt_sources": true,
+    "original_pack_record_map_covered_by_exact_battletxt": true,
+    "interpretation": "STATIC_SPLIT_FILE_SOURCE_REFERENCE_JOINS_EXISTING_O16_NATIVE_CARRIER",
+    "is_original_native_runtime_io_proof": false,
+    "source_gameplay_rules_new": 0,
+    "source_world_map_DAT_new": 0,
+    "source_battle_background_selection_rules_new": 0
+  },
+  "limits": [
+    "O16 previously established the complete 233-record interleaved archive; this work does not re-claim it as a discovery.",
+    "Executable string literals and pack index bytes do not demonstrate the exact native file call site, iteration order, original battle scene selection, action or damage execution.",
+    "The source client and later mixed25 game-world reconstruction are different provenance scopes.",
+    "No original copyrighted EXE, source SAB/SAP, audio or graphics are committed to the public repository.",
+    "This adds one static executable↔asset-path provenance link, not a new gameplay UI, new original resource, parser helper, or completion percent."
+  ],
+  "stage_a": "7_PARTIAL_2_OPEN",
+  "stage_b": "GATED",
+  "wiki": "GATED",
+  "savedata_R79": "PAUSED_NON_BLOCKING",
+  "overall_completion_percent": null,
+  "next": "O41: prioritize missing genuine world map DAT / NPC gameplay content or rule attribution from an independently available source; stop static battle asset path work unless a true native read trace would change an acceptance criterion."
+}
