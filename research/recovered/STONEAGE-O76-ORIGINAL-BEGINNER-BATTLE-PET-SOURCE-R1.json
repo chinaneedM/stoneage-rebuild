@@ -1,0 +1,216 @@
+{
+  "schema": "stoneage.o76.original_mixed25_beginner_battle_pet_guidance_source.r1",
+  "date": "2026-11-02",
+  "source_head": "01cb92bf77da377103c09f32c56e5d82913dacc6",
+  "source_tree": "08e69803883347a072f4292b7f994be87caedf12",
+  "preserved_current_blob": "20050acf279a01555ab06a381dfcdc936bd381a6",
+  "carrier": {
+    "private_library_path": "/stoneage-preserved-mixed25-original.rar",
+    "bytes": 361255180,
+    "sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+    "historical_role": "LATER_MIXED25_PRESERVED_SERVER_AND_CLIENT_NOT_CERTIFIED_OFFICIAL_RELEASE",
+    "actual_whole_archive_sha_verified": true,
+    "new_network_download": false
+  },
+  "inspected_members": [
+    {
+      "path": "gmsv/data/npc/sa60/newbie/newbie.create",
+      "bytes": 1548,
+      "sha256": "761dc3d1ed885fb76b22af446331e5a0db6cf3e59a27cf2ab136a62a88d81d0b",
+      "rar_crc32": "3f411954",
+      "original_rar_crc_matches_extracted_crc": true,
+      "cp950_byte_round_trip": true
+    },
+    {
+      "path": "gmsv/data/npc/sa60/newbie/newbie.create.bak",
+      "bytes": 6190,
+      "sha256": "fa83b8f14e355c757a2a27d2173d34941713c14b853886ea4aeff976d431d06d",
+      "rar_crc32": "1a6f79b2",
+      "original_rar_crc_matches_extracted_crc": true,
+      "cp950_byte_round_trip": true
+    },
+    {
+      "path": "gmsv/data/npc/sa60/newbie/fighter",
+      "bytes": 1432,
+      "sha256": "5cba22d6c22387b1b28576ab09d59989c3068d44c82e964da753caf4f9252289",
+      "rar_crc32": "20da5958",
+      "original_rar_crc_matches_extracted_crc": true,
+      "cp950_byte_round_trip": true
+    },
+    {
+      "path": "gmsv/data/npc/sa60/newbie/petmaster",
+      "bytes": 1365,
+      "sha256": "04ba49ba514eb469b4c12085c6733cd73c281c6ca682c813c2e35748ab6ac1db",
+      "rar_crc32": "e63fc8d8",
+      "original_rar_crc_matches_extracted_crc": true,
+      "cp950_byte_round_trip": true
+    },
+    {
+      "path": "gmsv/data/npc/sa60/newbie/newbie2.create",
+      "bytes": 1548,
+      "sha256": "31ef809c62f2cc208d0e5439796ee3a2e5466cda64e7561b7094248bf8a7455f",
+      "rar_crc32": "132d6beb",
+      "original_rar_crc_matches_extracted_crc": true,
+      "cp950_byte_round_trip": true
+    }
+  ],
+  "active_source": {
+    "filename": "sa60/newbie/newbie.create",
+    "actual_blocks": 8,
+    "battle_tutor": {
+      "npc_name": "戰鬥技巧指導員",
+      "source": "sa60/newbie/fighter",
+      "create_records": [
+        {
+          "floor": 1000,
+          "x": 48,
+          "y": 62,
+          "graphic_alias": 16496,
+          "enemy_handler": "changeevent"
+        },
+        {
+          "floor": 2000,
+          "x": 89,
+          "y": 79,
+          "graphic_alias": 16496,
+          "enemy_handler": "changeevent"
+        },
+        {
+          "floor": 3000,
+          "x": 97,
+          "y": 86,
+          "graphic_alias": 16496,
+          "enemy_handler": "changeevent"
+        },
+        {
+          "floor": 4000,
+          "x": 86,
+          "y": 61,
+          "graphic_alias": 16496,
+          "enemy_handler": "changeevent"
+        }
+      ]
+    },
+    "pet_tutor": {
+      "npc_name": "寵物常識解說員",
+      "source": "sa60/newbie/petmaster",
+      "create_records": [
+        {
+          "floor": 1003,
+          "x": 19,
+          "y": 15,
+          "graphic_alias": 16122,
+          "enemy_handler": "changeevent"
+        },
+        {
+          "floor": 2003,
+          "x": 11,
+          "y": 12,
+          "graphic_alias": 16127,
+          "enemy_handler": "changeevent"
+        },
+        {
+          "floor": 3003,
+          "x": 16,
+          "y": 19,
+          "graphic_alias": 16122,
+          "enemy_handler": "changeevent"
+        },
+        {
+          "floor": 4003,
+          "x": 14,
+          "y": 17,
+          "graphic_alias": 16122,
+          "enemy_handler": "changeevent"
+        }
+      ]
+    }
+  },
+  "event_sources": [
+    {
+      "file": "fighter",
+      "literal_event_no": -1,
+      "literal_type": "MESSAGE",
+      "literal_event_guard": "LV>0",
+      "intro_lines": 1,
+      "window_messages": 9,
+      "event_ends": 1
+    },
+    {
+      "file": "petmaster",
+      "literal_event_no": -1,
+      "literal_type": "MESSAGE",
+      "literal_event_guard": "LV>0",
+      "intro_lines": 1,
+      "window_messages": 9,
+      "event_ends": 1
+    }
+  ],
+  "backup_comparison": {
+    "backup_create_blocks": 34,
+    "active_eight_create_blocks_identical_in_backup": true,
+    "battle_records_backup": 4,
+    "pet_records_backup": 5,
+    "backup_only_pet_tutor_floor": 8018,
+    "backup_only_pet_tutor_active": false,
+    "unrelated_newbie2_create_not_merged": true
+  },
+  "player_operation_claims": [
+    {
+      "topic": "enemy_level",
+      "source_reported": "hover_enemy_to_inspect_level",
+      "native_input_executed": false
+    },
+    {
+      "topic": "capture",
+      "source_reported": "prefer_level_one_pet",
+      "capture_success_or_growth_formula": null
+    },
+    {
+      "topic": "escape",
+      "source_reported": "escape_when_enemy_much_stronger_and_quickness_relevant",
+      "escape_probability": null
+    },
+    {
+      "topic": "battle_combo",
+      "source_reported": "quickness_helpful_for_person_pet_joint_attack",
+      "combo_probability": null
+    },
+    {
+      "topic": "elements",
+      "source_reported": "earth_gt_water_gt_fire_gt_wind_gt_earth",
+      "numeric_multiplier": null
+    },
+    {
+      "topic": "spirit_magic",
+      "source_reported": "spirit_abilities_attached_to_gear",
+      "native_cast_executed": false
+    },
+    {
+      "topic": "pet_loyalty",
+      "source_reported": "low_loyalty_may_refuse_flee_and_pet_defeat_hurts_loyalty",
+      "numeric_loyalty_change": null
+    },
+    {
+      "topic": "pet_learning",
+      "source_reported": "pet_shop_skills_include_combat_cooking_crafting_repair",
+      "native_skill_learning_executed": false
+    }
+  ],
+  "evidence_category": "FACT_FOR_SOURCE_TEXT_ONLY_NOT_NATIVE_RUNTIME",
+  "source_identity_limits": [
+    "TW1_JSS1999_same_deployment_open",
+    "NPC_spawn_on_original_server_open",
+    "EVENT_LV_CONDITION_runtime_evaluation_open",
+    "mouse_hover_display_original_input_open",
+    "combat_capture_pet_skill_execution_open",
+    "graphic_RD_pixel_for_these_NPCs_not_observed_this_unit",
+    "no_raw_source_or_copyrighted_art_committed"
+  ],
+  "stage_a": "7_PARTIAL_2_OPEN",
+  "stage_b": "GATED",
+  "wiki": "GATED",
+  "savedata_R79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null,
+  "next": "O77: seek original-client same-build battle mouse-hover display/input path or one native witnessed player action; if none, bounded stop and rotate to another unobserved material gameplay seam."
+}

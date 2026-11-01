@@ -1387,3 +1387,8 @@ The previously unconfirmed O43 private ZIP **was subsequently uploaded** to user
 
 
 O75 CI史实订正：PR #133 初稿的 Stage A 检查 run 41362507873 因两处派生报告字段键名错误失败；首次修订后的 run 41362584714 因遗漏一处 `R79` 大小写键名仍失败，以上原始失败记录保留在 GitHub Actions。现已按公开报告真实键名修正，后续须以实际重验结果为准，不把旧失败宣称通过。
+
+
+### 2026-11-02 — O76 原始战斗／宠物新手指引的玩家操作证据
+
+[O76 四村战斗与宠物教学 NPC 原配置](docs/continuity/STONEAGE-O76-ORIGINAL-BEGINNER-BATTLE-PET-SOURCE-20261102.md)：本轮重新实核私人后期混合2.5 RAR **361,255,180B**、来源完整 SHA；实取五份源成员，每份原 RAR CRC / 解出 CRC / 全 SHA / CP950 往返一致。现行 `newbie.create` **8条**：四村战斗指导员各一位（地图1000/2000/3000/4000，图16496），四地宠物知识讲解员各一位（1003/2003/3003/4003，图16122/16127），分别引用 `fighter` 和 `petmaster` 两个原静态事件，各有**9段**说明。战斗文本明确描述鼠标悬停查看敌人等级、一级宠物捕获建议、敏捷／逃跑／合击及属性克制；宠物文本说明忠诚、战斗与技能学习；**只是文字事实，不是已执行原版游戏交互、概率公式或早期官方归属。** 原 `newbie.create.bak` 34块保留现行8块，又有**8018地图备用第五位宠物导师**，不擅自提升为现行已启用NPC；同长 `newbie2.create` 为其他NPC资料，未混同。公开仅 [派生结构与 SHA / CRC 证据](research/recovered/STONEAGE-O76-ORIGINAL-BEGINNER-BATTLE-PET-SOURCE-R1.json)，原脚本/图像留私。**NEXT O77**：同版原客户端鼠标目标信息入口或真正玩家输入见证；没有实源即限定止点轮换，不加模拟器。旧CURRENT字节不变，Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、percent=null。
