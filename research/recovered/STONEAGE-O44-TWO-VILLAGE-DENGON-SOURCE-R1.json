@@ -1,0 +1,197 @@
+{
+  "schema": "stoneage.o44.two_village_dengon_source_and_two_local_original_pixel_windows.r1",
+  "base_main_head": "b52c45fe531d8ce9ce42eddeddcebfda549cba8a",
+  "base_main_tree": "0fb30cc8416bd4750119ece3f5115b48563ffd24",
+  "original_current_blob": "20050acf279a01555ab06a381dfcdc936bd381a6",
+  "original_current_bytes": 2708031,
+  "source_scope": "MIXED25_PRESERVED_SERVER_MAP_AND_NPC_TO_TW10_OFFICIAL_RETAIL_SOURCE_ART_CANDIDATES_NO_COMMON_DEPLOYMENT_PROOF",
+  "source_packages": [
+    {
+      "role": "preserved_SCENE22_original_NPC_and_template",
+      "bytes": 1321290,
+      "sha256": "7c6d717de639937f3fc0482907cf501afe52ed600f70683b43a70920178110df"
+    },
+    {
+      "role": "preserved_O31_original_map",
+      "bytes": 2295731,
+      "sha256": "f14ee7c362e74bb82fabb867bee08729b41f9744208642fd689bf2730d10548f"
+    },
+    {
+      "role": "original_TW10_P3H_official_retail",
+      "bytes": 372626292,
+      "sha256": "3a4854adaebef056332cdbd7b1dc1c130c571b11704e3f199f53d03aa31cba24"
+    }
+  ],
+  "source_members": {
+    "1000npc_m.create": {
+      "bytes": 4413,
+      "sha256": "c9b000a836b0aae3d88358097039f1beea020d92ba84f6ccc338bb54bc478240"
+    },
+    "npcgen.template": {
+      "bytes": 4950,
+      "sha256": "0c5a58d5e31cafd3b58ccc1fa88fee7d1f95d12c0b87b04db9f06fea3b2a4df3"
+    },
+    "1000.DAT": {
+      "bytes": 153608,
+      "sha256": "94b19cb59d72b7b48da70d2741ba68516caad970297fd48ed11ef720fa3ea97e"
+    },
+    "TW10_adrn_1.bin": {
+      "bytes": 10079680,
+      "sha256": "47254c0ff904d363fb5c3c5297edf553c8eaf24cd933f346d8ce7aabed4155c8"
+    },
+    "TW10_real_1.bin": {
+      "bytes": 315842228,
+      "sha256": "408e6ee05c83354349691937da2ad8f7488ac10f65f07e6681b7d92cb1c9ed13"
+    },
+    "TW10_Palet_0.sap": {
+      "bytes": 708,
+      "sha256": "89709d906bbd9cd9f5c2b8e0bd993e2897a1c9136ada2e211109983bb3b06cbf"
+    },
+    "TW10_Palet_1.sap": {
+      "bytes": 708,
+      "sha256": "32870080c47537a59beaf770b6df7bd79820fd52a23825058460900494f0b4b0"
+    }
+  },
+  "original_source_NPC_create_blocks_scanned": 25,
+  "dengon_template": {
+    "key": "npcgen_dengon",
+    "functionset": "Dengon",
+    "raw_template_graphicname": 2204,
+    "source_span_half_open": [
+      641,
+      759
+    ],
+    "source_block_sha256": "13a061836e331d8614aee783bd865f97566b89a8a909360daa99166c5d0a42df"
+  },
+  "dengon_create_instances": [
+    {
+      "floor": 1000,
+      "xy": [
+        94,
+        93
+      ],
+      "source_span_half_open": [
+        4116,
+        4259
+      ],
+      "source_block_sha256": "96d47e70709db8dd29f397b9cdf40f884c052c5803c3e867b356e430d76d75a0",
+      "graphicname": 10062,
+      "source_name": "薩姆吉爾的傳言板",
+      "map_planes": [
+        158,
+        0,
+        49152
+      ]
+    },
+    {
+      "floor": 1000,
+      "xy": [
+        93,
+        66
+      ],
+      "source_span_half_open": [
+        4269,
+        4412
+      ],
+      "source_block_sha256": "b5686b1b8860d984bea2db50f40603c3a4c0f7effa56d3362aa87b7a2cc3981e",
+      "graphicname": 10062,
+      "source_name": "薩姆吉爾的傳言板",
+      "map_planes": [
+        189,
+        12928,
+        49152
+      ]
+    }
+  ],
+  "TW10_ADRN_records_fully_scanned": 125996,
+  "source_graphic_numeric_alias": {
+    "name_key": 10062,
+    "alias_matches": 1,
+    "original_physical_bitmap": 4766,
+    "original_record_sha256": "1687829432f16c0d719c7f4dc84a261ab4ca84dc34b6508cfe6b12beaefaeb9a",
+    "real_offset": 13813099,
+    "real_bytes": 4808,
+    "rd_sha256": "86cf8cce0e6fe22950c3d6acee9ba5cea977be90fce59011d400594d684af596",
+    "width": 64,
+    "height": 107,
+    "indices_sha256": "4082d8337f81b4301f34f3a86ce9a1567a2353e0aa64906ca72fac87132412a7"
+  },
+  "same_number_physical_control": {
+    "bitmapno": 10062,
+    "alias_value": 0,
+    "width": 68,
+    "height": 70,
+    "real_offset": 38434549,
+    "real_bytes": 1820,
+    "rd_sha256": "fc8e32d2deeb2a05de4068a28bf81fdd73dbcdfb1a970b25128d5e0a42acaa0f"
+  },
+  "world_windows": [
+    {
+      "center": [
+        93,
+        66
+      ],
+      "map_cells": 49,
+      "center_source_planes": [
+        189,
+        12928,
+        49152
+      ],
+      "map_only_png_sha256": "0b4ab75dd0564e830a746ba8a30fca56cf1b5c34bc76497d59a1f88103b2a1a9",
+      "map_with_board_candidate_png_sha256": "d18bdb859b3176eba16fc32fa47c0de7b957636b0811651d2510e67eb535ed06"
+    },
+    {
+      "center": [
+        94,
+        93
+      ],
+      "map_cells": 49,
+      "center_source_planes": [
+        158,
+        0,
+        49152
+      ],
+      "map_only_png_sha256": "3624e11aac9c2839aa0b333d8e915d1bc7344a516f3afa1b4cb02fb017f156ab",
+      "map_with_board_candidate_png_sha256": "0906caab542fe6c89b131ca2c85f7b77617cbef7f738249d64dca73302e31177"
+    }
+  ],
+  "world_window_actual_original_map_cells": 98,
+  "world_window_image_references": 111,
+  "world_window_unique_TW10_ADRN_alias_source_ids": 65,
+  "all_65_source_id_matches_unique": true,
+  "independent_RD_decoders_equal": true,
+  "original_pixel_compositor_overlay_regression_same_RGBA": true,
+  "actual_Chromium_13_checks_passed": true,
+  "actual_chromium_js_errors": 0,
+  "actual_chromium_external_http_requests": 0,
+  "original_source_graphic_selection_runtime_proven": false,
+  "source_graphic_2204_template_override_proven": false,
+  "source_event_word_49152_semantics_proven": false,
+  "historical_noticeboard_posts_or_service_behavior_verified": false,
+  "original_TW10_and_preserved_mixed25_same_deployed_build": false,
+  "original_game_client_or_server_executed": false,
+  "original_game_world_entered": false,
+  "private_custody": {
+    "file": "/石器时代/StoneAge-O44-private-original-two-village-bulletinboards.zip",
+    "zip_bytes": 1532715,
+    "zip_sha256": "0b56e45087a820c0bfcf9546017c7c6dc2433e0e5d29ba036b1b06fbe65c1e9f",
+    "member_count": 150,
+    "all_member_CRC_pass": true,
+    "library_download_whole_SHA_equal": true,
+    "private_full_65_source_record_report_bytes": 49519,
+    "private_full_report_sha256": "49e229f4f24bb772d73421df4ab0caf4f6fe758488a5f81722afbfa5bdf57cc8",
+    "private_65_source_row_canonical_digest": "cc9233bbf73f5618d28a1fd8f481aced670b1856569d1ed2a1bee6f69fd631f4",
+    "post_library_custody_local_report_bytes": 50238,
+    "post_library_custody_local_report_sha256": "3c37071714f5d55a6165065cbf124961ad86f8f662e287290af42efc5fef963c",
+    "pixel_source_records_identical_between_reports": true
+  },
+  "copyrighted_game_assets_in_public_git": false,
+  "phase": {
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b": "GATED",
+    "wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING",
+    "overall_completion_percent": null
+  },
+  "next": "O45 rotate to source-backed new pet, movement encounter or quest rule material; no additional invented message board UI."
+}
