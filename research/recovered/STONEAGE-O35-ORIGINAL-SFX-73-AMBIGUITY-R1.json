@@ -1,0 +1,120 @@
+{
+  "schema": "stoneage.o35.original_sound_73_three_namespace_candidate_private_audition.r1",
+  "date": "2026-11-01",
+  "remote_start_main_head": "f8fa09893e372c4254d5ac4821c29c46a6761c94",
+  "remote_start_main_tree": "7161e6217fdb1e146660b7722fc786611038dc0d",
+  "original_current_state_blob": "20050acf279a01555ab06a381dfcdc936bd381a6",
+  "original_current_size": 2708031,
+  "original_current_read_preserved": true,
+  "material_increment": "Use original WAV bytes in a manually opened 3-item comparison section of existing private O34 walkable original-resource viewer; no auto binding and no added playback framework; distinguish ambiguous source sound-number namespaces.",
+  "original_source": {
+    "private_p3h_zip_bytes": 372626292,
+    "private_p3h_zip_sha256": "3a4854adaebef056332cdbd7b1dc1c130c571b11704e3f199f53d03aa31cba24",
+    "original_exe_sha256": "cdab9ea049a98bbc96ce93eeaa8b63c688f0c0f0ad8b3183e79d75e47621441a",
+    "original_spr_sha256": "53d5b2d40453a30fd1569637ebf0db7b3010542b00970ec83af0295a3b3ae31a",
+    "original_soundaddr_sha256": "d8d2bee5e424be75b35cc4b8a1ac10d398f7fd53e98035ba6980e9e4dc9b389f",
+    "pinned_prior_source_documents": [
+      "research/recovered/STONEAGE-O11-NATIVE-FRAME-SOUND-SOURCE-R1.json",
+      "research/recovered/STONEAGE-O12-NATIVE-SOUND-NAMESPACE-R1.json",
+      "docs/STONEAGE-TW10-AUDIO-EVENT-GATE-R1.md"
+    ],
+    "source_frames": {
+      "spr_no": 100250,
+      "direction": 0,
+      "animation": 0,
+      "frame2_word": 73,
+      "frame4_word": 10000
+    }
+  },
+  "raw_original_wav_witnesses": [
+    {
+      "filename": "sae_23.wav",
+      "original_path": "source/data/se/sae_23.wav",
+      "relationship": "COMPILED_STATIC_NUMBER_73_TO_PATH_ONLY",
+      "bytes": 14704,
+      "sha256": "b6af6267cda99056b29bd216b94a3e14e569a70b49c5dad878ba169b6cfe1ff5",
+      "duration_seconds": 0.330884
+    },
+    {
+      "filename": "sam_17.wav",
+      "original_path": "source/data/se/sam_17.wav",
+      "relationship": "SOUNDADDR_ONE_BASED_73_POSSIBLE_INDEX_ONLY",
+      "bytes": 15020,
+      "sha256": "3426f6e73bd7842e9be6212a6cfb7401fefcbe64e5f45761338a5f64656a2274",
+      "duration_seconds": 1.3522
+    },
+    {
+      "filename": "sam_18.wav",
+      "original_path": "source/data/se/sam_18.wav",
+      "relationship": "SOUNDADDR_ZERO_BASED_73_POSSIBLE_INDEX_ONLY",
+      "bytes": 18892,
+      "sha256": "dc15de085cada9a701e79b6490f72a6169ea0ae08f4d7c9c13806074e99f56b3",
+      "duration_seconds": 0.8517
+    }
+  ],
+  "wav_byte_sha_all_distinct": true,
+  "original_frame_word_to_compiled_namespace_proven": false,
+  "original_frame_word_to_packed_sfx_index_proven": false,
+  "native_audio_trigger_or_frame_to_wav_executed": false,
+  "private_viewer": {
+    "base_o34_zip_bytes": 3154788,
+    "base_o34_zip_sha256": "0c9c38817f6b4c7838a7be0ec122f7dbe274b52a0153b6c7a23c27365fd1dbe2",
+    "original_animation_background_gameplay_html_unchanged_except_one_static_details_panel": true,
+    "new_html_bytes": 2807079,
+    "new_html_sha256": "ebe8d26dccfc0b03c4bbdaffe1f49b07b1f0d01545afc784d9619b1c20239466",
+    "wav_data_embedded_private_only": true,
+    "automatic_playback": false,
+    "sample_can_play_in_actual_chromium": true,
+    "actual_chromium_version": "144.0.7559.96",
+    "new_audio_checks": 21,
+    "original_world_regressions": 16,
+    "checks_passed": 38,
+    "checks_total": 38,
+    "JS_errors": 0,
+    "external_http_requests": 0,
+    "original_client_started": false,
+    "original_server_started": false,
+    "file_scheme_doubleclick_tested": false,
+    "new_audio_browser_checks": 21,
+    "local_zip_crc_checks": 1,
+    "browser_check_passed": 37,
+    "browser_check_total": 37,
+    "checks_breakdown": "21 genuine Chromium audio checks + 16 actual original-world Chromium regressions + 1 ZIP CRC inspection; earlier informal '38 browser' label corrected"
+  },
+  "private_custody": {
+    "path": "/mnt/data/stoneage_private/StoneAge-O35-private-original-sfx-candidate-witness.zip",
+    "zip_bytes": 2724452,
+    "zip_sha256": "14fc7e1b344144bb513eb4feb8c95146de275a6188e1409174e190230ffb8cc6",
+    "zip_members": 4,
+    "local_zip_crc_verified": true,
+    "library_upload_success": true,
+    "library_error": "container_session_expired",
+    "source_audio_or_full_HTML_published_in_public_git": false,
+    "library_upload_method": "source_file_ref_exact_verified_export_snapshot",
+    "library_file_id": "libfile_812687cc6f088191a552dade7d1ac827",
+    "library_snapshot_file_id": "file_00000000f924820788005d19e3fbf527",
+    "library_full_download_sha256_verified": true,
+    "library_full_download_zip_crc_pass": true,
+    "library_error_history": [
+      "container_session_expired on first upload",
+      "container_session_expired on retry",
+      "source_file_ref upload succeeded",
+      "library materialization 2724452B, SHA and all 4 ZIP CRC match"
+    ]
+  },
+  "conclusion": "AUDIO_SOURCE_THREE_WAY_DISAMBIGUATION_OPEN_MANUAL_SOURCE_AUDITION_AVAILABLE_NO_ORIGINAL_EVENT_BINDING",
+  "boundaries": {
+    "original_same_build_audio_binary_sources_verified": true,
+    "auto_binding_to_wuli": false,
+    "original_sfx_event_assignment": false,
+    "original_historical_routing": false,
+    "original_client_runtime": false,
+    "other_SPR_source_word_10000_meaning": null,
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b": "GATED",
+    "wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "next": "O36 rotate away from sound-numeric heuristics; prioritize a new original scene/system with direct source character/event consequence; reopen original TW1 audio mapping only on concrete source callsite linking SPR frame sound word through playback API or actual original native runtime trace."
+}
