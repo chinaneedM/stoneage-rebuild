@@ -1,0 +1,149 @@
+{
+  "schema": "stoneage.o67.preserved_same_archive_npc_warp_template_mapwarp_crosswalk.r1",
+  "date": "2026-11-01",
+  "source_main_head": "c92fdaaca4cca80c8a0d740edb33c0fb96863a94",
+  "source_main_tree": "36a6d0248d51d754db5b67dd5b40ba962b5ad5e6",
+  "preserved_current_blob": "20050acf279a01555ab06a381dfcdc936bd381a6",
+  "preserved_current_bytes": 2708031,
+  "source_scope": "LATER_COMMUNITY_MIXED25_SINGLE_PRESERVATION_ARCHIVE_STATIC_WARP_AND_NPC_TEMPLATE_CROSSWALK_NOT_DEPLOYED_ENGINE",
+  "original_parent": {
+    "private_library_path": "/stoneage-preserved-mixed25-original.rar",
+    "size": 361255180,
+    "sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+    "whole_archive_SHA256_rechecked": true
+  },
+  "actually_read_full_members": [
+    {
+      "name": "gmsv/data/map/mapwarp.txt",
+      "rar_index_zero_based": 4202,
+      "bytes": 110674,
+      "sha256": "b7b50f42efa8e5a3f740d49a8d0c01cbf994d1bb66151b16ff5b5e7c14e7595c",
+      "rar_header_crc32": "6b4da534",
+      "extracted_crc32": "6b4da534",
+      "total_lines": 2981,
+      "all_lines_five_colon_separated_fields": true
+    },
+    {
+      "name": "gmsv/data/npc/genout/npcgen.template",
+      "rar_index_zero_based": 5472,
+      "bytes": 4950,
+      "sha256": "0c5a58d5e31cafd3b58ccc1fa88fee7d1f95d12c0b87b04db9f06fea3b2a4df3",
+      "rar_header_crc32": "56547578",
+      "extracted_crc32": "56547578",
+      "legacy_R18_full_source_report_same_member_SHA": true
+    },
+    {
+      "name": "gmsv/data/npc/genout/warp_y.create",
+      "rar_index_zero_based": 6005,
+      "bytes": 24588,
+      "sha256": "859ff2ed23baadb20382508874cd3a63e603b84c7205c6f5d8998229f4f4c8b1",
+      "crc32": "681761ad",
+      "actual_full_source_already_verified_O66": true
+    }
+  ],
+  "four_sequential_mapwarp_rows_exact": [
+    {
+      "row": 1392,
+      "origin": [
+        1000,
+        69,
+        72
+      ],
+      "destination": [
+        1003,
+        16,
+        21
+      ],
+      "exact_source_line_sha256": "c79d95ebc3bd4901d5dd5438518a37760401e4f60b8b746dbc2c54a3820388af"
+    },
+    {
+      "row": 1393,
+      "origin": [
+        1003,
+        16,
+        21
+      ],
+      "destination": [
+        1000,
+        69,
+        72
+      ],
+      "exact_source_line_sha256": "10ce9523a2b7c55ee0b710c84b9bedd02d35556dea1a0fa6130bc4c149986b6b"
+    },
+    {
+      "row": 1394,
+      "origin": [
+        1000,
+        68,
+        72
+      ],
+      "destination": [
+        1003,
+        15,
+        21
+      ],
+      "exact_source_line_sha256": "3de5ab5fec98e382c68c54224c3f1a08af0a1dbb13b93a1d36f09663e99961ae"
+    },
+    {
+      "row": 1395,
+      "origin": [
+        1003,
+        15,
+        21
+      ],
+      "destination": [
+        1000,
+        68,
+        72
+      ],
+      "exact_source_line_sha256": "7e791035833473739353eeae614b2856b0fde2223fcb7dacda3f0987686a1cee"
+    }
+  ],
+  "mapwarp_row_source_field_identity": {
+    "column_count": 5,
+    "all_four_prefix0": "NONE",
+    "all_four_prefix1": "NULL",
+    "all_four_suffix": "NULL",
+    "all_four_record_lengths_including_LF": 37,
+    "all_four_directional_routes_unique": true,
+    "exactly_four_records_match_1003_15_16_21_to_1000_68_69_72": true,
+    "same_reverse_pairs_as_O58_O66_warp_y_create": true
+  },
+  "npc_template": {
+    "template": "npcgen_warp",
+    "name_line_1_based": 211,
+    "functionset_line_1_based": 215,
+    "functionset_name": "Warp",
+    "name_line_SHA256": "e75f6bc1c280358528490ade96acac1a0e6faa092a782cf7f48851a4637a5b50",
+    "whole_source_sha256": "0c5a58d5e31cafd3b58ccc1fa88fee7d1f95d12c0b87b04db9f06fea3b2a4df3",
+    "template_record_occurrences": 1,
+    "different_functionset_WarpMan_is_distinct_from_Warp": true
+  },
+  "failed_original_binary_attempt": {
+    "archive_member": "gmsv/gmsv.exe",
+    "rar_index_zero_based": 6726,
+    "expected_original_bytes": 1897867,
+    "rar_header_crc32": "6e31b63a",
+    "attempted_extracted_bytes_before_libarchive_CRC_error": 1835008,
+    "complete_authenticated_executable_obtained": false,
+    "no_failed_partial_binary_accepted_or_published": true
+  },
+  "source_corrective_boundary": {
+    "original_mapwarp_table_and_npcgen_template_are_not_same_as_executed_gameplay": true,
+    "mapwarp_dynamic_priority_or_trigger_order_authenticated": false,
+    "spawn_on_trigger_tile_immediate_warp_authenticated": false,
+    "actual_binary_version_same_active_script_deployment_proven": false,
+    "source_mapwarp_rows_are_not_second_official_1999_or_TW1_client_proof": true,
+    "no_original_server_executed": true,
+    "no_original_client_executed": true,
+    "original_world_entered": false,
+    "original_pet_shop_NPC_talk_ran": false,
+    "stage_A": "7_PARTIAL_2_OPEN",
+    "stage_B": "GATED",
+    "wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "gameplay_result": "four explicit two-way route coordinates double-represented in same preserved archive; npc template associates exact npcgen_warp to Warp function name, without proving runtime trigger",
+  "next": "O68 seek fully readable same-build native warp execution / walk-over trigger witness if accessible; otherwise rotate to new concrete quest/capture/riding interaction material rather than build another warp simulator"
+}
