@@ -1,0 +1,31 @@
+name: Verify StoneAge O63 four tiger original SPR metadata
+on:
+  push:
+    branches:
+      - "agent/o63-four-tiger-spr-source-20261101"
+    paths:
+      - "tools/stoneage_o63_tiger_spr_join.py"
+      - "tests/test_stoneage_o63_tiger_spr_join.py"
+      - ".github/workflows/verify-stoneage-o63-tiger-spr.yml"
+      - "research/recovered/STONEAGE-O63-FOUR-TIGER-SPR-SOURCE-R1.json"
+  pull_request:
+    paths:
+      - "tools/stoneage_o63_tiger_spr_join.py"
+      - "tests/test_stoneage_o63_tiger_spr_join.py"
+      - ".github/workflows/verify-stoneage-o63-tiger-spr.yml"
+      - "research/recovered/STONEAGE-O63-FOUR-TIGER-SPR-SOURCE-R1.json"
+  workflow_dispatch:
+jobs:
+  original-spr-derived:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate preserved four animations and original source boundary
+        run: |
+          python -m unittest tests.test_stoneage_o63_tiger_spr_join -v
+          python -m tools.stoneage_o63_tiger_spr_join | tee /tmp/o63-derived.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: o63-original-spr-derived-only
+          path: /tmp/o63-derived.json
+          retention-days: 30
