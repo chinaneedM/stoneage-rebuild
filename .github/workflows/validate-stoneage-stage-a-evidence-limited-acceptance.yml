@@ -9,6 +9,8 @@ on:
       - 'tools/stoneage_stage_a_evidence_limited_acceptance.py'
       - 'tests/test_stoneage_stage_a_evidence_limited_acceptance.py'
       - 'tests/test_stoneage_stage_a_evidence_limited_archive.py'
+      - 'tests/test_stoneage_o74_commission_book_seller_derived.py'
+      - 'research/recovered/STONEAGE-O74-COMMISSION-BOOK-SELLER-ORIGINAL-SOURCE-R1.json'
       - 'docs/CURRENT-STATE.md'
       - 'docs/RESTORATION-ROADMAP-R2.md'
       - 'docs/DESIGN-DECISIONS.md'
@@ -29,5 +31,5 @@ jobs:
           python-version: '3.12'
       - name: Validate delegated decision, immutable history and no premature production
         run: |
-          python -m unittest tests.test_stoneage_stage_a_evidence_limited_acceptance tests.test_stoneage_stage_a_evidence_limited_archive tests.test_stoneage_stage_a_joint_review_decision tests.test_stoneage_stage_a_review_packet tests.test_stoneage_stage_a_early_source_gap_triage -v
+          python -m unittest tests.test_stoneage_stage_a_evidence_limited_acceptance tests.test_stoneage_stage_a_evidence_limited_archive tests.test_stoneage_stage_a_joint_review_decision tests.test_stoneage_stage_a_review_packet tests.test_stoneage_stage_a_early_source_gap_triage tests.test_stoneage_o74_commission_book_seller_derived -v
           python -m tools.stoneage_stage_a_evidence_limited_acceptance

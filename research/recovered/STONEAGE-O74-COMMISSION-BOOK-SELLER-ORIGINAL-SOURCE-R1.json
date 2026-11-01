@@ -1,0 +1,332 @@
+{
+  "schema": "stoneage.o74.four_hall_commission_book_seller_and_original_npc_pixels.r1",
+  "date": "2026-11-02",
+  "remote_start": {
+    "main_head": "8a676fa18daa84dbe882c18aded5fe2df94cd090",
+    "prior_current_git_blob": "20050acf279a01555ab06a381dfcdc936bd381a6",
+    "prior_current_bytes": 2708031,
+    "prior_O70_blob": "2dd41abdd04a5541ed0025aa59f2c0bf457bca97"
+  },
+  "evidence_scope": "LATER_MIXED25_COMMUNITY_ARCHIVE_AND_TW10_COMMON_RESOURCE_PREFIX_NOT_ORIGINAL_COMMERCIAL_DEPLOYMENT",
+  "verified_private_parent": {
+    "archive_bytes": 361255180,
+    "archive_sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+    "archive_full_sha_this_unit": true,
+    "listed_archive_entries": 7952
+  },
+  "original_source_files": {
+    "npc/genout/mission.create": {
+      "bytes": 1495,
+      "sha256": "4acb4c7c68be8b0585ac2b5333cf78776abe5b022af072abc4f421a6ddd5784b",
+      "rar_crc32": "c8fdd44e",
+      "exact_member_extracted_and_crc_rechecked": true,
+      "cp950_roundtrip": true
+    },
+    "npc/genout/npcgen.template": {
+      "bytes": 4950,
+      "sha256": "0c5a58d5e31cafd3b58ccc1fa88fee7d1f95d12c0b87b04db9f06fea3b2a4df3",
+      "rar_crc32": "56547578",
+      "exact_member_extracted_and_crc_rechecked": true,
+      "cp950_roundtrip": true
+    },
+    "npc/genout/ss_1009_20_12": {
+      "bytes": 534,
+      "sha256": "e94a1d3da0e93eb7fd52ec874575811657957ac0506930709bedde4723f04c40",
+      "rar_crc32": "e58e5e9b",
+      "exact_member_extracted_and_crc_rechecked": true,
+      "cp950_roundtrip": true
+    },
+    "npc/genout/ss_2009_20_12": {
+      "bytes": 534,
+      "sha256": "5ea5206f8c6a88acfc5c17e38434d6a8d00822c32a7772afc49fd8880293f1a3",
+      "rar_crc32": "11769048",
+      "exact_member_extracted_and_crc_rechecked": true,
+      "cp950_roundtrip": true
+    },
+    "npc/genout/ss_3009_20_12": {
+      "bytes": 552,
+      "sha256": "b754a8424475e392ac4370919048d21dba3a626893ca39122afe7c689d043af2",
+      "rar_crc32": "59709f4a",
+      "exact_member_extracted_and_crc_rechecked": true,
+      "cp950_roundtrip": true
+    },
+    "npc/genout/ss_4009_20_12": {
+      "bytes": 534,
+      "sha256": "9320d0a55c87d47d9f3b8f4aa0ad565b9cb1a69848b4ad0243718efd76f75e63",
+      "rar_crc32": "46f73c61",
+      "exact_member_extracted_and_crc_rechecked": true,
+      "cp950_roundtrip": true
+    },
+    "npc/genout/ss_2009_xx_1": {
+      "bytes": 540,
+      "sha256": "9323a7b2269b0a996aa9ef1e5a9aeafad3740d0aa21a47bdf9789c72ed528d22",
+      "rar_crc32": "a7456dfb",
+      "exact_member_extracted_and_crc_rechecked": true,
+      "cp950_roundtrip": true
+    },
+    "npc/extra/event/mission.create": {
+      "bytes": 654,
+      "sha256": "a6b9ab5490f40ceabacf3f4328d01b7a24a9665ecd9bbfc694906ae9d3388c75",
+      "rar_crc32": "8010bae4",
+      "exact_member_extracted_and_crc_rechecked": true,
+      "cp950_roundtrip": true
+    },
+    "npc/extra/event/M_1000": {
+      "bytes": 3454,
+      "sha256": "e562e1ef3cf56031c49af5b5bc5b6a1a4e79947c867f687d3594be7a32e775d4",
+      "rar_crc32": "5b1b3d6e",
+      "exact_member_extracted_and_crc_rechecked": true,
+      "cp950_roundtrip": true
+    },
+    "npc/extra/event/M_2000": {
+      "bytes": 3377,
+      "sha256": "0497b452f1691814024d0a86bb5b892d9cf6b781a9a6d5ec0b2470bf33afd341",
+      "rar_crc32": "9937e447",
+      "exact_member_extracted_and_crc_rechecked": true,
+      "cp950_roundtrip": true
+    },
+    "npc/extra/event/M_3000": {
+      "bytes": 3255,
+      "sha256": "8628dce161b39632f93661db12ea135b86773c1ffaf932aa4b75508a347fe261",
+      "rar_crc32": "73394469",
+      "exact_member_extracted_and_crc_rechecked": true,
+      "cp950_roundtrip": true
+    },
+    "npc/extra/event/M_4000": {
+      "bytes": 3408,
+      "sha256": "1e47c21ad152af44c4f90b85e13b85a98dadbec845457d7b4de9d8a4cb471f1b",
+      "rar_crc32": "1e492086",
+      "exact_member_extracted_and_crc_rechecked": true,
+      "cp950_roundtrip": true
+    }
+  },
+  "npc_template_binding": {
+    "creator": "npc/genout/mission.create",
+    "template": "npc/genout/npcgen.template",
+    "source_template_name": "npcgen_shop",
+    "source_functionset": "ItemShop",
+    "native_execution_observed": false
+  },
+  "shop_seller_records": [
+    {
+      "floor": 1009,
+      "source": "npc/genout/ss_1009_20_12",
+      "list": "20001-20006",
+      "ticket_ids": [
+        20001,
+        20002,
+        20003,
+        20004,
+        20005,
+        20006
+      ],
+      "seller_npc_position": [
+        20,
+        12
+      ],
+      "seller_graphic_alias": 16201,
+      "manager_npc_position": [
+        18,
+        12
+      ],
+      "manager_graphic_alias": 16200,
+      "original_dat_third_plane_at_both": [
+        49152,
+        49152
+      ]
+    },
+    {
+      "floor": 2009,
+      "source": "npc/genout/ss_2009_20_12",
+      "list": "20031-20036",
+      "ticket_ids": [
+        20031,
+        20032,
+        20033,
+        20034,
+        20035,
+        20036
+      ],
+      "seller_npc_position": [
+        20,
+        12
+      ],
+      "seller_graphic_alias": 16201,
+      "manager_npc_position": [
+        18,
+        12
+      ],
+      "manager_graphic_alias": 16200,
+      "original_dat_third_plane_at_both": [
+        49152,
+        49152
+      ]
+    },
+    {
+      "floor": 3009,
+      "source": "npc/genout/ss_3009_20_12",
+      "list": "20061,20062,20063,20065,20066",
+      "ticket_ids": [
+        20061,
+        20062,
+        20063,
+        20065,
+        20066
+      ],
+      "seller_npc_position": [
+        20,
+        12
+      ],
+      "seller_graphic_alias": 16201,
+      "manager_npc_position": [
+        18,
+        12
+      ],
+      "manager_graphic_alias": 16200,
+      "original_dat_third_plane_at_both": [
+        49152,
+        49152
+      ]
+    },
+    {
+      "floor": 4009,
+      "source": "npc/genout/ss_4009_20_12",
+      "list": "20091-20096",
+      "ticket_ids": [
+        20091,
+        20092,
+        20093,
+        20094,
+        20095,
+        20096
+      ],
+      "seller_npc_position": [
+        20,
+        12
+      ],
+      "seller_graphic_alias": 16201,
+      "manager_npc_position": [
+        18,
+        12
+      ],
+      "manager_graphic_alias": 16200,
+      "original_dat_third_plane_at_both": [
+        49152,
+        49152
+      ]
+    }
+  ],
+  "directly_source_qualified_ticket_join": {
+    "seller_listed_total": 23,
+    "seller_listed_unique": 23,
+    "prior_O70_uncommented_pet_commission_ids": 23,
+    "exactly_equal_active_pet_commission_ids": true,
+    "prior_O70_cooking_ticket_ids": 24,
+    "cooking_ticket_ids_listed_in_these_four_sellers": 0,
+    "O70_commented_pet_ticket_20064_not_listed": true,
+    "O70_itemset_20064_exists": true,
+    "commission_book_20001_advertised_by_seller_1009": true,
+    "commission_book_20001_used_by_manager_1009": true,
+    "known_O59_wild_pet_templates": [
+      113,
+      114
+    ],
+    "O70_sample_pet_requirements": [
+      [
+        113,
+        2
+      ],
+      [
+        114,
+        2
+      ]
+    ],
+    "O70_sample_stone_reward_config": 400,
+    "not_a_verified_purchase_or_reward_execution": true
+  },
+  "additional_distinct_actor": {
+    "source_creator_role": "工作介紹中心",
+    "source_creator_graphic_alias": 16095,
+    "source_shared_itemlist_file": "npc/genout/ss_2009_xx_1",
+    "source_listed_item_ids": [
+      18563,
+      18564,
+      18565,
+      18566
+    ],
+    "not_the_24_O70_cooking_ticket_ids": true,
+    "not_same_as_commission_seller_16201": true
+  },
+  "bounded_negative_evidence": {
+    "verified_npc_small_source_files_scanned": 2201,
+    "searched_O70_cooking_ticket_ids": 24,
+    "matching_npc_ItemList_entries_for_cooking_tickets": 0,
+    "scan_is_only_the_preserved_npc_subtree": true,
+    "not_claiming_unavailable_in_other_source_or_actual_server": true,
+    "preserved_server_executable_entry_bytes": 1897867,
+    "original_server_program_executed": false,
+    "prior_GMSV_executable_extraction_crc_failure_preserved": true
+  },
+  "npc_source_art": {
+    "tw10_p3h_zip_sha256": "3a4854adaebef056332cdbd7b1dc1c130c571b11704e3f199f53d03aa31cba24",
+    "tw10_original_REAL_sha256": "408e6ee05c83354349691937da2ad8f7488ac10f65f07e6681b7d92cb1c9ed13",
+    "actual_original_ADRN_alias_16200": {
+      "index": 5920,
+      "bitmapno": 5920,
+      "real_offset": 25078667,
+      "RD_bytes": 2171,
+      "dimensions": [
+        40,
+        92
+      ],
+      "RD_sha256": "107f5627607321fe81c48c59cf11160bcf956a52a57e84047dff3b437175474f"
+    },
+    "actual_original_ADRN_alias_16201": {
+      "index": 5921,
+      "bitmapno": 5921,
+      "real_offset": 25080838,
+      "RD_bytes": 2145,
+      "dimensions": [
+        32,
+        86
+      ],
+      "RD_sha256": "c3fefc230423bb988a4843602ce9d4c1f06824870a38899e6b0ecaf826d1d969"
+    },
+    "unique_in_full_original_ADRN_prefix": true,
+    "both_RD_full_index_two_decoders_equal": true,
+    "actual_original_pixel_previews_generated_and_viewed": true,
+    "modern_candidate_Palet_1_not_native_palette_selector": true,
+    "actual_runtime_visual_deployment_not_proven": true
+  },
+  "private_delivery": {
+    "zip": "StoneAge-O74-private-commission-seller-pixel-observer.zip",
+    "bytes": 11706985,
+    "sha256": "e19b7b7b19c66e3f75c5cee9d25637ac7c14ddc2cea8e15e9a04855f40073008",
+    "members": 6,
+    "all_ZIP_member_CRC_pass": true,
+    "private_only": true,
+    "personal_library_uploaded": false,
+    "four_hall_candidate_full_PNG_sha256": {
+      "1009": "1503a2407ba54bb2bb408764c008a57ee30d886a2de4a40959de22ee78450590",
+      "2009": "f84b4ff4e1063469ac7ba6be1bc259288b68aa8b360459952cc97456891bc596",
+      "3009": "3aedae010f22e2d153d4284b099d23d65b6fe722454669eefc8a24d4e1b2d994",
+      "4009": "e9d8f30cec89c3a1a49498c8505e70d5775dcb05a407076d41ba49b8ac729a0e"
+    }
+  },
+  "boundary": {
+    "original_world_entered": false,
+    "original_client_executed": false,
+    "original_server_executed": false,
+    "actual_itemshop_transaction_confirmed": false,
+    "actual_quest_reward_transaction_confirmed": false,
+    "same_original_official_release_confirmed": false,
+    "complete_47_book_acquisition_routes_confirmed": false,
+    "native_scene_order_or_palette_confirmed": false,
+    "stage_A": "7_PARTIAL_2_OPEN",
+    "stage_B": "GATED",
+    "wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_completion_percentage": null
+  },
+  "next": "O75: rotate away from commission static scripts and four-room overlays; prioritize a distinct original game experience with authenticated source bytes (e.g. actual item use/crafting/field action) only if it yields a material new player-facing content rule. Reopen native commission transaction only with exact server binary/source execution and source-qualified repeatable observation."
+}
