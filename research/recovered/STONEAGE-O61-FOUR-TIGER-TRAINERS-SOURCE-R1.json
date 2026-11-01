@@ -1,0 +1,250 @@
+{
+  "schema": "stoneage.o61.later_sa60_four_tiger_trainer_source_conditioned_addpet.r1",
+  "date": "2026-11-01",
+  "work_unit": "O61-four-village-tiger-trainers-source-grant-gate",
+  "baseline": {
+    "head": "eda4d053c0b38fd8f29f7cb54884e9b9a4d0ad9e",
+    "tree": "55f3fbabdb0e3e27a995ee4757464418aa6dc844",
+    "current_sha": "20050acf279a01555ab06a381dfcdc936bd381a6",
+    "current_bytes": 2708031,
+    "current_unchanged": true
+  },
+  "source_era": "LATER_COMMUNITY_MIXED25_PRESERVATION_SA60_SUBTREE_NOT_JSS1999_OR_TW1_OFFICIAL_RUNTIME",
+  "archive": {
+    "bytes": 361255180,
+    "sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+    "read_sha_verified": true
+  },
+  "source_files": {
+    "npc/sa60/newbie/tiger.create": {
+      "bytes": 714,
+      "sha256": "048c55f59a10c5b9d6ea3a0bdc6ff0c79aacfd69abeb2c18477ca6586c5a887b",
+      "rar_index": 6579,
+      "crc32": "aa2131b7",
+      "sha_crc_and_r18_match": true
+    },
+    "npc/sa60/newbie/m_tiger": {
+      "bytes": 15073,
+      "sha256": "0a075f092b3b1e3f3b7c45e5ef18e4eb707392873cd67df1ebd500518f62674e",
+      "rar_index": 6574,
+      "crc32": "22405aaa",
+      "sha_crc_and_r18_match": true
+    }
+  },
+  "creator_records": [
+    {
+      "floor": 1040,
+      "xy": [
+        61,
+        43
+      ],
+      "graphicname": 16354,
+      "dir": 6,
+      "source_name": "虎的訓練師",
+      "script_pointer": "npcgen_warpman|file:sa60/newbie/m_tiger",
+      "creator_block_sha256": "1c128f3c3b462dd7c838227d2667986a08700b47747446ea31c033468d078736"
+    },
+    {
+      "floor": 2030,
+      "xy": [
+        58,
+        16
+      ],
+      "graphicname": 16354,
+      "dir": 6,
+      "source_name": "虎的訓練師",
+      "script_pointer": "npcgen_warpman|file:sa60/newbie/m_tiger",
+      "creator_block_sha256": "385af720dc8c56bb7e88f9bff81dfc94ba5a17ad703316bd6824b00f18230894"
+    },
+    {
+      "floor": 3030,
+      "xy": [
+        52,
+        22
+      ],
+      "graphicname": 16354,
+      "dir": 6,
+      "source_name": "虎的訓練師",
+      "script_pointer": "npcgen_warpman|file:sa60/newbie/m_tiger",
+      "creator_block_sha256": "973394336aa7db7b60c93789b2475fa673f6b8686456d3928863bd8a51c94071"
+    },
+    {
+      "floor": 4030,
+      "xy": [
+        16,
+        32
+      ],
+      "graphicname": 16354,
+      "dir": 6,
+      "source_name": "虎的訓練師",
+      "script_pointer": "npcgen_warpman|file:sa60/newbie/m_tiger",
+      "creator_block_sha256": "3357e2f61bf6c97c815ff7de3b5c2b5a905caaba6f600d161d6a20b9dd3eba1b"
+    }
+  ],
+  "script_observation": {
+    "source_directive": "NEWWARPMAN",
+    "time_and_execution_proven": false,
+    "exact_talkevent_count": 16,
+    "grant_talkevent_ids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "non_grant_talkevent_ids": [
+      13,
+      14,
+      15,
+      16
+    ],
+    "conditions_common_to_all_12_grant_options": [
+      "LV>29",
+      "ENDEV=4",
+      "NOWEV!=166",
+      "TRANS=0"
+    ],
+    "grant_command": "AddPet",
+    "source_event_assignment": "Event_Now:166",
+    "source_bbi_count_with_duplicates": 240,
+    "source_bbi_count_distinct": 240,
+    "source_bbi_min": 100000,
+    "source_bbi_max": 100239,
+    "source_bbi_exact_contiguous_range": true,
+    "different_reward_ids_have_overlapping_bbi": false,
+    "conditional_pet_reward_groups": [
+      {
+        "source_label": "紅虎",
+        "source_grant_pet_id": 2483,
+        "talkevent_ids": [
+          1,
+          2,
+          3
+        ],
+        "bbi_clause_counts": [
+          23,
+          23,
+          14
+        ],
+        "bbi_union_distinct_count": 60
+      },
+      {
+        "source_label": "綠虎",
+        "source_grant_pet_id": 2481,
+        "talkevent_ids": [
+          4,
+          5,
+          6
+        ],
+        "bbi_clause_counts": [
+          23,
+          23,
+          14
+        ],
+        "bbi_union_distinct_count": 60
+      },
+      {
+        "source_label": "金虎",
+        "source_grant_pet_id": 2484,
+        "talkevent_ids": [
+          7,
+          8,
+          9
+        ],
+        "bbi_clause_counts": [
+          23,
+          23,
+          14
+        ],
+        "bbi_union_distinct_count": 60
+      },
+      {
+        "source_label": "黃虎",
+        "source_grant_pet_id": 2482,
+        "talkevent_ids": [
+          10,
+          11,
+          12
+        ],
+        "bbi_clause_counts": [
+          23,
+          23,
+          14
+        ],
+        "bbi_union_distinct_count": 60
+      }
+    ],
+    "non_grant_condition_rows": [
+      {
+        "talkevent": 13,
+        "free": "LV>29&ENDEV=4&NOWEV=166&TRANS=0"
+      },
+      {
+        "talkevent": 14,
+        "free": "LV>0&ENDEV!=4&TRANS=0&BBI<101000"
+      },
+      {
+        "talkevent": 15,
+        "free": "LV>0&TRANS!=0"
+      },
+      {
+        "talkevent": 16,
+        "free": "LV>0&BBI>100999"
+      }
+    ]
+  },
+  "reward_id_qualification": {
+    "source_ids": [
+      2481,
+      2482,
+      2483,
+      2484
+    ],
+    "candidate_checked": "Original preserved server enemybase.txt and enemybase2.txt under same mixed25 parent RAR",
+    "template_files": {
+      "enemybase.txt": {
+        "bytes": 147750,
+        "sha256": "1be7d5226798f7abaabe1f1e74aa1533fcd10e3eaf43f6497d63afa91df3e8b7",
+        "rar_crc32": "29258170",
+        "distinct_TEMPNO_count": 988,
+        "maximum_TEMPNO": 1240
+      },
+      "enemybase2.txt": {
+        "bytes": 94248,
+        "sha256": "8ecb23231ae1aeb21fe943c7b459f0c0d10ef3599aedfeaeccca783b077f5fd4",
+        "rar_crc32": "38193760",
+        "distinct_TEMPNO_count": 640,
+        "maximum_TEMPNO": 1051
+      }
+    },
+    "none_of_four_ids_in_either_checked_TEMPNO": true,
+    "addon_pet_id_namespace_to_template_link_proven": false,
+    "source_script_actual_ability_to_grant_pet_proven": false
+  },
+  "source_limits": {
+    "trainer_create_file_present_does_not_prove_live_server_load": true,
+    "event_priority_or_first_matching_rule_not_executed": true,
+    "actual_grant_and_owned_pet_state_observed": false,
+    "event_166_server_persistence_proven": false,
+    "original_mount_unlock_or_riding_executed": false,
+    "original_jss1999_or_tw10_rules_proven": false,
+    "source_240_BBI_labels_official_meaning_proven": false,
+    "user_world_entered": false,
+    "private_source_or_dialogue_published": false,
+    "overall_completion_percent": null
+  },
+  "phase": {
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b": "GATED",
+    "wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING"
+  },
+  "next": "O62: seek same-carrier AddPet:2481..2484 resolver / actual storage and riding link only if a new source can resolve it; else rotate to other evidence-bearing original world gameplay."
+}
