@@ -57,7 +57,7 @@ class O75TeacherChefSourceBoundTests(unittest.TestCase):
         self.assertEqual((z["bytes"], z["members"]), (37761, 7))
         self.assertTrue(z["zip_member_crc_pass"])
         self.assertTrue(z["contained_private_html_source_window_index"])
-        self.assertFalse(z["not_original_client_interaction"])
+        self.assertTrue(z["not_original_client_interaction"])
         for key in ("native_client_executed", "native_server_executed", "original_NPC_window_clicked",
                     "original_cook_or_craft_executed", "actual_item_effect_executed",
                     "same_official_build_deployment_proven", "earliest_JSS1999_or_TW10_gameplay_confirmed"):
