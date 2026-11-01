@@ -43,7 +43,22 @@ def validate(d,r18):
       {"talkevent":15,"free":"LV>0&TRANS!=0"},
       {"talkevent":16,"free":"LV>0&BBI>100999"}])
     q=d["reward_id_qualification"];req(q["source_ids"]==[2481,2482,2483,2484])
-    req(q["none_of_four_ids_in_either_checked_TEMPNO"] is True and q["addon_pet_id_namespace_to_template_link_proven"] is False and q["source_script_actual_ability_to_grant_pet_proven"] is False)
+    req(q["none_of_four_ids_in_either_checked_TEMPNO"] is True and q["original_248x_absent_as_direct_TEMPNO_but_present_as_ENEMY_ID"] is True)
+    req(q["addon_pet_id_namespace_to_template_link_proven"] is True and q["all_four_enemy_ids_unique_and_templates_resolve"] is True and q["source_script_actual_ability_to_grant_pet_proven"] is False)
+    e=q["same_preservation_enemy_instance"];req((e["path"],e["size"],e["sha256"],e["original_rar_crc32"],e["fully_sha_crc_and_r18_verified"])==("enemy.txt",222463,"cc7418d3b6726f1c458fef9e44a24696d05f076b67c62a56ed2293e26ae63bb6","0d60e57d",True))
+    req((old["enemy.txt"]["size"],old["enemy.txt"]["sha256"])==(e["size"],e["sha256"]))
+    links=q["same_preservation_explicit_instance_template_links"];req(len(links)==4)
+    expected=[
+      (2481,"綠虎",1936,"給新手的貝魯卡",161,161,"新手貝魯卡",100327,"51fb86c7d8145ec270ec115e5fa0d1b6c6bb10f80c7153b0bad51762a50fa595","26bf74dbb3eae136c6875fb1704a4c8231abc8e0eb9e7b6fc7c9e506147b874c"),
+      (2482,"黃虎",1937,"給新手的貝魯伊卡",162,162,"新手貝魯伊卡",100328,"ee116d3ac9a3de5b99f4b8630db96cb2ae04b8133fcfd6166b593ac454531729","a1c01650eaf1d15f97764f6e54e93bde3bf3df67e71e96e987b591916407eade"),
+      (2483,"紅虎",1938,"給新手的格魯西斯",163,163,"新手格魯西斯",100329,"94497747ad5a7b3de1ac90f425a9cd32dc689e919880636edb4675713b2c04ca","23eccb993bab5bd8f9179addf5cf9ad6ae1d92049e2b624f39cec600f0046f36"),
+      (2484,"金虎",1939,"給新手的金格薩貝魯",164,164,"新手金格薩貝魯",100330,"ee26ffebdcbb12d47fbd6166e9c50cf0f1a4762e5863b66fc7873dea8c68435e","a37db0aabd1a185e4eb637702b6e2a4730a44a2b29014c44b710b24bcde8b1db")]
+    for v,row in zip(links,expected):
+        got=(v["addpet_id"],v["color"],v["enemy_row_line"],v["enemy_name"],v["template_no"],v["template_line"],v["template_name"],v["graphic_id"],v["enemy_record_sha256"],v["template_sha256"])
+        req(got==row and v["instance_level_range"]==[1,1] and v["instance_petflag"]==1 and v["template_petflag"]==1 and v["template_default_capture_get"]==5)
+        req(len(v["enemy_record_sha256"])==len(v["template_sha256"])==64)
+    later=q["later_code_qualified_example"];req(later["fixed_commit"]=="2f736808ff4361f5429ee919b718c88fabb60346" and later["git_blob_sha"]=="019a9578b122773df90442719ece50ad79fbe1b4" and later["function"]=="NPC_EventAddPet")
+    req(later["same_rar_server_binary_or_build_proven"] is False and later["script_talkevent_uses_this_exact_handler_proven"] is False)
     for p,(size,sha,n,maxn) in {
        "enemybase.txt":(147750,"1be7d5226798f7abaabe1f1e74aa1533fcd10e3eaf43f6497d63afa91df3e8b7",988,1240),
        "enemybase2.txt":(94248,"8ecb23231ae1aeb21fe943c7b459f0c0d10ef3599aedfeaeccca783b077f5fd4",640,1051)}.items():
@@ -63,6 +78,7 @@ class O61SourceTest(unittest.TestCase):
         edits=[
           (("reward_id_qualification","none_of_four_ids_in_either_checked_TEMPNO"),False),
           (("reward_id_qualification","source_script_actual_ability_to_grant_pet_proven"),True),
+          (("reward_id_qualification","all_four_enemy_ids_unique_and_templates_resolve"),False),
           (("source_limits","original_mount_unlock_or_riding_executed"),True),
           (("source_limits","original_jss1999_or_tw10_rules_proven"),True),
           (("source_limits","user_world_entered"),True),
@@ -72,6 +88,8 @@ class O61SourceTest(unittest.TestCase):
         for (scope,key),new in edits:
             x=copy.deepcopy(self.data);x[scope][key]=new
             with self.subTest(scope=scope,key=key),self.assertRaises(ValueError):validate(x,self.r18)
+        x=copy.deepcopy(self.data);x["reward_id_qualification"]["same_preservation_explicit_instance_template_links"][0]["template_no"]=164
+        with self.assertRaises(ValueError):validate(x,self.r18)
         x=copy.deepcopy(self.data);x["script_observation"]["conditional_pet_reward_groups"][0]["source_grant_pet_id"]=2482
         with self.assertRaises(ValueError):validate(x,self.r18)
 if __name__=="__main__":unittest.main()

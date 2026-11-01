@@ -34,10 +34,23 @@
 
 **13—16条**不是奖励分支：13原条件已是 `NOWEV=166`；14条件 `ENDEV!=4`，15条件 `TRANS!=0`，16条件 `BBI>100999`。原脚本没有在这些分支写 `AddPet`。事件166在源文中是赋值命令，**不等于已证玩家存档、领取限制、永久发放或骑乘解锁**；原 `FREE` 解析、优先级和 NPC 问答流程尚未执行。
 
-## 关键负证据：四个奖励编号尚未证实是哪个可领宠物
+## 经额外源检后，四个奖励 ID 已匹配到原实例与模板
 
-同父RAR已保管原 `enemybase.txt`（988个唯一源 `TEMPNO`，最大1240）和 `enemybase2.txt`（640个唯一 `TEMPNO`，最大1051）；本轮逐原记录列核查，**2481、2482、2483、2484在两份表的 `TEMPNO` 列都不存在**。这不是“奖励必定无效”——`AddPet` 可能使用不同编号空间、扩展表或缺失组件；但当前绝无资格把编号绑定成具体原初代宠物图像、成长数据、可发放存档或真正骑乘。反向证明需求比杜撰实现更重要。
+原先只核 `enemybase.txt` / `enemybase2.txt` 的 `TEMPNO` 列，发现2481—2484不存在；**这个局部阴性仍属真实，但不足以断言奖励实例无法定位**。继续从新整SHA确认的原 `enemy.txt`（222,463B / SHA `cc7418d3b6726f1c458fef9e44a24696d05f076b67c62a56ed2293e26ae63bb6`，RAR CRC `0d60e57d`）查 `ENEMY_ID`，四个编号**全部精确唯一命中**，并通过同原文件 `ENEMY_TEMPNO` 连接到保存版 `enemybase.txt`。
+
+| 原脚本源标签 | `AddPet` / `enemy.ENEMY_ID` | 同源实例原名 | `enemy.ENEMY_TEMPNO` | 原 `enemybase.IMGNUMBER` |
+|---|---:|---|---:|---:|
+| 綠虎 | 2481 | 給新手的貝魯卡 | 161 | 100327 |
+| 黃虎 | 2482 | 給新手的貝魯伊卡 | 162 | 100328 |
+| 紅虎 | 2483 | 給新手的格魯西斯 | 163 | 100329 |
+| 金虎 | 2484 | 給新手的金格薩貝魯 | 164 | 100330 |
+
+四条实际 `enemy.txt` 实例行各自原始等级均1—1、`ENEMY_PETFLG=1`，原基础模板行161—164的 `E_T_PETFLG=1`、`GET=5`，各行源字节SHA固定于派生报告。这是**同一保存载体的静态实物连接**，比此前只看 `TEMPNO` 的判断更准确。
+
+另外实际读取的**独立后期整合源码** [BismarckDD/Stoneage 固定提交](https://github.com/BismarckDD/Stoneage/blob/2f736808ff4361f5429ee919b718c88fabb60346/server/gmsv/npc/npc_exchangeman.c) 的 `NPC_EventAddPet`，直接按 `ENEMY_ID` 查找，成功才调用 `ENEMY_createPetFromEnemyIndex`；该文件精确 Git blob `019a9578b122773df90442719ece50ad79fbe1b4`。**但它不是所保管 mixed25 RAR 运行二进制或同构建的直接证明**，也尚未证明 `NEWWARPMAN` 在实际执行时调用的就是这个处理函数、哪个编译分支生效或发宠结果成功持久化。原同版图像实际解码/骑乘动画与原版可玩世界仍未执行。
+
+**候选阶段订正必须留存：**第一版O61分支 `585f38c78edfdb9cdc757ed6e578420b2a69666f` 准确记录四编号不在两份 `TEMPNO` 列，但未继续查看原 `enemy.txt` 的 `ENEMY_ID`。此后同一工作轮补齐真实ID层级，不将“未匹配”作为合并版本的最终结论。
 
 [精确派生收据](../../research/recovered/STONEAGE-O61-FOUR-TIGER-TRAINERS-SOURCE-R1.json)包含原源长度/SHA/CRC、四创建块SHA、事件号、240条件覆盖统计、两张模板表的明确空查、未证项。私人原文/商业游戏素材不公开；完整历史 CURRENT 不截断、不修改。Stage A **7 PARTIAL+2 OPEN**、Stage B/wiki **GATED**、R79 **PAUSED_NON_BLOCKING**、总完成率 `null`，原版可玩世界仍未进入。
 
-**NEXT O62：**仅在能取得真正同载体 `AddPet:2481..2484` 的源码解释、另一具体宠物身份表或保存/骑乘直接关联时，继续这条链；若找不到就换一个新的原世界内容缺口，不扩训练模拟器/自动发宠/骑乘动画。
+**NEXT O62：**四个 `AddPet` 已完成同载体原 `enemy.ENEMY_ID`→`ENEMY_TEMPNO`→原图号的静态连接；下一包仅在有新的实物时核 `NEWWARPMAN` 实际解释器、真实养成/拥有状态或跨载体真实原图，禁止虚构原服领取/骑乘执行。不扩训练模拟器。

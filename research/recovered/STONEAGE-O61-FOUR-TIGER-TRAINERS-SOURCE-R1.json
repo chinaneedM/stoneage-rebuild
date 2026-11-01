@@ -225,8 +225,109 @@
       }
     },
     "none_of_four_ids_in_either_checked_TEMPNO": true,
-    "addon_pet_id_namespace_to_template_link_proven": false,
-    "source_script_actual_ability_to_grant_pet_proven": false
+    "addon_pet_id_namespace_to_template_link_proven": true,
+    "source_script_actual_ability_to_grant_pet_proven": false,
+    "same_preservation_enemy_instance": {
+      "path": "enemy.txt",
+      "size": 222463,
+      "sha256": "cc7418d3b6726f1c458fef9e44a24696d05f076b67c62a56ed2293e26ae63bb6",
+      "original_rar_crc32": "0d60e57d",
+      "id_column": "ENEMY_ID",
+      "template_reference_column": "ENEMY_TEMPNO",
+      "pet_flag_column": "ENEMY_PETFLG",
+      "fully_sha_crc_and_r18_verified": true
+    },
+    "same_preservation_explicit_instance_template_links": [
+      {
+        "color": "綠虎",
+        "addpet_id": 2481,
+        "enemy_row_line": 1936,
+        "enemy_record_sha256": "51fb86c7d8145ec270ec115e5fa0d1b6c6bb10f80c7153b0bad51762a50fa595",
+        "enemy_name": "給新手的貝魯卡",
+        "template_no": 161,
+        "template_line": 161,
+        "template_sha256": "26bf74dbb3eae136c6875fb1704a4c8231abc8e0eb9e7b6fc7c9e506147b874c",
+        "template_name": "新手貝魯卡",
+        "graphic_id": 100327,
+        "instance_level_range": [
+          1,
+          1
+        ],
+        "instance_petflag": 1,
+        "template_petflag": 1,
+        "template_default_capture_get": 5
+      },
+      {
+        "color": "黃虎",
+        "addpet_id": 2482,
+        "enemy_row_line": 1937,
+        "enemy_record_sha256": "ee116d3ac9a3de5b99f4b8630db96cb2ae04b8133fcfd6166b593ac454531729",
+        "enemy_name": "給新手的貝魯伊卡",
+        "template_no": 162,
+        "template_line": 162,
+        "template_sha256": "a1c01650eaf1d15f97764f6e54e93bde3bf3df67e71e96e987b591916407eade",
+        "template_name": "新手貝魯伊卡",
+        "graphic_id": 100328,
+        "instance_level_range": [
+          1,
+          1
+        ],
+        "instance_petflag": 1,
+        "template_petflag": 1,
+        "template_default_capture_get": 5
+      },
+      {
+        "color": "紅虎",
+        "addpet_id": 2483,
+        "enemy_row_line": 1938,
+        "enemy_record_sha256": "94497747ad5a7b3de1ac90f425a9cd32dc689e919880636edb4675713b2c04ca",
+        "enemy_name": "給新手的格魯西斯",
+        "template_no": 163,
+        "template_line": 163,
+        "template_sha256": "23eccb993bab5bd8f9179addf5cf9ad6ae1d92049e2b624f39cec600f0046f36",
+        "template_name": "新手格魯西斯",
+        "graphic_id": 100329,
+        "instance_level_range": [
+          1,
+          1
+        ],
+        "instance_petflag": 1,
+        "template_petflag": 1,
+        "template_default_capture_get": 5
+      },
+      {
+        "color": "金虎",
+        "addpet_id": 2484,
+        "enemy_row_line": 1939,
+        "enemy_record_sha256": "ee26ffebdcbb12d47fbd6166e9c50cf0f1a4762e5863b66fc7873dea8c68435e",
+        "enemy_name": "給新手的金格薩貝魯",
+        "template_no": 164,
+        "template_line": 164,
+        "template_sha256": "a37db0aabd1a185e4eb637702b6e2a4730a44a2b29014c44b710b24bcde8b1db",
+        "template_name": "新手金格薩貝魯",
+        "graphic_id": 100330,
+        "instance_level_range": [
+          1,
+          1
+        ],
+        "instance_petflag": 1,
+        "template_petflag": 1,
+        "template_default_capture_get": 5
+      }
+    ],
+    "all_four_enemy_ids_unique_and_templates_resolve": true,
+    "all_four_original_template_graphic_ids_are_present_as_numbers": true,
+    "original_248x_absent_as_direct_TEMPNO_but_present_as_ENEMY_ID": true,
+    "later_code_qualified_example": {
+      "repository": "BismarckDD/Stoneage",
+      "fixed_commit": "2f736808ff4361f5429ee919b718c88fabb60346",
+      "path": "server/gmsv/npc/npc_exchangeman.c",
+      "git_blob_sha": "019a9578b122773df90442719ece50ad79fbe1b4",
+      "function": "NPC_EventAddPet",
+      "handler_behavior": "find ENEMY_ID==input, call ENEMY_createPetFromEnemyIndex if an owned pet slot is empty; source code executes only if its correct caller path is reached",
+      "same_rar_server_binary_or_build_proven": false,
+      "script_talkevent_uses_this_exact_handler_proven": false
+    }
   },
   "source_limits": {
     "trainer_create_file_present_does_not_prove_live_server_load": true,
@@ -246,5 +347,5 @@
     "wiki": "GATED",
     "r79": "PAUSED_NON_BLOCKING"
   },
-  "next": "O62: seek same-carrier AddPet:2481..2484 resolver / actual storage and riding link only if a new source can resolve it; else rotate to other evidence-bearing original world gameplay."
+  "next": "O62: resolve actual source NEWWARPMAN/AddPet handler and pet ownership transaction and modern offline original frame join only with same-source proof; no original client/world/riding execution inferred."
 }
