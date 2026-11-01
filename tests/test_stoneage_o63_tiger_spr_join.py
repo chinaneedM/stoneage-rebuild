@@ -17,4 +17,9 @@ class TestO63(unittest.TestCase):
             "tw10_original_bitmap_pixels_read_this_run","tw10_and_mixed25_full_segment_byte_equality_proven"):
    self.assertIs(r[k],False)
   self.assertIsNone(r["overall_completion_percent"])
+ def test_report_matches_unmodified_archived_sources(self):
+  import json
+  from pathlib import Path
+  path=Path(__file__).resolve().parents[1]/"research/recovered/STONEAGE-O63-FOUR-TIGER-SPR-SOURCE-R1.json"
+  self.assertEqual(json.loads(path.read_bytes()),derive())
 if __name__=="__main__":unittest.main()
