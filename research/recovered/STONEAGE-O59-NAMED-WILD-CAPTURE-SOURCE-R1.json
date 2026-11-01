@@ -1,0 +1,195 @@
+{
+  "schema": "stoneage.o59.original_named_wild_capture_gate_and_template_modifier.r1",
+  "date": "2026-11-01",
+  "evidence_scope": "LATER_PRESERVED_MIXED25_STATIC_ENCOUNTER_TO_CAPTURE_INPUTS_NOT_TW10_JSS1999_LIVE_EXECUTION",
+  "remote_base": {
+    "main_head": "17ccacbcdac94dec9147adb470eed7c3e3a22d8a",
+    "main_tree": "5c127a40a4e76faa03e579ec3207250d63eb61d3",
+    "current_file_original_blob_sha": "20050acf279a01555ab06a381dfcdc936bd381a6",
+    "current_file_original_bytes": 2708031,
+    "current_modified": false
+  },
+  "preserved_original_rar": {
+    "private_location": "/stoneage-preserved-mixed25-original.rar",
+    "bytes": 361255180,
+    "sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+    "whole_source_reverified_this_work_unit": true
+  },
+  "exact_original_file_receipts": {
+    "encount.txt": {
+      "rar_member_index_zero_based": 3727,
+      "bytes": 43420,
+      "sha256": "70bbd997d98508a0587df183b5bdd48222ff42db91bf21bea632e0ed6f2fea87",
+      "rar_crc32": "d58f5903",
+      "all_original_bytes_read_and_SHA_CRC_verified": true
+    },
+    "group1.txt": {
+      "rar_member_index_zero_based": 3736,
+      "bytes": 70176,
+      "sha256": "4a02f2a3fa3d2dcf5589d8a2a560313c35d5a0a7e5e0589cc8df5f7df159ea8f",
+      "rar_crc32": "b7a6ed50",
+      "all_original_bytes_read_and_SHA_CRC_verified": true
+    },
+    "enemy.txt": {
+      "rar_member_index_zero_based": 3728,
+      "bytes": 222463,
+      "sha256": "cc7418d3b6726f1c458fef9e44a24696d05f076b67c62a56ed2293e26ae63bb6",
+      "rar_crc32": "0d60e57d",
+      "all_original_bytes_read_and_SHA_CRC_verified": true
+    },
+    "enemybase.txt": {
+      "rar_member_index_zero_based": 3730,
+      "bytes": 147750,
+      "sha256": "1be7d5226798f7abaabe1f1e74aa1533fcd10e3eaf43f6497d63afa91df3e8b7",
+      "rar_crc32": "29258170",
+      "all_original_bytes_read_and_SHA_CRC_verified": true
+    }
+  },
+  "raw_csv_column_zero_based": {
+    "enemy_instance": {
+      "ENEMY_ID": 3,
+      "ENEMY_TEMPNO": 4,
+      "ENEMY_LV_MIN": 5,
+      "ENEMY_LV_MAX": 6,
+      "ENEMY_PETFLG": 13
+    },
+    "enemy_template": {
+      "E_T_TEMPNO": 6,
+      "E_T_GET": 14,
+      "E_T_IMGNUMBER": 36,
+      "E_T_PETFLG": 37
+    },
+    "group1": {
+      "GROUP_ID": 1,
+      "ENEMY_ID_first_slot": 4
+    },
+    "encount": {
+      "AREA_ID": 0,
+      "FLOOR": 1,
+      "GROUP0": 10,
+      "GROUP1": 11,
+      "SOURCE_WEIGHT0": 20,
+      "SOURCE_WEIGHT1": 21
+    }
+  },
+  "source_encounter": {
+    "row_id": 21,
+    "source_line_number": 1,
+    "row_sha256": "78dd537235bee8d0f74fdf610a7cb46915c1d949b39de6f9dfeebba1ee8f9358",
+    "floor": 100,
+    "rectangle_xyxy": [
+      582,
+      399,
+      783,
+      560
+    ],
+    "selected_group_ids": [
+      88,
+      91
+    ],
+    "selected_raw_weight_values": [
+      50,
+      50
+    ],
+    "selected_only_not_whole_area": true
+  },
+  "selected_named_wild_enemy_gates": [
+    {
+      "name_cp950_source": "昆伊",
+      "source_encounter_group_id": 88,
+      "source_group_enemy_id": 119,
+      "source_enemy_template_no": 113,
+      "original_template_IMGNUMBER": 100297,
+      "enemy_record_level_range": [
+        1,
+        1
+      ],
+      "source_instance_ENEMY_PETFLG": 1,
+      "source_template_E_T_GET": 11,
+      "source_template_E_T_PETFLG": 1,
+      "source_enemy_instance_display_suffix_CP950": "昆依",
+      "source_template_name_equals_instance_display_suffix": false,
+      "source_record_line_positions": {
+        "group1": 1,
+        "enemy": 62,
+        "enemybase": 113
+      },
+      "record_sha256": {
+        "group1": "46c4c48c19db75b20af5705b536a0d6adb3f720b7d26fc4b85436d26e709f165",
+        "enemy": "07f86236e17ec05a671975e12b6aea8d9f08821c59ba9f0f7cc6c457de207a4d",
+        "enemybase": "78243a77e28c35bf51169ea131492d6f821079bbb74fcf8ed8ac6b6ad78c7bac"
+      }
+    },
+    {
+      "name_cp950_source": "凱比特",
+      "source_encounter_group_id": 91,
+      "source_group_enemy_id": 122,
+      "source_enemy_template_no": 114,
+      "original_template_IMGNUMBER": 100298,
+      "enemy_record_level_range": [
+        1,
+        1
+      ],
+      "source_instance_ENEMY_PETFLG": 1,
+      "source_template_E_T_GET": 9,
+      "source_template_E_T_PETFLG": 1,
+      "source_enemy_instance_display_suffix_CP950": "凱比特",
+      "source_template_name_equals_instance_display_suffix": true,
+      "source_record_line_positions": {
+        "group1": 4,
+        "enemy": 65,
+        "enemybase": 114
+      },
+      "record_sha256": {
+        "group1": "9857655ef9d0db30b794ac7a40126392ca1c9f7c8e7c1480d2fb3ed28433e010",
+        "enemy": "6e4c55d7ac5e4d8b4f355290d4345e901e2dbd96145d14cdb4f2c06764ecfe9c",
+        "enemybase": "5a1b37bacef10ad05bc1803540f6369c7296779c0e0f78a1588ac3177922186e"
+      }
+    }
+  ],
+  "negative_contrast_other_enemy_not_in_selected_area": {
+    "enemy_id": 2250,
+    "template_no": 29,
+    "enemy_line_number": 1721,
+    "enemy_row_sha256": "741027edfd96ac03f4962ee55c3a973295b73f8878336c735ffb073c4fd46ecc",
+    "enemybase_line_number": 29,
+    "enemybase_row_sha256": "59d67b84311d5a51d2a84aba40d3368671bfc612ec421875fe137d71373c489f",
+    "instance_ENEMY_PETFLG": 0,
+    "template_E_T_GET": -5,
+    "template_E_T_PETFLG": 0,
+    "outside_selected_encounter_pair": true,
+    "prior_O22_entity": true,
+    "source_enemy_instance_name_CP950": "假白虎",
+    "source_template_name_CP950": "白唬"
+  },
+  "source_interpretation": {
+    "instance_ENEMY_PETFLG_nonzero_allows_target_gate_in_pinned_descendant_capture_code": true,
+    "E_T_GET_used_for_CHAR_WORKMODCAPTUREDEFAULT_in_pinned_descendant_code": true,
+    "specific_wild_instances_capture_enabled_under_descendant_code_if_other_gates_satisfied": true,
+    "template_modifier_NOT_direct_percent_or_outcome": true,
+    "no_captured_pet_or_runtime_encounter_observed": true,
+    "two_template_modifiers": [
+      11,
+      9
+    ],
+    "difference_in_score_before_charm_scaling": 2
+  },
+  "strict_nonclaims": {
+    "original_1999_JSS_or_TW10_species_capture_gates_proven": false,
+    "official_live_mixed25_deployment_proven": false,
+    "native_original_client_or_server_executed": false,
+    "specific_capture_probability_or_success_proven": false,
+    "actual_HPs_or_players_stats_proven": false,
+    "all_encounter_groups_are_capturable": false,
+    "original_game_world_entered": false,
+    "copyrighted_original_rows_published": false,
+    "overall_completion_percent": null
+  },
+  "phase": {
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b": "GATED",
+    "wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING"
+  },
+  "next": "O60: rotate to independently sourced pet ownership, quest, or early village gameplay; no additional static capture simulation without new source."
+}
