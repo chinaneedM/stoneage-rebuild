@@ -1,0 +1,81 @@
+{
+  "schema": "stoneage.o57.petshop_cross_carrier_code_comparison.r1",
+  "date": "2026-11-01",
+  "baseline": {
+    "remote_main_head": "fe963ffff01de790cdeee9720d51cd8e49ecd4ce",
+    "remote_main_tree": "d3e6cb0f79414525bf3ff9d7c6282e443a31ce71",
+    "preserved_current_state_blob": "20050acf279a01555ab06a381dfcdc936bd381a6",
+    "preserved_current_state_bytes": 2708031
+  },
+  "source_qualification": "INDEPENDENT_2026_PUBLIC_INTEGRATION_NOT_OFFICIAL_OR_SAME_DEPLOYMENT",
+  "preserved_mixed25": {
+    "source_report": "research/recovered/STONEAGE-O18-MAP1003-SAME-CARRIER-NAMED-CONTENT-R1.json",
+    "create_report": "research/recovered/STONEAGE-O19-ONE-PETSHOP-CREATE-ARGUMENT-LINK-R1.json",
+    "floor": 1003,
+    "npc_xy": [12, 13],
+    "graphicname_raw": 16038,
+    "argument_path": "gmsv/data/npc/genout/ps_1003_12_13",
+    "argument_bytes": 397,
+    "argument_sha256": "f4759c08d7391033b8fcee4d2580832c77e8210d637009b608be460b51285cbe",
+    "argument_field_labels_for_this_comparison": ["nomal_rate", "special_rate", "special_pet", "pool_flg", "pool_cost"],
+    "argument_actual_values_this_turn_reread": false,
+    "original_npc_spawn_executed": false
+  },
+  "later_code_snapshot": {
+    "repository": "BismarckDD/Stoneage",
+    "commit": "2f736808ff4361f5429ee919b718c88fabb60346",
+    "repository_readme_blob": "2bd1ee3bcac582582b171136899e45122783422c",
+    "repository_readme_scope": "2026_integrated_code_claiming_version_1_82_through_8_5_compatibility",
+    "source_path": "server/gmsv/npc/npc_petshop.c",
+    "git_blob_sha1": "5f18141188fb7a1bd2ce236a4559e54dc1a82294",
+    "size_bytes": 52497,
+    "function_line_spans_approx_in_immutable_source": {
+      "init": [90, 124],
+      "main_menu": [147, 215],
+      "price_confirmation": [268, 289],
+      "player_choice_dispatch": [396, 495],
+      "sell_price": [628, 734],
+      "sell_transfer": [738, 793],
+      "pet_pool_deposit": [794, 858],
+      "pet_pool_withdraw": [859, 923]
+    },
+    "code_path": {
+      "nomal_rate_initialization": true,
+      "special_rate_initialization": true,
+      "special_pet_graphic_number_matching": true,
+      "pool_flg_gate_for_some_menu_and_operations": true,
+      "uses_compile_time_NPC_DEPOTPET_extension": true,
+      "pool_fee_level_expression_in_this_snapshot": "50+4*player_level",
+      "script_pool_cost_consumed_in_this_file": false,
+      "separate_sell_price_path": true,
+      "sale_blocks_riding_pet": true,
+      "sale_blocks_family_guard_pet": true,
+      "sale_clears_default_pet": true,
+      "deposit_blocks_riding_pet": true,
+      "deposit_moves_owned_pet_to_pool": true,
+      "deposit_clears_default_pet": true,
+      "deposit_debits_level_based_fee": true,
+      "withdraw_requires_empty_owned_pet_slot": true,
+      "withdraw_moves_pool_pet_into_owned_slot": true
+    },
+    "branch_compilation_and_actual_loader_proven": false,
+    "source_execution_observed": false
+  },
+  "negative_claims": {
+    "mixed25_matching_server_binary_proven": false,
+    "official_tw10_or_jss1999_shop_rule_proven": false,
+    "mixed25_actual_pool_flg_value_this_turn_reread": false,
+    "original_pool_cost_effectively_ignored_in_original_deployment": false,
+    "pool_fee_formula_original_or_2003_live_operator_proven": false,
+    "historical_pet_sale_deposit_withdraw_executed": false,
+    "historical_npc_interaction_or_inventory_transaction_observed": false,
+    "original_1003_dat_exits_reread": false,
+    "original_game_world_entered": false,
+    "proprietary_source_code_published_in_our_repository": false
+  },
+  "stage_a": "7_PARTIAL_2_OPEN",
+  "stage_b": "GATED",
+  "wiki": "GATED",
+  "r79": "PAUSED_NON_BLOCKING",
+  "overall_completion_percent": null
+}
