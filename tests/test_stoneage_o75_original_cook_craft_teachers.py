@@ -45,7 +45,7 @@ class O75TeacherChefSourceBoundTests(unittest.TestCase):
                          ["ITEM_useStatusChange", "ITEM_useRecovery", "ITEM_useRecovery"])
         self.assertTrue(r["itemset_ingvalue_is_not_menu_quantity_or_proven_success_percentage"])
         self.assertTrue(r["source_menu_conf_exists_but_unreferenced_by_these_two_chefs"])
-        self.assertTrue(r["craft_teacher_describes"]["no_success_rate_or_native_experiment"])
+        self.assertTrue(r["craft_teacher_describes"]["actual_formula_and_success_rate_not_proven"])
 
     def test_original_sprite_byte_evidence_and_executability_boundaries(self):
         r = self.r
@@ -60,7 +60,7 @@ class O75TeacherChefSourceBoundTests(unittest.TestCase):
         self.assertTrue(z["not_original_client_interaction"])
         for key in ("native_client_executed", "native_server_executed", "original_NPC_window_clicked",
                     "original_cook_or_craft_executed", "actual_item_effect_executed",
-                    "same_official_build_deployment_proven", "earliest_JSS1999_or_TW10_gameplay_confirmed"):
+                    "actual_original_same_build_deployment_confirmed", "earliest_JSS1999_or_TW10_gameplay_confirmed"):
             self.assertIs(r["limits"][key], False)
         self.assertIsNone(r["limits"]["overall_percent"])
         self.assertEqual(r["limits"]["r79"], "PAUSED_NON_BLOCKING")
