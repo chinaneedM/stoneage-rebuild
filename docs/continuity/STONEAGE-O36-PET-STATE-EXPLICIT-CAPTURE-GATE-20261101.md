@@ -15,3 +15,8 @@
 从本轮已验证合并后的远端主线 `44bf4a7cc85ee4bd5eeb6fa7c305cc3f2c3c250f` / tree `910c8e2ebcc70df417e106821f66b69d67c50fb7` 开始，完整 `docs/CURRENT-STATE.md` 2,708,031B / blob `20050acf279a01555ab06a381dfcdc936bd381a6` 依协议全量读取、保持不变。PR93候选12/12、main10/10已逐项核实。本轮公开 Git 只含源码、测试、派生收据和此说明，没有任何受版权保护的原始游戏素材。Stage A 7 PARTIAL + 2 OPEN，Stage B/wiki GATED，R79 PAUSED_NON_BLOCKING，overall percent=null。
 
 **NEXT O37：**回到能真正观察的原版内容：优先检查已取证的保存版宠物店地图1003及其 NPC 创建、参数与原像素是否有完整私有原件可交互；缺原MAP/RD载荷或原版传送链就明确止点，不伪造建筑图片、不把现代资料跳转冒充原游戏路线，再轮换到其他有原件的玩法。
+
+
+## 2026-11-01 — CI provenance correction (additive, after original O36 draft)
+
+The first candidate CI showed Stage A R1's historic review pin mismatch with the two deliberately changed live modules. To preserve old evidence, R1 review/decision packets remain untouched and R2 snapshots supersede only the live-source pins with explicit previous SHA custody. The first R2 replay also exposed pre-existing strict whole-file sizing for append-only `docs/RESTORATION-PHASE-GATE-R1.md` (original 74172 bytes; live 75620). The single existing blocker-triage regression test now compares the complete historical pinned prefix with the original SHA/byte length, while accepting legitimate content appended after that prefix. No historical source claim, stage gate, service status, original game runtime or acceptance level is promoted. Old failure CI records remain visible. Repaired candidate snapshot: consolidated R2 blob `72f3bbee8de2728db7955001f2c9567ad165a3fc`, joint R2 blob `14ba41a62a069d1a7515452aea6c3ea84d742fe6`. The branch's complete source files continue to be validated by the coordinator suite independently.

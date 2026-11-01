@@ -250,9 +250,9 @@
     },
     "tests.test_stoneage_stage_a_blocker_triage": {
       "path": "tests/test_stoneage_stage_a_blocker_triage.py",
-      "bytes": 4724,
-      "sha256": "e8ba2e425056707af5d7fabe910419946fb046dfada103b19e44a0005f14f12b",
-      "git_blob": "645fc96b84d94bdf8d1d3ae222cda5204bcfc337"
+      "bytes": 5038,
+      "sha256": "7c886630b26cd636853c2fca53cd5ba3915a30c821a7d74decf2d40b66b1f918",
+      "git_blob": "f370d795a1ff61ec40c9cbf9c24743f6002f0846"
     },
     "player_growth": {
       "path": "research/mechanics/STONEAGE-PLAYER-GROWTH-CORE-R1.md",
@@ -917,11 +917,18 @@
         "bytes": 227982,
         "sha256": "a98adce607e634d7e03d7a2fb5d22f79d859f4ac49384965df7a6e435fecf908",
         "git_blob": "cffb3cb86c84c8f2a19801b02a1b0647d6c0a4e0"
+      },
+      "tests.test_stoneage_stage_a_blocker_triage": {
+        "path": "tests/test_stoneage_stage_a_blocker_triage.py",
+        "bytes": 4724,
+        "sha256": "e8ba2e425056707af5d7fabe910419946fb046dfada103b19e44a0005f14f12b",
+        "git_blob": "645fc96b84d94bdf8d1d3ae222cda5204bcfc337"
       }
     },
     "source_branch": "agent/o36-pet-state-explicit-capture-source-20261101",
     "source_commit": "98daa47806d282420bce35f920b5bc030170a91d",
     "stage_a_accepted": false,
-    "original_game_execution": false
+    "original_game_execution": false,
+    "phase_gate_append_only_rule": "Preserve pinned original phase_gate prefix bytes and SHA; do not demand live document is frozen at previous length."
   }
 }
