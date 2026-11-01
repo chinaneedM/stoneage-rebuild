@@ -82,9 +82,20 @@
     "zip_sha256": "14fc7e1b344144bb513eb4feb8c95146de275a6188e1409174e190230ffb8cc6",
     "zip_members": 4,
     "local_zip_crc_verified": true,
-    "library_upload_success": false,
+    "library_upload_success": true,
     "library_error": "container_session_expired",
-    "source_audio_or_full_HTML_published_in_public_git": false
+    "source_audio_or_full_HTML_published_in_public_git": false,
+    "library_upload_method": "source_file_ref_exact_verified_export_snapshot",
+    "library_file_id": "libfile_812687cc6f088191a552dade7d1ac827",
+    "library_snapshot_file_id": "file_00000000f924820788005d19e3fbf527",
+    "library_full_download_sha256_verified": true,
+    "library_full_download_zip_crc_pass": true,
+    "library_error_history": [
+      "container_session_expired on first upload",
+      "container_session_expired on retry",
+      "source_file_ref upload succeeded",
+      "library materialization 2724452B, SHA and all 4 ZIP CRC match"
+    ]
   },
   "conclusion": "AUDIO_SOURCE_THREE_WAY_DISAMBIGUATION_OPEN_MANUAL_SOURCE_AUDITION_AVAILABLE_NO_ORIGINAL_EVENT_BINDING",
   "boundaries": {
