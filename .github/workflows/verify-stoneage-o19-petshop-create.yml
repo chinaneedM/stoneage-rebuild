@@ -5,12 +5,16 @@ on:
       - 'research/recovered/STONEAGE-O19-ONE-PETSHOP-CREATE-ARGUMENT-LINK-R1.json'
       - 'tools/stoneage_o19_petshop_create_link.py'
       - 'tests/test_stoneage_o19_petshop_create_link.py'
+      - 'tests/test_stoneage_o57_petshop_compare.py'
+      - 'research/recovered/STONEAGE-O57-PETSHOP-CODE-CROSS-CARRIER-R1.json'
       - '.github/workflows/verify-stoneage-o19-petshop-create.yml'
   pull_request:
     paths:
       - 'research/recovered/STONEAGE-O19-ONE-PETSHOP-CREATE-ARGUMENT-LINK-R1.json'
       - 'tools/stoneage_o19_petshop_create_link.py'
       - 'tests/test_stoneage_o19_petshop_create_link.py'
+      - 'tests/test_stoneage_o57_petshop_compare.py'
+      - 'research/recovered/STONEAGE-O57-PETSHOP-CODE-CROSS-CARRIER-R1.json'
       - '.github/workflows/verify-stoneage-o19-petshop-create.yml'
 jobs:
   source-only:
@@ -24,3 +28,9 @@ jobs:
         run: |
           python -m tools.stoneage_o19_petshop_create_link
           python -m unittest discover -s tests -p 'test_stoneage_o19_petshop_create_link.py' -v
+      - name: Compare pinned public later-source petshop implementation (not original native execution)
+        run: |
+          curl --fail --location --silent --show-error --retry 2 --connect-timeout 10 --max-time 90 \
+            https://raw.githubusercontent.com/BismarckDD/Stoneage/2f736808ff4361f5429ee919b718c88fabb60346/server/gmsv/npc/npc_petshop.c \
+            -o /tmp/stoneage-o57-petshop.c
+          STONEAGE_O57_PETSHOP_SOURCE=/tmp/stoneage-o57-petshop.c python -m unittest tests.test_stoneage_o57_petshop_compare -v
