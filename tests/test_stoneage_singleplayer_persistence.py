@@ -236,6 +236,55 @@ class SinglePlayerPersistenceTests(unittest.TestCase):
         ):
             decode_persistent_state(__import__("json").dumps(payload))
 
+    def test_noninteger_owned_identity_and_growth_never_silently_coerce(self):
+        # JSON bools, quoted integers and fractional numbers must not silently
+        # select a different owned pet, item, skill, rank or growth stat.
+        bad_locations = (
+            ("inventory", "slot"),
+            ("inventory", "template_id"),
+            ("pets", "slot"),
+            ("pets", "variant_id"),
+            ("pets", "template_id"),
+            ("skills", "template_id"),
+            ("growth", "pet_rank"),
+            ("growth", "alloc_point"),
+            ("growth", "internal_vital"),
+            ("growth", "internal_strength"),
+            ("growth", "internal_toughness"),
+            ("growth", "internal_dexterity"),
+            ("growth", "variable_ai"),
+            ("default", "default_pet_slot"),
+        )
+        for container, key in bad_locations:
+            for bad in (True, "2", 2.75):
+                with self.subTest(container=container, key=key, value=bad):
+                    payload = dump_persistent_state(make_state())
+                    if container == "inventory":
+                        entry = payload["inventory"][0]
+                    elif container == "pets":
+                        entry = payload["pets"][0]
+                    elif container == "skills":
+                        entry = payload["pets"][0]["skills"][0]
+                    elif container == "growth":
+                        entry = payload["pets"][0]["growth"]
+                    else:
+                        entry = payload
+                    entry[key] = bad
+                    with self.assertRaisesRegex(ValueError, "must be a JSON integer"):
+                        load_persistent_state(payload)
+
+    def test_invalid_pet_identity_cannot_partially_replace_live_save(self):
+        # The public restore entry point must remain transactional.
+        domain = SinglePlayerHistoricalDomain()
+        old = make_state()
+        domain.persistent = old
+        payload = dump_persistent_state(make_state())
+        payload["pets"][0]["variant_id"] = 700.9
+        with self.assertRaisesRegex(ValueError, "pet variant ID"):
+            restore_domain_persistent_state(domain, payload)
+        self.assertIs(domain.persistent, old)
+        self.assertEqual(domain.persistent.pets[PetSlot(2)].variant_id, EnemyVariantId(700))
+
     def test_duplicate_slots_are_rejected(self):
         payload = dump_persistent_state(make_state())
         payload["inventory"] = payload["inventory"] * 2

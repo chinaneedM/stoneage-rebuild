@@ -48,6 +48,13 @@ def _plain_mapping(value: Mapping[str, Any], *, label: str) -> dict[str, Any]:
     return out
 
 
+def _json_integer(value: Any, *, label: str) -> int:
+    """Reject silent truncation/coercion of persisted numeric pet/item state."""
+    if type(value) is not int:  # bool, float and string are not JSON integers.
+        raise ValueError(f"{label} must be a JSON integer")
+    return value
+
+
 def dump_persistent_state(
     state: PersistentPlayerState,
 ) -> dict[str, Any]:
@@ -153,7 +160,7 @@ def load_persistent_state(payload: Mapping[str, Any]) -> PersistentPlayerState:
     default_pet_slot = (
         None
         if schema != PERSISTENCE_SCHEMA or payload["default_pet_slot"] is None
-        else PetSlot(int(payload["default_pet_slot"]))
+        else PetSlot(_json_integer(payload["default_pet_slot"], label="default pet slot"))
     )
     state = PersistentPlayerState(default_pet_slot=default_pet_slot)
 
@@ -172,7 +179,7 @@ def load_persistent_state(payload: Mapping[str, Any]) -> PersistentPlayerState:
             raise ValueError("inventory entry must be an object")
         if set(row) != {"slot", "template_id", "view"}:
             raise ValueError("inventory entry has unexpected shape")
-        slot = InventorySlot(int(row["slot"]))
+        slot = InventorySlot(_json_integer(row["slot"], label="inventory slot"))
         if slot.value in seen_inventory:
             raise ValueError(f"duplicate inventory slot {slot.value}")
         seen_inventory.add(slot.value)
@@ -180,7 +187,7 @@ def load_persistent_state(payload: Mapping[str, Any]) -> PersistentPlayerState:
             raise ValueError("inventory view must be an object")
         item = InventoryItem(
             slot=slot,
-            template_id=ItemTemplateId(int(row["template_id"])),
+            template_id=ItemTemplateId(_json_integer(row["template_id"], label="item template ID")),
             view=MappingProxyType(dict(row["view"])),
         )
         state.inventory[slot] = item
@@ -203,7 +210,7 @@ def load_persistent_state(payload: Mapping[str, Any]) -> PersistentPlayerState:
             expected_pet_keys.add("growth")
         if set(row) != expected_pet_keys:
             raise ValueError("pet entry has unexpected shape")
-        slot = PetSlot(int(row["slot"]))
+        slot = PetSlot(_json_integer(row["slot"], label="pet slot"))
         if slot.value in seen_pets:
             raise ValueError(f"duplicate pet slot {slot.value}")
         seen_pets.add(slot.value)
@@ -222,7 +229,7 @@ def load_persistent_state(payload: Mapping[str, Any]) -> PersistentPlayerState:
                 raise ValueError("pet skill view must be an object")
             skills.append(
                 PetSkill(
-                    template_id=int(skill_row["template_id"]),
+                    template_id=_json_integer(skill_row["template_id"], label="pet skill template ID"),
                     view=MappingProxyType(dict(skill_row["view"])),
                 )
             )
@@ -248,14 +255,14 @@ def load_persistent_state(payload: Mapping[str, Any]) -> PersistentPlayerState:
             if set(growth_row) != expected_growth_keys:
                 raise ValueError("pet growth entry has unexpected shape")
             growth = PetGrowthState(
-                pet_rank=int(growth_row["pet_rank"]),
-                alloc_point=int(growth_row["alloc_point"]),
-                internal_vital=int(growth_row["internal_vital"]),
-                internal_strength=int(growth_row["internal_strength"]),
-                internal_toughness=int(growth_row["internal_toughness"]),
-                internal_dexterity=int(growth_row["internal_dexterity"]),
+                pet_rank=_json_integer(growth_row["pet_rank"], label="pet rank"),
+                alloc_point=_json_integer(growth_row["alloc_point"], label="pet alloc point"),
+                internal_vital=_json_integer(growth_row["internal_vital"], label="pet internal_vital"),
+                internal_strength=_json_integer(growth_row["internal_strength"], label="pet internal_strength"),
+                internal_toughness=_json_integer(growth_row["internal_toughness"], label="pet internal_toughness"),
+                internal_dexterity=_json_integer(growth_row["internal_dexterity"], label="pet internal_dexterity"),
                 variable_ai=(
-                    int(growth_row["variable_ai"])
+                    _json_integer(growth_row["variable_ai"], label="pet variable AI")
                     if schema in {
                         VARIABLE_AI_PERSISTENCE_SCHEMA,
                         PERSISTENCE_SCHEMA,
@@ -266,8 +273,8 @@ def load_persistent_state(payload: Mapping[str, Any]) -> PersistentPlayerState:
 
         pet = PetActor(
             slot=slot,
-            variant_id=EnemyVariantId(int(row["variant_id"])),
-            template_id=PetTemplateId(int(row["template_id"])),
+            variant_id=EnemyVariantId(_json_integer(row["variant_id"], label="pet variant ID")),
+            template_id=PetTemplateId(_json_integer(row["template_id"], label="pet template ID")),
             runtime_object_id=None,
             state=MappingProxyType(dict(row["state"])),
             skills=tuple(skills),
