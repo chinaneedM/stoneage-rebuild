@@ -4910,6 +4910,24 @@ class LocalRuntimeSessionCoordinator:
         if not isinstance(capture_rolls, OrdinaryCaptureRolls):
             raise TypeError("capture_rolls must be OrdinaryCaptureRolls")
 
+        # PET-STATE-01: captured ownership is persistent, not a transient
+        # battle projection. The recovered capture transition does not supply
+        # these six fields. Require the actual caller to supply them instead
+        # of silently inventing MP, EXP or naming/rename state.
+        caller_owned = ("mp", "max_mp", "exp", "max_exp", "rename_flag", "free_name")
+        for target_id, pet in captured_pets_by_target_id.items():
+            if not isinstance(pet, PetActor):
+                raise TypeError(f"captured pet {target_id} must be PetActor")
+            missing = tuple(
+                key for key in caller_owned
+                if key not in pet.state or pet.state[key] is None
+            )
+            if missing:
+                raise ValueError(
+                    f"captured pet {target_id} missing explicit caller state: "
+                    + ", ".join(missing)
+                )
+
         encounter_runtime = getattr(self.stack, "encounter_runtime", None)
         if encounter_runtime is None:
             raise ValueError("runtime stack has no encounter runtime")
