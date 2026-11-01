@@ -1,0 +1,119 @@
+{
+  "schema": "stoneage.o49.adult_flag_two_warpman_original_source.r1",
+  "date": "2026-11-01",
+  "baseline": {
+    "main_sha": "7663196e8a226f3e7bacc57a9fcd1680b27c93db",
+    "tree_sha": "07f9c9fe103dfe5a4ee6d76b97329069633ce8cc",
+    "current_state_blob_preserved": "20050acf279a01555ab06a381dfcdc936bd381a6",
+    "current_state_size_bytes": 2708031
+  },
+  "scope": "mixed25_late_community_preservation_not_JSS1999_or_TW1.0_official_same_deployment",
+  "original_rar": {
+    "private_library": "/stoneage-preserved-mixed25-original.rar",
+    "size": 361255180,
+    "sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+    "sha256_reverified_this_continuation": true
+  },
+  "files": [
+    {
+      "path": "jobdaily.txt",
+      "size": 7929,
+      "sha256": "5a1cb35c35b09ce78f83934a3ec5782918f2dc5cb5c9fa572618b2ecb36613bd",
+      "rar_header_crc32": "04a63e31"
+    },
+    {
+      "path": "npc/genout/genou.create",
+      "size": 7451,
+      "sha256": "47e6dea94ea14a7900381b69e4c9ee0959456b325c3f580d58dd516f0bbd8586",
+      "rar_header_crc32": "7cd6cfb6"
+    },
+    {
+      "path": "npc/genout/npcgen.template",
+      "size": 4950,
+      "sha256": "0c5a58d5e31cafd3b58ccc1fa88fee7d1f95d12c0b87b04db9f06fea3b2a4df3",
+      "rar_header_crc32": "56547578"
+    },
+    {
+      "path": "npc/genout/wpm_200_358_671",
+      "size": 337,
+      "sha256": "ee3ad55ae6da677f37e357fda8a2f1189a2677c5815495e94d40a459f0b5c4ee",
+      "rar_header_crc32": "7360420b"
+    },
+    {
+      "path": "npc/genout/wpm_200_359_671",
+      "size": 337,
+      "sha256": "ee3ad55ae6da677f37e357fda8a2f1189a2677c5815495e94d40a459f0b5c4ee",
+      "rar_header_crc32": "7360420b"
+    }
+  ],
+  "original_r18_manifest": "research/recovered/STONEAGE-MIXED25-SERVER-FULL-SOURCE-R18.json",
+  "verifications": {
+    "individual_sha_matches_R18": true,
+    "extracted_bytes_crc_matches_rar_header": true,
+    "CP950_roundtrip": true,
+    "two_original_independent_create_blocks": true,
+    "full_actual_original_game_runtime_executed": false
+  },
+  "journal": {
+    "entry_id": 1,
+    "brief_name_simplified": "成人仪式",
+    "completed": "ENDEV=4",
+    "in_progress": "NOWEV=4",
+    "completed_row_sha256": "da2c9bb939a1ab762decea98044e83533bec9e74438c5bfbbcad6668f64dd08c",
+    "in_progress_row_sha256": "4f89c45f386492473e83b96e5f30d72878b2c60d9b9c56491cee1f5120c68863"
+  },
+  "template": {
+    "name": "npcgen_warpman",
+    "functionset": "WarpMan",
+    "original_block_sha256": "26fe70d440dee494d95a4ab5a15effd2ac600863773811eeeba341c38e4cce11",
+    "unique_match": true
+  },
+  "spawn_entries": [
+    {
+      "floor": 200,
+      "coordinate": [
+        358,
+        671
+      ],
+      "create_block_sha256": "980a331e8b86e03cbacec875c4eab85351ddcdce4fe4849d365c900e382c8e14",
+      "behavior_path": "npc/genout/wpm_200_358_671"
+    },
+    {
+      "floor": 200,
+      "coordinate": [
+        359,
+        671
+      ],
+      "create_block_sha256": "78e100456f4226d39cbee5df5a2122dd83da67463b024c7d79b50f516c5b3a4f",
+      "behavior_path": "npc/genout/wpm_200_359_671"
+    }
+  ],
+  "source_literally_same_behavior_file_bytes": true,
+  "literal_behavior": {
+    "WARP": [
+      21001,
+      4,
+      3
+    ],
+    "FREE": "LV>64&ENDEV=4",
+    "MONEY": -1,
+    "graphicname": 16202,
+    "createnum": 1
+  },
+  "unproven": [
+    "how quest status flag 4 is written",
+    "native conditional parser interpretation and level comparison",
+    "native movement and teleport triggered",
+    "official original 1999/TW1 identity",
+    "original game world actually run"
+  ],
+  "historical_write_blocker": "2026-11-01 first O49 remote write was blocked; local files preserved; this new derived-only publication does not overwrite that history",
+  "phase": {
+    "stage_A": "7_PARTIAL_2_OPEN",
+    "stage_B": "GATED",
+    "wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "percent": null
+  },
+  "next": "O50 rotate to different source-complete gameplay family; no unsourced NPC UI"
+}
