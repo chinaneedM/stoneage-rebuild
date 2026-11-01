@@ -1,0 +1,380 @@
+{
+  "schema": "stoneage.o75.original_cooking_crafting_teacher_and_chef_source_bound_r1",
+  "date": "2026-11-02",
+  "remote_base_head": "04079d8d9f4f7f0a1f676d6b129f53f6f5e32daf",
+  "preserved_history_current_sha": "20050acf279a01555ab06a381dfcdc936bd381a6",
+  "source_scope": "LATER_COMMUNITY_MIXED25_NPC_TEXT_AND_ITEM_TABLE_WITH_TW10_SOURCE_GRAPHICS_NOT_NATIVE_RUN",
+  "source_archive": {
+    "bytes": 361255180,
+    "sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+    "full_sha_verified_this_unit": true
+  },
+  "actual_extracted_source_files": {
+    "itematom.txt": {
+      "bytes": 775,
+      "sha256": "daa13fe6d218e09e36f00a06202b6ed089e13d9acc09ffac7769835925899cfa",
+      "rar_crc32": "296fa8d9",
+      "full_extraction_and_original_member_crc_agree": true,
+      "cp950_roundtrip": true
+    },
+    "itemset.txt": {
+      "bytes": 3392473,
+      "sha256": "a415e78f9aab2e5ea5ca92ecb7430253f7be1ba7c876d6b0bb6d067b1b466688",
+      "rar_crc32": "96397928",
+      "full_extraction_and_original_member_crc_agree": true,
+      "cp950_roundtrip": true
+    },
+    "npc/jaruga/cook.conf": {
+      "bytes": 2964,
+      "sha256": "6da7fa386ba2552ff4a8b034c20271dd201bdbe308711d022b65557083dbc7ae",
+      "rar_crc32": "002368b1",
+      "full_extraction_and_original_member_crc_agree": true,
+      "cp950_roundtrip": true
+    },
+    "npc/genout/npcgen.template": {
+      "bytes": 4950,
+      "sha256": "0c5a58d5e31cafd3b58ccc1fa88fee7d1f95d12c0b87b04db9f06fea3b2a4df3",
+      "rar_crc32": "56547578",
+      "full_extraction_and_original_member_crc_agree": true,
+      "cp950_roundtrip": true
+    },
+    "npc/jaruga/gousei.conf": {
+      "bytes": 2353,
+      "sha256": "dcc5b9cc544327ade398256a242d10ba90c39c4886eb2ebe9d1b5b976c1f39ce",
+      "rar_crc32": "a98e30b8",
+      "full_extraction_and_original_member_crc_agree": true,
+      "cp950_roundtrip": true
+    },
+    "npc/jaruga/menu.conf": {
+      "bytes": 496,
+      "sha256": "84720307c83c5eaa1852986febe3b1058f5307b5c83d223dd1d16f65d167cc5e",
+      "rar_crc32": "6c62c16e",
+      "full_extraction_and_original_member_crc_agree": true,
+      "cp950_roundtrip": true
+    },
+    "npc/jaruga/menu.create": {
+      "bytes": 1086,
+      "sha256": "9e724522d2f2e3a5aaf66ab8ab09d97911ff86b2debad723e64cedd7497acb21",
+      "rar_crc32": "38caa821",
+      "full_extraction_and_original_member_crc_agree": true,
+      "cp950_roundtrip": true
+    },
+    "npc/jaruga/menu01.conf": {
+      "bytes": 1201,
+      "sha256": "6e733803b3f542a0b051019a168bbef5e32287e4f5ff57a71ef91b2a897603ec",
+      "rar_crc32": "aa67db9d",
+      "full_extraction_and_original_member_crc_agree": true,
+      "cp950_roundtrip": true
+    },
+    "npc/jaruga/menu02.conf": {
+      "bytes": 1065,
+      "sha256": "0b0fce57eee873b2acc2ec990a0b544c10064e86ba75bf352ff70d8a14545bb5",
+      "rar_crc32": "e748ff90",
+      "full_extraction_and_original_member_crc_agree": true,
+      "cp950_roundtrip": true
+    }
+  },
+  "bounded_scan": {
+    "qualified_NPC_source_files": 2201,
+    "only_source_named_reference_to_cook_and_gousei": "npc/jaruga/menu.create",
+    "other_sources_and_builds_not_exhaustively_ruled_out": true
+  },
+  "original_NPC_spawn_from_menu_create": [
+    {
+      "kind": "chef",
+      "floor": 2009,
+      "xy": [
+        25,
+        41
+      ],
+      "graphic_alias": 16053,
+      "original_conf": "npc/jaruga/menu01.conf"
+    },
+    {
+      "kind": "chef",
+      "floor": 3009,
+      "xy": [
+        25,
+        43
+      ],
+      "graphic_alias": 16053,
+      "original_conf": "npc/jaruga/menu02.conf"
+    },
+    {
+      "kind": "craft_teacher",
+      "floor": 1009,
+      "xy": [
+        25,
+        30
+      ],
+      "graphic_alias": 16209,
+      "original_conf": "npc/jaruga/gousei.conf"
+    },
+    {
+      "kind": "craft_teacher",
+      "floor": 4009,
+      "xy": [
+        25,
+        30
+      ],
+      "graphic_alias": 16209,
+      "original_conf": "npc/jaruga/gousei.conf"
+    },
+    {
+      "kind": "cook_teacher",
+      "floor": 2009,
+      "xy": [
+        13,
+        14
+      ],
+      "graphic_alias": 16066,
+      "original_conf": "npc/jaruga/cook.conf"
+    },
+    {
+      "kind": "cook_teacher",
+      "floor": 3009,
+      "xy": [
+        13,
+        14
+      ],
+      "graphic_alias": 16066,
+      "original_conf": "npc/jaruga/cook.conf"
+    }
+  ],
+  "source_dialogue_window_graphs": {
+    "cook": {
+      "window_ids": [
+        1,
+        1000,
+        1001,
+        1002,
+        1003,
+        2000,
+        2001,
+        3000,
+        3001,
+        3002
+      ],
+      "directed_source_links": 12,
+      "all_reachable_from_1": true
+    },
+    "craft": {
+      "window_ids": [
+        1,
+        1000,
+        1001,
+        1002,
+        2000,
+        2001,
+        3000,
+        3001
+      ],
+      "directed_source_links": 10,
+      "all_reachable_from_1": true
+    },
+    "chef2009": {
+      "window_ids": [
+        1,
+        97,
+        98,
+        99,
+        100
+      ],
+      "directed_source_links": 5,
+      "all_reachable_from_1": true
+    },
+    "chef3009": {
+      "window_ids": [
+        1,
+        98,
+        99,
+        100
+      ],
+      "directed_source_links": 4,
+      "all_reachable_from_1": true
+    }
+  },
+  "cooking_teacher_describes": {
+    "pet_not_player_performs_cooking": true,
+    "learn_skill_at_pet_shop_marinas_or_jaja": true,
+    "select_at_least_two_ingredient_kinds": true,
+    "right_click_inventory_to_mark": true,
+    "select_pet_with_skill": true,
+    "choose_cooking_pet_skill": true,
+    "dinosaur_meat_substitution_source_text": true,
+    "about_50_ingredients_source_text_not_catalog_count": true,
+    "four_ingredient_grades_source_text": true,
+    "some_pets_more_suitable_source_text": true,
+    "source_claim_not_verified_server_formula": true
+  },
+  "craft_teacher_describes": {
+    "pet_not_player_performs_crafting": true,
+    "three_source_combination_classes": [
+      "material+material",
+      "item+item",
+      "material+item"
+    ],
+    "right_click_material_or_item_source_text": true,
+    "pet_crafting_skill_selected": true,
+    "same_ingredient_grade_more_likely_source_text_only": true,
+    "higher_pet_level_less_suitable_source_text_only": true,
+    "actual_formula_and_success_rate_not_proven": true
+  },
+  "chef_menu_to_itemset": [
+    {
+      "floor": 2009,
+      "menu_name": "即席串燒蔬菜",
+      "exact_unique_itemset_name": false,
+      "item_id": null,
+      "different_name_candidate": "即席蔬菜串燒",
+      "same_entity_proven": false
+    },
+    {
+      "floor": 2009,
+      "menu_name": "橡樹果",
+      "exact_unique_itemset_name": false,
+      "item_id": null,
+      "different_name_candidate": "橡樹果料理",
+      "same_entity_proven": false
+    },
+    {
+      "floor": 2009,
+      "menu_name": "香香麵包",
+      "exact_unique_itemset_name": false,
+      "item_id": null,
+      "different_name_candidate": "香噴噴麵包",
+      "same_entity_proven": false
+    },
+    {
+      "floor": 3009,
+      "menu_name": "即席海星串燒",
+      "exact_unique_itemset_name": true,
+      "item_id": 12607,
+      "itemset_zero_based_line": 7345,
+      "full_source_row_sha256": "cb82cbe395f493fee2ad7e8bfbc0dc0f6a44d29c76b237452e48016caacfe458",
+      "item_type": 20,
+      "item_usefunc": "ITEM_useStatusChange",
+      "atom_names": [
+        "串",
+        "海星",
+        "鹽",
+        "碳火"
+      ],
+      "atom_values": [
+        21,
+        21,
+        21,
+        21
+      ],
+      "source_summary": "drunk_status_related"
+    },
+    {
+      "floor": 3009,
+      "menu_name": "生薑湯",
+      "exact_unique_itemset_name": true,
+      "item_id": 12780,
+      "itemset_zero_based_line": 7512,
+      "full_source_row_sha256": "66842fd402ae61ab6c7eaf2f4485fd33ce570f839dab452dcfabb4223104473a",
+      "item_type": 20,
+      "item_usefunc": "ITEM_useRecovery",
+      "atom_names": [
+        "生薑",
+        "砂糖",
+        "飲用水"
+      ],
+      "atom_values": [
+        10,
+        10,
+        10
+      ],
+      "source_summary": "energy_recovery_self"
+    },
+    {
+      "floor": 3009,
+      "menu_name": "蘆筍棒",
+      "exact_unique_itemset_name": true,
+      "item_id": 12754,
+      "itemset_zero_based_line": 7491,
+      "full_source_row_sha256": "708be33d1b0cfd95c2c71e306df2e7887b437ab2dc484b51cfbf6823f81df6de",
+      "item_type": 20,
+      "item_usefunc": "ITEM_useRecovery",
+      "atom_names": [
+        "蘆筍",
+        "鹽"
+      ],
+      "atom_values": [
+        8,
+        8
+      ],
+      "source_summary": "energy_recovery_single_target"
+    }
+  ],
+  "itemset_exact_item_name_unique_3_of_6": true,
+  "all_eight_cited_atom_names_in_original_itematom": true,
+  "itemset_ingvalue_is_not_menu_quantity_or_proven_success_percentage": true,
+  "source_menu_conf_exists_but_unreferenced_by_these_two_chefs": true,
+  "original_TW10_graphic_sources": {
+    "adrn_sha256": "47254c0ff904d363fb5c3c5297edf553c8eaf24cd933f346d8ce7aabed4155c8",
+    "real_sha256": "408e6ee05c83354349691937da2ad8f7488ac10f65f07e6681b7d92cb1c9ed13",
+    "palet1_sha256": "32870080c47537a59beaf770b6df7bd79820fd52a23825058460900494f0b4b0",
+    "sprites": {
+      "16053": {
+        "original_adrn_index": 5899,
+        "original_RD_size": 2488,
+        "dimensions": [
+          56,
+          90
+        ],
+        "original_RD_sha256": "8385ddda50674e31182461f5f936918496abdd11201a40c5e766d12c7abdac75",
+        "two_decoders_agree": true
+      },
+      "16066": {
+        "original_adrn_index": 5912,
+        "original_RD_size": 1553,
+        "dimensions": [
+          28,
+          78
+        ],
+        "original_RD_sha256": "b9e38aaa8c303381d0ec0584d0184615fe5130793566860fda992723bb0ee116",
+        "two_decoders_agree": true
+      },
+      "16209": {
+        "original_adrn_index": 5929,
+        "original_RD_size": 1937,
+        "dimensions": [
+          36,
+          84
+        ],
+        "original_RD_sha256": "48f1f20adc4a55fd17c4c1a6038567cbab8d5df8583dab33cd54bd8e5ce2dc23",
+        "two_decoders_agree": true
+      }
+    }
+  },
+  "private_observation": {
+    "zip": "StoneAge-O75-private-cooking-crafting-original-NPC-dialogues.zip",
+    "bytes": 37761,
+    "sha256": "988b8cbdd10dd26deead694b8a2437c96a03f99cd0740e4cec6edaf4866e3023",
+    "members": 7,
+    "zip_member_crc_pass": true,
+    "contained_private_html_source_window_index": true,
+    "contains_three_actual_TW10_original_RD_sprite_candidate_PNGs": true,
+    "not_original_client_interaction": true,
+    "not_uploaded_to_public_git": true
+  },
+  "limits": {
+    "native_client_executed": false,
+    "native_server_executed": false,
+    "original_NPC_window_clicked": false,
+    "original_cook_or_craft_executed": false,
+    "actual_item_effect_executed": false,
+    "native_palette_or_order_confirmed": false,
+    "earliest_JSS1999_or_TW10_gameplay_confirmed": false,
+    "actual_original_same_build_deployment_confirmed": false,
+    "stage_A": "7_PARTIAL_2_OPEN",
+    "stage_B": "GATED",
+    "wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "next": "O76: stop cooking/crafting static scripts; seek material native gameplay observation or a different source-backed player action instead of expanding 13k item recipes or manufacturing formulas."
+}
