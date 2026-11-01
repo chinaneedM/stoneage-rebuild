@@ -14,7 +14,7 @@ import subprocess
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
-DEFAULT = ROOT / "research/recovered/STONEAGE-STAGE-A-CONSOLIDATED-REVIEW-R1.json"
+DEFAULT = ROOT / "research/recovered/STONEAGE-STAGE-A-CONSOLIDATED-REVIEW-R2.json"
 
 
 def require(condition: bool, message: str) -> None:
