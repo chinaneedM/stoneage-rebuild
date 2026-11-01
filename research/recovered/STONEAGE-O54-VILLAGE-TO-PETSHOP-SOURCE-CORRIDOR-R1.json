@@ -1,0 +1,126 @@
+{
+  "schema": "stoneage.o54.original_source_map1000_village_to_petshop_corridor.r1",
+  "date": "2026-11-01",
+  "base_main": "2a32d0f5eaf1872c492ee247335376b25674afdc",
+  "base_tree": "19f258aed1d3faa403222132cb878b912fbc60e8",
+  "current_blob_unchanged": "20050acf279a01555ab06a381dfcdc936bd381a6",
+  "source_qualification": "PRESERVED_MIXED25_MAP_WITH_PRIOR_EXACT_TW1_ADRN_REAL_PREFIX_NOT_AUTHENTICATED_ORIGINAL_GAMEPLAY",
+  "source": {
+    "o31_zip": {
+      "bytes": 2295731,
+      "sha256": "f14ee7c362e74bb82fabb867bee08729b41f9744208642fd689bf2730d10548f"
+    },
+    "map1000": {
+      "bytes": 153608,
+      "sha256": "94b19cb59d72b7b48da70d2741ba68516caad970297fd48ed11ef720fa3ea97e"
+    },
+    "tw1_p3h": {
+      "bytes": 372626292,
+      "sha256": "3a4854adaebef056332cdbd7b1dc1c130c571b11704e3f199f53d03aa31cba24"
+    },
+    "tw1_adrn": {
+      "bytes": 10079680,
+      "sha256": "47254c0ff904d363fb5c3c5297edf553c8eaf24cd933f346d8ce7aabed4155c8"
+    },
+    "tw1_real": {
+      "bytes": 315842228,
+      "sha256": "408e6ee05c83354349691937da2ad8f7488ac10f65f07e6681b7d92cb1c9ed13"
+    },
+    "tw1_pal1": {
+      "bytes": 708,
+      "sha256": "32870080c47537a59beaf770b6df7bd79820fd52a23825058460900494f0b4b0"
+    },
+    "prior_tw1_mixed25_exact_REAL_prefix_bytes": 315842228,
+    "fresh_mixed25_REAL_read_bytes": 0
+  },
+  "source_map": {
+    "floor": 1000,
+    "rect_inclusive": [
+      60,
+      69,
+      73,
+      106
+    ],
+    "cells": 532,
+    "image_placements": 549,
+    "distinct_aliases": 194,
+    "additional_aliases_vs_O53": 106,
+    "original_NPC_source_xy": [
+      63,
+      103
+    ],
+    "npc_graphic_alias": 16048,
+    "npc_physical_bitmap": 5894,
+    "npc_original_RD_sha256": "ce21e49856dde81b79afa5854f400df31393b1d87a08e6357b0eb8fd2e5ad252",
+    "original_door_xy": [
+      [
+        68,
+        72
+      ],
+      [
+        69,
+        72
+      ]
+    ],
+    "original_RD_unique_read_and_dual_decoded_including_O53_regression": 199,
+    "prior_O53_four_PNG_byte_identical": true
+  },
+  "private_frames": {
+    "ground": {
+      "dimensions": [
+        1744,
+        1507
+      ],
+      "png_sha256": "b0a1aab2ea75f5e8fa903ad3600fe561ffc009c5558067eb070a877a9de4edcb",
+      "rgba_sha256": "6458bc913badd25956973336db90f9450f8332745bf333995fb7632ce2eabf5f"
+    },
+    "world": {
+      "dimensions": [
+        1744,
+        1507
+      ],
+      "png_sha256": "01fa9248c3bce1f9a6fa5fb9edd541c8228d6abad7106d89342d2c2d15d91a67",
+      "rgba_sha256": "152b230645c3a242e45d41dd85c8b588922faa148c6c2e09928b1bffd8ed5937"
+    },
+    "npc": {
+      "dimensions": [
+        1744,
+        1507
+      ],
+      "png_sha256": "1ab8d1265bdc1bbe53141a555ac96dec1fd28d10d90fc070202739f94436c9e5",
+      "rgba_sha256": "a04b215fd7cdae056859387d519313de17caf13bee3c6b5234a0b2aaa3fdb017"
+    }
+  },
+  "browser": {
+    "actually_executed": true,
+    "three_image_modes_exact_PNG_and_PIL_canvas_channel_equal": true,
+    "source_position_jump_buttons": 3,
+    "JS_errors": 0,
+    "external_requests": 0
+  },
+  "private_delivery": {
+    "library_path": "/石器时代/StoneAge-O54-private-original-village-petshop-corridor.zip",
+    "bytes": 5824336,
+    "sha256": "4d55ace174fba4bc9356c2c7d48aba71720107f688f98ba22ad47917520008f3",
+    "members": 12,
+    "ZIP_CRC_verified": true,
+    "library_re_download_entire_file_sha_equal": true,
+    "HTML_sha256": "ae06f7015cb9a04c75daf7caf125ab7c64a063a47f9da81f2d5fc1e2b7e237fe",
+    "source_subset_zip_sha256": "5b86d4270f1dcfdc051084033c8d0bf5e0f345d7c2659319f1a60fd99c3d405c",
+    "prior_O53_Library_re_download_sha_equal": true
+  },
+  "not_proven": {
+    "native_game_world_entered": false,
+    "native_1000_collision_or_walkability": false,
+    "native_warp_or_NPC_action": false,
+    "tw1_original_official_same_deployed_map1000": false,
+    "original_map1003_currently_available": false,
+    "original_palette_and_occlusion": false,
+    "private_original_assets_committed_to_public_Git": false
+  },
+  "stage_A": "7_PARTIAL_2_OPEN",
+  "stage_B": "GATED",
+  "wiki": "GATED",
+  "R79": "PAUSED_NON_BLOCKING",
+  "overall_completion_percent": null
+}
