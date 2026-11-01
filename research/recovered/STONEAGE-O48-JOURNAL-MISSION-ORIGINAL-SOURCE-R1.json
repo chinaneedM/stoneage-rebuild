@@ -1,0 +1,300 @@
+{
+  "schema": "stoneage.o48.original_quest_journal_two_status_and_story_objectives.r1",
+  "date": "2026-11-01",
+  "baseline": {
+    "remote_main_head": "d395f7c02857fd637119499ca415485f902aae6d",
+    "remote_main_tree": "b4166783844970047d12a7a51258428831969d5b",
+    "untouched_current_state_blob": "20050acf279a01555ab06a381dfcdc936bd381a6",
+    "untouched_current_state_bytes": 2708031
+  },
+  "source_scope": "LATER_PRESERVED_MIXED25_COMMUNITY_SERVER_GMSV_DATA_NOT_VERIFIED_JSS1999_OR_TW10_OFFICIAL_SAME_DEPLOYMENT",
+  "original_source": {
+    "private_rar_library_path": "/stoneage-preserved-mixed25-original.rar",
+    "original_rar_bytes": 361255180,
+    "original_rar_sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+    "existing_r18_full_original_inventory": "research/recovered/STONEAGE-MIXED25-SERVER-FULL-SOURCE-R18.json",
+    "existing_r18_full_original_inventory_git_blob": "f4ac9b805724bcd847c9632cad3c35bc4309a526",
+    "files": [
+      {
+        "path_in_full_source": "jobdaily.txt",
+        "bytes": 7929,
+        "sha256": "5a1cb35c35b09ce78f83934a3ec5782918f2dc5cb5c9fa572618b2ecb36613bd",
+        "rar_original_crc32": "04a63e31"
+      },
+      {
+        "path_in_full_source": "mission.txt",
+        "bytes": 273,
+        "sha256": "da94578048e1f464703479658807d00cf75d30ae003872d5abfb0823e4f08242",
+        "rar_original_crc32": "4ce95de6"
+      }
+    ]
+  },
+  "verification": {
+    "actual_361255180_bytes_whole_rar_sha256_checked": true,
+    "selective_original_libarchive_byte_extraction_done": true,
+    "individual_bytes_sha256_equal_prior_r18_source_manifest": true,
+    "rarfile_header_size_and_crc32_independently_equal_extracted_bytes": true,
+    "whole_CP950_decode_reencode_byte_equal": true,
+    "row_parsing_byte_split_equal_python_stdlib_csv_reader": true,
+    "no_original_source_files_committed_public": true,
+    "no_native_original_client_server_runtime_executed": true
+  },
+  "journal": {
+    "original_rows": 220,
+    "columns_each": 4,
+    "original_entry_ids_contiguous_inclusive": [
+      1,
+      110
+    ],
+    "original_status_pairs": 110,
+    "each_source_pair_has_exactly_ENDEV_and_NOWEV_same_numeric_value": true,
+    "all_ENDEV_status_literals": "已完成",
+    "all_NOWEV_status_literals": "進行中",
+    "event_ids_distinct": 105,
+    "journal_entry_id_to_event_numeric_value_positionally_1_through_110": [
+      4,
+      44,
+      47,
+      35,
+      37,
+      15,
+      16,
+      9,
+      38,
+      13,
+      2,
+      3,
+      5,
+      27,
+      30,
+      29,
+      54,
+      28,
+      31,
+      23,
+      24,
+      18,
+      6,
+      7,
+      8,
+      17,
+      20,
+      21,
+      22,
+      1,
+      45,
+      32,
+      33,
+      34,
+      46,
+      39,
+      40,
+      41,
+      42,
+      63,
+      64,
+      65,
+      55,
+      66,
+      56,
+      67,
+      57,
+      68,
+      69,
+      70,
+      71,
+      122,
+      123,
+      72,
+      202,
+      81,
+      89,
+      88,
+      83,
+      82,
+      0,
+      84,
+      92,
+      93,
+      94,
+      87,
+      86,
+      65,
+      103,
+      99,
+      100,
+      101,
+      102,
+      104,
+      110,
+      111,
+      112,
+      113,
+      114,
+      115,
+      116,
+      121,
+      124,
+      125,
+      126,
+      139,
+      133,
+      140,
+      138,
+      136,
+      142,
+      145,
+      140,
+      147,
+      146,
+      145,
+      144,
+      143,
+      226,
+      225,
+      225,
+      224,
+      174,
+      175,
+      176,
+      52,
+      136,
+      177,
+      178,
+      180
+    ],
+    "event_numeric_value_collisions": [
+      {
+        "source_event_number": 65,
+        "journal_entry_ids": [
+          42,
+          68
+        ]
+      },
+      {
+        "source_event_number": 136,
+        "journal_entry_ids": [
+          90,
+          107
+        ]
+      },
+      {
+        "source_event_number": 140,
+        "journal_entry_ids": [
+          88,
+          93
+        ]
+      },
+      {
+        "source_event_number": 145,
+        "journal_entry_ids": [
+          92,
+          96
+        ]
+      },
+      {
+        "source_event_number": 225,
+        "journal_entry_ids": [
+          100,
+          101
+        ]
+      }
+    ],
+    "same_entry_label_exact_byte_inequalities_only_for_entry_ids": [
+      18,
+      19
+    ],
+    "entry_18_19_label_difference_whitespace_only": true,
+    "source_uses_lf_except_final_journal_row_without_final_newline": true,
+    "original_event_number_is_one_to_one_quest_key": false,
+    "original_quest_category_permanent_vs_timed_event_proven": false
+  },
+  "mission": {
+    "rows_5_including_trailing_comment": true,
+    "structured_objective_rows": 4,
+    "five_original_columns_each": true,
+    "numeric_source_rows": [
+      {
+        "id": 1,
+        "raw_second_integer": 100,
+        "source_semicolon_number_list": [
+          4,
+          81,
+          102
+        ],
+        "raw_fifth_integer": 48,
+        "row_sha256_including_lf": "240ceb91c809b059b9b4ea98888ea78003edb3c226ea0da94099ae5ae8516b1d",
+        "description_cp950_sha256": "38f5239105634460df229cfd8f4bbbfaa6c0132e27dbc78e5e5eada2b34b82a5"
+      },
+      {
+        "id": 2,
+        "raw_second_integer": 100,
+        "source_semicolon_number_list": [
+          4,
+          81,
+          88,
+          89
+        ],
+        "raw_fifth_integer": 48,
+        "row_sha256_including_lf": "7f34d98c8909486eef7c21632a0871f700949c11ff25822439c7bdeb5e25f19f",
+        "description_cp950_sha256": "2b161b71a9170ce3507bc7f2a36d09c0d7843be37cce6db67898d36905d3da4f"
+      },
+      {
+        "id": 3,
+        "raw_second_integer": 100,
+        "source_semicolon_number_list": [
+          4,
+          81,
+          110,
+          111
+        ],
+        "raw_fifth_integer": 48,
+        "row_sha256_including_lf": "f19aee04ed76c0564d98da517550f72d62c812b1867ab4b413b4ce40c7f0bcbb",
+        "description_cp950_sha256": "646ca75daf047207ad58288ba2b864f423483fe86efcad624f6ed082ff6040a3"
+      },
+      {
+        "id": 4,
+        "raw_second_integer": 100,
+        "source_semicolon_number_list": [
+          4,
+          81,
+          112,
+          113,
+          114,
+          115
+        ],
+        "raw_fifth_integer": 48,
+        "row_sha256_including_lf": "637a89d1ab757cc4f68746b491571a9185f3ee5e1f15a35f5d5986e9e4f1c5e1",
+        "description_cp950_sha256": "ad90b53cb7a3fe2cc8a466125ac1743c6e478a9bca0aa17557a129e7c537eb46"
+      }
+    ],
+    "source_semicolon_positions": 17,
+    "distinct_semicolon_numbers": 11,
+    "two_values_shared_in_all_four_rows": [
+      4,
+      81
+    ],
+    "all_eleven_numeric_values_also_in_journal_events": true,
+    "last_comment_literal_requests_final_linebreak": true,
+    "last_original_comment_line_actually_has_no_final_linebreak": true,
+    "original_parser_treatment_of_missing_final_newline_proven": false,
+    "source_semicolon_values_executed_as_conditions_proven": false,
+    "original_four_objective_display_proven": false
+  },
+  "blocked_promotion": {
+    "source_rows_as_TW10_or_JSS1999_original_task_list": false,
+    "mission_row_id_same_namespace_as_journal_entry_id": false,
+    "gameplay_status_transitions_executed": false,
+    "source_file_names_imply_all_permanent_tasks": false,
+    "actual_server_storage_state_verified": false,
+    "original_game_world_entered": false,
+    "overall_completion_percent": null
+  },
+  "phase": {
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b": "GATED",
+    "wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING"
+  },
+  "next": "O49 target one original same-carrier quest state writer/reader or independently sourced original gameplay behavior; use original call path if available, otherwise rotate, no fabricated journal runtime."
+}
