@@ -1,0 +1,186 @@
+{
+  "schema": "stoneage.o71.floor1009_source_static_scene_and_route_r1",
+  "date": "2026-11-01",
+  "source_main_head": "e77e042f6ce84af5db95951459507873edb4ab02",
+  "source_main_tree": "7b64b50bd01bf2203e086cbf727de81a3c72320b",
+  "historic_current_blob": "20050acf279a01555ab06a381dfcdc936bd381a6",
+  "historic_current_bytes": 2708031,
+  "origin_scope": "LATER_MIXED25_COMMUNITY_ARCHIVE_STATIC_MAP_AND_NPC_COMMISSION_NOT_TW10_ORIGINAL_DEPLOYMENT",
+  "preserved_original_parent": {
+    "private_library_file": "/stoneage-preserved-mixed25-original.rar",
+    "bytes": 361255180,
+    "sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+    "whole_archive_reverified": true
+  },
+  "actual_full_members": [
+    {
+      "name": "1009.DAT",
+      "bytes": 14408,
+      "sha256": "0767d518c476e551b6ee71d2fe705c0499d9e978ea610911861eba80c26bf11d",
+      "rar_crc32": "a26ee157",
+      "complete_bytes_and_header_CRC_rechecked": true
+    },
+    {
+      "name": "1009.MAP",
+      "bytes": 4808,
+      "sha256": "e1d7cafeccbe9d81e052b363c0099a668215f5e6a6c957280aafa27e597f30ba",
+      "rar_crc32": "4ec050f6",
+      "complete_bytes_and_header_CRC_rechecked": true
+    },
+    {
+      "name": "server1009",
+      "bytes": 9644,
+      "sha256": "ad646e3a7060903340f680e3efa0f5859857ebc44e5e4ba09546e8aaf2ff2668",
+      "rar_crc32": "fde75765",
+      "complete_bytes_and_header_CRC_rechecked": true
+    },
+    {
+      "name": "mapset.txt",
+      "bytes": 898336,
+      "sha256": "efc0b793c901509e6387697c6b2c2a706bd7b9a2af09f1260b592566299cc7a6",
+      "rar_crc32": "66d8d592",
+      "complete_bytes_and_header_CRC_rechecked": true
+    },
+    {
+      "name": "mapset1.txt",
+      "bytes": 747836,
+      "sha256": "2f5aedb870b6fe1ed07d6de0c2582a9ad72d812546f62f78ed5ff5c0a7b04968",
+      "rar_crc32": "d7aca771",
+      "complete_bytes_and_header_CRC_rechecked": true
+    }
+  ],
+  "dependencies_verified_from_saved_private_receipts": {
+    "warp_y_create_sha256": "859ff2ed23baadb20382508874cd3a63e603b84c7205c6f5d8998229f4f4c8b1",
+    "warp_source_two_entries_crosschecked": true,
+    "mission_create_from_o70": "previously_verified_not_re_extracted_this_unit"
+  },
+  "map": {
+    "floor": 1009,
+    "dimensions": [
+      40,
+      60
+    ],
+    "cell_count": 2400,
+    "dat_tile_equals_server_tile_all": 2400,
+    "dat_object_vs_server_object_differing_cells": 12,
+    "all_differences_x": 39,
+    "all_differences_y": [
+      2,
+      3,
+      10,
+      12,
+      14,
+      29,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36
+    ],
+    "dat_object_value_at_diff": 2,
+    "server_object_value_at_diff": 0,
+    "separate_1009_MAP_first_16_bit_plane_differs_from_DAT_tile_cells": 1899,
+    "all_87_used_graphic_ids_have_complete_unduplicated_collision_metadata": true,
+    "client_static_walkable": 2141,
+    "server_static_walkable": 2153,
+    "client_mask_sha256": "748f8e63289f2c27696aba4a90e50144c7e7dda4468fbf2d42cb9993a7b0945f",
+    "server_mask_sha256": "25b41fe3c8707c882811f26d93b245464bd78e4ea5bfe8a4f027f6889273c375"
+  },
+  "npc": {
+    "floor": 1009,
+    "position": [
+      18,
+      12
+    ],
+    "source_created_by": "O70 mission.create",
+    "graphic_alias": 16200,
+    "source_dat_third_plane": 49152,
+    "not_execution_or_npc_image_proof": true
+  },
+  "warp_entrances": [
+    {
+      "position": [
+        10,
+        25
+      ],
+      "from_floor_1000": [
+        106,
+        91
+      ],
+      "source_dat_third_plane": 49155,
+      "static_route_avoid_other_warp_steps": 20,
+      "destination_npc_adjacent": [
+        18,
+        13
+      ]
+    },
+    {
+      "position": [
+        10,
+        26
+      ],
+      "from_floor_1000": [
+        106,
+        92
+      ],
+      "source_dat_third_plane": 49155,
+      "static_route_avoid_other_warp_steps": 21,
+      "destination_npc_adjacent": [
+        18,
+        13
+      ]
+    }
+  ],
+  "graphics_index": {
+    "saved_mixed_ADRN_sha256": "92d0137590d35a7a1f4fb11af3ad13bbc585813a4b0e1e3f933c397007fbff74",
+    "saved_ADRN_bytes": 18765120,
+    "unique_nonzero_graphic_aliases_in_1009": 86,
+    "all_86_have_exactly_one_alias_record_in_proven_TW1_first_125996_rows": true,
+    "npc_alias_16200_in_same_prefix": true,
+    "alias_2_has_26_additional_records_outside_tw1_prefix": true,
+    "real_source_fully_extracted_this_unit": false,
+    "failed_archive_extraction_error": "Parsing filters is unsupported.",
+    "rendered_full_original_1009_image": false
+  },
+  "private_observer": {
+    "filename": "StoneAge-O71-private-floor1009-source-route.zip",
+    "personal_library_path": "/石器时代/StoneAge-O71-private-floor1009-source-route.zip",
+    "size_bytes": 155868,
+    "sha256": "9b3e8d2d7afff619fc2deed2fb908d824a0e52954938a22caac35cd5bbe952bd",
+    "uploaded_and_re_downloaded_exact_byte_SHA": true,
+    "zip_members": 5,
+    "html_sha256": "cab733b726ae4efce4c37473804eb2228e823f1bb03f13a2b836b23cc9f91bdf",
+    "source_map_synthetic_grid_not_original_pixel_scene": true,
+    "all_original_proprietary_files_remain_private": true
+  },
+  "actual_browser_test": {
+    "chromium_version": "144.0.7559.96",
+    "loaded_full_private_html_via_set_content": true,
+    "both_complete_keyboard_routes_passed": [
+      20,
+      21
+    ],
+    "blocked_step_passed": true,
+    "both_collision_toggle_counts_verified": [
+      2141,
+      2153
+    ],
+    "js_errors": 0,
+    "external_network_requests": 0,
+    "native_game_executed": false
+  },
+  "historical_boundaries": {
+    "same_deployment_proven": false,
+    "original_player_movement_proven": false,
+    "original_npc_interaction_proven": false,
+    "original_quest_handover_proven": false,
+    "original_screenshots_recovered_for_1009": false,
+    "stage_A": "7_PARTIAL_2_OPEN",
+    "stage_B": "GATED",
+    "wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "next": "O72: recover complete authentic original REAL pixels for this exact floor only if source/decoder is genuinely accessible; otherwise rotate to a distinct real game-content gap. Do not expand a synthetic route engine."
+}
