@@ -1,0 +1,436 @@
+{
+  "schema": "stoneage.o83.original_family_bank_eight_npc_menu_map_r1",
+  "as_of": "2026-11-02",
+  "verified_start": {
+    "main_head": "f5a5af1cbe0d2c0778f95136200f9e5cecdadd77",
+    "main_tree": "21c9d048ec02b69d088268d7358f65318373f172",
+    "preserved_full_current_blob": "20050acf279a01555ab06a381dfcdc936bd381a6",
+    "candidate_previous_main_actions_all_success": 10
+  },
+  "original_source": {
+    "category": "COMMUNITY_PRESERVED_MIXED25_UNQUALIFIED_EARLY_OFFICIAL_DEPLOYMENT",
+    "name": "stoneage-preserved-mixed25-original.rar",
+    "archive_size_bytes": 361255180,
+    "whole_sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+    "whole_sha_reverified_this_unit": true,
+    "source_files_count": 18,
+    "source_files_total_uncompressed_bytes": 53139,
+    "individual_original_member_RAR_header_crc_vs_extracted_sha_crc_validated": true,
+    "original_NPC_files_CP950_round_trip": true
+  },
+  "original_member_manifest": [
+    {
+      "logical_path": "gmsv/data/npc/family/bankman.conf",
+      "bytes": 331,
+      "sha256": "437917a5703a2a18ae4df5488fbc74e3456d6143ae10d8874be210abcbe1510e",
+      "rar_header_crc32": "5034b868"
+    },
+    {
+      "logical_path": "gmsv/data/npc/family/bankman.create",
+      "bytes": 1480,
+      "sha256": "7174a153cb69ec43104446665707a4ae594afcdf2bb22c707fd45ab378aa58ec",
+      "rar_header_crc32": "2a3b9d36"
+    },
+    {
+      "logical_path": "stoneage2.5/map/1006.dat",
+      "bytes": 7208,
+      "sha256": "aa2e7d2bdb138545a3efa30f9482d563b1781810a856b4a91c12ce83eb08ab4a",
+      "rar_header_crc32": "17acbe19"
+    },
+    {
+      "logical_path": "stoneage2.5/map/1006.map",
+      "bytes": 2408,
+      "sha256": "0a16490ed657651511e773b4185b82e3c02a5b4fa867dadcf5ac4ef492ad7fa1",
+      "rar_header_crc32": "bf287350"
+    },
+    {
+      "logical_path": "stoneage2.5/map/1041.dat",
+      "bytes": 2408,
+      "sha256": "249066ee2d893e8b0f45787a8fc80a10e52d73ba0465ead8f78e84a59ebd3df7",
+      "rar_header_crc32": "69b4bb7e"
+    },
+    {
+      "logical_path": "stoneage2.5/map/1041.map",
+      "bytes": 808,
+      "sha256": "cca43435a4159a75ea39b8230bebb05cf7736f8f919e7a3787a9dbe593320a40",
+      "rar_header_crc32": "0c2f2b29"
+    },
+    {
+      "logical_path": "stoneage2.5/map/2006.dat",
+      "bytes": 7208,
+      "sha256": "792c9a902170cbe1720bb6f049f6acff2664f7ce313bf924b49534ebffc817da",
+      "rar_header_crc32": "e367649c"
+    },
+    {
+      "logical_path": "stoneage2.5/map/2006.map",
+      "bytes": 2408,
+      "sha256": "ac19afc9076279833c0c1a5e44627d932ed5369a66c3fb10807d8950c6e582fd",
+      "rar_header_crc32": "2bff6035"
+    },
+    {
+      "logical_path": "stoneage2.5/map/2031.dat",
+      "bytes": 2408,
+      "sha256": "5dbd1f8f1fb404269030812fa7a019b10095c1e9ff0bfbf6bce615af1dfc1d2b",
+      "rar_header_crc32": "0c55e90a"
+    },
+    {
+      "logical_path": "stoneage2.5/map/2031.map",
+      "bytes": 808,
+      "sha256": "35debf4d690acf443507922a737991a0c263a239af68bcc6a60b9a653fd8bc84",
+      "rar_header_crc32": "e45cc730"
+    },
+    {
+      "logical_path": "stoneage2.5/map/3006.dat",
+      "bytes": 7208,
+      "sha256": "09db068a0aa8015744955d5f66aa805da2edd2a46d72ff33f928c1cff53c963b",
+      "rar_header_crc32": "2a1fbd50"
+    },
+    {
+      "logical_path": "stoneage2.5/map/3006.map",
+      "bytes": 2408,
+      "sha256": "6c24e98d30ccb5e9696dfa89059ef9469bcf07395363ba675796b24a3b6edf3e",
+      "rar_header_crc32": "b2c1fbe2"
+    },
+    {
+      "logical_path": "stoneage2.5/map/3031.dat",
+      "bytes": 2408,
+      "sha256": "bd1dc2793f86b50cf3c8d171e90c5cf090704cb2d43543c846ca445988bc261f",
+      "rar_header_crc32": "b93c609f"
+    },
+    {
+      "logical_path": "stoneage2.5/map/3031.map",
+      "bytes": 808,
+      "sha256": "7e5b968327672d7d41df709ded0c8a2aae6e91cdf88ed0f4aaef9d638d582ba8",
+      "rar_header_crc32": "20e1d60d"
+    },
+    {
+      "logical_path": "stoneage2.5/map/4006.dat",
+      "bytes": 7208,
+      "sha256": "a060686d0694939832a75fcb1b6e6204edf63d4ff74eea948f33b9fb75b72729",
+      "rar_header_crc32": "be2f7403"
+    },
+    {
+      "logical_path": "stoneage2.5/map/4006.map",
+      "bytes": 2408,
+      "sha256": "a37e5baf43d393f8b7a8315830d24a4c98afb8887002de54a213caa133a8fbc1",
+      "rar_header_crc32": "47633d9e"
+    },
+    {
+      "logical_path": "stoneage2.5/map/4031.dat",
+      "bytes": 2408,
+      "sha256": "ff1c540af89e49d3012d40bb9093f53da78aadc9a234750e894d534e55633620",
+      "rar_header_crc32": "ebab0ddf"
+    },
+    {
+      "logical_path": "stoneage2.5/map/4031.map",
+      "bytes": 808,
+      "sha256": "56845555d014d4566188ccd3a0809ff678f59d78ec53237df1b1963400c6502a",
+      "rar_header_crc32": "f2838348"
+    }
+  ],
+  "bank_menu": {
+    "source_file": "gmsv/data/npc/family/bankman.conf",
+    "declared_windows": [
+      1
+    ],
+    "referenced_window_numbers": [
+      5,
+      6
+    ],
+    "referenced_windows_not_defined_in_same_file": [
+      5,
+      6
+    ],
+    "source_literal_account_categories": [
+      "家族個人帳戶",
+      "家族共同帳戶"
+    ],
+    "account_transaction_native_handler_verified": false,
+    "bank_balance_native_handler_verified": false
+  },
+  "original_NPC_create": {
+    "source_file": "gmsv/data/npc/family/bankman.create",
+    "original_name": "家族銀行",
+    "source_NPC_rows": 8,
+    "eight_original_graphic_aliases_all_16017": true,
+    "source_config_pointer_same_file": true,
+    "places": [
+      {
+        "floorid": 1041,
+        "borncenter_xy": [
+          9,
+          17
+        ],
+        "movecenter_original_four_values": [
+          9,
+          17,
+          9,
+          17
+        ],
+        "original_map_dimensions": [
+          20,
+          20
+        ],
+        "graphicname_original": 16017,
+        "original_DAT_three_u16_at_borncenter": [
+          5002,
+          0,
+          49152
+        ],
+        "original_MAP_u16_at_borncenter": 16962,
+        "original_DAT_three_u16_at_second_movecenter_pair": [
+          5002,
+          0,
+          49152
+        ],
+        "original_MAP_u16_at_second_movecenter_pair": 16962,
+        "create_enemy_pointer": "bankman|conff:family/bankman.conf"
+      },
+      {
+        "floorid": 2031,
+        "borncenter_xy": [
+          17,
+          11
+        ],
+        "movecenter_original_four_values": [
+          17,
+          11,
+          17,
+          11
+        ],
+        "original_map_dimensions": [
+          20,
+          20
+        ],
+        "graphicname_original": 16017,
+        "original_DAT_three_u16_at_borncenter": [
+          5006,
+          0,
+          49152
+        ],
+        "original_MAP_u16_at_borncenter": 14906,
+        "original_DAT_three_u16_at_second_movecenter_pair": [
+          5006,
+          0,
+          49152
+        ],
+        "original_MAP_u16_at_second_movecenter_pair": 14906,
+        "create_enemy_pointer": "bankman|conff:family/bankman.conf"
+      },
+      {
+        "floorid": 3031,
+        "borncenter_xy": [
+          15,
+          13
+        ],
+        "movecenter_original_four_values": [
+          15,
+          13,
+          17,
+          11
+        ],
+        "original_map_dimensions": [
+          20,
+          20
+        ],
+        "graphicname_original": 16017,
+        "original_DAT_three_u16_at_borncenter": [
+          5000,
+          0,
+          49152
+        ],
+        "original_MAP_u16_at_borncenter": 14906,
+        "original_DAT_three_u16_at_second_movecenter_pair": [
+          5051,
+          0,
+          49152
+        ],
+        "original_MAP_u16_at_second_movecenter_pair": 52027,
+        "create_enemy_pointer": "bankman|conff:family/bankman.conf"
+      },
+      {
+        "floorid": 4031,
+        "borncenter_xy": [
+          17,
+          16
+        ],
+        "movecenter_original_four_values": [
+          17,
+          16,
+          17,
+          16
+        ],
+        "original_map_dimensions": [
+          20,
+          20
+        ],
+        "graphicname_original": 16017,
+        "original_DAT_three_u16_at_borncenter": [
+          5002,
+          0,
+          49152
+        ],
+        "original_MAP_u16_at_borncenter": 14906,
+        "original_DAT_three_u16_at_second_movecenter_pair": [
+          5002,
+          0,
+          49152
+        ],
+        "original_MAP_u16_at_second_movecenter_pair": 14906,
+        "create_enemy_pointer": "bankman|conff:family/bankman.conf"
+      },
+      {
+        "floorid": 1006,
+        "borncenter_xy": [
+          18,
+          30
+        ],
+        "movecenter_original_four_values": [
+          18,
+          30,
+          18,
+          30
+        ],
+        "original_map_dimensions": [
+          30,
+          40
+        ],
+        "graphicname_original": 16017,
+        "original_DAT_three_u16_at_borncenter": [
+          5020,
+          0,
+          49152
+        ],
+        "original_MAP_u16_at_borncenter": 257,
+        "original_DAT_three_u16_at_second_movecenter_pair": [
+          5020,
+          0,
+          49152
+        ],
+        "original_MAP_u16_at_second_movecenter_pair": 257,
+        "create_enemy_pointer": "bankman|conff:family/bankman.conf"
+      },
+      {
+        "floorid": 2006,
+        "borncenter_xy": [
+          29,
+          20
+        ],
+        "movecenter_original_four_values": [
+          29,
+          20,
+          29,
+          20
+        ],
+        "original_map_dimensions": [
+          40,
+          30
+        ],
+        "graphicname_original": 16017,
+        "original_DAT_three_u16_at_borncenter": [
+          5020,
+          0,
+          49152
+        ],
+        "original_MAP_u16_at_borncenter": 41644,
+        "original_DAT_three_u16_at_second_movecenter_pair": [
+          5020,
+          0,
+          49152
+        ],
+        "original_MAP_u16_at_second_movecenter_pair": 41644,
+        "create_enemy_pointer": "bankman|conff:family/bankman.conf"
+      },
+      {
+        "floorid": 3006,
+        "borncenter_xy": [
+          27,
+          20
+        ],
+        "movecenter_original_four_values": [
+          27,
+          20,
+          27,
+          20
+        ],
+        "original_map_dimensions": [
+          40,
+          30
+        ],
+        "graphicname_original": 16017,
+        "original_DAT_three_u16_at_borncenter": [
+          5110,
+          0,
+          49152
+        ],
+        "original_MAP_u16_at_borncenter": 52027,
+        "original_DAT_three_u16_at_second_movecenter_pair": [
+          5110,
+          0,
+          49152
+        ],
+        "original_MAP_u16_at_second_movecenter_pair": 52027,
+        "create_enemy_pointer": "bankman|conff:family/bankman.conf"
+      },
+      {
+        "floorid": 4006,
+        "borncenter_xy": [
+          16,
+          30
+        ],
+        "movecenter_original_four_values": [
+          16,
+          30,
+          16,
+          30
+        ],
+        "original_map_dimensions": [
+          30,
+          40
+        ],
+        "graphicname_original": 16017,
+        "original_DAT_three_u16_at_borncenter": [
+          5020,
+          0,
+          49152
+        ],
+        "original_MAP_u16_at_borncenter": 257,
+        "original_DAT_three_u16_at_second_movecenter_pair": [
+          5020,
+          0,
+          49152
+        ],
+        "original_MAP_u16_at_second_movecenter_pair": 257,
+        "create_enemy_pointer": "bankman|conff:family/bankman.conf"
+      }
+    ],
+    "original_movecenter_two_pair_differences_only_floor_3031": true
+  },
+  "map_source": {
+    "all_eight_original_DAT_MAP_pairs_fully_read": true,
+    "all_8_birth_coordinates_within_original_dimensions": true,
+    "all_movecenter_pairs_within_original_dimensions": true,
+    "original_DAT_three_planes_per_floor": true,
+    "MAP_one_plane_per_floor": true,
+    "third_plane_collision_meaning_unverified": true,
+    "case_sensitive_filename_edge": "3006.dat lower-case in preserved client path; resolved by original RAR metadata, no missing DAT"
+  },
+  "negative_boundaries": {
+    "not_native_bank_service_execution": true,
+    "not_bank_deposit_withdrawal_or_shared_balance_confirmation": true,
+    "not_source_handler_5_6_existence_proof": true,
+    "not_native_NPC_display_or_world_entry": true,
+    "not_original_JSS1999_TW10_same_deployment": true,
+    "not_original_graphic_asset_pixel_recovery_this_unit": true,
+    "no_legacy_copyright_assets_uploaded_to_public_git": true,
+    "no_new_stoneage_game_design_or_experience_optimization": true
+  },
+  "project_gate_unchanged": {
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b": "GATED",
+    "wiki": "GATED",
+    "savedata_R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "next": "O84: rotate to new historical original-world content or independent native bank handler evidence; avoid repeating O69 riding and omit speculative bank implementation"
+}
