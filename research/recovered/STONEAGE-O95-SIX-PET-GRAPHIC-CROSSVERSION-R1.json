@@ -1,0 +1,258 @@
+{
+  "schema": "stoneage.o95.six_community_pet_graphic_crossversion_original_spr_membership.r1",
+  "date": "2026-11-02",
+  "source_main_head": "ca3f35847f6ea131c5b12b2ba0f55861b7c9696d",
+  "source_main_tree": "2afbb93f2b8af5033b252c48375cd1259b577f33",
+  "current_state_full_git_blob": "20050acf279a01555ab06a381dfcdc936bd381a6",
+  "input_community_pet_source_git_blob": "3010363104afdf85a7cb6f9257dd2824af0682a3",
+  "source_reuse_R40_git_blob": "5b49d54d7cff2d79d3610db7ca4a37108f1f9e03",
+  "source_reuse_R28_git_blob": "df6ca18070f1c5cf5371a340698be90d51318507",
+  "recovered_client_source_profiles": [
+    {
+      "kind": "tw10_waei_jss_v1_accepted_retail",
+      "path": "research/recovered/tw10-resource-metadata/SPR-GROUP-R1.tsv.gz",
+      "git_blob": "5ec65f043848fb3260bc04c94847b45fb1706d36",
+      "indexed_groups": 464,
+      "derived_gzip_bytes": 23827,
+      "uncompressed_bytes": 48942,
+      "original_spr_sha256": "53d5b2d40453a30fd1569637ebf0db7b3010542b00970ec83af0295a3b3ae31a",
+      "official_clean_version_identity_accepted": true
+    },
+    {
+      "kind": "cn50_preserved_client_candidate",
+      "path": "research/recovered/cn50-resource-metadata/SPR-GROUP-R1.tsv.gz",
+      "git_blob": "f4a41ba999167185b55a42c89ece9e24d456e637",
+      "indexed_groups": 1185,
+      "derived_gzip_bytes": 61649,
+      "uncompressed_bytes": 125328,
+      "original_spr_sha256": "1df3b732bd46ec5531806226447ac51e835db0bbfb39226c26ce34c89122f606",
+      "official_clean_version_identity_accepted": false
+    },
+    {
+      "kind": "tw85_msi_preserved_unverified",
+      "path": "research/recovered/tw85-spr137-r28/SPR-GROUP-R28.tsv.gz",
+      "git_blob": "f201f85ced4a55d59d38ef774711406c59cddbd4",
+      "indexed_groups": 1739,
+      "derived_gzip_bytes": 90388,
+      "uncompressed_bytes": 183804,
+      "original_spr_sha256": "cf046548a0ed73ebbdd7d148400fcba3a0ff8d57d835d7b67ed90864d4975ce9",
+      "official_clean_version_identity_accepted": false
+    },
+    {
+      "kind": "mixed25_preserved_community_archive",
+      "path": "research/recovered/STONEAGE-PRESERVED-PET-SPR-SOURCE-R40.json",
+      "git_blob": "5b49d54d7cff2d79d3610db7ca4a37108f1f9e03",
+      "indexed_groups": 847,
+      "original_spr_sha256": "865b58860c7fe025850bf942f6ce6a5deb4464993ceeecbc20a034c99e159749",
+      "official_clean_version_identity_accepted": false
+    }
+  ],
+  "execution": {
+    "data_retrieval": "three precise immutable Git blobs for compressed original-derived SPR group tables; full base64 decode + gzip DEFLATE in memory",
+    "decompressed_content_size_checked_against_gzip_isize": true,
+    "preserved_raw_original_spr_bytes_reread_this_turn": false,
+    "original_client_game_executed": false,
+    "original_sprites_rendered_this_turn": false,
+    "experimental_replay_mixed25_all_group_sha": false
+  },
+  "groups": [
+    {
+      "graphic_number": 100251,
+      "community_instance_id": 1,
+      "community_instance_name": "初期拥有的乌力乌力",
+      "community_template_name": "乌力乌力",
+      "verified_source_group_row_indices": {
+        "tw10": 241,
+        "cn50": 241,
+        "tw85": 241,
+        "mixed25": 241
+      },
+      "archived_animation_count": {
+        "tw": 56,
+        "cn": 56,
+        "t85": 56,
+        "mixed": 56
+      },
+      "verified_original_group_sha256": {
+        "tw10": "073278ba6ae1e623eea969deef11f99fd9be8b995af332506e830bd046c86764",
+        "cn50": "073278ba6ae1e623eea969deef11f99fd9be8b995af332506e830bd046c86764",
+        "tw85": "073278ba6ae1e623eea969deef11f99fd9be8b995af332506e830bd046c86764",
+        "mixed25": "073278ba6ae1e623eea969deef11f99fd9be8b995af332506e830bd046c86764"
+      },
+      "canonical_group_sha256_from_qualified_profiles": "073278ba6ae1e623eea969deef11f99fd9be8b995af332506e830bd046c86764",
+      "cross_version_full_segment_equality_between_available_tw10_cn50_tw85": true,
+      "mixed25_numeric_group_membership_only": true,
+      "same_deployed_build_or_original_species_identity_proven": false
+    },
+    {
+      "graphic_number": 100266,
+      "community_instance_id": 4,
+      "community_instance_name": "初期拥有的威伯",
+      "community_template_name": "威伯",
+      "verified_source_group_row_indices": {
+        "tw10": 256,
+        "cn50": 256,
+        "tw85": 256,
+        "mixed25": 256
+      },
+      "archived_animation_count": {
+        "tw": 56,
+        "cn": 56,
+        "t85": 56,
+        "mixed": 56
+      },
+      "verified_original_group_sha256": {
+        "tw10": "fad067e8ee01a23c8305a3a4a2b72b7c07438694cde1bb4de3f5fceeda678777",
+        "cn50": "fad067e8ee01a23c8305a3a4a2b72b7c07438694cde1bb4de3f5fceeda678777",
+        "tw85": "fad067e8ee01a23c8305a3a4a2b72b7c07438694cde1bb4de3f5fceeda678777",
+        "mixed25": null
+      },
+      "canonical_group_sha256_from_qualified_profiles": "fad067e8ee01a23c8305a3a4a2b72b7c07438694cde1bb4de3f5fceeda678777",
+      "cross_version_full_segment_equality_between_available_tw10_cn50_tw85": true,
+      "mixed25_numeric_group_membership_only": true,
+      "same_deployed_build_or_original_species_identity_proven": false
+    },
+    {
+      "graphic_number": 100292,
+      "community_instance_id": 3,
+      "community_instance_name": "初期拥有的克克尔",
+      "community_template_name": "克克尔",
+      "verified_source_group_row_indices": {
+        "tw10": 282,
+        "cn50": 282,
+        "tw85": 282,
+        "mixed25": 282
+      },
+      "archived_animation_count": {
+        "tw": 56,
+        "cn": 56,
+        "t85": 56,
+        "mixed": 56
+      },
+      "verified_original_group_sha256": {
+        "tw10": "1f7b960aebced3cc35cb1aa037c2e178584ae67de7673241a023449a7c9614bb",
+        "cn50": "1f7b960aebced3cc35cb1aa037c2e178584ae67de7673241a023449a7c9614bb",
+        "tw85": "1f7b960aebced3cc35cb1aa037c2e178584ae67de7673241a023449a7c9614bb",
+        "mixed25": null
+      },
+      "canonical_group_sha256_from_qualified_profiles": "1f7b960aebced3cc35cb1aa037c2e178584ae67de7673241a023449a7c9614bb",
+      "cross_version_full_segment_equality_between_available_tw10_cn50_tw85": true,
+      "mixed25_numeric_group_membership_only": true,
+      "same_deployed_build_or_original_species_identity_proven": false
+    },
+    {
+      "graphic_number": 100296,
+      "community_instance_id": 2,
+      "community_instance_name": "初期拥有的凯比",
+      "community_template_name": "凯比",
+      "verified_source_group_row_indices": {
+        "tw10": 286,
+        "cn50": 286,
+        "tw85": 286,
+        "mixed25": 286
+      },
+      "archived_animation_count": {
+        "tw": 56,
+        "cn": 56,
+        "t85": 56,
+        "mixed": 56
+      },
+      "verified_original_group_sha256": {
+        "tw10": "d93b5f3443eaad602e02f9d51e1d3bbd7db728a41a980d15d809101ada588a13",
+        "cn50": "d93b5f3443eaad602e02f9d51e1d3bbd7db728a41a980d15d809101ada588a13",
+        "tw85": "d93b5f3443eaad602e02f9d51e1d3bbd7db728a41a980d15d809101ada588a13",
+        "mixed25": null
+      },
+      "canonical_group_sha256_from_qualified_profiles": "d93b5f3443eaad602e02f9d51e1d3bbd7db728a41a980d15d809101ada588a13",
+      "cross_version_full_segment_equality_between_available_tw10_cn50_tw85": true,
+      "mixed25_numeric_group_membership_only": true,
+      "same_deployed_build_or_original_species_identity_proven": false
+    },
+    {
+      "graphic_number": 101180,
+      "community_instance_id": 2665,
+      "community_instance_name": "青龙",
+      "community_template_name": "凯恩",
+      "verified_source_group_row_indices": {
+        "tw10": null,
+        "cn50": 864,
+        "tw85": 864,
+        "mixed25": null
+      },
+      "archived_animation_count": {
+        "tw": null,
+        "cn": 48,
+        "t85": 48,
+        "mixed": null
+      },
+      "verified_original_group_sha256": {
+        "tw10": null,
+        "cn50": "d789e0e223e3db73d8afe1ba6861d7e0bccc1e02087bff0e2e65880594870a52",
+        "tw85": "d789e0e223e3db73d8afe1ba6861d7e0bccc1e02087bff0e2e65880594870a52",
+        "mixed25": null
+      },
+      "canonical_group_sha256_from_qualified_profiles": "d789e0e223e3db73d8afe1ba6861d7e0bccc1e02087bff0e2e65880594870a52",
+      "cross_version_full_segment_equality_between_available_tw10_cn50_tw85": true,
+      "mixed25_numeric_group_membership_only": false,
+      "same_deployed_build_or_original_species_identity_proven": false
+    },
+    {
+      "graphic_number": 101951,
+      "community_instance_id": 2744,
+      "community_instance_name": "葛多雷诺",
+      "community_template_name": "葛多雷诺",
+      "verified_source_group_row_indices": {
+        "tw10": null,
+        "cn50": null,
+        "tw85": 1637,
+        "mixed25": null
+      },
+      "archived_animation_count": {
+        "tw": null,
+        "cn": null,
+        "t85": 56,
+        "mixed": null
+      },
+      "verified_original_group_sha256": {
+        "tw10": null,
+        "cn50": null,
+        "tw85": "9dfc19b218e52471ad2664540cd1d6df5858e7ce0ce9b339ea60ae8957db529c",
+        "mixed25": null
+      },
+      "canonical_group_sha256_from_qualified_profiles": "9dfc19b218e52471ad2664540cd1d6df5858e7ce0ce9b339ea60ae8957db529c",
+      "cross_version_full_segment_equality_between_available_tw10_cn50_tw85": false,
+      "mixed25_numeric_group_membership_only": false,
+      "same_deployed_build_or_original_species_identity_proven": false
+    }
+  ],
+  "results": {
+    "group_numeric_presence_by_profile": {
+      "tw10": 4,
+      "cn50": 5,
+      "tw85": 6,
+      "mixed25": 4
+    },
+    "all_six_graphics_observed_as_spr_group_in_at_least_one_preserved_client": true,
+    "first_four_exact_full_sha_match_across_tw10_cn50_tw85": true,
+    "fifth_exact_full_sha_match_cn50_tw85": true,
+    "sixth_found_in_tw85_derived_group_record": true,
+    "documented_earliest_original_official_species_names": 0,
+    "authenticated_2016_community_server_to_client_same_build_pairs": 0,
+    "new_original_commercial_payloads_acquired": 0
+  },
+  "source_boundaries": [
+    "TW1.0 source original client group metadata confirmed; mapping to 2016 server pet labels is cross-carrier numeric only",
+    "CN5 and TW85 are version-qualified preserved client samples, not authenticated same deployment with 2016 community server",
+    "TW85 SPR137 source had 1739 entries; sample group numbers 101951 not indexed in prior TW1/CN5/mixed25 profiles, not globally absent",
+    "R40 mixed25 only one of these four groups (100251) has prior verified original full SHA in retained R40 selected comparison; other three are numeric memberships, not newly established mixed25 full byte hashes",
+    "No preserved output supplies a complete official initial-pet population or actual create-character grant event",
+    "No original graphical pixel asset is distributed by this report"
+  ],
+  "stop": "BOUNDED_O95_SOURCE_PROFILE_CROSSWALK_COMPLETE_NO_SAME_BUILD_PROMOTION",
+  "next": "O96 rotate to available real-source original world/NPC/permanent quest; reopen same-build pet only with provenance-qualified paired client/server carrier or executed creation trace",
+  "stage_a": "7_PARTIAL_2_OPEN",
+  "stage_b": "GATED",
+  "wiki": "GATED",
+  "r79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null
+}

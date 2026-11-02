@@ -1480,3 +1480,8 @@ O75 CI史实订正：PR #133 初稿的 Stage A 检查 run 41362507873 因两处�
 ### 2026-11-02 — O94 后代社区原源码的人物创建宠物发放静态链
 
 [O94 七份源文件的出生发宠、配置及同表数值复核](docs/continuity/STONEAGE-O94-NEW-CHARACTER-PET-GRANT-20261102.md)：新增固定源码实据，`CHAR_createNewChar`在宏条件下取出生村→实例ID1–4并调用真实宠物生成/归属/保存；同树配置PET1=2665、PET2=2744，实际分别映射实例青龙(模板凯恩/图101180/Lv1)与葛多雷诺(图101951/Lv150–160)，后者PETLV=1不会降级。另登记槽0全局复用与空槽-1未跳过的**静态条件风险**，不推历史商业服存在BUG或实际赠送。6实例/模板/图号见[派生数值JSON](research/recovered/STONEAGE-O94-NEW-CHARACTER-PET-GRANT-R1.json)，无新同构建原像素、原客户端/服务端运行，也不升级O93的后代为JSS1999/TW1/大陆1.82官方真值。完整历史CURRENT原blob不变，Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、overall_percent=null。**NEXT O95**先找同构建原图/真实运行资料，证据不足即轮换真实材料。
+
+
+### 2026-11-02 — O95 后代六宠图号与四份保存客户端原SPR材料逐项对照
+
+[O95原动画跨版实物索引证据](docs/continuity/STONEAGE-O95-SIX-PET-GRAPHIC-CROSSVERSION-20261102.md)及[6条数值/来源报告](research/recovered/STONEAGE-O95-SIX-PET-GRAPHIC-CROSSVERSION-R1.json)：本轮实际解开TW1.0(464组)/大陆5.0候选(1185组)/台湾8.5候选(1739组)既存完整派生gzip元数据，并对后期mixed25已有847行原索引和O94宠物实例号源逐项验证。六图号中，四个`100251/100266/100292/100296`在TW1/CN5/TW85原SPR组的完整段SHA都逐一相同；`101180`仅在所比CN5/TW85各唯一，完整段SHA一致；`101951`仅在此TW85索引号1637有完整段元数据；后期mixed25仅对前四图号有数值索引。未取得2016社区服务端与任何客户端**同一实际部署构建**的证明；原台湾1.0官方具名宠物/领取事件依旧未证，本轮未重读专有原bin/执行客户端/新绘图。原CURRENT历史blob保持不变。**NEXT O96**轮换原世界、NPC或常驻本体任务实物；Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、整体百分比未知。
