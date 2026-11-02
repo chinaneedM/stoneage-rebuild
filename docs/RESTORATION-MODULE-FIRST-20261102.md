@@ -71,3 +71,8 @@
 ### 2026-11-02 — PET-MODULE-08 图形/属性/技能严格分源综合目录
 
 [PET08可核的598图号×1024后期模板目录](../research/recovered/STONEAGE-PET-MODULE-08-VISUAL-STATS-SKILLS-SOURCE-CATALOG-R1.json)与[PET08实施及证据边界](continuity/STONEAGE-PET-MODULE-08-SOURCE-SEPARATED-CATALOG-20261102.md)：完整联接PET01/03/06/07现有派生证据。130图号存在TW1原图私人可视数据的**跨年代数字候选**，对应201社区模板行；468未进PET07图像批次（412后期有索引/56四载体均无索引）。2,886正数技能槽=2,784后期同源定义+102缺定义；20负值、4,262空槽完整保持。既有私人PET07原图HTML不改、不公开；无新版官方命名或同服运行证明。**NEXT PET-MODULE-09：**有限查已有CN5/TW85私人原像素补齐后期候选，缺原件即记录止点并按模块顺序转人物/NPC。阶段A/B/wiki/R79、总进度未知不变。
+
+
+### 2026-11-02 — PET-MODULE-09 原SPR跨版验证与八帧TW85既有原像素归位，宠物阶段性有界止点
+
+[PET09完整598图号来源分级](../research/recovered/STONEAGE-PET-MODULE-09-CROSSCARRIER-ORIGINAL-MATERIAL-RECEIPTS-R1.json)及[本轮源证/止点](continuity/STONEAGE-PET-MODULE-09-CROSSCARRIER-PIXEL-BOUNDARY-20261102.md)：130图号在PET07先前有TW1原像素；214图号CN5与TW85原SPR整个动画段已证完全一致但不认证RD像素相同；198仅有TW85索引，其中图号101501早在R30已有源验证8帧原RD索引像素/私人PNG收据，本轮与后期社区模板物理行843/1184仅做**跨年代同号链接**，未重新读取私人像素；另外197仍只有索引，56四载体没有图形号索引。累计按图号有131项**先前有真实原像素证据**，并不是131个官方物种。CN5/TW85整批原商业文件本轮不可直接读取，不能把源索引当已解码图；记录材料阻塞后不重复下载大包。**宠物模块现 SOURCE_BOUNDED_PARTIAL**，继续历史复原下一模块 `CHARACTER-NPC-MODULE-01`。原CURRENT不变、Stage A/B/wiki/R79和overall_percent=null不变。
