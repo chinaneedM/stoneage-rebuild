@@ -1500,3 +1500,8 @@ O75 CI史实订正：PR #133 初稿的 Stage A 检查 run 41362507873 因两处�
 ### 2026-11-02 — PET-MODULE-02 同仓库两份原宠物表640/1816行整表比较
 
 [原表差异报告](docs/continuity/STONEAGE-PET-MODULE-02-SERVER-TEMPLATE-DIFF-20261102.md)和[635共有模板ID逐字段差异数据](research/recovered/STONEAGE-PET-MODULE-02-SERVER-TEMPLATE-DIFF-R1.json)：读取同固定2016社区Git树内备选enemybase.txt640行与配置实际引用的enemybase1.txt1816行，完整行核实635共同ID/364原行一致/271差异，其中221仅融合码一列改变，17标志变化、2图形号变化。不是官方版本演变或官方全宠物数量。历史CURRENT原样保留，继续PET-MODULE-03，先解决原保存混合2.5的988行可读性并关联原图与技能，不跨去NPC地图。
+
+
+### 2026-11-02 — PET-MODULE-03 同源宠物技能批量联接
+
+[PET-MODULE-03报告](docs/continuity/STONEAGE-PET-MODULE-03-SAME-SOURCE-SKILL-JOIN-20261102.md)及[源限定数值索引](research/recovered/STONEAGE-PET-MODULE-03-SAME-SOURCE-SKILL-JOIN-R1.json)：从2016同仓库原技能表`petskill2.txt`核282条定义并接1024条已有PETFLG1模板，实际正数技能槽2886次，其中2784可静态定位、102无定义（30个不同ID）；另20个原负数槽、4262个空槽完整保留。不是官方初版技能或原客户端执行。988条混合2.5原行仍缺、原SPR未于此包重渲染。**NEXT PET-MODULE-04**继续宠物模块，优先同源`skillcode.txt`与实例/模板的整源外键，或复用私人原图观察关联；不跨域散点跳转。
