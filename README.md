@@ -1490,3 +1490,8 @@ O75 CI史实订正：PR #133 初稿的 Stage A 检查 run 41362507873 因两处�
 ### 2026-11-02 — 模块优先全量复原执行规则（2026-11-02）
 
 用户提出停止在宠物/NPC/地图/任务间零散跳跃，改为**按内容模块集中处理**：首个主线[PET-MODULE-01 宠物全源归档与可观察恢复](docs/RESTORATION-MODULE-FIRST-20261102.md)，之后按人物/NPC→地图场景→物品→常驻/活动任务→玩法机制→历史整合；具体执行规则写入[连续性协议 §17](docs/PROJECT-CONTINUITY-PROTOCOL-R1.md)。保留此前22域/9系统与O1–O95全部证据，不推翻原台湾1.0、后期候选的版本分工。每只宠物优先对照**实际原图/动作/数值/技能/获取来源**，跨版比较但不凭图号或名字自动认同一物种，不把原SPR组数误认为宠物种数。已取资料做完后允许明确UNKNOWN，后续新源增量扩展；不要求等待未取得的历代所有客户端。**现最高 NEXT：PET-MODULE-01 SOURCE-BATCH-CENSUS**；此前O96跨域轮换被新模块优先规则覆盖。仍属原游戏忠实复原，Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停，完成百分比未知。
+
+
+### 2026-11-02 — PET-MODULE-01 全表宠物模板/实例与四客户端原SPR候选集中归档
+
+[PET-MODULE-01批量恢复报告](docs/continuity/STONEAGE-PET-MODULE-01-SOURCE-BATCH-20261102.md)与[完整派生数值索引](research/recovered/STONEAGE-PET-MODULE-01-BATCH-SOURCE-SPR-INDEX-R1.json)：在新模块优先规则下直接读取2016社区独立源`enemybase1`1816模板行（PETFLG=1共1024行，0共792行、1813个不同模板ID）及`enemy1`2958实例行（2934唯一关联、23缺失、1个歧义4模板），对PETFLG1的598个**不同图号**批量连接TW1/CN5/TW85/mixed25源SPR索引，命中分别130/344/542/260、四者都无56；数值图号不是官方物种种数，尤其不得以晚期后代名义填早期官方物种。同文件号重号完整保留。公开只留1024条结构化源字段、2958条实例链接、598条图号原资源索引和少数例示，不转载商业原图/整表原名，原CURRENT不改。下一优先 **PET-MODULE-02** 比对另一保存MIXED25的988模板，并联接已私存真实宠物画面；保持宠物模块集中推进。Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、总体完成率仍未知。
