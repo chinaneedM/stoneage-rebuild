@@ -1,0 +1,23 @@
+name: Verify CHAR04 original source NPC graphic/function joins
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-CHARACTER-NPC-MODULE-01-FULL-SOURCE-ROWS-R1.json'
+      - 'research/recovered/STONEAGE-CHARACTER-NPC-MODULE-04-SAME-CARRIER-GRAPHIC-FUNCTION-JOIN-R1.json'
+      - 'research/recovered/STONEAGE-PET-MODULE-10-ORIGINAL-MIXED25-SERVER-TABLES-R1.json'
+      - 'research/recovered/STONEAGE-PRESERVED-PET-SPR-MATERIAL-R40.json'
+      - 'tests/test_stoneage_character_npc_module_04.py'
+      - '.github/workflows/verify-stoneage-character-npc-module-04.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  check-original-evidence-boundaries:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest tests.test_stoneage_character_npc_module_04 -v

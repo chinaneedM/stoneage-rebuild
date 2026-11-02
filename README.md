@@ -1555,3 +1555,8 @@ O75 CI史实订正：PR #133 初稿的 Stage A 检查 run 41362507873 因两处�
 ### 2026-11-03 — CHAR03：台湾1.0 NPC-like 101原静态图实际RD像素批量复原
 
 [原101图原始RD像素收据](research/recovered/STONEAGE-CHARACTER-NPC-MODULE-03-TW1-101-STATIC-RD-RECEIPT-R1.json)及[本轮源边界说明](docs/continuity/STONEAGE-CHARACTER-NPC-MODULE-03-TW1-101-STATIC-RD-20261103.md)：TW1原P3H同源ADRN/REAL及双SAP实际逐完整SHA核实，5846～5946编号101源原RD块逐原像素实际解码101/101成功、0失败，逐源哈希与原R99全部101项吻合。私人原RGB候选原图联系表及浏览器101图（两配色101/101已载入、0JS/0请求）保存为本轮可取文件，原艺术品不公开Git。**101是静态图像数，并非101个官方NPC**：目视混有人形和床铺、钱袋等物件；原`map_number`不是楼层、后期mixed25 NPC姓名不与早期TW1强行绑定。**NEXT CHAR04**审核人物/NPC同源身份绑定，未得同版主表保持UNKNOWN。原CURRENT及Stage A/B/wiki/R79和overall_percent=null不变。
+
+
+### 2026-11-03 — CHAR04 人物/NPC创建原件→模板功能→同RAR原SPR图号的全量来源关联
+
+[CHAR04真实原件关联及差异审查](docs/continuity/STONEAGE-CHARACTER-NPC-MODULE-04-STATIC-GRAPHIC-FUNCTION-20261103.md)及[CHAR04全量图号×原模板功能×SPR索引](research/recovered/STONEAGE-CHARACTER-NPC-MODULE-04-SAME-CARRIER-GRAPHIC-FUNCTION-JOIN-R1.json)：从用户私人保存的mixed25原NPC目录ZIP全量核2205原文件、4985创建源块、119模板源块SHA全部吻合；把此前只在用户私人资料/会话保存的[CHAR01 4985行无正文源证](research/recovered/STONEAGE-CHARACTER-NPC-MODULE-01-FULL-SOURCE-ROWS-R1.json)正式永久入Git，字段仅数值/来源位置/散列及文件引用。原功能Warp配置2904（非2904人），模板唯一定位4984/4985。创建原图号有2482条，其中617条/108不同图号命中同原RAR客户端SPR索引；1865条/146不同图号无本索引；35条原模板type与创建graphicname数值不一致，逐条保留；3个既往R40原完整SPR段号100250/251/252可联30条原创建配置。仅同RAR数值关联，**不是**原运行服同部署、同原图可视像素、官方人物或TW1 NPC姓名身份证明。下一优先CHAR05有源批量原SPR/像素及NPC原用途关系，不重复造图及引擎。Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、总percent=null；原CURRENT保持原字节。
