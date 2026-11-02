@@ -1405,3 +1405,8 @@ O75 CI史实订正：PR #133 初稿的 Stage A 检查 run 41362507873 因两处�
 ### 2026-11-02 — O79 后期保存包七宠物对话配置与原物品主表联接
 
 [O79 原始宠物对话菜单/事件/道具关联](docs/continuity/STONEAGE-O79-ORIGINAL-PET-TALK-SOURCE-20261102.md)：重新从私有 SHA 合格的 mixed25 RAR 实际提取 `pettalk.menu` 与7脚本及 `itemset.txt` 共9个原成员，逐原 RAR CRC、完整 SHA、CP950往返核实。菜单原序7个唯一 `PETTEMPNO` 为718/2/914/913/170/401/1147；7脚本合计 **132个静态 `TalkMsg` 标签**（OTHER7/TALKRUN38/EVENTRUN67/BOTH20）。原道具条件编号2414及 `AddItem` 编号2848、19688各在同档13,254行/94列物品表唯一存在；来源哈希、单行摘要见[公开数值回执](research/recovered/STONEAGE-O79-ORIGINAL-PET-TALK-SOURCE-R1.json)。可核的是**后期混合归档原静态宠物对话内容**，不是原游戏运行的宠物说话、道具发放、同服/TW1/JSS1999归属。未公开源脚本/旧资产，没有体验优化、模拟宠物说话或原客户端世界进入。完整CURRENT不变，Stage A7PARTIAL+2OPEN，B/wiki GATED，R79暂停，整体百分比null。**NEXT O80**：只核有真实来源的宠物对话触发/调用器；缺相同原始证据立即轮换其他未复原内容，不空转扩助手层。
+
+
+### 2026-11-02 — O80 四村聊天室门票→源 NPC→原进出传送→地图证据
+
+[O80 四村聊天室原始静态内容联接](docs/continuity/STONEAGE-O80-ORIGINAL-CHATROOM-TICKET-GATES-20261102.md)：自已保管 mixed25 RAR 重新验全档 SHA，实取四村 ticket、NPC chatroom.create、generated 原创建、8份四对 wpm、四村完整 DAT/MAP、chatroom.conf及原itemset；各原成员 SHA/CRC 和回执见[O80 原始来源数字证据](research/recovered/STONEAGE-O80-ORIGINAL-CHATROOM-TICKET-GATES-R1.json)。四村1012/2012/3012/4012分别用门票2521/2522/2523/2524，由(18,16)售票NPC和(14,13)引导员指向中央110的(37,21/25/29/33)，再由中央(37,20/24/28/32)返回对应村(13,13)。原四图30×30、票据同档物品表各唯一；1012/4012 MAP 全同但 DAT有5个16位格差。保留ticket130中GetItem2602与EVENT:ITEM2054不一致，未无证纠正。对605份原NPC小文本扫不到独立 pettalk dispatcher，不能证明服务器 native 不存在。**全部为后期私人混合载体静态事实**：未运行原客户端、商业服、原生传送/扣票或图像，不能替代TW1/JSS1999证据；不做未来游戏体验优化。CURRENT原blob不改、Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、整体完成百分比null。**NEXT O81**：在已有真原图条件下择一有界聊天室内景观察/来源联接，否则转其他新实物内容。

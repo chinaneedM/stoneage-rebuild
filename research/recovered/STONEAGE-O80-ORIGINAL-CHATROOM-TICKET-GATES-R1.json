@@ -1,0 +1,415 @@
+{
+  "schema": "stoneage.o80.mixed25_original_chatroom_ticket_gate_static_source.v1",
+  "date": "2026-11-02",
+  "fresh_main_head": "03dcf5b03803e8f67ef1c4e4f86b2e5be6fc00ee",
+  "fresh_main_tree": "44b57e2847e9b233741b4e21ff921b04a7cbfc11",
+  "preserved_current_state_blob": "20050acf279a01555ab06a381dfcdc936bd381a6",
+  "source": {
+    "name": "stoneage-preserved-mixed25-original.rar",
+    "size": 361255180,
+    "whole_sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+    "actual_digest_verified_this_unit": true,
+    "category": "LATER_COMMUNITY_MIXED25_PRESERVED_NOT_RETAIL_VERIFIED",
+    "new_public_binary_download": false
+  },
+  "pet_talk_dispatcher_search": {
+    "searched_text_config_script_files": 605,
+    "uncompressed_bytes": 4469041,
+    "original_RAR_CRC_and_extracted_CRC_disagreements": 0,
+    "external_pettalk_literal_hits": 0,
+    "scope": "gmsv/data/npc small text scripts; does not include native server executable",
+    "missing_native_dispatcher_still_open": true
+  },
+  "materials_original_RAR_header_crc_and_extracted_crc_verified": [
+    {
+      "path": "gmsv/data/npc/chatroom/chatroom.create",
+      "bytes": 2873,
+      "sha256": "068c36b326759fde126bc6cc72796645468c0823c46deb3a328e6a98814345cd",
+      "rar_crc32": "19d034a5"
+    },
+    {
+      "path": "gmsv/data/npc/chatroom/chatroom.conf",
+      "bytes": 982,
+      "sha256": "e0994a4cada150f2be26440f7a589a489404e0f973a5c780da3cfd48b522a9f6",
+      "rar_crc32": "202d187d"
+    },
+    {
+      "path": "gmsv/data/npc/chatroom/ticket1012",
+      "bytes": 462,
+      "sha256": "bea28a8d292d1d19c6e42bb4fda549c417da1014462c99118fb3aa2b695762be",
+      "rar_crc32": "129b8320"
+    },
+    {
+      "path": "gmsv/data/npc/chatroom/ticket2012",
+      "bytes": 456,
+      "sha256": "7c9ab5110098a53a372c5e37edd98f33c78e2c2509526093c959c33e6ed91c78",
+      "rar_crc32": "22e3591e"
+    },
+    {
+      "path": "gmsv/data/npc/chatroom/ticket3012",
+      "bytes": 458,
+      "sha256": "3cbe67519fc92a668394fabcdc28860c4e26cde2b48b6a95297e779472c77bbd",
+      "rar_crc32": "aeda9e25"
+    },
+    {
+      "path": "gmsv/data/npc/chatroom/ticket4012",
+      "bytes": 458,
+      "sha256": "d5084197bc6f83f7044eae19ccc8f2914498e98dc560b54de42e9ef22838cd3d",
+      "rar_crc32": "b0fa5d6d"
+    },
+    {
+      "path": "gmsv/data/npc/chatroom/ticket130",
+      "bytes": 335,
+      "sha256": "9723759e9a14a393ae7e654c722000868f2edb927f57539a97b99e59322ff162",
+      "rar_crc32": "ccd92cdf"
+    },
+    {
+      "path": "gmsv/data/npc/genout/chatroom.create",
+      "bytes": 3010,
+      "sha256": "b22738c60c5b57513e23ae7abba4f20f7c5ecb41827aa72ba28b65aaa1c51bf0",
+      "rar_crc32": "35580259"
+    },
+    {
+      "path": "stoneage2.5/map/1012.DAT",
+      "bytes": 5408,
+      "sha256": "2a6d4ac313ba6d66498aca0ccbc4f64dcbda3e419b185240d7eb67184c83cded",
+      "rar_crc32": "6eac48cb"
+    },
+    {
+      "path": "stoneage2.5/map/1012.MAP",
+      "bytes": 1808,
+      "sha256": "df5589aca31ad38d69a3381a91b2c4d4f365cdcd96858d1342938d67e3ef2c82",
+      "rar_crc32": "53ec0654"
+    },
+    {
+      "path": "gmsv/data/npc/genout/wpm_1012_14_13",
+      "bytes": 346,
+      "sha256": "31360c8f1e45e17f7903085c10b46dd92bea7f928d4c49cb5d94b5127b524ae1",
+      "rar_crc32": "02bccb88"
+    },
+    {
+      "path": "gmsv/data/npc/genout/wpm_110_37_20",
+      "bytes": 312,
+      "sha256": "9e08f80f4142e5153fd12d0eb95ee7b6138634f328668356915ed9001853cb74",
+      "rar_crc32": "28b2e28a"
+    },
+    {
+      "path": "stoneage2.5/map/2012.DAT",
+      "bytes": 5408,
+      "sha256": "8524af203ebd2cb6b0fa4736969dd964a2f6edbbf3ad1a7cef48f5a137827a98",
+      "rar_crc32": "d0abdbd8"
+    },
+    {
+      "path": "stoneage2.5/map/2012.MAP",
+      "bytes": 1808,
+      "sha256": "dea2d2ed82ae6fde8c01ca1c3b674e908674a2449a97e35901af41b2690bc426",
+      "rar_crc32": "8a4a8bfb"
+    },
+    {
+      "path": "gmsv/data/npc/genout/wpm_2012_14_13",
+      "bytes": 346,
+      "sha256": "51fabd12f09d5ad37014d6c9e178048e32edfebde2b339b6abb38f9aa418db3b",
+      "rar_crc32": "46114afe"
+    },
+    {
+      "path": "gmsv/data/npc/genout/wpm_110_37_24",
+      "bytes": 312,
+      "sha256": "46bf99e0232c14730737dcf5a550e1dc25019e8d04f89c54ca5243864a57e350",
+      "rar_crc32": "d25db5c3"
+    },
+    {
+      "path": "stoneage2.5/map/3012.DAT",
+      "bytes": 5408,
+      "sha256": "cce3615d607cd11c31cb993a38195d5a5f8e4c7fff2f9f94c57f9a2fb71d6d7a",
+      "rar_crc32": "c43a8478"
+    },
+    {
+      "path": "stoneage2.5/map/3012.MAP",
+      "bytes": 1808,
+      "sha256": "95c36c7383199765b4ebaeb500bfc82840c4e791dc532de994b1acdcf6cf2a5c",
+      "rar_crc32": "02ebf204"
+    },
+    {
+      "path": "gmsv/data/npc/genout/wpm_3012_14_13",
+      "bytes": 344,
+      "sha256": "5cb627b55dfaefe87e40e72ec520914f7bf2d425ccd2564bf02e05c15a152f8d",
+      "rar_crc32": "b273f6b9"
+    },
+    {
+      "path": "gmsv/data/npc/genout/wpm_110_37_28",
+      "bytes": 304,
+      "sha256": "8329c203915768877a042938a0261ab71be0bb985f839b915a30d502aeed2190",
+      "rar_crc32": "d53a2240"
+    },
+    {
+      "path": "stoneage2.5/map/4012.DAT",
+      "bytes": 5408,
+      "sha256": "40eca763426f6a2d1e826aef33b4602fe409ab497fa1dea0f6aa9c45ca3ed9fc",
+      "rar_crc32": "2367d288"
+    },
+    {
+      "path": "stoneage2.5/map/4012.MAP",
+      "bytes": 1808,
+      "sha256": "df5589aca31ad38d69a3381a91b2c4d4f365cdcd96858d1342938d67e3ef2c82",
+      "rar_crc32": "53ec0654"
+    },
+    {
+      "path": "gmsv/data/npc/genout/wpm_4012_14_13",
+      "bytes": 344,
+      "sha256": "1954132d2687c51a34ceff3735210eed7092d8b6ab42a334a83c33f514b75dc1",
+      "rar_crc32": "ed601b13"
+    },
+    {
+      "path": "gmsv/data/npc/genout/wpm_110_37_32",
+      "bytes": 312,
+      "sha256": "13c2ef88e402ee80c45cc1cce99a6baf028b0901a7df6451f29abc5b3a1f792f",
+      "rar_crc32": "530936a4"
+    }
+  ],
+  "material_count": 25,
+  "item_master": {
+    "path": "gmsv/data/itemset.txt",
+    "bytes": 3392473,
+    "sha256": "a415e78f9aab2e5ea5ca92ecb7430253f7be1ba7c876d6b0bb6d067b1b466688",
+    "rar_crc32": "96397928",
+    "rows": 13254,
+    "columns_per_row": 94,
+    "numeric_id_column_zero_based": 16,
+    "unique_match_for_four_ticket_ids": true,
+    "arena_ticket_ids_2597_to_2602_each_unique": true,
+    "identifier_2054_matches": 0
+  },
+  "cities": [
+    {
+      "floor": 1012,
+      "ticket_id": 2521,
+      "original_vendor_xy": [
+        18,
+        16
+      ],
+      "original_vendor_graphic_alias": 16065,
+      "original_explainer_xy": [
+        13,
+        16
+      ],
+      "original_explainer_graphic_alias": 16033,
+      "source_gate_xy": [
+        14,
+        13
+      ],
+      "source_gate_graphic_alias": 16202,
+      "source_enter_warp": [
+        110,
+        37,
+        21
+      ],
+      "source_hub_exit_warp": [
+        1012,
+        13,
+        13
+      ],
+      "source_hub_exit_actor_xy": [
+        37,
+        20
+      ],
+      "source_gate_free_item_literal": "ITEM=2521*1",
+      "source_hub_exit_free_item_literal": "ITEM=2521*1",
+      "item_master_row": 2104,
+      "item_master_row_sha256": "7c2ece6ed065e61a4395e04e9d560be0f232b9fa38e58086841a975c8e1c7457",
+      "item_master_name": "聊天室門票",
+      "item_master_graphic_number": 24176,
+      "source_file_pointers": [
+        "chatroom/ticket1012",
+        "genout/wpm_1012_14_13",
+        "genout/wpm_110_37_20"
+      ],
+      "actual_native_warp_execution": false
+    },
+    {
+      "floor": 2012,
+      "ticket_id": 2522,
+      "original_vendor_xy": [
+        18,
+        16
+      ],
+      "original_vendor_graphic_alias": 16065,
+      "original_explainer_xy": [
+        13,
+        16
+      ],
+      "original_explainer_graphic_alias": 16033,
+      "source_gate_xy": [
+        14,
+        13
+      ],
+      "source_gate_graphic_alias": 16201,
+      "source_enter_warp": [
+        110,
+        37,
+        25
+      ],
+      "source_hub_exit_warp": [
+        2012,
+        13,
+        13
+      ],
+      "source_hub_exit_actor_xy": [
+        37,
+        24
+      ],
+      "source_gate_free_item_literal": "ITEM=2522*1",
+      "source_hub_exit_free_item_literal": "ITEM=2522*1",
+      "item_master_row": 2105,
+      "item_master_row_sha256": "30af396217a160c7e13e3f03fb8523812052ac39478a18914f6132ac83d4c32c",
+      "item_master_name": "聊天室門票",
+      "item_master_graphic_number": 24176,
+      "source_file_pointers": [
+        "chatroom/ticket2012",
+        "genout/wpm_2012_14_13",
+        "genout/wpm_110_37_24"
+      ],
+      "actual_native_warp_execution": false
+    },
+    {
+      "floor": 3012,
+      "ticket_id": 2523,
+      "original_vendor_xy": [
+        18,
+        16
+      ],
+      "original_vendor_graphic_alias": 16065,
+      "original_explainer_xy": [
+        13,
+        16
+      ],
+      "original_explainer_graphic_alias": 16033,
+      "source_gate_xy": [
+        14,
+        13
+      ],
+      "source_gate_graphic_alias": 16202,
+      "source_enter_warp": [
+        110,
+        37,
+        29
+      ],
+      "source_hub_exit_warp": [
+        3012,
+        13,
+        13
+      ],
+      "source_hub_exit_actor_xy": [
+        37,
+        28
+      ],
+      "source_gate_free_item_literal": "ITEM=2523",
+      "source_hub_exit_free_item_literal": "ITEM=2523*1",
+      "item_master_row": 2106,
+      "item_master_row_sha256": "644820214bc5c88671b98365221e633ff3c359e39593ed7b751031916d260f57",
+      "item_master_name": "聊天室門票",
+      "item_master_graphic_number": 24176,
+      "source_file_pointers": [
+        "chatroom/ticket3012",
+        "genout/wpm_3012_14_13",
+        "genout/wpm_110_37_28"
+      ],
+      "actual_native_warp_execution": false
+    },
+    {
+      "floor": 4012,
+      "ticket_id": 2524,
+      "original_vendor_xy": [
+        18,
+        16
+      ],
+      "original_vendor_graphic_alias": 16065,
+      "original_explainer_xy": [
+        13,
+        16
+      ],
+      "original_explainer_graphic_alias": 16033,
+      "source_gate_xy": [
+        14,
+        13
+      ],
+      "source_gate_graphic_alias": 16201,
+      "source_enter_warp": [
+        110,
+        37,
+        33
+      ],
+      "source_hub_exit_warp": [
+        4012,
+        13,
+        13
+      ],
+      "source_hub_exit_actor_xy": [
+        37,
+        32
+      ],
+      "source_gate_free_item_literal": "ITEM=2524",
+      "source_hub_exit_free_item_literal": "ITEM=2524*1",
+      "item_master_row": 2107,
+      "item_master_row_sha256": "5bd20cae9c2737b1e5b4e9f8a248783c0723418a90d66f3602d51e072c46ab09",
+      "item_master_name": "聊天室門票",
+      "item_master_graphic_number": 24176,
+      "source_file_pointers": [
+        "chatroom/ticket4012",
+        "genout/wpm_4012_14_13",
+        "genout/wpm_110_37_32"
+      ],
+      "actual_native_warp_execution": false
+    }
+  ],
+  "source_create_actors": {
+    "chatroom_create_blocks": 14,
+    "generated_chatroom_create_blocks": 18,
+    "guide_and_vendor_configs": [
+      "ticket NPC per city at (18,16)",
+      "explainer NPC per city at (13,16)",
+      "warpman NPC per city at (14,13)"
+    ],
+    "hub_floor": 110,
+    "guide_conf_windows": [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "historical_input_divergence": {
+    "ticket130_get_item": 2602,
+    "ticket130_existing_item_guard": 2054,
+    "guard_2054_master_matches": 0,
+    "no_automatic_typo_fix": true,
+    "reason": "original saved source conflict not validated runtime defect"
+  },
+  "client_floor_delta": {
+    "floor1012_MAP_full_bytes_same_as_4012": true,
+    "floor1012_DAT_full_bytes_same_as_4012": false,
+    "DAT_different_16bit_cells_per_plane": [
+      0,
+      2,
+      3
+    ],
+    "plane2_meaning_not_guessed": true
+  },
+  "negative": {
+    "no_original_TW1_or_JSS1999_deployment_proven": true,
+    "no_original_client_world_entered": true,
+    "no_original_server_actions_executed": true,
+    "no_ticket_award_or_consume_runtime": true,
+    "no_original_warp_or_paint_pixels": true,
+    "no_native_dialogue_window_display": true,
+    "no_future_optimization_or_game_design": true,
+    "no_copyrighted_original_files_published": true
+  },
+  "status": {
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b": "GATED",
+    "wiki": "GATED",
+    "savedata_R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "next": "O81 limited original-content pixel/source witness for one historically version-tagged chatroom interior or new material domain; do not equate static WarpMan params with runtime"
+}
