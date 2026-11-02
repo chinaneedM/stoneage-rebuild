@@ -1435,3 +1435,8 @@ O75 CI史实订正：PR #133 初稿的 Stage A 检查 run 41362507873 因两处�
 ### 2026-11-02 — O85 愿藏三原对白、桥上敌对NPC与两条敌人主表同源核验
 
 [O85 村民叙事→桥上愿藏NPC→源级战斗/敌人主表](docs/continuity/STONEAGE-O85-YUANZANG-DIALOGUE-BATTLE-20261102.md)：独立全SHA复验已保管混合2.5 RAR **361255180B**，15原成员逐原RAR头CRC/字节/全SHA一致；O84缺失的三份原 `msg_1000_118_95`、`msg_1000_82_39`、`msg_1000_79_37` 全部真实读取，证实相邻少女与愿藏父母围绕“通往沙漠的桥”的同名叙事线索。独立实取敌对 NPC `sb_ganzo.create/template/arg`（floor100:472,297、图号100401、NPCEnemy、敌人ID253/254），同源 `enemy.txt` / `enemybase.txt` 唯一ID→模板号500/501链接。**254敌人名「呼拔雄」与模板501原名「呼拔吉」不一致**，原传送参数三行是注释而非已执行Warp。更广的king/event69叙事单独限定未证运行。原100.DAT/MAP提取分别131072/1179648B便失败，未将坏片段升格成地图；无原客户端执行/原生对话或战斗/官方最初版归属。公开仅[数值/哈希](research/recovered/STONEAGE-O85-YUANZANG-DIALOGUE-BATTLE-SOURCE-R1.json)，原资产私有，旧O84及CURRENT不删。**NEXT O86** 轮换独立有真实材料的其它游戏内容。Stage A7 PARTIAL+2 OPEN、Stage B/wiki GATED、R79暂停、整体百分比未知；不做新游戏体验优化。
+
+
+### 2026-11-02 — O86 长毛象交通原路线、站点与原文字证据
+
+[O86 长毛象客运六条源级线路/六站/原站牌](docs/continuity/STONEAGE-O86-MAMMOTH-BUS-ORIGINAL-SOURCE-20261102.md)：新从完整SHA合格的361255180B后期mixed25私人RAR实际提取35个原源成员共14116B，逐CRC/SHA/长度验证；6个Bus创建各唯一指向6份arg（**300坐标点**，原needstone为50/50/25/30/20/40，waittime全部180）。另26个genout静态原NPC/告示与26份对应原文字节确认；两组各三站共六站，六条路线/12张双端费用牌互核，六张使用方法站牌写明同伴按钮上下车、停站3分钟。**bus.arg第二禁带号403与另五条2403不一致；bus2.arg及bus.create编码不完全合法；一处向导地名与邻近站牌矛盾；3000残留两条无匹配Bus车辆，全部原样留疑**。与2001官方手册的两组三站/三分钟仅做跨年代对照，无法认证容量4、原生不遇敌或同部署。完整[派生SHA/CRC/路线数字](research/recovered/STONEAGE-O86-MAMMOTH-BUS-SOURCE-R1.json)，原脚本和图像不公开。CURRENT历史Git blob不变；NEXT O87轮换另一实源材料，Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、percent=null；不做新游戏体验优化。
