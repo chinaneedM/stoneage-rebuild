@@ -1396,3 +1396,7 @@ O75 CI史实订正：PR #133 初稿的 Stage A 检查 run 41362507873 因两处�
 ### 2026-11-02 — O77 台湾1.0原客户端Win32鼠标事件与坐标处理实源（非原生战斗执行）
 
 [O77 原 `sa_3.exe` 鼠标原生分派证据](docs/continuity/STONEAGE-O77-TW1-NATIVE-MOUSE-WINDOW-DISPATCH-20261102.md)：重验原P3H私人TW1 372,626,292B ZIP整SHA及379成员全部CRC；源425,984B `sa_3.exe` 的真实Win32 `WndProc` 0x41C970/跳表0x41D40C查得鼠标移动、左右键按下/抬起/双击7条明确消息处理入口；鼠标X/Y由0x42DED0写入原全局状态，0x425290实际读取坐标做矩形界限判断。标准库原字节断言与objdump独立交叉核实；完整[源SHA、消息目标及反证收据](research/recovered/STONEAGE-O77-TW1-NATIVE-MOUSE-INPUT-SOURCE-R1.json)。**这是原版客户端真实存在的输入代码，不是原程序在战斗中展示敌人等级的运行证据，更不是将O76后期2.5教程认证为同版TW1事实。** 不能宣称原世界已进入/战斗目标命中/原生像素已显示；没有开发模拟器、优化玩家体验或公开EXE。连续性协议§16正式固化**复原阶段忠实记录、未来新石器阶段才考虑体验优化**。原CURRENT SHA保持字节不变，Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、percent=null。**NEXT O78**：限原TW1战斗目标命中→等级显示确证入口，有新来源才能推进，否则有界止点轮换原版内容域。
+
+### 2026-11-02 — O78 台湾1.0原客户端鼠标对象命中→原等级文案→有条件绘制调用
+
+[O78 原 `sa_3.exe` 同版代码链](docs/continuity/STONEAGE-O78-TW1-HOVER-LEVEL-STATIC-SOURCE-20261102.md)：原P3H台湾1.0私人ZIP **372,626,292B/379成员全CRC**及原425,984B EXE全SHA重新校验；从原帧循环 `0x40D29A` 到 `0x42E320` 的对象鼠标坐标/图形宽高命中处理，确认被选字段、状态9/10等显示条件，以及同一原EXE .data 内 8条CP950原模板（`%s  Lv：%d`、可选第二名称、`耐`与`氣`值），格式化到原缓冲区后 `0x42E82D→0x40DF50→0x40CED0` 发出绘制请求（有标志位条件）。本轮实际从原字节断言14个指令锚、4个相对CALL，`objdump`独立核对，详见[源数值与负面边界](research/recovered/STONEAGE-O78-TW1-HOVER-LEVEL-STATIC-SOURCE-R1.json)。**FACT仅限原客户端静态条件调用：仍未实见原画面/原生鼠标悬停、未确定命中对象一定为战斗敌人，不能把O76后期2.5教学与TW1视为同版部署。** 无EXE/原图入公开Git，无体验优化/新石器开发。完整历史CURRENT Blob不变，Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、整体percent=null。**NEXT O79**：停止无界扩张通用反编译，轮换尚未覆盖的原客户端游戏世界、NPC、地图或宠物具实源内容；当有原版战斗运行画面才重开O78实际验收。

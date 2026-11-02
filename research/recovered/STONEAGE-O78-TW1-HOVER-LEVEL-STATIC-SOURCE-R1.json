@@ -1,0 +1,123 @@
+{
+  "schema": "stoneage.o78.tw1_hover_level_conditional_source.v1",
+  "date": "2026-11-02",
+  "previous_main_head": "3159d11ccbf64598731cad5efc5f47ddc54d625f",
+  "previous_main_tree": "b83817acfef823b069adfd6e33e055a4f266786f",
+  "preserved_current_blob_sha": "20050acf279a01555ab06a381dfcdc936bd381a6",
+  "source": {
+    "name": "StoneAge-TW1-original-runtime-and-native-observation-P3H.zip",
+    "bytes": 372626292,
+    "sha256": "3a4854adaebef056332cdbd7b1dc1c130c571b11704e3f199f53d03aa31cba24",
+    "zip_member_count": 379,
+    "all_crc_verified": true,
+    "exe_member": "source/sa_3.exe",
+    "exe_bytes": 425984,
+    "exe_sha256": "cdab9ea049a98bbc96ce93eeaa8b63c688f0c0f0ad8b3183e79d75e47621441a",
+    "exe_zip_crc32": "3453fd16"
+  },
+  "static_source": {
+    "frame_call": {
+      "from": "0x40d29a",
+      "to": "0x42e320"
+    },
+    "object_screen_x": "0x17e5db8",
+    "object_screen_y": "0x17e5dbc",
+    "first_object_test_x": "0x42e388",
+    "first_object_test_y": "0x42e3a4",
+    "selected_index_reset": "0x42e3d4",
+    "selected_index_write": "0x42e472",
+    "selected_object_field_write": "0x42e563",
+    "object_required_flag": "0x10",
+    "object_required_flag_test": "0x42e621",
+    "display_mode_a": 9,
+    "display_mode_b": 10,
+    "mode_a_test": "0x42e630",
+    "mode_b_test": "0x42e6f0",
+    "format_to_buffer": {
+      "function": "0x448748",
+      "call_at": "0x42e81b",
+      "buffer": "0x17e5cb0"
+    },
+    "text_draw_request": {
+      "call_at": "0x42e82d",
+      "callee": "0x40df50",
+      "draw_flag_gate": "0x40df50",
+      "downstream_draw_call": "0x40df6e",
+      "downstream_callee": "0x40ced0"
+    },
+    "verified_byte_anchors": 14,
+    "verified_relative_call_targets": {
+      "0x40d29a": "0x42e320",
+      "0x42e81b": "0x448748",
+      "0x42e82d": "0x40df50",
+      "0x40df6e": "0x40ced0"
+    },
+    "decoded_cp950_templates": [
+      {
+        "address": "0x45c798",
+        "template": "%s  Lv：%d",
+        "sha256": "a1ea5052d53069bf97451bbf2a2698c32f9fe56c03a37cd3708785db1e6250a4"
+      },
+      {
+        "address": "0x45c7a4",
+        "template": "%s [%s]  Lv：%d",
+        "sha256": "4410720234236326232e4bf176bba38fb95ca0ac37056da92847b9be95eb4ea7"
+      },
+      {
+        "address": "0x45c7b4",
+        "template": "%s  Lv：%d  耐：%d／%d",
+        "sha256": "39e04bb42d8a7b5ddd94d5b05fcef2858f812d49ad9678b17bfceba3cd9555e4"
+      },
+      {
+        "address": "0x45c7cc",
+        "template": "%s [%s]  Lv：%d  耐：%d／%d",
+        "sha256": "7315f932a34d1fe841480384bdca4df3fcee64dbb78816c9590b52502edb7190"
+      },
+      {
+        "address": "0x45c7e8",
+        "template": "%s  Lv：%d  耐：%d／%d  氣：%d",
+        "sha256": "e814a9c612b45c6b7bc50aa803f36010b2dd47d584f30e1a41cee7aef6298c90"
+      },
+      {
+        "address": "0x45c808",
+        "template": "%s [%s]  Lv：%d  耐：%d／%d  氣：%d",
+        "sha256": "0f75b5a169b06b81052ab8ba866b2c70a663ff93e732b73bc96905419d1badf0"
+      },
+      {
+        "address": "0x45c82c",
+        "template": "%s",
+        "sha256": "f684c73cba75b2ba0b6833f62a8fa8af6b8a2d3711b775d52596105f4917e38d"
+      },
+      {
+        "address": "0x45c830",
+        "template": "%s [%s] Lv：%d  耐：%d／%d  氣：%d",
+        "sha256": "5c1596ee5010bce0ad25513cc8253fbd721703a7df5f1bd2b4d3a597aa458054"
+      }
+    ]
+  },
+  "integrity": {
+    "zip_crc_checked_all": true,
+    "pe_machine_bytes_checked": true,
+    "relative_calls_decoded": true,
+    "independent_objdump_crosschecked": true,
+    "template_cp950_roundtrip": true
+  },
+  "limits": {
+    "source_static_native_hit_to_level_format_and_draw_path": true,
+    "actual_native_original_ui_pixel_seen": false,
+    "game_world_entered": false,
+    "enemy_role_proven": false,
+    "original_battle_hover_executed": false,
+    "mixed25_tutorial_same_deployment_proven": false,
+    "level_numeric_formula_proven": false,
+    "user_experience_optimization_in_restoration": false,
+    "proprietary_original_upload": false
+  },
+  "status": {
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b_wiki": "GATED",
+    "r79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "next": "O79 original asset-backed world gameplay/content gap, not generic client disassembly"
+}
