@@ -1,0 +1,21 @@
+name: Verify CHAR03 original TW1 101 static RD receipt
+on:
+  push:
+    paths:
+      - research/recovered/STONEAGE-CHARACTER-NPC-MODULE-03-TW1-101-STATIC-RD-RECEIPT-R1.json
+      - research/recovered/STONEAGE-TW10-NPC-STATIC-RESOURCE-JOIN-R99.json
+      - tests/test_stoneage_character_npc_module_03_receipt.py
+      - .github/workflows/verify-stoneage-character-npc-module-03.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-limit-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest tests.test_stoneage_character_npc_module_03_receipt -v

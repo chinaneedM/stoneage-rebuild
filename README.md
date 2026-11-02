@@ -1550,3 +1550,8 @@ O75 CI史实订正：PR #133 初稿的 Stage A 检查 run 41362507873 因两处�
 ### 2026-11-03 — CHARACTER/NPC-MODULE-02 台湾1.0十二组人物候选原动作2全帧恢复
 
 [CHAR02来源限定真实原像素/动作完整批次](research/recovered/STONEAGE-CHARACTER-NPC-MODULE-02-TW1-12-ACTOR-ACTION2-RECEIPT-R1.json)及[恢复说明](docs/continuity/STONEAGE-CHARACTER-NPC-MODULE-02-TW1-12-ACTOR-PIXELS-20261103.md)：从已认证TW1原零售P3H私人源包逐全原件SHA重核EXE/SPR/ADRN/REAL/双SAP；12图形候选组（100000～100220每20一组）的完整原SPR段SHA与旧SCENE23逐个一致；动作码2的8方向96条原序列共有728源帧位置/576不同原位图，原REAL实际解出576/576块、严格RD失败0，旧SCENE23的96源首帧像素SHA全部一致。私人完整262602B逐帧证据表与6578861B原图HTML只作当前会话可下载，不在Git上传原商美术；Chrome本地实际96段读图/帧和候选配色、0 JS/0网络。原商业游戏未进入、12个候选并非官方认证角色数、动作/真实颜色/FPS未知。**NEXT CHARACTER-NPC-MODULE-03：TW1源静态NPC-like 101图块原像素批量验收**，源R99里101个源bitmap不能当101 NPC。保留原CURRENT和全部历史边界不变。
+
+
+### 2026-11-03 — CHAR03：台湾1.0 NPC-like 101原静态图实际RD像素批量复原
+
+[原101图原始RD像素收据](research/recovered/STONEAGE-CHARACTER-NPC-MODULE-03-TW1-101-STATIC-RD-RECEIPT-R1.json)及[本轮源边界说明](docs/continuity/STONEAGE-CHARACTER-NPC-MODULE-03-TW1-101-STATIC-RD-20261103.md)：TW1原P3H同源ADRN/REAL及双SAP实际逐完整SHA核实，5846～5946编号101源原RD块逐原像素实际解码101/101成功、0失败，逐源哈希与原R99全部101项吻合。私人原RGB候选原图联系表及浏览器101图（两配色101/101已载入、0JS/0请求）保存为本轮可取文件，原艺术品不公开Git。**101是静态图像数，并非101个官方NPC**：目视混有人形和床铺、钱袋等物件；原`map_number`不是楼层、后期mixed25 NPC姓名不与早期TW1强行绑定。**NEXT CHAR04**审核人物/NPC同源身份绑定，未得同版主表保持UNKNOWN。原CURRENT及Stage A/B/wiki/R79和overall_percent=null不变。
