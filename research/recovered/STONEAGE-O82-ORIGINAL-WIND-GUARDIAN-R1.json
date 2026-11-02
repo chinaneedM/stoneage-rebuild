@@ -1,0 +1,360 @@
+{
+  "schema": "stoneage.o82.wind_guardian_original_source_r1",
+  "as_of": "2026-11-02",
+  "verified_start_head": "f66c2109e7738906093994396bca5414fadde45c",
+  "verified_start_tree": "a92cc2d900cbcecd7f386a8a3946ddf49f1ba5fc",
+  "preserved_full_current_blob": "20050acf279a01555ab06a381dfcdc936bd381a6",
+  "source_scope": "LATER_PRIVATE_COMMUNITY_MIXED25_CARRIER_NOT_JSS1999_OR_TW10_OFFICIAL",
+  "source_archive": {
+    "filename": "stoneage-preserved-mixed25-original.rar",
+    "bytes": 361255180,
+    "whole_sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+    "rechecked_entire_archive_this_round": true
+  },
+  "original_members": [
+    {
+      "member_path_suffix": "gmsv/data/npc/100/sb_geno.create",
+      "bytes": 573,
+      "sha256": "5aec44349ae3a6071b0882fd40d693f3bf1e7bdaf9ba489ac3ffbc89e26331f1",
+      "rar_crc32": "4ade5416",
+      "extracted_CRC_matches_RAR_header": true
+    },
+    {
+      "member_path_suffix": "gmsv/data/npc/100/sb_geno.template",
+      "bytes": 321,
+      "sha256": "76a826f1022276dfa9590e5ad51c6a96e9c88146a2fc39790c2cc60cbed60e2d",
+      "rar_crc32": "42a78982",
+      "extracted_CRC_matches_RAR_header": true
+    },
+    {
+      "member_path_suffix": "gmsv/data/npc/100/sb_kbu.arg",
+      "bytes": 258,
+      "sha256": "433d17a58869147f91cacc57487795d7686b53415872f0694aba02dbc869502b",
+      "rar_crc32": "90617589",
+      "extracted_CRC_matches_RAR_header": true
+    },
+    {
+      "member_path_suffix": "gmsv/data/npc/100/sb_kgi.arg",
+      "bytes": 281,
+      "sha256": "61c2aefca26c9d84db061f34c66c74b980006cac915fe732394f753daddbd586",
+      "rar_crc32": "cae087a3",
+      "extracted_CRC_matches_RAR_header": true
+    },
+    {
+      "member_path_suffix": "gmsv/data/enemy.txt",
+      "bytes": 222463,
+      "sha256": "cc7418d3b6726f1c458fef9e44a24696d05f076b67c62a56ed2293e26ae63bb6",
+      "rar_crc32": "0d60e57d",
+      "extracted_CRC_matches_RAR_header": true
+    },
+    {
+      "member_path_suffix": "stoneage2.5/map/11208.DAT",
+      "bytes": 21608,
+      "sha256": "3ba162593f41db28bb82b8478e3fddfafabcb57b8381c78cd3ca778678fe1f0f",
+      "rar_crc32": "380ff4e6",
+      "extracted_CRC_matches_RAR_header": true
+    },
+    {
+      "member_path_suffix": "stoneage2.5/map/11208.MAP",
+      "bytes": 7208,
+      "sha256": "55bb456e1142ba5694ed1178c70237d92ec7fa1dc1d23308b581ad96c30dd5dc",
+      "rar_crc32": "835387db",
+      "extracted_CRC_matches_RAR_header": true
+    },
+    {
+      "member_path_suffix": "stoneage2.5/map/11214.DAT",
+      "bytes": 15008,
+      "sha256": "4d243b320f05dd598f49a05cfd008957379a75a3ee23bdd4e51d122c36443dca",
+      "rar_crc32": "0ccde398",
+      "extracted_CRC_matches_RAR_header": true
+    },
+    {
+      "member_path_suffix": "stoneage2.5/map/11214.MAP",
+      "bytes": 5008,
+      "sha256": "5c30aa05dc86d7ad0cf4eba4be98dd6f032a08fc6ebadf735b18250dd0e30d83",
+      "rar_crc32": "a11c013f",
+      "extracted_CRC_matches_RAR_header": true
+    },
+    {
+      "member_path_suffix": "stoneage2.5/map/11215.DAT",
+      "bytes": 2408,
+      "sha256": "da0e941589ee5b565e4ab4b751eb35aa0599042a90220b1357956ffcb384a8d3",
+      "rar_crc32": "fe908ba2",
+      "extracted_CRC_matches_RAR_header": true
+    },
+    {
+      "member_path_suffix": "stoneage2.5/map/11215.MAP",
+      "bytes": 808,
+      "sha256": "40d410bc451974ca7be3dad7c8118d248221301989117ec950d37f95ca0b4fd4",
+      "rar_crc32": "0a0addc3",
+      "extracted_CRC_matches_RAR_header": true
+    }
+  ],
+  "original_enemy_master": {
+    "file": "gmsv/data/enemy.txt",
+    "source_lines_total": 2088,
+    "nonempty_rows": 2087,
+    "cols_per_nonempty_row": 34,
+    "source_numeric_id_index_zero_based": 3,
+    "entire_master_numeric_id_unique": true,
+    "referenced_enemy_id_distinct_count": 11,
+    "original_rows": [
+      {
+        "enemy_id": 1271,
+        "name_original": "風守護獸奇卡洛斯",
+        "source_row_one_based": 903,
+        "source_graphic_numeric": 661,
+        "source_row_sha256": "e126f9f689039045e1168d40c4c5e0f4d2107ce6e8473207043afa78261a0c47"
+      },
+      {
+        "enemy_id": 1272,
+        "name_original": "風守護獸布魯頓",
+        "source_row_one_based": 904,
+        "source_graphic_numeric": 662,
+        "source_row_sha256": "e1c73c08a6f90da6453c7b4d9fc511f28d14d5b9e4518fbca48be9089e42d336"
+      },
+      {
+        "enemy_id": 1273,
+        "name_original": "風烏寶寶",
+        "source_row_one_based": 905,
+        "source_graphic_numeric": 663,
+        "source_row_sha256": "40943dd5c6b7fe8a2955b19ba2649e1a0458a5aec973f81f79cf57dc55bb14d1"
+      },
+      {
+        "enemy_id": 1274,
+        "name_original": "風寶克爾",
+        "source_row_one_based": 906,
+        "source_graphic_numeric": 664,
+        "source_row_sha256": "6058047a04d65be3b3f744ca955959aaaa1407334ed11192ac39e5576cf6a00c"
+      },
+      {
+        "enemy_id": 1275,
+        "name_original": "風加斯",
+        "source_row_one_based": 907,
+        "source_graphic_numeric": 665,
+        "source_row_sha256": "51fb8842df22a9ed2a835cc0ab1fca99d25d6ce5b5435c25e46390ffa160f7a9"
+      },
+      {
+        "enemy_id": 1276,
+        "name_original": "風龜之盾",
+        "source_row_one_based": 908,
+        "source_graphic_numeric": 666,
+        "source_row_sha256": "0c7fd1fd2108fcc73146276d659f84005edbc0b6772f057f2754bc2bdc81ca76"
+      },
+      {
+        "enemy_id": 1277,
+        "name_original": "風加比奧",
+        "source_row_one_based": 909,
+        "source_graphic_numeric": 667,
+        "source_row_sha256": "b23afa700bc44dddaac0dc10a5ced997bc3f8c8a3847712c3e4b29247aead771"
+      },
+      {
+        "enemy_id": 1278,
+        "name_original": "風凱比特",
+        "source_row_one_based": 910,
+        "source_graphic_numeric": 668,
+        "source_row_sha256": "160b606c43e96c96f71659bc945a5fd71112ec1396136a7f15a58625d5f5d30f"
+      },
+      {
+        "enemy_id": 1279,
+        "name_original": "風剋剋洛斯",
+        "source_row_one_based": 911,
+        "source_graphic_numeric": 669,
+        "source_row_sha256": "b3d727d29efa34fb63ba6a55727410bf461f3d27df24697e2690e7351f92ba99"
+      },
+      {
+        "enemy_id": 1280,
+        "name_original": "風由它",
+        "source_row_one_based": 912,
+        "source_graphic_numeric": 670,
+        "source_row_sha256": "ddcf23be31b37bbf767c75646c321376370c002fe671c12e70507215e7a7def9"
+      },
+      {
+        "enemy_id": 1281,
+        "name_original": "風貝魯伊卡",
+        "source_row_one_based": 913,
+        "source_graphic_numeric": 671,
+        "source_row_sha256": "2748a76a10b00ca2deb62768c30353ef13e60ecdb69c19329f7a5a493ba94407"
+      }
+    ]
+  },
+  "original_NPC_create": {
+    "source_name_original": "風的守護獸",
+    "templates": [
+      {
+        "name": "sb_kbu",
+        "functionset": "NPCEnemy",
+        "type_number": 100394,
+        "hp_raw": "100",
+        "mp_raw": "100"
+      },
+      {
+        "name": "sb_kgi",
+        "functionset": "NPCEnemy",
+        "type_number": 100343,
+        "hp_raw": "100",
+        "mp_raw": "100"
+      }
+    ],
+    "placements": [
+      {
+        "floor": 11208,
+        "xy": [
+          26,
+          40
+        ],
+        "graphicname": 100394,
+        "dir_raw": 0,
+        "template": "sb_kbu",
+        "DAT_raw_three_u16": [
+          4308,
+          0,
+          49154
+        ],
+        "MAP_raw_u16": 23901
+      },
+      {
+        "floor": 11208,
+        "xy": [
+          42,
+          38
+        ],
+        "graphicname": 100394,
+        "dir_raw": 6,
+        "template": "sb_kbu",
+        "DAT_raw_three_u16": [
+          4305,
+          0,
+          49157
+        ],
+        "MAP_raw_u16": 42588
+      },
+      {
+        "floor": 11214,
+        "xy": [
+          41,
+          36
+        ],
+        "graphicname": 100343,
+        "dir_raw": 4,
+        "template": "sb_kgi",
+        "DAT_raw_three_u16": [
+          4306,
+          0,
+          49154
+        ],
+        "MAP_raw_u16": 23901
+      }
+    ],
+    "source_placements_count": 3
+  },
+  "battle_scripts": {
+    "sb_kbu": {
+      "entype_raw": "2",
+      "dieact_raw": "0",
+      "onebattle_raw": "0",
+      "time_raw": "180",
+      "enemy_slots": [
+        1272,
+        1277,
+        1277,
+        1280,
+        1280,
+        1278,
+        1273,
+        1273,
+        1275,
+        1275
+      ],
+      "literal_destination": null
+    },
+    "sb_kgi": {
+      "entype_raw": "2",
+      "dieact_raw": "1",
+      "onebattle_raw": "0",
+      "time_raw": null,
+      "enemy_slots": [
+        1271,
+        1274,
+        1274,
+        1281,
+        1281,
+        1276,
+        1279,
+        1279,
+        1276,
+        1276
+      ],
+      "literal_destination": [
+        11215,
+        9,
+        16
+      ]
+    }
+  },
+  "maps": [
+    {
+      "floor": 11208,
+      "dimensions": [
+        60,
+        60
+      ],
+      "anchors_count": 2
+    },
+    {
+      "floor": 11214,
+      "dimensions": [
+        50,
+        50
+      ],
+      "anchors_count": 1
+    },
+    {
+      "floor": 11215,
+      "dimensions": [
+        20,
+        20
+      ],
+      "script_target_xy": [
+        9,
+        16
+      ],
+      "DAT_raw_three_u16_at_target": [
+        4308,
+        0,
+        49152
+      ],
+      "MAP_raw_u16_at_target": 29041
+    }
+  ],
+  "source_only_boundaries": {
+    "original_enemy_encounter_executed": false,
+    "original_victory_or_loss_observed": false,
+    "original_warp_executed": false,
+    "original_timer_units_verified": false,
+    "enemy_master_deployed_qualification": false,
+    "source_graphic_100394_100343_pixels_verified": false,
+    "official_JSS1999_TW10_same_deployment": false,
+    "original_playable_client_entered": false,
+    "original_scene_pixels_recovered_this_round": false,
+    "original_game_user_experience_optimization": false,
+    "copyrighted_original_files_committed": false
+  },
+  "O81_graphics_attempt": {
+    "member": "stoneage2.5/data/real_15.bin",
+    "RAR_header_uncompressed_size": 763908374,
+    "libarchive_partial_bytes_read": 393216,
+    "error": "Invalid symbol",
+    "recovered_full_RD_images": 0,
+    "attempt_to_download_external_7zip_not_completed": true,
+    "previous_chatroom110_graphics_still_OPEN": true
+  },
+  "phase": {
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b": "GATED",
+    "wiki": "GATED",
+    "savedata_R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "next": "O83: source-qualified new original world content or actual native behavior witness; preserve O81 original graphic RD image availability as separate reopen gate"
+}
