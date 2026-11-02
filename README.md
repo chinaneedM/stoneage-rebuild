@@ -1425,3 +1425,8 @@ O75 CI史实订正：PR #133 初稿的 Stage A 检查 run 41362507873 因两处�
 ### 2026-11-02 — O83 家族银行八原NPC坐标、原银行双账户菜单和八组地图格
 
 [O83 源级家族银行原始静态内容](docs/continuity/STONEAGE-O83-ORIGINAL-FAMILY-BANK-MAP-20261102.md)：重新整包 SHA 校验私人后期混合2.5 RAR，实际解出原 `bankman.create`、`bankman.conf` 及八地图 16 DAT/MAP 共**18份原文件/53139B**，逐源CRC、完整SHA、坐标与地图全格范围核验。配置保留四庄园 floor1041/2031/3031/4031 与四村 floor1006/2006/3006/4006 八处银行管理员，均原名「家族銀行」、原图号16017，八个原坐标及DAT三层/MAP原数值收于[哈希和格子证据回执](research/recovered/STONEAGE-O83-ORIGINAL-FAMILY-BANK-MAP-R1.json)。菜单明确原文「家族個人帳戶」「家族共同帳戶」，但仅定义 winno1，选择流向5/6在该文件没有窗口定义；**不能擅称实际执行存取款或余额**。楼层3031的movecenter两组坐标不等(15,13与17,11)，保留原状。另确认骑宠来源已在O69做过归档，未重复立项。私有原脚本/地图/原图不公开，后期保存包不冒充TW1/JSS1999，原客户端未执行；无体验优化/新游戏开发。历史 CURRENT blob 不变，Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、总体百分比未知。**NEXT O84**：轮换别的真实未恢复原版游戏内容或原生执行依据。
+
+
+### 2026-11-02 — O84 萨姆吉尔两组人物的原叙事来源、五个NPC原地图格
+
+[O84 原剧情人物静态取证](docs/continuity/STONEAGE-O84-SAMUGIRU-STORY-NPCS-20261102.md)：从已保存、实际CRC/SHA核验的 O45 私人原件包读取4413B后期保存版 `1000npc_m.create` 和完整153608B `1000.DAT`。新归档三位相邻`村莊小姑娘` (118,95)/(118,96)/(117,95) 的原配置（图号16032/16033/16038），两行提到卡卓父母担忧和公园旁叹息；另两位分别有原名`願藏的母親` (82,39)/16021、`願藏的父親` (79,37)/16019，并保留三个外部原对白文件的确切指针。**两组不同姓名绝不拼成同一家族/确定任务**。原DAT五格数值、原块SHA、旧O29/O45/O54有限像素子集资格见[数字收据](research/recovered/STONEAGE-O84-SAMUGIRU-STORY-NPC-SOURCE-R1.json)；本轮未解码五角色原RD、未执行NPC对话/原客户端，未新下载原大包。NEXT **O85** 只用可认证的确切外部对白源深化一条，否则轮换原版内容域。CURRENT旧blob不变；Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、总体percent=null；不进行新游戏体验优化。
