@@ -45,3 +45,8 @@
 ## PET-MODULE-03 同源技能联接进展（2026-11-02）
 
 [同源技能批量报告](continuity/STONEAGE-PET-MODULE-03-SAME-SOURCE-SKILL-JOIN-20261102.md)已将2016后期社区固定源码的1024宠物候选模板与宏配置下282条petskill2技能定义按真实ID核对；正数槽2886次，2784可定位、102无定义，原20负值槽与4262空槽保留。来源不同于TW1/JSS商业同部署；988行独立混合2.5原表本轮未取到，不虚称比完。**下一优先 PET-MODULE-04**：仍集中宠物，查同源skillcode实例/模板外键或将已存原动画观察整合，不启动其它模块。
+
+
+## PET-MODULE-04 — 2016 same-source skillcode numeric/skill-token crosswalk (2026-11-02)
+
+[PET04 source comparison](continuity/STONEAGE-PET-MODULE-04-SKILLCODE-CROSSWALK-20261102.md) records 253 original skillcode rows against current 2016 source enemy tables: 160 exact, 12 conflicting template IDs, 81 absent instance IDs. All 79 two-letter code tokens match the separately selected skills table KINDCODE string. Conditional source checks PetId and token but actual Code_skill initialization, skill training, commercial server execution are OPEN. Original 988 mixed25 rows still missing, no images re-rendered in this round. NEXT PET-MODULE-05: actual retained private pet image/frame/action observation integration, still pet module only.

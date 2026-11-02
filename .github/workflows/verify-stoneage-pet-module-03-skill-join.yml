@@ -1,10 +1,12 @@
-name: Verify PET-MODULE-03 same-source skill join
+name: Verify PET module same-source joins
 on:
   push:
     paths:
       - 'research/recovered/STONEAGE-PET-MODULE-03-SAME-SOURCE-SKILL-JOIN-R1.json'
       - 'research/recovered/STONEAGE-PET-MODULE-01-BATCH-SOURCE-SPR-INDEX-R1.json'
       - 'tests/test_stoneage_pet_module_03_skill_join.py'
+      - 'tests/test_stoneage_pet_module_04_skillcode.py'
+      - 'research/recovered/STONEAGE-PET-MODULE-04-SKILLCODE-CROSSWALK-R1.json'
       - '.github/workflows/verify-stoneage-pet-module-03-skill-join.yml'
   workflow_dispatch:
 permissions:
@@ -19,4 +21,4 @@ jobs:
         with:
           python-version: '3.12'
       - name: Verify source-constrained complete slot conservation and negative boundaries
-        run: python -m unittest tests.test_stoneage_pet_module_03_skill_join -v
+        run: python -m unittest tests.test_stoneage_pet_module_03_skill_join tests.test_stoneage_pet_module_04_skillcode -v

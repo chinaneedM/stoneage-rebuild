@@ -1505,3 +1505,8 @@ O75 CI史实订正：PR #133 初稿的 Stage A 检查 run 41362507873 因两处�
 ### 2026-11-02 — PET-MODULE-03 同源宠物技能批量联接
 
 [PET-MODULE-03报告](docs/continuity/STONEAGE-PET-MODULE-03-SAME-SOURCE-SKILL-JOIN-20261102.md)及[源限定数值索引](research/recovered/STONEAGE-PET-MODULE-03-SAME-SOURCE-SKILL-JOIN-R1.json)：从2016同仓库原技能表`petskill2.txt`核282条定义并接1024条已有PETFLG1模板，实际正数技能槽2886次，其中2784可静态定位、102无定义（30个不同ID）；另20个原负数槽、4262个空槽完整保留。不是官方初版技能或原客户端执行。988条混合2.5原行仍缺、原SPR未于此包重渲染。**NEXT PET-MODULE-04**继续宠物模块，优先同源`skillcode.txt`与实例/模板的整源外键，或复用私人原图观察关联；不跨域散点跳转。
+
+
+### 2026-11-02 — PET-MODULE-04 pet skillcode static crosswalk
+
+[Report](docs/continuity/STONEAGE-PET-MODULE-04-SKILLCODE-CROSSWALK-20261102.md) and [source-limited 253-row index](research/recovered/STONEAGE-PET-MODULE-04-SKILLCODE-CROSSWALK-R1.json): 160 instance/template matches, 12 original mismatches, 81 absent instances; 79 source two-character code tokens all have a same-tree skill KINDCODE string. Not original official runtime/training or same-deployment evidence. NEXT PET-MODULE-05: link provenance-qualified private SPR frames and action preview to the pet catalogue; do not rotate to NPC/maps.
