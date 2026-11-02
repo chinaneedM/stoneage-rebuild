@@ -1415,3 +1415,8 @@ O75 CI史实订正：PR #133 初稿的 Stage A 检查 run 41362507873 因两处�
 ### 2026-11-02 — O81 中央聊天室110原地图与24图像索引的真实原始材料联接
 
 [O81 110原图像ID/地图格核验](docs/continuity/STONEAGE-O81-ORIGINAL-CHATROOM110-MAP-ALIAS-20261102.md)：重新取证原 mixed25 保存包的110.DAT（46×45、三个2070格数值层）和两份**逐字节相同**的110.MAP；检验四村进出源参数的八个110地图格，均在范围内且各具原三数值。取一处8×17有限门户区域的**136格**，从两原图像图层得**24种图像别名、138次引用**，使用此前已核完整源SHA的全量18765120B ADRN逐个确认唯一记录与RD范围，均位于既存 TW1 REAL 完整字节前缀有证范围（不是认定地图TW1官方部署）；来源、24条原地址/SHA见[数字回执](research/recovered/STONEAGE-O81-ORIGINAL-CHATROOM110-MAP-ALIAS-R1.json)。本轮实际读RD像素**0B**：当前RAR大图像资源过滤器不支持，旧封存ADRN可实读，**不能假称原内景完成/原客户端运行**。所有商业源图/原文件不公开、CURRENT原blob未变、Stage A 7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、整体百分比未知；不开发新游戏、不优化玩家体验。**NEXT O82**：有独立原RD像素来源才继续110真实画面，否则轮换新实源世界内容。
+
+
+### 2026-11-02 — O82 风之守护兽原版战斗/NPC/敌人/地图原始配置
+
+[O82 風的守護獸原始NPC→两战斗配置→十一种敌人→三地图证据](docs/continuity/STONEAGE-O82-ORIGINAL-WIND-GUARDIAN-20261102.md)：从整包SHA合格的私人mixed25 RAR实际重读/核验11份原成员，逐原RAR头CRC、字节数、完整SHA独立通过。原NPC坐标11208:(26,40)/(42,38)、11214:(41,36)，`NPCEnemy` 的两模板 `sb_kbu/sb_kgi` 与脚本一致；每脚本10个含重复的enemyno槽位，整包原敌人表2087条有效唯一数字ID中11种真实对应，均有原名/源行SHA。原 `sb_kgi` 写有 `dieact:1` 与传送目标11215:(9,16)，三地图DAT/MAP原字节尺寸与四坐标实格全核，**未执行原生战斗/传送或验证原怪物出现**。先有界试取O81的REAL图像，但压缩库在393216B处报Invalid symbol，未得到有效原RD图像，聊天室原像素仍OPEN。来源是**后期私人混合档**，不强归属TW1/JSS1999；不做现代玩法优化、引擎模拟或发布版权原件。完整历史 CURRENT 不变、Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、percent=null。数字回执见[O82 原文件SHA/CRC及数字联接](research/recovered/STONEAGE-O82-ORIGINAL-WIND-GUARDIAN-R1.json)。**NEXT O83**：再择一源实物内容缺口或原生执行证据，避免继续扩失败解包/通用引擎助手。
