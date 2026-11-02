@@ -1,0 +1,100 @@
+{
+  "schema": "stoneage.o77.tw1_native_mouse_message_source.v1",
+  "recorded_date": "2026-11-02",
+  "source": {
+    "archive": "StoneAge-TW1-original-runtime-and-native-observation-P3H.zip",
+    "bytes": 372626292,
+    "sha256": "3a4854adaebef056332cdbd7b1dc1c130c571b11704e3f199f53d03aa31cba24",
+    "zip_members": 379,
+    "zip_all_members_crc_verified": true,
+    "exe_member": "source/sa_3.exe",
+    "exe_size": 425984,
+    "exe_crc32": "3453fd16",
+    "exe_sha256": "cdab9ea049a98bbc96ce93eeaa8b63c688f0c0f0ad8b3183e79d75e47621441a",
+    "scope": "preserved Taiwan 1.0/P3H standalone client; distinct from later mixed2.5 event scripts"
+  },
+  "static_evidence": {
+    "method": [
+      "original archive SHA and full zip CRC",
+      "PE raw byte RVA-fixed verification",
+      "objdump i386 decoding; address/branch-target cross-check"
+    ],
+    "window_class_init": "0x0041c56c",
+    "register_class_call": "0x0041c5b7",
+    "wndproc": "0x0041c970",
+    "mouse_switch": "0x0041d014",
+    "jump_table": "0x0041d40c",
+    "index_table": "0x0041d434",
+    "messages": [
+      {
+        "msg": "WM_MOUSEMOVE",
+        "value": "0x0200",
+        "handler": "0x0041d034",
+        "callee": "0x0042ded0"
+      },
+      {
+        "msg": "WM_LBUTTONDOWN",
+        "value": "0x0201",
+        "handler": "0x0041d196",
+        "callee": "0x0042df10"
+      },
+      {
+        "msg": "WM_LBUTTONUP",
+        "value": "0x0202",
+        "handler": "0x0041d1ba",
+        "callee": "0x0042df70"
+      },
+      {
+        "msg": "WM_LBUTTONDBLCLK",
+        "value": "0x0203",
+        "handler": "0x0041d1de",
+        "callee": "0x0042dfc0"
+      },
+      {
+        "msg": "WM_RBUTTONDOWN",
+        "value": "0x0204",
+        "handler": "0x0041d202",
+        "callee": "0x0042e020"
+      },
+      {
+        "msg": "WM_RBUTTONUP",
+        "value": "0x0205",
+        "handler": "0x0041d226",
+        "callee": "0x0042e080"
+      },
+      {
+        "msg": "WM_RBUTTONDBLCLK",
+        "value": "0x0206",
+        "handler": "0x0041d24a",
+        "callee": "0x0042e0d0"
+      }
+    ],
+    "position_writer": "0x0042ded0",
+    "x_state": "0x017e5db8",
+    "y_state": "0x017e5dbc",
+    "conditional_double_xy_state": "0x0179ba70",
+    "rect_range_consumer": "0x00425290",
+    "another_coordinate_reader": "0x0041efd0",
+    "directinput_keyboard_create_call": "0x00441705",
+    "syskeyboard_guid": "0x00452360",
+    "sysmouse_guid_full_bytes_found": false
+  },
+  "claim_boundaries": {
+    "native_message_dispatch_in_original_exe": true,
+    "native_coordinate_state_consumed": true,
+    "original_exe_run_this_work_unit": false,
+    "enemy_hover_level_display_executed": false,
+    "enemy_level_draw_chain_proven": false,
+    "original_world_entered": false,
+    "matched_to_O76_mixed25_server": false,
+    "original_client_art_uploaded_publicly": false,
+    "modern_gameplay_optimization_in_restoration": false
+  },
+  "prior_current_blob_sha": "20050acf279a01555ab06a381dfcdc936bd381a6",
+  "prior_main_head": "fc7091e7ea5fd05b713d56f35c1d5b84f5b22c48",
+  "prior_main_tree": "691e64135dd59ab7e5befd289bb0ed3627a7840e",
+  "stage_a": "7_PARTIAL_2_OPEN",
+  "stage_b_wiki": "GATED",
+  "r79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null
+}
