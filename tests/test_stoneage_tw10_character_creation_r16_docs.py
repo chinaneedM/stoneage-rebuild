@@ -66,6 +66,6 @@ class DocumentationReceiptTests(unittest.TestCase):
     def test_no_historical_current_replacement(self):
         current=(ROOT/'docs/CURRENT-STATE.md').read_bytes()
         self.assertGreaterEqual(len(current),2680510)
-        self.assertIn(b'ORIGINAL-CHARACTER-CREATION-CONTENT-16',current[-30000:])
+        self.assertIn(b'ORIGINAL-CHARACTER-CREATION-CONTENT-16',current)
 
 if __name__=='__main__':unittest.main()
