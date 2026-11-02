@@ -1,0 +1,314 @@
+{
+  "schema": "stoneage.o85.yuanzang_npc_dialogue_battle_source_r1",
+  "as_of": "2026-11-02",
+  "baseline": {
+    "verified_main_head": "c432db1d8a380f0deb8c796709edd1eedf4feac7",
+    "verified_tree": "cced203ed82df86bb122127dc67492a940a1327e",
+    "preserved_historical_current_blob": "20050acf279a01555ab06a381dfcdc936bd381a6",
+    "previous_o84_merged_pr": 142
+  },
+  "evidence_class": "FACT_FOR_LATER_MIXED25_PRESERVED_SOURCE_BYTES_ONLY_NOT_EARLY_ORIGINAL_NATIVE_EXECUTION",
+  "archive": {
+    "filename": "stoneage-preserved-mixed25-original.rar",
+    "total_bytes": 361255180,
+    "sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+    "entire_archive_sha_reverified": true,
+    "rar_entries": 7952
+  },
+  "original_source_manifest": [
+    {
+      "path": "gmsv/data/npc/genout/1000npc_m.create",
+      "rar_index_zero_based": 4963,
+      "source_bytes": 4413,
+      "source_sha256": "c9b000a836b0aae3d88358097039f1beea020d92ba84f6ccc338bb54bc478240",
+      "source_rar_header_crc32": "b1af0e82",
+      "original_member_exact_bytes_and_crc_verified": true
+    },
+    {
+      "path": "gmsv/data/npc/genout/msg_1000_118_95",
+      "rar_index_zero_based": 5093,
+      "source_bytes": 61,
+      "source_sha256": "7c7ba0924e5d680f723988d1566094b3a758b27aea7cab5a37aa22807ff5fc26",
+      "source_rar_header_crc32": "d5cb6963",
+      "original_member_exact_bytes_and_crc_verified": true
+    },
+    {
+      "path": "gmsv/data/npc/genout/msg_1000_79_37",
+      "rar_index_zero_based": 5098,
+      "source_bytes": 57,
+      "source_sha256": "76b34d79439f477cca1c271271e70054c5cdca6dbf4c2a81cfeea74b5417185a",
+      "source_rar_header_crc32": "634b7742",
+      "original_member_exact_bytes_and_crc_verified": true
+    },
+    {
+      "path": "gmsv/data/npc/genout/msg_1000_82_39",
+      "rar_index_zero_based": 5099,
+      "source_bytes": 67,
+      "source_sha256": "f3316fc83a7b95e871a8070bb9ce3154c45d7051216df77ff055f8e9fa8860f7",
+      "source_rar_header_crc32": "6417312c",
+      "original_member_exact_bytes_and_crc_verified": true
+    },
+    {
+      "path": "gmsv/data/npc/100/sb_ganzo.arg",
+      "rar_index_zero_based": 4475,
+      "source_bytes": 188,
+      "source_sha256": "2044b2167ce4826ab949d88effcf4294004da866950c4f81d97241da03779426",
+      "source_rar_header_crc32": "1802ff1f",
+      "original_member_exact_bytes_and_crc_verified": true
+    },
+    {
+      "path": "gmsv/data/npc/100/sb_ganzo.create",
+      "rar_index_zero_based": 4476,
+      "source_bytes": 208,
+      "source_sha256": "db26d1b901588f8f1db8d4241ca5d01162bbfb5d4b8dde392b6e08526eb34746",
+      "source_rar_header_crc32": "0f50c363",
+      "original_member_exact_bytes_and_crc_verified": true
+    },
+    {
+      "path": "gmsv/data/npc/100/sb_ganzo.template",
+      "rar_index_zero_based": 4477,
+      "source_bytes": 171,
+      "source_sha256": "96294485dfe3f793d2ff8592d446d53e1a8e0a4824a8aede41bf18e6fa3569d7",
+      "source_rar_header_crc32": "08e5698f",
+      "original_member_exact_bytes_and_crc_verified": true
+    },
+    {
+      "path": "gmsv/data/enemy.txt",
+      "rar_index_zero_based": 3728,
+      "source_bytes": 222463,
+      "source_sha256": "cc7418d3b6726f1c458fef9e44a24696d05f076b67c62a56ed2293e26ae63bb6",
+      "source_rar_header_crc32": "0d60e57d",
+      "original_member_exact_bytes_and_crc_verified": true
+    },
+    {
+      "path": "gmsv/data/enemybase.txt",
+      "rar_index_zero_based": 3730,
+      "source_bytes": 147750,
+      "source_sha256": "1be7d5226798f7abaabe1f1e74aa1533fcd10e3eaf43f6497d63afa91df3e8b7",
+      "source_rar_header_crc32": "29258170",
+      "original_member_exact_bytes_and_crc_verified": true
+    },
+    {
+      "path": "gmsv/data/npc/king/event69_3",
+      "rar_index_zero_based": 6415,
+      "source_bytes": 2846,
+      "source_sha256": "170d55dc36194d6cf7bd452cdd37d5ad7f692d95b516bd0313e1a49c4550e261",
+      "source_rar_header_crc32": "e95c8ba5",
+      "original_member_exact_bytes_and_crc_verified": true
+    },
+    {
+      "path": "gmsv/data/npc/king/event69_7",
+      "rar_index_zero_based": 6420,
+      "source_bytes": 5930,
+      "source_sha256": "022aaa645db2074216bfb9f87b04d8a87626ea7f9fd2b5a25b175f7eb0111634",
+      "source_rar_header_crc32": "6af94592",
+      "original_member_exact_bytes_and_crc_verified": true
+    },
+    {
+      "path": "gmsv/data/npc/king/event69_alpha.create",
+      "rar_index_zero_based": 6422,
+      "source_bytes": 4934,
+      "source_sha256": "ee3880c5c75daec92f640b95f26bf36c7b4595da20c14be66e6ef85ce0e7d4b4",
+      "source_rar_header_crc32": "ff9785a4",
+      "original_member_exact_bytes_and_crc_verified": true
+    },
+    {
+      "path": "gmsv/data/npc/genout/msg_1014_14_17",
+      "rar_index_zero_based": 5111,
+      "source_bytes": 2321,
+      "source_sha256": "2619511a398efb691d33c226d5fc60d45bc1a86e93b54b7058daa1aff297a644",
+      "source_rar_header_crc32": "e344313d",
+      "original_member_exact_bytes_and_crc_verified": true
+    },
+    {
+      "path": "gmsv/data/npc/genout/msg_2014_15_16",
+      "rar_index_zero_based": 5231,
+      "source_bytes": 2354,
+      "source_sha256": "f6b55db609d9a425e15cb61226fc28bbc77ab65345ae6df69145f4bfedaef143",
+      "source_rar_header_crc32": "066a2766",
+      "original_member_exact_bytes_and_crc_verified": true
+    },
+    {
+      "path": "gmsv/data/npc/extra/event/check",
+      "rar_index_zero_based": 4811,
+      "source_bytes": 1553,
+      "source_sha256": "114583dcd256d385065e3134412c155e7c132eb4da896c79bccab4062304804d",
+      "source_rar_header_crc32": "adddac0f",
+      "original_member_exact_bytes_and_crc_verified": true
+    }
+  ],
+  "cross_custody": {
+    "private_O45_zip": "StoneAge-O45-private-original-teacher-five-children-world.zip",
+    "private_O45_zip_bytes": 2659116,
+    "private_O45_zip_sha256": "cd730c6939c3e4bbf000270f2472c322753c88854320eea61641ad0db71265e4",
+    "zip_CRC_all_213_valid": true,
+    "source_1000npc_m_create_exact_equal_RAR": true,
+    "original_1000_DAT_sha256": "94b19cb59d72b7b48da70d2741ba68516caad970297fd48ed11ef720fa3ea97e"
+  },
+  "three_original_dialogues": [
+    {
+      "original_NPC_xy": [
+        118,
+        95
+      ],
+      "source_file": "msg_1000_118_95",
+      "summary": "村庄少女指通往沙漠的桥上有愿藏威胁过桥者",
+      "contains_literal_name": "願藏",
+      "unique_original_create_pointer": true
+    },
+    {
+      "original_NPC_xy": [
+        82,
+        39
+      ],
+      "source_file": "msg_1000_82_39",
+      "summary": "愿藏母亲说孩子在通沙漠的桥上做坏事，托玩家劝其改过",
+      "unique_original_create_pointer": true
+    },
+    {
+      "original_NPC_xy": [
+        79,
+        37
+      ],
+      "source_file": "msg_1000_79_37",
+      "summary": "愿藏父亲替孩子与他人口角表示歉意",
+      "unique_original_create_pointer": true
+    }
+  ],
+  "bridge_NPC": {
+    "original_name": "壞心眼的願藏",
+    "original_create_floor": 100,
+    "original_borncenter_four": [
+      472,
+      297,
+      1,
+      1
+    ],
+    "original_movecenter_four": [
+      20,
+      20,
+      100,
+      100
+    ],
+    "original_graphic_name_number": 100401,
+    "original_script_pointer": "sb_ganzo|file:100/sb_ganzo.arg",
+    "template_name": "sb_ganzo",
+    "template_functionset": "NPCEnemy",
+    "template_type": 100401,
+    "combat_arg": {
+      "entype_literal": 2,
+      "dieact_literal": 0,
+      "time_literal": 60,
+      "time_units_unknown": true,
+      "ordered_enemy_ids": [
+        253,
+        254
+      ],
+      "three_warp_fields_commented_out": true,
+      "actual_warp_after_win_unknown": true
+    },
+    "native_battle_or_Map100_verification": false
+  },
+  "enemy_instance_to_template": [
+    {
+      "source": "enemy.txt",
+      "original_id": 253,
+      "source_line": 120,
+      "name": "壞心眼的願藏",
+      "template_id": 500,
+      "source_level_columns": [
+        14,
+        15
+      ],
+      "source_row_without_line_ending_sha256": "81888400be0b748f2d704daeb5e7de88eec639922628cf503fa8f22189473c67"
+    },
+    {
+      "source": "enemy.txt",
+      "original_id": 254,
+      "source_line": 121,
+      "name": "呼拔雄",
+      "template_id": 501,
+      "source_level_columns": [
+        10,
+        13
+      ],
+      "source_row_without_line_ending_sha256": "2f131c9d1ea72c4efabe61553f49088ca8d8f43dc824f37fd5b7e52cfdb5c630"
+    },
+    {
+      "source": "enemybase.txt",
+      "original_id": 500,
+      "source_line": 322,
+      "name": "壞心眼的願藏",
+      "source_graphic_number": 100401,
+      "source_row_without_line_ending_sha256": "8c0296054a484a8a478ae4e7645f16849873726daacb78d0732a72e18bc36418"
+    },
+    {
+      "source": "enemybase.txt",
+      "original_id": 501,
+      "source_line": 323,
+      "name": "呼拔吉",
+      "source_graphic_number": 100280,
+      "source_row_without_line_ending_sha256": "eaf882ed06ee4fb7559f4cd702bdaa19d107667698f659de23c26fbe19b490e2"
+    }
+  ],
+  "source_name_difference": {
+    "enemy_instance_id": 254,
+    "enemy_instance_name": "呼拔雄",
+    "linked_template_id": 501,
+    "linked_template_name": "呼拔吉",
+    "startmsg_uses": "呼拔吉",
+    "must_preserve_both_names": true
+  },
+  "bounded_related_source_scan": {
+    "source_archive_entries_examined": 7952,
+    "npc_small_text_files_read": 2246,
+    "max_source_member_bytes": 500000,
+    "files_with_name_mentions": 9,
+    "original_name_occurrences": {
+      "願藏": 15,
+      "卡卓": 1
+    },
+    "no_read_errors": true,
+    "other_source_context": [
+      "king/event69_3",
+      "king/event69_7",
+      "king/event69_alpha.create"
+    ],
+    "these_later_story_segments_not_proven_same_running_event": true,
+    "claim_not_global_all_builds": true
+  },
+  "historical_reconciliation": {
+    "o84_static_record_preserved": true,
+    "girl_118_95_and_named_parents_shared_specific_yuanzang_bridge_story_now_supported": true,
+    "source_bridge_NPC_same_name_and_context_supported": true,
+    "claim_exact_native_deployed_same_NPC_identity_unproven": true,
+    "original_kazhuo_mention_in_girl_118_96_stays_separate": true,
+    "girl_117_95_pronoun_referent_unresolved": true,
+    "quest_classification": "ORIGIN_UNRESOLVED"
+  },
+  "map100_actual_attempts": {
+    "original_100_DAT_uncompressed_archive_size": 3840008,
+    "actual_partial_output_bytes": 1179648,
+    "error": "File CRC error",
+    "accepted_as_full_original": false,
+    "original_100_MAP_uncompressed_archive_size": 1280008,
+    "partial_files_discarded": true
+  },
+  "source_limits": {
+    "original_client_or_server_executed": false,
+    "battle_started_or_finished_observed": false,
+    "original_100_map_grid_source_verified": false,
+    "original_graphic_RD_pixels_verified_this_unit": false,
+    "actual_NPC_to_quest_dispatch_proven": false,
+    "original_taiwan_v1_or_JSS1999_deployment_proven": false,
+    "copyrighted_original_bytes_published": false
+  },
+  "phase": {
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b": "GATED",
+    "wiki": "GATED",
+    "savedata_R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "next": "O86 material domain rotation: choose a distinct authenticated original content/behavior input rather than expand this bounded Ganzo static chain, unless qualifying native execution evidence emerges"
+}

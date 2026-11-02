@@ -1430,3 +1430,8 @@ O75 CI史实订正：PR #133 初稿的 Stage A 检查 run 41362507873 因两处�
 ### 2026-11-02 — O84 萨姆吉尔两组人物的原叙事来源、五个NPC原地图格
 
 [O84 原剧情人物静态取证](docs/continuity/STONEAGE-O84-SAMUGIRU-STORY-NPCS-20261102.md)：从已保存、实际CRC/SHA核验的 O45 私人原件包读取4413B后期保存版 `1000npc_m.create` 和完整153608B `1000.DAT`。新归档三位相邻`村莊小姑娘` (118,95)/(118,96)/(117,95) 的原配置（图号16032/16033/16038），两行提到卡卓父母担忧和公园旁叹息；另两位分别有原名`願藏的母親` (82,39)/16021、`願藏的父親` (79,37)/16019，并保留三个外部原对白文件的确切指针。**两组不同姓名绝不拼成同一家族/确定任务**。原DAT五格数值、原块SHA、旧O29/O45/O54有限像素子集资格见[数字收据](research/recovered/STONEAGE-O84-SAMUGIRU-STORY-NPC-SOURCE-R1.json)；本轮未解码五角色原RD、未执行NPC对话/原客户端，未新下载原大包。NEXT **O85** 只用可认证的确切外部对白源深化一条，否则轮换原版内容域。CURRENT旧blob不变；Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、总体percent=null；不进行新游戏体验优化。
+
+
+### 2026-11-02 — O85 愿藏三原对白、桥上敌对NPC与两条敌人主表同源核验
+
+[O85 村民叙事→桥上愿藏NPC→源级战斗/敌人主表](docs/continuity/STONEAGE-O85-YUANZANG-DIALOGUE-BATTLE-20261102.md)：独立全SHA复验已保管混合2.5 RAR **361255180B**，15原成员逐原RAR头CRC/字节/全SHA一致；O84缺失的三份原 `msg_1000_118_95`、`msg_1000_82_39`、`msg_1000_79_37` 全部真实读取，证实相邻少女与愿藏父母围绕“通往沙漠的桥”的同名叙事线索。独立实取敌对 NPC `sb_ganzo.create/template/arg`（floor100:472,297、图号100401、NPCEnemy、敌人ID253/254），同源 `enemy.txt` / `enemybase.txt` 唯一ID→模板号500/501链接。**254敌人名「呼拔雄」与模板501原名「呼拔吉」不一致**，原传送参数三行是注释而非已执行Warp。更广的king/event69叙事单独限定未证运行。原100.DAT/MAP提取分别131072/1179648B便失败，未将坏片段升格成地图；无原客户端执行/原生对话或战斗/官方最初版归属。公开仅[数值/哈希](research/recovered/STONEAGE-O85-YUANZANG-DIALOGUE-BATTLE-SOURCE-R1.json)，原资产私有，旧O84及CURRENT不删。**NEXT O86** 轮换独立有真实材料的其它游戏内容。Stage A7 PARTIAL+2 OPEN、Stage B/wiki GATED、R79暂停、整体百分比未知；不做新游戏体验优化。
