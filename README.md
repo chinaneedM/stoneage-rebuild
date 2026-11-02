@@ -1525,3 +1525,8 @@ O75 CI史实订正：PR #133 初稿的 Stage A 检查 run 41362507873 因两处�
 ### 2026-11-02 — PET-MODULE-07 台湾1.0完整原客户端批量宠物图形实际像素
 
 [PET07批量实物报告](docs/continuity/STONEAGE-PET-MODULE-07-TW10-130-REAL-PIXEL-BATCH-20261102.md)及[源限定130组/2176块可解码原图证据](research/recovered/STONEAGE-PET-MODULE-07-TW10-BATCH-PUBLIC-R1.json)：重新取用户私人原 P3H 原始包并全SHA固定，对2016后期宠物模板图号与台湾1.0原SPR取130组数值交集，原7568条SPR动作头全组核验，选原动作0/1/2方向0的390源动画/3255帧，原REAL实际重解码2176个RD块，两个真实越界坏源保留负例。私人统一观察器（不公开商业图片）已覆盖130组/451动作方向/3817按原序帧位/2540候选PNG，Chromium144全部451段可切换/下一帧、0JS/0请求。仅跨版数字参考，非TW1官方130种物种。Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、整体完成率未知。**NEXT PET-MODULE-08**：在这一单一宠物目录连接已保管技能数值，但严格分源；余下468个图号继续查已保管不同版本实际像素，不扩无谓查看器。
+
+
+### 2026-11-02 — PET-MODULE-08 图形/属性/技能严格分源综合目录
+
+[PET08可核的598图号×1024后期模板目录](research/recovered/STONEAGE-PET-MODULE-08-VISUAL-STATS-SKILLS-SOURCE-CATALOG-R1.json)与[PET08实施及证据边界](docs/continuity/STONEAGE-PET-MODULE-08-SOURCE-SEPARATED-CATALOG-20261102.md)：完整联接PET01/03/06/07现有派生证据。130图号存在TW1原图私人可视数据的**跨年代数字候选**，对应201社区模板行；468未进PET07图像批次（412后期有索引/56四载体均无索引）。2,886正数技能槽=2,784后期同源定义+102缺定义；20负值、4,262空槽完整保持。既有私人PET07原图HTML不改、不公开；无新版官方命名或同服运行证明。**NEXT PET-MODULE-09：**有限查已有CN5/TW85私人原像素补齐后期候选，缺原件即记录止点并按模块顺序转人物/NPC。阶段A/B/wiki/R79、总进度未知不变。

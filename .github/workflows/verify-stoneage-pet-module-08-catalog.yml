@@ -1,0 +1,24 @@
+name: Verify PET08 cross-source pet source-separated catalog
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-PET-MODULE-08-VISUAL-STATS-SKILLS-SOURCE-CATALOG-R1.json'
+      - 'research/recovered/STONEAGE-PET-MODULE-01-BATCH-SOURCE-SPR-INDEX-R1.json'
+      - 'research/recovered/STONEAGE-PET-MODULE-03-SAME-SOURCE-SKILL-JOIN-R1.json'
+      - 'research/recovered/STONEAGE-PET-MODULE-06-CONSOLIDATED-VISUAL-COVERAGE-R1.json'
+      - 'research/recovered/STONEAGE-PET-MODULE-07-TW10-BATCH-PUBLIC-R1.json'
+      - 'tests/test_stoneage_pet_module_08_catalog.py'
+      - '.github/workflows/verify-stoneage-pet-module-08-catalog.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify-static-source-boundaries:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest tests.test_stoneage_pet_module_08_catalog -v
