@@ -1,0 +1,525 @@
+{
+  "schema": "stoneage.o93.independent_community_source_starter_pet_foreign_key_join.r1",
+  "project_baseline": {
+    "main_commit": "58f337115f2c1a729d3585118a067536cd8fe1a6",
+    "main_tree": "1b78c718a6e229a0c61db6cdf0d76f7f0482e5c3",
+    "current_state_blob": "20050acf279a01555ab06a381dfcdc936bd381a6",
+    "current_state_bytes": 2708031
+  },
+  "source_repository": {
+    "full_name": "pimpcapital/longzoro-sa",
+    "commit": "57b14e2bb373ba851c14db28a239273e4a8831bb",
+    "tree": "3c350d533bfc843549a9df686084c783549d7e52",
+    "commit_date_utc": "2016-01-09T21:36:59Z",
+    "GitHub_snapshot_date_not_game_data_creation_date": true,
+    "declared_official_JSS_1999": false,
+    "declared_official_TW1_2000": false,
+    "community_server_lineage_not_native_original_release": true
+  },
+  "original_external_git_blobs": [
+    {
+      "path": "gmsv/data/enemy1.txt",
+      "git_blob_sha1": "bf245a391adeace09915b6e425754b54ab69a8f6",
+      "original_tree_size_bytes": 309882
+    },
+    {
+      "path": "gmsv/data/enemybase1.txt",
+      "git_blob_sha1": "a19a508975e3a982fada323861b35b2edab79349",
+      "original_tree_size_bytes": 262635
+    },
+    {
+      "path": "gmsv/setup.cf",
+      "git_blob_sha1": "9d5992bfb1065d6c405ebe4a0677acb7be0de5f9",
+      "original_tree_size_bytes": 9685
+    },
+    {
+      "path": "gmsv/src/include/enemy.h",
+      "git_blob_sha1": "f929766fb3b3aa9b15b6d4278109ad9368a7e18e",
+      "original_tree_size_bytes": 6344
+    },
+    {
+      "path": "gmsv/src/char/enemy.c",
+      "git_blob_sha1": "72e43f44a76db4baa23dfcea568f16d54d3bf620",
+      "original_tree_size_bytes": 74628
+    }
+  ],
+  "source_loader_logic": {
+    "setup_enemyfile": "./data/enemy1.txt",
+    "setup_enemybasefile": "./data/enemybase1.txt",
+    "enemy_ID_field_index_zero_based": 3,
+    "enemy_TEMPNO_field_index_zero_based": 4,
+    "enemybase_TEMPNO_field_index_zero_based": 6,
+    "enemybase_IMGNUMBER_field_index_zero_based": 36,
+    "source_loader_TEMPNO_compare_line": 449,
+    "source_field_base_image_assignment_line": 1026,
+    "source_build_has_version_define_BATTLENPC_WARP_PLAYER_check_separately": true,
+    "code_compiled_or_runtime_executed": false
+  },
+  "starter_pet_name_to_instance_to_template_to_image": [
+    {
+      "name": "乌力乌力",
+      "player_2001_labeled_village_claim": "萨姆吉尔",
+      "player_article_row_number": 2,
+      "source_code_instance_occurrences": [
+        {
+          "physical_line_in_enemy1": 1,
+          "enemy_id": 1,
+          "enemy_name": "初期拥有的乌力乌力",
+          "enemy_template_no": 2,
+          "enemy_level_min": 1,
+          "enemy_level_max": 1,
+          "enemy_pet_flag": 1,
+          "template_physical_line_in_enemybase1": 2,
+          "template_name": "乌力乌力",
+          "template_no": 2,
+          "template_imgnumber": 100251
+        },
+        {
+          "physical_line_in_enemy1": 1652,
+          "enemy_id": 2112,
+          "enemy_name": "初期拥有的乌力乌力",
+          "enemy_template_no": 2,
+          "enemy_level_min": 1,
+          "enemy_level_max": 3,
+          "enemy_pet_flag": 1,
+          "template_physical_line_in_enemybase1": 2,
+          "template_name": "乌力乌力",
+          "template_no": 2,
+          "template_imgnumber": 100251
+        }
+      ],
+      "per_village_spawn_reconciled_to_2016_server": false
+    },
+    {
+      "name": "威伯",
+      "player_2001_labeled_village_claim": "卡鲁它那",
+      "player_article_row_number": 18,
+      "source_code_instance_occurrences": [
+        {
+          "physical_line_in_enemy1": 4,
+          "enemy_id": 4,
+          "enemy_name": "初期拥有的威伯",
+          "enemy_template_no": 34,
+          "enemy_level_min": 1,
+          "enemy_level_max": 1,
+          "enemy_pet_flag": 1,
+          "template_physical_line_in_enemybase1": 34,
+          "template_name": "威伯",
+          "template_no": 34,
+          "template_imgnumber": 100266
+        },
+        {
+          "physical_line_in_enemy1": 1655,
+          "enemy_id": 2115,
+          "enemy_name": "初期拥有的威伯",
+          "enemy_template_no": 34,
+          "enemy_level_min": 1,
+          "enemy_level_max": 3,
+          "enemy_pet_flag": 1,
+          "template_physical_line_in_enemybase1": 34,
+          "template_name": "威伯",
+          "template_no": 34,
+          "template_imgnumber": 100266
+        }
+      ],
+      "per_village_spawn_reconciled_to_2016_server": false
+    },
+    {
+      "name": "克克尔",
+      "player_2001_labeled_village_claim": "加加",
+      "player_article_row_number": 50,
+      "source_code_instance_occurrences": [
+        {
+          "physical_line_in_enemy1": 3,
+          "enemy_id": 3,
+          "enemy_name": "初期拥有的克克尔",
+          "enemy_template_no": 102,
+          "enemy_level_min": 1,
+          "enemy_level_max": 1,
+          "enemy_pet_flag": 1,
+          "template_physical_line_in_enemybase1": 98,
+          "template_name": "克克尔",
+          "template_no": 102,
+          "template_imgnumber": 100292
+        },
+        {
+          "physical_line_in_enemy1": 1654,
+          "enemy_id": 2114,
+          "enemy_name": "初期拥有的克克尔",
+          "enemy_template_no": 102,
+          "enemy_level_min": 1,
+          "enemy_level_max": 3,
+          "enemy_pet_flag": 1,
+          "template_physical_line_in_enemybase1": 98,
+          "template_name": "克克尔",
+          "template_no": 102,
+          "template_imgnumber": 100292
+        }
+      ],
+      "per_village_spawn_reconciled_to_2016_server": false
+    },
+    {
+      "name": "凯比",
+      "player_2001_labeled_village_claim": "玛丽娜丝",
+      "player_article_row_number": 54,
+      "source_code_instance_occurrences": [
+        {
+          "physical_line_in_enemy1": 2,
+          "enemy_id": 2,
+          "enemy_name": "初期拥有的凯比",
+          "enemy_template_no": 112,
+          "enemy_level_min": 1,
+          "enemy_level_max": 1,
+          "enemy_pet_flag": 1,
+          "template_physical_line_in_enemybase1": 108,
+          "template_name": "凯比",
+          "template_no": 112,
+          "template_imgnumber": 100296
+        },
+        {
+          "physical_line_in_enemy1": 1653,
+          "enemy_id": 2113,
+          "enemy_name": "初期拥有的凯比",
+          "enemy_template_no": 112,
+          "enemy_level_min": 1,
+          "enemy_level_max": 3,
+          "enemy_pet_flag": 1,
+          "template_physical_line_in_enemybase1": 108,
+          "template_name": "凯比",
+          "template_no": 112,
+          "template_imgnumber": 100296
+        }
+      ],
+      "per_village_spawn_reconciled_to_2016_server": false
+    }
+  ],
+  "cross_source_player_JSS_award_name_only_lookups": [
+    {
+      "player_name": "乌力布鲁",
+      "player_article_number": 4,
+      "distinct_source_templates": [
+        {
+          "physical_line": 4,
+          "tempno": 4,
+          "graphic_number": 100253
+        }
+      ],
+      "matching_template_row_count": 1,
+      "original_JSS_prize_award_proven": false
+    },
+    {
+      "player_name": "黑乌力",
+      "player_article_number": 5,
+      "distinct_source_templates": [
+        {
+          "physical_line": 5,
+          "tempno": 5,
+          "graphic_number": 100388
+        }
+      ],
+      "matching_template_row_count": 1,
+      "original_JSS_prize_award_proven": false
+    },
+    {
+      "player_name": "卡布伊",
+      "player_article_number": 10,
+      "distinct_source_templates": [
+        {
+          "physical_line": 15,
+          "tempno": 15,
+          "graphic_number": 100258
+        }
+      ],
+      "matching_template_row_count": 1,
+      "original_JSS_prize_award_proven": false
+    },
+    {
+      "player_name": "多洛普斯",
+      "player_article_number": 77,
+      "distinct_source_templates": [],
+      "matching_template_row_count": 0,
+      "original_JSS_prize_award_proven": false
+    },
+    {
+      "player_name": "卡卡金宝",
+      "player_article_number": 85,
+      "distinct_source_templates": [
+        {
+          "physical_line": 198,
+          "tempno": 234,
+          "graphic_number": 100346
+        },
+        {
+          "physical_line": 373,
+          "tempno": 562,
+          "graphic_number": 100346
+        },
+        {
+          "physical_line": 1064,
+          "tempno": 1308,
+          "graphic_number": 100346
+        }
+      ],
+      "matching_template_row_count": 3,
+      "original_JSS_prize_award_proven": false
+    },
+    {
+      "player_name": "斯天多斯",
+      "player_article_number": 93,
+      "distinct_source_templates": [
+        {
+          "physical_line": 206,
+          "tempno": 254,
+          "graphic_number": 100354
+        }
+      ],
+      "matching_template_row_count": 1,
+      "original_JSS_prize_award_proven": false
+    },
+    {
+      "player_name": "邦恩多斯",
+      "player_article_number": 94,
+      "distinct_source_templates": [
+        {
+          "physical_line": 207,
+          "tempno": 255,
+          "graphic_number": 100396
+        }
+      ],
+      "matching_template_row_count": 1,
+      "original_JSS_prize_award_proven": false
+    },
+    {
+      "player_name": "布伊德",
+      "player_article_number": 111,
+      "distinct_source_templates": [
+        {
+          "physical_line": 227,
+          "tempno": 311,
+          "graphic_number": 100375
+        },
+        {
+          "physical_line": 498,
+          "tempno": 707,
+          "graphic_number": 100375
+        }
+      ],
+      "matching_template_row_count": 2,
+      "original_JSS_prize_award_proven": false
+    },
+    {
+      "player_name": "拉伊霍恩",
+      "player_article_number": 114,
+      "distinct_source_templates": [
+        {
+          "physical_line": 230,
+          "tempno": 314,
+          "graphic_number": 100378
+        },
+        {
+          "physical_line": 501,
+          "tempno": 710,
+          "graphic_number": 100378
+        }
+      ],
+      "matching_template_row_count": 2,
+      "original_JSS_prize_award_proven": false
+    }
+  ],
+  "whole_file_foreign_key_qualification": {
+    "enemy1_nonblank_instance_rows": 2958,
+    "enemybase1_nonblank_template_rows": 1816,
+    "enemy_rows_with_exactly_one_template": 2934,
+    "enemy_rows_with_zero_templates": 23,
+    "enemy_rows_with_multiple_templates": 1,
+    "missing_template_encounter_rows": [
+      {
+        "physical_line": 1369,
+        "enemy_id": 1794,
+        "template_number": 901
+      },
+      {
+        "physical_line": 1370,
+        "enemy_id": 1795,
+        "template_number": 902
+      },
+      {
+        "physical_line": 1371,
+        "enemy_id": 1796,
+        "template_number": 903
+      },
+      {
+        "physical_line": 1372,
+        "enemy_id": 1797,
+        "template_number": 904
+      },
+      {
+        "physical_line": 1774,
+        "enemy_id": 2245,
+        "template_number": 35
+      },
+      {
+        "physical_line": 1775,
+        "enemy_id": 2246,
+        "template_number": 36
+      },
+      {
+        "physical_line": 1776,
+        "enemy_id": 2247,
+        "template_number": 37
+      },
+      {
+        "physical_line": 1777,
+        "enemy_id": 2248,
+        "template_number": 38
+      },
+      {
+        "physical_line": 1976,
+        "enemy_id": 2455,
+        "template_number": 145
+      },
+      {
+        "physical_line": 1977,
+        "enemy_id": 2456,
+        "template_number": 146
+      },
+      {
+        "physical_line": 1999,
+        "enemy_id": 2486,
+        "template_number": 165
+      },
+      {
+        "physical_line": 2000,
+        "enemy_id": 2487,
+        "template_number": 166
+      },
+      {
+        "physical_line": 2001,
+        "enemy_id": 2488,
+        "template_number": 167
+      },
+      {
+        "physical_line": 2002,
+        "enemy_id": 2489,
+        "template_number": 168
+      },
+      {
+        "physical_line": 2061,
+        "enemy_id": 2573,
+        "template_number": 208
+      },
+      {
+        "physical_line": 2062,
+        "enemy_id": 2574,
+        "template_number": 204
+      },
+      {
+        "physical_line": 2063,
+        "enemy_id": 2575,
+        "template_number": 205
+      },
+      {
+        "physical_line": 2064,
+        "enemy_id": 2576,
+        "template_number": 206
+      },
+      {
+        "physical_line": 2065,
+        "enemy_id": 2577,
+        "template_number": 207
+      },
+      {
+        "physical_line": 2142,
+        "enemy_id": 2657,
+        "template_number": 1267
+      },
+      {
+        "physical_line": 2718,
+        "enemy_id": 6058,
+        "template_number": 6058
+      },
+      {
+        "physical_line": 2719,
+        "enemy_id": 6059,
+        "template_number": 6059
+      },
+      {
+        "physical_line": 2720,
+        "enemy_id": 6060,
+        "template_number": 6060
+      }
+    ],
+    "ambiguous_template_encounter_rows": [
+      {
+        "physical_line": 2717,
+        "enemy_id": 6057,
+        "template_number": 6057,
+        "matches": 4
+      }
+    ],
+    "duplicate_template_number_entries": [
+      {
+        "template_no": 6057,
+        "physical_lines": [
+          1618,
+          1619,
+          1620,
+          1621
+        ],
+        "names_as_written": [
+          "o︻$▅▆▇◤",
+          "哈斯多基",
+          "毕格多基",
+          "普德多基"
+        ],
+        "graphic_numbers": [
+          110166,
+          110166,
+          110166,
+          110166
+        ]
+      }
+    ],
+    "not_a_runtime_load_success_rate": true,
+    "not_all_config_rows_verified_accepted_by_parser": true,
+    "not_original_server_launch_species_total": true
+  },
+  "data_preservation_policy": {
+    "do_not_deduplicate_same_name_templates": true,
+    "do_not_invent_absent_MANY_nonmatches": true,
+    "do_not_normalize_duplicate_TEMPNO_6057": true,
+    "first_four_starter_enemy_ids": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "second_four_starter_enemy_ids": [
+      2112,
+      2113,
+      2114,
+      2115
+    ],
+    "the_second_group_uses_1_to_3_levels": true,
+    "first_group_1_to_1": true,
+    "initial_names_not_evidence_of_village_award_dispatch": true,
+    "original_JSS_prize_rewards_not_proven": true,
+    "original_source_table_from_2016_unlike_2001_player_report": true,
+    "source_raw_tables_or_executable_not_redistributed": true
+  },
+  "original_client_resource_boundary": {
+    "source_repo_tree_entries": 5984,
+    "source_repo_tree_truncated": false,
+    "original_spr_real_adrn_client_payloads_in_examined_tree": false,
+    "same_build_native_client_pixels_verified": false,
+    "TW1_native_group_numbers_may_overlap_but_not_same_deployment_proven": true
+  },
+  "next": "O94 only re-open when executable original client input / exact matching source sprite or early official server award dispatcher becomes available; choose materially new original world source otherwise",
+  "project_phase": {
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b": "GATED",
+    "wiki": "GATED",
+    "savedata_R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  }
+}
