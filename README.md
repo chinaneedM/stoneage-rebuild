@@ -1470,3 +1470,8 @@ O75 CI史实订正：PR #133 初稿的 Stage A 检查 run 41362507873 因两处�
 ### 2026-11-02 — O92 2001标签的Lv1宠物获取结构核验
 
 [O92有界原版宠物来源与缺口记录](docs/continuity/STONEAGE-O92-EARLY-PET-ACQUISITION-20261102.md)：重新完整审阅**已有R97引用过**的17173署名依波波2001标签网页，结构化**124条目录编号、28个系列、作者自称亲证85项（未证39项）**；分开**4出生赠宠、9条玩家声称JSS赠品（其中2项R97已登记，另7项新增索引）、17暂无资料、4中文版出现待证**。原网页历史HTML/同版服务端宠物master及客户端建角、真实捕捉均未取得；文章序号不是官方宠物ID或原始物种分母，作者星号不是本项目独立认证。另有限登记网易精华区2001-03-28整理人时间的搜索摘要（直接原网页读取失败，未证独立源）及既存17173抓宠经验的未证概率。仅[派生结构索引](research/recovered/STONEAGE-O92-EARLY-PET-ACQUISITION-CENSUS-R1.json)入Git，不复制全篇受版权保护的原网页或资产，旧CURRENT blob不改；Stage A 7PARTIAL+2OPEN、B/wiki GATED、R79暂停、总体完成率未知。**NEXT O93**跳离重复玩家资料，优先真实同版宠物ID→原图/服务器原始资料或其它具原文件的世界内容，当前严格忠实复原、不提前优化体验。
+
+
+### 2026-11-02 — O93 新取得的固定Git后期服务端宠物原表与静态来源连接
+
+[O93原源限定报告](docs/continuity/STONEAGE-O93-INDEPENDENT-PET-SOURCE-20261102.md)、[数字/负例清单](research/recovered/STONEAGE-O93-INDEPENDENT-PET-SOURCE-JOIN-R1.json)：直接读取首次纳入的独立公开Git仓库`pimpcapital/longzoro-sa` 2016-01-09提交`57b14e2`及同树5份完整原服务端文本/源码的blob。`setup.cf`实际指向`enemy1.txt`/`enemybase1.txt`，原C装载器以实例模板号连接，图形字段取`E_T_IMGNUMBER`。**“初期拥有”四宠各两个实例（8条）→四原模板→图号100251/100296/100292/100266**；非模拟战斗、非台湾1.0同服身份。两源表2958实例/1816模板的原始数字外键扫描：2934唯一、23缺模板、1实例关联到4个同号模板，均不修改原字节。和O92所谓9个JSS奖品文字仅8个名字字面相同，且多个同名模板、1个未匹配；不认证JSS官方发奖或初代宠物清单。原商业图/完整原表不复制公开仓库，`CURRENT-STATE.md`原blob保留。**NEXT O94**优先取得同构建原图/原出生发放行为、或轮换其它原世界材料；Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、总体百分比null。
