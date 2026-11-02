@@ -1,0 +1,164 @@
+{
+  "schema": "stoneage.o91.early_player_faq_bridge_pet_mail_source_r1",
+  "evidence_date": "2026-11-02",
+  "baseline": {
+    "head": "91ffa807faad26f39bba74be8fd85e68f368a394",
+    "tree": "802a4da57cb81e4579825b42d8085db3373fc12b",
+    "preserved_current_blob": "20050acf279a01555ab06a381dfcdc936bd381a6",
+    "preserved_current_bytes": 2708031
+  },
+  "newly_reviewed_public_page": {
+    "title": "石器时代之全问答集",
+    "url": "https://news.17173.com/z/stoneage/content/2001-6-14/n775_691475.html",
+    "displayed_date": "2001-06-14",
+    "author": "unknown",
+    "captured_full_original_HTTP_bytes": false,
+    "original_HTTP_sha256": null,
+    "original_contemporaneous_authoring_build_verified": false,
+    "source_class": "CONTEMPORARY_LABELLED_PLAYER_FAQ_NOT_NATIVE_GAME_EXECUTION"
+  },
+  "archived_comparison_sources": [
+    {
+      "source": "O85",
+      "path": "research/recovered/STONEAGE-O85-YUANZANG-DIALOGUE-BATTLE-SOURCE-R1.json",
+      "historical_scope": "PRESERVED_LATER_COMMUNITY_MIXED25_ORIGINAL_STATIC_SOURCE",
+      "raw_member_verified_by_O85": true,
+      "redone_raw_member_verification_in_O91": false
+    },
+    {
+      "source": "R57",
+      "path": "docs/specs/STONEAGE-CN2003-UI-TEAM-TRADE-SOURCE-R1.md",
+      "url": "https://games.sina.com.cn/zhqu/sta/xsxl/yxcz.shtml",
+      "displayed_date": "2003-04-15",
+      "source_class": "LATER_PLAYER_GUIDE_NO_SAME_BUILD_PROOF"
+    }
+  ],
+  "review_claims": [
+    {
+      "id": "BRIDGE_AREA_THIEVES_PLAYER_CLAIM",
+      "source": "17173_2001_FAQ",
+      "page_visible_lines": [
+        90,
+        91
+      ],
+      "meaning": "player FAQ reports thieves along Katan Village to Yuanzang bridge; does not equate thieves with Yuanzang",
+      "status": "FACT_OF_PAGE_TEXT_ONLY"
+    },
+    {
+      "id": "GUARD_BRIDGE_SHORT_ABSENCE",
+      "source": "17173_2001_FAQ",
+      "page_visible_lines": [
+        136,
+        139
+      ],
+      "meaning": "player FAQ reports temporary absence after someone beats bridge guard",
+      "status": "UNVERIFIED_GAME_BEHAVIOR"
+    },
+    {
+      "id": "GUARD_BRIDGE_GROUP_FOLLOW",
+      "source": "17173_2001_FAQ",
+      "page_visible_lines": [
+        136,
+        139
+      ],
+      "meaning": "player FAQ reports following opposite-side leader across bridge",
+      "status": "UNVERIFIED_GAME_BEHAVIOR"
+    },
+    {
+      "id": "GROUND_ITEM_DROP_PICKUP",
+      "source": "17173_2001_FAQ",
+      "page_visible_lines": [
+        14,
+        19
+      ],
+      "meaning": "right-click ground pick-up and drag-out items/coin described by FAQ",
+      "status": "PLAYER_REPORTED_INTERACTION"
+    },
+    {
+      "id": "PET_MAIL_WITH_CARD_ITEM_TEXT",
+      "source": "17173_2001_FAQ",
+      "page_visible_lines": [
+        20,
+        23
+      ],
+      "meaning": "card, mail-state pet, ordinary/pet mail choice, item and text described",
+      "status": "PLAYER_REPORTED_INTERACTION"
+    },
+    {
+      "id": "PET_PICKUP_SIX_LEVEL_SELF_CAUGHT",
+      "source": "17173_2001_FAQ",
+      "page_visible_lines": [
+        20,
+        21
+      ],
+      "meaning": "six level difference and self-caught exception claimed; source differs from R57 reincarnation exception",
+      "status": "VERSION_RULE_UNRESOLVED"
+    },
+    {
+      "id": "MAIL_CROSS_SERVER_LIMIT",
+      "source": "17173_2001_FAQ",
+      "page_visible_lines": [
+        70,
+        71
+      ],
+      "meaning": "normal mail across servers but not pet-mail claimed",
+      "status": "UNVERIFIED_GAME_BEHAVIOR"
+    },
+    {
+      "id": "RIDING_CLAIM_DATED_PAGE",
+      "source": "17173_2001_FAQ",
+      "page_visible_lines": [
+        148,
+        150
+      ],
+      "meaning": "contemporary-labelled FAQ author claims riding unavailable in stated regions; actual writing/build unclear",
+      "status": "UNKNOWN_VERSION_LIMIT"
+    }
+  ],
+  "o85_reconciliation": {
+    "later_source_floor": 100,
+    "later_source_spawn": [
+      472,
+      297,
+      1,
+      1
+    ],
+    "later_source_named_guard": "壞心眼的願藏",
+    "later_source_handler": "NPCEnemy",
+    "later_source_enemy_ids": [
+      253,
+      254
+    ],
+    "later_source_time_word": 60,
+    "native_time_units_proven": false,
+    "player_reported_absence_time_equals_source_time": false,
+    "original_warp_fields_commented_out": true,
+    "later_enemy_name_mismatch_preserved": true,
+    "proven_identical_deployment": false
+  },
+  "comparison_disagreement": {
+    "question": "ground pet pick-up level 6 special case",
+    "source_17173": "self_caught_exception_claim",
+    "source_sina_2003": "reincarnated_player_exception_claim",
+    "actual_combined_server_predicate_proven": false
+  },
+  "source_restrictions": {
+    "original_game_executed": false,
+    "original_server_executed": false,
+    "original_HTML_bytes_or_sha_verified": false,
+    "official_1999_JSS_or_TW10_deployment_proven": false,
+    "actual_mail_delivered": false,
+    "actual_guard_defeated": false,
+    "actual_party_crossed_bridge": false,
+    "proprietary_bytes_uploaded": false,
+    "player_guides_promoted_to_native_rules": false
+  },
+  "project_gates": {
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b": "GATED",
+    "wiki": "GATED",
+    "savedata_R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "next": "O92 rotate to other truly new and attributable world/pet/service/quest material; native behavior only with corresponding evidence"
+}
