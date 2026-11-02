@@ -1450,3 +1450,8 @@ O75 CI史实订正：PR #133 初稿的 Stage A 检查 run 41362507873 因两处�
 ### 2026-11-02 — O88 后期保存包第二届家族猎宠活动／妮可／截止日期／猎宠证主表缺项
 
 [O88 具日期原事件证据和精确负例](docs/continuity/STONEAGE-O88-FAMILY-PET-HUNT-EVENT-20261102.md)：重新核对原私人mixed2.5 RAR全SHA及7份原成员独立RAR头CRC／解出CRC／完整SHA，原`race2/second.template`确实注记**第二届猎宠大会**，具名NPC妮可`floor3206:(15,19)`的`npc_raceman`原创建指向`race2/second.arg`，源活动说明要求**族长组织族员按猎宠证捕宠并登记**，而`time_msg`原文字写**2004年12月22日截止**。源`CheckItem/GetItem=20760`在同档13,254行×94列`itemset.txt`原物品号列16**0匹配**；一次相似数字子串属于其它列的`320760`，不得当ID存在。`3206.DAT/MAP`均原尺寸30×40，NPC坐标有效格三层(5000,0,49152)、MAP格0；并未证明原游戏碰撞或NPC真实加载。同档82行`racequiz.txt`无直接脚本关联，不并为猎宠题库。此为**有时间点的活动任务源**，不混同常驻本体任务，也未证明2004年实际运营启用/关停、Raceman行为、记录归零、奖品发放、JSS1999或TW1同部署。原商业字节不入Git，仅[派生数值与哈希](research/recovered/STONEAGE-O88-FAMILY-PET-HUNT-DATED-EVENT-R1.json)。完整历史CURRENT未改，Stage A7PARTIAL+2OPEN、Stage B/wiki GATED、R79暂停、percent=null。**NEXT O89**回22域另一未复原有原件的内容，不重复赛事模拟/原猜谜。
+
+
+### 2026-11-02 — O89 原始150条世界知识问答的游戏内线索（静态资料，非已运行答题）
+
+[O89 原150题逐行证据与限制](docs/continuity/STONEAGE-O89-ORIGINAL-150-QUESTION-SOURCE-20261102.md)：从私人完整SHA核验的后期mixed2.5 RAR**实际抽取**`gmsv/data/question.txt` 10,821B，原RAR成员头CRC／解出CRC及SHA256一致、原CP950全字节往返。真实原150行ID1—150唯一连续，149行9列、ID8仅8列；非空应答格数**43条仅1项、23条2项、84条3项**；不同问句148个（**1=22、10=47**重复）。题目包含四出生村、长毛象公车/大厅、宠物医院、料理、精灵等可供后续交叉考据的原文本线索，但**选项不等于验证的游戏规则/发行日期**，源数字字段的正确项/题型含义及原服务端题目handler、原生UI全未证。此文件**不是**O51所述另一82行`racequiz.txt`，不推两表同任务；常驻/活动归属UNKNOWN。仅[派生结构与SHA记录](research/recovered/STONEAGE-O89-ORIGINAL-150-QUESTION-SOURCE-R1.json)，原版权全文不入公开Git，CURRENT旧Blob不改，Stage A7PARTIAL+2OPEN、Stage B/wiki GATED、R79暂停、overall_percent=null。**NEXT O90**轮换另一有原资料的实际游戏内容，不扩猜题模拟或现代体验优化。
