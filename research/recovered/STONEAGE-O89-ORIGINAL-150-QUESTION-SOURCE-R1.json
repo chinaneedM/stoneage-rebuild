@@ -1,0 +1,237 @@
+{
+  "schema": "STONEAGE-O89-ORIGINAL-150-QUESTION-WORLD-TRIVIA-R1",
+  "stage": "Stage A historical restoration, static source attribution only",
+  "date": "2026-11-02",
+  "remote_baseline": {
+    "repository": "chinaneedM/stoneage-rebuild",
+    "main_commit": "efa930a6ba1710da09221ef000ad7d7ea0c79e8d",
+    "main_tree": "5c0bb5d071c6d3af18b0d91c30f316f17a692291",
+    "historical_current_state_blob": "20050acf279a01555ab06a381dfcdc936bd381a6"
+  },
+  "source": {
+    "rar_bytes": 361255180,
+    "rar_sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5f",
+    "rar_member_count": 7952,
+    "archive_original_path": "石器2.5客戶端+服務端+登入器/SA2.5服務端/gmsv/data/question.txt",
+    "normalized_path": "gmsv/data/question.txt",
+    "bytes": 10821,
+    "rar_member_header_crc32": "ef50f7c5",
+    "extracted_crc32": "ef50f7c5",
+    "sha256": "b6486de2e11a10fa4e1562864a3f5547999dfd817084506941ad0bd0737a4073",
+    "rar_recorded_mtime": "2009-01-19T22:45:06 (archive header, not verified authorship or release)",
+    "encoding": "CP950",
+    "cp950_lossless_roundtrip": true,
+    "line_ending": "LF",
+    "newline_delimited_records": 150,
+    "original_bytes_private": true
+  },
+  "structure": {
+    "total_rows": 150,
+    "all_first_column_ids_unique": true,
+    "id_min": 1,
+    "id_max": 150,
+    "no_missing_integers_1_to_150": true,
+    "source_fields_before_question": 5,
+    "first_header_field_all_rows": 1,
+    "third_field_raw_distribution": {
+      "1": 43,
+      "2": 25,
+      "4": 30,
+      "8": 29,
+      "16": 23
+    },
+    "fourth_field_raw_distribution": {
+      "1": 23,
+      "2": 84,
+      "4": 43
+    },
+    "fifth_field_raw_distribution": {
+      "1": 131,
+      "2": 12,
+      "3": 7
+    },
+    "field_semantics_unverified": true,
+    "physical_column_count": {
+      "8": 1,
+      "9": 149
+    },
+    "nonuniform_row_ids": [
+      8
+    ],
+    "nonempty_text_question_count": 150,
+    "nonempty_candidate_count_distribution": {
+      "1": 43,
+      "2": 23,
+      "3": 84
+    },
+    "answer_key_column_not_validated": true
+  },
+  "duplicate_questions": [
+    {
+      "first_id": 1,
+      "second_id": 22,
+      "same_fields_except_id": true,
+      "theme": "world_name"
+    },
+    {
+      "first_id": 10,
+      "second_id": 47,
+      "same_fields_except_id": true,
+      "theme": "four_starting_villages"
+    }
+  ],
+  "unique_question_text_count": 148,
+  "question_keyword_occurrences_in_prompt_only": {
+    "mammoth_bus": 8,
+    "pet": 17,
+    "cooking": 22,
+    "village_chief": 4,
+    "hospital": 3,
+    "spirit_magic": 4,
+    "undersea_tunnel": 1
+  },
+  "sample_rows": [
+    {
+      "id": 1,
+      "theme": "world_name",
+      "row_sha256": "cef16c1d84e3c522921bf3b30fd9392d5efc57372a3d2fc8b6f286d52bc7992c",
+      "nonempty_candidates": 3
+    },
+    {
+      "id": 3,
+      "theme": "chatroom_hall",
+      "row_sha256": "2698193c35d5f4a785121521edae914d5be1ccff9b30cff06930cc55ed72cbf2",
+      "nonempty_candidates": 3
+    },
+    {
+      "id": 8,
+      "theme": "game_release_date_as_answer_choice_not_validated_fact",
+      "row_sha256": "18e606fa0ab6e72790461f2c714e6d3996f795c587f779705e31072233d47c9c",
+      "nonempty_candidates": 2
+    },
+    {
+      "id": 10,
+      "theme": "four_starting_villages",
+      "row_sha256": "471985aea15b7bdc74137487312197083408ec6613fe595c7857a786fc7756a4",
+      "nonempty_candidates": 1
+    },
+    {
+      "id": 11,
+      "theme": "undersea_passage",
+      "row_sha256": "200ad45c7e29ca006b8df4666c97e18ccb6d6babac86b19787f571f0747c0c2b",
+      "nonempty_candidates": 3
+    },
+    {
+      "id": 12,
+      "theme": "coming_of_age",
+      "row_sha256": "1bfb9cc0bc4f38f0a1caefe65edfd98d9e4575736fab0218165773100cd2a630",
+      "nonempty_candidates": 3
+    },
+    {
+      "id": 18,
+      "theme": "mammoth_bus_name",
+      "row_sha256": "89eaf728f3f1d3b986c11469bd2fbc52dc67bc0cbe61f768488cc2c5717eebd3",
+      "nonempty_candidates": 3
+    },
+    {
+      "id": 19,
+      "theme": "mammoth_bus_encounter",
+      "row_sha256": "1c22d73061f511215154e879f0984e76cd8289716429f4f072125871ce41eee7",
+      "nonempty_candidates": 3
+    },
+    {
+      "id": 20,
+      "theme": "mammoth_bus_boarding",
+      "row_sha256": "a4467b08b8d1bc4249b52f294eeedb9f638feeac40dedd4bd7476e90086c8bd1",
+      "nonempty_candidates": 3
+    },
+    {
+      "id": 23,
+      "theme": "pet_hospital_payment",
+      "row_sha256": "e79ba1a5f69e515736d8cd42c948d1dc8feb030a7119a1d047d2df49c5082cd9",
+      "nonempty_candidates": 3
+    },
+    {
+      "id": 24,
+      "theme": "village_hospital_nurse",
+      "row_sha256": "d576bb4e58eb6b635a7aa2fb802cfca28baa14e5ea2ee0f66f531fbb7caea773",
+      "nonempty_candidates": 2
+    },
+    {
+      "id": 47,
+      "theme": "four_starting_villages_duplicate",
+      "row_sha256": "bcae47fff202b6ad8d1892c8671688ac15e1daf7a8b54b6bd972cc84d275cfd5",
+      "nonempty_candidates": 1
+    },
+    {
+      "id": 100,
+      "theme": "material_ingredient",
+      "row_sha256": "579819296935346bfb6c38e9200ca495c0626d184fb0bd2af5a11ceb8bfc1a7f",
+      "nonempty_candidates": 3
+    },
+    {
+      "id": 131,
+      "theme": "village_chief_position_as_text_only",
+      "row_sha256": "4bccc85fad144760921a6fe1e24d8452b1ffe28e4ffcdc853ec59abf5ddb463b",
+      "nonempty_candidates": 1
+    },
+    {
+      "id": 132,
+      "theme": "village_informant_age",
+      "row_sha256": "e8780cd0194a3ed7937a6e58c848222ee2dda96ed6032573b6087120e4de6e88",
+      "nonempty_candidates": 3
+    },
+    {
+      "id": 138,
+      "theme": "reflect_spell_prompt",
+      "row_sha256": "f6cf15693fc0baf57214b6e3c75a94b3a810f2b8166c789e92659136023d8cee",
+      "nonempty_candidates": 1
+    },
+    {
+      "id": 139,
+      "theme": "elemental_neutral_spell_prompt",
+      "row_sha256": "b94151474d3130684418231c7b51c5ea3d08f96c0eed244b523a3a9d102d29bc",
+      "nonempty_candidates": 1
+    },
+    {
+      "id": 140,
+      "theme": "party_heal_spell_prompt",
+      "row_sha256": "f8a8bc70fc46381ca59b785762644791eb2dc95315885d03006b552a715bbe05",
+      "nonempty_candidates": 1
+    },
+    {
+      "id": 150,
+      "theme": "village_schoolchildren_count",
+      "row_sha256": "357a03a5bb64591e98fe828ea9072529ed4307fc4d971bf19125f4fccc27829e",
+      "nonempty_candidates": 1
+    }
+  ],
+  "relationship": {
+    "prior_O51_original_quest": "previous verified 10-member quest chain with npc quiz scripts",
+    "separate_file": "gmsv/data/racequiz.txt",
+    "separate_file_rows": 82,
+    "join_to_this_question_file": "NOT_PROVEN",
+    "function_invocation": "NOT_PROVEN",
+    "native_client_question_ui": "NOT_OBSERVED",
+    "question_correct_choice_column": "NOT_PROVEN"
+  },
+  "guardrails": [
+    "Trivia prompt or candidate is not a verified historical rule or release date",
+    "The source file is part of a later preserved 2.5 mixed private archive, not proof of JSS1999 or Taiwan1.0 deployment",
+    "The RAR member 2009 modification timestamp is not a reliable original event/release date",
+    "Two duplicate prompts are not evidence of intentionally increased probability without native question picker",
+    "Unknown fifth/two other numeric fields have no assigned labels",
+    "Not classified as permanent quest versus event without original user-facing execution or explicit schedule",
+    "Question file being present does not establish a native quiz/NPC dispatcher or correct answer selection",
+    "O86 bus or earlier character materials may be compared as independent evidence but are not certified by these quiz prompts",
+    "No old commercial content bytes may enter the public repo"
+  ],
+  "next": "O90 another distinct material-backed original visible system/scene/asset; reopen question-to-handler only with exact same-build reference or native evidence",
+  "stage_gates": {
+    "stageA": "7 PARTIAL + 2 OPEN",
+    "stageB": "GATED",
+    "wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  }
+}
