@@ -101,3 +101,12 @@
 ### 2026-11-03 — CHAR04 人物/NPC创建原件→模板功能→同RAR原SPR图号的全量来源关联
 
 [CHAR04真实原件关联及差异审查](continuity/STONEAGE-CHARACTER-NPC-MODULE-04-STATIC-GRAPHIC-FUNCTION-20261103.md)及[CHAR04全量图号×原模板功能×SPR索引](../research/recovered/STONEAGE-CHARACTER-NPC-MODULE-04-SAME-CARRIER-GRAPHIC-FUNCTION-JOIN-R1.json)：从用户私人保存的mixed25原NPC目录ZIP全量核2205原文件、4985创建源块、119模板源块SHA全部吻合；把此前只在用户私人资料/会话保存的[CHAR01 4985行无正文源证](../research/recovered/STONEAGE-CHARACTER-NPC-MODULE-01-FULL-SOURCE-ROWS-R1.json)正式永久入Git，字段仅数值/来源位置/散列及文件引用。原功能Warp配置2904（非2904人），模板唯一定位4984/4985。创建原图号有2482条，其中617条/108不同图号命中同原RAR客户端SPR索引；1865条/146不同图号无本索引；35条原模板type与创建graphicname数值不一致，逐条保留；3个既往R40原完整SPR段号100250/251/252可联30条原创建配置。仅同RAR数值关联，**不是**原运行服同部署、同原图可视像素、官方人物或TW1 NPC姓名身份证明。下一优先CHAR05有源批量原SPR/像素及NPC原用途关系，不重复造图及引擎。Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、总percent=null；原CURRENT保持原字节。
+
+
+### 2026-11-03 — CHAR05 已验来源重用（此前CURRENT已有）
+
+[CHAR05三组原SPR像素与30份NPC创建配置联接](continuity/STONEAGE-CHARACTER-NPC-MODULE-05-SAME-RAR-ORIGINAL-MOTION-20261103.md)已恢复并验证：同RAR 100250/251/252 三组动作0、24方向序列、352帧位置/208既有真实RD图；30条静态创建配置引用。剩余105图号/587配置依然只有SPR索引，历史身份证明不能由同图号推出。本节只是把CURRENT已有的CHAR05指向补入集中模块入口，不算重新恢复。
+
+### 2026-11-03 — CHAR06 同载体NPC服务原文与静态参数（47条）
+
+[CHAR06原字节、解包止点及来源边界](continuity/STONEAGE-CHARACTER-NPC-MODULE-06-SERVICE-SOURCE-20261103.md)与[逐行源SHA/路径/数值目录](../research/recovered/STONEAGE-CHARACTER-NPC-MODULE-06-SERVICE-SOURCE-RECEIPT-R1.json)：从私人mixed25原RAR完整SHA复核并成功提取2205份原NPC文本，逐成员大小/CRC/SHA通过。剩余105组同RAR图号的原SPR/REAL实际提取遇到libarchive不支持或报错，只有未经完整资格确认的SPR前缀，不可宣称获得原像素，仍105图号/587配置INDEX_ONLY。转而恢复同RAR NPCCREATE→NPCTEMPLATE(functionset)→file:原参数文件：SavePoint21、Bus7、PetShop16、PetSkillShop3，共47条来源限定原关联，含原记录点ID/出生坐标、7组公车路线点列、宠物店费率/寄养字段、宠技参数。另生成私人自包含原文观察页，未把商业原对白上传Git、也没运行商业原客户端或服务器。47不等于NPC数量，时间单位/价款/运行选择不能从静态定义直接确证，mixed25也非纯净官方同部署身份。**NEXT CHAR07**：仍集中人物/NPC，对已得2205原文本扩展TownPeople/告示及其它功能原文来源与类别批量索引；达到有界止点再转地图模块。Stage A7PARTIAL+2OPEN、Stage B/wiki GATED、R79暂停、overall_percent=null，CURRENT历史前缀不变。
