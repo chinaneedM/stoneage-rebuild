@@ -1455,3 +1455,8 @@ O75 CI史实订正：PR #133 初稿的 Stage A 检查 run 41362507873 因两处�
 ### 2026-11-02 — O89 原始150条世界知识问答的游戏内线索（静态资料，非已运行答题）
 
 [O89 原150题逐行证据与限制](docs/continuity/STONEAGE-O89-ORIGINAL-150-QUESTION-SOURCE-20261102.md)：从私人完整SHA核验的后期mixed2.5 RAR**实际抽取**`gmsv/data/question.txt` 10,821B，原RAR成员头CRC／解出CRC及SHA256一致、原CP950全字节往返。真实原150行ID1—150唯一连续，149行9列、ID8仅8列；非空应答格数**43条仅1项、23条2项、84条3项**；不同问句148个（**1=22、10=47**重复）。题目包含四出生村、长毛象公车/大厅、宠物医院、料理、精灵等可供后续交叉考据的原文本线索，但**选项不等于验证的游戏规则/发行日期**，源数字字段的正确项/题型含义及原服务端题目handler、原生UI全未证。此文件**不是**O51所述另一82行`racequiz.txt`，不推两表同任务；常驻/活动归属UNKNOWN。仅[派生结构与SHA记录](research/recovered/STONEAGE-O89-ORIGINAL-150-QUESTION-SOURCE-R1.json)，原版权全文不入公开Git，CURRENT旧Blob不改，Stage A7PARTIAL+2OPEN、Stage B/wiki GATED、R79暂停、overall_percent=null。**NEXT O90**轮换另一有原资料的实际游戏内容，不扩猜题模拟或现代体验优化。
+
+
+### 2026-11-02 — O90 后期保存包原72职业技能表、同包启动指针与71数值关联
+
+[O90 有据职业技能恢复与版本界限](docs/continuity/STONEAGE-O90-ORIGINAL-PROFESSION-SOURCE-20261102.md)：从私有完整SHA通过的mixed2.5 RAR独立重新实取原`profession.txt` (9703B) 和 `setup.cf` (9715B)，复核同档`itemset.txt` (3392473B)，逐件原RAR头CRC/实取CRC、SHA、CP950往返一致。`setup.cf`第514行真实指向`./data/profession.txt`。原技能表**72条23列、ID1—72连续、60种回调名**；四组原目标数值位置构成**71条、涉及44技能的直接引用**，其中40组伴值70、16组50、6组60、9组0，全部目标ID在本表内，静态图无循环。**ID5附身术四源关联15/16/17/21**、**ID4冰爆术二直接关联14/17并有14→12的间接链**；“加工”与“連環攻擊”、“自給自足”与“激化攻擊”各共用原回调名，保留原样、不擅判BUG。`profession.txt`原零基列10的72数值在同档13,254×94物品主表**键列16零匹配**，不得误称缺技能或编造道具关联。已明确分开先前R59**大陆2003年7.0网页**与本后期静态包的版本来源，没有原生服务器回调、职业就职、学习/施法、UI执行，更非TW1.0/JSS1999已认证原版。[O90派生71关系及来源校验](research/recovered/STONEAGE-O90-ORIGINAL-PROFESSION-SOURCE-GRAPH-R1.json)，原完整商业表/二进制均未公开；历史CURRENT blob不变，Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、overall百分比未知。**NEXT O91**回22域另一有原实物的世界/宠物/生活服务资料，不扩职业模拟器或新石器体验优化。
