@@ -1,0 +1,205 @@
+{
+  "schema": "STONEAGE-O88-DATED-FAMILY-PET-HUNT-EVENT-R1",
+  "review_date": "2026-11-02",
+  "baseline": {
+    "repository": "chinaneedM/stoneage-rebuild",
+    "main_commit": "98042758c27deda18767389153d4db0d7d044da6",
+    "main_tree": "4eb86ed90dce3ee4c69533bbe3894810a743ae31",
+    "preserved_historical_current_blob": "20050acf279a01555ab06a381dfcdc936bd381a6"
+  },
+  "source": {
+    "classification": "original archived bytes from a later preserved community-mixed 2.5 package; distribution officialness and original game deployment not authenticated",
+    "rar_bytes": 361255180,
+    "rar_sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+    "rar_physical_members": 7952,
+    "member_custody": "libarchive extraction; rarfile independent RAR header CRC32; hashlib SHA256; CP950 roundtrip for 3 NPC files",
+    "members": [
+      {
+        "path": "gmsv/data/npc/race2/second.arg",
+        "bytes": 903,
+        "rar_header_crc32": "2568c3cf",
+        "extracted_crc32": "2568c3cf",
+        "sha256": "c72aad68acb737029635b07ef52c3b558d6ee12ea8a58d34b240d20525c3bb6e",
+        "archive_path": "石器2.5客戶端+服務端+登入器/SA2.5服務端/gmsv/data/npc/race2/second.arg"
+      },
+      {
+        "path": "gmsv/data/npc/race2/second.create",
+        "bytes": 163,
+        "rar_header_crc32": "bc8bdc1a",
+        "extracted_crc32": "bc8bdc1a",
+        "sha256": "7817ae66804862cd72150d718da34b06f8b04e11f9c2c857a95adfa6759418ec",
+        "archive_path": "石器2.5客戶端+服務端+登入器/SA2.5服務端/gmsv/data/npc/race2/second.create"
+      },
+      {
+        "path": "gmsv/data/npc/race2/second.template",
+        "bytes": 117,
+        "rar_header_crc32": "4aafc90d",
+        "extracted_crc32": "4aafc90d",
+        "sha256": "b6757dbf874fde4a21a2f925faea8d430dfaa8a65c7ff6f700df295d81af277d",
+        "archive_path": "石器2.5客戶端+服務端+登入器/SA2.5服務端/gmsv/data/npc/race2/second.template"
+      },
+      {
+        "path": "gmsv/data/itemset.txt",
+        "bytes": 3392473,
+        "rar_header_crc32": "96397928",
+        "extracted_crc32": "96397928",
+        "sha256": "a415e78f9aab2e5ea5ca92ecb7430253f7be1ba7c876d6b0bb6d067b1b466688",
+        "archive_path": "石器2.5客戶端+服務端+登入器/SA2.5服務端/gmsv/data/itemset.txt"
+      },
+      {
+        "path": "gmsv/data/racequiz.txt",
+        "bytes": 3803,
+        "rar_header_crc32": "293ddc5f",
+        "extracted_crc32": "293ddc5f",
+        "sha256": "429bc0b38fbb464dbcdcf6cb36fb74f3df59fe4be55c20f3598795cb15c95ddf",
+        "archive_path": "石器2.5客戶端+服務端+登入器/SA2.5服務端/gmsv/data/racequiz.txt"
+      },
+      {
+        "path": "stoneage2.5/map/3206.DAT",
+        "bytes": 7208,
+        "rar_header_crc32": "454a7e1e",
+        "extracted_crc32": "454a7e1e",
+        "sha256": "9c65b9b18795ed08951d799d9136c5cbdfd3ca8963a991b994c677aa8d427e69",
+        "archive_path": "石器2.5客戶端+服務端+登入器/SA2.5主程式/stoneage2.5/map/3206.DAT"
+      },
+      {
+        "path": "stoneage2.5/map/3206.MAP",
+        "bytes": 2408,
+        "rar_header_crc32": "6f2f95c8",
+        "extracted_crc32": "6f2f95c8",
+        "sha256": "659b8ef53522a439481b29cc2e0c776d2b77e81ad03f5bbe280e7199fae66bbb",
+        "archive_path": "石器2.5客戶端+服務端+登入器/SA2.5主程式/stoneage2.5/map/3206.MAP"
+      }
+    ]
+  },
+  "event": {
+    "candidate_title": "第二届家族猎宠大会（源模板注释第二届）",
+    "classification": "TIME_BOUND_EVENT_CONFIG",
+    "supporting_source_clues": {
+      "template_comment": "獵寵大會第二屆npc",
+      "arg_subject_semantics": "family head leads members to capture creatures directed by a hunt permit, and head registers captured creatures",
+      "arg_deadline_literal": "2004年12月22日",
+      "arg_leader_notice": "族長",
+      "arg_no_trade_drop_notice": true
+    },
+    "explicitly_not_proven": [
+      "real release date",
+      "actual service event start/end enforcement",
+      "quest/event live execution",
+      "2004 official operator identity",
+      "permanent game system",
+      "client/server compatible launch"
+    ]
+  },
+  "npc": {
+    "create_file": "gmsv/data/npc/race2/second.create",
+    "npc_created_count": 1,
+    "npc_name_source": "妮可",
+    "floor": 3206,
+    "borncorner": [
+      15,
+      19,
+      15,
+      19
+    ],
+    "graphicname": 16171,
+    "enemy": "npc_raceman",
+    "argument_pointer": "race2/second.arg",
+    "template": "npc_raceman",
+    "template_functionset": "Raceman",
+    "template_path": "gmsv/data/npc/race2/second.template",
+    "CP950_roundtrip": true
+  },
+  "arg": {
+    "has_game_raw": "5",
+    "check_item": 20760,
+    "get_item": 20760,
+    "game_mode_raw": "5",
+    "game_code_raw": "41206",
+    "mode5_raw": "5041208",
+    "rank_num_raw": "30",
+    "low_level_raw": "230",
+    "history_raw": [
+      "1041126-1",
+      "2041126-1"
+    ],
+    "flag_raw": {
+      "DelFlag": "off",
+      "EndFlag": "off"
+    },
+    "blank_fields": [
+      "FornewTran",
+      "FornewLv",
+      "CheckPet",
+      "PetLevel",
+      "Mode1",
+      "Mode2",
+      "Mode3",
+      "Mode4",
+      "First",
+      "Second",
+      "Third",
+      "Normal"
+    ],
+    "guard": "Semantic interpretation, ranking algorithm and data-field unit unknown without Raceman handler or native execution."
+  },
+  "itemset": {
+    "same_archive_path": "gmsv/data/itemset.txt",
+    "physical_rows": 13254,
+    "columns_per_row": 94,
+    "item_number_column_zero_based": 16,
+    "search_key": 20760,
+    "exact_key_matches": 0,
+    "substring_count_in_entire_table": 1,
+    "substring_false_positive": {
+      "physical_row": 11656,
+      "actual_item_key": 17907,
+      "field_index_zero_based": 18,
+      "field_value": "320760",
+      "source_row_sha256": "3a49177c505b0c0a3a5aec9401e368538450e8983f5f6bf9ab718181ff2d79b1"
+    },
+    "guard": "Cannot infer event failed or original token absent from all editions. In this particular same-archive table item key 20760 is not present."
+  },
+  "map": {
+    "same_archive_floor_DAT": "stoneage2.5/map/3206.DAT",
+    "same_archive_floor_MAP": "stoneage2.5/map/3206.MAP",
+    "map_width": 30,
+    "map_height": 40,
+    "dat_size_bytes": 7208,
+    "map_size_bytes": 2408,
+    "coordinates": [
+      15,
+      19
+    ],
+    "DAT_three_16bit_plane_values": [
+      5000,
+      0,
+      49152
+    ],
+    "MAP_single_16bit_value": 0,
+    "guard": "Valid static map coordinate only; not original collision, actual NPC spawn, camera rendering or interaction."
+  },
+  "separate_quiz_table": {
+    "path": "gmsv/data/racequiz.txt",
+    "physical_rows": 82,
+    "contains_literal_20760": false,
+    "direct_reference_from_second_arg": false,
+    "guard": "Unlinked same-container table, NOT recognized as question bank of this dated family-hunt event; earlier O51 previously reviewed separate quiz quest."
+  },
+  "test_counts": {
+    "target_members_with_header_crc_sha_and_length": 7,
+    "npc_cp950_roundtrip": 3,
+    "source_create_template_argument_link": 1,
+    "map_source_headers_and_point_reads": 2,
+    "itemset_rows_exhaustively_checked": 13254,
+    "item_primary_key_20760_hits": 0
+  },
+  "stop_condition": "One dated static event config, one linked NPC-template, exact same-carrier map anchor, item-key absence and explicit non-link to separate 82-row quiz table recorded. No broad event engine, no extra helper or modern simulation.",
+  "reopen_only_with": [
+    "authenticated matching Raceman handler or server trace",
+    "dated authentic operator event notice with version/release identity",
+    "same-build live event item or alternate item master",
+    "native game play/capture/rank evidence"
+  ],
+  "privacy": "Derived metadata and hashes only; no private source scripts, 2.5 game client, image, raw item tables or maps pushed."
+}
