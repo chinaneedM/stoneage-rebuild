@@ -1515,3 +1515,8 @@ O75 CI史实订正：PR #133 初稿的 Stage A 检查 run 41362507873 因两处�
 ### 2026-11-02 — PET-MODULE-05 private source pet sprite visual catalog
 
 [Evidence and acceptance boundary](docs/continuity/STONEAGE-PET-MODULE-05-PRIVATE-VISUAL-CATALOG-20261102.md) and [full 598-graphic / 1024-template coverage index](research/recovered/STONEAGE-PET-MODULE-05-CONSOLIDATED-VISUAL-COVERAGE-R1.json): existing private original-resource PNG/sequence materials were rechecked to form one private offline observer for seven SPR keys, 76 source animation/direction sequences, 718 ordered frame occurrences, and 440 actual archived PNGs. Chromium in-memory playback selectors checked; private art/HTML not pushed to public Git. The 7 graphic keys map numerically to 22 rows of the 2016 community PETFLG1 template source, **not** authenticated official TW1 species. NEXT PET-MODULE-06: expand qualified original image batches and consolidate within the pet module.
+
+
+### 2026-11-02 — PET-MODULE-06 adds two more original private pet sprite groups
+
+[PET06 visual source record](docs/continuity/STONEAGE-PET-MODULE-06-TWO-MORE-SPR-20261102.md) and [latest 598-key/1024-template consolidated registry](research/recovered/STONEAGE-PET-MODULE-06-CONSOLIDATED-VISUAL-COVERAGE-R1.json): rechecked archived TW1 O28 sprite image source: SPR100297/100298 (52 frame occurrences, 39 distinct bitmap PNGs, six action/direction-zero sequences). One private catalog now carries **9 source graphic keys/82 source animation sequences/770 positions/479 original candidate PNG bitmaps**. Still not original official species identity or native gameplay. Continue PET-MODULE-07 source-ready real pet image breadth; no cross-domain rotation yet.

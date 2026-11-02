@@ -55,3 +55,8 @@
 ## PET-MODULE-05 完成的私人原图/动作集中观察目录（2026-11-02）
 
 [源限定完整覆盖报告](continuity/STONEAGE-PET-MODULE-05-PRIVATE-VISUAL-CATALOG-20261102.md)及[598图号/1024模板综合索引](../research/recovered/STONEAGE-PET-MODULE-05-CONSOLIDATED-VISUAL-COVERAGE-R1.json)：从私人 O11/SCENE28/R10/O65 已保管原像素回放数据构成单一私有离线观察目录，实际7图号、76源动画/方向序列、718有序帧位置、440原图候选PNG逐源SHA通过；Chromium144全部76序列选择及图片载入通过，0 JS错误/0外部网络请求，file://在本环境被安全策略阻断、原游戏未启动。公开只留数字/来源哈希/覆盖索引，无原图。2016社区1024宠物候选模板中22行同数字图号可连接本私人观察目录，不得晋升成初版官方物种。**NEXT PET-MODULE-06**集中增加已取得原图的来源合格批次并补齐模块索引，暂不轮换其它内容模块。
+
+
+## PET-MODULE-06 两组已保管TW1原像素加入单一宠物观察目录（2026-11-02）
+
+[PET06实物与边界](continuity/STONEAGE-PET-MODULE-06-TWO-MORE-SPR-20261102.md)及[更新后的598图号/1024模板全索引](../research/recovered/STONEAGE-PET-MODULE-06-CONSOLIDATED-VISUAL-COVERAGE-R1.json)：从私人已归档的O28独立ZIP重读100297/100298两组真实台湾1.0图，逐52帧位置PNG SHA核对，39个不同原bitmap，6条实际动作0/1/2但仅方向0；复用PET05唯一私有观察器，现合计9图号、82动作方向序列、770帧位置、479实际来源PNG，Chromium144实证82个序列选择与加载、0JS错误/0网络。对2016社区PETFLG1全部1024模板行，25行同数字可到私人预览、589图号尚不在本预览；不论当代官方名字及同部署均UNKNOWN。**NEXT PET-MODULE-07**仍集中原宠物图像批量归档，停止无实体增量的单点helper。

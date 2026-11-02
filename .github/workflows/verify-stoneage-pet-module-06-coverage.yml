@@ -1,0 +1,21 @@
+name: Verify PET06 original sprite preview additive scope
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-PET-MODULE-06-CONSOLIDATED-VISUAL-COVERAGE-R1.json'
+      - 'research/recovered/STONEAGE-PET-MODULE-05-CONSOLIDATED-VISUAL-COVERAGE-R1.json'
+      - 'tests/test_stoneage_pet_module_06_coverage.py'
+      - '.github/workflows/verify-stoneage-pet-module-06-coverage.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify-source-bounded-sprites:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest tests.test_stoneage_pet_module_06_coverage -v
