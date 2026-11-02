@@ -1445,3 +1445,8 @@ O75 CI史实订正：PR #133 初稿的 Stage A 检查 run 41362507873 因两处�
 ### 2026-11-02 — O87 原家族留言板、家族秘书邀请函与骑宠同意书源
 
 [O87 原源核验与历史边界](docs/continuity/STONEAGE-O87-FAMILY-BOARD-LETTER-20261102.md)：从完整SHA合格的私人后期混合2.5 RAR定向取证22份原成员，原RAR CRC及逐成员SHA校验一致。原 `fmdengon.create` 有**16条**家族留言板创建坐标，原模板`FmDengon`，窗口支持家族成员列表、家族留言、家族之间留言；其中**15条**在同包地图DAT真实坐标格有三数值，floor3006的DAT在此包缺件，不推原游戏无图。四族长屋原 `fmletter` 秘书菜单含**家族邀请函／骑乘学习同意书**两项；原9个邀请函编号均在同档13,254行×94列`itemset.txt`主键列唯一命中、另9个骑乘同意书编号均不在该列。源配置yes指向5/6但本文件只有1/10/20窗口，保留运行handler与外部表未知，不擅自认定BUG或发放成功。仅静态来源事实，**没有执行原客户端或原商业服，没有真实留言/领函/习骑见证，也不认证JSS1999/TW1同部署**。仅公开[派生源SHA/CRC及结构数值](research/recovered/STONEAGE-O87-FAMILY-BOARD-LETTER-SOURCE-R1.json)，商业原字节不入Git。历史CURRENT blob原样、Stage A7PARTIAL+2OPEN、Stage B/wiki GATED、R79暂停、总体百分比未知；**NEXT O88** 回22域另一具实源游戏内容，不扩泛化家族模拟器或现代体验优化。
+
+
+### 2026-11-02 — O88 后期保存包第二届家族猎宠活动／妮可／截止日期／猎宠证主表缺项
+
+[O88 具日期原事件证据和精确负例](docs/continuity/STONEAGE-O88-FAMILY-PET-HUNT-EVENT-20261102.md)：重新核对原私人mixed2.5 RAR全SHA及7份原成员独立RAR头CRC／解出CRC／完整SHA，原`race2/second.template`确实注记**第二届猎宠大会**，具名NPC妮可`floor3206:(15,19)`的`npc_raceman`原创建指向`race2/second.arg`，源活动说明要求**族长组织族员按猎宠证捕宠并登记**，而`time_msg`原文字写**2004年12月22日截止**。源`CheckItem/GetItem=20760`在同档13,254行×94列`itemset.txt`原物品号列16**0匹配**；一次相似数字子串属于其它列的`320760`，不得当ID存在。`3206.DAT/MAP`均原尺寸30×40，NPC坐标有效格三层(5000,0,49152)、MAP格0；并未证明原游戏碰撞或NPC真实加载。同档82行`racequiz.txt`无直接脚本关联，不并为猎宠题库。此为**有时间点的活动任务源**，不混同常驻本体任务，也未证明2004年实际运营启用/关停、Raceman行为、记录归零、奖品发放、JSS1999或TW1同部署。原商业字节不入Git，仅[派生数值与哈希](research/recovered/STONEAGE-O88-FAMILY-PET-HUNT-DATED-EVENT-R1.json)。完整历史CURRENT未改，Stage A7PARTIAL+2OPEN、Stage B/wiki GATED、R79暂停、percent=null。**NEXT O89**回22域另一未复原有原件的内容，不重复赛事模拟/原猜谜。
