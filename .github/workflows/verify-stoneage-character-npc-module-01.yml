@@ -1,0 +1,20 @@
+name: Verify CHAR01 preserved original NPC source census
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-CHARACTER-NPC-MODULE-01-MIXED25-SOURCE-RECEIPT-R1.json'
+      - 'tests/test_stoneage_character_npc_module_01_receipt.py'
+      - '.github/workflows/verify-stoneage-character-npc-module-01.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  check-source-boundaries:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest tests.test_stoneage_character_npc_module_01_receipt -v

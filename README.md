@@ -1540,3 +1540,8 @@ O75 CI史实订正：PR #133 初稿的 Stage A 检查 run 41362507873 因两处�
 ### 2026-11-02 — PET-MODULE-10：混合2.5原始RAR内988行宠物主表/实例/技能完整实物回读
 
 [PET10原8成员完整数值索引与SHA/CRC](research/recovered/STONEAGE-PET-MODULE-10-ORIGINAL-MIXED25-SERVER-TABLES-R1.json)及[实物与来源边界](docs/continuity/STONEAGE-PET-MODULE-10-PRIVATE-SERVER-MATERIAL-20261102.md)：用户Library现存原RAR361255180B全SHA本轮实际重校，libarchive真取8原成员。主表enemybase.txt有效988行/56字段，PETFLG1有495行、424图号；另一份640行/316宠物候选。2087/1494实例分别与对应模板全数ID匹配；主表147原技能定义支持1050正数宠物槽全部定义，备选56技能定义支持661正数槽中的649，12缺。与原RAR同载体847条SPR索引按数值关联，主表495宠物标记行302命中、234不同图号。私人原CP950全字段目录和无网可查HTML已保管，不向公开Git提供原名/原表正文/版权图。原SPR主体本轮受libarchive解压限制未完整取出，不称动画像素新恢复。PET09此前CN5/TW85大包不可读止点照旧；**PET10额外找回同包服务器实物**。宠物模块保持历史部分/来源限定阶段性闭合，**NEXT CHARACTER-NPC-MODULE-01**；无需替用户再要「继续」。Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、总体percent=null。
+
+
+### 2026-11-03 — CHARACTER/NPC-MODULE-01 完整原NPC目录源批量恢复
+
+[CHAR01精确来源与有限结果](docs/continuity/STONEAGE-CHARACTER-NPC-MODULE-01-MIXED25-NPC-BATCH-20261103.md)及[公开源计数/资格收据](research/recovered/STONEAGE-CHARACTER-NPC-MODULE-01-MIXED25-SOURCE-RECEIPT-R1.json)：从私人mixed25原RAR本轮真实解出完整NPC目录2205个原文件/1930332B，原RAR目录7952项逐遍历，2205份原大小、SHA、CRC全部通过。189份NPCCREATE含4985静态创建块，46份NPCTEMPLATE含119原块；配置关联4131同目录唯一+853同RAR他目录唯一+1歧义，1803个原file:引用中1788同目录树有源文件、15缺。源可观察私人HTML已本地Chromium实测，原全目录ZIP成功私有Library保存。**这些是配置条目而不是4985个NPC/人物**，无官方版本/原运行晋级；TW1先前12人物SPR与101静态类NPC图元独立保留。大行级公开索引仅当前会话可取，远端只固定其SHA和源统计，禁止冒称已持久Git。**NEXT CHARACTER-NPC-MODULE-02**：TW1人物12组及静态101候选原帧像素批量归档。原CURRENT及Stage A7PARTIAL+2OPEN、Stage B/wiki GATED、R79暂停/总体percent=null不变。
