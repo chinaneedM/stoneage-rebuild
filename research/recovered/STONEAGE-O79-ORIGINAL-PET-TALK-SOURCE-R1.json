@@ -1,0 +1,270 @@
+{
+  "schema": "stoneage.o79.preserved_mixed25_pet_talk_static_material.v1",
+  "date": "2026-11-02",
+  "baseline_main_head": "f143d4196c826e2e2343927b80727171d9de16c2",
+  "baseline_tree": "2c2bb7d242854a7da35e1d073f23678647defcc2",
+  "preserved_current_blob": "20050acf279a01555ab06a381dfcdc936bd381a6",
+  "source_class": "LATER_COMMUNITY_MIXED25_PRESERVED_ARCHIVE_NOT_OFFICIAL_DEPLOYMENT_OR_TW1",
+  "source_archive": {
+    "name": "stoneage-preserved-mixed25-original.rar",
+    "bytes": 361255180,
+    "sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+    "whole_SHA_reverified_this_unit": true,
+    "extraction": "libarchive reader; independent RAR header CRC via rarfile; all chosen member SHA256 and computed CRC verified",
+    "public_original_bytes": false
+  },
+  "members": [
+    {
+      "path": "gmsv/data/npc/pettalk/pettalk.menu",
+      "bytes": 204,
+      "sha256": "c0d1dc0a88b79de8e6dc0946eb4bb77999cae29e879b24671c1d49c562039f4b",
+      "rar_crc32": "cdf398ca",
+      "extracted_crc_matches_header": true,
+      "cp950_round_trip": true
+    },
+    {
+      "path": "gmsv/data/npc/pettalk/ptalk01.arg",
+      "bytes": 9220,
+      "sha256": "2f832739408ff58d77a5c3d4642002e4811b6370e91c1826d4e1d23d218462a0",
+      "rar_crc32": "8ec82d5c",
+      "extracted_crc_matches_header": true,
+      "cp950_round_trip": true
+    },
+    {
+      "path": "gmsv/data/npc/pettalk/ptalk02.arg",
+      "bytes": 273,
+      "sha256": "1dc3bbf3c3a878367e962fc35627791f1c9a7017ed2e4924871094aa0e65e8eb",
+      "rar_crc32": "e64d5347",
+      "extracted_crc_matches_header": true,
+      "cp950_round_trip": true
+    },
+    {
+      "path": "gmsv/data/npc/pettalk/ptalk03.arg",
+      "bytes": 1164,
+      "sha256": "34beefc41b5e2f6100b470c96f61bbf340eb49e00426eb35ed67460cd29beb4e",
+      "rar_crc32": "95e27e2c",
+      "extracted_crc_matches_header": true,
+      "cp950_round_trip": true
+    },
+    {
+      "path": "gmsv/data/npc/pettalk/ptalk04.arg",
+      "bytes": 1241,
+      "sha256": "1aef8d9f78f241c9f36d2975ccc6a18d68da12a50be38a272d6b61f16c6f57f3",
+      "rar_crc32": "a1075d45",
+      "extracted_crc_matches_header": true,
+      "cp950_round_trip": true
+    },
+    {
+      "path": "gmsv/data/npc/pettalk/ptalk05.arg",
+      "bytes": 406,
+      "sha256": "2d42edd6875e492bd882496bd3bbd30a3961c5dacbac5ef88a716e2b82b0aa7c",
+      "rar_crc32": "cd9f6b55",
+      "extracted_crc_matches_header": true,
+      "cp950_round_trip": true
+    },
+    {
+      "path": "gmsv/data/npc/pettalk/ptalk06.arg",
+      "bytes": 9454,
+      "sha256": "eb5d8c907717b87fc02919f289f8ad665c0655a883bac783668e4747248195c9",
+      "rar_crc32": "8a650fa6",
+      "extracted_crc_matches_header": true,
+      "cp950_round_trip": true
+    },
+    {
+      "path": "gmsv/data/npc/pettalk/ptalk07.arg",
+      "bytes": 449,
+      "sha256": "0766de9a276e474e3b6695a55dc31d84a728c280b18b664a2cf5222697e3b025",
+      "rar_crc32": "9969afbb",
+      "extracted_crc_matches_header": true,
+      "cp950_round_trip": true
+    },
+    {
+      "path": "gmsv/data/itemset.txt",
+      "bytes": 3392473,
+      "sha256": "a415e78f9aab2e5ea5ca92ecb7430253f7be1ba7c876d6b0bb6d067b1b466688",
+      "rar_crc32": "96397928",
+      "extracted_crc_matches_header": true,
+      "cp950_round_trip": true
+    }
+  ],
+  "menu_order": [
+    {
+      "file": "ptalk01.arg",
+      "pet_template_no": 718
+    },
+    {
+      "file": "ptalk02.arg",
+      "pet_template_no": 2
+    },
+    {
+      "file": "ptalk04.arg",
+      "pet_template_no": 914
+    },
+    {
+      "file": "ptalk03.arg",
+      "pet_template_no": 913
+    },
+    {
+      "file": "ptalk05.arg",
+      "pet_template_no": 170
+    },
+    {
+      "file": "ptalk06.arg",
+      "pet_template_no": 401
+    },
+    {
+      "file": "ptalk07.arg",
+      "pet_template_no": 1147
+    }
+  ],
+  "branch_counts_by_filename": {
+    "ptalk01.arg": {
+      "pet_template_no": 718,
+      "OTHER": 1,
+      "TALKRUN": 17,
+      "EVENTRUN": 29,
+      "BOTH": 6,
+      "AddItem_literals": [
+        "19688,19688,19688"
+      ]
+    },
+    "ptalk02.arg": {
+      "pet_template_no": 2,
+      "OTHER": 1,
+      "TALKRUN": 0,
+      "EVENTRUN": 2,
+      "BOTH": 0,
+      "AddItem_literals": [
+        "2848"
+      ],
+      "condition_item_references": [
+        2414
+      ]
+    },
+    "ptalk03.arg": {
+      "pet_template_no": 913,
+      "OTHER": 1,
+      "TALKRUN": 2,
+      "EVENTRUN": 0,
+      "BOTH": 4,
+      "AddItem_literals": []
+    },
+    "ptalk04.arg": {
+      "pet_template_no": 914,
+      "OTHER": 1,
+      "TALKRUN": 2,
+      "EVENTRUN": 0,
+      "BOTH": 4,
+      "AddItem_literals": []
+    },
+    "ptalk05.arg": {
+      "pet_template_no": 170,
+      "OTHER": 1,
+      "TALKRUN": 0,
+      "EVENTRUN": 3,
+      "BOTH": 0,
+      "AddItem_literals": [
+        "2848"
+      ]
+    },
+    "ptalk06.arg": {
+      "pet_template_no": 401,
+      "OTHER": 1,
+      "TALKRUN": 17,
+      "EVENTRUN": 30,
+      "BOTH": 6,
+      "AddItem_literals": [
+        "19688,19688,19688"
+      ]
+    },
+    "ptalk07.arg": {
+      "pet_template_no": 1147,
+      "OTHER": 1,
+      "TALKRUN": 0,
+      "EVENTRUN": 3,
+      "BOTH": 0,
+      "AddItem_literals": [
+        "2848"
+      ]
+    }
+  },
+  "totals": {
+    "menu_entries": 7,
+    "unique_pet_template_no": 7,
+    "referenced_args_all_present": 7,
+    "OTHER": 7,
+    "TALKRUN": 38,
+    "EVENTRUN": 67,
+    "BOTH": 20,
+    "total_static_message_blocks": 132,
+    "AddItem_lines": 5
+  },
+  "specific_static_differences": {
+    "template_718_and_401_full_source_same": false,
+    "template_401_has_EVENTRUN30_not_in_718": true,
+    "template_913_and_914_distinct_source_profiles": true,
+    "actual_petting_or_growth_transition_observed": false
+  },
+  "itemset": {
+    "rows": 13254,
+    "columns_per_row": 94,
+    "source_id_field_zero_based_column": 16,
+    "joins": [
+      {
+        "id": 2414,
+        "name": "不可思議的貝殼",
+        "row_one_based": 1997,
+        "graphic_number": 24130,
+        "row_sha256": "84a495deef3afe7c0dbeffee8c49ca8a211b83afc555b7f2f8af2e64ce07d741",
+        "use": "FREE_item_condition_literal"
+      },
+      {
+        "id": 2848,
+        "name": "烏力丸",
+        "row_one_based": 2359,
+        "graphic_number": 24534,
+        "row_sha256": "df50272de718235330abc2eb24b1613a5b3cf4b8a4284351346810a40f99ca60",
+        "use": "AddItem_literal"
+      },
+      {
+        "id": 19688,
+        "name": "瑪蕾菲雅喜歡的花",
+        "row_one_based": 12496,
+        "graphic_number": 24173,
+        "row_sha256": "f0c2375ce0759cbdd8e88ad333b4976be6b08479ef4937d4ff40a7ab2ea4b494",
+        "use": "AddItem_three_identical_numbers_literal"
+      }
+    ],
+    "all_three_id_matches_unique": true,
+    "found_original_itemset_rows_not_executed_reward": true
+  },
+  "integrity": {
+    "source_RAR_SHA_rechecked": true,
+    "libarchive_extracted_selected_nine_members": true,
+    "RAR_original_header_CRC_matches_all_nine": true,
+    "CP950_roundtrip_all_nine": true,
+    "menu_order_and_unique_join_asserted": true,
+    "branch_counts_recomputed_from_original_bytes": true,
+    "original_message_lines_conserved": true,
+    "source_itemset_columns_and_three_unique_joins_asserted": true,
+    "private_local_assertions_passed": true
+  },
+  "limits": {
+    "no_native_pet_talk_activation": true,
+    "no_original_client_or_server_execution": true,
+    "no_actual_item_award": true,
+    "no_original_NPC_or_world_position_from_pettalk_menu": true,
+    "no_claim_same_deployment_TW1_or_JSS1999": true,
+    "no_original_script_or_item_table_raw_bytes_in_Git": true,
+    "no_future_new_game_design_or_experience_optimization": true,
+    "branch_priority_or_precedence_unknown": true,
+    "script_comments_do_not_prove_evolution_gameplay": true
+  },
+  "status": {
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b_wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "next": "O80: seek one independently sourced real pet-talk trigger/dispatcher or another original-game material seam; no unconstrained pettalk disassembly or simulated rewards"
+}
