@@ -1,0 +1,596 @@
+{
+  "schema": "STONEAGE-O87-FAMILY-BOARD-LETTER-SOURCE-R1",
+  "date": "2026-11-02",
+  "baseline_main": "ff8dabe08e9924231eeaede8158a1e721ae18df6",
+  "baseline_tree": "670ef173eaaafddbd139f67bafeb79ad4c735133",
+  "preserved_current_blob": "20050acf279a01555ab06a381dfcdc936bd381a6",
+  "source": {
+    "scope": "privately preserved mixed2.5 archive; not authenticated original JSS1999 or TW1.0 deployment",
+    "archive_bytes": 361255180,
+    "archive_sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+    "archive_entries": 7952,
+    "extracted_and_crc_sha_verified": 22,
+    "original_member_content_public": false,
+    "source_members": [
+      {
+        "path": "family/fmdengon.conf",
+        "bytes": 695,
+        "rar_crc32": "05057f1e",
+        "sha256": "8a3b3e79bed3a10d3919f0260cb10bf042a242c4f239e4076aaf5cac9e93c1ef",
+        "archive_entry_path": "石器2.5客戶端+服務端+登入器/SA2.5服務端/gmsv/data/npc/family/fmdengon.conf"
+      },
+      {
+        "path": "family/fmdengon.create",
+        "bytes": 2452,
+        "rar_crc32": "edef83b9",
+        "sha256": "bbcebded84c336f8b896004285a3a5b7f4b9894f0a19e24f5b9b69cf67e54939",
+        "archive_entry_path": "石器2.5客戶端+服務端+登入器/SA2.5服務端/gmsv/data/npc/family/fmdengon.create"
+      },
+      {
+        "path": "family/fmletter.conf",
+        "bytes": 716,
+        "rar_crc32": "c2e60a34",
+        "sha256": "9f64ed649cad5bf0594aa01cc2ae0ec4294f68cf7ff182b7d35d17f4f4521f75",
+        "archive_entry_path": "石器2.5客戶端+服務端+登入器/SA2.5服務端/gmsv/data/npc/family/fmletter.conf"
+      },
+      {
+        "path": "family/fmletter.create",
+        "bytes": 697,
+        "rar_crc32": "5b27b98f",
+        "sha256": "8d85baa9cf167f0fc581b84daa18cc8bcd827256a997ddc463c9fd63a294d36e",
+        "archive_entry_path": "石器2.5客戶端+服務端+登入器/SA2.5服務端/gmsv/data/npc/family/fmletter.create"
+      },
+      {
+        "path": "family/familyman.template",
+        "bytes": 387,
+        "rar_crc32": "b5c59e2e",
+        "sha256": "ad2da35987c67671dc283468a699c2f0f3da1cd8178d55dcdccfeab4afa99fe9",
+        "archive_entry_path": "石器2.5客戶端+服務端+登入器/SA2.5服務端/gmsv/data/npc/family/familyman.template"
+      },
+      {
+        "path": "family/npcgen.template",
+        "bytes": 301,
+        "rar_crc32": "8c658ee4",
+        "sha256": "34242bf8d13e5b8f1b2dfe97db47fa6a54b7e18b60c6addd3cf69f15d917fadf",
+        "archive_entry_path": "石器2.5客戶端+服務端+登入器/SA2.5服務端/gmsv/data/npc/family/npcgen.template"
+      },
+      {
+        "path": "gmsv/data/itemset.txt",
+        "bytes": 3392473,
+        "rar_crc32": "96397928",
+        "sha256": "a415e78f9aab2e5ea5ca92ecb7430253f7be1ba7c876d6b0bb6d067b1b466688",
+        "archive_entry_path": "石器2.5客戶端+服務端+登入器/SA2.5服務端/gmsv/data/itemset.txt"
+      }
+    ],
+    "archive_member_path_note": "archive_entry_path is the exact RAR physical member path; path is a normalized source-relative query label."
+  },
+  "board": {
+    "config": "gmsv/data/npc/family/fmdengon.create",
+    "template": "npcgen_fmdengon => FmDengon",
+    "original_created_entries": 16,
+    "unique_location_pairs": 16,
+    "each_createnum": 1,
+    "created_entries_floor_x_y_graphic": [
+      [
+        1006,
+        16,
+        19,
+        10062
+      ],
+      [
+        2006,
+        23,
+        19,
+        10062
+      ],
+      [
+        3006,
+        18,
+        17,
+        10062
+      ],
+      [
+        4006,
+        19,
+        18,
+        10062
+      ],
+      [
+        1041,
+        16,
+        9,
+        10062
+      ],
+      [
+        2031,
+        17,
+        9,
+        10062
+      ],
+      [
+        3031,
+        8,
+        9,
+        10062
+      ],
+      [
+        4031,
+        11,
+        7,
+        10062
+      ],
+      [
+        1306,
+        22,
+        14,
+        10063
+      ],
+      [
+        1406,
+        22,
+        19,
+        10062
+      ],
+      [
+        3206,
+        19,
+        19,
+        10062
+      ],
+      [
+        3306,
+        19,
+        18,
+        10062
+      ],
+      [
+        3406,
+        13,
+        12,
+        10063
+      ],
+      [
+        6006,
+        19,
+        19,
+        10062
+      ],
+      [
+        5106,
+        23,
+        12,
+        10062
+      ],
+      [
+        5005,
+        16,
+        11,
+        10062
+      ]
+    ],
+    "menu_windows": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "menu_options_from_1": [
+      2,
+      3,
+      4
+    ],
+    "relevant_semantics": [
+      "family membership list",
+      "family messages",
+      "between-family messages"
+    ],
+    "no_native_ui_executed": true
+  },
+  "letter": {
+    "config": "gmsv/data/npc/family/fmletter.create",
+    "template": "fmletter => FmLetter",
+    "secretary_floor_x_y_family_graphic": [
+      [
+        1041,
+        15,
+        15,
+        1,
+        16065
+      ],
+      [
+        2031,
+        17,
+        17,
+        2,
+        16065
+      ],
+      [
+        3031,
+        14,
+        9,
+        3,
+        16027
+      ],
+      [
+        4031,
+        17,
+        12,
+        4,
+        16030
+      ]
+    ],
+    "menu_windows": [
+      1,
+      10,
+      20
+    ],
+    "entry_destinations": [
+      10,
+      20
+    ],
+    "yes_destinations": [
+      5,
+      6
+    ],
+    "yes_destinations_absent_from_local_conf": [
+      5,
+      6
+    ],
+    "invitation_item_numbers": [
+      19001,
+      19002,
+      19003,
+      19004,
+      20229,
+      20230,
+      20231,
+      20232,
+      20233
+    ],
+    "ride_training_consent_numbers": [
+      19005,
+      19006,
+      19007,
+      19008,
+      20224,
+      20225,
+      20226,
+      20227,
+      20228
+    ],
+    "no_native_item_issuance_executed": true
+  },
+  "item_join": {
+    "table": "gmsv/data/itemset.txt",
+    "physical_rows": 13254,
+    "columns_each": 94,
+    "canonical_key_column_zero_based": 16,
+    "invitation_unique_matches": [
+      {
+        "id": 19001,
+        "physical_row": 12312,
+        "source_name": "家族邀請函",
+        "source_description_relation": "leader 萨姆吉尔"
+      },
+      {
+        "id": 19002,
+        "physical_row": 12313,
+        "source_name": "家族邀請函",
+        "source_description_relation": "leader 玛丽娜丝"
+      },
+      {
+        "id": 19003,
+        "physical_row": 12314,
+        "source_name": "家族邀請函",
+        "source_description_relation": "leader 加加"
+      },
+      {
+        "id": 19004,
+        "physical_row": 12315,
+        "source_name": "家族邀請函",
+        "source_description_relation": "leader 卡鲁它那"
+      },
+      {
+        "id": 20229,
+        "physical_row": 12771,
+        "source_name": "家族邀請函",
+        "source_description_relation": "leader 伊甸"
+      },
+      {
+        "id": 20230,
+        "physical_row": 12772,
+        "source_name": "家族邀請函",
+        "source_description_relation": "leader 塔耳塔"
+      },
+      {
+        "id": 20231,
+        "physical_row": 12773,
+        "source_name": "家族邀請函",
+        "source_description_relation": "leader 尼克斯"
+      },
+      {
+        "id": 20232,
+        "physical_row": 12774,
+        "source_name": "家族邀請函",
+        "source_description_relation": "leader 弗烈顿"
+      },
+      {
+        "id": 20233,
+        "physical_row": 12775,
+        "source_name": "家族邀請函",
+        "source_description_relation": "leader 亚伊欧"
+      }
+    ],
+    "consent_key_column_matches": 0,
+    "consent_missing_exact": [
+      19005,
+      19006,
+      19007,
+      19008,
+      20224,
+      20225,
+      20226,
+      20227,
+      20228
+    ],
+    "guard": "Occurrences of the same digits in unrelated item table columns do not establish key matches; no claim that omitted consent objects cannot exist in any alternate table/version."
+  },
+  "map_join": {
+    "input": "same preserved RAR stoneage2.5/map/*.DAT, little-endian <width><height> + 3 u16 planes",
+    "verified_floor_headers_and_board_cells": 15,
+    "all_matching_map_sizes_and_bounds": true,
+    "missing_board_floor_Dat_in_this_archive": [
+      3006
+    ],
+    "verified_floor_records": [
+      {
+        "floor": 1006,
+        "width": 30,
+        "height": 40,
+        "bytes": 7208,
+        "rar_crc32": "17acbe19",
+        "sha256": "aa2e7d2bdb138545a3efa30f9482d563b1781810a856b4a91c12ce83eb08ab4a",
+        "board_cell_3_u16": [
+          5000,
+          0,
+          49152
+        ],
+        "archive_entry_path": "石器2.5客戶端+服務端+登入器/SA2.5主程式/stoneage2.5/map/1006.DAT"
+      },
+      {
+        "floor": 2006,
+        "width": 40,
+        "height": 30,
+        "bytes": 7208,
+        "rar_crc32": "e367649c",
+        "sha256": "792c9a902170cbe1720bb6f049f6acff2664f7ce313bf924b49534ebffc817da",
+        "board_cell_3_u16": [
+          5001,
+          0,
+          49152
+        ],
+        "archive_entry_path": "石器2.5客戶端+服務端+登入器/SA2.5主程式/stoneage2.5/map/2006.DAT"
+      },
+      {
+        "floor": 4006,
+        "width": 30,
+        "height": 40,
+        "bytes": 7208,
+        "rar_crc32": "be2f7403",
+        "sha256": "a060686d0694939832a75fcb1b6e6204edf63d4ff74eea948f33b9fb75b72729",
+        "board_cell_3_u16": [
+          5000,
+          0,
+          49152
+        ],
+        "archive_entry_path": "石器2.5客戶端+服務端+登入器/SA2.5主程式/stoneage2.5/map/4006.DAT"
+      },
+      {
+        "floor": 1041,
+        "width": 20,
+        "height": 20,
+        "bytes": 2408,
+        "rar_crc32": "69b4bb7e",
+        "sha256": "249066ee2d893e8b0f45787a8fc80a10e52d73ba0465ead8f78e84a59ebd3df7",
+        "board_cell_3_u16": [
+          5000,
+          0,
+          49152
+        ],
+        "archive_entry_path": "石器2.5客戶端+服務端+登入器/SA2.5主程式/stoneage2.5/map/1041.DAT"
+      },
+      {
+        "floor": 2031,
+        "width": 20,
+        "height": 20,
+        "bytes": 2408,
+        "rar_crc32": "0c55e90a",
+        "sha256": "5dbd1f8f1fb404269030812fa7a019b10095c1e9ff0bfbf6bce615af1dfc1d2b",
+        "board_cell_3_u16": [
+          5000,
+          0,
+          49152
+        ],
+        "archive_entry_path": "石器2.5客戶端+服務端+登入器/SA2.5主程式/stoneage2.5/map/2031.DAT"
+      },
+      {
+        "floor": 3031,
+        "width": 20,
+        "height": 20,
+        "bytes": 2408,
+        "rar_crc32": "b93c609f",
+        "sha256": "bd1dc2793f86b50cf3c8d171e90c5cf090704cb2d43543c846ca445988bc261f",
+        "board_cell_3_u16": [
+          5000,
+          0,
+          49152
+        ],
+        "archive_entry_path": "石器2.5客戶端+服務端+登入器/SA2.5主程式/stoneage2.5/map/3031.DAT"
+      },
+      {
+        "floor": 4031,
+        "width": 20,
+        "height": 20,
+        "bytes": 2408,
+        "rar_crc32": "ebab0ddf",
+        "sha256": "ff1c540af89e49d3012d40bb9093f53da78aadc9a234750e894d534e55633620",
+        "board_cell_3_u16": [
+          5000,
+          0,
+          49152
+        ],
+        "archive_entry_path": "石器2.5客戶端+服務端+登入器/SA2.5主程式/stoneage2.5/map/4031.DAT"
+      },
+      {
+        "floor": 1306,
+        "width": 40,
+        "height": 30,
+        "bytes": 7208,
+        "rar_crc32": "189097d3",
+        "sha256": "5dea261ca1c223189cedebdf579642ba134470a27e4f5e1d12505cf2317c18ae",
+        "board_cell_3_u16": [
+          5001,
+          0,
+          49152
+        ],
+        "archive_entry_path": "石器2.5客戶端+服務端+登入器/SA2.5主程式/stoneage2.5/map/1306.DAT"
+      },
+      {
+        "floor": 1406,
+        "width": 35,
+        "height": 35,
+        "bytes": 7358,
+        "rar_crc32": "2da5fda2",
+        "sha256": "26f599cd3ae6a5893f6d04573337723e7e77b79b3d03cde154a7215388a173",
+        "board_cell_3_u16": [
+          6008,
+          0,
+          49152
+        ],
+        "archive_entry_path": "石器2.5客戶端+服務端+登入器/SA2.5主程式/stoneage2.5/map/1406.DAT"
+      },
+      {
+        "floor": 3206,
+        "width": 30,
+        "height": 40,
+        "bytes": 7208,
+        "rar_crc32": "454a7e1e",
+        "sha256": "9c65b9b18795ed08951d799d9136c5cbdfd3ca8963a991b994c677aa8d427e69",
+        "board_cell_3_u16": [
+          5000,
+          0,
+          49152
+        ],
+        "archive_entry_path": "石器2.5客戶端+服務端+登入器/SA2.5主程式/stoneage2.5/map/3206.DAT"
+      },
+      {
+        "floor": 3306,
+        "width": 30,
+        "height": 30,
+        "bytes": 5408,
+        "rar_crc32": "dbc76284",
+        "sha256": "6ad386b21f37baa980f6cc06911dfd4cc316dcf652546d1717ac28d75434d73c",
+        "board_cell_3_u16": [
+          5000,
+          0,
+          49152
+        ],
+        "archive_entry_path": "石器2.5客戶端+服務端+登入器/SA2.5主程式/stoneage2.5/map/3306.DAT"
+      },
+      {
+        "floor": 3406,
+        "width": 40,
+        "height": 30,
+        "bytes": 7208,
+        "rar_crc32": "087aeb92",
+        "sha256": "8e643f9c8c37040af1e753dc8ec4a52d72a3994af215b24ef53236188c35e802",
+        "board_cell_3_u16": [
+          5002,
+          0,
+          49152
+        ],
+        "archive_entry_path": "石器2.5客戶端+服務端+登入器/SA2.5主程式/stoneage2.5/map/3406.DAT"
+      },
+      {
+        "floor": 6006,
+        "width": 30,
+        "height": 40,
+        "bytes": 7208,
+        "rar_crc32": "a04700cf",
+        "sha256": "8b9c1452435f32d2f424fd524603604ca37c62ecb76598a3639569078dc04c7f",
+        "board_cell_3_u16": [
+          5000,
+          0,
+          49152
+        ],
+        "archive_entry_path": "石器2.5客戶端+服務端+登入器/SA2.5主程式/stoneage2.5/map/6006.DAT"
+      },
+      {
+        "floor": 5106,
+        "width": 30,
+        "height": 50,
+        "bytes": 9008,
+        "rar_crc32": "2c89fac4",
+        "sha256": "fae3d3867e54557ad6bcb6ab54b0b33eedc9da31f93527fd0f6db107912ec619",
+        "board_cell_3_u16": [
+          4517,
+          0,
+          49152
+        ],
+        "archive_entry_path": "石器2.5客戶端+服務端+登入器/SA2.5主程式/stoneage2.5/map/5106.DAT"
+      },
+      {
+        "floor": 5005,
+        "width": 40,
+        "height": 30,
+        "bytes": 7208,
+        "rar_crc32": "21c43f6a",
+        "sha256": "924a7fde21d67d7019addba05d8435fc9c4cf14615abab593dc34429113be6f3",
+        "board_cell_3_u16": [
+          4528,
+          0,
+          49152
+        ],
+        "archive_entry_path": "石器2.5客戶端+服務端+登入器/SA2.5主程式/stoneage2.5/map/5005.DAT"
+      }
+    ],
+    "secretary_cells_in_four_floors": {
+      "1041": [
+        5000,
+        0,
+        49152
+      ],
+      "2031": [
+        5001,
+        0,
+        49152
+      ],
+      "3031": [
+        5001,
+        0,
+        49152
+      ],
+      "4031": [
+        5001,
+        0,
+        49152
+      ]
+    },
+    "guard": "third layer 49152 has not been interpreted as collision, interaction, or quest state; a missing file in this archive is not evidence of absence in the original game."
+  },
+  "verification": {
+    "CP950_roundtrip_six_small_npc_texts": true,
+    "rar_header_CRC32_equals_extracted_CRC32_all_22": true,
+    "original_bytes_sha256_all_22": true,
+    "script_location_uniqueness": true,
+    "menu_target_closure_board": true,
+    "menu_target_closure_letter": false
+  },
+  "historical_boundaries": [
+    "Static server-side source configurations only",
+    "No native server/client execution or observed player UI, messages or item delivery",
+    "Mixed2.5 archived materials cannot certify JSS1999 or TW1.0 identical deployment",
+    "No proprietary raw source text, old game graphics, code or binaries in public Git",
+    "Do not infer rewards, runtime registration, permissions, family relation effects, collision, or item creation from these static config joins"
+  ]
+}
