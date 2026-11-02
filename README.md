@@ -1440,3 +1440,8 @@ O75 CI史实订正：PR #133 初稿的 Stage A 检查 run 41362507873 因两处�
 ### 2026-11-02 — O86 长毛象交通原路线、站点与原文字证据
 
 [O86 长毛象客运六条源级线路/六站/原站牌](docs/continuity/STONEAGE-O86-MAMMOTH-BUS-ORIGINAL-SOURCE-20261102.md)：新从完整SHA合格的361255180B后期mixed25私人RAR实际提取35个原源成员共14116B，逐CRC/SHA/长度验证；6个Bus创建各唯一指向6份arg（**300坐标点**，原needstone为50/50/25/30/20/40，waittime全部180）。另26个genout静态原NPC/告示与26份对应原文字节确认；两组各三站共六站，六条路线/12张双端费用牌互核，六张使用方法站牌写明同伴按钮上下车、停站3分钟。**bus.arg第二禁带号403与另五条2403不一致；bus2.arg及bus.create编码不完全合法；一处向导地名与邻近站牌矛盾；3000残留两条无匹配Bus车辆，全部原样留疑**。与2001官方手册的两组三站/三分钟仅做跨年代对照，无法认证容量4、原生不遇敌或同部署。完整[派生SHA/CRC/路线数字](research/recovered/STONEAGE-O86-MAMMOTH-BUS-SOURCE-R1.json)，原脚本和图像不公开。CURRENT历史Git blob不变；NEXT O87轮换另一实源材料，Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、percent=null；不做新游戏体验优化。
+
+
+### 2026-11-02 — O87 原家族留言板、家族秘书邀请函与骑宠同意书源
+
+[O87 原源核验与历史边界](docs/continuity/STONEAGE-O87-FAMILY-BOARD-LETTER-20261102.md)：从完整SHA合格的私人后期混合2.5 RAR定向取证22份原成员，原RAR CRC及逐成员SHA校验一致。原 `fmdengon.create` 有**16条**家族留言板创建坐标，原模板`FmDengon`，窗口支持家族成员列表、家族留言、家族之间留言；其中**15条**在同包地图DAT真实坐标格有三数值，floor3006的DAT在此包缺件，不推原游戏无图。四族长屋原 `fmletter` 秘书菜单含**家族邀请函／骑乘学习同意书**两项；原9个邀请函编号均在同档13,254行×94列`itemset.txt`主键列唯一命中、另9个骑乘同意书编号均不在该列。源配置yes指向5/6但本文件只有1/10/20窗口，保留运行handler与外部表未知，不擅自认定BUG或发放成功。仅静态来源事实，**没有执行原客户端或原商业服，没有真实留言/领函/习骑见证，也不认证JSS1999/TW1同部署**。仅公开[派生源SHA/CRC及结构数值](research/recovered/STONEAGE-O87-FAMILY-BOARD-LETTER-SOURCE-R1.json)，商业原字节不入Git。历史CURRENT blob原样、Stage A7PARTIAL+2OPEN、Stage B/wiki GATED、R79暂停、总体百分比未知；**NEXT O88** 回22域另一具实源游戏内容，不扩泛化家族模拟器或现代体验优化。
