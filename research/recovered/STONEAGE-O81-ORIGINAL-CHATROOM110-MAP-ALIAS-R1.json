@@ -1,0 +1,462 @@
+{
+  "schema": "stoneage.o81.original_chatroom110_map_alias_evidence.v1",
+  "date": "2026-11-02",
+  "fresh_main_head": "c5acde27e45818cfc55c7e4bb9601c7e6032917a",
+  "fresh_main_tree": "bd6c085d4974e866ad4bd969866e5e3683e2de76",
+  "preserved_current_state_blob": "20050acf279a01555ab06a381dfcdc936bd381a6",
+  "evidence_scope": "LATER_COMMUNITY_PRESERVED_MIXED25_NOT_VERIFIED_TW1_OR_JSS1999_DEPLOYMENT",
+  "rar": {
+    "size": 361255180,
+    "sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+    "full_sha_rechecked": true
+  },
+  "client_map": {
+    "floor": 110,
+    "width": 46,
+    "height": 45,
+    "cells": 2070,
+    "DAT": {
+      "bytes": 12428,
+      "sha256": "7d3e4e1dd8582268e14b3d21d0b0594c166f28062b05c8af260a6b214c41930d",
+      "rar_header_crc_verified": true
+    },
+    "MAP": {
+      "bytes": 4148,
+      "sha256": "ea7082a58f057043dd0120bcd4f67b4c1e46d4bb9e26d9aa64524e36d5519fb9",
+      "rar_header_crc_verified": true
+    },
+    "auxiliary_SACH_MAP_source_is_byte_identical": true,
+    "original_three_u16_planes": [
+      {
+        "label": "tile",
+        "nonzero": 1416,
+        "unique": 205,
+        "zero": 654
+      },
+      {
+        "label": "parts",
+        "nonzero": 934,
+        "unique": 46,
+        "zero": 1136
+      },
+      {
+        "label": "uninterpreted_third",
+        "nonzero": 2070,
+        "unique": 3,
+        "values": [
+          [
+            49152,
+            2055
+          ],
+          [
+            49155,
+            12
+          ],
+          [
+            16384,
+            3
+          ]
+        ]
+      }
+    ]
+  },
+  "source_ADRN_custody": {
+    "prior_private_original_archive_name": "stoneage-scene03-private-observation.zip",
+    "bytes": 3356562,
+    "sha256": "fa296ad8e5afb9065fd8a7894fed4f783ad6f393901509f8491383c56a9ee285",
+    "full_zip_integrity_passed": true,
+    "source_filename": "r2-original-observation/source-adrn_15.bin",
+    "source_bytes": 18765120,
+    "source_sha256": "92d0137590d35a7a1f4fb11af3ad13bbc585813a4b0e1e3f933c397007fbff74",
+    "original_ADRN_records": 234564,
+    "matched_source_alias_field_offset": 76,
+    "prior_full_same_PARENT_TW1_ADRN_and_REAL_prefix_proof": "research/recovered/STONEAGE-SCENE21-TOWN1000-SOURCE-R1.json",
+    "prior_qualified_REAL_prefix_bytes": 315842228
+  },
+  "bounded_zone": {
+    "x_inclusive": [
+      33,
+      40
+    ],
+    "y_inclusive": [
+      18,
+      34
+    ],
+    "cells": 136,
+    "original_three_plane_source_cell_values_sha256": "63ca2a923e9d4087b9667fc349419ed91c91342a5f736aa791afd2a4bfafd239",
+    "tile_image_occurrences": 118,
+    "parts_image_occurrences": 20,
+    "image_occurrences": 138,
+    "distinct_image_aliases": 24,
+    "all_24_unique_in_full_original_ADRN": true,
+    "all_24_real_rd_intervals_within_prior_verified_full_TW1_prefix": true,
+    "max_RD_end_exclusive": 17797656
+  },
+  "source_warp_anchor_cells": [
+    {
+      "village": 1012,
+      "ticket": 2521,
+      "hub_return_actor_xy": [
+        37,
+        20
+      ],
+      "hub_entry_target_xy": [
+        37,
+        21
+      ],
+      "return_DAT_u16": [
+        4531,
+        0,
+        49152
+      ],
+      "entry_DAT_u16": [
+        4524,
+        0,
+        49152
+      ],
+      "return_MAP_u16": 16962,
+      "entry_MAP_u16": 14952
+    },
+    {
+      "village": 2012,
+      "ticket": 2522,
+      "hub_return_actor_xy": [
+        37,
+        24
+      ],
+      "hub_entry_target_xy": [
+        37,
+        25
+      ],
+      "return_DAT_u16": [
+        4531,
+        0,
+        49152
+      ],
+      "entry_DAT_u16": [
+        4524,
+        0,
+        49152
+      ],
+      "return_MAP_u16": 46517,
+      "entry_MAP_u16": 41909
+    },
+    {
+      "village": 3012,
+      "ticket": 2523,
+      "hub_return_actor_xy": [
+        37,
+        28
+      ],
+      "hub_entry_target_xy": [
+        37,
+        29
+      ],
+      "return_DAT_u16": [
+        4530,
+        0,
+        49152
+      ],
+      "entry_DAT_u16": [
+        4529,
+        0,
+        49152
+      ],
+      "return_MAP_u16": 257,
+      "entry_MAP_u16": 44610
+    },
+    {
+      "village": 4012,
+      "ticket": 2524,
+      "hub_return_actor_xy": [
+        37,
+        32
+      ],
+      "hub_entry_target_xy": [
+        37,
+        33
+      ],
+      "return_DAT_u16": [
+        4525,
+        0,
+        49152
+      ],
+      "entry_DAT_u16": [
+        4525,
+        0,
+        49152
+      ],
+      "return_MAP_u16": 46517,
+      "entry_MAP_u16": 41643
+    }
+  ],
+  "original_graphic_alias_records": [
+    {
+      "image_alias": 4516,
+      "adrn_index": 1599,
+      "real_rd_offset": 2343547,
+      "rd_size": 1489,
+      "region_occurrences": 6,
+      "width": 64,
+      "height": 47,
+      "adrn_record_sha256": "5180e143853ae37750960601c01d992260836017103411a0aa4b29a9a3fd58ac"
+    },
+    {
+      "image_alias": 4517,
+      "adrn_index": 1600,
+      "real_rd_offset": 2345036,
+      "rd_size": 1465,
+      "region_occurrences": 4,
+      "width": 64,
+      "height": 47,
+      "adrn_record_sha256": "54673258905da109312c18197073ab2b9c5ac64b09dc3316c7a82feacf9381f2"
+    },
+    {
+      "image_alias": 4518,
+      "adrn_index": 1601,
+      "real_rd_offset": 2346501,
+      "rd_size": 1511,
+      "region_occurrences": 6,
+      "width": 64,
+      "height": 47,
+      "adrn_record_sha256": "67b134e87257eaf0bdb3964337b82fef70800672b59caf7bd253e1251ba5eb6b"
+    },
+    {
+      "image_alias": 4519,
+      "adrn_index": 1602,
+      "real_rd_offset": 2348012,
+      "rd_size": 1480,
+      "region_occurrences": 9,
+      "width": 64,
+      "height": 47,
+      "adrn_record_sha256": "f1d8ffc523fc4bab6d15eb2284eb69dd81f48a609a4e8cf5e83091e0a6140ebe"
+    },
+    {
+      "image_alias": 4520,
+      "adrn_index": 1603,
+      "real_rd_offset": 2349492,
+      "rd_size": 1471,
+      "region_occurrences": 5,
+      "width": 64,
+      "height": 47,
+      "adrn_record_sha256": "974b6182cebcaa5c8daaec10c644f4e1c5ff41e70fe19e613e3e1cdb29aa4a4e"
+    },
+    {
+      "image_alias": 4521,
+      "adrn_index": 1604,
+      "real_rd_offset": 2350963,
+      "rd_size": 1497,
+      "region_occurrences": 5,
+      "width": 64,
+      "height": 47,
+      "adrn_record_sha256": "06241e8009356f111ea06b4892e736e6abd836e1eeba1f25fbf9777405948f11"
+    },
+    {
+      "image_alias": 4522,
+      "adrn_index": 1605,
+      "real_rd_offset": 2352460,
+      "rd_size": 1504,
+      "region_occurrences": 7,
+      "width": 64,
+      "height": 47,
+      "adrn_record_sha256": "7fa27d949c822a1a37fe192ba1f2ec2012e07a8351433013ebcd004adf09b734"
+    },
+    {
+      "image_alias": 4523,
+      "adrn_index": 1606,
+      "real_rd_offset": 2353964,
+      "rd_size": 1536,
+      "region_occurrences": 7,
+      "width": 64,
+      "height": 47,
+      "adrn_record_sha256": "c215ce5257039303ea85d31e7bafc341cc241f3c95e849c97349e675f139ee13"
+    },
+    {
+      "image_alias": 4524,
+      "adrn_index": 1607,
+      "real_rd_offset": 2355500,
+      "rd_size": 1466,
+      "region_occurrences": 7,
+      "width": 64,
+      "height": 47,
+      "adrn_record_sha256": "8437ef749b0faaf87da205e56287c8cfcd86f59bc5f5ca27455c5568149efe95"
+    },
+    {
+      "image_alias": 4525,
+      "adrn_index": 1608,
+      "real_rd_offset": 2356966,
+      "rd_size": 1462,
+      "region_occurrences": 7,
+      "width": 64,
+      "height": 47,
+      "adrn_record_sha256": "be7b708a390cb6d53c6b7b10e730ee1ef33c9ea0d509a54a2e7610b2b3ddb279"
+    },
+    {
+      "image_alias": 4526,
+      "adrn_index": 1609,
+      "real_rd_offset": 2358428,
+      "rd_size": 1470,
+      "region_occurrences": 6,
+      "width": 64,
+      "height": 47,
+      "adrn_record_sha256": "402af9af78335c36522569eb0b00174a334c4ee96a50da6b625077e1db35ea2d"
+    },
+    {
+      "image_alias": 4527,
+      "adrn_index": 1610,
+      "real_rd_offset": 2359898,
+      "rd_size": 1452,
+      "region_occurrences": 9,
+      "width": 64,
+      "height": 47,
+      "adrn_record_sha256": "76a7911d3f66eb174f9ebe96461d1d68e3300db6d2e0a86207639c082a25de0d"
+    },
+    {
+      "image_alias": 4528,
+      "adrn_index": 1611,
+      "real_rd_offset": 2361350,
+      "rd_size": 1419,
+      "region_occurrences": 6,
+      "width": 64,
+      "height": 47,
+      "adrn_record_sha256": "a5074fee27f674154ef3626572fc3e5d8f2295b6a43c4d9ba2fddb6b064c0a28"
+    },
+    {
+      "image_alias": 4529,
+      "adrn_index": 1612,
+      "real_rd_offset": 2362769,
+      "rd_size": 1476,
+      "region_occurrences": 10,
+      "width": 64,
+      "height": 47,
+      "adrn_record_sha256": "f9fc0db2e8c76b58d420c5d2b4c616c35a6c1f8cd7a503ca926486110d019d46"
+    },
+    {
+      "image_alias": 4530,
+      "adrn_index": 1613,
+      "real_rd_offset": 2364245,
+      "rd_size": 1448,
+      "region_occurrences": 11,
+      "width": 64,
+      "height": 47,
+      "adrn_record_sha256": "4159cfb31e86ae30fe0a08d127508a1b4c330b3bd5577f2da5a8c002016c9c52"
+    },
+    {
+      "image_alias": 4531,
+      "adrn_index": 1614,
+      "real_rd_offset": 2365693,
+      "rd_size": 1525,
+      "region_occurrences": 8,
+      "width": 64,
+      "height": 47,
+      "adrn_record_sha256": "a8c9006c48b74ac4b68954a8c4e37cfa3f3c53d91628bd84261f88341d320a8b"
+    },
+    {
+      "image_alias": 4605,
+      "adrn_index": 1548,
+      "real_rd_offset": 2263001,
+      "rd_size": 1590,
+      "region_occurrences": 2,
+      "width": 64,
+      "height": 47,
+      "adrn_record_sha256": "62d9e1263c30ea3b7b9a984b943705b33de9278ab072645ada4f4749ee7497bc"
+    },
+    {
+      "image_alias": 4608,
+      "adrn_index": 1551,
+      "real_rd_offset": 2267725,
+      "rd_size": 1551,
+      "region_occurrences": 1,
+      "width": 64,
+      "height": 47,
+      "adrn_record_sha256": "992375bc19ce55e6a991d14f2f70f342a5b04a250ff82ef2de3c8398962f26bc"
+    },
+    {
+      "image_alias": 4616,
+      "adrn_index": 1559,
+      "real_rd_offset": 2280617,
+      "rd_size": 1563,
+      "region_occurrences": 1,
+      "width": 64,
+      "height": 47,
+      "adrn_record_sha256": "f315a61ed7ebc75f67f13aa291d87f937cf548c7cc331d29750703b19a663080"
+    },
+    {
+      "image_alias": 4621,
+      "adrn_index": 1564,
+      "real_rd_offset": 2288520,
+      "rd_size": 1588,
+      "region_occurrences": 1,
+      "width": 64,
+      "height": 47,
+      "adrn_record_sha256": "9cf85fc37cffcbd97ba84034a6bf02ec10920e7a15eef1f3661e8b0a870f8e37"
+    },
+    {
+      "image_alias": 10025,
+      "adrn_index": 4730,
+      "real_rd_offset": 12179588,
+      "rd_size": 3408,
+      "region_occurrences": 4,
+      "width": 120,
+      "height": 90,
+      "adrn_record_sha256": "a68a1b9bd5cb3e3d6d58115c6f8a3228687c50a5f5eac8ce79c905703f7e26cd"
+    },
+    {
+      "image_alias": 10050,
+      "adrn_index": 4754,
+      "real_rd_offset": 13294845,
+      "rd_size": 10059,
+      "region_occurrences": 4,
+      "width": 112,
+      "height": 140,
+      "adrn_record_sha256": "f601a5e095359d414bdb6f65bc5451045b40f94827bfe8b5f14023d3842ef098"
+    },
+    {
+      "image_alias": 12065,
+      "adrn_index": 5019,
+      "real_rd_offset": 17359353,
+      "rd_size": 17260,
+      "region_occurrences": 4,
+      "width": 104,
+      "height": 209,
+      "adrn_record_sha256": "f38530cec2d17e800fb4562edd5a524c441074613a5f9b368b0d14e7beea3f71"
+    },
+    {
+      "image_alias": 12068,
+      "adrn_index": 5049,
+      "real_rd_offset": 17779757,
+      "rd_size": 17899,
+      "region_occurrences": 8,
+      "width": 108,
+      "height": 218,
+      "adrn_record_sha256": "5a9dd8fc56218b3dbf99eead33900c0f0983d8eee5c7eccd6388d5ad1716b2fa"
+    }
+  ],
+  "current_read_blocker": {
+    "RAR_member": "stoneage2.5/data/adrn_15.bin",
+    "libarchive_error": "Parsing filters is unsupported.",
+    "old_custody_ADRN_SHA_fallback_used": true,
+    "current_REAL_15_bin_bytes_read": 0,
+    "current_RD_pixel_blocks_read": 0,
+    "full_picture_not_reconstructed": true
+  },
+  "bounded_unknowns": {
+    "same_actual_server_deployment": false,
+    "original_game_world_entered": false,
+    "original_ticket_consumption_runtime_witness": false,
+    "original_native_warp_runtime_witness": false,
+    "native_color_palette_or_layer_order": false,
+    "third_plane_collision_semantics": false,
+    "actual_original_110_pixel_scene_render": false,
+    "copyrighted_original_assets_committed": false,
+    "new_game_optimization_started": false
+  },
+  "unchanged_project": {
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b": "GATED",
+    "wiki": "GATED",
+    "savedata_R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "next": "O82: only resume floor110 image pixels when original 24 RD blocks can actually be read from qualified original carrier; otherwise rotate to another historical source content material and avoid new emulator/scene helper"
+}
