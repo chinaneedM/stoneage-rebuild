@@ -86,3 +86,8 @@
 ### 2026-11-03 — CHARACTER/NPC-MODULE-01 完整原NPC目录源批量恢复
 
 [CHAR01精确来源与有限结果](continuity/STONEAGE-CHARACTER-NPC-MODULE-01-MIXED25-NPC-BATCH-20261103.md)及[公开源计数/资格收据](../research/recovered/STONEAGE-CHARACTER-NPC-MODULE-01-MIXED25-SOURCE-RECEIPT-R1.json)：从私人mixed25原RAR本轮真实解出完整NPC目录2205个原文件/1930332B，原RAR目录7952项逐遍历，2205份原大小、SHA、CRC全部通过。189份NPCCREATE含4985静态创建块，46份NPCTEMPLATE含119原块；配置关联4131同目录唯一+853同RAR他目录唯一+1歧义，1803个原file:引用中1788同目录树有源文件、15缺。源可观察私人HTML已本地Chromium实测，原全目录ZIP成功私有Library保存。**这些是配置条目而不是4985个NPC/人物**，无官方版本/原运行晋级；TW1先前12人物SPR与101静态类NPC图元独立保留。大行级公开索引仅当前会话可取，远端只固定其SHA和源统计，禁止冒称已持久Git。**NEXT CHARACTER-NPC-MODULE-02**：TW1人物12组及静态101候选原帧像素批量归档。原CURRENT及Stage A7PARTIAL+2OPEN、Stage B/wiki GATED、R79暂停/总体percent=null不变。
+
+
+### 2026-11-03 — CHARACTER/NPC-MODULE-02 台湾1.0十二组人物候选原动作2全帧恢复
+
+[CHAR02来源限定真实原像素/动作完整批次](../research/recovered/STONEAGE-CHARACTER-NPC-MODULE-02-TW1-12-ACTOR-ACTION2-RECEIPT-R1.json)及[恢复说明](continuity/STONEAGE-CHARACTER-NPC-MODULE-02-TW1-12-ACTOR-PIXELS-20261103.md)：从已认证TW1原零售P3H私人源包逐全原件SHA重核EXE/SPR/ADRN/REAL/双SAP；12图形候选组（100000～100220每20一组）的完整原SPR段SHA与旧SCENE23逐个一致；动作码2的8方向96条原序列共有728源帧位置/576不同原位图，原REAL实际解出576/576块、严格RD失败0，旧SCENE23的96源首帧像素SHA全部一致。私人完整262602B逐帧证据表与6578861B原图HTML只作当前会话可下载，不在Git上传原商美术；Chrome本地实际96段读图/帧和候选配色、0 JS/0网络。原商业游戏未进入、12个候选并非官方认证角色数、动作/真实颜色/FPS未知。**NEXT CHARACTER-NPC-MODULE-03：TW1源静态NPC-like 101图块原像素批量验收**，源R99里101个源bitmap不能当101 NPC。保留原CURRENT和全部历史边界不变。

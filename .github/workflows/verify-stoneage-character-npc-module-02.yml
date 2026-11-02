@@ -1,0 +1,21 @@
+name: Verify CHAR02 TW1 original actor batch receipt
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-CHARACTER-NPC-MODULE-02-TW1-12-ACTOR-ACTION2-RECEIPT-R1.json'
+      - 'research/recovered/STONEAGE-SCENE23-BODY-VISUALS-R1.json'
+      - 'tests/test_stoneage_character_npc_module_02_receipt.py'
+      - '.github/workflows/verify-stoneage-character-npc-module-02.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  bounded-source-consistency:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest tests.test_stoneage_character_npc_module_02_receipt -v
