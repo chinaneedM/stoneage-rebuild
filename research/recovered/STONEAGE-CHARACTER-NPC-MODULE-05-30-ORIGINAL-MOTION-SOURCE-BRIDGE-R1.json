@@ -1,0 +1,1408 @@
+{
+  "schema": "stoneage.character_npc_module_05_30_verified_source_config_to_existing_original_SPR_pixels.r1",
+  "date": "2026-11-03",
+  "source_class": "MIXED25_COMMUNITY_ARCHIVE_NOT_OFFICIAL_CLEAN_RETAIL_CLIENT_AND_SERVER_CO_DEPLOYMENT_UNVERIFIED",
+  "original_RAR_sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+  "original_NPC_ZIP_sha256": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+  "original_SCENE13_private_ZIP_sha256": "21b56fe9a49357f0d7815698bd1db67f72076759a2528348888fe06444868238",
+  "original_SCENE13_source_report_sha256": "1f635831ea094a4a3ee04832bd626f5ed85736cef0ce2b7e0e9c1e11e743a1e7",
+  "original_SCENE13_nested_RD_ZIP_sha256": "b1a468c2cccf148f29f42752af55fcd32c99f71cdd9a15dc8977134c49b7dae7",
+  "parent_public_inputs": {
+    "char01": "research/recovered/STONEAGE-CHARACTER-NPC-MODULE-01-FULL-SOURCE-ROWS-R1.json",
+    "char04": "research/recovered/STONEAGE-CHARACTER-NPC-MODULE-04-SAME-CARRIER-GRAPHIC-FUNCTION-JOIN-R1.json",
+    "pet10": "research/recovered/STONEAGE-PET-MODULE-10-ORIGINAL-MIXED25-SERVER-TABLES-R1.json",
+    "r40": "research/recovered/STONEAGE-PRESERVED-PET-SPR-MATERIAL-R40.json"
+  },
+  "count": {
+    "original_NPC_subtree_files_sha_verified_locally": 2205,
+    "prior_original_create_config_rows": 4985,
+    "source_create_config_rows_with_same_RAR_numeric_SPR_index": 617,
+    "distinct_original_graphicname_with_same_RAR_numeric_SPR_index": 108,
+    "original_graphicname_with_reused_full_SPR_and_RD_material": 3,
+    "source_create_rows_linked_to_actual_old_source_pixels": 30,
+    "original_graphicname_source_index_only_without_full_SPR_or_RD_qualification": 105,
+    "source_create_rows_source_index_only_without_full_SPR_or_RD_qualification": 587,
+    "earlier_R13_original_RD_blocks_SHA_reverified_locally": 208,
+    "earlier_R13_original_action0_direction_sequences": 24,
+    "earlier_R13_original_action0_frame_occurrences": 352,
+    "new_original_RD_images_discovered_this_turn": 0,
+    "initial_original_NPC_source_files_SHA_mismatch": 0
+  },
+  "prior_original_SPR_groups": [
+    {
+      "spr_no": 100250,
+      "index": 240,
+      "full_segment_sha256": "eb1a87cd4cc8e3b409990783c7bcc3bc463acab4cac7d2d961127d899da047ef",
+      "source_original_action0_direction_count": 8
+    },
+    {
+      "spr_no": 100251,
+      "index": 241,
+      "full_segment_sha256": "073278ba6ae1e623eea969deef11f99fd9be8b995af332506e830bd046c86764",
+      "source_original_action0_direction_count": 8
+    },
+    {
+      "spr_no": 100252,
+      "index": 242,
+      "full_segment_sha256": "eeb2ec4546277c2acdf1b43fff7967c4c0fe5ac5c019bb7d68a901e134691b0a",
+      "source_original_action0_direction_count": 8
+    }
+  ],
+  "graphic_material_status": [
+    {
+      "graphicname": 100000,
+      "original_SPR_index_positions": [
+        0
+      ],
+      "config_occurrences": 3,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100010,
+      "original_SPR_index_positions": [
+        10
+      ],
+      "config_occurrences": 3,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100015,
+      "original_SPR_index_positions": [
+        15
+      ],
+      "config_occurrences": 2,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100036,
+      "original_SPR_index_positions": [
+        36
+      ],
+      "config_occurrences": 10,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100060,
+      "original_SPR_index_positions": [
+        60
+      ],
+      "config_occurrences": 6,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100065,
+      "original_SPR_index_positions": [
+        65
+      ],
+      "config_occurrences": 7,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100070,
+      "original_SPR_index_positions": [
+        70
+      ],
+      "config_occurrences": 6,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100075,
+      "original_SPR_index_positions": [
+        75
+      ],
+      "config_occurrences": 4,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100091,
+      "original_SPR_index_positions": [
+        91
+      ],
+      "config_occurrences": 200,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100110,
+      "original_SPR_index_positions": [
+        110
+      ],
+      "config_occurrences": 1,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100111,
+      "original_SPR_index_positions": [
+        111
+      ],
+      "config_occurrences": 1,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100120,
+      "original_SPR_index_positions": [
+        120
+      ],
+      "config_occurrences": 3,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100125,
+      "original_SPR_index_positions": [
+        125
+      ],
+      "config_occurrences": 3,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100130,
+      "original_SPR_index_positions": [
+        130
+      ],
+      "config_occurrences": 3,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100185,
+      "original_SPR_index_positions": [
+        185
+      ],
+      "config_occurrences": 2,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100190,
+      "original_SPR_index_positions": [
+        190
+      ],
+      "config_occurrences": 3,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100195,
+      "original_SPR_index_positions": [
+        195
+      ],
+      "config_occurrences": 4,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100201,
+      "original_SPR_index_positions": [
+        201
+      ],
+      "config_occurrences": 1,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100210,
+      "original_SPR_index_positions": [
+        210
+      ],
+      "config_occurrences": 1,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100230,
+      "original_SPR_index_positions": [
+        230
+      ],
+      "config_occurrences": 2,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100234,
+      "original_SPR_index_positions": [
+        234
+      ],
+      "config_occurrences": 1,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100250,
+      "original_SPR_index_positions": [
+        240
+      ],
+      "config_occurrences": 13,
+      "original_full_SPR_material_qualification": "R40_AND_SCENE13_ACTUAL_ORIGINAL_ACTION0_RD",
+      "verified_full_SPR_segment_sha256": "eb1a87cd4cc8e3b409990783c7bcc3bc463acab4cac7d2d961127d899da047ef"
+    },
+    {
+      "graphicname": 100251,
+      "original_SPR_index_positions": [
+        241
+      ],
+      "config_occurrences": 3,
+      "original_full_SPR_material_qualification": "R40_AND_SCENE13_ACTUAL_ORIGINAL_ACTION0_RD",
+      "verified_full_SPR_segment_sha256": "073278ba6ae1e623eea969deef11f99fd9be8b995af332506e830bd046c86764"
+    },
+    {
+      "graphicname": 100252,
+      "original_SPR_index_positions": [
+        242
+      ],
+      "config_occurrences": 14,
+      "original_full_SPR_material_qualification": "R40_AND_SCENE13_ACTUAL_ORIGINAL_ACTION0_RD",
+      "verified_full_SPR_segment_sha256": "eeb2ec4546277c2acdf1b43fff7967c4c0fe5ac5c019bb7d68a901e134691b0a"
+    },
+    {
+      "graphicname": 100256,
+      "original_SPR_index_positions": [
+        246
+      ],
+      "config_occurrences": 1,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100257,
+      "original_SPR_index_positions": [
+        247
+      ],
+      "config_occurrences": 2,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100259,
+      "original_SPR_index_positions": [
+        249
+      ],
+      "config_occurrences": 13,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100265,
+      "original_SPR_index_positions": [
+        255
+      ],
+      "config_occurrences": 2,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100267,
+      "original_SPR_index_positions": [
+        257
+      ],
+      "config_occurrences": 2,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100271,
+      "original_SPR_index_positions": [
+        261
+      ],
+      "config_occurrences": 3,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100272,
+      "original_SPR_index_positions": [
+        262
+      ],
+      "config_occurrences": 1,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100274,
+      "original_SPR_index_positions": [
+        264
+      ],
+      "config_occurrences": 9,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100275,
+      "original_SPR_index_positions": [
+        265
+      ],
+      "config_occurrences": 1,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100276,
+      "original_SPR_index_positions": [
+        266
+      ],
+      "config_occurrences": 1,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100277,
+      "original_SPR_index_positions": [
+        267
+      ],
+      "config_occurrences": 1,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100278,
+      "original_SPR_index_positions": [
+        268
+      ],
+      "config_occurrences": 3,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100279,
+      "original_SPR_index_positions": [
+        269
+      ],
+      "config_occurrences": 1,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100280,
+      "original_SPR_index_positions": [
+        270
+      ],
+      "config_occurrences": 1,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100287,
+      "original_SPR_index_positions": [
+        277
+      ],
+      "config_occurrences": 4,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100288,
+      "original_SPR_index_positions": [
+        278
+      ],
+      "config_occurrences": 5,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100289,
+      "original_SPR_index_positions": [
+        279
+      ],
+      "config_occurrences": 3,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100290,
+      "original_SPR_index_positions": [
+        280
+      ],
+      "config_occurrences": 6,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100291,
+      "original_SPR_index_positions": [
+        281
+      ],
+      "config_occurrences": 3,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100293,
+      "original_SPR_index_positions": [
+        283
+      ],
+      "config_occurrences": 1,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100294,
+      "original_SPR_index_positions": [
+        284
+      ],
+      "config_occurrences": 1,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100295,
+      "original_SPR_index_positions": [
+        285
+      ],
+      "config_occurrences": 2,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100296,
+      "original_SPR_index_positions": [
+        286
+      ],
+      "config_occurrences": 2,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100297,
+      "original_SPR_index_positions": [
+        287
+      ],
+      "config_occurrences": 2,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100322,
+      "original_SPR_index_positions": [
+        296
+      ],
+      "config_occurrences": 6,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100323,
+      "original_SPR_index_positions": [
+        297
+      ],
+      "config_occurrences": 1,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100326,
+      "original_SPR_index_positions": [
+        300
+      ],
+      "config_occurrences": 1,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100327,
+      "original_SPR_index_positions": [
+        301
+      ],
+      "config_occurrences": 1,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100328,
+      "original_SPR_index_positions": [
+        302
+      ],
+      "config_occurrences": 9,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100329,
+      "original_SPR_index_positions": [
+        303
+      ],
+      "config_occurrences": 1,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100335,
+      "original_SPR_index_positions": [
+        305
+      ],
+      "config_occurrences": 5,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100336,
+      "original_SPR_index_positions": [
+        306
+      ],
+      "config_occurrences": 3,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100338,
+      "original_SPR_index_positions": [
+        308
+      ],
+      "config_occurrences": 1,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100339,
+      "original_SPR_index_positions": [
+        309
+      ],
+      "config_occurrences": 2,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100343,
+      "original_SPR_index_positions": [
+        313
+      ],
+      "config_occurrences": 3,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100346,
+      "original_SPR_index_positions": [
+        316
+      ],
+      "config_occurrences": 3,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100351,
+      "original_SPR_index_positions": [
+        321
+      ],
+      "config_occurrences": 8,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100353,
+      "original_SPR_index_positions": [
+        323
+      ],
+      "config_occurrences": 6,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100354,
+      "original_SPR_index_positions": [
+        324
+      ],
+      "config_occurrences": 4,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100355,
+      "original_SPR_index_positions": [
+        325
+      ],
+      "config_occurrences": 17,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100357,
+      "original_SPR_index_positions": [
+        327
+      ],
+      "config_occurrences": 1,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100367,
+      "original_SPR_index_positions": [
+        333
+      ],
+      "config_occurrences": 2,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100368,
+      "original_SPR_index_positions": [
+        334
+      ],
+      "config_occurrences": 3,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100370,
+      "original_SPR_index_positions": [
+        336
+      ],
+      "config_occurrences": 14,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100371,
+      "original_SPR_index_positions": [
+        337
+      ],
+      "config_occurrences": 2,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100372,
+      "original_SPR_index_positions": [
+        338
+      ],
+      "config_occurrences": 1,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100373,
+      "original_SPR_index_positions": [
+        339
+      ],
+      "config_occurrences": 3,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100374,
+      "original_SPR_index_positions": [
+        340
+      ],
+      "config_occurrences": 3,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100379,
+      "original_SPR_index_positions": [
+        345
+      ],
+      "config_occurrences": 11,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100380,
+      "original_SPR_index_positions": [
+        346
+      ],
+      "config_occurrences": 1,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100384,
+      "original_SPR_index_positions": [
+        350
+      ],
+      "config_occurrences": 2,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100385,
+      "original_SPR_index_positions": [
+        351
+      ],
+      "config_occurrences": 1,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100386,
+      "original_SPR_index_positions": [
+        352
+      ],
+      "config_occurrences": 1,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100388,
+      "original_SPR_index_positions": [
+        354
+      ],
+      "config_occurrences": 5,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100389,
+      "original_SPR_index_positions": [
+        355
+      ],
+      "config_occurrences": 1,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100393,
+      "original_SPR_index_positions": [
+        359
+      ],
+      "config_occurrences": 1,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100394,
+      "original_SPR_index_positions": [
+        360
+      ],
+      "config_occurrences": 6,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100396,
+      "original_SPR_index_positions": [
+        362
+      ],
+      "config_occurrences": 4,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100401,
+      "original_SPR_index_positions": [
+        364
+      ],
+      "config_occurrences": 16,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100405,
+      "original_SPR_index_positions": [
+        368
+      ],
+      "config_occurrences": 1,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100406,
+      "original_SPR_index_positions": [
+        369
+      ],
+      "config_occurrences": 11,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100407,
+      "original_SPR_index_positions": [
+        370
+      ],
+      "config_occurrences": 2,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100431,
+      "original_SPR_index_positions": [
+        394
+      ],
+      "config_occurrences": 4,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100432,
+      "original_SPR_index_positions": [
+        395
+      ],
+      "config_occurrences": 16,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100433,
+      "original_SPR_index_positions": [
+        396
+      ],
+      "config_occurrences": 2,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100434,
+      "original_SPR_index_positions": [
+        397
+      ],
+      "config_occurrences": 2,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100436,
+      "original_SPR_index_positions": [
+        399
+      ],
+      "config_occurrences": 7,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100437,
+      "original_SPR_index_positions": [
+        400
+      ],
+      "config_occurrences": 2,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100438,
+      "original_SPR_index_positions": [
+        401
+      ],
+      "config_occurrences": 1,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100439,
+      "original_SPR_index_positions": [
+        402
+      ],
+      "config_occurrences": 5,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100444,
+      "original_SPR_index_positions": [
+        407
+      ],
+      "config_occurrences": 2,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100446,
+      "original_SPR_index_positions": [
+        409
+      ],
+      "config_occurrences": 3,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100451,
+      "original_SPR_index_positions": [
+        414
+      ],
+      "config_occurrences": 10,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100456,
+      "original_SPR_index_positions": [
+        419
+      ],
+      "config_occurrences": 1,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100457,
+      "original_SPR_index_positions": [
+        420
+      ],
+      "config_occurrences": 2,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100461,
+      "original_SPR_index_positions": [
+        424
+      ],
+      "config_occurrences": 16,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100471,
+      "original_SPR_index_positions": [
+        434
+      ],
+      "config_occurrences": 1,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100725,
+      "original_SPR_index_positions": [
+        489
+      ],
+      "config_occurrences": 3,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100768,
+      "original_SPR_index_positions": [
+        532
+      ],
+      "config_occurrences": 1,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 100886,
+      "original_SPR_index_positions": [
+        650
+      ],
+      "config_occurrences": 2,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 101019,
+      "original_SPR_index_positions": [
+        703
+      ],
+      "config_occurrences": 2,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 101049,
+      "original_SPR_index_positions": [
+        733
+      ],
+      "config_occurrences": 2,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 101079,
+      "original_SPR_index_positions": [
+        763
+      ],
+      "config_occurrences": 2,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    },
+    {
+      "graphicname": 101109,
+      "original_SPR_index_positions": [
+        793
+      ],
+      "config_occurrences": 2,
+      "original_full_SPR_material_qualification": "INDEX_ONLY_UNQUALIFIED_FULL_SPR_OR_RD",
+      "verified_full_SPR_segment_sha256": null
+    }
+  ],
+  "config_with_existing_real_art": [
+    {
+      "source_create_path": "genout/11000npc.create",
+      "source_create_ordinal": 2,
+      "source_block_sha256": "1f3556c62c39fe9232b737e4c1c52417689a3c321208e7f2c47cd414ff436c40",
+      "source_floorid": 11006,
+      "source_graphicname": 100250,
+      "source_template_function": "",
+      "source_original_SPR_segment_sha256": "eb1a87cd4cc8e3b409990783c7bcc3bc463acab4cac7d2d961127d899da047ef",
+      "source_SPR_group_index": 240,
+      "existing_original_RD_material": "REUSED_PRIOR_SCENE13_ACTION0_EIGHT_DIRECTIONS",
+      "runtime_render_binding_not_proven": true
+    },
+    {
+      "source_create_path": "genout/1100npc_m.create",
+      "source_create_ordinal": 3,
+      "source_block_sha256": "3b3e353ec65d9b74af4c222e911208da037e590bf22ce8def6cd49934382637b",
+      "source_floorid": 1100,
+      "source_graphicname": 100252,
+      "source_template_function": "TownPeople",
+      "source_original_SPR_segment_sha256": "eeb2ec4546277c2acdf1b43fff7967c4c0fe5ac5c019bb7d68a901e134691b0a",
+      "source_SPR_group_index": 242,
+      "existing_original_RD_material": "REUSED_PRIOR_SCENE13_ACTION0_EIGHT_DIRECTIONS",
+      "runtime_render_binding_not_proven": true
+    },
+    {
+      "source_create_path": "genout/2000npc_m.create",
+      "source_create_ordinal": 12,
+      "source_block_sha256": "cc0c2f05b001d9b82af9900f4e6673269164abfa7cfbc9182b3cfbdafcd4c092",
+      "source_floorid": 2000,
+      "source_graphicname": 100251,
+      "source_template_function": "TownPeople",
+      "source_original_SPR_segment_sha256": "073278ba6ae1e623eea969deef11f99fd9be8b995af332506e830bd046c86764",
+      "source_SPR_group_index": 241,
+      "existing_original_RD_material": "REUSED_PRIOR_SCENE13_ACTION0_EIGHT_DIRECTIONS",
+      "runtime_render_binding_not_proven": true
+    },
+    {
+      "source_create_path": "genout/bait_01.create",
+      "source_create_ordinal": 21,
+      "source_block_sha256": "618e8b8b322b19029d9a1cb4358e29f3f42309617239418f7b1d09d88e374550",
+      "source_floorid": 201,
+      "source_graphicname": 100250,
+      "source_template_function": "TownPeople",
+      "source_original_SPR_segment_sha256": "eb1a87cd4cc8e3b409990783c7bcc3bc463acab4cac7d2d961127d899da047ef",
+      "source_SPR_group_index": 240,
+      "existing_original_RD_material": "REUSED_PRIOR_SCENE13_ACTION0_EIGHT_DIRECTIONS",
+      "runtime_render_binding_not_proven": true
+    },
+    {
+      "source_create_path": "genout/bait_01.create",
+      "source_create_ordinal": 22,
+      "source_block_sha256": "40cab9a1bf09274b2ec7564e6c75145b2c07e19fe963d19ec9622869053783f4",
+      "source_floorid": 201,
+      "source_graphicname": 100251,
+      "source_template_function": "TownPeople",
+      "source_original_SPR_segment_sha256": "073278ba6ae1e623eea969deef11f99fd9be8b995af332506e830bd046c86764",
+      "source_SPR_group_index": 241,
+      "existing_original_RD_material": "REUSED_PRIOR_SCENE13_ACTION0_EIGHT_DIRECTIONS",
+      "runtime_render_binding_not_proven": true
+    },
+    {
+      "source_create_path": "genout/bait_01.create",
+      "source_create_ordinal": 23,
+      "source_block_sha256": "f0917e1fcf47b5be96919f1cf55e896b3e4ac1380890b75983486fd76d772f5e",
+      "source_floorid": 201,
+      "source_graphicname": 100252,
+      "source_template_function": "TownPeople",
+      "source_original_SPR_segment_sha256": "eeb2ec4546277c2acdf1b43fff7967c4c0fe5ac5c019bb7d68a901e134691b0a",
+      "source_SPR_group_index": 242,
+      "existing_original_RD_material": "REUSED_PRIOR_SCENE13_ACTION0_EIGHT_DIRECTIONS",
+      "runtime_render_binding_not_proven": true
+    },
+    {
+      "source_create_path": "genout/bait_01.create",
+      "source_create_ordinal": 24,
+      "source_block_sha256": "ba0b3458b0b57de8a5f12ec69b62513a11bb968daeb05196d784fa2682f065b0",
+      "source_floorid": 201,
+      "source_graphicname": 100252,
+      "source_template_function": "TownPeople",
+      "source_original_SPR_segment_sha256": "eeb2ec4546277c2acdf1b43fff7967c4c0fe5ac5c019bb7d68a901e134691b0a",
+      "source_SPR_group_index": 242,
+      "existing_original_RD_material": "REUSED_PRIOR_SCENE13_ACTION0_EIGHT_DIRECTIONS",
+      "runtime_render_binding_not_proven": true
+    },
+    {
+      "source_create_path": "genout/bait_01.create",
+      "source_create_ordinal": 25,
+      "source_block_sha256": "c8467368304afb0ba9e1e3ea05fa4ff99a9998211d5f970034c2097d938318c4",
+      "source_floorid": 201,
+      "source_graphicname": 100250,
+      "source_template_function": "TownPeople",
+      "source_original_SPR_segment_sha256": "eb1a87cd4cc8e3b409990783c7bcc3bc463acab4cac7d2d961127d899da047ef",
+      "source_SPR_group_index": 240,
+      "existing_original_RD_material": "REUSED_PRIOR_SCENE13_ACTION0_EIGHT_DIRECTIONS",
+      "runtime_render_binding_not_proven": true
+    },
+    {
+      "source_create_path": "genout/duelroom.create",
+      "source_create_ordinal": 22,
+      "source_block_sha256": "71f674e941d76daae73d40f268ef5a367bcd5371b9d91d0dc4f227d0871c005a",
+      "source_floorid": 130,
+      "source_graphicname": 100250,
+      "source_template_function": "",
+      "source_original_SPR_segment_sha256": "eb1a87cd4cc8e3b409990783c7bcc3bc463acab4cac7d2d961127d899da047ef",
+      "source_SPR_group_index": 240,
+      "existing_original_RD_material": "REUSED_PRIOR_SCENE13_ACTION0_EIGHT_DIRECTIONS",
+      "runtime_render_binding_not_proven": true
+    },
+    {
+      "source_create_path": "genout/shop_event.create",
+      "source_create_ordinal": 19,
+      "source_block_sha256": "3548688501df230efe80890b49578d7d770b90d358fa763127f7fb51b136d9a8",
+      "source_floorid": 10920,
+      "source_graphicname": 100250,
+      "source_template_function": "",
+      "source_original_SPR_segment_sha256": "eb1a87cd4cc8e3b409990783c7bcc3bc463acab4cac7d2d961127d899da047ef",
+      "source_SPR_group_index": 240,
+      "existing_original_RD_material": "REUSED_PRIOR_SCENE13_ACTION0_EIGHT_DIRECTIONS",
+      "runtime_render_binding_not_proven": true
+    },
+    {
+      "source_create_path": "genout/shop_event.create",
+      "source_create_ordinal": 20,
+      "source_block_sha256": "b152ce25e01a559634668f3eb6a71930f8a86a826eb3dea689fd7462eb971ff2",
+      "source_floorid": 10920,
+      "source_graphicname": 100252,
+      "source_template_function": "",
+      "source_original_SPR_segment_sha256": "eeb2ec4546277c2acdf1b43fff7967c4c0fe5ac5c019bb7d68a901e134691b0a",
+      "source_SPR_group_index": 242,
+      "existing_original_RD_material": "REUSED_PRIOR_SCENE13_ACTION0_EIGHT_DIRECTIONS",
+      "runtime_render_binding_not_proven": true
+    },
+    {
+      "source_create_path": "genout/shop_m.create",
+      "source_create_ordinal": 4,
+      "source_block_sha256": "6ab0b44955c14567fa373f58baa571622f0663585e0209bce6e0b9f07afa61f7",
+      "source_floorid": 1003,
+      "source_graphicname": 100250,
+      "source_template_function": "",
+      "source_original_SPR_segment_sha256": "eb1a87cd4cc8e3b409990783c7bcc3bc463acab4cac7d2d961127d899da047ef",
+      "source_SPR_group_index": 240,
+      "existing_original_RD_material": "REUSED_PRIOR_SCENE13_ACTION0_EIGHT_DIRECTIONS",
+      "runtime_render_binding_not_proven": true
+    },
+    {
+      "source_create_path": "genout/shop_m.create",
+      "source_create_ordinal": 5,
+      "source_block_sha256": "8db0ee1e6c79a6a4c2bac291134329fb116eaaf0ee1ea6afd67a801cd88fdad6",
+      "source_floorid": 1003,
+      "source_graphicname": 100252,
+      "source_template_function": "",
+      "source_original_SPR_segment_sha256": "eeb2ec4546277c2acdf1b43fff7967c4c0fe5ac5c019bb7d68a901e134691b0a",
+      "source_SPR_group_index": 242,
+      "existing_original_RD_material": "REUSED_PRIOR_SCENE13_ACTION0_EIGHT_DIRECTIONS",
+      "runtime_render_binding_not_proven": true
+    },
+    {
+      "source_create_path": "genout/shop_m.create",
+      "source_create_ordinal": 72,
+      "source_block_sha256": "fb63d4462854aee5db7062ca2a09fa2a9aa0f431bee5b0fbd2e19c27c684d24d",
+      "source_floorid": 1403,
+      "source_graphicname": 100250,
+      "source_template_function": "",
+      "source_original_SPR_segment_sha256": "eb1a87cd4cc8e3b409990783c7bcc3bc463acab4cac7d2d961127d899da047ef",
+      "source_SPR_group_index": 240,
+      "existing_original_RD_material": "REUSED_PRIOR_SCENE13_ACTION0_EIGHT_DIRECTIONS",
+      "runtime_render_binding_not_proven": true
+    },
+    {
+      "source_create_path": "genout/shop_m.create",
+      "source_create_ordinal": 85,
+      "source_block_sha256": "207c76597e22032620f9cb9fe85c71dc18b37535367b89961b632ade8c3cfc1d",
+      "source_floorid": 2003,
+      "source_graphicname": 100252,
+      "source_template_function": "",
+      "source_original_SPR_segment_sha256": "eeb2ec4546277c2acdf1b43fff7967c4c0fe5ac5c019bb7d68a901e134691b0a",
+      "source_SPR_group_index": 242,
+      "existing_original_RD_material": "REUSED_PRIOR_SCENE13_ACTION0_EIGHT_DIRECTIONS",
+      "runtime_render_binding_not_proven": true
+    },
+    {
+      "source_create_path": "genout/shop_m.create",
+      "source_create_ordinal": 86,
+      "source_block_sha256": "351ccd03cc8daae5060f38c6f3d4510e00614e5daf96d6acbdd775f0b70079bc",
+      "source_floorid": 2003,
+      "source_graphicname": 100251,
+      "source_template_function": "",
+      "source_original_SPR_segment_sha256": "073278ba6ae1e623eea969deef11f99fd9be8b995af332506e830bd046c86764",
+      "source_SPR_group_index": 241,
+      "existing_original_RD_material": "REUSED_PRIOR_SCENE13_ACTION0_EIGHT_DIRECTIONS",
+      "runtime_render_binding_not_proven": true
+    },
+    {
+      "source_create_path": "genout/shop_m2.create",
+      "source_create_ordinal": 5,
+      "source_block_sha256": "1d405b1184d2984e51ed987458a46cef74a8195468769a88908834e333bf0a08",
+      "source_floorid": 3003,
+      "source_graphicname": 100252,
+      "source_template_function": "",
+      "source_original_SPR_segment_sha256": "eeb2ec4546277c2acdf1b43fff7967c4c0fe5ac5c019bb7d68a901e134691b0a",
+      "source_SPR_group_index": 242,
+      "existing_original_RD_material": "REUSED_PRIOR_SCENE13_ACTION0_EIGHT_DIRECTIONS",
+      "runtime_render_binding_not_proven": true
+    },
+    {
+      "source_create_path": "genout/shop_m3.create",
+      "source_create_ordinal": 7,
+      "source_block_sha256": "eee667f59f727c3c02311b738353a1be492a1a606a590c615ef6eabcc578acc1",
+      "source_floorid": 5003,
+      "source_graphicname": 100252,
+      "source_template_function": "",
+      "source_original_SPR_segment_sha256": "eeb2ec4546277c2acdf1b43fff7967c4c0fe5ac5c019bb7d68a901e134691b0a",
+      "source_SPR_group_index": 242,
+      "existing_original_RD_material": "REUSED_PRIOR_SCENE13_ACTION0_EIGHT_DIRECTIONS",
+      "runtime_render_binding_not_proven": true
+    },
+    {
+      "source_create_path": "giiru/event/garunaev1.create",
+      "source_create_ordinal": 2,
+      "source_block_sha256": "24fe33973fc4475c1c6b05945097b6a5b866efb5b02f7ec21a00d6dc82daceb2",
+      "source_floorid": 31205,
+      "source_graphicname": 100250,
+      "source_template_function": "ExChangeMan",
+      "source_original_SPR_segment_sha256": "eb1a87cd4cc8e3b409990783c7bcc3bc463acab4cac7d2d961127d899da047ef",
+      "source_SPR_group_index": 240,
+      "existing_original_RD_material": "REUSED_PRIOR_SCENE13_ACTION0_EIGHT_DIRECTIONS",
+      "runtime_render_binding_not_proven": true
+    },
+    {
+      "source_create_path": "giiru/event/garunaev1.create",
+      "source_create_ordinal": 5,
+      "source_block_sha256": "0f42a7d77ae0ad605f72e1fb82f2d07f3cc3b5a88dfdc7b1c9548cb9d46ea6e6",
+      "source_floorid": 31205,
+      "source_graphicname": 100252,
+      "source_template_function": "ExChangeMan",
+      "source_original_SPR_segment_sha256": "eeb2ec4546277c2acdf1b43fff7967c4c0fe5ac5c019bb7d68a901e134691b0a",
+      "source_SPR_group_index": 242,
+      "existing_original_RD_material": "REUSED_PRIOR_SCENE13_ACTION0_EIGHT_DIRECTIONS",
+      "runtime_render_binding_not_proven": true
+    },
+    {
+      "source_create_path": "jaruga/event/event07n.create",
+      "source_create_ordinal": 0,
+      "source_block_sha256": "c8f39826167b46ed9b9fcf8043cb641f3f42ddb0a1ad5090f5391fa5d97b4705",
+      "source_floorid": 20401,
+      "source_graphicname": 100252,
+      "source_template_function": "ExChangeMan",
+      "source_original_SPR_segment_sha256": "eeb2ec4546277c2acdf1b43fff7967c4c0fe5ac5c019bb7d68a901e134691b0a",
+      "source_SPR_group_index": 242,
+      "existing_original_RD_material": "REUSED_PRIOR_SCENE13_ACTION0_EIGHT_DIRECTIONS",
+      "runtime_render_binding_not_proven": true
+    },
+    {
+      "source_create_path": "jaruga/event/event07n.create",
+      "source_create_ordinal": 1,
+      "source_block_sha256": "d1ae0e4ec01c22a72b3ea601b1278038264e77fd7e7b92cb5f33912fd48a5fbc",
+      "source_floorid": 20404,
+      "source_graphicname": 100252,
+      "source_template_function": "ExChangeMan",
+      "source_original_SPR_segment_sha256": "eeb2ec4546277c2acdf1b43fff7967c4c0fe5ac5c019bb7d68a901e134691b0a",
+      "source_SPR_group_index": 242,
+      "existing_original_RD_material": "REUSED_PRIOR_SCENE13_ACTION0_EIGHT_DIRECTIONS",
+      "runtime_render_binding_not_proven": true
+    },
+    {
+      "source_create_path": "jaruga/event/event07n.create",
+      "source_create_ordinal": 2,
+      "source_block_sha256": "36810158566329dda265cf8fd9f0287afd33283554e5467d5032a0091edc3df4",
+      "source_floorid": 20406,
+      "source_graphicname": 100250,
+      "source_template_function": "ExChangeMan",
+      "source_original_SPR_segment_sha256": "eb1a87cd4cc8e3b409990783c7bcc3bc463acab4cac7d2d961127d899da047ef",
+      "source_SPR_group_index": 240,
+      "existing_original_RD_material": "REUSED_PRIOR_SCENE13_ACTION0_EIGHT_DIRECTIONS",
+      "runtime_render_binding_not_proven": true
+    },
+    {
+      "source_create_path": "jaruga/event/event07n.create",
+      "source_create_ordinal": 3,
+      "source_block_sha256": "4cf0f5ca2a5a2446f797e0508358d806e98bece16b04da06aaba47b7b5dd2ed6",
+      "source_floorid": 20401,
+      "source_graphicname": 100250,
+      "source_template_function": "ExChangeMan",
+      "source_original_SPR_segment_sha256": "eb1a87cd4cc8e3b409990783c7bcc3bc463acab4cac7d2d961127d899da047ef",
+      "source_SPR_group_index": 240,
+      "existing_original_RD_material": "REUSED_PRIOR_SCENE13_ACTION0_EIGHT_DIRECTIONS",
+      "runtime_render_binding_not_proven": true
+    },
+    {
+      "source_create_path": "jaruga/event/event07n.create",
+      "source_create_ordinal": 4,
+      "source_block_sha256": "27b3cfd4329f5e2a308cd3219b04beec0343bd3d5215a87e3829085e4cdf455f",
+      "source_floorid": 20402,
+      "source_graphicname": 100250,
+      "source_template_function": "ExChangeMan",
+      "source_original_SPR_segment_sha256": "eb1a87cd4cc8e3b409990783c7bcc3bc463acab4cac7d2d961127d899da047ef",
+      "source_SPR_group_index": 240,
+      "existing_original_RD_material": "REUSED_PRIOR_SCENE13_ACTION0_EIGHT_DIRECTIONS",
+      "runtime_render_binding_not_proven": true
+    },
+    {
+      "source_create_path": "jaruga/event/event07n.create",
+      "source_create_ordinal": 5,
+      "source_block_sha256": "a0aa472a8b14be101b9e2c53e4b17c533e5863d0f506a648b578675013067073",
+      "source_floorid": 20403,
+      "source_graphicname": 100252,
+      "source_template_function": "ExChangeMan",
+      "source_original_SPR_segment_sha256": "eeb2ec4546277c2acdf1b43fff7967c4c0fe5ac5c019bb7d68a901e134691b0a",
+      "source_SPR_group_index": 242,
+      "existing_original_RD_material": "REUSED_PRIOR_SCENE13_ACTION0_EIGHT_DIRECTIONS",
+      "runtime_render_binding_not_proven": true
+    },
+    {
+      "source_create_path": "jaruga/event/event07n.create",
+      "source_create_ordinal": 6,
+      "source_block_sha256": "df551e710cc0b3f6918294f4f2fe28dd59e5c099f3c0c4fb7bc745b555eb5aef",
+      "source_floorid": 20404,
+      "source_graphicname": 100250,
+      "source_template_function": "ExChangeMan",
+      "source_original_SPR_segment_sha256": "eb1a87cd4cc8e3b409990783c7bcc3bc463acab4cac7d2d961127d899da047ef",
+      "source_SPR_group_index": 240,
+      "existing_original_RD_material": "REUSED_PRIOR_SCENE13_ACTION0_EIGHT_DIRECTIONS",
+      "runtime_render_binding_not_proven": true
+    },
+    {
+      "source_create_path": "jaruga/event/event07n.create",
+      "source_create_ordinal": 7,
+      "source_block_sha256": "1c6756734e5ad8d30e21550095e93081f062a8533bd5d5342da3b6d183a97320",
+      "source_floorid": 20405,
+      "source_graphicname": 100252,
+      "source_template_function": "ExChangeMan",
+      "source_original_SPR_segment_sha256": "eeb2ec4546277c2acdf1b43fff7967c4c0fe5ac5c019bb7d68a901e134691b0a",
+      "source_SPR_group_index": 242,
+      "existing_original_RD_material": "REUSED_PRIOR_SCENE13_ACTION0_EIGHT_DIRECTIONS",
+      "runtime_render_binding_not_proven": true
+    },
+    {
+      "source_create_path": "jaruga/event/event07n.create",
+      "source_create_ordinal": 8,
+      "source_block_sha256": "8f1ac437bdf069c6bfd454774b1814b527c76f49e5dce6c5d9e99b702e2938a5",
+      "source_floorid": 20406,
+      "source_graphicname": 100252,
+      "source_template_function": "ExChangeMan",
+      "source_original_SPR_segment_sha256": "eeb2ec4546277c2acdf1b43fff7967c4c0fe5ac5c019bb7d68a901e134691b0a",
+      "source_SPR_group_index": 242,
+      "existing_original_RD_material": "REUSED_PRIOR_SCENE13_ACTION0_EIGHT_DIRECTIONS",
+      "runtime_render_binding_not_proven": true
+    },
+    {
+      "source_create_path": "jaruga/event/event07n.create",
+      "source_create_ordinal": 9,
+      "source_block_sha256": "4c9180e41a7fb06c94ef575e7f536da7f91d1efc3cefc8bb6ed90cdf65f19768",
+      "source_floorid": 20406,
+      "source_graphicname": 100250,
+      "source_template_function": "ExChangeMan",
+      "source_original_SPR_segment_sha256": "eb1a87cd4cc8e3b409990783c7bcc3bc463acab4cac7d2d961127d899da047ef",
+      "source_SPR_group_index": 240,
+      "existing_original_RD_material": "REUSED_PRIOR_SCENE13_ACTION0_EIGHT_DIRECTIONS",
+      "runtime_render_binding_not_proven": true
+    }
+  ],
+  "private_material_receipt": {
+    "original_NPC_text_in_public_git": false,
+    "original_RD_or_PNG_in_public_git": false,
+    "original_private_observer_generated_and_local_chromium_checked": true,
+    "original_images_loaded_in_local_observer": 266,
+    "config_rows_loaded": 30,
+    "local_observer_JS_errors": 0,
+    "local_observer_external_requests": 0
+  },
+  "unproven": {
+    "original_official_30_NPC_person_identities": false,
+    "original_TW1_NPC_labels": false,
+    "same_historical_client_server_deployment": false,
+    "native_runtime_sprite_selection": false,
+    "native_runtime_palette_selection": false,
+    "original_commercial_game_world_entered": false,
+    "source_index_only_105_graphics_actual_RD_decoded": false,
+    "new_game_production_started": false,
+    "overall_restoration_percent": null
+  },
+  "next": "CHARACTER_NPC_MODULE_06_ACTUAL_QUALIFIED_SPR_ADRN_REAL_OR_ROTATE_TO_NPC_FUNCTION_DIALOGUE_IF_MISSING"
+}

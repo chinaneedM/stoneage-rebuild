@@ -18763,3 +18763,8 @@ fresh main50da1fc/treedc9c482与6462树项、最新回执40866559849 success，�
 私人页资料初始关闭，显式按钮/候选人物范围可开，关闭/Esc/复位，保留有效ID0和原文，简体操作说明。79本地相关检查与内联JS编译通过。本地Chromium缺失，原图浏览器未执行；远端仅14合成PNG/合成问候及7画布交互按真实后验另记。旧R14原图整数通过/小数2.5未匹配记录保留。私人ZIP883862B/SHA5adf2c4e…成功保存并写身份，未保存后二次回读；原图/脚本/完整私人HTML不公开，source Action null。
 
 最高NEXT **SCENE26-MATERIAL-ROTATION-REVIEW**：一个商店资料整合已有限闭合，回22域/R102与最新组合索引，查重SCENE20—25已实绘/实听/具名内容，按精确原件和可见游戏内容增量择一有限材料包；缺原件则明确止点并轮换。不扩全17商品、交易helper或反复场景/驱动/帧调度。原可操作世界未进入，Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、overall_percent=null保持。旧完整CURRENT及全部历史作为原样追加前缀保留。
+
+
+## 2026-11-03 — CHAR05：有限原像素—NPC配置对照（不等于历史NPC身份）
+
+承接CHAR04，从私人Library取回CHAR01原NPC 2205文件和SCENE13原帧观察包并实际逐SHA复验，旧208/208原RD块全通过、无新历史像素。前述108同RAR SPR图号/617条创建配置数字索引中，已有R40全SPR段和R13动作0/八方向实际原像素的100250/251/252可关联30配置（13/3/14）；其余105图号/587条依然INDEX_ONLY。私人离线页将30原路径/功能/楼层/源SHA接入既有动作图，Chromium实际266图加载、0JS/0网络错误，非原客户端运行。原商业资产不公开；详细来源资格见docs/continuity/STONEAGE-CHARACTER-NPC-MODULE-05-SAME-RAR-ORIGINAL-MOTION-20261103.md及research/recovered/STONEAGE-CHARACTER-NPC-MODULE-05-30-ORIGINAL-MOTION-SOURCE-BRIDGE-R1.json，公开CI仅重放数值证据。Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79 PAUSED_NON_BLOCKING，overall_percent=null。**最高NEXT CHARACTER-NPC-MODULE-06**：对其余105图号有原SPR/ADRN/REAL实物才推进像素，无则记录缺件并转NPC原功能/对白，不做引擎及体验优化。

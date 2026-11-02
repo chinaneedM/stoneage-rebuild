@@ -1560,3 +1560,8 @@ O75 CI史实订正：PR #133 初稿的 Stage A 检查 run 41362507873 因两处�
 ### 2026-11-03 — CHAR04 人物/NPC创建原件→模板功能→同RAR原SPR图号的全量来源关联
 
 [CHAR04真实原件关联及差异审查](docs/continuity/STONEAGE-CHARACTER-NPC-MODULE-04-STATIC-GRAPHIC-FUNCTION-20261103.md)及[CHAR04全量图号×原模板功能×SPR索引](research/recovered/STONEAGE-CHARACTER-NPC-MODULE-04-SAME-CARRIER-GRAPHIC-FUNCTION-JOIN-R1.json)：从用户私人保存的mixed25原NPC目录ZIP全量核2205原文件、4985创建源块、119模板源块SHA全部吻合；把此前只在用户私人资料/会话保存的[CHAR01 4985行无正文源证](research/recovered/STONEAGE-CHARACTER-NPC-MODULE-01-FULL-SOURCE-ROWS-R1.json)正式永久入Git，字段仅数值/来源位置/散列及文件引用。原功能Warp配置2904（非2904人），模板唯一定位4984/4985。创建原图号有2482条，其中617条/108不同图号命中同原RAR客户端SPR索引；1865条/146不同图号无本索引；35条原模板type与创建graphicname数值不一致，逐条保留；3个既往R40原完整SPR段号100250/251/252可联30条原创建配置。仅同RAR数值关联，**不是**原运行服同部署、同原图可视像素、官方人物或TW1 NPC姓名身份证明。下一优先CHAR05有源批量原SPR/像素及NPC原用途关系，不重复造图及引擎。Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、总percent=null；原CURRENT保持原字节。
+
+
+### 2026-11-03 — CHAR05：30条NPC源配置对应3组已有原动作像素
+
+依据[CHAR05原始素材复用报告](docs/continuity/STONEAGE-CHARACTER-NPC-MODULE-05-SAME-RAR-ORIGINAL-MOTION-20261103.md)，私人CHAR01子树2205源文件及SCENE13的208个旧原RD均本轮逐SHA复核。CHAR04原617条有索引引用涉及108原图号，仅100250/251/252已具原全SPR和R13旧动作0八方向原像素；分别13/3/14条配置、共30条；余105图号/587引用依然INDEX_ONLY，不冒称已实际复原像素。私人HTML在原图基础上增加30条来源搜索，Chromium载入266图、0错误0请求。原版权素材不入公开Git、旧CURRENT全量保留并加法续接。**NEXT CHAR06**：有原SPR/ADRN/REAL才补105图号，否则转NPC功能对白原件；Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、overall_percent=null，尚非新石器开发。
