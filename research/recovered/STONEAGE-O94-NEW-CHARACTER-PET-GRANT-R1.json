@@ -1,0 +1,201 @@
+{
+  "schema": "stoneage.o94.descendant_new_character_pet_grant_static_source.r1",
+  "date": "2026-11-02",
+  "project_source_head": "e13bb3940ce60372ed3fa40b55cf1f747e963f67",
+  "project_source_tree": "f8441f44e7aa03aab928708662e934c290ea9a54",
+  "project_original_current_state_git_blob": "20050acf279a01555ab06a381dfcdc936bd381a6",
+  "source_git": {
+    "repository": "pimpcapital/longzoro-sa",
+    "commit": "57b14e2bb373ba851c14db28a239273e4a8831bb",
+    "tree": "3c350d533bfc843549a9df686084c783549d7e52",
+    "files": [
+      {
+        "path": "gmsv/src/char/char.c",
+        "git_blob_sha": "5a044dc68bb76758b2a757a8e83c10b93578be31"
+      },
+      {
+        "path": "gmsv/src/configfile.c",
+        "git_blob_sha": "fbdaa97f3059ad2476e41544e0d37f5b5a2006f8"
+      },
+      {
+        "path": "gmsv/src/char/enemy.c",
+        "git_blob_sha": "72e43f44a76db4baa23dfcea568f16d54d3bf620"
+      },
+      {
+        "path": "gmsv/src/include/version.h",
+        "git_blob_sha": "b87cbeddc53d47b1cf15465453b608eb35628792"
+      },
+      {
+        "path": "gmsv/setup.cf",
+        "git_blob_sha": "9d5992bfb1065d6c405ebe4a0677acb7be0de5f9"
+      },
+      {
+        "path": "gmsv/data/enemy1.txt",
+        "git_blob_sha": "bf245a391adeace09915b6e425754b54ab69a8f6"
+      },
+      {
+        "path": "gmsv/data/enemybase1.txt",
+        "git_blob_sha": "a19a508975e3a982fada323861b35b2edab79349"
+      }
+    ]
+  },
+  "static_source_checks": {
+    "macro_enabled_in_source": true,
+    "callsite_guard": true,
+    "hometown_1_to_2": true,
+    "hometown_2_to_3": true,
+    "hometown_3_to_4": true,
+    "hometown_else_to_1": true,
+    "create_call": true,
+    "save_call": true,
+    "pet_id_lookup_guard": true,
+    "owner_binding": true,
+    "get_nonpositive_returns_minus1": true,
+    "global_set": true,
+    "slots_1_to_4": true,
+    "pet_level_up_only": true,
+    "pet1_config": true,
+    "pet2_config": true,
+    "petlv_config": true,
+    "six_instances_unique": true
+  },
+  "configuration": {
+    "source_path": "gmsv/setup.cf",
+    "starter_pet_slot_1_instance": 2665,
+    "starter_pet_slot_2_instance": 2744,
+    "starter_pet_slot_3": "EMPTY",
+    "starter_pet_slot_4": "EMPTY",
+    "starter_target_level": 1
+  },
+  "hometown_fallback_branch": {
+    "compile_guard": "_NEW_PLAYER_CF",
+    "condition": "getNewplayergivepet(0)==-1",
+    "lasttalkelder_to_instance_id": {
+      "1": 2,
+      "2": 3,
+      "3": 4,
+      "other": 1
+    },
+    "state_storage": "process_global_config.newplayergivepet[0]",
+    "no_reset_inside_createNewChar_function": true,
+    "does_not_prove_native_original_hometown_grant": true
+  },
+  "selected_source_records": [
+    {
+      "enemy_id": 1,
+      "enemy_row": 1,
+      "instance_name": "初期拥有的乌力乌力",
+      "template_id": 2,
+      "template_rows": [
+        {
+          "row": 2,
+          "name": "乌力乌力",
+          "graphic_id": 100251
+        }
+      ],
+      "level_min": 1,
+      "level_max": 1
+    },
+    {
+      "enemy_id": 2,
+      "enemy_row": 2,
+      "instance_name": "初期拥有的凯比",
+      "template_id": 112,
+      "template_rows": [
+        {
+          "row": 108,
+          "name": "凯比",
+          "graphic_id": 100296
+        }
+      ],
+      "level_min": 1,
+      "level_max": 1
+    },
+    {
+      "enemy_id": 3,
+      "enemy_row": 3,
+      "instance_name": "初期拥有的克克尔",
+      "template_id": 102,
+      "template_rows": [
+        {
+          "row": 98,
+          "name": "克克尔",
+          "graphic_id": 100292
+        }
+      ],
+      "level_min": 1,
+      "level_max": 1
+    },
+    {
+      "enemy_id": 4,
+      "enemy_row": 4,
+      "instance_name": "初期拥有的威伯",
+      "template_id": 34,
+      "template_rows": [
+        {
+          "row": 34,
+          "name": "威伯",
+          "graphic_id": 100266
+        }
+      ],
+      "level_min": 1,
+      "level_max": 1
+    },
+    {
+      "enemy_id": 2665,
+      "enemy_row": 2150,
+      "instance_name": "青龙",
+      "template_id": 1275,
+      "template_rows": [
+        {
+          "row": 1030,
+          "name": "凯恩",
+          "graphic_id": 101180
+        }
+      ],
+      "level_min": 1,
+      "level_max": 1
+    },
+    {
+      "enemy_id": 2744,
+      "enemy_row": 2230,
+      "instance_name": "葛多雷诺",
+      "template_id": 1354,
+      "template_rows": [
+        {
+          "row": 1110,
+          "name": "葛多雷诺",
+          "graphic_id": 101951
+        }
+      ],
+      "level_min": 150,
+      "level_max": 160
+    }
+  ],
+  "source_code_behavior": {
+    "new_character_creation": "CHAR_createNewChar",
+    "create_pet": "ENEMY_getEnemyArrayFromId -> ENEMY_createPetFromEnemyIndex",
+    "pet_to_owner": "CHAR_setCharPet + CHAR_OWNERCDKEY/OWNERCHARANAME",
+    "save": "CHAR_charSaveFromConnectAndChar",
+    "nonpositive_slot_getter_returns": -1,
+    "zero_skip_predicate_effective_for_nonpositive_slots": false,
+    "negative_enemy_id_lookup_returns": -1,
+    "negative_array_guard_rejects": true,
+    "requested_lv_does_not_lower_initial_lv": true,
+    "source_has_compiled_or_run": false
+  },
+  "negative_evidence": {
+    "source_is_official_taiwan_v1": false,
+    "source_is_official_mainland_v182": false,
+    "source_is_jss1999_original": false,
+    "same_build_pet_sprite_container_recovered": false,
+    "actual_new_character_creation_executed": false,
+    "actual_player_pet_grant_observed": false,
+    "source_static_hometown_global_mutation_is_runtime_bug_proven": false
+  },
+  "stage_a": "7_PARTIAL_2_OPEN",
+  "stage_b": "GATED",
+  "r79": "PAUSED_NON_BLOCKING",
+  "completion_percentage": null,
+  "next": "O95 same-build original client graphic or actual server run evidence if available; otherwise rotate to another real-source content family"
+}

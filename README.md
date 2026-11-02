@@ -1475,3 +1475,8 @@ O75 CI史实订正：PR #133 初稿的 Stage A 检查 run 41362507873 因两处�
 ### 2026-11-02 — O93 新取得的固定Git后期服务端宠物原表与静态来源连接
 
 [O93原源限定报告](docs/continuity/STONEAGE-O93-INDEPENDENT-PET-SOURCE-20261102.md)、[数字/负例清单](research/recovered/STONEAGE-O93-INDEPENDENT-PET-SOURCE-JOIN-R1.json)：直接读取首次纳入的独立公开Git仓库`pimpcapital/longzoro-sa` 2016-01-09提交`57b14e2`及同树5份完整原服务端文本/源码的blob。`setup.cf`实际指向`enemy1.txt`/`enemybase1.txt`，原C装载器以实例模板号连接，图形字段取`E_T_IMGNUMBER`。**“初期拥有”四宠各两个实例（8条）→四原模板→图号100251/100296/100292/100266**；非模拟战斗、非台湾1.0同服身份。两源表2958实例/1816模板的原始数字外键扫描：2934唯一、23缺模板、1实例关联到4个同号模板，均不修改原字节。和O92所谓9个JSS奖品文字仅8个名字字面相同，且多个同名模板、1个未匹配；不认证JSS官方发奖或初代宠物清单。原商业图/完整原表不复制公开仓库，`CURRENT-STATE.md`原blob保留。**NEXT O94**优先取得同构建原图/原出生发放行为、或轮换其它原世界材料；Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、总体百分比null。
+
+
+### 2026-11-02 — O94 后代社区原源码的人物创建宠物发放静态链
+
+[O94 七份源文件的出生发宠、配置及同表数值复核](docs/continuity/STONEAGE-O94-NEW-CHARACTER-PET-GRANT-20261102.md)：新增固定源码实据，`CHAR_createNewChar`在宏条件下取出生村→实例ID1–4并调用真实宠物生成/归属/保存；同树配置PET1=2665、PET2=2744，实际分别映射实例青龙(模板凯恩/图101180/Lv1)与葛多雷诺(图101951/Lv150–160)，后者PETLV=1不会降级。另登记槽0全局复用与空槽-1未跳过的**静态条件风险**，不推历史商业服存在BUG或实际赠送。6实例/模板/图号见[派生数值JSON](research/recovered/STONEAGE-O94-NEW-CHARACTER-PET-GRANT-R1.json)，无新同构建原像素、原客户端/服务端运行，也不升级O93的后代为JSS1999/TW1/大陆1.82官方真值。完整历史CURRENT原blob不变，Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、overall_percent=null。**NEXT O95**先找同构建原图/真实运行资料，证据不足即轮换真实材料。
