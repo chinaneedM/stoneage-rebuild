@@ -1400,3 +1400,8 @@ O75 CI史实订正：PR #133 初稿的 Stage A 检查 run 41362507873 因两处�
 ### 2026-11-02 — O78 台湾1.0原客户端鼠标对象命中→原等级文案→有条件绘制调用
 
 [O78 原 `sa_3.exe` 同版代码链](docs/continuity/STONEAGE-O78-TW1-HOVER-LEVEL-STATIC-SOURCE-20261102.md)：原P3H台湾1.0私人ZIP **372,626,292B/379成员全CRC**及原425,984B EXE全SHA重新校验；从原帧循环 `0x40D29A` 到 `0x42E320` 的对象鼠标坐标/图形宽高命中处理，确认被选字段、状态9/10等显示条件，以及同一原EXE .data 内 8条CP950原模板（`%s  Lv：%d`、可选第二名称、`耐`与`氣`值），格式化到原缓冲区后 `0x42E82D→0x40DF50→0x40CED0` 发出绘制请求（有标志位条件）。本轮实际从原字节断言14个指令锚、4个相对CALL，`objdump`独立核对，详见[源数值与负面边界](research/recovered/STONEAGE-O78-TW1-HOVER-LEVEL-STATIC-SOURCE-R1.json)。**FACT仅限原客户端静态条件调用：仍未实见原画面/原生鼠标悬停、未确定命中对象一定为战斗敌人，不能把O76后期2.5教学与TW1视为同版部署。** 无EXE/原图入公开Git，无体验优化/新石器开发。完整历史CURRENT Blob不变，Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、整体percent=null。**NEXT O79**：停止无界扩张通用反编译，轮换尚未覆盖的原客户端游戏世界、NPC、地图或宠物具实源内容；当有原版战斗运行画面才重开O78实际验收。
+
+
+### 2026-11-02 — O79 后期保存包七宠物对话配置与原物品主表联接
+
+[O79 原始宠物对话菜单/事件/道具关联](docs/continuity/STONEAGE-O79-ORIGINAL-PET-TALK-SOURCE-20261102.md)：重新从私有 SHA 合格的 mixed25 RAR 实际提取 `pettalk.menu` 与7脚本及 `itemset.txt` 共9个原成员，逐原 RAR CRC、完整 SHA、CP950往返核实。菜单原序7个唯一 `PETTEMPNO` 为718/2/914/913/170/401/1147；7脚本合计 **132个静态 `TalkMsg` 标签**（OTHER7/TALKRUN38/EVENTRUN67/BOTH20）。原道具条件编号2414及 `AddItem` 编号2848、19688各在同档13,254行/94列物品表唯一存在；来源哈希、单行摘要见[公开数值回执](research/recovered/STONEAGE-O79-ORIGINAL-PET-TALK-SOURCE-R1.json)。可核的是**后期混合归档原静态宠物对话内容**，不是原游戏运行的宠物说话、道具发放、同服/TW1/JSS1999归属。未公开源脚本/旧资产，没有体验优化、模拟宠物说话或原客户端世界进入。完整CURRENT不变，Stage A7PARTIAL+2OPEN，B/wiki GATED，R79暂停，整体百分比null。**NEXT O80**：只核有真实来源的宠物对话触发/调用器；缺相同原始证据立即轮换其他未复原内容，不空转扩助手层。
