@@ -1,0 +1,22 @@
+name: Verify PET07 TW1 actual source-derived sprite pixel batch
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-PET-MODULE-07-TW10-BATCH-PUBLIC-R1.json'
+      - 'research/recovered/STONEAGE-PET-MODULE-06-CONSOLIDATED-VISUAL-COVERAGE-R1.json'
+      - 'research/recovered/tw10-resource-metadata/SPR-GROUP-R1.tsv.gz'
+      - 'tests/test_stoneage_pet_module_07_source_pixels.py'
+      - '.github/workflows/verify-stoneage-pet-module-07-source-pixels.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify-source-derived-boundaries:
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest tests.test_stoneage_pet_module_07_source_pixels -v

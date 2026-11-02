@@ -60,3 +60,9 @@
 ## PET-MODULE-06 两组已保管TW1原像素加入单一宠物观察目录（2026-11-02）
 
 [PET06实物与边界](continuity/STONEAGE-PET-MODULE-06-TWO-MORE-SPR-20261102.md)及[更新后的598图号/1024模板全索引](../research/recovered/STONEAGE-PET-MODULE-06-CONSOLIDATED-VISUAL-COVERAGE-R1.json)：从私人已归档的O28独立ZIP重读100297/100298两组真实台湾1.0图，逐52帧位置PNG SHA核对，39个不同原bitmap，6条实际动作0/1/2但仅方向0；复用PET05唯一私有观察器，现合计9图号、82动作方向序列、770帧位置、479实际来源PNG，Chromium144实证82个序列选择与加载、0JS错误/0网络。对2016社区PETFLG1全部1024模板行，25行同数字可到私人预览、589图号尚不在本预览；不论当代官方名字及同部署均UNKNOWN。**NEXT PET-MODULE-07**仍集中原宠物图像批量归档，停止无实体增量的单点helper。
+
+
+
+### 2026-11-02 — PET-MODULE-07 台湾1.0完整原客户端批量宠物图形实际像素
+
+[PET07批量实物报告](continuity/STONEAGE-PET-MODULE-07-TW10-130-REAL-PIXEL-BATCH-20261102.md)及[源限定130组/2176块可解码原图证据](../research/recovered/STONEAGE-PET-MODULE-07-TW10-BATCH-PUBLIC-R1.json)：重新取用户私人原 P3H 原始包并全SHA固定，对2016后期宠物模板图号与台湾1.0原SPR取130组数值交集，原7568条SPR动作头全组核验，选原动作0/1/2方向0的390源动画/3255帧，原REAL实际重解码2176个RD块，两个真实越界坏源保留负例。私人统一观察器（不公开商业图片）已覆盖130组/451动作方向/3817按原序帧位/2540候选PNG，Chromium144全部451段可切换/下一帧、0JS/0请求。仅跨版数字参考，非TW1官方130种物种。Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、整体完成率未知。**NEXT PET-MODULE-08**：在这一单一宠物目录连接已保管技能数值，但严格分源；余下468个图号继续查已保管不同版本实际像素，不扩无谓查看器。
