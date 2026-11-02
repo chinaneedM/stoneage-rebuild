@@ -19,7 +19,8 @@ def validate(batch, report):
     defs = report["skill_definition_rows"]
     assert len(defs) == 282 and len({r[1] for r in defs}) == 282
     id_to_line = {ident: line for line, ident, callback in defs}
-    assert all(callback.startswith("PETSKILL_") for _, _, callback in defs)
+    # Three source rows explicitly use ENEMYSKILL_ handlers; do not rewrite source tokens.
+    assert all(callback.startswith(("PETSKILL_", "ENEMYSKILL_")) for _, _, callback in defs)
     expected_refs = Counter()
     expected_missing = []
     expected_neg = []
