@@ -1410,3 +1410,8 @@ O75 CI史实订正：PR #133 初稿的 Stage A 检查 run 41362507873 因两处�
 ### 2026-11-02 — O80 四村聊天室门票→源 NPC→原进出传送→地图证据
 
 [O80 四村聊天室原始静态内容联接](docs/continuity/STONEAGE-O80-ORIGINAL-CHATROOM-TICKET-GATES-20261102.md)：自已保管 mixed25 RAR 重新验全档 SHA，实取四村 ticket、NPC chatroom.create、generated 原创建、8份四对 wpm、四村完整 DAT/MAP、chatroom.conf及原itemset；各原成员 SHA/CRC 和回执见[O80 原始来源数字证据](research/recovered/STONEAGE-O80-ORIGINAL-CHATROOM-TICKET-GATES-R1.json)。四村1012/2012/3012/4012分别用门票2521/2522/2523/2524，由(18,16)售票NPC和(14,13)引导员指向中央110的(37,21/25/29/33)，再由中央(37,20/24/28/32)返回对应村(13,13)。原四图30×30、票据同档物品表各唯一；1012/4012 MAP 全同但 DAT有5个16位格差。保留ticket130中GetItem2602与EVENT:ITEM2054不一致，未无证纠正。对605份原NPC小文本扫不到独立 pettalk dispatcher，不能证明服务器 native 不存在。**全部为后期私人混合载体静态事实**：未运行原客户端、商业服、原生传送/扣票或图像，不能替代TW1/JSS1999证据；不做未来游戏体验优化。CURRENT原blob不改、Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、整体完成百分比null。**NEXT O81**：在已有真原图条件下择一有界聊天室内景观察/来源联接，否则转其他新实物内容。
+
+
+### 2026-11-02 — O81 中央聊天室110原地图与24图像索引的真实原始材料联接
+
+[O81 110原图像ID/地图格核验](docs/continuity/STONEAGE-O81-ORIGINAL-CHATROOM110-MAP-ALIAS-20261102.md)：重新取证原 mixed25 保存包的110.DAT（46×45、三个2070格数值层）和两份**逐字节相同**的110.MAP；检验四村进出源参数的八个110地图格，均在范围内且各具原三数值。取一处8×17有限门户区域的**136格**，从两原图像图层得**24种图像别名、138次引用**，使用此前已核完整源SHA的全量18765120B ADRN逐个确认唯一记录与RD范围，均位于既存 TW1 REAL 完整字节前缀有证范围（不是认定地图TW1官方部署）；来源、24条原地址/SHA见[数字回执](research/recovered/STONEAGE-O81-ORIGINAL-CHATROOM110-MAP-ALIAS-R1.json)。本轮实际读RD像素**0B**：当前RAR大图像资源过滤器不支持，旧封存ADRN可实读，**不能假称原内景完成/原客户端运行**。所有商业源图/原文件不公开、CURRENT原blob未变、Stage A 7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、整体百分比未知；不开发新游戏、不优化玩家体验。**NEXT O82**：有独立原RD像素来源才继续110真实画面，否则轮换新实源世界内容。
