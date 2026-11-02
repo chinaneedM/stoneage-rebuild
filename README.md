@@ -1420,3 +1420,8 @@ O75 CI史实订正：PR #133 初稿的 Stage A 检查 run 41362507873 因两处�
 ### 2026-11-02 — O82 风之守护兽原版战斗/NPC/敌人/地图原始配置
 
 [O82 風的守護獸原始NPC→两战斗配置→十一种敌人→三地图证据](docs/continuity/STONEAGE-O82-ORIGINAL-WIND-GUARDIAN-20261102.md)：从整包SHA合格的私人mixed25 RAR实际重读/核验11份原成员，逐原RAR头CRC、字节数、完整SHA独立通过。原NPC坐标11208:(26,40)/(42,38)、11214:(41,36)，`NPCEnemy` 的两模板 `sb_kbu/sb_kgi` 与脚本一致；每脚本10个含重复的enemyno槽位，整包原敌人表2087条有效唯一数字ID中11种真实对应，均有原名/源行SHA。原 `sb_kgi` 写有 `dieact:1` 与传送目标11215:(9,16)，三地图DAT/MAP原字节尺寸与四坐标实格全核，**未执行原生战斗/传送或验证原怪物出现**。先有界试取O81的REAL图像，但压缩库在393216B处报Invalid symbol，未得到有效原RD图像，聊天室原像素仍OPEN。来源是**后期私人混合档**，不强归属TW1/JSS1999；不做现代玩法优化、引擎模拟或发布版权原件。完整历史 CURRENT 不变、Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、percent=null。数字回执见[O82 原文件SHA/CRC及数字联接](research/recovered/STONEAGE-O82-ORIGINAL-WIND-GUARDIAN-R1.json)。**NEXT O83**：再择一源实物内容缺口或原生执行证据，避免继续扩失败解包/通用引擎助手。
+
+
+### 2026-11-02 — O83 家族银行八原NPC坐标、原银行双账户菜单和八组地图格
+
+[O83 源级家族银行原始静态内容](docs/continuity/STONEAGE-O83-ORIGINAL-FAMILY-BANK-MAP-20261102.md)：重新整包 SHA 校验私人后期混合2.5 RAR，实际解出原 `bankman.create`、`bankman.conf` 及八地图 16 DAT/MAP 共**18份原文件/53139B**，逐源CRC、完整SHA、坐标与地图全格范围核验。配置保留四庄园 floor1041/2031/3031/4031 与四村 floor1006/2006/3006/4006 八处银行管理员，均原名「家族銀行」、原图号16017，八个原坐标及DAT三层/MAP原数值收于[哈希和格子证据回执](research/recovered/STONEAGE-O83-ORIGINAL-FAMILY-BANK-MAP-R1.json)。菜单明确原文「家族個人帳戶」「家族共同帳戶」，但仅定义 winno1，选择流向5/6在该文件没有窗口定义；**不能擅称实际执行存取款或余额**。楼层3031的movecenter两组坐标不等(15,13与17,11)，保留原状。另确认骑宠来源已在O69做过归档，未重复立项。私有原脚本/地图/原图不公开，后期保存包不冒充TW1/JSS1999，原客户端未执行；无体验优化/新游戏开发。历史 CURRENT blob 不变，Stage A7 PARTIAL+2 OPEN、B/wiki GATED、R79暂停、总体百分比未知。**NEXT O84**：轮换别的真实未恢复原版游戏内容或原生执行依据。
