@@ -1,0 +1,192 @@
+{
+  "schema": "stoneage.o84.two_disjoint_samugiru_story_npc_clusters.source_static.r1",
+  "date": "2026-11-02",
+  "verified_start": {
+    "main_head": "b5c355bd49898e2feb96dd5cbcf077ad3ef92c97",
+    "main_tree": "1f594249b13d76a6b8d30295d1607bb7867727d3",
+    "old_current_blob": "20050acf279a01555ab06a381dfcdc936bd381a6"
+  },
+  "input": {
+    "private_o45_zip_name": "StoneAge-O45-private-original-teacher-five-children-world.zip",
+    "bytes": 2659116,
+    "sha256": "cd730c6939c3e4bbf000270f2472c322753c88854320eea61641ad0db71265e4",
+    "zip_all_member_CRC_checked_this_unit": true,
+    "source_npc_file": "source-1000npc_m.create",
+    "source_npc_file_bytes": 4413,
+    "source_npc_file_sha256": "c9b000a836b0aae3d88358097039f1beea020d92ba84f6ccc338bb54bc478240",
+    "source_npc_total_blocks": 25,
+    "source_dat": "source-1000.DAT",
+    "source_dat_bytes": 153608,
+    "source_dat_sha256": "94b19cb59d72b7b48da70d2741ba68516caad970297fd48ed11ef720fa3ea97e",
+    "dat_dimensions": [
+      160,
+      160
+    ],
+    "cp950_byte_roundtrip_validated": true
+  },
+  "new_observations": [
+    {
+      "id": "C1",
+      "original_name": "村莊小姑娘",
+      "floor": 1000,
+      "x": 118,
+      "y": 95,
+      "graphic_alias": 16032,
+      "source_direction": 5,
+      "dat_raw_three_u16": [
+        392,
+        0,
+        49152
+      ],
+      "original_create_span_bytes": [
+        460,
+        625
+      ],
+      "original_create_sha256": "3030b658349a24834d358d2d13e09f2aaf10c27ff558b3a98d611339f06d645c",
+      "referenced_message_file_suffix": "msg_1000_118_95",
+      "message_source_status": "REFERENCED_NOT_PRESENT_IN_REPLAY_SUBSET"
+    },
+    {
+      "id": "C2",
+      "original_name": "村莊小姑娘",
+      "floor": 1000,
+      "x": 118,
+      "y": 96,
+      "graphic_alias": 16033,
+      "source_direction": 6,
+      "dat_raw_three_u16": [
+        391,
+        0,
+        49152
+      ],
+      "original_create_span_bytes": [
+        635,
+        800
+      ],
+      "original_create_sha256": "a034d6dc9aff66d5bf1da1cdd358ed0c5d66699721f9f1764c1e7ec0eea1e2cd",
+      "referenced_message_file_suffix": null,
+      "message_source_status": "INLINE_PRESENT_VERIFIED_NOT_REPUBLISHED"
+    },
+    {
+      "id": "C3",
+      "original_name": "村莊小姑娘",
+      "floor": 1000,
+      "x": 117,
+      "y": 95,
+      "graphic_alias": 16038,
+      "source_direction": 4,
+      "dat_raw_three_u16": [
+        360,
+        0,
+        49152
+      ],
+      "original_create_span_bytes": [
+        810,
+        973
+      ],
+      "original_create_sha256": "0c79daaaebfc5d4623e118521417e392b709558b0d127f71dfbcaf80ddbfe4bf",
+      "referenced_message_file_suffix": null,
+      "message_source_status": "INLINE_PRESENT_VERIFIED_NOT_REPUBLISHED"
+    },
+    {
+      "id": "G1",
+      "original_name": "願藏的母親",
+      "floor": 1000,
+      "x": 82,
+      "y": 39,
+      "graphic_alias": 16021,
+      "source_direction": 5,
+      "dat_raw_three_u16": [
+        824,
+        0,
+        49152
+      ],
+      "original_create_span_bytes": [
+        2731,
+        2893
+      ],
+      "original_create_sha256": "0067be439b4e1c37c6d48322784ed6300c0aeb2029ceb96b6ae9f2870570b43a",
+      "referenced_message_file_suffix": "msg_1000_82_39",
+      "message_source_status": "REFERENCED_NOT_PRESENT_IN_REPLAY_SUBSET"
+    },
+    {
+      "id": "G2",
+      "original_name": "願藏的父親",
+      "floor": 1000,
+      "x": 79,
+      "y": 37,
+      "graphic_alias": 16019,
+      "source_direction": 4,
+      "dat_raw_three_u16": [
+        221,
+        0,
+        49152
+      ],
+      "original_create_span_bytes": [
+        2903,
+        3065
+      ],
+      "original_create_sha256": "3d1d17677b85935ca1b97601dde83d01ed50727e6cd83db346e399cebac59e50",
+      "referenced_message_file_suffix": "msg_1000_79_37",
+      "message_source_status": "REFERENCED_NOT_PRESENT_IN_REPLAY_SUBSET"
+    }
+  ],
+  "inline_line_sha256": {
+    "C2": "c1271330b2aafcfa8684d9a45feee54aa87b7ed63dbeb9da550d52bc27bd2c18",
+    "C3": "9aaea9972ab49c0732c1df1ebc08b3a823bd4315cd764b6bd09a4d92fddb7fca"
+  },
+  "source_summaries_not_quotations": [
+    "C2 records a girl's statement that 卡卓's parents are worried",
+    "C3 records a second girl's statement that those people are sighing near a park",
+    "G1/G2 are distinct NPCs literally named 願藏的母親/願藏的父親; no source link joining the two named families"
+  ],
+  "local_visual_source_scope": {
+    "candidate_7x7_kazhuo_area": {
+      "center": [
+        118,
+        95
+      ],
+      "raw_map_cells": 49,
+      "map_image_references": 50,
+      "distinct_map_aliases": 36,
+      "aliases_located_in_existing_O29_O45_O54_private_material": 36,
+      "actual_new_full_composite_produced": false,
+      "three_character_RDs_decoded_this_unit": false
+    },
+    "candidate_7x7_yuanzang_area": {
+      "center": [
+        80,
+        38
+      ],
+      "raw_map_cells": 49,
+      "map_image_references": 50,
+      "distinct_map_aliases": 44,
+      "aliases_located_in_existing_O29_O45_O54_private_material": 41,
+      "still_unavailable_in_these_subsets": [
+        393,
+        6358,
+        6359
+      ],
+      "actual_new_full_composite_produced": false,
+      "two_parent_RDs_decoded_this_unit": false
+    }
+  },
+  "unverified": {
+    "same_family_identity_for_C_and_G": false,
+    "any_original_quest_link": false,
+    "three_external_message_files_read_this_unit": false,
+    "native_original_NPC_talk_executed": false,
+    "source_NPC_image_selected_by_native_runtime": false,
+    "official_1999_or_TW1_same_deployment": false,
+    "playable_original_game_entered": false,
+    "copyrighted_original_scripts_images_published": false
+  },
+  "state": {
+    "stage_a": "7_PARTIAL_2_OPEN",
+    "stage_b": "GATED",
+    "wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "next": "O85: qualify exact external NPC message bytes or another source-backed original world content gap; preserve separate family identities and no native execution claims"
+}
