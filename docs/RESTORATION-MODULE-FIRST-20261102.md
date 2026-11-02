@@ -50,3 +50,8 @@
 ## PET-MODULE-04 — 2016 same-source skillcode numeric/skill-token crosswalk (2026-11-02)
 
 [PET04 source comparison](continuity/STONEAGE-PET-MODULE-04-SKILLCODE-CROSSWALK-20261102.md) records 253 original skillcode rows against current 2016 source enemy tables: 160 exact, 12 conflicting template IDs, 81 absent instance IDs. All 79 two-letter code tokens match the separately selected skills table KINDCODE string. Conditional source checks PetId and token but actual Code_skill initialization, skill training, commercial server execution are OPEN. Original 988 mixed25 rows still missing, no images re-rendered in this round. NEXT PET-MODULE-05: actual retained private pet image/frame/action observation integration, still pet module only.
+
+
+## PET-MODULE-05 完成的私人原图/动作集中观察目录（2026-11-02）
+
+[源限定完整覆盖报告](continuity/STONEAGE-PET-MODULE-05-PRIVATE-VISUAL-CATALOG-20261102.md)及[598图号/1024模板综合索引](../research/recovered/STONEAGE-PET-MODULE-05-CONSOLIDATED-VISUAL-COVERAGE-R1.json)：从私人 O11/SCENE28/R10/O65 已保管原像素回放数据构成单一私有离线观察目录，实际7图号、76源动画/方向序列、718有序帧位置、440原图候选PNG逐源SHA通过；Chromium144全部76序列选择及图片载入通过，0 JS错误/0外部网络请求，file://在本环境被安全策略阻断、原游戏未启动。公开只留数字/来源哈希/覆盖索引，无原图。2016社区1024宠物候选模板中22行同数字图号可连接本私人观察目录，不得晋升成初版官方物种。**NEXT PET-MODULE-06**集中增加已取得原图的来源合格批次并补齐模块索引，暂不轮换其它内容模块。

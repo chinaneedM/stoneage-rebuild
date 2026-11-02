@@ -1,0 +1,23 @@
+name: Verify PET05 original-image source coverage index
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-PET-MODULE-05-CONSOLIDATED-VISUAL-COVERAGE-R1.json'
+      - 'research/recovered/STONEAGE-PET-MODULE-01-BATCH-SOURCE-SPR-INDEX-R1.json'
+      - 'research/recovered/STONEAGE-PET-MODULE-03-SAME-SOURCE-SKILL-JOIN-R1.json'
+      - 'tests/test_stoneage_pet_module_05_coverage.py'
+      - '.github/workflows/verify-stoneage-pet-module-05-coverage.yml'
+  workflow_dispatch:
+permissions: 
+  contents: read
+jobs:
+  verify-catalog:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify all sources, visual limits, no unproven species or runtime promotions
+        run: python -m unittest tests.test_stoneage_pet_module_05_coverage -v
