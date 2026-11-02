@@ -1495,3 +1495,8 @@ O75 CI史实订正：PR #133 初稿的 Stage A 检查 run 41362507873 因两处�
 ### 2026-11-02 — PET-MODULE-01 全表宠物模板/实例与四客户端原SPR候选集中归档
 
 [PET-MODULE-01批量恢复报告](docs/continuity/STONEAGE-PET-MODULE-01-SOURCE-BATCH-20261102.md)与[完整派生数值索引](research/recovered/STONEAGE-PET-MODULE-01-BATCH-SOURCE-SPR-INDEX-R1.json)：在新模块优先规则下直接读取2016社区独立源`enemybase1`1816模板行（PETFLG=1共1024行，0共792行、1813个不同模板ID）及`enemy1`2958实例行（2934唯一关联、23缺失、1个歧义4模板），对PETFLG1的598个**不同图号**批量连接TW1/CN5/TW85/mixed25源SPR索引，命中分别130/344/542/260、四者都无56；数值图号不是官方物种种数，尤其不得以晚期后代名义填早期官方物种。同文件号重号完整保留。公开只留1024条结构化源字段、2958条实例链接、598条图号原资源索引和少数例示，不转载商业原图/整表原名，原CURRENT不改。下一优先 **PET-MODULE-02** 比对另一保存MIXED25的988模板，并联接已私存真实宠物画面；保持宠物模块集中推进。Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、总体完成率仍未知。
+
+
+### 2026-11-02 — PET-MODULE-02 同仓库两份原宠物表640/1816行整表比较
+
+[原表差异报告](docs/continuity/STONEAGE-PET-MODULE-02-SERVER-TEMPLATE-DIFF-20261102.md)和[635共有模板ID逐字段差异数据](research/recovered/STONEAGE-PET-MODULE-02-SERVER-TEMPLATE-DIFF-R1.json)：读取同固定2016社区Git树内备选enemybase.txt640行与配置实际引用的enemybase1.txt1816行，完整行核实635共同ID/364原行一致/271差异，其中221仅融合码一列改变，17标志变化、2图形号变化。不是官方版本演变或官方全宠物数量。历史CURRENT原样保留，继续PET-MODULE-03，先解决原保存混合2.5的988行可读性并关联原图与技能，不跨去NPC地图。
