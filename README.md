@@ -1565,3 +1565,8 @@ O75 CI史实订正：PR #133 初稿的 Stage A 检查 run 41362507873 因两处�
 ### 2026-11-03 — CHAR05：30条NPC源配置对应3组已有原动作像素
 
 依据[CHAR05原始素材复用报告](docs/continuity/STONEAGE-CHARACTER-NPC-MODULE-05-SAME-RAR-ORIGINAL-MOTION-20261103.md)，私人CHAR01子树2205源文件及SCENE13的208个旧原RD均本轮逐SHA复核。CHAR04原617条有索引引用涉及108原图号，仅100250/251/252已具原全SPR和R13旧动作0八方向原像素；分别13/3/14条配置、共30条；余105图号/587引用依然INDEX_ONLY，不冒称已实际复原像素。私人HTML在原图基础上增加30条来源搜索，Chromium载入266图、0错误0请求。原版权素材不入公开Git、旧CURRENT全量保留并加法续接。**NEXT CHAR06**：有原SPR/ADRN/REAL才补105图号，否则转NPC功能对白原件；Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、overall_percent=null，尚非新石器开发。
+
+
+### 2026-11-03 — CHAR06：47条同RAR NPC服务源参数，105图号的实际像素仍受限
+
+本轮按[CHAR06完整来源、解包阻塞与领域内容](docs/continuity/STONEAGE-CHARACTER-NPC-MODULE-06-SERVICE-SOURCE-20261103.md)及[CHAR06 47行派生源SHA/数值目录](research/recovered/STONEAGE-CHARACTER-NPC-MODULE-06-SERVICE-SOURCE-RECEIPT-R1.json)续接：原RAR全SHA相符，2205份原NPC文本逐成员大小/CRC/SHA通过，源静态SavePoint21、Bus7、PetShop16、PetSkillShop3实际参数已联接原创建配置、原文件/原文SHA和路径；另有私人原对白可检索资料页。原SPR/REAL解压未能完成资格化，CHAR05的其余105图号/587源配置仍是INDEX_ONLY，不冒作原图或历史运行。新参数据限社区混合2.5保存载体，不回填TW1官方原服。**最高NEXT CHAR07**：继续人物/NPC模块的TownPeople/告示/其他原文本批量内容来源，随后按模块计划转地图；Stage A7PARTIAL+2OPEN、Stage B/wiki GATED、R79暂停、总体percent=null。巨型CURRENT原历史文本仍完整，本文为非替代的加法指针。
