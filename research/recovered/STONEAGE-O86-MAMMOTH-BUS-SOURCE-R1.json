@@ -1,0 +1,645 @@
+{
+  "schema": "stoneage.o86.preserved_mammoth_bus_source_routes_stations.r1",
+  "as_of": "2026-11-02",
+  "verified_remote_start": {
+    "main_head": "daaaa739ca091155789ed2f2ad184ff0c1fcdb83",
+    "main_tree": "5755e107a6f1256aedd624e70ea3682e0cbbb788",
+    "current_state_blob": "20050acf279a01555ab06a381dfcdc936bd381a6",
+    "previous_O85_main_actions_success": 10,
+    "open_pr_count": 0
+  },
+  "original_carrier": {
+    "name": "stoneage-preserved-mixed25-original.rar",
+    "bytes": 361255180,
+    "sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+    "full_archive_sha_reverified_this_unit": true,
+    "rar_headers_scanned": 7952,
+    "member_count": 35,
+    "member_uncompressed_total_bytes": 14116,
+    "each_member_archive_header_crc_and_extracted_crc_full_sha_verified": true
+  },
+  "original_member_manifest": [
+    {
+      "member_path": "data/npc/chatroom/bus.arg",
+      "rar_index": 4578,
+      "bytes": 988,
+      "sha256": "13ec83e0c95168f45f4590866cb3e0ee520dc1b54c9fe9fbd15d6168ea0c86d0",
+      "rar_header_crc32": "43554400"
+    },
+    {
+      "member_path": "data/npc/chatroom/bus.create",
+      "rar_index": 4579,
+      "bytes": 1228,
+      "sha256": "18c31c8ae40b9c5250bddbb0455ab524c52c1491d505574ec2e288286f5c97a6",
+      "rar_header_crc32": "44934b51"
+    },
+    {
+      "member_path": "data/npc/chatroom/bus.template",
+      "rar_index": 4580,
+      "bytes": 161,
+      "sha256": "09ed36c25938eafc078b1feebbc92a17244bba5052e57c9329c1481d5f0a5cf1",
+      "rar_header_crc32": "65be7b9c"
+    },
+    {
+      "member_path": "data/npc/chatroom/bus2.arg",
+      "rar_index": 4581,
+      "bytes": 824,
+      "sha256": "febf184fb8674de6ee8a677b7815a0e10442c207a6e8604c80049a9cd9b22481",
+      "rar_header_crc32": "6c71e43b"
+    },
+    {
+      "member_path": "data/npc/chatroom/bus3.arg",
+      "rar_index": 4582,
+      "bytes": 525,
+      "sha256": "ba31fef92a4d16a9631fc68fd7563b82b4b829555f3c06ecb1d3e135cff959bf",
+      "rar_header_crc32": "6d10978b"
+    },
+    {
+      "member_path": "data/npc/chatroom/bus4.arg",
+      "rar_index": 4583,
+      "bytes": 565,
+      "sha256": "917a36992d9c45d6b70547dc23396bbf5f65448c558853ea10f64f17c159bf56",
+      "rar_header_crc32": "9e715b33"
+    },
+    {
+      "member_path": "data/npc/chatroom/bus5.arg",
+      "rar_index": 4584,
+      "bytes": 900,
+      "sha256": "59d0973ca5801b0ba4bbafe6d10ab5479e536db8cdd44f7b3fa59e2c67740500",
+      "rar_header_crc32": "6aa7c808"
+    },
+    {
+      "member_path": "data/npc/chatroom/bus6.arg",
+      "rar_index": 4585,
+      "bytes": 1328,
+      "sha256": "1acc8bf412bcc3df565cf2a1015804c96a46eac344130eeb5da52c53ef180308",
+      "rar_header_crc32": "8485248a"
+    },
+    {
+      "member_path": "data/npc/genout/bus.create",
+      "rar_index": 5003,
+      "bytes": 4765,
+      "sha256": "309c2477e19ff24793896fd074117bb89439e3855e0dc5af35dd71aef2933bd3",
+      "rar_header_crc32": "85e6c024"
+    },
+    {
+      "member_path": "data/npc/genout/msg_100_115_654",
+      "rar_index": 5107,
+      "bytes": 194,
+      "sha256": "891d79c72e8099db94ddcf78fc84bee6914f878eb50f66ac406a9a81504aa4cd",
+      "rar_header_crc32": "1c08501a"
+    },
+    {
+      "member_path": "data/npc/genout/msg_100_467_627",
+      "rar_index": 5108,
+      "bytes": 197,
+      "sha256": "618fe994ed0052f0256bc7c9ac60c3633cd3a3b522575c15778cb57870f09010",
+      "rar_header_crc32": "65f2ee3c"
+    },
+    {
+      "member_path": "data/npc/genout/msg_100_633_486",
+      "rar_index": 5109,
+      "bytes": 201,
+      "sha256": "d5ee6d0dd932b91f2bcedee7f8a48de989506c702e37df315a192bc10d7cd5d9",
+      "rar_header_crc32": "f631b55a"
+    },
+    {
+      "member_path": "data/npc/genout/msg_200_306_602",
+      "rar_index": 5227,
+      "bytes": 187,
+      "sha256": "adbd8c4ac9c594a6e1a05cd267fdebee670196a43b9fc3659594fd7068fbf2de",
+      "rar_header_crc32": "21e730b0"
+    },
+    {
+      "member_path": "data/npc/genout/msg_200_426_100",
+      "rar_index": 5228,
+      "bytes": 191,
+      "sha256": "3fa27f78273c2c7b2abe827f6a2e3687d59f9363285ff3bef3e75752733d65cb",
+      "rar_header_crc32": "6e8562f6"
+    },
+    {
+      "member_path": "data/npc/genout/msg_200_566_384",
+      "rar_index": 5229,
+      "bytes": 203,
+      "sha256": "0cbb1c17bc8b339ba42c33881456b0dbd2e67a2c607e5c5c09f746778e09cc95",
+      "rar_header_crc32": "7c8cffd0"
+    },
+    {
+      "member_path": "data/npc/genout/msg_3000_51_125",
+      "rar_index": 5258,
+      "bytes": 44,
+      "sha256": "5690429b132b0dbc93712dea15d5a047f4f978fd4ecb82c15d890f6a5afac3ff",
+      "rar_header_crc32": "d08621c0"
+    },
+    {
+      "member_path": "data/npc/genout/signb_100_114_658",
+      "rar_index": 5567,
+      "bytes": 120,
+      "sha256": "95bf89f9084da26f487dc6bb2406fad4251bf63b4249da8fa3b98811b61af918",
+      "rar_header_crc32": "ddcc7ef4"
+    },
+    {
+      "member_path": "data/npc/genout/signb_100_119_656",
+      "rar_index": 5568,
+      "bytes": 74,
+      "sha256": "b6f0bf53b5fdd78b7ac2a68418558bceeefdb9a0976e54ae67cd554d3490176c",
+      "rar_header_crc32": "7b642032"
+    },
+    {
+      "member_path": "data/npc/genout/signb_100_122_656",
+      "rar_index": 5569,
+      "bytes": 70,
+      "sha256": "dbf0c553845556b62e4144c510ef52ad89348d690ac515b54655ba5a9c13c6b3",
+      "rar_header_crc32": "88b690eb"
+    },
+    {
+      "member_path": "data/npc/genout/signb_100_460_625",
+      "rar_index": 5575,
+      "bytes": 74,
+      "sha256": "52c08835344f00520877d1f11e774ac38643e49def04e56284b514d884229de3",
+      "rar_header_crc32": "e1181ad3"
+    },
+    {
+      "member_path": "data/npc/genout/signb_100_463_625",
+      "rar_index": 5576,
+      "bytes": 74,
+      "sha256": "15425371fc7f9738776f8311b3b66d9359c3fd1024f534ebf4b57ffda7e91e31",
+      "rar_header_crc32": "54816c9d"
+    },
+    {
+      "member_path": "data/npc/genout/signb_100_469_629",
+      "rar_index": 5578,
+      "bytes": 120,
+      "sha256": "95bf89f9084da26f487dc6bb2406fad4251bf63b4249da8fa3b98811b61af918",
+      "rar_header_crc32": "ddcc7ef4"
+    },
+    {
+      "member_path": "data/npc/genout/signb_100_626_488",
+      "rar_index": 5579,
+      "bytes": 74,
+      "sha256": "217dd9cc0ee4312006d0f566cf5891658e3c8fabaf37ff2f3c5173188df649c4",
+      "rar_header_crc32": "916f0c35"
+    },
+    {
+      "member_path": "data/npc/genout/signb_100_629_488",
+      "rar_index": 5580,
+      "bytes": 70,
+      "sha256": "e1728ad997766f32013f833ba6b76f6161143f589b85f5f71591e6cf8e8f50da",
+      "rar_header_crc32": "d724caa2"
+    },
+    {
+      "member_path": "data/npc/genout/signb_100_635_487",
+      "rar_index": 5581,
+      "bytes": 120,
+      "sha256": "95bf89f9084da26f487dc6bb2406fad4251bf63b4249da8fa3b98811b61af918",
+      "rar_header_crc32": "ddcc7ef4"
+    },
+    {
+      "member_path": "data/npc/genout/signb_200_307_600",
+      "rar_index": 5629,
+      "bytes": 120,
+      "sha256": "95bf89f9084da26f487dc6bb2406fad4251bf63b4249da8fa3b98811b61af918",
+      "rar_header_crc32": "ddcc7ef4"
+    },
+    {
+      "member_path": "data/npc/genout/signb_200_310_600",
+      "rar_index": 5630,
+      "bytes": 70,
+      "sha256": "d0771b2bb8c75760e52d53e300e6b13ac61ad4273af420876ea9c36e9f1f9aa5",
+      "rar_header_crc32": "d87c8c8d"
+    },
+    {
+      "member_path": "data/npc/genout/signb_200_313_600",
+      "rar_index": 5631,
+      "bytes": 74,
+      "sha256": "69843e50e78b1312452cd8ae0c3d8558c4bc52e9d2500965ecb63f3fe7749ca3",
+      "rar_header_crc32": "2920cecf"
+    },
+    {
+      "member_path": "data/npc/genout/signb_200_419_98",
+      "rar_index": 5635,
+      "bytes": 74,
+      "sha256": "77b4bd97c0aec8c08d8a9699539d952df855b8d11b793d5228266e8055ab1c8b",
+      "rar_header_crc32": "beabac90"
+    },
+    {
+      "member_path": "data/npc/genout/signb_200_422_98",
+      "rar_index": 5636,
+      "bytes": 70,
+      "sha256": "6f2831872766fa38ebd7331c89eacabe93d78937fbe9711e6dd8aceb98419077",
+      "rar_header_crc32": "23f30b9a"
+    },
+    {
+      "member_path": "data/npc/genout/signb_200_426_98",
+      "rar_index": 5637,
+      "bytes": 120,
+      "sha256": "95bf89f9084da26f487dc6bb2406fad4251bf63b4249da8fa3b98811b61af918",
+      "rar_header_crc32": "ddcc7ef4"
+    },
+    {
+      "member_path": "data/npc/genout/signb_200_564_388",
+      "rar_index": 5640,
+      "bytes": 74,
+      "sha256": "dad65b25651a8cbdc1cb8e910d92514eadeffd4af3526b20d9b3256c2744d87b",
+      "rar_header_crc32": "1f92287e"
+    },
+    {
+      "member_path": "data/npc/genout/signb_200_564_391",
+      "rar_index": 5641,
+      "bytes": 74,
+      "sha256": "c4a4a7b576d4c04c098bee8148b29b85c29ca2f408e71590eb4c902b1821393f",
+      "rar_header_crc32": "7396cd36"
+    },
+    {
+      "member_path": "data/npc/genout/signb_200_568_382",
+      "rar_index": 5642,
+      "bytes": 120,
+      "sha256": "95bf89f9084da26f487dc6bb2406fad4251bf63b4249da8fa3b98811b61af918",
+      "rar_header_crc32": "ddcc7ef4"
+    },
+    {
+      "member_path": "data/npc/genout/signb_3000_53_123",
+      "rar_index": 5666,
+      "bytes": 23,
+      "sha256": "9e52ffc6a829d97f57bc42bb0d9271711a338e0bb748ce8b6229bb83078908a6",
+      "rar_header_crc32": "d9450820"
+    }
+  ],
+  "source_scope": "LATER_PRESERVED_COMMUNITY_MIXED25_NOT_CERTIFIED_JSS1999_TW1_OFFICIAL_DEPLOYMENT",
+  "bus_template": {
+    "source": "data/npc/chatroom/bus.template",
+    "original_templatename": "bus",
+    "source_functionset": "Bus",
+    "source_type_literal": 100401,
+    "actual_native_handler_executed": false
+  },
+  "vehicle_create": {
+    "source": "data/npc/chatroom/bus.create",
+    "total": 6,
+    "floor100": 3,
+    "floor200": 3,
+    "graphicname_original": 100355,
+    "all_six_script_targets_unique_and_present": true,
+    "whole_file_cp950_roundtrip": false
+  },
+  "six_original_routes": [
+    {
+      "source_file": "data/npc/chatroom/bus.arg",
+      "original_floor": 100,
+      "origin_station_source_qualified": "萨姆吉尔",
+      "destination_station_source_qualified": "玛丽那丝",
+      "original_bus_NPC_xy": [
+        627,
+        485
+      ],
+      "first_route_point": [
+        628,
+        485
+      ],
+      "last_route_point": [
+        117,
+        654
+      ],
+      "route_point_count": 66,
+      "source_needstone_literal": 50,
+      "source_waittime_literal": 180,
+      "source_routenum_literal": 1,
+      "source_route_name_cp950_valid": true,
+      "source_route_name_if_cp950_valid": "薩姆吉爾～瑪麗那絲之間",
+      "source_denied_item_second_id": 403,
+      "source_denied_item_count": 12
+    },
+    {
+      "source_file": "data/npc/chatroom/bus2.arg",
+      "original_floor": 200,
+      "origin_station_source_qualified": "加加",
+      "destination_station_source_qualified": "卡鲁它那",
+      "original_bus_NPC_xy": [
+        566,
+        386
+      ],
+      "first_route_point": [
+        566,
+        386
+      ],
+      "last_route_point": [
+        308,
+        602
+      ],
+      "route_point_count": 45,
+      "source_needstone_literal": 50,
+      "source_waittime_literal": 180,
+      "source_routenum_literal": 1,
+      "source_route_name_cp950_valid": false,
+      "source_route_name_if_cp950_valid": null,
+      "source_denied_item_second_id": 2403,
+      "source_denied_item_count": 12
+    },
+    {
+      "source_file": "data/npc/chatroom/bus3.arg",
+      "original_floor": 100,
+      "origin_station_source_qualified": "萨姆吉尔",
+      "destination_station_source_qualified": "柯奥",
+      "original_bus_NPC_xy": [
+        631,
+        485
+      ],
+      "first_route_point": [
+        631,
+        485
+      ],
+      "last_route_point": [
+        464,
+        628
+      ],
+      "route_point_count": 10,
+      "source_needstone_literal": 25,
+      "source_waittime_literal": 180,
+      "source_routenum_literal": 1,
+      "source_route_name_cp950_valid": true,
+      "source_route_name_if_cp950_valid": "薩姆吉爾～柯奧之間",
+      "source_denied_item_second_id": 2403,
+      "source_denied_item_count": 12
+    },
+    {
+      "source_file": "data/npc/chatroom/bus4.arg",
+      "original_floor": 100,
+      "origin_station_source_qualified": "玛丽那丝",
+      "destination_station_source_qualified": "柯奥",
+      "original_bus_NPC_xy": [
+        120,
+        654
+      ],
+      "first_route_point": [
+        120,
+        655
+      ],
+      "last_route_point": [
+        461,
+        628
+      ],
+      "route_point_count": 15,
+      "source_needstone_literal": 30,
+      "source_waittime_literal": 180,
+      "source_routenum_literal": 1,
+      "source_route_name_cp950_valid": true,
+      "source_route_name_if_cp950_valid": "瑪麗那絲～柯奧之間",
+      "source_denied_item_second_id": 2403,
+      "source_denied_item_count": 12
+    },
+    {
+      "source_file": "data/npc/chatroom/bus5.arg",
+      "original_floor": 200,
+      "origin_station_source_qualified": "加加",
+      "destination_station_source_qualified": "塔姆塔姆",
+      "original_bus_NPC_xy": [
+        566,
+        389
+      ],
+      "first_route_point": [
+        566,
+        389
+      ],
+      "last_route_point": [
+        424,
+        101
+      ],
+      "route_point_count": 55,
+      "source_needstone_literal": 20,
+      "source_waittime_literal": 180,
+      "source_routenum_literal": 1,
+      "source_route_name_cp950_valid": true,
+      "source_route_name_if_cp950_valid": "加加～塔姆塔姆之間",
+      "source_denied_item_second_id": 2403,
+      "source_denied_item_count": 12
+    },
+    {
+      "source_file": "data/npc/chatroom/bus6.arg",
+      "original_floor": 200,
+      "origin_station_source_qualified": "卡鲁它那",
+      "destination_station_source_qualified": "塔姆塔姆",
+      "original_bus_NPC_xy": [
+        311,
+        602
+      ],
+      "first_route_point": [
+        311,
+        602
+      ],
+      "last_route_point": [
+        421,
+        101
+      ],
+      "route_point_count": 109,
+      "source_needstone_literal": 40,
+      "source_waittime_literal": 180,
+      "source_routenum_literal": 1,
+      "source_route_name_cp950_valid": true,
+      "source_route_name_if_cp950_valid": "卡魯它那～塔姆塔姆之間",
+      "source_denied_item_second_id": 2403,
+      "source_denied_item_count": 12
+    }
+  ],
+  "sum_source_route_waypoints": 300,
+  "genout_creation": {
+    "source": "data/npc/genout/bus.create",
+    "source_NPC_blocks": 26,
+    "floor100": 12,
+    "floor200": 12,
+    "floor3000": 2,
+    "guide_original_create_count": 7,
+    "sign_original_create_count": 19,
+    "all_26_external_source_paths_unique_and_present": true,
+    "all_26_CP950_roundtrip": true,
+    "six_instruction_signs_same_original_message_sha256": "95bf89f9084da26f487dc6bb2406fad4251bf63b4249da8fa3b98811b61af918",
+    "all_six_signs_state_three_minutes_and_party_control": true,
+    "all_six_regular_guides_restrict_working_for_mammoth_courier_in_text": true,
+    "all_12_destination_signs_fee_matches_original_bus_needstone": true
+  },
+  "six_station_clusters": [
+    {
+      "station_source_label": "萨姆吉尔",
+      "floor": 100,
+      "source_guide_xy": [
+        633,
+        486
+      ],
+      "source_guide_graphic_literal": 16027,
+      "related_source_NPCs": 4,
+      "roles": [
+        "guide",
+        "instruction_sign",
+        "destination_sign",
+        "destination_sign"
+      ]
+    },
+    {
+      "station_source_label": "玛丽那丝",
+      "floor": 100,
+      "source_guide_xy": [
+        115,
+        654
+      ],
+      "source_guide_graphic_literal": 16027,
+      "related_source_NPCs": 4,
+      "roles": [
+        "guide",
+        "instruction_sign",
+        "destination_sign",
+        "destination_sign"
+      ]
+    },
+    {
+      "station_source_label": "柯奥",
+      "floor": 100,
+      "source_guide_xy": [
+        467,
+        627
+      ],
+      "source_guide_graphic_literal": 16026,
+      "related_source_NPCs": 4,
+      "roles": [
+        "guide",
+        "instruction_sign",
+        "destination_sign",
+        "destination_sign"
+      ]
+    },
+    {
+      "station_source_label": "加加",
+      "floor": 200,
+      "source_guide_xy": [
+        566,
+        384
+      ],
+      "source_guide_graphic_literal": 16065,
+      "related_source_NPCs": 4,
+      "roles": [
+        "guide",
+        "instruction_sign",
+        "destination_sign",
+        "destination_sign"
+      ]
+    },
+    {
+      "station_source_label": "卡鲁它那",
+      "floor": 200,
+      "source_guide_xy": [
+        306,
+        602
+      ],
+      "source_guide_graphic_literal": 16067,
+      "related_source_NPCs": 4,
+      "roles": [
+        "guide",
+        "instruction_sign",
+        "destination_sign",
+        "destination_sign"
+      ]
+    },
+    {
+      "station_source_label": "塔姆塔姆",
+      "floor": 200,
+      "source_guide_xy": [
+        426,
+        100
+      ],
+      "source_guide_graphic_literal": 16067,
+      "related_source_NPCs": 4,
+      "roles": [
+        "guide",
+        "instruction_sign",
+        "destination_sign",
+        "destination_sign"
+      ]
+    }
+  ],
+  "independent_local_replay": {
+    "full_35_member_SHA_CRC_length_passed": true,
+    "source_6_script_bindings_and_6_path_validated": true,
+    "source_6_route_record_formats_valid": true,
+    "source_300_coordinate_pairs_parsed": true,
+    "each_route_waypoints_unique": true,
+    "source_stations_group_into_two_3_station_floor_clusters": true,
+    "route_initial_waypoint_to_vehicle_max_manhattan": 1,
+    "route_final_waypoint_to_other_guide_max_manhattan": 7,
+    "destination_sign_price_pairs_checked": 12,
+    "sign_board_CP950_text_valid": 26
+  },
+  "source_anomalies": [
+    {
+      "case": "denieditem_raw_difference",
+      "file": "data/npc/chatroom/bus.arg",
+      "second_id": 403,
+      "other_five_second_id": 2403,
+      "do_not_autocorrect": true
+    },
+    {
+      "case": "CP950_invalid_original_bytes",
+      "files": [
+        "data/npc/chatroom/bus.create",
+        "data/npc/chatroom/bus2.arg"
+      ],
+      "raw_SHA_crc_and_size_kept": true,
+      "original_bus2_name_not_assumed_from_invalid_bytes": true
+    },
+    {
+      "case": "guide_station_source_text_disagreement",
+      "file": "data/npc/genout/msg_200_426_100",
+      "original_guide_text_says": "卡魯它那",
+      "nearby_source_signs_destinations": [
+        "加加",
+        "卡魯它那"
+      ],
+      "route_endpoints_and_signs_suggest": "塔姆塔姆",
+      "same_deployment_runtime_not_proven": true
+    },
+    {
+      "case": "extra_no_bus_mapped",
+      "floor": 3000,
+      "guide_xy": [
+        51,
+        125
+      ],
+      "instruction_sign_xy": [
+        53,
+        123
+      ],
+      "no_floor3000_bus_vehicle_in_this_create": true
+    }
+  ],
+  "manual_crosscheck": {
+    "source": "docs/STAGE-A-PORTFOLIO-CHECKPOINT-R2.md",
+    "first_party_manual_date": "2001-04-18",
+    "manual_two_three_village_groups": true,
+    "manual_three_minutes": true,
+    "manual_four_passenger_capacity": true,
+    "manual_no_random_encounters_aboard": true,
+    "later_preserved_source_two_3_station_groups": true,
+    "later_original_sign_text_three_minutes": true,
+    "source_waittime_literal_180": true,
+    "waittime_unit_or_same_build_certified": false,
+    "maximum_four_capacity_in_handler_not_verified": true,
+    "no_wild_encounter_behavior_not_verified": true
+  },
+  "unverified": {
+    "original_client_or_server_executed": false,
+    "original_bus_actor_movement_seen": false,
+    "original_boarding_or_fare_deduction_seen": false,
+    "original_four_passenger_capacity_this_carrier": false,
+    "original_no_wild_encounters_this_carrier": false,
+    "native_waittime_units_proven": false,
+    "actual_map_tiles_or_route_collision_recovered_this_unit": false,
+    "original_sprites_rendered_this_unit": false,
+    "early_official_JSS1999_or_TW1_same_build_proven": false,
+    "proprietary_original_files_committed": false
+  },
+  "status": {
+    "stage_A": "7_PARTIAL_2_OPEN",
+    "stage_B": "GATED",
+    "wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "next": "O87: rotate source-qualified material gameplay/world content; reopen bus only on native handler or real executable witness, not helper expansion"
+}
