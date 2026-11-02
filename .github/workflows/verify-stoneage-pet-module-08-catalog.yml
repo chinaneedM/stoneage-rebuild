@@ -1,4 +1,4 @@
-name: Verify PET08/PET09 pet source-separated catalogs
+name: Verify PET08/PET09/PET10 source-qualified pet catalogs
 on:
   push:
     paths:
@@ -12,6 +12,8 @@ on:
       - 'research/recovered/tw85-spr137-r28/SOURCE-DERIVED-R28.json'
       - 'research/recovered/tw85-rd-private-r30/SOURCE-R30.json'
       - 'tests/test_stoneage_pet_module_09_carrier_material.py'
+      - 'research/recovered/STONEAGE-PET-MODULE-10-ORIGINAL-MIXED25-SERVER-TABLES-R1.json'
+      - 'tests/test_stoneage_pet_module_10_original_server.py'
       - '.github/workflows/verify-stoneage-pet-module-08-catalog.yml'
   workflow_dispatch:
 permissions:
@@ -25,4 +27,4 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: python -m unittest tests.test_stoneage_pet_module_08_catalog tests.test_stoneage_pet_module_09_carrier_material -v
+      - run: python -m unittest tests.test_stoneage_pet_module_08_catalog tests.test_stoneage_pet_module_09_carrier_material tests.test_stoneage_pet_module_10_original_server -v

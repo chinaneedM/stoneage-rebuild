@@ -76,3 +76,8 @@
 ### 2026-11-02 — PET-MODULE-09 原SPR跨版验证与八帧TW85既有原像素归位，宠物阶段性有界止点
 
 [PET09完整598图号来源分级](../research/recovered/STONEAGE-PET-MODULE-09-CROSSCARRIER-ORIGINAL-MATERIAL-RECEIPTS-R1.json)及[本轮源证/止点](continuity/STONEAGE-PET-MODULE-09-CROSSCARRIER-PIXEL-BOUNDARY-20261102.md)：130图号在PET07先前有TW1原像素；214图号CN5与TW85原SPR整个动画段已证完全一致但不认证RD像素相同；198仅有TW85索引，其中图号101501早在R30已有源验证8帧原RD索引像素/私人PNG收据，本轮与后期社区模板物理行843/1184仅做**跨年代同号链接**，未重新读取私人像素；另外197仍只有索引，56四载体没有图形号索引。累计按图号有131项**先前有真实原像素证据**，并不是131个官方物种。CN5/TW85整批原商业文件本轮不可直接读取，不能把源索引当已解码图；记录材料阻塞后不重复下载大包。**宠物模块现 SOURCE_BOUNDED_PARTIAL**，继续历史复原下一模块 `CHARACTER-NPC-MODULE-01`。原CURRENT不变、Stage A/B/wiki/R79和overall_percent=null不变。
+
+
+### 2026-11-02 — PET-MODULE-10：混合2.5原始RAR内988行宠物主表/实例/技能完整实物回读
+
+[PET10原8成员完整数值索引与SHA/CRC](../research/recovered/STONEAGE-PET-MODULE-10-ORIGINAL-MIXED25-SERVER-TABLES-R1.json)及[实物与来源边界](continuity/STONEAGE-PET-MODULE-10-PRIVATE-SERVER-MATERIAL-20261102.md)：用户Library现存原RAR361255180B全SHA本轮实际重校，libarchive真取8原成员。主表enemybase.txt有效988行/56字段，PETFLG1有495行、424图号；另一份640行/316宠物候选。2087/1494实例分别与对应模板全数ID匹配；主表147原技能定义支持1050正数宠物槽全部定义，备选56技能定义支持661正数槽中的649，12缺。与原RAR同载体847条SPR索引按数值关联，主表495宠物标记行302命中、234不同图号。私人原CP950全字段目录和无网可查HTML已保管，不向公开Git提供原名/原表正文/版权图。原SPR主体本轮受libarchive解压限制未完整取出，不称动画像素新恢复。PET09此前CN5/TW85大包不可读止点照旧；**PET10额外找回同包服务器实物**。宠物模块保持历史部分/来源限定阶段性闭合，**NEXT CHARACTER-NPC-MODULE-01**；无需替用户再要「继续」。Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、总体percent=null。
