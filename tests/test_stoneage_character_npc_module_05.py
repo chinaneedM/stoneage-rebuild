@@ -14,7 +14,7 @@ def replay(d,s,o,p,r):
     expected=o["indexed_graphic_source_summary"]
     found=d["graphic_material_status"]
     assert len(found)==len(expected)==108
-    assert [(x["graphicname"],x["original_SPR_index_positions"],x["config_occurrences"]) for x in found]==expected
+    assert [[x["graphicname"],x["original_SPR_index_positions"],x["config_occurrences"]] for x in found]==expected
     assert sum(x["config_occurrences"] for x in found)==617
     groups={g["spr_no"]:g for g in r["full_segment_comparisons"]}
     assert set(groups)=={100250,100251,100252}
