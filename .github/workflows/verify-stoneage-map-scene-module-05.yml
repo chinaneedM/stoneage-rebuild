@@ -1,0 +1,23 @@
+name: Verify MAP05 original source-window candidate observations and negative boundaries
+on:
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-MAP-SCENE-MODULE-05-SOURCE-WINDOW-OBSERVATION-R1.json'
+      - 'tests/test_stoneage_map_scene_module_05.py'
+      - '.github/workflows/verify-stoneage-map-scene-module-05.yml'
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-MAP-SCENE-MODULE-05-SOURCE-WINDOW-OBSERVATION-R1.json'
+      - 'tests/test_stoneage_map_scene_module_05.py'
+      - '.github/workflows/verify-stoneage-map-scene-module-05.yml'
+  workflow_dispatch:
+
+jobs:
+  derived-source-contract-not-commercial-runtime:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest discover -s tests -p 'test_stoneage_map_scene_module_05.py' -v
