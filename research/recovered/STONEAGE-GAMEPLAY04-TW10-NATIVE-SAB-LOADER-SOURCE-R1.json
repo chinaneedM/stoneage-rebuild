@@ -1,0 +1,139 @@
+{
+  "schema": "stoneage.gameplay_mechanics_module04_tw10_native_battle_sab_loader_static_callsite.r1",
+  "date": "2026-11-04",
+  "source": {
+    "scope": "PRESERVED_AUTHENTICATED_TW10_CLIENT_STATIC_DISASSEMBLY_NOT_ORIGINAL_GAME_EXECUTION",
+    "original_private_P3H_zip_bytes": 372626292,
+    "original_private_P3H_zip_sha256": "3a4854adaebef056332cdbd7b1dc1c130c571b11704e3f199f53d03aa31cba24",
+    "actual_zip_member_CRC_all_379_valid": true,
+    "game_binary_path": "source/sa_3.exe",
+    "game_binary_bytes": 425984,
+    "game_binary_sha256": "cdab9ea049a98bbc96ce93eeaa8b63c688f0c0f0ad8b3183e79d75e47621441a",
+    "earlier_O16_218_original_sab_source_blob": "7266f87fe38ca4f4caa886f30bf577957bb59662",
+    "earlier_O40_native_literal_static_join_blob": "788f31e97b52ec6b07f2747d7a1665083513dad8",
+    "earlier_O40_open_file_callsite_resolved_before_this_work": false,
+    "original_binary_or_server_launched_this_unit": false
+  },
+  "native_loader": {
+    "address": "0x00401260",
+    "code_file_offset_begin": 4704,
+    "code_file_offset_end_exclusive": 5087,
+    "native_code_bytes": 383,
+    "static_code_sha256": "93969b92f21b728ae59cc5a6e8fa166c541d40c1761fcc2e434d39ca32c09ce9",
+    "callsites": [
+      "0x00404a67",
+      "0x00404c22",
+      "0x0040d34e",
+      "0x0041ca62",
+      "0x0041cc94",
+      "0x0041ce23",
+      "0x0041cf63",
+      "0x0041d0f4"
+    ],
+    "eight_calls_static_rel32_target_verified": true,
+    "path_pointer_table_va": "0x00454070",
+    "path_pointer_table_file_offset": 344176,
+    "table_pointer_stride_bytes": 4,
+    "table_entries": 218,
+    "table_bytes": 872,
+    "table_sha256": "5fedbc3e503d4ade32bb9ad60a51d446f366e568ce4a64eac8d8e7ba9b054b71",
+    "index_upper_signed_comparison_hex": "cmp edi,0xDA at 0x40126F; jl 0x401279; else edi=0",
+    "index_ge_218_normalizes_to_0_in_this_entry": true,
+    "index_negative_explicitly_guarded_in_this_entry": false,
+    "source_path_template": "data\\battleMap\\battleNN.sab",
+    "file_open_mode_source_literal": "rb",
+    "open_file_call_va": "0x004487ba",
+    "open_file_failure_message_box_and_returns_zero": true,
+    "fread_four_original_header_bytes_before_check": true,
+    "malformed_header_warning_branch_aborts_processing": false,
+    "source_400_loop_counter_hex": "mov ebp,0x190 at 0x401324",
+    "source_400_word_read_low_then_high_bytes": true,
+    "source_tile_words_per_row": 20,
+    "source_tile_rows": 20,
+    "source_400_per_cell_dispatch_target_va": "0x004407a0",
+    "integer_render_loop_step_x": 32,
+    "integer_render_loop_step_y": 24,
+    "static_loader_success_result_one_on_post_open_path": true,
+    "source_header_token_to_search": "SAB",
+    "source_header_search_is_substring_function_not_strict_header_comparison": true,
+    "native_header_search_function_va": "0x004485e0",
+    "original_read_four_bytes_then_terminate_at_offset_four": true
+  },
+  "secondary_native_render_branch": {
+    "address": "0x004013e0",
+    "bytes_sha256_until_0x155f": "1411f0ee6c8ca2afabda2aa0e93baf7f001d470a957b5eda034164ad8568c097",
+    "reads_previous_selected_loader_index_va": "0x00465190",
+    "inclusive_integer_gate_for_distinct_branch": [
+      148,
+      150
+    ],
+    "actual_original_visual_effect_or_battle_rule_verified": false
+  },
+  "original_battle_SAB_replay": {
+    "actual_source_files_reopened_and_crc_valid": 218,
+    "native_pointer_paths_case_sensitive_match_zip_members": 0,
+    "native_pointer_paths_casefold_match_zip_members": 218,
+    "note": "Original EXE source path battleMap has uppercase M; private archive members use battlemap. Reconciliation is by explicitly reported case folding, not by pretending bytewise pathname equality.",
+    "source_file_bytes_each": 804,
+    "native_source_header_hex": "53414220",
+    "original_source_header_read_bytes": 4,
+    "original_source_header_first_three_ASCII": "SAB",
+    "source_words_after_header_per_file": 400,
+    "total_source_word_occurrences": 87200,
+    "distinct_numeric_word_values": 2296,
+    "unique_original_source_file_sha256": 217,
+    "already_known_duplicate_content_file_ids": [
+      [
+        145,
+        146
+      ]
+    ],
+    "original_source_sab_ids_sha256_in_order_digest": "6d21fcd27efe05227a6d021e52c4c38b9410a78d8c6fb170e087fe747e91813a",
+    "illustrative_exact_raw_sab_sha256": [
+      [
+        0,
+        "881850de822d7d5e44578dd11d309e9b2c3ae3455cfa71380199212cb368dec2"
+      ],
+      [
+        145,
+        "b3e6c9a3c3dd7375d4898ab4f8e1a5e2c684f60a0ab9c045e95fcd4c20b33476"
+      ],
+      [
+        146,
+        "b3e6c9a3c3dd7375d4898ab4f8e1a5e2c684f60a0ab9c045e95fcd4c20b33476"
+      ],
+      [
+        148,
+        "64184919ae2a9e638d6086e3ec90c3f509196027503ce635adb250f2b7de1abd"
+      ],
+      [
+        149,
+        "ceb70b6dd8e8869ae0347c75a95c64525f3ab53dc7a7ac5831cdae9a4407017a"
+      ],
+      [
+        150,
+        "eedaac38e0ec338edfb5613904ec116864e4633b8fee7db8f6be8c494acbeb05"
+      ],
+      [
+        217,
+        "b7ad2f960a59a8e3d4663eba218454ef3b54e967ddc026db6bd965fda3ebe730"
+      ]
+    ],
+    "previous_O16_sab_total_and_duplicate_not_new_historical_findings": true
+  },
+  "source_evidence_limits": {
+    "proven": "STATIC_COMPILED_CLIENT_FUNCTION_LINKED_TO_ALL_218_ARCHIVED_SAB_MEMBER_BYTES",
+    "commercial_client_file_io_executed": false,
+    "live_client_battle_world_entered": false,
+    "battle_encounter_event_to_sab_id_rule_recovered": false,
+    "native_palette_and_tile_visuals_replayed_this_unit": false,
+    "commercial_battle_skill_callback_executed": false,
+    "JSS1999_or_CN182_identical_behavior_proven": false,
+    "original_game_assets_or_binary_in_public_git": false,
+    "stage_A": "7_PARTIAL_2_OPEN",
+    "stage_B_and_wiki": "GATED",
+    "savedata_R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "next": "GAMEPLAY-MECHANICS-MODULE-05_SOURCE_BOUND_PET_STORAGE_HEAL_AND_CAPTURE_SERVICE"
+}
