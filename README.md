@@ -1580,3 +1580,7 @@ O75 CI史实订正：PR #133 初稿的 Stage A 检查 run 41362507873 因两处�
 ### 2026-11-03 — CHAR08：315份交换类NPC配置与同包两版物品ID差异
 
 [CHAR08 源限定归档](docs/continuity/STONEAGE-CHARACTER-NPC-MODULE-08-EXCHANGEMAN-ITEM-EVENT-20261103.md)及[公开数字收据](research/recovered/STONEAGE-CHARACTER-NPC-MODULE-08-STATIC-SOURCE-SUMMARY-R1.json)记录本轮重读混合2.5原RAR的295份 ExChangeMan 脚本/315创建引用、两份原itemset 13254/13915物品ID和380不同静态数值引用（373两表有、5仅候选后表、2两表都缺）。12项完整本地索引测试通过；文件中转故障导致338200B逐行索引没有进入Git，仓库诚实保存源SHA与全数值报告，不称可远端全量逐行重放。具体行为、原服来源、任务起源及官方TW1归属均未证。下一CHAR09核 NPCEnemy原始静态数值，再有界结束人物/NPC阶段并继续地图。
+
+### 2026-11-03 — CHAR09：279 份 NPCEnemy 来源配置 → 230 敌人实例 / 214 模板 / 117 SPR 图号
+
+[CHAR09 原文件恢复与来源限制](docs/continuity/STONEAGE-CHARACTER-NPC-MODULE-09-NPCENEMY-SOURCE-20261103.md)及[公开全源派生目录](research/recovered/STONEAGE-CHARACTER-NPC-MODULE-09-ORIGINAL-NPCENEMY-ROSTER-BRIDGE-R1.json)：实际重读已保存社区 mixed25 RAR 的原 `NPCEnemy` 创建/参数文件，以及两套 enemy/基表与原 `spradrn_5.bin`；279 条源配置/260 原参数，跨 230 数字敌人 ID 全部可分别到两套同载体原实例/模板；117 图号均有唯一原 SPR **索引**。但两套实例原字节全部不相同，模板行只有 145/230 对全同；不能认作同一真实运行配置或台湾 1.0 官方身份，原商业战斗与本批原动画/REAL 像素仍未取得。本轮人物/NPC 模块达到 SOURCE_BOUNDED_PARTIAL 阶段性止点，**下一最高 MAP-SCENE-MODULE-01**，回到已经保管的原地图与场景批量来源整合；Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、overall_percent=null、原 CURRENT 历史文件不变。
