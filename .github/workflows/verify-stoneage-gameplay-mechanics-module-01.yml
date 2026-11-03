@@ -1,4 +1,4 @@
-name: Verify GAMEPLAY01-04 source evidence and original native loader bounds
+name: Verify GAMEPLAY01-05 original gameplay source attribution and limits
 on:
   push:
     paths:
@@ -12,6 +12,9 @@ on:
       - 'tests/test_stoneage_gameplay_mechanics_module_03.py'
       - 'research/recovered/STONEAGE-GAMEPLAY04-TW10-NATIVE-SAB-LOADER-SOURCE-R1.json'
       - 'tests/test_stoneage_gameplay_mechanics_module_04.py'
+      - 'research/recovered/STONEAGE-GAMEPLAY05-ORIGINAL-PETSHOP-SAVEPOINT-HEAL-SOURCE-R1.json'
+      - 'tests/test_stoneage_gameplay_mechanics_module_05.py'
+      - 'research/recovered/item-module-01/**'
       - 'research/recovered/STONEAGE-O16-TW10-BATTLE-NATIVE-PALETTE-INTERLEAVE-R1.json'
       - 'research/recovered/STONEAGE-O40-TW10-NATIVE-BATTLE-PATH-SOURCE-R1.json'
       - '.github/workflows/verify-stoneage-gameplay-mechanics-module-01.yml'
@@ -26,6 +29,9 @@ on:
       - 'tests/test_stoneage_gameplay_mechanics_module_03.py'
       - 'research/recovered/STONEAGE-GAMEPLAY04-TW10-NATIVE-SAB-LOADER-SOURCE-R1.json'
       - 'tests/test_stoneage_gameplay_mechanics_module_04.py'
+      - 'research/recovered/STONEAGE-GAMEPLAY05-ORIGINAL-PETSHOP-SAVEPOINT-HEAL-SOURCE-R1.json'
+      - 'tests/test_stoneage_gameplay_mechanics_module_05.py'
+      - 'research/recovered/item-module-01/**'
       - 'research/recovered/STONEAGE-O16-TW10-BATTLE-NATIVE-PALETTE-INTERLEAVE-R1.json'
       - 'research/recovered/STONEAGE-O40-TW10-NATIVE-BATTLE-PATH-SOURCE-R1.json'
       - '.github/workflows/verify-stoneage-gameplay-mechanics-module-01.yml'
@@ -42,3 +48,4 @@ jobs:
       - run: python -m unittest discover -s tests -p 'test_stoneage_gameplay_mechanics_module_02.py' -v
       - run: python -m unittest discover -s tests -p 'test_stoneage_gameplay_mechanics_module_03.py' -v
       - run: python -m unittest discover -s tests -p 'test_stoneage_gameplay_mechanics_module_04.py' -v
+      - run: python -m unittest discover -s tests -p 'test_stoneage_gameplay_mechanics_module_05.py' -v
