@@ -1570,3 +1570,8 @@ O75 CI史实订正：PR #133 初稿的 Stage A 检查 run 41362507873 因两处�
 ### 2026-11-03 — CHAR06：47条同RAR NPC服务源参数，105图号的实际像素仍受限
 
 本轮按[CHAR06完整来源、解包阻塞与领域内容](docs/continuity/STONEAGE-CHARACTER-NPC-MODULE-06-SERVICE-SOURCE-20261103.md)及[CHAR06 47行派生源SHA/数值目录](research/recovered/STONEAGE-CHARACTER-NPC-MODULE-06-SERVICE-SOURCE-RECEIPT-R1.json)续接：原RAR全SHA相符，2205份原NPC文本逐成员大小/CRC/SHA通过，源静态SavePoint21、Bus7、PetShop16、PetSkillShop3实际参数已联接原创建配置、原文件/原文SHA和路径；另有私人原对白可检索资料页。原SPR/REAL解压未能完成资格化，CHAR05的其余105图号/587源配置仍是INDEX_ONLY，不冒作原图或历史运行。新参数据限社区混合2.5保存载体，不回填TW1官方原服。**最高NEXT CHAR07**：继续人物/NPC模块的TownPeople/告示/其他原文本批量内容来源，随后按模块计划转地图；Stage A7PARTIAL+2OPEN、Stage B/wiki GATED、R79暂停、总体percent=null。巨型CURRENT原历史文本仍完整，本文为非替代的加法指针。
+
+
+### 2026-11-03 — CHAR07：372份村民文本、180份告示原文实物，15处缺件
+
+[CHAR07成批原文来源与限制](docs/continuity/STONEAGE-CHARACTER-NPC-MODULE-07-TOWNPEOPLE-SIGNBOARD-ORIGINAL-TEXT-20261103.md)和[567条源创建→原文本引用/缺件目录](research/recovered/STONEAGE-CHARACTER-NPC-MODULE-07-TOWNPEOPLE-SIGNBOARD-SOURCE-CATALOG-R1.json)已保存原RAR经CRC/SHA核定的TownPeople387引用（372原文可读、15同RAR全7952成员未得）及SignBoard180引用（180均可读）。552份已得原字节CP950可解码，私人原文观察HTML在Chromium144真实筛选522+30=552条验证通过、0JS错误及外部请求；**552为文本源引用数不是NPC数**。公开Git只有源路径/哈希/地图坐标和编码结构数值，不发布完整商用原对白。未进入原商业客户端/原始世界，未将原文回填TW1或推测逗号分支。**下一优先 CHAR08**：同源交换类NPC实际条件/物品参数有据关联，未证的任务起源保持UNKNOWN；Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、overall_percent=null。原CURRENT未覆盖。
