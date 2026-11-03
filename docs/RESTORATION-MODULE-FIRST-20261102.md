@@ -148,3 +148,8 @@
 1000.DAT全源字节重读确认MAP02的12个未见于TW1 ADRN图号共出现14次、只在图形平面1的x85–90/y85–89集中区域。原RAR内adrn_15.bin本轮直接解包因RAR过滤器不支持而失败，未当成功；另已保存SCENE03的完整同名原索引18765120B按真实RAR声明大小及CRC核同，再按234564个原记录扫描：**11个图号各有一条后期源索引**且所有索引及候选REAL偏移在TW1正式保存资源范围外，**22413仍无后期同样索引**；后期real_15.bin全像素不可读，本批新增这12图的实际原像素=0，不能宣传已复原12图。私有196原文件/全文来源及代码打包ZIP333310B，已存个人Library并原样回读SHA/CRC；公开无商美术/原MAP正文，8项本地派生证据/负例通过；GitHub Actions仅待实际后验。
 
 MAP/SCENE维持**SOURCE_BOUNDED_PARTIAL**，历史 CURRENT blob `c89e0e33537990aa2132b47c40fef49a985a935c` 不改。保持Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、overall_percent=null。**最高NEXT MAP-SCENE-MODULE-04**：按模块原则复用MAP01已真读全量源，批量计算真正可读取原 DAT 地图格及与已保管台湾1.0原图索引的来源覆盖；超出来源/解压能力必须明确止点，然后才按模块顺序转物品。严禁凭编号猜像素、历史同服、原生碰撞或玩法改善。
+
+
+### 2026-11-03 — MAP-SCENE-MODULE-04：955份原DAT与4166个真正原RD图块来源批量联接
+
+[MAP04原实物和不确定边界](continuity/STONEAGE-MAP-SCENE-MODULE-04-955-DAT-REAL-RD-PIXEL-BATCH-20261103.md)及[955原DAT×4166原RD源限定索引](../research/recovered/STONEAGE-MAP-SCENE-MODULE-04-955-ORIGINAL-DAT-4166-RD-PIXEL-INDEX-R1.json)：已保存社区混合2.5 RAR原DAT文件971份真实取出并全部与MAP01原CRC/SHA核同，其中955份具有标准8+6×格三原平面结构、2852551原格；13原零字节和3份二字节BGM文件不计为完整地图。候选两图形平面3082072次非零引用共5291不同图号，已认证TW1零售ADRN唯一对应4166且全部从原REAL实际RD索引像素解码成功，像素SHA去重4063；1125个无TW1索引仅85后期索引唯一、2后期索引多重、1038尚无任何两保存索引匹配，后期REAL仍未解码。相对MAP02新观察范围含3402原RD图号；旧780图中764重叠项RD、RGBA、PNG哈希一致，16以前有证但本次DAT没有引用的旧RD继续保留。私人4166 PNG候选及可搜图集 35673334B/SHA e9c43222797c7ebcddfcb1ccab6dbeba205b972bbbff4e1f29c14b3ece320d37 已保存Library、回读全SHA/4169成员CRC成功。源图片和原DAT/REAL不公开。MAP01旧63次失败与CURRENT原blob c89e0e33537990aa2132b47c40fef49a985a935c继续原样保留，Stage A 7 PARTIAL+2 OPEN、Stage B/wiki GATED、R79暂停、overall_percent=null，地图SOURCE_BOUNDED_PARTIAL。最高NEXT MAP-SCENE-MODULE-05：只在实际已有原图、原DAT、历史场景拼接材料上有限做场景原图组合与可见覆盖，按真实来源留原生层序/碰撞/同服未知；受限止点后转物品装备商店模块，不扩新引擎或优化体验。
