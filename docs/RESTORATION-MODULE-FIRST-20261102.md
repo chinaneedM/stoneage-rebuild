@@ -110,3 +110,8 @@
 ### 2026-11-03 — CHAR06 同载体NPC服务原文与静态参数（47条）
 
 [CHAR06原字节、解包止点及来源边界](continuity/STONEAGE-CHARACTER-NPC-MODULE-06-SERVICE-SOURCE-20261103.md)与[逐行源SHA/路径/数值目录](../research/recovered/STONEAGE-CHARACTER-NPC-MODULE-06-SERVICE-SOURCE-RECEIPT-R1.json)：从私人mixed25原RAR完整SHA复核并成功提取2205份原NPC文本，逐成员大小/CRC/SHA通过。剩余105组同RAR图号的原SPR/REAL实际提取遇到libarchive不支持或报错，只有未经完整资格确认的SPR前缀，不可宣称获得原像素，仍105图号/587配置INDEX_ONLY。转而恢复同RAR NPCCREATE→NPCTEMPLATE(functionset)→file:原参数文件：SavePoint21、Bus7、PetShop16、PetSkillShop3，共47条来源限定原关联，含原记录点ID/出生坐标、7组公车路线点列、宠物店费率/寄养字段、宠技参数。另生成私人自包含原文观察页，未把商业原对白上传Git、也没运行商业原客户端或服务器。47不等于NPC数量，时间单位/价款/运行选择不能从静态定义直接确证，mixed25也非纯净官方同部署身份。**NEXT CHAR07**：仍集中人物/NPC，对已得2205原文本扩展TownPeople/告示及其它功能原文来源与类别批量索引；达到有界止点再转地图模块。Stage A7PARTIAL+2OPEN、Stage B/wiki GATED、R79暂停、overall_percent=null，CURRENT历史前缀不变。
+
+
+### 2026-11-03 — CHAR07 原NPC村民对白与告示文字552条原文件实物联接
+
+[CHAR07完整来源/界限](continuity/STONEAGE-CHARACTER-NPC-MODULE-07-TOWNPEOPLE-SIGNBOARD-ORIGINAL-TEXT-20261103.md)及[CHAR07逐567源配置引用与15缺件目录](../research/recovered/STONEAGE-CHARACTER-NPC-MODULE-07-TOWNPEOPLE-SIGNBOARD-SOURCE-CATALOG-R1.json)：直接复用已实际解出的mixed25 NPC完整2205源文件，用原create/template/functionset逐源块关联TownPeople387引用、SignBoard180引用；其中TownPeople372有原文/15缺、SignBoard180全部有原文。全部552实际原文CP950解码无替换字，按原SHA/CRC/文件大小核；缺15文件在同RAR全7952成员查无路径/同尾文件名，不能抬为整个历史发行缺失。原文本字面逗号/\\n只是源字节，尚无运行分支/行规证据。私人自包含观察器现已实际由Chromium144校验552原文及两类筛选、0脚本错误/外部请求，原版权对白未进入Git。567是配置引用数，不是NPC人物数；原商业世界未进入，同服/官方TW1身份未知。**NEXT CHAR08**集中有原件的任务交换NPC源条件/物品参数关系，任务原产地分类严格保留UNKNOWN；若有界材料已用尽，再按既定模块顺序转地图。Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停及overall_percent=null不变。
