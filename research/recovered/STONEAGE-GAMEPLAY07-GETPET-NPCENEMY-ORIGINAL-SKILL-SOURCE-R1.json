@@ -70,7 +70,29 @@
     ],
     "source_npcenemy_skill_id_defined_in_primary_petskill_master": 39,
     "source_npcenemy_skill_id_defined_in_alternative_petskill_master": 39,
-    "source_O59_wild_candidates_outside_NPCEnemy_enemy_instance_cohort": 2
+    "source_O59_wild_candidates_outside_NPCEnemy_enemy_instance_cohort": 2,
+    "source_npcenemy_39_distinct_skill_ids_overlapping_original_21_skillshop_23_ids": 19,
+    "source_npcenemy_skillshop_intersection_IDs": [
+      1,
+      2,
+      3,
+      10,
+      11,
+      20,
+      30,
+      31,
+      40,
+      50,
+      51,
+      60,
+      61,
+      80,
+      90,
+      100,
+      110,
+      120,
+      150
+    ]
   },
   "source_GetPet_original_NPC_files": [
     {
@@ -8211,7 +8233,8 @@
     "stage_A": "7_PARTIAL_2_OPEN",
     "stage_B_and_wiki": "GATED",
     "R79": "PAUSED_NON_BLOCKING",
-    "overall_percent": null
+    "overall_percent": null,
+    "source_skill_shop_definition_or_numeric_intersection_proves_pets_trained_or_learned": false
   },
   "next": "INTEGRATION-MODULE-01_SOURCE_BOUNDED_PET_NPC_QUEST_GAMEPLAY_JOIN_WITHOUT_PREMATURE_PLAYABLE_CLAIM"
 }
