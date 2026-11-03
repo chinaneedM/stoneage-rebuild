@@ -1,0 +1,24 @@
+name: Verify MAP04 original 955 DAT source cell coverage and 4166 TW1 RD receipts
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-MAP-SCENE-MODULE-04-955-ORIGINAL-DAT-4166-RD-PIXEL-INDEX-R1.json'
+      - 'research/recovered/STONEAGE-MAP-SCENE-MODULE-01-ORIGINAL-SOURCE-MANIFEST-R1.json'
+      - 'tests/test_stoneage_map_scene_module_04.py'
+      - '.github/workflows/verify-stoneage-map-scene-module-04.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-MAP-SCENE-MODULE-04-955-ORIGINAL-DAT-4166-RD-PIXEL-INDEX-R1.json'
+      - 'tests/test_stoneage_map_scene_module_04.py'
+      - '.github/workflows/verify-stoneage-map-scene-module-04.yml'
+  workflow_dispatch:
+
+jobs:
+  actual-source-derived-metadata-boundaries:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest discover -s tests -p 'test_stoneage_map_scene_module_04.py' -v
