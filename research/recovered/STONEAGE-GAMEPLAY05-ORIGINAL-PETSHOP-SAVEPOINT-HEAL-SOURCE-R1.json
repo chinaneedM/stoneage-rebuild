@@ -1,0 +1,1899 @@
+{
+  "schema": "stoneage.gameplay_mechanics_module05_preserved_pet_storage_savepoint_heal_source.r1",
+  "date": "2026-11-04",
+  "source": {
+    "scope": "MIXED25_COMMUNITY_PRESERVED_NPC_SOURCE_NOT_AUTHENTICATED_OFFICIAL_DEPLOYMENT",
+    "original_private_NPC_ZIP_sha256": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+    "original_NPC_ZIP_bytes": 995176,
+    "private_NPC_subtree_file_count": 2205,
+    "private_original_NPC_subtree_bytes": 1930332,
+    "all_original_NPC_files_full_SHA256_CRC32_replayed_in_prior_GAMEPLAY02_and_private_source_read_here": true,
+    "source_CHAR01_manifest_blob": "a088b61a3212f7049e7793f587123ffb29bebad7",
+    "source_ITEM01_7_published_numeric_shards": "research/recovered/item-module-01/",
+    "original_parent_RAR_reopened_this_unit": false
+  },
+  "summary": {
+    "create_refs_total": 77,
+    "original_parameter_file_count": 38,
+    "original_parameter_bytes_sum": 12707,
+    "family_create_counts": {
+      "npcgen_charm": 4,
+      "npcgen_fmhealer": 4,
+      "npcgen_healer": 4,
+      "npcgen_petshop": 16,
+      "npcgen_savepoint": 22,
+      "npcgen_winhealer": 27
+    },
+    "source_pet_shop_create_count": 16,
+    "source_petshop_nomal_rate_literal_counts": {
+      "1.0": 13,
+      "0.6": 2,
+      "0.7": 1
+    },
+    "source_petshop_pool_cost_literal_counts": {
+      "200": 5,
+      "2000": 1,
+      "MISSING": 10
+    },
+    "source_petshop_pool_flag_present_count": 6,
+    "source_petshop_special_rate_1_5_count": 14,
+    "source_savepoint_create_count": 22,
+    "savepoint_distinct_source_ID_count": 22,
+    "savepoint_GetItem_option_tokens": 209,
+    "savepoint_GetItem_distinct_numeric_item_ids": 116,
+    "savepoint_GetItem_source_missing_field_count": 1,
+    "savepoint_GetItem_incomplete_quantity_token_count": 1,
+    "savepoint_GetItem_bare_id_source_count": 1,
+    "savepoint_item_IDs_present_in_both_candidate_itemsets": 110,
+    "savepoint_item_IDs_only_present_in_itemset_B": 6,
+    "only_itemset_B_source_ids": [
+      1732,
+      1733,
+      1734,
+      1735,
+      1736,
+      1737
+    ],
+    "savepoint_item_IDs_missing_both": 0,
+    "source_winhealer_inline_create_count": 27,
+    "source_winhealer_distinct_four_argument_literal_sets": 14,
+    "source_nonwinhealer_inline_create_count": 12
+  },
+  "source_parameter_members": [
+    {
+      "path": "genout/ps_1003_12_13",
+      "source_bytes": 397,
+      "source_SHA256": "f4759c08d7391033b8fcee4d2580832c77e8210d637009b608be460b51285cbe",
+      "source_CRC32": "794120d0",
+      "source_kind": "npcgen_petshop"
+    },
+    {
+      "path": "genout/ps_1103_19_17",
+      "source_bytes": 220,
+      "source_SHA256": "101f7d3affde660b494492023a5c017ce92c1872b13705c08764d816bd6fb5b0",
+      "source_CRC32": "991ae858",
+      "source_kind": "npcgen_petshop"
+    },
+    {
+      "path": "genout/ps_1203_14_13",
+      "source_bytes": 234,
+      "source_SHA256": "db60d5e31f2478d8f59a9144c49b61c17448a0a978a63be98d81b6398c469463",
+      "source_CRC32": "61a6ed56",
+      "source_kind": "npcgen_petshop"
+    },
+    {
+      "path": "genout/ps_130_49_3",
+      "source_bytes": 373,
+      "source_SHA256": "b6147b9cf873c1a1af4643d0ac06b4ac557d54d97bea40d0b85b06340dfe2acc",
+      "source_CRC32": "7ba87419",
+      "source_kind": "npcgen_petshop"
+    },
+    {
+      "path": "genout/ps_1303_16_13",
+      "source_bytes": 256,
+      "source_SHA256": "8beaa8a89b834d90be34e9213abf40d5bdb9ff832a6b6c5bb674db738577f022",
+      "source_CRC32": "a55033a3",
+      "source_kind": "npcgen_petshop"
+    },
+    {
+      "path": "genout/ps_1403_14_13",
+      "source_bytes": 230,
+      "source_SHA256": "26209a7b2b30c8cc9a8da3dd06bd3bc6bcd4b7284ffa689898b69035c59f50ca",
+      "source_CRC32": "ae36efa2",
+      "source_kind": "npcgen_petshop"
+    },
+    {
+      "path": "genout/ps_2003_18_17",
+      "source_bytes": 383,
+      "source_SHA256": "51c9bc03950cdd84a8a2661586010f737460212ce3a17992089401bb65046f36",
+      "source_CRC32": "e450b3bb",
+      "source_kind": "npcgen_petshop"
+    },
+    {
+      "path": "genout/ps_3003_12_13",
+      "source_bytes": 407,
+      "source_SHA256": "c499b5fd06ba53537552614e6ea59222b0450d9e2301bc844afc4890bdcdf16f",
+      "source_CRC32": "bfc8b5a2",
+      "source_kind": "npcgen_petshop"
+    },
+    {
+      "path": "genout/ps_3103_16_13",
+      "source_bytes": 228,
+      "source_SHA256": "3c3f45e2d95e6c4e0c302f39269beb7a9aebffdd19b99d4a550dc80d0ce4f35c",
+      "source_CRC32": "3dd5b9ff",
+      "source_kind": "npcgen_petshop"
+    },
+    {
+      "path": "genout/ps_3203_18_18",
+      "source_bytes": 228,
+      "source_SHA256": "2f028a964aee5838349fafed6862a2bc0aa54d44ec78fca6228afcd97243de72",
+      "source_CRC32": "386c04b3",
+      "source_kind": "npcgen_petshop"
+    },
+    {
+      "path": "genout/ps_3303_16_14",
+      "source_bytes": 256,
+      "source_SHA256": "009623f1960ae3addbc5991dd435f49f8b11e3af10a1ff09f6a2e5c7b9c3b830",
+      "source_CRC32": "9bd6fe42",
+      "source_kind": "npcgen_petshop"
+    },
+    {
+      "path": "genout/ps_3403_18_18",
+      "source_bytes": 256,
+      "source_SHA256": "d78288914ddca095c83875b3e03ec9cfbf4d736b82a28ff9a6aa6e0a2f14c651",
+      "source_CRC32": "d775dc94",
+      "source_kind": "npcgen_petshop"
+    },
+    {
+      "path": "genout/ps_4003_13_13",
+      "source_bytes": 423,
+      "source_SHA256": "82cfd710b0b84066c66c141a90e46c899119ae0e1b15814b3a85f1d33601c85f",
+      "source_CRC32": "8bdf12d7",
+      "source_kind": "npcgen_petshop"
+    },
+    {
+      "path": "genout/ps_5003_21_13",
+      "source_bytes": 204,
+      "source_SHA256": "75022fef15acf280d49e03c6c96144f40a5ccc0b24506ab1aafc20dfb4e75c5d",
+      "source_CRC32": "90629ad9",
+      "source_kind": "npcgen_petshop"
+    },
+    {
+      "path": "genout/ps_5103_13_12",
+      "source_bytes": 180,
+      "source_SHA256": "62a7f817f0a6fd254db4b0c5b9d8a883d7a9b4459a3367940ed5541cc9e8116b",
+      "source_CRC32": "ba4a744c",
+      "source_kind": "npcgen_petshop"
+    },
+    {
+      "path": "genout/sp_100_183_346",
+      "source_bytes": 400,
+      "source_SHA256": "de6ea061279d4946ce4d9dbdc22fd7e0013410877185799c740e3901eea41841",
+      "source_CRC32": "4a0e9fd7",
+      "source_kind": "npcgen_savepoint"
+    },
+    {
+      "path": "genout/sp_100_344_466",
+      "source_bytes": 472,
+      "source_SHA256": "823f3cb0b63e97ebdc7ead9ac1844b7ba0db70c27d848f05cc1ef7d75701102c",
+      "source_CRC32": "1848fdf9",
+      "source_kind": "npcgen_savepoint"
+    },
+    {
+      "path": "genout/sp_1000_94_99",
+      "source_bytes": 328,
+      "source_SHA256": "37da20bdb3ecd6d2585eaba072baf4230b0ab37e58d782d3f35c07e0e49a6afb",
+      "source_CRC32": "7673f39b",
+      "source_kind": "npcgen_savepoint"
+    },
+    {
+      "path": "genout/sp_1100_50_91",
+      "source_bytes": 294,
+      "source_SHA256": "fd44ce04391430b80c6773e8ef11d21c6deaa06d679f4c10c03640f4287a862b",
+      "source_CRC32": "01d5925f",
+      "source_kind": "npcgen_savepoint"
+    },
+    {
+      "path": "genout/sp_1200_63_46",
+      "source_bytes": 273,
+      "source_SHA256": "a08c428d04bc806f327a28d74153331b23c86c6ecb3f285c68f5dcaf1790c5b6",
+      "source_CRC32": "e15cd83e",
+      "source_kind": "npcgen_savepoint"
+    },
+    {
+      "path": "genout/sp_1300_29_23",
+      "source_bytes": 478,
+      "source_SHA256": "2b0ed617d8edfbc40b414ffb9f32b7f8fc921133175dc15c1a8c4d1b293d6eb3",
+      "source_CRC32": "4277d9b2",
+      "source_kind": "npcgen_savepoint"
+    },
+    {
+      "path": "genout/sp_1400_76_104",
+      "source_bytes": 527,
+      "source_SHA256": "dca46ba1a03d0f6dde5afc8aee47ac0288c72031066311e2f3340d6fe1e5c3cd",
+      "source_CRC32": "56387649",
+      "source_kind": "npcgen_savepoint"
+    },
+    {
+      "path": "genout/sp_200_406_371",
+      "source_bytes": 526,
+      "source_SHA256": "ee99d153fd59a64ad2f44d50ec2a90751e8e9c193bfeb9a3645fdd30d0aef9e8",
+      "source_CRC32": "34c4cc42",
+      "source_kind": "npcgen_savepoint"
+    },
+    {
+      "path": "genout/sp_200_449_982",
+      "source_bytes": 527,
+      "source_SHA256": "5b3332e6136ca7a774730afa08237fa626d606f86c0a6f316844b7c5d2545d36",
+      "source_CRC32": "d1573cb8",
+      "source_kind": "npcgen_savepoint"
+    },
+    {
+      "path": "genout/sp_2000_67_58",
+      "source_bytes": 312,
+      "source_SHA256": "b1f5ffbb5d94b77e0d851ad0ae5d1edc57d69d074de40aa9f7d04e3e07bcffe8",
+      "source_CRC32": "fe602d8a",
+      "source_kind": "npcgen_savepoint"
+    },
+    {
+      "path": "genout/sp_3000_96_97",
+      "source_bytes": 309,
+      "source_SHA256": "ac609d5a5cbe9e8a44e6a1119dcecc9301167fa034501789bde397ef7103d828",
+      "source_CRC32": "bbdea98f",
+      "source_kind": "npcgen_savepoint"
+    },
+    {
+      "path": "genout/sp_30691_87_60",
+      "source_bytes": 173,
+      "source_SHA256": "c2012b70f7daa96d5fba4ace374f87438f0d22a2b3acbc89e9b9890d9bf20b97",
+      "source_CRC32": "fdd3c2d6",
+      "source_kind": "npcgen_savepoint"
+    },
+    {
+      "path": "genout/sp_3100_83_70",
+      "source_bytes": 291,
+      "source_SHA256": "d23fedab070db480eb7c3a1282e47e32d49df6605b82a1bd80fd6ae83eaebe8a",
+      "source_CRC32": "2a835953",
+      "source_kind": "npcgen_savepoint"
+    },
+    {
+      "path": "genout/sp_3200_49_60",
+      "source_bytes": 271,
+      "source_SHA256": "d63364ae1598514a572147e279940de13d32ed9db770e9efcdbd45a9f3d3a02f",
+      "source_CRC32": "b3e0442f",
+      "source_kind": "npcgen_savepoint"
+    },
+    {
+      "path": "genout/sp_32007_27_52",
+      "source_bytes": 322,
+      "source_SHA256": "041306bb9dbfddd4dabbc7b4ea3c698ba2065f7bbdcbbb25f88072847bcfad6e",
+      "source_CRC32": "f9d14a35",
+      "source_kind": "npcgen_savepoint"
+    },
+    {
+      "path": "genout/sp_32014_51_9",
+      "source_bytes": 325,
+      "source_SHA256": "d13eec946677d68b2bc14be0e26fdacb4b27b9a9a9898588e18ee7c45b181a69",
+      "source_CRC32": "16796f7d",
+      "source_kind": "npcgen_savepoint"
+    },
+    {
+      "path": "genout/sp_3300_71_51",
+      "source_bytes": 513,
+      "source_SHA256": "9dccc27a918d0a78018d434607bbcab8bea505f02d63c863df36e93aef62a0e2",
+      "source_CRC32": "c5ce0da2",
+      "source_kind": "npcgen_savepoint"
+    },
+    {
+      "path": "genout/sp_3400_65_48",
+      "source_bytes": 513,
+      "source_SHA256": "24aa77bd2369f24dbbccb5ddd8dc5281fd606b805de8a24af41fbabdd45c315b",
+      "source_CRC32": "e6a2df16",
+      "source_kind": "npcgen_savepoint"
+    },
+    {
+      "path": "genout/sp_4000_68_55",
+      "source_bytes": 319,
+      "source_SHA256": "f8373aa4568283b9ead398b099b1b375490ebd14609b4a0ede89e3b17cc02587",
+      "source_CRC32": "3b2331f3",
+      "source_kind": "npcgen_savepoint"
+    },
+    {
+      "path": "genout/sp_5000_47_53",
+      "source_bytes": 329,
+      "source_SHA256": "d2969c3764ceb6ce70f8d5cb0b3c6c503fb61f16795cfecca33fc114a9b9d52e",
+      "source_CRC32": "7a3d3d07",
+      "source_kind": "npcgen_savepoint"
+    },
+    {
+      "path": "genout/sp_5106_22_36",
+      "source_bytes": 299,
+      "source_SHA256": "0685ac7968082f6311b42ee09d0a5e4cd3f1b58f08f9fb1857cc2b8031c5e41a",
+      "source_CRC32": "6d52840a",
+      "source_kind": "npcgen_savepoint"
+    },
+    {
+      "path": "my/zhuansheng/jifang.arg",
+      "source_bytes": 380,
+      "source_SHA256": "e811594a2ed9215d3e68ec5f246ef573ddbfd3cff13c98eac23884fb24653908",
+      "source_CRC32": "70ced815",
+      "source_kind": "npcgen_petshop"
+    },
+    {
+      "path": "poru/sp_5500_35_19",
+      "source_bytes": 251,
+      "source_SHA256": "f2ae42c6e29efd1a70bd15e4c87ad738b88d37b69ec2feb76ea22551995a6948",
+      "source_CRC32": "dff4bd0c",
+      "source_kind": "npcgen_savepoint"
+    }
+  ],
+  "original_CREATE_refs_and_derived_numeric_fields": [
+    {
+      "create_path": "family/fmhealer.create",
+      "create_ordinal": 0,
+      "create_block_sha256": "345d2cd133911d0b340b927a39a0d7030adc2d0590c1fe986ccf5552da360fa6",
+      "floorid": 1041,
+      "graphicname": 16023,
+      "source_function": "npcgen_fmhealer",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "source_parameter_path": null,
+      "source_enemy_argument_tokens": [
+        "1"
+      ]
+    },
+    {
+      "create_path": "family/fmhealer.create",
+      "create_ordinal": 1,
+      "create_block_sha256": "0db119c3b8f8720d6d00313796a4d75a053aaeff14f7d2e10a95a427130fc016",
+      "floorid": 2031,
+      "graphicname": 16023,
+      "source_function": "npcgen_fmhealer",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "source_parameter_path": null,
+      "source_enemy_argument_tokens": [
+        "1"
+      ]
+    },
+    {
+      "create_path": "family/fmhealer.create",
+      "create_ordinal": 2,
+      "create_block_sha256": "ed0e2ba39366c0911c9f310ce918be926767bc2c2fda72896f80f38ee67d3757",
+      "floorid": 3031,
+      "graphicname": 16023,
+      "source_function": "npcgen_fmhealer",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "source_parameter_path": null,
+      "source_enemy_argument_tokens": [
+        "1"
+      ]
+    },
+    {
+      "create_path": "family/fmhealer.create",
+      "create_ordinal": 3,
+      "create_block_sha256": "bdae3432e4087b2da0024a4b2e9f792f88f6a3c5430942534d97946225277074",
+      "floorid": 4031,
+      "graphicname": 16023,
+      "source_function": "npcgen_fmhealer",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "source_parameter_path": null,
+      "source_enemy_argument_tokens": [
+        "1"
+      ]
+    },
+    {
+      "create_path": "genout/10900npc.create",
+      "create_ordinal": 6,
+      "create_block_sha256": "a7bcfe8d2405a325b5ff57143f127c0fdf90bf76e0e27b05e459066040ab86a7",
+      "floorid": 10914,
+      "graphicname": 16058,
+      "source_function": "npcgen_winhealer",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "source_parameter_path": null,
+      "source_enemy_argument_tokens": [
+        "10",
+        "3.0",
+        "4.0",
+        "2"
+      ]
+    },
+    {
+      "create_path": "genout/20700npc.create",
+      "create_ordinal": 7,
+      "create_block_sha256": "5f11ed8876003bd8b1d6d0c09eb9d476bb173bebac84446af5561d2e9b09355b",
+      "floorid": 20703,
+      "graphicname": 16058,
+      "source_function": "npcgen_winhealer",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "source_parameter_path": null,
+      "source_enemy_argument_tokens": [
+        "10",
+        "4.0",
+        "5.0",
+        "2"
+      ]
+    },
+    {
+      "create_path": "genout/duelroom.create",
+      "create_ordinal": 15,
+      "create_block_sha256": "444fcbf23e339a17d8448696f10ecc2a1868fd4a8576ba15be0d8978fe4e1619",
+      "floorid": 130,
+      "graphicname": 16012,
+      "source_function": "npcgen_healer",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "source_parameter_path": null,
+      "source_enemy_argument_tokens": [
+        "1"
+      ]
+    },
+    {
+      "create_path": "genout/duelroom.create",
+      "create_ordinal": 17,
+      "create_block_sha256": "03cedb67a0dafe95525c964141ac6d2ca08df86e789bcfcac3b1a43678ba0b0a",
+      "floorid": 130,
+      "graphicname": 16012,
+      "source_function": "npcgen_healer",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "source_parameter_path": null,
+      "source_enemy_argument_tokens": [
+        "1"
+      ]
+    },
+    {
+      "create_path": "genout/duelroom.create",
+      "create_ordinal": 21,
+      "create_block_sha256": "d835a82ccddd7545e18da6333a7878ca8a6209d21de0844c2e8a484e3ba09f19",
+      "floorid": 130,
+      "graphicname": 16038,
+      "source_function": "npcgen_petshop",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "source_parameter_path": "genout/ps_130_49_3",
+      "source_parameter_sha256": "b6147b9cf873c1a1af4643d0ac06b4ac557d54d97bea40d0b85b06340dfe2acc",
+      "source_fields": {
+        "original_key_is_nomal_rate_not_normal_rate": "1.0",
+        "pool_flg_raw": "1",
+        "pool_cost_raw": "200",
+        "special_rate_raw": "1.5",
+        "special_pet_field_exists": true,
+        "special_pet_source_is_empty": true
+      }
+    },
+    {
+      "create_path": "genout/manmoshall.create",
+      "create_ordinal": 16,
+      "create_block_sha256": "7a720928b850b8cd3972f73f777998482c693f0a43b944f5368fa240034b156a",
+      "floorid": 117,
+      "graphicname": 16024,
+      "source_function": "npcgen_winhealer",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "source_parameter_path": null,
+      "source_enemy_argument_tokens": [
+        "1",
+        "40",
+        "60",
+        "1"
+      ]
+    },
+    {
+      "create_path": "genout/shop_event.create",
+      "create_ordinal": 21,
+      "create_block_sha256": "2a18b552498a16dee18d665e41451bef265451669780f4f76cc95b4adfd290be",
+      "floorid": 10920,
+      "graphicname": 16058,
+      "source_function": "npcgen_winhealer",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "source_parameter_path": null,
+      "source_enemy_argument_tokens": [
+        "10",
+        "2.0",
+        "4.0",
+        "2"
+      ]
+    },
+    {
+      "create_path": "genout/shop_event2.create",
+      "create_ordinal": 9,
+      "create_block_sha256": "ac1117c2af34e0b0eb642eef5c1d6a4c42d26a4339c250ea82cccfe0a1a77e6f",
+      "floorid": 20712,
+      "graphicname": 16058,
+      "source_function": "npcgen_winhealer",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "source_parameter_path": null,
+      "source_enemy_argument_tokens": [
+        "10",
+        "2.0",
+        "4.0",
+        "2"
+      ]
+    },
+    {
+      "create_path": "genout/shop_m.create",
+      "create_ordinal": 3,
+      "create_block_sha256": "eac3ba16a251748c7e27cd8c42cbd5f0020516e6adf4278d029ede4b2c812536",
+      "floorid": 1003,
+      "graphicname": 16038,
+      "source_function": "npcgen_petshop",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "source_parameter_path": "genout/ps_1003_12_13",
+      "source_parameter_sha256": "f4759c08d7391033b8fcee4d2580832c77e8210d637009b608be460b51285cbe",
+      "source_fields": {
+        "original_key_is_nomal_rate_not_normal_rate": "1.0",
+        "pool_flg_raw": "1",
+        "pool_cost_raw": "200",
+        "special_rate_raw": "1.5",
+        "special_pet_field_exists": true,
+        "special_pet_source_is_empty": true
+      }
+    },
+    {
+      "create_path": "genout/shop_m.create",
+      "create_ordinal": 9,
+      "create_block_sha256": "e23da46375de36db04f1f4c88ce9af46830b7db199d5891664a691723341dca1",
+      "floorid": 1005,
+      "graphicname": 16012,
+      "source_function": "npcgen_winhealer",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "source_parameter_path": null,
+      "source_enemy_argument_tokens": [
+        "10",
+        "0.5",
+        "2.0",
+        "2"
+      ]
+    },
+    {
+      "create_path": "genout/shop_m.create",
+      "create_ordinal": 11,
+      "create_block_sha256": "4d9c7f7e8c84a0e1ed2e0533204409a58254834143cf0a1458703a130c50d5ae",
+      "floorid": 1005,
+      "graphicname": 16065,
+      "source_function": "npcgen_charm",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "source_parameter_path": null,
+      "source_enemy_argument_tokens": []
+    },
+    {
+      "create_path": "genout/shop_m.create",
+      "create_ordinal": 17,
+      "create_block_sha256": "4fa01cc89def2414b017c8fc1028f7a3cd2052b865df305ffa636144da1c90b6",
+      "floorid": 1022,
+      "graphicname": 16012,
+      "source_function": "npcgen_healer",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "source_parameter_path": null,
+      "source_enemy_argument_tokens": [
+        "1"
+      ]
+    },
+    {
+      "create_path": "genout/shop_m.create",
+      "create_ordinal": 26,
+      "create_block_sha256": "5cd18b23e98c61c1fd3107f51cbdf230ac44f15403cd4a1834b5ecfad49243c9",
+      "floorid": 1103,
+      "graphicname": 16046,
+      "source_function": "npcgen_petshop",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "source_parameter_path": "genout/ps_1103_19_17",
+      "source_parameter_sha256": "101f7d3affde660b494492023a5c017ce92c1872b13705c08764d816bd6fb5b0",
+      "source_fields": {
+        "original_key_is_nomal_rate_not_normal_rate": "1.0",
+        "pool_flg_raw": null,
+        "pool_cost_raw": null,
+        "special_rate_raw": "1.5",
+        "special_pet_field_exists": true,
+        "special_pet_source_is_empty": true
+      }
+    },
+    {
+      "create_path": "genout/shop_m.create",
+      "create_ordinal": 32,
+      "create_block_sha256": "6ff450a82ef8877bb8b324f40a222730c10a75856c2eee68c6e641bd22b29133",
+      "floorid": 1105,
+      "graphicname": 16058,
+      "source_function": "npcgen_winhealer",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "source_parameter_path": null,
+      "source_enemy_argument_tokens": [
+        "10",
+        "1.0",
+        "2.2",
+        "2"
+      ]
+    },
+    {
+      "create_path": "genout/shop_m.create",
+      "create_ordinal": 41,
+      "create_block_sha256": "d8e48d46fbb56a850c365eeb56eac82abb343203d7b03b58c02e666f0bf222e8",
+      "floorid": 1203,
+      "graphicname": 16035,
+      "source_function": "npcgen_petshop",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "source_parameter_path": "genout/ps_1203_14_13",
+      "source_parameter_sha256": "db60d5e31f2478d8f59a9144c49b61c17448a0a978a63be98d81b6398c469463",
+      "source_fields": {
+        "original_key_is_nomal_rate_not_normal_rate": "0.7",
+        "pool_flg_raw": null,
+        "pool_cost_raw": null,
+        "special_rate_raw": "1.5",
+        "special_pet_field_exists": true,
+        "special_pet_source_is_empty": true
+      }
+    },
+    {
+      "create_path": "genout/shop_m.create",
+      "create_ordinal": 47,
+      "create_block_sha256": "f2c90b300437e21d43ab0e35d294b7bada79e1d6b34f9d304868c29c0bc1fb5f",
+      "floorid": 1205,
+      "graphicname": 16012,
+      "source_function": "npcgen_winhealer",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "source_parameter_path": null,
+      "source_enemy_argument_tokens": [
+        "10",
+        "1.5",
+        "3.0",
+        "2"
+      ]
+    },
+    {
+      "create_path": "genout/shop_m.create",
+      "create_ordinal": 53,
+      "create_block_sha256": "478b8668a020ba8b0a76e50e4893b6e33d5e6712a0f6bf4658e02a9929498d57",
+      "floorid": 1303,
+      "graphicname": 16048,
+      "source_function": "npcgen_petshop",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "source_parameter_path": "genout/ps_1303_16_13",
+      "source_parameter_sha256": "8beaa8a89b834d90be34e9213abf40d5bdb9ff832a6b6c5bb674db738577f022",
+      "source_fields": {
+        "original_key_is_nomal_rate_not_normal_rate": "1.0",
+        "pool_flg_raw": null,
+        "pool_cost_raw": null,
+        "special_rate_raw": "1.5",
+        "special_pet_field_exists": true,
+        "special_pet_source_is_empty": true
+      }
+    },
+    {
+      "create_path": "genout/shop_m.create",
+      "create_ordinal": 63,
+      "create_block_sha256": "32de4c24bd6b697d164bf850794ca84b13fd4b1dd31c0eb801d6d905e50983e6",
+      "floorid": 1305,
+      "graphicname": 16058,
+      "source_function": "npcgen_winhealer",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "source_parameter_path": null,
+      "source_enemy_argument_tokens": [
+        "10",
+        "1.3",
+        "2.6",
+        "2"
+      ]
+    },
+    {
+      "create_path": "genout/shop_m.create",
+      "create_ordinal": 70,
+      "create_block_sha256": "9cc29403f761960c0c84d5fcfa2181ae87dabef4bb87279a33814c480657881c",
+      "floorid": 1403,
+      "graphicname": 16016,
+      "source_function": "npcgen_petshop",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "source_parameter_path": "genout/ps_1403_14_13",
+      "source_parameter_sha256": "26209a7b2b30c8cc9a8da3dd06bd3bc6bcd4b7284ffa689898b69035c59f50ca",
+      "source_fields": {
+        "original_key_is_nomal_rate_not_normal_rate": "1.0",
+        "pool_flg_raw": null,
+        "pool_cost_raw": null,
+        "special_rate_raw": "1.5",
+        "special_pet_field_exists": true,
+        "special_pet_source_is_empty": true
+      }
+    },
+    {
+      "create_path": "genout/shop_m.create",
+      "create_ordinal": 75,
+      "create_block_sha256": "e9835280490713282549400a9964ae0c19ab519401495267153476416d00a78c",
+      "floorid": 1405,
+      "graphicname": 16012,
+      "source_function": "npcgen_winhealer",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "source_parameter_path": null,
+      "source_enemy_argument_tokens": [
+        "10",
+        "1.4",
+        "2.8",
+        "2"
+      ]
+    },
+    {
+      "create_path": "genout/shop_m.create",
+      "create_ordinal": 82,
+      "create_block_sha256": "82fe064bf19f3284efe23d49d9209a51c8a235550f187a700361d18014ccc685",
+      "floorid": 2003,
+      "graphicname": 16036,
+      "source_function": "npcgen_petshop",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "source_parameter_path": "genout/ps_2003_18_17",
+      "source_parameter_sha256": "51c9bc03950cdd84a8a2661586010f737460212ce3a17992089401bb65046f36",
+      "source_fields": {
+        "original_key_is_nomal_rate_not_normal_rate": "1.0",
+        "pool_flg_raw": "1",
+        "pool_cost_raw": "200",
+        "special_rate_raw": "1.5",
+        "special_pet_field_exists": true,
+        "special_pet_source_is_empty": true
+      }
+    },
+    {
+      "create_path": "genout/shop_m.create",
+      "create_ordinal": 89,
+      "create_block_sha256": "0c4990ee063abfa6745f2e2d8720013b54c0488c6ded4621c7061cf5653076f2",
+      "floorid": 2005,
+      "graphicname": 16012,
+      "source_function": "npcgen_winhealer",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "source_parameter_path": null,
+      "source_enemy_argument_tokens": [
+        "10",
+        "0.5",
+        "2.0",
+        "2"
+      ]
+    },
+    {
+      "create_path": "genout/shop_m.create",
+      "create_ordinal": 92,
+      "create_block_sha256": "6e90b4a92e077c849411e694b4487761dea3d80a59d3aff90de8dbd6075ae4a2",
+      "floorid": 2005,
+      "graphicname": 16065,
+      "source_function": "npcgen_charm",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "source_parameter_path": null,
+      "source_enemy_argument_tokens": []
+    },
+    {
+      "create_path": "genout/shop_m.create",
+      "create_ordinal": 96,
+      "create_block_sha256": "f07cc658e5c2ac7322aea98de911f6a06c84e84c1cbb0c03e0562a72e7d0555d",
+      "floorid": 100,
+      "graphicname": 16058,
+      "source_function": "npcgen_winhealer",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "source_parameter_path": null,
+      "source_enemy_argument_tokens": [
+        "1",
+        "4.0",
+        "6.0",
+        "1"
+      ]
+    },
+    {
+      "create_path": "genout/shop_m.create",
+      "create_ordinal": 97,
+      "create_block_sha256": "4cdfe3a11f4564e6bad1040519ca7842f3733b40fde2ad92fa22b9c99047b032",
+      "floorid": 100,
+      "graphicname": 16012,
+      "source_function": "npcgen_winhealer",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "source_parameter_path": null,
+      "source_enemy_argument_tokens": [
+        "1",
+        "5.0",
+        "7.0",
+        "1"
+      ]
+    },
+    {
+      "create_path": "genout/shop_m2.create",
+      "create_ordinal": 3,
+      "create_block_sha256": "0eda1f01859b9027f1cbc10d27e0b5894846b950dbf011d9f5642cc38b21ca7d",
+      "floorid": 3003,
+      "graphicname": 16027,
+      "source_function": "npcgen_petshop",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "source_parameter_path": "genout/ps_3003_12_13",
+      "source_parameter_sha256": "c499b5fd06ba53537552614e6ea59222b0450d9e2301bc844afc4890bdcdf16f",
+      "source_fields": {
+        "original_key_is_nomal_rate_not_normal_rate": "1.0",
+        "pool_flg_raw": "1",
+        "pool_cost_raw": "200",
+        "special_rate_raw": "1.5",
+        "special_pet_field_exists": true,
+        "special_pet_source_is_empty": true
+      }
+    },
+    {
+      "create_path": "genout/shop_m2.create",
+      "create_ordinal": 9,
+      "create_block_sha256": "d90bd72aaed0e1b140f567a706ed93374edf8127ad7c2af8fda44960324634b3",
+      "floorid": 3005,
+      "graphicname": 16058,
+      "source_function": "npcgen_winhealer",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "source_parameter_path": null,
+      "source_enemy_argument_tokens": [
+        "10",
+        "0.5",
+        "2.0",
+        "2"
+      ]
+    },
+    {
+      "create_path": "genout/shop_m2.create",
+      "create_ordinal": 12,
+      "create_block_sha256": "d0d082e39835020cdc8932d2d644882731d448ccd2d28124f2ec4fcb59123b50",
+      "floorid": 3005,
+      "graphicname": 16066,
+      "source_function": "npcgen_charm",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "source_parameter_path": null,
+      "source_enemy_argument_tokens": []
+    },
+    {
+      "create_path": "genout/shop_m2.create",
+      "create_ordinal": 24,
+      "create_block_sha256": "d85f71f7533342a1240e5c83a2efa5ce028d9e30433c19ea9aa8f98af72a9f08",
+      "floorid": 3022,
+      "graphicname": 16058,
+      "source_function": "npcgen_healer",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "source_parameter_path": null,
+      "source_enemy_argument_tokens": [
+        "1"
+      ]
+    },
+    {
+      "create_path": "genout/shop_m2.create",
+      "create_ordinal": 30,
+      "create_block_sha256": "3dc25437b3089ee9bad74ab76bdd6fa87d7303c5e9f97bd53a72191f9ba8cb5b",
+      "floorid": 3103,
+      "graphicname": 16035,
+      "source_function": "npcgen_petshop",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "source_parameter_path": "genout/ps_3103_16_13",
+      "source_parameter_sha256": "3c3f45e2d95e6c4e0c302f39269beb7a9aebffdd19b99d4a550dc80d0ce4f35c",
+      "source_fields": {
+        "original_key_is_nomal_rate_not_normal_rate": "1.0",
+        "pool_flg_raw": null,
+        "pool_cost_raw": null,
+        "special_rate_raw": null,
+        "special_pet_field_exists": false,
+        "special_pet_source_is_empty": false
+      }
+    },
+    {
+      "create_path": "genout/shop_m2.create",
+      "create_ordinal": 35,
+      "create_block_sha256": "eca9f8b963369d0dc38160e1c1a7f5ac7f3fb5bd792ef09f10ca61b7b39d1834",
+      "floorid": 3105,
+      "graphicname": 16023,
+      "source_function": "npcgen_winhealer",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "source_parameter_path": null,
+      "source_enemy_argument_tokens": [
+        "10",
+        "1.1",
+        "2.2",
+        "2"
+      ]
+    },
+    {
+      "create_path": "genout/shop_m2.create",
+      "create_ordinal": 43,
+      "create_block_sha256": "c22681df1b1c22c49cf6ce884151edf8cfd3ff6e64a1ed2baeae38f23b6fd13e",
+      "floorid": 3203,
+      "graphicname": 16033,
+      "source_function": "npcgen_petshop",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "source_parameter_path": "genout/ps_3203_18_18",
+      "source_parameter_sha256": "2f028a964aee5838349fafed6862a2bc0aa54d44ec78fca6228afcd97243de72",
+      "source_fields": {
+        "original_key_is_nomal_rate_not_normal_rate": "1.0",
+        "pool_flg_raw": null,
+        "pool_cost_raw": null,
+        "special_rate_raw": null,
+        "special_pet_field_exists": false,
+        "special_pet_source_is_empty": false
+      }
+    },
+    {
+      "create_path": "genout/shop_m2.create",
+      "create_ordinal": 48,
+      "create_block_sha256": "4bc3641ac20b77f502513022d49bd26dd4c6435e8006dee828311484d40a2d8e",
+      "floorid": 3205,
+      "graphicname": 16012,
+      "source_function": "npcgen_winhealer",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "source_parameter_path": null,
+      "source_enemy_argument_tokens": [
+        "10",
+        "1.2",
+        "2.4",
+        "2"
+      ]
+    },
+    {
+      "create_path": "genout/shop_m2.create",
+      "create_ordinal": 56,
+      "create_block_sha256": "965fcc2113f65c7fa7387ce00591f65701b81f29ba40b47021ebc1a20130ca91",
+      "floorid": 3303,
+      "graphicname": 16218,
+      "source_function": "npcgen_petshop",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "source_parameter_path": "genout/ps_3303_16_14",
+      "source_parameter_sha256": "009623f1960ae3addbc5991dd435f49f8b11e3af10a1ff09f6a2e5c7b9c3b830",
+      "source_fields": {
+        "original_key_is_nomal_rate_not_normal_rate": "1.0",
+        "pool_flg_raw": null,
+        "pool_cost_raw": null,
+        "special_rate_raw": "1.5",
+        "special_pet_field_exists": true,
+        "special_pet_source_is_empty": true
+      }
+    },
+    {
+      "create_path": "genout/shop_m2.create",
+      "create_ordinal": 61,
+      "create_block_sha256": "2d6aabc3b5ff8631bcec16654cea7129de4ec5251514f542eff3363b54e2a7b0",
+      "floorid": 3305,
+      "graphicname": 16214,
+      "source_function": "npcgen_winhealer",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "source_parameter_path": null,
+      "source_enemy_argument_tokens": [
+        "10",
+        "1.3",
+        "2.6",
+        "2"
+      ]
+    },
+    {
+      "create_path": "genout/shop_m2.create",
+      "create_ordinal": 69,
+      "create_block_sha256": "d1ed73336a8181c5b162ff9051bd81cd47984937c434c8f76121048b18b67775",
+      "floorid": 3403,
+      "graphicname": 16033,
+      "source_function": "npcgen_petshop",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "source_parameter_path": "genout/ps_3403_18_18",
+      "source_parameter_sha256": "d78288914ddca095c83875b3e03ec9cfbf4d736b82a28ff9a6aa6e0a2f14c651",
+      "source_fields": {
+        "original_key_is_nomal_rate_not_normal_rate": "1.0",
+        "pool_flg_raw": null,
+        "pool_cost_raw": null,
+        "special_rate_raw": "1.5",
+        "special_pet_field_exists": true,
+        "special_pet_source_is_empty": true
+      }
+    },
+    {
+      "create_path": "genout/shop_m2.create",
+      "create_ordinal": 74,
+      "create_block_sha256": "3acab476ce07ae5fc8fd6f074e63575526ebf4a8073b94bcfefb96fd2fbfe1c6",
+      "floorid": 3405,
+      "graphicname": 16058,
+      "source_function": "npcgen_winhealer",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "source_parameter_path": null,
+      "source_enemy_argument_tokens": [
+        "10",
+        "1.4",
+        "2.8",
+        "2"
+      ]
+    },
+    {
+      "create_path": "genout/shop_m2.create",
+      "create_ordinal": 82,
+      "create_block_sha256": "faa0fddcd97819393bcaec3eba1c4173d5ef36cdde3758b79d23cffb094be1bd",
+      "floorid": 4003,
+      "graphicname": 16038,
+      "source_function": "npcgen_petshop",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "source_parameter_path": "genout/ps_4003_13_13",
+      "source_parameter_sha256": "82cfd710b0b84066c66c141a90e46c899119ae0e1b15814b3a85f1d33601c85f",
+      "source_fields": {
+        "original_key_is_nomal_rate_not_normal_rate": "1.0",
+        "pool_flg_raw": "1",
+        "pool_cost_raw": "200",
+        "special_rate_raw": "1.5",
+        "special_pet_field_exists": true,
+        "special_pet_source_is_empty": true
+      }
+    },
+    {
+      "create_path": "genout/shop_m2.create",
+      "create_ordinal": 89,
+      "create_block_sha256": "339526ea66fa1fb00abef4a57cdbb86d311f35b9df94488da3bca5bb63d92887",
+      "floorid": 4005,
+      "graphicname": 16058,
+      "source_function": "npcgen_winhealer",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "source_parameter_path": null,
+      "source_enemy_argument_tokens": [
+        "10",
+        "0.5",
+        "2.0",
+        "2"
+      ]
+    },
+    {
+      "create_path": "genout/shop_m2.create",
+      "create_ordinal": 92,
+      "create_block_sha256": "3c2e011565d14a9d7eb1d3059ffc9fc64170d06e8fbc9b42230e1afa90b2bca7",
+      "floorid": 4005,
+      "graphicname": 16066,
+      "source_function": "npcgen_charm",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "source_parameter_path": null,
+      "source_enemy_argument_tokens": []
+    },
+    {
+      "create_path": "genout/shop_m2.create",
+      "create_ordinal": 98,
+      "create_block_sha256": "9762c71c4973907c4807cdec3d8a6afa0854a9031c4dcfdb494dc9ded5575304",
+      "floorid": 200,
+      "graphicname": 16058,
+      "source_function": "npcgen_winhealer",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "source_parameter_path": null,
+      "source_enemy_argument_tokens": [
+        "1",
+        "4.0",
+        "6.0",
+        "1"
+      ]
+    },
+    {
+      "create_path": "genout/shop_m2.create",
+      "create_ordinal": 99,
+      "create_block_sha256": "da34cc0a18694b2eade69796afe5e2f5c863ba78efad8805e1c5d4c09d480ffb",
+      "floorid": 200,
+      "graphicname": 16058,
+      "source_function": "npcgen_winhealer",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "source_parameter_path": null,
+      "source_enemy_argument_tokens": [
+        "1",
+        "5.0",
+        "7.0",
+        "1"
+      ]
+    },
+    {
+      "create_path": "genout/shop_m3.create",
+      "create_ordinal": 3,
+      "create_block_sha256": "61d250625860b93196a59c6f82f0913c48edb71da6cab9dc38e8e541fee05c77",
+      "floorid": 5003,
+      "graphicname": 16027,
+      "source_function": "npcgen_petshop",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "source_parameter_path": "genout/ps_5003_21_13",
+      "source_parameter_sha256": "75022fef15acf280d49e03c6c96144f40a5ccc0b24506ab1aafc20dfb4e75c5d",
+      "source_fields": {
+        "original_key_is_nomal_rate_not_normal_rate": "0.6",
+        "pool_flg_raw": null,
+        "pool_cost_raw": null,
+        "special_rate_raw": "1.5",
+        "special_pet_field_exists": true,
+        "special_pet_source_is_empty": true
+      }
+    },
+    {
+      "create_path": "genout/shop_m3.create",
+      "create_ordinal": 10,
+      "create_block_sha256": "ac59e1bec49a3d239b334bc6b332b753c6ca2450950b270627c10526ce264021",
+      "floorid": 5005,
+      "graphicname": 16012,
+      "source_function": "npcgen_winhealer",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "source_parameter_path": null,
+      "source_enemy_argument_tokens": [
+        "10",
+        "1.5",
+        "3.0",
+        "2"
+      ]
+    },
+    {
+      "create_path": "genout/shop_m3.create",
+      "create_ordinal": 17,
+      "create_block_sha256": "d78cf1f67b078bc76dbc5da0720e9f5aa88672314923e9efc6ed969c280f69ec",
+      "floorid": 5103,
+      "graphicname": 16019,
+      "source_function": "npcgen_petshop",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "source_parameter_path": "genout/ps_5103_13_12",
+      "source_parameter_sha256": "62a7f817f0a6fd254db4b0c5b9d8a883d7a9b4459a3367940ed5541cc9e8116b",
+      "source_fields": {
+        "original_key_is_nomal_rate_not_normal_rate": "0.6",
+        "pool_flg_raw": null,
+        "pool_cost_raw": null,
+        "special_rate_raw": "1.5",
+        "special_pet_field_exists": true,
+        "special_pet_source_is_empty": true
+      }
+    },
+    {
+      "create_path": "genout/shop_m3.create",
+      "create_ordinal": 23,
+      "create_block_sha256": "835fc7ae91a985a1c34bc6d5b93c05e40988e35974d5ce7e36992c644a9a4d4b",
+      "floorid": 5105,
+      "graphicname": 16058,
+      "source_function": "npcgen_winhealer",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "source_parameter_path": null,
+      "source_enemy_argument_tokens": [
+        "10",
+        "1.6",
+        "3.2",
+        "2"
+      ]
+    },
+    {
+      "create_path": "genout/shop_m3.create",
+      "create_ordinal": 33,
+      "create_block_sha256": "20dab6b8fe77c8e56f1008b0593d131675f6f48d1608d8a1bea7c76aff0d296b",
+      "floorid": 6005,
+      "graphicname": 16012,
+      "source_function": "npcgen_winhealer",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "source_parameter_path": null,
+      "source_enemy_argument_tokens": [
+        "10",
+        "1.5",
+        "3.0",
+        "2"
+      ]
+    },
+    {
+      "create_path": "genout/sp.create",
+      "create_ordinal": 0,
+      "create_block_sha256": "56b9148c413ce235d7ebd5c747b1303e631fbcb8a25a16c26aaebf7002ec7b1c",
+      "floorid": 1000,
+      "graphicname": 10048,
+      "source_function": "npcgen_savepoint",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "source_parameter_path": "genout/sp_1000_94_99",
+      "source_parameter_sha256": "37da20bdb3ecd6d2585eaba072baf4230b0ab37e58d782d3f35c07e0e49a6afb",
+      "source_fields": {
+        "source_save_ID_number": 4,
+        "source_Born_triplet": [
+          1000,
+          92,
+          99
+        ],
+        "source_GetItem_field_present": true,
+        "source_GetItem_option_tokens": 6,
+        "source_GetItem_distinct_numeric_IDs": [
+          1930,
+          1931,
+          1932,
+          1933,
+          1934,
+          1935
+        ],
+        "source_GetItem_malformed_component": null,
+        "source_GetItem_bare_ID_form_without_quantities": false
+      }
+    },
+    {
+      "create_path": "genout/sp.create",
+      "create_ordinal": 1,
+      "create_block_sha256": "278d45489f7b424e46c0778050ba32082e1c5e337f632d7c3c7ead9f831ee907",
+      "floorid": 1100,
+      "graphicname": 10048,
+      "source_function": "npcgen_savepoint",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "source_parameter_path": "genout/sp_1100_50_91",
+      "source_parameter_sha256": "fd44ce04391430b80c6773e8ef11d21c6deaa06d679f4c10c03640f4287a862b",
+      "source_fields": {
+        "source_save_ID_number": 6,
+        "source_Born_triplet": [
+          1100,
+          48,
+          91
+        ],
+        "source_GetItem_field_present": true,
+        "source_GetItem_option_tokens": 6,
+        "source_GetItem_distinct_numeric_IDs": [
+          1732,
+          1733,
+          1734,
+          1735,
+          1736,
+          1737
+        ],
+        "source_GetItem_malformed_component": null,
+        "source_GetItem_bare_ID_form_without_quantities": false
+      }
+    },
+    {
+      "create_path": "genout/sp.create",
+      "create_ordinal": 2,
+      "create_block_sha256": "05f177b2c74fce46467b4196fa3ae67ea9f617b5dc9b3c5d237d67168fa29f44",
+      "floorid": 1200,
+      "graphicname": 10048,
+      "source_function": "npcgen_savepoint",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "source_parameter_path": "genout/sp_1200_63_46",
+      "source_parameter_sha256": "a08c428d04bc806f327a28d74153331b23c86c6ecb3f285c68f5dcaf1790c5b6",
+      "source_fields": {
+        "source_save_ID_number": 7,
+        "source_Born_triplet": [
+          1200,
+          61,
+          46
+        ],
+        "source_GetItem_field_present": true,
+        "source_GetItem_option_tokens": 6,
+        "source_GetItem_distinct_numeric_IDs": [
+          1708,
+          1709,
+          1710,
+          1711,
+          1712,
+          1713
+        ],
+        "source_GetItem_malformed_component": null,
+        "source_GetItem_bare_ID_form_without_quantities": false
+      }
+    },
+    {
+      "create_path": "genout/sp.create",
+      "create_ordinal": 3,
+      "create_block_sha256": "bf02526e6176bcfead923eafb65b03784554240f3e2c3d824188ebd1e6de6b74",
+      "floorid": 1300,
+      "graphicname": 10048,
+      "source_function": "npcgen_savepoint",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "source_parameter_path": "genout/sp_1300_29_23",
+      "source_parameter_sha256": "2b0ed617d8edfbc40b414ffb9f32b7f8fc921133175dc15c1a8c4d1b293d6eb3",
+      "source_fields": {
+        "source_save_ID_number": 8,
+        "source_Born_triplet": [
+          1300,
+          27,
+          23
+        ],
+        "source_GetItem_field_present": true,
+        "source_GetItem_option_tokens": 19,
+        "source_GetItem_distinct_numeric_IDs": [
+          2230,
+          2231,
+          2232,
+          2233,
+          2234,
+          2235
+        ],
+        "source_GetItem_malformed_component": null,
+        "source_GetItem_bare_ID_form_without_quantities": false
+      }
+    },
+    {
+      "create_path": "genout/sp.create",
+      "create_ordinal": 4,
+      "create_block_sha256": "c39804fee5c11d77f6581ceefc714720335145c721550164c05e07fbebcc4ec7",
+      "floorid": 1400,
+      "graphicname": 10048,
+      "source_function": "npcgen_savepoint",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "source_parameter_path": "genout/sp_1400_76_104",
+      "source_parameter_sha256": "dca46ba1a03d0f6dde5afc8aee47ac0288c72031066311e2f3340d6fe1e5c3cd",
+      "source_fields": {
+        "source_save_ID_number": 9,
+        "source_Born_triplet": [
+          1400,
+          74,
+          104
+        ],
+        "source_GetItem_field_present": true,
+        "source_GetItem_option_tokens": 21,
+        "source_GetItem_distinct_numeric_IDs": [
+          1768,
+          1769,
+          1770,
+          1771,
+          1772,
+          1773
+        ],
+        "source_GetItem_malformed_component": null,
+        "source_GetItem_bare_ID_form_without_quantities": false
+      }
+    },
+    {
+      "create_path": "genout/sp.create",
+      "create_ordinal": 5,
+      "create_block_sha256": "f0b5120d89d93563f633651df89d631ac2cbe0f87191065668ad26180ad14aac",
+      "floorid": 2000,
+      "graphicname": 10048,
+      "source_function": "npcgen_savepoint",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "source_parameter_path": "genout/sp_2000_67_58",
+      "source_parameter_sha256": "b1f5ffbb5d94b77e0d851ad0ae5d1edc57d69d074de40aa9f7d04e3e07bcffe8",
+      "source_fields": {
+        "source_save_ID_number": 5,
+        "source_Born_triplet": [
+          2000,
+          65,
+          58
+        ],
+        "source_GetItem_field_present": true,
+        "source_GetItem_option_tokens": 6,
+        "source_GetItem_distinct_numeric_IDs": [
+          1612,
+          1613,
+          1614,
+          1615,
+          1616,
+          1617
+        ],
+        "source_GetItem_malformed_component": null,
+        "source_GetItem_bare_ID_form_without_quantities": false
+      }
+    },
+    {
+      "create_path": "genout/sp.create",
+      "create_ordinal": 6,
+      "create_block_sha256": "7a0d05d6a84907b985f43c5ab0072e898009549b779c04b6e04c4b0caa53bafd",
+      "floorid": 100,
+      "graphicname": 10048,
+      "source_function": "npcgen_savepoint",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "source_parameter_path": "genout/sp_100_344_466",
+      "source_parameter_sha256": "823f3cb0b63e97ebdc7ead9ac1844b7ba0db70c27d848f05cc1ef7d75701102c",
+      "source_fields": {
+        "source_save_ID_number": 20,
+        "source_Born_triplet": [
+          100,
+          342,
+          466
+        ],
+        "source_GetItem_field_present": true,
+        "source_GetItem_option_tokens": 10,
+        "source_GetItem_distinct_numeric_IDs": [
+          1612,
+          1613,
+          2044,
+          2045,
+          2320,
+          2321
+        ],
+        "source_GetItem_malformed_component": null,
+        "source_GetItem_bare_ID_form_without_quantities": false
+      }
+    },
+    {
+      "create_path": "genout/sp.create",
+      "create_ordinal": 7,
+      "create_block_sha256": "d49f6ba919f719b8047165d04611e7c1f8133bf91f185d3a9b26d5d31de8cfa9",
+      "floorid": 100,
+      "graphicname": 10048,
+      "source_function": "npcgen_savepoint",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "source_parameter_path": "genout/sp_100_183_346",
+      "source_parameter_sha256": "de6ea061279d4946ce4d9dbdc22fd7e0013410877185799c740e3901eea41841",
+      "source_fields": {
+        "source_save_ID_number": 21,
+        "source_Born_triplet": [
+          100,
+          181,
+          346
+        ],
+        "source_GetItem_field_present": true,
+        "source_GetItem_option_tokens": 8,
+        "source_GetItem_distinct_numeric_IDs": [
+          1642,
+          1643,
+          1644,
+          2212,
+          2213,
+          2214
+        ],
+        "source_GetItem_malformed_component": null,
+        "source_GetItem_bare_ID_form_without_quantities": false
+      }
+    },
+    {
+      "create_path": "genout/sp.create",
+      "create_ordinal": 8,
+      "create_block_sha256": "8c3e7f8007aa80df4142d15db8fc278f4f96cafe96ff44d2e31bc600116232f7",
+      "floorid": 3000,
+      "graphicname": 10048,
+      "source_function": "npcgen_savepoint",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "source_parameter_path": "genout/sp_3000_96_97",
+      "source_parameter_sha256": "ac609d5a5cbe9e8a44e6a1119dcecc9301167fa034501789bde397ef7103d828",
+      "source_fields": {
+        "source_save_ID_number": 10,
+        "source_Born_triplet": [
+          3000,
+          94,
+          97
+        ],
+        "source_GetItem_field_present": true,
+        "source_GetItem_option_tokens": 6,
+        "source_GetItem_distinct_numeric_IDs": [
+          1684,
+          1685,
+          1686,
+          1687,
+          1688,
+          1689
+        ],
+        "source_GetItem_malformed_component": null,
+        "source_GetItem_bare_ID_form_without_quantities": false
+      }
+    },
+    {
+      "create_path": "genout/sp.create",
+      "create_ordinal": 9,
+      "create_block_sha256": "f6b11770594839d4058a02342255a8f3504e001ba5a1088f5b58c1b457ef830e",
+      "floorid": 3100,
+      "graphicname": 10048,
+      "source_function": "npcgen_savepoint",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "source_parameter_path": "genout/sp_3100_83_70",
+      "source_parameter_sha256": "d23fedab070db480eb7c3a1282e47e32d49df6605b82a1bd80fd6ae83eaebe8a",
+      "source_fields": {
+        "source_save_ID_number": 11,
+        "source_Born_triplet": [
+          3100,
+          81,
+          70
+        ],
+        "source_GetItem_field_present": true,
+        "source_GetItem_option_tokens": 6,
+        "source_GetItem_distinct_numeric_IDs": [
+          1900,
+          1901,
+          1902,
+          1903,
+          1904,
+          1905
+        ],
+        "source_GetItem_malformed_component": null,
+        "source_GetItem_bare_ID_form_without_quantities": false
+      }
+    },
+    {
+      "create_path": "genout/sp.create",
+      "create_ordinal": 10,
+      "create_block_sha256": "6a36394e0c2173f70f74ae60fc96309286f5a25c89d596e45cef3231b8775957",
+      "floorid": 3200,
+      "graphicname": 10048,
+      "source_function": "npcgen_savepoint",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "source_parameter_path": "genout/sp_3200_49_60",
+      "source_parameter_sha256": "d63364ae1598514a572147e279940de13d32ed9db770e9efcdbd45a9f3d3a02f",
+      "source_fields": {
+        "source_save_ID_number": 12,
+        "source_Born_triplet": [
+          3200,
+          47,
+          60
+        ],
+        "source_GetItem_field_present": true,
+        "source_GetItem_option_tokens": 6,
+        "source_GetItem_distinct_numeric_IDs": [
+          2218,
+          2219,
+          2220,
+          2221,
+          2222,
+          2223
+        ],
+        "source_GetItem_malformed_component": null,
+        "source_GetItem_bare_ID_form_without_quantities": false
+      }
+    },
+    {
+      "create_path": "genout/sp.create",
+      "create_ordinal": 11,
+      "create_block_sha256": "be9d96cb9a2760b458938066c1f5b473677292d4d51392c65ca7bcd9d8e224a2",
+      "floorid": 3300,
+      "graphicname": 10048,
+      "source_function": "npcgen_savepoint",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "source_parameter_path": "genout/sp_3300_71_51",
+      "source_parameter_sha256": "9dccc27a918d0a78018d434607bbcab8bea505f02d63c863df36e93aef62a0e2",
+      "source_fields": {
+        "source_save_ID_number": 13,
+        "source_Born_triplet": [
+          3300,
+          69,
+          51
+        ],
+        "source_GetItem_field_present": true,
+        "source_GetItem_option_tokens": 21,
+        "source_GetItem_distinct_numeric_IDs": [
+          1996,
+          1997,
+          1998,
+          1999,
+          2000,
+          2001
+        ],
+        "source_GetItem_malformed_component": null,
+        "source_GetItem_bare_ID_form_without_quantities": false
+      }
+    },
+    {
+      "create_path": "genout/sp.create",
+      "create_ordinal": 12,
+      "create_block_sha256": "760d32eb4bbb2c916f8e8f75d16b3a3b4fabc95c40db1d67232403150684b53a",
+      "floorid": 3400,
+      "graphicname": 10048,
+      "source_function": "npcgen_savepoint",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "source_parameter_path": "genout/sp_3400_65_48",
+      "source_parameter_sha256": "24aa77bd2369f24dbbccb5ddd8dc5281fd606b805de8a24af41fbabdd45c315b",
+      "source_fields": {
+        "source_save_ID_number": 14,
+        "source_Born_triplet": [
+          3400,
+          63,
+          48
+        ],
+        "source_GetItem_field_present": true,
+        "source_GetItem_option_tokens": 20,
+        "source_GetItem_distinct_numeric_IDs": [
+          2014,
+          2015,
+          2016,
+          2017,
+          2018,
+          2019
+        ],
+        "source_GetItem_malformed_component": null,
+        "source_GetItem_bare_ID_form_without_quantities": false
+      }
+    },
+    {
+      "create_path": "genout/sp.create",
+      "create_ordinal": 13,
+      "create_block_sha256": "d8efdc514aa7f2e75417832a29e670cdb65e90efdbc48a70eb8a39e01b7b5621",
+      "floorid": 4000,
+      "graphicname": 10048,
+      "source_function": "npcgen_savepoint",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "source_parameter_path": "genout/sp_4000_68_55",
+      "source_parameter_sha256": "f8373aa4568283b9ead398b099b1b375490ebd14609b4a0ede89e3b17cc02587",
+      "source_fields": {
+        "source_save_ID_number": 15,
+        "source_Born_triplet": [
+          4000,
+          66,
+          55
+        ],
+        "source_GetItem_field_present": true,
+        "source_GetItem_option_tokens": 6,
+        "source_GetItem_distinct_numeric_IDs": [
+          2062,
+          2063,
+          2064,
+          2065,
+          2066,
+          2067
+        ],
+        "source_GetItem_malformed_component": null,
+        "source_GetItem_bare_ID_form_without_quantities": false
+      }
+    },
+    {
+      "create_path": "genout/sp.create",
+      "create_ordinal": 14,
+      "create_block_sha256": "fa7d29a2b1031cfd3e4335ceb5e652d24601fd11418dda63afd13ebd9fd9d57a",
+      "floorid": 200,
+      "graphicname": 10048,
+      "source_function": "npcgen_savepoint",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "source_parameter_path": "genout/sp_200_406_371",
+      "source_parameter_sha256": "ee99d153fd59a64ad2f44d50ec2a90751e8e9c193bfeb9a3645fdd30d0aef9e8",
+      "source_fields": {
+        "source_save_ID_number": 22,
+        "source_Born_triplet": [
+          200,
+          404,
+          371
+        ],
+        "source_GetItem_field_present": true,
+        "source_GetItem_option_tokens": 21,
+        "source_GetItem_distinct_numeric_IDs": [
+          1762,
+          1763,
+          1764,
+          1765,
+          1766,
+          1767
+        ],
+        "source_GetItem_malformed_component": null,
+        "source_GetItem_bare_ID_form_without_quantities": false
+      }
+    },
+    {
+      "create_path": "genout/sp.create",
+      "create_ordinal": 15,
+      "create_block_sha256": "db94879e4fbedc05338799baa31b3ae0002d77912d65cbebc6393b25eedd291e",
+      "floorid": 200,
+      "graphicname": 10048,
+      "source_function": "npcgen_savepoint",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "source_parameter_path": "genout/sp_200_449_982",
+      "source_parameter_sha256": "5b3332e6136ca7a774730afa08237fa626d606f86c0a6f316844b7c5d2545d36",
+      "source_fields": {
+        "source_save_ID_number": 23,
+        "source_Born_triplet": [
+          200,
+          447,
+          982
+        ],
+        "source_GetItem_field_present": true,
+        "source_GetItem_option_tokens": 21,
+        "source_GetItem_distinct_numeric_IDs": [
+          1990,
+          1991,
+          1992,
+          1993,
+          1994,
+          1995
+        ],
+        "source_GetItem_malformed_component": "1991*",
+        "source_GetItem_bare_ID_form_without_quantities": false
+      }
+    },
+    {
+      "create_path": "genout/sp.create",
+      "create_ordinal": 16,
+      "create_block_sha256": "09c7ec362486e9a0d8611a2fabfe825d21e9cab7aa5cd68bbd84fdcdbd13fba4",
+      "floorid": 5000,
+      "graphicname": 10048,
+      "source_function": "npcgen_savepoint",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "source_parameter_path": "genout/sp_5000_47_53",
+      "source_parameter_sha256": "d2969c3764ceb6ce70f8d5cb0b3c6c503fb61f16795cfecca33fc114a9b9d52e",
+      "source_fields": {
+        "source_save_ID_number": 16,
+        "source_Born_triplet": [
+          5000,
+          45,
+          53
+        ],
+        "source_GetItem_field_present": true,
+        "source_GetItem_option_tokens": 6,
+        "source_GetItem_distinct_numeric_IDs": [
+          1936,
+          1937,
+          1938,
+          1939,
+          1940,
+          1941
+        ],
+        "source_GetItem_malformed_component": null,
+        "source_GetItem_bare_ID_form_without_quantities": false
+      }
+    },
+    {
+      "create_path": "genout/sp.create",
+      "create_ordinal": 17,
+      "create_block_sha256": "b5c2959e5cccdbdd1abac9634d3b2adc10c2292791a48333801f65b76db13470",
+      "floorid": 5106,
+      "graphicname": 10048,
+      "source_function": "npcgen_savepoint",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "source_parameter_path": "genout/sp_5106_22_36",
+      "source_parameter_sha256": "0685ac7968082f6311b42ee09d0a5e4cd3f1b58f08f9fb1857cc2b8031c5e41a",
+      "source_fields": {
+        "source_save_ID_number": 17,
+        "source_Born_triplet": [
+          5106,
+          20,
+          36
+        ],
+        "source_GetItem_field_present": true,
+        "source_GetItem_option_tokens": 6,
+        "source_GetItem_distinct_numeric_IDs": [
+          1864,
+          1865,
+          1866,
+          1867,
+          1868,
+          1869
+        ],
+        "source_GetItem_malformed_component": null,
+        "source_GetItem_bare_ID_form_without_quantities": false
+      }
+    },
+    {
+      "create_path": "genout/sp.create",
+      "create_ordinal": 18,
+      "create_block_sha256": "bcd92eec74cdd0454dbfdab732ac76da681f3b2da78e4f13d1360fc4c6d213f3",
+      "floorid": 32007,
+      "graphicname": 10048,
+      "source_function": "npcgen_savepoint",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "source_parameter_path": "genout/sp_32007_27_52",
+      "source_parameter_sha256": "041306bb9dbfddd4dabbc7b4ea3c698ba2065f7bbdcbbb25f88072847bcfad6e",
+      "source_fields": {
+        "source_save_ID_number": 31,
+        "source_Born_triplet": [
+          32007,
+          26,
+          52
+        ],
+        "source_GetItem_field_present": true,
+        "source_GetItem_option_tokens": 1,
+        "source_GetItem_distinct_numeric_IDs": [
+          1887,
+          2205
+        ],
+        "source_GetItem_malformed_component": null,
+        "source_GetItem_bare_ID_form_without_quantities": false
+      }
+    },
+    {
+      "create_path": "genout/sp.create",
+      "create_ordinal": 19,
+      "create_block_sha256": "ef31c578c51a55a70931f59547282410ea90afa9b3fc74da0093edb37abd38df",
+      "floorid": 32014,
+      "graphicname": 10048,
+      "source_function": "npcgen_savepoint",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "source_parameter_path": "genout/sp_32014_51_9",
+      "source_parameter_sha256": "d13eec946677d68b2bc14be0e26fdacb4b27b9a9a9898588e18ee7c45b181a69",
+      "source_fields": {
+        "source_save_ID_number": 32,
+        "source_Born_triplet": [
+          32014,
+          50,
+          9
+        ],
+        "source_GetItem_field_present": true,
+        "source_GetItem_option_tokens": 1,
+        "source_GetItem_distinct_numeric_IDs": [
+          1803,
+          1851
+        ],
+        "source_GetItem_malformed_component": null,
+        "source_GetItem_bare_ID_form_without_quantities": false
+      }
+    },
+    {
+      "create_path": "genout/sp.create",
+      "create_ordinal": 20,
+      "create_block_sha256": "6e449822ec3d2dfb9eb5f62004c32538aa49b095732c900d5c6c627e37a6bd00",
+      "floorid": 30691,
+      "graphicname": 10048,
+      "source_function": "npcgen_savepoint",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "source_parameter_path": "genout/sp_30691_87_60",
+      "source_parameter_sha256": "c2012b70f7daa96d5fba4ace374f87438f0d22a2b3acbc89e9b9890d9bf20b97",
+      "source_fields": {
+        "source_save_ID_number": 33,
+        "source_Born_triplet": [
+          30691,
+          85,
+          60
+        ],
+        "source_GetItem_field_present": false,
+        "source_GetItem_option_tokens": 0,
+        "source_GetItem_distinct_numeric_IDs": [],
+        "source_GetItem_malformed_component": null,
+        "source_GetItem_bare_ID_form_without_quantities": false
+      }
+    },
+    {
+      "create_path": "giiru/event/sikkoku/sikkoku.create",
+      "create_ordinal": 6,
+      "create_block_sha256": "ccb63135b6320c088350186c0b76d8103b6d11feec23ea5b2b7ad328819611a2",
+      "floorid": 32014,
+      "graphicname": 16059,
+      "source_function": "npcgen_winhealer",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "source_parameter_path": null,
+      "source_enemy_argument_tokens": [
+        "1",
+        "4.0",
+        "6.0",
+        "1"
+      ]
+    },
+    {
+      "create_path": "giiru/event/sikkoku/sikkoku.create",
+      "create_ordinal": 7,
+      "create_block_sha256": "b9843beb6b940f89f1ae8f2dab67b7896ee7323c9fba98b3ba04794bcef18d7f",
+      "floorid": 32007,
+      "graphicname": 16059,
+      "source_function": "npcgen_winhealer",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "source_parameter_path": null,
+      "source_enemy_argument_tokens": [
+        "1",
+        "4.0",
+        "6.0",
+        "1"
+      ]
+    },
+    {
+      "create_path": "my/zhuansheng/zhuans.create",
+      "create_ordinal": 5,
+      "create_block_sha256": "ddb57dfa755e8eef2c68ae422205946dc3aa47dd013ff00c0b226967036c60ca",
+      "floorid": 32021,
+      "graphicname": 16139,
+      "source_function": "npcgen_petshop",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "source_parameter_path": "my/zhuansheng/jifang.arg",
+      "source_parameter_sha256": "e811594a2ed9215d3e68ec5f246ef573ddbfd3cff13c98eac23884fb24653908",
+      "source_fields": {
+        "original_key_is_nomal_rate_not_normal_rate": "1.0",
+        "pool_flg_raw": "1",
+        "pool_cost_raw": "2000",
+        "special_rate_raw": "1.5",
+        "special_pet_field_exists": true,
+        "special_pet_source_is_empty": true
+      }
+    },
+    {
+      "create_path": "poru/poru01.create",
+      "create_ordinal": 30,
+      "create_block_sha256": "f7a5900a5b10cc29b816d49b681a160df7f06c6387501fab8788c3605ca8e101",
+      "floorid": 5500,
+      "graphicname": 16058,
+      "source_function": "npcgen_winhealer",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "source_parameter_path": null,
+      "source_enemy_argument_tokens": [
+        "1",
+        "4.0",
+        "6.0",
+        "1"
+      ]
+    },
+    {
+      "create_path": "poru/save.create",
+      "create_ordinal": 0,
+      "create_block_sha256": "cf9bae2ac3818730a08fc8f0152e122a6f045176e7e7d5538f6e2f250ed3656d",
+      "floorid": 5500,
+      "graphicname": 10048,
+      "source_function": "npcgen_savepoint",
+      "origin_class": "ORIGIN_UNRESOLVED",
+      "source_parameter_path": "poru/sp_5500_35_19",
+      "source_parameter_sha256": "f2ae42c6e29efd1a70bd15e4c87ad738b88d37b69ec2feb76ea22551995a6948",
+      "source_fields": {
+        "source_save_ID_number": 30,
+        "source_Born_triplet": [
+          5500,
+          33,
+          19
+        ],
+        "source_GetItem_field_present": true,
+        "source_GetItem_option_tokens": 6,
+        "source_GetItem_distinct_numeric_IDs": [
+          2134,
+          2135,
+          2136,
+          2137,
+          2138,
+          2139
+        ],
+        "source_GetItem_malformed_component": null,
+        "source_GetItem_bare_ID_form_without_quantities": true
+      }
+    }
+  ],
+  "source_limits": {
+    "all_families_are_STATIC_CREATE_or_PARAMETER_TEXT_not_actual_native_server_callback": true,
+    "native_pet_shop_pool_or_sale_transaction_executed": false,
+    "native_savepoint_offering_consumption_or_relogin_executed": false,
+    "native_healer_price_or_HP_MP_effect_executed": false,
+    "same_archive_item_ID_presence_is_not_active_database_or_payable_item_proof": true,
+    "original_savepoint_malformed_token_must_not_be_silently_corrected": true,
+    "original_pet_shop_missing_fields_are_not_automatic_zero": true,
+    "official_TW10_JSS1999_CN182_source_equivalence_proven": false,
+    "original_commercial_dialogue_or_art_in_public_git": false,
+    "stage_A": "7_PARTIAL_2_OPEN",
+    "stage_B_and_wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "next": "GAMEPLAY-MECHANICS-MODULE-06_OTHER_SOURCE_READY_ORIGINAL_UI_AUDIO_AND_CAPTURE_MECHANICS"
+}
