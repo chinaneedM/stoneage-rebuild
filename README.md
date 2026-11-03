@@ -1633,3 +1633,8 @@ O75 CI史实订正：PR #133 初稿的 Stage A 检查 run 41362507873 因两处�
 ### 2026-11-03 — QUEST02 非ExChangeMan原守卫/传送的188份参数与任务状态来源
 
 [QUEST02原原件复原及严格用途界限](docs/continuity/STONEAGE-QUEST-STORY-MODULE-02-ORIGINAL-WARPMAN-SOURCE-20261103.md)、[全202创建引用×188原参数×313源控制段](research/recovered/STONEAGE-QUEST-STORY-MODULE-02-ORIGINAL-WARPMAN-CONDITION-SOURCE-R1.json)：同一私人混合2.5原RAR及2,205 NPC原文件再按全大小/CRC/SHA实核，原`npcgen_warpman`有202条创建引用、全部对应188份真实原参数文件93110B，其中35份原字面有`NEWWARPMAN`首标、153份无。原`FREE`条件313、`TALKEVENT`标记126、`WARP`整数三元组249，其中43组为0,0,0不能冒作已传送目标；`NPCPOINT`三元组26。另从这些原段恢复62不同字面物品数字ID（61在两份原itemset均有，仅20296只在后表）；17不同非负事件状态数值与QUEST01原EventNo/EndSetFlg集合分别有15/16交叉，**这是同社区保存包静态数值碰巧匹配或引用的证据，不是任务链执行/同官方服/地图打通**。原202条创建保留`NOT_PROVEN_QUEST`和`UNRESOLVED`，不可硬塞常驻或活动；公开只有完整数字/源SHA索引，8项正负元数据测试，原全文不上传Git。**最高NEXT QUEST-STORY-MODULE-03**：继续现存`npcgen_quiz`、`npcgen_timeman`等有源任务相关功能，够则阶段性任务模块止点转玩法，缺源也不编造。Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、overall_percent=null，原CURRENT文件未重写。
+
+
+### 2026-11-03 — QUEST03 原22个答题控制与33个时间NPC参数真实来源
+
+[QUEST03来源/缺字段与任务分类止点](docs/continuity/STONEAGE-QUEST-STORY-MODULE-03-QUIZ-TIMEMAN-ORIGINAL-SOURCE-20261103.md)及[完整56创建引用×55原参数SHA/CRC/数字目录](research/recovered/STONEAGE-QUEST-STORY-MODULE-03-QUIZ-TIMEMAN-ORIGINAL-SOURCE-R1.json)：重用并逐全原件CRC/SHA认证私人NPC树2205文件/1930332B，同原社区混合2.5来源，未在本轮重新核父RAR。`npcgen_quiz` 22创建→22原参数/9975B，22个EntryItem、21个Warp、4个GetItem；`quz_812_28_14` 原源没有Warp，不补造。 `npcgen_timeman` 34创建→33参数/3811B，原time为ALLNOON17、ALLNIGHT9、AFTER7，4个change_msg/change_no。源词不是官方任务归属、原服运行时钟或当年奖励认证；56创建`ORIGIN_UNRESOLVED`，不公开原文/商美术。公开8个正负证据契约测试与独立专项Actions需真实后验。Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、overall_percent=null、CURRENT原blob不修改。**最高NEXT QUEST-STORY-MODULE-04：**清理有真实原件的剩余任务控制边界，缺源则按模块顺序转玩法。
