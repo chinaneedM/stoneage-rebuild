@@ -1618,3 +1618,8 @@ O75 CI史实订正：PR #133 初稿的 Stage A 检查 run 41362507873 因两处�
 ### 2026-11-03 — ITEM02 原物品32类数值与四条台湾1.0 RD 越界实物复核
 
 [ITEM02具体来源及限制](docs/continuity/STONEAGE-ITEM-EQUIPMENT-SHOP-MODULE-02-NUMERIC-EQUIPMENT-AND-FOUR-RD-20261103.md)和[全32类及四RD SHA目录](research/recovered/STONEAGE-ITEM02-ORIGINAL-NUMERIC-EQUIPMENT-AND-TW1-RD-BOUNDARY-R1.json)：私人原RAR两套13254/13915行物品表完整字节重新取回、全SHA与94列重验，后一表32原type、10036行六攻防敏列非零，共同13254 ID这六数值列不变；TW1原ADRN/REAL全SHA真实重验，四幅旧失败RD原RLE在末尾0xC2刚好越界一个像素，**未晋级为已解码像素或坏原包**。831个TW1无索引图号仍无原图；后期混合RAR ADRN成员提取受libarchive限制，本轮原后期像素0。公开元数据CI验证ITEM01已存13915行/32类及反例；原版权美术不公开；同服/真实玩法未知。**NEXT ITEM-EQUIPMENT-SHOP-MODULE-03**，有源才补图，否则有界转装备附属/商店/任务。旧CURRENT原字节、Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、overall_percent=null均保留。
+
+
+### 2026-11-03 — ITEM03 原材料83字典、物品组成五槽、36兑换源行／24抽奖源行
+
+[ITEM03真实原源与止点](docs/continuity/STONEAGE-ITEM-EQUIPMENT-SHOP-MODULE-03-ORIGINAL-COMPOSITION-SOURCE-20261103.md)及[数字来源全83/36/24目录](research/recovered/STONEAGE-ITEM-MODULE-03-ORIGINAL-COMPOSITION-AND-EXCHANGE-SOURCE-CATALOG-R1.json)：从私人混合2.5原RAR全SHA核实七份原文件及各成员CRC/整SHA，两物品主表原13915行含5条名称`#`前缀，另一表13254行含2条；这些是**物理记录行**，不能当原运行服已启用ID种数。原itematom 83词典数值关联到物品尾10列的五对材料属性，老/后两表分别78/83标签类型、43622/44806具名槽，13254共有ID的10列**全部未变**。bmitem 36条真实原行的G/I数字模式12个位置循环三次，30条有I（45位置/13不同ID），6条仅G；gambleitems 20普通数字配置、3 NEXT、1 END，四标记行的0不可推成实际奖励。公开只留无商业正文/名字/美术的数字及来源SHA和反例；原server未执行、实际合成/兑换/抽奖未证。ITEM01 832已解码TW1图、ITEM02 4 strict RD失败/831缺TW1索引保留源缺口，物品/装备/商店模块阶段性**SOURCE_BOUNDED_PARTIAL**。**最高NEXT QUEST-STORY-MODULE-01**：批量从已得原脚本/对白与地图/NPC/物品关系恢复常驻任务/运营时点活动/来源不明，三区分开；不凭效果字串推任务运行、不开始新游戏开发。旧CURRENT原blob全字节保留、Stage A 7 PARTIAL+2 OPEN、B/wiki GATED、R79 PAUSED_NON_BLOCKING、overall_percent=null。
