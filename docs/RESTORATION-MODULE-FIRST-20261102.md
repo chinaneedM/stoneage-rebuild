@@ -139,3 +139,12 @@
 [MAP02 来源/止点报告](continuity/STONEAGE-MAP-SCENE-MODULE-02-THREE-DAT-ORIGINAL-PIXEL-BATCH-20261103.md)与[逐792图号源SHA/图块元数据](../research/recovered/STONEAGE-MAP-SCENE-MODULE-02-THREE-ORIGINAL-DAT-FLOOR-IMAGE-JOIN-R1.json)：独立实际读取保存的原1000/1001/1003.DAT整文件，160×160+30×30+30×30共27400原格；三平面原字节SHA均固定。1000有752原图号，其中740在真正台湾1.0原ADRN/REAL中唯一命中并实际RD解码，12个无该原载体图号（严格缺件）。三图源图号联合792、真实原RD解码780/失败0，私人780PNG索引包单独保存，版权图片不公开。旧O54已实绘198图号逐完整原RD和RGBA SHA复核一致，1000新增相对O54的原像素可见图号542；此处不宣称历史首次发现。1001/1003相同30×30，却有三原平面8/51/84格不同，禁止静默共用场景。MAP01对1000.DAT原RAR解包63失败项中的一项保持失败，只由先前已验的O31完整原DAT ZIP得到独立数据，不追认旧失败。TW1图片来源和社区混合2.5地图属于两个来源，之前的整前缀证据可支持共用图块原字节，但不证明同一官方运行服。公开专项6项元数据/资格负例本地PASS，CI须实际后验。Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、overall_percent=null；仍**MAP/SCENE SOURCE_BOUNDED_PARTIAL**。
 
 **最高 NEXT MAP-SCENE-MODULE-03**：优先寻找12个缺图号同源有资格原字节及98同名不同MAP的真实两侧地图原件；缺件保留来源止点，不借相邻图号猜补或加引擎、任务、体验优化。当前原可操作历史世界依然未进入，CURRENT旧历史继续保留。
+
+
+### 2026-11-03 — MAP-SCENE-MODULE-03：98组双目录原地图实字节差异及12缺图号来源分级
+
+[MAP03逐原件差异与缺图边界](continuity/STONEAGE-MAP-SCENE-MODULE-03-98-SOURCE-MAPS-AND-12-LATE-INDEX-20261103.md)、[完整无原地图正文公开派生索引](../research/recovered/STONEAGE-MAP-SCENE-MODULE-03-98-ORIGINAL-MAP-SOURCE-AND-12-INDEX-R1.json)：私人原社区混合2.5 RAR完整SHA再核，MAP01已知98双目录差异的**196原 MAP 文件**本轮实际全部真读，长度/CRC/完整SHA与MAP01逐一一致。95组同尺寸 MAP 的505769对位格中6212个原数值不同；512、5376、59904三组两侧原宽高不同。按双端SHA成对去重为**94独立内容差异**；重复别名256/2816/29952、512/5376、60102/60103仍全部保留，不能当6个不相干历史版本。
+
+1000.DAT全源字节重读确认MAP02的12个未见于TW1 ADRN图号共出现14次、只在图形平面1的x85–90/y85–89集中区域。原RAR内adrn_15.bin本轮直接解包因RAR过滤器不支持而失败，未当成功；另已保存SCENE03的完整同名原索引18765120B按真实RAR声明大小及CRC核同，再按234564个原记录扫描：**11个图号各有一条后期源索引**且所有索引及候选REAL偏移在TW1正式保存资源范围外，**22413仍无后期同样索引**；后期real_15.bin全像素不可读，本批新增这12图的实际原像素=0，不能宣传已复原12图。私有196原文件/全文来源及代码打包ZIP333310B，已存个人Library并原样回读SHA/CRC；公开无商美术/原MAP正文，8项本地派生证据/负例通过；GitHub Actions仅待实际后验。
+
+MAP/SCENE维持**SOURCE_BOUNDED_PARTIAL**，历史 CURRENT blob `c89e0e33537990aa2132b47c40fef49a985a935c` 不改。保持Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、overall_percent=null。**最高NEXT MAP-SCENE-MODULE-04**：按模块原则复用MAP01已真读全量源，批量计算真正可读取原 DAT 地图格及与已保管台湾1.0原图索引的来源覆盖；超出来源/解压能力必须明确止点，然后才按模块顺序转物品。严禁凭编号猜像素、历史同服、原生碰撞或玩法改善。

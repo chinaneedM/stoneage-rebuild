@@ -1,0 +1,24 @@
+name: Verify MAP03 98 original MAP pairs and 12 late-index source limits
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-MAP-SCENE-MODULE-03-98-ORIGINAL-MAP-SOURCE-AND-12-INDEX-R1.json'
+      - 'research/recovered/STONEAGE-MAP-SCENE-MODULE-01-ORIGINAL-SOURCE-MANIFEST-R1.json'
+      - 'tests/test_stoneage_map_scene_module_03.py'
+      - '.github/workflows/verify-stoneage-map-scene-module-03.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-MAP-SCENE-MODULE-03-98-ORIGINAL-MAP-SOURCE-AND-12-INDEX-R1.json'
+      - 'tests/test_stoneage_map_scene_module_03.py'
+      - '.github/workflows/verify-stoneage-map-scene-module-03.yml'
+  workflow_dispatch:
+
+jobs:
+  verify-map03-derived-scope:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest discover -s tests -p 'test_stoneage_map_scene_module_03.py' -v
