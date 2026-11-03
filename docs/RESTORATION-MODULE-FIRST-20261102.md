@@ -132,3 +132,10 @@
 [MAP01 来源 / 受限边界报告](continuity/STONEAGE-MAP-SCENE-MODULE-01-ORIGINAL-MAP-SOURCE-20261103.md)和[2990条实际CRC/SHA验原地图文件、63条读取负证 JSON](../research/recovered/STONEAGE-MAP-SCENE-MODULE-01-ORIGINAL-SOURCE-MANIFEST-R1.json)：私人已验混合2.5 RAR 选3053份原客户端 MAP/DAT、附带工具 MAP及3份服务器地图配置；2990份实际全解包且大小/RAR CRC/新SHA一致，63份libarchive读取失败、不提升为原包损坏。客户端MAP1019、DAT971、附带工具MAP997、服务器原表3；数字地图宽高与源字节公式有2971个核验。965份MAP/DAT都可读，953对同宽高且有非空DAT、12对DAT是实存零字节。996对同名源 MAP 两子树有898逐字节相同、98实际不同（非真实发行变更因果）。两源mapset有20157/16803行，共同16803个ID中16802行一致、1行ID10230不同；主表额外3354 ID，不是3354地图新增。mapwarp源2981完整数字端点引用，其中500条源/目标都不在这一份mapset。原游戏画面/碰撞/原服务器真实选图与运行仍未验证；整RAR和各目录不认证官方同部署，原美术不公开。
 
 **MAP01 当前状态 SOURCE_BOUNDED_PARTIAL；最高 NEXT MAP-SCENE-MODULE-02：** 只对已真实SHA/CRC核的地图原字节，批量梳理地图格/层/原图号到既存可见原素材的关系；优先处理实际不同或未观察材料，来源未解码的63项维持UNVERIFIED，绝不以生成图冒充原画面。Stage A7PARTIAL+2OPEN、Stage B/wiki GATED、R79暂停、overall_percent=null、原大CURRENT全部保留。
+
+
+### 2026-11-03 — MAP-SCENE-MODULE-02：三张原 DAT 及 780 份台湾1.0 原图块实际解码
+
+[MAP02 来源/止点报告](continuity/STONEAGE-MAP-SCENE-MODULE-02-THREE-DAT-ORIGINAL-PIXEL-BATCH-20261103.md)与[逐792图号源SHA/图块元数据](../research/recovered/STONEAGE-MAP-SCENE-MODULE-02-THREE-ORIGINAL-DAT-FLOOR-IMAGE-JOIN-R1.json)：独立实际读取保存的原1000/1001/1003.DAT整文件，160×160+30×30+30×30共27400原格；三平面原字节SHA均固定。1000有752原图号，其中740在真正台湾1.0原ADRN/REAL中唯一命中并实际RD解码，12个无该原载体图号（严格缺件）。三图源图号联合792、真实原RD解码780/失败0，私人780PNG索引包单独保存，版权图片不公开。旧O54已实绘198图号逐完整原RD和RGBA SHA复核一致，1000新增相对O54的原像素可见图号542；此处不宣称历史首次发现。1001/1003相同30×30，却有三原平面8/51/84格不同，禁止静默共用场景。MAP01对1000.DAT原RAR解包63失败项中的一项保持失败，只由先前已验的O31完整原DAT ZIP得到独立数据，不追认旧失败。TW1图片来源和社区混合2.5地图属于两个来源，之前的整前缀证据可支持共用图块原字节，但不证明同一官方运行服。公开专项6项元数据/资格负例本地PASS，CI须实际后验。Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、overall_percent=null；仍**MAP/SCENE SOURCE_BOUNDED_PARTIAL**。
+
+**最高 NEXT MAP-SCENE-MODULE-03**：优先寻找12个缺图号同源有资格原字节及98同名不同MAP的真实两侧地图原件；缺件保留来源止点，不借相邻图号猜补或加引擎、任务、体验优化。当前原可操作历史世界依然未进入，CURRENT旧历史继续保留。

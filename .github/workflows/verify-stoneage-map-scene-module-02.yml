@@ -1,0 +1,24 @@
+name: Verify MAP02 original three-floor DAT and source pixel join
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-MAP-SCENE-MODULE-02-THREE-ORIGINAL-DAT-FLOOR-IMAGE-JOIN-R1.json'
+      - 'research/recovered/STONEAGE-MAP-SCENE-MODULE-01-ORIGINAL-SOURCE-MANIFEST-R1.json'
+      - 'tests/test_stoneage_map_scene_module_02.py'
+      - '.github/workflows/verify-stoneage-map-scene-module-02.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-MAP-SCENE-MODULE-02-THREE-ORIGINAL-DAT-FLOOR-IMAGE-JOIN-R1.json'
+      - 'research/recovered/STONEAGE-MAP-SCENE-MODULE-01-ORIGINAL-SOURCE-MANIFEST-R1.json'
+      - 'tests/test_stoneage_map_scene_module_02.py'
+      - '.github/workflows/verify-stoneage-map-scene-module-02.yml'
+  workflow_dispatch:
+jobs:
+  original-three-floor-source:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest discover -s tests -p 'test_stoneage_map_scene_module_02.py' -v
