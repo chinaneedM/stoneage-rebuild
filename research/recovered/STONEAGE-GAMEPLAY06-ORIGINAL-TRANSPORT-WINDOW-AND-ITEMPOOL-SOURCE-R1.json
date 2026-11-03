@@ -1,0 +1,1399 @@
+{
+  "schema": "stoneage.gameplay_mechanics_module06_preserved_transit_window_original_source.r1",
+  "date": "2026-11-04",
+  "source_scope": "COMMUNITY_PRESERVED_MIXED25_NPC_BYTE_SOURCE_ONLY_NOT_AUTHENTICATED_OFFICIAL_SERVER",
+  "original_private_npc_zip_sha256": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+  "original_private_npc_zip_bytes": 995176,
+  "original_npc_archive_file_count": 2205,
+  "original_npc_archive_uncompressed_bytes": 1930332,
+  "original_char01_manifest_git_blob": "a088b61a3212f7049e7793f587123ffb29bebad7",
+  "original_parent_RAR_reopened_this_unit": false,
+  "summary": {
+    "original_CREATE_blocks": 57,
+    "by_function": {
+      "airplane": 5,
+      "bankman": 8,
+      "bus": 7,
+      "duelranking": 8,
+      "npcgen_poolitemshop": 5,
+      "transman": 7,
+      "windowman": 17
+    },
+    "source_param_distinct_referenced": 29,
+    "source_parameter_original_file_count": 28,
+    "source_parameter_missing_count": 1,
+    "source_parameter_actual_total_bytes": 27840,
+    "source_file_argument_CREATE_count": 24,
+    "source_conff_argument_CREATE_count": 25,
+    "source_none_argument_CREATE_count": 8,
+    "source_bus_parameter_count": 7,
+    "source_bus_route_coordinate_tuples": 311,
+    "source_airplane_parameter_count": 5,
+    "source_airplane_route_coordinate_triples": 61,
+    "source_airplane_oneway_literal_1_count": 2,
+    "source_bus_waittime_literal_120_count": 1,
+    "source_bus_waittime_literal_180_count": 6,
+    "source_transman_parameter_count": 3,
+    "source_transman_CREATE_count": 7,
+    "source_transman_WARPPOINT_target_triples": 7,
+    "source_transman_FREE_literal_LV_gt_0_count": 7,
+    "source_poolitemshop_CREATE_count": 5,
+    "source_poolitemshop_original_parameter_count": 4,
+    "source_poolitemshop_cost_literal_50_file_count": 4,
+    "source_duplicate_complete_poolitemshop_file_pair": [
+      "genout/pis_3009_18_40",
+      "genout/pis_4009_15_13"
+    ],
+    "source_bankman_CREATE_count": 8,
+    "source_bankman_conf_windows_count": 1,
+    "source_bankman_conf_references_windows_not_in_same_file": [
+      5,
+      6
+    ],
+    "source_windowman_CREATE_count": 17,
+    "source_windowman_qualifying_original_conf_files": 8,
+    "source_windowman_missing_conf_referenced_CREATE_count": 4,
+    "source_windowman_actual_conf_winno_count": 61,
+    "source_missing_conf_path": "sainasu/jujutu01.conf",
+    "source_duelranking_inline_no_parameter_CREATE_count": 8
+  },
+  "original_parameter_source_receipts": [
+    {
+      "source_parameter_path": "chatroom/airplane.arg",
+      "source_member_bytes": 583,
+      "source_member_sha256": "6f433c230b7831ae3e479f5906a27be001a7a3676b4c6f1ff1fef5b696aab742",
+      "source_member_crc32": "83bf5203",
+      "source_status": "ORIGINAL_FILE_VERIFIED",
+      "original_derived_numeric": {
+        "source_type": "airplane",
+        "original_routenum_literal": 1,
+        "original_routeto_count": 13,
+        "original_coordinate_word_width": 3,
+        "first_route_word_tuple": [
+          2000,
+          105,
+          87
+        ],
+        "last_route_word_tuple": [
+          6000,
+          46,
+          84
+        ],
+        "original_needstone_literal": 1000,
+        "original_waittime_literal": 180,
+        "original_oneway_literal": 0
+      }
+    },
+    {
+      "source_parameter_path": "chatroom/airplane2.arg",
+      "source_member_bytes": 593,
+      "source_member_sha256": "c476f4196dd6aea0383b6c35c37af829385a65d06418ae2e2713afc660029b88",
+      "source_member_crc32": "07eec82b",
+      "source_status": "ORIGINAL_FILE_VERIFIED",
+      "original_derived_numeric": {
+        "source_type": "airplane",
+        "original_routenum_literal": 1,
+        "original_routeto_count": 14,
+        "original_coordinate_word_width": 3,
+        "first_route_word_tuple": [
+          4000,
+          92,
+          72
+        ],
+        "last_route_word_tuple": [
+          6000,
+          44,
+          84
+        ],
+        "original_needstone_literal": 1000,
+        "original_waittime_literal": 180,
+        "original_oneway_literal": 0
+      }
+    },
+    {
+      "source_parameter_path": "chatroom/airplane3.arg",
+      "source_member_bytes": 605,
+      "source_member_sha256": "37f05434f802c3aff6d6491d339b5bcfda8bed1915ab0c9697d09208cd950f49",
+      "source_member_crc32": "84f0958b",
+      "source_status": "ORIGINAL_FILE_VERIFIED",
+      "original_derived_numeric": {
+        "source_type": "airplane",
+        "original_routenum_literal": 1,
+        "original_routeto_count": 16,
+        "original_coordinate_word_width": 3,
+        "first_route_word_tuple": [
+          5100,
+          43,
+          37
+        ],
+        "last_route_word_tuple": [
+          6000,
+          42,
+          84
+        ],
+        "original_needstone_literal": 1000,
+        "original_waittime_literal": 180,
+        "original_oneway_literal": 0
+      }
+    },
+    {
+      "source_parameter_path": "chatroom/airplane4.arg",
+      "source_member_bytes": 611,
+      "source_member_sha256": "85090c5f032b7aefc0b54875f22474d1ab0318a4692b3b39869f7d23bce94470",
+      "source_member_crc32": "f872444f",
+      "source_status": "ORIGINAL_FILE_VERIFIED",
+      "original_derived_numeric": {
+        "source_type": "airplane",
+        "original_routenum_literal": 1,
+        "original_routeto_count": 9,
+        "original_coordinate_word_width": 3,
+        "first_route_word_tuple": [
+          5000,
+          45,
+          60
+        ],
+        "last_route_word_tuple": [
+          300,
+          159,
+          296
+        ],
+        "original_needstone_literal": 3000,
+        "original_waittime_literal": 180,
+        "original_oneway_literal": 1
+      }
+    },
+    {
+      "source_parameter_path": "chatroom/airplane5.arg",
+      "source_member_bytes": 607,
+      "source_member_sha256": "2d637cc0cf0b7189045d1165eeb74fdf52968644b2c8e2de53e8cca5e266d3d1",
+      "source_member_crc32": "310e8bab",
+      "source_status": "ORIGINAL_FILE_VERIFIED",
+      "original_derived_numeric": {
+        "source_type": "airplane",
+        "original_routenum_literal": 1,
+        "original_routeto_count": 9,
+        "original_coordinate_word_width": 3,
+        "first_route_word_tuple": [
+          5000,
+          43,
+          59
+        ],
+        "last_route_word_tuple": [
+          300,
+          166,
+          94
+        ],
+        "original_needstone_literal": 3000,
+        "original_waittime_literal": 180,
+        "original_oneway_literal": 1
+      }
+    },
+    {
+      "source_parameter_path": "chatroom/bus.arg",
+      "source_member_bytes": 988,
+      "source_member_sha256": "13ec83e0c95168f45f4590866cb3e0ee520dc1b54c9fe9fbd15d6168ea0c86d0",
+      "source_member_crc32": "43554400",
+      "source_status": "ORIGINAL_FILE_VERIFIED",
+      "original_derived_numeric": {
+        "source_type": "bus",
+        "original_routenum_literal": 1,
+        "original_routeto_count": 66,
+        "original_coordinate_word_width": 2,
+        "first_route_word_tuple": [
+          628,
+          485
+        ],
+        "last_route_word_tuple": [
+          117,
+          654
+        ],
+        "original_needstone_literal": 50,
+        "original_waittime_literal": 180,
+        "original_oneway_literal": null
+      }
+    },
+    {
+      "source_parameter_path": "chatroom/bus2.arg",
+      "source_member_bytes": 824,
+      "source_member_sha256": "febf184fb8674de6ee8a677b7815a0e10442c207a6e8604c80049a9cd9b22481",
+      "source_member_crc32": "6c71e43b",
+      "source_status": "ORIGINAL_FILE_VERIFIED",
+      "original_derived_numeric": {
+        "source_type": "bus",
+        "original_routenum_literal": 1,
+        "original_routeto_count": 45,
+        "original_coordinate_word_width": 2,
+        "first_route_word_tuple": [
+          566,
+          386
+        ],
+        "last_route_word_tuple": [
+          308,
+          602
+        ],
+        "original_needstone_literal": 50,
+        "original_waittime_literal": 180,
+        "original_oneway_literal": null
+      }
+    },
+    {
+      "source_parameter_path": "chatroom/bus3.arg",
+      "source_member_bytes": 525,
+      "source_member_sha256": "ba31fef92a4d16a9631fc68fd7563b82b4b829555f3c06ecb1d3e135cff959bf",
+      "source_member_crc32": "6d10978b",
+      "source_status": "ORIGINAL_FILE_VERIFIED",
+      "original_derived_numeric": {
+        "source_type": "bus",
+        "original_routenum_literal": 1,
+        "original_routeto_count": 10,
+        "original_coordinate_word_width": 2,
+        "first_route_word_tuple": [
+          631,
+          485
+        ],
+        "last_route_word_tuple": [
+          464,
+          628
+        ],
+        "original_needstone_literal": 25,
+        "original_waittime_literal": 180,
+        "original_oneway_literal": null
+      }
+    },
+    {
+      "source_parameter_path": "chatroom/bus4.arg",
+      "source_member_bytes": 565,
+      "source_member_sha256": "917a36992d9c45d6b70547dc23396bbf5f65448c558853ea10f64f17c159bf56",
+      "source_member_crc32": "9e715b33",
+      "source_status": "ORIGINAL_FILE_VERIFIED",
+      "original_derived_numeric": {
+        "source_type": "bus",
+        "original_routenum_literal": 1,
+        "original_routeto_count": 15,
+        "original_coordinate_word_width": 2,
+        "first_route_word_tuple": [
+          120,
+          655
+        ],
+        "last_route_word_tuple": [
+          461,
+          628
+        ],
+        "original_needstone_literal": 30,
+        "original_waittime_literal": 180,
+        "original_oneway_literal": null
+      }
+    },
+    {
+      "source_parameter_path": "chatroom/bus5.arg",
+      "source_member_bytes": 900,
+      "source_member_sha256": "59d0973ca5801b0ba4bbafe6d10ab5479e536db8cdd44f7b3fa59e2c67740500",
+      "source_member_crc32": "6aa7c808",
+      "source_status": "ORIGINAL_FILE_VERIFIED",
+      "original_derived_numeric": {
+        "source_type": "bus",
+        "original_routenum_literal": 1,
+        "original_routeto_count": 55,
+        "original_coordinate_word_width": 2,
+        "first_route_word_tuple": [
+          566,
+          389
+        ],
+        "last_route_word_tuple": [
+          424,
+          101
+        ],
+        "original_needstone_literal": 20,
+        "original_waittime_literal": 180,
+        "original_oneway_literal": null
+      }
+    },
+    {
+      "source_parameter_path": "chatroom/bus6.arg",
+      "source_member_bytes": 1328,
+      "source_member_sha256": "1acc8bf412bcc3df565cf2a1015804c96a46eac344130eeb5da52c53ef180308",
+      "source_member_crc32": "8485248a",
+      "source_status": "ORIGINAL_FILE_VERIFIED",
+      "original_derived_numeric": {
+        "source_type": "bus",
+        "original_routenum_literal": 1,
+        "original_routeto_count": 109,
+        "original_coordinate_word_width": 2,
+        "first_route_word_tuple": [
+          311,
+          602
+        ],
+        "last_route_word_tuple": [
+          421,
+          101
+        ],
+        "original_needstone_literal": 40,
+        "original_waittime_literal": 180,
+        "original_oneway_literal": null
+      }
+    },
+    {
+      "source_parameter_path": "chatroom/chatroom.conf",
+      "source_member_bytes": 982,
+      "source_member_sha256": "e0994a4cada150f2be26440f7a589a489404e0f973a5c780da3cfd48b522a9f6",
+      "source_member_crc32": "202d187d",
+      "source_status": "ORIGINAL_FILE_VERIFIED",
+      "original_derived_numeric": {
+        "source_type": "windowman",
+        "source_window_IDs": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "source_bank_referenced_unlisted_window_IDs": [],
+        "actual_window_click_executed": false
+      }
+    },
+    {
+      "source_parameter_path": "family/bankman.conf",
+      "source_member_bytes": 331,
+      "source_member_sha256": "437917a5703a2a18ae4df5488fbc74e3456d6143ae10d8874be210abcbe1510e",
+      "source_member_crc32": "5034b868",
+      "source_status": "ORIGINAL_FILE_VERIFIED",
+      "original_derived_numeric": {
+        "source_type": "bankman",
+        "source_window_IDs": [
+          1
+        ],
+        "source_bank_referenced_unlisted_window_IDs": [
+          5,
+          6
+        ],
+        "actual_window_click_executed": false
+      }
+    },
+    {
+      "source_parameter_path": "genout/pis_1009_14_13",
+      "source_member_bytes": 124,
+      "source_member_sha256": "fa4ef22f3110fc8c33d0770ab792ed8f235e05c8dc04e567e331818c2d6eea04",
+      "source_member_crc32": "f18c0faf",
+      "source_status": "ORIGINAL_FILE_VERIFIED",
+      "original_derived_numeric": {
+        "source_type": "npcgen_poolitemshop",
+        "original_cost_literal": 50,
+        "original_source_key_count": 5
+      }
+    },
+    {
+      "source_parameter_path": "genout/pis_2009_17_34",
+      "source_member_bytes": 122,
+      "source_member_sha256": "3215a7d579e5a78beb5da770c16e02a298a4094e276d82b0a43069a6659f77e1",
+      "source_member_crc32": "a3c9a4db",
+      "source_status": "ORIGINAL_FILE_VERIFIED",
+      "original_derived_numeric": {
+        "source_type": "npcgen_poolitemshop",
+        "original_cost_literal": 50,
+        "original_source_key_count": 5
+      }
+    },
+    {
+      "source_parameter_path": "genout/pis_3009_18_40",
+      "source_member_bytes": 129,
+      "source_member_sha256": "cf5c963c7365db91f878a76e7a1a040af40dd46579a20b6594e20229455dce3b",
+      "source_member_crc32": "9c3f05a8",
+      "source_status": "ORIGINAL_FILE_VERIFIED",
+      "original_derived_numeric": {
+        "source_type": "npcgen_poolitemshop",
+        "original_cost_literal": 50,
+        "original_source_key_count": 5
+      }
+    },
+    {
+      "source_parameter_path": "genout/pis_4009_15_13",
+      "source_member_bytes": 129,
+      "source_member_sha256": "cf5c963c7365db91f878a76e7a1a040af40dd46579a20b6594e20229455dce3b",
+      "source_member_crc32": "9c3f05a8",
+      "source_status": "ORIGINAL_FILE_VERIFIED",
+      "original_derived_numeric": {
+        "source_type": "npcgen_poolitemshop",
+        "original_cost_literal": 50,
+        "original_source_key_count": 5
+      }
+    },
+    {
+      "source_parameter_path": "giiru/banam.arg",
+      "source_member_bytes": 452,
+      "source_member_sha256": "e75eeefb6d90663c2b2e7a73ddbd49d587e89ccc26cd9b717d780aff7e735ee3",
+      "source_member_crc32": "5e9baae7",
+      "source_status": "ORIGINAL_FILE_VERIFIED",
+      "original_derived_numeric": {
+        "source_type": "bus",
+        "original_routenum_literal": 1,
+        "original_routeto_count": 11,
+        "original_coordinate_word_width": 2,
+        "first_route_word_tuple": [
+          394,
+          340
+        ],
+        "last_route_word_tuple": [
+          407,
+          301
+        ],
+        "original_needstone_literal": 0,
+        "original_waittime_literal": 120,
+        "original_oneway_literal": null
+      }
+    },
+    {
+      "source_parameter_path": "jaruga/cook.conf",
+      "source_member_bytes": 2964,
+      "source_member_sha256": "6da7fa386ba2552ff4a8b034c20271dd201bdbe308711d022b65557083dbc7ae",
+      "source_member_crc32": "002368b1",
+      "source_status": "ORIGINAL_FILE_VERIFIED",
+      "original_derived_numeric": {
+        "source_type": "windowman",
+        "source_window_IDs": [
+          1,
+          1000,
+          1001,
+          1002,
+          1003,
+          2000,
+          2001,
+          3000,
+          3001,
+          3002
+        ],
+        "source_bank_referenced_unlisted_window_IDs": [],
+        "actual_window_click_executed": false
+      }
+    },
+    {
+      "source_parameter_path": "jaruga/event/e_17.conf",
+      "source_member_bytes": 2129,
+      "source_member_sha256": "b80b539d37f637b401fd9ae70e574e921bb2cb7c59ba4eddfc350bc5764db252",
+      "source_member_crc32": "372d6057",
+      "source_status": "ORIGINAL_FILE_VERIFIED",
+      "original_derived_numeric": {
+        "source_type": "windowman",
+        "source_window_IDs": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "source_bank_referenced_unlisted_window_IDs": [],
+        "actual_window_click_executed": false
+      }
+    },
+    {
+      "source_parameter_path": "jaruga/gousei.conf",
+      "source_member_bytes": 2353,
+      "source_member_sha256": "dcc5b9cc544327ade398256a242d10ba90c39c4886eb2ebe9d1b5b976c1f39ce",
+      "source_member_crc32": "a98e30b8",
+      "source_status": "ORIGINAL_FILE_VERIFIED",
+      "original_derived_numeric": {
+        "source_type": "windowman",
+        "source_window_IDs": [
+          1,
+          1000,
+          1001,
+          1002,
+          2000,
+          2001,
+          3000,
+          3001
+        ],
+        "source_bank_referenced_unlisted_window_IDs": [],
+        "actual_window_click_executed": false
+      }
+    },
+    {
+      "source_parameter_path": "jaruga/menu01.conf",
+      "source_member_bytes": 1201,
+      "source_member_sha256": "6e733803b3f542a0b051019a168bbef5e32287e4f5ff57a71ef91b2a897603ec",
+      "source_member_crc32": "aa67db9d",
+      "source_status": "ORIGINAL_FILE_VERIFIED",
+      "original_derived_numeric": {
+        "source_type": "windowman",
+        "source_window_IDs": [
+          1,
+          97,
+          98,
+          99,
+          100
+        ],
+        "source_bank_referenced_unlisted_window_IDs": [],
+        "actual_window_click_executed": false
+      }
+    },
+    {
+      "source_parameter_path": "jaruga/menu02.conf",
+      "source_member_bytes": 1065,
+      "source_member_sha256": "0b0fce57eee873b2acc2ec990a0b544c10064e86ba75bf352ff70d8a14545bb5",
+      "source_member_crc32": "e748ff90",
+      "source_status": "ORIGINAL_FILE_VERIFIED",
+      "original_derived_numeric": {
+        "source_type": "windowman",
+        "source_window_IDs": [
+          1,
+          98,
+          99,
+          100
+        ],
+        "source_bank_referenced_unlisted_window_IDs": [],
+        "actual_window_click_executed": false
+      }
+    },
+    {
+      "source_parameter_path": "my/tiancai/transfer.arg",
+      "source_member_bytes": 513,
+      "source_member_sha256": "8c9c380f91aa7a7b515b0849ac9668986060a784dc2511863c71ce767c3ddefd",
+      "source_member_crc32": "42d66315",
+      "source_status": "ORIGINAL_FILE_VERIFIED",
+      "original_derived_numeric": {
+        "source_type": "transman",
+        "original_warppoint_triples": [
+          [
+            5510,
+            49,
+            16
+          ],
+          [
+            40,
+            9,
+            10
+          ],
+          [
+            5543,
+            22,
+            24
+          ],
+          [
+            32008,
+            13,
+            30
+          ],
+          [
+            32020,
+            20,
+            11
+          ]
+        ],
+        "source_FREE_literals": [
+          "LV>0",
+          "LV>0",
+          "LV>0",
+          "LV>0",
+          "LV>0"
+        ],
+        "actual_warp_executed": false
+      }
+    },
+    {
+      "source_parameter_path": "my/vipshop/transfer1.arg",
+      "source_member_bytes": 238,
+      "source_member_sha256": "36c9275a78a9d596e2f57e633e8490bc3ed0d2aa81ba11e6b80422e9c9886ce1",
+      "source_member_crc32": "ec28afe4",
+      "source_status": "ORIGINAL_FILE_VERIFIED",
+      "original_derived_numeric": {
+        "source_type": "transman",
+        "original_warppoint_triples": [
+          [
+            9003,
+            18,
+            18
+          ]
+        ],
+        "source_FREE_literals": [
+          "LV>0"
+        ],
+        "actual_warp_executed": false
+      }
+    },
+    {
+      "source_parameter_path": "my/vipshop/transfer2.arg",
+      "source_member_bytes": 236,
+      "source_member_sha256": "dcf0f4b1bbf4fa8b2813df55a77f0c02b97309bb649f37d619b64120f0350166",
+      "source_member_crc32": "471665f3",
+      "source_status": "ORIGINAL_FILE_VERIFIED",
+      "original_derived_numeric": {
+        "source_type": "transman",
+        "original_warppoint_triples": [
+          [
+            2000,
+            69,
+            68
+          ]
+        ],
+        "source_FREE_literals": [
+          "LV>0"
+        ],
+        "actual_warp_executed": false
+      }
+    },
+    {
+      "source_parameter_path": "sainasu/event/e_01.conf",
+      "source_member_bytes": 3533,
+      "source_member_sha256": "0467964e83d4d855cacc24bcec4dcf84f6ed6f688c33afcb640dc49dc3e5c2b4",
+      "source_member_crc32": "e39cdcf8",
+      "source_status": "ORIGINAL_FILE_VERIFIED",
+      "original_derived_numeric": {
+        "source_type": "windowman",
+        "source_window_IDs": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "source_bank_referenced_unlisted_window_IDs": [],
+        "actual_window_click_executed": false
+      }
+    },
+    {
+      "source_parameter_path": "sainasu/event/e_02.conf",
+      "source_member_bytes": 3210,
+      "source_member_sha256": "eba01545719adf9acbb5bd10816e69e0a3343cc05aeb56d65e9c3c6f0c4ef43c",
+      "source_member_crc32": "617c0101",
+      "source_status": "ORIGINAL_FILE_VERIFIED",
+      "original_derived_numeric": {
+        "source_type": "windowman",
+        "source_window_IDs": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "source_bank_referenced_unlisted_window_IDs": [],
+        "actual_window_click_executed": false
+      }
+    },
+    {
+      "source_parameter_path": "sainasu/jujutu01.conf",
+      "source_member_bytes": null,
+      "source_member_sha256": null,
+      "source_member_crc32": null,
+      "source_status": "MISSING_IN_CURRENT_ORIGINAL_NPC_ARCHIVE",
+      "original_derived_numeric": null
+    }
+  ],
+  "original_CREATE_refs": [
+    {
+      "source_CREATE_path": "chatroom/airplane.create",
+      "source_CREATE_ordinal": 0,
+      "source_CREATE_block_sha256": "b58b8d450c96e56fbb6c054ba94e2fa9079550895899035679354ea4c4b30f45",
+      "source_floorid_integer": 2000,
+      "source_graphic_integer": 100259,
+      "source_FUNCTION_literal": "airplane",
+      "source_argument_token_kind": "FILE_TOKEN",
+      "source_argument_SHA256": "637adb208b7595f44e31d474872cfb0842c8b99163c5f29848c0a668bb26cc3b",
+      "source_parameter_path": "chatroom/airplane.arg",
+      "source_parameter_status": "ORIGINAL_FILE_VERIFIED"
+    },
+    {
+      "source_CREATE_path": "chatroom/airplane.create",
+      "source_CREATE_ordinal": 1,
+      "source_CREATE_block_sha256": "40f29c6c838f8e45db9110f4d021d6248d4107415a8b0e927a221cec4e57ae48",
+      "source_floorid_integer": 4000,
+      "source_graphic_integer": 100259,
+      "source_FUNCTION_literal": "airplane",
+      "source_argument_token_kind": "FILE_TOKEN",
+      "source_argument_SHA256": "637adb208b7595f44e31d474872cfb0842c8b99163c5f29848c0a668bb26cc3b",
+      "source_parameter_path": "chatroom/airplane2.arg",
+      "source_parameter_status": "ORIGINAL_FILE_VERIFIED"
+    },
+    {
+      "source_CREATE_path": "chatroom/airplane.create",
+      "source_CREATE_ordinal": 2,
+      "source_CREATE_block_sha256": "2000ef73f22c7f73cc36505e935c28e587b3f78b5ff66d89d9f0d4e279f73e3e",
+      "source_floorid_integer": 5100,
+      "source_graphic_integer": 100259,
+      "source_FUNCTION_literal": "airplane",
+      "source_argument_token_kind": "FILE_TOKEN",
+      "source_argument_SHA256": "637adb208b7595f44e31d474872cfb0842c8b99163c5f29848c0a668bb26cc3b",
+      "source_parameter_path": "chatroom/airplane3.arg",
+      "source_parameter_status": "ORIGINAL_FILE_VERIFIED"
+    },
+    {
+      "source_CREATE_path": "chatroom/airplane.create",
+      "source_CREATE_ordinal": 3,
+      "source_CREATE_block_sha256": "d7712fea513fa746ae290d62d83e7a94792e8aff86d09526a391a9a41661ca3d",
+      "source_floorid_integer": 5000,
+      "source_graphic_integer": 100259,
+      "source_FUNCTION_literal": "airplane",
+      "source_argument_token_kind": "FILE_TOKEN",
+      "source_argument_SHA256": "637adb208b7595f44e31d474872cfb0842c8b99163c5f29848c0a668bb26cc3b",
+      "source_parameter_path": "chatroom/airplane5.arg",
+      "source_parameter_status": "ORIGINAL_FILE_VERIFIED"
+    },
+    {
+      "source_CREATE_path": "chatroom/airplane.create",
+      "source_CREATE_ordinal": 4,
+      "source_CREATE_block_sha256": "4a586fbcaded60c846402365106e5ae1abfc56d201a309877080b7af1d20f15e",
+      "source_floorid_integer": 5000,
+      "source_graphic_integer": 100259,
+      "source_FUNCTION_literal": "airplane",
+      "source_argument_token_kind": "FILE_TOKEN",
+      "source_argument_SHA256": "637adb208b7595f44e31d474872cfb0842c8b99163c5f29848c0a668bb26cc3b",
+      "source_parameter_path": "chatroom/airplane4.arg",
+      "source_parameter_status": "ORIGINAL_FILE_VERIFIED"
+    },
+    {
+      "source_CREATE_path": "chatroom/bus.create",
+      "source_CREATE_ordinal": 0,
+      "source_CREATE_block_sha256": "bd19ab44ab4ddb47b05dead644f68e49822ae3dacf4ba9738ccc9ae947f5b207",
+      "source_floorid_integer": 100,
+      "source_graphic_integer": 100355,
+      "source_FUNCTION_literal": "bus",
+      "source_argument_token_kind": "FILE_TOKEN",
+      "source_argument_SHA256": "981c7b892146c0e10e9c48f37fe6ea8b46282008208996e9a3342ae540849bee",
+      "source_parameter_path": "chatroom/bus.arg",
+      "source_parameter_status": "ORIGINAL_FILE_VERIFIED"
+    },
+    {
+      "source_CREATE_path": "chatroom/bus.create",
+      "source_CREATE_ordinal": 1,
+      "source_CREATE_block_sha256": "8cd8b45fa7f2fde48eb05bd8e4412161d8a062c879a8dbc28780017319c32caf",
+      "source_floorid_integer": 100,
+      "source_graphic_integer": 100355,
+      "source_FUNCTION_literal": "bus",
+      "source_argument_token_kind": "FILE_TOKEN",
+      "source_argument_SHA256": "981c7b892146c0e10e9c48f37fe6ea8b46282008208996e9a3342ae540849bee",
+      "source_parameter_path": "chatroom/bus3.arg",
+      "source_parameter_status": "ORIGINAL_FILE_VERIFIED"
+    },
+    {
+      "source_CREATE_path": "chatroom/bus.create",
+      "source_CREATE_ordinal": 2,
+      "source_CREATE_block_sha256": "2f6f79fafc632a5977c46dea9d23fd032beed73678fa426bc5ecf4d55aa46e27",
+      "source_floorid_integer": 100,
+      "source_graphic_integer": 100355,
+      "source_FUNCTION_literal": "bus",
+      "source_argument_token_kind": "FILE_TOKEN",
+      "source_argument_SHA256": "981c7b892146c0e10e9c48f37fe6ea8b46282008208996e9a3342ae540849bee",
+      "source_parameter_path": "chatroom/bus4.arg",
+      "source_parameter_status": "ORIGINAL_FILE_VERIFIED"
+    },
+    {
+      "source_CREATE_path": "chatroom/bus.create",
+      "source_CREATE_ordinal": 3,
+      "source_CREATE_block_sha256": "c4a582d7f7b0dfb4a68be24e92035af891ce6f62cfa0ee037a1013eea01e5eed",
+      "source_floorid_integer": 200,
+      "source_graphic_integer": 100355,
+      "source_FUNCTION_literal": "bus",
+      "source_argument_token_kind": "FILE_TOKEN",
+      "source_argument_SHA256": "981c7b892146c0e10e9c48f37fe6ea8b46282008208996e9a3342ae540849bee",
+      "source_parameter_path": "chatroom/bus2.arg",
+      "source_parameter_status": "ORIGINAL_FILE_VERIFIED"
+    },
+    {
+      "source_CREATE_path": "chatroom/bus.create",
+      "source_CREATE_ordinal": 4,
+      "source_CREATE_block_sha256": "588839939cbf61d74c4afaa0717a911efa7f8e3ebb89d4030876afc897ff6c15",
+      "source_floorid_integer": 200,
+      "source_graphic_integer": 100355,
+      "source_FUNCTION_literal": "bus",
+      "source_argument_token_kind": "FILE_TOKEN",
+      "source_argument_SHA256": "981c7b892146c0e10e9c48f37fe6ea8b46282008208996e9a3342ae540849bee",
+      "source_parameter_path": "chatroom/bus5.arg",
+      "source_parameter_status": "ORIGINAL_FILE_VERIFIED"
+    },
+    {
+      "source_CREATE_path": "chatroom/bus.create",
+      "source_CREATE_ordinal": 5,
+      "source_CREATE_block_sha256": "60981f3db2f740afb91b347ae2f7b10ceabce92d628f8ea9c7638f63108dd6fb",
+      "source_floorid_integer": 200,
+      "source_graphic_integer": 100355,
+      "source_FUNCTION_literal": "bus",
+      "source_argument_token_kind": "FILE_TOKEN",
+      "source_argument_SHA256": "981c7b892146c0e10e9c48f37fe6ea8b46282008208996e9a3342ae540849bee",
+      "source_parameter_path": "chatroom/bus6.arg",
+      "source_parameter_status": "ORIGINAL_FILE_VERIFIED"
+    },
+    {
+      "source_CREATE_path": "chatroom/chatroom.create",
+      "source_CREATE_ordinal": 1,
+      "source_CREATE_block_sha256": "d3eaebfbbc651fcbe50dfc584090543ae9e3fd4cd52fb970e5583497b149c0a8",
+      "source_floorid_integer": 1012,
+      "source_graphic_integer": 16033,
+      "source_FUNCTION_literal": "windowman",
+      "source_argument_token_kind": "CONFF_TOKEN",
+      "source_argument_SHA256": "52c352ad010931277126e8d250dcd508c6d5e82be34da6e4b8b13db72ad3e62b",
+      "source_parameter_path": "chatroom/chatroom.conf",
+      "source_parameter_status": "ORIGINAL_FILE_VERIFIED"
+    },
+    {
+      "source_CREATE_path": "chatroom/chatroom.create",
+      "source_CREATE_ordinal": 3,
+      "source_CREATE_block_sha256": "5f1f7e0a8f5d3acb78dc21899a410dc070db8561e6ca6ba5f845c27de2ed0a2a",
+      "source_floorid_integer": 2012,
+      "source_graphic_integer": 16033,
+      "source_FUNCTION_literal": "windowman",
+      "source_argument_token_kind": "CONFF_TOKEN",
+      "source_argument_SHA256": "52c352ad010931277126e8d250dcd508c6d5e82be34da6e4b8b13db72ad3e62b",
+      "source_parameter_path": "chatroom/chatroom.conf",
+      "source_parameter_status": "ORIGINAL_FILE_VERIFIED"
+    },
+    {
+      "source_CREATE_path": "chatroom/chatroom.create",
+      "source_CREATE_ordinal": 5,
+      "source_CREATE_block_sha256": "8a3cb0fc6e933013820abfd0d0d2311bf1faf10704f1a56a87e170d0e91afeb6",
+      "source_floorid_integer": 3012,
+      "source_graphic_integer": 16033,
+      "source_FUNCTION_literal": "windowman",
+      "source_argument_token_kind": "CONFF_TOKEN",
+      "source_argument_SHA256": "52c352ad010931277126e8d250dcd508c6d5e82be34da6e4b8b13db72ad3e62b",
+      "source_parameter_path": "chatroom/chatroom.conf",
+      "source_parameter_status": "ORIGINAL_FILE_VERIFIED"
+    },
+    {
+      "source_CREATE_path": "chatroom/chatroom.create",
+      "source_CREATE_ordinal": 7,
+      "source_CREATE_block_sha256": "022401743b0c89f2e46df0b333e30518edcab143736d94a0a5f2a8deaa6a1184",
+      "source_floorid_integer": 4012,
+      "source_graphic_integer": 16033,
+      "source_FUNCTION_literal": "windowman",
+      "source_argument_token_kind": "CONFF_TOKEN",
+      "source_argument_SHA256": "52c352ad010931277126e8d250dcd508c6d5e82be34da6e4b8b13db72ad3e62b",
+      "source_parameter_path": "chatroom/chatroom.conf",
+      "source_parameter_status": "ORIGINAL_FILE_VERIFIED"
+    },
+    {
+      "source_CREATE_path": "chatroom/duelranking.create",
+      "source_CREATE_ordinal": 0,
+      "source_CREATE_block_sha256": "e8db26c0e771eb8d39b8d66adafc737bdee1e4a537f038eb30b3566efcea4ae2",
+      "source_floorid_integer": 130,
+      "source_graphic_integer": 10070,
+      "source_FUNCTION_literal": "duelranking",
+      "source_argument_token_kind": "NO_FILE_OR_CONFF",
+      "source_argument_SHA256": "ec2c0a20e723814776cf446ce889344623efd8f094646fd1b14c2febd4a35b3d",
+      "source_parameter_path": null,
+      "source_parameter_status": null
+    },
+    {
+      "source_CREATE_path": "chatroom/duelranking.create",
+      "source_CREATE_ordinal": 1,
+      "source_CREATE_block_sha256": "400dd681c96218128ad36f3c6ab6d45b0eec0f4522263cbb0df85ac7c8cf5b98",
+      "source_floorid_integer": 130,
+      "source_graphic_integer": 10069,
+      "source_FUNCTION_literal": "duelranking",
+      "source_argument_token_kind": "NO_FILE_OR_CONFF",
+      "source_argument_SHA256": "ec2c0a20e723814776cf446ce889344623efd8f094646fd1b14c2febd4a35b3d",
+      "source_parameter_path": null,
+      "source_parameter_status": null
+    },
+    {
+      "source_CREATE_path": "chatroom/duelranking.create",
+      "source_CREATE_ordinal": 2,
+      "source_CREATE_block_sha256": "492e0097b5ff520cc4f825b2a15ce66d95e9cb1f0f66d5c8029eae2aa8967b6a",
+      "source_floorid_integer": 1000,
+      "source_graphic_integer": 10070,
+      "source_FUNCTION_literal": "duelranking",
+      "source_argument_token_kind": "NO_FILE_OR_CONFF",
+      "source_argument_SHA256": "ec2c0a20e723814776cf446ce889344623efd8f094646fd1b14c2febd4a35b3d",
+      "source_parameter_path": null,
+      "source_parameter_status": null
+    },
+    {
+      "source_CREATE_path": "chatroom/duelranking.create",
+      "source_CREATE_ordinal": 3,
+      "source_CREATE_block_sha256": "283e9558e0374ca3296490782bcca2eeefc63844fe2e2ee368c101befd6bfec3",
+      "source_floorid_integer": 1000,
+      "source_graphic_integer": 10069,
+      "source_FUNCTION_literal": "duelranking",
+      "source_argument_token_kind": "NO_FILE_OR_CONFF",
+      "source_argument_SHA256": "ec2c0a20e723814776cf446ce889344623efd8f094646fd1b14c2febd4a35b3d",
+      "source_parameter_path": null,
+      "source_parameter_status": null
+    },
+    {
+      "source_CREATE_path": "chatroom/duelranking.create",
+      "source_CREATE_ordinal": 4,
+      "source_CREATE_block_sha256": "4da19713bff63cce4b1a6d3f274d67ed0eff76cd58b2234cde376a4869c01d47",
+      "source_floorid_integer": 2000,
+      "source_graphic_integer": 10069,
+      "source_FUNCTION_literal": "duelranking",
+      "source_argument_token_kind": "NO_FILE_OR_CONFF",
+      "source_argument_SHA256": "ec2c0a20e723814776cf446ce889344623efd8f094646fd1b14c2febd4a35b3d",
+      "source_parameter_path": null,
+      "source_parameter_status": null
+    },
+    {
+      "source_CREATE_path": "chatroom/duelranking.create",
+      "source_CREATE_ordinal": 5,
+      "source_CREATE_block_sha256": "6b88a1f39c4a9f12d6c3f8cfd8be1fccf6294c289856877b8f2c6fbeea2ab8ce",
+      "source_floorid_integer": 2000,
+      "source_graphic_integer": 10070,
+      "source_FUNCTION_literal": "duelranking",
+      "source_argument_token_kind": "NO_FILE_OR_CONFF",
+      "source_argument_SHA256": "ec2c0a20e723814776cf446ce889344623efd8f094646fd1b14c2febd4a35b3d",
+      "source_parameter_path": null,
+      "source_parameter_status": null
+    },
+    {
+      "source_CREATE_path": "chatroom/duelranking.create",
+      "source_CREATE_ordinal": 6,
+      "source_CREATE_block_sha256": "fb6226a49e5987a90defe4a70811c94accdddbe0e60ddb5d1359da5e7e35da4a",
+      "source_floorid_integer": 3000,
+      "source_graphic_integer": 10069,
+      "source_FUNCTION_literal": "duelranking",
+      "source_argument_token_kind": "NO_FILE_OR_CONFF",
+      "source_argument_SHA256": "ec2c0a20e723814776cf446ce889344623efd8f094646fd1b14c2febd4a35b3d",
+      "source_parameter_path": null,
+      "source_parameter_status": null
+    },
+    {
+      "source_CREATE_path": "chatroom/duelranking.create",
+      "source_CREATE_ordinal": 7,
+      "source_CREATE_block_sha256": "72af5116a91ba3d8f35d6523000213bbd30749d25d76e693d82f8d92f47066d9",
+      "source_floorid_integer": 4000,
+      "source_graphic_integer": 10069,
+      "source_FUNCTION_literal": "duelranking",
+      "source_argument_token_kind": "NO_FILE_OR_CONFF",
+      "source_argument_SHA256": "ec2c0a20e723814776cf446ce889344623efd8f094646fd1b14c2febd4a35b3d",
+      "source_parameter_path": null,
+      "source_parameter_status": null
+    },
+    {
+      "source_CREATE_path": "family/bankman.create",
+      "source_CREATE_ordinal": 0,
+      "source_CREATE_block_sha256": "33ea0e03d24ab8956fef775a6ddd5e715cdd31859679ffd632b5c77a415ff854",
+      "source_floorid_integer": 1041,
+      "source_graphic_integer": 16017,
+      "source_FUNCTION_literal": "bankman",
+      "source_argument_token_kind": "CONFF_TOKEN",
+      "source_argument_SHA256": "0c30a86d18515c0335096163f646086cff3ffed5c3f1bc2b3f216bd7e7f7d44c",
+      "source_parameter_path": "family/bankman.conf",
+      "source_parameter_status": "ORIGINAL_FILE_VERIFIED"
+    },
+    {
+      "source_CREATE_path": "family/bankman.create",
+      "source_CREATE_ordinal": 1,
+      "source_CREATE_block_sha256": "a7ca9b587b189f2e52a10d723b923f31cb37d4e0f3f65a20afce0bdb2354a5bf",
+      "source_floorid_integer": 2031,
+      "source_graphic_integer": 16017,
+      "source_FUNCTION_literal": "bankman",
+      "source_argument_token_kind": "CONFF_TOKEN",
+      "source_argument_SHA256": "0c30a86d18515c0335096163f646086cff3ffed5c3f1bc2b3f216bd7e7f7d44c",
+      "source_parameter_path": "family/bankman.conf",
+      "source_parameter_status": "ORIGINAL_FILE_VERIFIED"
+    },
+    {
+      "source_CREATE_path": "family/bankman.create",
+      "source_CREATE_ordinal": 2,
+      "source_CREATE_block_sha256": "ade12f20f2f37dee0bd3ac109e99ec335a410ca565262f0f333bd803757f216f",
+      "source_floorid_integer": 3031,
+      "source_graphic_integer": 16017,
+      "source_FUNCTION_literal": "bankman",
+      "source_argument_token_kind": "CONFF_TOKEN",
+      "source_argument_SHA256": "0c30a86d18515c0335096163f646086cff3ffed5c3f1bc2b3f216bd7e7f7d44c",
+      "source_parameter_path": "family/bankman.conf",
+      "source_parameter_status": "ORIGINAL_FILE_VERIFIED"
+    },
+    {
+      "source_CREATE_path": "family/bankman.create",
+      "source_CREATE_ordinal": 3,
+      "source_CREATE_block_sha256": "2f5ff68b80704b2927bd4fdc92716791b2c1f0a3761c5f3cf9651253fa31ca24",
+      "source_floorid_integer": 4031,
+      "source_graphic_integer": 16017,
+      "source_FUNCTION_literal": "bankman",
+      "source_argument_token_kind": "CONFF_TOKEN",
+      "source_argument_SHA256": "0c30a86d18515c0335096163f646086cff3ffed5c3f1bc2b3f216bd7e7f7d44c",
+      "source_parameter_path": "family/bankman.conf",
+      "source_parameter_status": "ORIGINAL_FILE_VERIFIED"
+    },
+    {
+      "source_CREATE_path": "family/bankman.create",
+      "source_CREATE_ordinal": 4,
+      "source_CREATE_block_sha256": "b37d8dc43922f2d40b6b40b93d23ad26afc6966bd4305c4f3e0c439cfbfbaf79",
+      "source_floorid_integer": 1006,
+      "source_graphic_integer": 16017,
+      "source_FUNCTION_literal": "bankman",
+      "source_argument_token_kind": "CONFF_TOKEN",
+      "source_argument_SHA256": "0c30a86d18515c0335096163f646086cff3ffed5c3f1bc2b3f216bd7e7f7d44c",
+      "source_parameter_path": "family/bankman.conf",
+      "source_parameter_status": "ORIGINAL_FILE_VERIFIED"
+    },
+    {
+      "source_CREATE_path": "family/bankman.create",
+      "source_CREATE_ordinal": 5,
+      "source_CREATE_block_sha256": "032d4485753f8336c445c98a583797f0824263cf8fe0c6883a2b878843db1045",
+      "source_floorid_integer": 2006,
+      "source_graphic_integer": 16017,
+      "source_FUNCTION_literal": "bankman",
+      "source_argument_token_kind": "CONFF_TOKEN",
+      "source_argument_SHA256": "0c30a86d18515c0335096163f646086cff3ffed5c3f1bc2b3f216bd7e7f7d44c",
+      "source_parameter_path": "family/bankman.conf",
+      "source_parameter_status": "ORIGINAL_FILE_VERIFIED"
+    },
+    {
+      "source_CREATE_path": "family/bankman.create",
+      "source_CREATE_ordinal": 6,
+      "source_CREATE_block_sha256": "e80d17874901aa1b1d4ef6bbb55ca156e30a437c4b807abc90a09add8194c5a2",
+      "source_floorid_integer": 3006,
+      "source_graphic_integer": 16017,
+      "source_FUNCTION_literal": "bankman",
+      "source_argument_token_kind": "CONFF_TOKEN",
+      "source_argument_SHA256": "0c30a86d18515c0335096163f646086cff3ffed5c3f1bc2b3f216bd7e7f7d44c",
+      "source_parameter_path": "family/bankman.conf",
+      "source_parameter_status": "ORIGINAL_FILE_VERIFIED"
+    },
+    {
+      "source_CREATE_path": "family/bankman.create",
+      "source_CREATE_ordinal": 7,
+      "source_CREATE_block_sha256": "19a4b022c499b2c5215c385305e67819e10e2600c59eb914909e63abbd6934fc",
+      "source_floorid_integer": 4006,
+      "source_graphic_integer": 16017,
+      "source_FUNCTION_literal": "bankman",
+      "source_argument_token_kind": "CONFF_TOKEN",
+      "source_argument_SHA256": "0c30a86d18515c0335096163f646086cff3ffed5c3f1bc2b3f216bd7e7f7d44c",
+      "source_parameter_path": "family/bankman.conf",
+      "source_parameter_status": "ORIGINAL_FILE_VERIFIED"
+    },
+    {
+      "source_CREATE_path": "genout/duelroom.create",
+      "source_CREATE_ordinal": 33,
+      "source_CREATE_block_sha256": "5530056ea594a7ef1cef928e58d5655dca8ea7251775fa42267b4bb6c5ca4ea7",
+      "source_floorid_integer": 130,
+      "source_graphic_integer": 16027,
+      "source_FUNCTION_literal": "npcgen_poolitemshop",
+      "source_argument_token_kind": "FILE_TOKEN",
+      "source_argument_SHA256": "14f1f1fbb447fa2b7318cae1246f41b1e525d4fa382ac98a46f8722f01ab42ce",
+      "source_parameter_path": "genout/pis_1009_14_13",
+      "source_parameter_status": "ORIGINAL_FILE_VERIFIED"
+    },
+    {
+      "source_CREATE_path": "genout/shop_m.create",
+      "source_CREATE_ordinal": 103,
+      "source_CREATE_block_sha256": "34dcabdb4f8a327cca66f67635030f16c2bfe9f197df8d1216bdc7ed8385e0e7",
+      "source_floorid_integer": 1009,
+      "source_graphic_integer": 16055,
+      "source_FUNCTION_literal": "npcgen_poolitemshop",
+      "source_argument_token_kind": "FILE_TOKEN",
+      "source_argument_SHA256": "cc04656d34ae8a6710f66f7ffdcbdd650955d3070332b474d724173f5de3c046",
+      "source_parameter_path": "genout/pis_1009_14_13",
+      "source_parameter_status": "ORIGINAL_FILE_VERIFIED"
+    },
+    {
+      "source_CREATE_path": "genout/shop_m.create",
+      "source_CREATE_ordinal": 115,
+      "source_CREATE_block_sha256": "4e3d7808a04765efe0ce96b150abe0edd2ca4950c4a0be52e7cfb74f138bf12d",
+      "source_floorid_integer": 2009,
+      "source_graphic_integer": 16056,
+      "source_FUNCTION_literal": "npcgen_poolitemshop",
+      "source_argument_token_kind": "FILE_TOKEN",
+      "source_argument_SHA256": "cc04656d34ae8a6710f66f7ffdcbdd650955d3070332b474d724173f5de3c046",
+      "source_parameter_path": "genout/pis_2009_17_34",
+      "source_parameter_status": "ORIGINAL_FILE_VERIFIED"
+    },
+    {
+      "source_CREATE_path": "genout/shop_m2.create",
+      "source_CREATE_ordinal": 107,
+      "source_CREATE_block_sha256": "b8fcac4eb048e651c75cb37fe11fb16521fb8c632046ac163485476e5f2fae3e",
+      "source_floorid_integer": 3009,
+      "source_graphic_integer": 16201,
+      "source_FUNCTION_literal": "npcgen_poolitemshop",
+      "source_argument_token_kind": "FILE_TOKEN",
+      "source_argument_SHA256": "cc04656d34ae8a6710f66f7ffdcbdd650955d3070332b474d724173f5de3c046",
+      "source_parameter_path": "genout/pis_3009_18_40",
+      "source_parameter_status": "ORIGINAL_FILE_VERIFIED"
+    },
+    {
+      "source_CREATE_path": "genout/shop_m2.create",
+      "source_CREATE_ordinal": 115,
+      "source_CREATE_block_sha256": "0871f3cc7226e9a0efd37377ac496c4a44963c1e25779f4b7f6437c8c14a02cd",
+      "source_floorid_integer": 4009,
+      "source_graphic_integer": 16201,
+      "source_FUNCTION_literal": "npcgen_poolitemshop",
+      "source_argument_token_kind": "FILE_TOKEN",
+      "source_argument_SHA256": "cc04656d34ae8a6710f66f7ffdcbdd650955d3070332b474d724173f5de3c046",
+      "source_parameter_path": "genout/pis_4009_15_13",
+      "source_parameter_status": "ORIGINAL_FILE_VERIFIED"
+    },
+    {
+      "source_CREATE_path": "giiru/event/sink/sink.create",
+      "source_CREATE_ordinal": 0,
+      "source_CREATE_block_sha256": "7e0f9dea4b1486e512d7bf724b4521844c534b9e5ef86f85f3dbda8b51d559fd",
+      "source_floorid_integer": 300,
+      "source_graphic_integer": 100461,
+      "source_FUNCTION_literal": "bus",
+      "source_argument_token_kind": "FILE_TOKEN",
+      "source_argument_SHA256": "6702c3ef2bcd4061e16e10987477952691303225f6cd35191dd950103a4ec487",
+      "source_parameter_path": "giiru/banam.arg",
+      "source_parameter_status": "ORIGINAL_FILE_VERIFIED"
+    },
+    {
+      "source_CREATE_path": "jaruga/event/e_17.create",
+      "source_CREATE_ordinal": 0,
+      "source_CREATE_block_sha256": "ef9824f3c3b33dd8ebd510f5ffd17b4ae41aea3a673d219751d3b71a4b52a064",
+      "source_floorid_integer": 20807,
+      "source_graphic_integer": 16024,
+      "source_FUNCTION_literal": "windowman",
+      "source_argument_token_kind": "CONFF_TOKEN",
+      "source_argument_SHA256": "32cae4865667ee94b7d531a1c2a92865bfd06503ef61f2e4bd6e01622a7aef96",
+      "source_parameter_path": "jaruga/event/e_17.conf",
+      "source_parameter_status": "ORIGINAL_FILE_VERIFIED"
+    },
+    {
+      "source_CREATE_path": "jaruga/menu.create",
+      "source_CREATE_ordinal": 0,
+      "source_CREATE_block_sha256": "5edf4c2639597bc647414524b1d00e1cb1315d28f9621ff6d2fdce8925375de9",
+      "source_floorid_integer": 2009,
+      "source_graphic_integer": 16053,
+      "source_FUNCTION_literal": "windowman",
+      "source_argument_token_kind": "CONFF_TOKEN",
+      "source_argument_SHA256": "fed513d532f530d537f8ec948ca6c2117a9aa5bdbcd648da0b5329de3d607152",
+      "source_parameter_path": "jaruga/menu01.conf",
+      "source_parameter_status": "ORIGINAL_FILE_VERIFIED"
+    },
+    {
+      "source_CREATE_path": "jaruga/menu.create",
+      "source_CREATE_ordinal": 1,
+      "source_CREATE_block_sha256": "accd09360de154fde987297e3a96523e6ac90fb7f8d0300a2cdcd88d4f350e69",
+      "source_floorid_integer": 3009,
+      "source_graphic_integer": 16053,
+      "source_FUNCTION_literal": "windowman",
+      "source_argument_token_kind": "CONFF_TOKEN",
+      "source_argument_SHA256": "fed513d532f530d537f8ec948ca6c2117a9aa5bdbcd648da0b5329de3d607152",
+      "source_parameter_path": "jaruga/menu02.conf",
+      "source_parameter_status": "ORIGINAL_FILE_VERIFIED"
+    },
+    {
+      "source_CREATE_path": "jaruga/menu.create",
+      "source_CREATE_ordinal": 2,
+      "source_CREATE_block_sha256": "4a92689ccec5ccb042a467c66599dbe26232e52a0611c06e80740130edf0a420",
+      "source_floorid_integer": 1009,
+      "source_graphic_integer": 16209,
+      "source_FUNCTION_literal": "windowman",
+      "source_argument_token_kind": "CONFF_TOKEN",
+      "source_argument_SHA256": "d3b029519dcffac451a8af6b01b91a8e18f64f768fe783e28d12321d35f79477",
+      "source_parameter_path": "jaruga/gousei.conf",
+      "source_parameter_status": "ORIGINAL_FILE_VERIFIED"
+    },
+    {
+      "source_CREATE_path": "jaruga/menu.create",
+      "source_CREATE_ordinal": 3,
+      "source_CREATE_block_sha256": "c3da0f359a5e595a1e3b3aad8e3adec2ba92e7f0c35f5beae92c9aeb0f86711d",
+      "source_floorid_integer": 4009,
+      "source_graphic_integer": 16209,
+      "source_FUNCTION_literal": "windowman",
+      "source_argument_token_kind": "CONFF_TOKEN",
+      "source_argument_SHA256": "d3b029519dcffac451a8af6b01b91a8e18f64f768fe783e28d12321d35f79477",
+      "source_parameter_path": "jaruga/gousei.conf",
+      "source_parameter_status": "ORIGINAL_FILE_VERIFIED"
+    },
+    {
+      "source_CREATE_path": "jaruga/menu.create",
+      "source_CREATE_ordinal": 4,
+      "source_CREATE_block_sha256": "fc328c804f7061b2c1acc6fd29ef1185d012221005486a01a043373f7956a5b2",
+      "source_floorid_integer": 2009,
+      "source_graphic_integer": 16066,
+      "source_FUNCTION_literal": "windowman",
+      "source_argument_token_kind": "CONFF_TOKEN",
+      "source_argument_SHA256": "226cbe78e8f6150b01783a9066b094e0b0fe55498e856f825688edb98da352b4",
+      "source_parameter_path": "jaruga/cook.conf",
+      "source_parameter_status": "ORIGINAL_FILE_VERIFIED"
+    },
+    {
+      "source_CREATE_path": "jaruga/menu.create",
+      "source_CREATE_ordinal": 5,
+      "source_CREATE_block_sha256": "478123a5cabe320288439b79c57336980cdf202d4ff6c4b5ab2506736e4945b2",
+      "source_floorid_integer": 3009,
+      "source_graphic_integer": 16066,
+      "source_FUNCTION_literal": "windowman",
+      "source_argument_token_kind": "CONFF_TOKEN",
+      "source_argument_SHA256": "226cbe78e8f6150b01783a9066b094e0b0fe55498e856f825688edb98da352b4",
+      "source_parameter_path": "jaruga/cook.conf",
+      "source_parameter_status": "ORIGINAL_FILE_VERIFIED"
+    },
+    {
+      "source_CREATE_path": "my/tiancai/transfer.create",
+      "source_CREATE_ordinal": 0,
+      "source_CREATE_block_sha256": "1845ca05b5d4353daa5341790a4114237ee899bcd453354c67f40d5dc5bb4569",
+      "source_floorid_integer": 1000,
+      "source_graphic_integer": 16130,
+      "source_FUNCTION_literal": "transman",
+      "source_argument_token_kind": "FILE_TOKEN",
+      "source_argument_SHA256": "91e3169bf279395d550cccf8283266c722d3bc684746a0353ec057fc2b7c3243",
+      "source_parameter_path": "my/tiancai/transfer.arg",
+      "source_parameter_status": "ORIGINAL_FILE_VERIFIED"
+    },
+    {
+      "source_CREATE_path": "my/tiancai/transfer.create",
+      "source_CREATE_ordinal": 1,
+      "source_CREATE_block_sha256": "8305918d1772f44de79ec31a74c34224082fa605c5cebe2f2c63525e0c9061bc",
+      "source_floorid_integer": 2000,
+      "source_graphic_integer": 16131,
+      "source_FUNCTION_literal": "transman",
+      "source_argument_token_kind": "FILE_TOKEN",
+      "source_argument_SHA256": "91e3169bf279395d550cccf8283266c722d3bc684746a0353ec057fc2b7c3243",
+      "source_parameter_path": "my/tiancai/transfer.arg",
+      "source_parameter_status": "ORIGINAL_FILE_VERIFIED"
+    },
+    {
+      "source_CREATE_path": "my/tiancai/transfer.create",
+      "source_CREATE_ordinal": 2,
+      "source_CREATE_block_sha256": "ff481bba67aa5eca7a14ecd046795240b094bccd60464185c79e5da4fe8923d2",
+      "source_floorid_integer": 3000,
+      "source_graphic_integer": 16131,
+      "source_FUNCTION_literal": "transman",
+      "source_argument_token_kind": "FILE_TOKEN",
+      "source_argument_SHA256": "91e3169bf279395d550cccf8283266c722d3bc684746a0353ec057fc2b7c3243",
+      "source_parameter_path": "my/tiancai/transfer.arg",
+      "source_parameter_status": "ORIGINAL_FILE_VERIFIED"
+    },
+    {
+      "source_CREATE_path": "my/tiancai/transfer.create",
+      "source_CREATE_ordinal": 3,
+      "source_CREATE_block_sha256": "c7f5ed36640ffef4bc4dc286f948426e250d43835ffc7b254b7eb0fa4347046b",
+      "source_floorid_integer": 4000,
+      "source_graphic_integer": 16131,
+      "source_FUNCTION_literal": "transman",
+      "source_argument_token_kind": "FILE_TOKEN",
+      "source_argument_SHA256": "91e3169bf279395d550cccf8283266c722d3bc684746a0353ec057fc2b7c3243",
+      "source_parameter_path": "my/tiancai/transfer.arg",
+      "source_parameter_status": "ORIGINAL_FILE_VERIFIED"
+    },
+    {
+      "source_CREATE_path": "my/tiancai/transfer.create",
+      "source_CREATE_ordinal": 4,
+      "source_CREATE_block_sha256": "a708aaa874795ac01623af6305092b662fd06ecb6ac2ddb8ba21b939d10d2f6f",
+      "source_floorid_integer": 5543,
+      "source_graphic_integer": 16131,
+      "source_FUNCTION_literal": "transman",
+      "source_argument_token_kind": "FILE_TOKEN",
+      "source_argument_SHA256": "91e3169bf279395d550cccf8283266c722d3bc684746a0353ec057fc2b7c3243",
+      "source_parameter_path": "my/tiancai/transfer.arg",
+      "source_parameter_status": "ORIGINAL_FILE_VERIFIED"
+    },
+    {
+      "source_CREATE_path": "my/vipshop/vipshop.create",
+      "source_CREATE_ordinal": 0,
+      "source_CREATE_block_sha256": "b826ca85e0b0ab0bb858c6ee8a20a4c4220f4200d0904057dbc3af682518ec61",
+      "source_floorid_integer": 2000,
+      "source_graphic_integer": 16061,
+      "source_FUNCTION_literal": "transman",
+      "source_argument_token_kind": "FILE_TOKEN",
+      "source_argument_SHA256": "587481a60a0376c24db4d1b33461dc34c90cd9f8e85fd294f5b56ae4b70bf85b",
+      "source_parameter_path": "my/vipshop/transfer1.arg",
+      "source_parameter_status": "ORIGINAL_FILE_VERIFIED"
+    },
+    {
+      "source_CREATE_path": "my/vipshop/vipshop.create",
+      "source_CREATE_ordinal": 1,
+      "source_CREATE_block_sha256": "7efa11beea73a650f33804ecfac85e905fbcd363ee47f9542233d5f93761df09",
+      "source_floorid_integer": 9003,
+      "source_graphic_integer": 16060,
+      "source_FUNCTION_literal": "transman",
+      "source_argument_token_kind": "FILE_TOKEN",
+      "source_argument_SHA256": "388dff05808f5b5e4e445d15e8ab927317ceb7fedaf66fe5085ddfa1ab6644a0",
+      "source_parameter_path": "my/vipshop/transfer2.arg",
+      "source_parameter_status": "ORIGINAL_FILE_VERIFIED"
+    },
+    {
+      "source_CREATE_path": "sainasu/event/event.create",
+      "source_CREATE_ordinal": 0,
+      "source_CREATE_block_sha256": "2e0cad932824ae761aa4980a08bf55f691c0cfd02c50cdfa01f7cf4342075b3a",
+      "source_floorid_integer": 10007,
+      "source_graphic_integer": 16001,
+      "source_FUNCTION_literal": "windowman",
+      "source_argument_token_kind": "CONFF_TOKEN",
+      "source_argument_SHA256": "3b70d5d8923b3953031875db9e768fa822082ef6b9b52844574ba6e7f2243695",
+      "source_parameter_path": "sainasu/event/e_01.conf",
+      "source_parameter_status": "ORIGINAL_FILE_VERIFIED"
+    },
+    {
+      "source_CREATE_path": "sainasu/event/event.create",
+      "source_CREATE_ordinal": 2,
+      "source_CREATE_block_sha256": "1a8468e69fb21fb171b6ab857983a2f2b2153bc3df5c65cfbe864c97940657ef",
+      "source_floorid_integer": 10408,
+      "source_graphic_integer": 16044,
+      "source_FUNCTION_literal": "windowman",
+      "source_argument_token_kind": "CONFF_TOKEN",
+      "source_argument_SHA256": "98ab70b37020c7900924be1f4b0ead12094c8c1eda0fc4b8ffdc4f3fd1b6a440",
+      "source_parameter_path": "sainasu/event/e_02.conf",
+      "source_parameter_status": "ORIGINAL_FILE_VERIFIED"
+    },
+    {
+      "source_CREATE_path": "sainasu/jujutu.create",
+      "source_CREATE_ordinal": 0,
+      "source_CREATE_block_sha256": "274ce100a24cf94baa500ddcfa632ca6a4110d598e8a803d4d43b6a4f6638f50",
+      "source_floorid_integer": 1002,
+      "source_graphic_integer": 16201,
+      "source_FUNCTION_literal": "windowman",
+      "source_argument_token_kind": "CONFF_TOKEN",
+      "source_argument_SHA256": "29cc65c7177a45db117cd75c3afc2223cfc9c30dd706f3629ae6591319eca428",
+      "source_parameter_path": "sainasu/jujutu01.conf",
+      "source_parameter_status": "MISSING_IN_CURRENT_ORIGINAL_NPC_ARCHIVE"
+    },
+    {
+      "source_CREATE_path": "sainasu/jujutu.create",
+      "source_CREATE_ordinal": 1,
+      "source_CREATE_block_sha256": "ef5f112a740ad1bd31ec8ffb76e383b9c67a1776f5cf51fe1b0f2a1eff3545a0",
+      "source_floorid_integer": 2002,
+      "source_graphic_integer": 16066,
+      "source_FUNCTION_literal": "windowman",
+      "source_argument_token_kind": "CONFF_TOKEN",
+      "source_argument_SHA256": "29cc65c7177a45db117cd75c3afc2223cfc9c30dd706f3629ae6591319eca428",
+      "source_parameter_path": "sainasu/jujutu01.conf",
+      "source_parameter_status": "MISSING_IN_CURRENT_ORIGINAL_NPC_ARCHIVE"
+    },
+    {
+      "source_CREATE_path": "sainasu/jujutu.create",
+      "source_CREATE_ordinal": 2,
+      "source_CREATE_block_sha256": "81df6bacfe6b0d07247d34270d1589e391fb27f2c3658926982f9d00968618f9",
+      "source_floorid_integer": 3002,
+      "source_graphic_integer": 16065,
+      "source_FUNCTION_literal": "windowman",
+      "source_argument_token_kind": "CONFF_TOKEN",
+      "source_argument_SHA256": "29cc65c7177a45db117cd75c3afc2223cfc9c30dd706f3629ae6591319eca428",
+      "source_parameter_path": "sainasu/jujutu01.conf",
+      "source_parameter_status": "MISSING_IN_CURRENT_ORIGINAL_NPC_ARCHIVE"
+    },
+    {
+      "source_CREATE_path": "sainasu/jujutu.create",
+      "source_CREATE_ordinal": 3,
+      "source_CREATE_block_sha256": "374a5a402da04ef73b182a6280b9737aefb5c4c6495780c88e5be316c1192fbf",
+      "source_floorid_integer": 4002,
+      "source_graphic_integer": 16200,
+      "source_FUNCTION_literal": "windowman",
+      "source_argument_token_kind": "CONFF_TOKEN",
+      "source_argument_SHA256": "5d230f9f9ec14f6788ecb9a44a5a5ef72f33e228cdcc062f853d83da51e46cad",
+      "source_parameter_path": "sainasu/jujutu01.conf",
+      "source_parameter_status": "MISSING_IN_CURRENT_ORIGINAL_NPC_ARCHIVE"
+    }
+  ],
+  "evidence_limits": {
+    "all_values_from_original_saved_source_text_not_live_server": true,
+    "same_archive_source_SHA_does_not_prove_all_files_enabled_in_one_server": true,
+    "source_missing_conf_not_recreated": true,
+    "source_bus_airplane_coords_are_config_data_not_observed_movement": true,
+    "native_transport_fee_debit_or_wait_seconds_executed": false,
+    "native_transman_warp_or_LV_condition_evaluated": false,
+    "native_poolitemshop_item_storage_or_payment_executed": false,
+    "native_bankman_balance_or_deposit_executed": false,
+    "native_windowman_UI_or_duelranking_display_executed": false,
+    "native_pet_capture_and_battle_callback_executed": false,
+    "official_JSS1999_TW10_CN182_source_equivalence_proven": false,
+    "original_commercial_content_or_assets_in_public_git": false,
+    "stage_A": "7_PARTIAL_2_OPEN",
+    "stage_B_and_wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "next": "GAMEPLAY-MECHANICS-MODULE-07_CAPTURE_AND_STATIC_GAMEPLAY_SOURCE_BOUNDARY_REVIEW"
+}
