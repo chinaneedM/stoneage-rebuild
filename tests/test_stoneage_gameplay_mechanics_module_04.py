@@ -37,8 +37,8 @@ def verify(d,o16,o40):
     assert exe["source_path_template"]==r"data\battleMap\battleNN.sab"
     assert exe["file_open_mode_source_literal"]=="rb"
     assert exe["open_file_failure_message_box_and_returns_zero"] is True
-    assert exe["original_header_string_to_compare"]=="SAB"
-    assert exe["original_header_is_NUL_terminated_before_comparison"] is True
+    assert exe["source_header_token_to_search"]=="SAB"\n    assert exe["native_header_search_function_va"]=="0x004485e0"\n    assert exe["source_header_search_is_substring_function_not_strict_header_comparison"] is True
+    assert exe["original_read_four_bytes_then_terminate_at_offset_four"] is True
     assert exe["malformed_header_warning_branch_aborts_processing"] is False
     assert exe["index_ge_218_normalizes_to_0_in_this_entry"] is True
     assert exe["index_negative_explicitly_guarded_in_this_entry"] is False
