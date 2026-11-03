@@ -1,0 +1,24 @@
+name: Verify ITEM02 source-derived numeric type cohorts and RD boundaries
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-ITEM02-ORIGINAL-NUMERIC-EQUIPMENT-AND-TW1-RD-BOUNDARY-R1.json'
+      - 'research/recovered/item-module-01/**'
+      - 'tests/test_stoneage_item_module_02.py'
+      - '.github/workflows/verify-stoneage-item-module-02.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-ITEM02-ORIGINAL-NUMERIC-EQUIPMENT-AND-TW1-RD-BOUNDARY-R1.json'
+      - 'research/recovered/item-module-01/**'
+      - 'tests/test_stoneage_item_module_02.py'
+      - '.github/workflows/verify-stoneage-item-module-02.yml'
+  workflow_dispatch:
+jobs:
+  source-derived-numeric-and-negative-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest discover -s tests -p 'test_stoneage_item_module_02.py' -v

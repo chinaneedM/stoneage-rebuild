@@ -1613,3 +1613,8 @@ O75 CI史实订正：PR #133 初稿的 Stage A 检查 run 41362507873 因两处�
 ### 2026-11-03 — ITEM01 原物品、装备及商店第一轮全量复原，下一批保持物品模块
 
 [ITEM01原始两套物品主表/台湾1.0原图候选/商店来源和缺件报告](docs/continuity/STONEAGE-ITEM-EQUIPMENT-SHOP-MODULE-01-TWO-SOURCE-TABLES-ORIGINAL-832-RD-20261103.md)、[完整来源证据和私人图集凭证](research/recovered/STONEAGE-ITEM-EQUIPMENT-SHOP-MODULE-01-TWO-ORIGINAL-ITEMSETS-AND-TW1-RD-SUMMARY-R1.json)、[逐ID原行SHA数值目录7分片](research/recovered/item-module-01/STONEAGE-ITEM01-ORIGINAL-ITEM-ID-DERIVED-INDEX-01-R1.json)：从私人实际原社区混合2.5 RAR 读取两份原物品主表13254/13915唯一ID、94原字段，13254个共同ID中4303行原SHA同/8951行有字段差异，后一表661ID独有；不把0710文件名当官方版本/时间。实际读取台湾1.0零售原ADRN/REAL/PAL，联合1667数字图号中的836具原索引，832真正原RD解码原像素、4解码失败、831无该原索引。私人832候选PNG及13915行全源文本查阅ZIP5868386B/SHA `cb88d0a837686edae507910bdc11fcf6abb35df9aa43819fd80c741c51b755aa`，已存用户Library、完整原样回读SHA及838项CRC；原商美术和物品原正文不公开。现有商店224份ItemList源参数、191份NPC创建引用可限源静态联接，区间数值解析仅作候选，不是已执行原商店。公开Git仅可发布数字/散列/源分界及测试，Stage A 7PARTIAL+2OPEN、B/wiki GATED、R79暂停、overall_percent=null。物品模块 **SOURCE_BOUNDED_PARTIAL**，**当前最高 NEXT `ITEM-EQUIPMENT-SHOP-MODULE-02`**：继续有真实原件可验证的物品图、装备与商店来源，保持原版游戏复原而不开发新石器。
+
+
+### 2026-11-03 — ITEM02 原物品32类数值与四条台湾1.0 RD 越界实物复核
+
+[ITEM02具体来源及限制](docs/continuity/STONEAGE-ITEM-EQUIPMENT-SHOP-MODULE-02-NUMERIC-EQUIPMENT-AND-FOUR-RD-20261103.md)和[全32类及四RD SHA目录](research/recovered/STONEAGE-ITEM02-ORIGINAL-NUMERIC-EQUIPMENT-AND-TW1-RD-BOUNDARY-R1.json)：私人原RAR两套13254/13915行物品表完整字节重新取回、全SHA与94列重验，后一表32原type、10036行六攻防敏列非零，共同13254 ID这六数值列不变；TW1原ADRN/REAL全SHA真实重验，四幅旧失败RD原RLE在末尾0xC2刚好越界一个像素，**未晋级为已解码像素或坏原包**。831个TW1无索引图号仍无原图；后期混合RAR ADRN成员提取受libarchive限制，本轮原后期像素0。公开元数据CI验证ITEM01已存13915行/32类及反例；原版权美术不公开；同服/真实玩法未知。**NEXT ITEM-EQUIPMENT-SHOP-MODULE-03**，有源才补图，否则有界转装备附属/商店/任务。旧CURRENT原字节、Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、overall_percent=null均保留。
