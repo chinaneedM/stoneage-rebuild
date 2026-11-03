@@ -1,0 +1,24 @@
+name: Verify QUEST01 original event scripts and source-bounded quest control graph
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-QUEST-STORY-MODULE-01-ORIGINAL-EXCHANGEMAN-QUEST-SOURCE-BLOCK-CATALOG-R1.json'
+      - 'research/recovered/item-module-01/**'
+      - 'tests/test_stoneage_quest_story_module_01.py'
+      - '.github/workflows/verify-stoneage-quest-story-module-01.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-QUEST-STORY-MODULE-01-ORIGINAL-EXCHANGEMAN-QUEST-SOURCE-BLOCK-CATALOG-R1.json'
+      - 'research/recovered/item-module-01/**'
+      - 'tests/test_stoneage_quest_story_module_01.py'
+      - '.github/workflows/verify-stoneage-quest-story-module-01.yml'
+  workflow_dispatch:
+jobs:
+  validate-original-static-source-graph:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest discover -s tests -p 'test_stoneage_quest_story_module_01.py' -v
