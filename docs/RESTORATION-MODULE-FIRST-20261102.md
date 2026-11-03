@@ -115,3 +115,8 @@
 ### 2026-11-03 — CHAR07 原NPC村民对白与告示文字552条原文件实物联接
 
 [CHAR07完整来源/界限](continuity/STONEAGE-CHARACTER-NPC-MODULE-07-TOWNPEOPLE-SIGNBOARD-ORIGINAL-TEXT-20261103.md)及[CHAR07逐567源配置引用与15缺件目录](../research/recovered/STONEAGE-CHARACTER-NPC-MODULE-07-TOWNPEOPLE-SIGNBOARD-SOURCE-CATALOG-R1.json)：直接复用已实际解出的mixed25 NPC完整2205源文件，用原create/template/functionset逐源块关联TownPeople387引用、SignBoard180引用；其中TownPeople372有原文/15缺、SignBoard180全部有原文。全部552实际原文CP950解码无替换字，按原SHA/CRC/文件大小核；缺15文件在同RAR全7952成员查无路径/同尾文件名，不能抬为整个历史发行缺失。原文本字面逗号/\\n只是源字节，尚无运行分支/行规证据。私人自包含观察器现已实际由Chromium144校验552原文及两类筛选、0脚本错误/外部请求，原版权对白未进入Git。567是配置引用数，不是NPC人物数；原商业世界未进入，同服/官方TW1身份未知。**NEXT CHAR08**集中有原件的任务交换NPC源条件/物品参数关系，任务原产地分类严格保留UNKNOWN；若有界材料已用尽，再按既定模块顺序转地图。Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停及overall_percent=null不变。
+
+
+### 2026-11-03 — CHAR08 同 RAR ExChangeMan 原脚本与两份 itemset 原数值关联
+
+[CHAR08 原始脚本/双物品表的有界证据](continuity/STONEAGE-CHARACTER-NPC-MODULE-08-EXCHANGEMAN-ITEM-EVENT-20261103.md)和[可远端重放的源统计收据](../research/recovered/STONEAGE-CHARACTER-NPC-MODULE-08-STATIC-SOURCE-SUMMARY-R1.json)由私人已验混合 2.5 原 RAR 重新实读：315 条 NPC ExChangeMan 创建配置真实指向 295 份不同原脚本，全部 295 份实物可取；源 TYPE=1349（MESSAGE769、ACCEPT494、REQUEST81、CLEAN5），EVENT=1349、EventNo=1348，未擅自补齐不齐字段。原实际双 itemset 13254/13915 唯一 ID（零基列16，列17原图号），后一份独有 661 ID；380 不同源脚本物品数字 ID 中 372 两表原行同 SHA、1 原行异（18340）、5 仅后表有、2 两表均缺。全部仍静态源候选，未证明源脚本执行、同时生效部署、TW1 原服、任务常驻/运营活动来源；315 条起源均 ORIGIN_UNRESOLVED。源 RAR 全 SHA、2205 原 NPC 文件及 CHAR07 552 原文本块重复核验成功。完整 338200B 无版权正文逐行目录 SHA 已固定在收据，**当前文件桥失效未入 Git，不能伪称已发布**，公开仓库仅保留汇总收据/测试/本源边界。Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、整体percent=null；原 CURRENT 字节完整保留。**NEXT CHAR09：** 同原 RAR NPCEnemy 实物关系的有界批量调查，然后人物/NPC SOURCE_BOUNDED_PARTIAL 止点再转地图模块。
