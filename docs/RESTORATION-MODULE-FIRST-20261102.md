@@ -126,3 +126,9 @@
 [CHAR09 同原包静态源关系与止点](continuity/STONEAGE-CHARACTER-NPC-MODULE-09-NPCENEMY-SOURCE-20261103.md)和[完整来源限定 JSON](../research/recovered/STONEAGE-CHARACTER-NPC-MODULE-09-ORIGINAL-NPCENEMY-ROSTER-BRIDGE-R1.json)：私人混合 2.5 RAR 完整 SHA 固定，从原 2205 NPC 子树及 4 份敌人实例/模板表、原 spradrn_5.bin 真正校验源字节。279 个 NPCEnemy 原创建配置均可联原 .arg，共 260 不同原参数；引用的 230 个不同实例 ID 在同包两套 enemy 表全都存在，分别可联 214 个模板 ID、117 个图号，117 个全部在同包 847 条 SPR 索引中有**唯一**源记录。整 SPR 索引仍保留 5 个重复键/6 个额外记录，与本批图号不相交。两实例表同 ID 的 230 原行 SHA 都不同，模板行仅 145 个 SHA 相同；同号/同模板/同图号不等于相同原服部署。此前 NPCEnemy 200 gym/79 普通的基础规则旧资料保留，不算本轮新发现。没有新原像素、真实原战斗或 TW1 官方身份，105 早前图号/15 原村民缺件仍未补；Stage A 7 PARTIAL+2 OPEN、B/wiki GATED、R79 暂停，overall_percent=null。
 
 **人物与 NPC 模块当前状态 SOURCE_BOUNDED_PARTIAL。最高 NEXT MAP-SCENE-MODULE-01：** 按既定模块顺序批量归并已获原地图/贴图/建筑/出入口的实际源文件与可观察范围，优先复用已有实物，不重复写单点工具或再把旧地图数量当新成果；原 RAR/官方不全或缺原资源时明确保留差距。旧 CHAR08 NEXT 保留历史，不再为当前优先级。
+
+### 2026-11-03 — MAP-SCENE-MODULE-01：批量源地图真实字节与跨目录差异
+
+[MAP01 来源 / 受限边界报告](continuity/STONEAGE-MAP-SCENE-MODULE-01-ORIGINAL-MAP-SOURCE-20261103.md)和[2990条实际CRC/SHA验原地图文件、63条读取负证 JSON](../research/recovered/STONEAGE-MAP-SCENE-MODULE-01-ORIGINAL-SOURCE-MANIFEST-R1.json)：私人已验混合2.5 RAR 选3053份原客户端 MAP/DAT、附带工具 MAP及3份服务器地图配置；2990份实际全解包且大小/RAR CRC/新SHA一致，63份libarchive读取失败、不提升为原包损坏。客户端MAP1019、DAT971、附带工具MAP997、服务器原表3；数字地图宽高与源字节公式有2971个核验。965份MAP/DAT都可读，953对同宽高且有非空DAT、12对DAT是实存零字节。996对同名源 MAP 两子树有898逐字节相同、98实际不同（非真实发行变更因果）。两源mapset有20157/16803行，共同16803个ID中16802行一致、1行ID10230不同；主表额外3354 ID，不是3354地图新增。mapwarp源2981完整数字端点引用，其中500条源/目标都不在这一份mapset。原游戏画面/碰撞/原服务器真实选图与运行仍未验证；整RAR和各目录不认证官方同部署，原美术不公开。
+
+**MAP01 当前状态 SOURCE_BOUNDED_PARTIAL；最高 NEXT MAP-SCENE-MODULE-02：** 只对已真实SHA/CRC核的地图原字节，批量梳理地图格/层/原图号到既存可见原素材的关系；优先处理实际不同或未观察材料，来源未解码的63项维持UNVERIFIED，绝不以生成图冒充原画面。Stage A7PARTIAL+2OPEN、Stage B/wiki GATED、R79暂停、overall_percent=null、原大CURRENT全部保留。
