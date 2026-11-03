@@ -120,3 +120,9 @@
 ### 2026-11-03 — CHAR08 同 RAR ExChangeMan 原脚本与两份 itemset 原数值关联
 
 [CHAR08 原始脚本/双物品表的有界证据](continuity/STONEAGE-CHARACTER-NPC-MODULE-08-EXCHANGEMAN-ITEM-EVENT-20261103.md)和[可远端重放的源统计收据](../research/recovered/STONEAGE-CHARACTER-NPC-MODULE-08-STATIC-SOURCE-SUMMARY-R1.json)由私人已验混合 2.5 原 RAR 重新实读：315 条 NPC ExChangeMan 创建配置真实指向 295 份不同原脚本，全部 295 份实物可取；源 TYPE=1349（MESSAGE769、ACCEPT494、REQUEST81、CLEAN5），EVENT=1349、EventNo=1348，未擅自补齐不齐字段。原实际双 itemset 13254/13915 唯一 ID（零基列16，列17原图号），后一份独有 661 ID；380 不同源脚本物品数字 ID 中 372 两表原行同 SHA、1 原行异（18340）、5 仅后表有、2 两表均缺。全部仍静态源候选，未证明源脚本执行、同时生效部署、TW1 原服、任务常驻/运营活动来源；315 条起源均 ORIGIN_UNRESOLVED。源 RAR 全 SHA、2205 原 NPC 文件及 CHAR07 552 原文本块重复核验成功。完整 338200B 无版权正文逐行目录 SHA 已固定在收据，**当前文件桥失效未入 Git，不能伪称已发布**，公开仓库仅保留汇总收据/测试/本源边界。Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、整体percent=null；原 CURRENT 字节完整保留。**NEXT CHAR09：** 同原 RAR NPCEnemy 实物关系的有界批量调查，然后人物/NPC SOURCE_BOUNDED_PARTIAL 止点再转地图模块。
+
+### 2026-11-03 — CHAR09 原 NPCEnemy 279 创建配置到 230 敌人实例 / 214 模板 / 117 原 SPR 图号
+
+[CHAR09 同原包静态源关系与止点](continuity/STONEAGE-CHARACTER-NPC-MODULE-09-NPCENEMY-SOURCE-20261103.md)和[完整来源限定 JSON](../research/recovered/STONEAGE-CHARACTER-NPC-MODULE-09-ORIGINAL-NPCENEMY-ROSTER-BRIDGE-R1.json)：私人混合 2.5 RAR 完整 SHA 固定，从原 2205 NPC 子树及 4 份敌人实例/模板表、原 spradrn_5.bin 真正校验源字节。279 个 NPCEnemy 原创建配置均可联原 .arg，共 260 不同原参数；引用的 230 个不同实例 ID 在同包两套 enemy 表全都存在，分别可联 214 个模板 ID、117 个图号，117 个全部在同包 847 条 SPR 索引中有**唯一**源记录。整 SPR 索引仍保留 5 个重复键/6 个额外记录，与本批图号不相交。两实例表同 ID 的 230 原行 SHA 都不同，模板行仅 145 个 SHA 相同；同号/同模板/同图号不等于相同原服部署。此前 NPCEnemy 200 gym/79 普通的基础规则旧资料保留，不算本轮新发现。没有新原像素、真实原战斗或 TW1 官方身份，105 早前图号/15 原村民缺件仍未补；Stage A 7 PARTIAL+2 OPEN、B/wiki GATED、R79 暂停，overall_percent=null。
+
+**人物与 NPC 模块当前状态 SOURCE_BOUNDED_PARTIAL。最高 NEXT MAP-SCENE-MODULE-01：** 按既定模块顺序批量归并已获原地图/贴图/建筑/出入口的实际源文件与可观察范围，优先复用已有实物，不重复写单点工具或再把旧地图数量当新成果；原 RAR/官方不全或缺原资源时明确保留差距。旧 CHAR08 NEXT 保留历史，不再为当前优先级。
