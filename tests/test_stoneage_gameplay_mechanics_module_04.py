@@ -61,7 +61,7 @@ def verify(d,o16,o40):
     old=o16["source_bitmap_coverage"]
     assert (sab["distinct_numeric_word_values"],sab["unique_original_source_file_sha256"])==(
         old["distinct_original_bitmap_ids_in_218_sabs"],old["distinct_original_sab_SHA256"])
-    assert sab["already_known_duplicate_content_file_ids"]==[old["duplicate_index_group"]]
+    assert sab["already_known_duplicate_content_file_ids"]==old["duplicate_index_group"]
     assert sab["previous_O16_sab_total_and_duplicate_not_new_historical_findings"] is True
     records=o16["battle_sab_records"]
     assert len(records)==218 and [r["id"] for r in records]==list(range(218))
