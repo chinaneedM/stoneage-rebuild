@@ -1,0 +1,100 @@
+{
+  "schema": "stoneage.character_npc_module08_original_static_exchange_receipt.r1",
+  "date": "2026-11-03",
+  "parent_main": "7d7453141cdaadd978f0c65cddbc4f5074a2e5a8",
+  "parent_tree": "60aecde2cd68a295a670774cdd844c4cdb82615c",
+  "source_scope": "MIXED25_COMMUNITY_ARCHIVE_NOT_CERTIFIED_OFFICIAL_SAME_DEPLOYMENT",
+  "rar": {
+    "size": 361255180,
+    "sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+    "archive_members": 7952,
+    "npc_original_files_reextracted": 2205,
+    "npc_source_bytes": 1930332,
+    "prior_CHAR07_files_sha_checked": 552
+  },
+  "template": {
+    "path": "gmsv/data/npc/jaruga/event/event.template",
+    "name": "changeevent",
+    "functionset": "ExChangeMan"
+  },
+  "create_blocks_all": 4985,
+  "create_blocks_ExChangeMan": 315,
+  "distinct_script_paths": 295,
+  "missing_script_files": 0,
+  "distinct_script_bytes": 434873,
+  "source_script_strict_cp950_decodable": 295,
+  "script_syntax": {
+    "EventNo": 1348,
+    "TYPE": 1349,
+    "EVENT": 1349,
+    "EventEnd": 1347,
+    "TYPE_values": {
+      "MESSAGE": 769,
+      "ACCEPT": 494,
+      "REQUEST": 81,
+      "CLEAN": 5
+    },
+    "GetItem_lines": 420,
+    "DelItem_lines": 442,
+    "unparsed_EVENT_segments": 1702,
+    "unparsed_item_op_slots": 11
+  },
+  "items": {
+    "candidate_1": {
+      "path": "gmsv/data/itemset.txt",
+      "size": 3392473,
+      "sha256": "a415e78f9aab2e5ea5ca92ecb7430253f7be1ba7c876d6b0bb6d067b1b466688",
+      "distinct_ids": 13254
+    },
+    "candidate_2": {
+      "path": "gmsv/data/itemset0710.txt",
+      "size": 3668487,
+      "sha256": "6d6d63fda59c6bda2f239fe18c9361b5c9da18c84f678b7cc95bde24544292fb",
+      "distinct_ids": 13915
+    },
+    "id_column_zero_based": 16,
+    "image_number_column_zero_based": 17,
+    "common_ids": 13254,
+    "extra_in_candidate_2": 661,
+    "common_id_row_sha_equal": 4303,
+    "common_id_row_sha_different": 8951,
+    "script_numeric_item_occurrences": 2878,
+    "script_distinct_numeric_item_ids": 380,
+    "script_ids_both_same_row_sha": 372,
+    "script_ids_both_different_row_sha": [
+      18340
+    ],
+    "script_ids_only_candidate_2": [
+      2054,
+      2391,
+      20570,
+      20571,
+      20572
+    ],
+    "script_ids_absent_both": [
+      2744,
+      2745
+    ]
+  },
+  "private_full_derived_index": {
+    "bytes": 338200,
+    "sha256": "a6fca2b5fd096add28e5c6a1ad6a9691c086def6d3f8cb8f5930657c7c350dae",
+    "published_in_this_git_commit": false,
+    "reason": "container_session_expired_on_local_to_github_file_bridge",
+    "local_tests_passed": 12
+  },
+  "bounds": {
+    "official_TW1_server": true,
+    "declared_AS_PROVEN": false,
+    "source_only": true,
+    "runtime_executed": false,
+    "quest_origin": "ORIGIN_UNRESOLVED",
+    "all_315_origins_unresolved": true,
+    "stage_A": "7_PARTIAL_2_OPEN",
+    "stage_B": "GATED",
+    "wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "next": "CHARACTER_NPC_MODULE_09_NPCENEMY_SOURCE_OR_MODULE_BOUNDARY"
+}
