@@ -1,0 +1,26 @@
+name: Verify QUEST02 original bounded conditional warp parameters and source state joins
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-QUEST-STORY-MODULE-02-ORIGINAL-WARPMAN-CONDITION-SOURCE-R1.json'
+      - 'research/recovered/STONEAGE-QUEST-STORY-MODULE-01-ORIGINAL-EXCHANGEMAN-QUEST-SOURCE-BLOCK-CATALOG-R1.json'
+      - 'research/recovered/item-module-01/**'
+      - 'tests/test_stoneage_quest_story_module_02.py'
+      - '.github/workflows/verify-stoneage-quest-story-module-02.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-QUEST-STORY-MODULE-02-ORIGINAL-WARPMAN-CONDITION-SOURCE-R1.json'
+      - 'research/recovered/STONEAGE-QUEST-STORY-MODULE-01-ORIGINAL-EXCHANGEMAN-QUEST-SOURCE-BLOCK-CATALOG-R1.json'
+      - 'research/recovered/item-module-01/**'
+      - 'tests/test_stoneage_quest_story_module_02.py'
+      - '.github/workflows/verify-stoneage-quest-story-module-02.yml'
+  workflow_dispatch:
+jobs:
+  verify-source-qualifications:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest discover -s tests -p 'test_stoneage_quest_story_module_02.py' -v
