@@ -1,0 +1,27 @@
+name: Verify ITEM01 source-derived 13915 original item IDs and TW1 RD receipts
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-ITEM-EQUIPMENT-SHOP-MODULE-01-TWO-ORIGINAL-ITEMSETS-AND-TW1-RD-SUMMARY-R1.json'
+      - 'research/recovered/STONEAGE-ITEM-EQUIPMENT-SHOP-MODULE-01-224-SOURCE-ITEMLISTS-191-CREATE-REFERENCES-R1.json'
+      - 'research/recovered/item-module-01/**'
+      - 'tests/test_stoneage_item_module_01.py'
+      - '.github/workflows/verify-stoneage-item-module-01.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-ITEM-EQUIPMENT-SHOP-MODULE-01-TWO-ORIGINAL-ITEMSETS-AND-TW1-RD-SUMMARY-R1.json'
+      - 'research/recovered/STONEAGE-ITEM-EQUIPMENT-SHOP-MODULE-01-224-SOURCE-ITEMLISTS-191-CREATE-REFERENCES-R1.json'
+      - 'research/recovered/item-module-01/**'
+      - 'tests/test_stoneage_item_module_01.py'
+      - '.github/workflows/verify-stoneage-item-module-01.yml'
+  workflow_dispatch:
+
+jobs:
+  derived-source-identity-and-negative-boundaries:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest discover -s tests -p 'test_stoneage_item_module_01.py' -v
