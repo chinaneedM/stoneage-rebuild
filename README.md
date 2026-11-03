@@ -1584,3 +1584,7 @@ O75 CI史实订正：PR #133 初稿的 Stage A 检查 run 41362507873 因两处�
 ### 2026-11-03 — CHAR09：279 份 NPCEnemy 来源配置 → 230 敌人实例 / 214 模板 / 117 SPR 图号
 
 [CHAR09 原文件恢复与来源限制](docs/continuity/STONEAGE-CHARACTER-NPC-MODULE-09-NPCENEMY-SOURCE-20261103.md)及[公开全源派生目录](research/recovered/STONEAGE-CHARACTER-NPC-MODULE-09-ORIGINAL-NPCENEMY-ROSTER-BRIDGE-R1.json)：实际重读已保存社区 mixed25 RAR 的原 `NPCEnemy` 创建/参数文件，以及两套 enemy/基表与原 `spradrn_5.bin`；279 条源配置/260 原参数，跨 230 数字敌人 ID 全部可分别到两套同载体原实例/模板；117 图号均有唯一原 SPR **索引**。但两套实例原字节全部不相同，模板行只有 145/230 对全同；不能认作同一真实运行配置或台湾 1.0 官方身份，原商业战斗与本批原动画/REAL 像素仍未取得。本轮人物/NPC 模块达到 SOURCE_BOUNDED_PARTIAL 阶段性止点，**下一最高 MAP-SCENE-MODULE-01**，回到已经保管的原地图与场景批量来源整合；Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、overall_percent=null、原 CURRENT 历史文件不变。
+
+### 2026-11-03 — MAP01：原地图批量源文件 2990 份验SHA，98组同名内容不同
+
+按[MAP01真实原地图来源与界限](docs/continuity/STONEAGE-MAP-SCENE-MODULE-01-ORIGINAL-MAP-SOURCE-20261103.md)及[MAP01完整派生源目录](research/recovered/STONEAGE-MAP-SCENE-MODULE-01-ORIGINAL-SOURCE-MANIFEST-R1.json)，从私人保留混合2.5 RAR 实际解出并校验2990份原地图相关文件原大小/CRC/SHA，另外63份在本地RAR解压器失败（保留错误、不判原包损坏）。可核客户端MAP1019/DAT971、附加工具MAP997及3份服务器mapset/mapwarp：996对相同名字的两处原MAP有898对全字节同、**98对不同**；965对客户端MAP/DAT两者均读得，其中12 DAT是原零字节占位。原服务器mapset两份分别20157/16803数值行、仅ID10230共同记录不同，mapwarp2981源数值传送端点仅证明配置，不证明实际运行。今后按模块只取已真正核过字节的源地图去观察原画面和贴图关系，不据它推初代官方版本或新游戏体验。**当前NEXT MAP-SCENE-MODULE-02**；Stage A7PARTIAL+2OPEN、B/wiki GATED、R79暂停、overall_percent=null及完整CURRENT保留。
