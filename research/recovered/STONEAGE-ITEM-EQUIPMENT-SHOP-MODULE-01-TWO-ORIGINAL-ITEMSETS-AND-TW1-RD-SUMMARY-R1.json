@@ -1,0 +1,188 @@
+{
+  "schema": "stoneage.item_equipment_shop_module01_source_original_two_itemsets_cross_carrier_RD_inventory.r1",
+  "provenance": {
+    "mixed25_community_RAR_sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+    "mixed25_RAR_original_members": 7952,
+    "itemset_a": {
+      "path": "gmsv/data/itemset.txt",
+      "source_size_bytes": 3392473,
+      "sha256": "a415e78f9aab2e5ea5ca92ecb7430253f7be1ba7c876d6b0bb6d067b1b466688"
+    },
+    "itemset_b": {
+      "path": "gmsv/data/itemset0710.txt",
+      "source_size_bytes": 3668487,
+      "sha256": "6d6d63fda59c6bda2f239fe18c9361b5c9da18c84f678b7cc95bde24544292fb"
+    },
+    "TW1_retail_original_P3H_sha256": "3a4854adaebef056332cdbd7b1dc1c130c571b11704e3f199f53d03aa31cba24",
+    "TW1_original_ADRN_sha256": "47254c0ff904d363fb5c3c5297edf553c8eaf24cd933f346d8ce7aabed4155c8",
+    "TW1_original_REAL_sha256": "408e6ee05c83354349691937da2ad8f7488ac10f65f07e6681b7d92cb1c9ed13",
+    "TW1_original_Palet1_sha256": "32870080c47537a59beaf770b6df7bd79820fd52a23825058460900494f0b4b0",
+    "same_original_official_deployment_of_itemsets_and_retail_art_proven": false,
+    "community_archive_certified_official_clean_build": false
+  },
+  "source_tables": {
+    "a": {
+      "rows": 13254,
+      "id_min": 0,
+      "id_max": 22238,
+      "unique_source_names": 4708,
+      "source_rows_by_type_raw": {
+        "0": 719,
+        "1": 725,
+        "2": 739,
+        "3": 742,
+        "4": 736,
+        "6": 1451,
+        "7": 2105,
+        "8": 277,
+        "9": 111,
+        "10": 449,
+        "11": 347,
+        "13": 280,
+        "15": 62,
+        "16": 1304,
+        "17": 728,
+        "18": 716,
+        "19": 731,
+        "20": 1015,
+        "21": 2,
+        "22": 1,
+        "23": 12,
+        "27": 2
+      },
+      "original_image_number_aliases": 1401,
+      "original_94_columns_per_line": true,
+      "strict_cp950_roundtrip": true,
+      "image_link_evidence_for_item_rows": {
+        "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS": 7972,
+        "NOT_IN_RETAIL_INDEX": 5275,
+        "DECODING_FAILED": 7
+      }
+    },
+    "b": {
+      "rows": 13915,
+      "id_min": 0,
+      "id_max": 22238,
+      "unique_source_names": 5317,
+      "source_rows_by_type_raw": {
+        "0": 724,
+        "1": 751,
+        "2": 775,
+        "3": 780,
+        "4": 747,
+        "6": 1514,
+        "7": 2163,
+        "8": 281,
+        "9": 114,
+        "10": 457,
+        "11": 377,
+        "13": 282,
+        "15": 71,
+        "16": 1485,
+        "17": 729,
+        "18": 716,
+        "19": 732,
+        "20": 1086,
+        "21": 5,
+        "22": 6,
+        "23": 12,
+        "24": 35,
+        "25": 15,
+        "26": 37,
+        "27": 13,
+        "31": 1,
+        "32": 1,
+        "33": 1,
+        "34": 1,
+        "35": 1,
+        "36": 1,
+        "37": 2
+      },
+      "original_image_number_aliases": 1667,
+      "original_94_columns_per_line": true,
+      "strict_cp950_roundtrip": true,
+      "image_link_evidence_for_item_rows": {
+        "VERIFIED_ORIGINAL_RD_INDEXED_PIXELS": 8144,
+        "NOT_IN_RETAIL_INDEX": 5764,
+        "DECODING_FAILED": 7
+      }
+    }
+  },
+  "cross_table": {
+    "source_common_id_count": 13254,
+    "original_rows_whole_sha_equal": 4303,
+    "original_rows_whole_sha_different": 8951,
+    "source_b_only_ids_count": 661,
+    "source_a_only_ids_count": 0,
+    "raw_changed_zero_based_column_frequency": {
+      "2": 2,
+      "3": 1,
+      "17": 8,
+      "30": 8935,
+      "31": 8935,
+      "57": 206
+    },
+    "common_IDs_changed_cost_col18": 0,
+    "common_IDs_changed_type_col19": 0,
+    "common_IDs_changed_level_col22": 0,
+    "common_IDs_changed_original_image_col17": 8,
+    "common_IDs_changed_description_col2": 2,
+    "same_name_does_not_prove_same_historical_item_across_versions": true
+  },
+  "original_TW1_retail_RD_pixel_source": {
+    "distinct_image_number_alias_candidates_union": 1667,
+    "ADRN_unique_record_found": 836,
+    "ADRN_not_found": 831,
+    "RD_fully_decoded": 832,
+    "RD_decode_failed": 4,
+    "RD_decode_failed_aliases": [
+      24077,
+      24137,
+      24138,
+      24140
+    ],
+    "MAP04_independent_actual_RD_original_SHA_and_indexed_pixel_SHA_matches": 20,
+    "png_colors_and_vertical_flip_are_modern_candidate_not_native_certified": true
+  },
+  "original_shop_source": {
+    "nonempty_NPC_files_reextracted": 2201,
+    "NPC_source_original_bytes": 1930332,
+    "ItemList_files": 224,
+    "ItemList_nonempty_files": 223,
+    "raw_explicit_numeric_ID_occurrences": 1588,
+    "raw_N_to_M_range_expression_tokens": 136,
+    "inclusive_range_expansion_hypothesis_only": true,
+    "expanded_candidate_total_item_occurrences": 2385,
+    "expanded_candidate_distinct_item_IDs": 1210,
+    "expanded_candidates_in_both_tables": 1165,
+    "expanded_candidates_only_in_b_table": 45,
+    "expanded_candidate_missing_both_tables": [],
+    "actual_npcgen_shop_create_source_refs": 191,
+    "referenced_argument_original_files_present": 191,
+    "referenced_argument_with_ItemList": 189,
+    "distinct_referenced_argument_paths": 186,
+    "source_listed_stock_not_proven_runtime_available": true
+  },
+  "auxiliary_non_itemset_originals": {
+    "itematom_source_rows": 83,
+    "bmitem_source_rows": 36,
+    "gambleitems_source_rows": 24,
+    "magic_source_rows": 181,
+    "original_itematom_label_field_not_itemset_ID": true,
+    "cook_conf_source_instruction_not_proof_of_recipe_execution": true
+  },
+  "bounds": {
+    "historical_original_stage_A": true,
+    "native_client_executed_this_batch": false,
+    "native_server_executed_this_batch": false,
+    "true_original_shop_sale_observed": false,
+    "official_TW1_itemset_source_authenticated": false,
+    "full_historical_all_version_item_population_closed": false,
+    "source_range_not_assumed_engine_semantics": true,
+    "no_original_commercial_table_rows_published_in_public_git": true,
+    "no_original_sprite_RD_or_PNG_published_in_public_git": true,
+    "overall_percent": null,
+    "R79": "PAUSED_NON_BLOCKING"
+  },
+  "next": "ITEM_EQUIPMENT_SHOP_MODULE_02_CONTINUE_SAME_SOURCE_ITEM_IMAGES_OR_CROSS_VERSION_ACQUIRED_SOURCES_ONLY"
+}
