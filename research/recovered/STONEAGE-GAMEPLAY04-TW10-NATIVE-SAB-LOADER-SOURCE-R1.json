@@ -45,8 +45,6 @@
     "open_file_call_va": "0x004487ba",
     "open_file_failure_message_box_and_returns_zero": true,
     "fread_four_original_header_bytes_before_check": true,
-    "original_header_string_to_compare": "SAB",
-    "original_header_is_NUL_terminated_before_comparison": true,
     "malformed_header_warning_branch_aborts_processing": false,
     "source_400_loop_counter_hex": "mov ebp,0x190 at 0x401324",
     "source_400_word_read_low_then_high_bytes": true,
@@ -55,7 +53,11 @@
     "source_400_per_cell_dispatch_target_va": "0x004407a0",
     "integer_render_loop_step_x": 32,
     "integer_render_loop_step_y": 24,
-    "static_loader_success_result_one_on_post_open_path": true
+    "static_loader_success_result_one_on_post_open_path": true,
+    "source_header_token_to_search": "SAB",
+    "source_header_search_is_substring_function_not_strict_header_comparison": true,
+    "native_header_search_function_va": "0x004485e0",
+    "original_read_four_bytes_then_terminate_at_offset_four": true
   },
   "secondary_native_render_branch": {
     "address": "0x004013e0",
