@@ -1,0 +1,2116 @@
+{
+  "schema": "stoneage.quest_story_module03_original_quiz_timeman_control_sources.r1",
+  "source": {
+    "classification": "PRESERVED_MIXED25_COMMUNITY_ARCHIVE_NOT_CERTIFIED_OFFICIAL_VERSION",
+    "previous_parent_RAR_sha256_not_reread_here": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+    "previous_CHAR01_git_blob_sha": "a088b61a3212f7049e7793f587123ffb29bebad7",
+    "private_original_NPC_ZIP_current_sha256": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+    "private_original_NPC_ZIP_size": 995176,
+    "actual_original_NPC_files_independently_SHA_CRC_replayed": 2205,
+    "actual_original_NPC_bytes_independently_replayed": 1930332,
+    "private_numeric_source_replay_full_catalog_sha256": "deferred_external_only"
+  },
+  "summary": {
+    "total_create_references": 56,
+    "total_source_files": 55,
+    "npcgen_quiz": {
+      "create_references": 22,
+      "unique_source_files": 22,
+      "source_bytes": 9975,
+      "distinct_source_floorids": 22,
+      "source_line_counts": {
+        "TYPE": 22,
+        "ANSWER": 22,
+        "LEVEL": 22,
+        "QUIZNUM": 22,
+        "BORDER": 22,
+        "ENTRYITEM": 22,
+        "WARP": 21,
+        "GETITEM": 4,
+        "ITEMFULLMSG": 3,
+        "STARTMSG": 22,
+        "FAILUREMSG": 22,
+        "PARTY": 22,
+        "NOENTRYMSG": 22
+      },
+      "source_item_entry_literals": {
+        "2752*1": 21,
+        "2753*1": 1
+      },
+      "source_missing_warp_literal_paths": [
+        "genout/quz_812_28_14"
+      ],
+      "original_Answer_value_frequencies": {
+        "0": 1,
+        "7": 21
+      },
+      "original_Quiznum_value_frequencies": {
+        "1": 3,
+        "2": 3,
+        "3": 3,
+        "5": 6,
+        "7": 3,
+        "10": 3,
+        "100": 1
+      }
+    },
+    "npcgen_timeman": {
+      "create_references": 34,
+      "unique_source_files": 33,
+      "source_bytes": 3811,
+      "distinct_source_floorids": 8,
+      "source_line_counts": {
+        "TIME": 33,
+        "MAIN_MSG": 33,
+        "CHANGE_MSG": 4,
+        "CHANGE_NO": 4
+      },
+      "source_TIME_literal_frequencies": {
+        "ALLNOON": 17,
+        "ALLNIGHT": 9,
+        "AFTER": 7
+      }
+    }
+  },
+  "source_creation_references": [
+    {
+      "family": "npcgen_timeman",
+      "source_create_path": "genout/1000npc_m.create",
+      "create_block_ordinal": 5,
+      "original_create_block_sha256": "14515e6dc458b52e4d35e5e5cb57cfa4b5937e73f04ca01f7b61acd74da2cc21",
+      "original_floorid_numeric": 1000,
+      "original_graphic_alias_numeric": 16002,
+      "original_spawn_int4": [
+        42,
+        72,
+        42,
+        72
+      ],
+      "source_parameter_path": "genout/tman_1000_42_72",
+      "original_parameter_sha256": "115134eedc681d9a1526ebd4bc2754c5c7c397a4500b08e7c597c467bfe2a190",
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "family": "npcgen_timeman",
+      "source_create_path": "genout/1000npc_m.create",
+      "create_block_ordinal": 6,
+      "original_create_block_sha256": "b5a73f34a3b256db82d080568b18ce182f573349061189c97bf58776edfc4973",
+      "original_floorid_numeric": 1000,
+      "original_graphic_alias_numeric": 16011,
+      "original_spawn_int4": [
+        42,
+        79,
+        42,
+        79
+      ],
+      "source_parameter_path": "genout/tman_1000_42_79",
+      "original_parameter_sha256": "f7d07e81040d0caec0b7c74fa185a9593cab15d9943b822586299e83b5ba9095",
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "family": "npcgen_timeman",
+      "source_create_path": "genout/1000npc_m.create",
+      "create_block_ordinal": 7,
+      "original_create_block_sha256": "7a9520f1072371397a97a14dc298a1759be82266fe543bad34206e9fe36ff8bb",
+      "original_floorid_numeric": 1000,
+      "original_graphic_alias_numeric": 16003,
+      "original_spawn_int4": [
+        42,
+        81,
+        42,
+        81
+      ],
+      "source_parameter_path": "genout/tman_1000_42_81",
+      "original_parameter_sha256": "4575ca48d80546d332e2b7b33024f8d8a0b95bec2d633129cf2a712030f7f48e",
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "family": "npcgen_timeman",
+      "source_create_path": "genout/1000npc_m.create",
+      "create_block_ordinal": 8,
+      "original_create_block_sha256": "8d98f947170d84bdf4035b303723c86d4db1fda3bbeef6aa44781d34d2b28f35",
+      "original_floorid_numeric": 1000,
+      "original_graphic_alias_numeric": 16004,
+      "original_spawn_int4": [
+        39,
+        75,
+        39,
+        75
+      ],
+      "source_parameter_path": "genout/tman_1000_39_75",
+      "original_parameter_sha256": "4f02df593dbe4b51676e1cb6c7d8ac21b8980c16df3f8d701061d1ee801d15bc",
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "family": "npcgen_timeman",
+      "source_create_path": "genout/1000npc_m.create",
+      "create_block_ordinal": 9,
+      "original_create_block_sha256": "c93dc4e25ed323d876fd3ec645737a5b91280727a19fe62188aa91f645962c23",
+      "original_floorid_numeric": 1000,
+      "original_graphic_alias_numeric": 16005,
+      "original_spawn_int4": [
+        36,
+        78,
+        36,
+        78
+      ],
+      "source_parameter_path": "genout/tman_1000_36_78",
+      "original_parameter_sha256": "b10fcd765caf501eff6642c05a24c59a82ad1efe265fdbeb481cf017f7aaf4b9",
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "family": "npcgen_timeman",
+      "source_create_path": "genout/1000npc_m.create",
+      "create_block_ordinal": 10,
+      "original_create_block_sha256": "c8778078f976a3e655a96526dd7dd06b8677bb1598ee7350059ac4e8a5aa8b4d",
+      "original_floorid_numeric": 1000,
+      "original_graphic_alias_numeric": 16006,
+      "original_spawn_int4": [
+        42,
+        75,
+        42,
+        75
+      ],
+      "source_parameter_path": "genout/tman_1000_42_75",
+      "original_parameter_sha256": "138ac51e303e245001da12f746e1c4dcfde8aabace87f9613fc1d631dbaaecc7",
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "family": "npcgen_timeman",
+      "source_create_path": "genout/1000npc_m.create",
+      "create_block_ordinal": 11,
+      "original_create_block_sha256": "d9ad3d93467debeca059207db1861e84f7a217a55c5cc98aa504b298b627beb3",
+      "original_floorid_numeric": 1000,
+      "original_graphic_alias_numeric": 16025,
+      "original_spawn_int4": [
+        119,
+        65,
+        119,
+        65
+      ],
+      "source_parameter_path": "genout/tman_1000_119_65",
+      "original_parameter_sha256": "97bd288385d1d7b06fdc5676ca924db9226422d108e03fe69348cb6ea09aabf6",
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "family": "npcgen_timeman",
+      "source_create_path": "genout/1000npc_m.create",
+      "create_block_ordinal": 12,
+      "original_create_block_sha256": "800708b3e160e773e7e5c81276766ea8072597fc41b1b28676fc8bdc5a6b58ab",
+      "original_floorid_numeric": 1000,
+      "original_graphic_alias_numeric": 16015,
+      "original_spawn_int4": [
+        116,
+        69,
+        116,
+        69
+      ],
+      "source_parameter_path": "genout/tman_1000_116_69",
+      "original_parameter_sha256": "a23f3859dee65e5a2bf829a90e390eed03ea51189bbc6d8d6f1802d05a073a6c",
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "family": "npcgen_timeman",
+      "source_create_path": "genout/1000npc_m.create",
+      "create_block_ordinal": 13,
+      "original_create_block_sha256": "57d0c839c3c0bae4c4e97d642df5191cbc682bc9c619646891e9fa8c5e0d8e03",
+      "original_floorid_numeric": 1000,
+      "original_graphic_alias_numeric": 16013,
+      "original_spawn_int4": [
+        109,
+        63,
+        109,
+        63
+      ],
+      "source_parameter_path": "genout/tman_1000_109_63",
+      "original_parameter_sha256": "f2abb469faf28d6d7cc5d9562753a573d96ba1c64721fac2a3834fd03faf9b25",
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "family": "npcgen_timeman",
+      "source_create_path": "genout/1000npc_m.create",
+      "create_block_ordinal": 14,
+      "original_create_block_sha256": "d5fa8dbb95499cacf0e8d1773302761bd546ee33363b5fb1b91c3233033a7800",
+      "original_floorid_numeric": 1000,
+      "original_graphic_alias_numeric": 16016,
+      "original_spawn_int4": [
+        116,
+        66,
+        116,
+        66
+      ],
+      "source_parameter_path": "genout/tman_1000_116_66",
+      "original_parameter_sha256": "29d7908aa202439e54830b1c742e93f41facfcbf04c15f7343775da4a62c7a44",
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "family": "npcgen_timeman",
+      "source_create_path": "genout/1200npc_m.create",
+      "create_block_ordinal": 3,
+      "original_create_block_sha256": "237c6c86b35b81ccb0ec2fb509def1c28cfe60a116fa3fa960a38e8705b4e86b",
+      "original_floorid_numeric": 1200,
+      "original_graphic_alias_numeric": 16008,
+      "original_spawn_int4": [
+        72,
+        63,
+        72,
+        63
+      ],
+      "source_parameter_path": "genout/tman_1200_72_63",
+      "original_parameter_sha256": "ab5d55e26a3684e1bdd776265a214abe9f9d05043ed6b748fec994d2d796c8ba",
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "family": "npcgen_timeman",
+      "source_create_path": "genout/1300npc_m.create",
+      "create_block_ordinal": 4,
+      "original_create_block_sha256": "e333947987e92ca00654fab9bea7e7504d1c6667ad377c85dabaabd71bcdfea2",
+      "original_floorid_numeric": 1300,
+      "original_graphic_alias_numeric": 16033,
+      "original_spawn_int4": [
+        37,
+        26,
+        37,
+        26
+      ],
+      "source_parameter_path": "genout/tman_1300_37_26",
+      "original_parameter_sha256": "cc815c7810dcc123df29a163a4c2365c7218a6086712dd46a26e11275d49b5a1",
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "family": "npcgen_timeman",
+      "source_create_path": "genout/1300npc_m.create",
+      "create_block_ordinal": 6,
+      "original_create_block_sha256": "6ee5d77706a0cb5eff01f6431a7fca238ec9bf9a057a124e30990f34fd89f090",
+      "original_floorid_numeric": 1300,
+      "original_graphic_alias_numeric": 16033,
+      "original_spawn_int4": [
+        37,
+        26,
+        37,
+        26
+      ],
+      "source_parameter_path": "genout/tman_1300_37_26",
+      "original_parameter_sha256": "cc815c7810dcc123df29a163a4c2365c7218a6086712dd46a26e11275d49b5a1",
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "family": "npcgen_timeman",
+      "source_create_path": "genout/2000npc_m.create",
+      "create_block_ordinal": 5,
+      "original_create_block_sha256": "7e1595555bf32fab502b7d70ef4ab832a7dc5a99885715ab807271b81deacfff",
+      "original_floorid_numeric": 2000,
+      "original_graphic_alias_numeric": 16033,
+      "original_spawn_int4": [
+        79,
+        89,
+        79,
+        89
+      ],
+      "source_parameter_path": "genout/tman_2000_79_89",
+      "original_parameter_sha256": "7e3fdab0d9b89a69064ce394dae3477610fd507a722d9899c04a1ddd8fd5784e",
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "family": "npcgen_timeman",
+      "source_create_path": "genout/2000npc_m.create",
+      "create_block_ordinal": 6,
+      "original_create_block_sha256": "4545f1cd92394156b5aff1a28f7a52cc3c3b96794957d3dc1fbf96b5d4d918e0",
+      "original_floorid_numeric": 2000,
+      "original_graphic_alias_numeric": 16016,
+      "original_spawn_int4": [
+        81,
+        85,
+        81,
+        85
+      ],
+      "source_parameter_path": "genout/tman_2000_81_85",
+      "original_parameter_sha256": "5c364a9a295c0d068c3dcaf8ea3a3db08e824f25718a32891dad9c7a66e7372c",
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "family": "npcgen_timeman",
+      "source_create_path": "genout/2000npc_m.create",
+      "create_block_ordinal": 9,
+      "original_create_block_sha256": "967d0aa483810a040a9f2392b4e92ac526031baf35e142d6f7efceb1053bcd0b",
+      "original_floorid_numeric": 2000,
+      "original_graphic_alias_numeric": 16021,
+      "original_spawn_int4": [
+        80,
+        97,
+        80,
+        97
+      ],
+      "source_parameter_path": "genout/tman_2000_80_97",
+      "original_parameter_sha256": "3064d2a3995fabd9727d1af6945e113ea9150fd66b7419394e87527905018a3c",
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "family": "npcgen_timeman",
+      "source_create_path": "genout/3100.create",
+      "create_block_ordinal": 9,
+      "original_create_block_sha256": "e99c251f1f7c5bb61712bbe6f473155317aaaedde82ba7983071eb2bdad30ec7",
+      "original_floorid_numeric": 3100,
+      "original_graphic_alias_numeric": 16009,
+      "original_spawn_int4": [
+        64,
+        40,
+        64,
+        40
+      ],
+      "source_parameter_path": "genout/tman_3100_64_40",
+      "original_parameter_sha256": "746f4d77da8bbb6e85351a38cd9e6a7e3b716251055d2443263e3c1a6cafca0e",
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "family": "npcgen_timeman",
+      "source_create_path": "genout/3100.create",
+      "create_block_ordinal": 10,
+      "original_create_block_sha256": "30147fca762a79b3beea60d966680ffd98a07dd2a05da5e45abe9b147346fdd8",
+      "original_floorid_numeric": 3100,
+      "original_graphic_alias_numeric": 16027,
+      "original_spawn_int4": [
+        55,
+        43,
+        55,
+        43
+      ],
+      "source_parameter_path": "genout/tman_3100_55_43",
+      "original_parameter_sha256": "a0bebbd5dc93d46bcc687caca7445d1dd681049ed356878a81c654c1451be4e3",
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "family": "npcgen_timeman",
+      "source_create_path": "genout/3200npc_m.create",
+      "create_block_ordinal": 4,
+      "original_create_block_sha256": "2ed108f4c812df8b6fa111628a587156d3a0cff20cf304cb4ac7377597841e34",
+      "original_floorid_numeric": 3200,
+      "original_graphic_alias_numeric": 16025,
+      "original_spawn_int4": [
+        79,
+        50,
+        79,
+        50
+      ],
+      "source_parameter_path": "genout/tman_3200_79_50",
+      "original_parameter_sha256": "4042f7e8839ed7ba8bc67029cf6a746020d40e4fb7778b294f4fcf92c0b04a51",
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "family": "npcgen_timeman",
+      "source_create_path": "genout/3200npc_m.create",
+      "create_block_ordinal": 5,
+      "original_create_block_sha256": "6604e72e7937bb9f3659a9fac6e31ba1eb3daa9aeec3c6645a1bb2ec6ad5a0e1",
+      "original_floorid_numeric": 3200,
+      "original_graphic_alias_numeric": 16013,
+      "original_spawn_int4": [
+        75,
+        53,
+        75,
+        53
+      ],
+      "source_parameter_path": "genout/tman_3200_75_53",
+      "original_parameter_sha256": "48ab26127c2c38f9bebe0ee54d6fa8dfde14a8f39545fe955d4349ced93074b1",
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "family": "npcgen_timeman",
+      "source_create_path": "genout/3200npc_m.create",
+      "create_block_ordinal": 6,
+      "original_create_block_sha256": "8f59f2feeee25966aefa28e44f7f66692eff795422d526358f41998b7ca614e2",
+      "original_floorid_numeric": 3200,
+      "original_graphic_alias_numeric": 16014,
+      "original_spawn_int4": [
+        76,
+        48,
+        76,
+        48
+      ],
+      "source_parameter_path": "genout/tman_3200_76_48",
+      "original_parameter_sha256": "00a67bdccf6a3574723ba150ceffca14b48230e6a01d36804fc9526d63cd35dd",
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "family": "npcgen_timeman",
+      "source_create_path": "genout/3200npc_m.create",
+      "create_block_ordinal": 7,
+      "original_create_block_sha256": "f8d60f20b42c1d0e9565e04c9d2ae15616680ade170935da1062982e91df94e6",
+      "original_floorid_numeric": 3200,
+      "original_graphic_alias_numeric": 16024,
+      "original_spawn_int4": [
+        74,
+        48,
+        74,
+        48
+      ],
+      "source_parameter_path": "genout/tman_3200_74_48",
+      "original_parameter_sha256": "25d1cada5d3e5ac249669d50f25f2bb27a5120846a395ca8c075f9766a3ae012",
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "family": "npcgen_timeman",
+      "source_create_path": "genout/3200npc_m.create",
+      "create_block_ordinal": 8,
+      "original_create_block_sha256": "f2e8afef64bb2c593ae853565bbb303a2baaf7fc7c8e0644b39750b248c963b0",
+      "original_floorid_numeric": 3200,
+      "original_graphic_alias_numeric": 16010,
+      "original_spawn_int4": [
+        73,
+        50,
+        73,
+        50
+      ],
+      "source_parameter_path": "genout/tman_3200_73_50",
+      "original_parameter_sha256": "7d980b7cb19ee9b0f9efd99a967aa009c430bc05f8dc68730bf18de04978c69b",
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "family": "npcgen_timeman",
+      "source_create_path": "genout/3200npc_m.create",
+      "create_block_ordinal": 9,
+      "original_create_block_sha256": "b6bd5a081b2d756be0cb208b9828a3c56e955b410dbdf9fd86051a5d5a921ad1",
+      "original_floorid_numeric": 3200,
+      "original_graphic_alias_numeric": 16007,
+      "original_spawn_int4": [
+        76,
+        49,
+        76,
+        49
+      ],
+      "source_parameter_path": "genout/tman_3200_76_49",
+      "original_parameter_sha256": "281f2e3c6189cc7768a37043ba975553f8f9e0cdd77458c97ff2ad496cd79560",
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "family": "npcgen_timeman",
+      "source_create_path": "genout/4000npc_m.create",
+      "create_block_ordinal": 10,
+      "original_create_block_sha256": "6aa6685695f12bbf04fa5e9453899cb7fb52f8be2bd448eae62374269379e29c",
+      "original_floorid_numeric": 4000,
+      "original_graphic_alias_numeric": 16002,
+      "original_spawn_int4": [
+        57,
+        103,
+        57,
+        103
+      ],
+      "source_parameter_path": "genout/tman_4000_57_103",
+      "original_parameter_sha256": "86c4e10b620c233699f8d50ba29129db615ee43e3522a78c134c85462959ebcd",
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "family": "npcgen_timeman",
+      "source_create_path": "genout/4000npc_m.create",
+      "create_block_ordinal": 11,
+      "original_create_block_sha256": "e20e9c2b876c17014a68ed4e81171949502b6cdab39662083671c24b4c2588ea",
+      "original_floorid_numeric": 4000,
+      "original_graphic_alias_numeric": 16003,
+      "original_spawn_int4": [
+        58,
+        109,
+        58,
+        109
+      ],
+      "source_parameter_path": "genout/tman_4000_58_109",
+      "original_parameter_sha256": "bb21c8f671b35ca5b4af32214e45cb5b22b75b9fd2a4f9aa79b4425e5bfd4777",
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "family": "npcgen_timeman",
+      "source_create_path": "genout/4000npc_m.create",
+      "create_block_ordinal": 12,
+      "original_create_block_sha256": "d152ea04f7cb4af9f17c5316d6ca8b45db8ccadec84ce6e70a788f9106d1b11f",
+      "original_floorid_numeric": 4000,
+      "original_graphic_alias_numeric": 16004,
+      "original_spawn_int4": [
+        52,
+        109,
+        52,
+        109
+      ],
+      "source_parameter_path": "genout/tman_4000_52_109",
+      "original_parameter_sha256": "521f137e79a9bddbd82fe79573d9dfdc55674d41520c3ad8e90c8709a0edd6fe",
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "family": "npcgen_timeman",
+      "source_create_path": "genout/4000npc_m.create",
+      "create_block_ordinal": 13,
+      "original_create_block_sha256": "201521988cc25c553a2d1134fb79cbeb85415c9ffe8aa3956504bf9b9590f7bc",
+      "original_floorid_numeric": 4000,
+      "original_graphic_alias_numeric": 16005,
+      "original_spawn_int4": [
+        55,
+        112,
+        55,
+        112
+      ],
+      "source_parameter_path": "genout/tman_4000_55_112",
+      "original_parameter_sha256": "481a3ce363fae5369bddd2e5bcc64f6616182247f42ebdf6cba8b38748993faa",
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "family": "npcgen_timeman",
+      "source_create_path": "genout/4000npc_m.create",
+      "create_block_ordinal": 14,
+      "original_create_block_sha256": "7a79965029c56e0bcb7f0d2a30c6259d69c91b4d759f213c79c4c2b3dc0a4eaa",
+      "original_floorid_numeric": 4000,
+      "original_graphic_alias_numeric": 16006,
+      "original_spawn_int4": [
+        52,
+        112,
+        52,
+        112
+      ],
+      "source_parameter_path": "genout/tman_4000_52_112",
+      "original_parameter_sha256": "ba4030f369bc7fd343ea0e4be6a8c57d91dd549faeb7f022594adf2ba172d661",
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "family": "npcgen_timeman",
+      "source_create_path": "genout/4000npc_m.create",
+      "create_block_ordinal": 15,
+      "original_create_block_sha256": "755dc6fd03bbebb78d2cd9b4e7e15c7ceef7297eac89c0e3a2a9ac14c4e32feb",
+      "original_floorid_numeric": 4000,
+      "original_graphic_alias_numeric": 16011,
+      "original_spawn_int4": [
+        55,
+        109,
+        55,
+        109
+      ],
+      "source_parameter_path": "genout/tman_4000_55_109",
+      "original_parameter_sha256": "93f7a413190eb7a075e47522e95ecb1113655cf4f9331412727ecc0eaca7f746",
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "family": "npcgen_timeman",
+      "source_create_path": "genout/mugendungeon.create",
+      "create_block_ordinal": 55,
+      "original_create_block_sha256": "6ec4cf286e6b20fec286db2074b753f82e7ddb40308c8553ecefcdb09f846773",
+      "original_floorid_numeric": 400,
+      "original_graphic_alias_numeric": 16203,
+      "original_spawn_int4": [
+        95,
+        120,
+        95,
+        120
+      ],
+      "source_parameter_path": "genout/tman_400_95_120",
+      "original_parameter_sha256": "7494698774322f5b2cbf83d8218ae9ddb0b0a56fb0a64c181bf7b77fb78a8905",
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "family": "npcgen_timeman",
+      "source_create_path": "genout/mugendungeon.create",
+      "create_block_ordinal": 56,
+      "original_create_block_sha256": "aefd165de36d910e070e374c9e7558cf55749647ef051c4d76d4054b7013546d",
+      "original_floorid_numeric": 400,
+      "original_graphic_alias_numeric": 16202,
+      "original_spawn_int4": [
+        98,
+        120,
+        98,
+        120
+      ],
+      "source_parameter_path": "genout/tman_400_98_120",
+      "original_parameter_sha256": "7494698774322f5b2cbf83d8218ae9ddb0b0a56fb0a64c181bf7b77fb78a8905",
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "family": "npcgen_timeman",
+      "source_create_path": "genout/mugendungeon2.create",
+      "create_block_ordinal": 51,
+      "original_create_block_sha256": "42abc6e90513930350fbd57a725a26d3fb742cc59b7fa5871245f15aeabf7d70",
+      "original_floorid_numeric": 400,
+      "original_graphic_alias_numeric": 16202,
+      "original_spawn_int4": [
+        85,
+        102,
+        85,
+        102
+      ],
+      "source_parameter_path": "genout/tman_400_85_102",
+      "original_parameter_sha256": "523f22a9957f28f7131f24da2cf6710a52e93f7a0fce96ad650094a4013f8f4d",
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "family": "npcgen_timeman",
+      "source_create_path": "genout/mugendungeon2.create",
+      "create_block_ordinal": 52,
+      "original_create_block_sha256": "884ae6e5354ac0d3529ccb198fe3d608bdad0272abd7879ef7f1cf3f79c69bb0",
+      "original_floorid_numeric": 400,
+      "original_graphic_alias_numeric": 16201,
+      "original_spawn_int4": [
+        88,
+        102,
+        88,
+        102
+      ],
+      "source_parameter_path": "genout/tman_400_88_102",
+      "original_parameter_sha256": "523f22a9957f28f7131f24da2cf6710a52e93f7a0fce96ad650094a4013f8f4d",
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "family": "npcgen_quiz",
+      "source_create_path": "genout/quizman.create",
+      "create_block_ordinal": 0,
+      "original_create_block_sha256": "526aee25b6a363a0e9df5f308d108999047e2ba837980aad258aee9771eff439",
+      "original_floorid_numeric": 800,
+      "original_graphic_alias_numeric": 100060,
+      "original_spawn_int4": [
+        29,
+        19,
+        29,
+        19
+      ],
+      "source_parameter_path": "genout/quz_800_29_19",
+      "original_parameter_sha256": "969a31995dcc4a144d90785af64d54247d86984ed4a2fb5d5c9b44d683ec89c1",
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "family": "npcgen_quiz",
+      "source_create_path": "genout/quizman.create",
+      "create_block_ordinal": 1,
+      "original_create_block_sha256": "1c525c8455cae0ed011aaee608187bc90838600633ad0e6ea383e69538472166",
+      "original_floorid_numeric": 801,
+      "original_graphic_alias_numeric": 100065,
+      "original_spawn_int4": [
+        18,
+        19,
+        18,
+        19
+      ],
+      "source_parameter_path": "genout/quz_801_18_19",
+      "original_parameter_sha256": "f5f57af6b442593628f5c2f03f366f6367fe3a010fa9b533da02b51f49377d1b",
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "family": "npcgen_quiz",
+      "source_create_path": "genout/quizman.create",
+      "create_block_ordinal": 2,
+      "original_create_block_sha256": "5b9383ce69135cd19649ab959ba34f3abc103713084eeb183b96e224753b6258",
+      "original_floorid_numeric": 803,
+      "original_graphic_alias_numeric": 100070,
+      "original_spawn_int4": [
+        18,
+        19,
+        18,
+        19
+      ],
+      "source_parameter_path": "genout/quz_803_18_19",
+      "original_parameter_sha256": "4c22a872bcfeb31a06ec877711b257bdd76ddbc87c6bba3d4c7c86c48398e672",
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "family": "npcgen_quiz",
+      "source_create_path": "genout/quizman.create",
+      "create_block_ordinal": 3,
+      "original_create_block_sha256": "b810039c80bb253ab5d6ee3b4ad22d122e4401d33c40b61f567e2a382859373f",
+      "original_floorid_numeric": 805,
+      "original_graphic_alias_numeric": 100075,
+      "original_spawn_int4": [
+        18,
+        19,
+        18,
+        19
+      ],
+      "source_parameter_path": "genout/quz_805_18_19",
+      "original_parameter_sha256": "e3f1506f7e37135c70578a780b2553a037ce4c53f2581828ebea80eaed513b95",
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "family": "npcgen_quiz",
+      "source_create_path": "genout/quizman.create",
+      "create_block_ordinal": 4,
+      "original_create_block_sha256": "80918ed0313e0acb24796b1537cf9231898bcbe217c1038bf1a470818dbd1108",
+      "original_floorid_numeric": 806,
+      "original_graphic_alias_numeric": 100060,
+      "original_spawn_int4": [
+        29,
+        19,
+        29,
+        19
+      ],
+      "source_parameter_path": "genout/quz_806_29_19",
+      "original_parameter_sha256": "2ed3a89e76d237349cce4260accc905baeeffb52ef4669a3d91d5090c0c020df",
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "family": "npcgen_quiz",
+      "source_create_path": "genout/quizman.create",
+      "create_block_ordinal": 5,
+      "original_create_block_sha256": "58b1387c2b8cd0d9dd011286b53c5eef4f20337f06db06521e1059aa334132dd",
+      "original_floorid_numeric": 808,
+      "original_graphic_alias_numeric": 100065,
+      "original_spawn_int4": [
+        29,
+        19,
+        29,
+        19
+      ],
+      "source_parameter_path": "genout/quz_808_29_19",
+      "original_parameter_sha256": "163bcaf83fdef9788d9601cfd514773a3c089a09aba276f5b43065a29742730c",
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "family": "npcgen_quiz",
+      "source_create_path": "genout/quizman.create",
+      "create_block_ordinal": 6,
+      "original_create_block_sha256": "cf2afd2951ea805cbcb6f3f1427e73a646e2444616b7879e9e7c98ae00146aa5",
+      "original_floorid_numeric": 809,
+      "original_graphic_alias_numeric": 100070,
+      "original_spawn_int4": [
+        18,
+        19,
+        18,
+        19
+      ],
+      "source_parameter_path": "genout/quz_809_18_19",
+      "original_parameter_sha256": "8a8759cbd659132cf4c3520286f590e749555b940b6c49fbd2eb7050afc7a1eb",
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "family": "npcgen_quiz",
+      "source_create_path": "genout/quizman.create",
+      "create_block_ordinal": 7,
+      "original_create_block_sha256": "d54d042cc768ca6ac0036261177cf9ae53e8ef6e81a0497a5f6ecd168af99816",
+      "original_floorid_numeric": 820,
+      "original_graphic_alias_numeric": 100060,
+      "original_spawn_int4": [
+        29,
+        19,
+        29,
+        19
+      ],
+      "source_parameter_path": "genout/quz_820_29_19",
+      "original_parameter_sha256": "4c32926e9a8bbd00df05b444ce75e7ee65dedf216b9ed41de49194d8a67eb137",
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "family": "npcgen_quiz",
+      "source_create_path": "genout/quizman.create",
+      "create_block_ordinal": 8,
+      "original_create_block_sha256": "bf38c17016d9f954551620b2bf1639c7e58232b6ab601575c095649aaf6b3779",
+      "original_floorid_numeric": 821,
+      "original_graphic_alias_numeric": 100065,
+      "original_spawn_int4": [
+        18,
+        19,
+        18,
+        19
+      ],
+      "source_parameter_path": "genout/quz_821_18_19",
+      "original_parameter_sha256": "bfa66840bf0e307cfcfbf9e947a8e3e0632e13f8cfa33a8b516efb4290816e93",
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "family": "npcgen_quiz",
+      "source_create_path": "genout/quizman.create",
+      "create_block_ordinal": 9,
+      "original_create_block_sha256": "3548531e49b7a08cabe5ca1d464c2e41afc6a33f5289413a28fa261c68ec6d63",
+      "original_floorid_numeric": 823,
+      "original_graphic_alias_numeric": 100070,
+      "original_spawn_int4": [
+        18,
+        19,
+        18,
+        19
+      ],
+      "source_parameter_path": "genout/quz_823_18_19",
+      "original_parameter_sha256": "6100f980b5092a65da23d05e89574975b6872001c2e25d78eea357755ad17875",
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "family": "npcgen_quiz",
+      "source_create_path": "genout/quizman.create",
+      "create_block_ordinal": 10,
+      "original_create_block_sha256": "e453d445006da5e118ce0c5454f853016a88b3de70a4dfc029e0278bcd54ba03",
+      "original_floorid_numeric": 825,
+      "original_graphic_alias_numeric": 100075,
+      "original_spawn_int4": [
+        18,
+        19,
+        18,
+        19
+      ],
+      "source_parameter_path": "genout/quz_825_18_19",
+      "original_parameter_sha256": "e40ec6d216a977f1a5e0916759b66008cee5ecba1bcbac2aacc6a2e09324ad8e",
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "family": "npcgen_quiz",
+      "source_create_path": "genout/quizman.create",
+      "create_block_ordinal": 11,
+      "original_create_block_sha256": "bf65d92063a5f0374d45ae7fc3584a6f59a816cf2051852df003f26b6d5fbe4a",
+      "original_floorid_numeric": 826,
+      "original_graphic_alias_numeric": 100060,
+      "original_spawn_int4": [
+        29,
+        19,
+        29,
+        19
+      ],
+      "source_parameter_path": "genout/quz_826_29_19",
+      "original_parameter_sha256": "10fe6512c7a405364a34d78f2171aaf2e75f91172547ce1393da9794d1a5e9e0",
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "family": "npcgen_quiz",
+      "source_create_path": "genout/quizman.create",
+      "create_block_ordinal": 12,
+      "original_create_block_sha256": "00054bc1ce1d99d2d522e088e4f393b708718c380f2aa4c4b37c6914568579bc",
+      "original_floorid_numeric": 828,
+      "original_graphic_alias_numeric": 100065,
+      "original_spawn_int4": [
+        29,
+        19,
+        29,
+        19
+      ],
+      "source_parameter_path": "genout/quz_828_29_19",
+      "original_parameter_sha256": "7acd7e5d931a13a6c8bdc305788433760257de4875aab2e6e0324dbcbc45d8c2",
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "family": "npcgen_quiz",
+      "source_create_path": "genout/quizman.create",
+      "create_block_ordinal": 13,
+      "original_create_block_sha256": "f3993da4438a87fffe5e402e504f8db01daacb5ce274d151c31d54dc68c14868",
+      "original_floorid_numeric": 829,
+      "original_graphic_alias_numeric": 100070,
+      "original_spawn_int4": [
+        18,
+        19,
+        18,
+        19
+      ],
+      "source_parameter_path": "genout/quz_829_18_19",
+      "original_parameter_sha256": "b16f2e972c9b655402612e0ab4c91399c4a209f8e99cc149fe21a58e2b3b53c1",
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "family": "npcgen_quiz",
+      "source_create_path": "genout/quizman.create",
+      "create_block_ordinal": 14,
+      "original_create_block_sha256": "cb8dcb16e671fd5ad880df97f36f02834f4e0bf4520d19c04517859f1a78c5e5",
+      "original_floorid_numeric": 840,
+      "original_graphic_alias_numeric": 100060,
+      "original_spawn_int4": [
+        29,
+        19,
+        29,
+        19
+      ],
+      "source_parameter_path": "genout/quz_840_29_19",
+      "original_parameter_sha256": "452a5e596dc118b977b499443492e7eed0ab4d8c071c530b38a085defd7f261e",
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "family": "npcgen_quiz",
+      "source_create_path": "genout/quizman.create",
+      "create_block_ordinal": 15,
+      "original_create_block_sha256": "4cb4834c6fd15abb341f8dec560516661673d2d56116699a8dbc069113afd0db",
+      "original_floorid_numeric": 841,
+      "original_graphic_alias_numeric": 100065,
+      "original_spawn_int4": [
+        18,
+        19,
+        18,
+        19
+      ],
+      "source_parameter_path": "genout/quz_841_18_19",
+      "original_parameter_sha256": "2e867669a4e96bd414fcbdd046f02e77f8fb30b12da9174293114ba1ac0586ff",
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "family": "npcgen_quiz",
+      "source_create_path": "genout/quizman.create",
+      "create_block_ordinal": 16,
+      "original_create_block_sha256": "a1d68c77e1bb0977673071aeabeda7d6f301d76de62fc6208eb16e2e104e21ae",
+      "original_floorid_numeric": 843,
+      "original_graphic_alias_numeric": 100070,
+      "original_spawn_int4": [
+        18,
+        19,
+        18,
+        19
+      ],
+      "source_parameter_path": "genout/quz_843_18_19",
+      "original_parameter_sha256": "99383ca086f114582e691c53756491847740690c5e28a1878c7bce28347275d8",
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "family": "npcgen_quiz",
+      "source_create_path": "genout/quizman.create",
+      "create_block_ordinal": 17,
+      "original_create_block_sha256": "e0e0fdca1fb1c6fd7b1eb62c93e570e1459bbdc1907c93fcc60bd443a3aa21bf",
+      "original_floorid_numeric": 845,
+      "original_graphic_alias_numeric": 100075,
+      "original_spawn_int4": [
+        18,
+        19,
+        18,
+        19
+      ],
+      "source_parameter_path": "genout/quz_845_18_19",
+      "original_parameter_sha256": "efbb4ef299b363177019f37b44251ab6be0114f1c064fc4fe700c01ccda974f5",
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "family": "npcgen_quiz",
+      "source_create_path": "genout/quizman.create",
+      "create_block_ordinal": 18,
+      "original_create_block_sha256": "f4849536c09314521c33a41c235eb0e75ac9aa36ef54aeb03901893334b2be20",
+      "original_floorid_numeric": 846,
+      "original_graphic_alias_numeric": 100060,
+      "original_spawn_int4": [
+        29,
+        19,
+        29,
+        19
+      ],
+      "source_parameter_path": "genout/quz_846_29_19",
+      "original_parameter_sha256": "c30e6efcb5a18396d0fec7871753f2e112c150e4515e5a7c2d1f9c124160c022",
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "family": "npcgen_quiz",
+      "source_create_path": "genout/quizman.create",
+      "create_block_ordinal": 19,
+      "original_create_block_sha256": "3d2b2708d6051542b23379071226d75ee45b132920b050c02121c2e127651cef",
+      "original_floorid_numeric": 848,
+      "original_graphic_alias_numeric": 100065,
+      "original_spawn_int4": [
+        29,
+        19,
+        29,
+        19
+      ],
+      "source_parameter_path": "genout/quz_848_29_19",
+      "original_parameter_sha256": "5d012fe918074f30c430fc28e747c19a58ec8a1bd2f7a9c9fa6006e721ea9a4b",
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "family": "npcgen_quiz",
+      "source_create_path": "genout/quizman.create",
+      "create_block_ordinal": 20,
+      "original_create_block_sha256": "b95cd8e98941d59ee39bed8d02f296084549f1e52f494294d3f2dfc9db1c63ba",
+      "original_floorid_numeric": 849,
+      "original_graphic_alias_numeric": 100070,
+      "original_spawn_int4": [
+        18,
+        19,
+        18,
+        19
+      ],
+      "source_parameter_path": "genout/quz_849_18_19",
+      "original_parameter_sha256": "04859491a2a49bed72e3c7529cb0ad64b052a2c849037709cb683219beead91f",
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "family": "npcgen_quiz",
+      "source_create_path": "genout/quizman.create",
+      "create_block_ordinal": 21,
+      "original_create_block_sha256": "a7a0750e489b5b9254a08a1fa09c225a7be100f9e38857b1ed78bbd895977da5",
+      "original_floorid_numeric": 812,
+      "original_graphic_alias_numeric": 100010,
+      "original_spawn_int4": [
+        28,
+        14,
+        28,
+        14
+      ],
+      "source_parameter_path": "genout/quz_812_28_14",
+      "original_parameter_sha256": "802ffa66b9000402c08fd6f04e147aec10976c0e500a3596a96f2c8c6ac70047",
+      "origin_class": "ORIGIN_UNRESOLVED"
+    }
+  ],
+  "source_parameter_files": [
+    {
+      "source_parameter_path": "genout/quz_800_29_19",
+      "original_bytes": 486,
+      "original_sha256": "969a31995dcc4a144d90785af64d54247d86984ed4a2fb5d5c9b44d683ec89c1",
+      "original_crc32": "6d0e0bf4",
+      "original_create_ref_count": 1,
+      "family": "npcgen_quiz",
+      "original_type": 1,
+      "original_answer": 7,
+      "original_level": 16,
+      "original_quiznum": 1,
+      "original_border_first_number": 1,
+      "original_warp_literal_digit_sequence": [
+        1,
+        800,
+        29,
+        15
+      ],
+      "original_entryitem_literal_digit_sequence": [
+        2752,
+        1
+      ],
+      "original_getitem_literal_digit_sequence": [
+        1,
+        2754
+      ],
+      "source_has_warp_literal": true,
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "source_parameter_path": "genout/quz_801_18_19",
+      "original_bytes": 399,
+      "original_sha256": "f5f57af6b442593628f5c2f03f366f6367fe3a010fa9b533da02b51f49377d1b",
+      "original_crc32": "ea8729f7",
+      "original_create_ref_count": 1,
+      "family": "npcgen_quiz",
+      "original_type": 1,
+      "original_answer": 7,
+      "original_level": 3,
+      "original_quiznum": 2,
+      "original_border_first_number": 2,
+      "original_warp_literal_digit_sequence": [
+        2,
+        801,
+        18,
+        15
+      ],
+      "original_entryitem_literal_digit_sequence": [
+        2752,
+        1
+      ],
+      "original_getitem_literal_digit_sequence": [],
+      "source_has_warp_literal": true,
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "source_parameter_path": "genout/quz_803_18_19",
+      "original_bytes": 452,
+      "original_sha256": "4c22a872bcfeb31a06ec877711b257bdd76ddbc87c6bba3d4c7c86c48398e672",
+      "original_crc32": "175f6e49",
+      "original_create_ref_count": 1,
+      "family": "npcgen_quiz",
+      "original_type": 1,
+      "original_answer": 7,
+      "original_level": 6,
+      "original_quiznum": 3,
+      "original_border_first_number": 2,
+      "original_warp_literal_digit_sequence": [
+        2,
+        803,
+        18,
+        15,
+        0,
+        802,
+        20,
+        22
+      ],
+      "original_entryitem_literal_digit_sequence": [
+        2752,
+        1
+      ],
+      "original_getitem_literal_digit_sequence": [],
+      "source_has_warp_literal": true,
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "source_parameter_path": "genout/quz_805_18_19",
+      "original_bytes": 453,
+      "original_sha256": "e3f1506f7e37135c70578a780b2553a037ce4c53f2581828ebea80eaed513b95",
+      "original_crc32": "08014322",
+      "original_create_ref_count": 1,
+      "family": "npcgen_quiz",
+      "original_type": 1,
+      "original_answer": 7,
+      "original_level": 12,
+      "original_quiznum": 5,
+      "original_border_first_number": 3,
+      "original_warp_literal_digit_sequence": [
+        3,
+        805,
+        18,
+        15,
+        0,
+        804,
+        20,
+        22
+      ],
+      "original_entryitem_literal_digit_sequence": [
+        2752,
+        1
+      ],
+      "original_getitem_literal_digit_sequence": [],
+      "source_has_warp_literal": true,
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "source_parameter_path": "genout/quz_806_29_19",
+      "original_bytes": 453,
+      "original_sha256": "2ed3a89e76d237349cce4260accc905baeeffb52ef4669a3d91d5090c0c020df",
+      "original_crc32": "ff3e6da7",
+      "original_create_ref_count": 1,
+      "family": "npcgen_quiz",
+      "original_type": 1,
+      "original_answer": 7,
+      "original_level": 14,
+      "original_quiznum": 5,
+      "original_border_first_number": 3,
+      "original_warp_literal_digit_sequence": [
+        3,
+        806,
+        29,
+        15,
+        0,
+        805,
+        27,
+        21
+      ],
+      "original_entryitem_literal_digit_sequence": [
+        2752,
+        1
+      ],
+      "original_getitem_literal_digit_sequence": [],
+      "source_has_warp_literal": true,
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "source_parameter_path": "genout/quz_808_29_19",
+      "original_bytes": 453,
+      "original_sha256": "163bcaf83fdef9788d9601cfd514773a3c089a09aba276f5b43065a29742730c",
+      "original_crc32": "86a0174a",
+      "original_create_ref_count": 1,
+      "family": "npcgen_quiz",
+      "original_type": 1,
+      "original_answer": 7,
+      "original_level": 28,
+      "original_quiznum": 7,
+      "original_border_first_number": 5,
+      "original_warp_literal_digit_sequence": [
+        5,
+        808,
+        29,
+        15,
+        0,
+        806,
+        20,
+        22
+      ],
+      "original_entryitem_literal_digit_sequence": [
+        2752,
+        1
+      ],
+      "original_getitem_literal_digit_sequence": [],
+      "source_has_warp_literal": true,
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "source_parameter_path": "genout/quz_809_18_19",
+      "original_bytes": 466,
+      "original_sha256": "8a8759cbd659132cf4c3520286f590e749555b940b6c49fbd2eb7050afc7a1eb",
+      "original_crc32": "9dee9c1a",
+      "original_create_ref_count": 1,
+      "family": "npcgen_quiz",
+      "original_type": 1,
+      "original_answer": 7,
+      "original_level": 12,
+      "original_quiznum": 10,
+      "original_border_first_number": 10,
+      "original_warp_literal_digit_sequence": [
+        10,
+        809,
+        18,
+        15,
+        0,
+        801,
+        27,
+        21
+      ],
+      "original_entryitem_literal_digit_sequence": [
+        2752,
+        1
+      ],
+      "original_getitem_literal_digit_sequence": [],
+      "source_has_warp_literal": true,
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "source_parameter_path": "genout/quz_812_28_14",
+      "original_bytes": 469,
+      "original_sha256": "802ffa66b9000402c08fd6f04e147aec10976c0e500a3596a96f2c8c6ac70047",
+      "original_crc32": "741267ce",
+      "original_create_ref_count": 1,
+      "family": "npcgen_quiz",
+      "original_type": 0,
+      "original_answer": 0,
+      "original_level": 31,
+      "original_quiznum": 100,
+      "original_border_first_number": 100,
+      "original_warp_literal_digit_sequence": [],
+      "original_entryitem_literal_digit_sequence": [
+        2753,
+        1
+      ],
+      "original_getitem_literal_digit_sequence": [
+        100,
+        2759
+      ],
+      "source_has_warp_literal": false,
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "source_parameter_path": "genout/quz_820_29_19",
+      "original_bytes": 492,
+      "original_sha256": "4c32926e9a8bbd00df05b444ce75e7ee65dedf216b9ed41de49194d8a67eb137",
+      "original_crc32": "fac907fe",
+      "original_create_ref_count": 1,
+      "family": "npcgen_quiz",
+      "original_type": 1,
+      "original_answer": 7,
+      "original_level": 16,
+      "original_quiznum": 1,
+      "original_border_first_number": 1,
+      "original_warp_literal_digit_sequence": [
+        1,
+        820,
+        29,
+        15
+      ],
+      "original_entryitem_literal_digit_sequence": [
+        2752,
+        1
+      ],
+      "original_getitem_literal_digit_sequence": [
+        1,
+        2754
+      ],
+      "source_has_warp_literal": true,
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "source_parameter_path": "genout/quz_821_18_19",
+      "original_bytes": 405,
+      "original_sha256": "bfa66840bf0e307cfcfbf9e947a8e3e0632e13f8cfa33a8b516efb4290816e93",
+      "original_crc32": "9a1a8799",
+      "original_create_ref_count": 1,
+      "family": "npcgen_quiz",
+      "original_type": 1,
+      "original_answer": 7,
+      "original_level": 3,
+      "original_quiznum": 2,
+      "original_border_first_number": 2,
+      "original_warp_literal_digit_sequence": [
+        2,
+        821,
+        18,
+        15
+      ],
+      "original_entryitem_literal_digit_sequence": [
+        2752,
+        1
+      ],
+      "original_getitem_literal_digit_sequence": [],
+      "source_has_warp_literal": true,
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "source_parameter_path": "genout/quz_823_18_19",
+      "original_bytes": 452,
+      "original_sha256": "6100f980b5092a65da23d05e89574975b6872001c2e25d78eea357755ad17875",
+      "original_crc32": "7d9d56e5",
+      "original_create_ref_count": 1,
+      "family": "npcgen_quiz",
+      "original_type": 1,
+      "original_answer": 7,
+      "original_level": 6,
+      "original_quiznum": 3,
+      "original_border_first_number": 2,
+      "original_warp_literal_digit_sequence": [
+        2,
+        823,
+        18,
+        15,
+        0,
+        822,
+        20,
+        22
+      ],
+      "original_entryitem_literal_digit_sequence": [
+        2752,
+        1
+      ],
+      "original_getitem_literal_digit_sequence": [],
+      "source_has_warp_literal": true,
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "source_parameter_path": "genout/quz_825_18_19",
+      "original_bytes": 453,
+      "original_sha256": "e40ec6d216a977f1a5e0916759b66008cee5ecba1bcbac2aacc6a2e09324ad8e",
+      "original_crc32": "62c37b8e",
+      "original_create_ref_count": 1,
+      "family": "npcgen_quiz",
+      "original_type": 1,
+      "original_answer": 7,
+      "original_level": 12,
+      "original_quiznum": 5,
+      "original_border_first_number": 3,
+      "original_warp_literal_digit_sequence": [
+        3,
+        825,
+        18,
+        15,
+        0,
+        824,
+        20,
+        22
+      ],
+      "original_entryitem_literal_digit_sequence": [
+        2752,
+        1
+      ],
+      "original_getitem_literal_digit_sequence": [],
+      "source_has_warp_literal": true,
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "source_parameter_path": "genout/quz_826_29_19",
+      "original_bytes": 453,
+      "original_sha256": "10fe6512c7a405364a34d78f2171aaf2e75f91172547ce1393da9794d1a5e9e0",
+      "original_crc32": "95fc550b",
+      "original_create_ref_count": 1,
+      "family": "npcgen_quiz",
+      "original_type": 1,
+      "original_answer": 7,
+      "original_level": 14,
+      "original_quiznum": 5,
+      "original_border_first_number": 3,
+      "original_warp_literal_digit_sequence": [
+        3,
+        826,
+        29,
+        15,
+        0,
+        825,
+        27,
+        21
+      ],
+      "original_entryitem_literal_digit_sequence": [
+        2752,
+        1
+      ],
+      "original_getitem_literal_digit_sequence": [],
+      "source_has_warp_literal": true,
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "source_parameter_path": "genout/quz_828_29_19",
+      "original_bytes": 453,
+      "original_sha256": "7acd7e5d931a13a6c8bdc305788433760257de4875aab2e6e0324dbcbc45d8c2",
+      "original_crc32": "ec622fe6",
+      "original_create_ref_count": 1,
+      "family": "npcgen_quiz",
+      "original_type": 1,
+      "original_answer": 7,
+      "original_level": 28,
+      "original_quiznum": 7,
+      "original_border_first_number": 5,
+      "original_warp_literal_digit_sequence": [
+        5,
+        828,
+        29,
+        15,
+        0,
+        826,
+        20,
+        22
+      ],
+      "original_entryitem_literal_digit_sequence": [
+        2752,
+        1
+      ],
+      "original_getitem_literal_digit_sequence": [],
+      "source_has_warp_literal": true,
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "source_parameter_path": "genout/quz_829_18_19",
+      "original_bytes": 466,
+      "original_sha256": "b16f2e972c9b655402612e0ab4c91399c4a209f8e99cc149fe21a58e2b3b53c1",
+      "original_crc32": "ac26476e",
+      "original_create_ref_count": 1,
+      "family": "npcgen_quiz",
+      "original_type": 1,
+      "original_answer": 7,
+      "original_level": 12,
+      "original_quiznum": 10,
+      "original_border_first_number": 10,
+      "original_warp_literal_digit_sequence": [
+        10,
+        829,
+        18,
+        15,
+        0,
+        821,
+        27,
+        21
+      ],
+      "original_entryitem_literal_digit_sequence": [
+        2752,
+        1
+      ],
+      "original_getitem_literal_digit_sequence": [],
+      "source_has_warp_literal": true,
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "source_parameter_path": "genout/quz_840_29_19",
+      "original_bytes": 488,
+      "original_sha256": "452a5e596dc118b977b499443492e7eed0ab4d8c071c530b38a085defd7f261e",
+      "original_crc32": "eb3bf31d",
+      "original_create_ref_count": 1,
+      "family": "npcgen_quiz",
+      "original_type": 1,
+      "original_answer": 7,
+      "original_level": 16,
+      "original_quiznum": 1,
+      "original_border_first_number": 1,
+      "original_warp_literal_digit_sequence": [
+        1,
+        840,
+        29,
+        15
+      ],
+      "original_entryitem_literal_digit_sequence": [
+        2752,
+        1
+      ],
+      "original_getitem_literal_digit_sequence": [
+        1,
+        2754
+      ],
+      "source_has_warp_literal": true,
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "source_parameter_path": "genout/quz_841_18_19",
+      "original_bytes": 405,
+      "original_sha256": "2e867669a4e96bd414fcbdd046f02e77f8fb30b12da9174293114ba1ac0586ff",
+      "original_crc32": "4e706d82",
+      "original_create_ref_count": 1,
+      "family": "npcgen_quiz",
+      "original_type": 1,
+      "original_answer": 7,
+      "original_level": 3,
+      "original_quiznum": 2,
+      "original_border_first_number": 2,
+      "original_warp_literal_digit_sequence": [
+        2,
+        841,
+        18,
+        15
+      ],
+      "original_entryitem_literal_digit_sequence": [
+        2752,
+        1
+      ],
+      "original_getitem_literal_digit_sequence": [],
+      "source_has_warp_literal": true,
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "source_parameter_path": "genout/quz_843_18_19",
+      "original_bytes": 452,
+      "original_sha256": "99383ca086f114582e691c53756491847740690c5e28a1878c7bce28347275d8",
+      "original_crc32": "c2db1f11",
+      "original_create_ref_count": 1,
+      "family": "npcgen_quiz",
+      "original_type": 1,
+      "original_answer": 7,
+      "original_level": 6,
+      "original_quiznum": 3,
+      "original_border_first_number": 2,
+      "original_warp_literal_digit_sequence": [
+        2,
+        843,
+        18,
+        15,
+        0,
+        842,
+        20,
+        22
+      ],
+      "original_entryitem_literal_digit_sequence": [
+        2752,
+        1
+      ],
+      "original_getitem_literal_digit_sequence": [],
+      "source_has_warp_literal": true,
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "source_parameter_path": "genout/quz_845_18_19",
+      "original_bytes": 453,
+      "original_sha256": "efbb4ef299b363177019f37b44251ab6be0114f1c064fc4fe700c01ccda974f5",
+      "original_crc32": "dd85327a",
+      "original_create_ref_count": 1,
+      "family": "npcgen_quiz",
+      "original_type": 1,
+      "original_answer": 7,
+      "original_level": 12,
+      "original_quiznum": 5,
+      "original_border_first_number": 3,
+      "original_warp_literal_digit_sequence": [
+        3,
+        845,
+        18,
+        15,
+        0,
+        844,
+        20,
+        22
+      ],
+      "original_entryitem_literal_digit_sequence": [
+        2752,
+        1
+      ],
+      "original_getitem_literal_digit_sequence": [],
+      "source_has_warp_literal": true,
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "source_parameter_path": "genout/quz_846_29_19",
+      "original_bytes": 453,
+      "original_sha256": "c30e6efcb5a18396d0fec7871753f2e112c150e4515e5a7c2d1f9c124160c022",
+      "original_crc32": "2aba1cff",
+      "original_create_ref_count": 1,
+      "family": "npcgen_quiz",
+      "original_type": 1,
+      "original_answer": 7,
+      "original_level": 14,
+      "original_quiznum": 5,
+      "original_border_first_number": 3,
+      "original_warp_literal_digit_sequence": [
+        3,
+        846,
+        29,
+        15,
+        0,
+        845,
+        27,
+        21
+      ],
+      "original_entryitem_literal_digit_sequence": [
+        2752,
+        1
+      ],
+      "original_getitem_literal_digit_sequence": [],
+      "source_has_warp_literal": true,
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "source_parameter_path": "genout/quz_848_29_19",
+      "original_bytes": 453,
+      "original_sha256": "5d012fe918074f30c430fc28e747c19a58ec8a1bd2f7a9c9fa6006e721ea9a4b",
+      "original_crc32": "53246612",
+      "original_create_ref_count": 1,
+      "family": "npcgen_quiz",
+      "original_type": 1,
+      "original_answer": 7,
+      "original_level": 28,
+      "original_quiznum": 7,
+      "original_border_first_number": 5,
+      "original_warp_literal_digit_sequence": [
+        5,
+        848,
+        29,
+        15,
+        0,
+        846,
+        20,
+        22
+      ],
+      "original_entryitem_literal_digit_sequence": [
+        2752,
+        1
+      ],
+      "original_getitem_literal_digit_sequence": [],
+      "source_has_warp_literal": true,
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "source_parameter_path": "genout/quz_849_18_19",
+      "original_bytes": 466,
+      "original_sha256": "04859491a2a49bed72e3c7529cb0ad64b052a2c849037709cb683219beead91f",
+      "original_crc32": "09672896",
+      "original_create_ref_count": 1,
+      "family": "npcgen_quiz",
+      "original_type": 1,
+      "original_answer": 7,
+      "original_level": 12,
+      "original_quiznum": 10,
+      "original_border_first_number": 10,
+      "original_warp_literal_digit_sequence": [
+        10,
+        849,
+        18,
+        15,
+        0,
+        841,
+        27,
+        21
+      ],
+      "original_entryitem_literal_digit_sequence": [
+        2752,
+        1
+      ],
+      "original_getitem_literal_digit_sequence": [],
+      "source_has_warp_literal": true,
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "source_parameter_path": "genout/tman_1000_109_63",
+      "original_bytes": 91,
+      "original_sha256": "f2abb469faf28d6d7cc5d9562753a573d96ba1c64721fac2a3834fd03faf9b25",
+      "original_crc32": "e5c67000",
+      "original_create_ref_count": 1,
+      "family": "npcgen_timeman",
+      "original_time_literal": "ALLNIGHT",
+      "source_HAS_CHANGE_MSG": false,
+      "source_HAS_CHANGE_NO": false,
+      "source_HAS_MAIN_MSG": true,
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "source_parameter_path": "genout/tman_1000_116_66",
+      "original_bytes": 129,
+      "original_sha256": "29d7908aa202439e54830b1c742e93f41facfcbf04c15f7343775da4a62c7a44",
+      "original_crc32": "3d7d07a7",
+      "original_create_ref_count": 1,
+      "family": "npcgen_timeman",
+      "original_time_literal": "ALLNIGHT",
+      "source_HAS_CHANGE_MSG": false,
+      "source_HAS_CHANGE_NO": false,
+      "source_HAS_MAIN_MSG": true,
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "source_parameter_path": "genout/tman_1000_116_69",
+      "original_bytes": 91,
+      "original_sha256": "a23f3859dee65e5a2bf829a90e390eed03ea51189bbc6d8d6f1802d05a073a6c",
+      "original_crc32": "e8c7a9e4",
+      "original_create_ref_count": 1,
+      "family": "npcgen_timeman",
+      "original_time_literal": "ALLNIGHT",
+      "source_HAS_CHANGE_MSG": false,
+      "source_HAS_CHANGE_NO": false,
+      "source_HAS_MAIN_MSG": true,
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "source_parameter_path": "genout/tman_1000_119_65",
+      "original_bytes": 195,
+      "original_sha256": "97bd288385d1d7b06fdc5676ca924db9226422d108e03fe69348cb6ea09aabf6",
+      "original_crc32": "d6675f15",
+      "original_create_ref_count": 1,
+      "family": "npcgen_timeman",
+      "original_time_literal": "ALLNIGHT",
+      "source_HAS_CHANGE_MSG": false,
+      "source_HAS_CHANGE_NO": false,
+      "source_HAS_MAIN_MSG": true,
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "source_parameter_path": "genout/tman_1000_36_78",
+      "original_bytes": 41,
+      "original_sha256": "b10fcd765caf501eff6642c05a24c59a82ad1efe265fdbeb481cf017f7aaf4b9",
+      "original_crc32": "e9dfca58",
+      "original_create_ref_count": 1,
+      "family": "npcgen_timeman",
+      "original_time_literal": "ALLNOON",
+      "source_HAS_CHANGE_MSG": false,
+      "source_HAS_CHANGE_NO": false,
+      "source_HAS_MAIN_MSG": true,
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "source_parameter_path": "genout/tman_1000_39_75",
+      "original_bytes": 43,
+      "original_sha256": "4f02df593dbe4b51676e1cb6c7d8ac21b8980c16df3f8d701061d1ee801d15bc",
+      "original_crc32": "0c7dea4a",
+      "original_create_ref_count": 1,
+      "family": "npcgen_timeman",
+      "original_time_literal": "ALLNOON",
+      "source_HAS_CHANGE_MSG": false,
+      "source_HAS_CHANGE_NO": false,
+      "source_HAS_MAIN_MSG": true,
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "source_parameter_path": "genout/tman_1000_42_72",
+      "original_bytes": 308,
+      "original_sha256": "115134eedc681d9a1526ebd4bc2754c5c7c397a4500b08e7c597c467bfe2a190",
+      "original_crc32": "7be3e421",
+      "original_create_ref_count": 1,
+      "family": "npcgen_timeman",
+      "original_time_literal": "ALLNOON",
+      "source_HAS_CHANGE_MSG": false,
+      "source_HAS_CHANGE_NO": false,
+      "source_HAS_MAIN_MSG": true,
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "source_parameter_path": "genout/tman_1000_42_75",
+      "original_bytes": 67,
+      "original_sha256": "138ac51e303e245001da12f746e1c4dcfde8aabace87f9613fc1d631dbaaecc7",
+      "original_crc32": "4645f02f",
+      "original_create_ref_count": 1,
+      "family": "npcgen_timeman",
+      "original_time_literal": "ALLNOON",
+      "source_HAS_CHANGE_MSG": false,
+      "source_HAS_CHANGE_NO": false,
+      "source_HAS_MAIN_MSG": true,
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "source_parameter_path": "genout/tman_1000_42_79",
+      "original_bytes": 55,
+      "original_sha256": "f7d07e81040d0caec0b7c74fa185a9593cab15d9943b822586299e83b5ba9095",
+      "original_crc32": "df18bca6",
+      "original_create_ref_count": 1,
+      "family": "npcgen_timeman",
+      "original_time_literal": "ALLNOON",
+      "source_HAS_CHANGE_MSG": false,
+      "source_HAS_CHANGE_NO": false,
+      "source_HAS_MAIN_MSG": true,
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "source_parameter_path": "genout/tman_1000_42_81",
+      "original_bytes": 55,
+      "original_sha256": "4575ca48d80546d332e2b7b33024f8d8a0b95bec2d633129cf2a712030f7f48e",
+      "original_crc32": "d185f183",
+      "original_create_ref_count": 1,
+      "family": "npcgen_timeman",
+      "original_time_literal": "ALLNOON",
+      "source_HAS_CHANGE_MSG": false,
+      "source_HAS_CHANGE_NO": false,
+      "source_HAS_MAIN_MSG": true,
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "source_parameter_path": "genout/tman_1200_72_63",
+      "original_bytes": 61,
+      "original_sha256": "ab5d55e26a3684e1bdd776265a214abe9f9d05043ed6b748fec994d2d796c8ba",
+      "original_crc32": "d1d0bef4",
+      "original_create_ref_count": 1,
+      "family": "npcgen_timeman",
+      "original_time_literal": "AFTER",
+      "source_HAS_CHANGE_MSG": false,
+      "source_HAS_CHANGE_NO": false,
+      "source_HAS_MAIN_MSG": true,
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "source_parameter_path": "genout/tman_1300_37_26",
+      "original_bytes": 90,
+      "original_sha256": "cc815c7810dcc123df29a163a4c2365c7218a6086712dd46a26e11275d49b5a1",
+      "original_crc32": "b2e39c27",
+      "original_create_ref_count": 2,
+      "family": "npcgen_timeman",
+      "original_time_literal": "ALLNOON",
+      "source_HAS_CHANGE_MSG": false,
+      "source_HAS_CHANGE_NO": false,
+      "source_HAS_MAIN_MSG": true,
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "source_parameter_path": "genout/tman_2000_79_89",
+      "original_bytes": 156,
+      "original_sha256": "7e3fdab0d9b89a69064ce394dae3477610fd507a722d9899c04a1ddd8fd5784e",
+      "original_crc32": "1764527b",
+      "original_create_ref_count": 1,
+      "family": "npcgen_timeman",
+      "original_time_literal": "ALLNOON",
+      "source_HAS_CHANGE_MSG": false,
+      "source_HAS_CHANGE_NO": false,
+      "source_HAS_MAIN_MSG": true,
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "source_parameter_path": "genout/tman_2000_80_97",
+      "original_bytes": 106,
+      "original_sha256": "3064d2a3995fabd9727d1af6945e113ea9150fd66b7419394e87527905018a3c",
+      "original_crc32": "98bdf4e7",
+      "original_create_ref_count": 1,
+      "family": "npcgen_timeman",
+      "original_time_literal": "ALLNOON",
+      "source_HAS_CHANGE_MSG": false,
+      "source_HAS_CHANGE_NO": false,
+      "source_HAS_MAIN_MSG": true,
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "source_parameter_path": "genout/tman_2000_81_85",
+      "original_bytes": 54,
+      "original_sha256": "5c364a9a295c0d068c3dcaf8ea3a3db08e824f25718a32891dad9c7a66e7372c",
+      "original_crc32": "415f6acc",
+      "original_create_ref_count": 1,
+      "family": "npcgen_timeman",
+      "original_time_literal": "ALLNIGHT",
+      "source_HAS_CHANGE_MSG": false,
+      "source_HAS_CHANGE_NO": false,
+      "source_HAS_MAIN_MSG": true,
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "source_parameter_path": "genout/tman_3100_55_43",
+      "original_bytes": 71,
+      "original_sha256": "a0bebbd5dc93d46bcc687caca7445d1dd681049ed356878a81c654c1451be4e3",
+      "original_crc32": "d0488731",
+      "original_create_ref_count": 1,
+      "family": "npcgen_timeman",
+      "original_time_literal": "ALLNOON",
+      "source_HAS_CHANGE_MSG": false,
+      "source_HAS_CHANGE_NO": false,
+      "source_HAS_MAIN_MSG": true,
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "source_parameter_path": "genout/tman_3100_64_40",
+      "original_bytes": 49,
+      "original_sha256": "746f4d77da8bbb6e85351a38cd9e6a7e3b716251055d2443263e3c1a6cafca0e",
+      "original_crc32": "79f97d3a",
+      "original_create_ref_count": 1,
+      "family": "npcgen_timeman",
+      "original_time_literal": "ALLNOON",
+      "source_HAS_CHANGE_MSG": false,
+      "source_HAS_CHANGE_NO": false,
+      "source_HAS_MAIN_MSG": true,
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "source_parameter_path": "genout/tman_3200_73_50",
+      "original_bytes": 115,
+      "original_sha256": "7d980b7cb19ee9b0f9efd99a967aa009c430bc05f8dc68730bf18de04978c69b",
+      "original_crc32": "6b26fbcb",
+      "original_create_ref_count": 1,
+      "family": "npcgen_timeman",
+      "original_time_literal": "AFTER",
+      "source_HAS_CHANGE_MSG": false,
+      "source_HAS_CHANGE_NO": false,
+      "source_HAS_MAIN_MSG": true,
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "source_parameter_path": "genout/tman_3200_74_48",
+      "original_bytes": 208,
+      "original_sha256": "25d1cada5d3e5ac249669d50f25f2bb27a5120846a395ca8c075f9766a3ae012",
+      "original_crc32": "e4258354",
+      "original_create_ref_count": 1,
+      "family": "npcgen_timeman",
+      "original_time_literal": "ALLNIGHT",
+      "source_HAS_CHANGE_MSG": false,
+      "source_HAS_CHANGE_NO": false,
+      "source_HAS_MAIN_MSG": true,
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "source_parameter_path": "genout/tman_3200_75_53",
+      "original_bytes": 143,
+      "original_sha256": "48ab26127c2c38f9bebe0ee54d6fa8dfde14a8f39545fe955d4349ced93074b1",
+      "original_crc32": "0623c462",
+      "original_create_ref_count": 1,
+      "family": "npcgen_timeman",
+      "original_time_literal": "ALLNIGHT",
+      "source_HAS_CHANGE_MSG": false,
+      "source_HAS_CHANGE_NO": false,
+      "source_HAS_MAIN_MSG": true,
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "source_parameter_path": "genout/tman_3200_76_48",
+      "original_bytes": 170,
+      "original_sha256": "00a67bdccf6a3574723ba150ceffca14b48230e6a01d36804fc9526d63cd35dd",
+      "original_crc32": "5f0bdb00",
+      "original_create_ref_count": 1,
+      "family": "npcgen_timeman",
+      "original_time_literal": "ALLNIGHT",
+      "source_HAS_CHANGE_MSG": false,
+      "source_HAS_CHANGE_NO": false,
+      "source_HAS_MAIN_MSG": true,
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "source_parameter_path": "genout/tman_3200_76_49",
+      "original_bytes": 109,
+      "original_sha256": "281f2e3c6189cc7768a37043ba975553f8f9e0cdd77458c97ff2ad496cd79560",
+      "original_crc32": "c9459955",
+      "original_create_ref_count": 1,
+      "family": "npcgen_timeman",
+      "original_time_literal": "AFTER",
+      "source_HAS_CHANGE_MSG": false,
+      "source_HAS_CHANGE_NO": false,
+      "source_HAS_MAIN_MSG": true,
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "source_parameter_path": "genout/tman_3200_79_50",
+      "original_bytes": 255,
+      "original_sha256": "4042f7e8839ed7ba8bc67029cf6a746020d40e4fb7778b294f4fcf92c0b04a51",
+      "original_crc32": "36a1869f",
+      "original_create_ref_count": 1,
+      "family": "npcgen_timeman",
+      "original_time_literal": "ALLNIGHT",
+      "source_HAS_CHANGE_MSG": false,
+      "source_HAS_CHANGE_NO": false,
+      "source_HAS_MAIN_MSG": true,
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "source_parameter_path": "genout/tman_400_85_102",
+      "original_bytes": 127,
+      "original_sha256": "523f22a9957f28f7131f24da2cf6710a52e93f7a0fce96ad650094a4013f8f4d",
+      "original_crc32": "97fd55c2",
+      "original_create_ref_count": 1,
+      "family": "npcgen_timeman",
+      "original_time_literal": "AFTER",
+      "source_HAS_CHANGE_MSG": true,
+      "source_HAS_CHANGE_NO": true,
+      "source_HAS_MAIN_MSG": true,
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "source_parameter_path": "genout/tman_400_88_102",
+      "original_bytes": 127,
+      "original_sha256": "523f22a9957f28f7131f24da2cf6710a52e93f7a0fce96ad650094a4013f8f4d",
+      "original_crc32": "97fd55c2",
+      "original_create_ref_count": 1,
+      "family": "npcgen_timeman",
+      "original_time_literal": "AFTER",
+      "source_HAS_CHANGE_MSG": true,
+      "source_HAS_CHANGE_NO": true,
+      "source_HAS_MAIN_MSG": true,
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "source_parameter_path": "genout/tman_400_95_120",
+      "original_bytes": 125,
+      "original_sha256": "7494698774322f5b2cbf83d8218ae9ddb0b0a56fb0a64c181bf7b77fb78a8905",
+      "original_crc32": "45daa059",
+      "original_create_ref_count": 1,
+      "family": "npcgen_timeman",
+      "original_time_literal": "AFTER",
+      "source_HAS_CHANGE_MSG": true,
+      "source_HAS_CHANGE_NO": true,
+      "source_HAS_MAIN_MSG": true,
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "source_parameter_path": "genout/tman_400_98_120",
+      "original_bytes": 125,
+      "original_sha256": "7494698774322f5b2cbf83d8218ae9ddb0b0a56fb0a64c181bf7b77fb78a8905",
+      "original_crc32": "45daa059",
+      "original_create_ref_count": 1,
+      "family": "npcgen_timeman",
+      "original_time_literal": "AFTER",
+      "source_HAS_CHANGE_MSG": true,
+      "source_HAS_CHANGE_NO": true,
+      "source_HAS_MAIN_MSG": true,
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "source_parameter_path": "genout/tman_4000_52_109",
+      "original_bytes": 66,
+      "original_sha256": "521f137e79a9bddbd82fe79573d9dfdc55674d41520c3ad8e90c8709a0edd6fe",
+      "original_crc32": "e3b49948",
+      "original_create_ref_count": 1,
+      "family": "npcgen_timeman",
+      "original_time_literal": "ALLNOON",
+      "source_HAS_CHANGE_MSG": false,
+      "source_HAS_CHANGE_NO": false,
+      "source_HAS_MAIN_MSG": true,
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "source_parameter_path": "genout/tman_4000_52_112",
+      "original_bytes": 61,
+      "original_sha256": "ba4030f369bc7fd343ea0e4be6a8c57d91dd549faeb7f022594adf2ba172d661",
+      "original_crc32": "25412982",
+      "original_create_ref_count": 1,
+      "family": "npcgen_timeman",
+      "original_time_literal": "ALLNOON",
+      "source_HAS_CHANGE_MSG": false,
+      "source_HAS_CHANGE_NO": false,
+      "source_HAS_MAIN_MSG": true,
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "source_parameter_path": "genout/tman_4000_55_109",
+      "original_bytes": 56,
+      "original_sha256": "93f7a413190eb7a075e47522e95ecb1113655cf4f9331412727ecc0eaca7f746",
+      "original_crc32": "e8299ba0",
+      "original_create_ref_count": 1,
+      "family": "npcgen_timeman",
+      "original_time_literal": "ALLNOON",
+      "source_HAS_CHANGE_MSG": false,
+      "source_HAS_CHANGE_NO": false,
+      "source_HAS_MAIN_MSG": true,
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "source_parameter_path": "genout/tman_4000_55_112",
+      "original_bytes": 105,
+      "original_sha256": "481a3ce363fae5369bddd2e5bcc64f6616182247f42ebdf6cba8b38748993faa",
+      "original_crc32": "00a8a591",
+      "original_create_ref_count": 1,
+      "family": "npcgen_timeman",
+      "original_time_literal": "ALLNOON",
+      "source_HAS_CHANGE_MSG": false,
+      "source_HAS_CHANGE_NO": false,
+      "source_HAS_MAIN_MSG": true,
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "source_parameter_path": "genout/tman_4000_57_103",
+      "original_bytes": 294,
+      "original_sha256": "86c4e10b620c233699f8d50ba29129db615ee43e3522a78c134c85462959ebcd",
+      "original_crc32": "db32c0fa",
+      "original_create_ref_count": 1,
+      "family": "npcgen_timeman",
+      "original_time_literal": "ALLNOON",
+      "source_HAS_CHANGE_MSG": false,
+      "source_HAS_CHANGE_NO": false,
+      "source_HAS_MAIN_MSG": true,
+      "origin_class": "ORIGIN_UNRESOLVED"
+    },
+    {
+      "source_parameter_path": "genout/tman_4000_58_109",
+      "original_bytes": 63,
+      "original_sha256": "bb21c8f671b35ca5b4af32214e45cb5b22b75b9fd2a4f9aa79b4425e5bfd4777",
+      "original_crc32": "53757210",
+      "original_create_ref_count": 1,
+      "family": "npcgen_timeman",
+      "original_time_literal": "ALLNOON",
+      "source_HAS_CHANGE_MSG": false,
+      "source_HAS_CHANGE_NO": false,
+      "source_HAS_MAIN_MSG": true,
+      "origin_class": "ORIGIN_UNRESOLVED"
+    }
+  ],
+  "bounds": {
+    "all_56_source_creates_origin_class": "ORIGIN_UNRESOLVED",
+    "not_official_TW10_or_CN182_same_deployment": true,
+    "not_proven_permanent_quest_or_operated_event": true,
+    "original_QUIZ_answer_numbers_not_played_or_validated": true,
+    "original_Warp_literals_not_verified_usable_maps": true,
+    "original_EntryItem_GetItem_literal_digits_not_verified_inventory_effects": true,
+    "original_TIME_literals_not_server_clock_observation": true,
+    "npcgen_timeman_not_assumed_quest": true,
+    "private_commercial_dialogue_or_images_published": false,
+    "original_game_client_or_server_executed": false,
+    "stage_A": "7_PARTIAL_2_OPEN",
+    "stage_B_and_wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "next": "QUEST_STORY_MODULE_04_OR_SOURCE_BOUNDED_QUEST_MODULE_STOP_THEN_GAMEPLAY_MECHANICS"
+}
