@@ -5,11 +5,15 @@ on:
       - 'research/recovered/STONEAGE-GAMEPLAY01-ORIGINAL-FAMILY-ARENA-PET-REBIRTH-R1.json'
       - 'research/recovered/STONEAGE-CHARACTER-NPC-MODULE-01-FULL-SOURCE-ROWS-R1.json'
       - 'tests/test_stoneage_gameplay_mechanics_module_01.py'
+      - 'research/recovered/STONEAGE-GAMEPLAY02-ORIGINAL-RIDER-PET-TALK-SOURCE-R1.json'
+      - 'tests/test_stoneage_gameplay_mechanics_module_02.py'
       - '.github/workflows/verify-stoneage-gameplay-mechanics-module-01.yml'
   pull_request:
     paths:
       - 'research/recovered/STONEAGE-GAMEPLAY01-ORIGINAL-FAMILY-ARENA-PET-REBIRTH-R1.json'
       - 'tests/test_stoneage_gameplay_mechanics_module_01.py'
+      - 'research/recovered/STONEAGE-GAMEPLAY02-ORIGINAL-RIDER-PET-TALK-SOURCE-R1.json'
+      - 'tests/test_stoneage_gameplay_mechanics_module_02.py'
       - '.github/workflows/verify-stoneage-gameplay-mechanics-module-01.yml'
   workflow_dispatch:
 jobs:
@@ -21,3 +25,4 @@ jobs:
         with:
           python-version: '3.12'
       - run: python -m unittest discover -s tests -p 'test_stoneage_gameplay_mechanics_module_01.py' -v
+      - run: python -m unittest discover -s tests -p 'test_stoneage_gameplay_mechanics_module_02.py' -v
