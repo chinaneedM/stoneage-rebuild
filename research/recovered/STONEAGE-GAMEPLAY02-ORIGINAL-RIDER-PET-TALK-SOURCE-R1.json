@@ -1,0 +1,470 @@
+{
+  "schema": "stoneage.gameplay_mechanics_module02_original_rider_pet_talk_source.r1",
+  "source": {
+    "scope": "RETAINED_COMMUNITY_MIXED25_NOT_OFFICIAL_EARLY_DEPLOYMENT",
+    "private_npc_zip_sha256": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+    "all_2205_zip_NPC_files_sha_crc_verified": true,
+    "verified_NPC_files": 2205,
+    "verified_NPC_bytes": 1930332,
+    "upstream_CHAR01_immutable_blob_sha": "a088b61a3212f7049e7793f587123ffb29bebad7",
+    "parent_original_RAR_reopened_in_this_unit": false
+  },
+  "verified_source_file_receipts": [
+    {
+      "path": "family/familyman.template",
+      "bytes": 387,
+      "sha256": "ad2da35987c67671dc283468a699c2f0f3da1cd8178d55dcdccfeab4afa99fe9",
+      "crc32": "b5c59e2e"
+    },
+    {
+      "path": "family/riderman.create",
+      "bytes": 991,
+      "sha256": "e37d03b13bd0fef1d9cf6e47223787047ffd36c00db234a37efc06f58880e510",
+      "crc32": "752ff282"
+    },
+    {
+      "path": "family/riderman.conf",
+      "bytes": 3237,
+      "sha256": "1316fed9ee6af4dfe04ee519b3c98f399fe78ec880ecd7ad2af65bd7d99e6029",
+      "crc32": "cf9c8f21"
+    },
+    {
+      "path": "family/riderman.conf.old",
+      "bytes": 3944,
+      "sha256": "021024cba9a122ab150294d096882a4442b0278ac18a5ee0d89d1d148ffb7e64",
+      "crc32": "c7640c73"
+    },
+    {
+      "path": "family/riderman2.conf",
+      "bytes": 2308,
+      "sha256": "e0972515cf96ebb0eb663811b6d84160c15ef91b99d000ad9c01e127e085f1fc",
+      "crc32": "d183cf63"
+    },
+    {
+      "path": "family/rider.create",
+      "bytes": 188,
+      "sha256": "283dc39ecd58c8ba94b38e1ff911f44aeb6b5112825f464f9f020d1d16798933",
+      "crc32": "50b72f20"
+    },
+    {
+      "path": "family/rider.arg",
+      "bytes": 554,
+      "sha256": "59386ccc0231c2e9ac837d092cbe5c407cf982284160beb2ed14335cdcde6831",
+      "crc32": "068eef8b"
+    },
+    {
+      "path": "sa60/rider.create",
+      "bytes": 186,
+      "sha256": "8f6a8e110aee852455a15e86e21c542872d1663a387d8941c8b5a5f4e5956846",
+      "crc32": "23a648ee"
+    },
+    {
+      "path": "sa60/rider.arg",
+      "bytes": 464,
+      "sha256": "78992a712e11d29d6f366f9be59f4c27c8e85842dec0322adf26afddcd56d4e4",
+      "crc32": "c9b7d365"
+    },
+    {
+      "path": "sa60/rider.arg.bak",
+      "bytes": 554,
+      "sha256": "59386ccc0231c2e9ac837d092cbe5c407cf982284160beb2ed14335cdcde6831",
+      "crc32": "068eef8b"
+    },
+    {
+      "path": "sa60/newbie/fighter",
+      "bytes": 1432,
+      "sha256": "5cba22d6c22387b1b28576ab09d59989c3068d44c82e964da753caf4f9252289",
+      "crc32": "20da5958"
+    },
+    {
+      "path": "sa60/newbie/petmaster",
+      "bytes": 1365,
+      "sha256": "04ba49ba514eb469b4c12085c6733cd73c281c6ca682c813c2e35748ab6ac1db",
+      "crc32": "e63fc8d8"
+    },
+    {
+      "path": "pettalk/pettalk.menu",
+      "bytes": 204,
+      "sha256": "c0d1dc0a88b79de8e6dc0946eb4bb77999cae29e879b24671c1d49c562039f4b",
+      "crc32": "cdf398ca"
+    },
+    {
+      "path": "pettalk/ptalk01.arg",
+      "bytes": 9220,
+      "sha256": "2f832739408ff58d77a5c3d4642002e4811b6370e91c1826d4e1d23d218462a0",
+      "crc32": "8ec82d5c"
+    },
+    {
+      "path": "pettalk/ptalk02.arg",
+      "bytes": 273,
+      "sha256": "1dc3bbf3c3a878367e962fc35627791f1c9a7017ed2e4924871094aa0e65e8eb",
+      "crc32": "e64d5347"
+    },
+    {
+      "path": "pettalk/ptalk03.arg",
+      "bytes": 1164,
+      "sha256": "34beefc41b5e2f6100b470c96f61bbf340eb49e00426eb35ed67460cd29beb4e",
+      "crc32": "95e27e2c"
+    },
+    {
+      "path": "pettalk/ptalk04.arg",
+      "bytes": 1241,
+      "sha256": "1aef8d9f78f241c9f36d2975ccc6a18d68da12a50be38a272d6b61f16c6f57f3",
+      "crc32": "a1075d45"
+    },
+    {
+      "path": "pettalk/ptalk05.arg",
+      "bytes": 406,
+      "sha256": "2d42edd6875e492bd882496bd3bbd30a3961c5dacbac5ef88a716e2b82b0aa7c",
+      "crc32": "cd9f6b55"
+    },
+    {
+      "path": "pettalk/ptalk06.arg",
+      "bytes": 9454,
+      "sha256": "eb5d8c907717b87fc02919f289f8ad665c0655a883bac783668e4747248195c9",
+      "crc32": "8a650fa6"
+    },
+    {
+      "path": "pettalk/ptalk07.arg",
+      "bytes": 449,
+      "sha256": "0766de9a276e474e3b6695a55dc31d84a728c280b18b664a2cf5222697e3b025",
+      "crc32": "9969afbb"
+    }
+  ],
+  "rider_trainers": [
+    {
+      "create_ordinal": 0,
+      "create_sha256": "dbfdaef8c0a9aed0a4a046cedf7f7924af224694fa889f366fae86671485e70f",
+      "floorid": 1040,
+      "graphicname": 16017,
+      "trainer_family_index": 1,
+      "borncenter": [
+        61,
+        45,
+        1,
+        1
+      ],
+      "create_uses_file_keyword": false,
+      "create_uses_conff_keyword": true,
+      "conff_path": "family/riderman.conf"
+    },
+    {
+      "create_ordinal": 1,
+      "create_sha256": "69c389be801fac85a07a54f88552d0f9d395e3ed7f398249ea27be46e9975712",
+      "floorid": 2030,
+      "graphicname": 16002,
+      "trainer_family_index": 2,
+      "borncenter": [
+        55,
+        16,
+        1,
+        1
+      ],
+      "create_uses_file_keyword": false,
+      "create_uses_conff_keyword": true,
+      "conff_path": "family/riderman.conf"
+    },
+    {
+      "create_ordinal": 2,
+      "create_sha256": "bf8dbb01603f1b8f2e2de83de76971e280ed2043d99ee5c0da32ba2372ec43e9",
+      "floorid": 3030,
+      "graphicname": 16002,
+      "trainer_family_index": 3,
+      "borncenter": [
+        50,
+        21,
+        1,
+        1
+      ],
+      "create_uses_file_keyword": false,
+      "create_uses_conff_keyword": true,
+      "conff_path": "family/riderman.conf"
+    },
+    {
+      "create_ordinal": 3,
+      "create_sha256": "5734a70a8e68fa24f636133d1d34ebe82f6208d04483a982e96ea7ecd92b7e73",
+      "floorid": 4030,
+      "graphicname": 16002,
+      "trainer_family_index": 4,
+      "borncenter": [
+        16,
+        35,
+        1,
+        1
+      ],
+      "create_uses_file_keyword": false,
+      "create_uses_conff_keyword": true,
+      "conff_path": "family/riderman.conf"
+    }
+  ],
+  "riding_configurations": {
+    "four_created_trainers_config": {
+      "path": "family/riderman.conf",
+      "source_window_ids": [
+        1,
+        2,
+        100,
+        110,
+        120,
+        130,
+        140,
+        1000,
+        1010,
+        1011,
+        2000
+      ],
+      "source_gotowin_integer_occurrences": 17,
+      "gotowin_targets_not_local_window_ids": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "courses": [
+        {
+          "window": 110,
+          "source_course_max_pet_level_label": 40,
+          "takegold_integer": 5000,
+          "yes_gotowin": 6,
+          "letter_ids": [
+            19005,
+            19006,
+            19007,
+            19008
+          ]
+        },
+        {
+          "window": 120,
+          "source_course_max_pet_level_label": 80,
+          "takegold_integer": 10000,
+          "yes_gotowin": 7,
+          "letter_ids": [
+            19005,
+            19006,
+            19007,
+            19008
+          ]
+        },
+        {
+          "window": 130,
+          "source_course_max_pet_level_label": 120,
+          "takegold_integer": 15000,
+          "yes_gotowin": 8,
+          "letter_ids": [
+            19005,
+            19006,
+            19007,
+            19008
+          ]
+        },
+        {
+          "window": 140,
+          "source_course_max_pet_level_label": null,
+          "takegold_integer": 20000,
+          "yes_gotowin": 9,
+          "letter_ids": [
+            19005,
+            19006,
+            19007,
+            19008
+          ]
+        }
+      ],
+      "loyalty_100_and_body_color_suitability_are_script_text_only": true
+    },
+    "old_suffix_file": {
+      "path": "family/riderman.conf.old",
+      "source_window_count": 14,
+      "course_winno": [
+        110,
+        120,
+        130
+      ],
+      "literal_takegold_numeric_entries": 0,
+      "source_text_fee_labels": [
+        5000,
+        10000,
+        15000
+      ],
+      "proven_deployed": false
+    },
+    "special_file": {
+      "path": "family/riderman2.conf",
+      "source_window_count": 8,
+      "source_course_takegold": 20000,
+      "configured_fifth_trainer_only_commented_out": true,
+      "active_created_trainers_reference_it": 0
+    }
+  },
+  "rider_item_argument_sources": {
+    "family_current": {
+      "path": "family/rider.arg",
+      "npcpoint_triples": 17,
+      "literal_item_id": 20296,
+      "trans_candidates": [
+        5,
+        6
+      ],
+      "raw_WARP_0_0_0_occurrences": 3
+    },
+    "sa60_backup": {
+      "path": "sa60/rider.arg.bak",
+      "npcpoint_triples": 17,
+      "literal_item_id": 20296,
+      "trans_candidates": [
+        5,
+        6
+      ],
+      "raw_WARP_0_0_0_occurrences": 3
+    },
+    "sa60_current": {
+      "path": "sa60/rider.arg",
+      "npcpoint_triples": 9,
+      "literal_item_id": 20296,
+      "trans_candidates": [
+        5,
+        6
+      ],
+      "raw_WARP_0_0_0_occurrences": 3
+    }
+  },
+  "pet_talk_source_menu": {
+    "menu_path": "pettalk/pettalk.menu",
+    "ordered_source_refs": [
+      {
+        "path": "pettalk/ptalk01.arg",
+        "source_pettempno": 718,
+        "source_pettempno_matches_target_file": true,
+        "original_section_counts": {
+          "EVENTRUN": 29,
+          "TALKRUN": 17,
+          "BOTH": 6,
+          "OTHER": 1
+        },
+        "total_original_section_headers": 53
+      },
+      {
+        "path": "pettalk/ptalk02.arg",
+        "source_pettempno": 2,
+        "source_pettempno_matches_target_file": true,
+        "original_section_counts": {
+          "EVENTRUN": 2,
+          "TALKRUN": 0,
+          "BOTH": 0,
+          "OTHER": 1
+        },
+        "total_original_section_headers": 3
+      },
+      {
+        "path": "pettalk/ptalk04.arg",
+        "source_pettempno": 914,
+        "source_pettempno_matches_target_file": true,
+        "original_section_counts": {
+          "EVENTRUN": 0,
+          "TALKRUN": 2,
+          "BOTH": 4,
+          "OTHER": 1
+        },
+        "total_original_section_headers": 7
+      },
+      {
+        "path": "pettalk/ptalk03.arg",
+        "source_pettempno": 913,
+        "source_pettempno_matches_target_file": true,
+        "original_section_counts": {
+          "EVENTRUN": 0,
+          "TALKRUN": 2,
+          "BOTH": 4,
+          "OTHER": 1
+        },
+        "total_original_section_headers": 7
+      },
+      {
+        "path": "pettalk/ptalk05.arg",
+        "source_pettempno": 170,
+        "source_pettempno_matches_target_file": true,
+        "original_section_counts": {
+          "EVENTRUN": 3,
+          "TALKRUN": 0,
+          "BOTH": 0,
+          "OTHER": 1
+        },
+        "total_original_section_headers": 4
+      },
+      {
+        "path": "pettalk/ptalk06.arg",
+        "source_pettempno": 401,
+        "source_pettempno_matches_target_file": true,
+        "original_section_counts": {
+          "EVENTRUN": 30,
+          "TALKRUN": 17,
+          "BOTH": 6,
+          "OTHER": 1
+        },
+        "total_original_section_headers": 54
+      },
+      {
+        "path": "pettalk/ptalk07.arg",
+        "source_pettempno": 1147,
+        "source_pettempno_matches_target_file": true,
+        "original_section_counts": {
+          "EVENTRUN": 3,
+          "TALKRUN": 0,
+          "BOTH": 0,
+          "OTHER": 1
+        },
+        "total_original_section_headers": 4
+      }
+    ]
+  },
+  "original_newbie_text_guides": [
+    {
+      "path": "sa60/newbie/fighter",
+      "message_slot_headers": 9,
+      "script_claims_not_native_verified": [
+        "turn_battle_agility_combo",
+        "level_1_capture_hint",
+        "element_advantage_cycle"
+      ]
+    },
+    {
+      "path": "sa60/newbie/petmaster",
+      "message_slot_headers": 9,
+      "script_claims_not_native_verified": [
+        "pet_loyalty_loss_and_recovery",
+        "pet_skill_training",
+        "level_1_capture_hint"
+      ]
+    }
+  ],
+  "summary": {
+    "new_source_files_examined": 20,
+    "original_rider_create_refs_with_conff": 4,
+    "original_active_rider_conf_files": 1,
+    "commented_fifth_rider_create_not_active": 1,
+    "original_pet_talk_files": 7,
+    "original_pet_talk_section_headers": 132,
+    "pet_talk_header_family_totals": {
+      "EVENTRUN": 67,
+      "TALKRUN": 38,
+      "BOTH": 20,
+      "OTHER": 7
+    },
+    "original_newbie_guide_files": 2
+  },
+  "limits": {
+    "same_build_early_official_game_rule_proven": false,
+    "original_riding_training_executed": false,
+    "literal_takegold_proves_actual_debit": false,
+    "pet_talk_content_actually_executed": false,
+    "source_text_or_original_art_published": false,
+    "no_real_client_or_server_started_in_this_unit": true,
+    "archival_GAMEPLAY01_no_file_token_finding_preserved": true,
+    "stage_A": "7_PARTIAL_2_OPEN",
+    "stage_B_and_wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "next": "GAMEPLAY-MECHANICS-MODULE-03_ORIGINAL_BATTLE_SKILL_RULES_SOURCE_BOUNDED"
+}
