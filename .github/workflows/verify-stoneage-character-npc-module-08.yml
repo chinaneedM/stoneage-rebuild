@@ -1,0 +1,17 @@
+name: Verify CHAR08 mixed25 exchange NPC source and itemset census
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-CHARACTER-NPC-MODULE-08-STATIC-SOURCE-SUMMARY-R1.json'
+      - 'tests/test_stoneage_character_npc_module_08_summary.py'
+      - '.github/workflows/verify-stoneage-character-npc-module-08.yml'
+  workflow_dispatch:
+jobs:
+  rights-safe-source-acceptance:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest discover -s tests -p 'test_stoneage_character_npc_module_08_summary.py' -v
