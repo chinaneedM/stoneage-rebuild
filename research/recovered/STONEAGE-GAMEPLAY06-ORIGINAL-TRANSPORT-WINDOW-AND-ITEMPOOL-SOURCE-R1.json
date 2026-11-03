@@ -55,7 +55,10 @@
     "source_windowman_missing_conf_referenced_CREATE_count": 4,
     "source_windowman_actual_conf_winno_count": 61,
     "source_missing_conf_path": "sainasu/jujutu01.conf",
-    "source_duelranking_inline_no_parameter_CREATE_count": 8
+    "source_duelranking_inline_no_parameter_CREATE_count": 8,
+    "source_transport_denieditem_literal_403_file_count": 5,
+    "source_transport_denieditem_literal_2403_file_count": 6,
+    "source_transport_missing_denieditem_file_count": 1
   },
   "original_parameter_source_receipts": [
     {
@@ -81,7 +84,10 @@
         ],
         "original_needstone_literal": 1000,
         "original_waittime_literal": 180,
-        "original_oneway_literal": 0
+        "original_oneway_literal": 0,
+        "denieditem_original_field_present": true,
+        "denieditem_source_includes_numeric_403": true,
+        "denieditem_source_includes_numeric_2403": false
       }
     },
     {
@@ -107,7 +113,10 @@
         ],
         "original_needstone_literal": 1000,
         "original_waittime_literal": 180,
-        "original_oneway_literal": 0
+        "original_oneway_literal": 0,
+        "denieditem_original_field_present": true,
+        "denieditem_source_includes_numeric_403": true,
+        "denieditem_source_includes_numeric_2403": false
       }
     },
     {
@@ -133,7 +142,10 @@
         ],
         "original_needstone_literal": 1000,
         "original_waittime_literal": 180,
-        "original_oneway_literal": 0
+        "original_oneway_literal": 0,
+        "denieditem_original_field_present": true,
+        "denieditem_source_includes_numeric_403": true,
+        "denieditem_source_includes_numeric_2403": false
       }
     },
     {
@@ -159,7 +171,10 @@
         ],
         "original_needstone_literal": 3000,
         "original_waittime_literal": 180,
-        "original_oneway_literal": 1
+        "original_oneway_literal": 1,
+        "denieditem_original_field_present": true,
+        "denieditem_source_includes_numeric_403": false,
+        "denieditem_source_includes_numeric_2403": true
       }
     },
     {
@@ -185,7 +200,10 @@
         ],
         "original_needstone_literal": 3000,
         "original_waittime_literal": 180,
-        "original_oneway_literal": 1
+        "original_oneway_literal": 1,
+        "denieditem_original_field_present": true,
+        "denieditem_source_includes_numeric_403": true,
+        "denieditem_source_includes_numeric_2403": false
       }
     },
     {
@@ -209,7 +227,10 @@
         ],
         "original_needstone_literal": 50,
         "original_waittime_literal": 180,
-        "original_oneway_literal": null
+        "original_oneway_literal": null,
+        "denieditem_original_field_present": true,
+        "denieditem_source_includes_numeric_403": true,
+        "denieditem_source_includes_numeric_2403": false
       }
     },
     {
@@ -233,7 +254,10 @@
         ],
         "original_needstone_literal": 50,
         "original_waittime_literal": 180,
-        "original_oneway_literal": null
+        "original_oneway_literal": null,
+        "denieditem_original_field_present": true,
+        "denieditem_source_includes_numeric_403": false,
+        "denieditem_source_includes_numeric_2403": true
       }
     },
     {
@@ -257,7 +281,10 @@
         ],
         "original_needstone_literal": 25,
         "original_waittime_literal": 180,
-        "original_oneway_literal": null
+        "original_oneway_literal": null,
+        "denieditem_original_field_present": true,
+        "denieditem_source_includes_numeric_403": false,
+        "denieditem_source_includes_numeric_2403": true
       }
     },
     {
@@ -281,7 +308,10 @@
         ],
         "original_needstone_literal": 30,
         "original_waittime_literal": 180,
-        "original_oneway_literal": null
+        "original_oneway_literal": null,
+        "denieditem_original_field_present": true,
+        "denieditem_source_includes_numeric_403": false,
+        "denieditem_source_includes_numeric_2403": true
       }
     },
     {
@@ -305,7 +335,10 @@
         ],
         "original_needstone_literal": 20,
         "original_waittime_literal": 180,
-        "original_oneway_literal": null
+        "original_oneway_literal": null,
+        "denieditem_original_field_present": true,
+        "denieditem_source_includes_numeric_403": false,
+        "denieditem_source_includes_numeric_2403": true
       }
     },
     {
@@ -329,7 +362,10 @@
         ],
         "original_needstone_literal": 40,
         "original_waittime_literal": 180,
-        "original_oneway_literal": null
+        "original_oneway_literal": null,
+        "denieditem_original_field_present": true,
+        "denieditem_source_includes_numeric_403": false,
+        "denieditem_source_includes_numeric_2403": true
       }
     },
     {
@@ -437,7 +473,10 @@
         ],
         "original_needstone_literal": 0,
         "original_waittime_literal": 120,
-        "original_oneway_literal": null
+        "original_oneway_literal": null,
+        "denieditem_original_field_present": false,
+        "denieditem_source_includes_numeric_403": false,
+        "denieditem_source_includes_numeric_2403": false
       }
     },
     {
@@ -1393,7 +1432,8 @@
     "stage_A": "7_PARTIAL_2_OPEN",
     "stage_B_and_wiki": "GATED",
     "R79": "PAUSED_NON_BLOCKING",
-    "overall_percent": null
+    "overall_percent": null,
+    "source_403_and_2403_denieditem_values_not_normalized_or_equated": true
   },
   "next": "GAMEPLAY-MECHANICS-MODULE-07_CAPTURE_AND_STATIC_GAMEPLAY_SOURCE_BOUNDARY_REVIEW"
 }
