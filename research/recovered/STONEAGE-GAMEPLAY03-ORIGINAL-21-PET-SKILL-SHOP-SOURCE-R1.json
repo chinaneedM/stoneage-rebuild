@@ -1,0 +1,785 @@
+{
+  "schema": "stoneage.gameplay_mechanics_module03_21_original_petskillshop_source.r1",
+  "source": {
+    "scope": "MIXED25_COMMUNITY_PRESERVED_NPC_SOURCE_NOT_EARLY_OFFICIAL",
+    "npc_zip_sha256": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+    "replayed_all_2205_NPC_source_files_SHA_CRC": true,
+    "replayed_original_NPC_bytes": 1930332,
+    "upstream_CHAR01_blob": "a088b61a3212f7049e7793f587123ffb29bebad7",
+    "PET10_verified_server_table_blob": "25a37aeb134fb180e322e7dc335029b7374452d8",
+    "original_parent_RAR_sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+    "original_parent_RAR_reread_this_unit": false
+  },
+  "summary": {
+    "original_create_references": 21,
+    "exact_source_parameter_members": 21,
+    "original_parameter_bytes_total": 2117,
+    "original_pet_skill_ID_occurrences": 150,
+    "distinct_skill_IDs": 23,
+    "original_skill_rate_literal_counts": {
+      "1.2": 7,
+      "1.0": 11,
+      "1.1": 3
+    },
+    "unique_skill_IDs_present_in_both_potential_master_tables": 23,
+    "source_current_deployed_active_master_choice_proven": false
+  },
+  "original_skillshop_CREATE_to_parameter_rows": [
+    {
+      "parameter_path": "genout/psks_10408_18_34",
+      "source_original_bytes": 90,
+      "source_original_sha256": "a0fe1599ee798c483c8d2caa634618ee79a11d63bf9dd4f6ed930cb60af26890",
+      "source_original_crc32": "eac2dc82",
+      "create_file": "genout/shop_event.create",
+      "create_ordinal": 7,
+      "create_block_sha256": "c15bc95ea0ff41993f097b46733be9ca2422a1e85f5de7d5d22f80ff9a193126",
+      "source_floorid": 10408,
+      "source_graphicnum": 16046,
+      "source_function_token": "npcgen_petskillshop",
+      "source_skill_rate_literal": "1.2",
+      "source_pet_skill_ids_ordered": [
+        90
+      ],
+      "source_pet_skill_trailing_empty_token": false
+    },
+    {
+      "parameter_path": "genout/psks_10920_43_51",
+      "source_original_bytes": 131,
+      "source_original_sha256": "12088d89c585331b70d187b77003b4b91da663451a6978fce564ac8909a1a2b9",
+      "source_original_crc32": "5a535698",
+      "create_file": "genout/shop_event.create",
+      "create_ordinal": 17,
+      "create_block_sha256": "56fc1cac96dd137d48aca92ca4ff4b7ecf8188dae73b3713b45e5dcd26bbdf80",
+      "source_floorid": 10920,
+      "source_graphicnum": 16047,
+      "source_function_token": "npcgen_petskillshop",
+      "source_skill_rate_literal": "1.0",
+      "source_pet_skill_ids_ordered": [
+        0,
+        1,
+        2,
+        3,
+        60,
+        61,
+        80,
+        90,
+        100,
+        110,
+        200,
+        201
+      ],
+      "source_pet_skill_trailing_empty_token": false
+    },
+    {
+      "parameter_path": "genout/psks_10920_41_51",
+      "source_original_bytes": 125,
+      "source_original_sha256": "72abc33584f84e19eb8755d5ec62ea41e21916089b2ebb4eed52726f35123756",
+      "source_original_crc32": "95b17971",
+      "create_file": "genout/shop_event.create",
+      "create_ordinal": 18,
+      "create_block_sha256": "c5c083b2883a81be285abc64dac3201da886f4d18e75268cdc470dc98bf072f1",
+      "source_floorid": 10920,
+      "source_graphicnum": 16047,
+      "source_function_token": "npcgen_petskillshop",
+      "source_skill_rate_literal": "1.0",
+      "source_pet_skill_ids_ordered": [
+        10,
+        20,
+        30,
+        40,
+        50,
+        51,
+        120,
+        130,
+        150
+      ],
+      "source_pet_skill_trailing_empty_token": false
+    },
+    {
+      "parameter_path": "genout/psks_20712_22_4",
+      "source_original_bytes": 124,
+      "source_original_sha256": "a1302cfb143bf08c40862ac00c7e18c9089b39dba364c62159b7527d7bdb2c71",
+      "source_original_crc32": "d0030995",
+      "create_file": "genout/shop_event2.create",
+      "create_ordinal": 5,
+      "create_block_sha256": "c59a07b7eb197beb7f2b6f848ff557a6e8b80b458f9bfc4b01ad54fbcd350730",
+      "source_floorid": 20712,
+      "source_graphicnum": 16202,
+      "source_function_token": "npcgen_petskillshop",
+      "source_skill_rate_literal": "1.0",
+      "source_pet_skill_ids_ordered": [
+        0,
+        1,
+        2,
+        3,
+        60,
+        61,
+        80,
+        90,
+        100,
+        110,
+        200,
+        201
+      ],
+      "source_pet_skill_trailing_empty_token": false
+    },
+    {
+      "parameter_path": "genout/psks_20712_20_4",
+      "source_original_bytes": 118,
+      "source_original_sha256": "b302b4fa3d8655970f1923e3bcef5cc1b878986f241c2165a7206d3ce8aba2f3",
+      "source_original_crc32": "93577ae8",
+      "create_file": "genout/shop_event2.create",
+      "create_ordinal": 6,
+      "create_block_sha256": "d66412a3af2923c55a6b7e1bbacb72e2b9c533cf903ae9f000a647ffe7db498a",
+      "source_floorid": 20712,
+      "source_graphicnum": 16203,
+      "source_function_token": "npcgen_petskillshop",
+      "source_skill_rate_literal": "1.0",
+      "source_pet_skill_ids_ordered": [
+        10,
+        20,
+        30,
+        40,
+        50,
+        51,
+        120,
+        130,
+        150
+      ],
+      "source_pet_skill_trailing_empty_token": false
+    },
+    {
+      "parameter_path": "genout/psks_1003_18_13",
+      "source_original_bytes": 105,
+      "source_original_sha256": "c4063d4fe350ff3b1ed4638e72f62f919b229e042112c0f6e7aec7af24e41558",
+      "source_original_crc32": "d3944886",
+      "create_file": "genout/shop_m.create",
+      "create_ordinal": 6,
+      "create_block_sha256": "36a9e93bc3b422356dbadbcb9d69aec76c1022b5fa20d31e61cffc7df28add58",
+      "source_floorid": 1003,
+      "source_graphicnum": 16047,
+      "source_function_token": "npcgen_petskillshop",
+      "source_skill_rate_literal": "1.0",
+      "source_pet_skill_ids_ordered": [
+        0,
+        1,
+        2,
+        3,
+        10,
+        50,
+        100,
+        200,
+        201
+      ],
+      "source_pet_skill_trailing_empty_token": false
+    },
+    {
+      "parameter_path": "genout/psks_1008_28_24",
+      "source_original_bytes": 62,
+      "source_original_sha256": "2a5a67c8f4ed895d10fb81116ca5bbe9655936c11968386d3e724d0d5183cde4",
+      "source_original_crc32": "ef23c2f3",
+      "create_file": "genout/shop_m.create",
+      "create_ordinal": 21,
+      "create_block_sha256": "a67e07ada69e9d6d65847186b9010380f9b5ae33b3e9f077aca2bdd9d258ef22",
+      "source_floorid": 1008,
+      "source_graphicnum": 16063,
+      "source_function_token": "npcgen_petskillshop",
+      "source_skill_rate_literal": "1.0",
+      "source_pet_skill_ids_ordered": [
+        11
+      ],
+      "source_pet_skill_trailing_empty_token": false
+    },
+    {
+      "parameter_path": "genout/psks_1103_14_13",
+      "source_original_bytes": 112,
+      "source_original_sha256": "7f9c56f15febe500640bb4b86a128e53aa496fde7c66f6fa82e238ea9179bbf8",
+      "source_original_crc32": "25267ef8",
+      "create_file": "genout/shop_m.create",
+      "create_ordinal": 27,
+      "create_block_sha256": "95250c830e74ea1f1913764c7abeb54a3be26bbedab78e8e18f6b93106cf7723",
+      "source_floorid": 1103,
+      "source_graphicnum": 16047,
+      "source_function_token": "npcgen_petskillshop",
+      "source_skill_rate_literal": "1.0",
+      "source_pet_skill_ids_ordered": [
+        0,
+        1,
+        2,
+        3,
+        10,
+        40,
+        80,
+        130
+      ],
+      "source_pet_skill_trailing_empty_token": false
+    },
+    {
+      "parameter_path": "genout/psks_1203_18_13",
+      "source_original_bytes": 114,
+      "source_original_sha256": "1df1d53f6617cd497139828f3335668a7b9ecd1e636b650a90c8d9b2aa249c4f",
+      "source_original_crc32": "74481012",
+      "create_file": "genout/shop_m.create",
+      "create_ordinal": 42,
+      "create_block_sha256": "e9be4c71cd46bcc640c27d1e772886328906b641f97dbe4b6ea48ed6b94cb3e2",
+      "source_floorid": 1203,
+      "source_graphicnum": 16027,
+      "source_function_token": "npcgen_petskillshop",
+      "source_skill_rate_literal": "1.2",
+      "source_pet_skill_ids_ordered": [
+        0,
+        1,
+        2,
+        3,
+        10,
+        50,
+        80,
+        100,
+        120,
+        130
+      ],
+      "source_pet_skill_trailing_empty_token": false
+    },
+    {
+      "parameter_path": "genout/psks_1303_13_13",
+      "source_original_bytes": 103,
+      "source_original_sha256": "310106449c8b0ee0e4e5f0a474dfcf47f126d413d57a047207bfe80a8d14f3db",
+      "source_original_crc32": "b8f52b63",
+      "create_file": "genout/shop_m.create",
+      "create_ordinal": 54,
+      "create_block_sha256": "f799a403d749cae89ad3e3a5a1983818d764e2ff48517acff62fe737440ab1ca",
+      "source_floorid": 1303,
+      "source_graphicnum": 16049,
+      "source_function_token": "npcgen_petskillshop",
+      "source_skill_rate_literal": "1.1",
+      "source_pet_skill_ids_ordered": [
+        0,
+        1,
+        2,
+        3,
+        50,
+        61,
+        130
+      ],
+      "source_pet_skill_trailing_empty_token": false
+    },
+    {
+      "parameter_path": "genout/psks_1403_19_18",
+      "source_original_bytes": 94,
+      "source_original_sha256": "e699cce100a491c3fb84e9b55f46a54bf3e67ee019a3e74a639bc5ded526b32b",
+      "source_original_crc32": "8771894a",
+      "create_file": "genout/shop_m.create",
+      "create_ordinal": 71,
+      "create_block_sha256": "0e2d412214111fc1ee2fc44bebcec607611bfa78cd6f032b094f834e7c692abf",
+      "source_floorid": 1403,
+      "source_graphicnum": 16209,
+      "source_function_token": "npcgen_petskillshop",
+      "source_skill_rate_literal": "1.2",
+      "source_pet_skill_ids_ordered": [
+        0,
+        1,
+        2,
+        3,
+        51,
+        120
+      ],
+      "source_pet_skill_trailing_empty_token": false
+    },
+    {
+      "parameter_path": "genout/psks_2003_18_14",
+      "source_original_bytes": 109,
+      "source_original_sha256": "bd2d582757b07a35fb74a9580c4701441cec1b95715cd70a7ef602a802428a43",
+      "source_original_crc32": "3faccfc7",
+      "create_file": "genout/shop_m.create",
+      "create_ordinal": 83,
+      "create_block_sha256": "d29da8c0843d464ead125f15bf650c98391540322de6606642e2555e2e5175e2",
+      "source_floorid": 2003,
+      "source_graphicnum": 16046,
+      "source_function_token": "npcgen_petskillshop",
+      "source_skill_rate_literal": "1.0",
+      "source_pet_skill_ids_ordered": [
+        0,
+        1,
+        2,
+        3,
+        10,
+        51,
+        200,
+        201
+      ],
+      "source_pet_skill_trailing_empty_token": false
+    },
+    {
+      "parameter_path": "genout/psks_3003_16_13",
+      "source_original_bytes": 107,
+      "source_original_sha256": "e14c2dfd651cc9b958c64a27daf91d420a7135a275b956b1cdb0df588e382a8b",
+      "source_original_crc32": "7147cc1e",
+      "create_file": "genout/shop_m2.create",
+      "create_ordinal": 6,
+      "create_block_sha256": "6a43a5095676eac645cbbb2ae8f5560aac2d85f1aae50e0f0b355077030461d0",
+      "source_floorid": 3003,
+      "source_graphicnum": 16048,
+      "source_function_token": "npcgen_petskillshop",
+      "source_skill_rate_literal": "1.0",
+      "source_pet_skill_ids_ordered": [
+        0,
+        1,
+        2,
+        3,
+        10,
+        50,
+        200,
+        201
+      ],
+      "source_pet_skill_trailing_empty_token": false
+    },
+    {
+      "parameter_path": "genout/psks_3008_28_23",
+      "source_original_bytes": 60,
+      "source_original_sha256": "bbcfb495230822b819afbca120b2fdbb51019ccbefd8129e16511d8b8337ced8",
+      "source_original_crc32": "c10ac771",
+      "create_file": "genout/shop_m2.create",
+      "create_ordinal": 18,
+      "create_block_sha256": "343cd1ff6aa0f3a5e83080a4a99b40ca16d53ccc8f2eb6ccf60cc95694b0f4dd",
+      "source_floorid": 3008,
+      "source_graphicnum": 16052,
+      "source_function_token": "npcgen_petskillshop",
+      "source_skill_rate_literal": "1.0",
+      "source_pet_skill_ids_ordered": [
+        31
+      ],
+      "source_pet_skill_trailing_empty_token": false
+    },
+    {
+      "parameter_path": "genout/psks_3103_18_17",
+      "source_original_bytes": 104,
+      "source_original_sha256": "0b3690631b7ea41af957332e68fa7250a8f41eada5626688c196210cf363b77a",
+      "source_original_crc32": "e26d2c3a",
+      "create_file": "genout/shop_m2.create",
+      "create_ordinal": 33,
+      "create_block_sha256": "4ad8034c124b57bad3269d70f1212c6f2b96cba20da3b781fbf18fd8db72b683",
+      "source_floorid": 3103,
+      "source_graphicnum": 16017,
+      "source_function_token": "npcgen_petskillshop",
+      "source_skill_rate_literal": "1.1",
+      "source_pet_skill_ids_ordered": [
+        0,
+        1,
+        2,
+        10,
+        40,
+        80,
+        130
+      ],
+      "source_pet_skill_trailing_empty_token": false
+    },
+    {
+      "parameter_path": "genout/psks_3203_13_13",
+      "source_original_bytes": 103,
+      "source_original_sha256": "7cdde0fc42ca79ad9132874775039506b526c8f58335c3bc1d4395a9b28345d1",
+      "source_original_crc32": "f576ffba",
+      "create_file": "genout/shop_m2.create",
+      "create_ordinal": 46,
+      "create_block_sha256": "d5955b2e5a5cc6372def9c34b75eae4a479c32a6b53b82c131e9996859d9e4c3",
+      "source_floorid": 3203,
+      "source_graphicnum": 16019,
+      "source_function_token": "npcgen_petskillshop",
+      "source_skill_rate_literal": "1.2",
+      "source_pet_skill_ids_ordered": [
+        0,
+        1,
+        2,
+        3,
+        10,
+        51,
+        120
+      ],
+      "source_pet_skill_trailing_empty_token": false
+    },
+    {
+      "parameter_path": "genout/psks_3303_13_14",
+      "source_original_bytes": 95,
+      "source_original_sha256": "37269ddf06935621e10576b4c2fb9f9055c47f110bdcaaa28f51c2ade82bfc72",
+      "source_original_crc32": "ec724527",
+      "create_file": "genout/shop_m2.create",
+      "create_ordinal": 59,
+      "create_block_sha256": "b4ef8ce0b33db08f64c48000bbe75e59399c67d7edbfaab5f7c3389b24f10602",
+      "source_floorid": 3303,
+      "source_graphicnum": 16212,
+      "source_function_token": "npcgen_petskillshop",
+      "source_skill_rate_literal": "1.1",
+      "source_pet_skill_ids_ordered": [
+        0,
+        1,
+        2,
+        3,
+        50,
+        80,
+        100
+      ],
+      "source_pet_skill_trailing_empty_token": false
+    },
+    {
+      "parameter_path": "genout/psks_3403_18_14",
+      "source_original_bytes": 101,
+      "source_original_sha256": "ea1da946544969a1198985a328c3073c1b46af26a665c1b7f954edbf43831301",
+      "source_original_crc32": "6330b549",
+      "create_file": "genout/shop_m2.create",
+      "create_ordinal": 72,
+      "create_block_sha256": "20b84813e0c799a45bbe4b13346ba794440b7996e05a007ea6e27b8f3b002c97",
+      "source_floorid": 3403,
+      "source_graphicnum": 16018,
+      "source_function_token": "npcgen_petskillshop",
+      "source_skill_rate_literal": "1.2",
+      "source_pet_skill_ids_ordered": [
+        0,
+        1,
+        2,
+        3,
+        50,
+        61,
+        130
+      ],
+      "source_pet_skill_trailing_empty_token": false
+    },
+    {
+      "parameter_path": "genout/psks_4003_18_15",
+      "source_original_bytes": 111,
+      "source_original_sha256": "226c6193fd66f2dd8c36b29f070c5edccdd0dcf623dcf89ee41d27e16ecf9857",
+      "source_original_crc32": "3b8fe81b",
+      "create_file": "genout/shop_m2.create",
+      "create_ordinal": 85,
+      "create_block_sha256": "b53afaa1b067969f2a7cb9c38abf08d24bc719f0cb0d4baa758b7f8590e264e0",
+      "source_floorid": 4003,
+      "source_graphicnum": 16207,
+      "source_function_token": "npcgen_petskillshop",
+      "source_skill_rate_literal": "1.0",
+      "source_pet_skill_ids_ordered": [
+        0,
+        1,
+        2,
+        3,
+        10,
+        50,
+        100,
+        200,
+        201
+      ],
+      "source_pet_skill_trailing_empty_token": false
+    },
+    {
+      "parameter_path": "genout/psks_5003_23_13",
+      "source_original_bytes": 73,
+      "source_original_sha256": "89464dee647e05c8b0db114aefa83c4901baa6c7e7eea4fb7078f033318f6bf6",
+      "source_original_crc32": "deca8bf7",
+      "create_file": "genout/shop_m3.create",
+      "create_ordinal": 4,
+      "create_block_sha256": "7167b0099a9291eac4a850957f29e41d2360640d0915b85325c526f3a87f91ff",
+      "source_floorid": 5003,
+      "source_graphicnum": 16049,
+      "source_function_token": "npcgen_petskillshop",
+      "source_skill_rate_literal": "1.2",
+      "source_pet_skill_ids_ordered": [
+        2,
+        10,
+        20,
+        50,
+        51,
+        130
+      ],
+      "source_pet_skill_trailing_empty_token": false
+    },
+    {
+      "parameter_path": "genout/psks_5103_11_10",
+      "source_original_bytes": 76,
+      "source_original_sha256": "fb19b4eb3783d63a37f2e2386fcc21cd1206c586996dd2b1a5e7c6d4258f48b5",
+      "source_original_crc32": "c8103784",
+      "create_file": "genout/shop_m3.create",
+      "create_ordinal": 18,
+      "create_block_sha256": "677782ac2b6f08659c26c67144a478ffa9e45c212117d9e78e18d2b0a6f3dc4f",
+      "source_floorid": 5103,
+      "source_graphicnum": 16047,
+      "source_function_token": "npcgen_petskillshop",
+      "source_skill_rate_literal": "1.2",
+      "source_pet_skill_ids_ordered": [
+        20,
+        40,
+        60,
+        61,
+        120,
+        130
+      ],
+      "source_pet_skill_trailing_empty_token": true
+    }
+  ],
+  "source_skill_id_master_presence_candidates": [
+    {
+      "skill_id": 0,
+      "primary_petskill_txt": {
+        "source_line": 1,
+        "row_sha256": "d86133b57ac16a80e7359f0d2861b49da01117336a95fc5b89f93f7d243e9ff3"
+      },
+      "alternative_petskill1_txt": {
+        "source_line": 1,
+        "row_sha256": "164a13f6330cddf60d2d7a8bd2947ad09f338a0181a6688624aaeb5bc5b9c12f"
+      }
+    },
+    {
+      "skill_id": 1,
+      "primary_petskill_txt": {
+        "source_line": 2,
+        "row_sha256": "5f3f5a5c745c2a7da871cadf560a4c94abde106596faaed0c8b9f6a10b305004"
+      },
+      "alternative_petskill1_txt": {
+        "source_line": 2,
+        "row_sha256": "dc221cfe49f0d1aa6fcb64dae35ad9108a720b3eae4e1420df7e60556c4c8293"
+      }
+    },
+    {
+      "skill_id": 2,
+      "primary_petskill_txt": {
+        "source_line": 3,
+        "row_sha256": "901cfac114237e99e380a5358a983bd567a5de0fd3f5bb30b78eea7f1c519dd8"
+      },
+      "alternative_petskill1_txt": {
+        "source_line": 3,
+        "row_sha256": "5c2bb0b2d65902faac3777f660a4629de459b245739f621eaa0d53174bdc9d3f"
+      }
+    },
+    {
+      "skill_id": 3,
+      "primary_petskill_txt": {
+        "source_line": 4,
+        "row_sha256": "f4b694b14cbffc53b889d772c1b800402b1a939fcfd21d2b9bd8ca664a1ea283"
+      },
+      "alternative_petskill1_txt": {
+        "source_line": 4,
+        "row_sha256": "a2f2165f539f88902b07f7f346d2b8b41ef808dc595e6c3859679140123cf904"
+      }
+    },
+    {
+      "skill_id": 10,
+      "primary_petskill_txt": {
+        "source_line": 5,
+        "row_sha256": "13566b0b35e502d96a17ca6e27a1ca24739aeaece6d761fbe31c61001dd3c41a"
+      },
+      "alternative_petskill1_txt": {
+        "source_line": 5,
+        "row_sha256": "ef02d409529806e91b92d15c39750d4f293b6553afb541da9f1a51b401582042"
+      }
+    },
+    {
+      "skill_id": 11,
+      "primary_petskill_txt": {
+        "source_line": 6,
+        "row_sha256": "da3bd3b71232fa597368d954dfc89d5e1c29b9e7686e57f140361aff9feabd8b"
+      },
+      "alternative_petskill1_txt": {
+        "source_line": 6,
+        "row_sha256": "304969d8d876a6625f65e04bf9f411d41d16e9cd938df47e3e352bb555bebce8"
+      }
+    },
+    {
+      "skill_id": 20,
+      "primary_petskill_txt": {
+        "source_line": 9,
+        "row_sha256": "d3b6a8a2b35511f1cdf3173e1040d3c71a690cf337b20f537a4b11bdccc9f8f3"
+      },
+      "alternative_petskill1_txt": {
+        "source_line": 9,
+        "row_sha256": "757dd1d3bbc3d3dc55e967f43c3b81db34b84e720d21ad3585b39f7be4ade79f"
+      }
+    },
+    {
+      "skill_id": 30,
+      "primary_petskill_txt": {
+        "source_line": 10,
+        "row_sha256": "2f2ce882a4f5df7d49766dcb7af58cbb778f18a3212b7542d72f79007c0815ff"
+      },
+      "alternative_petskill1_txt": {
+        "source_line": 10,
+        "row_sha256": "e15641f5ccca61df41ff74314896d5c145707aeea43c1831ae1bd40dfab09b7c"
+      }
+    },
+    {
+      "skill_id": 31,
+      "primary_petskill_txt": {
+        "source_line": 11,
+        "row_sha256": "65fc9ae5632c05e5c97ffbd01b62a4d6302fbbf4a5a25ee32083554fb6f3c09c"
+      },
+      "alternative_petskill1_txt": {
+        "source_line": 11,
+        "row_sha256": "8381e0d8025923706eac711022734a47e3318b4f8f20c0027e8b0720a5cf5d1f"
+      }
+    },
+    {
+      "skill_id": 40,
+      "primary_petskill_txt": {
+        "source_line": 12,
+        "row_sha256": "ae64cefcde136959da245267f825a210f5bb76d666c59eff544b9dbb1e4e08e5"
+      },
+      "alternative_petskill1_txt": {
+        "source_line": 12,
+        "row_sha256": "87cbddf42b3effaf9f3f364f89353581b9ab65bc9518073abf8450091acb2d3c"
+      }
+    },
+    {
+      "skill_id": 50,
+      "primary_petskill_txt": {
+        "source_line": 14,
+        "row_sha256": "25e277e9f8f009f7728a44591b30acd36d39a3b5d09e3a120366aa5e3b75018f"
+      },
+      "alternative_petskill1_txt": {
+        "source_line": 14,
+        "row_sha256": "18286c275836a9c0d554817a29cce06054e5a59b61559e9731c1f25f81a11765"
+      }
+    },
+    {
+      "skill_id": 51,
+      "primary_petskill_txt": {
+        "source_line": 15,
+        "row_sha256": "b35f3f18d3c1a59b0f0b03542029fc6f755d134ff7cfff807101c6979a9d3337"
+      },
+      "alternative_petskill1_txt": {
+        "source_line": 15,
+        "row_sha256": "9c3dd4e457b354405e5c72def493b3ed3b023c4bfd460a4f228d157ba8bfdfae"
+      }
+    },
+    {
+      "skill_id": 60,
+      "primary_petskill_txt": {
+        "source_line": 17,
+        "row_sha256": "3e16e914b6295fb79edf9e9b37a6b10c37089c198cba22a4d52430019182cac6"
+      },
+      "alternative_petskill1_txt": {
+        "source_line": 17,
+        "row_sha256": "149ef2bd85df7e68d79d79a6882957fa0f32f4003ebfc086aa3cdef6ff733b8f"
+      }
+    },
+    {
+      "skill_id": 61,
+      "primary_petskill_txt": {
+        "source_line": 18,
+        "row_sha256": "0f1d7758ce8dfb5a31fd83875f5707b8414e1601e55d3415d8418297886b1952"
+      },
+      "alternative_petskill1_txt": {
+        "source_line": 18,
+        "row_sha256": "badef5dfcf103a983c880d59546cea6956d8647ba23752b9e3224399003fb371"
+      }
+    },
+    {
+      "skill_id": 80,
+      "primary_petskill_txt": {
+        "source_line": 19,
+        "row_sha256": "fdb936ee6a125dd34a114f166023d390bd8b1b5149d4530818e2a104318d0ff9"
+      },
+      "alternative_petskill1_txt": {
+        "source_line": 19,
+        "row_sha256": "b0b799cba2326fa4669be85b23417c3e828a770da802843fd0157607ddcc35e1"
+      }
+    },
+    {
+      "skill_id": 90,
+      "primary_petskill_txt": {
+        "source_line": 20,
+        "row_sha256": "549294531250d92e2f17aaacced02068dde9b381a3cf6aaf6d9ec924b92edd14"
+      },
+      "alternative_petskill1_txt": {
+        "source_line": 20,
+        "row_sha256": "68cc4ebc7bd1662c7d6cca82373def8f4ccf2a8055f730bd7ac73a066121f99f"
+      }
+    },
+    {
+      "skill_id": 100,
+      "primary_petskill_txt": {
+        "source_line": 21,
+        "row_sha256": "ccfea43d9f2f275774474ad5c749236874db094e5fadc6be601042fe7d9edd84"
+      },
+      "alternative_petskill1_txt": {
+        "source_line": 21,
+        "row_sha256": "e2fca04379098e09b113839c369cbda3da04d93ca6e5e9278f24593b427fb75c"
+      }
+    },
+    {
+      "skill_id": 110,
+      "primary_petskill_txt": {
+        "source_line": 22,
+        "row_sha256": "299e2df5d1043bc2cb1055b9cfdc16729f2954b1785b244231852909845638a7"
+      },
+      "alternative_petskill1_txt": {
+        "source_line": 22,
+        "row_sha256": "1e9f951efcaecdc13391bb09c78bbf6cbf3b09561024ceda4d5dd23477696d57"
+      }
+    },
+    {
+      "skill_id": 120,
+      "primary_petskill_txt": {
+        "source_line": 23,
+        "row_sha256": "fd2de33f6799763cb362d46a62ae17c012a46ef6b18407c837d6a520669ba008"
+      },
+      "alternative_petskill1_txt": {
+        "source_line": 23,
+        "row_sha256": "1e1188967a9e804a25234ea4e0f77ddcb969b78018b693325504464528619fa9"
+      }
+    },
+    {
+      "skill_id": 130,
+      "primary_petskill_txt": {
+        "source_line": 24,
+        "row_sha256": "ab0d39fb0870ebfcdc9fa9900d0c98bd02eecc9de07ec43997a87f1809dafe6f"
+      },
+      "alternative_petskill1_txt": {
+        "source_line": 24,
+        "row_sha256": "237bb4ecbd27453d3b8de4c858cab402830b982fd87d2ae135b0ebc67f46ae66"
+      }
+    },
+    {
+      "skill_id": 150,
+      "primary_petskill_txt": {
+        "source_line": 26,
+        "row_sha256": "980f40a464b6c9406072496e2b4e7bfde76e18ed14c8ab7360cd38d538080a2c"
+      },
+      "alternative_petskill1_txt": {
+        "source_line": 26,
+        "row_sha256": "ed2dc9934111b5092d7ed19067155a2e8b2e5489949834331d46f5b72de9bdb7"
+      }
+    },
+    {
+      "skill_id": 200,
+      "primary_petskill_txt": {
+        "source_line": 29,
+        "row_sha256": "3c3bd4fa622acc870141eb9369650b8580cc40ff342adcc0274a640620d09a20"
+      },
+      "alternative_petskill1_txt": {
+        "source_line": 29,
+        "row_sha256": "32df50b8c40b517b3fe39e1770215ecfae6f403dfbecc1ee1393e64e0474ee6f"
+      }
+    },
+    {
+      "skill_id": 201,
+      "primary_petskill_txt": {
+        "source_line": 30,
+        "row_sha256": "ea22ad620eb01e5e57b8e47850f42d98c616b8c7952cc3bb92e796e3cb414697"
+      },
+      "alternative_petskill1_txt": {
+        "source_line": 30,
+        "row_sha256": "2d6feaf0d812d8d590bebe92131af9ddf0c77d649be1136df1356afc73d09b76"
+      }
+    }
+  ],
+  "source_bounds": {
+    "source_skill_rate_price_multiplier_runtime_proven": false,
+    "source_pet_skill_field_defines_actual_learnable_skill_runtime_proven": false,
+    "source_floors_and_21_create_blocks_are_21_official_shop_count": false,
+    "primary_or_alternative_master_actually_deployed_proven": false,
+    "same_archive_numeric_id_is_not_runtime_foreign_key_confirmation": true,
+    "original_game_shop_operation_executed": false,
+    "official_TW10_CN182_JSS1999_equivalence_proven": false,
+    "proprietary_original_skill_names_or_text_or_assets_published": false,
+    "stage_A": "7_PARTIAL_2_OPEN",
+    "stage_B_and_wiki": "GATED",
+    "R79": "PAUSED_NON_BLOCKING",
+    "overall_percent": null
+  },
+  "next": "GAMEPLAY-MECHANICS-MODULE-04_ORIGINAL_BATTLE_SKILL_RUNTIME_AND_STATIC_SOURCE_LIMITS"
+}
