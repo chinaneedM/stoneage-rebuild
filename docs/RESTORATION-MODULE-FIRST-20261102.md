@@ -153,3 +153,10 @@ MAP/SCENE维持**SOURCE_BOUNDED_PARTIAL**，历史 CURRENT blob `c89e0e33537990a
 ### 2026-11-03 — MAP-SCENE-MODULE-04：955份原DAT与4166个真正原RD图块来源批量联接
 
 [MAP04原实物和不确定边界](continuity/STONEAGE-MAP-SCENE-MODULE-04-955-DAT-REAL-RD-PIXEL-BATCH-20261103.md)及[955原DAT×4166原RD源限定索引](../research/recovered/STONEAGE-MAP-SCENE-MODULE-04-955-ORIGINAL-DAT-4166-RD-PIXEL-INDEX-R1.json)：已保存社区混合2.5 RAR原DAT文件971份真实取出并全部与MAP01原CRC/SHA核同，其中955份具有标准8+6×格三原平面结构、2852551原格；13原零字节和3份二字节BGM文件不计为完整地图。候选两图形平面3082072次非零引用共5291不同图号，已认证TW1零售ADRN唯一对应4166且全部从原REAL实际RD索引像素解码成功，像素SHA去重4063；1125个无TW1索引仅85后期索引唯一、2后期索引多重、1038尚无任何两保存索引匹配，后期REAL仍未解码。相对MAP02新观察范围含3402原RD图号；旧780图中764重叠项RD、RGBA、PNG哈希一致，16以前有证但本次DAT没有引用的旧RD继续保留。私人4166 PNG候选及可搜图集 35673334B/SHA e9c43222797c7ebcddfcb1ccab6dbeba205b972bbbff4e1f29c14b3ece320d37 已保存Library、回读全SHA/4169成员CRC成功。源图片和原DAT/REAL不公开。MAP01旧63次失败与CURRENT原blob c89e0e33537990aa2132b47c40fef49a985a935c继续原样保留，Stage A 7 PARTIAL+2 OPEN、Stage B/wiki GATED、R79暂停、overall_percent=null，地图SOURCE_BOUNDED_PARTIAL。最高NEXT MAP-SCENE-MODULE-05：只在实际已有原图、原DAT、历史场景拼接材料上有限做场景原图组合与可见覆盖，按真实来源留原生层序/碰撞/同服未知；受限止点后转物品装备商店模块，不扩新引擎或优化体验。
+
+
+### 2026-11-03 — MAP05 真实源 DAT 格与 TW1 原 RD 图像的场景候选观察；地图模块止点
+
+[MAP05 原 DAT 来源场景窗口及界限](continuity/STONEAGE-MAP-SCENE-MODULE-05-REAL-PIXEL-SCENE-WINDOWS-20261103.md) 和 [公开来源限定索引](../research/recovered/STONEAGE-MAP-SCENE-MODULE-05-SOURCE-WINDOW-OBSERVATION-R1.json)：真正从旧 O29 私人源包重取并按 MAP02 整 SHA 复验地图 1000（160×160）与1001（30×30）两份原 DAT，且从 MAP04 私人已验4166 RD原像素PNG包重读、整 ZIP SHA 与4169 CRC核验，并对本次实际引用的497原图逐PNG/RGBA SHA复核。1000原两个候选图层26324次非零数字引用，MAP04+02原RD对照26310次，余14次集中12号未取得原像素；1001原948次非零引用皆可对应已验原RD，但815次低数字1–99保留原值不当可见原构件。五个原格坐标窗口共15份私人现代候选图，缺原图标记不补造。私人交付14774654B/SHA a945fdf91d243019caed85d8f1714518e6d81627457adf1539102ed03aaa013e，18成员本地CRC成功，个人Library上传**尚未成功**、无云端回读。公开Git只有源SHA/分层数值收据、8项本地通过的正负契约与文档/CI，无原商美术、原DAT格正文；公开CI不等于原像素或原版执行。MAP01 63失败、MAP04 1125无TW1索引数字、原native绘制/碰撞/同部署/原世界运行均保留OPEN。Stage A 7PARTIAL+2OPEN、Stage B/wiki GATED、R79暂停、overall_percent=null不变。
+
+**MAP/SCENE 状态 SOURCE_BOUNDED_PARTIAL；当前最高 NEXT ITEM-EQUIPMENT-SHOP-MODULE-01 SOURCE-BATCH-CENSUS。** 按模块集中从已获得物品主表、原图、装备数值、商店及配方批量整理有来源可查的跨版本目录，不能回到单个MAP贴图微任务，不做新游戏体验优化。
