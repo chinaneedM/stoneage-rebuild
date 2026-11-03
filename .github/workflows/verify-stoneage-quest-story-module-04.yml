@@ -1,0 +1,24 @@
+name: Verify QUEST04 original quest source qualification and dated event provenance
+on:
+  push:
+    paths:
+      - 'research/recovered/STONEAGE-QUEST04-SOURCE-BOUNDED-FAMILIES-R1.json'
+      - 'research/recovered/STONEAGE-CHARACTER-NPC-MODULE-01-FULL-SOURCE-ROWS-R1.json'
+      - 'research/recovered/item-module-01/**'
+      - 'tests/test_stoneage_quest_story_module_04.py'
+      - '.github/workflows/verify-stoneage-quest-story-module-04.yml'
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-QUEST04-SOURCE-BOUNDED-FAMILIES-R1.json'
+      - 'tests/test_stoneage_quest_story_module_04.py'
+      - '.github/workflows/verify-stoneage-quest-story-module-04.yml'
+  workflow_dispatch:
+jobs:
+  source-derived-qualifiers:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest discover -s tests -p 'test_stoneage_quest_story_module_04.py' -v
