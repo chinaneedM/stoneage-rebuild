@@ -1,0 +1,241 @@
+{
+  "schema": "stoneage.map_scene_module05.private_original_DAT_cells_to_real_RD_image_candidate_observation.r1",
+  "date": "2026-11-03",
+  "original_map_artifacts_source": "Retained private O29 original DAT files (mixed25 community, not TW1 native client build)",
+  "original_TW1_RD_pixel_artifacts_source": "MAP04 private 4166 real decoded indexed RD -> candidate Palet1 PNG, verified ZIP SHA and per-item SHA",
+  "original_map1000_and_1001_bytes_checked_against_MAP02_source_floors": true,
+  "MAP04_private_real_pixel_ZIP_sha256": "e9c43222797c7ebcddfcb1ccab6dbeba205b972bbbff4e1f29c14b3ece320d37",
+  "MAP04_real_RD_source_bitmap_receipts_count": 4166,
+  "private_source_PNG_SHA256_and_RGBA_replay_per_used_alias": 497,
+  "private_original_pixel_content_added": 0,
+  "source_floors": [
+    {
+      "source_floor_id": 1000,
+      "original_DAT_source_sha256": "94b19cb59d72b7b48da70d2741ba68516caad970297fd48ed11ef720fa3ea97e",
+      "original_DAT_bytes": 153608,
+      "source_width": 160,
+      "source_height": 160,
+      "source_cells": 25600,
+      "first_two_plane_nonzero_numeric_references": 26324,
+      "MAP04_real_RD_covered_references": 26290,
+      "MAP02_and_MAP04_real_RD_covered_references": 26310,
+      "unmatched_reference_occurrences": 14,
+      "unmatched_unique_aliases": [
+        11208,
+        22413,
+        24305,
+        24306,
+        24307,
+        24308,
+        24309,
+        24310,
+        24311,
+        24312,
+        24316,
+        24322
+      ],
+      "all_nonzero_references_unique_aliases": 752,
+      "numeric_references_alias_1_to_99_not_rendered_as_original_scene": 1578
+    },
+    {
+      "source_floor_id": 1001,
+      "original_DAT_source_sha256": "62dbef1614ede0ba032ca9c69cbfdc3d43938e45baba78701885790937b86b90",
+      "original_DAT_bytes": 5408,
+      "source_width": 30,
+      "source_height": 30,
+      "source_cells": 900,
+      "first_two_plane_nonzero_numeric_references": 948,
+      "MAP04_real_RD_covered_references": 948,
+      "MAP02_and_MAP04_real_RD_covered_references": 948,
+      "unmatched_reference_occurrences": 0,
+      "unmatched_unique_aliases": [],
+      "all_nonzero_references_unique_aliases": 39,
+      "numeric_references_alias_1_to_99_not_rendered_as_original_scene": 815
+    }
+  ],
+  "observation_windows": [
+    {
+      "window": "1000-northwest-new",
+      "floor": 1000,
+      "label": "地图1000·西北原始格窗口（旧O29未覆盖）",
+      "source_coordinate_rect": [
+        0,
+        0,
+        31,
+        31
+      ],
+      "cells": 1024,
+      "original_DAT_sha256": "94b19cb59d72b7b48da70d2741ba68516caad970297fd48ed11ef720fa3ea97e",
+      "two_plane_numeric_nonzero_references": 1025,
+      "source_qualified_actual_TW1_RD_references": 1025,
+      "source_qualified_RD_covered_in_union": 1025,
+      "source_unmatched_references": 0,
+      "numeric_references_alias_1_to_99_not_rendered": 0,
+      "unmatched_aliases": [],
+      "unmatched_references_per_alias": [],
+      "observed_old_O29_source_window_overlap": false
+    },
+    {
+      "window": "1000-gap-cluster",
+      "floor": 1000,
+      "label": "地图1000·12缺图号集中区（保留原缺件）",
+      "source_coordinate_rect": [
+        74,
+        74,
+        105,
+        105
+      ],
+      "cells": 1024,
+      "original_DAT_sha256": "94b19cb59d72b7b48da70d2741ba68516caad970297fd48ed11ef720fa3ea97e",
+      "two_plane_numeric_nonzero_references": 1178,
+      "source_qualified_actual_TW1_RD_references": 1162,
+      "source_qualified_RD_covered_in_union": 1164,
+      "source_unmatched_references": 14,
+      "numeric_references_alias_1_to_99_not_rendered": 110,
+      "unmatched_aliases": [
+        11208,
+        22413,
+        24305,
+        24306,
+        24307,
+        24308,
+        24309,
+        24310,
+        24311,
+        24312,
+        24316,
+        24322
+      ],
+      "unmatched_references_per_alias": [
+        [
+          11208,
+          1
+        ],
+        [
+          22413,
+          2
+        ],
+        [
+          24305,
+          1
+        ],
+        [
+          24306,
+          1
+        ],
+        [
+          24307,
+          1
+        ],
+        [
+          24308,
+          1
+        ],
+        [
+          24309,
+          1
+        ],
+        [
+          24310,
+          1
+        ],
+        [
+          24311,
+          2
+        ],
+        [
+          24312,
+          1
+        ],
+        [
+          24316,
+          1
+        ],
+        [
+          24322,
+          1
+        ]
+      ],
+      "observed_old_O29_source_window_overlap": false
+    },
+    {
+      "window": "1000-southeast-new",
+      "floor": 1000,
+      "label": "地图1000·东南原始格窗口（旧O29未覆盖）",
+      "source_coordinate_rect": [
+        110,
+        110,
+        141,
+        141
+      ],
+      "cells": 1024,
+      "original_DAT_sha256": "94b19cb59d72b7b48da70d2741ba68516caad970297fd48ed11ef720fa3ea97e",
+      "two_plane_numeric_nonzero_references": 1060,
+      "source_qualified_actual_TW1_RD_references": 1060,
+      "source_qualified_RD_covered_in_union": 1060,
+      "source_unmatched_references": 0,
+      "numeric_references_alias_1_to_99_not_rendered": 25,
+      "unmatched_aliases": [],
+      "unmatched_references_per_alias": [],
+      "observed_old_O29_source_window_overlap": false
+    },
+    {
+      "window": "1000-o29-overlap-baseline",
+      "floor": 1000,
+      "label": "地图1000·O29已有来源区域（用于回归）",
+      "source_coordinate_rect": [
+        48,
+        92,
+        72,
+        132
+      ],
+      "cells": 1025,
+      "original_DAT_sha256": "94b19cb59d72b7b48da70d2741ba68516caad970297fd48ed11ef720fa3ea97e",
+      "two_plane_numeric_nonzero_references": 1260,
+      "source_qualified_actual_TW1_RD_references": 1255,
+      "source_qualified_RD_covered_in_union": 1260,
+      "source_unmatched_references": 0,
+      "numeric_references_alias_1_to_99_not_rendered": 183,
+      "unmatched_aliases": [],
+      "unmatched_references_per_alias": [],
+      "observed_old_O29_source_window_overlap": true
+    },
+    {
+      "window": "1001-complete-source-window",
+      "floor": 1001,
+      "label": "地图1001·完整30×30原始DAT（扩大旧观察范围）",
+      "source_coordinate_rect": [
+        0,
+        0,
+        29,
+        29
+      ],
+      "cells": 900,
+      "original_DAT_sha256": "62dbef1614ede0ba032ca9c69cbfdc3d43938e45baba78701885790937b86b90",
+      "two_plane_numeric_nonzero_references": 948,
+      "source_qualified_actual_TW1_RD_references": 948,
+      "source_qualified_RD_covered_in_union": 948,
+      "source_unmatched_references": 0,
+      "numeric_references_alias_1_to_99_not_rendered": 815,
+      "unmatched_aliases": [],
+      "unmatched_references_per_alias": [],
+      "observed_old_O29_source_window_overlap": false
+    }
+  ],
+  "bounds": {
+    "native_original_client_started": false,
+    "native_original_server_started": false,
+    "source_later_map_and_retail_TW1_same_deployment_proven": false,
+    "actual_original_scene_rendering_proven": false,
+    "original_collision_layer_semantics_proven": false,
+    "candidate_compositing_uses_modern_32x24_grid_not_native_engine": true,
+    "source_geometry_fallback_offsets_are_hypothetical": true,
+    "source_original_bytes_embedded_in_public_report": false,
+    "source_proprietary_original_pixels_embedded_in_public_Git": false
+  },
+  "next": "MAP_MODULE_SOURCE_BOUNDED_PARTIAL; proceed ITEM_EQUIPMENT_SHOP_MODULE_01 source batch, retain 12 unresolved aliases and original native renderer OPEN",
+  "source_provenance_original_DAT_full_SHA256_only": true,
+  "private_artifact_sha256": "a945fdf91d243019caed85d8f1714518e6d81627457adf1539102ed03aaa013e",
+  "private_artifact_bytes": 14774654,
+  "private_artifact_member_count": 18
+}
