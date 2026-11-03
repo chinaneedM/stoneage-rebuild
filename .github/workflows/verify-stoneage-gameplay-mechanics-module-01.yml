@@ -1,4 +1,4 @@
-name: Verify GAMEPLAY01-06 original gameplay source attribution and limits
+name: Verify GAMEPLAY01-07 original gameplay source attribution and limits
 on:
   push:
     paths:
@@ -16,6 +16,10 @@ on:
       - 'tests/test_stoneage_gameplay_mechanics_module_05.py'
       - 'research/recovered/STONEAGE-GAMEPLAY06-ORIGINAL-TRANSPORT-WINDOW-AND-ITEMPOOL-SOURCE-R1.json'
       - 'tests/test_stoneage_gameplay_mechanics_module_06.py'
+      - 'research/recovered/STONEAGE-GAMEPLAY07-GETPET-NPCENEMY-ORIGINAL-SKILL-SOURCE-R1.json'
+      - 'research/recovered/STONEAGE-CHARACTER-NPC-MODULE-09-ORIGINAL-NPCENEMY-ROSTER-BRIDGE-R1.json'
+      - 'research/recovered/STONEAGE-O59-NAMED-WILD-CAPTURE-SOURCE-R1.json'
+      - 'tests/test_stoneage_gameplay_mechanics_module_07.py'
       - 'research/recovered/item-module-01/**'
       - 'research/recovered/STONEAGE-O16-TW10-BATTLE-NATIVE-PALETTE-INTERLEAVE-R1.json'
       - 'research/recovered/STONEAGE-O40-TW10-NATIVE-BATTLE-PATH-SOURCE-R1.json'
@@ -35,6 +39,10 @@ on:
       - 'tests/test_stoneage_gameplay_mechanics_module_05.py'
       - 'research/recovered/STONEAGE-GAMEPLAY06-ORIGINAL-TRANSPORT-WINDOW-AND-ITEMPOOL-SOURCE-R1.json'
       - 'tests/test_stoneage_gameplay_mechanics_module_06.py'
+      - 'research/recovered/STONEAGE-GAMEPLAY07-GETPET-NPCENEMY-ORIGINAL-SKILL-SOURCE-R1.json'
+      - 'research/recovered/STONEAGE-CHARACTER-NPC-MODULE-09-ORIGINAL-NPCENEMY-ROSTER-BRIDGE-R1.json'
+      - 'research/recovered/STONEAGE-O59-NAMED-WILD-CAPTURE-SOURCE-R1.json'
+      - 'tests/test_stoneage_gameplay_mechanics_module_07.py'
       - 'research/recovered/item-module-01/**'
       - 'research/recovered/STONEAGE-O16-TW10-BATTLE-NATIVE-PALETTE-INTERLEAVE-R1.json'
       - 'research/recovered/STONEAGE-O40-TW10-NATIVE-BATTLE-PATH-SOURCE-R1.json'
@@ -54,3 +62,4 @@ jobs:
       - run: python -m unittest discover -s tests -p 'test_stoneage_gameplay_mechanics_module_04.py' -v
       - run: python -m unittest discover -s tests -p 'test_stoneage_gameplay_mechanics_module_05.py' -v
       - run: python -m unittest discover -s tests -p 'test_stoneage_gameplay_mechanics_module_06.py' -v
+      - run: python -m unittest discover -s tests -p 'test_stoneage_gameplay_mechanics_module_07.py' -v
