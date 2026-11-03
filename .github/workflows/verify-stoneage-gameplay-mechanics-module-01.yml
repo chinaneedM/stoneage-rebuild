@@ -7,6 +7,9 @@ on:
       - 'tests/test_stoneage_gameplay_mechanics_module_01.py'
       - 'research/recovered/STONEAGE-GAMEPLAY02-ORIGINAL-RIDER-PET-TALK-SOURCE-R1.json'
       - 'tests/test_stoneage_gameplay_mechanics_module_02.py'
+      - 'research/recovered/STONEAGE-GAMEPLAY03-ORIGINAL-21-PET-SKILL-SHOP-SOURCE-R1.json'
+      - 'research/recovered/STONEAGE-PET-MODULE-10-ORIGINAL-MIXED25-SERVER-TABLES-R1.json'
+      - 'tests/test_stoneage_gameplay_mechanics_module_03.py'
       - '.github/workflows/verify-stoneage-gameplay-mechanics-module-01.yml'
   pull_request:
     paths:
@@ -14,6 +17,9 @@ on:
       - 'tests/test_stoneage_gameplay_mechanics_module_01.py'
       - 'research/recovered/STONEAGE-GAMEPLAY02-ORIGINAL-RIDER-PET-TALK-SOURCE-R1.json'
       - 'tests/test_stoneage_gameplay_mechanics_module_02.py'
+      - 'research/recovered/STONEAGE-GAMEPLAY03-ORIGINAL-21-PET-SKILL-SHOP-SOURCE-R1.json'
+      - 'research/recovered/STONEAGE-PET-MODULE-10-ORIGINAL-MIXED25-SERVER-TABLES-R1.json'
+      - 'tests/test_stoneage_gameplay_mechanics_module_03.py'
       - '.github/workflows/verify-stoneage-gameplay-mechanics-module-01.yml'
   workflow_dispatch:
 jobs:
@@ -26,3 +32,4 @@ jobs:
           python-version: '3.12'
       - run: python -m unittest discover -s tests -p 'test_stoneage_gameplay_mechanics_module_01.py' -v
       - run: python -m unittest discover -s tests -p 'test_stoneage_gameplay_mechanics_module_02.py' -v
+      - run: python -m unittest discover -s tests -p 'test_stoneage_gameplay_mechanics_module_03.py' -v
