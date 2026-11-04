@@ -1,4 +1,4 @@
-name: Verify GAMEPLAY01-07 and INTEGRATION01-03 original source evidence
+name: Verify GAMEPLAY01-07, INTEGRATION01-03 and Stage A source-gap evidence
 on:
   push:
     paths:
@@ -33,6 +33,9 @@ on:
       - 'research/recovered/STONEAGE-CHARACTER-NPC-MODULE-05-30-ORIGINAL-MOTION-SOURCE-BRIDGE-R1.json'
       - 'research/recovered/STONEAGE-PET-MODULE-07-TW10-BATCH-PUBLIC-R1.json'
       - 'tests/test_stoneage_integration_module_03.py'
+      - 'research/recovered/STONEAGE-STAGE-A-ORIGINAL-DAT-AND-SAME-BUILD-SOURCE-GAP-R1.json'
+      - 'research/recovered/STONEAGE-STAGE-A-CONSOLIDATED-REVIEW-R2.json'
+      - 'tests/test_stoneage_stage_a_source_gap_20261104.py'
       - 'research/recovered/item-module-01/**'
       - 'research/recovered/STONEAGE-O16-TW10-BATTLE-NATIVE-PALETTE-INTERLEAVE-R1.json'
       - 'research/recovered/STONEAGE-O40-TW10-NATIVE-BATTLE-PATH-SOURCE-R1.json'
@@ -69,6 +72,9 @@ on:
       - 'research/recovered/STONEAGE-CHARACTER-NPC-MODULE-05-30-ORIGINAL-MOTION-SOURCE-BRIDGE-R1.json'
       - 'research/recovered/STONEAGE-PET-MODULE-07-TW10-BATCH-PUBLIC-R1.json'
       - 'tests/test_stoneage_integration_module_03.py'
+      - 'research/recovered/STONEAGE-STAGE-A-ORIGINAL-DAT-AND-SAME-BUILD-SOURCE-GAP-R1.json'
+      - 'research/recovered/STONEAGE-STAGE-A-CONSOLIDATED-REVIEW-R2.json'
+      - 'tests/test_stoneage_stage_a_source_gap_20261104.py'
       - 'research/recovered/item-module-01/**'
       - 'research/recovered/STONEAGE-O16-TW10-BATTLE-NATIVE-PALETTE-INTERLEAVE-R1.json'
       - 'research/recovered/STONEAGE-O40-TW10-NATIVE-BATTLE-PATH-SOURCE-R1.json'
@@ -92,3 +98,4 @@ jobs:
       - run: python -m unittest discover -s tests -p 'test_stoneage_integration_module_01.py' -v
       - run: python -m unittest discover -s tests -p 'test_stoneage_integration_module_02.py' -v
       - run: python -m unittest discover -s tests -p 'test_stoneage_integration_module_03.py' -v
+      - run: python -m unittest discover -s tests -p 'test_stoneage_stage_a_source_gap_20261104.py' -v
