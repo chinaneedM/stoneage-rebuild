@@ -86,9 +86,9 @@ class OfflineDojoSourceAtlas(unittest.TestCase):
         self.assertEqual(Counter(str(v) for x in r["disciples"] for v in x["warp_map_raw_codes"]),
                          nums["warp_center_map_codes"])
         previous = self.previous["floor3021_original_NPCCREATE"]
-        self.assertEqual(sorted((int(k),v) for k,v in nums["npc_center_map_codes"].items()),
+        self.assertEqual([list(pair) for pair in sorted((int(k),v) for k,v in nums["npc_center_map_codes"].items())],
                          previous["raw_3021_MAP_values_at_disciple_centers"])
-        self.assertEqual(sorted((int(k),v) for k,v in nums["warp_center_map_codes"].items()),
+        self.assertEqual([list(pair) for pair in sorted((int(k),v) for k,v in nums["warp_center_map_codes"].items())],
                          previous["raw_3021_MAP_values_at_warp_centers"])
         self.assertEqual(nums["routed_within_3021"], 99)
         self.assertEqual(nums["last_target_3008"], [3008, 20, 20])
