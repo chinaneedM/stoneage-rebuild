@@ -1,0 +1,320 @@
+{
+  "schema": "stoneage.stage_a_original_private_mixed25_RAR_direct_block_read_and_CN182_provenance.r1",
+  "observation_date": "2026-11-04",
+  "starting_main_head": "a855710ef8278e62a1d9654a5f572cb78c2d4ff0",
+  "starting_main_tree": "83b413042423614ca18fc7dac6a380b4ecd5fdcf",
+  "evidence_type": "PRIVATE_ORIGINAL_ARCHIVE_REPLAY_PLUS_CONTEMPORANEOUS_PUBLISHED_OPERATOR_STATEMENTS",
+  "source_git_blobs": {
+    "map01": "03675ee98d391f9ef0246315b2426f2a8b721fd3",
+    "prior_gap": "cf661b5eb7d438ed7ce6c1de6b7e07f4b14ffa92",
+    "current_historical_state_unmodified": "c89e0e33537990aa2132b47c40fef49a985a935c"
+  },
+  "source_original_private_archive": {
+    "original_RAR_bytes": 361255180,
+    "original_RAR_SHA256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+    "file_format": "RAR4",
+    "archive_member_headers_parsed": 7952,
+    "source_from": "previously privately retained authorized Research Library RAR; raw file never committed",
+    "re_read_this_unit": true,
+    "full_archive_SHA_verified_this_unit": true
+  },
+  "methods": {
+    "header": "rarfile Python 4.2 only header fields; not independent decompression",
+    "baseline_reader": "libarchive 3.7.4 native /usr/lib/x86_64-linux-gnu/libarchive.so.13.7.4",
+    "current_reader": "same libarchive version but archive_read_data_block API instead of prior archive_read_data API",
+    "independent_decompressor_successfully_executed": false,
+    "full_crc_check": "zlib.crc32 over candidate decoded bytes compared with exact RAR4 member header CRC32",
+    "structural_check": "First 8 emitted bytes interpreted little-endian width/height. Shape only candidate: length==8+6*W*H for DAT or 8+2*W*H for MAP.",
+    "source_bundle_original_7912_RAR_entries_not_claimed": false,
+    "current_original_archived_MAP_DAT_renderer_executed": false
+  },
+  "results": [
+    {
+      "source_group": "ADDON_SACH_MX_0_30",
+      "member_basename": "3021.MAP",
+      "raw_member_path_suffix": "/SACH-MX0.30/MAP/3021.MAP",
+      "packed_data_offset_in_original_RAR": 686788,
+      "packed_bytes": 1437,
+      "packed_SHA256": "d0ffdf1773aac15a12ca9470388f6a2f9771aa967b0df02fbf43c29827147ceb",
+      "original_RAR_header_uncompressed_bytes": 117224,
+      "original_RAR_header_uncompressed_CRC32": "5ca00592",
+      "direct_block_API_decoded_bytes": 117224,
+      "direct_block_API_decoded_SHA256": "57a230c56ab77c418101e296480f7a04ce653e0aaf0512e15050e22b335ab789",
+      "direct_block_API_decoded_CRC32": "5ca00592",
+      "direct_block_API_terminal_return_code": 1,
+      "direct_block_API_terminal_error": null,
+      "decoded_first_two_u32": [
+        407,
+        144
+      ],
+      "decoded_shape_candidate": "ONE_16BIT_PLANE",
+      "decoded_three_plane_nonzero_counts": null,
+      "full_declared_length_emitted": true,
+      "full_member_CRC_verified": true,
+      "source_qualified_original_DAT": false,
+      "qualification": "CRC_AND_SOURCE_SHA_OK"
+    },
+    {
+      "source_group": "CLIENT_MAIN_SA25",
+      "member_basename": "100.DAT",
+      "raw_member_path_suffix": "/stoneage2.5/map/100.DAT",
+      "packed_data_offset_in_original_RAR": 346819161,
+      "packed_bytes": 351013,
+      "packed_SHA256": "4e5b58d59f0291383ad31f3db3f5e2be8cb8ac088991f7526c3017d4f1f8bda6",
+      "original_RAR_header_uncompressed_bytes": 3840008,
+      "original_RAR_header_uncompressed_CRC32": "aa7a58ad",
+      "direct_block_API_decoded_bytes": 162560,
+      "direct_block_API_decoded_SHA256": "bed0c7ccdc0e0cb9aafacbb15761214ca9e421d6d326d03b0422be3a9c778354",
+      "direct_block_API_decoded_CRC32": "47fae7f4",
+      "direct_block_API_terminal_return_code": -25,
+      "direct_block_API_terminal_error": "Parsing filters is unsupported.",
+      "decoded_first_two_u32": [
+        800,
+        800
+      ],
+      "decoded_shape_candidate": null,
+      "decoded_three_plane_nonzero_counts": null,
+      "full_declared_length_emitted": false,
+      "full_member_CRC_verified": false,
+      "source_qualified_original_DAT": false,
+      "qualification": "CRC_OR_FILTER_FAILED_NOT_AUTHENTIC_SOURCE"
+    },
+    {
+      "source_group": "CLIENT_MAIN_SA25",
+      "member_basename": "1000.DAT",
+      "raw_member_path_suffix": "/stoneage2.5/map/1000.DAT",
+      "packed_data_offset_in_original_RAR": 347276247,
+      "packed_bytes": 27620,
+      "packed_SHA256": "b22ca52137c794bfbee448f6b5ca6951e5ae21705d1b616ce07c3dc6efffc027",
+      "original_RAR_header_uncompressed_bytes": 153608,
+      "original_RAR_header_uncompressed_CRC32": "cd608784",
+      "direct_block_API_decoded_bytes": 153608,
+      "direct_block_API_decoded_SHA256": "5fdf53fa81cc9d5cd1667340f512560b1d539b2444867cd3eab1d9248d7e5d63",
+      "direct_block_API_decoded_CRC32": "8dd3cd0a",
+      "direct_block_API_terminal_return_code": -30,
+      "direct_block_API_terminal_error": "File CRC error",
+      "decoded_first_two_u32": [
+        160,
+        160
+      ],
+      "decoded_shape_candidate": "THREE_16BIT_PLANES",
+      "decoded_three_plane_nonzero_counts": [
+        24249,
+        1762,
+        24320
+      ],
+      "full_declared_length_emitted": true,
+      "full_member_CRC_verified": false,
+      "source_qualified_original_DAT": false,
+      "qualification": "CRC_OR_FILTER_FAILED_NOT_AUTHENTIC_SOURCE"
+    },
+    {
+      "source_group": "CLIENT_MAIN_SA25",
+      "member_basename": "200.dat",
+      "raw_member_path_suffix": "/stoneage2.5/map/200.dat",
+      "packed_data_offset_in_original_RAR": 347928030,
+      "packed_bytes": 449006,
+      "packed_SHA256": "b18527dc531f4516ab12e5b0ec381821024795da9f08cb789bc33f0abd09480b",
+      "original_RAR_header_uncompressed_bytes": 5760008,
+      "original_RAR_header_uncompressed_CRC32": "8315f313",
+      "direct_block_API_decoded_bytes": 2457600,
+      "direct_block_API_decoded_SHA256": "17cb226731cc61e6d03a5ca14070177ad36f8224ecd0ed1c6db3ebdc589612c3",
+      "direct_block_API_decoded_CRC32": "70d9d9de",
+      "direct_block_API_terminal_return_code": -30,
+      "direct_block_API_terminal_error": "Prefix found",
+      "decoded_first_two_u32": [
+        800,
+        1200
+      ],
+      "decoded_shape_candidate": null,
+      "decoded_three_plane_nonzero_counts": null,
+      "full_declared_length_emitted": false,
+      "full_member_CRC_verified": false,
+      "source_qualified_original_DAT": false,
+      "qualification": "CRC_OR_FILTER_FAILED_NOT_AUTHENTIC_SOURCE"
+    },
+    {
+      "source_group": "CLIENT_MAIN_SA25",
+      "member_basename": "2000.DAT",
+      "raw_member_path_suffix": "/stoneage2.5/map/2000.DAT",
+      "packed_data_offset_in_original_RAR": 348520689,
+      "packed_bytes": 18708,
+      "packed_SHA256": "aaa84827a2ab780407c70f747c4a55a508847998e03ccf9ea8b529a880cff76b",
+      "original_RAR_header_uncompressed_bytes": 135008,
+      "original_RAR_header_uncompressed_CRC32": "35bf728a",
+      "direct_block_API_decoded_bytes": 135008,
+      "direct_block_API_decoded_SHA256": "d75231434c69118a518a8d5dd34f266264b8551fe4f2d55a20cdfa11b46584b3",
+      "direct_block_API_decoded_CRC32": "35bf728a",
+      "direct_block_API_terminal_return_code": 1,
+      "direct_block_API_terminal_error": null,
+      "decoded_first_two_u32": [
+        150,
+        150
+      ],
+      "decoded_shape_candidate": "THREE_16BIT_PLANES",
+      "decoded_three_plane_nonzero_counts": [
+        16307,
+        1154,
+        17350
+      ],
+      "full_declared_length_emitted": true,
+      "full_member_CRC_verified": true,
+      "source_qualified_original_DAT": true,
+      "qualification": "CRC_AND_SOURCE_SHA_OK"
+    },
+    {
+      "source_group": "CLIENT_MAIN_SA25",
+      "member_basename": "3000.dat",
+      "raw_member_path_suffix": "/stoneage2.5/map/3000.dat",
+      "packed_data_offset_in_original_RAR": 349174922,
+      "packed_bytes": 14044,
+      "packed_SHA256": "ae17982886d85012f8f264f7c2d6c8e139dc535a669f8f5da1270173ea0dff24",
+      "original_RAR_header_uncompressed_bytes": 135008,
+      "original_RAR_header_uncompressed_CRC32": "8a628975",
+      "direct_block_API_decoded_bytes": 135008,
+      "direct_block_API_decoded_SHA256": "1d4f2fd928e3ff152b66f3a7e5c2a0a3cde72fb2ee04738efe3f776bb28b3327",
+      "direct_block_API_decoded_CRC32": "4de1a6cb",
+      "direct_block_API_terminal_return_code": -30,
+      "direct_block_API_terminal_error": "File CRC error",
+      "decoded_first_two_u32": [
+        150,
+        150
+      ],
+      "decoded_shape_candidate": "THREE_16BIT_PLANES",
+      "decoded_three_plane_nonzero_counts": [
+        10130,
+        0,
+        14346
+      ],
+      "full_declared_length_emitted": true,
+      "full_member_CRC_verified": false,
+      "source_qualified_original_DAT": false,
+      "qualification": "CRC_OR_FILTER_FAILED_NOT_AUTHENTIC_SOURCE"
+    },
+    {
+      "source_group": "CLIENT_MAIN_SA25",
+      "member_basename": "3021.DAT",
+      "raw_member_path_suffix": "/stoneage2.5/map/3021.DAT",
+      "packed_data_offset_in_original_RAR": 349292445,
+      "packed_bytes": 2274,
+      "packed_SHA256": "72b01a622deabff50fa94ab1103d6b02e51aab5eb1401888ebfa1ef1d18fb005",
+      "original_RAR_header_uncompressed_bytes": 351656,
+      "original_RAR_header_uncompressed_CRC32": "c0d8a645",
+      "direct_block_API_decoded_bytes": 351656,
+      "direct_block_API_decoded_SHA256": "86a1f9999404992935f0b832a71eeb1ba9b1f2759bc240eb2b13eccd0810d7ff",
+      "direct_block_API_decoded_CRC32": "0eb2e1fd",
+      "direct_block_API_terminal_return_code": -30,
+      "direct_block_API_terminal_error": "File CRC error",
+      "decoded_first_two_u32": [
+        0,
+        0
+      ],
+      "decoded_shape_candidate": null,
+      "decoded_three_plane_nonzero_counts": null,
+      "full_declared_length_emitted": true,
+      "full_member_CRC_verified": false,
+      "source_qualified_original_DAT": false,
+      "qualification": "CRC_OR_FILTER_FAILED_NOT_AUTHENTIC_SOURCE"
+    },
+    {
+      "source_group": "CLIENT_MAIN_SA25",
+      "member_basename": "3021.MAP",
+      "raw_member_path_suffix": "/stoneage2.5/map/3021.MAP",
+      "packed_data_offset_in_original_RAR": 349294893,
+      "packed_bytes": 1437,
+      "packed_SHA256": "ecc20c435d9d9bf214e6720c6c1ef1d5b3558d39f2f58d5b7984eacc95c6f3892af169200e769227a92e0dfc47",
+      "original_RAR_header_uncompressed_bytes": 117224,
+      "original_RAR_header_uncompressed_CRC32": "5ca00592",
+      "direct_block_API_decoded_bytes": 117224,
+      "direct_block_API_decoded_SHA256": "57a230c56ab77c418101e296480f7a04ce653e0aaf0512e15050e22b335ab789",
+      "direct_block_API_decoded_CRC32": "5ca00592",
+      "direct_block_API_terminal_return_code": 1,
+      "direct_block_API_terminal_error": null,
+      "decoded_first_two_u32": [
+        407,
+        144
+      ],
+      "decoded_shape_candidate": "ONE_16BIT_PLANE",
+      "decoded_three_plane_nonzero_counts": null,
+      "full_declared_length_emitted": true,
+      "full_member_CRC_verified": true,
+      "source_qualified_original_DAT": false,
+      "qualification": "CRC_AND_SOURCE_SHA_OK"
+    }
+  ],
+  "critical_verification": {
+    "source_3021_MAP_main_and_addon_both_crc_SHA_matched": true,
+    "source_2000_DAT_normal_control_crc_SHA_matched_existing_MAP01": true,
+    "source_3021_DAT_candidate_full_declared_length_emitted": true,
+    "source_3021_DAT_candidate_member_crc_matched": false,
+    "source_3021_DAT_candidate_first8_dimensions": [
+      0,
+      0
+    ],
+    "original_3021_MAP_first8_dimensions": [
+      407,
+      144
+    ],
+    "source_3000_DAT_candidate_full_declared_length_emitted": true,
+    "source_3000_DAT_candidate_member_crc_matched": false,
+    "source_100_DAT_candidate_complete": false,
+    "source_200_DAT_candidate_complete": false,
+    "source_1000_DAT_same_reader_full_length_but_crc_failed": true,
+    "recovered_four_DATs_now_qualified_count": 0,
+    "stage_A_nine_family_counts": {
+      "PARTIAL": 7,
+      "OPEN": 2
+    },
+    "historical_2001_CN182_same_server_execution_proven": false,
+    "original_1999_JSS_build_acquired": false,
+    "stage_B_started": false,
+    "overall_percent": null
+  },
+  "reentry_trigger": "RECOVERED_FULL_BYTES_WITH_MATCHING_RAR_HEADER_CRC32_AND_REASONABLE_MAP_DIMS_FROM_AN_INDEPENDENT_DECOMPRESSOR_OR_MATCHING_PROVENANCED_SECOND_COPY",
+  "historical_2003_Mainland_182_service": {
+    "first_party_text_via_contemporaneous_game_portals": true,
+    "initial_mainland_2001_182_claim": false,
+    "source_publications": [
+      {
+        "date": "2003-01-20",
+        "publisher": "17173 archived Beijing Waei product statement",
+        "url": "https://news.17173.com/content/2003-1-20/n283_199593.html",
+        "evidence": "5.0 Pet Evolution product contemporary launch; this is a separate client/server development lineage",
+        "primary_source_text_through_media": true
+      },
+      {
+        "date": "2003-03-20",
+        "publisher": "Sina Games archived official announcement",
+        "url": "https://games.sina.com.cn/newgames/200303/2003-03-20114.shtml",
+        "evidence": "announcement of commemorative FREE 1.82 server planned 2003-03-21 12:00",
+        "primary_source_text_through_media": true
+      },
+      {
+        "date": "2003-03-21",
+        "publisher": "17173 archived Beijing Waei policy statement",
+        "url": "https://news.17173.com/content/2003-3-21/n722_638924.html",
+        "evidence": "2003 commemorative 1.82 service temporarily did not provide positional logout and trading system; stated existing Pet Evolution client could login",
+        "primary_source_text_through_media": true
+      },
+      {
+        "date": "2003-08-28",
+        "publisher": "Sina Games archived Beijing Waei notice",
+        "url": "https://games.sina.com.cn/newgames/2003/08/08284971.shtml",
+        "evidence": "two 1.82 service groups; Aug29-Sep2 free transfer; planned Sep3 upgrade 1.82(2) to 2.0",
+        "primary_source_text_through_media": true
+      }
+    ],
+    "stage_A_scope": "FIRST_PARTY_PUBLIC_STATEMENTS_ABOUT_2003_ANNIVERSARY_SERVICE_NOT_ORIGINAL_2001_RETAIL_BINARY_OR_LIVE_SERVICE_STATE",
+    "not_proven": "NO_2001_SERVER_TRANSACTION_POLICY_NO_2003_CLIENT_HASHES_NO_ORIGINAL_SERVER_DAT_CONTENT_NO_ALL_CN182_SERVERS_SAME_SETTINGS"
+  },
+  "source_status": "SOURCE_BOUNDED_PARTIAL_CRC_BROKEN_SOURCE_BYTES_NOT_RECOVERED",
+  "resulting_original_source_DAT_qualification": "NO_PROMOTION_OF_100_200_3000_3021",
+  "bounds": {
+    "no_proprietary_RAR_DATA_MAP_binary_published": true,
+    "partial_or_CRC_FAILED_payloads_are_not_source_qualified": true,
+    "full_output_length_is_not_sufficient": true,
+    "native_original_gameplay_not_executed": true,
+    "forum_map_names_not_1999_primary_version_fact": true,
+    "stage_B_gated": true
+  }
+}

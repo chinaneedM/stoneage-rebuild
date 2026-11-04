@@ -8872,3 +8872,14 @@ All11 original-derived inputs pinned in logical-alias-catalog-r1/REPORT-R1.json.
 ### SRC-SCENE25-20261029 — 两既存观察父包的有限整合，无新增历史来源
 
 R14包351231B/SHA7684267ab528d13ceecb23a25632543ae839225607cbda702a32736e4c4d366a、原页85928B/SHA4c564b41a4daea15a6a3a6760e87b336062d7c1ec4589ebdaedea78e7bdcc105与旧PUBLICATION/ACCEPTANCE全同；R24包375924B/SHA194d93d6f21dcfd906384b23ca122c3aa42d57067d92ea6a0e171b874ef422c7及两原报告全同。新增仅集成元数据与独立14PNG/3原行/4旧画布/3卡片报告；没有新原图/同版master/交易执行。原像素和正文私人保管；source Action null，原图浏览器未执行。
+
+
+## 2026-11-04 CN182-MAR2003-ANNIVERSARY-SERVICE-OPERATOR-STATEMENTS
+
+- Category: 当时游戏媒体转载的**北京华义官方运营政策、周年活动与迁服声明**，属“同期一手声明内容的二手载体”，尚未取回华义官方网站原页。不能将转述网页替代服务端/客户端原文件。
+- 新浪2003-03-20周年公告：https://games.sina.com.cn/newgames/200303/2003-03-20114.shtml — 2003-03-21 12:00计划开放免费纪念1.82服；不是2001首发版本。
+- 17173华义2003-03-21声明：https://news.17173.com/content/2003-3-21/n722_638924.html — 对**该周年1.82服务**暂未开放原地登出/交易，并称当时宠物进化史客户端可登入；不推成2001初代或原协议功能不存在。
+- 17173华义2003-01-20消息：https://news.17173.com/content/2003-1-20/n283_199593.html — 宠物进化史5.0开始由既有服务器陆续升级。
+- 新浪2003-08-28迁服公告：https://games.sina.com.cn/newgames/2003/08/08284971.shtml — 两组纪念1.82服务及迁服/升2.0的当时计划；不能凭计划断言无实际运营偏差。
+- Source class: contemporaneous republished operator statements; confidence **A for what text announced, not actual runtime/server build/content**.
+- New original early commercial client/server/map/quest bytes recovered from these publications: **0**. No 2001 early-1.82 gameplay rule promoted. Paired private RAR full-source reread recorded separately in `research/recovered/STONEAGE-STAGE-A-ORIGINAL-RAR-BLOCK-REPLAY-CN182-PROVENANCE-R1.json` with zero new qualified DAT among four blocked floors.

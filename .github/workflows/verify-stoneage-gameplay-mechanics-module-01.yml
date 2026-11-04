@@ -36,6 +36,8 @@ on:
       - 'research/recovered/STONEAGE-STAGE-A-ORIGINAL-DAT-AND-SAME-BUILD-SOURCE-GAP-R1.json'
       - 'research/recovered/STONEAGE-STAGE-A-CONSOLIDATED-REVIEW-R2.json'
       - 'tests/test_stoneage_stage_a_source_gap_20261104.py'
+      - 'research/recovered/STONEAGE-STAGE-A-ORIGINAL-RAR-BLOCK-REPLAY-CN182-PROVENANCE-R1.json'
+      - 'tests/test_stoneage_stage_a_original_rar_block_replay.py'
       - 'research/recovered/item-module-01/**'
       - 'research/recovered/STONEAGE-O16-TW10-BATTLE-NATIVE-PALETTE-INTERLEAVE-R1.json'
       - 'research/recovered/STONEAGE-O40-TW10-NATIVE-BATTLE-PATH-SOURCE-R1.json'
@@ -99,3 +101,4 @@ jobs:
       - run: python -m unittest discover -s tests -p 'test_stoneage_integration_module_02.py' -v
       - run: python -m unittest discover -s tests -p 'test_stoneage_integration_module_03.py' -v
       - run: python -m unittest discover -s tests -p 'test_stoneage_stage_a_source_gap_20261104.py' -v
+      - run: python -m unittest discover -s tests -p 'test_stoneage_stage_a_original_rar_block_replay.py' -v
