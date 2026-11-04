@@ -1777,3 +1777,8 @@ Source-qualified original NPC and signboard content from preserved later mixed25
 ## 2026-11-05 — WORLD11: original static appearances at the three village anchors
 
 [WORLD11](docs/continuity/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-11-NPC-STATIC-APPEARANCE-20261105.md) independently decodes 29 preserved mixed25 RD images and joins all 47 NPC/signboard CREATE placements to the original numeric aliases and signed ADRN offsets. The private overlay preserves the WORLD10 map pixels, anchor links and original dialogue. The verified TW1 byte prefix excludes the two placements' shared sign alias 10400. [Public source receipt](research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-11-NPC-STATIC-APPEARANCE-R1.json). **Next WORLD12** compares the original village door and warp records to DAT event cells.
+
+
+## 2026-11-05 — WORLD12: original three-village door and warp coordinates
+
+[WORLD12](docs/continuity/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-12-THREE-VILLAGE-WARPS-20261105.md) matches all 73 original classic Warp CREATE points to the corresponding three villages' DAT event-cell sets. It reads all 35 destination DATs, preserves the six M/A records and distinguishes 49 exact reciprocal placements from 2 different returns and 22 arrivals with no same-cell point CREATE. [Public source receipt](research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-12-THREE-VILLAGE-WARP-SOURCE-R1.json). These are static archived records. **Next WORLD13** rotates to another material-backed item or quest observation.
