@@ -1,0 +1,2989 @@
+{
+  "schema": "stoneage.stage_a.offline_dojo_original_sources_and_static_atlas.r1",
+  "evidence": "SOURCE_FILES_READ_AND_HASH_VERIFIED_STATIC_NOT_NATIVE_PLAY",
+  "archive_scope": "LATER_PRESERVED_COMMUNITY_MIXED25_NOT_OFFICIAL_EARLY_DEPLOYMENT",
+  "private_source_zip_sha256": "c35ed12638f5ff1eb7e076d8989010b083fe529db5543d50bfc52a179f3eab2f",
+  "private_source_zip_bytes": 995176,
+  "private_original_rar_sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+  "source_files": {
+    "3021_map": {
+      "bytes": 117224,
+      "sha256": "57a230c56ab77c418101e296480f7a04ce653e0aaf0512e15050e22b335ab789",
+      "crc32": "5ca00592"
+    },
+    "3022_dat": {
+      "bytes": 1358,
+      "sha256": "0ccb2996e70bc9aaef84c3b2b2fd5b4df639fffc8c98b013bbcff7030b80f26a",
+      "crc32": "b3fa3a66"
+    },
+    "3022_map": {
+      "bytes": 458,
+      "sha256": "e6e19de904cb6ba16ae2d4d61e0ba9c7701c50101e074067702347881a4596db",
+      "crc32": "dd04d3d7"
+    }
+  },
+  "npc_create": {
+    "zip_member": "npc/doujyou/jyajyadou.create",
+    "bytes": 44134,
+    "sha256": "ac3e46dc64d2e478cba4a115e15c2d32d3193c38e9de85f53ce8b06f3d99d925",
+    "source_npc_blocks": 300,
+    "disciple_create_blocks": 100,
+    "independent_warp_create_blocks": 200
+  },
+  "disciples": [
+    {
+      "ordinal": 1,
+      "coordinate": [
+        400,
+        124
+      ],
+      "map_raw_code": 257,
+      "original_arg_sha256": "64f6a347fd55784cde89b732d3029c3aab0e9fec9af70d9214f5e99fcbdf1d12",
+      "arg_bytes": 300,
+      "configured_arg_target": [
+        3021,
+        400,
+        114
+      ],
+      "warp_positions": [
+        [
+          406,
+          126
+        ],
+        [
+          406,
+          127
+        ]
+      ],
+      "warp_map_raw_codes": [
+        41932,
+        41893
+      ]
+    },
+    {
+      "ordinal": 2,
+      "coordinate": [
+        400,
+        112
+      ],
+      "map_raw_code": 257,
+      "original_arg_sha256": "e1cb103201503371141e2527c608aceeaf760c6421185d1e0621ca7ea5f6c75c",
+      "arg_bytes": 300,
+      "configured_arg_target": [
+        3021,
+        400,
+        102
+      ],
+      "warp_positions": [
+        [
+          406,
+          114
+        ],
+        [
+          406,
+          115
+        ]
+      ],
+      "warp_map_raw_codes": [
+        257,
+        257
+      ]
+    },
+    {
+      "ordinal": 3,
+      "coordinate": [
+        400,
+        100
+      ],
+      "map_raw_code": 257,
+      "original_arg_sha256": "1211f531c7bc740e96f05e010c5e87bcf3252f3bd4331b82aa6398b64d10d084",
+      "arg_bytes": 299,
+      "configured_arg_target": [
+        3021,
+        400,
+        90
+      ],
+      "warp_positions": [
+        [
+          406,
+          102
+        ],
+        [
+          406,
+          103
+        ]
+      ],
+      "warp_map_raw_codes": [
+        257,
+        257
+      ]
+    },
+    {
+      "ordinal": 4,
+      "coordinate": [
+        400,
+        88
+      ],
+      "map_raw_code": 257,
+      "original_arg_sha256": "34f3c822fa853cc4c93e2aa02933c655c9ae626f7012b58a31c0d0d7ce331553",
+      "arg_bytes": 299,
+      "configured_arg_target": [
+        3021,
+        400,
+        78
+      ],
+      "warp_positions": [
+        [
+          406,
+          90
+        ],
+        [
+          406,
+          91
+        ]
+      ],
+      "warp_map_raw_codes": [
+        257,
+        257
+      ]
+    },
+    {
+      "ordinal": 5,
+      "coordinate": [
+        400,
+        76
+      ],
+      "map_raw_code": 257,
+      "original_arg_sha256": "33daa647ce8388a530b963858d61dd46f9ad75c5a8483f3ad4e9bf8d100bee5a",
+      "arg_bytes": 299,
+      "configured_arg_target": [
+        3021,
+        400,
+        66
+      ],
+      "warp_positions": [
+        [
+          406,
+          78
+        ],
+        [
+          406,
+          79
+        ]
+      ],
+      "warp_map_raw_codes": [
+        257,
+        257
+      ]
+    },
+    {
+      "ordinal": 6,
+      "coordinate": [
+        400,
+        64
+      ],
+      "map_raw_code": 0,
+      "original_arg_sha256": "f264647df782352a2fd04ff3d98367e7ccabbf0c9ae9cadece94787aaafd0bd6",
+      "arg_bytes": 299,
+      "configured_arg_target": [
+        3021,
+        400,
+        54
+      ],
+      "warp_positions": [
+        [
+          406,
+          66
+        ],
+        [
+          406,
+          67
+        ]
+      ],
+      "warp_map_raw_codes": [
+        0,
+        0
+      ]
+    },
+    {
+      "ordinal": 7,
+      "coordinate": [
+        400,
+        52
+      ],
+      "map_raw_code": 0,
+      "original_arg_sha256": "c7ddaec1e177f0dda01dc1df0e9b81e26ac8115caa56b08e660125bc0af2e4b4",
+      "arg_bytes": 299,
+      "configured_arg_target": [
+        3021,
+        400,
+        42
+      ],
+      "warp_positions": [
+        [
+          406,
+          54
+        ],
+        [
+          406,
+          55
+        ]
+      ],
+      "warp_map_raw_codes": [
+        41677,
+        41637
+      ]
+    },
+    {
+      "ordinal": 8,
+      "coordinate": [
+        400,
+        40
+      ],
+      "map_raw_code": 0,
+      "original_arg_sha256": "ef623912c77155c5b5c114b17e10146c7561de9d9c336e61c9628be54ee1d280",
+      "arg_bytes": 299,
+      "configured_arg_target": [
+        3021,
+        400,
+        30
+      ],
+      "warp_positions": [
+        [
+          406,
+          42
+        ],
+        [
+          406,
+          43
+        ]
+      ],
+      "warp_map_raw_codes": [
+        0,
+        0
+      ]
+    },
+    {
+      "ordinal": 9,
+      "coordinate": [
+        400,
+        28
+      ],
+      "map_raw_code": 0,
+      "original_arg_sha256": "2d3b4c05537f4bf4b164cefc734196b8e1c85e36a585c6a6c63b6a562ccb0c8d",
+      "arg_bytes": 299,
+      "configured_arg_target": [
+        3021,
+        400,
+        18
+      ],
+      "warp_positions": [
+        [
+          406,
+          30
+        ],
+        [
+          406,
+          31
+        ]
+      ],
+      "warp_map_raw_codes": [
+        0,
+        0
+      ]
+    },
+    {
+      "ordinal": 10,
+      "coordinate": [
+        400,
+        16
+      ],
+      "map_raw_code": 0,
+      "original_arg_sha256": "b192da3dd120e82f5a18b4c2fe7e7269cc65ce9497b620b123aac141d0ea4615",
+      "arg_bytes": 302,
+      "configured_arg_target": [
+        3021,
+        356,
+        128
+      ],
+      "warp_positions": [
+        [
+          406,
+          18
+        ],
+        [
+          406,
+          19
+        ]
+      ],
+      "warp_map_raw_codes": [
+        0,
+        0
+      ]
+    },
+    {
+      "ordinal": 11,
+      "coordinate": [
+        356,
+        124
+      ],
+      "map_raw_code": 257,
+      "original_arg_sha256": "758b1c28d7faf1789b148f58b3553c05039e13a0eb6dc559aa1d7acb26fe0ab0",
+      "arg_bytes": 302,
+      "configured_arg_target": [
+        3021,
+        356,
+        114
+      ],
+      "warp_positions": [
+        [
+          362,
+          126
+        ],
+        [
+          362,
+          127
+        ]
+      ],
+      "warp_map_raw_codes": [
+        41932,
+        41893
+      ]
+    },
+    {
+      "ordinal": 12,
+      "coordinate": [
+        356,
+        112
+      ],
+      "map_raw_code": 257,
+      "original_arg_sha256": "9c28c8d100f151e7b5d21f25be09b2b33c9e123d3da9c4ebba53c04229bfbf26",
+      "arg_bytes": 302,
+      "configured_arg_target": [
+        3021,
+        356,
+        102
+      ],
+      "warp_positions": [
+        [
+          362,
+          114
+        ],
+        [
+          362,
+          115
+        ]
+      ],
+      "warp_map_raw_codes": [
+        41932,
+        41930
+      ]
+    },
+    {
+      "ordinal": 13,
+      "coordinate": [
+        356,
+        100
+      ],
+      "map_raw_code": 257,
+      "original_arg_sha256": "46d0d5e43499dc5e8fc599032275060c4f36d4b327d8b1f67adddd3f5417e831",
+      "arg_bytes": 301,
+      "configured_arg_target": [
+        3021,
+        356,
+        90
+      ],
+      "warp_positions": [
+        [
+          362,
+          102
+        ],
+        [
+          362,
+          103
+        ]
+      ],
+      "warp_map_raw_codes": [
+        41932,
+        41893
+      ]
+    },
+    {
+      "ordinal": 14,
+      "coordinate": [
+        356,
+        88
+      ],
+      "map_raw_code": 257,
+      "original_arg_sha256": "ef82784f133d136c43c87d336187591135a227683702e0b4f957e6a896b90b04",
+      "arg_bytes": 301,
+      "configured_arg_target": [
+        3021,
+        356,
+        78
+      ],
+      "warp_positions": [
+        [
+          362,
+          90
+        ],
+        [
+          362,
+          91
+        ]
+      ],
+      "warp_map_raw_codes": [
+        41932,
+        41893
+      ]
+    },
+    {
+      "ordinal": 15,
+      "coordinate": [
+        356,
+        76
+      ],
+      "map_raw_code": 257,
+      "original_arg_sha256": "3654672f6c88d4abd9c941daa4be8150e6bfa64f79636d6c75f510e7947ab83d",
+      "arg_bytes": 301,
+      "configured_arg_target": [
+        3021,
+        356,
+        66
+      ],
+      "warp_positions": [
+        [
+          362,
+          78
+        ],
+        [
+          362,
+          79
+        ]
+      ],
+      "warp_map_raw_codes": [
+        41932,
+        41893
+      ]
+    },
+    {
+      "ordinal": 16,
+      "coordinate": [
+        356,
+        64
+      ],
+      "map_raw_code": 0,
+      "original_arg_sha256": "2edd54356b1d8c0eb38f20907e14771ed6edf9c65d124f32db661351b27bd266",
+      "arg_bytes": 301,
+      "configured_arg_target": [
+        3021,
+        356,
+        54
+      ],
+      "warp_positions": [
+        [
+          362,
+          66
+        ],
+        [
+          362,
+          67
+        ]
+      ],
+      "warp_map_raw_codes": [
+        41677,
+        41674
+      ]
+    },
+    {
+      "ordinal": 17,
+      "coordinate": [
+        356,
+        52
+      ],
+      "map_raw_code": 0,
+      "original_arg_sha256": "88329ac1ebaf59f08a54cbc58d9f8f8f1bd9467ac890210237db02b376256d26",
+      "arg_bytes": 301,
+      "configured_arg_target": [
+        3021,
+        356,
+        42
+      ],
+      "warp_positions": [
+        [
+          362,
+          54
+        ],
+        [
+          362,
+          55
+        ]
+      ],
+      "warp_map_raw_codes": [
+        41677,
+        41637
+      ]
+    },
+    {
+      "ordinal": 18,
+      "coordinate": [
+        356,
+        40
+      ],
+      "map_raw_code": 0,
+      "original_arg_sha256": "f7236dbbee21f6999d0c7bf8e18a7c589cb05aac080befe9526b0abb4710839f",
+      "arg_bytes": 301,
+      "configured_arg_target": [
+        3021,
+        356,
+        30
+      ],
+      "warp_positions": [
+        [
+          362,
+          42
+        ],
+        [
+          362,
+          43
+        ]
+      ],
+      "warp_map_raw_codes": [
+        41677,
+        41674
+      ]
+    },
+    {
+      "ordinal": 19,
+      "coordinate": [
+        356,
+        28
+      ],
+      "map_raw_code": 0,
+      "original_arg_sha256": "7fc4e9af29762bcc9c24bd6fbbafc047e43d8e91d18b9292e8b3558e9bd6cef3",
+      "arg_bytes": 301,
+      "configured_arg_target": [
+        3021,
+        356,
+        18
+      ],
+      "warp_positions": [
+        [
+          362,
+          30
+        ],
+        [
+          362,
+          31
+        ]
+      ],
+      "warp_map_raw_codes": [
+        41677,
+        41637
+      ]
+    },
+    {
+      "ordinal": 20,
+      "coordinate": [
+        356,
+        16
+      ],
+      "map_raw_code": 0,
+      "original_arg_sha256": "7cb927dbe5ceec2f06da3c81f1bf90c3abfe0546e2230555df418b98d242f757",
+      "arg_bytes": 302,
+      "configured_arg_target": [
+        3021,
+        312,
+        128
+      ],
+      "warp_positions": [
+        [
+          362,
+          18
+        ],
+        [
+          362,
+          19
+        ]
+      ],
+      "warp_map_raw_codes": [
+        41677,
+        41637
+      ]
+    },
+    {
+      "ordinal": 21,
+      "coordinate": [
+        312,
+        124
+      ],
+      "map_raw_code": 257,
+      "original_arg_sha256": "bb3bfb287f27901aa33190133b379f3b7fcc4fa0d5d8a9d20332c4f94581a247",
+      "arg_bytes": 302,
+      "configured_arg_target": [
+        3021,
+        312,
+        114
+      ],
+      "warp_positions": [
+        [
+          318,
+          126
+        ],
+        [
+          318,
+          127
+        ]
+      ],
+      "warp_map_raw_codes": [
+        41932,
+        41893
+      ]
+    },
+    {
+      "ordinal": 22,
+      "coordinate": [
+        312,
+        112
+      ],
+      "map_raw_code": 257,
+      "original_arg_sha256": "43293a4aa7c0786c3648a7b4b01d6d138a6b4911b649928a3897935f92fb3fe9",
+      "arg_bytes": 302,
+      "configured_arg_target": [
+        3021,
+        312,
+        102
+      ],
+      "warp_positions": [
+        [
+          318,
+          114
+        ],
+        [
+          318,
+          115
+        ]
+      ],
+      "warp_map_raw_codes": [
+        41932,
+        41930
+      ]
+    },
+    {
+      "ordinal": 23,
+      "coordinate": [
+        312,
+        100
+      ],
+      "map_raw_code": 257,
+      "original_arg_sha256": "d3c2c03332ba6d3cf0b057f1b1df481a489ec5edf6f8c8e6df8c54a1cc06c26f",
+      "arg_bytes": 301,
+      "configured_arg_target": [
+        3021,
+        312,
+        90
+      ],
+      "warp_positions": [
+        [
+          318,
+          102
+        ],
+        [
+          318,
+          103
+        ]
+      ],
+      "warp_map_raw_codes": [
+        41932,
+        41893
+      ]
+    },
+    {
+      "ordinal": 24,
+      "coordinate": [
+        312,
+        88
+      ],
+      "map_raw_code": 257,
+      "original_arg_sha256": "d7b39b686ed434ba8d2f3945b8367f79b21ebde34e27bee5c8b86f940b996adb",
+      "arg_bytes": 301,
+      "configured_arg_target": [
+        3021,
+        312,
+        78
+      ],
+      "warp_positions": [
+        [
+          318,
+          90
+        ],
+        [
+          318,
+          91
+        ]
+      ],
+      "warp_map_raw_codes": [
+        41932,
+        41893
+      ]
+    },
+    {
+      "ordinal": 25,
+      "coordinate": [
+        312,
+        76
+      ],
+      "map_raw_code": 257,
+      "original_arg_sha256": "f739e6f69a427f3ffae6eda8d6b55a028d029ed1cd95868d07195e60b8f35b5d",
+      "arg_bytes": 301,
+      "configured_arg_target": [
+        3021,
+        312,
+        66
+      ],
+      "warp_positions": [
+        [
+          318,
+          78
+        ],
+        [
+          318,
+          79
+        ]
+      ],
+      "warp_map_raw_codes": [
+        41932,
+        41893
+      ]
+    },
+    {
+      "ordinal": 26,
+      "coordinate": [
+        312,
+        64
+      ],
+      "map_raw_code": 0,
+      "original_arg_sha256": "a0462aff1e281d844acdb59c8602ac2cb512c92c6727257f887d4bd4838b8303",
+      "arg_bytes": 301,
+      "configured_arg_target": [
+        3021,
+        312,
+        54
+      ],
+      "warp_positions": [
+        [
+          318,
+          66
+        ],
+        [
+          318,
+          67
+        ]
+      ],
+      "warp_map_raw_codes": [
+        41677,
+        41674
+      ]
+    },
+    {
+      "ordinal": 27,
+      "coordinate": [
+        312,
+        52
+      ],
+      "map_raw_code": 0,
+      "original_arg_sha256": "49aa00c81f5172bddc18b4c6251f572f0526cd90bcef651cfdb62e88c9fac2ff",
+      "arg_bytes": 301,
+      "configured_arg_target": [
+        3021,
+        312,
+        42
+      ],
+      "warp_positions": [
+        [
+          318,
+          54
+        ],
+        [
+          318,
+          55
+        ]
+      ],
+      "warp_map_raw_codes": [
+        41677,
+        41637
+      ]
+    },
+    {
+      "ordinal": 28,
+      "coordinate": [
+        312,
+        40
+      ],
+      "map_raw_code": 0,
+      "original_arg_sha256": "0e62598a605e45bb90b6315111583114ca586adbcd7c379c58b575c143261b35",
+      "arg_bytes": 301,
+      "configured_arg_target": [
+        3021,
+        312,
+        30
+      ],
+      "warp_positions": [
+        [
+          318,
+          42
+        ],
+        [
+          318,
+          43
+        ]
+      ],
+      "warp_map_raw_codes": [
+        41677,
+        41674
+      ]
+    },
+    {
+      "ordinal": 29,
+      "coordinate": [
+        312,
+        28
+      ],
+      "map_raw_code": 0,
+      "original_arg_sha256": "b4b02306bbe72b76bf3377d060e19be5e50ac782a4d14588fdfe6777529620cc",
+      "arg_bytes": 301,
+      "configured_arg_target": [
+        3021,
+        312,
+        18
+      ],
+      "warp_positions": [
+        [
+          318,
+          30
+        ],
+        [
+          318,
+          31
+        ]
+      ],
+      "warp_map_raw_codes": [
+        41677,
+        41637
+      ]
+    },
+    {
+      "ordinal": 30,
+      "coordinate": [
+        312,
+        16
+      ],
+      "map_raw_code": 0,
+      "original_arg_sha256": "df3a4e1783d1170c2048ebde96162da5290e4ae19f112d74b6b9bbc1150bf1da",
+      "arg_bytes": 302,
+      "configured_arg_target": [
+        3021,
+        268,
+        128
+      ],
+      "warp_positions": [
+        [
+          318,
+          18
+        ],
+        [
+          318,
+          19
+        ]
+      ],
+      "warp_map_raw_codes": [
+        41677,
+        41637
+      ]
+    },
+    {
+      "ordinal": 31,
+      "coordinate": [
+        268,
+        124
+      ],
+      "map_raw_code": 257,
+      "original_arg_sha256": "abacb51e5a5ea365ce605e440d4140d99c6f28a3f93c674616992d9be4344822",
+      "arg_bytes": 302,
+      "configured_arg_target": [
+        3021,
+        268,
+        114
+      ],
+      "warp_positions": [
+        [
+          274,
+          126
+        ],
+        [
+          274,
+          127
+        ]
+      ],
+      "warp_map_raw_codes": [
+        41932,
+        41893
+      ]
+    },
+    {
+      "ordinal": 32,
+      "coordinate": [
+        268,
+        112
+      ],
+      "map_raw_code": 257,
+      "original_arg_sha256": "840b5220ac77bccf4fe587cfd34339554d845b99c316be19990ae503901eb7fc",
+      "arg_bytes": 302,
+      "configured_arg_target": [
+        3021,
+        268,
+        102
+      ],
+      "warp_positions": [
+        [
+          274,
+          114
+        ],
+        [
+          274,
+          115
+        ]
+      ],
+      "warp_map_raw_codes": [
+        41932,
+        41930
+      ]
+    },
+    {
+      "ordinal": 33,
+      "coordinate": [
+        268,
+        100
+      ],
+      "map_raw_code": 257,
+      "original_arg_sha256": "340bef26b905c4eb3aa6ea6382e352564031e0f27004349f3ffa0b30cbcbe2c9",
+      "arg_bytes": 301,
+      "configured_arg_target": [
+        3021,
+        268,
+        90
+      ],
+      "warp_positions": [
+        [
+          274,
+          102
+        ],
+        [
+          274,
+          103
+        ]
+      ],
+      "warp_map_raw_codes": [
+        41932,
+        41893
+      ]
+    },
+    {
+      "ordinal": 34,
+      "coordinate": [
+        268,
+        88
+      ],
+      "map_raw_code": 257,
+      "original_arg_sha256": "b57912e2ce52c01dc19909cb42e6cede0a8120756002f3d6b32f7002534ded2c",
+      "arg_bytes": 301,
+      "configured_arg_target": [
+        3021,
+        268,
+        78
+      ],
+      "warp_positions": [
+        [
+          274,
+          90
+        ],
+        [
+          274,
+          91
+        ]
+      ],
+      "warp_map_raw_codes": [
+        41932,
+        41893
+      ]
+    },
+    {
+      "ordinal": 35,
+      "coordinate": [
+        268,
+        76
+      ],
+      "map_raw_code": 257,
+      "original_arg_sha256": "ee8764db7cbd7b8d8f45e94f002e5267f5cfedf86018a4a864da787264f109af",
+      "arg_bytes": 301,
+      "configured_arg_target": [
+        3021,
+        268,
+        66
+      ],
+      "warp_positions": [
+        [
+          274,
+          78
+        ],
+        [
+          274,
+          79
+        ]
+      ],
+      "warp_map_raw_codes": [
+        41932,
+        41893
+      ]
+    },
+    {
+      "ordinal": 36,
+      "coordinate": [
+        268,
+        64
+      ],
+      "map_raw_code": 0,
+      "original_arg_sha256": "3494b78a40bee811f141cd6e97cc56a66010b9a4c475a615fa239714fccde99a",
+      "arg_bytes": 301,
+      "configured_arg_target": [
+        3021,
+        268,
+        54
+      ],
+      "warp_positions": [
+        [
+          274,
+          66
+        ],
+        [
+          274,
+          67
+        ]
+      ],
+      "warp_map_raw_codes": [
+        41677,
+        41674
+      ]
+    },
+    {
+      "ordinal": 37,
+      "coordinate": [
+        268,
+        52
+      ],
+      "map_raw_code": 0,
+      "original_arg_sha256": "f2c6fb225c9ad048d849b5e9e30dcd048f3752c785942d1d758f6e656aa500d5",
+      "arg_bytes": 301,
+      "configured_arg_target": [
+        3021,
+        268,
+        42
+      ],
+      "warp_positions": [
+        [
+          274,
+          54
+        ],
+        [
+          274,
+          55
+        ]
+      ],
+      "warp_map_raw_codes": [
+        41677,
+        41637
+      ]
+    },
+    {
+      "ordinal": 38,
+      "coordinate": [
+        268,
+        40
+      ],
+      "map_raw_code": 0,
+      "original_arg_sha256": "ea9a79a354abf08335727e878d05107f0172a15097bf10c77b3c24f29fe148e5",
+      "arg_bytes": 301,
+      "configured_arg_target": [
+        3021,
+        268,
+        30
+      ],
+      "warp_positions": [
+        [
+          274,
+          42
+        ],
+        [
+          274,
+          43
+        ]
+      ],
+      "warp_map_raw_codes": [
+        41677,
+        41674
+      ]
+    },
+    {
+      "ordinal": 39,
+      "coordinate": [
+        268,
+        28
+      ],
+      "map_raw_code": 0,
+      "original_arg_sha256": "a28d194580402d7d254838bf0f1ac4da9ee4f1f69909e896de4080aa31338e02",
+      "arg_bytes": 301,
+      "configured_arg_target": [
+        3021,
+        268,
+        18
+      ],
+      "warp_positions": [
+        [
+          274,
+          30
+        ],
+        [
+          274,
+          31
+        ]
+      ],
+      "warp_map_raw_codes": [
+        41677,
+        41637
+      ]
+    },
+    {
+      "ordinal": 40,
+      "coordinate": [
+        268,
+        16
+      ],
+      "map_raw_code": 0,
+      "original_arg_sha256": "f5572c5afac8191500f1d9424d17c4374acf719b278cf6ecf0a879d6b078e2c4",
+      "arg_bytes": 302,
+      "configured_arg_target": [
+        3021,
+        224,
+        128
+      ],
+      "warp_positions": [
+        [
+          274,
+          18
+        ],
+        [
+          274,
+          19
+        ]
+      ],
+      "warp_map_raw_codes": [
+        41677,
+        41637
+      ]
+    },
+    {
+      "ordinal": 41,
+      "coordinate": [
+        224,
+        124
+      ],
+      "map_raw_code": 257,
+      "original_arg_sha256": "792f645fc44045e74b5bccb0f610c43e6dfce52a7afb4258875813372e703cbc",
+      "arg_bytes": 302,
+      "configured_arg_target": [
+        3021,
+        224,
+        114
+      ],
+      "warp_positions": [
+        [
+          230,
+          126
+        ],
+        [
+          230,
+          127
+        ]
+      ],
+      "warp_map_raw_codes": [
+        41932,
+        41893
+      ]
+    },
+    {
+      "ordinal": 42,
+      "coordinate": [
+        224,
+        112
+      ],
+      "map_raw_code": 257,
+      "original_arg_sha256": "a405a8382a970bc431f788c5ab802d4b8049dcc265d70c1bdb1f2a68aacf802f",
+      "arg_bytes": 302,
+      "configured_arg_target": [
+        3021,
+        224,
+        102
+      ],
+      "warp_positions": [
+        [
+          230,
+          114
+        ],
+        [
+          230,
+          115
+        ]
+      ],
+      "warp_map_raw_codes": [
+        41932,
+        41930
+      ]
+    },
+    {
+      "ordinal": 43,
+      "coordinate": [
+        224,
+        100
+      ],
+      "map_raw_code": 257,
+      "original_arg_sha256": "969c17483acc296e21bfec1cc58c6a169585642546fa4d5bbd2e59266c3aba14",
+      "arg_bytes": 301,
+      "configured_arg_target": [
+        3021,
+        224,
+        90
+      ],
+      "warp_positions": [
+        [
+          230,
+          102
+        ],
+        [
+          230,
+          103
+        ]
+      ],
+      "warp_map_raw_codes": [
+        41932,
+        41893
+      ]
+    },
+    {
+      "ordinal": 44,
+      "coordinate": [
+        224,
+        88
+      ],
+      "map_raw_code": 257,
+      "original_arg_sha256": "917a5881b9bb505c7392b1e43cca515ad09197bdca4206435b07bdb3924c9e14",
+      "arg_bytes": 301,
+      "configured_arg_target": [
+        3021,
+        224,
+        78
+      ],
+      "warp_positions": [
+        [
+          230,
+          90
+        ],
+        [
+          230,
+          91
+        ]
+      ],
+      "warp_map_raw_codes": [
+        41932,
+        41893
+      ]
+    },
+    {
+      "ordinal": 45,
+      "coordinate": [
+        224,
+        76
+      ],
+      "map_raw_code": 257,
+      "original_arg_sha256": "7ff1c813d8d6482ccfecd9375b01d03f6571c6605e7086d3b71af503e7edb9aa",
+      "arg_bytes": 301,
+      "configured_arg_target": [
+        3021,
+        224,
+        66
+      ],
+      "warp_positions": [
+        [
+          230,
+          78
+        ],
+        [
+          230,
+          79
+        ]
+      ],
+      "warp_map_raw_codes": [
+        41932,
+        41893
+      ]
+    },
+    {
+      "ordinal": 46,
+      "coordinate": [
+        224,
+        64
+      ],
+      "map_raw_code": 0,
+      "original_arg_sha256": "d9eeeb1c24a2075f5b42c2b86e302952826a1fd2fdedb59ad0b92f952a0de349",
+      "arg_bytes": 301,
+      "configured_arg_target": [
+        3021,
+        224,
+        54
+      ],
+      "warp_positions": [
+        [
+          230,
+          66
+        ],
+        [
+          230,
+          67
+        ]
+      ],
+      "warp_map_raw_codes": [
+        41677,
+        41674
+      ]
+    },
+    {
+      "ordinal": 47,
+      "coordinate": [
+        224,
+        52
+      ],
+      "map_raw_code": 0,
+      "original_arg_sha256": "8353feb070eeccf7ebb11db608100f506b45bf012402afa6500ad42bdb6419a8",
+      "arg_bytes": 301,
+      "configured_arg_target": [
+        3021,
+        224,
+        42
+      ],
+      "warp_positions": [
+        [
+          230,
+          54
+        ],
+        [
+          230,
+          55
+        ]
+      ],
+      "warp_map_raw_codes": [
+        41677,
+        41637
+      ]
+    },
+    {
+      "ordinal": 48,
+      "coordinate": [
+        224,
+        40
+      ],
+      "map_raw_code": 0,
+      "original_arg_sha256": "e06670ff3f0f92d7c1efcc838a77985e95cfd3dc8da322162963e788bce49273",
+      "arg_bytes": 301,
+      "configured_arg_target": [
+        3021,
+        224,
+        30
+      ],
+      "warp_positions": [
+        [
+          230,
+          42
+        ],
+        [
+          230,
+          43
+        ]
+      ],
+      "warp_map_raw_codes": [
+        41677,
+        41674
+      ]
+    },
+    {
+      "ordinal": 49,
+      "coordinate": [
+        224,
+        28
+      ],
+      "map_raw_code": 0,
+      "original_arg_sha256": "39b77f7bfc479147410e0dc8c46ce42f5cd938a0225c6db621fa33b1cb15e790",
+      "arg_bytes": 301,
+      "configured_arg_target": [
+        3021,
+        224,
+        18
+      ],
+      "warp_positions": [
+        [
+          230,
+          30
+        ],
+        [
+          230,
+          31
+        ]
+      ],
+      "warp_map_raw_codes": [
+        41677,
+        41637
+      ]
+    },
+    {
+      "ordinal": 50,
+      "coordinate": [
+        224,
+        16
+      ],
+      "map_raw_code": 0,
+      "original_arg_sha256": "d2fee864280cc74ea0ae5b43b676a26e007ffd416fb2357965a6ad38588c35de",
+      "arg_bytes": 302,
+      "configured_arg_target": [
+        3021,
+        180,
+        128
+      ],
+      "warp_positions": [
+        [
+          230,
+          18
+        ],
+        [
+          230,
+          19
+        ]
+      ],
+      "warp_map_raw_codes": [
+        41677,
+        41637
+      ]
+    },
+    {
+      "ordinal": 51,
+      "coordinate": [
+        180,
+        124
+      ],
+      "map_raw_code": 42405,
+      "original_arg_sha256": "4cbc9821e0ba6052d45035315a9cc012ec4730d6e66d310ba0d67e6de5868e2a",
+      "arg_bytes": 302,
+      "configured_arg_target": [
+        3021,
+        180,
+        114
+      ],
+      "warp_positions": [
+        [
+          186,
+          126
+        ],
+        [
+          186,
+          127
+        ]
+      ],
+      "warp_map_raw_codes": [
+        257,
+        257
+      ]
+    },
+    {
+      "ordinal": 52,
+      "coordinate": [
+        180,
+        112
+      ],
+      "map_raw_code": 42405,
+      "original_arg_sha256": "b23e8798203515be92abfa8fbeb579d91030e49db12999c7dd2500a864bdaa19",
+      "arg_bytes": 302,
+      "configured_arg_target": [
+        3021,
+        180,
+        102
+      ],
+      "warp_positions": [
+        [
+          186,
+          114
+        ],
+        [
+          186,
+          115
+        ]
+      ],
+      "warp_map_raw_codes": [
+        257,
+        257
+      ]
+    },
+    {
+      "ordinal": 53,
+      "coordinate": [
+        180,
+        100
+      ],
+      "map_raw_code": 42405,
+      "original_arg_sha256": "cd0281db66956172ad5f0dc83ab4d63fa6dc16ea8a609f47f0b89e7bf4af0a70",
+      "arg_bytes": 301,
+      "configured_arg_target": [
+        3021,
+        180,
+        90
+      ],
+      "warp_positions": [
+        [
+          186,
+          102
+        ],
+        [
+          186,
+          103
+        ]
+      ],
+      "warp_map_raw_codes": [
+        257,
+        257
+      ]
+    },
+    {
+      "ordinal": 54,
+      "coordinate": [
+        180,
+        88
+      ],
+      "map_raw_code": 42405,
+      "original_arg_sha256": "b237943dddb520903787c58aed49a723cf98c1cf45e98b2342ab78e9f4c9411c",
+      "arg_bytes": 301,
+      "configured_arg_target": [
+        3021,
+        180,
+        78
+      ],
+      "warp_positions": [
+        [
+          186,
+          90
+        ],
+        [
+          186,
+          91
+        ]
+      ],
+      "warp_map_raw_codes": [
+        257,
+        257
+      ]
+    },
+    {
+      "ordinal": 55,
+      "coordinate": [
+        180,
+        76
+      ],
+      "map_raw_code": 42405,
+      "original_arg_sha256": "7a7cbe53fcd8cbf56e7ff9108260b4caee2a80fbe8754eaf04827a5f2a66d34c",
+      "arg_bytes": 301,
+      "configured_arg_target": [
+        3021,
+        180,
+        66
+      ],
+      "warp_positions": [
+        [
+          186,
+          78
+        ],
+        [
+          186,
+          79
+        ]
+      ],
+      "warp_map_raw_codes": [
+        257,
+        257
+      ]
+    },
+    {
+      "ordinal": 56,
+      "coordinate": [
+        180,
+        64
+      ],
+      "map_raw_code": 42405,
+      "original_arg_sha256": "59dfca0dbb4af310218231aacbe9cf4ae7580deea4967cad6d3d132f420dd72e",
+      "arg_bytes": 301,
+      "configured_arg_target": [
+        3021,
+        180,
+        54
+      ],
+      "warp_positions": [
+        [
+          186,
+          66
+        ],
+        [
+          186,
+          67
+        ]
+      ],
+      "warp_map_raw_codes": [
+        0,
+        0
+      ]
+    },
+    {
+      "ordinal": 57,
+      "coordinate": [
+        180,
+        52
+      ],
+      "map_raw_code": 42405,
+      "original_arg_sha256": "3ffb3e316db0f6a5ea527b3f7814d89caeab5e3b1d137813dca24d9518170916",
+      "arg_bytes": 301,
+      "configured_arg_target": [
+        3021,
+        180,
+        42
+      ],
+      "warp_positions": [
+        [
+          186,
+          54
+        ],
+        [
+          186,
+          55
+        ]
+      ],
+      "warp_map_raw_codes": [
+        0,
+        0
+      ]
+    },
+    {
+      "ordinal": 58,
+      "coordinate": [
+        180,
+        40
+      ],
+      "map_raw_code": 42405,
+      "original_arg_sha256": "5507035668434f807ea1659036751d1d2cc4916a51b57be0e33b8f60d7eb7cac",
+      "arg_bytes": 301,
+      "configured_arg_target": [
+        3021,
+        180,
+        30
+      ],
+      "warp_positions": [
+        [
+          186,
+          42
+        ],
+        [
+          186,
+          43
+        ]
+      ],
+      "warp_map_raw_codes": [
+        0,
+        0
+      ]
+    },
+    {
+      "ordinal": 59,
+      "coordinate": [
+        180,
+        28
+      ],
+      "map_raw_code": 42405,
+      "original_arg_sha256": "ee1f7c6bce48a2543b290779ddea074a9004c0b35836afd6f07099bf93869752",
+      "arg_bytes": 301,
+      "configured_arg_target": [
+        3021,
+        180,
+        18
+      ],
+      "warp_positions": [
+        [
+          186,
+          30
+        ],
+        [
+          186,
+          31
+        ]
+      ],
+      "warp_map_raw_codes": [
+        0,
+        0
+      ]
+    },
+    {
+      "ordinal": 60,
+      "coordinate": [
+        180,
+        16
+      ],
+      "map_raw_code": 42405,
+      "original_arg_sha256": "abf6203458eee5ca8aace6cb1e60c4a6a6703a872620c994e7ac2d1a99948af7",
+      "arg_bytes": 302,
+      "configured_arg_target": [
+        3021,
+        136,
+        128
+      ],
+      "warp_positions": [
+        [
+          186,
+          18
+        ],
+        [
+          186,
+          19
+        ]
+      ],
+      "warp_map_raw_codes": [
+        0,
+        0
+      ]
+    },
+    {
+      "ordinal": 61,
+      "coordinate": [
+        136,
+        124
+      ],
+      "map_raw_code": 42405,
+      "original_arg_sha256": "52f46243e899e1b5331cd381d2faf3a0101ef29c9acd6de71a7cff20326103e4",
+      "arg_bytes": 302,
+      "configured_arg_target": [
+        3021,
+        136,
+        114
+      ],
+      "warp_positions": [
+        [
+          142,
+          126
+        ],
+        [
+          142,
+          127
+        ]
+      ],
+      "warp_map_raw_codes": [
+        257,
+        257
+      ]
+    },
+    {
+      "ordinal": 62,
+      "coordinate": [
+        136,
+        112
+      ],
+      "map_raw_code": 42405,
+      "original_arg_sha256": "9d03e2dc8427efee68d58ea9453a9c0e18099922fa6d35b31c137b257e24ff95",
+      "arg_bytes": 302,
+      "configured_arg_target": [
+        3021,
+        136,
+        102
+      ],
+      "warp_positions": [
+        [
+          142,
+          114
+        ],
+        [
+          142,
+          115
+        ]
+      ],
+      "warp_map_raw_codes": [
+        257,
+        257
+      ]
+    },
+    {
+      "ordinal": 63,
+      "coordinate": [
+        136,
+        100
+      ],
+      "map_raw_code": 42405,
+      "original_arg_sha256": "3a9be438a400f29ec0f4da74ebc2079794a5165a2a054d92848aa450c42c6101",
+      "arg_bytes": 301,
+      "configured_arg_target": [
+        3021,
+        136,
+        90
+      ],
+      "warp_positions": [
+        [
+          142,
+          102
+        ],
+        [
+          142,
+          103
+        ]
+      ],
+      "warp_map_raw_codes": [
+        257,
+        257
+      ]
+    },
+    {
+      "ordinal": 64,
+      "coordinate": [
+        136,
+        88
+      ],
+      "map_raw_code": 42405,
+      "original_arg_sha256": "dc29f6e0e2ad34fa9bb789143b438db52a37d17854381d04bc19f1530aa1fd72",
+      "arg_bytes": 301,
+      "configured_arg_target": [
+        3021,
+        136,
+        78
+      ],
+      "warp_positions": [
+        [
+          142,
+          90
+        ],
+        [
+          142,
+          91
+        ]
+      ],
+      "warp_map_raw_codes": [
+        257,
+        257
+      ]
+    },
+    {
+      "ordinal": 65,
+      "coordinate": [
+        136,
+        76
+      ],
+      "map_raw_code": 42405,
+      "original_arg_sha256": "2507c02e10bf482a32ef3bb619d92c3d0d41653895959fab6981660a050c2391",
+      "arg_bytes": 301,
+      "configured_arg_target": [
+        3021,
+        136,
+        66
+      ],
+      "warp_positions": [
+        [
+          142,
+          78
+        ],
+        [
+          142,
+          79
+        ]
+      ],
+      "warp_map_raw_codes": [
+        257,
+        257
+      ]
+    },
+    {
+      "ordinal": 66,
+      "coordinate": [
+        136,
+        64
+      ],
+      "map_raw_code": 42405,
+      "original_arg_sha256": "fd2983199de81af7112b0800e136537494705601f869a9c7b3156a8a50530521",
+      "arg_bytes": 301,
+      "configured_arg_target": [
+        3021,
+        136,
+        54
+      ],
+      "warp_positions": [
+        [
+          142,
+          66
+        ],
+        [
+          142,
+          67
+        ]
+      ],
+      "warp_map_raw_codes": [
+        0,
+        0
+      ]
+    },
+    {
+      "ordinal": 67,
+      "coordinate": [
+        136,
+        52
+      ],
+      "map_raw_code": 42405,
+      "original_arg_sha256": "74876c7c5c0bee44249c2ae7da0ddfb79e4a6d17cb6573895d29da62320545c8",
+      "arg_bytes": 301,
+      "configured_arg_target": [
+        3021,
+        136,
+        42
+      ],
+      "warp_positions": [
+        [
+          142,
+          54
+        ],
+        [
+          142,
+          55
+        ]
+      ],
+      "warp_map_raw_codes": [
+        0,
+        0
+      ]
+    },
+    {
+      "ordinal": 68,
+      "coordinate": [
+        136,
+        40
+      ],
+      "map_raw_code": 42405,
+      "original_arg_sha256": "5e783b7b60230f477b7513fd53285d739782b96cb22a22fbc593679952532d2b",
+      "arg_bytes": 301,
+      "configured_arg_target": [
+        3021,
+        136,
+        30
+      ],
+      "warp_positions": [
+        [
+          142,
+          42
+        ],
+        [
+          142,
+          43
+        ]
+      ],
+      "warp_map_raw_codes": [
+        0,
+        0
+      ]
+    },
+    {
+      "ordinal": 69,
+      "coordinate": [
+        136,
+        28
+      ],
+      "map_raw_code": 42405,
+      "original_arg_sha256": "3c2210491766e7df86018103c389d3444075928b452d672525521e50ebc63583",
+      "arg_bytes": 301,
+      "configured_arg_target": [
+        3021,
+        136,
+        18
+      ],
+      "warp_positions": [
+        [
+          142,
+          30
+        ],
+        [
+          142,
+          31
+        ]
+      ],
+      "warp_map_raw_codes": [
+        0,
+        0
+      ]
+    },
+    {
+      "ordinal": 70,
+      "coordinate": [
+        136,
+        16
+      ],
+      "map_raw_code": 42405,
+      "original_arg_sha256": "e994d3328307be03d5fd325e4a48c9f1f6bca6d52f324a5eda32c7794506037e",
+      "arg_bytes": 301,
+      "configured_arg_target": [
+        3021,
+        92,
+        128
+      ],
+      "warp_positions": [
+        [
+          142,
+          18
+        ],
+        [
+          142,
+          19
+        ]
+      ],
+      "warp_map_raw_codes": [
+        0,
+        0
+      ]
+    },
+    {
+      "ordinal": 71,
+      "coordinate": [
+        92,
+        124
+      ],
+      "map_raw_code": 42405,
+      "original_arg_sha256": "ef7bb667e2b36fb78ddc93aebd852a2e607e13ee249183d917cb4d9212e79fef",
+      "arg_bytes": 301,
+      "configured_arg_target": [
+        3021,
+        92,
+        114
+      ],
+      "warp_positions": [
+        [
+          98,
+          126
+        ],
+        [
+          98,
+          127
+        ]
+      ],
+      "warp_map_raw_codes": [
+        257,
+        257
+      ]
+    },
+    {
+      "ordinal": 72,
+      "coordinate": [
+        92,
+        112
+      ],
+      "map_raw_code": 42405,
+      "original_arg_sha256": "c017c05edcdca2057cc04b11d0b7ddfc730cad7ff1df4be0b52fea79f19acb8d",
+      "arg_bytes": 301,
+      "configured_arg_target": [
+        3021,
+        92,
+        102
+      ],
+      "warp_positions": [
+        [
+          98,
+          114
+        ],
+        [
+          98,
+          115
+        ]
+      ],
+      "warp_map_raw_codes": [
+        257,
+        257
+      ]
+    },
+    {
+      "ordinal": 73,
+      "coordinate": [
+        92,
+        100
+      ],
+      "map_raw_code": 42405,
+      "original_arg_sha256": "12f76e7c47e262363374fbf2f01518ab85e77ffb16c0bae503a85fcf6139e073",
+      "arg_bytes": 300,
+      "configured_arg_target": [
+        3021,
+        92,
+        90
+      ],
+      "warp_positions": [
+        [
+          98,
+          102
+        ],
+        [
+          98,
+          103
+        ]
+      ],
+      "warp_map_raw_codes": [
+        257,
+        257
+      ]
+    },
+    {
+      "ordinal": 74,
+      "coordinate": [
+        92,
+        88
+      ],
+      "map_raw_code": 42405,
+      "original_arg_sha256": "57756c6cd9c7ae59b977ef9498c0fd3d947ecfc1d38369dc16a5dfba33c672e9",
+      "arg_bytes": 300,
+      "configured_arg_target": [
+        3021,
+        92,
+        78
+      ],
+      "warp_positions": [
+        [
+          98,
+          90
+        ],
+        [
+          98,
+          91
+        ]
+      ],
+      "warp_map_raw_codes": [
+        257,
+        257
+      ]
+    },
+    {
+      "ordinal": 75,
+      "coordinate": [
+        92,
+        76
+      ],
+      "map_raw_code": 42405,
+      "original_arg_sha256": "4f64922fbda134c1f51d5367d30276568f25f6ebc795e59f98d684dc24c380ff",
+      "arg_bytes": 300,
+      "configured_arg_target": [
+        3021,
+        92,
+        66
+      ],
+      "warp_positions": [
+        [
+          98,
+          78
+        ],
+        [
+          98,
+          79
+        ]
+      ],
+      "warp_map_raw_codes": [
+        257,
+        257
+      ]
+    },
+    {
+      "ordinal": 76,
+      "coordinate": [
+        92,
+        64
+      ],
+      "map_raw_code": 42405,
+      "original_arg_sha256": "81e198994e66e6f82719cb319082c1bb8ca54f24ba34aafc2bb18d4e16fc526c",
+      "arg_bytes": 300,
+      "configured_arg_target": [
+        3021,
+        92,
+        54
+      ],
+      "warp_positions": [
+        [
+          98,
+          66
+        ],
+        [
+          98,
+          67
+        ]
+      ],
+      "warp_map_raw_codes": [
+        0,
+        0
+      ]
+    },
+    {
+      "ordinal": 77,
+      "coordinate": [
+        92,
+        52
+      ],
+      "map_raw_code": 42405,
+      "original_arg_sha256": "f5a8204274a3be1880f07f4a1dd96ef3b06438613e8cf51e909c6a60e3e64bbb",
+      "arg_bytes": 300,
+      "configured_arg_target": [
+        3021,
+        92,
+        42
+      ],
+      "warp_positions": [
+        [
+          98,
+          54
+        ],
+        [
+          98,
+          55
+        ]
+      ],
+      "warp_map_raw_codes": [
+        0,
+        0
+      ]
+    },
+    {
+      "ordinal": 78,
+      "coordinate": [
+        92,
+        40
+      ],
+      "map_raw_code": 42405,
+      "original_arg_sha256": "9f8830a23512540ee0633baf08d55493737e975ff9761fe6931e440d9ff3a145",
+      "arg_bytes": 300,
+      "configured_arg_target": [
+        3021,
+        92,
+        30
+      ],
+      "warp_positions": [
+        [
+          98,
+          42
+        ],
+        [
+          98,
+          43
+        ]
+      ],
+      "warp_map_raw_codes": [
+        0,
+        0
+      ]
+    },
+    {
+      "ordinal": 79,
+      "coordinate": [
+        92,
+        28
+      ],
+      "map_raw_code": 42405,
+      "original_arg_sha256": "6d1a70053623c82288e0f73784b17b0bef0cabaa8dea6308421f59976331dd25",
+      "arg_bytes": 300,
+      "configured_arg_target": [
+        3021,
+        92,
+        18
+      ],
+      "warp_positions": [
+        [
+          98,
+          30
+        ],
+        [
+          98,
+          31
+        ]
+      ],
+      "warp_map_raw_codes": [
+        0,
+        0
+      ]
+    },
+    {
+      "ordinal": 80,
+      "coordinate": [
+        92,
+        16
+      ],
+      "map_raw_code": 42405,
+      "original_arg_sha256": "50353ea1885a4d7340ae0b198510d1a56bad42b17a047d9e7889f287f7dee01c",
+      "arg_bytes": 301,
+      "configured_arg_target": [
+        3021,
+        48,
+        128
+      ],
+      "warp_positions": [
+        [
+          98,
+          18
+        ],
+        [
+          98,
+          19
+        ]
+      ],
+      "warp_map_raw_codes": [
+        0,
+        0
+      ]
+    },
+    {
+      "ordinal": 81,
+      "coordinate": [
+        48,
+        124
+      ],
+      "map_raw_code": 42405,
+      "original_arg_sha256": "ec9896fd54e897321e2630477522ae8b817befc31758063910de15842701fe70",
+      "arg_bytes": 301,
+      "configured_arg_target": [
+        3021,
+        48,
+        114
+      ],
+      "warp_positions": [
+        [
+          54,
+          126
+        ],
+        [
+          54,
+          127
+        ]
+      ],
+      "warp_map_raw_codes": [
+        257,
+        257
+      ]
+    },
+    {
+      "ordinal": 82,
+      "coordinate": [
+        48,
+        112
+      ],
+      "map_raw_code": 42405,
+      "original_arg_sha256": "2ea382eb4ef82c8b871a94a28285b42fb3191ff5bc0d86048c39c9ebfac5be3b",
+      "arg_bytes": 301,
+      "configured_arg_target": [
+        3021,
+        48,
+        102
+      ],
+      "warp_positions": [
+        [
+          54,
+          114
+        ],
+        [
+          54,
+          115
+        ]
+      ],
+      "warp_map_raw_codes": [
+        257,
+        257
+      ]
+    },
+    {
+      "ordinal": 83,
+      "coordinate": [
+        48,
+        100
+      ],
+      "map_raw_code": 42405,
+      "original_arg_sha256": "7616daa956fa00e12f57b6fd2198345f4231b9255cc89f286e9e30fe853f32c1",
+      "arg_bytes": 300,
+      "configured_arg_target": [
+        3021,
+        48,
+        90
+      ],
+      "warp_positions": [
+        [
+          54,
+          102
+        ],
+        [
+          54,
+          103
+        ]
+      ],
+      "warp_map_raw_codes": [
+        257,
+        257
+      ]
+    },
+    {
+      "ordinal": 84,
+      "coordinate": [
+        48,
+        88
+      ],
+      "map_raw_code": 42405,
+      "original_arg_sha256": "37283fed51539f1f92f60f75d61883609526dccd74d4f3aec94a963d5683080e",
+      "arg_bytes": 300,
+      "configured_arg_target": [
+        3021,
+        48,
+        78
+      ],
+      "warp_positions": [
+        [
+          54,
+          90
+        ],
+        [
+          54,
+          91
+        ]
+      ],
+      "warp_map_raw_codes": [
+        257,
+        257
+      ]
+    },
+    {
+      "ordinal": 85,
+      "coordinate": [
+        48,
+        76
+      ],
+      "map_raw_code": 42405,
+      "original_arg_sha256": "6d448804e6fdba9af2536cb4f8e99b00c443dada666f2c999f4350b7f1cc36e2",
+      "arg_bytes": 300,
+      "configured_arg_target": [
+        3021,
+        48,
+        66
+      ],
+      "warp_positions": [
+        [
+          54,
+          78
+        ],
+        [
+          54,
+          79
+        ]
+      ],
+      "warp_map_raw_codes": [
+        257,
+        257
+      ]
+    },
+    {
+      "ordinal": 86,
+      "coordinate": [
+        48,
+        64
+      ],
+      "map_raw_code": 42405,
+      "original_arg_sha256": "fea55972c5bebf7988f4e9ce7aafe155b9049fd0dddcc9aead3fb0760dbfb0d6",
+      "arg_bytes": 300,
+      "configured_arg_target": [
+        3021,
+        48,
+        54
+      ],
+      "warp_positions": [
+        [
+          54,
+          66
+        ],
+        [
+          54,
+          67
+        ]
+      ],
+      "warp_map_raw_codes": [
+        0,
+        0
+      ]
+    },
+    {
+      "ordinal": 87,
+      "coordinate": [
+        48,
+        52
+      ],
+      "map_raw_code": 42405,
+      "original_arg_sha256": "4cb6ea5a68c71e8a27f6d9275600b5c138b26bd0c05b9aceb2cf523e4fda5fb8",
+      "arg_bytes": 300,
+      "configured_arg_target": [
+        3021,
+        48,
+        42
+      ],
+      "warp_positions": [
+        [
+          54,
+          54
+        ],
+        [
+          54,
+          55
+        ]
+      ],
+      "warp_map_raw_codes": [
+        0,
+        0
+      ]
+    },
+    {
+      "ordinal": 88,
+      "coordinate": [
+        48,
+        40
+      ],
+      "map_raw_code": 42405,
+      "original_arg_sha256": "8360536ae222b8e828d0abfb11afbbd7f2d2773ce0bec308c74d064c879fa40a",
+      "arg_bytes": 300,
+      "configured_arg_target": [
+        3021,
+        48,
+        30
+      ],
+      "warp_positions": [
+        [
+          54,
+          42
+        ],
+        [
+          54,
+          43
+        ]
+      ],
+      "warp_map_raw_codes": [
+        0,
+        0
+      ]
+    },
+    {
+      "ordinal": 89,
+      "coordinate": [
+        48,
+        28
+      ],
+      "map_raw_code": 42405,
+      "original_arg_sha256": "24628145c6d7f3c8e8eff5e0f2160232f01469746495480d6780236184b79af7",
+      "arg_bytes": 300,
+      "configured_arg_target": [
+        3021,
+        48,
+        18
+      ],
+      "warp_positions": [
+        [
+          54,
+          30
+        ],
+        [
+          54,
+          31
+        ]
+      ],
+      "warp_map_raw_codes": [
+        0,
+        0
+      ]
+    },
+    {
+      "ordinal": 90,
+      "coordinate": [
+        48,
+        16
+      ],
+      "map_raw_code": 42405,
+      "original_arg_sha256": "6266a4c186f1721e4c9cd9fc6ddca7671424da7696901c136aadc748b721cb12",
+      "arg_bytes": 300,
+      "configured_arg_target": [
+        3021,
+        4,
+        128
+      ],
+      "warp_positions": [
+        [
+          54,
+          18
+        ],
+        [
+          54,
+          19
+        ]
+      ],
+      "warp_map_raw_codes": [
+        0,
+        0
+      ]
+    },
+    {
+      "ordinal": 91,
+      "coordinate": [
+        4,
+        124
+      ],
+      "map_raw_code": 42405,
+      "original_arg_sha256": "25d4cba39111f6cf4a1f14c6e848b5f1e1813e22a5e5242d21c04da73b8960a7",
+      "arg_bytes": 300,
+      "configured_arg_target": [
+        3021,
+        4,
+        114
+      ],
+      "warp_positions": [
+        [
+          10,
+          126
+        ],
+        [
+          10,
+          127
+        ]
+      ],
+      "warp_map_raw_codes": [
+        257,
+        257
+      ]
+    },
+    {
+      "ordinal": 92,
+      "coordinate": [
+        4,
+        112
+      ],
+      "map_raw_code": 42405,
+      "original_arg_sha256": "df1993e4a6d2d108e091efecc76e3e5263342a6ab96fe21439a216ce64650600",
+      "arg_bytes": 300,
+      "configured_arg_target": [
+        3021,
+        4,
+        102
+      ],
+      "warp_positions": [
+        [
+          10,
+          114
+        ],
+        [
+          10,
+          115
+        ]
+      ],
+      "warp_map_raw_codes": [
+        257,
+        257
+      ]
+    },
+    {
+      "ordinal": 93,
+      "coordinate": [
+        4,
+        100
+      ],
+      "map_raw_code": 42405,
+      "original_arg_sha256": "8aafd2392a67d5627cc5c025bd9720d5ea854ebffa5cd328a7f18dba8228a3c9",
+      "arg_bytes": 299,
+      "configured_arg_target": [
+        3021,
+        4,
+        90
+      ],
+      "warp_positions": [
+        [
+          10,
+          102
+        ],
+        [
+          10,
+          103
+        ]
+      ],
+      "warp_map_raw_codes": [
+        257,
+        257
+      ]
+    },
+    {
+      "ordinal": 94,
+      "coordinate": [
+        4,
+        88
+      ],
+      "map_raw_code": 42405,
+      "original_arg_sha256": "1b94a9b10c8cb4c82d4b9349678fdead3d5aafb9cbfb46bf58ffd1977e6a00a2",
+      "arg_bytes": 299,
+      "configured_arg_target": [
+        3021,
+        4,
+        78
+      ],
+      "warp_positions": [
+        [
+          10,
+          90
+        ],
+        [
+          10,
+          91
+        ]
+      ],
+      "warp_map_raw_codes": [
+        257,
+        257
+      ]
+    },
+    {
+      "ordinal": 95,
+      "coordinate": [
+        4,
+        76
+      ],
+      "map_raw_code": 257,
+      "original_arg_sha256": "cdbfd88bcb7a9010375d3691c5f850734d031c4ab5c7cb69336776a1e8780cbb",
+      "arg_bytes": 299,
+      "configured_arg_target": [
+        3021,
+        4,
+        66
+      ],
+      "warp_positions": [
+        [
+          10,
+          78
+        ],
+        [
+          10,
+          79
+        ]
+      ],
+      "warp_map_raw_codes": [
+        257,
+        257
+      ]
+    },
+    {
+      "ordinal": 96,
+      "coordinate": [
+        4,
+        64
+      ],
+      "map_raw_code": 42405,
+      "original_arg_sha256": "fbad9e05206485c747a155a357c910d58ca28319cefe2e5b3ef97142195ab58f",
+      "arg_bytes": 299,
+      "configured_arg_target": [
+        3021,
+        4,
+        54
+      ],
+      "warp_positions": [
+        [
+          10,
+          66
+        ],
+        [
+          10,
+          67
+        ]
+      ],
+      "warp_map_raw_codes": [
+        0,
+        0
+      ]
+    },
+    {
+      "ordinal": 97,
+      "coordinate": [
+        4,
+        52
+      ],
+      "map_raw_code": 42405,
+      "original_arg_sha256": "920cd7a3cabd3b23b13625320d279adae3289124882cbb8f3b0ebd039eac1c1b",
+      "arg_bytes": 299,
+      "configured_arg_target": [
+        3021,
+        4,
+        42
+      ],
+      "warp_positions": [
+        [
+          10,
+          54
+        ],
+        [
+          10,
+          55
+        ]
+      ],
+      "warp_map_raw_codes": [
+        0,
+        0
+      ]
+    },
+    {
+      "ordinal": 98,
+      "coordinate": [
+        4,
+        40
+      ],
+      "map_raw_code": 42405,
+      "original_arg_sha256": "7aaadaa46de4680070aac42f0560edcbf1886cf30a0044a73c1a23ba15029684",
+      "arg_bytes": 299,
+      "configured_arg_target": [
+        3021,
+        4,
+        30
+      ],
+      "warp_positions": [
+        [
+          10,
+          42
+        ],
+        [
+          10,
+          43
+        ]
+      ],
+      "warp_map_raw_codes": [
+        0,
+        0
+      ]
+    },
+    {
+      "ordinal": 99,
+      "coordinate": [
+        4,
+        28
+      ],
+      "map_raw_code": 42405,
+      "original_arg_sha256": "561207ec1888d31e3db64d0beebf1dc3c9dba01b092605d989ea387f63842228",
+      "arg_bytes": 299,
+      "configured_arg_target": [
+        3021,
+        4,
+        18
+      ],
+      "warp_positions": [
+        [
+          10,
+          30
+        ],
+        [
+          10,
+          31
+        ]
+      ],
+      "warp_map_raw_codes": [
+        0,
+        0
+      ]
+    },
+    {
+      "ordinal": 100,
+      "coordinate": [
+        4,
+        16
+      ],
+      "map_raw_code": 42405,
+      "original_arg_sha256": "eccdb850baf6260280e789f308143c841afa8c998735f878cde447e543333fb0",
+      "arg_bytes": 302,
+      "configured_arg_target": [
+        3008,
+        20,
+        20
+      ],
+      "warp_positions": [
+        [
+          10,
+          18
+        ],
+        [
+          10,
+          19
+        ]
+      ],
+      "warp_map_raw_codes": [
+        0,
+        0
+      ]
+    }
+  ],
+  "numeric_crosschecks": {
+    "floor_3021_dimensions": [
+      407,
+      144
+    ],
+    "npc_center_map_codes": {
+      "0": 25,
+      "257": 26,
+      "42405": 49
+    },
+    "warp_center_map_codes": {
+      "0": 58,
+      "257": 58,
+      "41637": 13,
+      "41674": 8,
+      "41677": 21,
+      "41893": 17,
+      "41930": 4,
+      "41932": 21
+    },
+    "routed_within_3021": 99,
+    "last_target_3008": [
+      3008,
+      20,
+      20
+    ],
+    "independent_warp_create_count": 200,
+    "independent_warp_target": [
+      3022,
+      1,
+      7
+    ],
+    "3022_target_raw": {
+      "MAP": 46003,
+      "DAT_tile": 4085,
+      "DAT_object": 0,
+      "DAT_event": 49152
+    }
+  },
+  "evidence_limits": {
+    "native_original_client_executed": false,
+    "native_NPC_spawns_observed": false,
+    "native_combat_or_route_trigger_observed": false,
+    "original_3021_map_color_and_geometry_verified": false,
+    "modern_2d_chart_represents_native_screen": false,
+    "same_official_build_as_TW1_or_JSS_1999_verified": false,
+    "complete_original_game_restored": false,
+    "original_private_graphics_in_public_git": false,
+    "source_script_dialogue_in_public_receipt": false
+  },
+  "stage_a": "7_PARTIAL_2_OPEN",
+  "stage_b": "GATED",
+  "R79": "PAUSED_NON_BLOCKING",
+  "overall_percent": null
+}
