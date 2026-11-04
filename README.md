@@ -1737,3 +1737,8 @@ User reconfirmed the purpose: **restore original game maps, pets, NPCs, quests, 
 ## 2026-11-04 Offline source record (WORLD03 latest)
 
 WORLD02 [village1000 original NPC/scene source](docs/continuity/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-02-VILLAGE1000-NPC-SOURCE-ATLAS-20261104.md) is accepted. WORLD03 [all 32 village1000 original Warp CREATE and DAT source-cell reconciliation](docs/continuity/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-03-VILLAGE1000-32-WARP-DAT-20261104.md) also preserves every original source-bound target without claiming historical native gameplay or official TW1 co-deployment. Current **NEXT STAGE-A-OFFLINE-WORLD-CONTENT-04** moves to new source-bearing original content outside repeated village/dojo static atlases. Original giant CURRENT blob unmodified; Stage A7 PARTIAL+2 OPEN, Stage B/wiki GATED, R79 paused, overall percent unknown.
+
+
+## 2026-11-04 — Stage A WORLD04 three-village original text source (latest)
+
+Source-qualified original NPC and signboard content from preserved later mixed25 data has been grouped for floors 2000, 3000 and 4000: 46 previously CHAR07-indexed external texts plus one newly documented inline CREATE-name arena board (47 source entries). The private offline source text bundle is retained outside Git; public source hashes, source-map DAT identity and strict non-native-execution limits are in [WORLD04 continuity](docs/continuity/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-04-THREE-VILLAGE-TEXT-20261104.md). This supersedes WORLD03's NEXT. **Current highest NEXT: STAGE-A-OFFLINE-WORLD-CONTENT-05** (new original pet/quest/item content linkage). Stage A 7 PARTIAL + 2 OPEN; Stage B/wiki GATED; R79 paused; overall percent unknown. Full CURRENT historical Git blob unchanged.

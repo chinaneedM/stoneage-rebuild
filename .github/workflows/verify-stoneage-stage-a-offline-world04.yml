@@ -1,0 +1,25 @@
+name: Verify Stage A original three-village source texts WORLD04
+on:
+  pull_request:
+    paths:
+      - 'research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-04-THREE-VILLAGE-NPC-TEXT-SOURCE-R1.json'
+      - 'tests/test_stoneage_stage_a_offline_world04_village_dialogue.py'
+      - '.github/workflows/verify-stoneage-stage-a-offline-world04.yml'
+      - 'docs/continuity/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-04-THREE-VILLAGE-TEXT-20261104.md'
+  push:
+    branches: [main]
+    paths:
+      - 'research/recovered/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-04-THREE-VILLAGE-NPC-TEXT-SOURCE-R1.json'
+      - 'tests/test_stoneage_stage_a_offline_world04_village_dialogue.py'
+      - '.github/workflows/verify-stoneage-stage-a-offline-world04.yml'
+      - 'docs/continuity/STONEAGE-STAGE-A-OFFLINE-WORLD-CONTENT-04-THREE-VILLAGE-TEXT-20261104.md'
+jobs:
+  provenance-only:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify original derived source identities and no historical promotion
+        run: python -m unittest -v tests.test_stoneage_stage_a_offline_world04_village_dialogue
