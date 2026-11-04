@@ -30,7 +30,7 @@ class World04Source(unittest.TestCase):
    recheck+=1
   self.assertEqual(recheck,46)
   keys=sorted(old,key=lambda x:(x["create_path"],x["create_ordinal"]))
-  s="".join("|".join([x["source_floorid_raw"],x["create_path"],str(x["create_ordinal"]),x["original_arg_path"],x["original_arg_sha256"]])+"\\n" for x in keys)
+  s="".join("|".join([x["source_floorid_raw"],x["create_path"],str(x["create_ordinal"]),x["original_arg_path"],x["original_arg_sha256"]])+"\n" for x in keys)
   h=2166136261
   for c in s.encode("ascii"):h=((h^c)*16777619)&0xffffffff
   self.assertEqual(f"{h:08x}","a53e22e0")
