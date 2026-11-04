@@ -81,7 +81,7 @@ class World07GetPet(unittest.TestCase):
         setup=raw["setup.cf"].decode("latin-1")
         add=function_body(a,r"BOOL\s+NPC_EventAddPet\s*\(int\s+meindex,\s*int\s+talker,\s*char\s*\*buff2,\s*int\s+mode\)")
         from_enemy=function_body(b,r"int\s+ENEMY_createPetFromEnemyIndex\s*\(\s*int\s+charaindex,\s*int\s+array\)")
-        init_enemy=function_body(b,r"BOOL\s+ENEMY_initEnemy\s*\(\s*char\s*\*filename\s*\)")
+        init_enemy=function_body(b,r"BOOL\s+ENEMY_initEnemy\s*\(\s*char\s*\*\s*filename\s*\)")
         temp_array=function_body(b,r"int\s+ENEMYTEMP_getEnemyTempArray\s*\(\s*int\s+enemyindex\)")
         self.assertGreaterEqual(a.count('NPC_Util_GetStrFromStrWithDelim( buff, "GetPet"'),1)
         self.assertIn('NPC_EventAddPet( meindex, talker, buff2,0)',a)
