@@ -1,0 +1,159 @@
+{
+  "schema": "stoneage.stage_a_dojo_same_carrier_native_warp_witness.r1",
+  "date": "2026-11-04",
+  "starting_main": "68fa9b402db98c33b20a5124ba4eaaf94c680244",
+  "starting_tree": "a0c2d691c5078b2a48ad14930c26320034ed6489",
+  "source_scope": "LATER_COMMUNITY_MIXED25_SAME_ARCHIVE_STATIC_BINARY_NOT_HISTORICAL_DEPLOYMENT",
+  "parent_RAR_sha256": "d71e2e6766e8eac9f3fd1a8d3ab910b4b903daaf5f26f4077f07660d0102faa5",
+  "members_by_relative_archive_path": {
+    "SA2.5主程式/stoneage2.5/sa_2903.exe": {
+      "bytes": 561152,
+      "crc32": "4e3766de",
+      "sha256": "ec678517f76564ebc9ab00cf3f66853ed9975ef6290eb48168b78909a68a5d16"
+    },
+    "SA2.5服務端/gmsv/gmsv.exe": {
+      "bytes": 1897867,
+      "crc32": "6e31b63a",
+      "sha256": "d5b08dbcbf9e8736ba8598e38e5901f123d2bff544a9cae53a9ff88ce1971e00"
+    },
+    "SA2.5服務端/saac/saac.exe": {
+      "bytes": 178353,
+      "crc32": "e2695fb6",
+      "sha256": "299910efe3d04ccf83a224a6f670c9fabe379440df36d6e0bf6514d76c834615"
+    },
+    "SA2.5服務端/gmsv/cygwin1.dll": {
+      "bytes": 1295582,
+      "crc32": "80004e56",
+      "sha256": "c0e27ae6a7b7106da5db889980a17fe55ea515ebfb3d4c03ce1e26d51bf9c73e"
+    },
+    "SA2.5服務端/saac/cygwin1.dll": {
+      "bytes": 1295582,
+      "crc32": "80004e56",
+      "sha256": "c0e27ae6a7b7106da5db889980a17fe55ea515ebfb3d4c03ce1e26d51bf9c73e"
+    },
+    "SA2.5服務端/gmsv/data/npc/genout/npcgen.template": {
+      "bytes": 4950,
+      "crc32": "56547578",
+      "sha256": "0c5a58d5e31cafd3b58ccc1fa88fee7d1f95d12c0b87b04db9f06fea3b2a4df3"
+    }
+  },
+  "GMSV_PE32_i386_sections": {
+    ".text": {
+      "VA": 4198400,
+      "file_offset": 1024,
+      "bytes": 1418752
+    },
+    ".rdata": {
+      "VA": 5836800,
+      "file_offset": 1633280,
+      "bytes": 105984
+    }
+  },
+  "NPCEnemyInit_original_keys": {
+    "dieact": {
+      "string_va": 5881150,
+      "string_file_offset": 1677630,
+      "xref_va": 4795306,
+      "work_int_slot": 84
+    },
+    "warpfl": {
+      "string_va": 5881302,
+      "string_file_offset": 1677782,
+      "xref_va": 4796175,
+      "work_int_slot": 85
+    },
+    "warpx": {
+      "string_va": 5881392,
+      "string_file_offset": 1677872,
+      "xref_va": 4796340,
+      "work_int_slot": 86
+    },
+    "warpy": {
+      "string_va": 5881424,
+      "string_file_offset": 1677904,
+      "xref_va": 4796477,
+      "work_int_slot": 87
+    }
+  },
+  "Warp_template": {
+    "path": "genout/npcgen.template",
+    "zero_based_block": 21,
+    "block_sha256_including_newline": "fe5806afbbd1b89387c3e8067c3bafc5c7b4dab2533caa793782907450e221be",
+    "template": "npcgen_warp",
+    "functionset": "Warp"
+  },
+  "static_direct_edges": [
+    {
+      "from_symbol": "NPCEnemy_Dying",
+      "site_va": 4807922,
+      "site_file_offset": 610546,
+      "to_va": 4458288,
+      "to_symbol": "__CHAR_warpToSpecificPoint",
+      "kind": "call",
+      "instruction_sha256": "76101c5df26f09807b1eb59fad740c149804f993aea057712c306a9488e50f0e"
+    },
+    {
+      "from_symbol": "WarpWatch",
+      "site_va": 4788125,
+      "site_file_offset": 590749,
+      "to_va": 4785360,
+      "to_symbol": "_NPC_WarpWarpCharacter",
+      "kind": "jmp",
+      "instruction_sha256": "2e95cfa8588ed50efd3ad0ab8dde766683a29ef849ade9d5825e553408dbc33d"
+    },
+    {
+      "from_symbol": "WarpWarpCharacter",
+      "site_va": 4787202,
+      "site_file_offset": 589826,
+      "to_va": 4458288,
+      "to_symbol": "__CHAR_warpToSpecificPoint",
+      "kind": "call",
+      "instruction_sha256": "84e080d88b2ed2e70604f2ca38c0bf36592ce5ecb41bb25f2d0513c6cc6286af"
+    }
+  ],
+  "original_byte_spans": {
+    "NPCEnemyInit_DieAct": {
+      "start_va": 4795306,
+      "end_va_exclusive": 4795393,
+      "start_file_offset": 597930,
+      "end_file_offset_exclusive": 598017,
+      "sha256": "0d1ecb32ef5d074f84f5a582c19560b7f91afe98c7026c1792a7a2c5b31b4c3d"
+    },
+    "NPCEnemyInit_WarpFields": {
+      "start_va": 4796175,
+      "end_va_exclusive": 4796598,
+      "start_file_offset": 598799,
+      "end_file_offset_exclusive": 599222,
+      "sha256": "cc8ca03d10c812f2ecc2eea43ce2e7f7c2c18d28279b1ec79756d09943f20e3b"
+    },
+    "NPCEnemy_Dying_WarpCall": {
+      "start_va": 4807749,
+      "end_va_exclusive": 4807927,
+      "start_file_offset": 610373,
+      "end_file_offset_exclusive": 610551,
+      "sha256": "8c532c86a69dacf000bc4c5b748d92a975fcd1845cb68c5a2fb13cb5396ac580"
+    },
+    "WarpWatch_To_WarpCharacter": {
+      "start_va": 4787936,
+      "end_va_exclusive": 4788130,
+      "start_file_offset": 590560,
+      "end_file_offset_exclusive": 590754,
+      "sha256": "81daa67933e318c1db646e4d81e039587b5858a72fcf53afa1d9743e468d03a1"
+    },
+    "WarpCharacter_WarpCall": {
+      "start_va": 4787149,
+      "end_va_exclusive": 4787207,
+      "start_file_offset": 589773,
+      "end_file_offset_exclusive": 589831,
+      "sha256": "d405be2f93f1679e05fb45121fb2cd4ecce25fc99342a4bee1248cdf261c5f9c"
+    }
+  },
+  "bounds": {
+    "both_decoders_full_byte_equal_and_RAR_CRC_passed": true,
+    "server_or_client_executed": false,
+    "live_coordinate_or_packet_observed": false,
+    "full_path_conditions_verified": false,
+    "historical_official_deployment_verified": false,
+    "proprietary_exe_or_dll_committed": false
+  }
+}

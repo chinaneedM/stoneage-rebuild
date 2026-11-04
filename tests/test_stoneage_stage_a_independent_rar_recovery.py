@@ -149,6 +149,29 @@ class IndependentRarRecovery(unittest.TestCase):
         self.assertEqual(preview["3021"]["unresolved_markers"], [])
         self.assertEqual(preview["3022"]["unresolved_markers"], [])
 
+    def test_native_warp_witness_links_two_distinct_direct_edges(self):
+        native = load("STONEAGE-STAGE-A-DOJO-NATIVE-WARP-WITNESS-R1.json")
+        self.assertEqual(native["parent_RAR_sha256"], self.receipt["archive"]["sha256"])
+        gmsv = native["members_by_relative_archive_path"]["SA2.5服務端/gmsv/gmsv.exe"]
+        self.assertEqual((gmsv["bytes"], gmsv["crc32"]), (1897867, "6e31b63a"))
+        self.assertEqual(
+            {key: row["work_int_slot"] for key, row in native["NPCEnemyInit_original_keys"].items()},
+            {"dieact": 0x54, "warpfl": 0x55, "warpx": 0x56, "warpy": 0x57},
+        )
+        self.assertEqual(native["Warp_template"]["functionset"], "Warp")
+        edges = native["static_direct_edges"]
+        self.assertEqual(
+            [(row["kind"], row["site_va"], row["to_va"]) for row in edges],
+            [("call", 0x495cf2, 0x440730), ("jmp", 0x490f9d, 0x4904d0),
+             ("call", 0x490c02, 0x440730)],
+        )
+        code = native["GMSV_PE32_i386_sections"][".text"]
+        for edge in edges:
+            self.assertEqual(edge["site_file_offset"], edge["site_va"] - code["VA"] + code["file_offset"])
+        self.assertTrue(native["bounds"]["both_decoders_full_byte_equal_and_RAR_CRC_passed"])
+        self.assertFalse(native["bounds"]["server_or_client_executed"])
+        self.assertFalse(native["bounds"]["live_coordinate_or_packet_observed"])
+
     def test_historical_attribution_and_runtime_remain_open(self):
         bounds = self.receipt["bounds"]
         for flag in ("authenticated_early_official_deployment", "native_client_or_server_executed",
